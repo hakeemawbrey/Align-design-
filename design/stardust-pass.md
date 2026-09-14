@@ -98,6 +98,47 @@ opacity. Glow must pool, never flood: the indigo base stays dominant.
 | `S-14 — Daily Horoscope` | Glowing moon orb hero with a dotted orbit ring. Gradient insight panels. Alignment meter. Chrome CTA. |
 | `S-11 — Align+ Paywall` | Starfield, foil struck medallion, benefit rows, dual pricing cards with the Houston Founding Member at $10, chrome CTA. |
 
+## Verified against Stardust's real screens
+
+After the environment's network policy was opened to `mcp.appllama.io`, the
+screens were reviewed directly rather than inferred from metadata. Three
+corrections followed:
+
+1. **Stardust is dense, not restrained.** Its canvas carries ~90 small stars per
+   screen. The first pass was too sparse.
+2. **Colour is a full spectrum, applied systematically.** The home screen hero is
+   a ring of glossy 3D moon phase orbs running purple, blue, teal, green, yellow,
+   orange, red, pink. Not a single accent hue.
+3. **The paywall is a trial timeline, not a benefit list.** Today, This week, In
+   7 days, stacked centre, separated by ✦, over a painterly aurora with two light
+   sources (warm sun left, cool moon right). The selected plan card is *lighter*
+   than the unselected one and carries an overlapping free trial badge.
+
+Stardust's own primary paywall CTA is a pale iridescent pill with dark text,
+which confirms Align's existing chrome CTA was already the right answer.
+
+## The gap is narrower than it looks
+
+Align already holds four of the five things that make Stardust read as premium:
+
+| Stardust | Align already has |
+|---|---|
+| Pale iridescent paywall CTA | `CTA · Verify another way`, same family |
+| Rainbow moon phase dial | 12 sign foil ramps, same spectrum system |
+| Warm display serif | EB Garamond Italic |
+| Tarot cards as hero objects | Mystery Card, TCG framing |
+| Rendered 3D orbs | Aura images per sign |
+
+What is missing is cheap:
+
+1. **Density.** Fill the canvas with stars. Near zero cost.
+2. **Deploy the foil system into the product.** The 12 sign foils exist but live
+   only on the Founders Badge concept page. Stardust's entire identity is that
+   spectrum, on the home screen, every day. The assets are already built.
+3. **Voice.** Stardust's daily copy is chatty and specific. Align's is terse spec
+   language set in mono. Align's material (Spark, Rub, Align) is stronger, it is
+   just written like a table rather than like a person.
+
 ## Not done
 
 The other ~100 cloned screens still carry the old language. The system and the
