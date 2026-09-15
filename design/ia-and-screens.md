@@ -158,3 +158,55 @@ section.
 **Gotcha:** a selector matching `/starfield|atmosphere/` hit a wrapper frame whose
 children were the auroras, deleting light sources instead of stars on two screens.
 Target the inner star frame, never the wrapper.
+
+## The dial and the strip are one object, not two
+
+Verified against four Stardust screens (`oth_jka4o` Home Dashboard, `oth_vthko`
+Daily Guidance, `oth_kac57` Daily Body Insights, `oth_hata8` Daily Forecast
+Detail).
+
+The Home Dashboard shows the full phase dial — a ~330pt ring carrying the entire
+hue wheel — and nothing else on the screen is saturated. Scroll one notch and the
+ring is **gone**. In its place a ~40pt horizontal strip is pinned to the top,
+carrying the same markers flattened. Every other screen in that tab shows the
+strip and none of them shows the ring.
+
+So it is a single component at two scroll positions. Showing both at once, as the
+first pass of `S-14` did, is redundant — and the explanatory caption under it
+("The whole wheel turns. You are here.") is the kind of label Stardust never
+writes. Both removed.
+
+**Applied to Align:**
+
+- `S-14 — Sky · today` keeps the twelve-sign wheel as the sole dial state.
+- The flattened strip becomes the pinned header on the *other* screens in that
+  tab, where there is no wheel to duplicate.
+- The strip is thin, full-bleed and unlabelled. It is not a feature; it is a
+  position indicator.
+
+## The colour budget is per screen, not per element
+
+On a strip screen the strip **is** the colour, plus at most one further event —
+illustrated cards each owning a single hue family, or the desaturated
+spectrum-sweep CTA. Everything else is cream serif on flat `#12052D`. No coloured
+type, no coloured icons, no coloured tab bar, no coloured selection states.
+
+### Audit of our own section
+
+Counting distinct saturated hues per screen (saturation > 0.45, value > 0.45):
+
+| Distinct hues | Screens |
+|---|---|
+| 2 | You, Sign Reveal, Splash, Arrival, Glossary, Birth Data, No Cards |
+| 3 | Post Detail, Cosmic Calendar, Veil Lifts, Chat, Photo Upload, Deck Spent, Offline |
+| 4–5 | Match, Paywall, Alignment |
+| 6–7 | Club, Matches |
+| 8–9 | Deck, Peak, Sky |
+
+On **12 of 22 screens the only two hues present are 30° and 270°** — amber and
+violet, which are the two aurora glows and nothing else. The screens are not
+merely under-coloured; they are all coloured *identically*. That, not the number
+of glows, is why the section reads monochrome.
+
+Coloured text was also found on 13 screens (Matches 7 runs, Deck 8, Club 5),
+which the Stardust evidence says should not exist outside chips.
