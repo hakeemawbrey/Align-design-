@@ -99,3 +99,62 @@ Two mistakes made and corrected during this pass, both worth not repeating:
 2. **A sign-tinted halo on the Sign Reveal CTA.** The glow under the button was
    Libra orchid rather than `#f6edff`. Even on the one screen where the
    background carries a sign, the holo button does not.
+
+## Screens built in the parallel pass
+
+Sixteen screens built by four agents working in separate rows of the section, then
+reviewed and corrected centrally.
+
+| Row | Screens |
+|---|---|
+| y=2060 | `S-07 Match` · `S-08 Veil Lifts` · `S-09 Chat` · `S-09b Chat · Alignment` |
+| y=3020 | `O-01 Splash` · `O-02 Arrival` · `O-03 Birth Data` · `O-13 Photo Upload` |
+| y=3980 | `S-17 Club` · `S-17b Post Detail` · `S-15 Cosmic Calendar` · `S-20 Glossary` |
+| y=4940 | `S-05d Peak` · `S-10 Deck Spent` · `G-19 No Cards` · `G-18 Offline` |
+
+## Club is your own sign only
+
+There is no browsing other signs. Club is the room for your sign, so it is the one
+place besides the Sign Reveal where a sign may own the whole screen. Members are
+all the same sun sign, which would make the room monochrome, so **colour variety
+comes from their moon signs**: the avatar aura and the moon label carry each
+member's moon hue while the room itself stays Gemini.
+
+This also raises the screen's light count from two to four tinted sources, which
+is what Stardust does on its richer screens.
+
+## Outline weight
+
+Trading cards have thick borders and Align's did not. Stroke weights now scale by
+element size:
+
+| Element | Weight |
+|---|---|
+| Hero cards (≥250 × ≥300) | 3.5 |
+| Grid cards and tiles (≥130 × ≥130) | 2.5 |
+| Chips and pills (≤44 tall, radius 999) | 1.5 |
+| Everything else with a stroke | 1.75 |
+
+Stroke opacities below 0.35 were lifted to 0.5 so the outline actually reads.
+
+**Gotcha:** setting `strokeWeight` overrides per-side weights. A single-sided
+divider silently becomes a full box. The DEALBREAKERS rule on the card was hit by
+this and restored with `strokeTopWeight` only.
+
+## The mono rule, enforced
+
+A mono eyebrow names **a state**. It is never a sentence and never a count.
+Corrections made: the O-13 sentence eyebrow was deleted (the body copy already
+said it), and two counts moved to the sans. Legitimate survivors are chips
+(`AIR`, `GEMINI MOON`), states (`STRONG PULL`, `EXPIRES IN 6 DAYS`,
+`PEAK · 6 SECONDS LEFT`, `MUTUAL ALIGN`) and the card serial.
+
+## Stars never sit under copy
+
+Stardust's field is placed, not tiled, and is near-absent under text blocks. 490
+stars whose centres fell inside a text bounding box were cleared across the
+section.
+
+**Gotcha:** a selector matching `/starfield|atmosphere/` hit a wrapper frame whose
+children were the auroras, deleting light sources instead of stars on two screens.
+Target the inner star frame, never the wrapper.
