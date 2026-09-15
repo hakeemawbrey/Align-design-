@@ -42,6 +42,30 @@ The page is a full clone of `Align — Native Pass (2026)`; originals are untouc
 | `S-11 — Align+ Paywall` | Two-light aurora, centred trial timeline with ✦ separators, lighter-selected plan card with straddling badge |
 | `G-09 — Matches` | Wrapped grid, six signs, each carrying its own foil edge and aura |
 | `G-05 — You` | Own foil card with grain, twelve-aura Align+ pill, settings rows |
+| `O-05 — Sign Reveal` | Sign-hued background glow, drawn constellation with a vector glyph, mono eyebrow, centred serif and centred long-form prose, chrome CTA |
+
+## The reveal pattern
+
+Stardust's Sun Sign Result is the template for Align's Sign Reveal, and it is the
+one screen where the background is allowed to take a sign's hue, because the
+reveal *is* the sign. Structure, top to bottom:
+
+`sign-hued radial glow` → `luminous constellation with the glyph at its centre`
+→ `wide-tracked mono caps eyebrow` → `centred serif title` → `centred long-form
+prose, 4 to 5 lines` → `full-width glow CTA` → `quiet skip link`
+
+Glyphs must be drawn as vectors. Typing `♎` into a text node falls back to Apple
+Color Emoji and renders as a purple rounded square.
+
+**Copy voice.** Stardust's Scorpio reads: "You feel everything, show almost
+nothing, and still clock everyone in the room like it's billable hours. Intense,
+private, unshakably loyal. Trust is a one-time gift, lose it, and you don't just
+close the door, you lock it." Second person, present tense, specific, faintly
+savage, ends on a turn. Align's Libra is written to match.
+
+**Locked content.** Stardust gates by blurring the body text in place and putting
+a glowing CTA over it, rather than hiding the section. Worth adopting for Peak
+and Align+ gating.
 
 ## Known gaps
 
