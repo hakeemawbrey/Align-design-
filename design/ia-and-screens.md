@@ -210,3 +210,87 @@ of glows, is why the section reads monochrome.
 
 Coloured text was also found on 13 screens (Matches 7 runs, Deck 8, Club 5),
 which the Stardust evidence says should not exist outside chips.
+
+## The colour law, measured
+
+Derived from all 85 Stardust stills, measured as **accent area** — the share of
+pixels with saturation > 0.50 and value > 0.50, which excludes the baseline
+violets (`#2A1D4E` is S 0.62 but only V 0.31, so ground never counts as ink).
+
+### Stardust's distribution is bimodal
+
+20 of 50 product screens sit under 2%. Eleven sit above 12%. Almost nothing lies
+in between, and **every screen above 12% spends it on exactly one element.**
+
+| Screen | Accent | Shape |
+|---|---|---|
+| Moon Sign Result | 28.0% | 17.0% + 10.5% in two adjacent buckets — one blue glow |
+| Sun Sign Result | 19.5% | 18.8% in one bucket — one gold glow |
+| Zodiac Library | 18.9% | 18.4% in one bucket — one violet glow |
+| Daily Guidance | 1.9% | five buckets, 0.2–0.7% each |
+| Home Dashboard | 1.2% | five buckets, 0.1–0.3% each |
+
+**Object count does not predict colour area.** The 16-icon symptom grid measures
+2.50%; one glow measures 28.03%.
+
+### The rule that follows
+
+A screen earns the 15–28% hero glow **only when its top half is artwork.** Birth
+Chart, Zodiac Library and Sign Reveal have a large monochrome subject for the
+glow to sit behind. Content and list screens carry text up there, and a hero glow
+simply erases it — confirmed by building it wrong first: Chat at 18.9% lost its
+`EXPIRES IN 6 DAYS` header, Glossary at 14.4% lost its eyebrow.
+
+Content screens instead take **many distinct hues in small objects**. This is the
+counter-intuitive half: Glossary at **1.42% across five hue buckets reads far more
+colourful** than the same screen did at 14.4% in one violet wash. Stardust's Home
+Dashboard is the proof — 1.2%, and nobody calls it drab.
+
+So the failure was never "not enough colour". It was **two hues repeated on every
+screen**. The fix is variety of hue, not quantity of ink.
+
+### Hero glow recipe
+
+```
+radial gradient, stops  0: a .95 · 0.45: a .84 · 0.72: a .42 · 1: a 0
+colour = mix(sign.core, sign.deep, 0.20)      // NOT toward deep — a dark tint
+                                              // never clears V > 0.50
+ellipse ~520x520, centred x, centre y ~190    // top ~55%, prose stays on dark
+LAYER_BLUR 100
+```
+A 0.45-deep mix at alpha 0.70 composites to V 0.46 over `#12052D` and measures
+**0.54%** — invisible to the metric and nearly invisible to the eye. The same
+glow at a 0.20 mix and alpha 0.95 measures **21.09%**.
+
+### Which hue a screen takes
+
+| Screen kind | Hue source | Precedent |
+|---|---|---|
+| Sign Reveal | the revealed sign | Sun gold `#9F8C38` vs Moon blue `#4B5CBD`, consecutive screens, same cycle phase |
+| You, Club | your own sign | — |
+| Match, Veil Lifts | the pair, two blooms meeting | — |
+| Chat | the person you matched with | — |
+| Calendar, Glossary, Post | held constant, decorative | Zodiac Library holds violet `#442590` across three different signs |
+| Deck | none — the card carries it | the founder decision that the card is the one dense object |
+| Sky | the wheel is the colour | Home Dashboard, 1.2% |
+
+### Corrections to earlier rules in this document
+
+- **"Neighbours never repeat a hue" — deleted.** Invented, and false. On the Mood
+  picker, Mood swings (319°) and Headache (332°) are layout neighbours in one hue
+  family; the symptom grid runs green x3 and blue x3 among 16 icons.
+- **Ordered hue sweeps are reserved for time.** The wheel is legitimate because it
+  encodes Libra season, day 7 of 30. Nothing else may sweep.
+- **Selection is not a ~15-value lift.** There are three tiers: stroke-only
+  (calendar date), +15 fill lift with a 1px lavender stroke (chips, tags), and
+  **+65–80 onto cream `#E6EED6`** (segmented controls, icon discs) — whose
+  container is itself a saturated violet `#31167A`, well above the ground.
+- **Colour does mark status and destruction.** The `PERIOD` chip is `#F11D05` at
+  S 0.98; Delete Your Account is a fully saturated sweep. It still never touches
+  typography, tab bars, charts or page dots — the tab bar is a 0.44 value lift
+  with zero hue on every screen measured.
+- **The CTA does not desaturate because the page is colourful.** Sweep-CTA screens
+  average 10.5% accent versus 2.5% for flat-CTA screens — the correlation runs the
+  other way. It desaturates for *commercial register*: the paywall is the lowest
+  of all 37 onboarding screens at −45%. Our holo button therefore stays as it is
+  everywhere except the paywall.
