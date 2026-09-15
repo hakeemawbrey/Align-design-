@@ -294,3 +294,72 @@ glow at a 0.20 mix and alpha 0.95 measures **21.09%**.
   other way. It desaturates for *commercial register*: the paywall is the lowest
   of all 37 onboarding screens at −45%. Our holo button therefore stays as it is
   everywhere except the paywall.
+
+## Result
+
+Accent area measured on every screen in the section, rendered at full size and
+sampled the same way as the Stardust corpus.
+
+| Screen | Accent | Hues | Screen | Accent | Hues |
+|---|---|---|---|---|---|
+| O-05 Sign Reveal | 19.9% | 1 | S-20 Glossary | 1.3% | 5 |
+| O-02 Arrival | 19.8% | 1 | S-05d Peak | 1.2% | 4 |
+| G-05 You | 17.8% | 1 | S-08 Veil Lifts | 1.1% | 1 |
+| S-17 Club | 13.7% | 5 | S-17b Post Detail | 0.8% | 4 |
+| G-09 Matches | 11.8% | 6 | O-13 Photo Upload | 0.4% | 2 |
+| S-11 Paywall | 7.2% | 3 | S-09 Chat | 0.2% | 1 |
+| S-14 Sky | 3.1% | 8 | G-19 No Cards | 0.1% | 1 |
+| S-07 Match | 2.4% | 3 | G-18 Offline | 0.0% | 0 |
+| S-15 Calendar | 1.5% | 2 | S-10 Deck Spent | 0.0% | 0 |
+| S-05 Deck | 1.5% | 4 | S-09b Alignment | 0.0% | 0 |
+
+**Distribution: 5 of 22 screens at or above 11%, against Stardust's 11 of 50.**
+23% versus 22% — the bimodal shape now matches. The section mean rose from
+roughly 2% to 4.7%.
+
+### What changed, per mechanism
+
+- **Hero glow** on the four screens whose top half is artwork: Sign Reveal
+  (Libra), You and Club (Gemini, the account's own sign), Arrival (the
+  onboarding spike, placed where the hero object first appears — Stardust puts a
+  hard colour beat at exactly that step).
+- **Per-object sign hue** where a screen lists people or terms: Glossary's five
+  rows carry the hue of the planet each term names, Post Detail's avatars carry
+  each member's own sign, Club's carry each member's moon.
+- **Ordered sweep** on the Calendar's moon strip — crescents on the left half,
+  seven spectrum orbs on the right, hue descending. Legitimate because the strip
+  encodes the month.
+- **Contiguous run** on the month grid: days 20–23 banded for the retrograde
+  tail, everything else left grey. Stardust colours 4 of 31 cells and no more.
+- **Two-sign conversation** in Chat: Juniper's bubbles take her ember, yours stay
+  violet. The glow behind them registers almost nothing because opaque bubbles
+  cover it — the colour had to move onto the objects.
+
+### Still quiet, by choice
+
+Splash, Birth Data, Deck Spent, No Cards, Offline and the Alignment sheet sit at
+0.0–0.1%. Stardust's own floor is 0.02%, and its Settings screens carry *less*
+bright colour than its Home tab. Empty states and forms are where the eye rests.
+
+### One rule nearly broken
+
+Tinting Juniper's bubbles by left-edge position also caught the **tab bar**,
+which sat at x=32. Colouring the nav is the one rule that holds on all 50
+Stardust product screens without a single counter-example — the active tab is a
+0.44 value lift at zero hue. Reverted to the neutral plate and its lavender
+stroke.
+
+### Known divergence
+
+Align sets sign names as coloured text (`Scorpio moon`, `Cancer`), which Stardust
+never does — its only coloured text-like elements are filled status chips. This
+is kept deliberately: sign identity is the product's subject, and the labels are
+carrying real hue variety across Club and Post Detail. Worth revisiting if the
+screens start to feel noisy.
+
+### Open
+
+`O-05 Sign Reveal` reveals **Libra**, but `G-05 You` establishes the account as
+**Hakeem, 32 — Gemini · Air · Sagittarius moon**. One of the two is wrong. The
+reveal's prose is written specifically for a Libra, so this is a copy decision
+rather than a mechanical fix.
