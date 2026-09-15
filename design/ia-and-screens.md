@@ -38,11 +38,11 @@ The page is a full clone of `Align — Native Pass (2026)`; originals are untouc
 | Screen | State |
 |---|---|
 | `S-05 — The Deck` | Real card cloned from All Screens, Libra foil edge, aura bloom, pips, fanned peek stack, gesture rails |
-| `S-14 — Daily Horoscope` | Orb hero, gradient insight panels, alignment meter, chrome CTA, starfield |
+| `S-14 — Daily Horoscope` | Orb hero, gradient insight panels, alignment meter, holo button, starfield |
 | `S-11 — Align+ Paywall` | Two-light aurora, centred trial timeline with ✦ separators, lighter-selected plan card with straddling badge |
 | `G-09 — Matches` | Wrapped grid, six signs, each carrying its own foil edge and aura |
 | `G-05 — You` | Own foil card with grain, twelve-aura Align+ pill, settings rows |
-| `O-05 — Sign Reveal` | Sign-hued background glow, drawn constellation with a vector glyph, mono eyebrow, centred serif and centred long-form prose, chrome CTA |
+| `O-05 — Sign Reveal` | Sign-hued background glow, drawn constellation with a vector glyph, mono eyebrow, centred serif and centred long-form prose, holo button |
 
 ## The reveal pattern
 
@@ -73,3 +73,29 @@ and Align+ gating.
 - Grain is real on the You card only; elsewhere it remains a spec note.
 - `Peek` still appears in layer names on the source pages, against the brand rule.
 - Deck size is quoted as 18, 15 and 15 across three screens on the source pages.
+
+## The holo button
+
+Align's primary action. It is called the **holo button** and it is never tinted,
+never sign-coloured, and never rainbow. Because it is the same pale iridescent
+surface on every screen, it is the only thing that reads unambiguously as *the*
+action.
+
+```
+314 × 54 · radius 999 · no stroke
+fill: linear, transform [[0.946, 0.054, 0], [-2.191, 0.940, 1.126]]
+  0 → #f6edff   0.45 → #fff7ec   0.8 → #eaf4ff   1 → #ffeff7
+halo: drop shadow #f6edff at 35%, radius 30, offset 0
+lift: drop shadow #05000F at 45%, radius 26, spread -8, y +10
+label: EB Garamond Medium Italic 19 in #3a2c4e, with an optional ✦ at 13
+```
+
+Two mistakes made and corrected during this pass, both worth not repeating:
+
+1. **An Align+ pill built from all twelve zodiac cores swept horizontally.** It
+   borrowed Stardust's device of desaturating its own hue wheel onto the upsell
+   button. On Align it was simply too colourful, and it put colour on the one
+   element that must stay neutral.
+2. **A sign-tinted halo on the Sign Reveal CTA.** The glow under the button was
+   Libra orchid rather than `#f6edff`. Even on the one screen where the
+   background carries a sign, the holo button does not.

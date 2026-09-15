@@ -51,7 +51,7 @@ Four causes, in order of impact:
 `accent/gold` `#F2C75C` · `accent/gold-deep` `#C98F2E` · `accent/ember` `#E8628A` · `accent/violet` `#9A7BE0`
 `element/fire` `#F08A5D` · `element/earth` `#8FBF7F` · `element/air` `#8FC7E8` · `element/water` `#B48FE8`
 
-### Primary CTA — chrome, kept from Align unchanged
+### The holo button — kept from Align unchanged
 
 Align already had this and it is better than anything gold. Lifted verbatim from
 `CTA · Verify another way`.
@@ -63,7 +63,7 @@ Align already had this and it is better than anything gold. Lifted verbatim from
 - Lift: drop shadow `#05000F` at 45%, radius 26, spread -8, y +10
 - Label: EB Garamond Medium Italic 19 in `#3a2c4e`
 
-One chrome CTA per screen. **Gold stays an accent, never the button.**
+One holo button per screen. **Gold stays an accent, never the button.**
 
 ### Foil — the sign colour rolled through white
 
@@ -95,8 +95,8 @@ opacity. Glow must pool, never flood: the indigo base stays dominant.
 | Screen | What changed |
 |---|---|
 | `S-05 — The Deck` | Mystery Card gets a gold foil edge, real elevation and two staggered peek cards behind it, so the feed finally reads as a deck per the TCG spec. Spark/Rub/Align become colour dots with serif sentences. |
-| `S-14 — Daily Horoscope` | Glowing moon orb hero with a dotted orbit ring. Gradient insight panels. Alignment meter. Chrome CTA. |
-| `S-11 — Align+ Paywall` | Starfield, foil struck medallion, benefit rows, dual pricing cards with the Houston Founding Member at $10, chrome CTA. |
+| `S-14 — Daily Horoscope` | Glowing moon orb hero with a dotted orbit ring. Gradient insight panels. Alignment meter. Holo button. |
+| `S-11 — Align+ Paywall` | Starfield, foil struck medallion, benefit rows, dual pricing cards with the Houston Founding Member at $10, holo button. |
 
 ## Verified against Stardust's real screens
 
@@ -115,7 +115,7 @@ corrections followed:
    than the unselected one and carries an overlapping free trial badge.
 
 Stardust's own primary paywall CTA is a pale iridescent pill with dark text,
-which confirms Align's existing chrome CTA was already the right answer.
+which confirms Align's existing holo button was already the right answer.
 
 ## The gap is narrower than it looks
 

@@ -67,7 +67,7 @@ pips, sign chips, and the aura art itself.
 **Where it must never appear:** nav active state, the primary CTA, backgrounds,
 and every semantic state. Scorpio is a red and Capricorn is a green — letting
 signs carry status would make half the zodiac look permanently broken. The
-pearlescent CTA stays sign-neutral on every screen, which is what makes it read
+holo button stays sign-neutral on every screen, which is what makes it read
 as *the* action.
 
 **Budget:** one sign-coloured region per screen, three elements maximum, and
