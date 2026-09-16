@@ -113,21 +113,25 @@ Everything else is cream on near-black violet.
 Stated before and unchanged. It is iridescent, not chromatic, and it is Align's,
 not derived from anything. No sign hue, no rainbow, no twelve-aura sweep.
 
-### Every screen is a sky, so put bodies in it
+### Every screen is a sky, but the furniture is geometry
 
-A starfield alone is not space. Stardust fills its screens with **things** —
-planets with rings, crescent moons, suns with orbit rings, constellations drawn
-as dots and hairlines, four-point sparkles. Colour arrives attached to those
-bodies.
+A starfield alone is not space. Stardust fills its screens with objects. Align
+does too — but the objects are drawn from the mark, not from science fiction.
 
-Align's screens were starfields with nothing in them. Each screen now carries:
+**Ringed planets were tried and removed.** They read as sci-fi props sitting in
+the background, not as anything Align means. The replacement vocabulary is the
+mark's own:
 
-| Element | Spec |
-|---|---|
-| Ringed planet | body 24–38px radial aura, ring 1.85x wide and 0.52x tall, 1.6px stroke, rotated 14 degrees |
-| Crescent moon | a cream-to-lavender disc with a ground-coloured disc offset over it, clipped |
-| Constellation | 5–6 dots at 3.4px with 1px cream hairlines at 0.26, drawn as a real figure |
-| Sparkle | 4-point star, inner radius 0.16 so the points stay long and thin, 8–13px |
+| Figure | What it is | Spec |
+|---|---|---|
+| Vesica piscis | two overlapping circles — the figure at the heart of the seed of life, and the natural symbol for two charts meeting | 1px cream, 0.42 opacity, circles offset by half a diameter |
+| Seed of life | the mark's seven circles plus its containing ring, small | 1px cream, 0.34 inner / 0.26 outer |
+| Concentric rings | three rings at 1, 0.68 and 0.38 of the size, with a lit dot at the centre | 1px cream, 0.40 falling to 0.28 |
+| Constellation | 5–6 dots at 3.2px joined by 1px cream hairlines at 0.24, drawn as a real figure | — |
+| Sparkle | 4-point star, inner radius 0.16 so the points stay long and thin | 7–13px, 0.55–0.92 |
+
+No planets, no saturn rings, no crescent moons. The sky is made of the same
+geometry the logo is made of.
 
 **Placement is computed, never guessed.** Candidate positions are rejected if
 they fall within any text or control bounding box plus 10–14px. Bodies sit in the
