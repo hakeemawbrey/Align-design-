@@ -42,12 +42,12 @@ row of card edges.** Twelve spines, one per sign, in calendar order:
 
 ```
 9 x 18px, radius 2.5, evenly spaced across the container
-fill: linear gradient ACROSS the short axis — deep · core · deep
-      so the foil catches light along the card's length, not in a blob
-seasons passed   opacity 0.5, core alpha 0.5
-seasons upcoming opacity 0.9, core alpha 0.82
-current season   9 x 28px, full foil ramp through #fff9f2 at the midpoint,
-                 1px cream stroke at 0.5, core-tinted glow radius 12
+fill: deep · core · deep across the short axis — the sign's aura
+      glowing through the card, not a metallic sheen
+each spine carries its own core-tinted glow
+seasons passed   opacity 0.5
+seasons upcoming opacity 0.9
+current season   9 x 28px, 1px cream stroke at 0.5, glow radius 14
 ```
 
 Same principle as their strip — a persistent, ordinal "you are here". Different
@@ -67,10 +67,24 @@ glass label    Sun in Libra                the transit, not an action
 The season is still there. It is no longer the headline, because the season is
 not the thing you spend.
 
-### Aura belongs to people, not to pages
+### The aura is the colour instrument
 
-Their glow is weather — an aurora behind the content. **Ours is a person's
-aura**, so it attaches to an entity and inherits that entity's sign:
+This is the single most important rule in the file. **All colour in Align is an
+aura** — a body lit from inside, with a cream core, the sign's hue around it, and
+a glow thrown outward. Never a flat swatch, never a metallic foil ramp, never a
+coloured panel.
+
+```
+radial gradient  0: #fff9f2 · 0.30: sign core · 0.72: sign deep · 1: sign deep
+two stacked glows: core at 0.75 alpha, radius 0.7x size
+                   core at 0.35 alpha, radius 1.6x size
+```
+
+Foil is reserved for the face of an actual card. Everywhere else — orbs, avatars,
+spines, planets, chips — the instrument is the aura.
+
+Their glow is weather, an aurora behind the content. **Ours is a person's aura**,
+so it attaches to an entity and inherits that entity's sign:
 
 | Surface | Whose aura |
 |---|---|
@@ -98,6 +112,28 @@ Everything else is cream on near-black violet.
 
 Stated before and unchanged. It is iridescent, not chromatic, and it is Align's,
 not derived from anything. No sign hue, no rainbow, no twelve-aura sweep.
+
+### Every screen is a sky, so put bodies in it
+
+A starfield alone is not space. Stardust fills its screens with **things** —
+planets with rings, crescent moons, suns with orbit rings, constellations drawn
+as dots and hairlines, four-point sparkles. Colour arrives attached to those
+bodies.
+
+Align's screens were starfields with nothing in them. Each screen now carries:
+
+| Element | Spec |
+|---|---|
+| Ringed planet | body 24–38px radial aura, ring 1.85x wide and 0.52x tall, 1.6px stroke, rotated 14 degrees |
+| Crescent moon | a cream-to-lavender disc with a ground-coloured disc offset over it, clipped |
+| Constellation | 5–6 dots at 3.4px with 1px cream hairlines at 0.26, drawn as a real figure |
+| Sparkle | 4-point star, inner radius 0.16 so the points stay long and thin, 8–13px |
+
+**Placement is computed, never guessed.** Candidate positions are rejected if
+they fall within any text or control bounding box plus 10–14px. Bodies sit in the
+sky, not on the copy. The first pass placed a planet under a post card because
+the reject list missed the post frames; the reject list must cover every content
+container, not just text.
 
 ## 4. Where Align deliberately diverges
 
