@@ -148,3 +148,30 @@ does not. Hero cards 3.5, grid tiles 2.5, chips 1.5, everything else 1.75.
 **We are gesture-only.** Stardust uses floating Done buttons and full-width CTAs
 throughout. Align's affordances are rails and holds, so colour cannot be spent on
 button fills the way theirs is.
+
+## 5. Where space goes, and where it does not
+
+Celestial bodies are placed by a clear-region test, never by hand-picked
+coordinates. A candidate is rejected if it lands within 9px of any text node or
+any content block. Full-screen wrappers (`content`, `starfield`, scrims, the
+aurora ellipses) are excluded from that test — counting them made every position
+look occupied, and the first two attempts placed nothing at all.
+
+Bodies are then clamped inside the frame: at least 14px from either side, below
+the status bar, and 96px clear of the tab bar. Without the clamp they hang off
+the edge and read as a crop rather than a distant object.
+
+**Dense screens get no sky, and that is correct.** Matches is six cards from
+y 139 to 751 plus a header and a tab bar — only the 12px gutters remain. Deck,
+Paywall and Peak are the same. The placement test refuses them, and it should:
+their colour comes from the cards themselves, which is the deck motif doing its
+job. A planet floating over a card grid would be decoration for its own sake.
+
+**Empty states get the most sky**, which is the inverse of where the first pass
+put it. Splash, Deck Spent, No Cards and Offline are mostly ground by definition,
+so they carry a planet or a constellation plus five or six sparkles. Those were
+the four screens measuring under 0.1% accent; they are where space belongs.
+
+One preferred quadrant is assigned per screen so no two put their body in the
+same place — the first run scored the top edge highest and dropped four bodies at
+the identical spot.
