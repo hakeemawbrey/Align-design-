@@ -80,3 +80,53 @@ mark wins until someone decides otherwise.
 
 The zodiac foils need re-deriving from the seven chakras rather than sitting
 beside them as a second, unrelated palette.
+
+## The card back
+
+The mark's two layers are also the deck's back. Built as
+`Card back · Align` on the Stardust page, 322 x 528 at radius 20 — the same
+proportion as the Mystery Card.
+
+```
+ground   linear foil rake across the diagonal
+         #150733 · #2a1160 · #3d1a7d · #2a1160 · #150733
+border   3.5px cream at 0.5 — trading cards have heavy borders
+inset    a second rule 14px in, 1.25px cream at 0.22
+geometry seed of life at 236px, 1px cream at 0.30
+column   seven chakras at 15px down the centre axis, each lit as an aura
+         with a 14px core glow and a 34px outer glow
+```
+
+This is the one place foil is allowed, because it is an actual card face.
+Everywhere else the instrument is the aura.
+
+## The fan
+
+Stardust's Tarot Card Picker overlaps its card backs in an arc with one card
+lifted. Align has a real deck, so the peek stack behind the Mystery Card does the
+same thing — except the front card is 322 of 390 points wide, which leaves no
+room for a fan hidden behind it.
+
+The backs therefore **splay out past the front card's footprint** rather than
+stacking under it:
+
+```
+peek 1   268 x 470, centre (128, 430), rotated -16 degrees
+peek 2   268 x 470, centre (262, 424), rotated +16 degrees
+fill     the card-back foil, lifted to #231049 / #3d1a7d / #5426a8
+border   3px cream at 0.62 so the edge reads against the ground
+shadow   0/14 blur 30 spread -6 at 60% — the cards sit above the ground
+```
+
+**Gotcha:** rotating a Figma node moves it, because rotation is applied about the
+origin rather than the centre. Setting `relativeTransform` directly and solving
+for the origin keeps the centre where you put it:
+
+```js
+tx = cx - (cos*w/2 - sin*h/2)
+ty = cy - (sin*w/2 + cos*h/2)
+```
+
+Two earlier attempts failed silently because the backs were geometrically correct
+but sat entirely behind the front card, and because their fill was too dark to
+separate from the ground.
