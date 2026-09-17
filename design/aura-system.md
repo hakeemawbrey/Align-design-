@@ -169,3 +169,8 @@ hero glow         the sign's rim colour, opacity ~0.7, the existing spotlight
 The blurred ellipse as a mask is what gives the feather — Figma masks honour
 the mask layer's blur. On a card panel (S-05) the tile is clipped by the panel
 anyway, so a plain `FILL` image fill is enough there.
+
+**Two tiles melting on a foil card (S-21):** the `SCREEN` blend must be on the
+image nodes themselves, inside a `PASS_THROUGH` wrapper that holds the mask. A
+`SCREEN` wrapper composites its masked contents normally and the rims show.
+Skip the well there — on a bright foil it reads as a dark ring.

@@ -77,3 +77,10 @@ subject test is the axis that moved, from 1 to 5, which is the whole point.
 G-09 runs above the instrument band, but all of its colour is people — six
 subjects, six hues, no atmosphere — which is the rule that matters more than
 the band. The per-sign card strokes now agree with the auras inside them.
+| O-05 Sign Reveal · Taurus (figure tile hero) | 5.43 | 6.34 | 0.246 | 2 | Sun Sign Result 19.47 / 6.34 / 0.264 | "a green bull" — **5** (was 1) |
+| S-21 Alignment (Libra × Taurus aura tiles, screened) | 9.81 | 7.13 | 0.225 | 1 | Cycle Insights 0.27 | "two auras melting" — 4 (was 1) |
+
+Placement note for two tiles on a foil card: the screen blend has to sit on
+the image nodes themselves, not on a wrapper frame with a mask inside — a
+masked wrapper composites normally and the tile rims show. No well under
+screened tiles on a bright foil; it reads as a dark ring.
