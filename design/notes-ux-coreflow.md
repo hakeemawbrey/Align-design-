@@ -85,24 +85,44 @@ rest of the file uses an em dash. Fixed on all seven chat screens.
 
 ---
 
+## 5. Four more defects on the chat and deck screens
+
+| Screen | Was | Now |
+|---|---|---|
+| S-06 | `IF SHE ALIGNS TOO, THE CARD REVEALS HER — SEE S-08` | `IF SHE ALIGNS TOO, HER CARD TURNS OVER` — the rule, not the frame number |
+| S-09 | `Send` drawn at full strength beside an input reading `Align back to write` | label to 32% and the control to 55% — a locked channel should look locked |
+| S-05b | `No photo until you both align` at 62% over the brightest part of the aura | 92% plus a 4px dark drop shadow, so it survives the bloom underneath |
+| S-09 ×7 | the avatar a blank 44px disc | Juniper's Libra orchid aura |
+
+### The avatar was the one place the instrument was missing
+
+`align-design-language.md` makes the aura Align's colour instrument, and the
+product's whole promise is that **there is no photo until you both align**. So
+a blank grey circle in the chat header was not a neutral placeholder — it was
+the one screen where the veil had nothing behind it, on a screen whose own copy
+reads *"Her glow reached for yours."* There was no glow.
+
+The 33px slot inside the avatar ring already existed and already held a radial
+gradient; it was simply transparent at every stop. It now carries Libra —
+ORCHID `#e85ac8`, light `#f8c4ee`, deep `#4a0f3c` — as a 0.92 → 0.82 → 0.45 → 0
+ramp. Her sign is what you see until her face is earned.
+
+**One wrong turn worth recording:** the first attempt selected the disc by
+y-band alone and hit the *back button's* 44px hit area on all seven screens,
+putting an orchid bloom behind the chevron. Reverted and re-targeted by x —
+back button sits at x 24, avatar at x 80. Select header-band furniture by x,
+not by size and row alone.
+
+---
+
 ## Still open
 
-1. **S-06 carries an in-screen cross-reference.** `IF SHE ALIGNS TOO, THE CARD
-   REVEALS HER — SEE S-08` (`932:2021`) is at depth 5, inside the phone. It is
-   spec language shown to the user.
-2. **"Peak" or "Peek".** The frames say `S-05d — Peak · Photo Open`, the deck
+1. **"Peak" or "Peek".** The frames say `S-05d — Peak · Photo Open`, the deck
    control says `Hold to Peak`, and the inner captions say `Peek`. The mechanic
    is a brief look, which is *peek* — but "Peak" is used across the bespoke
    section too, so this is a vocabulary decision, not a typo to silently fix.
-3. **Canvas order does not follow flow order.** Child order ends with S-03
+2. **Canvas order does not follow flow order.** Child order ends with S-03
    Dealing and S-04 Your Stack, which are beats two and three. Reading the
    section top to bottom does not walk the product.
-4. **S-09's avatar is a blank grey disc** on a screen whose whole subject is
-   her glow. The aura is Align's colour instrument; this is the one place it
-   is conspicuously absent.
-5. **S-09's Send button looks enabled** while its input reads `Align back to
-   write`. A disabled control should look disabled.
-6. **S-05b's `No photo until you both align`** is set at low contrast directly
-   over the brightest part of the aura, and is hard to read.
-7. **S-05c "loading" renders a complete card.** A skeleton that shows every
+3. **S-05c "loading" renders a complete card.** A skeleton that shows every
    field is not a skeleton.
