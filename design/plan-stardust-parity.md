@@ -155,14 +155,36 @@ that applies fill, grain, glow, glyph knockout and constellation. Build **three
 first** — Gemini (us), Libra (Juniper), Virgo (the second card) — because those
 three unblock every screen currently in the file. The other nine follow.
 
-### W2 — Rezone the app
+### W2 — Rezone the app, and fix the volume curve
 
-Go screen by screen and assign a zone, then strip what does not belong.
+Reading all 88 screens produced a sharper version of this (`stardust-teardown.md`
+§1). Stardust's colour is not spread evenly — it is **front-loaded into
+onboarding and then withdrawn**:
+
+| | median accent |
+|---|---|
+| Stardust onboarding (32 screens) | **19.94%** |
+| Stardust product (50 screens) | **2.03%** |
+| Align product (5 measured) | 5.27% |
+
+Our product surface runs two and a half times hotter than theirs, and we have no
+loud onboarding to contrast against. So this workstream is mostly **subtraction**:
+
+- **product screens down to a 2-3% median** — Deck, Matches, Chat, Match, expiry
+- **onboarding up to an 18-20% median** — this is where the art budget goes
+- the gap between the two is what makes Stardust feel rich; a flat medium
+  everywhere is what makes ours feel like one long purple screen
+
+Then go screen by screen and assign a zone, stripping what does not belong.
 
 - **Instrument** (Deck, Matches, Chat, Match, expiry): delete the ambient
   glow ellipses and the sacred-geometry figures. Ground goes flat near-black.
   The only colour is the card's own art and state colour. This will *lower*
   the accent score on those screens and that is correct.
+- **Every aura, everywhere**: shrink it, raise its core brightness, tighten the
+  falloff, separate it from its neighbours. Stardust's coloured lobes are small
+  bright spheres that read as light sources; ours are large dim washes that read
+  as fog. This is why the veiled photo looks like a missing asset.
 - **Oracle** (Chart, Alignment, Guidance, Club, Glossary, Sky): keep one
   saturated field, but convert it from a floating blurred blob into a
   **spotlight positioned behind the drawn hero**. One hue. One figure.
@@ -183,7 +205,13 @@ highest-leverage single asset after W1.
 
 ### W4 — Make the astrology decide something, visibly
 
-Three data graphics, replacing three sentences:
+Stardust's strongest technique is that **the ground hue is driven by state** —
+the home screen goes crimson during menstruation and violet during the
+follicular phase. Colour is never arbitrary there, so it never feels applied.
+Align's equivalent: the ground follows **tonight's sky** — the moon's current
+sign, or the dominant element in the deck just dealt.
+
+Then three data graphics, replacing three sentences:
 
 | now | becomes |
 |---|---|
@@ -237,6 +265,14 @@ named Stardust screen. Six axes, 0-5:
 
 Scores land in `design/scores.md` with the date and the Stardust screen they
 were judged against, so the trend is visible rather than asserted.
+
+---
+
+## 6. Reading order
+
+`stardust-teardown.md` is the evidence base — all 88 screens, the zone
+definitions, the illustration spec, the component vocabulary. This file is the
+work that follows from it.
 
 ---
 
