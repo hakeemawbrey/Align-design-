@@ -322,3 +322,21 @@ the oracle's figures and the frame. Wave 4 is filler between art waves. Wave 6
 last because it multiplies whatever exists.
 
 Nothing new is built on the old blur. S-02 and S-06 open Wave 1, not before.
+
+---
+
+## 6. Identity, settled
+
+The account is **Hakeem — Taurus**, not Gemini. The match is **Juniper — Libra**.
+The second dealt card stays **M. — Virgo**. So the first three figures are
+Taurus, Libra, Virgo, and Gemini is not needed until Wave 5.
+
+Everything that named Gemini for the account flips: `G-05 You`, `G-23 Your
+Sign`, `G-24`, `G-25 Your Element` (Air → **Earth**), `G-26 Your Ruler`
+(Mercury → **Venus**), `O-05 Sign Reveal`, and the Club, which is now the
+Taurus room. The moon (Sagittarius) is kept as it was, since only the sun
+sign was given.
+
+**Venus rules both Taurus and Libra.** Your ruler and hers are the same
+planet — real astrology, and the strongest possible hook for S-21 Alignment
+and G-26. Use it.
