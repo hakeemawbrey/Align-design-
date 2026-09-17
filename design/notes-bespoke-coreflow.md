@@ -79,6 +79,38 @@ once `layoutSizingVertical = 'HUG'` is set after appending.
 
 ---
 
+## The pearl holo button
+
+Align's primary CTA, and it is not a generic light gradient. Lifted verbatim
+from O-02, O-05 and S-07:
+
+```
+314 x 54        cornerRadius 999
+fill  GRADIENT_LINEAR on a rotated axis
+      gradientTransform [[0.9462487, 0.05375128, 0],
+                         [-2.1914625, 0.93969262, 1.12588489]]
+      0.00  #f6edff      violet cream
+      0.45  #fff7ec      warm cream
+      0.80  #eaf4ff      cool cream
+      1.00  #ffeff7      pink cream
+fx    DROP_SHADOW  r30  #f6edff @ 0.35    the pearl bloom
+      DROP_SHADOW  r26  #05000f @ 0.45    the drop
+text  EB Garamond Medium Italic 19  #3a2c4e
+```
+
+Four stops cycling through the whole pearl, on a tilted axis so the sheen runs
+corner to corner. The five Guidance screens had been built with a **three-stop
+approximation** (`#fdf3e0 → #f3e2f6 → #dfe6fb`) and a gold-tinted shadow, which
+is flatter and warmer than the real thing. All six new screens now carry the
+canonical fill.
+
+**The sparkle needs its own font run.** `✦` is not in EB Garamond, so a
+single-font label silently drops it — which is why the bespoke buttons report
+`fontName: mixed`. Set the label in EB Garamond, then `setRangeFontName` the
+final character to SF Pro Regular at 15.
+
+---
+
 ## Still to build
 
 S-02 Auth, S-03 Dealing, S-04 Your Stack, S-05b next card, S-05c loading,
