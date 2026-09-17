@@ -117,3 +117,31 @@ Figma's noise fill is not exposed through the plugin API in this file. Grain is
 an image fill instead: a 120px tileable gaussian-noise PNG set as a `TILE`
 image fill on a full-frame rectangle, `OVERLAY` blend at 18%. One tile, reused
 by every screen. Generated at `scratchpad/aura/grain120.png`.
+
+---
+
+## 6. The art is the founder's boards, not vectors
+
+A vector rebuild of the mystery aura was tried and rejected — an edge-lit
+silhouette drawn from paths reads as a flat icon next to the real thing. The
+boards themselves are the asset.
+
+Pipeline (`scratchpad/cut/`): each board is cut into its 12 tiles; the
+auras' baked-in labels are removed by mirroring the symmetric right-hand band
+over the label box with a feathered mask; the figures are cropped above their
+caption block; everything is upscaled 3× (Lanczos + light unsharp — a real
+super-resolution pass would be better and is worth doing before ship). The
+24 PNGs are uploaded through the Figma MCP `upload_assets` as fills on named
+rectangles:
+
+```
+Kit · Aura photos   1426:855   Aura photo · <Sign>   1122 × 1026 source
+Kit · Figures       1426:868   Figure · <Sign>       1038 × 870 source
+```
+
+Use them as image fills (`FILL`) on the aura panel of a card, the avatar disc,
+the hero of an oracle screen. The vector Taurus in `Kit · The twelve figures`
+stays as a record of the attempt only.
+
+Contact sheets: `design/assets/aura-photos-contact.png`,
+`design/assets/figures-contact.png`.
