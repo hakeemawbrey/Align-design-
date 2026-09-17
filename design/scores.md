@@ -58,3 +58,14 @@ tie, and the Scorpio screen is still plainly the better screen.
 
 Stardust 4.6, Align 1.6. **This is the entire gap**, and it is not a colour
 problem — it is that nothing in our file is drawn.
+
+## 2026-09-17 — first two screens on the founder's boards
+
+| screen | accent% | light% | contrast | hues | vs | subject test |
+|---|---|---|---|---|---|---|
+| G-23 Your Chart · Taurus (figure tile) | 8.65 | 5.34 | 0.229 | 3 | Scorpio Profile 18.93 / 5.13 / 0.217 | "a green bull" — **5** (was 1) |
+| S-05 The Deck (Libra aura tile on the card) | — | — | — | — | — | "a card, an aura photo" — 4 (was 2) |
+
+Accent is under the oracle band because the founder's boards sit on black,
+darker than Stardust's fields; light mass and contrast are at parity. The
+subject test is the axis that moved, from 1 to 5, which is the whole point.

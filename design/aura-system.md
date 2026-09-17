@@ -145,3 +145,27 @@ stays as a record of the attempt only.
 
 Contact sheets: `design/assets/aura-photos-contact.png`,
 `design/assets/figures-contact.png`.
+
+## 7. Placing a tile on a screen — the recipe that works
+
+Tried on `G-23`, in this order, and only the last one holds:
+
+1. **Bare image fill** — the tile's black ground shows as a hard rectangle on
+   the violet screen.
+2. **Vignette overlay** — no good: the black is the whole tile, not the rim.
+3. **Screen blend** — black disappears, but the tile carries a faint grain haze
+   across its full area, which brightens the rectangle uniformly.
+4. **Screen blend + feathered mask + well** — holds.
+
+```
+hero frame        clipsContent OFF
+  mask · feather  ellipse ~88% of the frame, LAYER_BLUR 26, isMask
+  Figure · <sign> image fill FILL, blendMode SCREEN
+well · hero       ellipse 1.6× the hero, at SCREEN level behind the content,
+                  #07030F radial 0.92 → 0.6 → 0, LAYER_BLUR 40
+hero glow         the sign's rim colour, opacity ~0.7, the existing spotlight
+```
+
+The blurred ellipse as a mask is what gives the feather — Figma masks honour
+the mask layer's blur. On a card panel (S-05) the tile is clipped by the panel
+anyway, so a plain `FILL` image fill is enough there.
