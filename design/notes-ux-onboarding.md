@@ -174,13 +174,22 @@ x 22 y 52, chakra column at y 52.
 
 ## Unresolved
 
-1. **The O-05 aura is a Cancer asset.** The orb is a raster image with the
-   Cancer glyph baked in (`932:1174`, image fill, no layers). Every word on the
-   screen is now Gemini; the picture is not. An overlay was tried — a cream core
-   bloom plus the `Icon / Sign · Gemini` vector — and reverted: the 12 × 14
-   source vector does not carry its geometry when scaled, and the baked glyph
-   stayed visible underneath. **This needs a Gemini aura image generated.** It
-   is the only remaining Cancer artefact in the section.
+1. ~~**The O-05 aura is a Cancer asset.**~~ **Resolved.** The medallion was a
+   198px raster with the Cancer glyph baked in, on a screen that says Gemini in
+   every other respect. An earlier attempt overlaid the `Icon / Sign · Gemini`
+   vector and was reverted because the 12 x 14 source did not carry its geometry
+   when scaled and the baked glyph stayed visible underneath.
+
+   Fixed three ways at once. A second fill in SIGNAL `#ffd84d` at blend mode
+   **COLOR** pushes the whole orb out of Cancer's cyan and into Gemini's yellow
+   while keeping the aura's luminance and form. A core bloom, 94% of the
+   medallion and centred at 0.60 of its height, covers the crab — the earlier
+   attempt failed because it was centred on the orb rather than on the glyph,
+   which sits low. And the twins are **drawn as four rounded bars** rather than
+   typed, because a zodiac character renders as Apple Color Emoji in this file.
+
+   The screen now measures 6.74% accent and every element agrees: Gemini aura,
+   twins glyph, Castor and Pollux, `SUN · GEMINI`.
 
 2. **O-03 now promises two screens that do not exist.** Making the date the one
    live question is right, and it is what Stardust does, but the birth-time and
