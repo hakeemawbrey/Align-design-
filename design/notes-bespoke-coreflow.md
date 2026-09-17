@@ -190,7 +190,46 @@ The sign name is a fixed-width text node sized for `LIBRA`. `VIRGO` is two
 pixels wider and wrapped to `VIRG / O`. Any sign swap on a card needs
 `textAutoResize = 'WIDTH_AND_HEIGHT'`, or the longer names break the row.
 
+## The chat states
+
+Five built from S-09 by cloning. The thread, the rail and the input bar are
+the same object on all five — only the **status strip** and the dimming change.
+
+A chat is **two people meeting**, so the screen carries a **vesica**: two
+192px hairline circles overlapping, 288 x 192 at x52 / y372, `#fff9f2 @ 0.20`
+on a group at 0.14 opacity. One geometry, behind the thread, never under the
+body copy.
+
+| Screen | Strip | Colour |
+|---|---|---|
+| S-09c sent | `SENT · NOT READ YET` / *She has seven days to answer.* | `#b3a6c4` |
+| S-09d typing | `JUNIPER IS TYPING` / *. . .* | `#7ED957` |
+| S-09e failed | `/\ NOT SENT · TAP TO RETRY` / *No connection...* | `#ff5a3d` |
+| S-09f expiring | `FALLS OFF ALIGNMENT IN 2 DAYS` / *Five quiet days...* | `#ff914d` |
+| S-09g closed | `THIS CONNECTION CLOSED` / *Juniper let the card go.* | `#7b7bf5` |
+
+The strip is SF Pro Semibold 9 at 12% letterspacing over SF Pro Regular 11 in
+`#efe6d6 @ 0.58`. The label carries the state colour; the sentence underneath
+never does — same discipline as the deck, where only the eyebrow is allowed to
+run hot.
+
+**S-09f also moves the frame around it**: the expiry eyebrow becomes
+`EXPIRES IN 2 DAYS` in `#ff914d` and the rail shortens to 66px, so the countdown
+reads in three places at once without three different colours.
+
+**S-09g closes the screen down** rather than putting a banner on it: eyebrow and
+rail hidden, thread to 0.48, input bar to 0.40, placeholder rewritten to
+`This channel is closed`. Nothing is removed — the conversation stays readable,
+it just stops being live.
+
+### The strip has to clear the thread
+
+First pass seated the strips at y=674 while the thread ran to y=694, so every
+strip sat on top of the last bubble. The fix is not to move the strip further
+down (the input bar is at 720) but to **hide the tail bubble** and seat the
+strip at y=637 in the space it leaves. A status strip is a turn in the
+conversation, so it should occupy a turn's worth of room.
+
 ## Still to build
 
-S-02 Auth, S-06 Expand, and the five chat states S-09c..S-09g, which clone
-S-09b.
+S-02 Auth and S-06 Expand.
