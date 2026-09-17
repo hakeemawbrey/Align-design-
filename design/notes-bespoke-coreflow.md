@@ -159,8 +159,38 @@ final character to SF Pro Regular at 15.
 
 ---
 
+## The deck states
+
+Five built from S-05 by cloning. **The card is untouched** — only the header,
+the state and the dealt person change.
+
+| Screen | Header | State |
+|---|---|---|
+| S-03 Dealing | `Dealing your deck` / *Fifteen cards, chosen by tonight's sky* | the fan, before you look |
+| S-04 Your Stack | `Tonight's deck` / *15 of 15 cards left tonight* | nothing seen yet |
+| S-05 The Deck | `Tonight's deck` / *11 of 15 cards left tonight* | the working state |
+| S-05b next card | *10 of 15 cards left tonight* | a second person dealt |
+| S-05c Reading | *Reading the stars…* | cards at 0.45 / 0.62, bloom at 0.35, no gesture legend |
+| S-05e Peek sealing | *The photo is closing* | `SEALING BACK · THE VEIL RETURNS`, bloom up to 0.9 |
+
+**S-05b deals a real second person**, not a recolour: M., 24, Virgo, Earth,
+Taurus moon, with copy that follows from the chart — *Mars on your Venus*,
+*her fixed streak stalls plans*, *Earth grounds air, you keep a steady pace* —
+and № 032/∞, `SLOW BURN` rather than `STRONG PULL`. The element chip is
+re-dressed from the air blue to the earth cream, since Virgo is an earth sign.
+This is the same error the clone version carried and it is not repeated here.
+
+**The deck had no geometry.** Per the rule, the deck is *the many*, so it now
+carries a **flower of life** — nineteen hairline circles, three rings, cropped
+off the top-right corner at 18% opacity.
+
+### A wrap to watch
+
+The sign name is a fixed-width text node sized for `LIBRA`. `VIRGO` is two
+pixels wider and wrapped to `VIRG / O`. Any sign swap on a card needs
+`textAutoResize = 'WIDTH_AND_HEIGHT'`, or the longer names break the row.
+
 ## Still to build
 
-S-02 Auth, S-03 Dealing, S-04 Your Stack, S-05b next card, S-05c loading,
-S-05e sealing, S-06 Expand, and S-09c..S-09g. The deck states clone S-05; the
-chat states clone S-09b.
+S-02 Auth, S-06 Expand, and the five chat states S-09c..S-09g, which clone
+S-09b.
