@@ -77,6 +77,54 @@ line runs from the centre out to the arc. Fill the node instead and set
 `resize(334, 10)` on the read-row stack hid all three rows; they only appear
 once `layoutSizingVertical = 'HUG'` is set after appending.
 
+### The alignment graphic, second pass
+
+The first version was a donut ring with two uniform circles inside it. Read as
+two identical dots rather than two people, and the ring was a borrowed Stardust
+form sitting on a screen that had nothing else of Stardust in it.
+
+Rebuilt so **the card is the object**, since the card is what Align is:
+
+```
+card   326 x 366  r20
+       fill   palindromic foil, #231049 → #5426a8 at centre → #231049
+       stroke #fff9f2 @0.62  w3
+       inset  keyline #fff9f2 @0.22  w1.25  r12
+       fx     DROP_SHADOW r30 #05000f @0.60
+well   a dark radial behind the pair
+auras  two irregular lobes, rotated, blendMode SCREEN, LAYER_BLUR 15
+melt   a warm core where they overlap, SCREEN
+glyphs ♎ and ♊ drawn as bars and an arc, each glowing in its own sign colour
+text   the reading, the two charts, and ALIGN · № 031/∞
+```
+
+The two auras are **rotated ellipses of different sizes**, not matched circles,
+and they are set to `SCREEN` so the overlap genuinely brightens into a third
+colour rather than one sitting on top of the other. A small warm core sits at
+the intersection to give the melt a centre.
+
+The foil, the cream edge and the keyline then carry down into the segmented
+control, the read rows and the tab bar, so the whole screen is one object
+family rather than a card floating on unrelated furniture.
+
+**Screening a warm colour over violet foil destroys it.** Gold `#ffd84d`
+screened over the card's `#5426a8` centre lands at roughly `(1, 0.87, 0.76)` —
+saturation 0.24, which reads as near-white. The Gemini lobe measured **zero**
+amber. The fix is a dark well behind the pair, which is also the truer idea:
+on a card the aura is a window, not a sticker. With the well, amber returns at
+0.72% and the hue count goes 2 → 3.
+
+```
+                        accent   hues
+Stardust Sun Sign       19.22%    4
+Align S-21 (card)        7.78%    3
+Stardust Moon Insight    3.26%    5
+Stardust Home Dashboard  1.13%    6
+```
+
+Above Stardust's content screens, because it is no longer a content screen —
+it is a card screen, and Align's own card screens run around 20%.
+
 ---
 
 ## The pearl holo button
