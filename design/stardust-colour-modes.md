@@ -177,3 +177,58 @@ and washed out every control on it.
 
 **The rule: a field lights an object, not a screen.** Put it behind art, a
 medallion, an orb, an empty quadrant. Never behind body text or controls.
+
+---
+
+# Giving every screen its own hue
+
+Fixing the z-order made the atmosphere visible; it did not make it *read*.
+Two changes did.
+
+**Stop double-softening.** Peak alpha 0.50 under a 110px blur never clears the
+threshold. The auras now ramp 0.88 / 0.76 / 0.37 / 0.11 / 0 under a **34px**
+blur — enough to stay atmospheric, not enough to erase itself.
+
+**Draw the hue from what the screen is about.** Every screen previously carried
+the same amber-and-violet pair. Now:
+
+| Section | Where the hue comes from |
+|---|---|
+| Onboarding | the chakra ladder, root to crown, one per step — the progress metaphor the flow already used |
+| Core Flow | the subject's sign: J. is Libra orchid, M. is Virgo rose quartz, the chat states each take their own |
+| Guidance | the reader's chart — Gemini signal, Air in ion blue, Mercury in gold |
+| Limits, Subscription | solar gold and leo — the money moments |
+| Matches & Safety | the subject's sign; report and expiry in garnet and dusk |
+
+Account, Legal, Notifications, System States and Auth were deliberately left
+dark. Stardust keeps 40% of its screens under 2% accent, and settings and legal
+are exactly where it spends nothing. Those five sections are 36 of 93 screens,
+or 39% — which lands on Stardust's distribution almost precisely.
+
+## Measured
+
+```
+                    before          after
+Onboarding             --      3.06%  / 7 hues
+Core Flow              --      3.76%  / 6 hues
+Guidance            0.03% / 0  3.54%  / 5 hues
+P-01b (one screen)  0.00% / 0  0.99%  / 6 hues
+```
+
+Section figures are aggregates that include the empty canvas between screens,
+so per-screen accent runs higher than the number shown.
+
+The onboarding ascent is now visible as colour: red at Birth Data, orange at
+Birth Sky, gold at Sign Reveal, green at the card rule, cyan at Dealbreakers,
+blue at Photo, violet at The Field. Walking the flow walks the ladder.
+
+## One placement bug worth remembering
+
+Eight Guidance screens had both auras parked at **y = 874** — exactly one
+screen height down, entirely outside the frame. The reparent preserved their
+visual position faithfully, which meant preserving them off-screen. They are
+now placed on a rotating two-slot pattern so adjacent screens do not stack
+their glows in the same corner.
+
+Always check that an aura intersects `0..height` before trusting that a screen
+has been lit.
