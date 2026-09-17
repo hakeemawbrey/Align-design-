@@ -69,3 +69,11 @@ problem — it is that nothing in our file is drawn.
 Accent is under the oracle band because the founder's boards sit on black,
 darker than Stardust's fields; light mass and contrast are at parity. The
 subject test is the axis that moved, from 1 to 5, which is the whole point.
+
+| G-05 You · Taurus (aura tile on your card) | — | — | — | — | Jai profile card | "a person's aura, a card" — 4 (was 1) |
+| G-09 Matches (six aura tiles) | 16.56 | 9.37 | 0.176 | 6 | Your Orbit / Home 1.2 | "six glowing people" — **5** (was 2) |
+| S-09 Chat (Libra avatar) | 0.48 | 0.10 | 0.092 | 3 | journal 0.28 | quiet, as it should be |
+
+G-09 runs above the instrument band, but all of its colour is people — six
+subjects, six hues, no atmosphere — which is the rule that matters more than
+the band. The per-sign card strokes now agree with the auras inside them.
