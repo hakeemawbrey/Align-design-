@@ -72,10 +72,67 @@ Co–Star sun placement    0.00%    monochrome
 
 Same mode, same hue family, comparable area to the Stardust benchmark.
 
-## Still to build in this section
+## Two corrections from Stardust's own profile screen
 
-G-24 (traits), G-25 (element · Air), G-26 (ruler · Mercury), S-16 (term
-explainer). S-14, S-15 and S-20 already exist in the bespoke section.
+`other-tabs_38` (Scorpio Profile) does this exact job, and it disagreed with
+Co–Star on two points. Stardust wins both, being closer to Align's language:
 
-Once the section is complete, the clone copies in `Guidance` get moved to
-`⌁ ARCHIVE`.
+1. **A labelled switch, not dots.** Stardust runs a segmented pill —
+   `SUN | MOON | RISING` — so you know what you are switching between. Co–Star's
+   pagination dots make you guess. G-23's dots were replaced with
+   `SIGN | TRAITS | ELEMENT | RULER`, Align's own four facets in Stardust's device.
+2. **A profile closes with an action.** Stardust ends with a full-width glow
+   CTA (*See today's horoscope*). G-23 had no CTA at all; it now ends on
+   `See today's sky ✦` into S-14.
+
+## The five screens
+
+| Screen | Primary light | Figure | Switch |
+|---|---|---|---|
+| G-23 Your Chart | Gemini SIGNAL `#c4a535` | twins, drawn | SIGN |
+| G-24 How You Show Up | SIGNAL + jade | twins | TRAITS |
+| G-25 Your Element · Air | ion `#3dc8f0` + amethyst | twins | ELEMENT |
+| G-26 Your Ruler · Mercury | quicksilver `#9ecfe0` + gold | twins | RULER |
+| S-16 Term Explainer | amethyst `#a855f7` + ion | none — a concept is not a sign | (none) |
+
+S-16 drops the switch and the sign glyph, because it explains a term rather
+than a facet of one chart.
+
+## The chakra ladder moved to the lower half
+
+The `Progress · 6 steps` rails sat at y 75, at the very top. They are now in
+the gap between the copy and the CTA, and they are **actually the chakra ladder**
+— they had been six identical cream segments. Each step now carries its own
+centre, root through third eye, lit up to the current step with a glow on the
+step you are on.
+
+One thing worth recording: the first placement measured against the lowest
+block on the screen and landed the rail *under the body copy*, because the
+"lowest block" it found was a `glow · floor`. Measure against content, never
+against atmosphere.
+
+## Measured against Stardust
+
+```
+align  S-16 Term Explainer      30.00%   3 hues
+STAR   Moon Sign Result         27.54%   3
+align  G-25 Element · Air       25.43%   1
+STAR   Pisces Profile           20.77%   1
+STAR   Sun Sign Result          19.22%   4
+STAR   Capricorn Profile        19.09%   1
+STAR   Scorpio Profile          18.52%   2
+align  G-23 Your Chart          15.27%   1
+
+Align mean 23.57%          Stardust mean 21.03%
+```
+
+All eight sit in the 12%+ band — the same mode, the same band. S-16 at 30% is
+the one that runs hotter than anything Stardust ships for this screen type; it
+is within reach but worth a look if the section ever feels loud.
+
+## Archived
+
+All eight Guidance clones moved to `⌁ ARCHIVE`, each renamed
+`[superseded · rebuilt in ✦ STARDUST] …`. Every one had a bespoke replacement
+first — the move checks for one and skips anything unmatched. The `Guidance`
+section is now empty.
