@@ -1,6 +1,6 @@
-# Zodiac, cards, auras
+# Zodiac, cards, auras, sacred geometry
 
-Align has three motifs and nothing else. Every screen should be built from
+Align has four motifs and nothing else. Every screen should be built from
 them. Anything that is not one of the three is furniture, and furniture should
 be quiet.
 
@@ -106,14 +106,63 @@ screen is about.
 
 ---
 
-## How the three combine
+## 4. Sacred geometry
 
-| The screen is about | Card | Aura | Zodiac |
-|---|---|---|---|
-| one chart | reading card, serial | one lobe in the sign's colour, in a well | that sign's glyph on the lobe |
-| two charts | hero card, serial | two lobes melting on SCREEN | both glyphs, one per lobe |
-| a concept | reading card | one lobe, abstract | no glyph — a concept is not a sign |
-| settings, legal | no card, no aura, no glyph | — | — |
+**The mark is sacred geometry.** `Mark · Align` is a seed of life with the
+chakra column down its axis, so the motif is not decoration borrowed from
+elsewhere — it is the logo's own construction, reused at other scales.
+
+### The figures
+
+```
+seed of life      7 circles. one centre, six at 60° on radius r.
+                  the mark: r 86.5 on a 356 field, plus an outer circle r 177
+flower of life    19 circles. the seed, plus a second ring of twelve —
+                  six at radius r√3 rotated 30°, six at radius 2r
+vesica            2 circles overlapping by r. two people, one field.
+concentric        3–5 nested rings, evenly stepped
+```
+
+### How it is drawn
+
+```
+stroke   #fff9f2 @ 0.18–0.26   w1–1.25
+never    filled. never more than one figure per screen.
+size     130–240px
+opacity  0.16 quiet ambient · 0.5–0.62 when it is the subject
+place    a corner or behind the hero. never behind body copy.
+```
+
+Hairline circles only. The moment a figure is filled or thickened it stops
+reading as geometry and starts reading as a graphic.
+
+### What each figure means
+
+Use the one that matches what the screen is doing, rather than picking by
+shape:
+
+| Figure | Use it when |
+|---|---|
+| **seed of life** | the whole self — a chart, a profile, the mark |
+| **vesica** | two things meeting — a match, an alignment, a comparison |
+| **flower of life** | the many — a deck, a field of people, the club |
+| **concentric** | distance or waiting — offline, empty, a countdown |
+
+On S-21 the vesica is the two auras themselves: two circles overlapping *is*
+the match, so the geometry and the content are the same object.
+
+---
+
+## How the four combine
+
+| The screen is about | Card | Aura | Zodiac | Geometry |
+|---|---|---|---|---|
+| one chart | reading card, serial | one lobe in the sign's colour, in a well | that sign's glyph on the lobe | seed of life |
+| two charts | hero card, serial | two lobes melting on SCREEN | both glyphs, one per lobe | vesica |
+| the deck | the card itself | the card's own aura art | the dealt sign's glyph | flower of life |
+| a concept | reading card | one lobe, abstract | no glyph — a concept is not a sign | concentric |
+| an empty or waiting state | no card | one dim lobe | — | concentric |
+| settings, legal | no card, no aura, no glyph | — | — | — |
 
 The last row matters as much as the others. Stardust keeps 40% of its screens
 under 2% accent and spends nothing on settings and legal. So do we.
