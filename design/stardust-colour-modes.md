@@ -107,3 +107,73 @@ glow at 68% alpha, then a mono label and the element in the sign's own colour.
 
 Beyond those, any screen that lists typed things is a candidate: dealbreaker
 chips, glossary terms, club topics, interests, notification types.
+
+---
+
+# The atmosphere was invisible on 89 of 93 screens
+
+The pass that "applied the visual language to all 93 cloned screens" did create
+the nodes. On **89 of them the nodes never painted.**
+
+The HTML-derived clones nest like this:
+
+```
+Screen frame
+  atmosphere          <- index 0, the aura and starfield
+  div                 <- index 1, 390x874, fill #12052d at 100%
+      ...the entire visible screen...
+```
+
+The atmosphere is a *sibling behind* an opaque full-bleed div. Everything it
+contained was painted over. That is why the Guidance section measured **0.03%
+accent across eight screens** while its node tree claimed 28%.
+
+**The paintable ground on a clone is the inner `div`, not the frame.** Anything
+added to the frame, or to the outer body, is hidden. Every atmosphere has been
+reparented to index 0 *inside* that div, which also now clips so blurs cannot
+escape.
+
+## Fixing the z-order was necessary but not sufficient
+
+With the atmosphere finally visible, Guidance moved 0.03% -> 0.81%, and almost
+all of that was one field added by hand. The atmosphere content itself is too
+weak to register:
+
+```
+aura   430x370   LAYER_BLUR 110   peak alpha 0.50   #ffde59
+aura   360x310   LAYER_BLUR 110   peak alpha 0.34   #cb6ce6
+starfield        ~87 one-pixel dots at #fff9f2
+```
+
+Two faults, and the second is the one that has been costing us all along.
+
+**1. Double softening.** A gradient that already ramps to alpha 0, blurred
+again at 110px. To clear the measurement threshold a pixel needs composited
+value above 0.5; over a near-black ground that needs effective alpha above
+roughly 0.58. Peak 0.50 spread across a 110px blur never gets close. The
+gradient ramp *is* the softness — blurring it again spends the whole budget.
+
+**2. Two hues, everywhere.** `#ffde59` is 51 degrees and `#cb6ce6` is 289.
+Every one of the 89 screens carries the same amber-and-violet pair. This is the
+"only two hues present" diagnosis from the earlier audit, and it is structural
+rather than per-screen: the generator only ever had two colours.
+
+Align owns twelve. The atmosphere should draw its hue from the screen's own
+subject — the sign being read, the element in play, the chakra of the step —
+so that moving through the app moves through the wheel.
+
+## The sign-screen template — G-23
+
+Stardust's sun-sign screen (`other-tabs_25`) runs **19.22% accent, amber alone
+at 18.69%**: the sign's colour as a field behind its constellation, all text
+below on dark ground. Align's equivalent measured **0.20%** — a 108px thumbnail
+of the thing the screen is about.
+
+G-23 now carries a Gemini SIGNAL field anchored on the medallion: a 430x360
+radial in `mix(core, deep, 0.20)` ramping 0.92 / 0.80 / 0.40 / 0.10 / 0, **no
+blur**. Anchoring it on the medallion rather than the screen centre is what
+keeps the chips and tiles on dark ground — the first attempt filled the frame
+and washed out every control on it.
+
+**The rule: a field lights an object, not a screen.** Put it behind art, a
+medallion, an orb, an empty quadrant. Never behind body text or controls.
