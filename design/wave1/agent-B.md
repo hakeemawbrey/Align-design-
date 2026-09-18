@@ -68,3 +68,54 @@ Checked by band-counting saturated pixels on the after renders.
   Alignment sheet and is that sheet's subject, so untouched.
 - S-09g's `rail · expiry` and `eyebrow · expiry` were already hidden before
   I started (closed state) — not mine, left as found.
+
+## Follow-up — Juniper's bubbles (coordinator request)
+
+Wave 1 rule: the status strip is the only state colour on a chat screen.
+The ember fill (#47130E) + red keyline (#FF5A3D @0.34, 1.75) on `bubble ·
+them` was the whole haze mass. On all seven screens, every `bubble · them`
+(left edge x=0, FRAME with a TEXT child, inside `thread`) is now a flat
+`#2B1E4C` @100% with its red stroke paint set `visible:false` (paint kept,
+not deleted — reversible). No edge stroke added: the panel reads against the
+near-black ground without one, same as `bubble · you` always has.
+`bubble · you` (#34235F, no stroke) left as found. No text, avatar, strip,
+eyebrow or rail touched.
+
+Ids changed (them bubbles): S-09 1027:1950/1954/1958/1962 · S-09b
+1028:8252/8256/8260/8264 · S-09c 1405:2062/2066/2070/2074 · S-09d
+1405:2221/2225/2229/2233 · S-09e 1405:2380/2384/2388/2392 · S-09f
+1405:2539/2543/2547/2551 · S-09g 1405:2698/2702/2706/2710.
+
+S-09b note: its them-bubbles were already neutral (#1E1240, no stroke) under
+the sheet scrim; set to #2B1E4C anyway so the base screen matches the others.
+
+### Mistake, caught and reverted
+First pass used `x < 200` to pick "hers". That also caught the two wide
+`bubble · you` frames per screen (x=84, right-aligned to the edge), so their
+fill was briefly set to #2B1E4C on S-09/b/c/d/f/g. Reverted to their original
+`#34235F` @100% by id and re-verified on all seven threads (they had never
+carried a stroke). Corrected filter: `name === 'bubble · them' && x < 40`.
+S-09e's first script was denied by the permission gate, so it got only the
+corrected pass — one edit, no revert needed.
+
+### Haze (score.py new column) — before → after2; accent alongside
+
+| screen | haze before | haze after2 | accent before → after2 |
+|---|---|---|---|
+| S-09  | 17.34 | 0.18 | 0.48 → 0.12 |
+| S-09b |  0.35 | 0.35 | 0.35 → 0.35 |
+| S-09c | 12.34 | 0.18 | 0.35 → 0.12 |
+| S-09d | 12.40 | 0.25 | 0.36 → 0.13 |
+| S-09e | 12.47 | 0.31 | 0.43 → 0.20 |
+| S-09f | 12.74 | 0.58 | 0.57 → 0.34 |
+| S-09g | 12.49 | 0.19 | 0.22 → 0.22 |
+
+All under the ~2% haze target (mean 0.29%, vs Stardust journal 0.05%).
+Remaining haze is the status strip + eyebrow/rail (S-09f orange is the
+highest, as it should be), the avatar disc and the gold send/Matches glyphs.
+Hue count dropped 2 → 1 on S-09/c/d/e/f: the red family is gone.
+
+Renders read (S-09, S-09e): the thread still reads as two people — avatar
+in the header, her panels left, yours right and a step lighter. On S-09e the
+orange NOT SENT strip is now the only colour in the frame. Files:
+`cut/S09*_after2.png`.

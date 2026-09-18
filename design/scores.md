@@ -87,3 +87,28 @@ screened tiles on a bright foil; it reads as a dark ring.
 | S-17 Club · Taurus room (orb + 3 moon-sign avatars) | 8.64 | 0.31 | 0.163 | 3 | Your Orbit | "a room of people" — 4 (was 2) |
 | S-07 Match (Taurus × Libra cards) | 2.51 | 6.91 | 0.212 | 2 | Invite your partner | "two cards, two auras" — 4 |
 | S-08 Veil Lifts (Libra aura over the veiled portrait) | 2.88 | 5.18 | 0.209 | 2 | — | "an aura lifting off a face" — 4 |
+
+## 2026-09-18 — Wave 1 closed: the instrument zone, quieted
+
+Four agents in parallel, disjoint screen sets, every screen-level ambient
+glow and geometry figure hidden (never deleted). A `haze%` column was added
+to the scorer mid-wave — dim saturated pixels whose hue departs from the
+ground's — because `accent%` (value > 0.5) never saw the washes at all.
+
+| screen | accent% | haze% | note |
+|---|---|---|---|
+| S-05 The Deck | 5.80 | 2.68 | card's aura tile is the whole number |
+| S-05b / c / d / e | 2.1 / 1.4 / 1.2 / 2.1 | — | clones unified to FILL; S-05b takes Virgo |
+| S-03 / S-04 / S-10 | 2.1 / 2.1 / 0.03 | — | |
+| S-09 chat ×7 | 0.21 mean | **0.29 mean** (was 12–17) | Juniper's ember bubbles → neutral `#2B1E4C`, keyline off |
+| G-09 Matches | 15.34 | 7.1 | six people; content, not atmosphere |
+| S-07 / S-08 | 2.5 / 2.9 | 0.26 / 0.00 | celebrations keep their blooms |
+| S-21 Alignment | 9.81 | 0.04 | card holds on flat ground |
+| S-17 Club / S-17b | 1.26 / 0.85 | 1.5 / — | from 8.64 |
+| **S-02 Auth** (new) | 0.05 | 0.04 | Stardust login 0.09 |
+| **S-06 Expand** (new) | 1.40 | 1.19 | Tarot Card Detail 3.2 |
+
+Stardust product screens on the same scorer: haze 0.05–1.5%, accent median
+2.03%. Ours after the wave: see the printed medians in the commit message.
+G-09 and S-05 sit above the band on purpose — the number is the founder's
+art, which is the subject.
