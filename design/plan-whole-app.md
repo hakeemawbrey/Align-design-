@@ -233,8 +233,11 @@ subtraction the teardown asked for.
 > **Status 2026-09-18:** Wave 0 foundations replaced by the founder's boards
 > (`aura-system.md`); Wave 1 closed at 1.26% / 0.61% haze over 23 instrument
 > screens; Wave 3 closed at a 16.5% median over 13 framed onboarding screens.
-> Wave 2 (oracle) was absorbed by the Taurus sweep. Next: Wave 4 utility
-> (45 screens), then Wave 5 remaining figures + Club, then Wave 6 stateful hue.
+> Wave 2 (oracle) was absorbed by the Taurus sweep. Wave 4 closed: 49 utility
+> screens built bare by four agents. The bespoke section is reorganised into
+> twelve labelled sub-sections mirroring All Screens, kits last. Still unbuilt:
+> the five Club utility screens (S-17c, S-17d, S-18, S-18b, S-18c) and S-01.
+> Next: those six, then Wave 5 remaining figures, then Wave 6 stateful hue.
 
 Each wave ends with `score.py` on every screen it touched, a side-by-side
 against the named Stardust screen, and a row in `scores.md`.
