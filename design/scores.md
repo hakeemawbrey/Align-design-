@@ -147,3 +147,4 @@ value threshold — tune by measurement, not by alpha; the haze band misreads
 screens whose top aurora is not violet, so it is an instrument-zone measure
 only. Invented birth facts unified to Tulsa, OK · May 4 1994 · 3:52 PM, a
 time that actually gives a Libra rising for a Taurus sun.
+| O-05 Sign Reveal, now framed | 12.72 | the bull on a Taurus aurora (was 5.43 unframed) |
