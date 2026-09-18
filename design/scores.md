@@ -84,3 +84,6 @@ Placement note for two tiles on a foil card: the screen blend has to sit on
 the image nodes themselves, not on a wrapper frame with a mask inside — a
 masked wrapper composites normally and the tile rims show. No well under
 screened tiles on a bright foil; it reads as a dark ring.
+| S-17 Club · Taurus room (orb + 3 moon-sign avatars) | 8.64 | 0.31 | 0.163 | 3 | Your Orbit | "a room of people" — 4 (was 2) |
+| S-07 Match (Taurus × Libra cards) | 2.51 | 6.91 | 0.212 | 2 | Invite your partner | "two cards, two auras" — 4 |
+| S-08 Veil Lifts (Libra aura over the veiled portrait) | 2.88 | 5.18 | 0.209 | 2 | — | "an aura lifting off a face" — 4 |
