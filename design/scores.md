@@ -112,3 +112,38 @@ Stardust product screens on the same scorer: haze 0.05–1.5%, accent median
 2.03%. Ours after the wave: see the printed medians in the commit message.
 G-09 and S-05 sit above the band on purpose — the number is the founder's
 art, which is the subject.
+
+## 2026-09-18 — Wave 3 closed: onboarding on the aurora frame
+
+Four agents, 16 screens (13 new). Every framed screen instances the same
+component (`1473:856`); breathers and the three utility beats opt out.
+
+Framed screens: **16.50% median over 13 framed screens; breathers 0.00%**. Stardust onboarding median 19.94%.
+
+| screen | accent% | hero |
+|---|---|---|
+| O-02 Arrival | 18.18 | six discrete orbs on a dark horizon |
+| O-03 Birth Data | 18.44 | constellation over the wheel |
+| O-03b Age Blocked | 0.00 | — (utility) |
+| O-03c No Birth Time | 0.14 | segmented time-of-day |
+| O-03d Waitlist | 0.00 | rings around one dim lobe |
+| O-04 Birth Sky | 17.02 | 12-orb wheel, Taurus lit |
+| O-05 Sign Reveal | 5.43 | the bull (figure tile) |
+| O-06 User Manual | 0.00 | — (breather) |
+| O-07 Big Three | 16.92 | sun, moon, rising as spheres |
+| O-08 Chart Check | 8.76 | flat confirm rows |
+| O-09 Venus | 16.31 | Venus as a ringed sphere |
+| O-10 Element | 14.30 | the Earth orb |
+| O-11 Flipped Card Rule | 11.56 | card-back to card-face diagram |
+| O-12 Dealbreakers | 7.93 | chip grid |
+| O-13 Photo Upload | 16.50 | the mystery-aura card, large |
+| O-13b The Field | 16.72 | five card backs fanned |
+| O-15 Resume | 0.12 | — (breather) |
+| S-11 Paywall | 18.87 | teal field, timeline |
+
+Findings from the agents, kept: the aurora's opacity is nonlinear against
+the accent metric (0.7 ≈ 3%, 0.86 ≈ 12%, 1.0 ≈ 17%) because it sits at the
+value threshold — tune by measurement, not by alpha; the haze band misreads
+screens whose top aurora is not violet, so it is an instrument-zone measure
+only. Invented birth facts unified to Tulsa, OK · May 4 1994 · 3:52 PM, a
+time that actually gives a Libra rising for a Taurus sun.
