@@ -136,3 +136,28 @@ All eight Guidance clones moved to `⌁ ARCHIVE`, each renamed
 `[superseded · rebuilt in ✦ STARDUST] …`. Every one had a bespoke replacement
 first — the move checks for one and skips anything unmatched. The `Guidance`
 section is now empty.
+
+---
+
+## The Taurus sweep
+
+The account is Hakeem — Taurus, matched with Juniper — Libra. Every Gemini
+and Aries left over from the earlier identity was found by inventory (nodes
+named for a sign, and text mentioning one) and turned over:
+
+- **G-23 / G-24 / G-25 / G-26** → Taurus · fixed earth · ruled by Venus. The
+  reading copy is rewritten, not swapped: Taurus does not perform, decides in
+  ten minutes and never says so; Earth is possession; Venus is the part of the
+  chart that wants, and Juniper's sign answers to the same planet.
+- **S-16** explains the seventh house. A house is a concept, not a sign, so it
+  takes an amethyst lobe rather than a sign's aura — the rule in
+  `the-three-themes.md` held.
+- **S-14 Sky** wheel orbs take the twelve measured core colours; the reading
+  is Venus trine the sun.
+- **S-20 Glossary** rows carry aura tiles by the planet each term names.
+- **Chat glows ×7**, Juniper's Matches tile, the Birth Data live chip, the Post
+  Detail header and the deck's ALIGN line (×6 cards: *Earth holds air — she
+  moves, you make it last*) all follow.
+
+Juniper's own moon is Gemini, so `GEMINI MOON` on her card is correct and
+stays.
