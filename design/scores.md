@@ -148,3 +148,32 @@ screens whose top aurora is not violet, so it is an instrument-zone measure
 only. Invented birth facts unified to Tulsa, OK · May 4 1994 · 3:52 PM, a
 time that actually gives a Libra rising for a Taurus sun.
 | O-05 Sign Reveal, now framed | 12.72 | the bull on a Taurus aurora (was 5.43 unframed) |
+
+## 2026-09-18 — the re-pass: all 106 screens, one style
+
+Run as a lint, not a look (`repass-plan.md`). One script over every screen
+returned 46 with violations; five rule-scripts fixed them; the re-lint
+returned 0. Then one screenshot per sub-section, cropped and scored.
+
+| section | n | median accent | median haze | max accent | Stardust zone |
+|---|---|---|---|---|---|
+| Onboarding | 18 | 11.94 | 11.03 | 17.02 | onboarding 19.9 |
+| Core Flow | 20 | 1.31 | 0.54 | 9.31 | product 2.03 |
+| Guidance | 8 | 9.70 | 15.23 | 14.92 | oracle 12–28 |
+| Club | 6 | 0.66 | 0.16 | 4.33 | product |
+| Limits & Align+ | 7 | 0.04 | 0.06 | 19.96 (Trial) | utility / paywall |
+| Auth | 8 | 0.00 | 0.00 | 0.20 | utility <1 |
+| Account | 8 | 0.27 | 0.16 | 5.85 | utility |
+| Matches & Safety | 5 | 0.10 | 0.00 | 14.17 (G-09) | product |
+| Subscription | 4 | 0.00 | 0.00 | 22.59 (Trial) | utility / paywall |
+| System States | 4 | 0.04 | 0.07 | 0.04 | utility |
+| Legal, Safety & About | 13 | 0.00 | 0.00 | 4.15 (red pill) | utility |
+| Notifications | 5 | 0.05 | 0.00 | 0.18 | utility |
+
+What the lint fixed: second glows and geometry on the five Guidance chart
+screens (the single hero spotlight stays); every ambient glow and figure on
+Sky, Calendar, Glossary, You, Splash, Offline, No Cards; Post Detail's three
+avatars to aura tiles by moon sign; the `✦` range on three early holo
+buttons. Contact sheets: `design/assets/all-screens-1.png`, `-2.png`.
+
+Whole re-pass: three `use_figma` calls, twelve screenshots, two image reads.

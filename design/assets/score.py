@@ -36,12 +36,13 @@ def score(path):
     nh = int((hues>0.06).sum())
     return dict(accent=accent, haze=haze, light=light, rng=rng, contrast=contrast, hues=nh)
 
-rows=[]
-for p in sys.argv[1:]:
-    d=score(p); rows.append((p.split('/')[-1],d))
-print(f"{'screen':34} {'accent%':>8} {'haze%':>7} {'light%':>7} {'range':>7} {'contr':>7} {'hues':>5}")
-for n,d in rows:
-    print(f"{n:34} {d['accent']:8.2f} {d['haze']:7.2f} {d['light']:7.2f} {d['rng']:7.3f} {d['contrast']:7.3f} {d['hues']:5d}")
-import statistics as st
-for k in ['accent','haze','light','rng','contrast','hues']:
-    print(f"  mean {k}: {st.mean(d[k] for _,d in rows):.3f}")
+if __name__=='__main__':
+    rows=[]
+    for p in sys.argv[1:]:
+        d=score(p); rows.append((p.split('/')[-1],d))
+    print(f"{'screen':34} {'accent%':>8} {'haze%':>7} {'light%':>7} {'range':>7} {'contr':>7} {'hues':>5}")
+    for n,d in rows:
+        print(f"{n:34} {d['accent']:8.2f} {d['haze']:7.2f} {d['light']:7.2f} {d['rng']:7.3f} {d['contrast']:7.3f} {d['hues']:5d}")
+    import statistics as st
+    for k in ['accent','haze','light','rng','contrast','hues']:
+        print(f"  mean {k}: {st.mean(d[k] for _,d in rows):.3f}")
