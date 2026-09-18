@@ -177,3 +177,25 @@ avatars to aura tiles by moon sign; the `✦` range on three early holo
 buttons. Contact sheets: `design/assets/all-screens-1.png`, `-2.png`.
 
 Whole re-pass: three `use_figma` calls, twelve screenshots, two image reads.
+
+## 2026-09-18 — the last four steps
+
+1. **Onboarding louder.** Every framed screen's top aurora to full opacity
+   with lifted inner stops (O-03c, a form, kept at 0.35). Framed median
+   11.94 → **16.96%** (Stardust 19.9).
+2. **The twelve figures.** Eleven `O-05 — Sign Reveal · <sign>` variants
+   cloned from Taurus: figure tile, sign-coloured spotlight and aurora, a
+   sermon per sign in the file's voice. Every sign a new user could be now
+   has its reveal.
+3. **Stateful hue.** Four `S-05x — Deck · sky <element>` variants: the deck
+   with the ground washed by the moon's element (fire / earth / air / water)
+   and a caps readout `TONIGHT · MOON IN LEO · FIRE SKY`. This is Stardust's
+   phase-driven ground, ours by the sky.
+4. **Prototype.** 156 tap reactions: every holo button and back chevron
+   through S-01 → onboarding → deck → match → chat, every tab bar to its
+   root. Flow starting point `Align · full flow` at S-01. Present it from
+   the Figma file to tap through on a phone.
+
+Also built here: S-01 Open App and S-18c Post Removed, the two the restarted
+agent never reached. All 109 planned screens plus 15 variants exist.
+Strip of the new rows: `design/assets/reveals-and-sky-states.png`.

@@ -237,7 +237,9 @@ subtraction the teardown asked for.
 > screens built bare by four agents. The bespoke section is reorganised into
 > twelve labelled sub-sections mirroring All Screens, kits last. Still unbuilt:
 > the five Club utility screens (S-17c, S-17d, S-18, S-18b, S-18c) and S-01.
-> Next: those six, then Wave 5 remaining figures, then Wave 6 stateful hue.
+> All six built. Wave 5 (eleven sign reveals) and Wave 6 (four sky states)
+> done; onboarding raised to 17%; prototype wired from S-01. The plan is
+> complete — what remains is your own tap-through and whatever it surfaces.
 
 Each wave ends with `score.py` on every screen it touched, a side-by-side
 against the named Stardust screen, and a row in `scores.md`.
