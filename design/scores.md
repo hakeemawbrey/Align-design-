@@ -293,8 +293,12 @@ Core Flow section back to five rows). S-21 is now one screen:
   colours (`#7FD8F5` spark, `#FF9AC4` rub, `#FFE066` align), each with a
   five-dot score and one italic line: *She answers like you do.* / *You want
   the last word. She wants silence.* / *You read rooms the same way.*;
-- three **quick-hit pills**: FIRST DATE · she’s late, you’ve ordered ·
-  YOU’LL FIGHT ABOUT · money · GREEN FLAG · neither of you makes a scene;
+- seven **quick-hit pills**, flowing two per row where they fit ("too
+  little info" after the first cut): FIRST DATE · she’s late, you’ve
+  ordered · TEXTING · she double-texts, you leave it on read · FIGHT ABOUT ·
+  money · GREEN FLAG · zero drama · RED FLAG · she decides by not deciding ·
+  HER MOVE · asks where you’d live · YOUR MOVE · the specific compliment;
+  the card is 248 tall to make room;
 - the Say something button.
 
 The chat sheet S-09b keeps its Spark / Rub / Align guide and links here.
