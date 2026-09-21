@@ -380,3 +380,17 @@ simplified from two rows of four items to one row (`← RELEASE` / `ALIGN →`)
 and one line (*Hold the card to peak · 3 left*); the comet count now lives
 only on the gold ✦. The Peak state (S-05d) keeps its countdown header and
 no strip.
+
+### G-05 — You · Home, the hub (2026-09-21, founder note)
+
+The You tab landed on the card screen with a list under it; there was no
+hub. New `G-05 — You · Home` (`1809:2258`, Account row 2) is the landing
+screen: title *You* with an `ALIGN+ · FOUNDING` pill; identity strip (60px
+Taurus aura avatar, *Hakeem, 32*, `TAURUS SUN · SAGITTARIUS MOON · LIBRA
+RISING`, Tulsa · reading from Houston); a 2×2 of hub tiles, each with its
+own visual — **Your card** (card back) → G-05a, **Your sign** (Figure ·
+Taurus) → G-23, **Cheat sheet** (hairline glyph) → S-20 Glossary,
+**Today's sky** (gold sphere) → S-14; then five list rows — Cosmic calendar
+→ S-15, Align+ → G-13, Notifications → S-19, Settings → G-07, Help &
+support → G-29. The old G-05 is renamed `G-05a — Your Card · Face Down`
+and all 34 You-tab reactions across the file now point at the hub.
