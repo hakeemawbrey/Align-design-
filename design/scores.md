@@ -279,3 +279,22 @@ only the Spark reads, and the button. Now: the card tightened (auras at 0.8,
 ALIGN` (same reads as the chat sheet S-09b), and a `Star charts · both,
 overlaid — COMING SOON` row above the CTA. The tab strip, spark-only list
 and pagination dots are hidden, not deleted.
+
+### S-21 becomes three screens — the full read (2026-09-21, founder note)
+
+"Needs more info between you and them for dating and relationship and in
+general what it means." Modelled on Stardust's long-form sign pages
+(`other-tabs_25`, `other-tabs_38`): the alignment is now a scroll shown as
+three frames in Core Flow row 6.
+
+- **S-21** `1378:1915` — the card, `WHAT IT MEANS`, *In general · what Venus
+  does twice* (one paragraph), the first line of *In dating*, scroll hint 1 of 3.
+- **S-21b** `1740:855` — *In dating · the first five nights* (four reads),
+  *In a relationship · the long game* (four reads), closing italic line.
+- **S-21c** `1740:1012` — *The guide · Spark, Rub, Align* (two reads each),
+  the *Star charts · both, overlaid — coming soon* row, and a note that the
+  three reads move with the sky.
+
+Prototype: scroll hints step 1 → 2 → 3; the chat sheet's "Read the full
+alignment" opens S-21. Core Flow section grown by one row; the sections below
+shifted down 960.
