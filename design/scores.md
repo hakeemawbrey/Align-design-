@@ -286,19 +286,19 @@ Four cuts in one evening. The founder rejected a three-frame long read
 ("too much reading"), a hand of seven read cards ("too complicated, make it
 fun"), and a loose stack of card + meters + pills ("no introduction,
 everything feels out of place"). The extra frames are deleted. S-21 is now
-**one card**, 326×566, in the deck card's language (foil rim, inner
+**one card**, 326×580, in the deck card's language (foil rim, inner
 keyline, serial), read top to bottom:
 
 1. eyebrow `JUNIPER × YOU`, the two auras melting;
 2. introduction — *Venus rules you both.* / She balances the room; you
-   keep it. Three reads on how that plays out.;
-3. three identical sections, `SPARK` `RUB` `ALIGN`: caps label with the
+   keep it.;
+3. four identical sections, `SPARK` `RUB` `ALIGN` `RELATIONSHIP`: caps label with the
    five-dot meter on the same line (deck-card colours `#7FD8F5` `#FF9AC4`
    `#FFE066`), an italic headline, one plain note — *She answers like you
    do.* / First date: she’s late, you’ve already ordered. — *You want the
    last word. She wants silence.* / You’ll fight about money. Name a number
    early. — *You read rooms the same way.* / Green flag: neither of you
-   makes a scene.;
+   makes a scene. — *You stay. She talks. Both count.* / Built to hold, made to be seen. (relationship, `#D695DE`);
 4. footer `LIBRA · AIR ◇ TAURUS · EARTH`, `ALIGN · № 031/∞`.
 
 Then the Say something button. The chat sheet S-09b links here.
