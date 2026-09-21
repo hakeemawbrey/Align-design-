@@ -332,3 +332,21 @@ sun 2 · big three 3 · Venus and element 4 · rules 5 · photo 6).
 | O-03b/c/d, O-15 | utility branches and the breather on the same header; O-03c gained a hairline day-arc hero | ≤ 0.20 | ≤ 11.6 |
 
 Flow strip in step order: `design/assets/onboarding-flow.png`.
+
+### O-14 — Paywall · seven days (2026-09-21, founder note)
+
+The original onboarding ended with `O-14 — Paywall` after The Field (route
+map: O-13b → O-14 → S-12 trial → the deck); the redesign had never carried
+it over. Built in the new language as `1795:2256` in Onboarding row 6, on
+the Wave 6 rhythm: chevron + `Not now`, eyebrow `YOUR DECK IS DEALT`,
+headline *Three people are already in your orbit.*, Garamond sub, the
+golden door hero from S-12 scaled into the band, three price cards
+(weekly $5.55 · **yearly $88.88, 7 days free, save $84** · monthly $14.44 —
+the G-13 prices), the caps terms line, ladder with all six phases lit,
+`Start seven days free ✦`, `Maybe later — deal me in free`, legal.
+Prototype: O-13b → O-14; CTA → S-12 Trial Active; skip and secondary → the
+deck.
+
+The Figma file was restored from version history (3:54) after the desktop
+app dropped the Stardust section during an MCP reconnect; the audit showed
+everything through the ladder normalisation survived, and O-14 was rebuilt.
