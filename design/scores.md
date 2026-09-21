@@ -199,3 +199,19 @@ Whole re-pass: three `use_figma` calls, twelve screenshots, two image reads.
 Also built here: S-01 Open App and S-18c Post Removed, the two the restarted
 agent never reached. All 109 planned screens plus 15 variants exist.
 Strip of the new rows: `design/assets/reveals-and-sky-states.png`.
+
+## Fix pass — founder phone review (2026-09-19)
+
+Hakeem flagged five screens as "still weird" and asked about the horoscope screens. Changes, one script each:
+
+| Screen | Problem | Fix | accent% | haze% |
+|---|---|---|---|---|
+| O-03 Birth Data (and all 27 aurora instances) | full-opacity aurora became a flat violet wall over ~60% of the screen | `aurora · top` reshaped in the component: 520×380 at y −170, stops 0.82/0.42/0.10/0, blur 80. Fades before the headline sub. | 0.8 | 15.1 |
+| S-15 Cosmic Calendar | Mercury was the old blurred blob | 88px sphere, offset-centre radial `#FFF4DC → #F0CC8C → #C48F46 → #3A2560`, inner shadow, one gold drop shadow, tilted hairline ring | 1.0 | 3.1 |
+| S-12 Trial Active / G-14 Trial Ending | vector clip-art door + key | arch mask (150×220, 75 radius) over the gold Gemini aura tile, cropped so the glyph is below the sill; hairline gold rim; sill light; door glow at 0.42 | 2.2 / 7.4 | 25 / 37 |
+| P-02 Priority Queue | sparse dots on a thin ellipse | orbit 330×124 hairline with 14 slot ticks; avatars 36/40/66 on the arc; you = green rim + Taurus aura bloom behind | 0.9 | 1.8 |
+| S-13 Wait for Reset | dim vector lobe + rings | Taurus aura tile (SCREEN, feathered) inside three cream hairline rings, dark well under the countdown | 0.0 | 1.2 |
+| S-14 Sky · today (the horoscope) | never got a hero | Taurus aura tile behind the twelve-sign wheel with a dark well under the season readout | 3.1 | 7.7 |
+
+Haze on S-12/G-14 is the gold aurora frame plus the door glow: paywall zone, intended.
+Render strip: `design/assets/fix-pass-strip.png`.
