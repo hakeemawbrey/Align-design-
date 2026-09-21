@@ -299,3 +299,36 @@ pager — and the card footer `LIBRA · AIR ◇ TAURUS · EARTH`, `ALIGN · №
 `1754:1085` (Align), `1754:1315` (Relationship) in Core Flow row 6; the
 tabs navigate between them with smart-animate. The chat sheet S-09b links
 to S-21.
+
+## Wave 6 — onboarding, the second pass (2026-09-21)
+
+Three agents (R, S, T), 29 screens, brief `design/wave6/BRIEF.md`, notes
+`design/wave6/agent-*.md`. The founder: "it's almost there." What was left
+was **rhythm**: Stardust's onboarding puts the chevron, headline, sub, hero
+band and button at the same height on every screen; ours moved the headline
+between y 118 and y 330, showed the chevron on some steps and the progress
+ladder on two of twelve. The wave measured Stardust's rhythm, transposed it
+to 390×874 (chevron 26/68 · eyebrow 104 · headline 120 · sub 178 · hero
+band 250–600 · ladder 623 · CTA 668 · secondary 742) and moved every step
+screen onto it. The ladder is now six phases lit monotonically (birth 1 ·
+sun 2 · big three 3 · Venus and element 4 · rules 5 · photo 6).
+
+| screen | what changed | accent% | haze% |
+|---|---|---|---|
+| O-01 Splash | eyebrow to SF Pro, kit status bar, home indicator | 0.00 | 8.8 |
+| O-02 Arrival | welcome pattern kept (hero on top); headline/sub/legal to spec | 1.61 | 1.7 |
+| O-03 Birth Data | exemplar; missing eyebrow and home indicator added | 0.71 | 12.1 |
+| O-04 Birth Sky | chevron, real sub, wheel in the band, ladder, glyph tucked under the readout | 1.47 | 19.3 |
+| O-05 Sign Reveal ×12 | rebuilt text-on-top / figure-in-band like every other step; status bar, chevron, ladder, pearl CTA; twelve variants pixel-consistent | 4.78 | 22.3 |
+| O-06 User Manual | nine-line wall → three two-line items, one rim-coloured dot | 0.01 | 0.0 |
+| O-07 Big Three | chevron, sub, spheres in the band, bullets ≤ 2 lines, ladder | 2.95 | 24.8 |
+| O-08 Chart Check | rows to list-component metrics, ladder, CTA 742 → 668 | 0.87 | 11.6 |
+| O-09 Venus | sphere in the band, headline merged, chips, one-line secondary | 1.30 | 28.0 |
+| O-10 Element | four long weather lines → 2×2 tile grid | 1.41 | 17.5 |
+| O-11 Flipped Card Rule | diagram → card back flipping into Juniper's card | 1.76 | 12.3 |
+| O-12 Dealbreakers | header to spec, selected chips Taurus-tinted | 0.86 | 11.7 |
+| O-13 Photo Upload | eyebrow, sub ≤ 2 lines, card in the band | 2.67 | 13.6 |
+| O-13b The Field | header to spec, fan/333 in the band | 1.22 | 11.8 |
+| O-03b/c/d, O-15 | utility branches and the breather on the same header; O-03c gained a hairline day-arc hero | ≤ 0.20 | ≤ 11.6 |
+
+Flow strip in step order: `design/assets/onboarding-flow.png`.
