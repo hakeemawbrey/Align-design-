@@ -260,3 +260,13 @@ of life (the mark, on G-27/S-02/S-01); skeleton blocks panel-violet not grey
 (G-16/G-17); sign glyphs baked into tiles wherever the tile stands for a
 sign (reveals, cards, avatars); the S-05x sky washes (fire haze 19.5% is the
 lever if the founder still finds it heavy: wash top stop 0.78 → 0.6).
+
+### S-09b Chat · Alignment — rebuilt (2026-09-21, founder note)
+
+The chat's Alignment sheet was the old seven-chakra device ("five of seven
+centres agree"), which reads as nothing. It is now the same guide as S-21,
+pulled up from the chat: eyebrow `ALIGNMENT · TAURUS × LIBRA`, the two
+auras melting (cloned from S-21's card), the one-line Venus reading, then
+three stacked sections **SPARK · where it lights / RUB · where it catches /
+ALIGN · where it holds**, two reads each, and a `Read the full alignment ›`
+link to S-21. The chat header's `›` now navigates to it in the prototype.
