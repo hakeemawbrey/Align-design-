@@ -351,13 +351,22 @@ The Figma file was restored from version history (3:54) after the desktop
 app dropped the Stardust section during an MCP reconnect; the audit showed
 everything through the ladder normalisation survived, and O-14 was rebuilt.
 
-### The deck's horoscope tab is back (2026-09-21, founder note)
+### The deck's horoscope strip is back (2026-09-21, founder note)
 
 v1's deck carried a strip under the header — *Venus enters Leo tonight — be
 bolder.* / `TODAY'S SKY · TAP FOR YOUR FULL READING` — that the redesign
-dropped. The new deck has no vertical slack, so it lives on the count line:
-`11 of 15 left tonight` at left, and at right a `sky teaser` (12px gold
-moon sphere · *Venus enters Leo tonight* · `›`) that navigates to S-14
-Sky. Added to S-03, S-04, S-05, S-05b, S-05c, S-05e; the four S-05x sky
-states already carry their sky readout and S-05d's Peak header is left
-alone.
+dropped. A small count-line teaser was tried first ("needs to be more
+prominent"), so it is now the full strip: `sky strip` 342×40 at y 106, panel
+`#2B1E4C` with a gold hairline, a 20px gold moon sphere, *Venus enters Leo
+— be bolder.* and `TODAY'S SKY ›` in gold; it navigates to S-14. The count
+(`11 / 15`) or the state line moved into the title row's right slot beside
+the gold ✦. Applied to S-03, S-04, S-05, S-05b, S-05c, S-05d, S-05e; the
+four S-05x sky states keep their own readout.
+
+### S-09b carries the guide card (2026-09-21, founder note)
+
+"S-09b is still not right like we agreed on earlier." The chat sheet now
+holds a clone of the final S-21 guide card (auras, introduction, the
+Spark / Rub / Align / Relationship tabs, one section at a time, footer)
+instead of the earlier stacked list; the sheet grew to 634 (y 240) to fit
+it, with the grabber and `PULL DOWN TO CLOSE` kept above the card.
