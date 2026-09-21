@@ -370,3 +370,13 @@ holds a clone of the final S-21 guide card (auras, introduction, the
 Spark / Rub / Align / Relationship tabs, one section at a time, footer)
 instead of the earlier stacked list; the sheet grew to 634 (y 240) to fit
 it, with the grabber and `PULL DOWN TO CLOSE` kept above the card.
+
+### Deck spacing and instructions (2026-09-21, founder note)
+
+With the sky strip under the title the card sat 4px beneath it. Header
+bottom padding +24 on every face-down state (S-03, S-04, S-05, S-05b/c/e)
+so the card starts at y 174; the gesture legend moved to y 712 and was
+simplified from two rows of four items to one row (`← RELEASE` / `ALIGN →`)
+and one line (*Hold the card to peak · 3 left*); the comet count now lives
+only on the gold ✦. The Peak state (S-05d) keeps its countdown header and
+no strip.
