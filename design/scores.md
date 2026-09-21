@@ -280,25 +280,25 @@ ALIGN` (same reads as the chat sheet S-09b), and a `Star charts · both,
 overlaid — COMING SOON` row above the CTA. The tab strip, spark-only list
 and pagination dots are hidden, not deleted.
 
-### S-21 — one screen, made fun (2026-09-21, founder note)
+### S-21 — one guide card (2026-09-21, founder note)
 
-Two directions were tried and rejected by the founder: a three-frame
-long read ("too much reading") and a hand of seven read cards ("too
-complicated, make it fun"). Both are gone (the extra frames deleted, the
-Core Flow section back to five rows). S-21 is now one screen:
+Four cuts in one evening. The founder rejected a three-frame long read
+("too much reading"), a hand of seven read cards ("too complicated, make it
+fun"), and a loose stack of card + meters + pills ("no introduction,
+everything feels out of place"). The extra frames are deleted. S-21 is now
+**one card**, 326×566, in the deck card's language (foil rim, inner
+keyline, serial), read top to bottom:
 
-- the alignment card (two auras melting, the Venus reading, Libra · Air ◇
-  Taurus · Earth);
-- three **meters** that mirror the dot rows on Juniper's deck card, same
-  colours (`#7FD8F5` spark, `#FF9AC4` rub, `#FFE066` align), each with a
-  five-dot score and one italic line: *She answers like you do.* / *You want
-  the last word. She wants silence.* / *You read rooms the same way.*;
-- seven **quick-hit pills**, flowing two per row where they fit ("too
-  little info" after the first cut): FIRST DATE · she’s late, you’ve
-  ordered · TEXTING · she double-texts, you leave it on read · FIGHT ABOUT ·
-  money · GREEN FLAG · zero drama · RED FLAG · she decides by not deciding ·
-  HER MOVE · asks where you’d live · YOUR MOVE · the specific compliment;
-  the card is 248 tall to make room;
-- the Say something button.
+1. eyebrow `JUNIPER × YOU`, the two auras melting;
+2. introduction — *Venus rules you both.* / She balances the room; you
+   keep it. Three reads on how that plays out.;
+3. three identical sections, `SPARK` `RUB` `ALIGN`: caps label with the
+   five-dot meter on the same line (deck-card colours `#7FD8F5` `#FF9AC4`
+   `#FFE066`), an italic headline, one plain note — *She answers like you
+   do.* / First date: she’s late, you’ve already ordered. — *You want the
+   last word. She wants silence.* / You’ll fight about money. Name a number
+   early. — *You read rooms the same way.* / Green flag: neither of you
+   makes a scene.;
+4. footer `LIBRA · AIR ◇ TAURUS · EARTH`, `ALIGN · № 031/∞`.
 
-The chat sheet S-09b keeps its Spark / Rub / Align guide and links here.
+Then the Say something button. The chat sheet S-09b links here.
