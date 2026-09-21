@@ -234,14 +234,14 @@ screens turned up on 31 more:
 
 Section medians after the wave (scored on 300px tiles cut from the section renders):
 
-- **Onboarding** median accent 1.52%, median haze 11.0% (29 screens)
-- **Core Flow** median accent 2.66%, median haze 1.2% (25 screens)
-- **Guidance** median accent 1.20%, median haze 2.9% (8 screens)
-- **Club** median accent 0.10%, median haze 0.1% (7 screens)
-- **Limits & Align+** median accent 0.05%, median haze 1.0% (7 screens)
+- **Onboarding** median accent 1.63%, median haze 12.4% (29 screens)
+- **Core Flow** median accent 2.85%, median haze 1.2% (25 screens)
+- **Guidance** median accent 1.28%, median haze 3.1% (8 screens)
+- **Club** median accent 0.11%, median haze 0.1% (7 screens)
+- **Limits & Align+** median accent 0.05%, median haze 1.1% (7 screens)
 - **Auth** median accent 0.00%, median haze 0.0% (8 screens)
 - **Account** median accent 0.21%, median haze 0.1% (8 screens)
-- **Matches & Safety** median accent 1.83%, median haze 0.3% (5 screens)
+- **Matches & Safety** median accent 1.95%, median haze 0.2% (5 screens)
 - **Subscription** median accent 0.00%, median haze 0.0% (4 screens)
 - **System States** median accent 0.01%, median haze 0.0% (4 screens)
 - **Legal, Safety & About** median accent 0.00%, median haze 0.0% (13 screens)
