@@ -350,3 +350,14 @@ deck.
 The Figma file was restored from version history (3:54) after the desktop
 app dropped the Stardust section during an MCP reconnect; the audit showed
 everything through the ladder normalisation survived, and O-14 was rebuilt.
+
+### The deck's horoscope tab is back (2026-09-21, founder note)
+
+v1's deck carried a strip under the header — *Venus enters Leo tonight — be
+bolder.* / `TODAY'S SKY · TAP FOR YOUR FULL READING` — that the redesign
+dropped. The new deck has no vertical slack, so it lives on the count line:
+`11 of 15 left tonight` at left, and at right a `sky teaser` (12px gold
+moon sphere · *Venus enters Leo tonight* · `›`) that navigates to S-14
+Sky. Added to S-03, S-04, S-05, S-05b, S-05c, S-05e; the four S-05x sky
+states already carry their sky readout and S-05d's Peak header is left
+alone.
