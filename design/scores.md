@@ -270,3 +270,12 @@ auras melting (cloned from S-21's card), the one-line Venus reading, then
 three stacked sections **SPARK · where it lights / RUB · where it catches /
 ALIGN · where it holds**, two reads each, and a `Read the full alignment ›`
 link to S-21. The chat header's `›` now navigates to it in the prototype.
+
+### S-21 Alignment · Juniper × You — the full guide (2026-09-21, founder note)
+
+The full alignment page showed the card, a Spark/Rub/Align tab strip with
+only the Spark reads, and the button. Now: the card tightened (auras at 0.8,
+302 tall), the three sections stacked in full under `THE GUIDE · SPARK, RUB,
+ALIGN` (same reads as the chat sheet S-09b), and a `Star charts · both,
+overlaid — COMING SOON` row above the CTA. The tab strip, spark-only list
+and pagination dots are hidden, not deleted.
