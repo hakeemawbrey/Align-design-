@@ -215,3 +215,48 @@ Hakeem flagged five screens as "still weird" and asked about the horoscope scree
 
 Haze on S-12/G-14 is the gold aurora frame plus the door glow: paywall zone, intended.
 Render strip: `design/assets/fix-pass-strip.png`.
+
+## Wave 5 — the visual re-pass (2026-09-21)
+
+Five agents (M–Q, N re-run after a rate limit), 123 screens, every one
+screenshotted and read, not linted. Brief: `design/wave5/BRIEF.md`; notes
+`design/wave5/agent-*.md`. What the founder's phone review had caught on five
+screens turned up on 31 more:
+
+| failure | screens rebuilt |
+|---|---|
+| vector clip-art standing in for an object | golden door ×2, key, coin medallion (S-11), camera glyph (SF-01), checkmark medal (SF-02), dim sun (G-15), tray illustration (S-19b), grey card box (G-12), aura-coin discs (G-24/25/26), six foil match cards (G-09) |
+| blurred blob as hero or planet | Mercury (S-15), Venus (O-09, G-26), Element orb (O-10), six sign lights (O-02), waitlist lobe (O-03d), Sagittarius bloom (G-19), S-16 wall + blob, pink "photo" (S-08, S-05d), Mireya's avatar (S-17b), S-14 insight cards |
+| aurora wall | component top ellipse reshaped (27 instances); old atmosphere ellipses hidden under the instance on O-03, O-13, S-11; green walls on the four Guidance chart screens; three stacked glows on every Sign Reveal |
+| oracle screen with no hero | S-14 Sky, O-04 Birth Sky, G-09b No Matches |
+| hard-edged tile (ellipse image node under a blurred mask renders unfeathered) | S-21, S-08, S-07 — tiles rebuilt as rectangles |
+| card aura panel blurred (7px layer blur + image filters on the founder's tile) | all 13 deck-card screens — blur and filters stripped, the mystery aura is crisp again |
+
+Section medians after the wave (scored on 300px tiles cut from the section renders):
+
+- **Onboarding** median accent 1.52%, median haze 11.0% (29 screens)
+- **Core Flow** median accent 2.66%, median haze 1.2% (25 screens)
+- **Guidance** median accent 1.20%, median haze 2.9% (8 screens)
+- **Club** median accent 0.10%, median haze 0.1% (7 screens)
+- **Limits & Align+** median accent 0.05%, median haze 1.0% (7 screens)
+- **Auth** median accent 0.00%, median haze 0.0% (8 screens)
+- **Account** median accent 0.21%, median haze 0.1% (8 screens)
+- **Matches & Safety** median accent 1.83%, median haze 0.3% (5 screens)
+- **Subscription** median accent 0.00%, median haze 0.0% (4 screens)
+- **System States** median accent 0.01%, median haze 0.0% (4 screens)
+- **Legal, Safety & About** median accent 0.00%, median haze 0.0% (13 screens)
+- **Notifications** median accent 0.07%, median haze 0.0% (5 screens)
+
+The accent metric barely registers the founder's soft tiles and the gold
+frame, so the onboarding band (15–25%) is not reachable on this ground with
+this scorer; the wave was judged on the render and the subject test, and the
+numbers are recorded for the trend only. Haze on Onboarding is the aurora
+frame, intended. Full per-screen table: `design/wave5/scores.md`. Contact
+sheets rebuilt: `design/assets/all-screens-1.png` (Onboarding, Core Flow,
+Guidance, Club) and `all-screens-2.png` (the rest).
+
+Left as-is on purpose (flagged by the agents): the shared card back's seed
+of life (the mark, on G-27/S-02/S-01); skeleton blocks panel-violet not grey
+(G-16/G-17); sign glyphs baked into tiles wherever the tile stands for a
+sign (reveals, cards, avatars); the S-05x sky washes (fire haze 19.5% is the
+lever if the founder still finds it heavy: wash top stop 0.78 → 0.6).
