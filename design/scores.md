@@ -280,25 +280,22 @@ ALIGN` (same reads as the chat sheet S-09b), and a `Star charts · both,
 overlaid — COMING SOON` row above the CTA. The tab strip, spark-only list
 and pagination dots are hidden, not deleted.
 
-### S-21 — one guide card (2026-09-21, founder note)
+### S-21 — one guide card with tabs (2026-09-21, founder note)
 
-Four cuts in one evening. The founder rejected a three-frame long read
-("too much reading"), a hand of seven read cards ("too complicated, make it
-fun"), and a loose stack of card + meters + pills ("no introduction,
-everything feels out of place"). The extra frames are deleted. S-21 is now
-**one card**, 326×580, in the deck card's language (foil rim, inner
-keyline, serial), read top to bottom:
+After a three-frame long read, a hand of seven read cards, and a loose
+card + meters + pills were each rejected ("too much reading", "too
+complicated, make it fun", "no introduction, everything feels out of
+place"), the founder settled the direction: **one guide card, the section
+titles as tabs, more text per section.**
 
-1. eyebrow `JUNIPER × YOU`, the two auras melting;
-2. introduction — *Venus rules you both.* / She balances the room; you
-   keep it.;
-3. four identical sections, `SPARK` `RUB` `ALIGN` `RELATIONSHIP`: caps label with the
-   five-dot meter on the same line (deck-card colours `#7FD8F5` `#FF9AC4`
-   `#FFE066`), an italic headline, one plain note — *She answers like you
-   do.* / First date: she’s late, you’ve already ordered. — *You want the
-   last word. She wants silence.* / You’ll fight about money. Name a number
-   early. — *You read rooms the same way.* / Green flag: neither of you
-   makes a scene. — *You stay. She talks. Both count.* / Built to hold, made to be seen. (relationship, `#D695DE`);
-4. footer `LIBRA · AIR ◇ TAURUS · EARTH`, `ALIGN · № 031/∞`.
-
-Then the Say something button. The chat sheet S-09b links here.
+S-21 `1378:1915` is one card, 326×555, in the deck card's language:
+eyebrow `JUNIPER × YOU`, the two auras melting, the introduction (*Venus
+rules you both.* / She balances the room; you keep it.), then a tab strip
+`SPARK · RUB · ALIGN · RELATIONSHIP` and one section at a time — caps label
+with the five-dot meter (deck-card colours `#7FD8F5` `#FF9AC4` `#FFE066`
+`#D695DE`), an italic headline, a four-line paragraph, a `TRY` line, a
+pager — and the card footer `LIBRA · AIR ◇ TAURUS · EARTH`, `ALIGN · №
+031/∞`. The three other tab states are frames `1754:855` (Rub),
+`1754:1085` (Align), `1754:1315` (Relationship) in Core Flow row 6; the
+tabs navigate between them with smart-animate. The chat sheet S-09b links
+to S-21.
