@@ -1,5 +1,14 @@
 # Card research — how other decks lay out a card
 
+> **Where the mocks live (Sept 22):** Figma page **"Align — card theme ideas
+> (proposals · not applied)"**, right after the v2 page. Sections: 00 Start
+> here (cover) · 01 Card style (A/B/C) · 02 Onboarding & auth · 03 Matches &
+> the stack · 04 Chat & alignment · 05 Sky & guidance · 06 You & the binder ·
+> 07 Align+, limits & status · 08 System states, safety & legal · 09 Growth &
+> outside the app. Ideas are coded section.index (e.g. 06.1 the binder). The
+> per-session boards named in §3–§7 below were merged into that page.
+
+
 Asked by the founder (2026-09-22): "our card theme is mostly the same; research
 other layouts (decks, tarot, One Piece, Pokémon, Magic) and card apps, propose
 a couple of examples before app-wide changes. The main deck screen stays."

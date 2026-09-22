@@ -533,3 +533,20 @@ trade, the reversed card. Fix after render: eyebrows on ideas 2 and 4
 shortened to clear the close button. Render
 `design/assets/card-beyond-the-screens.png`; §7 of
 `design/card-research.md` holds the ten plus ~25 written. S-05 untouched.
+
+## Card ideas reorganised into their own Figma page
+
+New page `1862:2279` "Align — card theme ideas (proposals · not applied)"
+after the v2 page. Sections: `1862:2280` 00 Start here (cover with how to
+read, the three decisions, index, legend) · `1862:2333` 01 Card style
+(explorations board moved intact) · `1862:2334` 02 Onboarding & auth (2) ·
+`1862:2340` 03 Matches & the stack (6) · `1862:2350` 04 Chat & alignment
+(3) · `1862:2357` 05 Sky & guidance (5) · `1862:2366` 06 You & the binder
+(4) · `1862:2374` 07 Align+, limits & status (7) · `1862:2385` 08 System
+states, safety & legal (4) · `1862:2393` 09 Growth & outside the app (5).
+Each idea is a wrapper frame "idea NN.i · name" holding its label (renamed
+to the NN.i code), the mock, the note, and for pairs the TODAY / CARD IDEA
+tags and the cloned current screen. The five per-session boards
+(`1836:2258`, `1838:2258`, `1839:2262`, `1849:2264`, `1854:2279`) were
+emptied and removed from the Stardust section. All 36 mocks moved, none
+recreated. S-05 untouched.
