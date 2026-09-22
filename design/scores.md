@@ -563,3 +563,15 @@ counts; sections re-spaced. CTA clones now use the uniform-font copy
 `design/assets/card-rulebook.png`, `card-club.png`, `card-ideas-cover.png`.
 §8 of `design/card-research.md` has the ten plus ~40 written by feature.
 S-05 untouched.
+
+## Card ideas · event cards (section 12)
+
+New section `1874:876` "12 · Event cards — 8 ideas" on the card-ideas
+page: 12.1 anatomy, 12.2 event on the stack, 12.3 the sky's hand, 12.4
+shared event in chat, 12.5 combo, 12.6 solar return, 12.7 dealer's cards,
+12.8 events page. Landscape event card helper with hero / short / compact
+variants and five family colours. Fixes after render: 12.3 rebuilt with
+the short variant (first pass squashed full cards), 12.5's small event
+rebuilt at 206×110. Cover: row 12, decisions text updated, height 900,
+sections re-spaced. Renders `design/assets/card-event-cards.png`,
+`card-ideas-cover.png`. §9 of `design/card-research.md`. S-05 untouched.

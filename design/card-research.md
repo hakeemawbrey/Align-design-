@@ -579,3 +579,114 @@ page codes. Nothing applied; deck untouched.
 - The rulebook as the About page and as a printed insert in the physical
   card's envelope.
 - Wallet pass: your card back in Apple Wallet with the founding serial.
+
+## 9. Event cards — the second card type (Figma section 12)
+
+TCGs mix character cards with event cards (Trainer cards next to Pokémon,
+instants and enchantments next to creatures). Align's people are the
+characters; everything that happens to the night is an event. Rule of
+shape: **people are portrait, events are landscape**, so the two are never
+confused in a stack. Every event carries a family badge, planet art, a
+name, a TONIGHT effect, how long it lasts, a suggested play, and rarity
+dots. Five families:
+
+| Family | Colour | Dealt by | Examples |
+|---|---|---|---|
+| Sky | gold | the sky | transits, Moon signs, retrogrades, eclipses, seasons, returns |
+| Dealer | pearl | the house | the refill, the sweep, the mulligan, the wider table, the cut |
+| Play | cyan | you | truth card, date card, sky read, comet, pass, wager, bluff |
+| Milestone | green | the pair's history | first message, first date, seven days, one month |
+| Pair | lilac | a person + an event | combos such as "Venus at home" |
+
+Rarity: common (daily Moon), uncommon (transits), rare (retrograde
+turns), mythic (eclipses, solar return, Saturn return, Grand Trine).
+
+### Built (12.1–12.8)
+
+- **12.1 The event card.** The anatomy, a person beside an event for the
+  shape rule, and the five family badges.
+- **12.2 The event on the stack.** One event dealt on top of the fifteen
+  each night; favoured signs get a gold edge, reads shift. On Your Stack,
+  not the deck.
+- **12.3 The sky's hand.** The week as event cards stacked by date with
+  rarity; future ones dashed.
+- **12.4 The shared event.** At 8:11 the same event lands in the thread
+  for both; "Play it" drafts a line in your voice.
+- **12.5 The combo.** Person + event: Juniper plus Venus entering Libra
+  is "Venus at home", her Spark 4 → 5 until Oct 7.
+- **12.6 The solar return.** Your birthday as a mythic: 33 cards, peaks
+  free, top of every stack, the sleeve glows. Saturn and Venus returns
+  are the other personal mythics.
+- **12.7 The dealer's cards.** Every system act as a pearl dealer card
+  with its time; never a surprise.
+- **12.8 The events page.** The binder keeps the skies you lived through
+  and who you were talking to; future mythics dashed.
+
+### Written
+
+**Sky events**
+- Moon void-of-course: "nothing lands" — messages sent now are marked
+  with a small void stamp, no offence taken.
+- New Moon: the deck deals only cards you have never seen.
+- Full Moon: every veiled photo opens for one peak, free.
+- Mercury retrograde start: the reversed card (11); retrograde end: "all
+  threads reopen" — released cards from the last three weeks come back
+  for one night.
+- Venus retrograde: exes' signs are cut from the deck automatically.
+- Mars in your sign: your Rub reads are shown to matches first, as a
+  warning label; play "I know" to acknowledge.
+- Saturn square: a slow night — the sweep is delayed to 1:11.
+- Jupiter in your seventh house: the wider table for a month.
+- Eclipse: one veiled card reveals at midnight; the binder keeps the
+  eclipse card forever.
+- Season change: the season set opens (10 in §7); the season sleeve is
+  an event card you keep.
+- Ingress cards for every planet, colour-coded by planet sphere.
+- Weather cards for Houston (heat advisory, hurricane watch): a real-sky
+  event that suggests "stay in, text".
+
+**Dealer events**
+- The refill, the sweep, the mulligan, the wider table, the cut (built).
+- The reshuffle: chart edited → the dealer reshuffles at the next 11:11.
+- The house apology: an outage becomes a dealer card that grants a free
+  peak.
+- The dealer's warning at 11:10 with a one-minute count.
+- The round: your first fifteen nights as a "round" with a summary card.
+
+**Play events**
+- Truth, date, sky read, comet, pass, wager, bluff (§8), plus:
+- The ask: three ready questions; the raise: escalate a date card from
+  drink to dinner; the fold: end a thread kindly with a card that says so;
+  the call: "prove it" on a read she disputes; the tell: reveal one hidden
+  layer of your card (photo, bio, city) as a play.
+- Play limits: one truth, one date and one sky play per pair per day;
+  Align+ lifts the sky play limit.
+
+**Milestone events**
+- First message, first date, seven days, one month, first photo open,
+  first comet, first mutual truth; stamped onto the joint card.
+- A milestone card is also a push: the notification is the card.
+
+**Pair events (combos)**
+- Venus at home (built), Moon on Moon (both Moons in one sign tonight:
+  Rub read softens), Sun trine Sun, Mercury mirror (same Mercury sign:
+  truth cards answer faster), Saturn between (a hard aspect: the pair gets
+  a "slow" card, no expiry for a week).
+- Combo chains: two combos live at once earn a "grand" stamp.
+
+**Where events show**
+- The stack (1 + 15), the calendar (the sky's hand), the chat (shared
+  event at 8:11), the widget (today's event card), the binder (events
+  page), the club (the room's table card is the event of the night), the
+  notification centre (dealt cards, §5).
+
+**Rarity and collection**
+- Rarity dots on every event; mythics get a foil frame and a serial.
+- Events are collectable but not tradeable; the events page is the
+  personal record of a year of sky.
+- Season sets are built from event cards plus six person cards the
+  season favours.
+
+**Rulebook addition**
+- Rule card 13, "The event": the sky deals one event a night on top of
+  the fifteen; events are landscape; only PLAY cards are yours to play.
