@@ -690,3 +690,41 @@ turns), mythic (eclipses, solar return, Saturn return, Grand Trine).
 **Rulebook addition**
 - Rule card 13, "The event": the sky deals one event a night on top of
   the fifteen; events are landscape; only PLAY cards are yours to play.
+
+## 10. Event card designs — portrait, one layout per family (Figma section 13)
+
+Hakeem's call: events are **portrait like people**, so the frame does
+the telling, not the orientation. Section 12's mocks still show the
+landscape version and will be converted once a design is picked. Nine
+layouts, each borrowed from a real card game:
+
+| # | Family | Layout | Borrowed from |
+|---|---|---|---|
+| 1 | Sky · transit | The arcana: numeral, illustrated scene (sign figure under the planet), double hairline border, corner stars, name banner | Tarot Major Arcana |
+| 2 | Sky · Moon | The phase: one big moon, a dial of eight phases with today marked, one line | Pokémon Energy |
+| 3 | Sky · retrograde | The reversed: hazard-dash frame, chevrons, inverted planet, name ribbon printed upside down | Yu-Gi-Oh trap |
+| 4 | Sky · mythic | The eclipse: near-black ground, holographic border, the corona is the only art | Black foil / secret rare |
+| 5 | Dealer | The ticket: light stock, perforated stub with the time, barcode, "dealt" stamp | Pokémon Item |
+| 6 | Play | The instant: cost circle, bold sans name, art window, effect, TRIGGER band | One Piece event |
+| 7 | Milestone | The seal: scalloped wax seal with the date, the pair's stamp list | Postage / wax seal |
+| 8 | Pair · combo | The fusion: two auras on a seam of light, effect on a dark scrim | Fusion cards |
+| 9 | Sky · return / season | The full art: aura fills the card, holo border, thin text scrim | Pokémon full-art |
+
+How to tell an event from a person at a glance: person cards always have
+the aura window, name and three reads; they never carry a numeral, a
+ticket stub, a cost circle, a seal, or a holo border (except founding
+foil). The family badge colour is constant across layouts.
+
+Written extensions:
+- Rarity by finish, not by frame: common flat, uncommon hairline, rare
+  foil edge, mythic holo border, on any layout.
+- Seasonal frames: the arcana border ornament changes with the zodiac
+  season (Libra scales in the corners in Libra season).
+- Reversed variants for every sky layout during retrograde: the same
+  card printed upside down.
+- The ticket family extends to receipts (Align+ purchases) and boarding
+  passes (change city).
+- Play cards get colour by suit: cyan for spark plays, pink for rub
+  plays, gold for align plays.
+- Milestone seals age: a seal older than a year gets a patina.
+- A blank event card for the dealer's apology, hand-written style.

@@ -575,3 +575,14 @@ the short variant (first pass squashed full cards), 12.5's small event
 rebuilt at 206×110. Cover: row 12, decisions text updated, height 900,
 sections re-spaced. Renders `design/assets/card-event-cards.png`,
 `card-ideas-cover.png`. §9 of `design/card-research.md`. S-05 untouched.
+
+## Card ideas · event card designs (section 13)
+
+Section `1879:876` "13 · Event card designs — nine portrait layouts" on
+the card-ideas page: arcana, phase, reversed, eclipse foil, ticket,
+instant, seal, fusion, full art, plus a legend card on how to tell an
+event from a person. First pass was landscape; rebuilt portrait
+(240×394) at Hakeem's request. Fixes: legend person line shortened,
+arcana rarity dots moved off the corner star. Cover row 13 reads "9
+portrait layouts". Render `design/assets/card-event-designs.png`. §10 of
+`design/card-research.md`. S-05 untouched.
