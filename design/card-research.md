@@ -463,3 +463,119 @@ Board `1854:2279`. Nothing applied; deck untouched.
 - Haptics: a card being dealt, a card flipping, a card being cut.
 - Sound: one soft deal sound at 11:11 push.
 - The Apple Watch complication as your card back with the count.
+
+## 8. The game — ten more built, a rulebook, and forty written
+
+Added straight into the organised Figma page by area. Codes below are the
+page codes. Nothing applied; deck untouched.
+
+### Built
+
+- **02.3 The practice hand.** Before the real deck, three practice cards:
+  the dealer, the rules card, one sample person card with the gestures
+  printed under it. Release one, hold one, align one, then the real deal.
+- **03.7 Card conditions.** Five states readable from the card itself
+  everywhere it appears: veiled is sleeved, sparked has a cyan edge,
+  aligned is gold foil, going quiet fades with an orange corner, released
+  is face down. One grammar instead of five labels.
+- **04.4 The truth card.** One question, two answer slots, answers reveal
+  at the same time or not at all. One a day per pair; the joint card keeps
+  the ones both answered.
+- **05.6 The spread of three.** Behind you, today, ahead: Monday's,
+  today's raised, Sunday's sky cards with one reading across them.
+- **06.5 The binder cover.** Collector since, foils, sets, rarity, align
+  rate, signs, seasons; badges as pips; the pages list.
+- **07.8 Peak tokens.** Three tokens a night, spent for six seconds of a
+  face, refilled at 11:11; Align+ never empties; a booster token is a
+  small purchase for the one card you cannot leave.
+- **09.6 The blank card.** An invite is a blank card with your from-line;
+  the friend casts their chart into it. They get the founding sleeve, you
+  get a season pack. Three per member.
+- **10.1 The table card.** The club room as a table: the sign's card on
+  top with count and city; posts dealt as cards with an aura corner; chips
+  as upvotes; flick to dismiss.
+- **10.2 Draft night.** The room drafts tonight's prompt from three cards
+  by playing one chip each; the winner becomes the table card at nine.
+- **11 The rulebook.** The whole system as twelve rule cards: the deck,
+  the card, the align, the hand, the binder, the sleeve, the cut, the
+  mulligan, the foil, the season, reversed, the table.
+
+### Written, by feature
+
+**Deck-adjacent (never the deck screen itself)**
+- The dealer's warning: at 11:10 a small dealer card slides in, "table
+  clears in one minute".
+- Card weight: a card you have peeked twice gets heavier (a slower swipe,
+  a deeper shadow).
+- The ante: on peak nights you may put one of tonight's fifteen back to
+  draw from the "wider table" (35 miles).
+- Suit runs: three cards of one element in a night light a small run
+  marker under the stack.
+- The dead card: a profile paused mid-night turns grey in your stack with
+  "sleeved" printed across it.
+
+**Matches**
+- The kicker: when both align within a minute the joint card gets a
+  "snap" stamp.
+- Trade-up: unmatch politely by "passing the card back to the dealer".
+- Match order as hand order: drag to sort your hand; the app remembers.
+- Expiring matches curl at the corner three days out.
+
+**Chat**
+- The bluff: send a sealed message that opens only if she replies first.
+- The wager: "if you're right, I book dinner" as a two-sided card with an
+  outcome.
+- The date card deck: six templates from overlap in interests, place and
+  hours; play one, she edits, both accept, it stamps.
+- The pass: a graceful "not tonight" card that keeps the thread warm for
+  48 hours.
+- Read receipts as a card turning slightly toward you.
+
+**Sky & guidance**
+- The daily cut: the sky "cuts the deck" each night; the cut line shows
+  which element is on top.
+- Eclipse night: black foil backs for everyone, one night a year.
+- New moon: blank card backs; full moon: every back glows.
+- The retrograde sleeve: during Mercury retrograde messages sit in a
+  "re-read" sleeve for ten seconds before sending.
+- The transit card as a push: the notification is the card, tap to flip.
+
+**You & the binder**
+- Sleeves you earn: founding, verified, season, one-year, a hundred
+  aligned.
+- The proof card: verification as a tiny foil seal that others can tap to
+  see the date.
+- Re-print: edit your reads and the old printing stays in the binder as
+  "first printing".
+- The trade binder: cards you would recommend to a friend (with consent).
+- The lost-and-found page: released cards the sky deals you again.
+
+**Club**
+- The house rules card pinned at the top of every room.
+- Room chips: a member's chip colour shows their moon sign.
+- The pot: a weekly prompt where the best reply's card is featured in the
+  room's table card.
+- Draft leagues: the four element rooms compete on replies during a
+  season.
+
+**Align+, limits & status**
+- The pile: Align+ peaks as a visible pile of tokens on the widget.
+- The dealer's cut: founding members skip the 11:10 sweep once a week.
+- Foil finishes: gold (founding), silver (verified), rainbow (both).
+- Sleeve shop: seasonal sleeves as small one-time purchases, never
+  affecting the deal.
+
+**System, safety & legal**
+- Report as "calling the dealer": the dealer card slides in, takes the
+  card off the table, thanks you.
+- The safe word card: a card you can play in chat that pauses the thread
+  and opens the safety guide for both.
+- Loading is a riffle; error is a card dropped on the floor, picked up on
+  retry.
+
+**Growth & outside the app**
+- Card of the night as a story-size image with the pair anonymised.
+- Season sleeves as App Store screenshots.
+- The rulebook as the About page and as a printed insert in the physical
+  card's envelope.
+- Wallet pass: your card back in Apple Wallet with the founding serial.

@@ -550,3 +550,16 @@ tags and the cloned current screen. The five per-session boards
 (`1836:2258`, `1838:2258`, `1839:2262`, `1849:2264`, `1854:2279`) were
 emptied and removed from the Stardust section. All 36 mocks moved, none
 recreated. S-05 untouched.
+
+## Card ideas · the game batch
+
+Ten more built straight into the organised page (02.3 practice hand, 03.7
+card conditions, 04.4 truth card, 05.6 spread of three, 06.5 binder cover,
+07.8 peak tokens, 09.6 blank card, new section 10 Club `1872:1080` with
+10.1 table card and 10.2 draft night, new section 11 The game `1872:1308`
+with twelve rule cards). Cover index updated with 10 and 11 and refreshed
+counts; sections re-spaced. CTA clones now use the uniform-font copy
+`1839:3143` (the kit holo button has mixed fonts). Renders:
+`design/assets/card-rulebook.png`, `card-club.png`, `card-ideas-cover.png`.
+§8 of `design/card-research.md` has the ten plus ~40 written by feature.
+S-05 untouched.
