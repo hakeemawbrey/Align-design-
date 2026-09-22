@@ -381,16 +381,19 @@ and one line (*Hold the card to peak · 3 left*); the comet count now lives
 only on the gold ✦. The Peak state (S-05d) keeps its countdown header and
 no strip.
 
-### G-05 — You · Home, the hub (2026-09-21, founder note)
+### G-05 — You · Home, the hub (2026-09-22, founder note)
 
 The You tab landed on the card screen with a list under it; there was no
-hub. New `G-05 — You · Home` (`1809:2258`, Account row 2) is the landing
-screen: title *You* with an `ALIGN+ · FOUNDING` pill; identity strip (60px
-Taurus aura avatar, *Hakeem, 32*, `TAURUS SUN · SAGITTARIUS MOON · LIBRA
-RISING`, Tulsa · reading from Houston); a 2×2 of hub tiles, each with its
-own visual — **Your card** (card back) → G-05a, **Your sign** (Figure ·
-Taurus) → G-23, **Cheat sheet** (hairline glyph) → S-20 Glossary,
-**Today's sky** (gold sphere) → S-14; then five list rows — Cosmic calendar
-→ S-15, Align+ → G-13, Notifications → S-19, Settings → G-07, Help &
-support → G-29. The old G-05 is renamed `G-05a — Your Card · Face Down`
-and all 34 You-tab reactions across the file now point at the hub.
+hub. A first cut (avatar strip, four flat tiles, five rows) was "bland and
+not as cohesive as Stardust", so `G-05 — You · Home` (`1809:2258`, Account
+row 2) is built as an **oracle screen**: a Taurus-rim spotlight, the
+feathered `Figure · Taurus` tile as the hero at the top, a dark well under
+*Hakeem, 32* / `TAURUS SUN · SAGITTARIUS MOON · LIBRA RISING` / Tulsa ·
+reading from Houston; then **six mini cards** in the card language (panel,
+Taurus keyline, each with its own visual): Your card (card back) → G-05a,
+Your sign (Taurus aura) → G-23, Cheat sheet (twelve-dot ring) → S-20,
+Today's sky (gold sphere) → S-14, Cosmic calendar (moon) → S-15,
+Notifications (lit dot) → S-19; then two rows, Settings → G-07 and Help &
+support → G-29. The `ALIGN+ · FOUNDING` pill top right opens G-13. The old
+G-05 is renamed `G-05a — Your Card · Face Down`; all 34 You-tab reactions
+point at the hub.
