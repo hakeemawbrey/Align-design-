@@ -399,12 +399,11 @@ the three rows clear the tab bar. The `ALIGN+ · FOUNDING` pill top right opens 
 G-05 is renamed `G-05a — Your Card · Face Down`; all 34 You-tab reactions
 point at the hub.
 
-### G-05 hub — the pearl holo pass (2026-09-22, founder note)
+### G-05 hub — pearl pass reverted, spacing fixed (2026-09-22, founder note)
 
-"Take more of the holo pearl theme." The four-stop pearl from the holo
-button (`#F6EDFF → #FFF7EC → #EAF4FF → #FFEFF7`) now runs through the hub:
-tile strokes (diagonal, @0.75) and inner keylines (@0.28), a top-down
-pearl sheen on every tile (0.16 → 0), pearl rims on the tile visuals, pearl
-chevrons, pearl strokes on the three rows (@0.32), the Align+ pill's fill
-and stroke, and the name *Hakeem, 32* set in the pearl gradient. The Taurus
-green stays on the spotlight and the big three only.
+A pearl-holo pass (pearl rims, keylines, sheens, row strokes, pill and name
+in the four-stop gradient) was tried and rejected ("looks weird, go back").
+The hub is back to the Taurus-keyline version. Spacing: eyebrow `YOUR SKY ·
+TAURUS` left-aligned at x 24 so it clears the Align+ pill; tiles from y 332
+at 92 tall with an 8px gap; rows 12px below the tiles with 6px between,
+the last row ending 12px above the tab bar.
