@@ -483,3 +483,18 @@ groups still predated it:
   house VII lit, `The seventh house.` / The person opposite you., tabs
   `MEANING · YOUR CHART · JUNIPER'S`, the reading, `TRY` It is lit in your
   chart — see where., footer `HOUSE VII ◇ RULED BY VENUS`.
+
+### Club updated (2026-09-22, founder note)
+
+- **S-17 Club · Taurus room** on the hub pattern: `CLUB · TAURUS ONLY` /
+  `HOUSTON`, Taurus spotlight + feathered `Figure · Taurus` hero, *The
+  Taurus room* on a dark well, stat line `1,204 IN THE ROOM · 41 SAID
+  SOMETHING TONIGHT`, `TONIGHT'S PROMPT` card (lit dot · *Mercury goes
+  direct tomorrow. Who has an opinion?* · Say the first thing ›), `THE
+  ROOM` grouped panel of three posts (moon-sign aura avatar, italic name,
+  caps meta, two-line body, ♡ / ✦ counts, → S-17b), pearl `Say it to the
+  room ✦` → S-18. The old content frame and glow are hidden.
+- **S-17b Post Detail**: the post is a panel card with a Scorpio rim; the
+  three replies sit in one grouped panel with dividers under a caps `3
+  REPLIES` header; the thread rail is hidden; the reply input at 690.
+- S-17c/S-17d/S-18/S-18b/S-18c were Wave 4–5 utility builds and hold.
