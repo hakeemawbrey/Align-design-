@@ -70,3 +70,26 @@ for the stack, the matches list and thumbnails.*
 Recommendation: **B for the deck and match states, C's corner indices and
 pips as the small-card language (matches list, You hub, the fan).** A is
 the strongest single image but hides the reads, which are the product.
+
+## 4. The card everywhere else — six ideas (Figma: `✦ Card theme · everywhere`)
+
+Built with today's card and card back so the ideas are about *where the
+card lives*, not which style wins. The deck screen is untouched.
+
+1. **The daily draw (Sky).** Sky today as a tarot draw: a fan of card backs,
+   tap one, it rises and turns into today's sky card (numeral, planet art,
+   plaque, keyword pills). One draw a day. *Labyrinthos / MoonX.*
+2. **The spread (Alignment).** Her card and yours meet at the top; Spark /
+   Rub / Align laid out below as three small cards, each tappable for its
+   read; the Venus line under them. *The tarot three-card spread.*
+3. **The hand (Matches).** Matches as a fan across the bottom; swipe along
+   it and the chosen card rises with name and state. Replaces the list.
+   *MoonX draw, playing-card fan.*
+4. **The binder (You).** Your card front and back side by side, then every
+   card you have drawn: face-up once aligned, face-down while veiled.
+   *HoloDex / TCG collection.*
+5. **The gallery (Cheat sheet).** Every term is a mini card with its art and
+   a name plaque; locked terms are face-down with a ✦. *Labyrinthos card
+   gallery.*
+6. **The pack (Align+).** A pearl-foil sleeve with the three perks peeking
+   out as cards; "Open the pack" is the trial. *TCG pack opening.*
