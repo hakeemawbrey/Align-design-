@@ -511,3 +511,15 @@ render: screen 6's lifted Scorpio cards were over the headline; moved down
 the eight ideas and a written long list of ~45 more grouped by area.
 S-05 untouched; nothing applied app-wide pending Hakeem's pick of card
 style (A/B/C) and ideas.
+
+## Card theme · screen by screen board (not applied)
+
+Board `1849:2264` "✦ Card theme · screen by screen" (5560×2360) below the
+more-ideas board. Twelve today → card-idea pairs, each the existing screen
+cloned next to a new 390×874 mock: S-07 the meet, S-08 the turn, G-09 the
+binder page, G-12 back to the deck, S-13 the discard pile, G-19 the empty
+slot, G-18 the tapped card, S-12 the open sleeve, P-02 top of the stack,
+G-08 sleeved or torn, G-03 three asks, L-01 the rules card. Fix after
+first render: pair 4 stack shrunk to 124 wide and everything raised.
+Render `design/assets/card-screen-by-screen.png`; full audit of all 123
+screens in `design/card-research.md` §6. S-05 untouched.
