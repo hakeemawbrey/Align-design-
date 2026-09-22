@@ -523,3 +523,13 @@ G-08 sleeved or torn, G-03 three asks, L-01 the rules card. Fix after
 first render: pair 4 stack shrunk to 124 wide and everything raised.
 Render `design/assets/card-screen-by-screen.png`; full audit of all 123
 screens in `design/card-research.md` §6. S-05 untouched.
+
+## Card theme · beyond the screens board (not applied)
+
+Board `1854:2279` "✦ Card theme · beyond the screens" (4580×1120) below
+the screen-by-screen board: play a card, the mulligan, rarity, the joint
+card, your year in cards, the widget, the physical card, the season, the
+trade, the reversed card. Fix after render: eyebrows on ideas 2 and 4
+shortened to clear the close button. Render
+`design/assets/card-beyond-the-screens.png`; §7 of
+`design/card-research.md` holds the ten plus ~25 written. S-05 untouched.

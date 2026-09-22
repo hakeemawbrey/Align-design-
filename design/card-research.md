@@ -369,3 +369,88 @@ S-17 club (all), S-19b–e, O-01–O-10, O-14, O-15.
 - S-19: the deal (§5 idea 7). S-19b: the empty slot. S-19c Detail: one
   dealt card. S-19d Grouped: a small stack per day. S-19e Settings: which
   cards get dealt to you, as toggles on card thumbnails.
+
+## 7. Beyond the screens — mechanics, plays, widgets, physical (Figma: `✦ Card theme · beyond the screens`)
+
+Ten ideas that are not a screen redesign but a new thing the card can do.
+Board `1854:2279`. Nothing applied; deck untouched.
+
+1. **Play a card (chat).** Chat gets a hand: your reads about her, a sky
+   card for the day, a date card built from both interest lists. You play
+   one into the thread like a sticker with meaning. "Your move" is literal.
+2. **The mulligan.** Magic's mulligan as a nightly rule: once, before
+   midnight, put three cards back face down and take three new ones. Free
+   gets one a week, Align+ one a night. Lives on the Stack screen.
+3. **Rarity.** Pokémon rarity earned by the chart: common, uncommon, rare,
+   founding. A stellium, a Grand Trine, a Venus–Mars conjunction earns a
+   rarer frame. Changes nothing about the deal; it is a frame and a line
+   on the back, and a reason to open About your sign.
+4. **The joint card.** Aligning mints a third card neither of you owns
+   alone: both auras, the Venus line, a serial joining your two numbers,
+   stamps for first message, first date, one month. It sits in both
+   binders and is the thing people screenshot.
+5. **Your year in cards.** A recap dealt as five cards: dealt, aligned,
+   the sign you kept choosing, the best night, your rarest match. Works
+   monthly as "your Libra season".
+6. **The widget.** Lock and home screen widgets in card language: the
+   medium one is your deck face down with count and refill time; the small
+   ones are today's sky card and the last card that flipped for you.
+7. **The physical card.** The founding perk made literal: a printed foil
+   card with your aura, serial and an NFC chip. Tap it on a phone and your
+   face-down card opens on theirs. 333 exist, Houston only.
+8. **The season.** Each zodiac season is a twelve-card set to collect in a
+   month: a season sleeve, four sky cards, the ruling planet, six people
+   the season favours for you. Sleeves stack in the binder year over year.
+9. **The trade.** Share tonight's hand with one friend for 24 hours,
+   initials and reads only, photos veiled. They pin the card they would
+   play. The group-chat screenshot, designed on purpose.
+10. **The reversed card.** Tarot reversals as a sky mechanic: during
+    Mercury retrograde every card is dealt upside down and the three reads
+    change meaning (Spark reads as caution, Rub doubles, Align holds).
+
+### More, written only
+
+**Mechanics**
+- The tap: hold a card to "tap" it for later; tapped cards stay one extra
+  night (Align+).
+- The peek costs a token: Peaks as a hand of three tokens that refill at
+  11:11.
+- Combo: two aligned cards from the same element unlock a "grand trine"
+  night with a bonus deal.
+- The bench: three cards you can keep outside the nightly fifteen, like a
+  sideboard.
+- Foil odds: a small chance any night's deal contains one foil card (a
+  verified founding member) shown with a shimmer.
+- Trade-in: release five cards in a row and the sixth is dealt from a
+  wider radius.
+- The cut-off: at 11:10 the table clears, cards you did not act on are
+  swept; a one-minute warning as the dealer's hand.
+- The reshuffle animation whenever your chart is edited.
+
+**Plays in chat**
+- Ask cards: three ready questions dealt as cards under the composer.
+- The truth card: play it and both must answer one question honestly.
+- The date card: built from overlap in interests, place and time slots;
+  accept = it goes in the joint card's stamps.
+- The pass card: a graceful "not tonight" that keeps the thread alive.
+- The comet as a card thrown across the table with a spin.
+
+**Binder and collection**
+- Binder pages by season, by element, by city.
+- Missing-sign hunt: the three signs you have never been dealt, with a
+  hint of when the sky favours them.
+- The released page as a graveyard with dates, never deleted.
+- Foil count on the binder cover.
+
+**Social and growth**
+- Card of the night: one anonymised aligned pair shown to the club.
+- The dealer's pick: Align posts one editorial card a week in every room.
+- A blank card you give a friend; it becomes theirs at signup and you
+  both get the season sleeve.
+- QR on the physical card that opens your face-down card in a browser.
+
+**System**
+- App icon variants as card backs (night, founding, earth, season).
+- Haptics: a card being dealt, a card flipping, a card being cut.
+- Sound: one soft deal sound at 11:11 push.
+- The Apple Watch complication as your card back with the count.
