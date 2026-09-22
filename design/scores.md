@@ -398,3 +398,13 @@ Aries) → P-01, Settings → G-07 and Help & support → G-29; tiles 92 tall so
 the three rows clear the tab bar. The `ALIGN+ · FOUNDING` pill top right opens G-13. The old
 G-05 is renamed `G-05a — Your Card · Face Down`; all 34 You-tab reactions
 point at the hub.
+
+### G-05 hub — the pearl holo pass (2026-09-22, founder note)
+
+"Take more of the holo pearl theme." The four-stop pearl from the holo
+button (`#F6EDFF → #FFF7EC → #EAF4FF → #FFEFF7`) now runs through the hub:
+tile strokes (diagonal, @0.75) and inner keylines (@0.28), a top-down
+pearl sheen on every tile (0.16 → 0), pearl rims on the tile visuals, pearl
+chevrons, pearl strokes on the three rows (@0.32), the Align+ pill's fill
+and stroke, and the name *Hakeem, 32* set in the pearl gradient. The Taurus
+green stays on the spotlight and the big three only.
