@@ -435,3 +435,24 @@ and two caps actions, `EDIT CARD ›` (→ G-27) and `BLOCKED SIGNS · 2 ›`
 Order on the hub, founder note: the pearl `Align+ · Founding member ✦` sits
 **below** the Your card preview (carousel 308–416 · YOUR CARD 428 / preview
 446–566 · CTA 578–632 · APP 644 / panel 662–782).
+
+### S-14 Sky · today and S-15 Cosmic Calendar rebuilt (2026-09-22, founder note)
+
+"Out of place, don't use our updated design." Both were first-batch
+Guidance screens: S-14 was a wheel of dots plus headline, S-15 a spine, a
+grid and a blob-turned-sphere. Now:
+
+- **S-14** is a *sky card* cloned from the S-21 guide card: eyebrow
+  `TAURUS · TODAY'S SKY`, Venus sphere + ring hero under a gold glow, intro
+  (*Say the quiet thing.* / Venus trines your sun until Thursday.), tabs
+  `TODAY · TONIGHT · WEEK · MOON`, the section (`TODAY · VENUS TRINE SUN`
+  4/5, headline, paragraph, `TRY` Text the one you left on read.), pager,
+  footer `MOON · PISCES ◇ VENUS → LEO` / `ALIGN · SKY № 265/365`; above
+  it `LIBRA SEASON · DAY 7` / `SEPT 22`; below, `Read tonight's deck ✦` →
+  the deck. The old wheel/headline/insight content is hidden.
+- **S-15** is on the hub pattern: title *Cosmic calendar*, `SEPTEMBER 2026 ·
+  HOUSTON` / `MOON IN PISCES · WAXING`, `THE MONTH` with the existing grid
+  in a grouped panel, `THIS MONTH` carousel (Mercury direct 23rd · New
+  moon 21st · Venus → Leo tonight · Libra season day 7, each with its
+  visual), `TONIGHT` panel (two rows → S-14), `Open the day in full ✦` →
+  S-14. The spine, blob and old copy are hidden.
