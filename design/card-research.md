@@ -748,3 +748,48 @@ drawn in shapes so an illustrator (or Codex) can paint over them:
 10. The season: a twelve-spoke wheel with one segment lit.
 11. Reversed: the card upside down inside a return arrow, ℞.
 12. The table: an oval table, four dealt posts, a chip stack.
+
+## 12. Symbols — an emblem for every rule and event family (Figma section 14)
+
+Section 11 shows how each rule works; section 14 shows what it means,
+the way a tarot card carries a symbol rather than a diagram. Twenty-one
+portrait cards, each with a line-art emblem as the illustration
+placeholder, a symbol name, the rule or family it stands for, and a
+one-line meaning.
+
+**Rules**
+
+| Rule | Symbol | Meaning line |
+|---|---|---|
+| 01 The deck | The Pouring Sky | What the night gives. Fifteen fall from the same moon; none of them chose you yet. |
+| 02 The card | The Veil | What stays hidden. A face with its eyes closed and a star where the chart is. |
+| 03 The align | The Two Crescents | What meets. Two moons turned toward each other make one light between them. |
+| 04 The hand | The Open Palm | What you can play. Five reaches from one palm, a star at each fingertip. |
+| 05 The binder | The Tree | What you have kept. Every card you drew hangs from a branch; the released ones are the roots. |
+| 06 The sleeve | The Cloak | What protects you. A starred cloak with a gold clasp; under it the card is still yours. |
+| 07 The cut | The Cut Moon | What you leave out. A moon halved cleanly; the half you kept still lights the night. |
+| 08 The mulligan | The Hourglass | The second chance. Turn it once and the same night runs again with new sand. |
+| 09 The foil | The Star | What shines. Eight rays from one point; rarity is light, not weight. |
+| 10 The season | The Wheel | What returns. Sun at the top, moon at the bottom, twelve marks between them. |
+| 11 Reversed | The Hanged Planet | What reads wrong. A planet strung upside down; its reflection is the truer reading. |
+| 12 The table | The Fire | Where the sign gathers. Twelve around one flame; the flame is the prompt of the night. |
+
+**Event families**
+
+| Family | Symbol | Meaning line |
+|---|---|---|
+| Sky · transit | The Messenger | A planet leaves one house for another; the line between them is the news. |
+| Sky · Moon | The Sleeping Moon | The daily card. A moon that turns its face a little further each night. |
+| Sky · retrograde | The Backward Spiral | The path that turns in on itself; every step looks like the last one, reversed. |
+| Sky · mythic | The Covered Sun | One night a year the light goes behind a dark disc; what was veiled shows. |
+| Dealer | The Door | The house speaks through a doorway; every dealer card is the same door opening. |
+| Play | The Thrown Card | Your move, mid-air. The only card you choose to put on the table. |
+| Milestone | The Knot | Two rings that cannot be pulled apart; the star sits where they cross. |
+| Pair · combo | The Two Flames | A person and a sky burning from one wick; what one is, the other becomes. |
+| Sky · return | The Rising Sun | The sun back where it was the day you were born; the horizon is the year. |
+
+Illustration brief: keep each emblem to one object and one light source,
+drawn in the rule's colour on the night ground, with the gold star as
+the only second colour. The frames in Figma are named
+`art · symbol (placeholder for illustration)` and can be swapped one for
+one.

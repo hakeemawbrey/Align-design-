@@ -596,3 +596,11 @@ illustration)` frame of line-art built from rects, lines, arcs and
 vectors in the rule's colour. Fixes: mulligan badge/label and season
 count moved off overlaps. Render `design/assets/card-rulebook-visual.png`.
 §11 of `design/card-research.md`. S-05 untouched.
+
+## Card ideas · symbols (section 14)
+
+Section `1887:876` "14 · Symbols": 12 rule emblems + 9 event-family
+emblems as portrait cards with line-art placeholders (rects, lines, arcs
+via arcData, vector paths, flame path helper). Cover row 14 added, height
+980, sections re-spaced. Fix: Tree meaning shortened to two lines. Render
+`design/assets/card-symbols.png`. §12 of `design/card-research.md`.
