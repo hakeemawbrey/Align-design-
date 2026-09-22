@@ -393,7 +393,8 @@ reading from Houston; then **six mini cards** in the card language (panel,
 Taurus keyline, each with its own visual): Your card (card back) → G-05a,
 Your sign (Taurus aura) → G-23, Cheat sheet (twelve-dot ring) → S-20,
 Today's sky (gold sphere) → S-14, Cosmic calendar (moon) → S-15,
-Notifications (lit dot) → S-19; then two rows, Settings → G-07 and Help &
-support → G-29. The `ALIGN+ · FOUNDING` pill top right opens G-13. The old
+Notifications (lit dot) → S-19; then three rows, Blocked signs (2 · Scorpio,
+Aries) → P-01, Settings → G-07 and Help & support → G-29; tiles 92 tall so
+the three rows clear the tab bar. The `ALIGN+ · FOUNDING` pill top right opens G-13. The old
 G-05 is renamed `G-05a — Your Card · Face Down`; all 34 You-tab reactions
 point at the hub.
