@@ -422,3 +422,12 @@ Calendar · Cheat sheet, the fourth peeking off the edge), the pearl holo
 `Align+ · Founding member ✦` as the one glowing element, `YOUR CARD` panel
 (Your card · Edit card · Blocked signs) and `APP` panel (Notifications ·
 Settings · Help & support), rows 40 tall, ending 8px above the tab bar.
+
+### G-05 hub — the Your card preview (2026-09-22, founder note)
+
+"Need a better Your card section." The `YOUR CARD` text panel is now a
+preview panel: the face-down back and the flipped face as two mini cards
+(tilted −6° / +4°, a Taurus glow behind them), *Hakeem, 32 · Taurus*, the
+veil line (*Face down to strangers. It flips the night you both align.*),
+and two caps actions, `EDIT CARD ›` (→ G-27) and `BLOCKED SIGNS · 2 ›`
+(→ P-01). The whole panel opens G-05a.
