@@ -728,3 +728,23 @@ Written extensions:
   plays, gold for align plays.
 - Milestone seals age: a seal older than a year gets a patina.
 - A blank event card for the dealer's apology, hand-written style.
+
+## 11. The rulebook, visual versions (Figma section 11, second block)
+
+The twelve rule cards stay as written. Under each sits a visual twin:
+portrait 240×394, number badge, an art window with a line-art concept of
+the rule, the same title and text. The art windows are placeholders
+drawn in shapes so an illustrator (or Codex) can paint over them:
+
+1. The deck: a stack of three, a "15" badge, release and align arrows.
+2. The card: a face-down twin behind, aura window, three read lines.
+3. The align: two cards tilted to a burst, a small joint card below.
+4. The hand: a five-card fan from a pivot, one card raised.
+5. The binder: a 3×3 page, drawn cards filled, missing ones dashed, one foil.
+6. The sleeve: an open flap over a card, shimmer lines.
+7. The cut: a stack with one card leaving on a dashed cut line.
+8. The mulligan: three cards inside a circular arrow, a "3" badge.
+9. The foil: a card with a diagonal shine band and sparkles.
+10. The season: a twelve-spoke wheel with one segment lit.
+11. Reversed: the card upside down inside a return arrow, ℞.
+12. The table: an oval table, four dealt posts, a chip stack.

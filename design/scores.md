@@ -586,3 +586,13 @@ event from a person. First pass was landscape; rebuilt portrait
 arcana rarity dots moved off the corner star. Cover row 13 reads "9
 portrait layouts". Render `design/assets/card-event-designs.png`. §10 of
 `design/card-research.md`. S-05 untouched.
+
+## Card ideas · rulebook visual versions
+
+Section `1872:1308` grown to 1700×1980: the original twelve rule cards
+untouched; a second block "Visual versions" below with twelve portrait
+cards (`rule N · visual`), each with an `art · concept (placeholder for
+illustration)` frame of line-art built from rects, lines, arcs and
+vectors in the rule's colour. Fixes: mulligan badge/label and season
+count moved off overlaps. Render `design/assets/card-rulebook-visual.png`.
+§11 of `design/card-research.md`. S-05 untouched.
