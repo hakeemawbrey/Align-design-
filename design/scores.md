@@ -431,3 +431,7 @@ preview panel: the face-down back and the flipped face as two mini cards
 veil line (*Face down to strangers. It flips the night you both align.*),
 and two caps actions, `EDIT CARD ›` (→ G-27) and `BLOCKED SIGNS · 2 ›`
 (→ P-01). The whole panel opens G-05a.
+
+Order on the hub, founder note: the pearl `Align+ · Founding member ✦` sits
+**below** the Your card preview (carousel 308–416 · YOUR CARD 428 / preview
+446–566 · CTA 578–632 · APP 644 / panel 662–782).
