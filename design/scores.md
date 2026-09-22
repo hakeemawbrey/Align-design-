@@ -407,3 +407,18 @@ The hub is back to the Taurus-keyline version. Spacing: eyebrow `YOUR SKY ·
 TAURUS` left-aligned at x 24 so it clears the Align+ pill; tiles from y 332
 at 92 tall with an 8px gap; rows 12px below the tiles with 6px between,
 the last row ending 12px above the tab bar.
+
+### G-05 hub — the Stardust settings pattern (2026-09-22, founder note)
+
+"Use Appllama and look at Stardust and make this screen better." Fetched
+Stardust's own hub, *Your Settings* (`oth_zgx1n` Profile Settings,
+`oth_qh0ga` General Settings, `oth_pc4wa` Personal Details; 3 credits). It
+does four things ours didn't: caps section headers with a *scroll for more*
+hint, a horizontal carousel of illustrated feature cards, one glowing
+rainbow CTA between sections, and grouped list panels with hairline
+dividers rather than separate pill rows. The hub now follows it under the
+figure hero: `YOUR SKY` + a card carousel (Your sign · Today's sky ·
+Calendar · Cheat sheet, the fourth peeking off the edge), the pearl holo
+`Align+ · Founding member ✦` as the one glowing element, `YOUR CARD` panel
+(Your card · Edit card · Blocked signs) and `APP` panel (Notifications ·
+Settings · Help & support), rows 40 tall, ending 8px above the tab bar.
