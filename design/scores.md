@@ -498,3 +498,16 @@ groups still predated it:
   three replies sit in one grouped panel with dividers under a caps `3
   REPLIES` header; the thread rail is hidden; the reply input at 690.
 - S-17c/S-17d/S-18/S-18b/S-18c were Wave 4–5 utility builds and hold.
+
+## Card theme · more ideas board (not applied)
+
+Board `1839:2262` "✦ Card theme · more ideas" (3700×1100) below the
+"everywhere" board, eight 390×874 mocks: the cast (onboarding), the week
+(sky), the set (chart), the binder deeper (You), the foil (status), the cut
+(block a sign), the deal (notifications), the share (growth). Fix after
+render: screen 6's lifted Scorpio cards were over the headline; moved down
+52 (scaled 0.9), stack +30, count and caption +34. Render saved to
+`design/assets/card-more-ideas.png`; §5 of `design/card-research.md` has
+the eight ideas and a written long list of ~45 more grouped by area.
+S-05 untouched; nothing applied app-wide pending Hakeem's pick of card
+style (A/B/C) and ideas.
