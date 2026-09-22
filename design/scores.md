@@ -456,3 +456,30 @@ grid and a blob-turned-sphere. Now:
   moon 21st · Venus → Leo tonight · Libra season day 7, each with its
   visual), `TONIGHT` panel (two rows → S-14), `Open the day in full ✦` →
   S-14. The spine, blob and old copy are hidden.
+
+### The rest of the first batch (2026-09-22, founder note)
+
+"What other early screens didn't get the full updates? Do those as well."
+Reviewed Guidance, Club, Matches & Safety and the celebrations against the
+current language (guide card for oracle screens, hub pattern for hubs).
+Club, Matches and the celebrations held (all Wave 5 rebuilds). Three
+groups still predated it:
+
+- **G-23 / G-24 / G-25 / G-26** (Your sign): hero-outside, tab strip,
+  text card below. Now one *chart card* cloned from the S-21 guide card,
+  tabs `SIGN · TRAITS · ELEMENT · RULER`, one section per state (Sign =
+  Taurus figure, Traits = figure, Element = Taurus aura, Ruler = Venus
+  sphere + ring), each with meter, headline, paragraph and `TRY`; footer
+  `SUN · TAURUS 13° ◇ RULED BY VENUS` / `ALIGN · CHART № 001/∞`; header
+  `‹ YOUR CHART` / `TAURUS · 13°`; tabs navigate between the four frames.
+  Old content, glows and wells hidden. CTAs to 668.
+- **S-20 Glossary** (the cheat sheet): old avatar list, button over the last
+  row. Now the hub pattern: `‹ The language` / `CHEAT SHEET · 4 OF 12
+  UNLOCKED`, segmented `SIGNS · ELEMENTS · HOUSES · PLANETS`, `YOUR
+  PLACEMENTS` panel (Rising · Libra, Sun · Taurus, Moon · Sagittarius,
+  Venus · Taurus, each with its aura tile, → S-16), `LOCKED · ALIGN+`
+  panel (Saturn return, Seventh house, ✦ → paywall), CTA at 668.
+- **S-16 Term Explainer**: now a *term card* — hairline house wheel with
+  house VII lit, `The seventh house.` / The person opposite you., tabs
+  `MEANING · YOUR CHART · JUNIPER'S`, the reading, `TRY` It is lit in your
+  chart — see where., footer `HOUSE VII ◇ RULED BY VENUS`.
