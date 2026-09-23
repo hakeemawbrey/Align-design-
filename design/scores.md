@@ -616,3 +616,13 @@ OF 333", date-card stamp moved inside the card. Contact sheet built in a
 temporary frame, rendered, then deleted; saved as
 `design/assets/card-twenty-screens.png`. §13 of
 `design/card-research.md`. S-05 untouched.
+
+## Card ideas · feature cards restored (section 15)
+
+Rebuilt the twenty standalone feature cards as `1898:876` "15 · Feature
+cards" at Hakeem's request (the earlier `1889:876` had been removed).
+Fixes carried in: sky cards read SKY · TRANSIT instead of SKY · SKY, the
+Align+ card reads ALIGN+ · PERK, ward cards drop the top-right label so
+the shield no longer covers it. Cover row 15 added (height 1020),
+sections re-spaced. Render `design/assets/card-feature-cards.png`. §14 of
+`design/card-research.md`.

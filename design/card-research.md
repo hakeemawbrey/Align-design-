@@ -856,3 +856,32 @@ the replacement. Nothing applied; deck untouched.
 - **10.3 Write on a card.** A new club post is written on a blank card
   with your aura as the corner index and the character count along the
   bottom edge.
+
+## 14. Feature cards (Figma section 15, restored)
+
+Twenty standalone portrait cards, one per feature, restored at Hakeem's
+request next to the twenty card-motif screens. Frames follow the event
+families plus a new WARD family (teal) for safety.
+
+| # | Feature | Card | Family | Effect |
+|---|---|---|---|---|
+| 1 | Deck | The Last Card | Dealer | The fifteenth card of the night is dealt face up. |
+| 2 | Stack | The Wildcard | Dealer | Once a week, one card from outside your filters. |
+| 3 | Peak | The Long Look | Play | Hold twelve seconds instead of six. |
+| 4 | Match | Kismet | Milestone | Both aligned within the same minute; gold snap on the joint card. |
+| 5 | Chat | The Icebreaker | Play | Three first lines written from both charts. |
+| 6 | Chat | The Rain Check | Play | Pause the thread three days without expiring. |
+| 7 | Chat | The Second Wind | Play | Revive a match the day before it expires, once per pair. |
+| 8 | Alignment | The Synastry | Pair | Both charts laid over each other, every line read out. |
+| 9 | Sky | The Morning Oracle | Sky | One card at 8:11 with the day's line. |
+| 10 | Sky | The Void Hour | Sky | Nothing sent during void-of-course is held against you. |
+| 11 | Calendar | The Good Night | Sky | The best first-date night this week, on both calendars. |
+| 12 | You | The Re-cast | Play | Rewrite one read; the old one stays as a first printing. |
+| 13 | You | The Mirror | Dealer | See your card exactly as a stranger is dealt it. |
+| 14 | Binder | The Keepsake | Milestone | Keep one released card in a locket page. |
+| 15 | Club | The Room Crown | Milestone | The week's most-played post leads next week's table. |
+| 16 | Club | The Open Mic | Dealer | For one hour every sign can read your room. |
+| 17 | Align+ | The Golden Hour | Align+ | Your card on top of every stack in your city for an hour. |
+| 18 | Safety | The Shield | Ward | A first-date check-in; a missed one messages a friend. |
+| 19 | Safety | The Lantern | Ward | Share where and with whom for three hours. |
+| 20 | Invite | The Plus One | Pair | A blank card for a friend; both get a season sleeve. |
