@@ -626,3 +626,14 @@ Align+ card reads ALIGN+ · PERK, ward cards drop the top-right label so
 the shield no longer covers it. Cover row 15 added (height 1020),
 sections re-spaced. Render `design/assets/card-feature-cards.png`. §14 of
 `design/card-research.md`.
+
+## v2 page · section headers on the Stardust redesigns
+
+Added a large header frame (`header · <name>`) above each of the thirteen
+sub-sections inside `937:1924` "✦ STARDUST — redesigned screens": a
+gold number (01–13), the section name in EB Garamond Italic 110, a caps
+line with the screen count and "redesigned in the Stardust language",
+and a one-line description of what's in it. Sub-sections re-spaced so
+each sits 260px under its header with 220px between groups; the
+Stardust section grew to 37302 tall (nothing sits below it). No screen
+was moved within its group or changed.
