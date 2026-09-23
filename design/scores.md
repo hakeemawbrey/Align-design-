@@ -604,3 +604,15 @@ emblems as portrait cards with line-art placeholders (rects, lines, arcs
 via arcData, vector paths, flame path helper). Cover row 14 added, height
 980, sections re-spaced. Fix: Tree meaning shortened to two lines. Render
 `design/assets/card-symbols.png`. §12 of `design/card-research.md`.
+
+## Card ideas · twenty card-motif screens
+
+Removed standalone section `1889:876` (feature cards) and its cover row
+on request. Added twenty phone mocks via the addIdea helper into existing
+sections: 02.4–02.6, 03.8–03.9, 04.5–04.7, 05.7–05.9, 06.6–06.8,
+07.9–07.10, 08.5–08.7, 10.3. Cover counts refreshed and blurb updated;
+sections re-spaced. Fixes after review: founding sleeve tab now "12 LEFT
+OF 333", date-card stamp moved inside the card. Contact sheet built in a
+temporary frame, rendered, then deleted; saved as
+`design/assets/card-twenty-screens.png`. §13 of
+`design/card-research.md`. S-05 untouched.

@@ -793,3 +793,66 @@ drawn in the rule's colour on the night ground, with the gold star as
 the only second colour. The frames in Figma are named
 `art · symbol (placeholder for illustration)` and can be swapped one for
 one.
+
+## 13. Twenty more card-motif screens (added into sections 02–10)
+
+Phone mocks showing the card motif inside existing features, placed in
+their area sections on the ideas page. A briefly built "feature cards"
+section 15 (standalone cards) was removed at Hakeem's request; this is
+the replacement. Nothing applied; deck untouched.
+
+**Onboarding & auth**
+- **02.4 Your card back.** The birth-sky wheel becomes the back of your
+  card, with city, date and time on the rim; Night and Earth backs are
+  the alternatives.
+- **02.5 The code hand.** The six-digit code as six face-down cards that
+  turn as you type; a wrong code sweeps them back.
+- **02.6 The framed reveal.** The sign reveal art inside a real card:
+  numeral, glyph corner indices (one upside down), name plaque, pips.
+
+**Matches & the stack**
+- **03.8 The edges.** Your Stack from the side: fifteen edges tinted by
+  element, so the night reads before a card turns.
+- **03.9 The burning edge.** Expiry as an ember line eating the bottom
+  edge of the card; used on rows, widget and chat header.
+
+**Chat & alignment**
+- **04.5 The card in the corner.** Her card replaces the avatar in the
+  chat header; tap and it drops and flips to her reads.
+- **04.6 Face-up receipts.** A tiny card beside each message: face down
+  sent, on edge delivered, face up read, lifting while she types.
+- **04.7 The date card.** A proposal built from both profiles (when,
+  where, why); she edits and signs; stamps "first date".
+
+**Sky & guidance**
+- **05.7 The month page.** The calendar as a binder page of day cards:
+  today raised in gold, retrograde days in hazard sleeves, moons in
+  silver, the good night starred.
+- **05.8 The round table.** Your chart as twelve house cards in a circle;
+  lit houses face up, the Seventh lifted into the centre.
+- **05.9 The flip term.** Each glossary term is a two-sided card: word and
+  glyph on the front, what it means for you and her on the back.
+
+**You & the binder**
+- **06.6 The card editor.** Live card on top, its layers below (aura,
+  name, reads, dealbreakers, photo) with handles; front and back tabs.
+- **06.7 The reverse.** Settings printed on the back of your card inside
+  the card-back ornament, serial at the foot.
+- **06.8 The sleeve picker.** A carousel of card backs, the raised one
+  named and earned, locked ones saying how to earn them.
+
+**Align+**
+- **07.9 Three sleeves.** Plans as three sleeves: plain weekly, holo
+  yearly with the free-week tab, gold founding with the count left.
+- **07.10 The closing flap.** Trial ending as the sleeve's flap half
+  closed with a one-day tab; keep and lose columns.
+
+**System, safety & Club**
+- **08.5 The riffle.** Loading as a riffle shuffle of card backs.
+- **08.6 Call the dealer.** Reporting as handing her card to the dealer's
+  ticket; reasons as plaques; her card leaves your stack.
+- **08.7 Stacks by day.** Notifications as one stack per day: today
+  fanned, earlier days closed with thickness as the count.
+- **10.3 Write on a card.** A new club post is written on a blank card
+  with your aura as the corner index and the character count along the
+  bottom edge.
