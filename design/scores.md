@@ -655,3 +655,22 @@ originals had. Fixes on the v2 page:
   to speak · not yet, keep her in matches". Name kept as Juniper for
   consistency with the rest of the Stardust flow.
 Render `design/assets/s05d-s08-photo-reveal.png`. S-05 untouched.
+
+## Chat · her card (S-09h) and card-in-the-corner header
+
+- New screen **S-09h — Chat · Her card** (`1934:2258`) in Core Flow at
+  1430,4880, next to the alignment screens. Built from S-09b: the chat
+  stays dimmed behind a `sheet · Her card` (390×782, rounded top) holding
+  a clone of the S-08 flipped card (photo, chips, bio, details,
+  interests) with the tag changed to "ALIGNED SEPT 22", a grab handle, a
+  "Your alignment ›" button and the line "Spark · Rub · Align · how you
+  two fit". Expiry rail moved below the scrim so it no longer shows
+  through the sheet.
+- Header change on all eight chat screens (S-09, S-09b–g, S-09h): the
+  round aura avatar is hidden and replaced by `her card · corner`, a
+  30×44 mini card with her photo and two read lines.
+- Prototype: tapping the corner card or her name in S-09 and S-09b–g
+  opens S-09h; "Your alignment" goes to S-09b; the scrim and grab handle
+  go back. The existing chevron → S-09b link is unchanged.
+- Core Flow header now reads 29 screens.
+Render `design/assets/s09-her-card.png`. S-05 untouched.
