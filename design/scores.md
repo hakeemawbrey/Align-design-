@@ -674,3 +674,13 @@ Render `design/assets/s05d-s08-photo-reveal.png`. S-05 untouched.
   go back. The existing chevron → S-09b link is unchanged.
 - Core Flow header now reads 29 screens.
 Render `design/assets/s09-her-card.png`. S-05 untouched.
+
+## Chat header · Seed of Life alignment button
+
+On all eight chat screens (S-09, S-09b–g, S-09h) the chakra-ladder
+`btn · open alignment` is hidden and replaced by `btn · open alignment ·
+seed of life`: seven 10px circles (one centre, six petals) inside a faint
+20px outer ring, pearl strokes at 1px, with a small gold centre dot and a
+transparent 34px hit area. It keeps the old button's prototype link to
+S-09b (S-09b itself has no link, since it can't navigate to itself).
+4x render `design/assets/chat-header-seed-of-life.png`.
