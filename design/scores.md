@@ -637,3 +637,21 @@ and a one-line description of what's in it. Sub-sections re-spaced so
 each sits 260px under its header with 220px between groups; the
 Stardust section grew to 37302 tall (nothing sits below it). No screen
 was moved within its group or changed.
+
+## S-05d and S-08 · real photo restored (Stardust redesign)
+
+Hakeem flagged that the Stardust versions had lost the photo moments the
+originals had. Fixes on the v2 page:
+- **S-05d Peak · Photo Open** (`1021:1926`): the peak window `1021:2100`
+  now shows the original photo (image hash e56e5537…, same as the v1 and
+  route-map screens) instead of the Libra aura art. Countdown ring,
+  "photo open for this peak only" and the reads are unchanged.
+- **S-08 Veil Lifts** (`1019:2033`): the aura portrait, name, sign and
+  prose were replaced by a full flipped card `card · flipped reveal`
+  (358×626): name and moon badge, the photo with a "revealed tonight"
+  tag, LIBRA with Air / Gemini Moon / 7th House chips, full bio,
+  religion / looking for / height / work, interests. Eyebrow "You both
+  aligned · card flipped", CTA "Say the honest thing", link "Seven days
+  to speak · not yet, keep her in matches". Name kept as Juniper for
+  consistency with the rest of the Stardust flow.
+Render `design/assets/s05d-s08-photo-reveal.png`. S-05 untouched.
