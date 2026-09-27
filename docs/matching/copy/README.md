@@ -22,26 +22,32 @@ Every sentence the matching engine can put on a card, the S-21 Cosmic Alignment 
 - `{name}`: the other person's display name ("J." on the Mystery Card, first name after the veil lifts). Lines avoid pronouns so the grammar works for everyone.
 - `{element}`: Fire / Earth / Air / Water. `{until}`: weekday the Moon leaves the sign ("Thursday").
 
-## The dating formula (v2)
+## The formula (v3: blind dating)
 
-Every line answers two questions: **what will dating this person be like, and what do you do about it?**
+The Mystery Card has **no photo**. The three card lines are all someone has to decide Align or Release, so every card line must help them choose.
+
+**Card line = what dating this person would actually be like + who it's a good pick for.**
+
+> "Under stress one of you wants space, the other wants to talk. Worth it if you're good at saying what you need."
 
 | Field | Rule |
 |---|---|
-| Card line | Something you'll *notice* when dating them + your *move*. "Under stress, one wants space. Agree on a signal." |
-| Chip | A plain trait anyone gets in 2–4 words. |
+| Card line | 80 to 110 characters. Sentence 1: something concrete you'd notice dating them. Sentence 2: the fit, "Great if…", "Good pick if…", "Strong pick if…", "Worth it if…", "Works if…", "Fine if…". |
+| Chip | A plain trait anyone gets in 2 to 4 words. |
 | S-21 head | The pattern in everyday words. |
 | S-21 body | 3 sentences: **why** (plain astrology) → **what it looks like** on dates or in texts → **how to use it**. |
-| Try | Something to send or plan this week: `Open with: "..."`, `Ask {name}: "..."`, or `Date idea: ...`. |
+| Try | Something to send or plan: `Open with: "..."`, `Ask {name}: "..."`, or `Date idea: ...`. |
 
-Rub lines always end in a move, never a warning. Keep it about dating: first messages, first dates, texting, pace, flirting, meeting friends.
+Rub lines are honest about the friction and say who it works for. Never a warning, never a reason to feel bad. Keep it about dating: first messages, first dates, texting, pace, flirting, friends, what someone wants long term.
+
+**Design dependency:** lines this long need the S-05 card to let the Spark / Rub / Align rows grow with their text and a shorter aura band (see the example cards in the Figma copy library).
 
 ## Writing rules (from the Align definitions doc)
 
 - No em dashes or hyphens. Use commas or full stops.
 - Say "alignment", never "compatibility".
 - Never a number, percent or score.
-- Card line: max ~55 characters so it fits two lines on the card. Chip: max ~30. ("Right now" lines sit in a paragraph on S-06, so they can run longer.)
+- Card line: 80 to 110 characters (see formula). Chip: max ~30.
 - Avoid pronouns for people: use {name}, so the grammar works for everyone.
 - Rub lines name the friction **and** how to use it. Never ominous, never a warning.
 - Lines must read correctly in either direction (your Sun and their Moon, or theirs and yours).
