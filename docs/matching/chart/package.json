@@ -1,0 +1,15 @@
+{
+  "name": "align-chart",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Align birth chart calculator (birth data to sign indexes)",
+  "main": "chart.js",
+  "scripts": {
+    "test": "node chart.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "astronomy-engine": "^2.1.19",
+    "luxon": "^3.5.0"
+  }
+}

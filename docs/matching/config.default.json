@@ -1,0 +1,72 @@
+{
+  "_readme": "Every tunable number in the matching algorithm. Ship this as remote config (e.g. Firebase Remote Config) so values change without an app release. Log configVersion with every dealt card.",
+  "configVersion": "2026-09-27.1",
+
+  "aspectPoints": {
+    "_order": "[spark, align, rub] for 0..6 signs apart",
+    "0": [3, 1, 0],
+    "1": [0, 0, 1],
+    "2": [0, 2, 0],
+    "3": [0, 0, 3],
+    "4": [0, 3, 0],
+    "5": [0, 0, 2],
+    "6": [2, 0, 1]
+  },
+
+  "groupWeights": { "moon": 25, "love": 20, "sun": 15, "mercury": 10, "rising": 15, "houses": 15 },
+
+  "housePoints": {
+    "_order": "[spark, align, rub]; any house not listed = [0, 0, 0]",
+    "1": [3, 0, 0],
+    "5": [2, 1, 0],
+    "7": [0, 3, 0],
+    "8": [2, 0, 1]
+  },
+
+  "sharedRulerSpark": 0.5,
+
+  "cardDotThresholds": [0.4, 0.9, 1.4],
+  "detailDotsFullScale": 2,
+
+  "pull": {
+    "alignWeight": 1.0,
+    "sparkWeight": 0.8,
+    "rubWeight": 0.4,
+    "scaleDivisor": 3,
+    "lookingForSame": 8,
+    "lookingForSeriousVsFun": -10,
+    "verifiedAlignPlusBump": 3,
+    "newUserNewMoonBump": 5,
+    "newUserDays": 14
+  },
+
+  "labelPercentiles": { "fated": 5, "strong": 25, "steady": 60, "slowBurn": 97 },
+  "cometBottomPercent": 3,
+  "cometMinPool": 3,
+
+  "deck": {
+    "setSize": 15,
+    "maxPerSun": 3,
+    "maxPerMoon": 4,
+    "minElements": 3,
+    "wildcardMinRubDots": 2,
+    "wildcardMinGroupScore": 1.5,
+    "skyTiltBonus": 5,
+    "skyTiltSlots": 5,
+    "skyTiltMaxCards": 2,
+    "alignPlusMaxInTop5": 2,
+    "incomingMaxPerSet": 5,
+    "incomingEarliestSlot": 3
+  },
+
+  "moonPhaseMix": {
+    "new": { "align": 8, "spark": 3, "wild": 4, "header": "NEW MOON · SOMEONE NEW" },
+    "waxing": { "align": 10, "spark": 3, "wild": 2, "header": "WAXING MOON · BUILD SOMETHING" },
+    "full": { "align": 7, "spark": 6, "wild": 2, "header": "FULL MOON · MORE SPARK TONIGHT" },
+    "waning": { "align": 9, "spark": 2, "wild": 4, "header": "WANING MOON · SLOW BURN" }
+  },
+
+  "filters": { "radiusMiles": 25, "widenedRadiusMiles": 50, "activeWithinDays": 7 },
+
+  "schedule": { "dealLocalTime": "23:11", "starterDeckIfSignupAfterDeal": true }
+}
