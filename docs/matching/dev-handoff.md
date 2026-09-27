@@ -65,7 +65,7 @@ Both directions, always. A nonbinary person who picks "Show me: Men, Women" sees
 
 Draft in [`copy/`](./copy/README.md): 63 card lines (9 comparison types × 7 distances), 12 house lines, 5 ruler lines, 10 relationship paragraphs, 8 "Right now" lines.
 
-- `pickCopy(meters)` returns `{ key, vars }` per meter. Each card row shows `astroTag(pick)` (e.g. `MOON + MOON · SQUARE`) above `renderLine(template, vars, name)` (e.g. "Under stress, one of you tends to want space, the other to talk.").
+- `pickCopy(meters)` returns `{ key, vars }` per meter. The Mystery Card row shows only `renderLine(template, vars, name)` (e.g. "Under stress, one of you tends to want space, the other to talk."). `astroTag(pick)` (e.g. `MOON + MOON · SQUARE`) is for S-06 Expand Card and S-21, never the Mystery Card.
 - Copy is written **from the viewer's side**. `pairMeters` is cached once per pair, so render copy with `readPair(viewer, candidate)` at deal time (it's a few lookups) rather than caching rendered text.
 - Tests fail if a key has no copy, a token is left unfilled, a rendered line is longer than 70 characters or a tag is longer than 32.
 

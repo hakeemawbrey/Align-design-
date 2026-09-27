@@ -128,8 +128,8 @@ function pickCopy(meters, cfg = DEFAULT_CONFIG) {
 const pickCopyKeys = (meters, cfg = DEFAULT_CONFIG) =>
   Object.fromEntries(Object.entries(pickCopy(meters, cfg)).map(([k, v]) => [k, v && v.key]));
 
-// Small astrology tag shown above each card line, e.g. "MOON + MOON · SQUARE".
-// Gives the astrology context in a few words so the line itself can stay about dating.
+// Short astrology label for a card line, e.g. "MOON + MOON · SQUARE".
+// Shown on S-06 Expand Card and S-21 (not on the Mystery Card) so the card line can stay about dating.
 const ASPECT_NAME = ['conjunction', 'semi sextile', 'sextile', 'square', 'trine', 'quincunx', 'opposition'];
 const ORDINAL = ['', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th'];
 function astroTag(pick) {
