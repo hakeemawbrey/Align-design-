@@ -284,6 +284,29 @@ Same pair with **no birth time**: Rising group dropped, Houses partial → Spark
 
 ---
 
+## 8b. Astrology sources and judgment calls
+
+Checked against published references (September 2026). ✅ = matches mainstream astrology. ⚠️ = a deliberate simplification or judgment call.
+
+| What we use | Status | Notes |
+|---|---|---|
+| 12 signs, elements (`sign % 4`) | ✅ | Standard Fire / Earth / Air / Water order. |
+| Aspects: conjunction 0, sextile 2, square 3, trine 4, opposition 6 signs apart | ✅ | The five classical (Ptolemaic) aspects. Sextile / trine = easy, square / opposition = tension, conjunction depends on the planets. ([Wikipedia](https://en.wikipedia.org/wiki/Astrological_aspect), [Cafe Astrology](https://cafeastrology.com/articles/aspectsinastrology.html)) |
+| Quincunx (5 apart) = Rub | ✅ | Minor aspect usually read as adjustment / awkward. |
+| Semi sextile (1 apart) = mild Rub | ⚠️ | Sources disagree: some read it as a weak, mildly positive aspect; others as "neighbours with nothing in common" (different element and modality). Open decision below. |
+| Aspects counted **by sign**, not by degree | ⚠️ | Legitimate Hellenistic technique (sign based aspects, no orbs), but modern synastry uses degrees with orbs. Edge case: 29° Aries and 1° Taurus are 2° apart (a conjunction by degree) but "side by side" by sign. Kept for v1 because card copy names signs; degrees are available from `chart.js` if we want them later. ([Kepler College](https://library.keplercollege.org/features-of-hellenistic-astrological-techniques/)) |
+| Whole sign houses | ✅ | One of the oldest house systems, used by Hellenistic and Indian astrology. ([CHANI](https://www.chani.com/astro-education/what-whole-sign-houses-are-and-why-we-use-them), [The Astrology Podcast](https://theastrologypodcast.com/transcripts/ep-52-whole-sign-houses-the-best-system-of-house-division/)) |
+| House meanings: 1st self / first impression, 5th romance, 7th partnership, 8th intimacy | ✅ | Standard synastry overlays. ([lookupthestars](https://www.lookupthestars.com/post/synastry-house-overlays-the-meaning-of-your-planets-in-houses-in-synastry)) |
+| Opposite Risings / Sun opposite Rising = "partnership point" | ✅ | The Descendant (7th house cusp) is always opposite the Ascendant. |
+| Sun and Moon contacts as a relationship signature | ✅ tradition | Classic synastry indicator; Jung's marriage study found Sun / Moon contacts common in couples but not statistically significant. Copy frames it as tradition, never as proof. ([Wikipedia: Astrological compatibility](https://en.wikipedia.org/wiki/Astrological_compatibility)) |
+| Venus and Mars = attraction / chemistry | ✅ | Standard synastry reading. |
+| Rulers | ⚠️ | We use **traditional** rulers (Scorpio = Mars, Aquarius = Saturn, Pisces = Jupiter). Modern astrology uses Pluto, Uranus and Neptune. Copy says "traditionally ruled" so it stays accurate for both camps. ([Cafe Astrology](https://cafeastrology.com/articles/sign-rulerships.html)) |
+| Full Moon = Sun opposite Moon | ✅ | Astronomical fact; used in the moon phase deck mix. |
+| Moon changes sign about every 2.5 days | ✅ | Why a missing birth time can put the Moon in the wrong sign. |
+| Mercury within ~28° and Venus within ~47° of the Sun | ✅ | Astronomical fact; tested in `chart.js`. |
+
+**Framing rule:** astrology is not a scientifically validated predictor. Copy always says "tends to", "often", "may" or "astrology links", never that two people will or will not work.
+
 ## 9. Decisions log
 
 | Factor | Decision |
@@ -302,3 +325,6 @@ Same pair with **no birth time**: Rising group dropped, Houses partial → Spark
 | Gender / seeking | ✅ Man · Woman · Nonbinary, multi-select "Show me", must match both ways |
 | Card copy | ✅ Draft v1 in `copy/` |
 | Chart library | ✅ astronomy-engine (MIT) + Luxon time zones, `chart/chart.js` |
+| Rulers | Traditional (copy says "traditionally ruled") |
+| Aspects | By sign (whole sign), not by degree, for v1 |
+| Semi sextile | Open: mild Rub (current) or neutral |

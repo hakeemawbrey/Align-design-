@@ -192,7 +192,7 @@ test('card lines name the real placements, from each viewer’s side', () => {
   const render = (viewer, other, name) => Object.fromEntries(Object.entries(M.pickCopy(M.readPair(viewer, other)))
     .map(([k, v]) => [k, M.renderLine(T[v.key], v.vars, name)]));
   assert.deepStrictEqual(render(you, juniper, 'Juniper'), {
-    spark: "Your Taurus and Juniper's Libra Suns share a ruler, Venus, the planet of love. You may share a taste for romance.",
+    spark: "Your Taurus and Juniper's Libra Suns are both traditionally ruled by Venus. You may share a taste for romance.",
     align: "Your Venus in Taurus and Juniper's in Virgo share an element, so values in love tend to line up.",
     rub: "Your Sun in Taurus squares Juniper's Rising in Aquarius. First impressions may not tell the whole story.",
   });
