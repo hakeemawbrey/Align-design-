@@ -114,7 +114,30 @@ function label(percentileFromTop) {
   return 'COMET'; // bottom 3%: never dealt, Comet pool only
 }
 
-module.exports = { SIGNS, element, RULER, signsApart, houseOf, readPair, cardDots, detailDots, pull, label };
+// ─── 7. Moon phase → tonight's deck mix (same for every user) ────
+// Phase comes from the date only. It changes the MIX of the 15, never anyone's Pull.
+const SYNODIC_MONTH = 29.530588853; // days from one New Moon to the next
+const KNOWN_NEW_MOON = Date.UTC(2000, 0, 6, 18, 14); // reference New Moon
+function moonAge(date) { // days since the last New Moon, 0–29.53
+  const days = (date.getTime() - KNOWN_NEW_MOON) / 86400000;
+  return ((days % SYNODIC_MONTH) + SYNODIC_MONTH) % SYNODIC_MONTH;
+}
+function moonPhase(date) {
+  const age = moonAge(date);
+  if (age < 1.85 || age >= 27.68) return 'new';
+  if (age < 12.91) return 'waxing';
+  if (age < 16.61) return 'full';
+  return 'waning';
+}
+// Card-type quotas out of 15. TUNE
+const DECK_MIX = {
+  new: { align: 8, spark: 3, wild: 4, header: 'NEW MOON · SOMEONE NEW' }, // + users who joined < 14 days get +5 Pull tonight
+  waxing: { align: 10, spark: 3, wild: 2, header: 'WAXING MOON · BUILD SOMETHING' },
+  full: { align: 7, spark: 6, wild: 2, header: 'FULL MOON · MORE SPARK TONIGHT' },
+  waning: { align: 9, spark: 2, wild: 4, header: 'WANING MOON · SLOW BURN' },
+};
+
+module.exports = { SIGNS, element, RULER, signsApart, houseOf, readPair, cardDots, detailDots, pull, label, moonAge, moonPhase, DECK_MIX };
 
 // ─── Worked example (matches the doc) ────────────────────────────
 if (require.main === module) {
@@ -129,4 +152,5 @@ if (require.main === module) {
   console.log('PULL   ', r(pull(you, juniper, m)));
   const noTime = readPair({ ...you, rising: null }, juniper);
   console.log('NO BIRTH TIME  spark', r(noTime.spark), 'align', r(noTime.align), 'rub', r(noTime.rub), 'pull', r(pull(you, juniper, noTime)));
+  for (const d of ['2026-09-11', '2026-09-18', '2026-09-26', '2026-10-03']) { const t = new Date(d + 'T23:11:00Z'); console.log('MOON', d, moonPhase(t), r(moonAge(t)), DECK_MIX[moonPhase(t)].header); }
 }

@@ -188,7 +188,7 @@ Runs nightly at **11:11 local time**. Output: 15 ordered cards + a small buffer.
 
 ```text
 pool   = eligible candidates, minus Comet pool, sorted by Pull (high → low)
-quota  = { align: 9, spark: 4, wild: 2 }            // 60 / 25 / 15 %  (TUNE)
+quota  = DECK_MIX[tonight's moon phase]             // see 5a (TUNE)
 sky    = element of tonight's Moon sign              // "Moon in Leo · Fire sky"
 
 for slot in 1..15:
@@ -206,6 +206,27 @@ after 15: if fewer than 3 elements are present, swap the lowest-Pull card of the
 ```
 
 **Small pool? Relax in this order** (never relax Step 1 filters): type quota → Moon cap → element rule → Sun cap. Fewer than 15 eligible → deal what exists and show G-19.
+
+### 5a. Moon phase → tonight's mix
+
+The Moon's phase (its shape in tonight's sky) is the same for every user, so compute it **once per night**, from the date only. It changes the **mix** of card types. It never changes anyone's Pull or label.
+
+```js
+age   = days since a known New Moon (2000-01-06 18:14 UTC), modulo 29.530588853
+phase = age < 1.85 or age ≥ 27.68 → new
+        age < 12.91               → waxing
+        age < 16.61               → full
+        otherwise                 → waning
+```
+
+| Phase | Lasts | Align | Spark | Wild | Deck header | Extra rule |
+|---|---|---|---|---|---|---|
+| 🌑 New | ~3.7 days | 8 | 3 | 4 | NEW MOON · SOMEONE NEW | Users who joined < 14 days ago get +5 Pull tonight |
+| 🌒 Waxing | ~11 days | 10 | 3 | 2 | WAXING MOON · BUILD SOMETHING | |
+| 🌕 Full | ~3.7 days | 7 | 6 | 2 | FULL MOON · MORE SPARK TONIGHT | |
+| 🌘 Waning | ~11 days | 9 | 2 | 4 | WANING MOON · SLOW BURN | |
+
+The header sits next to the existing sky line ("MOON IN LEO · FIRE SKY"). Verified in `reference.js`: 2026-09-11 = New, 2026-09-26 = Full.
 
 ---
 
@@ -270,4 +291,4 @@ Same pair with **no birth time**: Rising group dropped, Houses partial → Spark
 | Photo verified | ✅ Small Pull bump, **Align+ users only** |
 | Religion, height, work, interests | ❌ Not used in matching |
 | Exposure cap | Not now |
-| Moon phase deck mix | Proposed, not approved |
+| Moon phase | ✅ Sets tonight's deck mix (5a). Never changes Pull |
