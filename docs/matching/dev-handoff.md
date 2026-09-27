@@ -63,7 +63,11 @@ Both directions, always. A nonbinary person who picks "Show me: Men, Women" sees
 
 ## 4. Card copy
 
-Draft v1 is in [`copy/`](./copy/README.md): 63 card lines (9 comparison types × 7 distances), 12 house lines, 5 ruler lines, 10 relationship paragraphs, 8 "Right now" lines. Picked by `pickCopyKeys()`. A test fails if the algorithm can produce a key with no copy.
+Draft in [`copy/`](./copy/README.md): 63 card lines (9 comparison types × 7 distances), 12 house lines, 5 ruler lines, 10 relationship paragraphs, 8 "Right now" lines.
+
+- `pickCopy(meters)` returns `{ key, vars }` per meter; `renderLine(template, vars, name)` fills in the pair's real placements ("Your Moon in Virgo squares Juniper's Moon in Gemini…").
+- Copy is written **from the viewer's side**. `pairMeters` is cached once per pair, so render copy with `readPair(viewer, candidate)` at deal time (it's a few lookups) rather than caching rendered text.
+- Tests fail if a key has no copy, a token is left unfilled, or a rendered line is longer than 125 characters.
 
 ---
 

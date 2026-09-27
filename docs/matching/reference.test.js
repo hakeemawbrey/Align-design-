@@ -165,3 +165,51 @@ test('copy files cover every key the algorithm can produce', () => {
     for (const k of Object.values(M.pickCopyKeys(m))) if (k) assert.ok(keys.has(k), `missing copy for ${k}`);
   }
 });
+
+// Minimal CSV reader (quoted fields) for copy templates.
+function readCopy() {
+  const out = {};
+  for (const f of ['card-lines.csv', 'house-lines.csv', 'ruler-lines.csv']) {
+    const lines = fs.readFileSync(path.join(__dirname, 'copy', f), 'utf8').trim().split('\n');
+    const head = lines[0].split(',');
+    for (const l of lines.slice(1)) {
+      const cells = []; let cur = ''; let q = false;
+      for (let i = 0; i < l.length; i++) {
+        const c = l[i];
+        if (q) { if (c === '"' && l[i + 1] === '"') { cur += '"'; i++; } else if (c === '"') q = false; else cur += c; }
+        else if (c === '"') q = true; else if (c === ',') { cells.push(cur); cur = ''; } else cur += c;
+      }
+      cells.push(cur);
+      const row = Object.fromEntries(head.map((h, i) => [h, cells[i]]));
+      out[row.key] = row.card_line;
+    }
+  }
+  return out;
+}
+
+test('card lines name the real placements, from each viewer’s side', () => {
+  const T = readCopy();
+  const render = (viewer, other, name) => Object.fromEntries(Object.entries(M.pickCopy(M.readPair(viewer, other)))
+    .map(([k, v]) => [k, M.renderLine(T[v.key], v.vars, name)]));
+  assert.deepStrictEqual(render(you, juniper, 'Juniper'), {
+    spark: "Your Taurus and Juniper's Libra Suns share a ruler, Venus, the planet of love. You may share a taste for romance.",
+    align: "Your Venus in Taurus and Juniper's in Virgo share an element, so values in love tend to line up.",
+    rub: "Your Sun in Taurus squares Juniper's Rising in Aquarius. First impressions may not tell the whole story.",
+  });
+  assert.strictEqual(render(juniper, you, 'Sam').rub,
+    "Your Rising in Aquarius squares Sam's Sun in Taurus. First impressions may not tell the whole story.");
+});
+
+test('every rendered card line is complete and fits the card (≤ 125 chars)', () => {
+  const T = readCopy();
+  const rand = rng(21);
+  for (let i = 0; i < 5000; i++) {
+    const m = M.readPair(randomChart(rand, rand() > 0.2), randomChart(rand, rand() > 0.2));
+    for (const v of Object.values(M.pickCopy(m))) {
+      if (!v) continue;
+      const line = M.renderLine(T[v.key], v.vars, 'Juniper');
+      assert.ok(!/[{}]/.test(line), `unfilled token: ${line}`);
+      assert.ok(line.length <= 125, `too long (${line.length}): ${line}`);
+    }
+  }
+});

@@ -15,6 +15,7 @@ const element = (sign) => ELEMENTS[sign % 4]; // Aries=Fire, Taurus=Earth, Gemin
 // Traditional rulers (shared ruler = bonus Spark, "Venus rules you both").
 const RULER = ['Mars', 'Venus', 'Mercury', 'Moon', 'Sun', 'Mercury',
   'Venus', 'Mars', 'Jupiter', 'Saturn', 'Saturn', 'Jupiter'];
+const PLANET_NAME = { sun: 'Sun', moon: 'Moon', mercury: 'Mercury', venus: 'Venus', mars: 'Mars', rising: 'Rising' };
 
 // ─── 2. Signs apart ──────────────────────────────────────────────
 // Distance around the 12-sign wheel, always 0–6.
@@ -45,7 +46,11 @@ function houseOverlays(a, b, cfg) {
     if (owner.rising == null) continue; // owner has no birth time → no houses for them
     for (const planet of ['sun', 'moon', 'venus']) {
       const house = houseOf(guest[planet], owner.rising);
-      rows.push({ group: 'houses', copyKey: `house:${planet}:${house}`, points: cfg.housePoints[house] || [0, 0, 0] });
+      const ownerIsA = owner === a; // a = the viewer when called as readPair(viewer, candidate)
+      rows.push({
+        group: 'houses', copyKey: `house:${planet}:${house}`, points: cfg.housePoints[house] || [0, 0, 0],
+        vars: { guest: ownerIsA ? "{name}'s" : 'Your', owner: ownerIsA ? 'your' : "{name}'s", guestSign: SIGNS[guest[planet]] },
+      });
     }
   }
   return rows;
@@ -67,7 +72,10 @@ function readPair(a, b, cfg = DEFAULT_CONFIG) {
     else {
       groupRows = pairs.map(([pa, pb]) => {
         const apart = signsApart(a[pa], b[pb]);
-        return { group: name, copyKey: `${[pa, pb].sort().join('-')}:${apart}`, points: cfg.aspectPoints[apart] };
+        return {
+          group: name, copyKey: `${[pa, pb].sort().join('-')}:${apart}`, points: cfg.aspectPoints[apart],
+          vars: { yourPlanet: PLANET_NAME[pa], yourSign: SIGNS[a[pa]], theirPlanet: PLANET_NAME[pb], theirSign: SIGNS[b[pb]] },
+        };
       });
     }
     if (groupRows.length === 0) continue; // group skipped → its weight is redistributed
@@ -83,7 +91,8 @@ function readPair(a, b, cfg = DEFAULT_CONFIG) {
     spark += cfg.sharedRulerSpark;
     sharedRuler = RULER[a.sun];
   }
-  return { spark, align, rub, groups, rows, sharedRuler };
+  const rulerVars = { yourSign: SIGNS[a.sun], theirSign: SIGNS[b.sun], ruler: sharedRuler };
+  return { spark, align, rub, groups, rows, sharedRuler, rulerVars };
 }
 
 // Meter value → dots. Card shows 0–3, S-21 shows 0–5.
@@ -96,20 +105,31 @@ const detailDots = (v, cfg = DEFAULT_CONFIG) =>
 
 // Card copy: for each meter, the row that scored highest in that meter picks the sentence.
 // Keys match copy/card-lines.csv (e.g. "mercury-moon:2"), copy/house-lines.csv, copy/ruler-lines.csv.
-function pickCopyKeys(meters, cfg = DEFAULT_CONFIG) {
+// `vars` fill the sentence with this pair's real placements ("Your Moon in Virgo…"). They are
+// written from the viewer's side, so call readPair(viewer, candidate) before rendering copy.
+function pickCopy(meters, cfg = DEFAULT_CONFIG) {
   const pick = (i) => {
     let best = null;
     for (const r of meters.rows) {
       const score = r.points[i] * cfg.groupWeights[r.group];
-      if (score > 0 && (!best || score > best.score)) best = { key: r.copyKey, score };
+      if (score > 0 && (!best || score > best.score)) best = { key: r.copyKey, vars: r.vars, score };
     }
-    return best && best.key;
+    return best && { key: best.key, vars: best.vars };
   };
   return {
-    spark: meters.sharedRuler ? `ruler:${meters.sharedRuler}` : pick(0),
+    spark: meters.sharedRuler ? { key: `ruler:${meters.sharedRuler}`, vars: meters.rulerVars } : pick(0),
     align: pick(1),
     rub: pick(2),
   };
+}
+const pickCopyKeys = (meters, cfg = DEFAULT_CONFIG) =>
+  Object.fromEntries(Object.entries(pickCopy(meters, cfg)).map(([k, v]) => [k, v && v.key]));
+
+// Fill a copy template: {name}, {yourPlanet}, {yourSign}, {theirPlanet}, {theirSign},
+// {guest}, {owner}, {guestSign}. {name} is filled last because {guest}/{owner} can contain it.
+function renderLine(template, vars, name) {
+  const filled = template.replace(/\{(\w+)\}/g, (m, k) => (k !== 'name' && vars && vars[k] != null ? vars[k] : m));
+  return filled.replace(/\{name\}/g, name);
 }
 
 // ─── 6. Pull (0–100, never shown) ────────────────────────────────
@@ -300,7 +320,7 @@ function fixBackToBack(deck, incomingIds, D) {
 
 module.exports = {
   DEFAULT_CONFIG, SIGNS, ELEMENTS, element, RULER, signsApart, houseOf, readPair, cardDots, detailDots,
-  pickCopyKeys, pull, label, moonAge, moonPhase, cardType, dealSet,
+  pickCopy, pickCopyKeys, renderLine, pull, label, moonAge, moonPhase, cardType, dealSet,
 };
 
 // ─── Worked example (matches the doc) ────────────────────────────

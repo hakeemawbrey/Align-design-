@@ -19,26 +19,33 @@ Every sentence the matching engine can put on a card, the S-21 Cosmic Alignment 
 
 ## Tokens
 
-- `{name}`: the other person's display name ("J." on the Mystery Card, first name after the veil lifts). Lines avoid pronouns so the grammar works for everyone.
-- `{element}`: Fire / Earth / Air / Water. `{until}`: weekday the Moon leaves the sign ("Thursday").
+Filled by `renderLine(template, vars, name)` in `reference.js`, from `pickCopy(readPair(viewer, candidate))`. Always read the pair **from the viewer's side**, so "Your" is the person looking at the card.
 
-## The formula (v3: blind dating)
+| Token | Example | Used in |
+|---|---|---|
+| `{name}` | Juniper (J. on the Mystery Card) | everywhere |
+| `{yourPlanet}` / `{theirPlanet}` | Sun, Moon, Mercury, Venus, Mars, Rising | card lines |
+| `{yourSign}` / `{theirSign}` | Virgo, Gemini | card lines, ruler lines (Sun signs) |
+| `{guest}` / `{owner}` / `{guestSign}` | "Juniper's" Venus in Libra lands in "your" 7th house | house lines |
+| `{element}` / `{until}` | Water / Thursday | right now lines |
 
-The Mystery Card has **no photo**. The three card lines are all someone has to decide Align or Release, so every card line must help them choose.
+## The formula (v4: blind dating, user decides)
 
-**Card line = what dating this person would actually be like + who it's a good pick for.**
+The Mystery Card has **no photo**, so the three card lines are what someone uses to decide Align or Release. The copy gives them the astrology and what it tends to look like in dating, then **leaves the decision to them**. No verdicts: never "great if", "good pick", "you need", "exactly your type".
 
-> "Under stress one of you wants space, the other wants to talk. Worth it if you're good at saying what you need."
+**Card line = the real placements + what that tends to look like in dating.**
+
+> "Your Moon in Virgo squares Juniper's Moon in Gemini. Under stress, one often wants space, the other wants to talk."
 
 | Field | Rule |
 |---|---|
-| Card line | 80 to 110 characters. Sentence 1: something concrete you'd notice dating them. Sentence 2: the fit, "Great if…", "Good pick if…", "Strong pick if…", "Worth it if…", "Works if…", "Fine if…". |
+| Card line | Sentence 1 names this pair's actual signs and the aspect in plain words ("squares", "share an element", "sit side by side"). Sentence 2 is a tendency, not a judgement: "tends to", "often", "may". Rendered length ≤ 125 characters (tested). |
 | Chip | A plain trait anyone gets in 2 to 4 words. |
 | S-21 head | The pattern in everyday words. |
-| S-21 body | 3 sentences: **why** (plain astrology) → **what it looks like** on dates or in texts → **how to use it**. |
+| S-21 body | 3 sentences: **why** (plain astrology) → **what it looks like** on dates or in texts → **how to handle it**. Advice is fine here (it's after they've matched), verdicts are not. |
 | Try | Something to send or plan: `Open with: "..."`, `Ask {name}: "..."`, or `Date idea: ...`. |
 
-Rub lines are honest about the friction and say who it works for. Never a warning, never a reason to feel bad. Keep it about dating: first messages, first dates, texting, pace, flirting, friends, what someone wants long term.
+Rub lines describe the friction honestly and neutrally. Spark and Align lines describe the ease without promising anything.
 
 **Design dependency:** lines this long need the S-05 card to let the Spark / Rub / Align rows grow with their text and a shorter aura band (see the example cards in the Figma copy library).
 
@@ -47,7 +54,7 @@ Rub lines are honest about the friction and say who it works for. Never a warnin
 - No em dashes or hyphens. Use commas or full stops.
 - Say "alignment", never "compatibility".
 - Never a number, percent or score.
-- Card line: 80 to 110 characters (see formula). Chip: max ~30.
+- Card line: rendered length ≤ 125 characters (tested). Chip: max ~30.
 - Avoid pronouns for people: use {name}, so the grammar works for everyone.
 - Rub lines name the friction **and** how to use it. Never ominous, never a warning.
 - Lines must read correctly in either direction (your Sun and their Moon, or theirs and yours).
