@@ -29,15 +29,16 @@ Filled by `renderLine(template, vars, name)` in `reference.js`, from `pickCopy(r
 | `{guest}` / `{owner}` / `{guestSign}` | "Juniper's" Venus in Libra lands in "your" 7th house | available in `vars` for S-06 / S-21 |
 | `{element}` / `{until}` | Water / Thursday | right now lines |
 
-## The formula (v5: one short line per row)
+## The formula (v6: one line per row, with real context)
 
 The Mystery Card has **no photo**. Each Spark / Rub / Align row is just the label, **one short line**, and the dots.
 
-**Card line = what dating this person tends to feel like.** Short, neutral, no verdict.
+**Card line = which part of dating it's about + what it tends to look like in real life.** One sentence, neutral, no verdict.
 
-> RUB · "Under stress, one of you tends to want space, the other to talk."
+> RUB · "Under stress, one of you tends to want space while the other wants to talk it out right away."
+> ALIGN · "Your values in love tend to line up, from loyalty to what a fun weekend looks like."
 
-Rules: ≤ 70 characters rendered (tested). Say what it tends to be like ("tends to", "often", "may"). Never judge ("great if", "good pick", "you need"). No sign names or planet details on the card. Keep it about dating: feelings, texting, flirting, pace, first impressions, what you each want.
+Rules: 45 to 100 characters rendered (tested). Give a concrete dating detail (texts, first dates, nights in, pace, friends). Say what it tends to be like ("tends to", "often", "may"). Never judge ("great if", "good pick", "you need"). No sign names or planet details on the card. Keep it about dating: feelings, texting, flirting, pace, first impressions, what you each want.
 
 **The astrology behind each line** (`astroTag()`, e.g. `MOON + MOON · SQUARE`, `THEIR VENUS · YOUR 7TH HOUSE`, `BOTH RULED BY VENUS`) is shown on **S-06 Expand Card** and **S-21**, not on the Mystery Card. S-21 also carries the deeper read: `s21_head`, `s21_body`, `s21_try`.
 
@@ -46,7 +47,7 @@ Rules: ≤ 70 characters rendered (tested). Say what it tends to be like ("tends
 - No em dashes or hyphens. Use commas or full stops.
 - Say "alignment", never "compatibility".
 - Never a number, percent or score.
-- Card line: ≤ 70 characters rendered (tested). `astroTag()` label: ≤ 32 characters (tested). Chip: max ~30.
+- Card line: 45 to 100 characters rendered (tested). `astroTag()` label: ≤ 32 characters (tested). Chip: max ~30.
 - Avoid pronouns for people: use {name}, so the grammar works for everyone.
 - Rub lines describe the friction neutrally. Never ominous, never a warning. (Advice on handling it belongs on S-21.)
 - Lines must read correctly in either direction (your Sun and their Moon, or theirs and yours).

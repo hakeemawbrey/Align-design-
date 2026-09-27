@@ -192,16 +192,16 @@ test('card lines name the real placements, from each viewer’s side', () => {
   const render = (viewer, other, name) => Object.fromEntries(Object.entries(M.pickCopy(M.readPair(viewer, other)))
     .map(([k, v]) => [k, M.renderLine(T[v.key], v.vars, name)]));
   assert.deepStrictEqual(render(you, juniper, 'Juniper'), {
-    spark: 'You may share a taste for romance.',
-    align: 'Your values in love tend to line up.',
-    rub: 'First impressions may not tell the whole story.',
+    spark: 'You may share a taste for romance, beauty and a well planned evening.',
+    align: 'Your values in love tend to line up, from loyalty to what a fun weekend looks like.',
+    rub: 'First impressions may not tell the whole story: someone may seem different by date two.',
   });
   const tags = (v, o) => Object.fromEntries(Object.entries(M.pickCopy(M.readPair(v, o))).map(([k, p]) => [k, M.astroTag(p)]));
   assert.deepStrictEqual(tags(you, juniper), { spark: 'BOTH RULED BY VENUS', align: 'VENUS + VENUS \u00b7 TRINE', rub: 'SUN + RISING \u00b7 SQUARE' });
   assert.strictEqual(tags(juniper, you).rub, 'RISING + SUN \u00b7 SQUARE');
 });
 
-test('every rendered card line is complete and short (≤ 70 chars), tags ≤ 32', () => {
+test('every rendered card line is complete and 45 to 100 chars, tags ≤ 32', () => {
   const T = readCopy();
   const rand = rng(21);
   for (let i = 0; i < 5000; i++) {
@@ -210,7 +210,7 @@ test('every rendered card line is complete and short (≤ 70 chars), tags ≤ 32
       if (!v) continue;
       const line = M.renderLine(T[v.key], v.vars, 'Juniper');
       assert.ok(!/[{}]/.test(line), `unfilled token: ${line}`);
-      assert.ok(line.length <= 70, `too long (${line.length}): ${line}`);
+      assert.ok(line.length >= 45 && line.length <= 100, `length ${line.length}: ${line}`);
       assert.ok(M.astroTag(v).length <= 32, `tag too long: ${M.astroTag(v)}`);
     }
   }
