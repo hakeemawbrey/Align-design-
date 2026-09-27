@@ -2,7 +2,7 @@
 
 **For developers. No astrology knowledge needed.**
 Diagrams: Figma → page *"Align — Matching Algorithm v2 (team diagram)"*.
-Runnable math: [`reference.js`](./reference.js) (`node docs/matching/reference.js`), tests: `node --test docs/matching/`.
+Runnable math: [`reference.js`](./reference.js) (`node docs/matching/reference.js`), tests: `node --test docs/matching/reference.test.js`.
 Around the math (matching, schedule, caching, logging): [`dev-handoff.md`](./dev-handoff.md). Tunable numbers: [`config.default.json`](./config.default.json). Card copy: [`copy/`](./copy/README.md). Chart calculator: [`chart/chart.js`](./chart/chart.js).
 
 Every number marked **TUNE** is a starting value. Change it in one config, not in the logic.

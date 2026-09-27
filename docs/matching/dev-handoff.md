@@ -11,7 +11,7 @@ Read [`matching-algorithm.md`](./matching-algorithm.md) first for the math.
 | `dev-handoff.md` | This file | – |
 | `config.default.json` | Every tunable number. Ship as remote config | – |
 | `reference.js` | Reference implementation: scoring, Pull, moon phase, dealing, copy picking | `node docs/matching/reference.js` |
-| `reference.test.js` | Golden tests. **Your implementation must produce the same numbers** | `node --test docs/matching/` |
+| `reference.test.js` | Golden tests. **Your implementation must produce the same numbers** | `node --test docs/matching/reference.test.js` |
 | `chart/chart.js` | Birth data → six sign numbers (time zones + ephemeris) | `cd docs/matching/chart && npm i && node chart.js` |
 | `copy/` | Every card sentence (CSV) + writing rules | – |
 
@@ -168,6 +168,6 @@ Later: `match_chat_started`, `match_expired` (7 days quiet), so Pull can be tune
 
 ## 13. Tests
 
-- `node --test docs/matching/` runs 15 golden tests: the worked example numbers, symmetry, filters on Pull, labels, moon phase dates, 50 random cities of deck rules, incoming Aligns, Align+ sets, small pools, and copy coverage.
+- `node --test docs/matching/reference.test.js` runs 15 golden tests: the worked example numbers, symmetry, filters on Pull, labels, moon phase dates, 50 random cities of deck rules, incoming Aligns, Align+ sets, small pools, and copy coverage.
 - Port these cases to your stack's test framework. **Same inputs must give the same numbers** (e.g. You × Juniper → Pull 49).
 - `node docs/matching/chart/chart.js` runs the chart self-checks.

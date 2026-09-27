@@ -1,6 +1,6 @@
 // Align matching algorithm v2 — reference implementation.
 // Plain JS, no dependencies. Run: node docs/matching/reference.js
-// Tests: node --test docs/matching/
+// Tests: node --test docs/matching/reference.test.js
 // This is the source of truth for the math in matching-algorithm.md.
 // Every tunable number lives in config.default.json (ship it as remote config).
 

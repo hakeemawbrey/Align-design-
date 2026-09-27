@@ -1,4 +1,4 @@
-// Golden tests for the matching algorithm. Run: node --test docs/matching/
+// Golden tests for the matching algorithm. Run: node --test docs/matching/reference.test.js
 // The production implementation must pass the same cases with the same numbers.
 const test = require('node:test');
 const assert = require('node:assert');
