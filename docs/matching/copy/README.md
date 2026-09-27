@@ -24,9 +24,9 @@ Filled by `renderLine(template, vars, name)` in `reference.js`, from `pickCopy(r
 | Token | Example | Used in |
 |---|---|---|
 | `{name}` | Juniper (J. on the Mystery Card) | everywhere |
-| `{yourPlanet}` / `{theirPlanet}` | Sun, Moon, Mercury, Venus, Mars, Rising | card lines |
-| `{yourSign}` / `{theirSign}` | Virgo, Gemini | card lines, ruler lines (Sun signs) |
-| `{guest}` / `{owner}` / `{guestSign}` | "Juniper's" Venus in Libra lands in "your" 7th house | house lines |
+| `{yourPlanet}` / `{theirPlanet}` | Sun, Moon, Mercury, Venus, Mars, Rising | available in `vars` for S-06 / S-21 (not used in card lines) |
+| `{yourSign}` / `{theirSign}` | Virgo, Gemini | available in `vars` for S-06 / S-21 (not used in card lines) |
+| `{guest}` / `{owner}` / `{guestSign}` | "Juniper's" Venus in Libra lands in "your" 7th house | available in `vars` for S-06 / S-21 |
 | `{element}` / `{until}` | Water / Thursday | right now lines |
 
 ## The formula (v5: one short line per row)
@@ -46,9 +46,9 @@ Rules: ≤ 70 characters rendered (tested). Say what it tends to be like ("tends
 - No em dashes or hyphens. Use commas or full stops.
 - Say "alignment", never "compatibility".
 - Never a number, percent or score.
-- Card line: ≤ 70 characters rendered (tested). Tag: ≤ 32 characters (tested). Chip: max ~30.
+- Card line: ≤ 70 characters rendered (tested). `astroTag()` label: ≤ 32 characters (tested). Chip: max ~30.
 - Avoid pronouns for people: use {name}, so the grammar works for everyone.
-- Rub lines name the friction **and** how to use it. Never ominous, never a warning.
+- Rub lines describe the friction neutrally. Never ominous, never a warning. (Advice on handling it belongs on S-21.)
 - Lines must read correctly in either direction (your Sun and their Moon, or theirs and yours).
 
 A check for the first three rules runs in the generator; the test suite confirms every key the algorithm can produce has a line.
