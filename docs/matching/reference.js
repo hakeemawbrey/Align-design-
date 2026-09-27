@@ -101,7 +101,7 @@ function pull(viewer, candidate, meters) {
   let p = (base / 3) * 100;
   if (viewer.lookingFor === candidate.lookingFor) p += LOOKING_FOR.same;
   else p += LOOKING_FOR[`${viewer.lookingFor}|${candidate.lookingFor}`] || 0;
-  if (candidate.photoVerified) p += 3; // TUNE
+  if (candidate.photoVerified && candidate.isAlignPlus) p += 3; // verified bump is an Align+ perk. TUNE
   return Math.max(0, Math.min(100, p));
 }
 
@@ -119,8 +119,8 @@ module.exports = { SIGNS, element, RULER, signsApart, houseOf, readPair, cardDot
 // ─── Worked example (matches the doc) ────────────────────────────
 if (require.main === module) {
   const S = Object.fromEntries(SIGNS.map((s, i) => [s, i]));
-  const you = { sun: S.Taurus, moon: S.Sagittarius, mercury: S.Taurus, venus: S.Taurus, mars: S.Aries, rising: S.Libra, lookingFor: 'serious', photoVerified: true };
-  const juniper = { sun: S.Libra, moon: S.Gemini, mercury: S.Libra, venus: S.Virgo, mars: S.Cancer, rising: S.Aquarius, lookingFor: 'serious', photoVerified: true };
+  const you = { sun: S.Taurus, moon: S.Sagittarius, mercury: S.Taurus, venus: S.Taurus, mars: S.Aries, rising: S.Libra, lookingFor: 'serious', photoVerified: true, isAlignPlus: false };
+  const juniper = { sun: S.Libra, moon: S.Gemini, mercury: S.Libra, venus: S.Virgo, mars: S.Cancer, rising: S.Aquarius, lookingFor: 'serious', photoVerified: true, isAlignPlus: true };
   const m = readPair(you, juniper);
   const r = (x) => Math.round(x * 100) / 100;
   for (const [g, v] of Object.entries(m.groups)) console.log(g.padEnd(8), 'spark', r(v[0]), 'align', r(v[1]), 'rub', r(v[2]));

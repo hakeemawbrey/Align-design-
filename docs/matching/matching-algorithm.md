@@ -159,7 +159,7 @@ S-21 detail view (0–5): `round(meter / 2 × 5)`, clamped.
 base = align + 0.8 × spark − 0.4 × rub          // TUNE
 pull = base / 3 × 100
 pull += lookingFor bonus                        // same: +8 · serious vs fun: −10 · else 0 (TUNE)
-pull += candidate.photoVerified ? 3 : 0         // TUNE
+pull += (candidate.photoVerified && candidate.isAlignPlus) ? 3 : 0   // Align+ perk, TUNE
 pull = clamp(pull, 0, 100)
 ```
 
@@ -232,7 +232,7 @@ priority resets at 11:11 and never carries over
 ## 8. Worked example (verified by `reference.js`)
 
 **You:** Sun Taurus (1), Moon Sagittarius (8), Mercury Taurus (1), Venus Taurus (1), Mars Aries (0), Rising Libra (6).
-**Juniper:** Sun Libra (6), Moon Gemini (2), Mercury Libra (6), Venus Virgo (5), Mars Cancer (3), Rising Aquarius (10).
+**Juniper (Align+, photo verified):** Sun Libra (6), Moon Gemini (2), Mercury Libra (6), Venus Virgo (5), Mars Cancer (3), Rising Aquarius (10).
 
 | Comparison | Apart | Aspect | Spark / Align / Rub |
 |---|---|---|---|
@@ -252,7 +252,7 @@ priority resets at 11:11 and never carries over
 
 Weighted meters: Spark 0.39 + **0.5 shared-ruler bonus** (Taurus and Libra are both ruled by Venus) = **0.89**, Align **0.77**, Rub **0.85** → card shows **1 · 1 · 1** dots.
 
-Pull = (0.77 + 0.8×0.89 − 0.4×0.85) / 3 × 100 = 38, +8 (both "serious"), +3 (verified) = **49**. The label depends on where 49 ranks in your pool (e.g. 40th percentile → STEADY PULL).
+Pull = (0.77 + 0.8×0.89 − 0.4×0.85) / 3 × 100 = 38, +8 (both "serious"), +3 (verified Align+) = **49**. The label depends on where 49 ranks in your pool (e.g. 40th percentile → STEADY PULL).
 
 Same pair with **no birth time**: Rising group dropped, Houses partial → Spark 0.70, Align 0.67, Rub 0.82, Pull 40.8.
 
@@ -267,7 +267,7 @@ Same pair with **no birth time**: Rising group dropped, Houses partial → Spark
 | "Looking for" | ✅ Pull modifier |
 | Safety | ✅ Step 1 filter |
 | Active in last 7 days | ✅ Step 1 filter |
-| Photo verified | ✅ Small Pull bump |
+| Photo verified | ✅ Small Pull bump, **Align+ users only** |
 | Religion, height, work, interests | ❌ Not used in matching |
 | Exposure cap | Not now |
 | Moon phase deck mix | Proposed, not approved |
