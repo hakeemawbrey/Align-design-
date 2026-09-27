@@ -1,9 +1,9 @@
 key,priority,condition,line
-now:new-moon,1,Tonight is a New Moon,New Moon tonight. A good night to start something.
-now:full-moon,2,Tonight is a Full Moon,"Full Moon tonight. Feelings run loud, in a good way."
-now:moon-in-their-sun,3,Tonight's Moon sign equals their Sun sign,The Moon is in {name}'s sign until {until}. A good week to be direct.
-now:moon-in-your-sun,4,Tonight's Moon sign equals your Sun sign,The Moon is in your sign until {until}. Lead with what you want.
-now:moon-element-both,5,Tonight's Moon element matches both Sun elements,"Tonight's sky is {element}, just like you both. An easy night to say yes."
-now:moon-trine-their-sun,6,Tonight's Moon is 4 signs from their Sun,Tonight's Moon flatters {name}'s sign. Compliments land.
+now:new-moon,1,Tonight is a New Moon,New Moon tonight. A good night to send the first message.
+now:full-moon,2,Tonight is a Full Moon,"Full Moon tonight. Feelings run high, so say what you mean."
+now:moon-in-their-sun,3,Tonight's Moon sign equals their Sun sign,The Moon is in {name}'s sign until {until}. Be direct this week.
+now:moon-in-your-sun,4,Tonight's Moon sign equals your Sun sign,The Moon is in your sign until {until}. Make the first move.
+now:moon-element-both,5,Tonight's Moon element matches both Sun elements,"Tonight's sky is {element}, like you both. An easy night to ask for a date."
+now:moon-trine-their-sun,6,Tonight's Moon is 4 signs from their Sun,Tonight's Moon flatters {name}'s sign. Send the compliment.
 now:moon-square-their-sun,7,Tonight's Moon is 3 signs from their Sun,Tonight's Moon rubs {name}'s sign. Keep the first message light.
-now:default,8,Nothing above applies,The sky is quiet tonight. Just be yourself.
+now:default,8,Nothing above applies,The sky is quiet tonight. A simple hello works.

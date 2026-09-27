@@ -22,12 +22,27 @@ Every sentence the matching engine can put on a card, the S-21 Cosmic Alignment 
 - `{name}`: the other person's display name ("J." on the Mystery Card, first name after the veil lifts). Lines avoid pronouns so the grammar works for everyone.
 - `{element}`: Fire / Earth / Air / Water. `{until}`: weekday the Moon leaves the sign ("Thursday").
 
+## The dating formula (v2)
+
+Every line answers two questions: **what will dating this person be like, and what do you do about it?**
+
+| Field | Rule |
+|---|---|
+| Card line | Something you'll *notice* when dating them + your *move*. "Under stress, one wants space. Agree on a signal." |
+| Chip | A plain trait anyone gets in 2–4 words. |
+| S-21 head | The pattern in everyday words. |
+| S-21 body | 3 sentences: **why** (plain astrology) → **what it looks like** on dates or in texts → **how to use it**. |
+| Try | Something to send or plan this week: `Open with: "..."`, `Ask {name}: "..."`, or `Date idea: ...`. |
+
+Rub lines always end in a move, never a warning. Keep it about dating: first messages, first dates, texting, pace, flirting, meeting friends.
+
 ## Writing rules (from the Align definitions doc)
 
 - No em dashes or hyphens. Use commas or full stops.
 - Say "alignment", never "compatibility".
 - Never a number, percent or score.
-- Card line: max ~55 characters so it fits two lines on the card. Chip: max ~30.
+- Card line: max ~55 characters so it fits two lines on the card. Chip: max ~30. ("Right now" lines sit in a paragraph on S-06, so they can run longer.)
+- Avoid pronouns for people: use {name}, so the grammar works for everyone.
 - Rub lines name the friction **and** how to use it. Never ominous, never a warning.
 - Lines must read correctly in either direction (your Sun and their Moon, or theirs and yours).
 
