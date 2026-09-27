@@ -49,7 +49,10 @@ function houseOverlays(a, b, cfg) {
       const ownerIsA = owner === a; // a = the viewer when called as readPair(viewer, candidate)
       rows.push({
         group: 'houses', copyKey: `house:${planet}:${house}`, points: cfg.housePoints[house] || [0, 0, 0],
-        vars: { guest: ownerIsA ? "{name}'s" : 'Your', owner: ownerIsA ? 'your' : "{name}'s", guestSign: SIGNS[guest[planet]] },
+        vars: {
+          guest: ownerIsA ? "{name}'s" : 'Your', owner: ownerIsA ? 'your' : "{name}'s", guestSign: SIGNS[guest[planet]],
+          planet: PLANET_NAME[planet], house, ownerIsA,
+        },
       });
     }
   }
@@ -74,7 +77,7 @@ function readPair(a, b, cfg = DEFAULT_CONFIG) {
         const apart = signsApart(a[pa], b[pb]);
         return {
           group: name, copyKey: `${[pa, pb].sort().join('-')}:${apart}`, points: cfg.aspectPoints[apart],
-          vars: { yourPlanet: PLANET_NAME[pa], yourSign: SIGNS[a[pa]], theirPlanet: PLANET_NAME[pb], theirSign: SIGNS[b[pb]] },
+          vars: { yourPlanet: PLANET_NAME[pa], yourSign: SIGNS[a[pa]], theirPlanet: PLANET_NAME[pb], theirSign: SIGNS[b[pb]], apart },
         };
       });
     }
@@ -124,6 +127,20 @@ function pickCopy(meters, cfg = DEFAULT_CONFIG) {
 }
 const pickCopyKeys = (meters, cfg = DEFAULT_CONFIG) =>
   Object.fromEntries(Object.entries(pickCopy(meters, cfg)).map(([k, v]) => [k, v && v.key]));
+
+// Small astrology tag shown above each card line, e.g. "MOON + MOON · SQUARE".
+// Gives the astrology context in a few words so the line itself can stay about dating.
+const ASPECT_NAME = ['conjunction', 'semi sextile', 'sextile', 'square', 'trine', 'quincunx', 'opposition'];
+const ORDINAL = ['', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th'];
+function astroTag(pick) {
+  if (!pick) return null;
+  const v = pick.vars || {};
+  if (pick.key.startsWith('ruler:')) return `both ruled by ${v.ruler}`.toUpperCase();
+  if (pick.key.startsWith('house:')) {
+    return `${v.ownerIsA ? 'their' : 'your'} ${v.planet} · ${v.ownerIsA ? 'your' : 'their'} ${ORDINAL[v.house]} house`.toUpperCase();
+  }
+  return `${v.yourPlanet} + ${v.theirPlanet} · ${ASPECT_NAME[v.apart]}`.toUpperCase();
+}
 
 // Fill a copy template: {name}, {yourPlanet}, {yourSign}, {theirPlanet}, {theirSign},
 // {guest}, {owner}, {guestSign}. {name} is filled last because {guest}/{owner} can contain it.
@@ -320,7 +337,7 @@ function fixBackToBack(deck, incomingIds, D) {
 
 module.exports = {
   DEFAULT_CONFIG, SIGNS, ELEMENTS, element, RULER, signsApart, houseOf, readPair, cardDots, detailDots,
-  pickCopy, pickCopyKeys, renderLine, pull, label, moonAge, moonPhase, cardType, dealSet,
+  pickCopy, pickCopyKeys, renderLine, astroTag, pull, label, moonAge, moonPhase, cardType, dealSet,
 };
 
 // ─── Worked example (matches the doc) ────────────────────────────
