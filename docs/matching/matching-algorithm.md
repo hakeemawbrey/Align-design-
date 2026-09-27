@@ -2,7 +2,8 @@
 
 **For developers. No astrology knowledge needed.**
 Diagrams: Figma → page *"Align — Matching Algorithm v2 (team diagram)"*.
-Runnable math: [`reference.js`](./reference.js) (`node docs/matching/reference.js`).
+Runnable math: [`reference.js`](./reference.js) (`node docs/matching/reference.js`), tests: `node --test docs/matching/`.
+Around the math (matching, schedule, caching, logging): [`dev-handoff.md`](./dev-handoff.md). Tunable numbers: [`config.default.json`](./config.default.json). Card copy: [`copy/`](./copy/README.md). Chart calculator: [`chart/chart.js`](./chart/chart.js).
 
 Every number marked **TUNE** is a starting value. Change it in one config, not in the logic.
 
@@ -60,7 +61,7 @@ Birthday + birth city (+ birth time if known) → an ephemeris library (Swiss Ep
 
 A candidate is **removed** if any of these is true:
 
-1. Gender/seeking doesn't match **both ways**.
+1. Gender/seeking doesn't match **both ways** (rule in dev-handoff §3).
 2. Outside **either** person's age range.
 3. More than 25 miles apart (user can widen to 50 on G-19).
 4. **Safety:** either blocked the other, either reported the other, they unmatched, or the account is paused/deleted.
@@ -188,6 +189,8 @@ Runs nightly at **11:11 local time**. Output: 15 ordered cards + a small buffer.
 
 ```text
 pool   = eligible candidates, minus Comet pool, sorted by Pull (high → low)
+incoming Aligns (people who already said yes to you) jump the queue: max 5 per set,
+         never in slots 1–2 (dev-handoff §1)
 quota  = DECK_MIX[tonight's moon phase]             // see 5a (TUNE)
 sky    = element of tonight's Moon sign              // "Moon in Leo · Fire sky"
 
@@ -205,7 +208,9 @@ after 15: if fewer than 3 elements are present, swap the lowest-Pull card of the
           (only if the swap keeps every rule above)
 ```
 
-**Small pool? Relax in this order** (never relax Step 1 filters): type quota → Moon cap → element rule → Sun cap. Fewer than 15 eligible → deal what exists and show G-19.
+**Small pool? Relax in this order** (never relax Step 1 filters): type quota → Moon cap → Sun cap → back to back. The element rule is best effort. Fewer than 15 eligible → deal what exists and show G-19.
+
+**Align+:** unlimited, in sets of 15. Each new set reruns this step on everyone not yet shown tonight (dev-handoff §2).
 
 ### 5a. Moon phase → tonight's mix
 
@@ -292,3 +297,8 @@ Same pair with **no birth time**: Rising group dropped, Houses partial → Spark
 | Religion, height, work, interests | ❌ Not used in matching |
 | Exposure cap | Not now |
 | Moon phase | ✅ Sets tonight's deck mix (5a). Never changes Pull |
+| Reciprocity | ✅ Incoming Aligns guaranteed a card in the other person's next deal |
+| Align+ deck | ✅ Unlimited, in sets of 15 |
+| Gender / seeking | ✅ Man · Woman · Nonbinary, multi-select "Show me", must match both ways |
+| Card copy | ✅ Draft v1 in `copy/` |
+| Chart library | ✅ astronomy-engine (MIT) + Luxon time zones, `chart/chart.js` |
