@@ -10,6 +10,11 @@ export type ScreenId =
   | 'spent'      // S-10 Your deck is spent
   | 'matches'    // G-09 Your matches + binder
   | 'trade'      // Binder — trade card copies after 3 days aligned
+  | 'onboarding' // O-02 → O-11 new user: birth data, sky, sign reveal, big three
+  | 'founding'   // O-14 end of onboarding: founding member offer
+  | 'paywall'    // S-11 Align+ paywall (in-app)
+  | 'you'        // G-05 You tab: your card, sky, settings
+  | 'club'       // S-17 Club: your sign's room
 
 export interface ScreenProps {
   go: (id: ScreenId) => void

@@ -101,7 +101,7 @@ export default function Welcome({ go }: ScreenProps) {
         </motion.button>
       </motion.div>
 
-      <motion.button {...rise(0.8)} onClick={enter} className="serif italic"
+      <motion.button {...rise(0.8)} onClick={() => { sfx.tap(); go('onboarding') }} className="serif italic"
         style={{ position: 'absolute', top: 722, left: 0, width: '100%', textAlign: 'center', fontSize: 15.5, color: 'var(--label-2)' }}>
         New here — read my chart
       </motion.button>

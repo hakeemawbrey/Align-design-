@@ -12,6 +12,7 @@ import { ME } from '../data/profiles'
 import { SIGNS, ELEMENT_COLOR, type Element } from '../data/signs'
 import { binder, useBinder } from '../lib/binder'
 import { sfx } from '../lib/sfx'
+import { session } from '../lib/session'
 
 type View = 'list' | 'binder'
 let lastView: View = 'list'
@@ -46,6 +47,7 @@ export default function Matches({ go }: ScreenProps) {
   const { canvasRef, fire } = useConfetti()
 
   useEffect(() => { lastView = view }, [view])
+  useEffect(() => { session.patch({ unseenMatch: false }) }, [])
 
   useEffect(() => {
     if (view !== 'binder') return
@@ -304,7 +306,7 @@ export default function Matches({ go }: ScreenProps) {
       </AnimatePresence>
 
       <ConfettiCanvas canvasRef={canvasRef} z={46} />
-      <TabBar active="matches" onSelect={(t) => { if (t === 'deck') go('deck') }} />
+      <TabBar active="matches" go={go} />
     </div>
   )
 }

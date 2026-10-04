@@ -1,4 +1,6 @@
 import { sfx } from '../lib/sfx'
+import { useSession } from '../lib/session'
+import type { ScreenId } from '../screens/types'
 
 export type Tab = 'deck' | 'matches' | 'club' | 'you'
 
@@ -29,13 +31,18 @@ const LABEL: Record<Tab, string> = { deck: 'Deck', matches: 'Matches', club: 'Cl
 
 interface Props {
   active: Tab
-  onSelect?: (t: Tab) => void
-  /** dot badge on Matches */
-  matchBadge?: boolean
+  /** navigate — every tab goes to its screen */
+  go?: (id: ScreenId) => void
+  /** optional override; return true to skip the default navigation */
+  onSelect?: (t: Tab) => boolean | void
 }
 
+const ROUTE: Record<Tab, ScreenId> = { deck: 'deck', matches: 'matches', club: 'club', you: 'you' }
+
 /** Floating glass pill nav from S-05. */
-export default function TabBar({ active, onSelect, matchBadge }: Props) {
+export default function TabBar({ active, go, onSelect }: Props) {
+  const { unseenMatch } = useSession()
+  const matchBadge = unseenMatch && active !== 'matches'
   return (
     <nav style={{
       position: 'absolute', left: 32, right: 32, bottom: 22, height: 62, zIndex: 40,
@@ -48,7 +55,7 @@ export default function TabBar({ active, onSelect, matchBadge }: Props) {
       {(Object.keys(LABEL) as Tab[]).map((t) => {
         const a = t === active
         return (
-          <button key={t} onClick={() => { sfx.tap(); onSelect?.(t) }} style={{
+          <button key={t} onClick={() => { sfx.tap(); if (onSelect?.(t)) return; if (t !== active) go?.(ROUTE[t]) }} style={{
             display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, width: 64,
             color: a ? 'var(--label-1)' : 'var(--label-3)', fontSize: 11, fontWeight: 500, position: 'relative',
           }}>

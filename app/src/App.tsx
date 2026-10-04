@@ -16,17 +16,26 @@ import Spent from './screens/Spent'
 import Matches from './screens/Matches'
 import Trade from './screens/Trade'
 import { resetBinder } from './lib/binder'
+import { resetSession } from './lib/session'
+import Onboarding from './screens/Onboarding'
+import Founding from './screens/Founding'
+import Paywall from './screens/Paywall'
+import You from './screens/You'
+import Club from './screens/Club'
 import { sfx } from './lib/sfx'
 
 const SCREENS: Record<ScreenId, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
   matches: Matches, trade: Trade,
+  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club,
 }
 
 /** Keyboard jump order for recording: 1–9, then 0 */
 const ORDER: ScreenId[] = ['splash', 'welcome', 'dealing', 'deck', 'match', 'reveal', 'chat', 'alignment', 'spent', 'matches']
-const ALL: ScreenId[] = [...ORDER, 'trade']
+const ALL: ScreenId[] = [...ORDER, 'trade', 'onboarding', 'founding', 'paywall', 'you', 'club']
+/** letter shortcuts for screens beyond 0–9 */
+const LETTERS: Record<string, ScreenId> = { o: 'onboarding', f: 'founding', p: 'paywall', y: 'you', c: 'club' }
 
 function initialScreen(): ScreenId {
   const h = window.location.hash.replace('#', '') as ScreenId
@@ -47,9 +56,13 @@ export default function App() {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
       const n = e.key === '0' ? 10 : Number(e.key)
-      if (n >= 1 && n <= ORDER.length) { resetBinder(); setRun((r) => r + 1); go(ORDER[n - 1]) }
-      if (e.key === 'b' || e.key === 'B') { resetBinder(); setRun((r) => r + 1); go('matches') }
-      if (e.key === 'r' || e.key === 'R') { resetBinder(); setRun((r) => r + 1); go('splash') }
+      const restart = (id: ScreenId) => { resetBinder(); resetSession(); setRun((r) => r + 1); go(id) }
+      const k = e.key.toLowerCase()
+      if (e.metaKey || e.ctrlKey || e.altKey) return
+      if (n >= 1 && n <= ORDER.length) restart(ORDER[n - 1])
+      else if (k === 'b') restart('matches')
+      else if (k === 'r') restart('splash')
+      else if (LETTERS[k]) restart(LETTERS[k])
       if (e.key === 'm' || e.key === 'M') sfx.setMuted(!sfx.isMuted())
     }
     window.addEventListener('keydown', onKey)

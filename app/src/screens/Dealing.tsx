@@ -137,7 +137,7 @@ export default function Dealing({ go }: ScreenProps) {
         </div>
       </motion.div>
 
-      <TabBar active="deck" />
+      <TabBar active="deck" go={go} />
     </div>
   )
 }

@@ -5,6 +5,7 @@ import Starfield from '../components/Starfield'
 import { SIGNS } from '../data/signs'
 import { DECK, ME } from '../data/profiles'
 import { sfx } from '../lib/sfx'
+import { session } from '../lib/session'
 import AuraOrb from '../components/reveal/AuraOrb'
 import Burst from '../components/reveal/Burst'
 import Rarity from '../components/reveal/Rarity'
@@ -40,6 +41,7 @@ const ORB_T: Transition[] = [
 const AT = { charge: 1450, slam: 2000, burst: 2240, settle: 2600 }
 
 export default function Match({ go }: ScreenProps) {
+  useEffect(() => { session.patch({ unseenMatch: true }) }, [])
   const [stage, setStage] = useState(0)
   const [skipped, setSkipped] = useState(false)
   const [burstKey, setBurstKey] = useState(0)

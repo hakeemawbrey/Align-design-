@@ -81,7 +81,7 @@ export default function Spent({ go }: ScreenProps) {
       <motion.button className="chrome-cta"
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75, duration: 0.6 }}
         whileTap={{ scale: 0.96 }} whileHover={{ scale: 1.015 }}
-        onClick={() => { sfx.align(); go('deck') }}
+        onClick={() => { sfx.tap(); go('paywall') }}
         style={{ position: 'absolute', left: 38, top: 660, fontSize: 20 }}>
         Keep going with Align+ <span className="spark">✦</span>
       </motion.button>
@@ -91,7 +91,7 @@ export default function Spent({ go }: ScreenProps) {
         Talk to your matches
       </motion.button>
 
-      <TabBar active="deck" onSelect={(t) => { if (t === 'matches') go('matches') }} />
+      <TabBar active="deck" go={go} />
     </div>
   )
 }
