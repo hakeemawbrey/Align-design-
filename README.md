@@ -55,6 +55,18 @@ cards. Each copy lives in the other person's binder.
    element set (fire, earth, air, water), so you get the *All four elements* moment.
 6. Tap any traded card to hold it up and tilt it.
 
+### Artist Series (future vision)
+
+Page 2 of the binder shows where this could go: verified artists get
+limited-edition **Legendary** cards that fans collect and trade.
+
+- In the Binder, tap **ARTIST SERIES ›** (or press `→`).
+- **NOVA** (a fictional K-pop idol) sits in a rainbow-holo sleeve, edition № 001 / 500.
+  The other sleeves are locked "?" slots for artists to come.
+- Tap NOVA's card for the showcase: move the mouse over it to tilt, see demand
+  (41 collectors want it, 3 traded this week), and **Offer a trade**, marked *Coming soon*.
+- **‹ YOUR BINDER** (or `←`) goes back.
+
 ## Where things live
 
 - `app/src/screens/`: one file per screen
