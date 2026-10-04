@@ -224,6 +224,7 @@ export default function Deck({ go }: ScreenProps) {
   const [flash, setFlash] = useState(false)
   const [first, setFirst] = useState(true)
   const [busy, setBusy] = useState(false)
+  const [matching, setMatching] = useState(false)
 
   const phaseRef = useRef<Phase>('idle')
   const streakRef = useRef(0)
@@ -332,6 +333,7 @@ export default function Deck({ go }: ScreenProps) {
       sfx.align()
       setStarPulse((n) => n + 1)
       if (profile.alignsBack) {
+        setMatching(true)
         starBurst(canvasRef.current, 300, CARD_CY - 40, 1.8)
         later(() => starBurst(canvasRef.current, 195, 380, 1.4), 160)
         later(() => { setFlash(true); sfx.sparkle() }, 140)
@@ -443,8 +445,14 @@ export default function Deck({ go }: ScreenProps) {
       {/* the stack */}
       <motion.div animate={{ y: peekOpen ? -22 : 0 }} transition={{ type: 'spring', stiffness: 260, damping: 24 }}
         style={{ position: 'absolute', inset: 0 }}>
-        <StackBacks bump={index} />
-        {next && <UnderCard key={next.id} profile={next} dragX={dragX} />}
+        <motion.div animate={{ opacity: matching ? 0 : 1, scale: matching ? 0.92 : 1 }} transition={{ duration: 0.35 }} style={{ position: 'absolute', inset: 0 }}>
+          <StackBacks bump={index} />
+        </motion.div>
+        {next && (
+          <motion.div animate={{ opacity: matching ? 0 : 1, scale: matching ? 0.9 : 1 }} transition={{ duration: 0.3 }} style={{ position: 'absolute', inset: 0 }}>
+            <UnderCard key={next.id} profile={next} dragX={dragX} />
+          </motion.div>
+        )}
         {profile && (
           <TopCard
             key={profile.id}

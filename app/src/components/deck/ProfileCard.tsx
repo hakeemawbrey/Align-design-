@@ -93,7 +93,7 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
         }}>
           <img src={sign.auraImg} alt="" draggable={false} style={{
             position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%',
-            transform: 'scale(1.08)',
+            transform: 'scale(1.14)', filter: 'blur(0.7px) saturate(1.08)',
           }} />
           <motion.img
             src={photoSrc} alt="" draggable={false}

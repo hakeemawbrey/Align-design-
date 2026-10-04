@@ -4,8 +4,7 @@ import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import AuraPair from '../components/chat/AuraPair'
-import AlignRing from '../components/chat/AlignRing'
-import { ALIGN_SCORE, READINGS } from '../components/chat/readings'
+import { READINGS } from '../components/chat/readings'
 import { sfx } from '../lib/sfx'
 
 const CARD = { left: 32, top: 100, width: 326, height: 555 }
@@ -72,13 +71,7 @@ export default function Alignment({ go }: ScreenProps) {
           </div>
 
           <div style={{ position: 'absolute', top: 34, left: 0, right: 0 }}>
-            <AuraPair size={84} gap={106} animate>
-              <div style={{ position: 'absolute', left: 106 / 2 + 84 / 2 - 29, top: 84 / 2 - 29 }}>
-                <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.45, type: 'spring', stiffness: 300, damping: 18 }}>
-                  <AlignRing value={ALIGN_SCORE} size={58} delay={1.0} duration={1.8} />
-                </motion.div>
-              </div>
-            </AuraPair>
+            <AuraPair size={84} gap={52} animate />
           </div>
 
           <div className="h-display" style={{ position: 'absolute', top: 140, width: '100%', textAlign: 'center', fontSize: 25 }}>

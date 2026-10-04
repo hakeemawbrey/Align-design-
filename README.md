@@ -23,6 +23,8 @@ Sound is synthesised live. Click once anywhere first so the browser allows audio
 | `1`–`9` | Jump to a screen: 1 splash · 2 welcome · 3 dealing · 4 deck · 5 match · 6 reveal · 7 chat · 8 alignment · 9 deck spent |
 | `M` | Mute or unmute sound |
 | `←` / `→` | On the deck: release or align the top card |
+| hold `Space` | On the deck: peek at the photo |
+| `Enter` / `Esc` | On the deck: open or close the card detail |
 
 You can also open a screen directly from the URL, e.g. `http://localhost:5173/#reveal`.
 
@@ -31,8 +33,8 @@ You can also open a screen directly from the URL, e.g. `http://localhost:5173/#r
 1. **Splash → Welcome** (auto). Click **Continue as Hakeem**.
 2. **Dealing**: cards fly in and the deck is dealt.
 3. **Deck**: drag card 1 left to **release** it.
-4. Card 2: **press and hold** the card to *peek*. The photo opens for 3 seconds, then seals. Let go. Drag right to **align**: gold burst, no match yet.
-5. Card 3 (Juniper): tap the card to expand the reading, then **Align — flip the card**, or just drag right.
+4. Card 2 (Rio): drag right to **align**: gold star burst, "+1 aligned", the counter ticks down. No match yet.
+5. Card 3 (Juniper): **press and hold** to *peek*. Her photo opens for 3 seconds, then seals when you let go. Then drag right (or press →) to align.
 6. **Match**: the two auras collide and *You both aligned* appears. Click **Say something**.
 7. **Reveal**: the card flips and the veil lifts off her photo. Move the mouse over the card for the holographic tilt.
 8. **Say the honest thing** → **Chat**: the conversation plays in. Type a line and press Enter, and she replies.

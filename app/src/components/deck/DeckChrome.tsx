@@ -64,7 +64,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden }: He
         </AnimatePresence>
       </div>
       <div style={{ position: 'absolute', right: 74, top: 72, height: 36, width: 140 }}>
-        <AnimatePresence mode="popLayout" initial={false}>
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div key={rightKey ?? 'r'}
             initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.3 }}

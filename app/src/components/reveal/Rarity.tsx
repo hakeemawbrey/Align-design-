@@ -14,8 +14,8 @@ interface Props {
 }
 
 /**
- * The "rarity" moment: a gold-foil pull badge, a compatibility number that
- * ticks up from 0, and seven chakra centres lighting one by one.
+ * The "rarity" moment: a gold-foil pull badge, and seven chakra centres
+ * lighting one by one. (No compatibility number, by design.)
  */
 export default function Rarity({ show, instant = false, target = 92, lit = 5, pull = 'Strong pull' }: Props) {
   const [v, setV] = useState(0)
@@ -77,19 +77,8 @@ export default function Rarity({ show, instant = false, target = 92, lit = 5, pu
         </div>
       </motion.div>
 
-      {/* the number */}
-      <div style={{ display: 'flex', alignItems: 'flex-start', marginTop: 10, height: 50 }}>
-        <span className="rv-foil-text" style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 52, lineHeight: 1, fontVariantNumeric: 'tabular-nums', minWidth: 54, textAlign: 'right', filter: 'drop-shadow(0 0 14px rgba(242,199,92,0.35))' }}>
-          {v}
-        </span>
-        <span style={{ display: 'flex', flexDirection: 'column', marginLeft: 6, marginTop: 9, gap: 3 }}>
-          <span style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 20, lineHeight: 1, color: 'var(--align)' }}>%</span>
-          <span style={{ fontFamily: 'var(--mono)', fontSize: 8.5, letterSpacing: '0.22em', color: 'var(--label-3)' }}>ALIGNED</span>
-        </span>
-      </div>
-
       {/* seven centres */}
-      <div style={{ display: 'flex', gap: 10, marginTop: 8 }}>
+      <div style={{ display: 'flex', gap: 10, marginTop: 14 }}>
         {CHAKRA.map((c, i) => {
           const on = i < litNow
           return (

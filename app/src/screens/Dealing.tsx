@@ -8,7 +8,7 @@ import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import CardBack from '../components/deck/CardBack'
 import ProfileCard from '../components/deck/ProfileCard'
-import { DeckHeader, Counter, StatusText, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
+import { DeckHeader, Counter, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, ELEMENT_SKY } from '../components/deck/fx'
 
 const SW = CARD_W * CARD_SCALE
@@ -72,8 +72,8 @@ export default function Dealing({ go }: ScreenProps) {
 
       <DeckHeader
         title={settled ? 'Tonight’s deck' : 'Dealing your deck'}
-        right={settled ? <Counter left={11} total={DECK_TOTAL} /> : <StatusText>CHOSEN BY THE SKY</StatusText>}
-        rightKey={settled ? 'counter' : 'chosen'}
+        right={settled ? <Counter left={11} total={DECK_TOTAL} /> : null}
+        rightKey={settled ? 'counter' : 'none'}
       />
 
       {/* glass backs fade in under the dealt cards so the hand-off to Deck is seamless */}

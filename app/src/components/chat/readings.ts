@@ -41,4 +41,3 @@ export const READINGS: Reading[] = [
   },
 ]
 
-export const ALIGN_SCORE = 92
