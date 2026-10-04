@@ -24,18 +24,19 @@ import You from './screens/You'
 import Club from './screens/Club'
 import Sky from './screens/Sky'
 import Calendar from './screens/Calendar'
+import Chart from './screens/Chart'
 import { sfx } from './lib/sfx'
 
 const SCREENS: Record<ScreenId, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
   matches: Matches, trade: Trade,
-  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: Calendar,
+  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: Calendar, chart: Chart,
 }
 
 /** Keyboard jump order for recording: 1–9, then 0 */
 const ORDER: ScreenId[] = ['splash', 'welcome', 'dealing', 'deck', 'match', 'reveal', 'chat', 'alignment', 'spent', 'matches']
-const ALL: ScreenId[] = [...ORDER, 'trade', 'onboarding', 'founding', 'paywall', 'you', 'club', 'sky', 'calendar']
+const ALL: ScreenId[] = [...ORDER, 'trade', 'onboarding', 'founding', 'paywall', 'you', 'club', 'sky', 'calendar', 'chart']
 /** letter shortcuts for screens beyond 0–9 */
 const LETTERS: Record<string, ScreenId> = { o: 'onboarding', f: 'founding', p: 'paywall', y: 'you', c: 'club', s: 'sky', k: 'calendar' }
 

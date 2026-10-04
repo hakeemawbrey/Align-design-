@@ -32,6 +32,7 @@ Sound is synthesised live. Click once anywhere first so the browser allows audio
 | `P` | Align+ paywall |
 | `Y` / `C` | You tab / Club tab |
 | `S` / `K` | Today's sky / Cosmic calendar (Oct 5 2026) |
+| — | Your chart: tap **Your sign** on the You tab |
 | `↑` / `Enter` | On the trade screen: send your card |
 | `M` | Mute or unmute sound |
 | `←` / `→` | On the deck: release or align the top card |

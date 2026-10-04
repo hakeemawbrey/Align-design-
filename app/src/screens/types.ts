@@ -17,6 +17,7 @@ export type ScreenId =
   | 'club'       // S-17 Club: your sign's room
   | 'sky'        // S-14 Today's sky reading
   | 'calendar'   // S-15 Cosmic calendar
+  | 'chart'      // G-23 Your chart · Taurus
 
 export interface ScreenProps {
   go: (id: ScreenId) => void

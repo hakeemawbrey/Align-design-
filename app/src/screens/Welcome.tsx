@@ -102,11 +102,11 @@ export default function Welcome({ go }: ScreenProps) {
       </motion.div>
 
       <motion.button {...rise(0.8)} onClick={() => { sfx.tap(); go('onboarding') }} className="serif italic"
-        style={{ position: 'absolute', top: 722, left: 0, width: '100%', textAlign: 'center', fontSize: 15.5, color: 'var(--label-2)' }}>
-        New here — read my chart
+        style={{ position: 'absolute', top: 710, left: 60, right: 60, height: 46, textAlign: 'center', fontSize: 15.5, color: 'var(--label-1)', zIndex: 5, touchAction: 'manipulation', textDecoration: 'underline', textDecorationColor: 'rgba(239,230,214,0.35)', textUnderlineOffset: 4 }}>
+        New here — read my chart ›
       </motion.button>
       <motion.div {...rise(0.9)}
-        style={{ position: 'absolute', top: 765, width: '100%', textAlign: 'center', fontSize: 10.5, lineHeight: 1.45, color: 'var(--label-3)' }}>
+        style={{ position: 'absolute', top: 765, width: '100%', textAlign: 'center', pointerEvents: 'none', fontSize: 10.5, lineHeight: 1.45, color: 'var(--label-3)' }}>
         By continuing you agree to the<br />Terms and Privacy Policy.
       </motion.div>
     </div>

@@ -81,7 +81,7 @@ export default function You({ go }: ScreenProps) {
             <button className="eyebrow" onClick={() => { sfx.tap(); rowRef.current?.scrollBy({ left: 230, behavior: 'smooth' }) }}
               style={{ fontSize: 9.5, color: 'var(--label-3)' }}>Scroll for more →</button>
           </div>
-          <SkyRow rowRef={rowRef} tile={tile} onTile={(t) => { sfx.tap(); setTile(t); if (t === 'sky' || t === 'moon' || t === 'retro') go('sky'); if (t === 'calendar') go('calendar') }} />
+          <SkyRow rowRef={rowRef} tile={tile} onTile={(t) => { sfx.tap(); setTile(t); if (t === 'sky' || t === 'moon' || t === 'retro') go('sky'); if (t === 'calendar') go('calendar'); if (t === 'sign') go('chart') }} />
 
           {/* your card */}
           <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '18px 24px 8px' }}>Your card</div>
