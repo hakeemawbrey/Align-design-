@@ -9,7 +9,7 @@ export interface ReadingLine {
 
 export interface Profile {
   id: string
-  /** initial + age shown face-down, e.g. "J., 27" */
+  /** first name shown with age on the card, e.g. "Juniper, 27" */
   initial: string
   name: string
   age: number
@@ -46,7 +46,7 @@ export const ME = {
  */
 export const DECK: Profile[] = [
   {
-    id: 'm24', initial: 'M.', name: 'Maya', age: 24, sign: 'virgo', moon: 'scorpio', rising: 'cancer',
+    id: 'm24', initial: 'Maya', name: 'Maya', age: 24, sign: 'virgo', moon: 'scorpio', rising: 'cancer',
     serial: '№ 027', pull: 'Slow burn', alignsBack: false,
     photo: '/img/people/p3.jpg',
     reading: [
@@ -57,7 +57,7 @@ export const DECK: Profile[] = [
     dealbreakers: 'Late replies. Loud chewing. Anyone who hates dogs.',
   },
   {
-    id: 'r29', initial: 'R.', name: 'Rio', age: 29, sign: 'leo', moon: 'aries', rising: 'sagittarius',
+    id: 'r29', initial: 'Rio', name: 'Rio', age: 29, sign: 'leo', moon: 'aries', rising: 'sagittarius',
     serial: '№ 029', pull: 'Wild card', alignsBack: false,
     photo: '/img/people/p9.jpg',
     reading: [
@@ -68,7 +68,7 @@ export const DECK: Profile[] = [
     dealbreakers: 'Flaking on plans. Small talk forever. No sense of adventure.',
   },
   {
-    id: 'j27', initial: 'J.', name: 'Juniper', age: 27, sign: 'libra', moon: 'gemini', rising: 'aquarius',
+    id: 'j27', initial: 'Juniper', name: 'Juniper', age: 27, sign: 'libra', moon: 'gemini', rising: 'aquarius',
     serial: '№ 031', pull: 'Strong pull', alignsBack: true,
     photo: '/img/juniper.jpg',
     house: '7th house',
@@ -86,7 +86,7 @@ export const DECK: Profile[] = [
     interests: ['Film photography', 'Vinyl', 'Planetariums', 'Ceramics', 'Wine bars'],
   },
   {
-    id: 'a31', initial: 'A.', name: 'Ari', age: 31, sign: 'aquarius', moon: 'libra', rising: 'gemini',
+    id: 'a31', initial: 'Ari', name: 'Ari', age: 31, sign: 'aquarius', moon: 'libra', rising: 'gemini',
     serial: '№ 033', pull: 'Steady pull', alignsBack: false,
     photo: '/img/people/p6.jpg',
     reading: [
@@ -97,7 +97,7 @@ export const DECK: Profile[] = [
     dealbreakers: 'Jealousy. Astrology skeptics. Bad playlists.',
   },
   {
-    id: 's26', initial: 'S.', name: 'Sol', age: 26, sign: 'pisces', moon: 'cancer', rising: 'scorpio',
+    id: 's26', initial: 'Sol', name: 'Sol', age: 26, sign: 'pisces', moon: 'cancer', rising: 'scorpio',
     serial: '№ 036', pull: 'Strong pull', alignsBack: false,
     photo: '/img/people/p7.jpg',
     reading: [
@@ -108,7 +108,7 @@ export const DECK: Profile[] = [
     dealbreakers: 'Coldness. Rushing. Never asking how my day was.',
   },
   {
-    id: 'k28', initial: 'K.', name: 'Kai', age: 28, sign: 'capricorn', moon: 'taurus', rising: 'virgo',
+    id: 'k28', initial: 'Kai', name: 'Kai', age: 28, sign: 'capricorn', moon: 'taurus', rising: 'virgo',
     serial: '№ 038', pull: 'Steady pull', alignsBack: false,
     photo: '/img/people/p2.jpg',
     reading: [
