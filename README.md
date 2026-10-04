@@ -3,6 +3,11 @@
 A clickable, recordable build of Align's core loop, made from the Figma file
 *Align — design v2 Stardust*: **deal → deck → align → match → reveal → chat**.
 
+## Online demo
+
+A hosted copy runs at **https://claude.ai/artifact/V4y14GqpBoBrv6VwAM7NYD**.
+It is private to the owner until shared from the page's Share menu.
+
 ## Run it
 
 ```bash

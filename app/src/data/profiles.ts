@@ -50,7 +50,7 @@ export const DECK: Profile[] = [
   {
     id: 'm24', initial: 'Maya', name: 'Maya', age: 24, sign: 'virgo', moon: 'scorpio', rising: 'cancer',
     serial: '№ 027', pull: 'Slow burn', alignsBack: false,
-    photo: '/img/people/p3.jpg',
+    photo: 'img/people/p3.jpg',
     reading: [
       { kind: 'spark', text: 'Mars in your Moon, she notices everything.', strength: 3 },
       { kind: 'rub', text: 'Her lists meet your naps. Somebody bends.', strength: 2 },
@@ -61,7 +61,7 @@ export const DECK: Profile[] = [
   {
     id: 'r29', initial: 'Rio', name: 'Rio', age: 29, sign: 'leo', moon: 'aries', rising: 'sagittarius',
     serial: '№ 029', pull: 'Wild card', alignsBack: false,
-    photo: '/img/people/p9.jpg',
+    photo: 'img/people/p9.jpg',
     reading: [
       { kind: 'spark', text: 'Sun on your Moon — instant warmth, big laughs.', strength: 3 },
       { kind: 'rub', text: 'Two fixed signs. Nobody backs down first.', strength: 3 },
@@ -72,7 +72,7 @@ export const DECK: Profile[] = [
   {
     id: 'j27', initial: 'Juniper', name: 'Juniper', age: 27, sign: 'libra', moon: 'gemini', rising: 'aquarius',
     serial: '№ 031', pull: 'Strong pull', alignsBack: true,
-    photo: '/img/juniper.jpg',
+    photo: 'img/juniper.jpg',
     house: '7th house',
     reading: [
       { kind: 'spark', text: 'Mercury on your Moon, she gets it first try.', strength: 3 },
@@ -90,7 +90,7 @@ export const DECK: Profile[] = [
   {
     id: 'a31', initial: 'Ari', name: 'Ari', age: 31, sign: 'aquarius', moon: 'libra', rising: 'gemini',
     serial: '№ 033', pull: 'Steady pull', alignsBack: false,
-    photo: '/img/people/p6.jpg',
+    photo: 'img/people/p6.jpg',
     reading: [
       { kind: 'spark', text: 'Uranus wakes your Venus — nothing about this is routine.', strength: 2 },
       { kind: 'rub', text: 'You want a plan; they want a surprise.', strength: 2 },
@@ -101,7 +101,7 @@ export const DECK: Profile[] = [
   {
     id: 's26', initial: 'Sol', name: 'Sol', age: 26, sign: 'pisces', moon: 'cancer', rising: 'scorpio',
     serial: '№ 036', pull: 'Strong pull', alignsBack: false,
-    photo: '/img/people/p7.jpg',
+    photo: 'img/people/p7.jpg',
     reading: [
       { kind: 'spark', text: 'Neptune softens your edges. Easy silence.', strength: 3 },
       { kind: 'rub', text: 'They feel it all at once; you take a week.', strength: 1 },
@@ -112,7 +112,7 @@ export const DECK: Profile[] = [
   {
     id: 'k28', initial: 'Kai', name: 'Kai', age: 28, sign: 'capricorn', moon: 'taurus', rising: 'virgo',
     serial: '№ 038', pull: 'Steady pull', alignsBack: false,
-    photo: '/img/people/p2.jpg',
+    photo: 'img/people/p2.jpg',
     reading: [
       { kind: 'spark', text: 'Saturn on your Sun — you both mean what you say.', strength: 2 },
       { kind: 'rub', text: 'Two calendars, zero spontaneity.', strength: 2 },

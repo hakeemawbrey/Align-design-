@@ -29,8 +29,8 @@ const foil = (c: string, l: string) =>
 const mk = (id: SignId, name: string, glyph: string, element: Element, aura: string, color: string, light: string, dark: string): Sign => ({
   id, name, glyph, element, aura, color, light, dark,
   foil: foil(color, light),
-  auraImg: `/img/aura/${id}.jpg`,
-  figureImg: `/img/figure/${id}.jpg`,
+  auraImg: `img/aura/${id}.jpg`,
+  figureImg: `img/figure/${id}.jpg`,
 })
 
 export const SIGNS: Record<SignId, Sign> = {

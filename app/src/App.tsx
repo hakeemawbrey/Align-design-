@@ -49,7 +49,8 @@ export default function App() {
 
   const go = useCallback((id: ScreenId) => {
     setScreen(id)
-    history.replaceState(null, '', `#${id}`)
+    // sandboxed hosts can refuse history writes; the app works without them
+    try { history.replaceState(null, '', `#${id}`) } catch { /* ignore */ }
   }, [])
 
   useEffect(() => {

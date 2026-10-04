@@ -11,7 +11,7 @@ import { session } from '../lib/session'
 type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
 
 const juniper = DECK.find((p) => p.id === 'j27')!
-const PHOTO = juniper.photo ?? '/img/juniper.jpg'
+const PHOTO = juniper.photo ?? 'img/juniper.jpg'
 
 /** Seeded conversation from S-09 — animated in on mount. */
 const SCRIPT: Omit<Msg, 'id'>[] = [
