@@ -136,7 +136,7 @@ export default function BirthSky({ birth, next, primaryRef }: { birth: BirthDate
                 {b.sun && center && (
                   <motion.div
                     initial={{ scale: 0.6, opacity: 0 }}
-                    animate={{ scale: [1, 1.5, 1], opacity: [0.7, 0.2, 0.7] }}
+                    animate={{ scale: [1, 1.35, 1], opacity: [0.7, 0.2, 0.7] }}
                     transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
                     style={{ position: 'absolute', inset: -6, borderRadius: '50%', border: `1.5px solid ${glow}`, boxShadow: `0 0 16px ${glow}` }}
                   />
@@ -153,7 +153,7 @@ export default function BirthSky({ birth, next, primaryRef }: { birth: BirthDate
         initial={{ opacity: 0, scale: 0.3 }}
         animate={placed >= 6 ? { opacity: 1, scale: 1 } : {}}
         transition={{ type: 'spring', stiffness: 200, damping: 14 }}
-        style={{ position: 'absolute', left: 284, top: 262, width: 20, height: 20, borderRadius: '50%', background: '#f4efe4', boxShadow: '0 0 12px rgba(255,250,235,0.8)', overflow: 'hidden' }}
+        style={{ position: 'absolute', left: 300, top: 244, width: 20, height: 20, borderRadius: '50%', background: '#f4efe4', boxShadow: '0 0 12px rgba(255,250,235,0.8)', overflow: 'hidden' }}
       >
         <div style={{ position: 'absolute', left: 6, top: -4, width: 20, height: 20, borderRadius: '50%', background: '#130a2c' }} />
       </motion.div>

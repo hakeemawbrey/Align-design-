@@ -56,8 +56,8 @@ export function Caption({ children, delay = 0.7, top = Y.caption, onClick }: { c
 }
 
 /** Eyebrow + italic display title + serif body, centred — the header block every step shares. */
-export function Header({ eyebrow, title, body, top = 104, titleSize = 31, bodyWidth = 320 }: {
-  eyebrow?: ReactNode; title: ReactNode; body?: ReactNode; top?: number; titleSize?: number; bodyWidth?: number
+export function Header({ eyebrow, title, body, top = 104, titleSize = 31, bodyWidth = 320, bodyStyle }: {
+  eyebrow?: ReactNode; title: ReactNode; body?: ReactNode; top?: number; titleSize?: number; bodyWidth?: number; bodyStyle?: React.CSSProperties
 }) {
   return (
     <div style={{ position: 'absolute', top, left: 0, width: '100%', textAlign: 'center' }}>
@@ -68,7 +68,7 @@ export function Header({ eyebrow, title, body, top = 104, titleSize = 31, bodyWi
       </motion.h1>
       {body && (
         <motion.p className="serif" {...rise(0.26)}
-          style={{ margin: '14px auto 0', width: bodyWidth, fontSize: 16.5, lineHeight: 1.6, color: 'var(--label-2)' }}>
+          style={{ margin: '14px auto 0', width: bodyWidth, fontSize: 16.5, lineHeight: 1.6, color: 'var(--label-2)', ...bodyStyle }}>
           {body}
         </motion.p>
       )}

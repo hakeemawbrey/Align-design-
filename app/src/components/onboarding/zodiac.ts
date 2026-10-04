@@ -49,7 +49,7 @@ export function sunDegree(b: BirthDate): number {
   if (start > born) start = new Date(b.year - 1, m, d)
   const days = Math.round((born.getTime() - start.getTime()) / 86400000)
   // ~0.985°/day, offset ~1° because ingress is mid-day of the start date
-  return Math.min(29, Math.max(0, Math.round(days * 0.985 + 0.5)))
+  return Math.min(29, Math.max(0, Math.floor(days * 0.985)))
 }
 
 const MODALITY: Record<SignId, string> = {

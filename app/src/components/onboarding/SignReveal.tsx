@@ -12,9 +12,9 @@ import { ART_GLOW, SIGN_READING, modality, sunSign, type BirthDate } from './zod
 const W = 200
 const H = 300
 /** card centre while charging, and after it settles under the copy */
-const CHARGE_C = { x: 195, y: 392 }
-const SETTLE_C = { x: 195, y: 462 }
-const SETTLE_SCALE = 0.79
+const CHARGE_C = { x: 195, y: 382 }
+const SETTLE_C = { x: 195, y: 452 }
+const SETTLE_SCALE = 0.76
 
 const CHARGE_MS = 1600
 const AUTO_FLIP_MS = 1900
@@ -188,7 +188,7 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
           <motion.div
             animate={{ opacity: [0.4, 1, 0.4], scale: [0.96, 1.04, 0.96] }}
             transition={{ duration: 0.7, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ position: 'absolute', inset: -14, borderRadius: 22, border: `1.5px solid ${glow}`, boxShadow: `0 0 24px ${glow}, inset 0 0 18px ${glow}88`, pointerEvents: 'none' }}
+            style={{ position: 'absolute', inset: -14, borderRadius: 22, border: `1.5px solid ${glow}`, boxShadow: `0 0 24px ${glow}`, pointerEvents: 'none' }}
           />
         )}
 
@@ -265,9 +265,9 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
       <AnimatePresence>
         {!flipped && (
           <motion.div key="tap" className="mono"
-            initial={{ opacity: 0 }} animate={{ opacity: [0.4, 1, 0.4] }} exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }} animate={{ opacity: [0.4, 1, 0.4] }} exit={{ opacity: 0, transition: { duration: 0.2 } }}
             transition={{ duration: 1.2, repeat: Infinity }}
-            style={{ position: 'absolute', top: CHARGE_C.y + H / 2 + 36, width: '100%', textAlign: 'center', fontSize: 10, letterSpacing: '0.26em', color: glow }}>
+            style={{ position: 'absolute', top: CHARGE_C.y + H / 2 + 26, width: '100%', textAlign: 'center', fontSize: 10, letterSpacing: '0.26em', color: glow }}>
             TAP TO REVEAL
           </motion.div>
         )}
@@ -323,7 +323,7 @@ function SignFace({ signId, glow, spec, holo }: { signId: keyof typeof SIGNS; gl
         </div>
         {/* holographic foil wash */}
         <motion.div style={{
-          position: 'absolute', inset: 0, mixBlendMode: 'color-dodge', opacity: 0.32, pointerEvents: 'none',
+          position: 'absolute', inset: 0, mixBlendMode: 'soft-light', opacity: 0.55, pointerEvents: 'none',
           background: 'linear-gradient(115deg, transparent 20%, #ff9adf 35%, #9ae8ff 45%, #f6ff9a 55%, #ffb38a 65%, transparent 80%)',
           backgroundSize: '260% 260%', backgroundPosition: holo,
         }} />

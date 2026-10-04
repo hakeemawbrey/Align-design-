@@ -13,11 +13,11 @@ export default function BigThree({ birth, next }: { birth: BirthDate; next: () =
   const rising = SIGNS[ME.rising]
 
   const orbs = [
-    { label: `Sun · ${sun.name}`, x: 82, size: 96, color: '#c9a032', light: '#fff1b8', dark: '#3a2a08', ring: '#e8c860', dot: '#e9b24a',
+    { label: `Sun · ${sun.name}`, x: 80, size: 96, color: '#c9a032', light: '#fff1b8', dark: '#3a2a08', ring: '#e8c860', dot: '#e9b24a',
       text: 'Who you are at brunch. Orders for the table, pays without looking.' },
-    { label: `Moon · ${moon.name}`, x: 195, size: 64, color: '#2f6fe0', light: '#b8d4ff', dark: '#0a1640', dot: '#3f7cf0',
+    { label: `Moon · ${moon.name}`, x: 198, size: 64, color: '#2f6fe0', light: '#b8d4ff', dark: '#0a1640', dot: '#3f7cf0',
       text: 'Who you are at 2am. Plans the trip you will not book. Feels it all, tells no one.' },
-    { label: `Rising · ${rising.name}`, x: 308, size: 64, color: '#9a4ee0', light: '#ecd8ff', dark: '#24104a', dot: '#a35cf0',
+    { label: `Rising · ${rising.name}`, x: 312, size: 64, color: '#9a4ee0', light: '#ecd8ff', dark: '#24104a', dot: '#a35cf0',
       text: 'Who strangers meet first. Charming. Suspiciously good lighting.' },
   ]
 
@@ -37,7 +37,7 @@ export default function BigThree({ birth, next }: { birth: BirthDate; next: () =
       />
 
       {orbs.map((o, i) => (
-        <div key={i} style={{ position: 'absolute', left: o.x - 70, top: 340 - o.size / 2, width: 140, height: o.size + 40, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div key={i} style={{ position: 'absolute', left: o.x - 70, top: 328 - o.size / 2, width: 140, height: o.size + 40, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <motion.div
             initial={{ scale: 0, opacity: 0, y: 30 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -58,20 +58,20 @@ export default function BigThree({ birth, next }: { birth: BirthDate; next: () =
         <motion.div key={i} className="mono"
           initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 + i * 0.28, duration: 0.5, ease: EASE }}
-          style={{ position: 'absolute', top: 403, left: o.x - 70, width: 140, textAlign: 'center', fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--label-1)' }}>
+          style={{ position: 'absolute', top: 390, left: o.x - 60, width: 120, textAlign: 'center', fontSize: 8.5, letterSpacing: '0.08em', whiteSpace: 'nowrap', textTransform: 'uppercase', color: 'var(--label-1)' }}>
           {o.label}
         </motion.div>
       ))}
       {/* the star by the rising orb, as in Figma */}
       <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2.2, repeat: Infinity }}
-        style={{ position: 'absolute', left: 346, top: 316, width: 7, height: 7, borderRadius: '50%', background: '#fff', boxShadow: '0 0 8px #fff' }} />
+        style={{ position: 'absolute', left: 350, top: 302, width: 7, height: 7, borderRadius: '50%', background: '#fff', boxShadow: '0 0 8px #fff' }} />
 
-      <div style={{ position: 'absolute', top: 456, left: 36, width: 318, display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ position: 'absolute', top: 436, left: 36, width: 318, display: 'flex', flexDirection: 'column', gap: 9 }}>
         {orbs.map((o, i) => (
           <motion.div key={i}
             initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.35 + i * 0.18, duration: 0.55, ease: EASE }}
-            style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, lineHeight: 1.45, color: 'var(--label-1)' }}>
+            style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 13.5, lineHeight: 1.4, color: 'var(--label-1)' }}>
             <span style={{ marginTop: 6, width: 8, height: 8, borderRadius: '50%', flexShrink: 0, background: o.dot, boxShadow: `0 0 8px ${o.dot}` }} />
             {o.text}
           </motion.div>
