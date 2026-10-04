@@ -6,6 +6,7 @@ import TabBar from '../components/TabBar'
 import { ChatHeader, ExpiryBar, InlineAlignmentCard, Receipt, TypingIndicator } from '../components/chat/ChatParts'
 import { DECK } from '../data/profiles'
 import { sfx } from '../lib/sfx'
+import { session } from '../lib/session'
 
 type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
 
@@ -33,13 +34,22 @@ const REPLIES = [
 const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 
 /** S-09 Chat — the payoff after the match. */
+/** Everything already said — shown instantly on return visits. */
+function pastThread(): Msg[] {
+  const { chatExtra } = session.get()
+  return [...SCRIPT, { from: 'card' as const, text: '' }, ...chatExtra].map((m, i) => ({ ...m, id: i + 1 }))
+}
+
 export default function Chat({ go }: ScreenProps) {
-  const [msgs, setMsgs] = useState<Msg[]>([])
+  // the scripted intro plays once per demo run; afterwards the thread is just there
+  const [replay] = useState(() => !session.get().chatPlayed)
+  const [msgs, setMsgs] = useState<Msg[]>(() => (replay ? [] : pastThread()))
   const [typing, setTyping] = useState(false)
-  const [seen, setSeen] = useState(false)
+  const [seen, setSeen] = useState(!replay)
   const [draft, setDraft] = useState('')
-  const idRef = useRef(0)
-  const replyIdx = useRef(0)
+  const idRef = useRef(replay ? 0 : msgs.length)
+  const replyIdx = useRef(session.get().chatExtra.filter((m) => m.from === 'her').length)
+  const firstScroll = useRef(true)
   const alive = useRef(true)
   const scroller = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -61,6 +71,7 @@ export default function Chat({ go }: ScreenProps) {
     alive.current = true
     let cancelled = false
     const dead = () => cancelled
+    if (!replay) return () => { alive.current = false }
     ;(async () => {
       await wait(650)
       for (const m of SCRIPT) {
@@ -83,15 +94,17 @@ export default function Chat({ go }: ScreenProps) {
       if (dead()) return
       push({ from: 'card', text: '' })
       sfx.sparkle()
+      session.patch({ chatPlayed: true })
     })()
     return () => { cancelled = true; alive.current = false }
-  }, [])
+  }, [replay])
 
   // keep pinned to the latest message
   useLayoutEffect(() => {
     const el = scroller.current
     if (!el) return
-    el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' })
+    el.scrollTo({ top: el.scrollHeight, behavior: firstScroll.current ? 'auto' : 'smooth' })
+    firstScroll.current = false
   }, [msgs, typing, seen])
 
   const send = async () => {
@@ -101,13 +114,16 @@ export default function Chat({ go }: ScreenProps) {
     setSeen(false)
     push({ from: 'me', text })
     sfx.send()
+    const extra = (from: 'me' | 'her', t: string) => session.patch({ chatExtra: [...session.get().chatExtra, { from, text: t }] })
+    extra('me', text)
     const reply = REPLIES[replyIdx.current % REPLIES.length]
     replyIdx.current++
     await wait(900)
-    if (!alive.current) return
+    if (!alive.current) { extra('her', reply); return }
     setSeen(true)
     await wait(600)
-    if (!alive.current) return
+    if (!alive.current) { extra('her', reply); return }
+    extra('her', reply)
     await herTypes(reply, 1300, () => !alive.current)
   }
 

@@ -9,6 +9,7 @@ import TabBar from '../components/TabBar'
 import { DECK, DECK_TOTAL, PEEKS_PER_NIGHT, type Profile } from '../data/profiles'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
+import { session, useSession } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
 import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
@@ -212,8 +213,10 @@ function UnderCard({ profile, dragX }: { profile: Profile; dragX: MotionValue<nu
 interface Pop { id: number; kind: 'align' | 'release' | 'deny'; streak: number }
 
 export default function Deck({ go }: ScreenProps) {
-  const [index, setIndex] = useState(0)
-  const [peeks, setPeeks] = useState(PEEKS_PER_NIGHT)
+  // resume where the presenter left the deck (session survives tab hops; reset on demo restart)
+  const [index, setIndex] = useState(() => session.get().deckIndex)
+  const [peeks, setPeeks] = useState(() => Math.max(0, PEEKS_PER_NIGHT - session.get().peeksUsed))
+  const { alignPlus } = useSession()
   const [phase, setPhaseState] = useState<Phase>('idle')
   const [secs, setSecs] = useState(PEEK_SECONDS)
   const [expanded, setExpanded] = useState(false)
@@ -243,6 +246,9 @@ export default function Deck({ go }: ScreenProps) {
 
   const later = (fn: () => void, ms: number) => { timers.current.push(window.setTimeout(fn, ms)) }
   const setPhase = (ph: Phase) => { phaseRef.current = ph; setPhaseState(ph) }
+
+  // deck already played through this session → straight to the spent screen
+  useEffect(() => { if (!DECK[session.get().deckIndex]) go('spent') }, [go])
 
   useEffect(() => () => {
     timers.current.forEach(clearTimeout)
@@ -284,7 +290,10 @@ export default function Deck({ go }: ScreenProps) {
   const openPeek = () => {
     if (phaseRef.current !== 'charging') return
     setPhase('open')
-    setPeeks((n) => n - 1)
+    if (!alignPlus) {
+      setPeeks((n) => n - 1)
+      session.patch({ peeksUsed: session.get().peeksUsed + 1 })
+    }
     setSecs(PEEK_SECONDS)
     sfx.sparkle()
     holdP.set(1)
@@ -301,7 +310,7 @@ export default function Deck({ go }: ScreenProps) {
 
   const beginHold = () => {
     if (phaseRef.current !== 'idle' || busy || expanded || !profile) return
-    if (peeks <= 0) {
+    if (peeks <= 0 && !alignPlus) {
       sfx.deny()
       topRef.current?.shake()
       showToast('No peeks left tonight · more at 11:11', 1600)
@@ -329,6 +338,7 @@ export default function Deck({ go }: ScreenProps) {
   const onFlyStart = (dir: Dir) => {
     if (!profile) return
     setBusy(true)
+    session.patch({ deckIndex: index + 1 })
     if (dir > 0) {
       sfx.align()
       setStarPulse((n) => n + 1)
@@ -524,7 +534,8 @@ export default function Deck({ go }: ScreenProps) {
           ) : (
             <motion.div key="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               style={{ position: 'absolute', top: 707, left: 0, right: 0, textAlign: 'center', fontSize: 13, color: 'var(--label-2)' }}>
-              {peeks > 0 ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left</> : <>No peeks left tonight&nbsp; · &nbsp;more at 11:11</>}
+              {alignPlus ? <>Hold the card to peek&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>∞</span></>
+                : peeks > 0 ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left</> : <>No peeks left tonight&nbsp; · &nbsp;more at 11:11</>}
             </motion.div>
           )}
         </AnimatePresence>
@@ -534,7 +545,7 @@ export default function Deck({ go }: ScreenProps) {
           <motion.div key="peekcap" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
             style={{ position: 'absolute', top: 664, left: 0, right: 0, textAlign: 'center', pointerEvents: 'none' }}>
             <div className="serif italic" style={{ fontSize: 18, color: 'var(--label-2)' }}>Let go and the photo closes</div>
-            <div style={{ marginTop: 8, fontSize: 13, color: 'var(--label-2)' }}>{peeks} {peeks === 1 ? 'peek' : 'peeks'} left tonight</div>
+            <div style={{ marginTop: 8, fontSize: 13, color: 'var(--label-2)' }}>{alignPlus ? <>Unlimited peeks&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>Align+ ✦</span></> : <>{peeks} {peeks === 1 ? 'peek' : 'peeks'} left tonight</>}</div>
           </motion.div>
         )}
       </AnimatePresence>

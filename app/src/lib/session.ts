@@ -10,6 +10,14 @@ export interface ChatMsg {
   text: string
 }
 
+/** a post the presenter made in the Club room */
+export interface ClubPost {
+  id: string
+  text: string
+  likes: number
+  sparks: number
+}
+
 export interface SessionState {
   /** index into DECK of the top card; the deck resumes here */
   deckIndex: number
@@ -23,6 +31,10 @@ export interface SessionState {
   unseenMatch: boolean
   /** Align+ trial started from a paywall */
   alignPlus: boolean
+  /** Club: the presenter's own posts, newest first */
+  clubMine: ClubPost[]
+  /** Club: post ids the presenter has liked */
+  clubLiked: string[]
 }
 
 const initial = (): SessionState => ({
@@ -32,6 +44,8 @@ const initial = (): SessionState => ({
   chatExtra: [],
   unseenMatch: false,
   alignPlus: false,
+  clubMine: [],
+  clubLiked: [],
 })
 
 let state = initial()
