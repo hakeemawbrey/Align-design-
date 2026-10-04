@@ -1,3 +1,4 @@
+import { SKY_PILL } from '../../data/sky'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP } from './fx'
@@ -40,10 +41,12 @@ interface HeaderProps {
   rightKey?: string
   starPulse?: number
   hidden?: boolean
+  /** open Today's Sky */
+  onSky?: () => void
 }
 
 /** "Tonight's deck" header row + Today's Sky pill (S-05). */
-export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden }: HeaderProps) {
+export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky }: HeaderProps) {
   return (
     <motion.div
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0 }}
@@ -78,7 +81,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden }: He
         <GoldStar pulse={starPulse} />
       </button>
       {/* Today's Sky pill */}
-      <div style={{
+      <button onClick={() => { sfx.tap(); onSky?.() }} aria-label="Open today's sky" style={{
         position: 'absolute', left: 24, right: 24, top: 108, height: 39, borderRadius: 999,
         background: 'linear-gradient(90deg, rgba(52,35,95,0.62), rgba(40,26,78,0.5))',
         border: '1px solid rgba(179,166,196,0.28)',
@@ -90,9 +93,9 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden }: He
           background: 'radial-gradient(circle at 32% 28%, #fff4cf 0%, #e8c070 30%, #9a6a2a 75%, #5a3a14 100%)',
           boxShadow: '0 0 8px rgba(242,199,92,0.4)',
         }} />
-        <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, whiteSpace: 'nowrap' }}>Venus enters Leo — be bolder.</span>
+        <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, whiteSpace: 'nowrap', textAlign: 'left' }}>{SKY_PILL}</span>
         <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: '#f2c75c', whiteSpace: 'nowrap' }}>TODAY’S SKY&nbsp; ›</span>
-      </div>
+      </button>
     </motion.div>
   )
 }

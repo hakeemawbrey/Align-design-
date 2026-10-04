@@ -15,6 +15,8 @@ export type ScreenId =
   | 'paywall'    // S-11 Align+ paywall (in-app)
   | 'you'        // G-05 You tab: your card, sky, settings
   | 'club'       // S-17 Club: your sign's room
+  | 'sky'        // S-14 Today's sky reading
+  | 'calendar'   // S-15 Cosmic calendar
 
 export interface ScreenProps {
   go: (id: ScreenId) => void

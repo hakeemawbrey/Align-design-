@@ -31,6 +31,7 @@ Sound is synthesised live. Click once anywhere first so the browser allows audio
 | `F` | Founding-member offer (end of onboarding) |
 | `P` | Align+ paywall |
 | `Y` / `C` | You tab / Club tab |
+| `S` / `K` | Today's sky / Cosmic calendar (Oct 5 2026) |
 | `↑` / `Enter` | On the trade screen: send your card |
 | `M` | Mute or unmute sound |
 | `←` / `→` | On the deck: release or align the top card |
@@ -67,6 +68,14 @@ From Welcome, tap **New here — read my chart** (or press `O`):
 - **Paywall** (`P`, or **Keep going with Align+** when the deck is spent, or the Align+ button on You):
   weekly, yearly or monthly plans. **Start seven days free** flares the portal into *The whole sky is yours.*
 - After claiming Align+, peeks on the deck are unlimited (∞) and You shows **Align+ · Active**.
+
+## Today's sky (Oct 5 2026)
+
+Tap the **Today's Sky** pill on the deck (or press `S`). The reading is for Monday, October 5, 2026, using real
+planet positions: Venus turned retrograde in Scorpio on Saturday Oct 3, the Moon is in Leo and waning (27% lit),
+and the Sun is opposite Saturn. Switch **Today / Tonight / Week / Moon**. Tap **OCT 5 ›** for the
+**Cosmic calendar** (October 2026: New Moon in Libra on the 10th, Scorpio season on the 23rd,
+Mercury retrograde on the 24th, Full Moon in Taurus on the 25th). Tap any day to see what happens.
 
 ## Other tabs
 

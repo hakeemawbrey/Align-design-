@@ -70,7 +70,7 @@ export default function Dealing({ go }: ScreenProps) {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`,
       }} />
 
-      <DeckHeader
+      <DeckHeader onSky={() => go('sky')}
         title={settled ? 'Tonight’s deck' : 'Dealing your deck'}
         right={settled ? <Counter left={11} total={DECK_TOTAL} /> : null}
         rightKey={settled ? 'counter' : 'none'}

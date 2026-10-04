@@ -23,10 +23,10 @@ type TileId = 'sign' | 'sky' | 'calendar' | 'moon' | 'retro'
 
 const TILES: { id: TileId; title: string; sub: string }[] = [
   { id: 'sign', title: 'Your sign', sub: SUN.name },
-  { id: 'sky', title: 'Today’s sky', sub: 'Venus → Leo' },
-  { id: 'calendar', title: 'Calendar', sub: 'September' },
-  { id: 'moon', title: 'Moon phase', sub: 'Waxing gibbous' },
-  { id: 'retro', title: 'Retrogrades', sub: 'Mercury · ends tmrw' },
+  { id: 'sky', title: 'Today’s sky', sub: 'Venus ℞ · Oct 5' },
+  { id: 'calendar', title: 'Calendar', sub: 'October' },
+  { id: 'moon', title: 'Moon phase', sub: 'Waning crescent' },
+  { id: 'retro', title: 'Retrogrades', sub: 'Venus · since Sat' },
 ]
 
 const APP_ROWS = [
@@ -81,7 +81,7 @@ export default function You({ go }: ScreenProps) {
             <button className="eyebrow" onClick={() => { sfx.tap(); rowRef.current?.scrollBy({ left: 230, behavior: 'smooth' }) }}
               style={{ fontSize: 9.5, color: 'var(--label-3)' }}>Scroll for more →</button>
           </div>
-          <SkyRow rowRef={rowRef} tile={tile} onTile={(t) => { sfx.tap(); setTile(t) }} />
+          <SkyRow rowRef={rowRef} tile={tile} onTile={(t) => { sfx.tap(); setTile(t); if (t === 'sky' || t === 'moon' || t === 'retro') go('sky'); if (t === 'calendar') go('calendar') }} />
 
           {/* your card */}
           <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '18px 24px 8px' }}>Your card</div>
