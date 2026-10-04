@@ -1,0 +1,152 @@
+import { AnimatePresence, motion } from 'framer-motion'
+import type { ReactNode } from 'react'
+import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP } from './fx'
+import { sfx } from '../../lib/sfx'
+
+export function GoldStar({ pulse = 0, size = 40 }: { pulse?: number; size?: number }) {
+  return (
+    <div style={{ position: 'relative', width: size, height: size }}>
+      <AnimatePresence>
+        {pulse > 0 && (
+          <motion.span key={pulse}
+            initial={{ scale: 1, opacity: 0.9 }} animate={{ scale: 2.4, opacity: 0 }} exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            style={{ position: 'absolute', inset: 0, borderRadius: '50%', border: '2px solid #f2c75c', boxShadow: '0 0 18px #f2c75c' }}
+          />
+        )}
+      </AnimatePresence>
+      <motion.div
+        key={pulse}
+        initial={pulse ? { scale: 1.35, rotate: -25 } : false}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ type: 'spring', stiffness: 380, damping: 12 }}
+        style={{
+          width: size, height: size, borderRadius: '50%', display: 'grid', placeItems: 'center',
+          background: 'radial-gradient(circle at 32% 28%, #fff4cf 0%, #f2d784 22%, #e0ac44 55%, #a9802e 100%)',
+          boxShadow: '0 0 22px rgba(242,199,92,0.45), inset 0 1px 1px rgba(255,255,255,0.8), inset 0 -2px 4px rgba(90,60,10,0.35)',
+        }}
+      >
+        <svg width={size * 0.45} height={size * 0.45} viewBox="0 0 24 24">
+          <path d="M12 2c.6 4.8 2.2 7 7 8-4.8 1-6.4 3.2-7 8-.6-4.8-2.2-7-7-8 4.8-1 6.4-3.2 7-8Z" fill="#3a2a10" transform="translate(0 2)" />
+        </svg>
+      </motion.div>
+    </div>
+  )
+}
+
+interface HeaderProps {
+  title: string
+  right?: ReactNode
+  rightKey?: string
+  starPulse?: number
+  hidden?: boolean
+}
+
+/** "Tonight's deck" header row + Today's Sky pill (S-05). */
+export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden }: HeaderProps) {
+  return (
+    <motion.div
+      animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0 }}
+      transition={{ duration: 0.3 }}
+      style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 150, zIndex: 20, pointerEvents: hidden ? 'none' : 'auto' }}
+    >
+      <div style={{ position: 'absolute', left: 26, top: 64, height: 44, width: 300 }}>
+        <AnimatePresence mode="popLayout" initial={false}>
+          <motion.div key={title} className="h-display"
+            initial={{ opacity: 0, y: 10, filter: 'blur(6px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, y: -10, filter: 'blur(6px)' }}
+            transition={{ duration: 0.45 }}
+            style={{ position: 'absolute', left: 0, top: 0, fontSize: 36, whiteSpace: 'nowrap' }}
+          >
+            {title}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+      <div style={{ position: 'absolute', right: 74, top: 72, height: 36, width: 140 }}>
+        <AnimatePresence mode="popLayout" initial={false}>
+          <motion.div key={rightKey ?? 'r'}
+            initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.3 }}
+            style={{ position: 'absolute', right: 0, top: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', whiteSpace: 'nowrap' }}
+          >
+            {right}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+      <button onClick={() => sfx.sparkle()} style={{ position: 'absolute', right: 24, top: 66 }} aria-label="Today's star">
+        <GoldStar pulse={starPulse} />
+      </button>
+      {/* Today's Sky pill */}
+      <div style={{
+        position: 'absolute', left: 24, right: 24, top: 108, height: 39, borderRadius: 999,
+        background: 'linear-gradient(90deg, rgba(52,35,95,0.62), rgba(40,26,78,0.5))',
+        border: '1px solid rgba(179,166,196,0.28)',
+        backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
+        display: 'flex', alignItems: 'center', padding: '0 14px 0 11px', gap: 10,
+      }}>
+        <span style={{
+          width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
+          background: 'radial-gradient(circle at 32% 28%, #fff4cf 0%, #e8c070 30%, #9a6a2a 75%, #5a3a14 100%)',
+          boxShadow: '0 0 8px rgba(242,199,92,0.4)',
+        }} />
+        <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, whiteSpace: 'nowrap' }}>Venus enters Leo — be bolder.</span>
+        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: '#f2c75c', whiteSpace: 'nowrap' }}>TODAY’S SKY&nbsp; ›</span>
+      </div>
+    </motion.div>
+  )
+}
+
+export function Counter({ left, total }: { left: number; total: number }) {
+  return (
+    <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.1em', color: 'var(--label-2)', display: 'inline-flex', gap: 6 }}>
+      <motion.span key={left}
+        initial={{ scale: 1.8, color: '#f2c75c', y: -4 }}
+        animate={{ scale: 1, color: '#b3a6c4', y: 0 }}
+        transition={{ type: 'spring', stiffness: 420, damping: 14, color: { duration: 0.9 } }}
+        style={{ display: 'inline-block', textShadow: '0 0 8px rgba(242,199,92,0.5)' }}
+      >{left}</motion.span>
+      <span>/</span>
+      <span>{total}</span>
+    </span>
+  )
+}
+
+export function StatusText({ children }: { children: ReactNode }) {
+  return <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)', textAlign: 'right', lineHeight: 1.45, whiteSpace: 'normal', display: 'block', width: 104 }}>{children}</span>
+}
+
+/** The two tilted violet-glass cards + the one peeking over the top. */
+export function StackBacks({ bump = 0 }: { bump?: number }) {
+  const w = CARD_W * CARD_SCALE
+  const h = CARD_H * CARD_SCALE
+  const glass = {
+    position: 'absolute' as const, width: w, height: h, borderRadius: 19,
+    background: 'linear-gradient(160deg, rgba(92,58,170,0.75) 0%, rgba(60,32,130,0.7) 45%, rgba(38,20,90,0.75) 100%)',
+    border: '1.5px solid rgba(200,180,255,0.45)',
+    boxShadow: '0 0 20px rgba(154,123,224,0.25), inset 0 1px 0 rgba(255,255,255,0.15)',
+  }
+  const left = 195 - w / 2
+  return (
+    <motion.div key={bump} initial={bump ? { scale: 0.97 } : false} animate={{ scale: 1 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 14 }}
+      style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+      <div style={{ ...glass, top: CARD_TOP - 12, width: w * 0.5, height: 60, left: 195 - w * 0.25, transform: 'rotate(2.5deg)', borderRadius: 16, background: 'linear-gradient(180deg, rgba(92,58,170,0.6), rgba(60,32,130,0.5))' }} />
+      <div style={{ ...glass, left: left - 34, top: CARD_TOP + 26, height: h - 62, transform: 'rotate(-7deg)' }} />
+      <div style={{ ...glass, left: left + 34, top: CARD_TOP + 26, height: h - 62, transform: 'rotate(7deg)' }} />
+    </motion.div>
+  )
+}
+
+export function SwipeLabels({ alignStyle, releaseStyle }: { alignStyle?: object; releaseStyle?: object }) {
+  return (
+    <>
+      <motion.div className="mono" style={{ position: 'absolute', left: 28, top: 678, fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-2)', transformOrigin: 'left center', ...releaseStyle }}>
+        ←&nbsp;&nbsp; RELEASE
+      </motion.div>
+      <motion.div className="mono" style={{ position: 'absolute', right: 28, top: 678, fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-2)', transformOrigin: 'right center', ...alignStyle }}>
+        ALIGN&nbsp;&nbsp; →
+      </motion.div>
+    </>
+  )
+}
