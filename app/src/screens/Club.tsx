@@ -15,7 +15,7 @@ import { session, useSession, type ClubPost } from '../lib/session'
 
 const SUN = SIGNS[ME.sign]
 const LIME = '#dfe36a'
-const SCROLL_MASK = 'linear-gradient(180deg, transparent 38px, #000 60px, #000 640px, transparent 690px)'
+const maskFor = (scrolled: boolean) => `linear-gradient(180deg, transparent ${scrolled ? 52 : 38}px, #000 ${scrolled ? 96 : 60}px, #000 640px, transparent 690px)`
 
 const minePost = (m: ClubPost): Post => ({
   id: m.id, name: ME.name, age: ME.age, moon: ME.moon, ago: 'NOW', hood: 'Houston',
@@ -29,6 +29,7 @@ export default function Club({ go }: ScreenProps) {
   const [openId, setOpenId] = useState<string | null>(null)
   const [extraReplies, setExtraReplies] = useState<Record<string, Reply[]>>({})
   const [justPosted, setJustPosted] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
   const scroller = useRef<HTMLDivElement>(null)
   const feedRef = useRef<HTMLDivElement>(null)
   const timers = useRef<number[]>([])
@@ -59,7 +60,7 @@ export default function Club({ go }: ScreenProps) {
     // bring the top of the feed into view, then drop the post in
     const el = scroller.current
     const feed = feedRef.current
-    if (el && feed) el.scrollTo({ top: Math.max(0, feed.offsetTop - 150), behavior: 'smooth' })
+    if (el && feed) el.scrollTo({ top: Math.max(0, feed.offsetTop - 130), behavior: 'smooth' })
     const later = (fn: () => void, ms: number) => { timers.current.push(window.setTimeout(fn, ms)) }
     later(() => {
       setJustPosted(id)
@@ -86,7 +87,8 @@ export default function Club({ go }: ScreenProps) {
         className="club-scroll"
         animate={{ x: open ? -90 : 0, opacity: open ? 0.3 : 1 }}
         transition={{ type: 'spring', stiffness: 320, damping: 36 }}
-        style={{ position: 'absolute', inset: 0, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none', WebkitMaskImage: SCROLL_MASK, maskImage: SCROLL_MASK }}
+        style={{ position: 'absolute', inset: 0, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none', WebkitMaskImage: maskFor(scrolled), maskImage: maskFor(scrolled) }}
+        onScroll={(e) => { const s = e.currentTarget.scrollTop > 6; if (s !== scrolled) setScrolled(s) }}
       >
         <div style={{ position: 'relative', paddingBottom: 200 }}>
           {/* hero */}

@@ -17,7 +17,7 @@ const RISING = SIGNS[ME.rising]
 /** Taurus-room chartreuse from the figure glow (G-05 / S-17 accent) */
 const LIME = '#dfe36a'
 
-const SCROLL_MASK = 'linear-gradient(180deg, transparent 38px, #000 60px, #000 calc(100% - 120px), transparent calc(100% - 44px))'
+const maskFor = (scrolled: boolean) => `linear-gradient(180deg, transparent ${scrolled ? 52 : 38}px, #000 ${scrolled ? 96 : 60}px, #000 calc(100% - 120px), transparent calc(100% - 44px))`
 
 type TileId = 'sign' | 'sky' | 'calendar' | 'moon' | 'retro'
 
@@ -40,6 +40,7 @@ export default function You({ go }: ScreenProps) {
   const { alignPlus } = useSession()
   const [card, setCard] = useState<CardSide | null>(null)
   const [tile, setTile] = useState<TileId>('sign')
+  const [scrolled, setScrolled] = useState(false)
   const rowRef = useRef<HTMLDivElement>(null)
 
   const openCard = (side: CardSide) => { sfx.flip(); setCard(side) }
@@ -55,9 +56,10 @@ export default function You({ go }: ScreenProps) {
         transition={{ type: 'spring', stiffness: 320, damping: 36 }}
         style={{
           position: 'absolute', inset: 0, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none',
-          WebkitMaskImage: SCROLL_MASK,
-          maskImage: SCROLL_MASK,
+          WebkitMaskImage: maskFor(scrolled),
+          maskImage: maskFor(scrolled),
         }}
+        onScroll={(e) => { const s = e.currentTarget.scrollTop > 6; if (s !== scrolled) setScrolled(s) }}
       >
         <div style={{ position: 'relative', paddingBottom: 112 }}>
           {/* hero */}
@@ -177,14 +179,13 @@ function Chevron() {
   )
 }
 
-/** Horizontal tile row — scrolls with wheel, trackpad or mouse drag. */
+/** Horizontal tile row — scrolls with trackpad, mouse drag, or the "Scroll for more" link. */
 function SkyRow({ rowRef, tile, onTile }: { rowRef: React.RefObject<HTMLDivElement | null>; tile: TileId; onTile: (t: TileId) => void }) {
   const drag = useRef({ down: false, x: 0, left: 0, moved: false })
   return (
     <div
       ref={rowRef}
       className="you-scroll"
-      onWheel={(e) => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && rowRef.current) rowRef.current.scrollLeft += e.deltaY }}
       onPointerDown={(e) => { drag.current = { down: true, x: e.clientX, left: rowRef.current?.scrollLeft ?? 0, moved: false } }}
       onPointerMove={(e) => {
         const d = drag.current

@@ -17,6 +17,8 @@ interface Props {
   onClose: () => void
 }
 
+const FADE = 'linear-gradient(180deg, transparent 0, #000 12px, #000 calc(100% - 24px), transparent 100%)'
+
 /** S-17b · a post opened as a thread. */
 export default function Thread({ post, liked, likes, extra, onLike, onReply, onClose }: Props) {
   const [draft, setDraft] = useState('')
@@ -34,7 +36,9 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
 
   useEffect(() => {
     if (!extra.length) return
-    scroller.current?.scrollTo({ top: scroller.current.scrollHeight, behavior: 'smooth' })
+    // wait for the new reply to finish growing in, then bring it into view
+    const t = window.setTimeout(() => scroller.current?.scrollTo({ top: scroller.current.scrollHeight, behavior: 'smooth' }), 420)
+    return () => window.clearTimeout(t)
   }, [extra.length])
 
   const send = () => {
@@ -60,7 +64,8 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
       <span className="eyebrow" style={{ position: 'absolute', right: 24, top: 68, fontSize: 9, color: 'var(--label-3)' }}>Thread</span>
 
       <div ref={scroller} className="club-scroll" style={{
-        position: 'absolute', top: 96, left: 0, right: 0, bottom: 168, overflowY: 'auto', padding: '0 20px 12px', scrollbarWidth: 'none',
+        position: 'absolute', top: 96, left: 0, right: 0, bottom: 150, overflowY: 'auto', padding: '4px 20px 24px', scrollbarWidth: 'none',
+        WebkitMaskImage: FADE, maskImage: FADE,
       }}>
         {/* the post */}
         <div style={{
@@ -80,7 +85,7 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
               }}>{moon.name} moon</span>
             </div>
           </div>
-          <div style={{ marginTop: 14, fontSize: 17, lineHeight: '25px', color: 'var(--label-1)', userSelect: 'text' }}>{post.full ?? post.text}</div>
+          <div style={{ marginTop: 14, fontSize: 16, lineHeight: '24px', color: 'var(--label-1)', userSelect: 'text' }}>{post.full ?? post.text}</div>
           <div style={{ display: 'flex', gap: 22, marginTop: 10, alignItems: 'center' }}>
             <LikeButton liked={liked} count={likes} onToggle={onLike} size={12.5} />
             <SparkCount n={post.sparks + extra.length} size={12.5} />
@@ -102,7 +107,7 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
                     <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)' }}>{r.name}, {r.age}</span>
                     <span style={{ fontSize: 12, color: 'var(--label-3)' }}>{SIGNS[r.moon].name} moon</span>
                   </div>
-                  <div style={{ marginTop: 8, fontSize: 14.5, lineHeight: '21px', color: 'var(--label-1)', opacity: 0.9 }}>{r.text}</div>
+                  <div style={{ marginTop: 8, fontSize: 14, lineHeight: '20px', color: 'var(--label-1)', opacity: 0.9 }}>{r.text}</div>
                 </div>
               </motion.div>
             ))}
