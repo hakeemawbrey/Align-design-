@@ -36,6 +36,12 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #root { height: 100%; }
+html, body {
+  /* set on body too: hosts that wrap the page give body its own color and font */
+  color: var(--label-1);
+  font-family: var(--sans);
+  color-scheme: dark;
+}
 body {
   background: #05030f;
   overflow: hidden;
@@ -58,6 +64,7 @@ img { display: block; -webkit-user-drag: none; user-select: none; }
   color: var(--label-2);
 }
 .h-display {
+  color: var(--label-1);
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
