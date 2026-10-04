@@ -1,0 +1,101 @@
+/* Align — Stardust language tokens (from Figma "Kit · Stardust language") */
+:root {
+  /* surfaces — indigo, never black */
+  --void: #0b0620;
+  --canvas: #140a2e;
+  --raised: #1e1240;
+  --raised-alt: #281a4e;
+  --glass: #34235f;
+  /* labels — warm bone, never cold white */
+  --label-1: #efe6d6;
+  --label-2: #b3a6c4;
+  --label-3: #7d6f94;
+  --label-4: #574b6d;
+  /* reading */
+  --spark: #7fd8b0;
+  --rub: #e8628a;
+  --align: #f2c75c;
+  --violet: #9a7be0;
+  /* chrome CTA */
+  --chrome: linear-gradient(100deg, #f8edff 0%, #fff7ec 38%, #eaf4ff 72%, #ffeff7 100%);
+  --chrome-ink: #3a2c4e;
+  --gold-foil: linear-gradient(90deg, #a9802e 0%, #f2c75c 22%, #fff4cf 44%, #f2c75c 62%, #b88a2c 82%, #f2d784 100%);
+
+  --serif: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
+  --sans: -apple-system, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+  --mono: 'Space Mono', ui-monospace, monospace;
+
+  --phone-w: 390px;
+  --phone-h: 844px;
+
+  color-scheme: dark;
+  font-family: var(--sans);
+  color: var(--label-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  background: #05030f;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+img { display: block; -webkit-user-drag: none; user-select: none; }
+
+/* type helpers */
+.serif { font-family: var(--serif); }
+.italic { font-style: italic; }
+.mono { font-family: var(--mono); letter-spacing: 0.08em; }
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--label-2);
+}
+.h-display {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+/* primary CTA — chrome pill, one per screen */
+.chrome-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: 314px; height: 54px; border-radius: 999px;
+  background: var(--chrome);
+  color: var(--chrome-ink);
+  font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 19px;
+  box-shadow: 0 0 30px rgba(248, 237, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.9);
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.chrome-cta:active { transform: scale(0.97); }
+.chrome-cta .spark { font-size: 14px; }
+
+/* chips */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 24px; padding: 0 10px 0 4px; border-radius: 999px;
+  border: 1px solid currentColor;
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--label-2);
+}
+.chip .dot { width: 16px; height: 16px; border-radius: 50%; }
+
+/* film grain overlay usable anywhere */
+.grain::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>");
+  mix-blend-mode: overlay; opacity: .5;
+}
+
+@keyframes foil-sweep { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+@keyframes twinkle { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+@keyframes float-y { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
