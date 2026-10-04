@@ -539,7 +539,7 @@ export default function Deck({ go }: ScreenProps) {
         )}
       </AnimatePresence>
 
-      <TabBar active="deck" onSelect={(t) => { if (t === 'matches') go('chat') }} />
+      <TabBar active="deck" onSelect={(t) => { if (t === 'matches') go('matches') }} />
 
       <canvas ref={canvasRef} width={390} height={844}
         style={{ position: 'absolute', inset: 0, width: 390, height: 844, zIndex: 45, pointerEvents: 'none' }} />

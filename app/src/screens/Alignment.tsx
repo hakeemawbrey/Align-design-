@@ -208,7 +208,7 @@ export default function Alignment({ go }: ScreenProps) {
         </motion.button>
       </motion.div>
 
-      <TabBar active="matches" onSelect={(t) => { if (t === 'deck') go('deck'); if (t === 'matches') go('chat') }} />
+      <TabBar active="matches" onSelect={(t) => { if (t === 'deck') go('deck'); if (t === 'matches') go('matches') }} />
     </div>
   )
 }

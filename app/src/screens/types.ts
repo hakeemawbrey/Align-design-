@@ -8,6 +8,8 @@ export type ScreenId =
   | 'chat'       // S-09 Chat
   | 'alignment'  // S-21 Cosmic alignment reading
   | 'spent'      // S-10 Your deck is spent
+  | 'matches'    // G-09 Your matches + binder
+  | 'trade'      // Binder — trade card copies after 3 days aligned
 
 export interface ScreenProps {
   go: (id: ScreenId) => void

@@ -86,12 +86,12 @@ export default function Spent({ go }: ScreenProps) {
         Keep going with Align+ <span className="spark">✦</span>
       </motion.button>
       <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
-        onClick={() => { sfx.tap(); go('chat') }}
+        onClick={() => { sfx.tap(); go('matches') }}
         style={{ position: 'absolute', top: 728, left: 0, right: 0, textAlign: 'center', fontSize: 15, color: 'var(--label-3)' }}>
         Talk to your matches
       </motion.button>
 
-      <TabBar active="deck" onSelect={(t) => { if (t === 'matches') go('chat') }} />
+      <TabBar active="deck" onSelect={(t) => { if (t === 'matches') go('matches') }} />
     </div>
   )
 }

@@ -13,19 +13,24 @@ import Reveal from './screens/Reveal'
 import Chat from './screens/Chat'
 import Alignment from './screens/Alignment'
 import Spent from './screens/Spent'
+import Matches from './screens/Matches'
+import Trade from './screens/Trade'
+import { resetBinder } from './lib/binder'
 import { sfx } from './lib/sfx'
 
 const SCREENS: Record<ScreenId, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
+  matches: Matches, trade: Trade,
 }
 
-/** Keyboard jump order for recording: 1–9 */
-const ORDER: ScreenId[] = ['splash', 'welcome', 'dealing', 'deck', 'match', 'reveal', 'chat', 'alignment', 'spent']
+/** Keyboard jump order for recording: 1–9, then 0 */
+const ORDER: ScreenId[] = ['splash', 'welcome', 'dealing', 'deck', 'match', 'reveal', 'chat', 'alignment', 'spent', 'matches']
+const ALL: ScreenId[] = [...ORDER, 'trade']
 
 function initialScreen(): ScreenId {
   const h = window.location.hash.replace('#', '') as ScreenId
-  return ORDER.includes(h) ? h : 'splash'
+  return ALL.includes(h) ? h : 'splash'
 }
 
 export default function App() {
@@ -41,9 +46,10 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
-      const n = Number(e.key)
-      if (n >= 1 && n <= ORDER.length) { setRun((r) => r + 1); go(ORDER[n - 1]) }
-      if (e.key === 'r' || e.key === 'R') { setRun((r) => r + 1); go('splash') }
+      const n = e.key === '0' ? 10 : Number(e.key)
+      if (n >= 1 && n <= ORDER.length) { resetBinder(); setRun((r) => r + 1); go(ORDER[n - 1]) }
+      if (e.key === 'b' || e.key === 'B') { resetBinder(); setRun((r) => r + 1); go('matches') }
+      if (e.key === 'r' || e.key === 'R') { resetBinder(); setRun((r) => r + 1); go('splash') }
       if (e.key === 'm' || e.key === 'M') sfx.setMuted(!sfx.isMuted())
     }
     window.addEventListener('keydown', onKey)

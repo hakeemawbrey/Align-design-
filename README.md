@@ -20,7 +20,9 @@ Sound is synthesised live. Click once anywhere first so the browser allows audio
 | Key | Action |
 | --- | --- |
 | `R` | Restart the demo from the splash |
-| `1`–`9` | Jump to a screen: 1 splash · 2 welcome · 3 dealing · 4 deck · 5 match · 6 reveal · 7 chat · 8 alignment · 9 deck spent |
+| `1`–`9`, `0` | Jump to a screen: 1 splash · 2 welcome · 3 dealing · 4 deck · 5 match · 6 reveal · 7 chat · 8 alignment · 9 deck spent · 0 matches |
+| `B` | Matches tab with a fresh binder (resets any trades) |
+| `↑` / `Enter` | On the trade screen: send your card |
 | `M` | Mute or unmute sound |
 | `←` / `→` | On the deck: release or align the top card |
 | hold `Space` | On the deck: peek at the photo |
@@ -39,6 +41,19 @@ You can also open a screen directly from the URL, e.g. `http://localhost:5173/#r
 7. **Reveal**: the card flips and the veil lifts off her photo. Move the mouse over the card for the holographic tilt.
 8. **Say the honest thing** → **Chat**: the conversation plays in. Type a line and press Enter, and she replies.
 9. Tap the sky icon or the alignment card → **Cosmic alignment**: switch the Spark, Rub, Align and Relationship tabs.
+
+## Binder: trading cards
+
+Once two people have been aligned for **3 days**, they can trade a copy of their
+cards. Each copy lives in the other person's binder.
+
+1. Tap **Matches** in the tab bar (or press `B`). Matches that can trade show a gold **✦ TRADE** tag.
+2. Switch to **Binder**. Traded copies sit in sleeves; Juniper's sleeve is locked at *Day 0 / 3*.
+3. Tap **Tobias** (*Ready to trade*). His copy is already waiting face-down.
+4. Drag your card up (or tap **Trade copies**). The cards cross, his flips face-up, and *TRADED* is stamped on it.
+5. **Put it in your binder**: his card drops into its sleeve, and that completes the
+   element set (fire, earth, air, water), so you get the *All four elements* moment.
+6. Tap any traded card to hold it up and tilt it.
 
 ## Where things live
 
