@@ -207,7 +207,7 @@ export default function Chat({ go }: ScreenProps) {
         </motion.button>
       </form>
 
-      <TabBar active="matches" go={go} />
+      <TabBar active="matches" go={go} onSelect={(t) => { if (t === 'matches') { go('matches'); return true } }} />
     </div>
   )
 }

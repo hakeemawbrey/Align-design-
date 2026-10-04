@@ -22,6 +22,10 @@ Sound is synthesised live. Click once anywhere first so the browser allows audio
 | `R` | Restart the demo from the splash |
 | `1`–`9`, `0` | Jump to a screen: 1 splash · 2 welcome · 3 dealing · 4 deck · 5 match · 6 reveal · 7 chat · 8 alignment · 9 deck spent · 0 matches |
 | `B` | Matches tab with a fresh binder (resets any trades) |
+| `O` | New-user onboarding (birth date → sky → sign reveal) |
+| `F` | Founding-member offer (end of onboarding) |
+| `P` | Align+ paywall |
+| `Y` / `C` | You tab / Club tab |
 | `↑` / `Enter` | On the trade screen: send your card |
 | `M` | Mute or unmute sound |
 | `←` / `→` | On the deck: release or align the top card |
@@ -41,6 +45,28 @@ You can also open a screen directly from the URL, e.g. `http://localhost:5173/#r
 7. **Reveal**: the card flips and the veil lifts off her photo. Move the mouse over the card for the holographic tilt.
 8. **Say the honest thing** → **Chat**: the conversation plays in. Type a line and press Enter, and she replies.
 9. Tap the sky icon or the alignment card → **Cosmic alignment**: switch the Spark, Rub, Align and Relationship tabs.
+
+## New-user path
+
+From Welcome, tap **New here — read my chart** (or press `O`):
+
+1. **Arrival** → **Begin your chart**
+2. **Birth date**: wheel picker; the constellation and sign update live. Leave May 4 1994 (Taurus).
+3. **Your sky**: planets place themselves around the ring.
+4. **Sign reveal**: the card charges up, then flips to show the glowing bull, as if you'd pulled a rare card. Let it flip on its own or tap it.
+5. **Big three** → **How Align works** → **I'm in**
+6. **Founding member**: tap **Claim founding member**. The gold № 0112 card stamps in, then **Deal my first deck**.
+
+## Align+ (business model)
+
+- **Paywall** (`P`, or **Keep going with Align+** when the deck is spent, or the Align+ button on You):
+  weekly, yearly or monthly plans. **Start seven days free** flares the portal into *The whole sky is yours.*
+- After claiming Align+, peeks on the deck are unlimited (∞) and You shows **Align+ · Active**.
+
+## Other tabs
+
+- **You**: your sign, sky tiles, and **Your card** (tap the card panel, then flip between FACE DOWN and FLIPPED).
+- **Club**: the Taurus room. Like posts, open a thread, or **Say it to the room** to post; your post gets likes a few seconds later.
 
 ## Binder: trading cards
 
