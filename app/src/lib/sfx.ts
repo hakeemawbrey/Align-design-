@@ -56,7 +56,11 @@ function noise(dur: number, opts: { gain?: number; delay?: number; from?: number
 }
 
 const vibrate = (p: number | number[]) => {
-  try { navigator.vibrate?.(p) } catch { /* noop */ }
+  try {
+    const ua = (navigator as Navigator & { userActivation?: { hasBeenActive: boolean } }).userActivation
+    if (ua && !ua.hasBeenActive) return
+    navigator.vibrate?.(p)
+  } catch { /* noop */ }
 }
 
 export const sfx = {
