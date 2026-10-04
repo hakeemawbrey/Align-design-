@@ -6,7 +6,7 @@ import { TC_W, TC_H } from './TradeCard'
 const HOLO = 'conic-gradient(from var(--holo-a, 0deg), #ff6ad5, #ffd36a, #7affc4, #6ad5ff, #b18cff, #ff6ad5)'
 
 /**
- * Legendary (Artist Series) card: animated rainbow holo frame, gold ribbon,
+ * Rare-series card (verified artist): animated rainbow holo frame, gold ribbon,
  * verified mark, edition number. Designed at 200×280 like TradeCard.
  */
 function LegendaryCardImpl({ card, width = TC_W, glow = true }: { card: ArtistCard; width?: number; glow?: boolean }) {
@@ -36,7 +36,7 @@ function LegendaryCardImpl({ card, width = TC_W, glow = true }: { card: ArtistCa
             <div className="mono" style={{
               position: 'absolute', left: 8, top: 8, padding: '3px 7px', borderRadius: 999, fontSize: 6.5, letterSpacing: '0.18em', fontWeight: 700,
               color: '#2a1a05', background: 'var(--gold-foil)', boxShadow: '0 0 10px rgba(242,199,92,0.7)',
-            }}>✦ LEGENDARY</div>
+            }}>✦ RARE</div>
           </div>
           <div style={{
             position: 'absolute', top: 14, right: 14, width: 26, height: 26, borderRadius: 13, display: 'grid', placeItems: 'center', fontSize: 14, color: '#fff',
@@ -53,7 +53,7 @@ function LegendaryCardImpl({ card, width = TC_W, glow = true }: { card: ArtistCa
           </div>
           <div style={{ position: 'absolute', left: 12, right: 12, top: 230, height: 1, background: 'linear-gradient(90deg, #ff6ad5, #ffd36a, #6ad5ff)', opacity: 0.5 }} />
           <div className="mono" style={{ position: 'absolute', left: 12, right: 12, top: 240, display: 'flex', justifyContent: 'space-between', fontSize: 7.5, letterSpacing: '0.16em', color: 'var(--label-3)' }}>
-            <span>ARTIST SERIES</span>
+            <span>RARE SERIES</span>
             <span style={{ color: 'var(--align)' }}>№ {String(card.edition).padStart(3, '0')} / {card.of}</span>
           </div>
         </div>

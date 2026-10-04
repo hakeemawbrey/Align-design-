@@ -81,7 +81,9 @@ Mercury retrograde on the 24th, Full Moon in Taurus on the 25th). Tap any day to
 ## Other tabs
 
 - **You**: your sign, sky tiles, and **Your card** (tap the card panel, then flip between FACE DOWN and FLIPPED).
-- **Club**: the Taurus room. Like posts, open a thread, or **Say it to the room** to post; your post gets likes a few seconds later.
+- **Club**: the Taurus room. A pinned **founders card** post at the top of the feed shows the serialized
+  Houston founders card (№ 0112 of 1,111, 64 left); **Claim yours** opens the founding-member offer.
+  The room: Like posts, open a thread, or **Say it to the room** to post; your post gets likes a few seconds later.
 
 ## Binder: trading cards
 
@@ -96,12 +98,12 @@ cards. Each copy lives in the other person's binder.
    element set (fire, earth, air, water), so you get the *All four elements* moment.
 6. Tap any traded card to hold it up and tilt it.
 
-### Artist Series (future vision)
+### Rare series (future vision)
 
-Page 2 of the binder shows where this could go: verified artists get
-limited-edition **Legendary** cards that fans collect and trade.
+Page 2 of the binder shows where this could go: verified famous people get
+limited-edition **Rare** cards that fans collect and trade.
 
-- In the Binder, tap **ARTIST SERIES ›** (or press `→`).
+- In the Binder, tap **RARE SERIES ›** (or press `→`).
 - **NOVA** (a fictional K-pop idol) sits in a rainbow-holo sleeve, edition № 001 / 500.
   The other sleeves are locked "?" slots for artists to come.
 - Tap NOVA's card for the showcase: move the mouse over it to tilt, see demand

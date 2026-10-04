@@ -6,6 +6,7 @@ import TabBar from '../components/TabBar'
 import AuraFigure from '../components/you/AuraFigure'
 import Composer from '../components/club/Composer'
 import Thread from '../components/club/Thread'
+import FoundersDrop from '../components/club/FoundersDrop'
 import { AuraAvatar, LikeButton, PopCount, SparkCount } from '../components/club/PostParts'
 import { ROOM_POSTS, ROOM_COUNT, SAID_TONIGHT, TONIGHT_PROMPT, type Post, type Reply } from '../components/club/posts'
 import { ME } from '../data/profiles'
@@ -24,7 +25,7 @@ const minePost = (m: ClubPost): Post => ({
 
 /** S-17 · Club — the Taurus room. */
 export default function Club({ go }: ScreenProps) {
-  const { clubMine, clubLiked } = useSession()
+  const { clubMine, clubLiked, alignPlus } = useSession()
   const [composer, setComposer] = useState<null | { prompt?: string }>(null)
   const [openId, setOpenId] = useState<string | null>(null)
   const [extraReplies, setExtraReplies] = useState<Record<string, Reply[]>>({})
@@ -131,6 +132,7 @@ export default function Club({ go }: ScreenProps) {
             margin: '0 24px', borderRadius: 16, overflow: 'hidden',
             background: 'rgba(30,18,64,0.85)', border: '1px solid rgba(179,166,196,0.16)',
           }}>
+            <FoundersDrop owned={alignPlus} onClaim={() => { sfx.sparkle(); if (!alignPlus) go('founding') }} />
             <AnimatePresence initial={false}>
               {posts.map((p, i) => (
                 <motion.div key={p.id}

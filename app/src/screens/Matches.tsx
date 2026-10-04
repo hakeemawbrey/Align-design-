@@ -171,7 +171,7 @@ export default function Matches({ go }: ScreenProps) {
                 <motion.div key="art" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}
                   style={{ position: 'absolute', left: 28, right: 28, top: 188, display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span className="mono" style={{ fontSize: 9, letterSpacing: '0.22em', background: 'linear-gradient(90deg, #ff6ad5, #ffd36a, #7affc4, #6ad5ff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', fontWeight: 700 }}>
-                    ✦ ARTIST SERIES
+                    ✦ RARE SERIES
                   </span>
                   <span style={{ flex: 1, height: 1, background: 'rgba(179,166,196,0.16)' }} />
                   <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-3)' }}>COMING SOON</span>
@@ -236,7 +236,7 @@ export default function Matches({ go }: ScreenProps) {
                     ? { background: 'linear-gradient(90deg, #ff6ad5, #ffd36a, #6ad5ff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }
                     : { color: 'var(--label-2)' }),
                 } as React.CSSProperties}>
-                {page === 0 ? 'ARTIST SERIES ›' : '‹ YOUR BINDER'}
+                {page === 0 ? 'RARE SERIES ›' : '‹ YOUR BINDER'}
               </button>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginBottom: 8 }}>
                 {[0, 1].map((i) => (
@@ -246,7 +246,7 @@ export default function Matches({ go }: ScreenProps) {
                 ))}
               </div>
               <div className="serif italic" style={{ fontSize: 14, color: 'var(--label-2)' }}>
-                {page === 0 ? 'Three days aligned, and you can trade copies.' : 'One day: verified artist cards, rare and tradeable.'}
+                {page === 0 ? 'Three days aligned, and you can trade copies.' : 'One day: rare cards from verified artists, built to trade.'}
               </div>
             </div>
           </motion.div>
@@ -300,7 +300,7 @@ export default function Matches({ go }: ScreenProps) {
         )}
       </AnimatePresence>
 
-      {/* Artist Series showcase */}
+      {/* Rare series showcase */}
       <AnimatePresence>
         {showcase && <Showcase a={showcase} onClose={() => setShowcase(null)} />}
       </AnimatePresence>
@@ -486,7 +486,7 @@ function MysterySleeve({ i }: { i: number }) {
       </svg>
       <div className="serif italic" style={{ position: 'absolute', top: 34, width: '100%', textAlign: 'center', fontSize: 26, color: 'var(--align)', textShadow: '0 0 12px rgba(242,199,92,0.6)' }}>?</div>
       <div className="mono" style={{ position: 'absolute', bottom: 12, width: '100%', textAlign: 'center', fontSize: 7, letterSpacing: '0.18em', color: 'rgba(242,199,92,0.6)' }}>
-        ARTIST № {String(i + 1).padStart(2, '0')}
+        RARE № {String(i + 1).padStart(2, '0')}
       </div>
     </div>
   )
@@ -501,7 +501,7 @@ function Showcase({ a, onClose }: { a: ArtistCard; onClose: () => void }) {
       <div style={{ position: 'absolute', left: '50%', top: 300, width: 420, height: 420, marginLeft: -210, marginTop: -210, borderRadius: '50%', background: 'conic-gradient(from 0deg, #ff6ad555, #ffd36a55, #7affc455, #6ad5ff55, #b18cff55, #ff6ad555)', filter: 'blur(60px)' }} />
       <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
         className="mono" style={{ position: 'absolute', top: 66, width: '100%', textAlign: 'center', fontSize: 10, letterSpacing: '0.28em', color: 'var(--align)' }}>
-        ✦ LEGENDARY · ARTIST SERIES ✦
+        ✦ RARE SERIES ✦
       </motion.div>
       <div style={{ position: 'absolute', top: 96, left: 0, right: 0, display: 'flex', justifyContent: 'center', perspective: 900 }}>
         <motion.div initial={{ scale: 0.3, rotateY: -200, y: 120 }} animate={{ scale: 1, rotateY: 0, y: 0 }} exit={{ scale: 0.5, opacity: 0 }}

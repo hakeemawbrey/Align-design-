@@ -45,8 +45,8 @@ export const SECTION_LABEL: Record<MatchSection, string> = {
 export const BINDER_SLOTS = 9
 
 /**
- * Artist Series — a future vision: verified famous people get limited-edition
- * Legendary cards that fans collect and trade. NOVA is a fictional idol.
+ * Rare series — a future vision: verified famous people get limited-edition
+ * rare cards that fans collect and trade. NOVA is a fictional idol.
  */
 export interface ArtistCard {
   id: string
@@ -66,7 +66,7 @@ export interface ArtistCard {
 
 export const ARTIST_CARDS: ArtistCard[] = [
   {
-    id: 'nova', name: 'NOVA', age: 26, sign: 'leo', photo: 'img/people/p4.jpg', title: 'Verified artist · K-pop',
+    id: 'nova', name: 'NOVA', age: 26, sign: 'leo', photo: 'img/people/p4.jpg', title: 'Verified · K-pop',
     edition: 1, of: 500, provenance: 'Traded from a collector in Seoul', wants: 41, tradedThisWeek: 3,
   },
 ]
