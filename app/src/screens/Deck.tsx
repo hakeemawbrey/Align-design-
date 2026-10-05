@@ -6,7 +6,7 @@ import {
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { PEEKS_PER_NIGHT, TONIGHT, type Profile } from '../data/profiles'
+import { COMETS, PEEKS_PER_NIGHT, TONIGHT, type Profile } from '../data/profiles'
 import { buildSeq, peopleLeft, FREE_PEOPLE, PEOPLE_PER_DRAW, type Slot } from '../data/draws'
 import EventCard from '../components/deck/EventCard'
 import { SIGNS } from '../data/signs'
@@ -241,6 +241,7 @@ export default function Deck({ go }: ScreenProps) {
   const [first, setFirst] = useState(true)
   const [busy, setBusy] = useState(false)
   const [matching, setMatching] = useState(false)
+  const [upsell, setUpsell] = useState(false)
 
   const phaseRef = useRef<Phase>('idle')
   const streakRef = useRef(0)
@@ -327,6 +328,7 @@ export default function Deck({ go }: ScreenProps) {
     if (peeks <= 0 && !alignPlus) {
       sfx.deny()
       topRef.current?.shake()
+      if (!session.get().peekUpsellSeen) { session.patch({ peekUpsellSeen: true }); later(() => setUpsell(true), 380); return }
       showToast('No peeks left tonight · more at 11:11', 1600)
       return
     }
@@ -349,7 +351,7 @@ export default function Deck({ go }: ScreenProps) {
   }
 
   /* ---------- swipe ---------- */
-  const nameOf = (id: string) => TONIGHT.find((x) => x.id === id)?.name ?? 'They'
+  const nameOf = (id: string) => [...TONIGHT, ...COMETS].find((x) => x.id === id)?.name ?? 'They'
 
   /** play the event card at the current index */
   const playEvent = (ev: Extract<Slot, { kind: 'event' }>) => {
@@ -371,6 +373,15 @@ export default function Deck({ go }: ScreenProps) {
         setPeeks((n) => n + 1)
         later(() => showToast('+1 peek tonight', 1800), 250)
       }
+    } else if (ev.event.id === 'comet') {
+      const dealtIds = new Set(s.inserts.flatMap((i) => i.ids))
+      const c = COMETS.find((x) => !dealtIds.has(x.id) && !s.blockedSigns.includes(x.sign))
+      if (c) {
+        session.patch({ inserts: [...s.inserts, { after: index, ids: [c.id] }] })
+        later(() => showToast(`A comet crosses: ${c.name}, ${c.age}`, 2200), 250)
+      } else later(() => showToast('The comet passed quietly tonight', 1800), 250)
+    } else if (ev.event.id === 'spotlight') {
+      later(() => showToast('Your card moves to the top of three decks tonight', 2400), 250)
     } else {
       const pool = [...released]
       for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]] }
@@ -631,6 +642,10 @@ export default function Deck({ go }: ScreenProps) {
       </AnimatePresence>
 
       <AnimatePresence>
+        {upsell && <PeekUpsell onClose={() => setUpsell(false)} onUpgrade={() => go('paywall')} />}
+      </AnimatePresence>
+
+      <AnimatePresence>
         {expanded && profile && (
           <ExpandSheet
             key="sheet"
@@ -663,5 +678,40 @@ function DrawTracker({ slot, drawsOf }: { slot: Slot; drawsOf: number | null }) 
       <motion.span animate={{ scale: pos === PEOPLE_PER_DRAW ? [1, 1.35, 1] : 1 }} transition={{ duration: 1.2, repeat: pos === PEOPLE_PER_DRAW ? Infinity : 0 }}
         style={{ fontSize: 12, lineHeight: 1, color: pos >= PEOPLE_PER_DRAW ? '#f2c75c' : 'rgba(242,199,92,0.45)', textShadow: pos >= PEOPLE_PER_DRAW ? '0 0 10px #f2c75c' : 'none' }}>✦</motion.span>
     </div>
+  )
+}
+
+/** First time you run out of peeks: offer Align+ (after that, just a toast). */
+function PeekUpsell({ onClose, onUpgrade }: { onClose: () => void; onUpgrade: () => void }) {
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}
+      style={{ position: 'absolute', inset: 0, zIndex: 70, background: 'rgba(8,4,24,0.72)', backdropFilter: 'blur(6px)' }}>
+      <motion.div onClick={(e) => e.stopPropagation()}
+        initial={{ y: 340 }} animate={{ y: 0 }} exit={{ y: 360 }} transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+        style={{
+          position: 'absolute', left: 0, right: 0, bottom: 0, padding: '22px 24px 40px', borderRadius: '26px 26px 0 0', textAlign: 'center',
+          background: 'radial-gradient(80% 60% at 50% 0%, rgba(242,199,92,0.18), transparent 70%), linear-gradient(180deg, #2a1a5a, #160b36)',
+          borderTop: '1px solid rgba(242,199,92,0.45)', boxShadow: '0 -20px 50px rgba(0,0,0,0.5)',
+        }}>
+        <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.4)', margin: '0 auto 18px' }} />
+        <div style={{ position: 'relative', width: 64, height: 64, margin: '0 auto' }}>
+          <svg width="64" height="64" viewBox="0 0 64 64" style={{ position: 'absolute', inset: 0 }}>
+            <circle cx="32" cy="32" r="27" fill="rgba(11,6,32,0.6)" stroke="rgba(242,199,92,0.3)" strokeWidth="3" />
+          </svg>
+          <div className="serif italic" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontSize: 30, color: '#f2c75c', textShadow: '0 0 12px rgba(242,199,92,0.7)' }}>0</div>
+        </div>
+        <div className="mono" style={{ marginTop: 14, fontSize: 10, letterSpacing: '0.24em', color: 'var(--align)' }}>OUT OF PEEKS TONIGHT</div>
+        <div className="h-display" style={{ fontSize: 28, marginTop: 8 }}>Keep looking with Align+.</div>
+        <div className="serif" style={{ fontSize: 16, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 8 }}>
+          Free nights come with three peeks. Align+ gives you unlimited peeks and unlimited cards.
+        </div>
+        <button className="chrome-cta" style={{ marginTop: 22 }} onClick={() => { sfx.tap(); onUpgrade() }}>
+          Start seven days free <span className="spark">✦</span>
+        </button>
+        <button onClick={() => { sfx.tap(); onClose() }} style={{ display: 'block', margin: '14px auto 0', fontSize: 14, color: 'var(--label-2)' }}>
+          Not now — 3 more at 11:11
+        </button>
+      </motion.div>
+    </motion.div>
   )
 }

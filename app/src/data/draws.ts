@@ -1,4 +1,4 @@
-import { BONUS, TONIGHT, type Profile } from './profiles'
+import { BONUS, COMETS, TONIGHT, type Profile } from './profiles'
 
 /**
  * How a night of Align is dealt: draws of six — five people, then an event.
@@ -9,39 +9,90 @@ export const DRAW_SIZE = PEOPLE_PER_DRAW + 1
 export const FREE_DRAWS = 3
 export const FREE_PEOPLE = PEOPLE_PER_DRAW * FREE_DRAWS
 
-export type EventId = 'second-look' | 'moon-peek' | 'mulligan'
+export type EventId = 'second-look' | 'moon-peek' | 'mulligan' | 'comet' | 'spotlight'
+
+export type Rarity = 'Common' | 'Uncommon' | 'Rare'
 
 export interface DeckEvent {
   id: EventId
+  /** shown where a person's name goes */
   title: string
-  /** small line above the title */
-  eyebrow: string
-  body: string
-  /** what playing it does, shown on the card */
-  play: string
+  /** shown where the sign goes, in the event colour */
+  kind: string
+  /** chips next to the kind */
+  chips: string[]
+  /** badge glyph (top right, where the moon badge sits) */
+  glyph: string
   color: string
+  light: string
+  /** aura image used behind the panel art */
+  aura: string
+  /** caption on the art panel */
+  caption: string
+  what: string
+  play: string
+  pass: string
+  /** why it's in tonight's deal — the sky reason */
+  why: string
+  rarity: Rarity
 }
+
+const aura = (sign: string) => `img/aura/${sign}.jpg`
 
 export const EVENTS: Record<EventId, DeckEvent> = {
   'second-look': {
-    id: 'second-look', eyebrow: 'Venus retrograde', title: 'Second look.', color: '#e8628a',
-    body: 'Venus turned back on Saturday. Old attractions return for a second read.',
+    id: 'second-look', title: 'Second look', kind: 'Transit', chips: ['Venus ℞', 'Tonight'], glyph: '℞',
+    color: '#e8628a', light: '#ffc2d4', aura: aura('virgo'), caption: 'VENUS · RETROGRADE IN SCORPIO',
+    what: 'Someone you passed on gets another read.',
     play: 'Bring back the last person you released.',
+    pass: 'Keep moving. They stay released.',
+    why: 'Venus turned retrograde on Saturday. Old attractions come back around until Nov 13.',
+    rarity: 'Uncommon',
   },
   'moon-peek': {
-    id: 'moon-peek', eyebrow: 'Moon in Leo', title: 'The Moon lends a peek.', color: '#f39a3a',
-    body: 'A Leo Moon likes to be looked at. Tonight it looks back.',
-    play: 'Take one extra peek tonight.',
+    id: 'moon-peek', title: 'Lunar peek', kind: 'Lunar', chips: ['Moon in Leo', 'Waning'], glyph: '☾',
+    color: '#f39a3a', light: '#ffd7a0', aura: aura('leo'), caption: 'MOON · LEO · 27% LIT',
+    what: 'One more look behind a card tonight.',
+    play: 'Add a peek to tonight’s three.',
+    pass: 'Save your curiosity for the match.',
+    why: 'A Leo Moon likes to be looked at. Until Tuesday night, it looks back.',
+    rarity: 'Common',
   },
   mulligan: {
-    id: 'mulligan', eyebrow: 'End of the deal', title: 'Mulligan.', color: '#f2c75c',
-    body: 'Not feeling your hand? Shuffle back everyone you released tonight and draw again.',
-    play: 'Redraw up to five released cards.',
+    id: 'mulligan', title: 'Mulligan', kind: 'The deal', chips: ['Redraw', 'Last card'], glyph: '⟲',
+    color: '#f2c75c', light: '#fff4cf', aura: aura('taurus'), caption: 'END OF TONIGHT’S FIFTEEN',
+    what: 'Not feeling your hand? Draw again.',
+    play: 'Shuffle back everyone you released and redraw up to five.',
+    pass: 'Keep your hand. The deal ends here.',
+    why: 'Every free night ends with one. A new deal lands at 11:11.',
+    rarity: 'Rare',
+  },
+  comet: {
+    id: 'comet', title: 'Comet', kind: 'Rare sky', chips: ['Off-chart', 'One card'], glyph: '☄',
+    color: '#38c4ec', light: '#b2ecff', aura: aura('aquarius'), caption: 'FROM OUTSIDE YOUR SKY',
+    what: 'Someone outside your usual signs crosses tonight.',
+    play: 'Deal one extra card from beyond your chart.',
+    pass: 'Let it burn past.',
+    why: 'Comets ignore compatibility. That’s the point.',
+    rarity: 'Rare',
+  },
+  spotlight: {
+    id: 'spotlight', title: 'Spotlight', kind: 'Boost', chips: ['Your card', '24 hours'], glyph: '✦',
+    color: '#b18cff', light: '#e6d8ff', aura: aura('libra'), caption: 'YOUR CARD · FRONT OF THE DECK',
+    what: 'Your card goes first in more decks tonight.',
+    play: 'Move your card to the top of three decks.',
+    pass: 'Stay where the stars put you.',
+    why: 'Libra season favours being seen. Use it.',
+    rarity: 'Uncommon',
   },
 }
 
-/** Every sixth card, in this order; the third — the end of the free fifteen — is the mulligan. */
-export const EVENT_ORDER: EventId[] = ['second-look', 'moon-peek', 'mulligan']
+/**
+ * Every sixth card, in this order. Free nights see the first three — the
+ * mulligan closes the free fifteen; Align+ keeps cycling through all five.
+ */
+export const EVENT_ORDER: EventId[] = ['second-look', 'moon-peek', 'mulligan', 'comet', 'spotlight']
+const FREE_EVENTS: EventId[] = EVENT_ORDER.slice(0, FREE_DRAWS)
 
 export type Slot =
   | { kind: 'person'; profile: Profile; draw: number; pos: number; redraw?: boolean; key: string }
@@ -53,7 +104,7 @@ export interface Insert {
   ids: string[]
 }
 
-const byId = (id: string) => [...TONIGHT, ...BONUS].find((p) => p.id === id)
+const byId = (id: string) => [...TONIGHT, ...BONUS, ...COMETS].find((p) => p.id === id)
 
 /**
  * Tonight's sequence of cards. `people` is the deal after blocked signs are removed.
@@ -76,7 +127,7 @@ export function buildSeq(people: Profile[], unlimited: boolean, inserts: Insert[
       if (!p) break
       seq.push({ kind: 'person', profile: p, draw: d, pos: k, key: `${p.id}-${p.deal ?? 0}` })
     }
-    const ev = EVENTS[EVENT_ORDER[d % EVENT_ORDER.length]]
+    const ev = EVENTS[d < FREE_DRAWS ? FREE_EVENTS[d] : EVENT_ORDER[d % EVENT_ORDER.length]]
     seq.push({ kind: 'event', event: ev, draw: d, pos: PEOPLE_PER_DRAW, key: `event-${d}` })
   }
   for (const ins of inserts) {

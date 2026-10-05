@@ -50,6 +50,8 @@ export interface SessionState {
   bonusPeeks: number
   /** the notifications screen has been opened */
   notifsSeen: boolean
+  /** the out-of-peeks Align+ prompt has been shown once */
+  peekUpsellSeen: boolean
 }
 
 const initial = (): SessionState => ({
@@ -68,6 +70,7 @@ const initial = (): SessionState => ({
   inserts: [],
   bonusPeeks: 0,
   notifsSeen: false,
+  peekUpsellSeen: false,
 })
 
 let state = initial()

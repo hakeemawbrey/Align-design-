@@ -35,6 +35,8 @@ export const PRONOUN: Record<string, { cap: string; poss: string; Poss: string; 
   i24: { cap: 'HER', poss: 'her', Poss: 'Her', subj: 'she' },
   d31: { cap: 'HIS', poss: 'his', Poss: 'His', subj: 'he' },
   r29b: { cap: 'HER', poss: 'her', Poss: 'Her', subj: 'she' },
+  e30: { cap: 'HIS', poss: 'his', Poss: 'His', subj: 'he' },
+  m27: { cap: 'HER', poss: 'her', Poss: 'Her', subj: 'she' },
 }
 
 export const pronoun = (p: Profile) => PRONOUN[p.id] ?? { cap: 'THEIR', poss: 'their', Poss: 'Their', subj: 'they' }

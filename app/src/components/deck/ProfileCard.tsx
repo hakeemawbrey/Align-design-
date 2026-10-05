@@ -60,9 +60,9 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
   const showPhoto = peek === 'open'
 
   return (
-    <div style={{
-      position: 'relative', width: CARD_W, height: CARD_H, borderRadius: 20, padding: 2.5,
-      background: foil,
+    <div className={profile.founder ? 'holo-frame' : undefined} style={{
+      position: 'relative', width: CARD_W, height: CARD_H, borderRadius: 20, padding: profile.founder ? 3 : 2.5,
+      ...(profile.founder ? {} : { background: foil }),
       boxShadow: glow
         ? `0 0 26px ${sign.color}66, 0 0 2px ${sign.light}, 0 18px 40px rgba(5,2,15,0.6)`
         : '0 10px 30px rgba(5,2,15,0.5)',
@@ -115,6 +115,19 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
           }}>
             {captionFor(peek, isPhoto)}
           </div>
+          {profile.founder && (
+            <div className="mono" style={{
+              position: 'absolute', left: 8, top: 8, zIndex: 3, padding: 1.5, borderRadius: 999,
+            }}>
+              <div className="holo-frame" style={{ padding: 1.5, borderRadius: 999, boxShadow: '0 0 12px rgba(255,140,220,0.45)' }}>
+                <div style={{ padding: '3px 9px', borderRadius: 999, background: 'rgba(11,6,32,0.82)', fontSize: 8, letterSpacing: '0.16em', fontWeight: 700 }}>
+                  <span style={{ background: 'linear-gradient(90deg, #ff6ad5, #ffd36a, #7affc4, #6ad5ff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
+                    ✦ FOUNDER № {String(profile.founder).padStart(4, '0')}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
           {ring && (peek === 'charging' || peek === 'open') && (
             <div style={{ position: 'absolute', right: 10, top: 10, width: 34, height: 34, zIndex: 3 }}>
               <svg width="34" height="34" viewBox="0 0 34 34" style={{ position: 'absolute', inset: 0, transform: 'rotate(-90deg)', overflow: 'visible' }}>

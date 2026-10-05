@@ -87,10 +87,16 @@ shows *Draw 1/3* and the six slots, with the event as ✦.
 - **Free**: three draws, so 18 cards: 15 people and 3 events.
 - **Align+**: the draws keep coming, same rhythm.
 
-The events (swipe right or tap to play, swipe left to pass):
+Event cards use the same layout as people cards (title, badge, framed art, What / Play / Pass, Why tonight,
+rarity). Swipe right or tap to play, swipe left to pass. Free nights get the first three; Align+ cycles all five:
 1. **Second look** (Venus retrograde): brings back the last person you released.
-2. **The Moon lends a peek** (Moon in Leo): +1 peek tonight.
+2. **Lunar peek** (Moon in Leo): +1 peek tonight.
 3. **Mulligan** (end of the free fifteen): shuffles back everyone you released and redraws up to five.
+4. **Comet** (Align+): deals one extra person from outside tonight's sky.
+5. **Spotlight** (Align+): moves your card to the top of three decks tonight.
+
+Founders in the deck (Rio, Noor, Ivy) have holo borders and a *Founder №* badge.
+The first time a free user runs out of peeks, an Align+ offer slides up.
 
 ## Free vs Align+
 
