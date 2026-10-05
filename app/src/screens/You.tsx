@@ -102,7 +102,7 @@ export default function You({ go }: ScreenProps) {
             </motion.div>
             <motion.div variants={{ rest: { rotate: 3, x: 0, y: 0 }, hover: { rotate: 6, x: 4, y: -2 } }}
               style={{ position: 'absolute', left: 74, top: 8, transformOrigin: '50% 100%' }}>
-              <TradeCard width={60} card={{ name: ME.name, age: ME.age, sign: ME.sign, img: SUN.auraImg, serial: ME.serial }} />
+              <TradeCard width={60} card={{ name: ME.name, age: ME.age, sign: ME.sign, img: ME.photo, serial: ME.serial }} />
             </motion.div>
             <div style={{ position: 'absolute', left: 150, right: 14, top: 14 }}>
               <div className="serif italic" style={{ fontSize: 17, color: 'var(--label-1)', whiteSpace: 'nowrap' }}>

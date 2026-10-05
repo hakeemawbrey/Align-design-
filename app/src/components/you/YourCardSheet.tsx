@@ -191,18 +191,18 @@ function Sheen({ x }: { x: MotionValue<string> }) {
   )
 }
 
-function AuraImg({ height }: { height: number }) {
+function AuraImg({ height, photo }: { height: number; photo?: boolean }) {
   const tall = height > 300
   return (
     <div className="grain" style={{ position: 'absolute', left: 0, right: 0, top: 0, height, overflow: 'hidden' }}>
-      <img src={SUN.auraImg} alt="" style={{
-        width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%',
+      <img src={photo ? ME.photo : SUN.auraImg} alt="" style={{
+        width: '100%', height: '100%', objectFit: 'cover', objectPosition: photo ? '50% 32%' : '50% 30%',
         // the source plate has a dark band along its top edge — crop past it on the tall face
-        transform: tall ? 'scale(1.14)' : undefined, transformOrigin: '50% 85%',
+        transform: tall && !photo ? 'scale(1.14)' : undefined, transformOrigin: '50% 85%',
       }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 70%, rgba(31,20,70,0.55) 100%)' }} />
       <div className="mono" style={{ position: 'absolute', left: 16, bottom: 14, fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-1)', textShadow: '0 1px 6px #000' }}>
-        AURA · {SUN.aura.toUpperCase()}
+        {photo ? 'PHOTO' : `AURA · ${SUN.aura.toUpperCase()}`}
       </div>
     </div>
   )
@@ -232,7 +232,7 @@ const value: React.CSSProperties = { fontFamily: 'var(--serif)', fontSize: 15.5,
 function BackFace({ sheenX }: { sheenX: MotionValue<string> }) {
   return (
     <>
-      <AuraImg height={176} />
+      <AuraImg height={176} photo />
       <div className="mono" style={{
         position: 'absolute', right: 12, top: 144, height: 22, padding: '0 10px', borderRadius: 999, display: 'flex', alignItems: 'center',
         fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-1)', background: 'rgba(20,10,46,0.7)', border: '1px solid rgba(239,230,214,0.35)',

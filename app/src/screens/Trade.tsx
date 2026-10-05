@@ -32,8 +32,8 @@ export default function Trade({ go }: ScreenProps) {
   const { canvasRef, fire } = useConfetti()
 
   const mine: TradeCardData = {
-    name: ME.name, age: ME.age, sign: ME.sign, img: SIGNS[ME.sign].auraImg, serial: ME.serial,
-    caption: `AURA · ${SIGNS[ME.sign].aura.toUpperCase()}`, copyFor: them.name, moon: ME.moon,
+    name: ME.name, age: ME.age, sign: ME.sign, img: ME.photo, serial: ME.serial,
+    copyFor: them.name, moon: ME.moon,
   }
 
   useEffect(() => () => timers.current.forEach(clearTimeout), [])

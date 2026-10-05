@@ -44,6 +44,8 @@ export const ME = {
   moon: 'sagittarius' as SignId,
   rising: 'libra' as SignId,
   serial: '№ 012',
+  /** shown on the flipped side of your card and on copies you trade */
+  photo: 'img/hakeem.jpg',
 }
 
 /**
