@@ -135,10 +135,10 @@ export function Receipt({ seen }: { seen: boolean }) {
     >
       <motion.div key={seen ? 's' : 'u'} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
         <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', fontWeight: 700, color: seen ? 'var(--spark)' : 'var(--label-2)' }}>
-          {seen ? 'SEEN · JUST NOW' : 'SENT · NOT READ YET'}
+          {seen ? 'SEEN' : 'DELIVERED'}
         </div>
         <div style={{ fontSize: 11.5, color: 'var(--label-3)', marginTop: 4 }}>
-          {seen ? 'Juniper read it. Your move, Venus.' : 'She has seven days to answer.'}
+          {seen ? 'just now' : ''}
         </div>
       </motion.div>
     </motion.div>

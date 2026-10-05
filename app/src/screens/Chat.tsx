@@ -14,22 +14,30 @@ type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
 const juniper = DECK.find((p) => p.id === 'j27')!
 const PHOTO = juniper.photo ?? 'img/juniper.jpg'
 
-/** Seeded conversation from S-09 — animated in on mount. */
+/**
+ * Seeded conversation, animated in on mount. Written like two people who just
+ * matched: it starts from something on her card and ends with a real plan.
+ * (Her card: assistant curator, books by colour, vinyl. His: sound engineer, record stores.)
+ */
 const SCRIPT: Omit<Msg, 'id'>[] = [
-  { from: 'her', text: 'You opened with a question about my dealbreakers. Bold.' },
-  { from: 'me', text: 'You listed four. I read all of them twice.' },
-  { from: 'her', text: 'Which one landed.' },
-  { from: 'me', text: 'The one about people who need the last word.' },
-  { from: 'her', text: 'That is not a dealbreaker. That is a warning.' },
-  { from: 'me', text: 'Noted.' },
+  { from: 'me', text: 'Ok I have to ask. Do you actually organise your books by colour?' },
+  { from: 'her', text: 'Every single one. It looks great and I can never find anything' },
+  { from: 'me', text: 'That’s the most Libra thing I’ve heard all week' },
+  { from: 'her', text: 'I’ll allow it. Your card says sound engineer — studio or live?' },
+  { from: 'me', text: 'Mostly studio. I’m the guy nobody notices until the mic cuts out' },
+  { from: 'her', text: 'Ha. You also put record stores. Cactus or somewhere else?' },
+  { from: 'me', text: 'Cactus. Want to go this week and see who walks out with too many?' },
+  { from: 'her', text: 'Oh you’re on. Thursday after work?' },
+  { from: 'me', text: 'Thursday works' },
 ]
 
+/** Her replies to whatever the presenter types, in order. Kept general so they fit most messages. */
 const REPLIES = [
-  'Say it again on Thursday and I will believe you.',
-  'Fine. Venus says you get one more question.',
-  'Careful. I screenshot the good ones.',
-  'That is either very Taurus or very you.',
-  'Ask me in person. I answer better over wine.',
+  'Ha ok, I like that',
+  'Wait, what are you listening to right now?',
+  'You’re funnier than your card let on',
+  'Deal. Whoever buys more gets tacos after',
+  'Ok I have to get back to work but I’m looking forward to Thursday',
 ]
 
 const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
