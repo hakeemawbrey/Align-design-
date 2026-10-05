@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, animate, motion, useAnimationFrame, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { SIGNS } from '../../data/signs'
+import { SIGNS, ELEMENT_COLOR } from '../../data/signs'
 import { ME } from '../../data/profiles'
 import { sfx } from '../../lib/sfx'
 import CardBack from '../intro/CardBack'
@@ -240,7 +240,7 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
           </motion.div>
         </motion.div>
 
-        {/* legendary stamp */}
+        {/* your-card stamp */}
         <AnimatePresence>
           {flipped && (
             <motion.div
@@ -255,7 +255,7 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
                 boxShadow: '0 0 18px rgba(242,199,92,0.7), 0 4px 10px rgba(0,0,0,0.4)',
               }}
             >
-              ✦ LEGENDARY
+              ✦ YOUR CARD
             </motion.div>
           )}
         </AnimatePresence>
@@ -282,48 +282,77 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
   )
 }
 
-/** Face-up sign card: figure art, foil frame, holo + specular that follow the tilt. */
+/**
+ * Face-up sign card in the app's card style (deck / binder / Your card):
+ * sign foil frame, indigo body, name + moon badge, framed aura art, sign + chips,
+ * ALIGN serial footer. Holo + specular follow the tilt.
+ */
 function SignFace({ signId, glow, spec, holo }: { signId: keyof typeof SIGNS; glow: string; spec: ReturnType<typeof useMotionTemplate>; holo: ReturnType<typeof useMotionTemplate> }) {
   const sign = SIGNS[signId]
+  const moon = SIGNS[ME.moon]
+  const el = sign.element
+  const chip: React.CSSProperties = {
+    display: 'inline-flex', alignItems: 'center', gap: 4, height: 16, padding: '0 7px 0 3px', borderRadius: 999,
+    fontFamily: 'var(--mono)', fontSize: 6.5, letterSpacing: '0.12em', textTransform: 'uppercase', whiteSpace: 'nowrap',
+  }
   return (
     <div style={{
-      position: 'absolute', inset: 0, borderRadius: 14, padding: 3,
-      background: sign.foil, backgroundSize: '200% 100%', animation: 'foil-sweep 4s linear infinite',
+      position: 'absolute', inset: 0, borderRadius: 14, padding: 2.5,
+      background: sign.foil.replace('90deg', '160deg'), backgroundSize: '200% 200%', animation: 'foil-sweep 4s linear infinite',
       boxShadow: `0 0 34px ${glow}aa, 0 0 2px ${sign.light}, 0 24px 50px rgba(5,2,15,0.7)`,
     }}>
-      <div className="grain" style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 11, overflow: 'hidden', background: '#050a04' }}>
-        <img src={sign.figureImg} alt="" draggable={false} style={{
-          position: 'absolute', left: 0, top: 0, width: '100%', height: '78%', objectFit: 'cover', objectPosition: 'center 40%',
-        }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, top: '50%', bottom: 0, background: 'linear-gradient(180deg, transparent 0%, rgba(5,10,4,0.85) 45%, #070b06 70%)' }} />
-        {/* inner rule */}
-        <div style={{ position: 'absolute', inset: 6, borderRadius: 7, border: `1px solid ${sign.light}55`, pointerEvents: 'none' }} />
-        {/* glyph + serial */}
-        <div style={{
-          position: 'absolute', left: 12, top: 12, width: 26, height: 26, borderRadius: '50%', display: 'grid', placeItems: 'center',
-          background: 'rgba(5,10,4,0.55)', border: `1px solid ${sign.light}88`, color: sign.light, fontSize: 14, boxShadow: `0 0 10px ${glow}88`,
-        }}>{sign.glyph}</div>
-        <div className="mono" style={{ position: 'absolute', right: 13, top: 19, fontSize: 8.5, color: 'rgba(239,230,214,0.75)' }}>{ME.serial}</div>
-        {/* nameplate */}
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 18, textAlign: 'center' }}>
-          <div className="serif" style={{
-            fontSize: 30, letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 500,
-            background: sign.foil, backgroundSize: '200% 100%', animation: 'foil-sweep 4s linear infinite',
-            WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
-            filter: `drop-shadow(0 0 8px ${glow}66)`,
-          }}>{sign.name}</div>
-          <div className="mono" style={{ marginTop: 3, fontSize: 8, letterSpacing: '0.2em', color: 'var(--label-2)' }}>
-            {sign.aura.toUpperCase()} · {modality(sign.id)}
-          </div>
-          <div style={{ marginTop: 7, display: 'flex', justifyContent: 'center', gap: 4 }}>
-            {[0, 1, 2, 3, 4].map((i) => (
-              <span key={i} style={{ fontSize: 9, color: '#f2c75c', textShadow: '0 0 6px #f2c75c' }}>★</span>
-            ))}
-          </div>
+      <div style={{
+        position: 'relative', width: '100%', height: '100%', borderRadius: 11.5, overflow: 'hidden',
+        background: `radial-gradient(120% 60% at 50% 0%, ${sign.dark}55 0%, transparent 60%), linear-gradient(180deg, #160e28 0%, #100a1d 55%, #0e0919 100%)`,
+      }}>
+        {/* name + moon badge */}
+        <div className="serif italic" style={{ position: 'absolute', left: 14, top: 11, fontSize: 17, color: 'var(--label-1)' }}>
+          {ME.name}, {ME.age}
         </div>
+        <div style={{
+          position: 'absolute', right: 11, top: 9, width: 24, height: 24, borderRadius: 12, display: 'grid', placeItems: 'center',
+          background: `radial-gradient(circle at 35% 30%, ${moon.light}, ${moon.color} 60%, ${moon.dark})`,
+          boxShadow: `0 0 10px ${moon.color}aa`, color: '#0b0620', fontSize: 12,
+        }}>☾</div>
+
+        {/* framed art */}
+        <div className="grain" style={{
+          position: 'absolute', left: 10, right: 10, top: 40, height: 150, borderRadius: 8, overflow: 'hidden',
+          border: `1px solid ${sign.color}aa`, boxShadow: `inset 0 0 18px ${sign.dark}`, background: '#050a04',
+        }}>
+          <img src={sign.figureImg} alt="" draggable={false} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }} />
+          <div className="mono" style={{ position: 'absolute', left: 7, bottom: 5, fontSize: 6.5, letterSpacing: '0.18em', color: 'var(--label-1)', textShadow: '0 1px 4px #000' }}>
+            AURA · {sign.aura.toUpperCase()}
+          </div>
+          <div style={{
+            position: 'absolute', right: 6, bottom: 5, width: 18, height: 18, borderRadius: 9, display: 'grid', placeItems: 'center',
+            background: 'rgba(5,10,4,0.55)', border: `1px solid ${sign.light}88`, color: sign.light, fontSize: 10,
+          }}>{sign.glyph}&#xFE0E;</div>
+        </div>
+
+        {/* sign + chips */}
+        <div className="serif" style={{ position: 'absolute', left: 14, top: 197, fontSize: 19, letterSpacing: '0.08em', textTransform: 'uppercase', color: sign.color, textShadow: `0 0 10px ${glow}55` }}>
+          {sign.name}
+        </div>
+        <div style={{ position: 'absolute', left: 13, right: 10, top: 225, display: 'flex', gap: 5 }}>
+          <span style={{ ...chip, color: 'var(--label-1)', border: `1px solid ${ELEMENT_COLOR[el]}aa` }}>
+            <span style={{ width: 10, height: 10, borderRadius: 5, background: ELEMENT_COLOR[el] }} />{el}
+          </span>
+          <span style={{ ...chip, color: 'var(--label-1)', border: `1px solid ${moon.color}aa` }}>
+            <span style={{ width: 10, height: 10, borderRadius: 5, background: moon.color }} />{moon.name} moon
+          </span>
+        </div>
+
+        {/* footer */}
+        <div style={{ position: 'absolute', left: 12, right: 12, top: 254, height: 1, background: 'rgba(179,166,196,0.2)' }} />
+        <div className="mono" style={{ position: 'absolute', left: 12, right: 12, top: 263, display: 'flex', justifyContent: 'space-between', fontSize: 6.5, letterSpacing: '0.16em', color: 'var(--label-3)' }}>
+          <span>ALIGN · {ME.serial}/∞</span>
+          <span style={{ color: 'var(--align)' }}>✦ {modality(sign.id)}</span>
+        </div>
+
         {/* holographic foil wash */}
         <motion.div style={{
-          position: 'absolute', inset: 0, mixBlendMode: 'soft-light', opacity: 0.55, pointerEvents: 'none',
+          position: 'absolute', inset: 0, mixBlendMode: 'soft-light', opacity: 0.4, pointerEvents: 'none',
           background: 'linear-gradient(115deg, transparent 20%, #ff9adf 35%, #9ae8ff 45%, #f6ff9a 55%, #ffb38a 65%, transparent 80%)',
           backgroundSize: '260% 260%', backgroundPosition: holo,
         }} />

@@ -6,13 +6,13 @@ import {
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { DECK, DECK_TOTAL, PEEKS_PER_NIGHT, type Profile } from '../data/profiles'
+import { DECK as ALL_DECK, DECK_TOTAL, PEEKS_PER_NIGHT, cardAt, type Profile } from '../data/profiles'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { session, useSession } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
-import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
+import { DeckHeader, Counter, Unlimited, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, CARD_CY, ELEMENT_SKY, starBurst, resetBurst, pronoun } from '../components/deck/fx'
 
 type Phase = 'idle' | 'charging' | 'open' | 'sealing'
@@ -212,7 +212,11 @@ function UnderCard({ profile, dragX }: { profile: Profile; dragX: MotionValue<nu
 
 interface Pop { id: number; kind: 'align' | 'release' | 'deny'; streak: number }
 
+/** tonight's deal, minus any sun signs blocked under Align+ */
+const dealt = () => ALL_DECK.filter((p) => !session.get().blockedSigns.includes(p.sign))
+
 export default function Deck({ go }: ScreenProps) {
+  const [DECK] = useState(dealt)
   // resume where the presenter left the deck (session survives tab hops; reset on demo restart)
   const [index, setIndex] = useState(() => session.get().deckIndex)
   const [peeks, setPeeks] = useState(() => Math.max(0, PEEKS_PER_NIGHT - session.get().peeksUsed))
@@ -239,8 +243,8 @@ export default function Deck({ go }: ScreenProps) {
   const dragX = useMotionValue(0)
   const holdP = useMotionValue(0)
 
-  const profile: Profile | undefined = DECK[index]
-  const next: Profile | undefined = DECK[index + 1]
+  const profile: Profile | undefined = cardAt(DECK, index, alignPlus)
+  const next: Profile | undefined = cardAt(DECK, index + 1, alignPlus)
   const cardsLeft = START_LEFT - index
   const sign = profile ? SIGNS[profile.sign] : SIGNS.libra
 
@@ -248,7 +252,7 @@ export default function Deck({ go }: ScreenProps) {
   const setPhase = (ph: Phase) => { phaseRef.current = ph; setPhaseState(ph) }
 
   // deck already played through this session → straight to the spent screen
-  useEffect(() => { if (!DECK[session.get().deckIndex]) go('spent') }, [go])
+  useEffect(() => { if (!cardAt(DECK, session.get().deckIndex, session.get().alignPlus)) go('spent') }, [go])
 
   useEffect(() => () => {
     timers.current.forEach(clearTimeout)
@@ -364,7 +368,7 @@ export default function Deck({ go }: ScreenProps) {
   const onSwiped = (dir: Dir) => {
     if (dir > 0 && profile?.alignsBack) return
     dragX.set(0)
-    if (index + 1 >= DECK.length) {
+    if (!cardAt(DECK, index + 1, alignPlus)) {
       setIndex((i) => i + 1)
       later(() => go('spent'), 450)
       return
@@ -418,7 +422,7 @@ export default function Deck({ go }: ScreenProps) {
   const peekOpen = phase === 'open'
   const peekUI = phase === 'open' || phase === 'sealing'
 
-  let right: React.ReactNode = <Counter left={cardsLeft} total={DECK_TOTAL} />
+  let right: React.ReactNode = alignPlus ? <Unlimited /> : <Counter left={cardsLeft} total={DECK_TOTAL} />
   let rightKey = 'counter'
   if (status) { right = <StatusText>{status}</StatusText>; rightKey = status }
 
@@ -460,12 +464,12 @@ export default function Deck({ go }: ScreenProps) {
         </motion.div>
         {next && (
           <motion.div animate={{ opacity: matching ? 0 : 1, scale: matching ? 0.9 : 1 }} transition={{ duration: 0.3 }} style={{ position: 'absolute', inset: 0 }}>
-            <UnderCard key={next.id} profile={next} dragX={dragX} />
+            <UnderCard key={`${next.id}-${next.deal ?? 0}`} profile={next} dragX={dragX} />
           </motion.div>
         )}
         {profile && (
           <TopCard
-            key={profile.id}
+            key={`${profile.id}-${profile.deal ?? 0}`}
             ref={topRef}
             profile={profile}
             dragX={dragX}

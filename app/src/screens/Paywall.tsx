@@ -22,7 +22,7 @@ const RAINBOW = ['#e8463c', '#ef8f56', '#f2d45c', '#7fd36a', '#4fb3ef', '#a77de9
 
 const BENEFITS = [
   { t: 'Unlimited Peeks', s: 'hold any card, as long as you like' },
-  { t: 'All fifteen cards tonight', s: 'the three in your orbit, first' },
+  { t: 'Unlimited cards, every night', s: 'free stops at fifteen' },
   { t: 'Priority in every queue', s: 'your card lands on top of theirs' },
   { t: 'Block signs you never want to see', s: 'gone from every deck, for good' },
 ]
@@ -127,7 +127,7 @@ export default function Paywall({ go }: ScreenProps) {
               Three people are already<br />in your orbit.
             </motion.h1>
             <motion.p {...fade(0.26)} className="serif" style={{ position: 'absolute', top: 196, left: 36, right: 36, textAlign: 'center', fontSize: 18, lineHeight: 1.4, color: 'var(--label-2)' }}>
-              Align+ opens all fifteen tonight, with full synastry and priority in every queue.
+              Free is fifteen cards a night. Align+ never runs out, with full synastry and priority in every queue.
             </motion.p>
 
             {/* plans */}

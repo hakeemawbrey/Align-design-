@@ -1,3 +1,4 @@
+import type { SignId } from '../data/signs'
 import { useSyncExternalStore } from 'react'
 
 /**
@@ -35,6 +36,12 @@ export interface SessionState {
   clubMine: ClubPost[]
   /** Club: post ids the presenter has liked */
   clubLiked: string[]
+  /** signs taken off the table (Align+ · Block a sign); suns only */
+  blockedSigns: SignId[]
+  /** when the current sign blocks were set, for "since …" */
+  blockedSince: string
+  /** people blocked or unmatched from Report / Block */
+  blockedPeople: string[]
 }
 
 const initial = (): SessionState => ({
@@ -46,6 +53,9 @@ const initial = (): SessionState => ({
   alignPlus: false,
   clubMine: [],
   clubLiked: [],
+  blockedSigns: ['scorpio', 'aries'],
+  blockedSince: 'Jul 2',
+  blockedPeople: [],
 })
 
 let state = initial()

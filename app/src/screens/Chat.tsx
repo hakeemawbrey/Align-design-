@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
+import ReportSheet from '../components/chat/ReportSheet'
 import { ChatHeader, ExpiryBar, InlineAlignmentCard, Receipt, TypingIndicator } from '../components/chat/ChatParts'
 import { DECK } from '../data/profiles'
 import { sfx } from '../lib/sfx'
@@ -41,6 +42,7 @@ function pastThread(): Msg[] {
 }
 
 export default function Chat({ go }: ScreenProps) {
+  const [report, setReport] = useState(false)
   // the scripted intro plays once per demo run; afterwards the thread is just there
   const [replay] = useState(() => !session.get().chatPlayed)
   const [msgs, setMsgs] = useState<Msg[]>(() => (replay ? [] : pastThread()))
@@ -137,7 +139,7 @@ export default function Chat({ go }: ScreenProps) {
       <Starfield aurora={null} warm={null} count={55} seed={21} />
       <div style={{ position: 'absolute', inset: 0, background: '#150b35', mixBlendMode: 'lighten', pointerEvents: 'none' }} />
 
-      <ChatHeader onBack={() => { sfx.tap(); go('reveal') }} onSky={() => { sfx.tap(); go('alignment') }} photo={PHOTO} name={juniper.name} />
+      <ChatHeader onBack={() => { sfx.tap(); go('reveal') }} onMore={() => { sfx.tap(); setReport(true) }} onSky={() => { sfx.tap(); go('alignment') }} photo={PHOTO} name={juniper.name} />
       <ExpiryBar daysLeft={6} />
 
       {/* thread */}
@@ -207,6 +209,12 @@ export default function Chat({ go }: ScreenProps) {
         </motion.button>
       </form>
 
+      <AnimatePresence>
+        {report && (
+          <ReportSheet name={juniper.name} pronoun="her" onClose={() => setReport(false)}
+            onDone={() => { session.patch({ blockedPeople: [...session.get().blockedPeople, juniper.id] }); go('matches') }} />
+        )}
+      </AnimatePresence>
       <TabBar active="matches" go={go} onSelect={(t) => { if (t === 'matches') { go('matches'); return true } }} />
     </div>
   )

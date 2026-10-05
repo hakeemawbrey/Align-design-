@@ -3,12 +3,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { DECK, DECK_TOTAL, PEEKS_PER_NIGHT } from '../data/profiles'
+import { DECK as ALL_DECK, DECK_TOTAL, PEEKS_PER_NIGHT } from '../data/profiles'
+import { session as dealSession } from '../lib/session'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import CardBack from '../components/deck/CardBack'
 import ProfileCard from '../components/deck/ProfileCard'
-import { DeckHeader, Counter, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
+import { DeckHeader, Counter, Unlimited, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, ELEMENT_SKY } from '../components/deck/fx'
 
 const SW = CARD_W * CARD_SCALE
@@ -32,7 +33,10 @@ function Scaled({ children }: { children: React.ReactNode }) {
 }
 
 /** S-03 → S-04: the nightly deal. */
+const dealtNow = () => ALL_DECK.filter((p) => !dealSession.get().blockedSigns.includes(p.sign))
+
 export default function Dealing({ go }: ScreenProps) {
+  const DECK = dealtNow()
   const [flipped, setFlipped] = useState(false)
   const [settled, setSettled] = useState(false)
   const done = useRef(false)
@@ -72,7 +76,7 @@ export default function Dealing({ go }: ScreenProps) {
 
       <DeckHeader onSky={() => go('sky')}
         title={settled ? 'Tonight’s deck' : 'Dealing your deck'}
-        right={settled ? <Counter left={11} total={DECK_TOTAL} /> : null}
+        right={settled ? (dealSession.get().alignPlus ? <Unlimited /> : <Counter left={11} total={DECK_TOTAL} />) : null}
         rightKey={settled ? 'counter' : 'none'}
       />
 

@@ -32,7 +32,7 @@ Sound is synthesised live. Click once anywhere first so the browser allows audio
 | `P` | Align+ paywall |
 | `Y` / `C` | You tab / Club tab |
 | `S` / `K` | Today's sky / Cosmic calendar (Oct 5 2026) |
-| — | Your chart: tap **Your sign** on the You tab |
+| — | Your chart: tap **Your sign** on the You tab (Sun, Traits, Element, Ruler, House) |
 | `↑` / `Enter` | On the trade screen: send your card |
 | `M` | Mute or unmute sound |
 | `←` / `→` | On the deck: release or align the top card |
@@ -77,6 +77,19 @@ planet positions: Venus turned retrograde in Scorpio on Saturday Oct 3, the Moon
 and the Sun is opposite Saturn. Switch **Today / Tonight / Week / Moon**. Tap **OCT 5 ›** for the
 **Cosmic calendar** (October 2026: New Moon in Libra on the 10th, Scorpio season on the 23rd,
 Mercury retrograde on the 24th, Full Moon in Taurus on the 25th). Tap any day to see what happens.
+
+## Free vs Align+
+
+- **Free**: fifteen cards a night (the counter shows 11 / 15), three peeks, and the deck ends with *Your deck is spent*.
+- **Align+**: the counter shows **∞ ALIGN+**, peeks are unlimited, and the deck keeps dealing new people.
+  Start a trial with `P` → **Start seven days free** → **Deal me in**.
+
+## Blocking
+
+- **Block a sign** (Align+): You tab → **BLOCKED · 2 ›** → **Choose signs to block** → tap signs → **Confirm**.
+  Blocked suns leave your deck (block Virgo and the deal opens on Rio instead of Maya).
+- **Report / block a person**: in Juniper's chat, tap **•••** → pick a reason, **Unmatch**, or **Block Juniper**.
+  She leaves your matches and binder.
 
 ## Other tabs
 

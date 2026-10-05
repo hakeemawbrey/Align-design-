@@ -6,7 +6,7 @@ import TabBar from '../components/TabBar'
 import AuraFigure from '../components/you/AuraFigure'
 import Composer from '../components/club/Composer'
 import Thread from '../components/club/Thread'
-import FoundersDrop from '../components/club/FoundersDrop'
+import FoundersDrop, { FOUNDERS_EDITION } from '../components/club/FoundersDrop'
 import { AuraAvatar, LikeButton, PopCount, SparkCount } from '../components/club/PostParts'
 import { ROOM_POSTS, ROOM_COUNT, SAID_TONIGHT, TONIGHT_PROMPT, type Post, type Reply } from '../components/club/posts'
 import { ME } from '../data/profiles'
@@ -18,9 +18,9 @@ const SUN = SIGNS[ME.sign]
 const LIME = '#dfe36a'
 const maskFor = (scrolled: boolean) => `linear-gradient(180deg, transparent ${scrolled ? 52 : 38}px, #000 ${scrolled ? 96 : 60}px, #000 640px, transparent 690px)`
 
-const minePost = (m: ClubPost): Post => ({
+const minePost = (m: ClubPost, founder?: number): Post => ({
   id: m.id, name: ME.name, age: ME.age, moon: ME.moon, ago: 'NOW', hood: 'Houston',
-  text: m.text, likes: m.likes, sparks: m.sparks, replies: [], mine: true,
+  text: m.text, likes: m.likes, sparks: m.sparks, replies: [], mine: true, founder,
 })
 
 /** S-17 · Club — the Taurus room. */
@@ -36,7 +36,7 @@ export default function Club({ go }: ScreenProps) {
   const timers = useRef<number[]>([])
   useEffect(() => () => timers.current.forEach(clearTimeout), [])
 
-  const posts: Post[] = [...clubMine.map(minePost), ...ROOM_POSTS]
+  const posts: Post[] = [...clubMine.map((m) => minePost(m, alignPlus ? FOUNDERS_EDITION.serial : undefined)), ...ROOM_POSTS]
   const liked = new Set(clubLiked)
   const likesOf = (p: Post) => p.likes + (liked.has(p.id) ? 1 : 0)
   const said = SAID_TONIGHT + clubMine.length
@@ -196,7 +196,22 @@ interface RowProps {
   onOpen: () => void
 }
 
-function PostRow({ post, first, fresh, liked, likes, sparks, onLike, onOpen }: RowProps) {
+function PostRow(props: RowProps) {
+  const { post, first } = props
+  if (!post.founder) return <PostBody {...props} />
+  // founders get a holo frame around the whole post
+  return (
+    <div style={{ padding: first ? '8px 8px 4px' : '4px 8px', borderTop: first ? undefined : '1px solid rgba(179,166,196,0.12)' }}>
+      <div className="holo-frame" style={{ padding: 1.5, borderRadius: 12, boxShadow: '0 0 14px rgba(255,140,220,0.25), 0 0 22px rgba(120,200,255,0.15)' }}>
+        <div style={{ borderRadius: 10.5, overflow: 'hidden', background: '#1c1140' }}>
+          <PostBody {...props} first />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PostBody({ post, first, fresh, liked, likes, sparks, onLike, onOpen }: RowProps) {
   const moon = SIGNS[post.moon]
   return (
     <motion.div
@@ -211,7 +226,11 @@ function PostRow({ post, first, fresh, liked, likes, sparks, onLike, onOpen }: R
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 0.6] }} transition={{ duration: 1.2 }}
           style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 2, background: 'var(--gold-foil)', boxShadow: '0 0 10px rgba(242,199,92,0.8)' }} />
       )}
-      <AuraAvatar sign={post.moon} size={38} />
+      {post.founder ? (
+        <div className="holo-frame" style={{ width: 42, height: 42, borderRadius: 21, padding: 2, flexShrink: 0, marginLeft: -2, marginTop: -2 }}>
+          <div style={{ borderRadius: 19, background: '#1c1140' }}><AuraAvatar sign={post.moon} size={38} /></div>
+        </div>
+      ) : <AuraAvatar sign={post.moon} size={38} />}
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
           <div>
@@ -219,6 +238,12 @@ function PostRow({ post, first, fresh, liked, likes, sparks, onLike, onOpen }: R
             <div className="mono" style={{ marginTop: 2, fontSize: 8, letterSpacing: '0.14em', color: post.mine ? LIME : 'var(--label-3)' }}>
               {moon.name.toUpperCase()} MOON · {post.ago}
             </div>
+            {post.founder && (
+              <div className="mono" style={{
+                display: 'inline-block', marginTop: 4, fontSize: 7.5, letterSpacing: '0.16em', fontWeight: 700,
+                background: 'linear-gradient(90deg, #ff6ad5, #ffd36a, #7affc4, #6ad5ff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
+              }}>✦ FOUNDER № {String(post.founder).padStart(4, '0')}</div>
+            )}
           </div>
           <div style={{ display: 'flex', gap: 10, marginTop: -4 }}>
             <LikeButton liked={liked} count={likes} onToggle={onLike} />

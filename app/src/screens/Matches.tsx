@@ -12,7 +12,7 @@ import { ME } from '../data/profiles'
 import { SIGNS, ELEMENT_COLOR, type Element } from '../data/signs'
 import { binder, useBinder } from '../lib/binder'
 import { sfx } from '../lib/sfx'
-import { session } from '../lib/session'
+import { session, useSession } from '../lib/session'
 
 type View = 'list' | 'binder'
 let lastView: View = 'list'
@@ -37,6 +37,8 @@ const SLEEVE_H = 142
 
 export default function Matches({ go }: ScreenProps) {
   const { traded, justTraded } = useBinder()
+  const { blockedPeople } = useSession()
+  const visible = MATCHES.filter((m) => !blockedPeople.includes(m.id))
   const [view, setView] = useState<View>(justTraded ? 'binder' : lastView)
   const [zoom, setZoom] = useState<Match | null>(null)
   const [page, setPage] = useState(0)
@@ -94,7 +96,7 @@ export default function Matches({ go }: ScreenProps) {
     window.setTimeout(() => binder.clearJustTraded(), 400)
   }
 
-  const summary = `${MATCHES.length} aligned · 2 waiting on you · 2 going quiet`
+  const summary = `${visible.length} aligned · ${visible.filter((m) => m.section === 'your-turn').length} waiting on you · ${visible.filter((m) => m.section === 'quiet').length} going quiet`
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
@@ -126,7 +128,7 @@ export default function Matches({ go }: ScreenProps) {
           <motion.div key="list" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}
             style={{ position: 'absolute', left: 0, right: 0, top: 186, bottom: 96, overflowY: 'auto', padding: '0 28px' }}>
             {(['your-turn', 'waiting', 'quiet'] as MatchSection[]).map((sec) => {
-              const rows = MATCHES.filter((m) => m.section === sec)
+              const rows = visible.filter((m) => m.section === sec)
               return (
                 <div key={sec} style={{ marginBottom: 6 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '8px 0 4px' }}>
@@ -201,7 +203,7 @@ export default function Matches({ go }: ScreenProps) {
                 style={{ position: 'absolute', inset: 0, transformPerspective: 900, transformOrigin: '8% 50%', pointerEvents: 'none' }}>
                 {page === 0 ? (<>
                     {Array.from({ length: BINDER_SLOTS }, (_, i) => {
-                      const m = MATCHES[i]
+                      const m = visible[i]
                       const { x, y } = sleevePos(i)
                       return (
                         <div key={i} style={{ position: 'absolute', left: x, top: y, width: SLEEVE_W, height: SLEEVE_H, pointerEvents: 'auto' }}>

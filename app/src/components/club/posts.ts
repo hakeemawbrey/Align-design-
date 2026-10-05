@@ -23,12 +23,14 @@ export interface Post {
   sparks: number
   replies: Reply[]
   mine?: boolean
+  /** founders card serial — founder posts get a holo border */
+  founder?: number
 }
 
 /** The Taurus room tonight (S-17). First three are verbatim from Figma. */
 export const ROOM_POSTS: Post[] = [
   {
-    id: 'mireya', name: 'Mireya', age: 28, moon: 'scorpio', ago: '2H', hood: 'Montrose',
+    id: 'mireya', founder: 7, name: 'Mireya', age: 28, moon: 'scorpio', ago: '2H', hood: 'Montrose',
     text: 'Third date at the Menil and he read every placard aloud. Reader, I stayed.',
     full: 'Third date at the Menil and he read every placard aloud. Reader, I stayed. Then he asked which room I would live in and I answered too fast.',
     likes: 41, sparks: 12,
@@ -48,7 +50,7 @@ export const ROOM_POSTS: Post[] = [
     ],
   },
   {
-    id: 'priya', name: 'Priya', age: 27, moon: 'sagittarius', ago: '9H', hood: 'EaDo',
+    id: 'priya', founder: 231, name: 'Priya', age: 27, moon: 'sagittarius', ago: '9H', hood: 'EaDo',
     text: 'They said Space City runs on ambition and queso. Correct about one of those.',
     likes: 63, sparks: 27,
     replies: [
@@ -74,7 +76,7 @@ export const ROOM_POSTS: Post[] = [
     ],
   },
   {
-    id: 'celeste', name: 'Celeste', age: 30, moon: 'pisces', ago: '1D', hood: 'Bellaire',
+    id: 'celeste', founder: 458, name: 'Celeste', age: 30, moon: 'pisces', ago: '1D', hood: 'Bellaire',
     text: 'Mercury took my keys, my patience for brunch lines, and somehow my ex’s new number. Keeping that last one.',
     likes: 37, sparks: 11,
     replies: [

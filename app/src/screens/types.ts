@@ -18,6 +18,7 @@ export type ScreenId =
   | 'sky'        // S-14 Today's sky reading
   | 'calendar'   // S-15 Cosmic calendar
   | 'chart'      // G-23 Your chart · Taurus
+  | 'block'      // P-01 Block a sign (Align+)
 
 export interface ScreenProps {
   go: (id: ScreenId) => void

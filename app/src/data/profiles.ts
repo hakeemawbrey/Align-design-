@@ -30,6 +30,8 @@ export interface Profile {
   work?: string
   interests?: string[]
   house?: string
+  /** which pass through the deck this card is from (Align+ keeps dealing) */
+  deal?: number
 }
 
 /** The viewer of the demo. */
@@ -121,6 +123,44 @@ export const DECK: Profile[] = [
     dealbreakers: 'Being late. Not having goals. Chaos for fun.',
   },
 ]
+
+/** More of tonight's sky, dealt only to Align+ once the free fifteen run out. */
+export const BONUS: Profile[] = [
+  {
+    id: 'l26', initial: 'Lena', name: 'Lena', age: 26, sign: 'gemini', moon: 'aquarius', rising: 'leo',
+    serial: '№ 041', pull: 'Wild card', alignsBack: false, photo: 'img/people/p1.jpg',
+    reading: [
+      { kind: 'spark', text: 'Mercury meets your Venus — she flirts in full sentences.', strength: 3 },
+      { kind: 'rub', text: 'She wants three plans; you want the one you made.', strength: 2 },
+      { kind: 'align', text: 'Air and earth — she keeps it light, you keep it real.', strength: 2 },
+    ],
+    dealbreakers: 'Bad texters. Nowhere to dance. People who never ask a question back.',
+  },
+  {
+    id: 'a29', initial: 'Amara', name: 'Amara', age: 29, sign: 'aries', moon: 'leo', rising: 'sagittarius',
+    serial: '№ 044', pull: 'Strong pull', alignsBack: false, photo: 'img/people/p8.jpg',
+    reading: [
+      { kind: 'spark', text: 'Mars on your Moon — she makes the first move, every time.', strength: 3 },
+      { kind: 'rub', text: 'She moves fast; you move once and for good.', strength: 3 },
+      { kind: 'align', text: 'Fire warms earth — she starts it, you make it last.', strength: 2 },
+    ],
+    dealbreakers: 'Indecision. Cancelled plans. Anyone who can’t laugh at themselves.',
+  },
+]
+
+/**
+ * The card at position i tonight. Free: the deal (fifteen a night, ends).
+ * Align+: after the deal, keep going through bonus cards, then cycle — never
+ * repeating the scripted match.
+ */
+export function cardAt(deal: Profile[], i: number, unlimited: boolean): Profile | undefined {
+  if (i < deal.length) return deal[i]
+  if (!unlimited) return undefined
+  const pool = [...BONUS, ...deal.filter((p) => !p.alignsBack)]
+  const j = i - deal.length
+  const p = pool[j % pool.length]
+  return { ...p, deal: 1 + Math.floor(j / pool.length) }
+}
 
 export const DECK_TOTAL = 15
 export const PEEKS_PER_NIGHT = 3

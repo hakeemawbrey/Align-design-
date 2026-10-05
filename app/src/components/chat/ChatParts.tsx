@@ -6,7 +6,7 @@ import { READINGS } from './readings'
 
 /* ───────────────────────── header ───────────────────────── */
 
-export function ChatHeader({ onBack, onSky, photo, name }: { onBack: () => void; onSky: () => void; photo: string; name: string }) {
+export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () => void; onSky: () => void; onMore?: () => void; photo: string; name: string }) {
   return (
     <div style={{ position: 'absolute', top: 54, left: 0, right: 0, height: 64, borderBottom: '1px solid rgba(179,166,196,0.16)', zIndex: 5 }}>
       <motion.button
@@ -36,6 +36,13 @@ export function ChatHeader({ onBack, onSky, photo, name }: { onBack: () => void;
         </div>
         <span className="serif italic" style={{ fontSize: 23, color: 'var(--label-1)' }}>{name}</span>
       </motion.button>
+
+      {onMore && (
+        <motion.button onClick={onMore} whileTap={{ scale: 0.9 }} aria-label="Report or block"
+          style={{ position: 'absolute', right: 76, top: 14, width: 36, height: 36, display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
+          <svg width="18" height="4" viewBox="0 0 18 4" fill="currentColor"><circle cx="2" cy="2" r="1.8" /><circle cx="9" cy="2" r="1.8" /><circle cx="16" cy="2" r="1.8" /></svg>
+        </motion.button>
+      )}
 
       <motion.button
         onClick={onSky}

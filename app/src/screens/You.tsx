@@ -37,7 +37,7 @@ const APP_ROWS = [
 
 /** G-05 · You — home. */
 export default function You({ go }: ScreenProps) {
-  const { alignPlus } = useSession()
+  const { alignPlus, blockedSigns } = useSession()
   const [card, setCard] = useState<CardSide | null>(null)
   const [tile, setTile] = useState<TileId>('sign')
   const [scrolled, setScrolled] = useState(false)
@@ -114,7 +114,7 @@ export default function You({ go }: ScreenProps) {
             </div>
             <div className="mono" style={{ position: 'absolute', left: 150, right: 12, bottom: 12, display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.16em', fontWeight: 700 }}>
               <button onClick={(e) => { e.stopPropagation(); openCard('flipped') }} style={{ color: LIME, letterSpacing: 'inherit' }}>EDIT CARD ›</button>
-              <button onClick={(e) => { e.stopPropagation(); sfx.tap() }} style={{ color: 'var(--label-3)', letterSpacing: 'inherit' }}>BLOCKED · 2 ›</button>
+              <button onClick={(e) => { e.stopPropagation(); sfx.tap(); go('block') }} style={{ color: 'var(--label-3)', letterSpacing: 'inherit' }}>BLOCKED · {blockedSigns.length} ›</button>
             </div>
           </motion.div>
 

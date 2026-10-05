@@ -100,6 +100,16 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
   )
 }
 
+/** Align+ counter: the deck never runs out. */
+export function Unlimited() {
+  return (
+    <span className="mono" style={{ fontSize: 10, letterSpacing: '0.14em', display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--align)' }}>
+      <span style={{ fontSize: 17, lineHeight: 1, textShadow: '0 0 10px rgba(242,199,92,0.7)' }}>∞</span>
+      <span>ALIGN+</span>
+    </span>
+  )
+}
+
 export function Counter({ left, total }: { left: number; total: number }) {
   return (
     <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.1em', color: 'var(--label-2)', display: 'inline-flex', gap: 6 }}>
