@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react'
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import {
   AnimatePresence, animate, motion, useAnimationControls, useMotionValue, useTransform,
   type AnimationPlaybackControls, type MotionValue,
@@ -6,7 +6,9 @@ import {
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { DECK as ALL_DECK, DECK_TOTAL, PEEKS_PER_NIGHT, cardAt, type Profile } from '../data/profiles'
+import { PEEKS_PER_NIGHT, TONIGHT, type Profile } from '../data/profiles'
+import { buildSeq, peopleLeft, FREE_PEOPLE, PEOPLE_PER_DRAW, type Slot } from '../data/draws'
+import EventCard from '../components/deck/EventCard'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { session, useSession } from '../lib/session'
@@ -23,14 +25,15 @@ const SH = CARD_H * CARD_SCALE
 const SLEFT = 195 - SW / 2
 const FLY_THRESHOLD = 105
 const PEEK_SECONDS = 3
-const START_LEFT = 11
 
 const PEEK_OF: Record<Phase, PeekState> = { idle: 'none', charging: 'charging', open: 'open', sealing: 'sealing' }
 
 interface TopHandle { fly: (dir: Dir) => void; shake: () => void }
 
 interface TopProps {
-  profile: Profile
+  slot: Slot
+  /** total draws tonight, or null when endless (Align+) */
+  drawsOf: number | null
   dragX: MotionValue<number>
   holdP: MotionValue<number>
   phase: Phase
@@ -155,7 +158,9 @@ const TopCard = forwardRef<TopHandle, TopProps>(function TopCard(p, ref) {
             boxShadow: '0 0 40px 8px rgba(242,199,92,0.55), 0 0 90px 20px rgba(242,199,92,0.25)',
           }} />
           <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${CARD_SCALE})`, transformOrigin: 'top left' }}>
-            <ProfileCard profile={p.profile} peek={PEEK_OF[p.phase]} ring={p.holdP} ringText={p.ringText} />
+            {p.slot.kind === 'person'
+              ? <ProfileCard profile={p.slot.profile} peek={PEEK_OF[p.phase]} ring={p.holdP} ringText={p.ringText} />
+              : <EventCard event={p.slot.event} draw={p.slot.draw + 1} of={p.drawsOf} />}
           </div>
           {/* tints */}
           <motion.div style={{
@@ -180,13 +185,13 @@ const TopCard = forwardRef<TopHandle, TopProps>(function TopCard(p, ref) {
               fontSize: 50, fontWeight: 600, lineHeight: 1, letterSpacing: '0.02em',
               background: 'var(--gold-foil)', backgroundSize: '200% 100%', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
               animation: 'foil-sweep 2.4s linear infinite', display: 'inline-block',
-            }}>Align ✦</span>
+            }}>{p.slot.kind === 'event' ? 'Play ✦' : 'Align ✦'}</span>
           </motion.div>
           <motion.div style={{
             position: 'absolute', right: 22, top: 84, rotate: 14, opacity: releaseO, scale: releaseStampScale, pointerEvents: 'none',
             padding: '4px 14px', borderRadius: 12, border: '2.5px solid #b3a6c4', background: 'rgba(11,6,32,0.45)',
           }}>
-            <span className="mono" style={{ fontSize: 26, letterSpacing: '0.18em', color: '#d8cfe6', fontWeight: 700 }}>RELEASE</span>
+            <span className="mono" style={{ fontSize: 26, letterSpacing: '0.18em', color: '#d8cfe6', fontWeight: 700 }}>{p.slot.kind === 'event' ? 'PASS' : 'RELEASE'}</span>
           </motion.div>
         </motion.div>
       </motion.div>
@@ -194,7 +199,7 @@ const TopCard = forwardRef<TopHandle, TopProps>(function TopCard(p, ref) {
   )
 })
 
-function UnderCard({ profile, dragX }: { profile: Profile; dragX: MotionValue<number> }) {
+function UnderCard({ slot, drawsOf, dragX }: { slot: Slot; drawsOf: number | null; dragX: MotionValue<number> }) {
   const mag = useTransform(dragX, (v) => Math.min(Math.abs(v) / 200, 1))
   const scale = useTransform(mag, [0, 1], [0.93, 0.97])
   const y = useTransform(mag, [0, 1], [14, 6])
@@ -203,7 +208,7 @@ function UnderCard({ profile, dragX }: { profile: Profile; dragX: MotionValue<nu
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}
       style={{ position: 'absolute', left: SLEFT, top: CARD_TOP, width: SW, height: SH, scale, y, zIndex: 5, pointerEvents: 'none' }}>
       <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${CARD_SCALE})`, transformOrigin: 'top left' }}>
-        <ProfileCard profile={profile} glow={false} />
+        {slot.kind === 'person' ? <ProfileCard profile={slot.profile} glow={false} /> : <EventCard event={slot.event} draw={slot.draw + 1} of={drawsOf} glow={false} />}
       </div>
       <motion.div style={{ position: 'absolute', inset: 0, borderRadius: 19, background: '#0b0620', opacity: dim }} />
     </motion.div>
@@ -213,14 +218,18 @@ function UnderCard({ profile, dragX }: { profile: Profile; dragX: MotionValue<nu
 interface Pop { id: number; kind: 'align' | 'release' | 'deny'; streak: number }
 
 /** tonight's deal, minus any sun signs blocked under Align+ */
-const dealt = () => ALL_DECK.filter((p) => !session.get().blockedSigns.includes(p.sign))
+const dealt = (): Profile[] => TONIGHT.filter((p) => !session.get().blockedSigns.includes(p.sign))
 
 export default function Deck({ go }: ScreenProps) {
-  const [DECK] = useState(dealt)
+  const [people] = useState(dealt)
   // resume where the presenter left the deck (session survives tab hops; reset on demo restart)
   const [index, setIndex] = useState(() => session.get().deckIndex)
-  const [peeks, setPeeks] = useState(() => Math.max(0, PEEKS_PER_NIGHT - session.get().peeksUsed))
-  const { alignPlus } = useSession()
+  const [peeks, setPeeks] = useState(() => Math.max(0, PEEKS_PER_NIGHT + session.get().bonusPeeks - session.get().peeksUsed))
+  const { alignPlus, inserts } = useSession()
+  const seq = useMemo(() => buildSeq(people, alignPlus, inserts), [people, alignPlus, inserts])
+  const seqRef = useRef(seq)
+  seqRef.current = seq
+  const drawsOf = alignPlus ? null : Math.ceil(Math.min(people.length, FREE_PEOPLE) / PEOPLE_PER_DRAW)
   const [phase, setPhaseState] = useState<Phase>('idle')
   const [secs, setSecs] = useState(PEEK_SECONDS)
   const [expanded, setExpanded] = useState(false)
@@ -243,16 +252,17 @@ export default function Deck({ go }: ScreenProps) {
   const dragX = useMotionValue(0)
   const holdP = useMotionValue(0)
 
-  const profile: Profile | undefined = cardAt(DECK, index, alignPlus)
-  const next: Profile | undefined = cardAt(DECK, index + 1, alignPlus)
-  const cardsLeft = START_LEFT - index
-  const sign = profile ? SIGNS[profile.sign] : SIGNS.libra
+  const slot: Slot | undefined = seq[index]
+  const nextSlot: Slot | undefined = seq[index + 1]
+  const profile: Profile | undefined = slot?.kind === 'person' ? slot.profile : undefined
+  const cardsLeft = peopleLeft(seq, index)
+  const sign = profile ? SIGNS[profile.sign] : SIGNS.leo
 
   const later = (fn: () => void, ms: number) => { timers.current.push(window.setTimeout(fn, ms)) }
   const setPhase = (ph: Phase) => { phaseRef.current = ph; setPhaseState(ph) }
 
   // deck already played through this session → straight to the spent screen
-  useEffect(() => { if (!cardAt(DECK, session.get().deckIndex, session.get().alignPlus)) go('spent') }, [go])
+  useEffect(() => { if (!seqRef.current[session.get().deckIndex]) go('spent') }, [go])
 
   useEffect(() => () => {
     timers.current.forEach(clearTimeout)
@@ -339,7 +349,48 @@ export default function Deck({ go }: ScreenProps) {
   }
 
   /* ---------- swipe ---------- */
+  const nameOf = (id: string) => TONIGHT.find((x) => x.id === id)?.name ?? 'They'
+
+  /** play the event card at the current index */
+  const playEvent = (ev: Extract<Slot, { kind: 'event' }>) => {
+    const s = session.get()
+    const reinserted = new Set(s.inserts.flatMap((i) => i.ids))
+    const released = [...new Set(s.released)].filter((id) => !reinserted.has(id))
+    starBurst(canvasRef.current, 195, CARD_CY - 40, 1.2)
+    sfx.sparkle()
+    if (ev.event.id === 'second-look') {
+      const back = released[released.length - 1]
+      if (back) {
+        session.patch({ inserts: [...s.inserts, { after: index, ids: [back] }] })
+        later(() => showToast(`${nameOf(back)} is back for a second look`, 2200), 250)
+      } else later(() => showToast('Nobody to bring back yet — you kept everyone', 2200), 250)
+    } else if (ev.event.id === 'moon-peek') {
+      if (alignPlus) later(() => showToast('Peeks are already unlimited · Align+', 2000), 250)
+      else {
+        session.patch({ bonusPeeks: s.bonusPeeks + 1 })
+        setPeeks((n) => n + 1)
+        later(() => showToast('+1 peek tonight', 1800), 250)
+      }
+    } else {
+      const pool = [...released]
+      for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]] }
+      const ids = pool.slice(0, PEOPLE_PER_DRAW)
+      if (ids.length) {
+        sfx.match()
+        session.patch({ inserts: [...s.inserts, { after: index, ids }] })
+        later(() => showToast(`Mulligan · ${ids.length} ${ids.length === 1 ? 'card' : 'cards'} shuffled back in`, 2200), 250)
+      } else later(() => showToast('Clean hand — nothing to redraw', 2000), 250)
+    }
+  }
+
   const onFlyStart = (dir: Dir) => {
+    if (slot?.kind === 'event') {
+      setBusy(true)
+      session.patch({ deckIndex: index + 1 })
+      if (dir > 0) playEvent(slot)
+      else { sfx.release(); later(() => showToast('Event passed', 1400), 200) }
+      return
+    }
     if (!profile) return
     setBusy(true)
     session.patch({ deckIndex: index + 1 })
@@ -362,13 +413,15 @@ export default function Deck({ go }: ScreenProps) {
       sfx.release()
       streakRef.current = 0
       pop('release')
+      session.patch({ released: [...session.get().released, profile.id] })
     }
   }
 
   const onSwiped = (dir: Dir) => {
     if (dir > 0 && profile?.alignsBack) return
     dragX.set(0)
-    if (!cardAt(DECK, index + 1, alignPlus)) {
+    // read the live sequence: an event may have just added cards after this one
+    if (!seqRef.current[index + 1]) {
       setIndex((i) => i + 1)
       later(() => go('spent'), 450)
       return
@@ -382,6 +435,7 @@ export default function Deck({ go }: ScreenProps) {
 
   const openExpand = () => {
     if (busy || phaseRef.current !== 'idle') return
+    if (slot?.kind === 'event') { topRef.current?.fly(1); return }
     sfx.tap()
     setExpanded(true)
   }
@@ -422,7 +476,7 @@ export default function Deck({ go }: ScreenProps) {
   const peekOpen = phase === 'open'
   const peekUI = phase === 'open' || phase === 'sealing'
 
-  let right: React.ReactNode = alignPlus ? <Unlimited /> : <Counter left={cardsLeft} total={DECK_TOTAL} />
+  let right: React.ReactNode = alignPlus ? <Unlimited /> : <Counter left={cardsLeft} total={FREE_PEOPLE} />
   let rightKey = 'counter'
   if (status) { right = <StatusText>{status}</StatusText>; rightKey = status }
 
@@ -443,7 +497,7 @@ export default function Deck({ go }: ScreenProps) {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`, transition: 'background 0.8s',
       }} />
 
-      <DeckHeader onSky={() => go('sky')} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
 
       {/* peek header */}
       <AnimatePresence>
@@ -462,16 +516,17 @@ export default function Deck({ go }: ScreenProps) {
         <motion.div animate={{ opacity: matching ? 0 : 1, scale: matching ? 0.92 : 1 }} transition={{ duration: 0.35 }} style={{ position: 'absolute', inset: 0 }}>
           <StackBacks bump={index} />
         </motion.div>
-        {next && (
+        {nextSlot && (
           <motion.div animate={{ opacity: matching ? 0 : 1, scale: matching ? 0.9 : 1 }} transition={{ duration: 0.3 }} style={{ position: 'absolute', inset: 0 }}>
-            <UnderCard key={`${next.id}-${next.deal ?? 0}`} profile={next} dragX={dragX} />
+            <UnderCard key={nextSlot.key} slot={nextSlot} drawsOf={drawsOf} dragX={dragX} />
           </motion.div>
         )}
-        {profile && (
+        {slot && (
           <TopCard
-            key={`${profile.id}-${profile.deal ?? 0}`}
+            key={slot.key}
             ref={topRef}
-            profile={profile}
+            slot={slot}
+            drawsOf={drawsOf}
             dragX={dragX}
             holdP={holdP}
             phase={phase}
@@ -521,12 +576,13 @@ export default function Deck({ go }: ScreenProps) {
           alignStyle={{ scale: alignLabelScale, color: alignLabelColor, textShadow: alignGlow }}
           releaseStyle={{ scale: releaseLabelScale, color: releaseLabelColor }}
         />
+        {slot && <DrawTracker slot={slot} drawsOf={drawsOf} />}
         <AnimatePresence mode="wait" initial={false}>
           {toast ? (
             <motion.div key={toast.id}
               initial={{ opacity: 0, y: 10, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6 }}
               transition={{ type: 'spring', stiffness: 420, damping: 24 }}
-              style={{ position: 'absolute', top: 700, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}>
+              style={{ position: 'absolute', top: 718, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}>
               <span style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8, height: 32, padding: '0 16px', borderRadius: 999,
                 background: 'rgba(52,35,95,0.8)', border: '1px solid rgba(242,199,92,0.45)', boxShadow: '0 0 18px rgba(242,199,92,0.2)',
@@ -537,8 +593,9 @@ export default function Deck({ go }: ScreenProps) {
             </motion.div>
           ) : (
             <motion.div key="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              style={{ position: 'absolute', top: 707, left: 0, right: 0, textAlign: 'center', fontSize: 13, color: 'var(--label-2)' }}>
-              {alignPlus ? <>Hold the card to peek&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>∞</span></>
+              style={{ position: 'absolute', top: 726, left: 0, right: 0, textAlign: 'center', fontSize: 12.5, color: 'var(--label-2)' }}>
+              {slot?.kind === 'event' ? <>Every sixth card is an event&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>swipe right to play</span></>
+                : alignPlus ? <>Hold the card to peek&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>∞</span></>
                 : peeks > 0 ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left</> : <>No peeks left tonight&nbsp; · &nbsp;more at 11:11</>}
             </motion.div>
           )}
@@ -584,6 +641,27 @@ export default function Deck({ go }: ScreenProps) {
           />
         )}
       </AnimatePresence>
+    </div>
+  )
+}
+
+/** "Draw 1 of 3" + six slots: five people, then the event (✦). */
+function DrawTracker({ slot, drawsOf }: { slot: Slot; drawsOf: number | null }) {
+  const pos = slot.kind === 'event' ? PEOPLE_PER_DRAW : slot.redraw ? PEOPLE_PER_DRAW + 1 : slot.pos
+  const label = slot.kind === 'person' && slot.redraw ? 'REDRAW' : `DRAW ${slot.draw + 1}${drawsOf ? `/${drawsOf}` : ''}`
+  return (
+    <div style={{ position: 'absolute', top: 703, left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 7, pointerEvents: 'none' }}>
+      <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)', marginRight: 2 }}>{label}</span>
+      {Array.from({ length: PEOPLE_PER_DRAW }, (_, i) => (
+        <motion.span key={i} animate={{ scale: i === pos ? 1.25 : 1 }}
+          style={{
+            width: 7, height: 10, borderRadius: 2,
+            background: i < pos ? 'rgba(239,230,214,0.75)' : i === pos ? '#efe6d6' : 'transparent',
+            border: '1px solid rgba(239,230,214,0.55)', boxShadow: i === pos ? '0 0 8px rgba(239,230,214,0.8)' : 'none',
+          }} />
+      ))}
+      <motion.span animate={{ scale: pos === PEOPLE_PER_DRAW ? [1, 1.35, 1] : 1 }} transition={{ duration: 1.2, repeat: pos === PEOPLE_PER_DRAW ? Infinity : 0 }}
+        style={{ fontSize: 12, lineHeight: 1, color: pos >= PEOPLE_PER_DRAW ? '#f2c75c' : 'rgba(242,199,92,0.45)', textShadow: pos >= PEOPLE_PER_DRAW ? '0 0 10px #f2c75c' : 'none' }}>✦</motion.span>
     </div>
   )
 }

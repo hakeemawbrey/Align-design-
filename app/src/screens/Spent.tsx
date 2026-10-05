@@ -75,7 +75,7 @@ export default function Spent({ go }: ScreenProps) {
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }}
         className="serif" style={{ position: 'absolute', top: 566, left: 44, right: 44, textAlign: 'center', fontSize: 18, lineHeight: 1.5, color: 'var(--label-2)' }}>
-        Fifteen cards, gone in one sitting. Fifteen more land at 11:11. With Align+, the deck never runs out.
+        Three draws — fifteen people and three events — gone in one sitting. A new deal lands at 11:11. With Align+, the draws never run out.
       </motion.p>
 
       <motion.button className="chrome-cta"

@@ -137,7 +137,7 @@ export const BONUS: Profile[] = [
     dealbreakers: 'Bad texters. Nowhere to dance. People who never ask a question back.',
   },
   {
-    id: 'a29', initial: 'Amara', name: 'Amara', age: 29, sign: 'aries', moon: 'leo', rising: 'sagittarius',
+    id: 'a29', initial: 'Amara', name: 'Amara', age: 29, sign: 'sagittarius', moon: 'leo', rising: 'aries',
     serial: '№ 044', pull: 'Strong pull', alignsBack: false, photo: 'img/people/p8.jpg',
     reading: [
       { kind: 'spark', text: 'Mars on your Moon — she makes the first move, every time.', strength: 3 },
@@ -147,6 +147,47 @@ export const BONUS: Profile[] = [
     dealbreakers: 'Indecision. Cancelled plans. Anyone who can’t laugh at themselves.',
   },
 ]
+
+const p = (
+  id: string, name: string, age: number, sign: SignId, moon: SignId, photo: string, serial: string,
+  pull: Profile['pull'], spark: string, rub: string, align: string, dealbreakers: string,
+): Profile => ({
+  id, initial: name, name, age, sign, moon, rising: moon, serial, pull, alignsBack: false, photo,
+  reading: [
+    { kind: 'spark', text: spark, strength: 3 },
+    { kind: 'rub', text: rub, strength: 2 },
+    { kind: 'align', text: align, strength: 2 },
+  ],
+  dealbreakers,
+})
+
+/** The rest of tonight's fifteen (draws two and three). */
+export const MORE: Profile[] = [
+  p('t30', 'Theo', 30, 'cancer', 'virgo', 'img/people/p11.jpg', '№ 047', 'Steady pull',
+    'Moon on your Venus — he remembers how you take your coffee.', 'He needs reassurance; you assume it’s obvious.', 'Water softens earth — home is where you both land.',
+    'Coldness. Flaky plans. People who never call their mum.'),
+  p('n27', 'Noor', 27, 'libra', 'gemini', 'img/people/p5.jpg', '№ 049', 'Slow burn',
+    'Venus rules you both — easy taste, easy laughs.', 'She weighs every option; you picked an hour ago.', 'Air lifts earth — she brings the ideas, you bring the plan.',
+    'Rudeness to waiters. One-word answers. Bad shoes.'),
+  p('j28', 'Jae', 28, 'sagittarius', 'aries', 'img/people/p4.jpg', '№ 052', 'Wild card',
+    'Jupiter on your Sun — he makes the night bigger.', 'He wants a passport; you want a porch.', 'Fire and earth — he finds the road, you find the way home.',
+    'Small talk. Closed minds. Anyone who hates travel.'),
+  p('b25', 'Bianca', 25, 'taurus', 'pisces', 'img/people/p10.jpg', '№ 055', 'Strong pull',
+    'Same sun — you already know each other’s silences.', 'Two bulls, one remote. Nobody gives it up.', 'Earth on earth — slow, sure, and very well fed.',
+    'Rushing. Cheap wine. Being late to dinner.'),
+  p('i24', 'Ivy', 24, 'pisces', 'taurus', 'img/people/p12.jpg', '№ 058', 'Steady pull',
+    'Her Moon is your sun — she feels you before you speak.', 'She drifts; you anchor. Sometimes too hard.', 'Water feeds earth — tender, slow, real.',
+    'Cynics. Shouting. Anyone who laughs at horoscopes.'),
+  p('d31', 'Dev', 31, 'leo', 'libra', 'img/people/p6.jpg', '№ 061', 'Wild card',
+    'Sun square Sun — instant heat, instant opinions.', 'He wants the spotlight; you want the good seat.', 'Fire warms earth — he lights it, you keep it going.',
+    'Being ignored. Grey outfits. Leaving early.'),
+  p('r29b', 'Rosa', 29, 'gemini', 'cancer', 'img/people/p7.jpg', '№ 064', 'Slow burn',
+    'Mercury on your Moon — she talks you out of your shell.', 'She changes plans; you change nothing.', 'Air and earth — she keeps it moving, you keep it real.',
+    'Boredom. Texting “k”. Anyone who won’t try the new place.'),
+]
+
+/** Tonight's fifteen people, in deal order: three draws of five. */
+export const TONIGHT: Profile[] = [...DECK, ...BONUS, ...MORE]
 
 /**
  * The card at position i tonight. Free: the deal (fifteen a night, ends).

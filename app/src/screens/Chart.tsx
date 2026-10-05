@@ -3,13 +3,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenId, ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
+import { Planet } from '../components/onboarding/shared'
 
-const TAURUS = SIGNS.taurus
 
 interface ChartTab {
-  id: 'sign' | 'traits' | 'element' | 'ruler' | 'house'
+  id: 'sign' | 'moon' | 'rising' | 'traits' | 'element' | 'ruler' | 'house'
   label: string
   eyebrow: string
   pips: number
@@ -41,6 +40,24 @@ const TABS: ChartTab[] = [
     self: 'Stop apologising for needing time. A slow yes from you is worth more than a fast one.',
     tryLine: 'Tell your match one thing you’d like to do with them more than once.',
     cta: 'See today’s sky', to: 'sky',
+  },
+  {
+    id: 'moon', label: 'Moon', eyebrow: 'Your emotional self', pips: 4, color: '#5b8cf0', art: 'figure',
+    headline: 'You need room to feel close.',
+    meaning: 'Your moon is how you feel and what makes you feel safe. A Sagittarius moon needs freedom, honesty and a little adventure.',
+    love: 'You open up when someone plans something new with you, not when they hold on tight. Jealousy shuts you down fast.',
+    self: 'Your restlessness isn’t a flaw. Say you need space before you take it, and people won’t take it personally.',
+    tryLine: 'Suggest a first date somewhere neither of you has been.',
+    cta: 'Find someone in tonight’s deck', to: 'deck',
+  },
+  {
+    id: 'rising', label: 'Rising', eyebrow: 'Your first impression', pips: 4, color: '#b18cff', art: 'figure',
+    headline: 'People meet your charm first.',
+    meaning: 'Your rising sign is how strangers read you before they know you. Libra rising comes across warm, easy and put-together.',
+    love: 'People feel comfortable with you right away, so it can be hard to tell who likes the real you. Your Taurus core shows up later.',
+    self: 'Keep the charm, but say the less polite thing sooner. The right people stay.',
+    tryLine: 'In your next chat, share an opinion you’d usually smooth over.',
+    cta: 'Talk to your matches', to: 'matches',
   },
   {
     id: 'traits', label: 'Traits', eyebrow: 'How you come across', pips: 4, color: '#a6e06a', art: 'figure',
@@ -116,23 +133,33 @@ export default function Chart({ go }: ScreenProps) {
           <div style={{ position: 'absolute', inset: 8, borderRadius: 15, border: '1px solid rgba(222,208,246,0.28)', pointerEvents: 'none' }} />
           <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.24em', color: 'var(--label-2)' }}>YOUR SIGN · TAURUS</div>
 
-          <div style={{ position: 'relative', width: 150, height: 82, marginTop: 2 }}>
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div key={t.art} initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.3 }}
-                style={{ position: 'absolute', inset: 0 }}>
-                <Art kind={t.art} />
-              </motion.div>
-            </AnimatePresence>
+          {/* the big three, from onboarding: tap one to read it */}
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 26, marginTop: 10, height: 84 }}>
+            {BIG3.map((o, i) => {
+              const on = tab === i
+              return (
+                <motion.button key={o.id} onClick={() => pick(i)} whileTap={{ scale: 0.92 }}
+                  animate={{ y: on ? -3 : 0, opacity: tab < 3 && !on ? 0.65 : 1 }}
+                  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 9 }}>
+                  <div style={{ height: 50, display: 'grid', placeItems: 'center' }}>
+                    <Planet size={o.size} color={o.color} light={o.light} dark={o.dark} ring={o.ring} glow={on ? 0.75 : 0.45} />
+                  </div>
+                  <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.14em', color: on ? o.text : 'var(--label-2)', whiteSpace: 'nowrap', borderBottom: on ? `1px solid ${o.text}` : '1px solid transparent', paddingBottom: 2 }}>
+                    {o.label}
+                  </span>
+                </motion.button>
+              )
+            })}
           </div>
 
-          <div className="h-display" style={{ fontSize: 24, marginTop: 2 }}>Sun in Taurus.</div>
-          <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 6 }}>Fixed earth · ruled by Venus · 8th house</div>
+          <div className="h-display" style={{ fontSize: 23, marginTop: 8 }}>{TITLE[t.id] ?? 'Sun in Taurus.'}</div>
+          <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 4 }}>{SUBTITLE[t.id] ?? 'Fixed earth · ruled by Venus · 8th house'}</div>
 
           <div style={{
             marginTop: 10, width: '100%', height: 30, padding: 3, borderRadius: 999, display: 'flex',
             background: 'rgba(24,12,56,0.45)', border: '1px solid rgba(179,166,196,0.22)',
           }}>
-            {TABS.map((x, i) => (
+            {TABS.map((x, i) => i < 3 ? null : (
               <button key={x.id} onClick={() => pick(i)} style={{ position: 'relative', flex: 1, height: '100%' }}>
                 {i === tab && (
                   <motion.div layoutId="chart-tab" transition={{ type: 'spring', stiffness: 420, damping: 34 }}
@@ -203,45 +230,17 @@ export default function Chart({ go }: ScreenProps) {
   )
 }
 
-function Art({ kind }: { kind: ChartTab['art'] }) {
-  if (kind === 'venus') {
-    return (
-      <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} style={{ position: 'absolute', inset: 0 }}>
-        <div style={{
-          position: 'absolute', left: 41, top: 6, width: 68, height: 68, borderRadius: '50%',
-          background: 'radial-gradient(circle at 34% 28%, #fff4cf 0%, #f2d48a 25%, #c9963e 58%, #6a4416 100%)',
-          boxShadow: 'inset -12px -8px 20px rgba(40,20,5,0.55), 0 0 26px rgba(242,199,92,0.45)',
-        }} />
-        <svg width="150" height="82" viewBox="0 0 150 82" style={{ position: 'absolute', inset: 0 }}>
-          <ellipse cx="75" cy="41" rx="70" ry="15" fill="none" stroke="rgba(255,236,190,0.55)" strokeWidth="1.2" transform="rotate(-12 75 41)" />
-        </svg>
-      </motion.div>
-    )
-  }
-  if (kind === 'house') {
-    // the 12-house wheel with the 8th lit
-    return (
-      <motion.svg width="150" height="82" viewBox="-41 -41 82 82" animate={{ rotate: [0, 4, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }} style={{ position: 'absolute', inset: 0 }}>
-        <circle r="38" fill="none" stroke="rgba(222,208,246,0.35)" />
-        <circle r="16" fill="none" stroke="rgba(222,208,246,0.25)" />
-        {Array.from({ length: 12 }, (_, i) => {
-          const a = (Math.PI / 6) * i
-          return <line key={i} x1={16 * Math.cos(a)} y1={16 * Math.sin(a)} x2={38 * Math.cos(a)} y2={38 * Math.sin(a)} stroke="rgba(222,208,246,0.25)" />
-        })}
-        {/* 8th house wedge (houses run counter-clockwise from the ascendant on the left) */}
-        <path d={(() => { const a0 = Math.PI + (Math.PI / 6) * 7, a1 = a0 + Math.PI / 6; const p = (r: number, a: number) => `${r * Math.cos(a)} ${-r * Math.sin(a)}`; return `M ${p(16, a0)} L ${p(38, a0)} A 38 38 0 0 0 ${p(38, a1)} L ${p(16, a1)} A 16 16 0 0 1 ${p(16, a0)} Z` })()}
-          fill="rgba(232,98,138,0.55)" stroke="#e8628a" style={{ filter: 'drop-shadow(0 0 6px #e8628a)' }} />
-        <text x="0" y="4" textAnchor="middle" fontSize="11" fill="#efe6d6" fontFamily="EB Garamond, serif" fontStyle="italic">8</text>
-      </motion.svg>
-    )
-  }
-  const src = kind === 'aura' ? TAURUS.auraImg : TAURUS.figureImg
-  return (
-    <motion.img src={src} alt="" animate={{ y: [0, -4, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-      style={{
-        position: 'absolute', left: 20, top: 0, width: 110, height: 82, objectFit: 'cover', objectPosition: '50% 35%',
-        mixBlendMode: 'screen',
-        WebkitMaskImage: 'radial-gradient(closest-side, #000 55%, transparent 100%)', maskImage: 'radial-gradient(closest-side, #000 55%, transparent 100%)',
-      }} />
-  )
+const BIG3: { id: string; label: string; size: number; color: string; light: string; dark: string; ring?: string; text: string }[] = [
+  { id: 'sun', label: 'SUN · TAURUS', size: 48, color: '#c9a032', light: '#fff1b8', dark: '#3a2a08', ring: '#e8c860', text: '#e3e86a' },
+  { id: 'moon', label: 'MOON · SAGITTARIUS', size: 36, color: '#2f6fe0', light: '#b8d4ff', dark: '#0a1640', text: '#7fa6ff' },
+  { id: 'rising', label: 'RISING · LIBRA', size: 36, color: '#9a4ee0', light: '#ecd8ff', dark: '#24104a', text: '#c9a8ff' },
+]
+
+const TITLE: Partial<Record<ChartTab['id'], string>> = {
+  moon: 'Moon in Sagittarius.',
+  rising: 'Libra rising.',
+}
+const SUBTITLE: Partial<Record<ChartTab['id'], string>> = {
+  moon: 'How you feel · mutable fire',
+  rising: 'How you come across · cardinal air',
 }

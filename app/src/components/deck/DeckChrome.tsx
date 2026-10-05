@@ -1,8 +1,46 @@
+import { useSession } from '../../lib/session'
+import { UNREAD_COUNT } from '../../screens/Notifications'
 import { SKY_PILL } from '../../data/sky'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP } from './fx'
 import { sfx } from '../../lib/sfx'
+
+/**
+ * Notifications: a four-point star, taller than it is wide, with an unread badge.
+ * Pulses when you align (pulse bumps).
+ */
+export function NotifStar({ pulse = 0, onClick }: { pulse?: number; onClick?: () => void }) {
+  const { notifsSeen } = useSession()
+  const unread = notifsSeen ? 0 : UNREAD_COUNT
+  return (
+    <motion.button onClick={() => { sfx.tap(); onClick?.() }} aria-label={unread ? `Notifications, ${unread} new` : 'Notifications'}
+      whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.06 }}
+      style={{ position: 'absolute', right: 18, top: 62, width: 48, height: 48, display: 'grid', placeItems: 'center' }}>
+      <motion.svg key={pulse} width="26" height="38" viewBox="0 0 20 30"
+        initial={pulse ? { scale: 1.45, rotate: -18 } : false} animate={{ scale: 1, rotate: 0 }}
+        transition={{ type: 'spring', stiffness: 380, damping: 12 }}
+        style={{ overflow: 'visible', filter: 'drop-shadow(0 0 6px rgba(242,199,92,0.75))' }}>
+        <defs>
+          <linearGradient id="notif-foil" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#fff4cf" />
+            <stop offset="0.45" stopColor="#f2c75c" />
+            <stop offset="1" stopColor="#b88a2c" />
+          </linearGradient>
+        </defs>
+        {/* long top & bottom points, shorter sides */}
+        <path d="M10 0 Q11.3 13.7 19 15 Q11.3 16.3 10 30 Q8.7 16.3 1 15 Q8.7 13.7 10 0 Z" fill="url(#notif-foil)" />
+      </motion.svg>
+      {unread > 0 && (
+        <span className="mono" style={{
+          position: 'absolute', top: 6, right: 6, minWidth: 16, height: 16, borderRadius: 8, padding: '0 4px',
+          display: 'grid', placeItems: 'center', fontSize: 9, fontWeight: 700, color: '#fff',
+          background: 'var(--rub)', boxShadow: '0 0 8px rgba(232,98,138,0.8)', border: '1.5px solid var(--void)',
+        }}>{unread}</span>
+      )}
+    </motion.button>
+  )
+}
 
 export function GoldStar({ pulse = 0, size = 40 }: { pulse?: number; size?: number }) {
   return (
@@ -43,10 +81,12 @@ interface HeaderProps {
   hidden?: boolean
   /** open Today's Sky */
   onSky?: () => void
+  /** open Notifications */
+  onNotifs?: () => void
 }
 
 /** "Tonight's deck" header row + Today's Sky pill (S-05). */
-export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky }: HeaderProps) {
+export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, onNotifs }: HeaderProps) {
   return (
     <motion.div
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0 }}
@@ -66,7 +106,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
           </motion.div>
         </AnimatePresence>
       </div>
-      <div style={{ position: 'absolute', right: 74, top: 72, height: 36, width: 140 }}>
+      <div style={{ position: 'absolute', right: 76, top: 72, height: 36, width: 132 }}>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div key={rightKey ?? 'r'}
             initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }}
@@ -77,9 +117,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
           </motion.div>
         </AnimatePresence>
       </div>
-      <button onClick={() => sfx.sparkle()} style={{ position: 'absolute', right: 24, top: 66 }} aria-label="Today's star">
-        <GoldStar pulse={starPulse} />
-      </button>
+      <NotifStar pulse={starPulse} onClick={onNotifs} />
       {/* Today's Sky pill */}
       <button onClick={() => { sfx.tap(); onSky?.() }} aria-label="Open today's sky" style={{
         position: 'absolute', left: 24, right: 24, top: 108, height: 39, borderRadius: 999,

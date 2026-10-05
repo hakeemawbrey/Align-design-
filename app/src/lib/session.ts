@@ -42,6 +42,14 @@ export interface SessionState {
   blockedSince: string
   /** people blocked or unmatched from Report / Block */
   blockedPeople: string[]
+  /** people released tonight, in order (for Second look / Mulligan) */
+  released: string[]
+  /** cards put back into the deal by played events */
+  inserts: { after: number; ids: string[] }[]
+  /** extra peeks granted by events */
+  bonusPeeks: number
+  /** the notifications screen has been opened */
+  notifsSeen: boolean
 }
 
 const initial = (): SessionState => ({
@@ -56,6 +64,10 @@ const initial = (): SessionState => ({
   blockedSigns: ['scorpio', 'aries'],
   blockedSince: 'Jul 2',
   blockedPeople: [],
+  released: [],
+  inserts: [],
+  bonusPeeks: 0,
+  notifsSeen: false,
 })
 
 let state = initial()

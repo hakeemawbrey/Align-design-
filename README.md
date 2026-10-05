@@ -32,7 +32,8 @@ Sound is synthesised live. Click once anywhere first so the browser allows audio
 | `P` | Align+ paywall |
 | `Y` / `C` | You tab / Club tab |
 | `S` / `K` | Today's sky / Cosmic calendar (Oct 5 2026) |
-| — | Your chart: tap **Your sign** on the You tab (Sun, Traits, Element, Ruler, House) |
+| `N` | Notifications (also the gold star, top right of the deck) |
+| — | Your chart: tap **Your sign** on the You tab (big three: Sun, Moon, Rising; then Traits, Element, Ruler, House) |
 | `↑` / `Enter` | On the trade screen: send your card |
 | `M` | Mute or unmute sound |
 | `←` / `→` | On the deck: release or align the top card |
@@ -77,6 +78,19 @@ planet positions: Venus turned retrograde in Scorpio on Saturday Oct 3, the Moon
 and the Sun is opposite Saturn. Switch **Today / Tonight / Week / Moon**. Tap **OCT 5 ›** for the
 **Cosmic calendar** (October 2026: New Moon in Libra on the 10th, Scorpio season on the 23rd,
 Mercury retrograde on the 24th, Full Moon in Taurus on the 25th). Tap any day to see what happens.
+
+## How a night is dealt: draws and events
+
+Every draw is **six cards: five people, then an event** (the gold card). The tracker under the card
+shows *Draw 1/3* and the six slots, with the event as ✦.
+
+- **Free**: three draws, so 18 cards: 15 people and 3 events.
+- **Align+**: the draws keep coming, same rhythm.
+
+The events (swipe right or tap to play, swipe left to pass):
+1. **Second look** (Venus retrograde): brings back the last person you released.
+2. **The Moon lends a peek** (Moon in Leo): +1 peek tonight.
+3. **Mulligan** (end of the free fifteen): shuffles back everyone you released and redraws up to five.
 
 ## Free vs Align+
 

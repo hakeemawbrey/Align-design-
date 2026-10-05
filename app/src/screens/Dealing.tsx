@@ -3,11 +3,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { DECK as ALL_DECK, DECK_TOTAL, PEEKS_PER_NIGHT } from '../data/profiles'
+import { TONIGHT as ALL_DECK, DECK_TOTAL } from '../data/profiles'
 import { session as dealSession } from '../lib/session'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import CardBack from '../components/deck/CardBack'
+import EventCard from '../components/deck/EventCard'
+import { EVENTS, EVENT_ORDER } from '../data/draws'
 import ProfileCard from '../components/deck/ProfileCard'
 import { DeckHeader, Counter, Unlimited, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, ELEMENT_SKY } from '../components/deck/fx'
@@ -17,7 +19,9 @@ const SH = CARD_H * CARD_SCALE
 const SLEFT = 195 - SW / 2
 
 /** where each dealt card lands (relative to the top-card slot) */
-const DEALS = [
+/** a draw is six cards: the event goes down first (bottom of the pile), then five people */
+const DEALS: { x: number; y: number; rotate: number; scale: number; delay: number; event?: boolean }[] = [
+  { x: 0, y: 46, rotate: -3, scale: 0.9, delay: 0.1, event: true },
   { x: -34, y: 30, rotate: -7, scale: 1, delay: 0.3 },
   { x: 34, y: 30, rotate: 7, scale: 1, delay: 0.55 },
   { x: 0, y: -14, rotate: 2.5, scale: 0.94, delay: 0.8 },
@@ -26,7 +30,7 @@ const DEALS = [
 const TOP_DELAY = 1.3
 const FLIP_AT = 1.95
 const SETTLE_AT = 2.35
-const GO_AT = 3.25
+const GO_AT = 3.9
 
 function Scaled({ children }: { children: React.ReactNode }) {
   return <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${CARD_SCALE})`, transformOrigin: 'top left' }}>{children}</div>
@@ -74,9 +78,9 @@ export default function Dealing({ go }: ScreenProps) {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`,
       }} />
 
-      <DeckHeader onSky={() => go('sky')}
+      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')}
         title={settled ? 'Tonight’s deck' : 'Dealing your deck'}
-        right={settled ? (dealSession.get().alignPlus ? <Unlimited /> : <Counter left={11} total={DECK_TOTAL} />) : null}
+        right={settled ? (dealSession.get().alignPlus ? <Unlimited /> : <Counter left={DECK_TOTAL} total={DECK_TOTAL} />) : null}
         rightKey={settled ? 'counter' : 'none'}
       />
 
@@ -88,15 +92,15 @@ export default function Dealing({ go }: ScreenProps) {
       {DEALS.map((d, i) => (
         <motion.div key={i}
           initial={{ x: 240 - i * 30, y: 700, rotate: 38 - i * 6, scale: 1.08, opacity: 0 }}
-          animate={{ x: d.x, y: d.y, rotate: d.rotate, scale: d.scale, opacity: settled && i < 3 ? 0 : 1 }}
+          animate={{ x: d.x, y: d.y, rotate: d.rotate, scale: d.scale, opacity: settled && i < 4 ? 0 : 1 }}
           transition={{
             delay: d.delay, type: 'spring', stiffness: 150, damping: 19, mass: 0.9,
-            opacity: settled && i < 3 ? { duration: 0.5, delay: 0 } : { duration: 0.12, delay: d.delay },
+            opacity: settled && i < 4 ? { duration: 0.5, delay: 0 } : { duration: 0.12, delay: d.delay },
           }}
           style={{ position: 'absolute', left: SLEFT, top: CARD_TOP, width: SW, height: SH, zIndex: 2 + i }}
         >
-          <Scaled>{i === 3 && settled ? <ProfileCard profile={DECK[1]} glow={false} /> : <CardBack glow={i >= 2} />}</Scaled>
-          {i === 3 && (
+          <Scaled>{d.event ? <EventCard event={EVENTS[EVENT_ORDER[0]]} draw={1} of={3} glow={false} /> : i === 4 && settled ? <ProfileCard profile={DECK[1]} glow={false} /> : <CardBack glow={i >= 3} />}</Scaled>
+          {i === 4 && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: settled ? 0.6 : 0 }}
               style={{ position: 'absolute', inset: 0, borderRadius: 19, background: '#0b0620' }} />
           )}
@@ -137,7 +141,7 @@ export default function Dealing({ go }: ScreenProps) {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: settled ? 1 : 0 }} transition={{ duration: 0.5 }} style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
         <SwipeLabels />
         <div style={{ position: 'absolute', top: 707, left: 0, right: 0, textAlign: 'center', fontSize: 13, color: 'var(--label-2)' }}>
-          Hold the card to peek&nbsp; · &nbsp;{PEEKS_PER_NIGHT} left
+          Draw 1 of 3&nbsp; · &nbsp;five people, then an event <span style={{ color: 'var(--align)' }}>✦</span>
         </div>
       </motion.div>
 
