@@ -11,7 +11,8 @@ export interface BirthDate {
   year: number
 }
 
-export const DEFAULT_BIRTH: BirthDate = { month: 4, day: 4, year: 1994 }
+/** Hakeem: May 12, 1998, 5:00 PM, Tulsa — Taurus 22°, Sagittarius moon, Libra rising (computed). */
+export const DEFAULT_BIRTH: BirthDate = { month: 4, day: 12, year: 1998 }
 export const YEAR_MIN = 1950
 export const YEAR_MAX = 2008
 
@@ -49,7 +50,7 @@ export function sunDegree(b: BirthDate): number {
   if (start > born) start = new Date(b.year - 1, m, d)
   const days = Math.round((born.getTime() - start.getTime()) / 86400000)
   // ~0.985°/day, offset ~1° because ingress is mid-day of the start date
-  return Math.min(29, Math.max(0, Math.floor(days * 0.985)))
+  return Math.min(29, Math.max(0, Math.round(days * 0.985)))
 }
 
 const MODALITY: Record<SignId, string> = {

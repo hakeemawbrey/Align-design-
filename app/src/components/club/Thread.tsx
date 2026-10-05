@@ -86,6 +86,7 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
             </div>
           </div>
           <div style={{ marginTop: 14, fontSize: 16, lineHeight: '24px', color: 'var(--label-1)', userSelect: 'text' }}>{post.full ?? post.text}</div>
+          {post.image && <img src={post.image} alt="" style={{ display: 'block', width: '100%', marginTop: 12, borderRadius: 14, border: '1px solid rgba(179,166,196,0.18)' }} />}
           <div style={{ display: 'flex', gap: 22, marginTop: 10, alignItems: 'center' }}>
             <LikeButton liked={liked} count={likes} onToggle={onLike} size={12.5} />
             <SparkCount n={post.sparks + extra.length} size={12.5} />

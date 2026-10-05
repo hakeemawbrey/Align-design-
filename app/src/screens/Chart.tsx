@@ -114,7 +114,7 @@ export default function Chart({ go }: ScreenProps) {
       </button>
       <motion.div className="mono" animate={{ color: t.color }}
         style={{ position: 'absolute', right: 28, top: 68, fontSize: 10, letterSpacing: '0.2em' }}>
-        TAURUS · 13°
+        TAURUS · 22°
       </motion.div>
 
       <motion.div
@@ -210,7 +210,7 @@ export default function Chart({ go }: ScreenProps) {
             ))}
           </div>
           <div className="mono" style={{ display: 'flex', gap: 14, alignItems: 'center', fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-2)' }}>
-            <span>SUN · TAURUS 13°</span><span style={{ opacity: 0.6 }}>◇</span><span>8TH HOUSE</span><span style={{ opacity: 0.6 }}>◇</span><span>VENUS</span>
+            <span>SUN · TAURUS 22°</span><span style={{ opacity: 0.6 }}>◇</span><span>8TH HOUSE</span><span style={{ opacity: 0.6 }}>◇</span><span>VENUS</span>
           </div>
           <div className="mono" style={{ fontSize: 8, letterSpacing: '0.2em', color: 'var(--label-3)', marginTop: 6 }}>ALIGN · CHART № 001/∞</div>
         </div>

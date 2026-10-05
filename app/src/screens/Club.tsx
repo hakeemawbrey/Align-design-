@@ -251,6 +251,10 @@ function PostBody({ post, first, fresh, liked, likes, sparks, onLike, onOpen }: 
           </div>
         </div>
         <div style={{ marginTop: 5, fontSize: 13.5, lineHeight: '19px', color: 'var(--label-1)', opacity: 0.92, wordBreak: 'break-word' }}>{post.text}</div>
+        {post.image && (
+          <img src={post.image} alt="" loading="lazy" draggable={false}
+            style={{ display: 'block', width: '100%', marginTop: 9, borderRadius: 12, border: '1px solid rgba(179,166,196,0.18)', background: '#fff' }} />
+        )}
       </div>
     </motion.div>
   )

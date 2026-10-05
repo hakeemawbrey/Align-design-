@@ -77,7 +77,7 @@ export default function BirthSky({ birth, next, primaryRef }: { birth: BirthDate
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Header
-        eyebrow={`Tulsa, OK · ${MONTH_SHORT[birth.month]} ${birth.day} ${birth.year} · 3:52 PM`}
+        eyebrow={`Tulsa, OK · ${MONTH_SHORT[birth.month]} ${birth.day} ${birth.year} · 5:00 PM`}
         title="This was your sky."
         body="Hold still. The sky is remembering where everything was. It never forgets."
         bodyWidth={300}

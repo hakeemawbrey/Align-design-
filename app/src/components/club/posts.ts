@@ -25,6 +25,8 @@ export interface Post {
   mine?: boolean
   /** founders card serial — founder posts get a holo border */
   founder?: number
+  /** a meme or photo attached to the post */
+  image?: string
 }
 
 /** The Taurus room tonight (S-17). First three are verbatim from Figma. */
@@ -38,6 +40,16 @@ export const ROOM_POSTS: Post[] = [
       { name: 'Devon', age: 31, moon: 'cancer', text: 'Which room. I need the room. This is load bearing information.' },
       { name: 'Priya', age: 27, moon: 'sagittarius', text: 'He is testing whether you will decorate. Answer that one slowly.' },
       { name: 'Nadia', age: 24, moon: 'libra', text: 'You answered fast because you already knew.' },
+    ],
+  },
+  {
+    id: 'jules', name: 'Jules', age: 25, moon: 'gemini', ago: '3H', hood: 'Montrose',
+    text: 'Me at every party, no notes',
+    image: 'img/memes/taurus-cat.jpg',
+    likes: 88, sparks: 14,
+    replies: [
+      { name: 'Devon', age: 31, moon: 'cancer', text: 'I have 400 photos of my neighbour’s cat and I regret nothing' },
+      { name: 'Priya', age: 27, moon: 'sagittarius', text: 'This is a documentary' },
     ],
   },
   {
@@ -56,6 +68,16 @@ export const ROOM_POSTS: Post[] = [
     replies: [
       { name: 'Mireya', age: 28, moon: 'scorpio', text: 'Say queso. Say it with your chest.' },
       { name: 'Devon', age: 31, moon: 'cancer', text: 'Ambition is just queso you have not eaten yet.' },
+    ],
+  },
+  {
+    id: 'tasha', name: 'Tasha', age: 29, moon: 'pisces', ago: '7H', hood: 'Third Ward',
+    text: 'For everyone who said “I’m fine” at brunch today',
+    image: 'img/memes/taurus-fine.jpg',
+    likes: 112, sparks: 21,
+    replies: [
+      { name: 'Marcus', age: 34, moon: 'capricorn', text: 'Not me getting called out on a Monday' },
+      { name: 'Mireya', age: 28, moon: 'scorpio', text: 'I said it twice. Both lies.' },
     ],
   },
   {

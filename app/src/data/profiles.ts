@@ -39,7 +39,7 @@ export interface Profile {
 /** The viewer of the demo. */
 export const ME = {
   name: 'Hakeem',
-  age: 32,
+  age: 28,
   sign: 'taurus' as SignId,
   moon: 'sagittarius' as SignId,
   rising: 'libra' as SignId,

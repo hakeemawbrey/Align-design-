@@ -18,7 +18,7 @@ export const MY_CARD = {
   facts: [
     ['Religion', 'Spiritual, not religious'],
     ['Looking for', 'Long term, open to slow'],
-    ['Height', '6′1″'],
+    ['Height', '5′8″'],
     ['Work', 'Sound engineer'],
   ] as const,
   interests: ['Record stores', 'Night drives', 'Tarot', 'Thrifting', 'Late diners'],

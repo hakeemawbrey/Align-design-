@@ -44,7 +44,7 @@ export const SKY_TABS: SkyTab[] = [
   {
     id: 'today', label: 'Today', eyebrow: 'Venus retrograde', pips: 5, color: '#f2c75c',
     headline: 'Taurus, today favors the second look.',
-    body: 'Venus, your ruler, turned retrograde in Scorpio on Saturday and now sits directly across from your sun. Old attractions resurface and first impressions get revised. Mercury is right beside her, so the conversation you kept postponing is the one that wants to happen.',
+    body: 'Venus, your ruler, turned retrograde in Scorpio on Saturday and now sits opposite your sun. Old attractions resurface and first impressions get revised. Mercury is right beside her, so the conversation you kept postponing is the one that wants to happen.',
     tryLine: 'Reread a card you released last week.',
   },
   {
