@@ -17,6 +17,7 @@ import Matches from './screens/Matches'
 import Trade from './screens/Trade'
 import { resetBinder } from './lib/binder'
 import { resetSession } from './lib/session'
+import { RESET_EVENT } from './lib/demo'
 import Onboarding from './screens/Onboarding'
 import Founding from './screens/Founding'
 import Paywall from './screens/Paywall'
@@ -44,6 +45,8 @@ const LETTERS: Record<string, ScreenId> = { o: 'onboarding', f: 'founding', p: '
 
 function initialScreen(): ScreenId {
   const h = window.location.hash.replace('#', '') as ScreenId
+  // #reset: a link that always opens a fresh demo (state lives in memory, so a load is already clean)
+  if ((h as string) === 'reset') return 'splash'
   return ALL.includes(h) ? h : 'splash'
 }
 
@@ -57,6 +60,17 @@ export default function App() {
     // sandboxed hosts can refuse history writes; the app works without them
     try { history.replaceState(null, '', `#${id}`) } catch { /* ignore */ }
   }, [])
+
+  // reset from inside the app (You → Reset demo, triple-tap the clock)
+  useEffect(() => {
+    const onReset = () => { resetBinder(); resetSession(); setRun((r) => r + 1); go('splash') }
+    // #reset in the address bar, whether the page is loading or already open
+    const onHash = () => { if (window.location.hash === '#reset') onReset() }
+    window.addEventListener(RESET_EVENT, onReset)
+    window.addEventListener('hashchange', onHash)
+    onHash()
+    return () => { window.removeEventListener(RESET_EVENT, onReset); window.removeEventListener('hashchange', onHash) }
+  }, [go])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

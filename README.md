@@ -20,6 +20,15 @@ Record in desktop Chrome. The app renders a 390×844 iPhone, scaled to fit the
 window. Make the window tall (or full-screen it) for the sharpest capture.
 Sound is synthesised live. Click once anywhere first so the browser allows audio.
 
+## Resetting the demo (works on phones and on Vercel)
+
+- **You tab → Reset demo**, then tap again to confirm.
+- **Triple-tap the 9:41 clock** at the top of any screen (handy mid-presentation).
+- Open any demo link ending in **`#reset`**, e.g. `https://your-app.vercel.app/#reset`.
+
+Each clears every swipe, match, trade, block, peek and post and returns to the splash.
+A plain browser refresh also clears state, but reopens the screen you were on.
+
 ## Recording shortcuts
 
 | Key | Action |

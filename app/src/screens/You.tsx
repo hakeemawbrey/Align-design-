@@ -10,6 +10,7 @@ import { ME } from '../data/profiles'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
+import { resetDemo } from '../lib/demo'
 
 const SUN = SIGNS[ME.sign]
 const MOON = SIGNS[ME.moon]
@@ -34,6 +35,26 @@ const APP_ROWS = [
   { label: 'Settings', right: '' },
   { label: 'Help & support', right: '' },
 ]
+
+/** Clears every swipe, match, trade and post, back to the splash. Tap twice to confirm. */
+function ResetRow() {
+  const [armed, setArmed] = useState(false)
+  return (
+    <motion.button
+      onClick={() => {
+        if (!armed) { sfx.tap(); setArmed(true); window.setTimeout(() => setArmed(false), 3000); return }
+        sfx.sparkle(); resetDemo()
+      }}
+      whileTap={{ backgroundColor: 'rgba(52,35,95,0.9)' }}
+      style={{
+        width: '100%', height: 46, display: 'flex', alignItems: 'center', padding: '0 14px 0 16px', textAlign: 'left',
+        borderTop: '1px solid rgba(179,166,196,0.12)', backgroundColor: armed ? 'rgba(232,98,138,0.14)' : 'rgba(52,35,95,0)',
+      }}>
+      <span style={{ flex: 1, fontSize: 15, color: armed ? 'var(--rub)' : 'var(--label-1)' }}>{armed ? 'Tap again to reset' : 'Reset demo'}</span>
+      <span style={{ fontSize: 12.5, color: 'var(--label-3)' }}>{armed ? 'Starts over from the splash' : 'Clears everything'}</span>
+    </motion.button>
+  )
+}
 
 /** G-05 · You — home. */
 export default function You({ go }: ScreenProps) {
@@ -155,6 +176,7 @@ export default function You({ go }: ScreenProps) {
                 <Chevron />
               </motion.button>
             ))}
+            <ResetRow />
           </div>
           <div className="mono" style={{ textAlign: 'center', margin: '18px 0 0', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)' }}>
             ALIGN · {ME.serial} · FOUNDING DECK
