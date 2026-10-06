@@ -1,6 +1,6 @@
 # Align launch: video rollout
 
-Four videos, one visual world: the halftone galaxy, flat-print sacred geometry and ALIGN everywhere.
+Six videos, one visual world: the halftone galaxy, flat-print sacred geometry and ALIGN everywhere.
 Each video has one job.
 
 | video | file | length | job |
