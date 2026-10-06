@@ -13,7 +13,7 @@ node tools/soundtrack.mjs >/dev/null
   echo "love.html|a=taurus&b=scorpio|love-taurus-scorpio"
   echo "love.html|a=leo&b=aquarius|love-leo-aquarius"
   echo "launch.html||countdown-soon"
-  [ -z "${SKIP_VORTEX:-}" ] && echo "vortex.html||into-the-vortex"
+  if [ -z "${SKIP_VORTEX:-}" ]; then echo "vortex.html||into-the-vortex"; fi
 } | xargs -P "$JOBS" -I{} bash -c '
   IFS="|" read -r page query name <<< "{}"
   node tools/export.mjs --page "$page" --query "$query" --crf 23 --out "out/final/$name.mp4" > "out/final/$name.log" 2>&1 && echo "done  $name" || echo "FAIL  $name (see out/final/$name.log)"

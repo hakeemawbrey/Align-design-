@@ -5,10 +5,12 @@ Each video has one job.
 
 | video | file | length | job |
 | --- | --- | --- | --- |
-| Hero film | `out/align-reel.mp4` | 31 s | Brand world: what Align feels like |
-| Calling all <SIGN> ×12 | `out/teasers/sign-<id>.mp4` | 15 s | Reach: people share and tag their own sign |
-| Two skies (love) | `out/teasers/love-<a>-<b>.mp4` | 20 s | Product: it's a dating app, and matching is the magic |
-| Countdown + founders | `out/teasers/launch.mp4` | 15 s | Conversion: join the waitlist, become a founding member |
+| Hero film | `out/final/align-hero-reel.mp4` | 31 s | Brand world: what Align feels like |
+| Calling all <SIGN> ×12 | `out/final/sign-<id>.mp4` | 15 s | Reach: people share and tag their own sign |
+| Two skies (love) | `out/final/love-<a>-<b>.mp4` | 20 s | Product: it's a dating app, and matching is the magic |
+| Countdown + founders | `out/final/countdown-soon.mp4` | 15 s | Conversion: join the waitlist, become a founding member |
+| Into the vortex | `out/final/into-the-vortex.mp4` | 20 s | Wonder: the sacred-geometry fall, a shareable "vibe" post |
+| Geometry gallery | `out/final/geometry-gallery.mp4` | 12 s | Internal idea sheet: 15 animated forms to pick from |
 
 ## Sequence
 
@@ -26,7 +28,7 @@ Run it over about four weeks, ending on launch day.
 - Each post is self-selecting (people stop on their sign) and invites a tag ("send this to your Scorpio").
 - Reshare people's Stories to fill the gaps between posts.
 
-**Week 3: love.**
+**Week 3: love.** (post *Into the vortex* mid-week as a pure-vibe palate cleanser between love posts)
 - Post "Two skies" for opposite-sign pairs (Taurus × Scorpio, Leo × Aquarius, Aries × Libra…). Rendering a new pair is one command.
 - Caption: *Two skies. Same stars. Which sign do you align with?*
 - Use comment prompts ("drop your sign + your crush's sign") to source the next pairs to render. That turns the audience into the content queue.
@@ -48,11 +50,16 @@ Run it over about four weeks, ending on launch day.
   - Love: the 15 s "You both aligned."
   - Countdown: the 8.5 s "THE SKY OPENS".
 
+## House look
+
+Every frame gets heavy, soft film grain, bloom, warm-pink halation and milky indigo blacks (`ALIGN.LOOK` in `lib/core.js`): soft, dreamy, ethereal.
+
 ## Render commands
 
 See `README.md`. In short:
 
 ```bash
+tools/render-all.sh                                 # everything, share-ready, into out/final/
 node tools/teaser-audio.mjs                         # all teaser soundtracks
 node tools/export.mjs --page sign.html --query sign=leo --out out/teasers/sign-leo.mp4
 node tools/export.mjs --page love.html --query "a=leo&b=aquarius" --out out/teasers/love-leo-aquarius.mp4

@@ -3,7 +3,7 @@
 A 31-second vertical reel (1080×1920, 30 fps, with sound), for Instagram and TikTok:
 chakras + sacred geometry + the zodiac, and the word ALIGN all over it.
 
-**Watch:** `out/align-reel.mp4`
+**Watch:** `out/final/align-hero-reel.mp4`. All launch videos (12 sign teasers, two love teasers, countdown, vortex, geometry gallery) are in `out/final/`; see `LAUNCH-PLAN.md`.
 
 | time | scene |
 | --- | --- |
