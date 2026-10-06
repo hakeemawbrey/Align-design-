@@ -369,3 +369,9 @@
    */
   A.registerScene = (s) => { A.scenes.push(s); A.scenes.sort((a, b) => a.start - b.start) }
 })()
+
+/* URL parameters (e.g. sign.html?sign=leo, love.html?a=taurus&b=scorpio) */
+;(function () {
+  const q = new URLSearchParams(location.search)
+  window.ALIGN.param = (k, d) => (q.has(k) ? q.get(k) : d)
+})()

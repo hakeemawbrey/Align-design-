@@ -1,0 +1,19 @@
+@font-face { font-family: 'EB Garamond'; font-weight: 400; src: url(fonts/eb-garamond-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'EB Garamond'; font-weight: 500; src: url(fonts/eb-garamond-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'EB Garamond'; font-weight: 600; src: url(fonts/eb-garamond-latin-600-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'EB Garamond'; font-weight: 400; font-style: italic; src: url(fonts/eb-garamond-latin-400-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'EB Garamond'; font-weight: 500; font-style: italic; src: url(fonts/eb-garamond-latin-500-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'Space Mono'; font-weight: 400; src: url(fonts/space-mono-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Space Mono'; font-weight: 700; src: url(fonts/space-mono-latin-700-normal.woff2) format('woff2'); }
+  :root { --bg: #05030f; --fg: #efe6d6; --mute: #7d6f94; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--fg); font: 14px 'Space Mono', monospace; min-height: 100vh; display: grid; place-items: center; padding: 16px; }
+  .wrap { display: grid; gap: 12px; justify-items: center; width: min(100%, 460px); }
+  canvas { width: 100%; height: auto; aspect-ratio: 9 / 16; max-height: calc(100vh - 110px); width: auto; max-width: 100%; display: block; border-radius: 10px; }
+  .bar { display: flex; gap: 10px; align-items: center; width: 100%; }
+  input[type=range] { flex: 1; accent-color: #f2c75c; }
+  button { font: inherit; background: #1e1240; color: var(--fg); border: 1px solid #34235f; border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  #tc { color: var(--mute); min-width: 7ch; text-align: right; }
+  body.export .bar { display: none; }
+  body.export { padding: 0; display: block; }
+  body.export canvas { width: 1080px; height: 1920px; max-height: none; border-radius: 0; }

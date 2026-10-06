@@ -1,5 +1,5 @@
 // Render the reel frame-by-frame in headless Chromium and encode with ffmpeg.
-// usage: node tools/export.mjs [--from 0] [--to 31] [--stills 3,8.5,20] [--out out/align-reel.mp4] [--scale 1]
+// usage: node tools/export.mjs [--page index.html] [--query 'sign=leo'] [--from 0] [--to 31] [--stills 3,8.5,20] [--out out/align-reel.mp4] [--scale 1]
 //   --stills  write PNGs of those timestamps to out/stills/ and skip the video
 import { chromium } from '/home/user/Align-design-/app/node_modules/playwright/index.mjs'
 import { spawn } from 'node:child_process'
@@ -25,7 +25,8 @@ page.on('console', (m) => { if (m.type() === 'error' && !m.text().includes('404'
 page.on('requestfailed', (r) => errors.push('request failed: ' + r.url()))
 page.on('response', (r) => { if (r.status() >= 400 && !r.url().endsWith('favicon.ico')) errors.push(r.status() + ' ' + r.url()) })
 page.on('pageerror', (e) => errors.push(String(e)))
-await page.goto(`http://localhost:${port}/index.html#export`)
+const PAGE = arg('page', 'index.html'), QUERY = arg('query', '')
+await page.goto(`http://localhost:${port}/${PAGE}${QUERY ? '?' + QUERY : ''}#export`)
 await page.waitForFunction(() => window.__ready === true, null, { timeout: 30000 })
 const FPS = await page.evaluate(() => window.ALIGN.FPS)
 
@@ -39,7 +40,7 @@ if (stills) {
   await mkdir(join(ROOT, 'out/stills'), { recursive: true })
   for (const s of stills.split(',')) {
     const f = Math.round(parseFloat(s) * FPS)
-    await writeFile(join(ROOT, `out/stills/t${parseFloat(s).toFixed(2)}.png`), await grab(f, 'png'))
+    await writeFile(join(ROOT, `out/stills/${arg('prefix', '')}t${parseFloat(s).toFixed(2)}.png`), await grab(f, 'png'))
   }
   console.log('stills written:', stills)
 } else {
@@ -47,7 +48,7 @@ if (stills) {
   const from = Math.round(parseFloat(arg('from', '0')) * FPS), to = Math.min(total, Math.round(parseFloat(arg('to', String(total / FPS))) * FPS))
   const outFile = join(ROOT, arg('out', 'out/align-reel.mp4'))
   await mkdir(dirname(outFile), { recursive: true })
-  const wav = join(ROOT, 'out/soundtrack.wav')
+  const wav = join(ROOT, arg('audio', await page.evaluate(() => window.ALIGN.TL.audio || 'out/soundtrack.wav')))
   const hasAudio = await access(wav).then(() => true, () => false) && from === 0
   const scale = arg('scale', '1')
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-',
