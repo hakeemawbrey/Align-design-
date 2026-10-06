@@ -9,7 +9,7 @@
   const CX = 540, CY = 960
   const INK = '#07040f'
   const CC = A.CHAKRA_COLORS
-  const COL_X = 70, COL_Y0 = 1290, COL_DY = 96 // matches 01-countdown
+  const COL_X = 46, COL_Y0 = 1290, COL_DY = 96 // matches 01-countdown
   const SNAP = 0.32, BURST = 0.5 // seconds into the scene
   const SIGN_UNI = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓']
 
@@ -107,11 +107,11 @@
 
       // bg: galaxy blown open, gold
       A.stars(bg, T, { alpha: 0.8, count: 260, seed: 21 })
-      A.galaxy(bg, T, { scale: lerp(300, 1050, ease.outExpo(seg(u, 0, 1.2))), rot: T * 0.5 + 2 * ease.outExpo(seg(u, 0, 1)), alpha: 0.95, tilt: 0.82, tiltAngle: 0.2, tint: A.C.gold, tintAmt: 0.42 })
+      A.galaxy(bg, T, { scale: lerp(300, 1050, ease.outExpo(seg(u, 0, 1.2))), rot: T * 0.5 + 2 * ease.outExpo(seg(u, 0, 1)), alpha: 0.5, density: 0.7, tilt: 0.82, tiltAngle: 0.2, tint: A.C.gold, tintAmt: 0.72 })
       glow(bg, CX, CY, 700, A.C.gold, 0.22)
-      hush(bg, CX, CY, 360, 260, 0.82)
-      hush(bg, CX, 300, 460, 90, 0.85)
-      hush(bg, CX, 1560, 520, 120, 0.85)
+      hush(bg, CX, CY, 400, 300, 0.95)
+      hush(bg, CX, 260, 300, 110, 0.9)
+      hush(bg, CX, 1650, 540, 170, 0.92)
       // a dark track for the glyph ring
       {
         const rr = 430
@@ -125,7 +125,7 @@
       fg.save(); fg.translate(CX, CY); fg.rotate(u * 0.06)
       for (let k = 0; k < 72; k++) {
         const a = (k / 72) * TAU
-        const r0 = 520, r1 = 520 + (k % 3 ? 70 : 170) * rp
+        const r0 = 570, r1 = 570 + (k % 3 ? 40 : 90) * rp
         fg.strokeStyle = rgba(k % 6 === 0 ? CC[(k / 6) % 7] : A.C.gold, (k % 3 ? 0.3 : 0.6) * rp)
         fg.lineWidth = k % 3 ? 1 : 2
         fg.beginPath(); fg.moveTo(Math.cos(a) * r0, Math.sin(a) * r0); fg.lineTo(Math.cos(a) * r1, Math.sin(a) * r1); fg.stroke()
@@ -148,7 +148,7 @@
         sign(fg, k, x, y, 62 * (0.6 + 0.4 * pk), { color: mixHex(A.C.gold, '#ffffff', 0.25 + 0.6 * tw), lw: 3.2, progress: pk, glow: 0.6 + tw })
       }
       // tiny ALIGN ring outside
-      A.ringOfWords(fg, 'ALIGN', CX, CY, 560 + 30 * burst, { size: 20, font: 'mono', weight: 700, spacing: 0.3, color: A.C.bone, alpha: 0.75 * rp, sep: ' ✦ ', start: -u * 0.15 })
+      A.ringOfWords(fg, 'ALIGN', CX, CY, 520 + 30 * burst, { size: 20, font: 'mono', weight: 700, spacing: 0.3, color: A.C.bone, alpha: 0.75 * rp, sep: ' ✦ ', start: -u * 0.15 })
 
       // THE SKY OPENS
       const tr = ease.outCubic(seg(u, 0.12, 0.6))
@@ -179,14 +179,14 @@
         if (u > 0.3 && u < 0.3 + 2 / 30) { A.fx.shake = Math.max(A.fx.shake, 22) }
       }
       const lr = ease.outCubic(seg(u, 0.55, 0.9))
-      A.text(fg, soon ? 'ALIGN · OPENING' : 'ALIGN · OPENS', CX, CY + 175, { size: 22, font: 'mono', weight: 700, spacing: 0.5, color: A.C.gold, alpha: lr })
+      A.text(fg, '✦  ALIGN  ✦', CX, CY + 175, { size: 22, font: 'mono', weight: 700, spacing: 0.5, color: A.C.gold, alpha: lr })
 
       // top: the Align mark lit, bottom: ALIGN
       const mr = ease.outCubic(seg(u, 0.2, 0.7))
-      A.alignMark(fg, CX, 300, 120, { lit: 7 * mr, progress: mr, alpha: mr })
+      A.alignMark(fg, CX, 262, 120, { lit: 7 * mr, progress: mr, alpha: mr })
       const ar = ease.outExpo(seg(u, 0.4, 1.0))
-      A.text(fg, 'ALIGN', CX, 1570, { size: 120, weight: 500, spacing: lerp(0.9, 0.4, ar), color: A.C.bone, alpha: ar })
-      A.text(fg, 'TWELVE SIGNS · SEVEN CENTERS · ONE SKY', CX, 1680, { size: 20, font: 'mono', weight: 400, spacing: 0.3, color: A.C.bone, alpha: 0.7 * ar })
+      A.text(fg, 'ALIGN', CX, 1610, { size: 120, weight: 500, spacing: lerp(0.9, 0.4, ar), color: A.C.bone, alpha: ar })
+      A.text(fg, 'TWELVE SIGNS · SEVEN CENTERS · ONE SKY', CX, 1712, { size: 20, font: 'mono', weight: 400, spacing: 0.3, color: A.C.bone, alpha: 0.7 * ar })
       // tail: a beat-pulse on 9.0 and 9.5
       for (const bt of [1.0, 1.5]) {
         const q = u - bt

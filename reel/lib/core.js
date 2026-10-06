@@ -375,3 +375,110 @@
   const q = new URLSearchParams(location.search)
   window.ALIGN.param = (k, d) => (q.has(k) ? q.get(k) : d)
 })()
+
+/* ---------- house look: heavy soft film grain, bloom, halation, lifted milky blacks ----------
+ * Applied to every frame by the compositor (lib/render.js). Soft, dreamy, ethereal.
+ * Scenes can dial a frame via ALIGN.fx.look = { grain, bloom, halation, lift, soften } (multipliers, 1 = default). */
+;(function () {
+  const A = window.ALIGN
+  A.LOOK = {
+    grain: 0.62,     // overlay strength of the luminance grain
+    chroma: 0.09,    // faint colour grain
+    grainSize: 2.6,  // px per grain clump (soft, filmic, not digital speckle)
+    bloom: 0.55,      // tight glow around highlights
+    halation: 0.32,  // wide warm-pink glow, like light bleeding through film
+    lift: 0.42,      // blacks lifted to a milky indigo
+    soften: 0.7,     // overall lens softness (px blur)
+  }
+  const TILE = 384, N = 6
+  let tiles = null, chroma = null, small = null, wide = null, soft = null
+  function makeTiles() {
+    tiles = []; chroma = []
+    for (let k = 0; k < N; k++) {
+      const r = A.rng(101 + k)
+      const raw = A.makeCanvas(TILE, TILE), g = raw.getContext('2d')
+      const img = g.createImageData(TILE, TILE)
+      for (let i = 0; i < img.data.length; i += 4) {
+        // sum of uniforms ≈ gaussian: fewer harsh outliers, a creamier grain
+        const v = ((r() + r() + r()) / 3) * 255
+        img.data[i] = img.data[i + 1] = img.data[i + 2] = v; img.data[i + 3] = 255
+      }
+      g.putImageData(img, 0, 0)
+      const t = A.makeCanvas(TILE, TILE), tg = t.getContext('2d')
+      tg.filter = 'blur(0.6px)' // round the clumps off
+      tg.drawImage(raw, 0, 0)
+      tiles.push(t)
+      const c = A.makeCanvas(TILE, TILE), cg = c.getContext('2d')
+      const ci = cg.createImageData(TILE, TILE)
+      for (let i = 0; i < ci.data.length; i += 4) { ci.data[i] = r() * 255; ci.data[i + 1] = r() * 255; ci.data[i + 2] = r() * 255; ci.data[i + 3] = 255 }
+      cg.putImageData(ci, 0, 0)
+      chroma.push(c)
+    }
+  }
+  function tile(ctx, src, frame, size, alpha, op) {
+    const W = ctx.canvas.width, H = ctx.canvas.height
+    const span = TILE * size
+    const ox = Math.floor(A.hash(frame * 1.7) * span), oy = Math.floor(A.hash(frame * 2.9 + 5) * span)
+    ctx.save()
+    ctx.globalCompositeOperation = op
+    ctx.globalAlpha = alpha
+    ctx.imageSmoothingEnabled = true
+    for (let y = -oy; y < H; y += span) for (let x = -ox; x < W; x += span) ctx.drawImage(src, x, y, span, span)
+    ctx.restore()
+  }
+
+  /** Apply the house film look to a finished frame on `out`. */
+  A.filmLook = function (out, frame) {
+    const W = out.canvas.width, H = out.canvas.height
+    const m = Object.assign({ grain: 1, bloom: 1, halation: 1, lift: 1, soften: 1 }, (A.fx && A.fx.look) || {})
+    const L = A.LOOK
+    if (!tiles) makeTiles()
+    if (!small) { small = A.makeCanvas(W / 4, H / 4); wide = A.makeCanvas(W / 10, H / 10); soft = A.makeCanvas(W, H) }
+    // lens softness
+    if (L.soften * m.soften > 0) {
+      const sg = soft.getContext('2d')
+      sg.clearRect(0, 0, W, H)
+      sg.filter = `blur(${L.soften * m.soften}px)`
+      sg.drawImage(out.canvas, 0, 0)
+      sg.filter = 'none'
+      out.save(); out.globalCompositeOperation = 'copy'; out.drawImage(soft, 0, 0); out.restore()
+    }
+    // bloom: quarter-res blurred copy screened back
+    const s = small.getContext('2d')
+    s.globalCompositeOperation = 'copy'
+    s.filter = 'blur(5px)'
+    s.drawImage(out.canvas, 0, 0, small.width, small.height)
+    s.filter = 'none'
+    out.save()
+    out.globalCompositeOperation = 'screen'
+    out.globalAlpha = A.clamp(L.bloom * m.bloom)
+    out.drawImage(small, 0, 0, W, H)
+    out.restore()
+    // halation: very wide, warm-pink tinted glow
+    const w = wide.getContext('2d')
+    w.globalCompositeOperation = 'copy'
+    w.filter = 'blur(6px)'
+    w.drawImage(small, 0, 0, wide.width, wide.height)
+    w.filter = 'none'
+    w.globalCompositeOperation = 'multiply'
+    w.fillStyle = '#ff9ec4'
+    w.fillRect(0, 0, wide.width, wide.height)
+    out.save()
+    out.globalCompositeOperation = 'screen'
+    out.globalAlpha = A.clamp(L.halation * m.halation)
+    out.drawImage(wide, 0, 0, W, H)
+    out.restore()
+    // lifted, milky blacks
+    out.save()
+    out.globalCompositeOperation = 'screen'
+    out.globalAlpha = A.clamp(L.lift * m.lift)
+    out.fillStyle = '#211838'
+    out.fillRect(0, 0, W, H)
+    out.restore()
+    // grain: soft luminance clumps (overlay twice: once fine, once coarse) + faint colour
+    const gi = frame % N
+    tile(out, tiles[gi], frame, L.grainSize, L.grain * m.grain, 'overlay')
+    tile(out, tiles[(gi + 3) % N], frame + 17, L.grainSize * 1.9, L.grain * m.grain * 0.45, 'soft-light')
+    tile(out, chroma[gi], frame + 31, L.grainSize * 1.3, L.chroma * m.grain, 'soft-light')
+  }
+})()

@@ -13,7 +13,7 @@
 
   A.renderFrame = function (frame) {
     const T = frame / A.FPS
-    A.fx.flash = 0; A.fx.shake = 0; A.fx.flashColor = '#ffffff'; A.fx.halftoneCell = 9; A.fx.halftone = true
+    A.fx.flash = 0; A.fx.shake = 0; A.fx.flashColor = '#ffffff'; A.fx.halftoneCell = 9; A.fx.halftone = true; A.fx.look = null
     bg.setTransform(1, 0, 0, 1, 0, 0); fg.setTransform(1, 0, 0, 1, 0, 0)
     bg.globalAlpha = 1; fg.globalAlpha = 1
     bg.globalCompositeOperation = 'source-over'; fg.globalCompositeOperation = 'source-over'
@@ -52,8 +52,8 @@
     out.setTransform(1, 0, 0, 1, 0, 0)
     // 4. flash, vignette, grain
     if (A.fx.flash > 0) { out.save(); out.globalAlpha = A.clamp(A.fx.flash); out.fillStyle = A.fx.flashColor; out.fillRect(0, 0, W, H); out.restore() }
-    A.vignette(out, 0.55)
-    A.grain(out, frame, 0.18)
+    A.vignette(out, 0.62)
+    A.filmLook(out, frame)
   }
 
   A.totalFrames = () => Math.round(A.TL.duration * A.FPS)

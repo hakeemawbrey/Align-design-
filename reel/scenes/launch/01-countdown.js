@@ -18,7 +18,7 @@
   const NAMES = ['ROOT', 'SACRAL', 'SOLAR PLEXUS', 'HEART', 'THROAT', 'THIRD EYE', 'CROWN']
   const info = (i) => (A.chakra && A.chakra.INFO ? A.chakra.INFO[i] : { name: NAMES[i], sanskrit: '', ink: CC[i] })
   const inkOf = (i) => (i === 6 ? '#e2c8ff' : info(i).ink || CC[i])
-  const COL_X = 70, COL_Y0 = 1290, COL_DY = 96 // chakra column, root at the bottom
+  const COL_X = 46, COL_Y0 = 1290, COL_DY = 96 // chakra column, root at the bottom
 
   // galaxy framing per count so every cut lands somewhere new
   const GAL = [
@@ -103,9 +103,6 @@
         fg.strokeStyle = inv ? rgba(INK, 0.5) : rgba(A.C.bone, 0.4); fg.lineWidth = 1.5; fg.beginPath(); fg.arc(COL_X, y, 6, 0, TAU); fg.stroke()
       }
     }
-    // vertical ALIGN running up beside the column
-    fg.translate(COL_X + 44, (COL_Y0 + top) / 2); fg.rotate(-Math.PI / 2)
-    A.text(fg, 'ALIGN · ALIGN · ALIGN', 0, 0, { size: 16, font: 'mono', weight: 700, spacing: 0.5, color: inv ? INK : A.C.bone, alpha: 0.45 })
     fg.restore()
   }
 
@@ -147,7 +144,7 @@
     if (u < 1 / 30) { A.fx.flash = 0.55 + 0.3 * energy; A.fx.flashColor = ink }
     else if (u < 2 / 30) { A.fx.flash = 0.22; A.fx.flashColor = ink }
     A.fx.shake = (10 + 26 * energy) * hit
-    A.fx.halftoneCell = Math.round(9 + 7 * energy)
+    A.fx.halftoneCell = Math.round(9 + 4 * energy)
 
     const paper = inv || strobe
     const paperCol = strobe ? A.C.bone : ink
@@ -159,11 +156,11 @@
       const spin = (0.4 + 2.2 * energy) * (i % 2 ? -1 : 1)
       A.galaxy(bg, t, {
         cx: G.cx, cy: G.cy, scale: G.scale * (1 + 0.12 * hit + 0.05 * u), rot: G.rot + spin * u + Math.sign(spin) * 0.6 * ease.outExpo(seg(u, 0, 0.6)),
-        tilt: G.tilt, tiltAngle: G.ta, tint: crown ? '#efe4ff' : I.color, tintAmt: crown ? 0.5 : 0.62, alpha: 0.8 + 0.15 * off,
+        tilt: G.tilt, tiltAngle: G.ta, tint: I.color || CC[i], tintAmt: crown ? 0.72 : 0.62, alpha: (crown ? 0.42 : i === 5 ? 0.55 : 0.68) + 0.12 * off,
       })
       glow(bg, CX, CY, 600, I.color || CC[i], 0.16 + 0.1 * energy)
       hush(bg, CX, CY, 330, 400, 0.55) // a quieter well behind the numeral
-      hush(bg, CX, 300, 460, 80, 0.85)
+      hush(bg, CX, 330, 420, 110, 0.92)
       hush(bg, CX, 1530, 520, 130, 0.9)
       hush(bg, CX, 1660, 480, 60, 0.85)
       const gl = bg.createLinearGradient(COL_X - 60, 0, COL_X + 90, 0)
@@ -173,11 +170,11 @@
 
     const dir = i % 2 ? -1 : 1
     const rot = dir * (0.05 + (0.15 + 0.4 * energy) * u) - dir * 0.25 * hit
-    const R = 410
+    const R = 370
     const lineInk = paper ? INK : ink
 
     /* the ring: ALIGN ✦ — pulses on the off-beat */
-    const rr = 492 * (1 + 0.035 * off + 0.05 * hit)
+    const rr = 432 * (1 + 0.035 * off + 0.05 * hit)
     fg.save()
     fg.strokeStyle = rgba(lineInk, 0.55); fg.lineWidth = 1.2
     fg.beginPath(); fg.arc(CX, CY, rr - 22, 0, TAU); fg.stroke()
