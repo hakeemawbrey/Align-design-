@@ -6,7 +6,7 @@ import { writeFileSync, mkdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const ALIGN_HIT = 21.6 // the "alignment" stamp impact (seconds); the silence gap sits just before it
+const ALIGN_HIT = 21.0 // the "alignment" stamp impact (seconds); the silence gap sits just before it
 const GAP = 0.1 // length of the hard-stop silence before ALIGN_HIT
 
 const T0 = performance.now()
@@ -275,7 +275,7 @@ for (const tb of [z, z + 0.75, z + 2, z + 2.75]) kick(tb, 0.9, 0.38) // half-tim
 snare(z + 1, 0.3); snare(z + 3, 0.3)
 for (let t = z; t < z + 3 - 1e-6; t += BEAT / 2) hat(t, 0.06, 0.025, ((t * 4) | 0) % 2 ? 0.35 : -0.35)
 bowl(z, 74, 0.1, 0, 0.6, 0.7)
-{ // tension riser 20 → 21.5: accelerating snare roll, noise sweep, rising tone
+{ // tension riser 20 → 20.9: accelerating snare roll, noise sweep, rising tone
   const r0 = z + 3
   kick(r0, 0.85)
   let t = r0, n = 0
