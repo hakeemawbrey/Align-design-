@@ -328,8 +328,8 @@ function renderVortex(TL) {
 
   // ---- 0.5 the vortex blooms: deep whoosh, sub boom, and the wind that carries the fall ----
   s.whoosh(BLOOM, 0.45, 0.1, 120, 1600, 1)
-  s.boom(BLOOM, 0.5, 0.9, 34, 45, 0.01)
-  s.kick(BLOOM, 0.45, 0.4, 38, 90, 0)
+  s.boom(BLOOM, 0.34, 0.9, 34, 45, 0.01)
+  s.kick(BLOOM, 0.3, 0.4, 38, 90, 0)
   s.bowl(BLOOM, 50, 0.16, 0, 0.8, 1.0)
   s.cymbalSwell(BLOOM, BLOOM + 3, 0.05, -1, 0.8)
   s.wind(BLOOM, breath, 220, 4200, 0.03, 0.11, 0.8, 0.6, 0.15, 0.5, 1.4)
