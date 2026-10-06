@@ -19,11 +19,11 @@
     ctx.save()
     ctx.globalAlpha = o.alpha
     // dark under-stroke separates the line work from the bright eye
-    V.drawForm(ctx, id, x, y, size, { progress: o.progress, color: '#120704', color2: '#120704', lw: (o.lw || 3) + 6, alpha: 0.6, rot: o.rot, t: o.t })
+    V.drawForm(ctx, id, x, y, size, { progress: o.progress, color: '#120704', color2: '#120704', lw: (o.lw || 3.6) + 6, alpha: 0.7, rot: o.rot, t: o.t, glow: 0 })
     ctx.globalCompositeOperation = 'lighter'
-    V.drawForm(ctx, id, x, y, size, { progress: o.progress, color: p.mid, color2: p.mid, lw: (o.lw || 3) + 10, alpha: 0.2 + 0.3 * (o.pulse || 0), rot: o.rot, t: o.t })
+    V.drawForm(ctx, id, x, y, size, { progress: o.progress, color: p.mid, color2: p.mid, lw: (o.lw || 3.6) + 10, alpha: 0.2 + 0.3 * (o.pulse || 0), rot: o.rot, t: o.t, glow: 0 })
     ctx.globalCompositeOperation = 'source-over'
-    V.drawForm(ctx, id, x, y, size, { progress: o.progress, color: p.form, color2: p.gold, lw: o.lw || 3, alpha: 1, rot: o.rot, t: o.t, glow: 0.6 + (o.pulse || 0) })
+    V.drawForm(ctx, id, x, y, size, { progress: o.progress, color: p.form, color2: p.gold, lw: o.lw || 3.6, alpha: 1, rot: o.rot, t: o.t, glow: 0.6 + (o.pulse || 0) })
     ctx.restore()
   }
 
@@ -48,7 +48,7 @@
       const k = Math.exp(4.4 * Math.pow(Math.max(0, uj), 1.4))
       const a = fade * Math.pow(1 - Math.max(0, uj), 1.4) * (j === 0 ? 1 : 0.32 / j)
       if (a <= 0.01) continue
-      formGlow(ctx, id, E.x, E.y, base * k, { p, progress, alpha: a, rot: rot0 + uj * 0.9, t: T, pulse: j === 0 ? pulse : 0, lw: 3.2 + uj * 3 })
+      formGlow(ctx, id, E.x, E.y, base * k, { p, progress, alpha: a, rot: rot0 + uj * 0.9, t: T, pulse: j === 0 ? pulse : 0, lw: 3.6 + uj * 3 })
     }
     if (o.textless) return
     // label: small mono caps above the ring
@@ -103,7 +103,7 @@
     const E = V.eye(T)
     const sc = lerp(1.18, 1, ease.outCubic(k))
     ctx.save(); ctx.translate(540, E.y); ctx.scale(sc, sc)
-    A.text(ctx, 'ALIGN', 0, 0, { size: 270, weight: 600, color: A.C.bone, spacing: 0.16, alpha: 0.95 * (1 - ease.inQuad(k)), stroke: A.C.bone, strokeWidth: 2.5, strokeOnly: k > 0.12 })
+    A.text(ctx, 'ALIGN', 0, 0, { size: 210, weight: 600, color: A.C.bone, spacing: 0.14, alpha: 0.95 * (1 - ease.inQuad(k)), stroke: A.C.bone, strokeWidth: 2.5, strokeOnly: k > 0.12 })
     ctx.restore()
     if (k < 0.15) { A.fx.flash = Math.max(A.fx.flash, 0.25 * (1 - k / 0.15)); A.fx.flashColor = '#fff4dc'; A.fx.shake = 10 }
   }
@@ -115,10 +115,14 @@
   A.registerScene({
     id: 'vx-descent', start: TL.start, duration: TL.duration,
     draw({ bg, fg, T }) {
-      // halftone screen gets finer the deeper we fall
-      A.fx.halftone = A.param('ht', '1') !== '0'
-      A.fx.halftoneCell = Math.round(lerp(6, 4, seg(T, 2, 16)))
-      V.bg(bg, T)
+      // clean cinematic fire; blacks lift back toward the house look as we near the indigo
+      A.fx.halftone = false
+      A.fx.look = { lift: lerp(0.35, 0.8, seg(T, 10, 16)), grain: 0.85 }
+      { // the eye dilates to a dark pupil while each form is held, flares open on each push
+        const ci = clamp(Math.floor((T - TL.start) / TL.each), 0, 6), ct = T - chStart(ci)
+        const iris = ease.inOutQuad(seg(ct, 0.15, 0.8)) * (1 - ease.inQuad(seg(ct, 1.85, 2.0)))
+        V.bg(bg, T, { iris, irisR: 360 })
+      }
       tunnelRings(fg, T)
       stamp(fg, T, 7.5); stamp(fg, T, 13.5)
       // each chapter start: a push and a soft flash on the downbeat

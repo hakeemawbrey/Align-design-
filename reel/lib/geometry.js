@@ -370,11 +370,11 @@
     const C = new Path2D(), L8 = new Path2D(), L16 = new Path2D(), Bh = new Path2D()
     arcP(C, 0, 0, U, -PI / 2, io3(win(p, 0.38, 0.55)))
     arcP(C, 0, 0, 1.2 * U, -PI / 2, io3(win(p, 0.5, 0.66)))
-    arcP(C, 0, 0, 1.4 * U, -PI / 2, io3(win(p, 0.6, 0.76)))
-    for (const [rr, a, b] of [[1.46, 0.68, 0.82], [1.505, 0.7, 0.84], [1.55, 0.72, 0.86]]) arcP(C, 0, 0, rr * U, -PI / 2, io3(win(p, a, b)))
+    arcP(C, 0, 0, 1.38 * U, -PI / 2, io3(win(p, 0.6, 0.76)))
+    for (const [rr, a, b] of [[1.44, 0.68, 0.82], [1.475, 0.7, 0.84], [1.51, 0.72, 0.86]]) arcP(C, 0, 0, rr * U, -PI / 2, io3(win(p, a, b)))
     const l8 = win(p, 0.46, 0.66), l16 = win(p, 0.56, 0.78)
     petals(L8, 8, 1.0, 1.2, (i) => stag(l8, i, 8, 0.4), U)
-    petals(L16, 16, 1.2, 1.4, (i) => stag(l16, i, 16, 0.3), U)
+    petals(L16, 16, 1.2, 1.38, (i) => stag(l16, i, 16, 0.3), U)
     const bp = io3(win(p, 0.76, 1))
     for (const off of [0, 0.035, 0.07]) polyP(Bh, bhupura(off).map(([x, y]) => [x * U, y * U]), bp, true)
     const br = 0.5 + 0.5 * Math.sin(O.t * 1.4)
@@ -434,12 +434,15 @@
     const E = [[0, 1], [0, 2], [0, 3], [1, 2], [2, 3], [3, 1]]
     return { T1, T2, E }
   })()
-  form('merkaba', 'Merkaba', 'star tetrahedron · counter-rotating fields', (ctx, S, O) => {
+  form('merkaba', 'Merkaba', 'star tetrahedron · light body', (ctx, S, O) => {
     const p = O.p, sc = S * 0.42, fov = O.o.fov || 4
-    const spin = O.o.ry == null ? O.t * 0.55 : O.o.ry
-    const rx = O.o.rx == null ? 0.32 + 0.08 * Math.sin(O.t * 0.4) : O.o.rx
+    const spin = O.o.ry == null ? O.t * 0.22 : O.o.ry
+    const rx = O.o.rx == null ? 0.38 + 0.08 * Math.sin(O.t * 0.4) : O.o.rx
     const proj = (V, s) => V.map((v) => { const r = rotate3(v, rx, s, 0); const q = project(r[0], r[1], r[2], { fov, scale: sc }); return [q[0], q[1], 1 - clamp((r[2] + 1) / 2) * 0.7, r[2]] })
-    const P1 = proj(MERK.T1, spin), P2 = proj(MERK.T2, -spin)
+    // counter-rotation: the fields turn against each other in eased 120° steps, resting on the star
+    const u = O.o.ry == null ? O.t / 3.5 : 0, ph = u - Math.floor(u)
+    const delta = (Math.floor(u) + io3(clamp(ph / 0.55))) * (PI / 3)
+    const P1 = proj(MERK.T1, spin + delta), P2 = proj(MERK.T2, spin - delta)
     // bounding sphere
     const C = new Path2D()
     arcP(C, 0, 0, sc * fov / Math.sqrt(fov * fov - 1), -PI / 2, io3(win(p, 0, 0.5)))

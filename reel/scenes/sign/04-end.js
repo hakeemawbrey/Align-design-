@@ -34,7 +34,7 @@
 
       /* ---- mark with its ALIGN ring ---- */
       const mA = ease.outCubic(seg(t, 0.25, 0.6))
-      K.ring(fg, CX, MARK_Y, 132, A.C.gold, 0.06 * t, { alpha: 0.85 * mA, size: 17 })
+      K.ring(fg, CX, MARK_Y, 132, A.C.gold, 0.06 * t, { alpha: 0.9 * mA, size: 20 })
       A.alignMark(fg, CX, MARK_Y, 150, { lit: 7 * ease.outCubic(seg(t, 0.25, 0.8)), progress: mA, alpha: mA })
 
       /* ---- lockup ---- */
@@ -53,7 +53,7 @@
       A.text(fg, 'Find who you align with.', CX, LINE_Y + 10 * (1 - la), { size: 66, italic: true, weight: 400, color: A.C.bone, alpha: la })
       const sa = ease.outCubic(seg(t, 0.75, 1.05))
       A.text(fg, 'COMING SOON', CX, SOON_Y, { size: 30, font: 'mono', spacing: 0.5, color: A.C.gold, alpha: sa, weight: 700 })
-      A.text(fg, 'THE ZODIAC DATING APP', CX, SOON_Y + 50, { size: 22, font: 'mono', spacing: 0.5, color: A.C.bone, alpha: 0.8 * sa, weight: 400 })
+      A.text(fg, 'THE ZODIAC DATING APP', CX, SOON_Y + 50, { size: 25, font: 'mono', spacing: 0.45, color: A.C.bone, alpha: 0.95 * sa, weight: 400 })
       void alive; void clamp; void TAU
     },
   })

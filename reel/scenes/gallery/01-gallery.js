@@ -13,6 +13,7 @@
     id: 'gallery', start: 0, duration: 12,
     draw({ bg, fg, t, W, H }) {
       A.fx.halftone = false
+      A.fx.look = { grain: 0.5, soften: 0.3 }
       // background: deep indigo, a whisper of galaxy
       const g = bg.createLinearGradient(0, 0, 0, H)
       g.addColorStop(0, '#120a2c'); g.addColorStop(0.5, '#0b0620'); g.addColorStop(1, '#07040f')

@@ -106,7 +106,7 @@
     ctx.strokeStyle = rgba(c, 0.5); ctx.lineWidth = 1.2
     ctx.beginPath(); ctx.arc(x, y, r - 22, 0, TAU); ctx.stroke()
     ctx.beginPath(); ctx.arc(x, y, r + 22, 0, TAU); ctx.stroke()
-    A.ringOfWords(ctx, 'ALIGN', x, y, r, { size: o.size || 21, spacing: 0.3, color: c, font: 'mono', weight: 400, start })
+    A.ringOfWords(ctx, 'ALIGN', x, y, r, { size: o.size || 23, spacing: 0.3, color: c, font: 'mono', weight: 400, start })
     ctx.restore()
   }
   /** mono label with inline zodiac glyphs. items: strings or { sign: i, color } */
@@ -163,6 +163,7 @@
       K.cut(t - 1.0, 0.18, K.ink)
       A.fx.shake = 34 * (1 - seg(t, 0, 0.35)) + (b === 1 ? 14 : 5) * (1 - seg(u, 0, 0.15)) * (b > 0 ? 1 : 0)
       A.fx.halftoneCell = t < 0.2 ? 12 : 9
+      if (t < 0.1) A.fx.look = { bloom: 0.6, halation: 0.7 } // keep the slam flash from blooming to mush
 
       /* ---- background ---- */
       A.stars(bg, t, { alpha: 0.7, count: 240, seed: 70 + idx })
@@ -226,7 +227,7 @@
       }
       if (t >= 1.5) {
         const d = ease.outCubic(seg(t, 1.5, 1.8))
-        K.kicker(fg, 'ALIGN', CX, 1560, A.C.gold, { size: 24, spacing: 0.9, alpha: d * 0.9, line: 34 * d })
+        K.kicker(fg, 'ALIGN', CX, 1560, A.C.gold, { size: 26, spacing: 0.9, alpha: d, line: 34 * d })
       }
     },
   })

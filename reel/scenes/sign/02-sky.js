@@ -84,7 +84,7 @@
       if (phase === 0) {
         const [lab, val] = info[Math.min(3, b)]
         const rv = ease.outCubic(seg(u, 0, 0.12))
-        A.text(fg, lab, CX, INFO_LABEL_Y, { size: 24, font: 'mono', spacing: 0.5, color: A.C.bone, alpha: 0.85, weight: 400 })
+        A.text(fg, lab, CX, INFO_LABEL_Y, { size: 26, font: 'mono', spacing: 0.5, color: A.C.bone, alpha: 1, weight: 400 })
         const vs = K.fit(val, { max: 104, maxW: 900, spacing: 0.22 })
         A.text(fg, val, CX, INFO_Y + 10 * (1 - rv), { size: vs * (1 + 0.06 * pulse), spacing: lerp(0.22, 0.4, 1 - rv), color: K.ink, alpha: rv })
         // beat ticks: four dots under the info, the current one lit
@@ -120,8 +120,8 @@
       /* ---- bottom ---- */
       if (phase < 2) {
         const a = ease.outCubic(seg(t, 0.2, 0.6))
-        K.label(fg, ['THE CONSTELLATION ', K.name], CX, 1500, { size: 24, color: A.C.bone, alpha: 0.85 * a, spacing: 0.3 })
-        A.text(fg, 'ALIGN', CX, 1570, { size: 22, font: 'mono', spacing: 0.9, color: A.C.gold, alpha: 0.8 * a, weight: 400 })
+        K.label(fg, ['THE CONSTELLATION ', K.name], CX, 1500, { size: 26, color: A.C.bone, alpha: a, spacing: 0.3 })
+        A.text(fg, 'ALIGN', CX, 1572, { size: 26, font: 'mono', spacing: 0.9, color: A.C.gold, alpha: a, weight: 400 })
       } else {
         // ALIGN stamped below, mantra-style
         const e = 1 - ease.outExpo(seg(tc, 0, 0.45))

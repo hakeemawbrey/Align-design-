@@ -109,13 +109,13 @@
         const na = ease.outCubic(seg(t, p.st + 0.25, p.st + 0.5))
         const below = p.y < CY // labels sit on the inner side, clear of the ring
         const ly = p.y + (below ? 96 : -96)
-        const tagY = below ? ly + 30 : ly - 30
+        const tagY = below ? ly + 32 : ly - 32
         const nm = S.name.toUpperCase()
-        const tw = nm.length * 24 * 0.88 + 28
+        const tw = Math.max(nm.length, TAGS[p.k].length) * 24 * 0.88 + 28
         fg.fillStyle = rgba('#07040f', 0.8 * na)
-        fg.fillRect(p.x - tw / 2, Math.min(ly, TAGS[p.k] ? tagY : ly) - 20, tw, TAGS[p.k] ? 70 : 40)
+        fg.fillRect(p.x - tw / 2, Math.min(ly, TAGS[p.k] ? tagY : ly) - 20, tw, TAGS[p.k] ? 72 : 40)
         A.text(fg, nm, p.x, ly, { size: 24, font: 'mono', spacing: 0.28, color: A.C.bone, alpha: na, weight: 700 })
-        if (TAGS[p.k]) A.text(fg, TAGS[p.k], p.x, tagY, { size: 19, font: 'mono', spacing: 0.4, color: mixHex(RUB, '#ffffff', 0.35), alpha: na, weight: 700 })
+        if (TAGS[p.k]) A.text(fg, TAGS[p.k], p.x, tagY, { size: 24, font: 'mono', spacing: 0.4, color: mixHex(RUB, '#ffffff', 0.35), alpha: na, weight: 700 })
       })
 
       /* ---- centre glyph ---- */
@@ -132,7 +132,7 @@
       pos.forEach((p, k) => { if (p.on) { if (k) items.push(' '); items.push({ sign: p.s, color: mixHex(SIGNS[p.s].color, '#ffffff', 0.2) }) } })
       const ba = ease.outCubic(seg(t, 0.5, 0.8))
       K.label(fg, items, CX, 1520, { size: 28, color: A.C.bone, alpha: ba })
-      A.text(fg, `${K.element} + ${K.idx % 2 === 0 ? (K.element === 'FIRE' ? 'AIR' : 'FIRE') : (K.element === 'EARTH' ? 'WATER' : 'EARTH')}`, CX, 1585, { size: 20, font: 'mono', spacing: 0.5, color: A.C.gold, alpha: 0.8 * ease.outCubic(seg(t, 2.5, 2.8)), weight: 400 })
+      A.text(fg, `${K.element} + ${K.idx % 2 === 0 ? (K.element === 'FIRE' ? 'AIR' : 'FIRE') : (K.element === 'EARTH' ? 'WATER' : 'EARTH')}`, CX, 1585, { size: 24, font: 'mono', spacing: 0.5, color: A.C.gold, alpha: 1 * ease.outCubic(seg(t, 2.5, 2.8)), weight: 400 })
     },
   })
 })()

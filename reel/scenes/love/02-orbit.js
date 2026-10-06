@@ -94,8 +94,8 @@
       L.glyphPlate(fg, L.ib, P.bx, P.by - goff, 62, L.colB, out, 0.5 + 0.4 * pu * near)
 
       /* copy */
-      const c1 = ease.outCubic(seg(t, 0.35, 1.2)) * (1 - ease.inQuad(seg(t, 4.5, 4.95)))
-      const c2 = ease.outCubic(seg(t, 2.0, 2.85)) * (1 - ease.inQuad(seg(t, 4.5, 4.95)))
+      const c1 = ease.outCubic(seg(t, 1.3, 2.1)) // after sky A has swung past the top * (1 - ease.inQuad(seg(t, 4.5, 4.95)))
+      const c2 = ease.outCubic(seg(t, 2.5, 3.3)) * (1 - ease.inQuad(seg(t, 4.5, 4.95)))
       L.inked(fg, () => {
         A.text(fg, 'Same stars.', 540, 330 + 10 * (1 - c1), { size: 70, italic: true, weight: 400, color: L.BONE, alpha: c1 })
         A.text(fg, 'Different orbits.', 540, 1600 + 10 * (1 - c2), { size: 70, italic: true, weight: 400, color: L.BONE, alpha: c2 })

@@ -113,7 +113,7 @@
       if (pr < 6) continue
       const fa = clamp((L - d) / 2.4) * clamp((d - 0.3) / 0.45) * alpha
       ctx.globalCompositeOperation = 'source-over'
-      glow(ctx, x, y, pr * 1.1, p.smoke, 0.75 * fa * (1 - exit), 0.6)
+      glow(ctx, x, y, pr * 1.1, p.smoke, 0.38 * fa * (1 - exit), 0.6)
       ctx.globalCompositeOperation = 'lighter'
       const ux = (E.x - x) / (rr || 1), uy = (E.y - y) / (rr || 1)
       glow(ctx, x + ux * pr * 0.3, y + uy * pr * 0.3, pr * 0.8, c.c < 0.5 ? p.cloud : c.c < 0.8 ? p.billow : p.gold, (0.05 + 0.08 * c.c) * fa, 0.4)
@@ -159,11 +159,22 @@
     }
     ctx.globalAlpha = 1
 
-    // the eye: white-hot core with a breathing halo (pulses on every beat)
+    // the eye: white-hot core with a breathing halo (pulses on every beat).
+    // iris (0..1): while a form is held, the eye opens into a dark pupil so the line work reads.
     const beat = Math.exp(-mod(T, 0.5) * 7)
+    const iris = o.iris || 0
     glow(ctx, E.x, E.y, 520 * open * (1 + exit * 3), p.mid, 0.5 * alpha, 0.3)
-    glow(ctx, E.x, E.y, (190 + 30 * beat) * open * (1 + exit * 3), p.gold, 0.85 * alpha)
-    glow(ctx, E.x, E.y, (70 + 16 * beat) * (0.4 + 0.6 * open) * (1 + exit * 4), p.hot, alpha)
+    if (iris > 0) {
+      ctx.globalCompositeOperation = 'source-over'
+      const ir = o.irisR || 330
+      const g = ctx.createRadialGradient(E.x, E.y, 0, E.x, E.y, ir)
+      g.addColorStop(0, rgba(p.smoke, 0.88 * iris)); g.addColorStop(0.62, rgba(p.smoke, 0.7 * iris)); g.addColorStop(1, rgba(p.smoke, 0))
+      ctx.fillStyle = g; ctx.fillRect(E.x - ir, E.y - ir, ir * 2, ir * 2)
+      ctx.globalCompositeOperation = 'lighter'
+    }
+    const ik = 1 - 0.8 * iris
+    glow(ctx, E.x, E.y, (190 + 30 * beat) * open * (1 + exit * 3), p.gold, 0.85 * alpha * ik)
+    glow(ctx, E.x, E.y, (70 + 16 * beat) * (0.4 + 0.6 * open) * (1 + exit * 4), p.hot, alpha * ik)
     ctx.restore()
   }
 
@@ -287,8 +298,8 @@
       const V = A.vortex
       const E = V.eye(T)
       const open = ease.outCubic(seg(T, BLOOM, BLOOM + 0.9))
-      A.fx.halftone = A.param('ht', '1') !== '0'
-      A.fx.halftoneCell = 6
+      A.fx.halftone = false // the fire runs clean and cinematic; the print screen returns when we emerge
+      A.fx.look = { lift: 0.35, grain: 0.85 }
       // the spark: a single point breathing in the dark, swelling into the bloom
       const pre = seg(T, 0, BLOOM)
       if (T < BLOOM + 0.2) {
@@ -307,7 +318,7 @@
       }
       // ALIGN ring arrives with the fall
       V.ring(fg, T, { alpha: ease.outCubic(seg(T, 1.0, 1.6)), r: lerp(240, 345, ease.outCubic(seg(T, 0.9, 1.8))) })
-      V.figure(fg, T, { alpha: ease.outCubic(seg(T, 0.75, 1.2)) })
+      V.figure(fg, T, { alpha: ease.outCubic(seg(T, 0.55, 0.75)) })
       // the line
       const la = ease.outCubic(seg(T, 0.08, 0.4)) * (1 - ease.inQuad(seg(T, 1.45, 1.9)))
       const ly = lerp(1090, 1430, ease.inOutCubic(seg(T, BLOOM, 1.1)))
