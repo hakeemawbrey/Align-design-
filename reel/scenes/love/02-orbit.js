@@ -31,8 +31,8 @@
       const out = 1 - ease.inQuad(seg(t, 4.75, 5)) // hand-off into union is mostly continuous
 
       /* background */
-      A.stars(bg, T, { alpha: 0.55, count: 240, seed: 21 })
-      L.galaxies(bg, T, { alpha: 0.95 + 0.12 * pu * near, scale: lerp(210, 188, near) })
+      A.stars(bg, T, { alpha: 0.55, count: 240, seed: 22 })
+      L.galaxies(bg, T, { alpha: 0.95 + 0.12 * pu * near, scale: lerp(230, 200, near) })
       L.glow(bg, P.ax, P.ay, 260, L.colA, 0.22)
       L.glow(bg, P.bx, P.by, 260, L.colB, 0.22)
       // a warm field gathers in the shared centre
@@ -48,8 +48,8 @@
       fg.restore()
 
       /* ALIGN rings, ride with each sky */
-      A.ringOfWords(fg, 'ALIGN', P.ax, P.ay, 236 - 30 * near, { size: 15, font: 'mono', weight: 700, spacing: 0.3, color: L.colA, alpha: 0.45 * (1 - 0.5 * near), start: T * 0.06, sep: '  ·  ' })
-      A.ringOfWords(fg, 'ALIGN', P.bx, P.by, 236 - 30 * near, { size: 15, font: 'mono', weight: 700, spacing: 0.3, color: L.colB, alpha: 0.45 * (1 - 0.5 * near), start: -T * 0.06, sep: '  ·  ' })
+      A.ringOfWords(fg, 'ALIGN', P.ax, P.ay, 236 - 30 * near, { size: 19, font: 'mono', weight: 700, spacing: 0.3, color: L.colA, alpha: 0.6 * (1 - 0.5 * near), start: T * 0.06, sep: '  ·  ' })
+      A.ringOfWords(fg, 'ALIGN', P.bx, P.by, 236 - 30 * near, { size: 19, font: 'mono', weight: 700, spacing: 0.3, color: L.colB, alpha: 0.6 * (1 - 0.5 * near), start: -T * 0.06, sep: '  ·  ' })
 
       /* constellations */
       const cp = ease.outCubic(seg(t, 0.2, 1.6))
@@ -67,12 +67,12 @@
         if (f <= 0) return
         const [x1, y1] = sa[i], [x2, y2] = sb[j]
         const xe = lerp(x1, x2, ease.outCubic(f)), ye = lerp(y1, y2, ease.outCubic(f))
-        const a = (0.16 + 0.55 * pu) * (0.6 + 0.4 * near)
+        const a = (0.3 + 0.6 * pu) * (0.65 + 0.35 * near)
         fg.strokeStyle = rgba(L.RUB, a * 0.35)
         fg.lineWidth = 4 + 3 * pu
         fg.beginPath(); fg.moveTo(x1, y1); fg.lineTo(xe, ye); fg.stroke()
         fg.strokeStyle = rgba(mixHex(L.RUB, '#ffd9e4', pu * 0.6), Math.min(1, a + 0.12))
-        fg.lineWidth = 1.1
+        fg.lineWidth = 1.3 + 0.6 * pu
         fg.beginPath(); fg.moveTo(x1, y1); fg.lineTo(xe, ye); fg.stroke()
         // a bead of light travels each line on the lub
         const ph = ((T % L.BEAT) + L.BEAT) % L.BEAT
@@ -99,9 +99,9 @@
       L.inked(fg, () => {
         A.text(fg, 'Same stars.', 540, 330 + 10 * (1 - c1), { size: 70, italic: true, weight: 400, color: L.BONE, alpha: c1 })
         A.text(fg, 'Different orbits.', 540, 1600 + 10 * (1 - c2), { size: 70, italic: true, weight: 400, color: L.BONE, alpha: c2 })
-        A.text(fg, 'SYNASTRY  ·  ' + L.SA.name.toUpperCase() + ' + ' + L.SB.name.toUpperCase(), 540, 260, { size: 18, font: 'mono', spacing: 0.3, color: L.GOLD, alpha: c1 * 0.85 })
+        A.text(fg, 'SYNASTRY  ·  ' + L.SA.name.toUpperCase() + ' + ' + L.SB.name.toUpperCase(), 540, 256, { size: 24, font: 'mono', spacing: 0.16, color: L.GOLD, alpha: c1 * 0.85 })
       })
-      L.mantra(fg, c2, 1668)
+      L.mantra(fg, c2, 1680)
     },
   })
 })()

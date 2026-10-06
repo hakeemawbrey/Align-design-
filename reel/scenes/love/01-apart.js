@@ -44,8 +44,9 @@
   L.pulse = (T) => (T >= TL.hit ? L.lubdub(T - TL.hit, BEAT) : L.lubdub(T, L.heartPeriod(T)))
 
   /* the pair orbits a shared centre. A sits at angle th, B opposite. */
-  const TH0 = Math.atan2(-320, -240) // A upper-left, B lower-right
-  const R0 = 400, R_ORBIT_END = 168, R_VESICA = 75, VR = 150 // vesica circles: radius VR, centres ±R_VESICA (VR = 2R)
+  const KX = 0.75 // the shared orbit is an ellipse (narrower than tall) so the skies stay in frame
+  const TH0 = Math.atan2(-320, -320) // with KX: A upper-left (-240,-320), B lower-right
+  const R0 = Math.hypot(320, 320), R_ORBIT_END = 224, R_VESICA = 100, VR = 150 // vesica circles: radius VR, centres ±R_VESICA (VR = 2R)
   L.VR = VR
   L.CX = 540
   L.cy = (T) => lerp(960, 900, ease.inOutCubic(seg(T, 9, 10.2)))
@@ -65,7 +66,7 @@
       const s = stepped(T)
       R = lerp(R0 + 6 * Math.sin(3.2), R_ORBIT_END, ease.inOutSine ? ease.inOutSine(s) : ease.inOutQuad(s))
       // angular sweep accelerates as they near (angular momentum), ending at A-left / B-right
-      th = lerp(thApartEnd, TH_UNION + TAU, ease.inOutQuad(s) * 0.85 + s * 0.15)
+      th = lerp(thApartEnd, TH_UNION, ease.inOutQuad(s) * 0.6 + s * 0.4)
     } else if (T < TL.hit) {
       th = TH_UNION
       const a = ease.inOutCubic(seg(T, 9, 10.4))
@@ -73,7 +74,7 @@
       R = lerp(lerp(R_ORBIT_END, R_VESICA, a), 0, b)
     } else { th = TH_UNION; R = 0 }
     const cx = L.CX, cy = L.cy(T)
-    const dx = Math.cos(th) * R, dy = Math.sin(th) * R
+    const dx = Math.cos(th) * R * KX, dy = Math.sin(th) * R
     return { ax: cx + dx, ay: cy + dy, bx: cx - dx, by: cy - dy, R, th, cx, cy }
   }
   /** 0 = far apart … 1 = touching */
@@ -82,10 +83,11 @@
   /** the two halftone galaxies (bg). o: alpha, scale, merge (0..1 adds a joint core) */
   L.galaxies = (bg, T, o = {}) => {
     const P = L.pos(T)
-    const sc = o.scale || 210
+    const sc = o.scale || 230
+    A.fx.halftoneCell = 7
     const al = o.alpha == null ? 1 : o.alpha
-    A.galaxy(bg, T, { cx: P.ax, cy: P.ay, scale: sc, rot: 0.4 + T * 0.32, tilt: 0.62, tiltAngle: 0.55, alpha: 0.62 * al, tint: L.colA, tintAmt: 0.62, density: o.density || 0.42 })
-    A.galaxy(bg, T, { cx: P.bx, cy: P.by, scale: sc, rot: 2.1 - T * 0.3, tilt: 0.62, tiltAngle: -0.55, alpha: 0.62 * al, tint: L.colB, tintAmt: 0.62, density: o.density || 0.42 })
+    A.galaxy(bg, T, { cx: P.ax, cy: P.ay, scale: sc, rot: 0.4 + T * 0.32, tilt: 0.62, tiltAngle: 0.55, alpha: 0.62 * al, tint: L.colA, tintAmt: 0.62, density: o.density || 0.7 })
+    A.galaxy(bg, T, { cx: P.bx, cy: P.by, scale: sc, rot: 2.1 - T * 0.3, tilt: 0.62, tiltAngle: -0.55, alpha: 0.62 * al, tint: L.colB, tintAmt: 0.62, density: o.density || 0.7 })
     return P
   }
 
@@ -101,12 +103,14 @@
   L.column = (ctx, x, y, near, pulse, alpha, sp = 22) => {
     if (alpha <= 0) return
     ctx.save()
+    ctx.strokeStyle = rgba(BONE, 0.22 * alpha); ctx.lineWidth = 1
+    ctx.beginPath(); ctx.moveTo(x, y - 3.6 * sp); ctx.lineTo(x, y + 3.6 * sp); ctx.stroke()
     for (let i = 0; i < 7; i++) {
       const yy = y + (3 - i) * sp
       const heart = i === 3
       const c = heart ? mixHex(HEART, RUB, ease.inOutQuad(near)) : A.CHAKRA_COLORS[i]
-      const a = alpha * (heart ? 0.55 + 0.45 * near : 0.38)
-      const r = heart ? 4.5 + 4 * near + 3 * pulse * near : 3
+      const a = alpha * (heart ? 0.7 + 0.3 * near : 0.75)
+      const r = heart ? 5 + 5 * near + 3 * pulse * near : 3.6
       L.glow(ctx, x, yy, r * (heart ? 4 + 4 * near + 3 * pulse : 3), c, a * (heart ? 0.7 : 0.4))
       ctx.globalAlpha = a
       ctx.fillStyle = c
@@ -135,11 +139,11 @@
     if (al <= 0) return
     Z.glyph(ctx, ia, x - gap, y, size, { color: o.colorA || mixHex(BONE, L.colA, 0.3), alpha: al, glow: o.glow || 0.6, glowColor: L.colA, lw: o.lw })
     Z.glyph(ctx, ib, x + gap, y, size, { color: o.colorB || mixHex(BONE, L.colB, 0.3), alpha: al, glow: o.glow || 0.6, glowColor: L.colB, lw: o.lw })
-    A.text(ctx, '×', x, y + size * 0.02, { size: size * 0.62, weight: 400, color: o.xColor || RUB, alpha: al * (o.xAlpha == null ? 1 : o.xAlpha) })
+    A.text(ctx, '×', x, y + size * 0.02, { size: size * 0.8, weight: 500, color: o.xColor || RUB, alpha: al * (o.xAlpha == null ? 1 : o.xAlpha) })
   }
 
   /** bottom mantra: ALIGN, small mono, wide tracking */
-  L.mantra = (ctx, alpha, y = 1668, col = GOLD) => A.text(ctx, 'ALIGN', 540, y, { size: 22, font: 'mono', spacing: 0.9, color: col, alpha: 0.75 * alpha })
+  L.mantra = (ctx, alpha, y = 1668, col = GOLD) => A.text(ctx, 'ALIGN', 540, y, { size: 24, font: 'mono', spacing: 0.9, color: col, alpha: 0.75 * alpha })
 
   /** text with an ink shadow so it reads over halftone */
   L.inked = (ctx, fn) => { ctx.save(); ctx.shadowColor = 'rgba(5,3,15,0.92)'; ctx.shadowBlur = 18; fn(); ctx.restore() }
@@ -149,7 +153,7 @@
     if (alpha <= 0) return
     L.inked(ctx, () => {
       A.text(ctx, S.name.toUpperCase(), x, y, { size: 38, weight: 500, spacing: 0.32, color: BONE, alpha })
-      A.text(ctx, `${S.dates.toUpperCase()}  ·  ${S.element.toUpperCase()}`, x, y + 42, { size: 17, font: 'mono', spacing: 0.16, color: mixHex(A.C.label2, col, 0.35), alpha: alpha * 0.9 })
+      A.text(ctx, `${S.dates.toUpperCase()}  ·  ${S.element.toUpperCase()}`, x, y + 46, { size: 24, font: 'mono', spacing: 0.1, color: mixHex(A.C.label2, col, 0.35), alpha: alpha * 0.9 })
     })
   }
 
@@ -160,15 +164,15 @@
     draw({ bg, fg, t, T }) {
       const fadeIn = ease.outCubic(seg(t, 0, 1.2))
       const pu = L.lubdub(T) // a faint heartbeat even now
-      A.stars(bg, T, { alpha: 0.55 * fadeIn, count: 240, seed: 21 })
-      const P = L.galaxies(bg, T, { alpha: fadeIn * (0.9 + 0.1 * pu), scale: lerp(170, 210, ease.outCubic(seg(t, 0, 2))) })
+      A.stars(bg, T, { alpha: 0.55 * fadeIn, count: 240, seed: 22 })
+      const P = L.galaxies(bg, T, { alpha: fadeIn * (0.9 + 0.1 * pu), scale: lerp(190, 230, ease.outCubic(seg(t, 0, 2))) })
       L.glow(bg, P.ax, P.ay, 260, L.colA, 0.22 * fadeIn)
       L.glow(bg, P.bx, P.by, 260, L.colB, 0.22 * fadeIn)
 
       // each sky has its own little ring of ALIGN
       const ra = ease.outCubic(seg(t, 0.5, 1.8))
-      A.ringOfWords(fg, 'ALIGN', P.ax, P.ay, 236, { size: 15, font: 'mono', weight: 700, spacing: 0.3, color: L.colA, alpha: 0.45 * ra, start: T * 0.06, sep: '  ·  ' })
-      A.ringOfWords(fg, 'ALIGN', P.bx, P.by, 236, { size: 15, font: 'mono', weight: 700, spacing: 0.3, color: L.colB, alpha: 0.45 * ra, start: -T * 0.06, sep: '  ·  ' })
+      A.ringOfWords(fg, 'ALIGN', P.ax, P.ay, 236, { size: 19, font: 'mono', weight: 700, spacing: 0.3, color: L.colA, alpha: 0.6 * ra, start: T * 0.06, sep: '  ·  ' })
+      A.ringOfWords(fg, 'ALIGN', P.bx, P.by, 236, { size: 19, font: 'mono', weight: 700, spacing: 0.3, color: L.colB, alpha: 0.6 * ra, start: -T * 0.06, sep: '  ·  ' })
       fg.save(); fg.lineWidth = 1
       for (const [x, y, c] of [[P.ax, P.ay, L.colA], [P.bx, P.by, L.colB]]) {
         fg.strokeStyle = rgba(c, 0.25 * ra)
@@ -184,9 +188,9 @@
       const ga = ease.outCubic(seg(t, 0.3, 1.1)), gb = ease.outCubic(seg(t, 0.7, 1.5))
       L.glyphPlate(fg, ia, P.ax, P.ay - 172, 66, L.colA, ga, 0.5)
       L.glyphPlate(fg, ib, P.bx, P.by - 172, 66, L.colB, gb, 0.5)
-      Z.glyph(fg, ia, P.ax, P.ay - 172, 66, { progress: ga, color: mixHex(BONE, L.colA, 0.35), glow: 0.5, glowColor: L.colA, alpha: 0 })
-      L.label(fg, L.SA, L.colA, P.ax, P.ay - 285, ga)
-      L.label(fg, L.SB, L.colB, P.bx, P.by + 205, gb)
+      const lo = 1 - ease.inOutQuad(seg(t, 3.2, 3.9))
+      L.label(fg, L.SA, L.colA, P.ax, P.ay - 300, ga * lo)
+      L.label(fg, L.SB, L.colB, P.bx, P.by + 205, gb * lo)
 
       // copy, slow and tender, in the dark between them
       const c1 = ease.outCubic(seg(t, 0.6, 1.6)) * (1 - 0.0 * t)

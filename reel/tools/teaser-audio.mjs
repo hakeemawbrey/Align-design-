@@ -1,6 +1,7 @@
 // Align launch teasers: original, fully synthesized cues for the three teaser timelines.
 // usage: node tools/teaser-audio.mjs
-//   -> out/audio/sign-<id>.wav (x12, 15 s, 120 bpm), out/audio/love.wav (20 s, 90 bpm), out/audio/launch.wav (15 s, 120 bpm)
+//   -> out/audio/sign-<id>.wav (x12, 15 s, 120 bpm), out/audio/love.wav (20 s, 90 bpm), out/audio/launch.wav (15 s, 120 bpm),
+//      out/audio/vortex.wav (20 s, 120 bpm)
 // 48 kHz 16-bit stereo, deterministic, no samples. Instruments come from tools/synth.mjs (the hero soundtrack's kit).
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
@@ -30,7 +31,7 @@ function finish(s, name, opts) {
   writeWav(join(OUT, name), L, R)
   const r = rmsReport(L, R, 0.5)
   console.log(`  ${name.padEnd(20)} ${s.DUR}s`)
-  if (VERBOSE || /leo|love|launch/.test(name)) console.log('    RMS/0.5s:', r.join(' '))
+  if (VERBOSE || /leo|love|launch|vortex/.test(name)) console.log('    RMS/0.5s:', r.join(' '))
 }
 
 // =====================================================================================
@@ -309,6 +310,84 @@ function renderLaunch(TL) {
 }
 
 // =====================================================================================
+// 4. INTO THE VORTEX — 120 bpm, D Lydian/major, ambient-cinematic fall; chapters every 2 s, emerge at 16
+// =====================================================================================
+function renderVortex(TL) {
+  const s = createSynth({ dur: TL.duration, seed: 0x7047e })
+  const BEAT = 60 / TL.bpm, DE = TL.descent, EM = TL.emerge
+  const BLOOM = 0.5, breath = EM.start - 0.4
+  // ascending ethereal progression, one chord per chapter: Dmaj9  Em9  F#m7  Gmaj7#11  A(add9)  Bm9  Asus4(add9)
+  const PROG = [
+    [50, [62, 66, 69, 73, 76]], [52, [64, 67, 71, 74, 78]], [54, [66, 69, 73, 76, 81]], [55, [67, 71, 74, 78, 85]],
+    [57, [69, 73, 76, 81, 83]], [59, [71, 74, 78, 81, 85]], [57, [69, 74, 76, 81, 86]],
+  ]
+
+  // ---- 0–0.5 a spark in the dark ----
+  s.bell(0.06, 98, 0.03, 0.2, 0.9, 0.5, 2.0, 0.8)
+  s.bell(0.22, 105, 0.012, -0.3, 0.9, 0.35, 2.0, 0.5)
+
+  // ---- 0.5 the vortex blooms: deep whoosh, sub boom, and the wind that carries the fall ----
+  s.whoosh(BLOOM, 0.45, 0.1, 120, 1600, 1)
+  s.boom(BLOOM, 0.5, 0.9, 34, 45, 0.01)
+  s.kick(BLOOM, 0.45, 0.4, 38, 90, 0)
+  s.bowl(BLOOM, 50, 0.16, 0, 0.8, 1.0)
+  s.cymbalSwell(BLOOM, BLOOM + 3, 0.05, -1, 0.8)
+  s.wind(BLOOM, breath, 220, 4200, 0.03, 0.11, 0.8, 0.6, 0.15, 0.5, 1.4)
+  s.wind(BLOOM + 0.2, breath, 900, 9000, 0.008, 0.05, 1.6, 1.2, 0.15, 0.6, 2)
+  s.drone(BLOOM, breath, [[38, 0.08], [45, 0.05], [50, 0.03]], 150, 900, 1.2, 0.05)
+
+  // ---- 2–16 seven chapters ----
+  PROG.forEach(([root, ch], c) => {
+    const t = DE.start + c * DE.each, t1 = Math.min(t + DE.each, breath), p = c / 6
+    // crystalline chord: bowl on the root + strummed bells
+    s.bowl(t, root + 12, 0.13 + 0.015 * c, c % 2 ? 0.2 : -0.2, 0.8, 0.7)
+    ch.forEach((m, j) => s.bell(t + j * 0.035, m + 12, 0.028 + 0.004 * c, (j / (ch.length - 1)) * 1.4 - 0.7, 0.9, 1.1, 3.0 + 0.5 * (j % 2), 1.2 + 0.4 * p))
+    s.whoosh(t, 0.9, 0.05 + 0.04 * p, 350, 5000 + 3000 * p, c % 2 ? -1 : 1) // fly-through into the downbeat
+    s.wobblePad(t, t1, ch.slice(0, 4), 0.006 + 0.003 * p, c === 0 ? 1.2 : 0.3, c === 6 ? 0.03 : 0.5, 14)
+    s.sub(t, t1 - 0.02, root - 12 < 33 ? root : root - 12, 0.09 + 0.03 * p, 0.4, 0.25)
+    s.shimmer(t, t1, [ch[2] + 24, ch[4] + 12], 0.004 + 0.006 * p, 4, 7, 0.3, 0.4)
+  })
+  // half-time pulse from 4 s: felt kick + rim + shaker, growing in density and brightness
+  for (let t = 4; t < breath - 1e-6; t += BEAT) {
+    const b = Math.round((t - 4) / BEAT) % 4, p = (t - 4) / (breath - 4)
+    if (b === 0) s.kick(t, 0.55 + 0.25 * p, 0.28, 44, 95, 0.01)
+    if (b === 2) s.tick(t, 0.07 + 0.06 * p, 1750, 0.1, 0.4) // rim on the half-time backbeat
+    if (t >= 8 && b === 1) s.kick(t + BEAT / 2, 0.35 + 0.15 * p, 0.22, 44, 90, 0.01)
+    if (t >= 12 && b === 3) s.kick(t + BEAT / 2, 0.3, 0.2, 44, 90, 0.01)
+    const div = t < 8 ? 2 : 4 // shaker: 8ths, then 16ths
+    for (let j = 0; j < div; j++) { const acc = j === div / 2; s.hat(t + j * BEAT / div + (j % 2 ? 0.012 : 0), (acc ? 0.035 : 0.02) * (0.6 + 0.8 * p), 0.03 + 0.02 * (1 - p), j % 2 ? 0.45 : -0.45, 4200 + 3000 * p, 0.3) }
+  }
+  // into the breath: reverse cymbal and a backwards bowl
+  s.cymbalSwell(breath - 2.2, breath, 0.13, 1, 0.4)
+  s.reverseBowl(breath, 1.6, 74, 0.07)
+
+  // ---- 16 EMERGE: a warm, airy bloom ----
+  const E = EM.start
+  s.boom(E, 0.4, 1.1, 36, 30, 0.02)
+  s.kick(E, 0.4, 0.45, 38, 80, 0)
+  s.bowl(E, 50, 0.26, -0.15, 0.85, 1.3)
+  s.bowl(E + 0.012, 62, 0.18, 0.2, 0.85, 1.2)
+  const LUSH = [50, 57, 62, 66, 69, 73, 76, 81]
+  s.padChord(E, TL.duration, LUSH, 0.016, 0.18, 0.01)
+  s.strings(E, TL.duration, [62, 69, 74, 78], 0.008, 0.6, 0.01, 1)
+  s.wobblePad(E, TL.duration, [74, 78, 81, 85], 0.006, 0.8, 0.01, 10)
+  ;[74, 78, 81, 85, 88].forEach((m, j) => s.bell(E + 0.02 + j * 0.05, m, 0.035, j / 2 - 1, 0.95, 2.0, 3.5, 1.2))
+  s.cymbalSwell(E, E + 3.5, 0.09, -1, 0.9) // the airy tail
+  s.wind(E, TL.duration, 2500, 900, 0.04, 0.01, 0.8, 0.4, 0.5, 0.6, 1)
+  s.sub(E + 0.3, TL.duration - 0.05, 38, 0.12, 0, 0.4)
+  // 16–20 the bell rings out
+  s.bell(E + 1.5, 86, 0.03, 0.35, 0.95, 1.8, 3.5, 1.1)
+  s.bell(E + 2.5, 81, 0.025, -0.35, 0.95, 1.6, 3.5, 1.0)
+  s.bowl(E + 2.0, 69, 0.07, 0.3, 0.9, 0.9)
+
+  s.processLead({ beat: BEAT })
+  s.processPad({ cut: (t) => t < DE.start ? 1200 : t < breath ? 1600 + 2600 * ((t - DE.start) / (breath - DE.start)) : t < E ? 4200 : 3600, duck: 0.15 })
+  s.processDrums({ cut: (t) => (t < 8 ? 4500 : t < breath ? 4500 + 7000 * ((t - 8) / (breath - 8)) : 6000) })
+  s.reverb({ inGain: 0.022, fb: 0.88, damp: 0.3, resetAt: [breath] })
+  finish(s, 'vortex.wav', { revWet: 3.6, drive: 1.3, fadeOut: 0.4, limitDb: 2, gates: [{ start: breath, end: E, floor: 0.015, ramp: 0.02 }] })
+}
+
+// =====================================================================================
 const only = process.argv.slice(2).filter((a) => !a.startsWith('--'))
 const want = (n) => !only.length || only.includes(n)
 console.log('Align teaser audio ->', OUT)
@@ -316,4 +395,5 @@ const SIGN_TL = loadTL('sign.js')
 SIGNS.forEach(([id], i) => { if (want(id) || want('signs')) renderSign(i, SIGN_TL) })
 if (want('love')) renderLove(loadTL('love.js'))
 if (want('launch')) renderLaunch(loadTL('launch.js'))
+if (want('vortex')) renderVortex(loadTL('vortex.js'))
 console.log(`done in ${((performance.now() - T0) / 1000).toFixed(1)}s`)

@@ -46,9 +46,11 @@
   const matches = [(idx + 4) % 12, (idx + 8) % 12, (idx + 2) % 12, (idx + 6) % 12]
 
   const col = S.color
+  const [cr, cg, cb] = A.hexToRgb(col)
+  const lum = (0.3 * cr + 0.59 * cg + 0.11 * cb) / 255 // darker sign colours get lifted more
   const K = (A.signTeaser = {
     idx, S, col,
-    ink: mixHex(col, '#ffffff', 0.2), // sign colour lifted a touch for type on near-black
+    ink: mixHex(col, '#ffffff', lum < 0.525 ? 0.36 : 0.2), // sign colour lifted a touch for type on near-black
     name: S.name.toUpperCase(),
     traits: TRAITS[S.id],
     aura: AURA[idx].toUpperCase(),
@@ -145,7 +147,7 @@
 
   /* ================= the hook ================= */
   const TL = A.TL.hook
-  const CX = 540, GY = 800 // glyph centre
+  const CX = 540, GY = 820 // glyph centre
   const NAME_Y = 1290
 
   A.registerScene({
@@ -166,12 +168,12 @@
       A.stars(bg, t, { alpha: 0.7, count: 240, seed: 70 + idx })
       A.galaxy(bg, t, {
         cx: CX, cy: GY + 40, scale: 860 * (1 + 0.25 * slam + 0.03 * t), rot: 0.6 + idx * 0.5 + 0.18 * t - 1.6 * slam,
-        tilt: 0.62, tiltAngle: 0.3 + (idx % 4) * 0.25 - 0.4, tint: col, tintAmt: 0.62, alpha: 0.85,
+        tilt: 0.62, tiltAngle: 0.3 + (idx % 4) * 0.25 - 0.4, tint: col, tintAmt: 0.62, alpha: 0.72,
       })
       K.glow(bg, CX, GY, 620 + 80 * pulse, col, 0.22 + 0.25 * slam)
-      K.hush(bg, CX, GY, 300, 300, 0.45)
+      K.hush(bg, CX, GY, 340, 340, 0.62)
       K.track(bg, CX, GY, 372, 60, 0.8)
-      K.hush(bg, CX, 400, 420, 70, 0.9)
+      K.hush(bg, CX, 345, 420, 70, 0.9)
       K.hush(bg, CX, NAME_Y, 560, 170, 0.92)
       K.hush(bg, CX, 1440, 420, 60, 0.85)
       K.hush(bg, CX, 1560, 300, 50, 0.8)
@@ -191,20 +193,21 @@
         const e = ease.outCubic(seg(u, 0, 0.45))
         A.zodiac.glyph(fg, idx, CX, GY, 600 * (1 + 0.22 * e), { color: K.ink, alpha: 0.45 * (1 - e), lw: 3 })
       }
+      A.zodiac.glyph(fg, idx, CX, GY, size, { color: '#07040f', lw: 58, alpha: 0.55 }) // dark underlay
       A.zodiac.glyph(fg, idx, CX, GY, size, { color: K.ink, glow: 1, glowColor: col, lw: 30 })
       // hot inner line, a print highlight
       A.zodiac.glyph(fg, idx, CX, GY, size, { color: mixHex(col, '#ffffff', 0.7), lw: 6, alpha: 0.55 })
 
       /* ---- copy ---- */
       const kIn = ease.outCubic(seg(t, 0.03, 0.25))
-      K.kicker(fg, 'CALLING ALL', CX, 400 - 10 * (1 - kIn), A.C.bone, { size: 30, spacing: 0.6, alpha: kIn, line: 70 * kIn, lineColor: K.ink })
+      K.kicker(fg, 'CALLING ALL', CX, 345 - 10 * (1 - kIn), A.C.bone, { size: 30, spacing: 0.6, alpha: kIn, line: 70 * kIn, lineColor: K.ink })
 
       // the sign name slams on beat 2, with the ALIGN outline echo stamped behind it
       if (t >= 0.5) {
         const n = t - 0.5
         const hit = 1 - ease.outExpo(seg(n, 0, 0.35))
         const spacing = lerp(0.32, 0.6, hit)
-        const nsz = K.fit(K.name, { max: 200, maxW: 930, spacing: 0.32 })
+        const nsz = K.fit(K.name, { max: 200, maxW: 840, spacing: 0.32 })
         // ALIGN outline echoes (stamp on beat 3)
         if (t >= 1.0) {
           const e = 1 - ease.outExpo(seg(t - 1.0, 0, 0.3))
