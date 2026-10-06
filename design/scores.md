@@ -684,3 +684,15 @@ seed of life`: seven 10px circles (one centre, six petals) inside a faint
 transparent 34px hit area. It keeps the old button's prototype link to
 S-09b (S-09b itself has no link, since it can't navigate to itself).
 4x render `design/assets/chat-header-seed-of-life.png`.
+
+## Design system page
+
+New Figma page **"Align — design system (Stardust)"** (`2211:349`), built
+from the current v2 screens: 00 cover & contents, 01 principles &
+non-negotiables, 02 colour, 03 typography, 04 layout & rhythm, 05
+components, 06 the card, 07 the guide card, 08 event cards, 09 icons &
+marks, 10 imagery, 11 voice & copy, 12 tokens & what to fix. Parts are
+clones/instances of the real screen parts. Sign glyphs set in Noto Sans
+Symbols so they don't render as emoji. Variables were not changed;
+section 12 lists the mismatches. Repo copy `design/design-system.md`,
+renders `design/assets/design-system-*.png`. S-05 untouched.
