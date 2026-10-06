@@ -447,6 +447,13 @@
     const C = new Path2D()
     arcP(C, 0, 0, sc * fov / Math.sqrt(fov * fov - 1), -PI / 2, io3(win(p, 0, 0.5)))
     paint(ctx, C, O, O.c, 0.18, 0.7)
+    // faint faces give the two fields body
+    const ff = 0.028 * win(p, 0.5, 1)
+    if (ff > 0) for (const [Pp, col] of [[P1, O.c], [P2, O.c2]]) {
+      ctx.save(); ctx.globalAlpha *= ff; ctx.fillStyle = col
+      for (const [i, j, k] of [[0, 1, 2], [0, 2, 3], [0, 3, 1], [1, 2, 3]]) { ctx.beginPath(); ctx.moveTo(Pp[i][0], Pp[i][1]); ctx.lineTo(Pp[j][0], Pp[j][1]); ctx.lineTo(Pp[k][0], Pp[k][1]); ctx.fill() }
+      ctx.restore()
+    }
     edges3(ctx, P2, MERK.E, O, O.c2, (k) => io3(stag(win(p, 0.15, 1), k * 2 + 1, 12, 0.25)))
     edges3(ctx, P1, MERK.E, O, O.c, (k) => io3(stag(win(p, 0.1, 0.95), k * 2, 12, 0.25)))
     const df = win(p, 0.4, 1)
@@ -461,8 +468,8 @@
     if (O.o.solid && SOLIDS[O.o.solid]) { drawSolid(ctx, S, O.o.solid, O, rx, ry, O.p); return }
     const lt = ((O.t % PLAT_PERIOD) + PLAT_PERIOD) % PLAT_PERIOD / PLAT_PERIOD
     const name = platonicAt(O.t)
-    const prog = O.p * io3(clamp(lt / 0.32))
-    const fade = 1 - io3(win(lt, 0.86, 1))
+    const prog = O.p * io3(clamp(lt / 0.28))
+    const fade = 1 - io3(win(lt, 0.91, 1))
     drawSolid(ctx, S, name, O, rx, ry, O.t < PLAT_PERIOD ? O.p : prog, fade)
   })
 
@@ -522,11 +529,12 @@
       else if (dir === 2) { const s = h; out.push({ sq: [x + w - s, y, s], c: [x + w - s, y], a0: 0, r: s }); w -= s }
       else { const s = w; out.push({ sq: [x, y + h - s, s], c: [x + s, y + h - s], a0: PI / 2, r: s }); h -= s }
     }
-    // pole: intersection of the two diagonals
-    const [ax, ay, bx, by] = [-PHI / 2, 0.5, PHI / 2, -0.5], [cx, cy, dx, dy] = [-PHI / 2 + 1, -0.5, PHI / 2, 0.5]
-    const d1 = [bx - ax, by - ay], d2 = [dx - cx, dy - cy]
-    const tt = ((cx - ax) * d2[1] - (cy - ay) * d2[0]) / (d1[0] * d2[1] - d1[1] * d2[0])
-    return { steps: out, pole: [ax + d1[0] * tt, ay + d1[1] * tt] }
+    // pole = limit of the square sequence; the two diagonals through it (original rect + first remainder)
+    const pole = [out[out.length - 1].sq[0] + out[out.length - 1].sq[2] / 2, out[out.length - 1].sq[1] + out[out.length - 1].sq[2] / 2]
+    const dl = (q, a, b) => Math.abs((b[0] - a[0]) * (a[1] - q[1]) - (a[0] - q[0]) * (b[1] - a[1])) / Math.hypot(b[0] - a[0], b[1] - a[1])
+    const best = (x0, y0, x1, y1) => { const A1 = [[x0, y0], [x1, y1]], A2 = [[x0, y1], [x1, y0]]; return dl(pole, ...A1) < dl(pole, ...A2) ? A1 : A2 }
+    const diags = [best(-PHI / 2, -0.5, PHI / 2, 0.5), best(-PHI / 2 + 1, -0.5, PHI / 2, 0.5)]
+    return { steps: out, pole, diags }
   })()
   form('goldenSpiral', 'Golden Spiral', 'φ = 1.618 · rectangles within rectangles', (ctx, S, O) => {
     const k = (S * 0.95) / PHI, p = O.p, st = GOLD_STEPS.steps, n = st.length
@@ -534,8 +542,7 @@
     polyP(Rq, [[-PHI / 2 * k, -0.5 * k], [PHI / 2 * k, -0.5 * k], [PHI / 2 * k, 0.5 * k], [-PHI / 2 * k, 0.5 * k]], io3(win(p, 0, 0.25)), true)
     st.forEach(({ sq: [x, y, s] }, i) => polyP(Rq, [[x * k, y * k], [(x + s) * k, y * k], [(x + s) * k, (y + s) * k], [x * k, (y + s) * k]], io3(stag(win(p, 0.12, 0.6), i, n, 0.3)), true))
     const dp = io3(win(p, 0.55, 0.85))
-    lineP(Dg, -PHI / 2 * k, 0.5 * k, PHI / 2 * k, -0.5 * k, dp)
-    lineP(Dg, (-PHI / 2 + 1) * k, -0.5 * k, PHI / 2 * k, 0.5 * k, dp)
+    for (const [[x1, y1], [x2, y2]] of GOLD_STEPS.diags) lineP(Dg, x1 * k, y1 * k, x2 * k, y2 * k, dp)
     // spiral: arcs by length (each arc length ∝ r)
     const tot = st.reduce((a, s) => a + s.r, 0)
     let rem = io3(win(p, 0.3, 1)) * tot

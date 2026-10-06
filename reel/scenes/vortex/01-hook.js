@@ -321,8 +321,10 @@
       V.figure(fg, T, { alpha: ease.outCubic(seg(T, 0.55, 0.75)) })
       // the line
       const la = ease.outCubic(seg(T, 0.08, 0.4)) * (1 - ease.inQuad(seg(T, 1.45, 1.9)))
-      const ly = lerp(1090, 1430, ease.inOutCubic(seg(T, BLOOM, 1.1)))
+      const ly = 1090
+      fg.save(); fg.shadowColor = 'rgba(8,3,2,0.9)'; fg.shadowBlur = 18
       A.text(fg, 'FROM THE BEGINNING', 540, ly, { size: 28, font: 'mono', weight: 700, color: A.C.bone, spacing: 0.5, alpha: la })
+      fg.restore()
     },
   })
 })()

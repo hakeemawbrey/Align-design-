@@ -117,7 +117,7 @@
     draw({ bg, fg, T }) {
       // clean cinematic fire; blacks lift back toward the house look as we near the indigo
       A.fx.halftone = false
-      A.fx.look = { lift: lerp(0.35, 0.8, seg(T, 10, 16)), grain: 0.85 }
+      A.fx.look = { lift: lerp(0.35, 0.6, seg(T, 12, 16)), grain: 0.85 }
       { // the eye dilates to a dark pupil while each form is held, flares open on each push
         const ci = clamp(Math.floor((T - TL.start) / TL.each), 0, 6), ct = T - chStart(ci)
         const iris = ease.inOutQuad(seg(ct, 0.15, 0.8)) * (1 - ease.inQuad(seg(ct, 1.85, 2.0)))

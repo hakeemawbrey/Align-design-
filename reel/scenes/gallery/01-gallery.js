@@ -4,7 +4,7 @@
 ;(function () {
   const A = window.ALIGN
   const { seg, ease, clamp, rgba, TAU } = A
-  const COLS = 3, TOP = 262, ROW_H = 326, COL_W = 360, FORM = 226
+  const COLS = 3, TOP = 248, ROW_H = 322, COL_W = 360, FORM = 234
 
   // per-form living motion (screen-plane rotation speed, rad/s) for the symmetric 2D forms
   const SPIN = { seed: 0.06, egg: -0.05, flower: 0.04, fruit: -0.04, metatron: 0.035, hexagram: -0.05, phyllotaxis: 0.05 }
@@ -16,7 +16,7 @@
       A.fx.look = { grain: 0.5, soften: 0.3 }
       // background: deep indigo, a whisper of galaxy
       const g = bg.createLinearGradient(0, 0, 0, H)
-      g.addColorStop(0, '#120a2c'); g.addColorStop(0.5, '#0b0620'); g.addColorStop(1, '#07040f')
+      g.addColorStop(0, '#0e0824'); g.addColorStop(0.5, '#090518'); g.addColorStop(1, '#05030c')
       bg.fillStyle = g; bg.fillRect(0, 0, W, H)
       A.galaxy(bg, t, { cx: W / 2, cy: H * 0.52, scale: 900, alpha: 0.13, density: 0.22, rot: t * 0.05, tilt: 0.55 })
 
@@ -56,17 +56,18 @@
 
         const o = { t, progress: prog, rot: (SPIN[F.id] || 0) * t, glow: 0.6 }
         if (F.id === 'phyllotaxis') o.rot = -t * 0.05
+        if (F.id === 'platonic') o.t = Math.max(0, t - st) // cycle starts when the cell starts, so draw-in never meets a cross-fade
         F.draw(ctx, cx, cy, FORM, o)
 
         // labels
         let note = F.note
-        if (F.id === 'platonic' && geo.platonicAt) note = geo.platonicAt(t)
+        if (F.id === 'platonic' && geo.platonicAt) note = geo.platonicAt(Math.max(0, t - st))
         A.text(ctx, F.name.toUpperCase(), cx, y0 + ROW_H - 52, { size: 17, font: 'mono', weight: 700, spacing: 0.14, color: A.C.bone, alpha: appear })
         A.text(ctx, note.toUpperCase(), cx, y0 + ROW_H - 29, { size: 11.5, font: 'mono', spacing: 0.1, color: A.C.label2, alpha: 0.85 * appear })
       })
 
       // footer mantra
-      A.text(ctx, 'ALIGN  ✦  ALIGN  ✦  ALIGN', W / 2, H - 34, { size: 13, font: 'mono', spacing: 0.4, color: A.C.gold, alpha: 0.5 * ti })
+      A.text(ctx, 'ALIGN  ✦  ALIGN  ✦  ALIGN', W / 2, H - 30, { size: 13, font: 'mono', spacing: 0.4, color: A.C.gold, alpha: 0.5 * ti })
     },
   })
 })()
