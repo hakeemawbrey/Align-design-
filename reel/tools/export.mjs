@@ -54,7 +54,7 @@ if (stills) {
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-',
     ...(hasAudio ? ['-i', wav] : []),
     '-vf', `scale=iw*${scale}:ih*${scale}:flags=lanczos,format=yuv420p`,
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-tune', 'grain', '-movflags', '+faststart',
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', arg('crf', '17'), ...(arg('crf') ? ['-maxrate', arg('maxrate', '12M'), '-bufsize', '24M'] : []), '-tune', 'grain', '-movflags', '+faststart',
     ...(hasAudio ? ['-c:a', 'aac', '-b:a', '192k', '-shortest'] : []), outFile], { stdio: ['pipe', 'inherit', 'inherit'] })
   const t0 = Date.now()
   for (let f = from; f < to; f++) {
