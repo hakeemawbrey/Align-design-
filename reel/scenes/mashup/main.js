@@ -180,7 +180,7 @@
         ctx.fillStyle = '#05030b'; ctx.fillRect(0, 0, W, H)
         place(ctx, im, cx, cy, sc, px, py)
         if (o.grade) grade(ctx, o.grade[0], o.grade[1], o.grade[2] || 'color')
-        if (o.wash) grade(ctx, o.wash[0], o.wash[1], 'soft-light')
+        if (o.wash) grade(ctx, o.wash[0], o.wash[1], o.wash[2] || 'soft-light')
         ctx.restore()
         // fine bone keyline
         ctx.save(); ctx.strokeStyle = rgba(P.bone, 0.55); ctx.lineWidth = 2; path(); ctx.stroke(); ctx.restore()
@@ -247,7 +247,7 @@
   }
 
   /** 7. sacred geometry: the seed of life drawing in over the cosmos, settling to the mark's exact size */
-  const MARK = { x: 540, y: 860, size: 300 }
+  const MARK = { x: 540, y: 860, size: 360 }
   const MARK_R = (20 * MARK.size) / 88
   function shotSeed(o = {}) {
     return {
@@ -281,7 +281,7 @@
         const lit = 7 * ease.inOutQuad(seg(t, o.litAt || 0.15, (o.litAt || 0.15) + 1.1))
         A.alignMark(ctx, MARK.x, MARK.y, MARK.size, { lit, glow: 1.15 })
         const wa = ease.inOutQuad(seg(t, o.wordAt || 0.6, (o.wordAt || 0.6) + 1.0))
-        A.wordmark(ctx, 540, 1215 + 14 * (1 - wa), { size: 132, alpha: wa, glow: 0.6 })
+        A.wordmark(ctx, 540, 1250 + 14 * (1 - wa), { size: 150, alpha: wa, glow: 0.6 })
       },
     }
   }
@@ -300,7 +300,7 @@
       { b: 0.5, s: shotKB({ img: F.scorpio, ht: true, cell: 8, s0: 3.2, s1: 3.5, pt0: [0.47, 0.28], pt1: [0.42, 0.33], rw: 800, rh: 1150, grade: [P.rose, 0.5] }) },
       { b: 1, s: shotCutout({ img: F.virgo, shape: 'vesica', r: 420, s0: 1.55, s1: 1.68, pt0: [0.5, 0.5], grade: [P.rose, 0.45] }) },
       { b: 1, s: shotKB({ img: F.sagittarius, s0: 1.8, s1: 2.0, pt0: [0.52, 0.5], pt1: [0.56, 0.47], grade: [P.gold, 0.45] }) },
-      { b: 1, s: shotCutout({ img: F.pisces, shape: 'seed', r: 360, s0: 1.3, s1: 1.42, pt0: [0.52, 0.55], grade: [P.indigo, 0.35] }) },
+      { b: 1, s: shotCutout({ img: F.capricorn, shape: 'seed', r: 360, s0: 1.12, s1: 1.22, pt0: [0.55, 0.45], grade: [P.indigo, 0.55] }) },
       { b: 1, s: shotKB({ img: F.aquarius, ht: true, cell: 8, s0: 3.2, s1: 3.5, pt0: [0.42, 0.62], pt1: [0.44, 0.58], rw: 760, rh: 1100, grade: [P.violet, 0.4] }) },
       { b: 1, s: shotVortex({ vt: 9.5, palT: 9.5 }) },
       { b: 1, s: shotPrinted({ aura: AU.capricorn, chakra: 0, ink: P.coral, bloom: 0.25 }) },
@@ -310,7 +310,7 @@
       { b: 1, s: shotPrinted({ aura: AU.cancer, chakra: 5, ink: P.coral }) },
       { b: 1, s: shotPrinted({ aura: AU.leo, chakra: 6, ink: P.gold, grade: [P.deep, 0.7] }) },
       { b: 2, s: shotSouls({ a: AU.scorpio, b: AU.leo, gap0: 270, gap1: 170, ga: [P.rose, 0.35], gb: [P.ember, 0.3] }) },
-      { b: 1, s: shotKB({ img: F.gemini, s0: 2.2, s1: 2.4, pt0: [0.5, 0.45], pt1: [0.5, 0.42], rw: 640, rh: 820, grade: [P.blush, 0.35] }) },
+      { b: 1, s: shotCutout({ img: F.pisces, shape: 'circle', r: 340, s0: 1.3, s1: 1.4, pt0: [0.55, 0.55], pt1: [0.53, 0.52], grade: [P.rose, 0.55] }) },
       { b: 2, s: shotSouls({ a: AU.scorpio, b: AU.leo, gap0: 130, gap1: 85, z0: 1.15, z1: 1.3, cy: 1000, ga: [P.rose, 0.35], gb: [P.ember, 0.3] }) },
       { b: 3, s: shotSeed({ R0: 210, draw: 0.6 }) },
       { b: 6, x: 0.5, s: shotLockup({ litAt: 0.1, wordAt: 0.55 }) },
