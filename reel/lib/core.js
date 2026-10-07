@@ -482,3 +482,24 @@
     tile(out, chroma[gi], frame + 31, L.grainSize * 1.3, L.chroma * m.grain, 'soft-light')
   }
 })()
+
+/* ---------- the Align wordmark ----------
+ * Exactly as the app's splash screen (design-refs/screens/S-01-open-app.png):
+ * "Align" — EB Garamond italic, title case, normal tracking, warm bone.
+ * Use this for the brand everywhere. Never spaced caps, never mono. */
+;(function () {
+  const A = window.ALIGN
+  /** o: size (px, default 96), color, alpha, glow (0..1 soft halo), weight (400|500) */
+  A.wordmark = function (ctx, x, y, o = {}) {
+    const size = o.size || 96
+    ctx.save()
+    ctx.font = `italic ${o.weight || 400} ${size}px ${A.FONT.serif}`
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.globalAlpha *= o.alpha == null ? 1 : o.alpha
+    if (o.glow) { ctx.shadowColor = A.rgba(o.color || A.C.bone, 0.55 * o.glow); ctx.shadowBlur = size * 0.35 }
+    ctx.fillStyle = o.color || A.C.bone
+    ctx.fillText('Align', x, y)
+    ctx.restore()
+  }
+})()
