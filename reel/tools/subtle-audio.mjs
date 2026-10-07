@@ -40,7 +40,7 @@ function tone(s, { t0, t1, freq, amp, pan = 0, att = 1.5, rel = 1.5, send = 0.5,
 }
 
 // soft glass / bell: a few sine partials with a rounded (non-clicky) attack and slow beating
-const GLASS = [[1, 1, 1], [2.0, 0.16, 0.55], [2.76, 0.07, 0.32], [5.4, 0.025, 0.16]]
+const GLASS = [[1, 1, 1], [2.0, 0.28, 0.4], [2.76, 0.14, 0.22], [5.4, 0.05, 0.1]]
 function glass(s, t0, freq, amp, pan = 0, dec = 2.2, send = 0.45, att = 0.012) {
   const { muL, muR, rvL, rvR } = s.buses
   const i0 = s.S(t0), [gl, gr] = pan2(pan)
@@ -56,7 +56,7 @@ function glass(s, t0, freq, amp, pan = 0, dec = 2.2, send = 0.45, att = 0.012) {
 }
 
 // soft singing bowl: inharmonic bowl partials with beating, a rubbed 25 ms attack and no strike noise
-const BOWL = [[1, 1, 7], [2.756, 0.42, 4.6], [5.404, 0.16, 2.6], [8.933, 0.06, 1.5]]
+const BOWL = [[1, 1, 6], [2.756, 0.6, 2.4], [5.404, 0.3, 1.1], [8.933, 0.12, 0.6]]
 function softBowl(s, t0, midi, amp, pan = 0, dec = 1, send = 0.7, att = 0.025) {
   const { muL, muR, rvL, rvR } = s.buses
   const f0 = mtof(midi), i0 = s.S(t0), [gl, gr] = pan2(pan)
@@ -166,17 +166,19 @@ function whisper() {
 // two lights drift together 0-8 s; line ~8-9 s; "soon." ~9.2; brand ~10.2.
 function twostars() {
   const s = createSynth({ dur: DUR, seed: 0x2057a2 })
-  warmDrone(s, { t0: 0, t1: DUR, notes: [[33, 0.018, 0], [45, 0.007, 0]], fc: (t) => 300 + 260 * Math.min(1, Math.max(0, (t - 7.5) / 3)), att: 3.5, rel: 0.5 })
+  warmDrone(s, { t0: 0, t1: DUR, notes: [[33, 0.013, 0], [45, 0.007, 0]], fc: (t) => 300 + 260 * Math.min(1, Math.max(0, (t - 7.5) / 3)), att: 3.5, rel: 0.5 })
   air(s, { amp: 0.008, lo: 400, hi: 3200, rate: 0.11 })
   const ALIGN_T = 8.5
   const k = (t) => Math.min(1, t / ALIGN_T), ease = (t) => 0.5 - 0.5 * Math.cos(Math.PI * k(t))
   // left star: A4, steady.  right star: starts a tritone above (D#5) and settles onto E5 (a perfect fifth)
   const Lf = () => mtof(69)
+  // far apart and faint at first, nearer and clearer as they approach; full only when they meet
+  const grade = (t) => t >= ALIGN_T ? 1 : 0.22 + 0.36 * k(t) ** 2
   const Rf = (t) => mtof(75 + ease(t))
   const lTimes = [1.6, 3.7, 5.5, 7.1, ALIGN_T]
   const rTimes = [2.7, 4.9, 6.5, 7.7, ALIGN_T]
-  for (const t of lTimes) glass(s, t, Lf(t), 0.03 * (0.35 + 0.65 * ease(t) ** 2), -0.8 * (1 - ease(t)), 1.2)
-  for (const t of rTimes) glass(s, t, Rf(t), 0.026 * (0.35 + 0.65 * ease(t) ** 2), 0.8 * (1 - ease(t)), 1.2)
+  for (const t of lTimes) glass(s, t, Lf(t), 0.03 * grade(t), -0.8 * (1 - ease(t)), 1.0)
+  for (const t of rTimes) glass(s, t, Rf(t), 0.027 * grade(t), 0.8 * (1 - ease(t)), 1.0)
   // they align: a warm pad blooms on the open fifth (A2 E3 A3 E4 + a breath of C#5)
   for (const [m, a, p] of [[45, 0.008, 0], [52, 0.006, -0.35], [57, 0.0055, 0.35], [64, 0.004, -0.2], [73, 0.0018, 0.25]])
     tone(s, { t0: ALIGN_T, t1: 11.0, freq: mtof(m), amp: a, pan: p, att: 1.6, rel: 1.4, send: 0.8, harm: [[1, 1], [2, 0.1], [3, 0.03]], detune: 0.0018 })

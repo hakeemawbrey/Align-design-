@@ -1,14 +1,13 @@
 /* Subtle teaser C — "The line".
  * One continuous macro pull-back: a single gold hairline arc in extreme close-up
  * turns out to be a circle, then the seed of life, then the Align mark.
- * Chakra dots light root → crown, then one quiet word. No cuts, no flashes. */
+ * Chakra dots light root → crown, then the "Align" wordmark, as on the app splash. No cuts, no flashes. */
 ;(function () {
   const A = window.ALIGN
   const { seg, ease, clamp, lerp, rgba, TAU } = A
 
   const GOLD = '#f2c75c'
-  const BONE = '#efe6d6'
-  const CX = 540, CY = 880 // mark centre on screen at rest
+  const CX = 540, CY = 860 // mark centre on screen at rest
   const R = 90             // seed circle radius (outer = 180 → mark ≈ 360 px)
 
   const S0 = 18            // starting zoom
@@ -58,8 +57,12 @@
   }
 
   /** stroke one circle (world coords) as a glowing hairline, progress 0..1 */
+  let TINT = 0 // 0 = gold line, 1 = the splash mark's pale lavender
+  const lineCol = () => A.mixHex('#ffe2a0', '#e2d8f4', TINT)
+  const glowCol = () => A.mixHex(GOLD, '#a996dc', TINT)
   function hairCircle(ctx, x, y, r, start, prog, s, alpha, head) {
     if (prog <= 0 || alpha <= 0) return
+    const GOLD = glowCol()
     const end = start + TAU * prog
     ctx.save()
     ctx.lineCap = 'round'
@@ -70,7 +73,7 @@
     // crisp hairline
     ctx.shadowColor = rgba(GOLD, 0.8 * alpha)
     ctx.shadowBlur = 10
-    ctx.strokeStyle = rgba('#ffe2a0', 0.95 * alpha)
+    ctx.strokeStyle = rgba(lineCol(), 0.95 * alpha)
     ctx.lineWidth = 1.9 / s
     ctx.beginPath(); ctx.arc(x, y, r, start, end); ctx.stroke()
     ctx.restore()
@@ -96,7 +99,9 @@
 
       const { s, fx, fy } = camera(t)
       // the geometry settles back a touch so the chakra light can speak
-      const settle = lerp(1, 0.74, sine(seg(t, 9.0, 10.6)))
+      const st9 = sine(seg(t, 8.8, 10.6))
+      const settle = lerp(1, 0.7, st9)
+      TINT = st9
       fg.save()
       fg.globalAlpha = settle
       fg.translate(CX, CY)
@@ -122,23 +127,26 @@
         if (a <= 0) continue
         const y = (3 - i) * 0.53 * R
         const c = A.CHAKRA_COLORS[i]
-        const gr = 20 / s, cr = 4.6 / s
+        // splash-screen dots: a bright pearl with a soft halo, swelling gently into place
+        const grow = 0.8 + 0.2 * a
+        const gr = (0.6 * R * grow) / s, cr = (0.165 * R * grow) / s
         const g = fg.createRadialGradient(0, y, 0, 0, y, gr)
-        g.addColorStop(0, rgba(c, 0.42 * a)); g.addColorStop(0.5, rgba(c, 0.12 * a)); g.addColorStop(1, rgba(c, 0))
+        g.addColorStop(0, rgba(c, 0.55 * a)); g.addColorStop(0.3, rgba(c, 0.22 * a)); g.addColorStop(1, rgba(c, 0))
         fg.fillStyle = g
         fg.beginPath(); fg.arc(0, y, gr, 0, TAU); fg.fill()
         const core = fg.createRadialGradient(0, y, 0, 0, y, cr)
-        core.addColorStop(0, rgba('#fff8ec', 0.9 * a)); core.addColorStop(0.5, rgba(c, 0.9 * a)); core.addColorStop(1, rgba(c, 0.7 * a))
+        core.addColorStop(0, rgba('#fff8ec', 0.95 * a)); core.addColorStop(0.45, rgba(c, 0.95 * a)); core.addColorStop(1, rgba(c, 0.85 * a))
         fg.fillStyle = core
         fg.beginPath(); fg.arc(0, y, cr, 0, TAU); fg.fill()
       }
       fg.restore()
 
 
-      // one quiet word
+      // the brand, once
       const w = sine(seg(t, 10.0, 11.1))
       if (w > 0) {
-        A.text(fg, 'align', CX, CY + 2 * R + 128 + (1 - w) * 6, { size: 52, spacing: 0.12, color: BONE, alpha: 0.85 * w, weight: 400 })
+        // the splash-screen wordmark: "Align", EB Garamond italic, beneath the mark
+        A.wordmark(fg, CX, CY + 2 * R + 160 + (1 - w) * 6, { size: 100, alpha: 0.9 * w, glow: 0.35 * w })
       }
 
       // gentle dip toward black for the loop

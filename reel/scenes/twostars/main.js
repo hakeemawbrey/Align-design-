@@ -1,7 +1,7 @@
 /* Subtle teaser, direction B: "Two stars".
  * Love, unspoken, told with two points of light. A near-black sky, a faint
  * drifting star field, two small lights that drift together and settle on the
- * centre axis, a hair-thin constellation line, "soon.", then "align".
+ * centre axis, a hair-thin constellation line, "soon.", then the "Align" wordmark.
  * Stars and the line are drawn on bg (halftone off, so they stay clean and
  * escape the fg misregistration); type goes on fg. */
 ;(function () {
@@ -134,7 +134,7 @@
       const soon = ease.inOutQuad(seg(t, 8.4, 9.3)) * (1 - ease.inOutQuad(seg(t, 9.6, 10.3)))
       if (soon > 0) A.text(fg, 'soon.', CX, TY, { size: 48, italic: true, weight: 400, alpha: 0.8 * soon })
       const al = ease.inOutQuad(seg(t, 10.2, 11.1))
-      if (al > 0) A.text(fg, 'align', CX, TY, { size: 52, weight: 500, spacing: 0.12, alpha: 0.85 * al })
+      if (al > 0) A.wordmark(fg, CX, TY, { size: 62, alpha: 0.88 * al, glow: 0.3 }) // as on the splash: the pair (the mark) above, "Align" below
 
       // ---- loop: ease slightly toward black in the last 0.3 s, out of it at the top ----
       const dark = Math.max(0.55 * ease.inOutQuad(seg(t, 11.7, 12)), 0.55 * (1 - ease.inOutQuad(seg(t, 0, 0.4))))
