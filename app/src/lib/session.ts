@@ -52,7 +52,13 @@ export interface SessionState {
   notifsSeen: boolean
   /** the out-of-peeks Align+ prompt has been shown once */
   peekUpsellSeen: boolean
+  /** onboarding step the presenter left on (0 = not started or finished) */
+  obStep: number
 }
+
+const OB_KEY = 'align:obStep'
+/** the onboarding step survives a refresh, so "The sky saved your place" can greet you */
+const savedObStep = () => { try { return Number(localStorage.getItem(OB_KEY)) || 0 } catch { return 0 } }
 
 const initial = (): SessionState => ({
   deckIndex: 0,
@@ -71,6 +77,7 @@ const initial = (): SessionState => ({
   bonusPeeks: 0,
   notifsSeen: false,
   peekUpsellSeen: false,
+  obStep: savedObStep(),
 })
 
 let state = initial()
@@ -84,11 +91,13 @@ export const session = {
   },
   patch(p: Partial<SessionState>) {
     state = { ...state, ...p }
+    if ('obStep' in p) { try { localStorage.setItem(OB_KEY, String(p.obStep)) } catch { /* private mode */ } }
     subs.forEach((f) => f())
   },
 }
 
 export function resetSession() {
+  try { localStorage.removeItem(OB_KEY) } catch { /* private mode */ }
   state = initial()
   subs.forEach((f) => f())
 }

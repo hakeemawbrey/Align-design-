@@ -1,16 +1,16 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { SIGNS } from '../../data/signs'
+import { SIGNS, type SignId } from '../../data/signs'
 import { ME } from '../../data/profiles'
 import { sfx } from '../../lib/sfx'
 import { Caption, Cta, Header, Planet, EASE } from './shared'
 import { MONTHS, sunSign, type BirthDate } from './zodiac'
 
 /** O-07 — "One sky. Three yous." */
-export default function BigThree({ birth, next }: { birth: BirthDate; next: () => void }) {
+export default function BigThree({ birth, rising: risingId = ME.rising, next }: { birth: BirthDate; rising?: SignId; next: () => void }) {
   const sun = SIGNS[sunSign(birth)]
   const moon = SIGNS[ME.moon]
-  const rising = SIGNS[ME.rising]
+  const rising = SIGNS[risingId]
 
   const orbs = [
     { label: `Sun · ${sun.name}`, x: 80, size: 96, color: '#c9a032', light: '#fff1b8', dark: '#3a2a08', ring: '#e8c860', dot: '#e9b24a',

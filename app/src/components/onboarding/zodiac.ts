@@ -14,7 +14,14 @@ export interface BirthDate {
 /** Hakeem: May 12, 1998, 5:00 PM, Tulsa — Taurus 22°, Sagittarius moon, Libra rising (computed). */
 export const DEFAULT_BIRTH: BirthDate = { month: 4, day: 12, year: 1998 }
 export const YEAR_MIN = 1950
-export const YEAR_MAX = 2008
+export const YEAR_MAX = 2012
+
+/** the demo's "today" (Oct 5 2026) for the 18+ check */
+export function ageOn(b: BirthDate, today = new Date(2026, 9, 5)) {
+  let a = today.getFullYear() - b.year
+  if (today.getMonth() < b.month || (today.getMonth() === b.month && today.getDate() < b.day)) a--
+  return a
+}
 
 export function daysInMonth(month: number, year: number) {
   return new Date(year, month + 1, 0).getDate()

@@ -43,6 +43,8 @@ export const ME = {
   sign: 'taurus' as SignId,
   moon: 'sagittarius' as SignId,
   rising: 'libra' as SignId,
+  /** Venus at 10° Aries (May 12 1998, 5 PM, Tulsa) */
+  venus: 'aries' as SignId,
   serial: '№ 012',
   /** shown on the flipped side of your card and on copies you trade */
   photo: 'img/hakeem.jpg',

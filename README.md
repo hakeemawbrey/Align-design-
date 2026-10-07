@@ -36,7 +36,7 @@ A plain browser refresh also clears state, but reopens the screen you were on.
 | `R` | Restart the demo from the splash |
 | `1`–`9`, `0` | Jump to a screen: 1 splash · 2 welcome · 3 dealing · 4 deck · 5 match · 6 reveal · 7 chat · 8 alignment · 9 deck spent · 0 matches |
 | `B` | Matches tab with a fresh binder (resets any trades) |
-| `O` | New-user onboarding (birth date → sky → sign reveal) |
+| `O` | New-user onboarding (14 steps, birth date → founding offer) |
 | `F` | Founding-member offer (end of onboarding) |
 | `P` | Align+ paywall |
 | `Y` / `C` | You tab / Club tab |
@@ -68,11 +68,22 @@ You can also open a screen directly from the URL, e.g. `http://localhost:5173/#r
 From Welcome, tap **New here — read my chart** (or press `O`):
 
 1. **Arrival** → **Begin your chart**
-2. **Birth date**: wheel picker; the constellation and sign update live. Leave May 4 1994 (Taurus).
-3. **Your sky**: planets place themselves around the ring.
-4. **Sign reveal**: the card charges up, then flips to show the glowing bull, as if you'd pulled a rare card. Let it flip on its own or tap it.
-5. **Big three** → **How Align works** → **I'm in**
-6. **Founding member**: tap **Claim founding member**. The gold № 0112 card stamps in, then **Deal my first deck**.
+2. **Birth date**: wheel picker; the constellation and sign update live. Leave May 12 1998 (Taurus). A year that makes you under 18 shows **Come back at eighteen**.
+3. **Time and place**: 5:00 PM, Tulsa. **I don't know the minute** switches to morning / afternoon / evening / night and estimates the Rising.
+4. **Your sky**: planets place themselves around the ring.
+5. **Sign reveal**: the card charges up, then flips to show the glowing bull, as if you'd pulled a rare card. Let it flip on its own or tap it.
+6. **Taurus, the user manual**: strengths, weaknesses, what to work on.
+7. **Big three**: Sun, Moon, Rising.
+8. **Chart check**: six facts read back. Tap one to fix it; Continue brings you straight back.
+9. **Venus runs your heart**: Hakeem's Venus is in Aries.
+10. **Your weather**: your element against the other three.
+11. **How Align works**: veiled cards flip when you both align.
+12. **Dealbreakers**: pick up to three (or write your own); they go on your card.
+13. **Your face comes last**: your own veiled card with those dealbreakers. Tap it to see what a match sees.
+14. **You are not arriving alone**: 333 charts near you → **Show me who is out there**
+15. **Founding member**: tap **Claim founding member**. The gold № 0112 card stamps in, then **Deal my first deck**.
+
+If the page is refreshed mid-onboarding, it opens on **The sky saved your place** (Resume, or Start my chart over). Reset clears it.
 
 ## Align+ (business model)
 
