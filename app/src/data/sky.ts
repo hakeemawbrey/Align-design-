@@ -30,40 +30,79 @@ export interface SkyTab {
   pips: number
   color: string
   headline: string
+  /** what is happening, in plain words */
   body: string
-  tryLine: string
+  /** concrete things to do */
+  tries: string[]
+  /** the one thing to leave alone */
+  skip: string
 }
 
 export const SKY_HERO = {
   sign: 'Taurus',
-  headline: 'Go back before you go forward.',
-  sub: 'Venus turned retrograde Saturday, across from your sun.',
 }
+
+/** Moon right now: waning crescent, 27% lit, in Leo. */
+export const MOON_NOW = { lit: 0.27, waxing: false, sign: 'Leo', glyph: '♌', phase: 'Waning crescent' }
+
+/** This lunar cycle, for the phase strip (lit fraction, waxing?). */
+export const MOON_STRIP: { label: string; date: string; lit: number; waxing: boolean; today?: boolean }[] = [
+  { label: 'Last quarter', date: 'Sat 3', lit: 0.5, waxing: false },
+  { label: 'Today', date: 'Mon 5', lit: 0.27, waxing: false, today: true },
+  { label: 'New moon', date: 'Sat 10', lit: 0, waxing: true },
+  { label: 'First quarter', date: 'Sun 18', lit: 0.5, waxing: true },
+  { label: 'Full · Taurus', date: 'Sun 25', lit: 1, waxing: true },
+]
+
+/** Week strip, Mon Oct 5 – Sun Oct 11. */
+export const WEEK_STRIP: { d: string; n: number; mark?: string }[] = [
+  { d: 'M', n: 5, mark: 'Sun ☍ Saturn' }, { d: 'T', n: 6 }, { d: 'W', n: 7 }, { d: 'T', n: 8 },
+  { d: 'F', n: 9 }, { d: 'S', n: 10, mark: 'New moon' }, { d: 'S', n: 11 },
+]
 
 export const SKY_TABS: SkyTab[] = [
   {
     id: 'today', label: 'Today', eyebrow: 'Venus retrograde', pips: 5, color: '#f2c75c',
-    headline: 'Taurus, today favors the second look.',
-    body: 'Venus, your ruler, turned retrograde in Scorpio on Saturday and now sits opposite your sun. Old attractions resurface and first impressions get revised. Mercury is right beside her, so the conversation you kept postponing is the one that wants to happen.',
-    tryLine: 'Reread a card you released last week.',
+    headline: 'Go back before you go forward.',
+    body: 'Venus, the planet of attraction (and Taurus’s ruler), appears to move backward until Nov 13. In plain words: people from your past resurface, and first impressions are easy to get wrong. Revisit, don’t rush.',
+    tries: [
+      'Open your released cards and give one person a second read.',
+      'Reply to the message you’ve been putting off. Two lines is plenty.',
+      'Ask a match the question you’d usually save for date three.',
+    ],
+    skip: 'Defining the relationship this week. Or texting an ex at midnight.',
   },
   {
     id: 'tonight', label: 'Tonight', eyebrow: 'Moon in Leo', pips: 3, color: '#f39a3a',
-    headline: 'Warm, a little theatrical, low on fuel.',
-    body: 'The Moon is in Leo until Tuesday night, and Mars is there with it. Desire runs hot, patience runs short. The Moon is also waning, so tonight rewards play over pursuit. Flirt, then let it breathe.',
-    tryLine: 'Give one compliment about something specific.',
+    headline: 'Warm, playful, short on patience.',
+    body: 'The Moon sets the mood of the night. Tonight it’s in Leo, a sign that likes attention, and Mars is right beside it, so feelings come in hot and fast. The Moon is also fading, which favours fun over big talks.',
+    tries: [
+      'Send a specific compliment. “That photo at the lake” beats “you’re cute”.',
+      'Suggest something easy to say yes to: a walk, one drink, 45 minutes.',
+      'Let them have the last text tonight.',
+    ],
+    skip: 'Serious conversations after 10 PM. They’ll go sideways.',
   },
   {
     id: 'week', label: 'Week', eyebrow: 'Oct 5 – 11', pips: 4, color: '#9a7be0',
-    headline: 'Nothing has to be decided yet.',
-    body: 'The Sun opposes Saturn today and asks what you are actually committing to. Saturday brings the New Moon in Libra, a reset on what feels fair between two people. Venus stays retrograde until November 13, so the slow answer is the right one.',
-    tryLine: 'Make the plan for after Saturday’s New Moon.',
+    headline: 'Nothing needs an answer before Saturday.',
+    body: 'The Sun faces off with Saturn, the planet of commitment, so you may feel pressure to make things official. Saturday’s New Moon in Libra resets what feels fair between you. Wait for it.',
+    tries: [
+      'Mon – Wed: listen more than you plan.',
+      'Thu – Fri: say what you actually want, once, kindly.',
+      'Sat: make the plan you’ve been circling. New moons are for starting.',
+    ],
+    skip: 'Ultimatums. This week rewards patience, not pressure.',
   },
   {
     id: 'moon', label: 'Moon', eyebrow: 'Waning crescent · 27%', pips: 2, color: '#b3a6c4',
-    headline: 'The clearing-out stretch.',
-    body: 'The Moon is 27% lit and shrinking toward Saturday’s New Moon in Libra. Last quarter was Saturday the 3rd. Use these days to finish conversations, answer what you left on read, and close what you are not going to open again.',
-    tryLine: 'Let one match go, kindly.',
+    headline: 'Wind things down.',
+    body: 'The Moon is 27% lit and shrinking. On Saturday it goes dark (the New Moon), then starts growing again. Shrinking days are for finishing: clear out, catch up, end things gently.',
+    tries: [
+      'Close one chat you won’t continue. One kind sentence is enough.',
+      'Answer anything you left on read.',
+    ],
+    skip: 'Starting something big before Saturday. It lands better after the 10th.',
   },
 ]
 
