@@ -13,6 +13,7 @@ import { SIGNS, ELEMENT_COLOR, type Element } from '../data/signs'
 import { binder, useBinder } from '../lib/binder'
 import { sfx } from '../lib/sfx'
 import { session, useSession } from '../lib/session'
+import { useWorld } from '../api'
 
 type View = 'list' | 'binder'
 let lastView: View = 'list'
@@ -38,7 +39,8 @@ const SLEEVE_H = 142
 export default function Matches({ go }: ScreenProps) {
   const { traded, justTraded } = useBinder()
   const { blockedPeople } = useSession()
-  const visible = MATCHES.filter((m) => !blockedPeople.includes(m.id))
+  const { matches } = useWorld()
+  const visible = MATCHES.filter((m) => matches.includes(m.id) && !blockedPeople.includes(m.id))
   const [view, setView] = useState<View>(justTraded ? 'binder' : lastView)
   const [zoom, setZoom] = useState<Match | null>(null)
   const [page, setPage] = useState(0)

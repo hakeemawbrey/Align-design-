@@ -8,6 +8,7 @@ import { ChatHeader, ExpiryBar, InlineAlignmentCard, Receipt, TypingIndicator } 
 import { DECK } from '../data/profiles'
 import { sfx } from '../lib/sfx'
 import { session } from '../lib/session'
+import { api, type Message } from '../api'
 
 type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
 
@@ -42,29 +43,72 @@ const REPLIES = [
 
 const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 
-/** S-09 Chat — the payoff after the match. */
-/** Everything already said — shown instantly on return visits. */
-function pastThread(): Msg[] {
-  const { chatExtra } = session.get()
-  return [...SCRIPT, { from: 'card' as const, text: '' }, ...chatExtra].map((m, i) => ({ ...m, id: i + 1 }))
+const MATCH = juniper.id
+const key = (from: Msg['from'], text: string) => `${from}|${text}`
+
+/** Saved messages → thread, with the alignment card after the opening script. */
+function threadFrom(rows: Message[]): Omit<Msg, 'id'>[] {
+  const out: Omit<Msg, 'id'>[] = rows.map((r) => ({ from: r.from === 'me' ? 'me' : 'her', text: r.body }))
+  if (out.length >= SCRIPT.length) out.splice(SCRIPT.length, 0, { from: 'card', text: '' })
+  return out
 }
+
+/** S-09 Chat — the payoff after the match. Messages are saved to the backend. */
 
 export default function Chat({ go }: ScreenProps) {
   const [report, setReport] = useState(false)
   // the scripted intro plays once per demo run; afterwards the thread is just there
   const [replay] = useState(() => !session.get().chatPlayed)
-  const [msgs, setMsgs] = useState<Msg[]>(() => (replay ? [] : pastThread()))
+  const [msgs, setMsgs] = useState<Msg[]>([])
   const [typing, setTyping] = useState(false)
   const [seen, setSeen] = useState(!replay)
   const [draft, setDraft] = useState('')
-  const idRef = useRef(replay ? 0 : msgs.length)
-  const replyIdx = useRef(session.get().chatExtra.filter((m) => m.from === 'her').length)
+  const idRef = useRef(0)
+  const replyIdx = useRef(0)
+  /** messages this screen wrote, so the live feed doesn't show them twice */
+  const pending = useRef<string[]>([])
+  const scriptSaved = useRef(false)
   const firstScroll = useRef(true)
   const alive = useRef(true)
   const scroller = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const push = (m: Omit<Msg, 'id'>) => setMsgs((xs) => [...xs, { ...m, id: ++idRef.current }])
+  const show = (m: Omit<Msg, 'id'>) => setMsgs((xs) => [...xs, { ...m, id: ++idRef.current }])
+  /** save a message to the backend (works even after you leave the screen) */
+  const queue = useRef<Promise<unknown>>(Promise.resolve())
+  const record = (from: 'me' | 'her', text: string) => {
+    pending.current.push(key(from, text))
+    // one at a time, so the saved order matches the order on screen
+    queue.current = queue.current.then(() => api.send(MATCH, from === 'me' ? 'me' : 'them', text))
+      .catch((e) => console.warn('[align] message not saved', e))
+  }
+  const push = (m: Omit<Msg, 'id'>) => {
+    show(m)
+    if (m.from !== 'card') record(m.from, m.text)
+  }
+
+  // return visits: load the saved thread
+  useEffect(() => {
+    if (replay) return
+    let off = false
+    api.messages(MATCH).then((rows) => {
+      if (off) return
+      const t = threadFrom(rows)
+      idRef.current = t.length
+      replyIdx.current = Math.max(0, rows.filter((r) => r.from === 'them').length - SCRIPT.filter((m) => m.from === 'her').length)
+      setMsgs(t.map((m, i) => ({ ...m, id: i + 1 })))
+    }).catch((e) => console.warn('[align] could not load messages', e))
+    return () => { off = true }
+  }, [replay])
+
+  // live: messages written elsewhere (another device, another tab)
+  useEffect(() => api.onMessage(MATCH, (m) => {
+    const from = m.from === 'me' ? 'me' : 'her'
+    const i = pending.current.indexOf(key(from, m.body))
+    if (i >= 0) { pending.current.splice(i, 1); return }
+    show({ from, text: m.body })
+    if (from === 'her') sfx.receive()
+  }), [])
 
   const herTypes = async (text: string, typeMs: number, dead: () => boolean) => {
     setSeen(true)
@@ -72,7 +116,7 @@ export default function Chat({ go }: ScreenProps) {
     await wait(typeMs)
     if (dead()) return
     setTyping(false)
-    push({ from: 'her', text })
+    show({ from: 'her', text })
     sfx.receive()
   }
 
@@ -82,6 +126,12 @@ export default function Chat({ go }: ScreenProps) {
     let cancelled = false
     const dead = () => cancelled
     if (!replay) return () => { alive.current = false }
+    // save the whole opening now, so leaving halfway never replays or duplicates it
+    if (!scriptSaved.current) {
+      scriptSaved.current = true // effects run twice in dev; save once
+      session.patch({ chatPlayed: true })
+      SCRIPT.forEach((m) => record(m.from === 'me' ? 'me' : 'her', m.text))
+    }
     ;(async () => {
       await wait(650)
       for (const m of SCRIPT) {
@@ -90,7 +140,7 @@ export default function Chat({ go }: ScreenProps) {
           await herTypes(m.text, 850, dead)
         } else {
           setSeen(false)
-          push(m)
+          show(m)
           sfx.send()
         }
         await wait(m.from === 'her' ? 900 : 700)
@@ -102,9 +152,8 @@ export default function Chat({ go }: ScreenProps) {
       sfx.tap()
       await wait(900)
       if (dead()) return
-      push({ from: 'card', text: '' })
+      show({ from: 'card', text: '' })
       sfx.sparkle()
-      session.patch({ chatPlayed: true })
     })()
     return () => { cancelled = true; alive.current = false }
   }, [replay])
@@ -124,16 +173,15 @@ export default function Chat({ go }: ScreenProps) {
     setSeen(false)
     push({ from: 'me', text })
     sfx.send()
-    const extra = (from: 'me' | 'her', t: string) => session.patch({ chatExtra: [...session.get().chatExtra, { from, text: t }] })
-    extra('me', text)
     const reply = REPLIES[replyIdx.current % REPLIES.length]
     replyIdx.current++
+    // her reply is saved right away, so it's there even if you leave before she "types" it
+    record('her', reply)
     await wait(900)
-    if (!alive.current) { extra('her', reply); return }
+    if (!alive.current) return
     setSeen(true)
     await wait(600)
-    if (!alive.current) { extra('her', reply); return }
-    extra('her', reply)
+    if (!alive.current) return
     await herTypes(reply, 1300, () => !alive.current)
   }
 

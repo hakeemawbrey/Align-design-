@@ -3,8 +3,17 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 /**
  * 390×844 iPhone canvas, scaled to fit the browser window so it records
  * crisply at any size. On a real phone (narrow viewport) it goes full-bleed.
+ * In app mode (installed, or any phone) it covers the whole screen, under the
+ * real status bar and home indicator, where the fake ones used to sit.
  */
-export default function PhoneFrame({ children }: { children: ReactNode }) {
+export function isAppMode() {
+  if (typeof window === 'undefined') return false
+  const standalone = window.matchMedia?.('(display-mode: standalone)').matches || (navigator as { standalone?: boolean }).standalone === true
+  const phone = window.matchMedia?.('(pointer: coarse)').matches && Math.min(window.innerWidth, window.innerHeight) < 500
+  return Boolean(standalone || phone)
+}
+
+export default function PhoneFrame({ children, app = false }: { children: ReactNode; app?: boolean }) {
   const [scale, setScale] = useState(1)
   const [bare, setBare] = useState(false)
   const box = useRef<HTMLDivElement>(null)
@@ -16,7 +25,7 @@ export default function PhoneFrame({ children }: { children: ReactNode }) {
       const r = box.current?.getBoundingClientRect()
       const w = r?.width || window.innerWidth
       const h = r?.height || window.innerHeight
-      const isPhone = w < 500
+      const isPhone = app || w < 500
       setBare(isPhone)
       setScale(isPhone ? Math.min(w / 390, h / 844) : Math.min((h - 48) / 868, (w - 48) / 414))
     }
@@ -25,13 +34,15 @@ export default function PhoneFrame({ children }: { children: ReactNode }) {
     const ro = typeof ResizeObserver !== 'undefined' && box.current ? new ResizeObserver(fit) : null
     if (ro && box.current) ro.observe(box.current)
     return () => { window.removeEventListener('resize', fit); ro?.disconnect() }
-  }, [])
+  }, [app])
 
   return (
     <div ref={box} style={{
       position: 'fixed', display: 'grid', placeItems: 'center',
-      top: 'env(safe-area-inset-top, 0px)', bottom: 'env(safe-area-inset-bottom, 0px)',
-      left: 'env(safe-area-inset-left, 0px)', right: 'env(safe-area-inset-right, 0px)',
+      ...(app ? { inset: 0 } : {
+        top: 'env(safe-area-inset-top, 0px)', bottom: 'env(safe-area-inset-bottom, 0px)',
+        left: 'env(safe-area-inset-left, 0px)', right: 'env(safe-area-inset-right, 0px)',
+      }),
       background: bare ? 'var(--void)' : 'radial-gradient(60% 60% at 50% 40%, #1a0f3a 0%, #07040f 70%)',
     }}>
       <div style={{

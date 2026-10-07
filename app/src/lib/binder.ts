@@ -1,9 +1,11 @@
 import { useSyncExternalStore } from 'react'
 import { MATCHES } from '../data/matches'
+import { load, remove, save } from './persist'
+import { api } from '../api'
 
 /**
  * Demo-session binder state, shared between the Matches and Trade screens.
- * Module-level so it survives screen changes; `resetBinder` on demo restart.
+ * Saved to localStorage; trades are also recorded in the backend. `resetBinder` on reset.
  */
 interface BinderState {
   traded: ReadonlySet<string>
@@ -19,9 +21,20 @@ const initial = (): BinderState => ({
   tradingWith: 't24',
 })
 
-let state = initial()
+const KEY = 'binder:v1'
+type Saved = { traded: string[]; tradingWith: string }
+
+function restore(): BinderState {
+  const s = load<Saved>(KEY)
+  return s ? { traded: new Set(s.traded), justTraded: null, tradingWith: s.tradingWith } : initial()
+}
+
+let state = restore()
 const subs = new Set<() => void>()
-const emit = () => subs.forEach((f) => f())
+const emit = () => {
+  save(KEY, { traded: [...state.traded], tradingWith: state.tradingWith } satisfies Saved)
+  subs.forEach((f) => f())
+}
 
 export const binder = {
   get: () => state,
@@ -38,6 +51,7 @@ export const binder = {
     traded.add(id)
     state = { ...state, traded, justTraded: id }
     emit()
+    void api.trade(id)
   },
   clearJustTraded() {
     state = { ...state, justTraded: null }
@@ -46,6 +60,7 @@ export const binder = {
 }
 
 export function resetBinder() {
+  remove(KEY)
   state = initial()
   emit()
 }

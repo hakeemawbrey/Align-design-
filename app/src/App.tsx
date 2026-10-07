@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import PhoneFrame from './components/PhoneFrame'
+import PhoneFrame, { isAppMode } from './components/PhoneFrame'
 import StatusBar from './components/StatusBar'
 import HomeIndicator from './components/HomeIndicator'
 import type { ScreenId } from './screens/types'
@@ -18,6 +18,7 @@ import Trade from './screens/Trade'
 import { resetBinder } from './lib/binder'
 import { resetSession } from './lib/session'
 import { RESET_EVENT } from './lib/demo'
+import { api } from './api'
 import Onboarding from './screens/Onboarding'
 import Founding from './screens/Founding'
 import Paywall from './screens/Paywall'
@@ -40,6 +41,11 @@ const SCREENS: Record<ScreenId, React.ComponentType<{ go: (id: ScreenId) => void
 /** Keyboard jump order for recording: 1–9, then 0 */
 const ORDER: ScreenId[] = ['splash', 'welcome', 'dealing', 'deck', 'match', 'reveal', 'chat', 'alignment', 'spent', 'matches']
 const ALL: ScreenId[] = [...ORDER, 'trade', 'onboarding', 'founding', 'paywall', 'you', 'club', 'sky', 'calendar', 'chart', 'block', 'notifications']
+/** on a phone: real status bar and home indicator, no fake ones */
+const APP = isAppMode()
+
+/** shortcut jumps to these land after the match with Juniper */
+const AFTER_MATCH: ScreenId[] = ['match', 'reveal', 'chat', 'alignment', 'spent', 'matches', 'trade']
 /** letter shortcuts for screens beyond 0–9 */
 const LETTERS: Record<string, ScreenId> = { o: 'onboarding', f: 'founding', p: 'paywall', y: 'you', c: 'club', s: 'sky', k: 'calendar', n: 'notifications' }
 
@@ -63,7 +69,7 @@ export default function App() {
 
   // reset from inside the app (You → Reset demo, triple-tap the clock)
   useEffect(() => {
-    const onReset = () => { resetBinder(); resetSession(); setRun((r) => r + 1); go('splash') }
+    const onReset = () => { resetBinder(); resetSession(); void api.reset(); setRun((r) => r + 1); go('splash') }
     // #reset in the address bar, whether the page is loading or already open
     const onHash = () => { if (window.location.hash === '#reset') onReset() }
     window.addEventListener(RESET_EVENT, onReset)
@@ -76,7 +82,12 @@ export default function App() {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
       const n = e.key === '0' ? 10 : Number(e.key)
-      const restart = (id: ScreenId) => { resetBinder(); resetSession(); setRun((r) => r + 1); go(id) }
+      const restart = (id: ScreenId) => {
+        resetBinder(); resetSession()
+        // screens after the match expect Juniper to be matched already
+        void api.reset().then(() => { if (AFTER_MATCH.includes(id)) return api.swipe('j27', 'align') })
+        setRun((r) => r + 1); go(id)
+      }
       const k = e.key.toLowerCase()
       if (e.metaKey || e.ctrlKey || e.altKey) return
       if (n >= 1 && n <= ORDER.length) restart(ORDER[n - 1])
@@ -92,7 +103,7 @@ export default function App() {
   const Screen = SCREENS[screen]
 
   return (
-    <PhoneFrame>
+    <PhoneFrame app={APP}>
       <AnimatePresence mode="sync">
         <motion.div
           key={`${screen}-${run}`}
@@ -105,8 +116,8 @@ export default function App() {
           <Screen go={go} />
         </motion.div>
       </AnimatePresence>
-      <StatusBar />
-      <HomeIndicator />
+      {!APP && <StatusBar />}
+      {!APP && <HomeIndicator />}
     </PhoneFrame>
   )
 }

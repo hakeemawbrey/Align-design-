@@ -45,10 +45,14 @@ html, body {
 body {
   background: #05030f;
   overflow: hidden;
+  /* app feel on phones: no rubber-band page scroll, no double-tap zoom */
+  overscroll-behavior: none;
+  touch-action: manipulation;
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
+input, textarea { user-select: text; -webkit-user-select: text; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 img { display: block; -webkit-user-drag: none; user-select: none; }
 

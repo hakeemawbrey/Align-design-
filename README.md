@@ -1,7 +1,51 @@
-# Align — investor demo
+# Align
 
-A clickable, recordable build of Align's core loop, made from the Figma file
-*Align — design v2 Stardust*: **deal → deck → align → match → reveal → chat**.
+Align's core loop, made from the Figma file *Align — design v2 Stardust*:
+**deal → deck → align → match → reveal → chat**. It started as a recordable
+investor demo and is now an installable app you can hand someone on your phone.
+
+## The app (for live demos)
+
+- **Install it on your phone:** open the deployed link in Safari → Share →
+  **Add to Home Screen**. It opens full-screen with the real status bar, works
+  offline after the first open, and remembers where you are.
+- **Your progress is saved.** Swipes, matches, chat messages and trades go
+  through a backend; deck position and settings are kept on the device.
+  **You → Reset demo** (tap twice) starts over.
+- **No sign-up.** You are Hakeem. Everyone else is a seeded profile, and their
+  side of a chat is written by the app.
+
+### Backend
+
+The app talks to one interface (`app/src/api`) with two implementations:
+
+| | When | Where data lives |
+| --- | --- | --- |
+| **On this device** | no env vars set (default) | the browser's storage |
+| **Supabase** | `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` set | your Supabase project |
+
+On Supabase, each phone signs in anonymously, so every device gets its own
+account and its own fresh run. The server decides matches (a client can't fake
+one), and row-level security keeps accounts apart. Chat is live: open the same
+account in two tabs and messages appear in both. If Supabase can't be reached,
+the app falls back to on-device storage instead of breaking mid-demo.
+
+**Set up Supabase (about 5 minutes):**
+
+1. Create a project at [supabase.com](https://supabase.com).
+2. **SQL Editor** → run `supabase/migrations/20261007000000_init.sql`, then `supabase/seed.sql`.
+3. **Authentication → Sign In / Providers** → turn on **Allow anonymous sign-ins**.
+4. **Project Settings → API** → copy the URL and the `anon` public key.
+5. Locally: copy `app/.env.example` to `app/.env.local` and fill both in.
+   On Vercel: add the same two as Environment Variables, then redeploy.
+
+Each new account starts with five matches already in the binder (Tobias,
+Anselm, Zena, Mira, Sunny), the same as the demo. Changed a profile in
+`app/src/data/profiles.ts`? Run `npm run seed:gen` and re-run `supabase/seed.sql`.
+
+**What's still scripted:** the people in the deck, Juniper aligning back, and
+her replies. Next: load the deck from the database, real two-person matching
+and chat, photo upload, then the iOS app (React Native) on the same backend.
 
 ## Online demo
 

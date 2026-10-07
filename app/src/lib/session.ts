@@ -1,10 +1,11 @@
 import type { SignId } from '../data/signs'
 import { useSyncExternalStore } from 'react'
+import { load, remove, save } from './persist'
 
 /**
  * Demo-session state that should survive moving between screens
  * (deck position, chat history, unseen-match badge, Align+ status).
- * Reset by the App on demo restart (R / number keys).
+ * Saved to localStorage so a refresh keeps your place; cleared by Reset demo.
  */
 export interface ChatMsg {
   from: 'me' | 'her'
@@ -56,10 +57,6 @@ export interface SessionState {
   obStep: number
 }
 
-const OB_KEY = 'align:obStep'
-/** the onboarding step survives a refresh, so "The sky saved your place" can greet you */
-const savedObStep = () => { try { return Number(localStorage.getItem(OB_KEY)) || 0 } catch { return 0 } }
-
 const initial = (): SessionState => ({
   deckIndex: 0,
   peeksUsed: 0,
@@ -77,10 +74,13 @@ const initial = (): SessionState => ({
   bonusPeeks: 0,
   notifsSeen: false,
   peekUpsellSeen: false,
-  obStep: savedObStep(),
+  obStep: 0,
 })
 
-let state = initial()
+const KEY = 'session:v1'
+
+/** state survives a refresh; fields added later fall back to their defaults */
+let state: SessionState = { ...initial(), ...(load<Partial<SessionState>>(KEY) ?? {}) }
 const subs = new Set<() => void>()
 
 export const session = {
@@ -91,13 +91,13 @@ export const session = {
   },
   patch(p: Partial<SessionState>) {
     state = { ...state, ...p }
-    if ('obStep' in p) { try { localStorage.setItem(OB_KEY, String(p.obStep)) } catch { /* private mode */ } }
+    save(KEY, state)
     subs.forEach((f) => f())
   },
 }
 
 export function resetSession() {
-  try { localStorage.removeItem(OB_KEY) } catch { /* private mode */ }
+  remove(KEY)
   state = initial()
   subs.forEach((f) => f())
 }

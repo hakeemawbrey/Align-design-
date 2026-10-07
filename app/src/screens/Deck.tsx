@@ -11,6 +11,7 @@ import { buildSeq, peopleLeft, FREE_PEOPLE, PEOPLE_PER_DRAW, type Slot } from '.
 import EventCard from '../components/deck/EventCard'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
+import { api as backend } from '../api'
 import { session, useSession } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
@@ -405,6 +406,9 @@ export default function Deck({ go }: ScreenProps) {
     if (!profile) return
     setBusy(true)
     session.patch({ deckIndex: index + 1 })
+    // the match animation can't wait on the network: the card data says who aligns back,
+    // and the backend records the swipe (and, on Supabase, decides the match itself)
+    void backend.swipe(profile.id, dir > 0 ? 'align' : 'release')
     if (dir > 0) {
       sfx.align()
       setStarPulse((n) => n + 1)
