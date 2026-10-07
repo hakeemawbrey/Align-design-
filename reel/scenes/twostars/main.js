@@ -126,7 +126,7 @@
       light(bg, rp[0], rp[1], ROSE, rk, rb)
 
       // ---- copy (one line at a time) ----
-      const TY = 1200
+      const TY = 1170
       if (WHISPER) {
         const w = ease.inOutQuad(seg(t, 1.0, 2.0)) * (1 - ease.inOutQuad(seg(t, 3.0, 4.0)))
         if (w > 0) A.text(fg, 'some stars find each other.', CX, 1560, { size: 44, italic: true, weight: 400, alpha: 0.7 * w, spacing: 0.01 })

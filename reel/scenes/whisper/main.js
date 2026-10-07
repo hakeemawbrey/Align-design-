@@ -81,15 +81,27 @@
         })
       }
 
-      /* ---- the answer: the brand, once, small and quiet ---- */
+      /* ---- the answer: the brand, once, as on the app splash: mark above, "Align" below ---- */
       if (t >= 9.1) {
-        whisper(fg, 'align', cx, cy - 20, t, 9.1, 99, { size: 64, italic: false, weight: 500, spacing: 0.12, alpha: 0.88 })
-        // the seven dots, root → crown, lighting one by one; the seed-of-life lines barely there
-        const mv = ease.inOutCubic(seg(t, 9.5, 10.4))
-        const lit = 7 * ease.inOutQuad(seg(t, 9.7, 11.1))
-        if (mv > 0) {
-          fg.save()
-          A.alignMark(fg, cx, cy + 96, 70, { lit, alpha: mv * 0.9, strokeAlpha: 0.12, glow: 0.55 })
+        const my = cy - 30
+        // the mark surfaces: seed-of-life lines barely there, then the seven dots light root → crown
+        const mv = ease.inOutCubic(seg(t, 9.1, 10.2))
+        const lit = 7 * ease.inOutQuad(seg(t, 9.5, 11.0))
+        fg.save()
+        fg.translate(0, (1 - ease.outCubic(seg(t, 9.1, 10.5))) * 10)
+        A.alignMark(fg, cx, my, 150, { lit, alpha: mv * 0.9, strokeAlpha: 0.22, glow: 0.6 })
+        fg.restore()
+        // "Align" breathes in beneath it (soft ghost resolving to sharp)
+        const a = 9.8, pin = ease.outCubic(seg(t, a, a + 1.3)), v = ease.inOutCubic(seg(t, a, a + 1.0))
+        if (v > 0.001) {
+          const wy = my + 140 + (1 - pin) * 10
+          if (pin < 0.999) {
+            fg.save(); fg.filter = `blur(${(1 - pin) * 6}px)`
+            A.wordmark(fg, cx, wy + 3, { size: 64 * (1 + (1 - pin) * 0.04), alpha: 0.5 * (1 - pin) * v })
+            fg.restore()
+          }
+          fg.save(); if (pin < 0.999) fg.filter = `blur(${(1 - pin) * 2.2}px)`
+          A.wordmark(fg, cx, wy, { size: 64, alpha: 0.88 * v * lerp(0.6, 1, pin), glow: 0.25 })
           fg.restore()
         }
       }
