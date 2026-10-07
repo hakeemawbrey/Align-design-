@@ -86,13 +86,13 @@
         const my = cy - 30
         // the mark surfaces: seed-of-life lines barely there, then the seven dots light root → crown
         const mv = ease.inOutCubic(seg(t, 9.1, 10.2))
-        const lit = 7 * ease.inOutQuad(seg(t, 9.5, 11.0))
+        const lit = 7 * ease.inOutQuad(seg(t, 9.3, 10.3))
         fg.save()
         fg.translate(0, (1 - ease.outCubic(seg(t, 9.1, 10.5))) * 10)
         A.alignMark(fg, cx, my, 150, { lit, alpha: mv * 0.9, strokeAlpha: 0.22, glow: 0.6 })
         fg.restore()
         // "Align" breathes in beneath it (soft ghost resolving to sharp)
-        const a = 9.8, pin = ease.outCubic(seg(t, a, a + 1.3)), v = ease.inOutCubic(seg(t, a, a + 1.0))
+        const a = 9.5, pin = ease.outCubic(seg(t, a, a + 1.3)), v = ease.inOutCubic(seg(t, a, a + 1.0))
         if (v > 0.001) {
           const wy = my + 140 + (1 - pin) * 10
           if (pin < 0.999) {
