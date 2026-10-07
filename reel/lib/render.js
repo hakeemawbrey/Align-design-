@@ -59,5 +59,5 @@
   A.totalFrames = () => Math.round(A.TL.duration * A.FPS)
   A.ready = document.fonts.ready.then(() => Promise.all([
     "500 40px 'EB Garamond'", "italic 400 40px 'EB Garamond'", "600 40px 'EB Garamond'", "400 40px 'Space Mono'", "700 40px 'Space Mono'",
-  ].map((f) => document.fonts.load(f))))
+  ].map((f) => document.fonts.load(f)))).then(() => Promise.all(A.preload || []))
 })()

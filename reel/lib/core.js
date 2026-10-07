@@ -503,3 +503,29 @@
     ctx.restore()
   }
 })()
+
+/* ---------- images ----------
+ * ALIGN.img(path) returns an HTMLImageElement and registers it for preloading;
+ * the exporter waits for every registered image before rendering.
+ * ALIGN.cover(ctx, img, x, y, w, h, { zoom, fx, fy }) draws it object-fit: cover, with zoom (1 = cover)
+ * and a focal point fx, fy (0..1) to drift around. */
+;(function () {
+  const A = window.ALIGN
+  A.preload = A.preload || []
+  const cache = {}
+  A.img = function (path) {
+    if (cache[path]) return cache[path]
+    const im = new Image()
+    A.preload.push(new Promise((res) => { im.onload = res; im.onerror = () => { console.error('image failed: ' + path); res() } }))
+    im.src = path
+    return (cache[path] = im)
+  }
+  A.cover = function (ctx, im, x, y, w, h, o = {}) {
+    if (!im.naturalWidth) return
+    const zoom = o.zoom || 1, fx = o.fx == null ? 0.5 : o.fx, fy = o.fy == null ? 0.5 : o.fy
+    const s = Math.max(w / im.naturalWidth, h / im.naturalHeight) * zoom
+    const dw = im.naturalWidth * s, dh = im.naturalHeight * s
+    ctx.drawImage(im, x + (w - dw) * fx, y + (h - dh) * fy, dw, dh)
+  }
+  A.SIGN_IDS = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
+})()
