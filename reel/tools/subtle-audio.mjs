@@ -83,7 +83,7 @@ function thump(s, t0, amp, f = 50) {
 }
 
 // warm low drone: soft triangle-ish (PAD_T) + sine, slowly breathing, low-passed at fc(t) (Hz), into mu
-function warmDrone(s, { t0, t1, notes, fc, att = 3, rel = 1, send = 0.35, q = 0.7 }) {
+function warmDrone(s, { t0, t1, notes, fc, att = 3, rel = 1, send = 0.35, q = 0.7, bright = 0.25 }) {
   const { muL, muR, rvL, rvR } = s.buses
   const i0 = s.S(t0), i1 = Math.min(s.N, s.S(t1 + rel)), held = t1 - t0, len = i1 - i0
   const tmpL = new Float32Array(len), tmpR = new Float32Array(len), lfo = s.rng() * TAU
@@ -92,7 +92,7 @@ function warmDrone(s, { t0, t1, notes, fc, att = 3, rel = 1, send = 0.35, q = 0.
     let p1 = s.rng(), p2 = s.rng(), p3 = s.rng() * TAU
     for (let k = 0; k < len; k++) {
       p1 += f / SR; p2 += f * 1.0025 / SR; p1 %= 1; p2 %= 1; p3 += TAU * f / SR
-      const v = ((osc(PAD_T, p1) + osc(PAD_T, p2)) * 0.25 + Math.sin(p3) * 0.7) * a * (1 + 0.12 * Math.sin(lfo + TAU * 0.11 * k / SR))
+      const v = ((osc(PAD_T, p1) + osc(PAD_T, p2)) * bright + Math.sin(p3) * (0.95 - bright)) * a * (1 + 0.12 * Math.sin(lfo + TAU * 0.11 * k / SR))
       tmpL[k] += v * gl; tmpR[k] += v * gr
     }
   }
@@ -195,7 +195,7 @@ function twostars() {
 function theline() {
   const s = createSynth({ dur: DUR, seed: 0x711e03 })
   // the single sustained tone: D2/D3/A3 drone opening low->high over 9 s, like the line drawing itself
-  warmDrone(s, { t0: 0, t1: DUR, notes: [[38, 0.0075, 0], [50, 0.0085, -0.1], [57, 0.0035, 0.1]], fc: (t) => 120 * Math.pow(2600 / 120, Math.min(1, t / 9) ** 1.3), att: 3, rel: 0.5, q: 0.9 })
+  warmDrone(s, { t0: 0, t1: DUR, notes: [[38, 0.0075, 0], [50, 0.0085, -0.1], [57, 0.0035, 0.1]], fc: (t) => 120 * Math.pow(3200 / 120, Math.min(1, t / 9) ** 1.2), att: 3, rel: 0.5, q: 0.9, bright: 0.6 })
   air(s, { amp: 0.0045, lo: 500, hi: 4000, rate: 0.08, lvl: (t) => 0.6 + 0.4 * Math.min(1, t / 9) })
   // shimmer growing very slowly
   shimmerBed(s, { t0: 0, t1: DUR, tones: [86, 93, 98], amp: 0.0016, rate: 0.35, lvl: (t) => Math.min(1, t / 9.5) ** 2 })
