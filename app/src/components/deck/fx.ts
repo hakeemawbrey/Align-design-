@@ -41,37 +41,40 @@ export const PRONOUN: Record<string, { cap: string; poss: string; Poss: string; 
 
 export const pronoun = (p: Profile) => PRONOUN[p.id] ?? { cap: 'THEIR', poss: 'their', Poss: 'Their', subj: 'they' }
 
-/** Long-form reading for the expanded card (S-06). */
+/**
+ * Long-form reading for the expanded card (S-06), in practical terms: why
+ * you'd click, where you'll clash and what to do about it, and an opener.
+ */
 export const EXTENDED: Record<string, { easy: string; rubs: string; now: string }> = {
   j27: {
-    easy: 'Venus rules you both. You want the same evening, and neither of you needs it to be loud.',
-    rubs: 'She weighs; you wait. A decision can sit on the table for a week with both of you being polite about it.',
-    now: 'The moon is in her sign until Thursday — a good week to be direct.',
+    easy: 'You like the same kind of night: good food, real conversation, nothing loud. Talking will feel easy from the first message.',
+    rubs: 'She takes her time deciding; you like to settle things. Offer two clear options and a deadline, and it stops being a standoff.',
+    now: 'Ask what she’s been listening to on repeat. Her card says playlist archivist — she’ll have an answer.',
   },
   m24: {
-    easy: 'Two earth signs. You both like plans that actually happen and dinners that run long.',
-    rubs: 'She edits; you settle. Let her fix the itinerary and she’ll let you pick the restaurant.',
-    now: 'Mercury is quiet in her chart this week — say the thing out loud, she’s listening.',
+    easy: 'You both like plans that actually happen. Dinner that runs long is a good date to her.',
+    rubs: 'She likes to fix the details; you like to go with it. Let her plan the itinerary, you pick the restaurant.',
+    now: 'Ask about the strangest night shift she’s had. ER nurses always have one.',
   },
   r29: {
-    easy: 'His Sun lands on your Moon. He makes you laugh before you’ve decided to.',
-    rubs: 'Two fixed signs. Nobody blinks first, and the argument is usually about who blinked.',
-    now: 'Mars is lighting up his fifth house — expect a spontaneous plan, say yes to one.',
+    easy: 'He makes you laugh before you’ve decided to. Time with him feels like an occasion.',
+    rubs: 'You’re both stubborn. Agree early that whoever cools down first says sorry first.',
+    now: 'Ask what he’d cook you on a first date. He’s a chef — let him show off.',
   },
   a31: {
-    easy: 'They bring the weird idea, you bring the follow-through. It works better than it should.',
-    rubs: 'You want to know Friday’s plan on Tuesday. They want Friday to surprise them.',
-    now: 'Uranus is restless in their chart — the first message should be a question, not a hello.',
+    easy: 'They bring the unusual idea, you bring the follow-through. It works better than it should.',
+    rubs: 'You want Friday’s plan on Tuesday; they want Friday to surprise them. Alternate weekends.',
+    now: 'Ask what they’re building right now. Lead with a question, not a hello.',
   },
   s26: {
-    easy: 'Water softens earth. Silences with them feel like company, not distance.',
-    rubs: 'They feel it all on Monday; you process it by Sunday. Meet in the middle — Thursday.',
-    now: 'Neptune is soft on their Moon this week. Gentle openers land best.',
+    easy: 'Quiet with them feels like company, not distance. Low pressure, very warm.',
+    rubs: 'They feel things fast; you need a few days. Say “I need a minute” instead of going silent.',
+    now: 'Ask to see the last thing they made. Ceramicists love that question.',
   },
   k28: {
-    easy: 'Saturn on your Sun. You both mean what you say and show up when you said you would.',
-    rubs: 'Two calendars, zero chaos. Someone has to suggest the unplanned thing.',
-    now: 'The moon crosses his tenth house — he’s busy, but he’ll make time for something real.',
+    easy: 'You both mean what you say and show up when you said you would. No guessing games.',
+    rubs: 'Two busy calendars. Put dates in the calendar like meetings, or they won’t happen.',
+    now: 'Ask about the building they’d most like to have designed. Then ask what he’d change about yours.',
   },
 }
 

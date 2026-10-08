@@ -40,9 +40,9 @@ export default function FaceLast({ sun, moon, rising, age, dealbreakers, next }:
     dealbreakers: dealbreakers || 'Nothing yet. Brave.',
     blurb: blurb.trim() || undefined,
     reading: [
-      { kind: 'pull', text: 'Remembers your order. Plans the second date before the first ends.', strength: 3 },
-      { kind: 'push', text: 'Slow to say it. Means it twice as long.', strength: 2 },
-      { kind: 'align', text: 'Wants a home and a horizon. Will build you both.', strength: 3 },
+      { kind: 'pull', text: 'Remembers your order. Plans the second date during the first.', strength: 3 },
+      { kind: 'push', text: 'Slow to say how he feels. Ask him directly.', strength: 2 },
+      { kind: 'align', text: 'Loyal and steady. Wants something that lasts.', strength: 3 },
     ],
   }
 

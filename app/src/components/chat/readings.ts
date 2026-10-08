@@ -24,7 +24,7 @@ export const READINGS: Reading[] = [
   {
     id: 'push', label: 'Push', eyebrow: 'Where you push back', color: '#f59cc4', pill: 'rgba(232, 98, 160, 0.38)', pips: 2,
     headline: 'You want the last word. She wants silence.',
-    body: 'Libra ends an argument by leaving the room; Taurus ends it by winning. Neither works on the other. Money is the second fault line — you keep, she spends on beauty, and both of you think that is obvious.',
+    body: 'She ends an argument by leaving the room; you end it by trying to win. Neither works on the other. Money is the other one: you save, she spends on beautiful things, and you each think your way is obvious.',
     tryLine: 'Name a number before the second dinner.',
   },
   {
@@ -36,7 +36,7 @@ export const READINGS: Reading[] = [
   {
     id: 'relationship', label: 'Relationship', eyebrow: 'The long game', color: '#dcaaf2', pill: 'rgba(200, 150, 240, 0.38)', pips: 4,
     headline: 'You stay. She talks. Both count.',
-    body: 'Fixed earth, cardinal air: built to hold, made to be seen. You fix by staying; she fixes by talking. Let her talk first, then stay. Her indecision is not disinterest; your silence is not sulking.',
+    body: 'You show love by staying; she shows it by talking. After a fight, let her talk first, then stay in the room. Her taking time to decide isn’t disinterest, and your quiet isn’t sulking. Say both of those out loud once.',
     tryLine: 'Say which one it is, out loud.',
   },
 ]

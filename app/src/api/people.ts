@@ -2,24 +2,24 @@ import type { Profile, ReadingLine } from '../data/profiles'
 import { ME } from '../data/profiles'
 import { SIGNS, type Element, type SignId } from '../data/signs'
 
-/** What a card says about a real person, read against your sun. */
+/** What a card says about a real person, read against your sun — in plain, practical terms. */
 const PULL: Record<Element, string> = {
-  fire: 'They make the first move and mean it. Hard to ignore.',
-  earth: 'Steady, warm, remembers the small things.',
-  air: 'Quick, curious, impossible to run out of things to say to.',
-  water: 'They notice what you didn’t say. Easy to open up to.',
+  fire: 'Confident and fun. They’ll make the first move.',
+  earth: 'Reliable and warm. They remember the small things.',
+  air: 'Easy to talk to. You won’t run out of things to say.',
+  water: 'Caring and perceptive. Easy to open up to.',
 }
 const PUSH: Record<Element, string> = {
-  fire: 'They move fast; you might want a minute.',
-  earth: 'Slow to change their mind, about anything.',
-  air: 'Plans change. Then change again.',
-  water: 'They feel it all at once; you may need to say it out loud.',
+  fire: 'They move fast. Say what pace works for you.',
+  earth: 'Slow to change their mind. Don’t rush big decisions.',
+  air: 'Plans change a lot. Lock in the ones that matter.',
+  water: 'They feel things deeply. Check in instead of guessing.',
 }
 const ALIGN: Record<Element, Record<Element, string>> = {
-  fire: { fire: 'Two fires: bright, fast, never boring.', earth: 'Fire and earth — one starts it, one makes it last.', air: 'Air feeds fire — big ideas, bigger nights.', water: 'Steam: hot, loud, worth it if you talk.' },
-  earth: { fire: 'Earth and fire — you keep the flame from spreading.', earth: 'Earth on earth — build something that lasts.', air: 'Earth holds air — they dream it, you build it.', water: 'Water feeds earth — tender, slow, real.' },
-  air: { fire: 'Air feeds fire — you give them room to burn.', earth: 'Air and earth — you keep it light, they keep it real.', air: 'Two radios: great signal, nobody sleeps.', water: 'Air and water — you stir it up, they go deep.' },
-  water: { fire: 'Water and fire — steam, if you both stay.', earth: 'Water feeds earth — you soften, they steady.', air: 'Water and air — they lift you, you ground them.', water: 'Tide pool: deep, private, hard to leave.' },
+  fire: { fire: 'Lots of energy. Plan active dates, not quiet ones.', earth: 'One starts things, the other makes them last.', air: 'Big ideas, bigger nights. Never boring.', water: 'Intense. Works if you talk things through.' },
+  earth: { fire: 'They bring excitement, you bring stability.', earth: 'Same pace, same goals. Built for the long run.', air: 'They dream it up, you make it happen.', water: 'Gentle and steady. A strong long-term fit.' },
+  air: { fire: 'You give them room; they bring the spark.', earth: 'You keep it light, they keep it grounded.', air: 'Endless conversation. Make sure you also make plans.', water: 'You lighten the mood; they bring depth.' },
+  water: { fire: 'Passionate. Works if you both stay honest.', earth: 'You soften, they steady. Feels safe fast.', air: 'They lift you up; you ground them.', water: 'Deep and private. Easy to fall for each other.' },
 }
 
 export function readingFor(theirSun: SignId, mySun: SignId = ME.sign): ReadingLine[] {

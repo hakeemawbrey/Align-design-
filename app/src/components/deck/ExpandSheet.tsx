@@ -16,12 +16,18 @@ const S = 0.567
 
 /** S-06 — the card lifted into a detail sheet. */
 export default function ExpandSheet({ profile, onClose, onAlign, onRelease }: Props) {
-  const ext = EXTENDED[profile.id] ?? EXTENDED.j27
+  // no long-form copy for this person: use their card's own lines, never someone else's
+  const line = (k: 'pull' | 'push') => profile.reading.find((r) => r.kind === k)?.text ?? ''
+  const ext = EXTENDED[profile.id] ?? {
+    easy: line('pull'),
+    rubs: line('push'),
+    now: profile.blurb ? `Open with their bio: ask about “${profile.blurb.split('.')[0]}.”` : 'Open with something specific from their card, not “hey”.',
+  }
   const pr = pronoun(profile)
   const sections: [string, string][] = [
-    ['WHERE IT’S EASY', ext.easy],
-    ['WHERE YOU PUSH', ext.rubs],
-    ['RIGHT NOW', ext.now],
+    ['WHY YOU’D CLICK', ext.easy],
+    ['WHERE YOU’LL CLASH', ext.rubs],
+    ['FIRST MESSAGE IDEA', ext.now],
   ]
   return (
     <motion.div
