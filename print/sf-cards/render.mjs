@@ -26,6 +26,15 @@ async function shot(q, file) {
 }
 
 await mkdir(join(out, 'print-files'), { recursive: true })
+await mkdir(join(here, 'grounds'), { recursive: true })
+
+// element backgrounds, rendered once and reused by every card (keeps the PDF small)
+for (const e of ['fire', 'earth', 'air', 'water']) {
+  const p = await browser.newPage({ viewport: { width: 264, height: 360 }, deviceScaleFactor: 300 / 96 })
+  await p.goto(page$(`view=ground&element=${e}`)); await ready(p)
+  await p.locator('.panel').screenshot({ path: join(here, 'grounds', `${e}.jpg`), type: 'jpeg', quality: 92 })
+  await p.close()
+}
 
 // screen proof
 {
