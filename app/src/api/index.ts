@@ -2,7 +2,7 @@ import { useSyncExternalStore } from 'react'
 import { localBackend } from './local'
 import { supabaseBackend } from './supabase'
 import { hydrateCatalog } from './catalog'
-import { load, save } from '../lib/persist'
+import { load, remove, save } from '../lib/persist'
 import { ME, type Profile } from '../data/profiles'
 import type { Backend, MyCard, Snapshot, SwipeDir } from './types'
 
@@ -35,12 +35,12 @@ const set = (p: Partial<World>) => { world = { ...world, ...p }; subs.forEach((f
 // Your card. Defaults to Hakeem; onboarding on a new phone replaces it, and
 // every screen that shows "you" reads ME, so it follows along.
 const CARD_KEY = 'mycard:v1'
+const DEFAULT_ME = { ...ME }
 const savedCard = load<MyCard>(CARD_KEY)
 if (savedCard) applyCard(savedCard)
 function applyCard(c: MyCard) {
   Object.assign(ME, { name: c.name, age: c.age, sign: c.sun, moon: c.moon, rising: c.rising, blurb: c.blurb, ...(c.photo ? { photo: c.photo } : {}) })
 }
-export const myCard = () => savedCard ?? load<MyCard>(CARD_KEY)
 
 /** matches you're making right now, so the live feed doesn't announce your own */
 const swiping = new Set<string>()
@@ -110,6 +110,9 @@ export const api = {
   person: (id: string): Profile | undefined => world.people.find((p) => p.id === id),
   dismissNotice() { set({ notice: undefined }) },
   async reset() {
+    // a reset hands the phone back to the default account (Hakeem)
+    remove(CARD_KEY)
+    Object.assign(ME, DEFAULT_ME)
     try { set({ ...(await backend.reset()), notice: undefined }) } catch (e) { console.warn('[align] reset failed', e) }
   },
 }

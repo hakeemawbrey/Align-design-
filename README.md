@@ -43,9 +43,42 @@ Each new account starts with five matches already in the binder (Tobias,
 Anselm, Zena, Mira, Sunny), the same as the demo. Changed a profile in
 `app/src/data/profiles.ts`? Run `npm run seed:gen` and re-run `supabase/seed.sql`.
 
-**What's still scripted:** the people in the deck, Juniper aligning back, and
-her replies. Next: load the deck from the database, real two-person matching
-and chat, photo upload, then the iOS app (React Native) on the same backend.
+### Real people (two phones)
+
+With Supabase set up, anyone who opens the link and goes through **New here**
+makes a real card: first name, a one-line bio and a photo on the last step.
+Published cards are dealt first in everyone else's deck, tagged
+**NEW · NEAR YOU**. When two people align on each other it's a match on both
+phones: the second to align sees "It's mutual", and the first gets a live banner
+that opens the chat. Chat between real people is shared and live.
+
+Try it with two phones (or two browsers): onboard on both, align on each other,
+then message.
+
+**Reset demo** wipes your swipes, matches and chat, and hands the phone back to
+Hakeem. A published card stays published.
+
+**Still scripted:** the seeded people, Juniper aligning back, and her replies.
+
+### iOS app
+
+`app/ios` is a native Xcode project (Capacitor) wrapping the same web app, so
+every change ships to both. On iOS, haptics replace vibration and the status
+bar is real.
+
+On a Mac with Xcode 16+:
+
+```bash
+cd app
+npm install
+npm run ios        # builds, syncs into ios/, opens Xcode
+```
+
+In Xcode, pick your team under **Signing & Capabilities**, then run on your
+phone, or **Product → Archive** to upload to TestFlight. Set the Supabase env
+vars in `app/.env.local` *before* building: they're baked into the app.
+
+For a founder-camp walkthrough, see [docs/FOUNDER-CAMP.md](docs/FOUNDER-CAMP.md).
 
 ## Online demo
 
