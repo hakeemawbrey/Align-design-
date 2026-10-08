@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Align SF-01 Cards</title>
+<!--
+  Align SF-01 · trading-card business cards (2.5 × 3.5 in, poker size).
+
+  Views (query string):
+    ?view=proof                    all 12 fronts + the back, on screen (default)
+    ?view=card&side=front&sign=aries&n=7   one card at bleed size (for PNG export)
+    ?view=card&side=back
+    ?view=sheet                    letter pages, 3×3, crop marks, fronts then backs (duplex)
+    &sign=aries                    limit sheet / proof to one sign
+    &art=aura                      use the AuraCam silhouette instead of the animal
+    &guides=1                      show trim + safe lines on proof
+-->
+<style>
+  @font-face { font-family: 'EB Garamond'; font-style: normal; font-weight: 400; src: url(fonts/eb-garamond-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'EB Garamond'; font-style: italic; font-weight: 400; src: url(fonts/eb-garamond-latin-400-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'EB Garamond'; font-style: normal; font-weight: 500; src: url(fonts/eb-garamond-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'EB Garamond'; font-style: italic; font-weight: 500; src: url(fonts/eb-garamond-latin-500-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'Space Mono'; font-style: normal; font-weight: 400; src: url(fonts/space-mono-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Space Mono'; font-style: normal; font-weight: 700; src: url(fonts/space-mono-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Zodiac Glyphs'; src: url(fonts/zodiac-glyphs.woff2) format('woff2'); }
+
+  :root {
+    --void: #0b0620; --canvas: #140a2e; --raised: #1e1240;
+    --label-1: #efe6d6; --label-2: #b3a6c4; --label-3: #7d6f94; --label-4: #574b6d;
+    --spark: #7fd8b0; --rub: #e8628a; --align: #f2c75c; --violet: #9a7be0;
+    --serif: 'EB Garamond', Georgia, serif;
+    --mono: 'Space Mono', ui-monospace, monospace;
+    --glyph: 'Zodiac Glyphs', 'DejaVu Sans', 'Apple Symbols', sans-serif;
+    /* card geometry, in pt: 2.5 × 3.5 in trim, 1/8 in bleed */
+    --bleed: 9pt;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #07041a; color: var(--label-1); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* ───────── card shell ───────── */
+  .card { position: relative; width: 198pt; height: 270pt; overflow: hidden; background: var(--void); }
+  .trim { position: absolute; left: 9pt; top: 9pt; width: 180pt; height: 252pt; }
+  .abs { position: absolute; }
+  .serif { font-family: var(--serif); }
+  .mono { font-family: var(--mono); }
+
+  /* foil frame: the sign colour rolled through white */
+  .frame { position: absolute; inset: 6.5pt; border-radius: 9pt; padding: 1.3pt; }
+  .panel { position: relative; width: 100%; height: 100%; border-radius: 7.8pt; overflow: hidden; }
+
+  /* ───────── front ───────── */
+  .f-top { left: 14pt; right: 14pt; top: 14pt; height: 20pt; display: flex; justify-content: space-between; align-items: flex-start; }
+  .f-animal { font-family: var(--serif); font-style: italic; font-size: 13.5pt; line-height: 1; color: var(--label-1); }
+  .f-dates { font-family: var(--mono); font-size: 4.6pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--label-2); margin-top: 2.6pt; }
+  .orb { width: 19pt; height: 19pt; border-radius: 50%; display: grid; place-items: center; font-family: var(--glyph); font-size: 9.5pt; line-height: 1; color: #fff; }
+
+  .art { left: 14pt; right: 14pt; top: 37pt; height: 88pt; border-radius: 5pt; overflow: hidden; background: #000; }
+  .art img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; display: block; }
+  .art .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,6,32,0) 55%, rgba(11,6,32,0.85) 100%); }
+  .art .cap { position: absolute; left: 0; right: 0; bottom: 3.6pt; text-align: center; font-family: var(--mono); font-size: 4.3pt; letter-spacing: 0.22em; color: rgba(239,230,214,0.82); }
+  .art .edge { position: absolute; inset: 0; border-radius: 5pt; }
+
+  .badges { left: 14pt; right: 14pt; top: 130pt; height: 12pt; display: flex; align-items: center; gap: 4.5pt; white-space: nowrap; }
+  .sname { font-family: var(--serif); font-size: 10.5pt; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1; }
+  .chip { display: inline-flex; align-items: center; gap: 2.4pt; height: 10pt; padding: 0 4.5pt 0 1.6pt; border-radius: 99pt; border: 0.6pt solid; font-family: var(--mono); font-size: 4.4pt; letter-spacing: 0.14em; text-transform: uppercase; }
+  .sphere { width: 6.6pt; height: 6.6pt; border-radius: 50%; flex-shrink: 0; }
+
+  .general { left: 14pt; right: 13pt; top: 146pt; font-family: var(--serif); font-style: italic; font-size: 8.1pt; line-height: 1.16; color: var(--label-1); }
+
+  .rule { left: 14pt; right: 14pt; height: 0.5pt; background: linear-gradient(90deg, rgba(179,166,196,0.5), rgba(179,166,196,0.12)); }
+
+  .reads { left: 14pt; right: 13pt; top: 173pt; display: flex; flex-direction: column; gap: 3.4pt; }
+  .read { display: flex; align-items: flex-start; }
+  .read .k { width: 25pt; flex-shrink: 0; font-family: var(--mono); font-weight: 700; font-size: 4.9pt; letter-spacing: 0.14em; padding-top: 1.7pt; }
+  .read .t { flex: 1; font-family: var(--serif); font-size: 7.3pt; line-height: 1.13; color: var(--label-1); }
+
+  .foot { left: 14pt; right: 14pt; bottom: 12pt; display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 4.6pt; letter-spacing: 0.14em; white-space: nowrap; }
+
+  /* ───────── back ───────── */
+  .b-mark { left: 0; right: 0; top: 21pt; text-align: center; font-family: var(--serif); font-style: italic; font-size: 14pt; color: rgba(239,230,214,0.82); letter-spacing: 0.02em; }
+  .b-sol { left: 30pt; top: 44pt; width: 120pt; height: 120pt; }
+  .b-name { left: 0; right: 0; top: 176pt; text-align: center; font-family: var(--serif); font-style: italic; font-size: 16pt; line-height: 1; color: var(--label-1); }
+  .b-title { left: 0; right: 0; top: 195pt; text-align: center; font-family: var(--mono); font-size: 5.4pt; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(220,188,255,0.78); }
+  .b-hair { left: 74pt; right: 74pt; top: 207pt; height: 0.5pt; background: linear-gradient(90deg, transparent, var(--align), transparent); }
+  .b-email { left: 0; right: 0; top: 213pt; text-align: center; font-family: var(--mono); font-size: 6.2pt; letter-spacing: 0.04em; color: var(--label-1); }
+  .b-site { left: 0; right: 0; bottom: 15pt; text-align: center; font-family: var(--mono); font-size: 4.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(220,188,255,0.55); }
+
+  /* ───────── proof view ───────── */
+  .proof { padding: 40px 24px 80px; font-family: var(--serif); }
+  .proof h1 { font-style: italic; font-weight: 400; font-size: 34px; text-align: center; }
+  .proof p.sub { text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--label-2); margin: 8px 0 32px; text-transform: uppercase; }
+  .grid { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; }
+  .slot { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .slot .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--label-3); text-transform: uppercase; }
+  .scaler { width: calc(180pt * var(--s)); height: calc(252pt * var(--s)); position: relative; border-radius: calc(9pt * var(--s)); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+  .scaler > .card { transform-origin: 0 0; transform: scale(var(--s)) translate(-9pt, -9pt); position: absolute; left: 0; top: 0; }
+  .guides .scaler { overflow: visible; border-radius: 0; width: calc(198pt * var(--s)); height: calc(270pt * var(--s)); }
+  .guides .scaler > .card { transform: scale(var(--s)); }
+  .guide { position: absolute; pointer-events: none; z-index: 9; }
+
+  /* ───────── sheet view (letter, 3×3, butted, crop marks) ───────── */
+  @page { size: 8.5in 11in; margin: 0; }
+  .page { position: relative; width: 612pt; height: 792pt; overflow: hidden; background: #fff; page-break-after: always; break-after: page; }
+  .cell { position: absolute; width: 180pt; height: 252pt; overflow: hidden; }
+  .cell > .card { position: absolute; left: -9pt; top: -9pt; }
+  .crop { position: absolute; background: #000; }
+  .page-lbl { position: absolute; left: 13pt; top: 396pt; transform: translate(-50%, -50%) rotate(-90deg); white-space: nowrap; font: 5.5pt var(--mono); color: #888; letter-spacing: 0.1em; }
+</style>
+<script src="signs.js"></script>
+</head>
+<body>
+<script>
+const Q = new URLSearchParams(location.search)
+const VIEW = Q.get('view') || 'proof'
+const ART = Q.get('art') === 'aura' ? 'aura' : 'figure'
+const ONLY = Q.get('sign')
+const pad = (n) => String(n).padStart(2, '0')
+const IMG = (s) => `../../app/public/img/${ART}/${s.id}.jpg`
+
+const foil = (c, l, deg = 125) =>
+  `linear-gradient(${deg}deg, ${c} 0%, ${l} 22%, #ffffff 42%, ${l} 58%, ${c} 78%, ${l} 100%)`
+const sphere = (c, l) =>
+  `radial-gradient(circle at 35% 30%, #ffffff 0%, ${l} 22%, ${c} 60%, ${c} 100%)`
+const el = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild }
+
+const READ_COLOR = { pull: 'var(--spark)', push: 'var(--rub)', align: 'var(--align)' }
+
+function front(s, n) {
+  const ec = ELEMENT_COLOR[s.element]
+  return el(`
+  <div class="card front">
+    <!-- full-bleed ground + sign bloom (colour lives on the edge, chip and bloom) -->
+    <div class="abs" style="inset:0; background:
+      radial-gradient(60% 45% at 85% 100%, ${s.color}55 0%, transparent 70%),
+      radial-gradient(55% 40% at 10% 0%, rgba(124,116,240,0.30) 0%, transparent 70%),
+      var(--void)"></div>
+    <div class="trim">
+      <div class="frame" style="background:${foil(s.color, s.light)}">
+        <div class="panel" style="background:
+          radial-gradient(90% 60% at 50% 0%, #2a1866 0%, transparent 70%),
+          radial-gradient(70% 45% at 100% 100%, ${s.dark}cc 0%, transparent 75%),
+          linear-gradient(180deg, #1a0e3a 0%, var(--canvas) 45%, #0f0826 100%)"></div>
+      </div>
+
+      <div class="abs f-top">
+        <div>
+          <div class="f-animal">${s.animal}</div>
+          <div class="f-dates">${s.dates}</div>
+        </div>
+        <div class="orb" style="background:${sphere(s.color, s.light)}; box-shadow: 0 0 0 0.6pt ${s.light}88; color:${s.dark}">${s.glyph}&#xFE0E;</div>
+      </div>
+
+      <div class="abs art">
+        <img src="${IMG(s)}" alt="" style="object-position:50% ${ART === 'figure' ? s.focus : 32}%">
+        <div class="veil"></div>
+        <div class="cap">AURA · ${s.aura.toUpperCase()}</div>
+        <div class="edge" style="box-shadow: inset 0 0 0 0.6pt ${s.color}88"></div>
+      </div>
+
+      <div class="abs badges">
+        <span class="sname" style="color:${s.color}">${s.name}</span>
+        <span class="chip" style="color:${ec}; border-color:${ec}cc; background:${ec}1a">
+          <span class="sphere" style="background:${sphere(ec, '#e8fbff')}"></span>${s.element}
+        </span>
+        <span class="chip" style="color:var(--label-2); border-color:rgba(179,166,196,0.55)">
+          <span class="sphere" style="background:${sphere('#8f7be8', '#ece6ff')}"></span>${s.mode}
+        </span>
+      </div>
+
+      <div class="abs general">“${s.general}”</div>
+
+      <div class="abs rule" style="top:169pt"></div>
+
+      <div class="abs reads">
+        ${['pull', 'push', 'align'].map((k) => `
+          <div class="read">
+            <span class="k" style="color:${READ_COLOR[k]}">${k.toUpperCase()}</span>
+            <span class="t">${s[k]}</span>
+          </div>`).join('')}
+      </div>
+
+      <div class="abs foot">
+        <span style="color:var(--label-2)">ALIGN · ${EDITION.code}</span>
+        <span style="color:var(--label-3)">SAN FRANCISCO</span>
+        <span style="color:var(--align)">№ ${n ? pad(n) : '__'}/${EDITION.run}</span>
+      </div>
+    </div>
+  </div>`)
+}
+
+/** Seed-of-life linework + the 7-chakra column, as on "Card back · Align". */
+function seedOfLife() {
+  const C = 60, r = 25
+  const ring = (off) => Array.from({ length: 6 }, (_, i) => {
+    const a = (i * Math.PI) / 3 - Math.PI / 2 + off
+    return [C + Math.cos(a) * r * (off ? Math.sqrt(3) : 1), C + Math.sin(a) * r * (off ? Math.sqrt(3) : 1)]
+  })
+  const chakra = ['#b05cf5', '#4f6df5', '#3fc4f0', '#4fd36a', '#ffd23f', '#ff8a2e', '#ff4040'] // crown → root
+  const gap = 12.4
+  const dots = chakra.map((c, i) => {
+    const y = C + (i - 3) * gap
+    return `
+      <circle cx="${C}" cy="${y}" r="7" fill="url(#halo${i})"/>
+      <circle cx="${C}" cy="${y}" r="2.9" fill="url(#core${i})"/>`
+  }).join('')
+  const defs = chakra.map((c, i) => `
+    <radialGradient id="halo${i}"><stop offset="0" stop-color="${c}" stop-opacity="0.85"/><stop offset="0.45" stop-color="${c}" stop-opacity="0.3"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient>
+    <radialGradient id="core${i}" cx="0.42" cy="0.38"><stop offset="0" stop-color="#fff"/><stop offset="0.4" stop-color="${c}"/><stop offset="1" stop-color="${c}"/></radialGradient>`).join('')
+  return `
+  <svg viewBox="0 0 120 120" width="100%" height="100%" style="overflow:visible">
+    <defs>
+      <linearGradient id="solStroke" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f3dcff"/><stop offset="0.5" stop-color="#c7a6ff"/><stop offset="1" stop-color="#ffd9f6"/>
+      </linearGradient>
+      ${defs}
+    </defs>
+    <g fill="none" stroke="url(#solStroke)" stroke-width="0.55" opacity="0.7">
+      <circle cx="${C}" cy="${C}" r="${r * 2}" stroke-width="0.75"/>
+      <circle cx="${C}" cy="${C}" r="${r * 2 + 3}" stroke-width="0.3" opacity="0.6"/>
+      <circle cx="${C}" cy="${C}" r="${r}"/>
+      ${ring(0).map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${r}"/>`).join('')}
+      ${ring(Math.PI / 6).map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${r}" opacity="0.3"/>`).join('')}
+    </g>
+    ${dots}
+  </svg>`
+}
+
+function back() {
+  const b = CARD_BACK
+  return el(`
+  <div class="card back">
+    <div class="abs" style="inset:0; background:
+      radial-gradient(55% 40% at 100% 100%, rgba(163,92,240,0.55) 0%, transparent 70%),
+      radial-gradient(50% 35% at 0% 0%, rgba(124,116,240,0.35) 0%, transparent 70%),
+      radial-gradient(75% 60% at 50% 40%, #5b2bc4 0%, #3a1690 45%, #210a5a 80%, #170741 100%)"></div>
+    <div class="trim">
+      <div class="frame" style="background:linear-gradient(125deg, #7a5ad0 0%, #dcbcff 22%, #ffffff 42%, #dcbcff 58%, #9a7be0 78%, #e9d6ff 100%)">
+        <div class="panel" style="background:
+          radial-gradient(60% 45% at 100% 100%, rgba(163,92,240,0.5) 0%, transparent 70%),
+          radial-gradient(55% 40% at 0% 0%, rgba(124,116,240,0.32) 0%, transparent 70%),
+          radial-gradient(75% 58% at 50% 38%, #5b2bc4 0%, #3a1690 45%, #210a5a 80%, #170741 100%)">
+          <div class="abs" style="inset:3.5pt; border-radius:5.5pt; border:0.5pt solid rgba(220,188,255,0.24)"></div>
+        </div>
+      </div>
+      <div class="abs b-mark">Align</div>
+      <div class="abs b-sol">${seedOfLife()}</div>
+      <div class="abs b-name">${b.name}</div>
+      <div class="abs b-title">${b.title}</div>
+      <div class="abs b-hair"></div>
+      <div class="abs b-email">${b.email}</div>
+      <div class="abs b-site">${b.site}</div>
+    </div>
+  </div>`)
+}
+
+const signs = ONLY ? SIGNS.filter((s) => s.id === ONLY) : SIGNS
+
+if (VIEW === 'card') {
+  // one card at full bleed size, top-left of the page (for PNG export)
+  document.body.style.background = 'transparent'
+  const s = SIGNS.find((x) => x.id === ONLY) || SIGNS[0]
+  const n = Q.has('n') ? Number(Q.get('n')) : 0
+  document.body.appendChild(Q.get('side') === 'back' ? back() : front(s, n))
+} else if (VIEW === 'sheet') {
+  document.body.style.background = '#fff'
+  const fronts = []
+  for (const s of signs) for (let n = 1; n <= EDITION.run; n++) fronts.push([s, n])
+  const PER = 9, X0 = 36, Y0 = 18, W = 180, H = 252
+  const crops = (page) => {
+    const L = 14 // mark length, pt (stays in the margins)
+    for (let c = 0; c <= 3; c++) {
+      const x = X0 + c * W
+      page.appendChild(el(`<div class="crop" style="left:${x - 0.25}pt; top:${Y0 - L - 2}pt; width:0.5pt; height:${L}pt"></div>`))
+      page.appendChild(el(`<div class="crop" style="left:${x - 0.25}pt; top:${Y0 + 3 * H + 2}pt; width:0.5pt; height:${L}pt"></div>`))
+    }
+    for (let r = 0; r <= 3; r++) {
+      const y = Y0 + r * H
+      page.appendChild(el(`<div class="crop" style="top:${y - 0.25}pt; left:${X0 - L - 4}pt; height:0.5pt; width:${L}pt"></div>`))
+      page.appendChild(el(`<div class="crop" style="top:${y - 0.25}pt; left:${X0 + 3 * W + 4}pt; height:0.5pt; width:${L}pt"></div>`))
+    }
+  }
+  for (let p = 0; p * PER < fronts.length; p++) {
+    const batch = fronts.slice(p * PER, p * PER + PER)
+    const fp = el(`<div class="page"></div>`)
+    const bp = el(`<div class="page"></div>`)
+    batch.forEach(([s, n], i) => {
+      const r = Math.floor(i / 3), c = i % 3
+      const cell = el(`<div class="cell" style="left:${X0 + c * W}pt; top:${Y0 + r * H}pt"></div>`)
+      cell.appendChild(front(s, n)); fp.appendChild(cell)
+      // long-edge duplex: the back of column c sits in column 2 − c
+      const bcell = el(`<div class="cell" style="left:${X0 + (2 - c) * W}pt; top:${Y0 + r * H}pt"></div>`)
+      bcell.appendChild(back()); bp.appendChild(bcell)
+    })
+    crops(fp); crops(bp)
+    const first = batch[0], last = batch[batch.length - 1]
+    fp.appendChild(el(`<div class="page-lbl">ALIGN ${EDITION.code} · FRONTS · ${first[0].name} ${pad(first[1])} → ${last[0].name} ${pad(last[1])}</div>`))
+    bp.appendChild(el(`<div class="page-lbl">ALIGN ${EDITION.code} · BACKS (print double-sided, flip on long edge)</div>`))
+    document.body.append(fp, bp)
+  }
+} else {
+  const guides = Q.get('guides') === '1'
+  const s = Number(Q.get('scale') || 1.55)
+  const wrap = el(`<div class="proof ${guides ? 'guides' : ''}" style="--s:${s}">
+    <h1>Align · ${EDITION.code}</h1>
+    <p class="sub">San Francisco edition · 12 signs × ${EDITION.run} · 2.5 × 3.5 in</p>
+    <div class="grid"></div></div>`)
+  const grid = wrap.querySelector('.grid')
+  const slot = (card, label) => {
+    const sl = el(`<div class="slot"><div class="scaler"></div><div class="lbl">${label}</div></div>`)
+    const sc = sl.querySelector('.scaler')
+    sc.appendChild(card)
+    if (guides) {
+      sc.appendChild(el(`<div class="guide" style="left:calc(9pt*var(--s)); top:calc(9pt*var(--s)); width:calc(180pt*var(--s)); height:calc(252pt*var(--s)); outline:1px solid #ff3b6b"></div>`))
+      sc.appendChild(el(`<div class="guide" style="left:calc(18pt*var(--s)); top:calc(18pt*var(--s)); width:calc(162pt*var(--s)); height:calc(234pt*var(--s)); outline:1px dashed #36d6ff"></div>`))
+    }
+    grid.appendChild(sl)
+  }
+  slot(back(), 'Back · every card')
+  signs.forEach((sg, i) => slot(front(sg, 7), `${sg.name} · № 07/${EDITION.run}`))
+  document.body.appendChild(wrap)
+}
+document.fonts.ready.then(() => { document.body.dataset.ready = '1' })
+</script>
+</body>
+</html>
