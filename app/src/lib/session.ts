@@ -55,6 +55,8 @@ export interface SessionState {
   peekUpsellSeen: boolean
   /** onboarding step the presenter left on (0 = not started or finished) */
   obStep: number
+  /** the real person the Thread screen is chatting with */
+  threadWith: string
 }
 
 const initial = (): SessionState => ({
@@ -75,6 +77,7 @@ const initial = (): SessionState => ({
   notifsSeen: false,
   peekUpsellSeen: false,
   obStep: 0,
+  threadWith: '',
 })
 
 const KEY = 'session:v1'

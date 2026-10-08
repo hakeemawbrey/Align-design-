@@ -171,7 +171,7 @@ export default function Onboarding({ go }: ScreenProps) {
           {view === 'element' && <ElementWeather sun={sun} next={next} />}
           {view === 'rule' && <CardRule next={next} />}
           {view === 'deal' && <Dealbreakers picked={picks} setPicked={setPicks} next={next} />}
-          {view === 'photos' && <FaceLast sun={sun} moon={moon} rising={rising} dealbreakers={picks.map((p) => p.card).join('. ') + (picks.length ? '.' : '')} next={next} />}
+          {view === 'photos' && <FaceLast sun={sun} moon={moon} rising={rising} age={ageOn(birth)} dealbreakers={picks.map((p) => p.card).join('. ') + (picks.length ? '.' : '')} next={next} />}
           {view === 'field' && <TheField next={next} />}
         </motion.div>
       </AnimatePresence>

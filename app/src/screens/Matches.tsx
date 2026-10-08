@@ -39,8 +39,13 @@ const SLEEVE_H = 142
 export default function Matches({ go }: ScreenProps) {
   const { traded, justTraded } = useBinder()
   const { blockedPeople } = useSession()
-  const { matches } = useWorld()
-  const visible = MATCHES.filter((m) => matches.includes(m.id) && !blockedPeople.includes(m.id))
+  const { matches, people } = useWorld()
+  // real people you matched with, newest first, at the top of "your turn"
+  const real: Match[] = people.filter((p) => matches.includes(p.id)).map((p) => ({
+    id: p.id, name: p.name, age: p.age, sign: p.sign, photo: p.photo ?? SIGNS[p.sign].auraImg, serial: p.serial, pronoun: 'they',
+    day: 0, section: 'your-turn', status: 'New match · say hi', when: 'NOW', traded: false, opens: 'chat', real: true,
+  }))
+  const visible = [...real, ...MATCHES.filter((m) => matches.includes(m.id))].filter((m) => !blockedPeople.includes(m.id))
   const [view, setView] = useState<View>(justTraded ? 'binder' : lastView)
   const [zoom, setZoom] = useState<Match | null>(null)
   const [page, setPage] = useState(0)
@@ -73,6 +78,7 @@ export default function Matches({ go }: ScreenProps) {
 
   const openRow = (m: Match) => {
     sfx.tap()
+    if (m.real) { session.patch({ threadWith: m.id }); go('thread'); return }
     const st = slotState(m, traded)
     if (st === 'ready') { binder.startTrade(m.id); go('trade') }
     else if (st === 'traded') { setView('binder'); setZoom(m) }

@@ -19,6 +19,7 @@ import { resetBinder } from './lib/binder'
 import { resetSession } from './lib/session'
 import { RESET_EVENT } from './lib/demo'
 import { api } from './api'
+import NoticeBanner from './components/NoticeBanner'
 import Onboarding from './screens/Onboarding'
 import Founding from './screens/Founding'
 import Paywall from './screens/Paywall'
@@ -29,18 +30,19 @@ import Calendar from './screens/Calendar'
 import Chart from './screens/Chart'
 import Block from './screens/Block'
 import Notifications from './screens/Notifications'
+import Thread from './screens/Thread'
 import { sfx } from './lib/sfx'
 
 const SCREENS: Record<ScreenId, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
   matches: Matches, trade: Trade,
-  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: Calendar, chart: Chart, block: Block, notifications: Notifications,
+  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: Calendar, chart: Chart, block: Block, notifications: Notifications, thread: Thread,
 }
 
 /** Keyboard jump order for recording: 1–9, then 0 */
 const ORDER: ScreenId[] = ['splash', 'welcome', 'dealing', 'deck', 'match', 'reveal', 'chat', 'alignment', 'spent', 'matches']
-const ALL: ScreenId[] = [...ORDER, 'trade', 'onboarding', 'founding', 'paywall', 'you', 'club', 'sky', 'calendar', 'chart', 'block', 'notifications']
+const ALL: ScreenId[] = [...ORDER, 'trade', 'onboarding', 'founding', 'paywall', 'you', 'club', 'sky', 'calendar', 'chart', 'block', 'notifications', 'thread']
 /** on a phone: real status bar and home indicator, no fake ones */
 const APP = isAppMode()
 
@@ -116,6 +118,7 @@ export default function App() {
           <Screen go={go} />
         </motion.div>
       </AnimatePresence>
+      <NoticeBanner go={go} />
       {!APP && <StatusBar />}
       {!APP && <HomeIndicator />}
     </PhoneFrame>

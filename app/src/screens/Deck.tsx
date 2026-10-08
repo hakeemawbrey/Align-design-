@@ -11,7 +11,7 @@ import { buildSeq, peopleLeft, FREE_PEOPLE, PEOPLE_PER_DRAW, type Slot } from '.
 import EventCard from '../components/deck/EventCard'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
-import { api as backend } from '../api'
+import { api as backend, useWorld } from '../api'
 import { session, useSession } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
@@ -254,8 +254,17 @@ export default function Deck({ go }: ScreenProps) {
   const dragX = useMotionValue(0)
   const holdP = useMotionValue(0)
 
-  const slot: Slot | undefined = seq[index]
-  const nextSlot: Slot | undefined = seq[index + 1]
+  // real people (published from their own phones) go first; swiping them
+  // doesn't move tonight's deal, so the saved deck position stays valid
+  const world = useWorld()
+  const { blockedSigns, blockedPeople } = useSession()
+  const realQueue = world.people.filter((p) => p.real && !world.swipes[p.id] && !world.matches.includes(p.id)
+    && !blockedSigns.includes(p.sign) && !blockedPeople.includes(p.id))
+  const asSlot = (p: Profile | undefined, at: Slot | undefined): Slot | undefined =>
+    p && { kind: 'person', profile: p, draw: at?.draw ?? 0, pos: at?.kind === 'person' ? at.pos : 0, key: `real-${p.id}` }
+  const realSlot = asSlot(realQueue[0], seq[index])
+  const slot: Slot | undefined = realSlot ?? seq[index]
+  const nextSlot: Slot | undefined = realSlot ? (asSlot(realQueue[1], seq[index]) ?? seq[index]) : seq[index + 1]
   const profile: Profile | undefined = slot?.kind === 'person' ? slot.profile : undefined
   const cardsLeft = peopleLeft(seq, index)
   const sign = profile ? SIGNS[profile.sign] : SIGNS.leo
@@ -264,7 +273,7 @@ export default function Deck({ go }: ScreenProps) {
   const setPhase = (ph: Phase) => { phaseRef.current = ph; setPhaseState(ph) }
 
   // deck already played through this session → straight to the spent screen
-  useEffect(() => { if (!seqRef.current[session.get().deckIndex]) go('spent') }, [go])
+  useEffect(() => { if (!seqRef.current[session.get().deckIndex] && !realQueue.length) go('spent') }, [go]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => () => {
     timers.current.forEach(clearTimeout)
@@ -405,6 +414,12 @@ export default function Deck({ go }: ScreenProps) {
     }
     if (!profile) return
     setBusy(true)
+    if (profile.real) {
+      // a real person: the match is only known once the server answers (see onSwiped)
+      if (dir > 0) { sfx.align(); setStarPulse((n) => n + 1); starBurst(canvasRef.current, 310, CARD_CY - 30, 1); pop('align', ++streakRef.current) }
+      else { sfx.release(); streakRef.current = 0; pop('release') }
+      return
+    }
     session.patch({ deckIndex: index + 1 })
     // the match animation can't wait on the network: the card data says who aligns back,
     // and the backend records the swipe (and, on Supabase, decides the match itself)
@@ -435,6 +450,20 @@ export default function Deck({ go }: ScreenProps) {
   const onSwiped = (dir: Dir) => {
     if (dir > 0 && profile?.alignsBack) return
     dragX.set(0)
+    if (profile?.real) {
+      const who = profile
+      setBusy(false)
+      void backend.swipe(who.id, dir > 0 ? 'align' : 'release').then(({ matched }) => {
+        if (matched) {
+          sfx.sparkle()
+          session.patch({ unseenMatch: true })
+          showToast(`It’s mutual — you and ${who.name} aligned. Say hi in Matches.`, 3200)
+        } else if (dir > 0) {
+          showToast(`Aligned — ${who.name} sees your card next`)
+        }
+      })
+      return
+    }
     // read the live sequence: an event may have just added cards after this one
     if (!seqRef.current[index + 1]) {
       setIndex((i) => i + 1)
@@ -667,7 +696,8 @@ export default function Deck({ go }: ScreenProps) {
 /** "Draw 1 of 3" + six slots: five people, then the event (✦). */
 function DrawTracker({ slot, drawsOf }: { slot: Slot; drawsOf: number | null }) {
   const pos = slot.kind === 'event' ? PEOPLE_PER_DRAW : slot.redraw ? PEOPLE_PER_DRAW + 1 : slot.pos
-  const label = slot.kind === 'person' && slot.redraw ? 'REDRAW' : `DRAW ${slot.draw + 1}${drawsOf ? `/${drawsOf}` : ''}`
+  const label = slot.kind === 'person' && slot.profile.real ? 'NEW · NEAR YOU'
+    : slot.kind === 'person' && slot.redraw ? 'REDRAW' : `DRAW ${slot.draw + 1}${drawsOf ? `/${drawsOf}` : ''}`
   return (
     <div style={{ position: 'absolute', top: 703, left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 7, pointerEvents: 'none' }}>
       <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)', marginRight: 2 }}>{label}</span>

@@ -38,6 +38,10 @@ export interface Profile {
   deal?: number
   /** founders card serial — founder cards get a holo border in the deck */
   founder?: number
+  /** a real person (published from their phone), not a seeded profile */
+  real?: boolean
+  /** dealt only by the Comet event */
+  comet?: boolean
 }
 
 /** The viewer of the demo. */
@@ -52,6 +56,7 @@ export const ME = {
   serial: '№ 012',
   /** shown on the flipped side of your card and on copies you trade */
   photo: 'img/hakeem.jpg',
+  blurb: 'Sound engineer. Record stores on Sundays. Cooks too much.',
 }
 
 /**

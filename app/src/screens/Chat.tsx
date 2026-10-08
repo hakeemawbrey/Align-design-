@@ -10,7 +10,7 @@ import { sfx } from '../lib/sfx'
 import { session } from '../lib/session'
 import { api, type Message } from '../api'
 
-type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
+export type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
 
 const juniper = DECK.find((p) => p.id === 'j27')!
 const PHOTO = juniper.photo ?? 'img/juniper.jpg'
@@ -276,7 +276,7 @@ export default function Chat({ go }: ScreenProps) {
   )
 }
 
-function Bubble({ msg }: { msg: Msg }) {
+export function Bubble({ msg }: { msg: Msg }) {
   const mine = msg.from === 'me'
   return (
     <motion.div

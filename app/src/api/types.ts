@@ -6,7 +6,23 @@
  * people are profiles in the database, and their side of a chat is written
  * by the app. Every account sees only its own swipes, matches and messages.
  */
+import type { Profile } from '../data/profiles'
+import type { SignId } from '../data/signs'
+
 export type SwipeDir = 'align' | 'release'
+
+/** The card you publish from onboarding — what other people see in their deck. */
+export interface MyCard {
+  name: string
+  age: number
+  sun: SignId
+  moon: SignId
+  rising: SignId
+  blurb: string
+  dealbreakers: string
+  /** URL (Supabase storage) or data URL (on this device) */
+  photo?: string
+}
 
 export interface Message {
   id: string
@@ -24,6 +40,12 @@ export interface Snapshot {
   /** profile ids you have traded cards with */
   traded: string[]
   swipes: Record<string, SwipeDir>
+  /** real people: everyone in your deck, plus anyone you've matched with */
+  people: Profile[]
+  /** seeded profiles as the database has them (Supabase only) */
+  catalog?: Profile[]
+  /** your published card id, if you've published one */
+  myCardId?: string
 }
 
 export interface Backend {
@@ -37,6 +59,12 @@ export interface Backend {
   /** new messages in this chat from anywhere (another device, the other side) */
   onMessage(matchId: string, cb: (m: Message) => void): () => void
   trade(matchId: string): Promise<void>
+  /** publish or update your card so it can be dealt to other people */
+  publish(card: MyCard): Promise<string>
+  /** store a photo for your card; resolves with its URL */
+  uploadPhoto(file: Blob): Promise<string>
+  /** someone aligned back on you (a match made from their side) */
+  onMatch(cb: (profile: Profile) => void): () => void
   /** wipe this account's swipes, matches, messages and trades; resolves with the fresh state */
   reset(): Promise<Snapshot>
 }
