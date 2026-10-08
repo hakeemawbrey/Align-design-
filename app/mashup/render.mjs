@@ -11,6 +11,7 @@
 //   --audio-start 32.5   start the track this many seconds in (line the drop up with the cut)
 //   --silent             no soundtrack
 //   --fps 30             frames per second
+//   --crf 21             quality: lower = sharper and bigger (18–28)
 //   --jobs 2             videos rendered at the same time
 //   --out mashup/out     where the MP4s go
 import { spawn } from 'node:child_process'
@@ -38,6 +39,7 @@ const flag = (name) => {
 const bpm = Number(opt('bpm', 120))
 const pace = opt('pace', 'normal')
 const fps = Number(opt('fps', 30))
+const crf = String(opt('crf', 21))
 const audio = opt('audio')
 const audioStart = Number(opt('audio-start', 0))
 const jobs = Math.max(1, Number(opt('jobs', 2)))
@@ -111,7 +113,7 @@ async function renderOne(id) {
     '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
     ...audioArgs,
     '-map', '0:v', ...(audioArgs.length ? ['-map', '1:a', '-af', `afade=t=out:st=${fade}:d=1`, '-c:a', 'aac', '-b:a', '192k'] : []),
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', String(fps),
+    '-c:v', 'libx264', '-preset', 'slow', '-crf', crf, '-pix_fmt', 'yuv420p', '-r', String(fps),
     '-t', duration.toFixed(3), '-movflags', '+faststart', out,
   ])
 

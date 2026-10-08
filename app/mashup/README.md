@@ -38,6 +38,7 @@ npm run mashup -- all                       # everything (22 videos)
 | `--audio song.mp3` | Use your own track instead of the built-in Align beat |
 | `--audio-start 32.5` | Start the song this many seconds in. The first cut comes 4 beats after the start, so begin 4 beats before the drop. |
 | `--silent` | No sound (add a trending sound in the app instead) |
+| `--crf 21` | Quality. Lower is sharper and bigger; 18 is near-lossless, 23 is about 9 MB for 15 s |
 | `--jobs 2` | How many videos render at once |
 | `--out mashup/out` | Output folder |
 
