@@ -145,11 +145,14 @@ export interface BirthTime {
   minute: number
   pm: boolean
   part: DayPart
+  /** birth city, "City, Region" */
+  place: string
 }
 
-/** Hakeem: 5:00 PM */
-export const DEFAULT_TIME: BirthTime = { exact: true, hour: 5, minute: 0, pm: true, part: 'evening' }
-export const BIRTH_PLACE = 'Tulsa, Oklahoma'
+/** Hakeem: 5:00 PM, Tulsa */
+export const DEFAULT_TIME: BirthTime = { exact: true, hour: 5, minute: 0, pm: true, part: 'evening', place: 'Tulsa, Oklahoma' }
+/** "Tulsa, Oklahoma" → "Tulsa" */
+export const cityOf = (place: string) => place.split(',')[0].trim()
 
 export const hour24 = (t: BirthTime) => (t.hour % 12) + (t.pm ? 12 : 0)
 export const timeLabel = (t: BirthTime) =>

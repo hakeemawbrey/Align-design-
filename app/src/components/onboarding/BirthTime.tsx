@@ -1,10 +1,12 @@
+import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import CityPicker from './CityPicker'
 import { SIGNS } from '../../data/signs'
 import { sfx } from '../../lib/sfx'
 import { Caption, Cta, Header, rise, EASE } from './shared'
 import { WheelColumn, WHEEL_H, ROW } from './WheelPicker'
 import { sunSign, type BirthDate } from './zodiac'
-import { BIRTH_PLACE, DAY_PARTS, risingFor, signAfter, type BirthTime as BT, type DayPart } from './readings'
+import { DAY_PARTS, risingFor, signAfter, type BirthTime as BT, type DayPart } from './readings'
 
 const HOURS = Array.from({ length: 12 }, (_, i) => String(i + 1))
 const MINUTES = Array.from({ length: 60 }, (_, i) => String(i).padStart(2, '0'))
@@ -27,6 +29,7 @@ export default function BirthTime({ birth, time, setTime, next }: {
   const part = DAY_PARTS.find((p) => p.id === time.part)!
   const pair = part.offsets.map((o) => SIGNS[signAfter(sun, o)].name)
   const dot = arcPoint(part.arc)
+  const [picking, setPicking] = useState(false)
 
   const toggle = () => { sfx.tap(); setTime((t) => ({ ...t, exact: !t.exact })) }
   const pick = (id: DayPart) => { sfx.peekTick(DAY_PARTS.findIndex((p) => p.id === id) / 4); setTime((t) => ({ ...t, part: id })) }
@@ -62,16 +65,17 @@ export default function BirthTime({ birth, time, setTime, next }: {
               </div>
             </motion.div>
 
-            {/* place */}
-            <motion.div {...rise(0.45, 12)} style={{
+            {/* place: tap to change */}
+            <motion.button {...rise(0.45, 12)} onClick={() => { sfx.tap(); setPicking(true) }} style={{
               position: 'absolute', top: 476, left: 40, width: 310, height: 46, borderRadius: 14, padding: '0 16px',
               display: 'flex', alignItems: 'center', gap: 10,
               background: 'rgba(40,26,78,0.6)', border: '1px solid rgba(154,123,224,0.3)',
             }}>
               <svg width="12" height="16" viewBox="0 0 12 16" fill="none"><path d="M6 15s5-5.2 5-9A5 5 0 0 0 1 6c0 3.8 5 9 5 9Z" stroke="#c9b6f0" strokeWidth="1.3" /><circle cx="6" cy="6" r="1.8" fill="#c9b6f0" /></svg>
               <span className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-3)' }}>BORN IN</span>
-              <span style={{ marginLeft: 'auto', fontSize: 15, color: 'var(--label-1)' }}>{BIRTH_PLACE}</span>
-            </motion.div>
+              <span style={{ marginLeft: 'auto', fontSize: 15, color: 'var(--label-1)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: 190 }}>{time.place}</span>
+              <svg width="7" height="12" viewBox="0 0 7 12" style={{ flexShrink: 0, opacity: 0.6 }}><path d="m1 1 5 5-5 5" fill="none" stroke="#efe6d6" strokeWidth="1.4" strokeLinecap="round" /></svg>
+            </motion.button>
 
             <motion.div {...rise(0.55, 8)} style={{ position: 'absolute', top: 532, width: '100%', textAlign: 'center', fontSize: 13.5, color: 'var(--label-2)' }}>
               That puts your Rising in <span style={{ color: rising.light }}>{rising.name}</span>.
@@ -137,11 +141,19 @@ export default function BirthTime({ birth, time, setTime, next }: {
               style={{ position: 'absolute', top: 504, left: 0, width: '100%', fontSize: 13.5, color: 'var(--label-1)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
               I know the exact time
             </motion.button>
+            <motion.button {...rise(0.55, 6)} onClick={() => { sfx.tap(); setPicking(true) }}
+              style={{ position: 'absolute', top: 536, left: 0, width: '100%', fontSize: 13, color: 'var(--label-2)' }}>
+              Born in {time.place} · <span style={{ color: 'var(--label-1)', textDecoration: 'underline', textUnderlineOffset: 3 }}>change</span>
+            </motion.button>
 
             <Cta onClick={next} delay={0.6}>Estimate my Rising</Cta>
             <Caption delay={0.7}>Add the exact time later and we recast you.</Caption>
           </motion.div>
         )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {picking && <CityPicker value={time.place} onPick={(place) => setTime((t) => ({ ...t, place }))} onClose={() => setPicking(false)} />}
       </AnimatePresence>
     </div>
   )

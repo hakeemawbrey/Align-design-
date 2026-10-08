@@ -3,7 +3,7 @@ import { SIGNS, type SignId } from '../../data/signs'
 import { sfx } from '../../lib/sfx'
 import { Caption, Cta, Header, EASE } from './shared'
 import { MONTHS, type BirthDate } from './zodiac'
-import { BIRTH_PLACE, timeLabel, wantLine, type BirthTime } from './readings'
+import { timeLabel, wantLine, type BirthTime } from './readings'
 
 /** O-08 — "Here is what the sky said about you." Six facts; tap one to fix it. */
 export default function ChartCheck({ birth, time, sun, moon, rising, next, edit }: {
@@ -15,7 +15,7 @@ export default function ChartCheck({ birth, time, sun, moon, rising, next, edit 
     { k: 'Rising', v: SIGNS[rising].name + (time.exact ? '' : ' (est.)'), fix: 'time' },
     { k: 'Born', v: `${birth.day} ${MONTHS[birth.month]} ${birth.year}`, fix: 'date' },
     { k: 'Time', v: timeLabel(time), fix: 'time' },
-    { k: 'Place', v: BIRTH_PLACE, fix: 'time' },
+    { k: 'Place', v: time.place, fix: 'time' },
   ]
   return (
     <div style={{ position: 'absolute', inset: 0 }}>

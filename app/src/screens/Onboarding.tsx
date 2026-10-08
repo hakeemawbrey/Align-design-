@@ -7,7 +7,7 @@ import { session } from '../lib/session'
 import { ME } from '../data/profiles'
 import { BackChevron, Progress } from '../components/onboarding/shared'
 import { DEFAULT_BIRTH, ageOn, sunSign, type BirthDate as BD } from '../components/onboarding/zodiac'
-import { DEALBREAKERS, DEFAULT_DEALBREAKERS, DEFAULT_TIME, risingFor, timeLabel, type BirthTime as BT } from '../components/onboarding/readings'
+import { DEALBREAKERS, DEFAULT_DEALBREAKERS, DEFAULT_TIME, risingFor, timeLabel, cityOf, type BirthTime as BT } from '../components/onboarding/readings'
 import Arrival from '../components/onboarding/Arrival'
 import BirthDate from '../components/onboarding/BirthDate'
 import AgeGate from '../components/onboarding/AgeGate'
@@ -161,7 +161,7 @@ export default function Onboarding({ go }: ScreenProps) {
           {view === 'arrival' && <Arrival next={next} onHaveChart={() => go('welcome')} />}
           {view === 'birth' && <BirthDate birth={birth} setBirth={setBirth} next={next} />}
           {view === 'time' && <BirthTime birth={birth} time={time} setTime={setTime} next={next} />}
-          {view === 'sky' && <BirthSky birth={birth} time={timeLabel(time)} next={next} primaryRef={primary.sky} />}
+          {view === 'sky' && <BirthSky birth={birth} time={timeLabel(time)} city={cityOf(time.place)} next={next} primaryRef={primary.sky} />}
           {view === 'reveal' && <SignReveal birth={birth} next={next} skip={() => to(STEPS.indexOf('rule'))} primaryRef={primary.reveal} />}
           {view === 'manual' && <UserManual sun={sun} next={next} />}
           {view === 'three' && <BigThree birth={birth} rising={rising} next={next} />}

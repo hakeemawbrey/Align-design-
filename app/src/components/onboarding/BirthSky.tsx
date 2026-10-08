@@ -38,7 +38,7 @@ const LINE_GAP = 520
 const T_DONE = T_LINES + LINE_GAP * 3
 
 /** O-04 — "This was your sky." Planets place themselves; the sun blooms; the checklist ticks in. */
-export default function BirthSky({ birth, time = '5:00 PM', next, primaryRef }: { birth: BirthDate; time?: string; next: () => void; primaryRef: React.MutableRefObject<(() => void) | null> }) {
+export default function BirthSky({ birth, time = '5:00 PM', city = 'Tulsa', next, primaryRef }: { birth: BirthDate; time?: string; city?: string; next: () => void; primaryRef: React.MutableRefObject<(() => void) | null> }) {
   const sign = SIGNS[sunSign(birth)]
   const moon = SIGNS[ME.moon]
   const glow = ART_GLOW[sign.id] ?? sign.color
@@ -77,7 +77,7 @@ export default function BirthSky({ birth, time = '5:00 PM', next, primaryRef }: 
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Header
-        eyebrow={`Tulsa, OK · ${MONTH_SHORT[birth.month]} ${birth.day} ${birth.year} · ${time}`}
+        eyebrow={`${city} · ${MONTH_SHORT[birth.month]} ${birth.day} ${birth.year} · ${time}`}
         title="This was your sky."
         body="Hold still. The sky is remembering where everything was. It never forgets."
         bodyWidth={300}
