@@ -1,5 +1,6 @@
-// SF-01 zodiac cards: one front per sign. Colours and aura names come from
-// "Kit · The twelve auras" (same values as app/src/data/signs.ts).
+// SF-01 zodiac cards: one front per sign. Aura names come from
+// "Kit · The twelve auras". Per-sign colours are kept for reference; the
+// cards are coloured by element (ELEMENT_PALETTE below).
 // focus = vertical crop point (%) of the figure art in the card window.
 // Copy voice follows the app: plain words, second person, no planet jargon.
 //   pull  = what pulls you in
@@ -119,7 +120,15 @@ window.SIGNS = [
   },
 ]
 
-window.ELEMENT_COLOR = { fire: '#f0603a', earth: '#e9b24a', air: '#7fd0f0', water: '#3f7cf0' }
+// Card colour comes from the element, not the sign: frame foil, bloom, glyph,
+// sign name and chip. Same palette as the app's element orb (ELEMENT_ORB in
+// app/src/components/onboarding/readings.ts).
+window.ELEMENT_PALETTE = {
+  fire: { color: '#f0603a', light: '#ffc2a0', dark: '#3a0e06' },
+  earth: { color: '#7cd84a', light: '#e4ffb8', dark: '#173a0a' },
+  air: { color: '#7fc8f0', light: '#e2f5ff', dark: '#10304a' },
+  water: { color: '#3f7cf0', light: '#b8d4ff', dark: '#0a1640' },
+}
 
 window.CARD_BACK = {
   name: 'Hakeem Awbrey',

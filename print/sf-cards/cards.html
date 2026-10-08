@@ -127,19 +127,19 @@ const el = (html) => { const t = document.createElement('template'); t.innerHTML
 const READ_COLOR = { pull: 'var(--spark)', push: 'var(--rub)', align: 'var(--align)' }
 
 function front(s, n) {
-  const ec = ELEMENT_COLOR[s.element]
+  const { color, light, dark } = ELEMENT_PALETTE[s.element]
   return el(`
   <div class="card front">
     <!-- full-bleed ground + sign bloom (colour lives on the edge, chip and bloom) -->
     <div class="abs" style="inset:0; background:
-      radial-gradient(60% 45% at 85% 100%, ${s.color}55 0%, transparent 70%),
+      radial-gradient(60% 45% at 85% 100%, ${color}55 0%, transparent 70%),
       radial-gradient(55% 40% at 10% 0%, rgba(124,116,240,0.30) 0%, transparent 70%),
       var(--void)"></div>
     <div class="trim">
-      <div class="frame" style="background:${foil(s.color, s.light)}">
+      <div class="frame" style="background:${foil(color, light)}">
         <div class="panel" style="background:
           radial-gradient(90% 60% at 50% 0%, #2a1866 0%, transparent 70%),
-          radial-gradient(70% 45% at 100% 100%, ${s.dark}cc 0%, transparent 75%),
+          radial-gradient(70% 45% at 100% 100%, ${dark}cc 0%, transparent 75%),
           linear-gradient(180deg, #1a0e3a 0%, var(--canvas) 45%, #0f0826 100%)"></div>
       </div>
 
@@ -148,20 +148,20 @@ function front(s, n) {
           <div class="f-animal">${s.animal}</div>
           <div class="f-dates">${s.dates}</div>
         </div>
-        <div class="orb" style="background:${sphere(s.color, s.light)}; box-shadow: 0 0 0 0.6pt ${s.light}88; color:${s.dark}">${s.glyph}&#xFE0E;</div>
+        <div class="orb" style="background:${sphere(color, light)}; box-shadow: 0 0 0 0.6pt ${light}88; color:${dark}">${s.glyph}&#xFE0E;</div>
       </div>
 
       <div class="abs art">
         <img src="${IMG(s)}" alt="" style="object-position:50% ${ART === 'figure' ? s.focus : 32}%">
         <div class="veil"></div>
         <div class="cap">AURA · ${s.aura.toUpperCase()}</div>
-        <div class="edge" style="box-shadow: inset 0 0 0 0.6pt ${s.color}88"></div>
+        <div class="edge" style="box-shadow: inset 0 0 0 0.6pt ${color}88"></div>
       </div>
 
       <div class="abs badges">
-        <span class="sname" style="color:${s.color}">${s.name}</span>
-        <span class="chip" style="color:${ec}; border-color:${ec}cc; background:${ec}1a">
-          <span class="sphere" style="background:${sphere(ec, '#e8fbff')}"></span>${s.element}
+        <span class="sname" style="color:${color}">${s.name}</span>
+        <span class="chip" style="color:${color}; border-color:${color}cc; background:${color}1a">
+          <span class="sphere" style="background:${sphere(color, light)}"></span>${s.element}
         </span>
         <span class="chip" style="color:var(--label-2); border-color:rgba(179,166,196,0.55)">
           <span class="sphere" style="background:${sphere('#8f7be8', '#ece6ff')}"></span>${s.mode}
