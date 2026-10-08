@@ -1,7 +1,8 @@
 import type { SignId } from './signs'
 
 export interface ReadingLine {
-  kind: 'spark' | 'rub' | 'align'
+  /** push: where you rub against each other · pull: what draws you in · align: where it holds */
+  kind: 'push' | 'pull' | 'align'
   text: string
   /** 1–3 strength pips */
   strength: 1 | 2 | 3
@@ -17,7 +18,10 @@ export interface Profile {
   moon: SignId
   rising: SignId
   serial: string
-  pull: 'Strong pull' | 'Steady pull' | 'Slow burn' | 'Wild card'
+  /** how hard this card pulls on yours — shown as a badge on the card. Rare pull is the rarest. */
+  pull: 'Rare pull' | 'Strong pull' | 'Steady pull' | 'Slow burn' | 'Wild card'
+  /** one line on the card, in their words */
+  blurb?: string
   reading: ReadingLine[]
   dealbreakers: string
   /** demo script: does this person align back? */
@@ -60,8 +64,8 @@ export const DECK: Profile[] = [
     serial: '№ 027', pull: 'Slow burn', alignsBack: false,
     photo: 'img/people/p3.jpg',
     reading: [
-      { kind: 'spark', text: 'Mars in your Moon, she notices everything.', strength: 3 },
-      { kind: 'rub', text: 'Her lists meet your naps. Somebody bends.', strength: 2 },
+      { kind: 'pull', text: 'Mars in your Moon, she notices everything.', strength: 3 },
+      { kind: 'push', text: 'Her lists meet your naps. Somebody bends.', strength: 2 },
       { kind: 'align', text: 'Earth to earth — steady ground, slow bloom.', strength: 2 },
     ],
     dealbreakers: 'Late replies. Loud chewing. Anyone who hates dogs.',
@@ -71,20 +75,20 @@ export const DECK: Profile[] = [
     serial: '№ 029', pull: 'Wild card', alignsBack: false,
     photo: 'img/people/p9.jpg',
     reading: [
-      { kind: 'spark', text: 'Sun on your Moon — instant warmth, big laughs.', strength: 3 },
-      { kind: 'rub', text: 'Two fixed signs. Nobody backs down first.', strength: 3 },
+      { kind: 'pull', text: 'Sun on your Moon — instant warmth, big laughs.', strength: 3 },
+      { kind: 'push', text: 'Two fixed signs. Nobody backs down first.', strength: 3 },
       { kind: 'align', text: 'Fire lights earth; you keep the flame from spreading.', strength: 1 },
     ],
     dealbreakers: 'Flaking on plans. Small talk forever. No sense of adventure.',
   },
   {
     id: 'j27', initial: 'Juniper', name: 'Juniper', age: 27, sign: 'libra', moon: 'gemini', rising: 'aquarius',
-    serial: '№ 031', pull: 'Strong pull', alignsBack: true,
+    serial: '№ 031', pull: 'Rare pull', alignsBack: true,
     photo: 'img/juniper.jpg',
     house: '7th house',
     reading: [
-      { kind: 'spark', text: 'Mercury on your Moon, she gets it first try.', strength: 3 },
-      { kind: 'rub', text: 'Her scales stall your schedule, decisions take two.', strength: 2 },
+      { kind: 'pull', text: 'Mercury on your Moon, she gets it first try.', strength: 3 },
+      { kind: 'push', text: 'Her scales stall your schedule, decisions take two.', strength: 2 },
       { kind: 'align', text: 'Earth holds air — she moves, you make it last. Venus rules you both.', strength: 3 },
     ],
     dealbreakers: 'One-word texts. Refusing to talk it out the same night. Hating my group chats.',
@@ -100,8 +104,8 @@ export const DECK: Profile[] = [
     serial: '№ 033', pull: 'Steady pull', alignsBack: false,
     photo: 'img/people/p6.jpg',
     reading: [
-      { kind: 'spark', text: 'Uranus wakes your Venus — nothing about this is routine.', strength: 2 },
-      { kind: 'rub', text: 'You want a plan; they want a surprise.', strength: 2 },
+      { kind: 'pull', text: 'Uranus wakes your Venus — nothing about this is routine.', strength: 2 },
+      { kind: 'push', text: 'You want a plan; they want a surprise.', strength: 2 },
       { kind: 'align', text: 'Air and earth — they dream it, you build it.', strength: 2 },
     ],
     dealbreakers: 'Jealousy. Astrology skeptics. Bad playlists.',
@@ -111,8 +115,8 @@ export const DECK: Profile[] = [
     serial: '№ 036', pull: 'Strong pull', alignsBack: false,
     photo: 'img/people/p7.jpg',
     reading: [
-      { kind: 'spark', text: 'Neptune softens your edges. Easy silence.', strength: 3 },
-      { kind: 'rub', text: 'They feel it all at once; you take a week.', strength: 1 },
+      { kind: 'pull', text: 'Neptune softens your edges. Easy silence.', strength: 3 },
+      { kind: 'push', text: 'They feel it all at once; you take a week.', strength: 1 },
       { kind: 'align', text: 'Water feeds earth — tender, slow, real.', strength: 3 },
     ],
     dealbreakers: 'Coldness. Rushing. Never asking how my day was.',
@@ -122,8 +126,8 @@ export const DECK: Profile[] = [
     serial: '№ 038', pull: 'Steady pull', alignsBack: false,
     photo: 'img/people/p2.jpg',
     reading: [
-      { kind: 'spark', text: 'Saturn on your Sun — you both mean what you say.', strength: 2 },
-      { kind: 'rub', text: 'Two calendars, zero spontaneity.', strength: 2 },
+      { kind: 'pull', text: 'Saturn on your Sun — you both mean what you say.', strength: 2 },
+      { kind: 'push', text: 'Two calendars, zero spontaneity.', strength: 2 },
       { kind: 'align', text: 'Earth on earth — build something that lasts.', strength: 3 },
     ],
     dealbreakers: 'Being late. Not having goals. Chaos for fun.',
@@ -136,8 +140,8 @@ export const BONUS: Profile[] = [
     id: 'l26', initial: 'Lena', name: 'Lena', age: 26, sign: 'gemini', moon: 'aquarius', rising: 'leo',
     serial: '№ 041', pull: 'Wild card', alignsBack: false, photo: 'img/people/p1.jpg',
     reading: [
-      { kind: 'spark', text: 'Mercury meets your Venus — she flirts in full sentences.', strength: 3 },
-      { kind: 'rub', text: 'She wants three plans; you want the one you made.', strength: 2 },
+      { kind: 'pull', text: 'Mercury meets your Venus — she flirts in full sentences.', strength: 3 },
+      { kind: 'push', text: 'She wants three plans; you want the one you made.', strength: 2 },
       { kind: 'align', text: 'Air and earth — she keeps it light, you keep it real.', strength: 2 },
     ],
     dealbreakers: 'Bad texters. Nowhere to dance. People who never ask a question back.',
@@ -146,8 +150,8 @@ export const BONUS: Profile[] = [
     id: 'a29', initial: 'Amara', name: 'Amara', age: 29, sign: 'sagittarius', moon: 'leo', rising: 'aries',
     serial: '№ 044', pull: 'Strong pull', alignsBack: false, photo: 'img/people/p8.jpg',
     reading: [
-      { kind: 'spark', text: 'Mars on your Moon — she makes the first move, every time.', strength: 3 },
-      { kind: 'rub', text: 'She moves fast; you move once and for good.', strength: 3 },
+      { kind: 'pull', text: 'Mars on your Moon — she makes the first move, every time.', strength: 3 },
+      { kind: 'push', text: 'She moves fast; you move once and for good.', strength: 3 },
       { kind: 'align', text: 'Fire warms earth — she starts it, you make it last.', strength: 2 },
     ],
     dealbreakers: 'Indecision. Cancelled plans. Anyone who can’t laugh at themselves.',
@@ -156,12 +160,12 @@ export const BONUS: Profile[] = [
 
 const p = (
   id: string, name: string, age: number, sign: SignId, moon: SignId, photo: string, serial: string,
-  pull: Profile['pull'], spark: string, rub: string, align: string, dealbreakers: string,
+  pull: Profile['pull'], attract: string, friction: string, align: string, dealbreakers: string,
 ): Profile => ({
   id, initial: name, name, age, sign, moon, rising: moon, serial, pull, alignsBack: false, photo,
   reading: [
-    { kind: 'spark', text: spark, strength: 3 },
-    { kind: 'rub', text: rub, strength: 2 },
+    { kind: 'pull', text: attract, strength: 3 },
+    { kind: 'push', text: friction, strength: 2 },
     { kind: 'align', text: align, strength: 2 },
   ],
   dealbreakers,
@@ -201,6 +205,28 @@ export const COMETS: Profile[] = [
     'Saturn on your Sun — she means what she says.', 'Two planners, zero surprises.', 'Earth on earth — build something that lasts.',
     'Vagueness. Being late. People who won’t say what they want.'),
 ]
+
+/** The one-line bio on each card. */
+const BLURBS: Record<string, string> = {
+  m24: 'ER nurse on nights. Alphabetised spice rack. Soft for dogs.',
+  r29: 'Chef at a supper club. I’ll feed you before I flirt.',
+  j27: 'Assistant curator. Playlist archivist. Cries at planetariums.',
+  a31: 'Builds synths. Will explain them if you ask once.',
+  s26: 'Ceramicist. Bad at texting, great at long walks.',
+  k28: 'Architect. Plans the whole trip, forgets the charger.',
+  l26: 'Podcast producer. Three new hobbies a month, one keeper.',
+  a29: 'Flight attendant. Home for the weekend, maybe yours.',
+  t30: 'Teacher. Brings you soup when you’re sick, unasked.',
+  n27: 'Interior designer. Will judge your couch, kindly.',
+  j28: 'Photographer. Passport is always in the bag.',
+  b25: 'Pastry chef. Up at 4am, asleep by 9, worth it.',
+  i24: 'Music therapist. Sings in the car, badly, on purpose.',
+  d31: 'Stand-up on Thursdays. Fintech the rest of the week.',
+  r29b: 'Journalist. Asks one question too many. Sorry.',
+  e30: 'Game designer. Thinks in levels, texts in memes.',
+  m27: 'Lawyer. Reads the fine print. Reads you too.',
+}
+for (const p of [...DECK, ...BONUS, ...MORE, ...COMETS]) p.blurb ??= BLURBS[p.id]
 
 /** Tonight's fifteen people, in deal order: three draws of five. */
 export const TONIGHT: Profile[] = [...DECK, ...BONUS, ...MORE]

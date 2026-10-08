@@ -23,9 +23,10 @@ export default function FaceLast({ sun, moon, rising, dealbreakers, next }: {
     id: 'me', initial: ME.name, name: ME.name, age: ME.age, sign: sun, moon, rising,
     serial: ME.serial.replace('№ ', ''), pull: 'Steady pull', photo: ME.photo, alignsBack: false,
     dealbreakers: dealbreakers || 'Nothing yet. Brave.',
+    blurb: 'Sound engineer. Record stores on Sundays. Cooks too much.',
     reading: [
-      { kind: 'spark', text: 'Remembers your order. Plans the second date before the first ends.', strength: 3 },
-      { kind: 'rub', text: 'Slow to say it. Means it twice as long.', strength: 2 },
+      { kind: 'pull', text: 'Remembers your order. Plans the second date before the first ends.', strength: 3 },
+      { kind: 'push', text: 'Slow to say it. Means it twice as long.', strength: 2 },
       { kind: 'align', text: 'Wants a home and a horizon. Will build you both.', strength: 3 },
     ],
   }

@@ -3,6 +3,7 @@ import { motion, type MotionValue } from 'framer-motion'
 import type { Profile } from '../../data/profiles'
 import { SIGNS, ELEMENT_COLOR } from '../../data/signs'
 import { CARD_W, CARD_H } from './fx'
+import { strengthWord } from '../Strength'
 
 export type PeekState = 'none' | 'charging' | 'open' | 'sealing'
 
@@ -16,7 +17,36 @@ interface Props {
   glow?: boolean
 }
 
-const KIND_COLOR = { spark: 'var(--spark)', rub: 'var(--rub)', align: 'var(--align)' } as const
+const KIND_COLOR = { push: 'var(--rub)', pull: 'var(--spark)', align: 'var(--align)' } as const
+const KIND_ORDER = ['push', 'pull', 'align'] as const
+
+/** pull tiers, rarest first; Rare pull gets the holo treatment */
+const PULL_COLOR: Record<Profile['pull'], string> = {
+  'Rare pull': '#ffd36a', 'Strong pull': '#f2c75c', 'Steady pull': '#c9b6f0', 'Slow burn': '#f39a7a', 'Wild card': '#7fd8f0',
+}
+
+function PullBadge({ pull }: { pull: Profile['pull'] }) {
+  if (pull === 'Rare pull') {
+    return (
+      <div className="holo-frame" style={{ padding: 1.5, borderRadius: 999, boxShadow: '0 0 14px rgba(255,140,220,0.5)' }}>
+        <div className="mono" style={{ padding: '3px 9px', borderRadius: 999, background: 'rgba(11,6,32,0.85)', fontSize: 8.5, letterSpacing: '0.16em', fontWeight: 700 }}>
+          <span style={{ background: 'linear-gradient(90deg, #ff6ad5, #ffd36a, #7affc4, #6ad5ff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
+            ✦ RARE PULL
+          </span>
+        </div>
+      </div>
+    )
+  }
+  const c = PULL_COLOR[pull]
+  return (
+    <div className="mono" style={{
+      padding: '3px 9px', borderRadius: 999, fontSize: 8.5, letterSpacing: '0.16em', fontWeight: 700, textTransform: 'uppercase',
+      color: c, background: 'rgba(11,6,32,0.82)', border: `1px solid ${c}aa`, boxShadow: `0 0 10px ${c}44`,
+    }}>
+      ✦ {pull}
+    </div>
+  )
+}
 
 function Sphere({ color, light, size = 14 }: { color: string; light: string; size?: number }) {
   return (
@@ -25,20 +55,6 @@ function Sphere({ color, light, size = 14 }: { color: string; light: string; siz
       background: `radial-gradient(circle at 35% 30%, #ffffff 0%, ${light} 22%, ${color} 60%, ${color}88 100%)`,
       boxShadow: `0 0 6px ${color}aa`,
     }} />
-  )
-}
-
-function Pips({ n, color }: { n: number; color: string }) {
-  return (
-    <div style={{ display: 'flex', gap: 4, flexShrink: 0 }}>
-      {[0, 1, 2].map((i) => (
-        <span key={i} style={{
-          width: 6, height: 6, borderRadius: 3,
-          background: i < n ? color : 'rgba(125,111,148,0.35)',
-          boxShadow: i < n ? `0 0 5px ${color}` : 'none',
-        }} />
-      ))}
-    </div>
   )
 }
 
@@ -87,7 +103,7 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
 
         {/* image panel */}
         <div className="grain" style={{
-          position: 'absolute', left: 22, top: 56, width: 284, height: 186, borderRadius: 10,
+          position: 'absolute', left: 22, top: 56, width: 284, height: 152, borderRadius: 10,
           overflow: 'hidden', background: '#07040f',
           boxShadow: `0 0 0 1.5px ${sign.color}cc, 0 0 16px ${sign.color}55`,
         }}>
@@ -128,6 +144,9 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
               </div>
             </div>
           )}
+          {!(ring && (peek === 'charging' || peek === 'open')) && (
+            <div style={{ position: 'absolute', right: 8, top: 8, zIndex: 3 }}><PullBadge pull={profile.pull} /></div>
+          )}
           {ring && (peek === 'charging' || peek === 'open') && (
             <div style={{ position: 'absolute', right: 10, top: 10, width: 34, height: 34, zIndex: 3 }}>
               <svg width="34" height="34" viewBox="0 0 34 34" style={{ position: 'absolute', inset: 0, transform: 'rotate(-90deg)', overflow: 'visible' }}>
@@ -143,7 +162,7 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
         </div>
 
         {/* sign + chips */}
-        <div style={{ position: 'absolute', left: 32, top: 252, display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div style={{ position: 'absolute', left: 32, top: 216, display: 'flex', alignItems: 'center', gap: 10 }}>
           <span className="serif" style={{ fontSize: 18, letterSpacing: '0.08em', color: sign.color, textTransform: 'uppercase', textShadow: `0 0 10px ${sign.color}66` }}>
             {sign.name}
           </span>
@@ -157,17 +176,27 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
           </span>
         </div>
 
-        {/* reading */}
-        <div style={{ position: 'absolute', left: 0, right: 0, top: 279, display: 'flex', flexDirection: 'column', gap: 6 }}>
-          {profile.reading.map((r) => (
-            <div key={r.kind} style={{ display: 'flex', alignItems: 'center', minHeight: 37, paddingLeft: 32, paddingRight: 14 }}>
-              <span className="mono" style={{ width: 44, flexShrink: 0, fontSize: 8.5, letterSpacing: '0.12em', color: KIND_COLOR[r.kind], textTransform: 'uppercase' }}>
-                {r.kind}
+        {/* one-line bio */}
+        {profile.blurb && (
+          <div className="serif italic" style={{
+            position: 'absolute', left: 32, right: 22, top: 245, fontSize: 15, lineHeight: 1.2, color: 'var(--label-1)',
+            display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
+          }}>
+            “{profile.blurb}”
+          </div>
+        )}
+
+        {/* reading: push / pull / align, each with how strong it is */}
+        <div style={{ position: 'absolute', left: 0, right: 0, top: profile.blurb ? 290 : 252, display: 'flex', flexDirection: 'column', gap: 5 }}>
+          {[...profile.reading].sort((a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind)).map((r) => (
+            <div key={r.kind} style={{ display: 'flex', alignItems: 'center', minHeight: 36, paddingLeft: 32, paddingRight: 18 }}>
+              <span style={{ width: 52, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: KIND_COLOR[r.kind], textTransform: 'uppercase', fontWeight: 700 }}>{r.kind}</span>
+                <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.1em', color: 'var(--label-3)', textTransform: 'uppercase' }}>{strengthWord(r.strength)}</span>
               </span>
-              <span className="serif" style={{ flex: 1, fontSize: 15, lineHeight: 1.16, color: 'var(--label-1)', paddingRight: 8 }}>
+              <span className="serif" style={{ flex: 1, fontSize: 14.5, lineHeight: 1.16, color: 'var(--label-1)' }}>
                 {r.text}
               </span>
-              <Pips n={r.strength} color={r.kind === 'spark' ? '#7fd8f0' : r.kind === 'rub' ? '#f08aa8' : '#f2c75c'} />
             </div>
           ))}
           <div style={{ margin: '2px 18px 0 16px', height: 1, background: 'linear-gradient(90deg, rgba(179,166,196,0.55), rgba(179,166,196,0.25))' }} />
@@ -185,7 +214,7 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
           fontSize: 8.5, letterSpacing: '0.14em',
         }}>
           <span style={{ color: 'var(--label-2)' }}>ALIGN · {profile.serial}/∞</span>
-          <span style={{ color: '#f2c75c', textTransform: 'uppercase' }}>✦&nbsp; {profile.pull}</span>
+          <span style={{ color: 'var(--label-3)' }}>MYSTERY CARD</span>
         </div>
       </div>
     </div>

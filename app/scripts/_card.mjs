@@ -1,0 +1,15 @@
+import { chromium } from 'playwright'
+const out = process.argv[2]
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' })
+const p = await b.newPage({ viewport: { width: 1000, height: 900 } })
+await p.goto('http://localhost:4173/'); await p.evaluate(() => localStorage.clear())
+await p.reload(); await p.waitForTimeout(800)
+await p.keyboard.press('4'); await p.waitForTimeout(2600)
+await p.screenshot({ path: `${out}/card-1.png` })
+await p.keyboard.press('ArrowLeft'); await p.waitForTimeout(1500)
+await p.screenshot({ path: `${out}/card-2.png` })
+await p.keyboard.press('ArrowRight'); await p.waitForTimeout(1600)
+await p.screenshot({ path: `${out}/card-3.png` })
+await p.keyboard.press('ArrowRight'); await p.waitForTimeout(4200)
+await p.screenshot({ path: `${out}/card-match.png` })
+await b.close()
