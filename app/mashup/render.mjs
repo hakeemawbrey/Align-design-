@@ -5,8 +5,13 @@
 //   npm run mashup -- signs | themes | all   batches
 //
 // Options:
-//   --bpm 120            tempo; every cut lands on a beat
-//   --pace normal        chill | normal | hype
+//   --style flash        flash: one line held over pictures flickering every 16th note (default)
+//                        classic: title card, captioned shots, collage, logo
+//   --size 9:16          flash only: 9:16 | 4:5 | 1:1 | 6:5
+//   --seconds 8          flash only: length (it loops, so short is fine)
+//   --quote "…"          flash only: replace the line on screen
+//   --bpm 113            tempo; every cut lands on the beat (default 113 flash, 120 classic)
+//   --pace normal        classic only: chill | normal | hype
 //   --audio song.mp3     use your own track instead of the built-in beat
 //   --audio-start 32.5   start the track this many seconds in (line the drop up with the cut)
 //   --silent             no soundtrack
@@ -36,7 +41,11 @@ const flag = (name) => {
   return i >= 0
 }
 
-const bpm = Number(opt('bpm', 120))
+const style = opt('style', 'flash')
+const size = opt('size', '9:16')
+const seconds = Number(opt('seconds', 8))
+const quote = opt('quote')
+const bpm = Number(opt('bpm', style === 'classic' ? 120 : 113))
 const pace = opt('pace', 'normal')
 const fps = Number(opt('fps', 30))
 const crf = String(opt('crf', 21))
@@ -51,7 +60,7 @@ const ids = [...new Set(argv.flatMap((a) =>
   a === 'all' ? ALL_VIDEOS : a === 'signs' ? ZODIAC : a === 'themes' ? Object.keys(THEMES) : [a]))]
 
 if (help || !ids.length) {
-  console.log(`Usage: npm run mashup -- <video…> [--bpm 120] [--pace chill|normal|hype] [--audio song.mp3] [--audio-start 0] [--silent]
+  console.log(`Usage: npm run mashup -- <video…> [--style flash|classic] [--size 9:16|4:5|1:1|6:5] [--seconds 8] [--quote "…"] [--bpm 113] [--pace chill|normal|hype] [--audio song.mp3] [--audio-start 0] [--silent]
 
 Videos:
   signs   ${ZODIAC.join(' ')}
@@ -64,6 +73,14 @@ Your own pictures: drop them in mashup/media/<video>/ (e.g. mashup/media/taurus/
 const unknown = ids.filter((id) => !ALL_VIDEOS.includes(id))
 if (unknown.length) {
   console.error(`Unknown video: ${unknown.join(', ')}\nTry: ${ALL_VIDEOS.join(', ')}`)
+  process.exit(1)
+}
+if (!['flash', 'classic'].includes(style)) {
+  console.error('--style must be flash or classic')
+  process.exit(1)
+}
+if (!['9:16', '4:5', '1:1', '6:5'].includes(size)) {
+  console.error('--size must be 9:16, 4:5, 1:1 or 6:5')
   process.exit(1)
 }
 if (!['chill', 'normal', 'hype'].includes(pace)) {
@@ -93,13 +110,13 @@ function ffmpeg(args) {
 }
 
 async function renderOne(id) {
-  const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } })
+  const page = await browser.newPage({ viewport: { width: 1080, height: 1080 } })
   page.on('pageerror', (e) => console.error(`[${id}] page error:`, e.message))
   await page.goto(`http://127.0.0.1:${port}/mashup/render.html`)
   await page.waitForFunction(() => window.mashup)
-  const { frames, duration } = await page.evaluate(([id, o]) => window.mashup.load(id, o), [id, { bpm, fps, pace }])
+  const { frames, duration } = await page.evaluate(([id, o]) => window.mashup.load(id, o), [id, { style, size, seconds, quote, bpm, fps, pace }])
 
-  const out = join(outDir, `align-${id}.mp4`)
+  const out = join(outDir, `align-${id}${style === 'classic' ? '-classic' : ''}.mp4`)
   const audioArgs = []
   if (audio) {
     audioArgs.push('-ss', String(audioStart), '-i', resolve(audio))
@@ -129,7 +146,7 @@ async function renderOne(id) {
   console.log(`\r  ✓ ${out}  (${duration.toFixed(1)}s, rendered in ${((Date.now() - t0) / 1000).toFixed(0)}s)`)
 }
 
-console.log(`Rendering ${ids.length} video${ids.length > 1 ? 's' : ''} at ${bpm} bpm, ${pace} pace…`)
+console.log(`Rendering ${ids.length} ${style} video${ids.length > 1 ? 's' : ''} at ${bpm} bpm…`)
 let failed = 0
 const queue = [...ids]
 await Promise.all(Array.from({ length: Math.min(jobs, ids.length) }, async () => {

@@ -61,6 +61,32 @@ export const WEATHER = [
 
 export const DEALBREAKERS = ['One-word texts', 'Flaky plans', 'Hates my group chats', 'No follow-up questions', 'Sore losers', '“Calm down”', 'Refusing to talk it out', 'Reads, no reply']
 
+/** One line per video for the "flash" style: it sits on screen for the whole reel. */
+export const QUOTES = {
+  aries: 'It is not a race if they are on your side.',
+  taurus: 'You do not fall in love. You settle into it.',
+  gemini: 'Stay in the boring part. That is where people decide to trust you.',
+  cancer: 'Say what you need before you need it. Hints are not a plan.',
+  leo: 'Not every good thing has an audience.',
+  virgo: 'Let a good thing be unfinished. Nobody wants to be your project.',
+  libra: 'Having a preference is not starting a fight.',
+  scorpio: 'Some people only show up when they are let in.',
+  sagittarius: 'The view is better with someone who knows you.',
+  capricorn: 'You are allowed to be wanted, not just needed.',
+  aquarius: 'Distance is not the same as calm.',
+  pisces: 'Potential does not text back.',
+  zodiac: 'Twelve signs. One of them has been looking for you.',
+  auras: 'Every sign has a colour. Yours walks in before you do.',
+  elements: 'Fire wants. Earth keeps. Air wonders. Water feels.',
+  fire: 'Fire moves toward what feels alive, and moves on when it stops.',
+  earth: 'Earth moves toward what it can keep, and then it keeps it.',
+  air: 'Air moves toward what is interesting, and stays while it still is.',
+  water: 'Water moves toward what feels safe, and floods what does not.',
+  'big-three': 'Your sun is who you are on purpose. Your moon is who you are at 2am.',
+  weather: 'Earth and water: rain on a field. Slowly, then all at once.',
+  dealbreakers: 'Say your dealbreakers before the first date, not after the third.',
+}
+
 /** profile photos in the app, by sun sign (src/data/profiles.ts) */
 const PEOPLE = {
   taurus: ['img/hakeem.jpg'], virgo: ['img/people/p3.jpg'], leo: ['img/people/p9.jpg'], libra: ['img/juniper.jpg'],
@@ -111,9 +137,29 @@ const OUTROS = [
  * media: { [folder]: [urls] } from mashup/media
  */
 export function buildSpec(id, media = {}) {
-  if (SIGNS[id]) return signSpec(id, media)
-  if (THEMES[id]) return themeSpec(id, media)
-  throw new Error(`Unknown video "${id}". Try one of: ${ALL_VIDEOS.join(', ')}`)
+  let spec
+  if (SIGNS[id]) spec = signSpec(id, media)
+  else if (THEMES[id]) spec = themeSpec(id, media)
+  else throw new Error(`Unknown video "${id}". Try one of: ${ALL_VIDEOS.join(', ')}`)
+  spec.quote = QUOTES[id]
+  spec.pool = flashPool(id, media)
+  return spec
+}
+
+/** Pictures the flash style flickers through: yours first, then related app art. */
+function flashPool(id, media) {
+  const user = media[id] || []
+  let related
+  if (SIGNS[id]) {
+    const kin = ZODIAC.filter((z) => SIGNS[z].element === SIGNS[id].element)
+    // memes stay out: they carry another account's handle
+    related = [figure(id), aura(id), ...kin.filter((z) => z !== id).flatMap((z) => [figure(z), aura(z)])]
+  } else if (ELEMENTS[id]) {
+    related = ZODIAC.filter((z) => SIGNS[z].element === id).flatMap((z) => [figure(z), aura(z)])
+  } else {
+    related = ZODIAC.flatMap((z) => [figure(z), aura(z)])
+  }
+  return [...new Set([...user, ...related])]
 }
 
 function signSpec(id, media) {

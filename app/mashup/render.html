@@ -6,6 +6,7 @@
 <script type="module">
   // Driven by render.mjs through Playwright: load a video, then paint it frame by frame.
   import { createMashup, renderMusic, wav } from './engine.js'
+  import { createFlash } from './flash.js'
   import { buildSpec } from './content.js'
 
   const ctx = document.getElementById('c').getContext('2d')
@@ -14,7 +15,11 @@
   window.mashup = {
     async load(id, opts) {
       const media = await (await fetch('/api/media')).json()
-      m = await createMashup(buildSpec(id, media), opts)
+      const spec = buildSpec(id, media)
+      if (opts.quote) spec.quote = opts.quote
+      m = opts.style === 'classic' ? await createMashup(spec, opts) : await createFlash(spec, opts)
+      ctx.canvas.width = m.width
+      ctx.canvas.height = m.height
       return { frames: m.frames, duration: m.duration, fps: m.fps }
     },
     async frame(i) {

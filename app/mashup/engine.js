@@ -23,6 +23,7 @@ const FONT_FILES = [
   ['EB Garamond', 'eb-garamond/files/eb-garamond-latin-500-normal.woff2', { weight: '500' }],
   ['Space Mono', 'space-mono/files/space-mono-latin-700-normal.woff2', { weight: '700' }],
   ['Space Mono', 'space-mono/files/space-mono-latin-400-normal.woff2', { weight: '400' }],
+  ['Barlow Semi Condensed', 'barlow-semi-condensed/files/barlow-semi-condensed-latin-600-normal.woff2', { weight: '600' }],
 ]
 
 let fontsReady
@@ -40,14 +41,14 @@ export function loadFonts(base = '/fonts/') {
 
 // ---------------------------------------------------------------- utils
 
-const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
+export const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
 const lerp = (a, b, t) => a + (b - a) * t
-const easeOut = (t) => 1 - Math.pow(1 - clamp(t), 3)
+export const easeOut = (t) => 1 - Math.pow(1 - clamp(t), 3)
 const easeInOut = (t) => { t = clamp(t); return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 }
 const backOut = (t) => { t = clamp(t); const c = 1.9; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2) }
-const decay = (dt, k) => (dt < 0 ? 0 : Math.exp(-dt * k))
+export const decay = (dt, k) => (dt < 0 ? 0 : Math.exp(-dt * k))
 
-function rng(seed) {
+export function rng(seed) {
   let a = seed >>> 0
   return () => {
     a |= 0; a = (a + 0x6d2b79f5) | 0
@@ -56,9 +57,9 @@ function rng(seed) {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296
   }
 }
-const hash = (s) => [...s].reduce((h, c) => (Math.imul(h, 31) + c.charCodeAt(0)) | 0, 7)
+export const hash = (s) => [...s].reduce((h, c) => (Math.imul(h, 31) + c.charCodeAt(0)) | 0, 7)
 
-function rgba(hex, a) {
+export function rgba(hex, a) {
   const n = parseInt(hex.slice(1), 16)
   return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`
 }
@@ -68,7 +69,7 @@ function roundRect(ctx, x, y, w, h, r) {
   ctx.roundRect(x, y, w, h, r)
 }
 
-function canvas(w, h) {
+export function canvas(w, h) {
   const c = typeof OffscreenCanvas !== 'undefined' ? new OffscreenCanvas(w, h) : Object.assign(document.createElement('canvas'), { width: w, height: h })
   return c
 }
@@ -90,7 +91,7 @@ export function loadImage(src) {
 }
 
 /** draw an image to cover a box; zoom ≥ 1, (fx, fy) = focus 0..1 */
-function drawCover(ctx, img, x, y, w, h, zoom = 1, fx = 0.5, fy = 0.42) {
+export function drawCover(ctx, img, x, y, w, h, zoom = 1, fx = 0.5, fy = 0.42) {
   const iw = img.width, ih = img.height
   const s = Math.max(w / iw, h / ih) * zoom
   const dw = iw * s, dh = ih * s
@@ -118,7 +119,7 @@ function foil(ctx, x0, x1, color, light, shift = 0) {
   return g
 }
 
-function spaced(ctx, text, x, y, spacingEm, size) {
+export function spaced(ctx, text, x, y, spacingEm, size) {
   ctx.letterSpacing = `${spacingEm * size}px`
   // letter-spacing adds trailing space after the last glyph; shift to stay centred
   const shift = ctx.textAlign === 'center' ? (spacingEm * size) / 2 : 0
@@ -141,7 +142,7 @@ function wrap(ctx, text, maxW) {
 // ---------------------------------------------------------------- shared layers
 
 let grain
-function grainTile() {
+export function grainTile() {
   if (grain) return grain
   grain = canvas(256, 256)
   const g = grain.getContext('2d')
@@ -380,7 +381,7 @@ function shotGlyph(ctx, sh, k, t) {
 
 // ---------------------------------------------------------------- the Align mark
 
-function alignMark(ctx, cx, cy, scale, p, t) {
+export function alignMark(ctx, cx, cy, scale, p, t) {
   const R = 20
   const petals = [[0, 0], ...Array.from({ length: 6 }, (_, k) => {
     const a = (-90 + k * 60) * Math.PI / 180
@@ -641,7 +642,7 @@ export async function createMashup(spec, { bpm = 120, fps = 30, pace = 'normal',
     if (seg.type !== 'outro') drawBug(ctx)
   }
 
-  return { duration, fps, bpm, beat, dropAt, segs, frames: Math.round(duration * fps), draw }
+  return { style: 'classic', width: W, height: H, duration, fps, bpm, beat, dropAt, segs, frames: Math.round(duration * fps), draw }
 }
 
 // ---------------------------------------------------------------- soundtrack
@@ -719,6 +720,34 @@ export async function renderMusic(m, specId, sampleRate = 48000) {
   // minor progression, one chord per bar: i – VI – III – VII
   const prog = [[0, 3, 7], [-4, 0, 3], [3, 7, 10], [-2, 2, 5]]
   const bar = 4 * b
+
+  if (m.style === 'flash') {
+    // the reel sound: a hushed first bar, then wide chords that pump on every beat
+    for (let t = 0, i = 0; t < end; t += b, i++) {
+      const ch = prog[Math.floor(i / 4) % prog.length]
+      const quiet = t < drop
+      for (const n of [...ch.map((x) => root + 12 + x), root + 24 + ch[0]]) {
+        for (const det of [-9, 0, 9]) {
+          const o = ac.createOscillator(); o.type = 'sawtooth'; o.frequency.value = hz(n); o.detune.value = det
+          const f = ac.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = quiet ? 700 : 2600
+          const g = ac.createGain()
+          const peak = quiet ? 0.03 : 0.13
+          g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(peak, t + b * 0.12)
+          g.gain.linearRampToValueAtTime(peak * 0.45, t + b * 0.95); g.gain.linearRampToValueAtTime(0.0001, t + b)
+          o.connect(f).connect(g).connect(out); o.start(t); o.stop(t + b + 0.02)
+        }
+      }
+      if (!quiet) {
+        // sub that pumps with the chords
+        const o = ac.createOscillator(); o.frequency.value = hz(root - 12 + ch[0])
+        const g = ac.createGain()
+        g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.35, t + b * 0.15)
+        g.gain.linearRampToValueAtTime(0.12, t + b * 0.95); g.gain.linearRampToValueAtTime(0.0001, t + b)
+        o.connect(g).connect(out); o.start(t); o.stop(t + b + 0.02)
+      }
+    }
+    return ac.startRendering()
+  }
   for (let t = 0, i = 0; t < end; t += bar, i++) {
     const ch = prog[i % prog.length]
     pad(t, Math.min(end, t + bar + 0.05), ch.map((x) => root + 12 + x), 0.035)

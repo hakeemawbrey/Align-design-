@@ -49,12 +49,13 @@
   .shot .thumb.over { border-color: var(--align); }
   .shot input, .shot textarea { padding: 5px 8px; font-size: 13px; }
   .shot input { font: 700 10px var(--mono); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 4px; }
-  .stage { position: relative; height: min(78vh, calc((100vw - 460px) * 16 / 9)); aspect-ratio: 9 / 16; }
+  .stage { position: relative; height: min(78vh, calc((100vw - 460px) * 16 / 9)); aspect-ratio: 9 / 16; max-width: calc(100vw - 480px); }
   canvas { width: 100%; height: 100%; border-radius: 18px; box-shadow: 0 30px 80px #000a, 0 0 0 1px var(--glass); background: var(--void); }
   .transport { display: flex; gap: 10px; align-items: center; width: min(560px, 90%); }
   .transport input[type=range] { flex: 1; accent-color: var(--align); padding: 0; background: none; border: 0; }
   .time { font: 12px var(--mono); color: var(--label-2); min-width: 92px; text-align: right; }
   .hint { color: var(--label-3); font-size: 12px; margin-top: 6px; }
+  [data-hidden] { display: none !important; }
   .status { font: 12px var(--mono); color: var(--align); min-height: 18px; }
   @media (max-width: 860px) {
     .app { grid-template-columns: 1fr; }
@@ -68,15 +69,26 @@
   <aside>
     <div class="eyebrow">✦ Align ✦</div>
     <h1>Mashup Studio</h1>
-    <p class="hint">Beat-synced 9:16 picture mashups for the twelve signs and Align's core themes.</p>
+    <p class="hint">Beat-synced picture mashups for the twelve signs and Align's core themes.</p>
 
     <section>
       <span class="eyebrow">Video</span>
       <select id="video"></select>
       <div class="row">
-        <div><label for="bpm">Tempo (bpm)</label><input id="bpm" type="number" min="60" max="200" value="120"></div>
+        <div><label for="style">Style</label>
+          <select id="style"><option value="flash" selected>Flash: one line, pictures flicker</option><option value="classic">Classic: title, captions, collage</option></select>
+        </div>
+      </div>
+      <div class="row" data-for="flash">
+        <div><label for="size">Shape</label>
+          <select id="size"><option value="9:16" selected>9:16 Reels / TikTok</option><option value="4:5">4:5 Feed</option><option value="1:1">1:1 Square</option><option value="6:5">6:5 Wide</option></select>
+        </div>
+        <div><label for="seconds">Length (s)</label><input id="seconds" type="number" min="4" max="60" value="8"></div>
+      </div>
+      <div class="row">
+        <div><label for="bpm">Tempo (bpm)</label><input id="bpm" type="number" min="60" max="200" value="113"></div>
         <div><label>&nbsp;</label><button id="tap" title="Tap along to your song">Tap tempo</button></div>
-        <div><label for="pace">Pace</label>
+        <div data-for="classic"><label for="pace">Pace</label>
           <select id="pace"><option value="chill">Chill</option><option value="normal" selected>Normal</option><option value="hype">Hype</option></select>
         </div>
       </div>
@@ -91,23 +103,26 @@
         <div><label for="songStart">Start song at (seconds)</label><input id="songStart" type="number" step="0.1" value="0"></div>
         <div><label>&nbsp;</label><button id="clearSong">Use Align beat</button></div>
       </div>
-      <p class="hint">The first cut lands 4 beats in, so start the song 4 beats before its drop.</p>
+      <p class="hint">The beat drops 4 beats in, so start the song 4 beats before its drop.</p>
     </section>
 
     <section>
       <span class="eyebrow">Pictures</span>
-      <div class="drop" id="drop">Drop pictures here to add them to this video<br><small>or drop one onto a shot below to swap it</small></div>
+      <div class="drop" id="drop">Drop pictures here to add them to this video<br><small>in Classic, drop one onto a shot to swap it</small></div>
     </section>
 
     <section>
       <span class="eyebrow">Words</span>
+      <div data-for="flash"><label for="quote">The line on screen</label><textarea id="quote" rows="3"></textarea></div>
+      <div data-for="classic">
       <label for="title">Title</label><input id="title">
       <label for="eyebrowIn">Eyebrow</label><input id="eyebrowIn">
       <label for="sub">Subtitle</label><input id="sub">
       <label for="outro">Closing line</label><input id="outro">
+      </div>
     </section>
 
-    <section>
+    <section data-for="classic">
       <span class="eyebrow">Shots</span>
       <div class="shots" id="shots"></div>
     </section>
@@ -125,13 +140,14 @@
       <button id="still">Save frame</button>
     </div>
     <div class="status" id="status"></div>
-    <p class="hint" style="max-width:520px;text-align:center">Export records in real time in this browser (MP4 in Chrome/Safari, WebM elsewhere).
+    <p class="hint" style="max-width:520px;text-align:center">Export records in real time in this browser (MP4 in Chrome and Safari, WebM elsewhere).
       For a frame-perfect MP4 of the built-in videos, run <code>npm run mashup -- taurus</code>.</p>
   </main>
 </div>
 
 <script type="module">
   import { createMashup, renderMusic, loadFonts } from './engine.js'
+  import { createFlash } from './flash.js'
   import { buildSpec, ALL_VIDEOS, SIGNS, THEMES } from './content.js'
 
   const $ = (id) => document.getElementById(id)
@@ -163,14 +179,27 @@
   async function rebuild() {
     stop()
     status('Loading…')
-    m = await createMashup(spec, { bpm: Number($('bpm').value) || 120, pace: $('pace').value })
+    const style = $('style').value
+    const bpm = Number($('bpm').value) || 113
+    m = style === 'classic'
+      ? await createMashup(spec, { bpm, pace: $('pace').value })
+      : await createFlash(spec, { bpm, size: $('size').value, seconds: Number($('seconds').value) || 8 })
+    $('c').width = m.width
+    $('c').height = m.height
+    document.querySelector('.stage').style.aspectRatio = `${m.width} / ${m.height}`
     music = song ? null : await renderMusic(m, spec.id)
     t = Math.min(t, m.duration)
     status('')
     paint()
   }
 
+  function showStyle() {
+    const style = $('style').value
+    document.querySelectorAll('[data-for]').forEach((el) => { el.toggleAttribute('data-hidden', el.dataset.for !== style) })
+  }
+
   function fillForm() {
+    $('quote').value = spec.quote
     $('title').value = spec.title
     $('eyebrowIn').value = spec.eyebrow
     $('sub').value = spec.sub
@@ -205,7 +234,7 @@
     })
   }
 
-  for (const [id, key] of [['title', 'title'], ['eyebrowIn', 'eyebrow'], ['sub', 'sub'], ['outro', 'outro']]) {
+  for (const [id, key] of [['quote', 'quote'], ['title', 'title'], ['eyebrowIn', 'eyebrow'], ['sub', 'sub'], ['outro', 'outro']]) {
     $(id).oninput = () => { spec[key] = $(id).value; soon() }
   }
   let timer
@@ -255,6 +284,13 @@
   }
   $('bpm').onchange = rebuild
   $('pace').onchange = rebuild
+  $('size').onchange = rebuild
+  $('seconds').onchange = rebuild
+  $('style').onchange = () => {
+    $('bpm').value = $('style').value === 'classic' ? 120 : 113
+    showStyle()
+    rebuild()
+  }
   sel.onchange = () => { t = 0; location.hash = sel.value; rebuildSpec() }
 
   // playback
@@ -314,7 +350,7 @@
     rec.ondataavailable = (e) => e.data.size && chunks.push(e.data)
     rec.onstop = () => {
       const ext = type.includes('mp4') ? 'mp4' : 'webm'
-      const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob(chunks, { type })), download: `align-${spec.id}.${ext}` })
+      const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob(chunks, { type })), download: `align-${spec.id}${m.style === 'classic' ? '-classic' : ''}.${ext}` })
       a.click()
       status(`Saved align-${spec.id}.${ext}`)
       $('export').disabled = false
@@ -330,6 +366,7 @@
     $('c').toBlob((b) => Object.assign(document.createElement('a'), { href: URL.createObjectURL(b), download: `align-${spec.id}-${t.toFixed(1)}s.png` }).click())
   }
 
+  showStyle()
   await loadFonts()
   await rebuildSpec()
 </script>
