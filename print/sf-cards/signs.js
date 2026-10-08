@@ -120,13 +120,13 @@ window.SIGNS = [
 ]
 
 // Four card types, one per element. The background is the element's ground;
-// the border is the same pearl foil on every card, running out to the cut edge. color/light/dark match the
-// app's element orb (ELEMENT_ORB in app/src/components/onboarding/readings.ts).
+// the border is the same pearl foil on every card, running out to the cut edge. fire red, earth green, air yellow,
+// water blue (earth and water match the app's element orb).
 //   ground = [top, middle, bottom] of the card background
 window.ELEMENT_PALETTE = {
-  fire: { color: '#f0603a', light: '#ffc2a0', dark: '#3a0e06', ground: ['#9a3214', '#5e1508', '#2a0703'] },
+  fire: { color: '#ef3a3f', light: '#ffb0b0', dark: '#3a0508', ground: ['#a81c26', '#690b13', '#300306'] },
   earth: { color: '#7cd84a', light: '#e4ffb8', dark: '#173a0a', ground: ['#3c7a22', '#1d4a11', '#0a2306'] },
-  air: { color: '#7fc8f0', light: '#e2f5ff', dark: '#10304a', ground: ['#3a86b0', '#1c5476', '#0b2a40'] },
+  air: { color: '#f2cf4a', light: '#fff0a8', dark: '#3a2c04', ground: ['#b08a16', '#73560a', '#382803'] },
   water: { color: '#3f7cf0', light: '#b8d4ff', dark: '#0a1640', ground: ['#2a4fb4', '#14287a', '#070f3a'] },
 }
 
