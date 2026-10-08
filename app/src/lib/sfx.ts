@@ -1,3 +1,4 @@
+import { nativeBuzz } from './native'
 /**
  * Tiny WebAudio synth for game feel — no audio files needed.
  * Every call is safe before user interaction (it just stays silent).
@@ -56,6 +57,7 @@ function noise(dur: number, opts: { gain?: number; delay?: number; from?: number
 }
 
 const vibrate = (p: number | number[]) => {
+  if (nativeBuzz(p)) return
   try {
     const ua = (navigator as Navigator & { userActivation?: { hasBeenActive: boolean } }).userActivation
     if (ua && !ua.hasBeenActive) return

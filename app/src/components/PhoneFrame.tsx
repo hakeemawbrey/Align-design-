@@ -1,3 +1,4 @@
+import { isNative } from '../lib/native'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 
 /**
@@ -8,6 +9,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
  */
 export function isAppMode() {
   if (typeof window === 'undefined') return false
+  if (isNative) return true
   const standalone = window.matchMedia?.('(display-mode: standalone)').matches || (navigator as { standalone?: boolean }).standalone === true
   const phone = window.matchMedia?.('(pointer: coarse)').matches && Math.min(window.innerWidth, window.innerHeight) < 500
   return Boolean(standalone || phone)

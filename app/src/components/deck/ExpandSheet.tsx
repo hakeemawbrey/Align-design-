@@ -20,7 +20,7 @@ export default function ExpandSheet({ profile, onClose, onAlign, onRelease }: Pr
   const pr = pronoun(profile)
   const sections: [string, string][] = [
     ['WHERE IT’S EASY', ext.easy],
-    ['WHERE IT RUBS', ext.rubs],
+    ['WHERE YOU PUSH', ext.rubs],
     ['RIGHT NOW', ext.now],
   ]
   return (

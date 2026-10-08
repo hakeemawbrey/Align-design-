@@ -1,7 +1,7 @@
 import { DECK, BONUS, MORE, COMETS } from '../data/profiles'
 import { MATCHES } from '../data/matches'
 import { load, remove, save } from '../lib/persist'
-import type { Backend, Message, Snapshot, SwipeDir } from './types'
+import type { Backend, Message, MyCard, Snapshot, SwipeDir } from './types'
 
 const KEY = 'backend:v1'
 
@@ -13,6 +13,7 @@ interface Db {
   matches: string[]
   traded: string[]
   messages: Message[]
+  card?: MyCard
 }
 
 /** a fresh account starts already matched with these people (same as start_account() in SQL) */
@@ -31,7 +32,8 @@ export function localBackend(): Backend {
   let db: Db = { ...empty(), ...(load<Db>(KEY) ?? {}) }
   const listeners = new Map<string, Set<(m: Message) => void>>()
   const commit = () => save(KEY, db)
-  const snapshot = (): Snapshot => ({ matches: [...db.matches], traded: [...db.traded], swipes: { ...db.swipes } })
+  // on one device there are no other real people; your card is kept so it survives a refresh
+  const snapshot = (): Snapshot => ({ matches: [...db.matches], traded: [...db.traded], swipes: { ...db.swipes }, people: [], myCardId: db.card ? 'me' : undefined })
 
   // another tab on this device wrote a message
   if (typeof window !== 'undefined') {
@@ -70,6 +72,28 @@ export function localBackend(): Backend {
       if (!db.traded.includes(matchId)) db.traded.push(matchId)
       commit()
     },
-    async reset() { db = empty(); remove(KEY); return snapshot() },
+    async publish(card) { db.card = card; commit(); return 'me' },
+    uploadPhoto: (file) => shrink(file),
+    onMatch() { return () => {} },
+    async reset() { const card = db.card; db = { ...empty(), card }; remove(KEY); if (card) commit(); return snapshot() },
   }
+}
+
+/** Photos on this device are stored as a small JPEG data URL. */
+export function shrink(file: Blob, max = 720): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file)
+    const img = new Image()
+    img.onload = () => {
+      const k = Math.min(1, max / Math.max(img.width, img.height))
+      const c = document.createElement('canvas')
+      c.width = Math.round(img.width * k)
+      c.height = Math.round(img.height * k)
+      c.getContext('2d')!.drawImage(img, 0, 0, c.width, c.height)
+      URL.revokeObjectURL(url)
+      resolve(c.toDataURL('image/jpeg', 0.82))
+    }
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('not an image')) }
+    img.src = url
+  })
 }

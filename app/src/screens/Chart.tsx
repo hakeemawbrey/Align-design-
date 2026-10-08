@@ -1,3 +1,4 @@
+import Strength from '../components/Strength'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenId, ScreenProps } from './types'
@@ -183,9 +184,7 @@ export default function Chart({ go }: ScreenProps) {
                     {t.label} · {t.eyebrow}
                   </span>
                   <span style={{ flex: 1 }} />
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <span key={i} style={{ width: 6, height: 6, borderRadius: 3, background: i < t.pips ? t.color : 'rgba(179,166,196,0.25)', boxShadow: i < t.pips ? `0 0 5px ${t.color}` : 'none' }} />
-                  ))}
+                  <Strength n={t.pips} of={5} color={t.color} />
                 </div>
                 <div className="serif italic" style={{ fontSize: 18, lineHeight: 1.2, marginTop: 6, color: 'var(--label-1)' }}>{t.headline}</div>
                 <div style={{ fontSize: 11.5, lineHeight: 1.42, marginTop: 6, color: 'var(--label-2)' }}>{t.meaning}</div>

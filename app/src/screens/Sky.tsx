@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
+import Strength from '../components/Strength'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import { SKY_DATE, SKY_HERO, SKY_TABS, SKY_FOOTER, MOON_NOW, MOON_STRIP, WEEK_STRIP, type SkyTab } from '../data/sky'
@@ -85,9 +86,7 @@ export default function Sky({ go }: ScreenProps) {
                     {t.label} · {t.eyebrow}
                   </span>
                   <span style={{ flex: 1 }} />
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <span key={i} style={{ width: 6, height: 6, borderRadius: 3, background: i < t.pips ? t.color : 'rgba(179,166,196,0.25)', boxShadow: i < t.pips ? `0 0 5px ${t.color}` : 'none' }} />
-                  ))}
+                  <Strength n={t.pips} of={5} color={t.color} />
                 </div>
                 <Reading t={t} />
               </motion.div>

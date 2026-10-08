@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
+import Strength from '../components/Strength'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import AuraPair from '../components/chat/AuraPair'
@@ -9,7 +10,7 @@ import { sfx } from '../lib/sfx'
 
 const CARD = { left: 32, top: 100, width: 326, height: 555 }
 
-/** S-21 Cosmic alignment — Spark / Rub / Align / Relationship. */
+/** S-21 Cosmic alignment — Pull / Push / Align / Relationship. */
 export default function Alignment({ go }: ScreenProps) {
   const [[tab, dir], setTab] = useState<[number, number]>([0, 1])
   const r = READINGS[tab]
@@ -135,21 +136,7 @@ export default function Alignment({ go }: ScreenProps) {
                   <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: r.color, fontWeight: 700 }}>
                     {r.label} <span style={{ opacity: 0.7, margin: '0 5px' }}>·</span> {r.eyebrow}
                   </div>
-                  <div style={{ display: 'flex', gap: 4 }}>
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <motion.span
-                        key={i}
-                        initial={{ scale: 0.3, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.12 + i * 0.06, type: 'spring', stiffness: 500, damping: 20 }}
-                        style={{
-                          width: 7, height: 7, borderRadius: 4,
-                          background: i < r.pips ? r.color : 'rgba(179,166,196,0.28)',
-                          boxShadow: i < r.pips ? `0 0 6px ${r.color}aa` : 'none',
-                        }}
-                      />
-                    ))}
-                  </div>
+                  <Strength n={r.pips} of={5} color={r.color} />
                 </div>
                 <div className="serif italic" style={{ fontSize: 19.5, lineHeight: '23px', marginTop: 8, color: 'var(--label-1)' }}>
                   {r.headline}

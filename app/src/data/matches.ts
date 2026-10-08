@@ -24,6 +24,8 @@ export interface Match {
   traded: boolean
   /** where tapping the row goes */
   opens: 'chat' | 'trade' | 'card'
+  /** a real person (opens their live chat) */
+  real?: boolean
 }
 
 /** Your matches, in G-09 order. Tobias is the scripted trade (day 3, ready). */

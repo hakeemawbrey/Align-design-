@@ -154,7 +154,7 @@ export default function Match({ go }: ScreenProps) {
       </motion.div>
 
       <motion.div {...rise(0.1)} className="eyebrow" style={{ position: 'absolute', top: 501, left: 0, right: 0, textAlign: 'center', zIndex: 5, fontSize: 9.5 }}>
-        Mutual align · five of seven centres
+        Mutual align · you both said yes
       </motion.div>
 
       <motion.h1 {...rise(0.22)} className="h-display" style={{ position: 'absolute', top: 526, left: 0, right: 0, textAlign: 'center', fontSize: 34, zIndex: 5 }}>

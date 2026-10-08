@@ -96,6 +96,11 @@ export default function Rarity({ show, instant = false, target = 92, lit = 5, pu
           )
         })}
       </div>
+      {/* say what the lights mean, so they aren't just dots */}
+      <motion.div animate={{ opacity: done ? 1 : 0 }} transition={{ duration: 0.4 }}
+        style={{ marginTop: 8, fontFamily: 'var(--mono)', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-2)', textTransform: 'uppercase' }}>
+        {lit} of {CHAKRA.length} energy centres in tune
+      </motion.div>
     </motion.div>
   )
 }
