@@ -1,6 +1,6 @@
 // SF-01 zodiac cards: one front per sign. Aura names come from
 // "Kit · The twelve auras". Per-sign colours are kept for reference; the
-// cards are coloured by element (ELEMENT_PALETTE below), with a holo foil border.
+// cards are coloured by element (ELEMENT_PALETTE below), with a thick pearl foil border.
 // focus = vertical crop point (%) of the figure art in the card window.
 // Copy voice follows the app: plain words, second person, no planet jargon.
 //   pull  = what pulls you in
@@ -121,7 +121,7 @@ window.SIGNS = [
 ]
 
 // Four card types, one per element. The background is the element's ground;
-// the border is the same holo foil on every card. color/light/dark match the
+// the border is the same pearl foil on every card, running out to the cut edge. color/light/dark match the
 // app's element orb (ELEMENT_ORB in app/src/components/onboarding/readings.ts).
 //   ground = [top, middle, bottom] of the card background
 window.ELEMENT_PALETTE = {
@@ -131,8 +131,14 @@ window.ELEMENT_PALETTE = {
   water: { color: '#3f7cf0', light: '#b8d4ff', dark: '#0a1640', ground: ['#2a4fb4', '#14287a', '#070f3a'] },
 }
 
-// rainbow holo foil (the app's .holo-frame / Rare pull colours) with white glints
-window.HOLO = 'linear-gradient(125deg, #ff6ad5 0%, #ffd36a 14%, #ffffff 22%, #7affc4 32%, #6ad5ff 46%, #ffffff 54%, #b18cff 64%, #ff6ad5 78%, #ffd36a 90%, #7affc4 100%)'
+// Align pearl foil: the chrome CTA ramp (f6edff → fff7ec → eaf4ff → ffeff7, from
+// "Kit · Stardust language") with soft lavender shadows so it reads as pearl on paper.
+window.PEARL = [
+  // sheen bands
+  'repeating-linear-gradient(125deg, rgba(255,255,255,0) 0pt, rgba(255,255,255,0.55) 9pt, rgba(255,255,255,0) 20pt, rgba(190,170,230,0.0) 34pt, rgba(190,170,230,0.35) 44pt, rgba(190,170,230,0) 56pt)',
+  // the pearl ramp: lavender → blush → cream → ice → white → lilac
+  'linear-gradient(125deg, #c9b6ef 0%, #f1e3ff 10%, #ffd9ec 20%, #fff1df 30%, #d5e6ff 42%, #ffffff 50%, #e6d4ff 60%, #ffdcef 70%, #fff3e3 80%, #cfe0ff 90%, #c6b3ee 100%)',
+].join(', ')
 
 window.CARD_BACK = {
   name: 'Hakeem Awbrey',

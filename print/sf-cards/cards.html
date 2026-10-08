@@ -47,8 +47,11 @@
 
   /* foil frame: the sign colour rolled through white */
   .frame { position: absolute; inset: 6.5pt; border-radius: 9pt; padding: 1.3pt; }
-  .frame.holo { inset: 5.5pt; border-radius: 9.5pt; padding: 2.4pt; }
-  .frame.holo > .panel { border-radius: 7.4pt; }
+  /* front: pearl foil fills the bleed, so the border runs to the cut edge; the
+     element panel sits 8pt (≈1/9 in) inside the trim */
+  .pearl { position: absolute; inset: 0; }
+  .ppanel { position: absolute; left: 17pt; top: 17pt; width: 164pt; height: 236pt; border-radius: 6pt; overflow: hidden; }
+  .ppanel-edge { position: absolute; left: 16.4pt; top: 16.4pt; width: 165.2pt; height: 237.2pt; border-radius: 6.5pt; background: linear-gradient(125deg, #b9abd8, #f4ecff 40%, #c8bce4 70%, #efe6ff); }
   .panel { position: relative; width: 100%; height: 100%; border-radius: 7.8pt; overflow: hidden; }
 
   /* ───────── front ───────── */
@@ -78,7 +81,7 @@
   .read .k span { display: inline-block; padding: 1pt 3pt 0.9pt; border-radius: 99pt; background: rgba(8,4,24,0.55); font-family: var(--mono); font-weight: 700; font-size: 4.6pt; letter-spacing: 0.14em; }
   .read .t { flex: 1; font-family: var(--serif); font-size: 7.3pt; line-height: 1.13; color: var(--label-1); }
 
-  .foot { left: 14pt; right: 14pt; bottom: 12pt; display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 4.6pt; letter-spacing: 0.14em; white-space: nowrap; }
+  .foot { left: 14pt; right: 14pt; bottom: 13pt; display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 4.6pt; letter-spacing: 0.14em; white-space: nowrap; }
 
   /* ───────── back ───────── */
   .b-mark { left: 0; right: 0; top: 21pt; text-align: center; font-family: var(--serif); font-style: italic; font-size: 14pt; color: rgba(239,230,214,0.82); letter-spacing: 0.02em; }
@@ -146,12 +149,11 @@ function front(s, n) {
   const { color, light, dark, ground: [g0, g1, g2] } = ELEMENT_PALETTE[s.element]
   return el(`
   <div class="card front" style="--ink:${light}; --ink-2:${light}c0; --ink-3:${light}8c">
-    <!-- full-bleed element ground, so a slightly off cut still lands on colour -->
-    <div class="abs" style="inset:0; background:linear-gradient(180deg, ${g1} 0%, ${g2} 100%)"></div>
+    <!-- pearl foil border, full bleed: thick all the way to the cut edge -->
+    <div class="pearl" style="background:${PEARL}"></div>
+    <div class="ppanel-edge"></div>
+    <div class="ppanel" style="background:${groundBg(s.element)}"></div>
     <div class="trim">
-      <div class="frame holo" style="background:${HOLO}">
-        <div class="panel" style="background:${groundBg(s.element)}"></div>
-      </div>
 
       <div class="abs f-top">
         <div>
@@ -269,7 +271,7 @@ const signs = ONLY ? SIGNS.filter((s) => s.id === ONLY) : SIGNS
 if (VIEW === 'ground') {
   // one element background at panel size (render.mjs saves it to grounds/<element>.jpg)
   const e = Q.get('element') || 'fire'
-  document.body.appendChild(el(`<div class="card"><div class="trim"><div class="frame holo"><div class="panel" style="border-radius:0; background:${groundCSS(e)}"></div></div></div></div>`))
+  document.body.appendChild(el(`<div class="card"><div class="ppanel" style="border-radius:0; background:${groundCSS(e)}"></div></div>`))
 } else if (VIEW === 'card') {
   // one card at full bleed size, top-left of the page (for PNG export)
   document.body.style.background = 'transparent'
