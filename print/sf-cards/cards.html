@@ -62,8 +62,7 @@
 
   .art { left: 14pt; right: 14pt; top: 37.5pt; height: 95pt; border-radius: 5pt; overflow: hidden; background: #07060a; }
   /* the whole image, never cropped: full window height, centred, sides fade into the window */
-  .art .frame-img { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); }
-  .art img { height: 100%; width: auto; display: block; }
+  .art img { position: absolute; top: 0; height: 100%; width: auto; left: 50%; transform: translateX(-50%); display: block; }
   .art .fade { position: absolute; top: 0; bottom: 0; width: 12pt; }
   .art .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,6,32,0) 55%, rgba(11,6,32,0.85) 100%); }
   .art .cap { position: absolute; left: 0; right: 0; bottom: 3.6pt; text-align: center; font-family: var(--mono); font-size: 4.3pt; letter-spacing: 0.22em; color: rgba(239,230,214,0.82); }
@@ -95,25 +94,6 @@
   .b-email { left: 0; right: 0; top: 213pt; text-align: center; font-family: var(--mono); font-size: 6.2pt; letter-spacing: 0.04em; color: var(--label-1); }
   .b-site { left: 0; right: 0; bottom: 15pt; text-align: center; font-family: var(--mono); font-size: 4.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(220,188,255,0.55); }
 
-  /* ───────── improved style (?style=v2) ───────── */
-  /* pull/push/align label sits on the first line of its text */
-  .v2 .read .k { display: flex; align-items: flex-start; padding-top: 0.25pt; }
-  .v2 .read .k span { display: block; line-height: 1.25; }
-  .rare-tag { position: absolute; left: 4pt; top: 4pt; padding: 1.2pt 4pt 1pt; border-radius: 99pt; font-family: var(--mono); font-weight: 700; font-size: 4.4pt; letter-spacing: 0.18em; color: #3a2a08; }
-
-  .b2-mark { left: 0; right: 0; top: 19pt; text-align: center; font-family: var(--serif); font-style: italic; font-size: 14pt; color: rgba(239,230,214,0.86); }
-  .b2-sol { left: 42pt; top: 42pt; width: 96pt; height: 96pt; }
-  .b2-pitch { left: 0; right: 0; top: 150pt; text-align: center; font-family: var(--serif); font-style: italic; font-size: 10pt; color: var(--label-1); }
-  .b2-hair { left: 64pt; right: 64pt; top: 167pt; height: 0.5pt; background: linear-gradient(90deg, transparent, var(--align), transparent); }
-  .b2-qr { left: 19pt; top: 178pt; width: 47pt; height: 47pt; padding: 3.5pt; border-radius: 4pt; }
-  .b2-qr img { width: 100%; height: 100%; display: block; }
-  .b2-qrlbl { left: 13pt; width: 59pt; top: 228.5pt; text-align: center; font-family: var(--mono); font-size: 3.9pt; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(220,188,255,0.7); }
-  .b2-who { left: 76pt; right: 14pt; top: 181pt; }
-  .b2-name { font-family: var(--serif); font-style: italic; font-size: 13pt; line-height: 1; color: var(--label-1); white-space: nowrap; }
-  .b2-title { margin-top: 4pt; font-family: var(--mono); font-size: 4.8pt; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(220,188,255,0.8); }
-  .b2-email { margin-top: 8pt; font-family: var(--mono); font-size: 5.5pt; letter-spacing: 0.02em; color: var(--label-1); white-space: nowrap; }
-  .b2-site { margin-top: 3.5pt; font-family: var(--mono); font-size: 4.4pt; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(220,188,255,0.55); }
-
   /* ───────── proof view ───────── */
   .proof { padding: 40px 24px 80px; font-family: var(--serif); }
   .proof h1 { font-style: italic; font-weight: 400; font-size: 34px; text-align: center; }
@@ -143,12 +123,10 @@ const Q = new URLSearchParams(location.search)
 const VIEW = Q.get('view') || 'proof'
 const ART = Q.get('art') === 'aura' ? 'aura' : 'figure'
 const ONLY = Q.get('sign')
-const V2 = Q.get('style') === 'v2'
 const pad = (n) => String(n).padStart(2, '0')
 // figure art: the Figma originals (Kit · Figures), trimmed of grid gutters; aura art: the app's copies
-// aura art: the app's AuraCam silhouettes (Kit · Aura photos), trimmed of grid gutters
-const AURA_IMG = (s) => `art/aura/${s.id}.jpg`
-const IMG = (s) => ART === 'figure' ? `art/${s.id}.jpg` : AURA_IMG(s)
+const IMG = (s) => ART === 'figure' ? `art/${s.id}.jpg` : `../../app/public/img/aura/${s.id}.jpg`
+const ART_ASPECT = ART === 'figure' ? 1024 / 858 : 640 / 585 // width / height of the source images
 
 const foil = (c, l, deg = 125) =>
   `linear-gradient(${deg}deg, ${c} 0%, ${l} 22%, #ffffff 42%, ${l} 58%, ${c} 78%, ${l} 100%)`
@@ -171,17 +149,13 @@ function groundCSS(sign) {
 const groundBg = (sign) =>
   Q.get('ground') === 'css' ? groundCSS(sign) : `url(grounds/${sign}.jpg) center / 101.6% 101.2% no-repeat, ${SIGN_PALETTE[sign].ground[1]}`
 
-/** v2 = the improved style; in it, № 01 of each sign is the rare: gold foil + AuraCam art. */
-function front(s, n, v2 = V2) {
+function front(s, n) {
   const { color, light, dark } = SIGN_PALETTE[s.id]
-  const rare = v2 && n === 1
-  const img = rare ? AURA_IMG(s) : IMG(s)
-  const serial = v2 ? `NO. ${n ? pad(n) : '__'}/${EDITION.run}` : `№ ${n ? pad(n) : '__'}/${EDITION.run}`
   return el(`
-  <div class="card front ${v2 ? 'v2' : ''}" style="--ink:${light}; --ink-2:${light}c0; --ink-3:${light}8c">
-    <!-- foil border, full bleed: thick all the way to the cut edge (gold on the rare) -->
-    <div class="pearl" style="background:${rare ? GOLD : PEARL}"></div>
-    <div class="ppanel-edge" style="${rare ? 'background:linear-gradient(125deg, #8a6418, #fff1c4 40%, #b8892a 70%, #f8e2a0)' : ''}"></div>
+  <div class="card front" style="--ink:${light}; --ink-2:${light}c0; --ink-3:${light}8c">
+    <!-- pearl foil border, full bleed: thick all the way to the cut edge -->
+    <div class="pearl" style="background:${PEARL}"></div>
+    <div class="ppanel-edge"></div>
     <div class="ppanel" style="background:${groundBg(s.id)}"></div>
     <div class="trim">
 
@@ -194,13 +168,10 @@ function front(s, n, v2 = V2) {
       </div>
 
       <div class="abs art">
-        <div class="frame-img">
-          <img src="${img}" alt="">
-          <div class="fade" style="left:-0.5pt; background:linear-gradient(90deg, #07060a, rgba(7,6,10,0))"></div>
-          <div class="fade" style="right:-0.5pt; background:linear-gradient(270deg, #07060a, rgba(7,6,10,0))"></div>
-        </div>
+        <img src="${IMG(s)}" alt="">
+        <div class="fade" style="left:calc(50% - ${(95 * ART_ASPECT) / 2}pt); background:linear-gradient(90deg, #07060a, rgba(7,6,10,0))"></div>
+        <div class="fade" style="right:calc(50% - ${(95 * ART_ASPECT) / 2}pt); background:linear-gradient(270deg, #07060a, rgba(7,6,10,0))"></div>
         <div class="veil"></div>
-        ${rare ? `<div class="rare-tag" style="background:${GOLD}">✦ RARE · 1 OF 12</div>` : ''}
         <div class="cap">AURA · ${s.aura.toUpperCase()}</div>
         <div class="edge" style="box-shadow: inset 0 0 0 0.6pt ${light}aa"></div>
       </div>
@@ -230,7 +201,7 @@ function front(s, n, v2 = V2) {
       <div class="abs foot">
         <span style="color:var(--ink-2)">ALIGN · ${EDITION.code}</span>
         <span style="color:var(--ink-3)">SAN FRANCISCO</span>
-        <span style="color:var(--align)">${rare ? '✦ ' : ''}${serial}</span>
+        <span style="color:var(--align)">№ ${n ? pad(n) : '__'}/${EDITION.run}</span>
       </div>
     </div>
   </div>`)
@@ -273,28 +244,8 @@ function seedOfLife() {
   </svg>`
 }
 
-function back(v2 = V2) {
+function back() {
   const b = CARD_BACK
-  const inner = v2 ? `
-      <div class="abs b2-mark">Align</div>
-      <div class="abs b2-sol">${seedOfLife()}</div>
-      <div class="abs b2-pitch">${b.pitch}</div>
-      <div class="abs b2-hair"></div>
-      <div class="abs b2-qr" style="background:${PEARL}"><img src="qr.svg" alt=""></div>
-      <div class="abs b2-qrlbl">${b.qrLabel}</div>
-      <div class="abs b2-who">
-        <div class="b2-name">${b.name}</div>
-        <div class="b2-title">${b.title}</div>
-        <div class="b2-email">${b.email}</div>
-        <div class="b2-site">${b.site}</div>
-      </div>` : `
-      <div class="abs b-mark">Align</div>
-      <div class="abs b-sol">${seedOfLife()}</div>
-      <div class="abs b-name">${b.name}</div>
-      <div class="abs b-title">${b.title}</div>
-      <div class="abs b-hair"></div>
-      <div class="abs b-email">${b.email}</div>
-      <div class="abs b-site">${b.site}</div>`
   return el(`
   <div class="card back">
     <div class="abs" style="inset:0; background:
@@ -310,7 +261,13 @@ function back(v2 = V2) {
           <div class="abs" style="inset:3.5pt; border-radius:5.5pt; border:0.5pt solid rgba(220,188,255,0.24)"></div>
         </div>
       </div>
-      ${inner}
+      <div class="abs b-mark">Align</div>
+      <div class="abs b-sol">${seedOfLife()}</div>
+      <div class="abs b-name">${b.name}</div>
+      <div class="abs b-title">${b.title}</div>
+      <div class="abs b-hair"></div>
+      <div class="abs b-email">${b.email}</div>
+      <div class="abs b-site">${b.site}</div>
     </div>
   </div>`)
 }
@@ -321,24 +278,6 @@ if (VIEW === 'ground') {
   // one sign's background at panel size (render.mjs saves it to grounds/<sign>.jpg)
   const g = Q.get('sign') || 'aries'
   document.body.appendChild(el(`<div class="card"><div class="ppanel" style="border-radius:0; background:${groundCSS(g)}"></div></div>`))
-} else if (VIEW === 'compare') {
-  // current cards vs the improved style, side by side
-  const sc = Number(Q.get('scale') || 1.9)
-  const A = SIGNS.find((x) => x.id === (ONLY || 'aries')), B = SIGNS.find((x) => x.id === 'libra')
-  const rows = [
-    ['Now', [[front(A, 7, false), `${A.name} · № 07`], [back(false), 'Back']]],
-    ['Improved', [[front(A, 7, true), `${A.name} · No. 07`], [front(A, 1, true), `${A.name} · No. 01 · rare`], [front(B, 1, true), `${B.name} · No. 01 · rare`], [back(true), 'Back · pitch + QR']]],
-  ]
-  const wrap = el(`<div class="proof" style="--s:${sc}"><h1>Align · ${EDITION.code}, improved</h1><p class="sub">top: what you have now · bottom: the improved cards</p></div>`)
-  for (const [title, cards] of rows) {
-    const row = el(`<div style="margin:18px 0 36px"><p class="sub" style="margin:0 0 16px; color:var(--label-1); font-size:13px">${title}</p><div class="grid"></div></div>`)
-    for (const [card, label] of cards) {
-      const sl = el(`<div class="slot"><div class="scaler"></div><div class="lbl">${label}</div></div>`)
-      sl.querySelector('.scaler').appendChild(card); row.querySelector('.grid').appendChild(sl)
-    }
-    wrap.appendChild(row)
-  }
-  document.body.appendChild(wrap)
 } else if (VIEW === 'card') {
   // one card at full bleed size, top-left of the page (for PNG export)
   document.body.style.background = 'transparent'

@@ -137,12 +137,6 @@ window.SIGN_PALETTE = {
   pisces: { color: '#622fee', light: '#c5b1fb', dark: '#150934', ground: ['#412395', '#27135d', '#11082b'] },
 }
 
-// Gold foil for the rare #01/25 of each sign (the app's --gold-foil ramp, with sheen bands).
-window.GOLD = [
-  'repeating-linear-gradient(125deg, rgba(255,255,255,0) 0pt, rgba(255,250,225,0.6) 9pt, rgba(255,255,255,0) 20pt, rgba(120,80,10,0) 34pt, rgba(120,80,10,0.28) 44pt, rgba(120,80,10,0) 56pt)',
-  'linear-gradient(125deg, #a9802e 0%, #f2c75c 14%, #fff4cf 26%, #d9a640 38%, #f2d784 50%, #fffaf0 58%, #c99a3a 70%, #f2c75c 82%, #fff4cf 92%, #b88a2c 100%)',
-].join(', ')
-
 // Align pearl foil: the chrome CTA ramp (f6edff → fff7ec → eaf4ff → ffeff7, from
 // "Kit · Stardust language") with soft lavender shadows so it reads as pearl on paper.
 window.PEARL = [
@@ -153,9 +147,6 @@ window.PEARL = [
 ].join(', ')
 
 window.CARD_BACK = {
-  // improved back only: one-line pitch, and the QR code (qr.svg, made by make-qr.py)
-  pitch: 'Dating, dealt by the stars.',
-  qrLabel: 'Scan · try Align',
   name: 'Hakeem Awbrey',
   title: 'Co-Founder',
   email: 'hakeem@comealign.com',
