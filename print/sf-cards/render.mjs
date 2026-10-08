@@ -6,6 +6,7 @@
 // PNGs are 825 × 1125 px: 2.75 × 3.75 in at 300 dpi (2.5 × 3.5 in card + 1/8 in bleed).
 import { chromium } from 'playwright'
 import { mkdir } from 'node:fs/promises'
+import { spawnSync } from 'node:child_process'
 import { dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
@@ -50,6 +51,11 @@ for (const e of ['fire', 'earth', 'air', 'water']) {
   await p.goto(page$('view=sheet')); await ready(p)
   await p.pdf({ path: join(out, 'SF-01-letter-sheets.pdf'), width: '8.5in', height: '11in', printBackground: true, preferCSSPageSize: true })
   await p.close()
+}
+// Chromium repeats identical objects per card; merge them (needs python3 + pypdf, skipped if missing)
+{
+  const res = spawnSync('python3', [join(here, 'compact-pdf.py'), join(out, 'SF-01-letter-sheets.pdf')], { stdio: 'inherit' })
+  if (res.status !== 0) console.warn('PDF not compacted (pip install pypdf); it is still valid, just larger')
 }
 
 // print-shop files (bleed included)

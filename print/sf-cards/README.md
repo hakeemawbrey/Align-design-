@@ -44,5 +44,7 @@ node print/sf-cards/render.mjs --all     # writes out/print-files/numbered/<sign
 - Re-export: `node print/sf-cards/render.mjs`. This needs Playwright and Chromium.
   If `playwright` won't resolve, run `npm i playwright` in this folder first.
 
-The art comes from `app/public/img/figure` and `app/public/img/aura`, which match the
-Figma kits *Kit · Figures* and *Kit · Aura photos*.
+The animal art in `art/` is the full-resolution originals from the Figma kit
+*Kit · Figures*, trimmed of the kit's grid gutters. Each card shows the whole image,
+never cropped. The `&art=aura` option uses `app/public/img/aura` (*Kit · Aura photos*).
+`render.mjs` shrinks the sheets PDF with `compact-pdf.py` (needs `pip install pypdf`).
