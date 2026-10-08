@@ -1,6 +1,6 @@
 // SF-01 zodiac cards: one front per sign. Aura names come from
 // "Kit · The twelve auras". Per-sign colours are kept for reference; the
-// cards are coloured by element (ELEMENT_PALETTE below).
+// cards are coloured by element (ELEMENT_PALETTE below), with a holo foil border.
 // focus = vertical crop point (%) of the figure art in the card window.
 // Copy voice follows the app: plain words, second person, no planet jargon.
 //   pull  = what pulls you in
@@ -120,15 +120,19 @@ window.SIGNS = [
   },
 ]
 
-// Card colour comes from the element, not the sign: frame foil, bloom, glyph,
-// sign name and chip. Same palette as the app's element orb (ELEMENT_ORB in
-// app/src/components/onboarding/readings.ts).
+// Four card types, one per element. The background is the element's ground;
+// the border is the same holo foil on every card. color/light/dark match the
+// app's element orb (ELEMENT_ORB in app/src/components/onboarding/readings.ts).
+//   ground = [top, middle, bottom] of the card background
 window.ELEMENT_PALETTE = {
-  fire: { color: '#f0603a', light: '#ffc2a0', dark: '#3a0e06' },
-  earth: { color: '#7cd84a', light: '#e4ffb8', dark: '#173a0a' },
-  air: { color: '#7fc8f0', light: '#e2f5ff', dark: '#10304a' },
-  water: { color: '#3f7cf0', light: '#b8d4ff', dark: '#0a1640' },
+  fire: { color: '#f0603a', light: '#ffc2a0', dark: '#3a0e06', ground: ['#9a3214', '#5e1508', '#2a0703'] },
+  earth: { color: '#7cd84a', light: '#e4ffb8', dark: '#173a0a', ground: ['#3c7a22', '#1d4a11', '#0a2306'] },
+  air: { color: '#7fc8f0', light: '#e2f5ff', dark: '#10304a', ground: ['#3a86b0', '#1c5476', '#0b2a40'] },
+  water: { color: '#3f7cf0', light: '#b8d4ff', dark: '#0a1640', ground: ['#2a4fb4', '#14287a', '#070f3a'] },
 }
+
+// rainbow holo foil (the app's .holo-frame / Rare pull colours) with white glints
+window.HOLO = 'linear-gradient(125deg, #ff6ad5 0%, #ffd36a 14%, #ffffff 22%, #7affc4 32%, #6ad5ff 46%, #ffffff 54%, #b18cff 64%, #ff6ad5 78%, #ffd36a 90%, #7affc4 100%)'
 
 window.CARD_BACK = {
   name: 'Hakeem Awbrey',

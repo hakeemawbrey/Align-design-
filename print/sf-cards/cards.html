@@ -47,12 +47,14 @@
 
   /* foil frame: the sign colour rolled through white */
   .frame { position: absolute; inset: 6.5pt; border-radius: 9pt; padding: 1.3pt; }
+  .frame.holo { inset: 5.5pt; border-radius: 9.5pt; padding: 2.4pt; }
+  .frame.holo > .panel { border-radius: 7.4pt; }
   .panel { position: relative; width: 100%; height: 100%; border-radius: 7.8pt; overflow: hidden; }
 
   /* ───────── front ───────── */
   .f-top { left: 14pt; right: 14pt; top: 14pt; height: 20pt; display: flex; justify-content: space-between; align-items: flex-start; }
   .f-animal { font-family: var(--serif); font-style: italic; font-size: 13.5pt; line-height: 1; color: var(--label-1); }
-  .f-dates { font-family: var(--mono); font-size: 4.6pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--label-2); margin-top: 2.6pt; }
+  .f-dates { font-family: var(--mono); font-size: 4.6pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2, var(--label-2)); margin-top: 2.6pt; }
   .orb { width: 19pt; height: 19pt; border-radius: 50%; display: grid; place-items: center; font-family: var(--glyph); font-size: 9.5pt; line-height: 1; color: #fff; }
 
   .art { left: 14pt; right: 14pt; top: 37pt; height: 88pt; border-radius: 5pt; overflow: hidden; background: #000; }
@@ -68,11 +70,12 @@
 
   .general { left: 14pt; right: 13pt; top: 146pt; font-family: var(--serif); font-style: italic; font-size: 8.1pt; line-height: 1.16; color: var(--label-1); }
 
-  .rule { left: 14pt; right: 14pt; height: 0.5pt; background: linear-gradient(90deg, rgba(179,166,196,0.5), rgba(179,166,196,0.12)); }
+  .rule { left: 14pt; right: 14pt; height: 0.5pt; background: linear-gradient(90deg, var(--ink-2, rgba(179,166,196,0.5)), transparent); }
 
   .reads { left: 14pt; right: 13pt; top: 173pt; display: flex; flex-direction: column; gap: 3.4pt; }
   .read { display: flex; align-items: flex-start; }
-  .read .k { width: 25pt; flex-shrink: 0; font-family: var(--mono); font-weight: 700; font-size: 4.9pt; letter-spacing: 0.14em; padding-top: 1.7pt; }
+  .read .k { width: 25pt; flex-shrink: 0; padding-top: 0.6pt; }
+  .read .k span { display: inline-block; padding: 1pt 3pt 0.9pt; border-radius: 99pt; background: rgba(8,4,24,0.55); font-family: var(--mono); font-weight: 700; font-size: 4.6pt; letter-spacing: 0.14em; }
   .read .t { flex: 1; font-family: var(--serif); font-size: 7.3pt; line-height: 1.13; color: var(--label-1); }
 
   .foot { left: 14pt; right: 14pt; bottom: 12pt; display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 4.6pt; letter-spacing: 0.14em; white-space: nowrap; }
@@ -127,20 +130,18 @@ const el = (html) => { const t = document.createElement('template'); t.innerHTML
 const READ_COLOR = { pull: 'var(--spark)', push: 'var(--rub)', align: 'var(--align)' }
 
 function front(s, n) {
-  const { color, light, dark } = ELEMENT_PALETTE[s.element]
+  const { color, light, dark, ground: [g0, g1, g2] } = ELEMENT_PALETTE[s.element]
   return el(`
-  <div class="card front">
-    <!-- full-bleed ground + sign bloom (colour lives on the edge, chip and bloom) -->
-    <div class="abs" style="inset:0; background:
-      radial-gradient(60% 45% at 85% 100%, ${color}55 0%, transparent 70%),
-      radial-gradient(55% 40% at 10% 0%, rgba(124,116,240,0.30) 0%, transparent 70%),
-      var(--void)"></div>
+  <div class="card front" style="--ink:${light}; --ink-2:${light}c0; --ink-3:${light}8c">
+    <!-- full-bleed element ground, so a slightly off cut still lands on colour -->
+    <div class="abs" style="inset:0; background:linear-gradient(180deg, ${g1} 0%, ${g2} 100%)"></div>
     <div class="trim">
-      <div class="frame" style="background:${foil(color, light)}">
+      <div class="frame holo" style="background:${HOLO}">
         <div class="panel" style="background:
-          radial-gradient(90% 60% at 50% 0%, #2a1866 0%, transparent 70%),
-          radial-gradient(70% 45% at 100% 100%, ${dark}cc 0%, transparent 75%),
-          linear-gradient(180deg, #1a0e3a 0%, var(--canvas) 45%, #0f0826 100%)"></div>
+          radial-gradient(85% 45% at 50% 0%, ${light}40 0%, transparent 70%),
+          radial-gradient(70% 45% at 100% 100%, ${color}55 0%, transparent 75%),
+          radial-gradient(60% 40% at 0% 70%, ${dark}aa 0%, transparent 75%),
+          linear-gradient(180deg, ${g0} 0%, ${g1} 48%, ${g2} 100%)"></div>
       </div>
 
       <div class="abs f-top">
@@ -148,22 +149,22 @@ function front(s, n) {
           <div class="f-animal">${s.animal}</div>
           <div class="f-dates">${s.dates}</div>
         </div>
-        <div class="orb" style="background:${sphere(color, light)}; box-shadow: 0 0 0 0.6pt ${light}88; color:${dark}">${s.glyph}&#xFE0E;</div>
+        <div class="orb" style="background:${sphere(color, light)}; box-shadow: 0 0 0 0.6pt #ffffffaa, 0 0 0 1.4pt ${dark}66; color:${dark}">${s.glyph}&#xFE0E;</div>
       </div>
 
       <div class="abs art">
         <img src="${IMG(s)}" alt="" style="object-position:50% ${ART === 'figure' ? s.focus : 32}%">
         <div class="veil"></div>
         <div class="cap">AURA · ${s.aura.toUpperCase()}</div>
-        <div class="edge" style="box-shadow: inset 0 0 0 0.6pt ${color}88"></div>
+        <div class="edge" style="box-shadow: inset 0 0 0 0.6pt ${light}aa"></div>
       </div>
 
       <div class="abs badges">
-        <span class="sname" style="color:${color}">${s.name}</span>
-        <span class="chip" style="color:${color}; border-color:${color}cc; background:${color}1a">
+        <span class="sname" style="color:var(--ink)">${s.name}</span>
+        <span class="chip" style="color:var(--ink); border-color:${light}cc; background:${dark}66">
           <span class="sphere" style="background:${sphere(color, light)}"></span>${s.element}
         </span>
-        <span class="chip" style="color:var(--label-2); border-color:rgba(179,166,196,0.55)">
+        <span class="chip" style="color:var(--ink-2); border-color:${light}80; background:${dark}40">
           <span class="sphere" style="background:${sphere('#8f7be8', '#ece6ff')}"></span>${s.mode}
         </span>
       </div>
@@ -175,14 +176,14 @@ function front(s, n) {
       <div class="abs reads">
         ${['pull', 'push', 'align'].map((k) => `
           <div class="read">
-            <span class="k" style="color:${READ_COLOR[k]}">${k.toUpperCase()}</span>
+            <span class="k"><span style="color:${READ_COLOR[k]}">${k.toUpperCase()}</span></span>
             <span class="t">${s[k]}</span>
           </div>`).join('')}
       </div>
 
       <div class="abs foot">
-        <span style="color:var(--label-2)">ALIGN · ${EDITION.code}</span>
-        <span style="color:var(--label-3)">SAN FRANCISCO</span>
+        <span style="color:var(--ink-2)">ALIGN · ${EDITION.code}</span>
+        <span style="color:var(--ink-3)">SAN FRANCISCO</span>
         <span style="color:var(--align)">№ ${n ? pad(n) : '__'}/${EDITION.run}</span>
       </div>
     </div>
