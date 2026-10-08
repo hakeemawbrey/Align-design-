@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Align Mashup — render</title></head>
+<body style="margin:0;background:#0b0620">
+<canvas id="c" width="1080" height="1920"></canvas>
+<script type="module">
+  // Driven by render.mjs through Playwright: load a video, then paint it frame by frame.
+  import { createMashup, renderMusic, wav } from './engine.js'
+  import { buildSpec } from './content.js'
+
+  const ctx = document.getElementById('c').getContext('2d')
+  let m
+
+  window.mashup = {
+    async load(id, opts) {
+      const media = await (await fetch('/api/media')).json()
+      m = await createMashup(buildSpec(id, media), opts)
+      return { frames: m.frames, duration: m.duration, fps: m.fps }
+    },
+    async frame(i) {
+      m.draw(ctx, i / m.fps)
+      const blob = await ctx.canvas.convertToBlob?.({ type: 'image/jpeg', quality: 0.93 })
+        ?? await new Promise((ok) => ctx.canvas.toBlob(ok, 'image/jpeg', 0.93))
+      return b64(new Uint8Array(await blob.arrayBuffer()))
+    },
+    async music(id) {
+      return b64(wav(await renderMusic(m, id)))
+    },
+  }
+
+  function b64(bytes) {
+    let s = ''
+    for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode(...bytes.subarray(i, i + 0x8000))
+    return btoa(s)
+  }
+</script>
+</body>
+</html>

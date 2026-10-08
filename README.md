@@ -47,6 +47,12 @@ Anselm, Zena, Mira, Sunny), the same as the demo. Changed a profile in
 her replies. Next: load the deck from the database, real two-person matching
 and chat, photo upload, then the iOS app (React Native) on the same backend.
 
+## Mashup videos
+
+`app/mashup` makes beat-synced 9:16 picture mashup videos for the twelve signs
+and Align's core themes: `cd app && npm run mashup -- taurus`. See
+[app/mashup/README.md](app/mashup/README.md).
+
 ## Online demo
 
 A hosted copy runs at **https://claude.ai/artifact/V4y14GqpBoBrv6VwAM7NYD**.
