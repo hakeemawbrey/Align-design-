@@ -696,3 +696,11 @@ clones/instances of the real screen parts. Sign glyphs set in Noto Sans
 Symbols so they don't render as emoji. Variables were not changed;
 section 12 lists the mismatches. Repo copy `design/design-system.md`,
 renders `design/assets/design-system-*.png`. S-05 untouched.
+
+## Event cards · full art (ideas page)
+
+New page "Align — event cards · full art (ideas)" with 12 full-bleed event
+card directions (E-01–E-12), research notes from Appllama, and six rules
+for full-art event cards. Nothing applied to screens; S-05 untouched.
+Details in `design/card-research.md` §15, render
+`design/assets/event-cards-full-art.png`.

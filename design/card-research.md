@@ -885,3 +885,32 @@ families plus a new WARD family (teal) for safety.
 | 18 | Safety | The Shield | Ward | A first-date check-in; a missed one messages a friend. |
 | 19 | Safety | The Lantern | Ward | Share where and with whom for three hours. |
 | 20 | Invite | The Plus One | Pair | A blank card for a friend; both get a season sleeve. |
+
+## 15. Event cards · full art (new page)
+
+Figma page **"Align — event cards · full art (ideas)"** (board `2224:351`).
+The earlier event cards were frames with a small picture in a window. These
+twelve let the art fill the whole card, with text riding a top strip and a
+bottom fade. Researched in Appllama: MoonX, Labyrinthos, HealTalk, Moonly,
+Wabi, FORCETELLER, HoloDex, Kardo.
+
+| Code | Event | Art style | Reference |
+|---|---|---|---|
+| E-01 | Venus enters Leo | Tarot scene with numeral + name plates | Rider–Waite (MoonX · The Star, Labyrinthos) |
+| E-02 | Sun in Leo | Sign figure full art + holo sheen/border | Pokémon holofoil full art (HoloDex, Kardo) |
+| E-03 | Waxing gibbous | Gold line art on black, double hairline | HealTalk Daily Card, MoonX horoscope |
+| E-04 | The Refill | Type poster: giant 11:11 + ticket stub | FORCETELLER tiles + dealer ticket |
+| E-05 | Lunar eclipse | Corona bigger than the card, holo hairline | Wabi Daily Draw |
+| E-06 | Full in Aries | Five moons stacked down the card | Moonly day transits |
+| E-07 | Mercury retrograde | Double-ended playing card, mirrored glyph | Reversed tarot + card indices |
+| E-08 | First date | Two-tone silhouettes under a moon | Labyrinthos minimal decks |
+| E-09 | The Veil (ward) | Lattice pattern + Seed of Life medallion | Visconti–Sforza decks |
+| E-10 | The Comet | One streak corner to corner | Starfield + motion art |
+| E-11 | Venus at home | Chart wheel + two constellations | MoonX birth-chart rings |
+| E-12 | Solar return | Gradient colour fields, words as picture | Gradient share cards |
+
+Rules: art edge to edge; text only in the top strip and bottom fade; the
+fade is night 0→95% over the bottom 40–45%; family colour lives in the art
+or label, not a thick frame; rarity is the border finish (none / hairline /
+double or foil / 2px holo); event art never uses aura or real photos.
+Render: `design/assets/event-cards-full-art.png`.
