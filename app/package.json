@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "seed:gen": "node --experimental-strip-types scripts/gen-seed.ts",
     "ios": "npm run build && npx cap sync ios && npx cap open ios",
-    "ios:sync": "npm run build && npx cap sync ios"
+    "ios:sync": "npm run build && npx cap sync ios",
+    "mashup": "node mashup/render.mjs",
+    "mashup:studio": "node mashup/server.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^8.5.3",
@@ -28,6 +30,7 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.3",
+    "@fontsource/barlow-semi-condensed": "^5.3.0",
     "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",

@@ -80,6 +80,12 @@ vars in `app/.env.local` *before* building: they're baked into the app.
 
 For a founder-camp walkthrough, see [docs/FOUNDER-CAMP.md](docs/FOUNDER-CAMP.md).
 
+## Mashup videos
+
+`app/mashup` makes beat-synced 9:16 picture mashup videos for the twelve signs
+and Align's core themes: `cd app && npm run mashup -- taurus`. See
+[app/mashup/README.md](app/mashup/README.md).
+
 ## Online demo
 
 A hosted copy runs at **https://claude.ai/artifact/V4y14GqpBoBrv6VwAM7NYD**.
