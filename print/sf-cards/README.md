@@ -3,7 +3,7 @@
 Poker-size (2.5 × 3.5 in) cards for the San Francisco trip. Put one on top of a
 booster pack and hand it over.
 
-- **Front:** one of 12 zodiac cards, styled after the mystery card. There are four colour types, one per element (fire red, earth green, air yellow, water blue), and every front has a thick Align pearl-foil border that runs to the cut edge. Each has the
+- **Front:** one of 12 zodiac cards, styled after the mystery card. Each card is coloured to match its own illustration (sampled from the art), and every front has a thick Align pearl-foil border that runs to the cut edge. Each has the
   sign's animal and aura, dates, element and mode, a one-line read, and
   Pull / Push / Align for love life.
 - **Back (same on every card):** the Align card back (seed of life and the chakra

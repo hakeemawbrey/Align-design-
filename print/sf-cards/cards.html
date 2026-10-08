@@ -137,26 +137,26 @@ const el = (html) => { const t = document.createElement('template'); t.innerHTML
 const READ_COLOR = { pull: 'var(--spark)', push: 'var(--rub)', align: 'var(--align)' }
 
 /** The element's card background. Soft glows rasterise in PDFs, so by default this
- *  uses grounds/<element>.jpg (rendered once by render.mjs from groundCSS) and the
+ *  uses grounds/<sign>.jpg (rendered once by render.mjs from groundCSS) and the
  *  PDF carries 4 background images instead of one per card. */
-function groundCSS(element) {
-  const { color, light, dark, ground: [g0, g1, g2] } = ELEMENT_PALETTE[element]
+function groundCSS(sign) {
+  const { color, light, dark, ground: [g0, g1, g2] } = SIGN_PALETTE[sign]
   return `radial-gradient(85% 45% at 50% 0%, ${light}40 0%, transparent 70%),
     radial-gradient(70% 45% at 100% 100%, ${color}55 0%, transparent 75%),
     radial-gradient(60% 40% at 0% 70%, ${dark}aa 0%, transparent 75%),
     linear-gradient(180deg, ${g0} 0%, ${g1} 48%, ${g2} 100%)`
 }
-const groundBg = (element) =>
-  Q.get('ground') === 'css' ? groundCSS(element) : `url(grounds/${element}.jpg) center / 101.6% 101.2% no-repeat, ${ELEMENT_PALETTE[element].ground[1]}`
+const groundBg = (sign) =>
+  Q.get('ground') === 'css' ? groundCSS(sign) : `url(grounds/${sign}.jpg) center / 101.6% 101.2% no-repeat, ${SIGN_PALETTE[sign].ground[1]}`
 
 function front(s, n) {
-  const { color, light, dark, ground: [g0, g1, g2] } = ELEMENT_PALETTE[s.element]
+  const { color, light, dark } = SIGN_PALETTE[s.id]
   return el(`
   <div class="card front" style="--ink:${light}; --ink-2:${light}c0; --ink-3:${light}8c">
     <!-- pearl foil border, full bleed: thick all the way to the cut edge -->
     <div class="pearl" style="background:${PEARL}"></div>
     <div class="ppanel-edge"></div>
-    <div class="ppanel" style="background:${groundBg(s.element)}"></div>
+    <div class="ppanel" style="background:${groundBg(s.id)}"></div>
     <div class="trim">
 
       <div class="abs f-top">
@@ -275,9 +275,9 @@ function back() {
 const signs = ONLY ? SIGNS.filter((s) => s.id === ONLY) : SIGNS
 
 if (VIEW === 'ground') {
-  // one element background at panel size (render.mjs saves it to grounds/<element>.jpg)
-  const e = Q.get('element') || 'fire'
-  document.body.appendChild(el(`<div class="card"><div class="ppanel" style="border-radius:0; background:${groundCSS(e)}"></div></div>`))
+  // one sign's background at panel size (render.mjs saves it to grounds/<sign>.jpg)
+  const g = Q.get('sign') || 'aries'
+  document.body.appendChild(el(`<div class="card"><div class="ppanel" style="border-radius:0; background:${groundCSS(g)}"></div></div>`))
 } else if (VIEW === 'card') {
   // one card at full bleed size, top-left of the page (for PNG export)
   document.body.style.background = 'transparent'

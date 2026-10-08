@@ -1,6 +1,6 @@
 // SF-01 zodiac cards: one front per sign. Aura names come from
 // "Kit · The twelve auras". Per-sign colours are kept for reference; the
-// cards are coloured by element (ELEMENT_PALETTE below), with a thick pearl foil border.
+// cards are coloured per sign to match the art (SIGN_PALETTE below), with a thick pearl foil border.
 // Copy voice follows the app: plain words, second person, no planet jargon.
 //   pull  = what pulls you in
 //   push  = where you push people away, and what to do about it
@@ -119,15 +119,22 @@ window.SIGNS = [
   },
 ]
 
-// Four card types, one per element. The background is the element's ground;
-// the border is the same pearl foil on every card, running out to the cut edge. fire red, earth green, air yellow,
-// water blue (earth and water match the app's element orb).
+// Card colour per sign, sampled from the main colour of that sign's illustration
+// (art/<sign>.jpg), so each card's background matches its art.
 //   ground = [top, middle, bottom] of the card background
-window.ELEMENT_PALETTE = {
-  fire: { color: '#ef3a3f', light: '#ffb0b0', dark: '#3a0508', ground: ['#a81c26', '#690b13', '#300306'] },
-  earth: { color: '#7cd84a', light: '#e4ffb8', dark: '#173a0a', ground: ['#3c7a22', '#1d4a11', '#0a2306'] },
-  air: { color: '#f2cf4a', light: '#fff0a8', dark: '#3a2c04', ground: ['#b08a16', '#73560a', '#382803'] },
-  water: { color: '#3f7cf0', light: '#b8d4ff', dark: '#0a1640', ground: ['#2a4fb4', '#14287a', '#070f3a'] },
+window.SIGN_PALETTE = {
+  aries: { color: '#ee592f', light: '#fbc1b1', dark: '#341209', ground: ['#953c23', '#5d2313', '#2b0f08'] },
+  taurus: { color: '#8cee2f', light: '#d5fbb1', dark: '#1e3409', ground: ['#5a9523', '#375d13', '#192b08'] },
+  gemini: { color: '#eea22f', light: '#fbdeb1', dark: '#342309', ground: ['#956723', '#5d4013', '#2b1d08'] },
+  cancer: { color: '#2f82ee', light: '#b1d1fb', dark: '#091c34', ground: ['#235495', '#13335d', '#08172b'] },
+  leo: { color: '#ee7f2f', light: '#fbd0b1', dark: '#341b09', ground: ['#955223', '#5d3213', '#2b1708'] },
+  virgo: { color: '#ee2f5f', light: '#fbb1c4', dark: '#340914', ground: ['#95233f', '#5d1326', '#2b0811'] },
+  libra: { color: '#c22fee', light: '#eab1fb', dark: '#2a0934', ground: ['#7a2395', '#4c135d', '#23082b'] },
+  scorpio: { color: '#ee2f75', light: '#fbb1cc', dark: '#340919', ground: ['#95234d', '#5d132e', '#2b0815'] },
+  sagittarius: { color: '#a22fee', light: '#deb1fb', dark: '#230934', ground: ['#672395', '#40135d', '#1d082b'] },
+  capricorn: { color: '#2feec8', light: '#b1fbec', dark: '#09342b', ground: ['#23957e', '#135d4e', '#082b24'] },
+  aquarius: { color: '#2fa2ee', light: '#b1defb', dark: '#092334', ground: ['#236795', '#13405d', '#081d2b'] },
+  pisces: { color: '#622fee', light: '#c5b1fb', dark: '#150934', ground: ['#412395', '#27135d', '#11082b'] },
 }
 
 // Align pearl foil: the chrome CTA ramp (f6edff → fff7ec → eaf4ff → ffeff7, from
