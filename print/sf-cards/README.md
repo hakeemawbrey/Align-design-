@@ -4,7 +4,7 @@ Poker-size (2.5 × 3.5 in) cards for the San Francisco trip. Put one on top of a
 booster pack and hand it over.
 
 - **Front:** one of 12 zodiac cards, styled after the mystery card. Each card is coloured to match its own illustration (sampled from the art), and every front has a thick Align pearl-foil border that runs to the cut edge. Each has the
-  sign's animal and aura, dates, element and mode, a one-line read, and
+  sign's animal (with film grain over the art), dates, element and mode, a one-line read, and
   Pull / Push / Align for love life.
 - **Back (same on every card):** the Align card back (seed of life and the chakra
   column) with Hakeem Awbrey · Co-Founder · hakeem@comealign.com.
@@ -24,6 +24,9 @@ booster pack and hand it over.
    (not "fit to page") on heavy cardstock, 100 lb cover or heavier.
 2. Cut on the crop marks. A paper trimmer or guillotine is fastest.
 3. Optional: round the corners with a 1/8 in (3 mm) corner punch.
+
+Cut cards are 2.5 × 3.5 in, the standard trading-card size: they fit penny sleeves and
+standard 3 × 4 in, 35pt top-loaders, sleeved or not.
 
 To print one sign only, open `cards.html?view=sheet&sign=leo` in Chrome and print it.
 
