@@ -5,8 +5,7 @@ booster pack and hand it over.
 
 - **Front:** one of 12 zodiac cards, styled after the mystery card. Each card is coloured to match its own illustration (sampled from the art), and every front has a thick Align pearl-foil border that runs to the cut edge. Each has the
   sign's animal and aura, dates, element and mode, a one-line read, and
-  Pull / Push / Align for love life. Align shows the three signs you click with as
-  badges in their own card colours, with the reason underneath.
+  Pull / Push / Align for love life.
 - **Back (same on every card):** the Align card back (seed of life and the chakra
   column) with Hakeem Awbrey · Co-Founder · hakeem@comealign.com.
 - **Serials:** `ALIGN · SF-01 · № 01/25` to `25/25` for each sign, so 300 cards in all.
