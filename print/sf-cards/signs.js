@@ -6,7 +6,7 @@
 //   push  = where you push people away, and what to do about it
 //   align = who you click with, and why
 
-window.EDITION = { code: 'SF-01', run: 25 }
+window.EDITION = { code: 'SF-01', run: 15 }
 
 window.SIGNS = [
   {

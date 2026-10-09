@@ -127,6 +127,7 @@
   .cell { position: absolute; width: 180pt; height: 252pt; overflow: hidden; }
   .cell > .card { position: absolute; left: -9pt; top: -9pt; }
   .crop { position: absolute; background: #000; }
+  .cell > img.hires { position: absolute; left: -9pt; top: -9pt; width: 198pt; height: 270pt; }
   .page-lbl { position: absolute; left: 13pt; top: 396pt; transform: translate(-50%, -50%) rotate(-90deg); white-space: nowrap; font: 5.5pt var(--mono); color: #888; letter-spacing: 0.1em; }
 </style>
 <script src="signs.js"></script>
@@ -217,7 +218,7 @@ function front(s, n) {
       <div class="abs foot">
         <span style="color:var(--ink-2)">ALIGN · ${EDITION.code}</span>
         <span style="color:var(--ink-3)">SAN FRANCISCO</span>
-        <span style="color:var(--align)">№ ${n ? pad(n) : '__'}/${EDITION.run}</span>
+        <span class="serial" style="color:var(--align)${Q.has('noserial') ? '; visibility:hidden' : ''}">№ ${n ? pad(n) : '__'}/${EDITION.run}</span>
       </div>
     </div>
   </div>`)
@@ -370,6 +371,12 @@ if (VIEW === 'ground') {
   const n = Q.has('n') ? Number(Q.get('n')) : 0
   document.body.appendChild(Q.get('side') === 'back' ? back() : frontFor(s, n))
 } else if (VIEW === 'sheet') {
+  // raster=1: each card is a 600 dpi image from hires/ (made by render.mjs); without it, live HTML
+  const RASTER = Q.get('raster') === '1'
+  // the footer again with only the serial visible, laid out exactly like the card's own footer
+  const serialOverlay = (n) => el(`<div class="abs" style="left:0; top:0; width:180pt; height:252pt"><div class="abs foot">
+      <span style="visibility:hidden">ALIGN · ${EDITION.code}</span><span style="visibility:hidden">SAN FRANCISCO</span>
+      <span style="color:var(--align)">№ ${pad(n)}/${EDITION.run}</span></div></div>`)
   document.body.style.background = '#fff'
   const fronts = []
   for (const s of signs) for (let n = 1; n <= EDITION.run; n++) fronts.push([s, n])
@@ -394,10 +401,15 @@ if (VIEW === 'ground') {
     batch.forEach(([s, n], i) => {
       const r = Math.floor(i / 3), c = i % 3
       const cell = el(`<div class="cell" style="left:${X0 + c * W}pt; top:${Y0 + r * H}pt"></div>`)
-      cell.appendChild(frontFor(s, n)); fp.appendChild(cell)
+      if (RASTER) {
+        // the design as one 600 dpi image (rendered once per sign), serial number on top as live text
+        cell.appendChild(el(`<img class="hires" src="hires/front-${s.id}${ART === 'figure' ? '' : '-' + ART}.jpg" alt="">`))
+        cell.appendChild(serialOverlay(n))
+      } else cell.appendChild(frontFor(s, n))
+      fp.appendChild(cell)
       // long-edge duplex: the back of column c sits in column 2 − c
       const bcell = el(`<div class="cell" style="left:${X0 + (2 - c) * W}pt; top:${Y0 + r * H}pt"></div>`)
-      bcell.appendChild(back()); bp.appendChild(bcell)
+      bcell.appendChild(RASTER ? el(`<img class="hires" src="hires/back.jpg" alt="">`) : back()); bp.appendChild(bcell)
     })
     crops(fp); crops(bp)
     const first = batch[0], last = batch[batch.length - 1]

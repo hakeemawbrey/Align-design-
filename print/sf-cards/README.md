@@ -8,15 +8,15 @@ booster pack and hand it over.
   Pull / Push / Align for love life.
 - **Back (same on every card):** the Align card back (seed of life and the chakra
   column) with Hakeem Awbrey · Co-Founder · hakeem@comealign.com.
-- **Serials:** `ALIGN · SF-01 · № 01/25` to `25/25` for each sign, so 300 cards in all.
+- **Serials:** `ALIGN · SF-01 · № 01/15` to `15/15` for each sign, so 180 cards in all.
 
 ## Files
 
 | File | Use |
 | --- | --- |
 | `out/proof.png` | Every design on one page, for review |
-| `out/SF-01-letter-sheets.pdf` | All 300 numbered cards on letter paper, 9 per sheet, with crop marks. Front and back pages alternate. |
-| `out/print-files/front-<sign>.png`, `back.png` | One file per design for a print shop: 825 × 1125 px (300 dpi, 1/8 in bleed). The serial reads `№ __/25`. |
+| `out/SF-01-letter-sheets.pdf` | All 180 numbered cards on letter paper, 9 per sheet, with crop marks. Front and back pages alternate. |
+| `out/print-files/front-<sign>.png`, `back.png` | One file per design for a print shop: 825 × 1125 px (300 dpi, 1/8 in bleed). The serial reads `№ __/15`. |
 
 ### Printing the letter sheets (FedEx Office, Staples, or an office printer)
 
@@ -30,7 +30,7 @@ To print one sign only, open `cards.html?view=sheet&sign=leo` in Chrome and prin
 ### Print shops
 
 Most card printers (DriveThruCards, MakePlayingCards, PrinterStudio) take
-825 × 1125 px images. To make a numbered PNG for every card (12 × 25), run:
+825 × 1125 px images. To make a numbered PNG for every card (12 × 15), run:
 
 ```bash
 node print/sf-cards/render.mjs --all     # writes out/print-files/numbered/<sign>/<sign>-NN.png
@@ -48,4 +48,5 @@ node print/sf-cards/render.mjs --all     # writes out/print-files/numbered/<sign
 The animal art in `art/` is the full-resolution originals from the Figma kit
 *Kit · Figures*, trimmed of the kit's grid gutters. Each card shows the whole image,
 never cropped. The `&art=aura` option uses `app/public/img/aura` (*Kit · Aura photos*).
-`render.mjs` shrinks the sheets PDF with `compact-pdf.py` (needs `pip install pypdf`).
+The sheets PDF places each design as a 600 dpi image (`hires/`, rendered once per sign) with the
+serial numbers on top as text, so it prints sharp and stays small. `render.mjs` shrinks it with `compact-pdf.py` (needs `pip install pypdf`).
