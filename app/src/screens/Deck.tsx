@@ -193,7 +193,7 @@ const TopCard = forwardRef<TopHandle, TopProps>(function TopCard(p, ref) {
             position: 'absolute', right: 22, top: 84, rotate: 14, opacity: releaseO, scale: releaseStampScale, pointerEvents: 'none',
             padding: '4px 14px', borderRadius: 12, border: '2.5px solid #b3a6c4', background: 'rgba(11,6,32,0.45)',
           }}>
-            <span className="mono" style={{ fontSize: 26, letterSpacing: '0.18em', color: '#d8cfe6', fontWeight: 700 }}>{p.slot.kind === 'event' ? 'PASS' : 'RELEASE'}</span>
+            <span className="mono" style={{ fontSize: p.slot.kind === 'event' ? 19 : 26, letterSpacing: '0.16em', color: '#d8cfe6', fontWeight: 700, whiteSpace: 'nowrap' }}>{p.slot.kind === 'event' ? 'BACK TO DECK' : 'RELEASE'}</span>
           </motion.div>
         </motion.div>
       </motion.div>
@@ -216,6 +216,9 @@ function UnderCard({ slot, drawsOf, dragX }: { slot: Slot; drawsOf: number | nul
     </motion.div>
   )
 }
+
+/** how many cards later an event you put back comes around again */
+const BACK_IN = 3
 
 interface Pop { id: number; kind: 'align' | 'release' | 'deny'; streak: number }
 
@@ -410,7 +413,16 @@ export default function Deck({ go }: ScreenProps) {
       setBusy(true)
       session.patch({ deckIndex: index + 1 })
       if (dir > 0) playEvent(slot)
-      else { sfx.release(); later(() => showToast('Event passed', 1400), 200) }
+      else {
+        // back to the deck: it comes around again a few cards from now
+        const s = session.get()
+        const live = seqRef.current
+        const after = Math.min(index + BACK_IN, live.length - 1)
+        session.patch({ inserts: [...s.inserts, { after, ids: [`event:${slot.event.id}`] }] })
+        sfx.flip()
+        const gap = after - index
+        later(() => showToast(gap > 0 ? `${slot.event.title} is back in the deck · it returns in ${gap} ${gap === 1 ? 'card' : 'cards'}` : `${slot.event.title} is back in the deck`, 2200), 200)
+      }
       return
     }
     if (!profile) return
@@ -621,6 +633,7 @@ export default function Deck({ go }: ScreenProps) {
         <SwipeLabels
           alignStyle={{ scale: alignLabelScale, color: alignLabelColor, textShadow: alignGlow }}
           releaseStyle={{ scale: releaseLabelScale, color: releaseLabelColor }}
+          event={slot?.kind === 'event'}
         />
         {slot && <DrawTracker slot={slot} drawsOf={drawsOf} />}
         <AnimatePresence mode="wait" initial={false}>
@@ -640,7 +653,7 @@ export default function Deck({ go }: ScreenProps) {
           ) : (
             <motion.div key="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               style={{ position: 'absolute', top: 726, left: 0, right: 0, textAlign: 'center', fontSize: 12.5, color: 'var(--label-2)' }}>
-              {slot?.kind === 'event' ? <>Every sixth card is an event&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>swipe right to play</span></>
+              {slot?.kind === 'event' ? <>Every sixth card is an event&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>right to play</span>&nbsp; · &nbsp;left to save it</>
                 : alignPlus ? <>Hold the card to peek&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>∞</span></>
                 : peeks > 0 ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left</> : <>No peeks left tonight&nbsp; · &nbsp;more at 11:11</>}
             </motion.div>

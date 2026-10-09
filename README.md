@@ -212,6 +212,9 @@ rarity). Swipe right or tap to play, swipe left to pass. Free nights get the fir
 Founders in the deck (Rio, Noor, Ivy) have holo borders and a *Founder №* badge.
 The first time a free user runs out of peeks, an Align+ offer slides up.
 
+Don't want to play an event yet? Swipe it **left** (Back to deck) and it
+comes around again three cards later.
+
 ## Free vs Align+
 
 - **Free**: fifteen cards a night (the counter shows 11 / 15), three peeks, and the deck ends with *Your deck is spent*.

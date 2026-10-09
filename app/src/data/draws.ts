@@ -96,11 +96,12 @@ const FREE_EVENTS: EventId[] = EVENT_ORDER.slice(0, FREE_DRAWS)
 
 export type Slot =
   | { kind: 'person'; profile: Profile; draw: number; pos: number; redraw?: boolean; key: string }
-  | { kind: 'event'; event: DeckEvent; draw: number; pos: number; key: string }
+  | { kind: 'event'; event: DeckEvent; draw: number; pos: number; key: string; /** came back after being put back in the deck */ again?: boolean }
 
 export interface Insert {
-  /** seq index the event was played at; the cards go right after it */
+  /** seq index the cards go right after */
   after: number
+  /** profile ids, or "event:<id>" for an event put back in the deck */
   ids: string[]
 }
 
@@ -133,8 +134,15 @@ export function buildSeq(people: Profile[], unlimited: boolean, inserts: Insert[
   for (const ins of inserts) {
     const at = seq[ins.after]
     const draw = at ? at.draw : 0
-    const added: Slot[] = ins.ids.map(byId).filter((p): p is Profile => !!p)
-      .map((p, i) => ({ kind: 'person', profile: p, draw, pos: -1, redraw: true, key: `${p.id}-re-${ins.after}-${i}` }))
+    const added: Slot[] = ins.ids.flatMap((id, i): Slot[] => {
+      // an event card put back in the deck ("event:moon-peek")
+      if (id.startsWith('event:')) {
+        const ev = EVENTS[id.slice(6) as EventId]
+        return ev ? [{ kind: 'event', event: ev, draw, pos: PEOPLE_PER_DRAW, key: `event-back-${ins.after}-${i}`, again: true }] : []
+      }
+      const p = byId(id)
+      return p ? [{ kind: 'person', profile: p, draw, pos: -1, redraw: true, key: `${p.id}-re-${ins.after}-${i}` }] : []
+    })
     seq.splice(ins.after + 1, 0, ...added)
   }
   return seq

@@ -26,7 +26,7 @@ function EventCardImpl({ event: e, draw, of, glow = true }: Props) {
   const rows: [string, string, string][] = [
     ['What', e.what, e.light],
     ['Play', e.play, '#f2c75c'],
-    ['Pass', e.pass, '#b3a6c4'],
+    ['Later', 'Not now? Swipe left to put it back. It returns in a few cards.', '#b3a6c4'],
   ]
   return (
     <div style={{
@@ -86,7 +86,7 @@ function EventCardImpl({ event: e, draw, of, glow = true }: Props) {
           {rows.map(([k, v, c]) => (
             <div key={k} style={{ display: 'flex', alignItems: 'center', minHeight: 37, paddingLeft: 32, paddingRight: 18 }}>
               <span className="mono" style={{ width: 44, flexShrink: 0, fontSize: 8.5, letterSpacing: '0.12em', color: c, textTransform: 'uppercase' }}>{k}</span>
-              <span className="serif" style={{ flex: 1, fontSize: 15, lineHeight: 1.16, color: k === 'Pass' ? 'var(--label-2)' : 'var(--label-1)' }}>{v}</span>
+              <span className="serif" style={{ flex: 1, fontSize: 15, lineHeight: 1.16, color: k === 'Later' ? 'var(--label-2)' : 'var(--label-1)' }}>{v}</span>
             </div>
           ))}
           <div style={{ margin: '2px 18px 0 16px', height: 1, background: 'linear-gradient(90deg, rgba(179,166,196,0.55), rgba(179,166,196,0.25))' }} />
