@@ -126,8 +126,8 @@
 
   /* ───────── sheet view (letter, 3×3, butted, crop marks) ───────── */
   @page { size: 8.5in 11in; margin: 0; }
-  .dpage { width: 198pt; height: 270pt; overflow: hidden; page-break-after: always; break-after: page; }
-  .dpage img { width: 198pt; height: 270pt; display: block; }
+  .dpage { position: relative; width: 180pt; height: 252pt; overflow: hidden; page-break-after: always; break-after: page; }
+  .dpage img { position: absolute; left: -9pt; top: -9pt; width: 198pt; height: 270pt; display: block; }
   .page { position: relative; width: 612pt; height: 792pt; overflow: hidden; background: #fff; page-break-after: always; break-after: page; }
   .cell { position: absolute; width: 180pt; height: 252pt; overflow: hidden; }
   .cell > .card { position: absolute; left: -9pt; top: -9pt; }
@@ -376,9 +376,9 @@ if (VIEW === 'ground') {
   const n = Q.has('n') ? Number(Q.get('n')) : 0
   document.body.appendChild(Q.get('side') === 'back' ? back() : frontFor(s, n))
 } else if (VIEW === 'designs') {
-  // one card per page at bleed size (2.75 × 3.75 in): the back, then the 12 fronts.
+  // one card per page at the actual card size (2.5 × 3.5 in, bleed trimmed off): the back, then the 12 fronts.
   // Uses the 600 dpi renders in hires/ (made by render.mjs); serial reads № __/15.
-  document.head.appendChild(el(`<style>@page { size: 2.75in 3.75in; margin: 0; }</style>`))
+  document.head.appendChild(el(`<style>@page { size: 2.5in 3.5in; margin: 0; }</style>`))
   document.body.style.background = '#fff'
   const page = (src) => el(`<div class="dpage"><img src="${src}" alt=""></div>`)
   document.body.appendChild(page('hires/back.jpg'))
