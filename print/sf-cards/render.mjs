@@ -58,11 +58,11 @@ await hires('view=card&side=back', 'back.jpg')
 for (const s of SIGNS) await hires(`view=card&side=front&sign=${s}&noserial=1`, `front-${s}.jpg`)
 for (const s of SIGNS) await hires(`view=card&side=front&sign=${s}`, `front-${s}-blank.jpg`)
 
-// home / office print: letter, 3×3, crop marks, fronts + backs interleaved for duplex
+// home / office print: letter landscape, 3 × 2 cards with bleed, crop marks, fronts + backs interleaved for duplex
 {
   const p = await browser.newPage()
   await p.goto(page$('view=sheet&raster=1')); await ready(p)
-  await p.pdf({ path: join(out, 'SF-01-letter-sheets.pdf'), width: '8.5in', height: '11in', printBackground: true, preferCSSPageSize: true })
+  await p.pdf({ path: join(out, 'SF-01-letter-sheets.pdf'), width: '11in', height: '8.5in', printBackground: true, preferCSSPageSize: true })
   await p.close()
 }
 // Chromium repeats identical objects per card; merge them (needs python3 + pypdf, skipped if missing)

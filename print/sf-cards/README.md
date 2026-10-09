@@ -15,15 +15,16 @@ booster pack and hand it over.
 | File | Use |
 | --- | --- |
 | `out/proof.png` | Every design on one page, for review |
-| `out/SF-01-letter-sheets.pdf` | All 180 numbered cards on letter paper, 9 per sheet, with crop marks. Front and back pages alternate. |
+| `out/SF-01-letter-sheets.pdf` | All 180 numbered cards on letter paper (landscape, 11 × 8.5 in), 6 per sheet, each with 1/8 in bleed and crop marks. 60 pages: front and back pages alternate. |
 | `out/SF-01-designs-1-each.pdf` | 13 pages, one card per page at actual size (2.5 × 3.5 in) with 1/8 in bleed and crop marks on a 3.25 × 4.25 in page, 600 dpi: the back, then the 12 fronts (serial `№ __/15`). For online card printers. |
 | `out/print-files/front-<sign>.png`, `back.png` | One file per design for a print shop: 825 × 1125 px (300 dpi, 1/8 in bleed). The serial reads `№ __/15`. |
 
 ### Printing the letter sheets (FedEx Office, Staples, or an office printer)
 
-1. Print `SF-01-letter-sheets.pdf` **double-sided, flip on long edge, at 100% / actual size**
+1. Print `SF-01-letter-sheets.pdf` **double-sided, landscape, at 100% / actual size**
    (not "fit to page") on heavy cardstock, 100 lb cover or heavier.
-2. Cut on the crop marks. A paper trimmer or guillotine is fastest.
+2. Cut on the crop marks. Each card has its own marks; there is a 1/4 in gutter of bleed
+   between cards, so make two cuts between neighbours. A paper trimmer or guillotine is fastest.
 3. Optional: round the corners with a 1/8 in (3 mm) corner punch.
 
 Cut cards are 2.5 × 3.5 in, the standard trading-card size: they fit penny sleeves and
