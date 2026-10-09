@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { createPortal } from 'react-dom'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ARCANA, TOPICS, answerLabel, type TalkCard } from '../../data/talkCards'
 import { sfx } from '../../lib/sfx'
-import { Corners, Gilt, KIND_LABEL } from './TalkCardFace'
+import TalkCardFace, { Corners, Gilt, KIND_LABEL } from './TalkCardFace'
 import TarotEmblem from './TarotEmblem'
 
 const GOLD = '#f2d58a'
@@ -11,12 +12,12 @@ const GOLD = '#f2d58a'
  * A talk card played in chat. Both people answer; each answer stays sealed
  * until the other person has answered too, then both turn over together.
  */
-export default function ChatTalkCard({ card, mine, theirs, names, playedByMe, onAnswer }: {
+/** The full tarot card: answer it here and watch both cards turn over. */
+function TalkCardFull({ card, mine, theirs, names, onAnswer }: {
   card: TalkCard
   mine?: string
   theirs?: string
   names: { me: string; them: string }
-  playedByMe: boolean
   onAnswer: (answer: string) => void
 }) {
   const t = TOPICS[card.topic]
@@ -33,11 +34,7 @@ export default function ChatTalkCard({ card, mine, theirs, names, playedByMe, on
 
   const a = ARCANA[card.topic]
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 18, rotate: playedByMe ? 3 : -3, scale: 0.9 }} animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-      transition={{ type: 'spring', stiffness: 220, damping: 20 }}
-      style={{ margin: '12px auto 16px', width: 304 }}
-    >
+    <div style={{ width: 304 }}>
       <Gilt rarity={card.rarity} topic={card.topic} s={1.4}>
         <div style={{
           position: 'relative', borderRadius: 14, overflow: 'hidden', padding: '16px 16px 16px',
@@ -129,6 +126,91 @@ export default function ChatTalkCard({ card, mine, theirs, names, playedByMe, on
           </div>
         </div>
       </Gilt>
-    </motion.div>
+    </div>
+  )
+}
+
+type Props = {
+  card: TalkCard
+  mine?: string
+  theirs?: string
+  names: { me: string; them: string }
+  playedByMe: boolean
+  onAnswer: (answer: string) => void
+}
+
+/**
+ * A talk card in the chat: a compact bubble with a tarot thumbnail and where
+ * things stand. Tap it to open the full card, where you answer.
+ */
+export default function ChatTalkCard(props: Props) {
+  const { card, mine, theirs, names, playedByMe } = props
+  const t = TOPICS[card.topic]
+  const a = ARCANA[card.topic]
+  const [open, setOpen] = useState(false)
+  const both = mine != null && theirs != null
+  const same = both && card.kind !== 'ask' && answerLabel(card, mine!, 'me', names) === answerLabel(card, theirs!, 'them', names)
+  const status = both
+    ? (same ? '✦ The cards agree' : 'Both revealed · tap to read')
+    : mine != null ? `Sealed · waiting on ${names.them}`
+      : theirs != null ? `${names.them} sealed theirs · your turn` : 'Your turn · tap to answer'
+  const phone = typeof document !== 'undefined' ? document.getElementById('phone') : null
+
+  return (
+    <>
+      <motion.button
+        onClick={() => { sfx.flip(); setOpen(true) }}
+        initial={{ opacity: 0, y: 12, rotate: playedByMe ? 2 : -2, scale: 0.94 }} animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+        style={{ display: 'block', margin: playedByMe ? '8px 0 10px auto' : '8px auto 10px 0', width: 262, textAlign: 'left' }}
+      >
+        <Gilt rarity={card.rarity} topic={card.topic} s={0.8}>
+          <div style={{
+            position: 'relative', borderRadius: 8, padding: '8px 10px 8px 8px', display: 'flex', gap: 10, alignItems: 'center',
+            background: `radial-gradient(80% 90% at 15% 50%, ${t.color}30, transparent 70%), linear-gradient(175deg, #241252, #120930)`,
+          }}>
+            <TalkCardFace card={card} width={52} />
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div className="serif" style={{ fontSize: 9.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD }}>{a.numeral} · {a.name}</div>
+              <div className="serif italic" style={{
+                marginTop: 4, fontSize: 15, lineHeight: 1.2, color: 'var(--label-1)',
+                display: '-webkit-box', WebkitLineClamp: both ? 2 : 3, WebkitBoxOrient: 'vertical', overflow: 'hidden',
+              }}>{card.q}</div>
+              {both && (
+                <div style={{ marginTop: 4, fontSize: 12, lineHeight: 1.3, color: 'var(--label-2)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <span style={{ color: GOLD }}>{names.me}:</span> {answerLabel(card, mine!, 'me', names)} · <span style={{ color: GOLD }}>{names.them}:</span> {answerLabel(card, theirs!, 'them', names)}
+                </div>
+              )}
+              <div className="mono" style={{ marginTop: 6, fontSize: 7.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: both ? GOLD : mine == null ? '#f4f0dc' : 'var(--label-3)' }}>
+                {status}
+              </div>
+            </div>
+          </div>
+        </Gilt>
+      </motion.button>
+
+      {phone && createPortal(
+        <AnimatePresence>
+          {open && (
+            <motion.div key="full" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+              style={{ position: 'absolute', inset: 0, zIndex: 90, background: 'rgba(5,2,15,0.78)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', display: 'grid', placeItems: 'center' }}>
+              <motion.div onClick={(e) => e.stopPropagation()}
+                initial={{ scale: 0.6, rotateY: 90, opacity: 0 }} animate={{ scale: 1, rotateY: 0, opacity: 1 }} exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 22 }}
+                style={{ position: 'relative', perspective: 900 }}>
+                <TalkCardFull {...props} />
+                <button aria-label="Close" onClick={() => { sfx.tap(); setOpen(false) }} style={{
+                  position: 'absolute', top: -46, right: 0, width: 36, height: 36, borderRadius: 18, display: 'grid', placeItems: 'center',
+                  color: 'var(--label-1)', fontSize: 18, background: 'rgba(48,32,92,0.8)', border: '1px solid rgba(201,182,240,0.35)',
+                }}>✕</button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        phone,
+      )}
+    </>
   )
 }
