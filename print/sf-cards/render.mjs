@@ -56,6 +56,7 @@ async function hires(q, file) {
 }
 await hires('view=card&side=back', 'back.jpg')
 for (const s of SIGNS) await hires(`view=card&side=front&sign=${s}&noserial=1`, `front-${s}.jpg`)
+for (const s of SIGNS) await hires(`view=card&side=front&sign=${s}`, `front-${s}-blank.jpg`)
 
 // home / office print: letter, 3×3, crop marks, fronts + backs interleaved for duplex
 {
@@ -68,6 +69,14 @@ for (const s of SIGNS) await hires(`view=card&side=front&sign=${s}&noserial=1`, 
 {
   const res = spawnSync('python3', [join(here, 'compact-pdf.py'), join(out, 'SF-01-letter-sheets.pdf')], { stdio: 'inherit' })
   if (res.status !== 0) console.warn('PDF not compacted (pip install pypdf); it is still valid, just larger')
+}
+
+// one of each design, one card per page at bleed size (2.75 × 3.75 in): back first, then the 12 fronts
+{
+  const p = await browser.newPage()
+  await p.goto(page$('view=designs')); await ready(p)
+  await p.pdf({ path: join(out, 'SF-01-designs-1-each.pdf'), width: '2.75in', height: '3.75in', printBackground: true, preferCSSPageSize: true, pageRanges: '1-13' })
+  await p.close()
 }
 
 // print-shop files (bleed included)
