@@ -150,5 +150,6 @@ window.CARD_BACK = {
   name: 'Hakeem Awbrey',
   title: 'Co-Founder',
   email: 'hakeem@comealign.com',
+  phone: '832-298-6442',
   site: 'comealign.com',
 }

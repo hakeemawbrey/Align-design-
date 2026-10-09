@@ -91,10 +91,11 @@
   /* ───────── back ───────── */
   .b-mark { left: 0; right: 0; top: 21pt; text-align: center; font-family: var(--serif); font-style: italic; font-size: 14pt; color: rgba(239,230,214,0.82); letter-spacing: 0.02em; }
   .b-sol { left: 30pt; top: 44pt; width: 120pt; height: 120pt; }
-  .b-name { left: 0; right: 0; top: 176pt; text-align: center; font-family: var(--serif); font-style: italic; font-size: 16pt; line-height: 1; color: var(--label-1); }
-  .b-title { left: 0; right: 0; top: 195pt; text-align: center; font-family: var(--mono); font-size: 5.4pt; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(220,188,255,0.78); }
-  .b-hair { left: 74pt; right: 74pt; top: 207pt; height: 0.5pt; background: linear-gradient(90deg, transparent, var(--align), transparent); }
-  .b-email { left: 0; right: 0; top: 213pt; text-align: center; font-family: var(--mono); font-size: 6.2pt; letter-spacing: 0.04em; color: var(--label-1); }
+  .b-name { left: 0; right: 0; top: 171pt; text-align: center; font-family: var(--serif); font-style: italic; font-size: 16pt; line-height: 1; color: var(--label-1); }
+  .b-title { left: 0; right: 0; top: 190pt; text-align: center; font-family: var(--mono); font-size: 5.4pt; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(220,188,255,0.78); }
+  .b-hair { left: 74pt; right: 74pt; top: 201pt; height: 0.5pt; background: linear-gradient(90deg, transparent, var(--align), transparent); }
+  .b-email { left: 0; right: 0; top: 207pt; text-align: center; font-family: var(--mono); font-size: 6.2pt; letter-spacing: 0.04em; color: var(--label-1); }
+  .b-phone { left: 0; right: 0; top: 217pt; text-align: center; font-family: var(--mono); font-size: 6.2pt; letter-spacing: 0.08em; color: var(--label-1); }
   .b-site { left: 0; right: 0; bottom: 15pt; text-align: center; font-family: var(--mono); font-size: 4.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(220,188,255,0.55); }
 
   /* ───────── simplified front (?style=simple) ───────── */
@@ -339,6 +340,7 @@ function back() {
       <div class="abs b-title">${b.title}</div>
       <div class="abs b-hair"></div>
       <div class="abs b-email">${b.email}</div>
+      <div class="abs b-phone">${b.phone}</div>
       <div class="abs b-site">${b.site}</div>
     </div>
   </div>`)

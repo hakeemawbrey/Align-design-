@@ -7,7 +7,7 @@ booster pack and hand it over.
   sign's animal (with film grain over the art), dates, element and mode, a one-line read, and
   Pull / Push / Align for love life.
 - **Back (same on every card):** the Align card back (seed of life and the chakra
-  column) with Hakeem Awbrey · Co-Founder · hakeem@comealign.com.
+  column) with Hakeem Awbrey · Co-Founder · hakeem@comealign.com · 832-298-6442.
 - **Serials:** `ALIGN · SF-01 · № 01/15` to `15/15` for each sign, so 180 cards in all.
 
 ## Files
