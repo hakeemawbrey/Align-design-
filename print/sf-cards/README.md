@@ -16,7 +16,7 @@ booster pack and hand it over.
 | --- | --- |
 | `out/proof.png` | Every design on one page, for review |
 | `out/SF-01-letter-sheets.pdf` | All 180 numbered cards on letter paper, 9 per sheet, with crop marks. Front and back pages alternate. |
-| `out/SF-01-designs-1-each.pdf` | 13 pages, one card per page at the actual card size, 2.5 × 3.5 in (no bleed), 600 dpi: the back, then the 12 fronts (serial `№ __/15`). For online card printers. |
+| `out/SF-01-designs-1-each.pdf` | 13 pages, one card per page at actual size (2.5 × 3.5 in) with 1/8 in bleed and crop marks on a 3.25 × 4.25 in page, 600 dpi: the back, then the 12 fronts (serial `№ __/15`). For online card printers. |
 | `out/print-files/front-<sign>.png`, `back.png` | One file per design for a print shop: 825 × 1125 px (300 dpi, 1/8 in bleed). The serial reads `№ __/15`. |
 
 ### Printing the letter sheets (FedEx Office, Staples, or an office printer)

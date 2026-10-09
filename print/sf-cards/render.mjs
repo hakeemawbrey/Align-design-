@@ -71,11 +71,11 @@ for (const s of SIGNS) await hires(`view=card&side=front&sign=${s}`, `front-${s}
   if (res.status !== 0) console.warn('PDF not compacted (pip install pypdf); it is still valid, just larger')
 }
 
-// one of each design, one card per page at the actual card size (2.5 × 3.5 in): back first, then the 12 fronts
+// one of each design, one card per page at actual size (2.5 × 3.5 in) with bleed and crop marks: back first, then the 12 fronts
 {
   const p = await browser.newPage()
   await p.goto(page$('view=designs')); await ready(p)
-  await p.pdf({ path: join(out, 'SF-01-designs-1-each.pdf'), width: '2.5in', height: '3.5in', printBackground: true, preferCSSPageSize: true, pageRanges: '1-13' })
+  await p.pdf({ path: join(out, 'SF-01-designs-1-each.pdf'), width: '3.25in', height: '4.25in', printBackground: true, preferCSSPageSize: true, pageRanges: '1-13' })
   await p.close()
 }
 

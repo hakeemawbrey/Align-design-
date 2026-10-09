@@ -126,8 +126,8 @@
 
   /* ───────── sheet view (letter, 3×3, butted, crop marks) ───────── */
   @page { size: 8.5in 11in; margin: 0; }
-  .dpage { position: relative; width: 180pt; height: 252pt; overflow: hidden; page-break-after: always; break-after: page; }
-  .dpage img { position: absolute; left: -9pt; top: -9pt; width: 198pt; height: 270pt; display: block; }
+  .dpage { position: relative; width: 234pt; height: 306pt; overflow: hidden; background: #fff; page-break-after: always; break-after: page; }
+  .dpage img { position: absolute; width: 198pt; height: 270pt; display: block; }
   .page { position: relative; width: 612pt; height: 792pt; overflow: hidden; background: #fff; page-break-after: always; break-after: page; }
   .cell { position: absolute; width: 180pt; height: 252pt; overflow: hidden; }
   .cell > .card { position: absolute; left: -9pt; top: -9pt; }
@@ -376,11 +376,25 @@ if (VIEW === 'ground') {
   const n = Q.has('n') ? Number(Q.get('n')) : 0
   document.body.appendChild(Q.get('side') === 'back' ? back() : frontFor(s, n))
 } else if (VIEW === 'designs') {
-  // one card per page at the actual card size (2.5 × 3.5 in, bleed trimmed off): the back, then the 12 fronts.
-  // Uses the 600 dpi renders in hires/ (made by render.mjs); serial reads № __/15.
-  document.head.appendChild(el(`<style>@page { size: 2.5in 3.5in; margin: 0; }</style>`))
+  // one card per page, actual size, with crop marks: the back, then the 12 fronts.
+  // Page 3.25 × 4.25 in; the 2.5 × 3.5 in card sits centred with 1/8 in bleed, and the crop
+  // marks start just outside the bleed. Uses the 600 dpi renders in hires/ (serial № __/15).
+  document.head.appendChild(el(`<style>@page { size: 3.25in 4.25in; margin: 0; }</style>`))
   document.body.style.background = '#fff'
-  const page = (src) => el(`<div class="dpage"><img src="${src}" alt=""></div>`)
+  const M = 27, W = 180, H = 252, GAP = 10, LEN = 15 // pt: margin to trim, card, mark gap from trim, mark length
+  const marks = () => {
+    let s = ''
+    for (const x of [M, M + W]) for (const [y, dir] of [[M, -1], [M + H, 1]]) {
+      // vertical mark above/below each trim corner
+      s += `<div class="crop" style="left:${x - 0.25}pt; top:${dir < 0 ? y - GAP - LEN : y + GAP}pt; width:0.5pt; height:${LEN}pt"></div>`
+    }
+    for (const y of [M, M + H]) for (const [x, dir] of [[M, -1], [M + W, 1]]) {
+      // horizontal mark left/right of each trim corner
+      s += `<div class="crop" style="top:${y - 0.25}pt; left:${dir < 0 ? x - GAP - LEN : x + GAP}pt; height:0.5pt; width:${LEN}pt"></div>`
+    }
+    return s
+  }
+  const page = (src) => el(`<div class="dpage"><img src="${src}" alt="" style="left:${M - 9}pt; top:${M - 9}pt">${marks()}</div>`)
   document.body.appendChild(page('hires/back.jpg'))
   for (const s of signs) document.body.appendChild(page(`hires/front-${s.id}-blank.jpg`))
 } else if (VIEW === 'sheet') {
