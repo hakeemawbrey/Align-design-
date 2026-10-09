@@ -94,6 +94,19 @@
   .b-email { left: 0; right: 0; top: 213pt; text-align: center; font-family: var(--mono); font-size: 6.2pt; letter-spacing: 0.04em; color: var(--label-1); }
   .b-site { left: 0; right: 0; bottom: 15pt; text-align: center; font-family: var(--mono); font-size: 4.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(220,188,255,0.55); }
 
+  /* ───────── simplified front (?style=simple) ───────── */
+  .s-art { left: 14pt; right: 14pt; top: 37.5pt; height: 108pt; border-radius: 5pt; overflow: hidden; background: #07060a; }
+  .s-art .frame-img { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); }
+  .s-art img { height: 100%; width: auto; display: block; }
+  .s-art .fade { position: absolute; top: 0; bottom: 0; width: 12pt; }
+  .s-name { left: 14pt; right: 14pt; top: 151pt; display: flex; align-items: center; justify-content: space-between; }
+  .s-name .sname { font-size: 13pt; }
+  .s-reads { left: 14pt; right: 13pt; top: 168pt; height: 61pt; display: flex; flex-direction: column; justify-content: center; gap: 4.6pt; }
+  .s-read { display: flex; align-items: baseline; }
+  .s-read .k { width: 27pt; flex-shrink: 0; font-family: var(--mono); font-weight: 700; font-size: 5.2pt; letter-spacing: 0.16em; }
+  .s-read .t { flex: 1; font-family: var(--serif); font-size: 8.6pt; line-height: 1.12; color: var(--label-1); }
+  .s-foot { left: 14pt; right: 14pt; bottom: 13pt; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 4.8pt; letter-spacing: 0.14em; white-space: nowrap; }
+
   /* ───────── proof view ───────── */
   .proof { padding: 40px 24px 80px; font-family: var(--serif); }
   .proof h1 { font-style: italic; font-weight: 400; font-size: 34px; text-align: center; }
@@ -207,6 +220,60 @@ function front(s, n) {
   </div>`)
 }
 
+/** Simplified front: bigger art, bigger type, less of it. Pull and push keep their
+ *  first sentence; align is just the three signs. No quote line, no mode chip. */
+const firstSentence = (t) => t.split(/(?<=\.)\s/)[0]
+const alignSigns = (t) => t.split('.')[0].replace(/, /g, ' · ')
+function frontSimple(s, n) {
+  const { color, light, dark } = SIGN_PALETTE[s.id]
+  const lines = { pull: firstSentence(s.pull), push: firstSentence(s.push), align: alignSigns(s.align) }
+  return el(`
+  <div class="card front" style="--ink:${light}; --ink-2:${light}c0; --ink-3:${light}8c">
+    <div class="pearl" style="background:${PEARL}"></div>
+    <div class="ppanel-edge"></div>
+    <div class="ppanel" style="background:${groundBg(s.id)}"></div>
+    <div class="trim">
+      <div class="abs f-top">
+        <div>
+          <div class="f-animal">${s.animal}</div>
+          <div class="f-dates">${s.dates}</div>
+        </div>
+        <div class="orb" style="background:${sphere(color, light)}; box-shadow: 0 0 0 0.6pt #ffffffaa, 0 0 0 1.4pt ${dark}66; color:${dark}">${s.glyph}&#xFE0E;</div>
+      </div>
+
+      <div class="abs s-art">
+        <div class="frame-img">
+          <img src="${IMG(s)}" alt="">
+          <div class="fade" style="left:-0.5pt; background:linear-gradient(90deg, #07060a, rgba(7,6,10,0))"></div>
+          <div class="fade" style="right:-0.5pt; background:linear-gradient(270deg, #07060a, rgba(7,6,10,0))"></div>
+        </div>
+        <div class="edge" style="position:absolute; inset:0; border-radius:5pt; box-shadow: inset 0 0 0 0.6pt ${light}aa"></div>
+      </div>
+
+      <div class="abs s-name">
+        <span class="sname" style="color:var(--ink)">${s.name}</span>
+        <span class="chip" style="color:var(--ink); border-color:${light}cc; background:${dark}66">
+          <span class="sphere" style="background:${sphere(color, light)}"></span>${s.element}
+        </span>
+      </div>
+
+      <div class="abs s-reads">
+        ${['pull', 'push', 'align'].map((k) => `
+          <div class="s-read">
+            <span class="k" style="color:${READ_COLOR[k]}">${k.toUpperCase()}</span>
+            <span class="t">${lines[k]}</span>
+          </div>`).join('')}
+      </div>
+
+      <div class="abs s-foot">
+        <span style="color:var(--ink-2)">ALIGN · ${EDITION.code} · SAN FRANCISCO</span>
+        <span style="color:var(--align)">NO. ${n ? pad(n) : '__'}/${EDITION.run}</span>
+      </div>
+    </div>
+  </div>`)
+}
+const frontFor = Q.get('style') === 'simple' ? frontSimple : front
+
 /** Seed-of-life linework + the 7-chakra column, as on "Card back · Align". */
 function seedOfLife() {
   const C = 60, r = 25
@@ -278,12 +345,27 @@ if (VIEW === 'ground') {
   // one sign's background at panel size (render.mjs saves it to grounds/<sign>.jpg)
   const g = Q.get('sign') || 'aries'
   document.body.appendChild(el(`<div class="card"><div class="ppanel" style="border-radius:0; background:${groundCSS(g)}"></div></div>`))
+} else if (VIEW === 'compare') {
+  // current front vs the simplified front, same signs side by side
+  const sc = Number(Q.get('scale') || 1.9)
+  const ids = (Q.get('signs') || 'aries,libra,scorpio').split(',')
+  const wrap = el(`<div class="proof" style="--s:${sc}"><h1>Align · ${EDITION.code}</h1><p class="sub">top: current · bottom: simplified, easier to read</p></div>`)
+  for (const [title, make] of [['Current', front], ['Simplified', frontSimple]]) {
+    const row = el(`<div style="margin:14px 0 34px"><p class="sub" style="margin:0 0 14px; color:var(--label-1); font-size:13px">${title}</p><div class="grid"></div></div>`)
+    for (const id of ids) {
+      const sg = SIGNS.find((x) => x.id === id)
+      const sl = el(`<div class="slot"><div class="scaler"></div><div class="lbl">${sg.name}</div></div>`)
+      sl.querySelector('.scaler').appendChild(make(sg, 7)); row.querySelector('.grid').appendChild(sl)
+    }
+    wrap.appendChild(row)
+  }
+  document.body.appendChild(wrap)
 } else if (VIEW === 'card') {
   // one card at full bleed size, top-left of the page (for PNG export)
   document.body.style.background = 'transparent'
   const s = SIGNS.find((x) => x.id === ONLY) || SIGNS[0]
   const n = Q.has('n') ? Number(Q.get('n')) : 0
-  document.body.appendChild(Q.get('side') === 'back' ? back() : front(s, n))
+  document.body.appendChild(Q.get('side') === 'back' ? back() : frontFor(s, n))
 } else if (VIEW === 'sheet') {
   document.body.style.background = '#fff'
   const fronts = []
@@ -309,7 +391,7 @@ if (VIEW === 'ground') {
     batch.forEach(([s, n], i) => {
       const r = Math.floor(i / 3), c = i % 3
       const cell = el(`<div class="cell" style="left:${X0 + c * W}pt; top:${Y0 + r * H}pt"></div>`)
-      cell.appendChild(front(s, n)); fp.appendChild(cell)
+      cell.appendChild(frontFor(s, n)); fp.appendChild(cell)
       // long-edge duplex: the back of column c sits in column 2 − c
       const bcell = el(`<div class="cell" style="left:${X0 + (2 - c) * W}pt; top:${Y0 + r * H}pt"></div>`)
       bcell.appendChild(back()); bp.appendChild(bcell)
@@ -339,7 +421,7 @@ if (VIEW === 'ground') {
     grid.appendChild(sl)
   }
   slot(back(), 'Back · every card')
-  signs.forEach((sg, i) => slot(front(sg, 7), `${sg.name} · № 07/${EDITION.run}`))
+  signs.forEach((sg, i) => slot(frontFor(sg, 7), `${sg.name} · № 07/${EDITION.run}`))
   document.body.appendChild(wrap)
 }
 document.fonts.ready.then(() => { document.body.dataset.ready = '1' })
