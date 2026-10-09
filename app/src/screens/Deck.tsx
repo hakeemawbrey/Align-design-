@@ -1,4 +1,5 @@
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
+import { talk } from '../lib/talk'
 import {
   AnimatePresence, animate, motion, useAnimationControls, useMotionValue, useTransform,
   type AnimationPlaybackControls, type MotionValue,
@@ -457,6 +458,7 @@ export default function Deck({ go }: ScreenProps) {
         if (matched) {
           sfx.sparkle()
           session.patch({ unseenMatch: true })
+          talk.grantOnce(`match:${who.id}`, 'starter')
           showToast(`It’s mutual — you and ${who.name} aligned. Say hi in Matches.`, 3200)
         } else if (dir > 0) {
           showToast(`Aligned — ${who.name} sees your card next`)

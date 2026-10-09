@@ -9,6 +9,12 @@ import { DECK } from '../data/profiles'
 import { sfx } from '../lib/sfx'
 import { session } from '../lib/session'
 import { api, type Message } from '../api'
+import { ME } from '../data/profiles'
+import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
+import ChatTalkCard from '../components/talk/ChatTalkCard'
+import CardsButton from '../components/talk/CardsButton'
+import HandSheet from '../components/talk/HandSheet'
+import { talkState } from '../components/talk/thread'
 
 export type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
 
@@ -57,6 +63,7 @@ function threadFrom(rows: Message[]): Omit<Msg, 'id'>[] {
 
 export default function Chat({ go }: ScreenProps) {
   const [report, setReport] = useState(false)
+  const [hand, setHand] = useState(false)
   // the scripted intro plays once per demo run; afterwards the thread is just there
   const [replay] = useState(() => !session.get().chatPlayed)
   const [msgs, setMsgs] = useState<Msg[]>([])
@@ -185,8 +192,25 @@ export default function Chat({ go }: ScreenProps) {
     await herTypes(reply, 1300, () => !alive.current)
   }
 
+  /* ---------- talk cards ---------- */
+  const talkRows = msgs.filter((m) => m.from !== 'card').map((m) => ({ from: m.from === 'me' ? 'me' as const : 'them' as const, body: m.text }))
+  const { answers } = talkState(talkRows)
+  const playCard = (cardId: string) => {
+    push({ from: 'me', text: playMsg(cardId) })
+    sfx.send()
+    // Juniper answers hers after a moment; it stays sealed until you answer yours
+    const card = cardById(cardId)
+    if (!card) return
+    window.setTimeout(() => {
+      if (!alive.current) { record('her', answerMsg(cardId, card.sample)); return }
+      push({ from: 'her', text: answerMsg(cardId, card.sample) })
+      sfx.receive()
+    }, 3200 + Math.random() * 1500)
+  }
+  const answerCard = (cardId: string, a: string) => push({ from: 'me', text: answerMsg(cardId, a) })
+
   // receipt goes under my last message only while it is the latest bubble
-  const bubbles = msgs.filter((m) => m.from !== 'card')
+  const bubbles = msgs.filter((m) => m.from !== 'card' && !parseTalk(m.text))
   const last = bubbles[bubbles.length - 1]
   const receiptAfter = last && last.from === 'me' ? last.id : -1
 
@@ -211,8 +235,18 @@ export default function Chat({ go }: ScreenProps) {
       >
         <div style={{ textAlign: 'center', fontSize: 12, color: 'var(--label-3)', padding: '10px 0 14px' }}>Today</div>
         <AnimatePresence initial={false}>
-          {msgs.map((m) => (
-            m.from === 'card' ? (
+          {msgs.map((m) => {
+            const t = m.from === 'card' ? null : parseTalk(m.text)
+            if (t?.type === 'answer') return null
+            if (t?.type === 'play') {
+              const card = cardById(t.cardId)
+              return card ? (
+                <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'}
+                  mine={answers[card.id]?.me} theirs={answers[card.id]?.them}
+                  names={{ me: ME.name, them: juniper.name }} onAnswer={(a) => answerCard(card.id, a)} />
+              ) : null
+            }
+            return m.from === 'card' ? (
               <InlineAlignmentCard key={m.id} onOpen={() => { sfx.tap(); go('alignment') }} />
             ) : (
               <div key={m.id}>
@@ -220,7 +254,7 @@ export default function Chat({ go }: ScreenProps) {
                 <AnimatePresence>{receiptAfter === m.id && <Receipt key="r" seen={seen} />}</AnimatePresence>
               </div>
             )
-          ))}
+          })}
           {typing && <TypingIndicator key="typing" name="Juniper" />}
         </AnimatePresence>
       </div>
@@ -231,11 +265,12 @@ export default function Chat({ go }: ScreenProps) {
         onClick={() => inputRef.current?.focus()}
         style={{
           position: 'absolute', left: 20, right: 20, top: 682, height: 52, borderRadius: 26,
-          display: 'flex', alignItems: 'center', padding: '0 7px 0 20px', gap: 8, zIndex: 6,
+          display: 'flex', alignItems: 'center', padding: '0 7px 0 7px', gap: 8, zIndex: 6,
           background: 'rgba(30, 18, 64, 0.85)', border: '1px solid rgba(179,166,196,0.26)',
           backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', cursor: 'text',
         }}
       >
+        <CardsButton onClick={() => { sfx.tap(); setHand(true) }} />
         <input
           ref={inputRef}
           value={draft}
@@ -265,6 +300,9 @@ export default function Chat({ go }: ScreenProps) {
         </motion.button>
       </form>
 
+      <AnimatePresence>
+        {hand && <HandSheet them={juniper.name} onPlay={playCard} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+      </AnimatePresence>
       <AnimatePresence>
         {report && (
           <ReportSheet name={juniper.name} pronoun="her" onClose={() => setReport(false)}

@@ -1,0 +1,150 @@
+import { useMemo, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { PACKS, TALK_CARDS, TOPICS, cardById, cardOfTheDay, type TalkCard, type TalkTopic } from '../../data/talkCards'
+import { talk, useTalk } from '../../lib/talk'
+import { useSession } from '../../lib/session'
+import { sfx } from '../../lib/sfx'
+import TalkCardFace from './TalkCardFace'
+import PackOpen from './PackOpen'
+
+type Tab = 'today' | 'hand' | 'packs'
+
+/**
+ * Your talk cards, opened from a chat: today's free card, the cards you hold
+ * (tap one to play it to your match), and packs to open.
+ */
+export default function HandSheet({ them, onPlay, onClose, onUpgrade }: {
+  them: string
+  onPlay: (cardId: string) => void
+  onClose: () => void
+  onUpgrade: () => void
+}) {
+  const { owned, packs } = useTalk()
+  const { alignPlus } = useSession()
+  const [tab, setTab] = useState<Tab>(talk.dailyAvailable() ? 'today' : 'hand')
+  const [topic, setTopic] = useState<TalkTopic | 'all'>('all')
+  const [opening, setOpening] = useState<{ pack: string; cards: TalkCard[] } | null>(null)
+  const daily = cardOfTheDay()
+  const dailyOpen = talk.dailyAvailable()
+
+  const hand = useMemo(() => owned.map(cardById).filter((c): c is TalkCard => !!c && (topic === 'all' || c.topic === topic)), [owned, topic])
+  const play = (id: string) => { sfx.align(); onPlay(id); onClose() }
+
+  return (
+    <>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}
+        style={{ position: 'absolute', inset: 0, zIndex: 80, background: 'rgba(5,2,15,0.55)' }} />
+      <motion.div
+        initial={{ y: 640 }} animate={{ y: 0 }} exit={{ y: 640 }} transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+        style={{
+          position: 'absolute', left: 0, right: 0, bottom: 0, height: 640, zIndex: 81, borderRadius: '26px 26px 0 0',
+          background: 'linear-gradient(180deg, #24124f, #120a2a)', borderTop: '1px solid rgba(201,182,240,0.35)',
+          padding: '12px 18px 0', display: 'flex', flexDirection: 'column',
+        }}
+      >
+        <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(201,182,240,0.4)', margin: '0 auto 12px' }} />
+        <div style={{ display: 'flex', alignItems: 'baseline' }}>
+          <div className="h-display" style={{ fontSize: 26, flex: 1 }}>Talk cards</div>
+          <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{owned.length} / {TALK_CARDS.length} COLLECTED</span>
+        </div>
+        <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 4 }}>
+          Play one to {them}. You both answer, and neither answer shows until you both have.
+        </div>
+
+        {/* tabs */}
+        <div style={{ marginTop: 12, height: 34, padding: 3, borderRadius: 999, display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)' }}>
+          {([['today', 'Today'], ['hand', 'Your cards'], ['packs', `Packs${packs.length ? ` · ${packs.length}` : ''}`]] as const).map(([id, label]) => (
+            <button key={id} onClick={() => { sfx.tap(); setTab(id) }} style={{ position: 'relative', flex: 1, fontSize: 13, color: tab === id ? '#1a0f3a' : 'var(--label-2)' }}>
+              {tab === id && <motion.span layoutId="hand-tab" style={{ position: 'absolute', inset: 0, borderRadius: 999, background: '#f4f0dc' }} />}
+              <span style={{ position: 'relative' }}>{label}</span>
+            </button>
+          ))}
+        </div>
+
+        <div style={{ flex: 1, overflowY: 'auto', marginTop: 14, paddingBottom: 30, scrollbarWidth: 'none' }}>
+          {tab === 'today' && (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
+              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--align)' }}>✦ CARD OF THE DAY · FREE ✦</div>
+              <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}>
+                <TalkCardFace card={daily} width={190} />
+              </motion.div>
+              <div style={{ fontSize: 13, color: 'var(--label-2)', textAlign: 'center', padding: '0 20px' }}>
+                Everyone on Align gets the same card today. A new one lands at midnight.
+              </div>
+              <button className="chrome-cta" onClick={() => { if (dailyOpen) talk.claimDaily(); play(daily.id) }}>
+                Play it to {them} <span className="spark">✦</span>
+              </button>
+            </div>
+          )}
+
+          {tab === 'hand' && (
+            <>
+              <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 10, scrollbarWidth: 'none' }}>
+                {(['all', ...Object.keys(TOPICS)] as (TalkTopic | 'all')[]).map((k) => (
+                  <button key={k} onClick={() => { sfx.tap(); setTopic(k) }} style={{
+                    flexShrink: 0, height: 28, padding: '0 11px', borderRadius: 14, fontSize: 12, whiteSpace: 'nowrap',
+                    color: topic === k ? '#1a0f3a' : 'var(--label-1)',
+                    background: topic === k ? (k === 'all' ? '#f4f0dc' : TOPICS[k].color) : 'rgba(48,32,92,0.6)',
+                    border: `1px solid ${k === 'all' ? 'rgba(179,166,196,0.3)' : `${TOPICS[k].color}66`}`,
+                  }}>{k === 'all' ? 'All' : `${TOPICS[k].glyph} ${TOPICS[k].label}`}</button>
+                ))}
+              </div>
+              {hand.length ? (
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, justifyItems: 'center' }}>
+                  {hand.map((c) => (
+                    <motion.button key={c.id} whileTap={{ scale: 0.95 }} whileHover={{ y: -3 }} onClick={() => play(c.id)}>
+                      <TalkCardFace card={c} width={104} />
+                    </motion.button>
+                  ))}
+                </div>
+              ) : (
+                <div style={{ textAlign: 'center', color: 'var(--label-3)', fontSize: 13, marginTop: 30 }}>No cards here yet. Open a pack.</div>
+              )}
+            </>
+          )}
+
+          {tab === 'packs' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {packs.map((id, i) => {
+                const p = PACKS[id]
+                return (
+                  <PackRow key={`${id}-${i}`} color={p.color} name={p.name} blurb={p.blurb} action="Open"
+                    onClick={() => { sfx.sparkle(); setOpening({ pack: id, cards: talk.openPack(id) }) }} />
+                )
+              })}
+              {!alignPlus && (
+                <PackRow color={PACKS.afterdark.color} name={PACKS.afterdark.name} blurb={`${PACKS.afterdark.blurb}. With Align+.`} action="Align+" locked
+                  onClick={() => { sfx.tap(); onUpgrade() }} />
+              )}
+              <div style={{ fontSize: 12.5, color: 'var(--label-3)', textAlign: 'center', marginTop: 8, lineHeight: 1.4 }}>
+                You get a pack with every new match, and a free card every day.
+              </div>
+            </div>
+          )}
+        </div>
+      </motion.div>
+
+      <AnimatePresence>
+        {opening && <PackOpen pack={PACKS[opening.pack]} cards={opening.cards} onDone={() => { setOpening(null); setTab('hand'); setTopic('all') }} />}
+      </AnimatePresence>
+    </>
+  )
+}
+
+function PackRow({ color, name, blurb, action, locked, onClick }: { color: string; name: string; blurb: string; action: string; locked?: boolean; onClick: () => void }) {
+  return (
+    <motion.button whileTap={{ scale: 0.98 }} onClick={onClick} style={{
+      display: 'flex', alignItems: 'center', gap: 14, padding: 12, borderRadius: 16, textAlign: 'left',
+      background: 'rgba(48,32,92,0.5)', border: `1px solid ${color}55`, opacity: locked ? 0.8 : 1,
+    }}>
+      <div style={{ width: 52, height: 72, borderRadius: 8, flexShrink: 0, background: `linear-gradient(160deg, ${color}, #2a1660 75%)`, boxShadow: `0 0 16px ${color}66`, display: 'grid', placeItems: 'center', color: '#fff' }}>
+        {locked ? '🔒' : '✦'}
+      </div>
+      <div style={{ flex: 1 }}>
+        <div className="serif italic" style={{ fontSize: 18, color: 'var(--label-1)' }}>{name}</div>
+        <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 2 }}>{blurb}</div>
+      </div>
+      <span style={{ padding: '7px 14px', borderRadius: 16, fontSize: 13, color: '#1a0f3a', background: locked ? 'var(--gold-foil)' : '#f4f0dc' }}>{action}</span>
+    </motion.button>
+  )
+}

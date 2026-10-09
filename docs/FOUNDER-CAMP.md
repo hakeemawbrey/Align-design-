@@ -21,9 +21,13 @@
    **It's mutual**, a Rare pull.
 4. **The reveal:** the cards flip, and only now do you see faces.
 5. **Chat:** the conversation starts from something on her card.
-6. **Matches → Binder:** after three days aligned you trade copies of your cards.
+6. **Talk card:** tap the card button in the chat, then play "Planned date or
+   spontaneous date?". Juniper's answer stays sealed until you answer yours.
+   "It's how you find out the stuff that matters: kids, money, how you fight.
+   And you collect the cards from packs."
+7. **Matches → Binder:** after three days aligned you trade copies of your cards.
    "Collectible. One day there are rare cards of famous people."
-7. Hand them the phone. **You → Reset demo** (tap twice) between people.
+8. Hand them the phone. **You → Reset demo** (tap twice) between people.
 
 ## "Download it and match with me" (needs Supabase)
 

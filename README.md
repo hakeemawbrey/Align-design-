@@ -60,6 +60,23 @@ Hakeem. A published card stays published.
 
 **Still scripted:** the seeded people, Juniper aligning back, and her replies.
 
+### Talk cards
+
+In any chat with a match, the card button left of the message box opens your
+**talk cards**: core relationship questions about everyday habits, romance,
+intimacy, food, family and kids, money, the future, conflict, and some just
+for fun. Play one and it lands in the chat. You both answer, and neither answer
+shows until you both have (the daily-question idea from couples apps like
+Paired). There are three kinds: open questions, this-or-that, and who's more
+likely.
+
+You start with 8 cards and 2 packs. Each new match gives a **First Nights**
+pack, everyone gets a free **card of the day**, and Align+ unlocks the
+**After Dark** pack (intimacy and romance). There are 51 cards; rare and
+legendary ones get gold and holo edges. Cards and answers are ordinary chat
+messages, so they work between two real people too. Reset demo restores the
+starting hand.
+
 ### iOS app
 
 `app/ios` is a native Xcode project (Capacitor) wrapping the same web app, so

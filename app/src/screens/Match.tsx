@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { talk } from '../lib/talk'
 import { motion, type Transition } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
@@ -41,7 +42,7 @@ const ORB_T: Transition[] = [
 const AT = { charge: 1450, slam: 2000, burst: 2240, settle: 2600 }
 
 export default function Match({ go }: ScreenProps) {
-  useEffect(() => { session.patch({ unseenMatch: true }) }, [])
+  useEffect(() => { session.patch({ unseenMatch: true }); talk.grantOnce('match:j27', 'starter') }, [])
   const [stage, setStage] = useState(0)
   const [skipped, setSkipped] = useState(false)
   const [burstKey, setBurstKey] = useState(0)

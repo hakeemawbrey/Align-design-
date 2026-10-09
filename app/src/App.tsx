@@ -20,6 +20,7 @@ import { resetSession } from './lib/session'
 import { RESET_EVENT } from './lib/demo'
 import { api } from './api'
 import NoticeBanner from './components/NoticeBanner'
+import { resetTalk } from './lib/talk'
 import Onboarding from './screens/Onboarding'
 import Founding from './screens/Founding'
 import Paywall from './screens/Paywall'
@@ -71,7 +72,7 @@ export default function App() {
 
   // reset from inside the app (You → Reset demo, triple-tap the clock)
   useEffect(() => {
-    const onReset = () => { resetBinder(); resetSession(); void api.reset(); setRun((r) => r + 1); go('splash') }
+    const onReset = () => { resetBinder(); resetSession(); resetTalk(); void api.reset(); setRun((r) => r + 1); go('splash') }
     // #reset in the address bar, whether the page is loading or already open
     const onHash = () => { if (window.location.hash === '#reset') onReset() }
     window.addEventListener(RESET_EVENT, onReset)
@@ -85,7 +86,7 @@ export default function App() {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
       const n = e.key === '0' ? 10 : Number(e.key)
       const restart = (id: ScreenId) => {
-        resetBinder(); resetSession()
+        resetBinder(); resetSession(); resetTalk()
         // screens after the match expect Juniper to be matched already
         void api.reset().then(() => { if (AFTER_MATCH.includes(id)) return api.swipe('j27', 'align') })
         setRun((r) => r + 1); go(id)

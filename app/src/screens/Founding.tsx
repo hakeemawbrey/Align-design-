@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { talk } from '../lib/talk'
 import { AnimatePresence, motion, useAnimationControls } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Backdrop from '../components/paywall/Backdrop'
@@ -66,6 +67,7 @@ export default function Founding({ go }: ScreenProps) {
     sfx.reveal()
     setPhase('flare')
     session.patch({ alignPlus: true })
+    talk.grantOnce('alignplus', 'afterdark')
     later(() => setBurst((b) => ({ k: b.k + 1, x: PCX, y: PCY, p: 0.55 })), 120)
     later(() => setPhase('claimed'), 650)
     // the card lands ~0.95s in

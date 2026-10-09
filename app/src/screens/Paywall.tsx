@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { talk } from '../lib/talk'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Backdrop from '../components/paywall/Backdrop'
@@ -65,6 +66,7 @@ export default function Paywall({ go }: ScreenProps) {
     sfx.tap()
     setPhase('flare')
     session.patch({ alignPlus: true })
+    talk.grantOnce('alignplus', 'afterdark')
     later(() => {
       sfx.match()
       setBurst((k) => k + 1)

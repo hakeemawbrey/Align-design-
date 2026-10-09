@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { talk } from '../lib/talk'
 import { AnimatePresence, motion } from 'framer-motion'
 import { api, useWorld } from '../api'
 import { session } from '../lib/session'
@@ -13,6 +14,7 @@ export default function NoticeBanner({ go }: { go: (id: ScreenId) => void }) {
     if (!notice) return
     sfx.match()
     session.patch({ unseenMatch: true })
+    if (notice.profileId) talk.grantOnce(`match:${notice.profileId}`, 'starter')
     const t = window.setTimeout(() => api.dismissNotice(), 6000)
     return () => clearTimeout(t)
   }, [notice])

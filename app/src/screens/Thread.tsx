@@ -9,6 +9,12 @@ import { api, useWorld, type Message } from '../api'
 import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
 import { Bubble, type Msg } from './Chat'
+import { ME } from '../data/profiles'
+import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
+import ChatTalkCard from '../components/talk/ChatTalkCard'
+import CardsButton from '../components/talk/CardsButton'
+import HandSheet from '../components/talk/HandSheet'
+import { talkState } from '../components/talk/thread'
 
 const toMsg = (m: Message, i: number): Msg => ({ id: i + 1, from: m.from === 'me' ? 'me' : 'her', text: m.body })
 
@@ -19,6 +25,7 @@ export default function Thread({ go }: ScreenProps) {
   const them = api.person(threadWith)
   const [rows, setRows] = useState<Message[]>([])
   const [draft, setDraft] = useState('')
+  const [hand, setHand] = useState(false)
   const seen = useRef(new Set<string>())
   const scroller = useRef<HTMLDivElement>(null)
 
@@ -40,13 +47,18 @@ export default function Thread({ go }: ScreenProps) {
     scroller.current?.scrollTo({ top: scroller.current.scrollHeight, behavior: 'smooth' })
   }, [rows])
 
+  const post = async (text: string) => {
+    if (!threadWith) return
+    try { add(await api.send(threadWith, 'me', text)) } catch (e) { console.warn('[align] not sent', e); sfx.deny(); throw e }
+  }
   const send = async () => {
     const text = draft.trim()
-    if (!text || !threadWith) return
+    if (!text) return
     setDraft('')
     sfx.send()
-    try { add(await api.send(threadWith, 'me', text)) } catch (e) { console.warn('[align] not sent', e); sfx.deny(); setDraft(text) }
+    try { await post(text) } catch { setDraft(text) }
   }
+  const { answers } = talkState(rows.map((r) => ({ from: r.from, body: r.body })))
 
   if (!them) {
     return (
@@ -73,7 +85,19 @@ export default function Thread({ go }: ScreenProps) {
           </div>
         </div>
         <AnimatePresence initial={false}>
-          {rows.map((m, i) => <div key={m.id}><Bubble msg={toMsg(m, i)} /></div>)}
+          {rows.map((m, i) => {
+            const t = parseTalk(m.body)
+            if (t?.type === 'answer') return null
+            if (t?.type === 'play') {
+              const card = cardById(t.cardId)
+              return card ? (
+                <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'}
+                  mine={answers[card.id]?.me} theirs={answers[card.id]?.them}
+                  names={{ me: ME.name, them: them.name }} onAnswer={(a) => { void post(answerMsg(card.id, a)).catch(() => {}) }} />
+              ) : null
+            }
+            return <div key={m.id}><Bubble msg={toMsg(m, i)} /></div>
+          })}
         </AnimatePresence>
         {!rows.length && (
           <div style={{ textAlign: 'center', fontSize: 13, color: 'var(--label-3)', marginTop: 30 }}>Say the first thing. Make it specific.</div>
@@ -82,8 +106,9 @@ export default function Thread({ go }: ScreenProps) {
 
       <form onSubmit={(e) => { e.preventDefault(); void send() }} style={{
         position: 'absolute', left: 20, right: 20, top: 682, height: 52, borderRadius: 26, display: 'flex', alignItems: 'center',
-        padding: '0 7px 0 20px', gap: 8, zIndex: 6, background: 'rgba(30, 18, 64, 0.85)', border: '1px solid rgba(179,166,196,0.26)',
+        padding: '0 7px 0 7px', gap: 8, zIndex: 6, background: 'rgba(30, 18, 64, 0.85)', border: '1px solid rgba(179,166,196,0.26)',
       }}>
+        <CardsButton onClick={() => { sfx.tap(); setHand(true) }} />
         <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={`Message ${them.name}`} style={{
           flex: 1, minWidth: 0, background: 'none', border: 0, outline: 'none', fontFamily: 'var(--sans)', fontSize: 16, color: 'var(--label-1)', caretColor: 'var(--align)',
         }} />
@@ -95,6 +120,9 @@ export default function Thread({ go }: ScreenProps) {
         </motion.button>
       </form>
 
+      <AnimatePresence>
+        {hand && <HandSheet them={them.name} onPlay={(id) => { sfx.send(); void post(playMsg(id)).catch(() => {}) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+      </AnimatePresence>
       <TabBar active="matches" go={go} />
     </div>
   )
