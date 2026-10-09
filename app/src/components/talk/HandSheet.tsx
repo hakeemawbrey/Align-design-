@@ -4,7 +4,7 @@ import { PACKS, TALK_CARDS, TOPICS, cardById, cardOfTheDay, type TalkCard, type 
 import { talk, useTalk } from '../../lib/talk'
 import { useSession } from '../../lib/session'
 import { sfx } from '../../lib/sfx'
-import TalkCardFace from './TalkCardFace'
+import TalkCardFace, { TalkCardBack } from './TalkCardFace'
 import PackOpen from './PackOpen'
 
 type Tab = 'today' | 'hand' | 'packs'
@@ -66,7 +66,7 @@ export default function HandSheet({ them, onPlay, onClose, onUpgrade }: {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
               <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--align)' }}>✦ CARD OF THE DAY · FREE ✦</div>
               <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}>
-                <TalkCardFace card={daily} width={190} />
+                <TalkCardFace card={daily} width={164} />
               </motion.div>
               <div style={{ fontSize: 13, color: 'var(--label-2)', textAlign: 'center', padding: '0 20px' }}>
                 Everyone on Align gets the same card today. A new one lands at midnight.
@@ -93,7 +93,7 @@ export default function HandSheet({ them, onPlay, onClose, onUpgrade }: {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, justifyItems: 'center' }}>
                   {hand.map((c) => (
                     <motion.button key={c.id} whileTap={{ scale: 0.95 }} whileHover={{ y: -3 }} onClick={() => play(c.id)}>
-                      <TalkCardFace card={c} width={104} />
+                      <TalkCardFace card={c} width={102} />
                     </motion.button>
                   ))}
                 </div>
@@ -137,8 +137,8 @@ function PackRow({ color, name, blurb, action, locked, onClick }: { color: strin
       display: 'flex', alignItems: 'center', gap: 14, padding: 12, borderRadius: 16, textAlign: 'left',
       background: 'rgba(48,32,92,0.5)', border: `1px solid ${color}55`, opacity: locked ? 0.8 : 1,
     }}>
-      <div style={{ width: 52, height: 72, borderRadius: 8, flexShrink: 0, background: `linear-gradient(160deg, ${color}, #2a1660 75%)`, boxShadow: `0 0 16px ${color}66`, display: 'grid', placeItems: 'center', color: '#fff' }}>
-        {locked ? '🔒' : '✦'}
+      <div style={{ position: 'relative', flexShrink: 0, filter: `drop-shadow(0 0 10px ${color}88)`, opacity: locked ? 0.7 : 1 }}>
+        <TalkCardBack width={46} color={color} />
       </div>
       <div style={{ flex: 1 }}>
         <div className="serif italic" style={{ fontSize: 18, color: 'var(--label-1)' }}>{name}</div>

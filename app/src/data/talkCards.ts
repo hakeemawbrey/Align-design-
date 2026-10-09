@@ -21,6 +21,19 @@ export interface TalkCard {
   sample: string
 }
 
+/** Each topic is an arcana in Align's own tarot deck. */
+export const ARCANA: Record<TalkTopic, { name: string; numeral: string }> = {
+  fun: { name: 'The Fool', numeral: '0' },
+  food: { name: 'The Empress', numeral: 'III' },
+  family: { name: 'The Hearth', numeral: 'V' },
+  romance: { name: 'The Lovers', numeral: 'VI' },
+  money: { name: 'Wheel of Fortune', numeral: 'X' },
+  conflict: { name: 'The Tower', numeral: 'XVI' },
+  future: { name: 'The Star', numeral: 'XVII' },
+  intimacy: { name: 'The Moon', numeral: 'XVIII' },
+  everyday: { name: 'The Sun', numeral: 'XIX' },
+}
+
 export const TOPICS: Record<TalkTopic, { label: string; glyph: string; color: string; blurb: string }> = {
   everyday: { label: 'Everyday', glyph: '☼', color: '#f2c75c', blurb: 'Habits, routines, the small stuff' },
   romance: { label: 'Romance', glyph: '♡', color: '#f08aa8', blurb: 'Dates, affection, what feels romantic' },
