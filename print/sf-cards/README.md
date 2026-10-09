@@ -41,7 +41,8 @@ node print/sf-cards/render.mjs --all     # writes out/print-files/numbered/<sign
 
 - Copy, colours and serial run: `signs.js`. The name, title and email on the back are in `CARD_BACK`.
 - Layout: `cards.html`. Open it in a browser: `?view=proof&guides=1` shows the trim line (red) and safe area (blue).
-  `&art=aura` swaps the animal art for the AuraCam silhouettes.
+  `&art=aura` swaps the animal art for the AuraCam silhouettes; `&art=cute` and `&art=glow`
+  use the two SF art sheets (`art/cute`, `art/glow`). `out/proof-cute.png` and `out/proof-glow.png` show them.
 - Re-export: `node print/sf-cards/render.mjs`. This needs Playwright and Chromium.
   If `playwright` won't resolve, run `npm i playwright` in this folder first.
 
