@@ -9,7 +9,8 @@ import { api, useWorld, type Message } from '../api'
 import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
 import { Bubble, type Msg } from './Chat'
-import { ME } from '../data/profiles'
+import { ME, type Profile } from '../data/profiles'
+import { MATCHES, STARTER_CHATS } from '../data/matches'
 import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
@@ -18,15 +19,34 @@ import { talkState } from '../components/talk/thread'
 
 const toMsg = (m: Message, i: number): Msg => ({ id: i + 1, from: m.from === 'me' ? 'me' : 'her', text: m.body })
 
-/** Chat with a real person you matched with. Both sides are real; new messages arrive live. */
+/** A match from your list who isn't a real person, as a card the chat can show. */
+function seeded(id: string): Profile | undefined {
+  const m = MATCHES.find((x) => x.id === id)
+  if (!m) return undefined
+  return { id: m.id, initial: m.name, name: m.name, age: m.age, sign: m.sign, moon: m.sign, rising: m.sign, serial: m.serial, pull: 'Steady pull', photo: m.photo, alignsBack: true, reading: [], dealbreakers: '' }
+}
+
+const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
+
+/**
+ * Chat with a match. With a real person both sides are real and new messages
+ * arrive live; with one of your seeded matches, they reply on their own.
+ */
 export default function Thread({ go }: ScreenProps) {
   const { threadWith } = useSession()
   useWorld()
-  const them = api.person(threadWith)
+  const them = api.person(threadWith) ?? seeded(threadWith)
+  const bot = !!them && !them.real
+  const script = STARTER_CHATS[threadWith]
+  const [typing, setTyping] = useState(false)
+  const alive = useRef(true)
+  useEffect(() => { alive.current = true; return () => { alive.current = false } }, [])
   const [rows, setRows] = useState<Message[]>([])
   const [draft, setDraft] = useState('')
   const [hand, setHand] = useState(false)
   const seen = useRef(new Set<string>())
+  const seeding = useRef(false)
+  const replyIdx = useRef(0)
   const scroller = useRef<HTMLDivElement>(null)
 
   const add = (m: Message) => {
@@ -38,7 +58,15 @@ export default function Thread({ go }: ScreenProps) {
   useEffect(() => {
     if (!threadWith) return
     let off = false
-    api.messages(threadWith).then((ms) => { if (!off) ms.forEach(add) }).catch((e) => console.warn('[align] could not load messages', e))
+    api.messages(threadWith).then(async (ms) => {
+      if (off) return
+      ms.forEach(add)
+      // first time in a seeded chat: the conversation you already had
+      if (!ms.length && script && !seeding.current) {
+        seeding.current = true
+        for (const o of script.opening) add(await api.send(threadWith, o.from, o.text))
+      }
+    }).catch((e) => console.warn('[align] could not load messages', e))
     const stop = api.onMessage(threadWith, (m) => { if (m.from === 'them') sfx.receive(); add(m) })
     return () => { off = true; stop() }
   }, [threadWith])
@@ -51,12 +79,33 @@ export default function Thread({ go }: ScreenProps) {
     if (!threadWith) return
     try { add(await api.send(threadWith, 'me', text)) } catch (e) { console.warn('[align] not sent', e); sfx.deny(); throw e }
   }
+  /** a seeded match writes back after a moment (saved right away, so leaving doesn't lose it) */
+  const botSays = async (text: string, ms: number) => {
+    if (!threadWith) return
+    await wait(ms * 0.4)
+    if (alive.current) setTyping(true)
+    await wait(ms * 0.6)
+    const m = await api.send(threadWith, 'them', text).catch(() => null)
+    if (!alive.current) return
+    setTyping(false)
+    if (m) { add(m); sfx.receive() }
+  }
   const send = async () => {
     const text = draft.trim()
     if (!text) return
     setDraft('')
     sfx.send()
-    try { await post(text) } catch { setDraft(text) }
+    try { await post(text) } catch { setDraft(text); return }
+    if (bot) {
+      const pool = script?.replies ?? ['Ha, I like that.', 'Tell me more.', 'Ok, you’re fun.', 'When are you free this week?']
+      void botSays(pool[replyIdx.current++ % pool.length], 2200)
+    }
+  }
+  const playCard = async (id: string) => {
+    sfx.send()
+    try { await post(playMsg(id)) } catch { return }
+    const card = cardById(id)
+    if (bot && card) void botSays(answerMsg(id, card.sample), 3600)
   }
   const { answers } = talkState(rows.map((r) => ({ from: r.from, body: r.body })))
 
@@ -81,7 +130,7 @@ export default function Thread({ go }: ScreenProps) {
         <div style={{ textAlign: 'center', padding: '10px 0 16px' }}>
           <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--align)' }}>✦ MUTUAL ALIGN ✦</div>
           <div className="serif italic" style={{ fontSize: 15, color: 'var(--label-2)', marginTop: 6 }}>
-            You and {them.name} both aligned. {sign.glyph} {sign.name}{them.blurb ? ` · “${them.blurb}”` : ''}
+            You and {them.name} aligned. {sign.glyph} {sign.name}{them.blurb ? ` · “${them.blurb}”` : ''}
           </div>
         </div>
         <AnimatePresence initial={false}>
@@ -99,6 +148,7 @@ export default function Thread({ go }: ScreenProps) {
             return <div key={m.id}><Bubble msg={toMsg(m, i)} /></div>
           })}
         </AnimatePresence>
+        {typing && <div style={{ fontSize: 13, color: 'var(--label-3)', margin: '6px 4px' }}>{them.name} is typing…</div>}
         {!rows.length && (
           <div style={{ textAlign: 'center', fontSize: 13, color: 'var(--label-3)', marginTop: 30 }}>Say the first thing. Make it specific.</div>
         )}
@@ -121,7 +171,7 @@ export default function Thread({ go }: ScreenProps) {
       </form>
 
       <AnimatePresence>
-        {hand && <HandSheet them={them.name} onPlay={(id) => { sfx.send(); void post(playMsg(id)).catch(() => {}) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+        {hand && <HandSheet them={them.name} onPlay={(id) => { void playCard(id) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <TabBar active="matches" go={go} />
     </div>

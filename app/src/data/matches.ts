@@ -72,3 +72,48 @@ export const ARTIST_CARDS: ArtistCard[] = [
     edition: 1, of: 500, provenance: 'Traded from a collector in Seoul', wants: 41, tradedThisWeek: 3,
   },
 ]
+
+/**
+ * Chats with the matches you already have. Each opens mid-conversation (so
+ * "your turn" / "waiting on them" in the list is true), then replies to
+ * whatever you send and to any talk card you play.
+ */
+export const STARTER_CHATS: Record<string, { opening: { from: 'me' | 'them'; text: string }[]; replies: string[] }> = {
+  t24: {
+    opening: [
+      { from: 'them', text: 'Ok your card says record stores. Best one in Houston, go.' },
+      { from: 'me', text: 'Cactus. Not even close.' },
+      { from: 'them', text: 'Respect. I’m a Sig’s Lagoon guy but I’ll allow it. What are you listening to this week?' },
+    ],
+    replies: ['Ha, no way. Same.', 'Ok you have taste. That’s rare.', 'We should argue about this in person.', 'Sunday? I know a taco spot by Sig’s.'],
+  },
+  a31: {
+    opening: [
+      { from: 'them', text: 'Three days aligned. Do we get a medal?' },
+      { from: 'me', text: 'We get to trade cards apparently. Sent you mine.' },
+    ],
+    replies: ['Got it. Framing it.', 'Your Taurus is showing. I like it.', 'Ok but what are you doing Thursday?', 'Fair. Tell me something nobody asks you about.'],
+  },
+  z26: {
+    opening: [
+      { from: 'them', text: 'Weird question: what’s your comfort movie?' },
+      { from: 'me', text: 'Spirited Away. Every time. Yours?' },
+    ],
+    replies: ['Paddington 2. I will not be taking questions.', 'You’re funnier than your card lets on.', 'Ok I’m saving that for later.', 'Coffee this week?'],
+  },
+  m29: {
+    opening: [
+      { from: 'them', text: 'Saw your card. Do you actually cook too much or is that a bit?' },
+      { from: 'me', text: 'Not a bit. My freezer is a cry for help.' },
+      { from: 'them', text: 'Ha. Feed me and I’ll tell you my whole chart.' },
+    ],
+    replies: ['Deal. I’m bringing wine.', 'Leo moon, so yes, I’ll want compliments on the food too.', 'Tell me your best dish.', 'This is going well, don’t ruin it.'],
+  },
+  s29: {
+    opening: [
+      { from: 'them', text: 'Hey, sorry, slow week. Still here.' },
+      { from: 'me', text: 'All good. How was the week?' },
+    ],
+    replies: ['Long. Better now.', 'Honestly you’re the best part of it.', 'I’m bad at texting, good at drinks.', 'Let’s do something before this expires.'],
+  },
+}

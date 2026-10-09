@@ -78,11 +78,16 @@ export default function Matches({ go }: ScreenProps) {
 
   const openRow = (m: Match) => {
     sfx.tap()
-    if (m.real) { session.patch({ threadWith: m.id }); go('thread'); return }
+    // Juniper has the scripted chat; everyone else opens their own thread
+    if (m.id === 'j27') { go('chat'); return }
+    session.patch({ threadWith: m.id }); go('thread')
+  }
+  /** the tag on the right of a row: trade when it's ready, see the card once traded */
+  const openTag = (m: Match) => {
     const st = slotState(m, traded)
-    if (st === 'ready') { binder.startTrade(m.id); go('trade') }
-    else if (st === 'traded') { setView('binder'); setZoom(m) }
-    else go('chat')
+    if (st === 'ready') { sfx.tap(); binder.startTrade(m.id); go('trade'); return true }
+    if (st === 'traded') { sfx.tap(); setView('binder'); setZoom(m); return true }
+    return false
   }
 
   // the card that just arrived from a trade drops into its sleeve
@@ -144,7 +149,7 @@ export default function Matches({ go }: ScreenProps) {
                     <span style={{ flex: 1, height: 1, background: 'rgba(179,166,196,0.16)' }} />
                   </div>
                   {rows.map((m, i) => (
-                    <Row key={m.id} m={m} st={slotState(m, traded)} last={i === rows.length - 1} onClick={() => openRow(m)} />
+                    <Row key={m.id} m={m} st={slotState(m, traded)} last={i === rows.length - 1} onClick={() => openRow(m)} onTag={() => openTag(m)} />
                   ))}
                 </div>
               )
@@ -327,7 +332,7 @@ function sleevePos(i: number) {
   return { x: PAGE_X + PAD + c * (SLEEVE_W + GAP) + 1, y: PAGE_TOP + PAD + r * (SLEEVE_H + GAP) }
 }
 
-function Row({ m, st, last, onClick }: { m: Match; st: SlotState; last: boolean; onClick: () => void }) {
+function Row({ m, st, last, onClick, onTag }: { m: Match; st: SlotState; last: boolean; onClick: () => void; onTag: () => boolean }) {
   const s = SIGNS[m.sign]
   return (
     <button onClick={onClick} style={{
@@ -347,7 +352,9 @@ function Row({ m, st, last, onClick }: { m: Match; st: SlotState; last: boolean;
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
         <span className="mono" style={{ fontSize: 8.5, color: 'var(--label-3)' }}>{m.when} ›</span>
-        <TradeTag st={st} day={m.day} />
+        <span role="button" onClick={(e) => { if (onTag()) e.stopPropagation() }} style={{ padding: '4px 0 4px 8px' }}>
+          <TradeTag st={st} day={m.day} />
+        </span>
       </div>
     </button>
   )
