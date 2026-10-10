@@ -319,8 +319,8 @@ export default function Chat({ go }: ScreenProps) {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.88 }}
           animate={{
-            background: draft.trim() ? 'rgba(242, 199, 92, 0.95)' : 'rgba(52, 35, 95, 0.9)',
-            boxShadow: draft.trim() ? '0 0 18px rgba(242, 199, 92, 0.55)' : '0 0 0 rgba(0,0,0,0)',
+            background: draft.trim() ? 'rgba(248, 237, 255, 0.95)' : 'rgba(52, 35, 95, 0.9)',
+            boxShadow: draft.trim() ? '0 0 18px rgba(248, 237, 255, 0.5)' : '0 0 0 rgba(0,0,0,0)',
           }}
           transition={{ duration: 0.2 }}
           style={{ width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', flexShrink: 0 }}

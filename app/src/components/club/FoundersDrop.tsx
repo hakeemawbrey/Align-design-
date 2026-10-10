@@ -52,8 +52,8 @@ export default function FoundersDrop({ owned, onClaim }: Props) {
           <motion.button onClick={onClaim} whileTap={{ scale: 0.96 }} className="mono"
             style={{
               marginTop: 12, padding: '7px 12px', borderRadius: 999, fontSize: 9, letterSpacing: '0.16em', fontWeight: 700,
-              color: owned ? 'var(--align)' : '#2a1a05',
-              background: owned ? 'rgba(242,199,92,0.12)' : 'var(--gold-foil)',
+              color: owned ? 'var(--align)' : 'var(--chrome-ink)',
+              background: owned ? 'rgba(242,199,92,0.12)' : 'var(--chrome)',
               border: owned ? '1px solid rgba(242,199,92,0.5)' : 'none',
             }}>
             {owned ? `✦ YOURS · № ${pad(serial)} / ${of.toLocaleString('en-US')}` : 'CLAIM YOURS ›'}

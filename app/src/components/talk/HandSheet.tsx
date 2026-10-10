@@ -174,7 +174,7 @@ export function PackRow({ color, name, blurb, action, locked, onClick }: { color
         <div className="serif italic" style={{ fontSize: 18, color: 'var(--label-1)' }}>{name}</div>
         <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 2 }}>{blurb}</div>
       </div>
-      <span style={{ padding: '7px 14px', borderRadius: 16, fontSize: 13, color: '#1a0f3a', background: locked ? 'var(--gold-foil)' : '#f4f0dc' }}>{action}</span>
+      <span style={{ padding: '7px 14px', borderRadius: 16, fontSize: 13, color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)' }}>{action}</span>
     </motion.button>
   )
 }

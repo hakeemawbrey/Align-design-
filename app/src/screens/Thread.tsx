@@ -193,7 +193,7 @@ export default function Thread({ go }: ScreenProps) {
         }} />
         <motion.button type="submit" aria-label="Send" whileTap={{ scale: 0.88 }} style={{
           width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', flexShrink: 0,
-          background: draft.trim() ? 'rgba(242, 199, 92, 0.95)' : 'rgba(52, 35, 95, 0.9)',
+          background: draft.trim() ? 'rgba(248, 237, 255, 0.95)' : 'rgba(52, 35, 95, 0.9)',
         }}>
           <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke={draft.trim() ? '#3a2c4e' : 'var(--align)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 14V2M2 7l5-5 5 5" /></svg>
         </motion.button>

@@ -68,7 +68,7 @@ export default function TabBar({ active, go, onSelect }: Props) {
             {t === 'you' && packCount > 0 && (
               <span className="mono" aria-label={`${packCount} packs to open`} style={{
                 position: 'absolute', top: -6, right: 8, minWidth: 17, height: 17, padding: '0 4px', borderRadius: 9, fontSize: 9.5, fontWeight: 700,
-                display: 'grid', placeItems: 'center', color: '#1a0f3a', background: 'var(--gold-foil)', boxShadow: '0 0 8px rgba(242,199,92,0.7)',
+                display: 'grid', placeItems: 'center', color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)',
               }}>{packCount}</span>
             )}
             {t === 'matches' && matchBadge && (

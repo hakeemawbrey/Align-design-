@@ -124,7 +124,7 @@ export default function You({ go }: ScreenProps) {
             <div className="mono" style={{
               position: 'absolute', left: 116, bottom: 14, height: 28, padding: '0 12px', borderRadius: 14, display: 'flex', alignItems: 'center',
               fontSize: 9.5, letterSpacing: '0.12em', fontWeight: 700,
-              color: packCount ? '#1a0f3a' : '#f2d58a', background: packCount ? 'var(--gold-foil)' : 'rgba(242,213,138,0.12)',
+              color: packCount ? 'var(--chrome-ink)' : 'var(--label-1)', background: packCount ? 'var(--chrome)' : 'rgba(248,237,255,0.1)', boxShadow: packCount ? '0 0 12px rgba(248,237,255,0.45)' : 'none',
             }}>
               {packCount ? `OPEN PACKS · ${packCount} WAITING ›` : 'SEE YOUR CARDS ›'}
             </div>
@@ -179,7 +179,7 @@ export default function You({ go }: ScreenProps) {
               <motion.button className="chrome-cta" whileHover={{ scale: 1.02 }} onClick={() => sfx.sparkle()}>
                 <span style={{
                   width: 22, height: 22, borderRadius: 11, display: 'grid', placeItems: 'center',
-                  background: 'var(--gold-foil)', boxShadow: '0 0 10px rgba(242,199,92,0.7)',
+                  background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)',
                 }}>
                   <svg width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="#3a2a08" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1.5 5.2 4.5 8 10.5 1.8" /></svg>
                 </span>

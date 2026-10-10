@@ -185,8 +185,8 @@ export default function Founding({ go }: ScreenProps) {
                         transition={{ type: 'spring', stiffness: 500, damping: 14, delay: 1.15 }}
                         style={{
                           position: 'absolute', top: -13, left: 12, height: 24, padding: '0 10px', borderRadius: 999,
-                          display: 'grid', placeItems: 'center', background: '#e6f0d6', color: '#1e1240',
-                          fontSize: 11.5, fontWeight: 600, boxShadow: '0 0 14px rgba(127,216,176,0.35)',
+                          display: 'grid', placeItems: 'center', background: 'var(--chrome)', color: 'var(--chrome-ink)',
+                          fontSize: 11.5, fontWeight: 600, boxShadow: '0 0 14px rgba(248,237,255,0.4)',
                         }}>3 days free</motion.div>
                     )}
                     <div style={{ opacity: sel ? 1 : 0.55, transition: 'opacity .25s' }}>

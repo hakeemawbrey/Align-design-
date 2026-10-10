@@ -47,7 +47,7 @@ export default function ChatPlaceCard({ place, when, playedByMe, mine, theirs, c
                 <span style={{ flex: 1, fontSize: 13 }}>It’s a date. {when}.</span>
                 {place.partner && (
                   <button className="mono" onClick={() => { sfx.sparkle(); onCheckin() }}
-                    style={{ height: 30, padding: '0 11px', borderRadius: 15, fontSize: 9, letterSpacing: '0.12em', fontWeight: 700, color: '#1a0f3a', background: 'var(--gold-foil)' }}>
+                    style={{ height: 30, padding: '0 11px', borderRadius: 15, fontSize: 9, letterSpacing: '0.12em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)' }}>
                     CHECK IN
                   </button>
                 )}
@@ -57,7 +57,7 @@ export default function ChatPlaceCard({ place, when, playedByMe, mine, theirs, c
             <div style={{ fontSize: 12.5, color: 'var(--label-3)' }}>Not this one. Try another place or night.</div>
           ) : mine === undefined ? (
             <div style={{ display: 'flex', gap: 8 }}>
-              <button onClick={() => { sfx.tap(); onRsvp(true) }} style={{ flex: 1, height: 32, borderRadius: 16, fontSize: 13, color: '#1a0f3a', background: '#f4f0dc' }}>I’m in</button>
+              <button onClick={() => { sfx.tap(); onRsvp(true) }} style={{ flex: 1, height: 32, borderRadius: 16, fontSize: 13, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>I’m in</button>
               <button onClick={() => { sfx.tap(); onRsvp(false) }} style={{ flex: 1, height: 32, borderRadius: 16, fontSize: 13, color: 'var(--label-1)', border: '1px solid rgba(179,166,196,0.35)' }}>Another time</button>
             </div>
           ) : (

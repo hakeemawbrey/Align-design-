@@ -164,9 +164,9 @@ export default function Paywall({ go }: ScreenProps) {
                       <div className="mono" style={{
                         position: 'absolute', top: -9, left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap',
                         height: 18, padding: '0 9px', borderRadius: 999, display: 'grid', placeItems: 'center',
-                        background: 'linear-gradient(90deg, #c99a3c 0%, #f2c75c 25%, #fff1c4 50%, #f2c75c 75%, #c99a3c 100%)', backgroundSize: '200% 100%', animation: 'foil-sweep 3s linear infinite',
-                        color: '#3a2c10', fontSize: 7.5, fontWeight: 700, letterSpacing: '0.14em',
-                        boxShadow: '0 0 12px rgba(242,199,92,0.5)',
+                        background: 'var(--chrome)', backgroundSize: '200% 100%', animation: 'foil-sweep 3s linear infinite',
+                        color: 'var(--chrome-ink)', fontSize: 7.5, fontWeight: 700, letterSpacing: '0.14em',
+                        boxShadow: '0 0 12px rgba(248,237,255,0.5)',
                       }}>3 DAYS FREE</div>
                     )}
                     <span className="mono" style={{ fontSize: 8, letterSpacing: '0.2em', textTransform: 'uppercase', color: sel ? '#f2c75c' : 'var(--label-3)' }}>{pl.label}</span>

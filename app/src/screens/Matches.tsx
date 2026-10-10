@@ -363,8 +363,8 @@ function Row({ m, st, last, onClick, onTag }: { m: Match; st: SlotState; last: b
 function TradeTag({ st, day }: { st: SlotState; day: number }) {
   if (st === 'ready') {
     return (
-      <motion.span animate={{ boxShadow: ['0 0 0px rgba(242,199,92,0)', '0 0 12px rgba(242,199,92,0.7)', '0 0 0px rgba(242,199,92,0)'] }} transition={{ duration: 1.8, repeat: Infinity }}
-        className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', padding: '3px 8px', borderRadius: 999, color: '#2a1a05', background: 'var(--gold-foil)', fontWeight: 700 }}>
+      <motion.span animate={{ boxShadow: ['0 0 0px rgba(248,237,255,0)', '0 0 12px rgba(248,237,255,0.6)', '0 0 0px rgba(248,237,255,0)'] }} transition={{ duration: 1.8, repeat: Infinity }}
+        className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', padding: '3px 8px', borderRadius: 999, color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700 }}>
         ✦ TRADE
       </motion.span>
     )
@@ -422,7 +422,7 @@ function Sleeve({ m, st, arriving, onLanded, onOpen }: { m?: Match; st: SlotStat
           <TradeCardBack width={cardW} label={m.name} />
         </div>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 10, display: 'flex', justifyContent: 'center' }}>
-          <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.16em', padding: '4px 8px', borderRadius: 999, color: '#2a1a05', background: 'var(--gold-foil)', fontWeight: 700 }}>
+          <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.16em', padding: '4px 8px', borderRadius: 999, color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700 }}>
             ✦ READY TO TRADE
           </span>
         </div>
@@ -559,7 +559,7 @@ function Showcase({ a, onClose }: { a: ArtistCard; onClose: () => void }) {
         style={{ position: 'absolute', left: 0, right: 0, bottom: 52, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
         <button className="chrome-cta" onClick={(e) => { e.stopPropagation(); sfx.deny() }} style={{ position: 'relative' }}>
           Offer a trade <span className="spark">✦</span>
-          <span className="mono" style={{ position: 'absolute', top: -9, right: 18, padding: '3px 8px', borderRadius: 999, fontSize: 7.5, letterSpacing: '0.16em', fontStyle: 'normal', color: '#2a1a05', background: 'var(--gold-foil)', fontWeight: 700 }}>
+          <span className="mono" style={{ position: 'absolute', top: -9, right: 18, padding: '3px 8px', borderRadius: 999, fontSize: 7.5, letterSpacing: '0.16em', fontStyle: 'normal', color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700 }}>
             COMING SOON
           </span>
         </button>

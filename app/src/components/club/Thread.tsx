@@ -125,7 +125,7 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
         <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Say the thing you keep deleting"
           style={{ flex: 1, minWidth: 0, background: 'none', border: 0, outline: 'none', fontSize: 15.5, color: 'var(--label-1)', caretColor: 'var(--align)', userSelect: 'text', WebkitUserSelect: 'text' }} />
         <motion.button type="submit" aria-label={`Reply as ${ME.name}`} whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.88 }}
-          animate={{ background: draft.trim() ? 'rgba(242,199,92,0.95)' : 'rgba(52,35,95,0.9)' }}
+          animate={{ background: draft.trim() ? 'rgba(248,237,255,0.95)' : 'rgba(52,35,95,0.9)' }}
           style={{ width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', fontSize: 16, color: draft.trim() ? '#3a2a08' : 'var(--label-1)', border: '1px solid rgba(239,230,214,0.4)' }}>
           ✦
         </motion.button>

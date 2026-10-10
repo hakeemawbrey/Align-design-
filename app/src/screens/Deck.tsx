@@ -627,7 +627,7 @@ export default function Deck({ go }: ScreenProps) {
                 <>
                   <div className="serif italic" style={{ fontSize: 34, fontWeight: 500, color: '#f2c75c', textShadow: '0 0 18px rgba(242,199,92,0.8), 0 2px 6px rgba(0,0,0,0.6)' }}>+1 aligned</div>
                   {pp.streak >= 2 && (
-                    <div className="mono" style={{ marginTop: 4, display: 'inline-block', fontSize: 10, letterSpacing: '0.2em', color: '#2a1a08', background: 'var(--gold-foil)', padding: '4px 10px', borderRadius: 999, boxShadow: '0 0 14px rgba(242,199,92,0.6)' }}>
+                    <div className="mono" style={{ marginTop: 4, display: 'inline-block', fontSize: 10, letterSpacing: '0.2em', color: 'var(--chrome-ink)', background: 'var(--chrome)', padding: '4px 10px', borderRadius: 999, boxShadow: '0 0 14px rgba(242,199,92,0.6)' }}>
                       ✦ STREAK ×{pp.streak}
                     </div>
                   )}

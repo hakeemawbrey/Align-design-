@@ -125,7 +125,7 @@ export default function Trade({ go }: ScreenProps) {
                 <motion.div initial={{ scale: 2.4, opacity: 0, rotate: -24 }} animate={{ scale: 1, opacity: 1, rotate: -12 }} transition={{ type: 'spring', stiffness: 380, damping: 16 }}
                   className="mono" style={{
                     position: 'absolute', right: -14, top: 92, padding: '4px 8px', borderRadius: 6, fontSize: 8, letterSpacing: '0.2em', fontWeight: 700,
-                    color: '#2a1a05', background: 'var(--gold-foil)', boxShadow: '0 0 16px rgba(242,199,92,0.7)',
+                    color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 16px rgba(248,237,255,0.6)',
                   }}>
                   TRADED ✦
                 </motion.div>

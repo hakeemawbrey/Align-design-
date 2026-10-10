@@ -92,7 +92,7 @@ export default function Collection({ go }: ScreenProps) {
                 </div>
                 <button className="mono" disabled={!talk.dailyPackAvailable()}
                   onClick={() => { if (talk.claimDailyPack(alignPlus)) { sfx.sparkle(); flash(alignPlus ? '3 packs added' : 'Pack added') } }}
-                  style={{ height: 34, padding: '0 14px', borderRadius: 17, fontSize: 10, letterSpacing: '0.14em', fontWeight: 700, color: '#1a0f3a', background: talk.dailyPackAvailable() ? 'var(--gold-foil)' : 'rgba(179,166,196,0.35)' }}>
+                  style={{ height: 34, padding: '0 14px', borderRadius: 17, fontSize: 10, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: talk.dailyPackAvailable() ? 'var(--chrome)' : 'rgba(179,166,196,0.35)', boxShadow: talk.dailyPackAvailable() ? '0 0 12px rgba(248,237,255,0.45)' : 'none' }}>
                   {talk.dailyPackAvailable() ? 'CLAIM' : 'CLAIMED'}
                 </button>
               </div>
@@ -139,7 +139,7 @@ export default function Collection({ go }: ScreenProps) {
                 return (
                   <div key={s} style={{ position: 'relative' }}>
                     <ArchetypeCard sign={s} variant={best ?? 'base'} width={74} dim={!best} edition={false} />
-                    {mine.length > 1 && <span className="mono" style={{ position: 'absolute', top: -5, right: -5, minWidth: 18, height: 18, borderRadius: 9, fontSize: 9, fontWeight: 700, display: 'grid', placeItems: 'center', background: GOLD, color: '#1a0f3a' }}>×{mine.length}</span>}
+                    {mine.length > 1 && <span className="mono" style={{ position: 'absolute', top: -5, right: -5, minWidth: 18, height: 18, borderRadius: 9, fontSize: 9, fontWeight: 700, display: 'grid', placeItems: 'center', background: 'var(--chrome)', color: 'var(--chrome-ink)' }}>×{mine.length}</span>}
                   </div>
                 )
               })}
@@ -149,7 +149,7 @@ export default function Collection({ go }: ScreenProps) {
             <SetHead title="Places · Houston" got={t.venues.length} of={PLACES.filter((p) => p.partner).length} note="Check in at a partner place on a date for its card. Only there." />
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
               {PLACES.filter((p) => p.partner).map((p) => (
-                <span key={p.id} style={{ fontSize: 12, padding: '5px 10px', borderRadius: 12, color: t.venues.includes(p.id) ? '#1a0f3a' : 'var(--label-2)', background: t.venues.includes(p.id) ? GOLD : 'rgba(48,32,92,0.6)', border: '1px solid rgba(242,213,138,0.3)' }}>
+                <span key={p.id} style={{ fontSize: 12, padding: '5px 10px', borderRadius: 12, color: t.venues.includes(p.id) ? 'var(--chrome-ink)' : 'var(--label-2)', background: t.venues.includes(p.id) ? 'var(--chrome)' : 'rgba(48,32,92,0.6)', border: '1px solid rgba(242,213,138,0.3)' }}>
                   {p.emoji} {p.name}
                 </span>
               ))}
@@ -237,7 +237,7 @@ function BoxLine({ title, sub, done, cta, onClick }: { title: string; sub: strin
         <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 2, lineHeight: 1.35 }}>{sub}</div>
       </div>
       <button className="mono" disabled={done} onClick={onClick}
-        style={{ height: 32, padding: '0 12px', borderRadius: 16, fontSize: 9.5, letterSpacing: '0.12em', fontWeight: 700, whiteSpace: 'nowrap', color: done ? 'var(--label-2)' : '#1a0f3a', background: done ? 'rgba(179,166,196,0.2)' : '#9fd8ff' }}>
+        style={{ height: 32, padding: '0 12px', borderRadius: 16, fontSize: 9.5, letterSpacing: '0.12em', fontWeight: 700, whiteSpace: 'nowrap', color: done ? 'var(--label-2)' : 'var(--chrome-ink)', background: done ? 'rgba(179,166,196,0.2)' : 'var(--chrome)', boxShadow: done ? 'none' : '0 0 12px rgba(248,237,255,0.45)' }}>
         {done ? 'ADDED ✓' : cta.toUpperCase()}
       </button>
     </div>
@@ -268,8 +268,8 @@ function Cell({ got, locked, gold, children }: { got: boolean; locked?: boolean;
   return (
     <div style={{
       padding: '7px 9px', borderRadius: 10, fontSize: 11.5, lineHeight: 1.25,
-      color: got ? '#1a0f3a' : locked ? 'var(--label-3)' : 'var(--label-1)',
-      background: got ? (gold ? 'var(--gold-foil)' : '#f4f0dc') : 'rgba(48,32,92,0.55)',
+      color: got ? 'var(--chrome-ink)' : locked ? 'var(--label-3)' : 'var(--label-1)',
+      background: got ? 'var(--chrome)' : 'rgba(48,32,92,0.55)',
       border: `1px solid ${gold ? 'rgba(242,213,138,0.3)' : 'rgba(179,166,196,0.18)'}`,
     }}>{got ? '✓ ' : locked ? '🔒 ' : ''}{children}</div>
   )
