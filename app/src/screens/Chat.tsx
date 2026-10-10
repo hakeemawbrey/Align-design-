@@ -14,6 +14,7 @@ import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
 import HandSheet from '../components/talk/HandSheet'
+import { binderNav } from '../lib/binderNav'
 import { talkState, placeState } from '../components/talk/thread'
 import ChatPlaceCard from '../components/talk/ChatPlaceCard'
 import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
@@ -332,7 +333,7 @@ export default function Chat({ go }: ScreenProps) {
       </form>
 
       <AnimatePresence>
-        {hand && <HandSheet them={juniper.name} onPlace={playPlace} onPlay={playCard} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+        {hand && <HandSheet onBinder={() => binderNav.open(go, 'chat')} them={juniper.name} onPlace={playPlace} onPlay={playCard} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <AnimatePresence>
         {report && (

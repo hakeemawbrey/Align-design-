@@ -15,13 +15,15 @@ type Tab = 'today' | 'hand' | 'places' | 'packs'
  * Your talk cards, opened from a chat: today's free card, the cards you hold
  * (tap one to play it to your match), and packs to open.
  */
-export default function HandSheet({ them, onPlay, onPlace, onClose, onUpgrade }: {
+export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, onUpgrade }: {
   them: string
   onPlay: (cardId: string) => void
   /** play a place card: plan a date there */
   onPlace?: (placeId: string, when: string) => void
   onClose: () => void
   onUpgrade: () => void
+  /** open the full binder: packs, sets, season */
+  onBinder?: () => void
 }) {
   const { owned, packs, places: talkPlaces } = useTalk()
   const { alignPlus } = useSession()
@@ -49,8 +51,12 @@ export default function HandSheet({ them, onPlay, onPlace, onClose, onUpgrade }:
       >
         <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(201,182,240,0.4)', margin: '0 auto 12px' }} />
         <div style={{ display: 'flex', alignItems: 'baseline' }}>
-          <div className="h-display" style={{ fontSize: 26, flex: 1 }}>Talk cards</div>
-          <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{owned.length} / {TALK_CARDS.length} COLLECTED</span>
+          <div className="h-display" style={{ fontSize: 26, flex: 1 }}>Your hand</div>
+          {onBinder ? (
+            <button className="mono" onClick={() => { sfx.tap(); onBinder() }} style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)', padding: '5px 10px', borderRadius: 12 }}>YOUR BINDER ›</button>
+          ) : (
+            <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{owned.length} / {TALK_CARDS.length} COLLECTED</span>
+          )}
         </div>
         <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 4 }}>
           Play one to {them}. You both answer, and neither answer shows until you both have.
@@ -147,7 +153,7 @@ export default function HandSheet({ them, onPlay, onPlace, onClose, onUpgrade }:
                   onClick={() => { sfx.tap(); onUpgrade() }} />
               )}
               <div style={{ fontSize: 12.5, color: 'var(--label-3)', textAlign: 'center', marginTop: 8, lineHeight: 1.4 }}>
-                You get a pack with every new match, and a free card every day. All your packs and sets live in You → Your collection.
+                You get a pack with every new match, and a free card every day. Everything you hold lives in your binder.
               </div>
             </div>
           )}

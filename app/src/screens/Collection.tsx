@@ -14,6 +14,12 @@ import { ME } from '../data/profiles'
 import { packInfo, talk, useTalk, type Pull } from '../lib/talk'
 import { useSession } from '../lib/session'
 import { sfx } from '../lib/sfx'
+import { binderNav } from '../lib/binderNav'
+import { useBinder } from '../lib/binder'
+import { MATCHES } from '../data/matches'
+import { EVENTS } from '../data/draws'
+import TradeCard from '../components/binder/TradeCard'
+import { copyOf } from './Matches'
 
 type Tab = 'packs' | 'sets' | 'season'
 const GOLD = '#f2d58a'
@@ -41,21 +47,23 @@ const TIERS = [
  */
 export default function Collection({ go }: ScreenProps) {
   const t = useTalk()
-  const { alignPlus } = useSession()
-  const [tab, setTab] = useState<Tab>('packs')
+  const { alignPlus, savedEvents } = useSession()
+  const { traded } = useBinder()
+  const people = MATCHES.filter((m) => traded.has(m.id))
+  const [tab, setTab] = useState<Tab>(binderNav.tab())
   const [opening, setOpening] = useState<{ pack: string; cards: Pull[] } | null>(null)
   const [toast, setToast] = useState<string | null>(null)
 
   const flash = (m: string) => { setToast(m); window.setTimeout(() => setToast(null), 2200) }
   const open = (id: string) => { sfx.sparkle(); setOpening({ pack: id, cards: talk.openPack(id) }) }
-  const total = t.owned.length + t.signs.length + t.venues.length
+  const total = t.owned.length + t.signs.length + t.venues.length + t.places.length + people.length + savedEvents.length
   const tier = Math.min(TIERS.length, Math.floor(total / 3))
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora="#3a2390" warm="#4a2470" count={60} seed={37} />
 
-      <button aria-label="Back" onClick={() => { sfx.tap(); go('you') }}
+      <button aria-label="Back" onClick={() => { sfx.tap(); go(binderNav.backTo()) }}
         style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 2 }}>
         <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
@@ -65,7 +73,7 @@ export default function Collection({ go }: ScreenProps) {
           {SEASON.label.toUpperCase()} · {SEASON.name.toUpperCase()} · DAY {SEASON.day} OF {SEASON.days}
         </div>
         <div style={{ display: 'flex', alignItems: 'baseline', marginTop: 8 }}>
-          <div className="h-display" style={{ fontSize: 32, flex: 1 }}>Collection</div>
+          <div className="h-display" style={{ fontSize: 32, flex: 1 }}>Your binder</div>
           <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: GOLD }}>{total} CARDS</span>
         </div>
         <div style={{ marginTop: 12, height: 34, padding: 3, borderRadius: 999, display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)' }}>
@@ -131,6 +139,15 @@ export default function Collection({ go }: ScreenProps) {
 
         {tab === 'sets' && (
           <>
+            <SetHead title="People · traded" got={people.length} of={MATCHES.length} note="Copies of your matches’ cards, traded hand to hand after three days aligned." />
+            <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 4, scrollbarWidth: 'none' }}>
+              {people.map((m) => <div key={m.id} style={{ flexShrink: 0 }}><TradeCard width={74} card={copyOf(m)} /></div>)}
+              {!people.length && <div style={{ fontSize: 12.5, color: 'var(--label-3)' }}>None yet. Stay aligned three days, then trade.</div>}
+            </div>
+            <button className="mono" onClick={() => { sfx.tap(); binderNav.pages(go) }}
+              style={{ marginTop: 10, height: 30, padding: '0 12px', borderRadius: 15, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
+              OPEN THE PAGES ›
+            </button>
             <SetHead title="Signs · Myths" got={talk.signSet().length} of={12} note="One archetype for each sign. Print it, trade it, frame it." />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, justifyItems: 'center' }}>
               {SIGN_ORDER.map((s) => {
@@ -143,6 +160,15 @@ export default function Collection({ go }: ScreenProps) {
                   </div>
                 )
               })}
+            </div>
+            <SetHead title="Events · in your hand" got={savedEvents.length} of={Object.keys(EVENTS).length} note="Play them from the hand on your deck. They cost energy." />
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+              {[...new Set(savedEvents)].map((id) => (
+                <span key={id} style={{ fontSize: 12, padding: '5px 10px', borderRadius: 12, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
+                  {EVENTS[id].glyph} {EVENTS[id].title}{savedEvents.filter((x) => x === id).length > 1 ? ` ×${savedEvents.filter((x) => x === id).length}` : ''}
+                </span>
+              ))}
+              {!savedEvents.length && <span style={{ fontSize: 12.5, color: 'var(--label-3)' }}>None held. Save one from your deck or pull them in packs.</span>}
             </div>
             <SetHead title="Talk cards" got={t.owned.length} of={TALK_CARDS.length} note="Play them in chat. Both answer, neither shows until you both have." />
             <Bar v={t.owned.length / TALK_CARDS.length} color="#b18cff" />

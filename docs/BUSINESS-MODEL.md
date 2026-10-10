@@ -67,7 +67,11 @@ rewards actually dating over just swiping.
 
 ## In the demo
 
-- **You → Collection**: packs, sets and the season (print runs, season pass).
-  Align+ users scan their starter box and season box here.
-- **Chat → card button**: talk cards, places and packs.
+- **One hand, one binder.** The hand widget (three fanned cards) sits beside
+  the sky on the deck and in every chat. It opens your hand: events to play on
+  the deck, talk cards and places to play in chat, packs to open. Everything
+  lives in **Your binder**: packs, sets (people traded, signs, events, talk
+  cards, places) and the season. The Matches binder pages and the You tab
+  open the same binder.
+- Align+ users scan their starter box and season box in the binder.
 - **Deck**: energy sits in the sky pill; playing an event spends it.

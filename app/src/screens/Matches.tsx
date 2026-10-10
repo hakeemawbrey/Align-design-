@@ -14,6 +14,7 @@ import { binder, useBinder } from '../lib/binder'
 import { sfx } from '../lib/sfx'
 import { session, useSession } from '../lib/session'
 import { useWorld } from '../api'
+import { binderNav } from '../lib/binderNav'
 
 type View = 'list' | 'binder'
 let lastView: View = 'list'
@@ -46,7 +47,7 @@ export default function Matches({ go }: ScreenProps) {
     day: 0, section: 'your-turn', status: 'New match · say hi', when: 'NOW', traded: false, opens: 'chat', real: true,
   }))
   const visible = [...real, ...MATCHES.filter((m) => matches.includes(m.id))].filter((m) => !blockedPeople.includes(m.id))
-  const [view, setView] = useState<View>(justTraded ? 'binder' : lastView)
+  const [view, setView] = useState<View>(() => (binderNav.takePages() || justTraded ? 'binder' : lastView))
   const [zoom, setZoom] = useState<Match | null>(null)
   const [page, setPage] = useState(0)
   const [showcase, setShowcase] = useState<ArtistCard | null>(null)
@@ -253,6 +254,12 @@ export default function Matches({ go }: ScreenProps) {
                 } as React.CSSProperties}>
                 {page === 0 ? 'RARE SERIES ›' : '‹ YOUR BINDER'}
               </button>
+              {page === 0 && (
+                <button onClick={() => { sfx.tap(); binderNav.open(go, 'matches', 'sets') }} className="mono"
+                  style={{ position: 'absolute', top: 0, left: 26, fontSize: 8.5, letterSpacing: '0.2em', fontWeight: 700, color: 'var(--label-1)', pointerEvents: 'auto' }}>
+                  SIGNS & PACKS ›
+                </button>
+              )}
               <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginBottom: 8 }}>
                 {[0, 1].map((i) => (
                   <button key={i} onClick={() => turn(i)} style={{ padding: '6px 2px', pointerEvents: 'auto' }}>

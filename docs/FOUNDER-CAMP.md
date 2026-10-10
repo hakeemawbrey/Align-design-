@@ -28,7 +28,9 @@
 7. **Place card:** in the same card sheet, open **Places** and play Agnes Cafe.
    Juniper says yes, and it's a date. Tap **Check in**: "Partner venues give you
    a card you can only get there, and they pay us for the date."
-8. **You → Your collection:** open the **Align pack**. Tap through all 12
+8. **The hand** (the fanned-cards button next to the sky, or in any chat) →
+   **Open packs**. It's one binder everywhere: packs, signs, talk cards,
+   places, events and the people you've traded. Open the **Align pack**. Tap through all 12
    cards like a real pack: talk cards, a place, events, energy, and the sign
    card last. It's numbered (№ 1,204 / 5,000). "Every season prints a fixed run, online and
    in real life. When it's gone it's gone." Show **Season** for the print runs

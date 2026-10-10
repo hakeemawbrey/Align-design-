@@ -4,6 +4,7 @@ import { SKY_PILL } from '../../data/sky'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP } from './fx'
+import { HandIcon } from '../talk/CardsButton'
 import { sfx } from '../../lib/sfx'
 
 /**
@@ -83,7 +84,7 @@ interface HeaderProps {
   onSky?: () => void
   /** open Notifications */
   onNotifs?: () => void
-  /** saved event cards: a button beside the sky pill while you hold any */
+  /** your hand: saved event cards plus packs to open; the widget beside the sky pill */
   saved?: number
   onSaved?: () => void
   /** energy for event cards, shown in the sky pill */
@@ -125,7 +126,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
       <NotifStar pulse={starPulse} onClick={onNotifs} />
       {/* Today's Sky pill */}
       <motion.button onClick={() => { sfx.tap(); onSky?.() }} aria-label="Open today's sky"
-        initial={false} animate={{ right: saved > 0 ? 80 : 24 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        initial={false} animate={{ right: 80 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         style={{
         position: 'absolute', left: 24, top: 108, height: 39, borderRadius: 999, overflow: 'hidden',
         background: 'linear-gradient(90deg, rgba(52,35,95,0.62), rgba(40,26,78,0.5))',
@@ -147,29 +148,24 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
             {energy}
           </span>
         )}
-        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: '#f2c75c', whiteSpace: 'nowrap' }}>{saved > 0 || energy != null ? '›' : <>TODAY’S SKY&nbsp; ›</>}</span>
+        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: '#f2c75c', whiteSpace: 'nowrap' }}>›</span>
       </motion.button>
-      {/* saved event cards, next to the sky */}
-      <AnimatePresence>
+      {/* your hand, next to the sky: saved events and packs, the way into your binder */}
+      <motion.button key="hand" aria-label={`Your hand: ${saved}`} onClick={() => { sfx.tap(); onSaved?.() }}
+        whileTap={{ scale: 0.92 }}
+        style={{
+          position: 'absolute', right: 24, top: 108, width: 48, height: 39, borderRadius: 999,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: 'linear-gradient(90deg, rgba(70,40,130,0.85), rgba(52,30,104,0.8))', border: '1px solid rgba(248,237,255,0.4)',
+        }}>
+        <HandIcon size={21} />
         {saved > 0 && (
-          <motion.button key="saved" aria-label={`Saved events: ${saved}`} onClick={() => { sfx.tap(); onSaved?.() }}
-            initial={{ opacity: 0, scale: 0.5, x: 20 }} animate={{ opacity: 1, scale: 1, x: 0 }} exit={{ opacity: 0, scale: 0.5, x: 20 }}
-            whileTap={{ scale: 0.92 }}
-            style={{
-              position: 'absolute', right: 24, top: 108, width: 48, height: 39, borderRadius: 999,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4,
-              background: 'linear-gradient(90deg, rgba(70,40,130,0.85), rgba(52,30,104,0.8))', border: '1px solid rgba(242,199,92,0.65)',
-              boxShadow: '0 0 14px rgba(242,199,92,0.35)',
-            }}>
-            <svg width="17" height="16" viewBox="0 0 18 16" fill="none">
-              <rect x="1.5" y="3" width="8" height="11" rx="1.6" transform="rotate(-12 5.5 8.5)" stroke="#c9b6f0" strokeWidth="1.1" fill="#2a1660" />
-              <rect x="6.5" y="1.5" width="8" height="11" rx="1.6" stroke="#f2c75c" strokeWidth="1.2" fill="#3a1d78" />
-              <path d="M10.5 4.5c.2 1.3.7 1.8 1.9 2-1.2.2-1.7.7-1.9 2-.2-1.3-.7-1.8-1.9-2 1.2-.2 1.7-.7 1.9-2Z" fill="#f2c75c" />
-            </svg>
-            <span className="mono" style={{ fontSize: 10.5, color: '#f2c75c' }}>{saved}</span>
-          </motion.button>
+          <motion.span key={saved} initial={{ scale: 1.6 }} animate={{ scale: 1 }} className="mono" style={{
+            position: 'absolute', top: -6, right: -4, minWidth: 17, height: 17, padding: '0 4px', borderRadius: 9, fontSize: 9.5, fontWeight: 700,
+            display: 'grid', placeItems: 'center', color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 8px rgba(248,237,255,0.45)',
+          }}>{saved}</motion.span>
         )}
-      </AnimatePresence>
+      </motion.button>
     </motion.div>
   )
 }

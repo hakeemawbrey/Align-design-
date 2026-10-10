@@ -12,6 +12,8 @@ import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
 import { resetDemo } from '../lib/demo'
 import { talk, useTalk } from '../lib/talk'
+import { binderNav } from '../lib/binderNav'
+import { useBinder } from '../lib/binder'
 import { TalkCardBack } from '../components/talk/TalkCardFace'
 
 const SUN = SIGNS[ME.sign]
@@ -61,7 +63,8 @@ function ResetRow() {
 /** G-05 · You — home. */
 export default function You({ go }: ScreenProps) {
   const { alignPlus, blockedSigns } = useSession()
-  const { packs, owned, signs, venues } = useTalk()
+  const { packs, owned, signs, venues, places } = useTalk()
+  const { traded } = useBinder()
   const packCount = packs.length + (talk.dailyPackAvailable() ? 1 : 0)
   const [card, setCard] = useState<CardSide | null>(null)
   const [tile, setTile] = useState<TileId>('sign')
@@ -101,7 +104,7 @@ export default function You({ go }: ScreenProps) {
           </div>
 
           {/* your collection: the way in to packs */}
-          <motion.button onClick={() => { sfx.tap(); go('collection') }}
+          <motion.button onClick={() => { sfx.tap(); binderNav.open(go, 'you') }}
             initial="rest" animate="rest" whileHover="hover" whileTap="tap"
             variants={{ rest: { y: 0 }, hover: { y: -2 }, tap: { scale: 0.98 } }}
             style={{
@@ -116,9 +119,9 @@ export default function You({ go }: ScreenProps) {
               </motion.div>
             ))}
             <div style={{ position: 'absolute', left: 116, right: 14, top: 16 }}>
-              <div className="serif italic" style={{ fontSize: 19, color: 'var(--label-1)' }}>Your collection</div>
+              <div className="serif italic" style={{ fontSize: 19, color: 'var(--label-1)' }}>Your binder</div>
               <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 3, whiteSpace: 'nowrap' }}>
-                {owned.length + signs.length + venues.length} cards · signs, talk, places
+                {owned.length + signs.length + venues.length + places.length + traded.size} cards · people, signs, talk, places
               </div>
             </div>
             <div className="mono" style={{

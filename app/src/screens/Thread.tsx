@@ -15,6 +15,7 @@ import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
 import HandSheet from '../components/talk/HandSheet'
+import { binderNav } from '../lib/binderNav'
 import { talkState, placeState } from '../components/talk/thread'
 import ChatPlaceCard from '../components/talk/ChatPlaceCard'
 import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
@@ -200,7 +201,7 @@ export default function Thread({ go }: ScreenProps) {
       </form>
 
       <AnimatePresence>
-        {hand && <HandSheet them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+        {hand && <HandSheet onBinder={() => binderNav.open(go, 'thread')} them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <TabBar active="matches" go={go} />
     </div>

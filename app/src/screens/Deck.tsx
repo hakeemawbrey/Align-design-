@@ -14,6 +14,8 @@ import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { api as backend, useWorld } from '../api'
 import { SavedSheet } from '../components/deck/SavedEvents'
+import { useTalk } from '../lib/talk'
+import { binderNav } from '../lib/binderNav'
 import { session, useSession, energize, EVENT_COST } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
@@ -250,6 +252,7 @@ export default function Deck({ go }: ScreenProps) {
   const [upsell, setUpsell] = useState(false)
   const [savedOpen, setSavedOpen] = useState(false)
   const { savedEvents, energy } = useSession()
+  const { packs } = useTalk()
 
   const phaseRef = useRef<Phase>('idle')
   const streakRef = useRef(0)
@@ -567,7 +570,7 @@ export default function Deck({ go }: ScreenProps) {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`, transition: 'background 0.8s',
       }} />
 
-      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} energy={energy} saved={savedEvents.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} energy={energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
 
       {/* peek header */}
       <AnimatePresence>
@@ -683,7 +686,7 @@ export default function Deck({ go }: ScreenProps) {
       </AnimatePresence>
 
       <AnimatePresence>
-        {savedOpen && <SavedSheet saved={savedEvents} onPlay={playSaved} onClose={() => setSavedOpen(false)} />}
+        {savedOpen && <SavedSheet saved={savedEvents} packs={packs} onPlay={playSaved} onBinder={() => binderNav.open(go, 'deck')} onClose={() => setSavedOpen(false)} />}
       </AnimatePresence>
       <TabBar active="deck" go={go} />
 
