@@ -7,8 +7,8 @@ import {
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { COMETS, PEEKS_PER_NIGHT, TONIGHT, type Profile } from '../data/profiles'
-import { buildSeq, peopleLeft, EVENTS, FREE_PEOPLE, PEOPLE_PER_DRAW, type Slot } from '../data/draws'
+import { COMETS, PEEKS_PER_NIGHT, PEEKS_PER_WEEK_PLUS, TONIGHT, type Profile } from '../data/profiles'
+import { buildSeq, peopleLeft, EVENTS, FREE_PEOPLE, PEOPLE_PER_DRAW, PLUS_DRAWS, PLUS_PEOPLE, type Slot } from '../data/draws'
 import EventCard from '../components/deck/EventCard'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
@@ -17,7 +17,7 @@ import { SavedSheet } from '../components/deck/SavedEvents'
 import { session, useSession } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
-import { DeckHeader, Counter, Unlimited, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
+import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, CARD_CY, ELEMENT_SKY, starBurst, resetBurst, pronoun } from '../components/deck/fx'
 
 type Phase = 'idle' | 'charging' | 'open' | 'sealing'
@@ -227,12 +227,15 @@ export default function Deck({ go }: ScreenProps) {
   const [people] = useState(dealt)
   // resume where the presenter left the deck (session survives tab hops; reset on demo restart)
   const [index, setIndex] = useState(() => session.get().deckIndex)
-  const [peeks, setPeeks] = useState(() => Math.max(0, PEEKS_PER_NIGHT + session.get().bonusPeeks - session.get().peeksUsed))
   const { alignPlus, inserts } = useSession()
+  const peekAllowance = alignPlus ? PEEKS_PER_WEEK_PLUS : PEEKS_PER_NIGHT
+  const [peeks, setPeeks] = useState(() => Math.max(0, peekAllowance + session.get().bonusPeeks - session.get().peeksUsed))
+  // upgrading mid-deck tops the allowance up
+  useEffect(() => { setPeeks(Math.max(0, peekAllowance + session.get().bonusPeeks - session.get().peeksUsed)) }, [peekAllowance])
   const seq = useMemo(() => buildSeq(people, alignPlus, inserts), [people, alignPlus, inserts])
   const seqRef = useRef(seq)
   seqRef.current = seq
-  const drawsOf = alignPlus ? null : Math.ceil(Math.min(people.length, FREE_PEOPLE) / PEOPLE_PER_DRAW)
+  const drawsOf = alignPlus ? PLUS_DRAWS : Math.ceil(Math.min(people.length, FREE_PEOPLE) / PEOPLE_PER_DRAW)
   const [phase, setPhaseState] = useState<Phase>('idle')
   const [secs, setSecs] = useState(PEEK_SECONDS)
   const [expanded, setExpanded] = useState(false)
@@ -319,10 +322,8 @@ export default function Deck({ go }: ScreenProps) {
   const openPeek = () => {
     if (phaseRef.current !== 'charging') return
     setPhase('open')
-    if (!alignPlus) {
-      setPeeks((n) => n - 1)
-      session.patch({ peeksUsed: session.get().peeksUsed + 1 })
-    }
+    setPeeks((n) => n - 1)
+    session.patch({ peeksUsed: session.get().peeksUsed + 1 })
     setSecs(PEEK_SECONDS)
     sfx.sparkle()
     holdP.set(1)
@@ -339,9 +340,10 @@ export default function Deck({ go }: ScreenProps) {
 
   const beginHold = () => {
     if (phaseRef.current !== 'idle' || busy || expanded || !profile) return
-    if (peeks <= 0 && !alignPlus) {
+    if (peeks <= 0) {
       sfx.deny()
       topRef.current?.shake()
+      if (alignPlus) { showToast('That’s your 33 peeks this week · more on Monday', 1800); return }
       if (!session.get().peekUpsellSeen) { session.patch({ peekUpsellSeen: true }); later(() => setUpsell(true), 380); return }
       showToast('No peeks left tonight · more at 11:11', 1600)
       return
@@ -382,12 +384,9 @@ export default function Deck({ go }: ScreenProps) {
         later(() => showToast(`${nameOf(back)} is back for a second look`, 2200), 250)
       } else later(() => showToast('Nobody to bring back yet — you kept everyone', 2200), 250)
     } else if (ev.event.id === 'moon-peek') {
-      if (alignPlus) later(() => showToast('Peeks are already unlimited · Align+', 2000), 250)
-      else {
-        session.patch({ bonusPeeks: s.bonusPeeks + 1 })
-        setPeeks((n) => n + 1)
-        later(() => showToast('+1 peek tonight', 1800), 250)
-      }
+      session.patch({ bonusPeeks: s.bonusPeeks + 1 })
+      setPeeks((n) => n + 1)
+      later(() => showToast('+1 peek', 1800), 250)
     } else if (ev.event.id === 'comet') {
       const dealtIds = new Set(s.inserts.flatMap((i) => i.ids))
       const c = COMETS.find((x) => !dealtIds.has(x.id) && !s.blockedSigns.includes(x.sign))
@@ -542,7 +541,7 @@ export default function Deck({ go }: ScreenProps) {
   const peekOpen = phase === 'open'
   const peekUI = phase === 'open' || phase === 'sealing'
 
-  let right: React.ReactNode = alignPlus ? <Unlimited /> : <Counter left={cardsLeft} total={FREE_PEOPLE} />
+  let right: React.ReactNode = <Counter left={cardsLeft} total={alignPlus ? PLUS_PEOPLE : FREE_PEOPLE} plus={alignPlus} />
   let rightKey = 'counter'
   if (status) { right = <StatusText>{status}</StatusText>; rightKey = status }
 
@@ -662,7 +661,7 @@ export default function Deck({ go }: ScreenProps) {
             <motion.div key="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               style={{ position: 'absolute', top: 726, left: 0, right: 0, textAlign: 'center', fontSize: 12.5, color: 'var(--label-2)' }}>
               {slot?.kind === 'event' ? <>Every sixth card is an event&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>right to play</span>&nbsp; · &nbsp;left to save it</>
-                : alignPlus ? <>Hold the card to peek&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>∞</span></>
+                : alignPlus ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left this week&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>Align+</span></>
                 : peeks > 0 ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left</> : <>No peeks left tonight&nbsp; · &nbsp;more at 11:11</>}
             </motion.div>
           )}
@@ -673,7 +672,7 @@ export default function Deck({ go }: ScreenProps) {
           <motion.div key="peekcap" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
             style={{ position: 'absolute', top: 664, left: 0, right: 0, textAlign: 'center', pointerEvents: 'none' }}>
             <div className="serif italic" style={{ fontSize: 18, color: 'var(--label-2)' }}>Let go and the photo closes</div>
-            <div style={{ marginTop: 8, fontSize: 13, color: 'var(--label-2)' }}>{alignPlus ? <>Unlimited peeks&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>Align+ ✦</span></> : <>{peeks} {peeks === 1 ? 'peek' : 'peeks'} left tonight</>}</div>
+            <div style={{ marginTop: 8, fontSize: 13, color: 'var(--label-2)' }}>{alignPlus ? <>{peeks} {peeks === 1 ? 'peek' : 'peeks'} left this week&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>Align+ ✦</span></> : <>{peeks} {peeks === 1 ? 'peek' : 'peeks'} left tonight</>}</div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -763,10 +762,10 @@ function PeekUpsell({ onClose, onUpgrade }: { onClose: () => void; onUpgrade: ()
         <div className="mono" style={{ marginTop: 14, fontSize: 10, letterSpacing: '0.24em', color: 'var(--align)' }}>OUT OF PEEKS TONIGHT</div>
         <div className="h-display" style={{ fontSize: 28, marginTop: 8 }}>Keep looking with Align+.</div>
         <div className="serif" style={{ fontSize: 16, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 8 }}>
-          Free nights come with three peeks. Align+ gives you unlimited peeks and unlimited cards.
+          Free nights come with three peeks. Align+ gives you 33 peeks a week and 45 cards a night.
         </div>
         <button className="chrome-cta" style={{ marginTop: 22 }} onClick={() => { sfx.tap(); onUpgrade() }}>
-          Start seven days free <span className="spark">✦</span>
+          Start 3 days free <span className="spark">✦</span>
         </button>
         <button onClick={() => { sfx.tap(); onClose() }} style={{ display: 'block', margin: '14px auto 0', fontSize: 14, color: 'var(--label-2)' }}>
           Not now — 3 more at 11:11

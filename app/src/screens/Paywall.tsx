@@ -10,22 +10,22 @@ import { ConfettiCanvas, useConfetti } from '../components/reveal/useConfetti'
 import { session } from '../lib/session'
 import { sfx } from '../lib/sfx'
 
-type PlanId = 'weekly' | 'yearly' | 'monthly'
+type PlanId = 'yearly' | 'monthly'
 type Phase = 'offer' | 'flare' | 'active'
 
 const PLANS: { id: PlanId; label: string; price: string; per: string; note: string; then: string; word: string }[] = [
-  { id: 'weekly', label: 'Weekly', price: '$5.55', per: '/wk', note: 'no commitment', then: 'then $5.55 / wk', word: 'a week' },
-  { id: 'yearly', label: 'Yearly', price: '$88.88', per: '/yr', note: 'save $84 · best', then: 'then $88.88 / yr', word: 'a year' },
-  { id: 'monthly', label: 'Monthly', price: '$14.44', per: '/mo', note: 'cancel any time', then: 'then $14.44 / mo', word: 'a month' },
+  // regular prices (the pricing sheet); the launch promo is offered once, at the end of onboarding
+  { id: 'yearly', label: 'Yearly', price: '$122.22', per: '/yr', note: 'save 56% · best', then: 'then $122.22 / yr', word: 'a year' },
+  { id: 'monthly', label: 'Monthly', price: '$23.33', per: '/mo', note: 'cancel any time', then: 'then $23.33 / mo', word: 'a month' },
 ]
 
 const RAINBOW = ['#e8463c', '#ef8f56', '#f2d45c', '#7fd36a', '#4fb3ef', '#a77de9']
 
 const BENEFITS = [
-  { t: 'Unlimited Peeks', s: 'hold any card, as long as you like' },
-  { t: 'Unlimited cards, every night', s: 'free stops at fifteen' },
-  { t: 'Priority in every queue', s: 'your card lands on top of theirs' },
-  { t: 'Block signs you never want to see', s: 'gone from every deck, for good' },
+  { t: '45 cards a night', s: 'free stops at fifteen · next deal at 11:11' },
+  { t: '33 peeks a week', s: 'free is three a day' },
+  { t: '3 packs a day + rare card skins', s: 'free is one pack' },
+  { t: 'Block any sign · private Align events', s: 'gone from every deck, for good' },
 ]
 
 /** portal geometry */
@@ -129,7 +129,7 @@ export default function Paywall({ go }: ScreenProps) {
               Three people are already<br />in your orbit.
             </motion.h1>
             <motion.p {...fade(0.26)} className="serif" style={{ position: 'absolute', top: 196, left: 36, right: 36, textAlign: 'center', fontSize: 18, lineHeight: 1.4, color: 'var(--label-2)' }}>
-              Free is fifteen cards a night. Align+ never runs out, with full synastry and priority in every queue.
+              Free is fifteen cards a night. Align+ deals you forty-five.
             </motion.p>
 
             {/* plans */}
@@ -146,7 +146,7 @@ export default function Paywall({ go }: ScreenProps) {
                     whileTap={{ scale: 0.94 }}
                     onClick={() => pick(pl.id)}
                     style={{
-                      position: 'relative', width: 102, height: 98, borderRadius: 14,
+                      position: 'relative', width: 140, height: 98, borderRadius: 14,
                       background: sel ? 'linear-gradient(180deg, #33245f 0%, #241848 100%)' : 'rgba(30,18,64,0.72)',
                       border: '1px solid rgba(179,166,196,0.22)',
                       transition: 'background .25s',
@@ -167,7 +167,7 @@ export default function Paywall({ go }: ScreenProps) {
                         background: 'linear-gradient(90deg, #c99a3c 0%, #f2c75c 25%, #fff1c4 50%, #f2c75c 75%, #c99a3c 100%)', backgroundSize: '200% 100%', animation: 'foil-sweep 3s linear infinite',
                         color: '#3a2c10', fontSize: 7.5, fontWeight: 700, letterSpacing: '0.14em',
                         boxShadow: '0 0 12px rgba(242,199,92,0.5)',
-                      }}>7 DAYS FREE</div>
+                      }}>3 DAYS FREE</div>
                     )}
                     <span className="mono" style={{ fontSize: 8, letterSpacing: '0.2em', textTransform: 'uppercase', color: sel ? '#f2c75c' : 'var(--label-3)' }}>{pl.label}</span>
                     <span className="serif" style={{ fontSize: 23, marginTop: 6, lineHeight: 1, color: 'var(--label-1)' }}>{pl.price}</span>
@@ -179,7 +179,7 @@ export default function Paywall({ go }: ScreenProps) {
             </div>
 
             <motion.div {...fade(0.75)} className="mono" style={{ position: 'absolute', top: 556, left: 0, right: 0, textAlign: 'center', fontSize: 7.5, letterSpacing: '0.1em', color: 'var(--label-3)' }}>
-              SEVEN DAYS FREE · CANCEL ANY TIME · YOUR CHART STAYS YOURS
+              3 DAYS FREE · CANCEL ANY TIME · YOUR CHART STAYS YOURS
             </motion.div>
 
             {/* rainbow progress */}
@@ -204,7 +204,7 @@ export default function Paywall({ go }: ScreenProps) {
               <motion.span aria-hidden
                 animate={{ x: [-200, 360] }} transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 1.6, ease: 'easeInOut', delay: 1.6 }}
                 style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: 70, background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.85), transparent)', pointerEvents: 'none' }} />
-              Start seven days free <span className="spark">✦</span>
+              Start 3 days free <span className="spark">✦</span>
             </motion.button>
 
             <motion.button {...fade(0.95)} onClick={leave} whileHover={{ color: '#efe6d6' }}
@@ -232,7 +232,7 @@ export default function Paywall({ go }: ScreenProps) {
               The whole sky is yours.
             </motion.h1>
             <motion.p {...fade(0.4)} className="serif" style={{ position: 'absolute', top: 362, left: 30, right: 30, textAlign: 'center', fontSize: 18, color: 'var(--label-2)' }}>
-              Seven days on us. Then {p.price} {p.word}.
+              Three days on us. Then {p.price} {p.word}.
             </motion.p>
 
             <motion.div {...fade(0.5)} style={{
@@ -261,8 +261,8 @@ export default function Paywall({ go }: ScreenProps) {
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 {[
                   ['Today', 'Align+ opens'],
-                  ['This week', 'we nudge you'],
-                  ['In 7 days', `${p.price} renews`],
+                  ['Tomorrow', 'we remind you'],
+                  ['In 3 days', `${p.price} renews`],
                 ].map(([h, s], i) => (
                   <div key={h} style={{ width: 92, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <motion.span

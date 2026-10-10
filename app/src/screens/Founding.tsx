@@ -14,18 +14,19 @@ import { sfx } from '../lib/sfx'
 type PlanId = 'founding' | 'monthly'
 type Phase = 'offer' | 'flare' | 'claimed'
 
-const PLANS: { id: PlanId; name: string; price: string; l1: string; l2: string }[] = [
-  { id: 'founding', name: 'Founding', price: '$10', l1: 'once, forever', l2: 'Houston only' },
-  { id: 'monthly', name: 'Monthly', price: '$6.99', l1: 'per month', l2: 'Cancel anytime' },
+/** Launch prices from the pricing sheet: the onboarding promo, with the regular price struck through. */
+const PLANS: { id: PlanId; name: string; price: string; l1: string; was: string }[] = [
+  { id: 'founding', name: 'Yearly', price: '$88.88', l1: 'a year · $7.41/mo', was: '$122.22' },
+  { id: 'monthly', name: 'Monthly', price: '$14.44', l1: 'a month', was: '$23.33' },
 ]
 
 const STEPS = [
   { h: 'Today', s: 'Full access to Align+, nothing charged' },
-  { h: 'This week', s: 'Unlimited Peeks while you try it' },
-  { h: 'In 7 days', s: 'You are charged unless you cancel before' },
+  { h: 'Tomorrow', s: 'We remind you before your trial ends' },
+  { h: 'In 3 days', s: 'You are charged unless you cancel before' },
 ]
 
-const PERKS = ['Unlimited\nPeeks', 'Priority in\nevery queue', 'Signs you skip,\ngone']
+const PERKS = ['45 cards\na night', '33 peeks\na week', '3 packs\na day']
 
 /** portal geometry */
 const PW = 100
@@ -133,7 +134,7 @@ export default function Founding({ go }: ScreenProps) {
               Stop rationing the stars.
             </motion.h1>
             <motion.p {...fade(0.3)} style={{ position: 'absolute', top: 294, left: 30, right: 30, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
-              Unlimited swipes and Peeks, priority in every queue, and the signs you never want to see again, gone.
+              45 cards a night, 33 peeks a week, three packs a day, and any sign you never want to see again, gone.
             </motion.p>
 
             {/* timeline */}
@@ -186,13 +187,13 @@ export default function Founding({ go }: ScreenProps) {
                           position: 'absolute', top: -13, left: 12, height: 24, padding: '0 10px', borderRadius: 999,
                           display: 'grid', placeItems: 'center', background: '#e6f0d6', color: '#1e1240',
                           fontSize: 11.5, fontWeight: 600, boxShadow: '0 0 14px rgba(127,216,176,0.35)',
-                        }}>7 days free</motion.div>
+                        }}>3 days free</motion.div>
                     )}
                     <div style={{ opacity: sel ? 1 : 0.55, transition: 'opacity .25s' }}>
                       <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--label-1)' }}>{pl.name}</div>
                       <div className="serif italic" style={{ fontSize: 25, marginTop: 4, lineHeight: 1.1, color: 'var(--label-1)' }}>{pl.price}</div>
                       <div style={{ fontSize: 12.5, marginTop: 6, color: 'var(--label-1)' }}>{pl.l1}</div>
-                      <div style={{ fontSize: 11, marginTop: 5, color: 'var(--label-2)' }}>{pl.l2}</div>
+                      <div style={{ fontSize: 11, marginTop: 5, color: 'var(--label-2)' }}>Regular <s>{pl.was}</s></div>
                     </div>
                   </motion.button>
                 )
@@ -213,12 +214,12 @@ export default function Founding({ go }: ScreenProps) {
               <AnimatePresence mode="wait" initial={false}>
                 <motion.span key={plan} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.16 }}
                   style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
-                  {founding ? 'Claim founding member' : 'Start seven days free'} <span className="spark">✦</span>
+                  {founding ? 'Lock in $88.88 a year' : 'Start 3 days free'} <span className="spark">✦</span>
                 </motion.span>
               </AnimatePresence>
             </motion.button>
             <motion.div {...fade(1.1)} style={{ position: 'absolute', top: 796, left: 0, right: 0, textAlign: 'center', fontSize: 11.5, color: 'var(--label-3)' }}>
-              {founding ? '7 days free, then $10 once.' : '7 days free, then $6.99 a month.'} Restore purchases · Terms
+              {founding ? '3 days free, then $88.88 a year.' : '3 days free, then $14.44 a month.'} Restore purchases · Terms
             </motion.div>
           </motion.div>
         )}
@@ -248,8 +249,8 @@ export default function Founding({ go }: ScreenProps) {
             </motion.h1>
             <motion.p {...fade(1.1)} style={{ position: 'absolute', top: 500, left: 34, right: 34, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
               {founding
-                ? 'One of Houston’s first. Seven days free, then $10 once — and Align+ is yours for good.'
-                : 'Seven days free, then $6.99 a month. Cancel any time — your chart stays yours.'}
+                ? 'Three days free, then $88.88 a year — the launch price, locked for as long as you stay.'
+                : 'Three days free, then $14.44 a month. Cancel any time — your chart stays yours.'}
             </motion.p>
 
             <div style={{ position: 'absolute', top: 584, left: 24, right: 24, display: 'flex', justifyContent: 'space-between' }}>
@@ -269,7 +270,7 @@ export default function Founding({ go }: ScreenProps) {
               Deal my first deck <span className="spark">✦</span>
             </motion.button>
             <motion.div {...fade(1.9)} style={{ position: 'absolute', top: 788, left: 0, right: 0, textAlign: 'center', fontSize: 11.5, color: 'var(--label-3)' }}>
-              Your founding price is locked forever · Your chart stays yours
+              Your launch price is locked while you stay · Your chart stays yours
             </motion.div>
           </motion.div>
         )}

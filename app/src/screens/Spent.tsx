@@ -75,7 +75,7 @@ export default function Spent({ go }: ScreenProps) {
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }}
         className="serif" style={{ position: 'absolute', top: 542, left: 40, right: 40, textAlign: 'center', fontSize: 16.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
-        Fifteen people and three events, gone in one sitting. A new deal lands at 11:11, or keep drawing with Align+.
+        Fifteen people and three events, gone in one sitting. A new deal lands at 11:11. Align+ deals you 45 a night.
       </motion.p>
 
       <motion.button className="chrome-cta"
@@ -83,7 +83,7 @@ export default function Spent({ go }: ScreenProps) {
         whileTap={{ scale: 0.96 }} whileHover={{ scale: 1.015 }}
         onClick={() => { sfx.tap(); go('paywall') }}
         style={{ position: 'absolute', left: 38, top: 660, fontSize: 20 }}>
-        Keep going with Align+ <span className="spark">✦</span>
+        45 a night with Align+ <span className="spark">✦</span>
       </motion.button>
       <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
         onClick={() => { sfx.tap(); go('matches') }}

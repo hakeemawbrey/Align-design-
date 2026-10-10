@@ -11,7 +11,8 @@ import CardBack from '../components/deck/CardBack'
 import EventCard from '../components/deck/EventCard'
 import { EVENTS, EVENT_ORDER } from '../data/draws'
 import ProfileCard from '../components/deck/ProfileCard'
-import { DeckHeader, Counter, Unlimited, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
+import { DeckHeader, Counter, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
+import { PLUS_PEOPLE } from '../data/draws'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, ELEMENT_SKY } from '../components/deck/fx'
 
 const SW = CARD_W * CARD_SCALE
@@ -80,7 +81,7 @@ export default function Dealing({ go }: ScreenProps) {
 
       <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')}
         title={settled ? 'Tonight’s deck' : 'Dealing your deck'}
-        right={settled ? (dealSession.get().alignPlus ? <Unlimited /> : <Counter left={DECK_TOTAL} total={DECK_TOTAL} />) : null}
+        right={settled ? (dealSession.get().alignPlus ? <Counter left={PLUS_PEOPLE} total={PLUS_PEOPLE} plus /> : <Counter left={DECK_TOTAL} total={DECK_TOTAL} />) : null}
         rightKey={settled ? 'counter' : 'none'}
       />
 

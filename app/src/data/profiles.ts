@@ -252,3 +252,5 @@ export function cardAt(deal: Profile[], i: number, unlimited: boolean): Profile 
 
 export const DECK_TOTAL = 15
 export const PEEKS_PER_NIGHT = 3
+/** Align+ peeks: a weekly allowance, not unlimited (no pay-to-win) */
+export const PEEKS_PER_WEEK_PLUS = 33

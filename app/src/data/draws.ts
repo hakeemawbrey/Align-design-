@@ -2,12 +2,15 @@ import { BONUS, COMETS, TONIGHT, type Profile } from './profiles'
 
 /**
  * How a night of Align is dealt: draws of six — five people, then an event.
- * Free: three draws (15 people + 3 events = 18 cards). Align+: the draws keep coming.
+ * Free: three draws (15 people + 3 events = 18 cards). Align+: nine draws (45 people). Then 11:11.
  */
 export const PEOPLE_PER_DRAW = 5
 export const DRAW_SIZE = PEOPLE_PER_DRAW + 1
 export const FREE_DRAWS = 3
 export const FREE_PEOPLE = PEOPLE_PER_DRAW * FREE_DRAWS
+/** Align+: nine draws a night (45 people), then the next deal lands at 11:11 */
+export const PLUS_DRAWS = 9
+export const PLUS_PEOPLE = PEOPLE_PER_DRAW * PLUS_DRAWS
 
 export type EventId = 'second-look' | 'moon-peek' | 'mulligan' | 'comet' | 'spotlight'
 
@@ -115,7 +118,7 @@ export function buildSeq(people: Profile[], unlimited: boolean, inserts: Insert[
   const seq: Slot[] = []
   const free = people.slice(0, FREE_PEOPLE)
   const cycle = people.filter((p) => !p.alignsBack)
-  const draws = unlimited ? 40 : Math.ceil(free.length / PEOPLE_PER_DRAW)
+  const draws = unlimited ? PLUS_DRAWS : Math.ceil(free.length / PEOPLE_PER_DRAW)
   for (let d = 0; d < draws; d++) {
     for (let k = 0; k < PEOPLE_PER_DRAW; k++) {
       const n = d * PEOPLE_PER_DRAW + k
@@ -148,6 +151,6 @@ export function buildSeq(people: Profile[], unlimited: boolean, inserts: Insert[
   return seq
 }
 
-/** Base (not redrawn) people still to come from index i — the "11 / 15" counter. */
+/** Dealt (not redrawn) people still to come from index i — the "11 / 15" counter (45 with Align+). */
 export const peopleLeft = (seq: Slot[], i: number) =>
-  seq.slice(i).filter((s) => s.kind === 'person' && !s.redraw && !s.profile.deal).length
+  seq.slice(i).filter((s) => s.kind === 'person' && !s.redraw && !s.profile.real).length
