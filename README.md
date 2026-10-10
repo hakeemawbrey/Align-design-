@@ -212,8 +212,9 @@ rarity). Swipe right or tap to play, swipe left to pass. Free nights get the fir
 Founders in the deck (Rio, Noor, Ivy) have holo borders and a *Founder №* badge.
 The first time a free user runs out of peeks, an Align+ offer slides up.
 
-Don't want to play an event yet? Swipe it **left** (Back to deck) and it
-comes around again three cards later.
+Don't want to play an event yet? Swipe it **left** (Save) and it goes to your
+saved cards: the gold card-stack button by the draw tracker. Tap it and play any
+saved event whenever you like; it takes effect right away.
 
 ## Free vs Align+
 

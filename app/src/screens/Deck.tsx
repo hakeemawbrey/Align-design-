@@ -8,11 +8,12 @@ import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import { COMETS, PEEKS_PER_NIGHT, TONIGHT, type Profile } from '../data/profiles'
-import { buildSeq, peopleLeft, FREE_PEOPLE, PEOPLE_PER_DRAW, type Slot } from '../data/draws'
+import { buildSeq, peopleLeft, EVENTS, FREE_PEOPLE, PEOPLE_PER_DRAW, type Slot } from '../data/draws'
 import EventCard from '../components/deck/EventCard'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { api as backend, useWorld } from '../api'
+import { SavedButton, SavedSheet } from '../components/deck/SavedEvents'
 import { session, useSession } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
@@ -193,7 +194,7 @@ const TopCard = forwardRef<TopHandle, TopProps>(function TopCard(p, ref) {
             position: 'absolute', right: 22, top: 84, rotate: 14, opacity: releaseO, scale: releaseStampScale, pointerEvents: 'none',
             padding: '4px 14px', borderRadius: 12, border: '2.5px solid #b3a6c4', background: 'rgba(11,6,32,0.45)',
           }}>
-            <span className="mono" style={{ fontSize: p.slot.kind === 'event' ? 19 : 26, letterSpacing: '0.16em', color: '#d8cfe6', fontWeight: 700, whiteSpace: 'nowrap' }}>{p.slot.kind === 'event' ? 'BACK TO DECK' : 'RELEASE'}</span>
+            <span className="mono" style={{ fontSize: p.slot.kind === 'event' ? 19 : 26, letterSpacing: '0.16em', color: '#d8cfe6', fontWeight: 700, whiteSpace: 'nowrap' }}>{p.slot.kind === 'event' ? 'SAVE FOR LATER' : 'RELEASE'}</span>
           </motion.div>
         </motion.div>
       </motion.div>
@@ -216,9 +217,6 @@ function UnderCard({ slot, drawsOf, dragX }: { slot: Slot; drawsOf: number | nul
     </motion.div>
   )
 }
-
-/** how many cards later an event you put back comes around again */
-const BACK_IN = 3
 
 interface Pop { id: number; kind: 'align' | 'release' | 'deny'; streak: number }
 
@@ -247,6 +245,8 @@ export default function Deck({ go }: ScreenProps) {
   const [busy, setBusy] = useState(false)
   const [matching, setMatching] = useState(false)
   const [upsell, setUpsell] = useState(false)
+  const [savedOpen, setSavedOpen] = useState(false)
+  const { savedEvents } = useSession()
 
   const phaseRef = useRef<Phase>('idle')
   const streakRef = useRef(0)
@@ -368,7 +368,8 @@ export default function Deck({ go }: ScreenProps) {
   const nameOf = (id: string) => [...TONIGHT, ...COMETS].find((x) => x.id === id)?.name ?? 'They'
 
   /** play the event card at the current index */
-  const playEvent = (ev: Extract<Slot, { kind: 'event' }>) => {
+  /** `at`: where cards it deals go — after the top card when swiped, in front of it when played from your hand */
+  const playEvent = (ev: Pick<Extract<Slot, { kind: 'event' }>, 'event'>, at = index) => {
     const s = session.get()
     const reinserted = new Set(s.inserts.flatMap((i) => i.ids))
     const released = [...new Set(s.released)].filter((id) => !reinserted.has(id))
@@ -377,7 +378,7 @@ export default function Deck({ go }: ScreenProps) {
     if (ev.event.id === 'second-look') {
       const back = released[released.length - 1]
       if (back) {
-        session.patch({ inserts: [...s.inserts, { after: index, ids: [back] }] })
+        session.patch({ inserts: [...s.inserts, { after: at, ids: [back] }] })
         later(() => showToast(`${nameOf(back)} is back for a second look`, 2200), 250)
       } else later(() => showToast('Nobody to bring back yet — you kept everyone', 2200), 250)
     } else if (ev.event.id === 'moon-peek') {
@@ -391,7 +392,7 @@ export default function Deck({ go }: ScreenProps) {
       const dealtIds = new Set(s.inserts.flatMap((i) => i.ids))
       const c = COMETS.find((x) => !dealtIds.has(x.id) && !s.blockedSigns.includes(x.sign))
       if (c) {
-        session.patch({ inserts: [...s.inserts, { after: index, ids: [c.id] }] })
+        session.patch({ inserts: [...s.inserts, { after: at, ids: [c.id] }] })
         later(() => showToast(`A comet crosses: ${c.name}, ${c.age}`, 2200), 250)
       } else later(() => showToast('The comet passed quietly tonight', 1800), 250)
     } else if (ev.event.id === 'spotlight') {
@@ -402,10 +403,21 @@ export default function Deck({ go }: ScreenProps) {
       const ids = pool.slice(0, PEOPLE_PER_DRAW)
       if (ids.length) {
         sfx.match()
-        session.patch({ inserts: [...s.inserts, { after: index, ids }] })
+        session.patch({ inserts: [...s.inserts, { after: at, ids }] })
         later(() => showToast(`Mulligan · ${ids.length} ${ids.length === 1 ? 'card' : 'cards'} shuffled back in`, 2200), 250)
       } else later(() => showToast('Clean hand — nothing to redraw', 2000), 250)
     }
+  }
+
+  /** play a saved event now: whatever it deals lands in front of the top card */
+  const playSaved = (i: number) => {
+    const id = savedEvents[i]
+    if (!id) return
+    const left = [...savedEvents]
+    left.splice(i, 1)
+    session.patch({ savedEvents: left })
+    setSavedOpen(false)
+    later(() => playEvent({ event: EVENTS[id] }, index - 1), 320)
   }
 
   const onFlyStart = (dir: Dir) => {
@@ -414,14 +426,10 @@ export default function Deck({ go }: ScreenProps) {
       session.patch({ deckIndex: index + 1 })
       if (dir > 0) playEvent(slot)
       else {
-        // back to the deck: it comes around again a few cards from now
-        const s = session.get()
-        const live = seqRef.current
-        const after = Math.min(index + BACK_IN, live.length - 1)
-        session.patch({ inserts: [...s.inserts, { after, ids: [`event:${slot.event.id}`] }] })
+        // saved for later: it goes to your hand, playable any time from the deck screen
+        session.patch({ savedEvents: [...session.get().savedEvents, slot.event.id] })
         sfx.flip()
-        const gap = after - index
-        later(() => showToast(gap > 0 ? `${slot.event.title} is back in the deck · it returns in ${gap} ${gap === 1 ? 'card' : 'cards'}` : `${slot.event.title} is back in the deck`, 2200), 200)
+        later(() => showToast(`${slot.event.title} saved · tap your saved cards to play it`, 2200), 200)
       }
       return
     }
@@ -636,6 +644,7 @@ export default function Deck({ go }: ScreenProps) {
           event={slot?.kind === 'event'}
         />
         {slot && <DrawTracker slot={slot} drawsOf={drawsOf} />}
+        <div style={{ pointerEvents: 'auto' }}><SavedButton count={savedEvents.length} onClick={() => setSavedOpen(true)} /></div>
         <AnimatePresence mode="wait" initial={false}>
           {toast ? (
             <motion.div key={toast.id}
@@ -670,6 +679,9 @@ export default function Deck({ go }: ScreenProps) {
         )}
       </AnimatePresence>
 
+      <AnimatePresence>
+        {savedOpen && <SavedSheet saved={savedEvents} onPlay={playSaved} onClose={() => setSavedOpen(false)} />}
+      </AnimatePresence>
       <TabBar active="deck" go={go} />
 
       <canvas ref={canvasRef} width={390} height={844}

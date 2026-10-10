@@ -1,4 +1,5 @@
 import type { SignId } from '../data/signs'
+import type { EventId } from '../data/draws'
 import { useSyncExternalStore } from 'react'
 import { load, remove, save } from './persist'
 
@@ -57,6 +58,8 @@ export interface SessionState {
   obStep: number
   /** the real person the Thread screen is chatting with */
   threadWith: string
+  /** event cards saved for later (swiped left), played from the deck screen */
+  savedEvents: EventId[]
 }
 
 const initial = (): SessionState => ({
@@ -78,6 +81,7 @@ const initial = (): SessionState => ({
   peekUpsellSeen: false,
   obStep: 0,
   threadWith: '',
+  savedEvents: [],
 })
 
 const KEY = 'session:v1'

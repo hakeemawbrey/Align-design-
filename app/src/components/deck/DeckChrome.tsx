@@ -193,7 +193,7 @@ export function SwipeLabels({ alignStyle, releaseStyle, event = false }: { align
   return (
     <>
       <motion.div className="mono" style={{ position: 'absolute', left: 28, top: 678, fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-2)', transformOrigin: 'left center', ...releaseStyle }}>
-        ←&nbsp;&nbsp; {event ? 'BACK TO DECK' : 'RELEASE'}
+        ←&nbsp;&nbsp; {event ? 'SAVE' : 'RELEASE'}
       </motion.div>
       <motion.div className="mono" style={{ position: 'absolute', right: 28, top: 678, fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-2)', transformOrigin: 'right center', ...alignStyle }}>
         {event ? 'PLAY' : 'ALIGN'}&nbsp;&nbsp; →
