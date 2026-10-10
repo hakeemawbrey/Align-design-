@@ -1,21 +1,25 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { PACKS, TALK_CARDS, TOPICS, cardById, cardOfTheDay, type TalkCard, type TalkTopic } from '../../data/talkCards'
+import { packInfo, type Pull } from '../../lib/talk'
 import { talk, useTalk } from '../../lib/talk'
 import { useSession } from '../../lib/session'
 import { sfx } from '../../lib/sfx'
 import TalkCardFace, { TalkCardBack } from './TalkCardFace'
 import PackOpen from './PackOpen'
+import { PLACES, WHENS } from '../../data/places'
 
-type Tab = 'today' | 'hand' | 'packs'
+type Tab = 'today' | 'hand' | 'places' | 'packs'
 
 /**
  * Your talk cards, opened from a chat: today's free card, the cards you hold
  * (tap one to play it to your match), and packs to open.
  */
-export default function HandSheet({ them, onPlay, onClose, onUpgrade }: {
+export default function HandSheet({ them, onPlay, onPlace, onClose, onUpgrade }: {
   them: string
   onPlay: (cardId: string) => void
+  /** play a place card: plan a date there */
+  onPlace?: (placeId: string, when: string) => void
   onClose: () => void
   onUpgrade: () => void
 }) {
@@ -23,7 +27,8 @@ export default function HandSheet({ them, onPlay, onClose, onUpgrade }: {
   const { alignPlus } = useSession()
   const [tab, setTab] = useState<Tab>(talk.dailyAvailable() ? 'today' : 'hand')
   const [topic, setTopic] = useState<TalkTopic | 'all'>('all')
-  const [opening, setOpening] = useState<{ pack: string; cards: TalkCard[] } | null>(null)
+  const [opening, setOpening] = useState<{ pack: string; cards: Pull[] } | null>(null)
+  const [when, setWhen] = useState(WHENS[0])
   const daily = cardOfTheDay()
   const dailyOpen = talk.dailyAvailable()
 
@@ -53,7 +58,7 @@ export default function HandSheet({ them, onPlay, onClose, onUpgrade }: {
 
         {/* tabs */}
         <div style={{ marginTop: 12, height: 34, padding: 3, borderRadius: 999, display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)' }}>
-          {([['today', 'Today'], ['hand', 'Your cards'], ['packs', `Packs${packs.length ? ` · ${packs.length}` : ''}`]] as const).map(([id, label]) => (
+          {([['today', 'Today'], ['hand', 'Your cards'], ...(onPlace ? [['places', 'Places']] as const : []), ['packs', `Packs${packs.length ? ` · ${packs.length}` : ''}`]] as const).map(([id, label]) => (
             <button key={id} onClick={() => { sfx.tap(); setTab(id) }} style={{ position: 'relative', flex: 1, fontSize: 13, color: tab === id ? '#1a0f3a' : 'var(--label-2)' }}>
               {tab === id && <motion.span layoutId="hand-tab" style={{ position: 'absolute', inset: 0, borderRadius: 999, background: '#f4f0dc' }} />}
               <span style={{ position: 'relative' }}>{label}</span>
@@ -103,10 +108,35 @@ export default function HandSheet({ them, onPlay, onClose, onUpgrade }: {
             </>
           )}
 
+          {tab === 'places' && onPlace && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <div style={{ display: 'flex', gap: 6 }}>
+                {WHENS.map((w) => (
+                  <button key={w} onClick={() => { sfx.tap(); setWhen(w) }} style={{
+                    flex: 1, height: 30, borderRadius: 15, fontSize: 12, whiteSpace: 'nowrap',
+                    color: when === w ? '#1a0f3a' : 'var(--label-1)', background: when === w ? '#f4f0dc' : 'rgba(48,32,92,0.6)', border: '1px solid rgba(179,166,196,0.25)',
+                  }}>{w}</button>
+                ))}
+              </div>
+              {PLACES.map((p) => (
+                <motion.button key={p.id} whileTap={{ scale: 0.98 }} onClick={() => { sfx.align(); onPlace(p.id, when); onClose() }} style={{
+                  display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px', borderRadius: 14, textAlign: 'left',
+                  background: 'rgba(48,32,92,0.5)', border: `1px solid ${p.partner ? 'rgba(242,213,138,0.5)' : 'rgba(179,166,196,0.2)'}`,
+                }}>
+                  <span style={{ fontSize: 22, width: 30, textAlign: 'center' }}>{p.emoji}</span>
+                  <span style={{ flex: 1, minWidth: 0 }}>
+                    <span style={{ display: 'block', fontSize: 14.5, color: 'var(--label-1)' }}>{p.name} <span style={{ fontSize: 11.5, color: 'var(--label-3)' }}>· {p.area}</span></span>
+                    <span style={{ display: 'block', fontSize: 12, color: p.partner ? '#f2d58a' : 'var(--label-2)', marginTop: 2 }}>{p.partner ? `✦ Partner · check in for “${p.exclusive}”` : p.line}</span>
+                  </span>
+                </motion.button>
+              ))}
+            </div>
+          )}
+
           {tab === 'packs' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {packs.map((id, i) => {
-                const p = PACKS[id]
+                const p = packInfo(id)
                 return (
                   <PackRow key={`${id}-${i}`} color={p.color} name={p.name} blurb={p.blurb} action="Open"
                     onClick={() => { sfx.sparkle(); setOpening({ pack: id, cards: talk.openPack(id) }) }} />
@@ -125,13 +155,13 @@ export default function HandSheet({ them, onPlay, onClose, onUpgrade }: {
       </motion.div>
 
       <AnimatePresence>
-        {opening && <PackOpen pack={PACKS[opening.pack]} cards={opening.cards} onDone={() => { setOpening(null); setTab('hand'); setTopic('all') }} />}
+        {opening && <PackOpen pack={packInfo(opening.pack)} cards={opening.cards} onDone={() => { setOpening(null); setTab('hand'); setTopic('all') }} />}
       </AnimatePresence>
     </>
   )
 }
 
-function PackRow({ color, name, blurb, action, locked, onClick }: { color: string; name: string; blurb: string; action: string; locked?: boolean; onClick: () => void }) {
+export function PackRow({ color, name, blurb, action, locked, onClick }: { color: string; name: string; blurb: string; action: string; locked?: boolean; onClick: () => void }) {
   return (
     <motion.button whileTap={{ scale: 0.98 }} onClick={onClick} style={{
       display: 'flex', alignItems: 'center', gap: 14, padding: 12, borderRadius: 16, textAlign: 'left',

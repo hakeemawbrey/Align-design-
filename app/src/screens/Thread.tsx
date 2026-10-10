@@ -7,7 +7,7 @@ import { ChatHeader } from '../components/chat/ChatParts'
 import { SIGNS } from '../data/signs'
 import { api, useWorld, type Message } from '../api'
 import { sfx } from '../lib/sfx'
-import { useSession } from '../lib/session'
+import { useSession, energize } from '../lib/session'
 import { Bubble, type Msg } from './Chat'
 import { ME, type Profile } from '../data/profiles'
 import { MATCHES, STARTER_CHATS } from '../data/matches'
@@ -15,7 +15,10 @@ import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
 import HandSheet from '../components/talk/HandSheet'
-import { talkState } from '../components/talk/thread'
+import { talkState, placeState } from '../components/talk/thread'
+import ChatPlaceCard from '../components/talk/ChatPlaceCard'
+import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
+import { talk } from '../lib/talk'
 
 const toMsg = (m: Message, i: number): Msg => ({ id: i + 1, from: m.from === 'me' ? 'me' : 'her', text: m.body })
 
@@ -96,6 +99,7 @@ export default function Thread({ go }: ScreenProps) {
     setDraft('')
     sfx.send()
     try { await post(text) } catch { setDraft(text); return }
+    energize(2)
     if (bot) {
       const pool = script?.replies ?? ['Ha, I like that.', 'Tell me more.', 'Ok, you’re fun.', 'When are you free this week?']
       void botSays(pool[replyIdx.current++ % pool.length], 2200)
@@ -108,6 +112,19 @@ export default function Thread({ go }: ScreenProps) {
     if (bot && card) void botSays(answerMsg(id, card.sample), 3600)
   }
   const { answers } = talkState(rows.map((r) => ({ from: r.from, body: r.body })))
+  const places = placeState(rows.map((r) => ({ from: r.from, body: r.body })))
+  const playPlace = async (id: string, when: string) => {
+    sfx.send()
+    try { await post(placeMsg(id, when)) } catch { return }
+    if (bot) void botSays(rsvpMsg(id, true), 2600)
+  }
+  const rsvp = (id: string, yes: boolean) => { if (yes) energize(5); void post(rsvpMsg(id, yes)).catch(() => {}) }
+  const checkIn = (id: string) => {
+    const p = placeById(id)
+    energize(15)
+    if (p?.partner) talk.addVenue(id)
+    void post(checkinMsg(id)).catch(() => {})
+  }
 
   if (!them) {
     return (
@@ -135,6 +152,18 @@ export default function Thread({ go }: ScreenProps) {
         </div>
         <AnimatePresence initial={false}>
           {rows.map((m, i) => {
+            const pl = parsePlace(m.body)
+            if (pl && pl.type !== 'place') return null
+            if (pl?.type === 'place') {
+              const place = placeById(pl.id)
+              const r = places.rsvp[pl.id] ?? {}
+              const mine = m.from === 'me' ? true : r.me
+              const theirs = m.from === 'them' ? true : r.them
+              return place ? (
+                <ChatPlaceCard key={m.id} place={place} when={pl.when} playedByMe={m.from === 'me'} mine={mine} theirs={theirs}
+                  checkedIn={places.checked.has(pl.id)} them={them.name} onRsvp={(y) => rsvp(pl.id, y)} onCheckin={() => checkIn(pl.id)} />
+              ) : null
+            }
             const t = parseTalk(m.body)
             if (t?.type === 'answer') return null
             if (t?.type === 'play') {
@@ -142,7 +171,7 @@ export default function Thread({ go }: ScreenProps) {
               return card ? (
                 <ChatTalkCard key={m.id} card={card} playedByMe={m.from === 'me'}
                   mine={answers[card.id]?.me} theirs={answers[card.id]?.them}
-                  names={{ me: ME.name, them: them.name }} onAnswer={(a) => { void post(answerMsg(card.id, a)).catch(() => {}) }} />
+                  names={{ me: ME.name, them: them.name }} onAnswer={(a) => { energize(5); void post(answerMsg(card.id, a)).catch(() => {}) }} />
               ) : null
             }
             return <div key={m.id}><Bubble msg={toMsg(m, i)} /></div>
@@ -171,7 +200,7 @@ export default function Thread({ go }: ScreenProps) {
       </form>
 
       <AnimatePresence>
-        {hand && <HandSheet them={them.name} onPlay={(id) => { void playCard(id) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+        {hand && <HandSheet them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <TabBar active="matches" go={go} />
     </div>

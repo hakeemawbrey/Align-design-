@@ -14,7 +14,7 @@ import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { api as backend, useWorld } from '../api'
 import { SavedSheet } from '../components/deck/SavedEvents'
-import { session, useSession } from '../lib/session'
+import { session, useSession, energize, EVENT_COST } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
 import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
@@ -249,7 +249,7 @@ export default function Deck({ go }: ScreenProps) {
   const [matching, setMatching] = useState(false)
   const [upsell, setUpsell] = useState(false)
   const [savedOpen, setSavedOpen] = useState(false)
-  const { savedEvents } = useSession()
+  const { savedEvents, energy } = useSession()
 
   const phaseRef = useRef<Phase>('idle')
   const streakRef = useRef(0)
@@ -412,6 +412,7 @@ export default function Deck({ go }: ScreenProps) {
   const playSaved = (i: number) => {
     const id = savedEvents[i]
     if (!id) return
+    if (!energize(-EVENT_COST)) { sfx.deny(); showToast(`Playing an event takes ${EVENT_COST} energy. Talk to a match to earn more`, 2400); return }
     const left = [...savedEvents]
     left.splice(i, 1)
     session.patch({ savedEvents: left })
@@ -423,8 +424,12 @@ export default function Deck({ go }: ScreenProps) {
     if (slot?.kind === 'event') {
       setBusy(true)
       session.patch({ deckIndex: index + 1 })
-      if (dir > 0) playEvent(slot)
-      else {
+      if (dir > 0 && energize(-EVENT_COST)) playEvent(slot)
+      else if (dir > 0) {
+        session.patch({ savedEvents: [...session.get().savedEvents, slot.event.id] })
+        sfx.deny()
+        later(() => showToast(`Not enough energy, so ${slot.event.title} is saved. Talk to a match to earn more`, 2600), 200)
+      } else {
         // saved for later: it goes to your hand, playable any time from the deck screen
         session.patch({ savedEvents: [...session.get().savedEvents, slot.event.id] })
         sfx.flip()
@@ -562,7 +567,7 @@ export default function Deck({ go }: ScreenProps) {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`, transition: 'background 0.8s',
       }} />
 
-      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} saved={savedEvents.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} energy={energy} saved={savedEvents.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
 
       {/* peek header */}
       <AnimatePresence>

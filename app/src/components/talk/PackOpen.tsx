@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import type { TalkCard, TalkPack } from '../../data/talkCards'
+import type { Pull } from '../../lib/talk'
+import ArchetypeCard from './ArchetypeCard'
 import { sfx } from '../../lib/sfx'
 import TalkCardFace, { TalkCardBack, TAROT_RATIO } from './TalkCardFace'
 
 /** Tear the pack, then the cards fan out and turn over one by one. */
-export default function PackOpen({ pack, cards, onDone }: { pack: TalkPack; cards: TalkCard[]; onDone: () => void }) {
+export default function PackOpen({ pack, cards, onDone }: { pack: { name: string; color: string }; cards: Pull[]; onDone: () => void }) {
   const [torn, setTorn] = useState(false)
   const [shown, setShown] = useState(0)
 
@@ -14,7 +15,8 @@ export default function PackOpen({ pack, cards, onDone }: { pack: TalkPack; card
     ts.push(window.setTimeout(() => { setTorn(true); sfx.release() }, 700))
     cards.forEach((c, i) => ts.push(window.setTimeout(() => {
       setShown(i + 1)
-      if (c.rarity !== 'common') sfx.sparkle(); else sfx.flip()
+      const rare = c.kind === 'sign' ? c.variant !== 'base' : c.card.rarity !== 'common'
+      if (rare) sfx.sparkle(); else sfx.flip()
     }, 1100 + i * 380)))
     return () => ts.forEach(clearTimeout)
   }, [cards])
@@ -22,9 +24,9 @@ export default function PackOpen({ pack, cards, onDone }: { pack: TalkPack; card
   const W = 100
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      style={{ position: 'absolute', inset: 0, zIndex: 95, background: 'rgba(8,4,22,0.94)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      style={{ position: 'absolute', inset: 0, zIndex: 95, background: 'rgba(8,4,22,0.97)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div className="mono" style={{ marginTop: 92, fontSize: 9.5, letterSpacing: '0.24em', color: pack.color }}>✦ {pack.name.toUpperCase()} ✦</div>
-      <div className="h-display" style={{ fontSize: 28, marginTop: 8 }}>{cards.length ? `${cards.length} new talk cards` : 'You have them all'}</div>
+      <div className="h-display" style={{ fontSize: 28, marginTop: 8 }}>{cards.length ? `${cards.length} new cards` : 'You have them all'}</div>
 
       {/* the pack */}
       {!torn && (
@@ -43,13 +45,13 @@ export default function PackOpen({ pack, cards, onDone }: { pack: TalkPack; card
           const rowCount = row === 0 ? Math.min(3, cards.length) : cards.length - 3
           const x = 195 - (rowCount * (W + 10) - 10) / 2 + col * (W + 10)
           return (
-            <motion.div key={c.id}
+            <motion.div key={c.kind === 'talk' ? c.card.id : `${c.sign}-${c.variant}-${i}`}
               initial={{ x: 195 - W / 2, y: 60, rotate: 0, opacity: 0, scale: 0.6 }}
               animate={{ x, y: row * (W * TAROT_RATIO + 12), opacity: 1, scale: 1, rotate: (col - 1) * 2 }}
               transition={{ type: 'spring', stiffness: 160, damping: 18, delay: i * 0.08 }}
               style={{ position: 'absolute', left: 0, top: 0, perspective: 700 }}>
               <motion.div animate={{ rotateY: i < shown ? 0 : 180 }} transition={{ duration: 0.5 }} style={{ transformStyle: 'preserve-3d', position: 'relative', width: W, height: W * TAROT_RATIO }}>
-                <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}><TalkCardFace card={c} width={W} /></div>
+                <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}>{c.kind === 'talk' ? <TalkCardFace card={c.card} width={W} /> : <ArchetypeCard sign={c.sign} variant={c.variant} width={W} />}</div>
                 <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}><TalkCardBack width={W} color={pack.color} /></div>
               </motion.div>
             </motion.div>
@@ -60,7 +62,7 @@ export default function PackOpen({ pack, cards, onDone }: { pack: TalkPack; card
       <motion.button className="chrome-cta" onClick={() => { sfx.tap(); onDone() }}
         initial={{ opacity: 0 }} animate={{ opacity: shown >= cards.length && torn ? 1 : 0 }}
         style={{ position: 'absolute', bottom: 60, pointerEvents: shown >= cards.length && torn ? 'auto' : 'none' }}>
-        Add to my hand <span className="spark">✦</span>
+        Keep them <span className="spark">✦</span>
       </motion.button>
     </motion.div>
   )

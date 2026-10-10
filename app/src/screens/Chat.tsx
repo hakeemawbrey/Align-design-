@@ -7,14 +7,17 @@ import ReportSheet from '../components/chat/ReportSheet'
 import { ChatHeader, ExpiryBar, InlineAlignmentCard, Receipt, TypingIndicator } from '../components/chat/ChatParts'
 import { DECK } from '../data/profiles'
 import { sfx } from '../lib/sfx'
-import { session } from '../lib/session'
+import { session, energize } from '../lib/session'
 import { api, type Message } from '../api'
 import { ME } from '../data/profiles'
 import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
 import HandSheet from '../components/talk/HandSheet'
-import { talkState } from '../components/talk/thread'
+import { talkState, placeState } from '../components/talk/thread'
+import ChatPlaceCard from '../components/talk/ChatPlaceCard'
+import { checkinMsg, parsePlace, placeById, placeMsg, rsvpMsg } from '../data/places'
+import { talk } from '../lib/talk'
 
 export type Msg = { id: number; from: 'her' | 'me' | 'card'; text: string }
 
@@ -180,6 +183,7 @@ export default function Chat({ go }: ScreenProps) {
     setSeen(false)
     push({ from: 'me', text })
     sfx.send()
+    energize(2)
     const reply = REPLIES[replyIdx.current % REPLIES.length]
     replyIdx.current++
     // her reply is saved right away, so it's there even if you leave before she "types" it
@@ -207,10 +211,26 @@ export default function Chat({ go }: ScreenProps) {
       sfx.receive()
     }, 3200 + Math.random() * 1500)
   }
-  const answerCard = (cardId: string, a: string) => push({ from: 'me', text: answerMsg(cardId, a) })
+  const answerCard = (cardId: string, a: string) => { energize(5); push({ from: 'me', text: answerMsg(cardId, a) }) }
+  const places = placeState(talkRows)
+  const playPlace = (id: string, when: string) => {
+    push({ from: 'me', text: placeMsg(id, when) })
+    sfx.send()
+    window.setTimeout(() => {
+      if (!alive.current) { record('her', rsvpMsg(id, true)); return }
+      push({ from: 'her', text: rsvpMsg(id, true) })
+      sfx.receive()
+    }, 2400)
+  }
+  const rsvp = (id: string, yes: boolean) => { if (yes) energize(5); push({ from: 'me', text: rsvpMsg(id, yes) }) }
+  const checkIn = (id: string) => {
+    energize(15)
+    if (placeById(id)?.partner) talk.addVenue(id)
+    push({ from: 'me', text: checkinMsg(id) })
+  }
 
   // receipt goes under my last message only while it is the latest bubble
-  const bubbles = msgs.filter((m) => m.from !== 'card' && !parseTalk(m.text))
+  const bubbles = msgs.filter((m) => m.from !== 'card' && !parseTalk(m.text) && !parsePlace(m.text))
   const last = bubbles[bubbles.length - 1]
   const receiptAfter = last && last.from === 'me' ? last.id : -1
 
@@ -236,6 +256,17 @@ export default function Chat({ go }: ScreenProps) {
         <div style={{ textAlign: 'center', fontSize: 12, color: 'var(--label-3)', padding: '10px 0 14px' }}>Today</div>
         <AnimatePresence initial={false}>
           {msgs.map((m) => {
+            const pl = m.from === 'card' ? null : parsePlace(m.text)
+            if (pl && pl.type !== 'place') return null
+            if (pl?.type === 'place') {
+              const place = placeById(pl.id)
+              const r = places.rsvp[pl.id] ?? {}
+              return place ? (
+                <ChatPlaceCard key={m.id} place={place} when={pl.when} playedByMe={m.from === 'me'}
+                  mine={m.from === 'me' ? true : r.me} theirs={m.from === 'her' ? true : r.them}
+                  checkedIn={places.checked.has(pl.id)} them={juniper.name} onRsvp={(y) => rsvp(pl.id, y)} onCheckin={() => checkIn(pl.id)} />
+              ) : null
+            }
             const t = m.from === 'card' ? null : parseTalk(m.text)
             if (t?.type === 'answer') return null
             if (t?.type === 'play') {
@@ -301,7 +332,7 @@ export default function Chat({ go }: ScreenProps) {
       </form>
 
       <AnimatePresence>
-        {hand && <HandSheet them={juniper.name} onPlay={playCard} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+        {hand && <HandSheet them={juniper.name} onPlace={playPlace} onPlay={playCard} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <AnimatePresence>
         {report && (

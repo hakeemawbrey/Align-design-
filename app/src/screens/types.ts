@@ -21,6 +21,7 @@ export type ScreenId =
   | 'block'      // P-01 Block a sign (Align+)
   | 'notifications' // S-19 Notifications
   | 'thread'     // chat with a real person you matched with
+  | 'collection' // your cards, packs, sets and the season
 
 export interface ScreenProps {
   go: (id: ScreenId) => void

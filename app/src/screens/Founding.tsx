@@ -26,7 +26,7 @@ const STEPS = [
   { h: 'In 3 days', s: 'You are charged unless you cancel before' },
 ]
 
-const PERKS = ['45 cards\na night', '33 peeks\na week', '3 packs\na day']
+const PERKS = ['45 cards\na night', '33 peeks\na week', '3 packs a day\n+ a box shipped\nevery season']
 
 /** portal geometry */
 const PW = 100
@@ -134,7 +134,7 @@ export default function Founding({ go }: ScreenProps) {
               Stop rationing the stars.
             </motion.h1>
             <motion.p {...fade(0.3)} style={{ position: 'absolute', top: 294, left: 30, right: 30, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
-              45 cards a night, 33 peeks a week, three packs a day, and any sign you never want to see again, gone.
+              45 cards a night, 33 peeks a week, three packs a day, and a box of real cards shipped every season.
             </motion.p>
 
             {/* timeline */}

@@ -25,9 +25,16 @@
    spontaneous date?". Juniper's answer stays sealed until you answer yours.
    "It's how you find out the stuff that matters: kids, money, how you fight.
    And you collect the cards from packs."
-7. **Matches → Binder:** after three days aligned you trade copies of your cards.
+7. **Place card:** in the same card sheet, open **Places** and play Agnes Cafe.
+   Juniper says yes, and it's a date. Tap **Check in**: "Partner venues give you
+   a card you can only get there, and they pay us for the date."
+8. **You → Collection:** claim today's pack and open it. The sign card is
+   numbered (№ 1,204 / 5,000). "Every season prints a fixed run, online and
+   in real life. When it's gone it's gone." Show **Season** for the print runs
+   and the season pass.
+9. **Matches → Binder:** after three days aligned you trade copies of your cards.
    "Collectible. One day there are rare cards of famous people."
-8. Hand them the phone. **You → Reset demo** (tap twice) between people.
+10. Hand them the phone. **You → Reset demo** (tap twice) between people.
 
 ## "Download it and match with me" (needs Supabase)
 

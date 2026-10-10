@@ -30,8 +30,9 @@ const TILES: { id: TileId; title: string; sub: string }[] = [
   { id: 'retro', title: 'Retrogrades', sub: 'Venus · since Sat' },
 ]
 
-const APP_ROWS = [
-  { label: 'Notifications', right: '3 new' },
+const APP_ROWS: { label: string; right: string; to?: 'collection' | 'notifications' }[] = [
+  { label: 'Collection', right: 'Packs · sets · season', to: 'collection' },
+  { label: 'Notifications', right: '3 new', to: 'notifications' },
   { label: 'Settings', right: '' },
   { label: 'Help & support', right: '' },
 ]
@@ -165,7 +166,7 @@ export default function You({ go }: ScreenProps) {
             background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)',
           }}>
             {APP_ROWS.map((r, i) => (
-              <motion.button key={r.label} onClick={() => sfx.tap()}
+              <motion.button key={r.label} onClick={() => { sfx.tap(); if (r.to) go(r.to) }}
                 whileHover={{ backgroundColor: 'rgba(52,35,95,0.6)' }} whileTap={{ backgroundColor: 'rgba(52,35,95,0.9)' }}
                 style={{
                   width: '100%', height: 46, display: 'flex', alignItems: 'center', padding: '0 14px 0 16px', textAlign: 'left',

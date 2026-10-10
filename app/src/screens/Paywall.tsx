@@ -24,7 +24,7 @@ const RAINBOW = ['#e8463c', '#ef8f56', '#f2d45c', '#7fd36a', '#4fb3ef', '#a77de9
 const BENEFITS = [
   { t: '45 cards a night', s: 'free stops at fifteen · next deal at 11:11' },
   { t: '33 peeks a week', s: 'free is three a day' },
-  { t: '3 packs a day + rare card skins', s: 'free is one pack' },
+  { t: '3 packs a day + 3 real packs a season', s: 'a starter box when you join · shipped 4× a year' },
   { t: 'Block any sign · private Align events', s: 'gone from every deck, for good' },
 ]
 

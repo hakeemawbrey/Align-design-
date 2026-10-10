@@ -60,6 +60,8 @@ export interface SessionState {
   threadWith: string
   /** event cards saved for later (swiped left), played from the deck screen */
   savedEvents: EventId[]
+  /** energy: earned by talking to matches and going on dates, spent to play event cards */
+  energy: number
 }
 
 const initial = (): SessionState => ({
@@ -82,6 +84,7 @@ const initial = (): SessionState => ({
   obStep: 0,
   threadWith: '',
   savedEvents: [],
+  energy: 40,
 })
 
 const KEY = 'session:v1'
@@ -111,4 +114,16 @@ export function resetSession() {
 
 export function useSession() {
   return useSyncExternalStore(session.subscribe, session.get)
+}
+
+export const ENERGY_MAX = 100
+/** what playing an event card costs */
+export const EVENT_COST = 10
+
+/** add (or with a negative n, spend) energy; false if there isn't enough to spend */
+export function energize(n: number) {
+  const e = state.energy + n
+  if (e < 0) return false
+  session.patch({ energy: Math.min(ENERGY_MAX, e) })
+  return true
 }

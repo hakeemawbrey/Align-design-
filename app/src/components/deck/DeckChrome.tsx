@@ -86,10 +86,12 @@ interface HeaderProps {
   /** saved event cards: a button beside the sky pill while you hold any */
   saved?: number
   onSaved?: () => void
+  /** energy for event cards, shown in the sky pill */
+  energy?: number
 }
 
 /** "Tonight's deck" header row + Today's Sky pill (S-05). */
-export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, onNotifs, saved = 0, onSaved }: HeaderProps) {
+export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, onNotifs, saved = 0, onSaved, energy }: HeaderProps) {
   return (
     <motion.div
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0 }}
@@ -137,7 +139,15 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
           boxShadow: '0 0 8px rgba(242,199,92,0.4)',
         }} />
         <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, whiteSpace: 'nowrap', textAlign: 'left' }}>{SKY_PILL}</span>
-        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: '#f2c75c', whiteSpace: 'nowrap' }}>{saved > 0 ? '›' : <>TODAY’S SKY&nbsp; ›</>}</span>
+        {energy != null && (
+          <span className="mono" aria-label={`Energy ${energy}`} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 9.5, letterSpacing: '0.08em', fontWeight: 700, color: '#9fe8c8' }}>
+            <span style={{ width: 26, height: 5, borderRadius: 3, background: 'rgba(159,232,200,0.2)', overflow: 'hidden' }}>
+              <span style={{ display: 'block', width: `${energy}%`, height: '100%', background: '#9fe8c8' }} />
+            </span>
+            {energy}
+          </span>
+        )}
+        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: '#f2c75c', whiteSpace: 'nowrap' }}>{saved > 0 || energy != null ? '›' : <>TODAY’S SKY&nbsp; ›</>}</span>
       </motion.button>
       {/* saved event cards, next to the sky */}
       <AnimatePresence>
