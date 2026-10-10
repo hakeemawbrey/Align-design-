@@ -11,6 +11,8 @@ import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
 import { resetDemo } from '../lib/demo'
+import { talk, useTalk } from '../lib/talk'
+import { TalkCardBack } from '../components/talk/TalkCardFace'
 
 const SUN = SIGNS[ME.sign]
 const MOON = SIGNS[ME.moon]
@@ -30,8 +32,7 @@ const TILES: { id: TileId; title: string; sub: string }[] = [
   { id: 'retro', title: 'Retrogrades', sub: 'Venus · since Sat' },
 ]
 
-const APP_ROWS: { label: string; right: string; to?: 'collection' | 'notifications' }[] = [
-  { label: 'Collection', right: 'Packs · sets · season', to: 'collection' },
+const APP_ROWS: { label: string; right: string; to?: 'notifications' }[] = [
   { label: 'Notifications', right: '3 new', to: 'notifications' },
   { label: 'Settings', right: '' },
   { label: 'Help & support', right: '' },
@@ -60,6 +61,8 @@ function ResetRow() {
 /** G-05 · You — home. */
 export default function You({ go }: ScreenProps) {
   const { alignPlus, blockedSigns } = useSession()
+  const { packs, owned, signs, venues } = useTalk()
+  const packCount = packs.length + (talk.dailyPackAvailable() ? 1 : 0)
   const [card, setCard] = useState<CardSide | null>(null)
   const [tile, setTile] = useState<TileId>('sign')
   const [scrolled, setScrolled] = useState(false)
@@ -96,6 +99,36 @@ export default function You({ go }: ScreenProps) {
               {SUN.name.toUpperCase()} SUN · {MOON.name.toUpperCase()} MOON · {RISING.name.toUpperCase()} RISING
             </div>
           </div>
+
+          {/* your collection: the way in to packs */}
+          <motion.button onClick={() => { sfx.tap(); go('collection') }}
+            initial="rest" animate="rest" whileHover="hover" whileTap="tap"
+            variants={{ rest: { y: 0 }, hover: { y: -2 }, tap: { scale: 0.98 } }}
+            style={{
+              position: 'relative', display: 'block', width: 'calc(100% - 48px)', margin: '18px 24px 0', height: 104, borderRadius: 16, textAlign: 'left',
+              background: 'linear-gradient(120deg, rgba(74,46,140,0.9), rgba(36,20,76,0.9))',
+              border: '1px solid rgba(242,213,138,0.55)', boxShadow: '0 0 22px rgba(242,199,92,0.14)',
+            }}>
+            {[0, 1, 2].map((i) => (
+              <motion.div key={i} variants={{ rest: { rotate: (i - 1) * 10, x: 0 }, hover: { rotate: (i - 1) * 14, x: (i - 1) * 3 } }}
+                style={{ position: 'absolute', left: 22 + i * 14, top: 16, transformOrigin: '50% 100%' }}>
+                <TalkCardBack width={42} color={['#f2c75c', '#9fd8ff', '#b18cff'][i]} />
+              </motion.div>
+            ))}
+            <div style={{ position: 'absolute', left: 116, right: 14, top: 16 }}>
+              <div className="serif italic" style={{ fontSize: 19, color: 'var(--label-1)' }}>Your collection</div>
+              <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 3, whiteSpace: 'nowrap' }}>
+                {owned.length + signs.length + venues.length} cards · signs, talk, places
+              </div>
+            </div>
+            <div className="mono" style={{
+              position: 'absolute', left: 116, bottom: 14, height: 28, padding: '0 12px', borderRadius: 14, display: 'flex', alignItems: 'center',
+              fontSize: 9.5, letterSpacing: '0.12em', fontWeight: 700,
+              color: packCount ? '#1a0f3a' : '#f2d58a', background: packCount ? 'var(--gold-foil)' : 'rgba(242,213,138,0.12)',
+            }}>
+              {packCount ? `OPEN PACKS · ${packCount} WAITING ›` : 'SEE YOUR CARDS ›'}
+            </div>
+          </motion.button>
 
           {/* your sky */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 24px 8px' }}>

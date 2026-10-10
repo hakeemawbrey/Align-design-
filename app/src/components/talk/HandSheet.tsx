@@ -147,7 +147,7 @@ export default function HandSheet({ them, onPlay, onPlace, onClose, onUpgrade }:
                   onClick={() => { sfx.tap(); onUpgrade() }} />
               )}
               <div style={{ fontSize: 12.5, color: 'var(--label-3)', textAlign: 'center', marginTop: 8, lineHeight: 1.4 }}>
-                You get a pack with every new match, and a free card every day.
+                You get a pack with every new match, and a free card every day. All your packs and sets live in You → Your collection.
               </div>
             </div>
           )}

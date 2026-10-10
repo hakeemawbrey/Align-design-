@@ -1,5 +1,6 @@
 import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
+import { talk, useTalk } from '../lib/talk'
 import type { ScreenId } from '../screens/types'
 
 export type Tab = 'deck' | 'matches' | 'club' | 'you'
@@ -43,6 +44,9 @@ const ROUTE: Record<Tab, ScreenId> = { deck: 'deck', matches: 'matches', club: '
 export default function TabBar({ active, go, onSelect }: Props) {
   const { unseenMatch } = useSession()
   const matchBadge = unseenMatch && active !== 'matches'
+  const { packs } = useTalk()
+  // packs waiting (plus today's drop, if it's unclaimed) show on the You tab
+  const packCount = packs.length + (talk.dailyPackAvailable() ? 1 : 0)
   return (
     <nav style={{
       position: 'absolute', left: 32, right: 32, bottom: 22, height: 62, zIndex: 40,
@@ -61,6 +65,12 @@ export default function TabBar({ active, go, onSelect }: Props) {
           }}>
             {ICONS[t](a)}
             <span>{LABEL[t]}</span>
+            {t === 'you' && packCount > 0 && (
+              <span className="mono" aria-label={`${packCount} packs to open`} style={{
+                position: 'absolute', top: -6, right: 8, minWidth: 17, height: 17, padding: '0 4px', borderRadius: 9, fontSize: 9.5, fontWeight: 700,
+                display: 'grid', placeItems: 'center', color: '#1a0f3a', background: 'var(--gold-foil)', boxShadow: '0 0 8px rgba(242,199,92,0.7)',
+              }}>{packCount}</span>
+            )}
             {t === 'matches' && matchBadge && (
               <span style={{ position: 'absolute', top: -2, right: 14, width: 8, height: 8, borderRadius: 4, background: 'var(--rub)', boxShadow: '0 0 8px var(--rub)' }} />
             )}
