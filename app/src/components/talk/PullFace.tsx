@@ -15,7 +15,7 @@ export const PULL_KIND = { talk: 'Talk', sign: 'Sign', event: 'Event', place: 'P
  */
 export default function PullFace({ pull, width = 150 }: { pull: Pull; width?: number }) {
   if (pull.kind === 'talk') return <TalkCardFace card={pull.card} width={width} />
-  if (pull.kind === 'sign') return <ArchetypeCard sign={pull.sign} variant={pull.variant} width={width} />
+  if (pull.kind === 'sign') return <ArchetypeCard sign={pull.sign} face={pull.face} variant={pull.variant} width={width} />
   if (pull.kind === 'event') {
     const e = EVENTS[pull.id]
     return <Face width={width} color={e.color} light={e.light} eyebrow={`Event · ${e.kind}`} glyph={e.glyph} title={e.title} line={e.what} foot={e.rarity} art={e.aura} />

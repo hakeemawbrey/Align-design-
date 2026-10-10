@@ -10,14 +10,28 @@ the app once they find someone, but they keep collecting the cards.
 | Family | Where | How you get it |
 | --- | --- | --- |
 | **Character cards** (people) | Online only, never printed | Dealt every night |
-| **Sign archetypes** (12, e.g. Libra · The Diplomat) | Online + printed | Sign packs, season packs |
+| **Sign cards** (12 signs × 4 faces = 48, e.g. Libra · Venus · The Romantic) | Online + printed | Sign packs, season packs |
 | **Talk cards** (51 questions, tarot-styled) | Online + printed decks | Packs, the free card of the day |
 | **Event cards** (Mulligan, Second look, Comet) | Online | Dealt in the deck, played with energy |
 | **Place cards** (Houston venues) | Online, partner exclusives | Play in chat to plan a date, check in for the venue card |
 
-**The Align pack** is the everyday pack, 12 cards like a real booster:
-1 sign card (always last, the "rare slot"), 6 talk cards, 2 event cards,
-2 place cards and 1 energy card. Free gets one a day, Align+ three.
+**Every pack is 12 cards** and mixes every kind of card except people (people
+are never printed). The pack's theme shifts the mix; the last card is always
+a sign card in the "rare slot", with better odds of Gilded or Mythic.
+
+| Pack | Signs | Talk | Events | Places | Energy |
+| --- | --- | --- | --- | --- | --- |
+| Align pack (the everyday pack) | 2 | 5 | 2 | 2 | 1 |
+| Sign pack / Season pack | 3 (that sign / the season's signs) | 4 | 2 | 2 | 1 |
+| Talk packs (First Nights, The Deep End, After Dark) | 2 | 6 (its topics) | 2 | 1 | 1 |
+
+Free gets one Align pack a day, Align+ three.
+
+**Sign cards: 48, not 12.** Every sign has four faces: **Sun** (who they
+are), **Moon** (what they need), **Rising** (how they come across) and
+**Venus** (how they love), e.g. Libra · Sun *The Diplomat*, Moon *The
+Peacemaker*, Rising *The Muse*, Venus *The Romantic*. Sun is the most common;
+Venus is the find.
 
 Archetypes come in three finishes: **Myths** (base), **Gilded** (gold foil,
 about 1 in 5 packs) and **Mythic** (holo, about 1 in 25).

@@ -34,3 +34,34 @@ export const VARIANT_RARITY: Record<Variant, Rarity> = { base: 'common', gilded:
 export const VARIANT_LABEL: Record<Variant, string> = { base: 'Myths', gilded: 'Gilded', mythic: 'Mythic' }
 
 export const SIGN_ORDER: SignId[] = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
+
+/**
+ * Each sign is four different cards, one for each part of a chart that
+ * matters in love: who they are (Sun), what they need (Moon), how they come
+ * across (Rising) and how they love (Venus). 12 signs × 4 faces = 48 cards,
+ * each printed in three finishes.
+ */
+export type Face = 'sun' | 'moon' | 'rising' | 'venus'
+export const FACES: Face[] = ['sun', 'moon', 'rising', 'venus']
+export const FACE_LABEL: Record<Face, string> = { sun: 'Sun', moon: 'Moon', rising: 'Rising', venus: 'Venus' }
+export const FACE_GLYPH: Record<Face, string> = { sun: '☉', moon: '☽', rising: '↑', venus: '♀' }
+/** how common each face is in packs: the Sun is everywhere, Venus is the find */
+export const FACE_WEIGHT: Record<Face, number> = { sun: 4, moon: 3, rising: 3, venus: 2 }
+
+/** titles for the moon, rising and venus faces (the sun face is ARCHETYPES[sign].title) */
+export const FACE_TITLES: Record<SignId, Record<Exclude<Face, 'sun'>, string>> = {
+  aries: { moon: 'The Spark', rising: 'The Challenger', venus: 'The Chaser' },
+  taurus: { moon: 'The Hearth', rising: 'The Calm', venus: 'The Devoted' },
+  gemini: { moon: 'The Restless', rising: 'The Charmer', venus: 'The Flirt' },
+  cancer: { moon: 'The Tide', rising: 'The Shell', venus: 'The Nurturer' },
+  leo: { moon: 'The Heart', rising: 'The Spotlight', venus: 'The Grand Gesture' },
+  virgo: { moon: 'The Quiet', rising: 'The Polished', venus: 'The Attentive' },
+  libra: { moon: 'The Peacemaker', rising: 'The Muse', venus: 'The Romantic' },
+  scorpio: { moon: 'The Depths', rising: 'The Enigma', venus: 'The Magnet' },
+  sagittarius: { moon: 'The Wanderer', rising: 'The Optimist', venus: 'The Free Spirit' },
+  capricorn: { moon: 'The Stoic', rising: 'The Elder', venus: 'The Loyal' },
+  aquarius: { moon: 'The Detached', rising: 'The Original', venus: 'The Friend First' },
+  pisces: { moon: 'The Tender', rising: 'The Mirage', venus: 'The Soulmate' },
+}
+
+export const faceTitle = (sign: SignId, face: Face) => (face === 'sun' ? ARCHETYPES[sign].title : FACE_TITLES[sign][face])

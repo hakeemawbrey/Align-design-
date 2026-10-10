@@ -5,7 +5,7 @@ import Starfield from '../components/Starfield'
 import ArchetypeCard from '../components/talk/ArchetypeCard'
 import PackOpen from '../components/talk/PackOpen'
 import { PackRow } from '../components/talk/HandSheet'
-import { ARCHETYPES, SIGN_ORDER, VARIANT_LABEL, VARIANT_RARITY, type Variant } from '../data/archetypes'
+import { ARCHETYPES, FACES, FACE_GLYPH, FACE_LABEL, SIGN_ORDER, VARIANT_LABEL, VARIANT_RARITY, type Variant } from '../data/archetypes'
 import { TALK_CARDS, PACKS } from '../data/talkCards'
 import { SEASON, NEXT_SEASON, PRINT_RUN, leftOf, minted, fmt } from '../data/seasons'
 import { PLACES } from '../data/places'
@@ -148,18 +148,21 @@ export default function Collection({ go }: ScreenProps) {
               style={{ marginTop: 10, height: 30, padding: '0 12px', borderRadius: 15, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
               OPEN THE PAGES ›
             </button>
-            <SetHead title="Signs · Myths" got={talk.signSet().length} of={12} note="One archetype for each sign. Print it, trade it, frame it." />
+            <SetHead title="Signs · Myths" got={talk.signCards()} of={SIGN_ORDER.length * FACES.length} note="Every sign is four cards: Sun (who they are), Moon (what they need), Rising (how they come across), Venus (how they love). Each in Myths, Gilded or Mythic." />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, justifyItems: 'center' }}>
-              {SIGN_ORDER.map((s) => {
-                const mine = t.signs.filter((o) => o.sign === s)
+              {FACES.map((f) => (
+                <span key={f} className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)' }}>{FACE_GLYPH[f]} {FACE_LABEL[f].toUpperCase()}</span>
+              ))}
+              {SIGN_ORDER.flatMap((s) => FACES.map((f) => {
+                const mine = t.signs.filter((o) => o.sign === s && (o.face ?? 'sun') === f)
                 const best = (['mythic', 'gilded', 'base'] as Variant[]).find((v) => mine.some((o) => o.variant === v))
                 return (
-                  <div key={s} style={{ position: 'relative' }}>
-                    <ArchetypeCard sign={s} variant={best ?? 'base'} width={74} dim={!best} edition={false} />
+                  <div key={`${s}-${f}`} style={{ position: 'relative' }}>
+                    <ArchetypeCard sign={s} face={f} variant={best ?? 'base'} width={74} dim={!best} edition={false} />
                     {mine.length > 1 && <span className="mono" style={{ position: 'absolute', top: -5, right: -5, minWidth: 18, height: 18, borderRadius: 9, fontSize: 9, fontWeight: 700, display: 'grid', placeItems: 'center', background: 'var(--chrome)', color: 'var(--chrome-ink)' }}>×{mine.length}</span>}
                   </div>
                 )
-              })}
+              }))}
             </div>
             <SetHead title="Events · in your hand" got={savedEvents.length} of={Object.keys(EVENTS).length} note="Play them from the hand on your deck. They cost energy." />
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -205,7 +208,7 @@ export default function Collection({ go }: ScreenProps) {
                   <div style={{ fontSize: 14 }}>{SIGNS[s].name} · <span className="serif italic">{ARCHETYPES[s].title}</span></div>
                   <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
                     {(['base', 'gilded', 'mythic'] as Variant[]).map((v) => {
-                      const r = VARIANT_RARITY[v]; const id = `${s}:${v}:${SEASON.id}`
+                      const r = VARIANT_RARITY[v]; const id = `${s}:sun:${v}:${SEASON.id}`
                       return (
                         <span key={v} className="mono" style={{ fontSize: 8.5, letterSpacing: '0.08em', color: v === 'mythic' ? '#ff9ad8' : v === 'gilded' ? GOLD : 'var(--label-2)' }}>
                           {VARIANT_LABEL[v].toUpperCase()} {fmt(leftOf(id, r))}/{fmt(PRINT_RUN[r])}
@@ -217,7 +220,7 @@ export default function Collection({ go }: ScreenProps) {
               </div>
             ))}
             <div style={{ fontSize: 11.5, color: 'var(--label-3)', marginTop: 6 }}>
-              {fmt(minted(`libra:mythic:${SEASON.id}`, 'legendary'))} of 50 Mythic Libras are already out.
+              {fmt(minted(`libra:sun:mythic:${SEASON.id}`, 'legendary'))} of 50 Mythic Libras are already out.
             </div>
 
             <div style={{ display: 'flex', alignItems: 'baseline', margin: '18px 0 8px' }}>
