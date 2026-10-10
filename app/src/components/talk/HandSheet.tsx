@@ -23,7 +23,7 @@ export default function HandSheet({ them, onPlay, onPlace, onClose, onUpgrade }:
   onClose: () => void
   onUpgrade: () => void
 }) {
-  const { owned, packs } = useTalk()
+  const { owned, packs, places: talkPlaces } = useTalk()
   const { alignPlus } = useSession()
   const [tab, setTab] = useState<Tab>(talk.dailyAvailable() ? 'today' : 'hand')
   const [topic, setTopic] = useState<TalkTopic | 'all'>('all')
@@ -126,7 +126,7 @@ export default function HandSheet({ them, onPlay, onPlace, onClose, onUpgrade }:
                   <span style={{ fontSize: 22, width: 30, textAlign: 'center' }}>{p.emoji}</span>
                   <span style={{ flex: 1, minWidth: 0 }}>
                     <span style={{ display: 'block', fontSize: 14.5, color: 'var(--label-1)' }}>{p.name} <span style={{ fontSize: 11.5, color: 'var(--label-3)' }}>· {p.area}</span></span>
-                    <span style={{ display: 'block', fontSize: 12, color: p.partner ? '#f2d58a' : 'var(--label-2)', marginTop: 2 }}>{p.partner ? `✦ Partner · check in for “${p.exclusive}”` : p.line}</span>
+                    <span style={{ display: 'block', fontSize: 12, color: p.partner ? '#f2d58a' : 'var(--label-2)', marginTop: 2 }}>{p.partner ? `✦ Partner · check in for “${p.exclusive}”` : talkPlaces.includes(p.id) ? `✦ Yours · ${p.line}` : p.line}</span>
                   </span>
                 </motion.button>
               ))}

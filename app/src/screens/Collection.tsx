@@ -87,7 +87,7 @@ export default function Collection({ go }: ScreenProps) {
                 <div style={{ flex: 1 }}>
                   <div className="serif italic" style={{ fontSize: 18 }}>Today’s pack drop</div>
                   <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 2 }}>
-                    {alignPlus ? 'Three season packs a day with Align+.' : 'One season pack a day. Align+ gets three.'}
+                    {alignPlus ? 'Three Align packs a day, 12 cards each.' : 'One Align pack a day, 12 cards. Align+ gets three.'}
                   </div>
                 </div>
                 <button className="mono" disabled={!talk.dailyPackAvailable()}
@@ -146,13 +146,16 @@ export default function Collection({ go }: ScreenProps) {
             </div>
             <SetHead title="Talk cards" got={t.owned.length} of={TALK_CARDS.length} note="Play them in chat. Both answer, neither shows until you both have." />
             <Bar v={t.owned.length / TALK_CARDS.length} color="#b18cff" />
-            <SetHead title="Places · Houston" got={t.venues.length} of={PLACES.filter((p) => p.partner).length} note="Check in at a partner place on a date for its card. Only there." />
+            <SetHead title="Places · Houston" got={PLACES.filter((p) => t.places.includes(p.id) || t.venues.includes(p.id)).length} of={PLACES.length} note="Places come in packs. Partner places (✦) only by checking in there on a date." />
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-              {PLACES.filter((p) => p.partner).map((p) => (
-                <span key={p.id} style={{ fontSize: 12, padding: '5px 10px', borderRadius: 12, color: t.venues.includes(p.id) ? 'var(--chrome-ink)' : 'var(--label-2)', background: t.venues.includes(p.id) ? 'var(--chrome)' : 'rgba(48,32,92,0.6)', border: '1px solid rgba(242,213,138,0.3)' }}>
-                  {p.emoji} {p.name}
-                </span>
-              ))}
+              {PLACES.map((p) => {
+                const have = t.places.includes(p.id) || t.venues.includes(p.id)
+                return (
+                  <span key={p.id} style={{ fontSize: 12, padding: '5px 10px', borderRadius: 12, color: have ? 'var(--chrome-ink)' : 'var(--label-3)', background: have ? 'var(--chrome)' : 'rgba(48,32,92,0.6)', border: '1px solid rgba(179,166,196,0.25)' }}>
+                    {p.emoji} {p.name}{p.partner ? ' ✦' : ''}
+                  </span>
+                )
+              })}
             </div>
           </>
         )}

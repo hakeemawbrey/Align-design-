@@ -15,6 +15,10 @@ the app once they find someone, but they keep collecting the cards.
 | **Event cards** (Mulligan, Second look, Comet) | Online | Dealt in the deck, played with energy |
 | **Place cards** (Houston venues) | Online, partner exclusives | Play in chat to plan a date, check in for the venue card |
 
+**The Align pack** is the everyday pack, 12 cards like a real booster:
+1 sign card (always last, the "rare slot"), 6 talk cards, 2 event cards,
+2 place cards and 1 energy card. Free gets one a day, Align+ three.
+
 Archetypes come in three finishes: **Myths** (base), **Gilded** (gold foil,
 about 1 in 5 packs) and **Mythic** (holo, about 1 in 25).
 
