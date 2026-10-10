@@ -213,7 +213,7 @@ Founders in the deck (Rio, Noor, Ivy) have holo borders and a *Founder №* badg
 The first time a free user runs out of peeks, an Align+ offer slides up.
 
 Don't want to play an event yet? Swipe it **left** (Save) and it goes to your
-saved cards: the gold card-stack button by the draw tracker. Tap it and play any
+saved cards: the gold card-stack button beside Today's Sky at the top. Tap it and play any
 saved event whenever you like; it takes effect right away.
 
 ## Free vs Align+

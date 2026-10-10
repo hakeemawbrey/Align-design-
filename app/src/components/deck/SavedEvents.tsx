@@ -1,35 +1,9 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { EVENTS, type EventId } from '../../data/draws'
-import { sfx } from '../../lib/sfx'
 import EventCard from './EventCard'
 import { CARD_W, CARD_H } from './fx'
 
 const S = 0.5
-
-/** The saved-events button on the deck screen: a little stack of cards and a count. */
-export function SavedButton({ count, onClick }: { count: number; onClick: () => void }) {
-  return (
-    <AnimatePresence>
-      {count > 0 && (
-        <motion.button key="saved" onClick={() => { sfx.tap(); onClick() }}
-          initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.6 }}
-          whileTap={{ scale: 0.92 }}
-          style={{
-            position: 'absolute', right: 12, top: 694, zIndex: 30, height: 30, padding: '0 10px 0 7px', borderRadius: 15,
-            display: 'flex', alignItems: 'center', gap: 7, background: 'rgba(36,20,80,0.92)', border: '1px solid rgba(242,199,92,0.6)',
-            boxShadow: '0 0 14px rgba(242,199,92,0.35)',
-          }}>
-          <svg width="18" height="16" viewBox="0 0 18 16" fill="none">
-            <rect x="1.5" y="3" width="8" height="11" rx="1.6" transform="rotate(-12 5.5 8.5)" stroke="#c9b6f0" strokeWidth="1.1" fill="#2a1660" />
-            <rect x="6.5" y="1.5" width="8" height="11" rx="1.6" stroke="#f2c75c" strokeWidth="1.2" fill="#3a1d78" />
-            <path d="M10.5 4.5c.2 1.3.7 1.8 1.9 2-1.2.2-1.7.7-1.9 2-.2-1.3-.7-1.8-1.9-2 1.2-.2 1.7-.7 1.9-2Z" fill="#f2c75c" />
-          </svg>
-          <span className="mono" style={{ fontSize: 10, letterSpacing: '0.08em', color: '#f2c75c' }} aria-label={`Saved events: ${count}`}>{count}</span>
-        </motion.button>
-      )}
-    </AnimatePresence>
-  )
-}
 
 /** Your saved event cards: play any of them now. */
 export function SavedSheet({ saved, onPlay, onClose }: { saved: EventId[]; onPlay: (i: number) => void; onClose: () => void }) {

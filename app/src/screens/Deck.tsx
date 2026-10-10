@@ -13,7 +13,7 @@ import EventCard from '../components/deck/EventCard'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { api as backend, useWorld } from '../api'
-import { SavedButton, SavedSheet } from '../components/deck/SavedEvents'
+import { SavedSheet } from '../components/deck/SavedEvents'
 import { session, useSession } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
@@ -429,7 +429,7 @@ export default function Deck({ go }: ScreenProps) {
         // saved for later: it goes to your hand, playable any time from the deck screen
         session.patch({ savedEvents: [...session.get().savedEvents, slot.event.id] })
         sfx.flip()
-        later(() => showToast(`${slot.event.title} saved · tap your saved cards to play it`, 2200), 200)
+        later(() => showToast(`${slot.event.title} saved · play it any time from your saved cards, up top`, 2200), 200)
       }
       return
     }
@@ -563,7 +563,7 @@ export default function Deck({ go }: ScreenProps) {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`, transition: 'background 0.8s',
       }} />
 
-      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} saved={savedEvents.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
 
       {/* peek header */}
       <AnimatePresence>
@@ -644,7 +644,6 @@ export default function Deck({ go }: ScreenProps) {
           event={slot?.kind === 'event'}
         />
         {slot && <DrawTracker slot={slot} drawsOf={drawsOf} />}
-        <div style={{ pointerEvents: 'auto' }}><SavedButton count={savedEvents.length} onClick={() => setSavedOpen(true)} /></div>
         <AnimatePresence mode="wait" initial={false}>
           {toast ? (
             <motion.div key={toast.id}
