@@ -1,0 +1,309 @@
+{
+ "plate": {
+  "file": "cache/libra/plate/commons.jpg",
+  "crop": [
+   0.15,
+   0.05,
+   0.86,
+   0.95
+  ],
+  "id": "commons-Sidney Hall - Urania's Mirror - Libra.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Sidney_Hall_-_Urania%27s_Mirror_-_Libra.jpg/1280px-Sidney_Hall_-_Urania%27s_Mirror_-_Libra.jpg",
+  "title": "Urania's Mirror: Libra (1824)",
+  "creator": "Sidney Hall",
+  "license": "public domain",
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Libra.jpg"
+ },
+ "images": [
+  {
+   "file": "cache/libra/cand/met-436839.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "La Tour, Magdalen at candlelit mirror",
+   "id": "met-436839",
+   "source": "met",
+   "title": "The Penitent Magdalen",
+   "creator": "Georges de La Tour",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436839",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-27910-001.jpg",
+   "w": 1916,
+   "h": 2600,
+   "query": "mirror vanity",
+   "n": 76
+  },
+  {
+   "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e000637.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Twin Jet nebula, balanced wings",
+   "id": "nasa-GSFC_20171208_Archive_e000637",
+   "source": "nasa",
+   "title": "Hubble Sees the Wings of a Butterfly: The Twin Jet Nebula",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000637",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000637/GSFC_20171208_Archive_e000637~orig.jpg",
+   "w": 1280,
+   "h": 1070,
+   "query": "Butterfly Nebula",
+   "n": 217
+  },
+  {
+   "file": "cache/libra/cand/ov-4617b9ff-4840-49ca-b942-08a06e5f1145.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Canova, Three Graces in marble",
+   "id": "ov-4617b9ff-4840-49ca-b942-08a06e5f1145",
+   "source": "openverse/wikimedia",
+   "title": "<div class='fn'> <div style='font-weight:bold;display:inline-block;'><div style='display:inline-block' dir='ltr' lang='en'><i>The Three Graces</i></div></div><div style='display: none;'>label QS:Les,'Las tres Gracias'</div> <div style='display: none;'>label QS:Lhu,'Három Gráciája'</div> <div style='display: none;'>label QS:Laf,'Grasieë'</div> <div style='display: none;'>label QS:Lde,'Die drei Grazien'</div> <div style='display: none;'>label QS:Lpt,'As três Graças'</div> <div style='display: none;'>label QS:Lbe,'Тры грацыі'</div> <div style='display: none;'>label QS:Lmk,'Трите Грации'</div> <div style='display: none;'>label QS:Lzh,'又有美惠三女神'</div> <div style='display: none;'>label QS:Lda,'De tre gratier'</div> <div style='display: none;'>label QS:Lro,'Cele trei Grații'</div> <div style='display: none;'>label QS:Lja,'三美神'</div> <div style='display: none;'>label QS:Laz,'Üç Qrasiya'</div> <div style='display: none;'>label QS:Lel,'Οι τρεις χάριτες'</div> <div style='display: none;'>label QS:Lsv,'De tre gracerna'</div> <div style='display: none;'>label QS:Lpl,'Trzy Gracje'</div> <div style='display: none;'>label QS:Luk,'Три грації'</div> <div style='display: none;'>label QS:Lnl,'De drie Gratiën'</div> <div style='display: none;'>label QS:Lit,'Tre Grazie'</div> <div style='display: none;'>label QS:Lfr,'Les trois Grâces'</div> <div style='display: none;'>label QS:Lla,'Gratiae'</div> <div style='display: none;'>label QS:Lru,'Три грации'</div> <div style='display: none;'>label QS:Len,'The Three Graces'</div> <div style='display: none;'>label QS:Lbr,'An Teir Fulenn'</div> <div style='display: none;'>label QS:Lcs,'Tři grácie'</div> <div style='display: none;'>label QS:Lca,'Les tres Gràcies'</div></div>",
+   "creator": "Antonio Canova",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=369826",
+   "url": "https://api.openverse.org/v1/images/4617b9ff-4840-49ca-b942-08a06e5f1145/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Le_tre_Grazie.jpg",
+   "w": 1280,
+   "h": 1876,
+   "query": "Three Graces",
+   "n": 44
+  },
+  {
+   "file": "cache/libra/cand/met-436722.jpg",
+   "focus": [
+    0.45,
+    0.58
+   ],
+   "zoom": 1.2,
+   "note": "Isenbrant, man holding a balance",
+   "id": "met-436722",
+   "source": "met",
+   "title": "Man Weighing Gold",
+   "creator": "Adriaen Isenbrant",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436722",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-017.jpg",
+   "w": 1610,
+   "h": 2600,
+   "query": "scales balance",
+   "n": 1
+  },
+  {
+   "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e001859.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "half moon, light and dark in balance",
+   "id": "nasa-GSFC_20171208_Archive_e001859",
+   "source": "nasa",
+   "title": "Third Quarter",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001859",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001859/GSFC_20171208_Archive_e001859~orig.jpg",
+   "w": 2400,
+   "h": 2400,
+   "query": "Libra constellation",
+   "n": 111
+  },
+  {
+   "file": "cache/libra/cand/ov-3dc8a8ab-7055-4c2b-bc91-047634cf8073.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom": 1.15,
+   "note": "Canova, Cupid and Psyche embrace",
+   "id": "ov-3dc8a8ab-7055-4c2b-bc91-047634cf8073",
+   "source": "openverse/wikimedia",
+   "title": "Metropolitan canova cupid psyche 02",
+   "creator": "Ad Meskens sculpture Antonio Canova",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=10841367",
+   "url": "https://api.openverse.org/v1/images/3dc8a8ab-7055-4c2b-bc91-047634cf8073/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Metropolitan_canova_cupid_psyche_02.jpg",
+   "w": 1280,
+   "h": 1447,
+   "query": "Canova Cupid Psyche",
+   "n": 228
+  },
+  {
+   "file": "cache/libra/cand/nasa-PIA10391.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "spiral galaxy and its companion",
+   "id": "nasa-PIA10391",
+   "source": "nasa",
+   "title": "Interacting Galaxies",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA10391",
+   "url": "https://images-assets.nasa.gov/image/PIA10391/PIA10391~orig.jpg",
+   "w": 2371,
+   "h": 2371,
+   "query": "interacting galaxies",
+   "n": 159
+  },
+  {
+   "file": "cache/libra/cand/met-438378.jpg",
+   "focus": [
+    0.35,
+    0.62
+   ],
+   "zoom": 1.25,
+   "note": "de Keyser, woman with a balance",
+   "id": "met-438378",
+   "source": "met",
+   "title": "Portrait of a Woman with a Balance",
+   "creator": "Thomas de Keyser",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438378",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP120417.jpg",
+   "w": 1967,
+   "h": 2600,
+   "query": "scales balance",
+   "n": 0
+  },
+  {
+   "file": "cache/libra/cand/nasa-PIA23121.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "pink and violet nebula",
+   "id": "nasa-PIA23121",
+   "source": "nasa",
+   "title": "Space Butterfly",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA23121",
+   "url": "https://images-assets.nasa.gov/image/PIA23121/PIA23121~orig.jpg",
+   "w": 2600,
+   "h": 1696,
+   "query": "Butterfly Nebula",
+   "n": 219
+  },
+  {
+   "file": "cache/libra/cand/nasa-PIA14936.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Venus, the morning star, over the horizon",
+   "id": "nasa-PIA14936",
+   "source": "nasa",
+   "title": "Morning Star",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA14936",
+   "url": "https://images-assets.nasa.gov/image/PIA14936/PIA14936~orig.jpg",
+   "w": 1003,
+   "h": 1003,
+   "query": "Venus planet",
+   "n": 148
+  },
+  {
+   "file": "cache/libra/cand/aic-59847.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "note": "Manfredi, Venus and Mars chastise Cupid",
+   "id": "aic-59847",
+   "source": "aic",
+   "title": "Cupid Chastised",
+   "creator": "Bartolomeo Manfredi (Italian, 1582–1622)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/59847",
+   "url": "https://www.artic.edu/iiif/2/0f951635-312c-0829-451b-553f461c5518/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2361,
+   "query": "Venus Aphrodite",
+   "n": 19
+  },
+  {
+   "file": "cache/libra/cand/nasa-PIA10389.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "galaxy pair",
+   "id": "nasa-PIA10389",
+   "source": "nasa",
+   "title": "AM 1316-241",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA10389",
+   "url": "https://images-assets.nasa.gov/image/PIA10389/PIA10389~orig.jpg",
+   "w": 1660,
+   "h": 1660,
+   "query": "interacting galaxies",
+   "n": 161
+  },
+  {
+   "file": "cache/libra/cand/aic-226550.jpg",
+   "focus": [
+    0.6,
+    0.35
+   ],
+   "note": "Blondel, Venus descends in light",
+   "id": "aic-226550",
+   "source": "aic",
+   "title": "Venus Healing Aeneas",
+   "creator": "Merry Joseph Blondel (French, 1781–1853)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/226550",
+   "url": "https://www.artic.edu/iiif/2/59511df1-03d0-aea4-369a-959669ccfe51/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2128,
+   "query": "Venus Aphrodite",
+   "n": 22
+  },
+  {
+   "file": "cache/libra/cand/aic-44816.jpg",
+   "focus": [
+    0.72,
+    0.45
+   ],
+   "note": "Cambiaso, Venus and Cupid in candlelight",
+   "id": "aic-44816",
+   "source": "aic",
+   "title": "Venus and Cupid",
+   "creator": "Luca Cambiaso (Italian, 1527–1585)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/44816",
+   "url": "https://www.artic.edu/iiif/2/b78bb8b2-48a8-6ccb-7c5d-2b301e06e35a/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1921,
+   "query": "Birth of Venus",
+   "n": 17
+  },
+  {
+   "file": "cache/libra/cand/nasa-PIA13448.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "nebula glowing in the dark",
+   "id": "nasa-PIA13448",
+   "source": "nasa",
+   "title": "A Flame in Orion Belt",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA13448",
+   "url": "https://images-assets.nasa.gov/image/PIA13448/PIA13448~orig.jpg",
+   "w": 2213,
+   "h": 2600,
+   "query": "Orion Nebula",
+   "n": 210
+  }
+ ]
+}

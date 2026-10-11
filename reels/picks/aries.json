@@ -215,26 +215,6 @@
    "n": 73
   },
   {
-   "file": "cache/aries/cand/met-436839.jpg",
-   "focus": [
-    0.74,
-    0.55
-   ],
-   "zoom": 1.5,
-   "note": "La Tour, candle flame in the dark",
-   "id": "met-436839",
-   "source": "met",
-   "title": "The Penitent Magdalen",
-   "creator": "Georges de La Tour",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436839",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-27910-001.jpg",
-   "w": 1916,
-   "h": 2600,
-   "query": "candle",
-   "n": 262
-  },
-  {
    "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e000195.jpg",
    "focus": [
     0.5,
@@ -273,24 +253,43 @@
    "n": 287
   },
   {
-   "file": "cache/aries/cand/aic-95998.jpg",
+   "file": "cache/aries/cand/ov-91e2a34b-805f-48f5-b350-f47dcf1f4915.jpg",
+   "focus": [
+    0.3,
+    0.4
+   ],
+   "note": "Egyptian ram's head (criosphinx), sandstone in raking light",
+   "id": "ov-91e2a34b-805f-48f5-b350-f47dcf1f4915",
+   "source": "openverse/wikimedia",
+   "title": "Head of a ram (criosphinx), sandstone, Museo Egizio Turin C 846",
+   "creator": "Unknown authorUnknown author",
+   "license": "cc0 1.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=178906173",
+   "url": "https://api.openverse.org/v1/images/91e2a34b-805f-48f5-b350-f47dcf1f4915/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Head_of_a_ram%2C_sandstone_-_Museo_Egizio_%28Turin%29_C_846_p01.jpg",
+   "w": 1280,
+   "h": 1620,
+   "query": "criosphinx Karnak",
+   "n": 312
+  },
+  {
+   "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e002075.jpg",
    "focus": [
     0.5,
-    0.55
+    0.5
    ],
-   "zoom": 1.4,
-   "note": "Rembrandt, old warrior with gorget and gold chain",
-   "id": "aic-95998",
-   "source": "aic",
-   "title": "Old Man with a Gold Chain",
-   "creator": "Rembrandt van Rijn (Dutch, 1606–1669)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/95998",
-   "url": "https://www.artic.edu/iiif/2/3eaab3a3-2b47-9fdd-121c-050f6b8d9ccb/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1837,
-   "query": "Rembrandt warrior",
-   "n": 171
+   "note": "Carina nebula, red dust on black",
+   "id": "nasa-GSFC_20171208_Archive_e002075",
+   "source": "nasa",
+   "title": "CTIO Image of Carina Nebula",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002075",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002075/GSFC_20171208_Archive_e002075~orig.jpg",
+   "w": 2036,
+   "h": 2048,
+   "query": "Carina nebula",
+   "n": 302
   }
  ]
 }
