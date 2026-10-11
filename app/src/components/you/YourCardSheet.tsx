@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion, useAnimationControls, useMotionValue, useSpring, useTransform, type MotionValue } from 'framer-motion'
+import { AnimatePresence, motion, useAnimationControls, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import Starfield from '../Starfield'
-import { SIGNS } from '../../data/signs'
-import { ME } from '../../data/profiles'
+import { ME, type Profile } from '../../data/profiles'
+import ProfileCard from '../deck/ProfileCard'
+import ProfileFace from '../reveal/ProfileFace'
+import { CARD_W as DECK_W, CARD_H as DECK_H } from '../deck/fx'
 import { sfx } from '../../lib/sfx'
 
 export type CardSide = 'down' | 'flipped'
 
-const SUN = SIGNS[ME.sign]
-const MOON = SIGNS[ME.moon]
-const RISING = SIGNS[ME.rising]
-const ELEMENT = SUN.element[0].toUpperCase() + SUN.element.slice(1)
 
 /** Hakeem's card copy (G-05b). */
 export const MY_CARD = {
@@ -25,10 +23,27 @@ export const MY_CARD = {
   dealbreakers: 'No ghosting. Answer the question you were asked.',
 }
 
-const CARD_W = 350
-const CARD_H = 560
+/** your card as a Profile, so it renders with the exact cards everyone else sees */
+const MY_PROFILE: Profile = {
+  id: 'me', initial: ME.name, name: ME.name, age: ME.age, sign: ME.sign, moon: ME.moon, rising: ME.rising,
+  serial: ME.serial.replace('№ ', ''), pull: 'Steady pull', photo: ME.photo, alignsBack: false, blurb: ME.blurb,
+  dealbreakers: MY_CARD.dealbreakers, bio: MY_CARD.bio,
+  religion: MY_CARD.facts[0][1], lookingFor: MY_CARD.facts[1][1], height: MY_CARD.facts[2][1], work: MY_CARD.facts[3][1],
+  interests: [...MY_CARD.interests],
+  reading: [
+    { kind: 'pull', text: 'Remembers your order. Plans the second date during the first.', strength: 3 },
+    { kind: 'push', text: 'Slow to say how he feels. Ask him directly.', strength: 2 },
+    { kind: 'align', text: 'Loyal and steady. Wants something that lasts.', strength: 3 },
+  ],
+}
 
-const GOLD_EDGE = 'linear-gradient(160deg, #fff4cf 0%, #c9a24a 18%, #6b4e1c 38%, #f2c75c 55%, #8a6a2a 75%, #fff0c0 100%)'
+/** the reveal card is drawn at 358 × 625; both sides share the deck card's width */
+const FACE_W = 358
+const FACE_H = 625
+const CARD_W = DECK_W
+const FACE_S = CARD_W / FACE_W
+const CARD_H = Math.round(FACE_H * FACE_S)
+
 
 interface Props {
   initial: CardSide
@@ -65,7 +80,6 @@ export default function YourCardSheet({ initial, onClose }: Props) {
   const py = useMotionValue(0)
   const tiltX = useSpring(useTransform(py, [-1, 1], [5, -5]), { stiffness: 160, damping: 18 })
   const tiltY = useSpring(useTransform(px, [-1, 1], [-7, 7]), { stiffness: 160, damping: 18 })
-  const sheenX = useTransform(px, [-1, 1], ['-30%', '30%'])
 
   return (
     <motion.div
@@ -105,7 +119,7 @@ export default function YourCardSheet({ initial, onClose }: Props) {
             <span className="mono" style={{
               position: 'relative', fontSize: 10, letterSpacing: '0.18em', fontWeight: 700,
               color: side === s ? '#2a1d48' : 'var(--label-2)', transition: 'color .2s',
-            }}>{s === 'down' ? 'FACE DOWN' : 'FLIPPED'}</span>
+            }}>{s === 'down' ? 'MYSTERY' : 'REVEALED'}</span>
           </button>
         ))}
       </div>
@@ -114,7 +128,7 @@ export default function YourCardSheet({ initial, onClose }: Props) {
           <motion.div key={side} className="mono"
             initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.2 }}
             style={{ textAlign: 'center', fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}>
-            {flipped ? 'ONLY VISIBLE AFTER YOU BOTH ALIGN' : 'WHAT EVERY DECK SEES TONIGHT'}
+            {flipped ? 'WHAT A MATCH SEES ONCE YOU BOTH ALIGN' : 'WHAT OTHERS SEE IN THEIR DECK TONIGHT'}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -128,7 +142,7 @@ export default function YourCardSheet({ initial, onClose }: Props) {
         }}
         onPointerLeave={() => { px.set(0); py.set(0) }}
         onClick={() => set(flipped ? 'down' : 'flipped')}
-        style={{ position: 'absolute', left: 20, top: 162, width: CARD_W, height: CARD_H, perspective: 1600, cursor: 'pointer' }}
+        style={{ position: 'absolute', left: (390 - CARD_W) / 2, top: 162, width: CARD_W, height: CARD_H, perspective: 1600, cursor: 'pointer' }}
       >
         <motion.div animate={nudge} style={{ width: '100%', height: '100%', rotateX: tiltX, rotateY: tiltY, transformStyle: 'preserve-3d' }}>
           <motion.div
@@ -137,12 +151,16 @@ export default function YourCardSheet({ initial, onClose }: Props) {
             initial={false}
             style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}
           >
-            <Face>
-              <FrontFace sheenX={sheenX} />
-            </Face>
-            <Face back>
-              <BackFace sheenX={sheenX} />
-            </Face>
+            {/* front: the mystery card, exactly as it's dealt into other people's decks */}
+            <div style={{ position: 'absolute', left: 0, top: (CARD_H - DECK_H) / 2, width: DECK_W, height: DECK_H, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
+              <ProfileCard profile={MY_PROFILE} peek="none" />
+            </div>
+            {/* back: the full reveal card a match sees */}
+            <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+              <div style={{ width: FACE_W, height: FACE_H, transform: `scale(${FACE_S})`, transformOrigin: '0 0' }}>
+                <ProfileFace p={MY_PROFILE} shown lift revealed />
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>
@@ -154,7 +172,7 @@ export default function YourCardSheet({ initial, onClose }: Props) {
         whileTap={{ scale: 0.97 }}
         className="serif italic"
         style={{
-          position: 'absolute', left: 38, top: 740, width: 314, height: 52, borderRadius: 999,
+          position: 'absolute', left: 38, top: 754, width: 314, height: 52, borderRadius: 999,
           border: '1px solid rgba(239,230,214,0.32)', background: 'rgba(40,26,78,0.55)',
           backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
           fontSize: 19, color: 'var(--label-1)',
@@ -163,110 +181,5 @@ export default function YourCardSheet({ initial, onClose }: Props) {
         Edit this side
       </motion.button>
     </motion.div>
-  )
-}
-
-function Face({ back, children }: { back?: boolean; children: React.ReactNode }) {
-  return (
-    <div style={{
-      position: 'absolute', inset: 0, borderRadius: 20, padding: 1.5,
-      background: GOLD_EDGE,
-      boxShadow: '0 0 28px rgba(242,199,92,0.28), 0 24px 50px rgba(5,2,15,0.6)',
-      backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
-      transform: back ? 'rotateY(180deg)' : undefined,
-    }}>
-      <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 18.5, overflow: 'hidden', background: '#1f1446' }}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-function Sheen({ x }: { x: MotionValue<string> }) {
-  return (
-    <motion.div style={{
-      position: 'absolute', inset: '-20%', x, pointerEvents: 'none', mixBlendMode: 'screen',
-      background: 'linear-gradient(115deg, transparent 38%, rgba(255,244,214,0.10) 46%, rgba(220,200,255,0.12) 50%, transparent 58%)',
-    }} />
-  )
-}
-
-function AuraImg({ height, photo }: { height: number; photo?: boolean }) {
-  const tall = height > 300
-  return (
-    <div className="grain" style={{ position: 'absolute', left: 0, right: 0, top: 0, height, overflow: 'hidden' }}>
-      <img src={photo ? ME.photo : SUN.auraImg} alt="" style={{
-        width: '100%', height: '100%', objectFit: 'cover', objectPosition: photo ? '50% 32%' : '50% 30%',
-        // the source plate has a dark band along its top edge — crop past it on the tall face
-        transform: tall && !photo ? 'scale(1.14)' : undefined, transformOrigin: '50% 85%',
-      }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 70%, rgba(31,20,70,0.55) 100%)' }} />
-      <div className="mono" style={{ position: 'absolute', left: 16, bottom: 14, fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-1)', textShadow: '0 1px 6px #000' }}>
-        {photo ? 'PHOTO' : `AURA · ${SUN.aura.toUpperCase()}`}
-      </div>
-    </div>
-  )
-}
-
-function FrontFace({ sheenX }: { sheenX: MotionValue<string> }) {
-  return (
-    <>
-      <AuraImg height={410} />
-      <div style={{ position: 'absolute', left: 18, right: 18, top: 426 }}>
-        <div className="serif italic" style={{ fontSize: 30, color: 'var(--label-1)' }}>{ME.name}, {ME.age}</div>
-        <div style={{ marginTop: 4, fontSize: 13.5, color: 'var(--label-2)' }}>{SUN.name} · {ELEMENT} · {MOON.name} moon</div>
-        <div style={{ height: 1, background: 'rgba(179,166,196,0.18)', margin: '18px 0 12px' }} />
-        <div className="mono" style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-3)' }}>
-          <span>ALIGN · {ME.serial}</span>
-          <span style={{ color: 'var(--align)' }}>✦ FACE DOWN</span>
-        </div>
-      </div>
-      <Sheen x={sheenX} />
-    </>
-  )
-}
-
-const label: React.CSSProperties = { fontFamily: 'var(--mono)', fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-3)', textTransform: 'uppercase' }
-const value: React.CSSProperties = { fontFamily: 'var(--serif)', fontSize: 15.5, lineHeight: '20px', color: 'var(--label-1)', marginTop: 3 }
-
-function BackFace({ sheenX }: { sheenX: MotionValue<string> }) {
-  return (
-    <>
-      <AuraImg height={176} photo />
-      <div className="mono" style={{
-        position: 'absolute', right: 12, top: 144, height: 22, padding: '0 10px', borderRadius: 999, display: 'flex', alignItems: 'center',
-        fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-1)', background: 'rgba(20,10,46,0.7)', border: '1px solid rgba(239,230,214,0.35)',
-      }}>MATCHES ONLY</div>
-      <div style={{ position: 'absolute', left: 18, right: 18, top: 186 }}>
-        <div className="serif italic" style={{ fontSize: 27, lineHeight: '32px', color: 'var(--label-1)' }}>{ME.name}, {ME.age}</div>
-        <div style={{ marginTop: 2, fontSize: 13, color: 'var(--label-2)' }}>
-          {SUN.name} · {ELEMENT} · {MOON.name} moon · {RISING.name} rising
-        </div>
-        <div style={{ height: 1, background: 'rgba(179,166,196,0.18)', margin: '9px 0 9px' }} />
-        <div style={label}>Full bio</div>
-        <div style={{ ...value, fontSize: 16, lineHeight: '21px' }}>{MY_CARD.bio}</div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: 12, rowGap: 8, marginTop: 12 }}>
-          {MY_CARD.facts.map(([k, v]) => (
-            <div key={k}>
-              <div style={label}>{k}</div>
-              <div style={{ ...value, fontStyle: k === 'Height' ? 'italic' : undefined }}>{v}</div>
-            </div>
-          ))}
-        </div>
-        <div style={{ ...label, marginTop: 12 }}>Interests</div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 6 }}>
-          {MY_CARD.interests.map((t) => (
-            <span key={t} className="mono" style={{
-              height: 22, padding: '0 10px', borderRadius: 999, display: 'inline-flex', alignItems: 'center',
-              fontSize: 8.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--label-1)',
-              background: 'rgba(52,35,95,0.55)', border: '1px solid rgba(179,166,196,0.32)',
-            }}>{t}</span>
-          ))}
-        </div>
-        <div style={{ ...label, marginTop: 12 }}>Dealbreakers</div>
-        <div style={value}>{MY_CARD.dealbreakers}</div>
-      </div>
-      <Sheen x={sheenX} />
-    </>
   )
 }
