@@ -6,7 +6,7 @@ import { W, H } from './common.js'
 // Pure function of t. Per-scene star fields cross-fade at scene boundaries; transitions paint over them.
 // Hero moments (for sound):
 //   shooting stars   S1 1.00–1.55 · small ones S2 4.25–4.65, S4 11.70–12.15, S5 15.90–16.30, S6 19.70–20.15 · end card 28.80–29.30
-//   sparkle bursts   8.36 aura-cam resolve · 21.85 ALIGNED stamp · 24.30 match phone lands ·
+//   sparkle bursts   8.72 S3 stars-align lock (gold) · 21.85 ALIGNED stamp · 24.30 match phone lands ·
 //                    27.40–27.82 chakra lights (one twin-sparkle per chakra, 0.07 apart, bottom→top)
 //   whole layer fades with the end 29.50–29.85.
 
@@ -41,10 +41,14 @@ const PROFILES = [
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 0.95,
     keep: [[400, 230, 1120, 620]],
   },
-  { // S3 · mystery card / thermal → real → gilded card
-    a: 6.86, b: 10.02, fin: 0.45, fout: 0.15, seed: 37, sprites: 20, dots: 60, px: [3, 4], drift: [-8, -5], edge: true,
+  { // S3 · mystery card + waxing moon → the stars align (lock 8.72) → reveal card → card back (REAL time)
+    a: 6.86, b: 11.52, fin: 0.45, fout: 0.15, seed: 37, sprites: 20, dots: 60, px: [3, 4], drift: [-8, -5], edge: true,
     pal: [BONE, GOLD, BONE, VIOLET], centre: HOT, dot: '255,247,236', alpha: 0.95,
-    keep: [[560, 0, 800, 840, 6.8, 9.0], [420, 830, 1080, 170, 6.8, 9.0], [660, 40, 600, 1000, 8.9, 10.1]],
+    keep: [
+      [540, 20, 840, 840, 6.8, 9.4],     // mystery card + moon disc + chakra column
+      [440, 860, 1040, 180, 6.8, 9.75],  // "The stars are giving you a chance." / "The stars aligned."
+      [420, 0, 1080, 1080, 9.4, 11.6],   // reveal card (camera push into its photo window), moon, card-back push
+    ],
   },
   { // S4 · halftone aura sky, giant Align, zoomed pill typing
     a: 9.95, b: 14.12, fin: 0.4, fout: 0.2, seed: 41, sprites: 28, dots: 90, px: [3, 4], drift: [-18, -4],
@@ -164,7 +168,7 @@ function drawField(ctx, P, t, wgt) {
 
 // ── hero bursts: sparkles fly out from a ring and step down big → glint → tiny
 const BURSTS = [
-  { t: 8.36, x: 960, y: 400, r0: 380, r1: 760, n: 18, px: 5, life: 0.95, pal: [BONE, GOLD, VIOLET, ROSE], centre: HOT, sy: 0.62, seed: 3 },
+  { t: 8.72, x: 960, y: 440, r0: 150, r1: 900, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sy: 0.78, seed: 3 },   // S3 the stars align (lock)
   { t: 21.85, x: 1230, y: 395, r0: 60, r1: 250, n: 12, px: 4, life: 0.75, pal: [GOLD, BONE, VIOLET, ROSE], centre: HOT, sy: 0.42, seed: 5 },
   { t: 24.3, x: 690, y: 560, r0: 390, r1: 520, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.62, sy: 1.08, avoid: [960, 430, 700, 220], seed: 7 },
 ]

@@ -21,6 +21,8 @@ export const CUES = {
   captions: [24.3, 25.65],
   whooshS7: [24.12, 25.45, 26.62],
   pulse: [28.58],
+  // moon motif (REAL time, not shifted): clock ticks per scene, full-moon bloom, end-card phase row
+  moonReal: { ticks: [4.05, 11.85, 19.65, 25.9], fullBloom: 26.6, strip: 17.48, row: { start: 29.95, step: 0.075, count: 9 } },
   s2stars: { start: 3.89, step: 0.06, count: 6 },
   alignedLifts: [19.02, 19.26, 19.5, 19.74, 20.06],
   shooting: [1.0, 4.25, 11.7, 15.9, 19.7, 28.8],

@@ -1,5 +1,6 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
 import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { drawMoonGlyph } from './fx-moon.js'
 
 // ──────────────────────────────────────────────────────── S8 · end card
 // Timing (sound): rings draw 26.95–27.52 · chakra dots pop 27.40–27.97 (bottom→top, 0.07 apart) ·
@@ -8,6 +9,8 @@ import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeS
 // Portrait orbit: 12 tiny aura portraits (36–48px, ≤0.5 opacity) on a wide tilted ring far behind the mark;
 //   orbit hairline draws 27.55–28.35 · portraits fade/scale in one by one 27.62 + k*0.06 (→ ~28.3), soft, no hard pop ·
 //   slow drift 0.07 rad/s · twinkle field (50 dot stars, a few pixel crosses) fades in 27.0–27.6 · all fade with the end 29.50–29.85.
+// Moon row (new → full, 9 phases) under the sub-line, in the lockup's push: outlines fade in 28.25 + i*0.03 ·
+//   each phase lights 28.45 + i*0.075 (bottom of the arc: new … full) → FULL lands 29.05 with a soft bloom (peak ~29.15).
 // Lockup sits 40px higher than centre-balanced so a CTA line can be added later below the sub-line (~y 860–920).
 const LIFT = 40
 export function sceneEnd(stage) {
@@ -45,7 +48,12 @@ export function sceneEnd(stage) {
     </svg>`)
   const rings = [...svg.querySelectorAll('.ring')], halos = [...svg.querySelectorAll('.halo')], cores = [...svg.querySelectorAll('.core')]
   const word = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (H / 2 + 96 - LIFT) + 'px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: '132px', color: C.bone, textShadow: '0 0 40px rgba(239,230,214,0.25)' }, lock, 'Align')
-  const sub = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (H / 2 + 286 - LIFT) + 'px', textAlign: 'center', fontFamily: MONO, fontSize: '40px', letterSpacing: '0.2em', textIndent: '0.2em', color: C.bone }, lock, 'YOUR FIRST DECK IS WAITING')
+  const sub = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (H / 2 + 286 - LIFT) + 'px', textAlign: 'center', fontFamily: MONO, fontSize: '40px', letterSpacing: '0.2em', textIndent: '0.2em', color: C.bone }, lock, 'PUT YOUR FAITH IN THE STARS')
+  // moon row: blind (new) → aligned (full)
+  const MR = { n: 9, gap: 64, r: 13, w: 9 * 64, h: 80 }
+  const mrow = el('canvas', { position: 'absolute', left: (W / 2 - MR.w / 2) + 'px', top: (H / 2 + 360 - LIFT) + 'px', width: MR.w + 'px', height: MR.h + 'px' }, lock)
+  mrow.width = MR.w * 2; mrow.height = MR.h * 2
+  const mctx = mrow.getContext('2d')
   const fadeV = fill(root, { background: C.void, opacity: 0 })
   const black = fill(root, { background: '#000', opacity: 0 })
   return {
@@ -73,6 +81,16 @@ export function sceneEnd(stage) {
       word.style.filter = `blur(${lerp(8, 0, wp)}px)`
       word.style.transform = `translateY(${lerp(10, 0, wp)}px)`
       sub.style.opacity = String(ease.outQuad(prog(t, 28.2, 28.6)))
+      mctx.setTransform(2, 0, 0, 2, 0, 0); mctx.clearRect(0, 0, MR.w, MR.h)
+      for (let i = 0; i < MR.n; i++) {
+        const a = ease.outQuad(prog(t, 28.25 + i * 0.03, 28.5 + i * 0.03))
+        if (a <= 0) continue
+        const on = ease.outCubic(prog(t, 28.45 + i * 0.075, 28.62 + i * 0.075))
+        const full = i === MR.n - 1
+        const bloom = full ? tw(t, [[29.05, 0], [29.15, 1, ease.outQuad], [29.45, 0.55, ease.inOutQuad]]) : 0
+        drawMoonGlyph(mctx, MR.gap / 2 + i * MR.gap, MR.h / 2, MR.r * (1 + 0.12 * bloom), i / 16, {
+          alpha: a * (0.4 + 0.5 * on + (full ? 0.1 * on : 0)), fillAlpha: on, lw: 1.3, discAlpha: 0.08, glow: full ? 0.6 * on + 1.4 * bloom : 0.35 * on })
+      }
       stars.style.opacity = String(prog(t, 26.95, 27.35))
       // twinkle field
       tctx.clearRect(0, 0, W, H)
@@ -96,7 +114,10 @@ export function sceneEnd(stage) {
         const depth = (Math.sin(ang) + 1) / 2 // 0 back (top) → 1 front (bottom)
         const ap = ease.outCubic(prog(t, o.t0, o.t0 + 0.5))
         const twk = 0.82 + 0.18 * Math.sin(t * 2.2 + o.ph)
-        o.g.style.opacity = String(ap * lerp(0.28, 0.5, depth) * twk)
+        // keep-out: portraits dissolve where the orbit passes behind the moon row (x 640–1280, y 870–930)
+        const kd = Math.hypot(Math.max(0, Math.abs(x - W / 2) - 320), Math.max(0, Math.abs(y - (H / 2 + 400 - LIFT)) - 30))
+        const keep = lerp(1, ease.inOutQuad(clamp(kd / 70)), prog(t, 28.1, 28.4))
+        o.g.style.opacity = String(ap * lerp(0.28, 0.5, depth) * twk * keep)
         o.g.style.transform = `translate(${x}px, ${y}px) scale(${lerp(0.6, 1, ap) * lerp(0.75, 1, depth)})`
       })
       svg.style.transform = `scale(${lerp(1.08, 1, ease.outCubic(prog(t, 26.95, 27.8)))})`

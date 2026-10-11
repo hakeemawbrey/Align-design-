@@ -1,5 +1,6 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
 import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { drawMoon } from './fx-moon.js'
 
 // index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
 // Register the 500 face locally (shared guard with s2) — document.fonts.ready waits for it.
@@ -285,6 +286,15 @@ export function sceneImagine(stage) {
       }
       bx.globalCompositeOperation = 'source-over'
       bx.globalAlpha = 1
+      // the moon motif begins here: a thin waxing crescent (earthshine shows the hidden face) rising
+      // upper-right, clear of the caption band. Fades in 0.15–1.1, rises the whole scene; lit 5% → 12%.
+      {
+        const mk = ease.outCubic(prog(t, 0, S1_END))
+        const mx = lerp(1575, 1548, mk), my = lerp(338, 236, mk)
+        const s = cam * lerp(1, 1.05, k)
+        drawMoon(bx, W / 2 + (mx - W / 2) * s + driftX * 1.3, H / 2 + (my - H / 2) * s + driftY * 1.3, 72 * s,
+          lerp(0.072, 0.112, mk), { alpha: fadeUp * ease.inOutQuad(prog(t, 0.15, 1.1)), glow: 3.4, earthshine: 1, darkAlpha: 0.62 })
+      }
       bx.drawImage(pocket, 0, 0)
       bx.drawImage(vig, 0, 0)
 

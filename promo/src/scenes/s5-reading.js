@@ -1,5 +1,6 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
 import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
+import { drawMoonGlyph, litOf } from './fx-moon.js'
 
 // first dealt card (S6 opens on it) — fxDots samples its colours
 const DOT_SRC = A + 'card-profile-1.png'
@@ -8,6 +9,10 @@ let dotImg = null
 // ───────────────────────────────────────────── S5 · Reading your sky
 // Your own sign card (Taurus, "YOUR CARD" stamp) floats in on the right after Sun lands.
 const VIOLET_HI = '#b9a2f0'
+// tonight's moon (S5's beat of the waxing moon motif — the corner moon clock hides in this scene)
+const MOON_P = 0.36
+const STRIP = [0, 0.0625, 0.125, 0.25, 0.36, 0.5, 0.625, 0.75]   // new → … → full → waning; index 4 = tonight
+const STRIP_CUR = 4
 const SIGN = { src: 'card-sign-stamped.png', iw: 904, ih: 1156, body: [116, 124, 724, 1042] }
 export function sceneReading(stage) {
   const root = fill(stage, { background: C.canvas })
@@ -23,7 +28,7 @@ export function sceneReading(stage) {
   const rail = el('div', { position: 'absolute', width: '3px', background: 'rgba(239,230,214,0.22)' }, block)
   const ITEMS = [
     { g: '☉', c: C.gold, label: 'Sun', sub: 'Taurus' },
-    { g: '☽', c: VIOLET_HI, label: 'Moon', sub: 'Sagittarius' },
+    { g: ' ', moon: true, c: VIOLET_HI, label: 'Moon', sub: 'Sagittarius' },
     { g: '↑', c: '#ff8fb1', label: 'Rising', sub: 'Libra' },
     { g: '♀', c: C.spark, label: 'Venus', sub: 'Aries' },
     { g: '', c: '#ff8fb1', label: 'Dealing', sub: 'your first deck' },
@@ -33,6 +38,12 @@ export function sceneReading(stage) {
   const rows = ITEMS.map(it => {
     const r = el('div', { position: 'absolute', left: '0', display: 'flex', alignItems: 'center', gap: '24px', whiteSpace: 'nowrap', fontFamily: SANS }, block)
     const ic = el('div', { width: '58px', height: '58px', boxSizing: 'border-box', borderRadius: '13px', border: `3.5px solid ${it.c}`, color: it.c, display: it.g ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', fontSize: '36px', lineHeight: 1 }, r, it.g)
+    if (it.moon) {   // moon-phase line icon (waxing gibbous, same phase as the strip below the card)
+      ic.textContent = ''
+      const mc = el('canvas', { width: '40px', height: '40px' }, ic); mc.width = mc.height = 80
+      const mx = mc.getContext('2d'); mx.scale(2, 2)
+      drawMoonGlyph(mx, 20, 20, 15, MOON_P, { color: it.c, lw: 3, discAlpha: 0 })
+    }
     const lab = el('div', { fontSize: '58px', fontWeight: 500, color: it.c, letterSpacing: '-0.01em' }, r, it.label)
     const sub = el('div', { fontSize: '50px', color: 'rgba(239,230,214,0.7)', letterSpacing: '-0.01em' }, r, '— ' + it.sub)
     return { r, ic, lab, sub, it }
@@ -48,6 +59,12 @@ export function sceneReading(stage) {
   const layer = (clip) => img(card, A + SIGN.src, { left: 0, top: 0, width: cw + 'px', height: chh + 'px', clipPath: clip })
   layer(`inset(${bt}px ${cw - br}px ${chh - bb}px ${bl}px round ${34 * SC}px)`)
   layer(`polygon(${[[458, 99], [783, 65], [793, 143], [466, 179]].map(([x, y]) => `${x * SC}px ${y * SC}px`).join(',')})`)
+
+  // phase strip under the sign card: 8 phases, a highlight walks to tonight's (sound: ticks 15.62 + i*0.09, lands 15.98)
+  const SW = 560, SHh = 120
+  const strip = el('canvas', { position: 'absolute', left: (1400 - SW / 2) + 'px', top: '842px', width: SW + 'px', height: SHh + 'px' }, root)
+  strip.width = SW * 2; strip.height = SHh * 2
+  const sx = strip.getContext('2d')
 
   let titleW = 0, blockW = 0
   return {
@@ -104,6 +121,25 @@ export function sceneReading(stage) {
       const pulse = prog(t, 16.6, 17.06)
       rows[4].lab.style.opacity = String(1 - 0.35 * pulse * (0.5 + 0.5 * Math.sin((t - 16.6) * 14)))
 
+      // phase strip
+      sx.setTransform(2, 0, 0, 2, 0, 0); sx.clearRect(0, 0, SW, SHh)
+      const sIn = prog(t, 15.4, 15.75), sOut = ease.inQuad(prog(t, 16.42, 16.62))
+      strip.style.display = sIn > 0 && sOut < 1 ? 'block' : 'none'
+      if (sIn > 0 && sOut < 1) {
+        const hi = Math.min(STRIP_CUR, Math.floor((t - 15.62) / 0.09))
+        STRIP.forEach((p, i) => {
+          const a = ease.outCubic(prog(t, 15.4 + i * 0.035, 15.65 + i * 0.035)) * (1 - sOut)
+          const cur = i === STRIP_CUR && hi >= STRIP_CUR
+          const pass = i === hi && !cur ? 1 - clamp((t - 15.62 - i * 0.09) / 0.12) * 0.6 : 0
+          const on = cur ? ease.outCubic(prog(t, 15.98, 16.18)) : 0
+          drawMoonGlyph(sx, 36 + i * 69.7, 40, 12 + 2 * on, p, { alpha: a * (0.42 + 0.3 * pass + 0.58 * on), lw: 1.4, discAlpha: 0.08, glow: on * 1.2 })
+        })
+        sx.globalAlpha = ease.outQuad(prog(t, 15.95, 16.2)) * (1 - sOut)
+        sx.font = "400 17px 'Space Mono', monospace"; sx.letterSpacing = '3.4px'
+        sx.textAlign = 'center'; sx.fillStyle = 'rgba(239,230,214,0.78)'
+        sx.fillText(`TONIGHT · WAXING GIBBOUS · ${Math.round(litOf(MOON_P) * 100)}%`, SW / 2 + 2, 96)
+        sx.globalAlpha = 1
+      }
       // sign card: swings in from the right after Sun lands, floats, then slides away as the deck is dealt
       const ci = ease.outCubic(prog(t, 14.9, 15.4)), co = ease.inCubic(prog(t, 16.55, 16.9))
       card.style.display = ci > 0 && co < 1 ? 'block' : 'none'

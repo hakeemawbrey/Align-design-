@@ -113,6 +113,12 @@ const whoosh = (t, ...a) => whooshR(shift(t), ...a)
 const bell = (t, ...a) => bellR(shift(t), ...a)
 const boom = (t, ...a) => boomR(shift(t), ...a)
 const glitter = (a, b) => glitterR(shift(a), shift(b))
+;(CUES.moonReal ? [CUES.moonReal] : []).forEach(m => {
+  m.ticks.forEach((t, i) => { for (let k = 0; k < 4; k++) tickR(t + k * 0.17, 0.025) ; bellR(t + 0.7, [392, 440, 493.88, 587.33][i], 0.03, 1.4) })
+  bellR(m.fullBloom, 293.66, 0.05, 3); bellR(m.fullBloom + 0.02, 587.33, 0.04, 3); bellR(m.fullBloom + 0.04, 880, 0.025, 3)
+  bellR(m.strip, 1174.66, 0.03, 1.0)
+  for (let k = 0; k < m.row.count; k++) bellR(m.row.start + k * m.row.step, [261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25, 783.99][k], 0.025, 1.2, (k - 4) * 0.12)
+})
 ;(CUES.real || []).forEach(([kind, t, ...a]) => ({ tick: tickR, whoosh: whooshR, bell: bellR, boom: boomR, glitter: glitterR })[kind](t, ...a))
 
 const s1 = CUES.typeS1;[...s1.text].forEach((c, i) => c !== ' ' && tick(s1.start + i * s1.perChar, 0.05))
