@@ -24,7 +24,7 @@ function makeTicks(parent, color, size = TICK) {
         const b = box(q)
         d.style.left = Math.round(b.cx + pts[i][0] * b.w / 2 - size / 2) + 'px'
         d.style.top = Math.round(b.cy + pts[i][1] * b.h / 2 - size / 2) + 'px'
-        d.style.opacity = String(clamp(box(tt).op))
+        d.style.opacity = String(clamp(b.op))
       })
     },
   }
