@@ -159,9 +159,9 @@ export function sceneDeck(stage) {
       const out = 1 - ease.inQuad(prog(t, 22.4, 22.7))
       wYou.style.left = (W / 2 - 590) + 'px'; wYou.style.top = (fy - 46) + 'px'
       wAlign.style.left = (W / 2 + 485) + 'px'; wAlign.style.top = (fy - 62) + 'px'
-      wYou.style.opacity = String(showA(20.85) * out); wAlign.style.opacity = String(showA(21.1) * out)
+      wYou.style.opacity = String(showA(20.85) * out); wAlign.style.opacity = String(showA(21.22) * out)
       wYou.style.transform = `translateX(${(1 - showA(20.85)) * -30}px)`
-      wAlign.style.transform = `translateX(${(1 - showA(21.1)) * 30}px)`
+      wAlign.style.transform = `translateX(${(1 - showA(21.22)) * 30}px)`
       // blur out into s7's rising gradient
       const bl = 24 * ease.inQuad(prog(t, 22.4, 22.75))
       persp.style.filter = bl > 0.05 ? `blur(${bl.toFixed(2)}px)` : 'none'
