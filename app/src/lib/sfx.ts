@@ -103,6 +103,18 @@ export const sfx = {
   /** message sent / received */
   send() { tone(880, 0.08, { gain: 0.05 }); tone(1320, 0.1, { gain: 0.04, delay: 0.05 }) },
   receive() { tone(740, 0.1, { gain: 0.05 }); tone(587, 0.14, { gain: 0.04, delay: 0.07 }) },
+  /** a foil pack ripping open */
+  rip() { noise(0.35, { gain: 0.14, from: 5000, to: 900 }); noise(0.2, { gain: 0.08, from: 9000, to: 3000, delay: 0.08 }); vibrate([12, 20, 24]) },
+  /** tension before a rare card turns: a rising hum, p = 0..1 */
+  charge(p: number) { tone(140 + p * 260, 0.18, { gain: 0.05, type: 'triangle' }); tone(280 + p * 520, 0.14, { gain: 0.025 }) },
+  /** a rare card lands: low boom, bright bloom; tier 2 is the jackpot */
+  boom(tier: number) {
+    tone(70, 0.9, { gain: 0.14, type: 'triangle', slideTo: 45 })
+    noise(0.9, { gain: 0.08, from: 300, to: 9000 })
+    const notes = tier >= 2 ? [523.25, 659.25, 783.99, 1046.5, 1318.5, 1568] : [659.25, 783.99, 1046.5]
+    notes.forEach((f, i) => tone(f, 1.1 - i * 0.08, { gain: 0.07, delay: 0.08 + i * 0.07 }))
+    vibrate(tier >= 2 ? [30, 40, 60, 40, 90] : [20, 30, 40])
+  },
   /** error / out of peeks */
   deny() { tone(220, 0.15, { gain: 0.06, type: 'square', slideTo: 150 }); vibrate([30, 30, 30]) },
 }
