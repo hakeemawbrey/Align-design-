@@ -1,6 +1,8 @@
 import { useSession } from '../../lib/session'
 import { UNREAD_COUNT } from '../../screens/Notifications'
 import { SKY_PILL } from '../../data/sky'
+import { useTalk } from '../../lib/talk'
+import { todayKey } from '../../data/skyReading'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP } from './fx'
@@ -93,6 +95,7 @@ interface HeaderProps {
 
 /** "Tonight's deck" header row + Today's Sky pill (S-05). */
 export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, onNotifs, saved = 0, onSaved, energy }: HeaderProps) {
+  const skyDrawn = useTalk().skyDays.includes(todayKey())
   return (
     <motion.div
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0 }}
@@ -139,7 +142,10 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
           background: 'radial-gradient(circle at 32% 28%, #fff4cf 0%, #e8c070 30%, #9a6a2a 75%, #5a3a14 100%)',
           boxShadow: '0 0 8px rgba(242,199,92,0.4)',
         }} />
-        <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, whiteSpace: 'nowrap', textAlign: 'left' }}>{SKY_PILL}</span>
+        <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'left' }}>
+          {skyDrawn ? SKY_PILL : 'Draw today’s sky'}
+        </span>
+        {!skyDrawn && <span aria-hidden style={{ width: 7, height: 7, borderRadius: 4, flexShrink: 0, background: 'var(--rub)', boxShadow: '0 0 6px var(--rub)' }} />}
         {energy != null && (
           <span className="mono" aria-label={`Energy ${energy}`} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 9.5, letterSpacing: '0.08em', fontWeight: 700, color: '#9fe8c8' }}>
             <span style={{ width: 26, height: 5, borderRadius: 3, background: 'rgba(159,232,200,0.2)', overflow: 'hidden' }}>

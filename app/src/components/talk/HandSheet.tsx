@@ -15,7 +15,7 @@ type Tab = 'today' | 'hand' | 'places' | 'packs'
  * Your talk cards, opened from a chat: today's free card, the cards you hold
  * (tap one to play it to your match), and packs to open.
  */
-export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, onUpgrade }: {
+export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, onUpgrade, startTopic }: {
   them: string
   onPlay: (cardId: string) => void
   /** play a place card: plan a date there */
@@ -24,11 +24,13 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
   onUpgrade: () => void
   /** open the full binder: packs, sets, season */
   onBinder?: () => void
+  /** open straight to your cards in this topic (from Us today) */
+  startTopic?: TalkTopic
 }) {
   const { owned, packs, places: talkPlaces } = useTalk()
   const { alignPlus } = useSession()
-  const [tab, setTab] = useState<Tab>(talk.dailyAvailable() ? 'today' : 'hand')
-  const [topic, setTopic] = useState<TalkTopic | 'all'>('all')
+  const [tab, setTab] = useState<Tab>(startTopic ? 'hand' : talk.dailyAvailable() ? 'today' : 'hand')
+  const [topic, setTopic] = useState<TalkTopic | 'all'>(startTopic ?? 'all')
   const [opening, setOpening] = useState<{ pack: string } | null>(null)
   const [when, setWhen] = useState(WHENS[0])
   const daily = cardOfTheDay()

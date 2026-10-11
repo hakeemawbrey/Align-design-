@@ -39,6 +39,7 @@ const CHAPTERS: Chapter[] = [
       'Swipe right to align. Swipe left to release.',
       `Hold a card to peek at the person behind it. ${PEEKS_PER_NIGHT} peeks a night, ${PEEKS_PER_WEEK_PLUS} a week with Align+.`,
       'The middle event card is tonight’s real moon. Its phase decides what it does, so it changes every night.',
+      'Every day, draw your Sky card from the sky pill: three cards (You, Love, Move) from today’s real planets and your birth chart. The Move card gives you something for your deck.',
       'A new deal lands at 11:11 every night.',
     ],
     art: <Fan />, to: 'deck', cta: 'Go to tonight’s deck',

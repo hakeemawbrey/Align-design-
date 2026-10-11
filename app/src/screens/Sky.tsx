@@ -7,14 +7,18 @@ import { SKY_DATE, SKY_HERO, SKY_TABS, SKY_FOOTER, MOON_NOW, MOON_STRIP, WEEK_ST
 import MoonPhase from '../components/sky/MoonPhase'
 import { sfx } from '../lib/sfx'
 import { cameFrom, goFrom, skyTrail } from '../components/you/origin'
+import SkySpread from '../components/sky/SkySpread'
+
+/** the daily draw replaces the old fixed 'today' reading; these tabs fill in the rest of the sky */
+const TABS = SKY_TABS.filter((x) => x.id !== 'today')
 
 /** brand: no gold pills — today's Venus reading reads in Venus rose instead of the data's gold */
 const tone = (x: SkyTab): SkyTab => (x.color.toLowerCase() === '#f2c75c' ? { ...x, color: '#f3a98f' } : x)
 
-/** S-14 Sky · today — the daily reading for your sign. */
+/** S-14 Sky · today: draw your three Sky cards, then the rest of the sky (tonight, the week, the moon). */
 export default function Sky({ go }: ScreenProps) {
   const [tab, setTab] = useState(0)
-  const t = tone(SKY_TABS[tab])
+  const t = tone(TABS[tab])
   // opened from the deck's sky pill, the You tab or a notification; the calendar hands the original back
   const [from] = useState<ScreenId>(() => {
     skyTrail.from = cameFrom('sky', 'deck')
@@ -38,11 +42,14 @@ export default function Sky({ go }: ScreenProps) {
         {SKY_DATE.label} ›
       </button>
 
+      <div style={{ position: 'absolute', left: 0, right: 0, top: 100, bottom: 0, overflowY: 'auto', overflowX: 'hidden', padding: '6px 24px 130px', scrollbarWidth: 'none' }}>
+      <SkySpread />
+      <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '24px 0 8px' }}>The rest of the sky</div>
       {/* the reading card */}
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         style={{
-          position: 'absolute', left: 24, right: 24, top: 104, height: 600, borderRadius: 24, padding: 3,
+          position: 'relative', height: 540, borderRadius: 24, padding: 3,
           background: 'linear-gradient(160deg, rgba(222,208,246,0.85), rgba(150,120,210,0.5) 50%, rgba(222,208,246,0.8))',
           boxShadow: '0 0 40px rgba(120,70,220,0.35), 0 20px 50px rgba(0,0,0,0.45)',
         }}
@@ -54,7 +61,7 @@ export default function Sky({ go }: ScreenProps) {
         }}>
           <div style={{ position: 'absolute', inset: 8, borderRadius: 15, border: '1px solid rgba(222,208,246,0.28)', pointerEvents: 'none' }} />
           <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.24em', color: 'var(--label-2)' }}>
-            {SKY_HERO.sign.toUpperCase()} · TODAY’S SKY
+            {SKY_HERO.sign.toUpperCase()} · THE SKY THIS WEEK
           </div>
 
           {/* the picture changes with the tab */}
@@ -74,7 +81,7 @@ export default function Sky({ go }: ScreenProps) {
             marginTop: 12, width: '100%', height: 36, padding: 3, borderRadius: 999, display: 'flex',
             background: 'rgba(24,12,56,0.45)', border: '1px solid rgba(179,166,196,0.22)',
           }}>
-            {SKY_TABS.map((x, i) => (
+            {TABS.map((x, i) => (
               <button key={x.id} onClick={() => pick(i)} style={{ position: 'relative', flex: 1, height: '100%' }}>
                 {i === tab && (
                   <motion.div layoutId="sky-tab" transition={{ type: 'spring', stiffness: 420, damping: 34 }}
@@ -112,6 +119,7 @@ export default function Sky({ go }: ScreenProps) {
           <div className="mono" style={{ fontSize: 8, letterSpacing: '0.2em', color: 'var(--label-3)', marginTop: 6 }}>ALIGN · {SKY_DATE.serial}</div>
         </div>
       </motion.div>
+      </div>
 
       <div style={{ position: 'absolute', left: 0, right: 0, bottom: 34, display: 'flex', justifyContent: 'center' }}>
         <motion.button className="chrome-cta" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
@@ -182,8 +190,7 @@ function Hero({ id }: { id: SkyTab['id'] }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
           <span className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', color: '#f39a3a' }}>☾ IN {MOON_NOW.glyph} {MOON_NOW.sign.toUpperCase()}</span>
           <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)' }}>{MOON_NOW.phase.toUpperCase()}</span>
-          <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)' }}>{Math.round(MOON_NOW.lit * 100)}% LIT · SHRINKING</span>
-          <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: '#e8705a' }}>♂ MARS BESIDE IT</span>
+          <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)' }}>{Math.round(MOON_NOW.lit * 100)}% LIT · {MOON_NOW.waxing ? 'GROWING' : 'SHRINKING'}</span>
         </div>
       </div>
     )
@@ -225,7 +232,7 @@ function Hero({ id }: { id: SkyTab['id'] }) {
               boxShadow: today ? '0 0 14px rgba(248,237,255,0.45)' : 'none',
             }}>{w.n}</div>
             <div style={{ height: 30, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
-              {w.mark === 'New moon' && <MoonPhase size={12} lit={0} waxing glow={false} />}
+              {w.moon && <MoonPhase size={12} lit={w.moon.lit} waxing={w.moon.waxing} glow={false} />}
               {w.mark && <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.04em', textAlign: 'center', lineHeight: 1.2, color: today ? 'var(--label-1)' : '#c9b6f0', textTransform: 'uppercase' }}>{w.mark}</span>}
             </div>
           </div>

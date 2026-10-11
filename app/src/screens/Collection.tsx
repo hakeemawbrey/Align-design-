@@ -14,6 +14,7 @@ import { ME } from '../data/profiles'
 import { packInfo, talk, useTalk } from '../lib/talk'
 import { useSession } from '../lib/session'
 import { sfx } from '../lib/sfx'
+import { todayKey } from '../data/skyReading'
 import { binderNav } from '../lib/binderNav'
 import { useBinder } from '../lib/binder'
 import { MATCHES } from '../data/matches'
@@ -170,6 +171,25 @@ export default function Collection({ go }: ScreenProps) {
                 )
               }))}
             </div>
+            <SetHead title={`Sky cards · ${new Date().getFullYear()}`} got={t.skyDays.length} of={365} note={`One a day, drawn from the real sky. ${talk.skyStreak(todayKey()) > 1 ? `${talk.skyStreak(todayKey())} days in a row.` : 'Draw today’s from the sky pill on your deck.'}`} />
+            <div style={{ display: 'flex', gap: 5 }}>
+              {Array.from({ length: 7 }, (_, i) => {
+                const d = new Date(); d.setDate(d.getDate() - 6 + i)
+                const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+                const have = t.skyDays.includes(key)
+                return (
+                  <div key={key} style={{ flex: 1, height: 52, borderRadius: 8, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3,
+                    background: have ? 'linear-gradient(170deg, rgba(159,216,255,0.35), rgba(40,26,78,0.9))' : 'rgba(48,32,92,0.45)', border: `1px solid ${have ? 'rgba(159,216,255,0.6)' : 'rgba(179,166,196,0.18)'}` }}>
+                    <span style={{ fontSize: 14, color: have ? '#9fd8ff' : 'var(--label-4)' }}>{have ? '✦' : '·'}</span>
+                    <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.1em', color: have ? 'var(--label-1)' : 'var(--label-3)' }}>{d.toLocaleDateString('en-US', { weekday: 'narrow' })} {d.getDate()}</span>
+                  </div>
+                )
+              })}
+            </div>
+            <button className="mono" onClick={() => { sfx.tap(); go('sky') }}
+              style={{ marginTop: 10, height: 30, padding: '0 12px', borderRadius: 15, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
+              {t.skyDays.includes(todayKey()) ? 'READ TODAY’S SKY ›' : 'DRAW TODAY’S SKY ›'}
+            </button>
             <SetHead title="Events · in your hand" got={savedEvents.length} of={Object.keys(EVENTS).length} note="Play them from the hand on your deck. They cost energy." />
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
               {[...new Set(savedEvents)].map((id) => (

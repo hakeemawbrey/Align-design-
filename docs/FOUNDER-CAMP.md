@@ -14,6 +14,9 @@
 
 ## The 60-second walkthrough
 
+0. **Draw today's sky** (tap the sky pill on the deck): turn the three cards.
+   "It's worked out from today's real planets against my birth chart, so
+   it's different for everyone, every day. And it just put a card in my hand."
 1. **Open Align.** "Every night you're dealt a hand of cards. No photos."
 2. **Deck:** release Maya (swipe left), align Rio (swipe right).
    "It's a game: draws of five, then an event card."

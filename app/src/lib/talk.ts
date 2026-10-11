@@ -8,6 +8,7 @@ import { load, remove, save } from './persist'
 import { EVENTS, type EventId } from '../data/draws'
 import { PLACES } from '../data/places'
 import { energize, session } from './session'
+import type { SkyReading } from '../data/skyReading'
 
 /** one thing out of a pack */
 export type Pull =
@@ -51,11 +52,13 @@ interface TalkState {
   dailyClaimed: string
   /** matches (and Align+) that already paid out their pack */
   granted: string[]
+  /** days you drew your Sky card (yyyy-mm-dd): one collectible card a day */
+  skyDays: string[]
 }
 
 const KEY = 'talk:v1'
 // everyone starts with their own sign's card, 8 talk cards and three packs
-const initial = (): TalkState => ({ owned: [...STARTER_HAND], signs: [{ sign: ME.sign, face: 'sun', variant: 'base' }], venues: [], places: [], packs: ['general', 'starter', 'deep'], dailyClaimed: '', granted: [] })
+const initial = (): TalkState => ({ owned: [...STARTER_HAND], signs: [{ sign: ME.sign, face: 'sun', variant: 'base' }], venues: [], places: [], packs: ['general', 'starter', 'deep'], dailyClaimed: '', granted: [], skyDays: [] })
 let state: TalkState = { ...initial(), ...(load<Partial<TalkState>>(KEY) ?? {}) }
 const subs = new Set<() => void>()
 const set = (p: Partial<TalkState>) => { state = { ...state, ...p }; save(KEY, state); subs.forEach((f) => f()) }
@@ -80,6 +83,26 @@ export const talk = {
     if (at < 0) return []
     packs.splice(at, 1)
     return compose(packId, packs)
+  },
+  /** draw today's Sky card: keeps it in your binder and pays out its reward, once a day */
+  claimSky(r: SkyReading): boolean {
+    if (state.skyDays.includes(r.date)) return false
+    const w = r.reward
+    const patch: Partial<TalkState> = { skyDays: [...state.skyDays, r.date] }
+    if (w.kind === 'event') session.patch({ savedEvents: [...session.get().savedEvents, w.id] })
+    if (w.kind === 'energy') energize(w.amount)
+    if (w.kind === 'pack') patch.packs = [...state.packs, w.id]
+    if (w.kind === 'talk') { const t = drawTalk(1)[0]; if (t) patch.owned = [...new Set([...state.owned, t.id])] }
+    set(patch)
+    return true
+  },
+  skyDrawn: (date: string) => state.skyDays.includes(date),
+  /** days in a row you've drawn your Sky card, up to today */
+  skyStreak(today: string) {
+    let n = 0
+    const d = new Date(`${today}T12:00:00`)
+    while (state.skyDays.includes(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`)) { n++; d.setDate(d.getDate() - 1) }
+    return n
   },
   /** a venue card for checking in at a partner place */
   addVenue(id: string) { if (!state.venues.includes(id)) set({ venues: [...state.venues, id] }) },

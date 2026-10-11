@@ -14,6 +14,8 @@ import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
 import HandSheet from '../components/talk/HandSheet'
+import UsToday from '../components/sky/UsToday'
+import type { TalkTopic } from '../data/talkCards'
 import { binderNav } from '../lib/binderNav'
 import { talkState, placeState } from '../components/talk/thread'
 import ChatPlaceCard from '../components/talk/ChatPlaceCard'
@@ -68,6 +70,7 @@ function threadFrom(rows: Message[]): Omit<Msg, 'id'>[] {
 export default function Chat({ go }: ScreenProps) {
   const [report, setReport] = useState(false)
   const [hand, setHand] = useState(false)
+  const [handTopic, setHandTopic] = useState<TalkTopic | undefined>(undefined)
   // the scripted intro plays once per demo run; afterwards the thread is just there
   const [replay] = useState(() => !session.get().chatPlayed)
   const [msgs, setMsgs] = useState<Msg[]>([])
@@ -255,6 +258,7 @@ export default function Chat({ go }: ScreenProps) {
         }}
       >
         <div style={{ textAlign: 'center', fontSize: 12, color: 'var(--label-3)', padding: '10px 0 14px' }}>Today</div>
+        <UsToday them={juniper.name} sign={juniper.sign} onPlay={(t) => { setHandTopic(t); setHand(true) }} />
         <AnimatePresence initial={false}>
           {msgs.map((m) => {
             const pl = m.from === 'card' ? null : parsePlace(m.text)
@@ -333,7 +337,7 @@ export default function Chat({ go }: ScreenProps) {
       </form>
 
       <AnimatePresence>
-        {hand && <HandSheet onBinder={() => binderNav.open(go, 'chat')} them={juniper.name} onPlace={playPlace} onPlay={playCard} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+        {hand && <HandSheet onBinder={() => binderNav.open(go, 'chat')} them={juniper.name} onPlace={playPlace} onPlay={playCard} onClose={() => { setHand(false); setHandTopic(undefined) }} startTopic={handTopic} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <AnimatePresence>
         {report && (

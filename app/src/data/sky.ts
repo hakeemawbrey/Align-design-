@@ -1,5 +1,7 @@
 import { moonTonight, moonStrip, PHASE_GUIDE } from './moon'
 import { SIGNS } from './signs'
+import { TODAY_READING } from './skyReading'
+import { signOf, skyChart } from '../lib/astro'
 
 /** the real moon tonight: everything moon-related below follows it */
 const M = moonTonight()
@@ -20,16 +22,27 @@ const MOOD: Record<string, string> = { fire: 'Warm, bold, short on patience.', e
  *   Mercury stations retrograde Sat Oct 24, Venus back into Libra Sun Oct 25.
  */
 
+const NOW = new Date()
+/** which sign the Sun is in, and how many days it's been there */
+function sunSeason(d: Date) {
+  const sign = signOf(skyChart(d).sun)
+  let n = 1
+  const back = new Date(d)
+  for (; n < 32; n++) { back.setDate(back.getDate() - 1); if (signOf(skyChart(back).sun) !== sign) break }
+  return { sign: SIGNS[sign].name, day: n }
+}
+const SEASON_NOW = sunSeason(NOW)
+
 export const SKY_DATE = {
-  label: 'OCT 5',
-  long: 'Monday, October 5, 2026',
-  season: 'Libra season · day 14',
-  serial: 'SKY № 278/365',
+  label: NOW.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase(),
+  long: NOW.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }),
+  season: `${SEASON_NOW.sign} season · day ${SEASON_NOW.day}`,
+  serial: `SKY № ${TODAY_READING.serial}/365`,
   city: 'Houston',
 }
 
-/** The one-line headline shown in the deck's Today's Sky pill. */
-export const SKY_PILL = 'Venus turns back — look twice.'
+/** The one-line headline shown in the deck's Today's Sky pill: today's Love card */
+export const SKY_PILL = TODAY_READING.pill
 
 export interface SkyTab {
   id: 'today' | 'tonight' | 'week' | 'moon'
@@ -57,11 +70,15 @@ export const MOON_NOW = { lit: M.lit, waxing: M.waxing, sign: MSIGN.name, glyph:
 /** This lunar cycle, for the phase strip (lit fraction, waxing?). */
 export const MOON_STRIP = moonStrip()
 
-/** Week strip, Mon Oct 5 – Sun Oct 11. */
-export const WEEK_STRIP: { d: string; n: number; mark?: string }[] = [
-  { d: 'M', n: 5, mark: 'Sun ☍ Saturn' }, { d: 'T', n: 6 }, { d: 'W', n: 7 }, { d: 'T', n: 8 },
-  { d: 'F', n: 9 }, { d: 'S', n: 10, mark: 'New moon' }, { d: 'S', n: 11 },
-]
+/** the next seven days, with the moon's big moments marked */
+const AHEAD = moonStrip().filter((m) => !m.today)
+const WEEK_DAYS = Array.from({ length: 7 }, (_, i) => { const d = new Date(NOW); d.setDate(d.getDate() + i); return d })
+const short = (d: Date) => `${d.toLocaleDateString('en-US', { weekday: 'short' })} ${d.getDate()}`
+export const WEEK_STRIP: { d: string; n: number; mark?: string; moon?: { lit: number; waxing: boolean } }[] = WEEK_DAYS.map((d) => {
+  const m = AHEAD.find((x) => x.date === short(d))
+  return { d: d.toLocaleDateString('en-US', { weekday: 'narrow' }), n: d.getDate(), mark: m?.label, moon: m ? { lit: m.lit, waxing: m.waxing } : undefined }
+})
+const WEEK_MOON = AHEAD.find((x) => WEEK_DAYS.some((d) => short(d) === x.date))
 
 export const SKY_TABS: SkyTab[] = [
   {
@@ -87,13 +104,15 @@ export const SKY_TABS: SkyTab[] = [
     skip: 'Serious conversations after 10 PM. They’ll go sideways.',
   },
   {
-    id: 'week', label: 'Week', eyebrow: 'Oct 5 – 11', pips: 4, color: '#9a7be0',
-    headline: 'Nothing needs an answer before Saturday.',
-    body: 'The Sun faces off with Saturn, the planet of commitment, so you may feel pressure to make things official. Saturday’s New Moon in Libra resets what feels fair between you. Wait for it.',
+    id: 'week', label: 'Week', eyebrow: `${short(WEEK_DAYS[0])} – ${short(WEEK_DAYS[6])}`, pips: 4, color: '#9a7be0',
+    headline: WEEK_MOON ? (WEEK_MOON.label.startsWith('Full') ? 'Feelings peak this week.' : WEEK_MOON.label === 'New moon' ? 'A fresh start lands this week.' : 'A turning point this week.') : 'A steady week. Build on what’s working.',
+    body: WEEK_MOON
+      ? `The ${WEEK_MOON.label.startsWith('Full') ? `full moon in ${WEEK_MOON.label.slice(7)}` : WEEK_MOON.label.toLowerCase()} lands ${WEEK_MOON.date}. ${WEEK_MOON.label.startsWith('Full') ? 'Full moons bring things to the surface: what you feel, you’ll say.' : WEEK_MOON.label === 'New moon' ? 'New moons are for starting: first messages, first dates.' : 'Quarter moons are for deciding: act on what you’ve been circling.'} It’s ${SEASON_NOW.sign} season, day ${SEASON_NOW.day}.`
+      : `No big moon moments this week. It’s ${SEASON_NOW.sign} season, day ${SEASON_NOW.day}: a good week to follow up with the people you already like.`,
     tries: [
-      'Mon – Wed: listen more than you plan.',
-      'Thu – Fri: say what you actually want, once, kindly.',
-      'Sat: make the plan you’ve been circling. New moons are for starting.',
+      'Early week: listen more than you plan.',
+      'Midweek: say what you actually want, once, kindly.',
+      WEEK_MOON ? `${WEEK_MOON.date}: the moon’s big night. Make a plan around it.` : 'Weekend: make the plan you’ve been circling.',
     ],
     skip: 'Ultimatums. This week rewards patience, not pressure.',
   },

@@ -16,6 +16,8 @@ import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
 import HandSheet from '../components/talk/HandSheet'
+import UsToday from '../components/sky/UsToday'
+import type { TalkTopic } from '../data/talkCards'
 import { binderNav } from '../lib/binderNav'
 import { talkState, placeState } from '../components/talk/thread'
 import ChatPlaceCard from '../components/talk/ChatPlaceCard'
@@ -49,6 +51,7 @@ export default function Thread({ go }: ScreenProps) {
   const [rows, setRows] = useState<Message[]>([])
   const [draft, setDraft] = useState('')
   const [hand, setHand] = useState(false)
+  const [handTopic, setHandTopic] = useState<TalkTopic | undefined>(undefined)
   const [report, setReport] = useState(false)
   const seen = useRef(new Set<string>())
   const seeding = useRef(false)
@@ -153,6 +156,7 @@ export default function Thread({ go }: ScreenProps) {
             You and {them.name} aligned. {sign.glyph} {sign.name}{them.blurb ? ` · “${them.blurb}”` : ''}
           </div>
         </div>
+        <UsToday them={them.name} sign={them.sign} onPlay={(t) => { setHandTopic(t); setHand(true) }} />
         <AnimatePresence initial={false}>
           {rows.map((m, i) => {
             const pl = parsePlace(m.body)
@@ -203,7 +207,7 @@ export default function Thread({ go }: ScreenProps) {
       </form>
 
       <AnimatePresence>
-        {hand && <HandSheet onBinder={() => binderNav.open(go, 'thread')} them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+        {hand && <HandSheet onBinder={() => binderNav.open(go, 'thread')} them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => { setHand(false); setHandTopic(undefined) }} startTopic={handTopic} onUpgrade={() => go('paywall')} />}
       </AnimatePresence>
       <AnimatePresence>
         {report && (
