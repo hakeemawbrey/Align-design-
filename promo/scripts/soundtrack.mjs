@@ -144,6 +144,8 @@ const chime = [293.66, 369.99, 440, 554.37, 587.33, 739.99, 880]
   for (let k = 0; k < c.count; k++) bell(c.start + k * c.step, scale[k % 7] * (k >= 7 ? 2 : 1), 0.022, 0.9, ((k % 5) - 2) * 0.2)
   glitter(c.lines, c.lines + 0.9)
 })
+;(CUES.shooting || []).forEach((t, i) => { whoosh(t + 0.35, 0.5, i ? 0.035 : 0.07); bell(t + 0.45, 2349.32, i ? 0.012 : 0.025, 1.2, 0.5) })
+;(CUES.bursts || []).forEach(t => glitter(t, t + 0.5))
 ;(CUES.pulse || []).forEach(t => { bell(t, 293.66, 0.05, 2.5); bell(t + 0.02, 880, 0.03, 2.5) })
 for (let i = 0; i < CUES.chimes.count; i++) bell(CUES.chimes.start + i * CUES.chimes.step, chime[i], 0.07, 2.4, (i - 3) * 0.12)
 

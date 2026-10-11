@@ -20,6 +20,8 @@ export const CUES = {
   captions: [24.3, 25.65],
   whooshS7: [24.12, 25.45, 26.62],
   pulse: [28.58],
+  shooting: [1.0, 4.25, 11.7, 15.9, 19.7, 28.8],
+  bursts: [21.85, 24.3],
   constellation: { start: 22.66, step: 0.085, count: 13, lines: 23.12 },
   chimes: { start: 27.4, step: 0.07, count: 7 },
   sections: [

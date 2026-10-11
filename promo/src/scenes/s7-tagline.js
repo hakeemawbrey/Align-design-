@@ -1,8 +1,8 @@
 import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../lib.js'
-import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks } from "./common.js"
+import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, spaceBackdrop } from "./common.js"
 
 // ──────────────────────────────────────── S7 · gradient tagline + payoff beats
-// Timing (sound): colour rises 22.40–23.00 · ticks + typing 22.56, perChar 0.016, fade 0.12
+// Timing (sound): nebula blooms up from the bottom 22.40–23.00 · ticks + typing 22.56, perChar 0.016, fade 0.12
 // (complete ~23.08, held to 24.14) · tagline out 24.14–24.26 (gone) ·
 // beat A  match phone fades in 24.26–24.38, lands/settles ~24.70 · caption A pops 24.26 (full 24.38, out 25.47–25.61) ·
 // beat B  swap 25.45: match phone exits left (to ~25.85); chat phone enters 25.53, lands ~25.98 ·
@@ -66,7 +66,7 @@ export function sceneTagline(stage, assets) {
     { c: ['180,92,255', '120,120,255'], y: 0.55, h: 240, a: 0.5, rot: 5, sp: 0.28 },
     { c: ['242,154,74', '232,98,138'], y: 0.62, h: 180, a: 0.38, rot: -3, sp: 0.42 },
   ].map((b, i) => ({ ...b, ph: i * 2.1, e: el('div', { position: 'absolute', left: '-300px', width: (W + 600) + 'px', height: b.h + 'px', marginTop: -b.h / 2 + 'px', top: b.y * H + 'px', borderRadius: '50%', mixBlendMode: 'screen', filter: 'blur(26px)',
-    background: `radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%), linear-gradient(90deg, rgba(${b.c[0]},0) 0%, rgba(${b.c[0]},${b.a}) 22%, rgba(${b.c[1]},${b.a}) 62%, rgba(${b.c[1]},0) 100%)`,
+    background: `linear-gradient(90deg, rgba(${b.c[0]},0) 0%, rgba(${b.c[0]},${b.a}) 22%, rgba(${b.c[1]},${b.a}) 62%, rgba(${b.c[1]},0) 100%)`,
     WebkitMaskImage: 'radial-gradient(50% 50% at 50% 50%, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%)', maskImage: 'radial-gradient(50% 50% at 50% 50%, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%)' }, sky) }))
   // the bloom: a few hot nebula blobs that surge up from below during the entrance, then settle as glow
   const BLOOM = [
@@ -82,9 +82,9 @@ export function sceneTagline(stage, assets) {
   const TS = 80
   const tag = new TypeLine(root, 'Dating, dealt by the stars', {
     left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 500, fontSize: TS + 'px', letterSpacing: '-0.02em', lineHeight: 1,
-    textShadow: '0 2px 34px rgba(46,16,96,0.5), 0 1px 3px rgba(40,10,80,0.35)',
+    textShadow: '0 0 38px rgba(232,98,138,0.28), 0 2px 18px rgba(8,4,24,0.75), 0 1px 3px rgba(8,4,24,0.6)',
   }, { perChar: PER, fade: 0.12, final: '#fff6ea', accent: ['#ffffff', '#ffe3c4', '#ecdcff'] })
-  const ticks = new Ticks(root, C.ink, 16)
+  const ticks = new Ticks(root, C.bone, 16)
   let tagW = 0
 
   // ── constellation of people (canvas: field stars + hairlines + pixel sparkles; DOM: portraits)
@@ -110,12 +110,12 @@ export function sceneTagline(stage, assets) {
   const nodes = NODES.map(([x, y, d, pi], i) => {
     const g = el('div', { position: 'absolute', left: 0, top: 0, width: '100px', height: '100px', marginLeft: '-50px', marginTop: '-50px', borderRadius: '50%', opacity: 0, willChange: 'transform' }, root)
     const glowE = el('div', { position: 'absolute', inset: '-38%', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(255,246,234,0.85), rgba(214,190,255,0.45) 45%, rgba(214,190,255,0) 100%)' }, g)
-    const disc = el('div', { position: 'absolute', inset: 0, borderRadius: '50%', overflow: 'hidden', background: C.canvas, boxShadow: '0 10px 26px rgba(40,10,80,0.35), 0 0 0 1.5px rgba(239,230,214,0.95), 0 0 0 4px rgba(239,230,214,0.18)' }, g)
+    const disc = el('div', { position: 'absolute', inset: 0, borderRadius: '50%', overflow: 'hidden', background: C.canvas, boxShadow: '0 10px 26px rgba(4,2,14,0.55), 0 0 0 1.5px rgba(239,230,214,0.95), 0 0 0 4px rgba(239,230,214,0.18)' }, g)
     img(disc, SRC[pi], { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: pi === 13 ? '50% 30%' : '50% 40%', transform: 'scale(1.28)', transformOrigin: '50% 42%' })
     const sv = SURV.find(s => s[0] === i)
     return { x, y, d, g, glowE, sv, ph: (i * 1.37) % 6.28 }
   })
-  // field stars: tiny bone/white pixel twinkles over the gradient (deterministic)
+  // field stars: tiny bone/white pixel twinkles over the nebula (deterministic)
   const fr = rng(4207)
   const FIELD = Array.from({ length: 70 }, () => {
     let x, y
@@ -160,9 +160,9 @@ export function sceneTagline(stage, assets) {
   const aura = el('div', { position: 'absolute', left: (AX - 460) + 'px', top: (H / 2 - 560) + 'px', width: '920px', height: '1120px', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(214,190,255,0.9), rgba(180,120,255,0.4) 55%, rgba(180,92,255,0) 100%)', opacity: 0, zIndex: 1 }, persp)
   function phone(src, z, sparkPos) {
     const g = el('div', { position: 'absolute', left: -PW / 2 + 'px', top: (H / 2 - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', opacity: 0, zIndex: z, willChange: 'transform' }, persp)
-    const scr = el('div', { position: 'absolute', inset: 0, borderRadius: '52px', overflow: 'hidden', background: C.canvas, boxShadow: '0 60px 120px rgba(40,10,70,0.5), 0 18px 40px rgba(40,10,70,0.3), 0 0 0 1.5px rgba(255,255,255,0.35)' }, g)
+    const scr = el('div', { position: 'absolute', inset: 0, borderRadius: '52px', overflow: 'hidden', background: C.canvas, boxShadow: '0 60px 120px rgba(4,2,14,0.7), 0 18px 40px rgba(4,2,14,0.45), 0 0 60px rgba(180,92,255,0.18), 0 0 0 1.5px rgba(239,230,214,0.35)' }, g)
     img(scr, src, { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover' })
-    const hs = [[0, 0], [1, 0], [0, 1], [1, 1]].map(([x, y]) => el('div', { position: 'absolute', left: (x * PW - 8) + 'px', top: (y * PH - 8) + 'px', width: '16px', height: '16px', background: C.ink, boxShadow: '0 0 0 2px rgba(255,250,242,0.9)', opacity: 0 }, g))
+    const hs = [[0, 0], [1, 0], [0, 1], [1, 1]].map(([x, y]) => el('div', { position: 'absolute', left: (x * PW - 8) + 'px', top: (y * PH - 8) + 'px', width: '16px', height: '16px', background: C.bone, boxShadow: '0 0 0 2px rgba(20,10,46,0.85), 0 0 10px rgba(239,230,214,0.45)', opacity: 0 }, g))
     // small gold ✦ accents just outside the screen edge (never over the UI)
     const sp = sparkPos.map(([x, y, s]) => el('div', { position: 'absolute', left: x + 'px', top: y + 'px', width: '60px', height: '60px', marginLeft: '-30px', marginTop: '-30px', textAlign: 'center', lineHeight: '60px', fontSize: s + 'px', color: C.gold, textShadow: '0 0 16px rgba(242,199,92,0.9), 0 0 3px rgba(120,60,10,0.6)', opacity: 0 }, g, '✦'))
     return { g, hs, sp }
@@ -172,9 +172,9 @@ export function sceneTagline(stage, assets) {
 
   function caption(x, align, eyebrow, line, scrim) {
     const box = el('div', { position: 'absolute', top: (H / 2 - 74) + 'px', [align]: x + 'px', textAlign: align, opacity: 0, zIndex: 6, isolation: 'isolate' }, root)
-    el('div', { position: 'absolute', left: '-330px', right: '-330px', top: '-140px', bottom: '-140px', background: `radial-gradient(closest-side, ${[[0, 1], [25, 0.95], [48, 0.76], [66, 0.48], [82, 0.2], [100, 0]].map(([o, k]) => `rgba(44,14,88,${(scrim * k).toFixed(3)}) ${o}%`).join(', ')})`, zIndex: -1 }, box)
-    el('div', { fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', color: 'rgba(255,246,234,0.92)', textShadow: '0 0 16px rgba(36,10,76,0.75), 0 0 5px rgba(36,10,76,0.55)', marginBottom: '14px' }, box, eyebrow)
-    el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '78px', lineHeight: 1.05, color: '#fff6ea', whiteSpace: 'nowrap', textShadow: '0 0 26px rgba(36,10,76,0.7), 0 0 8px rgba(36,10,76,0.55), 0 2px 3px rgba(30,8,60,0.45)' }, box, line)
+    el('div', { position: 'absolute', left: '-330px', right: '-330px', top: '-140px', bottom: '-140px', background: `radial-gradient(closest-side, ${[[0, 1], [25, 0.95], [48, 0.76], [66, 0.48], [82, 0.2], [100, 0]].map(([o, k]) => `rgba(11,6,32,${(scrim * k).toFixed(3)}) ${o}%`).join(', ')})`, zIndex: -1 }, box)
+    el('div', { fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', color: 'rgba(255,246,234,0.92)', textShadow: '0 0 16px rgba(8,4,24,0.85), 0 0 5px rgba(8,4,24,0.6)', marginBottom: '14px' }, box, eyebrow)
+    el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '78px', lineHeight: 1.05, color: '#fff6ea', whiteSpace: 'nowrap', textShadow: '0 0 26px rgba(8,4,24,0.75), 0 0 8px rgba(8,4,24,0.6), 0 2px 3px rgba(4,2,14,0.5)' }, box, line)
     return box
   }
   const capA = caption(AX + PW / 2 + 120, 'left', 'IT’S MUTUAL', 'You both aligned.', 0.56)
@@ -190,14 +190,29 @@ export function sceneTagline(stage, assets) {
   return {
     start: 22.4, end: 27.0, root,
     update(t) {
-      under.style.opacity = String(ease.inOutQuad(prog(t, 22.42, 22.62)))
-      const rise = lerp(900, 0, ease.outCubic(prog(t, 22.4, 23.0)))
-      blobs.forEach((b, i) => {
-        const x = b.x * W + Math.sin(t * 0.6 + i * 1.7) * 90 - b.r
-        const y = b.y * H + Math.cos(t * 0.5 + i) * 60 - b.r + rise * (1 + i * 0.04)
-        b.e.style.transform = `translate(${x}px, ${y}px)`
+      // ── nebula rises: mask edge sweeps bottom→top (soft 30% feather) while the bloom surges up
+      const rp = ease.outCubic(prog(t, 22.4, 23.0))
+      if (rp >= 1) { sky.style.webkitMaskImage = sky.style.maskImage = 'none' } else {
+        const e1 = lerp(-32, 100, rp), e0 = e1 + 32
+        const m = `linear-gradient(0deg, #000 ${e1.toFixed(1)}%, transparent ${e0.toFixed(1)}%)`
+        sky.style.webkitMaskImage = m; sky.style.maskImage = m
+      }
+      space.update(t)
+      GA.style.opacity = String(0.85 * ease.inOutQuad(prog(t, 22.6, 23.4)))
+      GA.style.transform = `rotate(${(t - 22.4) * 0.9}deg) translateY(${(1 - rp) * 120}px)`
+      RIB.forEach((b, i) => {
+        const br = 0.78 + 0.22 * Math.sin(t * 1.1 + b.ph)
+        b.e.style.opacity = String(br * ease.inOutQuad(prog(t, 22.5 + i * 0.08, 23.1 + i * 0.08)))
+        b.e.style.transform = `translate(${Math.sin(t * b.sp + b.ph) * 120}px, ${Math.cos(t * b.sp * 0.8 + b.ph) * 26 + (1 - rp) * 260}px) rotate(${b.rot + Math.sin(t * 0.3 + b.ph) * 2.5}deg) scaleY(${1 + 0.12 * Math.sin(t * 0.7 + b.ph)})`
       })
-      wash.style.opacity = String(prog(t, 22.5, 22.9))
+      BLOOM.forEach(b => {
+        const up = ease.outCubic(prog(t, 22.4 + b.i * 0.05, 23.1 + b.i * 0.05))
+        const y = lerp(1.55, b.y1, up) * H - b.r + Math.cos(t * 0.5 + b.i) * 30
+        const x = b.x * W - b.r + Math.sin(t * 0.4 + b.i * 2) * 70
+        b.e.style.opacity = String(lerp(1, 0.6, prog(t, 23.0, 23.8)))
+        b.e.style.transform = `translate(${x}px, ${y}px) scale(${lerp(0.7, 1, up)})`
+      })
+      tScrim.style.opacity = String(ease.inOutQuad(prog(t, 22.45, 22.85)) * (1 - ease.inOutQuad(prog(t, 24.1, 24.5)) * 0.4))
 
       // tagline
       if (!tagW) tagW = tag.root.offsetWidth
@@ -227,8 +242,8 @@ export function sceneTagline(stage, assets) {
         const x0 = A_.x + dx / L * ra, y0 = A_.y + dy / L * ra
         const len = (L - ra - rb) * p
         const x1 = x0 + dx / L * len, y1 = y0 + dy / L * len
-        // soft violet underlay so a bone hairline still reads on the pastel field
-        cx2.strokeStyle = 'rgba(70,30,130,0.26)'; cx2.lineWidth = 5
+        // soft indigo underlay so the bone hairline stays crisp where it crosses bright nebula
+        cx2.strokeStyle = 'rgba(8,4,24,0.32)'; cx2.lineWidth = 5
         cx2.beginPath(); cx2.moveTo(x0, y0); cx2.lineTo(x1, y1); cx2.stroke()
         cx2.strokeStyle = 'rgba(255,248,236,0.96)'; cx2.lineWidth = 2
         cx2.beginPath(); cx2.moveTo(x0, y0); cx2.lineTo(x1, y1); cx2.stroke()
