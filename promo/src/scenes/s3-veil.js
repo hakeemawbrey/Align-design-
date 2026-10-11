@@ -598,7 +598,7 @@ export function sceneVeil(stage) {
       fx.setTransform(1, 0, 0, 1, 0, 0); fx.clearRect(0, 0, W, H)
       fx.globalCompositeOperation = 'lighter'
       // dust pulled toward the line, then blown out by the shockwave
-      const dustIn = prog(t, 7.75, 8.1) * (1 - prog(t, LOCK + 0.25, LOCK + 0.75))
+      const dustIn = prog(t, 7.75, 8.1) * (1 - ease.outQuad(prog(t, LOCK, LOCK + 0.45)))
       if (dustIn > 0) {
         const pullAt = (tt) => ease.inCubic(prog(tt, 7.9, LOCK)) * 0.94
         const blow = ease.outCubic(prog(t, LOCK, LOCK + 0.75))
@@ -609,7 +609,7 @@ export function sceneVeil(stage) {
             if (tt > LOCK) { const dx = x - CC.x, dy = y - CC.y, l = Math.hypot(dx, dy) || 1; x += dx / l * 900 * blow; y += dy / l * 900 * blow }
             return [x, y]
           }
-          const [x, y] = pos(t), [px, py] = pos(t - 0.05)
+          const [x, y] = pos(t), [px, py] = pos(t - (t > LOCK ? 0.012 : 0.05))
           const al = d.a * dustIn * (0.35 + 0.65 * ten + 0.6 * post) * (0.6 + 0.4 * Math.sin(t * 6 + d.ph))
           if (al < 0.02) continue
           fx.strokeStyle = `rgba(${d.col},${al.toFixed(3)})`; fx.lineWidth = d.s; fx.lineCap = 'round'
