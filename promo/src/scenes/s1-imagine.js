@@ -5,6 +5,8 @@ import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeS
 // Juniper's portrait at 720×960 → face centre ≈ (330, 520) in source px.
 const FACE_X = 620, FACE_Y = 270          // where her face sits on screen (upper-left of the line)
 const LAYER_W = 1500, LAYER_H = 2000
+/** typing starts here (sound cue); 37 chars × perChar 0.026 + fade 0.3 → fully typed by ~1.44s */
+const TYPE_START = 0.2
 const FIELD_W = 2700, FIELD_H = 3600      // sharp(er) silhouette layer, native 3:4 aspect
 export function sceneImagine(stage) {
   const root = fill(stage, { background: C.void })
@@ -34,9 +36,9 @@ export function sceneImagine(stage) {
   const bands = Array.from({ length: 7 }, () => el('div', { position: 'absolute', left: 0, width: W + 'px', height: '2px', background: 'rgba(255,247,236,0.35)', opacity: 0 }, root))
   const strips = Array.from({ length: 5 }, () => el('div', { position: 'absolute', left: 0, width: W + 'px', background: 'rgba(255,247,236,0.07)', opacity: 0, mixBlendMode: 'screen' }, root))
   const line = new TypeLine(root, 'What if the stars chose who you meet?', {
-    left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 300, fontSize: '60px', letterSpacing: '-0.01em',
-    textShadow: '0 1px 18px rgba(20,10,46,0.35), 0 0 2px rgba(20,10,46,0.22)',
-  }, { perChar: 0.034, final: C.bone, accent: [C.rub, C.amber, C.gold, C.plum] })
+    left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 400, fontSize: '72px', letterSpacing: '-0.015em',
+    textShadow: '0 1px 22px rgba(20,10,46,0.45), 0 0 2px rgba(20,10,46,0.25)',
+  }, { perChar: 0.026, fade: 0.3, final: C.bone, accent: [C.rub, C.amber, C.gold, C.plum] })
   const r = rng(7)
   const bandY = bands.map(() => r() * H)
   const stripY = strips.map(() => [r() * H, 30 + r() * 120])
@@ -59,7 +61,7 @@ export function sceneImagine(stage) {
       pose(bg, t)
       bg.g.style.opacity = String(lerp(0.6, 1, ease.outQuad(prog(t, 0, 0.3))))
       tint.style.opacity = String(lerp(1, 0.6, prog(t, 0, 3)))
-      line.update(t - 0.45)
+      line.update(t - TYPE_START)
       const g = prog(t, 2.0, 3.3)
       // displaced slices ~2.2–3.0s
       slices.forEach((sl, i) => {
@@ -103,7 +105,7 @@ export function fxStairWipe(ctx, t, { start, dur, color, seed = 3, size = 48, fr
       const d = front - (row + stair)
       if (d <= 0) continue
       if (d < 1.2) {
-        const rr = rng(seed * 131 + cx * 977 + cy * 31 + Math.floor(t * 20))
+        const rr = rng(seed * 131 + cx * 977 + cy * 31 + (Math.round(t * 30) >> 1))
         ctx.fillStyle = PIXEL_PALETTE[Math.floor(rr() * PIXEL_PALETTE.length)]
       } else ctx.fillStyle = color
       ctx.fillRect(cx * size, cy * size, size + 0.5, size + 0.5)

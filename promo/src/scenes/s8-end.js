@@ -13,41 +13,41 @@ export function sceneEnd(stage) {
   const defs = CH.map((c, i) => `<radialGradient id="g${i}"><stop offset="0%" stop-color="${c}" stop-opacity="0.9"/><stop offset="45%" stop-color="${c}" stop-opacity="0.35"/><stop offset="100%" stop-color="${c}" stop-opacity="0"/></radialGradient><radialGradient id="c${i}" cx="42%" cy="38%"><stop offset="0%" stop-color="#fff"/><stop offset="35%" stop-color="${c}"/><stop offset="100%" stop-color="${c}"/></radialGradient>`).join('')
   const svg = el('div', { position: 'absolute', left: (W / 2 - 170) + 'px', top: (H / 2 - 260) + 'px', width: '340px', height: '340px' }, root,
     `<svg width="340" height="340" viewBox="-44 -44 88 88" style="overflow:visible"><defs>${defs}</defs>
-    <g fill="none" stroke="#d9cdf0" stroke-opacity="0.85" stroke-width="0.7" stroke-linecap="round">${circles.map((c, i) => `<circle class="ring" cx="${c.x}" cy="${c.y}" r="${c.r}" transform="rotate(${-90 + i * 51} ${c.x} ${c.y})" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>`).join('')}</g>
+    <g fill="none" stroke="#d9cdf0" stroke-opacity="0.9" stroke-width="1.1" stroke-linecap="round">${circles.map((c, i) => `<circle class="ring" cx="${c.x}" cy="${c.y}" r="${c.r}" transform="rotate(${-90 + i * 51} ${c.x} ${c.y})" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>`).join('')}</g>
     ${CH.map((_, i) => `<circle class="halo" cx="0" cy="${3 * 10.6 - i * 10.6}" r="0" fill="url(#g${i})"/><circle class="core" cx="0" cy="${3 * 10.6 - i * 10.6}" r="0" fill="url(#c${i})"/>`).join('')}
     </svg>`)
   const rings = [...svg.querySelectorAll('.ring')], halos = [...svg.querySelectorAll('.halo')], cores = [...svg.querySelectorAll('.core')]
-  const word = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (H / 2 + 110) + 'px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: '112px', color: C.bone, textShadow: '0 0 40px rgba(239,230,214,0.25)' }, root, 'Align')
-  const sub = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (H / 2 + 262) + 'px', textAlign: 'center', fontFamily: MONO, fontSize: '18px', letterSpacing: '0.32em', color: C.label2 }, root, 'YOUR FIRST DECK IS WAITING')
+  const word = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (H / 2 + 96) + 'px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: '132px', color: C.bone, textShadow: '0 0 40px rgba(239,230,214,0.25)' }, root, 'Align')
+  const sub = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (H / 2 + 272) + 'px', textAlign: 'center', fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', color: C.bone }, root, 'YOUR FIRST DECK IS WAITING')
   const fadeV = fill(root, { background: C.void, opacity: 0 })
   const black = fill(root, { background: '#000', opacity: 0 })
   return {
     start: 26.95, end: 30.01, root,
     update(t) {
       rings.forEach((c, i) => {
-        const p = ease.inOutCubic(prog(t, 27.0 + i * 0.04, 27.85 + i * 0.04))
+        const p = ease.outCubic(prog(t, 26.95 + i * 0.03, 27.34 + i * 0.03))
         c.setAttribute('stroke-dashoffset', String(1 - p))
       })
-      const d0 = 27.75
+      const d0 = 27.4
       halos.forEach((c, i) => {
-        const p = ease.outCubic(prog(t, d0 + i * 0.1, d0 + i * 0.1 + 0.55))
+        const p = ease.outCubic(prog(t, d0 + i * 0.07, d0 + i * 0.07 + 0.45))
         c.setAttribute('r', String(3.7 * 3 * p)); c.setAttribute('opacity', String(p))
       })
       cores.forEach((c, i) => {
-        const p = prog(t, d0 + i * 0.1, d0 + i * 0.1 + 0.38)
+        const p = prog(t, d0 + i * 0.07, d0 + i * 0.07 + 0.32)
         c.setAttribute('r', String(tw(p, [[0, 0], [0.6, 3.7 * 1.5], [1, 3.7]], ease.outQuad)))
       })
-      const wp = ease.outCubic(prog(t, 28.2, 29.0))
+      const wp = ease.outCubic(prog(t, 27.85, 28.45))
       word.style.opacity = String(wp)
       word.style.letterSpacing = lerp(0.12, 0.01, wp) + 'em'
       word.style.filter = `blur(${lerp(8, 0, wp)}px)`
       word.style.transform = `translateY(${lerp(10, 0, wp)}px)`
-      sub.style.opacity = String(ease.outQuad(prog(t, 28.6, 29.0)))
-      stars.style.opacity = String(prog(t, 27.0, 27.6))
-      svg.style.transform = `scale(${lerp(1.08, 1, ease.outCubic(prog(t, 27.0, 28.0)))})`
-      glow.style.opacity = String(ease.inOutQuad(prog(t, 27.2, 28.4)))
-      fadeV.style.opacity = String(ease.inOutQuad(prog(t, 29.4, 29.8)))
-      black.style.opacity = String(prog(t, 29.8, 29.97))
+      sub.style.opacity = String(ease.outQuad(prog(t, 28.2, 28.6)))
+      stars.style.opacity = String(prog(t, 26.95, 27.35))
+      svg.style.transform = `scale(${lerp(1.08, 1, ease.outCubic(prog(t, 26.95, 27.8)))})`
+      glow.style.opacity = String(ease.inOutQuad(prog(t, 27.0, 27.9)))
+      fadeV.style.opacity = String(ease.inOutQuad(prog(t, 29.5, 29.85)))
+      black.style.opacity = String(prog(t, 29.85, 29.97))
     },
   }
 }

@@ -1,7 +1,7 @@
 // Sound cues, in seconds. Keep in sync with scene timings.
 export const CUES = {
   typeS1: { start: 0.45, perChar: 0.034, text: 'What if the stars chose who you meet?' },
-  typeS7: { start: 22.78, perChar: 0.028, text: 'Dating, dealt by the stars' },
+  typeS7: { start: 22.72, perChar: 0.024, text: 'Dating, dealt by the stars' },
   whoosh: [2.95, 6.15, 9.52, 13.95, 17.2, 22.3],
   whip: [10.0, 12.65],
   pixels: [[2.95, 3.55], [6.15, 6.85], [17.2, 17.95]],
@@ -12,9 +12,10 @@ export const CUES = {
   deal: [17.55, 17.85, 18.15, 18.45, 18.7, 18.92, 19.12, 19.32, 19.52, 19.72, 19.92, 20.12, 20.32, 20.52, 20.72, 20.9, 21.08],
   tuck: [21.5, 21.78, 22.06, 22.34],
   foil: [21.05],
-  land: [24.8],
-  whooshS7: [26.05, 26.75],
-  chimes: { start: 27.75, step: 0.1, count: 7 },
+  land: [24.2, 25.8],
+  captions: [24.48, 25.74],
+  whooshS7: [24.15, 25.3, 26.62],
+  chimes: { start: 27.4, step: 0.07, count: 7 },
   sections: [
     // [start, end, chord (Hz roots)]
     [0, 6.85, [146.83, 220.0, 329.63, 369.99, 554.37]],     // Dmaj9

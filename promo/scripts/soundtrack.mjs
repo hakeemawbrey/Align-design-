@@ -120,7 +120,8 @@ CUES.deal.forEach(t => { tick(t + 0.25, 0.07); whoosh(t + 0.15, 0.22, 0.06) })
 CUES.tuck.forEach(t => tick(t + 0.2, 0.03))
 // foil sweep: rising shimmer of high bells
 CUES.foil.forEach(t0 => { for (let k = 0; k < 9; k++) bell(t0 + k * 0.07, [1174.66, 1318.51, 1479.98, 1760, 1975.53, 2349.32, 2637.02, 2959.96, 3520][k], 0.022, 0.6, k / 4 - 1) })
-CUES.land.forEach(t => { boom(t, 0.2); bell(t, 587.33, 0.06, 1.2) })
+CUES.land.forEach((t, i) => { boom(t, 0.2); bell(t, [587.33, 659.25][i % 2], 0.06, 1.2) })
+;(CUES.captions || []).forEach(t => bell(t, 1174.66, 0.035, 0.8))
 const chime = [293.66, 369.99, 440, 554.37, 587.33, 739.99, 880]
 for (let i = 0; i < CUES.chimes.count; i++) bell(CUES.chimes.start + i * CUES.chimes.step, chime[i], 0.07, 2.4, (i - 3) * 0.12)
 

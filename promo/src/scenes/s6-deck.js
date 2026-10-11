@@ -29,11 +29,12 @@ const CARD = {
 }
 // deal order: front-dealt cards, then the reveal lands, then cards keep shuffling in behind it
 const DEAL = ['p1', 't1', 'p2', 'ev', 'p4', 't2', 'peek', 't3', 'p5', 'sign', 'td', 'p6', 't4', 'p3', 't5', 't6', 'rev']
-const DEAL_T = [17.55, 17.85, 18.15, 18.45, 18.7, 18.92, 19.12, 19.32, 19.52, 19.72, 19.92, 20.12, 20.32, 20.52, 20.72, 20.9, 21.08]
+const DEAL_T = [17.42, 17.85, 18.15, 18.45, 18.7, 18.92, 19.12, 19.32, 19.52, 19.72, 19.92, 20.12, 20.32, 20.52, 20.72, 20.9, 21.08]
 const BEHIND = ['p2', 't2', 'p4', 'td', 'p5', 't4']
 const BEHIND_T = [21.5, 21.78, 22.06, 22.34, 22.62, 22.9]
-const BODY_H = 580 // on-screen card-body height of a profile card at scale 1 (matches the fxDots patch in s5)
-const ENTER = 0.3  // seconds for a card to slide/flip into the front slot
+const BODY_H = 700 // on-screen card-body height of a profile card at scale 1 (matches the fxDots patch in s5)
+const ENTER = 0.36 // seconds for a card to swing in edge-on from the right into the front slot
+const FIRST_IN = [17.42, 17.6] // first card fades in under the fxDots patch (no slide)
 
 export function sceneDeck(stage) {
   const root = fill(stage, { background: C.paper })
@@ -62,25 +63,34 @@ export function sceneDeck(stage) {
     backgroundSize: '300% 300%', backgroundRepeat: 'no-repeat',
   }, rev.wrap)
 
-  const word = (txt) => el('div', { position: 'absolute', fontFamily: SANS, fontSize: '68px', color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.015em', opacity: 0, lineHeight: 1 }, root, txt)
+  // "✦ ALIGNED" stamp + gilded glow on the front (Juniper) card once the foil has passed
+  const stamp = el('div', {
+    position: 'absolute', right: '7%', top: '4.5%', padding: '12px 22px 12px 18px', borderRadius: '14px',
+    background: 'linear-gradient(100deg, #f7f1fb, #fdf6e6 55%, #eef3fb)', color: C.ink, fontFamily: MONO, fontSize: '40px',
+    letterSpacing: '0.2em', whiteSpace: 'nowrap', lineHeight: 1, opacity: 0, transformOrigin: '70% 50%',
+    boxShadow: '0 10px 24px rgba(11,6,32,0.45)',
+  }, rev.wrap, `<span style="color:#d9a93f">✦</span> ALIGNED`)
+  const REV_SHADOW = '0 26px 44px -10px rgba(26,16,51,0.42), 0 6px 14px rgba(26,16,51,0.22)'
+
+  const word = (txt) => el('div', { position: 'absolute', fontFamily: SANS, fontSize: '84px', color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.015em', opacity: 0, lineHeight: 1 }, root, txt)
   const wTop = word('every night'), wBot = word('a new deck'), wYou = word('you'), wAlign = word('align')
   wYou.style.fontSize = '84px'
   wAlign.style.fontFamily = SERIF; wAlign.style.fontStyle = 'italic'; wAlign.style.fontSize = '104px'; wAlign.style.letterSpacing = '0'
 
   return {
-    start: 17.55, end: 22.75, root,
+    start: 17.4, end: 22.75, root,
     update(t) {
       const pull = ease.inOutCubic(prog(t, 18.3, 19.4))     // camera pulls back, stack fans out
-      const center = ease.inOutCubic(prog(t, 20.45, 21.1))  // stack compacts + centres for "you ▣ align"
+      const center = ease.inOutCubic(prog(t, 20.35, 20.95))  // stack compacts + centres for "you ▣ align"
       const push = lerp(1, 1.05, ease.inOutQuad(prog(t, 21.1, 22.75)))
-      const S0 = lerp(1, 0.86, pull) * lerp(1, 0.97, center) * push
+      const S0 = lerp(1, 0.72, pull) * lerp(1, 0.97, center) * push
       const Zd = lerp(40, 200, pull)
       const A1 = lerp(16, 78, pull), B1 = lerp(0, 4.2, pull)
       const Yd = lerp(4, 38, pull)
       const baseX = lerp(lerp(0, 300, pull), 250, center)
       const baseY = lerp(-10, lerp(-120, -60, center), pull)
 
-      const e = cards.map(c => c.kind === 'front' && c.at <= 17.55 ? 1 : ease.outCubic(prog(t, c.at, c.at + ENTER)))
+      const e = cards.map((c, i) => i === 0 ? 1 : ease.outCubic(prog(t, c.at, c.at + ENTER)))
       const n = cards.length
       cards.forEach((c, i) => {
         if (t < c.at) { c.wrap.style.display = 'none'; return }
@@ -98,12 +108,14 @@ export function sceneDeck(stage) {
         let y = baseY + lerp(Yd * d, 170 * sat, center)
         let yaw = lerp(0, lerp(14, 30, pull), clamp(d))
         let rx = 0, rz = 0
-        // entry into the front slot: opaque slide + flip from the right
-        if (c.kind !== 'behind' && e[i] < 1) {
+        // entry into the front slot: swings in edge-on from the right (yaw −90 → 0), fading up over the first quarter
+        let op = 1
+        if (i === 0) op = ease.inOutQuad(prog(t, FIRST_IN[0], FIRST_IN[1]))
+        else if (c.kind !== 'behind' && e[i] < 1) {
           const p = e[i]
-          x += (1 - p) * 300
-          y += (1 - p) * -20
-          yaw = lerp(-62, yaw, p)
+          x += (1 - p) * 700
+          yaw = lerp(-90, yaw, p)
+          op = clamp(prog(t, c.at, c.at + ENTER) * 4)
         }
         if (c.kind === 'behind') yaw = lerp(4, yaw, e[i])
         // holo moment: slight tilt as the foil light passes
@@ -114,7 +126,6 @@ export function sceneDeck(stage) {
         }
         // rear cards: leave frame left; cap depth when compacted so the trail stays tidy
         const left = W / 2 + x - (c.w * s) / 2
-        const op = 1
         const vis = left + c.w * s > -40 && op > 0.01
         c.wrap.style.display = vis ? 'block' : 'none'
         if (!vis) return
@@ -127,24 +138,30 @@ export function sceneDeck(stage) {
       gloss.style.opacity = String(0.6 * clamp(Math.sin(Math.PI * gp) * 2.5))
       gloss.style.backgroundPosition = `${lerp(100, 0, ease.inOutQuad(gp))}% ${lerp(100, 0, ease.inOutQuad(gp))}%`
 
-      // words: "every night / a new deck" frame the front card
-      const sF = S0
-      const cardH = BODY_H * sF
+      // aligned: gilded glow + stamp on the front card (bridges into the match in s7)
+      const gl = ease.outCubic(prog(t, 21.8, 21.95)) * (1 - 0.55 * ease.inOutQuad(prog(t, 22.0, 22.5)))
+      rev.wrap.style.boxShadow = gl > 0.001 ? `${REV_SHADOW}, 0 0 ${8 + 46 * gl}px ${4 + 10 * gl}px rgba(242,199,92,${(0.75 * gl).toFixed(3)}), inset 0 0 0 ${(4 * gl).toFixed(2)}px rgba(242,199,92,${(0.9 * gl).toFixed(3)})` : REV_SHADOW
+      const sp = prog(t, 21.82, 21.98)
+      stamp.style.opacity = String(clamp(sp * 3))
+      stamp.style.transform = `rotate(${lerp(-14, -6, ease.outCubic(sp))}deg) scale(${lerp(1.7, 1, ease.outBack(sp))})`
+
+      // words: "every night / a new deck" frame the front card (≥ 64px clear of it, incl. perspective swell of entering cards)
+      const cardH = BODY_H * S0
       const fxw = W / 2 + baseX
       const showA = (a) => ease.outCubic(prog(t, a, a + 0.35))
-      const hideA = 1 - prog(t, 20.35, 20.5)
-      wTop.style.left = (fxw - 40) + 'px'; wTop.style.top = (H / 2 + baseY - cardH / 2 - 92) + 'px'
-      wBot.style.left = (fxw - 20) + 'px'; wBot.style.top = (H / 2 + baseY + cardH / 2 + 26) + 'px'
-      wTop.style.opacity = String(showA(19.0) * hideA); wTop.style.transform = `translateY(${(1 - showA(19.0)) * 20}px)`
-      wBot.style.opacity = String(showA(19.35) * hideA); wBot.style.transform = `translateY(${(1 - showA(19.35)) * 20}px)`
+      const hide = ease.inCubic(prog(t, 20.3, 20.5))
+      wTop.style.left = (fxw - 60) + 'px'; wTop.style.top = (H / 2 + baseY - cardH / 2 - 64 - 84) + 'px'
+      wBot.style.left = (fxw - 30) + 'px'; wBot.style.top = (H / 2 + baseY + cardH / 2 + 64) + 'px'
+      wTop.style.opacity = String(showA(19.0) * (1 - hide)); wTop.style.transform = `translateY(${(1 - showA(19.0)) * 20 - 16 * hide}px)`
+      wBot.style.opacity = String(showA(19.35) * (1 - hide)); wBot.style.transform = `translateY(${(1 - showA(19.35)) * 20 + 16 * hide}px)`
       // "you ▣ align": balanced around the compacted stack (left = rear of trail, right = front card)
       const fy = H / 2 + baseY
       const out = 1 - ease.inQuad(prog(t, 22.4, 22.7))
       wYou.style.left = (W / 2 - 590) + 'px'; wYou.style.top = (fy - 46) + 'px'
       wAlign.style.left = (W / 2 + 485) + 'px'; wAlign.style.top = (fy - 62) + 'px'
-      wYou.style.opacity = String(showA(21.0) * out); wAlign.style.opacity = String(showA(21.25) * out)
-      wYou.style.transform = `translateX(${(1 - showA(21.0)) * -30}px)`
-      wAlign.style.transform = `translateX(${(1 - showA(21.25)) * 30}px)`
+      wYou.style.opacity = String(showA(20.85) * out); wAlign.style.opacity = String(showA(21.1) * out)
+      wYou.style.transform = `translateX(${(1 - showA(20.85)) * -30}px)`
+      wAlign.style.transform = `translateX(${(1 - showA(21.1)) * 30}px)`
       // blur out into s7's rising gradient
       const bl = 24 * ease.inQuad(prog(t, 22.4, 22.75))
       persp.style.filter = bl > 0.05 ? `blur(${bl.toFixed(2)}px)` : 'none'
