@@ -10,10 +10,12 @@ if (typeof document !== 'undefined' && !window.__inter500) {
 }
 
 // ─────────────────────────────────────────────────────── S2 · { now they do }
-const CHIP_SRC = [
-  'card-profile-1.png', 'card-profile-2.png', 'card-profile-3.png', 'card-event.png',
-  'card-profile-4.png', 'card-profile-5.png', 'card-talk-1.png', 'card-profile-6.png',
-]
+// the chip flicks through real people: aura portraits cropped to the face (fx/fy = face centre in the source, fw = face width)
+const PEOPLE_SRC = [3, 8, 'juniper', 4, 12, 2, 1, 9, 5, 'hakeem', 6, 10, 7, 11]
+const CHIP_FACES = PEOPLE_SRC.map((k) => k === 'juniper' ? { src: IMG + 'juniper.jpg', iw: 720, ih: 960, fx: 0.5, fy: 0.46, fw: 0.30 }
+  : k === 'hakeem' ? { src: IMG + 'hakeem.jpg', iw: 900, ih: 750, fx: 0.5, fy: 0.43, fw: 0.20 }
+  : { src: PEOPLE[k - 1], iw: 342, ih: 366, fx: 0.5, fy: 0.37, fw: 0.25 })
+const CHIP_STEP_FRAMES = 2   // carousel advances one slot every 2 frames (15 Hz) → ~12 faces flash by while the chip is open
 const TILE_W = 68, TILE_H = 86, TILE_STEP = 72, CHIP_W = 3 * TILE_W + 2 * (TILE_STEP - TILE_W), CHIP_MARGIN = 6
 const TICK = 20
 const FI = (t) => Math.round(t * 30)            // frame index (never floor: float error duplicates frames)
@@ -37,6 +39,19 @@ function makeTicks(parent, color, size = TICK) {
     },
   }
 }
+
+/** "{ now they do }": a small constellation of people around the tick box — each starts as a point of light and
+ *  blooms into a round aura portrait; hairlines join them in order (dx, dy from frame centre, d = diameter, glow rgb) */
+const CONST = [
+  { k: 5, dx: -470, dy: 262, d: 52, g: '232,98,138' },
+  { k: 9, dx: -622, dy: -40, d: 58, g: '242,154,74' },
+  { k: 12, dx: -262, dy: -330, d: 52, g: '180,92,255' },
+  { k: 1, dx: 204, dy: -330, d: 58, g: '242,154,74' },
+  { k: 6, dx: 592, dy: -196, d: 52, g: '127,216,176' },
+  { k: 10, dx: 556, dy: 240, d: 56, g: '232,98,138' },
+]
+const CONST_T0 = 3.80, CONST_DT = 0.06   // star i lights at CONST_T0 + i·DT, blooms 0.09s later (0.22s)
+const CONST_OUT = 4.58                     // fold back to points and fade before the line collapses (4.64)
 
 // timeline (s) — sound cues
 const T = {
@@ -63,12 +78,11 @@ export function sceneIntro(stage) {
   const wStars = mk('&nbsp;do')
   const wIntro = mk('intro', { color: C.rub })
   const chip = el('span', { display: 'inline-block', position: 'relative', height: TILE_H + 'px', overflow: 'hidden', borderRadius: '10px', margin: `0 ${CHIP_MARGIN}px`, verticalAlign: 'middle', flexShrink: 0, willChange: 'transform' }, row)
-  // each tile crops the card toward its art window (aura / arch) so it reads at thumbnail size
-  const tiles = CHIP_SRC.map((f) => {
+  // each tile crops a portrait to the face (face ≈ 62% of the tile width, eyes a touch above centre)
+  const tiles = CHIP_FACES.map((f) => {
     const tile = el('div', { position: 'absolute', top: 0, width: TILE_W + 'px', height: TILE_H + 'px', overflow: 'hidden', borderRadius: '8px', background: C.canvas }, chip)
-    const talk = f.startsWith('card-talk')
-    const iw = talk ? 160 : 180, ih = talk ? iw * 1170 / 732 : iw * 2238 / 1496
-    img(tile, A + f, { left: (TILE_W / 2 - iw * 0.5) + 'px', top: (TILE_H / 2 - ih * (talk ? 0.36 : 0.27)) + 'px', width: iw + 'px', height: ih + 'px' })
+    const iw = TILE_W * 0.56 / f.fw, ih = iw * f.ih / f.iw
+    img(tile, f.src, { left: (TILE_W / 2 - iw * f.fx) + 'px', top: (TILE_H * 0.47 - ih * f.fy) + 'px', width: iw + 'px', height: ih + 'px' })
     return tile
   })
   const dot = mk('•', { color: C.rub, fontSize: '30px' })
@@ -78,6 +92,27 @@ export function sceneIntro(stage) {
   const arrL = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(26,16,51,0.22)' }, mid, '⟵')
   const arrR = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(26,16,51,0.22)' }, mid, '⟶')
   const ticks = makeTicks(mid, C.ink, TICK)
+  // constellation (lines on a canvas under the avatars)
+  const cLines = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', pointerEvents: 'none' }, mid)
+  cLines.width = W; cLines.height = H
+  const cctx = cLines.getContext('2d')
+  const stars = CONST.map((c) => {
+    const dot = el('div', { position: 'absolute', width: '8px', height: '8px', borderRadius: '50%', background: C.ink, opacity: 0,
+      left: (W / 2 + c.dx - 4) + 'px', top: (H / 2 + c.dy - 4) + 'px' }, mid)
+    const av = el('div', { position: 'absolute', width: c.d + 'px', height: c.d + 'px', borderRadius: '50%', overflow: 'hidden', opacity: 0,
+      left: (W / 2 + c.dx - c.d / 2) + 'px', top: (H / 2 + c.dy - c.d / 2) + 'px', background: C.canvas,
+      boxShadow: `0 0 0 2px ${C.bone}, 0 0 0 3px rgba(26,16,51,0.16), 0 0 ${Math.round(c.d * 0.45)}px ${Math.round(c.d * 0.12)}px rgba(${c.g},0.55)` }, mid)
+    const iw = c.d * 0.6 / 0.25, ih = iw * 366 / 342
+    img(av, PEOPLE[c.k - 1], { left: (c.d / 2 - iw * 0.5) + 'px', top: (c.d * 0.5 - ih * 0.375) + 'px', width: iw + 'px', height: ih + 'px' })
+    return { dot, av, c }
+  })
+  const starState = (t, i) => {
+    const a = CONST_T0 + i * CONST_DT
+    const light = ease.outCubic(prog(t, a, a + 0.06))
+    const bloom = prog(t, a + 0.09, a + 0.31)
+    const fold = ease.inCubic(prog(t, CONST_OUT + i * 0.012, CONST_OUT + 0.12 + i * 0.012))
+    return { light, bloom, fold }
+  }
 
   let natural = null
   const measure = () => {
@@ -126,10 +161,11 @@ export function sceneIntro(stage) {
       chip.style.width = (st.open * CHIP_W) + 'px'
       chip.style.margin = `0 ${st.margin}px`
       chip.style.opacity = String(clamp(st.open * 3))
-      // stepped carousel: 8 slots of TILE_STEP, window shows 3; every slot is always filled
-      const shift = Math.floor(FI(t) / 3)
+      // stepped carousel: N slots of TILE_STEP, window shows 3; every slot is always filled
+      const NT = tiles.length
+      const shift = Math.floor(FI(t) / CHIP_STEP_FRAMES)
       tiles.forEach((tile, i) => {
-        const slot = ((i - shift) % 8 + 8) % 8
+        const slot = ((i - shift) % NT + NT) % NT
         tile.style.left = ((slot - 1) * TILE_STEP) + 'px'
       })
       const outF = 1 - ease.inCubic(prog(t, T.out, T.out + 0.16))
@@ -142,6 +178,34 @@ export function sceneIntro(stage) {
         const conv = ease.inOutCubic(prog(tt, T.conv, T.conv + 0.24))
         const bw = rw * lerp(1.05, 1.4, grow) + 60, bh = 100 + 300 * grow
         return { cx: W / 2, cy: H / 2, w: lerp(bw, 0, conv), h: lerp(bh, 0, conv), op: lag * (1 - prog(tt, T.conv + 0.22, T.conv + 0.28)) }
+      })
+      // constellation
+      cctx.clearRect(0, 0, W, H)
+      const P = (c) => [W / 2 + c.dx, H / 2 + c.dy]
+      stars.forEach(({ dot, av, c }, i) => {
+        const { light, bloom, fold } = starState(t, i)
+        const b = ease.outBack(bloom)
+        const sc = lerp(0.16, 1, b) * lerp(1, 0.16, fold)
+        av.style.opacity = String(clamp(bloom * 4) * (1 - clamp(fold * 1.3)))
+        av.style.transform = `scale(${sc.toFixed(4)})`
+        // the point of light: a small ink dot that swells into the portrait (and is left behind as it folds)
+        dot.style.opacity = String(clamp(light - clamp(bloom * 5)) + clamp(fold * 3) * (1 - prog(t, CONST_OUT + 0.1, CONST_OUT + 0.2)))
+        dot.style.transform = `scale(${lerp(0.4, 1, light).toFixed(3)})`
+        // hairline to the previous star, drawn as this one lights (trimmed at both radii)
+        if (i > 0) {
+          const pr = stars[i - 1].c
+          const draw = ease.inOutQuad(prog(t, CONST_T0 + (i - 0.6) * CONST_DT, CONST_T0 + (i + 0.6) * CONST_DT + 0.08))
+          const lop = draw > 0 ? 0.2 * (1 - ease.inQuad(prog(t, CONST_OUT - 0.04, CONST_OUT + 0.1))) : 0
+          if (lop > 0.002) {
+            const [x0, y0] = P(pr), [x1, y1] = P(c)
+            const L = Math.hypot(x1 - x0, y1 - y0), ux = (x1 - x0) / L, uy = (y1 - y0) / L
+            const r0 = pr.d / 2 + 10, r1 = c.d / 2 + 10
+            const len = (L - r0 - r1) * draw
+            cctx.strokeStyle = `rgba(26,16,51,${lop.toFixed(3)})`
+            cctx.lineWidth = 1.5
+            cctx.beginPath(); cctx.moveTo(x0 + ux * r0, y0 + uy * r0); cctx.lineTo(x0 + ux * (r0 + len), y0 + uy * (r0 + len)); cctx.stroke()
+          }
+        }
       })
       const rw = st.w
       const ap = ease.outCubic(prog(t, T.intro, T.intro + 0.65))

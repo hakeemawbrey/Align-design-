@@ -5,11 +5,31 @@ import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeS
 // Timing (sound): rings draw 26.95–27.52 · chakra dots pop 27.40–27.97 (bottom→top, 0.07 apart) ·
 // wordmark 27.85–28.45 · sub-line 28.20–28.60 · chakra pulse sweeps bottom→top 28.55–29.05 (peak ~28.62 + i*0.06) ·
 // slow push 1.00→1.04 over 27.8–29.6 · fade to void 29.50–29.85 · black 29.85–29.97.
+// Portrait orbit: 12 tiny aura portraits (36–48px, ≤0.5 opacity) on a wide tilted ring far behind the mark;
+//   orbit hairline draws 27.55–28.35 · portraits fade/scale in one by one 27.62 + k*0.06 (→ ~28.3), soft, no hard pop ·
+//   slow drift 0.07 rad/s · twinkle field (50 dot stars, a few pixel crosses) fades in 27.0–27.6 · all fade with the end 29.50–29.85.
 // Lockup sits 40px higher than centre-balanced so a CTA line can be added later below the sub-line (~y 860–920).
 const LIFT = 40
 export function sceneEnd(stage) {
   const root = fill(stage, { background: C.void })
   const stars = makeStars(root, 140, 77)
+  // twinkle field + portrait orbit (behind the glow/lockup)
+  const tcv = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
+  tcv.width = W; tcv.height = H
+  const tctx = tcv.getContext('2d')
+  const tr = rng(8821)
+  const TW = Array.from({ length: 50 }, () => ({ x: tr() * W, y: tr() * H, u: tr() < 0.25 ? 3 : 2, ph: tr() * 6.28, sp: 1.2 + tr() * 2.4, a: 0.25 + tr() * 0.5, pix: tr() < 0.12 }))
+  const OCX = W / 2, OCY = 500, ORX = 820, ORY = 450
+  const orbitSvg = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root,
+    `<svg width="${W}" height="${H}" style="overflow:visible"><ellipse cx="${OCX}" cy="${OCY}" rx="${ORX}" ry="${ORY}" fill="none" stroke="#efe6d6" stroke-opacity="0.13" stroke-width="1" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/></svg>`)
+  const orbitPath = orbitSvg.querySelector('ellipse')
+  const OSRC = [...PEOPLE, IMG + 'juniper.jpg', IMG + 'hakeem.jpg']
+  const ORB_N = 12, ORB_PICK = [12, 3, 7, 0, 13, 5, 9, 2, 10, 6, 4, 8]
+  const orbs = ORB_PICK.map((pi, k) => {
+    const g = el('div', { position: 'absolute', left: '-24px', top: '-24px', width: '48px', height: '48px', borderRadius: '50%', overflow: 'hidden', opacity: 0, boxShadow: '0 0 0 1px rgba(239,230,214,0.55), 0 0 14px rgba(154,123,224,0.55)', willChange: 'transform' }, root)
+    img(g, OSRC[pi], { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: pi === 13 ? '50% 30%' : '50% 40%', transform: 'scale(1.3)', transformOrigin: '50% 42%' })
+    return { g, a0: -Math.PI / 2 + (k / ORB_N) * Math.PI * 2 + 0.13, t0: 27.62 + ((k * 5) % ORB_N) * 0.06, ph: k * 1.91 }
+  })
   const glow = fill(root, { background: 'radial-gradient(40% 45% at 50% 40%, rgba(154,123,224,0.28), rgba(11,6,32,0) 70%)' })
   // everything in the lockup lives in `lock` so the slow push scales it as one
   const lock = fill(root, { background: 'transparent', transformOrigin: `50% ${H / 2 - LIFT}px` })
@@ -54,6 +74,31 @@ export function sceneEnd(stage) {
       word.style.transform = `translateY(${lerp(10, 0, wp)}px)`
       sub.style.opacity = String(ease.outQuad(prog(t, 28.2, 28.6)))
       stars.style.opacity = String(prog(t, 26.95, 27.35))
+      // twinkle field
+      tctx.clearRect(0, 0, W, H)
+      const fin = ease.outQuad(prog(t, 27.0, 27.6))
+      TW.forEach(s => {
+        const a = s.a * fin * (0.45 + 0.55 * Math.sin(t * s.sp + s.ph))
+        if (a <= 0.01) return
+        tctx.fillStyle = `rgba(239,230,214,${a})`
+        tctx.fillRect(s.x - s.u / 2, s.y - s.u / 2, s.u, s.u)
+        if (s.pix) {
+          tctx.fillStyle = `rgba(239,230,214,${a * 0.6})`
+          tctx.fillRect(s.x - s.u / 2, s.y - s.u * 1.5, s.u, s.u); tctx.fillRect(s.x - s.u / 2, s.y + s.u / 2, s.u, s.u)
+          tctx.fillRect(s.x - s.u * 1.5, s.y - s.u / 2, s.u, s.u); tctx.fillRect(s.x + s.u / 2, s.y - s.u / 2, s.u, s.u)
+        }
+      })
+      // portrait orbit: tilted ring, front (bottom) larger/brighter, back (top) smaller/dimmer
+      orbitPath.setAttribute('stroke-dashoffset', String(1 - ease.inOutCubic(prog(t, 27.55, 28.35))))
+      orbs.forEach(o => {
+        const ang = o.a0 + (t - 27.6) * 0.07
+        const x = OCX + Math.cos(ang) * ORX, y = OCY + Math.sin(ang) * ORY
+        const depth = (Math.sin(ang) + 1) / 2 // 0 back (top) → 1 front (bottom)
+        const ap = ease.outCubic(prog(t, o.t0, o.t0 + 0.5))
+        const twk = 0.82 + 0.18 * Math.sin(t * 2.2 + o.ph)
+        o.g.style.opacity = String(ap * lerp(0.28, 0.5, depth) * twk)
+        o.g.style.transform = `translate(${x}px, ${y}px) scale(${lerp(0.6, 1, ap) * lerp(0.75, 1, depth)})`
+      })
       svg.style.transform = `scale(${lerp(1.08, 1, ease.outCubic(prog(t, 26.95, 27.8)))})`
       lock.style.transform = `scale(${lerp(1, 1.04, ease.inOutQuad(prog(t, 27.8, 29.6)))})`
       const gPulse = tw(t, [[28.55, 0], [28.8, 1, ease.outQuad], [29.3, 0, ease.inOutQuad]])

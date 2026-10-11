@@ -33,6 +33,19 @@ const DEAL = ['p1', 't1', 'p2', 'ev', 'p4', 't2', 'back', 't3', 'p5', 'sign', 't
 const DEAL_T = [17.42, 17.85, 18.15, 18.45, 18.7, 18.92, 19.12, 19.32, 19.52, 19.72, 19.92, 20.12, 20.32, 20.52, 20.72, 20.9, 21.08]
 const BEHIND = ['p2', 't2', 'p4', 'td', 'p5', 't4']
 const BEHIND_T = [21.5, 21.78, 22.06, 22.34, 22.62, 22.9]
+// "already aligned": as the deck recedes, the veiled profile cards that aligned lift their aura veil one by one
+// (a ripple down the trail) — the photo fills the art window, a gold "✦ ALIGNED" tag replaces the pull chip.
+// Juniper's veiled card (p3) and every newly dealt card stay mystery; Juniper is the hero reveal at 21.08.
+// photo = PEOPLE index (from app/src/data/profiles.ts: Maya→p3, Rio→p9, Ari→p6, Sol→p7, Kai→p2)
+const ALIGNED = {
+  p1: { photo: 3, at: 18.55 },   // Maya, 24 · Virgo
+  p2: { photo: 9, at: 18.88 },   // Rio, 29 · Leo
+  p4: { photo: 6, at: 19.22 },   // Ari, 31 · Aquarius
+  p5: { photo: 7, at: 19.98 },   // Sol, 26 · Pisces
+  p6: { photo: 2, at: 20.36 },   // Kai, 28 · Capricorn
+}
+const LIFT = 0.34               // veil-lift duration (s)
+const WIN = [218, 342, 1292, 914] // art window inside card-profile-*.png (PNG px)
 const BODY_H = 700 // on-screen card-body height of a profile card at scale 1 (matches the fxDots patch in s5)
 const ENTER = 0.4 // seconds for a card to swing in from off-frame right (yaw −65 → 0, shaded dark → lit) into the front slot
 const FIRST_IN = [17.45, 17.62] // first card fades in under the fxDots patch (no slide)
@@ -50,7 +63,24 @@ export function sceneDeck(stage) {
       boxShadow: '0 26px 44px -10px rgba(26,16,51,0.42), 0 6px 14px rgba(26,16,51,0.22)',
     }, persp)
     const im = img(wrap, A + c.src, { left: (-c.b[0] * sc) + 'px', top: (-c.b[1] * sc) + 'px', width: (c.iw * sc) + 'px', height: (c.ih * sc) + 'px' })
-    return { wrap, im, w, h, kind, at, key }
+    const out = { wrap, im, w, h, kind, at, key }
+    const al = ALIGNED[key]
+    if (al) {
+      const L = (WIN[0] - c.b[0]) * sc, T = (WIN[1] - c.b[1]) * sc, ww = (WIN[2] - WIN[0]) * sc, wh = (WIN[3] - WIN[1]) * sc
+      const win = el('div', { position: 'absolute', left: L + 'px', top: T + 'px', width: ww + 'px', height: wh + 'px', overflow: 'hidden',
+        borderRadius: (30 * sc) + 'px', opacity: 0, background: C.canvas }, wrap)
+      const pw = ww * 1.04, ph = pw * 366 / 342
+      const pimg = img(win, PEOPLE[al.photo - 1], { left: (ww / 2 - pw / 2) + 'px', top: (wh * 0.53 - ph * 0.37) + 'px', width: pw + 'px', height: ph + 'px' })
+      const rim = el('div', { position: 'absolute', inset: 0, borderRadius: (30 * sc) + 'px', pointerEvents: 'none' }, win)
+      const tag = el('div', {
+        position: 'absolute', right: (34 * sc) + 'px', top: (30 * sc) + 'px', padding: `${12 * sc}px ${26 * sc}px ${12 * sc}px ${22 * sc}px`,
+        borderRadius: '999px', background: 'rgba(20,10,46,0.82)', border: `${2.5 * sc}px solid rgba(242,199,92,0.85)`,
+        fontFamily: MONO, fontSize: (32 * sc) + 'px', letterSpacing: '0.18em', lineHeight: 1, color: C.bone, whiteSpace: 'nowrap',
+        opacity: 0, transformOrigin: '80% 50%',
+      }, win, `<span style="color:${C.gold}">✦</span> ALIGNED`)
+      out.al = { ...al, win, pimg, rim, tag }
+    }
+    return out
   }
   const cards = [
     ...DEAL.map((k, i) => mk(k, k === 'rev' ? 'rev' : 'front', DEAL_T[i])),
@@ -137,6 +167,24 @@ export function sceneDeck(stage) {
         c.wrap.style.filter = shade < 0.999 ? `brightness(${shade.toFixed(3)})` : 'none'
         c.wrap.style.transform = `translate(${x}px, ${y}px) perspective(2400px) rotateY(${yaw}deg) rotateX(${rx}deg) rotateZ(${rz}deg) scale(${s})`
         c.wrap.style.zIndex = String(2000 - Math.round(d * 40) + (c.kind === 'rev' ? 1 : 0))
+      })
+      // already-aligned veil lifts (photo wipes up from under the aura, blur → sharp, gilt rim flash, tag pops)
+      cards.forEach((c) => {
+        if (!c.al) return
+        const p = prog(t, c.al.at, c.al.at + LIFT)
+        if (p <= 0) { c.al.win.style.opacity = '0'; return }
+        const e1 = ease.inOutCubic(p)
+        const edge = lerp(-30, 130, e1)
+        c.al.win.style.opacity = String(clamp(p * 6))
+        const m = `linear-gradient(to top, #000 ${(edge - 30).toFixed(1)}%, transparent ${edge.toFixed(1)}%)`
+        c.al.win.style.webkitMaskImage = c.al.win.style.maskImage = p >= 1 ? 'none' : m
+        const bl = lerp(9, 0, ease.outCubic(p))
+        c.al.pimg.style.filter = bl > 0.05 ? `blur(${bl.toFixed(2)}px) saturate(${lerp(1.5, 1, p).toFixed(3)})` : 'none'
+        const flash = Math.sin(Math.PI * prog(t, c.al.at + LIFT * 0.55, c.al.at + LIFT + 0.25))
+        c.al.rim.style.boxShadow = `inset 0 0 0 ${(2 + 3 * flash).toFixed(2)}px rgba(242,199,92,${(0.45 + 0.5 * flash).toFixed(3)})`
+        const tp = prog(t, c.al.at + LIFT * 0.7, c.al.at + LIFT * 0.7 + 0.2)
+        c.al.tag.style.opacity = String(clamp(tp * 3))
+        c.al.tag.style.transform = `scale(${lerp(1.35, 1, ease.outBack(tp)).toFixed(4)})`
       })
       // gold-foil sweep across the revealed card
       const gp = prog(t, 21.05, 21.75)

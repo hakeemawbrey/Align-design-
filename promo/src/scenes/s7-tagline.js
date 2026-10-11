@@ -1,5 +1,5 @@
-import { clamp, lerp, prog, ease, tw, el, C, TypeLine } from '../lib.js'
-import { W, H, A, SANS, SERIF, MONO, fill, img, Ticks } from "./common.js"
+import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../lib.js'
+import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks } from "./common.js"
 
 // ──────────────────────────────────────── S7 · gradient tagline + payoff beats
 // Timing (sound): colour rises 22.40–23.00 · ticks + typing 22.56, perChar 0.016, fade 0.12
@@ -7,6 +7,13 @@ import { W, H, A, SANS, SERIF, MONO, fill, img, Ticks } from "./common.js"
 // beat A  match phone fades in 24.26–24.38, lands/settles ~24.70 · caption A pops 24.26 (full 24.38, out 25.47–25.61) ·
 // beat B  swap 25.45: match phone exits left (to ~25.85); chat phone enters 25.53, lands ~25.98 ·
 //         caption B pops 25.62 (full 25.74) · exit is main.js stair wipe 26.58–26.94.
+// Constellation of people: 13 aura portraits light up as stars around the tagline, one every 0.085s
+//   from 22.66 (pop k at 22.66 + k*0.085 → last 23.68; each blooms over ~0.28s, peak glow +0.14) ·
+//   15 constellation lines draw (0.24s each) 0.12s after both ends are lit: starts 23.12, 23.205×2, 23.29,
+//   23.375, 23.46×2, 23.545×2, 23.63×2, 23.715×2, 23.80×2 (last lands 24.04) ·
+//   joint sparkles glint on each line's completion · 23.98–24.16 lines retract · 24.02–24.45 portraits
+//   drift toward the landing match phone and dim into stars; 3 survivors glide to small floating
+//   orbs (settled ~24.70) that stay around the phones until the wipe.
 const T_TYPE = 22.56, PER = 0.016, T_OUT = 24.14, OUT_D = 0.12
 const T_A = 24.26, T_A_END = 24.7
 const T_SW = 25.45, T_B0 = 25.53, T_B_END = 25.98
@@ -40,6 +47,74 @@ export function sceneTagline(stage, assets) {
   }, { perChar: PER, fade: 0.12, final: '#fff6ea', accent: ['#ffffff', '#ffe3c4', '#ecdcff'] })
   const ticks = new Ticks(root, C.ink, 16)
   let tagW = 0
+
+  // ── constellation of people (canvas: field stars + hairlines + pixel sparkles; DOM: portraits)
+  const cv = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
+  cv.width = W; cv.height = H
+  const cx2 = cv.getContext('2d')
+  const SRC = [...PEOPLE, IMG + 'juniper.jpg', IMG + 'hakeem.jpg']
+  // [x, y, diameter, photo index]; tagline + ticks occupy ~x 400–1520, y 465–615 — nodes stay well outside
+  const NODES = [
+    [250, 250, 104, 12], [530, 160, 84, 0], [810, 300, 74, 4], [1090, 150, 110, 2], [1370, 285, 82, 8], [1660, 190, 100, 6],
+    [1770, 545, 90, 13], [1640, 880, 84, 9], [1330, 940, 100, 1], [1010, 815, 78, 5], [690, 935, 96, 10], [370, 845, 86, 3],
+    [150, 560, 92, 7], [520, 720, 0, -1],
+  ].filter(n => n[3] >= 0)
+  const N_ORDER = [3, 0, 8, 5, 10, 1, 6, 11, 4, 12, 7, 2, 9] // lighting order (index into NODES)
+  const T_POP = 22.66, POP_STEP = 0.085, POP_D = 0.28
+  const popT = []; N_ORDER.forEach((n, k) => { popT[n] = T_POP + k * POP_STEP })
+  const EDGES = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 0], [1, 3], [8, 10]]
+  const LINE_D = 0.24
+  const edges = EDGES.map(([a, b]) => ({ a, b, t0: Math.max(popT[a], popT[b]) + 0.12 }))
+  // survivors: [node, x, y, d] — small floating orbs clear of both phones' captions
+  const SURV = [[5, 1730, 170, 66], [7, 1745, 905, 60], [11, 255, 890, 62]]
+  const T_GO = 24.02, GO_D = 0.34
+  const nodes = NODES.map(([x, y, d, pi], i) => {
+    const g = el('div', { position: 'absolute', left: 0, top: 0, width: '100px', height: '100px', marginLeft: '-50px', marginTop: '-50px', borderRadius: '50%', opacity: 0, willChange: 'transform' }, root)
+    const glowE = el('div', { position: 'absolute', inset: '-38%', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(255,246,234,0.85), rgba(214,190,255,0.45) 45%, rgba(214,190,255,0) 100%)' }, g)
+    const disc = el('div', { position: 'absolute', inset: 0, borderRadius: '50%', overflow: 'hidden', background: C.canvas, boxShadow: '0 10px 26px rgba(40,10,80,0.35), 0 0 0 1.5px rgba(239,230,214,0.95), 0 0 0 4px rgba(239,230,214,0.18)' }, g)
+    img(disc, SRC[pi], { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: pi === 13 ? '50% 30%' : '50% 40%', transform: 'scale(1.28)', transformOrigin: '50% 42%' })
+    const sv = SURV.find(s => s[0] === i)
+    return { x, y, d, g, glowE, sv, ph: (i * 1.37) % 6.28 }
+  })
+  // field stars: tiny bone/white pixel twinkles over the gradient (deterministic)
+  const fr = rng(4207)
+  const FIELD = Array.from({ length: 70 }, () => {
+    let x, y
+    do { x = fr() * W; y = fr() * H } while (x > 360 && x < 1560 && y > 430 && y < 650)
+    return { x, y, u: fr() < 0.22 ? 3 : 2, t0: 22.55 + fr() * 1.3, ph: fr() * 6.28, sp: 1.5 + fr() * 2.5, a: 0.45 + fr() * 0.5 }
+  })
+  function pix(x, y, u, a, col, big) {
+    if (a <= 0.003) return
+    x = Math.round(x); y = Math.round(y)
+    cx2.fillStyle = `rgba(${col},${a})`
+    cx2.fillRect(x - u / 2, y - u / 2, u, u)
+    cx2.fillStyle = `rgba(${col},${a * 0.75})`
+    cx2.fillRect(x - u / 2, y - u * 1.5, u, u); cx2.fillRect(x - u / 2, y + u / 2, u, u)
+    cx2.fillRect(x - u * 1.5, y - u / 2, u, u); cx2.fillRect(x + u / 2, y - u / 2, u, u)
+    if (big) {
+      cx2.fillStyle = `rgba(${col},${a * 0.4})`
+      cx2.fillRect(x - u / 2, y - u * 2.5, u, u); cx2.fillRect(x - u / 2, y + u * 1.5, u, u)
+      cx2.fillRect(x - u * 2.5, y - u / 2, u, u); cx2.fillRect(x + u * 1.5, y - u / 2, u, u)
+    }
+  }
+  // node position at time t (drift, pull toward the match phone, survivors' glide)
+  function nodeState(n, i, t) {
+    const lit = ease.outCubic(prog(t, popT[i], popT[i] + POP_D))
+    const go = ease.inOutCubic(prog(t, T_GO + (i % 4) * 0.03, T_GO + GO_D + (i % 4) * 0.03))
+    let x = n.x + Math.sin(t * 0.7 + n.ph) * 6, y = n.y + Math.cos(t * 0.6 + n.ph) * 5
+    let d = n.d, op = lit, s = lerp(0.35, 1, ease.outBack(prog(t, popT[i], popT[i] + POP_D)))
+    if (n.sv) {
+      const [, sx, sy, sd] = n.sv
+      const fx = sx + Math.sin(t * 0.9 + n.ph) * 8, fy = sy + Math.cos(t * 0.75 + n.ph) * 10
+      x = lerp(x, fx, go); y = lerp(y, fy, go); d = lerp(n.d, sd, go)
+      op = lit * lerp(1, 0.92, go)
+    } else {
+      // pulled toward the phone's landing point, shrinking into a star
+      x = lerp(x, lerp(x, AX, 0.18), go); y = lerp(y, lerp(y, H / 2, 0.18), go)
+      s *= lerp(1, 0.12, go); op = lit * (1 - ease.inQuad(go))
+    }
+    return { x, y, d, op, s, go, lit }
+  }
 
   // phones in perspective; handles + sparks live inside each phone's transform
   const persp = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', perspective: '2000px' }, root)
@@ -94,6 +169,50 @@ export function sceneTagline(stage, assets) {
       // ticks sit at full width from the first frame (letters never outside them); only height/opacity animate
       const to = ease.outCubic(prog(t, T_TYPE - 0.03, T_TYPE + 0.4))
       ticks.update(W / 2, H / 2 - tOut * 40, tagW + 120, lerp(96, 150, to), prog(t, T_TYPE - 0.03, T_TYPE + 0.05) * (1 - tOut))
+
+      // ── constellation
+      cx2.clearRect(0, 0, W, H)
+      const st = NODES.map((_, i) => nodeState(nodes[i], i, t))
+      FIELD.forEach(f => {
+        const a = f.a * ease.outQuad(prog(t, f.t0, f.t0 + 0.4)) * (0.55 + 0.45 * Math.sin(t * f.sp + f.ph))
+        pix(f.x, f.y, f.u, a, '255,250,242', false)
+      })
+      const retract = ease.inQuad(prog(t, 23.98, 24.16))
+      cx2.lineCap = 'round'
+      edges.forEach(e => {
+        const p = ease.inOutCubic(prog(t, e.t0, e.t0 + LINE_D)) * (1 - retract)
+        if (p <= 0) return
+        const A_ = st[e.a], B_ = st[e.b]
+        const dx = B_.x - A_.x, dy = B_.y - A_.y, L = Math.hypot(dx, dy)
+        const ra = A_.d / 2 + 10, rb = B_.d / 2 + 10
+        const x0 = A_.x + dx / L * ra, y0 = A_.y + dy / L * ra
+        const len = (L - ra - rb) * p
+        const x1 = x0 + dx / L * len, y1 = y0 + dy / L * len
+        // soft violet underlay so a bone hairline still reads on the pastel field
+        cx2.strokeStyle = 'rgba(70,30,130,0.26)'; cx2.lineWidth = 5
+        cx2.beginPath(); cx2.moveTo(x0, y0); cx2.lineTo(x1, y1); cx2.stroke()
+        cx2.strokeStyle = 'rgba(255,248,236,0.96)'; cx2.lineWidth = 2
+        cx2.beginPath(); cx2.moveTo(x0, y0); cx2.lineTo(x1, y1); cx2.stroke()
+        // drawing head glint, then a joint sparkle at the far end when the line lands
+        if (p < 1) pix(x1, y1, 3, 0.9 * p, '255,250,242', false)
+        const land = prog(t, e.t0 + LINE_D - 0.04, e.t0 + LINE_D + 0.1) * (1 - prog(t, e.t0 + LINE_D + 0.1, e.t0 + LINE_D + 0.7) * 0.55) * (1 - retract)
+        if (land > 0) pix(x0 + dx / L * (L - ra - rb), y0 + dy / L * (L - ra - rb), 4, land, '255,226,160', true)
+      })
+      nodes.forEach((n, i) => {
+        const S = st[i]
+        n.g.style.opacity = String(S.op)
+        n.g.style.transform = `translate(${S.x}px, ${S.y}px) scale(${S.s * S.d / 100})`
+        // a bright bloom as each one lights, settling to a soft halo
+        n.glowE.style.opacity = String(tw(t, [[popT[i], 0], [popT[i] + 0.14, 1, ease.outQuad], [popT[i] + 0.6, 0.5, ease.inOutQuad]]) * (0.85 + 0.15 * Math.sin(t * 2.3 + n.ph)))
+        // ring sparkle on each portrait (upper right), twinkling
+        const sa = S.op * (0.5 + 0.5 * Math.sin(t * 3 + n.ph * 2)) * (n.sv ? 1 : 1 - S.go)
+        pix(S.x + S.d * 0.36, S.y - S.d * 0.36, n.sv && S.go > 0.5 ? 2 : 3, sa, '255,250,242', !n.sv || S.go < 0.5)
+        // the dimmed ones leave a star where they vanish
+        if (!n.sv && S.go > 0) {
+          const k = Math.sin(Math.PI * clamp(S.go * 1.4 - 0.2, 0, 1))
+          pix(S.x, S.y, 3, 0.95 * k, '255,240,214', true)
+        }
+      })
 
       // ── beat A: match phone falls into place
       const La = ease.outQuart(prog(t, T_A, T_A_END + 0.1)), Sa = ease.spring(prog(t, T_A, T_A_END + 0.3), 0.04)

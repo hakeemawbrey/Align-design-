@@ -54,6 +54,7 @@ async function boot() {
       }
     }
     ctx.clearRect(0, 0, 1920, 1080)
+    S.fxStardust(ctx, t)   // global stardust under the transitions (wipes paint over it)
     S.fxStairWipe(ctx, t, { start: 2.95, dur: 0.6, color: '#ebe5dc' })
     if (t < 6.86) S.fxMound(ctx, t, { start: 6.15, dur: 0.7 })
     S.fxDots(ctx, t, { start: 17.2, dur: 0.75 })
