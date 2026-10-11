@@ -1,7 +1,7 @@
 import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../lib.js'
 import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, spaceBackdrop } from "./common.js"
 
-// ──────────────────────────────────────── S7 · gradient tagline + payoff beats
+// ──────────────────────────────────────── S7 · deep-space aurora tagline + payoff beats
 // Timing (sound): nebula blooms up from the bottom 22.40–23.00 · ticks + typing 22.56, perChar 0.016, fade 0.12
 // (complete ~23.08, held to 24.14) · tagline out 24.14–24.26 (gone) ·
 // beat A  match phone fades in 24.26–24.38, lands/settles ~24.70 · caption A pops 24.26 (full 24.38, out 25.47–25.61) ·
