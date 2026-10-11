@@ -29,20 +29,20 @@ const CARD = {
   rev: { src: 'card-reveal.png', iw: 1560, ih: 2740, b: [64, 123, 1495, 2622], k: 1.08 },
 }
 // deal order: front-dealt cards, then the reveal lands, then cards keep shuffling in behind it
-const DEAL = ['p1', 't1', 'p2', 'ev', 'p4', 't2', 'back', 't3', 'p5', 'sign', 'td', 'p6', 't4', 'p3', 't5', 't6', 'rev']
+const DEAL = ['p1', 't1', 'p2', 'p6', 'p4', 't2', 'back', 't3', 'p5', 'sign', 'td', 'ev', 't4', 'p3', 't5', 't6', 'rev']
 const DEAL_T = [17.42, 17.85, 18.15, 18.45, 18.7, 18.92, 19.12, 19.32, 19.52, 19.72, 19.92, 20.12, 20.32, 20.52, 20.72, 20.9, 21.08]
-const BEHIND = ['p2', 't2', 'p4', 'td', 'p5', 't4']
+const BEHIND = ['t1', 't2', 'back', 'td', 't3', 't4']   // no profile cards here: the aligned people stay aligned
 const BEHIND_T = [21.5, 21.78, 22.06, 22.34, 22.62, 22.9]
 // "already aligned": as the deck recedes, the veiled profile cards that aligned lift their aura veil one by one
 // (a ripple down the trail) — the photo fills the art window, a gold "✦ ALIGNED" tag replaces the pull chip.
 // Juniper's veiled card (p3) and every newly dealt card stay mystery; Juniper is the hero reveal at 21.08.
 // photo = PEOPLE index (from app/src/data/profiles.ts: Maya→p3, Rio→p9, Ari→p6, Sol→p7, Kai→p2)
 const ALIGNED = {
-  p1: { photo: 3, at: 18.55 },   // Maya, 24 · Virgo
-  p2: { photo: 9, at: 18.88 },   // Rio, 29 · Leo
-  p4: { photo: 6, at: 19.22 },   // Ari, 31 · Aquarius
-  p5: { photo: 7, at: 19.98 },   // Sol, 26 · Pisces
-  p6: { photo: 2, at: 20.36 },   // Kai, 28 · Capricorn
+  p1: { photo: 3, at: 19.02 },   // Maya, 24 · Virgo
+  p2: { photo: 9, at: 19.26 },   // Rio, 29 · Leo
+  p6: { photo: 2, at: 19.50 },   // Kai, 28 · Capricorn
+  p4: { photo: 6, at: 19.74 },   // Ari, 31 · Aquarius
+  p5: { photo: 7, at: 20.06 },   // Sol, 26 · Pisces
 }
 const LIFT = 0.34               // veil-lift duration (s)
 const WIN = [218, 342, 1292, 914] // art window inside card-profile-*.png (PNG px)
@@ -64,19 +64,20 @@ export function sceneDeck(stage) {
     }, persp)
     const im = img(wrap, A + c.src, { left: (-c.b[0] * sc) + 'px', top: (-c.b[1] * sc) + 'px', width: (c.iw * sc) + 'px', height: (c.ih * sc) + 'px' })
     const out = { wrap, im, w, h, kind, at, key }
-    const al = ALIGNED[key]
+    const al = kind === 'front' && ALIGNED[key]
     if (al) {
       const L = (WIN[0] - c.b[0]) * sc, T = (WIN[1] - c.b[1]) * sc, ww = (WIN[2] - WIN[0]) * sc, wh = (WIN[3] - WIN[1]) * sc
       const win = el('div', { position: 'absolute', left: L + 'px', top: T + 'px', width: ww + 'px', height: wh + 'px', overflow: 'hidden',
         borderRadius: (30 * sc) + 'px', opacity: 0, background: C.canvas }, wrap)
-      const pw = ww * 1.04, ph = pw * 366 / 342
-      const pimg = img(win, PEOPLE[al.photo - 1], { left: (ww / 2 - pw / 2) + 'px', top: (wh * 0.53 - ph * 0.37) + 'px', width: pw + 'px', height: ph + 'px' })
+      // face sits a little left of centre: in the fanned trail each card's right side hides under its neighbour
+      const pw = ww * 1.25, ph = pw * 366 / 342
+      const pimg = img(win, PEOPLE[al.photo - 1], { left: (ww * 0.4 - pw / 2) + 'px', top: (wh * 0.53 - ph * 0.37) + 'px', width: pw + 'px', height: ph + 'px' })
       const rim = el('div', { position: 'absolute', inset: 0, borderRadius: (30 * sc) + 'px', pointerEvents: 'none' }, win)
       const tag = el('div', {
-        position: 'absolute', right: (34 * sc) + 'px', top: (30 * sc) + 'px', padding: `${12 * sc}px ${26 * sc}px ${12 * sc}px ${22 * sc}px`,
+        position: 'absolute', left: (30 * sc) + 'px', top: (30 * sc) + 'px', padding: `${12 * sc}px ${26 * sc}px ${12 * sc}px ${22 * sc}px`,
         borderRadius: '999px', background: 'rgba(20,10,46,0.82)', border: `${2.5 * sc}px solid rgba(242,199,92,0.85)`,
         fontFamily: MONO, fontSize: (32 * sc) + 'px', letterSpacing: '0.18em', lineHeight: 1, color: C.bone, whiteSpace: 'nowrap',
-        opacity: 0, transformOrigin: '80% 50%',
+        opacity: 0, transformOrigin: '20% 50%',
       }, win, `<span style="color:${C.gold}">✦</span> ALIGNED`)
       out.al = { ...al, win, pimg, rim, tag }
     }

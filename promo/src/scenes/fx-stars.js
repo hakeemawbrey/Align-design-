@@ -37,8 +37,8 @@ const PROFILES = [
     keep: [[220, 450, 1480, 190]],
   },
   { // S2 · paper "{ in your stars }" / "{ intro▣ducing }" — sparse, edges
-    a: 3.55, b: 6.9, fin: 0.4, fout: 0.25, seed: 23, sprites: 14, dots: 26, px: [3, 4], drift: [5, -2], edge: true,
-    pal: [INK_V, INK_V2, GOLD_D, ROSE_D], centre: GOLD, dot: '91,63,168', alpha: 0.85, dotAlpha: 0.5,
+    a: 3.55, b: 6.9, fin: 0.4, fout: 0.25, seed: 23, sprites: 16, dots: 26, px: [3, 4], drift: [5, -2], edge: true,
+    pal: [INK_V, INK_V2, GOLD_D, ROSE_D], centre: GOLD, dot: '91,63,168', alpha: 0.95, dotAlpha: 0.55,
     keep: [[400, 230, 1120, 620]],
   },
   { // S3 · mystery card / thermal → real → gilded card
@@ -52,24 +52,28 @@ const PROFILES = [
     keep: [[0, 320, 1920, 440, 10.2, 13.25], [260, 170, 1400, 760, 13.1, 14.2]],
   },
   { // S5 · paper "Reading your sky"
-    a: 14.3, b: 17.35, fin: 0.5, fout: 0.25, seed: 53, sprites: 13, dots: 22, px: [3, 4], drift: [-5, 2], edge: true,
-    pal: [INK_V, INK_V2, GOLD_D, ROSE_D], centre: GOLD, dot: '91,63,168', alpha: 0.85, dotAlpha: 0.5,
+    a: 14.3, b: 17.35, fin: 0.5, fout: 0.25, seed: 53, sprites: 15, dots: 22, px: [3, 4], drift: [-5, 2], edge: true,
+    pal: [INK_V, INK_V2, GOLD_D, ROSE_D], centre: GOLD, dot: '91,63,168', alpha: 0.95, dotAlpha: 0.55,
     keep: [[220, 200, 1540, 660]],
   },
   { // S6 · paper deck / "every night a new deck" / "you ▣ align"
-    a: 17.5, b: 22.6, fin: 0.5, fout: 0.3, seed: 67, sprites: 15, dots: 24, px: [3, 4], drift: [-6, -2], edge: true,
-    pal: [INK_V, INK_V2, GOLD_D, ROSE_D, GOLD_D], centre: GOLD, dot: '91,63,168', alpha: 0.85, dotAlpha: 0.5,
+    a: 17.5, b: 22.6, fin: 0.5, fout: 0.3, seed: 67, sprites: 17, dots: 24, px: [3, 4], drift: [-6, -2], edge: true,
+    pal: [INK_V, INK_V2, GOLD_D, ROSE_D, GOLD_D], centre: GOLD, dot: '91,63,168', alpha: 0.95, dotAlpha: 0.55,
     keep: [[240, 150, 1640, 780]],
   },
-  { // S7 · bright gradient, tagline + phones
-    a: 22.5, b: 26.94, fin: 0.5, fout: 0.01, seed: 79, sprites: 20, dots: 50, px: [4, 5], drift: [8, -6], edge: true,
+  { // S7 · bright gradient, tagline (+ people constellation 22.66–24.45) → match phone + caption A → chat phone + caption B
+    a: 22.5, b: 26.94, fin: 0.5, fout: 0.01, seed: 79, sprites: 14, dots: 36, px: [4, 5], drift: [8, -6], edge: true,
     pal: ['#ffffff', '#ffffff', '#ffe6a0', '#fff3d6'], centre: '#ffffff', dot: '255,255,255', alpha: 1, shadow: 'rgba(70,24,110,0.32)',
-    keep: [[380, 400, 1160, 260, 22.5, 24.2], [420, 60, 1140, 980, 24.2, 27]],
+    keep: [
+      [380, 400, 1160, 260, 22.5, 24.3],                                   // tagline in ticks
+      [440, 60, 510, 1000, 24.2, 25.9], [960, 400, 680, 280, 24.2, 25.65],  // match phone · "It's mutual / You both aligned."
+      [1030, 60, 500, 1000, 25.45, 27], [220, 400, 840, 280, 25.55, 27],    // chat phone · "Then you talk in cards."
+    ],
   },
   { // S8 · end card
-    a: 26.94, b: 30, fin: 0.45, fout: 0.01, seed: 89, sprites: 30, dots: 100, px: [3, 4], drift: [-10, -3],
+    a: 26.94, b: 30, fin: 0.45, fout: 0.01, seed: 89, sprites: 16, dots: 45, px: [3, 4], drift: [-10, -3],
     pal: [BONE, BONE, GOLD, VIOLET, BONE], centre: HOT, dot: '255,247,236', alpha: 1,
-    keep: [[700, 200, 520, 440], [440, 610, 1040, 300]],
+    keep: [[540, 210, 840, 710]],   // lockup: mark + wordmark + sub-line
   },
 ]
 
@@ -103,7 +107,7 @@ for (const P of PROFILES) {
     const [x, y] = pick(r, true)
     const z = 0.35 + r() * 0.65
     return {
-      x, y, z, px: z > 0.7 ? P.px[1] : P.px[0],
+      x, y, z, px: z > 0.88 ? P.px[1] + 1 : z > 0.65 ? P.px[1] : P.px[0],
       kind: [1, 2, 2, 3, 1, 0][Math.floor(r() * 6)],
       col: P.pal[Math.floor(r() * P.pal.length)],
       ph: r() * 6.283, w: 1.6 + r() * 2.4, flashP: 2.2 + r() * 3, flashO: r() * 5, wob: r() * 6.283,
@@ -206,7 +210,7 @@ function drawChakra(ctx, t) {
 const SHOOTS = [
   { t0: 1.0, t1: 1.55, x0: 260, y0: 70, x1: 1420, y1: 360, len: 320, px: 4, rgb: '255,243,224', col: BONE, seed: 2 },
   { t0: 11.7, t1: 12.15, x0: 1700, y0: 60, x1: 1120, y1: 260, len: 200, px: 3, rgb: '255,243,224', col: GOLD, seed: 4 },
-  { t0: 28.8, t1: 29.3, x0: 1840, y0: 110, x1: 1180, y1: 330, len: 280, px: 4, rgb: '255,243,224', col: GOLD, seed: 6 },
+  { t0: 28.8, t1: 29.3, x0: 1900, y0: 40, x1: 1400, y1: 190, len: 240, px: 4, rgb: '255,243,224', col: GOLD, seed: 6 },
 ]
 function drawShoot(ctx, S, t) {
   const p = prog(t, S.t0, S.t1)
