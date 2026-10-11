@@ -80,7 +80,7 @@ if (stills || sheet) {
   else {
     console.log('video →', OUT)
     const share = OUT.replace(/\.mp4$/, '-share.mp4')
-    spawnSync('ffmpeg', ['-v', 'error', '-y', '-i', OUT, '-c:v', 'libx264', '-preset', 'slow', '-crf', '22', '-c:a', 'copy', '-movflags', '+faststart', share])
+    spawnSync('ffmpeg', ['-v', 'error', '-y', '-i', OUT, '-c:v', 'libx264', '-preset', 'slow', '-b:v', '6500k', '-maxrate', '8000k', '-bufsize', '12000k', '-c:a', 'copy', '-movflags', '+faststart', share])
     console.log('share copy →', share)
   }
 }
