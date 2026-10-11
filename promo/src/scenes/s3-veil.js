@@ -84,7 +84,7 @@ export function sceneVeil(stage) {
       const push = lerp(1.0, 1.03, ease.outQuad(prog(t, 6.86, 8.75))) * lerp(1, 1.05, ease.inOutQuad(prog(t, 8.0, 8.9)))
       const yShift = lerp(-360, -380, ease.outQuad(prog(t, 6.86, 8.75)))
       // shrink so the photo lands exactly in the real card's photo window
-      const k = ease.inOutExpo(prog(t, 8.62, 9.12)) // k ≥ 0.99 by ~9.01
+      const k = ease.inOutCubic(prog(t, 8.5, 9.08)) // k ≥ 0.99 by ~9.01
       const fw = lerp(W, WIN.w - INSET * 2, k), fh = lerp(H, WIN.h - INSET * 2, k)
       const fcy = lerp(0, WIN.y + WIN.h / 2, k)
       frame.style.width = fw + 'px'; frame.style.height = fh + 'px'
@@ -98,32 +98,32 @@ export function sceneVeil(stage) {
       grain.style.backgroundPosition = `${Math.floor(gr() * 256)}px ${Math.floor(gr() * 256)}px`
       grain.style.opacity = String(0.16 * (1 - k))
       // the real card opens out from the photo window (clip grows outward), then the photo frame hands off
-      const cp = ease.outExpo(prog(t, 9.1, 9.3)) // opens only once the photo has landed
+      const cp = ease.outCubic(prog(t, 9.06, 9.32)) // opens only once the photo has landed
       const wl = REV.win.x * D, wt = REV.win.y * D, wr = (REV.w - REV.win.x - REV.win.w) * D, wb = (REV.h - REV.win.y - REV.win.h) * D
-      card.style.clipPath = t < 9.1 ? 'inset(50%)' : cp >= 1 ? 'none'
+      card.style.clipPath = t < 9.06 ? 'inset(50%)' : cp >= 1 ? 'none'
         : `inset(${lerp(wt, 0, cp)}px ${lerp(wr, 0, cp)}px ${lerp(wb, 0, cp)}px ${lerp(wl, 0, cp)}px round ${lerp(14, BODY.r, cp)}px)`
-      frame.style.opacity = String(1 - prog(t, 9.27, 9.34))
-      const gp = prog(t, 9.28, 9.5)
+      frame.style.opacity = String(1 - prog(t, 9.28, 9.36))
+      const gp = prog(t, 9.3, 9.55)
       glintBox.style.opacity = gp > 0 && gp < 1 ? String(Math.sin(Math.PI * gp) * 0.9 + 0.1) : '0'
       glint.style.transform = `translateX(${lerp(-260, BODY.w + 120, ease.inOutCubic(gp))}px) skewX(-24deg)`
       stars.style.opacity = String(prog(t, 8.85, 9.35))
       // concept line 7.5 → 9.0, gone before the card clip opens
-      const eb = ease.outQuad(prog(t, 7.45, 7.8)) * (1 - ease.inQuad(prog(t, 8.78, 9.0)))
+      const eb = ease.outQuad(prog(t, 7.45, 7.8)) * (1 - ease.inQuad(prog(t, 8.45, 8.65)))
       capBox.style.opacity = String(eb)
       capBox.style.transform = `translateX(-50%) translateY(${(1 - ease.outCubic(prog(t, 7.45, 7.95))) * 14}px)`
       scrim.style.opacity = String(eb)
-      backDim.style.opacity = String(0.8 * ease.inOutQuad(prog(t, 9.64, 9.84)))
+      backDim.style.opacity = String(0.8 * ease.inOutQuad(prog(t, 9.72, 9.92)))
       // flip 0→180 onto the card back, then push into the mark (handoff to S4's indigo sky)
-      const a = 180 * ease.inOutCubic(prog(t, 9.5, 9.76))
+      const a = 180 * ease.inOutCubic(prog(t, 9.6, 9.84))
       front.style.transform = `perspective(1800px) rotateY(${a}deg)`
       back.style.transform = `perspective(1800px) rotateY(${a - 180}deg)`
       front.style.visibility = a < 90 ? 'visible' : 'hidden'
       back.style.visibility = a >= 90 ? 'visible' : 'hidden'
       // small life move once the card has landed
       const life = lerp(1, 0.97, ease.inOutQuad(prog(t, 9.3, 9.6)))
-      const ps = Math.pow(8, ease.inQuad(prog(t, 9.56, 9.86)))
+      const ps = Math.pow(8, ease.inQuad(prog(t, 9.64, 9.94)))
       // scale about the mark while drifting it to screen centre
-      const c = ease.inOutQuad(prog(t, 9.56, 9.86))
+      const c = ease.inOutQuad(prog(t, 9.64, 9.94))
       const S = ps * life
       const tx = MARK.x * life * (1 - c) - S * MARK.x, ty2 = MARK.y * life * (1 - c) - S * MARK.y
       world.style.transform = `translate(${tx}px, ${ty2}px) scale(${S})`

@@ -112,6 +112,14 @@ CUES.whoosh.forEach(t => whoosh(t))
 ;(CUES.whooshS7 || []).forEach(t => whoosh(t, 0.45, 0.11))
 ;(CUES.whip || []).forEach(t => whoosh(t + 0.32, 0.5, 0.13))
 CUES.pixels.forEach(([a, b]) => glitter(a, b))
+// digital glitch bursts: bit-crushed noise chatter
+;(CUES.glitch || []).forEach(([a, b]) => {
+  const r = rng(Math.floor(a * 1000)); let hold = 0, v = 0
+  for (let i = Math.floor(a * SR); i < Math.floor(b * SR); i++) {
+    if (hold-- <= 0) { hold = 40 + Math.floor(r() * 400); v = (r() * 2 - 1) * 0.06 }
+    add(i, v, -v * 0.8, 0.05)
+  }
+})
 CUES.pops.forEach((t, i) => bell(t, [880, 987.77, 1108.73, 1318.51][i % 4], 0.05, 0.5, (i % 2 ? 0.3 : -0.3)))
 CUES.boom.forEach(t => boom(t))
 ;(CUES.cardIn || []).forEach(t => { bell(t, 739.99, 0.06, 1.6, -0.2); bell(t + 0.09, 1108.73, 0.05, 1.6, 0.2) })

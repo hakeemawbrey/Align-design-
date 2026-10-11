@@ -89,7 +89,7 @@ export function sceneBirth(stage) {
   }
 
   return {
-    start: 9.81, end: 14.4, root,
+    start: 9.81, end: 14.6, root,
     update(t) {
       drawCloud()
       if (!xs) measure()

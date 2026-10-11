@@ -79,6 +79,21 @@ export function sceneImagine(stage) {
       bg.g.style.opacity = String(lerp(0.6, 1, ease.outQuad(prog(t, 0, 0.3))))
       tint.style.opacity = String(lerp(1, 0.6, prog(t, 0, 3)))
       line.update(t - TYPE_START)
+      // three short glitch bursts during the hold: displaced background slices, scan bands, light strips
+      const GL = [[1.62, 1.72], [2.28, 2.36], [2.72, 2.86]]
+      const g = GL.find(([a, b]) => t >= a && t < b)
+      const gr = rng(Math.round(t * 30) * 97 + 5)
+      slices.forEach((sl, i) => {
+        const d = sliceDef[i]
+        if (!g) { sl.g.style.display = 'none'; return }
+        sl.g.style.display = 'block'; pose(sl, t)
+        const y = d.y + (gr() - 0.5) * 80
+        sl.g.style.clipPath = `inset(${y}px 0 ${H - y - d.h}px 0)`
+        sl.g.style.transform = `translateX(${d.dir * d.amp * (0.5 + gr())}px)`
+        if (i % 2) sl.g.style.filter = `hue-rotate(${-25 - 25 * gr()}deg)`
+      })
+      bands.forEach((b, i) => { b.style.top = bandY[i] + 'px'; b.style.opacity = g ? String(0.3 + gr() * 0.6) : '0' })
+      strips.forEach((s2, i) => { s2.style.top = stripY[i][0] + 'px'; s2.style.height = stripY[i][1] + 'px'; s2.style.opacity = g ? String(gr()) : '0' })
       // the scrim spreads left → right just ahead of the typing cursor, so it never sits there as an empty band
       scrim.style.opacity = String(ease.outQuad(prog(t, TYPE_START - 0.1, TYPE_START + 0.4)))
       // mask on the wrapper (a mask on the blurred element itself would clip its halo to a hard pill)
