@@ -31,19 +31,20 @@ SHOTS = 27
 TOTAL = INTRO + BEAT * SHOTS            # 18.4s, same as the reference
 
 STYLE = {
-    "card_w": 0.36,         # montage card width, fraction of frame
-    "card_alpha": 0.46,     # montage card opacity
-    "intro_steps": [0.18, 0.26, 0.36],   # card width on the three intro beats
-    "zoom": 0.06,           # push-in per shot
+    "card_w": 0.39,         # montage card width, fraction of frame (ref: 423px of 1080)
+    "card_alpha": 0.36,     # montage card opacity (ref measures ~0.33)
+    "intro_steps": [0.50, 0.73, 0.0],    # card width per intro step; 0 = fill frame height
+    "intro_times": [0.0, 0.667, 1.429],  # hard cuts, as in the reference
+    "zoom": 0.03,           # slow linear push-in per shot (ref is static)
     "grain": 0.085,          # grain strength (0-1 scale), a lot
     "grain_size": 1.6,      # px
     "vignette": 0.55,
     "flicker": 0.035,
     "glow": 0.35,           # highlight bloom on backgrounds
-    "contrast": 1.15,
-    "gamma": 1.25,
-    "saturation": 0.88,
-    "hit_flash": 0.55,
+    "contrast": 1.3,
+    "gamma": 1.15,
+    "saturation": 0.76,
+    "hit_flash": 0.12,
 }
 
 
@@ -90,7 +91,7 @@ def make_grain(W, H, n, rng):
     for _ in range(n):
         g = rng.normal(0, 1, (gh, gw)).astype(np.float32)
         g = np.asarray(Image.fromarray(g, mode="F").resize((W, H), Image.BILINEAR))
-        chroma = rng.normal(0, 0.25, (gh, gw, 3)).astype(np.float32)
+        chroma = rng.normal(0, 0.08, (gh, gw, 3)).astype(np.float32)
         chroma = np.stack([np.asarray(Image.fromarray(chroma[..., i], mode="F").resize((W, H), Image.BILINEAR)) for i in range(3)], -1)
         out.append(((g[..., None] + chroma) * STYLE["grain"]).astype(np.float16))
     return out
@@ -108,10 +109,14 @@ def card_rgba(card_img, width):
 
 
 def paste(frame, c, cx, cy, alpha):
+    """Alpha-paste c centred at (cx, cy), clipped to the frame."""
+    H, W = frame.shape[:2]
     h, w = c.shape[:2]
     x0, y0 = int(cx - w / 2), int(cy - h / 2)
-    region = frame[y0:y0 + h, x0:x0 + w]
-    region[:] = region * (1 - alpha) + c * alpha
+    fx0, fy0, fx1, fy1 = max(x0, 0), max(y0, 0), min(x0 + w, W), min(y0 + h, H)
+    src = c[fy0 - y0:fy1 - y0, fx0 - x0:fx1 - x0]
+    region = frame[fy0:fy1, fx0:fx1]
+    region[:] = region * (1 - alpha) + src * alpha
 
 
 def ease_out(t):
@@ -145,7 +150,8 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
     plate = ensure_file(picks["plate"])
     card_img = cardmod.build(sign, plate, picks["plate"].get("crop"))
     card_m = card_rgba(card_img, int(W * STYLE["card_w"]))
-    card_steps = [card_rgba(card_img, int(W * s)) for s in STYLE["intro_steps"]]
+    card_steps = [card_rgba(card_img, int(W * s) if s else int(H * 0.996 * card_img.width / card_img.height))
+                  for s in STYLE["intro_steps"]]
     grain = make_grain(W, H, 10, rng)
     vig = vignette(W, H)
 
@@ -163,28 +169,17 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
         "-movflags", "+faststart", out], stdin=subprocess.PIPE)
 
     n_frames = int(round(TOTAL * FPS))
-    step_t = INTRO / len(STYLE["intro_steps"])
     for f in range(n_frames):
         t = f / FPS
         if t < INTRO:
             frame = np.zeros((H, W, 3), np.float32)
-            k = min(int(t / step_t), len(card_steps) - 1)
-            lt = (t - k * step_t) / step_t
-            c = card_steps[k]
-            # punch: the new size lands slightly big and settles
-            s = 1 + 0.06 * (1 - ease_out(min(lt * 4, 1)))
-            if s != 1:
-                ch, cw = c.shape[:2]
-                c = np.asarray(Image.fromarray((c * 255).astype(np.uint8)).resize(
-                    (int(cw * s), int(ch * s)), Image.BILINEAR), dtype=np.float32) / 255
-            paste(frame, c, W / 2, H / 2, 1.0)
-            # faint breath of light behind the card as the hit approaches
-            frame += (t / INTRO) ** 4 * 0.06
+            k = sum(t >= s for s in STYLE["intro_times"]) - 1
+            paste(frame, card_steps[k], W / 2, H / 2, 1.0)
         else:
             shot = min(int((t - INTRO) / BEAT), SHOTS - 1)
             lt = (t - INTRO - shot * BEAT) / BEAT
             bg = bgs[seq[shot]]
-            z = 1 + STYLE["zoom"] * ease_out(lt)
+            z = 1 + STYLE["zoom"] * lt
             # the bg is oversized; a shrinking window reads as a push-in
             bh, bw = bg.shape[:2]
             win_w, win_h = int(bw / z), int(bh / z)
@@ -194,7 +189,7 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
             paste(frame, card_m, W / 2, H / 2, STYLE["card_alpha"])
             # flash on the hit, small exposure kick on every cut
             if shot == 0:
-                frame += STYLE["hit_flash"] * np.exp(-lt * BEAT * 16)
+                frame += STYLE["hit_flash"] * (f - int(INTRO * FPS) < 2)
             else:
                 frame *= 1 + 0.12 * np.exp(-lt * BEAT * 18)
         frame *= vig
@@ -202,7 +197,8 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
         g = grain[rng.integers(len(grain))]
         # grain peaks in the mids; deep blacks stay black instead of going grey
         lum = np.clip(frame.mean(2, keepdims=True), 0, 1)
-        frame += g.astype(np.float32) * (0.35 + 2.6 * lum * (1 - lum))
+        floor = 0.35 if t >= INTRO else 0.0   # intro black stays pure black, like the ref
+        frame += g.astype(np.float32) * (floor + 2.6 * lum * (1 - lum))
         ff.stdin.write((np.clip(frame, 0, 1) * 255).astype(np.uint8).tobytes())
     ff.stdin.close()
     ff.wait()

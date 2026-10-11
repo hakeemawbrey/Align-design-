@@ -20,6 +20,11 @@ so it has to land instantly:
   subject you can centre with `focus`. Remember the card covers the middle
   ~40% x 30%: the subject can sit behind it (like the reference) or around it,
   but the frame must still read.
+- **One mood.** The reference holds about 10 images that all share black
+  grounds, cold or white light and one central figure. Prefer that over a
+  palette that swings between orange, pink and rainbow. Avoid anything that
+  reads comic or domestic (farm animals in daylight, pets), urban scenes, and
+  hazy mid-tone mush (dust, fog, beige skies).
 - **On motif.** Every image should say the sign: its animal, its myth, its
   ruler planet, its element, its season. Mix the literal (ram, horns) with the
   atmospheric (fire, forge, dawn). The animal or figure itself should appear in
@@ -57,6 +62,7 @@ so it has to land instantly:
 - `plate.crop` is a box in 0-1 of the Urania's Mirror plate. Keep the
   card's portrait aspect, roughly 0.55 wide x 0.9 tall on a landscape plate, so
   the creature's head and body read; skip it to auto-centre on the figure.
+  Some plates (Leo) are portrait; crop accordingly.
 - Pick **14-18 images**. Each render samples 12 of them, so a pool larger than
   12 is what makes every render different.
 

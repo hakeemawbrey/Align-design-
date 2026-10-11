@@ -101,7 +101,7 @@ def compose(sign, element, intro, beat, total, seed=0):
 
     # drone under everything, opening up after the hit
     drone = pad([hz(deg(0, 1)), hz(deg(4, 1))], n, rng, bright=0.7)
-    open_env = np.clip((t - intro) / 1.5, 0, 1) * 0.6 + 0.4
+    open_env = np.clip((t - intro) / 1.5, 0, 1) * 0.5 + 0.5
     mix += drone * open_env * 0.55
 
     # main chord after the hit: i - (VI or v) every 4 bars, voicing varies by seed
@@ -123,14 +123,14 @@ def compose(sign, element, intro, beat, total, seed=0):
     # intro riser: filtered noise swelling into the hit, plus reversed shimmer
     rn = hit
     noise = rng.normal(0, 1, (2, rn))
-    swell = (np.linspace(0, 1, rn) ** 3)
+    swell = 0.35 + 0.65 * np.linspace(0, 1, rn) ** 2   # audible from frame one
     noise = lowpass_fast(noise, 900) * swell
     mix[:, :rn] += noise * 0.35
     shimmer = pad([hz(deg(0, 4)), hz(deg(4, 4))], rn, rng, bright=1.5) * swell
     mix[:, :rn] += shimmer * 0.6
 
     # the hit: sub drop + noise burst + low chord stab
-    k = kick(2.5, 90, 30, 0.9) * 1.6
+    k = kick(2.5, 90, 30, 0.9) * 1.0
     burst = lowpass_fast(rng.normal(0, 1, (2, int(1.2 * SR))), 3000) * np.exp(-np.arange(int(1.2 * SR)) / SR / 0.18)
     end = min(hit + len(k), n)
     mix[:, hit:end] += k[: end - hit] * 1.0
@@ -148,7 +148,7 @@ def compose(sign, element, intro, beat, total, seed=0):
         accent = 1.0 if j % 4 == 0 else 0.6
         mix[:, s:e] += pk[: e - s] * 0.55 * accent
         e2 = min(s + len(tick), n)
-        mix[:, s:e2] += tick[: e2 - s] * 0.12
+        mix[:, s:e2] += tick[: e2 - s] * 0.04
         c += beat
         j += 1
 
@@ -174,7 +174,10 @@ def compose(sign, element, intro, beat, total, seed=0):
     mix = reverb(mix, 3.8, 0.4, rng)
     # master: lots of gain into soft saturation, then normalize to ~-1 dBFS
     mix /= np.abs(mix).max() + 1e-9
-    mix = np.tanh(mix * 2.6) / np.tanh(2.6)
+    # build ~1.5 dB over the last 5s, like the reference
+    mix *= 1 + 0.19 * np.clip((t - (total - 5)) / 5, 0, 1)
+    mix /= np.abs(mix).max() + 1e-9
+    mix = np.tanh(mix * 3.5) / np.tanh(3.5)
     # fades
     fi, fo = int(0.05 * SR), int(0.25 * SR)
     mix[:, :fi] *= np.linspace(0, 1, fi)

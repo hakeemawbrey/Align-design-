@@ -11,7 +11,7 @@ import json
 import os
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SIGNS = json.load(open(os.path.join(HERE, "signs.json")))
@@ -53,6 +53,10 @@ def build(sign, plate_path, crop=None):
     else:
         box = auto_crop(plate, aw / ah)
     art = ImageOps.fit(plate.crop(tuple(int(v) for v in box)), (aw, ah), Image.LANCZOS)
+    # the plates are pale; give the ink and colour real weight so the ghosted
+    # card reads like the reference's full-contrast Rider-Waite art
+    art = ImageEnhance.Contrast(ImageOps.autocontrast(art, cutoff=1)).enhance(1.35)
+    art = ImageEnhance.Color(art).enhance(1.45)
 
     card = Image.new("RGB", (W, H), (255, 255, 255))
     d = ImageDraw.Draw(card)
@@ -79,12 +83,11 @@ def build(sign, plate_path, crop=None):
         size -= 2
     d.text((W / 2, (LABEL[1] + LABEL[3]) / 2 + 2), name, font=f_name, fill=INK, anchor="mm")
 
-    # age it a touch: soft paper grain, slight blur so it isn't vector-crisp
+    # light paper grain; no blur, the card has to stay crisp as a 36% ghost
     rng = np.random.default_rng(7)
     a = np.asarray(card, dtype=np.float32)
-    a += rng.normal(0, 5, a.shape[:2])[..., None]
-    card = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.5))
-    return card
+    a += rng.normal(0, 4, a.shape[:2])[..., None]
+    return Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
 
 
 def main():
