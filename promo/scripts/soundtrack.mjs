@@ -125,6 +125,7 @@ CUES.foil.forEach(t0 => { for (let k = 0; k < 9; k++) bell(t0 + k * 0.07, [1174.
 CUES.land.forEach((t, i) => { boom(t, 0.2); bell(t, [587.33, 659.25][i % 2], 0.06, 1.2) })
 ;(CUES.captions || []).forEach(t => bell(t, 1174.66, 0.035, 0.8))
 const chime = [293.66, 369.99, 440, 554.37, 587.33, 739.99, 880]
+;(CUES.pulse || []).forEach(t => { bell(t, 293.66, 0.05, 2.5); bell(t + 0.02, 880, 0.03, 2.5) })
 for (let i = 0; i < CUES.chimes.count; i++) bell(CUES.chimes.start + i * CUES.chimes.step, chime[i], 0.07, 2.4, (i - 3) * 0.12)
 
 // ── Schroeder reverb on the send

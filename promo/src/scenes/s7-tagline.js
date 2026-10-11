@@ -4,13 +4,13 @@ import { W, H, A, SANS, SERIF, MONO, fill, img, Ticks } from "./common.js"
 // ──────────────────────────────────────── S7 · gradient tagline + payoff beats
 // Timing (sound): colour rises 22.40–23.00 · ticks + typing 22.56, perChar 0.016, fade 0.12
 // (complete ~23.08, held to 24.14) · tagline out 24.14–24.26 (gone) ·
-// beat A  match phone fades in 24.26–24.38, lands/settles ~24.70 · caption A pops 24.30 (full 24.40, out 25.52–25.64) ·
-// beat B  swap 25.45: match phone exits left (to ~25.85); chat phone enters 25.50, lands ~25.95 ·
-//         caption B pops 25.60 (full 25.70) · exit is main.js stair wipe 26.58–26.94.
+// beat A  match phone fades in 24.26–24.38, lands/settles ~24.70 · caption A pops 24.26 (full 24.38, out 25.47–25.61) ·
+// beat B  swap 25.45: match phone exits left (to ~25.85); chat phone enters 25.53, lands ~25.98 ·
+//         caption B pops 25.62 (full 25.74) · exit is main.js stair wipe 26.58–26.94.
 const T_TYPE = 22.56, PER = 0.016, T_OUT = 24.14, OUT_D = 0.12
 const T_A = 24.26, T_A_END = 24.7
-const T_SW = 25.45, T_B0 = 25.5, T_B_END = 25.95
-const CAP_A = 24.3, CAP_A_OUT = 25.52, CAP_B = 25.6
+const T_SW = 25.45, T_B0 = 25.53, T_B_END = 25.98
+const CAP_A = 24.26, CAP_A_OUT = 25.47, CAP_B = 25.62
 
 const PH = 880, PW = Math.round(PH * 1170 / 2532) // 407
 const AX = 690, BX = 1280 // resting phone centres
