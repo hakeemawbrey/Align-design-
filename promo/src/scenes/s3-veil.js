@@ -34,7 +34,27 @@ function grainURL(size = 256, seed = 7) {
 
 // ── the mystery card: Juniper (Libra) behind her aura veil, as in app VeilPhoto.tsx ──
 export const S3_FIRST = 6.867            // first visible S3 frame (frame 206)
-const LIFT = { a: 7.3, b: 8.5 }          // veil lift (app LIFT_S 1.25s, compressed to fit before the 8.5 shrink)
+const LIFT = { a: 7.2, b: 7.9 }          // veil lift (app LIFT_S 1.25s, compressed: the aura-cam pass follows it)
+// AURA CAMERA pass: the photo first reads as a Polaroid aura-cam print whose aura colour sweeps
+// the chakra spectrum (like the reference's heat-map hue cycle), then resolves to the real photo.
+const SWEEP = { a: 7.55, b: 8.33 }       // hue sweep red → violet (sound: rising sweep)
+const RES = { a: 8.3, peak: 8.38, b: 8.5 } // resolve to real colour with a white bloom flash at peak
+const SHRINK = { a: 8.56, b: 9.08 }      // photo → card photo window (match-cut at 9.06)
+const CHAKRA = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff'].map((h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)))
+const LAG = 1.25                          // outer aura lags the body's colour by this many hues (colour radiates outward)
+/** chakra colour at continuous position x (0 = red … 6 = violet) */
+function chakraAt(x) {
+  x = clamp(x, 0, 6); const i = Math.min(5, Math.floor(x)), f = x - i
+  const a = CHAKRA[i], b = CHAKRA[i + 1]
+  return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f]
+}
+/** sweep position at time t: 0 → 6 + LAG, lingering slightly on each hue so every colour registers */
+function sweepAt(t) {
+  const u = prog(t, SWEEP.a, SWEEP.b) * (6 + LAG)
+  const i = Math.floor(u), f = u - i
+  return i + lerp(f, f * f * (3 - 2 * f), 0.55)
+}
+const rgbS = (c, a = 1) => `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${a})`
 const VPAD = { x: 96, y: 54 }            // veil canvas overscan so its blur never pulls in dark edges
 const VW = W + VPAD.x * 2, VH = H + VPAD.y * 2
 const VEIL_SRC = IMG + 'aura/libra.jpg'
@@ -56,7 +76,7 @@ function bezier(x1, y1, x2, y2) {
 const liftEase = bezier(0.42, 0, 0.38, 1)  // app uses [0.65,0,0.25,1]; softened so the dissolve reads over the whole 1.1s
 /** time at which the lift crosses p = 0.55 (the app's onPeak) */
 const LIFT_PEAK = (() => { let lo = 0, hi = 1; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (liftEase(m) < 0.55) lo = m; else hi = m } return LIFT.a + lo * (LIFT.b - LIFT.a) })()
-const CAP = { eyebrow: 6.95, line: 7.05, out: 8.45 }   // caption beats (sound: eyebrow tick, line pop)
+const CAP = { eyebrow: 6.95, line: 7.05, out: 8.5 }   // caption beats (sound: eyebrow tick, line pop)
 
 const veilSrc = typeof document !== 'undefined' ? document.createElement('img') : null
 if (veilSrc) {
@@ -105,6 +125,60 @@ export function veilCanvas() {
   return (veilCache = c)
 }
 
+/** Aura-camera print of a photo: a luminance gradient map (deep indigo → aura colour → white-hot)
+ *  whose colour is chosen per radial band, so the hue radiates from the body out to the edges.
+ *  Pure function of the sweep position s. */
+function makeAuraPrint(src) {
+  const cv = document.createElement('canvas')
+  let L = null, band = null, id = null, w = 0, h = 0, lastS = null
+  const NB = 40, D = [10, 5, 30], HOT = [255, 250, 240]
+  const lut = new Uint8ClampedArray(NB * 256 * 3)
+  function init() {
+    if (L) return true
+    if (!src.complete || !src.naturalWidth) return false
+    w = src.naturalWidth; h = src.naturalHeight; cv.width = w; cv.height = h
+    const g = cv.getContext('2d', { willReadFrequently: true })
+    g.drawImage(src, 0, 0, w, h)
+    const d = g.getImageData(0, 0, w, h).data
+    const n = w * h, raw = new Float32Array(n), hist = new Uint32Array(256)
+    for (let i = 0; i < n; i++) { const v = 0.3 * d[i * 4] + 0.59 * d[i * 4 + 1] + 0.11 * d[i * 4 + 2]; raw[i] = v; hist[v | 0]++ }
+    // auto-levels (1st–99.5th percentile) so the map spans the whole ramp
+    let acc = 0, lo = 0, hi = 255
+    for (let v = 0; v < 256; v++) { acc += hist[v]; if (acc < n * 0.01) lo = v; if (acc < n * 0.995) hi = v }
+    L = new Uint8Array(n); band = new Uint8Array(n)
+    const cx = w * 0.47, cy = h * 0.6, rx = w * 0.62, ry = h * 0.62
+    for (let y = 0, i = 0; y < h; y++) for (let x = 0; x < w; x++, i++) {
+      L[i] = clamp((raw[i] - lo) / (hi - lo)) * 255
+      const r = clamp(Math.hypot((x - cx) / rx, (y - cy) / ry))
+      band[i] = Math.min(NB - 1, Math.floor(r * r * (3 - 2 * r) * NB))
+    }
+    id = g.createImageData(w, h)
+    for (let i = 0; i < n; i++) id.data[i * 4 + 3] = 255
+    return true
+  }
+  const mixc = (a, b, f) => [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f]
+  function draw(s) {
+    if (!init() || s === lastS) return
+    lastS = s
+    for (let b = 0; b < NB; b++) {
+      const r = (b + 0.5) / NB, c = chakraAt(s - LAG * r)
+      // gradient-map stops: shadow (indigo, faint hue) → aura colour → film-burnt pastel → white-hot
+      const stops = [[0, mixc(D, c, 0.12)], [0.24, mixc(D, c, 0.55)], [0.46, c], [0.7, mixc(c, HOT, 0.5)], [0.88, HOT], [1, HOT]]
+      for (let v = 0, k = 0; v < 256; v++) {
+        const l = v / 255
+        while (k < stops.length - 2 && l > stops[k + 1][0]) k++
+        const [l0, c0] = stops[k], [l1, c1] = stops[k + 1], f = clamp((l - l0) / (l1 - l0)), o = (b * 256 + v) * 3
+        const ff = f * f * (3 - 2 * f)
+        lut[o] = c0[0] + (c1[0] - c0[0]) * ff; lut[o + 1] = c0[1] + (c1[1] - c0[1]) * ff; lut[o + 2] = c0[2] + (c1[2] - c0[2]) * ff
+      }
+    }
+    const px = id.data, n = w * h
+    for (let i = 0, j = 0; i < n; i++, j += 4) { const o = (band[i] * 256 + L[i]) * 3; px[j] = lut[o]; px[j + 1] = lut[o + 1]; px[j + 2] = lut[o + 2] }
+    cv.getContext('2d').putImageData(id, 0, 0)
+  }
+  return { cv, draw }
+}
+
 // ───────────────────────────────────────────────────── S3 · the mystery card reveals
 export function sceneVeil(stage) {
   const root = fill(stage, { background: C.void })
@@ -128,6 +202,20 @@ export function sceneVeil(stage) {
   }, glintBox)
   const frame = el('div', { position: 'absolute', overflow: 'hidden', background: C.raised }, front)
   const real = img(frame, IMG + 'juniper.jpg', { left: '50%', top: '50%', width: '1920px', height: '2560px', objectFit: 'cover' })
+  // aura-camera print of the same photo, laid exactly over it
+  const aura = makeAuraPrint(real)
+  const auraCv = aura.cv
+  Object.assign(auraCv.style, { position: 'absolute', left: '50%', top: '50%', width: '1920px', height: '2560px', display: 'none' })
+  frame.appendChild(auraCv)
+  // aura-cam optics over the print: glowing halo around the sitter, a colour field bleeding in from
+  // the edges (lagging hue), a light leak, and the Polaroid's burnt vignette
+  const auraFx = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', display: 'none' }, frame)
+  const halo = el('div', { position: 'absolute', inset: 0, mixBlendMode: 'screen' }, auraFx)
+  const edgeField = el('div', { position: 'absolute', inset: 0, mixBlendMode: 'screen' }, auraFx)
+  const leak = el('div', { position: 'absolute', left: '-20%', top: '-30%', width: '70%', height: '160%', mixBlendMode: 'screen' }, auraFx)
+  el('div', { position: 'absolute', inset: 0, background: 'radial-gradient(75% 95% at 50% 42%, rgba(10,5,30,0) 55%, rgba(10,5,30,0.55) 100%)' }, auraFx)
+  // white bloom flash as the print resolves to real colour
+  const flash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0, background: 'radial-gradient(60% 75% at 48% 30%, rgba(255,252,244,1) 0%, rgba(255,244,228,0.85) 45%, rgba(255,236,250,0.5) 100%)' }, frame)
   // the aura veil (mystery card) over the photo; dissolves upward from the bottom
   const veil = el('div', { position: 'absolute', left: -VPAD.x + 'px', top: -VPAD.y + 'px', width: VW + 'px', height: VH + 'px', willChange: 'transform, filter' }, frame)
   const veilCv = el('canvas', { position: 'absolute', left: 0, top: 0, width: VW + 'px', height: VH + 'px' }, veil)
@@ -166,6 +254,13 @@ export function sceneVeil(stage) {
   const capBox = el('div', { position: 'absolute', left: '50%', bottom: '84px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
   const eyebrow = el('div', { fontFamily: MONO, fontSize: '20px', letterSpacing: '0.26em', color: 'rgba(255,246,234,0.88)', textShadow: '0 1px 12px rgba(11,6,32,0.7)', marginBottom: '14px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Mystery card&nbsp;&nbsp;✦')
   const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '72px', lineHeight: 1.05, color: '#fff6ea', textShadow: '0 2px 30px rgba(11,6,32,0.75), 0 1px 3px rgba(11,6,32,0.6)', opacity: 0 }, capBox, 'A mystery card, until you both align.')
+  // aura-cam readout (Space Mono): live colour dot + spectrum bar with the current hue lit
+  const tag = el('div', { position: 'absolute', left: '72px', top: '64px', opacity: 0, fontFamily: MONO, fontSize: '18px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 10px rgba(11,6,32,0.65)', textTransform: 'uppercase' }, root)
+  const tagRow = el('div', { display: 'flex', alignItems: 'center', gap: '14px' }, tag)
+  const tagDot = el('div', { width: '12px', height: '12px', borderRadius: '50%' }, tagRow)
+  el('div', {}, tagRow, 'Aura reading')
+  const tagBar = el('div', { display: 'flex', gap: '5px', marginTop: '14px', marginLeft: '26px' }, tag)
+  const tagSegs = CHAKRA.map((c) => el('div', { width: '26px', height: '4px', borderRadius: '2px', background: rgbS(c), opacity: 0.25 }, tagBar))
 
   return {
     start: 6.8, end: 10.02, root,

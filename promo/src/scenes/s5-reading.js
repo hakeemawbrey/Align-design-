@@ -91,7 +91,7 @@ export function sceneReading(stage) {
       rail.style.opacity = String(g)
       working.style.left = (tx) + 'px'; working.style.top = eyeTop + 'px'
       const sh = (t * 1.1) % 1
-      working.style.background = `linear-gradient(90deg, rgba(239,230,214,0.62) ${sh * 140 - 40}%, rgba(239,230,214,1) ${sh * 140 - 20}%, rgba(239,230,214,0.62) ${sh * 140}%)`
+      working.style.background = `linear-gradient(90deg, rgba(239,230,214,0.72) ${sh * 140 - 40}%, rgba(239,230,214,1) ${sh * 140 - 20}%, rgba(239,230,214,0.72) ${sh * 140}%)`
       working.style.webkitBackgroundClip = 'text'; working.style.color = 'transparent'
       working.style.opacity = String(g)
       // late life: the whole block slowly breathes forward and lifts, then clears before the dots arrive

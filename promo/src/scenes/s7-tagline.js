@@ -83,12 +83,25 @@ export function sceneTagline(stage, assets) {
       const c0 = warm > 0 ? `${Math.round(lerp(232, 242, warm))},${Math.round(lerp(98, 154, warm))},${Math.round(lerp(138, 74, warm))}` : '232,98,138'
       const g = au.createLinearGradient(0, hem, 0, hem - len)
       g.addColorStop(0, `rgba(255,214,226,${0.0})`)
-      g.addColorStop(0.04, `rgba(${c0},${0.34 * fl})`)
-      g.addColorStop(0.35, `rgba(196,92,230,${0.16 * fl})`)
+      g.addColorStop(0.03, `rgba(255,190,214,${0.5 * fl})`)
+      g.addColorStop(0.1, `rgba(${c0},${0.6 * fl})`)
+      g.addColorStop(0.42, `rgba(190,96,240,${0.26 * fl})`)
       g.addColorStop(1, 'rgba(140,90,255,0)')
       au.fillStyle = g
       au.fillRect(x - 2.2, hem - len, 4.4, len + 2)
     })
+    // luminous hem: the curtain's bright lower edge
+    au.beginPath()
+    for (let i = 0; i <= 96; i++) {
+      const u = i / 96, x = u * w
+      const y = hh * (0.73 + 0.07 * Math.sin(u * 5.2 + t * 0.45) + 0.035 * Math.sin(u * 13 - t * 0.8)) + (1 - k) * hh * 0.4
+      i ? au.lineTo(x, y) : au.moveTo(x, y)
+    }
+    const hg = au.createLinearGradient(0, 0, w, 0)
+    hg.addColorStop(0, 'rgba(242,154,74,0)'); hg.addColorStop(0.18, `rgba(242,154,74,${0.4 * k})`); hg.addColorStop(0.5, `rgba(255,130,180,${0.5 * k})`)
+    hg.addColorStop(0.85, `rgba(190,110,255,${0.4 * k})`); hg.addColorStop(1, 'rgba(190,110,255,0)')
+    au.strokeStyle = hg; au.lineWidth = 3; au.shadowColor = `rgba(255,120,180,${0.8 * k})`; au.shadowBlur = 14
+    au.stroke(); au.shadowBlur = 0
     au.globalCompositeOperation = 'source-over'
   }
   // the bloom: a few hot nebula blobs that surge up from below during the entrance, then settle as glow
@@ -99,8 +112,8 @@ export function sceneTagline(stage, assets) {
   ].map((b, i) => ({ ...b, i, e: el('div', { position: 'absolute', width: b.r * 2 + 'px', height: b.r * 2 + 'px', borderRadius: '50%', mixBlendMode: 'screen',
     background: `radial-gradient(closest-side, rgba(${b.c},${b.a}), rgba(${b.c},${b.a * 0.4}) 48%, rgba(${b.c},0) 100%)` }, sky) }))
   // dark scrim right behind the tagline so bone type keeps ≥7:1 against the band
-  const tScrim = el('div', { position: 'absolute', left: (W / 2 - 760) + 'px', top: (H / 2 - 190) + 'px', width: '1520px', height: '380px', borderRadius: '50%',
-    background: 'radial-gradient(closest-side, rgba(11,6,32,0.72), rgba(11,6,32,0.5) 50%, rgba(11,6,32,0) 100%)', opacity: 0 }, sky)
+  const tScrim = el('div', { position: 'absolute', left: (W / 2 - 900) + 'px', top: (H / 2 - 230) + 'px', width: '1800px', height: '460px', borderRadius: '50%',
+    background: 'radial-gradient(closest-side, rgba(11,6,32,0.55), rgba(11,6,32,0.38) 45%, rgba(11,6,32,0.12) 75%, rgba(11,6,32,0) 100%)', opacity: 0 }, sky)
 
   const TS = 80
   const tag = new TypeLine(root, 'Dating, dealt by the stars', {

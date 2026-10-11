@@ -116,6 +116,8 @@ export function sceneDeck(stage) {
     start: 17.4, end: 22.75, root,
     update(t) {
       bg.update(t)
+      // cross-fade from s5's teal space (still drawn underneath until 17.6) — no ground pop at the cut
+      bg.root.style.opacity = String(ease.inOutQuad(prog(t, 17.4, 17.6)))
       const pull = ease.inOutCubic(prog(t, 18.3, 19.4))     // camera pulls back, stack fans out
       const center = ease.inOutCubic(prog(t, 20.35, 20.95))  // stack compacts + centres for "you ▣ align"
       const push = lerp(1, 1.05, ease.inOutQuad(prog(t, 21.1, 22.75)))
