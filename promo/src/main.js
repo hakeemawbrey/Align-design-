@@ -30,8 +30,8 @@ async function boot() {
     [S.sceneImagine, {}],
     [S.sceneIntro, {}],
     [S.sceneVeil, {}],
-    [S.sceneBirth, { fadeIn: 0.12 }],
-    [S.sceneReading, { circle: 0.32 }],
+    [S.sceneBirth, { fadeIn: 0.2 }],
+    [S.sceneReading, { circle: 0.5 }],
     [S.sceneDeck, {}],
     [S.sceneTagline, {}],
     [S.sceneEnd, {}],
@@ -49,7 +49,7 @@ async function boot() {
       s.update(t)
       if (s.fadeIn) s.root.style.opacity = String(prog(t, s.start, s.start + s.fadeIn))
       if (s.circle) {
-        const p = ease.inOutCubic(prog(t, s.start, s.start + s.circle))
+        const p = ease.inOutQuad(prog(t, s.start, s.start + s.circle))
         s.root.style.clipPath = p >= 1 ? 'none' : `circle(${36 + p * 1150}px at 50% 50%)`
       }
     }
