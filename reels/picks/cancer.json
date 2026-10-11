@@ -1,0 +1,314 @@
+{
+ "plate": {
+  "file": "cache/cancer/plate/commons.jpg",
+  "id": "commons-Sidney Hall - Urania's Mirror - Cancer.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Sidney_Hall_-_Urania%27s_Mirror_-_Cancer.jpg/1280px-Sidney_Hall_-_Urania%27s_Mirror_-_Cancer.jpg",
+  "title": "Urania's Mirror: Cancer (1824)",
+  "creator": "Sidney Hall",
+  "license": "public domain",
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Cancer.jpg",
+  "crop": [
+   0.12,
+   0.07,
+   0.9,
+   0.93
+  ]
+ },
+ "images": [
+  {
+   "file": "cache/cancer/cand/ov-ba2d51fd-f444-40f9-8ac7-cbb7ef835c45.jpg",
+   "focus": [
+    0.42,
+    0.5
+   ],
+   "note": "Halloween crab, violet claws",
+   "id": "ov-ba2d51fd-f444-40f9-8ac7-cbb7ef835c45",
+   "source": "openverse/wikimedia",
+   "title": "Halloween crab",
+   "creator": "Dexxfire",
+   "license": "by 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=8517112",
+   "url": "https://api.openverse.org/v1/images/ba2d51fd-f444-40f9-8ac7-cbb7ef835c45/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Halloween_crab.jpg",
+   "w": 1280,
+   "h": 960,
+   "query": "crab",
+   "n": 6
+  },
+  {
+   "file": "cache/cancer/cand/ov-f0c59ac7-0589-4726-a56e-e3a8f7c5648a.jpg",
+   "focus": [
+    0.45,
+    0.6
+   ],
+   "note": "horned ghost crab on sand",
+   "id": "ov-f0c59ac7-0589-4726-a56e-e3a8f7c5648a",
+   "source": "openverse/wikimedia",
+   "title": "Ocypode-ceratophthalma-horned-ghost-crab-krabi-thailand",
+   "creator": "Rushenb",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=32281720",
+   "url": "https://api.openverse.org/v1/images/f0c59ac7-0589-4726-a56e-e3a8f7c5648a/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Ocypode-ceratophthalma-horned-ghost-crab-krabi-thailand.jpg",
+   "w": 1280,
+   "h": 854,
+   "query": "ghost crab",
+   "n": 186
+  },
+  {
+   "file": "cache/cancer/cand/nasa-PIA03606.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Crab Nebula, Hubble",
+   "id": "nasa-PIA03606",
+   "source": "nasa",
+   "title": "Most Detailed Image of the Crab Nebula",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA03606",
+   "url": "https://images-assets.nasa.gov/image/PIA03606/PIA03606~orig.jpg",
+   "w": 2600,
+   "h": 2600,
+   "query": "crab",
+   "n": 105
+  },
+  {
+   "file": "cache/cancer/cand/ov-1f624c4c-8090-4aba-9479-fb7d5047f000.jpg",
+   "focus": [
+    0.52,
+    0.5
+   ],
+   "note": "moon path on the Andaman Sea",
+   "id": "ov-1f624c4c-8090-4aba-9479-fb7d5047f000",
+   "source": "openverse/wikimedia",
+   "title": "Andaman Sea at night, Moonset, Moonlight",
+   "creator": "Vyacheslav Argenberg",
+   "license": "by 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=102154603",
+   "url": "https://api.openverse.org/v1/images/1f624c4c-8090-4aba-9479-fb7d5047f000/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Andaman_Sea_at_night%2C_Moonset%2C_Moonlight.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "moonlight sea",
+   "n": 26
+  },
+  {
+   "file": "cache/cancer/cand/met-437979.jpg",
+   "focus": [
+    0.37,
+    0.55
+   ],
+   "zoom": 1.2,
+   "note": "Aivazovsky, ship by moonlight",
+   "id": "met-437979",
+   "source": "met",
+   "title": "Ship by Moonlight",
+   "creator": "Ivan Konstantinovich Aivazovsky (Hovhannes Aivazian)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437979",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-23290-001.jpg",
+   "w": 2600,
+   "h": 1756,
+   "query": "moonlight sea",
+   "n": 24
+  },
+  {
+   "file": "cache/cancer/cand/met-441379.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "North Cape by moonlight",
+   "id": "met-441379",
+   "source": "met",
+   "title": "The North Cape by Moonlight",
+   "creator": "Peder Balke",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/441379",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1740-001_cropped.jpg",
+   "w": 2600,
+   "h": 1877,
+   "query": "moonlit sea",
+   "n": 128
+  },
+  {
+   "file": "cache/cancer/cand/nasa-iss070e127437.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "zoom": 1.15,
+   "note": "moonglint on the ocean from orbit",
+   "id": "nasa-iss070e127437",
+   "source": "nasa",
+   "title": "iss070e127437",
+   "creator": "JSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/iss070e127437",
+   "url": "https://images-assets.nasa.gov/image/iss070e127437/iss070e127437~orig.jpg",
+   "w": 2600,
+   "h": 1733,
+   "query": "Cancer constellation",
+   "n": 98
+  },
+  {
+   "file": "cache/cancer/cand/met-436344.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Holy Family by candlelight",
+   "id": "met-436344",
+   "source": "met",
+   "title": "Holy Family with Saint Anne",
+   "creator": "French Painter",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436344",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-44678-001.jpg",
+   "w": 1964,
+   "h": 2600,
+   "query": "candlelight",
+   "n": 166
+  },
+  {
+   "file": "cache/cancer/cand/aic-86780.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Melchers, mother and child",
+   "id": "aic-86780",
+   "source": "aic",
+   "title": "Mother and Child",
+   "creator": "Julius Gari Melchers (American, 1860–1932)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/86780",
+   "url": "https://www.artic.edu/iiif/2/49f45b42-b565-199f-6ef5-f09dea142205/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1969,
+   "query": "mother and child",
+   "n": 34
+  },
+  {
+   "file": "cache/cancer/cand/met-436212.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Drost, young woman with pearls",
+   "id": "met-436212",
+   "source": "met",
+   "title": "Young Woman with a Pearl Necklace",
+   "creator": "Willem Drost",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436212",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145914.jpg",
+   "w": 1934,
+   "h": 2600,
+   "query": "pearl",
+   "n": 74
+  },
+  {
+   "file": "cache/cancer/cand/ov-c99522e2-a4d5-4137-b213-ee6e02274a9e.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "seashell mask on black",
+   "id": "ov-c99522e2-a4d5-4137-b213-ee6e02274a9e",
+   "source": "openverse/wikimedia",
+   "title": "Pascal-Desir Maisonneuve. Seashell mask",
+   "creator": "Pascal-Désir Maisonneuve",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=12113056",
+   "url": "https://api.openverse.org/v1/images/c99522e2-a4d5-4137-b213-ee6e02274a9e/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Pascal-Desir_Maisonneuve._Seashell_mask.jpg",
+   "w": 1280,
+   "h": 960,
+   "query": "seashell",
+   "n": 51
+  },
+  {
+   "file": "cache/cancer/cand/nasa-KSC-20200827-PH-JBS01_0014.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "zoom": 1.2,
+   "note": "lighthouse beam at night",
+   "id": "nasa-KSC-20200827-PH-JBS01_0014",
+   "source": "nasa",
+   "title": "Creative Photography - Stars, Clouds, and Lighthouse",
+   "creator": "KSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/KSC-20200827-PH-JBS01_0014",
+   "url": "https://images-assets.nasa.gov/image/KSC-20200827-PH-JBS01_0014/KSC-20200827-PH-JBS01_0014~orig.jpg",
+   "w": 2600,
+   "h": 1733,
+   "query": "lighthouse",
+   "n": 136
+  },
+  {
+   "file": "cache/cancer/cand/ov-84a1999e-4c9c-477c-b9ec-ddcb0a7c2522.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Selene statue on dark",
+   "id": "ov-84a1999e-4c9c-477c-b9ec-ddcb0a7c2522",
+   "source": "openverse/wikimedia",
+   "title": "Antalya Museum Selene statue 9650",
+   "creator": "Dosseman",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=128255415",
+   "url": "https://api.openverse.org/v1/images/84a1999e-4c9c-477c-b9ec-ddcb0a7c2522/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Antalya_Museum_Selene_statue_9650.jpg",
+   "w": 1280,
+   "h": 1923,
+   "query": "Selene moon goddess",
+   "n": 88
+  },
+  {
+   "file": "cache/cancer/cand/nasa-NHQ201712030002.jpg",
+   "focus": [
+    0.42,
+    0.3
+   ],
+   "zoom": 1.2,
+   "note": "blood-red full moon over the city",
+   "id": "nasa-NHQ201712030002",
+   "source": "nasa",
+   "title": "Supermoon",
+   "creator": "HQ",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/NHQ201712030002",
+   "url": "https://images-assets.nasa.gov/image/NHQ201712030002/NHQ201712030002~orig.jpg",
+   "w": 2600,
+   "h": 2069,
+   "query": "supermoon",
+   "n": 197
+  },
+  {
+   "file": "cache/cancer/cand/ov-c9397265-7ef2-48e0-a591-39dab21fdd3a.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "moon in clouds over a Norwegian fjord",
+   "id": "ov-c9397265-7ef2-48e0-a591-39dab21fdd3a",
+   "source": "openverse/wikimedia",
+   "title": "Skogsoy moonlight",
+   "creator": "Yosh3000",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=4523823",
+   "url": "https://api.openverse.org/v1/images/c9397265-7ef2-48e0-a591-39dab21fdd3a/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Skogsoy_moonlight.JPG",
+   "w": 1280,
+   "h": 857,
+   "query": "moonlight sea",
+   "n": 28
+  }
+ ]
+}

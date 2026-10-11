@@ -45,7 +45,8 @@ so it has to land instantly:
 }
 ```
 
-- Copy every field of a candidate from `cache/<sign>/candidates.json` (the
+- Copy every field of a candidate from `cache/<sign>/candidates.json` except
+  `hash`, and prefix `file` with `cache/<sign>/cand/` (the
   urls let anyone re-download it later; `cache/` is not committed), then add
   `focus` (x, y in 0-1: the point to keep centred when cropping to 9:16) and a
   short `note`. Optional `zoom` (default 1.0, e.g. 1.3) crops tighter so
@@ -72,4 +73,7 @@ tools/sheet.sh out/<sign>-s0-preview.mp4 /tmp/s.png      # contact sheet of a re
 
 Openverse (Wikimedia/rawpixel/Flickr) allows 200 searches a day for the whole
 machine, so do extra searches on `aic,met,nasa` unless a motif really needs
-photographs; then at most 2 openverse queries per sign.
+photographs; then at most 4 openverse queries per sign. Don't reuse an image
+another sign already picked (check `picks/*.json`).
+
+`python3 card.py <sign> --plate <file> --crop X0 Y0 X1 Y1 --out /tmp/c.png` tests a crop.

@@ -20,9 +20,10 @@
   {
    "file": "cache/aries/cand/aic-111559.jpg",
    "focus": [
-    0.5,
-    0.55
+    0.45,
+    0.5
    ],
+   "zoom": 1.25,
    "note": "Goya, boy on a ram",
    "id": "aic-111559",
    "source": "aic",
@@ -37,31 +38,33 @@
    "n": 0
   },
   {
-   "file": "cache/aries/cand/ov-b98d4bc8-4da3-4c8e-9fa2-4b3f0574bb67.jpg",
+   "file": "cache/aries/cand/ov-8a1e421f-a0ce-4fa1-a424-40bf987292b8.jpg",
    "focus": [
-    0.56,
-    0.45
+    0.5,
+    0.25
    ],
-   "note": "bighorn ram, curled horn close-up",
-   "id": "ov-b98d4bc8-4da3-4c8e-9fa2-4b3f0574bb67",
-   "source": "openverse/rawpixel",
-   "title": "Bighorn ram near Tower Junction",
-   "creator": "National Park Service",
-   "license": "cc0 1.0",
-   "landing": "https://www.rawpixel.com/image/4032712/photo-image-background-nature",
-   "url": "https://api.openverse.org/v1/images/b98d4bc8-4da3-4c8e-9fa2-4b3f0574bb67/thumb/?full_size=true",
-   "alt_url": "https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwzMTE1NTMzNzE1My1pbWFnZS1rdTJjbjdtOC1remVtaXdoai5qcGc.jpg",
-   "w": 1300,
-   "h": 867,
-   "query": "bighorn ram",
-   "n": 179
+   "zoom": 1.5,
+   "note": "bighorn ram on a dark cliff",
+   "id": "ov-8a1e421f-a0ce-4fa1-a424-40bf987292b8",
+   "source": "openverse/wikimedia",
+   "title": "Bighorn sheep grand canyon",
+   "creator": "Oregon State University",
+   "license": "by-sa 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=104986196",
+   "url": "https://api.openverse.org/v1/images/8a1e421f-a0ce-4fa1-a424-40bf987292b8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Bighorn_sheep_grand_canyon.jpg",
+   "w": 1280,
+   "h": 1707,
+   "query": "bighorn sheep ram",
+   "n": 234
   },
   {
    "file": "cache/aries/cand/met-209275.jpg",
    "focus": [
-    0.56,
+    0.58,
     0.45
    ],
+   "zoom": 1.4,
    "note": "Pinturicchio, Helle on the golden ram",
    "id": "met-209275",
    "source": "met",
@@ -76,31 +79,54 @@
    "n": 10
   },
   {
-   "file": "cache/aries/cand/ov-83bd9b21-d3f9-4fc5-bd7a-5f24b0234d23.jpg",
+   "file": "cache/aries/cand/ov-edef1891-4474-442c-ac39-5fa8c3e1c16f.jpg",
    "focus": [
-    0.42,
+    0.55,
+    0.3
+   ],
+   "zoom": 1.2,
+   "note": "Armenian mouflon, sweeping horns",
+   "id": "ov-edef1891-4474-442c-ac39-5fa8c3e1c16f",
+   "source": "openverse/wikimedia",
+   "title": "12 Armenian Mouflon",
+   "creator": "Alexander Malkhasyan",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=90770266",
+   "url": "https://api.openverse.org/v1/images/edef1891-4474-442c-ac39-5fa8c3e1c16f/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/12_Armenian_Mouflon.jpg",
+   "w": 1280,
+   "h": 851,
+   "query": "mouflon",
+   "n": 240
+  },
+  {
+   "file": "cache/aries/cand/ov-fead8422-f442-4ac7-9602-e7332ab4af74.jpg",
+   "focus": [
+    0.55,
     0.4
    ],
-   "note": "three bighorn rams, head-on",
-   "id": "ov-83bd9b21-d3f9-4fc5-bd7a-5f24b0234d23",
-   "source": "openverse/rawpixel",
-   "title": "Trio of bighorn rams, Lamar",
-   "creator": "National Park Service",
-   "license": "cc0 1.0",
-   "landing": "https://www.rawpixel.com/image/4039533/photo-image-background-nature-natural",
-   "url": "https://api.openverse.org/v1/images/83bd9b21-d3f9-4fc5-bd7a-5f24b0234d23/thumb/?full_size=true",
-   "alt_url": "https://images.rawpixel.com/image_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2ZsMTc4MjY5OTY4ODEtaW1hZ2Uta3Uzc2RsNGkuanBn.jpg",
-   "w": 1300,
-   "h": 867,
-   "query": "bighorn ram",
-   "n": 181
+   "zoom": 1.3,
+   "note": "Portland ram, curled horns",
+   "id": "ov-fead8422-f442-4ac7-9602-e7332ab4af74",
+   "source": "openverse/wikimedia",
+   "title": "File:A Portland ram at Shipley, West Sussex, England.JPG",
+   "creator": "Acabashi",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=41416204",
+   "url": "https://api.openverse.org/v1/images/fead8422-f442-4ac7-9602-e7332ab4af74/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/A_Portland_ram_at_Shipley%2C_West_Sussex%2C_England.JPG",
+   "w": 1280,
+   "h": 820,
+   "query": "ram horns sheep",
+   "n": 236
   },
   {
    "file": "cache/aries/cand/met-437389.jpg",
    "focus": [
     0.5,
-    0.4
+    0.6
    ],
+   "zoom": 1.35,
    "note": "Rembrandt, Bellona in armour",
    "id": "met-437389",
    "source": "met",
@@ -190,26 +216,6 @@
    "h": 1750,
    "query": "volcano eruption",
    "n": 47
-  },
-  {
-   "file": "cache/aries/cand/ov-6a668d05-1de7-4ef6-8f16-16d2d9666e83.jpg",
-   "focus": [
-    0.55,
-    0.5
-   ],
-   "note": "Kamchatka volcano smoking under a blue night",
-   "id": "ov-6a668d05-1de7-4ef6-8f16-16d2d9666e83",
-   "source": "openverse/wikimedia",
-   "title": "Volcano Eruption in Kamchatka Russia 1993",
-   "creator": "Giorgio Galeotti (Foto di Spalle on Flickr) https://www.flickr.com/people/fotodispalle/",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=30693868",
-   "url": "https://api.openverse.org/v1/images/6a668d05-1de7-4ef6-8f16-16d2d9666e83/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Volcano_Eruption_in_Kamchatka_Russia_1993.jpg",
-   "w": 1280,
-   "h": 866,
-   "query": "volcano eruption",
-   "n": 51
   },
   {
    "file": "cache/aries/cand/ov-df5b7381-edb7-4a2c-8bc8-1262c1707f59.jpg",
@@ -310,9 +316,10 @@
   {
    "file": "cache/aries/cand/met-435722.jpg",
    "focus": [
-    0.4,
-    0.4
+    0.45,
+    0.3
    ],
+   "zoom": 1.2,
    "note": "Paris Bordon, man in armour",
    "id": "met-435722",
    "source": "met",

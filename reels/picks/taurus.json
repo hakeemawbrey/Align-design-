@@ -1,0 +1,328 @@
+{
+ "plate": {
+  "file": "cache/taurus/plate/commons.jpg",
+  "crop": [
+   0.22,
+   0.04,
+   0.66,
+   0.97
+  ],
+  "id": "commons-Sidney Hall - Urania's Mirror - Taurus.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus.jpg/1280px-Sidney_Hall_-_Urania%27s_Mirror_-_Taurus.jpg",
+  "title": "Urania's Mirror: Taurus (1824)",
+  "creator": "Sidney Hall",
+  "license": "public domain",
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Taurus.jpg"
+ },
+ "images": [
+  {
+   "file": "cache/taurus/cand/ov-2876553e-7721-4157-a18f-808e8f76e89f.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Apulian vase, Europa riding the white bull on black",
+   "id": "ov-2876553e-7721-4157-a18f-808e8f76e89f",
+   "source": "openverse/wikimedia",
+   "title": "Asteas - RFVP 2-129 - Europa on the bull - Dionysos with satyrs and maenads and Pan - Montesarchio MANdSC - 07",
+   "creator": "ArchaiOptix",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=94297887",
+   "url": "https://api.openverse.org/v1/images/2876553e-7721-4157-a18f-808e8f76e89f/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Asteas_-_RFVP_2-129_-_Europa_on_the_bull_-_Dionysos_with_satyrs_and_maenads_and_Pan_-_Montesarchio_MANdSC_-_07.jpg",
+   "w": 1280,
+   "h": 1280,
+   "query": "Europa and the bull",
+   "n": 18
+  },
+  {
+   "file": "cache/taurus/cand/aic-39542.jpg",
+   "focus": [
+    0.45,
+    0.64
+   ],
+   "zoom": 1.5,
+   "note": "Bonheur, bull at rest below an Alpine peak",
+   "id": "aic-39542",
+   "source": "aic",
+   "title": "Cattle at Rest on a Hillside in the Alps",
+   "creator": "Rosa Bonheur (French, 1822–1899)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/39542",
+   "url": "https://www.artic.edu/iiif/2/efdd5540-5579-8761-fd1d-af318f65a0a6/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1393,
+   "query": "pastoral landscape cattle",
+   "n": 98
+  },
+  {
+   "file": "cache/taurus/cand/ov-28c80aa5-b340-4e74-b42b-fe68a659b7ed.jpg",
+   "focus": [
+    0.27,
+    0.5
+   ],
+   "note": "Indian aurochs, black bull with long horns",
+   "id": "ov-28c80aa5-b340-4e74-b42b-fe68a659b7ed",
+   "source": "openverse/wikimedia",
+   "title": "Indian Aurochs B p namadicus 3",
+   "creator": "Jochen Ackermann (User name: Altaileopard)",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=27670176",
+   "url": "https://api.openverse.org/v1/images/28c80aa5-b340-4e74-b42b-fe68a659b7ed/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Indian_Aurochs_B_p_namadicus_3.jpg",
+   "w": 1280,
+   "h": 809,
+   "query": "Bos taurus bull",
+   "n": 304
+  },
+  {
+   "file": "cache/taurus/cand/aic-146953.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Potter, young bull and cows under a big sky",
+   "id": "aic-146953",
+   "source": "aic",
+   "title": "Two Cows and a Young Bull beside a Fence in a Meadow",
+   "creator": "Paulus Potter (Dutch, 1625–1654)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/146953",
+   "url": "https://www.artic.edu/iiif/2/5de78980-17d7-8fb5-83de-7b2ae4e997f2/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2240,
+   "query": "bull",
+   "n": 2
+  },
+  {
+   "file": "cache/taurus/cand/aic-86298.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Study of a cow against a stormy sky",
+   "id": "aic-86298",
+   "source": "aic",
+   "title": "Study of a Cow",
+   "creator": "Emile van Marcke de Lummen (French, 1827–1890)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/86298",
+   "url": "https://www.artic.edu/iiif/2/c2bf35ea-3878-ffd1-18c3-311f13db873a/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1146,
+   "query": "cow",
+   "n": 290
+  },
+  {
+   "file": "cache/taurus/cand/met-438636.jpg",
+   "focus": [
+    0.32,
+    0.5
+   ],
+   "note": "black cow in a barn, dark chiaroscuro",
+   "id": "met-438636",
+   "source": "met",
+   "title": "Cow in a Barn",
+   "creator": "Camille Corot",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438636",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP169446.jpg",
+   "w": 1957,
+   "h": 1491,
+   "query": "cow",
+   "n": 291
+  },
+  {
+   "file": "cache/taurus/cand/nasa-PIA01320.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Crab Nebula, the supernova in Taurus",
+   "id": "nasa-PIA01320",
+   "source": "nasa",
+   "title": "Dead Star Creates Celestial Havoc",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA01320",
+   "url": "https://images-assets.nasa.gov/image/PIA01320/PIA01320~orig.jpg",
+   "w": 2448,
+   "h": 2244,
+   "query": "Taurus constellation",
+   "n": 153
+  },
+  {
+   "file": "cache/taurus/cand/nasa-PIA09263.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Pleiades, the Seven Sisters (Spitzer)",
+   "id": "nasa-PIA09263",
+   "source": "nasa",
+   "title": "The Seven Sisters Pose for Spitzer",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA09263",
+   "url": "https://images-assets.nasa.gov/image/PIA09263/PIA09263~orig.jpg",
+   "w": 2600,
+   "h": 2600,
+   "query": "Pleiades star cluster",
+   "n": 216
+  },
+  {
+   "file": "cache/taurus/cand/nasa-PIA00342.jpg",
+   "focus": [
+    0.3,
+    0.5
+   ],
+   "note": "Earth and Moon from Galileo",
+   "id": "nasa-PIA00342",
+   "source": "nasa",
+   "title": "The Earth & Moon",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA00342",
+   "url": "https://images-assets.nasa.gov/image/PIA00342/PIA00342~orig.jpg",
+   "w": 1700,
+   "h": 2164,
+   "query": "Earth",
+   "n": 272
+  },
+  {
+   "file": "cache/taurus/cand/nasa-S39-23-020.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "aurora over the earth from the ISS",
+   "id": "nasa-S39-23-020",
+   "source": "nasa",
+   "title": "Aurora Australis, Sinuous Loop",
+   "creator": "JSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/S39-23-020",
+   "url": "https://images-assets.nasa.gov/image/S39-23-020/S39-23-020~orig.jpg",
+   "w": 2600,
+   "h": 1706,
+   "query": "Earth from space",
+   "n": 228
+  },
+  {
+   "file": "cache/taurus/cand/nasa-PIA14936.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "note": "Morning Star: Venus beyond a planet's limb",
+   "id": "nasa-PIA14936",
+   "source": "nasa",
+   "title": "Morning Star",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA14936",
+   "url": "https://images-assets.nasa.gov/image/PIA14936/PIA14936~orig.jpg",
+   "w": 1003,
+   "h": 1003,
+   "query": "Venus planet",
+   "n": 265
+  },
+  {
+   "file": "cache/taurus/cand/aic-64029.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Brueghel, flower bouquet on dark ground",
+   "id": "aic-64029",
+   "source": "aic",
+   "title": "Bouquet of Flowers in an Earthenware Vase",
+   "creator": "Attributed to Jan Brueghel the Elder (Flemish, 1568–1625)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/64029",
+   "url": "https://www.artic.edu/iiif/2/599e0546-ed58-0224-a623-39a8e3b51ef8/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2483,
+   "query": "peonies",
+   "n": 267
+  },
+  {
+   "file": "cache/taurus/cand/aic-94240.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "note": "Redon, red poppies on black",
+   "id": "aic-94240",
+   "source": "aic",
+   "title": "Flowers: Poppies and Daisies",
+   "creator": "Odilon Redon (French, 1840–1916)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/94240",
+   "url": "https://www.artic.edu/iiif/2/d424c734-f5c1-5f89-3bb8-d83e4e0287e3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1340,
+   "query": "flowers",
+   "n": 201
+  },
+  {
+   "file": "cache/taurus/cand/met-11392.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Lambdin, roses on dark ground",
+   "id": "met-11392",
+   "source": "met",
+   "title": "Roses",
+   "creator": "George Cochran Lambdin",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11392",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap18.116.jpg",
+   "w": 1080,
+   "h": 2227,
+   "query": "roses",
+   "n": 194
+  },
+  {
+   "file": "cache/taurus/cand/ov-6fde8120-5169-406f-b225-97115736e3cd.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ],
+   "note": "Rogers, The Lost Pleiad, marble in the dark",
+   "id": "ov-6fde8120-5169-406f-b225-97115736e3cd",
+   "source": "openverse/wikimedia",
+   "title": "WLA brooklynmuseum Randolph Rogers The Lost Pleiad",
+   "creator": "",
+   "license": "by-sa 2.5",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=8748564",
+   "url": "https://api.openverse.org/v1/images/6fde8120-5169-406f-b225-97115736e3cd/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/WLA_brooklynmuseum_Randolph_Rogers_The_Lost_Pleiad.jpg",
+   "w": 1280,
+   "h": 1925,
+   "query": "Pleiades",
+   "n": 74
+  },
+  {
+   "file": "cache/taurus/cand/aic-64754.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "zoom": 1.4,
+   "note": "Inness, moonrise over a pasture",
+   "id": "aic-64754",
+   "source": "aic",
+   "title": "Moonrise",
+   "creator": "George Inness (American, 1825–1894)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/64754",
+   "url": "https://www.artic.edu/iiif/2/4425984b-e241-6413-1404-cdac0fb06518/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2021,
+   "query": "fertile fields harvest",
+   "n": 78
+  }
+ ]
+}

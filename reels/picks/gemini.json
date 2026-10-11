@@ -1,0 +1,311 @@
+{
+ "plate": {
+  "file": "cache/gemini/plate/commons.jpg",
+  "id": "commons-Sidney Hall - Urania's Mirror - Gemini.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sidney_Hall_-_Urania%27s_Mirror_-_Gemini.jpg/1280px-Sidney_Hall_-_Urania%27s_Mirror_-_Gemini.jpg",
+  "title": "Urania's Mirror: Gemini (1824)",
+  "creator": "Sidney Hall",
+  "license": "public domain",
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Gemini.jpg",
+  "crop": [
+   0.13,
+   0.05,
+   0.62,
+   0.97
+  ]
+ },
+ "images": [
+  {
+   "id": "aic-250020",
+   "source": "aic",
+   "title": "Untitled (Portrait of Two Girls)",
+   "creator": "Unknown maker",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/250020",
+   "url": "https://www.artic.edu/iiif/2/80353db9-b2a9-33c6-3662-98c4dadd382e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1988,
+   "query": "twins",
+   "file": "cache/gemini/cand/aic-250020.jpg",
+   "n": 2,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.5,
+   "note": "daguerreotype, two sisters as twins"
+  },
+  {
+   "id": "ov-a201a529-fcee-478c-9f63-6433338bbe88",
+   "source": "openverse/wikimedia",
+   "title": "Castor and Pollux-Parc de Versailles",
+   "creator": "",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=3560598",
+   "url": "https://api.openverse.org/v1/images/a201a529-fcee-478c-9f63-6433338bbe88/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Castor_and_Pollux-Parc_de_Versailles.jpg",
+   "w": 1280,
+   "h": 1707,
+   "query": "Castor and Pollux",
+   "file": "cache/gemini/cand/ov-a201a529-fcee-478c-9f63-6433338bbe88.jpg",
+   "n": 12,
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Castor and Pollux, Versailles marble"
+  },
+  {
+   "id": "ov-ebe0b366-85ba-47bc-bf82-d7f3004bc275",
+   "source": "openverse/wikimedia",
+   "title": "Campidoglio - Dioscuri all'alba 1050290",
+   "creator": "Lalupa",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=2808995",
+   "url": "https://api.openverse.org/v1/images/ebe0b366-85ba-47bc-bf82-d7f3004bc275/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Campidoglio_-_Dioscuri_all%27alba_1050290.JPG",
+   "w": 1280,
+   "h": 1707,
+   "query": "Dioscuri statue",
+   "file": "cache/gemini/cand/ov-ebe0b366-85ba-47bc-bf82-d7f3004bc275.jpg",
+   "n": 329,
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "zoom": 1.2,
+   "note": "the Dioscuri with their horses, Capitoline at dawn"
+  },
+  {
+   "id": "nasa-PIA04216",
+   "source": "nasa",
+   "title": "Ant Nebula",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA04216",
+   "url": "https://images-assets.nasa.gov/image/PIA04216/PIA04216~orig.jpg",
+   "w": 1072,
+   "h": 708,
+   "query": "nebula",
+   "file": "cache/gemini/cand/nasa-PIA04216.jpg",
+   "n": 119,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Ant nebula, twin lobes"
+  },
+  {
+   "id": "nasa-PIA20294",
+   "source": "nasa",
+   "title": "WFPC2 Image of the Variable Star Eta Carinae",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA20294",
+   "url": "https://images-assets.nasa.gov/image/PIA20294/PIA20294~orig.jpg",
+   "w": 738,
+   "h": 726,
+   "query": "twin galaxies",
+   "file": "cache/gemini/cand/nasa-PIA20294.jpg",
+   "n": 263,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Eta Carinae, twin bubbles"
+  },
+  {
+   "id": "nasa-PIA09106",
+   "source": "nasa",
+   "title": "Older Galaxy Pair Has Surprisingly Youthful Glow",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA09106",
+   "url": "https://images-assets.nasa.gov/image/PIA09106/PIA09106~orig.jpg",
+   "w": 975,
+   "h": 700,
+   "query": "interacting galaxies",
+   "file": "cache/gemini/cand/nasa-PIA09106.jpg",
+   "n": 252,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "interacting galaxy pair"
+  },
+  {
+   "id": "met-438001",
+   "source": "met",
+   "title": "Two Women",
+   "creator": "Paul Gauguin",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438001",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT1953.jpg",
+   "w": 2600,
+   "h": 2066,
+   "query": "two women",
+   "file": "cache/gemini/cand/met-438001.jpg",
+   "n": 241,
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Gauguin, two women side by side"
+  },
+  {
+   "id": "aic-111613",
+   "source": "aic",
+   "title": "The Temptation of the Magdalene",
+   "creator": "Jacob Jordaens (Flemish, 1593-1678)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111613",
+   "url": "https://www.artic.edu/iiif/2/f3ca80bd-48a0-8922-989f-6ba3c308d8cc/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2198,
+   "query": "Jacob and Esau",
+   "file": "cache/gemini/cand/aic-111613.jpg",
+   "n": 273,
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "note": "Jordaens, Magdalene between angel and tempter"
+  },
+  {
+   "id": "ov-584f3662-1a78-4614-a25e-5e47b99436a8",
+   "source": "openverse/wikimedia",
+   "title": "Venetian Carnival Mask - Maschera di Carnevale - Venice Italy - Creative Commons by gnuckx (4820456037)",
+   "creator": "gnuckx",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=24525960",
+   "url": "https://api.openverse.org/v1/images/584f3662-1a78-4614-a25e-5e47b99436a8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Venetian_Carnival_Mask_-_Maschera_di_Carnevale_-_Venice_Italy_-_Creative_Commons_by_gnuckx_%284820456037%29.jpg",
+   "w": 1280,
+   "h": 1927,
+   "query": "venetian carnival mask",
+   "file": "cache/gemini/cand/ov-584f3662-1a78-4614-a25e-5e47b99436a8.jpg",
+   "n": 316,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "gold Venetian mask in copper drape"
+  },
+  {
+   "id": "met-437919",
+   "source": "met",
+   "title": "Two Tritons at the Feast of Achelo\u00fcs",
+   "creator": "Anthony van Dyck",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437919",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-37653-001.jpg",
+   "w": 1944,
+   "h": 2600,
+   "query": "two faces Janus",
+   "file": "cache/gemini/cand/met-437919.jpg",
+   "n": 48,
+   "focus": [
+    0.65,
+    0.35
+   ],
+   "note": "Van Dyck, two tritons"
+  },
+  {
+   "id": "ov-86509e34-2e03-45f4-b1c1-33e70436d406",
+   "source": "openverse/wikimedia",
+   "title": "Hermes (Mercury) at the Getty Villa (bronze copy of a Roman bronze)",
+   "creator": "1Greenjack1",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=144773335",
+   "url": "https://api.openverse.org/v1/images/86509e34-2e03-45f4-b1c1-33e70436d406/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Hermes_%28Mercury%29_at_the_Getty_Villa_%28bronze_copy_of_a_Roman_bronze%29.jpg",
+   "w": 1280,
+   "h": 2241,
+   "query": "Mercury Hermes messenger",
+   "file": "cache/gemini/cand/ov-86509e34-2e03-45f4-b1c1-33e70436d406.jpg",
+   "n": 22,
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "zoom": 1.25,
+   "note": "Hermes at rest, bronze"
+  },
+  {
+   "id": "nasa-GSFC_20171208_Archive_e000497",
+   "source": "nasa",
+   "title": "Hubble Sees the Force Awakening in a Newborn Star",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000497",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000497/GSFC_20171208_Archive_e000497~orig.jpg",
+   "w": 1995,
+   "h": 2367,
+   "query": "twin galaxies",
+   "file": "cache/gemini/cand/nasa-GSFC_20171208_Archive_e000497.jpg",
+   "n": 266,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "newborn star, twin jets"
+  },
+  {
+   "id": "nasa-PIA13449",
+   "source": "nasa",
+   "title": "An Explosion of Infrared Color",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA13449",
+   "url": "https://images-assets.nasa.gov/image/PIA13449/PIA13449~orig.jpg",
+   "w": 2600,
+   "h": 2600,
+   "query": "Jellyfish nebula",
+   "file": "cache/gemini/cand/nasa-PIA13449.jpg",
+   "n": 246,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Jellyfish nebula IC 443, in Gemini"
+  },
+  {
+   "id": "aic-109938",
+   "source": "aic",
+   "title": "Valley of Aosta: Snowstorm, Avalanche, and Thunderstorm",
+   "creator": "Joseph Mallord William Turner (English, 1775\u20131851)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/109938",
+   "url": "https://www.artic.edu/iiif/2/564e2e3f-eb93-88a7-d265-8fea006facff/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1257,
+   "query": "Turner",
+   "file": "cache/gemini/cand/aic-109938.jpg",
+   "n": 341,
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "note": "Turner, snowstorm and avalanche, the wind"
+  },
+  {
+   "id": "aic-889",
+   "source": "aic",
+   "title": "Barks Fleeing Before the Storm",
+   "creator": "Jules Dupr\u00e9 (French, 1811\u20131889)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/889",
+   "url": "https://www.artic.edu/iiif/2/80df29cd-493f-23c0-3e51-4ddc38b3f34f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1091,
+   "query": "wind clouds sky",
+   "file": "cache/gemini/cand/aic-889.jpg",
+   "n": 67,
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "note": "Dupre, boats fleeing the storm wind"
+  }
+ ]
+}

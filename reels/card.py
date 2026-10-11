@@ -91,9 +91,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("sign")
     ap.add_argument("--plate")
+    ap.add_argument("--crop", type=float, nargs=4, metavar=("X0", "Y0", "X1", "Y1"))
     ap.add_argument("--out")
     a = ap.parse_args()
-    crop = None
+    crop = a.crop
     plate = a.plate
     if not plate:
         picks = json.load(open(os.path.join(HERE, "picks", f"{a.sign}.json")))
