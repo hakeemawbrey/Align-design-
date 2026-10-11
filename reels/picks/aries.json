@@ -1,0 +1,348 @@
+{
+ "plate": {
+  "file": "cache/aries/plate/0.jpg",
+  "crop": [
+   0.47,
+   0.08,
+   0.86,
+   0.98
+  ],
+  "id": "ov-684ce582-19c0-4ab2-a46d-4faf6a7edc0c",
+  "source": "openverse/wikimedia",
+  "title": "File:From Urania's Mirror- Aries and Musca Borealis, 1825 (7679352134).jpg",
+  "creator": "trialsanderrors",
+  "license": "by 2.0",
+  "landing": "https://commons.wikimedia.org/w/index.php?curid=66698770",
+  "url": "https://api.openverse.org/v1/images/684ce582-19c0-4ab2-a46d-4faf6a7edc0c/thumb/?full_size=true",
+  "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/From_Urania%27s_Mirror-_Aries_and_Musca_Borealis%2C_1825_%287679352134%29.jpg"
+ },
+ "images": [
+  {
+   "file": "cache/aries/cand/aic-111559.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Goya, boy on a ram",
+   "id": "aic-111559",
+   "source": "aic",
+   "title": "Boy on a Ram",
+   "creator": "Francisco José de Goya y Lucientes (Spanish, 1746–1828)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111559",
+   "url": "https://www.artic.edu/iiif/2/e54a695c-16df-cf45-9dd4-b517e8c32cc3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1902,
+   "query": "ram horns",
+   "n": 0
+  },
+  {
+   "file": "cache/aries/cand/ov-b98d4bc8-4da3-4c8e-9fa2-4b3f0574bb67.jpg",
+   "focus": [
+    0.56,
+    0.45
+   ],
+   "note": "bighorn ram, curled horn close-up",
+   "id": "ov-b98d4bc8-4da3-4c8e-9fa2-4b3f0574bb67",
+   "source": "openverse/rawpixel",
+   "title": "Bighorn ram near Tower Junction",
+   "creator": "National Park Service",
+   "license": "cc0 1.0",
+   "landing": "https://www.rawpixel.com/image/4032712/photo-image-background-nature",
+   "url": "https://api.openverse.org/v1/images/b98d4bc8-4da3-4c8e-9fa2-4b3f0574bb67/thumb/?full_size=true",
+   "alt_url": "https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwzMTE1NTMzNzE1My1pbWFnZS1rdTJjbjdtOC1remVtaXdoai5qcGc.jpg",
+   "w": 1300,
+   "h": 867,
+   "query": "bighorn ram",
+   "n": 179
+  },
+  {
+   "file": "cache/aries/cand/met-209275.jpg",
+   "focus": [
+    0.56,
+    0.45
+   ],
+   "note": "Pinturicchio, Helle on the golden ram",
+   "id": "met-209275",
+   "source": "met",
+   "title": "Helle on a Ram",
+   "creator": "Pinturicchio",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/209275",
+   "url": "https://images.metmuseum.org/CRDImages/es/original/LC-14_114_16-001.jpg",
+   "w": 2600,
+   "h": 1638,
+   "query": "ram horns",
+   "n": 10
+  },
+  {
+   "file": "cache/aries/cand/ov-83bd9b21-d3f9-4fc5-bd7a-5f24b0234d23.jpg",
+   "focus": [
+    0.42,
+    0.4
+   ],
+   "note": "three bighorn rams, head-on",
+   "id": "ov-83bd9b21-d3f9-4fc5-bd7a-5f24b0234d23",
+   "source": "openverse/rawpixel",
+   "title": "Trio of bighorn rams, Lamar",
+   "creator": "National Park Service",
+   "license": "cc0 1.0",
+   "landing": "https://www.rawpixel.com/image/4039533/photo-image-background-nature-natural",
+   "url": "https://api.openverse.org/v1/images/83bd9b21-d3f9-4fc5-bd7a-5f24b0234d23/thumb/?full_size=true",
+   "alt_url": "https://images.rawpixel.com/image_1300/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2ZsMTc4MjY5OTY4ODEtaW1hZ2Uta3Uzc2RsNGkuanBn.jpg",
+   "w": 1300,
+   "h": 867,
+   "query": "bighorn ram",
+   "n": 181
+  },
+  {
+   "file": "cache/aries/cand/met-437389.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Rembrandt, Bellona in armour",
+   "id": "met-437389",
+   "source": "met",
+   "title": "Bellona",
+   "creator": "Rembrandt (Rembrandt van Rijn)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437389",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP146454.jpg",
+   "w": 1995,
+   "h": 2600,
+   "query": "Bellona",
+   "n": 170
+  },
+  {
+   "file": "cache/aries/cand/aic-110663.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Delacroix, combat of the Giaour and Hassan",
+   "id": "aic-110663",
+   "source": "aic",
+   "title": "The Combat of the Giaour and Hassan",
+   "creator": "Eugène Delacroix (French, 1798–1863)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/110663",
+   "url": "https://www.artic.edu/iiif/2/ae0793ac-8ace-6c4a-84d4-a33162ae6832/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1370,
+   "query": "Delacroix",
+   "n": 183
+  },
+  {
+   "file": "cache/aries/cand/met-436118.jpg",
+   "focus": [
+    0.8,
+    0.45
+   ],
+   "note": "Defrance, the forge fire",
+   "id": "met-436118",
+   "source": "met",
+   "title": "The Forge",
+   "creator": "Léonard Defrance",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436118",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/ep71.93.R.jpg",
+   "w": 1801,
+   "h": 1389,
+   "query": "forge fire blacksmith",
+   "n": 41
+  },
+  {
+   "file": "cache/aries/cand/aic-57996.jpg",
+   "focus": [
+    0.22,
+    0.5
+   ],
+   "note": "Volaire, Vesuvius erupting at night",
+   "id": "aic-57996",
+   "source": "aic",
+   "title": "The Eruption of Vesuvius",
+   "creator": "Pierre-Jacques Volaire (French, 1729–1799)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/57996",
+   "url": "https://www.artic.edu/iiif/2/6a676ee7-39c0-0b88-c37e-36ba0c5e3065/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 776,
+   "query": "volcano eruption",
+   "n": 43
+  },
+  {
+   "file": "cache/aries/cand/ov-3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Iceland lava fountain",
+   "id": "ov-3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d",
+   "source": "openverse/wikimedia",
+   "title": "001 Volcano eruption of Litli-Hrútur in Iceland in 2023 Photo by Giles Laurent",
+   "creator": "Giles Laurent",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=141202680",
+   "url": "https://api.openverse.org/v1/images/3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/001_Volcano_eruption_of_Litli-Hr%C3%BAtur_in_Iceland_in_2023_Photo_by_Giles_Laurent.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "volcano eruption",
+   "n": 48
+  },
+  {
+   "file": "cache/aries/cand/met-438159.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Dahl, Vesuvius eruption",
+   "id": "met-438159",
+   "source": "met",
+   "title": "An Eruption of Vesuvius",
+   "creator": "Johan Christian Dahl",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438159",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP155336.jpg",
+   "w": 2600,
+   "h": 1750,
+   "query": "volcano eruption",
+   "n": 47
+  },
+  {
+   "file": "cache/aries/cand/ov-df5b7381-edb7-4a2c-8bc8-1262c1707f59.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "lightning storm at night",
+   "id": "ov-df5b7381-edb7-4a2c-8bc8-1262c1707f59",
+   "source": "openverse/wikimedia",
+   "title": "Boby Dimitrov - Summer lightning storm over Sofia (by-sa)",
+   "creator": "Boby Dimitrov from Sofia, Bulgaria",
+   "license": "by-sa 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=7335569",
+   "url": "https://api.openverse.org/v1/images/df5b7381-edb7-4a2c-8bc8-1262c1707f59/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Boby_Dimitrov_-_Summer_lightning_storm_over_Sofia_%28by-sa%29.jpg",
+   "w": 1280,
+   "h": 862,
+   "query": "lightning storm",
+   "n": 92
+  },
+  {
+   "file": "cache/aries/cand/nasa-S91-32389.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Mars, the ruler planet",
+   "id": "nasa-S91-32389",
+   "source": "nasa",
+   "title": "Composite image of the planet Mars taken by Hubble Space Telescope (HST)",
+   "creator": "JSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/S91-32389",
+   "url": "https://images-assets.nasa.gov/image/S91-32389/S91-32389~orig.jpg",
+   "w": 2065,
+   "h": 2600,
+   "query": "Mars planet",
+   "n": 143
+  },
+  {
+   "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e001465.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Ring nebula, fiery shell",
+   "id": "nasa-GSFC_20171208_Archive_e001465",
+   "source": "nasa",
+   "title": "Planetary Nebula",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001465",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001465/GSFC_20171208_Archive_e001465~orig.jpg",
+   "w": 1215,
+   "h": 1241,
+   "query": "nebula",
+   "n": 97
+  },
+  {
+   "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e000762.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "solar flare, red sun",
+   "id": "nasa-GSFC_20171208_Archive_e000762",
+   "source": "nasa",
+   "title": "Sun Emits an X2.2 Flare",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000762",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000762/GSFC_20171208_Archive_e000762~orig.jpg",
+   "w": 1200,
+   "h": 1200,
+   "query": "sun flare",
+   "n": 228
+  },
+  {
+   "file": "cache/aries/cand/nasa-PIA07902.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Helix nebula, cosmic eye",
+   "id": "nasa-PIA07902",
+   "source": "nasa",
+   "title": "Planetary Nebula NGC 7293 also Known as the Helix Nebula",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA07902",
+   "url": "https://images-assets.nasa.gov/image/PIA07902/PIA07902~orig.jpg",
+   "w": 2448,
+   "h": 1880,
+   "query": "nebula",
+   "n": 100
+  },
+  {
+   "file": "cache/aries/cand/aic-896.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "note": "Troyon, flock in backlit dust",
+   "id": "aic-896",
+   "source": "aic",
+   "title": "The Road to Market",
+   "creator": "Constant Troyon (French, 1810–1865)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/896",
+   "url": "https://www.artic.edu/iiif/2/6aaa3537-abbf-f49e-877f-4d8e8e4d50c2/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2131,
+   "query": "shepherd sheep",
+   "n": 163
+  },
+  {
+   "file": "cache/aries/cand/met-435722.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "note": "Paris Bordon, man in armour",
+   "id": "met-435722",
+   "source": "met",
+   "title": "Portrait of a Man in Armor with Two Pages",
+   "creator": "Paris Bordon",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435722",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-17629-001.jpg",
+   "w": 2600,
+   "h": 1927,
+   "query": "warrior helmet armor",
+   "n": 73
+  }
+ ]
+}
