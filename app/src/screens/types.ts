@@ -22,6 +22,7 @@ export type ScreenId =
   | 'notifications' // S-19 Notifications
   | 'thread'     // chat with a real person you matched with
   | 'collection' // your cards, packs, sets and the season
+  | 'howto'      // the rulebook: how to play
 
 export interface ScreenProps {
   go: (id: ScreenId) => void

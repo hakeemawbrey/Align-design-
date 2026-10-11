@@ -133,6 +133,20 @@ export default function You({ go }: ScreenProps) {
             </div>
           </motion.button>
 
+          {/* how to play */}
+          <motion.button onClick={() => { sfx.tap(); go('howto') }} whileTap={{ scale: 0.98 }}
+            style={{
+              display: 'flex', alignItems: 'center', gap: 14, width: 'calc(100% - 48px)', margin: '10px 24px 0', padding: '12px 14px', borderRadius: 16, textAlign: 'left',
+              background: 'rgba(36,22,74,0.8)', border: '1px solid rgba(179,166,196,0.22)',
+            }}>
+            <span className="serif" style={{ width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', fontSize: 17, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>?</span>
+            <span style={{ flex: 1 }}>
+              <span className="serif italic" style={{ display: 'block', fontSize: 17, color: 'var(--label-1)' }}>How to play</span>
+              <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 2 }}>The deal, your hand, packs, energy and trading</span>
+            </span>
+            <Chevron />
+          </motion.button>
+
           {/* your sky */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 24px 8px' }}>
             <span className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)' }}>Your sky</span>

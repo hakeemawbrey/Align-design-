@@ -33,25 +33,26 @@ import Block from './screens/Block'
 import Notifications from './screens/Notifications'
 import Thread from './screens/Thread'
 import Collection from './screens/Collection'
+import HowToPlay from './screens/HowToPlay'
 import { sfx } from './lib/sfx'
 
 const SCREENS: Record<ScreenId, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
   matches: Matches, trade: Trade,
-  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: Calendar, chart: Chart, block: Block, notifications: Notifications, thread: Thread, collection: Collection,
+  onboarding: Onboarding, founding: Founding, paywall: Paywall, you: You, club: Club, sky: Sky, calendar: Calendar, chart: Chart, block: Block, notifications: Notifications, thread: Thread, collection: Collection, howto: HowToPlay,
 }
 
 /** Keyboard jump order for recording: 1–9, then 0 */
 const ORDER: ScreenId[] = ['splash', 'welcome', 'dealing', 'deck', 'match', 'reveal', 'chat', 'alignment', 'spent', 'matches']
-const ALL: ScreenId[] = [...ORDER, 'trade', 'onboarding', 'founding', 'paywall', 'you', 'club', 'sky', 'calendar', 'chart', 'block', 'notifications', 'thread', 'collection']
+const ALL: ScreenId[] = [...ORDER, 'trade', 'onboarding', 'founding', 'paywall', 'you', 'club', 'sky', 'calendar', 'chart', 'block', 'notifications', 'thread', 'collection', 'howto']
 /** on a phone: real status bar and home indicator, no fake ones */
 const APP = isAppMode()
 
 /** shortcut jumps to these land after the match with Juniper */
 const AFTER_MATCH: ScreenId[] = ['match', 'reveal', 'chat', 'alignment', 'spent', 'matches', 'trade']
 /** letter shortcuts for screens beyond 0–9 */
-const LETTERS: Record<string, ScreenId> = { o: 'onboarding', f: 'founding', p: 'paywall', y: 'you', c: 'club', s: 'sky', k: 'calendar', n: 'notifications', l: 'collection' }
+const LETTERS: Record<string, ScreenId> = { o: 'onboarding', f: 'founding', p: 'paywall', y: 'you', c: 'club', s: 'sky', k: 'calendar', n: 'notifications', l: 'collection', h: 'howto' }
 
 function initialScreen(): ScreenId {
   const h = window.location.hash.replace('#', '') as ScreenId
