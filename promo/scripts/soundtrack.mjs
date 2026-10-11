@@ -128,6 +128,7 @@ CUES.boom.forEach(t => boom(t))
   glitter(m.peak - 0.05, m.peak + 0.35)         // sparkle burst at the peak
   bell(m.peak, 1318.51, 0.05, 2.0); bell(m.peak + 0.06, 1975.53, 0.035, 2.0)
 })
+;(CUES.auraHues || []).forEach((t, i) => bell(t, [261.63, 293.66, 329.63, 392, 440, 523.25, 587.33][i], 0.045, 0.9, (i - 3) * 0.15))
 ;(CUES.cardIn || []).forEach(t => { bell(t, 739.99, 0.06, 1.6, -0.2); bell(t + 0.09, 1108.73, 0.05, 1.6, 0.2) })
 CUES.click.forEach(t => { tick(t, 0.25); bell(t + 0.01, 1760, 0.04, 0.3) })
 CUES.deal.forEach(t => { tick(t + 0.25, 0.07); whoosh(t + 0.15, 0.22, 0.06) })

@@ -248,7 +248,7 @@ export function sceneVeil(stage) {
   // card back dims over the end of the push so it meets S4's darker halftone sky
   const backDim = el('div', { position: 'absolute', left: -BACK.w * DB / 2 + 'px', top: -BACK.h * DB / 2 + 'px', width: BACK.w * DB + 'px', height: BACK.h * DB + 'px', background: 'radial-gradient(closest-side, rgba(20,10,46,0.9), rgba(20,10,46,1))', opacity: 0, pointerEvents: 'none' }, back)
   // concept line over the mystery card (styled like the S7 captions)
-  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '440px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.55) 45%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, root)
+  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '520px', background: 'linear-gradient(180deg, rgba(11,6,32,0.000) 0%, rgba(11,6,32,0.022) 10%, rgba(11,6,32,0.083) 20%, rgba(11,6,32,0.173) 30%, rgba(11,6,32,0.282) 40%, rgba(11,6,32,0.400) 50%, rgba(11,6,32,0.518) 60%, rgba(11,6,32,0.627) 70%, rgba(11,6,32,0.717) 80%, rgba(11,6,32,0.778) 90%, rgba(11,6,32,0.800) 100%)', opacity: 0 }, root) // eased ramp: no visible top edge
   const capBox = el('div', { position: 'absolute', left: '50%', bottom: '84px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
   const eyebrow = el('div', { fontFamily: MONO, fontSize: '20px', letterSpacing: '0.26em', color: 'rgba(255,246,234,0.88)', textShadow: '0 1px 12px rgba(11,6,32,0.7)', marginBottom: '14px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Mystery card&nbsp;&nbsp;✦')
   const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '72px', lineHeight: 1.05, color: '#fff6ea', textShadow: '0 2px 30px rgba(11,6,32,0.75), 0 1px 3px rgba(11,6,32,0.6)', opacity: 0 }, capBox, 'A mystery card, until you both align.')
@@ -268,7 +268,7 @@ export function sceneVeil(stage) {
       const p = liftEase(prog(t, LIFT.a, LIFT.b))
       // photo pulls into focus from completely unrecognisable
       // (focus runs on its own slower clock so the face stays unrecognisable as the veil first clears)
-      const fb = Math.pow(1 - prog(t, LIFT.a + 0.05, 8.2), 2)
+      const fb = Math.pow(1 - prog(t, LIFT.a + 0.05, 8.05), 2)
       // aura-cam pass: print visible until the resolve, white bloom flash at RES.peak
       const auraO = 1 - ease.inOutQuad(prog(t, RES.a + 0.02, RES.b - 0.04))
       const fl = t < RES.peak ? ease.inQuad(prog(t, RES.a, RES.peak)) : 1 - ease.outQuad(prog(t, RES.peak, RES.peak + 0.2))
