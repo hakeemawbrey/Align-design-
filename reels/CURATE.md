@@ -26,7 +26,8 @@ so it has to land instantly:
   at least 4 of the picks.
 - **Variety.** Mix paintings, photographs and space. No two images that look
   alike. No text, logos, watermarks, maps, coins, objects on white, sketches,
-  museum vitrines, modern sports, or anything gory or sexual. Classical nudity
+  museum vitrines, rawpixel images (their downloads carry a tiled
+  watermark), modern sports, or anything gory or sexual. Classical nudity
   is fine only if it's not the focus of the frame.
 
 ## The file
@@ -47,7 +48,11 @@ so it has to land instantly:
 - Copy every field of a candidate from `cache/<sign>/candidates.json` (the
   urls let anyone re-download it later; `cache/` is not committed), then add
   `focus` (x, y in 0-1: the point to keep centred when cropping to 9:16) and a
-  short `note`.
+  short `note`. Optional `zoom` (default 1.0, e.g. 1.3) crops tighter so
+  `focus` can also move the subject up or down, e.g. to lift a face clear of
+  the card.
+- Plate: prefer `cache/<sign>/plate/commons.jpg` (metadata in `commons.json`,
+  fetched by `plates.py`) when it exists.
 - `plate.crop` is a box in 0-1 of the Urania's Mirror plate. Keep the
   card's portrait aspect, roughly 0.55 wide x 0.9 tall on a landscape plate, so
   the creature's head and body read; skip it to auto-centre on the figure.

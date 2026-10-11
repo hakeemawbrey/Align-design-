@@ -134,25 +134,6 @@
    "n": 183
   },
   {
-   "file": "cache/aries/cand/met-436118.jpg",
-   "focus": [
-    0.8,
-    0.45
-   ],
-   "note": "Defrance, the forge fire",
-   "id": "met-436118",
-   "source": "met",
-   "title": "The Forge",
-   "creator": "Léonard Defrance",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436118",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/ep71.93.R.jpg",
-   "w": 1801,
-   "h": 1389,
-   "query": "forge fire blacksmith",
-   "n": 41
-  },
-  {
    "file": "cache/aries/cand/aic-57996.jpg",
    "focus": [
     0.22,
@@ -209,6 +190,26 @@
    "h": 1750,
    "query": "volcano eruption",
    "n": 47
+  },
+  {
+   "file": "cache/aries/cand/ov-6a668d05-1de7-4ef6-8f16-16d2d9666e83.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "note": "Kamchatka volcano smoking under a blue night",
+   "id": "ov-6a668d05-1de7-4ef6-8f16-16d2d9666e83",
+   "source": "openverse/wikimedia",
+   "title": "Volcano Eruption in Kamchatka Russia 1993",
+   "creator": "Giorgio Galeotti (Foto di Spalle on Flickr) https://www.flickr.com/people/fotodispalle/",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=30693868",
+   "url": "https://api.openverse.org/v1/images/6a668d05-1de7-4ef6-8f16-16d2d9666e83/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Volcano_Eruption_in_Kamchatka_Russia_1993.jpg",
+   "w": 1280,
+   "h": 866,
+   "query": "volcano eruption",
+   "n": 51
   },
   {
    "file": "cache/aries/cand/ov-df5b7381-edb7-4a2c-8bc8-1262c1707f59.jpg",
@@ -305,25 +306,6 @@
    "h": 1880,
    "query": "nebula",
    "n": 100
-  },
-  {
-   "file": "cache/aries/cand/aic-896.jpg",
-   "focus": [
-    0.5,
-    0.62
-   ],
-   "note": "Troyon, flock in backlit dust",
-   "id": "aic-896",
-   "source": "aic",
-   "title": "The Road to Market",
-   "creator": "Constant Troyon (French, 1810–1865)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/896",
-   "url": "https://www.artic.edu/iiif/2/6aaa3537-abbf-f49e-877f-4d8e8e4d50c2/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 2131,
-   "query": "shepherd sheep",
-   "n": 163
   },
   {
    "file": "cache/aries/cand/met-435722.jpg",

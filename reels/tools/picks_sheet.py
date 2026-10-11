@@ -24,7 +24,7 @@ cm = render.card_rgba(card_img, int(W * render.STYLE["card_w"]))
 tiles = [np.asarray(card_img.resize((W, int(card_img.height * W / card_img.width))).crop((0, 0, W, H)))]
 for it in picks["images"]:
     bg = render.grade(Image.open(render.ensure_file(it)), cfg["grade"], W, H,
-                      tuple(it.get("focus", (0.5, 0.5))), over=1.0)
+                      tuple(it.get("focus", (0.5, 0.5))), over=1.0, zoom=it.get("zoom", 1.0))
     f = bg.astype(np.float32) / 255
     render.paste(f, cm, W / 2, H / 2, render.STYLE["card_alpha"])
     tiles.append((np.clip(f, 0, 1) * 255).astype(np.uint8))

@@ -31,11 +31,11 @@ SHOTS = 27
 TOTAL = INTRO + BEAT * SHOTS            # 18.4s, same as the reference
 
 STYLE = {
-    "card_w": 0.40,         # montage card width, fraction of frame
-    "card_alpha": 0.50,     # montage card opacity
-    "intro_steps": [0.20, 0.28, 0.40],   # card width on the three intro beats
+    "card_w": 0.36,         # montage card width, fraction of frame
+    "card_alpha": 0.46,     # montage card opacity
+    "intro_steps": [0.18, 0.26, 0.36],   # card width on the three intro beats
     "zoom": 0.06,           # push-in per shot
-    "grain": 0.10,          # grain strength (0-1 scale), a lot
+    "grain": 0.085,          # grain strength (0-1 scale), a lot
     "grain_size": 1.6,      # px
     "vignette": 0.55,
     "flicker": 0.035,
@@ -43,7 +43,7 @@ STYLE = {
     "contrast": 1.15,
     "gamma": 1.25,
     "saturation": 0.88,
-    "hit_flash": 0.85,
+    "hit_flash": 0.55,
 }
 
 
@@ -56,10 +56,15 @@ def ensure_file(item):
     return p
 
 
-def grade(im, mult, W, H, focus=(0.5, 0.5), over=1.0 + STYLE["zoom"] + 0.02):
-    """Cover-fit around a focus point, then the house grade."""
+def grade(im, mult, W, H, focus=(0.5, 0.5), over=1.0 + STYLE["zoom"] + 0.02, zoom=1.0):
+    """Cover-fit around a focus point (zoom > 1 crops tighter, so focus can move
+    the subject vertically too), then the house grade."""
     tw, th = int(W * over), int(H * over)
-    im = ImageOps.fit(im.convert("RGB"), (tw, th), Image.LANCZOS, centering=focus)
+    im = ImageOps.fit(im.convert("RGB"), (int(tw * zoom), int(th * zoom)), Image.LANCZOS, centering=focus)
+    if zoom > 1:
+        x0 = int(np.clip(focus[0] * im.width - tw / 2, 0, im.width - tw))
+        y0 = int(np.clip(focus[1] * im.height - th / 2, 0, im.height - th))
+        im = im.crop((x0, y0, x0 + tw, y0 + th))
     a = np.asarray(im, dtype=np.float32) / 255
     # contrast around mid grey, saturation, colour cast toward the sign
     a = (a - 0.5) * STYLE["contrast"] + 0.5
@@ -134,7 +139,7 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
     bgs = []
     for it in pool:
         im = Image.open(ensure_file(it))
-        bgs.append(grade(im, cfg["grade"], W, H, tuple(it.get("focus", (0.5, 0.5)))))
+        bgs.append(grade(im, cfg["grade"], W, H, tuple(it.get("focus", (0.5, 0.5))), zoom=it.get("zoom", 1.0)))
     seq = schedule(len(bgs), rng)
 
     plate = ensure_file(picks["plate"])
@@ -189,13 +194,15 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
             paste(frame, card_m, W / 2, H / 2, STYLE["card_alpha"])
             # flash on the hit, small exposure kick on every cut
             if shot == 0:
-                frame += STYLE["hit_flash"] * np.exp(-lt * BEAT * 9)
+                frame += STYLE["hit_flash"] * np.exp(-lt * BEAT * 16)
             else:
                 frame *= 1 + 0.12 * np.exp(-lt * BEAT * 18)
         frame *= vig
         frame *= 1 + rng.uniform(-STYLE["flicker"], STYLE["flicker"])
         g = grain[rng.integers(len(grain))]
-        frame += g.astype(np.float32) * (0.6 + 0.4 * (1 - np.clip(frame, 0, 1)))  # more grain in shadows
+        # grain peaks in the mids; deep blacks stay black instead of going grey
+        lum = np.clip(frame.mean(2, keepdims=True), 0, 1)
+        frame += g.astype(np.float32) * (0.35 + 2.6 * lum * (1 - lum))
         ff.stdin.write((np.clip(frame, 0, 1) * 255).astype(np.uint8).tobytes())
     ff.stdin.close()
     ff.wait()
