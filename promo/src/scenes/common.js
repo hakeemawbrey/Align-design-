@@ -2,6 +2,8 @@ import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, Ty
 
 export const W = 1920, H = 1080
 export const IMG = '../app/public/img/'
+/** captured app assets (see promo/assets/MANIFEST.md) */
+export const A = 'assets/'
 export const PEOPLE = Array.from({ length: 12 }, (_, i) => `${IMG}people/p${i + 1}.jpg`)
 
 export const SANS = "'Inter', system-ui, sans-serif"

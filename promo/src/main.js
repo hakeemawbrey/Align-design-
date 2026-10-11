@@ -30,11 +30,11 @@ async function boot() {
     [S.sceneImagine, {}],
     [S.sceneIntro, {}],
     [S.sceneVeil, {}],
-    [S.sceneBirth, { fadeIn: 0.17 }],
+    [S.sceneBirth, { fadeIn: 0.12 }],
     [S.sceneReading, { circle: 0.32 }],
     [S.sceneDeck, {}],
-    [S.sceneTagline, { fadeIn: 0.3 }],
-    [S.sceneEnd, { fadeIn: 0.3 }],
+    [S.sceneTagline, {}],
+    [S.sceneEnd, {}],
   ]
   const scenes = mk.map(([f, o], i) => { const s = f(stage, assets); s.root.style.zIndex = String(10 + i); stage.appendChild(fx); return Object.assign(s, o) })
   stage.appendChild(fx)

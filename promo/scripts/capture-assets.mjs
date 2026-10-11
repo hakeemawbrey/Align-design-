@@ -308,7 +308,10 @@ if (want('cards')) {
     await page_click_cta(p)
     await p.waitForTimeout(3500)
     const card = await find(p, `return el.style.width === '236px' && el.style.height === '316px' && el.style.borderRadius === '20px'`)
-    await isolated(p, 'card-founding', [card], { pad: 40 })
+    // straighten it: drop the -3deg stamp rotation and the idle bob
+    const bob = card ? (await card.evaluateHandle((c) => c.parentElement)).asElement() : null
+    const stampEl = card ? (await card.evaluateHandle((c) => c.parentElement.parentElement)).asElement() : null
+    await isolated(p, 'card-founding', [card], { pad: 40, flatten: [bob, stampEl] })
     await close(p)
   }
 }
