@@ -113,7 +113,7 @@ export default function BirthTime({ birth, time, setTime, next }: {
 
             {/* segmented control */}
             <motion.div {...rise(0.4, 10)} style={{
-              position: 'absolute', top: 420, left: 30, width: 330, height: 40, borderRadius: 20, padding: 3,
+              position: 'absolute', top: 420, left: 24, width: 342, height: 40, borderRadius: 20, padding: 3,
               display: 'flex', background: 'rgba(84,44,170,0.65)', border: '1px solid rgba(154,123,224,0.4)',
             }}>
               {DAY_PARTS.map((p) => {
@@ -121,10 +121,10 @@ export default function BirthTime({ birth, time, setTime, next }: {
                 return (
                   <button key={p.id} onClick={() => pick(p.id)} className="mono" style={{
                     flex: 1, position: 'relative', borderRadius: 17, fontSize: 9.5, letterSpacing: '0.12em', textTransform: 'uppercase',
-                    color: on ? '#1a0f3a' : 'var(--label-1)',
+                    color: on ? 'var(--chrome-ink)' : 'var(--label-1)',
                   }}>
                     {on && <motion.span layoutId="daypart" transition={{ type: 'spring', stiffness: 400, damping: 32 }}
-                      style={{ position: 'absolute', inset: 0, borderRadius: 17, background: '#f4f0dc', boxShadow: '0 0 0 2px #cfe86a, 0 0 14px rgba(207,232,106,0.5)' }} />}
+                      style={{ position: 'absolute', inset: 0, borderRadius: 17, background: 'var(--chrome)', boxShadow: '0 0 14px rgba(248,237,255,0.45)' }} />}
                     <span style={{ position: 'relative' }}>{p.label}</span>
                   </button>
                 )

@@ -12,7 +12,7 @@ import EventCard from '../components/deck/EventCard'
 import { EVENTS, EVENT_ORDER } from '../data/draws'
 import ProfileCard from '../components/deck/ProfileCard'
 import { DeckHeader, Counter, SwipeLabels, StackBacks } from '../components/deck/DeckChrome'
-import { PLUS_PEOPLE } from '../data/draws'
+import { PLUS_PEOPLE, PLUS_DRAWS, FREE_PEOPLE, PEOPLE_PER_DRAW } from '../data/draws'
 import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, ELEMENT_SKY } from '../components/deck/fx'
 
 const SW = CARD_W * CARD_SCALE
@@ -141,8 +141,15 @@ export default function Dealing({ go }: ScreenProps) {
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: settled ? 1 : 0 }} transition={{ duration: 0.5 }} style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
         <SwipeLabels />
-        <div style={{ position: 'absolute', top: 707, left: 0, right: 0, textAlign: 'center', fontSize: 13, color: 'var(--label-2)' }}>
-          Draw 1 of 3&nbsp; · &nbsp;five people, then an event <span style={{ color: 'var(--align)' }}>✦</span>
+        <div style={{ position: 'absolute', top: 703, left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 7 }}>
+          <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)', marginRight: 2 }}>DRAW 1/{dealSession.get().alignPlus ? PLUS_DRAWS : Math.ceil(Math.min(DECK.length, FREE_PEOPLE) / PEOPLE_PER_DRAW)}</span>
+          {Array.from({ length: PEOPLE_PER_DRAW }, (_, i) => (
+            <span key={i} style={{
+              width: 7, height: 10, borderRadius: 2, background: i === 0 ? '#efe6d6' : 'transparent',
+              border: '1px solid rgba(239,230,214,0.55)', boxShadow: i === 0 ? '0 0 8px rgba(239,230,214,0.8)' : 'none', transform: i === 0 ? 'scale(1.25)' : undefined,
+            }} />
+          ))}
+          <span style={{ fontSize: 12, lineHeight: 1, color: 'rgba(242,199,92,0.45)' }}>✦</span>
         </div>
       </motion.div>
 

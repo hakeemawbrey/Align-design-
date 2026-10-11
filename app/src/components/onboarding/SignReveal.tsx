@@ -250,9 +250,9 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
               className="mono"
               style={{
                 position: 'absolute', right: -18, top: -12, zIndex: 6, padding: '5px 10px', borderRadius: 6,
-                background: 'var(--gold-foil)', backgroundSize: '200% 100%', animation: 'foil-sweep 3s linear infinite',
-                color: '#3a2a08', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.2em',
-                boxShadow: '0 0 18px rgba(242,199,92,0.7), 0 4px 10px rgba(0,0,0,0.4)',
+                background: 'var(--chrome)',
+                color: 'var(--chrome-ink)', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.2em',
+                boxShadow: '0 0 18px rgba(248,237,255,0.55), 0 4px 10px rgba(0,0,0,0.4)',
               }}
             >
               ✦ YOUR CARD

@@ -46,27 +46,27 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
         style={{
           position: 'absolute', left: 0, right: 0, bottom: 0, height: 640, zIndex: 81, borderRadius: '26px 26px 0 0',
           background: 'linear-gradient(180deg, #24124f, #120a2a)', borderTop: '1px solid rgba(201,182,240,0.35)',
-          padding: '12px 18px 0', display: 'flex', flexDirection: 'column',
+          padding: '12px 24px 0', display: 'flex', flexDirection: 'column',
         }}
       >
         <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(201,182,240,0.4)', margin: '0 auto 12px' }} />
-        <div style={{ display: 'flex', alignItems: 'baseline' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <div className="h-display" style={{ fontSize: 26, flex: 1 }}>Your hand</div>
           {onBinder ? (
-            <button className="mono" onClick={() => { sfx.tap(); onBinder() }} style={{ fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)', padding: '5px 10px', borderRadius: 12 }}>YOUR BINDER ›</button>
+            <button className="mono" onClick={() => { sfx.tap(); onBinder() }} style={{ height: 30, fontSize: 9, letterSpacing: '0.16em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)', padding: '0 12px', borderRadius: 999 }}>YOUR BINDER ›</button>
           ) : (
             <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{owned.length} / {TALK_CARDS.length} COLLECTED</span>
           )}
         </div>
-        <div style={{ fontSize: 13, color: 'var(--label-2)', marginTop: 4 }}>
+        <div style={{ fontSize: 13, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 8 }}>
           Play one to {them}. You both answer, and neither answer shows until you both have.
         </div>
 
         {/* tabs */}
-        <div style={{ marginTop: 12, height: 34, padding: 3, borderRadius: 999, display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)' }}>
+        <div style={{ marginTop: 14, height: 36, padding: 3, borderRadius: 999, display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)' }}>
           {([['today', 'Today'], ['hand', 'Your cards'], ...(onPlace ? [['places', 'Places']] as const : []), ['packs', `Packs${packs.length ? ` · ${packs.length}` : ''}`]] as const).map(([id, label]) => (
-            <button key={id} onClick={() => { sfx.tap(); setTab(id) }} style={{ position: 'relative', flex: 1, fontSize: 13, color: tab === id ? '#1a0f3a' : 'var(--label-2)' }}>
-              {tab === id && <motion.span layoutId="hand-tab" style={{ position: 'absolute', inset: 0, borderRadius: 999, background: '#f4f0dc' }} />}
+            <button key={id} onClick={() => { sfx.tap(); setTab(id) }} style={{ position: 'relative', flex: 1, fontSize: 13, color: tab === id ? 'var(--chrome-ink)' : 'var(--label-2)' }}>
+              {tab === id && <motion.span layoutId="hand-tab" transition={{ type: 'spring', stiffness: 420, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: 999, background: 'var(--chrome)' }} />}
               <span style={{ position: 'relative' }}>{label}</span>
             </button>
           ))}
@@ -93,9 +93,9 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
               <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 10, scrollbarWidth: 'none' }}>
                 {(['all', ...Object.keys(TOPICS)] as (TalkTopic | 'all')[]).map((k) => (
                   <button key={k} onClick={() => { sfx.tap(); setTopic(k) }} style={{
-                    flexShrink: 0, height: 28, padding: '0 11px', borderRadius: 14, fontSize: 12, whiteSpace: 'nowrap',
-                    color: topic === k ? '#1a0f3a' : 'var(--label-1)',
-                    background: topic === k ? (k === 'all' ? '#f4f0dc' : TOPICS[k].color) : 'rgba(48,32,92,0.6)',
+                    flexShrink: 0, height: 30, padding: '0 12px', borderRadius: 999, fontSize: 12, whiteSpace: 'nowrap',
+                    color: topic === k ? 'var(--chrome-ink)' : 'var(--label-1)',
+                    background: topic === k ? 'var(--chrome)' : 'rgba(48,32,92,0.6)',
                     border: `1px solid ${k === 'all' ? 'rgba(179,166,196,0.3)' : `${TOPICS[k].color}66`}`,
                   }}>{k === 'all' ? 'All' : `${TOPICS[k].glyph} ${TOPICS[k].label}`}</button>
                 ))}
@@ -119,20 +119,23 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
               <div style={{ display: 'flex', gap: 6 }}>
                 {WHENS.map((w) => (
                   <button key={w} onClick={() => { sfx.tap(); setWhen(w) }} style={{
-                    flex: 1, height: 30, borderRadius: 15, fontSize: 12, whiteSpace: 'nowrap',
-                    color: when === w ? '#1a0f3a' : 'var(--label-1)', background: when === w ? '#f4f0dc' : 'rgba(48,32,92,0.6)', border: '1px solid rgba(179,166,196,0.25)',
+                    flex: 1, height: 30, borderRadius: 999, fontSize: 12, whiteSpace: 'nowrap',
+                    color: when === w ? 'var(--chrome-ink)' : 'var(--label-1)', background: when === w ? 'var(--chrome)' : 'rgba(48,32,92,0.6)', border: '1px solid rgba(179,166,196,0.25)',
                   }}>{w}</button>
                 ))}
               </div>
               {PLACES.map((p) => (
                 <motion.button key={p.id} whileTap={{ scale: 0.98 }} onClick={() => { sfx.align(); onPlace(p.id, when); onClose() }} style={{
                   display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px', borderRadius: 14, textAlign: 'left',
-                  background: 'rgba(48,32,92,0.5)', border: `1px solid ${p.partner ? 'rgba(242,213,138,0.5)' : 'rgba(179,166,196,0.2)'}`,
+                  background: 'rgba(48,32,92,0.5)', border: `1px solid ${p.partner ? 'rgba(248,237,255,0.4)' : 'rgba(179,166,196,0.2)'}`,
                 }}>
                   <span style={{ fontSize: 22, width: 30, textAlign: 'center' }}>{p.emoji}</span>
                   <span style={{ flex: 1, minWidth: 0 }}>
                     <span style={{ display: 'block', fontSize: 14.5, color: 'var(--label-1)' }}>{p.name} <span style={{ fontSize: 11.5, color: 'var(--label-3)' }}>· {p.area}</span></span>
-                    <span style={{ display: 'block', fontSize: 12, color: p.partner ? '#f2d58a' : 'var(--label-2)', marginTop: 2 }}>{p.partner ? `✦ Partner · check in for “${p.exclusive}”` : talkPlaces.includes(p.id) ? `✦ Yours · ${p.line}` : p.line}</span>
+                    <span style={{ display: 'block', fontSize: 12, color: p.partner ? 'var(--label-1)' : 'var(--label-2)', marginTop: 2 }}>
+                      {(p.partner || talkPlaces.includes(p.id)) && <span style={{ color: 'var(--align)' }}>✦ </span>}
+                      {p.partner ? `Partner · check in for “${p.exclusive}”` : talkPlaces.includes(p.id) ? `Yours · ${p.line}` : p.line}
+                    </span>
                   </span>
                 </motion.button>
               ))}

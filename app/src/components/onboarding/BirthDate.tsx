@@ -58,7 +58,7 @@ export default function BirthDate({ birth, setBirth, next }: { birth: BD; setBir
 
       {/* wheel picker */}
       <motion.div {...rise(0.45, 20)} style={{
-        position: 'absolute', top: 372, left: 20, width: 350, height: WHEEL_H + 6, borderRadius: 18,
+        position: 'absolute', top: 372, left: 24, width: 342, height: WHEEL_H + 6, borderRadius: 18,
         background: 'linear-gradient(180deg, rgba(40,26,78,0.75), rgba(30,18,64,0.75))',
         border: '1px solid rgba(154,123,224,0.35)',
         boxShadow: '0 20px 50px rgba(5,2,15,0.45), inset 0 1px 0 rgba(255,255,255,0.05)',

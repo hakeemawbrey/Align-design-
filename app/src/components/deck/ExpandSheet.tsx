@@ -36,10 +36,10 @@ export default function ExpandSheet({ profile, onClose, onAlign, onRelease }: Pr
       style={{ position: 'absolute', inset: 0, zIndex: 60 }}
     >
       <Starfield aurora="#3a1d80" warm="#4a1f5a" count={60} seed={11} />
-      <div className="mono" style={{ position: 'absolute', top: 62, left: 0, right: 0, textAlign: 'center', fontSize: 10.5, letterSpacing: '0.22em', color: 'var(--label-2)' }}>
+      <div className="mono" style={{ position: 'absolute', top: 70, left: 0, right: 0, textAlign: 'center', fontSize: 10.5, letterSpacing: '0.22em', color: 'var(--label-2)' }}>
         {pr.cap} CARD&nbsp; · &nbsp;{profile.serial}/∞
       </div>
-      <button onClick={() => { sfx.tap(); onClose() }} aria-label="Close" style={{ position: 'absolute', right: 26, top: 56, width: 30, height: 30, display: 'grid', placeItems: 'center' }}>
+      <button onClick={() => { sfx.tap(); onClose() }} aria-label="Close" style={{ position: 'absolute', right: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center' }}>
         <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="#b3a6c4" strokeWidth="1.6" strokeLinecap="round" /></svg>
       </button>
 
@@ -63,7 +63,7 @@ export default function ExpandSheet({ profile, onClose, onAlign, onRelease }: Pr
         initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
         transition={{ delay: 0.08, type: 'spring', stiffness: 260, damping: 26 }}
         style={{
-          position: 'absolute', left: 28, right: 28, top: 404, height: 258, borderRadius: 22, padding: 5,
+          position: 'absolute', left: 24, right: 24, top: 404, height: 254, borderRadius: 22, padding: 5,
           border: '1px solid rgba(179,166,196,0.45)',
           background: 'linear-gradient(160deg, rgba(40,26,78,0.75), rgba(30,18,64,0.85) 60%, rgba(60,30,110,0.8))',
           boxShadow: '0 20px 50px rgba(5,2,15,0.5)',
@@ -90,12 +90,12 @@ export default function ExpandSheet({ profile, onClose, onAlign, onRelease }: Pr
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
         whileTap={{ scale: 0.96 }}
         onClick={() => onAlign()}
-        style={{ position: 'absolute', left: 38, top: 690, width: 314, fontSize: 20 }}
+        style={{ position: 'absolute', left: 38, top: 694, width: 314, fontSize: 20 }}
       >
         Align — flip the card <span className="spark">✦</span>
       </motion.button>
       <button className="serif italic" onClick={() => onRelease()}
-        style={{ position: 'absolute', left: 0, right: 0, top: 760, textAlign: 'center', fontSize: 16, color: 'var(--label-3)' }}>
+        style={{ position: 'absolute', left: 95, right: 95, top: 756, height: 40, textAlign: 'center', fontSize: 16, color: 'var(--label-2)' }}>
         Release this card
       </button>
     </motion.div>

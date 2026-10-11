@@ -6,7 +6,23 @@ import { READINGS } from './readings'
 
 /* ───────────────────────── header ───────────────────────── */
 
-export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () => void; onSky: () => void; onMore?: () => void; photo: string; name: string }) {
+export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () => void; onSky?: () => void; onMore?: () => void; photo: string; name: string }) {
+  const who = (
+    <>
+      <div style={{
+        width: 30, height: 43, borderRadius: 5, padding: 2,
+        border: '1.5px solid #e163d6', background: '#2a1640',
+        boxShadow: '0 0 12px rgba(225, 99, 214, 0.45)',
+        display: 'flex', flexDirection: 'column', gap: 2,
+      }}>
+        <img src={photo} alt={name} style={{ width: '100%', height: 26, objectFit: 'cover', objectPosition: '50% 25%', borderRadius: 2 }} />
+        <div style={{ height: 2, width: '80%', borderRadius: 1, background: 'rgba(239,230,214,0.45)', marginLeft: 1 }} />
+        <div style={{ height: 2, width: '55%', borderRadius: 1, background: 'rgba(239,230,214,0.25)', marginLeft: 1 }} />
+      </div>
+      <span className="serif italic" style={{ fontSize: 23, color: 'var(--label-1)' }}>{name}</span>
+    </>
+  )
+  const whoStyle: React.CSSProperties = { position: 'absolute', left: 60, top: 10, display: 'flex', alignItems: 'center', gap: 10 }
   return (
     <div style={{ position: 'absolute', top: 54, left: 0, right: 0, height: 64, borderBottom: '1px solid rgba(179,166,196,0.16)', zIndex: 5 }}>
       <motion.button
@@ -14,48 +30,38 @@ export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () 
         whileHover={{ x: -2 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Back"
-        style={{ position: 'absolute', left: 10, top: 14, width: 32, height: 36, display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}
+        style={{ position: 'absolute', left: 16, top: 12, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)' }}
       >
-        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 2 2 10l8 8" /></svg>
+        <svg width="11" height="18" viewBox="0 0 11 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 1.5 2 9l7.5 7.5" /></svg>
       </motion.button>
 
-      <motion.button
-        onClick={onSky}
-        whileHover={{ scale: 1.04 }}
-        style={{ position: 'absolute', left: 46, top: 10, display: 'flex', alignItems: 'center', gap: 10 }}
-      >
-        <div style={{
-          width: 30, height: 43, borderRadius: 5, padding: 2,
-          border: '1.5px solid #e163d6', background: '#2a1640',
-          boxShadow: '0 0 12px rgba(225, 99, 214, 0.45)',
-          display: 'flex', flexDirection: 'column', gap: 2,
-        }}>
-          <img src={photo} alt={name} style={{ width: '100%', height: 26, objectFit: 'cover', objectPosition: '50% 25%', borderRadius: 2 }} />
-          <div style={{ height: 2, width: '80%', borderRadius: 1, background: 'rgba(239,230,214,0.45)', marginLeft: 1 }} />
-          <div style={{ height: 2, width: '55%', borderRadius: 1, background: 'rgba(239,230,214,0.25)', marginLeft: 1 }} />
-        </div>
-        <span className="serif italic" style={{ fontSize: 23, color: 'var(--label-1)' }}>{name}</span>
-      </motion.button>
+      {onSky ? (
+        <motion.button onClick={onSky} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} style={whoStyle}>{who}</motion.button>
+      ) : (
+        <div style={whoStyle}>{who}</div>
+      )}
 
       {onMore && (
         <motion.button onClick={onMore} whileTap={{ scale: 0.9 }} aria-label="Report or block"
-          style={{ position: 'absolute', right: 76, top: 14, width: 36, height: 36, display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
+          style={{ position: 'absolute', right: onSky ? 68 : 16, top: 12, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-2)' }}>
           <svg width="18" height="4" viewBox="0 0 18 4" fill="currentColor"><circle cx="2" cy="2" r="1.8" /><circle cx="9" cy="2" r="1.8" /><circle cx="16" cy="2" r="1.8" /></svg>
         </motion.button>
       )}
 
-      <motion.button
-        onClick={onSky}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.92 }}
-        aria-label="Cosmic alignment"
-        style={{ position: 'absolute', right: 30, top: 18, display: 'flex', alignItems: 'center', gap: 10, color: 'var(--label-3)' }}
-      >
-        <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} style={{ width: 24, height: 24 }}>
-          <AlignMark size={24} dots={false} strokeOpacity={0.95} strokeWidth={2.4} />
-        </motion.div>
-        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="m1 1 5 5-5 5" /></svg>
-      </motion.button>
+      {onSky && (
+        <motion.button
+          onClick={onSky}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.92 }}
+          aria-label="Cosmic alignment"
+          style={{ position: 'absolute', right: 16, top: 12, width: 48, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, color: 'var(--label-3)' }}
+        >
+          <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} style={{ width: 24, height: 24 }}>
+            <AlignMark size={24} dots={false} strokeOpacity={0.95} strokeWidth={2.4} />
+          </motion.div>
+          <svg width="7" height="12" viewBox="0 0 7 12" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="m1 1 5 5-5 5" /></svg>
+        </motion.button>
+      )}
     </div>
   )
 }

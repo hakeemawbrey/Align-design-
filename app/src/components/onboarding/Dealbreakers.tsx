@@ -45,7 +45,7 @@ export default function Dealbreakers({ picked, setPicked, next }: { picked: Pick
         key={shake}
         animate={shake ? { x: [0, -6, 6, -4, 4, 0] } : undefined}
         transition={{ duration: 0.35 }}
-        style={{ position: 'absolute', top: 262, left: 22, width: 346, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8 }}
+        style={{ position: 'absolute', top: 262, left: 24, width: 342, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8 }}
       >
         {all.map((p, i) => {
           const sel = on(p.id)
@@ -55,13 +55,13 @@ export default function Dealbreakers({ picked, setPicked, next }: { picked: Pick
               whileTap={{ scale: 0.94 }}
               style={{
                 height: 34, padding: '0 14px', borderRadius: 17, fontSize: 13, display: 'inline-flex', alignItems: 'center', gap: 5,
-                color: 'var(--label-1)',
-                background: sel ? 'rgba(90,80,30,0.45)' : 'rgba(48,32,92,0.65)',
-                border: sel ? '1.3px solid #d8c860' : '1px solid rgba(154,123,224,0.4)',
-                boxShadow: sel ? '0 0 14px rgba(216,200,96,0.35)' : 'none',
+                color: sel ? 'var(--chrome-ink)' : 'var(--label-1)',
+                background: sel ? 'var(--chrome)' : 'rgba(48,32,92,0.65)',
+                border: sel ? '1px solid rgba(255,255,255,0.7)' : '1px solid rgba(154,123,224,0.4)',
+                boxShadow: sel ? '0 0 14px rgba(248,237,255,0.35)' : 'none',
                 transition: 'background .2s, border-color .2s, box-shadow .2s',
               }}>
-              {sel && <span style={{ color: '#f2e48a' }}>✓</span>}{p.chip}
+              {sel && <span style={{ color: 'var(--chrome-ink)' }}>✓</span>}{p.chip}
             </motion.button>
           )
         })}

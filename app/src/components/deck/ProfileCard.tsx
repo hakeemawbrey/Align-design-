@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useLayoutEffect, useRef, useState } from 'react'
 import { motion, type MotionValue } from 'framer-motion'
 import type { Profile } from '../../data/profiles'
 import { SIGNS, ELEMENT_COLOR } from '../../data/signs'
@@ -18,6 +18,8 @@ interface Props {
 }
 
 const KIND_COLOR = { push: 'var(--rub)', pull: 'var(--spark)', align: 'var(--align)' } as const
+/** room for the sign row: card width minus both 32px insets */
+const ROW_MAX = CARD_W - 64
 const KIND_ORDER = ['push', 'pull', 'align'] as const
 
 /** pull tiers, rarest first; Rare pull gets the holo treatment */
@@ -74,6 +76,13 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
   const photoSrc = profile.photo ?? sign.figureImg
   const isPhoto = !!profile.photo
   const showPhoto = peek === 'open'
+  // long sign + moon names (Capricorn · Taurus moon) shrink the row to fit inside the frame
+  const rowRef = useRef<HTMLDivElement>(null)
+  const [rowFit, setRowFit] = useState(1)
+  useLayoutEffect(() => {
+    const w = rowRef.current?.offsetWidth ?? 0
+    setRowFit(w > ROW_MAX ? ROW_MAX / w : 1)
+  }, [sign.name, moon.name, sign.element])
 
   return (
     <div className={profile.founder ? 'holo-frame' : undefined} style={{
@@ -162,15 +171,15 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
         </div>
 
         {/* sign + chips */}
-        <div style={{ position: 'absolute', left: 32, top: 216, display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div ref={rowRef} style={{ position: 'absolute', left: 32, top: 216, display: 'flex', alignItems: 'center', gap: 10, whiteSpace: 'nowrap', width: 'max-content', transform: rowFit < 1 ? `scale(${rowFit})` : undefined, transformOrigin: 'left center' }}>
           <span className="serif" style={{ fontSize: 18, letterSpacing: '0.08em', color: sign.color, textTransform: 'uppercase', textShadow: `0 0 10px ${sign.color}66` }}>
             {sign.name}
           </span>
-          <span className="chip" style={{ color: elColor, height: 22, padding: '0 9px 0 3px', borderColor: `${elColor}cc`, background: `${elColor}14` }}>
+          <span className="chip" style={{ flexShrink: 0, color: elColor, height: 22, padding: '0 9px 0 3px', borderColor: `${elColor}cc`, background: `${elColor}14` }}>
             <Sphere color={elColor} light="#e8fbff" />
             {sign.element}
           </span>
-          <span className="chip" style={{ color: 'var(--label-2)', height: 22, padding: '0 9px 0 3px', borderColor: 'rgba(179,166,196,0.55)' }}>
+          <span className="chip" style={{ flexShrink: 0, color: 'var(--label-2)', height: 22, padding: '0 9px 0 3px', borderColor: 'rgba(179,166,196,0.55)' }}>
             <Sphere color="#8f7be8" light="#ece6ff" />
             {moon.name} moon
           </span>

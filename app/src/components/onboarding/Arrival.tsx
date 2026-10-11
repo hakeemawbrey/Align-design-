@@ -85,7 +85,7 @@ export default function Arrival({ next, onHaveChart }: { next: () => void; onHav
 
       <motion.h1 className="h-display" {...rise(0.55)}
         style={{ position: 'absolute', top: 334, left: 30, width: 330, textAlign: 'center', fontSize: 34, lineHeight: 1.2, color: 'var(--label-1)' }}>
-        The sky already wrote you down.
+        The sky already<br />wrote you down.
       </motion.h1>
       <motion.p className="serif" {...rise(0.7)}
         style={{ position: 'absolute', top: 430, left: 40, width: 310, textAlign: 'center', fontSize: 16.5, lineHeight: 1.65, color: 'var(--label-2)' }}>

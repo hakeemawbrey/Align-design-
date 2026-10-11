@@ -415,7 +415,7 @@ export default function Deck({ go }: ScreenProps) {
   const playSaved = (i: number) => {
     const id = savedEvents[i]
     if (!id) return
-    if (!energize(-EVENT_COST)) { sfx.deny(); showToast(`Playing an event takes ${EVENT_COST} energy. Talk to a match to earn more`, 2400); return }
+    if (!energize(-EVENT_COST)) { sfx.deny(); showToast(`Events take ${EVENT_COST} energy · talk to a match to earn more`, 2400); return }
     const left = [...savedEvents]
     left.splice(i, 1)
     session.patch({ savedEvents: left })
@@ -431,12 +431,12 @@ export default function Deck({ go }: ScreenProps) {
       else if (dir > 0) {
         session.patch({ savedEvents: [...session.get().savedEvents, slot.event.id] })
         sfx.deny()
-        later(() => showToast(`Not enough energy, so ${slot.event.title} is saved. Talk to a match to earn more`, 2600), 200)
+        later(() => showToast(`Not enough energy · ${slot.event.title} saved to your hand`, 2600), 200)
       } else {
         // saved for later: it goes to your hand, playable any time from the deck screen
         session.patch({ savedEvents: [...session.get().savedEvents, slot.event.id] })
         sfx.flip()
-        later(() => showToast(`${slot.event.title} saved · play it any time from your saved cards, up top`, 2200), 200)
+        later(() => showToast(`${slot.event.title} saved to your hand, up top`, 2200), 200)
       }
       return
     }
@@ -656,19 +656,19 @@ export default function Deck({ go }: ScreenProps) {
             <motion.div key={toast.id}
               initial={{ opacity: 0, y: 10, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6 }}
               transition={{ type: 'spring', stiffness: 420, damping: 24 }}
-              style={{ position: 'absolute', top: 718, left: 0, right: 0, display: 'flex', justifyContent: 'center' }}>
+              style={{ position: 'absolute', bottom: 92, left: 24, right: 24, display: 'flex', justifyContent: 'center' }}>
               <span style={{
-                display: 'inline-flex', alignItems: 'center', gap: 8, height: 32, padding: '0 16px', borderRadius: 999,
-                background: 'rgba(52,35,95,0.8)', border: '1px solid rgba(242,199,92,0.45)', boxShadow: '0 0 18px rgba(242,199,92,0.2)',
-                fontSize: 13, color: 'var(--label-1)', backdropFilter: 'blur(10px)',
+                display: 'inline-flex', alignItems: 'center', gap: 8, minHeight: 32, padding: '7px 16px', borderRadius: 999,
+                background: 'rgba(52,35,95,0.8)', border: '1px solid rgba(179,166,196,0.25)', boxShadow: '0 8px 24px rgba(5,2,15,0.35)',
+                fontSize: 13, lineHeight: 1.35, textAlign: 'center', color: 'var(--label-1)', backdropFilter: 'blur(10px)',
               }}>
-                <span style={{ color: '#f2c75c' }}>✦</span>{toast.text}
+                <span style={{ color: 'var(--align)', flexShrink: 0 }}>✦</span>{toast.text}
               </span>
             </motion.div>
           ) : (
             <motion.div key="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               style={{ position: 'absolute', top: 726, left: 0, right: 0, textAlign: 'center', fontSize: 12.5, color: 'var(--label-2)' }}>
-              {slot?.kind === 'event' ? <>Every sixth card is an event&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>right to play</span>&nbsp; · &nbsp;left to save it</>
+              {slot?.kind === 'event' ? <>Event card&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>right to play it</span>&nbsp; · &nbsp;left to save it</>
                 : alignPlus ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left this week&nbsp; · &nbsp;<span style={{ color: 'var(--align)' }}>Align+</span></>
                 : peeks > 0 ? <>Hold the card to peek&nbsp; · &nbsp;{peeks} left</> : <>No peeks left tonight&nbsp; · &nbsp;more at 11:11</>}
             </motion.div>
@@ -756,11 +756,11 @@ function PeekUpsell({ onClose, onUpgrade }: { onClose: () => void; onUpgrade: ()
       <motion.div onClick={(e) => e.stopPropagation()}
         initial={{ y: 340 }} animate={{ y: 0 }} exit={{ y: 360 }} transition={{ type: 'spring', stiffness: 260, damping: 30 }}
         style={{
-          position: 'absolute', left: 0, right: 0, bottom: 0, padding: '22px 24px 40px', borderRadius: '26px 26px 0 0', textAlign: 'center',
+          position: 'absolute', left: 0, right: 0, bottom: 0, padding: '12px 24px 34px', borderRadius: '26px 26px 0 0', textAlign: 'center',
           background: 'radial-gradient(80% 60% at 50% 0%, rgba(242,199,92,0.18), transparent 70%), linear-gradient(180deg, #2a1a5a, #160b36)',
           borderTop: '1px solid rgba(242,199,92,0.45)', boxShadow: '0 -20px 50px rgba(0,0,0,0.5)',
         }}>
-        <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.4)', margin: '0 auto 18px' }} />
+        <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.4)', margin: '0 auto 24px' }} />
         <div style={{ position: 'relative', width: 64, height: 64, margin: '0 auto' }}>
           <svg width="64" height="64" viewBox="0 0 64 64" style={{ position: 'absolute', inset: 0 }}>
             <circle cx="32" cy="32" r="27" fill="rgba(11,6,32,0.6)" stroke="rgba(242,199,92,0.3)" strokeWidth="3" />
@@ -768,14 +768,14 @@ function PeekUpsell({ onClose, onUpgrade }: { onClose: () => void; onUpgrade: ()
           <div className="serif italic" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontSize: 30, color: '#f2c75c', textShadow: '0 0 12px rgba(242,199,92,0.7)' }}>0</div>
         </div>
         <div className="mono" style={{ marginTop: 14, fontSize: 10, letterSpacing: '0.24em', color: 'var(--align)' }}>OUT OF PEEKS TONIGHT</div>
-        <div className="h-display" style={{ fontSize: 28, marginTop: 8 }}>Keep looking with Align+.</div>
+        <div className="h-display" style={{ fontSize: 26, marginTop: 8 }}>Keep looking with Align+.</div>
         <div className="serif" style={{ fontSize: 16, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 8 }}>
           Free nights come with three peeks. Align+ gives you 33 peeks a week and 45 cards a night.
         </div>
         <button className="chrome-cta" style={{ marginTop: 22 }} onClick={() => { sfx.tap(); onUpgrade() }}>
           Start 3 days free <span className="spark">✦</span>
         </button>
-        <button onClick={() => { sfx.tap(); onClose() }} style={{ display: 'block', margin: '14px auto 0', fontSize: 14, color: 'var(--label-2)' }}>
+        <button onClick={() => { sfx.tap(); onClose() }} style={{ display: 'block', margin: '8px auto 0', height: 40, padding: '0 16px', fontSize: 14, color: 'var(--label-2)' }}>
           Not now — 3 more at 11:11
         </button>
       </motion.div>

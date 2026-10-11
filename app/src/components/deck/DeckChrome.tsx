@@ -99,7 +99,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
       transition={{ duration: 0.3 }}
       style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 150, zIndex: 20, pointerEvents: hidden ? 'none' : 'auto' }}
     >
-      <div style={{ position: 'absolute', left: 26, top: 64, height: 44, width: 300 }}>
+      <div style={{ position: 'absolute', left: 24, top: 64, height: 44, width: 300 }}>
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.div key={title} className="h-display"
             initial={{ opacity: 0, y: 10, filter: 'blur(6px)' }}

@@ -87,26 +87,26 @@ export default function FaceLast({ sun, moon, rising, age, dealbreakers, next }:
       <motion.div
         initial={{ opacity: 0, y: 30, rotate: -3 }} animate={{ opacity: 1, y: 0, rotate: -1.5 }}
         transition={{ delay: 0.35, duration: 0.8, ease: EASE }}
-        style={{ position: 'absolute', top: 238, left: 26, width: W, cursor: 'pointer' }}
+        style={{ position: 'absolute', top: 238, left: 24, width: W, cursor: 'pointer' }}
         onClick={peek}
       >
         <div style={{ transform: `scale(${S})`, transformOrigin: '0 0', width: CARD_W, height: 527 * S }}>
           <ProfileCard profile={me} peek={open ? 'open' : 'none'} />
         </div>
-        <div className="mono" style={{ marginTop: 8, textAlign: 'center', fontSize: 7.5, letterSpacing: '0.16em', color: open ? '#f2c75c' : 'var(--label-3)' }}>
-          {open ? 'WHAT A MATCH SEES' : 'TAP TO SEE WHAT A MATCH SEES'}
+        <div className="mono" style={{ marginTop: 8, textAlign: 'center', fontSize: 8, letterSpacing: '0.16em', color: open ? 'var(--label-1)' : 'var(--label-3)' }}>
+          {open ? 'WHAT A MATCH SEES' : 'TAP TO PREVIEW'}
         </div>
       </motion.div>
 
       {/* the editable bits */}
       <motion.div
         initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5, duration: 0.6, ease: EASE }}
-        style={{ position: 'absolute', top: 240, left: 192, width: 172, display: 'flex', flexDirection: 'column', gap: 9 }}
+        style={{ position: 'absolute', top: 240, left: 190, width: 176, display: 'flex', flexDirection: 'column', gap: 9 }}
       >
         <label className="mono" style={{ fontSize: 8, letterSpacing: '0.18em', color: 'var(--label-3)' }}>FIRST NAME</label>
         <input value={name} maxLength={24} onChange={(e) => setName(e.target.value)} style={field} autoComplete="given-name" />
         <label className="mono" style={{ fontSize: 8, letterSpacing: '0.18em', color: 'var(--label-3)', marginTop: 2 }}>ONE LINE ABOUT YOU</label>
-        <textarea value={blurb} maxLength={90} rows={3} onChange={(e) => setBlurb(e.target.value)}
+        <textarea value={blurb} maxLength={90} rows={4} onChange={(e) => setBlurb(e.target.value)}
           style={{ ...field, height: 'auto', padding: '9px 12px', fontSize: 13.5, lineHeight: 1.3, resize: 'none' }} />
         <input ref={file} type="file" accept="image/*" hidden onChange={(e) => void pick(e.target.files?.[0])} />
         <button onClick={() => { sfx.tap(); file.current?.click() }} disabled={uploading}

@@ -138,9 +138,9 @@ export function BackChevron({ onClick }: { onClick: () => void }) {
       animate={{ opacity: 1 }}
       whileHover={{ scale: 1.12, x: -2 }}
       whileTap={{ scale: 0.9 }}
-      style={{ position: 'absolute', left: 14, top: 58, width: 40, height: 40, display: 'grid', placeItems: 'center', zIndex: 50 }}
+      style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', zIndex: 50 }}
     >
-      <svg width="12" height="20" viewBox="0 0 12 20"><path d="M10 2 2 10l8 8" fill="none" stroke="#efe6d6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      <svg width="11" height="18" viewBox="0 0 11 18"><path d="M9.5 1.5 2 9l7.5 7.5" fill="none" stroke="#efe6d6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
     </motion.button>
   )
 }

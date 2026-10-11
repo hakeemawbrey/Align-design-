@@ -26,7 +26,7 @@ function EventCardImpl({ event: e, draw, of, glow = true }: Props) {
   const rows: [string, string, string][] = [
     ['What', e.what, e.light],
     ['Play', e.play, '#f2c75c'],
-    ['Later', 'Not now? Swipe left to save it, then play it any time from your saved cards.', '#b3a6c4'],
+    ['Later', 'Not now? Swipe left to save it, then play it any time from your hand.', '#b3a6c4'],
   ]
   return (
     <div style={{

@@ -28,20 +28,20 @@ export default function ChatPlaceCard({ place, when, playedByMe, mine, theirs, c
         <div style={{ padding: '12px 14px 10px', display: 'flex', gap: 12, alignItems: 'center' }}>
           <div style={{ width: 44, height: 44, borderRadius: 12, display: 'grid', placeItems: 'center', fontSize: 22, background: 'rgba(11,6,32,0.5)', border: `1px solid ${GOLD}44` }}>{place.emoji}</div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div className="mono" style={{ fontSize: 8, letterSpacing: '0.18em', color: place.partner ? GOLD : 'var(--label-3)' }}>
-              {place.partner ? '✦ ALIGN PARTNER' : 'PLACE CARD'} · {place.area.toUpperCase()}
+            <div className="mono" style={{ fontSize: 8, letterSpacing: '0.14em', color: place.partner ? 'var(--label-2)' : 'var(--label-3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {place.partner && <span style={{ color: GOLD }}>✦ </span>}{place.partner ? 'ALIGN PARTNER' : 'PLACE CARD'} · {place.area.toUpperCase()}
             </div>
             <div className="serif italic" style={{ fontSize: 18, lineHeight: 1.15, marginTop: 2 }}>{place.name}</div>
           </div>
         </div>
         <div style={{ padding: '0 14px 10px', fontSize: 12.5, color: 'var(--label-2)', lineHeight: 1.35 }}>
           {place.line} <span style={{ color: 'var(--label-1)' }}>{when}?</span>
-          {place.perk && <div style={{ marginTop: 6, fontSize: 11.5, color: GOLD }}>{place.perk}</div>}
+          {place.perk && <div style={{ marginTop: 6, fontSize: 12, color: 'var(--label-1)' }}><span style={{ color: GOLD }}>✦</span> {place.perk}</div>}
         </div>
         <div style={{ borderTop: '1px solid rgba(179,166,196,0.16)', padding: '9px 14px 11px' }}>
           {both ? (
             checkedIn ? (
-              <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', color: GOLD, textAlign: 'center' }}>✦ CHECKED IN · {place.exclusive?.toUpperCase() ?? 'DATE DONE'} ADDED ✦</div>
+              <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.14em', lineHeight: 1.5, color: 'var(--label-1)', textAlign: 'center' }}><span style={{ color: GOLD }}>✦</span> CHECKED IN · {place.exclusive?.toUpperCase() ?? 'DATE DONE'} ADDED <span style={{ color: GOLD }}>✦</span></div>
             ) : (
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ flex: 1, fontSize: 13 }}>It’s a date. {when}.</span>
@@ -57,8 +57,8 @@ export default function ChatPlaceCard({ place, when, playedByMe, mine, theirs, c
             <div style={{ fontSize: 12.5, color: 'var(--label-3)' }}>Not this one. Try another place or night.</div>
           ) : mine === undefined ? (
             <div style={{ display: 'flex', gap: 8 }}>
-              <button onClick={() => { sfx.tap(); onRsvp(true) }} style={{ flex: 1, height: 32, borderRadius: 16, fontSize: 13, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>I’m in</button>
-              <button onClick={() => { sfx.tap(); onRsvp(false) }} style={{ flex: 1, height: 32, borderRadius: 16, fontSize: 13, color: 'var(--label-1)', border: '1px solid rgba(179,166,196,0.35)' }}>Another time</button>
+              <button onClick={() => { sfx.tap(); onRsvp(true) }} style={{ flex: 1, height: 32, borderRadius: 999, fontSize: 13, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>I’m in</button>
+              <button onClick={() => { sfx.tap(); onRsvp(false) }} style={{ flex: 1, height: 32, borderRadius: 999, fontSize: 13, color: 'var(--label-1)', border: '1px solid rgba(179,166,196,0.35)' }}>Another time</button>
             </div>
           ) : (
             <div style={{ fontSize: 12.5, color: 'var(--label-3)' }}>You’re in. Waiting on {them}…</div>

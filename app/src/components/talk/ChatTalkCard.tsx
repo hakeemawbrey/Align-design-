@@ -105,22 +105,25 @@ function TalkCardFull({ card, mine, theirs, names, onAnswer }: {
                 {same ? '✦ The cards agree ✦' : card.kind === 'ask' ? 'Both revealed. Talk about it.' : 'The cards differ. Ask why.'}
               </div>
             ) : mine != null ? (
-              <div style={{ textAlign: 'center', fontSize: 12.5, color: 'var(--label-2)' }}>
+              <div style={{ textAlign: 'center', fontSize: 12.5, lineHeight: 1.4, color: 'var(--label-2)' }}>
                 Your card is sealed. Both turn over when {names.them} answers.
               </div>
             ) : choices.length ? (
               <div style={{ display: 'flex', gap: 8 }}>
                 {choices.map(([v, l]) => (
                   <motion.button key={v} whileTap={{ scale: 0.95 }} onClick={() => answer(v)} className="serif italic" style={{
-                    flex: 1, height: 40, borderRadius: 20, fontSize: 16, color: '#1a0f3a', background: 'linear-gradient(180deg, #fbf3d6, #e9d49a)', boxShadow: `0 0 14px ${GOLD}55`,
+                    flex: 1, height: 40, borderRadius: 999, fontSize: 16, color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 14px rgba(248,237,255,0.35)',
                   }}>{l}</motion.button>
                 ))}
               </div>
             ) : (
               <form onSubmit={(e) => { e.preventDefault(); answer(draft) }} style={{ display: 'flex', gap: 6 }}>
-                <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={theirs != null ? `Answer to turn over ${names.them}’s` : 'Your answer'} maxLength={200}
+                <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Your answer" maxLength={200}
                   style={{ flex: 1, minWidth: 0, height: 40, borderRadius: 20, padding: '0 14px', fontSize: 14, color: 'var(--label-1)', outline: 'none', background: 'rgba(11,6,32,0.6)', border: `1px solid ${GOLD}55`, fontFamily: 'inherit' }} />
-                <button type="submit" className="serif italic" style={{ height: 40, padding: '0 14px', borderRadius: 20, fontSize: 15, color: '#1a0f3a', background: draft.trim() ? 'linear-gradient(180deg, #fbf3d6, #e9d49a)' : 'rgba(244,240,220,0.35)' }}>Seal it</button>
+                <button type="submit" className="serif italic" style={{
+                  height: 40, padding: '0 16px', borderRadius: 999, fontSize: 15, transition: 'opacity .2s',
+                  color: 'var(--chrome-ink)', background: 'var(--chrome)', opacity: draft.trim() ? 1 : 0.45,
+                }}>Seal it</button>
               </form>
             )}
           </div>
@@ -153,7 +156,7 @@ export default function ChatTalkCard(props: Props) {
   const status = both
     ? (same ? '✦ The cards agree' : 'Both revealed · tap to read')
     : mine != null ? `Sealed · waiting on ${names.them}`
-      : theirs != null ? `${names.them} sealed theirs · your turn` : 'Your turn · tap to answer'
+      : theirs != null ? `${names.them} answered · your turn` : 'Your turn · tap to answer'
   const phone = typeof document !== 'undefined' ? document.getElementById('phone') : null
 
   return (
@@ -182,7 +185,7 @@ export default function ChatTalkCard(props: Props) {
                   <span style={{ color: GOLD }}>{names.me}:</span> {answerLabel(card, mine!, 'me', names)} · <span style={{ color: GOLD }}>{names.them}:</span> {answerLabel(card, theirs!, 'them', names)}
                 </div>
               )}
-              <div className="mono" style={{ marginTop: 6, fontSize: 7.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: both ? GOLD : mine == null ? '#f4f0dc' : 'var(--label-3)' }}>
+              <div className="mono" style={{ marginTop: 6, fontSize: 7.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: both ? GOLD : mine == null ? 'var(--label-1)' : 'var(--label-3)' }}>
                 {status}
               </div>
             </div>
@@ -194,7 +197,7 @@ export default function ChatTalkCard(props: Props) {
         <AnimatePresence>
           {open && (
             <motion.div key="full" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              onClick={() => setOpen(false)}
+              onClick={() => { sfx.tap(); setOpen(false) }}
               style={{ position: 'absolute', inset: 0, zIndex: 90, background: 'rgba(5,2,15,0.78)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', display: 'grid', placeItems: 'center' }}>
               <motion.div onClick={(e) => e.stopPropagation()}
                 initial={{ scale: 0.6, rotateY: 90, opacity: 0 }} animate={{ scale: 1, rotateY: 0, opacity: 1 }} exit={{ scale: 0.8, opacity: 0 }}
@@ -202,7 +205,7 @@ export default function ChatTalkCard(props: Props) {
                 style={{ position: 'relative', perspective: 900 }}>
                 <TalkCardFull {...props} />
                 <button aria-label="Close" onClick={() => { sfx.tap(); setOpen(false) }} style={{
-                  position: 'absolute', top: -46, right: 0, width: 36, height: 36, borderRadius: 18, display: 'grid', placeItems: 'center',
+                  position: 'absolute', top: -50, right: 0, width: 40, height: 40, borderRadius: 20, display: 'grid', placeItems: 'center',
                   color: 'var(--label-1)', fontSize: 18, background: 'rgba(48,32,92,0.8)', border: '1px solid rgba(201,182,240,0.35)',
                 }}>✕</button>
               </motion.div>

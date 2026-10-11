@@ -15,7 +15,7 @@ type Phase = 'offer' | 'flare' | 'active'
 
 const PLANS: { id: PlanId; label: string; price: string; per: string; note: string; then: string; word: string }[] = [
   // regular prices (the pricing sheet); the launch promo is offered once, at the end of onboarding
-  { id: 'yearly', label: 'Yearly', price: '$122.22', per: '/yr', note: 'save 56% · best', then: 'then $122.22 / yr', word: 'a year' },
+  { id: 'yearly', label: 'Yearly', price: '$122.22', per: '/yr', note: 'save 56%', then: 'then $122.22 / yr', word: 'a year' },
   { id: 'monthly', label: 'Monthly', price: '$23.33', per: '/mo', note: 'cancel any time', then: 'then $23.33 / mo', word: 'a month' },
 ]
 
@@ -24,7 +24,7 @@ const RAINBOW = ['#e8463c', '#ef8f56', '#f2d45c', '#7fd36a', '#4fb3ef', '#a77de9
 const BENEFITS = [
   { t: '45 cards a night', s: 'free stops at fifteen · next deal at 11:11' },
   { t: '33 peeks a week', s: 'free is three a day' },
-  { t: '3 packs a day + 3 real packs a season', s: 'a starter box when you join · shipped 4× a year' },
+  { t: '3 packs a day + real packs', s: 'a starter box when you join · 3 more each season' },
   { t: 'Block any sign · private Align events', s: 'gone from every deck, for good' },
 ]
 
@@ -117,19 +117,15 @@ export default function Paywall({ go }: ScreenProps) {
           <motion.div key="offer" style={{ position: 'absolute', inset: 0, zIndex: 3 }}
             exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.35, ease: 'easeIn' } }}>
             <Chevron onClick={leave} />
-            <motion.button {...fade(0.05)} onClick={leave} whileHover={{ color: '#efe6d6' }}
-              style={{ position: 'absolute', right: 14, top: 58, height: 36, padding: '0 12px', fontSize: 15, color: 'var(--label-2)' }}>
-              Not now
-            </motion.button>
 
-            <motion.div {...fade(0.1)} className="eyebrow" style={{ position: 'absolute', top: 104, left: 0, right: 0, textAlign: 'center', letterSpacing: '0.2em', color: 'var(--label-3)' }}>
+            <motion.div {...fade(0.1)} className="eyebrow" style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center', letterSpacing: '0.2em', color: 'var(--label-3)' }}>
               Your deck is dealt
             </motion.div>
-            <motion.h1 {...fade(0.18)} className="h-display" style={{ position: 'absolute', top: 120, left: 20, right: 20, textAlign: 'center', fontSize: 34, lineHeight: 1.08 }}>
+            <motion.h1 {...fade(0.18)} className="h-display" style={{ position: 'absolute', top: 120, left: 24, right: 24, textAlign: 'center', fontSize: 34, lineHeight: 1.08 }}>
               Three people are already<br />in your orbit.
             </motion.h1>
-            <motion.p {...fade(0.26)} className="serif" style={{ position: 'absolute', top: 196, left: 36, right: 36, textAlign: 'center', fontSize: 18, lineHeight: 1.4, color: 'var(--label-2)' }}>
-              Free is fifteen cards a night. Align+ deals you forty-five.
+            <motion.p {...fade(0.26)} className="serif" style={{ position: 'absolute', top: 202, left: 24, right: 24, textAlign: 'center', fontSize: 17, lineHeight: 1.35, color: 'var(--label-2)' }}>
+              Free is fifteen cards a night.<br />Align+ deals you forty-five.
             </motion.p>
 
             {/* plans */}
@@ -146,7 +142,7 @@ export default function Paywall({ go }: ScreenProps) {
                     whileTap={{ scale: 0.94 }}
                     onClick={() => pick(pl.id)}
                     style={{
-                      position: 'relative', width: 140, height: 98, borderRadius: 14,
+                      position: 'relative', width: 152, height: 98, borderRadius: 14,
                       background: sel ? 'linear-gradient(180deg, #33245f 0%, #241848 100%)' : 'rgba(30,18,64,0.72)',
                       border: '1px solid rgba(179,166,196,0.22)',
                       transition: 'background .25s',
@@ -156,8 +152,8 @@ export default function Paywall({ go }: ScreenProps) {
                       <motion.div layoutId="pw-ring" transition={{ type: 'spring', stiffness: 520, damping: 30 }}
                         style={{
                           position: 'absolute', inset: -1, borderRadius: 14, pointerEvents: 'none',
-                          border: '1.5px solid #f2c75c',
-                          boxShadow: '0 0 18px rgba(242,199,92,0.35), inset 0 0 14px rgba(242,199,92,0.12)',
+                          border: '1.5px solid rgba(248,237,255,0.85)',
+                          boxShadow: '0 0 18px rgba(248,237,255,0.3), inset 0 0 14px rgba(248,237,255,0.1)',
                         }} />
                     )}
                     {best && (
@@ -167,18 +163,18 @@ export default function Paywall({ go }: ScreenProps) {
                         background: 'var(--chrome)', backgroundSize: '200% 100%', animation: 'foil-sweep 3s linear infinite',
                         color: 'var(--chrome-ink)', fontSize: 7.5, fontWeight: 700, letterSpacing: '0.14em',
                         boxShadow: '0 0 12px rgba(248,237,255,0.5)',
-                      }}>3 DAYS FREE</div>
+                      }}>BEST VALUE</div>
                     )}
-                    <span className="mono" style={{ fontSize: 8, letterSpacing: '0.2em', textTransform: 'uppercase', color: sel ? '#f2c75c' : 'var(--label-3)' }}>{pl.label}</span>
+                    <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: sel ? 'var(--label-1)' : 'var(--label-3)' }}>{pl.label}</span>
                     <span className="serif" style={{ fontSize: 23, marginTop: 6, lineHeight: 1, color: 'var(--label-1)' }}>{pl.price}</span>
                     <span className="serif" style={{ fontSize: 13, marginTop: 4, color: 'var(--label-2)' }}>{pl.per}</span>
-                    <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.04em', marginTop: 9, color: best ? '#f2c75c' : 'var(--label-3)', fontWeight: best ? 700 : 400 }}>{pl.note}</span>
+                    <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.04em', marginTop: 9, color: best ? 'var(--label-2)' : 'var(--label-3)', fontWeight: best ? 700 : 400 }}>{pl.note}</span>
                   </motion.button>
                 )
               })}
             </div>
 
-            <motion.div {...fade(0.75)} className="mono" style={{ position: 'absolute', top: 556, left: 0, right: 0, textAlign: 'center', fontSize: 7.5, letterSpacing: '0.1em', color: 'var(--label-3)' }}>
+            <motion.div {...fade(0.75)} className="mono" style={{ position: 'absolute', top: 556, left: 0, right: 0, textAlign: 'center', fontSize: 8.5, letterSpacing: '0.1em', color: 'var(--label-3)' }}>
               3 DAYS FREE · CANCEL ANY TIME · YOUR CHART STAYS YOURS
             </motion.div>
 
@@ -208,7 +204,7 @@ export default function Paywall({ go }: ScreenProps) {
             </motion.button>
 
             <motion.button {...fade(0.95)} onClick={leave} whileHover={{ color: '#efe6d6' }}
-              style={{ position: 'absolute', top: 704, left: 0, right: 0, margin: '0 auto', width: 260, height: 32, fontSize: 15, color: 'var(--label-2)' }}>
+              style={{ position: 'absolute', top: 698, left: 0, right: 0, margin: '0 auto', width: 260, height: 40, fontSize: 15, color: 'var(--label-2)' }}>
               Maybe later — deal me in free
             </motion.button>
             <motion.div {...fade(1)} style={{ position: 'absolute', top: 744, left: 0, right: 0, textAlign: 'center', fontSize: 11, color: 'var(--label-4)' }}>
@@ -224,8 +220,8 @@ export default function Paywall({ go }: ScreenProps) {
         {phase === 'active' && (
           <motion.div key="active" style={{ position: 'absolute', inset: 0, zIndex: 3 }}>
             <CloseX side="right" onClick={leave} />
-            <motion.div {...fade(0.15)} className="eyebrow" style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center', color: '#f2c75c' }}>
-              Align+ is lit · Day 1 of 7
+            <motion.div {...fade(0.15)} className="eyebrow" style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center', color: 'var(--align)' }}>
+              Align+ is on · day 1 of 3
             </motion.div>
 
             <motion.h1 {...fade(0.3)} className="h-display" style={{ position: 'absolute', top: 318, left: 20, right: 20, textAlign: 'center', fontSize: 36 }}>
@@ -236,7 +232,7 @@ export default function Paywall({ go }: ScreenProps) {
             </motion.p>
 
             <motion.div {...fade(0.5)} style={{
-              position: 'absolute', top: 404, left: 28, right: 28, borderRadius: 18, padding: '6px 16px',
+              position: 'absolute', top: 404, left: 24, right: 24, borderRadius: 18, padding: '6px 16px',
               background: 'rgba(30,18,64,0.6)', border: '1px solid rgba(242,199,92,0.18)',
             }}>
               {BENEFITS.map((b, i) => (
@@ -254,7 +250,7 @@ export default function Paywall({ go }: ScreenProps) {
             </motion.div>
 
             {/* trial timeline */}
-            <motion.div {...fade(1.3)} style={{ position: 'absolute', top: 618, left: 30, right: 30 }}>
+            <motion.div {...fade(1.3)} style={{ position: 'absolute', top: 618, left: 24, right: 24 }}>
               <div style={{ position: 'absolute', top: 5, left: 46, right: 46, height: 1, background: 'rgba(179,166,196,0.35)' }} />
               <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 0.14 }} transition={{ delay: 1.6, duration: 0.6 }}
                 style={{ position: 'absolute', top: 5, left: 46, right: 46, height: 1, background: '#f2c75c', transformOrigin: 'left' }} />

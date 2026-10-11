@@ -155,7 +155,7 @@ export default function Founding({ go }: ScreenProps) {
             </div>
 
             {/* plans */}
-            <div style={{ position: 'absolute', top: 592, left: 20, right: 20, display: 'flex', gap: 22 }}>
+            <div style={{ position: 'absolute', top: 592, left: 24, right: 24, display: 'flex', gap: 14 }}>
               {PLANS.map((pl, i) => {
                 const sel = pl.id === plan
                 return (
@@ -207,7 +207,7 @@ export default function Founding({ go }: ScreenProps) {
               whileHover={{ scale: 1.015, boxShadow: '0 0 44px rgba(248,237,255,0.55), inset 0 1px 0 rgba(255,255,255,0.9)' }}
               whileTap={{ scale: 0.95 }}
               onClick={claim}
-              style={{ position: 'absolute', left: 20, top: 724, width: 350, height: 58, fontSize: 20, overflow: 'hidden' }}>
+              style={{ position: 'absolute', left: 24, top: 724, width: 342, height: 58, fontSize: 20, overflow: 'hidden' }}>
               <motion.span aria-hidden
                 animate={{ x: [-200, 400] }} transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 1.6, ease: 'easeInOut', delay: 1.8 }}
                 style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: 70, background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.85), transparent)', pointerEvents: 'none' }} />
@@ -226,7 +226,7 @@ export default function Founding({ go }: ScreenProps) {
 
         {phase === 'claimed' && (
           <motion.div key="claimed" style={{ position: 'absolute', inset: 0, zIndex: 3 }}>
-            <motion.div {...fade(1.2)} className="eyebrow" style={{ position: 'absolute', top: 76, left: 0, right: 0, textAlign: 'center', color: '#f2c75c' }}>
+            <motion.div {...fade(1.2)} className="eyebrow" style={{ position: 'absolute', top: 76, left: 0, right: 0, textAlign: 'center', color: 'var(--label-2)' }}>
               Welcome to Align+
             </motion.div>
 
@@ -247,7 +247,7 @@ export default function Founding({ go }: ScreenProps) {
             <motion.h1 {...fade(1.0)} className="h-display" style={{ position: 'absolute', top: 452, left: 0, right: 0, textAlign: 'center', fontSize: 36 }}>
               The stars, unrationed.
             </motion.h1>
-            <motion.p {...fade(1.1)} style={{ position: 'absolute', top: 500, left: 34, right: 34, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
+            <motion.p {...fade(1.1)} style={{ position: 'absolute', top: 500, left: 24, right: 24, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
               {founding
                 ? 'Three days free, then $88.88 a year — the launch price, locked for as long as you stay.'
                 : 'Three days free, then $14.44 a month. Cancel any time — your chart stays yours.'}
@@ -266,11 +266,11 @@ export default function Founding({ go }: ScreenProps) {
             <motion.button className="chrome-cta" {...fade(1.8)}
               whileHover={{ scale: 1.015 }} whileTap={{ scale: 0.95 }}
               onClick={() => { sfx.align(); go('dealing') }}
-              style={{ position: 'absolute', left: 20, top: 712, width: 350, height: 58, fontSize: 20 }}>
+              style={{ position: 'absolute', left: 24, top: 712, width: 342, height: 58, fontSize: 20 }}>
               Deal my first deck <span className="spark">✦</span>
             </motion.button>
             <motion.div {...fade(1.9)} style={{ position: 'absolute', top: 788, left: 0, right: 0, textAlign: 'center', fontSize: 11.5, color: 'var(--label-3)' }}>
-              Your launch price is locked while you stay · Your chart stays yours
+              {founding ? 'Your launch price is locked while you stay' : 'Cancel any time · Your chart stays yours'}
             </motion.div>
           </motion.div>
         )}

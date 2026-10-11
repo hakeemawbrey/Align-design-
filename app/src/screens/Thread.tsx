@@ -3,11 +3,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { ChatHeader } from '../components/chat/ChatParts'
+import { ChatHeader, TypingIndicator } from '../components/chat/ChatParts'
+import ReportSheet from '../components/chat/ReportSheet'
 import { SIGNS } from '../data/signs'
 import { api, useWorld, type Message } from '../api'
 import { sfx } from '../lib/sfx'
-import { useSession, energize } from '../lib/session'
+import { session, useSession, energize } from '../lib/session'
 import { Bubble, type Msg } from './Chat'
 import { ME, type Profile } from '../data/profiles'
 import { MATCHES, STARTER_CHATS } from '../data/matches'
@@ -48,6 +49,7 @@ export default function Thread({ go }: ScreenProps) {
   const [rows, setRows] = useState<Message[]>([])
   const [draft, setDraft] = useState('')
   const [hand, setHand] = useState(false)
+  const [report, setReport] = useState(false)
   const seen = useRef(new Set<string>())
   const seeding = useRef(false)
   const replyIdx = useRef(0)
@@ -131,7 +133,7 @@ export default function Thread({ go }: ScreenProps) {
     return (
       <div style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center' }}>
         <Starfield aurora={null} warm={null} count={40} seed={8} />
-        <button className="chrome-cta" onClick={() => go('matches')} style={{ position: 'relative' }}>Back to matches</button>
+        <button className="chrome-cta" onClick={() => { sfx.tap(); go('matches') }} style={{ position: 'relative' }}>Back to matches</button>
       </div>
     )
   }
@@ -140,10 +142,10 @@ export default function Thread({ go }: ScreenProps) {
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={sign.color} warm={null} count={55} seed={33} />
-      <ChatHeader onBack={() => { sfx.tap(); go('matches') }} onSky={() => {}} photo={them.photo ?? sign.auraImg} name={them.name} />
+      <ChatHeader onBack={() => { sfx.tap(); go('matches') }} onMore={() => { sfx.tap(); setReport(true) }} photo={them.photo ?? sign.auraImg} name={them.name} />
 
       <div ref={scroller} style={{
-        position: 'absolute', top: 126, left: 0, right: 0, bottom: 168, overflowY: 'auto', padding: '8px 20px 14px', scrollbarWidth: 'none',
+        position: 'absolute', top: 126, left: 0, right: 0, bottom: 168, overflowY: 'auto', padding: '8px 24px 14px', scrollbarWidth: 'none',
       }}>
         <div style={{ textAlign: 'center', padding: '10px 0 16px' }}>
           <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--align)' }}>✦ MUTUAL ALIGN ✦</div>
@@ -178,14 +180,14 @@ export default function Thread({ go }: ScreenProps) {
             return <div key={m.id}><Bubble msg={toMsg(m, i)} /></div>
           })}
         </AnimatePresence>
-        {typing && <div style={{ fontSize: 13, color: 'var(--label-3)', margin: '6px 4px' }}>{them.name} is typing…</div>}
+        <AnimatePresence>{typing && <TypingIndicator key="typing" name={them.name} />}</AnimatePresence>
         {!rows.length && (
           <div style={{ textAlign: 'center', fontSize: 13, color: 'var(--label-3)', marginTop: 30 }}>Say the first thing. Make it specific.</div>
         )}
       </div>
 
       <form onSubmit={(e) => { e.preventDefault(); void send() }} style={{
-        position: 'absolute', left: 20, right: 20, top: 682, height: 52, borderRadius: 26, display: 'flex', alignItems: 'center',
+        position: 'absolute', left: 24, right: 24, top: 682, height: 52, borderRadius: 26, display: 'flex', alignItems: 'center',
         padding: '0 7px 0 7px', gap: 8, zIndex: 6, background: 'rgba(30, 18, 64, 0.85)', border: '1px solid rgba(179,166,196,0.26)',
       }}>
         <CardsButton onClick={() => { sfx.tap(); setHand(true) }} />
@@ -202,6 +204,12 @@ export default function Thread({ go }: ScreenProps) {
 
       <AnimatePresence>
         {hand && <HandSheet onBinder={() => binderNav.open(go, 'thread')} them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => setHand(false)} onUpgrade={() => go('paywall')} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {report && (
+          <ReportSheet name={them.name} pronoun="them" onClose={() => setReport(false)}
+            onDone={() => { session.patch({ blockedPeople: [...session.get().blockedPeople, them.id] }); go('matches') }} />
+        )}
       </AnimatePresence>
       <TabBar active="matches" go={go} />
     </div>

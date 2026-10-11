@@ -41,10 +41,10 @@ export default function TheField({ next }: { next: () => void }) {
         </motion.div>
       ))}
       <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8, duration: 0.6, ease: EASE }}
-        className="h-display" style={{ position: 'absolute', top: 432, width: '100%', textAlign: 'center', fontSize: 72, lineHeight: 1, zIndex: 8, textShadow: '0 0 30px rgba(201,182,240,0.6)', fontVariantNumeric: 'tabular-nums' }}>
+        className="h-display" style={{ position: 'absolute', top: 446, width: '100%', textAlign: 'center', fontSize: 72, lineHeight: 1, zIndex: 8, textShadow: '0 0 30px rgba(201,182,240,0.6)', fontVariantNumeric: 'tabular-nums' }}>
         {n}
       </motion.div>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }} style={{ position: 'absolute', top: 528, width: '100%', textAlign: 'center' }}>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }} style={{ position: 'absolute', top: 536, width: '100%', textAlign: 'center' }}>
         <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-1)' }}>CHARTS CAST WITHIN 25 MILES OF YOU</div>
         <div className="mono" style={{ marginTop: 8, fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-3)' }}>41 READ STRONG · 6 SHARE YOUR MOON · 11 ARE COMETS</div>
       </motion.div>

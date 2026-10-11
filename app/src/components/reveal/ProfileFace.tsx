@@ -103,10 +103,10 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
               transition={{ duration: 0.55, ease: 'easeOut' }}
               style={{
                 position: 'absolute', top: 12, right: 12, height: 24, padding: '0 13px', borderRadius: 999,
-                background: 'rgba(36,16,58,0.88)', border: '1px solid rgba(242,199,92,0.75)',
+                background: 'rgba(36,16,58,0.88)', border: '1px solid rgba(248,237,255,0.6)',
                 display: 'flex', alignItems: 'center',
-                fontFamily: 'var(--mono)', fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--align)',
-                boxShadow: '0 0 14px rgba(242,199,92,0.35)',
+                fontFamily: 'var(--mono)', fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-1)',
+                boxShadow: '0 0 14px rgba(248,237,255,0.25)',
               }}
             >
               REVEALED TONIGHT

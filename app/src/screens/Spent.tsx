@@ -66,7 +66,7 @@ export default function Spent({ go }: ScreenProps) {
       ))}
 
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6 }}
-        className="mono" style={{ position: 'absolute', top: 466, left: 0, right: 0, textAlign: 'center', fontSize: 10.5, letterSpacing: '0.24em', color: '#f2c75c' }}>
+        className="mono" style={{ position: 'absolute', top: 466, left: 0, right: 0, textAlign: 'center', fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--align)' }}>
         RESETS AT 11:11
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.6 }}
@@ -82,12 +82,12 @@ export default function Spent({ go }: ScreenProps) {
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75, duration: 0.6 }}
         whileTap={{ scale: 0.96 }} whileHover={{ scale: 1.015 }}
         onClick={() => { sfx.tap(); go('paywall') }}
-        style={{ position: 'absolute', left: 38, top: 660, fontSize: 20 }}>
+        style={{ position: 'absolute', left: 38, top: 648, fontSize: 20 }}>
         45 a night with Align+ <span className="spark">✦</span>
       </motion.button>
       <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
         onClick={() => { sfx.tap(); go('matches') }}
-        style={{ position: 'absolute', top: 728, left: 0, right: 0, textAlign: 'center', fontSize: 15, color: 'var(--label-3)' }}>
+        style={{ position: 'absolute', top: 710, left: 95, right: 95, height: 40, textAlign: 'center', fontSize: 15, color: 'var(--label-2)' }}>
         Talk to your matches
       </motion.button>
 

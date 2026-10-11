@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
 import { sfx } from '../../lib/sfx'
 
@@ -28,22 +29,28 @@ export default function CityPicker({ value, onPick, onClose }: { value: string; 
   }, [typed])
   const exact = list.some((c) => c.toLowerCase() === typed.toLowerCase())
   const pick = (c: string) => { sfx.tap(); onPick(c); onClose() }
+  const input = useRef<HTMLInputElement>(null)
+  // focus without letting the browser scroll the phone frame to the field
+  useEffect(() => { input.current?.focus({ preventScroll: true }) }, [])
+  // portal to the phone so the sheet covers the step's back chevron and progress bar
+  const phone = typeof document !== 'undefined' ? document.getElementById('phone') : null
 
-  return (
+  const sheet = (
     <motion.div
       initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
       transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
       style={{
-        position: 'absolute', inset: 0, zIndex: 70, padding: '104px 22px 24px', display: 'flex', flexDirection: 'column',
-        background: 'linear-gradient(180deg, rgba(22,12,52,0.98), rgba(11,6,32,0.99))',
+        position: 'absolute', left: 0, right: 0, top: 50, bottom: 0, zIndex: 51, padding: '40px 24px 24px', display: 'flex', flexDirection: 'column',
+        background: 'linear-gradient(180deg, rgb(22,12,52), rgb(11,6,32))',
+        borderRadius: '26px 26px 0 0', borderTop: '1px solid rgba(179,166,196,0.2)', boxShadow: '0 -20px 50px rgba(5,2,15,0.55)',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <div className="h-display" style={{ flex: 1, fontSize: 26 }}>Where were you born?</div>
-        <button onClick={() => { sfx.tap(); onClose() }} style={{ fontSize: 15, color: 'var(--label-2)' }}>Cancel</button>
+        <button onClick={() => { sfx.tap(); onClose() }} style={{ height: 40, padding: '0 4px', fontSize: 15, color: 'var(--label-2)' }}>Cancel</button>
       </div>
       <input
-        autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a city"
+        ref={input} value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a city"
         onKeyDown={(e) => { if (e.key === 'Enter' && typed) pick(list[0] && !exact && list.length === 1 ? list[0] : exact ? list.find((c) => c.toLowerCase() === typed.toLowerCase())! : typed) }}
         style={{
           marginTop: 16, height: 46, padding: '0 16px', borderRadius: 14, fontSize: 16, color: 'var(--label-1)', outline: 'none',
@@ -52,14 +59,14 @@ export default function CityPicker({ value, onPick, onClose }: { value: string; 
       />
       <div style={{ marginTop: 10, flex: 1, overflowY: 'auto', scrollbarWidth: 'none' }}>
         {typed && !exact && (
-          <button onClick={() => pick(typed)} style={{ width: '100%', textAlign: 'left', padding: '13px 4px', fontSize: 15.5, color: 'var(--align)', borderBottom: '1px solid rgba(179,166,196,0.12)' }}>
+          <button onClick={() => pick(typed)} style={{ width: '100%', textAlign: 'left', padding: '13px 4px', fontSize: 15.5, color: 'var(--label-1)', borderBottom: '1px solid rgba(179,166,196,0.12)' }}>
             Use “{typed}”
           </button>
         )}
         {list.map((c) => (
           <button key={c} onClick={() => pick(c)} style={{
             width: '100%', textAlign: 'left', padding: '13px 4px', fontSize: 15.5, display: 'flex', justifyContent: 'space-between',
-            color: c === value ? 'var(--align)' : 'var(--label-1)', borderBottom: '1px solid rgba(179,166,196,0.12)',
+            color: 'var(--label-1)', fontWeight: c === value ? 600 : 400, borderBottom: '1px solid rgba(179,166,196,0.12)',
           }}>
             <span>{c.split(', ')[0]}<span style={{ color: 'var(--label-3)' }}>, {c.split(', ').slice(1).join(', ')}</span></span>
             {c === value && <span>✓</span>}
@@ -68,4 +75,5 @@ export default function CityPicker({ value, onPick, onClose }: { value: string; 
       </div>
     </motion.div>
   )
+  return phone ? createPortal(sheet, phone) : sheet
 }

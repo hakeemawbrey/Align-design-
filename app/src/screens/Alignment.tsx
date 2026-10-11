@@ -8,7 +8,7 @@ import AuraPair from '../components/chat/AuraPair'
 import { READINGS } from '../components/chat/readings'
 import { sfx } from '../lib/sfx'
 
-const CARD = { left: 32, top: 100, width: 326, height: 555 }
+const CARD = { left: 24, top: 104, width: 342, height: 555 }
 
 /** S-21 Cosmic alignment — Pull / Push / Align / Relationship. */
 export default function Alignment({ go }: ScreenProps) {
@@ -31,16 +31,16 @@ export default function Alignment({ go }: ScreenProps) {
         whileHover={{ x: -2 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Back"
-        style={{ position: 'absolute', left: 18, top: 62, width: 28, height: 28, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 5 }}
+        style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 5 }}
       >
-        <svg width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M6.5 1.5 1.5 6.5l5 5" /></svg>
+        <svg width="11" height="18" viewBox="0 0 11 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 1.5 2 9l7.5 7.5" /></svg>
       </motion.button>
       <motion.div
         className="mono"
         initial={{ opacity: 0, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ position: 'absolute', top: 79, width: '100%', textAlign: 'center', fontSize: 11, letterSpacing: '0.24em', color: 'var(--label-1)', fontWeight: 700 }}
+        style={{ position: 'absolute', top: 69, width: '100%', textAlign: 'center', fontSize: 11, letterSpacing: '0.24em', color: 'var(--label-1)', fontWeight: 700 }}
       >
         COSMIC ALIGNMENT
       </motion.div>
@@ -183,7 +183,7 @@ export default function Alignment({ go }: ScreenProps) {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        style={{ position: 'absolute', top: 692, left: 38, width: 314 }}
+        style={{ position: 'absolute', top: 686, left: 38, width: 314 }}
       >
         <motion.button
           className="chrome-cta"

@@ -249,7 +249,7 @@ export default function Chat({ go }: ScreenProps) {
         className="chat-scroll"
         style={{
           position: 'absolute', top: 166, left: 0, right: 0, bottom: 168, overflowY: 'auto', overflowX: 'hidden',
-          padding: '8px 20px 14px', scrollbarWidth: 'none',
+          padding: '8px 24px 14px', scrollbarWidth: 'none',
           WebkitMaskImage: 'linear-gradient(180deg, transparent 0, #000 22px, #000 calc(100% - 10px), transparent 100%)',
           maskImage: 'linear-gradient(180deg, transparent 0, #000 22px, #000 calc(100% - 10px), transparent 100%)',
         }}
@@ -296,7 +296,7 @@ export default function Chat({ go }: ScreenProps) {
         onSubmit={(e) => { e.preventDefault(); void send() }}
         onClick={() => inputRef.current?.focus()}
         style={{
-          position: 'absolute', left: 20, right: 20, top: 682, height: 52, borderRadius: 26,
+          position: 'absolute', left: 24, right: 24, top: 682, height: 52, borderRadius: 26,
           display: 'flex', alignItems: 'center', padding: '0 7px 0 7px', gap: 8, zIndex: 6,
           background: 'rgba(30, 18, 64, 0.85)', border: '1px solid rgba(179,166,196,0.26)',
           backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', cursor: 'text',
@@ -360,7 +360,7 @@ export function Bubble({ msg }: { msg: Msg }) {
       }}
     >
       <div style={{
-        maxWidth: mine ? 266 : 266, padding: '10px 16px 11px', borderRadius: 18,
+        maxWidth: 266, padding: '10px 16px 11px', borderRadius: 18,
         fontSize: 15, lineHeight: '21px', color: 'var(--label-1)',
         background: mine ? '#3b2a6c' : '#2a1f4e',
         boxShadow: mine ? 'inset 0 1px 0 rgba(255,255,255,0.05)' : 'inset 0 1px 0 rgba(255,255,255,0.03)',

@@ -22,12 +22,12 @@ export function CheckStamp({ delay, size = 22 }: { delay: number; size?: number 
   )
 }
 
-/** back chevron, 44px hit area */
+/** back chevron: 40×40 at left 16 / top 56, 11×18 glyph (the app-wide back button) */
 export function Chevron({ onClick }: { onClick: () => void }) {
   return (
     <motion.button whileTap={{ scale: 0.88 }} whileHover={{ x: -2 }} onClick={onClick} aria-label="Back"
-      style={{ position: 'absolute', left: 10, top: 54, width: 44, height: 44, display: 'grid', placeItems: 'center', zIndex: 20 }}>
-      <svg width="12" height="20" viewBox="0 0 12 20"><path d="M10 2 2 10l8 8" fill="none" stroke="#efe6d6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', zIndex: 20 }}>
+      <svg width="11" height="18" viewBox="0 0 12 20"><path d="M10 2 2 10l8 8" fill="none" stroke="#efe6d6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
     </motion.button>
   )
 }
@@ -36,7 +36,7 @@ export function CloseX({ onClick, side = 'left' }: { onClick: () => void; side?:
   return (
     <motion.button whileTap={{ scale: 0.88 }} whileHover={{ rotate: 90 }} transition={{ type: 'spring', stiffness: 400, damping: 20 }}
       onClick={onClick} aria-label="Close"
-      style={{ position: 'absolute', [side]: 12, top: 50, width: 44, height: 44, display: 'grid', placeItems: 'center', zIndex: 20 }}>
+      style={{ position: 'absolute', [side]: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', zIndex: 20 }}>
       <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1 1 13" stroke="#b3a6c4" strokeWidth="1.6" strokeLinecap="round" /></svg>
     </motion.button>
   )

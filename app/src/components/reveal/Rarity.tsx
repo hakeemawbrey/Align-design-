@@ -66,14 +66,14 @@ export default function Rarity({ show, instant = false, target = 92, lit = 5, pu
       <motion.div
         animate={done ? { scale: [1.25, 0.96, 1], opacity: 1 } : { scale: 1, opacity: 0.75 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        style={{ padding: 1, borderRadius: 999, background: 'var(--gold-foil)', backgroundSize: '200% 100%', animation: 'rv-foil 3s linear infinite', boxShadow: done ? '0 0 22px rgba(242,199,92,0.45)' : 'none' }}
+        style={{ padding: 1, borderRadius: 999, background: 'var(--chrome)', boxShadow: done ? '0 0 22px rgba(248,237,255,0.4)' : 'none' }}
       >
         <div style={{
           height: 24, padding: '0 14px', borderRadius: 999, background: 'rgba(20,10,46,0.92)',
           display: 'flex', alignItems: 'center', gap: 8,
-          fontFamily: 'var(--mono)', fontSize: 9.5, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--align)',
+          fontFamily: 'var(--mono)', fontSize: 9.5, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--label-1)',
         }}>
-          <span>✦</span><span>{pull} · Match № 031</span><span>✦</span>
+          <span style={{ color: 'var(--align)' }}>✦</span><span>{pull} · Match № 031</span><span style={{ color: 'var(--align)' }}>✦</span>
         </div>
       </motion.div>
 
