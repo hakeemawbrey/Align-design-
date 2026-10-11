@@ -16,7 +16,8 @@ const CARD = {
   p5: { src: 'card-profile-5.png', ...PROF },
   p6: { src: 'card-profile-6.png', ...PROF },
   ev: { src: 'card-event.png', ...PROF },
-  peek: { src: 'card-profile-peek.png', iw: 1520, ih: 2281, b: [120, 117, 1398, 2159], k: 1 },
+  // veiled deck card back (no faces in the deck — Juniper's reveal at ~21.1 is the only real photo)
+  back: { src: 'card-back.png', iw: 1528, ih: 2347, b: [120, 119, 1440, 2227], k: 1 },
   t1: { src: 'card-talk-1.png', ...TALK },
   t2: { src: 'card-talk-2.png', ...TALK },
   t3: { src: 'card-talk-3.png', ...TALK },
@@ -28,13 +29,13 @@ const CARD = {
   rev: { src: 'card-reveal.png', iw: 1560, ih: 2740, b: [64, 123, 1495, 2622], k: 1.08 },
 }
 // deal order: front-dealt cards, then the reveal lands, then cards keep shuffling in behind it
-const DEAL = ['p1', 't1', 'p2', 'ev', 'p4', 't2', 'peek', 't3', 'p5', 'sign', 'td', 'p6', 't4', 'p3', 't5', 't6', 'rev']
+const DEAL = ['p1', 't1', 'p2', 'ev', 'p4', 't2', 'back', 't3', 'p5', 'sign', 'td', 'p6', 't4', 'p3', 't5', 't6', 'rev']
 const DEAL_T = [17.42, 17.85, 18.15, 18.45, 18.7, 18.92, 19.12, 19.32, 19.52, 19.72, 19.92, 20.12, 20.32, 20.52, 20.72, 20.9, 21.08]
 const BEHIND = ['p2', 't2', 'p4', 'td', 'p5', 't4']
 const BEHIND_T = [21.5, 21.78, 22.06, 22.34, 22.62, 22.9]
 const BODY_H = 700 // on-screen card-body height of a profile card at scale 1 (matches the fxDots patch in s5)
-const ENTER = 0.36 // seconds for a card to swing in edge-on from the right into the front slot
-const FIRST_IN = [17.42, 17.6] // first card fades in under the fxDots patch (no slide)
+const ENTER = 0.4 // seconds for a card to swing in from off-frame right (yaw −65 → 0, shaded dark → lit) into the front slot
+const FIRST_IN = [17.45, 17.62] // first card fades in under the fxDots patch (no slide)
 
 export function sceneDeck(stage) {
   const root = fill(stage, { background: C.paper })
@@ -88,7 +89,7 @@ export function sceneDeck(stage) {
       const A1 = lerp(16, 78, pull), B1 = lerp(0, 4.2, pull)
       const Yd = lerp(4, 38, pull)
       const baseX = lerp(lerp(0, 300, pull), 250, center)
-      const baseY = lerp(-10, lerp(-120, -60, center), pull)
+      const baseY = lerp(-10, lerp(-76, -60, center), pull) // keeps "every night" ≥64px below the frame top
 
       const e = cards.map((c, i) => i === 0 ? 1 : ease.outCubic(prog(t, c.at, c.at + ENTER)))
       const n = cards.length
@@ -109,14 +110,16 @@ export function sceneDeck(stage) {
         let y = baseY + lerp(Yd * d, 170 * sat, center)
         let yaw = lerp(0, lerp(14, 30, pull), clamp(d))
         let rx = 0, rz = 0
-        // entry into the front slot: swings in edge-on from the right (yaw −90 → 0), fading up over the first quarter
-        let op = 1
+        // entry into the front slot: fully opaque, slides in from just off-frame right turning yaw −65 → 0 (never edge-on),
+        // shaded dark → lit as it faces camera (no grey see-through phase, first visible frame is a partial slide-in, not a pop)
+        let op = 1, shade = 1
         if (i === 0) op = ease.inOutQuad(prog(t, FIRST_IN[0], FIRST_IN[1]))
         else if (c.kind !== 'behind' && e[i] < 1) {
           const p = e[i]
-          x += (1 - p) * 700
-          yaw = lerp(-90, yaw, p)
-          op = clamp(prog(t, c.at, c.at + ENTER) * 4)
+          const offR = W / 2 - baseX + c.w * s * 0.5 + 80
+          x += (1 - p) * offR
+          yaw = lerp(-65, yaw, p)
+          shade = lerp(0.55, 1, ease.inOutQuad(clamp(prog(t, c.at, c.at + ENTER) * 1.25)))
         }
         if (c.kind === 'behind') yaw = lerp(4, yaw, e[i])
         // holo moment: slight tilt as the foil light passes
@@ -127,10 +130,11 @@ export function sceneDeck(stage) {
         }
         // rear cards: leave frame left; cap depth when compacted so the trail stays tidy
         const left = W / 2 + x - (c.w * s) / 2
-        const vis = left + c.w * s > -40 && op > 0.01
+        const vis = left + c.w * s > -40 && left < W + 40 && op > 0.01
         c.wrap.style.display = vis ? 'block' : 'none'
         if (!vis) return
         c.wrap.style.opacity = String(op)
+        c.wrap.style.filter = shade < 0.999 ? `brightness(${shade.toFixed(3)})` : 'none'
         c.wrap.style.transform = `translate(${x}px, ${y}px) perspective(2400px) rotateY(${yaw}deg) rotateX(${rx}deg) rotateZ(${rz}deg) scale(${s})`
         c.wrap.style.zIndex = String(2000 - Math.round(d * 40) + (c.kind === 'rev' ? 1 : 0))
       })
@@ -151,9 +155,9 @@ export function sceneDeck(stage) {
       const fxw = W / 2 + baseX
       const showA = (a) => ease.outCubic(prog(t, a, a + 0.35))
       const hide = ease.inCubic(prog(t, 20.3, 20.5))
-      wTop.style.left = (fxw - 60) + 'px'; wTop.style.top = (H / 2 + baseY - cardH / 2 - 64 - 84) + 'px'
+      wTop.style.left = (fxw - 60) + 'px'; wTop.style.top = Math.max(64, H / 2 + baseY - cardH / 2 - 64 - 84) + 'px'
       wBot.style.left = (fxw - 30) + 'px'; wBot.style.top = (H / 2 + baseY + cardH / 2 + 64) + 'px'
-      wTop.style.opacity = String(showA(19.0) * (1 - hide)); wTop.style.transform = `translateY(${(1 - showA(19.0)) * 20 - 16 * hide}px)`
+      wTop.style.opacity = String(showA(19.0) * (1 - hide)); wTop.style.transform = `translateY(${(1 - showA(19.0)) * 20 - 6 * hide}px)`
       wBot.style.opacity = String(showA(19.35) * (1 - hide)); wBot.style.transform = `translateY(${(1 - showA(19.35)) * 20 + 16 * hide}px)`
       // "you ▣ align": balanced around the compacted stack (left = rear of trail, right = front card)
       const fy = H / 2 + baseY

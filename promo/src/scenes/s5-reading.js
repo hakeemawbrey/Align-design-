@@ -13,7 +13,7 @@ export function sceneReading(stage) {
   // hidden copy of the first deck card so the loader waits for it (fxDots samples it)
   dotImg = img(root, DOT_SRC, { left: 0, top: 0, width: '2px', height: '3px', opacity: 0 })
   const block = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
-  const title = el('div', { position: 'absolute', fontFamily: SERIF, fontStyle: 'italic', fontSize: '92px', fontWeight: 400, color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.01em', lineHeight: 1 }, block)
+  const title = el('div', { position: 'absolute', fontFamily: SERIF, fontStyle: 'italic', fontSize: '108px', fontWeight: 400, color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.01em', lineHeight: 1 }, block)
   const tChars = [...'Reading your sky'].map((ch, i) => el('span', { opacity: 0, color: i === 0 ? C.violet : C.ink }, title, ch === ' ' ? ' ' : ch))
   const rail = el('div', { position: 'absolute', width: '3px', background: 'rgba(26,16,51,0.18)' }, block)
   const ITEMS = [
@@ -24,20 +24,20 @@ export function sceneReading(stage) {
     { g: '', c: C.rub, label: 'Dealing', sub: 'your first deck' },
   ]
   const AT = [14.75, 15.15, 15.55, 15.95, 16.35]
-  const ROW = 80, INDENT = 60
+  const ROW = 96, INDENT = 72
   const rows = ITEMS.map(it => {
-    const r = el('div', { position: 'absolute', left: '0', display: 'flex', alignItems: 'center', gap: '20px', whiteSpace: 'nowrap', fontFamily: SANS }, block)
-    const ic = el('div', { width: '48px', height: '48px', boxSizing: 'border-box', borderRadius: '11px', border: `3px solid ${it.c}`, color: it.c, display: it.g ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', fontSize: '30px', lineHeight: 1 }, r, it.g)
-    const lab = el('div', { fontSize: '48px', fontWeight: 500, color: it.c, letterSpacing: '-0.01em' }, r, it.label)
-    const sub = el('div', { fontSize: '42px', color: 'rgba(26,16,51,0.5)', letterSpacing: '-0.01em' }, r, '— ' + it.sub)
+    const r = el('div', { position: 'absolute', left: '0', display: 'flex', alignItems: 'center', gap: '24px', whiteSpace: 'nowrap', fontFamily: SANS }, block)
+    const ic = el('div', { width: '58px', height: '58px', boxSizing: 'border-box', borderRadius: '13px', border: `3.5px solid ${it.c}`, color: it.c, display: it.g ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', fontSize: '36px', lineHeight: 1 }, r, it.g)
+    const lab = el('div', { fontSize: '58px', fontWeight: 500, color: it.c, letterSpacing: '-0.01em' }, r, it.label)
+    const sub = el('div', { fontSize: '50px', color: 'rgba(26,16,51,0.74)', letterSpacing: '-0.01em' }, r, '— ' + it.sub)
     return { r, ic, lab, sub, it }
   })
-  const working = el('div', { position: 'absolute', fontFamily: MONO, fontSize: '26px', letterSpacing: '0.22em', textTransform: 'uppercase', whiteSpace: 'nowrap' }, block, 'Shuffling your deck…')
+  const working = el('div', { position: 'absolute', fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', textTransform: 'uppercase', whiteSpace: 'nowrap' }, block, 'Shuffling your deck…')
 
   // sign card: crop the baked green glow — body + stamp only, clean dark backing shadow
-  const SC = 600 / (SIGN.body[3] - SIGN.body[1])
+  const SC = 500 / (SIGN.body[3] - SIGN.body[1]) // body ≈ 46% of frame height
   const cw = SIGN.iw * SC, chh = SIGN.ih * SC
-  const card = el('div', { position: 'absolute', left: (1420 - cw / 2) + 'px', top: (H / 2 - chh / 2 - 6) + 'px', width: cw + 'px', height: chh + 'px', opacity: 0, willChange: 'transform' }, root)
+  const card = el('div', { position: 'absolute', left: (1400 - cw / 2) + 'px', top: (H / 2 - chh / 2 - 6) + 'px', width: cw + 'px', height: chh + 'px', opacity: 0, willChange: 'transform' }, root)
   const [bl, bt, br, bb] = SIGN.body.map(v => v * SC)
   el('div', { position: 'absolute', left: bl + 'px', top: bt + 'px', width: (br - bl) + 'px', height: (bb - bt) + 'px', borderRadius: (34 * SC) + 'px', boxShadow: '0 34px 60px -14px rgba(26,16,51,0.5), 0 8px 18px rgba(26,16,51,0.25)' }, card)
   const layer = (clip) => img(card, A + SIGN.src, { left: 0, top: 0, width: cw + 'px', height: chh + 'px', clipPath: clip })
@@ -48,33 +48,36 @@ export function sceneReading(stage) {
   return {
     start: 14.05, end: 17.6, root,
     update(t) {
-      if (!titleW) titleW = title.offsetWidth || 660
-      if (!blockW) blockW = Math.max(titleW * 0.94, INDENT + Math.max(...rows.map(r => r.r.offsetWidth || 600)))
-      tChars.forEach((s, i) => { s.style.opacity = String(ease.outQuad(prog(t, 14.25 + i * 0.018, 14.45 + i * 0.018))) })
-      // title starts centred, then glides up/left: the list settles in the left half, the sign card fills the right
+      if (!titleW) titleW = title.offsetWidth || 780
+      if (!blockW) blockW = Math.max(titleW * 0.94, INDENT + Math.max(...rows.map(r => r.r.offsetWidth || 700)))
+      // title types in at frame centre while the circle reveal (14.05–14.55, centred) opens around it
+      tChars.forEach((s, i) => { s.style.opacity = String(ease.outQuad(prog(t, 14.2 + i * 0.018, 14.4 + i * 0.018))) })
+      // title then glides up/left: the list settles centre-left (x≈300), the sign card fills the right
       const g = ease.spring(prog(t, 14.6, 15.2), 0.04)
-      const listH = rows.reduce((h, row, i) => h + ROW * ease.spring(prog(t, AT[i], AT[i] + 0.4), 0.06), 0)
-      const LX = 640 - blockW / 2 // block centred at x≈640
+      // each slot opens *before* its row shows (lead), so the eyebrow below is already clear when the row fades in
+      const lead = AT.map(a => ease.outCubic(prog(t, a - 0.24, a + 0.06)))
+      const listH = lead.reduce((h, l) => h + ROW * l, 0)
+      const LX = 300
       const tx = lerp(W / 2 - titleW / 2, LX, g)
-      const blockTop = lerp(H / 2 - 46, H / 2 - 60 - listH / 2 - 70, g)
+      const blockTop = lerp(H / 2 - 54, H / 2 - listH / 2 - 120, g)
       title.style.left = tx + 'px'; title.style.top = blockTop + 'px'
       title.style.transform = `scale(${lerp(1, 0.94, g)})`; title.style.transformOrigin = '0 0'
-      let y = blockTop + 128
+      let y = blockTop + 146
       rows.forEach((row, i) => {
-        const p = ease.spring(prog(t, AT[i], AT[i] + 0.4), 0.06)
+        const p = ease.outCubic(prog(t, AT[i], AT[i] + 0.32))
         row.r.style.left = (tx + INDENT) + 'px'
         row.r.style.top = y + 'px'
-        row.r.style.opacity = String(clamp(p * 1.5))
-        row.r.style.transform = `translateY(${(1 - p) * 22}px)`
+        row.r.style.opacity = String(clamp(prog(t, AT[i], AT[i] + 0.16)))
+        row.r.style.transform = `translateX(${(1 - p) * -26}px)`
         // active colour blends in on arrival and back to ink as the next row lands (or "Dealing" settles at 17.0)
         const off = i < AT.length - 1 ? AT[i + 1] : 17.0
         const act = prog(t, AT[i], AT[i] + 0.15) * (1 - prog(t, off, off + 0.15))
         row.lab.style.color = mix(C.ink, row.it.c, act)
-        y += ROW * p
+        y += ROW * lead[i]
       })
       const eyeTop = y + 30
-      rail.style.left = (tx + 20) + 'px'; rail.style.top = (blockTop + 122) + 'px'
-      rail.style.height = Math.max(0, eyeTop - 16 - (blockTop + 122)) + 'px'
+      rail.style.left = (tx + 24) + 'px'; rail.style.top = (blockTop + 140) + 'px'
+      rail.style.height = Math.max(0, eyeTop - 18 - (blockTop + 140)) + 'px'
       rail.style.opacity = String(g)
       working.style.left = (tx) + 'px'; working.style.top = eyeTop + 'px'
       const sh = (t * 1.1) % 1
@@ -92,10 +95,10 @@ export function sceneReading(stage) {
       rows[4].lab.style.opacity = String(1 - 0.35 * pulse * (0.5 + 0.5 * Math.sin((t - 16.6) * 14)))
 
       // sign card: swings in from the right after Sun lands, floats, then slides away as the deck is dealt
-      const ci = ease.outCubic(prog(t, 15.0, 15.5)), co = ease.inCubic(prog(t, 16.55, 16.9))
+      const ci = ease.outCubic(prog(t, 14.9, 15.4)), co = ease.inCubic(prog(t, 16.55, 16.9))
       card.style.display = ci > 0 && co < 1 ? 'block' : 'none'
       if (ci > 0 && co < 1) {
-        const fl = Math.sin((t - 15) * 2.2)
+        const fl = Math.sin((t - 14.9) * 2.2)
         const yaw = lerp(38, -11, ci) + 3 * fl * ci + co * 26
         const rx = lerp(-8, 4, ci) + co * -6
         const x = (1 - ci) * 160 + co * 140, yy = (1 - ci) * 30 - 6 * fl - co * 20
@@ -109,7 +112,8 @@ export function sceneReading(stage) {
 // ── fxDots: contained dot-matrix patch over the first dealt card (S5 → S6).
 // Geometry must match S6's first card: card-profile-1 body (PNG box 120,114–1374,2116), PATCH_H tall, centred at (W/2, H/2 − 10).
 // Beats (frame = Math.round(t*30)): sparse random dots grow 17.12–17.5 in aura palette → tint to the card colours 17.32–17.56
-// (S6's first card fades in underneath 17.42–17.6) → dots keep breathing and thin out → 2-frame square mosaic 17.72–17.78 → sharp card.
+// (S6's first card fades in underneath 17.45–17.62) → 2-frame square mosaic (frames 527–528, 17.567/17.6) hides the hand-off
+// → card is opaque, the last dots shrink and thin off it 17.62–17.78. Monotonic: dots → mosaic → sharp card.
 const BODY = [120, 114, 1374, 2116]
 const PATCH_H = 700, PATCH_W = PATCH_H * (BODY[2] - BODY[0]) / (BODY[3] - BODY[1]), PATCH_CX = W / 2, PATCH_CY = H / 2 - 10
 const CELL = 22
@@ -145,15 +149,15 @@ function sampleGrid() {
 
 export function fxDots(ctx, t, opts = {}) {
   // timing is owned here (args from main.js are ignored)
-  const t0 = 17.12, t1 = 17.79
+  const t0 = 17.12, t1 = 17.78
   if (t <= t0 || t >= t1) return
   const gd = sampleGrid()
   const cols = gd ? gd.cols : Math.round(PATCH_W / CELL), rows = gd ? gd.rows : Math.round(PATCH_H / CELL)
   const cw = PATCH_W / cols, ch = PATCH_H / rows
   const ox = PATCH_CX - PATCH_W / 2, oy = PATCH_CY - PATCH_H / 2
-  // square mosaic: two frames (17.733, 17.767) between the dots and the sharp card
-  if (t >= 17.715) {
-    ctx.globalAlpha = t < 17.75 ? 0.94 : 0.62
+  // square mosaic: two frames (17.567, 17.6) while the card underneath is still resolving
+  if (t >= 17.55 && t < 17.617) {
+    ctx.globalAlpha = t < 17.583 ? 0.95 : 0.7
     for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
       const cell = gd ? gd.cells[y * cols + x] : { raw: [60, 30, 80] }
       if (!cell) continue
@@ -164,8 +168,8 @@ export function fxDots(ctx, t, opts = {}) {
     return
   }
   const pg = (t - t0) / 0.36                       // growth (random order, sparse first)
-  const ps = (t - 17.54) / 0.18                    // thinning as the card resolves underneath
-  const tint = ease.inOutQuad(prog(t, 17.32, 17.56)) // palette → sampled card colour
+  const ps = (t - 17.555) / 0.2                    // thinning after the mosaic, over the now-sharp card
+  const tint = ease.inOutQuad(prog(t, 17.3, 17.5))  // palette → sampled card colour
   for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
     const cell = gd ? gd.cells[y * cols + x] : { lift: [200, 120, 170], lum: 120 }
     const r = rng(9 + x * 131 + y * 7)
@@ -179,7 +183,7 @@ export function fxDots(ctx, t, opts = {}) {
     const thin = clamp((ps * 1.3 - jit) * 3)
     // very dark cells give way to the aura colours as the tint lands
     const dark = clamp((70 - cell.lum) / 40)
-    const keep = 1 - dark * 0.9 * ease.inQuad(prog(t, 17.46, 17.68))
+    const keep = 1 - dark * 0.9 * ease.inQuad(prog(t, 17.42, 17.6))
     const wob = 0.86 + 0.14 * Math.sin(t * 11 + ph)
     const rad = Math.min(cw, ch) * 0.47 * ease.outQuad(grow) * wob * keep * (1 - 0.6 * thin)
     if (rad < 0.4) continue
