@@ -19,6 +19,9 @@ import { useBinder } from '../lib/binder'
 import { MATCHES } from '../data/matches'
 import { EVENTS } from '../data/draws'
 import TradeCard from '../components/binder/TradeCard'
+import SignFactsPanel from '../components/talk/SignFactsPanel'
+import type { Face } from '../data/archetypes'
+import type { SignId } from '../data/signs'
 import { copyOf } from './Matches'
 
 type Tab = 'packs' | 'sets' | 'season'
@@ -53,6 +56,7 @@ export default function Collection({ go }: ScreenProps) {
   const [tab, setTab] = useState<Tab>(binderNav.tab())
   const [opening, setOpening] = useState<{ pack: string; cards: Pull[] } | null>(null)
   const [toast, setToast] = useState<string | null>(null)
+  const [detail, setDetail] = useState<{ sign: SignId; face: Face; variant: Variant } | null>(null)
 
   const flash = (m: string) => { setToast(m); window.setTimeout(() => setToast(null), 2200) }
   const open = (id: string) => { sfx.sparkle(); setOpening({ pack: id, cards: talk.openPack(id) }) }
@@ -157,7 +161,7 @@ export default function Collection({ go }: ScreenProps) {
                 const mine = t.signs.filter((o) => o.sign === s && (o.face ?? 'sun') === f)
                 const best = (['mythic', 'gilded', 'base'] as Variant[]).find((v) => mine.some((o) => o.variant === v))
                 return (
-                  <div key={`${s}-${f}`} style={{ position: 'relative' }}>
+                  <div key={`${s}-${f}`} style={{ position: 'relative', cursor: 'pointer' }} onClick={() => { sfx.flip(); setDetail({ sign: s, face: f, variant: best ?? 'base' }) }}>
                     <ArchetypeCard sign={s} face={f} variant={best ?? 'base'} width={74} dim={!best} edition={false} />
                     {mine.length > 1 && <span className="mono" style={{ position: 'absolute', top: -5, right: -5, minWidth: 18, height: 18, borderRadius: 9, fontSize: 9, fontWeight: 700, display: 'grid', placeItems: 'center', background: 'var(--chrome)', color: 'var(--chrome-ink)' }}>×{mine.length}</span>}
                   </div>
@@ -249,6 +253,19 @@ export default function Collection({ go }: ScreenProps) {
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
             style={{ position: 'absolute', left: 0, right: 0, bottom: 48, display: 'flex', justifyContent: 'center', zIndex: 90, pointerEvents: 'none' }}>
             <div style={{ padding: '10px 16px', borderRadius: 999, fontSize: 13.5, background: 'rgba(36,20,76,0.95)', border: `1px solid ${GOLD}66` }}>{toast}</div>
+          </motion.div>
+        )}
+        {detail && (
+          <motion.div key="detail" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setDetail(null)}
+            style={{ position: 'absolute', inset: 0, zIndex: 90, background: 'rgba(7,3,26,0.98)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '70px 24px 0', overflowY: 'auto', scrollbarWidth: 'none' }}>
+            <motion.div initial={{ rotateY: 90, scale: 0.8 }} animate={{ rotateY: 0, scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 18 }}>
+              <ArchetypeCard sign={detail.sign} face={detail.face} variant={detail.variant} width={190} dim={!t.signs.some((o) => o.sign === detail.sign && (o.face ?? 'sun') === detail.face)} />
+            </motion.div>
+            {!t.signs.some((o) => o.sign === detail.sign && (o.face ?? 'sun') === detail.face) && (
+              <div className="mono" style={{ marginTop: 10, fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-3)' }}>NOT IN YOUR BINDER YET · FIND IT IN PACKS</div>
+            )}
+            <div style={{ width: '100%', marginTop: 16 }}><SignFactsPanel sign={detail.sign} face={detail.face} full /></div>
+            <div className="mono" style={{ margin: '16px 0 40px', fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}>TAP ANYWHERE TO CLOSE</div>
           </motion.div>
         )}
         {opening && <PackOpen pack={packInfo(opening.pack)} cards={opening.cards} onDone={() => { setOpening(null); setTab('sets') }} />}

@@ -33,6 +33,11 @@ are), **Moon** (what they need), **Rising** (how they come across) and
 Peacemaker*, Rising *The Muse*, Venus *The Romantic*. Sun is the most common;
 Venus is the find.
 
+The back of every sign card carries its facts: dates, element, mode, ruling
+planet, what that face means when you date one, the myth behind the sign, a
+famous one, "most likely to" and a perfect first date. They show when the card
+turns in a pack and when you tap it in your binder (`data/signFacts.ts`).
+
 Archetypes come in three finishes: **Myths** (base), **Gilded** (gold foil,
 about 1 in 5 packs) and **Mythic** (holo, about 1 in 25).
 

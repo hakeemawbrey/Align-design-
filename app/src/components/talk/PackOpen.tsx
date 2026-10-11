@@ -6,6 +6,7 @@ import { SEASON } from '../../data/seasons'
 import { sfx } from '../../lib/sfx'
 import { TalkCardBack, TAROT_RATIO } from './TalkCardFace'
 import PullFace, { PULL_KIND } from './PullFace'
+import SignFactsPanel from './SignFactsPanel'
 import { ConfettiCanvas, useConfetti } from '../reveal/useConfetti'
 
 /** 0 common · 1 rare · 2 the jackpot */
@@ -306,15 +307,20 @@ function OneByOne({ cards, color, onGlow, onBurst, onAll }: {
         </AnimatePresence>
       </div>
 
-      <div style={{ position: 'relative', display: 'flex', gap: 5, marginTop: 18 }}>
-        {cards.map((x, i) => (
-          <span key={i} style={{
-            width: 8, height: 8, borderRadius: 4, transition: 'background 0.3s',
-            background: i < at || (i === at && up) ? (tierOf(x) ? TIER_COLOR[tierOf(x)] : 'var(--chrome)') : 'rgba(179,166,196,0.25)',
-            boxShadow: (i < at || (i === at && up)) && tierOf(x) ? `0 0 8px ${TIER_COLOR[tierOf(x)]}` : 'none',
-          }} />
-        ))}
-      </div>
+      {/* a sign card shows its back: the facts. Everything else shows progress */}
+      {up && c.kind === 'sign' ? (
+        <div style={{ position: 'relative', width: 342, marginTop: 14 }}><SignFactsPanel sign={c.sign} face={c.face} /></div>
+      ) : (
+        <div style={{ position: 'relative', display: 'flex', gap: 5, marginTop: 18 }}>
+          {cards.map((x, i) => (
+            <span key={i} style={{
+              width: 8, height: 8, borderRadius: 4, transition: 'background 0.3s',
+              background: i < at || (i === at && up) ? (tierOf(x) ? TIER_COLOR[tierOf(x)] : 'var(--chrome)') : 'rgba(179,166,196,0.25)',
+              boxShadow: (i < at || (i === at && up)) && tierOf(x) ? `0 0 8px ${TIER_COLOR[tierOf(x)]}` : 'none',
+            }} />
+          ))}
+        </div>
+      )}
       <button className="mono" onClick={() => { sfx.tap(); onAll() }}
         style={{ position: 'relative', marginTop: 16, fontSize: 9.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>
         SHOW ALL {cards.length} ›
