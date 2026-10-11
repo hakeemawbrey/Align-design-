@@ -239,7 +239,8 @@ export function sceneTagline(stage, assets) {
       drawAurora(t, ease.inOutQuad(prog(t, 22.45, 23.15)))
       BLOOM.forEach(b => {
         const up = ease.outCubic(prog(t, 22.4 + b.i * 0.05, 23.1 + b.i * 0.05))
-        const y = lerp(1.55, b.y1, up) * H - b.r + Math.cos(t * 0.5 + b.i) * 30
+        const yy = tw(t, [[22.4 + b.i * 0.05, 1.55], [22.85 + b.i * 0.05, 0.92, ease.outCubic], [23.6 + b.i * 0.05, b.y1, ease.inOutQuad]])
+        const y = yy * H - b.r + Math.cos(t * 0.5 + b.i) * 30
         const x = b.x * W - b.r + Math.sin(t * 0.4 + b.i * 2) * 70
         b.e.style.opacity = String(lerp(0.9, 0.32, ease.inOutQuad(prog(t, 22.9, 23.7))))
         b.e.style.transform = `translate(${x}px, ${y}px) scale(${lerp(0.7, 1, up)})`

@@ -74,8 +74,6 @@ function bezier(x1, y1, x2, y2) {
   }
 }
 const liftEase = bezier(0.42, 0, 0.38, 1)  // app uses [0.65,0,0.25,1]; softened so the dissolve reads over the whole 1.1s
-/** time at which the lift crosses p = 0.55 (the app's onPeak) */
-const LIFT_PEAK = (() => { let lo = 0, hi = 1; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (liftEase(m) < 0.55) lo = m; else hi = m } return LIFT.a + lo * (LIFT.b - LIFT.a) })()
 const CAP = { eyebrow: 6.95, line: 7.05, out: 8.5 }   // caption beats (sound: eyebrow tick, line pop)
 
 const veilSrc = typeof document !== 'undefined' ? document.createElement('img') : null
@@ -270,8 +268,14 @@ export function sceneVeil(stage) {
       const p = liftEase(prog(t, LIFT.a, LIFT.b))
       // photo pulls into focus from completely unrecognisable
       // (focus runs on its own slower clock so the face stays unrecognisable as the veil first clears)
-      const fb = Math.pow(1 - prog(t, LIFT.a + 0.15, LIFT.b - 0.14), 2)
-      real.style.filter = `blur(${72 * fb}px) saturate(${lerp(0.6, 1.08, p)})`
+      const fb = Math.pow(1 - prog(t, LIFT.a + 0.05, 8.2), 2)
+      // aura-cam pass: print visible until the resolve, white bloom flash at RES.peak
+      const auraO = 1 - ease.inOutQuad(prog(t, RES.a + 0.02, RES.b - 0.04))
+      const fl = t < RES.peak ? ease.inQuad(prog(t, RES.a, RES.peak)) : 1 - ease.outQuad(prog(t, RES.peak, RES.peak + 0.2))
+      const after = t < RES.peak ? 0 : 1 - ease.outCubic(prog(t, RES.peak, RES.peak + 0.35))
+      real.style.filter = `blur(${64 * fb}px) saturate(${lerp(0.6, 1.08, p)}) brightness(${1 + 0.3 * after})`
+      flash.style.opacity = String(0.82 * fl)
+      const sw = sweepAt(t)
       const liftScale = lerp(1.14, 1, p)
       // veil: mask edge 0 → 135% from the bottom (transparent below edge−35%), drifts up 18%, blur grows
       const edge = lerp(0, 135, p)
@@ -284,8 +288,8 @@ export function sceneVeil(stage) {
       const seamO = p < 0.08 ? p / 0.08 : p < 0.75 ? lerp(1, 0.9, (p - 0.08) / 0.67) : lerp(0.9, 0, (p - 0.75) / 0.25)
       seam.style.opacity = String(p <= 0 ? 0 : seamO)
       seam.style.transform = `translateY(${H * (1 - (p * 1.35 - 0.175)) - 100}px)`
-      // sparkle burst from the peak (p ≈ 0.55)
-      const pk = prog(t, LIFT_PEAK, LIFT_PEAK + 0.55)
+      // sparkle burst
+      const pk = prog(t, RES.peak - 0.04, RES.peak + 0.51) // sparkle burst rides the resolve flash
       SPK.forEach((k, i) => {
         const q = prog(pk, k.d, k.d + 0.6)
         const e = sparks[i]
@@ -299,7 +303,7 @@ export function sceneVeil(stage) {
       const push = liftScale * lerp(1.0, 1.03, ease.outQuad(prog(t, 6.86, 8.75))) * lerp(1, 1.05, ease.inOutQuad(prog(t, 8.0, 8.9)))
       const yShift = lerp(-360, -380, ease.outQuad(prog(t, 6.86, 8.75)))
       // shrink so the photo lands exactly in the real card's photo window
-      const k = ease.inOutCubic(prog(t, 8.5, 9.08)) // k ≥ 0.99 by ~9.01
+      const k = ease.inOutCubic(prog(t, SHRINK.a, SHRINK.b)) // k ≥ 0.999 by 9.06
       const fw = lerp(W, WIN.w - INSET * 2, k), fh = lerp(H, WIN.h - INSET * 2, k)
       const fcy = lerp(0, WIN.y + WIN.h / 2, k)
       frame.style.width = fw + 'px'; frame.style.height = fh + 'px'
@@ -311,7 +315,35 @@ export function sceneVeil(stage) {
       // grain crawls a new tile offset every frame; fades as the photo becomes the card
       const fi = Math.round(t * 30), gr = rng(fi * 131 + 17)
       grain.style.backgroundPosition = `${Math.floor(gr() * 256)}px ${Math.floor(gr() * 256)}px`
-      grain.style.opacity = String(0.16 * (1 - k))
+      grain.style.opacity = String(0.16 * (1 - k) + 0.14 * auraO)
+      // ── aura print + optics ──
+      const showAura = auraO > 0.001
+      auraCv.style.display = auraFx.style.display = showAura ? 'block' : 'none'
+      if (showAura) {
+        aura.draw(Math.round(sw * 1000) / 1000)
+        auraCv.style.opacity = String(auraO)
+        auraCv.style.filter = `blur(${64 * fb + 2}px) contrast(1.06)`
+        auraCv.style.transform = real.style.transform
+        auraFx.style.opacity = String(auraO)
+        // sitter's head in frame coords (juniper.jpg 720×960; head ≈ (335, 520))
+        const hx = fw / 2 + (335 * 8 / 3 - 960) * imgScale, hy = fh / 2 + ty + (520 * 8 / 3 - 1280) * imgScale
+        const cIn = chakraAt(sw), cOut = chakraAt(sw - LAG - 0.2), cLeak = chakraAt(sw + 0.9)
+        halo.style.background = `radial-gradient(${560 * imgScale}px ${640 * imgScale}px at ${hx}px ${hy + 120}px, rgba(255,250,240,0.0) 0%, rgba(255,250,240,0.18) 26%, ${rgbS(cIn, 0.42)} 44%, ${rgbS(cIn, 0.22)} 66%, ${rgbS(cIn, 0)} 100%)`
+        edgeField.style.background = `radial-gradient(78% 105% at 50% 40%, ${rgbS(cOut, 0)} 48%, ${rgbS(cOut, 0.5)} 100%)`
+        const lx = lerp(-10, 85, ease.inOutQuad(prog(t, 7.3, 8.4)))
+        leak.style.left = lx + '%'
+        leak.style.background = `radial-gradient(closest-side, rgba(255,246,232,0.35) 0%, ${rgbS(cLeak, 0.4)} 35%, ${rgbS(cLeak, 0)} 100%)`
+        leak.style.transform = `rotate(${lerp(-14, 10, prog(t, 7.3, 8.4))}deg)`
+      }
+      // readout: in with the sweep, out on the flash
+      const tagO = ease.outQuad(prog(t, SWEEP.a - 0.05, SWEEP.a + 0.12)) * (1 - ease.inQuad(prog(t, RES.a, RES.peak + 0.02)))
+      tag.style.opacity = String(tagO)
+      if (tagO > 0) {
+        const cur = Math.round(clamp(sw, 0, 6))
+        tagDot.style.background = rgbS(chakraAt(sw))
+        tagDot.style.boxShadow = `0 0 14px 3px ${rgbS(chakraAt(sw), 0.8)}`
+        tagSegs.forEach((e, i) => { e.style.opacity = String(i < cur ? 0.6 : i === cur ? 1 : 0.18); e.style.boxShadow = i === cur ? `0 0 10px 1px ${rgbS(CHAKRA[i], 0.9)}` : 'none' })
+      }
       // the real card opens out from the photo window (clip grows outward), then the photo frame hands off
       const cp = ease.outCubic(prog(t, 9.06, 9.32)) // opens only once the photo has landed
       const wl = REV.win.x * D, wt = REV.win.y * D, wr = (REV.w - REV.win.x - REV.win.w) * D, wb = (REV.h - REV.win.y - REV.win.h) * D
