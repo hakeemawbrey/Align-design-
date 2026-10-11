@@ -11,6 +11,7 @@ card ghosted in the centre. Heavy film grain, vignette and flicker throughout.
 import argparse
 import json
 import os
+import re
 import subprocess
 import tempfile
 
@@ -209,7 +210,8 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
         fh.write(cfg["caption"] + "\n\n" + " ".join("#" + t.replace(" ", "") for t in cfg["tags"]) + "\n\n")
         fh.write("Imagery:\n")
         for it in [picks["plate"]] + pool:
-            fh.write(f"- {it.get('title','')[:80]} / {it.get('creator','')[:40]} / {it.get('license','')} / {it.get('landing','')}\n")
+            title = re.sub(r"<[^>]+>", "", it.get("title", "")).strip()
+            fh.write(f"- {title[:80]} / {it.get('creator','')[:40]} / {it.get('license','')} / {it.get('landing','')}\n")
     print(out)
     return out
 
