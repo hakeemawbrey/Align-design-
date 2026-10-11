@@ -8,7 +8,7 @@ import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, ma
 const REV = { w: 1560, h: 2740, win: { x: 118, y: 314, w: 1325, h: 893 }, imgTop: 312 }
 const D = 0.35 // display scale → card body ≈ 500px wide, 959px PNG tall
 // card-back.png 1528×2347: body x 120..1439 (1320 wide) → match the front body width
-const BACK = { w: 1528, h: 2347, markX: 775, markY: 1134 }
+const BACK = { w: 1528, h: 2347, markX: 782, markY: 1134 }
 const DB = 1430 * D / 1320
 // photo window rect in world coords (world origin = screen centre = card centre)
 const WIN = {
@@ -40,8 +40,19 @@ export function sceneVeil(stage) {
   // front face: photo frame that lands in the real card's photo window, then the card itself
   const front = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, backfaceVisibility: 'hidden' }, world)
   const card = img(front, A + 'card-reveal.png', {
-    left: -REV.w * D / 2 + 'px', top: -REV.h * D / 2 + 'px', width: REV.w * D + 'px', height: REV.h * D + 'px', opacity: 0,
+    left: -REV.w * D / 2 + 'px', top: -REV.h * D / 2 + 'px', width: REV.w * D + 'px', height: REV.h * D + 'px', clipPath: 'inset(50%)',
   })
+  // one gold hairline glint across the card body once it has opened out
+  const BODY = { x: 66 * D, y: 123 * D, w: (1494 - 66) * D, h: (2620 - 123) * D, r: 100 * D }
+  const glintBox = el('div', {
+    position: 'absolute', left: (-REV.w * D / 2 + BODY.x) + 'px', top: (-REV.h * D / 2 + BODY.y) + 'px', width: BODY.w + 'px', height: BODY.h + 'px',
+    borderRadius: BODY.r + 'px', overflow: 'hidden', pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0,
+  }, front)
+  const glint = el('div', {
+    position: 'absolute', top: '-30%', left: 0, width: '180px', height: '160%',
+    background: 'linear-gradient(90deg, rgba(242,199,92,0) 0%, rgba(242,199,92,0.10) 38%, rgba(255,228,160,0.55) 49%, rgba(255,246,220,0.95) 50%, rgba(255,228,160,0.55) 51%, rgba(242,199,92,0.10) 62%, rgba(242,199,92,0) 100%)',
+    transform: 'skewX(-24deg)',
+  }, glintBox)
   const frame = el('div', { position: 'absolute', overflow: 'hidden', background: C.raised }, front)
   const real = img(frame, IMG + 'juniper.jpg', { left: '50%', top: '50%', width: '1920px', height: '2560px', objectFit: 'cover' })
   const therm = img(frame, IMG + 'juniper.jpg', { left: '50%', top: '50%', width: '1920px', height: '2560px', objectFit: 'cover', filter: 'url(#thermal)' })
@@ -53,14 +64,14 @@ export function sceneVeil(stage) {
   const back = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, backfaceVisibility: 'hidden' }, world)
   img(back, A + 'card-back.png', { left: -BACK.w * DB / 2 + 'px', top: -BACK.h * DB / 2 + 'px', width: BACK.w * DB + 'px', height: BACK.h * DB + 'px' })
   // story eyebrow while the veil lifts
-  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '260px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.5) 70%, rgba(11,6,32,0.6) 100%)', opacity: 0 }, root)
+  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '320px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.55) 55%, rgba(11,6,32,0.7) 100%)', opacity: 0 }, root)
   const eyebrow = el('div', {
-    position: 'absolute', left: '50%', bottom: '74px', transform: 'translateX(-50%)', fontFamily: MONO, fontSize: '18px',
-    letterSpacing: '0.24em', color: 'rgba(239,230,214,0.85)', whiteSpace: 'nowrap', textTransform: 'uppercase', opacity: 0,
-  }, root, 'No faces until you both align')
+    position: 'absolute', left: '50%', bottom: '90px', transform: 'translateX(-50%)', fontFamily: MONO, fontSize: '30px',
+    letterSpacing: '0.18em', color: 'rgba(239,230,214,0.85)', whiteSpace: 'nowrap', textTransform: 'uppercase', opacity: 0,
+  }, root, 'The veil lifts when you both align')
 
   return {
-    start: 6.8, end: 10.08, root,
+    start: 6.8, end: 9.94, root,
     update(t) {
       // thermal → real, top-down soft wipe while the veil (blur) lifts
       const wp = ease.inOutCubic(prog(t, 7.2, 8.2))
@@ -81,13 +92,18 @@ export function sceneVeil(stage) {
       const ty = lerp(yShift, IMG_END_TY, k)
       for (const im of [real, therm]) im.style.transform = `translate(-50%,-50%) translateY(${ty}px) scale(${imgScale})`
       // grain crawls a new tile offset every frame; fades as the photo becomes the card
-      const fi = Math.floor(t * 30), gr = rng(fi * 131 + 17)
+      const fi = Math.round(t * 30), gr = rng(fi * 131 + 17)
       grain.style.backgroundPosition = `${Math.floor(gr() * 256)}px ${Math.floor(gr() * 256)}px`
       grain.style.opacity = String(0.16 * (1 - k))
-      // the real card fades in around the landed photo; then the photo frame hands off
-      const cp = ease.inOutQuad(prog(t, 9.05, 9.4))
-      card.style.opacity = String(cp)
-      frame.style.opacity = String(1 - prog(t, 9.3, 9.42))
+      // the real card opens out from the photo window (clip grows outward), then the photo frame hands off
+      const cp = ease.outExpo(prog(t, 9.02, 9.28))
+      const wl = REV.win.x * D, wt = REV.win.y * D, wr = (REV.w - REV.win.x - REV.win.w) * D, wb = (REV.h - REV.win.y - REV.win.h) * D
+      card.style.clipPath = t < 9.02 ? 'inset(50%)' : cp >= 1 ? 'none'
+        : `inset(${lerp(wt, 0, cp)}px ${lerp(wr, 0, cp)}px ${lerp(wb, 0, cp)}px ${lerp(wl, 0, cp)}px round ${lerp(14, BODY.r, cp)}px)`
+      frame.style.opacity = String(1 - prog(t, 9.26, 9.34))
+      const gp = prog(t, 9.28, 9.5)
+      glintBox.style.opacity = gp > 0 && gp < 1 ? String(Math.sin(Math.PI * gp) * 0.9 + 0.1) : '0'
+      glint.style.transform = `translateX(${lerp(-260, BODY.w + 120, ease.inOutCubic(gp))}px) skewX(-24deg)`
       stars.style.opacity = String(prog(t, 8.85, 9.35))
       // eyebrow during the wipe, gone before the shrink
       const eb = prog(t, 7.45, 7.8) * (1 - prog(t, 8.5, 8.72))
@@ -95,16 +111,19 @@ export function sceneVeil(stage) {
       eyebrow.style.transform = `translateX(-50%) translateY(${(1 - ease.outCubic(prog(t, 7.45, 7.9))) * 10}px)`
       scrim.style.opacity = String(eb)
       // flip 0→180 onto the card back, then push into the mark (handoff to S4's indigo sky)
-      const a = 180 * ease.inOutCubic(prog(t, 9.66, 9.92))
+      const a = 180 * ease.inOutCubic(prog(t, 9.5, 9.76))
       front.style.transform = `perspective(1800px) rotateY(${a}deg)`
       back.style.transform = `perspective(1800px) rotateY(${a - 180}deg)`
       front.style.visibility = a < 90 ? 'visible' : 'hidden'
       back.style.visibility = a >= 90 ? 'visible' : 'hidden'
-      const ps = Math.pow(8, ease.inQuad(prog(t, 9.72, 10.0)))
+      // small life move once the card has landed
+      const life = lerp(1, 0.97, ease.inOutQuad(prog(t, 9.3, 9.6)))
+      const ps = Math.pow(8, ease.inQuad(prog(t, 9.56, 9.86)))
       // scale about the mark while drifting it to screen centre
-      const c = ease.inOutQuad(prog(t, 9.72, 10.0))
-      const tx = MARK.x * (1 - c) - ps * MARK.x, ty2 = MARK.y * (1 - c) - ps * MARK.y
-      world.style.transform = `translate(${tx}px, ${ty2}px) scale(${ps})`
+      const c = ease.inOutQuad(prog(t, 9.56, 9.86))
+      const S = ps * life
+      const tx = MARK.x * life * (1 - c) - S * MARK.x, ty2 = MARK.y * life * (1 - c) - S * MARK.y
+      world.style.transform = `translate(${tx}px, ${ty2}px) scale(${S})`
     },
   }
 }
