@@ -2,15 +2,15 @@ import { clamp, lerp, prog, ease, tw, el, C, TypeLine } from '../lib.js'
 import { W, H, A, SANS, SERIF, MONO, fill, img, Ticks } from "./common.js"
 
 // ──────────────────────────────────────── S7 · gradient tagline + payoff beats
-// Timing (sound): colour rises 22.40–23.00 · ticks open 22.72 · typing 22.72, perChar 0.024
-// (complete ~23.44, held to 24.15) · tagline out 24.15–24.30 ·
-// beat A  phone (match) lands 24.20 (opaque by 24.25, settles ~24.62) · caption A pops 24.48 ·
-// beat B  swap 25.30: match phone exits left, chat phone slides in, lands ~25.78 · caption B pops 25.74 ·
-// exit is main.js stair wipe 26.58–26.94 (no fade here; colours hold until covered).
-const T_TYPE = 22.72, PER = 0.024, T_OUT = 24.15
-const T_A = 24.2, T_A_END = 24.62
-const T_SW = 25.3, T_B_END = 25.8
-const CAP_A = 24.48, CAP_B = 25.74
+// Timing (sound): colour rises 22.40–23.00 · ticks + typing 22.56, perChar 0.016, fade 0.12
+// (complete ~23.08, held to 24.14) · tagline out 24.14–24.26 (gone) ·
+// beat A  match phone fades in 24.26–24.38, lands/settles ~24.70 · caption A pops 24.30 (full 24.40, out 25.52–25.64) ·
+// beat B  swap 25.45: match phone exits left (to ~25.85); chat phone enters 25.50, lands ~25.95 ·
+//         caption B pops 25.60 (full 25.70) · exit is main.js stair wipe 26.58–26.94.
+const T_TYPE = 22.56, PER = 0.016, T_OUT = 24.14, OUT_D = 0.12
+const T_A = 24.26, T_A_END = 24.7
+const T_SW = 25.45, T_B0 = 25.5, T_B_END = 25.95
+const CAP_A = 24.3, CAP_A_OUT = 25.52, CAP_B = 25.6
 
 const PH = 880, PW = Math.round(PH * 1170 / 2532) // 407
 const AX = 690, BX = 1280 // resting phone centres
@@ -56,15 +56,15 @@ export function sceneTagline(stage, assets) {
   const pA = phone(A + 'screen-match.png', 3, [[-64, PH * 0.2, 44], [PW + 54, PH * 0.72, 32]])
   const pB = phone(A + 'screen-chat-cards.png', 4, [[PW + 60, PH * 0.16, 44], [-56, PH * 0.8, 32]])
 
-  function caption(x, align, eyebrow, line) {
+  function caption(x, align, eyebrow, line, scrim) {
     const box = el('div', { position: 'absolute', top: (H / 2 - 74) + 'px', [align]: x + 'px', textAlign: align, opacity: 0, zIndex: 6, isolation: 'isolate' }, root)
-    el('div', { position: 'absolute', left: '-140px', right: '-140px', top: '-90px', bottom: '-90px', background: 'radial-gradient(closest-side, rgba(58,22,108,0.32), rgba(58,22,108,0.14) 55%, rgba(58,22,108,0) 100%)', zIndex: -1 }, box)
-    el('div', { fontFamily: MONO, fontSize: '20px', letterSpacing: '0.26em', color: 'rgba(255,246,234,0.85)', textShadow: '0 1px 12px rgba(46,16,96,0.55)', marginBottom: '14px' }, box, eyebrow)
-    el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '78px', lineHeight: 1.05, color: '#fff6ea', whiteSpace: 'nowrap', textShadow: '0 2px 30px rgba(46,16,96,0.55), 0 1px 3px rgba(40,10,80,0.4)' }, box, line)
+    el('div', { position: 'absolute', left: '-330px', right: '-330px', top: '-140px', bottom: '-140px', background: `radial-gradient(closest-side, ${[[0, 1], [25, 0.95], [48, 0.76], [66, 0.48], [82, 0.2], [100, 0]].map(([o, k]) => `rgba(44,14,88,${(scrim * k).toFixed(3)}) ${o}%`).join(', ')})`, zIndex: -1 }, box)
+    el('div', { fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', color: 'rgba(255,246,234,0.92)', textShadow: '0 0 16px rgba(36,10,76,0.75), 0 0 5px rgba(36,10,76,0.55)', marginBottom: '14px' }, box, eyebrow)
+    el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '78px', lineHeight: 1.05, color: '#fff6ea', whiteSpace: 'nowrap', textShadow: '0 0 26px rgba(36,10,76,0.7), 0 0 8px rgba(36,10,76,0.55), 0 2px 3px rgba(30,8,60,0.45)' }, box, line)
     return box
   }
-  const capA = caption(AX + PW / 2 + 120, 'left', 'IT’S MUTUAL', 'You both aligned.')
-  const capB = caption(W - (BX - PW / 2 - 110), 'right', 'THE TALK DECK', 'Then you talk in cards.')
+  const capA = caption(AX + PW / 2 + 120, 'left', 'IT’S MUTUAL', 'You both aligned.', 0.56)
+  const capB = caption(W - (BX - PW / 2 - 110), 'right', 'THE TALK DECK', 'Then you talk in cards.', 0.62)
 
   function capStyle(box, t, t0, t1, dir) {
     const i = ease.outCubic(prog(t, t0, t0 + 0.28))
@@ -76,7 +76,7 @@ export function sceneTagline(stage, assets) {
   return {
     start: 22.4, end: 27.0, root,
     update(t) {
-      under.style.opacity = String(prog(t, 22.55, 22.75))
+      under.style.opacity = String(ease.inOutQuad(prog(t, 22.42, 22.62)))
       const rise = lerp(900, 0, ease.outCubic(prog(t, 22.4, 23.0)))
       blobs.forEach((b, i) => {
         const x = b.x * W + Math.sin(t * 0.6 + i * 1.7) * 90 - b.r
@@ -88,23 +88,24 @@ export function sceneTagline(stage, assets) {
       // tagline
       if (!tagW) tagW = tag.root.offsetWidth
       tag.update(t - T_TYPE)
-      const tOut = ease.inQuad(prog(t, T_OUT, T_OUT + 0.15))
+      const tOut = ease.inQuad(prog(t, T_OUT, T_OUT + OUT_D))
       tag.root.style.opacity = String(1 - tOut)
       tag.root.style.transform = `translate(-50%, calc(-50% - ${tOut * 40}px))`
-      const to = ease.outCubic(prog(t, T_TYPE, T_TYPE + 0.7))
-      ticks.update(W / 2, H / 2 - tOut * 40, lerp(220, tagW + 120, to), lerp(110, 150, to), prog(t, T_TYPE, T_TYPE + 0.05) * (1 - tOut))
+      // ticks sit at full width from the first frame (letters never outside them); only height/opacity animate
+      const to = ease.outCubic(prog(t, T_TYPE - 0.03, T_TYPE + 0.4))
+      ticks.update(W / 2, H / 2 - tOut * 40, tagW + 120, lerp(96, 150, to), prog(t, T_TYPE - 0.03, T_TYPE + 0.05) * (1 - tOut))
 
       // ── beat A: match phone falls into place
       const La = ease.outQuart(prog(t, T_A, T_A_END + 0.1)), Sa = ease.spring(prog(t, T_A, T_A_END + 0.3), 0.04)
       const hold = Math.sin((t - T_A) * 1.6)
-      const Xa = ease.inOutCubic(prog(t, T_SW, T_SW + 0.45))
+      const Xa = ease.inOutCubic(prog(t, T_SW, T_SW + 0.4))
       const ax = lerp(AX, -520, Xa)
       const sA = lerp(0.7, 1, Sa) * (1 + 0.012 * prog(t, T_A_END, T_SW)) * lerp(1, 0.9, Xa)
       const rxA = lerp(26, 3, La) + 0.8 * hold
       const ryA = lerp(-26, -6, La) + 1.2 * Math.sin((t - T_A) * 1.1) + 22 * Xa
       const rzA = lerp(-8, -1.2, La) - 4 * Xa
       const tyA = lerp(220, 0, La) + 5 * hold
-      pA.g.style.opacity = String(prog(t, T_A, T_A + 0.05))
+      pA.g.style.opacity = String(ease.outQuad(prog(t, T_A, T_A + 0.12)))
       pA.g.style.transform = `translate(${ax}px, ${tyA}px) rotateX(${rxA}deg) rotateY(${ryA}deg) rotateZ(${rzA}deg) scale(${sA})`
       const hA = prog(t, T_A_END - 0.06, T_A_END + 0.04) * (1 - prog(t, T_SW, T_SW + 0.1))
       pA.hs.forEach(h => { h.style.opacity = String(hA) })
@@ -116,26 +117,26 @@ export function sceneTagline(stage, assets) {
       const bloom = tw(t, [[T_A + 0.2, 0], [T_A + 0.42, 1, ease.outQuad], [T_A + 1.0, 0.35, ease.inOutQuad]])
       aura.style.opacity = String(bloom * (1 - Xa))
       aura.style.transform = `translateX(${ax - AX}px) scale(${lerp(0.85, 1.08, bloom)})`
-      capStyle(capA, t, CAP_A, T_SW - 0.08, 1)
+      capStyle(capA, t, CAP_A, CAP_A_OUT, 1)
 
       // ── beat B: talk cards in chat slide in from the right and settle
-      const Lb = ease.outCubic(prog(t, T_SW, T_B_END))
-      const Sb = ease.outQuart(prog(t, T_SW + 0.1, T_B_END + 0.1))
-      const holdB = Math.sin((t - T_SW) * 1.5)
+      const Lb = ease.outCubic(prog(t, T_B0, T_B_END))
+      const Sb = ease.outQuart(prog(t, T_B0 + 0.1, T_B_END + 0.1))
+      const holdB = Math.sin((t - T_B0) * 1.5)
       const bx = lerp(W + PW + 260, BX, Lb)
       const sB = lerp(0.8, 1, Sb) * (1 + 0.012 * prog(t, T_B_END, 26.9))
-      const ryB = lerp(-30, 6, Lb) + 1.2 * Math.sin((t - T_SW) * 1.1)
+      const ryB = lerp(-30, 6, Lb) + 1.2 * Math.sin((t - T_B0) * 1.1)
       const rxB = lerp(10, 3, Sb) + 0.8 * holdB
       const rzB = lerp(7, 1.2, Lb)
       const tyB = lerp(140, 0, Sb) + 5 * holdB
-      pB.g.style.opacity = String(prog(t, T_SW, T_SW + 0.05))
+      pB.g.style.opacity = String(ease.outQuad(prog(t, T_B0, T_B0 + 0.12)))
       pB.g.style.transform = `translate(${bx}px, ${tyB}px) rotateX(${rxB}deg) rotateY(${ryB}deg) rotateZ(${rzB}deg) scale(${sB})`
       const hB = prog(t, T_B_END - 0.06, T_B_END + 0.04)
       pB.hs.forEach(h => { h.style.opacity = String(hB) })
       pB.sp.forEach((s, i) => {
         const tw_ = 0.65 + 0.35 * Math.sin(t * 3.2 + i * 2.1)
         s.style.opacity = String(prog(t, T_B_END + i * 0.1, T_B_END + 0.2 + i * 0.1) * tw_)
-        s.style.transform = `translateY(${Math.sin(t * 1.4 + i) * 6}px) rotate(${(t - T_SW) * 40 * (i ? 1 : -1)}deg) scale(${lerp(0.4, 1, ease.outBack(prog(t, T_B_END + i * 0.1, T_B_END + 0.3 + i * 0.1)))})`
+        s.style.transform = `translateY(${Math.sin(t * 1.4 + i) * 6}px) rotate(${(t - T_B0) * 40 * (i ? 1 : -1)}deg) scale(${lerp(0.4, 1, ease.outBack(prog(t, T_B_END + i * 0.1, T_B_END + 0.3 + i * 0.1)))})`
       })
       capStyle(capB, t, CAP_B, 99, -1)
     },

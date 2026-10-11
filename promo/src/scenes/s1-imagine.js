@@ -1,12 +1,20 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
 import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
 
+// index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
+// Register the 500 face locally (shared guard with s2) — document.fonts.ready waits for it.
+if (typeof document !== 'undefined' && !window.__inter500) {
+  window.__inter500 = new FontFace('Inter', "url(../app/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format('woff2')", { weight: '500' })
+  document.fonts.add(window.__inter500); window.__inter500.load().catch(() => {})
+}
+
 // ─────────────────────────────────────────────────────────────── S1 · Imagine
 // Juniper's portrait at 720×960 → face centre ≈ (330, 520) in source px.
 const FACE_X = 620, FACE_Y = 270          // where her face sits on screen (upper-left of the line)
 const LAYER_W = 1500, LAYER_H = 2000
 /** typing starts here (sound cue); 37 chars × perChar 0.026 + fade 0.3 → fully typed by ~1.44s */
 const TYPE_START = 0.2
+const SCRIM_W = 1500, SCRIM_H = 260, SCRIM_A = 0.30
 const FIELD_W = 2700, FIELD_H = 3600      // sharp(er) silhouette layer, native 3:4 aspect
 export function sceneImagine(stage) {
   const root = fill(stage, { background: C.void })
@@ -35,9 +43,15 @@ export function sceneImagine(stage) {
   root.appendChild(wash); root.appendChild(tint) // washes above the slices too
   const bands = Array.from({ length: 7 }, () => el('div', { position: 'absolute', left: 0, width: W + 'px', height: '2px', background: 'rgba(255,247,236,0.35)', opacity: 0 }, root))
   const strips = Array.from({ length: 5 }, () => el('div', { position: 'absolute', left: 0, width: W + 'px', background: 'rgba(255,247,236,0.07)', opacity: 0, mixBlendMode: 'screen' }, root))
+  // soft indigo scrim behind the caption so bone text holds ≥3.5:1 over the light pink right half
+  const scrim = el('div', {
+    position: 'absolute', left: (W / 2 - SCRIM_W / 2) + 'px', top: (H / 2 - SCRIM_H / 2) + 'px', width: SCRIM_W + 'px', height: SCRIM_H + 'px',
+    background: `radial-gradient(ellipse 50% 50% at 50% 50%, rgba(58,22,108,${SCRIM_A}) 0%, rgba(58,22,108,${SCRIM_A * 0.8}) 45%, rgba(58,22,108,0) 100%)`,
+    opacity: 0, pointerEvents: 'none',
+  }, root)
   const line = new TypeLine(root, 'What if the stars chose who you meet?', {
-    left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 400, fontSize: '72px', letterSpacing: '-0.015em',
-    textShadow: '0 1px 22px rgba(20,10,46,0.45), 0 0 2px rgba(20,10,46,0.25)',
+    left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 500, fontSize: '80px', letterSpacing: '-0.018em',
+    textShadow: '0 2px 24px rgba(46,16,96,0.55), 0 0 2px rgba(46,16,96,0.3)',
   }, { perChar: 0.026, fade: 0.3, final: C.bone, accent: [C.rub, C.amber, C.gold, C.plum] })
   const r = rng(7)
   const bandY = bands.map(() => r() * H)
@@ -62,6 +76,7 @@ export function sceneImagine(stage) {
       bg.g.style.opacity = String(lerp(0.6, 1, ease.outQuad(prog(t, 0, 0.3))))
       tint.style.opacity = String(lerp(1, 0.6, prog(t, 0, 3)))
       line.update(t - TYPE_START)
+      scrim.style.opacity = String(ease.outQuad(prog(t, TYPE_START - 0.1, TYPE_START + 0.5)))
       const g = prog(t, 2.0, 3.3)
       // displaced slices ~2.2–3.0s
       slices.forEach((sl, i) => {

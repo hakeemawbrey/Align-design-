@@ -1,6 +1,13 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
 import { W, H, IMG, A, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
 
+// index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
+// Register the 500 face locally (shared guard with s2) — document.fonts.ready waits for it.
+if (typeof document !== 'undefined' && !window.__inter500) {
+  window.__inter500 = new FontFace('Inter', "url(../app/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format('woff2')", { weight: '500' })
+  document.fonts.add(window.__inter500); window.__inter500.load().catch(() => {})
+}
+
 // ─────────────────────────────────────────────────────── S2 · { now they do }
 const CHIP_SRC = [
   'card-profile-1.png', 'card-profile-2.png', 'card-profile-3.png', 'card-event.png',
@@ -33,10 +40,10 @@ function makeTicks(parent, color, size = TICK) {
 // timeline (s) — sound cues
 const T = {
   enter: 3.45,          // scene shows (over the wipe tail)
-  wIn: 3.48, wYour: 3.90, wStars: 4.28,
-  ticks: 3.75,
-  collapse: 4.70, intro: 4.87,
-  open: 5.12, close: 5.70, align: 5.82,
+  wIn: 3.50, wYour: 3.62, wStars: 3.74,   // 0.12s pops → whole line by ~3.84
+  ticks: 3.60,
+  collapse: 4.64, intro: 4.78,            // complete line holds ~0.8s (3.84 → 4.64)
+  open: 5.02, close: 5.52, align: 5.62,   // "{ introducing Align }" reads 5.70 → ~6.30 (mound floods 6.30)
   out: 6.38, conv: 6.40,
 }
 
@@ -45,7 +52,7 @@ export function sceneIntro(stage) {
   const mid = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
   const row = el('div', {
     position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', display: 'flex', alignItems: 'center',
-    fontFamily: SANS, fontWeight: 400, fontSize: '68px', color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.01em',
+    fontFamily: SANS, fontWeight: 500, fontSize: '68px', color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.01em',
   }, mid)
   const mk = (txt, extra = {}) => el('span', { display: 'inline-block', overflow: 'hidden', verticalAlign: 'middle', ...extra }, row, txt)
   const BR_L = 20, BR_R = 20   // gap inside the braces (tuned by eye so both sides read equal)
@@ -54,7 +61,7 @@ export function sceneIntro(stage) {
   const wYour = mk('&nbsp;they')
   const wStars = mk('&nbsp;do')
   const wIntro = mk('intro', { color: C.rub })
-  const chip = el('span', { display: 'inline-block', position: 'relative', height: TILE_H + 'px', overflow: 'hidden', borderRadius: '10px', margin: `0 ${CHIP_MARGIN}px`, verticalAlign: 'middle', flexShrink: 0 }, row)
+  const chip = el('span', { display: 'inline-block', position: 'relative', height: TILE_H + 'px', overflow: 'hidden', borderRadius: '10px', margin: `0 ${CHIP_MARGIN}px`, verticalAlign: 'middle', flexShrink: 0, willChange: 'transform' }, row)
   // each tile crops the card toward its art window (aura / arch) so it reads at thumbnail size
   const tiles = CHIP_SRC.map((f) => {
     const tile = el('div', { position: 'absolute', top: 0, width: TILE_W + 'px', height: TILE_H + 'px', overflow: 'hidden', borderRadius: '8px', background: C.canvas }, chip)
@@ -79,8 +86,10 @@ export function sceneIntro(stage) {
     }
   }
   const setW = (e, k, f) => {
-    e.style.width = (natural[k] * clamp(f, 0, 1.2)) + 'px'
+    // width never exceeds natural (overshoot made the braces wobble); the spring's overshoot becomes a tiny scale pop
+    e.style.width = (natural[k] * clamp(f, 0, 1)) + 'px'
     e.style.opacity = String(clamp(f * 1.6))
+    e.style.transform = f > 1 ? `scale(${1 + 0.3 * (f - 1)})` : 'none'
   }
   const sp = (tt, a, d = 0.45, b = 0.08) => ease.spring(prog(tt, a, a + d), b)
   /** all layout factors as a pure function of time (so the ticks can sample the past) */
@@ -96,7 +105,7 @@ export function sceneIntro(stage) {
     }
     const margin = CHIP_MARGIN * (1 - close) * clamp(b)
     const w = natural.lb + natural.rb + margin * 2 + open * CHIP_W +
-      Object.entries(f).reduce((a, [k, v]) => a + natural[k] * clamp(v, 0, 1.2), 0)
+      Object.entries(f).reduce((a, [k, v]) => a + natural[k] * clamp(v, 0, 1), 0)
     return { f, open, close, margin, w }
   }
 
