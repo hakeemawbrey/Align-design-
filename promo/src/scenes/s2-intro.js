@@ -1,5 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
-import { W, H, IMG, A, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { W, H, IMG, A, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
 import { veilCanvas } from './s3-veil.js'
 
 // index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
@@ -18,6 +18,7 @@ const CHIP_FACES = PEOPLE_SRC.map((k) => k === 'juniper' ? { src: IMG + 'juniper
 const CHIP_STEP_FRAMES = 2   // carousel advances one slot every 2 frames (15 Hz) → ~12 faces flash by while the chip is open
 const TILE_W = 68, TILE_H = 86, TILE_STEP = 72, CHIP_W = 3 * TILE_W + 2 * (TILE_STEP - TILE_W), CHIP_MARGIN = 6
 const TICK = 20
+const ROSE = '#ff8fb1'   // light rose accent: reads on the dark ground (≈8:1 on #120a2e)
 const FI = (t) => Math.round(t * 30)            // frame index (never floor: float error duplicates frames)
 
 /** four corner ticks, each following the box with its own small delay; positions snap at 10 Hz like the reference */
@@ -64,11 +65,12 @@ const T = {
 }
 
 export function sceneIntro(stage) {
-  const root = fill(stage, { background: C.paper })
+  const root = fill(stage, { background: 'transparent' })
+  const bg = spaceBackdrop(root, 'rose', { seed: 2 })   // deep-space ground (first child)
   const mid = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
   const row = el('div', {
     position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', display: 'flex', alignItems: 'center',
-    fontFamily: SANS, fontWeight: 500, fontSize: '68px', color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.01em',
+    fontFamily: SANS, fontWeight: 500, fontSize: '68px', color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.01em',
   }, mid)
   const mk = (txt, extra = {}) => el('span', { display: 'inline-block', overflow: 'hidden', verticalAlign: 'middle', ...extra }, row, txt)
   const BR_L = 20, BR_R = 20   // gap inside the braces (tuned by eye so both sides read equal)
@@ -76,7 +78,7 @@ export function sceneIntro(stage) {
   const wIn = mk('now')
   const wYour = mk('&nbsp;they')
   const wStars = mk('&nbsp;do')
-  const wIntro = mk('intro', { color: C.rub })
+  const wIntro = mk('intro', { color: ROSE })
   const chip = el('span', { display: 'inline-block', position: 'relative', height: TILE_H + 'px', overflow: 'hidden', borderRadius: '10px', margin: `0 ${CHIP_MARGIN}px`, verticalAlign: 'middle', flexShrink: 0, willChange: 'transform' }, row)
   // each tile crops a portrait to the face (face ≈ 62% of the tile width, eyes a touch above centre)
   const tiles = CHIP_FACES.map((f) => {
@@ -85,23 +87,23 @@ export function sceneIntro(stage) {
     img(tile, f.src, { left: (TILE_W / 2 - iw * f.fx) + 'px', top: (TILE_H * 0.47 - ih * f.fy) + 'px', width: iw + 'px', height: ih + 'px' })
     return tile
   })
-  const dot = mk('•', { color: C.rub, fontSize: '30px' })
+  const dot = mk('•', { color: ROSE, fontSize: '30px' })
   const wDucing = mk('ducing')
-  const wAlign = mk('&nbsp;<span style="font-family:' + SERIF.replace(/"/g, "'") + ';font-style:italic;font-size:1.16em;letter-spacing:0;padding-right:0.03em">Align</span>', { color: C.rub })
+  const wAlign = mk('&nbsp;<span style="font-family:' + SERIF.replace(/"/g, "'") + ';font-style:italic;font-size:1.16em;letter-spacing:0;padding-right:0.03em">Align</span>', { color: ROSE })
   const rb = mk('}', { padding: `0 0 8px ${BR_R}px` })
-  const arrL = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(26,16,51,0.22)' }, mid, '⟵')
-  const arrR = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(26,16,51,0.22)' }, mid, '⟶')
-  const ticks = makeTicks(mid, C.ink, TICK)
+  const arrL = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(239,230,214,0.34)' }, mid, '⟵')
+  const arrR = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(239,230,214,0.34)' }, mid, '⟶')
+  const ticks = makeTicks(mid, C.bone, TICK)
   // constellation (lines on a canvas under the avatars)
   const cLines = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', pointerEvents: 'none' }, mid)
   cLines.width = W; cLines.height = H
   const cctx = cLines.getContext('2d')
   const stars = CONST.map((c) => {
-    const dot = el('div', { position: 'absolute', width: '8px', height: '8px', borderRadius: '50%', background: C.ink, opacity: 0,
+    const dot = el('div', { position: 'absolute', width: '8px', height: '8px', borderRadius: '50%', background: C.bone, boxShadow: '0 0 10px 2px rgba(239,230,214,0.55)', opacity: 0,
       left: (W / 2 + c.dx - 4) + 'px', top: (H / 2 + c.dy - 4) + 'px' }, mid)
     const av = el('div', { position: 'absolute', width: c.d + 'px', height: c.d + 'px', borderRadius: '50%', overflow: 'hidden', opacity: 0,
       left: (W / 2 + c.dx - c.d / 2) + 'px', top: (H / 2 + c.dy - c.d / 2) + 'px', background: C.canvas,
-      boxShadow: `0 0 0 2px ${C.bone}, 0 0 0 3px rgba(26,16,51,0.16), 0 0 ${Math.round(c.d * 0.45)}px ${Math.round(c.d * 0.12)}px rgba(${c.g},0.55)` }, mid)
+      boxShadow: `0 0 0 2px ${C.bone}, 0 0 ${Math.round(c.d * 0.45)}px ${Math.round(c.d * 0.12)}px rgba(${c.g},0.55)` }, mid)
     const iw = c.d * 0.6 / 0.25, ih = iw * 366 / 342
     img(av, PEOPLE[c.k - 1], { left: (c.d / 2 - iw * 0.5) + 'px', top: (c.d * 0.5 - ih * 0.375) + 'px', width: iw + 'px', height: ih + 'px' })
     return { dot, av, c }
@@ -151,13 +153,15 @@ export function sceneIntro(stage) {
       if (!natural) measure()
       // before s1 ends (wipe tail), sit above the fx canvas with a clear ground: the wipe's bone shows through
       const early = t < 3.55
-      root.style.background = early ? 'transparent' : C.paper
+      // the space ground eases in over the wipe's last frames (the wipe is a dark indigo close to it)
+      bg.root.style.opacity = String(ease.inOutQuad(prog(t, 3.45, 3.56)))
+      bg.update(t)
       root.style.zIndex = early ? '1001' : '11'
       const st = state(t)
       setW(wIn, 'wIn', st.f.wIn); setW(wYour, 'wYour', st.f.wYour); setW(wStars, 'wStars', st.f.wStars)
       setW(wIntro, 'wIntro', st.f.wIntro); setW(wDucing, 'wDucing', st.f.wDucing); setW(dot, 'dot', st.f.dot)
       setW(wAlign, 'wAlign', st.f.wAlign)
-      wIntro.style.color = mix(C.rub, C.ink, st.close)
+      wIntro.style.color = mix(ROSE, C.bone, st.close)
       chip.style.width = (st.open * CHIP_W) + 'px'
       chip.style.margin = `0 ${st.margin}px`
       chip.style.opacity = String(clamp(st.open * 3))
@@ -201,7 +205,7 @@ export function sceneIntro(stage) {
             const L = Math.hypot(x1 - x0, y1 - y0), ux = (x1 - x0) / L, uy = (y1 - y0) / L
             const r0 = pr.d / 2 + 10, r1 = c.d / 2 + 10
             const len = (L - r0 - r1) * draw
-            cctx.strokeStyle = `rgba(26,16,51,${lop.toFixed(3)})`
+            cctx.strokeStyle = `rgba(239,230,214,${(lop * 1.6).toFixed(3)})`
             cctx.lineWidth = 1.5
             cctx.beginPath(); cctx.moveTo(x0 + ux * r0, y0 + uy * r0); cctx.lineTo(x0 + ux * (r0 + len), y0 + uy * (r0 + len)); cctx.stroke()
           }

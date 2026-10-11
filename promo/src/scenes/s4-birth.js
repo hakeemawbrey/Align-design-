@@ -55,8 +55,8 @@ export function sceneBirth(stage) {
   // glass: soft top sheen + a slow diagonal glint
   el('div', { position: 'absolute', left: 0, top: 0, right: 0, height: '50%', background: 'linear-gradient(180deg, rgba(255,255,255,0.085), rgba(255,255,255,0))', pointerEvents: 'none' }, pill)
   const glint = el('div', { position: 'absolute', top: '-20px', width: '90px', height: (PH + 40) + 'px', background: 'linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.07), rgba(255,255,255,0))', transform: 'skewX(-22deg)', pointerEvents: 'none' }, pill)
-  // morph target: the pill becomes a paper disc that S5's circle wipe grows out of
-  const disc = el('div', { position: 'absolute', inset: 0, background: C.paper, opacity: 0, pointerEvents: 'none' }, pill)
+  // morph target: the pill becomes a dark-indigo disc (matches S5's space backdrop) that S5's circle wipe grows out of
+  const disc = el('div', { position: 'absolute', inset: 0, borderRadius: '999px', background: '#272154', boxShadow: 'inset 0 0 0 1.5px rgba(239,230,214,0.5)', opacity: 0, pointerEvents: 'none' }, pill)
   const eyebrow = el('div', {
     position: 'absolute', left: '50%', top: (H / 2 - PH / 2 - 76) + 'px', transform: 'translateX(-50%)', fontFamily: MONO, fontSize: '26px', textShadow: '0 1px 12px rgba(11,6,32,0.8)',
     letterSpacing: '0.2em', color: 'rgba(239,230,214,0.9)', whiteSpace: 'nowrap', textTransform: 'uppercase', opacity: 0,
@@ -69,7 +69,7 @@ export function sceneBirth(stage) {
     background: 'linear-gradient(100deg, #f8edff 0%, #fff7ec 38%, #eaf4ff 72%, #ffeff7 100%)', color: '#3a2c4e',
     display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: SANS, fontSize: '22px', fontWeight: 600,
   }, pill, '↑')
-  const spinner = el('div', { position: 'absolute', left: '50%', top: '50%', width: '30px', height: '30px', margin: '-15px 0 0 -15px', borderRadius: '50%', border: '2.5px solid rgba(26,16,51,0.18)', borderTopColor: C.ink, opacity: 0 }, pill)
+  const spinner = el('div', { position: 'absolute', left: '50%', top: '50%', width: '30px', height: '30px', margin: '-15px 0 0 -15px', borderRadius: '50%', border: '2.5px solid rgba(239,230,214,0.2)', borderTopColor: C.bone, opacity: 0 }, pill)
   // mobile tap: a pearl touch disc + ripple ring
   const TAP = 44
   const ripple = el('div', { position: 'absolute', width: TAP + 'px', height: TAP + 'px', margin: (-TAP / 2) + 'px 0 0 ' + (-TAP / 2) + 'px', borderRadius: '50%', border: '2.5px solid rgba(255,247,236,0.95)', boxShadow: '0 0 18px rgba(214,196,255,0.45)', opacity: 0, pointerEvents: 'none' }, world)

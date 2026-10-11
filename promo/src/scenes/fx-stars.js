@@ -4,7 +4,7 @@ import { W, H } from './common.js'
 // ──────────────────────────────────────── global stardust layer (drawn by main.js on #fx, under the transitions)
 // Pure function of t. Per-scene star fields cross-fade at scene boundaries; transitions paint over them.
 // Hero moments (for sound):
-//   shooting stars   S1 1.00–1.55 · S4 11.70–12.15 (small) · end card 28.80–29.30
+//   shooting stars   S1 1.00–1.55 · small ones S2 4.25–4.65, S4 11.70–12.15, S5 15.90–16.30, S6 19.70–20.15 · end card 28.80–29.30
 //   sparkle bursts   7.84 mystery-card peak · 21.85 ALIGNED stamp · 24.30 match phone lands ·
 //                    27.40–27.82 chakra lights (one twin-sparkle per chakra, 0.07 apart, bottom→top)
 //   whole layer fades with the end 29.50–29.85.
@@ -27,7 +27,6 @@ function sprite(ctx, cx, cy, px, kind, color, centre) {
 }
 
 const BONE = '#efe6d6', GOLD = '#f2c75c', VIOLET = '#c9a6ff', ROSE = '#ff8fb1', HOT = '#fff3e0'
-const INK_V = '#5b3fa8', INK_V2 = '#7a5cc8', GOLD_D = '#c8952e', ROSE_D = '#d9507a'
 
 // keep-out rects [x, y, w, h, (t0, t1)] — stars fade to 0 inside and within `soft` px of them
 const PROFILES = [
@@ -36,9 +35,9 @@ const PROFILES = [
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 1,
     keep: [[220, 450, 1480, 190]],
   },
-  { // S2 · paper "{ in your stars }" / "{ intro▣ducing }" — sparse, edges
-    a: 3.55, b: 6.9, fin: 0.4, fout: 0.25, seed: 23, sprites: 16, dots: 26, px: [3, 4], drift: [5, -2], edge: true,
-    pal: [INK_V, INK_V2, GOLD_D, ROSE_D], centre: GOLD, dot: '91,63,168', alpha: 0.95, dotAlpha: 0.55,
+  { // S2 · rose space "{ in your stars }" / "{ intro▣ducing }" — sparse, edges
+    a: 3.55, b: 6.9, fin: 0.4, fout: 0.25, seed: 23, sprites: 20, dots: 60, px: [3, 4], drift: [-10, -2], edge: true,
+    pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 0.95,
     keep: [[400, 230, 1120, 620]],
   },
   { // S3 · mystery card / thermal → real → gilded card
@@ -51,19 +50,19 @@ const PROFILES = [
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 1,
     keep: [[0, 320, 1920, 440, 10.2, 13.25], [260, 170, 1400, 760, 13.1, 14.2]],
   },
-  { // S5 · paper "Reading your sky"
-    a: 14.3, b: 17.35, fin: 0.5, fout: 0.25, seed: 53, sprites: 15, dots: 22, px: [3, 4], drift: [-5, 2], edge: true,
-    pal: [INK_V, INK_V2, GOLD_D, ROSE_D], centre: GOLD, dot: '91,63,168', alpha: 0.95, dotAlpha: 0.55,
+  { // S5 · teal space "Reading your sky"
+    a: 14.3, b: 17.35, fin: 0.5, fout: 0.25, seed: 53, sprites: 18, dots: 55, px: [3, 4], drift: [-9, 2], edge: true,
+    pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 0.95,
     keep: [[220, 200, 1540, 660]],
   },
-  { // S6 · paper deck / "every night a new deck" / "you ▣ align"
-    a: 17.5, b: 22.6, fin: 0.5, fout: 0.3, seed: 67, sprites: 17, dots: 24, px: [3, 4], drift: [-6, -2], edge: true,
-    pal: [INK_V, INK_V2, GOLD_D, ROSE_D, GOLD_D], centre: GOLD, dot: '91,63,168', alpha: 0.95, dotAlpha: 0.55,
+  { // S6 · amber space deck / "every night a new deck" / "you ▣ align"
+    a: 17.5, b: 22.6, fin: 0.5, fout: 0.3, seed: 67, sprites: 20, dots: 60, px: [3, 4], drift: [-12, -3], edge: true,
+    pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 0.95,
     keep: [[240, 150, 1640, 780]],
   },
-  { // S7 · bright gradient, tagline (+ people constellation 22.66–24.45) → match phone + caption A → chat phone + caption B
-    a: 22.5, b: 26.94, fin: 0.5, fout: 0.01, seed: 79, sprites: 14, dots: 36, px: [4, 5], drift: [8, -6], edge: true,
-    pal: ['#ffffff', '#ffffff', '#ffe6a0', '#fff3d6'], centre: '#ffffff', dot: '255,255,255', alpha: 1, shadow: 'rgba(70,24,110,0.32)',
+  { // S7 · aurora space, tagline (+ people constellation 22.66–24.45) → match phone + caption A → chat phone + caption B
+    a: 22.5, b: 26.94, fin: 0.5, fout: 0.01, seed: 79, sprites: 16, dots: 50, px: [3, 4], drift: [8, -6], edge: true,
+    pal: ['#ffffff', BONE, '#ffe6a0', GOLD, VIOLET], centre: '#ffffff', dot: '255,250,240', alpha: 0.95,
     keep: [
       [380, 400, 1160, 260, 22.5, 24.3],                                   // tagline in ticks
       [440, 60, 510, 1000, 24.2, 25.9], [960, 400, 680, 280, 24.2, 25.65],  // match phone · "It's mutual / You both aligned."
@@ -165,8 +164,8 @@ function drawField(ctx, P, t, wgt) {
 // ── hero bursts: sparkles fly out from a ring and step down big → glint → tiny
 const BURSTS = [
   { t: 7.84, x: 960, y: 400, r0: 380, r1: 760, n: 18, px: 5, life: 0.95, pal: [BONE, GOLD, VIOLET, ROSE], centre: HOT, sy: 0.62, seed: 3 },
-  { t: 21.85, x: 1230, y: 395, r0: 60, r1: 250, n: 12, px: 4, life: 0.75, pal: [GOLD_D, GOLD, INK_V2, ROSE_D], centre: '#fff8e6', sy: 0.42, seed: 5 },
-  { t: 24.3, x: 690, y: 560, r0: 390, r1: 520, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.62, sy: 1.08, avoid: [960, 430, 700, 220], shadow: 'rgba(70,24,110,0.35)', seed: 7 },
+  { t: 21.85, x: 1230, y: 395, r0: 60, r1: 250, n: 12, px: 4, life: 0.75, pal: [GOLD, BONE, VIOLET, ROSE], centre: HOT, sy: 0.42, seed: 5 },
+  { t: 24.3, x: 690, y: 560, r0: 390, r1: 520, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.62, sy: 1.08, avoid: [960, 430, 700, 220], seed: 7 },
 ]
 function drawBurst(ctx, B, t) {
   const r = rng(B.seed * 104729)
@@ -209,7 +208,10 @@ function drawChakra(ctx, t) {
 // ── shooting stars: gradient streak with a pixel-sparkle head and a few dropping pixel crumbs
 const SHOOTS = [
   { t0: 1.0, t1: 1.55, x0: 260, y0: 70, x1: 1420, y1: 360, len: 320, px: 4, rgb: '255,243,224', col: BONE, seed: 2 },
+  { t0: 4.25, t1: 4.65, x0: 120, y0: 60, x1: 640, y1: 210, len: 200, px: 3, rgb: '255,243,224', col: BONE, seed: 8 },
   { t0: 11.7, t1: 12.15, x0: 1700, y0: 60, x1: 1120, y1: 260, len: 200, px: 3, rgb: '255,243,224', col: GOLD, seed: 4 },
+  { t0: 15.9, t1: 16.3, x0: 1880, y0: 40, x1: 1380, y1: 160, len: 200, px: 3, rgb: '255,243,224', col: GOLD, seed: 10 },
+  { t0: 19.7, t1: 20.15, x0: 260, y0: 960, x1: 900, y1: 1040, len: 220, px: 3, rgb: '255,243,224', col: BONE, seed: 12 },
   { t0: 28.8, t1: 29.3, x0: 1900, y0: 40, x1: 1400, y1: 190, len: 240, px: 4, rgb: '255,243,224', col: GOLD, seed: 6 },
 ]
 function drawShoot(ctx, S, t) {

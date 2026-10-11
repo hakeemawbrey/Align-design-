@@ -1,5 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
-import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
 
 // first dealt card (S6 opens on it) — fxDots samples its colours
 const DOT_SRC = A + 'card-profile-1.png'
@@ -7,21 +7,26 @@ let dotImg = null
 
 // ───────────────────────────────────────────── S5 · Reading your sky
 // Your own sign card (Taurus, "YOUR CARD" stamp) floats in on the right after Sun lands.
+const VIOLET_HI = '#b9a2f0'
 const SIGN = { src: 'card-sign-stamped.png', iw: 904, ih: 1156, body: [116, 124, 724, 1042] }
 export function sceneReading(stage) {
-  const root = fill(stage, { background: C.paper })
+  const root = fill(stage, { background: C.canvas })
+  // deep-space backdrop (teal mood) — first child so everything else sits above it
+  const bg = spaceBackdrop(root, 'teal', { seed: 5 })
+  // thin bone rim riding the circle-wipe edge (continues S4's loading-disc rim), fades as it grows
+  const rim = el('div', { position: 'absolute', left: '50%', top: '50%', borderRadius: '50%', boxSizing: 'border-box', border: '1.5px solid rgba(239,230,214,0.5)', pointerEvents: 'none' }, root)
   // hidden copy of the first deck card so the loader waits for it (fxDots samples it)
   dotImg = img(root, DOT_SRC, { left: 0, top: 0, width: '2px', height: '3px', opacity: 0 })
   const block = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
-  const title = el('div', { position: 'absolute', fontFamily: SERIF, fontStyle: 'italic', fontSize: '108px', fontWeight: 400, color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.01em', lineHeight: 1 }, block)
-  const tChars = [...'Reading your sky'].map((ch, i) => el('span', { opacity: 0, color: i === 0 ? C.violet : C.ink }, title, ch === ' ' ? ' ' : ch))
-  const rail = el('div', { position: 'absolute', width: '3px', background: 'rgba(26,16,51,0.18)' }, block)
+  const title = el('div', { position: 'absolute', fontFamily: SERIF, fontStyle: 'italic', fontSize: '108px', fontWeight: 400, color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.01em', lineHeight: 1, textShadow: '0 2px 30px rgba(8,5,34,0.55)' }, block)
+  const tChars = [...'Reading your sky'].map((ch, i) => el('span', { opacity: 0, color: i === 0 ? VIOLET_HI : C.bone }, title, ch === ' ' ? ' ' : ch))
+  const rail = el('div', { position: 'absolute', width: '3px', background: 'rgba(239,230,214,0.22)' }, block)
   const ITEMS = [
-    { g: '☉', c: C.amber, label: 'Sun', sub: 'Taurus' },
-    { g: '☽', c: C.violet, label: 'Moon', sub: 'Sagittarius' },
-    { g: '↑', c: C.rub, label: 'Rising', sub: 'Libra' },
-    { g: '♀', c: '#3fae84', label: 'Venus', sub: 'Aries' },
-    { g: '', c: C.rub, label: 'Dealing', sub: 'your first deck' },
+    { g: '☉', c: C.gold, label: 'Sun', sub: 'Taurus' },
+    { g: '☽', c: VIOLET_HI, label: 'Moon', sub: 'Sagittarius' },
+    { g: '↑', c: '#ff8fb1', label: 'Rising', sub: 'Libra' },
+    { g: '♀', c: C.spark, label: 'Venus', sub: 'Aries' },
+    { g: '', c: '#ff8fb1', label: 'Dealing', sub: 'your first deck' },
   ]
   const AT = [14.75, 15.15, 15.55, 15.95, 16.35]
   const ROW = 96, INDENT = 72
@@ -29,7 +34,7 @@ export function sceneReading(stage) {
     const r = el('div', { position: 'absolute', left: '0', display: 'flex', alignItems: 'center', gap: '24px', whiteSpace: 'nowrap', fontFamily: SANS }, block)
     const ic = el('div', { width: '58px', height: '58px', boxSizing: 'border-box', borderRadius: '13px', border: `3.5px solid ${it.c}`, color: it.c, display: it.g ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', fontSize: '36px', lineHeight: 1 }, r, it.g)
     const lab = el('div', { fontSize: '58px', fontWeight: 500, color: it.c, letterSpacing: '-0.01em' }, r, it.label)
-    const sub = el('div', { fontSize: '50px', color: 'rgba(26,16,51,0.74)', letterSpacing: '-0.01em' }, r, '— ' + it.sub)
+    const sub = el('div', { fontSize: '50px', color: 'rgba(239,230,214,0.7)', letterSpacing: '-0.01em' }, r, '— ' + it.sub)
     return { r, ic, lab, sub, it }
   })
   const working = el('div', { position: 'absolute', fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', textTransform: 'uppercase', whiteSpace: 'nowrap' }, block, 'Shuffling your deck…')
@@ -39,7 +44,7 @@ export function sceneReading(stage) {
   const cw = SIGN.iw * SC, chh = SIGN.ih * SC
   const card = el('div', { position: 'absolute', left: (1400 - cw / 2) + 'px', top: (H / 2 - chh / 2 - 6) + 'px', width: cw + 'px', height: chh + 'px', opacity: 0, willChange: 'transform' }, root)
   const [bl, bt, br, bb] = SIGN.body.map(v => v * SC)
-  el('div', { position: 'absolute', left: bl + 'px', top: bt + 'px', width: (br - bl) + 'px', height: (bb - bt) + 'px', borderRadius: (34 * SC) + 'px', boxShadow: '0 34px 60px -14px rgba(26,16,51,0.5), 0 8px 18px rgba(26,16,51,0.25)' }, card)
+  el('div', { position: 'absolute', left: bl + 'px', top: bt + 'px', width: (br - bl) + 'px', height: (bb - bt) + 'px', borderRadius: (34 * SC) + 'px', boxShadow: '0 0 70px 6px rgba(127,216,176,0.22), 0 0 140px 30px rgba(120,96,230,0.30), 0 30px 60px -10px rgba(4,2,16,0.7)' }, card)
   const layer = (clip) => img(card, A + SIGN.src, { left: 0, top: 0, width: cw + 'px', height: chh + 'px', clipPath: clip })
   layer(`inset(${bt}px ${cw - br}px ${chh - bb}px ${bl}px round ${34 * SC}px)`)
   layer(`polygon(${[[458, 99], [783, 65], [793, 143], [466, 179]].map(([x, y]) => `${x * SC}px ${y * SC}px`).join(',')})`)
@@ -48,6 +53,11 @@ export function sceneReading(stage) {
   return {
     start: 14.05, end: 17.6, root,
     update(t) {
+      bg.update(t)
+      const wp = ease.inOutQuad(prog(t, 14.05, 14.55)), wr = 36 + wp * 1150 - 1
+      rim.style.width = rim.style.height = (2 * wr) + 'px'; rim.style.margin = (-wr) + 'px 0 0 ' + (-wr) + 'px'
+      rim.style.opacity = String(1 - prog(t, 14.05, 14.4))
+      rim.style.display = t < 14.4 ? 'block' : 'none'
       if (!titleW) titleW = title.offsetWidth || 780
       if (!blockW) blockW = Math.max(titleW * 0.94, INDENT + Math.max(...rows.map(r => r.r.offsetWidth || 700)))
       // title types in at frame centre while the circle reveal (14.05–14.55, centred) opens around it
@@ -72,7 +82,7 @@ export function sceneReading(stage) {
         // active colour blends in on arrival and back to ink as the next row lands (or "Dealing" settles at 17.0)
         const off = i < AT.length - 1 ? AT[i + 1] : 17.0
         const act = prog(t, AT[i], AT[i] + 0.15) * (1 - prog(t, off, off + 0.15))
-        row.lab.style.color = mix(C.ink, row.it.c, act)
+        row.lab.style.color = mix(C.bone, row.it.c, act)
         y += ROW * lead[i]
       })
       const eyeTop = y + 30
@@ -81,7 +91,7 @@ export function sceneReading(stage) {
       rail.style.opacity = String(g)
       working.style.left = (tx) + 'px'; working.style.top = eyeTop + 'px'
       const sh = (t * 1.1) % 1
-      working.style.background = `linear-gradient(90deg, rgba(26,16,51,0.3) ${sh * 140 - 40}%, rgba(26,16,51,0.85) ${sh * 140 - 20}%, rgba(26,16,51,0.3) ${sh * 140}%)`
+      working.style.background = `linear-gradient(90deg, rgba(239,230,214,0.62) ${sh * 140 - 40}%, rgba(239,230,214,1) ${sh * 140 - 20}%, rgba(239,230,214,0.62) ${sh * 140}%)`
       working.style.webkitBackgroundClip = 'text'; working.style.color = 'transparent'
       working.style.opacity = String(g)
       // late life: the whole block slowly breathes forward and lifts, then clears before the dots arrive

@@ -1,5 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
-import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
 
 // ──────────────────────────────────────── S6 · a new deck, every night
 // Real Align card art (each PNG is a complete card with its own frame + glow).
@@ -46,12 +46,15 @@ const ALIGNED = {
 }
 const LIFT = 0.34               // veil-lift duration (s)
 const WIN = [218, 342, 1292, 914] // art window inside card-profile-*.png (PNG px)
+// on the dark ground: deep indigo drop + a faint violet rim glow so each card separates from the space behind it
+const CARD_SHADOW = '0 30px 60px -14px rgba(4,2,16,0.85), 0 0 0 1px rgba(196,170,255,0.22), 0 0 26px 2px rgba(154,123,224,0.28)'
 const BODY_H = 700 // on-screen card-body height of a profile card at scale 1 (matches the fxDots patch in s5)
 const ENTER = 0.4 // seconds for a card to swing in from off-frame right (yaw −65 → 0, shaded dark → lit) into the front slot
 const FIRST_IN = [17.45, 17.62] // first card fades in under the fxDots patch (no slide)
 
 export function sceneDeck(stage) {
-  const root = fill(stage, { background: C.paper })
+  const root = fill(stage, { background: 'transparent' })
+  const bg = spaceBackdrop(root, 'amber', { seed: 6 })   // deep-space ground (first child)
   const persp = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
   const mk = (key, kind, at) => {
     const c = CARD[key]
@@ -60,7 +63,7 @@ export function sceneDeck(stage) {
     const wrap = el('div', {
       position: 'absolute', left: (W / 2 - w / 2) + 'px', top: (H / 2 - h / 2) + 'px', width: w + 'px', height: h + 'px',
       borderRadius: (w * 0.055) + 'px', overflow: 'hidden', background: C.canvas, willChange: 'transform',
-      boxShadow: '0 26px 44px -10px rgba(26,16,51,0.42), 0 6px 14px rgba(26,16,51,0.22)',
+      boxShadow: CARD_SHADOW,
     }, persp)
     const im = img(wrap, A + c.src, { left: (-c.b[0] * sc) + 'px', top: (-c.b[1] * sc) + 'px', width: (c.iw * sc) + 'px', height: (c.ih * sc) + 'px' })
     const out = { wrap, im, w, h, kind, at, key }
@@ -102,9 +105,9 @@ export function sceneDeck(stage) {
     letterSpacing: '0.2em', whiteSpace: 'nowrap', lineHeight: 1, opacity: 0, transformOrigin: '70% 50%',
     boxShadow: '0 10px 24px rgba(11,6,32,0.45)',
   }, rev.wrap, `<span style="color:#d9a93f">✦</span> ALIGNED`)
-  const REV_SHADOW = '0 26px 44px -10px rgba(26,16,51,0.42), 0 6px 14px rgba(26,16,51,0.22)'
+  const REV_SHADOW = CARD_SHADOW
 
-  const word = (txt) => el('div', { position: 'absolute', fontFamily: SANS, fontSize: '84px', color: C.ink, whiteSpace: 'nowrap', letterSpacing: '-0.015em', opacity: 0, lineHeight: 1 }, root, txt)
+  const word = (txt) => el('div', { position: 'absolute', fontFamily: SANS, fontSize: '84px', color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.015em', opacity: 0, lineHeight: 1 }, root, txt)
   const wTop = word('every night'), wBot = word('a new deck'), wYou = word('you'), wAlign = word('align')
   wYou.style.fontSize = '84px'
   wAlign.style.fontFamily = SERIF; wAlign.style.fontStyle = 'italic'; wAlign.style.fontSize = '104px'; wAlign.style.letterSpacing = '0'
@@ -112,6 +115,7 @@ export function sceneDeck(stage) {
   return {
     start: 17.4, end: 22.75, root,
     update(t) {
+      bg.update(t)
       const pull = ease.inOutCubic(prog(t, 18.3, 19.4))     // camera pulls back, stack fans out
       const center = ease.inOutCubic(prog(t, 20.35, 20.95))  // stack compacts + centres for "you ▣ align"
       const push = lerp(1, 1.05, ease.inOutQuad(prog(t, 21.1, 22.75)))

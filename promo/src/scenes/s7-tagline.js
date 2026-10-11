@@ -23,22 +23,61 @@ const PH = 880, PW = Math.round(PH * 1170 / 2532) // 407
 const AX = 690, BX = 1280 // resting phone centres
 
 export function sceneTagline(stage, assets) {
-  // transparent root: s6's blurring deck stays visible underneath while colour climbs in
+  // transparent root: s6's blurring deck stays visible underneath while the nebula blooms up from below
   const root = fill(stage, { background: 'transparent' })
-  const under = fill(root, { background: C.paper, opacity: 0 })
-  // saturated field, violet/lilac led, pink + a touch of amber as accents (no gold)
-  const blobs = [
-    { c: '201,166,255', x: 0.10, y: 0.36, r: 640, a: 0.9 },
-    { c: '180,92,255', x: 0.84, y: 0.36, r: 720, a: 0.95 },
-    { c: '154,123,224', x: 0.46, y: 0.56, r: 720, a: 1 },
-    { c: '242,154,74', x: 0.04, y: 1.04, r: 520, a: 0.75 },
-    { c: '255,143,177', x: 0.24, y: 0.96, r: 700, a: 0.9 },
-    { c: '232,98,138', x: 0.86, y: 0.98, r: 760, a: 1 },
-    { c: '112,66,196', x: 0.52, y: 0.52, r: 520, a: 0.7 },
-    { c: '204,72,160', x: 0.64, y: 0.84, r: 560, a: 0.75 },
-  ].map(b => ({ ...b, e: el('div', { position: 'absolute', width: b.r * 2 + 'px', height: b.r * 2 + 'px', borderRadius: '50%', background: `radial-gradient(closest-side, rgba(${b.c},${b.a}), rgba(${b.c},${b.a * 0.55}) 50%, rgba(${b.c},0) 100%)` }, root) }))
-  // pale wash only across the top band
-  const wash = fill(root, { background: 'linear-gradient(180deg, rgba(235,229,220,0.9) 0%, rgba(235,229,220,0.5) 14%, rgba(235,229,220,0) 28%)' })
+  // ── deep-space field (shared 'aurora' mood) + S7's own aurora band and galaxy arc, all inside one
+  //    layer that is revealed by a soft mask rising from the bottom (22.40–23.00)
+  const sky = fill(root, { background: 'transparent', overflow: 'hidden' })
+  const space = spaceBackdrop(sky, 'aurora', { seed: 7, grain: 0.2, stars: 190 })
+  // galaxy arc: a faint tilted spiral-arm of dust + stars sweeping over the top-left, prerendered once
+  const GA = el('canvas', { position: 'absolute', left: '-240px', top: '-240px', width: (W + 480) + 'px', height: (H + 480) + 'px', mixBlendMode: 'screen', transformOrigin: '50% 60%' }, sky)
+  GA.width = W + 480; GA.height = H + 480
+  {
+    const g = GA.getContext('2d'), r = rng(7707)
+    const gx = (W + 480) * 0.52, gy = (H + 480) * 1.08, RX = 1500, RY = 760, ROT = -0.16
+    const at = (a, off) => {
+      const x = Math.cos(a) * (RX + off), y = Math.sin(a) * (RY + off * 0.5)
+      return [gx + x * Math.cos(ROT) - y * Math.sin(ROT), gy + x * Math.sin(ROT) + y * Math.cos(ROT)]
+    }
+    const A0 = Math.PI * 1.06, A1 = Math.PI * 1.94
+    // soft dust lane (wide, faint, warm→rose→violet along the arc)
+    for (let k = 0; k < 340; k++) {
+      const u = k / 339, a = lerp(A0, A1, u), fade = Math.sin(Math.PI * u)
+      const [x, y] = at(a, (r() - 0.5) * 70)
+      const col = u < 0.5 ? [lerp(242, 232, u * 2), lerp(170, 98, u * 2), lerp(120, 160, u * 2)] : [lerp(232, 170, u * 2 - 1), lerp(98, 120, u * 2 - 1), lerp(160, 255, u * 2 - 1)]
+      const rad = 90 + r() * 70
+      const gr = g.createRadialGradient(x, y, 0, x, y, rad)
+      gr.addColorStop(0, `rgba(${col.map(Math.round)},${0.05 * fade})`); gr.addColorStop(1, `rgba(${col.map(Math.round)},0)`)
+      g.fillStyle = gr; g.beginPath(); g.arc(x, y, rad, 0, 6.29); g.fill()
+    }
+    // star dust concentrated on the arm
+    for (let k = 0; k < 1400; k++) {
+      const u = r(), a = lerp(A0, A1, u), fade = Math.sin(Math.PI * u)
+      const off = (r() + r() + r() - 1.5) * 120
+      const [x, y] = at(a, off)
+      const s = r() < 0.06 ? 1.6 : 0.4 + r() * 0.8
+      g.fillStyle = `rgba(255,244,230,${(0.18 + r() * 0.55) * fade * (1 - Math.abs(off) / 220)})`
+      g.beginPath(); g.arc(x, y, s, 0, 6.29); g.fill()
+    }
+  }
+  // aurora band: three long luminous ribbons behind the tagline, drifting and breathing
+  const RIB = [
+    { c: ['232,98,138', '180,92,255'], y: 0.47, h: 300, a: 0.55, rot: -7, sp: 0.35 },
+    { c: ['180,92,255', '120,120,255'], y: 0.55, h: 240, a: 0.5, rot: 5, sp: 0.28 },
+    { c: ['242,154,74', '232,98,138'], y: 0.62, h: 180, a: 0.38, rot: -3, sp: 0.42 },
+  ].map((b, i) => ({ ...b, ph: i * 2.1, e: el('div', { position: 'absolute', left: '-300px', width: (W + 600) + 'px', height: b.h + 'px', marginTop: -b.h / 2 + 'px', top: b.y * H + 'px', borderRadius: '50%', mixBlendMode: 'screen', filter: 'blur(26px)',
+    background: `radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%), linear-gradient(90deg, rgba(${b.c[0]},0) 0%, rgba(${b.c[0]},${b.a}) 22%, rgba(${b.c[1]},${b.a}) 62%, rgba(${b.c[1]},0) 100%)`,
+    WebkitMaskImage: 'radial-gradient(50% 50% at 50% 50%, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%)', maskImage: 'radial-gradient(50% 50% at 50% 50%, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%)' }, sky) }))
+  // the bloom: a few hot nebula blobs that surge up from below during the entrance, then settle as glow
+  const BLOOM = [
+    { c: '232,98,138', x: 0.30, r: 760, a: 0.7, y1: 1.02 },
+    { c: '180,92,255', x: 0.70, r: 820, a: 0.7, y1: 0.98 },
+    { c: '242,154,74', x: 0.52, r: 560, a: 0.5, y1: 1.10 },
+  ].map((b, i) => ({ ...b, i, e: el('div', { position: 'absolute', width: b.r * 2 + 'px', height: b.r * 2 + 'px', borderRadius: '50%', mixBlendMode: 'screen',
+    background: `radial-gradient(closest-side, rgba(${b.c},${b.a}), rgba(${b.c},${b.a * 0.4}) 48%, rgba(${b.c},0) 100%)` }, sky) }))
+  // dark scrim right behind the tagline so bone type keeps ≥7:1 against the band
+  const tScrim = el('div', { position: 'absolute', left: (W / 2 - 760) + 'px', top: (H / 2 - 190) + 'px', width: '1520px', height: '380px', borderRadius: '50%',
+    background: 'radial-gradient(closest-side, rgba(11,6,32,0.72), rgba(11,6,32,0.5) 50%, rgba(11,6,32,0) 100%)', opacity: 0 }, sky)
 
   const TS = 80
   const tag = new TypeLine(root, 'Dating, dealt by the stars', {
