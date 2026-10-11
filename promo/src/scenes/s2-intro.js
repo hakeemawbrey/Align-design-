@@ -205,11 +205,12 @@ export function fxMound(ctx, t, { start, dur, seed = 5, size = 40 }) {
   const jit = Array.from({ length: cols }, () => r())
   const fallback = ['#1d0b4a', '#6a1fb0', '#e0408a', '#ff8c3a', '#ffe36a']
   const lt = t - start
-  // a small hill that keeps swelling, floods the frame (~0.33s, inOutCubic), then the mosaic resolves
-  // 40 → 20 → 10px, each step held 2 frames, landing on s3's first frame (frame 206 = 6.867s)
+  // a small hill that keeps swelling, floods the frame 6.27 → 6.667 (accelerating, so frames
+  // 198-199 are still visibly climbing at ~83% / ~93% coverage), then the mosaic resolves 40 → 20 → 10px at a 2-2-2 frame rhythm
+  // (frames 200-201 / 202-203 / 204-205), landing on s3's first frame (frame 206 = 6.867s)
   const fi = Math.round(t * 30), endF = Math.round((start + dur) * 30)   // endF = 206 (first s3 frame)
   const hill = ease.inOutQuad(prog(lt, 0, 0.5))
-  const flood = fi >= endF - 5 ? 1 : ease.inOutCubic(prog(lt, dur - 0.55, dur - 0.15))
+  const flood = fi >= endF - 6 ? 1 : Math.pow(prog(lt, dur - 0.58, (endF - 6) / 30 - start), 2)
   if (flood >= 1 && g) {
     const fine = fi >= endF - 2 ? 10 : fi >= endF - 4 ? 20 : size
     const gf = thermalGrid(fine) || g
@@ -219,8 +220,8 @@ export function fxMound(ctx, t, { start, dur, seed = 5, size = 40 }) {
     return
   }
   // sized so the frame only just fills as flood → 1 (no early saturation → no 2-frame jump)
-  const width = lerp(1.5, 6.5, hill) + 26 * flood
-  const height = lerp(1, 7.5, hill) + rows * 1.5 * flood
+  const width = lerp(1.5, 6.5, hill) + 24 * flood
+  const height = lerp(1, 7.5, hill) + rows * 1.4 * flood
   for (let cx = 0; cx < cols; cx++) {
     const dx = (cx + 0.5 - cols / 2) / width
     const env = Math.exp(-dx * dx)

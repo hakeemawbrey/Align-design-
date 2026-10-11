@@ -14,7 +14,7 @@ const FACE_X = 620, FACE_Y = 270          // where her face sits on screen (uppe
 const LAYER_W = 1500, LAYER_H = 2000
 /** typing starts here (sound cue); 37 chars × perChar 0.026 + fade 0.3 → fully typed by ~1.44s */
 const TYPE_START = 0.2
-const SCRIM_W = 1500, SCRIM_H = 260, SCRIM_A = 0.30
+const SCRIM_W = 1640, SCRIM_H = 230, SCRIM_A = 0.5
 const FIELD_W = 2700, FIELD_H = 3600      // sharp(er) silhouette layer, native 3:4 aspect
 export function sceneImagine(stage) {
   const root = fill(stage, { background: C.void })
@@ -43,12 +43,15 @@ export function sceneImagine(stage) {
   root.appendChild(wash); root.appendChild(tint) // washes above the slices too
   const bands = Array.from({ length: 7 }, () => el('div', { position: 'absolute', left: 0, width: W + 'px', height: '2px', background: 'rgba(255,247,236,0.35)', opacity: 0 }, root))
   const strips = Array.from({ length: 5 }, () => el('div', { position: 'absolute', left: 0, width: W + 'px', background: 'rgba(255,247,236,0.07)', opacity: 0, mixBlendMode: 'screen' }, root))
-  // soft indigo scrim behind the caption so bone text holds ≥3.5:1 over the light pink right half
+  // soft indigo scrim behind the caption so bone text holds ≥3.5:1 over the light pink right half.
+  // A blurred pill (not a pure radial) so the plateau covers the whole 1430px line, ends included;
+  // a touch denser on the right where the aura is palest.
+  const scrimWrap = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', pointerEvents: 'none' }, root)
   const scrim = el('div', {
-    position: 'absolute', left: (W / 2 - SCRIM_W / 2) + 'px', top: (H / 2 - SCRIM_H / 2) + 'px', width: SCRIM_W + 'px', height: SCRIM_H + 'px',
-    background: `radial-gradient(ellipse 50% 50% at 50% 50%, rgba(58,22,108,${SCRIM_A}) 0%, rgba(58,22,108,${SCRIM_A * 0.8}) 45%, rgba(58,22,108,0) 100%)`,
-    opacity: 0, pointerEvents: 'none',
-  }, root)
+    position: 'absolute', left: (W / 2 - SCRIM_W / 2) + 'px', top: (H / 2 - SCRIM_H / 2 + 6) + 'px', width: SCRIM_W + 'px', height: SCRIM_H + 'px',
+    borderRadius: SCRIM_H / 2 + 'px', filter: 'blur(64px)', opacity: 0, pointerEvents: 'none',
+    background: `linear-gradient(90deg, rgba(58,22,108,${SCRIM_A * 0.72}) 0%, rgba(58,22,108,${SCRIM_A}) 45%, rgba(58,22,108,${SCRIM_A * 1.04}) 100%)`,
+  }, scrimWrap)
   const line = new TypeLine(root, 'What if the stars chose who you meet?', {
     left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 500, fontSize: '80px', letterSpacing: '-0.018em',
     textShadow: '0 2px 24px rgba(46,16,96,0.55), 0 0 2px rgba(46,16,96,0.3)',
@@ -76,30 +79,12 @@ export function sceneImagine(stage) {
       bg.g.style.opacity = String(lerp(0.6, 1, ease.outQuad(prog(t, 0, 0.3))))
       tint.style.opacity = String(lerp(1, 0.6, prog(t, 0, 3)))
       line.update(t - TYPE_START)
-      scrim.style.opacity = String(ease.outQuad(prog(t, TYPE_START - 0.1, TYPE_START + 0.5)))
-      const g = prog(t, 2.0, 3.3)
-      // displaced slices ~2.2–3.0s
-      slices.forEach((sl, i) => {
-        const d = sliceDef[i]
-        const on = t > 2.2 && t < 3.0 && noise1(t * 11 + i * 5.3, 21 + i) > 0.52
-        if (!on) { sl.g.style.display = 'none'; return }
-        sl.g.style.display = 'block'
-        pose(sl, t)
-        const jit = noise1(t * 23 + i, 41 + i)
-        const y = d.y + Math.round((noise1(t * 4 + i * 2, 61 + i) - 0.5) * 120)
-        sl.g.style.clipPath = `inset(${y}px 0 ${H - y - d.h}px 0)`
-        sl.g.style.transform = `translateX(${d.dir * d.amp * (0.6 + 0.8 * jit)}px)`
-        sl.g.style.filter = i % 2 ? `hue-rotate(${-(25 + 25 * jit)}deg) saturate(1.25) brightness(1.06)` : 'brightness(1.05)'
-      })
-      bands.forEach((b, i) => {
-        const on = g > 0 && noise1(t * 9 + i * 3, 3 + i) > 0.45
-        b.style.top = (bandY[i] + Math.sin(t * 3 + i) * 40) + 'px'
-        b.style.opacity = on ? String(0.25 + 0.5 * g) : '0'
-      })
-      strips.forEach((s2, i) => {
-        s2.style.top = stripY[i][0] + 'px'; s2.style.height = stripY[i][1] + 'px'
-        s2.style.opacity = g > 0 && noise1(t * 6 + i, 11 + i) > 0.5 ? String(g) : '0'
-      })
+      // the scrim spreads left → right just ahead of the typing cursor, so it never sits there as an empty band
+      scrim.style.opacity = String(ease.outQuad(prog(t, TYPE_START - 0.1, TYPE_START + 0.4)))
+      // mask on the wrapper (a mask on the blurred element itself would clip its halo to a hard pill)
+      const cur = 244 + 1431 * clamp((t - TYPE_START) / (37 * 0.026))   // ≈ typing cursor x
+      const edge = cur + 280 + 1000 * ease.inQuad(prog(t, TYPE_START + 37 * 0.026, TYPE_START + 37 * 0.026 + 0.5))
+      scrimWrap.style.webkitMaskImage = scrimWrap.style.maskImage = edge > W + 400 ? 'none' : `linear-gradient(90deg, #000 ${edge - 320}px, transparent ${edge}px)`
     },
   }
 }
