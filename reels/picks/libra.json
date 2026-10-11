@@ -16,25 +16,6 @@
  },
  "images": [
   {
-   "file": "cache/libra/cand/met-436839.jpg",
-   "focus": [
-    0.45,
-    0.5
-   ],
-   "note": "La Tour, Magdalen at candlelit mirror",
-   "id": "met-436839",
-   "source": "met",
-   "title": "The Penitent Magdalen",
-   "creator": "Georges de La Tour",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436839",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-27910-001.jpg",
-   "w": 1916,
-   "h": 2600,
-   "query": "mirror vanity",
-   "n": 76
-  },
-  {
    "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e000637.jpg",
    "focus": [
     0.5,
@@ -62,7 +43,7 @@
    "note": "Canova, Three Graces in marble",
    "id": "ov-4617b9ff-4840-49ca-b942-08a06e5f1145",
    "source": "openverse/wikimedia",
-   "title": "<div class='fn'> <div style='font-weight:bold;display:inline-block;'><div style='display:inline-block' dir='ltr' lang='en'><i>The Three Graces</i></div></div><div style='display: none;'>label QS:Les,'Las tres Gracias'</div> <div style='display: none;'>label QS:Lhu,'Három Gráciája'</div> <div style='display: none;'>label QS:Laf,'Grasieë'</div> <div style='display: none;'>label QS:Lde,'Die drei Grazien'</div> <div style='display: none;'>label QS:Lpt,'As três Graças'</div> <div style='display: none;'>label QS:Lbe,'Тры грацыі'</div> <div style='display: none;'>label QS:Lmk,'Трите Грации'</div> <div style='display: none;'>label QS:Lzh,'又有美惠三女神'</div> <div style='display: none;'>label QS:Lda,'De tre gratier'</div> <div style='display: none;'>label QS:Lro,'Cele trei Grații'</div> <div style='display: none;'>label QS:Lja,'三美神'</div> <div style='display: none;'>label QS:Laz,'Üç Qrasiya'</div> <div style='display: none;'>label QS:Lel,'Οι τρεις χάριτες'</div> <div style='display: none;'>label QS:Lsv,'De tre gracerna'</div> <div style='display: none;'>label QS:Lpl,'Trzy Gracje'</div> <div style='display: none;'>label QS:Luk,'Три грації'</div> <div style='display: none;'>label QS:Lnl,'De drie Gratiën'</div> <div style='display: none;'>label QS:Lit,'Tre Grazie'</div> <div style='display: none;'>label QS:Lfr,'Les trois Grâces'</div> <div style='display: none;'>label QS:Lla,'Gratiae'</div> <div style='display: none;'>label QS:Lru,'Три грации'</div> <div style='display: none;'>label QS:Len,'The Three Graces'</div> <div style='display: none;'>label QS:Lbr,'An Teir Fulenn'</div> <div style='display: none;'>label QS:Lcs,'Tři grácie'</div> <div style='display: none;'>label QS:Lca,'Les tres Gràcies'</div></div>",
+   "title": "The Three Graces",
    "creator": "Antonio Canova",
    "license": "by-sa 3.0",
    "landing": "https://commons.wikimedia.org/w/index.php?curid=369826",
@@ -192,25 +173,6 @@
    "n": 219
   },
   {
-   "file": "cache/libra/cand/nasa-PIA14936.jpg",
-   "focus": [
-    0.6,
-    0.5
-   ],
-   "note": "Venus, the morning star, over the horizon",
-   "id": "nasa-PIA14936",
-   "source": "nasa",
-   "title": "Morning Star",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA14936",
-   "url": "https://images-assets.nasa.gov/image/PIA14936/PIA14936~orig.jpg",
-   "w": 1003,
-   "h": 1003,
-   "query": "Venus planet",
-   "n": 148
-  },
-  {
    "file": "cache/libra/cand/aic-59847.jpg",
    "focus": [
     0.45,
@@ -287,23 +249,62 @@
    "n": 17
   },
   {
-   "file": "cache/libra/cand/nasa-PIA13448.jpg",
+   "file": "cache/libra/cand/ov-3fb57373-d14a-4420-a068-af889d990bd0.jpg",
+   "focus": [
+    0.36,
+    0.5
+   ],
+   "note": "Bern Justitia, blindfolded Lady Justice",
+   "id": "ov-3fb57373-d14a-4420-a068-af889d990bd0",
+   "source": "openverse/wikimedia",
+   "title": "Justitia Statue 01",
+   "creator": "Geri340",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=21544851",
+   "url": "https://api.openverse.org/v1/images/3fb57373-d14a-4420-a068-af889d990bd0/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Justitia_Statue_01.jpg",
+   "w": 1280,
+   "h": 1609,
+   "query": "Justitia statue",
+   "n": 261
+  },
+  {
+   "file": "cache/libra/cand/nasa-PIA14417.jpg",
    "focus": [
     0.5,
-    0.45
+    0.5
    ],
-   "note": "nebula glowing in the dark",
-   "id": "nasa-PIA13448",
+   "note": "Dumbbell nebula, symmetric lobes",
+   "id": "nasa-PIA14417",
    "source": "nasa",
-   "title": "A Flame in Orion Belt",
+   "title": "Weighing in on the Dumbbell Nebula",
    "creator": "JPL",
    "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA13448",
-   "url": "https://images-assets.nasa.gov/image/PIA13448/PIA13448~orig.jpg",
-   "w": 2213,
-   "h": 2600,
-   "query": "Orion Nebula",
-   "n": 210
+   "landing": "https://images.nasa.gov/details/PIA14417",
+   "url": "https://images-assets.nasa.gov/image/PIA14417/PIA14417~orig.jpg",
+   "w": 2600,
+   "h": 1300,
+   "query": "nebula",
+   "n": 115
+  },
+  {
+   "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e001864.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "waxing crescent moon on black",
+   "id": "nasa-GSFC_20171208_Archive_e001864",
+   "source": "nasa",
+   "title": "Waxing crescent",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001864",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001864/GSFC_20171208_Archive_e001864~orig.jpg",
+   "w": 2400,
+   "h": 2400,
+   "query": "Libra constellation",
+   "n": 114
   }
  ]
 }
