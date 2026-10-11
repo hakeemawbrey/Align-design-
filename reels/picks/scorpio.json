@@ -1,0 +1,351 @@
+{
+ "plate": {
+  "file": "cache/scorpio/plate/commons.jpg",
+  "crop": [
+   0.05,
+   0.04,
+   0.95,
+   0.985
+  ],
+  "id": "commons-Sidney Hall - Urania's Mirror - Scorpio.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg/1280px-Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg",
+  "title": "Urania's Mirror: Scorpio (1824)",
+  "creator": "Sidney Hall",
+  "license": "public domain",
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Scorpio.jpg"
+ },
+ "images": [
+  {
+   "file": "cache/scorpio/cand/ov-f9697376-a373-4ca6-9595-105546141f1b.jpg",
+   "focus": [
+    0.42,
+    0.45
+   ],
+   "note": "UV-glowing scorpion on violet rock",
+   "id": "ov-f9697376-a373-4ca6-9595-105546141f1b",
+   "source": "openverse/wikimedia",
+   "title": "Ultraviolet Light Scorpion (22926553225)",
+   "creator": "The Next Gen Scientist",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=113044151",
+   "url": "https://api.openverse.org/v1/images/f9697376-a373-4ca6-9595-105546141f1b/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Ultraviolet_Light_Scorpion_%2822926553225%29.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "scorpion ultraviolet",
+   "n": 212
+  },
+  {
+   "file": "cache/scorpio/cand/ov-a66e81c8-9f16-4cc5-aae8-cffa8e507f9c.jpg",
+   "focus": [
+    0.32,
+    0.4
+   ],
+   "note": "UV-glowing scorpion on black",
+   "id": "ov-a66e81c8-9f16-4cc5-aae8-cffa8e507f9c",
+   "source": "openverse/wikimedia",
+   "title": "Ultraviolet reflectance in wild scorpion (Mindo, Ecuador) (23043999163)",
+   "creator": "Javier Ábalos from Valencia, España",
+   "license": "by-sa 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=93784813",
+   "url": "https://api.openverse.org/v1/images/a66e81c8-9f16-4cc5-aae8-cffa8e507f9c/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Ultraviolet_reflectance_in_wild_scorpion_%28Mindo%2C_Ecuador%29_%2823043999163%29.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "scorpion ultraviolet",
+   "n": 211
+  },
+  {
+   "file": "cache/scorpio/cand/ov-3b07b410-7ed3-4f32-9a58-0185da3cf93b.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "emperor scorpion, glossy black armour",
+   "id": "ov-3b07b410-7ed3-4f32-9a58-0185da3cf93b",
+   "source": "openverse/wikimedia",
+   "title": "Emporer scorpion",
+   "creator": "Kevin Walsh from Oxford, England",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=1119670",
+   "url": "https://api.openverse.org/v1/images/3b07b410-7ed3-4f32-9a58-0185da3cf93b/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Emporer_scorpion.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "scorpion",
+   "n": 6
+  },
+  {
+   "file": "cache/scorpio/cand/ov-6eb076d2-2bcd-4010-9df4-37ff9f11f0de.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "forest scorpion, tail raised",
+   "id": "ov-6eb076d2-2bcd-4010-9df4-37ff9f11f0de",
+   "source": "openverse/wikimedia",
+   "title": "Asian forest scorpion in Khao Yai National Park",
+   "creator": "Chris huh",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=2542194",
+   "url": "https://api.openverse.org/v1/images/6eb076d2-2bcd-4010-9df4-37ff9f11f0de/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Asian_forest_scorpion_in_Khao_Yai_National_Park.JPG",
+   "w": 1280,
+   "h": 1912,
+   "query": "scorpion",
+   "n": 5
+  },
+  {
+   "file": "cache/scorpio/cand/met-670765.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Cagnacci, death of Cleopatra with the asp",
+   "id": "met-670765",
+   "source": "met",
+   "title": "The Death of Cleopatra",
+   "creator": "Guido Cagnacci",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/670765",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP375602.jpg",
+   "w": 2164,
+   "h": 2600,
+   "query": "Cleopatra",
+   "n": 226
+  },
+  {
+   "file": "cache/scorpio/cand/ov-9c1e5e25-8c8c-4fc8-af6e-2eb63bf644af.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Rondanini Medusa, snakes knotted at the chin",
+   "id": "ov-9c1e5e25-8c8c-4fc8-af6e-2eb63bf644af",
+   "source": "openverse/wikimedia",
+   "title": "Rondanini Medusa Glyptothek Munich 252 n1",
+   "creator": "Unknown (Greek original by Phidias)",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=1706338",
+   "url": "https://api.openverse.org/v1/images/9c1e5e25-8c8c-4fc8-af6e-2eb63bf644af/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Rondanini_Medusa_Glyptothek_Munich_252_n1.jpg",
+   "w": 1280,
+   "h": 1280,
+   "query": "Medusa",
+   "n": 71
+  },
+  {
+   "file": "cache/scorpio/cand/aic-20579.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "note": "Moreau, Hercules and the Hydra",
+   "id": "aic-20579",
+   "source": "aic",
+   "title": "Hercules and the Lernaean Hydra",
+   "creator": "Gustave Moreau (French, 1826-1898)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/20579",
+   "url": "https://www.artic.edu/iiif/2/2ae64c8a-266d-470a-a25a-c83127564636/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1946,
+   "query": "skull vanitas",
+   "n": 13
+  },
+  {
+   "file": "cache/scorpio/cand/nasa-AFRC2017-0233-009.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "diamond-ring total solar eclipse",
+   "id": "nasa-AFRC2017-0233-009",
+   "source": "nasa",
+   "title": "2017 Total Solar Eclipse",
+   "creator": "AFRC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/AFRC2017-0233-009",
+   "url": "https://images-assets.nasa.gov/image/AFRC2017-0233-009/AFRC2017-0233-009~orig.jpg",
+   "w": 2600,
+   "h": 1733,
+   "query": "solar eclipse corona",
+   "n": 344
+  },
+  {
+   "file": "cache/scorpio/cand/nasa-art002e016324.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "eclipsed Sun from Artemis II",
+   "id": "nasa-art002e016324",
+   "source": "nasa",
+   "title": "Solar Eclipse During Artemis II",
+   "creator": "JSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/art002e016324",
+   "url": "https://images-assets.nasa.gov/image/art002e016324/art002e016324~orig.jpg",
+   "w": 2600,
+   "h": 1950,
+   "query": "solar eclipse corona",
+   "n": 345
+  },
+  {
+   "file": "cache/scorpio/cand/ov-49f8fad3-01d2-4505-8965-0bb3cbe666ff.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "note": "Antares, red heart of the scorpion",
+   "id": "ov-49f8fad3-01d2-4505-8965-0bb3cbe666ff",
+   "source": "openverse/wikimedia",
+   "title": "Antares System",
+   "creator": "Sephirohq",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=17672897",
+   "url": "https://api.openverse.org/v1/images/49f8fad3-01d2-4505-8965-0bb3cbe666ff/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Antares_System.jpg",
+   "w": 1280,
+   "h": 1422,
+   "query": "Antares",
+   "n": 76
+  },
+  {
+   "file": "cache/scorpio/cand/met-435904.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Claesz, vanitas skull",
+   "id": "met-435904",
+   "source": "met",
+   "title": "Still Life with a Skull and a Writing Quill",
+   "creator": "Pieter Claesz",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435904",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145929.jpg",
+   "w": 2600,
+   "h": 1753,
+   "query": "skull",
+   "n": 165
+  },
+  {
+   "file": "cache/scorpio/cand/aic-86323.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Guercino, the Entombment",
+   "id": "aic-86323",
+   "source": "aic",
+   "title": "The Entombment",
+   "creator": "Guercino (Giovanni Francesco Barbieri; Italian, 1591-1666)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/86323",
+   "url": "https://www.artic.edu/iiif/2/b30b708a-be47-c3cc-f3af-2a6798b7b088/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1107,
+   "query": "Entombment",
+   "n": 240
+  },
+  {
+   "file": "cache/scorpio/cand/ov-49a52862-fd7a-465a-946c-2aa346a81162.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "underground river in the abyss",
+   "id": "ov-49a52862-fd7a-465a-946c-2aa346a81162",
+   "source": "openverse/wikimedia",
+   "title": "Long Abyss in Akiyoshi Cave 1",
+   "creator": "そらみみ (Soramimi)",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=49091073",
+   "url": "https://api.openverse.org/v1/images/49a52862-fd7a-465a-946c-2aa346a81162/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Long_Abyss_in_Akiyoshi_Cave_1.jpg",
+   "w": 1280,
+   "h": 960,
+   "query": "abyss cave",
+   "n": 108
+  },
+  {
+   "file": "cache/scorpio/cand/nasa-PIA19966.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Pluto and Charon",
+   "id": "nasa-PIA19966",
+   "source": "nasa",
+   "title": "Charon and Pluto: Strikingly Different Worlds",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA19966",
+   "url": "https://images-assets.nasa.gov/image/PIA19966/PIA19966~orig.jpg",
+   "w": 2600,
+   "h": 2600,
+   "query": "Charon",
+   "n": 187
+  },
+  {
+   "file": "cache/scorpio/cand/ov-4a8c693d-517b-473d-a391-cc5ff5fe88f6.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "eagle portrait",
+   "id": "ov-4a8c693d-517b-473d-a391-cc5ff5fe88f6",
+   "source": "openverse/wikimedia",
+   "title": "File:Bald Eagle Portrait.jpg",
+   "creator": "Saffron Blaze",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=18433764",
+   "url": "https://api.openverse.org/v1/images/4a8c693d-517b-473d-a391-cc5ff5fe88f6/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Bald_Eagle_Portrait.jpg",
+   "w": 1280,
+   "h": 1600,
+   "query": "eagle",
+   "n": 54
+  },
+  {
+   "file": "cache/scorpio/cand/met-436576.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "El Greco, souls rising at the Fifth Seal",
+   "id": "met-436576",
+   "source": "met",
+   "title": "The Vision of Saint John",
+   "creator": "El Greco (Domenikos Theotokopoulos)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436576",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-17641-001.jpg",
+   "w": 2312,
+   "h": 2600,
+   "query": "Laocoon",
+   "n": 266
+  },
+  {
+   "file": "cache/scorpio/cand/ov-242adf69-2339-4c38-bc2a-1edaf9af1cae.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "blood moon, total lunar eclipse",
+   "id": "ov-242adf69-2339-4c38-bc2a-1edaf9af1cae",
+   "source": "openverse/wikimedia",
+   "title": "Full Eclipse of the Moon as seen in from Irvine, CA, USA (52075715442) (cropped)",
+   "creator": "Sergei Mutovkin from Irvine, California, United States",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=118047426",
+   "url": "https://api.openverse.org/v1/images/242adf69-2339-4c38-bc2a-1edaf9af1cae/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Full_Eclipse_of_the_Moon_as_seen_in_from_Irvine%2C_CA%2C_USA_%2852075715442%29_%28cropped%29.jpg",
+   "w": 1280,
+   "h": 1268,
+   "query": "eclipse",
+   "n": 89
+  }
+ ]
+}
