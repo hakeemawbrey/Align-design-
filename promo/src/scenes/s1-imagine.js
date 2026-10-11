@@ -17,7 +17,7 @@ const TYPE_START = 0.2
 const S1_END = 3.55
 const GLITCH = [[1.62, 1.72], [2.28, 2.36], [2.72, 2.86]]
 const BGW = 2304, BGH = 1296                 // oversized layers (1.2×) so push + parallax never reveal an edge
-const NEB_RES = 3                            // nebula field computed at 1/3 res, then upscaled + softened
+const NEB_RES = 2                            // nebula field computed at 1/3 res, then upscaled + softened
 const GRAIN_N = 6, GRAIN_TILE = 512
 
 // ── deterministic 2D value noise / fbm (local: lib.js only ships 1D noise)
@@ -56,30 +56,33 @@ function buildNebula() {
     const v = y / h
     for (let x = 0; x < w; x++) {
       const u = x / w
-      const nx = u * 3.2, ny = v * 1.8
+      const nx = u * 4.6, ny = v * 2.6
       // domain warp → wispy filaments rather than blobs
       const wx = fbm(nx + 1.7, ny + 9.2, 11, 4), wy = fbm(nx + 8.3, ny + 2.8, 23, 4)
-      const qx = nx + 1.9 * wx, qy = ny + 1.9 * wy
+      const qx = nx + 2.4 * wx, qy = ny + 2.4 * wy
       let d = fbm(qx, qy, 37, 6)
       // composition: a broad luminous arc from upper-left down to lower-right, kept off the caption band
       const arc = Math.exp(-Math.pow((v - (0.18 + 0.75 * u * u * 0.9)) / 0.32, 2))
       const lowR = Math.exp(-(Math.pow((u - 0.78) / 0.28, 2) + Math.pow((v - 0.82) / 0.26, 2)))
       const upL = Math.exp(-(Math.pow((u - 0.2) / 0.3, 2) + Math.pow((v - 0.16) / 0.24, 2)))
-      const mask = clamp(0.25 + 0.8 * arc + 0.9 * lowR + 0.7 * upL, 0, 1.6)
-      let e = smooth(0.42, 0.85, d) * mask
-      e = e * e * 1.25 + 0.08 * smooth(0.3, 0.7, d) * mask
+      const mask = clamp(0.08 + 0.85 * arc + 1.1 * lowR + 0.8 * upL, 0, 1.7)
+      // ridged detail → thin bright filaments threaded through the soft clouds
+      const fr = 1 - Math.abs(fbm(qx * 2.1 + 5.5, qy * 2.1 + 0.7, 89, 5) - 0.5) * 2
+      const cloud = smooth(0.4, 0.82, d)
+      let e = mask * (0.55 * cloud * cloud + 0.75 * Math.pow(fr, 7) * smooth(0.3, 0.7, d) + 0.06 * smooth(0.25, 0.6, d))
+      e = 1 - Math.exp(-e * 1.8)                       // tone-map: no blown-out cores
       // colour: violet/plum up-left, rose → a touch of amber toward the lower-right core
       const cn = fbm(qx * 0.7 + 4.1, qy * 0.7 + 1.3, 53, 3)
-      const col = palAt(clamp(0.1 + 0.55 * u + 0.35 * v + (cn - 0.5) * 0.9) * 0.93)
+      const col = palAt(clamp(0.05 + 0.6 * u + 0.45 * v + (cn - 0.5) * 1.2) * 0.9)
       // dust lanes: thin dark ridges of a second fbm
       const dn = fbm(qx * 1.6 + 3.3, qy * 1.6 + 7.7, 71, 5)
       const ridge = 1 - Math.abs(dn - 0.5) * 2
-      const dust = smooth(0.72, 0.95, ridge) * 0.85
+      const dust = smooth(0.66, 0.95, ridge) * 0.95
       const k = (1 - dust)
       const o = (y * w + x) * 4
       for (let c = 0; c < 3; c++) {
         const base = top[c] + (bot[c] - top[c]) * v
-        px[o + c] = clamp((base * (1 - dust * 0.35) + col[c] * e * 0.95 * k) / 255) * 255
+        px[o + c] = clamp((base * (1 - dust * 0.35) + col[c] * e * 0.78 * k) / 255) * 255
       }
       px[o + 3] = 255
     }
@@ -87,9 +90,15 @@ function buildNebula() {
   lx.putImageData(id, 0, 0)
   const neb = canvas(BGW, BGH), nx = neb.getContext('2d')
   nx.imageSmoothingQuality = 'high'
-  nx.filter = 'blur(3px)'
+  nx.filter = 'blur(1.2px)'
   nx.drawImage(lo, 0, 0, BGW, BGH)
   nx.filter = 'none'
+  // bloom: a wide blurred copy screened back on → luminous haze around the bright clouds
+  const bl = canvas(BGW / 4, BGH / 4), blx = bl.getContext('2d')
+  blx.filter = 'blur(10px)'; blx.drawImage(neb, 0, 0, BGW / 4, BGH / 4)
+  nx.globalCompositeOperation = 'screen'; nx.globalAlpha = 0.42
+  nx.drawImage(bl, 0, 0, BGW, BGH)
+  nx.globalAlpha = 1; nx.globalCompositeOperation = 'source-over'
   // soft emission cores (screen-blended radial glows)
   const glow = (x, y, r, rgba) => {
     const g = nx.createRadialGradient(x, y, 0, x, y, r)
@@ -97,8 +106,8 @@ function buildNebula() {
     nx.fillStyle = g; nx.fillRect(x - r, y - r, 2 * r, 2 * r)
   }
   nx.globalCompositeOperation = 'screen'
-  glow(BGW * 0.80, BGH * 0.84, 520, 'rgba(232,98,138,0.22)')
-  glow(BGW * 0.86, BGH * 0.90, 260, 'rgba(242,154,74,0.16)')
+  glow(BGW * 0.80, BGH * 0.84, 520, 'rgba(232,98,138,0.26)')
+  glow(BGW * 0.86, BGH * 0.90, 260, 'rgba(242,154,74,0.2)')
   glow(BGW * 0.18, BGH * 0.14, 560, 'rgba(154,123,224,0.20)')
   glow(BGW * 0.30, BGH * 0.22, 300, 'rgba(180,92,255,0.12)')
   glow(BGW * 0.62, BGH * 0.12, 380, 'rgba(154,123,224,0.08)')
@@ -161,21 +170,27 @@ function buildStarSprite(spikes) {
 
 /** monochrome film-grain tiles: gaussian-ish luma, slightly clumped (blurred) so it reads as silver, not static */
 function buildGrain() {
-  return Array.from({ length: GRAIN_N }, (_, n) => {
-    const raw = canvas(GRAIN_TILE, GRAIN_TILE), rx = raw.getContext('2d')
-    const id = rx.createImageData(GRAIN_TILE, GRAIN_TILE), p = id.data, r = rng(9001 + n * 131)
+  const noiseTile = (S, seed, mean, amp) => {
+    const c = canvas(S, S), x = c.getContext('2d'), id = x.createImageData(S, S), p = id.data, r = rng(seed)
     for (let i = 0; i < p.length; i += 4) {
-      const g = (r() + r() + r() + r() - 2) * 0.5            // ~N(0, 0.29)
-      const v = clamp(0.5 + g * 1.15) * 255
-      p[i] = p[i + 1] = p[i + 2] = v; p[i + 3] = 255
+      const g = (r() + r() + r() + r() - 2) * 0.5             // ~N(0, 0.29)
+      p[i] = p[i + 1] = p[i + 2] = clamp(mean + g * amp) * 255; p[i + 3] = 255
     }
-    rx.putImageData(id, 0, 0)
-    // tile 3×3 → blur → crop centre so the clumped tile still wraps seamlessly
-    const big = canvas(GRAIN_TILE * 3, GRAIN_TILE * 3), bx = big.getContext('2d')
-    for (let i = 0; i < 9; i++) bx.drawImage(raw, (i % 3) * GRAIN_TILE, Math.floor(i / 3) * GRAIN_TILE)
-    const out = canvas(GRAIN_TILE, GRAIN_TILE), ox = out.getContext('2d')
-    ox.filter = 'blur(0.55px) contrast(1.9)'
-    ox.drawImage(big, -GRAIN_TILE, -GRAIN_TILE)
+    x.putImageData(id, 0, 0); return c
+  }
+  // wrap-safe resample: draw a 3×3 repeat, filter, crop the centre
+  const wrapDraw = (dst, src, scale, filter, alpha = 1) => {
+    const T = GRAIN_TILE, big = canvas(T * 3, T * 3), bx = big.getContext('2d')
+    bx.imageSmoothingQuality = 'high'
+    for (let i = 0; i < 9; i++) bx.drawImage(src, (i % 3) * T, Math.floor(i / 3) * T, T, T)
+    const dx = dst.getContext('2d'); dx.filter = filter; dx.globalAlpha = alpha
+    dx.drawImage(big, -T, -T); dx.filter = 'none'; dx.globalAlpha = 1
+  }
+  return Array.from({ length: GRAIN_N }, (_, n) => {
+    const out = canvas(GRAIN_TILE, GRAIN_TILE)
+    // silver clumps (~2–3px, upscaled from half res) + a finer layer on top → organic, not pixel static
+    wrapDraw(out, noiseTile(GRAIN_TILE / 2, 9001 + n * 131, 0.46, 1.3), 2, 'blur(0.5px) contrast(1.5)')
+    wrapDraw(out, noiseTile(GRAIN_TILE, 7001 + n * 97, 0.46, 1.0), 1, 'blur(0.35px)', 0.4)
     return out
   })
 }
@@ -188,17 +203,17 @@ export function sceneImagine(stage) {
   const scratch = canvas(W, H), sx = scratch.getContext('2d')
 
   const neb = buildNebula()
-  const far = buildStars(5200, 101, { rMin: 0.35, rMax: 0.9, aMin: 0.18, aMax: 0.6, band: 0.45 })
-  const mid = buildStars(1100, 202, { rMin: 0.55, rMax: 1.3, aMin: 0.35, aMax: 0.85 })
-  const near = buildStars(160, 303, { rMin: 0.9, rMax: 1.9, aMin: 0.55, aMax: 0.95 })
+  const far = buildStars(9000, 101, { rMin: 0.45, rMax: 1.0, aMin: 0.3, aMax: 0.8, band: 0.45 })
+  const mid = buildStars(1900, 202, { rMin: 0.7, rMax: 1.5, aMin: 0.5, aMax: 1 })
+  const near = buildStars(180, 303, { rMin: 1.1, rMax: 2.2, aMin: 0.75, aMax: 1 })
   const spriteS = buildStarSprite(true), spriteG = buildStarSprite(false)
   const rb = rng(404)
   // bright stars, kept out of the caption band (y 470–610 around x 220–1700)
   const bright = []
-  while (bright.length < 26) {
+  while (bright.length < 40) {
     const x = rb() * W, y = rb() * H
     if (y > 440 && y < 640 && x > 180 && x < 1740) continue
-    bright.push({ x, y, size: 26 + Math.pow(rb(), 2.5) * 120, spike: bright.length < 7, seed: 500 + bright.length, sp: 1.6 + rb() * 3, depth: rb() })
+    bright.push({ x, y, size: 26 + Math.pow(rb(), 2.5) * 120, spike: bright.length < 9, seed: 500 + bright.length, sp: 1.6 + rb() * 3, depth: rb() })
   }
   // vignette (indigo, never black) — baked once
   const vig = canvas(W, H), vx = vig.getContext('2d')
@@ -219,7 +234,7 @@ export function sceneImagine(stage) {
   }, { perChar: 0.026, fade: 0.3, final: C.bone, accent: [C.rub, C.amber, C.gold, C.plum] })
 
   // grain sits above everything in the scene (text included), hard-light so it bites into the dark void
-  const grainC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'hard-light', opacity: 0.32, pointerEvents: 'none' }, root)
+  const grainC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: 0.8, pointerEvents: 'none' }, root)
   grainC.width = W; grainC.height = H
   const gx = grainC.getContext('2d')
   const grain = buildGrain().map(t => gx.createPattern(t, 'repeat'))
@@ -283,7 +298,7 @@ export function sceneImagine(stage) {
           const off = d.dir * d.amp * (0.5 + gr())
           bx.drawImage(scratch, 0, y, W, h, off, y, W, h)
           if (i % 2 === 0) {      // RGB-ish split on alternating slices
-            bx.globalCompositeOperation = 'screen'; bx.globalAlpha = 0.55
+            bx.globalCompositeOperation = 'screen'; bx.globalAlpha = 0.3
             bx.fillStyle = i % 4 ? 'rgba(232,98,138,0.35)' : 'rgba(127,160,255,0.3)'
             bx.fillRect(0, y, W, h)
             bx.drawImage(scratch, 0, y, W, h, off + d.dir * 14, y, W, h)
@@ -311,7 +326,25 @@ export function sceneImagine(stage) {
   }
 }
 
-/** stepped pixel wipe from the top, painted on the fx canvas (S1 → S2) */
+// pixel-art star sprites (strings of a square grid; X = body pixel, C = bright centre)
+const STAR_SPRITES = [
+  ['...X...', '...X...', '..XXX..', 'XXXCXXX', '..XXX..', '...X...', '...X...'],   // 0 big 4-point sparkle
+  ['.......', '...X...', '..XXX..', '.XXCXX.', '..XXX..', '...X...', '.......'],   // 1 medium plus
+  ['.......', '.......', '...X...', '..XCX..', '...X...', '.......', '.......'],   // 2 tiny twinkle
+  ['.......', '.X...X.', '...X...', '..XCX..', '...X...', '.X...X.', '.......'],   // 3 diagonal glint
+].map(rowsS => rowsS.flatMap((row, y) => [...row].map((ch, x) => ch === '.' ? null : [x, y, ch === 'C'])).filter(Boolean))
+const isLight = c => { const n = parseInt(c.slice(1), 16); return ((n >> 16) & 255) * 0.3 + ((n >> 8) & 255) * 0.59 + (n & 255) * 0.11 > 128 }
+function drawPixelStar(ctx, x0, y0, size, kind, color, centre) {
+  const px = Math.max(1, Math.floor(size / 8)), off = Math.floor((size - px * 7) / 2)
+  for (const [x, y, c] of STAR_SPRITES[kind]) {
+    ctx.fillStyle = c ? centre : color
+    ctx.fillRect(x0 + off + x * px, y0 + off + y * px, px, px)
+  }
+}
+
+/** stepped pixel wipe painted on the fx canvas (S1 → S2, and the exit wipe fromBottom).
+ *  The frontier is pixel-art stars: a scattered sparkle edge, then a denser row where stars sit
+ *  on the solid fill, then the solid fill. Same front/stair maths as before → identical timing + coverage. */
 export function fxStairWipe(ctx, t, { start, dur, color, seed = 3, size = 48, fromBottom = false }) {
   const p = prog(t, start, start + dur)
   if (p <= 0 || p >= 1) return p >= 1
@@ -320,17 +353,30 @@ export function fxStairWipe(ctx, t, { start, dur, color, seed = 3, size = 48, fr
   const jitter = Array.from({ length: cols }, () => r())
   const maxStair = 14
   const front = ease.inOutQuad(p) * (rows + maxStair + 2)
+  const tick = Math.round(t * 30) >> 1                 // twinkle every 2 frames
+  const lightFill = isLight(color)
+  ctx.imageSmoothingEnabled = false
   for (let cx = 0; cx < cols; cx++) {
     const stair = Math.floor(cx / 4) * 1.4 + jitter[cx] * 1.2
     for (let cy = 0; cy < rows; cy++) {
       const row = fromBottom ? rows - 1 - cy : cy
       const d = front - (row + stair)
       if (d <= 0) continue
-      if (d < 1.2) {
-        const rr = rng(seed * 131 + cx * 977 + cy * 31 + (Math.round(t * 30) >> 1))
-        ctx.fillStyle = PIXEL_PALETTE[Math.floor(rr() * PIXEL_PALETTE.length)]
-      } else ctx.fillStyle = color
-      ctx.fillRect(cx * size, cy * size, size + 0.5, size + 0.5)
+      const x0 = cx * size, y0 = cy * size
+      if (d >= 2.2) { ctx.fillStyle = color; ctx.fillRect(x0, y0, size + 1, size + 1); continue }
+      const cr = rng(seed * 131 + cx * 977 + cy * 31)   // per-cell constants (stable identity)
+      const h = cr(), col = PIXEL_PALETTE[Math.floor(cr() * PIXEL_PALETTE.length)], ph = Math.floor(cr() * 4)
+      const blink = (tick + ph) & 1
+      if (d < 0.6) {                                    // leading edge: sparse, small, blinking
+        if (h > 0.4) continue
+        drawPixelStar(ctx, x0, y0, size, blink ? 2 : (h < 0.15 ? 3 : 1), col, '#fff3e0')
+      } else if (d < 1.4) {                             // the star band: most cells sparkle
+        if (h > 0.8) continue
+        drawPixelStar(ctx, x0, y0, size, blink ? (h < 0.4 ? 0 : 3) : 1, col, '#fff3e0')
+      } else {                                          // merging: stars set into the solid fill
+        ctx.fillStyle = color; ctx.fillRect(x0, y0, size + 1, size + 1)
+        if (h < 0.5) drawPixelStar(ctx, x0, y0, size, blink ? 1 : 2, col, lightFill ? col : '#fff3e0')
+      }
     }
   }
   return false

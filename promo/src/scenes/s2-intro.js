@@ -1,5 +1,6 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
 import { W, H, IMG, A, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { veilCanvas } from './s3-veil.js'
 
 // index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
 // Register the 500 face locally (shared guard with s2) — document.fonts.ready waits for it.
@@ -152,54 +153,45 @@ export function sceneIntro(stage) {
   }
 }
 
-// ── thermal Juniper, sampled once, framed exactly like s3's first frame (6.86s) ──
-const THERMAL_STOPS = ['#1d0b4a', '#6a1fb0', '#e0408a', '#ff8c3a', '#ffe36a'].map(h => {
-  const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
-})
-const moundImg = typeof document !== 'undefined' ? document.createElement('img') : null
-if (moundImg) {
-  moundImg.src = IMG + 'juniper.jpg'
-  moundImg.decoding = 'sync'
-  Object.assign(moundImg.style, { position: 'absolute', width: '1px', height: '1px', opacity: '0', pointerEvents: 'none', left: '-10px', top: '-10px' })
-  // in the document so main.js waits for it along with the other images
-  document.body.appendChild(moundImg)
-}
-const grids = {}  // size → { cols, rows, data }
-function thermalGrid(size) {
+// ── S3's first frame (the Libra aura-veil mystery card), sampled once into cell grids ──
+const grids = {}  // size → { cols, rows, css, small }
+function veilGrid(size) {
   if (grids[size]) return grids[size]
-  if (!moundImg || !moundImg.complete || !moundImg.naturalWidth) return null
-  // full-frame thermal render: s3 at 6.86 → img 1920×2560 centred, translateY(ty) scale(s)
-  // keep in sync with s3-veil.js (push = 1.0, yShift = -360 at t = 6.86)
-  const s = 1.0, ty = -360
-  const full = document.createElement('canvas'); full.width = W; full.height = H
-  const fc = full.getContext('2d')
-  const dw = 1920 * s, dh = 2560 * s
-  fc.drawImage(moundImg, W / 2 - dw / 2, H / 2 + ty - dh / 2, dw, dh)
-  const id = fc.getImageData(0, 0, W, H), d = id.data
-  for (let i = 0; i < d.length; i += 4) {
-    const l = clamp((0.3 * d[i] + 0.55 * d[i + 1] + 0.15 * d[i + 2]) / 255) * 4
-    const k = Math.min(3, Math.floor(l)), f = l - k
-    const a = THERMAL_STOPS[k], b = THERMAL_STOPS[k + 1]
-    d[i] = a[0] + (b[0] - a[0]) * f; d[i + 1] = a[1] + (b[1] - a[1]) * f; d[i + 2] = a[2] + (b[2] - a[2]) * f
-  }
-  fc.putImageData(id, 0, 0)
-  // average down to the cell grid
+  const vc = veilCanvas()   // exact S3 veil composition (VW×VH, visible frame = centre W×H crop)
+  if (!vc) return null
+  const ox = (vc.width - W) / 2, oy = (vc.height - H) / 2
   const cols = Math.ceil(W / size), rows = Math.ceil(H / size)
   const small = document.createElement('canvas'); small.width = cols; small.height = rows
   const sc = small.getContext('2d'); sc.imageSmoothingQuality = 'high'
-  sc.drawImage(full, 0, 0, cols * size, rows * size, 0, 0, cols, rows)
+  // average down to the cell grid (cells past the frame edge reuse the edge pixels)
+  sc.drawImage(vc, ox, oy, cols * size, rows * size, 0, 0, cols, rows)
   const data = sc.getImageData(0, 0, cols, rows).data
   const css = []
   for (let i = 0; i < cols * rows; i++) css.push(`rgb(${data[i * 4]},${data[i * 4 + 1]},${data[i * 4 + 2]})`)
   return (grids[size] = { cols, rows, css, small })
 }
 
-/** a pixel mound rising from the bottom; its interior is a mosaic of thermal Juniper that floods the
+// pixel-art sparkle sprites (1 = body, 2 = bright core); each "pixel" is drawn as a crisp integer square
+const STAR7 = ['...1...', '...1...', '..111..', '1112111', '..111..', '...1...', '...1...']
+const STAR5 = ['..1..', '..1..', '11211', '..1..', '..1..']
+const STAR3 = ['.1.', '121', '.1.']
+const STAR_CORE = '#fff6ea'
+function drawPixelStar(ctx, sprite, x, y, px, color) {
+  const n = sprite.length, o = Math.floor(n / 2) * px
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) {
+    const v = sprite[r][c]
+    if (v === '.') continue
+    ctx.fillStyle = v === '2' ? STAR_CORE : color
+    ctx.fillRect(Math.round(x) - o + c * px, Math.round(y) - o + r * px, px, px)
+  }
+}
+
+/** a pixel mound rising from the bottom; its interior is a mosaic of the S3 mystery-card veil that floods the
  *  frame and lands on s3's first frame (S2 → S3) */
 export function fxMound(ctx, t, { start, dur, seed = 5, size = 40 }) {
   const p = prog(t, start, start + dur)
   if (p <= 0) return
-  const g = thermalGrid(size)
+  const g = veilGrid(size)
   const cols = Math.ceil(W / size), rows = Math.ceil(H / size)
   const r = rng(seed)
   const jit = Array.from({ length: cols }, () => r())
@@ -213,7 +205,7 @@ export function fxMound(ctx, t, { start, dur, seed = 5, size = 40 }) {
   const flood = fi >= endF - 6 ? 1 : Math.pow(prog(lt, dur - 0.58, (endF - 6) / 30 - start), 2)
   if (flood >= 1 && g) {
     const fine = fi >= endF - 2 ? 10 : fi >= endF - 4 ? 20 : size
-    const gf = thermalGrid(fine) || g
+    const gf = veilGrid(fine) || g
     ctx.save(); ctx.imageSmoothingEnabled = false
     ctx.drawImage(gf.small, 0, 0, gf.cols * fine, gf.rows * fine)
     ctx.restore()
@@ -222,20 +214,37 @@ export function fxMound(ctx, t, { start, dur, seed = 5, size = 40 }) {
   // sized so the frame only just fills as flood → 1 (no early saturation → no 2-frame jump)
   const width = lerp(1.5, 6.5, hill) + 24 * flood
   const height = lerp(1, 7.5, hill) + rows * 1.4 * flood
+  const edgeCells = []   // [cx, cy] of the hill's leading edge (top cell of each column)
   for (let cx = 0; cx < cols; cx++) {
     const dx = (cx + 0.5 - cols / 2) / width
     const env = Math.exp(-dx * dx)
     const h = Math.floor(height * env + (env > 0.08 ? jit[cx] * 1.2 * (1 - flood) : 0))
     for (let k = 0; k < Math.min(h, rows); k++) {
       const cy = rows - 1 - k
-      const depth = h - k
-      let pick
-      if (depth <= 1) {
-        const rr = rng(cx * 37 + k * 101 + seed + (Math.round(t * 30) >> 1) * 7)
-        pick = PIXEL_PALETTE[Math.floor(rr() * PIXEL_PALETTE.length)]
-      } else pick = g ? g.css[cy * g.cols + cx] : fallback[Math.min(4, Math.floor(depth / 2))]
-      ctx.fillStyle = pick
+      ctx.fillStyle = g ? g.css[cy * g.cols + cx] : fallback[Math.min(4, Math.floor((h - k) / 2))]
       ctx.fillRect(cx * size, cy * size, size + 0.5, size + 0.5)
     }
+    if (h > 0) edgeCells.push([cx, rows - Math.min(h, rows)])
   }
+  // rising stardust: pixel-art stars scattered along the leading edge, twinkling every 2 frames
+  const tw2 = fi >> 1
+  ctx.save(); ctx.imageSmoothingEnabled = false
+  for (const [cx, cy] of edgeCells) {
+    for (let j = 0; j < 2; j++) {
+      const rs = rng(cx * 977 + j * 131 + seed * 7)     // per-star identity (stable)
+      if (rs() > 0.62) continue
+      const phase = Math.floor(rs() * 6), life = 6     // twinkle cycle in 2-frame steps
+      const st = (tw2 + phase) % life                   // 0..5
+      if (st >= 5) continue                             // off beat → blink
+      const rise = ((tw2 + phase) % 12) * 3 + rs() * 30 // drifts up a little, wraps
+      const x = cx * size + Math.floor(rs() * size)
+      const y = cy * size - 6 - rise - Math.floor(rs() * size * 0.8)
+      const big = rs()
+      const sprite = st === 2 ? (big > 0.55 ? STAR7 : STAR5) : st === 1 || st === 3 ? (big > 0.55 ? STAR5 : STAR3) : STAR3
+      const px = big > 0.75 ? 8 : big > 0.4 ? 6 : 5
+      const col = PIXEL_PALETTE[Math.floor(rng(cx * 37 + j * 53 + tw2 * 7 + seed)() * PIXEL_PALETTE.length)]
+      drawPixelStar(ctx, sprite, x, y, px, col)
+    }
+  }
+  ctx.restore()
 }

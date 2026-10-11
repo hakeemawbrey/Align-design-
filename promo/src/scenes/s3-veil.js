@@ -34,12 +34,12 @@ function grainURL(size = 256, seed = 7) {
 
 // ── the mystery card: Juniper (Libra) behind her aura veil, as in app VeilPhoto.tsx ──
 export const S3_FIRST = 6.867            // first visible S3 frame (frame 206)
-const LIFT = { a: 7.45, b: 8.55 }        // veil lift (app LIFT_S 1.25s, compressed to fit before the 8.5 shrink)
+const LIFT = { a: 7.3, b: 8.5 }          // veil lift (app LIFT_S 1.25s, compressed to fit before the 8.5 shrink)
 const VPAD = { x: 96, y: 54 }            // veil canvas overscan so its blur never pulls in dark edges
 const VW = W + VPAD.x * 2, VH = H + VPAD.y * 2
 const VEIL_SRC = IMG + 'aura/libra.jpg'
 // placement of libra.jpg (640×585; crop its dark 12px border) inside the visible frame
-const VEIL_IMG = { sw: 628, sh: 572, h: 1300, top: -150 }
+const VEIL_IMG = { sw: 628, sh: 572, h: 1180, top: -150 }
 
 /** cubic-bezier easing (same curve the app uses: [0.65, 0, 0.25, 1]) */
 function bezier(x1, y1, x2, y2) {
@@ -53,7 +53,7 @@ function bezier(x1, y1, x2, y2) {
     return ((ay * u + by) * u + cy) * u
   }
 }
-const liftEase = bezier(0.65, 0, 0.25, 1)
+const liftEase = bezier(0.42, 0, 0.38, 1)  // app uses [0.65,0,0.25,1]; softened so the dissolve reads over the whole 1.1s
 /** time at which the lift crosses p = 0.55 (the app's onPeak) */
 const LIFT_PEAK = (() => { let lo = 0, hi = 1; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (liftEase(m) < 0.55) lo = m; else hi = m } return LIFT.a + lo * (LIFT.b - LIFT.a) })()
 const CAP = { eyebrow: 6.95, line: 7.05, out: 8.45 }   // caption beats (sound: eyebrow tick, line pop)
@@ -174,8 +174,9 @@ export function sceneVeil(stage) {
       if (!veilDrawn) { const vc = veilCanvas(); if (vc) { veilCv.getContext('2d').drawImage(vc, 0, 0); veilDrawn = true } }
       const p = liftEase(prog(t, LIFT.a, LIFT.b))
       // photo pulls into focus from completely unrecognisable
-      const pb = clamp(p / 0.85)
-      real.style.filter = `blur(${lerp(72, 0, 1 - Math.pow(1 - pb, 1.6))}px) saturate(${lerp(0.6, 1.08, p)})`
+      // (focus runs on its own slower clock so the face stays unrecognisable as the veil first clears)
+      const fb = Math.pow(1 - prog(t, LIFT.a + 0.15, LIFT.b - 0.14), 2)
+      real.style.filter = `blur(${72 * fb}px) saturate(${lerp(0.6, 1.08, p)})`
       const liftScale = lerp(1.14, 1, p)
       // veil: mask edge 0 → 135% from the bottom (transparent below edge−35%), drifts up 18%, blur grows
       const edge = lerp(0, 135, p)

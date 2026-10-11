@@ -122,6 +122,12 @@ CUES.pixels.forEach(([a, b]) => glitter(a, b))
 })
 CUES.pops.forEach((t, i) => bell(t, [880, 987.77, 1108.73, 1318.51][i % 4], 0.05, 0.5, (i % 2 ? 0.3 : -0.3)))
 CUES.boom.forEach(t => boom(t))
+;(CUES.mystery ? [CUES.mystery] : []).forEach(m => {
+  m.pops.forEach((t, i) => bell(t, [659.25, 987.77][i], 0.04, 1.0))
+  whoosh(m.lift + 0.6, 1.0, 0.09)              // the veil rising
+  glitter(m.peak - 0.05, m.peak + 0.35)         // sparkle burst at the peak
+  bell(m.peak, 1318.51, 0.05, 2.0); bell(m.peak + 0.06, 1975.53, 0.035, 2.0)
+})
 ;(CUES.cardIn || []).forEach(t => { bell(t, 739.99, 0.06, 1.6, -0.2); bell(t + 0.09, 1108.73, 0.05, 1.6, 0.2) })
 CUES.click.forEach(t => { tick(t, 0.25); bell(t + 0.01, 1760, 0.04, 0.3) })
 CUES.deal.forEach(t => { tick(t + 0.25, 0.07); whoosh(t + 0.15, 0.22, 0.06) })
