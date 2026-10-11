@@ -59,26 +59,6 @@
    "n": 234
   },
   {
-   "file": "cache/aries/cand/met-209275.jpg",
-   "focus": [
-    0.58,
-    0.45
-   ],
-   "zoom": 1.4,
-   "note": "Pinturicchio, Helle on the golden ram",
-   "id": "met-209275",
-   "source": "met",
-   "title": "Helle on a Ram",
-   "creator": "Pinturicchio",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/209275",
-   "url": "https://images.metmuseum.org/CRDImages/es/original/LC-14_114_16-001.jpg",
-   "w": 2600,
-   "h": 1638,
-   "query": "ram horns",
-   "n": 10
-  },
-  {
    "file": "cache/aries/cand/ov-edef1891-4474-442c-ac39-5fa8c3e1c16f.jpg",
    "focus": [
     0.55,
@@ -98,27 +78,6 @@
    "h": 851,
    "query": "mouflon",
    "n": 240
-  },
-  {
-   "file": "cache/aries/cand/ov-fead8422-f442-4ac7-9602-e7332ab4af74.jpg",
-   "focus": [
-    0.55,
-    0.4
-   ],
-   "zoom": 1.3,
-   "note": "Portland ram, curled horns",
-   "id": "ov-fead8422-f442-4ac7-9602-e7332ab4af74",
-   "source": "openverse/wikimedia",
-   "title": "File:A Portland ram at Shipley, West Sussex, England.JPG",
-   "creator": "Acabashi",
-   "license": "by-sa 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=41416204",
-   "url": "https://api.openverse.org/v1/images/fead8422-f442-4ac7-9602-e7332ab4af74/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/A_Portland_ram_at_Shipley%2C_West_Sussex%2C_England.JPG",
-   "w": 1280,
-   "h": 820,
-   "query": "ram horns sheep",
-   "n": 236
   },
   {
    "file": "cache/aries/cand/met-437389.jpg",
@@ -179,65 +138,6 @@
    "n": 43
   },
   {
-   "file": "cache/aries/cand/ov-3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Iceland lava fountain",
-   "id": "ov-3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d",
-   "source": "openverse/wikimedia",
-   "title": "001 Volcano eruption of Litli-Hrútur in Iceland in 2023 Photo by Giles Laurent",
-   "creator": "Giles Laurent",
-   "license": "by-sa 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=141202680",
-   "url": "https://api.openverse.org/v1/images/3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/001_Volcano_eruption_of_Litli-Hr%C3%BAtur_in_Iceland_in_2023_Photo_by_Giles_Laurent.jpg",
-   "w": 1280,
-   "h": 853,
-   "query": "volcano eruption",
-   "n": 48
-  },
-  {
-   "file": "cache/aries/cand/met-438159.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Dahl, Vesuvius eruption",
-   "id": "met-438159",
-   "source": "met",
-   "title": "An Eruption of Vesuvius",
-   "creator": "Johan Christian Dahl",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/438159",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP155336.jpg",
-   "w": 2600,
-   "h": 1750,
-   "query": "volcano eruption",
-   "n": 47
-  },
-  {
-   "file": "cache/aries/cand/ov-df5b7381-edb7-4a2c-8bc8-1262c1707f59.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "lightning storm at night",
-   "id": "ov-df5b7381-edb7-4a2c-8bc8-1262c1707f59",
-   "source": "openverse/wikimedia",
-   "title": "Boby Dimitrov - Summer lightning storm over Sofia (by-sa)",
-   "creator": "Boby Dimitrov from Sofia, Bulgaria",
-   "license": "by-sa 2.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=7335569",
-   "url": "https://api.openverse.org/v1/images/df5b7381-edb7-4a2c-8bc8-1262c1707f59/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Boby_Dimitrov_-_Summer_lightning_storm_over_Sofia_%28by-sa%29.jpg",
-   "w": 1280,
-   "h": 862,
-   "query": "lightning storm",
-   "n": 92
-  },
-  {
    "file": "cache/aries/cand/nasa-S91-32389.jpg",
    "focus": [
     0.5,
@@ -255,25 +155,6 @@
    "h": 2600,
    "query": "Mars planet",
    "n": 143
-  },
-  {
-   "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e001465.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Ring nebula, fiery shell",
-   "id": "nasa-GSFC_20171208_Archive_e001465",
-   "source": "nasa",
-   "title": "Planetary Nebula",
-   "creator": "GSFC",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001465",
-   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001465/GSFC_20171208_Archive_e001465~orig.jpg",
-   "w": 1215,
-   "h": 1241,
-   "query": "nebula",
-   "n": 97
   },
   {
    "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e000762.jpg",
@@ -332,6 +213,84 @@
    "h": 1927,
    "query": "warrior helmet armor",
    "n": 73
+  },
+  {
+   "file": "cache/aries/cand/met-436839.jpg",
+   "focus": [
+    0.74,
+    0.55
+   ],
+   "zoom": 1.5,
+   "note": "La Tour, candle flame in the dark",
+   "id": "met-436839",
+   "source": "met",
+   "title": "The Penitent Magdalen",
+   "creator": "Georges de La Tour",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436839",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-27910-001.jpg",
+   "w": 1916,
+   "h": 2600,
+   "query": "candle",
+   "n": 262
+  },
+  {
+   "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e000195.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Red Spider nebula on black",
+   "id": "nasa-GSFC_20171208_Archive_e000195",
+   "source": "nasa",
+   "title": "Hubble Spins a Web Into a Giant Red Spider Nebula",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000195",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000195/GSFC_20171208_Archive_e000195~orig.jpg",
+   "w": 2600,
+   "h": 1448,
+   "query": "red nebula",
+   "n": 293
+  },
+  {
+   "file": "cache/aries/cand/nasa-PIA13448.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Flame nebula in Orion",
+   "id": "nasa-PIA13448",
+   "source": "nasa",
+   "title": "A Flame in Orion Belt",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA13448",
+   "url": "https://images-assets.nasa.gov/image/PIA13448/PIA13448~orig.jpg",
+   "w": 2213,
+   "h": 2600,
+   "query": "Orion nebula",
+   "n": 287
+  },
+  {
+   "file": "cache/aries/cand/aic-95998.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "zoom": 1.4,
+   "note": "Rembrandt, old warrior with gorget and gold chain",
+   "id": "aic-95998",
+   "source": "aic",
+   "title": "Old Man with a Gold Chain",
+   "creator": "Rembrandt van Rijn (Dutch, 1606–1669)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/95998",
+   "url": "https://www.artic.edu/iiif/2/3eaab3a3-2b47-9fdd-121c-050f6b8d9ccb/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1837,
+   "query": "Rembrandt warrior",
+   "n": 171
   }
  ]
 }

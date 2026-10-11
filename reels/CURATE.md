@@ -83,3 +83,7 @@ photographs; then at most 4 openverse queries per sign. Don't reuse an image
 another sign already picked (check `picks/*.json`).
 
 `python3 card.py <sign> --plate <file> --crop X0 Y0 X1 Y1 --out /tmp/c.png` tests a crop.
+
+Several curators may work at once: keep any helper scripts under
+`cache/<sign>/work/`, never in a shared temp folder, and never write another
+sign's picks file.
