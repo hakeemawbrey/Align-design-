@@ -48,8 +48,8 @@ export function sceneBirth(stage) {
   const PW = 820, PH = 72
   const pill = el('div', {
     position: 'absolute', left: (W / 2 - PW / 2) + 'px', top: (H / 2 - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', borderRadius: '999px',
-    background: 'linear-gradient(180deg, rgba(58,40,104,0.62) 0%, rgba(34,22,70,0.66) 100%)',
-    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18), inset 0 0 0 1px rgba(196,182,228,0.24), inset 0 -1px 0 rgba(11,6,32,0.35), 0 20px 60px rgba(11,6,32,0.5)',
+    background: 'linear-gradient(180deg, rgba(52,30,108,0.75) 0%, rgba(40,20,90,0.78) 100%)',
+    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18), inset 0 0 0 1.5px rgba(196,182,228,0.35), inset 0 -1px 0 rgba(11,6,32,0.35), 0 20px 60px rgba(11,6,32,0.5)',
     backdropFilter: 'blur(10px) saturate(1.35)', webkitBackdropFilter: 'blur(10px) saturate(1.35)', overflow: 'hidden',
   }, world)
   // glass: soft top sheen + a slow diagonal glint
@@ -71,8 +71,8 @@ export function sceneBirth(stage) {
   }, pill, '↑')
   const spinner = el('div', { position: 'absolute', left: '50%', top: '50%', width: '30px', height: '30px', margin: '-15px 0 0 -15px', borderRadius: '50%', border: '2.5px solid rgba(26,16,51,0.18)', borderTopColor: C.ink, opacity: 0 }, pill)
   // mobile tap: a pearl touch disc + ripple ring
-  const TAP = 60
-  const ripple = el('div', { position: 'absolute', width: TAP + 'px', height: TAP + 'px', margin: (-TAP / 2) + 'px 0 0 ' + (-TAP / 2) + 'px', borderRadius: '50%', border: '3px solid rgba(255,247,236,0.95)', boxShadow: '0 0 18px rgba(214,196,255,0.45)', opacity: 0, pointerEvents: 'none' }, world)
+  const TAP = 44
+  const ripple = el('div', { position: 'absolute', width: TAP + 'px', height: TAP + 'px', margin: (-TAP / 2) + 'px 0 0 ' + (-TAP / 2) + 'px', borderRadius: '50%', border: '2.5px solid rgba(255,247,236,0.95)', boxShadow: '0 0 18px rgba(214,196,255,0.45)', opacity: 0, pointerEvents: 'none' }, world)
   const tap = el('div', {
     position: 'absolute', width: TAP + 'px', height: TAP + 'px', margin: (-TAP / 2) + 'px 0 0 ' + (-TAP / 2) + 'px', borderRadius: '50%', opacity: 0, pointerEvents: 'none',
     background: 'radial-gradient(circle at 34% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 34%), linear-gradient(135deg, #f8edff 0%, #fff7ec 34%, #dfe9fb 64%, #ffeaf4 100%)',
@@ -97,16 +97,19 @@ export function sceneBirth(stage) {
       const n = typedAt.filter(v => v <= t).length
       field.textContent = TEXT.slice(0, n)
       const blink = t < T0 - 0.05 || t > T1 + 0.1 ? Math.floor(t * 2.2) % 2 === 0 : true
-      caret.style.opacity = blink && t < 13.55 ? '1' : '0'
+      caret.style.opacity = blink && t < 13.45 ? '1' : '0'
       field.appendChild(caret)
       hint.style.opacity = n === 0 ? String(ease.outQuad(prog(t, 9.9, 10.15))) : '0'
       // camera: whip zoom onto the caret while typing — eased in log-scale so it
       // leaves and lands at rest (in 10.0→10.5, out 12.65→13.15)
-      const ZMAX = 9.5
+      // zoom-out rests at 1.7× on the pill (send + tap stay big on a phone), then the
+      // camera eases back to 1.0 during the morph so the loading disc lands centred at r=36
+      const ZMAX = 9.5, ZREST = Math.log(1.7) / Math.log(ZMAX)
       const zIn = inOutQuart(prog(t, 10.0, 10.5))
       const zOut = inOutQuart(prog(t, 12.65, 13.15))
-      const zf = zIn * (1 - zOut)
-      const z = Math.pow(ZMAX, zf)
+      const zBack = ease.inOutCubic(prog(t, 13.45, 13.95))
+      const zf = zIn * (1 - zOut) // caret framing
+      const z = Math.pow(ZMAX, zf + zOut * ZREST * (1 - zBack))
       // smooth glide between keystrokes instead of stepping a whole glyph
       const kp = n > 0 ? ease.outCubic(prog(t, typedAt[n - 1], typedAt[n - 1] + 0.10)) : 1
       const cx = n > 0 ? lerp(xs[n - 1], xs[n], kp) : 0
@@ -121,28 +124,28 @@ export function sceneBirth(stage) {
       const inP = ease.spring(prog(t, 9.84, 10.3), 0.06)
       pill.style.opacity = String(clamp(inP * 2))
       // morph to a loading circle
-      const m = ease.inOutExpo(prog(t, 13.6, 14.0))
+      const m = ease.inOutExpo(prog(t, 13.45, 13.92))
       const w = lerp(PW, PH, m)
       pill.style.width = w + 'px'; pill.style.left = (W / 2 - w / 2) + 'px'
-      // mobile tap: disc glides in, presses send at 13.5, ripples, rides the shrinking button out
+      // mobile tap: disc glides in, presses send at 13.32, ripples, rides the shrinking button out
       const sendX = W / 2 + w / 2 - 12 - 24, sendY = H / 2
-      const ap = ease.outCubic(prog(t, 13.08, 13.42))
-      const press = t < 13.45 ? 0 : t < 13.5 ? ease.outQuad(prog(t, 13.45, 13.5)) : 1 - ease.inOutQuad(prog(t, 13.5, 13.64))
-      tap.style.left = lerp(sendX + 260, sendX + 5, ap) + 'px'
-      tap.style.top = lerp(sendY + 230, sendY + 6, ap) + 'px'
-      const tOp = prog(t, 13.08, 13.22) * (1 - ease.inQuad(prog(t, 13.66, 13.86)))
-      tap.style.opacity = String(0.72 * tOp)
-      tap.style.transform = `scale(${lerp(1.12, 1, ap) * (1 - 0.24 * press) * lerp(1, 0.7, prog(t, 13.66, 13.86))})`
-      const rp = prog(t, 13.5, 13.92)
+      const ap = ease.outCubic(prog(t, 12.98, 13.26))
+      const press = t < 13.27 ? 0 : t < 13.32 ? ease.outQuad(prog(t, 13.27, 13.32)) : 1 - ease.inOutQuad(prog(t, 13.32, 13.48))
+      tap.style.left = lerp(sendX + 200, sendX + 12, ap) + 'px'
+      tap.style.top = lerp(sendY + 170, sendY + 14, ap) + 'px'
+      const tOp = prog(t, 12.98, 13.1) * (1 - ease.inQuad(prog(t, 13.55, 13.75)))
+      tap.style.opacity = String(0.8 * tOp)
+      tap.style.transform = `scale(${lerp(1.12, 1, ap) * (1 - 0.24 * press) * lerp(1, 0.7, prog(t, 13.55, 13.75))})`
+      const rp = prog(t, 13.32, 13.8)
       ripple.style.left = sendX + 'px'; ripple.style.top = sendY + 'px'
-      ripple.style.opacity = rp > 0 && rp < 1 ? String(0.85 * (1 - ease.outQuad(rp))) : '0'
-      ripple.style.transform = `scale(${lerp(0.7, 2.6, ease.outCubic(rp))})`
+      ripple.style.opacity = rp > 0 && rp < 1 ? String(0.95 * (1 - ease.outQuad(rp))) : '0'
+      ripple.style.transform = `scale(${lerp(0.8, 2.8, ease.outCubic(rp))})`
       send.style.transform = `scale(${(1 - 0.14 * press) * (1 - m)})`
-      field.style.opacity = String(1 - prog(t, 13.6, 13.75))
-      spinner.style.opacity = String(prog(t, 13.88, 14.0))
-      disc.style.opacity = String(ease.inOutQuad(prog(t, 13.78, 14.0)))
+      field.style.opacity = String(1 - prog(t, 13.45, 13.6))
+      spinner.style.opacity = String(prog(t, 13.82, 13.95))
+      disc.style.opacity = String(ease.inOutQuad(prog(t, 13.7, 13.95)))
       glint.style.left = lerp(-140, PW + 60, prog(t, 10.6, 12.4)) + 'px'
-      eyebrow.style.opacity = String(ease.outQuad(prog(t, 12.95, 13.25)) * (1 - prog(t, 13.55, 13.7)))
+      eyebrow.style.opacity = String(ease.outQuad(prog(t, 12.85, 13.1)) * (1 - prog(t, 13.48, 13.62)))
       spinner.style.transform = `rotate(${t * 520}deg)`
       big.style.transform = `translate(-50%,-56%) scale(${lerp(1.04, 0.98, prog(t, 9.81, 14.4))})`
       big.style.opacity = String(ease.outQuad(prog(t, 9.81, 10.3)))

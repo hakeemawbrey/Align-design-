@@ -63,15 +63,16 @@ export function sceneVeil(stage) {
   // back face: the deck card back (seed of life + chakra column)
   const back = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, backfaceVisibility: 'hidden' }, world)
   img(back, A + 'card-back.png', { left: -BACK.w * DB / 2 + 'px', top: -BACK.h * DB / 2 + 'px', width: BACK.w * DB + 'px', height: BACK.h * DB + 'px' })
-  // story eyebrow while the veil lifts
-  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '320px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.55) 55%, rgba(11,6,32,0.7) 100%)', opacity: 0 }, root)
-  const eyebrow = el('div', {
-    position: 'absolute', left: '50%', bottom: '90px', transform: 'translateX(-50%)', fontFamily: MONO, fontSize: '30px',
-    letterSpacing: '0.18em', color: 'rgba(239,230,214,0.85)', whiteSpace: 'nowrap', textTransform: 'uppercase', opacity: 0,
-  }, root, 'The veil lifts when you both align')
+  // card back dims over the end of the push so it meets S4's darker halftone sky
+  const backDim = el('div', { position: 'absolute', left: -BACK.w * DB / 2 + 'px', top: -BACK.h * DB / 2 + 'px', width: BACK.w * DB + 'px', height: BACK.h * DB + 'px', background: 'radial-gradient(closest-side, rgba(20,10,46,0.9), rgba(20,10,46,1))', opacity: 0, pointerEvents: 'none' }, back)
+  // concept line while the veil lifts (styled like the S7 captions)
+  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '440px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.55) 45%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, root)
+  const capBox = el('div', { position: 'absolute', left: '50%', bottom: '84px', transform: 'translateX(-50%)', textAlign: 'center', opacity: 0, whiteSpace: 'nowrap' }, root)
+  el('div', { fontFamily: MONO, fontSize: '20px', letterSpacing: '0.26em', color: 'rgba(255,246,234,0.85)', textShadow: '0 1px 12px rgba(11,6,32,0.7)', marginBottom: '14px', textTransform: 'uppercase' }, capBox, 'The veil')
+  el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '72px', lineHeight: 1.05, color: '#fff6ea', textShadow: '0 2px 30px rgba(11,6,32,0.75), 0 1px 3px rgba(11,6,32,0.6)' }, capBox, 'The veil lifts when you both align.')
 
   return {
-    start: 6.8, end: 9.94, root,
+    start: 6.8, end: 10.02, root,
     update(t) {
       // thermal → real, top-down soft wipe while the veil (blur) lifts
       const wp = ease.inOutCubic(prog(t, 7.2, 8.2))
@@ -79,10 +80,11 @@ export function sceneVeil(stage) {
       therm.style.webkitMaskImage = therm.style.maskImage = `linear-gradient(180deg, transparent ${edge - 25}%, #000 ${edge}%)`
       real.style.filter = `blur(${lerp(26, 0, ease.outCubic(prog(t, 7.1, 8.3)))}px) saturate(${lerp(1.5, 1.05, wp)})`
       // gentle push (capped: the source photo is small)
-      const push = lerp(1.0, 1.03, ease.outQuad(prog(t, 6.86, 8.75)))
+      // + a slow extra push through the caption hold so the frame never goes dead
+      const push = lerp(1.0, 1.03, ease.outQuad(prog(t, 6.86, 8.75))) * lerp(1, 1.05, ease.inOutQuad(prog(t, 8.0, 8.9)))
       const yShift = lerp(-360, -380, ease.outQuad(prog(t, 6.86, 8.75)))
       // shrink so the photo lands exactly in the real card's photo window
-      const k = ease.inOutExpo(prog(t, 8.75, 9.3))
+      const k = ease.inOutExpo(prog(t, 8.62, 9.12)) // k ≥ 0.99 by ~9.01
       const fw = lerp(W, WIN.w - INSET * 2, k), fh = lerp(H, WIN.h - INSET * 2, k)
       const fcy = lerp(0, WIN.y + WIN.h / 2, k)
       frame.style.width = fw + 'px'; frame.style.height = fh + 'px'
@@ -96,20 +98,21 @@ export function sceneVeil(stage) {
       grain.style.backgroundPosition = `${Math.floor(gr() * 256)}px ${Math.floor(gr() * 256)}px`
       grain.style.opacity = String(0.16 * (1 - k))
       // the real card opens out from the photo window (clip grows outward), then the photo frame hands off
-      const cp = ease.outExpo(prog(t, 9.02, 9.28))
+      const cp = ease.outExpo(prog(t, 9.1, 9.3)) // opens only once the photo has landed
       const wl = REV.win.x * D, wt = REV.win.y * D, wr = (REV.w - REV.win.x - REV.win.w) * D, wb = (REV.h - REV.win.y - REV.win.h) * D
-      card.style.clipPath = t < 9.02 ? 'inset(50%)' : cp >= 1 ? 'none'
+      card.style.clipPath = t < 9.1 ? 'inset(50%)' : cp >= 1 ? 'none'
         : `inset(${lerp(wt, 0, cp)}px ${lerp(wr, 0, cp)}px ${lerp(wb, 0, cp)}px ${lerp(wl, 0, cp)}px round ${lerp(14, BODY.r, cp)}px)`
-      frame.style.opacity = String(1 - prog(t, 9.26, 9.34))
+      frame.style.opacity = String(1 - prog(t, 9.27, 9.34))
       const gp = prog(t, 9.28, 9.5)
       glintBox.style.opacity = gp > 0 && gp < 1 ? String(Math.sin(Math.PI * gp) * 0.9 + 0.1) : '0'
       glint.style.transform = `translateX(${lerp(-260, BODY.w + 120, ease.inOutCubic(gp))}px) skewX(-24deg)`
       stars.style.opacity = String(prog(t, 8.85, 9.35))
-      // eyebrow during the wipe, gone before the shrink
-      const eb = prog(t, 7.45, 7.8) * (1 - prog(t, 8.5, 8.72))
-      eyebrow.style.opacity = String(ease.outQuad(eb))
-      eyebrow.style.transform = `translateX(-50%) translateY(${(1 - ease.outCubic(prog(t, 7.45, 7.9))) * 10}px)`
+      // concept line 7.5 → 9.0, gone before the card clip opens
+      const eb = ease.outQuad(prog(t, 7.45, 7.8)) * (1 - ease.inQuad(prog(t, 8.78, 9.0)))
+      capBox.style.opacity = String(eb)
+      capBox.style.transform = `translateX(-50%) translateY(${(1 - ease.outCubic(prog(t, 7.45, 7.95))) * 14}px)`
       scrim.style.opacity = String(eb)
+      backDim.style.opacity = String(0.8 * ease.inOutQuad(prog(t, 9.64, 9.84)))
       // flip 0→180 onto the card back, then push into the mark (handoff to S4's indigo sky)
       const a = 180 * ease.inOutCubic(prog(t, 9.5, 9.76))
       front.style.transform = `perspective(1800px) rotateY(${a}deg)`
