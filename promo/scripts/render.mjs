@@ -77,6 +77,11 @@ if (stills || sheet) {
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
     ...(a.length ? ['-c:a', 'aac', '-b:a', '192k', '-shortest'] : []), OUT])
   if (r.status) console.error(r.stderr.toString())
-  else console.log('video →', OUT)
+  else {
+    console.log('video →', OUT)
+    const share = OUT.replace(/\.mp4$/, '-share.mp4')
+    spawnSync('ffmpeg', ['-v', 'error', '-y', '-i', OUT, '-c:v', 'libx264', '-preset', 'slow', '-crf', '22', '-c:a', 'copy', '-movflags', '+faststart', share])
+    console.log('share copy →', share)
+  }
 }
 await browser.close(); server.close()
