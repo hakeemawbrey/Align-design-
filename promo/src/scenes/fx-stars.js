@@ -162,7 +162,7 @@ function drawField(ctx, P, t, wgt) {
 const BURSTS = [
   { t: 7.84, x: 960, y: 400, r0: 380, r1: 760, n: 18, px: 5, life: 0.95, pal: [BONE, GOLD, VIOLET, ROSE], centre: HOT, sy: 0.62, seed: 3 },
   { t: 21.85, x: 1230, y: 395, r0: 60, r1: 250, n: 12, px: 4, life: 0.75, pal: [GOLD_D, GOLD, INK_V2, ROSE_D], centre: '#fff8e6', sy: 0.42, seed: 5 },
-  { t: 24.3, x: 690, y: 560, r0: 300, r1: 480, n: 14, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.6, sy: 1.0, shadow: 'rgba(70,24,110,0.35)', seed: 7 },
+  { t: 24.3, x: 690, y: 560, r0: 390, r1: 520, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.62, sy: 1.08, avoid: [960, 430, 700, 220], shadow: 'rgba(70,24,110,0.35)', seed: 7 },
 ]
 function drawBurst(ctx, B, t) {
   const r = rng(B.seed * 104729)
@@ -173,6 +173,7 @@ function drawBurst(ctx, B, t) {
     if (lp <= 0 || lp >= 1) continue
     const rad = lerp(B.r0, B.r1 * (0.8 + 0.3 * rr), ease.outCubic(lp))
     const x = B.x + Math.cos(ang) * rad * (B.sx ?? 1), y = B.y + Math.sin(ang) * rad * B.sy
+    if (B.avoid && inRect(x, y, B.avoid)) continue
     const kind = lp < 0.3 ? 0 : lp < 0.6 ? (((f + i) >> 1) & 1 ? 3 : 1) : 2
     ctx.globalAlpha = lp < 0.08 ? lp / 0.08 : 1 - ease.inQuad(prog(lp, 0.55, 1))
     const bp = rr > 0.5 ? B.px : B.px - 1
