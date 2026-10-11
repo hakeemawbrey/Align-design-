@@ -2,7 +2,7 @@ import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, Ty
 import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
 
 // ─────────────────────────────────────────────── S4 · type your birth
-export const BIRTH_TEXT = 'May 12, 1998 · 5:00 PM · Tulsa, OK'
+export const BIRTH_TEXT = 'May 12, 1998 · 5:00 PM · Houston, TX'
 const TEXT = BIRTH_TEXT
 const inOutQuart = x => (x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2)
 const T0 = 10.5, T1 = 12.55

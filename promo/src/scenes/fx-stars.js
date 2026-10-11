@@ -1,3 +1,4 @@
+import { SPLIT, late } from '../timing.js'
 import { clamp, lerp, prog, ease, rng } from '../lib.js'
 import { W, H } from './common.js'
 
@@ -250,19 +251,23 @@ const weightOf = (P, t) => {
   return Math.min(fin, fout)
 }
 
-export function fxStardust(ctx, t) {
-  const end = 1 - ease.inOutQuad(prog(t, 29.5, 29.85))
+export function fxStardust(ctx, tr) {
+  // entries authored after the split run on the shifted (original) clock; S1–S3 on real time
+  const tl = late(tr)
+  const T = a => (a > SPLIT ? tl : tr)
+  const end = 1 - ease.inOutQuad(prog(tl, 29.5, 29.85))
   if (end <= 0) return
   ctx.save()
   ctx.imageSmoothingEnabled = false
   for (const P of PROFILES) {
+    const t = T(P.a)
     if (t < P.a || t >= P.b) continue
     const w = weightOf(P, t) * end
     if (w > 0.005) drawField(ctx, P, t, w)
   }
   ctx.globalAlpha = 1
-  for (const B of BURSTS) if (t > B.t && t < B.t + B.life + 0.15) drawBurst(ctx, B, t)
-  if (t > 27.4 && t < 28.4) drawChakra(ctx, t)
-  for (const S of SHOOTS) drawShoot(ctx, S, t)
+  for (const B of BURSTS) { const t = T(B.t); if (t > B.t && t < B.t + B.life + 0.15) drawBurst(ctx, B, t) }
+  if (tl > 27.4 && tl < 28.4) drawChakra(ctx, tl)
+  for (const S of SHOOTS) drawShoot(ctx, S, T(S.t0))
   ctx.restore()
 }

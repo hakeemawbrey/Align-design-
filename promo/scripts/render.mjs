@@ -18,7 +18,7 @@ const require = createRequire(path.join(ROOT, 'app/package.json'))
 const { chromium } = require('playwright')
 
 const arg = (k, d) => { const a = process.argv.find(x => x.startsWith(`--${k}=`)); return a ? a.split('=')[1] : (process.argv.includes(`--${k}`) ? true : d) }
-const FPS = Number(arg('fps', 30)), FROM = Number(arg('from', 0)), TO = Number(arg('to', 30)), WORKERS = Number(arg('workers', 4))
+const FPS = Number(arg('fps', 30)), FROM = Number(arg('from', 0)), TO = Number(arg('to', 31.5)), WORKERS = Number(arg('workers', 4))
 const OUT = path.resolve(arg('out', path.join(ROOT, 'promo/out/align-promo.mp4')))
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.json': 'application/json' }

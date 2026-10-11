@@ -5,9 +5,10 @@ import { fileURLToPath } from 'node:url'
 import { CUES } from '../src/cues.js'
 import { birthTypedAt } from '../src/scenes/s4-birth.js'
 import { rng } from '../src/lib.js'
+import { DURATION, shift } from '../src/timing.js'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
-const SR = 48000, DUR = 30, N = SR * DUR
+const SR = 48000, DUR = DURATION, N = Math.round(SR * DUR)
 const L = new Float32Array(N), R = new Float32Array(N)
 const send = new Float32Array(N) // reverb send (mono)
 const rand = rng(1234)
@@ -16,7 +17,8 @@ const noise = () => rand() * 2 - 1
 const add = (i, l, r = l, rev = 0) => { if (i >= 0 && i < N) { L[i] += l; R[i] += r; send[i] += (l + r) * 0.5 * rev } }
 
 // ── pad: detuned saws through a slowly opening low-pass, per section
-for (const [s0, s1, chord] of CUES.sections) {
+for (const [a0, a1, chord] of CUES.sections) {
+  const s0 = shift(a0), s1 = a1 >= 30 ? DUR : shift(a1)
   const i0 = Math.floor(s0 * SR), i1 = Math.min(N, Math.floor((s1 + 0.9) * SR))
   chord.forEach((f, v) => {
     const voices = [0.996, 1.004]
@@ -40,7 +42,7 @@ for (const [s0, s1, chord] of CUES.sections) {
 // ── sub pulse on the beat (with pad ducking computed after)
 const beat = 60 / CUES.bpm
 const duck = new Float32Array(N).fill(1)
-for (let t = CUES.beatFrom; t < CUES.beatTo; t += beat) {
+for (let t = shift(CUES.beatFrom); t < shift(CUES.beatTo); t += beat) {
   const i0 = Math.floor(t * SR)
   for (let k = 0; k < SR * 0.35; k++) {
     const tt = k / SR
@@ -53,13 +55,13 @@ for (let t = CUES.beatFrom; t < CUES.beatTo; t += beat) {
 for (let i = 0; i < N; i++) { L[i] *= duck[i]; R[i] *= duck[i] } // gentle pump on everything so far
 
 // ── hats from the reading scene on (offbeats)
-for (let t = 14.05 + beat / 2; t < 26.8; t += beat) {
+for (let t = shift(14.05) + beat / 2; t < shift(26.8); t += beat) {
   const i0 = Math.floor(t * SR); let hp = 0, prev = 0
   for (let k = 0; k < SR * 0.05; k++) { const x = noise(); hp = 0.9 * (hp + x - prev); prev = x; const v = hp * Math.exp(-k / SR * 90) * 0.05; add(i0 + k, v * 0.8, v) }
 }
 
 // ── one-shots
-function tick(t, gain = 0.08) {
+function tickR(t, gain = 0.08) {
   const i0 = Math.floor(t * SR); let hp = 0, prev = 0
   const pan = rand() * 0.6 - 0.3
   for (let k = 0; k < SR * 0.03; k++) {
@@ -68,7 +70,7 @@ function tick(t, gain = 0.08) {
     add(i0 + k, v * (1 - pan), v * (1 + pan), 0.1)
   }
 }
-function whoosh(t, len = 0.55, gain = 0.16) {
+function whooshR(t, len = 0.55, gain = 0.16) {
   const i0 = Math.floor((t - len * 0.6) * SR); let bp1 = 0, bp2 = 0
   for (let k = 0; k < SR * len; k++) {
     const p = k / (SR * len)
@@ -80,7 +82,7 @@ function whoosh(t, len = 0.55, gain = 0.16) {
     add(i0 + k, bp2 * env * gain * (1 - p * 0.6), bp2 * env * gain * (0.4 + p * 0.6), 0.3)
   }
 }
-function bell(t, f, gain = 0.1, decay = 2.2, pan = 0) {
+function bellR(t, f, gain = 0.1, decay = 2.2, pan = 0) {
   const i0 = Math.floor(t * SR)
   const parts = [[1, 1], [2.01, 0.45], [3.0, 0.22], [4.17, 0.12], [5.43, 0.06]]
   for (let k = 0; k < SR * decay * 1.5; k++) {
@@ -90,7 +92,7 @@ function bell(t, f, gain = 0.1, decay = 2.2, pan = 0) {
     add(i0 + k, v * (1 - pan), v * (1 + pan), 0.7)
   }
 }
-function boom(t, gain = 0.45) {
+function boomR(t, gain = 0.45) {
   const i0 = Math.floor(t * SR); let lp = 0
   for (let k = 0; k < SR * 1.6; k++) {
     const tt = k / SR
@@ -100,10 +102,18 @@ function boom(t, gain = 0.45) {
     add(i0 + k, v, v, 0.4)
   }
 }
-function glitter(t0, t1) {
+function glitterR(t0, t1) {
   const r = rng(Math.floor(t0 * 100))
-  for (let t = t0; t < t1; t += 0.018 + r() * 0.02) bell(t, [1318.5, 1567.98, 1760, 2093, 2349.3][Math.floor(r() * 5)], 0.012, 0.25, r() * 1.6 - 0.8)
+  for (let t = t0; t < t1; t += 0.018 + r() * 0.02) bellR(t, [1318.5, 1567.98, 1760, 2093, 2349.3][Math.floor(r() * 5)], 0.012, 0.25, r() * 1.6 - 0.8)
 }
+
+// authored cue times → real time (post-split cues move by EXTRA); the *R versions take real time
+const tick = (t, ...a) => tickR(shift(t), ...a)
+const whoosh = (t, ...a) => whooshR(shift(t), ...a)
+const bell = (t, ...a) => bellR(shift(t), ...a)
+const boom = (t, ...a) => boomR(shift(t), ...a)
+const glitter = (a, b) => glitterR(shift(a), shift(b))
+;(CUES.real || []).forEach(([kind, t, ...a]) => ({ tick: tickR, whoosh: whooshR, bell: bellR, boom: boomR, glitter: glitterR })[kind](t, ...a))
 
 const s1 = CUES.typeS1;[...s1.text].forEach((c, i) => c !== ' ' && tick(s1.start + i * s1.perChar, 0.05))
 const s7 = CUES.typeS7;[...s7.text].forEach((c, i) => c !== ' ' && tick(s7.start + i * s7.perChar, 0.04))
@@ -166,7 +176,7 @@ for (let n = 0; n < N; n++) {
 let peak = 0
 for (let n = 0; n < N; n++) {
   const t = n / SR
-  const fade = Math.min(1, t / 0.15) * Math.min(1, Math.max(0, (29.95 - t) / 0.9))
+  const fade = Math.min(1, t / 0.15) * Math.min(1, Math.max(0, (DUR - 0.05 - t) / 0.9))
   L[n] = Math.tanh(L[n] * 1.2 * fade); R[n] = Math.tanh(R[n] * 1.2 * fade)
   peak = Math.max(peak, Math.abs(L[n]), Math.abs(R[n]))
 }
