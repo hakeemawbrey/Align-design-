@@ -134,8 +134,8 @@ function thermalGrid(size) {
   if (grids[size]) return grids[size]
   if (!moundImg || !moundImg.complete || !moundImg.naturalWidth) return null
   // full-frame thermal render: s3 at 6.86 → img 1920×2560 centred, translateY(ty) scale(s)
-  const t0 = 6.86
-  const s = lerp(1.0, 1.08, prog(t0, 6.75, 8.9)), ty = lerp(-360, -470, prog(t0, 6.75, 8.9))
+  // keep in sync with s3-veil.js (push = 1.0, yShift = -360 at t = 6.86)
+  const s = 1.0, ty = -360
   const full = document.createElement('canvas'); full.width = W; full.height = H
   const fc = full.getContext('2d')
   const dw = 1920 * s, dh = 2560 * s

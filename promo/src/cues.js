@@ -1,6 +1,6 @@
 // Sound cues, in seconds. Keep in sync with scene timings.
 export const CUES = {
-  typeS1: { start: 0.45, perChar: 0.034, text: 'Imagine if the stars swiped for you' },
+  typeS1: { start: 0.45, perChar: 0.034, text: 'What if the stars chose who you meet?' },
   typeS7: { start: 22.78, perChar: 0.028, text: 'Dating, dealt by the stars' },
   whoosh: [2.95, 6.15, 9.85, 13.95, 17.2, 22.3],
   pixels: [[2.95, 3.55], [6.15, 6.85], [17.2, 17.95]],

@@ -35,7 +35,7 @@ export function sceneImagine(stage) {
   const strips = Array.from({ length: 5 }, () => el('div', { position: 'absolute', left: 0, width: W + 'px', background: 'rgba(255,247,236,0.07)', opacity: 0, mixBlendMode: 'screen' }, root))
   const line = new TypeLine(root, 'What if the stars chose who you meet?', {
     left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 300, fontSize: '60px', letterSpacing: '-0.01em',
-    textShadow: '0 1px 18px rgba(20,10,46,0.35)',
+    textShadow: '0 1px 18px rgba(20,10,46,0.35), 0 0 2px rgba(20,10,46,0.22)',
   }, { perChar: 0.034, final: C.bone, accent: [C.rub, C.amber, C.gold, C.plum] })
   const r = rng(7)
   const bandY = bands.map(() => r() * H)
