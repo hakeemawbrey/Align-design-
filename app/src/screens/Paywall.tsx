@@ -124,7 +124,7 @@ export default function Paywall({ go }: ScreenProps) {
             <motion.h1 {...fade(0.18)} className="h-display" style={{ position: 'absolute', top: 120, left: 24, right: 24, textAlign: 'center', fontSize: 34, lineHeight: 1.08 }}>
               Three people are already<br />in your orbit.
             </motion.h1>
-            <motion.p {...fade(0.26)} className="serif" style={{ position: 'absolute', top: 202, left: 24, right: 24, textAlign: 'center', fontSize: 17, lineHeight: 1.35, color: 'var(--label-2)' }}>
+            <motion.p {...fade(0.26)} style={{ position: 'absolute', top: 202, left: 24, right: 24, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
               Free is fifteen cards a night.<br />Align+ deals you forty-five.
             </motion.p>
 
@@ -207,7 +207,7 @@ export default function Paywall({ go }: ScreenProps) {
               style={{ position: 'absolute', top: 698, left: 0, right: 0, margin: '0 auto', width: 260, height: 40, fontSize: 15, color: 'var(--label-2)' }}>
               Maybe later — deal me in free
             </motion.button>
-            <motion.div {...fade(1)} style={{ position: 'absolute', top: 744, left: 0, right: 0, textAlign: 'center', fontSize: 11, color: 'var(--label-4)' }}>
+            <motion.div {...fade(1)} style={{ position: 'absolute', top: 744, left: 0, right: 0, textAlign: 'center', fontSize: 11, color: 'var(--label-3)' }}>
               <AnimatePresence mode="wait">
                 <motion.span key={p.then} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.18 }}
                   style={{ display: 'inline-block' }}>{p.then}</motion.span>
@@ -220,20 +220,20 @@ export default function Paywall({ go }: ScreenProps) {
         {phase === 'active' && (
           <motion.div key="active" style={{ position: 'absolute', inset: 0, zIndex: 3 }}>
             <CloseX side="right" onClick={leave} />
-            <motion.div {...fade(0.15)} className="eyebrow" style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center', color: 'var(--align)' }}>
-              Align+ is on · day 1 of 3
+            <motion.div {...fade(0.15)} className="eyebrow" style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center', color: 'var(--label-3)' }}>
+              <span style={{ color: 'var(--align)' }}>✦</span> Align+ is on · day 1 of 3 <span style={{ color: 'var(--align)' }}>✦</span>
             </motion.div>
 
             <motion.h1 {...fade(0.3)} className="h-display" style={{ position: 'absolute', top: 318, left: 20, right: 20, textAlign: 'center', fontSize: 36 }}>
               The whole sky is yours.
             </motion.h1>
-            <motion.p {...fade(0.4)} className="serif" style={{ position: 'absolute', top: 362, left: 30, right: 30, textAlign: 'center', fontSize: 18, color: 'var(--label-2)' }}>
+            <motion.p {...fade(0.4)} style={{ position: 'absolute', top: 366, left: 24, right: 24, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
               Three days on us. Then {p.price} {p.word}.
             </motion.p>
 
             <motion.div {...fade(0.5)} style={{
               position: 'absolute', top: 404, left: 24, right: 24, borderRadius: 18, padding: '6px 16px',
-              background: 'rgba(30,18,64,0.6)', border: '1px solid rgba(242,199,92,0.18)',
+              background: 'rgba(30,18,64,0.6)', border: '1px solid rgba(179,166,196,0.2)',
             }}>
               {BENEFITS.map((b, i) => (
                 <motion.div key={b.t}

@@ -1,3 +1,12 @@
+import { moonTonight, moonStrip, PHASE_GUIDE } from './moon'
+import { SIGNS } from './signs'
+
+/** the real moon tonight: everything moon-related below follows it */
+const M = moonTonight()
+const MSIGN = SIGNS[M.sign]
+const PCT = Math.round(M.lit * 100)
+const MOOD: Record<string, string> = { fire: 'Warm, bold, short on patience.', earth: 'Steady, cosy, in no rush.', air: 'Chatty, light, curious.', water: 'Soft, deep, feelings first.' }
+
 /**
  * Today's sky for the demo date, Monday 5 October 2026 (Houston, CDT).
  * Positions and times computed with astronomy-engine (tropical, geocentric):
@@ -42,17 +51,11 @@ export const SKY_HERO = {
   sign: 'Taurus',
 }
 
-/** Moon right now: waning crescent, 27% lit, in Leo. */
-export const MOON_NOW = { lit: 0.27, waxing: false, sign: 'Leo', glyph: '♌', phase: 'Waning crescent' }
+/** Moon right now, from the real sky */
+export const MOON_NOW = { lit: M.lit, waxing: M.waxing, sign: MSIGN.name, glyph: MSIGN.glyph, phase: M.name }
 
 /** This lunar cycle, for the phase strip (lit fraction, waxing?). */
-export const MOON_STRIP: { label: string; date: string; lit: number; waxing: boolean; today?: boolean }[] = [
-  { label: 'Last quarter', date: 'Sat 3', lit: 0.5, waxing: false },
-  { label: 'Today', date: 'Mon 5', lit: 0.27, waxing: false, today: true },
-  { label: 'New moon', date: 'Sat 10', lit: 0, waxing: true },
-  { label: 'First quarter', date: 'Sun 18', lit: 0.5, waxing: true },
-  { label: 'Full · Taurus', date: 'Sun 25', lit: 1, waxing: true },
-]
+export const MOON_STRIP = moonStrip()
 
 /** Week strip, Mon Oct 5 – Sun Oct 11. */
 export const WEEK_STRIP: { d: string; n: number; mark?: string }[] = [
@@ -73,9 +76,9 @@ export const SKY_TABS: SkyTab[] = [
     skip: 'Defining the relationship this week. Or texting an ex at midnight.',
   },
   {
-    id: 'tonight', label: 'Tonight', eyebrow: 'Moon in Leo', pips: 3, color: '#f39a3a',
-    headline: 'Warm, playful, short on patience.',
-    body: 'The Moon sets the mood of the night. Tonight it’s in Leo, a sign that likes attention, and Mars is right beside it, so feelings come in hot and fast. The Moon is also fading, which favours fun over big talks.',
+    id: 'tonight', label: 'Tonight', eyebrow: `Moon in ${MSIGN.name}`, pips: 3, color: '#f39a3a',
+    headline: MOOD[MSIGN.element],
+    body: `The Moon sets the mood of the night. Tonight it’s in ${MSIGN.name}, a ${MSIGN.element} sign, so everyone’s a little more ${MSIGN.element === 'fire' ? 'bold and impatient' : MSIGN.element === 'earth' ? 'practical and steady' : MSIGN.element === 'air' ? 'talkative and curious' : 'sensitive and intuitive'}. The Moon is ${M.waxing ? 'growing, which favours starting things' : 'fading, which favours finishing things'}.`,
     tries: [
       'Send a specific compliment. “That photo at the lake” beats “you’re cute”.',
       'Suggest something easy to say yes to: a walk, one drink, 45 minutes.',
@@ -95,18 +98,15 @@ export const SKY_TABS: SkyTab[] = [
     skip: 'Ultimatums. This week rewards patience, not pressure.',
   },
   {
-    id: 'moon', label: 'Moon', eyebrow: 'Waning crescent · 27%', pips: 2, color: '#b3a6c4',
-    headline: 'Wind things down.',
-    body: 'The Moon is 27% lit and shrinking. On Saturday it goes dark (the New Moon), then starts growing again. Shrinking days are for finishing: clear out, catch up, end things gently.',
-    tries: [
-      'Close one chat you won’t continue. One kind sentence is enough.',
-      'Answer anything you left on read.',
-    ],
-    skip: 'Starting something big before Saturday. It lands better after the 10th.',
+    id: 'moon', label: 'Moon', eyebrow: `${M.name} · ${PCT}%`, pips: PHASE_GUIDE[M.phase].pips, color: '#b3a6c4',
+    headline: PHASE_GUIDE[M.phase].headline,
+    body: PHASE_GUIDE[M.phase].body,
+    tries: PHASE_GUIDE[M.phase].tries,
+    skip: PHASE_GUIDE[M.phase].skip,
   },
 ]
 
-export const SKY_FOOTER = { left: 'Moon · Leo', right: 'Venus ℞ Scorpio' }
+export const SKY_FOOTER = { left: `Moon · ${MSIGN.name}`, right: 'Venus ℞ Scorpio' }
 
 /** Cosmic calendar, October 2026. Oct 1 2026 is a Thursday. */
 export const CAL_MONTH = {
@@ -114,8 +114,8 @@ export const CAL_MONTH = {
   firstWeekday: 4, // 0 = Sunday
   days: 31,
   today: 5,
-  moonNow: 'Moon in Leo',
-  phaseNow: 'Waning',
+  moonNow: `Moon in ${MSIGN.name}`,
+  phaseNow: M.waxing ? 'Waxing' : 'Waning',
 }
 
 export type CalKind = 'moon' | 'venus' | 'mercury' | 'season'
@@ -153,6 +153,6 @@ export const CAL_EVENTS: CalEvent[] = [
 ]
 
 export const CAL_TONIGHT = [
-  { text: 'Moon in Leo · waning', note: 'until Tue night' },
+  { text: `Moon in ${MSIGN.name} · ${M.waxing ? 'waxing' : 'waning'}`, note: `${M.name} · ${PCT}% lit` },
   { text: 'Venus retrograde in Scorpio', note: 'until Nov 13' },
 ]

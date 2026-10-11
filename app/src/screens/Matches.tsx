@@ -31,11 +31,11 @@ const ELEMENTS: Element[] = ['fire', 'earth', 'air', 'water']
 
 // binder page geometry (phone px)
 const PAGE_TOP = 222
-const PAGE_X = 16
-const PAD = 12
+const PAGE_X = 24
+const PAD = 14
 const GAP = 10
-const SLEEVE_W = 102
-const SLEEVE_H = 142
+const SLEEVE_W = 98
+const SLEEVE_H = 136
 
 export default function Matches({ go }: ScreenProps) {
   const { traded, justTraded } = useBinder()
@@ -116,23 +116,21 @@ export default function Matches({ go }: ScreenProps) {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={null} warm={null} count={60} seed={33} />
 
-      <div className="h-display" style={{ position: 'absolute', left: 28, top: 62, fontSize: 34 }}>Your matches</div>
-      <div style={{ position: 'absolute', left: 28, top: 106, fontSize: 13.5, color: 'var(--label-2)' }}>{summary}</div>
+      <div className="h-display" style={{ position: 'absolute', left: 24, top: 62, fontSize: 34 }}>Your matches</div>
+      <div style={{ position: 'absolute', left: 24, top: 106, fontSize: 13.5, color: 'var(--label-2)' }}>{summary}</div>
 
-      {/* List / Binder toggle */}
+      {/* List / Binder toggle: same pill track as the binder and hand-sheet tabs */}
       <div style={{
-        position: 'absolute', left: 24, right: 24, top: 138, height: 38, padding: 3, borderRadius: 999,
-        display: 'flex', background: 'rgba(30,18,64,0.7)', border: '1px solid rgba(179,166,196,0.18)',
+        position: 'absolute', left: 24, right: 24, top: 138, height: 36, padding: 3, borderRadius: 999,
+        display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)',
       }}>
         {(['list', 'binder'] as View[]).map((v) => (
-          <button key={v} onClick={() => { sfx.tap(); setView(v) }} style={{ position: 'relative', flex: 1, height: '100%', borderRadius: 999 }}>
+          <button key={v} onClick={() => { sfx.tap(); setView(v) }} style={{ position: 'relative', flex: 1, borderRadius: 999, fontSize: 13, color: view === v ? 'var(--chrome-ink)' : 'var(--label-2)' }}>
             {view === v && (
-              <motion.div layoutId="mt-toggle" transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-                style={{ position: 'absolute', inset: 0, borderRadius: 999, background: 'rgba(52,35,95,0.95)', boxShadow: 'inset 0 0 0 1px rgba(179,166,196,0.28)' }} />
+              <motion.span layoutId="mt-toggle" transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                style={{ position: 'absolute', inset: 0, borderRadius: 999, background: 'var(--chrome)' }} />
             )}
-            <span className="mono" style={{ position: 'relative', fontSize: 10.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: view === v ? 'var(--label-1)' : 'var(--label-3)' }}>
-              {v === 'list' ? 'Matches' : <>Binder <span style={{ color: 'var(--align)' }}>✦</span> {traded.size}</>}
-            </span>
+            <span style={{ position: 'relative' }}>{v === 'list' ? 'Matches' : `Binder · ${traded.size}`}</span>
           </button>
         ))}
       </div>
@@ -140,7 +138,7 @@ export default function Matches({ go }: ScreenProps) {
       <AnimatePresence mode="wait">
         {view === 'list' ? (
           <motion.div key="list" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}
-            style={{ position: 'absolute', left: 0, right: 0, top: 186, bottom: 96, overflowY: 'auto', padding: '0 28px' }}>
+            style={{ position: 'absolute', left: 0, right: 0, top: 186, bottom: 96, overflowY: 'auto', padding: '0 24px', scrollbarWidth: 'none' }}>
             {(['your-turn', 'waiting', 'quiet'] as MatchSection[]).map((sec) => {
               const rows = visible.filter((m) => m.section === sec)
               return (
@@ -163,7 +161,7 @@ export default function Matches({ go }: ScreenProps) {
             <AnimatePresence mode="wait" initial={false}>
               {page === 0 ? (
                 <motion.div key="els" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
-            <div style={{ position: 'absolute', left: 28, right: 28, top: 190, display: 'flex', alignItems: 'center', gap: 10 }}>
+            <div style={{ position: 'absolute', left: 24, right: 24, top: 190, display: 'flex', alignItems: 'center', gap: 10 }}>
               <span className="eyebrow" style={{ fontSize: 9, color: 'var(--label-3)' }}>Element set</span>
               <span style={{ flex: 1 }} />
               {ELEMENTS.map((el) => {
@@ -185,7 +183,7 @@ export default function Matches({ go }: ScreenProps) {
                 </motion.div>
               ) : (
                 <motion.div key="art" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}
-                  style={{ position: 'absolute', left: 28, right: 28, top: 188, display: 'flex', alignItems: 'center', gap: 10 }}>
+                  style={{ position: 'absolute', left: 24, right: 24, top: 188, display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span className="mono" style={{ fontSize: 9, letterSpacing: '0.22em', background: 'linear-gradient(90deg, #ff6ad5, #ffd36a, #7affc4, #6ad5ff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', fontWeight: 700 }}>
                     ✦ RARE SERIES
                   </span>
@@ -227,6 +225,7 @@ export default function Matches({ go }: ScreenProps) {
                             arriving={!!m && m.id === justTraded && !landed}
                             onLanded={() => m && onLanded(m, i)}
                             onOpen={() => m && openRow(m)}
+                            onTrade={() => m && openTag(m)}
                           />
                         </div>
                       )
@@ -247,7 +246,7 @@ export default function Matches({ go }: ScreenProps) {
             <div style={{ position: 'absolute', top: PAGE_TOP + PAD * 2 + SLEEVE_H * 3 + GAP * 2 + 12, width: '100%', textAlign: 'center' }}>
               <button onClick={() => turn(page === 0 ? 1 : 0)} className="mono"
                 style={{
-                  position: 'absolute', top: 0, [page === 0 ? 'right' : 'left']: 26, fontSize: 8.5, letterSpacing: '0.2em', fontWeight: 700, pointerEvents: 'auto',
+                  position: 'absolute', top: -10, [page === 0 ? 'right' : 'left']: 24, height: 32, fontSize: 8.5, letterSpacing: '0.2em', fontWeight: 700, pointerEvents: 'auto',
                   ...(page === 0
                     ? { background: 'linear-gradient(90deg, #ff6ad5, #ffd36a, #6ad5ff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }
                     : { color: 'var(--label-2)' }),
@@ -256,13 +255,13 @@ export default function Matches({ go }: ScreenProps) {
               </button>
               {page === 0 && (
                 <button onClick={() => { sfx.tap(); binderNav.open(go, 'matches', 'sets') }} className="mono"
-                  style={{ position: 'absolute', top: 0, left: 26, fontSize: 8.5, letterSpacing: '0.2em', fontWeight: 700, color: 'var(--label-1)', pointerEvents: 'auto' }}>
+                  style={{ position: 'absolute', top: -10, left: 24, height: 32, fontSize: 8.5, letterSpacing: '0.2em', fontWeight: 700, color: 'var(--label-1)', pointerEvents: 'auto' }}>
                   SIGNS & PACKS ›
                 </button>
               )}
               <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginBottom: 8 }}>
                 {[0, 1].map((i) => (
-                  <button key={i} onClick={() => turn(i)} style={{ padding: '6px 2px', pointerEvents: 'auto' }}>
+                  <button key={i} aria-label={i ? 'Rare series' : 'Your binder'} onClick={() => turn(i)} style={{ padding: '6px 4px', pointerEvents: 'auto' }}>
                     <motion.span animate={{ width: page === i ? 16 : 4 }} style={{ display: 'block', height: 4, borderRadius: 2, background: page === i ? (i === 1 ? 'linear-gradient(90deg, #ff6ad5, #ffd36a, #6ad5ff)' : 'var(--label-1)') : 'var(--label-4)' }} />
                   </button>
                 ))}
@@ -278,7 +277,7 @@ export default function Matches({ go }: ScreenProps) {
       {/* element set complete */}
       <AnimatePresence>
         {setComplete && (
-          <motion.div key="set" onClick={() => setSetComplete(false)}
+          <motion.div key="set" onClick={() => { sfx.tap(); setSetComplete(false) }}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             style={{ position: 'absolute', inset: 0, zIndex: 45, display: 'grid', placeItems: 'center', background: 'rgba(11,6,32,0.72)', backdropFilter: 'blur(6px)', cursor: 'pointer' }}>
             <motion.div initial={{ scale: 0.6, y: 30 }} animate={{ scale: 1, y: 0 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }}
@@ -291,9 +290,9 @@ export default function Matches({ go }: ScreenProps) {
                   </motion.div>
                 ))}
               </div>
-              <div className="mono" style={{ fontSize: 10, letterSpacing: '0.26em', color: 'var(--align)' }}>✦ SET COMPLETE ✦</div>
+              <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)' }}><span style={{ color: 'var(--align)' }}>✦</span> SET COMPLETE <span style={{ color: 'var(--align)' }}>✦</span></div>
               <div className="h-display" style={{ fontSize: 34, marginTop: 10 }}>All four elements.</div>
-              <div className="serif" style={{ fontSize: 16, color: 'var(--label-2)', marginTop: 10, lineHeight: 1.4 }}>
+              <div style={{ fontSize: 15, color: 'var(--label-2)', marginTop: 8, lineHeight: 1.45, textWrap: 'pretty' }}>
                 Fire, earth, air and water, each one traded hand to hand. Your binder holds the whole sky now.
               </div>
               <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)', marginTop: 22 }}>TAP TO CLOSE</div>
@@ -305,15 +304,16 @@ export default function Matches({ go }: ScreenProps) {
       {/* zoomed card */}
       <AnimatePresence>
         {zoom && (
-          <motion.div key="zoom" onClick={() => setZoom(null)}
+          <motion.div key="zoom" onClick={() => { sfx.tap(); setZoom(null) }}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             style={{ position: 'absolute', inset: 0, zIndex: 44, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(11,6,32,0.78)', backdropFilter: 'blur(8px)', cursor: 'pointer' }}>
+            <CloseX onClose={() => { sfx.tap(); setZoom(null) }} />
             <motion.div initial={{ scale: 0.4, rotateY: -30 }} animate={{ scale: 1, rotateY: 0 }} exit={{ scale: 0.5, opacity: 0 }} transition={{ type: 'spring', stiffness: 240, damping: 20 }}
               style={{ perspective: 800 }}>
               <TiltCard m={zoom} />
             </motion.div>
-            <div className="mono" style={{ marginTop: 22, fontSize: 9.5, letterSpacing: '0.22em', color: 'var(--align)' }}>
-              ✦ TRADED ON DAY {Math.min(zoom.day, TRADE_UNLOCK_DAYS)} ✦
+            <div className="mono" style={{ marginTop: 22, fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)' }}>
+              <span style={{ color: 'var(--align)' }}>✦</span> TRADED ON DAY {Math.min(zoom.day, TRADE_UNLOCK_DAYS)} <span style={{ color: 'var(--align)' }}>✦</span>
             </div>
             <div className="serif italic" style={{ marginTop: 8, fontSize: 16, color: 'var(--label-2)', textAlign: 'center', padding: '0 40px' }}>
               Your copy lives in {zoom.name}’s binder too.
@@ -324,7 +324,7 @@ export default function Matches({ go }: ScreenProps) {
 
       {/* Rare series showcase */}
       <AnimatePresence>
-        {showcase && <Showcase a={showcase} onClose={() => setShowcase(null)} />}
+        {showcase && <Showcase a={showcase} onClose={() => { sfx.tap(); setShowcase(null) }} />}
       </AnimatePresence>
 
       <ConfettiCanvas canvasRef={canvasRef} z={46} />
@@ -336,7 +336,7 @@ export default function Matches({ go }: ScreenProps) {
 function sleevePos(i: number) {
   const c = i % 3
   const r = Math.floor(i / 3)
-  return { x: PAGE_X + PAD + c * (SLEEVE_W + GAP) + 1, y: PAGE_TOP + PAD + r * (SLEEVE_H + GAP) }
+  return { x: PAGE_X + PAD + c * (SLEEVE_W + GAP), y: PAGE_TOP + PAD + r * (SLEEVE_H + GAP) }
 }
 
 function Row({ m, st, last, onClick, onTag }: { m: Match; st: SlotState; last: boolean; onClick: () => void; onTag: () => boolean }) {
@@ -359,7 +359,7 @@ function Row({ m, st, last, onClick, onTag }: { m: Match; st: SlotState; last: b
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
         <span className="mono" style={{ fontSize: 8.5, color: 'var(--label-3)' }}>{m.when} ›</span>
-        <span role="button" onClick={(e) => { if (onTag()) e.stopPropagation() }} style={{ padding: '4px 0 4px 8px' }}>
+        <span role="button" onClick={(e) => { if (onTag()) e.stopPropagation() }} style={{ display: 'flex', alignItems: 'center', minHeight: 30, padding: '2px 0 2px 8px' }}>
           <TradeTag st={st} day={m.day} />
         </span>
       </div>
@@ -371,19 +371,19 @@ function TradeTag({ st, day }: { st: SlotState; day: number }) {
   if (st === 'ready') {
     return (
       <motion.span animate={{ boxShadow: ['0 0 0px rgba(248,237,255,0)', '0 0 12px rgba(248,237,255,0.6)', '0 0 0px rgba(248,237,255,0)'] }} transition={{ duration: 1.8, repeat: Infinity }}
-        className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', padding: '3px 8px', borderRadius: 999, color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700 }}>
+        className="mono" style={{ display: 'inline-flex', alignItems: 'center', height: 30, fontSize: 9, letterSpacing: '0.16em', padding: '0 12px', borderRadius: 999, color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700, whiteSpace: 'nowrap' }}>
         ✦ TRADE
       </motion.span>
     )
   }
   if (st === 'traded') {
-    return <span className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', color: 'var(--align)' }}>IN BINDER</span>
+    return <span className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', color: 'var(--label-2)' }}>IN BINDER ✦</span>
   }
   const left = TRADE_UNLOCK_DAYS - day
   return <span className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', color: 'var(--label-3)' }}>TRADE IN {left}D</span>
 }
 
-function Sleeve({ m, st, arriving, onLanded, onOpen }: { m?: Match; st: SlotState | null; arriving: boolean; onLanded: () => void; onOpen: () => void }) {
+function Sleeve({ m, st, arriving, onLanded, onOpen, onTrade }: { m?: Match; st: SlotState | null; arriving: boolean; onLanded: () => void; onOpen: () => void; onTrade: () => void }) {
   const base: React.CSSProperties = {
     position: 'absolute', inset: 0, borderRadius: 12,
     background: 'rgba(11,6,32,0.45)', boxShadow: 'inset 0 0 0 1px rgba(179,166,196,0.14), inset 0 8px 16px rgba(0,0,0,0.35)',
@@ -421,16 +421,16 @@ function Sleeve({ m, st, arriving, onLanded, onOpen }: { m?: Match; st: SlotStat
 
   if (st === 'ready') {
     return (
-      <motion.button onClick={onOpen} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+      <motion.button onClick={onTrade} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
         style={{ ...base, display: 'block', width: '100%' }}>
         <motion.div animate={{ opacity: [0.45, 1, 0.45] }} transition={{ duration: 1.8, repeat: Infinity }}
-          style={{ position: 'absolute', inset: -3, borderRadius: 14, boxShadow: '0 0 0 1.5px #f2c75c, 0 0 18px rgba(242,199,92,0.65)' }} />
+          style={{ position: 'absolute', inset: -3, borderRadius: 14, boxShadow: '0 0 0 1.5px rgba(248,237,255,0.9), 0 0 18px rgba(248,237,255,0.5)' }} />
         <div style={{ position: 'absolute', left: 4, top: 4 }}>
           <TradeCardBack width={cardW} label={m.name} />
         </div>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 10, display: 'flex', justifyContent: 'center' }}>
-          <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.16em', padding: '4px 8px', borderRadius: 999, color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700 }}>
-            ✦ READY TO TRADE
+          <span className="mono" style={{ fontSize: 8, letterSpacing: '0.16em', padding: '5px 10px', borderRadius: 999, color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700, whiteSpace: 'nowrap' }}>
+            ✦ TRADE NOW
           </span>
         </div>
       </motion.button>
@@ -516,16 +516,27 @@ function MysterySleeve({ i }: { i: number }) {
   )
 }
 
+/** the 40×40 close control every full-screen overlay carries, at the back-button spot */
+function CloseX({ onClose }: { onClose: () => void }) {
+  return (
+    <button aria-label="Close" onClick={(e) => { e.stopPropagation(); onClose() }}
+      style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 3 }}>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 3l10 10M13 3 3 13" /></svg>
+    </button>
+  )
+}
+
 function Showcase({ a, onClose }: { a: ArtistCard; onClose: () => void }) {
   const [t, setT] = useState({ x: 0, y: 0 })
   return (
     <motion.div onClick={onClose}
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       style={{ position: 'absolute', inset: 0, zIndex: 44, background: 'rgba(8,4,24,0.86)', backdropFilter: 'blur(10px)', cursor: 'pointer', overflow: 'hidden' }}>
+      <CloseX onClose={onClose} />
       <div style={{ position: 'absolute', left: '50%', top: 300, width: 420, height: 420, marginLeft: -210, marginTop: -210, borderRadius: '50%', background: 'conic-gradient(from 0deg, #ff6ad555, #ffd36a55, #7affc455, #6ad5ff55, #b18cff55, #ff6ad555)', filter: 'blur(60px)' }} />
       <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-        className="mono" style={{ position: 'absolute', top: 66, width: '100%', textAlign: 'center', fontSize: 10, letterSpacing: '0.28em', color: 'var(--align)' }}>
-        ✦ RARE SERIES ✦
+        className="mono" style={{ position: 'absolute', top: 66, width: '100%', textAlign: 'center', fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)' }}>
+        <span style={{ color: 'var(--align)' }}>✦</span> RARE SERIES <span style={{ color: 'var(--align)' }}>✦</span>
       </motion.div>
       <div style={{ position: 'absolute', top: 96, left: 0, right: 0, display: 'flex', justifyContent: 'center', perspective: 900 }}>
         <motion.div initial={{ scale: 0.3, rotateY: -200, y: 120 }} animate={{ scale: 1, rotateY: 0, y: 0 }} exit={{ scale: 0.5, opacity: 0 }}
@@ -547,7 +558,7 @@ function Showcase({ a, onClose }: { a: ArtistCard; onClose: () => void }) {
         </motion.div>
       </div>
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
-        style={{ position: 'absolute', top: 470, left: 28, right: 28 }}>
+        style={{ position: 'absolute', top: 470, left: 24, right: 24 }}>
         <div className="serif italic" style={{ textAlign: 'center', fontSize: 15, color: 'var(--label-2)' }}>{a.provenance}</div>
         <div style={{ display: 'flex', marginTop: 18, borderRadius: 16, background: 'rgba(40,26,78,0.7)', border: '1px solid rgba(179,166,196,0.18)' }}>
           {[

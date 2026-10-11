@@ -43,7 +43,7 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
 
   const send = () => {
     const t = draft.trim()
-    if (!t) return
+    if (!t) { sfx.deny(); return }
     setDraft('')
     sfx.send()
     onReply(t)
@@ -57,14 +57,16 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
     >
       <Starfield aurora={null} warm={null} count={50} seed={61} />
 
-      <button onClick={() => { sfx.tap(); onClose() }} style={{ position: 'absolute', left: 14, top: 56, height: 36, display: 'flex', alignItems: 'center', gap: 12, zIndex: 2 }}>
-        <svg width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="var(--label-2)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6.5 1.5 1.5 6.5l5 5" /></svg>
-        <span style={{ fontSize: 15.5, color: 'var(--label-1)' }}>The Taurus room</span>
+      <button aria-label="Back to the room" onClick={() => { sfx.tap(); onClose() }}
+        style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 2 }}>
+        <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 2 2 10l8 8" /></svg>
       </button>
-      <span className="eyebrow" style={{ position: 'absolute', right: 24, top: 68, fontSize: 9, color: 'var(--label-3)' }}>Thread</span>
+      <div className="mono" style={{ position: 'absolute', left: 0, right: 0, top: 56, height: 40, display: 'grid', placeItems: 'center', fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-2)', pointerEvents: 'none' }}>
+        TAURUS ROOM · THREAD
+      </div>
 
       <div ref={scroller} className="club-scroll" style={{
-        position: 'absolute', top: 96, left: 0, right: 0, bottom: 150, overflowY: 'auto', padding: '4px 20px 24px', scrollbarWidth: 'none',
+        position: 'absolute', top: 96, left: 0, right: 0, bottom: 150, overflowY: 'auto', padding: '4px 24px 24px', scrollbarWidth: 'none',
         WebkitMaskImage: FADE, maskImage: FADE,
       }}>
         {/* the post */}
@@ -90,7 +92,7 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
           <div style={{ display: 'flex', gap: 22, marginTop: 10, alignItems: 'center' }}>
             <LikeButton liked={liked} count={likes} onToggle={onLike} size={12.5} />
             <SparkCount n={post.sparks + extra.length} size={12.5} />
-            <button onClick={() => sfx.tap()} style={{ fontSize: 12.5, color: 'var(--label-2)' }}>Share</button>
+            <button onClick={() => sfx.tap()} style={{ height: 30, fontSize: 12.5, color: 'var(--label-2)' }}>Share</button>
           </div>
         </div>
 
@@ -118,15 +120,18 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
 
       {/* reply composer */}
       <form onSubmit={(e) => { e.preventDefault(); send() }} style={{
-        position: 'absolute', left: 20, right: 20, top: 690, height: 52, borderRadius: 26, display: 'flex', alignItems: 'center',
+        position: 'absolute', left: 24, right: 24, top: 690, height: 52, borderRadius: 26, display: 'flex', alignItems: 'center',
         padding: '0 7px 0 20px', background: 'rgba(30,18,64,0.88)', border: '1px solid rgba(179,166,196,0.26)',
         backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
       }}>
         <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Say the thing you keep deleting"
           style={{ flex: 1, minWidth: 0, background: 'none', border: 0, outline: 'none', fontSize: 15.5, color: 'var(--label-1)', caretColor: 'var(--align)', userSelect: 'text', WebkitUserSelect: 'text' }} />
         <motion.button type="submit" aria-label={`Reply as ${ME.name}`} whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.88 }}
-          animate={{ background: draft.trim() ? 'rgba(248,237,255,0.95)' : 'rgba(52,35,95,0.9)' }}
-          style={{ width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', fontSize: 16, color: draft.trim() ? '#3a2a08' : 'var(--label-1)', border: '1px solid rgba(239,230,214,0.4)' }}>
+          style={{
+            width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', fontSize: 16,
+            color: draft.trim() ? 'var(--chrome-ink)' : 'var(--label-1)', background: draft.trim() ? 'var(--chrome)' : 'rgba(52,35,95,0.9)',
+            border: '1px solid rgba(239,230,214,0.4)', transition: 'background .2s, color .2s',
+          }}>
           ✦
         </motion.button>
       </form>

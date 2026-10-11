@@ -1,35 +1,48 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import type { ScreenProps } from './types'
+import type { ScreenId, ScreenProps } from './types'
 import Strength from '../components/Strength'
 import Starfield from '../components/Starfield'
-import TabBar from '../components/TabBar'
 import { SKY_DATE, SKY_HERO, SKY_TABS, SKY_FOOTER, MOON_NOW, MOON_STRIP, WEEK_STRIP, type SkyTab } from '../data/sky'
 import MoonPhase from '../components/sky/MoonPhase'
 import { sfx } from '../lib/sfx'
+import { cameFrom, goFrom, skyTrail } from '../components/you/origin'
+
+/** brand: no gold pills — today's Venus reading reads in Venus rose instead of the data's gold */
+const tone = (x: SkyTab): SkyTab => (x.color.toLowerCase() === '#f2c75c' ? { ...x, color: '#f3a98f' } : x)
 
 /** S-14 Sky · today — the daily reading for your sign. */
 export default function Sky({ go }: ScreenProps) {
   const [tab, setTab] = useState(0)
-  const t = SKY_TABS[tab]
+  const t = tone(SKY_TABS[tab])
+  // opened from the deck's sky pill, the You tab or a notification; the calendar hands the original back
+  const [from] = useState<ScreenId>(() => {
+    skyTrail.from = cameFrom('sky', 'deck')
+    return skyTrail.from
+  })
   const pick = (i: number) => { if (i !== tab) { sfx.tap(); setTab(i) } }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora="#4a2a9a" warm="#7a3a6a" count={70} seed={52} />
 
-      <div className="mono" style={{ position: 'absolute', left: 28, right: 28, top: 64, display: 'flex', justifyContent: 'space-between', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-        <span style={{ color: 'var(--label-2)' }}>{SKY_DATE.season}</span>
-        <button onClick={() => { sfx.tap(); go('calendar') }} className="mono" style={{ fontSize: 10, letterSpacing: '0.2em', color: 'var(--align)' }}>
-          {SKY_DATE.label} ›
-        </button>
+      <button aria-label="Back" onClick={() => { sfx.tap(); go(from) }}
+        style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 2 }}>
+        <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      </button>
+      <div className="mono" style={{ position: 'absolute', left: 0, right: 0, top: 56, height: 40, display: 'grid', placeItems: 'center', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--label-2)', pointerEvents: 'none' }}>
+        {SKY_DATE.season}
       </div>
+      <button onClick={() => { sfx.tap(); goFrom(go, 'calendar', 'sky') }} className="mono"
+        style={{ position: 'absolute', right: 16, top: 56, height: 40, padding: '0 8px', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--label-2)', zIndex: 2 }}>
+        {SKY_DATE.label} ›
+      </button>
 
       {/* the reading card */}
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         style={{
-          position: 'absolute', left: 36, right: 36, top: 88, height: 584, borderRadius: 24, padding: 3,
+          position: 'absolute', left: 24, right: 24, top: 104, height: 600, borderRadius: 24, padding: 3,
           background: 'linear-gradient(160deg, rgba(222,208,246,0.85), rgba(150,120,210,0.5) 50%, rgba(222,208,246,0.8))',
           boxShadow: '0 0 40px rgba(120,70,220,0.35), 0 20px 50px rgba(0,0,0,0.45)',
         }}
@@ -58,7 +71,7 @@ export default function Sky({ go }: ScreenProps) {
 
           {/* tabs */}
           <div style={{
-            marginTop: 12, width: '100%', height: 32, padding: 3, borderRadius: 999, display: 'flex',
+            marginTop: 12, width: '100%', height: 36, padding: 3, borderRadius: 999, display: 'flex',
             background: 'rgba(24,12,56,0.45)', border: '1px solid rgba(179,166,196,0.22)',
           }}>
             {SKY_TABS.map((x, i) => (
@@ -67,7 +80,7 @@ export default function Sky({ go }: ScreenProps) {
                   <motion.div layoutId="sky-tab" transition={{ type: 'spring', stiffness: 420, damping: 34 }}
                     style={{ position: 'absolute', inset: 0, borderRadius: 999, background: 'rgba(120,96,170,0.55)' }} />
                 )}
-                <span className="mono" style={{ position: 'relative', fontSize: 8.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: i === tab ? x.color : 'var(--label-2)' }}>
+                <span className="mono" style={{ position: 'relative', fontSize: 8.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: i === tab ? tone(x).color : 'var(--label-2)' }}>
                   {x.label}
                 </span>
               </button>
@@ -100,14 +113,13 @@ export default function Sky({ go }: ScreenProps) {
         </div>
       </motion.div>
 
-      <div style={{ position: 'absolute', left: 0, right: 0, top: 686, display: 'flex', justifyContent: 'center' }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 34, display: 'flex', justifyContent: 'center' }}>
         <motion.button className="chrome-cta" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
           onClick={() => { sfx.tap(); go('deck') }}>
           Read tonight’s deck <span className="spark">✦</span>
         </motion.button>
       </div>
 
-      <TabBar active="deck" go={go} />
     </div>
   )
 }
@@ -145,7 +157,7 @@ function Reading({ t }: { t: SkyTab }) {
           <div key={i} style={{ display: 'flex', gap: 8, fontSize: 12, lineHeight: 1.35, color: 'var(--label-1)' }}>
             <span style={{
               flexShrink: 0, width: 15, height: 15, borderRadius: 8, marginTop: 0.5, display: 'grid', placeItems: 'center',
-              fontSize: 8.5, fontFamily: 'var(--font-mono, monospace)', color: '#1a0f3a', background: t.color,
+              fontSize: 8.5, fontFamily: 'var(--mono)', color: '#1a0f3a', background: t.color,
             }}>{i + 1}</span>
             {x}
           </div>
@@ -184,12 +196,12 @@ function Hero({ id }: { id: SkyTab['id'] }) {
           <div key={m.label} style={{ position: 'relative', width: 54, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
             <div style={{
               padding: 3, borderRadius: '50%',
-              boxShadow: m.today ? '0 0 0 1.5px #f2c75c, 0 0 14px rgba(242,199,92,0.55)' : 'none',
+              boxShadow: m.today ? '0 0 0 1.5px rgba(248,237,255,0.85), 0 0 14px rgba(248,237,255,0.4)' : 'none',
               background: m.today ? 'rgba(20,10,46,0.9)' : 'transparent',
             }}>
               <MoonPhase size={m.today ? 34 : 28} lit={m.lit} waxing={m.waxing} glow={m.today} />
             </div>
-            <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.1em', textAlign: 'center', lineHeight: 1.3, textTransform: 'uppercase', color: m.today ? '#f2c75c' : 'var(--label-2)' }}>
+            <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.1em', textAlign: 'center', lineHeight: 1.3, textTransform: 'uppercase', color: m.today ? 'var(--label-1)' : 'var(--label-2)' }}>
               {m.label}<br /><span style={{ color: 'var(--label-3)' }}>{m.date}</span>
             </span>
           </div>
@@ -207,14 +219,14 @@ function Hero({ id }: { id: SkyTab['id'] }) {
             <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-3)' }}>{w.d}</span>
             <div style={{
               width: 32, height: 32, borderRadius: 16, display: 'grid', placeItems: 'center', fontSize: 13,
-              color: today ? '#1a0f3a' : 'var(--label-1)',
-              background: today ? '#f2c75c' : w.mark ? 'rgba(154,123,224,0.35)' : 'rgba(24,12,56,0.45)',
+              color: today ? 'var(--chrome-ink)' : 'var(--label-1)',
+              background: today ? 'var(--chrome)' : w.mark ? 'rgba(154,123,224,0.35)' : 'rgba(24,12,56,0.45)',
               border: w.mark && !today ? '1px solid #9a7be0' : '1px solid rgba(179,166,196,0.2)',
-              boxShadow: today ? '0 0 14px rgba(242,199,92,0.5)' : 'none',
+              boxShadow: today ? '0 0 14px rgba(248,237,255,0.45)' : 'none',
             }}>{w.n}</div>
             <div style={{ height: 30, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
               {w.mark === 'New moon' && <MoonPhase size={12} lit={0} waxing glow={false} />}
-              {w.mark && <span className="mono" style={{ fontSize: 6.5, letterSpacing: '0.06em', textAlign: 'center', lineHeight: 1.2, color: today ? '#f2c75c' : '#c9b6f0', textTransform: 'uppercase' }}>{w.mark}</span>}
+              {w.mark && <span className="mono" style={{ fontSize: 7.5, letterSpacing: '0.04em', textAlign: 'center', lineHeight: 1.2, color: today ? 'var(--label-1)' : '#c9b6f0', textTransform: 'uppercase' }}>{w.mark}</span>}
             </div>
           </div>
         )

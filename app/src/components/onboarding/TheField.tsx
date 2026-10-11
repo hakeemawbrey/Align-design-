@@ -28,7 +28,6 @@ export default function TheField({ next }: { next: () => void }) {
         title={<>You are not<br />arriving alone.</>}
         body="Your deck refreshes at 11:11. Face down, ranked, no photos until you both align."
         bodyWidth={318}
-        bodyStyle={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.45 }}
       />
       {FAN.map((k, i) => (
         <motion.div key={i}

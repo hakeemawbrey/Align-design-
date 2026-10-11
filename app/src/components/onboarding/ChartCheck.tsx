@@ -23,7 +23,6 @@ export default function ChartCheck({ birth, time, sun, moon, rising, next, edit 
         eyebrow="Chart check · Read it back"
         title={<>Here is what the<br />sky said about you.</>}
         body="Six facts. If one is wrong, tap it — the rest of the night depends on these."
-        bodyStyle={{ marginTop: 8, fontSize: 15.5, lineHeight: 1.45 }}
       />
       <motion.div
         initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.6, ease: EASE }}

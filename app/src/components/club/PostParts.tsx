@@ -41,7 +41,7 @@ export function LikeButton({ liked, count, onToggle, size = 12 }: { liked: boole
       onClick={(e) => { e.stopPropagation(); if (!liked) setBursts((b) => b + 1); onToggle() }}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.85 }}
-      style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: size, color: liked ? 'var(--rub)' : 'var(--label-2)', position: 'relative', padding: '4px 2px' }}
+      style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: size, color: liked ? 'var(--rub)' : 'var(--label-2)', position: 'relative', padding: '8px 2px', margin: '-4px 0' }}
     >
       <span style={{ position: 'relative', display: 'inline-grid', placeItems: 'center' }}>
         <motion.svg key={liked ? 'on' : 'off'} width={size + 1} height={size + 1} viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ export function LikeButton({ liked, count, onToggle, size = 12 }: { liked: boole
 export function SparkCount({ n, size = 12, onClick }: { n: number; size?: number; onClick?: () => void }) {
   return (
     <button onClick={(e) => { e.stopPropagation(); onClick?.() }}
-      style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: size, color: 'var(--label-2)', padding: '4px 2px' }}>
+      style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: size, color: 'var(--label-2)', padding: '8px 2px', margin: '-4px 0' }}>
       <span style={{ fontSize: size + 1 }}>✦</span>
       <PopCount n={n} />
     </button>

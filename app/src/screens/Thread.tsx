@@ -148,7 +148,7 @@ export default function Thread({ go }: ScreenProps) {
         position: 'absolute', top: 126, left: 0, right: 0, bottom: 168, overflowY: 'auto', padding: '8px 24px 14px', scrollbarWidth: 'none',
       }}>
         <div style={{ textAlign: 'center', padding: '10px 0 16px' }}>
-          <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--align)' }}>✦ MUTUAL ALIGN ✦</div>
+          <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}><span style={{ color: 'var(--align)' }}>✦</span> MUTUAL ALIGN <span style={{ color: 'var(--align)' }}>✦</span></div>
           <div className="serif italic" style={{ fontSize: 15, color: 'var(--label-2)', marginTop: 6 }}>
             You and {them.name} aligned. {sign.glyph} {sign.name}{them.blurb ? ` · “${them.blurb}”` : ''}
           </div>
@@ -198,7 +198,7 @@ export default function Thread({ go }: ScreenProps) {
           width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', flexShrink: 0,
           background: draft.trim() ? 'rgba(248, 237, 255, 0.95)' : 'rgba(52, 35, 95, 0.9)',
         }}>
-          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke={draft.trim() ? '#3a2c4e' : 'var(--align)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 14V2M2 7l5-5 5 5" /></svg>
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke={draft.trim() ? '#3a2c4e' : 'var(--label-2)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 14V2M2 7l5-5 5 5" /></svg>
         </motion.button>
       </form>
 

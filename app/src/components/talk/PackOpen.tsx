@@ -44,8 +44,17 @@ type Stage = 'pack' | 'rise' | 'reveal' | 'all'
  * the light builds before it turns, then it lands with a burst. The best card
  * is always last. Then the whole pull, laid out.
  */
-export default function PackOpen({ pack, cards, onDone }: { pack: { name: string; color: string }; cards: Pull[]; onDone: () => void }) {
+export default function PackOpen({ pack, cards: source, onDone, onClose = onDone }: {
+  pack: { name: string; color: string }
+  /** the pull, or a function that pulls it when the pack is torn (so closing first keeps the pack sealed) */
+  cards: Pull[] | (() => Pull[])
+  onDone: () => void
+  onClose?: () => void
+}) {
   const [stage, setStage] = useState<Stage>('pack')
+  const [pulled, setPulled] = useState<Pull[] | null>(() => (Array.isArray(source) ? source : null))
+  const cards = pulled ?? []
+  const count = pulled?.length ?? 12
   const [glow, setGlow] = useState(pack.color)
   const [flash, setFlash] = useState(0)
   const { canvasRef, fire } = useConfetti()
@@ -58,6 +67,9 @@ export default function PackOpen({ pack, cards, onDone }: { pack: { name: string
   }
 
   const torn = () => {
+    const got = pulled ?? (typeof source === 'function' ? source() : source)
+    if (!got.length) { onClose(); return }
+    setPulled(got)
     sfx.rip()
     burst(1, 0.36)
     window.setTimeout(() => { sfx.reveal(); setStage('rise') }, 350)
@@ -66,7 +78,7 @@ export default function PackOpen({ pack, cards, onDone }: { pack: { name: string
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      style={{ position: 'absolute', inset: 0, zIndex: 95, overflow: 'hidden', background: '#07031a' }}>
+      style={{ position: 'absolute', inset: 0, zIndex: 45, overflow: 'hidden', background: '#07031a' }}>
       <motion.div animate={shake} style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Rays color={glow} strong={stage !== 'all'} />
         <Motes color={glow} />
@@ -75,8 +87,8 @@ export default function PackOpen({ pack, cards, onDone }: { pack: { name: string
           ✦ {pack.name.toUpperCase()} · {SEASON.label.toUpperCase()} ✦
         </div>
 
-        {stage === 'pack' && <Packet pack={pack} count={cards.length} onTorn={torn} />}
-        {stage === 'rise' && <Rising color={pack.color} count={cards.length} />}
+        {stage === 'pack' && <Packet pack={pack} count={count} onTorn={torn} />}
+        {stage === 'rise' && <Rising color={pack.color} count={count} />}
         {stage === 'reveal' && <OneByOne cards={cards} color={pack.color} onGlow={setGlow} onBurst={burst} onAll={() => { setStage('all'); setGlow(pack.color) }} />}
         {stage === 'all' && <Pull12 cards={cards} onDone={onDone} />}
       </motion.div>
@@ -89,6 +101,14 @@ export default function PackOpen({ pack, cards, onDone }: { pack: { name: string
         )}
       </AnimatePresence>
       <ConfettiCanvas canvasRef={canvasRef} z={60} />
+
+      {/* a way out before you tear it */}
+      {stage === 'pack' && (
+        <button aria-label="Close" onClick={() => { sfx.tap(); onClose() }}
+          style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 70 }}>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 3l10 10M13 3 3 13" /></svg>
+        </button>
+      )}
     </motion.div>
   )
 }
@@ -272,7 +292,7 @@ function OneByOne({ cards, color, onGlow, onBurst, onAll }: {
       <div className="h-display" style={{ position: 'relative', fontSize: 30, marginTop: 8 }}>
         {up && tier ? <span style={{ color: TIER_COLOR[tier] }}>{TIER_WORD[tier]}!</span> : `${at + 1} of ${cards.length}`}
       </div>
-      <div className="mono" style={{ position: 'relative', marginTop: 6, height: 12, fontSize: 8.5, letterSpacing: '0.16em', color: 'var(--label-2)' }}>
+      <div className="mono" style={{ position: 'relative', marginTop: 6, height: 12, fontSize: 8.5, letterSpacing: '0.14em', whiteSpace: 'nowrap', color: 'var(--label-2)' }}>
         {up ? `${PULL_KIND[c.kind].toUpperCase()} · ${NOTE[c.kind].toUpperCase()}`
           : charging ? 'SOMETHING’S COMING…'
             : last ? 'THE LAST CARD IS THE BEST ONE' : 'TAP TO TURN IT OVER'}
@@ -292,15 +312,16 @@ function OneByOne({ cards, color, onGlow, onBurst, onAll }: {
             style={{ position: 'absolute', left: 15, top: 0, perspective: 1000 }}>
             <motion.div
               animate={charging ? { x: [0, -5, 5, -6, 6, -4, 4, 0], rotate: [0, -1.5, 1.5, -2, 2, -1, 1, 0] } : { x: 0, rotate: 0 }}
-              transition={charging ? { duration: 0.45, repeat: Infinity } : { duration: 0.2 }}>
+              transition={charging ? { duration: 0.45, repeat: Infinity } : { duration: 0.2 }}
+              style={{
+                // the glow lives here, not on the turning card: a filter there flattens the 3D and shows the face mirrored
+                filter: charging ? `drop-shadow(0 0 30px ${TIER_COLOR[tier]}) brightness(1.15)` : up ? `drop-shadow(0 0 ${tier ? 34 : 16}px ${glowOf(c)})` : 'none',
+                transition: 'filter 0.4s',
+              }}>
               <motion.div animate={{ rotateY: up ? 0 : 180 }} initial={{ rotateY: 180 }} transition={{ duration: tier ? 0.75 : 0.5, ease: [0.3, 1.4, 0.5, 1] }}
-                style={{
-                  transformStyle: 'preserve-3d', position: 'relative', width: W, height: W * TAROT_RATIO,
-                  filter: charging ? `drop-shadow(0 0 30px ${TIER_COLOR[tier]}) brightness(1.15)` : up ? `drop-shadow(0 0 ${tier ? 34 : 16}px ${glowOf(c)})` : 'none',
-                  transition: 'filter 0.4s',
-                }}>
-                <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}><PullFace pull={c} width={W} /></div>
-                <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}><TalkCardBack width={W} color={charging ? TIER_COLOR[tier] : color} /></div>
+                style={{ transformStyle: 'preserve-3d', position: 'relative', width: W, height: W * TAROT_RATIO, transformPerspective: 1000 }}>
+                <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}><PullFace pull={c} width={W} /></div>
+                <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}><TalkCardBack width={W} color={charging ? TIER_COLOR[tier] : color} /></div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -322,7 +343,7 @@ function OneByOne({ cards, color, onGlow, onBurst, onAll }: {
         </div>
       )}
       <button className="mono" onClick={() => { sfx.tap(); onAll() }}
-        style={{ position: 'relative', marginTop: 16, fontSize: 9.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>
+        style={{ position: 'relative', marginTop: 8, height: 36, padding: '0 14px', fontSize: 9.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>
         SHOW ALL {cards.length} ›
       </button>
     </>

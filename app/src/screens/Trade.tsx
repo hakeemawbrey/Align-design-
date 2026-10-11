@@ -15,9 +15,9 @@ import { copyOf } from './Matches'
 type Phase = 'idle' | 'swap' | 'flip' | 'done'
 
 const THEIR_W = 150
-const THEIR_TOP = 200
+const THEIR_TOP = 224
 const MY_W = 168
-const MY_TOP = 456
+const MY_TOP = 472
 
 const POSS = { he: 'his', she: 'her', they: 'their' } as const
 
@@ -70,30 +70,30 @@ export default function Trade({ go }: ScreenProps) {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={sign.color} warm={SIGNS[ME.sign].color} count={70} seed={44} />
 
-      <button onClick={() => { sfx.tap(); go('matches') }} style={{ position: 'absolute', left: 18, top: 58, width: 36, height: 36, zIndex: 20, display: 'grid', placeItems: 'center', color: 'var(--label-1)' }}>
-        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      <button aria-label="Back" onClick={() => { sfx.tap(); go('matches') }} style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, zIndex: 20, display: 'grid', placeItems: 'center', color: 'var(--label-1)' }}>
+        <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
 
       {/* copy */}
       <AnimatePresence mode="wait">
         {!done ? (
-          <motion.div key="before" exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }} style={{ position: 'absolute', top: 64, left: 0, right: 0, textAlign: 'center' }}>
-            <motion.div initial={{ opacity: 0, letterSpacing: '0.1em' }} animate={{ opacity: 1, letterSpacing: '0.26em' }} transition={{ duration: 0.8 }}
-              className="mono" style={{ fontSize: 10, color: 'var(--align)' }}>
-              ✦ DAY {them.day} · TRADE UNLOCKED ✦
+          <motion.div key="before" exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }} style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center' }}>
+            <motion.div initial={{ opacity: 0, letterSpacing: '0.1em' }} animate={{ opacity: 1, letterSpacing: '0.2em' }} transition={{ duration: 0.8 }}
+              className="mono" style={{ fontSize: 9.5, color: 'var(--label-3)' }}>
+              <span style={{ color: 'var(--align)' }}>✦</span> DAY {them.day} · TRADE UNLOCKED <span style={{ color: 'var(--align)' }}>✦</span>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="h-display" style={{ fontSize: 32, marginTop: 14 }}>
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="h-display" style={{ fontSize: 32, marginTop: 8 }}>
               Trade cards with {them.name}
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }} className="serif" style={{ fontSize: 15.5, color: 'var(--label-2)', marginTop: 8, padding: '0 44px', lineHeight: 1.35 }}>
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }} style={{ fontSize: 15, color: 'var(--label-2)', marginTop: 8, padding: '0 44px', lineHeight: 1.45 }}>
               {TRADE_UNLOCK_DAYS} days aligned. Swap a copy of your card, and each one lives in the other’s binder.
             </motion.div>
           </motion.div>
         ) : (
-          <motion.div key="after" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ position: 'absolute', top: 64, left: 0, right: 0, textAlign: 'center' }}>
-            <div className="mono" style={{ fontSize: 10, letterSpacing: '0.26em', color: 'var(--align)' }}>✦ TRADED · DAY {them.day} ✦</div>
-            <div className="h-display" style={{ fontSize: 32, marginTop: 14 }}>{them.name} is in your binder.</div>
-            <div className="serif" style={{ fontSize: 15.5, color: 'var(--label-2)', marginTop: 8 }}>And you’re in {poss}.</div>
+          <motion.div key="after" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center' }}>
+            <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-3)' }}><span style={{ color: 'var(--align)' }}>✦</span> TRADED · DAY {them.day} <span style={{ color: 'var(--align)' }}>✦</span></div>
+            <div className="h-display" style={{ fontSize: 32, marginTop: 8 }}>{them.name} is in your binder.</div>
+            <div style={{ fontSize: 15, color: 'var(--label-2)', marginTop: 8, lineHeight: 1.45 }}>And you’re in {poss}.</div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -40,7 +40,6 @@ export default function CardRule({ next }: { next: () => void }) {
         title={<>You fall for the chart.<br />The face comes after.</>}
         body="Everyone arrives as a veiled card. Align each other and both cards flip."
         bodyWidth={340}
-        bodyStyle={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.45 }}
       />
 
       {/* left: veiled */}

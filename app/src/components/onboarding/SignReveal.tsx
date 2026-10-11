@@ -145,8 +145,8 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
         <div style={{ position: 'absolute', top: 104, width: '100%', textAlign: 'center' }}>
           <motion.div className="eyebrow" {...rise(0, 8)} style={{ color: 'var(--label-3)' }}>Your sun sign</motion.div>
           <motion.h1 className="h-display" {...rise(0.08)} style={{ marginTop: 8, fontSize: 33 }}>Sun in {sign.name}</motion.h1>
-          <motion.p className="serif" {...rise(0.2)}
-            style={{ margin: '12px auto 0', width: 344, fontSize: 16, lineHeight: 1.6, color: 'var(--label-2)' }}>
+          <motion.p {...rise(0.2)}
+            style={{ margin: '12px auto 0', width: 342, fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
             {reading}
           </motion.p>
         </div>
@@ -267,7 +267,7 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
           <motion.div key="tap" className="mono"
             initial={{ opacity: 0 }} animate={{ opacity: [0.4, 1, 0.4] }} exit={{ opacity: 0, transition: { duration: 0.2 } }}
             transition={{ duration: 1.2, repeat: Infinity }}
-            style={{ position: 'absolute', top: CHARGE_C.y + H / 2 + 26, width: '100%', textAlign: 'center', fontSize: 10, letterSpacing: '0.26em', color: glow }}>
+            style={{ position: 'absolute', top: CHARGE_C.y + H / 2 + 26, width: '100%', textAlign: 'center', fontSize: 10, letterSpacing: '0.26em', color: 'var(--label-2)' }}>
             TAP TO REVEAL
           </motion.div>
         )}

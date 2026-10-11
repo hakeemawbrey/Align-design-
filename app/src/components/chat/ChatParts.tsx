@@ -24,7 +24,7 @@ export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () 
   )
   const whoStyle: React.CSSProperties = { position: 'absolute', left: 60, top: 10, display: 'flex', alignItems: 'center', gap: 10 }
   return (
-    <div style={{ position: 'absolute', top: 54, left: 0, right: 0, height: 64, borderBottom: '1px solid rgba(179,166,196,0.16)', zIndex: 5 }}>
+    <div style={{ position: 'absolute', top: 44, left: 0, right: 0, height: 64, borderBottom: '1px solid rgba(179,166,196,0.16)', zIndex: 5 }}>
       <motion.button
         onClick={onBack}
         whileHover={{ x: -2 }}

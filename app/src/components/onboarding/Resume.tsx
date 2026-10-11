@@ -16,7 +16,6 @@ export default function Resume({ sun, step, of, resume, restart }: { sun: SignId
         title={<>The sky saved<br />your place.</>}
         body={`${WORDS[step]} ${step === 1 ? 'step' : 'steps'} cast, ${WORDS[of - step].toLowerCase()} to go. Pick up exactly where you put the sky down.`}
         bodyWidth={300}
-        bodyStyle={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.45 }}
       />
       <motion.div initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 1, ease: EASE }}
         style={{ position: 'absolute', top: 300, left: 0, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>

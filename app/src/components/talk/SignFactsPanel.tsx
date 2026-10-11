@@ -25,7 +25,7 @@ export default function SignFactsPanel({ sign, face, full = false }: { sign: Sig
         ))}
       </div>
       <div style={{ marginTop: 9, fontSize: 13.5, lineHeight: 1.35, color: 'var(--label-1)' }}>
-        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: GOLD, marginRight: 6 }}>{FACE_GLYPH[face]} {FACE_LABEL[face].toUpperCase()}</span>
+        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-2)', marginRight: 6 }}><span style={{ color: GOLD }}>{FACE_GLYPH[face]}</span> {FACE_LABEL[face].toUpperCase()}</span>
         {FACE_LINES[sign][face]}
       </div>
       {facts.map(([k, v]) => (

@@ -11,7 +11,7 @@ import { SEASON, NEXT_SEASON, PRINT_RUN, leftOf, minted, fmt } from '../data/sea
 import { PLACES } from '../data/places'
 import { SIGNS } from '../data/signs'
 import { ME } from '../data/profiles'
-import { packInfo, talk, useTalk, type Pull } from '../lib/talk'
+import { packInfo, talk, useTalk } from '../lib/talk'
 import { useSession } from '../lib/session'
 import { sfx } from '../lib/sfx'
 import { binderNav } from '../lib/binderNav'
@@ -54,12 +54,12 @@ export default function Collection({ go }: ScreenProps) {
   const { traded } = useBinder()
   const people = MATCHES.filter((m) => traded.has(m.id))
   const [tab, setTab] = useState<Tab>(binderNav.tab())
-  const [opening, setOpening] = useState<{ pack: string; cards: Pull[] } | null>(null)
+  const [opening, setOpening] = useState<{ pack: string } | null>(null)
   const [toast, setToast] = useState<string | null>(null)
   const [detail, setDetail] = useState<{ sign: SignId; face: Face; variant: Variant } | null>(null)
 
   const flash = (m: string) => { setToast(m); window.setTimeout(() => setToast(null), 2200) }
-  const open = (id: string) => { sfx.sparkle(); setOpening({ pack: id, cards: talk.openPack(id) }) }
+  const open = (id: string) => { sfx.sparkle(); setOpening({ pack: id }) }
   const total = t.owned.length + t.signs.length + t.venues.length + t.places.length + people.length + savedEvents.length
   const tier = Math.min(TIERS.length, Math.floor(total / 3))
 
@@ -78,23 +78,23 @@ export default function Collection({ go }: ScreenProps) {
         </div>
         <div style={{ display: 'flex', alignItems: 'baseline', marginTop: 8 }}>
           <div className="h-display" style={{ fontSize: 32, flex: 1 }}>Your binder</div>
-          <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: GOLD }}>{total} CARDS</span>
+          <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-2)' }}>{total} CARDS</span>
         </div>
-        <div style={{ marginTop: 12, height: 34, padding: 3, borderRadius: 999, display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)' }}>
+        <div style={{ marginTop: 12, height: 36, padding: 3, borderRadius: 999, display: 'flex', background: 'rgba(11,6,32,0.5)', border: '1px solid rgba(179,166,196,0.2)' }}>
           {([['packs', `Packs${t.packs.length ? ` · ${t.packs.length}` : ''}`], ['sets', 'Sets'], ['season', 'Season']] as const).map(([id, label]) => (
-            <button key={id} onClick={() => { sfx.tap(); setTab(id) }} style={{ position: 'relative', flex: 1, fontSize: 13, color: tab === id ? '#1a0f3a' : 'var(--label-2)' }}>
-              {tab === id && <motion.span layoutId="col-tab" style={{ position: 'absolute', inset: 0, borderRadius: 999, background: '#f4f0dc' }} />}
+            <button key={id} onClick={() => { sfx.tap(); setTab(id) }} style={{ position: 'relative', flex: 1, fontSize: 13, color: tab === id ? 'var(--chrome-ink)' : 'var(--label-2)' }}>
+              {tab === id && <motion.span layoutId="col-tab" transition={{ type: 'spring', stiffness: 420, damping: 34 }} style={{ position: 'absolute', inset: 0, borderRadius: 999, background: 'var(--chrome)' }} />}
               <span style={{ position: 'relative' }}>{label}</span>
             </button>
           ))}
         </div>
       </div>
 
-      <div style={{ position: 'absolute', left: 0, right: 0, top: 236, bottom: 0, overflowY: 'auto', padding: '4px 24px 60px', scrollbarWidth: 'none' }}>
+      <div key={tab} style={{ position: 'absolute', left: 0, right: 0, top: 222, bottom: 0, overflowY: 'auto', padding: '14px 24px 64px', scrollbarWidth: 'none', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 14px)', maskImage: 'linear-gradient(to bottom, transparent 0, #000 14px)' }}>
         {tab === 'packs' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {/* today's drop */}
-            <Panel color={GOLD}>
+            <Panel color="#b3a6c4">
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <div style={{ flex: 1 }}>
                   <div className="serif italic" style={{ fontSize: 18 }}>Today’s pack drop</div>
@@ -104,8 +104,10 @@ export default function Collection({ go }: ScreenProps) {
                 </div>
                 <button className="mono" disabled={!talk.dailyPackAvailable()}
                   onClick={() => { if (talk.claimDailyPack(alignPlus)) { sfx.sparkle(); flash(alignPlus ? '3 packs added' : 'Pack added') } }}
-                  style={{ height: 34, padding: '0 14px', borderRadius: 17, fontSize: 10, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: talk.dailyPackAvailable() ? 'var(--chrome)' : 'rgba(179,166,196,0.35)', boxShadow: talk.dailyPackAvailable() ? '0 0 12px rgba(248,237,255,0.45)' : 'none' }}>
-                  {talk.dailyPackAvailable() ? 'CLAIM' : 'CLAIMED'}
+                  style={{ height: 30, padding: '0 12px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700, whiteSpace: 'nowrap', ...(talk.dailyPackAvailable()
+                    ? { color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)' }
+                    : { color: 'var(--label-3)', background: 'transparent', border: '1px solid rgba(179,166,196,0.25)' }) }}>
+                  {talk.dailyPackAvailable() ? 'CLAIM' : 'CLAIMED ✓'}
                 </button>
               </div>
             </Panel>
@@ -128,7 +130,7 @@ export default function Collection({ go }: ScreenProps) {
                 onClick={() => { sfx.tap(); go('paywall') }} />
             )}
 
-            <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '8px 0 0' }}>Ready to open</div>
+            <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '8px 0 -2px' }}>Ready to open</div>
             {t.packs.map((id, i) => {
               const p = packInfo(id)
               return <PackRow key={`${id}-${i}`} color={p.color} name={p.name} blurb={p.blurb} action="Open" onClick={() => open(id)} />
@@ -143,13 +145,13 @@ export default function Collection({ go }: ScreenProps) {
 
         {tab === 'sets' && (
           <>
-            <SetHead title="People · traded" got={people.length} of={MATCHES.length} note="Copies of your matches’ cards, traded hand to hand after three days aligned." />
+            <SetHead first title="People · traded" got={people.length} of={MATCHES.length} note="Copies of your matches’ cards, traded hand to hand after three days aligned." />
             <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 4, scrollbarWidth: 'none' }}>
               {people.map((m) => <div key={m.id} style={{ flexShrink: 0 }}><TradeCard width={74} card={copyOf(m)} /></div>)}
               {!people.length && <div style={{ fontSize: 12.5, color: 'var(--label-3)' }}>None yet. Stay aligned three days, then trade.</div>}
             </div>
             <button className="mono" onClick={() => { sfx.tap(); binderNav.pages(go) }}
-              style={{ marginTop: 10, height: 30, padding: '0 12px', borderRadius: 15, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
+              style={{ marginTop: 10, height: 30, padding: '0 12px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
               OPEN THE PAGES ›
             </button>
             <SetHead title="Signs · Myths" got={talk.signCards()} of={SIGN_ORDER.length * FACES.length} note="Every sign is four cards: Sun (who they are), Moon (what they need), Rising (how they come across), Venus (how they love). Each in Myths, Gilded or Mythic." />
@@ -204,7 +206,7 @@ export default function Collection({ go }: ScreenProps) {
               <div className="mono" style={{ marginTop: 6, fontSize: 8.5, letterSpacing: '0.14em', color: 'var(--label-3)' }}>{SEASON.days - SEASON.day} DAYS LEFT · THEN {NEXT_SEASON.name.toUpperCase()}</div>
             </Panel>
 
-            <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '16px 0 8px' }}>Print runs · left this season</div>
+            <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '20px 0 8px' }}>Print runs · left this season</div>
             {SEASON.signs.map((s) => (
               <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 0', borderTop: '1px solid rgba(179,166,196,0.12)' }}>
                 <ArchetypeCard sign={s} width={40} edition={false} />
@@ -234,13 +236,13 @@ export default function Collection({ go }: ScreenProps) {
             <div style={{ display: 'grid', gridTemplateColumns: '34px 1fr 1fr', gap: 6, fontSize: 12 }}>
               <span />
               <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>FREE</span>
-              <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.14em', color: GOLD }}>ALIGN+ ✦</span>
+              <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.14em', color: 'var(--label-2)' }}>ALIGN+ <span style={{ color: GOLD }}>✦</span></span>
               {TIERS.map((r, i) => {
                 const got = i < tier
                 return [
-                  <span key={`n${i}`} className="mono" style={{ fontSize: 10, color: got ? GOLD : 'var(--label-4)', alignSelf: 'center' }}>{i + 1}</span>,
+                  <span key={`n${i}`} className="mono" style={{ fontSize: 10, color: got ? 'var(--label-1)' : 'var(--label-4)', alignSelf: 'center', textAlign: 'center' }}>{i + 1}</span>,
                   <Cell key={`f${i}`} got={got}>{r.free}</Cell>,
-                  <Cell key={`p${i}`} got={got && alignPlus} locked={!alignPlus} gold>{r.plus}</Cell>,
+                  <Cell key={`p${i}`} got={got && alignPlus} locked={!alignPlus}>{r.plus}</Cell>,
                 ]
               })}
             </div>
@@ -252,12 +254,16 @@ export default function Collection({ go }: ScreenProps) {
         {toast && (
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
             style={{ position: 'absolute', left: 0, right: 0, bottom: 48, display: 'flex', justifyContent: 'center', zIndex: 90, pointerEvents: 'none' }}>
-            <div style={{ padding: '10px 16px', borderRadius: 999, fontSize: 13.5, background: 'rgba(36,20,76,0.95)', border: `1px solid ${GOLD}66` }}>{toast}</div>
+            <div style={{ padding: '10px 16px', borderRadius: 999, fontSize: 13.5, background: 'var(--glass)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(179,166,196,0.25)' }}>{toast}</div>
           </motion.div>
         )}
         {detail && (
-          <motion.div key="detail" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setDetail(null)}
-            style={{ position: 'absolute', inset: 0, zIndex: 90, background: 'rgba(7,3,26,0.98)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '70px 24px 0', overflowY: 'auto', scrollbarWidth: 'none' }}>
+          <motion.div key="detail" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => { sfx.tap(); setDetail(null) }}
+            style={{ position: 'absolute', inset: 0, zIndex: 45, background: 'rgba(7,3,26,0.98)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '100px 24px 0', overflowY: 'auto', scrollbarWidth: 'none' }}>
+            <button aria-label="Close" onClick={(e) => { e.stopPropagation(); sfx.tap(); setDetail(null) }}
+              style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 2 }}>
+              <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </button>
             <motion.div initial={{ rotateY: 90, scale: 0.8 }} animate={{ rotateY: 0, scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 18 }}>
               <ArchetypeCard sign={detail.sign} face={detail.face} variant={detail.variant} width={190} dim={!t.signs.some((o) => o.sign === detail.sign && (o.face ?? 'sun') === detail.face)} />
             </motion.div>
@@ -268,7 +274,7 @@ export default function Collection({ go }: ScreenProps) {
             <div className="mono" style={{ margin: '16px 0 40px', fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}>TAP ANYWHERE TO CLOSE</div>
           </motion.div>
         )}
-        {opening && <PackOpen pack={packInfo(opening.pack)} cards={opening.cards} onDone={() => { setOpening(null); setTab('sets') }} />}
+        {opening && <PackOpen pack={packInfo(opening.pack)} cards={() => talk.openPack(opening.pack)} onDone={() => { setOpening(null); setTab('sets') }} onClose={() => setOpening(null)} />}
       </AnimatePresence>
     </div>
   )
@@ -286,21 +292,21 @@ function BoxLine({ title, sub, done, cta, onClick }: { title: string; sub: strin
         <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 2, lineHeight: 1.35 }}>{sub}</div>
       </div>
       <button className="mono" disabled={done} onClick={onClick}
-        style={{ height: 32, padding: '0 12px', borderRadius: 16, fontSize: 9.5, letterSpacing: '0.12em', fontWeight: 700, whiteSpace: 'nowrap', color: done ? 'var(--label-2)' : 'var(--chrome-ink)', background: done ? 'rgba(179,166,196,0.2)' : 'var(--chrome)', boxShadow: done ? 'none' : '0 0 12px rgba(248,237,255,0.45)' }}>
+        style={{ height: 30, padding: '0 12px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700, whiteSpace: 'nowrap', color: done ? 'var(--label-3)' : 'var(--chrome-ink)', background: done ? 'transparent' : 'var(--chrome)', border: done ? '1px solid rgba(179,166,196,0.25)' : 'none', boxShadow: done ? 'none' : '0 0 12px rgba(248,237,255,0.45)' }}>
         {done ? 'ADDED ✓' : cta.toUpperCase()}
       </button>
     </div>
   )
 }
 
-function SetHead({ title, got, of, note }: { title: string; got: number; of: number; note: string }) {
+function SetHead({ title, got, of, note, first }: { title: string; got: number; of: number; note: string; first?: boolean }) {
   return (
-    <div style={{ margin: '18px 0 10px' }}>
+    <div style={{ margin: `${first ? 0 : 22}px 0 10px` }}>
       <div style={{ display: 'flex', alignItems: 'baseline' }}>
         <span className="serif italic" style={{ fontSize: 19, flex: 1 }}>{title}</span>
-        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: GOLD }}>{Math.min(got, of)} / {of}</span>
+        <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-2)' }}>{Math.min(got, of)} / {of}</span>
       </div>
-      <div style={{ fontSize: 12, color: 'var(--label-3)', marginTop: 2 }}>{note}</div>
+      <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 4, lineHeight: 1.4 }}>{note}</div>
     </div>
   )
 }
@@ -313,13 +319,13 @@ function Bar({ v, color }: { v: number; color: string }) {
   )
 }
 
-function Cell({ got, locked, gold, children }: { got: boolean; locked?: boolean; gold?: boolean; children: React.ReactNode }) {
+function Cell({ got, locked, children }: { got: boolean; locked?: boolean; children: React.ReactNode }) {
   return (
     <div style={{
       padding: '7px 9px', borderRadius: 10, fontSize: 11.5, lineHeight: 1.25,
       color: got ? 'var(--chrome-ink)' : locked ? 'var(--label-3)' : 'var(--label-1)',
       background: got ? 'var(--chrome)' : 'rgba(48,32,92,0.55)',
-      border: `1px solid ${gold ? 'rgba(242,213,138,0.3)' : 'rgba(179,166,196,0.18)'}`,
+      border: '1px solid rgba(179,166,196,0.18)',
     }}>{got ? '✓ ' : locked ? '🔒 ' : ''}{children}</div>
   )
 }

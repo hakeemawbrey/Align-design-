@@ -45,6 +45,7 @@ export default function CityPicker({ value, onPick, onClose }: { value: string; 
         borderRadius: '26px 26px 0 0', borderTop: '1px solid rgba(179,166,196,0.2)', boxShadow: '0 -20px 50px rgba(5,2,15,0.55)',
       }}
     >
+      <div style={{ position: 'absolute', top: 12, left: '50%', marginLeft: -20, width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.35)' }} />
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <div className="h-display" style={{ flex: 1, fontSize: 26 }}>Where were you born?</div>
         <button onClick={() => { sfx.tap(); onClose() }} style={{ height: 40, padding: '0 4px', fontSize: 15, color: 'var(--label-2)' }}>Cancel</button>

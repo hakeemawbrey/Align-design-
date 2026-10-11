@@ -49,18 +49,18 @@ export default function Block({ go }: ScreenProps) {
 
       <AnimatePresence mode="wait" initial={false}>
         <motion.div key={choosing ? 'c' : 'v'} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.22 }}
-          style={{ position: 'absolute', left: 28, right: 28, top: 112 }}>
+          style={{ position: 'absolute', left: 24, right: 24, top: 100 }}>
           <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>
             ALIGN+ · {choosing ? 'CHOOSE SIGNS' : 'BLOCK A SIGN'}
           </div>
-          <div className="h-display" style={{ fontSize: 30, marginTop: 10, lineHeight: 1.1 }}>
+          <div className="h-display" style={{ fontSize: 30, marginTop: 8, lineHeight: 1.1 }}>
             {choosing ? <>Which signs are<br />off the table?</> : <>Take a whole sign<br />off the table.</>}
           </div>
         </motion.div>
       </AnimatePresence>
 
       {/* sign grid */}
-      <div style={{ position: 'absolute', left: 22, right: 22, top: 222, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
+      <div style={{ position: 'absolute', left: 24, right: 24, top: 210, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
         {ORDER.map((id) => {
           const s = SIGNS[id]
           const on = shown.includes(id)
@@ -71,7 +71,7 @@ export default function Block({ go }: ScreenProps) {
               animate={{ opacity: dim ? 0.42 : 1, scale: sel ? 1.03 : 1 }}
               aria-pressed={on}
               style={{
-                height: 36, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5,
+                height: 36, borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4,
                 fontSize: 11.5, color: dim ? 'var(--label-3)' : 'var(--label-1)',
                 background: sel ? `linear-gradient(180deg, ${s.color}55, ${s.dark}aa)` : dim ? 'rgba(30,18,64,0.4)' : 'rgba(52,35,95,0.6)',
                 border: `1px solid ${sel ? s.light : dim ? 'rgba(179,166,196,0.12)' : 'rgba(179,166,196,0.28)'}`,
@@ -86,7 +86,7 @@ export default function Block({ go }: ScreenProps) {
       </div>
 
       {/* details */}
-      <div style={{ position: 'absolute', left: 28, right: 28, top: 384 }}>
+      <div style={{ position: 'absolute', left: 24, right: 24, top: 358 }}>
         <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.18em', color: 'var(--label-2)', textTransform: 'uppercase' }}>
           {choosing
             ? `${word(n)} chosen · ${word(12 - n).toLowerCase()} still dealt`
@@ -104,11 +104,11 @@ export default function Block({ go }: ScreenProps) {
             <ul style={{ marginTop: 10, paddingLeft: 18, display: 'grid', gap: 8, fontSize: 14, lineHeight: 1.4, color: 'var(--label-1)' }}>
               <li>Silent both ways. They never see you either.</li>
               <li>Suns only. A {names[0] ?? 'Scorpio'} Moon still reaches you.</li>
-              <li>Each block costs you about eight percent of the deck.</li>
+              <li>Each block removes about 8% of your deck.</li>
             </ul>
             <div className="mono" style={{ marginTop: 18, fontSize: 9.5, letterSpacing: '0.18em', color: 'var(--label-2)' }}>CURRENTLY BLOCKED</div>
             <button onClick={() => toggle(blockedSigns[0] ?? 'aries')}
-              style={{ marginTop: 8, width: '100%', height: 46, borderRadius: 12, padding: '0 16px', display: 'flex', alignItems: 'center', background: 'rgba(52,35,95,0.6)', textAlign: 'left' }}>
+              style={{ marginTop: 8, width: '100%', height: 46, borderRadius: 16, padding: '0 16px', display: 'flex', alignItems: 'center', background: 'rgba(52,35,95,0.6)', border: '1px solid rgba(179,166,196,0.18)', textAlign: 'left' }}>
               <span style={{ flex: 1, fontSize: 15, color: 'var(--label-1)' }}>{names.length ? names.join(' · ') : 'Nothing blocked'}</span>
               <span style={{ fontSize: 12.5, color: 'var(--label-3)' }}>{names.length ? `since ${blockedSince} ›` : '›'}</span>
             </button>
@@ -119,13 +119,18 @@ export default function Block({ go }: ScreenProps) {
       <AnimatePresence>
         {toast && (
           <motion.div key="t" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-            className="serif italic" style={{ position: 'absolute', left: 0, right: 0, top: 618, textAlign: 'center', fontSize: 15, color: 'var(--align)' }}>
-            ✦ {toast}
+            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+            style={{ position: 'absolute', left: 0, right: 0, bottom: 104, display: 'flex', justifyContent: 'center', pointerEvents: 'none', zIndex: 5 }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8, height: 38, padding: '0 18px', borderRadius: 999, fontSize: 13.5, color: 'var(--label-1)',
+              background: 'rgba(40,26,78,0.88)', border: '1px solid rgba(179,166,196,0.22)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.35)',
+            }}><span style={{ color: 'var(--align)' }}>✦</span>{toast}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div style={{ position: 'absolute', left: 0, right: 0, top: 652, display: 'flex', justifyContent: 'center' }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 34, display: 'flex', justifyContent: 'center' }}>
         <motion.button className="chrome-cta" whileTap={{ scale: 0.97 }} onClick={() => (choosing ? confirm() : toggle(blockedSigns[0] ?? 'aries'))}>
           {choosing ? 'Confirm' : 'Choose signs to block'} <span className="spark">✦</span>
         </motion.button>

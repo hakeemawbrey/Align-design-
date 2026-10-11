@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
-import TabBar from '../components/TabBar'
 import { CAL_MONTH, CAL_MARKS, CAL_KIND_COLOR, CAL_EVENTS, CAL_TONIGHT, SKY_DATE, type CalEvent } from '../data/sky'
 import { sfx } from '../lib/sfx'
+import { cameFrom, goFrom, skyTrail } from '../components/you/origin'
 
 /** What each marked day means, shown when you tap it. */
 const DAY_NOTE: Record<number, string> = {
@@ -20,6 +20,8 @@ const DAY_NOTE: Record<number, string> = {
 /** S-15 Cosmic calendar — October 2026. */
 export default function Calendar({ go }: ScreenProps) {
   const [picked, setPicked] = useState<number>(CAL_MONTH.today)
+  const [from] = useState(() => cameFrom('calendar', 'sky'))
+  const toSky = () => { sfx.tap(); goFrom(go, 'sky', from === 'you' ? 'you' : skyTrail.from) }
   const cells: (number | null)[] = [
     ...Array.from({ length: CAL_MONTH.firstWeekday }, () => null),
     ...Array.from({ length: CAL_MONTH.days }, (_, i) => i + 1),
@@ -30,19 +32,19 @@ export default function Calendar({ go }: ScreenProps) {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora="#3a1d80" warm={null} count={60} seed={61} />
 
-      <button onClick={() => { sfx.tap(); go('sky') }} aria-label="Back to today's sky"
-        style={{ position: 'absolute', left: 14, top: 64, width: 32, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 2 }}>
+      <button onClick={() => { if (from === 'you') { sfx.tap(); go('you') } else toSky() }} aria-label="Back"
+        style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 2 }}>
         <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
-      <div className="h-display" style={{ position: 'absolute', left: 46, top: 62, fontSize: 32 }}>Cosmic calendar</div>
-      <div className="mono" style={{ position: 'absolute', left: 28, right: 20, top: 106, fontSize: 9.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--label-2)', whiteSpace: 'nowrap' }}>
+      <div className="mono" style={{ position: 'absolute', left: 24, right: 24, top: 100, fontSize: 9.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--label-2)', whiteSpace: 'nowrap' }}>
         {CAL_MONTH.title} · {SKY_DATE.city} · <span style={{ color: '#f39a3a' }}>{CAL_MONTH.moonNow}</span> · <span style={{ color: 'var(--violet)' }}>{CAL_MONTH.phaseNow}</span>
       </div>
+      <div className="h-display" style={{ position: 'absolute', left: 24, top: 120, fontSize: 32, lineHeight: 1.1 }}>Cosmic calendar</div>
 
       {/* month grid */}
-      <div className="eyebrow" style={{ position: 'absolute', left: 28, top: 132, fontSize: 9, color: 'var(--label-3)' }}>The month</div>
+      <div className="eyebrow" style={{ position: 'absolute', left: 24, top: 178, fontSize: 9, color: 'var(--label-3)' }}>The month</div>
       <div style={{
-        position: 'absolute', left: 20, right: 20, top: 148, padding: '8px 8px 6px', borderRadius: 18,
+        position: 'absolute', left: 24, right: 24, top: 194, padding: '8px 8px 6px', borderRadius: 18,
         background: 'rgba(40,26,78,0.6)', border: '1px solid rgba(179,166,196,0.16)',
       }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', marginBottom: 2 }}>
@@ -81,19 +83,19 @@ export default function Calendar({ go }: ScreenProps) {
       </div>
 
       {/* this month */}
-      <div style={{ position: 'absolute', left: 28, right: 24, top: 438, display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ position: 'absolute', left: 24, right: 24, top: 478, display: 'flex', justifyContent: 'space-between' }}>
         <span className="eyebrow" style={{ fontSize: 9, color: 'var(--label-3)' }}>This month</span>
         <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>SCROLL FOR MORE →</span>
       </div>
-      <div className="no-scrollbar" style={{ position: 'absolute', left: 0, right: 0, top: 456, display: 'flex', gap: 10, overflowX: 'auto', padding: '0 20px', scrollbarWidth: 'none' }}>
+      <div className="no-scrollbar" style={{ position: 'absolute', left: 0, right: 0, top: 496, display: 'flex', gap: 10, overflowX: 'auto', padding: '0 24px', scrollbarWidth: 'none' }}>
         {CAL_EVENTS.map((e, i) => <EventTile key={e.title} e={e} first={i === 0} />)}
       </div>
 
       {/* tonight */}
-      <div className="eyebrow" style={{ position: 'absolute', left: 28, top: 562, fontSize: 9, color: 'var(--label-3)' }}>Tonight</div>
-      <div style={{ position: 'absolute', left: 20, right: 20, top: 578, borderRadius: 14, background: 'rgba(40,26,78,0.6)', border: '1px solid rgba(179,166,196,0.16)' }}>
+      <div className="eyebrow" style={{ position: 'absolute', left: 24, top: 610, fontSize: 9, color: 'var(--label-3)' }}>Tonight</div>
+      <div style={{ position: 'absolute', left: 24, right: 24, top: 626, borderRadius: 16, overflow: 'hidden', background: 'rgba(40,26,78,0.6)', border: '1px solid rgba(179,166,196,0.16)' }}>
         {CAL_TONIGHT.map((r, i) => (
-          <button key={r.text} onClick={() => { sfx.tap(); go('sky') }}
+          <button key={r.text} onClick={toSky}
             style={{ width: '100%', display: 'flex', alignItems: 'center', padding: '10px 14px', borderTop: i ? '1px solid rgba(179,166,196,0.12)' : 'none', textAlign: 'left' }}>
             <span style={{ flex: 1, fontSize: 14, color: 'var(--label-1)' }}>{r.text}</span>
             <span style={{ fontSize: 11.5, color: 'var(--label-3)' }}>{r.note} ›</span>
@@ -101,13 +103,11 @@ export default function Calendar({ go }: ScreenProps) {
         ))}
       </div>
 
-      <div style={{ position: 'absolute', left: 0, right: 0, top: 686, display: 'flex', justifyContent: 'center' }}>
-        <button className="chrome-cta" onClick={() => { sfx.tap(); go('sky') }} style={{ height: 50 }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 34, display: 'flex', justifyContent: 'center' }}>
+        <button className="chrome-cta" onClick={toSky}>
           Open the day in full <span className="spark">✦</span>
         </button>
       </div>
-
-      <TabBar active="deck" go={go} />
     </div>
   )
 }
@@ -117,7 +117,7 @@ function EventTile({ e, first }: { e: CalEvent; first: boolean }) {
   return (
     <div style={{
       flex: '0 0 112px', height: 96, borderRadius: 14, padding: '10px 8px 8px', textAlign: 'center',
-      background: 'rgba(40,26,78,0.7)', border: `1px solid ${first ? 'rgba(242,199,92,0.55)' : 'rgba(179,166,196,0.16)'}`,
+      background: 'rgba(40,26,78,0.7)', border: `1px solid ${first ? 'rgba(248,237,255,0.45)' : 'rgba(179,166,196,0.16)'}`,
       display: 'flex', flexDirection: 'column', alignItems: 'center',
     }}>
       <div style={{ width: 38, height: 38, borderRadius: 10, display: 'grid', placeItems: 'center', background: 'rgba(11,6,32,0.5)' }}>

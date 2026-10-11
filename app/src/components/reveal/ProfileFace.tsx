@@ -30,11 +30,11 @@ function MoonBadge() {
   )
 }
 
-function Chip({ label, color, gold = false }: { label: string; color: string; gold?: boolean }) {
+function Chip({ label, color, pearl = false }: { label: string; color: string; pearl?: boolean }) {
   return (
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: 5, height: 22, padding: '0 8px 0 4px', borderRadius: 999,
-      border: `1px solid ${gold ? 'var(--align)' : color}`,
+      border: `1px solid ${pearl ? 'rgba(248,237,255,0.45)' : color}`,
       fontFamily: 'var(--mono)', fontSize: 7.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--label-1)',
       whiteSpace: 'nowrap',
     }}>
@@ -121,7 +121,7 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
           </span>
           <Chip label={sign.element} color={el} />
           <Chip label={`${moon.name} moon`} color="#a35cf0" />
-          {p.house && <Chip label={p.house} color="var(--align)" gold />}
+          {p.house && <Chip label={p.house} color="#f8edff" pearl />}
         </motion.div>
 
         <div style={{ height: 11 }} />

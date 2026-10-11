@@ -326,7 +326,7 @@ export default function Chat({ go }: ScreenProps) {
           transition={{ duration: 0.2 }}
           style={{ width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', flexShrink: 0 }}
         >
-          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke={draft.trim() ? '#3a2c4e' : 'var(--align)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke={draft.trim() ? '#3a2c4e' : 'var(--label-2)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 14V2M2 7l5-5 5 5" />
           </svg>
         </motion.button>

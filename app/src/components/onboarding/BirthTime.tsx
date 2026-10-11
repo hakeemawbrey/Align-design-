@@ -46,7 +46,7 @@ export default function BirthTime({ birth, time, setTime, next }: {
             />
 
             <motion.div {...rise(0.35, 20)} style={{
-              position: 'absolute', top: 258, left: 40, width: 310, height: WHEEL_H + 6, borderRadius: 18,
+              position: 'absolute', top: 258, left: 24, width: 342, height: WHEEL_H + 6, borderRadius: 18,
               background: 'linear-gradient(180deg, rgba(40,26,78,0.75), rgba(30,18,64,0.75))',
               border: '1px solid rgba(154,123,224,0.35)', boxShadow: '0 20px 50px rgba(5,2,15,0.45)', overflow: 'hidden',
             }}>
@@ -67,7 +67,7 @@ export default function BirthTime({ birth, time, setTime, next }: {
 
             {/* place: tap to change */}
             <motion.button {...rise(0.45, 12)} onClick={() => { sfx.tap(); setPicking(true) }} style={{
-              position: 'absolute', top: 476, left: 40, width: 310, height: 46, borderRadius: 14, padding: '0 16px',
+              position: 'absolute', top: 476, left: 24, width: 342, height: 46, borderRadius: 14, padding: '0 16px',
               display: 'flex', alignItems: 'center', gap: 10,
               background: 'rgba(40,26,78,0.6)', border: '1px solid rgba(154,123,224,0.3)',
             }}>
@@ -80,7 +80,7 @@ export default function BirthTime({ birth, time, setTime, next }: {
             <motion.div {...rise(0.55, 8)} style={{ position: 'absolute', top: 532, width: '100%', textAlign: 'center', fontSize: 13.5, color: 'var(--label-2)' }}>
               That puts your Rising in <span style={{ color: rising.light }}>{rising.name}</span>.
               <br />
-              <button onClick={toggle} style={{ marginTop: 6, color: 'var(--label-1)', textDecoration: 'underline', textUnderlineOffset: 3, fontSize: 13.5 }}>I don’t know the minute</button>
+              <button onClick={toggle} style={{ height: 30, padding: '0 8px', color: 'var(--label-1)', textDecoration: 'underline', textUnderlineOffset: 3, fontSize: 13.5 }}>I don’t know the minute</button>
             </motion.div>
 
             <Cta onClick={next} delay={0.6}>Cast my sky</Cta>
@@ -138,11 +138,11 @@ export default function BirthTime({ birth, time, setTime, next }: {
               </motion.div>
             </AnimatePresence>
             <motion.button {...rise(0.5, 6)} onClick={toggle}
-              style={{ position: 'absolute', top: 504, left: 0, width: '100%', fontSize: 13.5, color: 'var(--label-1)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+              style={{ position: 'absolute', top: 498, left: 0, width: '100%', height: 30, fontSize: 13.5, color: 'var(--label-1)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
               I know the exact time
             </motion.button>
             <motion.button {...rise(0.55, 6)} onClick={() => { sfx.tap(); setPicking(true) }}
-              style={{ position: 'absolute', top: 536, left: 0, width: '100%', fontSize: 13, color: 'var(--label-2)' }}>
+              style={{ position: 'absolute', top: 530, left: 0, width: '100%', height: 30, fontSize: 13, color: 'var(--label-2)' }}>
               Born in {time.place} · <span style={{ color: 'var(--label-1)', textDecoration: 'underline', textUnderlineOffset: 3 }}>change</span>
             </motion.button>
 

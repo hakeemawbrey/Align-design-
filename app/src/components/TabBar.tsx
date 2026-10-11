@@ -45,8 +45,10 @@ export default function TabBar({ active, go, onSelect }: Props) {
   const { unseenMatch } = useSession()
   const matchBadge = unseenMatch && active !== 'matches'
   const { packs } = useTalk()
-  // packs waiting (plus today's drop, if it's unclaimed) show on the You tab
-  const packCount = packs.length + (talk.dailyPackAvailable() ? 1 : 0)
+  // packs waiting show on the You tab, the same count the binder and hand sheets use;
+  // today's unclaimed drop alone shows as a plain pearl dot
+  const packCount = packs.length
+  const dailyDot = !packCount && talk.dailyPackAvailable()
   return (
     <nav style={{
       position: 'absolute', left: 32, right: 32, bottom: 22, height: 62, zIndex: 40,
@@ -70,6 +72,9 @@ export default function TabBar({ active, go, onSelect }: Props) {
                 position: 'absolute', top: -6, right: 8, minWidth: 17, height: 17, padding: '0 4px', borderRadius: 9, fontSize: 9.5, fontWeight: 700,
                 display: 'grid', placeItems: 'center', color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)',
               }}>{packCount}</span>
+            )}
+            {t === 'you' && dailyDot && (
+              <span aria-label="Today’s pack to claim" style={{ position: 'absolute', top: -2, right: 14, width: 8, height: 8, borderRadius: 4, background: 'var(--chrome)', boxShadow: '0 0 8px rgba(248,237,255,0.6)' }} />
             )}
             {t === 'matches' && matchBadge && (
               <span style={{ position: 'absolute', top: -2, right: 14, width: 8, height: 8, borderRadius: 4, background: 'var(--rub)', boxShadow: '0 0 8px var(--rub)' }} />

@@ -53,6 +53,12 @@ interface Props {
 /** G-05b · Your card — FACE DOWN / FLIPPED, a 3D flip between what strangers and matches see. */
 export default function YourCardSheet({ initial, onClose }: Props) {
   const [side, setSide] = useState<CardSide>(initial)
+  const [toast, setToast] = useState(false)
+  useEffect(() => {
+    if (!toast) return
+    const t = window.setTimeout(() => setToast(false), 2200)
+    return () => window.clearTimeout(t)
+  }, [toast])
   const nudge = useAnimationControls()
   const flipped = side === 'flipped'
 
@@ -87,7 +93,7 @@ export default function YourCardSheet({ initial, onClose }: Props) {
       animate={{ x: 0 }}
       exit={{ x: 390 }}
       transition={{ type: 'spring', stiffness: 320, damping: 36 }}
-      style={{ position: 'absolute', inset: 0, zIndex: 60, overflow: 'hidden', boxShadow: '-20px 0 40px rgba(0,0,0,0.5)' }}
+      style={{ position: 'absolute', inset: 0, zIndex: 45 /* over the tab bar, under the status bar */, overflow: 'hidden', boxShadow: '-20px 0 40px rgba(0,0,0,0.5)' }}
     >
       <Starfield aurora="#3d2390" warm="#4a2470" count={60} seed={12} />
 
@@ -97,13 +103,13 @@ export default function YourCardSheet({ initial, onClose }: Props) {
         onClick={() => { sfx.tap(); onClose() }}
         whileHover={{ x: -2 }}
         whileTap={{ scale: 0.9 }}
-        style={{ position: 'absolute', left: 10, top: 52, width: 44, height: 44, display: 'grid', placeItems: 'center', zIndex: 3 }}
+        style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', zIndex: 3 }}
       >
-        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="var(--label-1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="var(--label-1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M10 2 2 10l8 8" />
         </svg>
       </motion.button>
-      <div style={{ position: 'absolute', top: 64, width: '100%', textAlign: 'center', fontSize: 15, fontWeight: 500, color: 'var(--label-1)' }}>Your card</div>
+      <div className="mono" style={{ position: 'absolute', left: 0, right: 0, top: 56, height: 40, display: 'grid', placeItems: 'center', fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-2)', pointerEvents: 'none' }}>YOUR CARD</div>
 
       {/* segmented toggle */}
       <div style={{
@@ -114,11 +120,11 @@ export default function YourCardSheet({ initial, onClose }: Props) {
           <button key={s} onClick={() => set(s)} style={{ position: 'relative', flex: 1, borderRadius: 999 }}>
             {side === s && (
               <motion.div layoutId="yc-toggle" transition={{ type: 'spring', stiffness: 460, damping: 34 }}
-                style={{ position: 'absolute', inset: 0, borderRadius: 999, background: '#f3ebdc', boxShadow: '0 0 14px rgba(243,235,220,0.25)' }} />
+                style={{ position: 'absolute', inset: 0, borderRadius: 999, background: 'var(--chrome)', boxShadow: '0 0 14px rgba(248,237,255,0.3)' }} />
             )}
             <span className="mono" style={{
               position: 'relative', fontSize: 10, letterSpacing: '0.18em', fontWeight: 700,
-              color: side === s ? '#2a1d48' : 'var(--label-2)', transition: 'color .2s',
+              color: side === s ? 'var(--chrome-ink)' : 'var(--label-2)', transition: 'color .2s',
             }}>{s === 'down' ? 'MYSTERY' : 'REVEALED'}</span>
           </button>
         ))}
@@ -165,9 +171,23 @@ export default function YourCardSheet({ initial, onClose }: Props) {
         </motion.div>
       </div>
 
+      <AnimatePresence>
+        {toast && (
+          <motion.div key="t" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+            style={{ position: 'absolute', left: 0, right: 0, bottom: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none', zIndex: 5 }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8, height: 38, padding: '0 18px', borderRadius: 999, fontSize: 13.5, color: 'var(--label-1)',
+              background: 'rgba(40,26,78,0.88)', border: '1px solid rgba(179,166,196,0.22)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.35)',
+            }}><span style={{ color: 'var(--align)' }}>✦</span>Card editing is coming soon.</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* edit */}
       <motion.button
-        onClick={() => { sfx.sparkle(); void nudge.start({ scale: [1, 1.025, 1], transition: { duration: 0.45 } }) }}
+        onClick={() => { sfx.sparkle(); setToast(true); void nudge.start({ scale: [1, 1.025, 1], transition: { duration: 0.45 } }) }}
         whileHover={{ scale: 1.02, borderColor: 'rgba(239,230,214,0.55)' }}
         whileTap={{ scale: 0.97 }}
         className="serif italic"

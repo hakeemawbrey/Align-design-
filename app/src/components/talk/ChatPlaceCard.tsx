@@ -20,7 +20,7 @@ export default function ChatPlaceCard({ place, when, playedByMe, mine, theirs, c
     <motion.div initial={{ opacity: 0, y: 12, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }}
       style={{ display: 'flex', justifyContent: playedByMe ? 'flex-end' : 'flex-start', margin: '10px 0' }}>
       <div style={{
-        width: 248, borderRadius: 18, overflow: 'hidden',
+        width: 262, borderRadius: 18, overflow: 'hidden',
         background: 'linear-gradient(170deg, rgba(58,36,112,0.95), rgba(26,14,58,0.95))',
         border: `1px solid ${place.partner ? `${GOLD}88` : 'rgba(179,166,196,0.3)'}`,
         boxShadow: place.partner ? '0 0 18px rgba(242,213,138,0.15)' : undefined,

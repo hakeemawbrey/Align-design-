@@ -380,24 +380,27 @@ export default function Deck({ go }: ScreenProps) {
     const released = [...new Set(s.released)].filter((id) => !reinserted.has(id))
     starBurst(canvasRef.current, 195, CARD_CY - 40, 1.2)
     sfx.sparkle()
-    if (ev.event.id === 'second-look') {
+    // the moon card borrows another event's move, depending on tonight's phase
+    const kind = ev.event.effect ?? ev.event.id
+    if (kind === 'second-look') {
       const back = released[released.length - 1]
       if (back) {
         session.patch({ inserts: [...s.inserts, { after: at, ids: [back] }] })
         later(() => showToast(`${nameOf(back)} is back for a second look`, 2200), 250)
       } else later(() => showToast('Nobody to bring back yet — you kept everyone', 2200), 250)
-    } else if (ev.event.id === 'moon-peek') {
-      session.patch({ bonusPeeks: s.bonusPeeks + 1 })
-      setPeeks((n) => n + 1)
-      later(() => showToast('+1 peek', 1800), 250)
-    } else if (ev.event.id === 'comet') {
+    } else if (kind === 'moon-peek') {
+      const n = ev.event.peeks ?? 1
+      session.patch({ bonusPeeks: s.bonusPeeks + n })
+      setPeeks((p) => p + n)
+      later(() => showToast(`${ev.event.title} · +${n} ${n === 1 ? 'peek' : 'peeks'}`, 1800), 250)
+    } else if (kind === 'comet') {
       const dealtIds = new Set(s.inserts.flatMap((i) => i.ids))
       const c = COMETS.find((x) => !dealtIds.has(x.id) && !s.blockedSigns.includes(x.sign))
       if (c) {
         session.patch({ inserts: [...s.inserts, { after: at, ids: [c.id] }] })
         later(() => showToast(`A comet crosses: ${c.name}, ${c.age}`, 2200), 250)
       } else later(() => showToast('The comet passed quietly tonight', 1800), 250)
-    } else if (ev.event.id === 'spotlight') {
+    } else if (kind === 'spotlight') {
       later(() => showToast('Your card moves to the top of three decks tonight', 2400), 250)
     } else {
       const pool = [...released]
@@ -406,7 +409,7 @@ export default function Deck({ go }: ScreenProps) {
       if (ids.length) {
         sfx.match()
         session.patch({ inserts: [...s.inserts, { after: at, ids }] })
-        later(() => showToast(`Mulligan · ${ids.length} ${ids.length === 1 ? 'card' : 'cards'} shuffled back in`, 2200), 250)
+        later(() => showToast(`${ev.event.title} · ${ids.length} ${ids.length === 1 ? 'card' : 'cards'} shuffled back in`, 2200), 250)
       } else later(() => showToast('Clean hand — nothing to redraw', 2000), 250)
     }
   }
@@ -577,7 +580,7 @@ export default function Deck({ go }: ScreenProps) {
         {peekOpen && (
           <motion.div className="mono" key="peekhdr"
             initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
-            style={{ position: 'absolute', top: 80, left: 0, right: 0, textAlign: 'center', fontSize: 11, letterSpacing: '0.24em', color: '#f2c75c', zIndex: 21, textShadow: '0 0 12px rgba(242,199,92,0.5)' }}>
+            style={{ position: 'absolute', top: 80, left: 0, right: 0, textAlign: 'center', fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-1)', zIndex: 21 }}>
             PEEK&nbsp; · &nbsp;<motion.span key={secs} initial={{ scale: 1.5, display: 'inline-block' }} animate={{ scale: 1 }} style={{ display: 'inline-block' }}>{secs}</motion.span> SECOND{secs === 1 ? '' : 'S'} LEFT
           </motion.div>
         )}
@@ -630,7 +633,7 @@ export default function Deck({ go }: ScreenProps) {
                 <>
                   <div className="serif italic" style={{ fontSize: 34, fontWeight: 500, color: '#f2c75c', textShadow: '0 0 18px rgba(242,199,92,0.8), 0 2px 6px rgba(0,0,0,0.6)' }}>+1 aligned</div>
                   {pp.streak >= 2 && (
-                    <div className="mono" style={{ marginTop: 4, display: 'inline-block', fontSize: 10, letterSpacing: '0.2em', color: 'var(--chrome-ink)', background: 'var(--chrome)', padding: '4px 10px', borderRadius: 999, boxShadow: '0 0 14px rgba(242,199,92,0.6)' }}>
+                    <div className="mono" style={{ marginTop: 4, display: 'inline-block', fontSize: 10, letterSpacing: '0.2em', color: 'var(--chrome-ink)', background: 'var(--chrome)', padding: '4px 10px', borderRadius: 999, boxShadow: '0 0 12px rgba(248,237,255,0.45)' }}>
                       ✦ STREAK ×{pp.streak}
                     </div>
                   )}
@@ -752,24 +755,24 @@ function DrawTracker({ slot, drawsOf }: { slot: Slot; drawsOf: number | null }) 
 function PeekUpsell({ onClose, onUpgrade }: { onClose: () => void; onUpgrade: () => void }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}
-      style={{ position: 'absolute', inset: 0, zIndex: 70, background: 'rgba(8,4,24,0.72)', backdropFilter: 'blur(6px)' }}>
+      style={{ position: 'absolute', inset: 0, zIndex: 70, background: 'rgba(5,2,15,0.6)', backdropFilter: 'blur(6px)' }}>
       <motion.div onClick={(e) => e.stopPropagation()}
         initial={{ y: 340 }} animate={{ y: 0 }} exit={{ y: 360 }} transition={{ type: 'spring', stiffness: 260, damping: 30 }}
         style={{
           position: 'absolute', left: 0, right: 0, bottom: 0, padding: '12px 24px 34px', borderRadius: '26px 26px 0 0', textAlign: 'center',
-          background: 'radial-gradient(80% 60% at 50% 0%, rgba(242,199,92,0.18), transparent 70%), linear-gradient(180deg, #2a1a5a, #160b36)',
-          borderTop: '1px solid rgba(242,199,92,0.45)', boxShadow: '0 -20px 50px rgba(0,0,0,0.5)',
+          background: 'radial-gradient(80% 60% at 50% 0%, rgba(201,182,240,0.14), transparent 70%), linear-gradient(180deg, #2a1a5a, #160b36)',
+          borderTop: '1px solid rgba(201,182,240,0.35)', boxShadow: '0 -20px 50px rgba(0,0,0,0.5)',
         }}>
-        <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.4)', margin: '0 auto 24px' }} />
+        <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.4)', margin: '0 auto 20px' }} />
         <div style={{ position: 'relative', width: 64, height: 64, margin: '0 auto' }}>
           <svg width="64" height="64" viewBox="0 0 64 64" style={{ position: 'absolute', inset: 0 }}>
-            <circle cx="32" cy="32" r="27" fill="rgba(11,6,32,0.6)" stroke="rgba(242,199,92,0.3)" strokeWidth="3" />
+            <circle cx="32" cy="32" r="27" fill="rgba(11,6,32,0.6)" stroke="rgba(179,166,196,0.3)" strokeWidth="3" />
           </svg>
-          <div className="serif italic" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontSize: 30, color: '#f2c75c', textShadow: '0 0 12px rgba(242,199,92,0.7)' }}>0</div>
+          <div className="serif italic" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontSize: 30, color: 'var(--label-1)' }}>0</div>
         </div>
-        <div className="mono" style={{ marginTop: 14, fontSize: 10, letterSpacing: '0.24em', color: 'var(--align)' }}>OUT OF PEEKS TONIGHT</div>
+        <div className="mono" style={{ marginTop: 14, fontSize: 10, letterSpacing: '0.24em', color: 'var(--label-3)' }}>OUT OF PEEKS TONIGHT</div>
         <div className="h-display" style={{ fontSize: 26, marginTop: 8 }}>Keep looking with Align+.</div>
-        <div className="serif" style={{ fontSize: 16, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 8 }}>
+        <div style={{ fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)', marginTop: 8 }}>
           Free nights come with three peeks. Align+ gives you 33 peeks a week and 45 cards a night.
         </div>
         <button className="chrome-cta" style={{ marginTop: 22 }} onClick={() => { sfx.tap(); onUpgrade() }}>

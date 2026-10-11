@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenId, ScreenProps } from './types'
 import Starfield from '../components/Starfield'
-import TabBar from '../components/TabBar'
 import { sfx } from '../lib/sfx'
+import { goFrom } from '../components/you/origin'
 import { Planet } from '../components/onboarding/shared'
 
 
@@ -79,7 +79,7 @@ const TABS: ChartTab[] = [
     cta: 'See your element set', to: 'matches',
   },
   {
-    id: 'ruler', label: 'Ruler', eyebrow: 'Venus', pips: 5, color: '#f2c75c', art: 'venus',
+    id: 'ruler', label: 'Ruler', eyebrow: 'Venus', pips: 5, color: '#f3a98f', art: 'venus',
     headline: 'Your planet is the planet of love.',
     meaning: 'Every sign has a ruling planet that shapes what it wants. Yours is Venus: affection, pleasure, beauty and what you value.',
     love: 'You show love through care: good food, your time, a hand on the back. Look for someone who receives that and gives it back.',
@@ -108,20 +108,18 @@ export default function Chart({ go }: ScreenProps) {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora="#3a1d80" warm="#4a2a5a" count={70} seed={73} />
 
-      <button onClick={() => { sfx.tap(); go('you') }} className="mono"
-        style={{ position: 'absolute', left: 16, top: 56, height: 36, display: 'flex', alignItems: 'center', gap: 10, fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-2)', zIndex: 2 }}>
-        <svg width="10" height="17" viewBox="0 0 12 20" fill="none" stroke="var(--label-1)" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-        YOUR CHART
+      <button aria-label="Back" onClick={() => { sfx.tap(); go('you') }}
+        style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 2 }}>
+        <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
-      <motion.div className="mono" animate={{ color: t.color }}
-        style={{ position: 'absolute', right: 28, top: 68, fontSize: 10, letterSpacing: '0.2em' }}>
-        TAURUS · 22°
-      </motion.div>
+      <div className="mono" style={{ position: 'absolute', left: 0, right: 0, top: 56, height: 40, display: 'grid', placeItems: 'center', fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-2)', pointerEvents: 'none' }}>
+        YOUR CHART
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         style={{
-          position: 'absolute', left: 30, right: 30, top: 92, height: 584, borderRadius: 24, padding: 3,
+          position: 'absolute', left: 24, right: 24, top: 104, height: 600, borderRadius: 24, padding: 3,
           background: 'linear-gradient(160deg, rgba(222,208,246,0.85), rgba(150,120,210,0.5) 50%, rgba(222,208,246,0.8))',
           boxShadow: '0 0 40px rgba(120,70,220,0.35), 0 20px 50px rgba(0,0,0,0.45)',
         }}
@@ -157,8 +155,10 @@ export default function Chart({ go }: ScreenProps) {
           <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 4 }}>{SUBTITLE[t.id] ?? 'Fixed earth · ruled by Venus · 8th house'}</div>
 
           <div style={{
-            marginTop: 10, width: '100%', height: 30, padding: 3, borderRadius: 999, display: 'flex',
-            background: 'rgba(24,12,56,0.45)', border: '1px solid rgba(179,166,196,0.22)',
+            marginTop: 10, width: '100%', height: 36, padding: 3, borderRadius: 999, display: 'flex',
+            // while a planet page shows, these read as plain tabs, not an unselected control
+            background: tab < 3 ? 'transparent' : 'rgba(24,12,56,0.45)', border: tab < 3 ? '1px solid transparent' : '1px solid rgba(179,166,196,0.22)',
+            transition: 'background 0.2s, border-color 0.2s',
           }}>
             {TABS.map((x, i) => i < 3 ? null : (
               <button key={x.id} onClick={() => pick(i)} style={{ position: 'relative', flex: 1, height: '100%' }}>
@@ -203,9 +203,12 @@ export default function Chart({ go }: ScreenProps) {
             </AnimatePresence>
           </div>
 
-          <div style={{ display: 'flex', gap: 6, marginBottom: 10 }}>
+          <div style={{ display: 'flex', marginBottom: 3 }}>
             {TABS.map((x, i) => (
-              <button key={x.id} onClick={() => pick(i)} aria-label={x.label} style={{ width: 6, height: 6, borderRadius: 3, background: i === tab ? t.color : 'rgba(179,166,196,0.35)' }} />
+              // 6px dot, 12 × 20 tap area
+              <button key={x.id} onClick={() => pick(i)} aria-label={x.label} style={{ width: 12, height: 20, display: 'grid', placeItems: 'center' }}>
+                <span style={{ width: 6, height: 6, borderRadius: 3, background: i === tab ? t.color : 'rgba(179,166,196,0.35)' }} />
+              </button>
             ))}
           </div>
           <div className="mono" style={{ display: 'flex', gap: 14, alignItems: 'center', fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-2)' }}>
@@ -215,16 +218,14 @@ export default function Chart({ go }: ScreenProps) {
         </div>
       </motion.div>
 
-      <div style={{ position: 'absolute', left: 0, right: 0, top: 690, display: 'flex', justifyContent: 'center' }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 34, display: 'flex', justifyContent: 'center' }}>
         <AnimatePresence mode="wait" initial={false}>
           <motion.button key={t.cta} className="chrome-cta" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}
-            onClick={() => { sfx.tap(); go(t.to) }}>
+            onClick={() => { sfx.tap(); if (t.to === 'sky') goFrom(go, 'sky', 'chart'); else go(t.to) }}>
             {t.cta} <span className="spark">✦</span>
           </motion.button>
         </AnimatePresence>
       </div>
-
-      <TabBar active="you" go={go} />
     </div>
   )
 }

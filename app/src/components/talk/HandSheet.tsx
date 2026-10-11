@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { PACKS, TALK_CARDS, TOPICS, cardById, cardOfTheDay, type TalkCard, type TalkTopic } from '../../data/talkCards'
-import { packInfo, type Pull } from '../../lib/talk'
+import { packInfo } from '../../lib/talk'
 import { talk, useTalk } from '../../lib/talk'
 import { useSession } from '../../lib/session'
 import { sfx } from '../../lib/sfx'
@@ -29,7 +29,7 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
   const { alignPlus } = useSession()
   const [tab, setTab] = useState<Tab>(talk.dailyAvailable() ? 'today' : 'hand')
   const [topic, setTopic] = useState<TalkTopic | 'all'>('all')
-  const [opening, setOpening] = useState<{ pack: string; cards: Pull[] } | null>(null)
+  const [opening, setOpening] = useState<{ pack: string } | null>(null)
   const [when, setWhen] = useState(WHENS[0])
   const daily = cardOfTheDay()
   const dailyOpen = talk.dailyAvailable()
@@ -58,8 +58,10 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
             <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-3)' }}>{owned.length} / {TALK_CARDS.length} COLLECTED</span>
           )}
         </div>
-        <div style={{ fontSize: 13, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 8 }}>
-          Play one to {them}. You both answer, and neither answer shows until you both have.
+        <div style={{ fontSize: 13, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 8, minHeight: 37 }}>
+          {tab === 'places' ? `Pick a time and a place. ${them} says yes or no.`
+            : tab === 'packs' ? 'Open a pack to add new cards to your hand.'
+            : `Play one to ${them}. You both answer, and neither answer shows until you both have.`}
         </div>
 
         {/* tabs */}
@@ -72,10 +74,10 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
           ))}
         </div>
 
-        <div style={{ flex: 1, overflowY: 'auto', marginTop: 14, paddingBottom: 30, scrollbarWidth: 'none' }}>
+        <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', margin: '14px -24px 0', padding: '0 24px 30px', scrollbarWidth: 'none' }}>
           {tab === 'today' && (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
-              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--align)' }}>✦ CARD OF THE DAY · FREE ✦</div>
+              <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}><span style={{ color: 'var(--align)' }}>✦</span> CARD OF THE DAY · FREE <span style={{ color: 'var(--align)' }}>✦</span></div>
               <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}>
                 <TalkCardFace card={daily} width={164} />
               </motion.div>
@@ -90,7 +92,7 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
 
           {tab === 'hand' && (
             <>
-              <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 10, scrollbarWidth: 'none' }}>
+              <div style={{ display: 'flex', gap: 6, overflowX: 'auto', margin: '0 -24px', padding: '0 24px 10px', scrollbarWidth: 'none' }}>
                 {(['all', ...Object.keys(TOPICS)] as (TalkTopic | 'all')[]).map((k) => (
                   <button key={k} onClick={() => { sfx.tap(); setTopic(k) }} style={{
                     flexShrink: 0, height: 30, padding: '0 12px', borderRadius: 999, fontSize: 12, whiteSpace: 'nowrap',
@@ -148,7 +150,7 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
                 const p = packInfo(id)
                 return (
                   <PackRow key={`${id}-${i}`} color={p.color} name={p.name} blurb={p.blurb} action="Open"
-                    onClick={() => { sfx.sparkle(); setOpening({ pack: id, cards: talk.openPack(id) }) }} />
+                    onClick={() => { sfx.sparkle(); setOpening({ pack: id }) }} />
                 )
               })}
               {!alignPlus && (
@@ -164,7 +166,7 @@ export default function HandSheet({ them, onPlay, onPlace, onBinder, onClose, on
       </motion.div>
 
       <AnimatePresence>
-        {opening && <PackOpen pack={packInfo(opening.pack)} cards={opening.cards} onDone={() => { setOpening(null); setTab('hand'); setTopic('all') }} />}
+        {opening && <PackOpen pack={packInfo(opening.pack)} cards={() => talk.openPack(opening.pack)} onDone={() => { setOpening(null); setTab('hand'); setTopic('all') }} onClose={() => setOpening(null)} />}
       </AnimatePresence>
     </>
   )
@@ -179,11 +181,11 @@ export function PackRow({ color, name, blurb, action, locked, onClick }: { color
       <div style={{ position: 'relative', flexShrink: 0, filter: `drop-shadow(0 0 10px ${color}88)`, opacity: locked ? 0.7 : 1 }}>
         <TalkCardBack width={46} color={color} />
       </div>
-      <div style={{ flex: 1 }}>
+      <div style={{ flex: 1, minWidth: 0 }}>
         <div className="serif italic" style={{ fontSize: 18, color: 'var(--label-1)' }}>{name}</div>
         <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 2 }}>{blurb}</div>
       </div>
-      <span style={{ padding: '7px 14px', borderRadius: 16, fontSize: 13, color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)' }}>{action}</span>
+      <span className="mono" style={{ flexShrink: 0, height: 30, padding: '0 12px', display: 'inline-flex', alignItems: 'center', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700, whiteSpace: 'nowrap', color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)' }}>{action.toUpperCase()}</span>
     </motion.button>
   )
 }

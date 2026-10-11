@@ -96,7 +96,7 @@ export function moonCard(date = new Date()): DeckEvent {
   const c = MOON_CARDS[m.phase]
   const sign = SIGNS[m.sign]
   return {
-    id: 'moon-peek', kind: 'Tonight’s moon', chips: [`Moon in ${sign.name}`, m.waxing ? 'Waxing' : 'Waning'], glyph: '☾',
+    id: 'moon-peek', kind: 'Moon', chips: [`Moon in ${sign.name}`, m.waxing ? 'Waxing' : 'Waning'], glyph: '☾',
     aura: aura(m.sign), caption: `MOON · ${sign.name.toUpperCase()} · ${Math.round(m.lit * 100)}% LIT`,
     moon: { lit: m.lit, waxing: m.waxing }, ...c,
   }

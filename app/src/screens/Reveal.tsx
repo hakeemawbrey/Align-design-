@@ -212,7 +212,7 @@ export default function Reveal({ go }: ScreenProps) {
       >
         <span>Seven days to speak</span>
         <span>·</span>
-        <button className="rv-link" onClick={(e) => { e.stopPropagation(); sfx.tap(); go('deck') }} style={{ fontSize: 14, padding: '2px 0' }}>
+        <button className="rv-link" onClick={(e) => { e.stopPropagation(); sfx.tap(); go('deck') }} style={{ fontSize: 14, padding: '10px 4px', margin: '-10px -4px' }}>
           Keep dealing
         </button>
       </motion.div>

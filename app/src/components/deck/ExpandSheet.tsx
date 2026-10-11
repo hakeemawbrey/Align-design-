@@ -12,18 +12,18 @@ interface Props {
   onRelease: () => void
 }
 
-const S = 0.567
+const S = 0.54
 
 /** S-06 — the card lifted into a detail sheet. */
 export default function ExpandSheet({ profile, onClose, onAlign, onRelease }: Props) {
   // no long-form copy for this person: use their card's own lines, never someone else's
+  const pr = pronoun(profile)
   const line = (k: 'pull' | 'push') => profile.reading.find((r) => r.kind === k)?.text ?? ''
   const ext = EXTENDED[profile.id] ?? {
     easy: line('pull'),
     rubs: line('push'),
-    now: profile.blurb ? `Open with their bio: ask about “${profile.blurb.split('.')[0]}.”` : 'Open with something specific from their card, not “hey”.',
+    now: profile.blurb ? `Open with ${pr.poss} bio: ask about “${profile.blurb.split('.')[0]}.”` : `Open with something specific from ${pr.poss} card, not “hey”.`,
   }
-  const pr = pronoun(profile)
   const sections: [string, string][] = [
     ['WHY YOU’D CLICK', ext.easy],
     ['WHERE YOU’LL CLASH', ext.rubs],
@@ -63,22 +63,19 @@ export default function ExpandSheet({ profile, onClose, onAlign, onRelease }: Pr
         initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
         transition={{ delay: 0.08, type: 'spring', stiffness: 260, damping: 26 }}
         style={{
-          position: 'absolute', left: 24, right: 24, top: 404, height: 254, borderRadius: 22, padding: 5,
+          position: 'absolute', left: 24, right: 24, top: 390, minHeight: 254, display: 'flex', borderRadius: 22, padding: 5,
           border: '1px solid rgba(179,166,196,0.45)',
           background: 'linear-gradient(160deg, rgba(40,26,78,0.75), rgba(30,18,64,0.85) 60%, rgba(60,30,110,0.8))',
           boxShadow: '0 20px 50px rgba(5,2,15,0.5)',
         }}
       >
-        <div style={{ height: '100%', borderRadius: 17, border: '1px solid rgba(179,166,196,0.3)', padding: '12px 15px 12px', position: 'relative' }}>
+        <div style={{ flex: 1, borderRadius: 17, border: '1px solid rgba(179,166,196,0.3)', padding: '12px 15px' }}>
           {sections.map(([h, t], i) => (
-            <motion.div key={h} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.18 + i * 0.08 }} style={{ marginBottom: 10 }}>
+            <motion.div key={h} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.18 + i * 0.08 }} style={{ marginTop: i ? 8 : 0 }}>
               <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.16em', color: 'var(--label-2)' }}>{h}</div>
-              <div style={{ marginTop: 3, fontSize: 13.5, lineHeight: 1.33, color: 'var(--label-1)' }}>{t}</div>
+              <div style={{ marginTop: 3, fontSize: 13, lineHeight: 1.35, color: 'var(--label-1)' }}>{t}</div>
             </motion.div>
           ))}
-          <div className="mono" style={{ position: 'absolute', left: 16, bottom: 10, fontSize: 9.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>
-            ALIGN&nbsp; · &nbsp;{profile.serial}/∞
-          </div>
         </div>
       </motion.div>
 
@@ -94,8 +91,8 @@ export default function ExpandSheet({ profile, onClose, onAlign, onRelease }: Pr
       >
         Align — flip the card <span className="spark">✦</span>
       </motion.button>
-      <button className="serif italic" onClick={() => onRelease()}
-        style={{ position: 'absolute', left: 95, right: 95, top: 756, height: 40, textAlign: 'center', fontSize: 16, color: 'var(--label-2)' }}>
+      <button onClick={() => onRelease()}
+        style={{ position: 'absolute', left: 95, right: 95, top: 756, height: 40, textAlign: 'center', fontSize: 15, color: 'var(--label-2)' }}>
         Release this card
       </button>
     </motion.div>

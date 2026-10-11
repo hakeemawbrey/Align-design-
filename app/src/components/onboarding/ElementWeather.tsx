@@ -14,7 +14,6 @@ export default function ElementWeather({ sun, next }: { sun: SignId; next: () =>
         title={<>You’re {el}.<br />Here’s your weather.</>}
         body={ELEMENT_ESSENCE[el]}
         bodyWidth={310}
-        bodyStyle={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.45 }}
       />
       <motion.div
         initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}

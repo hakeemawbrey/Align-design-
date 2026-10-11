@@ -2,6 +2,7 @@ import { memo } from 'react'
 import { motion } from 'framer-motion'
 import type { DeckEvent } from '../../data/draws'
 import { CARD_W, CARD_H } from './fx'
+import MoonPhase from '../sky/MoonPhase'
 
 interface Props {
   event: DeckEvent
@@ -59,7 +60,7 @@ function EventCardImpl({ event: e, draw, of, glow = true }: Props) {
           }} />
           <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(70% 60% at 50% 45%, transparent 30%, rgba(7,4,15,0.6) 100%)` }} />
           <div style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center' }}>
-            <Art id={e.id} color={e.color} light={e.light} />
+            <Art id={e.id} color={e.color} light={e.light} moon={e.moon} />
           </div>
           <div className="mono" style={{
             position: 'absolute', left: 8, bottom: 6, fontSize: 8, letterSpacing: '0.16em', color: 'var(--label-1)',
@@ -115,7 +116,7 @@ function EventCardImpl({ event: e, draw, of, glow = true }: Props) {
 }
 
 /** Overlay art for each event, drawn over its blurred aura. */
-function Art({ id, color, light }: { id: DeckEvent['id']; color: string; light: string }) {
+function Art({ id, color, light, moon }: { id: DeckEvent['id']; color: string; light: string; moon?: DeckEvent['moon'] }) {
   if (id === 'second-look') {
     return (
       <div style={{ position: 'relative', width: 180, height: 150 }}>
@@ -130,8 +131,11 @@ function Art({ id, color, light }: { id: DeckEvent['id']; color: string; light: 
   if (id === 'moon-peek') {
     return (
       <div style={{ position: 'relative', width: 180, height: 150 }}>
+        {/* tonight's real moon, at its real phase */}
         <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 3, repeat: Infinity }}
-          style={{ position: 'absolute', left: 52, top: 22, width: 76, height: 76, borderRadius: '50%', boxShadow: `inset -22px 6px 0 0 ${light}, 0 0 40px ${color}88`, transform: 'rotate(-20deg)' }} />
+          style={{ position: 'absolute', left: 50, top: 18, width: 80, height: 80, borderRadius: '50%', boxShadow: `0 0 40px ${color}88` }}>
+          <MoonPhase size={80} lit={moon?.lit ?? 0.3} waxing={moon?.waxing ?? false} />
+        </motion.div>
         <svg width="180" height="150" viewBox="0 0 180 150" style={{ position: 'absolute', inset: 0 }}>
           <path d="M62 124 Q90 102 118 124 Q90 146 62 124 Z" fill="rgba(11,6,32,0.4)" stroke={light} strokeWidth="1.5" />
           <circle cx="90" cy="124" r="6" fill={light} />

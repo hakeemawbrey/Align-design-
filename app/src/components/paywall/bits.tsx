@@ -7,15 +7,15 @@ export function CheckStamp({ delay, size = 22 }: { delay: number; size?: number 
       initial={{ scale: 0, rotate: -40, opacity: 0 }}
       animate={{ scale: 1, rotate: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 520, damping: 16, delay }}
-      style={{ flex: 'none', filter: 'drop-shadow(0 0 6px rgba(242,199,92,0.55))' }}>
+      style={{ flex: 'none', filter: 'drop-shadow(0 0 6px rgba(248,237,255,0.5))' }}>
       <defs>
-        <linearGradient id="pw-gold" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#fff4cf" />
-          <stop offset="0.45" stopColor="#f2c75c" />
-          <stop offset="1" stopColor="#b88a2c" />
+        <linearGradient id="pw-pearl" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#f8edff" />
+          <stop offset="0.45" stopColor="#fff7ec" />
+          <stop offset="1" stopColor="#eaf4ff" />
         </linearGradient>
       </defs>
-      <circle cx="12" cy="12" r="11" fill="url(#pw-gold)" />
+      <circle cx="12" cy="12" r="11" fill="url(#pw-pearl)" />
       <motion.path d="M6.8 12.4l3.4 3.3 7-7.4" fill="none" stroke="#3a2c4e" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"
         initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.28, delay: delay + 0.14, ease: 'easeOut' }} />
     </motion.svg>

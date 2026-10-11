@@ -35,8 +35,8 @@ export function NotifStar({ pulse = 0, onClick }: { pulse?: number; onClick?: ()
       {unread > 0 && (
         <span className="mono" style={{
           position: 'absolute', top: 6, right: 6, minWidth: 16, height: 16, borderRadius: 8, padding: '0 4px',
-          display: 'grid', placeItems: 'center', fontSize: 9, fontWeight: 700, color: '#fff',
-          background: 'var(--rub)', boxShadow: '0 0 8px rgba(232,98,138,0.8)', border: '1.5px solid var(--void)',
+          display: 'grid', placeItems: 'center', fontSize: 9, fontWeight: 700, color: 'var(--chrome-ink)',
+          background: 'var(--chrome)', boxShadow: '0 0 8px rgba(248,237,255,0.45)', border: '1.5px solid var(--void)',
         }}>{unread}</span>
       )}
     </motion.button>

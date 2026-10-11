@@ -38,6 +38,7 @@ const CHAPTERS: Chapter[] = [
       `You get ${FREE} cards a night, in draws of ${PEOPLE_PER_DRAW}. Align+ gets ${PLUS}.`,
       'Swipe right to align. Swipe left to release.',
       `Hold a card to peek at the person behind it. ${PEEKS_PER_NIGHT} peeks a night, ${PEEKS_PER_WEEK_PLUS} a week with Align+.`,
+      'The middle event card is tonight’s real moon. Its phase decides what it does, so it changes every night.',
       'A new deal lands at 11:11 every night.',
     ],
     art: <Fan />, to: 'deck', cta: 'Go to tonight’s deck',
@@ -59,7 +60,7 @@ const CHAPTERS: Chapter[] = [
       'Chats fade if nobody talks. Say something before the bar runs out.',
       'Every new match gives you a pack.',
     ],
-    art: <Words items={[['✦ MUTUAL ALIGN ✦', GOLD]]} />, to: 'matches', cta: 'See your matches',
+    art: <Words items={[['✦ MUTUAL', 'var(--align)'], ['ALIGN ✦', 'var(--align)']]} />, to: 'matches', cta: 'See your matches',
   },
   {
     id: 'hand', numeral: 'IV', title: 'Your hand', gist: 'The fanned-cards button holds what you can play. It’s on your deck and in every chat.',
@@ -130,7 +131,7 @@ const CHAPTERS: Chapter[] = [
       'A starter box when you join, then 3 real packs shipped every season. Scan them into your binder.',
       'Block any sign. Private Align events.',
     ],
-    art: <Words items={[['ALIGN+ ✦', GOLD]]} />, to: 'paywall', cta: 'See Align+',
+    art: <Words items={[['ALIGN+ ✦', 'var(--label-1)']]} />, to: 'paywall', cta: 'See Align+',
   },
 ]
 
@@ -156,7 +157,7 @@ export default function HowToPlay({ go }: ScreenProps) {
         <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
 
-      <div style={{ position: 'absolute', inset: 0, top: 96, overflowY: 'auto', padding: '8px 24px 120px', scrollbarWidth: 'none' }}>
+      <div style={{ position: 'absolute', inset: 0, top: 96, overflowY: 'auto', padding: '8px 24px 120px', scrollbarWidth: 'none', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 20px)', maskImage: 'linear-gradient(to bottom, transparent 0, #000 20px)' }}>
         <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>THE RULEBOOK</div>
         <div className="h-display" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>How to play Align</div>
         <div style={{ fontSize: 14, color: 'var(--label-2)', marginTop: 8, lineHeight: 1.4 }}>
@@ -167,7 +168,7 @@ export default function HowToPlay({ go }: ScreenProps) {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 16 }}>
           {CHAPTERS.map((c) => (
             <button key={c.id} onClick={() => jump(c.id)} style={{
-              height: 28, padding: '0 10px', borderRadius: 14, fontSize: 12,
+              height: 30, padding: '0 11px', borderRadius: 999, fontSize: 12,
               color: open === c.id ? 'var(--chrome-ink)' : 'var(--label-1)',
               background: open === c.id ? 'var(--chrome)' : 'rgba(48,32,92,0.6)', border: '1px solid rgba(179,166,196,0.25)',
             }}>
@@ -183,7 +184,7 @@ export default function HowToPlay({ go }: ScreenProps) {
               <div key={c.id} ref={(el) => { refs.current[c.id] = el }} style={{
                 borderRadius: 18, overflow: 'hidden', scrollMarginTop: 12,
                 background: isOpen ? 'linear-gradient(170deg, rgba(64,40,124,0.92), rgba(30,18,64,0.92))' : 'rgba(36,22,74,0.75)',
-                border: `1px solid ${isOpen ? 'rgba(242,213,138,0.55)' : 'rgba(179,166,196,0.18)'}`,
+                border: `1px solid ${isOpen ? 'rgba(248,237,255,0.42)' : 'rgba(179,166,196,0.18)'}`,
               }}>
                 <button onClick={() => { sfx.tap(); setOpen(isOpen ? null : c.id) }}
                   style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '14px 16px', textAlign: 'left' }}>
@@ -206,7 +207,7 @@ export default function HowToPlay({ go }: ScreenProps) {
                       ))}
                       {c.cta && (
                         <button className="mono" onClick={() => tryIt(c)}
-                          style={{ marginTop: 14, height: 30, padding: '0 12px', borderRadius: 15, fontSize: 9.5, letterSpacing: '0.14em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
+                          style={{ marginTop: 14, height: 30, padding: '0 12px', borderRadius: 999, fontSize: 9.5, letterSpacing: '0.16em', fontWeight: 700, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>
                           {c.cta.toUpperCase()} ›
                         </button>
                       )}

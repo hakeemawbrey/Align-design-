@@ -33,7 +33,7 @@ export default function NoticeBanner({ go }: { go: (id: ScreenId) => void }) {
           style={{
             position: 'absolute', left: 14, right: 14, top: 52, zIndex: 90, padding: '12px 16px', borderRadius: 18,
             display: 'flex', alignItems: 'center', gap: 12, textAlign: 'left',
-            background: 'rgba(30,18,64,0.94)', border: '1px solid rgba(242,199,92,0.6)', boxShadow: '0 0 30px rgba(242,199,92,0.35), 0 12px 30px rgba(0,0,0,0.5)',
+            background: 'rgba(30,18,64,0.94)', border: '1px solid rgba(248,237,255,0.4)', boxShadow: '0 0 30px rgba(248,237,255,0.18), 0 12px 30px rgba(0,0,0,0.5)',
           }}>
           <span style={{ fontSize: 22, color: '#f2c75c' }}>✦</span>
           <span style={{ flex: 1 }}>

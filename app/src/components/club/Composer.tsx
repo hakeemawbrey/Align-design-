@@ -37,19 +37,19 @@ export default function Composer({ prompt, listening, onPost, onClose }: Props) 
         key="scrim"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}
         onClick={() => { sfx.tap(); onClose() }}
-        style={{ position: 'absolute', inset: 0, zIndex: 50, background: 'rgba(8,4,24,0.6)', backdropFilter: 'blur(3px)', WebkitBackdropFilter: 'blur(3px)' }}
+        style={{ position: 'absolute', inset: 0, zIndex: 50, background: 'rgba(5,2,15,0.6)', backdropFilter: 'blur(3px)', WebkitBackdropFilter: 'blur(3px)' }}
       />
       <motion.div
         key="sheet"
         initial={{ y: 420 }} animate={{ y: 0 }} exit={{ y: 420 }}
         transition={{ type: 'spring', stiffness: 360, damping: 36 }}
         style={{
-          position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 51, padding: '10px 20px 40px',
+          position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 51, padding: '12px 24px 40px',
           borderRadius: '26px 26px 0 0', background: 'linear-gradient(180deg, #2a1a52 0%, #1d1240 100%)',
           border: '1px solid rgba(179,166,196,0.2)', borderBottom: 0, boxShadow: '0 -20px 50px rgba(0,0,0,0.5)',
         }}
       >
-        <div style={{ width: 38, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.35)', margin: '0 auto 14px' }} />
+        <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.35)', margin: '0 auto 14px' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)' }}>To the Taurus room</span>
           <span className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)' }}>{listening} listening</span>
@@ -90,12 +90,14 @@ export default function Composer({ prompt, listening, onPost, onClose }: Props) 
             whileHover={ok ? { scale: 1.04 } : undefined}
             whileTap={{ scale: 0.94 }}
             animate={{
-              background: ok ? 'rgba(242,199,92,1)' : 'rgba(52,35,95,0.9)',
-              color: ok ? '#3a2a08' : '#7d6f94',
-              boxShadow: ok ? '0 0 18px rgba(242,199,92,0.5)' : '0 0 0 rgba(0,0,0,0)',
+              color: ok ? '#3a2c4e' : '#7d6f94',
+              boxShadow: ok ? '0 0 18px rgba(248,237,255,0.45)' : '0 0 0 rgba(0,0,0,0)',
             }}
             className="serif italic"
-            style={{ height: 38, padding: '0 20px', borderRadius: 19, fontSize: 17, fontWeight: 500 }}
+            style={{
+              height: 38, padding: '0 20px', borderRadius: 19, fontSize: 17, fontWeight: 500,
+              background: ok ? 'var(--chrome)' : 'rgba(52,35,95,0.9)',
+            }}
           >
             Post ✦
           </motion.button>

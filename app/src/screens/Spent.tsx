@@ -66,15 +66,15 @@ export default function Spent({ go }: ScreenProps) {
       ))}
 
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6 }}
-        className="mono" style={{ position: 'absolute', top: 466, left: 0, right: 0, textAlign: 'center', fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--align)' }}>
-        RESETS AT 11:11
+        className="mono" style={{ position: 'absolute', top: 466, left: 0, right: 0, textAlign: 'center', fontSize: 10.5, letterSpacing: '0.24em', color: 'var(--label-3)' }}>
+        <span style={{ color: 'var(--align)' }}>✦</span> RESETS AT 11:11 <span style={{ color: 'var(--align)' }}>✦</span>
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.6 }}
         className="h-display" style={{ position: 'absolute', top: 488, left: 0, right: 0, textAlign: 'center', fontSize: 34 }}>
         Your deck is spent
       </motion.div>
       <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }}
-        className="serif" style={{ position: 'absolute', top: 542, left: 40, right: 40, textAlign: 'center', fontSize: 16.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
+        style={{ position: 'absolute', top: 542, left: 40, right: 40, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
         Fifteen people and three events, gone in one sitting. A new deal lands at 11:11. Align+ deals you 45 a night.
       </motion.p>
 

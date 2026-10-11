@@ -39,7 +39,6 @@ export default function Dealbreakers({ picked, setPicked, next }: { picked: Pick
         title={<>What ends it<br />before it starts?</>}
         body="These go on your card. People choose you blind — give them the truth."
         bodyWidth={300}
-        bodyStyle={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.45 }}
       />
       <motion.div
         key={shake}

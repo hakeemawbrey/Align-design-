@@ -185,7 +185,7 @@ export default function Match({ go }: ScreenProps) {
         <button
           className="rv-link"
           onClick={(e) => { e.stopPropagation(); sfx.tap(); go('deck') }}
-          style={{ fontFamily: 'var(--sans)', fontSize: 14.5, padding: '4px 10px' }}
+          style={{ fontFamily: 'var(--sans)', fontSize: 14.5, padding: '9px 10px', margin: '-5px 0' }}
         >
           Keep dealing — she waits in matches
         </button>

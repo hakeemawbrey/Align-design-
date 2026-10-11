@@ -15,6 +15,7 @@ import { talk, useTalk } from '../lib/talk'
 import { binderNav } from '../lib/binderNav'
 import { useBinder } from '../lib/binder'
 import { TalkCardBack } from '../components/talk/TalkCardFace'
+import { goFrom } from '../components/you/origin'
 
 const SUN = SIGNS[ME.sign]
 const MOON = SIGNS[ME.moon]
@@ -65,7 +66,9 @@ export default function You({ go }: ScreenProps) {
   const { alignPlus, blockedSigns } = useSession()
   const { packs, owned, signs, venues, places } = useTalk()
   const { traded } = useBinder()
-  const packCount = packs.length + (talk.dailyPackAvailable() ? 1 : 0)
+  // matches the binder's Packs tab and the hand sheets; today's unclaimed drop is shown on its own
+  const packCount = packs.length
+  const dailyToClaim = talk.dailyPackAvailable()
   const [card, setCard] = useState<CardSide | null>(null)
   const [tile, setTile] = useState<TileId>('sign')
   const [scrolled, setScrolled] = useState(false)
@@ -110,7 +113,7 @@ export default function You({ go }: ScreenProps) {
             style={{
               position: 'relative', display: 'block', width: 'calc(100% - 48px)', margin: '18px 24px 0', height: 104, borderRadius: 16, textAlign: 'left',
               background: 'linear-gradient(120deg, rgba(74,46,140,0.9), rgba(36,20,76,0.9))',
-              border: '1px solid rgba(242,213,138,0.55)', boxShadow: '0 0 22px rgba(242,199,92,0.14)',
+              border: '1px solid rgba(248,237,255,0.38)', boxShadow: '0 0 22px rgba(248,237,255,0.08)',
             }}>
             {[0, 1, 2].map((i) => (
               <motion.div key={i} variants={{ rest: { rotate: (i - 1) * 10, x: 0 }, hover: { rotate: (i - 1) * 14, x: (i - 1) * 3 } }}
@@ -127,9 +130,9 @@ export default function You({ go }: ScreenProps) {
             <div className="mono" style={{
               position: 'absolute', left: 116, bottom: 14, height: 28, padding: '0 12px', borderRadius: 14, display: 'flex', alignItems: 'center',
               fontSize: 9.5, letterSpacing: '0.12em', fontWeight: 700,
-              color: packCount ? 'var(--chrome-ink)' : 'var(--label-1)', background: packCount ? 'var(--chrome)' : 'rgba(248,237,255,0.1)', boxShadow: packCount ? '0 0 12px rgba(248,237,255,0.45)' : 'none',
+              color: packCount || dailyToClaim ? 'var(--chrome-ink)' : 'var(--label-1)', background: packCount || dailyToClaim ? 'var(--chrome)' : 'rgba(248,237,255,0.1)', boxShadow: packCount || dailyToClaim ? '0 0 12px rgba(248,237,255,0.45)' : 'none',
             }}>
-              {packCount ? `OPEN PACKS · ${packCount} WAITING ›` : 'SEE YOUR CARDS ›'}
+              {packCount ? (dailyToClaim ? `${packCount} TO OPEN · 1 TO CLAIM ›` : `OPEN PACKS · ${packCount} WAITING ›`) : dailyToClaim ? 'CLAIM TODAY’S PACK ›' : 'SEE YOUR CARDS ›'}
             </div>
           </motion.button>
 
@@ -142,7 +145,7 @@ export default function You({ go }: ScreenProps) {
             <span className="serif" style={{ width: 38, height: 38, borderRadius: 19, display: 'grid', placeItems: 'center', fontSize: 17, color: 'var(--chrome-ink)', background: 'var(--chrome)' }}>?</span>
             <span style={{ flex: 1 }}>
               <span className="serif italic" style={{ display: 'block', fontSize: 17, color: 'var(--label-1)' }}>How to play</span>
-              <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 2 }}>The deal, your hand, packs, energy and trading</span>
+              <span style={{ display: 'block', fontSize: 12, color: 'var(--label-2)', marginTop: 2 }}>The deal, packs, energy and trading</span>
             </span>
             <Chevron />
           </motion.button>
@@ -151,9 +154,9 @@ export default function You({ go }: ScreenProps) {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 24px 8px' }}>
             <span className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)' }}>Your sky</span>
             <button className="eyebrow" onClick={() => { sfx.tap(); rowRef.current?.scrollBy({ left: 230, behavior: 'smooth' }) }}
-              style={{ fontSize: 9.5, color: 'var(--label-3)' }}>Scroll for more →</button>
+              style={{ fontSize: 9.5, color: 'var(--label-3)', padding: '10px 0', margin: '-10px 0' }}>Scroll for more →</button>
           </div>
-          <SkyRow rowRef={rowRef} tile={tile} onTile={(t) => { sfx.tap(); setTile(t); if (t === 'sky' || t === 'moon' || t === 'retro') go('sky'); if (t === 'calendar') go('calendar'); if (t === 'sign') go('chart') }} />
+          <SkyRow rowRef={rowRef} tile={tile} onTile={(t) => { sfx.tap(); setTile(t); if (t === 'sky' || t === 'moon' || t === 'retro') goFrom(go, 'sky', 'you'); if (t === 'calendar') goFrom(go, 'calendar', 'you'); if (t === 'sign') go('chart') }} />
 
           {/* your card */}
           <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '18px 24px 8px' }}>Your card</div>
@@ -184,9 +187,9 @@ export default function You({ go }: ScreenProps) {
                 Face down to strangers. It flips the night you both align.
               </div>
             </div>
-            <div className="mono" style={{ position: 'absolute', left: 150, right: 12, bottom: 12, display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.16em', fontWeight: 700 }}>
-              <button onClick={(e) => { e.stopPropagation(); openCard('flipped') }} style={{ color: LIME, letterSpacing: 'inherit' }}>EDIT CARD ›</button>
-              <button onClick={(e) => { e.stopPropagation(); sfx.tap(); go('block') }} style={{ color: 'var(--label-3)', letterSpacing: 'inherit' }}>BLOCKED · {blockedSigns.length} ›</button>
+            <div className="mono" style={{ position: 'absolute', left: 150, right: 12, bottom: 3, display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.16em', fontWeight: 700 }}>
+              <button onClick={(e) => { e.stopPropagation(); openCard('flipped') }} style={{ height: 30, color: LIME, letterSpacing: 'inherit' }}>EDIT CARD ›</button>
+              <button onClick={(e) => { e.stopPropagation(); sfx.tap(); go('block') }} style={{ height: 30, color: 'var(--label-3)', letterSpacing: 'inherit' }}>BLOCKED · {blockedSigns.length} ›</button>
             </div>
           </motion.div>
 
@@ -198,7 +201,7 @@ export default function You({ go }: ScreenProps) {
                   width: 22, height: 22, borderRadius: 11, display: 'grid', placeItems: 'center',
                   background: 'var(--chrome)', boxShadow: '0 0 12px rgba(248,237,255,0.45)',
                 }}>
-                  <svg width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="#3a2a08" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1.5 5.2 4.5 8 10.5 1.8" /></svg>
+                  <svg width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="var(--chrome-ink)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1.5 5.2 4.5 8 10.5 1.8" /></svg>
                 </span>
                 Align+ · Active <span className="spark">✦</span>
               </motion.button>
@@ -216,7 +219,7 @@ export default function You({ go }: ScreenProps) {
             background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)',
           }}>
             {APP_ROWS.map((r, i) => (
-              <motion.button key={r.label} onClick={() => { sfx.tap(); if (r.to) go(r.to) }}
+              <motion.button key={r.label} onClick={() => { sfx.tap(); if (r.to) goFrom(go, r.to, 'you') }}
                 whileHover={{ backgroundColor: 'rgba(52,35,95,0.6)' }} whileTap={{ backgroundColor: 'rgba(52,35,95,0.9)' }}
                 style={{
                   width: '100%', height: 46, display: 'flex', alignItems: 'center', padding: '0 14px 0 16px', textAlign: 'left',

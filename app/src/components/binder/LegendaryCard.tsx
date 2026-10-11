@@ -35,7 +35,7 @@ function LegendaryCardImpl({ card, width = TC_W, glow = true }: { card: ArtistCa
             <div style={{ position: 'absolute', top: 0, bottom: 0, width: '45%', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent)', animation: 'holo-sheen 3.2s ease-in-out infinite' }} />
             <div className="mono" style={{
               position: 'absolute', left: 8, top: 8, padding: '3px 7px', borderRadius: 999, fontSize: 6.5, letterSpacing: '0.18em', fontWeight: 700,
-              color: '#2a1a05', background: 'var(--gold-foil)', boxShadow: '0 0 10px rgba(242,199,92,0.7)',
+              color: 'var(--chrome-ink)', background: 'var(--chrome)', boxShadow: '0 0 10px rgba(248,237,255,0.6)',
             }}>✦ RARE</div>
           </div>
           <div style={{

@@ -81,7 +81,6 @@ export default function FaceLast({ sun, moon, rising, age, dealbreakers, next }:
         title="Your face comes last."
         body="Photos stay veiled until you both align. Until then, people read your sky — not your face."
         bodyWidth={318}
-        bodyStyle={{ marginTop: 8, fontSize: 15, lineHeight: 1.4 }}
       />
 
       <motion.div

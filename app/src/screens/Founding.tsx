@@ -5,7 +5,7 @@ import type { ScreenProps } from './types'
 import Backdrop from '../components/paywall/Backdrop'
 import Portal, { Sparkle4 } from '../components/paywall/Portal'
 import FoundingCard from '../components/paywall/FoundingCard'
-import { CheckStamp, CloseX } from '../components/paywall/bits'
+import { CheckStamp, Chevron } from '../components/paywall/bits'
 import Burst from '../components/reveal/Burst'
 import { ConfettiCanvas, useConfetti } from '../components/reveal/useConfetti'
 import { session } from '../lib/session'
@@ -37,7 +37,7 @@ const PCX = PX + PW / 2
 const PCY = PY + PH / 2
 /** founding card centre after it stamps down */
 const CX = 195
-const CY = 262
+const CY = 270
 
 const fade = (delay: number) => ({
   initial: { opacity: 0, y: 14 },
@@ -125,10 +125,10 @@ export default function Founding({ go }: ScreenProps) {
         {phase === 'offer' && (
           <motion.div key="offer" style={{ position: 'absolute', inset: 0, zIndex: 3 }}
             exit={{ opacity: 0, y: 12, transition: { duration: 0.35, ease: 'easeIn' } }}>
-            <CloseX side="left" onClick={() => { sfx.tap(); go('dealing') }} />
+            <Chevron onClick={() => { sfx.tap(); go('dealing') }} />
 
-            <motion.div {...fade(0.15)} style={{ position: 'absolute', top: 226, left: 0, right: 0, textAlign: 'center', fontSize: 12, letterSpacing: '0.34em', color: 'var(--label-1)', paddingLeft: '0.34em' }}>
-              ALIGN+
+            <motion.div {...fade(0.15)} className="eyebrow" style={{ position: 'absolute', top: 226, left: 0, right: 0, textAlign: 'center', letterSpacing: '0.2em', color: 'var(--label-3)', paddingLeft: '0.2em' }}>
+              Align+
             </motion.div>
             <motion.h1 {...fade(0.22)} className="h-display" style={{ position: 'absolute', top: 246, left: 0, right: 0, textAlign: 'center', fontSize: 34, whiteSpace: 'nowrap' }}>
               Stop rationing the stars.
@@ -155,7 +155,7 @@ export default function Founding({ go }: ScreenProps) {
             </div>
 
             {/* plans */}
-            <div style={{ position: 'absolute', top: 592, left: 24, right: 24, display: 'flex', gap: 14 }}>
+            <div style={{ position: 'absolute', top: 592, left: 38, width: 314, display: 'flex', gap: 7 }}>
               {PLANS.map((pl, i) => {
                 const sel = pl.id === plan
                 return (
@@ -167,7 +167,7 @@ export default function Founding({ go }: ScreenProps) {
                     whileTap={{ scale: 0.95 }}
                     onClick={() => pick(pl.id)}
                     style={{
-                      position: 'relative', flex: 1, height: 116, borderRadius: 16, textAlign: 'left', padding: '16px 16px 0',
+                      position: 'relative', flex: 1, height: 116, borderRadius: 16, textAlign: 'center', padding: '16px 10px 0',
                       background: sel ? 'linear-gradient(170deg, #45337a 0%, #34245f 100%)' : 'rgba(30,18,64,0.45)',
                       border: '1px solid rgba(179,166,196,0.28)', transition: 'background .25s',
                     }}>
@@ -184,16 +184,17 @@ export default function Founding({ go }: ScreenProps) {
                         initial={{ scale: 0, rotate: -12 }} animate={{ scale: 1, rotate: 0 }}
                         transition={{ type: 'spring', stiffness: 500, damping: 14, delay: 1.15 }}
                         style={{
-                          position: 'absolute', top: -13, left: 12, height: 24, padding: '0 10px', borderRadius: 999,
-                          display: 'grid', placeItems: 'center', background: 'var(--chrome)', color: 'var(--chrome-ink)',
-                          fontSize: 11.5, fontWeight: 600, boxShadow: '0 0 14px rgba(248,237,255,0.4)',
-                        }}>3 days free</motion.div>
+                          position: 'absolute', top: -9, left: '50%', x: '-50%', height: 18, padding: '0 9px', borderRadius: 999, whiteSpace: 'nowrap',
+                          display: 'grid', placeItems: 'center', background: 'var(--chrome)', backgroundSize: '200% 100%', animation: 'foil-sweep 3s linear infinite',
+                          color: 'var(--chrome-ink)', fontFamily: 'var(--mono)', fontSize: 7.5, fontWeight: 700, letterSpacing: '0.14em',
+                          boxShadow: '0 0 12px rgba(248,237,255,0.5)',
+                        }}>3 DAYS FREE</motion.div>
                     )}
                     <div style={{ opacity: sel ? 1 : 0.55, transition: 'opacity .25s' }}>
-                      <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--label-1)' }}>{pl.name}</div>
-                      <div className="serif italic" style={{ fontSize: 25, marginTop: 4, lineHeight: 1.1, color: 'var(--label-1)' }}>{pl.price}</div>
-                      <div style={{ fontSize: 12.5, marginTop: 6, color: 'var(--label-1)' }}>{pl.l1}</div>
-                      <div style={{ fontSize: 11, marginTop: 5, color: 'var(--label-2)' }}>Regular <s>{pl.was}</s></div>
+                      <div className="mono" style={{ fontSize: 8.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: sel ? 'var(--label-1)' : 'var(--label-3)' }}>{pl.name}</div>
+                      <div className="serif" style={{ fontSize: 25, marginTop: 8, lineHeight: 1.1, color: 'var(--label-1)' }}>{pl.price}</div>
+                      <div className="serif" style={{ fontSize: 13, marginTop: 4, color: 'var(--label-2)' }}>{pl.l1}</div>
+                      <div className="mono" style={{ fontSize: 8.5, letterSpacing: '0.04em', marginTop: 9, color: 'var(--label-3)' }}>REGULAR <s>{pl.was}</s></div>
                     </div>
                   </motion.button>
                 )
@@ -207,7 +208,7 @@ export default function Founding({ go }: ScreenProps) {
               whileHover={{ scale: 1.015, boxShadow: '0 0 44px rgba(248,237,255,0.55), inset 0 1px 0 rgba(255,255,255,0.9)' }}
               whileTap={{ scale: 0.95 }}
               onClick={claim}
-              style={{ position: 'absolute', left: 24, top: 724, width: 342, height: 58, fontSize: 20, overflow: 'hidden' }}>
+              style={{ position: 'absolute', left: 38, top: 724, overflow: 'hidden' }}>
               <motion.span aria-hidden
                 animate={{ x: [-200, 400] }} transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 1.6, ease: 'easeInOut', delay: 1.8 }}
                 style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: 70, background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.85), transparent)', pointerEvents: 'none' }} />
@@ -218,15 +219,16 @@ export default function Founding({ go }: ScreenProps) {
                 </motion.span>
               </AnimatePresence>
             </motion.button>
-            <motion.div {...fade(1.1)} style={{ position: 'absolute', top: 796, left: 0, right: 0, textAlign: 'center', fontSize: 11.5, color: 'var(--label-3)' }}>
-              {founding ? '3 days free, then $88.88 a year.' : '3 days free, then $14.44 a month.'} Restore purchases · Terms
+            <motion.div {...fade(1.1)} style={{ position: 'absolute', top: 796, left: 0, right: 0, textAlign: 'center', fontSize: 11, color: 'var(--label-3)' }}>
+              {founding ? '3 days free, then $88.88 a year' : '3 days free, then $14.44 a month'}
+              <span style={{ margin: '0 7px' }}>·</span>Restore purchase<span style={{ margin: '0 7px' }}>·</span>Terms
             </motion.div>
           </motion.div>
         )}
 
         {phase === 'claimed' && (
           <motion.div key="claimed" style={{ position: 'absolute', inset: 0, zIndex: 3 }}>
-            <motion.div {...fade(1.2)} className="eyebrow" style={{ position: 'absolute', top: 76, left: 0, right: 0, textAlign: 'center', color: 'var(--label-2)' }}>
+            <motion.div {...fade(1.2)} className="eyebrow" style={{ position: 'absolute', top: 70, left: 0, right: 0, textAlign: 'center', color: 'var(--label-2)' }}>
               Welcome to Align+
             </motion.div>
 
@@ -266,7 +268,7 @@ export default function Founding({ go }: ScreenProps) {
             <motion.button className="chrome-cta" {...fade(1.8)}
               whileHover={{ scale: 1.015 }} whileTap={{ scale: 0.95 }}
               onClick={() => { sfx.align(); go('dealing') }}
-              style={{ position: 'absolute', left: 24, top: 712, width: 342, height: 58, fontSize: 20 }}>
+              style={{ position: 'absolute', left: 38, top: 712 }}>
               Deal my first deck <span className="spark">✦</span>
             </motion.button>
             <motion.div {...fade(1.9)} style={{ position: 'absolute', top: 788, left: 0, right: 0, textAlign: 'center', fontSize: 11.5, color: 'var(--label-3)' }}>
