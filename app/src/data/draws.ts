@@ -1,4 +1,6 @@
 import { BONUS, COMETS, TONIGHT, type Profile } from './profiles'
+import { moonTonight, type PhaseId } from './moon'
+import { SIGNS } from './signs'
 
 /**
  * How a night of Align is dealt: draws of six — five people, then an event.
@@ -38,9 +40,67 @@ export interface DeckEvent {
   /** why it's in tonight's deal — the sky reason */
   why: string
   rarity: Rarity
+  /** what playing it does, when it borrows another event's effect (the daily moon card) */
+  effect?: EventId
+  /** peeks it adds, for peek effects */
+  peeks?: number
+  /** the real moon tonight, for the moon card's art */
+  moon?: { lit: number; waxing: boolean }
 }
 
 const aura = (sign: string) => `img/aura/${sign}.jpg`
+
+/**
+ * The moon card. It sits in the middle of every night's deal and follows the
+ * real moon, so it's different every night: eight phases, each with its own
+ * meaning and its own move in the deck.
+ */
+const MOON_CARDS: Record<PhaseId, Pick<DeckEvent, 'title' | 'what' | 'play' | 'pass' | 'why' | 'rarity' | 'effect' | 'peeks' | 'color' | 'light'>> = {
+  new: {
+    title: 'New Moon', what: 'A clean slate. Start the night over.', play: 'Shuffle back everyone you released and redraw up to five.',
+    pass: 'Keep your hand as it is.', why: 'The new moon is the start of the cycle. Good night for a fresh start.', rarity: 'Rare', effect: 'mulligan', color: '#9a7be0', light: '#d8c8ff',
+  },
+  'waxing-crescent': {
+    title: 'Waxing Crescent', what: 'Set an intention, then look a little closer.', play: 'Add a peek to tonight’s.',
+    pass: 'Save your curiosity for the match.', why: 'The moon is growing. Small, hopeful first steps go well tonight.', rarity: 'Common', effect: 'moon-peek', peeks: 1, color: '#b8a6ff', light: '#e6deff',
+  },
+  'first-quarter': {
+    title: 'First Quarter', what: 'Time to act. Someone outside your usual signs crosses.', play: 'Deal one extra card from beyond your chart.',
+    pass: 'Stick to your sky tonight.', why: 'Half lit and pushing forward. The first quarter rewards a bold move.', rarity: 'Uncommon', effect: 'comet', color: '#6ac8ff', light: '#c4ecff',
+  },
+  'waxing-gibbous': {
+    title: 'Waxing Gibbous', what: 'Almost full. See more before you decide.', play: 'Add two peeks to tonight’s.',
+    pass: 'Trust your first read.', why: 'Nearly full: a night for looking closely and refining.', rarity: 'Uncommon', effect: 'moon-peek', peeks: 2, color: '#f3b85a', light: '#ffe0a8',
+  },
+  full: {
+    title: 'Full Moon', what: 'Everything’s lit. Everyone sees you tonight.', play: 'Move your card to the top of three decks.',
+    pass: 'Stay where the stars put you.', why: 'The full moon is the brightest night of the month. Be seen.', rarity: 'Rare', effect: 'spotlight', color: '#ffd76a', light: '#fff4cf',
+  },
+  'waning-gibbous': {
+    title: 'Waning Gibbous', what: 'Gratitude. Someone you passed on deserves another look.', play: 'Bring back the last person you released.',
+    pass: 'Keep moving. They stay released.', why: 'Just past full: a night to look back at what you almost missed.', rarity: 'Uncommon', effect: 'second-look', color: '#e8628a', light: '#ffc2d4',
+  },
+  'last-quarter': {
+    title: 'Last Quarter', what: 'Let go of what isn’t working. Redraw.', play: 'Shuffle back everyone you released and redraw up to five.',
+    pass: 'Keep your hand. Let it be.', why: 'Half dark and fading. Good for releasing old patterns.', rarity: 'Uncommon', effect: 'mulligan', color: '#7f9cff', light: '#cdd8ff',
+  },
+  'waning-crescent': {
+    title: 'Waning Crescent', what: 'Rest and reflect. One quiet look.', play: 'Add a peek to tonight’s.',
+    pass: 'Rest. Tomorrow’s a new moon soon.', why: 'The moon is almost dark. Slow down and listen to your gut.', rarity: 'Common', effect: 'moon-peek', peeks: 1, color: '#8a7ab8', light: '#d6ccf0',
+  },
+}
+
+/** tonight's moon card, built from the real moon */
+export function moonCard(date = new Date()): DeckEvent {
+  const m = moonTonight(date)
+  const c = MOON_CARDS[m.phase]
+  const sign = SIGNS[m.sign]
+  return {
+    id: 'moon-peek', kind: 'Tonight’s moon', chips: [`Moon in ${sign.name}`, m.waxing ? 'Waxing' : 'Waning'], glyph: '☾',
+    aura: aura(m.sign), caption: `MOON · ${sign.name.toUpperCase()} · ${Math.round(m.lit * 100)}% LIT`,
+    moon: { lit: m.lit, waxing: m.waxing }, ...c,
+  }
+}
 
 export const EVENTS: Record<EventId, DeckEvent> = {
   'second-look': {
@@ -52,15 +112,8 @@ export const EVENTS: Record<EventId, DeckEvent> = {
     why: 'Venus turned retrograde on Saturday. Old attractions come back around until Nov 13.',
     rarity: 'Uncommon',
   },
-  'moon-peek': {
-    id: 'moon-peek', title: 'Lunar peek', kind: 'Lunar', chips: ['Moon in Leo', 'Waning'], glyph: '☾',
-    color: '#f39a3a', light: '#ffd7a0', aura: aura('leo'), caption: 'MOON · LEO · 27% LIT',
-    what: 'One more look behind a card tonight.',
-    play: 'Add a peek to tonight’s three.',
-    pass: 'Save your curiosity for the match.',
-    why: 'A Leo Moon likes to be looked at. Until Tuesday night, it looks back.',
-    rarity: 'Common',
-  },
+  // the middle card of every night: tonight's real moon (see MOON_CARDS below)
+  'moon-peek': moonCard(),
   mulligan: {
     id: 'mulligan', title: 'Mulligan', kind: 'The deal', chips: ['Redraw', 'Last card'], glyph: '⟲',
     color: '#f2c75c', light: '#fff4cf', aura: aura('taurus'), caption: 'END OF TONIGHT’S FIFTEEN',
