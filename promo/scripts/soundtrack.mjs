@@ -109,6 +109,7 @@ const s1 = CUES.typeS1;[...s1.text].forEach((c, i) => c !== ' ' && tick(s1.start
 const s7 = CUES.typeS7;[...s7.text].forEach((c, i) => c !== ' ' && tick(s7.start + i * s7.perChar, 0.04))
 birthTypedAt().forEach(t => tick(t, 0.09))
 CUES.whoosh.forEach(t => whoosh(t))
+;(CUES.whooshS7 || []).forEach(t => whoosh(t, 0.45, 0.11))
 CUES.pixels.forEach(([a, b]) => glitter(a, b))
 CUES.pops.forEach((t, i) => bell(t, [880, 987.77, 1108.73, 1318.51][i % 4], 0.05, 0.5, (i % 2 ? 0.3 : -0.3)))
 CUES.boom.forEach(t => boom(t))
