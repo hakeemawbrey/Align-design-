@@ -29,12 +29,14 @@ export function sceneTagline(stage, assets) {
   //    layer that is revealed by a soft mask rising from the bottom (22.40–23.00)
   const sky = fill(root, { background: 'transparent', overflow: 'hidden' })
   const space = spaceBackdrop(sky, 'aurora', { seed: 7, grain: 0.2, stars: 190 })
+  // deepen the shared mood: an indigo core so S7 reads as night sky, colour pushed to the rims
+  fill(sky, { background: 'radial-gradient(70% 62% at 50% 44%, rgba(9,4,26,0.72) 0%, rgba(9,4,26,0.5) 55%, rgba(9,4,26,0.12) 100%)' })
   // galaxy arc: a faint tilted spiral-arm of dust + stars sweeping over the top-left, prerendered once
   const GA = el('canvas', { position: 'absolute', left: '-240px', top: '-240px', width: (W + 480) + 'px', height: (H + 480) + 'px', mixBlendMode: 'screen', transformOrigin: '50% 60%' }, sky)
   GA.width = W + 480; GA.height = H + 480
   {
     const g = GA.getContext('2d'), r = rng(7707)
-    const gx = (W + 480) * 0.52, gy = (H + 480) * 1.08, RX = 1500, RY = 760, ROT = -0.16
+    const gx = (W + 480) * 0.56, gy = (H + 480) * 1.02, RX = 1450, RY = 980, ROT = -0.3
     const at = (a, off) => {
       const x = Math.cos(a) * (RX + off), y = Math.sin(a) * (RY + off * 0.5)
       return [gx + x * Math.cos(ROT) - y * Math.sin(ROT), gy + x * Math.sin(ROT) + y * Math.cos(ROT)]
@@ -47,7 +49,7 @@ export function sceneTagline(stage, assets) {
       const col = u < 0.5 ? [lerp(242, 232, u * 2), lerp(170, 98, u * 2), lerp(120, 160, u * 2)] : [lerp(232, 170, u * 2 - 1), lerp(98, 120, u * 2 - 1), lerp(160, 255, u * 2 - 1)]
       const rad = 90 + r() * 70
       const gr = g.createRadialGradient(x, y, 0, x, y, rad)
-      gr.addColorStop(0, `rgba(${col.map(Math.round)},${0.05 * fade})`); gr.addColorStop(1, `rgba(${col.map(Math.round)},0)`)
+      gr.addColorStop(0, `rgba(${col.map(Math.round)},${0.085 * fade})`); gr.addColorStop(1, `rgba(${col.map(Math.round)},0)`)
       g.fillStyle = gr; g.beginPath(); g.arc(x, y, rad, 0, 6.29); g.fill()
     }
     // star dust concentrated on the arm
@@ -60,19 +62,40 @@ export function sceneTagline(stage, assets) {
       g.beginPath(); g.arc(x, y, s, 0, 6.29); g.fill()
     }
   }
-  // aurora band: three long luminous ribbons behind the tagline, drifting and breathing
-  const RIB = [
-    { c: ['232,98,138', '180,92,255'], y: 0.47, h: 300, a: 0.55, rot: -7, sp: 0.35 },
-    { c: ['180,92,255', '120,120,255'], y: 0.55, h: 240, a: 0.5, rot: 5, sp: 0.28 },
-    { c: ['242,154,74', '232,98,138'], y: 0.62, h: 180, a: 0.38, rot: -3, sp: 0.42 },
-  ].map((b, i) => ({ ...b, ph: i * 2.1, e: el('div', { position: 'absolute', left: '-300px', width: (W + 600) + 'px', height: b.h + 'px', marginTop: -b.h / 2 + 'px', top: b.y * H + 'px', borderRadius: '50%', mixBlendMode: 'screen', filter: 'blur(26px)',
-    background: `linear-gradient(90deg, rgba(${b.c[0]},0) 0%, rgba(${b.c[0]},${b.a}) 22%, rgba(${b.c[1]},${b.a}) 62%, rgba(${b.c[1]},0) 100%)`,
-    WebkitMaskImage: 'radial-gradient(50% 50% at 50% 50%, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%)', maskImage: 'radial-gradient(50% 50% at 50% 50%, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%)' }, sky) }))
+  // aurora curtain: a canvas of vertical light-rays hanging from a slow wavy hem under the tagline —
+  //   rose/magenta at the hem, violet higher up, an amber kiss at the left; redrawn each frame
+  const AU = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'screen', filter: 'blur(3px)' }, sky)
+  AU.width = W / 2; AU.height = H / 2
+  const au = AU.getContext('2d')
+  const ar = rng(7171), RAYS = Array.from({ length: 240 }, (_, k) => ({ u: (k + ar()) / 240, h: 0.55 + ar() * 0.7, a: 0.35 + ar() * 0.65, ph: ar() * 6.28, sp: 0.6 + ar() * 1.4 }))
+  function drawAurora(t, k) {
+    au.clearRect(0, 0, AU.width, AU.height)
+    if (k <= 0) return
+    const w = AU.width, hh = AU.height
+    au.globalCompositeOperation = 'lighter'
+    RAYS.forEach(r => {
+      const x = r.u * w
+      const hem = hh * (0.73 + 0.07 * Math.sin(r.u * 5.2 + t * 0.45) + 0.035 * Math.sin(r.u * 13 - t * 0.8)) + (1 - k) * hh * 0.4
+      const env = Math.pow(Math.sin(Math.PI * clamp(r.u * 1.08 - 0.04, 0, 1)), 0.7)
+      const fl = r.a * (0.55 + 0.45 * Math.sin(t * r.sp + r.ph)) * env * k
+      const len = hh * 0.42 * r.h * (0.85 + 0.15 * Math.sin(t * 0.6 + r.ph))
+      const warm = clamp(1 - r.u * 3.2, 0, 1)
+      const c0 = warm > 0 ? `${Math.round(lerp(232, 242, warm))},${Math.round(lerp(98, 154, warm))},${Math.round(lerp(138, 74, warm))}` : '232,98,138'
+      const g = au.createLinearGradient(0, hem, 0, hem - len)
+      g.addColorStop(0, `rgba(255,214,226,${0.0})`)
+      g.addColorStop(0.04, `rgba(${c0},${0.34 * fl})`)
+      g.addColorStop(0.35, `rgba(196,92,230,${0.16 * fl})`)
+      g.addColorStop(1, 'rgba(140,90,255,0)')
+      au.fillStyle = g
+      au.fillRect(x - 2.2, hem - len, 4.4, len + 2)
+    })
+    au.globalCompositeOperation = 'source-over'
+  }
   // the bloom: a few hot nebula blobs that surge up from below during the entrance, then settle as glow
   const BLOOM = [
-    { c: '232,98,138', x: 0.30, r: 760, a: 0.7, y1: 1.02 },
-    { c: '180,92,255', x: 0.70, r: 820, a: 0.7, y1: 0.98 },
-    { c: '242,154,74', x: 0.52, r: 560, a: 0.5, y1: 1.10 },
+    { c: '232,98,138', x: 0.30, r: 760, a: 0.7, y1: 1.12 },
+    { c: '180,92,255', x: 0.70, r: 820, a: 0.7, y1: 1.10 },
+    { c: '242,154,74', x: 0.52, r: 560, a: 0.5, y1: 1.2 },
   ].map((b, i) => ({ ...b, i, e: el('div', { position: 'absolute', width: b.r * 2 + 'px', height: b.r * 2 + 'px', borderRadius: '50%', mixBlendMode: 'screen',
     background: `radial-gradient(closest-side, rgba(${b.c},${b.a}), rgba(${b.c},${b.a * 0.4}) 48%, rgba(${b.c},0) 100%)` }, sky) }))
   // dark scrim right behind the tagline so bone type keeps ≥7:1 against the band
@@ -200,16 +223,12 @@ export function sceneTagline(stage, assets) {
       space.update(t)
       GA.style.opacity = String(0.85 * ease.inOutQuad(prog(t, 22.6, 23.4)))
       GA.style.transform = `rotate(${(t - 22.4) * 0.9}deg) translateY(${(1 - rp) * 120}px)`
-      RIB.forEach((b, i) => {
-        const br = 0.78 + 0.22 * Math.sin(t * 1.1 + b.ph)
-        b.e.style.opacity = String(br * ease.inOutQuad(prog(t, 22.5 + i * 0.08, 23.1 + i * 0.08)))
-        b.e.style.transform = `translate(${Math.sin(t * b.sp + b.ph) * 120}px, ${Math.cos(t * b.sp * 0.8 + b.ph) * 26 + (1 - rp) * 260}px) rotate(${b.rot + Math.sin(t * 0.3 + b.ph) * 2.5}deg) scaleY(${1 + 0.12 * Math.sin(t * 0.7 + b.ph)})`
-      })
+      drawAurora(t, ease.inOutQuad(prog(t, 22.45, 23.15)))
       BLOOM.forEach(b => {
         const up = ease.outCubic(prog(t, 22.4 + b.i * 0.05, 23.1 + b.i * 0.05))
         const y = lerp(1.55, b.y1, up) * H - b.r + Math.cos(t * 0.5 + b.i) * 30
         const x = b.x * W - b.r + Math.sin(t * 0.4 + b.i * 2) * 70
-        b.e.style.opacity = String(lerp(1, 0.6, prog(t, 23.0, 23.8)))
+        b.e.style.opacity = String(lerp(0.9, 0.32, ease.inOutQuad(prog(t, 22.9, 23.7))))
         b.e.style.transform = `translate(${x}px, ${y}px) scale(${lerp(0.7, 1, up)})`
       })
       tScrim.style.opacity = String(ease.inOutQuad(prog(t, 22.45, 22.85)) * (1 - ease.inOutQuad(prog(t, 24.1, 24.5)) * 0.4))
