@@ -118,6 +118,8 @@ CUES.boom.forEach(t => boom(t))
 CUES.click.forEach(t => { tick(t, 0.25); bell(t + 0.01, 1760, 0.04, 0.3) })
 CUES.deal.forEach(t => { tick(t + 0.25, 0.07); whoosh(t + 0.15, 0.22, 0.06) })
 CUES.tuck.forEach(t => tick(t + 0.2, 0.03))
+;(CUES.stamp || []).forEach(t => { boom(t, 0.12); bell(t + 0.05, 880, 0.05, 1.4); bell(t + 0.12, 1318.51, 0.04, 1.4) })
+;(CUES.sign || []).forEach(t => whoosh(t + 0.25, 0.4, 0.07))
 // foil sweep: rising shimmer of high bells
 CUES.foil.forEach(t0 => { for (let k = 0; k < 9; k++) bell(t0 + k * 0.07, [1174.66, 1318.51, 1479.98, 1760, 1975.53, 2349.32, 2637.02, 2959.96, 3520][k], 0.022, 0.6, k / 4 - 1) })
 CUES.land.forEach((t, i) => { boom(t, 0.2); bell(t, [587.33, 659.25][i % 2], 0.06, 1.2) })

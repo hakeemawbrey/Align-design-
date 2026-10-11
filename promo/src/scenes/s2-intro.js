@@ -65,7 +65,7 @@ export function sceneIntro(stage) {
   })
   const dot = mk('•', { color: C.rub, fontSize: '30px' })
   const wDucing = mk('ducing')
-  const wAlign = mk('&nbsp;<span style="font-family:' + SERIF.replace(/"/g, "'") + ';font-style:italic;font-size:1.16em;letter-spacing:0;padding-right:0.06em">Align</span>', { color: C.rub })
+  const wAlign = mk('&nbsp;<span style="font-family:' + SERIF.replace(/"/g, "'") + ';font-style:italic;font-size:1.16em;letter-spacing:0;padding-right:0.03em">Align</span>', { color: C.rub })
   const rb = mk('}', { padding: `0 0 8px ${BR_R}px` })
   const arrL = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(26,16,51,0.22)' }, mid, '⟵')
   const arrR = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(26,16,51,0.22)' }, mid, '⟶')
@@ -94,7 +94,7 @@ export function sceneIntro(stage) {
       wIn: sp(tt, T.wIn) * collapse, wYour: sp(tt, T.wYour) * collapse, wStars: sp(tt, T.wStars) * collapse,
       wIntro: b, wDucing: b, dot: (1 - clamp(openIn)) * b, wAlign: sp(tt, T.align, 0.5),
     }
-    const margin = CHIP_MARGIN * (1 - close)
+    const margin = CHIP_MARGIN * (1 - close) * clamp(b)
     const w = natural.lb + natural.rb + margin * 2 + open * CHIP_W +
       Object.entries(f).reduce((a, [k, v]) => a + natural[k] * clamp(v, 0, 1.2), 0)
     return { f, open, close, margin, w }
@@ -200,7 +200,7 @@ export function fxMound(ctx, t, { start, dur, seed = 5, size = 40 }) {
   // 40 → 20 → 10px, each step held 2 frames, landing on s3's first frame (frame 206 = 6.867s)
   const fi = Math.round(t * 30), endF = Math.round((start + dur) * 30)   // endF = 206 (first s3 frame)
   const hill = ease.inOutQuad(prog(lt, 0, 0.5))
-  const flood = fi >= endF - 5 ? 1 : ease.inOutCubic(prog(lt, dur - 0.48, dur - 0.15))
+  const flood = fi >= endF - 5 ? 1 : ease.inOutCubic(prog(lt, dur - 0.55, dur - 0.15))
   if (flood >= 1 && g) {
     const fine = fi >= endF - 2 ? 10 : fi >= endF - 4 ? 20 : size
     const gf = thermalGrid(fine) || g
@@ -209,8 +209,9 @@ export function fxMound(ctx, t, { start, dur, seed = 5, size = 40 }) {
     ctx.restore()
     return
   }
-  const width = lerp(1.5, 6.5, hill) + 42 * flood
-  const height = lerp(1, 7.5, hill) + rows * 1.7 * flood
+  // sized so the frame only just fills as flood → 1 (no early saturation → no 2-frame jump)
+  const width = lerp(1.5, 6.5, hill) + 26 * flood
+  const height = lerp(1, 7.5, hill) + rows * 1.5 * flood
   for (let cx = 0; cx < cols; cx++) {
     const dx = (cx + 0.5 - cols / 2) / width
     const env = Math.exp(-dx * dx)

@@ -65,7 +65,7 @@ export function sceneDeck(stage) {
 
   // "✦ ALIGNED" stamp + gilded glow on the front (Juniper) card once the foil has passed
   const stamp = el('div', {
-    position: 'absolute', right: '7%', top: '4.5%', padding: '12px 22px 12px 18px', borderRadius: '14px',
+    position: 'absolute', right: '6%', top: '30%', padding: '12px 22px 12px 18px', borderRadius: '14px',
     background: 'linear-gradient(100deg, #f7f1fb, #fdf6e6 55%, #eef3fb)', color: C.ink, fontFamily: MONO, fontSize: '40px',
     letterSpacing: '0.2em', whiteSpace: 'nowrap', lineHeight: 1, opacity: 0, transformOrigin: '70% 50%',
     boxShadow: '0 10px 24px rgba(11,6,32,0.45)',
@@ -101,7 +101,8 @@ export function sceneDeck(stage) {
           if (c.kind === 'rev' && cards[j].kind === 'behind') continue
           d += e[j]
         }
-        const s = S0 * 1400 / (1400 + Zd * d)
+        // first card settles a hair after resolving out of the dots (keeps the hand-off alive)
+        const s = S0 * 1400 / (1400 + Zd * d) * (i === 0 ? lerp(1.015, 1, ease.outCubic(prog(t, 17.42, 18.1))) : 1)
         // fanned trail (quadratic, exits frame left) blends into a compact, saturating trail for the end card
         const sat = 1 - Math.exp(-d / 5)
         let x = baseX - lerp(A1 * d + B1 * d * d, 600 * sat, center)
