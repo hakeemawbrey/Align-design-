@@ -32,7 +32,80 @@ function grainURL(size = 256, seed = 7) {
   return c.toDataURL()
 }
 
-// ───────────────────────────────────────────────────── S3 · the veil lifts
+// ── the mystery card: Juniper (Libra) behind her aura veil, as in app VeilPhoto.tsx ──
+export const S3_FIRST = 6.867            // first visible S3 frame (frame 206)
+const LIFT = { a: 7.45, b: 8.55 }        // veil lift (app LIFT_S 1.25s, compressed to fit before the 8.5 shrink)
+const VPAD = { x: 96, y: 54 }            // veil canvas overscan so its blur never pulls in dark edges
+const VW = W + VPAD.x * 2, VH = H + VPAD.y * 2
+const VEIL_SRC = IMG + 'aura/libra.jpg'
+// placement of libra.jpg (640×585; crop its dark 12px border) inside the visible frame
+const VEIL_IMG = { sw: 628, sh: 572, h: 1300, top: -150 }
+
+/** cubic-bezier easing (same curve the app uses: [0.65, 0, 0.25, 1]) */
+function bezier(x1, y1, x2, y2) {
+  const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx
+  const cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by
+  return (x) => {
+    if (x <= 0) return 0
+    if (x >= 1) return 1
+    let u = x
+    for (let i = 0; i < 8; i++) { const fx = ((ax * u + bx) * u + cx) * u - x, d = (3 * ax * u + 2 * bx) * u + cx; if (Math.abs(fx) < 1e-6 || !d) break; u -= fx / d }
+    return ((ay * u + by) * u + cy) * u
+  }
+}
+const liftEase = bezier(0.65, 0, 0.25, 1)
+/** time at which the lift crosses p = 0.55 (the app's onPeak) */
+const LIFT_PEAK = (() => { let lo = 0, hi = 1; for (let i = 0; i < 40; i++) { const m = (lo + hi) / 2; if (liftEase(m) < 0.55) lo = m; else hi = m } return LIFT.a + lo * (LIFT.b - LIFT.a) })()
+const CAP = { eyebrow: 6.95, line: 7.05, out: 8.45 }   // caption beats (sound: eyebrow tick, line pop)
+
+const veilSrc = typeof document !== 'undefined' ? document.createElement('img') : null
+if (veilSrc) {
+  veilSrc.src = VEIL_SRC; veilSrc.decoding = 'sync'
+  Object.assign(veilSrc.style, { position: 'absolute', width: '1px', height: '1px', opacity: '0', pointerEvents: 'none', left: '-10px', top: '-10px' })
+  document.body.appendChild(veilSrc) // main.js waits for document images
+}
+let veilCache = null
+/** the static mystery-card veil (aura art, bloom, mauve vignette) as a VW×VH canvas; the
+ *  visible frame is the centre W×H crop at (VPAD.x, VPAD.y). S2's pixel mound samples this too. */
+export function veilCanvas() {
+  if (veilCache) return veilCache
+  if (!veilSrc || !veilSrc.complete || !veilSrc.naturalWidth) return null
+  const c = document.createElement('canvas'); c.width = VW; c.height = VH
+  const g = c.getContext('2d')
+  g.fillStyle = '#120a2a'; g.fillRect(0, 0, VW, VH)
+  // aura art, feathered at its sides so it melts into the indigo
+  const ih = VEIL_IMG.h, iw = ih * VEIL_IMG.sw / VEIL_IMG.sh
+  const ix = VW / 2 - iw / 2, iy = VPAD.y + VEIL_IMG.top
+  const o = document.createElement('canvas'); o.width = VW; o.height = VH
+  const og = o.getContext('2d')
+  og.filter = 'blur(7px) saturate(1.3) brightness(1.1)'
+  og.drawImage(veilSrc, 6, 2, VEIL_IMG.sw, VEIL_IMG.sh, ix, iy, iw, ih)
+  og.filter = 'none'
+  og.globalCompositeOperation = 'destination-in'
+  const fx = og.createLinearGradient(ix, 0, ix + iw, 0)
+  fx.addColorStop(0, 'rgba(0,0,0,0)'); fx.addColorStop(0.16, '#000'); fx.addColorStop(0.84, '#000'); fx.addColorStop(1, 'rgba(0,0,0,0)')
+  og.fillStyle = fx; og.fillRect(0, 0, VW, VH)
+  og.globalCompositeOperation = 'destination-in'
+  const fy = og.createLinearGradient(0, iy, 0, iy + ih)
+  fy.addColorStop(0, 'rgba(0,0,0,0)'); fy.addColorStop(0.1, '#000'); fy.addColorStop(0.92, '#000'); fy.addColorStop(1, 'rgba(0,0,0,0)')
+  og.fillStyle = fy; og.fillRect(0, 0, VW, VH)
+  g.drawImage(o, 0, 0)
+  // glow: a wide soft bloom of the same art
+  g.globalCompositeOperation = 'screen'
+  g.filter = 'blur(60px)'; g.globalAlpha = 0.7; g.drawImage(o, 0, 0)
+  g.filter = 'blur(18px)'; g.globalAlpha = 0.35; g.drawImage(o, 0, 0)
+  g.filter = 'none'; g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'
+  // the app's vignette: radial-gradient(70% 80% at 50% 40%, transparent 40%, rgba(77,26,73,0.6) 100%)
+  g.save()
+  g.translate(VW / 2, VPAD.y + H * 0.4); g.scale(1, (0.8 * H) / (0.7 * W))
+  const rg = g.createRadialGradient(0, 0, 0, 0, 0, 0.7 * W)
+  rg.addColorStop(0.4, 'rgba(77,26,73,0)'); rg.addColorStop(1, 'rgba(77,26,73,0.6)')
+  g.fillStyle = rg; g.fillRect(-VW, -VH * 3, VW * 2, VH * 6)
+  g.restore()
+  return (veilCache = c)
+}
+
+// ───────────────────────────────────────────────────── S3 · the mystery card reveals
 export function sceneVeil(stage) {
   const root = fill(stage, { background: C.void })
   const stars = makeStars(root, 90, 21)
@@ -55,7 +128,30 @@ export function sceneVeil(stage) {
   }, glintBox)
   const frame = el('div', { position: 'absolute', overflow: 'hidden', background: C.raised }, front)
   const real = img(frame, IMG + 'juniper.jpg', { left: '50%', top: '50%', width: '1920px', height: '2560px', objectFit: 'cover' })
-  const therm = img(frame, IMG + 'juniper.jpg', { left: '50%', top: '50%', width: '1920px', height: '2560px', objectFit: 'cover', filter: 'url(#thermal)' })
+  // the aura veil (mystery card) over the photo; dissolves upward from the bottom
+  const veil = el('div', { position: 'absolute', left: -VPAD.x + 'px', top: -VPAD.y + 'px', width: VW + 'px', height: VH + 'px', willChange: 'transform, filter' }, frame)
+  const veilCv = el('canvas', { position: 'absolute', left: 0, top: 0, width: VW + 'px', height: VH + 'px' }, veil)
+  veilCv.width = VW; veilCv.height = VH
+  let veilDrawn = false
+  // light seam riding the dissolve edge
+  const seam = el('div', {
+    position: 'absolute', left: '-10%', right: '-10%', top: 0, height: '200px', opacity: 0, pointerEvents: 'none', mixBlendMode: 'screen',
+    background: 'radial-gradient(50% 50% at 50% 50%, rgba(255,250,235,0.9) 0%, rgba(255,189,246,0.5) 35%, rgba(242,199,92,0.16) 60%, transparent 75%)',
+  }, frame)
+  // sparkle burst at the reveal peak (the app fires one on onPeak)
+  const SPK = (() => {
+    const r = rng(77)
+    return Array.from({ length: 14 }, (_, i) => ({
+      x: lerp(560, 1360, r()), y: lerp(90, 760, r()), s: lerp(18, 46, r()), d: r() * 0.22, rot: r() * 40 - 20, gold: i % 3 === 0,
+    }))
+  })()
+  const sparks = SPK.map((k) => {
+    const e = el('div', { position: 'absolute', left: (k.x - 50) + 'px', top: (k.y - 50) + 'px', width: '100px', height: '100px', opacity: 0, mixBlendMode: 'screen', pointerEvents: 'none' }, frame)
+    const col = k.gold ? '255,228,160' : '255,236,250'
+    e.innerHTML = `<svg viewBox="-50 -50 100 100" width="100" height="100" style="overflow:visible"><defs><radialGradient id="sg"><stop offset="0" stop-color="rgba(${col},0.9)"/><stop offset="1" stop-color="rgba(${col},0)"/></radialGradient></defs>` +
+      `<circle r="22" fill="url(#sg)"/><path d="M0,-50 C3,-6 6,-3 50,0 C6,3 3,6 0,50 C-3,6 -6,3 -50,0 C-6,-3 -3,-6 0,-50Z" fill="rgb(${col})"/></svg>`
+    return e
+  })
   const grain = el('div', {
     position: 'absolute', inset: 0, backgroundImage: `url(${grainURL()})`, backgroundSize: '256px 256px',
     mixBlendMode: 'overlay', opacity: 0.16, pointerEvents: 'none',
@@ -65,23 +161,46 @@ export function sceneVeil(stage) {
   img(back, A + 'card-back.png', { left: -BACK.w * DB / 2 + 'px', top: -BACK.h * DB / 2 + 'px', width: BACK.w * DB + 'px', height: BACK.h * DB + 'px' })
   // card back dims over the end of the push so it meets S4's darker halftone sky
   const backDim = el('div', { position: 'absolute', left: -BACK.w * DB / 2 + 'px', top: -BACK.h * DB / 2 + 'px', width: BACK.w * DB + 'px', height: BACK.h * DB + 'px', background: 'radial-gradient(closest-side, rgba(20,10,46,0.9), rgba(20,10,46,1))', opacity: 0, pointerEvents: 'none' }, back)
-  // concept line while the veil lifts (styled like the S7 captions)
+  // concept line over the mystery card (styled like the S7 captions)
   const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '440px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.55) 45%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, root)
-  const capBox = el('div', { position: 'absolute', left: '50%', bottom: '84px', transform: 'translateX(-50%)', textAlign: 'center', opacity: 0, whiteSpace: 'nowrap' }, root)
-  el('div', { fontFamily: MONO, fontSize: '20px', letterSpacing: '0.26em', color: 'rgba(255,246,234,0.85)', textShadow: '0 1px 12px rgba(11,6,32,0.7)', marginBottom: '14px', textTransform: 'uppercase' }, capBox, 'The veil')
-  el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '72px', lineHeight: 1.05, color: '#fff6ea', textShadow: '0 2px 30px rgba(11,6,32,0.75), 0 1px 3px rgba(11,6,32,0.6)' }, capBox, 'The veil lifts when you both align.')
+  const capBox = el('div', { position: 'absolute', left: '50%', bottom: '84px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
+  const eyebrow = el('div', { fontFamily: MONO, fontSize: '20px', letterSpacing: '0.26em', color: 'rgba(255,246,234,0.88)', textShadow: '0 1px 12px rgba(11,6,32,0.7)', marginBottom: '14px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Mystery card&nbsp;&nbsp;✦')
+  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '72px', lineHeight: 1.05, color: '#fff6ea', textShadow: '0 2px 30px rgba(11,6,32,0.75), 0 1px 3px rgba(11,6,32,0.6)', opacity: 0 }, capBox, 'A mystery card, until you both align.')
 
   return {
     start: 6.8, end: 10.02, root,
     update(t) {
-      // thermal → real, top-down soft wipe while the veil (blur) lifts
-      const wp = ease.inOutCubic(prog(t, 7.2, 8.2))
-      const edge = lerp(-30, 130, wp)
-      therm.style.webkitMaskImage = therm.style.maskImage = `linear-gradient(180deg, transparent ${edge - 25}%, #000 ${edge}%)`
-      real.style.filter = `blur(${lerp(26, 0, ease.outCubic(prog(t, 7.1, 8.3)))}px) saturate(${lerp(1.5, 1.05, wp)})`
+      // ── mystery card → reveal, exactly the app's VeilPhoto curves (p = 0 → 1 over LIFT) ──
+      if (!veilDrawn) { const vc = veilCanvas(); if (vc) { veilCv.getContext('2d').drawImage(vc, 0, 0); veilDrawn = true } }
+      const p = liftEase(prog(t, LIFT.a, LIFT.b))
+      // photo pulls into focus from completely unrecognisable
+      const pb = clamp(p / 0.85)
+      real.style.filter = `blur(${lerp(72, 0, 1 - Math.pow(1 - pb, 1.6))}px) saturate(${lerp(0.6, 1.08, p)})`
+      const liftScale = lerp(1.14, 1, p)
+      // veil: mask edge 0 → 135% from the bottom (transparent below edge−35%), drifts up 18%, blur grows
+      const edge = lerp(0, 135, p)
+      veil.style.display = p >= 1 ? 'none' : 'block'
+      veil.style.webkitMaskImage = veil.style.maskImage = p <= 0 ? 'none' : `linear-gradient(to top, transparent ${edge - 35}%, #000 ${edge}%)`
+      const hold = ease.inOutQuad(prog(t, S3_FIRST, LIFT.a + 0.3))
+      veil.style.transform = `translateY(${-H * 0.18 * p}px) scale(${1 + 0.025 * hold + 0.04 * p})`
+      veil.style.filter = p <= 0 ? 'none' : `blur(${lerp(0, 22, p)}px) brightness(${1 + 0.12 * Math.sin(Math.PI * clamp(p * 1.4))})`
+      // light seam sits in the middle of the soft edge (app: seamY = h·(1 − (p·1.35 − 0.175)) − seam/2)
+      const seamO = p < 0.08 ? p / 0.08 : p < 0.75 ? lerp(1, 0.9, (p - 0.08) / 0.67) : lerp(0.9, 0, (p - 0.75) / 0.25)
+      seam.style.opacity = String(p <= 0 ? 0 : seamO)
+      seam.style.transform = `translateY(${H * (1 - (p * 1.35 - 0.175)) - 100}px)`
+      // sparkle burst from the peak (p ≈ 0.55)
+      const pk = prog(t, LIFT_PEAK, LIFT_PEAK + 0.55)
+      SPK.forEach((k, i) => {
+        const q = prog(pk, k.d, k.d + 0.6)
+        const e = sparks[i]
+        if (q <= 0 || q >= 1) { e.style.opacity = '0'; return }
+        const sz = k.s / 50 * Math.sin(Math.PI * q)
+        e.style.opacity = String(Math.min(1, Math.sin(Math.PI * q) * 1.4))
+        e.style.transform = `rotate(${k.rot + q * 45}deg) scale(${sz})`
+      })
       // gentle push (capped: the source photo is small)
       // + a slow extra push through the caption hold so the frame never goes dead
-      const push = lerp(1.0, 1.03, ease.outQuad(prog(t, 6.86, 8.75))) * lerp(1, 1.05, ease.inOutQuad(prog(t, 8.0, 8.9)))
+      const push = liftScale * lerp(1.0, 1.03, ease.outQuad(prog(t, 6.86, 8.75))) * lerp(1, 1.05, ease.inOutQuad(prog(t, 8.0, 8.9)))
       const yShift = lerp(-360, -380, ease.outQuad(prog(t, 6.86, 8.75)))
       // shrink so the photo lands exactly in the real card's photo window
       const k = ease.inOutCubic(prog(t, 8.5, 9.08)) // k ≥ 0.99 by ~9.01
@@ -92,7 +211,7 @@ export function sceneVeil(stage) {
       frame.style.borderRadius = lerp(0, 14, k) + 'px'
       const imgScale = lerp(push, IMG_END_SCALE, k)
       const ty = lerp(yShift, IMG_END_TY, k)
-      for (const im of [real, therm]) im.style.transform = `translate(-50%,-50%) translateY(${ty}px) scale(${imgScale})`
+      real.style.transform = `translate(-50%,-50%) translateY(${ty}px) scale(${imgScale})`
       // grain crawls a new tile offset every frame; fades as the photo becomes the card
       const fi = Math.round(t * 30), gr = rng(fi * 131 + 17)
       grain.style.backgroundPosition = `${Math.floor(gr() * 256)}px ${Math.floor(gr() * 256)}px`
@@ -107,11 +226,14 @@ export function sceneVeil(stage) {
       glintBox.style.opacity = gp > 0 && gp < 1 ? String(Math.sin(Math.PI * gp) * 0.9 + 0.1) : '0'
       glint.style.transform = `translateX(${lerp(-260, BODY.w + 120, ease.inOutCubic(gp))}px) skewX(-24deg)`
       stars.style.opacity = String(prog(t, 8.85, 9.35))
-      // concept line 7.5 → 9.0, gone before the card clip opens
-      const eb = ease.outQuad(prog(t, 7.45, 7.8)) * (1 - ease.inQuad(prog(t, 8.45, 8.65)))
-      capBox.style.opacity = String(eb)
-      capBox.style.transform = `translateX(-50%) translateY(${(1 - ease.outCubic(prog(t, 7.45, 7.95))) * 14}px)`
-      scrim.style.opacity = String(eb)
+      // eyebrow pops first, then the line; both gone before the card clip opens
+      const out = 1 - ease.inQuad(prog(t, CAP.out, CAP.out + 0.2))
+      const e1 = ease.outQuad(prog(t, CAP.eyebrow, CAP.eyebrow + 0.22)), e2 = ease.outQuad(prog(t, CAP.line, CAP.line + 0.3))
+      eyebrow.style.opacity = String(e1 * out)
+      eyebrow.style.transform = `translateY(${(1 - ease.outCubic(prog(t, CAP.eyebrow, CAP.eyebrow + 0.4))) * 10}px)`
+      capLine.style.opacity = String(e2 * out)
+      capLine.style.transform = `translateY(${(1 - ease.outCubic(prog(t, CAP.line, CAP.line + 0.5))) * 14}px)`
+      scrim.style.opacity = String(Math.max(e1, e2) * out)
       backDim.style.opacity = String(0.8 * ease.inOutQuad(prog(t, 9.72, 9.92)))
       // flip 0→180 onto the card back, then push into the mark (handoff to S4's indigo sky)
       const a = 180 * ease.inOutCubic(prog(t, 9.6, 9.84))
