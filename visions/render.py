@@ -51,6 +51,7 @@ STYLE = {
     "contrast": 0.55,
     "bloom": 0.42,
     "local": 0.35,            # local contrast (large-radius unsharp on luminance)
+    "chroma_cap": 0.58,       # max chroma after the boost
     "warm_cap": 0.38,         # max chroma for reds/oranges before the boost
     "vignette": 0.32,
 }
@@ -125,7 +126,8 @@ def grade(im, S, item=None):
     l = a @ W
     day = float(np.median(l))  # bright daylight pictures need pushing further into night
     lo, hi = np.percentile(l, [1.5, 99.3])
-    a = np.clip((a - lo * 0.85) / max(hi - lo * 0.85, 0.2), 0, 1)
+    bp = lo * (0.85 + 0.15 * np.clip((0.55 - (hi - lo)) / 0.25, 0, 1))  # hazy pictures get the full stretch
+    a = np.clip((a - bp) / max(hi - bp, 0.2), 0, 1)
     med = float(np.median(a @ W))
     g = math.log(STYLE["median"] * item.get("exposure", 1.0)) / math.log(min(max(med, 0.03), 0.97))
     a = a ** float(np.clip(g, 0.55, 2.4))
@@ -150,8 +152,15 @@ def grade(im, S, item=None):
     k = item.get("tone", float(np.clip(auto, 0.18, 0.66)))
     # the ramp works on shadows and mids; light sources (lamps, moons, skin in candlelight)
     # keep some of their own colour, the way the reference keeps its orange skies
-    kk = k * (1 - 0.55 * np.clip((l - 0.55) / 0.45, 0, 1)) * (1 - 0.35 * skin)
+    chroma = a.max(2) - a.min(2)
+    spare = 0.55 * np.clip((l - 0.55) / 0.45, 0, 1) * np.clip((chroma - 0.12) / 0.2, 0, 1)
+    kk = k * (1 - spare) * (1 - 0.35 * skin)
     a = a * (1 - kk[..., None]) + ramp(l) * kk[..., None]
+    # daylight skies: a bright, cool top of frame reads as day; pull it down toward night
+    if day > 0.42:
+        rows = np.linspace(1, 0, S, dtype=np.float32)[:, None] ** 1.5
+        sky = np.clip((l - 0.45) / 0.4, 0, 1) * np.clip((a[..., 2] - a[..., 0] + 0.05) / 0.2, 0, 1) * rows
+        a *= (1 - 0.45 * np.clip((day - 0.42) / 0.2, 0, 1) * sky)[..., None]
     # S-curve for punch
     a = np.clip(a, 0, 1)
     a = a + STYLE["contrast"] * a * (1 - a) * (2 * a - 1)
@@ -160,10 +169,15 @@ def grade(im, S, item=None):
     chroma = a.max(2) - a.min(2)
     sat = 1 + (STYLE["saturation"] - 1) * np.clip(1 - chroma / 0.42, 0, 1)
     a = l[..., None] + (a - l[..., None]) * sat[..., None]
+    # cap chroma: no neon greens, acid limes or hard royal blues
+    chroma = a.max(2) - a.min(2)
+    cap = np.minimum(1, STYLE["chroma_cap"] / (chroma + 1e-4))
+    a = l[..., None] + (a - l[..., None]) * cap[..., None]
     a = np.clip(a, 0, 1)
     # bloom: blurred highlights screened back
     hl = np.clip((a - 0.62) / 0.38, 0, 1)
     hl *= (1 - 0.5 * skin)[..., None]  # faces don't bloom to chalk
+    hl *= float(np.clip(1 - (hl.mean() - 0.04) * 6, 0.35, 1))  # big bright areas (floodlit walls) barely bloom
     blur = np.asarray(Image.fromarray((hl * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(S / 45)),
                       np.float32) / 255
     a = 1 - (1 - a) * (1 - blur * STYLE["bloom"])

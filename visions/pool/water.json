@@ -16,7 +16,6 @@
     0.55,
     0.5
    ],
-   "pin": true,
    "note": "Aivazovsky, The Ninth Wave"
   },
   {
@@ -54,8 +53,8 @@
     0.5,
     0.45
    ],
-   "pin": true,
-   "note": "Kittelsen, N\u00f8kken (water sprite)"
+   "note": "Kittelsen, N\u00f8kken (water sprite)",
+   "exposure": 0.75
   },
   {
    "id": "wc-6883304",
@@ -129,24 +128,6 @@
     0.4
    ],
    "note": "Waterhouse, Undine"
-  },
-  {
-   "id": "wc-7715772",
-   "source": "commons",
-   "title": "John William Waterhouse A Mermaid",
-   "creator": "John William Waterhouse",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_A_Mermaid.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/John_William_Waterhouse_A_Mermaid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/John_William_Waterhouse_A_Mermaid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 825,
-   "h": 1200,
-   "file": "cache/water/cand/wc-7715772.jpg",
-   "focus": [
-    0.55,
-    0.45
-   ],
-   "note": "Waterhouse, A Mermaid"
   },
   {
    "id": "wc-696135",
@@ -741,24 +722,6 @@
     0.5
    ],
    "note": "Turner, Staffa, Fingal's Cave"
-  },
-  {
-   "id": "wc-15413734",
-   "source": "commons",
-   "title": "Elisabeth Jerichau Baumann havfruen",
-   "creator": "Elisabeth Baumann",
-   "license": "CC BY-SA 3.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Elisabeth_Jerichau_Baumann_havfruen.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Elisabeth_Jerichau_Baumann_havfruen.jpg/1920px-Elisabeth_Jerichau_Baumann_havfruen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Elisabeth_Jerichau_Baumann_havfruen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1454,
-   "file": "cache/water/cand/wc-15413734.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Elisabeth Baumann, Elisabeth Jerichau Baumann havfruen"
   }
  ]
 }

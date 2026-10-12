@@ -54,7 +54,6 @@
     0.5,
     0.5
    ],
-   "pin": true,
    "note": "Van Gogh, Starry Night over the Rhone"
   },
   {
@@ -329,24 +328,6 @@
    "note": "aurora behind bare trees (photo)"
   },
   {
-   "id": "wc-130672013",
-   "source": "commons",
-   "title": "Aurora borealis glowing over the boreal forest, Chisasibi, Quebec, Canada (06)",
-   "creator": "Carl Young",
-   "license": "CC BY-SA 4.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_glowing_over_the_boreal_forest,_Chisasibi,_Quebec,_Canada_(06).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Aurora_borealis_glowing_over_the_boreal_forest%2C_Chisasibi%2C_Quebec%2C_Canada_%2806%29.jpg/1920px-Aurora_borealis_glowing_over_the_boreal_forest%2C_Chisasibi%2C_Quebec%2C_Canada_%2806%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Aurora_borealis_glowing_over_the_boreal_forest%2C_Chisasibi%2C_Quebec%2C_Canada_%2806%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1275,
-   "file": "cache/stars/cand/wc-130672013.jpg",
-   "focus": [
-    0.6,
-    0.5
-   ],
-   "note": "aurora over a lodge (photo)"
-  },
-  {
    "id": "wc-167097430",
    "source": "commons",
    "title": "Aurora borealis at Earthquake Lake May 10 2024 Hebgen Lake RD CGNF USDA FS photo by Ellen Butler DSC 7719 (54147742447)",
@@ -452,44 +433,7 @@
     0.4,
     0.5
    ],
-   "pin": true,
    "note": "Matejko, Copernicus: Conversation with God"
-  },
-  {
-   "id": "wc-57367018",
-   "source": "commons",
-   "title": "The Pleiades MET DT5186",
-   "creator": "Elihu Vedder",
-   "license": "CC0",
-   "landing": "https://commons.wikimedia.org/wiki/File:The_Pleiades_MET_DT5186.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/The_Pleiades_MET_DT5186.jpg/1920px-The_Pleiades_MET_DT5186.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/The_Pleiades_MET_DT5186.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1257,
-   "file": "cache/stars/cand/wc-57367018.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Vedder, The Pleiades"
-  },
-  {
-   "id": "wc-76365119",
-   "source": "commons",
-   "title": "Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the",
-   "creator": "Vincent van Gogh",
-   "license": "CC0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg/1920px-Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1875,
-   "h": 2400,
-   "file": "cache/stars/cand/wc-76365119.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Van Gogh, Cafe Terrace at Night"
   },
   {
    "id": "wc-8108385",

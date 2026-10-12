@@ -19,25 +19,6 @@
    "note": "half moon, light and dark in balance"
   },
   {
-   "id": "ov-3dc8a8ab-7055-4c2b-bc91-047634cf8073",
-   "source": "openverse/wikimedia",
-   "title": "Metropolitan canova cupid psyche 02",
-   "creator": "Ad Meskens sculpture Antonio Canova",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=10841367",
-   "url": "https://api.openverse.org/v1/images/3dc8a8ab-7055-4c2b-bc91-047634cf8073/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Metropolitan_canova_cupid_psyche_02.jpg",
-   "w": 1280,
-   "h": 1447,
-   "file": "cache/signs/libra/ov-3dc8a8ab-7055-4c2b-bc91-047634cf8073.jpg",
-   "focus": [
-    0.5,
-    0.57
-   ],
-   "note": "Canova, Cupid and Psyche embrace",
-   "pin": true
-  },
-  {
    "id": "met-436722",
    "source": "met",
    "title": "Man Weighing Gold",
@@ -54,23 +35,6 @@
    ],
    "note": "Isenbrant, man holding a balance",
    "pin": true
-  },
-  {
-   "id": "aic-12876",
-   "source": "aic",
-   "title": "Diana and Endymion",
-   "creator": "Johann Michael Rottmayr (Austrian, 1654\u20131730)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/12876",
-   "url": "https://www.artic.edu/iiif/2/ab49fdd2-5acc-981e-f11e-c631bbd5487f/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1083,
-   "file": "cache/signs/libra/aic-12876.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Rottmayr, Diana embracing the sleeping Endymion"
   },
   {
    "id": "nasa-GSFC_20171208_Archive_e000637",
@@ -107,23 +71,6 @@
    "note": "La Hyre, Allegory of Music, harmony with the lute"
   },
   {
-   "id": "aic-44816",
-   "source": "aic",
-   "title": "Venus and Cupid",
-   "creator": "Luca Cambiaso (Italian, 1527\u20131585)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/44816",
-   "url": "https://www.artic.edu/iiif/2/b78bb8b2-48a8-6ccb-7c5d-2b301e06e35a/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1921,
-   "file": "cache/signs/libra/aic-44816.jpg",
-   "focus": [
-    0.72,
-    0.45
-   ],
-   "note": "Cambiaso, Venus and Cupid in candlelight"
-  },
-  {
    "id": "nasa-PIA10391",
    "source": "nasa",
    "title": "Interacting Galaxies",
@@ -139,23 +86,6 @@
     0.5
    ],
    "note": "spiral galaxy and its companion"
-  },
-  {
-   "id": "aic-226550",
-   "source": "aic",
-   "title": "Venus Healing Aeneas",
-   "creator": "Merry Joseph Blondel (French, 1781\u20131853)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/226550",
-   "url": "https://www.artic.edu/iiif/2/59511df1-03d0-aea4-369a-959669ccfe51/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 2128,
-   "file": "cache/signs/libra/aic-226550.jpg",
-   "focus": [
-    0.6,
-    0.35
-   ],
-   "note": "Blondel, Venus descends in light"
   },
   {
    "id": "ov-3fb57373-d14a-4420-a068-af889d990bd0",

@@ -16,7 +16,6 @@
     0.5,
     0.5
    ],
-   "pin": true,
    "note": "Friedrich, Two Men Contemplating the Moon"
   },
   {
@@ -362,7 +361,6 @@
     0.52,
     0.5
    ],
-   "pin": true,
    "note": "Vernet, harbour in moonlight"
   },
   {
@@ -583,23 +581,6 @@
    "note": "Homer, Kissing the Moon"
   },
   {
-   "id": "met-16577",
-   "source": "met",
-   "title": "Winter Scene in Moonlight",
-   "creator": "Henry Farrer",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/16577",
-   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT1541.jpg",
-   "w": 2400,
-   "h": 1888,
-   "file": "cache/moon/cand/met-16577.jpg",
-   "focus": [
-    0.6,
-    0.5
-   ],
-   "note": "Farrer, winter scene in moonlight"
-  },
-  {
    "id": "wc-33547819",
    "source": "commons",
    "title": "\u041b\u0443\u043d\u043d\u0430\u044f \u043d\u043e\u0447\u044c \u0410\u0439\u0432\u0430\u0437\u043e\u0432\u0441\u043a\u0438\u0439",
@@ -723,7 +704,8 @@
     0.45,
     0.5
    ],
-   "note": "Kaufmann, moonlit night over Venice"
+   "note": "Kaufmann, moonlit night over Venice",
+   "exposure": 0.85
   },
   {
    "id": "wc-53556767",

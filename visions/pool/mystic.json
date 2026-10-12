@@ -7,7 +7,6 @@
     0.283
    ],
    "zoom": 1.4,
-   "pin": true,
    "note": "Waterhouse, The Crystal Ball",
    "id": "wc-1173516",
    "source": "commons",
@@ -33,7 +32,8 @@
    "license": "Public domain",
    "landing": "https://commons.wikimedia.org/wiki/File:The_Magic_Circle_-_John_William_Waterhouse.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/The_Magic_Circle_-_John_William_Waterhouse.jpg/1920px-The_Magic_Circle_-_John_William_Waterhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/The_Magic_Circle_-_John_William_Waterhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/The_Magic_Circle_-_John_William_Waterhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "pin": true
   },
   {
    "file": "cache/mystic/cand/wc-1170865.jpg",
@@ -105,22 +105,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Gustave_Moreau_-_Orpheus_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
-   "file": "cache/mystic/cand/met-437153.jpg",
-   "focus": [
-    0.55,
-    0.407
-   ],
-   "zoom": 1.2,
-   "note": "Moreau, Oedipus and the Sphinx",
-   "id": "met-437153",
-   "source": "met",
-   "title": "Oedipus and the Sphinx",
-   "creator": "Gustave Moreau",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/437153",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-023.jpg"
-  },
-  {
    "file": "cache/mystic/cand/wc-1147033.jpg",
    "focus": [
     0.6,
@@ -162,7 +146,6 @@
    ],
    "zoom": 1.2,
    "tone": 0.25,
-   "pin": true,
    "note": "La Tour, Magdalen with mirror and candle",
    "id": "met-436839",
    "source": "met",
@@ -191,24 +174,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/La_Tour_-_La_Madeleine_%C3%A0_la_veilleuse_dite_La_Madeleine_Terff%2C_vers_1642_-_1644%2C_RF_1949_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
-   "file": "cache/mystic/cand/wc-153613.jpg",
-   "focus": [
-    0.35,
-    0.8
-   ],
-   "zoom": 1.2,
-   "tone": 0.25,
-   "note": "La Tour, candle and books detail",
-   "id": "wc-153613",
-   "source": "commons",
-   "title": "Georges de La Tour 008",
-   "creator": "Georges de La Tour",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Georges_de_La_Tour_008.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Georges_de_La_Tour_008.jpg/1920px-Georges_de_La_Tour_008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Georges_de_La_Tour_008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-  },
-  {
    "file": "cache/mystic/cand/wc-9519547.jpg",
    "focus": [
     0.55,
@@ -227,22 +192,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Hennig_Brand_%28Joseph_Wright%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
-   "file": "cache/mystic/cand/wc-17311451.jpg",
-   "focus": [
-    0.4,
-    0.65
-   ],
-   "note": "Rembrandt, Philosopher in Meditation",
-   "id": "wc-17311451",
-   "source": "commons",
-   "title": "Rembrandt - The Philosopher in Meditation (cleaned)",
-   "creator": "Rembrandt",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_The_Philosopher_in_Meditation_(cleaned).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Rembrandt_-_The_Philosopher_in_Meditation_%28cleaned%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Rembrandt_-_The_Philosopher_in_Meditation_%28cleaned%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-  },
-  {
    "file": "cache/mystic/cand/aic-21907.jpg",
    "focus": [
     0.6,
@@ -257,59 +206,6 @@
    "license": "public domain",
    "landing": "https://www.artic.edu/artworks/21907",
    "url": "https://www.artic.edu/iiif/2/b703b636-976c-b35b-8a8e-f8df3f5ba003/full/1686,/0/default.jpg"
-  },
-  {
-   "file": "cache/mystic/cand/wc-136249186.jpg",
-   "focus": [
-    0.5,
-    0.44
-   ],
-   "zoom": 1.3,
-   "note": "Abbott Thayer, Angel",
-   "id": "wc-136249186",
-   "source": "commons",
-   "title": "Abbott Handerson Thayer - Angel - SmithsonianFXD",
-   "creator": "Abbott Handerson Thayer",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg/1920px-Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-  },
-  {
-   "file": "cache/mystic/cand/wc-91889569.jpg",
-   "focus": [
-    0.55,
-    0.575
-   ],
-   "zoom": 1.2,
-   "tone": 0.25,
-   "note": "Schalcken, old man writing by candlelight",
-   "id": "wc-91889569",
-   "source": "commons",
-   "title": "Godfried Schalcken (1643-1706) (after) - An Old Man Writing a Book by Candlelight - 290274 - National Trust",
-   "creator": "Godfried Schalcken",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Godfried_Schalcken_(1643-1706)_(after)_-_An_Old_Man_Writing_a_Book_by_Candlelight_-_290274_-_National_Trust.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Godfried_Schalcken_%281643-1706%29_%28after%29_-_An_Old_Man_Writing_a_Book_by_Candlelight_-_290274_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Godfried_Schalcken_%281643-1706%29_%28after%29_-_An_Old_Man_Writing_a_Book_by_Candlelight_-_290274_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-  },
-  {
-   "file": "cache/mystic/cand/wc-104251205.jpg",
-   "focus": [
-    0.4,
-    0.556
-   ],
-   "zoom": 1.3,
-   "tone": 0.3,
-   "note": "Honthorst, old woman with candle",
-   "id": "wc-104251205",
-   "source": "commons",
-   "title": "Honthorst - En gammel kone, KMSsp380",
-   "creator": "Gerard van Honthorst",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Honthorst_-_En_gammel_kone,_KMSsp380.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Honthorst_-_En_gammel_kone%2C_KMSsp380.jpg/1920px-Honthorst_-_En_gammel_kone%2C_KMSsp380.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Honthorst_-_En_gammel_kone%2C_KMSsp380.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
    "file": "cache/mystic/cand/wc-1170880.jpg",
@@ -345,22 +241,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Eos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
-   "file": "cache/mystic/cand/met-436198.jpg",
-   "focus": [
-    0.55,
-    0.443
-   ],
-   "zoom": 1.3,
-   "note": "Diepenbeeck, Saint Cecilia",
-   "id": "met-436198",
-   "source": "met",
-   "title": "Saint Cecilia",
-   "creator": "Abraham van Diepenbeeck",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436198",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-22910-001.jpg"
-  },
-  {
    "file": "cache/mystic/cand/wc-17463762.jpg",
    "focus": [
     0.5,
@@ -383,7 +263,6 @@
     0.371
    ],
    "zoom": 1.3,
-   "pin": true,
    "note": "Frederick Sandys, Medea",
    "id": "wc-42530630",
    "source": "commons",
@@ -632,23 +511,6 @@
    "landing": "https://commons.wikimedia.org/wiki/File:Evelyn_De_Morgan_-_Angel_of_DeathFXD.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Evelyn_De_Morgan_-_Angel_of_DeathFXD.jpg/1920px-Evelyn_De_Morgan_-_Angel_of_DeathFXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Evelyn_De_Morgan_-_Angel_of_DeathFXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
-  },
-  {
-   "file": "cache/mystic/cand/wc-32169117.jpg",
-   "focus": [
-    0.42,
-    0.511
-   ],
-   "zoom": 1.3,
-   "note": "Evelyn De Morgan, The Angel with the Serpent",
-   "id": "wc-32169117",
-   "source": "commons",
-   "title": "Evelyn de Morgan - The Angel with the Serpent, 1870-1875",
-   "creator": "Evelyn De Morgan",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Evelyn_de_Morgan_-_The_Angel_with_the_Serpent,_1870-1875.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Evelyn_de_Morgan_-_The_Angel_with_the_Serpent%2C_1870-1875.jpg/1920px-Evelyn_de_Morgan_-_The_Angel_with_the_Serpent%2C_1870-1875.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Evelyn_de_Morgan_-_The_Angel_with_the_Serpent%2C_1870-1875.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
    "file": "cache/mystic/cand/wc-116119392.jpg",

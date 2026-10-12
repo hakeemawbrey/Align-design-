@@ -59,24 +59,6 @@
    "pin": true
   },
   {
-   "id": "met-670765",
-   "source": "met",
-   "title": "The Death of Cleopatra",
-   "creator": "Guido Cagnacci",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/670765",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP375602.jpg",
-   "w": 2164,
-   "h": 2600,
-   "file": "cache/signs/scorpio/met-670765.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Cagnacci, death of Cleopatra with the asp",
-   "pin": true
-  },
-  {
    "id": "nasa-AFRC2017-0233-009",
    "source": "nasa",
    "title": "2017 Total Solar Eclipse",

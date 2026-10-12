@@ -16,8 +16,8 @@
     0.5,
     0.4
    ],
-   "pin": true,
-   "note": "Kittelsen, Forest Troll"
+   "note": "Kittelsen, Forest Troll",
+   "exposure": 0.75
   },
   {
    "id": "wc-811059",
@@ -54,7 +54,6 @@
     0.6,
     0.45
    ],
-   "pin": true,
    "note": "Böcklin, Silence of the Forest (unicorn)"
   },
   {
@@ -111,25 +110,6 @@
     0.5
    ],
    "note": "Shishkin, Morning in a Pine Forest"
-  },
-  {
-   "id": "wc-13459122",
-   "source": "commons",
-   "title": "John Singer Sargent - Carnation, Lily, Lily, Rose - Google Art Project",
-   "creator": "John Singer Sargent",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:John_Singer_Sargent_-_Carnation,_Lily,_Lily,_Rose_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg/1920px-John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 2169,
-   "file": "cache/forest/cand/wc-13459122.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "tone": 0.3,
-   "note": "Sargent, Carnation, Lily, Lily, Rose"
   },
   {
    "id": "wc-21733778",
@@ -414,24 +394,6 @@
     0.5
    ],
    "note": "Gustave Courbet, Gustave Courbet - Deer in the Forest - Google Art "
-  },
-  {
-   "id": "wc-21794891",
-   "source": "commons",
-   "title": "Gustave Courbet - Deer Running in the Snow - Google Art Project",
-   "creator": "Gustave Courbet",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Gustave_Courbet_-_Deer_Running_in_the_Snow_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Gustave_Courbet_-_Deer_Running_in_the_Snow_-_Google_Art_Project.jpg/1920px-Gustave_Courbet_-_Deer_Running_in_the_Snow_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Gustave_Courbet_-_Deer_Running_in_the_Snow_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1202,
-   "file": "cache/forest/cand/wc-21794891.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Gustave Courbet, Gustave Courbet - Deer Running in the Snow - Googl"
   },
   {
    "id": "wc-32217621",
