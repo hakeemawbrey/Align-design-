@@ -35,10 +35,10 @@ const TILES: { id: TileId; title: string; sub: string }[] = [
   { id: 'retro', title: 'Retrogrades', sub: 'Venus · since Sat' },
 ]
 
-const APP_ROWS: { label: string; right: string; to?: 'notifications' }[] = [
+const APP_ROWS: { label: string; right: string; to: 'notifications' | 'x/settings' | 'x/help' }[] = [
   { label: 'Notifications', right: '3 new', to: 'notifications' },
-  { label: 'Settings', right: '' },
-  { label: 'Help & support', right: '' },
+  { label: 'Settings', right: '', to: 'x/settings' },
+  { label: 'Help & support', right: '', to: 'x/help' },
 ]
 
 /** Clears every swipe, match, trade and post, back to the splash. Tap twice to confirm. */
@@ -188,7 +188,7 @@ export default function You({ go }: ScreenProps) {
               </div>
             </div>
             <div className="mono" style={{ position: 'absolute', left: 150, right: 12, bottom: 3, display: 'flex', justifyContent: 'space-between', fontSize: 9, letterSpacing: '0.16em', fontWeight: 700 }}>
-              <button onClick={(e) => { e.stopPropagation(); openCard('flipped') }} style={{ height: 30, color: LIME, letterSpacing: 'inherit' }}>EDIT CARD ›</button>
+              <button onClick={(e) => { e.stopPropagation(); sfx.tap(); go('x/edit-card/down') }} style={{ height: 30, color: LIME, letterSpacing: 'inherit' }}>EDIT CARD ›</button>
               <button onClick={(e) => { e.stopPropagation(); sfx.tap(); go('block') }} style={{ height: 30, color: 'var(--label-3)', letterSpacing: 'inherit' }}>BLOCKED · {blockedSigns.length} ›</button>
             </div>
           </motion.div>
@@ -219,7 +219,7 @@ export default function You({ go }: ScreenProps) {
             background: 'rgba(30,18,64,0.82)', border: '1px solid rgba(179,166,196,0.16)',
           }}>
             {APP_ROWS.map((r, i) => (
-              <motion.button key={r.label} onClick={() => { sfx.tap(); if (r.to) goFrom(go, r.to, 'you') }}
+              <motion.button key={r.label} onClick={() => { sfx.tap(); if (r.to === 'notifications') goFrom(go, r.to, 'you'); else go(r.to) }}
                 whileHover={{ backgroundColor: 'rgba(52,35,95,0.6)' }} whileTap={{ backgroundColor: 'rgba(52,35,95,0.9)' }}
                 style={{
                   width: '100%', height: 46, display: 'flex', alignItems: 'center', padding: '0 14px 0 16px', textAlign: 'left',
@@ -241,7 +241,7 @@ export default function You({ go }: ScreenProps) {
       <TabBar active="you" go={go} />
 
       <AnimatePresence>
-        {card && <YourCardSheet key="card" initial={card} onClose={() => setCard(null)} />}
+        {card && <YourCardSheet key="card" initial={card} onClose={() => setCard(null)} onEdit={(side) => go(`x/edit-card/${side}`)} />}
       </AnimatePresence>
     </div>
   )

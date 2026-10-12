@@ -1,41 +1,16 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useAnimationControls, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import Starfield from '../Starfield'
-import { ME, type Profile } from '../../data/profiles'
+import { myProfile } from './myCard'
+import { useAccount } from '../../pages/account/store'
 import ProfileCard from '../deck/ProfileCard'
 import ProfileFace from '../reveal/ProfileFace'
 import { CARD_W as DECK_W, CARD_H as DECK_H } from '../deck/fx'
 import { sfx } from '../../lib/sfx'
 
 export type CardSide = 'down' | 'flipped'
+export { MY_CARD } from './myCard'
 
-
-/** Hakeem's card copy (G-05b). */
-export const MY_CARD = {
-  bio: 'Slow to warm, impossible to shake. I cook for people I like and say less than I mean.',
-  facts: [
-    ['Religion', 'Spiritual, not religious'],
-    ['Looking for', 'Long term, open to slow'],
-    ['Height', '5′8″'],
-    ['Work', 'Sound engineer'],
-  ] as const,
-  interests: ['Record stores', 'Night drives', 'Tarot', 'Thrifting', 'Late diners'],
-  dealbreakers: 'No ghosting. Answer the question you were asked.',
-}
-
-/** your card as a Profile, so it renders with the exact cards everyone else sees */
-const MY_PROFILE: Profile = {
-  id: 'me', initial: ME.name, name: ME.name, age: ME.age, sign: ME.sign, moon: ME.moon, rising: ME.rising,
-  serial: ME.serial.replace('№ ', ''), pull: 'Steady pull', photo: ME.photo, alignsBack: false, blurb: ME.blurb,
-  dealbreakers: MY_CARD.dealbreakers, bio: MY_CARD.bio,
-  religion: MY_CARD.facts[0][1], lookingFor: MY_CARD.facts[1][1], height: MY_CARD.facts[2][1], work: MY_CARD.facts[3][1],
-  interests: [...MY_CARD.interests],
-  reading: [
-    { kind: 'pull', text: 'Remembers your order. Plans the second date during the first.', strength: 3 },
-    { kind: 'push', text: 'Slow to say how he feels. Ask him directly.', strength: 2 },
-    { kind: 'align', text: 'Loyal and steady. Wants something that lasts.', strength: 3 },
-  ],
-}
 
 /** the reveal card is drawn at 358 × 625; both sides share the deck card's width */
 const FACE_W = 358
@@ -48,10 +23,13 @@ const CARD_H = Math.round(FACE_H * FACE_S)
 interface Props {
   initial: CardSide
   onClose: () => void
+  /** open the editor (G-27 / G-28) for the side showing */
+  onEdit?: (side: CardSide) => void
 }
 
 /** G-05b · Your card — FACE DOWN / FLIPPED, a 3D flip between what strangers and matches see. */
-export default function YourCardSheet({ initial, onClose }: Props) {
+export default function YourCardSheet({ initial, onClose, onEdit }: Props) {
+  const MY_PROFILE = myProfile(useAccount().card)
   const [side, setSide] = useState<CardSide>(initial)
   const [toast, setToast] = useState(false)
   useEffect(() => {
@@ -187,7 +165,7 @@ export default function YourCardSheet({ initial, onClose }: Props) {
 
       {/* edit */}
       <motion.button
-        onClick={() => { sfx.sparkle(); setToast(true); void nudge.start({ scale: [1, 1.025, 1], transition: { duration: 0.45 } }) }}
+        onClick={() => { if (onEdit) { sfx.tap(); onEdit(side); return } sfx.sparkle(); setToast(true); void nudge.start({ scale: [1, 1.025, 1], transition: { duration: 0.45 } }) }}
         whileHover={{ scale: 1.02, borderColor: 'rgba(239,230,214,0.55)' }}
         whileTap={{ scale: 0.97 }}
         className="serif italic"
