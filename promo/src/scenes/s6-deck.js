@@ -54,7 +54,7 @@ const FIRST_IN = [17.45, 17.62]
 // 9:16 layout (1080×1920): first card = profile body 626×1000 centred at (W/2, H/2 − 10); trail recedes up-left
 const VL = {
   pullS: 0.8, centerS: 0.98, pullX: 90, pullY: 150, centerY: -24,
-  Zd: 200, Zc: 70, ax: 34, bx: 3, ay: 62, by: 4, yaw: 12, rx: 0,
+  Zd: 320, Zc: 70, ax: 30, bx: 7, ay: 50, by: 9, yaw: 12, rx: 0,
   cK: 4, cx: 190, cy: 150,
   topX: 470, topY: 300, botX: 300, botGap: 48,
   comeY: 238, alignY: 1522,
@@ -82,7 +82,9 @@ export function sceneDeck(stage) {
         borderRadius: (30 * sc) + 'px', opacity: 0, background: C.canvas }, wrap)
       // face sits a little left of centre: in the fanned trail each card's right side hides under its neighbour
       const pw = ww * 1.25, ph = pw * 366 / 342
-      const pimg = img(win, PEOPLE[al.photo - 1], { left: (ww * 0.4 - pw / 2) + 'px', top: (wh * 0.53 - ph * 0.37) + 'px', width: pw + 'px', height: ph + 'px' })
+      // (tall cut: the trail climbs up-left, so each card's top-left corner is what stays visible — face sits up there)
+      const fx = VERT ? 0.3 : 0.4, fy = VERT ? 0.36 : 0.53
+      const pimg = img(win, PEOPLE[al.photo - 1], { left: (ww * fx - pw / 2) + 'px', top: (wh * fy - ph * 0.37) + 'px', width: pw + 'px', height: ph + 'px' })
       const rim = el('div', { position: 'absolute', inset: 0, borderRadius: (30 * sc) + 'px', pointerEvents: 'none' }, win)
       const tag = el('div', {
         position: 'absolute', left: (30 * sc) + 'px', top: (30 * sc) + 'px', padding: `${12 * sc}px ${26 * sc}px ${12 * sc}px ${22 * sc}px`,
