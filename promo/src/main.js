@@ -1,6 +1,7 @@
 import { prog, ease } from './lib.js'
 import { EXTRA, DURATION as TOTAL, late } from './timing.js'
 import * as S from './scenes/index.js'
+import { W, H, VERT } from './scenes/common.js'
 
 export const DURATION = TOTAL
 const stage = document.getElementById('stage')
@@ -11,10 +12,14 @@ const RENDER = params.has('render')
 if (RENDER) document.body.classList.add('render')
 
 function fit() {
-  const s = RENDER ? 1 : Math.min(innerWidth / 1920, innerHeight / 1080)
+  const s = RENDER ? 1 : Math.min(innerWidth / W, innerHeight / H)
   window.__stageScale = s
   stage.style.transform = `scale(${s})`
 }
+// frame size follows the format (16:9 or 9:16)
+stage.style.width = fx.style.width = W + 'px'; stage.style.height = fx.style.height = H + 'px'
+fx.width = W; fx.height = H
+if (VERT) document.body.classList.add('vertical')
 fit(); addEventListener('resize', fit)
 
 /** optional captured app assets: use whichever exist */
@@ -58,7 +63,7 @@ async function boot() {
       }
     }
     t = t0
-    ctx.clearRect(0, 0, 1920, 1080)
+    ctx.clearRect(0, 0, W, H)
     S.fxStardust(ctx, t)   // global stardust under the transitions (wipes paint over it)
     S.fxMoonClock(ctx, t)  // corner moon clock: waxes scene by scene, new → full (real time; see fx-moon.js)
     S.fxStairWipe(ctx, t, { start: 2.95, dur: 0.6, color: '#140a30' })

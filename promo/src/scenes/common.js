@@ -1,6 +1,8 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
 
-export const W = 1920, H = 1080
+/** vertical 9:16 mode (render with ?v): scenes branch on VERT for their tall layouts */
+export const VERT = typeof location !== 'undefined' && new URLSearchParams(location.search).has('v')
+export const W = VERT ? 1080 : 1920, H = VERT ? 1920 : 1080
 export const IMG = '../app/public/img/'
 /** captured app assets (see promo/assets/MANIFEST.md) */
 export const A = 'assets/'

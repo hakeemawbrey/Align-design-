@@ -3,6 +3,7 @@
 //   node promo/scripts/render.mjs                 → promo/out/align-promo.mp4
 //   node promo/scripts/render.mjs --stills=1,4.2  → promo/out/stills/*.png
 //   node promo/scripts/render.mjs --sheet         → contact sheet (2 fps)
+//   --vertical renders the 9:16 (1080×1920) cut
 //   options: --fps=30 --from=0 --to=30 --workers=4 --out=path.mp4
 import { createRequire } from 'node:module'
 import { createServer } from 'node:http'
@@ -19,7 +20,9 @@ const { chromium } = require('playwright')
 
 const arg = (k, d) => { const a = process.argv.find(x => x.startsWith(`--${k}=`)); return a ? a.split('=')[1] : (process.argv.includes(`--${k}`) ? true : d) }
 const FPS = Number(arg('fps', 30)), FROM = Number(arg('from', 0)), TO = Number(arg('to', 31.5)), WORKERS = Number(arg('workers', 4))
-const OUT = path.resolve(arg('out', path.join(ROOT, 'promo/out/align-promo.mp4')))
+const VERT = !!arg('vertical')
+const [VW, VH] = VERT ? [1080, 1920] : [1920, 1080]
+const OUT = path.resolve(arg('out', path.join(ROOT, VERT ? 'promo/out/align-promo-vertical.mp4' : 'promo/out/align-promo.mp4')))
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.json': 'application/json' }
 const server = createServer(async (req, res) => {
@@ -28,11 +31,11 @@ const server = createServer(async (req, res) => {
   catch { res.writeHead(404); res.end() }
 }).listen(0)
 const port = server.address().port
-const URL_ = `http://127.0.0.1:${port}/promo/index.html?render`
+const URL_ = `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
 
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--force-color-profile=srgb', '--disable-lcd-text'] }).catch(() => chromium.launch())
 async function newPage() {
-  const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 })
+  const page = await browser.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: 1 })
   page.on('pageerror', e => console.error('PAGE ERROR', e.message))
   await page.goto(URL_)
   await page.waitForFunction(() => window.ready === true, null, { timeout: 60000 })
