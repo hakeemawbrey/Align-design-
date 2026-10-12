@@ -38,28 +38,6 @@
    "n": 2
   },
   {
-   "file": "cache/gemini/cand/ov-a201a529-fcee-478c-9f63-6433338bbe88.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "zoom": 1.3,
-   "pin": true,
-   "note": "Castor and Pollux, Versailles marble",
-   "id": "ov-a201a529-fcee-478c-9f63-6433338bbe88",
-   "source": "openverse/wikimedia",
-   "title": "Castor and Pollux-Parc de Versailles",
-   "creator": "",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=3560598",
-   "url": "https://api.openverse.org/v1/images/a201a529-fcee-478c-9f63-6433338bbe88/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Castor_and_Pollux-Parc_de_Versailles.jpg",
-   "w": 1280,
-   "h": 1707,
-   "query": "Castor and Pollux",
-   "n": 12
-  },
-  {
    "file": "cache/gemini/cand/met-436326.jpg",
    "focus": [
     0.45,
@@ -160,52 +138,12 @@
    "n": 316
   },
   {
-   "file": "cache/gemini/cand/nasa-PIA20294.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Eta Carinae, twin bubbles",
-   "id": "nasa-PIA20294",
-   "source": "nasa",
-   "title": "WFPC2 Image of the Variable Star Eta Carinae",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA20294",
-   "url": "https://images-assets.nasa.gov/image/PIA20294/PIA20294~orig.jpg",
-   "w": 738,
-   "h": 726,
-   "query": "twin galaxies",
-   "n": 263
-  },
-  {
-   "file": "cache/gemini/cand/ov-86509e34-2e03-45f4-b1c1-33e70436d406.jpg",
-   "focus": [
-    0.55,
-    0.25
-   ],
-   "zoom": 1.25,
-   "note": "Hermes at rest, bronze",
-   "id": "ov-86509e34-2e03-45f4-b1c1-33e70436d406",
-   "source": "openverse/wikimedia",
-   "title": "Hermes (Mercury) at the Getty Villa (bronze copy of a Roman bronze)",
-   "creator": "1Greenjack1",
-   "license": "by-sa 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=144773335",
-   "url": "https://api.openverse.org/v1/images/86509e34-2e03-45f4-b1c1-33e70436d406/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Hermes_%28Mercury%29_at_the_Getty_Villa_%28bronze_copy_of_a_Roman_bronze%29.jpg",
-   "w": 1280,
-   "h": 2241,
-   "query": "Mercury Hermes messenger",
-   "n": 22
-  },
-  {
    "file": "cache/gemini/cand/met-436896.jpg",
    "focus": [
-    0.6,
-    0.45
+    0.42,
+    0.35
    ],
-   "zoom": 1.2,
+   "zoom": 1.0,
    "note": "Lippi, double portrait at a casement",
    "id": "met-436896",
    "source": "met",
@@ -256,25 +194,6 @@
    "h": 2198,
    "query": "Jacob and Esau",
    "n": 273
-  },
-  {
-   "file": "cache/gemini/cand/nasa-PIA13449.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Jellyfish nebula IC 443, in Gemini",
-   "id": "nasa-PIA13449",
-   "source": "nasa",
-   "title": "An Explosion of Infrared Color",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA13449",
-   "url": "https://images-assets.nasa.gov/image/PIA13449/PIA13449~orig.jpg",
-   "w": 2600,
-   "h": 2600,
-   "query": "Jellyfish nebula",
-   "n": 246
   },
   {
    "file": "cache/gemini/cand/met-12693.jpg",
