@@ -1,10 +1,18 @@
 // L01 · Chakra — radial beat visualizer around the Align mark. Seamless 8s loop (template for the loop series).
 // Loop rules: every motion periodic in LOOP (ph/osc/cyc/kick/hat/bar from loopkit); the seed-of-life has
-// 6-fold symmetry, so it turns exactly 60° per loop and lands where it started.
+// 6-fold symmetry, so it turns exactly 60° per loop; the 4×-mirrored spectrum ring is 2-fold symmetric
+// and turns exactly 180° per loop.
 import { W, H, el, fill, lerp, clamp, SERIF, MONO, BONE, CHAKRAS,
   LOOP, BPM, BEAT, ph, osc, cyc, kick, hat, bar, spectrum, LOOP_CHORDS, loopBackdrop, loopStars } from './loopkit.js'
 
 const CX = W / 2, CY = 900
+/** chakra colour at f ∈ [0,1] (0 root red → 1 crown violet), smoothly interpolated */
+const CRGB = CHAKRAS.map(c => [1, 3, 5].map(i => parseInt(c.slice(i, i + 2), 16)))
+function chakraAt(f) {
+  const x = clamp(f, 0, 1) * 6, i = Math.min(5, Math.floor(x)), u = x - i
+  const [r, g, b] = [0, 1, 2].map(k => Math.round(lerp(CRGB[i][k], CRGB[i + 1][k], u)))
+  return `rgb(${r},${g},${b})`
+}
 export default {
   id: 'L01-chakra', title: 'Chakra (loop)', duration: LOOP, loop: true,
   music: { chords: LOOP_CHORDS.map((c, i) => [i * 2, i * 2 + 2, c]), bpm: BPM, pulseGain: 0.22, hatGain: 0.035 },
@@ -20,19 +28,30 @@ export default {
       fx(ctx, t) {
         loopStars(ctx, t, { seed: 5, keepOut: [[140, 480, 800, 840]] })
         const k = kick(t), h = hat(t), b = bar(t)
-        // radial spectrum bars (mirrored, 2×64)
-        const S = spectrum(t, 64)
-        const R0 = 300 + 14 * k
-        ctx.save(); ctx.translate(CX, CY); ctx.rotate(2 * Math.PI * ph(t))   // bars aren't 6-fold symmetric: one full turn per loop
-        for (let i = 0; i < 128; i++) {
-          const v = S[i < 64 ? i : 127 - i]
-          const a = (i / 128) * Math.PI * 2
-          const len = 18 + v * 190
-          const c = CHAKRAS[Math.floor((i < 64 ? i : 127 - i) / 64 * 7)]
-          ctx.strokeStyle = c; ctx.globalAlpha = 0.35 + 0.6 * v; ctx.lineWidth = 7; ctx.lineCap = 'round'
-          ctx.beginPath(); ctx.moveTo(Math.cos(a) * R0, Math.sin(a) * R0); ctx.lineTo(Math.cos(a) * (R0 + len), Math.sin(a) * (R0 + len)); ctx.stroke()
+        // radial spectrum bars: 32 bands mirrored 4× (lows at top & bottom), so the ring is 2-fold symmetric and
+        // turns exactly 180° per loop. Colour is fixed in screen space and follows the chakra column
+        // (root red at the bottom → crown violet at the top), so the bars flow through the spectrum as they turn.
+        const S = spectrum(t, 32)
+        const R0 = 300 + 14 * k, rot = Math.PI * ph(t)
+        ctx.lineCap = 'round'
+        for (let pass = 0; pass < 2; pass++) {
+          ctx.globalCompositeOperation = pass ? 'source-over' : 'lighter'
+          for (let i = 0; i < 128; i++) {
+            const j = i % 64, q = j < 32 ? j : 63 - j
+            const v = S[q]
+            const a = (i / 128) * Math.PI * 2 - Math.PI / 2 + rot
+            const len = 16 + v * 200
+            ctx.strokeStyle = chakraAt((1 - Math.sin(a)) / 2)
+            ctx.globalAlpha = pass ? 0.45 + 0.55 * v : 0.12 + 0.22 * v
+            ctx.lineWidth = pass ? 6 : 18
+            ctx.beginPath(); ctx.moveTo(Math.cos(a) * R0 + CX, Math.sin(a) * R0 + CY); ctx.lineTo(Math.cos(a) * (R0 + len) + CX, Math.sin(a) * (R0 + len) + CY); ctx.stroke()
+          }
         }
-        ctx.restore()
+        ctx.globalCompositeOperation = 'source-over'
+        // soft bloom in the heart of the mandala, breathing with the kick
+        const bl = ctx.createRadialGradient(CX, CY, 20, CX, CY, 300)
+        bl.addColorStop(0, `rgba(255,240,225,${0.10 + 0.10 * k})`); bl.addColorStop(1, 'rgba(255,240,225,0)')
+        ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = 1; ctx.fillStyle = bl; ctx.fillRect(CX - 300, CY - 300, 600, 600); ctx.globalCompositeOperation = 'source-over'
         // expanding beat rings (one per beat, periodic)
         for (let j = 0; j < 3; j++) {
           const pp = ((ph(t) * 16 - j) % 1 + 1) % 1
@@ -43,10 +62,14 @@ export default {
         // seed of life, turning 60° per loop
         ctx.save(); ctx.translate(CX, CY); ctx.rotate(2 * Math.PI * ph(t) / 6)
         const R = 92 * (1 + 0.03 * k)
-        ctx.globalAlpha = 0.85; ctx.strokeStyle = '#d9cdf0'; ctx.lineWidth = 3
         const pet = [[0, 0], ...Array.from({ length: 6 }, (_, q) => [Math.cos((-90 + q * 60) * Math.PI / 180) * R, Math.sin((-90 + q * 60) * Math.PI / 180) * R])]
-        for (const [x, y] of pet) { ctx.beginPath(); ctx.arc(x, y, R, 0, Math.PI * 2); ctx.stroke() }
-        ctx.beginPath(); ctx.arc(0, 0, R * 2, 0, Math.PI * 2); ctx.stroke()
+        for (let pass = 0; pass < 2; pass++) {   // soft glow pass, then the crisp line
+          ctx.globalCompositeOperation = pass ? 'source-over' : 'lighter'
+          ctx.globalAlpha = pass ? 0.7 + 0.25 * k : 0.12 + 0.12 * b; ctx.strokeStyle = pass ? '#e4d9f6' : '#c9a6ff'; ctx.lineWidth = pass ? 2.5 : 12
+          for (const [x, y] of pet) { ctx.beginPath(); ctx.arc(x, y, R, 0, Math.PI * 2); ctx.stroke() }
+          ctx.beginPath(); ctx.arc(0, 0, R * 2, 0, Math.PI * 2); ctx.stroke()
+        }
+        ctx.globalCompositeOperation = 'source-over'
         ctx.restore()
         // chakra column: each dot flares when the beat-wave passes it (bottom → top, one sweep per bar)
         for (let i = 0; i < 7; i++) {

@@ -64,13 +64,13 @@ export default {
         const { i, j, f } = blendAt(t), k = kick(t)
         const [r, g, b] = colAt(t)
         const glow = 0.5 + 0.12 * osc(t, 4) + 0.22 * k
-        field.style.background = `radial-gradient(ellipse 70% 46% at 50% 52%, rgba(${r},${g},${b},${0.55 * glow}) 0%, rgba(${r},${g},${b},${0.22 * glow}) 42%, rgba(${r},${g},${b},0) 78%),` +
+        field.style.background = `radial-gradient(ellipse 70% 46% at 50% 52%, rgba(${r},${g},${b},${0.26 * glow}) 0%, rgba(${r},${g},${b},${0.12 * glow}) 45%, rgba(${r},${g},${b},0) 78%),` +
           `radial-gradient(ellipse 120% 40% at 50% 100%, rgba(${r},${g},${b},${0.25 * glow}), rgba(${r},${g},${b},0) 70%)`
         imgs.forEach((im, q) => { im.style.opacity = String(q === i ? 1 - f : q === j ? f : 0) })
         // breathing: one breath per bar, plus a small kick swell
         const s = 1 + 0.025 * osc(t, 4, -0.25) + 0.012 * k
         wrap.style.transform = `scale(${s})`
-        wrap.style.filter = `brightness(${1.05 + 0.3 * k}) saturate(${1.1 + 0.15 * k})`
+        wrap.style.filter = `brightness(${0.86 + 0.2 * k}) saturate(${1.25 + 0.15 * k}) contrast(1.08)`
         const v = f < 0.5 ? VEILS[i] : VEILS[j]
         const txt = `${v.name} · ${v.sign.toUpperCase()}`
         if (read.textContent !== txt) read.textContent = txt
@@ -87,12 +87,13 @@ export default {
         for (let q = 0; q < 4; q++) {
           const u = ((ph(t) * 16 - q) % 1 + 1) % 1
           const e = 1 - (1 - u) ** 2.2
-          const rx = 300 + e * 560, ry = rx * 1.28
+          const rx = 280 + e * 520, ry = rx * 1.28
           const a = (1 - u) ** 1.5 * clamp(u / 0.08)
-          ctx.strokeStyle = C(0.10 * a); ctx.lineWidth = 34
+          ctx.filter = 'blur(18px)'; ctx.strokeStyle = C(0.22 * a); ctx.lineWidth = 40
           ctx.beginPath(); ctx.ellipse(CX, CY + 40, rx, ry, 0, 0, TAU); ctx.stroke()
-          ctx.strokeStyle = `rgba(255,243,224,${0.22 * a})`; ctx.lineWidth = 2
+          ctx.filter = 'blur(1.5px)'; ctx.strokeStyle = `rgba(255,243,224,${0.16 * a})`; ctx.lineWidth = 2.5
           ctx.beginPath(); ctx.ellipse(CX, CY + 40, rx, ry, 0, 0, TAU); ctx.stroke()
+          ctx.filter = 'none'
         }
         // rising motes (each wraps once or twice per loop, fading at both ends)
         for (let m = 0; m < 46; m++) {
