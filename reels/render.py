@@ -16,7 +16,7 @@ import subprocess
 import tempfile
 
 import numpy as np
-from PIL import Image, ImageFilter, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 import card as cardmod
 import music
@@ -47,6 +47,13 @@ STYLE = {
     "saturation": 0.76,
     "cast": 0.8,           # strength of each sign's colour cast
     "loudness": -11.0,      # LUFS; the ref sits at -14, the brief asked for more gain
+    # the brand line: Align's wordmark face (EB Garamond italic, app cream), small,
+    # under the card, above Instagram's caption area; it sits under the grain
+    "tag_text": "come align",
+    "tag_size": 0.036,      # cap-to-frame: fraction of frame width
+    "tag_y": 0.728,         # centre, fraction of frame height (card ends ~0.69)
+    "tag_alpha": 0.42,      # through the montage
+    "tag_alpha_end": 0.68,  # warms over the last 1.8s as a quiet sign-off
 }
 
 
@@ -114,13 +121,36 @@ def card_rgba(card_img, width):
     return np.asarray(card_img.resize((width, h), Image.LANCZOS).convert("RGB"), dtype=np.float32) / 255
 
 
+def brand_tag(W):
+    """'come align' as an RGB tile plus a per-pixel alpha (text with a soft glow)."""
+    font = ImageFont.truetype(os.path.join(HERE, "assets", "fonts", "EBGaramond-Italic.ttf"),
+                              int(W * STYLE["tag_size"] * 1.45))
+    text = STYLE["tag_text"]
+    box = font.getbbox(text)
+    pad = int(W * 0.03)
+    tw, th = box[2] - box[0] + 2 * pad, box[3] - box[1] + 2 * pad
+    m = Image.new("L", (tw, th), 0)
+    ImageDraw.Draw(m).text((pad - box[0], pad - box[1]), text, font=font, fill=255)
+    glow = np.asarray(m.filter(ImageFilter.GaussianBlur(W / 90)), np.float32) / 255
+    core = np.asarray(m, np.float32) / 255
+    alpha = np.clip(core + glow * 0.35, 0, 1)[..., None]
+    rgb = np.ones((th, tw, 3), np.float32) * (np.array([0xef, 0xe6, 0xd6], np.float32) / 255)
+    # a wider dark halo under the letters, so the line still reads over bright fur or sky
+    shade = np.asarray(m.filter(ImageFilter.GaussianBlur(W / 45)), np.float32) / 255
+    shade = (np.clip(shade * 2.2, 0, 1) * 0.55)[..., None]
+    return rgb, alpha, shade
+
+
 def paste(frame, c, cx, cy, alpha):
-    """Alpha-paste c centred at (cx, cy), clipped to the frame."""
+    """Alpha-paste c centred at (cx, cy), clipped to the frame. alpha may be a
+    scalar or a per-pixel (h, w, 1) mask times a scalar."""
     H, W = frame.shape[:2]
     h, w = c.shape[:2]
     x0, y0 = int(cx - w / 2), int(cy - h / 2)
     fx0, fy0, fx1, fy1 = max(x0, 0), max(y0, 0), min(x0 + w, W), min(y0 + h, H)
     src = c[fy0 - y0:fy1 - y0, fx0 - x0:fx1 - x0]
+    if isinstance(alpha, np.ndarray):
+        alpha = alpha[fy0 - y0:fy1 - y0, fx0 - x0:fx1 - x0]
     region = frame[fy0:fy1, fx0:fx1]
     region[:] = region * (1 - alpha) + src * alpha
 
@@ -182,6 +212,7 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
     plate = ensure_file(picks["plate"])
     card_img = cardmod.build(sign, plate, picks["plate"].get("crop"), picks["plate"].get("color", 1.45))
     card_m = card_rgba(card_img, int(W * STYLE["card_w"]))
+    tag_rgb, tag_a, tag_shade = brand_tag(W)
     card_steps = [card_rgba(card_img, int(W * s) if s else int(H * 0.996 * card_img.width / card_img.height))
                   for s in STYLE["intro_steps"]]
     grain = make_grain(W, H, 10, rng)
@@ -220,6 +251,10 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
             crop = Image.fromarray(bg[y0:y0 + win_h, x0:x0 + win_w]).resize((W, H), Image.BILINEAR)
             frame = np.asarray(crop, dtype=np.float32) / 255
             paste(frame, card_m, W / 2, H / 2, STYLE["card_alpha"])
+            ta = STYLE["tag_alpha"] * min((t - INTRO) / 0.5, 1.0)
+            ta += (STYLE["tag_alpha_end"] - STYLE["tag_alpha"]) * np.clip((t - (TOTAL - 1.8)) / 1.2, 0, 1)
+            paste(frame, np.zeros_like(tag_rgb), W / 2, H * STYLE["tag_y"], tag_shade * ta)
+            paste(frame, tag_rgb, W / 2, H * STYLE["tag_y"], tag_a * ta)
         frame *= vig
         if t >= INTRO:  # the ref intro is steady
             frame *= 1 + rng.uniform(-STYLE["flicker"], STYLE["flicker"])
