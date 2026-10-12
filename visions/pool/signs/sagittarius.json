@@ -1,0 +1,229 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "id": "met-437274",
+   "source": "met",
+   "title": "Frescoes from the Villa Stati-Mattei",
+   "creator": "Baldassarre Tommaso Peruzzi",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437274",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/ep48.17.1.bw.R.jpg",
+   "w": 2542,
+   "h": 2600,
+   "file": "cache/signs/sagittarius/met-437274.jpg",
+   "focus": [
+    0.3,
+    0.4
+   ],
+   "note": "Peruzzi fresco, centaur archer drawing his bow",
+   "pin": true
+  },
+  {
+   "id": "nasa-GSFC_20171208_Archive_e000671",
+   "source": "nasa",
+   "title": "Stormy seas in Sagittarius",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000671",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000671/GSFC_20171208_Archive_e000671~orig.jpg",
+   "w": 1273,
+   "h": 1694,
+   "file": "cache/signs/sagittarius/nasa-GSFC_20171208_Archive_e000671.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "note": "Hubble, heart of the Lagoon Nebula in Sagittarius"
+  },
+  {
+   "id": "aic-12883",
+   "source": "aic",
+   "title": "Jove Casts His Thunderbolts at the Rebellious Giants",
+   "creator": "Johann Michael Rottmayr (Austrian, 1654\u20131730)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/12883",
+   "url": "https://www.artic.edu/iiif/2/ea80056a-5db8-b4b8-6110-3d12902b99cc/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1091,
+   "file": "cache/signs/sagittarius/aic-12883.jpg",
+   "focus": [
+    0.62,
+    0.45
+   ],
+   "note": "Rottmayr, Jove hurling thunderbolts"
+  },
+  {
+   "id": "aic-102098",
+   "source": "aic",
+   "title": "Phaeton Driving the Chariot of Phoebus",
+   "creator": "Northern Italian; possibly Verona",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/102098",
+   "url": "https://www.artic.edu/iiif/2/82b1ac6e-de4e-7e80-6bd8-e1f1bb0cb889/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1707,
+   "file": "cache/signs/sagittarius/aic-102098.jpg",
+   "focus": [
+    0.66,
+    0.17
+   ],
+   "note": "Phaeton's white horses galloping across a night sky",
+   "pin": true
+  },
+  {
+   "id": "met-13202",
+   "source": "met",
+   "title": "Omnia Vincit Amor, or The Power of Love in the Three Elements",
+   "creator": "Benjamin West",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/13202",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT2075.jpg",
+   "w": 2600,
+   "h": 2289,
+   "file": "cache/signs/sagittarius/met-13202.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "note": "West, Cupid with bow and torch astride the lion in storm clouds"
+  },
+  {
+   "id": "met-437888",
+   "source": "met",
+   "title": "The Start of the Race of the Riderless Horses",
+   "creator": "Horace Vernet",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437888",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-25221-001.jpg",
+   "w": 2600,
+   "h": 2263,
+   "file": "cache/signs/sagittarius/met-437888.jpg",
+   "focus": [
+    0.42,
+    0.38
+   ],
+   "note": "Vernet, white horse rearing",
+   "pin": true
+  },
+  {
+   "id": "met-11112",
+   "source": "met",
+   "title": "Camp Fire",
+   "creator": "Winslow Homer",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11112",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT2829.jpg",
+   "w": 2600,
+   "h": 1620,
+   "file": "cache/signs/sagittarius/met-11112.jpg",
+   "focus": [
+    0.75,
+    0.6
+   ],
+   "note": "Homer, camp fire sparks in the night woods"
+  },
+  {
+   "id": "nasa-0302063",
+   "source": "nasa",
+   "title": "History of Hubble Space Telescope (HST)",
+   "creator": "MSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/0302063",
+   "url": "https://images-assets.nasa.gov/image/0302063/0302063~orig.jpg",
+   "w": 2600,
+   "h": 2110,
+   "file": "cache/signs/sagittarius/nasa-0302063.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Hubble, Omega Nebula in Sagittarius"
+  },
+  {
+   "id": "met-437642",
+   "source": "met",
+   "title": "Battle Scene: Arabs Making a Detour",
+   "creator": "Adolf Schreyer",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437642",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/ep94.24.2.bw.R.jpg",
+   "w": 2600,
+   "h": 1569,
+   "file": "cache/signs/sagittarius/met-437642.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "Schreyer, Arab horsemen galloping under storm"
+  },
+  {
+   "id": "nasa-0302064",
+   "source": "nasa",
+   "title": "History of Hubble Space Telescope (HST)",
+   "creator": "MSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/0302064",
+   "url": "https://images-assets.nasa.gov/image/0302064/0302064~orig.jpg",
+   "w": 2600,
+   "h": 2563,
+   "file": "cache/signs/sagittarius/nasa-0302064.jpg",
+   "focus": [
+    0.72,
+    0.3
+   ],
+   "note": "Hubble, Trifid Nebula in Sagittarius"
+  },
+  {
+   "id": "met-435702",
+   "source": "met",
+   "title": "The Horse Fair",
+   "creator": "Rosa Bonheur",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435702",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-23550-001.jpg",
+   "w": 2600,
+   "h": 1328,
+   "file": "cache/signs/sagittarius/met-435702.jpg",
+   "focus": [
+    0.75,
+    0.5
+   ],
+   "note": "Bonheur, white horses at full gallop"
+  },
+  {
+   "id": "aic-49940",
+   "source": "aic",
+   "title": "The Bowman",
+   "creator": "Edward S. Curtis",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/49940",
+   "url": "https://www.artic.edu/iiif/2/0a51b7ad-0e0b-495d-c3eb-a85ac022daa1/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2231,
+   "file": "cache/signs/sagittarius/aic-49940.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Curtis, The Bowman drawing his bow on a rock in the lake"
+  },
+  {
+   "id": "aic-895",
+   "source": "aic",
+   "title": "Man with Lance Riding through the Snow",
+   "creator": "Adolphe Schreyer (German, 1828\u20131899)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/895",
+   "url": "https://www.artic.edu/iiif/2/fa96ef54-c3b1-8f4d-390a-219f7bc64c4a/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1226,
+   "file": "cache/signs/sagittarius/aic-895.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Schreyer, rider galloping through a snowstorm"
+  }
+ ]
+}

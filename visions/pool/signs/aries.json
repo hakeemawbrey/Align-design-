@@ -1,0 +1,183 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "file": "cache/signs/aries/ov-edef1891-4474-442c-ac39-5fa8c3e1c16f.jpg",
+   "focus": [
+    0.55,
+    0.3
+   ],
+   "pin": true,
+   "note": "Armenian mouflon, sweeping horns",
+   "id": "ov-edef1891-4474-442c-ac39-5fa8c3e1c16f",
+   "source": "openverse/wikimedia",
+   "title": "12 Armenian Mouflon",
+   "creator": "Alexander Malkhasyan",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=90770266",
+   "url": "https://api.openverse.org/v1/images/edef1891-4474-442c-ac39-5fa8c3e1c16f/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/12_Armenian_Mouflon.jpg",
+   "w": 1280,
+   "h": 851
+  },
+  {
+   "file": "cache/signs/aries/aic-57996.jpg",
+   "focus": [
+    0.22,
+    0.5
+   ],
+   "pin": true,
+   "note": "Volaire, Vesuvius erupting at night",
+   "id": "aic-57996",
+   "source": "aic",
+   "title": "The Eruption of Vesuvius",
+   "creator": "Pierre-Jacques Volaire (French, 1729\u20131799)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/57996",
+   "url": "https://www.artic.edu/iiif/2/6a676ee7-39c0-0b88-c37e-36ba0c5e3065/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 776
+  },
+  {
+   "file": "cache/signs/aries/ov-769e3cce-050b-4fcf-a078-c212deee48b0.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "pin": true,
+   "note": "ram skull with curling horns on black",
+   "id": "ov-769e3cce-050b-4fcf-a078-c212deee48b0",
+   "source": "openverse/sketchfab",
+   "title": "Ram Skull",
+   "creator": "UON - School of Creative Industries",
+   "license": "by 4.0",
+   "landing": "https://sketchfab.com/3d-models/9e914d2d7e8c405db6e896b8db185d35",
+   "url": "https://api.openverse.org/v1/images/769e3cce-050b-4fcf-a078-c212deee48b0/thumb/?full_size=true",
+   "alt_url": "https://media.sketchfab.com/models/9e914d2d7e8c405db6e896b8db185d35/thumbnails/e36b948d5dd8479f9d77ae7fac6a856a/8929d455ac5b41668a98c31d433c8956.jpeg",
+   "w": 1920,
+   "h": 1080
+  },
+  {
+   "file": "cache/signs/aries/nasa-S91-32389.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Mars, the ruler planet",
+   "id": "nasa-S91-32389",
+   "source": "nasa",
+   "title": "Composite image of the planet Mars taken by Hubble Space Telescope (HST)",
+   "creator": "JSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/S91-32389",
+   "url": "https://images-assets.nasa.gov/image/S91-32389/S91-32389~orig.jpg",
+   "w": 2065,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/aries/met-437389.jpg",
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "note": "Rembrandt, Bellona in armour",
+   "id": "met-437389",
+   "source": "met",
+   "title": "Bellona",
+   "creator": "Rembrandt (Rembrandt van Rijn)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437389",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP146454.jpg",
+   "w": 1995,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/aries/ov-52534f39-1332-4561-82fc-f881aafc04b3.jpg",
+   "focus": [
+    0.65,
+    0.38
+   ],
+   "pin": true,
+   "note": "mouflon ram facing out, curled horns",
+   "id": "ov-52534f39-1332-4561-82fc-f881aafc04b3",
+   "source": "openverse/wikimedia",
+   "title": "Cyprus mouflon (Ovis gmelini ophion)",
+   "creator": "Charles J. Sharp",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=109421088",
+   "url": "https://api.openverse.org/v1/images/52534f39-1332-4561-82fc-f881aafc04b3/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Cyprus_mouflon_%28Ovis_gmelini_ophion%29.jpg",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "cache/signs/aries/nasa-GSFC_20171208_Archive_e000762.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "solar flare, red sun",
+   "id": "nasa-GSFC_20171208_Archive_e000762",
+   "source": "nasa",
+   "title": "Sun Emits an X2.2 Flare",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000762",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000762/GSFC_20171208_Archive_e000762~orig.jpg",
+   "w": 1200,
+   "h": 1200
+  },
+  {
+   "file": "cache/signs/aries/ov-3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "lava lake erupting, Iceland",
+   "id": "ov-3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d",
+   "source": "openverse/wikimedia",
+   "title": "001 Volcano eruption of Litli-Hr\u00fatur in Iceland in 2023 Photo by Giles Laurent",
+   "creator": "Giles Laurent",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=141202680",
+   "url": "https://api.openverse.org/v1/images/3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/001_Volcano_eruption_of_Litli-Hr%C3%BAtur_in_Iceland_in_2023_Photo_by_Giles_Laurent.jpg",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "cache/signs/aries/aic-149778.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ],
+   "note": "Mars in armour, Allegory of Peace and War",
+   "id": "aic-149778",
+   "source": "aic",
+   "title": "Allegory of Peace and War",
+   "creator": "Pompeo Girolamo Batoni (Italian, 1708\u20131787)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/149778",
+   "url": "https://www.artic.edu/iiif/2/92ad2a28-eac9-e358-6e3c-1c1cf39efd91/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2333
+  },
+  {
+   "file": "cache/signs/aries/nasa-GSFC_20171208_Archive_e000195.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Red Spider nebula on black",
+   "id": "nasa-GSFC_20171208_Archive_e000195",
+   "source": "nasa",
+   "title": "Hubble Spins a Web Into a Giant Red Spider Nebula",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000195",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000195/GSFC_20171208_Archive_e000195~orig.jpg",
+   "w": 2600,
+   "h": 1448
+  }
+ ]
+}
