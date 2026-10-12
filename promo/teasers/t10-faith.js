@@ -35,7 +35,7 @@ function paintNebula() {
   const w = 400, h = 712
   const c = document.createElement('canvas'); c.width = w; c.height = h
   const g = c.getContext('2d'), id = g.createImageData(w, h), px = id.data
-  const VIO = [150, 96, 235], ROSE = [232, 98, 150], TEAL = [70, 170, 200], AMB = [242, 160, 90], DEEP = [40, 18, 90]
+  const VIO = [130, 80, 220], ROSE = [222, 88, 140], TEAL = [60, 150, 190], AMB = [242, 160, 90], DEEP = [30, 12, 70]
   for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) {
     const x = i / w * 2.4, y = j / h * 4.3
     const qx = fbm(x + 1.7, y + 9.2, 3), qy = fbm(x + 8.3, y + 2.8, 5)
@@ -43,7 +43,7 @@ function paintNebula() {
     const m = fbm(x * 1.6 + 4, y * 1.6 + 1, 11, 4)
     // a diagonal river of cloud (lower-left → upper-right) so the frame has a direction
     const band = Math.exp(-(((x * 0.9 - y * 0.42 + 0.55) / 0.55) ** 2))
-    const dens = sstep(0.38, 0.78, n) * (0.35 + 0.9 * band)
+    const dens = sstep(0.42, 0.85, n) ** 1.4 * (0.18 + 1.0 * band)
     const dust = sstep(0.55, 0.75, fbm(x * 3 + 7, y * 3 + 3, 13, 4)) * band
     const col = [0, 1, 2].map(k => {
       let v = lerp(DEEP[k], VIO[k], sstep(0.2, 0.7, qx))
@@ -52,7 +52,7 @@ function paintNebula() {
       v = lerp(v, AMB[k], sstep(0.72, 0.9, n) * 0.4 * band)
       return v
     })
-    const a = clamp(dens * (1 - dust * 0.7)) * 0.95
+    const a = clamp(dens * (1 - dust * 0.85)) * 0.8
     const o = (j * w + i) * 4
     px[o] = col[0] * a; px[o + 1] = col[1] * a; px[o + 2] = col[2] * a; px[o + 3] = 255
     // a few bright cores
@@ -65,13 +65,15 @@ function paintNebula() {
 
 // constellation: [x, y, d, sign] veiled aura portraits (faces hidden). Text lives in y 1180–1500; card x 330–750, y 480–1120
 const SIGNS = ['libra', 'taurus', 'leo', 'pisces', 'scorpio', 'gemini', 'aquarius', 'cancer', 'virgo', 'aries', 'sagittarius', 'capricorn']
+// three loose constellations (upper-left, right, bottom) + one stray, each drifting its own way (parallax)
 const NODES = [
-  [150, 300, 96, 0], [380, 210, 74, 4], [560, 330, 60, 6], [150, 620, 82, 2], [260, 900, 70, 7],
-  [930, 640, 90, 1], [840, 930, 72, 5], [960, 1080, 58, 9], [120, 1090, 62, 11], [960, 1630, 80, 3],
-  [140, 1650, 76, 8], [560, 1700, 64, 10],
+  [150, 300, 96, 0, 0], [370, 205, 70, 4, 0], [575, 290, 52, 6, 0], [130, 570, 80, 2, 0], [250, 870, 60, 7, 3],
+  [935, 660, 88, 1, 1], [835, 885, 62, 5, 1], [975, 1065, 50, 9, 1], [300, 1590, 50, 11, 2], [950, 1650, 80, 3, 2],
+  [140, 1700, 72, 8, 2], [600, 1750, 58, 10, 2],
 ]
+const DRIFT = [[3.5, 2.5], [-3, 2.2], [2.2, -3.4], [-2, -1]]
 const ORDER = [0, 5, 3, 1, 6, 9, 4, 10, 2, 8, 7, 11]
-const EDGES = [[0, 1], [1, 2], [0, 3], [3, 4], [4, 8], [5, 6], [6, 7], [10, 11], [11, 9], [2, 5], [8, 10], [7, 9]]
+const EDGES = [[0, 1], [1, 2], [0, 3], [5, 6], [6, 7], [10, 8], [8, 11], [11, 9], [3, 4]]
 const popT = []; ORDER.forEach((n, k) => { popT[n] = L1 + 0.1 + k * 0.13 })
 
 export default {
@@ -101,10 +103,10 @@ export default {
   ],
   async build(stage) {
     const root = fill(stage, { background: '#0b0620' })
-    const bg = spaceBackdrop(root, 'aurora', { seed: 21, grain: 0.24, stars: 220 })
-    const neb = el('div', { position: 'absolute', left: '-60px', top: '-100px', width: (W + 120) + 'px', height: (H + 200) + 'px', backgroundSize: '100% 100%', mixBlendMode: 'screen', opacity: 0.9, filter: 'blur(2px) saturate(1.1)' })
+    const bg = spaceBackdrop(root, 'rose', { seed: 21, grain: 0.26, stars: 240 })
+    const neb = el('div', { position: 'absolute', left: '-60px', top: '-100px', width: (W + 120) + 'px', height: (H + 200) + 'px', backgroundSize: '100% 100%', mixBlendMode: 'screen', opacity: 1, filter: 'blur(1.5px)' })
     neb.style.backgroundImage = `url(${paintNebula()})`
-    bg.root.insertBefore(neb, bg.root.children[5]) // above the blobs, under stars / vignette / grain
+    bg.root.insertBefore(neb, bg.root.children[4]) // above the blobs, under stars / vignette / grain
 
     // camera group (push-in), with the moon + constellation + card inside at different depths
     const cam = fill(root, {})
@@ -114,18 +116,19 @@ export default {
     const moonC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
     moonC.width = W; moonC.height = H
     const mg = moonC.getContext('2d')
-    const nodes = NODES.map(([x, y, d, si], i) => {
+    const nodes = NODES.map(([x, y, d, si, cl], i) => {
+      d = Math.round(d * 1.3)
       const g = el('div', { position: 'absolute', left: '0px', top: '0px', width: d + 'px', height: d + 'px', borderRadius: '50%', opacity: 0, willChange: 'transform' }, cam)
       const glow = el('div', { position: 'absolute', inset: '-55%', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(255,240,226,0.55), rgba(201,166,255,0.28) 45%, rgba(201,166,255,0) 100%)' }, g)
       const disc = el('div', { position: 'absolute', inset: 0, borderRadius: '50%', overflow: 'hidden', background: '#140a2e', boxShadow: '0 8px 22px rgba(4,2,14,0.55), 0 0 0 1.5px rgba(239,230,214,0.85), 0 0 0 4px rgba(239,230,214,0.12)' }, g)
       img(disc, `${IMG}aura/${SIGNS[si]}.jpg`, { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 62%', transform: 'scale(1.35)' })
-      return { x, y, d, g, glow, ph: i * 1.37 }
+      return { x, y, d, g, glow, ph: i * 1.37, dr: DRIFT[cl] }
     })
 
     // mystery card
     const CW = 400, CHh = Math.round(CW * 2347 / 1528)
     const persp = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', perspective: '1800px' }, cam)
-    const halo = el('div', { position: 'absolute', left: (540 - 420) + 'px', top: (800 - 520) + 'px', width: '840px', height: '1040px', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(201,166,255,0.55), rgba(154,123,224,0.22) 50%, rgba(154,123,224,0) 100%)', opacity: 0, mixBlendMode: 'screen' }, persp)
+    const halo = el('div', { position: 'absolute', left: (540 - 420) + 'px', top: (800 - 520) + 'px', width: '840px', height: '1040px', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(214,180,255,0.75), rgba(170,120,240,0.3) 50%, rgba(154,123,224,0) 100%)', opacity: 0, mixBlendMode: 'screen' }, persp)
     const card = el('div', { position: 'absolute', left: (540 - CW / 2) + 'px', top: (800 - CHh / 2) + 'px', width: CW + 'px', height: CHh + 'px', opacity: 0, transformStyle: 'preserve-3d' }, persp)
     img(card, A + 'card-back.png', { left: 0, top: 0, width: '100%', height: '100%' })
     const cardGlow = el('canvas', { position: 'absolute', left: 0, top: 0, width: CW + 'px', height: CHh + 'px', mixBlendMode: 'screen' }, card)
@@ -136,7 +139,7 @@ export default {
 
     // poem
     const txt = fill(root, {})
-    const P = { size: 82, perChar: 0.035, fade: 0.45 }
+    const P = { size: 88, perChar: 0.035, fade: 0.45 }
     const l1 = typeLine(txt, 'We hide the faces.', { y: 1200, ...P })
     const l2 = typeLine(txt, 'We read the sky.', { y: 1300, ...P })
     const l3 = typeLine(txt, 'You bring the courage.', { y: 1400, ...P })
@@ -144,7 +147,7 @@ export default {
     const dimmer = fill(root, { background: '#0b0620', opacity: 0 })
     const tag = endTag(stage, { start: END, end: DURATION })
 
-    const camScale = (t) => 1 + 0.07 * ease.inOutQuad(prog(t, 0, END))
+    const camScale = (t) => 1 + 0.04 * ease.inOutQuad(prog(t, 0, L4)) + 0.07 * ease.inOutQuad(prog(t, L4 - 0.5, END))
     const toCam = (x, y, t, depth = 1) => { const s = 1 + (camScale(t) - 1) * depth; return [540 + (x - 540) * s, 900 + (y - 900) * s] }
     const cardY = (t) => lerp(1060, 800, ease.outCubic(prog(t, L3 - 0.3, L3 + 1.6))) + Math.sin(t * 0.9) * 8
 
@@ -160,11 +163,13 @@ export default {
         lg.clearRect(0, 0, W, H)
         const pos = nodes.map((n, i) => {
           const lit = ease.outCubic(prog(t, popT[i], popT[i] + 0.6))
-          const x = n.x + Math.sin(t * 0.35 + n.ph) * 10, y = n.y + Math.cos(t * 0.3 + n.ph) * 12 - t * 2
+          const x = n.x + Math.sin(t * 0.35 + n.ph) * 8 + n.dr[0] * t, y = n.y + Math.cos(t * 0.3 + n.ph) * 10 + n.dr[1] * t
           n.g.style.opacity = String(lit * 0.92)
-          n.g.style.transform = `translate(${x - n.d / 2}px, ${y - n.d / 2}px) scale(${lerp(0.6, 1, ease.outBack(prog(t, popT[i], popT[i] + 0.6)))})`
+          const ex = 1 + 0.12 * (n.d / 100) * ease.inOutQuad(prog(t, L4 - 0.3, END))
+          const X = 540 + (x - 540) * ex, Y = 900 + (y - 900) * ex
+          n.g.style.transform = `translate(${X - n.d / 2}px, ${Y - n.d / 2}px) scale(${lerp(0.6, 1, ease.outBack(prog(t, popT[i], popT[i] + 0.6)))})`
           n.glow.style.opacity = String(0.35 + 0.35 * glowUp + 0.15 * Math.sin(t * 1.3 + n.ph))
-          return [x, y, lit, n.d]
+          return [X, Y, lit, n.d]
         })
         EDGES.forEach(([a, b], k) => {
           const p = ease.inOutCubic(prog(t, L2 + 0.15 + k * 0.12, L2 + 0.75 + k * 0.12))
@@ -172,8 +177,8 @@ export default {
           const [ax, ay, , ad] = pos[a], [bx, by, , bd] = pos[b]
           const L = Math.hypot(bx - ax, by - ay), ux = (bx - ax) / L, uy = (by - ay) / L
           const sx = ax + ux * (ad / 2 + 10), sy = ay + uy * (ad / 2 + 10), ex = bx - ux * (bd / 2 + 10), ey = by - uy * (bd / 2 + 10)
-          lg.strokeStyle = `rgba(239,230,214,${0.28 + 0.2 * glowUp})`; lg.lineWidth = 1.5
-          lg.setLineDash([2, 7]); lg.beginPath(); lg.moveTo(sx, sy); lg.lineTo(lerp(sx, ex, p), lerp(sy, ey, p)); lg.stroke(); lg.setLineDash([])
+          lg.strokeStyle = `rgba(239,230,214,${0.45 + 0.25 * glowUp})`; lg.lineWidth = 2
+          lg.beginPath(); lg.moveTo(sx, sy); lg.lineTo(lerp(sx, ex, p), lerp(sy, ey, p)); lg.stroke()
           if (p < 1) { lg.fillStyle = 'rgba(255,243,224,0.9)'; lg.beginPath(); lg.arc(lerp(sx, ex, p), lerp(sy, ey, p), 2.5, 0, 6.283); lg.fill() }
         })
 
@@ -181,15 +186,16 @@ export default {
         mg.clearRect(0, 0, W, H)
         const mIn = ease.outCubic(prog(t, 0, 1.6))
         const ph = lerp(0.15, 0.2, prog(t, 0, END))
-        drawMoon(mg, MOON.x - t * 1.2, MOON.y + t * 0.8, MOON.R, Math.round(ph * 400) / 400, { alpha: mIn, glow: 1.0 + 0.6 * ease.inOutQuad(prog(t, L2, L2 + 1.5)) + 0.6 * glowUp })
+        drawMoon(mg, MOON.x - t * 1.2, MOON.y + t * 0.8, MOON.R, Math.round(ph * 400) / 400, { alpha: mIn, darkAlpha: 0.38, earthshine: 0.9, glow: 1.0 + 0.6 * ease.inOutQuad(prog(t, L2, L2 + 1.5)) + 0.6 * glowUp })
 
         // card
         const cIn = ease.outCubic(prog(t, L3 - 0.3, L3 + 1.2))
         card.style.opacity = String(cIn)
+        card.style.filter = `drop-shadow(0 0 ${30 + 30 * glowUp}px rgba(201,166,255,${0.45 + 0.25 * glowUp + 0.1 * Math.sin(t * 1.4)}))`
         card.style.top = (cardY(t) - CHh / 2) + 'px'
         card.style.transform = `rotateY(${Math.sin(t * 0.55) * 11 + lerp(-28, 0, cIn)}deg) rotateX(${Math.sin(t * 0.4 + 1) * 5 + lerp(16, 6, cIn)}deg) rotateZ(${Math.sin(t * 0.3) * 1.5}deg)`
         halo.style.top = (cardY(t) - 520) + 'px'
-        halo.style.opacity = String(cIn * (0.55 + 0.25 * Math.sin(t * 1.4)) + 0.35 * glowUp)
+        halo.style.opacity = String(Math.min(1, cIn * (0.8 + 0.2 * Math.sin(t * 1.4)) + 0.3 * glowUp))
         sheenBar.style.left = lerp(-60, 130, prog(t, L3 + 0.6, L3 + 2.0)) + '%'
         // the card's chakra column wakes one by one, then flares on the last line
         cg.clearRect(0, 0, CW, CHh)
@@ -218,12 +224,12 @@ export default {
         const fade = 1 - prog(t, END - 0.5, END + 0.15)
         starField(ctx, t, { seed: 41, sprites: 20, dots: 60, alpha: 0.9 * fade, drift: [-3, -6], keepOut: [[90, 1190, 900, 320]] })
         // shooting star: a pixel head with a long gradient tail, upper-left → toward the card
-        const sp = prog(t, SHOOT, SHOOT + 0.75)
+        const sp = prog(t, SHOOT - 0.15, SHOOT + 0.85)
         if (sp > 0 && sp < 1) {
           const e = ease.inOutQuad(sp)
-          const x0 = 40, y0 = 160, x1 = 700, y1 = 520
+          const x0 = -40, y0 = 120, x1 = 760, y1 = 560
           const hx = lerp(x0, x1, e), hy = lerp(y0, y1, e)
-          const tl = 360 * Math.sin(Math.PI * Math.min(1, sp * 1.3))
+          const tl = 520 * Math.sin(Math.PI * Math.min(1, sp * 1.3))
           const dx = (x1 - x0), dy = (y1 - y0), L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L
           const a = Math.sin(Math.PI * sp) * fade
           const gr = ctx.createLinearGradient(hx, hy, hx - ux * tl, hy - uy * tl)
