@@ -2,7 +2,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { motion, useAnimationFrame, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
-import { DECK } from '../data/profiles'
+import { profileById } from '../data/profiles'
+import { session } from '../lib/session'
+import { pronoun } from '../components/deck/fx'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import CardBack from '../components/reveal/CardBack'
@@ -11,8 +13,6 @@ import Burst from '../components/reveal/Burst'
 import RevealStyles from '../components/reveal/RevealStyles'
 import { ConfettiCanvas, useConfetti } from '../components/reveal/useConfetti'
 
-const HER = DECK.find((p) => p.id === 'j27')!
-const SIGN = SIGNS[HER.sign]
 
 // card geometry (phone px) — matches S-08
 const CARD = { x: 16, y: 90, w: 358, h: 625 }
@@ -29,6 +29,12 @@ const face: React.CSSProperties = {
 }
 
 export default function Reveal({ go }: ScreenProps) {
+  // whoever aligned back last (Juniper in the scripted demo)
+  const [HER] = useState(() => profileById(session.get().matchWith) ?? profileById('j27')!)
+  const SIGN = SIGNS[HER.sign]
+  const pr = pronoun(HER)
+  /** Juniper has the scripted chat; everyone else gets their own thread */
+  const toChat = () => { if (HER.id === 'j27') go('chat'); else { session.patch({ threadWith: HER.id }); go('thread') } }
   const [lit, setLit] = useState(0)
   const [flipping, setFlipping] = useState(false)
   const [flipped, setFlipped] = useState(false)
@@ -186,7 +192,7 @@ export default function Reveal({ go }: ScreenProps) {
           <span style={{ color: 'var(--align)' }}>✦</span>&nbsp;&nbsp;Tap to flip&nbsp;&nbsp;<span style={{ color: 'var(--align)' }}>✦</span>
         </div>
         <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 15, color: 'var(--label-3)' }}>
-          She aligned back. Her card is yours to turn.
+          {pr.subj === 'they' ? 'They' : pr.subj === 'he' ? 'He' : 'She'} aligned back. {pr.Poss} card is yours to turn.
         </div>
       </motion.div>
 
@@ -197,7 +203,7 @@ export default function Reveal({ go }: ScreenProps) {
         transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         style={{ position: 'absolute', top: 732, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 6, pointerEvents: revealed ? 'auto' : 'none' }}
       >
-        <button className="chrome-cta rv-cta" onClick={(e) => { e.stopPropagation(); sfx.tap(); go('chat') }}>
+        <button className="chrome-cta rv-cta" onClick={(e) => { e.stopPropagation(); sfx.tap(); toChat() }}>
           Say the honest thing <span className="spark">✦</span>
         </button>
       </motion.div>

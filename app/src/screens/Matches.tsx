@@ -6,7 +6,9 @@ import TabBar from '../components/TabBar'
 import TradeCard, { TradeCardBack, type TradeCardData } from '../components/binder/TradeCard'
 import Burst from '../components/reveal/Burst'
 import { useConfetti, ConfettiCanvas } from '../components/reveal/useConfetti'
-import { MATCHES, SECTION_LABEL, TRADE_UNLOCK_DAYS, BINDER_SLOTS, ARTIST_CARDS, type Match, type MatchSection, type ArtistCard } from '../data/matches'
+import { profileById } from '../data/profiles'
+import { pronoun } from '../components/deck/fx'
+import { matchFromDeal, MATCHES, SECTION_LABEL, TRADE_UNLOCK_DAYS, BINDER_SLOTS, ARTIST_CARDS, type Match, type MatchSection, type ArtistCard } from '../data/matches'
 import LegendaryCard from '../components/binder/LegendaryCard'
 import { ME } from '../data/profiles'
 import { SIGNS, ELEMENT_COLOR, type Element } from '../data/signs'
@@ -47,7 +49,12 @@ export default function Matches({ go }: ScreenProps) {
     id: p.id, name: p.name, age: p.age, sign: p.sign, photo: p.photo ?? SIGNS[p.sign].auraImg, serial: p.serial, pronoun: 'they',
     day: 0, section: 'your-turn', status: 'New match · say hi', when: 'NOW', traded: false, opens: 'chat', real: true,
   }))
-  const visible = [...real, ...MATCHES.filter((m) => matches.includes(m.id))].filter((m) => !blockedPeople.includes(m.id))
+  // people from tonight's deck who aligned back (newest first), besides the seeded list
+  const dealt: Match[] = matches
+    .filter((id) => !MATCHES.some((m) => m.id === id) && !people.some((p) => p.id === id))
+    .map((id) => profileById(id)).filter((p) => !!p)
+    .map((p) => matchFromDeal(p, pronoun(p).subj as Match['pronoun']))
+  const visible = [...real, ...dealt, ...MATCHES.filter((m) => matches.includes(m.id))].filter((m) => !blockedPeople.includes(m.id))
   const [view, setView] = useState<View>(() => (binderNav.takePages() || justTraded ? 'binder' : lastView))
   const [zoom, setZoom] = useState<Match | null>(null)
   const [page, setPage] = useState(0)

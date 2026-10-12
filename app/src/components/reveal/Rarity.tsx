@@ -11,13 +11,15 @@ interface Props {
   target?: number
   lit?: number
   pull?: string
+  /** their card number, e.g. '№ 036' */
+  serial?: string
 }
 
 /**
  * The "rarity" moment: a gold-foil pull badge, and seven chakra centres
  * lighting one by one. (No compatibility number, by design.)
  */
-export default function Rarity({ show, instant = false, target = 92, lit = 5, pull = 'Strong pull' }: Props) {
+export default function Rarity({ show, instant = false, target = 92, lit = 5, pull = 'Strong pull', serial = '№ 031' }: Props) {
   const [v, setV] = useState(0)
   const [done, setDone] = useState(false)
   const raf = useRef(0)
@@ -73,7 +75,7 @@ export default function Rarity({ show, instant = false, target = 92, lit = 5, pu
           display: 'flex', alignItems: 'center', gap: 8,
           fontFamily: 'var(--mono)', fontSize: 9.5, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--label-1)',
         }}>
-          <span style={{ color: 'var(--align)' }}>✦</span><span>{pull} · Match № 031</span><span style={{ color: 'var(--align)' }}>✦</span>
+          <span style={{ color: 'var(--align)' }}>✦</span><span>{pull} · Match {serial}</span><span style={{ color: 'var(--align)' }}>✦</span>
         </div>
       </motion.div>
 

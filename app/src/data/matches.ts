@@ -1,4 +1,5 @@
 import type { SignId } from './signs'
+import type { Profile } from './profiles'
 
 /** Days two people must stay aligned before they can trade copies of their cards. */
 export const TRADE_UNLOCK_DAYS = 3
@@ -37,6 +38,14 @@ export const MATCHES: Match[] = [
   { id: 'm29', name: 'Mira', age: 29, sign: 'leo', photo: 'img/people/p12.jpg', serial: '№ 022', pronoun: 'she', day: 5, section: 'quiet', status: '2 days left', when: 'SAT', traded: false, opens: 'trade' },
   { id: 's29', name: 'Sunny', age: 29, sign: 'scorpio', photo: 'img/people/p10.jpg', serial: '№ 006', pronoun: 'she', day: 6, section: 'quiet', status: '18 hours left', when: 'FRI', traded: true, opens: 'card' },
 ]
+
+/** Someone from tonight's deck who aligned back, as a row in your matches. */
+export function matchFromDeal(p: Profile, pronoun: Match['pronoun']): Match {
+  return {
+    id: p.id, name: p.name, age: p.age, sign: p.sign, photo: p.photo ?? 'img/juniper.jpg', serial: p.serial, pronoun,
+    day: 0, section: 'your-turn', status: 'New match · say hi', when: 'NOW', traded: false, opens: 'chat',
+  }
+}
 
 export const SECTION_LABEL: Record<MatchSection, string> = {
   'your-turn': 'Your turn',
@@ -79,6 +88,11 @@ export const ARTIST_CARDS: ArtistCard[] = [
  * whatever you send and to any talk card you play.
  */
 export const STARTER_CHATS: Record<string, { opening: { from: 'me' | 'them'; text: string }[]; replies: string[] }> = {
+  // tonight's matches from the deck: no opening, so the chat starts with an opener to pick
+  s26: { opening: [], replies: ['Sorry, slow texter, I was at the wheel. Clay, not a car.', 'Ok that made me laugh out loud in the studio.', 'Walk on Sunday? Buffalo Bayou, I’ll bring coffee.', 'I made a cup this week that looks like it’s judging me. You’d like it.'] },
+  a29: { opening: [], replies: ['Landed an hour ago and you’re the first text I answered.', 'Ha, ok. You’re trouble. Good trouble.', 'I’m home Thursday to Sunday. Pick a night.', 'Tacos or karaoke? Wrong answer is both.'] },
+  b25: { opening: [], replies: ['Two Tauruses. Someone has to give in and it won’t be me.', 'I’ll bring dessert. Obviously.', 'Early dinner Saturday? I’m asleep by 9, it’s a feature.', 'Ok you passed the test. I like you.'] },
+  m27: { opening: [], replies: ['Noted. I’ll be reviewing that statement later.', 'I like that you just say things. Rare.', 'Thursday after 7. I’ll pick somewhere quiet.', 'Fine. You win this round.'] },
   t24: {
     opening: [
       { from: 'them', text: 'Ok your card says record stores. Best one in Houston, go.' },

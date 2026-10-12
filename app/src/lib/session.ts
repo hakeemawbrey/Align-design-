@@ -58,6 +58,8 @@ export interface SessionState {
   obStep: number
   /** the real person the Thread screen is chatting with */
   threadWith: string
+  /** who the match + reveal screens show: whoever aligned back last */
+  matchWith: string
   /** event cards saved for later (swiped left), played from the deck screen */
   savedEvents: EventId[]
   /** energy: earned by talking to matches and going on dates, spent to play event cards */
@@ -83,6 +85,7 @@ const initial = (): SessionState => ({
   peekUpsellSeen: false,
   obStep: 0,
   threadWith: '',
+  matchWith: 'j27',
   savedEvents: [],
   energy: 40,
 })

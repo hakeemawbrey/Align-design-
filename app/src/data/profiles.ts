@@ -117,7 +117,7 @@ export const DECK: Profile[] = [
   },
   {
     id: 's26', initial: 'Sol', name: 'Sol', age: 26, sign: 'pisces', moon: 'cancer', rising: 'scorpio',
-    serial: '№ 036', pull: 'Strong pull', alignsBack: false,
+    serial: '№ 036', pull: 'Strong pull', alignsBack: true,
     photo: 'img/people/p7.jpg',
     reading: [
       { kind: 'pull', text: 'Gentle, and easy to be quiet with.', strength: 3 },
@@ -125,6 +125,12 @@ export const DECK: Profile[] = [
       { kind: 'align', text: 'Calm, caring, slow to fight. Good for the long term.', strength: 3 },
     ],
     dealbreakers: 'Coldness. Rushing. Never asking how my day was.',
+    bio: 'I throw cups for a living and sell most of them to people I like. Slow mornings, long walks, a standing order of tamales on Sundays. Looking for someone who texts back eventually and means it when they do.',
+    religion: 'Raised Catholic, now just candles',
+    lookingFor: 'Something slow and real',
+    height: '5′9″',
+    work: 'Ceramicist',
+    interests: ['Pottery', 'Night swims', 'Tamales', 'Ambient music', 'Thrift runs'],
   },
   {
     id: 'k28', initial: 'Kai', name: 'Kai', age: 28, sign: 'capricorn', moon: 'taurus', rising: 'virgo',
@@ -153,13 +159,19 @@ export const BONUS: Profile[] = [
   },
   {
     id: 'a29', initial: 'Amara', name: 'Amara', age: 29, sign: 'sagittarius', moon: 'leo', rising: 'aries',
-    serial: '№ 044', pull: 'Strong pull', alignsBack: false, photo: 'img/people/p8.jpg',
+    serial: '№ 044', pull: 'Strong pull', alignsBack: true, photo: 'img/people/p8.jpg',
     reading: [
       { kind: 'pull', text: 'Confident. She’ll ask you out before you ask her.', strength: 3 },
       { kind: 'push', text: 'She moves fast; you like to be sure. Say what pace works.', strength: 3 },
       { kind: 'align', text: 'She brings the adventure, you bring the home base.', strength: 2 },
     ],
     dealbreakers: 'Indecision. Cancelled plans. Anyone who can’t laugh at themselves.',
+    bio: 'Flight attendant, home three nights a week and I make them count. I know every good taco truck between here and Lisbon. Ask me about the worst landing I ever had.',
+    religion: 'Spiritual',
+    lookingFor: 'Long-term, open to adventure',
+    height: '5′7″',
+    work: 'Flight attendant',
+    interests: ['Travel', 'Salsa', 'Street food', 'Karaoke', 'Running'],
   },
 ]
 
@@ -232,6 +244,24 @@ const BLURBS: Record<string, string> = {
   m27: 'Lawyer. Reads the fine print. Reads you too.',
 }
 for (const p of [...DECK, ...BONUS, ...MORE, ...COMETS]) p.blurb ??= BLURBS[p.id]
+
+/** Besides Juniper, these people align back too — spread through the deal so a run gets a few matches, not every card. */
+const ALSO_ALIGN: Record<string, Partial<Profile>> = {
+  b25: {
+    bio: 'Pastry chef. I start work at 4am, so dinner dates end at 9 and that is a feature. Same sign as you, which means we both know exactly how stubborn this will be.',
+    religion: 'Not religious', lookingFor: 'Long-term', height: '5′4″', work: 'Pastry chef',
+    interests: ['Baking', 'Farmers markets', 'Wine', 'Gardening', 'Old movies'],
+  },
+  m27: {
+    bio: 'Lawyer by day, terrible gardener by night. I will read the terms and conditions of this relationship and I will have notes. Direct, loyal, and funnier than I look in a suit.',
+    religion: 'Agnostic', lookingFor: 'Something serious', height: '5′6″', work: 'Lawyer',
+    interests: ['True crime', 'Pilates', 'Book club', 'Natural wine', 'Houseplants'],
+  },
+}
+for (const p of [...MORE, ...COMETS]) if (ALSO_ALIGN[p.id]) Object.assign(p, ALSO_ALIGN[p.id], { alignsBack: true })
+
+/** Anyone who can be dealt, by id. */
+export const profileById = (id: string): Profile | undefined => [...DECK, ...BONUS, ...MORE, ...COMETS].find((p) => p.id === id)
 
 /** Tonight's fifteen people, in deal order: three draws of five. */
 export const TONIGHT: Profile[] = [...DECK, ...BONUS, ...MORE]

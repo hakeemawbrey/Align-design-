@@ -463,6 +463,7 @@ export default function Deck({ go, sky }: ScreenProps & {
       sfx.align()
       setStarPulse((n) => n + 1)
       if (profile.alignsBack) {
+        session.patch({ matchWith: profile.id })
         setMatching(true)
         starBurst(canvasRef.current, 300, CARD_CY - 40, 1.8)
         later(() => starBurst(canvasRef.current, 195, 380, 1.4), 160)

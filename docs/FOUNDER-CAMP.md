@@ -56,8 +56,9 @@
   swipes, matches, chat, photos on Supabase, with server-side matching and
   row-level security), two real people matching and chatting, and the chart
   math (positions computed, not made up).
-- **Seeded:** tonight's people, Juniper aligning back, and her replies. They
-  stand in for a city's worth of users.
+- **Seeded:** tonight's people, who aligns back (Juniper, Sol, Amara, Bianca,
+  and Mina from the Comet event), and their replies. They stand in for a
+  city's worth of users.
 - **Next:** a real dealing algorithm across real users, verification and
   safety, and push notifications.
 

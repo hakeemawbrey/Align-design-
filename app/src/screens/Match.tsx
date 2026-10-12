@@ -4,7 +4,8 @@ import { motion, type Transition } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import { SIGNS } from '../data/signs'
-import { DECK, ME } from '../data/profiles'
+import { ME, profileById } from '../data/profiles'
+import { pronoun } from '../components/deck/fx'
 import { sfx } from '../lib/sfx'
 import { session } from '../lib/session'
 import AuraOrb from '../components/reveal/AuraOrb'
@@ -13,9 +14,7 @@ import Rarity from '../components/reveal/Rarity'
 import RevealStyles from '../components/reveal/RevealStyles'
 import { ConfettiCanvas, useConfetti } from '../components/reveal/useConfetti'
 
-const HER = DECK.find((p) => p.id === 'j27')!
 const MINE = SIGNS[ME.sign]
-const HERS = SIGNS[HER.sign]
 
 /** collision point, phone px */
 const CX = 195
@@ -42,7 +41,10 @@ const ORB_T: Transition[] = [
 const AT = { charge: 1450, slam: 2000, burst: 2240, settle: 2600 }
 
 export default function Match({ go }: ScreenProps) {
-  useEffect(() => { session.patch({ unseenMatch: true }); talk.grantOnce('match:j27', 'starter') }, [])
+  // whoever aligned back last (Juniper in the scripted demo)
+  const [HER] = useState(() => profileById(session.get().matchWith) ?? profileById('j27')!)
+  const HERS = SIGNS[HER.sign]
+  useEffect(() => { session.patch({ unseenMatch: true }); talk.grantOnce(`match:${HER.id}`, 'starter') }, [HER.id])
   const [stage, setStage] = useState(0)
   const [skipped, setSkipped] = useState(false)
   const [burstKey, setBurstKey] = useState(0)
@@ -146,7 +148,7 @@ export default function Match({ go }: ScreenProps) {
       <ConfettiCanvas canvasRef={canvasRef} />
 
       {/* game layer */}
-      <Rarity show={stage >= 3} instant={skipped} pull={HER.pull} />
+      <Rarity show={stage >= 3} instant={skipped} pull={HER.pull} serial={HER.serial} />
 
       {/* labels under orbs */}
       <motion.div {...rise(0)} style={{ position: 'absolute', top: 464, left: 0, right: 0, height: 14, zIndex: 5 }}>
@@ -187,7 +189,7 @@ export default function Match({ go }: ScreenProps) {
           onClick={(e) => { e.stopPropagation(); sfx.tap(); go('deck') }}
           style={{ fontFamily: 'var(--sans)', fontSize: 14.5, padding: '9px 10px', margin: '-5px 0' }}
         >
-          Keep dealing — she waits in matches
+          Keep dealing — {pronoun(HER).subj} {pronoun(HER).subj === 'they' ? 'wait' : 'waits'} in matches
         </button>
       </motion.div>
     </div>

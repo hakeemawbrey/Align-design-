@@ -12,7 +12,7 @@ import { api, useWorld, type Message } from '../api'
 import { sfx } from '../lib/sfx'
 import { session, useSession, energize } from '../lib/session'
 import { Bubble, type Msg } from './Chat'
-import { ME, type Profile } from '../data/profiles'
+import { ME, profileById, type Profile } from '../data/profiles'
 import { MATCHES, STARTER_CHATS, daysLeft } from '../data/matches'
 import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
@@ -31,7 +31,7 @@ const toMsg = (m: Message, i: number): Msg => ({ id: i + 1, from: m.from === 'me
 /** A match from your list who isn't a real person, as a card the chat can show. */
 function seeded(id: string): Profile | undefined {
   const m = MATCHES.find((x) => x.id === id)
-  if (!m) return undefined
+  if (!m) return profileById(id)
   return { id: m.id, initial: m.name, name: m.name, age: m.age, sign: m.sign, moon: m.sign, rising: m.sign, serial: m.serial, pull: 'Steady pull', photo: m.photo, alignsBack: true, reading: [], dealbreakers: '' }
 }
 
