@@ -3,6 +3,7 @@
 //   node promo/scripts/render.mjs                 → promo/out/align-promo.mp4
 //   node promo/scripts/render.mjs --stills=1,4.2  → promo/out/stills/*.png
 //   node promo/scripts/render.mjs --sheet         → contact sheet (2 fps)
+//   --teaser=<id> renders a vertical teaser (promo/teaser.html?t=<id>) → promo/out/teasers/<id>.mp4
 //   --vertical renders the 9:16 (1080×1920) cut
 //   options: --fps=30 --from=0 --to=30 --workers=4 --out=path.mp4
 import { createRequire } from 'node:module'
@@ -19,10 +20,12 @@ const require = createRequire(path.join(ROOT, 'app/package.json'))
 const { chromium } = require('playwright')
 
 const arg = (k, d) => { const a = process.argv.find(x => x.startsWith(`--${k}=`)); return a ? a.split('=')[1] : (process.argv.includes(`--${k}`) ? true : d) }
-const FPS = Number(arg('fps', 30)), FROM = Number(arg('from', 0)), TO = Number(arg('to', 31.5)), WORKERS = Number(arg('workers', 4))
-const VERT = !!arg('vertical')
+const TEASER = arg('teaser')
+const FPS = Number(arg('fps', 30)), FROM = Number(arg('from', 0)), WORKERS = Number(arg('workers', 4))
+let TO = Number(arg('to', TEASER ? 0 : 31.5))
+const VERT = !!arg('vertical') || !!TEASER
 const [VW, VH] = VERT ? [1080, 1920] : [1920, 1080]
-const OUT = path.resolve(arg('out', path.join(ROOT, VERT ? 'promo/out/align-promo-vertical.mp4' : 'promo/out/align-promo.mp4')))
+const OUT = path.resolve(arg('out', path.join(ROOT, TEASER ? `promo/out/teasers/${TEASER}.mp4` : VERT ? 'promo/out/align-promo-vertical.mp4' : 'promo/out/align-promo.mp4')))
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.json': 'application/json' }
 const server = createServer(async (req, res) => {
@@ -31,7 +34,7 @@ const server = createServer(async (req, res) => {
   catch { res.writeHead(404); res.end() }
 }).listen(0)
 const port = server.address().port
-const URL_ = `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
+const URL_ = TEASER ? `http://127.0.0.1:${port}/promo/teaser.html?render&v&t=${TEASER}` : `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
 
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--force-color-profile=srgb', '--disable-lcd-text'] }).catch(() => chromium.launch())
 async function newPage() {
@@ -47,6 +50,7 @@ async function shoot(page, t, file, type = 'jpeg') {
   await page.screenshot({ path: file, type, ...(type === 'jpeg' ? { quality: 96 } : {}) })
 }
 
+if (TEASER && !TO) { const p = await newPage(); TO = await p.evaluate(() => window.DURATION); await p.close() }
 const stills = arg('stills')
 const sheet = arg('sheet')
 if (stills || sheet) {
@@ -62,7 +66,7 @@ if (stills || sheet) {
     console.log('sheet →', path.join(dir, 'sheet.jpg'))
   } else console.log(files.join('\n'))
 } else {
-  const dir = path.join(ROOT, 'promo/out/frames'); await rm(dir, { recursive: true, force: true }); await mkdir(dir, { recursive: true })
+  const dir = path.join(ROOT, 'promo/out/frames', path.basename(OUT, '.mp4')); await rm(dir, { recursive: true, force: true }); await mkdir(dir, { recursive: true })
   const n = Math.round((TO - FROM) * FPS)
   let done = 0
   const t0 = Date.now()
@@ -74,7 +78,7 @@ if (stills || sheet) {
     }
   }))
   await mkdir(path.dirname(OUT), { recursive: true })
-  const audio = path.join(ROOT, 'promo/out/soundtrack.wav')
+  const audio = TEASER ? path.join(ROOT, `promo/out/teasers/${TEASER}.wav`) : path.join(ROOT, 'promo/out/soundtrack.wav')
   const a = existsSync(audio) && !arg('mute') ? ['-i', audio] : []
   const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-framerate', String(FPS), '-i', path.join(dir, 'f%05d.jpg'), ...a,
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
