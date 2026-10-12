@@ -1,5 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
-import { W, H, IMG, A, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
+import { W, H, VERT, IMG, A, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
 import { veilCanvas } from './s3-veil.js'
 
 // index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
@@ -16,8 +16,9 @@ const CHIP_FACES = PEOPLE_SRC.map((k) => k === 'juniper' ? { src: IMG + 'juniper
   : k === 'hakeem' ? { src: IMG + 'hakeem.jpg', iw: 900, ih: 750, fx: 0.5, fy: 0.43, fw: 0.20 }
   : { src: PEOPLE[k - 1], iw: 342, ih: 366, fx: 0.5, fy: 0.37, fw: 0.25 })
 const CHIP_STEP_FRAMES = 2   // carousel advances one slot every 2 frames (15 Hz) → ~12 faces flash by while the chip is open
-const TILE_W = 68, TILE_H = 86, TILE_STEP = 72, CHIP_W = 3 * TILE_W + 2 * (TILE_STEP - TILE_W), CHIP_MARGIN = 6
-const TICK = 20
+// vertical: bigger line (80px vs 68px) → chip tiles, ticks scaled to match
+const TILE_W = VERT ? 84 : 68, TILE_H = VERT ? 106 : 86, TILE_STEP = VERT ? 89 : 72, CHIP_W = 3 * TILE_W + 2 * (TILE_STEP - TILE_W), CHIP_MARGIN = 6
+const TICK = VERT ? 24 : 20
 const ROSE = '#ff8fb1'   // light rose accent: reads on the dark ground (≈8:1 on #120a2e)
 const FI = (t) => Math.round(t * 30)            // frame index (never floor: float error duplicates frames)
 
@@ -43,7 +44,15 @@ function makeTicks(parent, color, size = TICK) {
 
 /** "{ now they do }": a small constellation of people around the tick box — each starts as a point of light and
  *  blooms into a round aura portrait; hairlines join them in order (dx, dy from frame centre, d = diameter, glow rgb) */
-const CONST = [
+const CONST = VERT ? [
+  // vertical: stacked above / below the bracket line (path dips through the line's sides, outside the tick box)
+  { k: 5, dx: -420, dy: 400, d: 84, g: '232,98,138' },
+  { k: 9, dx: -420, dy: -320, d: 92, g: '242,154,74' },
+  { k: 12, dx: -40, dy: -560, d: 84, g: '180,92,255' },
+  { k: 1, dx: 330, dy: -420, d: 92, g: '242,154,74' },
+  { k: 6, dx: 420, dy: 330, d: 84, g: '127,216,176' },
+  { k: 10, dx: 40, dy: 560, d: 90, g: '232,98,138' },
+] : [
   { k: 5, dx: -470, dy: 262, d: 52, g: '232,98,138' },
   { k: 9, dx: -622, dy: -40, d: 58, g: '242,154,74' },
   { k: 12, dx: -262, dy: -330, d: 52, g: '180,92,255' },
@@ -70,10 +79,10 @@ export function sceneIntro(stage) {
   const mid = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
   const row = el('div', {
     position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', display: 'flex', alignItems: 'center',
-    fontFamily: SANS, fontWeight: 500, fontSize: '68px', color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.01em',
+    fontFamily: SANS, fontWeight: 500, fontSize: VERT ? '80px' : '68px', color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.01em',
   }, mid)
   const mk = (txt, extra = {}) => el('span', { display: 'inline-block', overflow: 'hidden', verticalAlign: 'middle', ...extra }, row, txt)
-  const BR_L = 20, BR_R = 20   // gap inside the braces (tuned by eye so both sides read equal)
+  const BR_L = VERT ? 23 : 20, BR_R = VERT ? 23 : 20   // gap inside the braces (tuned by eye so both sides read equal)
   const lb = mk('{', { padding: `0 ${BR_L}px 8px 0` })
   const wIn = mk('now')
   const wYour = mk('&nbsp;they')
@@ -87,12 +96,12 @@ export function sceneIntro(stage) {
     img(tile, f.src, { left: (TILE_W / 2 - iw * f.fx) + 'px', top: (TILE_H * 0.47 - ih * f.fy) + 'px', width: iw + 'px', height: ih + 'px' })
     return tile
   })
-  const dot = mk('•', { color: ROSE, fontSize: '30px' })
+  const dot = mk('•', { color: ROSE, fontSize: VERT ? '35px' : '30px' })
   const wDucing = mk('ducing')
   const wAlign = mk('&nbsp;<span style="font-family:' + SERIF.replace(/"/g, "'") + ';font-style:italic;font-size:1.16em;letter-spacing:0;padding-right:0.03em">Align</span>', { color: ROSE })
   const rb = mk('}', { padding: `0 0 8px ${BR_R}px` })
-  const arrL = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(239,230,214,0.34)' }, mid, '⟵')
-  const arrR = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: '56px', color: 'rgba(239,230,214,0.34)' }, mid, '⟶')
+  const arrL = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: VERT ? '68px' : '56px', color: 'rgba(239,230,214,0.34)' }, mid, '⟵')
+  const arrR = el('div', { position: 'absolute', top: '50%', fontFamily: SANS, fontWeight: 200, fontSize: VERT ? '68px' : '56px', color: 'rgba(239,230,214,0.34)' }, mid, '⟶')
   const ticks = makeTicks(mid, C.bone, TICK)
   // constellation (lines on a canvas under the avatars)
   const cLines = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', pointerEvents: 'none' }, mid)
@@ -180,7 +189,8 @@ export function sceneIntro(stage) {
         const lag = ease.outCubic(prog(tt, T.ticks, T.ticks + 0.5))
         const grow = ease.spring(prog(tt, T.ticks, T.ticks + 0.65), 0.1)
         const conv = ease.inOutCubic(prog(tt, T.conv, T.conv + 0.24))
-        const bw = rw * lerp(1.05, 1.4, grow) + 60, bh = 100 + 300 * grow
+        const bw = VERT ? Math.min(rw * lerp(1.02, 1.12, grow) + 40, 940) : rw * lerp(1.05, 1.4, grow) + 60
+        const bh = VERT ? 118 + 382 * grow : 100 + 300 * grow
         return { cx: W / 2, cy: H / 2, w: lerp(bw, 0, conv), h: lerp(bh, 0, conv), op: lag * (1 - prog(tt, T.conv + 0.22, T.conv + 0.28)) }
       })
       // constellation
@@ -213,9 +223,17 @@ export function sceneIntro(stage) {
       })
       const rw = st.w
       const ap = ease.outCubic(prog(t, T.intro, T.intro + 0.65))
+      if (VERT) {
+        // vertical: the arrows sit above / below the line (no room at the sides), pointing outward
+        const off = lerp(420, 300, ap)
+        arrL.style.left = arrR.style.left = (W / 2) + 'px'
+        arrL.style.transform = `translate(-50%, calc(-55% - ${off}px)) rotate(90deg)`
+        arrR.style.transform = `translate(-50%, calc(-55% + ${off}px)) rotate(90deg)`
+      } else {
       arrL.style.left = (W / 2 - rw / 2 - lerp(300, 150, ap) - 56) + 'px'
       arrR.style.left = (W / 2 + rw / 2 + lerp(300, 150, ap) - 4) + 'px'
       arrL.style.transform = arrR.style.transform = 'translateY(-55%)'
+      }
       arrL.style.opacity = arrR.style.opacity = String(ap * outF)
     },
   }

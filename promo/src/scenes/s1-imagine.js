@@ -1,5 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
-import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { W, H, VERT, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
 import { drawMoon } from './fx-moon.js'
 
 // index.html ships Inter 200/300/400/600 only; weight 500 would silently fall back to 400.
@@ -17,7 +17,9 @@ if (typeof document !== 'undefined' && !window.__inter500) {
 const TYPE_START = 0.2
 const S1_END = 3.55
 const GLITCH = [[1.62, 1.72], [2.28, 2.36], [2.72, 2.86]]
-const BGW = 2304, BGH = 1296                 // oversized layers (1.2×) so push + parallax never reveal an edge
+const BGW = VERT ? 1296 : 2304, BGH = VERT ? 2304 : 1296   // oversized layers (1.2×) so push + parallax never reveal an edge
+// vertical: the galaxy band runs steeper (corner to corner of the tall frame)
+const BAND_A = VERT ? -1.05 : -0.42
 const NEB_RES = 2                            // nebula field computed at 1/3 res, then upscaled + softened
 const GRAIN_N = 6, GRAIN_TILE = 512
 
@@ -57,15 +59,18 @@ function buildNebula() {
     const v = y / h
     for (let x = 0; x < w; x++) {
       const u = x / w
-      const nx = u * 4.6, ny = v * 2.6
+      const nx = VERT ? u * 2.6 : u * 4.6, ny = VERT ? v * 4.6 : v * 2.6
       // domain warp → wispy filaments rather than blobs
       const wx = fbm(nx + 1.7, ny + 9.2, 11, 4), wy = fbm(nx + 8.3, ny + 2.8, 23, 4)
       const qx = nx + 2.4 * wx, qy = ny + 2.4 * wy
       let d = fbm(qx, qy, 37, 6)
       // composition: a broad luminous arc from upper-left down to lower-right, kept off the caption band
-      const arc = Math.exp(-Math.pow((v - (0.18 + 0.75 * u * u * 0.9)) / 0.32, 2))
-      const lowR = Math.exp(-(Math.pow((u - 0.78) / 0.28, 2) + Math.pow((v - 0.82) / 0.26, 2)))
-      const upL = Math.exp(-(Math.pow((u - 0.2) / 0.3, 2) + Math.pow((v - 0.16) / 0.24, 2)))
+      const arc = VERT ? Math.exp(-Math.pow((u - (0.12 + 0.8 * v * v * 0.95)) / 0.3, 2))
+        : Math.exp(-Math.pow((v - (0.18 + 0.75 * u * u * 0.9)) / 0.32, 2))
+      const lowR = VERT ? Math.exp(-(Math.pow((u - 0.74) / 0.34, 2) + Math.pow((v - 0.84) / 0.2, 2)))
+        : Math.exp(-(Math.pow((u - 0.78) / 0.28, 2) + Math.pow((v - 0.82) / 0.26, 2)))
+      const upL = VERT ? Math.exp(-(Math.pow((u - 0.24) / 0.36, 2) + Math.pow((v - 0.15) / 0.18, 2)))
+        : Math.exp(-(Math.pow((u - 0.2) / 0.3, 2) + Math.pow((v - 0.16) / 0.24, 2)))
       const mask = clamp(0.08 + 0.85 * arc + 1.1 * lowR + 0.8 * upL, 0, 1.7)
       // ridged detail → thin bright filaments threaded through the soft clouds
       const fr = 1 - Math.abs(fbm(qx * 2.1 + 5.5, qy * 2.1 + 0.7, 89, 5) - 0.5) * 2
@@ -113,10 +118,11 @@ function buildNebula() {
   glow(BGW * 0.30, BGH * 0.22, 300, 'rgba(180,92,255,0.12)')
   glow(BGW * 0.62, BGH * 0.12, 380, 'rgba(154,123,224,0.08)')
   // faint galaxy band (diagonal) – a long soft streak
-  nx.save(); nx.translate(BGW * 0.5, BGH * 0.5); nx.rotate(-0.42); nx.scale(1, 0.14)
-  const gb = nx.createRadialGradient(0, 0, 0, 0, 0, BGW * 0.62)
+  const GL = Math.max(BGW, BGH)
+  nx.save(); nx.translate(BGW * 0.5, BGH * 0.5); nx.rotate(BAND_A); nx.scale(1, 0.14)
+  const gb = nx.createRadialGradient(0, 0, 0, 0, 0, GL * 0.62)
   gb.addColorStop(0, 'rgba(201,166,255,0.09)'); gb.addColorStop(0.6, 'rgba(154,123,224,0.04)'); gb.addColorStop(1, 'rgba(154,123,224,0)')
-  nx.fillStyle = gb; nx.fillRect(-BGW, -BGW, BGW * 2, BGW * 2); nx.restore()
+  nx.fillStyle = gb; nx.fillRect(-GL, -GL, GL * 2, GL * 2); nx.restore()
   // hidden seed-of-life: seven hairline circles, barely there (felt more than seen)
   nx.globalCompositeOperation = 'screen'
   nx.strokeStyle = 'rgba(242,199,92,0.045)'; nx.lineWidth = 1.5
@@ -138,8 +144,9 @@ function buildStars(n, seed, { rMin, rMax, aMin, aMax, band = 0 }) {
     let sx = r() * BGW, sy = r() * BGH
     if (band && r() < band) {           // cluster along the galaxy band
       const t = r() * 2 - 1, off = (r() + r() + r() - 1.5) * 90
-      sx = BGW * 0.5 + t * BGW * 0.6 * Math.cos(-0.42) - off * Math.sin(-0.42)
-      sy = BGH * 0.5 + t * BGW * 0.6 * Math.sin(-0.42) + off * Math.cos(-0.42)
+      const GL = Math.max(BGW, BGH)
+      sx = BGW * 0.5 + t * GL * 0.6 * Math.cos(BAND_A) - off * Math.sin(BAND_A)
+      sy = BGH * 0.5 + t * GL * 0.6 * Math.sin(BAND_A) + off * Math.cos(BAND_A)
     }
     const s = rMin + Math.pow(r(), 2.2) * (rMax - rMin)
     const a = aMin + r() * (aMax - aMin)
@@ -213,23 +220,26 @@ export function sceneImagine(stage) {
   const bright = []
   while (bright.length < 40) {
     const x = rb() * W, y = rb() * H
-    if (y > 440 && y < 640 && x > 180 && x < 1740) continue
+    if (VERT ? (y > 800 && y < 1120) : (y > 440 && y < 640 && x > 180 && x < 1740)) continue
     bright.push({ x, y, size: 26 + Math.pow(rb(), 2.5) * 120, spike: bright.length < 9, seed: 500 + bright.length, sp: 1.6 + rb() * 3, depth: rb() })
   }
   // vignette (indigo, never black) — baked once
   const vig = canvas(W, H), vx = vig.getContext('2d')
-  const vg = vx.createRadialGradient(W / 2, H * 0.48, H * 0.32, W / 2, H * 0.5, H * 1.08)
+  const vg = VERT ? vx.createRadialGradient(W / 2, H * 0.48, W * 0.42, W / 2, H * 0.5, H * 0.72)
+    : vx.createRadialGradient(W / 2, H * 0.48, H * 0.32, W / 2, H * 0.5, H * 1.08)
   vg.addColorStop(0, 'rgba(11,6,32,0)'); vg.addColorStop(0.65, 'rgba(11,6,32,0.35)'); vg.addColorStop(1, 'rgba(8,4,24,0.85)')
   vx.fillStyle = vg; vx.fillRect(0, 0, W, H)
   // caption pocket: a very soft indigo darkening so bone text holds ≥4.5:1 even over nebula wisps
   const pocket = canvas(W, H), px2 = pocket.getContext('2d')
-  px2.save(); px2.translate(W / 2, H / 2 + 6); px2.scale(1, 0.2)
+  px2.save(); px2.translate(W / 2, H / 2 + 6); VERT ? px2.scale(0.62, 0.3) : px2.scale(1, 0.2)
   const pg = px2.createRadialGradient(0, 0, 0, 0, 0, 1000)
   pg.addColorStop(0, 'rgba(11,6,32,0.55)'); pg.addColorStop(0.7, 'rgba(11,6,32,0.3)'); pg.addColorStop(1, 'rgba(11,6,32,0)')
   px2.fillStyle = pg; px2.fillRect(-1000, -1000, 2000, 2000); px2.restore()
 
-  const line = new TypeLine(root, 'What if the stars chose who you meet?', {
-    left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 500, fontSize: '80px', letterSpacing: '-0.018em',
+  // vertical: two balanced lines (the space becomes a newline → same 37 chars, same typing timing)
+  const line = new TypeLine(root, VERT ? 'What if the stars\nchose who you meet?' : 'What if the stars chose who you meet?', {
+    left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 500, fontSize: VERT ? '84px' : '80px', letterSpacing: '-0.018em',
+    ...(VERT ? { textAlign: 'center', lineHeight: 1.14 } : {}),
     // soft shadow + the faintest chromatic fringe (filmic softness)
     textShadow: '-0.7px 0 0 rgba(232,98,138,0.32), 0.7px 0 0 rgba(140,170,255,0.28), 0 2px 26px rgba(11,6,32,0.75)',
   }, { perChar: 0.026, fade: 0.3, final: C.bone, accent: [C.rub, C.amber, C.gold, C.plum] })
@@ -243,7 +253,7 @@ export function sceneImagine(stage) {
   const r = rng(7)
   const bandY = Array.from({ length: 7 }, () => r() * H)
   const stripY = Array.from({ length: 5 }, () => [r() * H, 30 + r() * 120])
-  const sliceDef = Array.from({ length: 5 }, () => ({ y: 120 + r() * 760, h: 18 + r() * 80, dir: r() < 0.5 ? -1 : 1, amp: 40 + r() * 60 }))
+  const sliceDef = Array.from({ length: 5 }, () => ({ y: VERT ? 200 + r() * 1500 : 120 + r() * 760, h: 18 + r() * 80, dir: r() < 0.5 ? -1 : 1, amp: 40 + r() * 60 }))
 
   /** draw an oversized layer scaled about a focus point with a drift offset */
   const layer = (img, s, dx, dy) => {
@@ -290,9 +300,9 @@ export function sceneImagine(stage) {
       // upper-right, clear of the caption band. Fades in 0.15–1.1, rises the whole scene; lit 5% → 12%.
       {
         const mk = ease.outCubic(prog(t, 0, S1_END))
-        const mx = lerp(1575, 1548, mk), my = lerp(338, 236, mk)
+        const mx = VERT ? lerp(790, 768, mk) : lerp(1575, 1548, mk), my = VERT ? lerp(500, 392, mk) : lerp(338, 236, mk)
         const s = cam * lerp(1, 1.05, k)
-        drawMoon(bx, W / 2 + (mx - W / 2) * s + driftX * 1.3, H / 2 + (my - H / 2) * s + driftY * 1.3, 72 * s,
+        drawMoon(bx, W / 2 + (mx - W / 2) * s + driftX * 1.3, H / 2 + (my - H / 2) * s + driftY * 1.3, (VERT ? 80 : 72) * s,
           lerp(0.072, 0.112, mk), { alpha: fadeUp * ease.inOutQuad(prog(t, 0.15, 1.1)), glow: 3.4, earthshine: 1, darkAlpha: 0.62 })
       }
       bx.drawImage(pocket, 0, 0)
