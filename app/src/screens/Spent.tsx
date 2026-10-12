@@ -86,9 +86,9 @@ export default function Spent({ go }: ScreenProps) {
         45 a night with Align+ <span className="spark">✦</span>
       </motion.button>
       <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
-        onClick={() => { sfx.tap(); go('matches') }}
-        style={{ position: 'absolute', top: 710, left: 95, right: 95, height: 40, textAlign: 'center', fontSize: 15, color: 'var(--label-2)' }}>
-        Talk to your matches
+        onClick={() => { sfx.tap(); go('x/wait-reset') }}
+        style={{ position: 'absolute', top: 710, left: 80, right: 80, height: 40, textAlign: 'center', fontSize: 15, color: 'var(--label-2)' }}>
+        Wait for the 11:11 deal
       </motion.button>
 
       <TabBar active="deck" go={go} />

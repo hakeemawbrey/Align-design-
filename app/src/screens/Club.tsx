@@ -8,7 +8,7 @@ import Composer from '../components/club/Composer'
 import Thread from '../components/club/Thread'
 import FoundersDrop, { FOUNDERS_EDITION } from '../components/club/FoundersDrop'
 import { AuraAvatar, LikeButton, PopCount, SparkCount } from '../components/club/PostParts'
-import { ROOM_POSTS, ROOM_COUNT, SAID_TONIGHT, TONIGHT_PROMPT, type Post, type Reply } from '../components/club/posts'
+import { ROOM_POSTS, ROOM_COUNT, SAID_TONIGHT, TONIGHT_PROMPT, reportedPosts, type Post, type Reply } from '../components/club/posts'
 import { ME } from '../data/profiles'
 import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
@@ -36,7 +36,7 @@ export default function Club({ go }: ScreenProps) {
   const timers = useRef<number[]>([])
   useEffect(() => () => timers.current.forEach(clearTimeout), [])
 
-  const posts: Post[] = [...clubMine.map((m) => minePost(m, alignPlus ? FOUNDERS_EDITION.serial : undefined)), ...ROOM_POSTS]
+  const posts: Post[] = [...clubMine.map((m) => minePost(m, alignPlus ? FOUNDERS_EDITION.serial : undefined)), ...ROOM_POSTS.filter((p) => !reportedPosts.has(p.id))]
   const liked = new Set(clubLiked)
   const likesOf = (p: Post) => p.likes + (liked.has(p.id) ? 1 : 0)
   const said = SAID_TONIGHT + clubMine.length
@@ -149,9 +149,10 @@ export default function Club({ go }: ScreenProps) {
               ))}
             </AnimatePresence>
           </div>
-          <div className="mono" style={{ textAlign: 'center', marginTop: 16, fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)' }}>
-            THE ROOM CLEARS AT 11:11
-          </div>
+          <button className="mono" onClick={() => { sfx.tap(); go('x/club-empty') }}
+            style={{ display: 'block', margin: '8px auto 0', height: 36, padding: '0 12px', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-3)' }}>
+            THE ROOM CLEARS AT 11:11 ›
+          </button>
         </div>
       </motion.div>
 
@@ -169,6 +170,7 @@ export default function Club({ go }: ScreenProps) {
             onLike={() => toggleLike(open.id)}
             onReply={(text) => setExtraReplies((r) => ({ ...r, [open.id]: [...(r[open.id] ?? []), { name: ME.name, age: ME.age, moon: ME.moon, text }] }))}
             onClose={() => setOpenId(null)}
+            onReport={open.mine ? undefined : () => go(`x/report-post/${open.id}`)}
           />
         )}
       </AnimatePresence>

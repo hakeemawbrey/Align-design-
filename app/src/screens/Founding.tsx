@@ -221,7 +221,7 @@ export default function Founding({ go }: ScreenProps) {
             </motion.button>
             <motion.div {...fade(1.1)} style={{ position: 'absolute', top: 796, left: 0, right: 0, textAlign: 'center', fontSize: 11, color: 'var(--label-3)' }}>
               {founding ? '3 days free, then $88.88 a year' : '3 days free, then $14.44 a month'}
-              <span style={{ margin: '0 7px' }}>·</span>Restore purchase<span style={{ margin: '0 7px' }}>·</span>Terms
+              <span style={{ margin: '0 7px' }}>·</span><button onClick={() => { sfx.tap(); go('x/restore') }} style={{ fontSize: 11, color: 'var(--label-2)', padding: '8px 0', margin: '-8px 0' }}>Restore purchase</button><span style={{ margin: '0 7px' }}>·</span>Terms
             </motion.div>
           </motion.div>
         )}

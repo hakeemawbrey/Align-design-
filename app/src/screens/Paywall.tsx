@@ -4,14 +4,14 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Backdrop from '../components/paywall/Backdrop'
 import Portal from '../components/paywall/Portal'
-import { CheckStamp, Chevron, CloseX } from '../components/paywall/bits'
+import { Chevron } from '../components/paywall/bits'
 import Burst from '../components/reveal/Burst'
 import { ConfettiCanvas, useConfetti } from '../components/reveal/useConfetti'
 import { session } from '../lib/session'
 import { sfx } from '../lib/sfx'
 
 type PlanId = 'yearly' | 'monthly'
-type Phase = 'offer' | 'flare' | 'active'
+type Phase = 'offer' | 'flare'
 
 const PLANS: { id: PlanId; label: string; price: string; per: string; note: string; then: string; word: string }[] = [
   // regular prices (the pricing sheet); the launch promo is offered once, at the end of onboarding
@@ -21,13 +21,6 @@ const PLANS: { id: PlanId; label: string; price: string; per: string; note: stri
 
 const RAINBOW = ['#e8463c', '#ef8f56', '#f2d45c', '#7fd36a', '#4fb3ef', '#a77de9']
 
-const BENEFITS = [
-  { t: '45 cards a night', s: 'free stops at fifteen · next deal at 11:11' },
-  { t: '33 peeks a week', s: 'free is three a day' },
-  { t: '3 packs a day + real packs', s: 'a starter box when you join · 3 more each season' },
-  { t: 'Block any sign · private Align events', s: 'gone from every deck, for good' },
-]
-
 /** portal geometry */
 const PW = 100
 const PH = 136
@@ -35,8 +28,6 @@ const PX = 145
 const PY = 268
 const PCX = PX + PW / 2
 const PCY = PY + PH / 2
-const ACTIVE_Y = -128
-const ACTIVE_S = 1.18
 
 const fade = (delay: number) => ({
   initial: { opacity: 0, y: 14 },
@@ -44,7 +35,7 @@ const fade = (delay: number) => ({
   transition: { delay, duration: 0.55, ease: [0.2, 0.8, 0.2, 1] as const },
 })
 
-/** S-11 — Align+ paywall, then S-12 trial active. */
+/** S-11 — Align+ paywall; starting the trial opens S-12 (x/trial/<plan>). */
 export default function Paywall({ go }: ScreenProps) {
   const [plan, setPlan] = useState<PlanId>('yearly')
   const [phase, setPhase] = useState<Phase>('offer')
@@ -72,11 +63,8 @@ export default function Paywall({ go }: ScreenProps) {
       setBurst((k) => k + 1)
       fire({ x: PCX / 390, y: PCY / 844, power: 1 })
     }, 260)
-    later(() => setPhase('active'), 1150)
-    later(() => {
-      BENEFITS.forEach((_, i) => later(() => sfx.peekTick(0.25 + i * 0.22), i * 170))
-      later(() => sfx.sparkle(), BENEFITS.length * 170 + 120)
-    }, 1150 + 650)
+    // S-12 Trial active is its own page
+    later(() => go(`x/trial/${plan}`), 1150)
   }
 
   const pick = (id: PlanId) => {
@@ -87,10 +75,7 @@ export default function Paywall({ go }: ScreenProps) {
 
   const leave = () => { sfx.tap(); go('deck') }
 
-  const portalAnim =
-    phase === 'offer' ? { y: 0, scale: 1 }
-      : phase === 'flare' ? { y: -6, scale: 1.42 }
-        : { y: ACTIVE_Y, scale: ACTIVE_S }
+  const portalAnim = phase === 'offer' ? { y: 0, scale: 1 } : { y: -6, scale: 1.42 }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
@@ -102,13 +87,11 @@ export default function Paywall({ go }: ScreenProps) {
         animate={{ opacity: 1, ...portalAnim }}
         transition={phase === 'flare'
           ? { type: 'spring', stiffness: 260, damping: 13 }
-          : phase === 'active'
-            ? { type: 'spring', stiffness: 120, damping: 18 }
-            : { delay: 0.35, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
+          : { delay: 0.35, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
         style={{ position: 'absolute', left: PX, top: PY, width: PW, height: PH, zIndex: 2 }}>
         <motion.div animate={phase === 'offer' ? { y: [0, -4, 0] } : { y: 0 }}
           transition={phase === 'offer' ? { duration: 5, repeat: Infinity, ease: 'easeInOut' } : { duration: 0.3 }}>
-          <Portal w={PW} h={PH} flare={phase === 'flare'} lit={phase === 'active'} />
+          <Portal w={PW} h={PH} flare={phase === 'flare'} />
         </motion.div>
       </motion.div>
 
@@ -212,80 +195,11 @@ export default function Paywall({ go }: ScreenProps) {
                 <motion.span key={p.then} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.18 }}
                   style={{ display: 'inline-block' }}>{p.then}</motion.span>
               </AnimatePresence>
-              <span style={{ margin: '0 7px' }}>·</span>Restore purchase<span style={{ margin: '0 7px' }}>·</span>Terms
+              <span style={{ margin: '0 7px' }}>·</span><button onClick={() => { sfx.tap(); go('x/restore') }} style={{ fontSize: 11, color: 'var(--label-2)', padding: '8px 0', margin: '-8px 0' }}>Restore purchase</button><span style={{ margin: '0 7px' }}>·</span>Terms
             </motion.div>
           </motion.div>
         )}
 
-        {phase === 'active' && (
-          <motion.div key="active" style={{ position: 'absolute', inset: 0, zIndex: 3 }}>
-            <CloseX side="right" onClick={leave} />
-            <motion.div {...fade(0.15)} className="eyebrow" style={{ position: 'absolute', top: 100, left: 0, right: 0, textAlign: 'center', color: 'var(--label-3)' }}>
-              <span style={{ color: 'var(--align)' }}>✦</span> Align+ is on · day 1 of 3 <span style={{ color: 'var(--align)' }}>✦</span>
-            </motion.div>
-
-            <motion.h1 {...fade(0.3)} className="h-display" style={{ position: 'absolute', top: 318, left: 20, right: 20, textAlign: 'center', fontSize: 36 }}>
-              The whole sky is yours.
-            </motion.h1>
-            <motion.p {...fade(0.4)} style={{ position: 'absolute', top: 366, left: 24, right: 24, textAlign: 'center', fontSize: 15, lineHeight: 1.45, color: 'var(--label-2)' }}>
-              Three days on us. Then {p.price} {p.word}.
-            </motion.p>
-
-            <motion.div {...fade(0.5)} style={{
-              position: 'absolute', top: 404, left: 24, right: 24, borderRadius: 18, padding: '6px 16px',
-              background: 'rgba(30,18,64,0.6)', border: '1px solid rgba(179,166,196,0.2)',
-            }}>
-              {BENEFITS.map((b, i) => (
-                <motion.div key={b.t}
-                  initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.65 + i * 0.17, duration: 0.4, ease: 'easeOut' }}
-                  style={{ display: 'flex', alignItems: 'center', gap: 13, height: 46, borderTop: i ? '1px solid rgba(179,166,196,0.1)' : 'none' }}>
-                  <CheckStamp delay={0.65 + i * 0.17} />
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    <span style={{ fontSize: 15, color: 'var(--label-1)', fontWeight: 500 }}>{b.t}</span>
-                    <span style={{ fontSize: 11.5, color: 'var(--label-3)' }}>{b.s}</span>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* trial timeline */}
-            <motion.div {...fade(1.3)} style={{ position: 'absolute', top: 618, left: 24, right: 24 }}>
-              <div style={{ position: 'absolute', top: 5, left: 46, right: 46, height: 1, background: 'rgba(179,166,196,0.35)' }} />
-              <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 0.14 }} transition={{ delay: 1.6, duration: 0.6 }}
-                style={{ position: 'absolute', top: 5, left: 46, right: 46, height: 1, background: '#f2c75c', transformOrigin: 'left' }} />
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                {[
-                  ['Today', 'Align+ opens'],
-                  ['Tomorrow', 'we remind you'],
-                  ['In 3 days', `${p.price} renews`],
-                ].map(([h, s], i) => (
-                  <div key={h} style={{ width: 92, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <motion.span
-                      animate={i === 0 ? { scale: [1, 1.35, 1], boxShadow: ['0 0 0px #f2c75c', '0 0 12px #f2c75c', '0 0 0px #f2c75c'] } : {}}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      style={{
-                        width: 11, height: 11, borderRadius: '50%', position: 'relative',
-                        background: i === 0 ? '#f2c75c' : 'var(--void)', border: i === 0 ? 'none' : '1.2px solid var(--label-2)',
-                      }} />
-                    <span className="mono" style={{ marginTop: 10, fontSize: 9, letterSpacing: '0.16em', textTransform: 'uppercase', color: i === 0 ? 'var(--label-1)' : 'var(--label-2)', fontWeight: i === 0 ? 700 : 400 }}>{h}</span>
-                    <span style={{ marginTop: 4, fontSize: 12.5, color: 'var(--label-2)' }}>{s}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.button className="chrome-cta" {...fade(1.5)}
-              whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfx.align(); go('deck') }}
-              style={{ position: 'absolute', left: 38, top: 706, fontSize: 20 }}>
-              Deal me in <span className="spark">✦</span>
-            </motion.button>
-            <motion.div {...fade(1.6)} style={{ position: 'absolute', top: 774, left: 0, right: 0, textAlign: 'center', fontSize: 12, color: 'var(--label-3)' }}>
-              We nudge you the day before it renews. No ambush.
-            </motion.div>
-          </motion.div>
-        )}
       </AnimatePresence>
 
       <Burst x={PCX} y={PCY} fireKey={burst} />

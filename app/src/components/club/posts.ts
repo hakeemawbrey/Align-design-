@@ -110,3 +110,6 @@ export const ROOM_POSTS: Post[] = [
 export const ROOM_COUNT = 1204
 export const SAID_TONIGHT = 41
 export const TONIGHT_PROMPT = 'Mercury goes direct tomorrow. Opinions?'
+
+/** posts reported this session (S-18b): hidden from the presenter's room straight away */
+export const reportedPosts = new Set<string>()

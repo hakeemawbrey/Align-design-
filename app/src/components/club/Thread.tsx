@@ -15,13 +15,16 @@ interface Props {
   onLike: () => void
   onReply: (text: string) => void
   onClose: () => void
+  /** opens S-18b Report post; left out for your own posts */
+  onReport?: () => void
 }
 
 const FADE = 'linear-gradient(180deg, transparent 0, #000 12px, #000 calc(100% - 24px), transparent 100%)'
 
 /** S-17b · a post opened as a thread. */
-export default function Thread({ post, liked, likes, extra, onLike, onReply, onClose }: Props) {
+export default function Thread({ post, liked, likes, extra, onLike, onReply, onClose, onReport }: Props) {
   const [draft, setDraft] = useState('')
+  const [menu, setMenu] = useState(false)
   const scroller = useRef<HTMLDivElement>(null)
   const replies = [...post.replies, ...extra]
   const moon = SIGNS[post.moon]
@@ -64,6 +67,37 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
       <div className="mono" style={{ position: 'absolute', left: 0, right: 0, top: 56, height: 40, display: 'grid', placeItems: 'center', fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-2)', pointerEvents: 'none' }}>
         TAURUS ROOM · THREAD
       </div>
+      {onReport && (
+        <button aria-label="Post menu" onClick={() => { sfx.tap(); setMenu((m) => !m) }}
+          style={{ position: 'absolute', right: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 3 }}>
+          <svg width="18" height="4" viewBox="0 0 18 4" fill="currentColor"><circle cx="2" cy="2" r="1.8" /><circle cx="9" cy="2" r="1.8" /><circle cx="16" cy="2" r="1.8" /></svg>
+        </button>
+      )}
+      <AnimatePresence>
+        {menu && onReport && (
+          <>
+            <motion.div key="scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setMenu(false)}
+              style={{ position: 'absolute', inset: 0, zIndex: 4, background: 'rgba(5,2,15,0.4)' }} />
+            <motion.div key="menu" initial={{ opacity: 0, scale: 0.92, y: -6 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ type: 'spring', stiffness: 520, damping: 34 }}
+              style={{
+                position: 'absolute', right: 20, top: 98, width: 220, zIndex: 5, borderRadius: 16, overflow: 'hidden', transformOrigin: 'top right',
+                background: 'rgba(40,26,78,0.96)', border: '1px solid rgba(179,166,196,0.22)', boxShadow: '0 16px 40px rgba(0,0,0,0.45)',
+                backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
+              }}>
+              {[
+                { label: 'Copy text', on: () => { void navigator.clipboard?.writeText(post.full ?? post.text).catch(() => {}) } },
+                { label: 'Report this post', on: onReport },
+              ].map((o, i) => (
+                <button key={o.label} onClick={() => { sfx.tap(); setMenu(false); o.on() }}
+                  style={{ display: 'block', width: '100%', height: 46, padding: '0 16px', textAlign: 'left', fontSize: 14.5, color: 'var(--label-1)', borderTop: i ? '1px solid rgba(179,166,196,0.12)' : undefined }}>
+                  {o.label}
+                </button>
+              ))}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       <div ref={scroller} className="club-scroll" style={{
         position: 'absolute', top: 96, left: 0, right: 0, bottom: 150, overflowY: 'auto', padding: '4px 24px 24px', scrollbarWidth: 'none',

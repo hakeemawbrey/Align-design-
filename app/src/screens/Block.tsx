@@ -112,6 +112,12 @@ export default function Block({ go }: ScreenProps) {
               <span style={{ flex: 1, fontSize: 15, color: 'var(--label-1)' }}>{names.length ? names.join(' · ') : 'Nothing blocked'}</span>
               <span style={{ fontSize: 12.5, color: 'var(--label-3)' }}>{names.length ? `since ${blockedSince} ›` : '›'}</span>
             </button>
+            <div className="mono" style={{ marginTop: 18, fontSize: 9.5, letterSpacing: '0.18em', color: 'var(--label-2)' }}>ALSO WITH ALIGN+</div>
+            <button onClick={() => { sfx.tap(); go('x/priority') }}
+              style={{ marginTop: 8, width: '100%', height: 46, borderRadius: 16, padding: '0 16px', display: 'flex', alignItems: 'center', background: 'rgba(52,35,95,0.6)', border: '1px solid rgba(179,166,196,0.18)', textAlign: 'left' }}>
+              <span style={{ flex: 1, fontSize: 15, color: 'var(--label-1)' }}>Priority in tonight’s decks</span>
+              <span style={{ fontSize: 12.5, color: 'var(--label-3)' }}>›</span>
+            </button>
           </>
         )}
       </div>

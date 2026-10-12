@@ -6,6 +6,7 @@ import Starfield from '../components/Starfield'
 import { sfx } from '../lib/sfx'
 import { goFrom } from '../components/you/origin'
 import { Planet } from '../components/onboarding/shared'
+import TermText from '../pages/plus/TermText'
 
 
 interface ChartTab {
@@ -115,6 +116,10 @@ export default function Chart({ go }: ScreenProps) {
       <div className="mono" style={{ position: 'absolute', left: 0, right: 0, top: 56, height: 40, display: 'grid', placeItems: 'center', fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-2)', pointerEvents: 'none' }}>
         YOUR CHART
       </div>
+      <button onClick={() => { sfx.tap(); go('x/glossary') }} aria-label="Glossary"
+        className="mono" style={{ position: 'absolute', right: 14, top: 56, height: 40, padding: '0 10px', fontSize: 9, letterSpacing: '0.16em', color: 'var(--label-2)', zIndex: 2 }}>
+        GLOSSARY ›
+      </button>
 
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
@@ -187,11 +192,11 @@ export default function Chart({ go }: ScreenProps) {
                   <Strength n={t.pips} of={5} color={t.color} />
                 </div>
                 <div className="serif italic" style={{ fontSize: 18, lineHeight: 1.2, marginTop: 6, color: 'var(--label-1)' }}>{t.headline}</div>
-                <div style={{ fontSize: 11.5, lineHeight: 1.42, marginTop: 6, color: 'var(--label-2)' }}>{t.meaning}</div>
+                <div style={{ fontSize: 11.5, lineHeight: 1.42, marginTop: 6, color: 'var(--label-2)' }}><TermText text={t.meaning} go={go} /></div>
                 {([['In love', t.love], ['For you', t.self]] as const).map(([k, v]) => (
                   <div key={k} style={{ display: 'flex', gap: 8, marginTop: 7 }}>
                     <span className="mono" style={{ flex: '0 0 50px', fontSize: 8, letterSpacing: '0.14em', textTransform: 'uppercase', color: t.color, paddingTop: 2 }}>{k}</span>
-                    <span style={{ fontSize: 11.5, lineHeight: 1.42, color: 'var(--label-1)' }}>{v}</span>
+                    <span style={{ fontSize: 11.5, lineHeight: 1.42, color: 'var(--label-1)' }}><TermText text={v} go={go} /></span>
                   </div>
                 ))}
                 <div style={{ height: 1, background: 'rgba(222,208,246,0.18)', margin: '8px 0' }} />
