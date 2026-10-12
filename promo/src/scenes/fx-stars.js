@@ -34,12 +34,12 @@ const PROFILES = [
   { // S1 · space
     a: 0, b: 3.56, fin: 0.35, fout: 0.01, seed: 11, sprites: 26, dots: 80, px: [3, 4], drift: [-14, -3],
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 1,
-    keep: [[220, 450, 1480, 190]],
+    keep: H > W ? [[60, 800, 960, 320]] : [[220, 450, 1480, 190]],   // vertical: two-line hook at centre
   },
   { // S2 · rose space "{ in your stars }" / "{ intro▣ducing }" — sparse, edges
     a: 3.55, b: 6.9, fin: 0.4, fout: 0.25, seed: 23, sprites: 20, dots: 60, px: [3, 4], drift: [-10, -2], edge: true,
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 0.95,
-    keep: [[400, 230, 1120, 620]],
+    keep: H > W ? [[60, 640, 960, 640], [50, 215, 390, 95, 3.9, 6.2]] : [[400, 230, 1120, 620]],   // vertical: braces line + constellation · moon clock
   },
   { // S3 · mystery card + waxing moon → the stars align (lock 8.72) → reveal card → card back (REAL time)
     a: 6.86, b: 11.52, fin: 0.45, fout: 0.15, seed: 37, sprites: 20, dots: 60, px: [3, 4], drift: [-8, -5], edge: true,
@@ -57,22 +57,28 @@ const PROFILES = [
   { // S4 · halftone aura sky, giant Align, zoomed pill typing
     a: 9.95, b: 14.12, fin: 0.4, fout: 0.2, seed: 41, sprites: 28, dots: 90, px: [3, 4], drift: [-18, -4],
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 1,
-    keep: [[0, 320, 1920, 440, 10.2, 13.25], [260, 170, 1400, 760, 13.1, 14.2]],
+    keep: H > W ? [[0, 760, 1080, 400, 10.2, 13.25], [40, 560, 1000, 820, 13.1, 14.2], [50, 215, 390, 95]]   // vertical: pill band · chart line · moon clock
+      : [[0, 320, 1920, 440, 10.2, 13.25], [260, 170, 1400, 760, 13.1, 14.2]],
   },
   { // S5 · teal space "Reading your sky"
     a: 14.3, b: 17.35, fin: 0.5, fout: 0.25, seed: 53, sprites: 18, dots: 55, px: [3, 4], drift: [-9, 2], edge: true,
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 0.95,
-    keep: [[220, 200, 1540, 660]],
+    keep: H > W ? [[60, 200, 960, 1460]] : [[220, 200, 1540, 660]],   // vertical: title · sign card · phase strip · list
   },
   { // S6 · amber space deck / "every night a new deck" / "you ▣ align"
     a: 17.5, b: 22.6, fin: 0.5, fout: 0.3, seed: 67, sprites: 20, dots: 60, px: [3, 4], drift: [-12, -3], edge: true,
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 0.95,
-    keep: [[240, 150, 1640, 780]],
+    keep: H > W ? [[50, 170, 980, 1560], [50, 215, 390, 95]] : [[240, 150, 1640, 780]],   // vertical: deck column + words · moon clock
   },
   { // S7 · aurora space, tagline (+ people constellation 22.66–24.45) → match phone + caption A → chat phone + caption B
     a: 22.5, b: 26.94, fin: 0.5, fout: 0.01, seed: 79, sprites: 16, dots: 50, px: [3, 4], drift: [8, -6], edge: true,
     pal: ['#ffffff', BONE, '#ffe6a0', GOLD, VIOLET], centre: '#ffffff', dot: '255,250,240', alpha: 0.95,
-    keep: [
+    keep: H > W ? [   // vertical: see s7-tagline.js (phone 541×1170 centred at 540,1051 · caption block y 318–450)
+      [150, 780, 780, 360, 22.5, 24.3],                                     // two-line tagline in ticks
+      [230, 440, 620, 1230, 24.2, 25.9], [90, 280, 900, 200, 24.2, 25.65],  // match phone · caption A
+      [230, 440, 620, 1230, 25.45, 27], [90, 280, 900, 200, 25.55, 27],     // chat phone · caption B
+      [50, 215, 390, 95, 24.2, 27],                                         // moon clock (full moon)
+    ] : [
       [380, 400, 1160, 260, 22.5, 24.3],                                   // tagline in ticks
       [440, 60, 510, 1000, 24.2, 25.9], [960, 400, 680, 280, 24.2, 25.65],  // match phone · "It's mutual / You both aligned."
       [1030, 60, 500, 1000, 25.45, 27], [220, 400, 840, 280, 25.55, 27],    // chat phone · "Then you talk in cards."
@@ -81,7 +87,7 @@ const PROFILES = [
   { // S8 · end card
     a: 26.94, b: 30, fin: 0.45, fout: 0.01, seed: 89, sprites: 16, dots: 45, px: [3, 4], drift: [-10, -3],
     pal: [BONE, BONE, GOLD, VIOLET, BONE], centre: HOT, dot: '255,247,236', alpha: 1,
-    keep: [[540, 210, 840, 710]],   // lockup: mark + wordmark + sub-line
+    keep: H > W ? [[120, 370, 840, 1140]] : [[540, 210, 840, 710]],   // lockup: mark + wordmark + sub-line (vertical: + moon row)
   },
 ]
 
@@ -171,12 +177,15 @@ function drawField(ctx, P, t, wgt) {
 }
 
 // ── hero bursts: sparkles fly out from a ring and step down big → glint → tiny
+const VSTAMP = [680, 750]   // vertical: S6 "✦ ALIGNED" stamp centre on the front card
 const BURSTS = [
   H > W   // S3 the stars align (lock); vertical: around the tall card at 540,800
     ? { t: 8.72, x: 540, y: 780, r0: 190, r1: 640, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sx: 0.95, sy: 1.55, seed: 3 }
     : { t: 8.72, x: 960, y: 440, r0: 150, r1: 900, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sy: 0.78, seed: 3 },
-  { t: 21.85, x: 1230, y: 395, r0: 60, r1: 250, n: 12, px: 4, life: 0.75, pal: [GOLD, BONE, VIOLET, ROSE], centre: HOT, sy: 0.42, seed: 5 },
-  { t: 24.3, x: 690, y: 560, r0: 390, r1: 520, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.62, sy: 1.08, avoid: [960, 430, 700, 220], seed: 7 },
+  { t: 21.85, x: H > W ? VSTAMP[0] : 1230, y: H > W ? VSTAMP[1] : 395, r0: 60, r1: 250, n: 12, px: 4, life: 0.75, pal: [GOLD, BONE, VIOLET, ROSE], centre: HOT, sy: 0.42, seed: 5 },
+  H > W   // match phone lands; vertical: ring hugging the tall centred phone, clear of caption A above it
+    ? { t: 24.3, x: 540, y: 1051, r0: 600, r1: 760, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.5, sy: 1.0, avoid: [60, 220, 960, 250], seed: 7 }
+    : { t: 24.3, x: 690, y: 560, r0: 390, r1: 520, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.62, sy: 1.08, avoid: [960, 430, 700, 220], seed: 7 },
 ]
 function drawBurst(ctx, B, t) {
   const r = rng(B.seed * 104729)
@@ -198,26 +207,36 @@ function drawBurst(ctx, B, t) {
 }
 
 // chakra lights 27.40 + i*0.07: twin sparkles beside each chakra dot (S8 mark centre 960,410; dot y = 410 + (31.8 - i*10.6)*3.864)
+// vertical: S8 mark is 520px centred at 540,640 → scale 520/88 = 5.909, sparkle spread ×1.5
+const CK = H > W ? { x: 540, y: 640, s: 520 / 88, d: 1.5 } : { x: 960, y: 410, s: 3.864, d: 1 }
 function drawChakra(ctx, t) {
   const f = Math.round(t * 30)
   const CH = ['#ff6b74', '#ffa25e', '#ffd23f', '#8be37f', '#6fdcf0', '#8ea6ff', '#c98cff']
   for (let i = 0; i < 7; i++) {
     const lp = (t - (27.4 + i * 0.07)) / 0.55
     if (lp <= 0 || lp >= 1) continue
-    const cy = 410 + (31.8 - i * 10.6) * 3.864
+    const cy = CK.y + (31.8 - i * 10.6) * CK.s
     for (const side of [-1, 1]) {
       const r = rng(i * 31 + (side + 2) * 7)
-      const dx = side * lerp(40, 120 + r() * 50, ease.outCubic(lp)), dy = lerp(0, (r() - 0.5) * 50, lp)
+      const dx = side * lerp(40, 120 + r() * 50, ease.outCubic(lp)) * CK.d, dy = lerp(0, (r() - 0.5) * 50, lp) * CK.d
       const kind = lp < 0.35 ? (((f + i) >> 1) & 1 ? 0 : 1) : lp < 0.65 ? 3 : 2
       ctx.globalAlpha = lp < 0.1 ? lp / 0.1 : 1 - ease.inQuad(prog(lp, 0.5, 1))
-      sprite(ctx, 960 + dx, cy + dy, side > 0 ? 4 : 3, kind, CH[i], HOT)
+      sprite(ctx, CK.x + dx, cy + dy, side > 0 ? 4 : 3, kind, CH[i], HOT)
     }
   }
   ctx.globalAlpha = 1
 }
 
 // ── shooting stars: gradient streak with a pixel-sparkle head and a few dropping pixel crumbs
-const SHOOTS = [
+// vertical (9:16): same timings, paths re-laid in the tall frame (clear of each scene's text, inside the safe area)
+const SHOOTS = H > W ? [
+  { t0: 1.0, t1: 1.55, x0: 100, y0: 560, x1: 940, y1: 740, len: 300, px: 4, rgb: '255,243,224', col: BONE, seed: 2 },
+  { t0: 4.25, t1: 4.65, x0: 520, y0: 330, x1: 980, y1: 480, len: 190, px: 3, rgb: '255,243,224', col: BONE, seed: 8 },
+  { t0: 11.7, t1: 12.15, x0: 1000, y0: 300, x1: 560, y1: 480, len: 190, px: 3, rgb: '255,243,224', col: GOLD, seed: 4 },
+  { t0: 15.9, t1: 16.3, x0: 1040, y0: 1640, x1: 640, y1: 1760, len: 190, px: 3, rgb: '255,243,224', col: GOLD, seed: 10 },
+  { t0: 19.7, t1: 20.15, x0: 120, y0: 1700, x1: 620, y1: 1800, len: 200, px: 3, rgb: '255,243,224', col: BONE, seed: 12 },
+  { t0: 28.8, t1: 29.3, x0: 1060, y0: 230, x1: 700, y1: 330, len: 220, px: 4, rgb: '255,243,224', col: GOLD, seed: 6 },
+] : [
   { t0: 1.0, t1: 1.55, x0: 260, y0: 70, x1: 1420, y1: 360, len: 320, px: 4, rgb: '255,243,224', col: BONE, seed: 2 },
   { t0: 4.25, t1: 4.65, x0: 120, y0: 60, x1: 640, y1: 210, len: 200, px: 3, rgb: '255,243,224', col: BONE, seed: 8 },
   { t0: 11.7, t1: 12.15, x0: 1700, y0: 60, x1: 1120, y1: 260, len: 200, px: 3, rgb: '255,243,224', col: GOLD, seed: 4 },

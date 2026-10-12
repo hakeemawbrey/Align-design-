@@ -53,11 +53,11 @@ const ENTER = 0.4 // seconds for a card to swing in from off-frame right (yaw �
 const FIRST_IN = [17.45, 17.62]
 // 9:16 layout (1080×1920): first card = profile body 626×1000 centred at (W/2, H/2 − 10); trail recedes up-left
 const VL = {
-  pullS: 0.8, centerS: 0.98, pullX: 90, pullY: 150, centerY: -24,
+  pullS: 0.8, centerS: 1.0, pullX: 90, pullY: 150, centerY: -24,
   Zd: 320, Zc: 70, ax: 36, bx: 7, ay: 42, by: 7, yaw: 12, rx: 0,
   cK: 4, cx: 190, cy: 150,
   topX: 470, topY: 300, botX: 300, botGap: 48,
-  comeY: 238, alignY: 1522,
+  comeY: 232, alignY: 1530,
 } // first card fades in under the fxDots patch (no slide)
 
 export function sceneDeck(stage) {
