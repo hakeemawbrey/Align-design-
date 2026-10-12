@@ -290,25 +290,6 @@
    "h": 1819,
    "query": "Hubble Deep Field",
    "n": 163
-  },
-  {
-   "file": "cache/aquarius/cand/aic-12883.jpg",
-   "focus": [
-    0.55,
-    0.4
-   ],
-   "note": "Rottmayr, Jove casting thunderbolts",
-   "id": "aic-12883",
-   "source": "aic",
-   "title": "Jove Casts His Thunderbolts at the Rebellious Giants",
-   "creator": "Johann Michael Rottmayr (Austrian, 1654–1730)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/12883",
-   "url": "https://www.artic.edu/iiif/2/ea80056a-5db8-b4b8-6110-3d12902b99cc/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1091,
-   "query": "lightning electricity",
-   "n": 25
   }
  ]
 }
