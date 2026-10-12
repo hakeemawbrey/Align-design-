@@ -36,11 +36,11 @@ BAR = 60 / BPM * 4            # 2s
 STYLE = {
     "window_y": 0.21875,      # top of the square picture window (ref: 280 of 1280)
     "text_size": 0.0861,      # font px / frame width (ref: 62px at 720)
-    "text_lead": 1.07,        # line height / font size
+    "text_lead": 1.10,        # line height / font size (ref line pitch 68.3px at 720 = 1.10 x 62)
     "text_wrap": 0.80,        # max line width / frame width (ref's longest line is 0.74)
     "text_stroke": 0.0042,    # black outline / frame width
     "text_y": 0.5,            # block centre / frame height
-    "word_size": 0.19,       # wordmark font px / frame width
+    "word_size": 0.23,       # wordmark font px / frame width
     "word_stroke": 0.011,
     # 'come align', the quiet sign-off on every frame (Align's wordmark face, app cream)
     "tag_text": "come align",
@@ -50,25 +50,32 @@ STYLE = {
     "tag_alpha_end": 0.9,     # a little brighter under the wordmark
     "end": 1.5,               # seconds of wordmark at the end
     # the grade (see grade()): exposure targets measured off the reference frames
-    "median": 0.23,           # median luminance after levels
-    "tone": 0.50,             # pull toward the moonlit blue ramp
-    "saturation": 1.5,
-    "black_lift": 0.035,
-    "contrast": 0.55,
-    "bloom": 0.42,
+    "median": 0.22,           # median luminance after levels
+    "tone": 0.40,             # pull toward the moonlit blue ramp
+    "saturation": 2.8,
+    "vib_cap": 0.9,           # chroma above which the saturation boost fades out
+    "black_lift": 0.05,
+    "lift_tint": [1.0, 0.8, 1.3],  # ref shadows are violet-neutral (13,12,18), not navy
+    "contrast": 0.35,
+    "bloom": 0.30,
+    "hold": 0.5,              # how much bright, coloured light keeps its own colour
+    "knee": 0.25,             # highlight shoulder: ref p90 luminance 0.53, p99 0.87
+    "knee_slope": 0.4,
+    "white": 0.95,
+    "guard": 0.35,            # pull highlights down behind the statement (0 = off)
     "local": 0.35,            # local contrast (large-radius unsharp on luminance)
-    "chroma_cap": 0.58,       # max chroma after the boost
-    "warm_cap": 0.38,         # max chroma for reds/oranges before the boost
+    "chroma_cap": 0.62,       # max chroma after the boost
+    "warm_cap": 0.30,         # max chroma for reds/oranges before the boost
     "vignette": 0.32,
 }
 
 # moonlight ramp: luminance -> colour (deep indigo shadows, blue mids, cold white highs)
 RAMP = np.array([
-    [0.00, 0.020, 0.035, 0.100],
-    [0.18, 0.060, 0.120, 0.300],
-    [0.40, 0.170, 0.320, 0.640],
-    [0.70, 0.540, 0.720, 0.950],
-    [1.00, 1.000, 1.000, 1.000],
+    [0.00, 0.055, 0.045, 0.080],
+    [0.18, 0.075, 0.120, 0.260],
+    [0.40, 0.160, 0.330, 0.600],
+    [0.70, 0.500, 0.690, 0.930],
+    [1.00, 0.880, 0.970, 1.000],
 ], np.float32)
 
 
@@ -160,7 +167,7 @@ def grade(im, S, item=None):
     # keep some of their own colour, the way the reference keeps its orange skies
     chroma = a.max(2) - a.min(2)
     spare = 0.55 * np.clip((l - 0.55) / 0.45, 0, 1) * np.clip((chroma - 0.12) / 0.2, 0, 1)
-    kk = k * (1 - spare) * (1 - 0.35 * skin)
+    kk = k * (1 - STYLE.get("hold", 1.0) * spare) * (1 - 0.35 * skin)
     a = a * (1 - kk[..., None]) + ramp(l) * kk[..., None]
     # daylight skies: a bright, cool top of frame reads as day; pull it down toward night
     if day > 0.42:
@@ -173,7 +180,7 @@ def grade(im, S, item=None):
     # vibrance: muted colours get the boost, already-loud ones (cyan skies, reds) barely move
     l = a @ W
     chroma = a.max(2) - a.min(2)
-    sat = 1 + (STYLE["saturation"] - 1) * np.clip(1 - chroma / 0.42, 0, 1)
+    sat = 1 + (STYLE["saturation"] - 1) * np.clip(1 - chroma / STYLE.get("vib_cap", 0.42), 0, 1)
     a = l[..., None] + (a - l[..., None]) * sat[..., None]
     # cap chroma: no neon greens, acid limes or hard royal blues
     chroma = a.max(2) - a.min(2)
@@ -187,8 +194,14 @@ def grade(im, S, item=None):
     blur = np.asarray(Image.fromarray((hl * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(S / 45)),
                       np.float32) / 255
     a = 1 - (1 - a) * (1 - blur * STYLE["bloom"])
+    if STYLE.get("knee"):
+        kn, wp, m = STYLE["knee"], STYLE.get("white", 1.0), STYLE.get("knee_slope", 0.5)
+        l = a @ W
+        x = np.clip((l - kn) / (1 - kn), 0, 1)
+        nl = np.where(l > kn, kn + (wp - kn) * (m * x + (1 - m) * x * x), l)
+        a = np.clip(a * (nl / np.maximum(l, 1e-4))[..., None], 0, 1)
     # lifted, blue-violet blacks (the reference never sits at true black)
-    lift = STYLE["black_lift"] * np.array([0.6, 0.85, 1.7], np.float32)
+    lift = STYLE["black_lift"] * np.array(STYLE.get("lift_tint", [0.6, 0.85, 1.7]), np.float32)
     a = a * (1 - lift) + lift
     # gentle vignette
     y, x = np.mgrid[0:S, 0:S].astype(np.float32) / S - 0.5
@@ -336,11 +349,11 @@ def wordmark_layer(W, H, ss=2):
     x = (W * ss - (box[2] - box[0])) / 2 - box[0]
     y = H * STYLE["text_y"] * ss - (box[3] + box[1]) / 2
     shadow = Image.new("L", img.size, 0)
-    ImageDraw.Draw(shadow).text((x, y + stroke), text, font=f, fill=170, stroke_width=stroke * 2)
+    ImageDraw.Draw(shadow).text((x + stroke * 0.5, y + stroke * 1.2), text, font=f, fill=235, stroke_width=stroke)
     ImageDraw.Draw(img).text((x, y), text, font=f, fill=(255, 255, 255, 255), stroke_width=stroke,
                              stroke_fill=(0, 0, 0, 255))
     base = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    base.putalpha(shadow.filter(ImageFilter.GaussianBlur(stroke * 2)))
+    base.putalpha(shadow.filter(ImageFilter.GaussianBlur(max(1, stroke * 0.3))))
     base.alpha_composite(img)
     return np.asarray(base.resize((W, H), Image.LANCZOS), np.float32) / 255
 
@@ -356,12 +369,12 @@ def plan_length(text):
 
 def choose_images(moods, sign, n, rng):
     """Draw n distinct images across the line's mood pools (first mood weighs most),
-    plus the sign's own pool for sign lines. Pins in a pool always come first."""
+    plus the sign's own pool for sign lines. A few of each pool's pins lead."""
     weights = [0.5, 0.3, 0.2][: len(moods)]
     pools = [(m, load_pool(m)) for m in moods]
     if sign:
         pools.insert(0, (sign, load_pool(f"signs/{sign}")))
-        weights = [0.4] + [w * 0.6 for w in weights]
+        weights = [0.25] + [w * 0.75 for w in weights]  # sign pools are mostly photos; keep them a minority
     pools = [(m, p, w) for (m, p), w in zip(pools, weights) if p]
     if not pools:
         raise SystemExit(f"no images in pools {moods}")
@@ -369,8 +382,9 @@ def choose_images(moods, sign, n, rng):
     want = {m: max(1, round(n * w / tot)) for m, _, w in pools}
     picked, seen = [], set()
     for m, p, _ in pools:
-        order = [i for i in rng.permutation(len(p))]
-        order = sorted(order, key=lambda i: not p[i].get("pin"))  # stable: pins first
+        order = [int(i) for i in rng.permutation(len(p))]
+        pins = [i for i in order if p[i].get("pin")][: max(1, want[m] // 3)]  # a few pins, not all of them
+        order = pins + [i for i in order if i not in pins]
         k = 0
         for i in order:
             if k >= want[m]:
@@ -384,24 +398,7 @@ def choose_images(moods, sign, n, rng):
     return picked[:n]
 
 
-def sequence(n_imgs, n_shots, rng):
-    """Shuffled passes through the images, a fresh order each pass, never the same image
-    twice in a row (also across a pass boundary and the loop point)."""
-    seq = []
-    while len(seq) < n_shots:
-        order = [int(i) for i in rng.permutation(n_imgs)]
-        if seq and n_imgs > 1 and order[0] == seq[-1]:
-            order[0], order[-1] = order[-1], order[0]
-        seq += order
-    seq = seq[:n_shots]
-    if n_imgs > 2 and seq[-1] == seq[0]:
-        seq[-1], seq[-2] = seq[-2], seq[-1]
-    return seq
-
-
-# ---------------------------------------------------------------- render
-
-def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, silent=False, n_imgs=20):
+def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, silent=False, n_imgs=12):
     W, H = (540, 960) if preview else (1080, 1920)
     rng = np.random.default_rng([seed, zlib.crc32(line["id"].encode())])
     total = plan_length(line["text"])
@@ -418,12 +415,18 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
             used.append(it)
         except OSError as e:
             print(f"  skip {it.get('id')}: {e}")
-    seq = sequence(len(shots), n_shots, rng)
+    first = next((j for j, it in enumerate(used) if it.get("pin")), 0)
+    shots.insert(0, shots.pop(first)); used.insert(0, used.pop(first))  # open on a pinned picture
+    seq = [k % len(shots) for k in range(n_shots)]  # the reference loops one fixed order
 
     txt, lines = text_layer(line["text"], W, H)
     mark = wordmark_layer(W, H)
     tag = tag_layer(W, H)
     end_shot = n_shots - int(round(STYLE["end"] / CUT))
+    a_txt = txt[y0:y0 + S, :, 3].max(1)
+    rows = np.where(a_txt > 0.5)[0]
+    c, half = (rows.min() + rows.max()) / 2, (rows.max() - rows.min()) / 2 + S * 0.04
+    guard = STYLE.get("guard", 0) * np.clip(1 - (np.abs(np.arange(S) - c) - half) / (S * 0.08), 0, 1) ** 2
 
     out = out or os.path.join(HERE, "out", f"{line['id']}-s{seed}{'-preview' if preview else ''}.mp4")
     os.makedirs(os.path.dirname(out), exist_ok=True)
@@ -450,6 +453,10 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
     for k in range(n_shots):
         frame = np.zeros((H, W, 3), np.float32)
         frame[y0:y0 + S] = shots[seq[k]].astype(np.float32) / 255
+        if k < end_shot and STYLE.get("guard"):  # highlights only: dark pictures are untouched
+            win = frame[y0:y0 + S]
+            lum = win @ np.array([0.299, 0.587, 0.114], np.float32)
+            win *= (1 - guard[:, None] * np.clip((lum - 0.40) / 0.45, 0, 1))[..., None]
         layer = mark if k >= end_shot else txt
         a = layer[..., 3:4]
         frame = frame * (1 - a) + layer[..., :3] * a
