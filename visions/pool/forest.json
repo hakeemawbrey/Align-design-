@@ -273,23 +273,6 @@
    "note": "Worthington Whittredge, The Brook in the Woods"
   },
   {
-   "id": "aic-59002",
-   "source": "aic",
-   "title": "Souvenir of the Environs of Lake Nemi",
-   "creator": "Jean-Baptiste-Camille Corot (French, 1796–1875)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/59002",
-   "url": "https://www.artic.edu/iiif/2/25cae01d-82c7-7060-0070-643727437126/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1231,
-   "file": "cache/forest/cand/aic-59002.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Jean-Baptiste-Camille Corot (F, Souvenir of the Environs of Lake Nemi"
-  },
-  {
    "id": "met-436192",
    "source": "met",
    "title": "Autumn: The Woodland Pond",
@@ -395,24 +378,6 @@
    "note": "Albert Pinkham Ryder, The Forest of Arden"
   },
   {
-   "id": "wc-77800314",
-   "source": "commons",
-   "title": "Julius von Klever - A moonlit night in the forest",
-   "creator": "Julius Sergius von Klever",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Julius_von_Klever_-_A_moonlit_night_in_the_forest.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Julius_von_Klever_-_A_moonlit_night_in_the_forest.jpg/1920px-Julius_von_Klever_-_A_moonlit_night_in_the_forest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Julius_von_Klever_-_A_moonlit_night_in_the_forest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1839,
-   "file": "cache/forest/cand/wc-77800314.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Julius Sergius von Klever, Julius von Klever - A moonlit night in the forest"
-  },
-  {
    "id": "wc-191115679",
    "source": "commons",
    "title": "0847Ha. Kuindzhi A.I. Sunset over a Pine Forest, 1900-е",
@@ -505,24 +470,6 @@
    "note": "Heinrich Vogeler, Heinrich Vogeler - Frühling (Porträt von Martha Vo"
   },
   {
-   "id": "wc-3421497",
-   "source": "commons",
-   "title": "Caspar David Friedrich - Hünengrab im Herbst - Galerie Neue Meister Dresden",
-   "creator": "Caspar David Friedrich",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_H%C3%BCnengrab_im_Herbst_-_Galerie_Neue_Meister_Dresden.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Caspar_David_Friedrich_-_H%C3%BCnengrab_im_Herbst_-_Galerie_Neue_Meister_Dresden.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Caspar_David_Friedrich_-_H%C3%BCnengrab_im_Herbst_-_Galerie_Neue_Meister_Dresden.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1005,
-   "h": 780,
-   "file": "cache/forest/cand/wc-3421497.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Caspar David Friedrich, Caspar David Friedrich - Hünengrab im Herbst - Gal"
-  },
-  {
    "id": "wc-151052",
    "source": "commons",
    "title": "Carl Julius von Leypold - Bäume im Mondschein",
@@ -559,24 +506,6 @@
    "note": "Hans Thoma, Hans Thoma Waldwiese 1876"
   },
   {
-   "id": "wc-30412490",
-   "source": "commons",
-   "title": "Arnold Böcklin - Pan in the Reeds, 1858",
-   "creator": "Arnold Böcklin",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Pan_in_the_Reeds,_1858.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Arnold_B%C3%B6cklin_-_Pan_in_the_Reeds%2C_1858.jpg/1920px-Arnold_B%C3%B6cklin_-_Pan_in_the_Reeds%2C_1858.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Arnold_B%C3%B6cklin_-_Pan_in_the_Reeds%2C_1858.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1794,
-   "h": 2400,
-   "file": "cache/forest/cand/wc-30412490.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Arnold Böcklin, Arnold Böcklin - Pan in the Reeds, 1858"
-  },
-  {
    "id": "wc-38050749",
    "source": "commons",
    "title": "Gallen-Kallela Autumn forrest",
@@ -595,23 +524,6 @@
    "note": "Akseli Gallen-Kallela, Gallen-Kallela Autumn forrest"
   },
   {
-   "id": "aic-64754",
-   "source": "aic",
-   "title": "Moonrise",
-   "creator": "George Inness (American, 1825–1894)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/64754",
-   "url": "https://www.artic.edu/iiif/2/4425984b-e241-6413-1404-cdac0fb06518/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 2021,
-   "file": "cache/forest/cand/aic-64754.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "George Inness (American, 1825–, Moonrise"
-  },
-  {
    "id": "wc-97088879",
    "source": "commons",
    "title": "Pine Forest 02 (Ivan Shishkin)",
@@ -628,24 +540,6 @@
     0.5
    ],
    "note": "Ivan Shishkin, Pine Forest 02 (Ivan Shishkin)"
-  },
-  {
-   "id": "wc-20746146",
-   "source": "commons",
-   "title": "John Anster Fitzgerald - Dreams",
-   "creator": "John Anster Fitzgerald",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:John_Anster_Fitzgerald_-_Dreams.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/John_Anster_Fitzgerald_-_Dreams.jpg/1920px-John_Anster_Fitzgerald_-_Dreams.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/John_Anster_Fitzgerald_-_Dreams.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1547,
-   "file": "cache/forest/cand/wc-20746146.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "John Anster Fitzgerald, John Anster Fitzgerald - Dreams"
   },
   {
    "id": "wc-81324253",
@@ -682,6 +576,115 @@
     0.45
    ],
    "note": "Charlotte Major Wylie, The Ballad of Sir David Graeme - Charlotte Wylie"
+  },
+  {
+   "id": "wc-13507062",
+   "source": "commons",
+   "title": "Viktor Vasnetsov - Аленушка - Google Art Project",
+   "creator": "Viktor Vasnetsov",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Viktor_Vasnetsov_-_%D0%90%D0%BB%D0%B5%D0%BD%D1%83%D1%88%D0%BA%D0%B0_-_Google_Art_Project.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Viktor_Vasnetsov_-_%D0%90%D0%BB%D0%B5%D0%BD%D1%83%D1%88%D0%BA%D0%B0_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Viktor_Vasnetsov_-_%D0%90%D0%BB%D0%B5%D0%BD%D1%83%D1%88%D0%BA%D0%B0_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1440,
+   "h": 2048,
+   "file": "cache/forest/cand/wc-13507062.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Vasnetsov, Alyonushka"
+  },
+  {
+   "id": "wc-216018",
+   "source": "commons",
+   "title": "Vasnetsov Sirin Alkonost",
+   "creator": "Viktor Vasnetsov",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Vasnetsov_Sirin_Alkonost.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Vasnetsov_Sirin_Alkonost.jpg/1920px-Vasnetsov_Sirin_Alkonost.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Vasnetsov_Sirin_Alkonost.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1089,
+   "file": "cache/forest/cand/wc-216018.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Vasnetsov, Sirin and Alkonost",
+   "zoom": 1.1
+  },
+  {
+   "id": "wc-147926",
+   "source": "commons",
+   "title": "Sacred Grove (1882) - Arnold Böcklin (Kunstmuseum Basel)",
+   "creator": "Arnold Böcklin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Sacred_Grove_(1882)_-_Arnold_B%C3%B6cklin_(Kunstmuseum_Basel).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Sacred_Grove_%281882%29_-_Arnold_B%C3%B6cklin_%28Kunstmuseum_Basel%29.jpg/1920px-Sacred_Grove_%281882%29_-_Arnold_B%C3%B6cklin_%28Kunstmuseum_Basel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Sacred_Grove_%281882%29_-_Arnold_B%C3%B6cklin_%28Kunstmuseum_Basel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1339,
+   "file": "cache/forest/cand/wc-147926.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Böcklin, Sacred Grove"
+  },
+  {
+   "id": "wc-18576612",
+   "source": "commons",
+   "title": "Mikalojus Konstantinas Ciurlionis - FAIRY TALE (FAIRY TALE OF KINGS) - 1909",
+   "creator": "Mikalojus Konstantinas Čiurlionis",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_(FAIRY_TALE_OF_KINGS)_-_1909.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_%28FAIRY_TALE_OF_KINGS%29_-_1909.jpg/1920px-Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_%28FAIRY_TALE_OF_KINGS%29_-_1909.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_%28FAIRY_TALE_OF_KINGS%29_-_1909.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1802,
+   "file": "cache/forest/cand/wc-18576612.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Čiurlionis, Fairy Tale of Kings"
+  },
+  {
+   "id": "wc-158594472",
+   "source": "commons",
+   "title": "George Cruikshank - The Fairy Ring",
+   "creator": "George Cruikshank",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:George_Cruikshank_-_The_Fairy_Ring.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/George_Cruikshank_-_The_Fairy_Ring.jpg/1920px-George_Cruikshank_-_The_Fairy_Ring.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/George_Cruikshank_-_The_Fairy_Ring.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1422,
+   "file": "cache/forest/cand/wc-158594472.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Cruikshank, The Fairy Ring"
+  },
+  {
+   "id": "wc-87527075",
+   "source": "commons",
+   "title": "Bruno Liljefors Swans in Reeds Thielska 270",
+   "creator": "Bruno Liljefors",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif/lossy-page1-1920px-Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Bruno_Liljefors_Swans_in_Reeds_Thielska_270.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1559,
+   "file": "cache/forest/cand/wc-87527075.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Liljefors, Swans in Reeds"
   }
  ]
 }

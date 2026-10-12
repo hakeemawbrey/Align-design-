@@ -72,6 +72,7 @@
     0.66,
     0.5
    ],
+   "pin": true,
    "note": "Aivazovsky, steamboat, full moon"
   },
   {
@@ -109,24 +110,6 @@
     0.5
    ],
    "note": "Kuindzhi, Daryal pass, moon"
-  },
-  {
-   "id": "wc-191019139",
-   "source": "commons",
-   "title": "0818Ha. Kuindzhi A.I. Moonlit Night, 1890-е",
-   "creator": "Arkhip Kuindzhi",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:0818Ha._Kuindzhi_A.I._Moonlit_Night,_1890-%D0%B5.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/0818Ha._Kuindzhi_A.I._Moonlit_Night%2C_1890-%D0%B5.jpg/1920px-0818Ha._Kuindzhi_A.I._Moonlit_Night%2C_1890-%D0%B5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/0818Ha._Kuindzhi_A.I._Moonlit_Night%2C_1890-%D0%B5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1062,
-   "file": "cache/moon/cand/wc-191019139.jpg",
-   "focus": [
-    0.71,
-    0.5
-   ],
-   "note": "Kuindzhi, moonlit night"
   },
   {
    "id": "wc-190362987",
@@ -255,24 +238,6 @@
    "note": "Wright of Derby, Dovedale by moonlight"
   },
   {
-   "id": "wc-77629813",
-   "source": "commons",
-   "title": "Aert van der Neer - A Canal by Moonlight 052L15037 8R2G4",
-   "creator": "Aert van der Neer",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Aert_van_der_Neer_-_A_Canal_by_Moonlight_052L15037_8R2G4.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Aert_van_der_Neer_-_A_Canal_by_Moonlight_052L15037_8R2G4.jpg/1920px-Aert_van_der_Neer_-_A_Canal_by_Moonlight_052L15037_8R2G4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Aert_van_der_Neer_-_A_Canal_by_Moonlight_052L15037_8R2G4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1222,
-   "file": "cache/moon/cand/wc-77629813.jpg",
-   "focus": [
-    0.44,
-    0.5
-   ],
-   "note": "Van der Neer, canal by moonlight"
-  },
-  {
    "id": "wc-176917289",
    "source": "commons",
    "title": "Carl Gustav Carus - Stadt im Mondschein",
@@ -396,6 +361,7 @@
     0.52,
     0.5
    ],
+   "pin": true,
    "note": "Vernet, harbour in moonlight"
   },
   {
@@ -579,24 +545,6 @@
    "note": "Balke, sailboat in moonlight"
   },
   {
-   "id": "wc-80605186",
-   "source": "commons",
-   "title": "Lune Grand Palais - Clair de lune - Bogoliubov - without border",
-   "creator": "Sukkoria",
-   "license": "CC BY-SA 4.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Lune_Grand_Palais_-_Clair_de_lune_-_Bogoliubov_-_without_border.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Lune_Grand_Palais_-_Clair_de_lune_-_Bogoliubov_-_without_border.jpg/1920px-Lune_Grand_Palais_-_Clair_de_lune_-_Bogoliubov_-_without_border.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Lune_Grand_Palais_-_Clair_de_lune_-_Bogoliubov_-_without_border.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 2355,
-   "file": "cache/moon/cand/wc-80605186.jpg",
-   "focus": [
-    0.57,
-    0.35
-   ],
-   "note": "Bogoliubov, clair de lune"
-  },
-  {
    "id": "wc-22731787",
    "source": "commons",
    "title": "Winslow Homer - Moonlight",
@@ -740,61 +688,6 @@
    "note": "Loutherbourg, philosopher in a moonlit churchyard"
   },
   {
-   "id": "wc-21974938",
-   "source": "commons",
-   "title": "John Atkinson Grimshaw - \"The Lady of Shalott\" - Google Art Project",
-   "creator": "John Atkinson Grimshaw",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_%22The_Lady_of_Shalott%22_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/John_Atkinson_Grimshaw_-_%22The_Lady_of_Shalott%22_-_Google_Art_Project.jpg/1920px-John_Atkinson_Grimshaw_-_%22The_Lady_of_Shalott%22_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/John_Atkinson_Grimshaw_-_%22The_Lady_of_Shalott%22_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1276,
-   "file": "cache/moon/cand/wc-21974938.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "tone": 0.6,
-   "note": "Grimshaw, Lady of Shalott under moonlight"
-  },
-  {
-   "id": "wc-18478522",
-   "source": "commons",
-   "title": "'Moonlight' by George Inness, 1893",
-   "creator": "George Inness",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:%27Moonlight%27_by_George_Inness,_1893.JPG",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/%27Moonlight%27_by_George_Inness%2C_1893.JPG/1920px-%27Moonlight%27_by_George_Inness%2C_1893.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/%27Moonlight%27_by_George_Inness%2C_1893.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1579,
-   "file": "cache/moon/cand/wc-18478522.jpg",
-   "focus": [
-    0.45,
-    0.4
-   ],
-   "note": "Inness, Moonlight"
-  },
-  {
-   "id": "wc-23597669",
-   "source": "commons",
-   "title": "George Inness - Moonlight, Tarpon Springs - Google Art Project",
-   "creator": "George Inness",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:George_Inness_-_Moonlight,_Tarpon_Springs_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/George_Inness_-_Moonlight%2C_Tarpon_Springs_-_Google_Art_Project.jpg/1920px-George_Inness_-_Moonlight%2C_Tarpon_Springs_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/George_Inness_-_Moonlight%2C_Tarpon_Springs_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1277,
-   "file": "cache/moon/cand/wc-23597669.jpg",
-   "focus": [
-    0.7,
-    0.5
-   ],
-   "note": "Inness, Moonlight, Tarpon Springs"
-  },
-  {
    "id": "wc-89034945",
    "source": "commons",
    "title": "Alexandre Calame - Abendliche Seelandschaft",
@@ -811,42 +704,6 @@
     0.5
    ],
    "note": "Calame, lake at night, moon and boat"
-  },
-  {
-   "id": "wc-94805491",
-   "source": "commons",
-   "title": "Landscape with Full Moon (SM sg1061)",
-   "creator": "Johann Georg Trautmann",
-   "license": "PDM-owner",
-   "landing": "https://commons.wikimedia.org/wiki/File:Landscape_with_Full_Moon_(SM_sg1061).png",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Landscape_with_Full_Moon_%28SM_sg1061%29.png/1920px-Landscape_with_Full_Moon_%28SM_sg1061%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Landscape_with_Full_Moon_%28SM_sg1061%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1535,
-   "file": "cache/moon/cand/wc-94805491.jpg",
-   "focus": [
-    0.35,
-    0.5
-   ],
-   "note": "Trautmann, landscape with full moon"
-  },
-  {
-   "id": "wc-1458138",
-   "source": "commons",
-   "title": "Full moon partially obscured by atmosphere",
-   "creator": "NASA",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Full_moon_partially_obscured_by_atmosphere.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/1920px-Full_moon_partially_obscured_by_atmosphere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Full_moon_partially_obscured_by_atmosphere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1280,
-   "file": "cache/moon/cand/wc-1458138.jpg",
-   "focus": [
-    0.62,
-    0.5
-   ],
-   "note": "full moon over Earth's limb (NASA)"
   }
  ]
 }
