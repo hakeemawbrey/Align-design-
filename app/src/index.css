@@ -123,3 +123,4 @@ img { display: block; -webkit-user-drag: none; user-select: none; }
 @keyframes pack-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
 @keyframes pack-rise { 0% { transform: translateY(0); opacity: 0 } 15% { opacity: 1 } 100% { transform: translateY(-520px); opacity: 0 } }
 @keyframes pack-hint { 0%, 100% { transform: translateX(-60px); opacity: 0 } 15% { opacity: 1 } 70% { transform: translateX(60px); opacity: 1 } 85% { opacity: 0 } }
+.kit-row + .kit-row { border-top: 1px solid rgba(179,166,196,0.1); }

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import PhoneFrame, { isAppMode } from './components/PhoneFrame'
 import StatusBar from './components/StatusBar'
@@ -35,8 +35,9 @@ import Thread from './screens/Thread'
 import Collection from './screens/Collection'
 import HowToPlay from './screens/HowToPlay'
 import { sfx } from './lib/sfx'
+import { PAGES, parsePage } from './pages/registry'
 
-const SCREENS: Record<ScreenId, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
+const SCREENS: Record<Exclude<ScreenId, `x/${string}`>, React.ComponentType<{ go: (id: ScreenId) => void }>> = {
   splash: Splash, welcome: Welcome, dealing: Dealing, deck: Deck, match: Match,
   reveal: Reveal, chat: Chat, alignment: Alignment, spent: Spent,
   matches: Matches, trade: Trade,
@@ -58,15 +59,22 @@ function initialScreen(): ScreenId {
   const h = window.location.hash.replace('#', '') as ScreenId
   // #reset: a link that always opens a fresh demo (state lives in memory, so a load is already clean)
   if ((h as string) === 'reset') return 'splash'
-  return ALL.includes(h) ? h : 'splash'
+  return ALL.includes(h) || parsePage(h) ? h : 'splash'
 }
+
+/** screens a page was opened from, so back() unwinds page → page → screen */
+const trail: ScreenId[] = []
 
 export default function App() {
   const [screen, setScreen] = useState<ScreenId>(initialScreen)
+  const current = useRef(screen)
   // bump to force a full remount (restart the demo from any screen)
   const [run, setRun] = useState(0)
 
   const go = useCallback((id: ScreenId) => {
+    const cur = current.current
+    if (parsePage(id)) { if (cur !== id) trail.push(cur) } else trail.length = 0
+    current.current = id
     setScreen(id)
     // sandboxed hosts can refuse history writes; the app works without them
     try { history.replaceState(null, '', `#${id}`) } catch { /* ignore */ }
@@ -105,7 +113,15 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [go])
 
-  const Screen = SCREENS[screen]
+  const page = parsePage(screen)
+  const back = () => {
+    const to = trail.pop() ?? (page && PAGES[page.page].home) ?? 'you'
+    current.current = to
+    setScreen(to)
+    try { history.replaceState(null, '', `#${to}`) } catch { /* ignore */ }
+  }
+  const Page = page ? PAGES[page.page].Component : null
+  const Screen = SCREENS[screen as keyof typeof SCREENS]
 
   return (
     <PhoneFrame app={APP}>
@@ -118,7 +134,7 @@ export default function App() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}
         >
-          <Screen go={go} />
+          {Page ? <Page go={go} back={back} arg={page?.arg} /> : <Screen go={go} />}
         </motion.div>
       </AnimatePresence>
       <NoticeBanner go={go} />

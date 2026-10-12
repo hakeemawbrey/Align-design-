@@ -23,6 +23,7 @@ export type ScreenId =
   | 'thread'     // chat with a real person you matched with
   | 'collection' // your cards, packs, sets and the season
   | 'howto'      // the rulebook: how to play
+  | `x/${string}` // a page from pages/registry.ts: x/<page>[/<arg>]
 
 export interface ScreenProps {
   go: (id: ScreenId) => void
