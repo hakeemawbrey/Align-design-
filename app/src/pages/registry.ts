@@ -25,3 +25,6 @@ export function parsePage(id: ScreenId): { page: string; arg?: string } | null {
 
 /** where a page goes back to: set by App each time a page opens */
 export const pageTrail: { from: ScreenId } = { from: 'you' }
+
+// the capture script (scripts/capture-tobuild.mjs) reads the shot list from the running app
+if (typeof window !== 'undefined') (window as unknown as { __alignShots: typeof SHOTS }).__alignShots = SHOTS
