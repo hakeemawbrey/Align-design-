@@ -93,7 +93,7 @@ if (stills || sheet) {
     if (TEASER && LOOPING) {
       // seamless loop: also write a 3× version for platforms that don't auto-loop short clips
       const x3 = OUT.replace(/\.mp4$/, '-x3.mp4')
-      spawnSync('ffmpeg', ['-v', 'error', '-y', '-stream_loop', '2', '-i', share, '-c', 'copy', '-movflags', '+faststart', x3])
+      spawnSync('ffmpeg', ['-v', 'error', '-y', '-stream_loop', '2', '-i', share, ...(a.length ? ['-stream_loop', '2', '-i', audio, '-map', '0:v', '-map', '1:a', '-c:a', 'aac', '-b:a', '192k'] : []), '-c:v', 'copy', '-movflags', '+faststart', x3])  // audio re-looped from the seamless wav (no AAC gaps)
       console.log('3× loop →', x3)
     }
   }
