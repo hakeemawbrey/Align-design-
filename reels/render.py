@@ -50,6 +50,12 @@ STYLE = {
 }
 
 
+def true_peak(path):
+    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", path, "-af", "ebur128=peak=true", "-f", "null", "-"],
+                          capture_output=True, text=True).stderr
+    return float(re.findall(r"Peak:\s+(-?[\d.]+|-inf) dBFS", meas)[-1].replace("-inf", "-99"))
+
+
 def ensure_file(item):
     p = os.path.join(HERE, item["file"])
     if not os.path.exists(p):
@@ -225,6 +231,19 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
         ff.stdin.write((np.clip(frame, 0, 1) * 255).astype(np.uint8).tobytes())
     ff.stdin.close()
     ff.wait()
+
+    # AAC can overshoot the limiter; check the true peak of the finished file and
+    # re-master with a lower ceiling until it sits at or under -1 dBTP
+    ceiling = -2.0
+    while true_peak(out) > -1.0 and ceiling > -6:
+        ceiling -= 0.75
+        os.remove(wav)
+        wav = music.master(raw, STYLE["loudness"], ceiling_db=ceiling)
+        tmp = out.replace(".mp4", ".remux.mp4")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out, "-i", wav, "-map", "0:v", "-map", "1:a",
+                        "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest",
+                        "-movflags", "+faststart", tmp], check=True)
+        os.replace(tmp, out)
     os.remove(wav)
     os.remove(raw)
 

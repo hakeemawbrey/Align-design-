@@ -234,8 +234,8 @@
   {
    "file": "cache/cancer/cand/ov-38377724-c9b9-46d9-a5e1-ca1a603e5440.jpg",
    "focus": [
-    0.5,
-    0.5
+    0.23,
+    0.28
    ],
    "note": "bright moon on black",
    "id": "ov-38377724-c9b9-46d9-a5e1-ca1a603e5440",
@@ -249,7 +249,8 @@
    "w": 1280,
    "h": 916,
    "query": "Beehive cluster",
-   "n": 53
+   "n": 53,
+   "zoom": 1.2
   },
   {
    "file": "cache/cancer/cand/ov-3e270dcd-fee5-4503-b4fb-6ea7c47110ee.jpg",
