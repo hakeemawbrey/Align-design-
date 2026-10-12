@@ -37,6 +37,25 @@ export function spectrum(t, n = 48) {
   }
   return out
 }
+/**
+ * makeClock(loop, bpm) → the same periodic helpers as above, for any loop length / tempo
+ * (bpm must give a whole number of beats per loop). Used by filmkit.js (10s @ 96 bpm).
+ */
+export function makeClock(loop, bpm) {
+  const beat = 60 / bpm, barLen = beat * 4, nBars = Math.round(loop / barLen)
+  const wrap = (x, m) => ((x % m) + m) % m
+  const ph = (t) => wrap(t, loop) / loop
+  return {
+    LOOP: loop, BPM: bpm, BEAT: beat, BAR: barLen,
+    ph,
+    osc: (t, n = 1, off = 0) => Math.sin(2 * Math.PI * (n * ph(t) + off)),
+    cyc: (t, n = 1, off = 0) => wrap(n * ph(t) + off, 1),
+    kick: (t, decay = 7) => Math.exp(-wrap(t, beat) * decay),
+    hat: (t, decay = 18) => Math.exp(-wrap(t - beat / 2, beat) * decay),
+    bar: (t, decay = 2.5) => Math.exp(-wrap(t, barLen) * decay),
+    chordIx: (t) => Math.floor(ph(t) * nBars) % nBars,
+  }
+}
 /** shared loop music: D-major dream pad (one chord per bar) + kick on every beat + off-beat hats */
 export const LOOP_CHORDS = [
   [146.83, 220, 329.63, 369.99, 554.37],   // Dmaj9
