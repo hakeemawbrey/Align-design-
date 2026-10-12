@@ -1,0 +1,54 @@
+name: Zodiac reels
+
+# Makes a new reel every day: the next sign in the zodiac, a new seed each lap
+# (new 12-image subset, new order, new soundtrack voicing). The mp4 and its
+# caption/credits are attached to the run as an artifact.
+on:
+  schedule:
+    - cron: "17 13 * * *"
+  workflow_dispatch:
+    inputs:
+      sign:
+        description: "Sign (blank = next in rotation)"
+        required: false
+      seed:
+        description: "Seed (blank = derived from the date)"
+        required: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          pip install -r reels/requirements.txt
+      - name: Pick sign and seed
+        id: pick
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import datetime, os
+          order = ["aries","taurus","gemini","cancer","leo","virgo","libra","scorpio",
+                   "sagittarius","capricorn","aquarius","pisces"]
+          day = (datetime.date.today() - datetime.date(2026, 1, 1)).days
+          sign = os.environ.get("IN_SIGN") or order[day % 12]
+          seed = os.environ.get("IN_SEED") or str(1 + day // 12)
+          print(f"sign={sign}\nseed={seed}")
+          EOF
+        env:
+          IN_SIGN: ${{ inputs.sign }}
+          IN_SEED: ${{ inputs.seed }}
+      - name: Render
+        working-directory: reels
+        run: python3 render.py ${{ steps.pick.outputs.sign }} --seed ${{ steps.pick.outputs.seed }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reel-${{ steps.pick.outputs.sign }}-s${{ steps.pick.outputs.seed }}
+          path: |
+            reels/out/*.mp4
+            reels/out/*.txt

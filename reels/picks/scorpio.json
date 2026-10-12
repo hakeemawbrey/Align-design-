@@ -1,6 +1,6 @@
 {
  "plate": {
-  "file": "cache/scorpio/plate/commons.jpg",
+  "file": "assets/plates/scorpio.jpg",
   "crop": [
    0.05,
    0.04,

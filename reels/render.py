@@ -164,7 +164,11 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
     print(f"[{sign}] seed {seed}: {len(pool)} images")
     bgs = []
     for it in pool:
-        im = Image.open(ensure_file(it))
+        try:
+            im = Image.open(ensure_file(it))
+        except (SystemExit, OSError) as e:  # a source went away: play the rest
+            print(f"  skip {it.get('id')}: {e}")
+            continue
         bgs.append(grade(im, cfg["grade"], W, H, tuple(it.get("focus", (0.5, 0.5))), zoom=it.get("zoom", 1.0), gamma=cfg.get("gamma")))
     seq = schedule(bgs, rng)
 

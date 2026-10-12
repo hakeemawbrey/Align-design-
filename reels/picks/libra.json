@@ -1,6 +1,6 @@
 {
  "plate": {
-  "file": "cache/libra/plate/commons.jpg",
+  "file": "assets/plates/libra.jpg",
   "crop": [
    0.15,
    0.05,
