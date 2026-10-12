@@ -19,25 +19,6 @@
    "note": "half moon, light and dark in balance"
   },
   {
-   "id": "ov-b44d6894-08ee-482b-925d-faaa2a53595a",
-   "source": "openverse/wikimedia",
-   "title": "Close-up of Lady Justice statue holding scales, symbolizing justice and fairness",
-   "creator": "DP Singh Bhullar",
-   "license": "by-sa 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=196973578",
-   "url": "https://api.openverse.org/v1/images/b44d6894-08ee-482b-925d-faaa2a53595a/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Close-up_of_Lady_Justice_statue_holding_scales%2C_symbolizing_justice_and_fairness.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 2600,
-   "h": 1734,
-   "file": "cache/signs/libra/ov-b44d6894-08ee-482b-925d-faaa2a53595a.jpg",
-   "focus": [
-    0.45,
-    0.42
-   ],
-   "note": "bronze Lady Justice, blindfold and raised scales",
-   "pin": true
-  },
-  {
    "id": "ov-3dc8a8ab-7055-4c2b-bc91-047634cf8073",
    "source": "openverse/wikimedia",
    "title": "Metropolitan canova cupid psyche 02",
@@ -73,24 +54,6 @@
    ],
    "note": "Isenbrant, man holding a balance",
    "pin": true
-  },
-  {
-   "id": "ov-4617b9ff-4840-49ca-b942-08a06e5f1145",
-   "source": "openverse/wikimedia",
-   "title": "The Three Graces label QS:Les,'Las tres Gracias' label QS:Lhu,'H\u00e1rom Gr\u00e1ci\u00e1ja' label QS:Laf,'Grasie\u00eb' label QS:Lde,'Die drei Grazien' label QS:Lpt,'As tr\u00eas Gra\u00e7as' label QS:Lbe,'\u0422\u0440\u044b \u0433\u0440\u0430\u0446\u044b\u0456' label QS:Lmk,'\u0422\u0440\u0438\u0442\u0435 \u0413\u0440\u0430\u0446\u0438\u0438' label QS:Lzh,'\u53c8\u6709\u7f8e\u60e0\u4e09\u5973\u795e' label QS:Lda,'De tre gratier' label QS:Lro,'Cele trei Gra\u021bii' label QS:Lja,'\u4e09\u7f8e\u795e' label QS:Laz,'\u00dc\u00e7 Qrasiya' label QS:Lel,'\u039f\u03b9 \u03c4\u03c1\u03b5\u03b9\u03c2 \u03c7\u03ac\u03c1\u03b9\u03c4\u03b5\u03c2' label QS:Lsv,'De tre gracerna' label QS:Lpl,'Trzy Gracje' label QS:Luk,'\u0422\u0440\u0438 \u0433\u0440\u0430\u0446\u0456\u0457' label QS:Lnl,'De drie Grati\u00ebn' label QS:Lit,'Tre Grazie' label QS:Lfr,'Les trois Gr\u00e2ces' label QS:Lla,'Gratiae' label QS:Lru,'\u0422\u0440\u0438 \u0433\u0440\u0430\u0446\u0438\u0438' label QS:Len,'The Three Graces' label QS:Lbr,'An Teir Fulenn' label QS:Lcs,'T\u0159i gr\u00e1cie' label QS:Lca,'Les tres Gr\u00e0cies'",
-   "creator": "Antonio Canova",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=369826",
-   "url": "https://api.openverse.org/v1/images/4617b9ff-4840-49ca-b942-08a06e5f1145/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Le_tre_Grazie.jpg",
-   "w": 1280,
-   "h": 1876,
-   "file": "cache/signs/libra/ov-4617b9ff-4840-49ca-b942-08a06e5f1145.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Canova, Three Graces in marble"
   },
   {
    "id": "aic-12876",
