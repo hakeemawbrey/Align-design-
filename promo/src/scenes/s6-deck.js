@@ -108,7 +108,7 @@ export function sceneDeck(stage) {
   const REV_SHADOW = CARD_SHADOW
 
   const word = (txt) => el('div', { position: 'absolute', fontFamily: SANS, fontSize: '84px', color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.015em', opacity: 0, lineHeight: 1 }, root, txt)
-  const wTop = word('every night'), wBot = word('a new deck'), wYou = word('you'), wAlign = word('align')
+  const wTop = word('every night'), wBot = word('a new deck'), wYou = word('come'), wAlign = word('align')
   wYou.style.fontSize = '84px'
   wAlign.style.fontFamily = SERIF; wAlign.style.fontStyle = 'italic'; wAlign.style.fontSize = '104px'; wAlign.style.letterSpacing = '0'
 
@@ -217,10 +217,10 @@ export function sceneDeck(stage) {
       // "you ▣ align": balanced around the compacted stack (left = rear of trail, right = front card)
       const fy = H / 2 + baseY
       const out = 1 - ease.inQuad(prog(t, 22.4, 22.7))
-      wYou.style.left = (W / 2 - 590) + 'px'; wYou.style.top = (fy - 46) + 'px'
+      wYou.style.left = (W / 2 - 452) + 'px' /* right edge where "you" ended, so the gap to the stack is unchanged */; wYou.style.top = (fy - 46) + 'px'
       wAlign.style.left = (W / 2 + 485) + 'px'; wAlign.style.top = (fy - 62) + 'px'
       wYou.style.opacity = String(showA(20.85) * out); wAlign.style.opacity = String(showA(21.22) * out)
-      wYou.style.transform = `translateX(${(1 - showA(20.85)) * -30}px)`
+      wYou.style.transform = `translateX(-100%) translateX(${(1 - showA(20.85)) * -30}px)`
       wAlign.style.transform = `translateX(${(1 - showA(21.22)) * 30}px)`
       // blur out into s7's rising gradient
       const bl = 24 * ease.inQuad(prog(t, 22.4, 22.75))

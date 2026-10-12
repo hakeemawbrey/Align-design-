@@ -39,7 +39,7 @@ A full render takes about a minute. To preview live, serve the repo root
 | Veil | The veil lifts when you both align. | s3-veil.js |
 | Birth | May 12, 1998 · 5:00 PM · Tulsa, OK | s4-birth.js (`BIRTH_TEXT`) |
 | Reading | Reading your sky · Sun / Moon / Rising / Venus | s5-reading.js |
-| Deck | every night / a new deck · you ▣ align | s6-deck.js |
+| Deck | every night / a new deck · come ▣ align | s6-deck.js |
 | Tagline | Dating, dealt by the stars · You both aligned. · Then you talk in cards. | s7-tagline.js |
 | End | Align · Your first deck is waiting | s8-end.js |
 
