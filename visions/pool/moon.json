@@ -757,6 +757,96 @@
    ],
    "tone": 0.6,
    "note": "Grimshaw, Lady of Shalott under moonlight"
+  },
+  {
+   "id": "wc-18478522",
+   "source": "commons",
+   "title": "'Moonlight' by George Inness, 1893",
+   "creator": "George Inness",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%27Moonlight%27_by_George_Inness,_1893.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/%27Moonlight%27_by_George_Inness%2C_1893.JPG/1920px-%27Moonlight%27_by_George_Inness%2C_1893.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/%27Moonlight%27_by_George_Inness%2C_1893.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1579,
+   "file": "cache/moon/cand/wc-18478522.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "note": "Inness, Moonlight"
+  },
+  {
+   "id": "wc-23597669",
+   "source": "commons",
+   "title": "George Inness - Moonlight, Tarpon Springs - Google Art Project",
+   "creator": "George Inness",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:George_Inness_-_Moonlight,_Tarpon_Springs_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/George_Inness_-_Moonlight%2C_Tarpon_Springs_-_Google_Art_Project.jpg/1920px-George_Inness_-_Moonlight%2C_Tarpon_Springs_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/George_Inness_-_Moonlight%2C_Tarpon_Springs_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1277,
+   "file": "cache/moon/cand/wc-23597669.jpg",
+   "focus": [
+    0.7,
+    0.5
+   ],
+   "note": "Inness, Moonlight, Tarpon Springs"
+  },
+  {
+   "id": "wc-89034945",
+   "source": "commons",
+   "title": "Alexandre Calame - Abendliche Seelandschaft",
+   "creator": "Alexandre Calame",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alexandre_Calame_-_Abendliche_Seelandschaft.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Alexandre_Calame_-_Abendliche_Seelandschaft.jpg/1920px-Alexandre_Calame_-_Abendliche_Seelandschaft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Alexandre_Calame_-_Abendliche_Seelandschaft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1223,
+   "file": "cache/moon/cand/wc-89034945.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Calame, lake at night, moon and boat"
+  },
+  {
+   "id": "wc-94805491",
+   "source": "commons",
+   "title": "Landscape with Full Moon (SM sg1061)",
+   "creator": "Johann Georg Trautmann",
+   "license": "PDM-owner",
+   "landing": "https://commons.wikimedia.org/wiki/File:Landscape_with_Full_Moon_(SM_sg1061).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Landscape_with_Full_Moon_%28SM_sg1061%29.png/1920px-Landscape_with_Full_Moon_%28SM_sg1061%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Landscape_with_Full_Moon_%28SM_sg1061%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1535,
+   "file": "cache/moon/cand/wc-94805491.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Trautmann, landscape with full moon"
+  },
+  {
+   "id": "wc-1458138",
+   "source": "commons",
+   "title": "Full moon partially obscured by atmosphere",
+   "creator": "NASA",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Full_moon_partially_obscured_by_atmosphere.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/1920px-Full_moon_partially_obscured_by_atmosphere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Full_moon_partially_obscured_by_atmosphere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1280,
+   "file": "cache/moon/cand/wc-1458138.jpg",
+   "focus": [
+    0.62,
+    0.5
+   ],
+   "note": "full moon over Earth's limb (NASA)"
   }
  ]
 }
