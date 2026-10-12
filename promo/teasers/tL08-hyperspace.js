@@ -148,11 +148,11 @@ export default {
       // ── flyers (cards / moons), each one pass per loop
       const fl = FLYERS.map(f => ({ f, z: frac(f.z0 + ph(t)) })).sort((a, b2) => a.z - b2.z)
       for (const { f, z } of fl) {
-        const d = depth(Math.pow(z, 0.9) * 0.97)
+        const d = depth(z * 0.985)
         const a = f.a + roll
         const x = vx + Math.cos(a) * f.rad * F / d, y = vy + Math.sin(a) * f.rad * F * 1.3 / d
         const sc = 0.9 / d
-        const al = ss(0.02, 0.2, z) * (1 - ss(0.9, 0.995, z))
+        const al = ss(0.14, 0.32, z) * (1 - ss(0.95, 0.995, z))
         if (al <= 0.01) continue
         ctx.save(); ctx.translate(x, y); ctx.globalAlpha = al
         if (f.kind === 'card') {
