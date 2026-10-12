@@ -11,6 +11,7 @@ import os
 import re
 import subprocess
 import wave
+import zlib
 
 import numpy as np
 
@@ -79,6 +80,13 @@ def saw(f, t, ph, bright):
     return sum(np.sin(2 * np.pi * f * h * t + ph * h) / h ** (1.5 / bright) for h in range(1, 9))
 
 
+def fade_end(x, ms=12):
+    """Linear fade over the last few ms so a note that is cut short never clicks."""
+    k = min(int(ms / 1000 * SR), x.shape[-1])
+    x[..., -k:] *= np.linspace(1, 0, k)
+    return x
+
+
 def pad_note(freqs, n, rng, bright=1.0, attack=0.35, release=0.5):
     t = np.arange(n) / SR
     out = np.zeros((2, n))
@@ -88,8 +96,9 @@ def pad_note(freqs, n, rng, bright=1.0, attack=0.35, release=0.5):
             pan = (k - 1) * 0.7
             out[0] += s * (1 - pan)
             out[1] += s * (1 + pan)
-    env = np.minimum(1, t / attack) * np.minimum(1, (n / SR - t) / release + 0.15)
-    return out * np.clip(env, 0, 1) / (len(freqs) * 6)
+    # attack, hold, then release all the way to silence (it used to stop at 15% and click)
+    env = np.minimum(1, t / attack) * np.clip((n / SR - t) / release, 0, 1)
+    return out * env / (len(freqs) * 6)
 
 
 def pluck(f, dur, rng, decay=0.28, tone=0.5):
@@ -97,14 +106,27 @@ def pluck(f, dur, rng, decay=0.28, tone=0.5):
     t = np.arange(n) / SR
     s = (np.sin(2 * np.pi * f * t) + tone * np.sin(4 * np.pi * f * t + 0.5) * np.exp(-t * 9)
          + 0.25 * np.sin(6 * np.pi * f * t) * np.exp(-t * 18))
-    return s * np.exp(-t / decay) * np.minimum(1, t / 0.003)
+    return fade_end(s * np.exp(-t / decay) * np.minimum(1, t / 0.003))
 
 
-def kick(n_len=0.5, f0=140, f1=42, decay=0.22):
+def bass_note(f, dur):
+    """Sub sine plus a saturated upper layer: the fundamental for headphones, and
+    harmonics around 100-400 Hz so the line still reads on a phone speaker."""
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    sub = np.sin(2 * np.pi * f * t)
+    grit = np.tanh(2.2 * (np.sin(2 * np.pi * f * t) + 0.5 * np.sin(4 * np.pi * f * t + 0.3)))
+    env = np.minimum(1, t / 0.006) * np.exp(-t / 0.9)
+    return fade_end((0.6 * sub + 0.7 * grit) * env, 25)
+
+
+def kick(n_len=0.4, f0=150, f1=50, decay=0.16):
     n = int(n_len * SR)
     t = np.arange(n) / SR
     f = f1 + (f0 - f1) * np.exp(-t * 35)
-    return np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / decay)
+    body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / decay)
+    click = np.sin(2 * np.pi * 1800 * t) * np.exp(-t / 0.004) * 0.12  # a little beater so it reads on phones
+    return fade_end(body + click, 20)
 
 
 def clap(rng):
@@ -138,58 +160,78 @@ def add(mix, x, start, gain=1.0, pan=0.0, wrap=True):
         mix[:, :r] += x[:, n - start:n - start + r] * gain
 
 
-def compose(total, seed=0, theme=None, sign=None):
-    rng = np.random.default_rng([seed, SIGNS.index(sign) + 100 if sign in SIGNS else hash_theme(theme)])
+def place(m, lo):
+    """Move midi note m by octaves into [lo, lo + 12)."""
+    return lo + (m - lo) % 12
+
+
+def compose(total, seed=0, theme=None, sign=None, salt=None):
+    """salt (e.g. the line id) gives each line its own draw; without it every line of a
+    theme rendered at the same seed and length gets the identical track."""
+    key = [seed, SIGNS.index(sign) + 100 if sign in SIGNS else hash_theme(theme)]
+    if salt:
+        key.append(zlib.crc32(str(salt).encode()))
+    rng = np.random.default_rng(key)
     n = int(round(total * SR))
-    mix = np.zeros((2, n))
     root = (KEYS.get(theme, 57) if sign not in SIGNS else 55 + SIGNS.index(sign) % 7) + int(rng.integers(-2, 3))
-    root -= 12  # pads around the octave below middle C
+    root -= 12  # reference pitch for the arp register (an octave below middle C or so)
     prog = PROGRESSIONS[int(rng.integers(len(PROGRESSIONS)))]
     arp = ARPS[int(rng.integers(len(ARPS)))]
     bright = float(rng.uniform(0.8, 1.3))
     bar = BEAT * 4
     bars = int(round(total / bar))
+    pads, arps, bass, drums, send = (np.zeros((2, n)) for _ in range(5))
 
     for b in range(bars):
         d = prog[b % 4]
         s = int(b * bar * SR)
         m = int(bar * SR)
-        # pad: a triad plus the 7th or 9th, voiced around the root
-        chord = [deg(root, d), deg(root, d + 2), deg(root, d + 4), deg(root, d + (6 if rng.random() < 0.5 else 8))]
-        add(mix, pad_note([hz(c) for c in chord], m + int(0.4 * SR), rng, bright), s, 0.8)
-        # sub bass: root on 1, a push on the and of 2
+        # pad: triad voiced in one octave from E3 (closest position, so chords move smoothly
+        # and nothing piles up below C3), with the 7th or 9th on top
+        tri = [place(deg(root, d + k), 52) for k in (0, 2, 4)]
+        color = place(deg(root, d + (6 if rng.random() < 0.5 else 8)), 64)
+        add(pads, pad_note([hz(c) for c in tri + [color]], m + int(0.4 * SR), rng, bright), s, 1.8)
+        # bass: root between A1 and G#2, on 1, a push on the and of 2, and 3 (cut at the bar line)
+        bf = hz(place(deg(root, d), 33))
         for pos, L in ((0, 1.4), (1.5, 0.45), (2.5, 1.4)):
-            bs = pluck(hz(deg(root, d, -1)), L * BEAT + 0.2, rng, decay=0.5, tone=0.15)
-            add(mix, lowpass_fast(bs, 300), s + int(pos * BEAT * SR), 0.55)
+            add(bass, bass_note(bf, min(L * BEAT + 0.1, 4 * BEAT - pos * BEAT)), s + int(pos * BEAT * SR), 0.18)
         # arpeggio on sixteenths, into a dotted-eighth echo
         for k in range(16):
             if rng.random() < 0.18:
                 continue
             note = deg(root, d + arp[k % len(arp)], 2)
+            note -= 12 * (note > root + 24 + 19)  # fold anything higher down an octave: the arp stays in a 19-semitone band, no piercing tops
             p = pluck(hz(note), 0.5, rng, decay=0.16, tone=0.6)
             pan = 0.35 * np.sin(k * 1.3)
             st = s + int(k * BEAT / 4 * SR)
-            add(mix, p, st, 0.11, pan)
-            add(mix, p, st + int(0.75 * BEAT * SR), 0.045, -pan)
+            add(arps, p, st, 0.16, pan)
+            add(arps, p, st + int(0.75 * BEAT * SR), 0.065, -pan)
         # drums
         for q in range(4):
             qs = s + int(q * BEAT * SR)
-            add(mix, kick(), qs, 0.75)
+            add(drums, kick(), qs, 0.36)
             if q in (1, 3):
-                add(mix, clap(rng), qs, 0.22)
+                c = clap(rng)
+                add(drums, c, qs, 0.24)
+                add(send, c, qs, 0.24)
             for e in range(2):
-                add(mix, hat(rng, open_=(e == 1 and q == 3)), qs + int(e * BEAT / 2 * SR), 0.05 if e else 0.035, 0.2)
+                add(drums, hat(rng, open_=(e == 1 and q == 3)), qs + int(e * BEAT / 2 * SR), 0.075 if e else 0.055, 0.2)
 
-    # sidechain pump: everything but the kick ducks a little on each beat (the drums are mixed in already,
-    # so the pump is gentle and mostly heard on the pads)
+    # sidechain pump on the music (not the drums): a 6 ms dip into the duck so the gain
+    # change itself never ticks, then a release over the beat
     t = np.arange(n) / SR
-    ph = (t % BEAT) / BEAT
-    duck = 1 - 0.28 * np.exp(-ph * 9)
-    mix *= duck
-    mix = reverb(mix, 2.4, 0.28, rng)
-    mix = lowpass_fast(mix, 9000, 2)
+    ph = (t % BEAT)
+    duck = 1 - 0.3 * np.minimum(1, ph / 0.006) * np.exp(-ph / BEAT * 9)
+    music_bus = (pads + arps + lowpass_fast(bass, 700)) * duck
+    # reverb on pads, arp and clap only, and high-passed: no washed-out sub or kick
+    send += (pads + arps) * duck
+    wet = highpass_fast(reverb(send, 2.4, 1.0, rng), 250)
+    mix = music_bus + drums + 0.32 * wet
+    mix = lowpass_fast(mix, 11000, 2)
+    mix = highpass_fast(mix, 25)  # removes DC and sub rumble (circular, so the loop stays seamless)
     mix /= np.abs(mix).max() + 1e-9
     mix = np.tanh(mix * 1.6) / np.tanh(1.6)
+    mix -= mix.mean(1, keepdims=True)  # the soft clip can leave a hair of DC
     return (mix * 0.8).astype(np.float32)
 
 
@@ -205,14 +247,30 @@ def _lufs(path):
 
 def master(wav, target_lufs=-14.0, ceiling_db=-2.0):
     """Bring the loop to target loudness (Instagram normalises near -14) and limit the
-    sample peak at -2 dB so the true peak stays under -1 dBTP after AAC."""
+    sample peak at -2 dB so the true peak stays under -1 dBTP after AAC.
+
+    The limiter looks ahead, so it is run on the loop with a second of wrap-around on
+    each side and its delay compensated, then trimmed back to the exact loop. (Run
+    straight, it delayed everything by 1 ms and put that much silence at the top of
+    the loop: a dropout at every Instagram repeat.)"""
     gain = target_lufs - _lufs(wav)
+    with wave.open(wav, "rb") as w:
+        x = np.frombuffer(w.readframes(w.getnframes()), "<i2").reshape(-1, 2)
+    n, pad = len(x), min(len(x), SR)
+    padded = wav.replace(".wav", "-pad.wav")
+    with wave.open(padded, "wb") as w:
+        w.setnchannels(2)
+        w.setsampwidth(2)
+        w.setframerate(SR)
+        w.writeframes(np.concatenate([x[-pad:], x, x[:pad]]).tobytes())
     out = wav.replace(".wav", "-m.wav")
     lim = 10 ** (ceiling_db / 20)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-af",
-                    f"volume={gain:.2f}dB,alimiter=limit={lim:.3f}:attack=1:release=60:level=false",
-                    "-ar", str(SR), out], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", padded, "-af",
+                    f"volume={gain:.2f}dB,alimiter=limit={lim:.3f}:attack=1:release=60:level=false:latency=1,"
+                    f"atrim=start_sample={pad}:end_sample={pad + n},asetpts=N/SR/TB",
+                    "-ar", str(SR), "-c:a", "pcm_s16le", out], check=True)
     os.remove(wav)
+    os.remove(padded)
     return out
 
 

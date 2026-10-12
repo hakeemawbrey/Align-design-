@@ -173,6 +173,7 @@
     0.5,
     0.35
    ],
+   "zoom": 1.12,
    "note": "Carus, gothic windows of Oybin ruin",
    "id": "met-439122",
    "source": "met",
@@ -254,25 +255,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Carl_Blechen_-_Gothic_Church_Ruin_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
    "h": 2274
-  },
-  {
-   "file": "cache/castle/cand/wc-23604372.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "exposure": 0.85,
-   "note": "John Martin, Chepstow Castle by moonlight",
-   "id": "wc-23604372",
-   "source": "commons",
-   "title": "John Martin - Moonlight - Chepstow Castle - Google Art Project",
-   "creator": "John Martin",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:John_Martin_-_Moonlight_-_Chepstow_Castle_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/John_Martin_-_Moonlight_-_Chepstow_Castle_-_Google_Art_Project.jpg/1920px-John_Martin_-_Moonlight_-_Chepstow_Castle_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/John_Martin_-_Moonlight_-_Chepstow_Castle_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1469
   },
   {
    "file": "cache/castle/cand/wc-137140972.jpg",
@@ -388,6 +370,7 @@
     0.6,
     0.4
    ],
+   "zoom": 1.1,
    "note": "Cole, The Departure",
    "id": "wc-21131104",
    "source": "commons",
@@ -635,29 +618,12 @@
    "h": 1662
   },
   {
-   "file": "cache/castle/cand/wc-127318373.jpg",
-   "focus": [
-    0.45,
-    0.4
-   ],
-   "note": "Čiurlionis, Castle Fairy Tale",
-   "id": "wc-127318373",
-   "source": "commons",
-   "title": "Mikalojus Konstantinas Ciurlionis - FAIRY TALE (CASTLE FAIRY TALE) - 1909 (cropped)",
-   "creator": "Mikalojus Konstantinas Čiurlionis",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_(CASTLE_FAIRY_TALE)_-_1909_(cropped).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_%28CASTLE_FAIRY_TALE%29_-_1909_%28cropped%29.jpg/1920px-Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_%28CASTLE_FAIRY_TALE%29_-_1909_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Mikalojus_Konstantinas_Ciurlionis_-_FAIRY_TALE_%28CASTLE_FAIRY_TALE%29_-_1909_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1422
-  },
-  {
    "file": "cache/castle/cand/wc-187549928.jpg",
    "focus": [
     0.5,
     0.35
    ],
+   "zoom": 1.1,
    "note": "Kircher, Parzival sees the Grail castle",
    "id": "wc-187549928",
    "source": "commons",
@@ -689,24 +655,6 @@
    "h": 1267
   },
   {
-   "file": "cache/castle/cand/wc-12645778.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "note": "Kronborg at night",
-   "id": "wc-12645778",
-   "source": "commons",
-   "title": "Kronborg night",
-   "creator": "DanNav",
-   "license": "CC BY-SA 3.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Kronborg_night.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Kronborg_night.jpg/1920px-Kronborg_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Kronborg_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1280
-  },
-  {
    "file": "cache/castle/cand/wc-64128945.jpg",
    "focus": [
     0.5,
@@ -725,58 +673,94 @@
    "h": 1440
   },
   {
-   "file": "cache/castle/cand/wc-3765459.jpg",
+   "file": "cache/castle/cand/wc-93628040.jpg",
    "focus": [
-    0.5,
+    0.45,
     0.4
    ],
-   "note": "Hohenschwangau at night",
-   "id": "wc-3765459",
+   "note": "Heidelberg Castle under a full moon",
+   "id": "wc-93628040",
    "source": "commons",
-   "title": "Schloss Hohenschwangau at night 1",
-   "creator": "Aconcagua",
-   "license": "CC BY-SA 3.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Schloss_Hohenschwangau_at_night_1.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Schloss_Hohenschwangau_at_night_1.jpg/1920px-Schloss_Hohenschwangau_at_night_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Schloss_Hohenschwangau_at_night_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Castle North and East Front (Heidelberg) Night Aug 2020",
+   "creator": "R. J. Mathar",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Castle_North_and_East_Front_(Heidelberg)_Night_Aug_2020.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Castle_North_and_East_Front_%28Heidelberg%29_Night_Aug_2020.jpg/1920px-Castle_North_and_East_Front_%28Heidelberg%29_Night_Aug_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Castle_North_and_East_Front_%28Heidelberg%29_Night_Aug_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
-   "h": 1440
+   "h": 1282
   },
   {
-   "file": "cache/castle/cand/wc-74472709.jpg",
+   "file": "cache/castle/cand/wc-179393097.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "note": "Cologne Cathedral facade at night",
+   "id": "wc-179393097",
+   "source": "commons",
+   "title": "Exterior of Cologne Cathedral night (1)",
+   "creator": "MOs810",
+   "license": "CC BY 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Exterior_of_Cologne_Cathedral_night_(1).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Exterior_of_Cologne_Cathedral_night_%281%29.jpg/1920px-Exterior_of_Cologne_Cathedral_night_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Exterior_of_Cologne_Cathedral_night_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1807,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/wc-54296666.jpg",
    "focus": [
     0.55,
     0.4
    ],
-   "note": "Saarburg castle at night",
-   "id": "wc-74472709",
+   "note": "Notre-Dame de Paris at night",
+   "id": "wc-54296666",
    "source": "commons",
-   "title": "Saarburg Burg Nachts H1d",
-   "creator": "Helge Klaus Rieder",
-   "license": "CC0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Saarburg_Burg_Nachts_H1d.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Saarburg_Burg_Nachts_H1d.jpg/1920px-Saarburg_Burg_Nachts_H1d.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Saarburg_Burg_Nachts_H1d.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Notre-Dame de Paris from the Pont de l'Archevêché by Night",
+   "creator": "Livioandronico2013",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg/1920px-Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
-   "h": 1437
+   "h": 1323
   },
   {
-   "file": "cache/castle/cand/wc-91860206.jpg",
+   "file": "cache/castle/cand/wc-111149212.jpg",
    "focus": [
-    0.7,
-    0.4
+    0.6,
+    0.45
    ],
-   "note": "Turner, Caernarvon Castle",
-   "id": "wc-91860206",
+   "note": "Château de Chillon at dusk",
+   "id": "wc-111149212",
    "source": "commons",
-   "title": "Joseph Mallord William Turner (1775-1851) - Caernarvon Castle - N01867 - National Gallery",
-   "creator": "J. M. W. Turner",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_(1775-1851)_-_Caernarvon_Castle_-_N01867_-_National_Gallery.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Joseph_Mallord_William_Turner_%281775-1851%29_-_Caernarvon_Castle_-_N01867_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Joseph_Mallord_William_Turner_%281775-1851%29_-_Caernarvon_Castle_-_N01867_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1084,
-   "h": 674
+   "title": "Château de Chillon depuis le sud - lumière et coucher de soleil",
+   "creator": "Christian David",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg/1920px-Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1280
+  },
+  {
+   "file": "cache/castle/cand/wc-81363689.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Malbork castle reflected at night",
+   "id": "wc-81363689",
+   "source": "commons",
+   "title": "Malbork (84000391)",
+   "creator": "Jurikowski",
+   "license": "CC BY-SA 3.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Malbork_(84000391).jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Malbork_%2884000391%29.jpeg/1920px-Malbork_%2884000391%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Malbork_%2884000391%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1080
   }
  ]
 }

@@ -187,6 +187,61 @@ def font(name, px, var=None):
 
 
 def wrap(text, f, max_w):
+    """Wrap into as few lines as greedy wrapping uses, choosing the breaks that read best:
+    lines of even length, a break after a sentence or clause where possible, and no lone
+    short word on the last line."""
+    words = text.split()
+    n_lines = len(_greedy(text, f, max_w))
+    if n_lines == 1:
+        return [text]
+    width = [[0.0] * (len(words) + 1) for _ in words]
+    for i in range(len(words)):
+        for j in range(i + 1, len(words) + 1):
+            width[i][j] = f.getlength(" ".join(words[i:j]))
+
+    def cost(i, j, last):
+        w = width[i][j]
+        if w > max_w:
+            return math.inf
+        c = 0.0 if last else ((max_w - w) / max_w) ** 2
+        if last and w < max_w * 0.33:
+            c += 0.25                                   # a stub of a last line
+        if not last:
+            end = words[j - 1][-1]
+            c -= 0.14 if end in ".?!" else 0.05 if end in ",;:" else 0
+            if words[j - 1].lower() in ("a", "an", "the", "to", "of", "and", "your", "you", "is", "in"):
+                c += 0.04                               # don't end a line on a little word
+        return c
+
+    from functools import lru_cache
+
+    @lru_cache(None)
+    def best(i, k):
+        if i == len(words):
+            return (0.0, ()) if k == 0 else (math.inf, ())
+        if k == 0:
+            return (math.inf, ())
+        out = (math.inf, ())
+        for j in range(i + 1, len(words) + 1):
+            c = cost(i, j, j == len(words))
+            if c == math.inf:
+                break
+            sub = best(j, k - 1)
+            if c + sub[0] < out[0]:
+                out = (c + sub[0], (j,) + sub[1])
+        return out
+
+    total, breaks = best(0, n_lines)
+    if total == math.inf:
+        return _greedy(text, f, max_w)
+    lines, i = [], 0
+    for j in breaks:
+        lines.append(" ".join(words[i:j]))
+        i = j
+    return lines
+
+
+def _greedy(text, f, max_w):
     words, lines, cur = text.split(), [], ""
     for w in words:
         t = (cur + " " + w).strip()
@@ -203,6 +258,7 @@ def text_layer(text, W, H, ss=2):
     """The statement as an RGBA float layer: white, black outline, soft drop shadow."""
     px = int(W * STYLE["text_size"] * ss)
     f = font("SofiaSansCondensed.ttf", px, b"Bold")
+    text = re.sub(r"(\w)'(\w)", "\\1\u2019\\2", text).replace("'", "\u2019")  # typographic apostrophes
     lines = wrap(text, f, W * STYLE["text_wrap"] * ss)
     lead = px * STYLE["text_lead"]
     stroke = max(1, round(W * STYLE["text_stroke"] * ss))
@@ -286,12 +342,18 @@ def choose_images(moods, sign, n, rng):
 
 
 def sequence(n_imgs, n_shots, rng):
-    """One shuffled pass through the images, repeated, never the same image twice in a row."""
-    order = list(range(n_imgs))
+    """Shuffled passes through the images, a fresh order each pass, never the same image
+    twice in a row (also across a pass boundary and the loop point)."""
     seq = []
     while len(seq) < n_shots:
+        order = [int(i) for i in rng.permutation(n_imgs)]
+        if seq and n_imgs > 1 and order[0] == seq[-1]:
+            order[0], order[-1] = order[-1], order[0]
         seq += order
-    return seq[:n_shots]
+    seq = seq[:n_shots]
+    if n_imgs > 2 and seq[-1] == seq[0]:
+        seq[-1], seq[-2] = seq[-2], seq[-1]
+    return seq
 
 
 # ---------------------------------------------------------------- render
@@ -329,14 +391,15 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
                             "-af", f"afade=t=out:st={total - 0.4}:d=0.4,loudnorm=I=-14:TP=-1.5",
                             "-ar", "44100", "-ac", "2", wav], check=True)
         else:
-            music.write_wav(wav, music.compose(total, seed, line.get("theme"), line.get("sign")))
+            music.write_wav(wav, music.compose(total, seed, line.get("theme"), line.get("sign"), salt=line["id"]))
             wav = music.master(wav, -14.0)
 
     cmd = ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(FPS), "-i", "-"]
     cmd += ["-i", wav] if wav else []
     cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
-            "-x264-params", "keyint=48"]
+            "-profile:v", "high", "-level", "4.1", "-x264-params", "keyint=48",
+            "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv"]
     cmd += ["-c:a", "aac", "-b:a", "192k", "-shortest"] if wav else []
     cmd += ["-movflags", "+faststart", out]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
@@ -359,23 +422,72 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
     return out
 
 
+CAPTION_MAX = 2200     # Instagram's caption limit, in characters
+TAG_LIMIT = 5          # Instagram cut posts to 5 hashtags in Dec 2025 (it was 30); set to 30 if that changes
+CUT_LINE = "----- NOT FOR POSTING: full image sources (for the records / a credits page) -----"
+
+
+def _licence(it):
+    """'CC BY-SA 4.0' style name, or None when the image needs no credit (PD / CC0)."""
+    lic = re.sub(r"\s+", " ", (it.get("license") or "")).strip()
+    low = lic.lower()
+    if not lic or "public domain" in low or "cc0" in low or low in ("pdm", "pd"):
+        return None
+    if not low.startswith("cc"):
+        lic = "CC " + lic
+    return re.sub(r"^cc ", "CC ", lic, flags=re.I).replace("by-sa", "BY-SA").replace("by ", "BY ")
+
+
+def _clean(text, n):
+    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", text or "")).strip()
+    return text if len(text) <= n else text[:n - 1].rstrip(" ,;-") + "\u2026"
+
+
 def write_caption(path, line, used, rng):
+    """The sidecar: a postable caption (always <= CAPTION_MAX chars, <= TAG_LIMIT tags),
+    then a cut line and the full source list, which is not meant to be posted.
+
+    Only CC BY / BY-SA pictures need a credit, so the posted part carries one compact
+    line for those; public-domain and CC0 pictures are listed below the cut."""
     data = load_lines() if os.path.exists(os.path.join(HERE, "lines.json")) else {"themes": {}, "signs": {}}
     th = data["themes"].get(line.get("theme"), {})
-    tags = list(th.get("tags", []))
-    if line.get("sign"):
-        tags = data.get("signs", {}).get(line["sign"], {}).get("tags", []) + tags
     cta = th.get("cta") or ["Come align. Link in bio."]
+    # hashtags: the sign's own tag first, then the theme's, the brand tag always last
+    brand = "comealign"
+    sign_tags = data.get("signs", {}).get(line.get("sign") or "", {}).get("tags", [])[:1]
+    tags = []
+    for t in sign_tags + list(th.get("tags", [])):
+        t = t.replace(" ", "").lstrip("#").lower()
+        if t and t != brand and t not in tags:
+            tags.append(t)
+    tags = tags[:TAG_LIMIT - 1] + [brand]
+    credits = []
+    for it in used:
+        lic = _licence(it)
+        if lic:
+            # "Name (1817 - 1900) - painter", "Name (Wikipedia:User:...)", "Name You are free to use..." -> Name
+            who = re.split(r"\s+(?:\(|you are free|[\u2013\u2014]|-\s*\d)", _clean(it.get("creator"), 200), flags=re.I)[0]
+            title = re.sub(r"^file:|\.(jpe?g|png|tiff?|webp)$", "", _clean(it.get("title"), 200), flags=re.I).strip()
+            credits.append(f"{_clean(who, 40) or 'unknown author'}, \u201c{_clean(title, 40)}\u201d ({lic})")
+    parts = [line["text"]]
+    if line.get("caption"):
+        parts.append(line["caption"].strip())
+    parts.append(cta[int(rng.integers(len(cta)))])
+    if credits:
+        parts.append("Image credits: " + "; ".join(credits) + ". Other images public domain.")
+    parts.append(" ".join("#" + t for t in tags))
+    post = "\n\n".join(parts)
+    if len(post) > CAPTION_MAX and credits:  # creators and licences only
+        short = "Image credits: " + "; ".join(c.split(", \u201c")[0] + " (" + c.rsplit("(", 1)[1] for c in credits)
+        parts[-2] = short + ". Other images public domain."
+        post = "\n\n".join(parts)
+    if len(post) > CAPTION_MAX:
+        print(f"  warning: caption for {line['id']} is {len(post)} chars (max {CAPTION_MAX})")
     with open(path, "w") as fh:
-        fh.write(line["text"] + "\n\n")
-        if line.get("caption"):
-            fh.write(line["caption"].strip() + "\n\n")
-        fh.write(cta[int(rng.integers(len(cta)))] + "\n\n")
-        fh.write(" ".join("#" + t.replace(" ", "").lstrip("#") for t in dict.fromkeys(tags)) + "\n\n")
-        fh.write("Images (public domain or open licence; credit CC BY / BY-SA in the caption or bio):\n")
+        fh.write(post + "\n\n\n" + CUT_LINE + "\n")
         for it in used:
-            title = re.sub(r"<[^>]+>", "", it.get("title", "")).strip()
-            fh.write(f"- {title[:80]} / {it.get('creator', '')[:50]} / {it.get('license', '')} / {it.get('landing', '')}\n")
+            fh.write(f"- {_clean(it.get('title'), 120)} / {_clean(it.get('creator'), 80)} / "
+                     f"{it.get('license', '')} / {it.get('landing', '')}\n")
 
 
 def find_line(key):

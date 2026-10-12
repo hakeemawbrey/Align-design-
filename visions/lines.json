@@ -124,9 +124,9 @@
     },
     "cancer": {
       "tags": [
-        "cancer",
+        "cancerzodiac",
         "cancerseason",
-        "cancerzodiac"
+        "cancersign"
       ]
     },
     "leo": {
@@ -509,7 +509,7 @@
     {
       "id": "love-30",
       "theme": "love",
-      "text": "You keep choosing unavailable people because they never get close enough to really see you.",
+      "text": "You keep choosing unavailable people because they never get close enough to see you.",
       "moods": [
         "castle",
         "mystic",

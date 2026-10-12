@@ -20,6 +20,82 @@
    "h": 2400
   },
   {
+   "file": "cache/knight/cand/wc-4854556.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "pin": true,
+   "note": "Arthur Hughes, Sir Galahad",
+   "id": "wc-4854556",
+   "source": "commons",
+   "title": "Arthur Hughes - Sir Galahad",
+   "creator": "Arthur Hughes",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Arthur_Hughes_-_Sir_Galahad.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Arthur_Hughes_-_Sir_Galahad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Arthur_Hughes_-_Sir_Galahad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1280,
+   "h": 841
+  },
+  {
+   "file": "cache/knight/cand/wc-21853937.jpg",
+   "focus": [
+    0.35,
+    0.55
+   ],
+   "pin": true,
+   "note": "Vasnetsov, Knight at the Crossroads",
+   "id": "wc-21853937",
+   "source": "commons",
+   "title": "Victor Vasnetsov - Knight at the Crossroads - Google Art Project",
+   "creator": "Viktor Vasnetsov",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg/1920px-Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1065
+  },
+  {
+   "file": "cache/knight/cand/wc-91872651.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "pin": true,
+   "note": "Pettie, The Vigil",
+   "id": "wc-91872651",
+   "source": "commons",
+   "title": "John Pettie (1839-1893) - The Vigil - N01582 - National Gallery",
+   "creator": "John Pettie",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_Pettie_(1839-1893)_-_The_Vigil_-_N01582_-_National_Gallery.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/John_Pettie_%281839-1893%29_-_The_Vigil_-_N01582_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/John_Pettie_%281839-1893%29_-_The_Vigil_-_N01582_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1200,
+   "h": 811
+  },
+  {
+   "file": "cache/knight/cand/wc-48561308.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "pin": true,
+   "note": "Moreau, St George and the dragon",
+   "id": "wc-48561308",
+   "source": "commons",
+   "title": "Gustave Moreau - Saint-Georges et le dragon (c.1889)",
+   "creator": "Gustave Moreau",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Gustave_Moreau_-_Saint-Georges_et_le_dragon_(c.1889).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg/1920px-Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1623,
+   "h": 2400
+  },
+  {
    "file": "cache/knight/cand/wc-184700315.jpg",
    "focus": [
     0.5,
@@ -36,24 +112,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Frank_Dicksee_-_La_Belle_Dame_sans_Merci_-_Bristol_Museums%2C_Galleries_and_Archives.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
    "h": 1400
-  },
-  {
-   "file": "cache/knight/cand/wc-5519068.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Dicksee, Chivalry",
-   "id": "wc-5519068",
-   "source": "commons",
-   "title": "Dicksee-Chivalry-1885",
-   "creator": "Frank Bernard Dicksee",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Dicksee-Chivalry-1885.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Dicksee-Chivalry-1885.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Dicksee-Chivalry-1885.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1524,
-   "h": 2039
   },
   {
    "file": "cache/knight/cand/wc-168439425.jpg",
@@ -92,25 +150,6 @@
    "h": 2400
   },
   {
-   "file": "cache/knight/cand/wc-4854556.jpg",
-   "focus": [
-    0.4,
-    0.5
-   ],
-   "pin": true,
-   "note": "Arthur Hughes, Sir Galahad",
-   "id": "wc-4854556",
-   "source": "commons",
-   "title": "Arthur Hughes - Sir Galahad",
-   "creator": "Arthur Hughes",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Arthur_Hughes_-_Sir_Galahad.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Arthur_Hughes_-_Sir_Galahad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Arthur_Hughes_-_Sir_Galahad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1280,
-   "h": 841
-  },
-  {
    "file": "cache/knight/cand/wc-7745192.jpg",
    "focus": [
     0.6,
@@ -127,42 +166,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Saint_George_and_the_Dragon_by_Paolo_Uccello_%28London%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1171,
    "h": 900
-  },
-  {
-   "file": "cache/knight/cand/wc-67531254.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Uccello, St George (Jacquemart-André) detail",
-   "id": "wc-67531254",
-   "source": "commons",
-   "title": "Paolo uccello, san giorgio, la principessa e il drago, 1470 ca. 04",
-   "creator": "Sailko",
-   "license": "CC BY 3.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Paolo_uccello,_san_giorgio,_la_principessa_e_il_drago,_1470_ca._04.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Paolo_uccello%2C_san_giorgio%2C_la_principessa_e_il_drago%2C_1470_ca._04.jpg/1920px-Paolo_uccello%2C_san_giorgio%2C_la_principessa_e_il_drago%2C_1470_ca._04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Paolo_uccello%2C_san_giorgio%2C_la_principessa_e_il_drago%2C_1470_ca._04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1488,
-   "h": 2400
-  },
-  {
-   "file": "cache/knight/cand/wc-81331098.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "note": "Raphael, St George (NGA)",
-   "id": "wc-81331098",
-   "source": "commons",
-   "title": "Raphael, Saint George and the Dragon, c. 1506, NGA 28",
-   "creator": "Raphael",
-   "license": "CC0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Raphael,_Saint_George_and_the_Dragon,_c._1506,_NGA_28.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Raphael%2C_Saint_George_and_the_Dragon%2C_c._1506%2C_NGA_28.jpg/1920px-Raphael%2C_Saint_George_and_the_Dragon%2C_c._1506%2C_NGA_28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Raphael%2C_Saint_George_and_the_Dragon%2C_c._1506%2C_NGA_28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1842,
-   "h": 2400
   },
   {
    "file": "cache/knight/cand/wc-19188516.jpg",
@@ -199,24 +202,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/The_Fight_--_St_George_Kills_the_Dragon_VI_%28Burne-Jones%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
    "h": 1565
-  },
-  {
-   "file": "cache/knight/cand/wc-803067.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Lenepveu, Joan of Arc at Orléans",
-   "id": "wc-803067",
-   "source": "commons",
-   "title": "Lenepveu, Jeanne d'Arc au siège d'Orléans",
-   "creator": "Eugène Lenepveu",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Lenepveu,_Jeanne_d%27Arc_au_si%C3%A8ge_d%27Orl%C3%A9ans.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Lenepveu%2C_Jeanne_d%27Arc_au_si%C3%A8ge_d%27Orl%C3%A9ans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Lenepveu%2C_Jeanne_d%27Arc_au_si%C3%A8ge_d%27Orl%C3%A9ans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1508,
-   "h": 2048
   },
   {
    "file": "cache/knight/cand/wc-3876400.jpg",
@@ -273,30 +258,12 @@
    "h": 1248
   },
   {
-   "file": "cache/knight/cand/wc-21853937.jpg",
-   "focus": [
-    0.35,
-    0.55
-   ],
-   "pin": true,
-   "note": "Vasnetsov, Knight at the Crossroads",
-   "id": "wc-21853937",
-   "source": "commons",
-   "title": "Victor Vasnetsov - Knight at the Crossroads - Google Art Project",
-   "creator": "Viktor Vasnetsov",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg/1920px-Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Victor_Vasnetsov_-_Knight_at_the_Crossroads_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1065
-  },
-  {
    "file": "cache/knight/cand/wc-6718437.jpg",
    "focus": [
-    0.45,
-    0.4
+    0.42,
+    0.3
    ],
+   "zoom": 1.7,
    "note": "Rochegrosse, Le Chevalier aux Fleurs",
    "id": "wc-6718437",
    "source": "commons",
@@ -308,25 +275,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Le_Chevalier_aux_Fleurs_1894_Georges_Rochegrosse_1859_1938.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
    "h": 1223
-  },
-  {
-   "file": "cache/knight/cand/wc-91872651.jpg",
-   "focus": [
-    0.4,
-    0.5
-   ],
-   "pin": true,
-   "note": "Pettie, The Vigil",
-   "id": "wc-91872651",
-   "source": "commons",
-   "title": "John Pettie (1839-1893) - The Vigil - N01582 - National Gallery",
-   "creator": "John Pettie",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:John_Pettie_(1839-1893)_-_The_Vigil_-_N01582_-_National_Gallery.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/John_Pettie_%281839-1893%29_-_The_Vigil_-_N01582_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/John_Pettie_%281839-1893%29_-_The_Vigil_-_N01582_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1200,
-   "h": 811
   },
   {
    "file": "cache/knight/cand/wc-79558615.jpg",
@@ -347,61 +295,6 @@
    "h": 2400
   },
   {
-   "file": "cache/knight/cand/wc-48561308.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "pin": true,
-   "note": "Moreau, St George and the dragon",
-   "id": "wc-48561308",
-   "source": "commons",
-   "title": "Gustave Moreau - Saint-Georges et le dragon (c.1889)",
-   "creator": "Gustave Moreau",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Gustave_Moreau_-_Saint-Georges_et_le_dragon_(c.1889).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg/1920px-Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1623,
-   "h": 2400
-  },
-  {
-   "file": "cache/knight/cand/wc-27927635.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Moreau, St George (1869)",
-   "id": "wc-27927635",
-   "source": "commons",
-   "title": "Gustave Moreau - Saint-Georges et le dragon (c.1869)",
-   "creator": "Gustave Moreau",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Gustave_Moreau_-_Saint-Georges_et_le_dragon_(c.1869).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1869%29.jpg/1920px-Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1869%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1869%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1549,
-   "h": 2400
-  },
-  {
-   "file": "cache/knight/cand/wc-167427870.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Noel Paton, Sir Galahad",
-   "id": "wc-167427870",
-   "source": "commons",
-   "title": "Joseph Noel Paton (1821-1901) - Sir Galahad - AYRRH-001794 - Rozelle House Galleries",
-   "creator": "Joseph Noel Paton",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Noel_Paton_(1821-1901)_-_Sir_Galahad_-_AYRRH-001794_-_Rozelle_House_Galleries.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Joseph_Noel_Paton_%281821-1901%29_-_Sir_Galahad_-_AYRRH-001794_-_Rozelle_House_Galleries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Joseph_Noel_Paton_%281821-1901%29_-_Sir_Galahad_-_AYRRH-001794_-_Rozelle_House_Galleries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 823,
-   "h": 1200
-  },
-  {
    "file": "cache/knight/cand/wc-1884652.jpg",
    "focus": [
     0.5,
@@ -418,24 +311,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/John_William_Waterhouse_-_La_Belle_Dame_sans_Merci_%281893%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1773,
    "h": 2400
-  },
-  {
-   "file": "cache/knight/cand/wc-61842631.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Waterhouse, Tristan and Isolde",
-   "id": "wc-61842631",
-   "source": "commons",
-   "title": "Waterhousem Tristan and Isolde",
-   "creator": "John William Waterhouse",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Waterhousem_Tristan_and_Isolde.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Waterhousem_Tristan_and_Isolde.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Waterhousem_Tristan_and_Isolde.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 917,
-   "h": 1219
   },
   {
    "file": "cache/knight/cand/wc-46549127.jpg",
@@ -477,8 +352,9 @@
    "file": "cache/knight/cand/wc-92670545.jpg",
    "focus": [
     0.45,
-    0.5
+    0.55
    ],
+   "zoom": 1.15,
    "note": "Gallen-Kallela, Kullervo sets off for war",
    "id": "wc-92670545",
    "source": "commons",
@@ -564,24 +440,6 @@
    "h": 2400
   },
   {
-   "file": "cache/knight/cand/wc-52125812.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Makart, Valkyrie and dying hero",
-   "id": "wc-52125812",
-   "source": "commons",
-   "title": "Valkyrie and a Dying Hero (Hans Makart) - Nationalmuseum - 19497",
-   "creator": "Hans Makart",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Valkyrie_and_a_Dying_Hero_(Hans_Makart)_-_Nationalmuseum_-_19497.tif",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Valkyrie_and_a_Dying_Hero_%28Hans_Makart%29_-_Nationalmuseum_-_19497.tif/lossy-page1-1920px-Valkyrie_and_a_Dying_Hero_%28Hans_Makart%29_-_Nationalmuseum_-_19497.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Valkyrie_and_a_Dying_Hero_%28Hans_Makart%29_-_Nationalmuseum_-_19497.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1234
-  },
-  {
    "file": "cache/knight/cand/wc-51684476.jpg",
    "focus": [
     0.5,
@@ -636,42 +494,6 @@
    "h": 2378
   },
   {
-   "file": "cache/knight/cand/wc-152819998.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "note": "Fortuny, Parsifal ascending to the Grail",
-   "id": "wc-152819998",
-   "source": "commons",
-   "title": "(Venice) Parsifal, la montée vers le Graal - Mariano Fortuny - Musée Fortuny",
-   "creator": "Didier Descouens",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:(Venice)_Parsifal,_la_mont%C3%A9e_vers_le_Graal_-_Mariano_Fortuny_-_Mus%C3%A9e_Fortuny.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/%28Venice%29_Parsifal%2C_la_mont%C3%A9e_vers_le_Graal_-_Mariano_Fortuny_-_Mus%C3%A9e_Fortuny.jpg/1920px-%28Venice%29_Parsifal%2C_la_mont%C3%A9e_vers_le_Graal_-_Mariano_Fortuny_-_Mus%C3%A9e_Fortuny.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/%28Venice%29_Parsifal%2C_la_mont%C3%A9e_vers_le_Graal_-_Mariano_Fortuny_-_Mus%C3%A9e_Fortuny.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1433
-  },
-  {
-   "file": "cache/knight/cand/wc-8327766.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "note": "Leeke, Lohengrin",
-   "id": "wc-8327766",
-   "source": "commons",
-   "title": "Ferdinand Leeke - Lohengrin 1916",
-   "creator": "Ferdinand Leeke",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Ferdinand_Leeke_-_Lohengrin_1916.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ferdinand_Leeke_-_Lohengrin_1916.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ferdinand_Leeke_-_Lohengrin_1916.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1661,
-   "h": 2244
-  },
-  {
    "file": "cache/knight/cand/wc-81331570.jpg",
    "focus": [
     0.5,
@@ -687,24 +509,6 @@
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Rogier_van_der_Weyden%2C_Saint_George_and_the_Dragon%2C_c._1432-1435%2C_NGA_50662.jpg/1920px-Rogier_van_der_Weyden%2C_Saint_George_and_the_Dragon%2C_c._1432-1435%2C_NGA_50662.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Rogier_van_der_Weyden%2C_Saint_George_and_the_Dragon%2C_c._1432-1435%2C_NGA_50662.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1719,
-   "h": 2400
-  },
-  {
-   "file": "cache/knight/cand/wc-21909122.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "note": "Martorell, St George killing the dragon",
-   "id": "wc-21909122",
-   "source": "commons",
-   "title": "Bernat Martorell - Saint George Killing the Dragon - Google Art Project",
-   "creator": "Bernat Martorell",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Bernat_Martorell_-_Saint_George_Killing_the_Dragon_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Bernat_Martorell_-_Saint_George_Killing_the_Dragon_-_Google_Art_Project.jpg/1920px-Bernat_Martorell_-_Saint_George_Killing_the_Dragon_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Bernat_Martorell_-_Saint_George_Killing_the_Dragon_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1513,
    "h": 2400
   },
   {
@@ -762,22 +566,152 @@
    "h": 2000
   },
   {
-   "file": "cache/knight/cand/wc-811059.jpg",
+   "file": "cache/knight/cand/wc-99875968.jpg",
    "focus": [
-    0.4,
+    0.5,
+    0.35
+   ],
+   "zoom": 1.12,
+   "note": "Lesser, knight in armour",
+   "id": "wc-99875968",
+   "source": "commons",
+   "title": "Aleksander Lesser - Knight in armour - MP 2240 MNW - National Museum in Warsaw",
+   "creator": "Aleksander Lesser",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Aleksander_Lesser_-_Knight_in_armour_-_MP_2240_MNW_-_National_Museum_in_Warsaw.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Aleksander_Lesser_-_Knight_in_armour_-_MP_2240_MNW_-_National_Museum_in_Warsaw.jpg/1920px-Aleksander_Lesser_-_Knight_in_armour_-_MP_2240_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Aleksander_Lesser_-_Knight_in_armour_-_MP_2240_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2340
+  },
+  {
+   "file": "cache/knight/cand/wc-120829043.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "zoom": 1.2,
+   "note": "Knight in armour, St George",
+   "id": "wc-120829043",
+   "source": "commons",
+   "title": "Knight in Armour – Saint George () - MNK XII-224 (168405)",
+   "creator": "Unknown authorUnknown author",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Knight_in_Armour_%E2%80%93_Saint_George_()_-_MNK_XII-224_(168405).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Knight_in_Armour_%E2%80%93_Saint_George_%28%29_-_MNK_XII-224_%28168405%29.jpg/1920px-Knight_in_Armour_%E2%80%93_Saint_George_%28%29_-_MNK_XII-224_%28168405%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Knight_in_Armour_%E2%80%93_Saint_George_%28%29_-_MNK_XII-224_%28168405%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1848,
+   "h": 2400
+  },
+  {
+   "file": "cache/knight/cand/wc-73558532.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Hans Thoma, St George",
+   "id": "wc-73558532",
+   "source": "commons",
+   "title": "Hans Thoma - Ritter Sankt Georg (1889)",
+   "creator": "Hans Thoma",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Hans_Thoma_-_Ritter_Sankt_Georg_(1889).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Hans_Thoma_-_Ritter_Sankt_Georg_%281889%29.jpg/1920px-Hans_Thoma_-_Ritter_Sankt_Georg_%281889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Hans_Thoma_-_Ritter_Sankt_Georg_%281889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1732,
+   "h": 2400
+  },
+  {
+   "file": "cache/knight/cand/wc-44152850.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Daumier, Don Quixote",
+   "id": "wc-44152850",
+   "source": "commons",
+   "title": "Don Quichotte Honoré Daumier",
+   "creator": "Honoré Daumier",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Don_Quichotte_Honor%C3%A9_Daumier.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Don_Quichotte_Honor%C3%A9_Daumier.jpg/1920px-Don_Quichotte_Honor%C3%A9_Daumier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Don_Quichotte_Honor%C3%A9_Daumier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1642,
+   "h": 2400
+  },
+  {
+   "file": "cache/knight/cand/wc-100004174.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Daumier, Don Quixote and Sancho Panza at dusk",
+   "id": "wc-100004174",
+   "source": "commons",
+   "title": "Daumier - Don Quixote et Sancho Panza, 1866-1868",
+   "creator": "Honoré Daumier",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Daumier_-_Don_Quixote_et_Sancho_Panza,_1866-1868.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Daumier_-_Don_Quixote_et_Sancho_Panza%2C_1866-1868.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Daumier_-_Don_Quixote_et_Sancho_Panza%2C_1866-1868.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1172,
+   "h": 1500
+  },
+  {
+   "file": "cache/knight/cand/wc-99356005.jpg",
+   "focus": [
+    0.5,
     0.5
    ],
-   "note": "Kittelsen, Soria Moria (the quest)",
-   "id": "wc-811059",
+   "tone": 0.5,
+   "note": "John Duncan, Riders of the Sidhe",
+   "id": "wc-99356005",
    "source": "commons",
-   "title": "Theodor Kittelsen, Soria Moria",
-   "creator": "Theodor Kittelsen",
+   "title": "Riders of th Sidhe (big)",
+   "creator": "John Duncan",
    "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Theodor_Kittelsen,_Soria_Moria.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Theodor_Kittelsen%2C_Soria_Moria.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Theodor_Kittelsen%2C_Soria_Moria.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1426,
-   "h": 1023
+   "landing": "https://commons.wikimedia.org/wiki/File:Riders_of_th_Sidhe_(big).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Riders_of_th_Sidhe_%28big%29.jpg/1920px-Riders_of_th_Sidhe_%28big%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Riders_of_th_Sidhe_%28big%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1254
+  },
+  {
+   "file": "cache/knight/cand/wc-26948438.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Walter Crane, Bedivere throws Excalibur",
+   "id": "wc-26948438",
+   "source": "commons",
+   "title": "King Arthur Sir Bedivere throwing Excalibur into the lake by Walter Crane",
+   "creator": "Walter Crane",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:King_Arthur_Sir_Bedivere_throwing_Excalibur_into_the_lake_by_Walter_Crane.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/King_Arthur_Sir_Bedivere_throwing_Excalibur_into_the_lake_by_Walter_Crane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/King_Arthur_Sir_Bedivere_throwing_Excalibur_into_the_lake_by_Walter_Crane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 743,
+   "h": 1024
+  },
+  {
+   "file": "cache/knight/cand/wc-82759823.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "zoom": 1.12,
+   "note": "Böcklin, War",
+   "id": "wc-82759823",
+   "source": "commons",
+   "title": "Dresden, Albertinum, Arnold Böcklin, der Krieg",
+   "creator": "Dguendel",
+   "license": "CC BY 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Dresden,_Albertinum,_Arnold_B%C3%B6cklin,_der_Krieg.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Dresden%2C_Albertinum%2C_Arnold_B%C3%B6cklin%2C_der_Krieg.JPG/1920px-Dresden%2C_Albertinum%2C_Arnold_B%C3%B6cklin%2C_der_Krieg.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Dresden%2C_Albertinum%2C_Arnold_B%C3%B6cklin%2C_der_Krieg.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1671,
+   "h": 2400
   }
  ]
 }

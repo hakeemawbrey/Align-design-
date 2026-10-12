@@ -125,7 +125,7 @@ def nasa(q, n=12):
 
 # AI images, event photos and the like that Commons file search turns up
 JUNK = re.compile(r"imagen|ai[- ]generated|midjourney|stable diffusion|dall-?e|wikimedia|wikipedia|meetup|"
-                  r"editathon|screenshot|logo|\bmap\b|diagram", re.I)
+                  r"editathon|screenshot|logo|\bmap\b|diagram|by-nc|nc-sa|nc-nd", re.I)
 OK_LICENSES = ("public domain", "pd", "cc0", "cc by", "cc-by")
 
 
