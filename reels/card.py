@@ -43,7 +43,7 @@ def auto_crop(plate, aspect):
     return (x0 + left, y0, x0 + left + cw, y0 + ih)
 
 
-def build(sign, plate_path, crop=None):
+def build(sign, plate_path, crop=None, color=1.45):
     cfg = SIGNS[sign]
     plate = ImageOps.exif_transpose(Image.open(plate_path)).convert("RGB")
     aw, ah = ART[2] - ART[0], ART[3] - ART[1]
@@ -56,7 +56,7 @@ def build(sign, plate_path, crop=None):
     # the plates are pale; give the ink and colour real weight so the ghosted
     # card reads like the reference's full-contrast Rider-Waite art
     art = ImageEnhance.Contrast(ImageOps.autocontrast(art, cutoff=1)).enhance(1.35)
-    art = ImageEnhance.Color(art).enhance(1.45)
+    art = ImageEnhance.Color(art).enhance(color)
 
     card = Image.new("RGB", (W, H), (255, 255, 255))
     d = ImageDraw.Draw(card)
@@ -95,17 +95,18 @@ def main():
     ap.add_argument("sign")
     ap.add_argument("--plate")
     ap.add_argument("--crop", type=float, nargs=4, metavar=("X0", "Y0", "X1", "Y1"))
+    ap.add_argument("--color", type=float, help="plate saturation (default 1.45)")
     ap.add_argument("--out")
     a = ap.parse_args()
-    crop = a.crop
-    plate = a.plate
+    crop, plate, color = a.crop, a.plate, a.color
     if not plate:
         picks = json.load(open(os.path.join(HERE, "picks", f"{a.sign}.json")))
         plate = os.path.join(HERE, picks["plate"]["file"])
-        crop = picks["plate"].get("crop")
+        crop = crop or picks["plate"].get("crop")
+        color = color or picks["plate"].get("color")
     out = a.out or os.path.join(HERE, "cache", a.sign, "card.png")
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    build(a.sign, plate, crop).save(out)
+    build(a.sign, plate, crop, color or 1.45).save(out)
     print(out)
 
 

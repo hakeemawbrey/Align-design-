@@ -19,12 +19,12 @@ out = sys.argv[2] if len(sys.argv) > 2 else os.path.join(render.HERE, "cache", s
 picks = json.load(open(os.path.join(render.HERE, "picks", f"{sign}.json")))
 cfg = render.SIGNS[sign]
 W, H = 270, 480
-card_img = cardmod.build(sign, render.ensure_file(picks["plate"]), picks["plate"].get("crop"))
+card_img = cardmod.build(sign, render.ensure_file(picks["plate"]), picks["plate"].get("crop"), picks["plate"].get("color", 1.45))
 cm = render.card_rgba(card_img, int(W * render.STYLE["card_w"]))
 tiles = [np.asarray(card_img.resize((W, int(card_img.height * W / card_img.width))).crop((0, 0, W, H)))]
 for it in picks["images"]:
     bg = render.grade(Image.open(render.ensure_file(it)), cfg["grade"], W, H,
-                      tuple(it.get("focus", (0.5, 0.5))), over=1.0, zoom=it.get("zoom", 1.0))
+                      tuple(it.get("focus", (0.5, 0.5))), over=1.0, zoom=it.get("zoom", 1.0), gamma=cfg.get("gamma"))
     f = bg.astype(np.float32) / 255
     render.paste(f, cm, W / 2, H / 2, render.STYLE["card_alpha"])
     tiles.append((np.clip(f, 0, 1) * 255).astype(np.uint8))

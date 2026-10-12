@@ -87,3 +87,18 @@ another sign already picked (check `picks/*.json`).
 Several curators may work at once: keep any helper scripts under
 `cache/<sign>/work/`, never in a shared temp folder, and never write another
 sign's picks file.
+
+## Rules added after review round 2
+
+- **Order matters.** A render plays 12 images. Seed 0 (the hero render) takes
+  any `"pin": true` images plus the first remaining ones in file order; other
+  seeds sample the rest. Put the best 12 first, and pin the 3-4 images that
+  carry the sign (the animal, the myth) so no seed loses them.
+- The hit lands on the most luminous image in the set automatically. Make
+  sure at least one image throws real light (moon, sun, nebula, candle).
+- At most 3 NASA/space images per sign. Nebulae make every sign look alike;
+  the sign should be recognisable without the card.
+- Every image must survive the card: if the subject's eyes or key detail sit in
+  the middle 40% x 30%, fix it with zoom+focus or cut it.
+- `plate.color` (default 1.45) sets the card art's saturation. Lower it (e.g.
+  1.0) when a plate's reds and yellows fight the backgrounds.

@@ -1,110 +1,424 @@
 {
   "aries": {
-    "name": "Aries", "numeral": "I", "glyph": "♈", "dates": "Mar 21 – Apr 19",
-    "element": "fire", "ruler": "Mars",
+    "name": "Aries",
+    "numeral": "I",
+    "glyph": "♈",
+    "dates": "Mar 21 – Apr 19",
+    "element": "fire",
+    "ruler": "Mars",
     "plate": "Urania's Mirror Aries Musca Borealis",
-    "grade": [1.12, 0.92, 0.82],
-    "motifs": ["ram", "ram horns", "golden fleece", "Mars god of war", "battle charge cavalry", "forge fire blacksmith", "volcano eruption", "wildfire", "spring dawn sunrise", "warrior helmet armor", "Jason argonauts", "lightning storm"],
+    "grade": [
+      1.16,
+      0.88,
+      0.78
+    ],
+    "motifs": [
+      "ram",
+      "ram horns",
+      "golden fleece",
+      "Mars god of war",
+      "battle charge cavalry",
+      "forge fire blacksmith",
+      "volcano eruption",
+      "wildfire",
+      "spring dawn sunrise",
+      "warrior helmet armor",
+      "Jason argonauts",
+      "lightning storm"
+    ],
     "caption": "Born first. Born burning. The ram doesn't wait to be invited.",
-    "tags": ["aries", "zodiac", "astrology", "fire sign"]
+    "tags": [
+      "aries",
+      "zodiac",
+      "astrology",
+      "fire sign"
+    ]
   },
   "taurus": {
-    "name": "Taurus", "numeral": "II", "glyph": "♉", "dates": "Apr 20 – May 20",
-    "element": "earth", "ruler": "Venus",
+    "name": "Taurus",
+    "numeral": "II",
+    "glyph": "♉",
+    "dates": "Apr 20 – May 20",
+    "element": "earth",
+    "ruler": "Venus",
     "plate": "Urania's Mirror Taurus Poniatovii",
-    "grade": [1.04, 1.0, 0.86],
-    "motifs": ["bull", "Europa and the bull", "Venus goddess", "roses flowers still life", "garden of eden", "Pleiades", "fertile fields harvest", "minotaur", "pastoral landscape cattle", "gold treasure", "ancient bull sculpture", "spring blossom orchard"],
+    "grade": [
+      1.04,
+      1.02,
+      0.86
+    ],
+    "motifs": [
+      "bull",
+      "Europa and the bull",
+      "Venus goddess",
+      "roses flowers still life",
+      "garden of eden",
+      "Pleiades",
+      "fertile fields harvest",
+      "minotaur",
+      "pastoral landscape cattle",
+      "gold treasure",
+      "ancient bull sculpture",
+      "spring blossom orchard"
+    ],
     "caption": "Slow to start. Impossible to move. Built to keep what it loves.",
-    "tags": ["taurus", "zodiac", "astrology", "earth sign"]
+    "tags": [
+      "taurus",
+      "zodiac",
+      "astrology",
+      "earth sign"
+    ]
   },
   "gemini": {
-    "name": "Gemini", "numeral": "III", "glyph": "♊", "dates": "May 21 – Jun 20",
-    "element": "air", "ruler": "Mercury",
+    "name": "Gemini",
+    "numeral": "III",
+    "glyph": "♊",
+    "dates": "May 21 – Jun 20",
+    "element": "air",
+    "ruler": "Mercury",
     "plate": "Urania's Mirror Gemini",
-    "grade": [0.96, 1.0, 1.1],
-    "motifs": ["twins", "Castor and Pollux", "Mercury Hermes messenger", "mirror reflection", "masks theatre", "two faces Janus", "birds in flight", "wind clouds sky", "letters writing manuscript", "butterfly", "double exposure portrait", "crossroads"],
+    "grade": [
+      0.92,
+      0.98,
+      1.12
+    ],
+    "motifs": [
+      "twins",
+      "Castor and Pollux",
+      "Mercury Hermes messenger",
+      "mirror reflection",
+      "masks theatre",
+      "two faces Janus",
+      "birds in flight",
+      "wind clouds sky",
+      "letters writing manuscript",
+      "butterfly",
+      "double exposure portrait",
+      "crossroads"
+    ],
     "caption": "Two voices, one mouth. Both of them mean it.",
-    "tags": ["gemini", "zodiac", "astrology", "air sign"]
+    "tags": [
+      "gemini",
+      "zodiac",
+      "astrology",
+      "air sign"
+    ]
   },
   "cancer": {
-    "name": "Cancer", "numeral": "IV", "glyph": "♋", "dates": "Jun 21 – Jul 22",
-    "element": "water", "ruler": "the Moon",
+    "name": "Cancer",
+    "numeral": "IV",
+    "glyph": "♋",
+    "dates": "Jun 21 – Jul 22",
+    "element": "water",
+    "ruler": "the Moon",
     "plate": "Urania's Mirror Cancer",
-    "grade": [0.9, 0.98, 1.12],
-    "motifs": ["crab", "full moon", "moonlight sea", "tide waves shore", "mother and child", "seashell", "Beehive cluster", "home hearth", "lighthouse night", "pearl", "Selene moon goddess", "ocean night"],
+    "grade": [
+      0.88,
+      0.98,
+      1.12
+    ],
+    "motifs": [
+      "crab",
+      "full moon",
+      "moonlight sea",
+      "tide waves shore",
+      "mother and child",
+      "seashell",
+      "Beehive cluster",
+      "home hearth",
+      "lighthouse night",
+      "pearl",
+      "Selene moon goddess",
+      "ocean night"
+    ],
     "caption": "Soft inside, armor outside. Moved by the moon, loyal to the tide.",
-    "tags": ["cancer", "zodiac", "astrology", "water sign"]
+    "tags": [
+      "cancer",
+      "zodiac",
+      "astrology",
+      "water sign"
+    ]
   },
   "leo": {
-    "name": "Leo", "numeral": "V", "glyph": "♌", "dates": "Jul 23 – Aug 22",
-    "element": "fire", "ruler": "the Sun",
+    "name": "Leo",
+    "numeral": "V",
+    "glyph": "♌",
+    "dates": "Jul 23 – Aug 22",
+    "element": "fire",
+    "ruler": "the Sun",
     "plate": "Urania's Mirror Leo Major",
-    "grade": [1.14, 0.98, 0.78],
-    "motifs": ["lion", "the sun solar flare", "golden crown king", "Apollo sun god", "Hercules Nemean lion", "sunflowers", "throne", "gold mask", "sun corona eclipse", "lion sculpture", "golden hour", "stage spotlight"],
+    "grade": [
+      1.14,
+      0.98,
+      0.72
+    ],
+    "motifs": [
+      "lion",
+      "the sun solar flare",
+      "golden crown king",
+      "Apollo sun god",
+      "Hercules Nemean lion",
+      "sunflowers",
+      "throne",
+      "gold mask",
+      "sun corona eclipse",
+      "lion sculpture",
+      "golden hour",
+      "stage spotlight"
+    ],
     "caption": "The sun doesn't ask if you're ready. Neither does Leo.",
-    "tags": ["leo", "zodiac", "astrology", "fire sign"]
+    "tags": [
+      "leo",
+      "zodiac",
+      "astrology",
+      "fire sign"
+    ]
   },
   "virgo": {
-    "name": "Virgo", "numeral": "VI", "glyph": "♍", "dates": "Aug 23 – Sep 22",
-    "element": "earth", "ruler": "Mercury",
+    "name": "Virgo",
+    "numeral": "VI",
+    "glyph": "♍",
+    "dates": "Aug 23 – Sep 22",
+    "element": "earth",
+    "ruler": "Mercury",
     "plate": "Urania's Mirror Virgo",
-    "grade": [1.02, 1.0, 0.9],
-    "motifs": ["wheat harvest", "maiden with wheat", "Demeter Ceres", "Astraea", "botanical illustration", "herbs apothecary", "hands sewing", "spica", "wheat field", "white linen", "Persephone", "temple priestess"],
+    "grade": [
+      0.98,
+      1.0,
+      1.06
+    ],
+    "motifs": [
+      "wheat harvest",
+      "maiden with wheat",
+      "Demeter Ceres",
+      "Astraea",
+      "botanical illustration",
+      "herbs apothecary",
+      "hands sewing",
+      "spica",
+      "wheat field",
+      "white linen",
+      "Persephone",
+      "temple priestess"
+    ],
     "caption": "Every detail is a prayer. Virgo is still saying it.",
-    "tags": ["virgo", "zodiac", "astrology", "earth sign"]
+    "tags": [
+      "virgo",
+      "zodiac",
+      "astrology",
+      "earth sign"
+    ],
+    "gamma": 1.3
   },
   "libra": {
-    "name": "Libra", "numeral": "VII", "glyph": "♎", "dates": "Sep 23 – Oct 22",
-    "element": "air", "ruler": "Venus",
+    "name": "Libra",
+    "numeral": "VII",
+    "glyph": "♎",
+    "dates": "Sep 23 – Oct 22",
+    "element": "air",
+    "ruler": "Venus",
     "plate": "Urania's Mirror Libra",
-    "grade": [1.06, 0.96, 1.04],
-    "motifs": ["scales balance", "Lady Justice", "Venus Aphrodite", "lovers embrace", "symmetry architecture", "Three Graces", "marble statue", "Birth of Venus", "pink sky sunset", "mirror vanity", "harmony music", "autumn equinox"],
+    "grade": [
+      1.08,
+      0.92,
+      1.08
+    ],
+    "motifs": [
+      "scales balance",
+      "Lady Justice",
+      "Venus Aphrodite",
+      "lovers embrace",
+      "symmetry architecture",
+      "Three Graces",
+      "marble statue",
+      "Birth of Venus",
+      "pink sky sunset",
+      "mirror vanity",
+      "harmony music",
+      "autumn equinox"
+    ],
     "caption": "Weighing every heart, including its own. Beauty is the argument.",
-    "tags": ["libra", "zodiac", "astrology", "air sign"]
+    "tags": [
+      "libra",
+      "zodiac",
+      "astrology",
+      "air sign"
+    ]
   },
   "scorpio": {
-    "name": "Scorpio", "numeral": "VIII", "glyph": "♏", "dates": "Oct 23 – Nov 21",
-    "element": "water", "ruler": "Pluto",
+    "name": "Scorpio",
+    "numeral": "VIII",
+    "glyph": "♏",
+    "dates": "Oct 23 – Nov 21",
+    "element": "water",
+    "ruler": "Pluto",
     "plate": "Urania's Mirror Scorpio",
-    "grade": [0.92, 0.84, 1.0],
-    "motifs": ["scorpion", "serpent snake", "phoenix", "Pluto Hades underworld", "skull vanitas", "eagle", "dark water", "Medusa", "Antares", "eclipse", "death and resurrection", "abyss cave"],
+    "grade": [
+      1.02,
+      0.8,
+      0.98
+    ],
+    "motifs": [
+      "scorpion",
+      "serpent snake",
+      "phoenix",
+      "Pluto Hades underworld",
+      "skull vanitas",
+      "eagle",
+      "dark water",
+      "Medusa",
+      "Antares",
+      "eclipse",
+      "death and resurrection",
+      "abyss cave"
+    ],
     "caption": "What dies here comes back with sharper eyes.",
-    "tags": ["scorpio", "zodiac", "astrology", "water sign"]
+    "tags": [
+      "scorpio",
+      "zodiac",
+      "astrology",
+      "water sign"
+    ],
+    "gamma": 1.25
   },
   "sagittarius": {
-    "name": "Sagittarius", "numeral": "IX", "glyph": "♐", "dates": "Nov 22 – Dec 21",
-    "element": "fire", "ruler": "Jupiter",
+    "name": "Sagittarius",
+    "numeral": "IX",
+    "glyph": "♐",
+    "dates": "Nov 22 – Dec 21",
+    "element": "fire",
+    "ruler": "Jupiter",
     "plate": "Urania's Mirror Sagittarius",
-    "grade": [1.1, 0.96, 0.86],
-    "motifs": ["centaur", "archer bow arrow", "Jupiter Zeus", "galactic center Milky Way", "horse galloping", "explorer map voyage", "mountain horizon", "Chiron", "Jupiter planet", "hunting", "caravan desert", "comet"],
+    "grade": [
+      1.08,
+      0.95,
+      0.9
+    ],
+    "motifs": [
+      "centaur",
+      "archer bow arrow",
+      "Jupiter Zeus",
+      "galactic center Milky Way",
+      "horse galloping",
+      "explorer map voyage",
+      "mountain horizon",
+      "Chiron",
+      "Jupiter planet",
+      "hunting",
+      "caravan desert",
+      "comet"
+    ],
     "caption": "Aim past the horizon. The arrow knows the way.",
-    "tags": ["sagittarius", "zodiac", "astrology", "fire sign"]
+    "tags": [
+      "sagittarius",
+      "zodiac",
+      "astrology",
+      "fire sign"
+    ]
   },
   "capricorn": {
-    "name": "Capricorn", "numeral": "X", "glyph": "♑", "dates": "Dec 22 – Jan 19",
-    "element": "earth", "ruler": "Saturn",
+    "name": "Capricorn",
+    "numeral": "X",
+    "glyph": "♑",
+    "dates": "Dec 22 – Jan 19",
+    "element": "earth",
+    "ruler": "Saturn",
     "plate": "Urania's Mirror Capricornus",
-    "grade": [0.96, 0.98, 1.0],
-    "motifs": ["mountain goat ibex", "sea goat", "Saturn planet", "Saturn Cronus", "mountain peak snow", "pyramid", "stone tower castle", "hourglass time", "Pan god", "winter solstice", "cliff climbing", "ruins"],
+    "grade": [
+      0.92,
+      0.98,
+      1.06
+    ],
+    "motifs": [
+      "mountain goat ibex",
+      "sea goat",
+      "Saturn planet",
+      "Saturn Cronus",
+      "mountain peak snow",
+      "pyramid",
+      "stone tower castle",
+      "hourglass time",
+      "Pan god",
+      "winter solstice",
+      "cliff climbing",
+      "ruins"
+    ],
     "caption": "Time is the only ladder. Capricorn has been climbing it since birth.",
-    "tags": ["capricorn", "zodiac", "astrology", "earth sign"]
+    "tags": [
+      "capricorn",
+      "zodiac",
+      "astrology",
+      "earth sign"
+    ]
   },
   "aquarius": {
-    "name": "Aquarius", "numeral": "XI", "glyph": "♒", "dates": "Jan 20 – Feb 18",
-    "element": "air", "ruler": "Uranus",
+    "name": "Aquarius",
+    "numeral": "XI",
+    "glyph": "♒",
+    "dates": "Jan 20 – Feb 18",
+    "element": "air",
+    "ruler": "Uranus",
     "plate": "Urania's Mirror Aquarius",
-    "grade": [0.88, 1.0, 1.14],
-    "motifs": ["water bearer", "Ganymede", "Uranus planet", "aurora borealis", "lightning electricity", "pouring water", "telescope observatory", "constellation map", "futuristic", "waterfall", "space station astronaut", "Prometheus fire"],
+    "grade": [
+      0.84,
+      1.0,
+      1.18
+    ],
+    "motifs": [
+      "water bearer",
+      "Ganymede",
+      "Uranus planet",
+      "aurora borealis",
+      "lightning electricity",
+      "pouring water",
+      "telescope observatory",
+      "constellation map",
+      "futuristic",
+      "waterfall",
+      "space station astronaut",
+      "Prometheus fire"
+    ],
     "caption": "Pouring the future out for anyone thirsty enough to drink it.",
-    "tags": ["aquarius", "zodiac", "astrology", "air sign"]
+    "tags": [
+      "aquarius",
+      "zodiac",
+      "astrology",
+      "air sign"
+    ]
   },
   "pisces": {
-    "name": "Pisces", "numeral": "XII", "glyph": "♓", "dates": "Feb 19 – Mar 20",
-    "element": "water", "ruler": "Neptune",
+    "name": "Pisces",
+    "numeral": "XII",
+    "glyph": "♓",
+    "dates": "Feb 19 – Mar 20",
+    "element": "water",
+    "ruler": "Neptune",
     "plate": "Urania's Mirror Pisces",
-    "grade": [0.9, 1.02, 1.1],
-    "motifs": ["two fish", "koi", "Neptune Poseidon", "mermaid", "underwater", "jellyfish", "dream", "Ophelia", "ocean waves", "Neptune planet", "moonlit sea", "angel"],
+    "grade": [
+      0.84,
+      1.04,
+      1.12
+    ],
+    "motifs": [
+      "two fish",
+      "koi",
+      "Neptune Poseidon",
+      "mermaid",
+      "underwater",
+      "jellyfish",
+      "dream",
+      "Ophelia",
+      "ocean waves",
+      "Neptune planet",
+      "moonlit sea",
+      "angel"
+    ],
     "caption": "Dissolving the line between dream and world. Pisces swims both.",
-    "tags": ["pisces", "zodiac", "astrology", "water sign"]
+    "tags": [
+      "pisces",
+      "zodiac",
+      "astrology",
+      "water sign"
+    ]
   }
 }

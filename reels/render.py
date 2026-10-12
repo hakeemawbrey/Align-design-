@@ -37,15 +37,16 @@ STYLE = {
     "intro_steps": [0.50, 0.73, 0.0],    # card width per intro step; 0 = fill frame height
     "intro_times": [0.0, 0.667, 1.429],  # hard cuts, as in the reference
     "zoom": 0.03,           # slow linear push-in per shot (ref is static)
-    "grain": 0.085,          # grain strength (0-1 scale), a lot
-    "grain_size": 1.6,      # px
+    "grain": 0.07,          # grain strength (0-1 scale), a lot
+    "grain_size": 1.25,      # px
     "vignette": 0.55,
     "flicker": 0.035,
     "glow": 0.35,           # highlight bloom on backgrounds
     "contrast": 1.3,
     "gamma": 1.15,
     "saturation": 0.76,
-    "hit_flash": 0.12,
+    "cast": 0.8,           # strength of each sign's colour cast
+    "loudness": -11.0,      # LUFS; the ref sits at -14, the brief asked for more gain
 }
 
 
@@ -58,7 +59,7 @@ def ensure_file(item):
     return p
 
 
-def grade(im, mult, W, H, focus=(0.5, 0.5), over=1.0 + STYLE["zoom"] + 0.02, zoom=1.0):
+def grade(im, mult, W, H, focus=(0.5, 0.5), over=1.0 + STYLE["zoom"] + 0.02, zoom=1.0, gamma=None):
     """Cover-fit around a focus point (zoom > 1 crops tighter, so focus can move
     the subject vertically too), then the house grade."""
     tw, th = int(W * over), int(H * over)
@@ -73,8 +74,8 @@ def grade(im, mult, W, H, focus=(0.5, 0.5), over=1.0 + STYLE["zoom"] + 0.02, zoo
     lum = a @ np.array([0.299, 0.587, 0.114], dtype=np.float32)
     a = lum[..., None] + (a - lum[..., None]) * STYLE["saturation"]
     # half-strength sign cast, then darken the mids (the reference lives in deep blacks)
-    a *= 1 + (np.array(mult, dtype=np.float32) - 1) * 0.5
-    a = np.clip(a, 0, 1) ** STYLE["gamma"]
+    a *= 1 + (np.array(mult, dtype=np.float32) - 1) * STYLE["cast"]
+    a = np.clip(a, 0, 1) ** (gamma or STYLE["gamma"])
     # bloom: blurred highlights screened back in
     hi = np.clip((a - 0.6) / 0.4, 0, 1)
     blur = np.asarray(Image.fromarray((hi * 255).astype(np.uint8)).filter(
@@ -92,9 +93,7 @@ def make_grain(W, H, n, rng):
     for _ in range(n):
         g = rng.normal(0, 1, (gh, gw)).astype(np.float32)
         g = np.asarray(Image.fromarray(g, mode="F").resize((W, H), Image.BILINEAR))
-        chroma = rng.normal(0, 0.08, (gh, gw, 3)).astype(np.float32)
-        chroma = np.stack([np.asarray(Image.fromarray(chroma[..., i], mode="F").resize((W, H), Image.BILINEAR)) for i in range(3)], -1)
-        out.append(((g[..., None] + chroma) * STYLE["grain"]).astype(np.float16))
+        out.append((g[..., None] * STYLE["grain"]).astype(np.float16))  # mono, like film
     return out
 
 
@@ -124,11 +123,34 @@ def ease_out(t):
     return 1 - (1 - t) ** 3
 
 
-def schedule(n_imgs, rng):
-    """Image order for the 27 shots: one shuffled pass, repeated, like the reference."""
-    perm = list(rng.permutation(n_imgs))
-    seq = (perm * (SHOTS // n_imgs + 2))[:SHOTS]
-    return seq
+def luminous(bg):
+    """How much light an image throws: its bright tail, not its average."""
+    lum = bg[::8, ::8].astype(np.float32).mean(2) / 255
+    return float(np.percentile(lum, 95) + lum.mean())
+
+
+def schedule(bgs, rng):
+    """Image order for the 27 shots: one shuffled pass, repeated, like the reference.
+    The hit lands on the most luminous image, so the drop opens up instead of deflating."""
+    lead = int(np.argmax([luminous(b) for b in bgs]))
+    rest = [int(i) for i in rng.permutation(len(bgs)) if i != lead]
+    perm = [lead] + rest
+    return (perm * (SHOTS // len(bgs) + 2))[:SHOTS]
+
+
+def choose(pool, k, rng, seed):
+    """Pick k images. "pin": true always plays; seed 0 takes the curator's order,
+    other seeds sample the rest of the pool so every render differs."""
+    if len(pool) <= k:
+        return pool
+    pinned = [p for p in pool if p.get("pin")]
+    rest = [p for p in pool if not p.get("pin")]
+    need = max(k - len(pinned), 0)
+    if seed == 0:
+        extra = rest[:need]
+    else:
+        extra = [rest[i] for i in sorted(rng.choice(len(rest), need, replace=False))]
+    return pinned + extra
 
 
 def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
@@ -137,19 +159,16 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
     W, H = (540, 960) if preview else (1080, 1920)
     rng = np.random.default_rng(seed)
 
-    pool = picks["images"]
-    if len(pool) > max_imgs:
-        idx = sorted(rng.choice(len(pool), max_imgs, replace=False))
-        pool = [pool[i] for i in idx]
+    pool = choose(picks["images"], max_imgs, rng, seed)
     print(f"[{sign}] seed {seed}: {len(pool)} images")
     bgs = []
     for it in pool:
         im = Image.open(ensure_file(it))
-        bgs.append(grade(im, cfg["grade"], W, H, tuple(it.get("focus", (0.5, 0.5))), zoom=it.get("zoom", 1.0)))
-    seq = schedule(len(bgs), rng)
+        bgs.append(grade(im, cfg["grade"], W, H, tuple(it.get("focus", (0.5, 0.5))), zoom=it.get("zoom", 1.0), gamma=cfg.get("gamma")))
+    seq = schedule(bgs, rng)
 
     plate = ensure_file(picks["plate"])
-    card_img = cardmod.build(sign, plate, picks["plate"].get("crop"))
+    card_img = cardmod.build(sign, plate, picks["plate"].get("crop"), picks["plate"].get("color", 1.45))
     card_m = card_rgba(card_img, int(W * STYLE["card_w"]))
     card_steps = [card_rgba(card_img, int(W * s) if s else int(H * 0.996 * card_img.width / card_img.height))
                   for s in STYLE["intro_steps"]]
@@ -160,6 +179,7 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     wav = tempfile.mktemp(suffix=".wav")
     music.write_wav(wav, music.compose(sign, cfg["element"], INTRO, BEAT, TOTAL, seed))
+    raw, wav = wav, music.master(wav, STYLE["loudness"])
 
     ff = subprocess.Popen([
         "ffmpeg", "-v", "error", "-y",
@@ -175,7 +195,7 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
         if t < INTRO:
             frame = np.zeros((H, W, 3), np.float32)
             k = sum(t >= s for s in STYLE["intro_times"]) - 1
-            paste(frame, card_steps[k], W / 2, H / 2, 1.0)
+            paste(frame, card_steps[k], W / 2, H / 2, 0.86)  # a touch dimmer: ref card sits at luma ~117
         else:
             shot = min(int((t - INTRO) / BEAT), SHOTS - 1)
             lt = (t - INTRO - shot * BEAT) / BEAT
@@ -188,22 +208,19 @@ def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
             crop = Image.fromarray(bg[y0:y0 + win_h, x0:x0 + win_w]).resize((W, H), Image.BILINEAR)
             frame = np.asarray(crop, dtype=np.float32) / 255
             paste(frame, card_m, W / 2, H / 2, STYLE["card_alpha"])
-            # flash on the hit, small exposure kick on every cut
-            if shot == 0:
-                frame += STYLE["hit_flash"] * (f - int(INTRO * FPS) < 2)
-            else:
-                frame *= 1 + 0.12 * np.exp(-lt * BEAT * 18)
         frame *= vig
-        frame *= 1 + rng.uniform(-STYLE["flicker"], STYLE["flicker"])
+        if t >= INTRO:  # the ref intro is steady
+            frame *= 1 + rng.uniform(-STYLE["flicker"], STYLE["flicker"])
         g = grain[rng.integers(len(grain))]
         # grain peaks in the mids; deep blacks stay black instead of going grey
         lum = np.clip(frame.mean(2, keepdims=True), 0, 1)
-        floor = 0.35 if t >= INTRO else 0.0   # intro black stays pure black, like the ref
+        floor = 0.15 if t >= INTRO else 0.0   # intro black stays pure black, like the ref
         frame += g.astype(np.float32) * (floor + 2.6 * lum * (1 - lum))
         ff.stdin.write((np.clip(frame, 0, 1) * 255).astype(np.uint8).tobytes())
     ff.stdin.close()
     ff.wait()
     os.remove(wav)
+    os.remove(raw)
 
     # sidecar: caption + credits, ready to post
     with open(out.replace(".mp4", ".txt"), "w") as fh:

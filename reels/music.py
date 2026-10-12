@@ -10,6 +10,13 @@ import numpy as np
 SR = 44100
 ORDER = ["aries", "taurus", "gemini", "cancer", "leo", "virgo",
          "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
+# how each element moves: the pulse on the cuts, the arpeggio, the drone's grit
+TEXTURE = {
+    "fire":  {"pulse": 0.75, "pulse_every": 1, "arp": 0.55, "arp_decay": 0.25, "grit": 1.6, "pad_bright": 1.2},
+    "earth": {"pulse": 0.85, "pulse_every": 2, "arp": 0.0,  "arp_decay": 0.5,  "grit": 1.0, "pad_bright": 0.8},
+    "air":   {"pulse": 0.0,  "pulse_every": 1, "arp": 0.9,  "arp_decay": 0.6,  "grit": 1.0, "pad_bright": 1.4},
+    "water": {"pulse": 0.3,  "pulse_every": 4, "arp": 0.35, "arp_decay": 1.1,  "grit": 1.0, "pad_bright": 0.9},
+}
 MODES = {  # semitone sets
     "fire": [0, 1, 4, 5, 7, 8, 10],    # phrygian dominant: heat
     "earth": [0, 2, 3, 5, 7, 8, 10],   # aeolian: weight
@@ -92,6 +99,7 @@ def compose(sign, element, intro, beat, total, seed=0):
     rng = np.random.default_rng(seed + 1000 * ORDER.index(sign))
     n = int(total * SR)
     mode = MODES[element]
+    tex = TEXTURE[element]
     root = 36 + ORDER.index(sign)  # C2 + offset
     deg = lambda d, octv=0: root + 12 * octv + mode[d % 7] + 12 * (d // 7)
 
@@ -101,7 +109,8 @@ def compose(sign, element, intro, beat, total, seed=0):
 
     # drone under everything, opening up after the hit
     drone = pad([hz(deg(0, 1)), hz(deg(4, 1))], n, rng, bright=0.7)
-    open_env = np.clip((t - intro) / 1.5, 0, 1) * 0.5 + 0.5
+    drone = np.tanh(drone * tex["grit"] * 3) / 3
+    open_env = np.clip((t - intro) / 1.5, 0, 1) * 0.6 + 0.4
     mix += drone * open_env * 0.55
 
     # main chord after the hit: i - (VI or v) every 4 bars, voicing varies by seed
@@ -114,7 +123,7 @@ def compose(sign, element, intro, beat, total, seed=0):
     while pos < n:
         m = min(int(c_len * SR), n - pos)
         ch = chords[i % len(chords)]
-        p = pad([hz(deg(d, 2)) for d in ch], m, rng, bright=1.1)
+        p = pad([hz(deg(d, 2)) for d in ch], m, rng, bright=tex["pad_bright"])
         p *= env_ar(m, 0.25, 0.4)
         mix[:, pos:pos + m] += p * 0.9
         pos += m
@@ -123,11 +132,12 @@ def compose(sign, element, intro, beat, total, seed=0):
     # intro riser: filtered noise swelling into the hit, plus reversed shimmer
     rn = hit
     noise = rng.normal(0, 1, (2, rn))
-    swell = 0.35 + 0.65 * np.linspace(0, 1, rn) ** 2   # audible from frame one
+    # audible from frame one, but ~8 LU under the body so the hit lands (ref: -20 vs -12)
+    swell = 0.3 + 0.7 * np.linspace(0, 1, rn) ** 2
     noise = lowpass_fast(noise, 900) * swell
-    mix[:, :rn] += noise * 0.35
+    mix[:, :rn] += noise * 0.26
     shimmer = pad([hz(deg(0, 4)), hz(deg(4, 4))], rn, rng, bright=1.5) * swell
-    mix[:, :rn] += shimmer * 0.6
+    mix[:, :rn] += shimmer * 0.45
 
     # the hit: sub drop + noise burst + low chord stab
     k = kick(2.5, 90, 30, 0.9) * 1.0
@@ -137,18 +147,16 @@ def compose(sign, element, intro, beat, total, seed=0):
     end = min(hit + burst.shape[1], n)
     mix[:, hit:end] += burst[:, : end - hit] * 0.5
 
-    # pulse on every cut
-    pk = kick(0.5, 110, 42, 0.16)
-    tick = rng.normal(0, 1, int(0.03 * SR)) * np.exp(-np.arange(int(0.03 * SR)) / SR / 0.006)
+    # soft sub pulse on the cuts (fire every cut, earth every other, water rarely, air never)
+    pk = kick(0.5, 100, 40, 0.18)
     c = intro + beat
     j = 1
-    while c < total - 0.05:
-        s = int(c * SR)
-        e = min(s + len(pk), n)
-        accent = 1.0 if j % 4 == 0 else 0.6
-        mix[:, s:e] += pk[: e - s] * 0.55 * accent
-        e2 = min(s + len(tick), n)
-        mix[:, s:e2] += tick[: e2 - s] * 0.04
+    while c < total - 0.05 and tex["pulse"]:
+        if j % tex["pulse_every"] == 0:
+            s = int(c * SR)
+            e = min(s + len(pk), n)
+            accent = 1.0 if j % 4 == 0 else 0.7
+            mix[:, s:e] += pk[: e - s] * 0.5 * accent * tex["pulse"]
         c += beat
         j += 1
 
@@ -158,11 +166,11 @@ def compose(sign, element, intro, beat, total, seed=0):
     c = intro + beat / 2
     j = 0
     while c < total - 0.3:
-        if rng.random() < 0.7:
+        if tex["arp"] and rng.random() < tex["arp"]:
             f = hz(deg(arp_deg[j % len(arp_deg)], 4))
             m = int(0.9 * SR)
             tt = np.arange(m) / SR
-            note = (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(4 * np.pi * f * tt)) * np.exp(-tt / 0.35)
+            note = (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(4 * np.pi * f * tt)) * np.exp(-tt / tex["arp_decay"])
             s = int(c * SR)
             e = min(s + m, n)
             pan = rng.uniform(-0.7, 0.7)
@@ -171,18 +179,43 @@ def compose(sign, element, intro, beat, total, seed=0):
         c += beat / 2
         j += 1
 
+    # the build: a filtered noise riser and a rising high drone over the last 5s
+    b0 = int((total - 5) * SR)
+    bl = n - b0
+    ramp = np.linspace(0, 1, bl) ** 2
+    riser = lowpass_fast(rng.normal(0, 1, (2, bl)), 2500) * ramp * 0.18
+    lift = pad([hz(deg(0, 3)), hz(deg(4, 3))], bl, rng, bright=1.0) * ramp * 0.5
+    mix[:, b0:] += riser + lift
+
     mix = reverb(mix, 3.8, 0.4, rng)
-    # master: lots of gain into soft saturation, then normalize to ~-1 dBFS
+    mix = lowpass_fast(mix, 8000)  # keep the top dark, like the ref
     mix /= np.abs(mix).max() + 1e-9
-    # build ~1.5 dB over the last 5s, like the reference
-    mix *= 1 + 0.19 * np.clip((t - (total - 5)) / 5, 0, 1)
-    mix /= np.abs(mix).max() + 1e-9
-    mix = np.tanh(mix * 3.5) / np.tanh(3.5)
+    # +4 dB swell over the last 5s, gentle saturation (loudness is set in master())
+    mix *= 0.63 + 0.37 * np.clip((t - (total - 5)) / 5, 0, 1) ** 1.5
+    mix = np.tanh(mix * 1.5) / np.tanh(1.5)
     # fades
     fi, fo = int(0.05 * SR), int(0.25 * SR)
     mix[:, :fi] *= np.linspace(0, 1, fi)
     mix[:, -fo:] *= np.linspace(1, 0, fo)
-    return (mix * 0.89).astype(np.float32)
+    return (mix * 0.7).astype(np.float32)
+
+
+def master(wav, target_lufs=-11.0, ceiling_db=-1.0):
+    """Two-pass: measure integrated loudness, apply linear gain to the target,
+    then a true-peak limiter at the ceiling. Returns the path of the mastered wav."""
+    import json as _json
+    import re
+    import subprocess
+    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", wav, "-af", "ebur128=peak=true", "-f", "null", "-"],
+                          capture_output=True, text=True).stderr
+    lufs = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", meas)[-1])
+    gain = target_lufs - lufs
+    out = wav.replace(".wav", "-m.wav")
+    lim = 10 ** (ceiling_db / 20)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-af",
+                    f"volume={gain:.2f}dB,alimiter=limit={lim:.3f}:attack=1:release=60:level=false:asc=1",
+                    "-ar", str(SR), out], check=True)
+    return out
 
 
 def write_wav(path, x):
