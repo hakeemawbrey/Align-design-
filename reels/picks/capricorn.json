@@ -238,25 +238,6 @@
    "note": "Bierstadt, sunrise on the Matterhorn"
   },
   {
-   "id": "met-232211",
-   "source": "met",
-   "title": "Saint Jerome",
-   "creator": "",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/232211",
-   "url": "https://images.metmuseum.org/CRDImages/ad/original/SF2007_49_350.jpg",
-   "w": 1404,
-   "h": 1916,
-   "query": "Saint Jerome",
-   "file": "cache/capricorn/cand/met-232211.jpg",
-   "n": 267,
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Saint Jerome kneeling with a skull in the dark wilderness"
-  },
-  {
    "id": "ov-3b20117f-6163-4629-be9c-2946af973196",
    "source": "openverse/wikimedia",
    "title": "Statue of Silvanus, god of woods and wild fields, 1st century AD, National Archaeological Museum of Spain, Madrid (15106078074)",

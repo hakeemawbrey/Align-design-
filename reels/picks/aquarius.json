@@ -166,25 +166,6 @@
    "n": 372
   },
   {
-   "file": "cache/aquarius/cand/nasa-PIA23175.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Enceladus venting water plumes into space",
-   "id": "nasa-PIA23175",
-   "source": "nasa",
-   "title": "Enceladus Global View with Plume (Artist's Rendering)",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA23175",
-   "url": "https://images-assets.nasa.gov/image/PIA23175/PIA23175~orig.jpg",
-   "w": 2067,
-   "h": 2600,
-   "query": "Enceladus plumes",
-   "n": 266
-  },
-  {
    "file": "cache/aquarius/cand/ov-03a6c3da-4de1-4ec7-817f-916e57b1784c.jpg",
    "focus": [
     0.6,
@@ -203,25 +184,6 @@
    "h": 1062,
    "query": "lightning electricity",
    "n": 32
-  },
-  {
-   "file": "cache/aquarius/cand/met-11913.jpg",
-   "focus": [
-    0.32,
-    0.4
-   ],
-   "note": "Richardt, underneath Niagara, water pouring in light",
-   "id": "met-11913",
-   "source": "met",
-   "title": "Underneath Niagara Falls",
-   "creator": "Ferdinand Richardt",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/11913",
-   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT9009.jpg",
-   "w": 2008,
-   "h": 2600,
-   "query": "Niagara",
-   "n": 248
   },
   {
    "file": "cache/aquarius/cand/nasa-GSFC_20171208_Archive_e001188.jpg",
@@ -261,27 +223,6 @@
    "h": 853,
    "query": "aurora borealis",
    "n": 20
-  },
-  {
-   "file": "cache/aquarius/cand/ov-5d4b5dee-cbc3-4760-bf00-34834e1580d0.jpg",
-   "focus": [
-    0.55,
-    0.62
-   ],
-   "zoom": 1.2,
-   "note": "fingertip drawing a spark from a plasma globe",
-   "id": "ov-5d4b5dee-cbc3-4760-bf00-34834e1580d0",
-   "source": "openverse/wikimedia",
-   "title": "Plasma globe with looped filament",
-   "creator": "Xyqorophibian",
-   "license": "by-sa 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=177651976",
-   "url": "https://api.openverse.org/v1/images/5d4b5dee-cbc3-4760-bf00-34834e1580d0/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Plasma_globe_with_looped_filament.jpg",
-   "w": 1280,
-   "h": 1345,
-   "query": "plasma globe",
-   "n": 366
   },
   {
    "file": "cache/aquarius/cand/nasa-KSC-20110527-PH-NAS01_0001.jpg",

@@ -32,8 +32,8 @@
    "file": "cache/sagittarius/cand/met-437274.jpg",
    "n": 155,
    "focus": [
-    0.42,
-    0.42
+    0.3,
+    0.4
    ],
    "note": "Peruzzi fresco, centaur archer drawing his bow",
    "pin": true
@@ -234,25 +234,6 @@
    ],
    "zoom": 1.4,
    "note": "Bonheur, white horses at full gallop"
-  },
-  {
-   "id": "nasa-0300607",
-   "source": "nasa",
-   "title": "History of Chandra X-Ray Observatory",
-   "creator": "MSFC",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/0300607",
-   "url": "https://images-assets.nasa.gov/image/0300607/0300607~orig.jpg",
-   "w": 2600,
-   "h": 2600,
-   "query": "Sagittarius",
-   "file": "cache/sagittarius/cand/nasa-0300607.jpg",
-   "n": 145,
-   "focus": [
-    0.4,
-    0.45
-   ],
-   "note": "Chandra, galactic center (Sgr A*)"
   },
   {
    "id": "aic-49940",

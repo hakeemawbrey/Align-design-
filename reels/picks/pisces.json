@@ -16,27 +16,6 @@
  },
  "images": [
   {
-   "id": "ov-6adffb88-c5f1-4363-b84d-d9b6db094a8b",
-   "source": "openverse/wikimedia",
-   "title": "Koi head closeup",
-   "creator": "",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=63601",
-   "url": "https://api.openverse.org/v1/images/6adffb88-c5f1-4363-b84d-d9b6db094a8b/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Koi_head_closeup.jpg",
-   "w": 1280,
-   "h": 1057,
-   "query": "koi",
-   "file": "cache/pisces/cand/ov-6adffb88-c5f1-4363-b84d-d9b6db094a8b.jpg",
-   "n": 13,
-   "focus": [
-    0.33,
-    0.55
-   ],
-   "note": "koi head rising from black water",
-   "pin": true
-  },
-  {
    "id": "ov-a5a8add7-f309-448f-894b-42561bbd9791",
    "source": "openverse/wikimedia",
    "title": "Japan-Koi",
@@ -51,7 +30,7 @@
    "file": "cache/pisces/cand/ov-a5a8add7-f309-448f-894b-42561bbd9791.jpg",
    "n": 16,
    "focus": [
-    0.22,
+    0.1,
     0.5
    ],
    "note": "white tancho koi on black",
@@ -76,28 +55,6 @@
     0.6
    ],
    "note": "jellyfish trailing on black"
-  },
-  {
-   "id": "ov-810015df-0f4e-4feb-8e62-05378a54504a",
-   "source": "openverse/wikimedia",
-   "title": "The Little Mermaid - Painting by Elena Ringo",
-   "creator": "Elena Ringo",
-   "license": "by 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=102912670",
-   "url": "https://api.openverse.org/v1/images/810015df-0f4e-4feb-8e62-05378a54504a/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/The_Little_Mermaid_-_Painting_by_Elena_Ringo.jpg",
-   "w": 1280,
-   "h": 1743,
-   "query": "mermaid painting",
-   "file": "cache/pisces/cand/ov-810015df-0f4e-4feb-8e62-05378a54504a.jpg",
-   "n": 272,
-   "focus": [
-    0.55,
-    0.4
-   ],
-   "zoom": 1.2,
-   "note": "Ringo, mermaid on a rock in blue surf",
-   "pin": true
   },
   {
    "id": "met-11192",
@@ -216,26 +173,6 @@
     0.5
    ],
    "note": "moon jellyfish swarm"
-  },
-  {
-   "id": "ov-2bd82756-c81c-4aac-8037-9cd501148fe0",
-   "source": "openverse/wordpress",
-   "title": "A lone barracuda, a predatory, ray-finned fish known for its fearsome appearance and ferocious behavior, slices through the azure waters at Tiger Beach, Bahamas. Viewed from slightly below, its elongated body and streamlined form are highlighted. The barracuda’s silver scales reflect ambient light as it glides over the rippling ocean floor.",
-   "creator": "Dennis Hipp",
-   "license": "cc0 1.0",
-   "landing": "https://wordpress.org/photos/photo/230667141b/",
-   "url": "https://api.openverse.org/v1/images/2bd82756-c81c-4aac-8037-9cd501148fe0/thumb/?full_size=true",
-   "alt_url": "https://pd.w.org/2024/06/230667141b96deb52.34822219-2048x1536.jpg",
-   "w": 2048,
-   "h": 1536,
-   "query": "underwater light rays",
-   "file": "cache/pisces/cand/ov-2bd82756-c81c-4aac-8037-9cd501148fe0.jpg",
-   "n": 223,
-   "focus": [
-    0.45,
-    0.5
-   ],
-   "note": "lone fish in deep blue light"
   },
   {
    "id": "ov-36232baf-b427-416e-8b66-e8ca3738edab",

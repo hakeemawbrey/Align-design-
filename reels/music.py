@@ -200,21 +200,39 @@ def compose(sign, element, intro, beat, total, seed=0):
     return (mix * 0.7).astype(np.float32)
 
 
-def master(wav, target_lufs=-11.0, ceiling_db=-1.0):
-    """Two-pass: measure integrated loudness, apply linear gain to the target,
-    then a true-peak limiter at the ceiling. Returns the path of the mastered wav."""
-    import json as _json
+def _lufs(path, ss=None, t=None):
     import re
     import subprocess
-    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", wav, "-af", "ebur128=peak=true", "-f", "null", "-"],
+    cmd = ["ffmpeg", "-hide_banner"] + (["-ss", str(ss)] if ss else []) + (["-t", str(t)] if t else [])
+    meas = subprocess.run(cmd + ["-i", path, "-af", "ebur128", "-f", "null", "-"],
                           capture_output=True, text=True).stderr
-    lufs = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", meas)[-1])
-    gain = target_lufs - lufs
+    return float(re.findall(r"I:\s+(-?[\d.]+) LUFS", meas)[-1])
+
+
+def master(wav, target_lufs=-11.0, ceiling_db=-2.0, intro=2.2, intro_gap=8.0):
+    """Measure, then set the intro to sit intro_gap LU under the body (the reference's
+    drop), bring the whole to target_lufs, and limit. The sample-peak ceiling sits at
+    -2 dB so true peak stays under -1 dBTP after AAC encoding. Returns the new path."""
+    import subprocess
+    import wave
+    gi = (_lufs(wav, t=intro - 0.1) - _lufs(wav, ss=intro)) + intro_gap   # dB to pull the intro down
+    with wave.open(wav) as w:
+        x = np.frombuffer(w.readframes(w.getnframes()), "<i2").reshape(-1, 2).T.astype(np.float32) / 32767
+    n_in = int(intro * SR)
+    env = np.ones(x.shape[1], np.float32)
+    env[:n_in] = 10 ** (-gi / 20)
+    xf = int(0.08 * SR)  # short crossfade into the hit
+    env[n_in - xf:n_in] = np.linspace(10 ** (-gi / 20), 1, xf)
+    shaped = wav.replace(".wav", "-s.wav")
+    write_wav(shaped, x * env)
+    gain = target_lufs - _lufs(shaped)
     out = wav.replace(".wav", "-m.wav")
     lim = 10 ** (ceiling_db / 20)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-af",
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", shaped, "-af",
                     f"volume={gain:.2f}dB,alimiter=limit={lim:.3f}:attack=1:release=60:level=false:asc=1",
                     "-ar", str(SR), out], check=True)
+    import os
+    os.remove(shaped)
     return out
 
 

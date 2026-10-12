@@ -121,27 +121,6 @@
    "note": "Canova, Three Graces in marble"
   },
   {
-   "id": "met-438378",
-   "source": "met",
-   "title": "Portrait of a Woman with a Balance",
-   "creator": "Thomas de Keyser",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/438378",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP120417.jpg",
-   "w": 1967,
-   "h": 2600,
-   "query": "scales balance",
-   "file": "cache/libra/cand/met-438378.jpg",
-   "n": 0,
-   "focus": [
-    0.35,
-    0.72
-   ],
-   "zoom": 1.25,
-   "note": "de Keyser, woman with a balance",
-   "pin": true
-  },
-  {
    "id": "aic-12876",
    "source": "aic",
    "title": "Diana and Endymion",
@@ -197,25 +176,6 @@
     0.4
    ],
    "note": "La Hyre, Allegory of Music, harmony with the lute"
-  },
-  {
-   "id": "aic-59847",
-   "source": "aic",
-   "title": "Cupid Chastised",
-   "creator": "Bartolomeo Manfredi (Italian, 1582–1622)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/59847",
-   "url": "https://www.artic.edu/iiif/2/0f951635-312c-0829-451b-553f461c5518/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 2361,
-   "query": "Venus Aphrodite",
-   "file": "cache/libra/cand/aic-59847.jpg",
-   "n": 19,
-   "focus": [
-    0.45,
-    0.45
-   ],
-   "note": "Manfredi, Venus and Mars chastise Cupid"
   },
   {
    "id": "aic-44816",

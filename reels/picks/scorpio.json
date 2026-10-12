@@ -51,11 +51,12 @@
    "file": "cache/scorpio/cand/ov-3b07b410-7ed3-4f32-9a58-0185da3cf93b.jpg",
    "n": 6,
    "focus": [
-    0.3,
-    0.5
+    0.22,
+    0.55
    ],
    "note": "emperor scorpion, glossy black armour",
-   "pin": true
+   "pin": true,
+   "zoom": 1.0
   },
   {
    "id": "ov-9c1e5e25-8c8c-4fc8-af6e-2eb63bf644af",
@@ -138,26 +139,6 @@
    "note": "Benjamin-Constant, Judith in red and gold with the blade"
   },
   {
-   "id": "ov-4a8c693d-517b-473d-a391-cc5ff5fe88f6",
-   "source": "openverse/wikimedia",
-   "title": "File:Bald Eagle Portrait.jpg",
-   "creator": "Saffron Blaze",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=18433764",
-   "url": "https://api.openverse.org/v1/images/4a8c693d-517b-473d-a391-cc5ff5fe88f6/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Bald_Eagle_Portrait.jpg",
-   "w": 1280,
-   "h": 1600,
-   "query": "eagle",
-   "file": "cache/scorpio/cand/ov-4a8c693d-517b-473d-a391-cc5ff5fe88f6.jpg",
-   "n": 54,
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "eagle portrait"
-  },
-  {
    "id": "met-435904",
    "source": "met",
    "title": "Still Life with a Skull and a Writing Quill",
@@ -233,27 +214,6 @@
     0.5
    ],
    "note": "El Greco, Saint Francis meditating on a skull"
-  },
-  {
-   "id": "ov-a30ce251-6c02-43c0-9838-f16c0c478b23",
-   "source": "openverse/wikimedia",
-   "title": "Bust of Pluto 02",
-   "creator": "MumblerJamie",
-   "license": "by-sa 2.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=118130339",
-   "url": "https://api.openverse.org/v1/images/a30ce251-6c02-43c0-9838-f16c0c478b23/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Bust_of_Pluto_02.jpg",
-   "w": 1280,
-   "h": 1707,
-   "query": "Pluto Hades underworld",
-   "file": "cache/scorpio/cand/ov-a30ce251-6c02-43c0-9838-f16c0c478b23.jpg",
-   "n": 36,
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "zoom": 1.3,
-   "note": "bust of Pluto, lord of the underworld"
   },
   {
    "id": "ov-29f7d6c6-9782-49df-9347-7e037a1fe250",

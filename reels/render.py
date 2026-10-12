@@ -127,7 +127,8 @@ def luminous(bg):
     """How much light an image throws out of darkness."""
     lum = bg[::8, ::8].astype(np.float32).mean(2) / 255
     p95, p50 = np.percentile(lum, [95, 50])
-    return float(2 * p95 - p50)  # light against darkness beats flat brightness (sand, sky)
+    blown = (lum > 0.93).mean()  # a big white core would wash the card out on the hit
+    return float(2 * p95 - p50 - 6 * max(blown - 0.03, 0))  # light out of darkness beats flat brightness
 
 
 def schedule(bgs, rng):
