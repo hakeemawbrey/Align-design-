@@ -73,9 +73,10 @@
    "n": 71,
    "focus": [
     0.5,
-    0.5
+    0.6
    ],
-   "note": "Rondanini Medusa, snakes knotted at the chin",
+   "zoom": 1.3,
+   "note": "Rondanini Medusa, eyes lifted clear of the card",
    "pin": true
   },
   {
@@ -118,119 +119,23 @@
    "note": "diamond-ring total solar eclipse"
   },
   {
-   "id": "aic-20579",
-   "source": "aic",
-   "title": "Hercules and the Lernaean Hydra",
-   "creator": "Gustave Moreau (French, 1826-1898)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/20579",
-   "url": "https://www.artic.edu/iiif/2/2ae64c8a-266d-470a-a25a-c83127564636/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1946,
-   "query": "skull vanitas",
-   "file": "cache/scorpio/cand/aic-20579.jpg",
-   "n": 13,
+   "id": "met-435649",
+   "source": "met",
+   "title": "Judith",
+   "creator": "Benjamin-Constant (Jean-Joseph-Benjamin Constant)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435649",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2818.jpg",
+   "w": 1711,
+   "h": 2600,
+   "query": "Judith",
+   "file": "cache/scorpio/cand/met-435649.jpg",
+   "n": 392,
    "focus": [
-    0.6,
+    0.5,
     0.45
    ],
-   "note": "Moreau, Hercules facing the Hydra at sunset"
-  },
-  {
-   "id": "ov-a66e81c8-9f16-4cc5-aae8-cffa8e507f9c",
-   "source": "openverse/wikimedia",
-   "title": "Ultraviolet reflectance in wild scorpion (Mindo, Ecuador) (23043999163)",
-   "creator": "Javier Ábalos from Valencia, España",
-   "license": "by-sa 2.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=93784813",
-   "url": "https://api.openverse.org/v1/images/a66e81c8-9f16-4cc5-aae8-cffa8e507f9c/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Ultraviolet_reflectance_in_wild_scorpion_%28Mindo%2C_Ecuador%29_%2823043999163%29.jpg",
-   "w": 1280,
-   "h": 853,
-   "query": "scorpion ultraviolet",
-   "file": "cache/scorpio/cand/ov-a66e81c8-9f16-4cc5-aae8-cffa8e507f9c.jpg",
-   "n": 211,
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "UV scorpion glowing on black"
-  },
-  {
-   "id": "met-436423",
-   "source": "met",
-   "title": "The Night-Hag Visiting Lapland Witches",
-   "creator": "Henry Fuseli",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436423",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-26884-001.jpg",
-   "w": 2600,
-   "h": 2126,
-   "query": "eclipse",
-   "file": "cache/scorpio/cand/met-436423.jpg",
-   "n": 83,
-   "focus": [
-    0.4,
-    0.45
-   ],
-   "note": "Fuseli, the Night-Hag in moonlight"
-  },
-  {
-   "id": "met-435904",
-   "source": "met",
-   "title": "Still Life with a Skull and a Writing Quill",
-   "creator": "Pieter Claesz",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/435904",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145929.jpg",
-   "w": 2600,
-   "h": 1753,
-   "query": "skull",
-   "file": "cache/scorpio/cand/met-435904.jpg",
-   "n": 165,
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Claesz, vanitas skull"
-  },
-  {
-   "id": "aic-86323",
-   "source": "aic",
-   "title": "The Entombment",
-   "creator": "Guercino (Giovanni Francesco Barbieri; Italian, 1591-1666)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/86323",
-   "url": "https://www.artic.edu/iiif/2/b30b708a-be47-c3cc-f3af-2a6798b7b088/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1107,
-   "query": "Entombment",
-   "file": "cache/scorpio/cand/aic-86323.jpg",
-   "n": 240,
-   "focus": [
-    0.35,
-    0.5
-   ],
-   "note": "Guercino, the Entombment"
-  },
-  {
-   "id": "nasa-PIA13974",
-   "source": "nasa",
-   "title": "WISE Unveils a Treasure Trove of Beauty",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA13974",
-   "url": "https://images-assets.nasa.gov/image/PIA13974/PIA13974~orig.jpg",
-   "w": 2600,
-   "h": 2550,
-   "query": "rho Ophiuchi",
-   "file": "cache/scorpio/cand/nasa-PIA13974.jpg",
-   "n": 182,
-   "focus": [
-    0.5,
-    0.55
-   ],
-   "note": "rho Ophiuchi clouds around Antares"
+   "note": "Benjamin-Constant, Judith in red and gold with the blade"
   },
   {
    "id": "ov-4a8c693d-517b-473d-a391-cc5ff5fe88f6",
@@ -253,24 +158,23 @@
    "note": "eagle portrait"
   },
   {
-   "id": "ov-49a52862-fd7a-465a-946c-2aa346a81162",
-   "source": "openverse/wikimedia",
-   "title": "Long Abyss in Akiyoshi Cave 1",
-   "creator": "そらみみ (Soramimi)",
-   "license": "by-sa 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=49091073",
-   "url": "https://api.openverse.org/v1/images/49a52862-fd7a-465a-946c-2aa346a81162/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Long_Abyss_in_Akiyoshi_Cave_1.jpg",
-   "w": 1280,
-   "h": 960,
-   "query": "abyss cave",
-   "file": "cache/scorpio/cand/ov-49a52862-fd7a-465a-946c-2aa346a81162.jpg",
-   "n": 108,
+   "id": "met-435904",
+   "source": "met",
+   "title": "Still Life with a Skull and a Writing Quill",
+   "creator": "Pieter Claesz",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435904",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145929.jpg",
+   "w": 2600,
+   "h": 1753,
+   "query": "skull",
+   "file": "cache/scorpio/cand/met-435904.jpg",
+   "n": 165,
    "focus": [
     0.5,
     0.5
    ],
-   "note": "underground river in the abyss"
+   "note": "Claesz, vanitas skull"
   },
   {
    "id": "ov-242adf69-2339-4c38-bc2a-1edaf9af1cae",
@@ -293,6 +197,25 @@
    "note": "blood moon, total lunar eclipse"
   },
   {
+   "id": "nasa-PIA13974",
+   "source": "nasa",
+   "title": "WISE Unveils a Treasure Trove of Beauty",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA13974",
+   "url": "https://images-assets.nasa.gov/image/PIA13974/PIA13974~orig.jpg",
+   "w": 2600,
+   "h": 2550,
+   "query": "rho Ophiuchi",
+   "file": "cache/scorpio/cand/nasa-PIA13974.jpg",
+   "n": 182,
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "rho Ophiuchi clouds around Antares"
+  },
+  {
    "id": "aic-21907",
    "source": "aic",
    "title": "Saint Francis Kneeling in Meditation",
@@ -312,23 +235,84 @@
    "note": "El Greco, Saint Francis meditating on a skull"
   },
   {
-   "id": "met-782308",
-   "source": "met",
-   "title": "Salome with the Head of John the Baptist",
-   "creator": "Gustave Moreau",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/782308",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-15575-001.jpg",
-   "w": 1612,
-   "h": 2600,
-   "query": "Salome",
-   "file": "cache/scorpio/cand/met-782308.jpg",
-   "n": 399,
+   "id": "ov-a30ce251-6c02-43c0-9838-f16c0c478b23",
+   "source": "openverse/wikimedia",
+   "title": "Bust of Pluto 02",
+   "creator": "MumblerJamie",
+   "license": "by-sa 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=118130339",
+   "url": "https://api.openverse.org/v1/images/a30ce251-6c02-43c0-9838-f16c0c478b23/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Bust_of_Pluto_02.jpg",
+   "w": 1280,
+   "h": 1707,
+   "query": "Pluto Hades underworld",
+   "file": "cache/scorpio/cand/ov-a30ce251-6c02-43c0-9838-f16c0c478b23.jpg",
+   "n": 36,
    "focus": [
     0.5,
-    0.45
+    0.5
    ],
-   "note": "Moreau, Salome holding the severed head"
+   "zoom": 1.3,
+   "note": "bust of Pluto, lord of the underworld"
+  },
+  {
+   "id": "ov-29f7d6c6-9782-49df-9347-7e037a1fe250",
+   "source": "openverse/wikimedia",
+   "title": "Medusa by René Lalique22",
+   "creator": "https://www.flickr.com/photos/shadowgate/",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=4763080",
+   "url": "https://api.openverse.org/v1/images/29f7d6c6-9782-49df-9347-7e037a1fe250/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Medusa_by_Ren%C3%A9_Lalique22.jpg",
+   "w": 1280,
+   "h": 961,
+   "query": "Medusa",
+   "file": "cache/scorpio/cand/ov-29f7d6c6-9782-49df-9347-7e037a1fe250.jpg",
+   "n": 73,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Lalique, Medusa crowned with black snakes"
+  },
+  {
+   "id": "aic-86323",
+   "source": "aic",
+   "title": "The Entombment",
+   "creator": "Guercino (Giovanni Francesco Barbieri; Italian, 1591-1666)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/86323",
+   "url": "https://www.artic.edu/iiif/2/b30b708a-be47-c3cc-f3af-2a6798b7b088/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1107,
+   "query": "Entombment",
+   "file": "cache/scorpio/cand/aic-86323.jpg",
+   "n": 240,
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Guercino, the Entombment"
+  },
+  {
+   "id": "ov-6eb076d2-2bcd-4010-9df4-37ff9f11f0de",
+   "source": "openverse/wikimedia",
+   "title": "Asian forest scorpion in Khao Yai National Park",
+   "creator": "Chris huh",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=2542194",
+   "url": "https://api.openverse.org/v1/images/6eb076d2-2bcd-4010-9df4-37ff9f11f0de/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Asian_forest_scorpion_in_Khao_Yai_National_Park.JPG",
+   "w": 1280,
+   "h": 1912,
+   "query": "scorpion",
+   "file": "cache/scorpio/cand/ov-6eb076d2-2bcd-4010-9df4-37ff9f11f0de.jpg",
+   "n": 5,
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "forest scorpion, tail raised"
   }
  ]
 }
