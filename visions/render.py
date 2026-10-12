@@ -45,11 +45,13 @@ STYLE = {
     "end": 1.5,               # seconds of wordmark at the end
     # the grade (see grade()): exposure targets measured off the reference frames
     "median": 0.23,           # median luminance after levels
-    "tone": 0.42,             # pull toward the moonlit blue ramp
-    "saturation": 1.38,
+    "tone": 0.50,             # pull toward the moonlit blue ramp
+    "saturation": 1.5,
     "black_lift": 0.035,
     "contrast": 0.55,
     "bloom": 0.42,
+    "local": 0.35,            # local contrast (large-radius unsharp on luminance)
+    "warm_cap": 0.38,         # max chroma for reds/oranges before the boost
     "vignette": 0.32,
 }
 
@@ -90,6 +92,18 @@ def ramp(l):
     return out
 
 
+def soft(x, radius):
+    """Wide blur of a float map: down-sample, blur, up-sample (fast, smooth enough)."""
+    h, w = x.shape
+    k = max(1, int(radius / 2))
+    small = Image.fromarray((np.clip(x, 0, 1) * 65535).astype(np.uint16)).convert("I").resize(
+        (max(1, w // k), max(1, h // k)), Image.BOX)
+    sm = np.asarray(small, np.float32) / 65535
+    sm = np.asarray(Image.fromarray((sm * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(2)), np.float32) / 255 \
+        if min(sm.shape) > 6 else sm
+    return np.asarray(Image.fromarray(sm, "F").resize((w, h), Image.BILINEAR), np.float32)
+
+
 def fit_square(im, S, focus=(0.5, 0.5), zoom=1.0):
     im = ImageOps.exif_transpose(im).convert("RGB")
     side = min(im.size) / zoom
@@ -109,27 +123,47 @@ def grade(im, S, item=None):
     a = np.asarray(im, np.float32) / 255
     W = np.array([0.299, 0.587, 0.114], np.float32)
     l = a @ W
+    day = float(np.median(l))  # bright daylight pictures need pushing further into night
     lo, hi = np.percentile(l, [1.5, 99.3])
     a = np.clip((a - lo * 0.85) / max(hi - lo * 0.85, 0.2), 0, 1)
     med = float(np.median(a @ W))
     g = math.log(STYLE["median"] * item.get("exposure", 1.0)) / math.log(min(max(med, 0.03), 0.97))
     a = a ** float(np.clip(g, 0.55, 2.4))
+    # local contrast: dark, muddy paintings get their forms back instead of going to blue sludge
     l = a @ W
-    # pull toward the blue ramp; images that are already cool need less
+    lb = soft(l, S / 18)
+    a = np.clip(a + (STYLE["local"] * (l - lb))[..., None], 0, 1)
+    l = a @ W
+    mx, mn = a.max(2), a.min(2)
+    chroma = mx - mn
+    # tame hot reds and oranges before anything boosts them (they block up into flat red)
+    warm = np.clip((a[..., 0] - a[..., 2]) / (chroma + 1e-4), 0, 1) * (a[..., 0] >= a[..., 1])
+    over = np.clip(chroma - STYLE["warm_cap"], 0, None) * warm
+    a = a - over[..., None] * (a - l[..., None]) / (chroma[..., None] + 1e-4) * 0.8
+    # skin and candlelit faces keep more of their own colour (and don't go chalky)
+    r, gg, bb = a[..., 0], a[..., 1], a[..., 2]
+    skin = ((r > gg) & (gg > bb) & (r - bb > 0.06) & (r - bb < 0.5) & (l > 0.25) & (l < 0.9)).astype(np.float32)
+    skin = soft(skin, 4)
+    # pull toward the blue ramp; images that are already cool need less, daylight needs more
     cool = float((a[..., 2] - a[..., 0]).mean())
-    k = item.get("tone", float(np.clip(STYLE["tone"] - cool * 1.6, 0.18, 0.62)))
+    auto = STYLE["tone"] - cool * 1.6 + 0.2 * np.clip((day - 0.42) / 0.25, 0, 1)
+    k = item.get("tone", float(np.clip(auto, 0.18, 0.66)))
     # the ramp works on shadows and mids; light sources (lamps, moons, skin in candlelight)
     # keep some of their own colour, the way the reference keeps its orange skies
-    kk = k * (1 - 0.55 * np.clip((l - 0.55) / 0.45, 0, 1))[..., None]
-    a = a * (1 - kk) + ramp(l) * kk
+    kk = k * (1 - 0.55 * np.clip((l - 0.55) / 0.45, 0, 1)) * (1 - 0.35 * skin)
+    a = a * (1 - kk[..., None]) + ramp(l) * kk[..., None]
     # S-curve for punch
     a = np.clip(a, 0, 1)
     a = a + STYLE["contrast"] * a * (1 - a) * (2 * a - 1)
+    # vibrance: muted colours get the boost, already-loud ones (cyan skies, reds) barely move
     l = a @ W
-    a = l[..., None] + (a - l[..., None]) * STYLE["saturation"]
+    chroma = a.max(2) - a.min(2)
+    sat = 1 + (STYLE["saturation"] - 1) * np.clip(1 - chroma / 0.42, 0, 1)
+    a = l[..., None] + (a - l[..., None]) * sat[..., None]
     a = np.clip(a, 0, 1)
     # bloom: blurred highlights screened back
     hl = np.clip((a - 0.62) / 0.38, 0, 1)
+    hl *= (1 - 0.5 * skin)[..., None]  # faces don't bloom to chalk
     blur = np.asarray(Image.fromarray((hl * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(S / 45)),
                       np.float32) / 255
     a = 1 - (1 - a) * (1 - blur * STYLE["bloom"])
