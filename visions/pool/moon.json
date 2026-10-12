@@ -181,6 +181,7 @@
     0.62,
     0.5
    ],
+   "tone": 0.6,
    "note": "Abraham Pether, coast by moonlight"
   },
   {
@@ -598,24 +599,6 @@
    "note": "Farrer, winter scene in moonlight"
   },
   {
-   "id": "wc-153171279",
-   "source": "commons",
-   "title": "Marine au clair de lune - Nicolas PERSEVAL - 18e siècle",
-   "creator": "Nicolas Perseval",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Marine_au_clair_de_lune_-_Nicolas_PERSEVAL_-_18e_si%C3%A8cle.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Marine_au_clair_de_lune_-_Nicolas_PERSEVAL_-_18e_si%C3%A8cle.jpg/1920px-Marine_au_clair_de_lune_-_Nicolas_PERSEVAL_-_18e_si%C3%A8cle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Marine_au_clair_de_lune_-_Nicolas_PERSEVAL_-_18e_si%C3%A8cle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1377,
-   "h": 2400,
-   "file": "cache/moon/cand/wc-153171279.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "note": "Perseval, marine by moonlight"
-  },
-  {
    "id": "wc-33547819",
    "source": "commons",
    "title": "Лунная ночь Айвазовский",
@@ -632,24 +615,6 @@
     0.5
    ],
    "note": "Aivazovsky, moonlit night, towers on the rocks"
-  },
-  {
-   "id": "wc-99883160",
-   "source": "commons",
-   "title": "Louis Douzette - Moonlit landscape - M.Ob.1269 MNW - National Museum in Warsaw",
-   "creator": "Louis Douzette",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Louis_Douzette_-_Moonlit_landscape_-_M.Ob.1269_MNW_-_National_Museum_in_Warsaw.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Louis_Douzette_-_Moonlit_landscape_-_M.Ob.1269_MNW_-_National_Museum_in_Warsaw.jpg/1920px-Louis_Douzette_-_Moonlit_landscape_-_M.Ob.1269_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Louis_Douzette_-_Moonlit_landscape_-_M.Ob.1269_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1256,
-   "file": "cache/moon/cand/wc-99883160.jpg",
-   "focus": [
-    0.45,
-    0.5
-   ],
-   "note": "Douzette, moonlit landscape"
   },
   {
    "id": "wc-98069514",
@@ -704,6 +669,80 @@
     0.5
    ],
    "note": "Calame, lake at night, moon and boat"
+  },
+  {
+   "id": "wc-138683110",
+   "source": "commons",
+   "title": "Harald Sohlberg - Night - NG.K&H.B.08221 - National Museum of Art, Architecture and Design",
+   "creator": "Harald Sohlberg",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Harald_Sohlberg_-_Night_-_NG.K%26H.B.08221_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Harald_Sohlberg_-_Night_-_NG.K%26H.B.08221_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/1920px-Harald_Sohlberg_-_Night_-_NG.K%26H.B.08221_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Harald_Sohlberg_-_Night_-_NG.K%26H.B.08221_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1477,
+   "file": "cache/moon/cand/wc-138683110.jpg",
+   "focus": [
+    0.42,
+    0.5
+   ],
+   "tone": 0.62,
+   "exposure": 0.85,
+   "note": "Sohlberg, Night, Roros church under the moon"
+  },
+  {
+   "id": "wc-62556411",
+   "source": "commons",
+   "title": "The Thames and Greenwich Hospital by Moonlight RMG BHC3870",
+   "creator": "Henry Pether",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff/lossy-page1-1920px-The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/The_Thames_and_Greenwich_Hospital_by_Moonlight_RMG_BHC3870.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1245,
+   "file": "cache/moon/cand/wc-62556411.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Henry Pether, Thames and Greenwich by moonlight"
+  },
+  {
+   "id": "wc-68447475",
+   "source": "commons",
+   "title": "Carl Blechen - Landschaft im Winter bei Mondschein (1836)",
+   "creator": "Carl Blechen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_(1836).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_%281836%29.jpg/1920px-Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_%281836%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Carl_Blechen_-_Landschaft_im_Winter_bei_Mondschein_%281836%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1415,
+   "file": "cache/moon/cand/wc-68447475.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Blechen, winter landscape by moonlight"
+  },
+  {
+   "id": "wc-65831106",
+   "source": "commons",
+   "title": "Karl Kaufmann - A Moonlit Night over Venice",
+   "creator": "Karl Kaufmann",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg/1920px-Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Karl_Kaufmann_-_A_Moonlit_Night_over_Venice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1439,
+   "file": "cache/moon/cand/wc-65831106.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "Kaufmann, moonlit night over Venice"
   }
  ]
 }

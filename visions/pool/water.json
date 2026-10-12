@@ -39,25 +39,6 @@
    "note": "Homer, Summer Night"
   },
   {
-   "id": "wc-1169897",
-   "source": "commons",
-   "title": "Arnold Boecklin - Island of the Dead, Third Version",
-   "creator": "Arnold Böcklin",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_Boecklin_-_Island_of_the_Dead,_Third_Version.JPG",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Arnold_Boecklin_-_Island_of_the_Dead%2C_Third_Version.JPG/1920px-Arnold_Boecklin_-_Island_of_the_Dead%2C_Third_Version.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Arnold_Boecklin_-_Island_of_the_Dead%2C_Third_Version.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1056,
-   "file": "cache/water/cand/wc-1169897.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "pin": true,
-   "note": "Böcklin, Isle of the Dead III"
-  },
-  {
    "id": "wc-99861032",
    "source": "commons",
    "title": "Theodor Kittelsen - The Water Sprite - NG.M.00863 - National Museum of Art, Architecture and Design",
@@ -92,24 +73,8 @@
     0.5,
     0.5
    ],
-   "note": "Aivazovsky, Battle of Chesme at night"
-  },
-  {
-   "id": "met-11981",
-   "source": "met",
-   "title": "The Toilers of the Sea",
-   "creator": "Albert Pinkham Ryder",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/11981",
-   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT228023.jpg",
-   "w": 2400,
-   "h": 2270,
-   "file": "cache/water/cand/met-11981.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "note": "Ryder, Toilers of the Sea"
+   "note": "Aivazovsky, Battle of Chesme at night",
+   "pin": true
   },
   {
    "id": "wc-97999545",
@@ -221,96 +186,6 @@
    "note": "Millais, Ophelia"
   },
   {
-   "id": "wc-53556767",
-   "source": "commons",
-   "title": "Storm at Sea on a Moonlit Night (Aivazovsky)",
-   "creator": "Ivan Aivazovsky",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Storm_at_Sea_on_a_Moonlit_Night_(Aivazovsky).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Storm_at_Sea_on_a_Moonlit_Night_%28Aivazovsky%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Storm_at_Sea_on_a_Moonlit_Night_%28Aivazovsky%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1694,
-   "h": 1200,
-   "file": "cache/water/cand/wc-53556767.jpg",
-   "focus": [
-    0.55,
-    0.4
-   ],
-   "note": "Ivan Aivazovsky, Storm at Sea on a Moonlit Night (Aivazovsky)"
-  },
-  {
-   "id": "wc-75775806",
-   "source": "commons",
-   "title": "Ivan Konstantinovich Aivazovsky - A Moonlit Night at Sea, 1885",
-   "creator": "Ivan Aivazovsky",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Konstantinovich_Aivazovsky_-_A_Moonlit_Night_at_Sea,_1885.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Ivan_Konstantinovich_Aivazovsky_-_A_Moonlit_Night_at_Sea%2C_1885.jpg/1920px-Ivan_Konstantinovich_Aivazovsky_-_A_Moonlit_Night_at_Sea%2C_1885.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Ivan_Konstantinovich_Aivazovsky_-_A_Moonlit_Night_at_Sea%2C_1885.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1162,
-   "file": "cache/water/cand/wc-75775806.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Ivan Aivazovsky, Ivan Konstantinovich Aivazovsky - A Moonlit Night "
-  },
-  {
-   "id": "wc-134370761",
-   "source": "commons",
-   "title": "Steamship on a moonlit night (by Ivan Aivazovsky)",
-   "creator": "Ivan Aivazovsky",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Steamship_on_a_moonlit_night_(by_Ivan_Aivazovsky).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Steamship_on_a_moonlit_night_%28by_Ivan_Aivazovsky%29.jpg/1920px-Steamship_on_a_moonlit_night_%28by_Ivan_Aivazovsky%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Steamship_on_a_moonlit_night_%28by_Ivan_Aivazovsky%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1288,
-   "file": "cache/water/cand/wc-134370761.jpg",
-   "focus": [
-    0.6,
-    0.5
-   ],
-   "note": "Ivan Aivazovsky, Steamship on a moonlit night (by Ivan Aivazovsky)"
-  },
-  {
-   "id": "wc-918",
-   "source": "commons",
-   "title": "Aivasovsky Ivan Constantinovich The Harbor At Odessa On The Black Sea",
-   "creator": "Ivan Aivazovsky",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Aivasovsky_Ivan_Constantinovich_The_Harbor_At_Odessa_On_The_Black_Sea.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Aivasovsky_Ivan_Constantinovich_The_Harbor_At_Odessa_On_The_Black_Sea.jpg/1920px-Aivasovsky_Ivan_Constantinovich_The_Harbor_At_Odessa_On_The_Black_Sea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Aivasovsky_Ivan_Constantinovich_The_Harbor_At_Odessa_On_The_Black_Sea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1167,
-   "file": "cache/water/cand/wc-918.jpg",
-   "focus": [
-    0.3,
-    0.5
-   ],
-   "note": "Ivan Aivazovsky, Aivasovsky Ivan Constantinovich The Harbor At Odes"
-  },
-  {
-   "id": "wc-64812653",
-   "source": "commons",
-   "title": "Aivazovsky, Moonlight in Naples",
-   "creator": "Ivan Aivazovsky",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Aivazovsky,_Moonlight_in_Naples.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Aivazovsky%2C_Moonlight_in_Naples.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Aivazovsky%2C_Moonlight_in_Naples.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1368,
-   "h": 1105,
-   "file": "cache/water/cand/wc-64812653.jpg",
-   "focus": [
-    0.7,
-    0.4
-   ],
-   "note": "Ivan Aivazovsky, Aivazovsky, Moonlight in Naples"
-  },
-  {
    "id": "wc-48442758",
    "source": "commons",
    "title": "Ivan Aivazovsky Segelschiff auf hoher See bei Mondschein 1840er",
@@ -382,59 +257,6 @@
    "note": "Whistler, Nocturne in Black and Gold: The Falling Rocket"
   },
   {
-   "id": "wc-73351362",
-   "source": "commons",
-   "title": "Kuindzhi Night on the Dnieper small GTG",
-   "creator": "Arkhip Kuindzhi",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Kuindzhi_Night_on_the_Dnieper_small_GTG.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Kuindzhi_Night_on_the_Dnieper_small_GTG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Kuindzhi_Night_on_the_Dnieper_small_GTG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1200,
-   "h": 1061,
-   "file": "cache/water/cand/wc-73351362.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Arkhip Kuindzhi, Kuindzhi Night on the Dnieper small GTG"
-  },
-  {
-   "id": "met-441379",
-   "source": "met",
-   "title": "The North Cape by Moonlight",
-   "creator": "Peder Balke",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/441379",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1740-001_cropped.jpg",
-   "w": 2400,
-   "h": 1733,
-   "file": "cache/water/cand/met-441379.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Peder Balke, The North Cape by Moonlight"
-  },
-  {
-   "id": "wc-6872227",
-   "source": "commons",
-   "title": "Grimshaw, John Atkinson - In Peril - 1879",
-   "creator": "John Atkinson Grimshaw",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Grimshaw,_John_Atkinson_-_In_Peril_-_1879.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Grimshaw%2C_John_Atkinson_-_In_Peril_-_1879.jpg/1920px-Grimshaw%2C_John_Atkinson_-_In_Peril_-_1879.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Grimshaw%2C_John_Atkinson_-_In_Peril_-_1879.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1289,
-   "file": "cache/water/cand/wc-6872227.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "John Atkinson Grimshaw, Grimshaw, John Atkinson - In Peril - 1879"
-  },
-  {
    "id": "wc-21865696",
    "source": "commons",
    "title": "Frederic Edwin Church - Niagara Falls, from the American Side - Google Art Project",
@@ -469,24 +291,6 @@
     0.5
    ],
    "note": "Frederic Edwin Church, The Icebergs (Frederic Edwin Church), 1861 (color)"
-  },
-  {
-   "id": "wc-14752267",
-   "source": "commons",
-   "title": "Icebergs and Wreck in Sunset Frederic Edwin Church",
-   "creator": "Frederic Edwin Church",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Icebergs_and_Wreck_in_Sunset_Frederic_Edwin_Church.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Icebergs_and_Wreck_in_Sunset_Frederic_Edwin_Church.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Icebergs_and_Wreck_in_Sunset_Frederic_Edwin_Church.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1280,
-   "h": 788,
-   "file": "cache/water/cand/wc-14752267.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Frederic Edwin Church, Icebergs and Wreck in Sunset Frederic Edwin Church"
   },
   {
    "id": "wc-64553763",
@@ -578,42 +382,6 @@
    "note": "William Bradford, Shipwreck off Nantucket (Wreck off Nantucket after"
   },
   {
-   "id": "wc-23595239",
-   "source": "commons",
-   "title": "Ralph Albert Blakelock - Moonlight - Google Art Project (27466953)",
-   "creator": "Ralph Albert Blakelock",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Ralph_Albert_Blakelock_-_Moonlight_-_Google_Art_Project_(27466953).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Ralph_Albert_Blakelock_-_Moonlight_-_Google_Art_Project_%2827466953%29.jpg/1920px-Ralph_Albert_Blakelock_-_Moonlight_-_Google_Art_Project_%2827466953%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Ralph_Albert_Blakelock_-_Moonlight_-_Google_Art_Project_%2827466953%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1174,
-   "file": "cache/water/cand/wc-23595239.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Ralph Albert Blakelock, Ralph Albert Blakelock - Moonlight - Google Art Pr"
-  },
-  {
-   "id": "wc-78097483",
-   "source": "commons",
-   "title": "Ralph Albert Blakelock - Moonlight - 2014.136.20 - Corcoran Gallery of Art",
-   "creator": "Ralph Albert Blakelock",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Ralph_Albert_Blakelock_-_Moonlight_-_2014.136.20_-_Corcoran_Gallery_of_Art.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Ralph_Albert_Blakelock_-_Moonlight_-_2014.136.20_-_Corcoran_Gallery_of_Art.jpg/1920px-Ralph_Albert_Blakelock_-_Moonlight_-_2014.136.20_-_Corcoran_Gallery_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Ralph_Albert_Blakelock_-_Moonlight_-_2014.136.20_-_Corcoran_Gallery_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1392,
-   "file": "cache/water/cand/wc-78097483.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Ralph Albert Blakelock, Ralph Albert Blakelock - Moonlight - 2014.136.20 -"
-  },
-  {
    "id": "wc-30687611",
    "source": "commons",
    "title": "Aivazovsky Chaos 1841",
@@ -648,42 +416,6 @@
     0.5
    ],
    "note": "Ivan Aivazovsky, Кораблекрушение Айвазовский"
-  },
-  {
-   "id": "wc-95830278",
-   "source": "commons",
-   "title": "Ivan Aivazovsky - The Black Sea at night (1879)",
-   "creator": "Ivan Aivazovsky",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Ivan_Aivazovsky_-_The_Black_Sea_at_night_(1879).jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Ivan_Aivazovsky_-_The_Black_Sea_at_night_%281879%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Ivan_Aivazovsky_-_The_Black_Sea_at_night_%281879%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 765,
-   "h": 1000,
-   "file": "cache/water/cand/wc-95830278.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Ivan Aivazovsky, Ivan Aivazovsky - The Black Sea at night (1879)"
-  },
-  {
-   "id": "wc-15883868",
-   "source": "commons",
-   "title": "Caspar David Friedrich - Moonrise by the Sea - WGA08266",
-   "creator": "Caspar David Friedrich",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg/1920px-Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Caspar_David_Friedrich_-_Moonrise_by_the_Sea_-_WGA08266.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1458,
-   "file": "cache/water/cand/wc-15883868.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Caspar David Friedrich, Caspar David Friedrich - Moonrise by the Sea - WGA"
   },
   {
    "id": "wc-128427347",
@@ -722,24 +454,6 @@
    ],
    "tone": 0.3,
    "note": "J. M. W. Turner, The Fighting Temeraire, JMW Turner, National Galle"
-  },
-  {
-   "id": "wc-134370433",
-   "source": "commons",
-   "title": "Breaking Wave (by Ivan Aivazovsky)",
-   "creator": "Ivan Aivazovsky",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Breaking_Wave_(by_Ivan_Aivazovsky).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Breaking_Wave_%28by_Ivan_Aivazovsky%29.jpg/1920px-Breaking_Wave_%28by_Ivan_Aivazovsky%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Breaking_Wave_%28by_Ivan_Aivazovsky%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1165,
-   "file": "cache/water/cand/wc-134370433.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Ivan Aivazovsky, Breaking Wave (by Ivan Aivazovsky)"
   },
   {
    "id": "wc-40967538",
@@ -868,23 +582,6 @@
    "note": "Albert Bierstadt, Albert Bierstadt - Mirror Lake (c. 1868)"
   },
   {
-   "id": "met-436833",
-   "source": "met",
-   "title": "Red Sunset",
-   "creator": "Arkhyp Kuindzhi (Arkhip Ivanovich Kuindzhi)",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436833",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2557.jpg",
-   "w": 2400,
-   "h": 1741,
-   "file": "cache/water/cand/met-436833.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Arkhyp Kuindzhi (Arkhip Ivanov, Red Sunset"
-  },
-  {
    "id": "wc-33497228",
    "source": "commons",
    "title": "Вид Константинополя при лунном освещении Айвазовский",
@@ -901,6 +598,186 @@
     0.5
    ],
    "note": "Ivan Aivazovsky, Вид Константинополя при лунном освещении Айвазовск"
+  },
+  {
+   "id": "wc-225207",
+   "source": "commons",
+   "title": "Theodor Kittelsen - Nøkken, 1887-92 (The Water Sprite)",
+   "creator": "Theodor Kittelsen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Theodor_Kittelsen_-_N%C3%B8kken,_1887-92_(The_Water_Sprite).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Theodor_Kittelsen_-_N%C3%B8kken%2C_1887-92_%28The_Water_Sprite%29.jpg/1920px-Theodor_Kittelsen_-_N%C3%B8kken%2C_1887-92_%28The_Water_Sprite%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Theodor_Kittelsen_-_N%C3%B8kken%2C_1887-92_%28The_Water_Sprite%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1366,
+   "file": "cache/water/cand/wc-225207.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Kittelsen, Nøkken (1887-92)"
+  },
+  {
+   "id": "wc-92039282",
+   "source": "commons",
+   "title": "Иван К. Айвазовский - Буря (1899)",
+   "creator": "Ivan Aivazovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%D0%98%D0%B2%D0%B0%D0%BD_%D0%9A._%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_-_%D0%91%D1%83%D1%80%D1%8F_(1899).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/%D0%98%D0%B2%D0%B0%D0%BD_%D0%9A._%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_-_%D0%91%D1%83%D1%80%D1%8F_%281899%29.jpg/1920px-%D0%98%D0%B2%D0%B0%D0%BD_%D0%9A._%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_-_%D0%91%D1%83%D1%80%D1%8F_%281899%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/%D0%98%D0%B2%D0%B0%D0%BD_%D0%9A._%D0%90%D0%B9%D0%B2%D0%B0%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_-_%D0%91%D1%83%D1%80%D1%8F_%281899%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1682,
+   "h": 2400,
+   "file": "cache/water/cand/wc-92039282.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Ivan Aivazovsky, Иван К. Айвазовский - Буря (1899)"
+  },
+  {
+   "id": "wc-81311159",
+   "source": "commons",
+   "title": "Frederic Edwin Church, Niagara, 1857, NGA 166436",
+   "creator": "Frederic Edwin Church",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Frederic_Edwin_Church,_Niagara,_1857,_NGA_166436.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Frederic_Edwin_Church%2C_Niagara%2C_1857%2C_NGA_166436.jpg/1920px-Frederic_Edwin_Church%2C_Niagara%2C_1857%2C_NGA_166436.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Frederic_Edwin_Church%2C_Niagara%2C_1857%2C_NGA_166436.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 891,
+   "file": "cache/water/cand/wc-81311159.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "note": "Frederic Edwin Church, Frederic Edwin Church, Niagara, 1857, NGA 166436"
+  },
+  {
+   "id": "wc-14805433",
+   "source": "commons",
+   "title": "Indian Sunset Deer by a Lake by Albert Bierstadt",
+   "creator": "Albert Bierstadt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Indian_Sunset_Deer_by_a_Lake_by_Albert_Bierstadt.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Indian_Sunset_Deer_by_a_Lake_by_Albert_Bierstadt.jpeg/1920px-Indian_Sunset_Deer_by_a_Lake_by_Albert_Bierstadt.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Indian_Sunset_Deer_by_a_Lake_by_Albert_Bierstadt.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1298,
+   "file": "cache/water/cand/wc-14805433.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Albert Bierstadt, Indian Sunset Deer by a Lake by Albert Bierstadt"
+  },
+  {
+   "id": "wc-57110575",
+   "source": "commons",
+   "title": "Галатская башня в лунном свете",
+   "creator": "Ivan Aivazovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%B0%D0%BB%D0%B0%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F_%D0%B2_%D0%BB%D1%83%D0%BD%D0%BD%D0%BE%D0%BC_%D1%81%D0%B2%D0%B5%D1%82%D0%B5.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/%D0%93%D0%B0%D0%BB%D0%B0%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F_%D0%B2_%D0%BB%D1%83%D0%BD%D0%BD%D0%BE%D0%BC_%D1%81%D0%B2%D0%B5%D1%82%D0%B5.jpg/1920px-%D0%93%D0%B0%D0%BB%D0%B0%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F_%D0%B2_%D0%BB%D1%83%D0%BD%D0%BD%D0%BE%D0%BC_%D1%81%D0%B2%D0%B5%D1%82%D0%B5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/%D0%93%D0%B0%D0%BB%D0%B0%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F_%D0%B2_%D0%BB%D1%83%D0%BD%D0%BD%D0%BE%D0%BC_%D1%81%D0%B2%D0%B5%D1%82%D0%B5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1319,
+   "file": "cache/water/cand/wc-57110575.jpg",
+   "focus": [
+    0.3,
+    0.5
+   ],
+   "note": "Ivan Aivazovsky, Галатская башня в лунном свете"
+  },
+  {
+   "id": "wc-15594309",
+   "source": "commons",
+   "title": "Aivazovsky. Moon over Odessa",
+   "creator": "Ivan Aivazovsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Aivazovsky._Moon_over_Odessa.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Aivazovsky._Moon_over_Odessa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Aivazovsky._Moon_over_Odessa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1918,
+   "h": 1200,
+   "file": "cache/water/cand/wc-15594309.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "note": "Ivan Aivazovsky, Aivazovsky. Moon over Odessa"
+  },
+  {
+   "id": "wc-23180386",
+   "source": "commons",
+   "title": "Johan Christian Claussen Dahl - En sky og landskap studie av måneskinn",
+   "creator": "Johan Christian Dahl",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Johan_Christian_Claussen_Dahl_-_En_sky_og_landskap_studie_av_m%C3%A5neskinn.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Johan_Christian_Claussen_Dahl_-_En_sky_og_landskap_studie_av_m%C3%A5neskinn.jpg/1920px-Johan_Christian_Claussen_Dahl_-_En_sky_og_landskap_studie_av_m%C3%A5neskinn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Johan_Christian_Claussen_Dahl_-_En_sky_og_landskap_studie_av_m%C3%A5neskinn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1595,
+   "file": "cache/water/cand/wc-23180386.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "note": "Dahl, moonlight study"
+  },
+  {
+   "id": "wc-73611319",
+   "source": "commons",
+   "title": "Johan Christian Claussen Dahl - The Elbe by Moonlight (1856)",
+   "creator": "Johan Christian Dahl",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Johan_Christian_Claussen_Dahl_-_The_Elbe_by_Moonlight_(1856).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Johan_Christian_Claussen_Dahl_-_The_Elbe_by_Moonlight_%281856%29.jpg/1920px-Johan_Christian_Claussen_Dahl_-_The_Elbe_by_Moonlight_%281856%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Johan_Christian_Claussen_Dahl_-_The_Elbe_by_Moonlight_%281856%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1174,
+   "file": "cache/water/cand/wc-73611319.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Dahl, The Elbe by Moonlight"
+  },
+  {
+   "id": "wc-21994380",
+   "source": "commons",
+   "title": "Joseph Mallord William Turner - Staffa, Fingal's Cave - Google Art Project",
+   "creator": "J. M. W. Turner",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_Staffa,_Fingal%27s_Cave_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Joseph_Mallord_William_Turner_-_Staffa%2C_Fingal%27s_Cave_-_Google_Art_Project.jpg/1920px-Joseph_Mallord_William_Turner_-_Staffa%2C_Fingal%27s_Cave_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Joseph_Mallord_William_Turner_-_Staffa%2C_Fingal%27s_Cave_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1420,
+   "file": "cache/water/cand/wc-21994380.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Turner, Staffa, Fingal's Cave"
+  },
+  {
+   "id": "wc-15413734",
+   "source": "commons",
+   "title": "Elisabeth Jerichau Baumann havfruen",
+   "creator": "Elisabeth Baumann",
+   "license": "CC BY-SA 3.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Elisabeth_Jerichau_Baumann_havfruen.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Elisabeth_Jerichau_Baumann_havfruen.jpg/1920px-Elisabeth_Jerichau_Baumann_havfruen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Elisabeth_Jerichau_Baumann_havfruen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1454,
+   "file": "cache/water/cand/wc-15413734.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Elisabeth Baumann, Elisabeth Jerichau Baumann havfruen"
   }
  ]
 }

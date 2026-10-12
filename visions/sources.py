@@ -123,6 +123,9 @@ def nasa(q, n=12):
     return out
 
 
+# AI images, event photos and the like that Commons file search turns up
+JUNK = re.compile(r"imagen|ai[- ]generated|midjourney|stable diffusion|dall-?e|wikimedia|wikipedia|meetup|"
+                  r"editathon|screenshot|logo|\bmap\b|diagram", re.I)
 OK_LICENSES = ("public domain", "pd", "cc0", "cc by", "cc-by")
 
 
@@ -142,6 +145,8 @@ def commons(q, n=12):
         lic = (md.get("LicenseShortName") or {}).get("value", "")
         low = lic.lower()
         if not low.startswith(OK_LICENSES) or "nc" in low.split("-") or "nd" in low.split("-"):
+            continue
+        if JUNK.search(p["title"]):
             continue
         artist = html.unescape(re.sub(r"<[^>]+>", "", (md.get("Artist") or {}).get("value", ""))).strip()
         title = p["title"].removeprefix("File:").rsplit(".", 1)[0]
