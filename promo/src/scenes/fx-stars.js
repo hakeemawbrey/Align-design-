@@ -68,7 +68,7 @@ const PROFILES = [
   { // S6 · amber space deck / "every night a new deck" / "you ▣ align"
     a: 17.5, b: 22.6, fin: 0.5, fout: 0.3, seed: 67, sprites: 20, dots: 60, px: [3, 4], drift: [-12, -3], edge: true,
     pal: [BONE, BONE, GOLD, VIOLET, ROSE], centre: HOT, dot: '255,247,236', alpha: 0.95,
-    keep: H > W ? [[50, 170, 980, 1560], [50, 215, 390, 95]] : [[240, 150, 1640, 780]],   // vertical: deck column + words · moon clock
+    keep: H > W ? [[50, 170, 980, 1560], [690, 215, 340, 95]] : [[240, 150, 1640, 780]],   // vertical: deck column + words · moon clock (top-right in S6)
   },
   { // S7 · aurora space, tagline (+ people constellation 22.66–24.45) → match phone + caption A → chat phone + caption B
     a: 22.5, b: 26.94, fin: 0.5, fout: 0.01, seed: 79, sprites: 16, dots: 50, px: [3, 4], drift: [8, -6], edge: true,

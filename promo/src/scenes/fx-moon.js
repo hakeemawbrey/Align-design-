@@ -1,5 +1,5 @@
 import { clamp, lerp, prog, ease, rng } from '../lib.js'
-import { VERT } from './common.js'
+import { VERT, W } from './common.js'
 
 // ───────────────────────────────────────────── moon motif (shared renderer + the global "moon clock")
 // Phase convention everywhere in this file: p = fraction of the lunar month, 0..1
@@ -18,7 +18,8 @@ import { VERT } from './common.js'
 //   S6   in 19.55 · tick 19.65–20.35 (lit 75% → 93%, waxing gibbous)            · out 23.55–23.80
 //   S7   in 25.80 · tick 25.90–26.60 (lit 96% → 100%, FULL MOON; bloom peaks 26.60) · out 27.75–28.00
 // Position: top-left (glyph centre 92,86; label to its right, ≤ x 420, ≤ y 120) in every scene — a keep-out
-// for anything else in those scenes. Vertical cut: glyph centre 100,262 (label ≤ x 420, y ≈ 236–284).
+// for anything else in those scenes. Vertical cut: glyph centre 100,262 (label ≤ x 420, y ≈ 236–284);
+// in S6 it sits top-right instead (glyph 980,262, label right-aligned, x ≈ 740–958).
 
 export const litOf = (p) => (1 - Math.cos(2 * Math.PI * p)) / 2
 const frac = (p) => ((p % 1) + 1) % 1
@@ -205,12 +206,12 @@ const TICK = 0.7
 const CLOCK = [
   { a: 3.95, b: 6.15, p0: 0.08, p1: 0.12 },              // S2
   { a: 11.75, b: 15.45, p0: 0.152, p1: 0.25 },           // S4
-  { a: 19.55, b: 23.8, p0: 0.333, p1: 0.415 },           // S6
+  { a: 19.55, b: 23.8, p0: 0.333, p1: 0.415, vRight: true },   // S6 (vertical: top-right — the card trail recedes top-left, 'come' sits top-centre)
   { a: 25.8, b: 28.0, p0: 0.44, p1: 0.5, full: true },   // S7 match payoff
 ]
 // vertical (9:16): same top-left corner but pushed down below the platform overlays (top ~200px) —
 //   glyph centre 100,262; label to its right ≤ x 420, y ≈ 236–284 (scene keep-out in the tall frame)
-const GX = VERT ? 100 : 92, GY = VERT ? 262 : 86, GR = 20
+const GX0 = VERT ? 100 : 92, GY = VERT ? 262 : 86, GR = 20
 export function fxMoonClock(ctx, t) {
   const c = CLOCK.find(s => t >= s.a && t < s.b)
   if (!c) return
@@ -220,22 +221,25 @@ export function fxMoonClock(ctx, t) {
   const p = lerp(c.p0, c.p1, tk) + 0.004 * Math.max(0, t - c.a - 0.1 - TICK) * (c.full ? 0 : 1)   // keeps creeping
   const bloom = c.full ? Math.exp(-(((t - (c.a + 0.1 + TICK)) / 0.35) ** 2)) : 0
   const y = GY + (1 - ease.outCubic(prog(t, c.a, c.a + 0.45))) * 8
+  // vertical S6: mirrored to the top-right corner (glyph at x 980, label right-aligned to its left, ≥ x 740)
+  const R = VERT && c.vRight, GX = R ? W - 100 : GX0, lx = R ? GX - GR - 18 : GX + GR + 18, pcx = R ? GX - 90 : GX + 90
   ctx.save()
   // soft indigo pocket so the label holds on any background
-  const pg = ctx.createRadialGradient(GX + 90, y, 10, GX + 90, y, 230)
+  const pg = ctx.createRadialGradient(pcx, y, 10, pcx, y, 230)
   pg.addColorStop(0, `rgba(11,6,32,${0.38 * al})`); pg.addColorStop(1, 'rgba(11,6,32,0)')
-  ctx.fillStyle = pg; ctx.fillRect(GX + 90 - 230, y - 230, 460, 460)
+  ctx.fillStyle = pg; ctx.fillRect(pcx - 230, y - 230, 460, 460)
   drawMoonGlyph(ctx, GX, y, GR, p, { alpha: al, lw: 1.6, discAlpha: 0.12, glow: 0.6 + 1.6 * bloom + (c.full ? 0.5 * tk : 0) })
   ctx.globalAlpha = al
   ctx.font = "400 17px 'Space Mono', monospace"
   try { ctx.letterSpacing = '3px' } catch {}
   ctx.textBaseline = 'alphabetic'
+  if (R) ctx.textAlign = 'right'
   ctx.shadowColor = 'rgba(11,6,32,0.8)'; ctx.shadowBlur = 10
   ctx.fillStyle = 'rgba(239,230,214,0.9)'
-  ctx.fillText(phaseName(p), GX + GR + 18, y - 3)
+  ctx.fillText(phaseName(p), lx, y - 3)
   ctx.font = "400 14px 'Space Mono', monospace"
   ctx.fillStyle = 'rgba(239,230,214,0.55)'
-  ctx.fillText(`${Math.round(litOf(p) * 100)}% LIT`, GX + GR + 18, y + 18)
+  ctx.fillText(`${Math.round(litOf(p) * 100)}% LIT`, lx, y + 18)
   try { ctx.letterSpacing = '0px' } catch {}
   ctx.restore()
 }
