@@ -1,5 +1,6 @@
 import confetti from 'canvas-confetti'
-import type { Element } from '../../data/signs'
+import { SIGNS, type Element, type SignId } from '../../data/signs'
+import { moonTonight } from '../../data/moon'
 import type { Profile } from '../../data/profiles'
 
 /** Layout constants shared by Dealing + Deck so the hand-off is seamless. */
@@ -17,6 +18,24 @@ export const ELEMENT_SKY: Record<Element, string> = {
   earth: '#3f5e1f',
   air: '#3e2384',
   water: '#16397a',
+}
+
+/** readable ink for the sky line, per element */
+export const ELEMENT_INK: Record<Element, string> = {
+  fire: '#ffb48a',
+  earth: '#c9e69a',
+  air: '#c9b6f0',
+  water: '#9ec8ff',
+}
+
+/** a Moon sign that stands for each element when the sky is forced */
+const STAND_IN: Record<Element, SignId> = { fire: 'leo', earth: 'taurus', air: 'libra', water: 'cancer' }
+
+/** tonight's sky mood: the element of the Moon's sign (real, or forced), and the line under the deck title */
+export function skyMood(force?: Element): { sign: SignId; element: Element; line: string } {
+  const sign = force ? STAND_IN[force] : moonTonight().sign
+  const element = SIGNS[sign].element
+  return { sign, element, line: `Tonight · Moon in ${SIGNS[sign].name} · ${element} sky` }
 }
 
 export const PRONOUN: Record<string, { cap: string; poss: string; Poss: string; subj: string }> = {

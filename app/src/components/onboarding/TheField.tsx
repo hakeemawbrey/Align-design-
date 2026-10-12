@@ -9,7 +9,7 @@ const CW = 110
 const CH = 170
 
 /** O-13b — "You are not arriving alone." The deck waiting for you, and a count. */
-export default function TheField({ next }: { next: () => void }) {
+export default function TheField({ next, elsewhere }: { next: () => void; elsewhere?: () => void }) {
   const [n, setN] = useState(0)
   useEffect(() => {
     const c = animate(0, 333, {
@@ -49,6 +49,12 @@ export default function TheField({ next }: { next: () => void }) {
       </motion.div>
       <Cta onClick={next} delay={1.9}>Show me who is out there</Cta>
       <Caption delay={2.1}>Fifteen cards land tonight.</Caption>
+      {elsewhere && (
+        <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.3 }} onClick={() => { sfx.tap(); elsewhere() }}
+          style={{ position: 'absolute', top: 746, left: 0, right: 0, margin: '0 auto', width: 180, height: 30, fontSize: 13, color: 'var(--label-3)', textDecoration: 'underline', textUnderlineOffset: 3, zIndex: 20 }}>
+          Not near Houston?
+        </motion.button>
+      )}
     </div>
   )
 }

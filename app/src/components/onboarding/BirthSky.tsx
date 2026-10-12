@@ -41,7 +41,7 @@ const T_DONE = T_LINES + LINE_GAP * 3
 export default function BirthSky({ birth, time = '5:00 PM', city = 'Tulsa', next, primaryRef }: { birth: BirthDate; time?: string; city?: string; next: () => void; primaryRef: React.MutableRefObject<(() => void) | null> }) {
   const sign = SIGNS[sunSign(birth)]
   const moon = SIGNS[ME.moon]
-  const glow = ART_GLOW[sign.id] ?? sign.color
+  const glow = ART_GLOW[sign.id]
   const [placed, setPlaced] = useState(0)
   const [center, setCenter] = useState(false)
   const [lines, setLines] = useState(0)

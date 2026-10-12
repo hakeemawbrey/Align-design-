@@ -91,10 +91,13 @@ interface HeaderProps {
   onSaved?: () => void
   /** energy for event cards, shown in the sky pill */
   energy?: number
+  /** small mono line over the title, e.g. tonight's Moon and sky */
+  eyebrow?: string
+  eyebrowColor?: string
 }
 
 /** "Tonight's deck" header row + Today's Sky pill (S-05). */
-export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, onNotifs, saved = 0, onSaved, energy }: HeaderProps) {
+export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSky, onNotifs, saved = 0, onSaved, energy, eyebrow, eyebrowColor }: HeaderProps) {
   const skyDrawn = useTalk().skyDays.includes(todayKey())
   return (
     <motion.div
@@ -102,6 +105,12 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
       transition={{ duration: 0.3 }}
       style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 150, zIndex: 20, pointerEvents: hidden ? 'none' : 'auto' }}
     >
+      {eyebrow && (
+        <motion.div className="mono" initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }}
+          style={{ position: 'absolute', left: 24, top: 54, fontSize: 8.5, letterSpacing: '0.18em', textTransform: 'uppercase', whiteSpace: 'nowrap', color: eyebrowColor ?? 'var(--label-3)' }}>
+          {eyebrow}
+        </motion.div>
+      )}
       <div style={{ position: 'absolute', left: 24, top: 64, height: 44, width: 300 }}>
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.div key={title} className="h-display"

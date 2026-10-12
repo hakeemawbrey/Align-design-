@@ -6,7 +6,7 @@ import { sfx } from '../lib/sfx'
 import { session } from '../lib/session'
 import { ME } from '../data/profiles'
 import { BackChevron, Progress } from '../components/onboarding/shared'
-import { DEFAULT_BIRTH, ageOn, sunSign, type BirthDate as BD } from '../components/onboarding/zodiac'
+import { DEFAULT_BIRTH, SIGN_SKY, ageOn, sunSign, type BirthDate as BD } from '../components/onboarding/zodiac'
 import { DEALBREAKERS, DEFAULT_DEALBREAKERS, DEFAULT_TIME, risingFor, timeLabel, cityOf, type BirthTime as BT } from '../components/onboarding/readings'
 import Arrival from '../components/onboarding/Arrival'
 import BirthDate from '../components/onboarding/BirthDate'
@@ -25,11 +25,11 @@ import FaceLast from '../components/onboarding/FaceLast'
 import TheField from '../components/onboarding/TheField'
 import Resume from '../components/onboarding/Resume'
 
-const STEPS = [
+export const STEPS = [
   'arrival', 'birth', 'time', 'sky', 'reveal', 'manual', 'three', 'check',
   'venus', 'element', 'rule', 'deal', 'photos', 'field',
 ] as const
-type Step = typeof STEPS[number]
+export type Step = typeof STEPS[number]
 /** off-path screens: the 18+ gate and the "saved your place" welcome-back */
 type Aside = 'age' | 'resume' | null
 
@@ -55,12 +55,23 @@ const DEFAULT_PICKS: Pick[] = DEALBREAKERS.filter((d) => DEFAULT_DEALBREAKERS.in
 
 /** O-02 → O-13: new-user onboarding, one screen with internal steps. */
 export default function Onboarding({ go }: ScreenProps) {
+  return <OnboardingFlow go={go} />
+}
+
+/**
+ * The flow itself. Pages open it part-way (x/reveal/leo, x/no-birth-time):
+ * `start` is the step to open on, `exit` is where back goes from there.
+ */
+export function OnboardingFlow({ go, start, initialBirth, initialTime, exit }: ScreenProps & {
+  start?: Step; initialBirth?: BD; initialTime?: BT; exit?: () => void
+}) {
   const saved = session.get().obStep
-  const [i, setI] = useState(0)
-  const [aside, setAside] = useState<Aside>(saved >= 2 && saved < STEPS.length ? 'resume' : null)
+  const first = start ? STEPS.indexOf(start) : 0
+  const [i, setI] = useState(first)
+  const [aside, setAside] = useState<Aside>(!start && saved >= 2 && saved < STEPS.length ? 'resume' : null)
   const [dir, setDir] = useState(1)
-  const [birth, setBirth] = useState<BD>(DEFAULT_BIRTH)
-  const [time, setTime] = useState<BT>(DEFAULT_TIME)
+  const [birth, setBirth] = useState<BD>(initialBirth ?? DEFAULT_BIRTH)
+  const [time, setTime] = useState<BT>(initialTime ?? DEFAULT_TIME)
   const [picks, setPicks] = useState<Pick[]>(DEFAULT_PICKS)
   /** editing a fact from the chart check: the next Continue goes straight back to it */
   const [fixing, setFixing] = useState(false)
@@ -75,7 +86,7 @@ export default function Onboarding({ go }: ScreenProps) {
   const rising = risingFor(sun, time)
 
   // remember where the presenter left off, for the "saved your place" screen
-  useEffect(() => { if (!aside) session.patch({ obStep: i }) }, [i, aside])
+  useEffect(() => { if (!aside && !start) session.patch({ obStep: i }) }, [i, aside, start])
 
   const to = useCallback((n: number) => {
     const now = performance.now()
@@ -97,9 +108,10 @@ export default function Onboarding({ go }: ScreenProps) {
   const back = useCallback(() => {
     sfx.tap()
     if (aside === 'age') { setDir(-1); setAside(null); return }
-    if (aside === 'resume' || i === 0) go('welcome')
+    if (exit && i === first) exit()
+    else if (aside === 'resume' || i === 0) go('welcome')
     else to(i - 1)
-  }, [i, go, to, aside])
+  }, [i, go, to, aside, exit, first])
 
   const resume = useCallback(() => { sfx.align(); setDir(1); setAside(null); setI(saved) }, [saved])
   const restart = useCallback(() => { setDir(-1); setAside(null); setI(0); session.patch({ obStep: 0 }) }, [])
@@ -131,7 +143,7 @@ export default function Onboarding({ go }: ScreenProps) {
       {/* top sky bloom, tinted per step */}
       <motion.div
         initial={false}
-        animate={{ backgroundColor: SKY[view] }}
+        animate={{ backgroundColor: view === 'sky' || view === 'reveal' ? SIGN_SKY[sun] : SKY[view] }}
         transition={{ duration: 1.2, ease: 'easeInOut' }}
         style={{
           position: 'absolute', left: -60, top: -170, width: 510, height: 400, pointerEvents: 'none', opacity: 0.85,
@@ -172,7 +184,10 @@ export default function Onboarding({ go }: ScreenProps) {
           {view === 'rule' && <CardRule next={next} />}
           {view === 'deal' && <Dealbreakers picked={picks} setPicked={setPicks} next={next} />}
           {view === 'photos' && <FaceLast sun={sun} moon={moon} rising={rising} age={ageOn(birth)} dealbreakers={picks.map((p) => p.card).join('. ') + (picks.length ? '.' : '')} next={next} />}
-          {view === 'field' && <TheField next={next} />}
+          {view === 'field' && <TheField next={next} elsewhere={() => {
+            const c = cityOf(time.place)
+            go(`x/waitlist/${(c === 'Houston' ? 'Tulsa' : c).toLowerCase().replace(/[^a-z]+/g, '-')}`)
+          }} />}
         </motion.div>
       </AnimatePresence>
 

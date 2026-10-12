@@ -10,7 +10,7 @@ import TabBar from '../components/TabBar'
 import { COMETS, PEEKS_PER_NIGHT, PEEKS_PER_WEEK_PLUS, TONIGHT, type Profile } from '../data/profiles'
 import { buildSeq, peopleLeft, EVENTS, FREE_PEOPLE, PEOPLE_PER_DRAW, PLUS_DRAWS, PLUS_PEOPLE, type Slot } from '../data/draws'
 import EventCard from '../components/deck/EventCard'
-import { SIGNS } from '../data/signs'
+import { SIGNS, type Element } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { api as backend, useWorld } from '../api'
 import { SavedSheet } from '../components/deck/SavedEvents'
@@ -20,7 +20,7 @@ import { session, useSession, energize, EVENT_COST } from '../lib/session'
 import ProfileCard, { type PeekState } from '../components/deck/ProfileCard'
 import ExpandSheet from '../components/deck/ExpandSheet'
 import { DeckHeader, Counter, StatusText, StackBacks, SwipeLabels } from '../components/deck/DeckChrome'
-import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, CARD_CY, ELEMENT_SKY, starBurst, resetBurst, pronoun } from '../components/deck/fx'
+import { CARD_W, CARD_H, CARD_SCALE, CARD_TOP, CARD_CY, ELEMENT_SKY, ELEMENT_INK, skyMood, starBurst, resetBurst, pronoun } from '../components/deck/fx'
 
 type Phase = 'idle' | 'charging' | 'open' | 'sealing'
 type Dir = 1 | -1
@@ -225,7 +225,11 @@ interface Pop { id: number; kind: 'align' | 'release' | 'deny'; streak: number }
 /** tonight's deal, minus any sun signs blocked under Align+ */
 const dealt = (): Profile[] => TONIGHT.filter((p) => !session.get().blockedSigns.includes(p.sign))
 
-export default function Deck({ go }: ScreenProps) {
+export default function Deck({ go, sky }: ScreenProps & {
+  /** force tonight's sky element (capture / x/deck-sky/<element>); otherwise the real Moon decides */
+  sky?: Element
+}) {
+  const moon = useMemo(() => skyMood(sky), [sky])
   const [people] = useState(dealt)
   // resume where the presenter left the deck (session survives tab hops; reset on demo restart)
   const [index, setIndex] = useState(() => session.get().deckIndex)
@@ -559,13 +563,13 @@ export default function Deck({ go }: ScreenProps) {
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={null} warm="#5a2a7a" count={70} seed={5} />
-      {/* element sky tint (S-05x) */}
+      {/* sky tint from the element of tonight's Moon sign (S-05x) */}
       <AnimatePresence initial={false}>
-        <motion.div key={sign.element}
+        <motion.div key={moon.element}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.9 }}
           style={{
             position: 'absolute', left: 0, right: 0, top: 0, height: 420, pointerEvents: 'none',
-            background: `linear-gradient(180deg, ${ELEMENT_SKY[sign.element]}cc 0%, ${ELEMENT_SKY[sign.element]}55 22%, transparent 60%)`,
+            background: `linear-gradient(180deg, ${ELEMENT_SKY[moon.element]}cc 0%, ${ELEMENT_SKY[moon.element]}55 22%, transparent 60%)`,
           }} />
       </AnimatePresence>
       <div style={{
@@ -573,7 +577,7 @@ export default function Deck({ go }: ScreenProps) {
         background: `radial-gradient(50% 50% at 50% 50%, ${sign.color}26 0%, transparent 70%)`, transition: 'background 0.8s',
       }} />
 
-      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} energy={energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
+      <DeckHeader onSky={() => go('sky')} onNotifs={() => go('notifications')} energy={energy} saved={savedEvents.length + packs.length} onSaved={() => setSavedOpen(true)} title="Tonight’s deck" eyebrow={moon.line} eyebrowColor={ELEMENT_INK[moon.element]} right={right} rightKey={rightKey} starPulse={starPulse} hidden={peekOpen} />
 
       {/* peek header */}
       <AnimatePresence>

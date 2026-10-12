@@ -36,8 +36,8 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
   birth: BirthDate; next: () => void; skip: () => void; primaryRef: React.MutableRefObject<(() => void) | null>
 }) {
   const sign = SIGNS[sunSign(birth)]
-  const glow = ART_GLOW[sign.id] ?? sign.color
-  const reading = SIGN_READING[sign.id] ?? `${sign.name}. The sky has opinions about you, and most of them are flattering. The rest we will get to over the next few cards.`
+  const glow = ART_GLOW[sign.id]
+  const reading = SIGN_READING[sign.id]
   const [phase, setPhase] = useState<Phase>('charging')
   const [burstKey, setBurstKey] = useState(0)
   const { canvasRef, fire } = useConfetti()
@@ -146,7 +146,7 @@ export default function SignReveal({ birth, next, skip, primaryRef }: {
           <motion.div className="eyebrow" {...rise(0, 8)} style={{ color: 'var(--label-3)' }}>Your sun sign</motion.div>
           <motion.h1 className="h-display" {...rise(0.08)} style={{ marginTop: 8, fontSize: 33 }}>Sun in {sign.name}</motion.h1>
           <motion.p {...rise(0.2)}
-            style={{ margin: '12px auto 0', width: 342, fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
+            style={{ margin: '12px auto 0', width: 342, fontSize: 14.5, lineHeight: 1.45, color: 'var(--label-2)', textWrap: 'pretty' }}>
             {reading}
           </motion.p>
         </div>
