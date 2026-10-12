@@ -36,7 +36,9 @@ export function PageShell({
   aurora?: string | null
   warm?: string | null
 }) {
-  const bottom = (cta ? 92 : 0) + (caption ? 34 : 0) + (footer ? 26 : 0) + 30
+  // matches the Figma frames (874 tall, bottom items lifted 30): CTA top 660, caption ~738, footer ~796
+  const CTA_BOTTOM = 130, CAPTION_BOTTOM = 88, FOOTER_BOTTOM = 40
+  const bottom = cta ? CTA_BOTTOM + 54 + 14 : caption ? CAPTION_BOTTOM + 30 : footer ? FOOTER_BOTTOM + 24 : 30
   const center = align === 'center'
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
@@ -49,6 +51,9 @@ export function PageShell({
       <div className="no-scrollbar" style={{
         position: 'absolute', left: 0, right: 0, top: 104, bottom, overflowY: scroll ? 'auto' : 'hidden', scrollbarWidth: 'none',
         padding: '0 24px 24px', textAlign: center ? 'center' : 'left',
+        // content fades out instead of being cut where it scrolls under the CTA
+        maskImage: scroll ? 'linear-gradient(to bottom, #000 calc(100% - 28px), transparent)' : undefined,
+        WebkitMaskImage: scroll ? 'linear-gradient(to bottom, #000 calc(100% - 28px), transparent)' : undefined,
       }}>
         {eyebrow && <motion.div className="eyebrow" {...rise(0.05, 8)} style={{ color: 'var(--label-3)', letterSpacing: '0.2em' }}>{eyebrow}</motion.div>}
         {title && (
@@ -61,7 +66,7 @@ export function PageShell({
       </div>
       {cta && (
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6, ease: EASE }}
-          style={{ position: 'absolute', left: 38, width: 314, bottom: bottom - 92 + 8, zIndex: 20 }}>
+          style={{ position: 'absolute', left: 38, width: 314, bottom: CTA_BOTTOM, zIndex: 20 }}>
           <motion.button className="chrome-cta" onClick={() => { if (cta.disabled) { sfx.deny(); return } sfx.tap(); cta.onClick() }}
             whileTap={{ scale: 0.97 }} style={{ opacity: cta.disabled ? 0.45 : 1 }}>
             {cta.label} <span className="spark">✦</span>
@@ -70,12 +75,12 @@ export function PageShell({
       )}
       {caption && (
         <motion.button {...rise(0.5, 6)} onClick={caption.onClick ? () => { sfx.tap(); caption.onClick!() } : undefined}
-          style={{ position: 'absolute', left: 0, right: 0, bottom: (footer ? 26 : 0) + 34, textAlign: 'center', fontSize: 13.5, color: caption.onClick ? 'var(--label-2)' : 'var(--label-3)', cursor: caption.onClick ? 'pointer' : 'default' }}>
+          style={{ position: 'absolute', left: 0, right: 0, bottom: CAPTION_BOTTOM, textAlign: 'center', fontSize: 13.5, color: caption.onClick ? 'var(--label-2)' : 'var(--label-3)', cursor: caption.onClick ? 'pointer' : 'default' }}>
           {caption.label}
         </motion.button>
       )}
       {footer && (
-        <div className="mono" style={{ position: 'absolute', left: 0, right: 0, bottom: 34, textAlign: 'center', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)', textTransform: 'uppercase' }}>{footer}</div>
+        <div className="mono" style={{ position: 'absolute', left: 0, right: 0, bottom: FOOTER_BOTTOM, textAlign: 'center', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)', textTransform: 'uppercase' }}>{footer}</div>
       )}
     </div>
   )
@@ -155,7 +160,7 @@ export function TextLink({ children, onClick, style }: { children: ReactNode; on
 export function Toast({ text }: { text: string | null }) {
   return text ? (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-      style={{ position: 'absolute', left: 24, right: 24, bottom: 150, zIndex: 40, padding: '11px 14px', borderRadius: 14, background: 'rgba(30,18,58,0.95)', border: CARD_LINE, fontSize: 13, color: 'var(--label-1)', textAlign: 'center' }}>
+      style={{ position: 'absolute', left: 24, right: 24, bottom: 200, zIndex: 40, padding: '11px 18px', borderRadius: 999, background: 'rgba(30,18,58,0.95)', border: CARD_LINE, fontSize: 13, color: 'var(--label-1)', textAlign: 'center' }}>
       {text}
     </motion.div>
   ) : null
