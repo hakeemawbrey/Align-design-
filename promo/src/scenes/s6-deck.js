@@ -108,7 +108,7 @@ export function sceneDeck(stage) {
   const REV_SHADOW = CARD_SHADOW
 
   const word = (txt) => el('div', { position: 'absolute', fontFamily: SANS, fontSize: '84px', color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.015em', opacity: 0, lineHeight: 1 }, root, txt)
-  const wTop = word('every night'), wBot = word('a new deck'), wYou = word('come'), wAlign = word('align')
+  const wTop = word('every night'), wBot = word('a new deck'), wYou = word('come'), wAlign = word('Align')
   wYou.style.fontSize = '84px'
   wAlign.style.fontFamily = SERIF; wAlign.style.fontStyle = 'italic'; wAlign.style.fontSize = '104px'; wAlign.style.letterSpacing = '0'
 
