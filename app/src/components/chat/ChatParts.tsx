@@ -6,7 +6,14 @@ import { READINGS } from './readings'
 
 /* ───────────────────────── header ───────────────────────── */
 
-export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () => void; onSky?: () => void; onMore?: () => void; photo: string; name: string }) {
+export function ChatHeader({ onBack, onSky, onMore, onWho, photo, name, sub }: {
+  onBack: () => void; onSky?: () => void; onMore?: () => void
+  /** tap on the thumbnail + name (her card); falls back to onSky */
+  onWho?: () => void
+  photo: string; name: string
+  /** small mono line under the name, e.g. MATCHED 2 MINUTES AGO */
+  sub?: string
+}) {
   const who = (
     <>
       <div style={{
@@ -19,7 +26,10 @@ export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () 
         <div style={{ height: 2, width: '80%', borderRadius: 1, background: 'rgba(239,230,214,0.45)', marginLeft: 1 }} />
         <div style={{ height: 2, width: '55%', borderRadius: 1, background: 'rgba(239,230,214,0.25)', marginLeft: 1 }} />
       </div>
-      <span className="serif italic" style={{ fontSize: 23, color: 'var(--label-1)' }}>{name}</span>
+      <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <span className="serif italic" style={{ fontSize: 23, color: 'var(--label-1)', lineHeight: sub ? 1.05 : undefined }}>{name}</span>
+        {sub && <span className="mono" style={{ fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-3)', textTransform: 'uppercase', marginTop: 3 }}>{sub}</span>}
+      </span>
     </>
   )
   const whoStyle: React.CSSProperties = { position: 'absolute', left: 60, top: 10, display: 'flex', alignItems: 'center', gap: 10 }
@@ -35,8 +45,8 @@ export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () 
         <svg width="11" height="18" viewBox="0 0 11 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 1.5 2 9l7.5 7.5" /></svg>
       </motion.button>
 
-      {onSky ? (
-        <motion.button onClick={onSky} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} style={whoStyle}>{who}</motion.button>
+      {onWho || onSky ? (
+        <motion.button onClick={onWho ?? onSky} aria-label={onWho ? `${name}’s card` : undefined} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} style={whoStyle}>{who}</motion.button>
       ) : (
         <div style={whoStyle}>{who}</div>
       )}
@@ -68,13 +78,14 @@ export function ChatHeader({ onBack, onSky, onMore, photo, name }: { onBack: () 
 
 /* ───────────────────────── expiry timer ───────────────────────── */
 
-export function ExpiryBar({ daysLeft = 6, warn = false }: { daysLeft?: number; warn?: boolean }) {
+export function ExpiryBar({ daysLeft = 6, warn = daysLeft <= 2 }: { daysLeft?: number; warn?: boolean }) {
+  if (daysLeft <= 0) return null
   const amber = '#f08a3c'
   const lit = warn ? amber : 'rgba(179,166,196,0.72)'
   return (
     <div style={{ position: 'absolute', top: 130, left: 0, right: 0, textAlign: 'center', zIndex: 5 }}>
       <div className="mono" style={{ fontSize: 10.5, letterSpacing: '0.34em', color: warn ? amber : 'var(--label-2)', textTransform: 'uppercase' }}>
-        Expires in {daysLeft} days
+        Expires in {daysLeft} {daysLeft === 1 ? 'day' : 'days'}
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', gap: 5, marginTop: 9 }}>
         {Array.from({ length: 7 }, (_, i) => {
@@ -208,5 +219,71 @@ export function InlineAlignmentCard({ onOpen }: { onOpen: () => void }) {
         TAP TO READ ›
       </div>
     </motion.button>
+  )
+}
+
+/* ───────────────────────── thread notes (S-09c / e / f / g) ───────────────────────── */
+
+export const AMBER = '#f08a3c'
+const WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven']
+/** 2 → 'two', 9 → '9' */
+export const inWords = (n: number) => WORDS[n] ?? String(n)
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+
+type NoteKind = 'unread' | 'failed' | 'expiring' | 'closed'
+
+/**
+ * The small centred line under the thread: a status for your last message
+ * (sent but unread, not sent) or for the card itself (closing soon, closed).
+ */
+export function ThreadNote({ kind, name, pronoun = 'she', daysLeft = 0, onTap }: {
+  kind: NoteKind
+  name: string
+  pronoun?: 'he' | 'she' | 'they'
+  daysLeft?: number
+  /** failed: retry · closed: what this means */
+  onTap?: () => void
+}) {
+  const they = cap(pronoun)
+  const has = pronoun === 'they' ? 'have' : 'has'
+  const quiet = Math.max(0, 7 - daysLeft)
+  const days = `${inWords(daysLeft)} ${daysLeft === 1 ? 'day' : 'days'}`
+  const copy: Record<NoteKind, { head: React.ReactNode; body: string; color: string }> = {
+    unread: { head: 'SENT · NOT READ YET', body: `${they} ${has} ${days} to answer.`, color: 'var(--label-2)' },
+    failed: {
+      head: (<><svg width="9" height="8" viewBox="0 0 9 8" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" style={{ marginRight: 7, verticalAlign: '-0.5px' }}><path d="M4.5 0.8 8.3 7.3H0.7z" /></svg>NOT SENT · TAP TO RETRY</>),
+      body: 'No connection. Your message is saved.', color: 'var(--rub)',
+    },
+    expiring: {
+      head: `FALLS OFF ALIGNMENT IN ${daysLeft} ${daysLeft === 1 ? 'DAY' : 'DAYS'}`,
+      body: `${cap(inWords(quiet))} quiet days. Say something before the card goes back.`, color: AMBER,
+    },
+    closed: { head: 'THIS CONNECTION CLOSED', body: `${name} let the card go.`, color: 'var(--label-2)' },
+  }
+  const c = copy[kind]
+  const inner = (
+    <>
+      <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', fontWeight: 700, color: c.color }}>{c.head}</div>
+      <div style={{ fontSize: 11.5, color: 'var(--label-3)', marginTop: 5, lineHeight: 1.35 }}>{c.body}</div>
+      {kind === 'closed' && onTap && (
+        <div className="mono" style={{ fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-2)', marginTop: 10 }}>WHAT THIS MEANS ›</div>
+      )}
+    </>
+  )
+  return (
+    <motion.div
+      layout="position"
+      initial={{ opacity: 0, y: 3 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, transition: { duration: 0.15 } }}
+      transition={{ duration: 0.3 }}
+      style={{ textAlign: 'center', padding: '16px 0 4px' }}
+    >
+      {onTap ? (
+        <motion.button whileTap={{ scale: 0.96 }} onClick={onTap} style={{ display: 'block', margin: '0 auto', padding: '4px 12px', minHeight: 38, textAlign: 'center' }}>
+          {inner}
+        </motion.button>
+      ) : inner}
+    </motion.div>
   )
 }

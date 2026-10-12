@@ -4,7 +4,9 @@ import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import ReportSheet from '../components/chat/ReportSheet'
-import { ChatHeader, ExpiryBar, InlineAlignmentCard, Receipt, TypingIndicator } from '../components/chat/ChatParts'
+import { ChatHeader, ExpiryBar, InlineAlignmentCard, Receipt, ThreadNote, TypingIndicator } from '../components/chat/ChatParts'
+import EmptyThread from '../components/chat/EmptyThread'
+import HerCardSheet from '../components/chat/HerCardSheet'
 import { DECK } from '../data/profiles'
 import { sfx } from '../lib/sfx'
 import { session, energize } from '../lib/session'
@@ -65,19 +67,43 @@ function threadFrom(rows: Message[]): Omit<Msg, 'id'>[] {
   return out
 }
 
+/**
+ * Design states of this chat, opened by address (x/chat-state/<state>) for review
+ * and capture. Each one is the same screen under a real condition: a send that
+ * failed, days left on the card, nothing said yet, her card opened.
+ */
+export type ChatDemo = 'unread' | 'failed' | 'expiring' | 'closed' | 'card' | 'empty'
+export const CHAT_DEMOS: ChatDemo[] = ['unread', 'failed', 'expiring', 'closed', 'card', 'empty']
+
+/** days left on Juniper's card (she matched tonight) */
+const DAYS_LEFT = 6
+
+/** Openers for a chat with nothing in it yet (G-10). */
+const OPENERS = ['Being honest first: your playlist made me miss my stop.', 'The cards said we’re dangerous. Verify?']
+
 /** S-09 Chat — the payoff after the match. Messages are saved to the backend. */
 
-export default function Chat({ go }: ScreenProps) {
+export default function Chat({ go, demo }: ScreenProps & { demo?: ChatDemo }) {
   const [report, setReport] = useState(false)
+  const [cardOpen, setCardOpen] = useState(demo === 'card')
+  const daysLeft = demo === 'expiring' ? 2 : demo === 'closed' ? 0 : DAYS_LEFT
+  const closed = daysLeft <= 0
+  /** my messages that didn't reach the server: tap to retry */
+  const [failed, setFailed] = useState<Set<number>>(() => new Set(demo === 'failed' ? [SCRIPT.length] : []))
+  /** nothing said yet: the composer stays tucked away until you choose to write */
+  const [composing, setComposing] = useState(false)
+  const [picked, setPicked] = useState<number | null>(null)
+  const [loaded, setLoaded] = useState(!!demo)
   const [hand, setHand] = useState(false)
   const [handTopic, setHandTopic] = useState<TalkTopic | undefined>(undefined)
   // the scripted intro plays once per demo run; afterwards the thread is just there
-  const [replay] = useState(() => !session.get().chatPlayed)
-  const [msgs, setMsgs] = useState<Msg[]>([])
+  const [replay] = useState(() => !demo && !session.get().chatPlayed)
+  const [msgs, setMsgs] = useState<Msg[]>(() =>
+    demo && demo !== 'empty' ? SCRIPT.map((m, i) => ({ ...m, id: i + 1 })) : [])
   const [typing, setTyping] = useState(false)
-  const [seen, setSeen] = useState(!replay)
+  const [seen, setSeen] = useState(!replay && demo !== 'unread')
   const [draft, setDraft] = useState('')
-  const idRef = useRef(0)
+  const idRef = useRef(demo && demo !== 'empty' ? SCRIPT.length : 0)
   const replyIdx = useRef(0)
   /** messages this screen wrote, so the live feed doesn't show them twice */
   const pending = useRef<string[]>([])
@@ -90,23 +116,57 @@ export default function Chat({ go }: ScreenProps) {
   const show = (m: Omit<Msg, 'id'>) => setMsgs((xs) => [...xs, { ...m, id: ++idRef.current }])
   /** save a message to the backend (works even after you leave the screen) */
   const queue = useRef<Promise<unknown>>(Promise.resolve())
-  const record = (from: 'me' | 'her', text: string) => {
+  /** resolves false when the message didn't make it (offline, server error) */
+  const record = (from: 'me' | 'her', text: string): Promise<boolean> => {
+    // review states don't write to the backend
+    if (demo) return Promise.resolve(true)
     pending.current.push(key(from, text))
     // one at a time, so the saved order matches the order on screen
-    queue.current = queue.current.then(() => api.send(MATCH, from === 'me' ? 'me' : 'them', text))
-      .catch((e) => console.warn('[align] message not saved', e))
+    const sent = queue.current.then(() => {
+      if (typeof navigator !== 'undefined' && navigator.onLine === false) throw new Error('offline')
+      return api.send(MATCH, from === 'me' ? 'me' : 'them', text)
+    }).then(() => true, (e) => {
+      console.warn('[align] message not saved', e)
+      const i = pending.current.indexOf(key(from, text))
+      if (i >= 0) pending.current.splice(i, 1)
+      return false
+    })
+    queue.current = sent
+    return sent
+  }
+  /** a message of mine: shown at once, marked "not sent" if the save fails */
+  const sendMine = (text: string) => {
+    const id = ++idRef.current
+    setMsgs((xs) => [...xs, { from: 'me', text, id }])
+    return record('me', text).then((ok) => {
+      if (!ok) { setFailed((f) => new Set(f).add(id)); sfx.deny() }
+      return ok
+    })
+  }
+  const retry = (id: number) => {
+    const m = msgs.find((x) => x.id === id)
+    if (!m) return
+    sfx.tap()
+    setFailed((f) => { const n = new Set(f); n.delete(id); return n })
+    void record('me', m.text).then((ok) => {
+      if (!ok) { setFailed((f) => new Set(f).add(id)); sfx.deny(); return }
+      sfx.send()
+      setSeen(false)
+    })
   }
   const push = (m: Omit<Msg, 'id'>) => {
+    if (m.from === 'me') { void sendMine(m.text); return }
     show(m)
-    if (m.from !== 'card') record(m.from, m.text)
+    if (m.from !== 'card') void record(m.from, m.text)
   }
 
   // return visits: load the saved thread
   useEffect(() => {
-    if (replay) return
+    if (replay || demo) return
     let off = false
     api.messages(MATCH).then((rows) => {
       if (off) return
+      setLoaded(true)
       const t = threadFrom(rows)
       idRef.current = t.length
       replyIdx.current = Math.max(0, rows.filter((r) => r.from === 'them').length - SCRIPT.filter((m) => m.from === 'her').length)
@@ -116,13 +176,13 @@ export default function Chat({ go }: ScreenProps) {
   }, [replay])
 
   // live: messages written elsewhere (another device, another tab)
-  useEffect(() => api.onMessage(MATCH, (m) => {
+  useEffect(() => demo ? undefined : api.onMessage(MATCH, (m) => {
     const from = m.from === 'me' ? 'me' : 'her'
     const i = pending.current.indexOf(key(from, m.body))
     if (i >= 0) { pending.current.splice(i, 1); return }
     show({ from, text: m.body })
     if (from === 'her') sfx.receive()
-  }), [])
+  }), [demo])
 
   const herTypes = async (text: string, typeMs: number, dead: () => boolean) => {
     setSeen(true)
@@ -144,7 +204,7 @@ export default function Chat({ go }: ScreenProps) {
     if (!scriptSaved.current) {
       scriptSaved.current = true // effects run twice in dev; save once
       session.patch({ chatPlayed: true })
-      SCRIPT.forEach((m) => record(m.from === 'me' ? 'me' : 'her', m.text))
+      SCRIPT.forEach((m) => { void record(m.from === 'me' ? 'me' : 'her', m.text) })
     }
     ;(async () => {
       await wait(650)
@@ -180,18 +240,24 @@ export default function Chat({ go }: ScreenProps) {
     firstScroll.current = false
   }, [msgs, typing, seen])
 
-  const send = async () => {
-    const text = draft.trim()
+  const send = async (said?: string) => {
+    if (closed) return
+    const text = (said ?? draft).trim()
     if (!text) return
     setDraft('')
+    setPicked(null)
+    setComposing(true)
     setSeen(false)
-    push({ from: 'me', text })
     sfx.send()
+    const ok = await sendMine(text)
+    if (!ok || !alive.current) return
     energize(2)
+    // the review states stay as they are: nobody writes back
+    if (demo && demo !== 'empty') return
     const reply = REPLIES[replyIdx.current % REPLIES.length]
     replyIdx.current++
     // her reply is saved right away, so it's there even if you leave before she "types" it
-    record('her', reply)
+    void record('her', reply)
     await wait(900)
     if (!alive.current) return
     setSeen(true)
@@ -210,7 +276,7 @@ export default function Chat({ go }: ScreenProps) {
     const card = cardById(cardId)
     if (!card) return
     window.setTimeout(() => {
-      if (!alive.current) { record('her', answerMsg(cardId, card.sample)); return }
+      if (!alive.current) { void record('her', answerMsg(cardId, card.sample)); return }
       push({ from: 'her', text: answerMsg(cardId, card.sample) })
       sfx.receive()
     }, 3200 + Math.random() * 1500)
@@ -221,7 +287,7 @@ export default function Chat({ go }: ScreenProps) {
     push({ from: 'me', text: placeMsg(id, when) })
     sfx.send()
     window.setTimeout(() => {
-      if (!alive.current) { record('her', rsvpMsg(id, true)); return }
+      if (!alive.current) { void record('her', rsvpMsg(id, true)); return }
       push({ from: 'her', text: rsvpMsg(id, true) })
       sfx.receive()
     }, 2400)
@@ -237,27 +303,42 @@ export default function Chat({ go }: ScreenProps) {
   const bubbles = msgs.filter((m) => m.from !== 'card' && !parseTalk(m.text) && !parsePlace(m.text))
   const last = bubbles[bubbles.length - 1]
   const receiptAfter = last && last.from === 'me' ? last.id : -1
+  const expiring = !closed && daysLeft <= 2
+  const empty = !replay && loaded && msgs.length === 0 && !typing
+  const showComposer = !empty || composing
+  const backTo = () => { sfx.tap(); go(demo ? 'matches' : 'reveal') }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={null} warm={null} count={55} seed={21} />
       <div style={{ position: 'absolute', inset: 0, background: '#150b35', mixBlendMode: 'lighten', pointerEvents: 'none' }} />
 
-      <ChatHeader onBack={() => { sfx.tap(); go('reveal') }} onMore={() => { sfx.tap(); setReport(true) }} onSky={() => { sfx.tap(); go('alignment') }} photo={PHOTO} name={juniper.name} />
-      <ExpiryBar daysLeft={6} />
+      <ChatHeader onBack={backTo} onMore={() => { sfx.tap(); setReport(true) }} onSky={() => { sfx.tap(); go('alignment') }}
+        onWho={() => { sfx.flip(); setCardOpen(true) }} photo={PHOTO} name={juniper.name}
+        sub={empty ? 'Matched 2 minutes ago' : undefined} />
+      {!empty && <ExpiryBar daysLeft={daysLeft} />}
+
+      {empty && !composing && (
+        <EmptyThread sign={juniper.sign} openers={OPENERS} picked={picked}
+          onPick={(i) => { setPicked(i); setDraft(OPENERS[i]) }}
+          onSay={() => { if (picked != null) void send(OPENERS[picked]); else { setComposing(true); window.setTimeout(() => inputRef.current?.focus(), 50) } }}
+          onOwn={() => { setPicked(null); setDraft(''); setComposing(true); window.setTimeout(() => inputRef.current?.focus(), 50) }} />
+      )}
 
       {/* thread */}
       <div
         ref={scroller}
         className="chat-scroll"
         style={{
-          position: 'absolute', top: 166, left: 0, right: 0, bottom: 168, overflowY: 'auto', overflowX: 'hidden',
+          position: 'absolute', top: closed ? 126 : 166, left: 0, right: 0, bottom: 168, overflowY: 'auto', overflowX: 'hidden',
+          display: empty ? 'none' : undefined,
           padding: '8px 24px 14px', scrollbarWidth: 'none',
           WebkitMaskImage: 'linear-gradient(180deg, transparent 0, #000 22px, #000 calc(100% - 10px), transparent 100%)',
           maskImage: 'linear-gradient(180deg, transparent 0, #000 22px, #000 calc(100% - 10px), transparent 100%)',
         }}
       >
         <div style={{ textAlign: 'center', fontSize: 12, color: 'var(--label-3)', padding: '10px 0 14px' }}>Today</div>
+        <div style={{ opacity: closed ? 0.5 : 1 }}>
         <UsToday them={juniper.name} sign={juniper.sign} onPlay={(t) => { setHandTopic(t); setHand(true) }} />
         <AnimatePresence initial={false}>
           {msgs.map((m) => {
@@ -287,12 +368,22 @@ export default function Chat({ go }: ScreenProps) {
             ) : (
               <div key={m.id}>
                 <Bubble msg={m} />
-                <AnimatePresence>{receiptAfter === m.id && <Receipt key="r" seen={seen} />}</AnimatePresence>
+                <AnimatePresence>
+                  {failed.has(m.id)
+                    ? <ThreadNote key="f" kind="failed" name={juniper.name} onTap={() => retry(m.id)} />
+                    : receiptAfter === m.id && !closed && !expiring && (seen
+                      ? <Receipt key="r" seen />
+                      : <ThreadNote key="u" kind="unread" name={juniper.name} daysLeft={daysLeft} />)}
+                </AnimatePresence>
               </div>
             )
           })}
           {typing && <TypingIndicator key="typing" name="Juniper" />}
+          {expiring && msgs.length > 0 && <ThreadNote key="expiring" kind="expiring" name={juniper.name} daysLeft={daysLeft} />}
         </AnimatePresence>
+        </div>
+        {/* outside the dimmed thread so it reads at full strength */}
+        {closed && <ThreadNote kind="closed" name={juniper.name} onTap={() => { sfx.tap(); go(`x/match-expired/${MATCH}`) }} />}
       </div>
 
       {/* composer */}
@@ -300,20 +391,22 @@ export default function Chat({ go }: ScreenProps) {
         onSubmit={(e) => { e.preventDefault(); void send() }}
         onClick={() => inputRef.current?.focus()}
         style={{
+          display: showComposer ? 'flex' : 'none', opacity: closed ? 0.5 : 1, pointerEvents: closed ? 'none' : undefined,
           position: 'absolute', left: 24, right: 24, top: 682, height: 52, borderRadius: 26,
-          display: 'flex', alignItems: 'center', padding: '0 7px 0 7px', gap: 8, zIndex: 6,
+          alignItems: 'center', padding: '0 7px 0 7px', gap: 8, zIndex: 6,
           background: 'rgba(30, 18, 64, 0.85)', border: '1px solid rgba(179,166,196,0.26)',
           backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)', cursor: 'text',
         }}
       >
-        <CardsButton onClick={() => { sfx.tap(); setHand(true) }} />
+        {!closed && <CardsButton onClick={() => { sfx.tap(); setHand(true) }} />}
         <input
           ref={inputRef}
           value={draft}
+          disabled={closed}
           onChange={(e) => setDraft(e.target.value)}
-          placeholder="Say something"
+          placeholder={closed ? 'This channel is closed' : 'Say something'}
           style={{
-            flex: 1, minWidth: 0, background: 'none', border: 0, outline: 'none',
+            flex: 1, minWidth: 0, background: 'none', border: 0, outline: 'none', paddingLeft: closed ? 12 : 0,
             fontFamily: 'var(--sans)', fontSize: 16, color: 'var(--label-1)', caretColor: 'var(--align)',
             userSelect: 'text', WebkitUserSelect: 'text',
           }}
@@ -338,6 +431,11 @@ export default function Chat({ go }: ScreenProps) {
 
       <AnimatePresence>
         {hand && <HandSheet onBinder={() => binderNav.open(go, 'chat')} them={juniper.name} onPlace={playPlace} onPlay={playCard} onClose={() => { setHand(false); setHandTopic(undefined) }} startTopic={handTopic} onUpgrade={() => go('paywall')} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {cardOpen && (
+          <HerCardSheet key="card" p={juniper} onClose={() => setCardOpen(false)} onAlignment={() => go('alignment')} />
+        )}
       </AnimatePresence>
       <AnimatePresence>
         {report && (

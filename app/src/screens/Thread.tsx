@@ -3,7 +3,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
-import { ChatHeader, TypingIndicator } from '../components/chat/ChatParts'
+import { ChatHeader, ThreadNote, TypingIndicator } from '../components/chat/ChatParts'
+import EmptyThread, { openersFor } from '../components/chat/EmptyThread'
+import HerCardSheet from '../components/chat/HerCardSheet'
 import ReportSheet from '../components/chat/ReportSheet'
 import { SIGNS } from '../data/signs'
 import { api, useWorld, type Message } from '../api'
@@ -11,7 +13,7 @@ import { sfx } from '../lib/sfx'
 import { session, useSession, energize } from '../lib/session'
 import { Bubble, type Msg } from './Chat'
 import { ME, type Profile } from '../data/profiles'
-import { MATCHES, STARTER_CHATS } from '../data/matches'
+import { MATCHES, STARTER_CHATS, daysLeft } from '../data/matches'
 import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
@@ -53,6 +55,13 @@ export default function Thread({ go }: ScreenProps) {
   const [hand, setHand] = useState(false)
   const [handTopic, setHandTopic] = useState<TalkTopic | undefined>(undefined)
   const [report, setReport] = useState(false)
+  const [cardOpen, setCardOpen] = useState(false)
+  const [loaded, setLoaded] = useState(false)
+  /** messages that didn't send, shown at the end with "tap to retry" */
+  const [failed, setFailed] = useState<{ id: string; body: string }[]>([])
+  const [composing, setComposing] = useState(false)
+  const [picked, setPicked] = useState<number | null>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   const seen = useRef(new Set<string>())
   const seeding = useRef(false)
   const replyIdx = useRef(0)
@@ -70,10 +79,12 @@ export default function Thread({ go }: ScreenProps) {
     api.messages(threadWith).then(async (ms) => {
       if (off) return
       ms.forEach(add)
+      if (ms.length || !script) setLoaded(true)
       // first time in a seeded chat: the conversation you already had
       if (!ms.length && script && !seeding.current) {
         seeding.current = true
         for (const o of script.opening) add(await api.send(threadWith, o.from, o.text))
+        if (!off) setLoaded(true)
       }
     }).catch((e) => console.warn('[align] could not load messages', e))
     const stop = api.onMessage(threadWith, (m) => { if (m.from === 'them') sfx.receive(); add(m) })
@@ -82,7 +93,7 @@ export default function Thread({ go }: ScreenProps) {
 
   useLayoutEffect(() => {
     scroller.current?.scrollTo({ top: scroller.current.scrollHeight, behavior: 'smooth' })
-  }, [rows])
+  }, [rows, failed])
 
   const post = async (text: string) => {
     if (!threadWith) return
@@ -99,12 +110,14 @@ export default function Thread({ go }: ScreenProps) {
     setTyping(false)
     if (m) { add(m); sfx.receive() }
   }
-  const send = async () => {
-    const text = draft.trim()
+  const send = async (said?: string) => {
+    const text = (said ?? draft).trim()
     if (!text) return
     setDraft('')
+    setPicked(null)
+    setComposing(true)
     sfx.send()
-    try { await post(text) } catch { setDraft(text); return }
+    try { await post(text) } catch { setFailed((f) => [...f, { id: `f${Date.now()}`, body: text }]); return }
     energize(2)
     if (bot) {
       const pool = script?.replies ?? ['Ha, I like that.', 'Tell me more.', 'Ok, you’re fun.', 'When are you free this week?']
@@ -132,6 +145,12 @@ export default function Thread({ go }: ScreenProps) {
     void post(checkinMsg(id)).catch(() => {})
   }
 
+  const retry = async (f: { id: string; body: string }) => {
+    sfx.tap()
+    setFailed((xs) => xs.filter((x) => x.id !== f.id))
+    try { await post(f.body); sfx.send() } catch { setFailed((xs) => [...xs, f]) }
+  }
+
   if (!them) {
     return (
       <div style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center' }}>
@@ -141,14 +160,30 @@ export default function Thread({ go }: ScreenProps) {
     )
   }
   const sign = SIGNS[them.sign]
+  const match = MATCHES.find((m) => m.id === them.id)
+  const left = match ? daysLeft(match) : 7
+  const pronoun = match?.pronoun ?? 'they'
+  const empty = loaded && !rows.length && !failed.length && !typing
+  const openers = openersFor(them.name, them.blurb)
+  const openComposer = () => { setComposing(true); window.setTimeout(() => inputRef.current?.focus(), 50) }
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <Starfield aurora={sign.color} warm={null} count={55} seed={33} />
-      <ChatHeader onBack={() => { sfx.tap(); go('matches') }} onMore={() => { sfx.tap(); setReport(true) }} photo={them.photo ?? sign.auraImg} name={them.name} />
+      <ChatHeader onBack={() => { sfx.tap(); go('matches') }} onMore={() => { sfx.tap(); setReport(true) }}
+        onWho={them.bio ? () => { sfx.flip(); setCardOpen(true) } : undefined}
+        photo={them.photo ?? sign.auraImg} name={them.name} sub={empty ? 'New match' : undefined} />
+
+      {empty && !composing && (
+        <EmptyThread sign={them.sign} openers={openers} picked={picked}
+          onPick={(i) => { setPicked(i); setDraft(openers[i]) }}
+          onSay={() => { if (picked != null) void send(openers[picked]); else openComposer() }}
+          onOwn={() => { setPicked(null); setDraft(''); openComposer() }} />
+      )}
 
       <div ref={scroller} style={{
         position: 'absolute', top: 126, left: 0, right: 0, bottom: 168, overflowY: 'auto', padding: '8px 24px 14px', scrollbarWidth: 'none',
+        display: empty ? 'none' : undefined,
       }}>
         <div style={{ textAlign: 'center', padding: '10px 0 16px' }}>
           <div className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: 'var(--label-3)' }}><span style={{ color: 'var(--align)' }}>✦</span> MUTUAL ALIGN <span style={{ color: 'var(--align)' }}>✦</span></div>
@@ -184,18 +219,23 @@ export default function Thread({ go }: ScreenProps) {
             return <div key={m.id}><Bubble msg={toMsg(m, i)} /></div>
           })}
         </AnimatePresence>
+        {failed.map((f) => (
+          <div key={f.id}>
+            <Bubble msg={{ id: -1, from: 'me', text: f.body }} />
+            <ThreadNote kind="failed" name={them.name} onTap={() => { void retry(f) }} />
+          </div>
+        ))}
         <AnimatePresence>{typing && <TypingIndicator key="typing" name={them.name} />}</AnimatePresence>
-        {!rows.length && (
-          <div style={{ textAlign: 'center', fontSize: 13, color: 'var(--label-3)', marginTop: 30 }}>Say the first thing. Make it specific.</div>
-        )}
+        {left <= 2 && rows.length > 0 && <ThreadNote kind="expiring" name={them.name} pronoun={pronoun} daysLeft={left} />}
       </div>
 
       <form onSubmit={(e) => { e.preventDefault(); void send() }} style={{
+        visibility: empty && !composing ? 'hidden' : undefined,
         position: 'absolute', left: 24, right: 24, top: 682, height: 52, borderRadius: 26, display: 'flex', alignItems: 'center',
         padding: '0 7px 0 7px', gap: 8, zIndex: 6, background: 'rgba(30, 18, 64, 0.85)', border: '1px solid rgba(179,166,196,0.26)',
       }}>
         <CardsButton onClick={() => { sfx.tap(); setHand(true) }} />
-        <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={`Message ${them.name}`} style={{
+        <input ref={inputRef} value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={`Message ${them.name}`} style={{
           flex: 1, minWidth: 0, background: 'none', border: 0, outline: 'none', fontFamily: 'var(--sans)', fontSize: 16, color: 'var(--label-1)', caretColor: 'var(--align)',
         }} />
         <motion.button type="submit" aria-label="Send" whileTap={{ scale: 0.88 }} style={{
@@ -208,6 +248,9 @@ export default function Thread({ go }: ScreenProps) {
 
       <AnimatePresence>
         {hand && <HandSheet onBinder={() => binderNav.open(go, 'thread')} them={them.name} onPlay={(id) => { void playCard(id) }} onPlace={(id, w) => { void playPlace(id, w) }} onClose={() => { setHand(false); setHandTopic(undefined) }} startTopic={handTopic} onUpgrade={() => go('paywall')} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {cardOpen && <HerCardSheet key="card" p={them} pronoun={pronoun} onClose={() => setCardOpen(false)} onAlignment={() => go('alignment')} />}
       </AnimatePresence>
       <AnimatePresence>
         {report && (

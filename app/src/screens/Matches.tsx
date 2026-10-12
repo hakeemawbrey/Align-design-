@@ -15,6 +15,7 @@ import { sfx } from '../lib/sfx'
 import { session, useSession } from '../lib/session'
 import { useWorld } from '../api'
 import { binderNav } from '../lib/binderNav'
+import NoMatches from '../components/chat/NoMatches'
 
 type View = 'list' | 'binder'
 let lastView: View = 'list'
@@ -108,6 +109,18 @@ export default function Matches({ go }: ScreenProps) {
       }, 650)
     }
     window.setTimeout(() => binder.clearJustTraded(), 400)
+  }
+
+  // G-09b: nobody has aligned back yet
+  if (!visible.length) {
+    return (
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+        <Starfield aurora={null} warm={null} count={60} seed={33} />
+        <div className="h-display" style={{ position: 'absolute', left: 24, top: 62, fontSize: 34 }}>Your matches</div>
+        <NoMatches onDeal={() => go('deck')} />
+        <TabBar active="matches" go={go} />
+      </div>
+    )
   }
 
   const summary = `${visible.length} aligned · ${visible.filter((m) => m.section === 'your-turn').length} waiting on you · ${visible.filter((m) => m.section === 'quiet').length} going quiet`

@@ -117,3 +117,9 @@ export const STARTER_CHATS: Record<string, { opening: { from: 'me' | 'them'; tex
     replies: ['Long. Better now.', 'Honestly you’re the best part of it.', 'I’m bad at texting, good at drinks.', 'Let’s do something before this expires.'],
   },
 }
+
+/** A match stays open this many days without a word before the card goes back. */
+export const CARD_DAYS = 7
+
+/** days left before a match's card closes (0 = closed) */
+export const daysLeft = (m: Pick<Match, 'day'>) => Math.max(0, CARD_DAYS - m.day)
