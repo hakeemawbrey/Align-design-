@@ -16,12 +16,6 @@
  },
  "images": [
   {
-   "file": "cache/pisces/cand/ov-6adffb88-c5f1-4363-b84d-d9b6db094a8b.jpg",
-   "focus": [
-    0.33,
-    0.55
-   ],
-   "note": "koi head rising from black water",
    "id": "ov-6adffb88-c5f1-4363-b84d-d9b6db094a8b",
    "source": "openverse/wikimedia",
    "title": "Koi head closeup",
@@ -33,15 +27,16 @@
    "w": 1280,
    "h": 1057,
    "query": "koi",
-   "n": 13
+   "file": "cache/pisces/cand/ov-6adffb88-c5f1-4363-b84d-d9b6db094a8b.jpg",
+   "n": 13,
+   "focus": [
+    0.33,
+    0.55
+   ],
+   "note": "koi head rising from black water",
+   "pin": true
   },
   {
-   "file": "cache/pisces/cand/ov-a5a8add7-f309-448f-894b-42561bbd9791.jpg",
-   "focus": [
-    0.22,
-    0.5
-   ],
-   "note": "white tancho koi on black",
    "id": "ov-a5a8add7-f309-448f-894b-42561bbd9791",
    "source": "openverse/wikimedia",
    "title": "Japan-Koi",
@@ -53,55 +48,16 @@
    "w": 1280,
    "h": 740,
    "query": "koi",
-   "n": 16
-  },
-  {
-   "file": "cache/pisces/cand/ov-c355b04a-b415-47b4-b426-9f3779bff723.jpg",
+   "file": "cache/pisces/cand/ov-a5a8add7-f309-448f-894b-42561bbd9791.jpg",
+   "n": 16,
    "focus": [
-    0.5,
-    0.3
-   ],
-   "note": "angelfish in dark seagrass",
-   "id": "ov-c355b04a-b415-47b4-b426-9f3779bff723",
-   "source": "openverse/wikimedia",
-   "title": "Koi Skalar",
-   "creator": "TrapperFrank",
-   "license": "by 2.5",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=2196800",
-   "url": "https://api.openverse.org/v1/images/c355b04a-b415-47b4-b426-9f3779bff723/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Koi_Skalar.jpg",
-   "w": 1280,
-   "h": 859,
-   "query": "koi",
-   "n": 15
-  },
-  {
-   "file": "cache/pisces/cand/ov-2bd82756-c81c-4aac-8037-9cd501148fe0.jpg",
-   "focus": [
-    0.45,
+    0.22,
     0.5
    ],
-   "note": "lone fish in deep blue light",
-   "id": "ov-2bd82756-c81c-4aac-8037-9cd501148fe0",
-   "source": "openverse/wordpress",
-   "title": "A lone barracuda, a predatory, ray-finned fish known for its fearsome appearance and ferocious behavior, slices through the azure waters at Tiger Beach, Bahamas. Viewed from slightly below, its elongated body and streamlined form are highlighted. The barracuda’s silver scales reflect ambient light as it glides over the rippling ocean floor.",
-   "creator": "Dennis Hipp",
-   "license": "cc0 1.0",
-   "landing": "https://wordpress.org/photos/photo/230667141b/",
-   "url": "https://api.openverse.org/v1/images/2bd82756-c81c-4aac-8037-9cd501148fe0/thumb/?full_size=true",
-   "alt_url": "https://pd.w.org/2024/06/230667141b96deb52.34822219-2048x1536.jpg",
-   "w": 2048,
-   "h": 1536,
-   "query": "underwater light rays",
-   "n": 223
+   "note": "white tancho koi on black",
+   "pin": true
   },
   {
-   "file": "cache/pisces/cand/ov-c6d9f016-0758-4464-aa00-004f92e96e3e.jpg",
-   "focus": [
-    0.5,
-    0.6
-   ],
-   "note": "jellyfish trailing on black",
    "id": "ov-c6d9f016-0758-4464-aa00-004f92e96e3e",
    "source": "openverse/wikimedia",
    "title": "File:Jellyfish with black background.jpg",
@@ -113,15 +69,77 @@
    "w": 1280,
    "h": 2274,
    "query": "jellyfish black background",
-   "n": 215
+   "file": "cache/pisces/cand/ov-c6d9f016-0758-4464-aa00-004f92e96e3e.jpg",
+   "n": 215,
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "note": "jellyfish trailing on black"
   },
   {
-   "file": "cache/pisces/cand/ov-a45d89a1-27bc-43a4-94ed-7965dd9fadd6.jpg",
+   "id": "ov-810015df-0f4e-4feb-8e62-05378a54504a",
+   "source": "openverse/wikimedia",
+   "title": "The Little Mermaid - Painting by Elena Ringo",
+   "creator": "Elena Ringo",
+   "license": "by 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=102912670",
+   "url": "https://api.openverse.org/v1/images/810015df-0f4e-4feb-8e62-05378a54504a/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/The_Little_Mermaid_-_Painting_by_Elena_Ringo.jpg",
+   "w": 1280,
+   "h": 1743,
+   "query": "mermaid painting",
+   "file": "cache/pisces/cand/ov-810015df-0f4e-4feb-8e62-05378a54504a.jpg",
+   "n": 272,
    "focus": [
-    0.3,
-    0.48
+    0.55,
+    0.4
    ],
-   "note": "lion's mane jellyfish, dark fjord",
+   "zoom": 1.2,
+   "note": "Ringo, mermaid on a rock in blue surf",
+   "pin": true
+  },
+  {
+   "id": "met-11192",
+   "source": "met",
+   "title": "Mercy's Dream",
+   "creator": "Daniel Huntington",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11192",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap97.35.jpg",
+   "w": 1873,
+   "h": 2439,
+   "query": "dream",
+   "file": "cache/pisces/cand/met-11192.jpg",
+   "n": 58,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Huntington, angel over dreamer in beam of light"
+  },
+  {
+   "id": "ov-c355b04a-b415-47b4-b426-9f3779bff723",
+   "source": "openverse/wikimedia",
+   "title": "Koi Skalar",
+   "creator": "TrapperFrank",
+   "license": "by 2.5",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=2196800",
+   "url": "https://api.openverse.org/v1/images/c355b04a-b415-47b4-b426-9f3779bff723/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Koi_Skalar.jpg",
+   "w": 1280,
+   "h": 859,
+   "query": "koi",
+   "file": "cache/pisces/cand/ov-c355b04a-b415-47b4-b426-9f3779bff723.jpg",
+   "n": 15,
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "note": "angelfish in dark seagrass",
+   "pin": true
+  },
+  {
    "id": "ov-a45d89a1-27bc-43a4-94ed-7965dd9fadd6",
    "source": "openverse/wikimedia",
    "title": "Lion's mane jellyfish in Gullmarn fjord at Sämstad 3",
@@ -133,15 +151,53 @@
    "w": 1280,
    "h": 848,
    "query": "jellyfish",
-   "n": 47
+   "file": "cache/pisces/cand/ov-a45d89a1-27bc-43a4-94ed-7965dd9fadd6.jpg",
+   "n": 47,
+   "focus": [
+    0.3,
+    0.48
+   ],
+   "note": "lion's mane jellyfish, dark fjord"
   },
   {
-   "file": "cache/pisces/cand/ov-b88a56d6-6c59-4b2a-9778-642aa85d2d7b.jpg",
+   "id": "nasa-8910708",
+   "source": "nasa",
+   "title": "Space Science",
+   "creator": "MSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/8910708",
+   "url": "https://images-assets.nasa.gov/image/8910708/8910708~orig.jpg",
+   "w": 1000,
+   "h": 792,
+   "query": "nereid",
+   "file": "cache/pisces/cand/nasa-8910708.jpg",
+   "n": 176,
    "focus": [
     0.5,
     0.5
    ],
-   "note": "moon jellyfish swarm",
+   "note": "Neptune, Voyager"
+  },
+  {
+   "id": "aic-36848",
+   "source": "aic",
+   "title": "The Great Wave, Sète",
+   "creator": "Gustave Le Gray",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/36848",
+   "url": "https://www.artic.edu/iiif/2/2eb727fe-0e5f-24fc-d07e-463e8cce57d0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1374,
+   "query": "ocean waves",
+   "file": "cache/pisces/cand/aic-36848.jpg",
+   "n": 77,
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "note": "Le Gray, the great wave under silver light"
+  },
+  {
    "id": "ov-b88a56d6-6c59-4b2a-9778-642aa85d2d7b",
    "source": "openverse/wikimedia",
    "title": "Moon jellyfish at Gota Sagher",
@@ -153,130 +209,35 @@
    "w": 1280,
    "h": 960,
    "query": "jellyfish",
-   "n": 49
-  },
-  {
-   "file": "cache/pisces/cand/met-11192.jpg",
+   "file": "cache/pisces/cand/ov-b88a56d6-6c59-4b2a-9778-642aa85d2d7b.jpg",
+   "n": 49,
    "focus": [
     0.5,
     0.5
    ],
-   "note": "Huntington, angel over dreamer in beam of light",
-   "id": "met-11192",
-   "source": "met",
-   "title": "Mercy's Dream",
-   "creator": "Daniel Huntington",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/11192",
-   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap97.35.jpg",
-   "w": 1873,
-   "h": 2439,
-   "query": "dream",
-   "n": 58
+   "note": "moon jellyfish swarm"
   },
   {
-   "file": "cache/pisces/cand/met-437507.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Salvator Rosa, river god visits sleeping Aeneas",
-   "id": "met-437507",
-   "source": "met",
-   "title": "The Dream of Aeneas",
-   "creator": "Salvator Rosa",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/437507",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP160249.jpg",
-   "w": 1602,
-   "h": 2600,
-   "query": "dream",
-   "n": 59
-  },
-  {
-   "file": "cache/pisces/cand/met-437919.jpg",
-   "focus": [
-    0.45,
-    0.4
-   ],
-   "note": "van Dyck, tritons rising from dark water",
-   "id": "met-437919",
-   "source": "met",
-   "title": "Two Tritons at the Feast of Acheloüs",
-   "creator": "Anthony van Dyck",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/437919",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-37653-001.jpg",
-   "w": 1944,
-   "h": 2600,
-   "query": "Triton",
-   "n": 168
-  },
-  {
-   "file": "cache/pisces/cand/aic-36848.jpg",
-   "focus": [
-    0.55,
-    0.4
-   ],
-   "note": "Le Gray, the great wave under silver light",
-   "id": "aic-36848",
-   "source": "aic",
-   "title": "The Great Wave, Sète",
-   "creator": "Gustave Le Gray",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/36848",
-   "url": "https://www.artic.edu/iiif/2/2eb727fe-0e5f-24fc-d07e-463e8cce57d0/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1374,
-   "query": "ocean waves",
-   "n": 77
-  },
-  {
-   "file": "cache/pisces/cand/nasa-8910708.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Neptune, Voyager",
-   "id": "nasa-8910708",
-   "source": "nasa",
-   "title": "Neptune (Voyager 2)",
-   "creator": "MSFC",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/8910708",
-   "url": "https://images-assets.nasa.gov/image/8910708/8910708~orig.jpg",
-   "w": 1000,
-   "h": 792,
-   "query": "nereid",
-   "n": 176
-  },
-  {
-   "file": "cache/pisces/cand/nasa-PIA01536.jpg",
+   "id": "ov-2bd82756-c81c-4aac-8037-9cd501148fe0",
+   "source": "openverse/wordpress",
+   "title": "A lone barracuda, a predatory, ray-finned fish known for its fearsome appearance and ferocious behavior, slices through the azure waters at Tiger Beach, Bahamas. Viewed from slightly below, its elongated body and streamlined form are highlighted. The barracuda’s silver scales reflect ambient light as it glides over the rippling ocean floor.",
+   "creator": "Dennis Hipp",
+   "license": "cc0 1.0",
+   "landing": "https://wordpress.org/photos/photo/230667141b/",
+   "url": "https://api.openverse.org/v1/images/2bd82756-c81c-4aac-8037-9cd501148fe0/thumb/?full_size=true",
+   "alt_url": "https://pd.w.org/2024/06/230667141b96deb52.34822219-2048x1536.jpg",
+   "w": 2048,
+   "h": 1536,
+   "query": "underwater light rays",
+   "file": "cache/pisces/cand/ov-2bd82756-c81c-4aac-8037-9cd501148fe0.jpg",
+   "n": 223,
    "focus": [
     0.45,
     0.5
    ],
-   "note": "Triton, Neptune's moon",
-   "id": "nasa-PIA01536",
-   "source": "nasa",
-   "title": "Detail of Triton Surface",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA01536",
-   "url": "https://images-assets.nasa.gov/image/PIA01536/PIA01536~orig.jpg",
-   "w": 1934,
-   "h": 2292,
-   "query": "Triton",
-   "n": 171
+   "note": "lone fish in deep blue light"
   },
   {
-   "file": "cache/pisces/cand/ov-36232baf-b427-416e-8b66-e8ca3738edab.jpg",
-   "focus": [
-    0.43,
-    0.68
-   ],
-   "zoom": 1.4,
-   "note": "spiral galaxy in the deep",
    "id": "ov-36232baf-b427-416e-8b66-e8ca3738edab",
    "source": "openverse/wikimedia",
    "title": "PGC2456 Potw2309a",
@@ -288,28 +249,53 @@
    "w": 1280,
    "h": 855,
    "query": "jellyfish black background",
-   "n": 214
+   "file": "cache/pisces/cand/ov-36232baf-b427-416e-8b66-e8ca3738edab.jpg",
+   "n": 214,
+   "focus": [
+    0.43,
+    0.68
+   ],
+   "zoom": 1.4,
+   "note": "spiral galaxy in the deep"
   },
   {
-   "file": "cache/pisces/cand/ov-6125a2e5-fec5-42e9-b4c3-e2fc0f4a5ecd.jpg",
+   "id": "ov-634b8b51-ffb8-446a-aa9e-71425c679d59",
+   "source": "openverse/wikimedia",
+   "title": "File:Flower Hat Jellyfish 1.jpg",
+   "creator": "Fred Hsu (Wikipedia:User:Fredhsu on en.wikipedia)",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=1557115",
+   "url": "https://api.openverse.org/v1/images/634b8b51-ffb8-446a-aa9e-71425c679d59/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Flower_Hat_Jellyfish_1.jpg",
+   "w": 1280,
+   "h": 960,
+   "query": "jellyfish",
+   "file": "cache/pisces/cand/ov-634b8b51-ffb8-446a-aa9e-71425c679d59.jpg",
+   "n": 54,
    "focus": [
-    0.5,
+    0.75,
+    0.4
+   ],
+   "note": "flower hat jellyfish glowing on black"
+  },
+  {
+   "id": "met-11981",
+   "source": "met",
+   "title": "The Toilers of the Sea",
+   "creator": "Albert Pinkham Ryder",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11981",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT228023.jpg",
+   "w": 2600,
+   "h": 2460,
+   "query": "moonlit sea",
+   "file": "cache/pisces/cand/met-11981.jpg",
+   "n": 94,
+   "focus": [
+    0.4,
     0.45
    ],
-   "zoom": 1.3,
-   "note": "Bastien-Lepage, Ophelia",
-   "id": "ov-6125a2e5-fec5-42e9-b4c3-e2fc0f4a5ecd",
-   "source": "openverse/wikimedia",
-   "title": "Ophelia",
-   "creator": "Jules Bastien-Lepage",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=15690389",
-   "url": "https://api.openverse.org/v1/images/6125a2e5-fec5-42e9-b4c3-e2fc0f4a5ecd/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Jules_Bastien-Lepage-Oph%C3%A9lie-Mus%C3%A9e_des_beaux-arts_de_Nancy.jpg",
-   "w": 1280,
-   "h": 1210,
-   "query": "Ophelia",
-   "n": 68
+   "note": "Ryder, Toilers of the Sea, boat under the moon"
   }
  ]
 }

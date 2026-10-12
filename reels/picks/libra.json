@@ -12,75 +12,11 @@
   "title": "Urania's Mirror: Libra (1824)",
   "creator": "Sidney Hall",
   "license": "public domain",
-  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Libra.jpg"
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Libra.jpg",
+  "color": 1.0
  },
  "images": [
   {
-   "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e000637.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Twin Jet nebula, balanced wings",
-   "id": "nasa-GSFC_20171208_Archive_e000637",
-   "source": "nasa",
-   "title": "Hubble Sees the Wings of a Butterfly: The Twin Jet Nebula",
-   "creator": "GSFC",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000637",
-   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000637/GSFC_20171208_Archive_e000637~orig.jpg",
-   "w": 1280,
-   "h": 1070,
-   "query": "Butterfly Nebula",
-   "n": 217
-  },
-  {
-   "file": "cache/libra/cand/ov-4617b9ff-4840-49ca-b942-08a06e5f1145.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Canova, Three Graces in marble",
-   "id": "ov-4617b9ff-4840-49ca-b942-08a06e5f1145",
-   "source": "openverse/wikimedia",
-   "title": "The Three Graces",
-   "creator": "Antonio Canova",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=369826",
-   "url": "https://api.openverse.org/v1/images/4617b9ff-4840-49ca-b942-08a06e5f1145/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Le_tre_Grazie.jpg",
-   "w": 1280,
-   "h": 1876,
-   "query": "Three Graces",
-   "n": 44
-  },
-  {
-   "file": "cache/libra/cand/met-436722.jpg",
-   "focus": [
-    0.45,
-    0.58
-   ],
-   "zoom": 1.2,
-   "note": "Isenbrant, man holding a balance",
-   "id": "met-436722",
-   "source": "met",
-   "title": "Man Weighing Gold",
-   "creator": "Adriaen Isenbrant",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436722",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-017.jpg",
-   "w": 1610,
-   "h": 2600,
-   "query": "scales balance",
-   "n": 1
-  },
-  {
-   "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e001859.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "half moon, light and dark in balance",
    "id": "nasa-GSFC_20171208_Archive_e001859",
    "source": "nasa",
    "title": "Third Quarter",
@@ -91,16 +27,37 @@
    "w": 2400,
    "h": 2400,
    "query": "Libra constellation",
-   "n": 111
-  },
-  {
-   "file": "cache/libra/cand/ov-3dc8a8ab-7055-4c2b-bc91-047634cf8073.jpg",
+   "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e001859.jpg",
+   "n": 111,
    "focus": [
     0.5,
-    0.45
+    0.5
    ],
-   "zoom": 1.15,
-   "note": "Canova, Cupid and Psyche embrace",
+   "note": "half moon, light and dark in balance"
+  },
+  {
+   "id": "ov-b44d6894-08ee-482b-925d-faaa2a53595a",
+   "source": "openverse/wikimedia",
+   "title": "Close-up of Lady Justice statue holding scales, symbolizing justice and fairness",
+   "creator": "DP Singh Bhullar",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=196973578",
+   "url": "https://api.openverse.org/v1/images/b44d6894-08ee-482b-925d-faaa2a53595a/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Close-up_of_Lady_Justice_statue_holding_scales%2C_symbolizing_justice_and_fairness.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 2600,
+   "h": 1734,
+   "query": "Lady Justice statue",
+   "file": "cache/libra/cand/ov-b44d6894-08ee-482b-925d-faaa2a53595a.jpg",
+   "n": 306,
+   "focus": [
+    0.45,
+    0.42
+   ],
+   "zoom": 1.6,
+   "note": "bronze Lady Justice, blindfold and raised scales",
+   "pin": true
+  },
+  {
    "id": "ov-3dc8a8ab-7055-4c2b-bc91-047634cf8073",
    "source": "openverse/wikimedia",
    "title": "Metropolitan canova cupid psyche 02",
@@ -112,35 +69,58 @@
    "w": 1280,
    "h": 1447,
    "query": "Canova Cupid Psyche",
-   "n": 228
+   "file": "cache/libra/cand/ov-3dc8a8ab-7055-4c2b-bc91-047634cf8073.jpg",
+   "n": 228,
+   "focus": [
+    0.5,
+    0.57
+   ],
+   "zoom": 1.35,
+   "note": "Canova, Cupid and Psyche embrace",
+   "pin": true
   },
   {
-   "file": "cache/libra/cand/nasa-PIA10391.jpg",
+   "id": "met-436722",
+   "source": "met",
+   "title": "Man Weighing Gold",
+   "creator": "Adriaen Isenbrant",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436722",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-017.jpg",
+   "w": 1610,
+   "h": 2600,
+   "query": "scales balance",
+   "file": "cache/libra/cand/met-436722.jpg",
+   "n": 1,
    "focus": [
     0.45,
-    0.5
+    0.58
    ],
-   "note": "spiral galaxy and its companion",
-   "id": "nasa-PIA10391",
-   "source": "nasa",
-   "title": "Interacting Galaxies",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA10391",
-   "url": "https://images-assets.nasa.gov/image/PIA10391/PIA10391~orig.jpg",
-   "w": 2371,
-   "h": 2371,
-   "query": "interacting galaxies",
-   "n": 159
+   "zoom": 1.2,
+   "note": "Isenbrant, man holding a balance",
+   "pin": true
   },
   {
-   "file": "cache/libra/cand/met-438378.jpg",
+   "id": "ov-4617b9ff-4840-49ca-b942-08a06e5f1145",
+   "source": "openverse/wikimedia",
+   "title": "The Three Graces label QS:Les,'Las tres Gracias' label QS:Lhu,'Három Gráciája' label QS:Laf,'Grasieë' label QS:Lde,'Die drei Grazien' label QS:Lpt,'As três Graças' label QS:Lbe,'Тры грацыі' label QS:Lmk,'Трите Грации' label QS:Lzh,'又有美惠三女神' label QS:Lda,'De tre gratier' label QS:Lro,'Cele trei Grații' label QS:Lja,'三美神' label QS:Laz,'Üç Qrasiya' label QS:Lel,'Οι τρεις χάριτες' label QS:Lsv,'De tre gracerna' label QS:Lpl,'Trzy Gracje' label QS:Luk,'Три грації' label QS:Lnl,'De drie Gratiën' label QS:Lit,'Tre Grazie' label QS:Lfr,'Les trois Grâces' label QS:Lla,'Gratiae' label QS:Lru,'Три грации' label QS:Len,'The Three Graces' label QS:Lbr,'An Teir Fulenn' label QS:Lcs,'Tři grácie' label QS:Lca,'Les tres Gràcies'",
+   "creator": "Antonio Canova",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=369826",
+   "url": "https://api.openverse.org/v1/images/4617b9ff-4840-49ca-b942-08a06e5f1145/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Le_tre_Grazie.jpg",
+   "w": 1280,
+   "h": 1876,
+   "query": "Three Graces",
+   "file": "cache/libra/cand/ov-4617b9ff-4840-49ca-b942-08a06e5f1145.jpg",
+   "n": 44,
    "focus": [
-    0.35,
-    0.62
+    0.5,
+    0.4
    ],
-   "zoom": 1.25,
-   "note": "de Keyser, woman with a balance",
+   "note": "Canova, Three Graces in marble"
+  },
+  {
    "id": "met-438378",
    "source": "met",
    "title": "Portrait of a Woman with a Balance",
@@ -151,34 +131,74 @@
    "w": 1967,
    "h": 2600,
    "query": "scales balance",
-   "n": 0
+   "file": "cache/libra/cand/met-438378.jpg",
+   "n": 0,
+   "focus": [
+    0.35,
+    0.72
+   ],
+   "zoom": 1.25,
+   "note": "de Keyser, woman with a balance",
+   "pin": true
   },
   {
-   "file": "cache/libra/cand/nasa-PIA23121.jpg",
+   "id": "aic-12876",
+   "source": "aic",
+   "title": "Diana and Endymion",
+   "creator": "Johann Michael Rottmayr (Austrian, 1654–1730)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/12876",
+   "url": "https://www.artic.edu/iiif/2/ab49fdd2-5acc-981e-f11e-c631bbd5487f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1083,
+   "query": "Saint Michael weighing souls",
+   "file": "cache/libra/cand/aic-12876.jpg",
+   "n": 123,
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Rottmayr, Diana embracing the sleeping Endymion"
+  },
+  {
+   "id": "nasa-GSFC_20171208_Archive_e000637",
+   "source": "nasa",
+   "title": "Hubble Sees the Wings of a Butterfly: The Twin Jet Nebula",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000637",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000637/GSFC_20171208_Archive_e000637~orig.jpg",
+   "w": 1280,
+   "h": 1070,
+   "query": "Butterfly Nebula",
+   "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e000637.jpg",
+   "n": 217,
    "focus": [
     0.5,
     0.5
    ],
-   "note": "pink and violet nebula",
-   "id": "nasa-PIA23121",
-   "source": "nasa",
-   "title": "Space Butterfly",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA23121",
-   "url": "https://images-assets.nasa.gov/image/PIA23121/PIA23121~orig.jpg",
-   "w": 2600,
-   "h": 1696,
-   "query": "Butterfly Nebula",
-   "n": 219
+   "note": "Twin Jet nebula, balanced wings"
   },
   {
-   "file": "cache/libra/cand/aic-59847.jpg",
+   "id": "met-436836",
+   "source": "met",
+   "title": "Allegory of Music",
+   "creator": "Laurent de La Hyre",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436836",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT1387.jpg",
+   "w": 2600,
+   "h": 1916,
+   "query": "harmony music",
+   "file": "cache/libra/cand/met-436836.jpg",
+   "n": 88,
    "focus": [
-    0.45,
-    0.45
+    0.4,
+    0.4
    ],
-   "note": "Manfredi, Venus and Mars chastise Cupid",
+   "note": "La Hyre, Allegory of Music, harmony with the lute"
+  },
+  {
    "id": "aic-59847",
    "source": "aic",
    "title": "Cupid Chastised",
@@ -189,53 +209,15 @@
    "w": 1686,
    "h": 2361,
    "query": "Venus Aphrodite",
-   "n": 19
-  },
-  {
-   "file": "cache/libra/cand/nasa-PIA10389.jpg",
+   "file": "cache/libra/cand/aic-59847.jpg",
+   "n": 19,
    "focus": [
-    0.5,
+    0.45,
     0.45
    ],
-   "note": "galaxy pair",
-   "id": "nasa-PIA10389",
-   "source": "nasa",
-   "title": "AM 1316-241",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA10389",
-   "url": "https://images-assets.nasa.gov/image/PIA10389/PIA10389~orig.jpg",
-   "w": 1660,
-   "h": 1660,
-   "query": "interacting galaxies",
-   "n": 161
+   "note": "Manfredi, Venus and Mars chastise Cupid"
   },
   {
-   "file": "cache/libra/cand/aic-226550.jpg",
-   "focus": [
-    0.6,
-    0.35
-   ],
-   "note": "Blondel, Venus descends in light",
-   "id": "aic-226550",
-   "source": "aic",
-   "title": "Venus Healing Aeneas",
-   "creator": "Merry Joseph Blondel (French, 1781–1853)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/226550",
-   "url": "https://www.artic.edu/iiif/2/59511df1-03d0-aea4-369a-959669ccfe51/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 2128,
-   "query": "Venus Aphrodite",
-   "n": 22
-  },
-  {
-   "file": "cache/libra/cand/aic-44816.jpg",
-   "focus": [
-    0.72,
-    0.45
-   ],
-   "note": "Cambiaso, Venus and Cupid in candlelight",
    "id": "aic-44816",
    "source": "aic",
    "title": "Venus and Cupid",
@@ -246,15 +228,53 @@
    "w": 1686,
    "h": 1921,
    "query": "Birth of Venus",
-   "n": 17
+   "file": "cache/libra/cand/aic-44816.jpg",
+   "n": 17,
+   "focus": [
+    0.72,
+    0.45
+   ],
+   "note": "Cambiaso, Venus and Cupid in candlelight"
   },
   {
-   "file": "cache/libra/cand/ov-3fb57373-d14a-4420-a068-af889d990bd0.jpg",
+   "id": "nasa-PIA10391",
+   "source": "nasa",
+   "title": "Interacting Galaxies",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA10391",
+   "url": "https://images-assets.nasa.gov/image/PIA10391/PIA10391~orig.jpg",
+   "w": 2371,
+   "h": 2371,
+   "query": "interacting galaxies",
+   "file": "cache/libra/cand/nasa-PIA10391.jpg",
+   "n": 159,
    "focus": [
-    0.36,
+    0.45,
     0.5
    ],
-   "note": "Bern Justitia, blindfolded Lady Justice",
+   "note": "spiral galaxy and its companion"
+  },
+  {
+   "id": "aic-226550",
+   "source": "aic",
+   "title": "Venus Healing Aeneas",
+   "creator": "Merry Joseph Blondel (French, 1781–1853)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/226550",
+   "url": "https://www.artic.edu/iiif/2/59511df1-03d0-aea4-369a-959669ccfe51/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2128,
+   "query": "Venus Aphrodite",
+   "file": "cache/libra/cand/aic-226550.jpg",
+   "n": 22,
+   "focus": [
+    0.6,
+    0.35
+   ],
+   "note": "Blondel, Venus descends in light"
+  },
+  {
    "id": "ov-3fb57373-d14a-4420-a068-af889d990bd0",
    "source": "openverse/wikimedia",
    "title": "Justitia Statue 01",
@@ -266,45 +286,13 @@
    "w": 1280,
    "h": 1609,
    "query": "Justitia statue",
-   "n": 261
-  },
-  {
-   "file": "cache/libra/cand/nasa-PIA14417.jpg",
+   "file": "cache/libra/cand/ov-3fb57373-d14a-4420-a068-af889d990bd0.jpg",
+   "n": 261,
    "focus": [
-    0.5,
+    0.36,
     0.5
    ],
-   "note": "Dumbbell nebula, symmetric lobes",
-   "id": "nasa-PIA14417",
-   "source": "nasa",
-   "title": "Weighing in on the Dumbbell Nebula",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA14417",
-   "url": "https://images-assets.nasa.gov/image/PIA14417/PIA14417~orig.jpg",
-   "w": 2600,
-   "h": 1300,
-   "query": "nebula",
-   "n": 115
-  },
-  {
-   "file": "cache/libra/cand/nasa-GSFC_20171208_Archive_e001864.jpg",
-   "focus": [
-    0.6,
-    0.5
-   ],
-   "note": "waxing crescent moon on black",
-   "id": "nasa-GSFC_20171208_Archive_e001864",
-   "source": "nasa",
-   "title": "Waxing crescent",
-   "creator": "GSFC",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001864",
-   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001864/GSFC_20171208_Archive_e001864~orig.jpg",
-   "w": 2400,
-   "h": 2400,
-   "query": "Libra constellation",
-   "n": 114
+   "note": "Bern Justitia, blindfolded Lady Justice"
   }
  ]
 }
