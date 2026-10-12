@@ -89,7 +89,7 @@ export function sceneReading(stage) {
       const listH = lead.reduce((h, l) => h + ROW * l, 0)
       const LX = VERT ? Math.round((W - (blockW - 0)) / 2) : 300
       const tx = VERT ? W / 2 - titleW / 2 : lerp(W / 2 - titleW / 2, LX, g)
-      const blockTop = VERT ? lerp(H / 2 - V5.titleFS / 2, V5.titleTop, g) : lerp(H / 2 - 54, H / 2 - listH / 2 - 120, g)
+      const blockTop = VERT ? Math.max(V5.titleTop - 10, lerp(H / 2 - V5.titleFS / 2, V5.titleTop, g)) : lerp(H / 2 - 54, H / 2 - listH / 2 - 120, g)
       title.style.left = tx + 'px'; title.style.top = blockTop + 'px'
       title.style.transform = `scale(${lerp(1, 0.94, g)})`; title.style.transformOrigin = VERT ? '50% 0' : '0 0'
       // vertical: the list column sits below the sign card + phase strip, left-aligned at LX and centred as a block
