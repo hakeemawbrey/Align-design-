@@ -16,6 +16,7 @@ async function boot() {
   if (!T) { document.body.innerHTML = `<p style="color:#fff;font:16px monospace;padding:20px">Unknown teaser "${id}". Available: ${Object.keys(TEASERS).join(', ')}</p>`; return }
   document.title = `Align — ${T.title}`
   window.DURATION = T.duration
+  window.LOOP = !!T.loop
   const scene = await T.build(stage)
   stage.appendChild(fx)
   await document.fonts.ready

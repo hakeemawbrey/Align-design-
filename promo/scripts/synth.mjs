@@ -59,7 +59,11 @@ export function createMix(DUR, SR = 48000) {
     const i0 = Math.floor(t0 * SR), n = Math.floor((t1 - t0) * SR); let b1 = 0, b2 = 0
     for (let k = 0; k < n; k++) { const p = k / n, f = 200 + 4000 * p * p, w = 2 * Math.PI * f / SR, x = noise(); b1 += w * (x - b1 - 0.3 * b2); b2 += w * b1; const v = b2 * gain * p * p; add(i0 + k, v, v, 0.3) }
   }
-  function render(file) {
+  function renderLoop(file, loop) {
+    // caller schedules events across [0, 2*loop); output keeps [loop, 2*loop) with no fades → seamless
+    render(file, { from: loop, to: 2 * loop, fades: false })
+  }
+  function render(file, { from = 0, to = DUR, fades = true } = {}) {
     const combs = [1557, 1617, 1491, 1422].map(d => ({ d, buf: new Float32Array(d), i: 0 })), aps = [225, 556].map(d => ({ d, buf: new Float32Array(d), i: 0 }))
     for (let n = 0; n < N; n++) {
       const x = send[n] * 0.25; let y = 0
@@ -68,11 +72,16 @@ export function createMix(DUR, SR = 48000) {
       L[n] += y * 0.9; R[n] += y * 0.85
     }
     let peak = 0
-    for (let n = 0; n < N; n++) { const t = n / SR, fade = Math.min(1, t / 0.08) * Math.min(1, Math.max(0, (DUR - 0.05 - t) / 0.6)); L[n] = Math.tanh(L[n] * 1.2 * fade); R[n] = Math.tanh(R[n] * 1.2 * fade); peak = Math.max(peak, Math.abs(L[n]), Math.abs(R[n])) }
-    const g = 0.89 / (peak || 1), buf = Buffer.alloc(44 + N * 4)
-    buf.write('RIFF', 0); buf.writeUInt32LE(36 + N * 4, 4); buf.write('WAVEfmt ', 8); buf.writeUInt32LE(16, 16); buf.writeUInt16LE(1, 20); buf.writeUInt16LE(2, 22); buf.writeUInt32LE(SR, 24); buf.writeUInt32LE(SR * 4, 28); buf.writeUInt16LE(4, 32); buf.writeUInt16LE(16, 34); buf.write('data', 36); buf.writeUInt32LE(N * 4, 40)
-    for (let n = 0; n < N; n++) { buf.writeInt16LE(Math.round(L[n] * g * 32767), 44 + n * 4); buf.writeInt16LE(Math.round(R[n] * g * 32767), 46 + n * 4) }
+    for (let n = 0; n < N; n++) { const t = n / SR, fade = fades ? Math.min(1, t / 0.08) * Math.min(1, Math.max(0, (DUR - 0.05 - t) / 0.6)) : 1; L[n] = Math.tanh(L[n] * 1.2 * fade); R[n] = Math.tanh(R[n] * 1.2 * fade); peak = Math.max(peak, Math.abs(L[n]), Math.abs(R[n])) }
+    const i0 = Math.round(from * SR), i1 = Math.round(to * SR), M = i1 - i0
+    const g = 0.89 / (peak || 1), buf = Buffer.alloc(44 + M * 4)
+    buf.write('RIFF', 0); buf.writeUInt32LE(36 + M * 4, 4); buf.write('WAVEfmt ', 8); buf.writeUInt32LE(16, 16); buf.writeUInt16LE(1, 20); buf.writeUInt16LE(2, 22); buf.writeUInt32LE(SR, 24); buf.writeUInt32LE(SR * 4, 28); buf.writeUInt16LE(4, 32); buf.writeUInt16LE(16, 34); buf.write('data', 36); buf.writeUInt32LE(M * 4, 40)
+    for (let n = 0; n < M; n++) { buf.writeInt16LE(Math.round(L[i0 + n] * g * 32767), 44 + n * 4); buf.writeInt16LE(Math.round(R[i0 + n] * g * 32767), 46 + n * 4) }
     mkdirSync(path.dirname(file), { recursive: true }); writeFileSync(file, buf)
   }
-  return { pad, pulse, tick, whoosh, bell, boom, glitter, riser, render }
+  function hats(from, to, bpm = 120, gain = 0.05) {
+    const beat = 60 / bpm
+    for (let t = from + beat / 2; t < to; t += beat) { const i0 = Math.floor(t * SR); let hp = 0, prev = 0; for (let k = 0; k < SR * 0.05; k++) { const x = noise(); hp = 0.9 * (hp + x - prev); prev = x; add(i0 + k, hp * Math.exp(-k / SR * 90) * gain * 0.8, hp * Math.exp(-k / SR * 90) * gain) } }
+  }
+  return { pad, pulse, hats, tick, whoosh, bell, boom, glitter, riser, render, renderLoop }
 }

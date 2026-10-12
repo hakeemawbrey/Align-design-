@@ -50,7 +50,8 @@ async function shoot(page, t, file, type = 'jpeg') {
   await page.screenshot({ path: file, type, ...(type === 'jpeg' ? { quality: 96 } : {}) })
 }
 
-if (TEASER && !TO) { const p = await newPage(); TO = await p.evaluate(() => window.DURATION); await p.close() }
+let LOOPING = false
+if (TEASER) { const p = await newPage(); const info = await p.evaluate(() => ({ d: window.DURATION, l: window.LOOP })); if (!TO) TO = info.d; LOOPING = info.l; await p.close() }
 const stills = arg('stills')
 const sheet = arg('sheet')
 if (stills || sheet) {
@@ -89,6 +90,12 @@ if (stills || sheet) {
     const share = OUT.replace(/\.mp4$/, '-share.mp4')
     spawnSync('ffmpeg', ['-v', 'error', '-y', '-i', OUT, '-c:v', 'libx264', '-preset', 'slow', '-b:v', '6500k', '-maxrate', '8000k', '-bufsize', '12000k', '-c:a', 'copy', '-movflags', '+faststart', share])
     console.log('share copy →', share)
+    if (TEASER && LOOPING) {
+      // seamless loop: also write a 3× version for platforms that don't auto-loop short clips
+      const x3 = OUT.replace(/\.mp4$/, '-x3.mp4')
+      spawnSync('ffmpeg', ['-v', 'error', '-y', '-stream_loop', '2', '-i', share, '-c', 'copy', '-movflags', '+faststart', x3])
+      console.log('3× loop →', x3)
+    }
   }
 }
 await browser.close(); server.close()

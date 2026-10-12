@@ -20,3 +20,16 @@ Each teaser = ONE feature or ONE message, landing in the first 1s (muted autopla
 - Render: `node promo/scripts/render.mjs --teaser=<id>` → promo/out/teasers/<id>.mp4 (+ -share.mp4). Stills/sheets: `--teaser=<id> --stills=1,2 --dir=/tmp/claude-0/tz-<id>/a` or `--sheet --rate=6 --dir=…` (FRESH dir each time). Preview in a browser: promo/teaser.html?t=<id>.
 - Quality bar: render a 6–10 fps contact sheet + key stills + a 400px-wide downscale, look at them, iterate until it's genuinely beautiful and on-brand. Then render the final mp4 with sound.
 - Only edit your own teaser files. Don't commit.
+
+# LOOP SERIES (L01–L10) — seamless repeating visualizers
+User direction: "more like looping, repeating visualizers". Each loop is a hypnotic, beat-reactive, perfectly seamless
+8-second vertical visualizer (like Spotify Canvas / ambient brand loops). Minimal or no text (at most a small "Align"
+wordmark and/or one tiny mono line). No end tag. The vibe IS the message.
+- Use `teasers/loopkit.js` (re-exports kit.js): LOOP=8s, BPM=120 (16 beats, 4 bars), `ph/osc/cyc` periodic helpers,
+  `kick/hat/bar` beat envelopes, `spectrum(t, n)` pseudo-audio bands, `chordIx`, `LOOP_CHORDS`, `loopBackdrop` (periodic nebula +
+  grain), `loopStars` (periodic pixel-star twinkle). Template: `teasers/tL01-chakra.js`.
+- EVERYTHING must be periodic in LOOP: only use ph/osc/cyc/kick/hat/bar (or integer multiples of 2π·ph). Rotations must be a
+  whole number of symmetry steps per loop. No `t * speed` drifts, no Math.random. Export `loop: true`, `duration: LOOP`.
+- Music: `music: { chords: LOOP_CHORDS.map((c,i)=>[i*2,i*2+2,c]), bpm: BPM, ... }` (you may use your own 4-chord progression
+  and gains) + `cues` within [0, LOOP) — they are scheduled across two cycles and the second is kept, so audio loops seamlessly.
+- Verify seam: `node promo/scripts/loop-check.mjs --teaser=<id>` must print ≈0 (≤0.3). Render: `node promo/scripts/teaser-sound.mjs --teaser=<id> && node promo/scripts/render.mjs --teaser=<id>` → <id>.mp4, -share.mp4, -x3.mp4 (3 loops).

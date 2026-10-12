@@ -7,6 +7,19 @@ const here = path.dirname(fileURLToPath(import.meta.url))
 const id = (process.argv.find(a => a.startsWith('--teaser=')) || '').split('=')[1]
 if (!id) { console.error('usage: --teaser=<id>'); process.exit(1) }
 const T = (await import(`../teasers/t${id}.js`)).default
+if (T.loop) {
+  // seamless loop: two cycles scheduled, second one kept
+  const L = T.duration, m = createMix(2 * L)
+  const mu = T.music || {}
+  const chords = (mu.chords || []).flatMap(([a, b, c]) => [[a, b, c], [a + L, b + L, c]])
+  m.pad(chords, mu.padGain ?? 0.022)
+  if (mu.bpm) { m.pulse(0, 2 * L, mu.bpm, mu.pulseGain ?? 0.24); if (mu.hats !== false) m.hats(0, 2 * L, mu.bpm, mu.hatGain ?? 0.04) }
+  for (const [kind, ...a] of T.cues || []) { m[kind](...a); const b = [...a]; b[0] += L; if (kind === 'glitter' || kind === 'riser') b[1] += L; m[kind](...b) }
+  const out = path.join(here, `../out/teasers/${id}.wav`)
+  m.renderLoop(out, L)
+  console.log('loop sound →', path.relative(process.cwd(), out))
+  process.exit(0)
+}
 const m = createMix(T.duration)
 const music = T.music || {}
 m.pad(music.chords || [[0, T.duration, [146.83, 220, 329.63, 369.99, 554.37]]], music.padGain ?? 0.022)
