@@ -136,8 +136,8 @@ def grade(im, S, item=None):
     l = a @ W
     mx, mn = a.max(2), a.min(2)
     chroma = mx - mn
-    # tame hot reds and oranges before anything boosts them (they block up into flat red)
-    warm = np.clip((a[..., 0] - a[..., 2]) / (chroma + 1e-4), 0, 1) * (a[..., 0] >= a[..., 1])
+    # tame hot reds, oranges and yellows before anything boosts them (they block up into flat red)
+    warm = np.clip((np.maximum(a[..., 0], a[..., 1]) - a[..., 2]) / (chroma + 1e-4), 0, 1)
     over = np.clip(chroma - STYLE["warm_cap"], 0, None) * warm
     a = a - over[..., None] * (a - l[..., None]) / (chroma[..., None] + 1e-4) * 0.8
     # skin and candlelit faces keep more of their own colour (and don't go chalky)

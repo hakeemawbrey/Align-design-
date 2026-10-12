@@ -507,7 +507,7 @@
     0.5,
     0.5
    ],
-   "zoom": 1.15,
+   "zoom": 1.25,
    "note": "Blake, The Ancient of Days (Europe, frontispiece)"
   },
   {
@@ -563,6 +563,78 @@
     0.5
    ],
    "note": "the Pleiades (NASA/ESA)"
+  },
+  {
+   "id": "wc-41411110",
+   "source": "commons",
+   "title": "Harmonie du soir sur la mer-Alphonse Osbert-MG 8228",
+   "creator": "Alphonse Osbert",
+   "license": "CC BY-SA 2.0 fr",
+   "landing": "https://commons.wikimedia.org/wiki/File:Harmonie_du_soir_sur_la_mer-Alphonse_Osbert-MG_8228.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Harmonie_du_soir_sur_la_mer-Alphonse_Osbert-MG_8228.JPG/1920px-Harmonie_du_soir_sur_la_mer-Alphonse_Osbert-MG_8228.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Harmonie_du_soir_sur_la_mer-Alphonse_Osbert-MG_8228.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1343,
+   "file": "cache/stars/cand/wc-41411110.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Osbert, Evening Harmony on the Sea"
+  },
+  {
+   "id": "wc-16603892",
+   "source": "commons",
+   "title": "Arkhip Kuindzhi, notturno, 1905-1908",
+   "creator": "Sailko",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Arkhip_Kuindzhi,_notturno,_1905-1908.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Arkhip_Kuindzhi%2C_notturno%2C_1905-1908.JPG/1920px-Arkhip_Kuindzhi%2C_notturno%2C_1905-1908.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Arkhip_Kuindzhi%2C_notturno%2C_1905-1908.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1193,
+   "file": "cache/stars/cand/wc-16603892.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "note": "Kuindzhi, nocturne, crescent over the steppe"
+  },
+  {
+   "id": "wc-162382532",
+   "source": "commons",
+   "title": "Night Sky - Boney Mountain & Milky Way (11074300594)",
+   "creator": "Santa Monica Mountains National Recreation Area",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Night_Sky_-_Boney_Mountain_%26_Milky_Way_(11074300594).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Night_Sky_-_Boney_Mountain_%26_Milky_Way_%2811074300594%29.jpg/1920px-Night_Sky_-_Boney_Mountain_%26_Milky_Way_%2811074300594%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Night_Sky_-_Boney_Mountain_%26_Milky_Way_%2811074300594%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1719,
+   "file": "cache/stars/cand/wc-162382532.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "note": "Milky Way over Boney Mountain (photo)"
+  },
+  {
+   "id": "wc-23906915",
+   "source": "commons",
+   "title": "Milky Way Night Sky Black Rock Desert Nevada",
+   "creator": "Steve Jurvetson",
+   "license": "CC BY 2.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg/1920px-Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1714,
+   "h": 2400,
+   "file": "cache/stars/cand/wc-23906915.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Milky Way star field (photo)"
   }
  ]
 }
