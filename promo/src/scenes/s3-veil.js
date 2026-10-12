@@ -428,7 +428,7 @@ export function sceneVeil(stage) {
 
   // ── captions
   const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: VERT ? '820px' : '420px', background: 'linear-gradient(180deg, rgba(11,6,32,0.000) 0%, rgba(11,6,32,0.022) 10%, rgba(11,6,32,0.083) 20%, rgba(11,6,32,0.173) 30%, rgba(11,6,32,0.282) 40%, rgba(11,6,32,0.400) 50%, rgba(11,6,32,0.518) 60%, rgba(11,6,32,0.627) 70%, rgba(11,6,32,0.717) 80%, rgba(11,6,32,0.778) 90%, rgba(11,6,32,0.800) 100%)', opacity: 0 }, root)
-  const capBox = el('div', { position: 'absolute', left: '50%', bottom: VERT ? '330px' : '74px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
+  const capBox = el('div', { position: 'absolute', left: '50%', bottom: VERT ? '304px' : '74px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
   const eyebrow = el('div', { fontFamily: MONO, fontSize: VERT ? '27px' : '21px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: VERT ? '20px' : '14px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Blind by design&nbsp;&nbsp;✦')
   const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: VERT ? '84px' : '72px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, VERT ? 'The stars are giving<br>you a chance.' : 'The stars are giving you a chance.')
   const lockBox = el('div', { position: 'absolute', left: '50%', bottom: VERT ? '362px' : '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
