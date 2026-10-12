@@ -1,5 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../lib.js'
-import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, spaceBackdrop } from "./common.js"
+import { W, H, VERT, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, spaceBackdrop } from "./common.js"
 
 // ──────────────────────────────────────── S7 · deep-space aurora tagline + payoff beats
 // Timing (sound): nebula blooms up from the bottom 22.40–23.00 · ticks + typing 22.56, perChar 0.016, fade 0.12
@@ -19,8 +19,12 @@ const T_A = 24.26, T_A_END = 24.7
 const T_SW = 25.45, T_B0 = 25.53, T_B_END = 25.98
 const CAP_A = 24.26, CAP_A_OUT = 25.47, CAP_B = 25.62
 
-const PH = 880, PW = Math.round(PH * 1170 / 2532) // 407
-const AX = 690, BX = 1280 // resting phone centres
+// vertical (9:16): one big centred phone per beat (caption above it, under the corner moon clock),
+//   two-line tagline in the middle with the constellation above and below it
+const PH = VERT ? 1170 : 880, PW = Math.round(PH * 1170 / 2532) // 407 (vertical 541)
+const AX = VERT ? 540 : 690, BX = VERT ? 540 : 1280 // resting phone centres
+const PCY = VERT ? 1051 : H / 2 // resting phone centre y (vertical: phone spans y 466–1636)
+const CAPY = 318                 // vertical: caption block top (eyebrow + line end ≈ y 450)
 
 export function sceneTagline(stage, assets) {
   // transparent root: s6's blurring deck stays visible underneath while the nebula blooms up from below
@@ -32,11 +36,11 @@ export function sceneTagline(stage, assets) {
   // deepen the shared mood: an indigo core so S7 reads as night sky, colour pushed to the rims
   fill(sky, { background: 'radial-gradient(70% 62% at 50% 44%, rgba(9,4,26,0.72) 0%, rgba(9,4,26,0.5) 55%, rgba(9,4,26,0.12) 100%)' })
   // galaxy arc: a faint tilted spiral-arm of dust + stars sweeping over the top-left, prerendered once
-  const GA = el('canvas', { position: 'absolute', left: '-240px', top: '-240px', width: (W + 480) + 'px', height: (H + 480) + 'px', mixBlendMode: 'screen', transformOrigin: '50% 60%' }, sky)
+  const GA = el('canvas', { position: 'absolute', left: '-240px', top: '-240px', width: (W + 480) + 'px', height: (H + 480) + 'px', mixBlendMode: 'screen', transformOrigin: VERT ? '50% 50%' : '50% 60%' }, sky)
   GA.width = W + 480; GA.height = H + 480
   {
     const g = GA.getContext('2d'), r = rng(7707)
-    const gx = (W + 480) * 0.56, gy = (H + 480) * 1.02, RX = 1450, RY = 980, ROT = -0.3
+    const gx = (W + 480) * (VERT ? 0.62 : 0.56), gy = (H + 480) * (VERT ? 0.86 : 1.02), RX = VERT ? 1050 : 1450, RY = VERT ? 1250 : 980, ROT = VERT ? -0.22 : -0.3
     const at = (a, off) => {
       const x = Math.cos(a) * (RX + off), y = Math.sin(a) * (RY + off * 0.5)
       return [gx + x * Math.cos(ROT) - y * Math.sin(ROT), gy + x * Math.sin(ROT) + y * Math.cos(ROT)]
@@ -67,7 +71,8 @@ export function sceneTagline(stage, assets) {
   const AU = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'screen', filter: 'blur(3px)' }, sky)
   AU.width = W / 2; AU.height = H / 2
   const au = AU.getContext('2d')
-  const ar = rng(7171), RAYS = Array.from({ length: 240 }, (_, k) => ({ u: (k + ar()) / 240, h: 0.55 + ar() * 0.7, a: 0.35 + ar() * 0.65, ph: ar() * 6.28, sp: 0.6 + ar() * 1.4 }))
+  const NR = VERT ? 140 : 240, HEM = VERT ? 0.68 : 0.73
+  const ar = rng(7171), RAYS = Array.from({ length: NR }, (_, k) => ({ u: (k + ar()) / NR, h: 0.55 + ar() * 0.7, a: 0.35 + ar() * 0.65, ph: ar() * 6.28, sp: 0.6 + ar() * 1.4 }))
   function drawAurora(t, k) {
     au.clearRect(0, 0, AU.width, AU.height)
     if (k <= 0) return
@@ -75,7 +80,7 @@ export function sceneTagline(stage, assets) {
     au.globalCompositeOperation = 'lighter'
     RAYS.forEach(r => {
       const x = r.u * w
-      const hem = hh * (0.73 + 0.07 * Math.sin(r.u * 5.2 + t * 0.45) + 0.035 * Math.sin(r.u * 13 - t * 0.8)) + (1 - k) * hh * 0.4
+      const hem = hh * (HEM + 0.07 * Math.sin(r.u * 5.2 + t * 0.45) + 0.035 * Math.sin(r.u * 13 - t * 0.8)) + (1 - k) * hh * 0.4
       const env = Math.pow(Math.sin(Math.PI * clamp(r.u * 1.08 - 0.04, 0, 1)), 0.7)
       const fl = r.a * (0.55 + 0.45 * Math.sin(t * r.sp + r.ph)) * env * k
       const len = hh * 0.42 * r.h * (0.85 + 0.15 * Math.sin(t * 0.6 + r.ph))
@@ -94,7 +99,7 @@ export function sceneTagline(stage, assets) {
     au.beginPath()
     for (let i = 0; i <= 96; i++) {
       const u = i / 96, x = u * w
-      const y = hh * (0.73 + 0.07 * Math.sin(u * 5.2 + t * 0.45) + 0.035 * Math.sin(u * 13 - t * 0.8)) + (1 - k) * hh * 0.4
+      const y = hh * (HEM + 0.07 * Math.sin(u * 5.2 + t * 0.45) + 0.035 * Math.sin(u * 13 - t * 0.8)) + (1 - k) * hh * 0.4
       i ? au.lineTo(x, y) : au.moveTo(x, y)
     }
     const hg = au.createLinearGradient(0, 0, w, 0)
@@ -112,16 +117,19 @@ export function sceneTagline(stage, assets) {
   ].map((b, i) => ({ ...b, i, e: el('div', { position: 'absolute', width: b.r * 2 + 'px', height: b.r * 2 + 'px', borderRadius: '50%', mixBlendMode: 'screen',
     background: `radial-gradient(closest-side, rgba(${b.c},${b.a}), rgba(${b.c},${b.a * 0.4}) 48%, rgba(${b.c},0) 100%)` }, sky) }))
   // dark scrim right behind the tagline so bone type keeps ≥7:1 against the band
-  const tScrim = el('div', { position: 'absolute', left: (W / 2 - 900) + 'px', top: (H / 2 - 230) + 'px', width: '1800px', height: '460px', borderRadius: '50%',
+  const SCR = VERT ? [1060, 600] : [1800, 460]
+  const tScrim = el('div', { position: 'absolute', left: (W / 2 - SCR[0] / 2) + 'px', top: (H / 2 - SCR[1] / 2) + 'px', width: SCR[0] + 'px', height: SCR[1] + 'px', borderRadius: '50%',
     background: 'radial-gradient(closest-side, rgba(11,6,32,0.55), rgba(11,6,32,0.38) 45%, rgba(11,6,32,0.12) 75%, rgba(11,6,32,0) 100%)', opacity: 0 }, sky)
 
-  const TS = 80
-  const tag = new TypeLine(root, 'Dating, dealt by the stars', {
-    left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 500, fontSize: TS + 'px', letterSpacing: '-0.02em', lineHeight: 1,
+  const TS = VERT ? 90 : 80
+  // vertical: two lines (the space before "by" becomes a line break, so the keystroke count is unchanged)
+  const tag = new TypeLine(root, VERT ? 'Dating, dealt\nby the stars' : 'Dating, dealt by the stars', {
+    left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: SANS, fontWeight: 500, fontSize: TS + 'px', letterSpacing: '-0.02em', lineHeight: VERT ? 1.12 : 1,
+    ...(VERT ? { textAlign: 'center' } : {}),
     textShadow: '0 0 38px rgba(232,98,138,0.28), 0 2px 18px rgba(8,4,24,0.75), 0 1px 3px rgba(8,4,24,0.6)',
   }, { perChar: PER, fade: 0.12, final: '#fff6ea', accent: ['#ffffff', '#ffe3c4', '#ecdcff'] })
   const ticks = new Ticks(root, C.bone, 16)
-  let tagW = 0
+  let tagW = 0, tagH = 0
 
   // ── constellation of people (canvas: field stars + hairlines + pixel sparkles; DOM: portraits)
   const cv = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
@@ -129,7 +137,12 @@ export function sceneTagline(stage, assets) {
   const cx2 = cv.getContext('2d')
   const SRC = [...PEOPLE, IMG + 'juniper.jpg', IMG + 'hakeem.jpg']
   // [x, y, diameter, photo index]; tagline + ticks occupy ~x 400–1520, y 465–615 — nodes stay well outside
-  const NODES = [
+  // vertical: tagline + ticks occupy ~x 190–890, y 820–1100 — nodes above and below, inside the safe area
+  const NODES = VERT ? [
+    [180, 470, 112, 12], [330, 320, 92, 0], [560, 430, 84, 4], [790, 310, 118, 2], [690, 650, 90, 8], [930, 500, 100, 6],
+    [960, 790, 88, 13], [910, 1270, 92, 9], [720, 1500, 108, 1], [560, 1240, 80, 5], [370, 1550, 100, 10], [190, 1340, 94, 3],
+    [110, 1060, 90, 7], [520, 720, 0, -1],
+  ].filter(n => n[3] >= 0) : [
     [250, 250, 104, 12], [530, 160, 84, 0], [810, 300, 74, 4], [1090, 150, 110, 2], [1370, 285, 82, 8], [1660, 190, 100, 6],
     [1770, 545, 90, 13], [1640, 880, 84, 9], [1330, 940, 100, 1], [1010, 815, 78, 5], [690, 935, 96, 10], [370, 845, 86, 3],
     [150, 560, 92, 7], [520, 720, 0, -1],
@@ -141,7 +154,7 @@ export function sceneTagline(stage, assets) {
   const LINE_D = 0.24
   const edges = EDGES.map(([a, b]) => ({ a, b, t0: Math.max(popT[a], popT[b]) + 0.12 }))
   // survivors: [node, x, y, d] — small floating orbs clear of both phones' captions
-  const SURV = [[5, 1730, 170, 66], [7, 1745, 905, 60], [11, 255, 890, 62]]
+  const SURV = VERT ? [[5, 150, 560, 62], [7, 935, 960, 58], [11, 150, 1380, 60]] : [[5, 1730, 170, 66], [7, 1745, 905, 60], [11, 255, 890, 62]]
   const T_GO = 24.02, GO_D = 0.34
   const nodes = NODES.map(([x, y, d, pi], i) => {
     const g = el('div', { position: 'absolute', left: 0, top: 0, width: '100px', height: '100px', marginLeft: '-50px', marginTop: '-50px', borderRadius: '50%', opacity: 0, willChange: 'transform' }, root)
@@ -155,7 +168,7 @@ export function sceneTagline(stage, assets) {
   const fr = rng(4207)
   const FIELD = Array.from({ length: 70 }, () => {
     let x, y
-    do { x = fr() * W; y = fr() * H } while (x > 360 && x < 1560 && y > 430 && y < 650)
+    do { x = fr() * W; y = fr() * H } while (VERT ? (x > 160 && x < 920 && y > 800 && y < 1120) : (x > 360 && x < 1560 && y > 430 && y < 650))
     return { x, y, u: fr() < 0.22 ? 3 : 2, t0: 22.55 + fr() * 1.3, ph: fr() * 6.28, sp: 1.5 + fr() * 2.5, a: 0.45 + fr() * 0.5 }
   })
   function pix(x, y, u, a, col, big) {
@@ -185,7 +198,7 @@ export function sceneTagline(stage, assets) {
       op = lit * lerp(1, 0.92, go)
     } else {
       // pulled toward the phone's landing point, shrinking into a star
-      x = lerp(x, lerp(x, AX, 0.18), go); y = lerp(y, lerp(y, H / 2, 0.18), go)
+      x = lerp(x, lerp(x, AX, 0.18), go); y = lerp(y, lerp(y, PCY, 0.18), go)
       s *= lerp(1, 0.12, go); op = lit * (1 - ease.inQuad(go))
     }
     return { x, y, d, op, s, go, lit }
@@ -193,10 +206,11 @@ export function sceneTagline(stage, assets) {
 
   // phones in perspective; handles + sparks live inside each phone's transform
   const persp = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', perspective: '2000px' }, root)
-  const aura = el('div', { position: 'absolute', left: (AX - 460) + 'px', top: (H / 2 - 560) + 'px', width: '920px', height: '1120px', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(214,190,255,0.9), rgba(180,120,255,0.4) 55%, rgba(180,92,255,0) 100%)', opacity: 0, zIndex: 1 }, persp)
+  const AUW = VERT ? 1000 : 920, AUH = VERT ? 1480 : 1120
+  const aura = el('div', { position: 'absolute', left: (AX - AUW / 2) + 'px', top: (PCY - AUH / 2) + 'px', width: AUW + 'px', height: AUH + 'px', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(214,190,255,0.9), rgba(180,120,255,0.4) 55%, rgba(180,92,255,0) 100%)', opacity: 0, zIndex: 1 }, persp)
   function phone(src, z, sparkPos) {
-    const g = el('div', { position: 'absolute', left: -PW / 2 + 'px', top: (H / 2 - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', opacity: 0, zIndex: z, willChange: 'transform' }, persp)
-    const scr = el('div', { position: 'absolute', inset: 0, borderRadius: '52px', overflow: 'hidden', background: C.canvas, boxShadow: '0 60px 120px rgba(4,2,14,0.7), 0 18px 40px rgba(4,2,14,0.45), 0 0 60px rgba(180,92,255,0.18), 0 0 0 1.5px rgba(239,230,214,0.35)' }, g)
+    const g = el('div', { position: 'absolute', left: -PW / 2 + 'px', top: (PCY - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', opacity: 0, zIndex: z, willChange: 'transform' }, persp)
+    const scr = el('div', { position: 'absolute', inset: 0, borderRadius: VERT ? '68px' : '52px', overflow: 'hidden', background: C.canvas, boxShadow: '0 60px 120px rgba(4,2,14,0.7), 0 18px 40px rgba(4,2,14,0.45), 0 0 60px rgba(180,92,255,0.18), 0 0 0 1.5px rgba(239,230,214,0.35)' }, g)
     img(scr, src, { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover' })
     const hs = [[0, 0], [1, 0], [0, 1], [1, 1]].map(([x, y]) => el('div', { position: 'absolute', left: (x * PW - 8) + 'px', top: (y * PH - 8) + 'px', width: '16px', height: '16px', background: C.bone, boxShadow: '0 0 0 2px rgba(20,10,46,0.85), 0 0 10px rgba(239,230,214,0.45)', opacity: 0 }, g))
     // small gold ✦ accents just outside the screen edge (never over the UI)
@@ -207,10 +221,12 @@ export function sceneTagline(stage, assets) {
   const pB = phone(A + 'screen-chat-cards.png', 4, [[PW + 60, PH * 0.16, 44], [-56, PH * 0.8, 32]])
 
   function caption(x, align, eyebrow, line, scrim) {
-    const box = el('div', { position: 'absolute', top: (H / 2 - 74) + 'px', [align]: x + 'px', textAlign: align, opacity: 0, zIndex: 6, isolation: 'isolate' }, root)
-    el('div', { position: 'absolute', left: '-330px', right: '-330px', top: '-140px', bottom: '-140px', background: `radial-gradient(closest-side, ${[[0, 1], [25, 0.95], [48, 0.76], [66, 0.48], [82, 0.2], [100, 0]].map(([o, k]) => `rgba(11,6,32,${(scrim * k).toFixed(3)}) ${o}%`).join(', ')})`, zIndex: -1 }, box)
-    el('div', { fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', color: 'rgba(255,246,234,0.92)', textShadow: '0 0 16px rgba(8,4,24,0.85), 0 0 5px rgba(8,4,24,0.6)', marginBottom: '14px' }, box, eyebrow)
-    el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '78px', lineHeight: 1.05, color: '#fff6ea', whiteSpace: 'nowrap', textShadow: '0 0 26px rgba(8,4,24,0.75), 0 0 8px rgba(8,4,24,0.6), 0 2px 3px rgba(4,2,14,0.5)' }, box, line)
+    // vertical: centred above the phone (x/align ignored)
+    const box = el('div', VERT ? { position: 'absolute', top: CAPY + 'px', left: '60px', right: '60px', textAlign: 'center', opacity: 0, zIndex: 6, isolation: 'isolate' }
+      : { position: 'absolute', top: (H / 2 - 74) + 'px', [align]: x + 'px', textAlign: align, opacity: 0, zIndex: 6, isolation: 'isolate' }, root)
+    el('div', { position: 'absolute', left: VERT ? '-60px' : '-330px', right: VERT ? '-60px' : '-330px', top: VERT ? '-110px' : '-140px', bottom: VERT ? '-110px' : '-140px', background: `radial-gradient(closest-side, ${[[0, 1], [25, 0.95], [48, 0.76], [66, 0.48], [82, 0.2], [100, 0]].map(([o, k]) => `rgba(11,6,32,${(scrim * k).toFixed(3)}) ${o}%`).join(', ')})`, zIndex: -1 }, box)
+    el('div', { fontFamily: MONO, fontSize: VERT ? '28px' : '30px', letterSpacing: '0.22em', ...(VERT ? { textIndent: '0.22em' } : {}), color: 'rgba(255,246,234,0.92)', textShadow: '0 0 16px rgba(8,4,24,0.85), 0 0 5px rgba(8,4,24,0.6)', marginBottom: VERT ? '10px' : '14px' }, box, eyebrow)
+    el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: VERT ? '80px' : '78px', lineHeight: 1.05, color: '#fff6ea', whiteSpace: 'nowrap', textShadow: '0 0 26px rgba(8,4,24,0.75), 0 0 8px rgba(8,4,24,0.6), 0 2px 3px rgba(4,2,14,0.5)' }, box, line)
     return box
   }
   const capA = caption(AX + PW / 2 + 120, 'left', 'IT’S MUTUAL', 'You both aligned.', 0.56)
@@ -248,14 +264,14 @@ export function sceneTagline(stage, assets) {
       tScrim.style.opacity = String(ease.inOutQuad(prog(t, 22.45, 22.85)) * (1 - ease.inOutQuad(prog(t, 24.1, 24.5)) * 0.4))
 
       // tagline
-      if (!tagW) tagW = tag.root.offsetWidth
+      if (!tagW) { tagW = tag.root.offsetWidth; tagH = tag.root.offsetHeight }
       tag.update(t - T_TYPE)
       const tOut = ease.inQuad(prog(t, T_OUT, T_OUT + OUT_D))
       tag.root.style.opacity = String(1 - tOut)
       tag.root.style.transform = `translate(-50%, calc(-50% - ${tOut * 40}px))`
       // ticks sit at full width from the first frame (letters never outside them); only height/opacity animate
       const to = ease.outCubic(prog(t, T_TYPE - 0.03, T_TYPE + 0.4))
-      ticks.update(W / 2, H / 2 - tOut * 40, tagW + 120, lerp(96, 150, to), prog(t, T_TYPE - 0.03, T_TYPE + 0.05) * (1 - tOut))
+      ticks.update(W / 2, H / 2 - tOut * 40, tagW + (VERT ? 100 : 120), VERT ? lerp(tagH - 40, tagH + 60, to) : lerp(96, 150, to), prog(t, T_TYPE - 0.03, T_TYPE + 0.05) * (1 - tOut))
 
       // ── constellation
       cx2.clearRect(0, 0, W, H)

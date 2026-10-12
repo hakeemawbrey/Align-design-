@@ -1,12 +1,12 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
-import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { VERT, W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
 
 // ── real card geometry (measured in the PNGs) ───────────────────────────────
 // card-reveal.png 1560×2740: card body x 66..1494; photo window x 118..1443, y 314..1207.
 // The window shows juniper.jpg cover-fitted to the window width (1325px → image
 // 1325×1767), with the window top sitting 312px below the image top.
 const REV = { w: 1560, h: 2740, win: { x: 118, y: 314, w: 1325, h: 893 }, imgTop: 582 } // imgTop raised (was 312) so her head sits higher in the window with headroom, chin clear
-const D = 0.35 // display scale → card body ≈ 500px wide, 959px PNG tall
+const D = VERT ? 0.53 : 0.35 // display scale → card body ≈ 500px wide, 959px PNG tall (vertical: ≈ 757px wide)
 // card-back.png 1528×2347: body x 120..1439 (1320 wide) → match the front body width
 const BACK = { w: 1528, h: 2347, markX: 782, markY: 1134 }
 const DB = 1430 * D / 1320
@@ -76,7 +76,10 @@ const VPAD = { x: 96, y: 54 }            // veil canvas overscan so its blur nev
 const VW = W + VPAD.x * 2, VH = H + VPAD.y * 2
 const VEIL_SRC = IMG + 'aura/libra.jpg'
 // placement of libra.jpg (640×585; crop its dark 12px border) inside the visible frame
-const VEIL_IMG = { sw: 628, sh: 572, h: 1180, top: -150 }
+const VEIL_IMG = VERT ? { sw: 628, sh: 572, h: 1760, top: 70 } : { sw: 628, sh: 572, h: 1180, top: -150 }
+// the reveal card's photo-window layer is always laid out in 16:9 frame coords (IW×IH); in vertical the
+// veil drawn into it is a cover-crop of the tall veil (band centred at IVY of the visible frame)
+const IW = VERT ? 1920 : W, IH = VERT ? 1080 : H, IVW = IW + VPAD.x * 2, IVH = IH + VPAD.y * 2, IVY = 900
 
 /** cubic-bezier easing (same curve the app uses: [0.65, 0, 0.25, 1]) */
 function bezier(x1, y1, x2, y2) {
@@ -197,17 +200,21 @@ function makeAuraPrint(src) {
 // ───────────────────────────────────────────────────── S3 · the stars align (mystery card → reveal)
 // card-profile-3.png 1496×2238 (Juniper's veiled deck card): opaque body x 120..1374, y 114..2116; art window x 213..1296, y 337..916
 const MYS = { w: 1496, h: 2238, win: { x: 213, y: 337, w: 1083, h: 579 } }
-const M = 0.33                                   // mystery card display scale once pulled back (≈ 494×739)
+const M = VERT ? 0.58 : 0.33                                   // mystery card display scale once pulled back (≈ 494×739)
 const M0 = Math.max(W / MYS.win.w, H / MYS.win.h) // scale at which its art window covers the whole frame
 const WCX = MYS.win.x + MYS.win.w / 2 - MYS.w / 2, WCY = MYS.win.y + MYS.win.h / 2 - MYS.h / 2
-const CC = { x: 960, y: 440 }                    // mystery card centre on screen (= world origin while the camera sits at fy = 100)
-const MOON_R = 400
+const CC = VERT ? { x: 540, y: 780 } : { x: 960, y: 440 }                    // mystery card centre on screen (= world origin while the camera sits at fy = 100)
+const MOON_R = VERT ? 480 : 400
+const MOON_DY = VERT ? -300 : 0                 // moon centre relative to the card centre (vertical: centred above it)
 const CHAKRA_HEX = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
-const COL_Y = (i) => CC.y + 264 - i * 88      // the aligned column: red at the bottom … violet at the top
+const COL_Y = VERT ? (i) => CC.y + 480 - i * 160 : (i) => CC.y + 264 - i * 88     // the aligned column: red at the bottom … violet at the top
 // where each star wanders before it aligns (screen px), streak order
-const ANCHOR = [[300, 650], [1590, 250], [500, 170], [1430, 720], [230, 330], [1700, 560], [1260, 110]]
+const ANCHOR = VERT ? [[170, 1180], [900, 420], [260, 330], [860, 1130], [150, 640], [950, 800], [640, 160]]
+  : [[300, 650], [1590, 250], [500, 170], [1430, 720], [230, 330], [1700, 560], [1260, 110]]
 const ENTER_ORDER = [3, 0, 5, 2, 6, 1, 4]
-const SQ = 0.62                                  // orbit ellipse squash
+const SQ = VERT ? 1.5 : 0.62                                  // orbit ellipse squash (vertical: tall)
+const SZ = VERT ? 1.35 : 1                       // star size multiplier
+const Z_PUSH = VERT ? 1.42 : 1.6                 // camera zoom when parked on the photo window
 
 function starState(i, t) {
   const L = STAR_LOCK[i]
@@ -298,10 +305,10 @@ export function sceneVeil(stage) {
   // ── camera (world origin = screen centre; transform translate(-Z·fx, -Z·fy) scale(Z))
   const cam = el('div', { position: 'absolute', left: W / 2 + 'px', top: H / 2 + 'px', width: 0, height: 0 }, shakeBox)
   // moon
-  const moonGlow = el('div', { position: 'absolute', left: -MOON_R * 2.2 + 'px', top: -MOON_R * 2.2 + 'px', width: MOON_R * 4.4 + 'px', height: MOON_R * 4.4 + 'px', borderRadius: '50%', mixBlendMode: 'screen', opacity: 0,
+  const moonGlow = el('div', { position: 'absolute', left: -MOON_R * 2.2 + 'px', top: MOON_DY - MOON_R * 2.2 + 'px', width: MOON_R * 4.4 + 'px', height: MOON_R * 4.4 + 'px', borderRadius: '50%', mixBlendMode: 'screen', opacity: 0,
     background: 'radial-gradient(closest-side, rgba(255,244,226,0.55) 40%, rgba(232,214,255,0.22) 52%, rgba(180,140,255,0.08) 70%, rgba(180,140,255,0) 100%)' }, cam)
   const MS = MOON_R * 2 + 40
-  const moonCv = el('canvas', { position: 'absolute', left: -MS / 2 + 'px', top: -MS / 2 + 'px', width: MS + 'px', height: MS + 'px', opacity: 0 }, cam)
+  const moonCv = el('canvas', { position: 'absolute', left: -MS / 2 + 'px', top: MOON_DY - MS / 2 + 'px', width: MS + 'px', height: MS + 'px', opacity: 0 }, cam)
   moonCv.width = moonCv.height = MS
   const moonMask = document.createElement('canvas'); moonMask.width = moonMask.height = MS
   let moonTex = null, moonLast = -1
@@ -327,7 +334,8 @@ export function sceneVeil(stage) {
   // god-rays from the column (irregular conic spokes, radially faded)
   const rr = rng(909); let stops = [], ang = 0
   while (ang < 360) { const w = 1 + rr() * 3.2, gap = 2 + rr() * 9, a = (0.25 + rr() * 0.75).toFixed(2); stops.push(`rgba(255,240,214,0) ${ang.toFixed(1)}deg`, `rgba(255,240,214,${a}) ${(ang + w / 2).toFixed(1)}deg`, `rgba(255,240,214,0) ${(ang + w).toFixed(1)}deg`); ang += w + gap }
-  const rays = el('div', { position: 'absolute', left: '-1300px', top: '-1300px', width: '2600px', height: '2600px', mixBlendMode: 'screen', opacity: 0, pointerEvents: 'none',
+  const RAYS = VERT ? 3000 : 2600
+  const rays = el('div', { position: 'absolute', left: -RAYS / 2 + 'px', top: -RAYS / 2 + 'px', width: RAYS + 'px', height: RAYS + 'px', mixBlendMode: 'screen', opacity: 0, pointerEvents: 'none',
     background: `conic-gradient(from 0deg, ${stops.join(',')})`,
     webkitMaskImage: 'radial-gradient(closest-side, #000 6%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0) 100%)', maskImage: 'radial-gradient(closest-side, #000 6%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0) 100%)' }, cam)
   // ── the reveal card (front) / card back, in world coords
@@ -356,12 +364,12 @@ export function sceneVeil(stage) {
   const leak = el('div', { position: 'absolute', left: '-20%', top: '-30%', width: '70%', height: '160%', mixBlendMode: 'screen' }, auraFx)
   el('div', { position: 'absolute', inset: 0, background: 'radial-gradient(75% 95% at 50% 42%, rgba(10,5,30,0) 55%, rgba(10,5,30,0.55) 100%)' }, auraFx)
   // a full-frame-sized layer scaled to cover the window: veil, seam, sparkles, flash use 1920×1080 coords
-  const sB = Math.max(fw / W, fh / H)
-  const inner = el('div', { position: 'absolute', left: (fw - W) / 2 + 'px', top: (fh - H) / 2 + 'px', width: W + 'px', height: H + 'px', transform: `scale(${sB})` }, frame)
+  const sB = Math.max(fw / IW, fh / IH)
+  const inner = el('div', { position: 'absolute', left: (fw - IW) / 2 + 'px', top: (fh - IH) / 2 + 'px', width: IW + 'px', height: IH + 'px', transform: `scale(${sB})` }, frame)
   const flash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0, background: 'radial-gradient(60% 75% at 48% 30%, rgba(255,252,244,1) 0%, rgba(255,244,228,0.85) 45%, rgba(255,236,250,0.5) 100%)' }, inner)
-  const veil = el('div', { position: 'absolute', left: -VPAD.x + 'px', top: -VPAD.y + 'px', width: VW + 'px', height: VH + 'px', willChange: 'transform, filter' }, inner)
-  const veilCvB = el('canvas', { position: 'absolute', left: 0, top: 0, width: VW + 'px', height: VH + 'px' }, veil)
-  veilCvB.width = VW; veilCvB.height = VH
+  const veil = el('div', { position: 'absolute', left: -VPAD.x + 'px', top: -VPAD.y + 'px', width: IVW + 'px', height: IVH + 'px', willChange: 'transform, filter' }, inner)
+  const veilCvB = el('canvas', { position: 'absolute', left: 0, top: 0, width: IVW + 'px', height: IVH + 'px' }, veil)
+  veilCvB.width = IVW; veilCvB.height = IVH
   const seam = el('div', {
     position: 'absolute', left: '-10%', right: '-10%', top: 0, height: '200px', opacity: 0, pointerEvents: 'none', mixBlendMode: 'screen',
     background: 'radial-gradient(50% 50% at 50% 50%, rgba(255,250,235,0.9) 0%, rgba(255,189,246,0.5) 35%, rgba(242,199,92,0.16) 60%, transparent 75%)',
@@ -419,15 +427,15 @@ export function sceneVeil(stage) {
     background: `radial-gradient(55% 75% at 50% ${CC.y / H * 100}%, rgba(255,253,248,1) 0%, rgba(255,246,232,0.92) 40%, rgba(240,226,255,0.7) 100%)` }, root)
 
   // ── captions
-  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '420px', background: 'linear-gradient(180deg, rgba(11,6,32,0.000) 0%, rgba(11,6,32,0.022) 10%, rgba(11,6,32,0.083) 20%, rgba(11,6,32,0.173) 30%, rgba(11,6,32,0.282) 40%, rgba(11,6,32,0.400) 50%, rgba(11,6,32,0.518) 60%, rgba(11,6,32,0.627) 70%, rgba(11,6,32,0.717) 80%, rgba(11,6,32,0.778) 90%, rgba(11,6,32,0.800) 100%)', opacity: 0 }, root)
-  const capBox = el('div', { position: 'absolute', left: '50%', bottom: '74px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
-  const eyebrow = el('div', { fontFamily: MONO, fontSize: '21px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '14px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Blind by design&nbsp;&nbsp;✦')
-  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '72px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'The stars are giving you a chance.')
-  const lockBox = el('div', { position: 'absolute', left: '50%', bottom: '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
-  const lockLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '112px', lineHeight: 1, color: C.bone, opacity: 0,
+  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: VERT ? '820px' : '420px', background: 'linear-gradient(180deg, rgba(11,6,32,0.000) 0%, rgba(11,6,32,0.022) 10%, rgba(11,6,32,0.083) 20%, rgba(11,6,32,0.173) 30%, rgba(11,6,32,0.282) 40%, rgba(11,6,32,0.400) 50%, rgba(11,6,32,0.518) 60%, rgba(11,6,32,0.627) 70%, rgba(11,6,32,0.717) 80%, rgba(11,6,32,0.778) 90%, rgba(11,6,32,0.800) 100%)', opacity: 0 }, root)
+  const capBox = el('div', { position: 'absolute', left: '50%', bottom: VERT ? '330px' : '74px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
+  const eyebrow = el('div', { fontFamily: MONO, fontSize: VERT ? '27px' : '21px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: VERT ? '20px' : '14px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Blind by design&nbsp;&nbsp;✦')
+  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: VERT ? '84px' : '72px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, VERT ? 'The stars are giving<br>you a chance.' : 'The stars are giving you a chance.')
+  const lockBox = el('div', { position: 'absolute', left: '50%', bottom: VERT ? '362px' : '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
+  const lockLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: VERT ? '104px' : '112px', lineHeight: 1, color: C.bone, opacity: 0,
     textShadow: '0 0 40px rgba(255,236,200,0.45), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, lockBox, 'The stars aligned.')
   // aura-cam readout
-  const tag = el('div', { position: 'absolute', left: '72px', top: '64px', opacity: 0, fontFamily: MONO, fontSize: '18px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 10px rgba(11,6,32,0.65)', textTransform: 'uppercase' }, root)
+  const tag = el('div', { position: 'absolute', left: '72px', top: VERT ? '250px' : '64px', opacity: 0, fontFamily: MONO, fontSize: VERT ? '24px' : '18px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 10px rgba(11,6,32,0.65)', textTransform: 'uppercase' }, root)
   const tagRow = el('div', { display: 'flex', alignItems: 'center', gap: '14px' }, tag)
   const tagDot = el('div', { width: '12px', height: '12px', borderRadius: '50%' }, tagRow)
   el('div', {}, tagRow, 'Aura reading')
@@ -437,7 +445,7 @@ export function sceneVeil(stage) {
   return {
     start: 6.8, end: 11.52, root,
     update(t) {
-      if (!veilDrawn) { const vc = veilCanvas(); if (vc) { veilA.getContext('2d').drawImage(vc, 0, 0); veilCvB.getContext('2d').drawImage(vc, 0, 0); veilDrawn = true } }
+      if (!veilDrawn) { const vc = veilCanvas(); if (vc) { veilA.getContext('2d').drawImage(vc, 0, 0); if (VERT) { const k = IVW / VW, sh = IVH / k; veilCvB.getContext('2d').drawImage(vc, 0, VPAD.y + IVY - sh / 2, VW, sh, 0, 0, IVW, IVH) } else veilCvB.getContext('2d').drawImage(vc, 0, 0); veilDrawn = true } }
       const fi = Math.round(t * 30), lockF = Math.round(LOCK * 30)
       const gr = rng(fi * 131 + 17), grainPos = `${Math.floor(gr() * 256)}px ${Math.floor(gr() * 256)}px`
 
@@ -494,7 +502,7 @@ export function sceneVeil(stage) {
       // ══ camera ══
       const push = ease.inOutCubic(prog(t, 9.4, 9.7)), pull = ease.inOutCubic(prog(t, 10.12, 10.44))
       const winCy = WIN.y + WIN.h / 2
-      const Z = lerp(lerp(1, 1.6, push), 1, pull)
+      const Z = lerp(lerp(1, Z_PUSH, push), 1, pull)
       // camera focus fy = world point placed at screen centre; the mystery phase puts world origin at CC.y
       const fyUse = t < 9.4 ? -(CC.y - H / 2) : lerp(lerp(-(CC.y - H / 2), winCy, push), 0, pull)
       cam.style.transform = `translate(0px, ${-Z * fyUse}px) scale(${Z})`
@@ -540,11 +548,11 @@ export function sceneVeil(stage) {
         veil.style.display = p >= 1 ? 'none' : 'block'
         const edge = lerp(0, 135, p)
         veil.style.webkitMaskImage = veil.style.maskImage = p <= 0 ? 'none' : `linear-gradient(to top, transparent ${edge - 35}%, #000 ${edge}%)`
-        veil.style.transform = `translateY(${-H * 0.18 * p}px) scale(${1 + 0.04 * p})`
+        veil.style.transform = `translateY(${-IH * 0.18 * p}px) scale(${1 + 0.04 * p})`
         veil.style.filter = p <= 0 ? 'none' : `blur(${lerp(0, 22, p)}px) brightness(${1 + 0.12 * Math.sin(Math.PI * clamp(p * 1.4))})`
         const seamO = p < 0.08 ? p / 0.08 : p < 0.75 ? lerp(1, 0.9, (p - 0.08) / 0.67) : lerp(0.9, 0, (p - 0.75) / 0.25)
         seam.style.opacity = String(p <= 0 ? 0 : seamO)
-        seam.style.transform = `translateY(${H * (1 - (p * 1.35 - 0.175)) - 100}px)`
+        seam.style.transform = `translateY(${IH * (1 - (p * 1.35 - 0.175)) - 100}px)`
         const pk = prog(t, RES.peak - 0.04, RES.peak + 0.51)
         SPK.forEach((k, i) => {
           const q = prog(pk, k.d, k.d + 0.6), s = sparks[i]
@@ -639,9 +647,10 @@ export function sceneVeil(stage) {
         // column beam after the lock
         if (t >= LOCK - 0.04) {
           const bo = (t < LOCK ? prog(t, LOCK - 0.04, LOCK) : lerp(1, 0.35, ease.outQuad(prog(t, LOCK, LOCK + 0.45)))) * (1 - collapse)
-          const bg = fx.createLinearGradient(CC.x - 60, 0, CC.x + 60, 0)
+          const BW = VERT ? 85 : 60
+          const bg = fx.createLinearGradient(CC.x - BW, 0, CC.x + BW, 0)
           bg.addColorStop(0, 'rgba(255,240,214,0)'); bg.addColorStop(0.5, `rgba(255,244,226,${(0.55 * bo).toFixed(3)})`); bg.addColorStop(1, 'rgba(255,240,214,0)')
-          fx.fillStyle = bg; fx.fillRect(CC.x - 60, -20, 120, H + 40)
+          fx.fillStyle = bg; fx.fillRect(CC.x - BW, -20, BW * 2, H + 40)
         }
         SS.forEach((s, i) => {
           if (!s) return
@@ -654,14 +663,14 @@ export function sceneVeil(stage) {
             if (tj < e0) break
             const q = starState(i, tj); if (!q) break
             const al = (1 - j / 15) * 0.7 * (1 - collapse)
-            fx.strokeStyle = `rgba(${rgb},${al.toFixed(3)})`; fx.lineWidth = lerp(7, 1, j / 14)
+            fx.strokeStyle = `rgba(${rgb},${al.toFixed(3)})`; fx.lineWidth = lerp(7, 1, j / 14) * SZ
             fx.beginPath(); fx.moveTo(prev[0], prev[1]); fx.lineTo(q.x, q.y); fx.stroke()
             prev = [q.x, q.y]
           }
           const L = STAR_LOCK[i]
           const flare = t >= L ? 1 - ease.outQuad(prog(t, L, L + 0.35)) : 0
           const lockFlare = t >= LOCK ? 1 - ease.outQuad(prog(t, LOCK, LOCK + 0.6)) : 0
-          let sz = (1 + 0.14 * Math.sin(t * 9 + i * 1.7)) * (0.85 + 0.35 * ten) * (1 + 0.9 * flare + 1.2 * lockFlare)
+          let sz = SZ * (1 + 0.14 * Math.sin(t * 9 + i * 1.7)) * (0.85 + 0.35 * ten) * (1 + 0.9 * flare + 1.2 * lockFlare)
           let x = s.x, y = s.y
           if (collapse > 0) { x = lerp(x, CC.x, collapse); y = lerp(y, CC.y - 40, collapse * 0.6); sz *= 1 - collapse }
           const ent = Math.min(1, s.enter * 3)
@@ -681,12 +690,15 @@ export function sceneVeil(stage) {
       }
       // shockwave rings
       if (t >= LOCK && t < LOCK + 0.9) {
-        ;[[0, 1150, 30, '255,246,230'], [0.07, 900, 18, '201,166,255'], [0.15, 700, 8, '242,199,92']].forEach(([d, R1, w0, rgb]) => {
+        const RINGS = VERT ? [[0, 1250, 34, '255,246,230'], [0.07, 1000, 20, '201,166,255'], [0.15, 780, 9, '242,199,92']]
+          : [[0, 1150, 30, '255,246,230'], [0.07, 900, 18, '201,166,255'], [0.15, 700, 8, '242,199,92']]
+        const RY = VERT ? 1.3 : 0.92, R0 = VERT ? 130 : 90
+        RINGS.forEach(([d, R1, w0, rgb]) => {
           const q = prog(t, LOCK + d, LOCK + d + 0.7)
           if (q <= 0 || q >= 1) return
-          const R = lerp(90, R1, ease.outCubic(q))
+          const R = lerp(R0, R1, ease.outCubic(q))
           fx.strokeStyle = `rgba(${rgb},${(0.85 * (1 - ease.inQuad(q))).toFixed(3)})`; fx.lineWidth = lerp(w0, 1.5, q)
-          fx.beginPath(); fx.ellipse(CC.x, CC.y, R, R * 0.92, 0, 0, 6.2832); fx.stroke()
+          fx.beginPath(); fx.ellipse(CC.x, CC.y, R, R * RY, 0, 0, 6.2832); fx.stroke()
         })
       }
       // resolve sparkles around the photo window (camera is parked on it: window centre = screen centre)
@@ -695,9 +707,9 @@ export function sceneVeil(stage) {
         SPK2.forEach((k) => {
           const q = prog(rk, k.d, k.d + 0.75)
           if (q <= 0 || q >= 1) return
-          const R = lerp(k.r0, k.r1, ease.outCubic(q))
-          const x = W / 2 + Math.cos(k.a) * R, y = H / 2 + Math.sin(k.a) * R * 0.66
-          sparkle(fx, x, y, k.s * Math.sin(Math.PI * q), k.gold ? '255,226,150' : '255,244,236', Math.min(1, Math.sin(Math.PI * q) * 1.5))
+          const R = VERT ? lerp(k.r0 * 1.15, k.r1 * 1.1, ease.outCubic(q)) : lerp(k.r0, k.r1, ease.outCubic(q))
+          const x = W / 2 + Math.cos(k.a) * R * (VERT ? 0.98 : 1), y = H / 2 + Math.sin(k.a) * R * (VERT ? 0.85 : 0.66)
+          sparkle(fx, x, y, k.s * SZ * Math.sin(Math.PI * q), k.gold ? '255,226,150' : '255,244,236', Math.min(1, Math.sin(Math.PI * q) * 1.5))
         })
       }
       fx.globalCompositeOperation = 'source-over'

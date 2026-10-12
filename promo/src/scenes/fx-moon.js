@@ -1,4 +1,5 @@
 import { clamp, lerp, prog, ease, rng } from '../lib.js'
+import { VERT } from './common.js'
 
 // ───────────────────────────────────────────── moon motif (shared renderer + the global "moon clock")
 // Phase convention everywhere in this file: p = fraction of the lunar month, 0..1
@@ -17,7 +18,7 @@ import { clamp, lerp, prog, ease, rng } from '../lib.js'
 //   S6   in 19.55 · tick 19.65–20.35 (lit 75% → 93%, waxing gibbous)            · out 23.55–23.80
 //   S7   in 25.80 · tick 25.90–26.60 (lit 96% → 100%, FULL MOON; bloom peaks 26.60) · out 27.75–28.00
 // Position: top-left (glyph centre 92,86; label to its right, ≤ x 420, ≤ y 120) in every scene — a keep-out
-// for anything else in those scenes.
+// for anything else in those scenes. Vertical cut: glyph centre 100,262 (label ≤ x 420, y ≈ 236–284).
 
 export const litOf = (p) => (1 - Math.cos(2 * Math.PI * p)) / 2
 const frac = (p) => ((p % 1) + 1) % 1
@@ -207,7 +208,9 @@ const CLOCK = [
   { a: 19.55, b: 23.8, p0: 0.333, p1: 0.415 },           // S6
   { a: 25.8, b: 28.0, p0: 0.44, p1: 0.5, full: true },   // S7 match payoff
 ]
-const GX = 92, GY = 86, GR = 20
+// vertical (9:16): same top-left corner but pushed down below the platform overlays (top ~200px) —
+//   glyph centre 100,262; label to its right ≤ x 420, y ≈ 236–284 (scene keep-out in the tall frame)
+const GX = VERT ? 100 : 92, GY = VERT ? 262 : 86, GR = 20
 export function fxMoonClock(ctx, t) {
   const c = CLOCK.find(s => t >= s.a && t < s.b)
   if (!c) return

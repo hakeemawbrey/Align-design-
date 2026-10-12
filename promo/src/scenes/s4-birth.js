@@ -1,11 +1,16 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
-import { W, H, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
+import { W, H, VERT, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars } from "./common.js"
 
 // ─────────────────────────────────────────────── S4 · type your birth
 export const BIRTH_TEXT = 'May 12, 1998 · 5:00 PM · Houston, TX'
 const TEXT = BIRTH_TEXT
 const inOutQuart = x => (x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2)
 const T0 = 10.5, T1 = 12.55
+// layout: 16:9 numbers are the originals; the 9:16 cut uses a narrower pill (≈900px on screen at the 1.65× rest zoom),
+// a slightly smaller field font so the full line fits, a gentler caret zoom and the ghost "Align" running up the frame
+const L = VERT
+  ? { PW: 546, PH: 72, FS: 23, CARET_H: 27, ZMAX: 6.5, ZREST: 1.65, ANCHOR: 0.70, cols: 120, bigFS: 700, bigT: 'translate(calc(-50% - 60px),-50%) rotate(-90deg)' }
+  : { PW: 820, PH: 72, FS: 24, CARET_H: 28, ZMAX: 9.5, ZREST: 1.7, ANCHOR: 0.66, cols: 200, bigFS: 560, bigT: 'translate(-50%,-56%)' }
 /** keystroke times (also used by the soundtrack) */
 export function birthTypedAt() {
   const r = rng(42)
@@ -24,14 +29,15 @@ export function sceneBirth(stage) {
     if (drawn || !auraSrc.complete || !auraSrc.naturalWidth) return
     drawn = true
     const g = cloud.getContext('2d')
-    const off = document.createElement('canvas'); off.width = 200; off.height = 120
+    const COLS = L.cols, step = (W + 160) / COLS, ROWS = VERT ? Math.ceil((H + 120) / step) : 120
+    const off = document.createElement('canvas'); off.width = COLS; off.height = ROWS
     const o = off.getContext('2d')
     o.filter = 'blur(6px)'
-    o.drawImage(auraSrc, -20, -30, 240, 200)
-    const data = o.getImageData(0, 0, 200, 120).data
-    const step = (W + 160) / 200
-    for (let y = 0; y < 120; y++) for (let x = 0; x < 200; x++) {
-      const i = (y * 200 + x) * 4
+    if (VERT) { const dh = ROWS * 1.08, dw = dh * 640 / 585; o.drawImage(auraSrc, (COLS - dw) / 2, -ROWS * 0.06, dw, dh) }
+    else o.drawImage(auraSrc, -20, -30, 240, 200)
+    const data = o.getImageData(0, 0, COLS, ROWS).data
+    for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++) {
+      const i = (y * COLS + x) * 4
       const l = (data[i] * 0.3 + data[i + 1] * 0.5 + data[i + 2] * 0.2) / 255
       const rad = Math.pow(l, 1.2) * step * 0.62
       if (rad < 0.4) continue
@@ -42,10 +48,10 @@ export function sceneBirth(stage) {
   const glow = fill(root, { background: 'radial-gradient(60% 55% at 50% 55%, rgba(154,123,224,0.35), rgba(20,10,46,0) 70%)' })
   const world = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', transformOrigin: '0 0' }, root)
   const big = el('div', {
-    position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-56%)', fontFamily: SERIF, fontStyle: 'italic',
-    fontSize: '560px', lineHeight: 1, color: 'rgba(214,196,255,0.4)', letterSpacing: '-0.02em', whiteSpace: 'nowrap',
+    position: 'absolute', left: '50%', top: '50%', transform: L.bigT, fontFamily: SERIF, fontStyle: 'italic',
+    fontSize: L.bigFS + 'px', lineHeight: 1, color: 'rgba(214,196,255,0.4)', letterSpacing: '-0.02em', whiteSpace: 'nowrap',
   }, world, 'Align')
-  const PW = 820, PH = 72
+  const { PW, PH } = L
   const pill = el('div', {
     position: 'absolute', left: (W / 2 - PW / 2) + 'px', top: (H / 2 - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', borderRadius: '999px',
     background: 'linear-gradient(180deg, rgba(52,30,108,0.75) 0%, rgba(40,20,90,0.78) 100%)',
@@ -61,9 +67,9 @@ export function sceneBirth(stage) {
     position: 'absolute', left: '50%', top: (H / 2 - PH / 2 - 76) + 'px', transform: 'translateX(-50%)', fontFamily: MONO, fontSize: '26px', textShadow: '0 1px 12px rgba(11,6,32,0.8)',
     letterSpacing: '0.2em', color: 'rgba(239,230,214,0.9)', whiteSpace: 'nowrap', textTransform: 'uppercase', opacity: 0,
   }, world, 'Your chart starts here')
-  const field = el('div', { position: 'absolute', left: '32px', top: '50%', transform: 'translateY(-50%)', fontFamily: SANS, fontSize: '24px', color: C.bone, whiteSpace: 'pre' }, pill)
-  const caret = el('span', { display: 'inline-block', width: '2px', height: '28px', background: C.bone, marginLeft: '2px', verticalAlign: '-5px' }, null)
-  const hint = el('div', { position: 'absolute', left: '42px', top: '50%', transform: 'translateY(-50%)', fontFamily: SANS, fontSize: '24px', color: C.label3, whiteSpace: 'pre' }, pill, 'When and where were you born?')
+  const field = el('div', { position: 'absolute', left: '32px', top: '50%', transform: 'translateY(-50%)', fontFamily: SANS, fontSize: L.FS + 'px', color: C.bone, whiteSpace: 'pre' }, pill)
+  const caret = el('span', { display: 'inline-block', width: '2px', height: L.CARET_H + 'px', background: C.bone, marginLeft: '2px', verticalAlign: '-5px' }, null)
+  const hint = el('div', { position: 'absolute', left: '42px', top: '50%', transform: 'translateY(-50%)', fontFamily: SANS, fontSize: L.FS + 'px', color: C.label3, whiteSpace: 'pre' }, pill, 'When and where were you born?')
   const send = el('div', {
     position: 'absolute', right: '12px', top: '12px', width: '48px', height: '48px', borderRadius: '999px',
     background: 'linear-gradient(100deg, #f8edff 0%, #fff7ec 38%, #eaf4ff 72%, #ffeff7 100%)', color: '#3a2c4e',
@@ -82,7 +88,7 @@ export function sceneBirth(stage) {
   // measure char x offsets once
   let xs = null
   const measure = () => {
-    const probe = el('span', { position: 'absolute', visibility: 'hidden', fontFamily: SANS, fontSize: '24px', whiteSpace: 'pre' }, pill)
+    const probe = el('span', { position: 'absolute', visibility: 'hidden', fontFamily: SANS, fontSize: L.FS + 'px', whiteSpace: 'pre' }, pill)
     xs = [0]
     for (let i = 1; i <= TEXT.length; i++) { probe.textContent = TEXT.slice(0, i); xs.push(probe.getBoundingClientRect().width / (window.__stageScale || 1)) }
     probe.remove()
@@ -104,7 +110,7 @@ export function sceneBirth(stage) {
       // leaves and lands at rest (in 10.0→10.5, out 12.65→13.15)
       // zoom-out rests at 1.7× on the pill (send + tap stay big on a phone), then the
       // camera eases back to 1.0 during the morph so the loading disc lands centred at r=36
-      const ZMAX = 9.5, ZREST = Math.log(1.7) / Math.log(ZMAX)
+      const ZMAX = L.ZMAX, ZREST = Math.log(L.ZREST) / Math.log(ZMAX)
       const zIn = inOutQuart(prog(t, 10.0, 10.5))
       const zOut = inOutQuart(prog(t, 12.65, 13.15))
       const zBack = ease.inOutCubic(prog(t, 13.45, 13.95))
@@ -117,7 +123,7 @@ export function sceneBirth(stage) {
       const focusX = lerp(W / 2, caretX, zf)
       const focusY = H / 2
       // frame the caret at ~66% of width so the typed text runs off the left edge
-      const anchorX = lerp(W / 2, W * 0.66, zf)
+      const anchorX = lerp(W / 2, W * L.ANCHOR, zf)
       const tx = anchorX - focusX * z, ty = H / 2 - focusY * z
       world.style.transform = `translate(${tx}px, ${ty}px) scale(${z})`
       // intro: pill rises in
@@ -147,7 +153,7 @@ export function sceneBirth(stage) {
       glint.style.left = lerp(-140, PW + 60, prog(t, 10.6, 12.4)) + 'px'
       eyebrow.style.opacity = String(ease.outQuad(prog(t, 12.85, 13.1)) * (1 - prog(t, 13.48, 13.62)))
       spinner.style.transform = `rotate(${t * 520}deg)`
-      big.style.transform = `translate(-50%,-56%) scale(${lerp(1.04, 0.98, prog(t, 9.81, 14.4))})`
+      big.style.transform = `${L.bigT} scale(${lerp(1.04, 0.98, prog(t, 9.81, 14.4))})`
       big.style.opacity = String(ease.outQuad(prog(t, 9.81, 10.3)))
       glow.style.opacity = String(0.7 + 0.3 * Math.sin(t * 1.3))
     },

@@ -44,7 +44,11 @@ const PROFILES = [
   { // S3 · mystery card + waxing moon → the stars align (lock 8.72) → reveal card → card back (REAL time)
     a: 6.86, b: 11.52, fin: 0.45, fout: 0.15, seed: 37, sprites: 20, dots: 60, px: [3, 4], drift: [-8, -5], edge: true,
     pal: [BONE, GOLD, BONE, VIOLET], centre: HOT, dot: '255,247,236', alpha: 0.95,
-    keep: [
+    keep: H > W ? [                       // vertical 9:16 (S3 layout: card centre 540,780, moon above, captions y≈1360–1560)
+      [130, 0, 820, 1440, 6.8, 9.4],     // mystery card + moon + chakra column
+      [60, 1340, 960, 260, 6.8, 9.75],   // captions
+      [120, 0, 840, 1700, 9.4, 11.6],    // reveal card, push into its photo window, card-back push
+    ] : [
       [540, 20, 840, 840, 6.8, 9.4],     // mystery card + moon disc + chakra column
       [440, 860, 1040, 180, 6.8, 9.75],  // "The stars are giving you a chance." / "The stars aligned."
       [420, 0, 1080, 1080, 9.4, 11.6],   // reveal card (camera push into its photo window), moon, card-back push
@@ -168,7 +172,9 @@ function drawField(ctx, P, t, wgt) {
 
 // ── hero bursts: sparkles fly out from a ring and step down big → glint → tiny
 const BURSTS = [
-  { t: 8.72, x: 960, y: 440, r0: 150, r1: 900, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sy: 0.78, seed: 3 },   // S3 the stars align (lock)
+  H > W   // S3 the stars align (lock); vertical: around the tall card at 540,800
+    ? { t: 8.72, x: 540, y: 780, r0: 190, r1: 640, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sx: 0.95, sy: 1.55, seed: 3 }
+    : { t: 8.72, x: 960, y: 440, r0: 150, r1: 900, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sy: 0.78, seed: 3 },
   { t: 21.85, x: 1230, y: 395, r0: 60, r1: 250, n: 12, px: 4, life: 0.75, pal: [GOLD, BONE, VIOLET, ROSE], centre: HOT, sy: 0.42, seed: 5 },
   { t: 24.3, x: 690, y: 560, r0: 390, r1: 520, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', BONE], centre: '#ffffff', sx: 0.62, sy: 1.08, avoid: [960, 430, 700, 220], seed: 7 },
 ]

@@ -1,5 +1,5 @@
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
-import { W, H, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
+import { W, H, VERT, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
 import { drawMoonGlyph, litOf } from './fx-moon.js'
 
 // first dealt card (S6 opens on it) — fxDots samples its colours
@@ -14,6 +14,9 @@ const MOON_P = 0.36
 const STRIP = [0, 0.0625, 0.125, 0.25, 0.36, 0.5, 0.625, 0.75]   // new → … → full → waning; index 4 = tonight
 const STRIP_CUR = 4
 const SIGN = { src: 'card-sign-stamped.png', iw: 904, ih: 1156, body: [116, 124, 724, 1042] }
+// 9:16 cut: title on top, the sign card large in the middle with the phase strip under it, the list below
+// (16:9 keeps its original side-by-side numbers in the else branch)
+const V5 = VERT ? { titleTop: 236, cardBody: 600, cardCY: 682, stripTop: 1004, stripScale: 1.3, listTop: 1164, ROW: 82, icon: 52, iconFS: 32, iconR: 12, labFS: 54, subFS: 46, gap: 20, titleFS: 104 } : null
 export function sceneReading(stage) {
   const root = fill(stage, { background: C.canvas })
   // deep-space backdrop (teal mood) — first child so everything else sits above it
@@ -23,7 +26,7 @@ export function sceneReading(stage) {
   // hidden copy of the first deck card so the loader waits for it (fxDots samples it)
   dotImg = img(root, DOT_SRC, { left: 0, top: 0, width: '2px', height: '3px', opacity: 0 })
   const block = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
-  const title = el('div', { position: 'absolute', fontFamily: SERIF, fontStyle: 'italic', fontSize: '108px', fontWeight: 400, color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.01em', lineHeight: 1, textShadow: '0 2px 30px rgba(8,5,34,0.55)' }, block)
+  const title = el('div', { position: 'absolute', fontFamily: SERIF, fontStyle: 'italic', fontSize: (VERT ? V5.titleFS : 108) + 'px', fontWeight: 400, color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.01em', lineHeight: 1, textShadow: '0 2px 30px rgba(8,5,34,0.55)' }, block)
   const tChars = [...'Reading your sky'].map((ch, i) => el('span', { opacity: 0, color: i === 0 ? VIOLET_HI : C.bone }, title, ch === ' ' ? ' ' : ch))
   const rail = el('div', { position: 'absolute', width: '3px', background: 'rgba(239,230,214,0.22)' }, block)
   const ITEMS = [
@@ -34,26 +37,26 @@ export function sceneReading(stage) {
     { g: '', c: '#ff8fb1', label: 'Dealing', sub: 'your first deck' },
   ]
   const AT = [14.75, 15.15, 15.55, 15.95, 16.35]
-  const ROW = 96, INDENT = 72
+  const ROW = VERT ? V5.ROW : 96, INDENT = 72
   const rows = ITEMS.map(it => {
-    const r = el('div', { position: 'absolute', left: '0', display: 'flex', alignItems: 'center', gap: '24px', whiteSpace: 'nowrap', fontFamily: SANS }, block)
-    const ic = el('div', { width: '58px', height: '58px', boxSizing: 'border-box', borderRadius: '13px', border: `3.5px solid ${it.c}`, color: it.c, display: it.g ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', fontSize: '36px', lineHeight: 1 }, r, it.g)
+    const r = el('div', { position: 'absolute', left: '0', display: 'flex', alignItems: 'center', gap: (VERT ? V5.gap : 24) + 'px', whiteSpace: 'nowrap', fontFamily: SANS }, block)
+    const ic = el('div', { width: (VERT ? V5.icon : 58) + 'px', height: (VERT ? V5.icon : 58) + 'px', boxSizing: 'border-box', borderRadius: (VERT ? V5.iconR : 13) + 'px', border: `3.5px solid ${it.c}`, color: it.c, display: it.g ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', fontSize: (VERT ? V5.iconFS : 36) + 'px', lineHeight: 1 }, r, it.g)
     if (it.moon) {   // moon-phase line icon (waxing gibbous, same phase as the strip below the card)
       ic.textContent = ''
       const mc = el('canvas', { width: '40px', height: '40px' }, ic); mc.width = mc.height = 80
       const mx = mc.getContext('2d'); mx.scale(2, 2)
       drawMoonGlyph(mx, 20, 20, 15, MOON_P, { color: it.c, lw: 3, discAlpha: 0 })
     }
-    const lab = el('div', { fontSize: '58px', fontWeight: 500, color: it.c, letterSpacing: '-0.01em' }, r, it.label)
-    const sub = el('div', { fontSize: '50px', color: 'rgba(239,230,214,0.7)', letterSpacing: '-0.01em' }, r, '— ' + it.sub)
+    const lab = el('div', { fontSize: (VERT ? V5.labFS : 58) + 'px', fontWeight: 500, color: it.c, letterSpacing: '-0.01em' }, r, it.label)
+    const sub = el('div', { fontSize: (VERT ? V5.subFS : 50) + 'px', color: 'rgba(239,230,214,0.7)', letterSpacing: '-0.01em' }, r, '— ' + it.sub)
     return { r, ic, lab, sub, it }
   })
   const working = el('div', { position: 'absolute', fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', textTransform: 'uppercase', whiteSpace: 'nowrap' }, block, 'Shuffling your deck…')
 
   // sign card: crop the baked green glow — body + stamp only, clean dark backing shadow
-  const SC = 500 / (SIGN.body[3] - SIGN.body[1]) // body ≈ 46% of frame height
+  const SC = (VERT ? V5.cardBody : 500) / (SIGN.body[3] - SIGN.body[1]) // body ≈ 46% of frame height
   const cw = SIGN.iw * SC, chh = SIGN.ih * SC
-  const card = el('div', { position: 'absolute', left: (1400 - cw / 2) + 'px', top: (H / 2 - chh / 2 - 6) + 'px', width: cw + 'px', height: chh + 'px', opacity: 0, willChange: 'transform' }, root)
+  const card = el('div', { position: 'absolute', left: (VERT ? W / 2 - (SIGN.body[0] + SIGN.body[2]) / 2 * SC : 1400 - cw / 2) + 'px', top: (VERT ? V5.cardCY - (SIGN.body[1] + SIGN.body[3]) / 2 * SC : H / 2 - chh / 2 - 6) + 'px', width: cw + 'px', height: chh + 'px', opacity: 0, willChange: 'transform' }, root)
   const [bl, bt, br, bb] = SIGN.body.map(v => v * SC)
   el('div', { position: 'absolute', left: bl + 'px', top: bt + 'px', width: (br - bl) + 'px', height: (bb - bt) + 'px', borderRadius: (34 * SC) + 'px', boxShadow: '0 0 70px 6px rgba(127,216,176,0.22), 0 0 140px 30px rgba(120,96,230,0.30), 0 30px 60px -10px rgba(4,2,16,0.7)' }, card)
   const layer = (clip) => img(card, A + SIGN.src, { left: 0, top: 0, width: cw + 'px', height: chh + 'px', clipPath: clip })
@@ -62,7 +65,7 @@ export function sceneReading(stage) {
 
   // phase strip under the sign card: 8 phases, a highlight walks to tonight's (sound: ticks 15.62 + i*0.09, lands 15.98)
   const SW = 560, SHh = 120
-  const strip = el('canvas', { position: 'absolute', left: (1400 - SW / 2) + 'px', top: '842px', width: SW + 'px', height: SHh + 'px' }, root)
+  const strip = el('canvas', { position: 'absolute', left: ((VERT ? W / 2 : 1400) - SW / 2) + 'px', top: (VERT ? V5.stripTop : 842) + 'px', width: SW + 'px', height: SHh + 'px', ...(VERT ? { transform: `scale(${V5.stripScale})`, transformOrigin: '50% 0' } : {}) }, root)
   strip.width = SW * 2; strip.height = SHh * 2
   const sx = strip.getContext('2d')
 
@@ -84,15 +87,18 @@ export function sceneReading(stage) {
       // each slot opens *before* its row shows (lead), so the eyebrow below is already clear when the row fades in
       const lead = AT.map(a => ease.outCubic(prog(t, a - 0.24, a + 0.06)))
       const listH = lead.reduce((h, l) => h + ROW * l, 0)
-      const LX = 300
-      const tx = lerp(W / 2 - titleW / 2, LX, g)
-      const blockTop = lerp(H / 2 - 54, H / 2 - listH / 2 - 120, g)
+      const LX = VERT ? Math.round((W - (blockW - 0)) / 2) : 300
+      const tx = VERT ? W / 2 - titleW / 2 : lerp(W / 2 - titleW / 2, LX, g)
+      const blockTop = VERT ? lerp(H / 2 - V5.titleFS / 2, V5.titleTop, g) : lerp(H / 2 - 54, H / 2 - listH / 2 - 120, g)
       title.style.left = tx + 'px'; title.style.top = blockTop + 'px'
-      title.style.transform = `scale(${lerp(1, 0.94, g)})`; title.style.transformOrigin = '0 0'
-      let y = blockTop + 146
+      title.style.transform = `scale(${lerp(1, 0.94, g)})`; title.style.transformOrigin = VERT ? '50% 0' : '0 0'
+      // vertical: the list column sits below the sign card + phase strip, left-aligned at LX and centred as a block
+      const listTop = VERT ? V5.listTop : blockTop + 146
+      const colX = VERT ? LX : tx
+      let y = listTop
       rows.forEach((row, i) => {
         const p = ease.outCubic(prog(t, AT[i], AT[i] + 0.32))
-        row.r.style.left = (tx + INDENT) + 'px'
+        row.r.style.left = (colX + INDENT) + 'px'
         row.r.style.top = y + 'px'
         row.r.style.opacity = String(clamp(prog(t, AT[i], AT[i] + 0.16)))
         row.r.style.transform = `translateX(${(1 - p) * -26}px)`
@@ -102,20 +108,21 @@ export function sceneReading(stage) {
         row.lab.style.color = mix(C.bone, row.it.c, act)
         y += ROW * lead[i]
       })
-      const eyeTop = y + 30
-      rail.style.left = (tx + 24) + 'px'; rail.style.top = (blockTop + 140) + 'px'
-      rail.style.height = Math.max(0, eyeTop - 18 - (blockTop + 140)) + 'px'
+      const eyeTop = y + (VERT ? 26 : 30)
+      const railTop = VERT ? listTop - 6 : blockTop + 140
+      rail.style.left = (colX + 24) + 'px'; rail.style.top = railTop + 'px'
+      rail.style.height = Math.max(0, eyeTop - 18 - railTop) + 'px'
       rail.style.opacity = String(g)
-      working.style.left = (tx) + 'px'; working.style.top = eyeTop + 'px'
+      working.style.left = (colX) + 'px'; working.style.top = eyeTop + 'px'
       const sh = (t * 1.1) % 1
       working.style.background = `linear-gradient(90deg, rgba(239,230,214,0.72) ${sh * 140 - 40}%, rgba(239,230,214,1) ${sh * 140 - 20}%, rgba(239,230,214,0.72) ${sh * 140}%)`
       working.style.webkitBackgroundClip = 'text'; working.style.color = 'transparent'
       working.style.opacity = String(g)
       // late life: the whole block slowly breathes forward and lifts, then clears before the dots arrive
       const hold = ease.inOutQuad(prog(t, 16.3, 17.18))
-      const bcx = LX + blockW / 2, bcy = H / 2
+      const bcx = VERT ? W / 2 : LX + blockW / 2, bcy = VERT ? V5.listTop + 200 : H / 2
       block.style.transformOrigin = `${bcx}px ${bcy}px`
-      block.style.transform = `translate(${hold * 40}px, ${-hold * 18}px) scale(${1 + 0.05 * hold})`
+      block.style.transform = VERT ? `translate(0px, ${-hold * 18}px) scale(${1 + 0.04 * hold})` : `translate(${hold * 40}px, ${-hold * 18}px) scale(${1 + 0.05 * hold})`
       block.style.opacity = String(1 - ease.inQuad(prog(t, 17.06, 17.18)))
       // "Dealing" row: soft pulse while the deck shuffles
       const pulse = prog(t, 16.6, 17.06)
@@ -161,8 +168,9 @@ export function sceneReading(stage) {
 // (S6's first card fades in underneath 17.45–17.62) → 2-frame square mosaic (frames 527–528, 17.567/17.6) hides the hand-off
 // → card is opaque, the last dots shrink and thin off it 17.62–17.78. Monotonic: dots → mosaic → sharp card.
 const BODY = [120, 114, 1374, 2116]
-const PATCH_H = 700, PATCH_W = PATCH_H * (BODY[2] - BODY[0]) / (BODY[3] - BODY[1]), PATCH_CX = W / 2, PATCH_CY = H / 2 - 10
-const CELL = 22
+// vertical: S6 uses BODY_H = 1000 (first card still centred at W/2, H/2 − 10) — keep in sync
+const PATCH_H = VERT ? 1000 : 700, PATCH_W = PATCH_H * (BODY[2] - BODY[0]) / (BODY[3] - BODY[1]), PATCH_CX = W / 2, PATCH_CY = H / 2 - 10
+const CELL = VERT ? 28 : 22
 let grid = null
 function sampleGrid() {
   if (grid) return grid
