@@ -124,9 +124,10 @@ def ease_out(t):
 
 
 def luminous(bg):
-    """How much light an image throws: its bright tail, not its average."""
+    """How much light an image throws out of darkness."""
     lum = bg[::8, ::8].astype(np.float32).mean(2) / 255
-    return float(np.percentile(lum, 95) + lum.mean())
+    p95, p50 = np.percentile(lum, [95, 50])
+    return float(2 * p95 - p50)  # light against darkness beats flat brightness (sand, sky)
 
 
 def schedule(bgs, rng):

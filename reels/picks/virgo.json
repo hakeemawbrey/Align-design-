@@ -8,11 +8,12 @@
   "license": "public domain",
   "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Virgo.jpg",
   "crop": [
-   0.5,
-   0.06,
-   0.95,
-   0.94
-  ]
+   0.52,
+   0.05,
+   0.93,
+   0.95
+  ],
+  "color": 1.15
  },
  "images": [
   {
@@ -23,6 +24,7 @@
    ],
    "zoom": 1.2,
    "note": "La Tour, Penitent Magdalen by candlelight",
+   "pin": true,
    "id": "met-436839",
    "source": "met",
    "title": "The Penitent Magdalen",
@@ -34,6 +36,206 @@
    "h": 2600,
    "query": "Georges de La Tour",
    "n": 204
+  },
+  {
+   "file": "cache/virgo/cand/nasa-PIA15226.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Sombrero galaxy, in Virgo",
+   "pin": true,
+   "id": "nasa-PIA15226",
+   "source": "nasa",
+   "title": "Hubble Spies Spectacular Sombrero",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA15226",
+   "url": "https://images-assets.nasa.gov/image/PIA15226/PIA15226~orig.jpg",
+   "w": 2600,
+   "h": 1457,
+   "query": "Sombrero galaxy",
+   "n": 139
+  },
+  {
+   "file": "cache/virgo/cand/aic-110673.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "zoom": 1.5,
+   "note": "Bouts workshop, Mater Dolorosa on black",
+   "id": "aic-110673",
+   "source": "aic",
+   "title": "Mater Dolorosa (Sorrowing Virgin)",
+   "creator": "Workshop of Dieric Bouts (Netherlandish, 1415–1475)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/110673",
+   "url": "https://www.artic.edu/iiif/2/66c1797f-b87e-8736-cdf6-c490bd34863b/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2221,
+   "query": "vestal virgin",
+   "n": 250
+  },
+  {
+   "file": "cache/virgo/cand/ov-c951d3f0-0da5-49f2-8e3b-c0c71fd5bd02.jpg",
+   "focus": [
+    0.5,
+    0.8
+   ],
+   "zoom": 1.6,
+   "note": "Demeter (Ceres) Ludovisi, marble head",
+   "pin": true,
+   "id": "ov-c951d3f0-0da5-49f2-8e3b-c0c71fd5bd02",
+   "source": "openverse/wikimedia",
+   "title": "Demeter (Ceres) Ludovisi. Rome, Roman National Museum, Palazzo Altemps. (5446116536)",
+   "creator": "Sergey Sosnovskiy from Saint-Petersburg, Russia",
+   "license": "by-sa 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=132506679",
+   "url": "https://api.openverse.org/v1/images/c951d3f0-0da5-49f2-8e3b-c0c71fd5bd02/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Demeter_%28Ceres%29_Ludovisi._Rome%2C_Roman_National_Museum%2C_Palazzo_Altemps._%285446116536%29.jpg",
+   "w": 1280,
+   "h": 1925,
+   "query": "Demeter Ceres",
+   "n": 19
+  },
+  {
+   "file": "cache/virgo/cand/aic-7503.jpg",
+   "focus": [
+    0.7,
+    0.4
+   ],
+   "note": "Hitchcock, white-robed Virgin among lilies",
+   "id": "aic-7503",
+   "source": "aic",
+   "title": "The Annunciation",
+   "creator": "George Hitchcock (American, 1850–1913)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/7503",
+   "url": "https://www.artic.edu/iiif/2/e35161fb-cd78-b757-8000-15ba3ebb0fc3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1319,
+   "query": "annunciation",
+   "n": 263
+  },
+  {
+   "file": "cache/virgo/cand/nasa-GSFC_20171208_Archive_e000151.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "note": "Hubble galaxy in the Virgo constellation",
+   "pin": true,
+   "id": "nasa-GSFC_20171208_Archive_e000151",
+   "source": "nasa",
+   "title": "Hubble Catches a Transformation in the Virgo Constellation",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000151",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000151/GSFC_20171208_Archive_e000151~orig.jpg",
+   "w": 1280,
+   "h": 901,
+   "query": "Virgo constellation",
+   "n": 87
+  },
+  {
+   "file": "cache/virgo/cand/aic-37743.jpg",
+   "focus": [
+    0.6,
+    0.35
+   ],
+   "note": "Francken, Annunciation under the dove's light",
+   "id": "aic-37743",
+   "source": "aic",
+   "title": "The Annunciation",
+   "creator": "Frans Francken II (Flemish, 1581–1642)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/37743",
+   "url": "https://www.artic.edu/iiif/2/1865cfaa-51b3-8916-56eb-6b57cf95c772/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2188,
+   "query": "annunciation",
+   "n": 266
+  },
+  {
+   "file": "cache/virgo/cand/met-437015.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.3,
+   "note": "Master of the Magdalen, gold-ground Madonna on black",
+   "id": "met-437015",
+   "source": "met",
+   "title": "Madonna and Child",
+   "creator": "Master of the Magdalen",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437015",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT279163.jpg",
+   "w": 1679,
+   "h": 2600,
+   "query": "Magdalen",
+   "n": 226
+  },
+  {
+   "file": "cache/virgo/cand/met-435838.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Campin, Virgin in a white robe in an apse",
+   "id": "met-435838",
+   "source": "met",
+   "title": "Virgin and Child in an Apse",
+   "creator": "Robert Campin",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435838",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-41688-001.jpg",
+   "w": 2038,
+   "h": 2600,
+   "query": "Virgo cluster",
+   "n": 138
+  },
+  {
+   "file": "cache/virgo/cand/ov-064774ff-a7fd-4136-82c7-9caa434d60c4.jpg",
+   "focus": [
+    0.45,
+    0.75
+   ],
+   "zoom": 1.6,
+   "note": "backlit wheat ears at golden hour",
+   "id": "ov-064774ff-a7fd-4136-82c7-9caa434d60c4",
+   "source": "openverse/wikimedia",
+   "title": "<div class='fn'> Old But Gold</div>",
+   "creator": "Marco Montagna",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=73622746",
+   "url": "https://api.openverse.org/v1/images/064774ff-a7fd-4136-82c7-9caa434d60c4/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Old_But_Gold_%28160707467%29.jpeg",
+   "w": 1280,
+   "h": 854,
+   "query": "wheat ears sunset",
+   "n": 242
+  },
+  {
+   "file": "cache/virgo/cand/aic-44739.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.6,
+   "note": "Fuseli, Milton's daughter writing in the light",
+   "id": "aic-44739",
+   "source": "aic",
+   "title": "Milton Dictating to His Daughter",
+   "creator": "Henry Fuseli (Swiss, active in England, 1741–1825)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/44739",
+   "url": "https://www.artic.edu/iiif/2/6006b9e7-567a-4fb8-34e2-a120886690fe/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1750,
+   "query": "hands sewing",
+   "n": 37
   },
   {
    "file": "cache/virgo/cand/met-437332.jpg",
@@ -76,224 +278,6 @@
    "n": 41
   },
   {
-   "file": "cache/virgo/cand/aic-111746.jpg",
-   "focus": [
-    0.4,
-    0.65
-   ],
-   "zoom": 1.2,
-   "note": "Lhermitte, harvesters binding sheaves",
-   "id": "aic-111746",
-   "source": "aic",
-   "title": "The Harvesters",
-   "creator": "Léon Augustin Lhermitte (French, 1844–1925)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/111746",
-   "url": "https://www.artic.edu/iiif/2/dac4ead1-77cd-a46f-5c35-9f8b5132525d/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1140,
-   "query": "harvest moon",
-   "n": 106
-  },
-  {
-   "file": "cache/virgo/cand/met-435773.jpg",
-   "focus": [
-    0.6,
-    0.5
-   ],
-   "note": "Breton, women in the field at sunset",
-   "id": "met-435773",
-   "source": "met",
-   "title": "The Weeders",
-   "creator": "Jules Breton",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/435773",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2155.jpg",
-   "w": 2600,
-   "h": 1466,
-   "query": "Jules Breton",
-   "n": 189
-  },
-  {
-   "file": "cache/virgo/cand/ov-064774ff-a7fd-4136-82c7-9caa434d60c4.jpg",
-   "focus": [
-    0.45,
-    0.6
-   ],
-   "zoom": 1.3,
-   "note": "backlit wheat ears at golden hour",
-   "id": "ov-064774ff-a7fd-4136-82c7-9caa434d60c4",
-   "source": "openverse/wikimedia",
-   "title": "<div class='fn'> Old But Gold</div>",
-   "creator": "Marco Montagna",
-   "license": "by-sa 3.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=73622746",
-   "url": "https://api.openverse.org/v1/images/064774ff-a7fd-4136-82c7-9caa434d60c4/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Old_But_Gold_%28160707467%29.jpeg",
-   "w": 1280,
-   "h": 854,
-   "query": "wheat ears sunset",
-   "n": 242
-  },
-  {
-   "file": "cache/virgo/cand/ov-c951d3f0-0da5-49f2-8e3b-c0c71fd5bd02.jpg",
-   "focus": [
-    0.5,
-    0.66
-   ],
-   "zoom": 1.25,
-   "note": "Demeter (Ceres) Ludovisi, marble head",
-   "id": "ov-c951d3f0-0da5-49f2-8e3b-c0c71fd5bd02",
-   "source": "openverse/wikimedia",
-   "title": "Demeter (Ceres) Ludovisi. Rome, Roman National Museum, Palazzo Altemps. (5446116536)",
-   "creator": "Sergey Sosnovskiy from Saint-Petersburg, Russia",
-   "license": "by-sa 2.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=132506679",
-   "url": "https://api.openverse.org/v1/images/c951d3f0-0da5-49f2-8e3b-c0c71fd5bd02/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Demeter_%28Ceres%29_Ludovisi._Rome%2C_Roman_National_Museum%2C_Palazzo_Altemps._%285446116536%29.jpg",
-   "w": 1280,
-   "h": 1925,
-   "query": "Demeter Ceres",
-   "n": 19
-  },
-  {
-   "file": "cache/virgo/cand/met-437097.jpg",
-   "focus": [
-    0.42,
-    0.45
-   ],
-   "note": "Millet, haystacks under a storm sky",
-   "id": "met-437097",
-   "source": "met",
-   "title": "Haystacks: Autumn",
-   "creator": "Jean-François Millet",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/437097",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP124093.jpg",
-   "w": 2600,
-   "h": 2031,
-   "query": "gleaners",
-   "n": 105
-  },
-  {
-   "file": "cache/virgo/cand/nasa-PIA15226.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Sombrero galaxy, in Virgo",
-   "id": "nasa-PIA15226",
-   "source": "nasa",
-   "title": "Hubble Spies Spectacular Sombrero",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA15226",
-   "url": "https://images-assets.nasa.gov/image/PIA15226/PIA15226~orig.jpg",
-   "w": 2600,
-   "h": 1457,
-   "query": "Sombrero galaxy",
-   "n": 139
-  },
-  {
-   "file": "cache/virgo/cand/nasa-GSFC_20171208_Archive_e000151.jpg",
-   "focus": [
-    0.55,
-    0.5
-   ],
-   "note": "Hubble galaxy in the Virgo constellation",
-   "id": "nasa-GSFC_20171208_Archive_e000151",
-   "source": "nasa",
-   "title": "Hubble Catches a Transformation in the Virgo Constellation",
-   "creator": "GSFC",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000151",
-   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000151/GSFC_20171208_Archive_e000151~orig.jpg",
-   "w": 1280,
-   "h": 901,
-   "query": "Virgo constellation",
-   "n": 87
-  },
-  {
-   "file": "cache/virgo/cand/met-437881.jpg",
-   "focus": [
-    0.45,
-    0.55
-   ],
-   "zoom": 1.5,
-   "note": "Vermeer, young woman with a water pitcher, white linen",
-   "id": "met-437881",
-   "source": "met",
-   "title": "Young Woman with a Water Pitcher",
-   "creator": "Johannes Vermeer",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/437881",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP353257.jpg",
-   "w": 2311,
-   "h": 2600,
-   "query": "white linen",
-   "n": 64
-  },
-  {
-   "file": "cache/virgo/cand/met-437098.jpg",
-   "focus": [
-    0.6,
-    0.5
-   ],
-   "zoom": 1.5,
-   "note": "Millet, shepherdess knitting",
-   "id": "met-437098",
-   "source": "met",
-   "title": "Shepherdess Seated on a Rock",
-   "creator": "Jean-François Millet",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/437098",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP140429.jpg",
-   "w": 2051,
-   "h": 2600,
-   "query": "Millet",
-   "n": 177
-  },
-  {
-   "file": "cache/virgo/cand/aic-44739.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "zoom": 1.6,
-   "note": "Fuseli, Milton's daughter writing in the light",
-   "id": "aic-44739",
-   "source": "aic",
-   "title": "Milton Dictating to His Daughter",
-   "creator": "Henry Fuseli (Swiss, active in England, 1741–1825)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/44739",
-   "url": "https://www.artic.edu/iiif/2/6006b9e7-567a-4fb8-34e2-a120886690fe/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1750,
-   "query": "hands sewing",
-   "n": 37
-  },
-  {
-   "file": "cache/virgo/cand/met-11180.jpg",
-   "focus": [
-    0.5,
-    0.35
-   ],
-   "zoom": 1.3,
-   "note": "Hunt, Italian girl",
-   "id": "met-11180",
-   "source": "met",
-   "title": "Italian Girl",
-   "creator": "William Morris Hunt",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/11180",
-   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap08.136.2.jpg",
-   "w": 1333,
-   "h": 2600,
-   "query": "girl by candlelight",
-   "n": 146
-  },
-  {
    "file": "cache/virgo/cand/aic-80538.jpg",
    "focus": [
     0.5,
@@ -316,10 +300,9 @@
   {
    "file": "cache/virgo/cand/met-436932.jpg",
    "focus": [
-    0.4,
-    0.6
+    0.55,
+    0.45
    ],
-   "zoom": 1.6,
    "note": "Maes, the lacemaker",
    "id": "met-436932",
    "source": "met",
@@ -334,24 +317,24 @@
    "n": 151
   },
   {
-   "file": "cache/virgo/cand/aic-66427.jpg",
+   "file": "cache/virgo/cand/met-437881.jpg",
    "focus": [
-    0.32,
+    0.45,
     0.55
    ],
-   "zoom": 1.2,
-   "note": "Stieglitz, a careful hand",
-   "id": "aic-66427",
-   "source": "aic",
-   "title": "Georgia O'Keeffe—Hand",
-   "creator": "Alfred Stieglitz",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/66427",
-   "url": "https://www.artic.edu/iiif/2/73bfb295-4798-4570-f94c-e65ff16c05e5/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 2077,
-   "query": "hands sewing",
-   "n": 39
+   "zoom": 1.5,
+   "note": "Vermeer, young woman with a water pitcher, white linen",
+   "id": "met-437881",
+   "source": "met",
+   "title": "Young Woman with a Water Pitcher",
+   "creator": "Johannes Vermeer",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437881",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP353257.jpg",
+   "w": 2311,
+   "h": 2600,
+   "query": "white linen",
+   "n": 64
   }
  ]
 }

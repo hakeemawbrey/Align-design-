@@ -18,53 +18,13 @@
  },
  "images": [
   {
-   "file": "cache/aries/cand/aic-111559.jpg",
-   "focus": [
-    0.45,
-    0.5
-   ],
-   "zoom": 1.25,
-   "note": "Goya, boy on a ram",
-   "id": "aic-111559",
-   "source": "aic",
-   "title": "Boy on a Ram",
-   "creator": "Francisco José de Goya y Lucientes (Spanish, 1746–1828)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/111559",
-   "url": "https://www.artic.edu/iiif/2/e54a695c-16df-cf45-9dd4-b517e8c32cc3/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1902,
-   "query": "ram horns",
-   "n": 0
-  },
-  {
-   "file": "cache/aries/cand/ov-8a1e421f-a0ce-4fa1-a424-40bf987292b8.jpg",
-   "focus": [
-    0.5,
-    0.25
-   ],
-   "zoom": 1.5,
-   "note": "bighorn ram on a dark cliff",
-   "id": "ov-8a1e421f-a0ce-4fa1-a424-40bf987292b8",
-   "source": "openverse/wikimedia",
-   "title": "Bighorn sheep grand canyon",
-   "creator": "Oregon State University",
-   "license": "by-sa 2.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=104986196",
-   "url": "https://api.openverse.org/v1/images/8a1e421f-a0ce-4fa1-a424-40bf987292b8/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Bighorn_sheep_grand_canyon.jpg",
-   "w": 1280,
-   "h": 1707,
-   "query": "bighorn sheep ram",
-   "n": 234
-  },
-  {
    "file": "cache/aries/cand/ov-edef1891-4474-442c-ac39-5fa8c3e1c16f.jpg",
    "focus": [
     0.55,
     0.3
    ],
    "zoom": 1.2,
+   "pin": true,
    "note": "Armenian mouflon, sweeping horns",
    "id": "ov-edef1891-4474-442c-ac39-5fa8c3e1c16f",
    "source": "openverse/wikimedia",
@@ -78,6 +38,66 @@
    "h": 851,
    "query": "mouflon",
    "n": 240
+  },
+  {
+   "file": "cache/aries/cand/aic-57996.jpg",
+   "focus": [
+    0.22,
+    0.5
+   ],
+   "pin": true,
+   "note": "Volaire, Vesuvius erupting at night",
+   "id": "aic-57996",
+   "source": "aic",
+   "title": "The Eruption of Vesuvius",
+   "creator": "Pierre-Jacques Volaire (French, 1729–1799)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/57996",
+   "url": "https://www.artic.edu/iiif/2/6a676ee7-39c0-0b88-c37e-36ba0c5e3065/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 776,
+   "query": "volcano eruption",
+   "n": 43
+  },
+  {
+   "file": "cache/aries/cand/ov-769e3cce-050b-4fcf-a078-c212deee48b0.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "pin": true,
+   "note": "ram skull with curling horns on black",
+   "id": "ov-769e3cce-050b-4fcf-a078-c212deee48b0",
+   "source": "openverse/sketchfab",
+   "title": "Ram Skull",
+   "creator": "UON - School of Creative Industries",
+   "license": "by 4.0",
+   "landing": "https://sketchfab.com/3d-models/9e914d2d7e8c405db6e896b8db185d35",
+   "url": "https://api.openverse.org/v1/images/769e3cce-050b-4fcf-a078-c212deee48b0/thumb/?full_size=true",
+   "alt_url": "https://media.sketchfab.com/models/9e914d2d7e8c405db6e896b8db185d35/thumbnails/e36b948d5dd8479f9d77ae7fac6a856a/8929d455ac5b41668a98c31d433c8956.jpeg",
+   "w": 1920,
+   "h": 1080,
+   "query": "ram skull",
+   "n": 327
+  },
+  {
+   "file": "cache/aries/cand/nasa-S91-32389.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Mars, the ruler planet",
+   "id": "nasa-S91-32389",
+   "source": "nasa",
+   "title": "Composite image of the planet Mars taken by Hubble Space Telescope (HST)",
+   "creator": "JSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/S91-32389",
+   "url": "https://images-assets.nasa.gov/image/S91-32389/S91-32389~orig.jpg",
+   "w": 2065,
+   "h": 2600,
+   "query": "Mars planet",
+   "n": 143
   },
   {
    "file": "cache/aries/cand/met-437389.jpg",
@@ -100,61 +120,26 @@
    "n": 170
   },
   {
-   "file": "cache/aries/cand/aic-110663.jpg",
+   "file": "cache/aries/cand/ov-52534f39-1332-4561-82fc-f881aafc04b3.jpg",
    "focus": [
-    0.5,
-    0.4
+    0.55,
+    0.55
    ],
-   "note": "Delacroix, combat of the Giaour and Hassan",
-   "id": "aic-110663",
-   "source": "aic",
-   "title": "The Combat of the Giaour and Hassan",
-   "creator": "Eugène Delacroix (French, 1798–1863)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/110663",
-   "url": "https://www.artic.edu/iiif/2/ae0793ac-8ace-6c4a-84d4-a33162ae6832/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1370,
-   "query": "Delacroix",
-   "n": 183
-  },
-  {
-   "file": "cache/aries/cand/aic-57996.jpg",
-   "focus": [
-    0.22,
-    0.5
-   ],
-   "note": "Volaire, Vesuvius erupting at night",
-   "id": "aic-57996",
-   "source": "aic",
-   "title": "The Eruption of Vesuvius",
-   "creator": "Pierre-Jacques Volaire (French, 1729–1799)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/57996",
-   "url": "https://www.artic.edu/iiif/2/6a676ee7-39c0-0b88-c37e-36ba0c5e3065/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 776,
-   "query": "volcano eruption",
-   "n": 43
-  },
-  {
-   "file": "cache/aries/cand/nasa-S91-32389.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Mars, the ruler planet",
-   "id": "nasa-S91-32389",
-   "source": "nasa",
-   "title": "Composite image of the planet Mars taken by Hubble Space Telescope (HST)",
-   "creator": "JSC",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/S91-32389",
-   "url": "https://images-assets.nasa.gov/image/S91-32389/S91-32389~orig.jpg",
-   "w": 2065,
-   "h": 2600,
-   "query": "Mars planet",
-   "n": 143
+   "zoom": 1.3,
+   "pin": true,
+   "note": "mouflon ram facing out, curled horns",
+   "id": "ov-52534f39-1332-4561-82fc-f881aafc04b3",
+   "source": "openverse/wikimedia",
+   "title": "Cyprus mouflon (Ovis gmelini ophion)",
+   "creator": "Charles J. Sharp",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=109421088",
+   "url": "https://api.openverse.org/v1/images/52534f39-1332-4561-82fc-f881aafc04b3/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Cyprus_mouflon_%28Ovis_gmelini_ophion%29.jpg",
+   "w": 1280,
+   "h": 1280,
+   "query": "mouflon",
+   "n": 238
   },
   {
    "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e000762.jpg",
@@ -176,43 +161,43 @@
    "n": 228
   },
   {
-   "file": "cache/aries/cand/nasa-PIA07902.jpg",
+   "file": "cache/aries/cand/ov-3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d.jpg",
    "focus": [
     0.5,
-    0.45
+    0.55
    ],
-   "note": "Helix nebula, cosmic eye",
-   "id": "nasa-PIA07902",
-   "source": "nasa",
-   "title": "Planetary Nebula NGC 7293 also Known as the Helix Nebula",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA07902",
-   "url": "https://images-assets.nasa.gov/image/PIA07902/PIA07902~orig.jpg",
-   "w": 2448,
-   "h": 1880,
-   "query": "nebula",
-   "n": 100
+   "note": "lava lake erupting, Iceland",
+   "id": "ov-3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d",
+   "source": "openverse/wikimedia",
+   "title": "001 Volcano eruption of Litli-Hrútur in Iceland in 2023 Photo by Giles Laurent",
+   "creator": "Giles Laurent",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=141202680",
+   "url": "https://api.openverse.org/v1/images/3d41e9c9-bb62-4065-b6f2-5bc90bb38d6d/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/001_Volcano_eruption_of_Litli-Hr%C3%BAtur_in_Iceland_in_2023_Photo_by_Giles_Laurent.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "volcano eruption",
+   "n": 48
   },
   {
-   "file": "cache/aries/cand/met-435722.jpg",
+   "file": "cache/aries/cand/aic-149778.jpg",
    "focus": [
-    0.45,
-    0.3
+    0.4,
+    0.35
    ],
-   "zoom": 1.2,
-   "note": "Paris Bordon, man in armour",
-   "id": "met-435722",
-   "source": "met",
-   "title": "Portrait of a Man in Armor with Two Pages",
-   "creator": "Paris Bordon",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/435722",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-17629-001.jpg",
-   "w": 2600,
-   "h": 1927,
-   "query": "warrior helmet armor",
-   "n": 73
+   "note": "Mars in armour, Allegory of Peace and War",
+   "id": "aic-149778",
+   "source": "aic",
+   "title": "Allegory of Peace and War",
+   "creator": "Pompeo Girolamo Batoni (Italian, 1708–1787)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/149778",
+   "url": "https://www.artic.edu/iiif/2/92ad2a28-eac9-e358-6e3c-1c1cf39efd91/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2333,
+   "query": "Mars god of war",
+   "n": 21
   },
   {
    "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e000195.jpg",
@@ -234,62 +219,86 @@
    "n": 293
   },
   {
-   "file": "cache/aries/cand/nasa-PIA13448.jpg",
+   "file": "cache/aries/cand/ov-6a668d05-1de7-4ef6-8f16-16d2d9666e83.jpg",
    "focus": [
-    0.5,
+    0.4,
     0.5
    ],
-   "note": "Flame nebula in Orion",
-   "id": "nasa-PIA13448",
-   "source": "nasa",
-   "title": "A Flame in Orion Belt",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA13448",
-   "url": "https://images-assets.nasa.gov/image/PIA13448/PIA13448~orig.jpg",
-   "w": 2213,
-   "h": 2600,
-   "query": "Orion nebula",
-   "n": 287
+   "note": "Kamchatka volcano glowing at night",
+   "id": "ov-6a668d05-1de7-4ef6-8f16-16d2d9666e83",
+   "source": "openverse/wikimedia",
+   "title": "Volcano Eruption in Kamchatka Russia 1993",
+   "creator": "Giorgio Galeotti (Foto di Spalle on Flickr) https://www.flickr.com/people/fotodispalle/",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=30693868",
+   "url": "https://api.openverse.org/v1/images/6a668d05-1de7-4ef6-8f16-16d2d9666e83/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Volcano_Eruption_in_Kamchatka_Russia_1993.jpg",
+   "w": 1280,
+   "h": 866,
+   "query": "volcano eruption",
+   "n": 51
   },
   {
-   "file": "cache/aries/cand/ov-91e2a34b-805f-48f5-b350-f47dcf1f4915.jpg",
+   "file": "cache/aries/cand/ov-e404e8ca-7f6a-4ebb-a315-703f0cb6a31b.jpg",
    "focus": [
-    0.3,
+    0.45,
+    0.55
+   ],
+   "zoom": 1.4,
+   "note": "bighorn ram in the snow",
+   "id": "ov-e404e8ca-7f6a-4ebb-a315-703f0cb6a31b",
+   "source": "openverse/wikimedia",
+   "title": "File:Sierra Nevada bighorn ram eating snow.jpg",
+   "creator": "California Department of Fish and Wildlife from Sacramento, CA, USA",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=29192381",
+   "url": "https://api.openverse.org/v1/images/e404e8ca-7f6a-4ebb-a315-703f0cb6a31b/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Sierra_Nevada_bighorn_ram_eating_snow.jpg",
+   "w": 1280,
+   "h": 867,
+   "query": "bighorn ram",
+   "n": 177
+  },
+  {
+   "file": "cache/aries/cand/ov-648a633e-6fb5-4e0a-a175-e7a2b493abf0.jpg",
+   "focus": [
+    0.5,
     0.4
    ],
-   "note": "Egyptian ram's head (criosphinx), sandstone in raking light",
-   "id": "ov-91e2a34b-805f-48f5-b350-f47dcf1f4915",
+   "note": "lightning storm at night",
+   "id": "ov-648a633e-6fb5-4e0a-a175-e7a2b493abf0",
    "source": "openverse/wikimedia",
-   "title": "Head of a ram (criosphinx), sandstone, Museo Egizio Turin C 846",
-   "creator": "Unknown authorUnknown author",
-   "license": "cc0 1.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=178906173",
-   "url": "https://api.openverse.org/v1/images/91e2a34b-805f-48f5-b350-f47dcf1f4915/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Head_of_a_ram%2C_sandstone_-_Museo_Egizio_%28Turin%29_C_846_p01.jpg",
+   "title": "Lightning storm over the Caribbean",
+   "creator": "Keith Pomakis",
+   "license": "by-sa 2.5",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=1374897",
+   "url": "https://api.openverse.org/v1/images/648a633e-6fb5-4e0a-a175-e7a2b493abf0/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Lightning_storm_over_the_Caribbean.jpg",
    "w": 1280,
-   "h": 1620,
-   "query": "criosphinx Karnak",
-   "n": 312
+   "h": 960,
+   "query": "lightning storm",
+   "n": 89
   },
   {
-   "file": "cache/aries/cand/nasa-GSFC_20171208_Archive_e002075.jpg",
+   "file": "cache/aries/cand/ov-3ef73af4-a71c-4e13-8ada-261e0efc8eb9.jpg",
    "focus": [
-    0.5,
+    0.42,
     0.5
    ],
-   "note": "Carina nebula, red dust on black",
-   "id": "nasa-GSFC_20171208_Archive_e002075",
-   "source": "nasa",
-   "title": "CTIO Image of Carina Nebula",
-   "creator": "GSFC",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002075",
-   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002075/GSFC_20171208_Archive_e002075~orig.jpg",
-   "w": 2036,
-   "h": 2048,
-   "query": "Carina nebula",
-   "n": 302
+   "zoom": 1.5,
+   "note": "mouflon ram in profile, horns curled",
+   "id": "ov-3ef73af4-a71c-4e13-8ada-261e0efc8eb9",
+   "source": "openverse/wikimedia",
+   "title": "Cyprus mouflon (Ovis gmelini ophion) 2",
+   "creator": "Charles J. Sharp",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=109421087",
+   "url": "https://api.openverse.org/v1/images/3ef73af4-a71c-4e13-8ada-261e0efc8eb9/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Cyprus_mouflon_%28Ovis_gmelini_ophion%29_2.jpg",
+   "w": 1280,
+   "h": 1280,
+   "query": "mouflon",
+   "n": 243
   }
  ]
 }

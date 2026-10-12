@@ -19,9 +19,11 @@
    "file": "cache/leo/cand/ov-893cb881-adc2-4115-83be-7257a93975cf.jpg",
    "focus": [
     0.4,
-    0.45
+    0.3
    ],
+   "zoom": 1.2,
    "note": "Asiatic lion face, warm light",
+   "pin": true,
    "id": "ov-893cb881-adc2-4115-83be-7257a93975cf",
    "source": "openverse/wikimedia",
    "title": "Male Asiatic lion face portrait 2011",
@@ -43,6 +45,7 @@
    ],
    "zoom": 1.4,
    "note": "maned lion roaring",
+   "pin": true,
    "id": "ov-fe6230f3-c330-4466-9bc3-f8c49fba93dc",
    "source": "openverse/wordpress",
    "title": "Lion roaring.",
@@ -57,25 +60,104 @@
    "n": 203
   },
   {
-   "file": "cache/leo/cand/ov-628fce56-f408-488b-a753-a543a784cd54.jpg",
+   "file": "cache/leo/cand/ov-bdedb80a-4cc2-44a9-93db-5ab4413414e8.jpg",
    "focus": [
     0.5,
-    0.45
+    0.5
    ],
-   "zoom": 1.15,
-   "note": "sleeping lion's face and mane",
-   "id": "ov-628fce56-f408-488b-a753-a543a784cd54",
-   "source": "openverse/stocksnap",
-   "title": "Lion Animal",
-   "creator": "Nathalie E. Julien",
-   "license": "cc0 1.0",
-   "landing": "https://stocksnap.io/photo/lion-animal-RKAECBZ4CP",
-   "url": "https://api.openverse.org/v1/images/628fce56-f408-488b-a753-a543a784cd54/thumb/?full_size=true",
-   "alt_url": "https://cdn.stocksnap.io/img-thumbs/960w/RKAECBZ4CP.jpg",
-   "w": 960,
-   "h": 1810,
-   "query": "lion face portrait",
-   "n": 192
+   "note": "total solar eclipse corona",
+   "id": "ov-bdedb80a-4cc2-44a9-93db-5ab4413414e8",
+   "source": "openverse/wikimedia",
+   "title": "Total eclipse of the Sun",
+   "creator": "Ababamov",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=84009181",
+   "url": "https://api.openverse.org/v1/images/bdedb80a-4cc2-44a9-93db-5ab4413414e8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Total_eclipse_of_the_Sun.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "sun corona eclipse",
+   "n": 80
+  },
+  {
+   "file": "cache/leo/cand/ov-5076f84d-6bdd-4672-b70c-a5fc4ac29cab.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Sanxingdui gold mask on black",
+   "id": "ov-5076f84d-6bdd-4672-b70c-a5fc4ac29cab",
+   "source": "openverse/wikimedia",
+   "title": "Sanxingdui gold mask",
+   "creator": "momo",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=28821796",
+   "url": "https://api.openverse.org/v1/images/5076f84d-6bdd-4672-b70c-a5fc4ac29cab/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Sanxingdui_gold_mask.jpg",
+   "w": 1280,
+   "h": 1707,
+   "query": "gold mask",
+   "n": 72
+  },
+  {
+   "file": "cache/leo/cand/ov-2339530a-c740-4ce5-8a22-82a07c64838d.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "lion roaring, open jaws",
+   "pin": true,
+   "id": "ov-2339530a-c740-4ce5-8a22-82a07c64838d",
+   "source": "openverse/wikimedia",
+   "title": "Lion Roaring",
+   "creator": "Atsme (Betty Wills)",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=45544480",
+   "url": "https://api.openverse.org/v1/images/2339530a-c740-4ce5-8a22-82a07c64838d/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Lion_Roaring.jpg",
+   "w": 1280,
+   "h": 1186,
+   "query": "lion roaring",
+   "n": 201
+  },
+  {
+   "file": "cache/leo/cand/nasa-PIA19821.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "NuSTAR x-ray sun",
+   "id": "nasa-PIA19821",
+   "source": "nasa",
+   "title": "NuSTAR Stares at the Sun",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA19821",
+   "url": "https://images-assets.nasa.gov/image/PIA19821/PIA19821~orig.jpg",
+   "w": 2600,
+   "h": 2600,
+   "query": "Sun",
+   "n": 105
+  },
+  {
+   "file": "cache/leo/cand/aic-95998.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.3,
+   "note": "Rembrandt, old man with a gold chain",
+   "id": "aic-95998",
+   "source": "aic",
+   "title": "Old Man with a Gold Chain",
+   "creator": "Rembrandt van Rijn (Dutch, 1606–1669)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/95998",
+   "url": "https://www.artic.edu/iiif/2/3eaab3a3-2b47-9fdd-121c-050f6b8d9ccb/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1837,
+   "query": "gold mask",
+   "n": 64
   },
   {
    "file": "cache/leo/cand/ov-5e4e45bf-906a-4b1e-a50d-da18e2c0d15c.jpg",
@@ -118,105 +200,6 @@
    "n": 157
   },
   {
-   "file": "cache/leo/cand/ov-bdedb80a-4cc2-44a9-93db-5ab4413414e8.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "total solar eclipse corona",
-   "id": "ov-bdedb80a-4cc2-44a9-93db-5ab4413414e8",
-   "source": "openverse/wikimedia",
-   "title": "Total eclipse of the Sun",
-   "creator": "Ababamov",
-   "license": "by-sa 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=84009181",
-   "url": "https://api.openverse.org/v1/images/bdedb80a-4cc2-44a9-93db-5ab4413414e8/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Total_eclipse_of_the_Sun.jpg",
-   "w": 1280,
-   "h": 853,
-   "query": "sun corona eclipse",
-   "n": 80
-  },
-  {
-   "file": "cache/leo/cand/ov-7f8a49a5-8981-4126-8b17-107af7d6c4ab.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "ring of fire annular eclipse",
-   "id": "ov-7f8a49a5-8981-4126-8b17-107af7d6c4ab",
-   "source": "openverse/wikimedia",
-   "title": "Ring of Fire Eclipse IMG 4990c - Copy (53260903634)",
-   "creator": "Dan Maxwell from Austin, TX",
-   "license": "by-sa 2.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=139008694",
-   "url": "https://api.openverse.org/v1/images/7f8a49a5-8981-4126-8b17-107af7d6c4ab/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Ring_of_Fire_Eclipse_IMG_4990c_-_Copy_%2853260903634%29.jpg",
-   "w": 1919,
-   "h": 1279,
-   "query": "sun corona eclipse",
-   "n": 81
-  },
-  {
-   "file": "cache/leo/cand/nasa-PIA19821.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "NuSTAR x-ray sun",
-   "id": "nasa-PIA19821",
-   "source": "nasa",
-   "title": "NuSTAR Stares at the Sun",
-   "creator": "JPL",
-   "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA19821",
-   "url": "https://images-assets.nasa.gov/image/PIA19821/PIA19821~orig.jpg",
-   "w": 2600,
-   "h": 2600,
-   "query": "Sun",
-   "n": 105
-  },
-  {
-   "file": "cache/leo/cand/ov-8ddd8e9c-4321-4b2e-9781-fde325e5a219.jpg",
-   "focus": [
-    0.45,
-    0.45
-   ],
-   "note": "stellar flare, glowing star",
-   "id": "ov-8ddd8e9c-4321-4b2e-9781-fde325e5a219",
-   "source": "openverse/wikimedia",
-   "title": "Stellar flare hits HD 189733 b (artist's impression)",
-   "creator": "NASA, ESA, L. Calçada",
-   "license": "by 4.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=26601300",
-   "url": "https://api.openverse.org/v1/images/8ddd8e9c-4321-4b2e-9781-fde325e5a219/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Stellar_flare_hits_HD_189733_b_%28artist%27s_impression%29.jpg",
-   "w": 1280,
-   "h": 730,
-   "query": "the sun solar flare",
-   "n": 16
-  },
-  {
-   "file": "cache/leo/cand/ov-5076f84d-6bdd-4672-b70c-a5fc4ac29cab.jpg",
-   "focus": [
-    0.5,
-    0.35
-   ],
-   "note": "Sanxingdui gold mask on black",
-   "id": "ov-5076f84d-6bdd-4672-b70c-a5fc4ac29cab",
-   "source": "openverse/wikimedia",
-   "title": "Sanxingdui gold mask",
-   "creator": "momo",
-   "license": "by 2.0",
-   "landing": "https://commons.wikimedia.org/w/index.php?curid=28821796",
-   "url": "https://api.openverse.org/v1/images/5076f84d-6bdd-4672-b70c-a5fc4ac29cab/thumb/?full_size=true",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Sanxingdui_gold_mask.jpg",
-   "w": 1280,
-   "h": 1707,
-   "query": "gold mask",
-   "n": 72
-  },
-  {
    "file": "cache/leo/cand/ov-fc85fe4d-62da-4b1f-8f8a-d2c67c0e7bd8.jpg",
    "focus": [
     0.5,
@@ -237,82 +220,45 @@
    "n": 75
   },
   {
-   "file": "cache/leo/cand/aic-95998.jpg",
+   "file": "cache/leo/cand/ov-628fce56-f408-488b-a753-a543a784cd54.jpg",
    "focus": [
     0.5,
-    0.5
-   ],
-   "zoom": 1.3,
-   "note": "Rembrandt, old man with a gold chain",
-   "id": "aic-95998",
-   "source": "aic",
-   "title": "Old Man with a Gold Chain",
-   "creator": "Rembrandt van Rijn (Dutch, 1606–1669)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/95998",
-   "url": "https://www.artic.edu/iiif/2/3eaab3a3-2b47-9fdd-121c-050f6b8d9ccb/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1837,
-   "query": "gold mask",
-   "n": 64
-  },
-  {
-   "file": "cache/leo/cand/met-436843.jpg",
-   "focus": [
-    0.6,
-    0.4
-   ],
-   "note": "Lairesse, Apollo and Aurora",
-   "id": "met-436843",
-   "source": "met",
-   "title": "Apollo and Aurora",
-   "creator": "Gerard de Lairesse",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436843",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145403.jpg",
-   "w": 2471,
-   "h": 2600,
-   "query": "Apollo sun god",
-   "n": 32
-  },
-  {
-   "file": "cache/leo/cand/aic-20155.jpg",
-   "focus": [
-    0.68,
     0.45
    ],
-   "zoom": 1.2,
-   "note": "Rottmayr, Apollo radiant",
-   "id": "aic-20155",
-   "source": "aic",
-   "title": "Apollo Granting Phaeton Permission to Drive the Chariot of the Sun",
-   "creator": "Johann Michael Rottmayr (Austrian, 1654–1730)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/20155",
-   "url": "https://www.artic.edu/iiif/2/c5e50da8-6bff-ea02-ed3c-c154b356cceb/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1087,
-   "query": "sun corona eclipse",
-   "n": 10
+   "zoom": 1.15,
+   "note": "sleeping lion's face and mane",
+   "id": "ov-628fce56-f408-488b-a753-a543a784cd54",
+   "source": "openverse/stocksnap",
+   "title": "Lion Animal",
+   "creator": "Nathalie E. Julien",
+   "license": "cc0 1.0",
+   "landing": "https://stocksnap.io/photo/lion-animal-RKAECBZ4CP",
+   "url": "https://api.openverse.org/v1/images/628fce56-f408-488b-a753-a543a784cd54/thumb/?full_size=true",
+   "alt_url": "https://cdn.stocksnap.io/img-thumbs/960w/RKAECBZ4CP.jpg",
+   "w": 960,
+   "h": 1810,
+   "query": "lion face portrait",
+   "n": 192
   },
   {
-   "file": "cache/leo/cand/met-436524.jpg",
+   "file": "cache/leo/cand/ov-cbd2d5c9-1658-499c-a6fd-82e090b3c2b4.jpg",
    "focus": [
     0.5,
     0.5
    ],
-   "note": "Van Gogh, sunflowers",
-   "id": "met-436524",
-   "source": "met",
-   "title": "Sunflowers",
-   "creator": "Vincent van Gogh",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436524",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-41223-001.jpg",
-   "w": 2600,
-   "h": 1837,
-   "query": "sunflowers",
-   "n": 48
+   "note": "sun bursting through a dark forest",
+   "id": "ov-cbd2d5c9-1658-499c-a6fd-82e090b3c2b4",
+   "source": "openverse/stocksnap",
+   "title": "Nature Landscape",
+   "creator": "Ju On",
+   "license": "cc0 1.0",
+   "landing": "https://stocksnap.io/photo/nature-landscape-ZD6WAL4LGT",
+   "url": "https://api.openverse.org/v1/images/cbd2d5c9-1658-499c-a6fd-82e090b3c2b4/thumb/?full_size=true",
+   "alt_url": "https://cdn.stocksnap.io/img-thumbs/960w/ZD6WAL4LGT.jpg",
+   "w": 960,
+   "h": 720,
+   "query": "the sun solar flare",
+   "n": 17
   },
   {
    "file": "cache/leo/cand/aic-94841.jpg",
@@ -333,6 +279,26 @@
    "h": 2186,
    "query": "sun corona eclipse",
    "n": 11
+  },
+  {
+   "file": "cache/leo/cand/met-438159.jpg",
+   "focus": [
+    0.45,
+    0.72
+   ],
+   "zoom": 1.35,
+   "note": "Vesuvius erupting, fire and smoke",
+   "id": "met-438159",
+   "source": "met",
+   "title": "An Eruption of Vesuvius",
+   "creator": "Johan Christian Dahl",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438159",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP155336.jpg",
+   "w": 2600,
+   "h": 1750,
+   "query": "Vesuvius eruption",
+   "n": 209
   }
  ]
 }
