@@ -86,7 +86,7 @@ export default function Welcome({ go }: ScreenProps) {
       </motion.div>
       <motion.div {...rise(0.7)} style={{ position: 'absolute', top: 650, left: 38, width: 314 }}>
         <motion.button
-          onClick={enter}
+          onClick={() => { sfx.tap(); go('x/phone') }}
           whileHover={{ backgroundColor: 'rgba(120, 100, 160, 0.28)' }}
           whileTap={{ scale: 0.97 }}
           style={{
