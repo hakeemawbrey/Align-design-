@@ -42,6 +42,12 @@ STYLE = {
     "text_y": 0.5,            # block centre / frame height
     "word_size": 0.19,       # wordmark font px / frame width
     "word_stroke": 0.011,
+    # 'come align', the quiet sign-off on every frame (Align's wordmark face, app cream)
+    "tag_text": "come align",
+    "tag_size": 0.046,        # font px / frame width
+    "tag_y": 0.752,           # centre / frame height: low in the picture window (window ends 0.781)
+    "tag_alpha": 0.62,
+    "tag_alpha_end": 0.9,     # a little brighter under the wordmark
     "end": 1.5,               # seconds of wordmark at the end
     # the grade (see grade()): exposure targets measured off the reference frames
     "median": 0.23,           # median luminance after levels
@@ -295,6 +301,29 @@ def text_layer(text, W, H, ss=2):
     return np.asarray(base, np.float32) / 255, lines
 
 
+def tag_layer(W, H, ss=2):
+    """'come align', small, in the wordmark face and the app's cream, with a soft dark halo
+    so it reads over bright pictures. It sits low in the picture window, inside
+    Instagram's safe zone (clear of the caption and buttons)."""
+    px = int(W * STYLE["tag_size"] * ss)
+    f = font("EBGaramond-Italic.ttf", px, b"Medium Italic")
+    text = STYLE["tag_text"]
+    box = f.getbbox(text)
+    x = (W * ss - (box[2] - box[0])) / 2 - box[0]
+    y = H * STYLE["tag_y"] * ss - (box[3] + box[1]) / 2
+    m = Image.new("L", (W * ss, H * ss), 0)
+    ImageDraw.Draw(m).text((x, y), text, font=f, fill=255)
+    halo = m.filter(ImageFilter.GaussianBlur(px * 0.35))
+    halo = np.clip(np.asarray(halo, np.float32) / 255 * 2.4, 0, 1) * 0.5
+    core = np.asarray(m, np.float32) / 255
+    alpha = np.maximum(core, halo)
+    rgb = np.zeros(core.shape + (3,), np.float32)
+    rgb[:] = core[..., None] * (np.array([0xef, 0xe6, 0xd6], np.float32) / 255) / np.maximum(alpha, 1e-4)[..., None]
+    out = np.dstack([rgb, alpha])
+    img = Image.fromarray((out * 255).astype(np.uint8), "RGBA").resize((W, H), Image.LANCZOS)
+    return np.asarray(img, np.float32) / 255
+
+
 def wordmark_layer(W, H, ss=2):
     """'Align' in the app's wordmark face (EB Garamond italic), white with a heavy
     black outline, the way the reference stamps its name over the last cuts."""
@@ -393,6 +422,7 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
 
     txt, lines = text_layer(line["text"], W, H)
     mark = wordmark_layer(W, H)
+    tag = tag_layer(W, H)
     end_shot = n_shots - int(round(STYLE["end"] / CUT))
 
     out = out or os.path.join(HERE, "out", f"{line['id']}-s{seed}{'-preview' if preview else ''}.mp4")
@@ -423,6 +453,8 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
         layer = mark if k >= end_shot else txt
         a = layer[..., 3:4]
         frame = frame * (1 - a) + layer[..., :3] * a
+        ta = tag[..., 3:4] * (STYLE["tag_alpha_end"] if k >= end_shot else STYLE["tag_alpha"])
+        frame = frame * (1 - ta) + tag[..., :3] * ta
         buf = (np.clip(frame, 0, 1) * 255 + 0.5).astype(np.uint8).tobytes()
         for _ in range(fpc):
             ff.stdin.write(buf)

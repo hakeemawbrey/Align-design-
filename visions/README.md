@@ -39,7 +39,7 @@ stopped.
 | Sourcing | `fetch.py`, `sources.py` | Searches Wikimedia Commons, the Art Institute of Chicago, the Met and NASA for open-licensed images; numbered contact sheets for curation |
 | Curation | `CURATE.md`, `tools/sheet.py` | The brief, and graded contact sheets so pictures are judged the way they play |
 | Grade | `render.grade` | Turns old paintings toward the reference's look: levels, local contrast, a moonlit blue ramp that spares skin and light sources, vibrance, bloom, blue-lifted blacks |
-| Type | `render.text_layer`, `render.wordmark_layer` | Sofia Sans Condensed Bold with a black outline and soft shadow (nearly the reference's font); "Align" in the app's wordmark face, EB Garamond italic |
+| Type | `render.text_layer`, `render.wordmark_layer`, `render.tag_layer` | Sofia Sans Condensed Bold with a black outline and soft shadow (nearly the reference's font); "Align" in the app's wordmark face, EB Garamond italic; a quiet "come align" low in the picture on every frame |
 | Music | `music.py` | A 120 bpm minor loop (pads, plucked arpeggio, sub bass, kick, clap, hats on the cuts) that ends on the bar so the reel loops cleanly. `--audio song.mp3` uses your own track; `--silent` leaves it for a trending sound |
 | Output | `out/` | 1080x1920, 24 fps H.264, AAC; plus a `.txt` with the line, caption, CTA, hashtags and image credits |
 
