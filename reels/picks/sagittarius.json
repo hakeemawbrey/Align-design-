@@ -114,26 +114,6 @@
    "n": 126
   },
   {
-   "file": "cache/sagittarius/cand/aic-895.jpg",
-   "focus": [
-    0.42,
-    0.45
-   ],
-   "zoom": 1.2,
-   "note": "Schreyer, horseman with lance riding through snow",
-   "id": "aic-895",
-   "source": "aic",
-   "title": "Man with Lance Riding through the Snow",
-   "creator": "Adolphe Schreyer (German, 1828–1899)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/895",
-   "url": "https://www.artic.edu/iiif/2/fa96ef54-c3b1-8f4d-390a-219f7bc64c4a/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1226,
-   "query": "horse galloping",
-   "n": 25
-  },
-  {
    "file": "cache/sagittarius/cand/nasa-0300607.jpg",
    "focus": [
     0.4,
@@ -155,10 +135,10 @@
   {
    "file": "cache/sagittarius/cand/nasa-sts083-507-023.jpg",
    "focus": [
-    0.55,
-    0.62
+    0.5,
+    0.5
    ],
-   "zoom": 1.6,
+   "zoom": 1.4,
    "note": "Comet Hale-Bopp above Earth's horizon",
    "id": "nasa-sts083-507-023",
    "source": "nasa",
@@ -232,24 +212,23 @@
    "n": 244
   },
   {
-   "file": "cache/sagittarius/cand/nasa-PIA25013.jpg",
+   "file": "cache/sagittarius/cand/nasa-PIA01370.jpg",
    "focus": [
-    0.45,
-    0.4
+    0.62,
+    0.5
    ],
-   "zoom": 1.5,
-   "note": "Juno, crescent Jupiter in darkness",
-   "id": "nasa-PIA25013",
+   "note": "Voyager, Jupiter and its Great Red Spot",
+   "id": "nasa-PIA01370",
    "source": "nasa",
-   "title": "A View of Crescent Jupiter from Juno",
+   "title": "Jupiter Great Red Spot",
    "creator": "JPL",
    "license": "public domain (NASA)",
-   "landing": "https://images.nasa.gov/details/PIA25013",
-   "url": "https://images-assets.nasa.gov/image/PIA25013/PIA25013~orig.jpg",
-   "w": 1920,
-   "h": 1080,
-   "query": "Jupiter Juno",
-   "n": 230
+   "landing": "https://images.nasa.gov/details/PIA01370",
+   "url": "https://images-assets.nasa.gov/image/PIA01370/PIA01370~orig.jpg",
+   "w": 800,
+   "h": 920,
+   "query": "Jupiter",
+   "n": 81
   },
   {
    "file": "cache/sagittarius/cand/nasa-iss072e159833.jpg",
@@ -293,10 +272,10 @@
   {
    "file": "cache/sagittarius/cand/aic-102098.jpg",
    "focus": [
-    0.62,
-    0.22
+    0.66,
+    0.17
    ],
-   "zoom": 2.2,
+   "zoom": 2.6,
    "note": "Phaeton's white horses galloping across a night sky",
    "id": "aic-102098",
    "source": "aic",

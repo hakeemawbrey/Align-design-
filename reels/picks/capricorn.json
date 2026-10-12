@@ -1,0 +1,315 @@
+{
+ "plate": {
+  "file": "cache/capricorn/plate/commons.jpg",
+  "id": "commons-Sidney Hall - Urania's Mirror - Capricornus.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Sidney_Hall_-_Urania%27s_Mirror_-_Capricornus.jpg/1280px-Sidney_Hall_-_Urania%27s_Mirror_-_Capricornus.jpg",
+  "title": "Urania's Mirror: Capricornus (1824)",
+  "creator": "Sidney Hall",
+  "license": "public domain",
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Capricornus.jpg",
+  "crop": [
+   0.42,
+   0.03,
+   0.99,
+   0.99
+  ]
+ },
+ "images": [
+  {
+   "file": "cache/capricorn/cand/ov-dc0760a8-ba34-4c42-8f6c-1c04e37f5aea.jpg",
+   "focus": [
+    0.55,
+    0.62
+   ],
+   "zoom": 1.25,
+   "note": "alpine ibex in snow at dusk",
+   "id": "ov-dc0760a8-ba34-4c42-8f6c-1c04e37f5aea",
+   "source": "openverse/wikimedia",
+   "title": "003 Wild Alpine Ibex Sunset Creux du Van Mont Racine Photo by Giles Laurent",
+   "creator": "Giles Laurent",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=120510152",
+   "url": "https://api.openverse.org/v1/images/dc0760a8-ba34-4c42-8f6c-1c04e37f5aea/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/003_Wild_Alpine_Ibex_Sunset_Creux_du_Van_Mont_Racine_Photo_by_Giles_Laurent.jpg",
+   "w": 1280,
+   "h": 1920,
+   "query": "alpine ibex",
+   "n": 236
+  },
+  {
+   "file": "cache/capricorn/cand/ov-62f168b0-9d0e-45d7-9a9e-0a113d1842a7.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ],
+   "zoom": 1.15,
+   "note": "markhor, spiral horns in dark forest",
+   "id": "ov-62f168b0-9d0e-45d7-9a9e-0a113d1842a7",
+   "source": "openverse/wikimedia",
+   "title": "File:Capra falconeri Markhor Parc Bouillon 31082014 1.jpg",
+   "creator": "Vassil",
+   "license": "cc0 1.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=35861347",
+   "url": "https://api.openverse.org/v1/images/62f168b0-9d0e-45d7-9a9e-0a113d1842a7/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Capra_falconeri_Markhor_Parc_Bouillon_31082014_1.jpg",
+   "w": 1280,
+   "h": 2190,
+   "query": "markhor",
+   "n": 241
+  },
+  {
+   "file": "cache/capricorn/cand/ov-6f2699a6-155c-451f-a1c5-7e4f284d6d91.jpg",
+   "focus": [
+    0.62,
+    0.58
+   ],
+   "zoom": 1.35,
+   "note": "two ibex clashing horns",
+   "id": "ov-6f2699a6-155c-451f-a1c5-7e4f284d6d91",
+   "source": "openverse/wikimedia",
+   "title": "046 Male Alpine ibexes fighting during mating season in Grammont Photo by Giles Laurent",
+   "creator": "Giles Laurent",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=180010756",
+   "url": "https://api.openverse.org/v1/images/6f2699a6-155c-451f-a1c5-7e4f284d6d91/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/046_Male_Alpine_ibexes_fighting_during_mating_season_in_Grammont_Photo_by_Giles_Laurent.jpg",
+   "w": 1280,
+   "h": 854,
+   "query": "alpine ibex",
+   "n": 234
+  },
+  {
+   "file": "cache/capricorn/cand/ov-69cb981e-4adc-412d-8b79-c87adb7ad988.jpg",
+   "focus": [
+    0.62,
+    0.4
+   ],
+   "note": "ibex on white crag, deep sky",
+   "id": "ov-69cb981e-4adc-412d-8b79-c87adb7ad988",
+   "source": "openverse/wikimedia",
+   "title": "Alpine ibex Cima di Terrarossa 7",
+   "creator": "kallerna",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=83288561",
+   "url": "https://api.openverse.org/v1/images/69cb981e-4adc-412d-8b79-c87adb7ad988/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Alpine_ibex_Cima_di_Terrarossa_7.jpg",
+   "w": 2600,
+   "h": 1641,
+   "query": "alpine ibex",
+   "n": 232
+  },
+  {
+   "file": "cache/capricorn/cand/nasa-PIA06594.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Saturn and rings, Cassini, black and white",
+   "id": "nasa-PIA06594",
+   "source": "nasa",
+   "title": "Splendid Saturn",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA06594",
+   "url": "https://images-assets.nasa.gov/image/PIA06594/PIA06594~orig.jpg",
+   "w": 1018,
+   "h": 872,
+   "query": "Saturn",
+   "n": 107
+  },
+  {
+   "file": "cache/capricorn/cand/nasa-PIA06193.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Saturn portrait, Cassini",
+   "id": "nasa-PIA06193",
+   "source": "nasa",
+   "title": "The Greatest Saturn Portrait ...Yet",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA06193",
+   "url": "https://images-assets.nasa.gov/image/PIA06193/PIA06193~orig.jpg",
+   "w": 2600,
+   "h": 1329,
+   "query": "Saturn rings Cassini",
+   "n": 142
+  },
+  {
+   "file": "cache/capricorn/cand/nasa-PIA14924.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Titan backlit ring of haze",
+   "id": "nasa-PIA14924",
+   "source": "nasa",
+   "title": "A Ring of Color",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA14924",
+   "url": "https://images-assets.nasa.gov/image/PIA14924/PIA14924~orig.jpg",
+   "w": 914,
+   "h": 914,
+   "query": "Saturn night side",
+   "n": 258
+  },
+  {
+   "file": "cache/capricorn/cand/nasa-PIA02290.jpg",
+   "focus": [
+    0.28,
+    0.5
+   ],
+   "note": "Titan crescent on black",
+   "id": "nasa-PIA02290",
+   "source": "nasa",
+   "title": "Titan",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA02290",
+   "url": "https://images-assets.nasa.gov/image/PIA02290/PIA02290~orig.jpg",
+   "w": 800,
+   "h": 800,
+   "query": "Titan",
+   "n": 195
+  },
+  {
+   "file": "cache/capricorn/cand/nasa-PIA14442.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Hourglass Nebula",
+   "id": "nasa-PIA14442",
+   "source": "nasa",
+   "title": "Hubble Finds an Hourglass Nebula around a Dying Star",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA14442",
+   "url": "https://images-assets.nasa.gov/image/PIA14442/PIA14442~orig.jpg",
+   "w": 1280,
+   "h": 1280,
+   "query": "hourglass",
+   "n": 164
+  },
+  {
+   "file": "cache/capricorn/cand/ov-2020111a-7989-46d9-ad2a-3257cb7398f2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "lunar eclipse sequence on the winter solstice",
+   "id": "ov-2020111a-7989-46d9-ad2a-3257cb7398f2",
+   "source": "openverse/wikimedia",
+   "title": "File:Lunar Eclipse Sequence on Winter Solstice Dec 21 2010.jpg",
+   "creator": "Tuanna2010",
+   "license": "by 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=12394611",
+   "url": "https://api.openverse.org/v1/images/2020111a-7989-46d9-ad2a-3257cb7398f2/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Lunar_Eclipse_Sequence_on_Winter_Solstice_Dec_21_2010.jpg",
+   "w": 1280,
+   "h": 985,
+   "query": "winter solstice",
+   "n": 80
+  },
+  {
+   "file": "cache/capricorn/cand/aic-250762.jpg",
+   "focus": [
+    0.5,
+    0.48
+   ],
+   "zoom": 1.3,
+   "note": "Fetti, Melancholia with skull",
+   "id": "aic-250762",
+   "source": "aic",
+   "title": "Melancholia",
+   "creator": "Domenico Fetti (Italian, c. 1589–1623)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/250762",
+   "url": "https://www.artic.edu/iiif/2/73a93ee5-b169-73f4-4db9-6e738eca7fce/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2253,
+   "query": "hourglass time",
+   "n": 57
+  },
+  {
+   "file": "cache/capricorn/cand/met-441769.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Wright of Derby, Virgil's tomb by moonlight",
+   "id": "met-441769",
+   "source": "met",
+   "title": "Virgil's Tomb by Moonlight, with Silius Italicus Declaiming",
+   "creator": "Joseph Wright (Wright of Derby)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/441769",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP322015.jpg",
+   "w": 2600,
+   "h": 2096,
+   "query": "moonlight ruins",
+   "n": 174
+  },
+  {
+   "file": "cache/capricorn/cand/aic-60755.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "note": "Ruisdael, ruined tower in storm",
+   "id": "aic-60755",
+   "source": "aic",
+   "title": "Landscape with the Ruins of the Castle of Egmond",
+   "creator": "Jacob van Ruisdael (Dutch, 1628/29-1682)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/60755",
+   "url": "https://www.artic.edu/iiif/2/12086520-2e48-cc75-df86-916bb801e61f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1291,
+   "query": "ruins",
+   "n": 93
+  },
+  {
+   "file": "cache/capricorn/cand/aic-57048.jpg",
+   "focus": [
+    0.42,
+    0.32
+   ],
+   "zoom": 1.3,
+   "note": "Hubert Robert, the old temple ruin",
+   "id": "aic-57048",
+   "source": "aic",
+   "title": "The Old Temple",
+   "creator": "Hubert Robert (French, 1733-1808)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/57048",
+   "url": "https://www.artic.edu/iiif/2/00fdacbb-872a-1091-3272-39967374ec07/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1948,
+   "query": "ruins",
+   "n": 97
+  },
+  {
+   "file": "cache/capricorn/cand/met-10158.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "zoom": 1.2,
+   "note": "Bierstadt, sunrise on the Matterhorn",
+   "id": "met-10158",
+   "source": "met",
+   "title": "Sunrise on the Matterhorn",
+   "creator": "Albert Bierstadt",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10158",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT218107.jpg",
+   "w": 1901,
+   "h": 2600,
+   "query": "Matterhorn",
+   "n": 212
+  }
+ ]
+}
