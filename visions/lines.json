@@ -1,0 +1,2506 @@
+{
+  "themes": {
+    "love": {
+      "label": "Love",
+      "cta": [
+        "Done guessing? Align matches you on the whole chart, not just the sun. Link in bio.",
+        "Send this to the friend who needs it, then come align. Link in bio.",
+        "Comment ALIGN and we'll send you the link to meet someone your chart actually gets along with."
+      ],
+      "tags": [
+        "love",
+        "relationships",
+        "datingadvice",
+        "dating",
+        "selflove",
+        "standards",
+        "attachment",
+        "soulmate",
+        "astrology",
+        "align",
+        "comealign"
+      ]
+    },
+    "soul": {
+      "label": "Soul",
+      "cta": [
+        "Save this for the night you need it. Then come align. Link in bio.",
+        "Comment SOUL and we'll send you Align, where your chart does the introductions.",
+        "Share this with someone who's been reading the signs. Align, link in bio."
+      ],
+      "tags": [
+        "spirituality",
+        "intuition",
+        "healing",
+        "selfworth",
+        "energy",
+        "innerwork",
+        "synchronicity",
+        "universe",
+        "astrology",
+        "comealign"
+      ]
+    },
+    "align": {
+      "label": "Align",
+      "cta": [
+        "Stop forcing it. Come align. Link in bio.",
+        "Comment ALIGN and we'll send you the app that matches you by your whole sky.",
+        "Your person is looking at the same sky. Find them on Align, link in bio."
+      ],
+      "tags": [
+        "align",
+        "alignment",
+        "divinetiming",
+        "whatsmeantforyou",
+        "manifestation",
+        "letitgo",
+        "trusttheprocess",
+        "astrology",
+        "comealign"
+      ]
+    },
+    "sky": {
+      "label": "Sky",
+      "cta": [
+        "Comment BIG THREE and we'll send you Align. It reads your sun, moon and rising in seconds.",
+        "Find the person your sky has been describing. Align, link in bio.",
+        "Tag someone whose chart you need to see. Then compare yours on Align, link in bio."
+      ],
+      "tags": [
+        "astrology",
+        "zodiac",
+        "birthchart",
+        "bigthree",
+        "moonsign",
+        "venus",
+        "mercuryretrograde",
+        "synastry",
+        "compatibility",
+        "horoscope",
+        "comealign"
+      ]
+    },
+    "sign": {
+      "label": "Signs",
+      "cta": [
+        "Tag the one this describes. Then come align. Link in bio.",
+        "Comment your sign and we'll send you Align, where your whole chart does the matching.",
+        "Dating this sign? See how your whole charts fit on Align. Link in bio."
+      ],
+      "tags": [
+        "zodiac",
+        "astrology",
+        "zodiacsigns",
+        "horoscope",
+        "zodiacmemes",
+        "compatibility",
+        "starsigns",
+        "comealign"
+      ]
+    }
+  },
+  "signs": {
+    "aries": {
+      "tags": [
+        "aries",
+        "ariesseason",
+        "arieszodiac"
+      ]
+    },
+    "taurus": {
+      "tags": [
+        "taurus",
+        "taurusseason",
+        "tauruszodiac"
+      ]
+    },
+    "gemini": {
+      "tags": [
+        "gemini",
+        "geminiseason",
+        "geminizodiac"
+      ]
+    },
+    "cancer": {
+      "tags": [
+        "cancer",
+        "cancerseason",
+        "cancerzodiac"
+      ]
+    },
+    "leo": {
+      "tags": [
+        "leo",
+        "leoseason",
+        "leozodiac"
+      ]
+    },
+    "virgo": {
+      "tags": [
+        "virgo",
+        "virgoseason",
+        "virgozodiac"
+      ]
+    },
+    "libra": {
+      "tags": [
+        "libra",
+        "libraseason",
+        "librazodiac"
+      ]
+    },
+    "scorpio": {
+      "tags": [
+        "scorpio",
+        "scorpioseason",
+        "scorpiozodiac"
+      ]
+    },
+    "sagittarius": {
+      "tags": [
+        "sagittarius",
+        "sagittariusseason",
+        "sagittariuszodiac"
+      ]
+    },
+    "capricorn": {
+      "tags": [
+        "capricorn",
+        "capricornseason",
+        "capricornzodiac"
+      ]
+    },
+    "aquarius": {
+      "tags": [
+        "aquarius",
+        "aquariusseason",
+        "aquariuszodiac"
+      ]
+    },
+    "pisces": {
+      "tags": [
+        "pisces",
+        "piscesseason",
+        "pisceszodiac"
+      ]
+    }
+  },
+  "lines": [
+    {
+      "id": "love-01",
+      "theme": "love",
+      "text": "You don't miss them. You miss who you were allowed to be around them.",
+      "moods": [
+        "lovers",
+        "moon",
+        "water"
+      ],
+      "caption": "It is rarely the person. It is the version of you that showed up when they were there.\n\nMaybe you were funnier with them. Softer. Less careful. Maybe it was the only time you let yourself want something out loud. When it ended, you lost access to that version of you, and it felt like losing them.\n\nHere is the good news. That person was never theirs. They were yours the whole time. They just needed permission.\n\nSo stop waiting for someone to hand it back. Be that person on a Tuesday, alone, for no reason. Then notice who shows up for it."
+    },
+    {
+      "id": "love-02",
+      "theme": "love",
+      "text": "If you have to audition for them, you already know it's the wrong stage.",
+      "moods": [
+        "castle",
+        "lovers",
+        "moon"
+      ],
+      "caption": "You know the feeling. Rehearsing the text. Editing the laugh. Becoming slightly more agreeable, slightly less yourself, every time they look away.\n\nAuditions end. Either you get the part and have to keep playing it, or you don't and wonder what you did wrong. Both are exhausting.\n\nThe right person does not hold casting calls. They are not deciding whether you are good enough. They are already curious about the real one.\n\nIf you are performing, you are not being chosen. Your act is. Close the theatre. See who stays for the lights-on version."
+    },
+    {
+      "id": "love-03",
+      "theme": "love",
+      "text": "Chemistry is how fast it starts. Alignment is why it lasts.",
+      "moods": [
+        "lovers",
+        "stars",
+        "moon"
+      ],
+      "caption": "Chemistry is loud. It is the spark, the pull, the three-hour first date that felt like ten minutes.\n\nAlignment is quieter. It is wanting the same kind of Sunday. Fighting fair. Meaning the same thing when you both say forever.\n\nPlenty of people have chemistry with the wrong person. It is the most convincing feeling in the world, and it tells you almost nothing about year three.\n\nYou do not have to choose between them. But if you only ever chase the spark, you will keep starting fires and wondering why nothing gets built."
+    },
+    {
+      "id": "love-04",
+      "theme": "love",
+      "text": "Mixed signals aren't confusing. They're a polite no you keep refusing to hear.",
+      "moods": [
+        "moon",
+        "water",
+        "lovers"
+      ],
+      "caption": "You call it confusing. Hot one week, gone the next. Sweet in person, silent online.\n\nBut look closer. Inconsistent attention is consistent information. It tells you that you are an option, kept warm, not a decision.\n\nPeople who want to be with you do not make you decode them. They are not cryptic. They are available.\n\nThe confusion is not in their behaviour. It is in the gap between what they are showing you and what you were hoping for. Close that gap with honesty, not more analysis."
+    },
+    {
+      "id": "love-05",
+      "theme": "love",
+      "text": "Being wanted and being chosen are different things. Learn to feel the difference.",
+      "moods": [
+        "lovers",
+        "knight",
+        "moon"
+      ],
+      "caption": "Being wanted is a text at midnight. Being chosen is a plan for Saturday.\n\nBeing wanted feels like heat. Being chosen feels like calm. One happens to you when it suits them. The other happens on purpose, in daylight, in front of their friends.\n\nA lot of people spend years confusing the two, because wanted is easier to get and feels incredible for an evening.\n\nYou deserve both. But if you can only have one, take the one that still shows up when the novelty wears off."
+    },
+    {
+      "id": "love-06",
+      "theme": "love",
+      "text": "The right one won't feel like a rescue. It'll feel like a rest.",
+      "moods": [
+        "lovers",
+        "forest",
+        "moon"
+      ],
+      "caption": "Some love arrives like an emergency. Everything is urgent. You are saved, then wrecked, then saved again.\n\nIt is thrilling, and it is tiring, and it teaches you that love is supposed to feel like adrenaline.\n\nThe right one might feel almost boring at first. No drama to solve. No test to pass. Just someone who texts back and means it.\n\nIf your nervous system has learned chaos as chemistry, peace can feel unfamiliar. Unfamiliar is not the same as wrong. Give calm a chance to become home."
+    },
+    {
+      "id": "love-07",
+      "theme": "love",
+      "text": "You can't text someone into loving you. Put the phone down.",
+      "moods": [
+        "moon",
+        "water",
+        "castle"
+      ],
+      "caption": "You have drafted it four times. Funny version, casual version, honest version, the one you will delete.\n\nHere is the thing about the perfect message. It does not exist, because the problem was never the wording.\n\nIf someone wants to talk to you, a plain hello works. If they do not, no sentence will change that.\n\nYour energy is better spent somewhere it is received. Put the phone face down. Go outside. Let the silence answer the question you have been avoiding."
+    },
+    {
+      "id": "love-08",
+      "theme": "love",
+      "text": "Stop calling it bad luck in love. It's a pattern with your name on it.",
+      "moods": [
+        "mystic",
+        "water",
+        "moon"
+      ],
+      "caption": "Different faces, same story. The one who needs saving. The one who cannot commit. The one who makes you prove it.\n\nIt is easy to call that bad luck. Luck is random. This is not random. This is a pattern, and patterns have a source.\n\nAsk the honest question. What do all of them have in common, apart from you? What did you overlook, excuse, or find exciting each time?\n\nThat is not blame. It is power. A pattern you can see is a pattern you can stop choosing."
+    },
+    {
+      "id": "love-09",
+      "theme": "love",
+      "text": "They didn't lose interest. They showed you their attention span.",
+      "moods": [
+        "moon",
+        "stars",
+        "lovers"
+      ],
+      "caption": "It felt like it changed overnight. The good morning texts slowed. The plans got vague.\n\nBut maybe nothing changed. Maybe this is who they always were, and the first few weeks were the exception.\n\nSome people love the beginning. The chase, the newness, the version of themselves they get to be in it. When it becomes ordinary, they drift.\n\nThat is information, not a verdict on you. You were not too much or not enough. You just met someone whose interest has a shelf life. Keep looking for the long-life kind."
+    },
+    {
+      "id": "love-10",
+      "theme": "love",
+      "text": "Your standards aren't too high. Some people just can't reach the shelf.",
+      "moods": [
+        "castle",
+        "knight",
+        "stars"
+      ],
+      "caption": "You want consistency. Honesty. Someone who makes plans and keeps them. That is not a high bar. That is the floor.\n\nIf you keep hearing that you are too picky, look at who is saying it. Usually someone who would rather you lowered the bar than they raised their game.\n\nYou do not need to defend wanting basic respect.\n\nKeep the standard on the shelf where it belongs. Stop lowering it for people who would rather not reach. The ones who meet it will not need it explained."
+    },
+    {
+      "id": "love-11",
+      "theme": "love",
+      "text": "The person who's right for you will make your life quieter, not louder.",
+      "moods": [
+        "lovers",
+        "moon",
+        "forest"
+      ],
+      "caption": "Quieter does not mean dull. It means your mind stops racing.\n\nYou stop rereading messages. You stop checking when they were last online. You stop asking your friends what they think it means.\n\nThat noise in your head was never love. It was uncertainty wearing love's clothes.\n\nThe right person turns the volume down. You can finally hear yourself again, and what you hear is: this is easy, and I like it."
+    },
+    {
+      "id": "love-12",
+      "theme": "love",
+      "text": "Closure is not a conversation. It's a decision you make without them.",
+      "moods": [
+        "knight",
+        "castle",
+        "moon"
+      ],
+      "caption": "You keep waiting for the talk. The one where they explain, apologise, and give you the reason so you can finally let go.\n\nMost people never get that talk. And the ones who do often find it does not help as much as they hoped.\n\nClosure is not something they give you. It is something you close. A door, from your side, on purpose.\n\nYou already know enough to decide. That it ended. That it was not right. That you are done waiting for permission to move on."
+    },
+    {
+      "id": "love-13",
+      "theme": "love",
+      "text": "Some people are lessons. Stop trying to turn them into soulmates.",
+      "moods": [
+        "mystic",
+        "moon",
+        "lovers"
+      ],
+      "caption": "Not everyone who changes you is meant to stay.\n\nSome people arrive to show you what you will tolerate. What you want. Where you are still giving more than you get.\n\nIt can hurt to see someone that way, because the connection felt so real. It was real. Real does not mean permanent.\n\nTake the lesson with you. Leave the person where they belong. The soulmate will not need to be forced into the role."
+    },
+    {
+      "id": "love-14",
+      "theme": "love",
+      "text": "Love that keeps you guessing is keeping you busy, not happy.",
+      "moods": [
+        "moon",
+        "water",
+        "castle"
+      ],
+      "caption": "The guessing feels like passion. Every reply is a reward. Every silence is a crisis.\n\nBut look at how much time it takes. The overthinking. The decoding. The conversations with friends that are really the same conversation every week.\n\nThat is not romance. It is a full-time job with no pay.\n\nReal love answers the question before you have to ask it. Let yourself get bored of guessing. That is where something better can start."
+    },
+    {
+      "id": "love-15",
+      "theme": "love",
+      "text": "Too much is a measurement. It only tells you how much room they had.",
+      "moods": [
+        "lovers",
+        "stars",
+        "forest"
+      ],
+      "caption": "Too emotional. Too intense. Too needy. Too honest. You have heard some version of it, and you started to shrink.\n\nBut too much is always measured against someone. It is a statement about their capacity, not your size.\n\nThe right person will not experience your depth as a burden. They will be glad there is so much of you to know.\n\nYou do not need to become less. You need someone with more room."
+    },
+    {
+      "id": "love-16",
+      "theme": "love",
+      "text": "Stop leaving the light on for someone who knows exactly where you live.",
+      "moods": [
+        "knight",
+        "moon",
+        "castle"
+      ],
+      "caption": "You know the first half. It is everywhere. The second half is the hard part.\n\nLetting them not means you stop chasing. You stop making it easier for them. You stop leaving the door open with a light on in case they wander back.\n\nIt does not mean you stop caring. It means you turn the light off and let their actions speak for themselves.\n\nPeople who want to will find the time, the words, the way. Let the rest be free. So are you."
+    },
+    {
+      "id": "love-17",
+      "theme": "love",
+      "text": "Attraction tells you what's familiar. It doesn't always tell you what's good.",
+      "moods": [
+        "lovers",
+        "water",
+        "mystic"
+      ],
+      "caption": "Why do you keep falling for the same type? Usually because that type feels familiar.\n\nThe distance you grew up with. The approval you had to earn. The chaos you learned to call closeness. Attraction recognises it before your mind can object.\n\nThat pull is real, but it is a memory, not a prediction.\n\nNext time someone gives you butterflies, ask what they remind you of. And next time someone kind feels a little flat, give it a second date before you decide."
+    },
+    {
+      "id": "love-18",
+      "theme": "love",
+      "text": "You're not hard to love. You're hard to love casually.",
+      "moods": [
+        "lovers",
+        "moon",
+        "castle"
+      ],
+      "caption": "There is a difference. Some people want something light. They show up when it is fun, and drift when it asks something of them.\n\nYou do not work like that, and you are tired of pretending you do. You want depth. Effort. Someone who stays for the hard bit.\n\nThat is not difficult. That is specific.\n\nThe casual ones will keep finding you complicated. Let them. The serious ones will find you exactly right."
+    },
+    {
+      "id": "love-19",
+      "theme": "love",
+      "text": "The one who got away didn't get away. They walked.",
+      "moods": [
+        "knight",
+        "water",
+        "moon"
+      ],
+      "caption": "We tell it like a tragedy. Bad timing. Wrong city. The one that slipped through.\n\nBut people who want to stay usually find a way to stay. Distance gets solved. Timing gets moved. Plans get made.\n\nIt does not make what you felt less real. It just puts the story in the right shape.\n\nThey did not get away. They chose another road. That is sad, and it is also freeing. You can stop guarding the door for someone who already left."
+    },
+    {
+      "id": "love-20",
+      "theme": "love",
+      "text": "Don't fall for potential. Fall for what they're doing right now.",
+      "moods": [
+        "lovers",
+        "forest",
+        "knight"
+      ],
+      "caption": "Potential is seductive. You can see who they could be, if they just tried, if they just healed, if they just met the right person. You.\n\nBut you are not dating the future. You are dating today.\n\nWhat do they do when they are tired? When they are wrong? When it is not convenient to be kind? That is the real person.\n\nIf you have to love someone in advance, you are loving an idea. Choose someone you would still pick if they never changed."
+    },
+    {
+      "id": "love-21",
+      "theme": "love",
+      "text": "Anxious isn't the same as in love. Your stomach can't always tell.",
+      "moods": [
+        "moon",
+        "water",
+        "lovers"
+      ],
+      "caption": "The flip in your stomach. The racing heart when their name lights up. The low dread when it does not.\n\nIt feels like falling. Sometimes it is just fear of falling out.\n\nWhen you are unsure where you stand, your body goes on alert. That alertness can feel exactly like intense attraction.\n\nAsk yourself one question. Do I feel safe with them? If the answer is no, the butterflies might be alarms. You are allowed to want love that lets you breathe."
+    },
+    {
+      "id": "love-22",
+      "theme": "love",
+      "text": "Every time you let it slide, you're signing them a permission slip.",
+      "moods": [
+        "knight",
+        "castle",
+        "mystic"
+      ],
+      "caption": "The first cancelled plan you laughed off. The comment you did not challenge. The week of silence you forgave with no explanation.\n\nEach one taught them something. That this is fine. That you will still be here.\n\nIt is not your fault they behaved badly. It is your power to decide what happens next.\n\nYou do not need a speech. You just need to stop rewarding what hurts you. People learn fast when the lesson changes."
+    },
+    {
+      "id": "love-23",
+      "theme": "love",
+      "text": "Someone out there is hoping you're exactly like you are.",
+      "moods": [
+        "lovers",
+        "stars",
+        "moon"
+      ],
+      "caption": "Not a better version. Not a calmer, thinner, quieter, more impressive version. You. As is.\n\nYour weird laugh. The way you talk too much about the thing you love. The habits you think are flaws.\n\nSomeone is hoping for exactly that combination, and has not met it yet.\n\nIt helps to remember that on the days you want to edit yourself for an audience. The right one is not in the audience. They are looking for you."
+    },
+    {
+      "id": "love-24",
+      "theme": "love",
+      "text": "Love doesn't have to hurt to be real. That's just what you got used to.",
+      "moods": [
+        "lovers",
+        "forest",
+        "water"
+      ],
+      "caption": "Somewhere you learned that pain was proof. If it aches, it matters. If it is hard, it is deep.\n\nSo easy love started to look shallow. Kind people felt boring. Stability felt like settling.\n\nBut hurt is not depth. It is just hurt.\n\nReal love can be gentle and still be serious. It can be easy and still be everything. Let yourself unlearn the idea that you have to bleed for it."
+    },
+    {
+      "id": "love-25",
+      "theme": "love",
+      "text": "They'll show you who they are in the first month. Believe the first month.",
+      "moods": [
+        "moon",
+        "knight",
+        "castle"
+      ],
+      "caption": "The late replies. The way they talked about their ex. The small rudeness to the waiter you decided not to think about.\n\nThe first month is when people are on their best behaviour. If this is the best, pay attention.\n\nWe tend to explain away early signs because we are excited. We decide they were tired, stressed, nervous.\n\nMaybe. But early patterns usually turn into later habits. Believe what you see before you fall too far to see it."
+    },
+    {
+      "id": "love-26",
+      "theme": "love",
+      "text": "Being single isn't a waiting room. It's the only time the whole house is yours.",
+      "moods": [
+        "castle",
+        "moon",
+        "forest"
+      ],
+      "caption": "It is easy to treat single life like a delay. Something to get through on the way to the real thing.\n\nBut this is real. Your mornings are yours. Your choices are yours. Your energy goes exactly where you send it.\n\nThat is not a consolation prize. It is a season with its own gifts, and it will not last forever.\n\nFurnish the house. Learn what you like. The person who arrives will meet someone who already has a life worth joining."
+    },
+    {
+      "id": "love-27",
+      "theme": "love",
+      "text": "Choose someone who's curious about you after they already have you.",
+      "moods": [
+        "lovers",
+        "stars",
+        "mystic"
+      ],
+      "caption": "Anyone is curious at the start. The questions are easy and the answers are new.\n\nThe real sign is year two. Do they still ask how your day was and listen to the answer? Do they notice when your opinion changes? Do they want to know who you are becoming?\n\nCuriosity is a kind of respect. It says you are still worth discovering.\n\nDate the person who keeps reading after they have finished the first chapter."
+    },
+    {
+      "id": "love-28",
+      "theme": "love",
+      "text": "Not every connection is meant to become a relationship. Some just wake you up.",
+      "moods": [
+        "mystic",
+        "stars",
+        "lovers"
+      ],
+      "caption": "You met someone and it cracked something open. You felt more alive than you had in years.\n\nAnd then it did not work out, and you felt foolish for how much it meant.\n\nDon't. Some people are alarm clocks, not partners. They remind you that you can still feel that much. That you want more than what you were settling for.\n\nThank them, privately. Then go find someone who can stay awake with you."
+    },
+    {
+      "id": "love-29",
+      "theme": "love",
+      "text": "The right person won't make you choose between love and peace.",
+      "moods": [
+        "lovers",
+        "water",
+        "moon"
+      ],
+      "caption": "If being with someone means constant tension, you will eventually be asked to pick. Them, or your calm. Them, or your friends. Them, or your sleep.\n\nThat is not a romantic sacrifice. It is a bad trade.\n\nThe right relationship adds to your life. It does not cost you your life.\n\nYou can have someone and still have yourself. Hold out for that. It exists, and it is worth the wait."
+    },
+    {
+      "id": "love-30",
+      "theme": "love",
+      "text": "You keep choosing unavailable people because they never get close enough to really see you.",
+      "moods": [
+        "castle",
+        "mystic",
+        "moon"
+      ],
+      "caption": "It sounds backwards. They hurt you, so how could they be safe?\n\nBecause they never get close enough to really see you. The relationship never asks you to be fully known. There is always a reason it cannot go further, and it is always their reason.\n\nAvailable people are scarier. They actually want in.\n\nIf you keep landing with the unreachable ones, ask what you might be protecting. Then try letting someone get close on purpose."
+    },
+    {
+      "id": "love-31",
+      "theme": "love",
+      "text": "Effort is the love language everyone speaks. Watch for it.",
+      "moods": [
+        "knight",
+        "lovers",
+        "forest"
+      ],
+      "caption": "Words of affirmation, quality time, gifts, touch. The categories are useful. But underneath all of them is one thing: effort.\n\nDid they plan it? Did they remember? Did they make time when it was not easy?\n\nEffort cannot be faked for long. Charm can. Big words can. Grand gestures can, once.\n\nIf you are not sure how someone feels, stop listening to what they say and start counting what they do."
+    },
+    {
+      "id": "love-32",
+      "theme": "love",
+      "text": "Stop shrinking your needs to fit someone's schedule.",
+      "moods": [
+        "castle",
+        "moon",
+        "knight"
+      ],
+      "caption": "You have made it smaller and smaller. You used to want a call every day. Now you are grateful for a text once a week.\n\nThat is not being low maintenance. That is starving politely.\n\nYour needs are not unreasonable just because someone is busy. Busy people still make time for what matters to them.\n\nSay what you need, plainly. If it cannot be met, that is an answer, not a reason to need less."
+    },
+    {
+      "id": "love-33",
+      "theme": "love",
+      "text": "The ex wasn't the love of your life. They were a chapter you reread too often.",
+      "moods": [
+        "water",
+        "moon",
+        "mystic"
+      ],
+      "caption": "You go back to it. The good months. The trip. The song. You replay the best scenes and skip the rest.\n\nNo wonder it looks like the greatest story you have ever had. You edited it that way.\n\nThe love of your life will not be the one you can only find in memory. They will be the one you are still writing with.\n\nClose the book. It was a good chapter. There are more pages."
+    },
+    {
+      "id": "love-34",
+      "theme": "love",
+      "text": "Wanting someone who wants you back is the bare minimum. Ask for it.",
+      "moods": [
+        "lovers",
+        "stars",
+        "knight"
+      ],
+      "caption": "Somewhere along the way, mutual became a luxury. You got used to doing the wanting for both of you.\n\nBut wanting someone who wants you back is not a dream scenario. It is the starting line.\n\nIf you are carrying all the interest, all the planning, all the hope, put it down for a second. Notice how heavy it is.\n\nYou are allowed to require reciprocity. That is not demanding. That is how love is supposed to work."
+    },
+    {
+      "id": "love-35",
+      "theme": "love",
+      "text": "Healthy love will feel unfamiliar before it feels like home.",
+      "moods": [
+        "forest",
+        "lovers",
+        "moon"
+      ],
+      "caption": "If you are used to chasing, being chased can feel suspicious. If you are used to waiting, being prioritised can feel like a trick.\n\nYour body learned what love felt like from what you had. Good things can feel strange at first because they do not match the old map.\n\nDo not mistake unfamiliar for wrong. Give it time.\n\nOne day you will realise you have stopped bracing for the drop. That is when you will know you are home."
+    },
+    {
+      "id": "love-36",
+      "theme": "love",
+      "text": "Timing matters. But someone who wants you will help move the clock.",
+      "moods": [
+        "stars",
+        "moon",
+        "lovers"
+      ],
+      "caption": "Wrong time is real. People meet when they are moving, grieving, healing, building. Sometimes it truly is not the moment.\n\nBut be honest about how often wrong time is just a polite way of saying not enough.\n\nPeople who really want to be with you usually work with the timing. They talk about it. They make a plan. They do not just disappear and call it fate.\n\nIf the clock is the only thing in the way, they will help you move it."
+    },
+    {
+      "id": "love-37",
+      "theme": "love",
+      "text": "You can love someone and still not choose them. Both can be true.",
+      "moods": [
+        "knight",
+        "water",
+        "lovers"
+      ],
+      "caption": "This is the one nobody wants to hear. Love is not always enough.\n\nYou can love someone and want different lives. You can love someone who is not kind to you. You can love someone who is not ready.\n\nLeaving does not mean the love was fake. Staying does not prove it was real.\n\nGive yourself permission to honour what you felt and still walk away. That is not cold. That is grown."
+    },
+    {
+      "id": "love-38",
+      "theme": "love",
+      "text": "If you have to convince them you're worth it, you've stopped convincing yourself.",
+      "moods": [
+        "mystic",
+        "castle",
+        "moon"
+      ],
+      "caption": "Look at what you are doing. Listing your qualities. Proving your patience. Showing how easy you are to love.\n\nThat effort comes from somewhere. Usually a quiet doubt that you are enough without the presentation. It is exhausting, and it never quite feels like enough, because it is answering the wrong question.\n\nThe person who is right for you will not need a case made. They will see it.\n\nPut down the evidence. Work on believing it yourself. That is the only argument that really matters."
+    },
+    {
+      "id": "love-39",
+      "theme": "love",
+      "text": "Pay attention to how you feel after you see them, not during.",
+      "moods": [
+        "moon",
+        "lovers",
+        "water"
+      ],
+      "caption": "During is easy. They are charming. You are distracted. Everything feels electric.\n\nAfter is honest. Are you calm or anxious? Full or drained? Thinking about your next date, or about what you said wrong?\n\nThe after feeling is the real report. It is your body telling you what the evening actually did to you.\n\nKeep the people who leave you lighter. Be careful with the ones who leave you checking your phone."
+    },
+    {
+      "id": "love-40",
+      "theme": "love",
+      "text": "Busy is real. So is the way they found time for everything except you.",
+      "moods": [
+        "lovers",
+        "knight",
+        "stars"
+      ],
+      "caption": "Busy is real. Jobs, family, stress, life. Everyone has it.\n\nBut excitement finds gaps. A voice note on the walk to work. A text at lunch. Ten minutes before bed.\n\nWhen someone is excited about you, they do not make you wait for scraps of their attention. They find a way.\n\nSo if you keep hearing that they are busy, you are allowed to read that as the answer it probably is."
+    },
+    {
+      "id": "love-41",
+      "theme": "love",
+      "text": "Romance is easy. Repair is the real love story.",
+      "moods": [
+        "lovers",
+        "forest",
+        "castle"
+      ],
+      "caption": "Anyone can be lovely when it is going well. Flowers, dinner, the good playlist.\n\nThe real story is what happens after a fight. Who comes back first. Whether you can both say sorry without keeping score. Whether you are on the same side of the problem.\n\nCouples who last are not the ones who never argue. They are the ones who repair.\n\nNext time you are judging a relationship, do not ask how it feels at its best. Ask how it recovers from its worst."
+    },
+    {
+      "id": "love-42",
+      "theme": "love",
+      "text": "You don't need a person to complete you. You need one who doesn't subtract.",
+      "moods": [
+        "lovers",
+        "stars",
+        "mystic"
+      ],
+      "caption": "You are not half a person waiting for the other half. You are whole, with your own life, friends, plans and opinions.\n\nThe question is not who completes you. It is who adds to what is already there, and who quietly takes away from it.\n\nSome partners make your world bigger. Others make it smaller, one compromise at a time.\n\nChoose the one who leaves more of you than they found."
+    },
+    {
+      "id": "love-43",
+      "theme": "love",
+      "text": "Stop going back to check if it still hurts. It does. Leave it alone.",
+      "moods": [
+        "water",
+        "moon",
+        "forest"
+      ],
+      "caption": "Their profile. Their stories. The old messages. You open them like pressing a bruise.\n\nEvery time, you get the same result. It still hurts. And you reset the healing clock. Every scroll is a small relapse that teaches your heart the wound is still open for business.\n\nYou do not need to check. Nothing new is there for you.\n\nLet the wound close by not touching it. Mute, archive, block if you need to. That is not drama. That is first aid."
+    },
+    {
+      "id": "love-44",
+      "theme": "love",
+      "text": "Love isn't proven in grand gestures. It's proven on boring Wednesdays.",
+      "moods": [
+        "lovers",
+        "forest",
+        "moon"
+      ],
+      "caption": "The surprise trip is lovely. The big speech is lovely. But they are rare by design.\n\nMost of a relationship is ordinary days. Laundry. Tired evenings. Talking about nothing over dinner.\n\nThat is where love actually lives. In who makes the tea. In who asks how the meeting went. In who is still kind when there is nobody to impress.\n\nFind someone who makes Wednesdays good. The weekends will take care of themselves."
+    },
+    {
+      "id": "love-45",
+      "theme": "love",
+      "text": "Your person won't need reminding that you exist.",
+      "moods": [
+        "lovers",
+        "stars",
+        "knight"
+      ],
+      "caption": "No checking in to see if they are still interested. No posting something hoping they will notice. No careful little reminders.\n\nYour person will think of you unprompted. On the bus, in the shop, when they hear a song.\n\nThey will reach out because they want to, not because you nudged them.\n\nIf you are always the one keeping the connection alive, that is not a connection. It is a performance with one actor."
+    },
+    {
+      "id": "soul-01",
+      "theme": "soul",
+      "text": "Your intuition said it once, quietly. Everything after that was you arguing.",
+      "moods": [
+        "mystic",
+        "moon",
+        "forest"
+      ],
+      "caption": "Think back. The first date, the job, the friend. There was a moment, small and almost silent, when you knew.\n\nThen came the reasoning. They are probably just nervous. It is a good opportunity. You are being dramatic.\n\nIntuition rarely shouts. It speaks once and then waits to see if you listened.\n\nThe skill is not learning to hear it. You already hear it. The skill is learning to stop talking over it."
+    },
+    {
+      "id": "soul-02",
+      "theme": "soul",
+      "text": "Peace is not boring. You're just used to living on adrenaline.",
+      "moods": [
+        "water",
+        "forest",
+        "moon"
+      ],
+      "caption": "If your life has been loud for a long time, calm can feel like something is missing.\n\nNo crisis to solve. No person to manage. No drama to replay. Just a quiet evening, and an odd restlessness in your chest.\n\nThat restlessness is withdrawal, not wisdom. Your system is used to stimulation, and it is asking for more.\n\nStay with the quiet anyway. Let it get comfortable. Peace is an acquired taste, and it is the best one you will ever acquire."
+    },
+    {
+      "id": "soul-03",
+      "theme": "soul",
+      "text": "The same lesson keeps finding you in different outfits.",
+      "moods": [
+        "mystic",
+        "castle",
+        "moon"
+      ],
+      "caption": "A new boss who talks over you. A new partner who does too. A friend who only calls when they need something.\n\nThe faces change. The feeling does not. That sinking, familiar sense of having been here before.\n\nThat is not the universe punishing you. It is the lesson coming back because it was not finished.\n\nPay attention to repetition. The moment you respond differently, the outfit stops showing up."
+    },
+    {
+      "id": "soul-04",
+      "theme": "soul",
+      "text": "You don't need a sign. You need to admit you already got one.",
+      "moods": [
+        "stars",
+        "mystic",
+        "moon"
+      ],
+      "caption": "You keep asking for clarity. A message, a dream, a number on a clock.\n\nBut be honest. The sign came. It was the knot in your stomach. The relief when the plan fell through. The friend who said it gently and you changed the subject.\n\nWe ask for signs when we already know and are hoping for a different answer.\n\nThe universe is not being vague. You are being polite to something you have already outgrown."
+    },
+    {
+      "id": "soul-05",
+      "theme": "soul",
+      "text": "Rest is not a reward for finishing. It's part of the work.",
+      "moods": [
+        "water",
+        "moon",
+        "forest"
+      ],
+      "caption": "You only let yourself rest when everything is done. And everything is never done.\n\nSo you run on empty and call it discipline. You treat tiredness like a character flaw.\n\nBut nothing in nature works that way. The moon has dark nights. Fields lie fallow. Tides go out.\n\nRest is not falling behind. It is how you stay in the race. Take it before you have earned it. That is the point."
+    },
+    {
+      "id": "soul-06",
+      "theme": "soul",
+      "text": "Not everyone who drains you is a villain. Some are just not your people.",
+      "moods": [
+        "forest",
+        "mystic",
+        "moon"
+      ],
+      "caption": "It is tempting to make it a story. They are toxic. They are selfish. They are energy vampires.\n\nSometimes that is true. Often it is simpler. You are just different. Different pace, different values, different idea of fun.\n\nYou do not need a villain to leave a room. You can just notice how you feel there and choose another.\n\nLet people be who they are, somewhere else. That is kinder for everyone, including you."
+    },
+    {
+      "id": "soul-07",
+      "theme": "soul",
+      "text": "Nobody you admire skipped this part. They just tell it faster now.",
+      "moods": [
+        "knight",
+        "stars",
+        "castle"
+      ],
+      "caption": "It does not feel meaningful right now. It feels heavy. Confusing. Slow.\n\nBut every version of you that you admire got built in a season like this. The one who left. The one who started again. The one who stopped waiting.\n\nThe hard part is not a detour. It is the road.\n\nKeep walking. One day you will tell this story, and you will be glad you did not quit in the middle."
+    },
+    {
+      "id": "soul-08",
+      "theme": "soul",
+      "text": "Your energy is introducing you before you speak. Make it honest.",
+      "moods": [
+        "mystic",
+        "stars",
+        "lovers"
+      ],
+      "caption": "People feel you before they hear you. The way you walk into a room. Whether you are performing or present.\n\nThat is not magic. It is just how humans work. We read each other fast.\n\nIf you are pretending to be fine, people sense the pretending. If you are at peace, they sense that too.\n\nYou do not need to project a better energy. You need a truer one. Honest beats impressive every time."
+    },
+    {
+      "id": "soul-09",
+      "theme": "soul",
+      "text": "What you keep tolerating, you're quietly agreeing to.",
+      "moods": [
+        "castle",
+        "knight",
+        "mystic"
+      ],
+      "caption": "Every time it happens and you say nothing, you are casting a vote.\n\nThe friend who is always late. The job that keeps asking for more. The partner who forgets the things that matter to you.\n\nYou may not mean it as agreement. But silence reads as consent, and people adjust to what you accept.\n\nThis is not about anger. It is about clarity. Name the thing. Then stop signing off on it."
+    },
+    {
+      "id": "soul-10",
+      "theme": "soul",
+      "text": "You are allowed to outgrow people you still love.",
+      "moods": [
+        "forest",
+        "water",
+        "moon"
+      ],
+      "caption": "There is a quiet grief in it. You still care. You still remember. But the conversations feel smaller, and you leave feeling less like yourself.\n\nThat does not mean you are better than them. It means you grew in a direction they did not.\n\nYou can honour the history and still let the closeness change.\n\nLove does not require you to stay the same size. Some friendships fit a younger you. Let them stay there, with gratitude."
+    },
+    {
+      "id": "soul-11",
+      "theme": "soul",
+      "text": "Healing isn't becoming someone new. It's coming back to who you were before it hurt.",
+      "moods": [
+        "water",
+        "forest",
+        "mystic"
+      ],
+      "caption": "You do not need a new personality. A new name. A whole reinvention.\n\nMost healing is subtraction. Removing the fear you picked up. The armour you built. The habits that kept you safe and kept you small. None of it was you. It was weather you learned to dress for.\n\nUnderneath is someone you already know. The kid who sang without checking who was listening.\n\nYou are not becoming someone. You are remembering someone. That is why it feels like coming home."
+    },
+    {
+      "id": "soul-12",
+      "theme": "soul",
+      "text": "The quiet after something ends is not empty. It's making room.",
+      "moods": [
+        "moon",
+        "water",
+        "castle"
+      ],
+      "caption": "When something leaves your life, the silence can feel enormous. The texts stop. The routine is gone. The calendar has holes.\n\nIt is natural to rush to fill it. A new person, a new project, a new distraction, anything to stop the echo.\n\nBut pause. That space is not a loss. It is a clearing. Room for something you could not have fit before.\n\nYou do not have to know what goes there yet. Just stop treating the empty space like an emergency."
+    },
+    {
+      "id": "soul-13",
+      "theme": "soul",
+      "text": "Self-worth isn't a feeling. It's what you do when you don't feel it.",
+      "moods": [
+        "knight",
+        "castle",
+        "mystic"
+      ],
+      "caption": "You will not always feel worthy. Some days you will wake up doubting everything.\n\nThat is normal. Worth is not a mood.\n\nIt shows up in what you choose anyway. Leaving the conversation that disrespects you. Not sending the text. Going to bed instead of waiting up.\n\nAct like someone who knows their worth, even on the days you do not believe it. The belief catches up with the behaviour."
+    },
+    {
+      "id": "soul-14",
+      "theme": "soul",
+      "text": "Some doors close so loudly because you weren't listening when they creaked.",
+      "moods": [
+        "castle",
+        "knight",
+        "moon"
+      ],
+      "caption": "Looking back, you saw it. The small signs that something was ending. The friend pulling away. The job going sideways.\n\nYou noticed and kept going, hoping it would fix itself. Most of us do. Hope is easier than admitting something is ending while it still looks fine from the outside.\n\nThen one day it slammed. And it felt sudden, but it was not.\n\nThis is not to blame you. It is to help next time. Listen to the creak. It is much gentler than the slam."
+    },
+    {
+      "id": "soul-15",
+      "theme": "soul",
+      "text": "You're not late. You're just reading someone else's schedule.",
+      "moods": [
+        "stars",
+        "moon",
+        "forest"
+      ],
+      "caption": "Engagements, promotions, houses. Everyone seems to be ticking off a list you were never sent.\n\nIt is easy to feel late. But late compared to what? Their path is not your map.\n\nSome people bloom early and wilt. Some arrive later, fully formed. Most of us are somewhere in between.\n\nYour life does not need to keep pace with anyone's highlights. It just needs to keep moving in a direction you would choose."
+    },
+    {
+      "id": "soul-16",
+      "theme": "soul",
+      "text": "Notice what you keep almost saying. That's the real conversation.",
+      "moods": [
+        "mystic",
+        "water",
+        "moon"
+      ],
+      "caption": "The thing on the tip of your tongue at dinner. The sentence you type and delete. The question you swallow every time.\n\nThose almost-sayings are not random. They are the truest things you have to say, and the scariest.\n\nThe conversation you are having is polite. The one you keep almost having is real.\n\nYou do not have to say it all at once. But start noticing it. That is where your life wants to go."
+    },
+    {
+      "id": "soul-17",
+      "theme": "soul",
+      "text": "Coincidence is just meaning you haven't caught up to yet.",
+      "moods": [
+        "stars",
+        "mystic",
+        "moon"
+      ],
+      "caption": "You think of someone and they text. You hear the same book mentioned three times in a week. You end up in the right place by taking the wrong turn.\n\nYou can call it random. Many do.\n\nOr you can treat it as a nudge to pay attention. Not because the universe owes you messages, but because noticing makes you braver.\n\nFollow the small threads. Sometimes they lead somewhere. Sometimes they just remind you that you are awake."
+    },
+    {
+      "id": "soul-18",
+      "theme": "soul",
+      "text": "Protect your mornings. They're the only part of the day nobody has touched yet.",
+      "moods": [
+        "forest",
+        "water",
+        "stars"
+      ],
+      "caption": "Before the messages. Before the news. Before other people's needs start arriving.\n\nThose first minutes are rare. They belong to you, and almost everyone gives them away to a screen. By the time you have read three notifications, the day already belongs to someone else.\n\nYou do not need a perfect routine. Just a little untouched time. A window. A coffee. A thought that is actually yours.\n\nStart the day with yourself. The rest of the world can wait ten minutes."
+    },
+    {
+      "id": "soul-19",
+      "theme": "soul",
+      "text": "The people who feel like home are rarely the ones who feel like fireworks.",
+      "moods": [
+        "lovers",
+        "forest",
+        "moon"
+      ],
+      "caption": "Fireworks are wonderful. Loud, bright, gone.\n\nHome is different. It is the friend who knows your coffee order. The person who can sit with you in silence. The one who does not need you to be anyone. Nobody films that kind of love. It is too quiet to look like much.\n\nWe are trained to chase fireworks because they feel like proof. Home feels like nothing, until you need it.\n\nLook around. Who makes you exhale? Keep them. Tell them."
+    },
+    {
+      "id": "soul-20",
+      "theme": "soul",
+      "text": "Every yes you didn't mean gets paid for later, usually by you.",
+      "moods": [
+        "mystic",
+        "water",
+        "forest"
+      ],
+      "caption": "Each time you agree to something you do not want, a small part of you notices.\n\nYes to the favour. Yes to the extra shift. Yes to the plan when you wanted to stay in.\n\nOne by one they are nothing. Added up, they turn into resentment, tiredness, a feeling that your life is not quite yours.\n\nStart small. A gentle no. A not this time. Let your yes start meaning something again."
+    },
+    {
+      "id": "soul-21",
+      "theme": "soul",
+      "text": "You can't heal in the same place that keeps opening the wound.",
+      "moods": [
+        "water",
+        "forest",
+        "castle"
+      ],
+      "caption": "It sounds obvious. Yet so many of us try.\n\nWe stay in the friendship that hurts and wonder why we cannot let it go. We keep checking the profile and wonder why the ache returns. We go back to the same rooms and expect them to feel different this time.\n\nHealing needs distance. Not forever, not necessarily. But enough space for the skin to grow back.\n\nChoosing that distance is not weakness. It is you taking your own healing seriously."
+    },
+    {
+      "id": "soul-22",
+      "theme": "soul",
+      "text": "Being misunderstood by some people is the price of being yourself. Pay it.",
+      "moods": [
+        "knight",
+        "stars",
+        "castle"
+      ],
+      "caption": "There will always be someone who does not get it. Your choices. Your humour. Your way of loving.\n\nYou can spend your life explaining, softening, adjusting so nobody is ever confused by you.\n\nOr you can accept that being real will cost you a few people.\n\nIt is a fair price. The ones who stay will know the real you. That is worth more than being vaguely liked by everyone."
+    },
+    {
+      "id": "soul-23",
+      "theme": "soul",
+      "text": "Your inner voice should sound like a friend. If it doesn't, start editing.",
+      "moods": [
+        "mystic",
+        "moon",
+        "water"
+      ],
+      "caption": "Listen to how you talk to yourself after a mistake. Would you say that to anyone you love?\n\nMost of us would not. We save the cruelest voice for ourselves.\n\nThat voice is not truth. It is habit. Learned from somewhere, repeated until it felt like your own.\n\nYou can edit it. Slowly. Catch the harsh line and rewrite it kinder. Talk to yourself like someone you are rooting for."
+    },
+    {
+      "id": "soul-24",
+      "theme": "soul",
+      "text": "Let it be easy sometimes. Struggle is not the only proof you earned it.",
+      "moods": [
+        "forest",
+        "stars",
+        "lovers"
+      ],
+      "caption": "Some things just work. The job you did not stress about. The friendship that clicked. The day that went right.\n\nAnd somehow it feels suspicious. Like it does not count unless you suffered for it. As if joy needs a receipt showing how much you paid for it.\n\nBut ease is not cheating. It is sometimes a sign you are in the right place.\n\nYou do not need to manufacture difficulty to deserve good things. Let the easy ones in."
+    },
+    {
+      "id": "soul-25",
+      "theme": "soul",
+      "text": "The real you is whoever decides what to do with a free evening.",
+      "moods": [
+        "mystic",
+        "castle",
+        "moon"
+      ],
+      "caption": "Public you is curated. Profile photos, careful captions, the best angle. It is a version, not the whole person.\n\nPrivate you is the one who decides how to spend a free evening, how to speak to a stranger, what to do when nobody would ever find out. Nobody gives them a grade, so nobody tells them it matters.\n\nThat is the real character. And it is the one you get to build, quietly, every day.\n\nMake private you someone you would be proud of. Public you will follow."
+    },
+    {
+      "id": "soul-26",
+      "theme": "soul",
+      "text": "You keep asking the universe for more while ignoring what it already sent.",
+      "moods": [
+        "stars",
+        "mystic",
+        "forest"
+      ],
+      "caption": "More love, more money, more clarity. The list keeps growing.\n\nBut look at what is already here. The friend who keeps checking in. The idea you keep putting off. The opportunity you said you were not ready for. Some of what you are asking for is already in your inbox, unopened.\n\nSometimes the answer arrived, and we did not recognise it because it did not look the way we pictured.\n\nBefore you ask for more, open what is already on the doorstep."
+    },
+    {
+      "id": "soul-27",
+      "theme": "soul",
+      "text": "Nothing in your life is too small to change everything.",
+      "moods": [
+        "stars",
+        "forest",
+        "water"
+      ],
+      "caption": "One conversation. One no. One morning walk that turns into a habit.\n\nBig changes rarely arrive big. They start as something so ordinary you almost skip it.\n\nThe friend you met because you said yes to a party you nearly skipped. The career that came from a hobby.\n\nDo not wait for a dramatic turning point. The small choice in front of you today might be the one you trace everything back to."
+    },
+    {
+      "id": "soul-28",
+      "theme": "soul",
+      "text": "You're not too sensitive. You notice what other people skim past.",
+      "moods": [
+        "water",
+        "moon",
+        "mystic"
+      ],
+      "caption": "You catch the shift in someone's voice. You feel the tension in a room before anyone speaks. You remember the small thing someone said three weeks ago.\n\nPeople have called it oversensitive. It is actually attention. Mostly by people who would have preferred you not to notice what they were doing.\n\nThe work is not to feel less. It is to learn what to do with what you feel.\n\nSensitivity is a gift when you protect it. Let it guide you, not drown you."
+    },
+    {
+      "id": "soul-29",
+      "theme": "soul",
+      "text": "Some answers only come after you stop asking for them.",
+      "moods": [
+        "moon",
+        "water",
+        "mystic"
+      ],
+      "caption": "You have turned the question over a hundred times. Should you stay, should you go, should you try.\n\nThe harder you push, the foggier it gets.\n\nThen one day, in the shower or on a walk, the answer just arrives. Clear and quiet.\n\nThat is how the mind often works. It needs room. Ask the question, then put it down. Go live a little. The answer knows where to find you."
+    },
+    {
+      "id": "soul-30",
+      "theme": "soul",
+      "text": "Missing something this much is proof you knew how to love it. Let that count.",
+      "moods": [
+        "water",
+        "moon",
+        "lovers"
+      ],
+      "caption": "Grief does not only come with death. It comes with endings. A friendship. A version of yourself. A future you had planned.\n\nThe ache is not a sign that something is wrong with you. It is a sign that you cared.\n\nLet the love keep moving. Into memory. Into the people still here. Into something new.\n\nYou do not need to rush it. Love always finds somewhere to land eventually."
+    },
+    {
+      "id": "soul-31",
+      "theme": "soul",
+      "text": "You can be soft without being a doormat. Those were never the same thing.",
+      "moods": [
+        "lovers",
+        "knight",
+        "forest"
+      ],
+      "caption": "Somewhere you learned that kindness meant giving in. That gentle people get walked over.\n\nBut softness with boundaries is strength. You can be warm and still say no. Forgiving and still not trust again. Loving and still leave. Kind and still clear. Open and still careful about who gets the key.\n\nThe hardest people are often the most hurt. The softest are often the bravest.\n\nKeep your softness. Just put a gate around it."
+    },
+    {
+      "id": "soul-32",
+      "theme": "soul",
+      "text": "The inner world is the rehearsal room for the outer one.",
+      "moods": [
+        "mystic",
+        "castle",
+        "stars"
+      ],
+      "caption": "What you picture before the date. The conversation you replay before the meeting. The story you tell yourself before you walk in.\n\nYou are practising. Every time. In the car, in the shower, lying awake before the big day, running the scene.\n\nIf you rehearse rejection, you walk in braced for it. If you rehearse being welcome, you walk in open.\n\nYou cannot control the outcome. But you can choose what you practise. Rehearse the version of you that you want to show up."
+    },
+    {
+      "id": "soul-33",
+      "theme": "soul",
+      "text": "Some people will only understand your worth after you stop proving it to them.",
+      "moods": [
+        "knight",
+        "castle",
+        "moon"
+      ],
+      "caption": "You spent so long showing them. Going the extra mile. Being the one who remembers, plans, forgives.\n\nThey took it for granted, because it was always there. Constant things become invisible. Nobody thanks the floor for holding them up.\n\nThe moment you step back, they notice the gap. Suddenly the effort you gave is visible.\n\nYou do not need to withhold love as a lesson. But stop pouring into cups that never thank the jug."
+    },
+    {
+      "id": "soul-34",
+      "theme": "soul",
+      "text": "Your gut isn't anxious. It's informed.",
+      "moods": [
+        "mystic",
+        "forest",
+        "moon"
+      ],
+      "caption": "There is a difference between fear and knowing. Fear is loud, spiralling, full of what-ifs. Knowing is calm, flat, and certain.\n\nWhen your gut says no to someone, it is often drawing on things your mind has not caught up to. A tone. A pattern. A small lie. It is not panic. It is data you collected without meaning to.\n\nLearn to tell the two apart. Anxiety needs soothing. Intuition needs listening.\n\nThe calm no is the one to trust."
+    },
+    {
+      "id": "soul-35",
+      "theme": "soul",
+      "text": "You don't attract what you want. You attract what you're willing to keep.",
+      "moods": [
+        "mystic",
+        "lovers",
+        "stars"
+      ],
+      "caption": "It is a popular idea that you attract whatever you focus on. It is half true.\n\nThe other half is what you allow to stay. What you keep answering. What you keep forgiving. What you keep making room for.\n\nYour life is shaped as much by what you accept as by what you wish for.\n\nWant something better? Start by not keeping what is worse. The space will get filled."
+    },
+    {
+      "id": "align-01",
+      "theme": "align",
+      "text": "What's meant for you doesn't need you to chase it. It needs you to be ready.",
+      "moods": [
+        "stars",
+        "knight",
+        "castle"
+      ],
+      "caption": "Chasing feels productive. Texting first, trying harder, making yourself available at every hour.\n\nBut what is meant for you is not running away. It is arriving at its own pace.\n\nThe question is whether you will be in a place to receive it. Rested. Clear. Not still tangled up in the thing you were chasing before.\n\nReady is not passive. It is building the life the right thing can walk into."
+    },
+    {
+      "id": "align-02",
+      "theme": "align",
+      "text": "Forcing it is how you end up with the wrong thing that fits badly.",
+      "moods": [
+        "knight",
+        "castle",
+        "moon"
+      ],
+      "caption": "You can make almost anything work if you push hard enough. The wrong job. The wrong flat. The wrong person.\n\nIt will fit the way a borrowed coat fits. Too tight in the shoulders. Never quite comfortable. You will spend years adjusting it and calling the discomfort commitment.\n\nAlignment does not need force. It needs honesty about what actually fits.\n\nIf it takes everything you have to keep it together, ask whether it was ever meant to be together."
+    },
+    {
+      "id": "align-03",
+      "theme": "align",
+      "text": "The right person at the wrong time is still the wrong person.",
+      "moods": [
+        "moon",
+        "stars",
+        "lovers"
+      ],
+      "caption": "We love the story. Two people who were perfect for each other, if only.\n\nBut the timing is part of the person. Their readiness. Their choices. What they prioritise right now. Wanting you is not the same as being ready to choose you, and only one of those builds anything.\n\nIf they cannot meet you where you are, they are not right for you yet, maybe not ever.\n\nThat is not tragic. It is clarifying. Alignment needs the person, the place and the moment to agree."
+    },
+    {
+      "id": "align-04",
+      "theme": "align",
+      "text": "When it's aligned, you stop asking your friends what it means.",
+      "moods": [
+        "lovers",
+        "stars",
+        "moon"
+      ],
+      "caption": "Remember the group chats. Screenshots. What does this mean? Is this a good sign? Should I wait?\n\nWhen something is right, those conversations dry up. Not because you stopped caring, but because there is nothing to decode.\n\nThey said they would call, and they called. They said they liked you, and they acted like it.\n\nAligned love is legible. If you need a translator, you might be in the wrong language."
+    },
+    {
+      "id": "align-05",
+      "theme": "align",
+      "text": "You don't find alignment. You stop doing the things that block it.",
+      "moods": [
+        "mystic",
+        "forest",
+        "water"
+      ],
+      "caption": "We picture alignment as a destination. Something out there, waiting to be found.\n\nMore often, it is what is left when you stop. Stop saying yes when you mean no. Stop staying where you are tolerated. Stop shrinking to keep the peace. Stop reaching for what you already know is not yours, just because it is nearby.\n\nThe right things are already trying to reach you. The clutter is in the way.\n\nClear a little, and watch what flows in."
+    },
+    {
+      "id": "align-06",
+      "theme": "align",
+      "text": "Divine timing is real. So is you hiding behind it.",
+      "moods": [
+        "stars",
+        "moon",
+        "knight"
+      ],
+      "caption": "Sometimes the timing really is not right. Some doors open later. Some people arrive when you are ready.\n\nAnd sometimes we use timing as a place to hide. It will happen when it is meant to, we say, while doing nothing to let it.\n\nTrust the timing and still do your part. Go to the thing. Send the message. Make the move.\n\nThe universe does the scheduling. You still have to show up for the appointment."
+    },
+    {
+      "id": "align-07",
+      "theme": "align",
+      "text": "Rejection is just redirection with bad manners.",
+      "moods": [
+        "knight",
+        "stars",
+        "castle"
+      ],
+      "caption": "It stings. The no, the silence, the person who chose someone else.\n\nBut look back at your life. How many rejections turned out to be the reason you ended up somewhere better?\n\nThe job you did not get. The person who did not stay. Both cleared the path for something that fit.\n\nIt is allowed to hurt. It is also allowed to be the best thing that never happened to you."
+    },
+    {
+      "id": "align-08",
+      "theme": "align",
+      "text": "Alignment feels less like winning and more like finally exhaling.",
+      "moods": [
+        "water",
+        "forest",
+        "lovers"
+      ],
+      "caption": "We expect the right thing to feel like a victory. Fireworks. Triumph.\n\nOften it is much quieter. Your shoulders drop. Your jaw unclenches. You realise you have stopped bracing. Your phone stops feeling like a slot machine. Your evenings stop revolving around a reply.\n\nThat is the feeling. Not the high, but the rest.\n\nIf you are waiting to feel like you won, you may miss it. Pay attention to when you finally breathe out."
+    },
+    {
+      "id": "align-09",
+      "theme": "align",
+      "text": "Become the person who can hold what you're asking for.",
+      "moods": [
+        "knight",
+        "castle",
+        "mystic"
+      ],
+      "caption": "You want deep love. Can you sit through a hard conversation without running?\n\nYou want a bigger life. Can you handle the attention, the responsibility, the change? Can you rest without guilt when it finally arrives, or will you sabotage the calm?\n\nThis is not a test you can fail. It is a preparation. The life you want asks things of the person who lives it.\n\nStart becoming that person now. Not to deserve it, but so you can keep it when it comes."
+    },
+    {
+      "id": "align-10",
+      "theme": "align",
+      "text": "If you have to shrink to fit, it's not your size.",
+      "moods": [
+        "castle",
+        "forest",
+        "stars"
+      ],
+      "caption": "The friend group where you hold back your opinions. The relationship where you play smaller. The job where your ideas are too much.\n\nYou keep adjusting, and it keeps not quite fitting.\n\nThat is not a sign you need to try harder. It is a sign it was cut for someone else.\n\nAligned places do not ask you to disappear. They have room for all of you, and they are glad of it."
+    },
+    {
+      "id": "align-11",
+      "theme": "align",
+      "text": "The wrong door closing is the right one getting louder.",
+      "moods": [
+        "castle",
+        "knight",
+        "moon"
+      ],
+      "caption": "When something you wanted falls through, it is easy to only hear the slam.\n\nBut listen after. Things you did not notice before start to come forward. An idea you had shelved. A person you had overlooked. A city you always talked about. A friend who kept checking in while you were busy looking the other way.\n\nIt was always there. It just could not compete with the noise of the wrong door.\n\nGive the quiet a chance to point you somewhere."
+    },
+    {
+      "id": "align-12",
+      "theme": "align",
+      "text": "You're not stuck. You're waiting for permission you don't need.",
+      "moods": [
+        "knight",
+        "stars",
+        "forest"
+      ],
+      "caption": "Permission from a partner. From parents. From the perfect moment, the right amount of money, a sign.\n\nYou already know what you want to do. You are just waiting for someone to say it is okay. A blessing, a nod, a sign that nobody will be disappointed if you try.\n\nNobody is coming with that permission. Not because they disapprove, but because it was never theirs to give.\n\nYou can start. Today. Small. That is the permission."
+    },
+    {
+      "id": "align-13",
+      "theme": "align",
+      "text": "Aligned people don't need convincing. They need an invitation.",
+      "moods": [
+        "lovers",
+        "stars",
+        "castle"
+      ],
+      "caption": "If you have to talk someone into wanting you, into your plan, into your life, you are selling.\n\nAligned people do not need a pitch. They hear the idea and lean in. They see you and get curious. They do not need the deck. They were already looking for a reason to say yes.\n\nYour job is not to persuade. It is to be clear about who you are and what you want.\n\nThen invite. The right ones say yes without the sales pitch."
+    },
+    {
+      "id": "align-14",
+      "theme": "align",
+      "text": "You can't meet the right one while renting your evenings out to maybes.",
+      "moods": [
+        "lovers",
+        "castle",
+        "moon"
+      ],
+      "caption": "Every evening spent on someone who does not fit is an evening not spent anywhere else.\n\nThe situationship that is going nowhere. The person you keep around in case. The ex you keep warm. Every maybe gets a slot in your week and a corner of your hope.\n\nThey take up more room than you think. Emotional room. Calendar room. Hope room.\n\nIf you want space for the right one, stop renting it out to maybes."
+    },
+    {
+      "id": "align-15",
+      "theme": "align",
+      "text": "The right place will feel like you've been there before.",
+      "moods": [
+        "castle",
+        "forest",
+        "stars"
+      ],
+      "caption": "There are places you walk into and something settles. A city that makes sense on the first day. A cafe where you feel like a regular instantly.\n\nPeople can be like that too. Rooms, jobs, friendships.\n\nThat recognition is worth trusting. It is your system saying yes before your mind has reasons.\n\nNotice where you feel at home without trying. That is information about where your life wants to grow."
+    },
+    {
+      "id": "align-16",
+      "theme": "align",
+      "text": "Stop negotiating with what you've already outgrown.",
+      "moods": [
+        "knight",
+        "forest",
+        "castle"
+      ],
+      "caption": "Maybe just one more year. Maybe if they changed. Maybe if you lowered your expectations a little.\n\nYou keep bargaining with something you have already left in your heart. Your feet are still here, but the rest of you has packed and is waiting by the door.\n\nThe negotiation is the exhausting part. Not the leaving. Not the change. The back and forth.\n\nYou already know. Let the decision be made, and let your energy go somewhere new."
+    },
+    {
+      "id": "align-17",
+      "theme": "align",
+      "text": "When you're aligned, the right people find you easier. Funny how that works.",
+      "moods": [
+        "stars",
+        "lovers",
+        "mystic"
+      ],
+      "caption": "It is not magic. When you are doing what you love, you end up around others who love it too. When you are honest, you attract people who value honesty.\n\nAlignment changes where you go, how you show up, and who notices.\n\nThe people meant for you are not hiding. They just could not see you when you were busy being someone else.\n\nBe more yourself. You will be easier to find."
+    },
+    {
+      "id": "align-18",
+      "theme": "align",
+      "text": "It's not the universe saying no. It's the universe saying not like this.",
+      "moods": [
+        "stars",
+        "moon",
+        "mystic"
+      ],
+      "caption": "The plan falls apart. The thing you prayed for does not come.\n\nIt is easy to hear a flat no. But often it is something more specific. Not this person. Not this route. Not while you are still trying to be someone else to get it.\n\nThe desire is not wrong. The shape might be.\n\nStay open to a different version of the thing you want. It might be better than the one you ordered."
+    },
+    {
+      "id": "align-19",
+      "theme": "align",
+      "text": "Your frequency is just your habits with a nicer name.",
+      "moods": [
+        "mystic",
+        "stars",
+        "forest"
+      ],
+      "caption": "People talk about raising your vibration like it is something mystical. In practice, it looks like Tuesday.\n\nWhat you eat. Who you text. What you watch before bed. Whether you keep promises to yourself. Tiny things, repeated until they quietly become the weather you live in.\n\nThose small choices set the tone of your life. They decide your mood, your energy, who you attract.\n\nYou do not need a ritual to change frequency. You need a slightly better habit, repeated."
+    },
+    {
+      "id": "align-20",
+      "theme": "align",
+      "text": "Love that costs you your sleep, your friends and your nerve is overpriced.",
+      "moods": [
+        "water",
+        "lovers",
+        "castle"
+      ],
+      "caption": "It is a hard truth. Sometimes the person you love is the person who takes your calm.\n\nYou tell yourself it is worth it. The highs make up for the lows. The good nights are good enough to pay for the bad weeks. Or so the story goes.\n\nBut look at the bill. Sleepless nights. Anxious days. Friends who worry about you.\n\nLove should be a gift, not a debt. If the price keeps going up and the thing you are buying keeps getting smaller, it is overpriced."
+    },
+    {
+      "id": "align-21",
+      "theme": "align",
+      "text": "Meant for you does not mean easy. It means worth it.",
+      "moods": [
+        "knight",
+        "stars",
+        "lovers"
+      ],
+      "caption": "Alignment is sometimes sold as frictionless. If it is right, everything flows.\n\nNot quite. The right relationship still needs work. The right career still has hard weeks. The right person will still annoy you over the dishes. That is not a sign you got it wrong.\n\nThe difference is in how the difficulty feels. Aligned struggle feels like effort toward something. Misaligned struggle feels like pushing a door marked pull.\n\nDo not run from all hardship. Run from the pointless kind."
+    },
+    {
+      "id": "align-22",
+      "theme": "align",
+      "text": "You keep praying for clarity and then ignoring your own answer.",
+      "moods": [
+        "mystic",
+        "moon",
+        "stars"
+      ],
+      "caption": "You light the candle, write the journal, ask for a sign. Then the answer comes, and it is not the one you hoped for.\n\nSo you ask again. And again. Hoping that if you phrase the question differently, the universe will change its answer.\n\nClarity is not always pleasant. It can mean leaving, or admitting, or starting over.\n\nThe answer you keep getting is the answer. You do not need a louder one. You need the courage to accept the quiet one."
+    },
+    {
+      "id": "align-23",
+      "theme": "align",
+      "text": "The life you want has a version of you in it. Start being them now.",
+      "moods": [
+        "knight",
+        "castle",
+        "stars"
+      ],
+      "caption": "Picture it. The relationship, the home, the work. Now look at the person in that picture.\n\nHow do they spend their mornings? How do they speak about themselves? What do they say no to? Who do they keep close, and who did they quietly stop making time for?\n\nYou do not need to wait for the life to arrive to become that person. You can borrow their habits today.\n\nStart with one. The rest of the picture tends to follow."
+    },
+    {
+      "id": "align-24",
+      "theme": "align",
+      "text": "What flows to you easily is a clue. Pay attention to it.",
+      "moods": [
+        "water",
+        "stars",
+        "forest"
+      ],
+      "caption": "Some things you have to fight for every inch. Others just keep arriving.\n\nPeople keep asking you for the same kind of help. Opportunities keep coming from the same direction. One friendship keeps being effortless. A conversation that never needs warming up. A skill people keep assuming you trained for.\n\nThat ease is a clue about where your life fits naturally.\n\nWe are taught to value only what is hard. Look at what is easy, too. It might be showing you the path."
+    },
+    {
+      "id": "align-25",
+      "theme": "align",
+      "text": "Align isn't a moment. It's a habit of choosing what fits.",
+      "moods": [
+        "stars",
+        "forest",
+        "lovers"
+      ],
+      "caption": "People picture alignment like a lightning bolt. One day it all clicks.\n\nMore often it is a thousand quiet choices. Saying no to what does not fit. Saying yes to what does. Doing it again tomorrow. None of them feel dramatic. Together they quietly change the direction of your whole life.\n\nEach choice brings you a little closer to a life that feels like yours.\n\nYou do not need to wait for the click. Start choosing. The alignment builds itself."
+    },
+    {
+      "id": "align-26",
+      "theme": "align",
+      "text": "You can't rush a season. You can only stop wasting it.",
+      "moods": [
+        "forest",
+        "moon",
+        "stars"
+      ],
+      "caption": "Nobody can make spring come early. Not with effort, not with wishing.\n\nThe same goes for some parts of life. The waiting part. The healing part. The not quite yet part. Pushing against it only makes the waiting feel longer and teaches you nothing.\n\nYou cannot speed it up. But you can choose how you spend it. Resenting it, or learning from it.\n\nUse the season you are in. It is preparing you for the one that is coming."
+    },
+    {
+      "id": "align-27",
+      "theme": "align",
+      "text": "The right relationship won't ask you to abandon the right life.",
+      "moods": [
+        "lovers",
+        "castle",
+        "stars"
+      ],
+      "caption": "If loving someone means giving up your friends, your dreams, the city you love, pause.\n\nSome compromise is normal. Wholesale surrender is not. If you have to become a stranger to keep someone, they are asking for too much.\n\nThe right person will fit into the life you are building, and help you build it bigger. They will not ask you to burn it down for them.\n\nAlignment is when your love and your life point in the same direction."
+    },
+    {
+      "id": "align-28",
+      "theme": "align",
+      "text": "If it needs that much steering, it might not be going your way.",
+      "moods": [
+        "mystic",
+        "water",
+        "moon"
+      ],
+      "caption": "You run every scenario. You plan every reply. You prepare for every outcome.\n\nIt feels like being responsible. Really, it is trying to control the uncontrollable. You end up working twice as hard as the other person and calling it devotion.\n\nAligned things do not require that much management. They work because they fit.\n\nIf you are spending hours steering something, ask whether it would move on its own if it were right. Aligned things tend to drive themselves."
+    },
+    {
+      "id": "align-29",
+      "theme": "align",
+      "text": "Some things leave because you finally stopped holding them in place.",
+      "moods": [
+        "water",
+        "forest",
+        "moon"
+      ],
+      "caption": "You let go a little, and it left. And part of you wonders if you should have held tighter.\n\nBut if it only stayed because you were gripping, was it ever really there? If it walks the second you stop managing it, your grip was the only thing in the room.\n\nSometimes your letting go is the test. What stays when you relax is what was meant to stay.\n\nThe rest was just your effort, dressed up as connection."
+    },
+    {
+      "id": "align-30",
+      "theme": "align",
+      "text": "Your yes should feel like a decision, not an escape.",
+      "moods": [
+        "knight",
+        "stars",
+        "castle"
+      ],
+      "caption": "Saying yes to a relationship because you are lonely. To a job because you are scared. To a move because you are running.\n\nThose yeses rarely fit, because they were not choices toward something. They were exits from something else.\n\nAligned decisions feel different. Clear. Grounded. Even if they are scary.\n\nBefore you say yes, ask yourself what you are saying yes to, and what you are saying no to."
+    },
+    {
+      "id": "align-31",
+      "theme": "align",
+      "text": "You'll know it's aligned when you stop needing it to prove itself.",
+      "moods": [
+        "lovers",
+        "stars",
+        "moon"
+      ],
+      "caption": "You stop watching for signs that it is real. You stop testing. You stop asking for reassurance.\n\nNot because you are ignoring things, but because the evidence has become ordinary. You do not need a grand gesture when the small ones keep arriving every single day.\n\nThey keep showing up. You keep feeling at ease.\n\nThat is the shift. From constant proof to quiet trust. It cannot be forced. But when it arrives, you will notice how much lighter you are."
+    },
+    {
+      "id": "align-32",
+      "theme": "align",
+      "text": "The right path won't erase your fear. It'll make it worth walking through.",
+      "moods": [
+        "knight",
+        "forest",
+        "castle"
+      ],
+      "caption": "People sometimes wait for the fear to leave before they move. It rarely does.\n\nAlignment is not the absence of fear. It is having a reason big enough to feel it and go anyway. Courage is not the feeling going away. It is deciding the feeling does not get a vote.\n\nThe new city is still scary. The honest conversation is still scary. The real relationship is still scary.\n\nIf it frightens you and excites you in the same breath, that may be the path."
+    },
+    {
+      "id": "align-33",
+      "theme": "align",
+      "text": "Open your hands. What's meant for you doesn't need to be held down.",
+      "moods": [
+        "water",
+        "moon",
+        "stars"
+      ],
+      "caption": "Holding on can feel like loyalty. If you stop trying, you are quitting.\n\nBut there is a difference between abandoning something and releasing it. One is closing the door. The other is opening your hands. Releasing does not mean you stop caring. It means you stop squeezing.\n\nIf it is meant to come back, it knows where you are. If it does not, the space it leaves is a gift.\n\nOpen your hands. It is less tiring than clenching them, and what is meant for you will not slip through."
+    },
+    {
+      "id": "align-34",
+      "theme": "align",
+      "text": "Stop asking if you're enough for them. Ask if this is enough for you.",
+      "moods": [
+        "knight",
+        "lovers",
+        "castle"
+      ],
+      "caption": "We spend so much energy on one side of the question. Am I attractive enough, interesting enough, easy enough?\n\nWe rarely flip it. Is this relationship giving me what I need? Is this person someone I actually want, or just someone I want to want me? Do I actually like them, or do I just like being liked by them?\n\nYou are not only the one being chosen. You are choosing too.\n\nThat changes how you walk into every room."
+    },
+    {
+      "id": "align-35",
+      "theme": "align",
+      "text": "Everything aligned in your life once started as a risk you nearly didn't take.",
+      "moods": [
+        "stars",
+        "knight",
+        "forest"
+      ],
+      "caption": "Look at the best parts of your life. The person, the place, the work you love.\n\nMost of them started with a moment of hesitation. Almost not going. Almost not saying it. Almost staying where you were. Every one of those moments looked, at the time, like an easy thing to skip.\n\nAlignment is not a safe bet. It is usually a brave one.\n\nThe next great thing in your life is probably sitting behind a risk right now. You know which one."
+    },
+    {
+      "id": "sky-01",
+      "theme": "sky",
+      "text": "The stars don't decide who you love. They describe how you'll do it.",
+      "moods": [
+        "stars",
+        "lovers",
+        "moon"
+      ],
+      "caption": "Astrology is not a cage. Your chart does not choose your partner, or guarantee anything.\n\nWhat it does is describe. How you open up. What makes you feel safe. Where you tend to push, and where you tend to hide.\n\nThink of it as a weather report for your heart, not a contract.\n\nThe choices are still yours. The stars just help you see the patterns you bring to them."
+    },
+    {
+      "id": "sky-02",
+      "theme": "sky",
+      "text": "Your sun sign is the cover. Your moon sign is what you're like at 2am.",
+      "moods": [
+        "moon",
+        "stars",
+        "mystic"
+      ],
+      "caption": "Everyone knows their sun sign. It is the headline, the version you show at parties and on first dates.\n\nYour moon is quieter. It is how you feel when you are tired, scared, or in love. What you need to feel safe. What you reach for when nobody is looking.\n\nIf you have ever felt like your sign does not fit, check your moon.\n\nThe person who loves you will meet both. The moon is the one they will live with."
+    },
+    {
+      "id": "sky-03",
+      "theme": "sky",
+      "text": "Venus tells you what you find beautiful. Mars tells you what you'll chase.",
+      "moods": [
+        "stars",
+        "lovers",
+        "knight"
+      ],
+      "caption": "Two planets, two kinds of wanting.\n\nVenus is attraction. Taste. What makes you soft. The kind of love you want to receive. Venus is the meal you would cook for someone, and the one you hope they would cook for you.\n\nMars is drive. Pursuit. What makes you move. How you go after what you want, and how you fight.\n\nWhen they disagree, you might fall for one type and chase another. Knowing both is how you stop being surprised by yourself."
+    },
+    {
+      "id": "sky-04",
+      "theme": "sky",
+      "text": "Mercury retrograde didn't make you text them. That was you.",
+      "moods": [
+        "stars",
+        "moon",
+        "water"
+      ],
+      "caption": "It has become the universal excuse. The text to the ex. The misunderstanding. The rash decision at midnight.\n\nAstrologically, Mercury retrograde is a time for review. Re-reading, re-thinking, revisiting. That can bring old things up. Old friends text, exes resurface, half-finished conversations come back for a second draft.\n\nBut the stars do not hold your phone.\n\nIf an old feeling surfaces, notice it. Just do not hand your choices over to a planet. Review is not the same as relapse."
+    },
+    {
+      "id": "sky-05",
+      "theme": "sky",
+      "text": "Compatibility isn't matching signs. It's two charts that know how to share a room.",
+      "moods": [
+        "stars",
+        "lovers",
+        "castle"
+      ],
+      "caption": "People love the shortcut. Fire with air, earth with water, done.\n\nReal synastry is richer. It is how your moon meets their Venus. Where your Mars rubs against their Saturn. Which parts of you light each other up and which parts clash.\n\nEvery pairing has friction. The question is whether you both know how to live with it.\n\nThe best matches are not perfect fits. They are good roommates in the same sky."
+    },
+    {
+      "id": "sky-06",
+      "theme": "sky",
+      "text": "An eclipse doesn't end things. It shows you what was already over.",
+      "moods": [
+        "moon",
+        "stars",
+        "castle"
+      ],
+      "caption": "Eclipse seasons have a reputation. Breakups, sudden moves, endings that come out of nowhere.\n\nBut look closer and very little comes out of nowhere. Eclipses tend to light up what was already shifting. The relationship that had been fading. The job you had already left in your head.\n\nThey are not the cause. They are the reveal.\n\nIf something leaves in eclipse season, it was probably already on its way out."
+    },
+    {
+      "id": "sky-07",
+      "theme": "sky",
+      "text": "Your rising sign is how strangers meet you. Your chart is how lovers do.",
+      "moods": [
+        "stars",
+        "lovers",
+        "mystic"
+      ],
+      "caption": "The rising sign is the first impression. The way you walk in, the vibe people pick up before you speak.\n\nIt is useful, but it is the front door. It tells people how to approach you, not who they will find once they are inside.\n\nThe rest of the chart is the house. The moon in the kitchen. Venus in the bedroom. Saturn in the locked room you do not show anyone.\n\nStrangers meet the door. The right person wants the whole tour."
+    },
+    {
+      "id": "sky-08",
+      "theme": "sky",
+      "text": "Full moons don't make you emotional. They make you honest.",
+      "moods": [
+        "moon",
+        "water",
+        "mystic"
+      ],
+      "caption": "Something about a full moon brings it all to the surface. The feeling you were avoiding. The thing you meant to say.\n\nIt is a moment of illumination. Everything that was half hidden gets a little more light. Astrologically, it is the sun and moon facing each other across the sky, and nothing stays hidden in that much light.\n\nThat can feel like chaos. It is usually just truth arriving.\n\nUse it. Say the thing. Write it down. Let go of what the light shows you is finished."
+    },
+    {
+      "id": "sky-09",
+      "theme": "sky",
+      "text": "Saturn returns don't ruin your life. They audit it.",
+      "moods": [
+        "stars",
+        "castle",
+        "knight"
+      ],
+      "caption": "Around 29, something shifts. The career that looked fine starts to feel wrong. The relationship you assumed was forever gets questioned.\n\nThat is the Saturn return. The planet of structure coming back to where it was when you were born.\n\nIt is not punishment. It is an inspection. What is real stays. What is not starts to crack.\n\nIt is uncomfortable. It is also how you end up building a life that actually holds."
+    },
+    {
+      "id": "sky-10",
+      "theme": "sky",
+      "text": "Your big three is a better first date question than what do you do.",
+      "moods": [
+        "stars",
+        "lovers",
+        "moon"
+      ],
+      "caption": "Job, hometown, siblings. Everyone asks the same things.\n\nAsk for their sun, moon and rising and something better happens. They tell you who they think they are. Then who they are when they are tired. Then how they think they come across.\n\nEven if they do not know their chart, the conversation that follows is a real one.\n\nIt is a shortcut past small talk. And you learn a lot by who laughs and who leans in."
+    },
+    {
+      "id": "sky-11",
+      "theme": "sky",
+      "text": "Astrology won't tell you who to love. It'll tell you why you keep choosing them.",
+      "moods": [
+        "stars",
+        "mystic",
+        "lovers"
+      ],
+      "caption": "The same type again. The same kind of push and pull. The same ending.\n\nYour chart can help explain why. Venus shows what you find attractive. The moon shows what feels like safety. The seventh house shows the kind of partner you are drawn to.\n\nNone of it makes the choice for you. But naming the pattern is the first step out of it.\n\nThe stars are not responsible for your type. They just help you understand it."
+    },
+    {
+      "id": "sky-12",
+      "theme": "sky",
+      "text": "New moons are for wanting things out loud. Even the embarrassing ones.",
+      "moods": [
+        "moon",
+        "stars",
+        "mystic"
+      ],
+      "caption": "The new moon is a dark sky and a clean page. In astrology it is a time for beginnings and intentions.\n\nIt is a good night to write down what you actually want. Not the polished version. The real one.\n\nThe love you are scared to admit you want. The life you think is too much to ask for.\n\nNaming it does not guarantee it. But you cannot walk toward something you will not even say."
+    },
+    {
+      "id": "sky-13",
+      "theme": "sky",
+      "text": "Fire signs need a spark. Earth signs need a reason. Know which one you're dating.",
+      "moods": [
+        "stars",
+        "lovers",
+        "forest"
+      ],
+      "caption": "Each element loves differently.\n\nFire wants excitement. Spontaneity. Someone who keeps up. Earth wants consistency. Proof. Someone who will still be there in five years. Air wants to talk it through. Water wants to feel it through. Neither is wrong, and neither runs on the other's fuel.\n\nAir wants conversation. Water wants depth.\n\nYou do not have to match. But you should know what fuel the other person runs on. Love them in their language, and ask them to learn yours."
+    },
+    {
+      "id": "sky-14",
+      "theme": "sky",
+      "text": "Two water signs together is a tide pool. Deep, private, very hard to leave.",
+      "moods": [
+        "water",
+        "moon",
+        "lovers"
+      ],
+      "caption": "When two water signs meet, there is an instant recognition. Someone who feels as much as you do. Someone who understands silence.\n\nIt can be beautiful. A world just for two. Inside jokes in silence. Comfort in a single look. A home built out of feelings.\n\nIt can also be a lot. Two people absorbing every mood. Two people who struggle to leave even when they should.\n\nIf you are in one, enjoy the depth. And make sure you both come up for air."
+    },
+    {
+      "id": "sky-15",
+      "theme": "sky",
+      "text": "Your seventh house knows your type better than your friends do.",
+      "moods": [
+        "stars",
+        "lovers",
+        "castle"
+      ],
+      "caption": "In astrology, the seventh house is about partnership. Who you are drawn to, what you look for in another, what you project onto them.\n\nIt often describes the qualities you admire in partners because you have not fully claimed them yourself.\n\nThat is why your friends can only guess at your type. The chart describes the pattern.\n\nLook up the sign on your seventh house cusp. Then think about your last three crushes."
+    },
+    {
+      "id": "sky-16",
+      "theme": "sky",
+      "text": "The moon changes sign every two and a half days. You're allowed to change your mind.",
+      "moods": [
+        "moon",
+        "water",
+        "stars"
+      ],
+      "caption": "The moon is the fastest mover in the sky. It shifts sign every couple of days, changing the emotional weather as it goes.\n\nYou are allowed to move too. To feel one way on Monday and another on Thursday. Your feelings about a person can shift too, and that is information rather than failure.\n\nThat is not being flaky. It is being alive.\n\nGive yourself the same grace you give the moon. Nobody calls the moon inconsistent. They call it beautiful."
+    },
+    {
+      "id": "sky-17",
+      "theme": "sky",
+      "text": "You are not your sign. You are your whole sky.",
+      "moods": [
+        "stars",
+        "mystic",
+        "moon"
+      ],
+      "caption": "It is easy to reduce people to one word. She is such a Scorpio. He is so Gemini.\n\nBut your sun sign is one piece. You have a moon, a rising, a Venus, a Mars, houses, aspects, a whole map drawn for the exact minute you arrived.\n\nThat is why two people with the same sign can be completely different.\n\nNext time someone sums you up by your sun, smile. They have only read the title."
+    },
+    {
+      "id": "sky-18",
+      "theme": "sky",
+      "text": "The sky the minute you were born will never happen again. Neither will you.",
+      "moods": [
+        "stars",
+        "moon",
+        "mystic"
+      ],
+      "caption": "Every birth chart is a snapshot. The exact positions of the sun, moon and planets, from one place, at one minute.\n\nThat precise sky has never existed before and will not repeat. Even twins born minutes apart get slightly different charts, because the sky never stands still.\n\nIt is a good thing to remember when you feel ordinary. The universe was arranged in a pattern that only belongs to you.\n\nYou are a one-off. Your chart is the receipt."
+    },
+    {
+      "id": "sky-19",
+      "theme": "sky",
+      "text": "Your Venus sign is how you want to be loved. Tell people. They can't read charts.",
+      "moods": [
+        "stars",
+        "lovers",
+        "moon"
+      ],
+      "caption": "Venus in Taurus wants touch and consistency. Venus in Gemini wants conversation. Venus in Cancer wants to feel at home. Venus in Leo wants to be adored, a little publicly.\n\nThese are not quirks. They are needs.\n\nThe problem is that most partners have no idea where your Venus is.\n\nSo translate it. Tell them plainly what makes you feel loved. You are not being needy. You are giving them the manual."
+    },
+    {
+      "id": "sky-20",
+      "theme": "sky",
+      "text": "Retrograde season is for going back. Just not to them.",
+      "moods": [
+        "stars",
+        "water",
+        "moon"
+      ],
+      "caption": "Retrogrades are about review. Old projects, old ideas, old feelings coming back for another look.\n\nThat can be useful. Finish something you abandoned. Reconnect with a friend. Rethink a plan. Mercury going backwards is a good time to finish things. It is not a summons for every ghost.\n\nBut not every old thing deserves a second chance. An ex who hurt you is not a project to revisit.\n\nGo back for what helps you grow. Leave the rest in the past where it belongs."
+    },
+    {
+      "id": "sky-21",
+      "theme": "sky",
+      "text": "Your chart isn't a fortune. It's a forecast. You still choose what to wear.",
+      "moods": [
+        "stars",
+        "mystic",
+        "castle"
+      ],
+      "caption": "A forecast tells you it might rain. It does not decide whether you go out.\n\nThat is how your chart works. It describes tendencies, tensions, timing. It does not make your choices for you. A difficult transit is a heads up, not a sentence handed down from the sky.\n\nSome people find that disappointing. It is actually freeing.\n\nYou get the information and keep the agency. The stars set the weather. You decide how to dress for it."
+    },
+    {
+      "id": "sky-22",
+      "theme": "sky",
+      "text": "Opposite signs attract because each one is holding what the other forgot.",
+      "moods": [
+        "stars",
+        "lovers",
+        "water"
+      ],
+      "caption": "Aries and Libra. Taurus and Scorpio. Cancer and Capricorn. Every sign has an opposite across the wheel.\n\nThey often fall hard for each other. Not because they are the same, but because each has what the other is missing. Libra teaches Aries to consider. Aries teaches Libra to decide. Neither lesson is comfortable.\n\nOne leads, one balances. One feels, one structures.\n\nIt can be magnetic or exhausting. The trick is to learn from the other, not try to win."
+    },
+    {
+      "id": "sky-23",
+      "theme": "sky",
+      "text": "Mercury is how you talk. If you can't talk to them, check their Mercury.",
+      "moods": [
+        "stars",
+        "mystic",
+        "lovers"
+      ],
+      "caption": "Some people you can talk to for hours. Others, every conversation feels like a translation.\n\nIn astrology, Mercury rules communication. How you think, how you speak, how you process. One thinks out loud. One needs a day to answer. Both feel unheard.\n\nTwo people with clashing Mercury signs can love each other and still constantly misunderstand.\n\nIt does not mean it cannot work. It means you might need to learn their language. And they might need to learn yours."
+    },
+    {
+      "id": "sky-24",
+      "theme": "sky",
+      "text": "Leo season wants you seen. Scorpio season wants you honest. Every month asks something.",
+      "moods": [
+        "stars",
+        "castle",
+        "moon"
+      ],
+      "caption": "The sun moves through each sign over the year, and each season carries a mood.\n\nAries season wants you to begin. Taurus season wants you to slow down. Cancer season wants you home. Libra season wants balance.\n\nYou do not have to obey it. But noticing the season can help you work with the year instead of against it.\n\nAsk what this month is asking of you. The answer can be surprising."
+    },
+    {
+      "id": "sky-25",
+      "theme": "sky",
+      "text": "Your north node is where you're heading. It always feels a little uncomfortable.",
+      "moods": [
+        "stars",
+        "knight",
+        "castle"
+      ],
+      "caption": "In astrology, the lunar nodes describe direction. The south node is what comes easily, maybe too easily. The north node is where you are meant to grow.\n\nThat growth almost never feels natural at first. It feels awkward. Exposed. Like wearing someone else's shoes until, slowly, they become yours and start to fit.\n\nThat is the point. Comfort is where you have already been.\n\nIf the right direction scares you a little, it might be pointing north."
+    },
+    {
+      "id": "sky-26",
+      "theme": "sky",
+      "text": "Astrology isn't for blaming your ex's sign. Okay, it's a little bit for that.",
+      "moods": [
+        "stars",
+        "moon",
+        "lovers"
+      ],
+      "caption": "We all do it. Of course it ended. They were a Gemini. They were a Scorpio. What did I expect?\n\nIt is fun, and it is not fair. Signs describe tendencies, not destinies. Plenty of people with that sign are wonderful. Your ex was not their sign. They were a person who happened to be born in a particular month.\n\nThe better question is what the relationship showed you about your own chart. Your own patterns.\n\nBlame is a small comfort. Understanding lasts longer."
+    },
+    {
+      "id": "sky-27",
+      "theme": "sky",
+      "text": "Compatibility charts don't predict love. They predict where you'll need patience.",
+      "moods": [
+        "stars",
+        "lovers",
+        "castle"
+      ],
+      "caption": "A synastry chart will not tell you if it will work. Nothing can.\n\nWhat it can show is where you will flow easily, and where you will rub. Where you will laugh, and where you will argue about the dishes. Knowing this ahead of time takes the mystery out of fights you were always going to have.\n\nThat is useful. You know in advance where to be patient.\n\nEvery couple has friction points. The good ones know where theirs are and agree to be gentle there."
+    },
+    {
+      "id": "sky-28",
+      "theme": "sky",
+      "text": "Some people are your full moon. They light everything up, including the mess.",
+      "moods": [
+        "moon",
+        "lovers",
+        "water"
+      ],
+      "caption": "There are people who make you feel more. More alive, more seen, more emotional.\n\nThey bring everything to the surface. The good, and the parts you prefer to keep in shadow. Their light does not create the mess. It simply refuses to let you pretend it is not there.\n\nThat is not always comfortable. But it is often important.\n\nThe ones who light up your mess are not always the ones you keep. But they are the ones who show you what needs tending."
+    },
+    {
+      "id": "sky-29",
+      "theme": "sky",
+      "text": "The planets were moving long before your heartbreak. They'll keep moving after.",
+      "moods": [
+        "stars",
+        "moon",
+        "water"
+      ],
+      "caption": "When something ends, it can feel like the world stopped.\n\nIt did not. The moon kept changing. The planets kept turning. Seasons kept arriving on time. The same sky that watched you fall apart will watch you put yourself back together.\n\nThere is comfort in that. Your pain is real, and it is also not the end of the story.\n\nLook up on a clear night. Everything is still moving. So are you, even when you cannot feel it."
+    },
+    {
+      "id": "sky-30",
+      "theme": "sky",
+      "text": "Know your chart so nobody can tell you who you are.",
+      "moods": [
+        "stars",
+        "knight",
+        "mystic"
+      ],
+      "caption": "People will try to define you. Too much. Too quiet. Too emotional. Too cold.\n\nYour chart is a language for describing yourself on your own terms. Why you need space. Why you love intensely. Why you get restless. Why certain people make you feel at home, and others make you feel like a guest.\n\nIt does not replace who you are. It gives you words.\n\nAnd once you have the words, it is a lot harder for anyone else to write your description for you."
+    },
+    {
+      "id": "aries-01",
+      "theme": "sign",
+      "sign": "aries",
+      "text": "Aries doesn't play hard to get. If they like you, you'll know by Thursday.",
+      "moods": [
+        "knight",
+        "lovers",
+        "stars"
+      ],
+      "caption": "Aries is cardinal fire, ruled by Mars. They start things. Including feelings.\n\nThere is no slow reveal, no strategic silence. If an Aries is interested, they will text first, plan the date, and tell you they had a good time before you have got home.\n\nIt can feel like a lot. It is actually rare.\n\nMost people make you guess. Aries hands you the answer. Enjoy the clarity while everyone else is still decoding."
+    },
+    {
+      "id": "aries-02",
+      "theme": "sign",
+      "sign": "aries",
+      "text": "An Aries will fight for you in public and with you in private. Both mean they care.",
+      "moods": [
+        "knight",
+        "stars",
+        "castle"
+      ],
+      "caption": "Mars rules Aries, and Mars does not do indifference.\n\nIf someone is unkind to you, an Aries will step in without being asked. And if something is wrong between you, they will raise it, loudly, on the spot. Either way you never have to wonder whether they are paying attention. They are fully here.\n\nBoth come from the same place. They are engaged. They are in it.\n\nThe Aries to worry about is the quiet one. When they stop arguing, they have stopped hoping."
+    },
+    {
+      "id": "aries-03",
+      "theme": "sign",
+      "sign": "aries",
+      "text": "Aries needs a partner who can keep up, not one who keeps score.",
+      "moods": [
+        "knight",
+        "stars",
+        "forest"
+      ],
+      "caption": "Aries moves fast. Ideas, plans, apologies. They will forget the argument by lunch and expect you to as well.\n\nWhat they cannot handle is a ledger. Old mistakes brought back months later. Points tallied. To an Aries, a fight is weather. It blows through, and then the sun comes out again.\n\nThey want someone who can match their pace and their honesty. Who can say it straight and move on.\n\nKeep up, and you will never be bored. Keep score, and you will lose them."
+    },
+    {
+      "id": "aries-04",
+      "theme": "sign",
+      "sign": "aries",
+      "text": "Aries won't wait forever. They barely wait for the kettle.",
+      "moods": [
+        "knight",
+        "lovers",
+        "stars"
+      ],
+      "caption": "Patience is not the ram's natural gift. Aries is the first sign of the zodiac, and they like to arrive first.\n\nIn love, that means they will not hang around for mixed signals. If you are unsure, they will take that as a no and charge somewhere else.\n\nIt is not coldness. It is respect for their own time.\n\nIf you like an Aries, tell them. Soon. They are worth the directness."
+    },
+    {
+      "id": "aries-05",
+      "theme": "sign",
+      "sign": "aries",
+      "text": "Under the Aries bravado is someone who just wants to be picked first.",
+      "moods": [
+        "knight",
+        "moon",
+        "lovers"
+      ],
+      "caption": "Aries looks like the most confident person in the room. Loud laugh, quick opinions, first through the door.\n\nBut under the armour is often a simple wish. To be chosen. Not as an afterthought. Not as the backup. First. Under the speed is someone who has often been told they were too much, and kept running anyway.\n\nThat is why they push so hard. They are making sure you notice.\n\nPick them first, out loud, once in a while. You will see the warmth under the fire."
+    },
+    {
+      "id": "taurus-01",
+      "theme": "sign",
+      "sign": "taurus",
+      "text": "Taurus remembers how you take your coffee three years after the breakup.",
+      "moods": [
+        "forest",
+        "lovers",
+        "moon"
+      ],
+      "caption": "Taurus is fixed earth, ruled by Venus. They notice details through the senses. Tastes, textures, the song that was playing.\n\nWhen a Taurus loves you, they store it. The way you laugh. Your favourite dinner. How you like your coffee.\n\nAnd that does not just disappear when it ends.\n\nIt can make them slow to move on. It also makes them one of the most devoted partners in the zodiac. They do not just love you. They learn you."
+    },
+    {
+      "id": "taurus-02",
+      "theme": "sign",
+      "sign": "taurus",
+      "text": "A Taurus won't rush you. They also won't move once they've decided.",
+      "moods": [
+        "forest",
+        "castle",
+        "lovers"
+      ],
+      "caption": "Taurus takes its time. They watch. They test the ground. They are not jumping into anything.\n\nBut once a Taurus has decided, the decision is made. Fixed signs commit in concrete.\n\nThat is wonderful if they have decided on you. Less so if you are hoping they will change their mind about something.\n\nWith Taurus, be patient at the beginning. The steadiness you get at the end is worth it."
+    },
+    {
+      "id": "taurus-03",
+      "theme": "sign",
+      "sign": "taurus",
+      "text": "Taurus doesn't want fireworks. They want you to show up on Sunday.",
+      "moods": [
+        "forest",
+        "lovers",
+        "moon"
+      ],
+      "caption": "Some signs want grand gestures. Taurus wants consistency.\n\nA standing date. A meal you cook together. Knowing you will be there without having to ask. Your name in their calendar, in pen, every week, without being reminded.\n\nTo a Taurus, reliability is romance. Showing up is the love letter.\n\nIf you want to win one over, skip the surprise trip. Be the person they can count on, every week, for the ordinary things. That is the whole secret."
+    },
+    {
+      "id": "taurus-04",
+      "theme": "sign",
+      "sign": "taurus",
+      "text": "Taurus calls it patience. Sometimes it's just refusing to leave a bad thing.",
+      "moods": [
+        "castle",
+        "forest",
+        "moon"
+      ],
+      "caption": "The strength of Taurus is staying power. They do not quit when it gets hard.\n\nBut that strength has a shadow. Sometimes they stay long after something has stopped being good, simply because leaving feels harder than enduring. Fixed earth does not like to be moved, even by its own better judgment.\n\nPatience is a virtue. Stubbornness dressed as patience is not.\n\nIf you are a Taurus, ask yourself honestly. Am I waiting for this to improve, or just afraid to let go?"
+    },
+    {
+      "id": "taurus-05",
+      "theme": "sign",
+      "sign": "taurus",
+      "text": "Venus rules Taurus. They don't love loudly. They love in thread count.",
+      "moods": [
+        "lovers",
+        "forest",
+        "moon"
+      ],
+      "caption": "Taurus is Venus at her most earthly. Pleasure, comfort, beauty you can touch.\n\nThey show love through the senses. The good sheets. The meal they spent all afternoon making. A hand on your back when you walk past.\n\nThey will not always say it in words. They will make your life softer.\n\nIf you are dating a Taurus, look at your surroundings. Chances are, you are being loved in the details."
+    },
+    {
+      "id": "gemini-01",
+      "theme": "sign",
+      "sign": "gemini",
+      "text": "Gemini isn't two-faced. They just have more than one thing to say to you.",
+      "moods": [
+        "mystic",
+        "stars",
+        "lovers"
+      ],
+      "caption": "Gemini is mutable air, ruled by Mercury. Their minds move fast and in several directions at once.\n\nThat gets misread as inconsistency. It is really curiosity. They are thinking about you from five angles at the same time.\n\nThe trick is to enjoy the range rather than try to pin it down.\n\nYou will never run out of things to talk about. And that, to a Gemini, is the deepest kind of love."
+    },
+    {
+      "id": "gemini-02",
+      "theme": "sign",
+      "sign": "gemini",
+      "text": "Bore a Gemini once and they'll forgive you. Bore them twice and they're typing.",
+      "moods": [
+        "stars",
+        "mystic",
+        "lovers"
+      ],
+      "caption": "Gemini needs stimulation the way some signs need security. Conversation, new ideas, a reason to keep coming back.\n\nThey will forgive a lot. A bad date. A forgotten plan. But a relationship that has stopped surprising them? That is hard.\n\nIt is not shallowness. Their mind is a fire that needs fuel.\n\nAsk them a question you have never asked. Take them somewhere new. Keep the conversation alive, and they will stay."
+    },
+    {
+      "id": "gemini-03",
+      "theme": "sign",
+      "sign": "gemini",
+      "text": "Gemini needs someone they can talk to at 3am about nothing and everything.",
+      "moods": [
+        "moon",
+        "stars",
+        "lovers"
+      ],
+      "caption": "For a Gemini, conversation is intimacy. Late night talks. Voice notes on the walk home. A text thread that never quite ends.\n\nThey want a partner who is curious, quick, and up for the tangent. Someone who can follow a story into three side stories and still remember where it started.\n\nThe silent type might look mysterious at first. For a Gemini, mystery gets old fast.\n\nThey want the person who answers at 3am with an opinion. That is their kind of romantic."
+    },
+    {
+      "id": "gemini-04",
+      "theme": "sign",
+      "sign": "gemini",
+      "text": "Gemini can talk about anything. Whoever keeps them makes the silence interesting too.",
+      "moods": [
+        "moon",
+        "forest",
+        "lovers"
+      ],
+      "caption": "Gemini can struggle with stillness. When the newness fades and the conversation slows, they get restless.\n\nThe partner who keeps them is not the one who entertains them constantly. It is the one who shows them that quiet can be full too. Someone who can sit beside them and let the conversation rest without either of them panicking.\n\nA comfortable silence. A slow Sunday. Reading in the same room.\n\nGemini, the quiet is not the end of the story. It is where people stop performing and start trusting you. Stay for it."
+    },
+    {
+      "id": "gemini-05",
+      "theme": "sign",
+      "sign": "gemini",
+      "text": "A Gemini will explain their feelings brilliantly. Feeling them is the harder part.",
+      "moods": [
+        "mystic",
+        "water",
+        "stars"
+      ],
+      "caption": "Mercury gives Gemini a gift for words. They can describe an emotion perfectly. Analyse it. Make a joke about it.\n\nWhat is harder is sitting with it. A Gemini can talk about a feeling for an hour and still not have let themselves feel it.\n\nThey might answer a feeling with a fact, or change the subject when it gets too close.\n\nIf you love a Gemini, give them room to talk it through. Then gently ask the second question. The one about how it actually feels."
+    },
+    {
+      "id": "cancer-01",
+      "theme": "sign",
+      "sign": "cancer",
+      "text": "Cancer will feed you before they tell you they love you. Same thing.",
+      "moods": [
+        "moon",
+        "lovers",
+        "water"
+      ],
+      "caption": "Cancer is cardinal water, ruled by the moon. Home, family, nurture.\n\nThey express love through care. A meal. A blanket. A text checking you got home safe. A spare toothbrush. Your favourite snack in their cupboard. The light left on when you are late.\n\nWords might come later. They are careful with words because they mean them.\n\nIf a Cancer is feeding you, looking after you, making space for you in their home, you are already loved. You just have not been told yet."
+    },
+    {
+      "id": "cancer-02",
+      "theme": "sign",
+      "sign": "cancer",
+      "text": "Cancer doesn't need grand gestures. They need to know you're not leaving.",
+      "moods": [
+        "moon",
+        "water",
+        "castle"
+      ],
+      "caption": "For Cancer, security is everything. Not money or status. Emotional safety. Knowing you will be here tomorrow.\n\nBig romantic moments are lovely, but they do not settle a Cancer heart. A crab needs a shell before it can relax, and you are part of the shell.\n\nWhat does is consistency. Coming home when you said. Calling when you are late. Choosing them in small ways every day.\n\nReassure a Cancer, often. It is not neediness. It is how their tide stays calm."
+    },
+    {
+      "id": "cancer-03",
+      "theme": "sign",
+      "sign": "cancer",
+      "text": "A Cancer goes quiet instead of saying it hurt. Ask. They're waiting for you to ask.",
+      "moods": [
+        "moon",
+        "water",
+        "lovers"
+      ],
+      "caption": "The crab retreats into its shell. That is how Cancer protects itself.\n\nWhen they are hurt, they rarely say so directly. They get quieter. A little distant. They hope you will notice. They are hoping you care enough to look closer without being asked.\n\nIt is not a game. It is fear of being too much.\n\nIf your Cancer has gone quiet, do not wait it out. Ask, gently. You will be amazed how quickly they come back out."
+    },
+    {
+      "id": "cancer-04",
+      "theme": "sign",
+      "sign": "cancer",
+      "text": "Cancer's loyalty has no expiry date. Neither does their memory.",
+      "moods": [
+        "moon",
+        "castle",
+        "water"
+      ],
+      "caption": "When a Cancer commits, they commit for life. Friends from childhood. Family they will defend to anyone.\n\nThat loyalty is fierce. And it comes with a memory to match. They can tell you what you wore on your first date and what you said that hurt in year two.\n\nThey remember every kindness. They also remember every hurt.\n\nIf you love a Cancer, be careful with them. They will hold onto the good moments for years. Give them plenty."
+    },
+    {
+      "id": "cancer-05",
+      "theme": "sign",
+      "sign": "cancer",
+      "text": "The moon rules Cancer. Their moods change. Their love doesn't.",
+      "moods": [
+        "moon",
+        "water",
+        "stars"
+      ],
+      "caption": "Cancer feels everything, and those feelings move like the tide. Up one day, low the next.\n\nIt can be confusing if you take each mood as a verdict on the relationship. A Cancer in a low mood is not a Cancer falling out of love. It is just the tide going out.\n\nBut underneath the shifting surface, the love stays steady. Cancer is cardinal. Once they choose you, they do not drift.\n\nRide the waves with them. The sea changes its face. It does not go anywhere."
+    },
+    {
+      "id": "leo-01",
+      "theme": "sign",
+      "sign": "leo",
+      "text": "Leo doesn't need you to be impressed. They need you to be glad they're here.",
+      "moods": [
+        "castle",
+        "lovers",
+        "stars"
+      ],
+      "caption": "Leo is fixed fire, ruled by the sun. Warm, generous, built to shine.\n\nPeople assume Leo wants applause. Sometimes. But underneath it is something simpler. The sun does not need applause to shine. It just likes to be noticed warming things up.\n\nThey want to feel that their presence matters. That the room is better because they walked in. That you are happy they chose you.\n\nTell them. Not with flattery, but with honesty. A Leo who feels welcome will light up your whole life."
+    },
+    {
+      "id": "leo-02",
+      "theme": "sign",
+      "sign": "leo",
+      "text": "A Leo in love makes a Tuesday feel like an opening night.",
+      "moods": [
+        "castle",
+        "lovers",
+        "stars"
+      ],
+      "caption": "Leo does not do half-hearted. When they love you, they love you out loud.\n\nThe surprise dinner. The compliment in front of friends. The way they make an ordinary evening feel like an event. They plan the birthday months ahead and remember the small thing you said you wanted.\n\nThat generosity is real. They want you to feel special because they know how good it feels.\n\nIf you are with a Leo, let yourself be celebrated. And remember to celebrate them back."
+    },
+    {
+      "id": "leo-03",
+      "theme": "sign",
+      "sign": "leo",
+      "text": "Leo will forgive almost anything except being ignored.",
+      "moods": [
+        "castle",
+        "knight",
+        "stars"
+      ],
+      "caption": "Fights a Leo can handle. Disagreements, even mistakes.\n\nWhat cuts deep is indifference. Being overlooked. Being treated like background. Being treated like the room would have been exactly the same without them.\n\nThe sun cannot stand being hidden behind a cloud.\n\nIf you love a Leo, notice them. Ask about their day. Watch their thing. React to their news. Attention is not vanity to them. It is how they know they are loved."
+    },
+    {
+      "id": "leo-04",
+      "theme": "sign",
+      "sign": "leo",
+      "text": "Behind every loud Leo is someone who just wants to hear they did well.",
+      "moods": [
+        "castle",
+        "moon",
+        "lovers"
+      ],
+      "caption": "Leo performs confidence. And often it is real. But there is a tender spot underneath.\n\nThey want to know they are doing well. That their effort was noticed. That the risk they took was worth it. Under the big personality is a child holding up a drawing, waiting for someone to look.\n\nThey will not always ask. Asking feels like admitting doubt.\n\nSo tell them, unprompted. You did well. I'm proud of you. Watch how quickly the sun comes out."
+    },
+    {
+      "id": "leo-05",
+      "theme": "sign",
+      "sign": "leo",
+      "text": "Leo loves like the sun shines. Generously, daily, and a little bit at you.",
+      "moods": [
+        "stars",
+        "lovers",
+        "castle"
+      ],
+      "caption": "The sun does not shine selectively. It warms everything.\n\nLeo loves the same way. Friends, family, partners, strangers who need a laugh. Their generosity is a big part of who they are. They are the friend who pays for dinner and remembers everyone's birthday, loudly.\n\nAnd yes, they like you to notice the warmth. To turn your face toward it.\n\nIt is a fair trade. Few signs give so much light. All they ask is that you enjoy it out loud."
+    },
+    {
+      "id": "virgo-01",
+      "theme": "sign",
+      "sign": "virgo",
+      "text": "Virgo shows love by fixing things. Let them. It's their version of a poem.",
+      "moods": [
+        "forest",
+        "mystic",
+        "lovers"
+      ],
+      "caption": "Virgo is mutable earth, ruled by Mercury. Practical, detailed, devoted.\n\nThey may not write you a love letter. But they will fix your shelf. Book the appointment you kept forgetting. Bring the plaster before you knew you needed it.\n\nThat is their romance. Care in action.\n\nIf you are with a Virgo, notice the small things they do. Every one of them is a sentence in a very long poem."
+    },
+    {
+      "id": "virgo-02",
+      "theme": "sign",
+      "sign": "virgo",
+      "text": "A Virgo notices everything. The trick is letting you see that they adore it.",
+      "moods": [
+        "mystic",
+        "forest",
+        "moon"
+      ],
+      "caption": "Virgo sees the details. Your new haircut. The slight change in your mood. The typo in your text.\n\nThat attention is a gift. But Virgo sometimes only voices the critical part. The praise stays in their head and only the corrections make it out loud.\n\nThe truth is, most of what they notice, they love. Your habits. Your little rituals. The things nobody else sees.\n\nVirgo, say those things too. Let people know your attention comes from affection, not inspection."
+    },
+    {
+      "id": "virgo-03",
+      "theme": "sign",
+      "sign": "virgo",
+      "text": "Virgo isn't cold. They're just checking that it's real before they hand it over.",
+      "moods": [
+        "forest",
+        "castle",
+        "moon"
+      ],
+      "caption": "Virgo can seem reserved at first. Careful. Measured.\n\nThat is because they take love seriously. They want to understand what it is before they give it away. They read the small print on a relationship the way other signs read the headline.\n\nOnce they are sure, their devotion is quiet but total.\n\nIf you are courting a Virgo, be consistent. Be honest. Show up when you said you would. They are watching, and they are rooting for you to pass."
+    },
+    {
+      "id": "virgo-04",
+      "theme": "sign",
+      "sign": "virgo",
+      "text": "Nobody is harder on a Virgo than a Virgo. Be the soft place.",
+      "moods": [
+        "forest",
+        "water",
+        "moon"
+      ],
+      "caption": "Virgo has an inner editor that never sleeps. Every mistake replayed. Every flaw listed.\n\nThey can be critical of others. They are far harsher with themselves. Every small mistake becomes evidence in a trial that only they are attending.\n\nThe partner who wins a Virgo is often the one who shows them grace. Who says it is fine when they are spiralling. Who loves the imperfect version.\n\nBe their soft place. They will make your life work beautifully in return."
+    },
+    {
+      "id": "virgo-05",
+      "theme": "sign",
+      "sign": "virgo",
+      "text": "Virgo, you are allowed to be loved while you're still unfinished.",
+      "moods": [
+        "forest",
+        "mystic",
+        "stars"
+      ],
+      "caption": "Virgo wants to get it right. Better body, better job, better habits. Then, maybe, they will be ready for love.\n\nBut that day never quite arrives, because there is always something to improve. One more course, one more fix, one more month of getting it just right.\n\nHere is the truth. Nobody wants a finished project. They want a person.\n\nVirgo, let someone see the draft. You might find they love it exactly as it is."
+    },
+    {
+      "id": "libra-01",
+      "theme": "sign",
+      "sign": "libra",
+      "text": "Libra will say anywhere is fine. Anywhere is not fine. Ask again.",
+      "moods": [
+        "castle",
+        "lovers",
+        "stars"
+      ],
+      "caption": "Libra is cardinal air, ruled by Venus. Harmony matters to them deeply, sometimes more than their own dinner order.\n\nSo they compromise. They go along. They pick whatever restaurant you like. They say anywhere is fine, then quietly hate the restaurant all evening.\n\nBut every unspoken preference adds up. Eventually the peace they kept starts to feel like a prison.\n\nIf you love a Libra, ask what they want. Then wait, properly, for the answer. Having a preference is not starting a fight."
+    },
+    {
+      "id": "libra-02",
+      "theme": "sign",
+      "sign": "libra",
+      "text": "Libra makes everyone feel like the favourite. The one who gets them is the one who notices.",
+      "moods": [
+        "lovers",
+        "stars",
+        "castle"
+      ],
+      "caption": "Libra is charming. They make people feel seen and special. It is a genuine gift.\n\nBut it can mean that nobody looks after them in return. They are so busy balancing everyone else.\n\nThe partner who wins a Libra is the one who notices. Who asks about them. Who makes them the favourite for a change.\n\nTurn the attention back to Libra. They will be surprised how much they needed it."
+    },
+    {
+      "id": "libra-03",
+      "theme": "sign",
+      "sign": "libra",
+      "text": "Libra falls in love with beauty. They stay for fairness.",
+      "moods": [
+        "lovers",
+        "castle",
+        "stars"
+      ],
+      "caption": "Venus gives Libra an eye for beauty. A gorgeous face, a lovely room, an elegant gesture.\n\nThat might be what draws them in. But it is not what keeps them. A pretty face can get a first date. Only a fair one gets a second year.\n\nWhat keeps a Libra is fairness. A relationship where both people give. Where arguments are resolved, not won.\n\nThe scales are their symbol for a reason. Balance is their love language."
+    },
+    {
+      "id": "libra-04",
+      "theme": "sign",
+      "sign": "libra",
+      "text": "A Libra hates conflict so much they'll stay in a slow ending. Help them say it.",
+      "moods": [
+        "castle",
+        "moon",
+        "water"
+      ],
+      "caption": "Libra will do almost anything to avoid hurting someone.\n\nThat is kind. It is also how they end up in relationships that faded long ago but never ended. They would rather endure a slow fade than deliver one clear, painful sentence.\n\nThey are waiting for a moment when it can be done gracefully, without anyone being upset. That moment rarely comes.\n\nLibra, a clear ending is a kindness too. Hurting someone gently is better than wasting both of your years."
+    },
+    {
+      "id": "libra-05",
+      "theme": "sign",
+      "sign": "libra",
+      "text": "Libra doesn't want a partner. They want a partnership. There's a difference.",
+      "moods": [
+        "lovers",
+        "knight",
+        "stars"
+      ],
+      "caption": "Many signs want someone to love. Libra wants someone to build with.\n\nEqual effort. Shared decisions. Two people on the same team, choosing each other. Not a fan, not a project, not a rescuer. An equal who shows up with half the plan.\n\nLibra rules the seventh house, the house of partnership. Working together is in their nature.\n\nIf you want a Libra, do not just admire them. Collaborate with them. Show them you are in it as equals."
+    },
+    {
+      "id": "scorpio-01",
+      "theme": "sign",
+      "sign": "scorpio",
+      "text": "Scorpio doesn't trust easily. When they do, it's the whole vault.",
+      "moods": [
+        "castle",
+        "water",
+        "moon"
+      ],
+      "caption": "Scorpio is fixed water, ruled by Mars and, in modern astrology, Pluto. They feel deeply and protect fiercely.\n\nThey will not open up to just anyone. They watch. They wait. They test. They are not being cold. They are checking whether you can be trusted with something heavy.\n\nBut when a Scorpio finally trusts you, there is no halfway. You get the secrets, the history, the devotion.\n\nIt is a lot to be given. Hold it carefully. They do not hand it out twice."
+    },
+    {
+      "id": "scorpio-02",
+      "theme": "sign",
+      "sign": "scorpio",
+      "text": "A Scorpio can forgive you. They just won't pretend it didn't happen.",
+      "moods": [
+        "water",
+        "knight",
+        "moon"
+      ],
+      "caption": "There is a myth that Scorpio never forgives. Not quite true.\n\nThey can forgive. But they do not erase. The memory stays, and with it, the lesson. Water remembers the shape of every stone that was ever thrown into it.\n\nThat is not holding a grudge. It is refusing to be naive.\n\nIf you have hurt a Scorpio and they have stayed, take it seriously. You have been given a second chance by someone who rarely gives them."
+    },
+    {
+      "id": "scorpio-03",
+      "theme": "sign",
+      "sign": "scorpio",
+      "text": "Scorpio tests you because they've been fooled before. Pass, and they're yours.",
+      "moods": [
+        "castle",
+        "mystic",
+        "water"
+      ],
+      "caption": "Scorpio has a sixth sense for lies. Partly intuition. Partly experience.\n\nSo they test people, sometimes without meaning to. A small push to see if you will stay. A question to see if you are honest. They are not trying to catch you out. They are trying to stop being caught out themselves.\n\nIt can feel unfair. It comes from having been hurt.\n\nBe consistent. Be truthful. Do not take the tests personally. Scorpio is looking for someone who will still be there after the storm."
+    },
+    {
+      "id": "scorpio-04",
+      "theme": "sign",
+      "sign": "scorpio",
+      "text": "Scorpio would rather have one real thing than ten easy ones.",
+      "moods": [
+        "water",
+        "lovers",
+        "moon"
+      ],
+      "caption": "Casual is not really in the Scorpio vocabulary.\n\nThey are not interested in surface level. Small talk bores them. Half-hearted connection frustrates them. They would rather have one conversation that changes them than a hundred that pass the time.\n\nThey want depth. Truth. Something that feels like it matters.\n\nThat makes them choosy. It also makes them one of the most devoted partners in the zodiac. If a Scorpio is giving you their time, you are already one of the real ones."
+    },
+    {
+      "id": "scorpio-05",
+      "theme": "sign",
+      "sign": "scorpio",
+      "text": "Under the Scorpio stare is someone hoping you won't leave once you see everything.",
+      "moods": [
+        "moon",
+        "water",
+        "mystic"
+      ],
+      "caption": "Scorpio has a reputation for intensity. Piercing eyes, guarded heart, mystery.\n\nBut what is underneath is surprisingly tender. A fear that if someone truly saw them, all of them, they would leave. So they reveal themselves slowly, a room at a time, watching how you react.\n\nThat is why they hide. Why they test. Why they hold back.\n\nIf you love a Scorpio, stay through the reveal. Let them see that the truth about them is not a dealbreaker."
+    },
+    {
+      "id": "sagittarius-01",
+      "theme": "sign",
+      "sign": "sagittarius",
+      "text": "Sagittarius isn't scared of commitment. They're scared of a smaller life.",
+      "moods": [
+        "stars",
+        "forest",
+        "knight"
+      ],
+      "caption": "Sagittarius is mutable fire, ruled by Jupiter, the planet of expansion.\n\nThey get labelled as commitment-phobic. The truth is more specific. They fear any love that makes their world shrink. Less freedom, less laughter, less room for the person they are still becoming.\n\nFewer adventures, fewer ideas, fewer horizons.\n\nThe partner who keeps a Sagittarius is the one who makes life bigger. Book the trip together. Learn something new together. Then watch how happily they stay."
+    },
+    {
+      "id": "sagittarius-02",
+      "theme": "sign",
+      "sign": "sagittarius",
+      "text": "A Sagittarius will tell you the truth even when you were hoping for a nice lie.",
+      "moods": [
+        "stars",
+        "knight",
+        "forest"
+      ],
+      "caption": "Honesty is the archer's arrow. It flies straight, sometimes faster than intended.\n\nA Sagittarius will tell you if they think you are wrong. If the outfit is not working. If the plan has holes. The archer does not aim to wound. They just never learned to bend the arrow.\n\nIt can sting. But you will never have to wonder what they really think.\n\nIn a world full of polite evasions, that is a gift. Let it land. They mean it kindly."
+    },
+    {
+      "id": "sagittarius-03",
+      "theme": "sign",
+      "sign": "sagittarius",
+      "text": "Sagittarius falls for minds first. Bring a good argument and a passport.",
+      "moods": [
+        "stars",
+        "forest",
+        "lovers"
+      ],
+      "caption": "Jupiter rules philosophy, travel and big ideas. That is the Sagittarius love language.\n\nThey are drawn to people who teach them something. Who can debate. Who have stories from somewhere else. A Sagittarius will forgive a messy flat long before they forgive a dull conversation.\n\nLooks might start the conversation. Curiosity keeps it going.\n\nIf you want to keep a Sagittarius, do not settle into routine. Keep learning, keep exploring. Bring them along."
+    },
+    {
+      "id": "sagittarius-04",
+      "theme": "sign",
+      "sign": "sagittarius",
+      "text": "Sagittarius, the best trips have a second ticket. Buy it.",
+      "moods": [
+        "stars",
+        "forest",
+        "lovers"
+      ],
+      "caption": "The archer loves freedom. New cities, open roads, the next big thing.\n\nSometimes they treat love as something that would slow them down. They pack light, leave early and tell themselves travelling alone is the whole point.\n\nBut the best adventures are shared. The sunset means more when someone you love is standing next to you, laughing at the same moment.\n\nSagittarius, you do not have to choose between freedom and love. The best trips have a second ticket. Buy it for someone who wants to wander with you."
+    },
+    {
+      "id": "sagittarius-05",
+      "theme": "sign",
+      "sign": "sagittarius",
+      "text": "Sagittarius laughs through almost everything. Notice when they stop.",
+      "moods": [
+        "stars",
+        "moon",
+        "knight"
+      ],
+      "caption": "Sagittarius is the optimist of the zodiac. They find the joke in the disaster. They keep the mood up.\n\nThat is lovely, and it can hide a lot. The laugh is real, but sometimes it is also a very good way of changing the subject.\n\nIf your Sagittarius goes quiet, if the jokes stop, something is wrong. They are not good at saying so directly.\n\nSit with them. Ask. The archer needs someone who knows that laughter is not always the whole story."
+    },
+    {
+      "id": "capricorn-01",
+      "theme": "sign",
+      "sign": "capricorn",
+      "text": "Capricorn doesn't say I love you until they've built something to put it in.",
+      "moods": [
+        "castle",
+        "forest",
+        "stars"
+      ],
+      "caption": "Capricorn is cardinal earth, ruled by Saturn. Structure, responsibility, long game.\n\nThey do not rush declarations. Words are commitments, and Capricorn takes commitments seriously. Saturn rewards patience, and Capricorn courts the way they climb mountains, one secure step at a time.\n\nBefore they say it, they want a foundation. Trust. Plans. Proof that this is real.\n\nWhen a Capricorn finally tells you they love you, believe it. It was not said lightly. It was built."
+    },
+    {
+      "id": "capricorn-02",
+      "theme": "sign",
+      "sign": "capricorn",
+      "text": "A Capricorn will show up in a crisis. Let them show up when it's easy, too.",
+      "moods": [
+        "castle",
+        "knight",
+        "moon"
+      ],
+      "caption": "Capricorn is the person you call when things fall apart. Calm. Practical. Already making a plan.\n\nBut they often forget that love is not only for emergencies. They know how to be needed. Being wanted for no reason makes them a little nervous.\n\nThey can be so busy being useful that they never let themselves just be wanted.\n\nIf you love a Capricorn, invite them to do nothing. A slow dinner. A lazy morning. Remind them that they matter even when nothing needs fixing."
+    },
+    {
+      "id": "capricorn-03",
+      "theme": "sign",
+      "sign": "capricorn",
+      "text": "Capricorn has a five-year plan and no idea how they feel today. Ask them.",
+      "moods": [
+        "castle",
+        "moon",
+        "stars"
+      ],
+      "caption": "Saturn makes Capricorn disciplined. Work first. Five-year plan second. Feelings when there is time.\n\nThe problem is that there is never quite enough time. Next quarter. After the deadline. Once things calm down. Things rarely calm down.\n\nSo emotions pile up in a waiting room. And Capricorn carries on like everything is fine.\n\nIf you love one, ask how they really are. Then wait. They might not answer straight away. But they will remember you asked."
+    },
+    {
+      "id": "capricorn-04",
+      "theme": "sign",
+      "sign": "capricorn",
+      "text": "Capricorn isn't cold. They're just protecting the thing they took years to build.",
+      "moods": [
+        "castle",
+        "forest",
+        "knight"
+      ],
+      "caption": "Capricorn can seem guarded. Slow to warm. Careful about who they let in.\n\nThat is because they have built a life with effort. Every brick earned. Late nights, careful savings, years of quiet work nobody clapped for.\n\nThey are not going to let just anyone walk in and rearrange it.\n\nPatience and consistency win a Capricorn. Show them you value what they have built. Then offer to help build more."
+    },
+    {
+      "id": "capricorn-05",
+      "theme": "sign",
+      "sign": "capricorn",
+      "text": "Capricorn ages backwards. Serious at twenty, silly at forty. Stick around.",
+      "moods": [
+        "castle",
+        "stars",
+        "lovers"
+      ],
+      "caption": "There is an old astrology saying that Capricorns age in reverse. Saturn rules them, and Saturn rewards time.\n\nThey are often old souls when young. Responsible early. Worried about the future. They were the kid who worried about the bills and planned the family holiday.\n\nThen, as the work pays off, they loosen up. The humour comes out. They finally relax.\n\nIf you meet a young Capricorn, be patient. The best version is often still on its way."
+    },
+    {
+      "id": "aquarius-01",
+      "theme": "sign",
+      "sign": "aquarius",
+      "text": "Aquarius loves you in their own way. You might need the instruction manual.",
+      "moods": [
+        "stars",
+        "mystic",
+        "castle"
+      ],
+      "caption": "Aquarius is fixed air, ruled by Saturn and, in modern astrology, Uranus. Original, independent, unpredictable.\n\nThey do not always love in the expected ways. Less flowers, more sending you an article they knew you would like. Less cuddling, more defending your weird idea in public. They will remember the thing you said you cared about and quietly fight for it.\n\nIt is still love. It just needs translating.\n\nLearn their language. It is one of the most loyal dialects in the zodiac."
+    },
+    {
+      "id": "aquarius-02",
+      "theme": "sign",
+      "sign": "aquarius",
+      "text": "Aquarius is a friend first. If they're not your friend, they're not your person.",
+      "moods": [
+        "stars",
+        "lovers",
+        "forest"
+      ],
+      "caption": "For Aquarius, friendship is the foundation of everything. Romance without it feels hollow to them.\n\nThey want someone they can talk to for hours. Laugh with. Disagree with. Plan the future of the world with. Romance is the extra layer. Friendship is the building it sits on, and they check the foundations first.\n\nIf you skip the friendship and go straight to romance, they may drift.\n\nBe their friend. Truly. The rest tends to follow."
+    },
+    {
+      "id": "aquarius-03",
+      "theme": "sign",
+      "sign": "aquarius",
+      "text": "Aquarius will debate the future of humanity and dodge one question about their feelings.",
+      "moods": [
+        "stars",
+        "moon",
+        "castle"
+      ],
+      "caption": "Aquarius values independence. Space to think. Room to be themselves.\n\nBut sometimes that space becomes a hiding place. When things get emotional, they step back. Analyse instead of feel. They will talk about systems, ideas, anything but the one question you actually asked them.\n\nIt can look like calm. Often it is protection.\n\nAquarius, staying in the room when it gets personal is not losing yourself. Answer the one question. It is how someone gets to love the real you."
+    },
+    {
+      "id": "aquarius-04",
+      "theme": "sign",
+      "sign": "aquarius",
+      "text": "An Aquarius won't be jealous. They'll just quietly expect you to be as free as they are.",
+      "moods": [
+        "stars",
+        "mystic",
+        "forest"
+      ],
+      "caption": "Aquarius dislikes possessiveness. They will not track your location or demand to know where you were.\n\nThey give freedom easily. And they expect the same. To them, love is a choice made freely every day, not a lock on the door.\n\nThat can feel like detachment to some signs. It is actually trust.\n\nIf you want an Aquarius, do not cage them. Let them come and go. They always come back to the people who let them be themselves."
+    },
+    {
+      "id": "aquarius-05",
+      "theme": "sign",
+      "sign": "aquarius",
+      "text": "Aquarius doesn't care what people think. They care a lot about what you think.",
+      "moods": [
+        "stars",
+        "lovers",
+        "moon"
+      ],
+      "caption": "The water bearer is famously unbothered. Trends, opinions, what the neighbours say.\n\nBut there is a short list of people whose opinions matter deeply. If you are on it, you have real influence. They will shrug off a stranger's criticism and lie awake over one honest word from you.\n\nAquarius just will not always show how much your view means.\n\nBe kind with that power. Tell them what you admire. They will act like it is nothing. They will remember it forever."
+    },
+    {
+      "id": "pisces-01",
+      "theme": "sign",
+      "sign": "pisces",
+      "text": "Pisces falls for who you could be. Show them who you are, early.",
+      "moods": [
+        "water",
+        "lovers",
+        "moon"
+      ],
+      "caption": "Pisces is mutable water, ruled by Jupiter and, in modern astrology, Neptune. Dreamy, intuitive, romantic.\n\nThey see the best in people. Sometimes the best that is not quite there yet. They fall for the sketch and fill in the colours themselves, beautifully and sometimes inaccurately.\n\nThat makes them generous. It also makes them vulnerable to loving potential instead of reality.\n\nIf you love a Pisces, be real with them. Show them the true you early. They will love that more than any fantasy."
+    },
+    {
+      "id": "pisces-02",
+      "theme": "sign",
+      "sign": "pisces",
+      "text": "Pisces feels what you feel before you've said it. Don't bother pretending.",
+      "moods": [
+        "water",
+        "mystic",
+        "moon"
+      ],
+      "caption": "Pisces absorbs the emotional atmosphere like a sponge. They know you are upset before you do.\n\nSo saying you are fine when you are not does not really work. They can feel it. Your mood arrives in the room before you do, and they have already started worrying about it.\n\nIt is better to just be honest. They will not judge. They will understand.\n\nWith a Pisces, the truth is easier than the act. And they are one of the safest places to tell it."
+    },
+    {
+      "id": "pisces-03",
+      "theme": "sign",
+      "sign": "pisces",
+      "text": "Pisces disappears instead of saying no. If they've gone quiet, they're scared to hurt you.",
+      "moods": [
+        "water",
+        "moon",
+        "forest"
+      ],
+      "caption": "Pisces hates conflict and hates causing pain even more.\n\nSo instead of a clear no, they sometimes fade. Slower replies. Vaguer plans. A gentle drift. They are hoping you will get the message without them ever having to send it.\n\nIt is not cruelty. It is avoidance.\n\nPisces, you can say no kindly. A clear answer is more compassionate than a slow disappearance. The people who love you can handle the truth."
+    },
+    {
+      "id": "pisces-04",
+      "theme": "sign",
+      "sign": "pisces",
+      "text": "A Pisces will love you like a song. Make sure they're in the chorus too.",
+      "moods": [
+        "lovers",
+        "water",
+        "stars"
+      ],
+      "caption": "Pisces love is romantic and total. They write you into their world like music.\n\nBut they can forget themselves in the process. Giving everything. Asking for nothing. The fish swims wherever the current goes, even when the current is someone else's needs.\n\nA healthy relationship with a Pisces makes room for their needs too. Their dreams. Their feelings. Their quiet moments.\n\nLove them back loudly. They deserve to hear their own name in the song."
+    },
+    {
+      "id": "pisces-05",
+      "theme": "sign",
+      "sign": "pisces",
+      "text": "Pisces, you keep falling for the trailer. Watch the actual film.",
+      "moods": [
+        "water",
+        "moon",
+        "lovers"
+      ],
+      "caption": "Neptune gives Pisces a gift for imagination. They can see the whole film from a two-minute trailer.\n\nIn love, that can turn into staying for who someone might become. Waiting for a version that may never arrive. Pisces keeps the ticket and waits for the sequel that was never actually announced.\n\nIt is beautiful to believe in people. It is painful to love a ghost.\n\nPisces, look at what is real. Today. Watch the actual film, and love the person who is already showing up in it."
+    }
+  ]
+}
