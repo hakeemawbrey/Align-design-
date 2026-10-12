@@ -73,7 +73,6 @@
     0.5,
     0.5
    ],
-   "pin": true,
    "note": "Elsheimer, Flight into Egypt, Milky Way and moon"
   },
   {
@@ -149,44 +148,6 @@
    "note": "Burne-Jones, The Star of Bethlehem"
   },
   {
-   "id": "wc-1292995",
-   "source": "commons",
-   "title": "Wright of Derby, The Orrery",
-   "creator": "Joseph Wright of Derby",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Wright_of_Derby,_The_Orrery.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Wright_of_Derby%2C_The_Orrery.jpg/1920px-Wright_of_Derby%2C_The_Orrery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Wright_of_Derby%2C_The_Orrery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1348,
-   "file": "cache/stars/cand/wc-1292995.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "tone": 0.25,
-   "note": "Wright of Derby, The Orrery"
-  },
-  {
-   "id": "wc-6702937",
-   "source": "commons",
-   "title": "Dou, Gerard - Astronomer by Candlelight - late 1650",
-   "creator": "Gerrit Dou",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Dou,_Gerard_-_Astronomer_by_Candlelight_-_late_1650.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Dou%2C_Gerard_-_Astronomer_by_Candlelight_-_late_1650.jpg/1920px-Dou%2C_Gerard_-_Astronomer_by_Candlelight_-_late_1650.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Dou%2C_Gerard_-_Astronomer_by_Candlelight_-_late_1650.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1617,
-   "h": 2400,
-   "file": "cache/stars/cand/wc-6702937.jpg",
-   "focus": [
-    0.5,
-    0.55
-   ],
-   "tone": 0.25,
-   "note": "Dou, Astronomer by Candlelight"
-  },
-  {
    "id": "wc-124030464",
    "source": "commons",
    "title": "The Meteor of 1860",
@@ -241,42 +202,6 @@
    "note": "Balke, northern lights over four men in a boat"
   },
   {
-   "id": "wc-164003496",
-   "source": "commons",
-   "title": "The Great Comet of 1882 by Velasco 1910",
-   "creator": "Chiswick Chap",
-   "license": "CC BY-SA 4.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:The_Great_Comet_of_1882_by_Velasco_1910.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/The_Great_Comet_of_1882_by_Velasco_1910.jpg/1920px-The_Great_Comet_of_1882_by_Velasco_1910.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/The_Great_Comet_of_1882_by_Velasco_1910.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1667,
-   "h": 2400,
-   "file": "cache/stars/cand/wc-164003496.jpg",
-   "focus": [
-    0.5,
-    0.35
-   ],
-   "note": "Velasco, The Great Comet of 1882"
-  },
-  {
-   "id": "wc-17461925",
-   "source": "commons",
-   "title": "Selene and Endymion by Ubaldo Gandolfi",
-   "creator": "Ubaldo Gandolfi",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Selene_and_Endymion_by_Ubaldo_Gandolfi.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Selene_and_Endymion_by_Ubaldo_Gandolfi.jpg/1920px-Selene_and_Endymion_by_Ubaldo_Gandolfi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Selene_and_Endymion_by_Ubaldo_Gandolfi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1485,
-   "h": 2400,
-   "file": "cache/stars/cand/wc-17461925.jpg",
-   "focus": [
-    0.6,
-    0.35
-   ],
-   "note": "Gandolfi, Selene and Endymion"
-  },
-  {
    "id": "wc-121427505",
    "source": "commons",
    "title": "Donato Creti, Le osservazioni astronomiche, Giove, 1711 -FG",
@@ -294,43 +219,6 @@
    ],
    "zoom": 1.1,
    "note": "Creti, astronomical observations: Jupiter"
-  },
-  {
-   "id": "wc-121427503",
-   "source": "commons",
-   "title": "Donato Creti, Le osservazioni astronomiche, Marte, 1711 -FG",
-   "creator": "Fabrizio Garrisi",
-   "license": "CC BY-SA 4.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Donato_Creti,_Le_osservazioni_astronomiche,_Marte,_1711_-FG.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Donato_Creti%2C_Le_osservazioni_astronomiche%2C_Marte%2C_1711_-FG.jpg/1920px-Donato_Creti%2C_Le_osservazioni_astronomiche%2C_Marte%2C_1711_-FG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Donato_Creti%2C_Le_osservazioni_astronomiche%2C_Marte%2C_1711_-FG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1687,
-   "h": 2400,
-   "file": "cache/stars/cand/wc-121427503.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "zoom": 1.1,
-   "note": "Creti, astronomical observations: Mars"
-  },
-  {
-   "id": "wc-22495390",
-   "source": "commons",
-   "title": "Samuel Palmer - A Shepherd and his Flock under the Moon and Stars - Google Art Project",
-   "creator": "Samuel Palmer",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Samuel_Palmer_-_A_Shepherd_and_his_Flock_under_the_Moon_and_Stars_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Samuel_Palmer_-_A_Shepherd_and_his_Flock_under_the_Moon_and_Stars_-_Google_Art_Project.jpg/1920px-Samuel_Palmer_-_A_Shepherd_and_his_Flock_under_the_Moon_and_Stars_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Samuel_Palmer_-_A_Shepherd_and_his_Flock_under_the_Moon_and_Stars_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1610,
-   "file": "cache/stars/cand/wc-22495390.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Samuel Palmer, shepherd under moon and star"
   },
   {
    "id": "wc-127417",
@@ -405,24 +293,6 @@
    "note": "stargazer under the Milky Way (photo)"
   },
   {
-   "id": "wc-45591215",
-   "source": "commons",
-   "title": "In the photo there is one Perseid, Milky Way and Andromega galaxy and light pollution on the horizon - Luhasoo bog in Estonia",
-   "creator": "Martin Mark",
-   "license": "CC BY-SA 4.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:In_the_photo_there_is_one_Perseid,_Milky_Way_and_Andromega_galaxy_and_light_pollution_on_the_horizon_-_Luhasoo_bog_in_Estonia.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/In_the_photo_there_is_one_Perseid%2C_Milky_Way_and_Andromega_galaxy_and_light_pollution_on_the_horizon_-_Luhasoo_bog_in_Estonia.jpg/1920px-In_the_photo_there_is_one_Perseid%2C_Milky_Way_and_Andromega_galaxy_and_light_pollution_on_the_horizon_-_Luhasoo_bog_in_Estonia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/In_the_photo_there_is_one_Perseid%2C_Milky_Way_and_Andromega_galaxy_and_light_pollution_on_the_horizon_-_Luhasoo_bog_in_Estonia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1282,
-   "file": "cache/stars/cand/wc-45591215.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ],
-   "note": "Perseid and Milky Way (photo)"
-  },
-  {
    "id": "wc-143032322",
    "source": "commons",
    "title": "039 Northern lights over Mývatn (Iceland) Photo by Giles Laurent",
@@ -457,24 +327,6 @@
     0.5
    ],
    "note": "aurora behind bare trees (photo)"
-  },
-  {
-   "id": "wc-1323801",
-   "source": "commons",
-   "title": "Aurora Borealis NO",
-   "creator": "Rafal Konieczny",
-   "license": "CC BY 2.5",
-   "landing": "https://commons.wikimedia.org/wiki/File:Aurora_Borealis_NO.JPG",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Aurora_Borealis_NO.JPG/1920px-Aurora_Borealis_NO.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Aurora_Borealis_NO.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1280,
-   "file": "cache/stars/cand/wc-1323801.jpg",
-   "focus": [
-    0.55,
-    0.5
-   ],
-   "note": "aurora borealis (photo)"
   },
   {
    "id": "wc-130672013",
@@ -583,6 +435,134 @@
     0.5
    ],
    "note": "Carina Nebula (ESO)"
+  },
+  {
+   "id": "wc-18622",
+   "source": "commons",
+   "title": "Jan Matejko-Astronomer Copernicus-Conversation with God",
+   "creator": "Jan Matejko",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg/1920px-Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1381,
+   "file": "cache/stars/cand/wc-18622.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "pin": true,
+   "note": "Matejko, Copernicus: Conversation with God"
+  },
+  {
+   "id": "wc-57367018",
+   "source": "commons",
+   "title": "The Pleiades MET DT5186",
+   "creator": "Elihu Vedder",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Pleiades_MET_DT5186.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/The_Pleiades_MET_DT5186.jpg/1920px-The_Pleiades_MET_DT5186.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/The_Pleiades_MET_DT5186.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1257,
+   "file": "cache/stars/cand/wc-57367018.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Vedder, The Pleiades"
+  },
+  {
+   "id": "wc-76365119",
+   "source": "commons",
+   "title": "Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the",
+   "creator": "Vincent van Gogh",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg/1920px-Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Vincent-van-gogh-cafe-terrace-on-the-place-du-forum-arles-at-night-the.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1875,
+   "h": 2400,
+   "file": "cache/stars/cand/wc-76365119.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Van Gogh, Cafe Terrace at Night"
+  },
+  {
+   "id": "wc-8108385",
+   "source": "commons",
+   "title": "Europe a Prophecy copy K plate 01",
+   "creator": "William Blake",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Europe_a_Prophecy_copy_K_plate_01.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Europe_a_Prophecy_copy_K_plate_01.jpg/1920px-Europe_a_Prophecy_copy_K_plate_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Europe_a_Prophecy_copy_K_plate_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1771,
+   "h": 2400,
+   "file": "cache/stars/cand/wc-8108385.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.15,
+   "note": "Blake, The Ancient of Days (Europe, frontispiece)"
+  },
+  {
+   "id": "wc-140228455",
+   "source": "commons",
+   "title": "Léon Frédéric - Allegory of Night - 1914-AP - Museum of Fine Arts Ghent (MSK)",
+   "creator": "Léon Frédéric",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:L%C3%A9on_Fr%C3%A9d%C3%A9ric_-_Allegory_of_Night_-_1914-AP_-_Museum_of_Fine_Arts_Ghent_(MSK).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/L%C3%A9on_Fr%C3%A9d%C3%A9ric_-_Allegory_of_Night_-_1914-AP_-_Museum_of_Fine_Arts_Ghent_%28MSK%29.jpg/1920px-L%C3%A9on_Fr%C3%A9d%C3%A9ric_-_Allegory_of_Night_-_1914-AP_-_Museum_of_Fine_Arts_Ghent_%28MSK%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/L%C3%A9on_Fr%C3%A9d%C3%A9ric_-_Allegory_of_Night_-_1914-AP_-_Museum_of_Fine_Arts_Ghent_%28MSK%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1881,
+   "h": 2400,
+   "file": "cache/stars/cand/wc-140228455.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Leon Frederic, Allegory of Night"
+  },
+  {
+   "id": "wc-122333017",
+   "source": "commons",
+   "title": "Harald Sohlberg - Winter Night in the Mountains. Rondane - TKM-264-1922 - Trondheim kunstmuseum (cropped)",
+   "creator": "Harald Sohlberg",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Harald_Sohlberg_-_Winter_Night_in_the_Mountains._Rondane_-_TKM-264-1922_-_Trondheim_kunstmuseum_(cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Harald_Sohlberg_-_Winter_Night_in_the_Mountains._Rondane_-_TKM-264-1922_-_Trondheim_kunstmuseum_%28cropped%29.jpg/1920px-Harald_Sohlberg_-_Winter_Night_in_the_Mountains._Rondane_-_TKM-264-1922_-_Trondheim_kunstmuseum_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Harald_Sohlberg_-_Winter_Night_in_the_Mountains._Rondane_-_TKM-264-1922_-_Trondheim_kunstmuseum_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1512,
+   "file": "cache/stars/cand/wc-122333017.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Sohlberg, Winter Night in the Mountains"
+  },
+  {
+   "id": "wc-7805481",
+   "source": "commons",
+   "title": "Pleiades large",
+   "creator": "NASA, ESA, AURA/Caltech, Palomar Observatory\n\nThe science team consists of: D. Soderblom and E. Nelan (STScI), F. Benedi",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Pleiades_large.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Pleiades_large.jpg/1920px-Pleiades_large.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Pleiades_large.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1384,
+   "file": "cache/stars/cand/wc-7805481.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "the Pleiades (NASA/ESA)"
   }
  ]
 }
