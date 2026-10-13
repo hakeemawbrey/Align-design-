@@ -1,0 +1,219 @@
+{
+ "plate": {
+  "file": "assets/plates/gemini.jpg",
+  "id": "commons-Sidney Hall - Urania's Mirror - Gemini.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sidney_Hall_-_Urania%27s_Mirror_-_Gemini.jpg/1280px-Sidney_Hall_-_Urania%27s_Mirror_-_Gemini.jpg",
+  "title": "Urania's Mirror: Gemini (1824)",
+  "creator": "Sidney Hall",
+  "license": "public domain",
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Gemini.jpg",
+  "crop": [
+   0.13,
+   0.05,
+   0.62,
+   0.97
+  ],
+  "color": 1.0
+ },
+ "images": [
+  {
+   "file": "cache/gemini/cand/aic-250020.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.5,
+   "pin": true,
+   "note": "daguerreotype, two sisters as twins",
+   "id": "aic-250020",
+   "source": "aic",
+   "title": "Untitled (Portrait of Two Girls)",
+   "creator": "Unknown maker",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/250020",
+   "url": "https://www.artic.edu/iiif/2/80353db9-b2a9-33c6-3662-98c4dadd382e/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1988,
+   "query": "twins",
+   "n": 2
+  },
+  {
+   "file": "cache/gemini/cand/met-436326.jpg",
+   "focus": [
+    0.45,
+    0.53
+   ],
+   "zoom": 1.4,
+   "pin": true,
+   "note": "Fragonard, two sisters cheek to cheek",
+   "id": "met-436326",
+   "source": "met",
+   "title": "The Two Sisters",
+   "creator": "Jean Honoré Fragonard",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436326",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1012-01.jpg",
+   "w": 2017,
+   "h": 2600,
+   "query": "two sisters",
+   "n": 355
+  },
+  {
+   "file": "cache/gemini/cand/nasa-PIA04216.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Ant nebula, twin lobes",
+   "id": "nasa-PIA04216",
+   "source": "nasa",
+   "title": "Ant Nebula",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA04216",
+   "url": "https://images-assets.nasa.gov/image/PIA04216/PIA04216~orig.jpg",
+   "w": 1072,
+   "h": 708,
+   "query": "nebula",
+   "n": 119
+  },
+  {
+   "file": "cache/gemini/cand/met-438001.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Gauguin, two women side by side",
+   "id": "met-438001",
+   "source": "met",
+   "title": "Two Women",
+   "creator": "Paul Gauguin",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438001",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT1953.jpg",
+   "w": 2600,
+   "h": 2066,
+   "query": "two women",
+   "n": 241
+  },
+  {
+   "file": "cache/gemini/cand/aic-250056.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.6,
+   "pin": true,
+   "note": "ambrotype, two boys as twins on black",
+   "id": "aic-250056",
+   "source": "aic",
+   "title": "Untitled (Portrait of Two Boys)",
+   "creator": "Unknown maker",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/250056",
+   "url": "https://www.artic.edu/iiif/2/bc332865-ae99-7e1c-f69f-12f233da8b14/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2167,
+   "query": "two boys",
+   "n": 363
+  },
+  {
+   "file": "cache/gemini/cand/ov-584f3662-1a78-4614-a25e-5e47b99436a8.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "gold Venetian mask in copper drape",
+   "id": "ov-584f3662-1a78-4614-a25e-5e47b99436a8",
+   "source": "openverse/wikimedia",
+   "title": "Venetian Carnival Mask - Maschera di Carnevale - Venice Italy - Creative Commons by gnuckx (4820456037)",
+   "creator": "gnuckx",
+   "license": "by 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=24525960",
+   "url": "https://api.openverse.org/v1/images/584f3662-1a78-4614-a25e-5e47b99436a8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Venetian_Carnival_Mask_-_Maschera_di_Carnevale_-_Venice_Italy_-_Creative_Commons_by_gnuckx_%284820456037%29.jpg",
+   "w": 1280,
+   "h": 1927,
+   "query": "venetian carnival mask",
+   "n": 316
+  },
+  {
+   "file": "cache/gemini/cand/met-436896.jpg",
+   "focus": [
+    0.42,
+    0.35
+   ],
+   "zoom": 1.0,
+   "note": "Lippi, double portrait at a casement",
+   "id": "met-436896",
+   "source": "met",
+   "title": "Portrait of a Woman with a Man at a Casement",
+   "creator": "Fra Filippo Lippi",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436896",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP159891.jpg",
+   "w": 1723,
+   "h": 2600,
+   "query": "double portrait",
+   "n": 381
+  },
+  {
+   "file": "cache/gemini/cand/met-435852.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "two children teasing a cat, dark ground",
+   "id": "met-435852",
+   "source": "met",
+   "title": "Two Children Teasing a Cat",
+   "creator": "Annibale Carracci",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435852",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP243404.jpg",
+   "w": 2600,
+   "h": 1939,
+   "query": "two children",
+   "n": 385
+  },
+  {
+   "file": "cache/gemini/cand/aic-111613.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "note": "Jordaens, Magdalene between angel and tempter",
+   "id": "aic-111613",
+   "source": "aic",
+   "title": "The Temptation of the Magdalene",
+   "creator": "Jacob Jordaens (Flemish, 1593-1678)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111613",
+   "url": "https://www.artic.edu/iiif/2/f3ca80bd-48a0-8922-989f-6ba3c308d8cc/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2198,
+   "query": "Jacob and Esau",
+   "n": 273
+  },
+  {
+   "file": "cache/gemini/cand/met-12693.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "zoom": 1.2,
+   "note": "mother and son, two faces",
+   "id": "met-12693",
+   "source": "met",
+   "title": "Mother and Son",
+   "creator": "Thomas Sully",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/12693",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT11612.jpg",
+   "w": 2060,
+   "h": 2600,
+   "query": "Hermes",
+   "n": 129
+  }
+ ]
+}

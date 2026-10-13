@@ -1,0 +1,247 @@
+{
+ "plate": {
+  "file": "assets/plates/aquarius.jpg",
+  "crop": [
+   0.305,
+   0.05,
+   0.705,
+   0.95
+  ],
+  "color": 1.0,
+  "id": "ov-5aca106c-b21e-4391-8290-164b47000c44",
+  "source": "openverse/wikimedia",
+  "title": "Urania's Mirror: Aquarius (Sidney Hall), Wellcome Collection",
+  "creator": "Sidney Hall",
+  "license": "by 4.0",
+  "landing": "https://commons.wikimedia.org/w/index.php?curid=36573326",
+  "url": "https://api.openverse.org/v1/images/5aca106c-b21e-4391-8290-164b47000c44/thumb/?full_size=true",
+  "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Astrology%3B_signs_of_the_zodiac%2C_Aquarius._Coloured_engraving_Wellcome_V0024935.jpg",
+  "w": 3191,
+  "h": 2256
+ },
+ "images": [
+  {
+   "file": "cache/aquarius/cand/ov-b75e85c2-2f25-47b5-9033-d53491c46014.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Milky Way pouring over an observatory",
+   "pin": true,
+   "id": "ov-b75e85c2-2f25-47b5-9033-d53491c46014",
+   "source": "openverse/wikimedia",
+   "title": "Galactic Waterfall (iotw2040a)",
+   "creator": "CTIO/NOIRLab/NSF/AURA/B. Tafreshi",
+   "license": "by 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=134860868",
+   "url": "https://api.openverse.org/v1/images/b75e85c2-2f25-47b5-9033-d53491c46014/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Galactic_Waterfall_%28iotw2040a%29.jpg",
+   "w": 1280,
+   "h": 1600,
+   "query": "waterfall night stars",
+   "n": 212
+  },
+  {
+   "file": "cache/aquarius/cand/ov-45c7d659-f33d-4fab-88bf-5f5f99756fd8.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "zoom": 1.3,
+   "note": "lightning over the sea at night",
+   "id": "ov-45c7d659-f33d-4fab-88bf-5f5f99756fd8",
+   "source": "openverse/wikimedia",
+   "title": "Lightning over the Atlantic - Flickr - aparlette",
+   "creator": "Andrew Parlette from Elkridge,MD, US",
+   "license": "by 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=178425187",
+   "url": "https://api.openverse.org/v1/images/45c7d659-f33d-4fab-88bf-5f5f99756fd8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Lightning_over_the_Atlantic_-_Flickr_-_aparlette.jpg",
+   "w": 1280,
+   "h": 1920,
+   "query": "lightning sea night",
+   "n": 365
+  },
+  {
+   "file": "cache/aquarius/cand/ov-9bb9406a-b99c-4bbf-87c0-b90e3c66368f.jpg",
+   "focus": [
+    0.4,
+    0.55
+   ],
+   "note": "aurora over Kirkjufell and its waterfalls",
+   "pin": true,
+   "id": "ov-9bb9406a-b99c-4bbf-87c0-b90e3c66368f",
+   "source": "openverse/wikimedia",
+   "title": "Aurora Borealis activity on top of the Kirkjufell mountain in September 2018",
+   "creator": "vaidyanathan",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=75409914",
+   "url": "https://api.openverse.org/v1/images/9bb9406a-b99c-4bbf-87c0-b90e3c66368f/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Aurora_Borealis_activity_on_top_of_the_Kirkjufell_mountain_in_September_2018.jpg",
+   "w": 1280,
+   "h": 914,
+   "query": "waterfall long exposure night",
+   "n": 374
+  },
+  {
+   "file": "cache/aquarius/cand/ov-c0bd866a-f1a1-4c63-ba05-b1770695d5c5.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "plasma globe discharge",
+   "id": "ov-c0bd866a-f1a1-4c63-ba05-b1770695d5c5",
+   "source": "openverse/wikimedia",
+   "title": "Long exposure of plasma globe",
+   "creator": "Pixelmaniac pictures (Leave a reply)",
+   "license": "cc0 1.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=30489793",
+   "url": "https://api.openverse.org/v1/images/c0bd866a-f1a1-4c63-ba05-b1770695d5c5/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Long_exposure_of_plasma_globe.jpg",
+   "w": 1280,
+   "h": 851,
+   "query": "plasma globe",
+   "n": 370
+  },
+  {
+   "file": "cache/aquarius/cand/nasa-PIA00143.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Uranus crescent, Voyager 2",
+   "pin": true,
+   "id": "nasa-PIA00143",
+   "source": "nasa",
+   "title": "Uranus - Final Image",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA00143",
+   "url": "https://images-assets.nasa.gov/image/PIA00143/PIA00143~orig.jpg",
+   "w": 794,
+   "h": 960,
+   "query": "Uranus",
+   "n": 83
+  },
+  {
+   "file": "cache/aquarius/cand/ov-a0650a38-771d-4709-9255-6089fb37340a.jpg",
+   "focus": [
+    0.55,
+    0.72
+   ],
+   "zoom": 1.3,
+   "note": "waterfall at night under the Milky Way",
+   "pin": true,
+   "id": "ov-a0650a38-771d-4709-9255-6089fb37340a",
+   "source": "openverse/wikimedia",
+   "title": "McLaren-Falls-at-night-with-milkyway-and-galactic-kiwi",
+   "creator": "Amit Kamble",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=44076787",
+   "url": "https://api.openverse.org/v1/images/a0650a38-771d-4709-9255-6089fb37340a/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/McLaren-Falls-at-night-with-milkyway-and-galactic-kiwi.jpg",
+   "w": 1280,
+   "h": 1280,
+   "query": "waterfall night stars",
+   "n": 213
+  },
+  {
+   "file": "cache/aquarius/cand/ov-b6652e61-8bc0-4781-9615-84e66e5cef2a.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "blue ice cave, Iceland",
+   "id": "ov-b6652e61-8bc0-4781-9615-84e66e5cef2a",
+   "source": "openverse/wikimedia",
+   "title": "Ice Cave Blue Roof - Iceland",
+   "creator": "Eric Kilby",
+   "license": "by-sa 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=164989357",
+   "url": "https://api.openverse.org/v1/images/b6652e61-8bc0-4781-9615-84e66e5cef2a/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Ice_Cave_Blue_Roof_-_Iceland.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "ice cave blue",
+   "n": 372
+  },
+  {
+   "file": "cache/aquarius/cand/ov-03a6c3da-4de1-4ec7-817f-916e57b1784c.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ],
+   "note": "Tesla coil discharge",
+   "id": "ov-03a6c3da-4de1-4ec7-817f-916e57b1784c",
+   "source": "openverse/wikimedia",
+   "title": "File:Tesla-coil-discharge.jpg",
+   "creator": "User Iantresman on en.wikipedia",
+   "license": "by 2.5",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=962632",
+   "url": "https://api.openverse.org/v1/images/03a6c3da-4de1-4ec7-817f-916e57b1784c/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Tesla-coil-discharge.jpg",
+   "w": 1280,
+   "h": 1062,
+   "query": "lightning electricity",
+   "n": 32
+  },
+  {
+   "file": "cache/aquarius/cand/nasa-GSFC_20171208_Archive_e001188.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "rocket launching into aurora",
+   "id": "nasa-GSFC_20171208_Archive_e001188",
+   "source": "nasa",
+   "title": "GREECE Mission Launching Into Aurora",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001188",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001188/GSFC_20171208_Archive_e001188~orig.jpg",
+   "w": 2600,
+   "h": 1733,
+   "query": "aurora",
+   "n": 138
+  },
+  {
+   "file": "cache/aquarius/cand/ov-4b3b8515-a1e9-4146-9576-3ae0dfb06ce8.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "note": "green aurora borealis",
+   "id": "ov-4b3b8515-a1e9-4146-9576-3ae0dfb06ce8",
+   "source": "openverse/wikimedia",
+   "title": "Aurora Borealis Salangen1",
+   "creator": "Sigmund Pettersen, Zig 22:29, 8 January 2006 (UTC)",
+   "license": "by-sa 2.5",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=503903",
+   "url": "https://api.openverse.org/v1/images/4b3b8515-a1e9-4146-9576-3ae0dfb06ce8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Aurora_Borealis_Salangen1.jpg",
+   "w": 1280,
+   "h": 853,
+   "query": "aurora borealis",
+   "n": 20
+  },
+  {
+   "file": "cache/aquarius/cand/nasa-KSC-20110527-PH-NAS01_0001.jpg",
+   "focus": [
+    0.44,
+    0.45
+   ],
+   "note": "lightning strikes the launch pad",
+   "id": "nasa-KSC-20110527-PH-NAS01_0001",
+   "source": "nasa",
+   "title": "Lightning Strikes at Pad 39B",
+   "creator": "KSC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/KSC-20110527-PH-NAS01_0001",
+   "url": "https://images-assets.nasa.gov/image/KSC-20110527-PH-NAS01_0001/KSC-20110527-PH-NAS01_0001~orig.jpg",
+   "w": 1280,
+   "h": 800,
+   "query": "lightning",
+   "n": 148
+  }
+ ]
+}

@@ -1,0 +1,304 @@
+"""Render one zodiac reel.
+
+  python3 render.py aries                # picks/aries.json, seed 0
+  python3 render.py aries --seed 7       # new order, new image subset, new music
+  python3 render.py aries --preview      # half-res, fast
+
+Timeline (from the reference reel): the card alone on black, stepping bigger on
+three beats; a hit at 2.2s; then full-bleed motif images cut every 0.6s with the
+card ghosted in the centre. Heavy film grain, vignette and flicker throughout.
+"""
+import argparse
+import json
+import os
+import re
+import subprocess
+import tempfile
+
+import numpy as np
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+
+import card as cardmod
+import music
+import sources
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SIGNS = json.load(open(os.path.join(HERE, "signs.json")))
+
+FPS = 30
+INTRO = 2.2
+BEAT = 0.6
+SHOTS = 27
+TOTAL = INTRO + BEAT * SHOTS            # 18.4s, same as the reference
+
+STYLE = {
+    "card_w": 0.39,         # montage card width, fraction of frame (ref: 423px of 1080)
+    "card_alpha": 0.36,     # montage card opacity (ref measures ~0.33)
+    "intro_steps": [0.50, 0.73, 0.0],    # card width per intro step; 0 = fill frame height
+    "intro_times": [0.0, 0.667, 1.429],  # hard cuts, as in the reference
+    "zoom": 0.03,           # slow linear push-in per shot (ref is static)
+    "grain": 0.07,          # grain strength (0-1 scale), a lot
+    "grain_size": 1.25,      # px
+    "vignette": 0.55,
+    "flicker": 0.035,
+    "glow": 0.35,           # highlight bloom on backgrounds
+    "contrast": 1.3,
+    "gamma": 1.15,
+    "saturation": 0.76,
+    "cast": 0.8,           # strength of each sign's colour cast
+    "loudness": -11.0,      # LUFS; the ref sits at -14, the brief asked for more gain
+    # the brand line: Align's wordmark face (EB Garamond italic, app cream), small,
+    # under the card, above Instagram's caption area; it sits under the grain
+    "tag_text": "come align",
+    "tag_size": 0.036,      # cap-to-frame: fraction of frame width
+    "tag_y": 0.728,         # centre, fraction of frame height (card ends ~0.69)
+    "tag_alpha": 0.42,      # through the montage
+    "tag_alpha_end": 0.68,  # warms over the last 1.8s as a quiet sign-off
+}
+
+
+def true_peak(path):
+    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", path, "-af", "ebur128=peak=true", "-f", "null", "-"],
+                          capture_output=True, text=True).stderr
+    return float(re.findall(r"Peak:\s+(-?[\d.]+|-inf) dBFS", meas)[-1].replace("-inf", "-99"))
+
+
+def ensure_file(item):
+    p = os.path.join(HERE, item["file"])
+    if not os.path.exists(p):
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        if not sources.download(item, p):
+            raise SystemExit(f"could not fetch {item.get('id')}")
+    return p
+
+
+def grade(im, mult, W, H, focus=(0.5, 0.5), over=1.0 + STYLE["zoom"] + 0.02, zoom=1.0, gamma=None):
+    """Cover-fit around a focus point (zoom > 1 crops tighter, so focus can move
+    the subject vertically too), then the house grade."""
+    tw, th = int(W * over), int(H * over)
+    im = ImageOps.fit(im.convert("RGB"), (int(tw * zoom), int(th * zoom)), Image.LANCZOS, centering=focus)
+    if zoom > 1:
+        x0 = int(np.clip(focus[0] * im.width - tw / 2, 0, im.width - tw))
+        y0 = int(np.clip(focus[1] * im.height - th / 2, 0, im.height - th))
+        im = im.crop((x0, y0, x0 + tw, y0 + th))
+    a = np.asarray(im, dtype=np.float32) / 255
+    # contrast around mid grey, saturation, colour cast toward the sign
+    a = (a - 0.5) * STYLE["contrast"] + 0.5
+    lum = a @ np.array([0.299, 0.587, 0.114], dtype=np.float32)
+    a = lum[..., None] + (a - lum[..., None]) * STYLE["saturation"]
+    # half-strength sign cast, then darken the mids (the reference lives in deep blacks)
+    a *= 1 + (np.array(mult, dtype=np.float32) - 1) * STYLE["cast"]
+    a = np.clip(a, 0, 1) ** (gamma or STYLE["gamma"])
+    # bloom: blurred highlights screened back in
+    hi = np.clip((a - 0.6) / 0.4, 0, 1)
+    blur = np.asarray(Image.fromarray((hi * 255).astype(np.uint8)).filter(
+        ImageFilter.GaussianBlur(W / 40)), dtype=np.float32) / 255
+    a = 1 - (1 - a) * (1 - blur * STYLE["glow"])
+    # lift blacks a hair, film-like
+    a = a * 0.97 + 0.01
+    return (np.clip(a, 0, 1) * 255).astype(np.uint8)
+
+
+def make_grain(W, H, n, rng):
+    gs = STYLE["grain_size"]
+    gw, gh = int(W / gs), int(H / gs)
+    out = []
+    for _ in range(n):
+        g = rng.normal(0, 1, (gh, gw)).astype(np.float32)
+        g = np.asarray(Image.fromarray(g, mode="F").resize((W, H), Image.BILINEAR))
+        out.append((g[..., None] * STYLE["grain"]).astype(np.float16))  # mono, like film
+    return out
+
+
+def vignette(W, H):
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    r = np.sqrt(((x - W / 2) / (W / 2)) ** 2 + ((y - H / 2) / (H / 2)) ** 2) / np.sqrt(2)
+    return (1 - STYLE["vignette"] * np.clip(r - 0.25, 0, 1) ** 1.6 / 0.75 ** 1.6)[..., None].astype(np.float32)
+
+
+def card_rgba(card_img, width):
+    h = int(card_img.height * width / card_img.width)
+    return np.asarray(card_img.resize((width, h), Image.LANCZOS).convert("RGB"), dtype=np.float32) / 255
+
+
+def brand_tag(W):
+    """'come align' as an RGB tile plus a per-pixel alpha (text with a soft glow)."""
+    font = ImageFont.truetype(os.path.join(HERE, "assets", "fonts", "EBGaramond-Italic.ttf"),
+                              int(W * STYLE["tag_size"] * 1.45))
+    text = STYLE["tag_text"]
+    box = font.getbbox(text)
+    pad = int(W * 0.03)
+    tw, th = box[2] - box[0] + 2 * pad, box[3] - box[1] + 2 * pad
+    m = Image.new("L", (tw, th), 0)
+    ImageDraw.Draw(m).text((pad - box[0], pad - box[1]), text, font=font, fill=255)
+    glow = np.asarray(m.filter(ImageFilter.GaussianBlur(W / 90)), np.float32) / 255
+    core = np.asarray(m, np.float32) / 255
+    alpha = np.clip(core + glow * 0.35, 0, 1)[..., None]
+    rgb = np.ones((th, tw, 3), np.float32) * (np.array([0xef, 0xe6, 0xd6], np.float32) / 255)
+    # a wider dark halo under the letters, so the line still reads over bright fur or sky
+    shade = np.asarray(m.filter(ImageFilter.GaussianBlur(W / 45)), np.float32) / 255
+    shade = (np.clip(shade * 2.2, 0, 1) * 0.55)[..., None]
+    return rgb, alpha, shade
+
+
+def paste(frame, c, cx, cy, alpha):
+    """Alpha-paste c centred at (cx, cy), clipped to the frame. alpha may be a
+    scalar or a per-pixel (h, w, 1) mask times a scalar."""
+    H, W = frame.shape[:2]
+    h, w = c.shape[:2]
+    x0, y0 = int(cx - w / 2), int(cy - h / 2)
+    fx0, fy0, fx1, fy1 = max(x0, 0), max(y0, 0), min(x0 + w, W), min(y0 + h, H)
+    src = c[fy0 - y0:fy1 - y0, fx0 - x0:fx1 - x0]
+    if isinstance(alpha, np.ndarray):
+        alpha = alpha[fy0 - y0:fy1 - y0, fx0 - x0:fx1 - x0]
+    region = frame[fy0:fy1, fx0:fx1]
+    region[:] = region * (1 - alpha) + src * alpha
+
+
+def ease_out(t):
+    return 1 - (1 - t) ** 3
+
+
+def luminous(bg):
+    """How much light an image throws out of darkness."""
+    lum = bg[::8, ::8].astype(np.float32).mean(2) / 255
+    p95, p50 = np.percentile(lum, [95, 50])
+    blown = (lum > 0.93).mean()  # a big white core would wash the card out on the hit
+    return float(2 * p95 - p50 - 6 * max(blown - 0.03, 0))  # light out of darkness beats flat brightness
+
+
+def schedule(bgs, rng):
+    """Image order for the 27 shots: one shuffled pass, repeated, like the reference.
+    The hit lands on the most luminous image, so the drop opens up instead of deflating."""
+    lead = int(np.argmax([luminous(b) for b in bgs]))
+    rest = [int(i) for i in rng.permutation(len(bgs)) if i != lead]
+    perm = [lead] + rest
+    return (perm * (SHOTS // len(bgs) + 2))[:SHOTS]
+
+
+def choose(pool, k, rng, seed):
+    """Pick k images. "pin": true always plays; seed 0 takes the curator's order,
+    other seeds sample the rest of the pool so every render differs."""
+    if len(pool) <= k:
+        return pool
+    pinned = [p for p in pool if p.get("pin")]
+    rest = [p for p in pool if not p.get("pin")]
+    need = max(k - len(pinned), 0)
+    if seed == 0:
+        extra = rest[:need]
+    else:
+        extra = [rest[i] for i in sorted(rng.choice(len(rest), need, replace=False))]
+    return pinned + extra
+
+
+def render(sign, seed=0, preview=False, out=None, max_imgs=12, picks_path=None):
+    cfg = SIGNS[sign]
+    picks = json.load(open(picks_path or os.path.join(HERE, "picks", f"{sign}.json")))
+    W, H = (540, 960) if preview else (1080, 1920)
+    rng = np.random.default_rng(seed)
+
+    pool = choose(picks["images"], max_imgs, rng, seed)
+    print(f"[{sign}] seed {seed}: {len(pool)} images")
+    bgs = []
+    for it in pool:
+        try:
+            im = Image.open(ensure_file(it))
+        except (SystemExit, OSError) as e:  # a source went away: play the rest
+            print(f"  skip {it.get('id')}: {e}")
+            continue
+        bgs.append(grade(im, cfg["grade"], W, H, tuple(it.get("focus", (0.5, 0.5))), zoom=it.get("zoom", 1.0), gamma=cfg.get("gamma")))
+    seq = schedule(bgs, rng)
+
+    plate = ensure_file(picks["plate"])
+    card_img = cardmod.build(sign, plate, picks["plate"].get("crop"), picks["plate"].get("color", 1.45))
+    card_m = card_rgba(card_img, int(W * STYLE["card_w"]))
+    tag_rgb, tag_a, tag_shade = brand_tag(W)
+    card_steps = [card_rgba(card_img, int(W * s) if s else int(H * 0.996 * card_img.width / card_img.height))
+                  for s in STYLE["intro_steps"]]
+    grain = make_grain(W, H, 10, rng)
+    vig = vignette(W, H)
+
+    out = out or os.path.join(HERE, "out", f"{sign}-s{seed}{'-preview' if preview else ''}.mp4")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    wav = tempfile.mktemp(suffix=".wav")
+    music.write_wav(wav, music.compose(sign, cfg["element"], INTRO, BEAT, TOTAL, seed))
+    raw, wav = wav, music.master(wav, STYLE["loudness"])
+
+    ff = subprocess.Popen([
+        "ffmpeg", "-v", "error", "-y",
+        "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+        "-i", wav,
+        "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-maxrate", "7M", "-bufsize", "14M",
+        "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest",
+        "-movflags", "+faststart", out], stdin=subprocess.PIPE)
+
+    n_frames = int(round(TOTAL * FPS))
+    for f in range(n_frames):
+        t = f / FPS
+        if t < INTRO:
+            frame = np.zeros((H, W, 3), np.float32)
+            k = sum(t >= s for s in STYLE["intro_times"]) - 1
+            paste(frame, card_steps[k], W / 2, H / 2, 0.86)  # a touch dimmer: ref card sits at luma ~117
+        else:
+            shot = min(int((t - INTRO) / BEAT), SHOTS - 1)
+            lt = (t - INTRO - shot * BEAT) / BEAT
+            bg = bgs[seq[shot]]
+            z = 1 + STYLE["zoom"] * lt
+            # the bg is oversized; a shrinking window reads as a push-in
+            bh, bw = bg.shape[:2]
+            win_w, win_h = int(bw / z), int(bh / z)
+            x0, y0 = (bw - win_w) // 2, (bh - win_h) // 2
+            crop = Image.fromarray(bg[y0:y0 + win_h, x0:x0 + win_w]).resize((W, H), Image.BILINEAR)
+            frame = np.asarray(crop, dtype=np.float32) / 255
+            paste(frame, card_m, W / 2, H / 2, STYLE["card_alpha"])
+            ta = STYLE["tag_alpha"] * min((t - INTRO) / 0.5, 1.0)
+            ta += (STYLE["tag_alpha_end"] - STYLE["tag_alpha"]) * np.clip((t - (TOTAL - 1.8)) / 1.2, 0, 1)
+            paste(frame, np.zeros_like(tag_rgb), W / 2, H * STYLE["tag_y"], tag_shade * ta)
+            paste(frame, tag_rgb, W / 2, H * STYLE["tag_y"], tag_a * ta)
+        frame *= vig
+        if t >= INTRO:  # the ref intro is steady
+            frame *= 1 + rng.uniform(-STYLE["flicker"], STYLE["flicker"])
+        g = grain[rng.integers(len(grain))]
+        # grain peaks in the mids; deep blacks stay black instead of going grey
+        lum = np.clip(frame.mean(2, keepdims=True), 0, 1)
+        floor = 0.15 if t >= INTRO else 0.0   # intro black stays pure black, like the ref
+        frame += g.astype(np.float32) * (floor + 2.6 * lum * (1 - lum))
+        ff.stdin.write((np.clip(frame, 0, 1) * 255).astype(np.uint8).tobytes())
+    ff.stdin.close()
+    ff.wait()
+
+    # AAC can overshoot the limiter; check the true peak of the finished file and
+    # re-master with a lower ceiling until it sits at or under -1 dBTP
+    ceiling = -2.0
+    while true_peak(out) > -1.0 and ceiling > -6:
+        ceiling -= 0.75
+        os.remove(wav)
+        wav = music.master(raw, STYLE["loudness"], ceiling_db=ceiling)
+        tmp = out.replace(".mp4", ".remux.mp4")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out, "-i", wav, "-map", "0:v", "-map", "1:a",
+                        "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest",
+                        "-movflags", "+faststart", tmp], check=True)
+        os.replace(tmp, out)
+    os.remove(wav)
+    os.remove(raw)
+
+    # sidecar: caption + credits, ready to post
+    with open(out.replace(".mp4", ".txt"), "w") as fh:
+        fh.write(cfg["caption"] + "\n\n" + " ".join("#" + t.replace(" ", "") for t in cfg["tags"]) + "\n\n")
+        fh.write("Imagery:\n")
+        for it in [picks["plate"]] + pool:
+            title = re.sub(r"<[^>]+>", "", it.get("title", "")).strip()
+            fh.write(f"- {title[:80]} / {it.get('creator','')[:40]} / {it.get('license','')} / {it.get('landing','')}\n")
+    print(out)
+    return out
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("sign")
+    ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--preview", action="store_true")
+    ap.add_argument("--out")
+    ap.add_argument("--picks", help="alternate picks file")
+    a = ap.parse_args()
+    render(a.sign, a.seed, a.preview, a.out, picks_path=a.picks)
