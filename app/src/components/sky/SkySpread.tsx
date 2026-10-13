@@ -63,7 +63,7 @@ export default function SkySpread({ reading = TODAY_READING }: { reading?: SkyRe
               style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}>
               <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}><SkyCardFace card={c} width={W} active={sel === i} /></div>
               <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
-                <motion.div animate={up[i] ? {} : { y: [0, -3, 0] }} transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.3 }}>
+                <motion.div animate={up[i] ? {} : { y: [0, -3, 0] }} transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.3 }} style={{ willChange: 'transform' }}>
                   <SkyCardBack slot={c.slot} width={W} />
                 </motion.div>
               </div>

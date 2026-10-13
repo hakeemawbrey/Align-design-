@@ -390,10 +390,11 @@ function Row({ m, st, last, onClick, onTag }: { m: Match; st: SlotState; last: b
 function TradeTag({ st, day }: { st: SlotState; day: number }) {
   if (st === 'ready') {
     return (
-      <motion.span animate={{ boxShadow: ['0 0 0px rgba(248,237,255,0)', '0 0 12px rgba(248,237,255,0.6)', '0 0 0px rgba(248,237,255,0)'] }} transition={{ duration: 1.8, repeat: Infinity }}
-        className="mono" style={{ display: 'inline-flex', alignItems: 'center', height: 30, fontSize: 9, letterSpacing: '0.16em', padding: '0 12px', borderRadius: 999, color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700, whiteSpace: 'nowrap' }}>
+      <span className="mono" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', height: 30, fontSize: 9, letterSpacing: '0.16em', padding: '0 12px', borderRadius: 999, color: 'var(--chrome-ink)', background: 'var(--chrome)', fontWeight: 700, whiteSpace: 'nowrap' }}>
+        <motion.span animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1.8, repeat: Infinity }}
+          style={{ position: 'absolute', inset: 0, borderRadius: 999, boxShadow: '0 0 12px rgba(248,237,255,0.6)', willChange: 'opacity', pointerEvents: 'none' }} />
         ✦ TRADE
-      </motion.span>
+      </span>
     )
   }
   if (st === 'traded') {

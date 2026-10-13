@@ -136,7 +136,7 @@ export default function Sky({ go }: ScreenProps) {
 function VenusOrb() {
   return (
     <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-      style={{ position: 'relative', width: 150, height: 100, marginTop: 6 }}>
+      style={{ position: 'relative', width: 150, height: 100, marginTop: 6, willChange: 'transform' }}>
       <div style={{ position: 'absolute', left: 37, top: 12, width: 76, height: 76, borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(242,170,140,0.45), transparent)', filter: 'blur(10px)', transform: 'scale(1.6)' }} />
       <div style={{
         position: 'absolute', left: 37, top: 12, width: 76, height: 76, borderRadius: '50%',
@@ -184,7 +184,7 @@ function Hero({ id }: { id: SkyTab['id'] }) {
   if (id === 'tonight') {
     return (
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-        <motion.div animate={{ y: [0, -3, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}>
+        <motion.div animate={{ y: [0, -3, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} style={{ willChange: 'transform' }}>
           <MoonPhase size={78} lit={MOON_NOW.lit} waxing={MOON_NOW.waxing} />
         </motion.div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>

@@ -110,11 +110,17 @@ img { display: block; -webkit-user-drag: none; user-select: none; }
 /* holographic border: a conic rainbow whose angle spins */
 @property --holo-a { syntax: '<angle>'; inherits: true; initial-value: 0deg; }
 @keyframes holo-spin { to { --holo-a: 360deg; } }
-.holo-frame {
-  background: conic-gradient(from var(--holo-a, 0deg), #ff6ad5, #ffd36a, #7affc4, #6ad5ff, #b18cff, #ff6ad5);
-  animation: holo-spin 4s linear infinite;
+/* rainbow foil frame: the gradient sits on its own layer and cycles by hue, which the GPU animates
+   without repainting (animating the gradient angle repainted every frame and was a main source of lag) */
+.holo-frame { position: relative; isolation: isolate; }
+.holo-frame::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1; pointer-events: none;
+  background: conic-gradient(from 210deg, #ff6ad5, #ffd36a, #7affc4, #6ad5ff, #b18cff, #ff6ad5);
+  animation: holo-hue 4s linear infinite; will-change: filter;
 }
+@keyframes holo-hue { to { filter: hue-rotate(360deg); } }
 
+@keyframes foil-band { 0% { transform: translateX(-120%) } 100% { transform: translateX(260%) } }
 @keyframes foil-sweep { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
 @keyframes twinkle { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
 @keyframes float-y { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }

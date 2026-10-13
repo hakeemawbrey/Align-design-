@@ -26,7 +26,7 @@ export function SkyCardFace({ card, width = 104, active = false }: { card: SkyCa
           {SLOT_LABEL[card.slot]}
         </div>
         <motion.div animate={{ scale: [1, 1.06, 1] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ position: 'absolute', top: 34 * s, left: 0, right: 0, textAlign: 'center', fontSize: 50 * s, lineHeight: 1, color: p.color, textShadow: `0 0 ${18 * s}px ${p.color}` }}>
+          style={{ position: 'absolute', top: 34 * s, left: 0, right: 0, willChange: 'transform', textAlign: 'center', fontSize: 50 * s, lineHeight: 1, color: p.color, textShadow: `0 0 ${18 * s}px ${p.color}` }}>
           {p.glyph}{'︎'}
         </motion.div>
         <div className="serif" style={{ position: 'absolute', top: 98 * s, left: 0, right: 0, textAlign: 'center', fontSize: 9 * s, letterSpacing: '0.22em', textTransform: 'uppercase', color: GOLD }}>

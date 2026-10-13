@@ -117,7 +117,7 @@ export default function Club({ go }: ScreenProps) {
             }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <motion.span animate={{ opacity: [1, 0.45, 1], scale: [1, 0.85, 1] }} transition={{ duration: 2, repeat: Infinity }}
-                style={{ width: 8, height: 8, borderRadius: 4, background: '#9be35a', boxShadow: '0 0 10px #9be35a', flexShrink: 0 }} />
+                style={{ width: 8, height: 8, borderRadius: 4, background: '#9be35a', boxShadow: '0 0 10px #9be35a', flexShrink: 0, willChange: 'transform, opacity' }} />
               <span className="serif italic" style={{ fontSize: 17.5, color: 'var(--label-1)' }}>{TONIGHT_PROMPT}</span>
             </div>
             <div className="mono" style={{ marginTop: 6, marginLeft: 18, fontSize: 9, letterSpacing: '0.12em', fontWeight: 700, color: LIME }}>Say the first thing ›</div>

@@ -7,7 +7,7 @@ const FOIL = 'linear-gradient(90deg, #b88a2c 0%, #f2c75c 18%, #fff4cf 34%, #f2c7
 
 const foilText: React.CSSProperties = {
   background: FOIL, backgroundSize: '200% 100%', WebkitBackgroundClip: 'text', backgroundClip: 'text',
-  color: 'transparent', animation: 'foil-sweep 3.5s linear infinite',
+  color: 'transparent', backgroundPosition: '30% 50%',
 }
 
 /** Gold-foil founding member card. 236 × 316. */
@@ -15,10 +15,17 @@ export default function FoundingCard({ title = 'Founding member', serial = '№ 
   const sign = SIGNS[ME.sign]
   return (
     <div style={{
-      position: 'relative', width: 236, height: 316, borderRadius: 20, padding: 2,
-      background: FOIL, backgroundSize: '200% 100%', animation: 'foil-sweep 3.5s linear infinite',
+      position: 'relative', width: 236, height: 316, borderRadius: 20, padding: 2, isolation: 'isolate',
       boxShadow: '0 0 40px rgba(242,199,92,0.45), 0 20px 50px rgba(0,0,0,0.5)',
     }}>
+      {/* gold edge with a light band sweeping across it: the band moves by transform, so nothing repaints */}
+      <div style={{ position: 'absolute', inset: 0, borderRadius: 20, zIndex: -1, overflow: 'hidden', background: FOIL, backgroundSize: '200% 100%' }}>
+        <div style={{
+          position: 'absolute', top: '-20%', bottom: '-20%', left: 0, width: '60%',
+          background: 'linear-gradient(100deg, transparent 0%, rgba(255,250,230,0.85) 50%, transparent 100%)',
+          animation: 'foil-band 3.5s ease-in-out infinite', willChange: 'transform',
+        }} />
+      </div>
       <div className="grain" style={{
         position: 'relative', width: '100%', height: '100%', borderRadius: 18, overflow: 'hidden',
         background: 'radial-gradient(90% 60% at 50% 32%, #3b2766 0%, #22144a 55%, #150b30 100%)',

@@ -159,7 +159,7 @@ const TopCard = forwardRef<TopHandle, TopProps>(function TopCard(p, ref) {
         >
           {/* gold aura behind the card when leaning toward ALIGN */}
           <motion.div style={{
-            position: 'absolute', inset: -4, borderRadius: 24, opacity: alignO,
+            position: 'absolute', inset: -4, borderRadius: 24, opacity: alignO, willChange: 'opacity',
             boxShadow: '0 0 40px 8px rgba(242,199,92,0.55), 0 0 90px 20px rgba(242,199,92,0.25)',
           }} />
           <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${CARD_SCALE})`, transformOrigin: 'top left' }}>
@@ -169,10 +169,10 @@ const TopCard = forwardRef<TopHandle, TopProps>(function TopCard(p, ref) {
           </div>
           {/* tints */}
           <motion.div style={{
-            position: 'absolute', inset: 0, borderRadius: 19, pointerEvents: 'none', opacity: alignTint, mixBlendMode: 'screen',
+            position: 'absolute', inset: 0, borderRadius: 19, pointerEvents: 'none', opacity: alignTint, mixBlendMode: 'screen', willChange: 'opacity',
             background: 'radial-gradient(90% 70% at 70% 35%, rgba(255,228,150,0.9), rgba(242,199,92,0.35) 50%, rgba(242,199,92,0.1) 100%)',
           }} />
-          <motion.div style={{ position: 'absolute', inset: 0, borderRadius: 19, pointerEvents: 'none', opacity: releaseDim, background: '#0b0620' }} />
+          <motion.div style={{ position: 'absolute', inset: 0, borderRadius: 19, pointerEvents: 'none', opacity: releaseDim, background: '#0b0620', willChange: 'opacity' }} />
           {/* arrival sheen */}
           {!p.first && (
             <div style={{ position: 'absolute', inset: 0, borderRadius: 19, overflow: 'hidden', pointerEvents: 'none' }}>
@@ -182,18 +182,18 @@ const TopCard = forwardRef<TopHandle, TopProps>(function TopCard(p, ref) {
           )}
           {/* stamps */}
           <motion.div style={{
-            position: 'absolute', left: 22, top: 84, rotate: -14, opacity: alignO, scale: alignStampScale, pointerEvents: 'none',
+            position: 'absolute', left: 22, top: 84, rotate: -14, opacity: alignO, scale: alignStampScale, pointerEvents: 'none', willChange: 'transform, opacity',
             padding: '2px 16px 4px', borderRadius: 12, border: '3px solid #f2c75c',
             boxShadow: '0 0 24px rgba(242,199,92,0.7), inset 0 0 14px rgba(242,199,92,0.4)', background: 'rgba(20,10,46,0.35)',
           }}>
             <span className="serif italic" style={{
               fontSize: 50, fontWeight: 600, lineHeight: 1, letterSpacing: '0.02em',
               background: 'var(--gold-foil)', backgroundSize: '200% 100%', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
-              animation: 'foil-sweep 2.4s linear infinite', display: 'inline-block',
+              backgroundPosition: '30% 50%', display: 'inline-block',
             }}>{p.slot.kind === 'event' ? 'Play ✦' : 'Align ✦'}</span>
           </motion.div>
           <motion.div style={{
-            position: 'absolute', right: 22, top: 84, rotate: 14, opacity: releaseO, scale: releaseStampScale, pointerEvents: 'none',
+            position: 'absolute', right: 22, top: 84, rotate: 14, opacity: releaseO, scale: releaseStampScale, pointerEvents: 'none', willChange: 'transform, opacity',
             padding: '4px 14px', borderRadius: 12, border: '2.5px solid #b3a6c4', background: 'rgba(11,6,32,0.45)',
           }}>
             <span className="mono" style={{ fontSize: p.slot.kind === 'event' ? 19 : 26, letterSpacing: '0.16em', color: '#d8cfe6', fontWeight: 700, whiteSpace: 'nowrap' }}>{p.slot.kind === 'event' ? 'SAVE FOR LATER' : 'RELEASE'}</span>
@@ -211,11 +211,11 @@ function UnderCard({ slot, drawsOf, dragX }: { slot: Slot; drawsOf: number | nul
   const dim = useTransform(mag, [0, 1], [0.6, 0.15])
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}
-      style={{ position: 'absolute', left: SLEFT, top: CARD_TOP, width: SW, height: SH, scale, y, zIndex: 5, pointerEvents: 'none' }}>
+      style={{ position: 'absolute', left: SLEFT, top: CARD_TOP, width: SW, height: SH, scale, y, zIndex: 5, pointerEvents: 'none', willChange: 'transform' }}>
       <div style={{ width: CARD_W, height: CARD_H, transform: `scale(${CARD_SCALE})`, transformOrigin: 'top left' }}>
         {slot.kind === 'person' ? <ProfileCard profile={slot.profile} glow={false} /> : <EventCard event={slot.event} draw={slot.draw + 1} of={drawsOf} glow={false} />}
       </div>
-      <motion.div style={{ position: 'absolute', inset: 0, borderRadius: 19, background: '#0b0620', opacity: dim }} />
+      <motion.div style={{ position: 'absolute', inset: 0, borderRadius: 19, background: '#0b0620', opacity: dim, willChange: 'opacity' }} />
     </motion.div>
   )
 }

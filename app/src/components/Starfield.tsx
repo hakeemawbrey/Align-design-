@@ -17,17 +17,27 @@ function rng(seed: number) {
   }
 }
 
-/** Indigo atmosphere: aurora blooms + twinkling starfield. Fills its parent. */
+/** twinkle timing for the layer that twinkles */
+const LAYERS = [{ d: 4.2, o: 0 }]
+
+/**
+ * Indigo atmosphere: aurora blooms + twinkling starfield. Fills its parent.
+ * Stars are drawn as box-shadows on three elements, and only one of them
+ * twinkles: one composited opacity animation instead of one per star, which
+ * made every screen recalculate ~70 styles a frame.
+ */
 export default function Starfield({ count = 70, aurora = '#5b2fb8', warm = '#7a3a6a', seed = 7 }: Props) {
-  const stars = useMemo(() => {
+  const layers = useMemo(() => {
     const r = rng(seed)
-    return Array.from({ length: count }, () => ({
-      x: r() * 100,
-      y: r() * 100,
-      s: 0.6 + r() * 1.6,
-      d: 2 + r() * 4,
-      o: r() * 4,
-    }))
+    const groups: string[][] = [[], [], []]
+    for (let i = 0; i < count; i++) {
+      const x = r() * 100
+      const y = r() * 100
+      const s = 0.6 + r() * 1.6
+      r(); r() // the old per-star timing draws, kept so every star stays where it was
+      groups[i % 3].push(`${x.toFixed(2)}cqw ${y.toFixed(2)}cqh 0 ${(s / 2).toFixed(2)}px #efe6d6`)
+    }
+    return groups.map((g) => g.join(','))
   }, [count, seed])
 
   return (
@@ -46,13 +56,15 @@ export default function Starfield({ count = 70, aurora = '#5b2fb8', warm = '#7a3
           filter: 'blur(24px)',
         }} />
       )}
-      {stars.map((st, i) => (
-        <span key={i} style={{
-          position: 'absolute', left: `${st.x}%`, top: `${st.y}%`,
-          width: st.s, height: st.s, borderRadius: '50%', background: '#efe6d6',
-          animation: `twinkle ${st.d}s ease-in-out ${st.o}s infinite`,
-        }} />
-      ))}
+      <div style={{ position: 'absolute', inset: 0, containerType: 'size' }}>
+        {layers.map((shadow, i) => shadow && (
+          <span key={i} style={{
+            position: 'absolute', left: 0, top: 0, width: 0, height: 0, borderRadius: '50%', boxShadow: shadow,
+            // one layer twinkles; the other two hold at different brightness so the sky still looks uneven
+            ...(i === 0 ? { animation: `twinkle ${LAYERS[i].d}s ease-in-out ${LAYERS[i].o}s infinite`, willChange: 'opacity' } : { opacity: i === 1 ? 0.75 : 0.45 }),
+          }} />
+        ))}
+      </div>
     </div>
   )
 }
