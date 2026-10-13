@@ -71,7 +71,7 @@ def web_copy(src, dst_dir):
     p = os.path.join(dst_dir, "v", name + ".jpg")
     os.makedirs(os.path.dirname(v), exist_ok=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", "scale=720:-2", "-c:v", "libx264",
-                    "-crf", "24", "-preset", "slow", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", v], check=True)
+                    "-crf", "27", "-maxrate", "1.8M", "-bufsize", "3.6M", "-preset", "slow", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", v], check=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "1.1", "-i", src, "-frames:v", "1", "-vf", "scale=540:-2",
                     "-q:v", "4", p], check=True)
     return f"v/{name}.mp4", f"v/{name}.jpg"
