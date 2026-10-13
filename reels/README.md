@@ -30,6 +30,17 @@ top-ordered images; other seeds sample the rest of the pool, reshuffle the order
 and re-roll the score's voicing. So a 15-image pool gives hundreds of distinct
 reels per sign. To go further, curate more images into the pools.
 
+## A batch for Drive
+
+```sh
+for s in 0 1 2 3; do python3 make.py --seed $s; done        # 12 signs x 4 versions = 48 reels
+python3 tools/package.py ~/Desktop/zodiac --subfolders      # "01 Aries/01 Aries — v1.mp4" ... + index.csv
+```
+
+Drag the folder into Google Drive and import `index.csv` as a Sheet to track
+what's posted. Or upload straight to Drive with `tools/drive_upload.py` (needs a
+service account; setup is in the script's header).
+
 ## Automation
 
 `.github/workflows/zodiac-reels.yml` renders one new reel a day, the next sign
