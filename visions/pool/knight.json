@@ -6,7 +6,6 @@
     0.5,
     0.45
    ],
-   "pin": true,
    "note": "Burne-Jones, The Merciful Knight",
    "id": "wc-29661224",
    "source": "commons",
@@ -82,7 +81,6 @@
     0.5,
     0.45
    ],
-   "pin": true,
    "note": "Moreau, St George and the dragon",
    "id": "wc-48561308",
    "source": "commons",
@@ -258,25 +256,6 @@
    "h": 1248
   },
   {
-   "file": "cache/knight/cand/wc-6718437.jpg",
-   "focus": [
-    0.42,
-    0.3
-   ],
-   "zoom": 1.7,
-   "note": "Rochegrosse, Le Chevalier aux Fleurs",
-   "id": "wc-6718437",
-   "source": "commons",
-   "title": "Le Chevalier aux Fleurs 1894 Georges Rochegrosse 1859 1938",
-   "creator": "Georges Rochegrosse",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Le_Chevalier_aux_Fleurs_1894_Georges_Rochegrosse_1859_1938.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Le_Chevalier_aux_Fleurs_1894_Georges_Rochegrosse_1859_1938.jpg/1920px-Le_Chevalier_aux_Fleurs_1894_Georges_Rochegrosse_1859_1938.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Le_Chevalier_aux_Fleurs_1894_Georges_Rochegrosse_1859_1938.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1920,
-   "h": 1223
-  },
-  {
    "file": "cache/knight/cand/wc-79558615.jpg",
    "focus": [
     0.5,
@@ -437,24 +416,6 @@
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Valkyrie_%28Peter_Nicolai_Arbo%29_-_Nationalmuseum_-_18255.tif/lossy-page1-1920px-Valkyrie_%28Peter_Nicolai_Arbo%29_-_Nationalmuseum_-_18255.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Valkyrie_%28Peter_Nicolai_Arbo%29_-_Nationalmuseum_-_18255.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1801,
-   "h": 2400
-  },
-  {
-   "file": "cache/knight/cand/wc-51684476.jpg",
-   "focus": [
-    0.5,
-    0.35
-   ],
-   "note": "Decorated suit of armour",
-   "id": "wc-51684476",
-   "source": "commons",
-   "title": "Decorated suit of armour (27932200535)",
-   "creator": "Thomas Quine",
-   "license": "CC BY 2.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Decorated_suit_of_armour_(27932200535).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Decorated_suit_of_armour_%2827932200535%29.jpg/1920px-Decorated_suit_of_armour_%2827932200535%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Decorated_suit_of_armour_%2827932200535%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1600,
    "h": 2400
   },
   {
@@ -622,42 +583,6 @@
    "h": 2400
   },
   {
-   "file": "cache/knight/cand/wc-44152850.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Daumier, Don Quixote",
-   "id": "wc-44152850",
-   "source": "commons",
-   "title": "Don Quichotte Honoré Daumier",
-   "creator": "Honoré Daumier",
-   "license": "CC BY-SA 4.0",
-   "landing": "https://commons.wikimedia.org/wiki/File:Don_Quichotte_Honor%C3%A9_Daumier.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Don_Quichotte_Honor%C3%A9_Daumier.jpg/1920px-Don_Quichotte_Honor%C3%A9_Daumier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Don_Quichotte_Honor%C3%A9_Daumier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1642,
-   "h": 2400
-  },
-  {
-   "file": "cache/knight/cand/wc-100004174.jpg",
-   "focus": [
-    0.5,
-    0.55
-   ],
-   "note": "Daumier, Don Quixote and Sancho Panza at dusk",
-   "id": "wc-100004174",
-   "source": "commons",
-   "title": "Daumier - Don Quixote et Sancho Panza, 1866-1868",
-   "creator": "Honoré Daumier",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Daumier_-_Don_Quixote_et_Sancho_Panza,_1866-1868.jpg",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Daumier_-_Don_Quixote_et_Sancho_Panza%2C_1866-1868.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Daumier_-_Don_Quixote_et_Sancho_Panza%2C_1866-1868.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1172,
-   "h": 1500
-  },
-  {
    "file": "cache/knight/cand/wc-99356005.jpg",
    "focus": [
     0.5,
@@ -692,7 +617,8 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/King_Arthur_Sir_Bedivere_throwing_Excalibur_into_the_lake_by_Walter_Crane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/King_Arthur_Sir_Bedivere_throwing_Excalibur_into_the_lake_by_Walter_Crane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 743,
-   "h": 1024
+   "h": 1024,
+   "zoom": 1.06
   },
   {
    "file": "cache/knight/cand/wc-82759823.jpg",
