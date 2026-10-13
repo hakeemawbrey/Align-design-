@@ -139,23 +139,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/John_Collier_-_Priestess_of_Delphi_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
-   "file": "cache/mystic/cand/met-436839.jpg",
-   "focus": [
-    0.45,
-    0.403
-   ],
-   "zoom": 1.2,
-   "tone": 0.25,
-   "note": "La Tour, Magdalen with mirror and candle",
-   "id": "met-436839",
-   "source": "met",
-   "title": "The Penitent Magdalen",
-   "creator": "Georges de La Tour",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/436839",
-   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-27910-001.jpg"
-  },
-  {
    "file": "cache/mystic/cand/wc-117179431.jpg",
    "focus": [
     0.5,
@@ -238,7 +221,8 @@
    "license": "Public domain",
    "landing": "https://commons.wikimedia.org/wiki/File:Eos.jpg",
    "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Eos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Eos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Eos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "pin": true
   },
   {
    "file": "cache/mystic/cand/wc-17463762.jpg",
@@ -393,22 +377,6 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Sandys%2C_Frederick_-_Morgan_le_Fay.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
-   "file": "cache/mystic/cand/aic-120172.jpg",
-   "focus": [
-    0.4,
-    0.538
-   ],
-   "zoom": 1.2,
-   "note": "Ribera, Penitent Saint Peter",
-   "id": "aic-120172",
-   "source": "aic",
-   "title": "Penitent Saint Peter",
-   "creator": "Jusepe de Ribera (Spanish, 1588–1652)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/120172",
-   "url": "https://www.artic.edu/iiif/2/d51eb11c-da63-0888-0a59-6a5ef0631142/full/1686,/0/default.jpg"
-  },
-  {
    "file": "cache/mystic/cand/aic-203330.jpg",
    "focus": [
     0.45,
@@ -422,7 +390,8 @@
    "creator": "Ludovico Carracci (Italian, 1555–1619)",
    "license": "public domain",
    "landing": "https://www.artic.edu/artworks/203330",
-   "url": "https://www.artic.edu/iiif/2/b0b312cf-6b99-fc0a-e561-c60a700cf0cc/full/1686,/0/default.jpg"
+   "url": "https://www.artic.edu/iiif/2/b0b312cf-6b99-fc0a-e561-c60a700cf0cc/full/1686,/0/default.jpg",
+   "pin": true
   },
   {
    "file": "cache/mystic/cand/wc-1551967.jpg",
@@ -496,21 +465,206 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Evelyn_De_Morgan_-_Angel_of_DeathFXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   {
-   "file": "cache/mystic/cand/wc-116119392.jpg",
+   "file": "cache/mystic/cand/wc-24217392.jpg",
    "focus": [
-    0.4,
-    0.419
+    0.5,
+    0.4
    ],
-   "zoom": 1.2,
-   "note": "Redon, The Cyclops",
-   "id": "wc-116119392",
+   "note": "Redon, Buddha",
+   "id": "wc-24217392",
    "source": "commons",
-   "title": "Odilon Redon - The Cyclops, c. 1914",
+   "title": "Odilon Redon - Buddha - Google Art Project",
    "creator": "Odilon Redon",
    "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Odilon_Redon_-_The_Cyclops,_c._1914.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Odilon_Redon_-_The_Cyclops%2C_c._1914.jpg/1920px-Odilon_Redon_-_The_Cyclops%2C_c._1914.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Odilon_Redon_-_The_Cyclops%2C_c._1914.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+   "landing": "https://commons.wikimedia.org/wiki/File:Odilon_Redon_-_Buddha_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Odilon_Redon_-_Buddha_-_Google_Art_Project.jpg/1920px-Odilon_Redon_-_Buddha_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Odilon_Redon_-_Buddha_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1881,
+   "h": 2400
+  },
+  {
+   "file": "cache/mystic/cand/wc-147931.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Bocklin, Isle of the Dead (Met version)",
+   "id": "wc-147931",
+   "source": "commons",
+   "title": "Arnold Böcklin - Die Toteninsel II (Metropolitan Museum of Art)",
+   "creator": "Arnold Böcklin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Toteninsel_II_(Metropolitan_Museum_of_Art).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Arnold_B%C3%B6cklin_-_Die_Toteninsel_II_%28Metropolitan_Museum_of_Art%29.jpg/1920px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_II_%28Metropolitan_Museum_of_Art%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Arnold_B%C3%B6cklin_-_Die_Toteninsel_II_%28Metropolitan_Museum_of_Art%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1165
+  },
+  {
+   "file": "cache/mystic/cand/wc-17311451.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ],
+   "note": "Rembrandt, Philosopher in Meditation",
+   "id": "wc-17311451",
+   "source": "commons",
+   "title": "Rembrandt - The Philosopher in Meditation (cleaned)",
+   "creator": "Rembrandt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_The_Philosopher_in_Meditation_(cleaned).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Rembrandt_-_The_Philosopher_in_Meditation_%28cleaned%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Rembrandt_-_The_Philosopher_in_Meditation_%28cleaned%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1013,
+   "h": 841
+  },
+  {
+   "file": "cache/mystic/cand/wc-136249186.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Abbott Thayer, Angel",
+   "id": "wc-136249186",
+   "source": "commons",
+   "title": "Abbott Handerson Thayer - Angel - SmithsonianFXD",
+   "creator": "Abbott Handerson Thayer",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg/1920px-Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Abbott_Handerson_Thayer_-_Angel_-_SmithsonianFXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1860,
+   "h": 2400
+  },
+  {
+   "file": "cache/mystic/cand/wc-91889569.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "zoom": 1.2,
+   "note": "Schalcken (after), old man writing by candlelight",
+   "id": "wc-91889569",
+   "source": "commons",
+   "title": "Godfried Schalcken (1643-1706) (after) - An Old Man Writing a Book by Candlelight - 290274 - National Trust",
+   "creator": "Godfried Schalcken",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Godfried_Schalcken_(1643-1706)_(after)_-_An_Old_Man_Writing_a_Book_by_Candlelight_-_290274_-_National_Trust.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Godfried_Schalcken_%281643-1706%29_%28after%29_-_An_Old_Man_Writing_a_Book_by_Candlelight_-_290274_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Godfried_Schalcken_%281643-1706%29_%28after%29_-_An_Old_Man_Writing_a_Book_by_Candlelight_-_290274_-_National_Trust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1003,
+   "h": 1200,
+   "tone": 0.2
+  },
+  {
+   "file": "cache/mystic/cand/wc-19585188.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Moreau, Salome dancing before Herod (temple interior)",
+   "id": "wc-19585188",
+   "source": "commons",
+   "title": "Salome Dancing before Herod by Gustave Moreau",
+   "creator": "Gustave Moreau",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Salome_Dancing_before_Herod_by_Gustave_Moreau.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Salome_Dancing_before_Herod_by_Gustave_Moreau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Salome_Dancing_before_Herod_by_Gustave_Moreau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1074,
+   "h": 1500
+  },
+  {
+   "file": "cache/mystic/cand/wc-54845228.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.1,
+   "note": "Holman Hunt, The Lady of Shalott",
+   "id": "wc-54845228",
+   "source": "commons",
+   "title": "The Lady of Shalott by William Holman Hunt, c. 1890-1905, oil on canvas - Wadsworth Atheneum - Hartford, CT - DSC05541",
+   "creator": "Edward Robert Hughes",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Lady_of_Shalott_by_William_Holman_Hunt,_c._1890-1905,_oil_on_canvas_-_Wadsworth_Atheneum_-_Hartford,_CT_-_DSC05541.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/The_Lady_of_Shalott_by_William_Holman_Hunt%2C_c._1890-1905%2C_oil_on_canvas_-_Wadsworth_Atheneum_-_Hartford%2C_CT_-_DSC05541.jpg/1920px-The_Lady_of_Shalott_by_William_Holman_Hunt%2C_c._1890-1905%2C_oil_on_canvas_-_Wadsworth_Atheneum_-_Hartford%2C_CT_-_DSC05541.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/The_Lady_of_Shalott_by_William_Holman_Hunt%2C_c._1890-1905%2C_oil_on_canvas_-_Wadsworth_Atheneum_-_Hartford%2C_CT_-_DSC05541.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1885,
+   "h": 2400
+  },
+  {
+   "file": "cache/mystic/cand/wc-3751913.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "zoom": 1.3,
+   "note": "Wright of Derby, Experiment on a Bird in the Air Pump",
+   "id": "wc-3751913",
+   "source": "commons",
+   "title": "An Experiment on a Bird in an Air Pump by Joseph Wright of Derby, 1768",
+   "creator": "Joseph Wright of Derby",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby,_1768.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby%2C_1768.jpg/1920px-An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby%2C_1768.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby%2C_1768.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1439
+  },
+  {
+   "file": "cache/mystic/cand/wc-115965315.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Evelyn De Morgan, The Vision",
+   "id": "wc-115965315",
+   "source": "commons",
+   "title": "The Vision, by Evelyn de Morgan",
+   "creator": "Evelyn De Morgan",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Vision,_by_Evelyn_de_Morgan.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/The_Vision%2C_by_Evelyn_de_Morgan.jpg/1920px-The_Vision%2C_by_Evelyn_de_Morgan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/The_Vision%2C_by_Evelyn_de_Morgan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1473
+  },
+  {
+   "file": "cache/mystic/cand/wc-1680041.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Redon, Mystery",
+   "id": "wc-1680041",
+   "source": "commons",
+   "title": "Redon mystery",
+   "creator": "Odilon Redon",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Redon_mystery.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Redon_mystery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Redon_mystery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 795,
+   "h": 1074
+  },
+  {
+   "file": "cache/mystic/cand/wc-84669677.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Abbott Thayer, Boy and Angel",
+   "id": "wc-84669677",
+   "source": "commons",
+   "title": "Abbott Handerson Thayer - Boy and Angel - 1925-3 - Albright–Knox Art Gallery",
+   "creator": "Abbott Handerson Thayer",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Abbott_Handerson_Thayer_-_Boy_and_Angel_-_1925-3_-_Albright%E2%80%93Knox_Art_Gallery.tiff",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Abbott_Handerson_Thayer_-_Boy_and_Angel_-_1925-3_-_Albright%E2%80%93Knox_Art_Gallery.tiff/lossy-page1-1920px-Abbott_Handerson_Thayer_-_Boy_and_Angel_-_1925-3_-_Albright%E2%80%93Knox_Art_Gallery.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Abbott_Handerson_Thayer_-_Boy_and_Angel_-_1925-3_-_Albright%E2%80%93Knox_Art_Gallery.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1887,
+   "h": 2400
   }
  ]
 }

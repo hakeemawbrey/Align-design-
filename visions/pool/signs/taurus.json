@@ -179,23 +179,6 @@
    "h": 1920
   },
   {
-   "file": "cache/signs/taurus/met-11392.jpg",
-   "focus": [
-    0.5,
-    0.35
-   ],
-   "note": "Lambdin, roses on dark ground",
-   "id": "met-11392",
-   "source": "met",
-   "title": "Roses",
-   "creator": "George Cochran Lambdin",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/11392",
-   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap18.116.jpg",
-   "w": 1080,
-   "h": 2227
-  },
-  {
    "file": "cache/signs/taurus/nasa-PIA00342.jpg",
    "focus": [
     0.3,

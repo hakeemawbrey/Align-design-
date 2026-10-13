@@ -83,7 +83,8 @@
    "license": "Public domain",
    "landing": "https://commons.wikimedia.org/wiki/File:William_Dyce_-_Francesca_da_Rimini_-_Google_Art_Project.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/William_Dyce_-_Francesca_da_Rimini_-_Google_Art_Project.jpg/1920px-William_Dyce_-_Francesca_da_Rimini_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/William_Dyce_-_Francesca_da_Rimini_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/William_Dyce_-_Francesca_da_Rimini_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "pin": true
   },
   {
    "file": "cache/lovers/cand/wc-896527.jpg",
@@ -320,7 +321,8 @@
    "license": "Public domain",
    "landing": "https://commons.wikimedia.org/wiki/File:S%C3%A9r%C3%A9nade_au_clair_de_lune_-_Lucien_L%C3%A9vy-Dhurmer_(c._1895-1927).jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/S%C3%A9r%C3%A9nade_au_clair_de_lune_-_Lucien_L%C3%A9vy-Dhurmer_%28c._1895-1927%29.jpg/1920px-S%C3%A9r%C3%A9nade_au_clair_de_lune_-_Lucien_L%C3%A9vy-Dhurmer_%28c._1895-1927%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/S%C3%A9r%C3%A9nade_au_clair_de_lune_-_Lucien_L%C3%A9vy-Dhurmer_%28c._1895-1927%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/S%C3%A9r%C3%A9nade_au_clair_de_lune_-_Lucien_L%C3%A9vy-Dhurmer_%28c._1895-1927%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "pin": true
   },
   {
    "file": "cache/lovers/cand/aic-180709.jpg",
@@ -506,6 +508,153 @@
    "landing": "https://commons.wikimedia.org/wiki/File:Leighton-Alain_Chartier-1903.jpg",
    "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Leighton-Alain_Chartier-1903.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Leighton-Alain_Chartier-1903.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+   "file": "cache/lovers/cand/wc-80506300.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "note": "Munch, The Kiss (Houston), by the window",
+   "id": "wc-80506300",
+   "source": "commons",
+   "title": "Edvard Munch - The Kiss - BF.1968.1 - Museum of Fine Arts, Houston",
+   "creator": "Edvard Munch",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_The_Kiss_-_BF.1968.1_-_Museum_of_Fine_Arts,_Houston.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Edvard_Munch_-_The_Kiss_-_BF.1968.1_-_Museum_of_Fine_Arts%2C_Houston.jpg/1920px-Edvard_Munch_-_The_Kiss_-_BF.1968.1_-_Museum_of_Fine_Arts%2C_Houston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Edvard_Munch_-_The_Kiss_-_BF.1968.1_-_Museum_of_Fine_Arts%2C_Houston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1674,
+   "pin": true
+  },
+  {
+   "file": "cache/lovers/cand/aic-154235.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "note": "The Girl by the Window, waiting at night",
+   "id": "aic-154235",
+   "source": "aic",
+   "title": "The Girl by the Window",
+   "creator": "Edvard Munch (Norwegian, 1863–1944)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/154235",
+   "url": "https://www.artic.edu/iiif/2/d7df2633-3b40-f570-c906-211503a37cde/full/1686,/0/default.jpg",
+   "w": 1624,
+   "h": 2400
+  },
+  {
+   "file": "cache/lovers/cand/met-435826.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Burne-Jones, The Love Song",
+   "id": "met-435826",
+   "source": "met",
+   "title": "The Love Song",
+   "creator": "Sir Edward Burne-Jones",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435826",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP323394.jpg",
+   "w": 2400,
+   "h": 1769
+  },
+  {
+   "file": "cache/lovers/cand/wc-196243441.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Spencer Stanhope, Love and the Maiden",
+   "id": "wc-196243441",
+   "source": "commons",
+   "title": "Love and the Maiden, by John Roddam Spencer Stanhope, 1877, oil and gold leaf on canvas - California Palace of the Legion of Honor - San Francisco, CA - DSC00076",
+   "creator": "Daderot",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Love_and_the_Maiden,_by_John_Roddam_Spencer_Stanhope,_1877,_oil_and_gold_leaf_on_canvas_-_California_Palace_of_the_Legion_of_Honor_-_San_Francisco,_CA_-_DSC00076.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Love_and_the_Maiden%2C_by_John_Roddam_Spencer_Stanhope%2C_1877%2C_oil_and_gold_leaf_on_canvas_-_California_Palace_of_the_Legion_of_Honor_-_San_Francisco%2C_CA_-_DSC00076.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Love_and_the_Maiden%2C_by_John_Roddam_Spencer_Stanhope%2C_1877%2C_oil_and_gold_leaf_on_canvas_-_California_Palace_of_the_Legion_of_Honor_-_San_Francisco%2C_CA_-_DSC00076.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1317,
+   "zoom": 1.06
+  },
+  {
+   "file": "cache/lovers/cand/wc-17714151.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "zoom": 1.2,
+   "note": "Simeon Solomon, Sappho and Erinna",
+   "id": "wc-17714151",
+   "source": "commons",
+   "title": "Simeon Solomon - Sappho and Erinna in a Garden at Mytilene",
+   "creator": "Simeon Solomon",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Simeon_Solomon_-_Sappho_and_Erinna_in_a_Garden_at_Mytilene.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Simeon_Solomon_-_Sappho_and_Erinna_in_a_Garden_at_Mytilene.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Simeon_Solomon_-_Sappho_and_Erinna_in_a_Garden_at_Mytilene.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1481,
+   "h": 1280
+  },
+  {
+   "file": "cache/lovers/cand/wc-112514896.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "zoom": 1.2,
+   "note": "Burne-Jones, Briar Rose, sleeping princess",
+   "id": "wc-112514896",
+   "source": "commons",
+   "title": "Edward burne-jones, la principessa dormiente, serie briar-rose, 1872-74 ca. 03",
+   "creator": "Sailko",
+   "license": "CC BY 3.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edward_burne-jones,_la_principessa_dormiente,_serie_briar-rose,_1872-74_ca._03.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Edward_burne-jones%2C_la_principessa_dormiente%2C_serie_briar-rose%2C_1872-74_ca._03.jpg/1920px-Edward_burne-jones%2C_la_principessa_dormiente%2C_serie_briar-rose%2C_1872-74_ca._03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Edward_burne-jones%2C_la_principessa_dormiente%2C_serie_briar-rose%2C_1872-74_ca._03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1567
+  },
+  {
+   "file": "cache/lovers/cand/wc-1893044.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Leighton, The Painter's Honeymoon",
+   "id": "wc-1893044",
+   "source": "commons",
+   "title": "Leighton The Painter-s Honeymoon 1864",
+   "creator": "Frederic Leighton",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Leighton_The_Painter-s_Honeymoon_1864.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Leighton_The_Painter-s_Honeymoon_1864.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Leighton_The_Painter-s_Honeymoon_1864.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1472,
+   "h": 1600
+  },
+  {
+   "file": "cache/lovers/cand/wc-117992909.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "note": "Strudwick, When Sorrow Comes in Summer Days (a waiting figure)",
+   "id": "wc-117992909",
+   "source": "commons",
+   "title": "2021 CKS 20111 0003 000(john melhuish strudwick when sorrow comes in summer days122213)",
+   "creator": "JOHN MELHUISH STRUDWICK",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:2021_CKS_20111_0003_000(john_melhuish_strudwick_when_sorrow_comes_in_summer_days122213).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/2021_CKS_20111_0003_000%28john_melhuish_strudwick_when_sorrow_comes_in_summer_days122213%29.jpg/1920px-2021_CKS_20111_0003_000%28john_melhuish_strudwick_when_sorrow_comes_in_summer_days122213%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/2021_CKS_20111_0003_000%28john_melhuish_strudwick_when_sorrow_comes_in_summer_days122213%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1453,
+   "h": 2400,
+   "tone": 0.55
   }
  ]
 }

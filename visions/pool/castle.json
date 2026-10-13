@@ -16,7 +16,8 @@
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Johan_Christian_Dahl_-_Kronborg_Castle_in_Moonlight_-_NG.M.00208_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/1920px-Johan_Christian_Dahl_-_Kronborg_Castle_in_Moonlight_-_NG.M.00208_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Johan_Christian_Dahl_-_Kronborg_Castle_in_Moonlight_-_NG.M.00208_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
-   "h": 1384
+   "h": 1384,
+   "pin": true
   },
   {
    "file": "cache/castle/cand/wc-13318327.jpg",
@@ -216,7 +217,8 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Schinkel%2C_Karl_Friedrich_-_Mittelalterliche_Stadt_an_einem_Flu%C3%9F_-_Alte_Nationalgalerie_NG6a-91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Schinkel%2C_Karl_Friedrich_-_Mittelalterliche_Stadt_an_einem_Flu%C3%9F_-_Alte_Nationalgalerie_NG6a-91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1654,
-   "h": 1105
+   "h": 1105,
+   "pin": true
   },
   {
    "file": "cache/castle/cand/wc-24216347.jpg",
@@ -741,6 +743,25 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Malbork_%2884000391%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
    "h": 1080
+  },
+  {
+   "file": "cache/castle/cand/met-436455.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "zoom": 1.06,
+   "tone": 0.25,
+   "note": "Gericault, landscape with aqueduct at dusk (gold outlier)",
+   "id": "met-436455",
+   "source": "met",
+   "title": "Evening: Landscape with an Aqueduct",
+   "creator": "Théodore Géricault",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436455",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2138.jpg",
+   "w": 2104,
+   "h": 2400
   }
  ]
 }

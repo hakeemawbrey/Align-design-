@@ -1,24 +1,6 @@
 {
  "images": [
   {
-   "file": "cache/knight/cand/wc-29661224.jpg",
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "note": "Burne-Jones, The Merciful Knight",
-   "id": "wc-29661224",
-   "source": "commons",
-   "title": "Edward Burne-Jones - The Merciful Knight - Google Art Project",
-   "creator": "Edward Burne-Jones",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Edward_Burne-Jones_-_The_Merciful_Knight_-_Google_Art_Project.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Edward_Burne-Jones_-_The_Merciful_Knight_-_Google_Art_Project.jpg/1920px-Edward_Burne-Jones_-_The_Merciful_Knight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Edward_Burne-Jones_-_The_Merciful_Knight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1607,
-   "h": 2400
-  },
-  {
    "file": "cache/knight/cand/wc-4854556.jpg",
    "focus": [
     0.4,
@@ -62,7 +44,6 @@
     0.4,
     0.5
    ],
-   "pin": true,
    "note": "Pettie, The Vigil",
    "id": "wc-91872651",
    "source": "commons",
@@ -91,7 +72,8 @@
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg/1920px-Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Gustave_Moreau_-_Saint-Georges_et_le_dragon_%28c.1889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1623,
-   "h": 2400
+   "h": 2400,
+   "pin": true
   },
   {
    "file": "cache/knight/cand/wc-184700315.jpg",
@@ -344,7 +326,8 @@
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Akseli_Gallen-Kallela_-_Kullervo_Sets_Off_for_War_%28tempera%29.jpg/1920px-Akseli_Gallen-Kallela_-_Kullervo_Sets_Off_for_War_%28tempera%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Akseli_Gallen-Kallela_-_Kullervo_Sets_Off_for_War_%28tempera%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1920,
-   "h": 1304
+   "h": 1304,
+   "pin": true
   },
   {
    "file": "cache/knight/cand/wc-215483.jpg",
@@ -416,24 +399,6 @@
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Valkyrie_%28Peter_Nicolai_Arbo%29_-_Nationalmuseum_-_18255.tif/lossy-page1-1920px-Valkyrie_%28Peter_Nicolai_Arbo%29_-_Nationalmuseum_-_18255.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Valkyrie_%28Peter_Nicolai_Arbo%29_-_Nationalmuseum_-_18255.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 1801,
-   "h": 2400
-  },
-  {
-   "file": "cache/knight/cand/wc-199964375.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ],
-   "note": "Armour of Francis I on barded horse",
-   "id": "wc-199964375",
-   "source": "commons",
-   "title": "Armour of Francis I atop Horse Barding of Ferdinand I, Musée de l'Armée, Paris",
-   "creator": "Julian Lupyan",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Armour_of_Francis_I_atop_Horse_Barding_of_Ferdinand_I,_Mus%C3%A9e_de_l%27Arm%C3%A9e,_Paris.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Armour_of_Francis_I_atop_Horse_Barding_of_Ferdinand_I%2C_Mus%C3%A9e_de_l%27Arm%C3%A9e%2C_Paris.jpg/1920px-Armour_of_Francis_I_atop_Horse_Barding_of_Ferdinand_I%2C_Mus%C3%A9e_de_l%27Arm%C3%A9e%2C_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Armour_of_Francis_I_atop_Horse_Barding_of_Ferdinand_I%2C_Mus%C3%A9e_de_l%27Arm%C3%A9e%2C_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1686,
    "h": 2400
   },
   {
@@ -546,25 +511,6 @@
    "h": 2340
   },
   {
-   "file": "cache/knight/cand/wc-120829043.jpg",
-   "focus": [
-    0.5,
-    0.35
-   ],
-   "zoom": 1.2,
-   "note": "Knight in armour, St George",
-   "id": "wc-120829043",
-   "source": "commons",
-   "title": "Knight in Armour – Saint George () - MNK XII-224 (168405)",
-   "creator": "Unknown authorUnknown author",
-   "license": "Public domain",
-   "landing": "https://commons.wikimedia.org/wiki/File:Knight_in_Armour_%E2%80%93_Saint_George_()_-_MNK_XII-224_(168405).jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Knight_in_Armour_%E2%80%93_Saint_George_%28%29_-_MNK_XII-224_%28168405%29.jpg/1920px-Knight_in_Armour_%E2%80%93_Saint_George_%28%29_-_MNK_XII-224_%28168405%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Knight_in_Armour_%E2%80%93_Saint_George_%28%29_-_MNK_XII-224_%28168405%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1848,
-   "h": 2400
-  },
-  {
    "file": "cache/knight/cand/wc-73558532.jpg",
    "focus": [
     0.5,
@@ -618,7 +564,8 @@
    "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/King_Arthur_Sir_Bedivere_throwing_Excalibur_into_the_lake_by_Walter_Crane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
    "w": 743,
    "h": 1024,
-   "zoom": 1.06
+   "zoom": 1.06,
+   "pin": true
   },
   {
    "file": "cache/knight/cand/wc-82759823.jpg",

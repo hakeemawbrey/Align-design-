@@ -35,7 +35,6 @@
     0.55,
     0.5
    ],
-   "pin": true,
    "note": "Van Gogh, The Starry Night"
   },
   {
@@ -54,7 +53,8 @@
     0.5,
     0.5
    ],
-   "note": "Van Gogh, Starry Night over the Rhone"
+   "note": "Van Gogh, Starry Night over the Rhone",
+   "pin": true
   },
   {
    "id": "wc-25489279",
@@ -90,7 +90,8 @@
     0.5,
     0.4
    ],
-   "note": "Van Gogh, Road with Cypress and Star"
+   "note": "Van Gogh, Road with Cypress and Star",
+   "pin": true
   },
   {
    "id": "wc-178948354",
@@ -126,7 +127,8 @@
     0.45,
     0.5
    ],
-   "note": "De Morgan, Night and Sleep"
+   "note": "De Morgan, Night and Sleep",
+   "pin": true
   },
   {
    "id": "wc-29660475",
@@ -180,7 +182,8 @@
     0.45,
     0.5
    ],
-   "note": "Church, Aurora Borealis"
+   "note": "Church, Aurora Borealis",
+   "pin": true
   },
   {
    "id": "wc-29840212",

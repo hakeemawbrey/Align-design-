@@ -17,7 +17,8 @@
     0.4
    ],
    "note": "Kittelsen, Forest Troll",
-   "exposure": 0.75
+   "exposure": 0.75,
+   "pin": true
   },
   {
    "id": "wc-811059",
@@ -199,7 +200,8 @@
     0.5,
     0.5
    ],
-   "note": "Arkhip Kuindzhi, 0828Ha. Kuindzhi A.I. Birch Grove, 1879"
+   "note": "Arkhip Kuindzhi, 0828Ha. Kuindzhi A.I. Birch Grove, 1879",
+   "hue": 210
   },
   {
    "id": "met-439333",
@@ -375,7 +377,8 @@
     0.5
    ],
    "tone": 0.4,
-   "note": "Arkhip Kuindzhi, 0847Ha. Kuindzhi A.I. Sunset over a Pine Forest, 1"
+   "note": "Arkhip Kuindzhi, 0847Ha. Kuindzhi A.I. Sunset over a Pine Forest, 1",
+   "pin": true
   },
   {
    "id": "wc-29674202",
@@ -412,7 +415,8 @@
     0.55
    ],
    "zoom": 1.15,
-   "note": "Maxfield Parrish, Maxfield Parrish - Dream Castle in the Sky (1908)"
+   "note": "Maxfield Parrish, Maxfield Parrish - Dream Castle in the Sky (1908)",
+   "pin": true
   },
   {
    "id": "wc-23490458",
@@ -648,6 +652,25 @@
     0.55
    ],
    "note": "Liljefors, Swans in Reeds"
+  },
+  {
+   "file": "cache/forest/cand/wc-64103223.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "tone": 0.25,
+   "note": "Shishkin, evening in a pine forest, gold sky",
+   "id": "wc-64103223",
+   "source": "commons",
+   "title": "Вечер (Шишкин)",
+   "creator": "Ivan Shishkin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B5%D1%87%D0%B5%D1%80_(%D0%A8%D0%B8%D1%88%D0%BA%D0%B8%D0%BD).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/%D0%92%D0%B5%D1%87%D0%B5%D1%80_%28%D0%A8%D0%B8%D1%88%D0%BA%D0%B8%D0%BD%29.jpg/1920px-%D0%92%D0%B5%D1%87%D0%B5%D1%80_%28%D0%A8%D0%B8%D1%88%D0%BA%D0%B8%D0%BD%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/%D0%92%D0%B5%D1%87%D0%B5%D1%80_%28%D0%A8%D0%B8%D1%88%D0%BA%D0%B8%D0%BD%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 954
   }
  ]
 }

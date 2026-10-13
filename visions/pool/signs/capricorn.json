@@ -127,23 +127,6 @@
    "note": "lone climber on a peak under the Milky Way"
   },
   {
-   "id": "aic-60755",
-   "source": "aic",
-   "title": "Landscape with the Ruins of the Castle of Egmond",
-   "creator": "Jacob van Ruisdael (Dutch, 1628/29-1682)",
-   "license": "public domain",
-   "landing": "https://www.artic.edu/artworks/60755",
-   "url": "https://www.artic.edu/iiif/2/12086520-2e48-cc75-df86-916bb801e61f/full/1686,/0/default.jpg",
-   "w": 1686,
-   "h": 1291,
-   "file": "cache/signs/capricorn/aic-60755.jpg",
-   "focus": [
-    0.45,
-    0.45
-   ],
-   "note": "Ruisdael, ruined tower in storm"
-  },
-  {
    "id": "nasa-PIA14924",
    "source": "nasa",
    "title": "A Ring of Color",

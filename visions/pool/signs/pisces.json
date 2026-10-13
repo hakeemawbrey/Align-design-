@@ -179,23 +179,6 @@
     0.4
    ],
    "note": "flower hat jellyfish glowing on black"
-  },
-  {
-   "id": "met-11981",
-   "source": "met",
-   "title": "The Toilers of the Sea",
-   "creator": "Albert Pinkham Ryder",
-   "license": "public domain (CC0)",
-   "landing": "https://www.metmuseum.org/art/collection/search/11981",
-   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT228023.jpg",
-   "w": 2600,
-   "h": 2460,
-   "file": "cache/signs/pisces/met-11981.jpg",
-   "focus": [
-    0.4,
-    0.45
-   ],
-   "note": "Ryder, Toilers of the Sea, boat under the moon"
   }
  ]
 }
