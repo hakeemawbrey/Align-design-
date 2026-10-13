@@ -50,21 +50,24 @@ STYLE = {
     "tag_alpha_end": 0.9,     # a little brighter under the wordmark
     "end": 1.5,               # seconds of wordmark at the end
     # the grade (see grade()): exposure targets measured off the reference frames
-    "median": 0.22,           # median luminance after levels
+    "median": 0.23,           # median luminance after levels
     "tone": 0.40,             # pull toward the moonlit blue ramp
-    "saturation": 2.8,
+    "ramp_hue": 211,          # its hue for near-grey pictures (ref pixels: 26% at 180-210, 43% at 210-240)
+    "saturation": 2.4,
     "vib_cap": 0.9,           # chroma above which the saturation boost fades out
-    "black_lift": 0.05,
+    "black_lift": 0.06,
     "lift_tint": [1.0, 0.8, 1.3],  # ref shadows are violet-neutral (13,12,18), not navy
-    "contrast": 0.35,
+    "contrast": 0.25,
     "bloom": 0.30,
     "hold": 0.5,              # how much bright, coloured light keeps its own colour
     "knee": 0.25,             # highlight shoulder: ref p90 luminance 0.53, p99 0.87
     "knee_slope": 0.4,
     "white": 0.95,
     "guard": 0.35,            # pull highlights down behind the statement (0 = off)
+    "guard_fade": 0.16,       # its soft edge / window side (0.08 left a visible stripe on bright skies)
     "local": 0.35,            # local contrast (large-radius unsharp on luminance)
     "chroma_cap": 0.62,       # max chroma after the boost
+    "pink": 0.55,             # chroma cut for magentas and pinks (ref has 1% of its colour there)
     "warm_cap": 0.30,         # max chroma for reds/oranges before the boost
     "vignette": 0.32,
 }
@@ -76,6 +79,15 @@ RAMP = np.array([
     [0.40, 0.160, 0.330, 0.600],
     [0.70, 0.500, 0.690, 0.930],
     [1.00, 0.880, 0.970, 1.000],
+], np.float32)
+RAMP_HUE = 217.0              # hue of the ramp's mids
+
+# each picture's own hue -> the hue its ramp turns to: greens and cyans go teal, browns,
+# reds and purples go violet, so a reel spreads from teal to violet like the reference
+# (its pictures sit at 197-251 degrees, with one violet and one green-gold outlier)
+HUE_MAP = np.array([
+    [0, 232], [35, 227], [65, 214], [100, 202], [150, 197], [195, 198],
+    [220, 206], [250, 226], [290, 238], [330, 234], [360, 232],
 ], np.float32)
 
 
@@ -99,10 +111,27 @@ def ensure_file(item):
 
 # ---------------------------------------------------------------- the grade
 
-def ramp(l):
+def hue_of(a, w):
+    """Weighted circular mean hue (degrees) of RGB pixels."""
+    h = np.arctan2(np.sqrt(3) * (a[..., 1] - a[..., 2]), 2 * a[..., 0] - a[..., 1] - a[..., 2])
+    return math.degrees(math.atan2(float((np.sin(h) * w).sum()), float((np.cos(h) * w).sum()))) % 360
+
+
+def turn(rgb, deg):
+    """Rotate colours round the grey axis by deg (+ is toward violet), keeping their luminance."""
+    t = math.radians(deg)
+    c, s, k, q = math.cos(t), math.sin(t), (1 - math.cos(t)) / 3, math.sqrt(1 / 3) * math.sin(t)
+    m = np.array([[c + k, k - q, k + q], [k + q, c + k, k - q], [k - q, k + q, c + k]], np.float32)
+    W = np.array([0.299, 0.587, 0.114], np.float32)
+    out = np.clip(rgb @ m.T, 0, 1)
+    return np.clip(out * ((rgb @ W) / np.maximum(out @ W, 1e-4))[..., None], 0, 1)
+
+
+def ramp(l, deg=0.0):
+    stops = turn(RAMP[:, 1:], deg) if deg else RAMP[:, 1:]
     out = np.empty(l.shape + (3,), np.float32)
     for c in range(3):
-        out[..., c] = np.interp(l, RAMP[:, 0], RAMP[:, c + 1])
+        out[..., c] = np.interp(l, RAMP[:, 0], stops[:, c])
     return out
 
 
@@ -130,8 +159,9 @@ def fit_square(im, S, focus=(0.5, 0.5), zoom=1.0):
 def grade(im, S, item=None):
     """Turn an old painting or photo into the reference's look: night-blue, saturated,
     mid-dark with bright light sources, lifted blue blacks and a bloom on highlights.
-    Per image: "tone" (0-1) overrides how much of the blue ramp it gets, "exposure"
-    nudges brightness (e.g. 1.15 or 0.85)."""
+    Per image: "tone" (0-1) overrides how much of the blue ramp it gets, "hue" (degrees,
+    e.g. 200 teal, 240 violet) which way the ramp leans, "exposure" nudges brightness
+    (e.g. 1.15 or 0.85)."""
     item = item or {}
     im = fit_square(im, S, tuple(item.get("focus", (0.5, 0.5))), item.get("zoom", 1.0))
     a = np.asarray(im, np.float32) / 255
@@ -163,12 +193,18 @@ def grade(im, S, item=None):
     cool = float((a[..., 2] - a[..., 0]).mean())
     auto = STYLE["tone"] - cool * 1.6 + 0.2 * np.clip((day - 0.42) / 0.25, 0, 1)
     k = item.get("tone", float(np.clip(auto, 0.18, 0.66)))
+    # the ramp leans toward the picture's own hue (teal for green, violet for brown and red);
+    # near-grey pictures barely carry a hue, so they stay on the plain moonlight blue
+    chroma = a.max(2) - a.min(2)
+    own = hue_of(a, chroma)
+    lean = float(np.clip((chroma.mean() - 0.04) / 0.12, 0, 1))
+    base = STYLE["ramp_hue"]
+    target = item.get("hue", base + lean * (float(np.interp(own, HUE_MAP[:, 0], HUE_MAP[:, 1])) - base))
     # the ramp works on shadows and mids; light sources (lamps, moons, skin in candlelight)
     # keep some of their own colour, the way the reference keeps its orange skies
-    chroma = a.max(2) - a.min(2)
     spare = 0.55 * np.clip((l - 0.55) / 0.45, 0, 1) * np.clip((chroma - 0.12) / 0.2, 0, 1)
     kk = k * (1 - STYLE.get("hold", 1.0) * spare) * (1 - 0.35 * skin)
-    a = a * (1 - kk[..., None]) + ramp(l) * kk[..., None]
+    a = a * (1 - kk[..., None]) + ramp(l, target - RAMP_HUE) * kk[..., None]
     # daylight skies: a bright, cool top of frame reads as day; pull it down toward night
     if day > 0.42:
         rows = np.linspace(1, 0, S, dtype=np.float32)[:, None] ** 1.5
@@ -182,9 +218,12 @@ def grade(im, S, item=None):
     chroma = a.max(2) - a.min(2)
     sat = 1 + (STYLE["saturation"] - 1) * np.clip(1 - chroma / STYLE.get("vib_cap", 0.42), 0, 1)
     a = l[..., None] + (a - l[..., None]) * sat[..., None]
-    # cap chroma: no neon greens, acid limes or hard royal blues
+    # cap chroma: no neon greens, acid limes or hard royal blues; pinks and magentas (red
+    # cloth under the blue ramp) are cut back, the reference has almost none
     chroma = a.max(2) - a.min(2)
-    cap = np.minimum(1, STYLE["chroma_cap"] / (chroma + 1e-4))
+    pink = np.clip(1 - np.abs((np.degrees(np.arctan2(np.sqrt(3) * (a[..., 1] - a[..., 2]),
+                                                     2 * a[..., 0] - a[..., 1] - a[..., 2])) % 360) - 325) / 45, 0, 1)
+    cap = np.minimum(1, STYLE["chroma_cap"] / (chroma + 1e-4)) * (1 - STYLE["pink"] * pink)
     a = l[..., None] + (a - l[..., None]) * cap[..., None]
     a = np.clip(a, 0, 1)
     # bloom: blurred highlights screened back
@@ -369,7 +408,7 @@ def plan_length(text):
 
 def choose_images(moods, sign, n, rng):
     """Draw n distinct images across the line's mood pools (first mood weighs most),
-    plus the sign's own pool for sign lines. A few of each pool's pins lead."""
+    plus the sign's own pool for sign lines. One of each pool's pins leads."""
     weights = [0.5, 0.3, 0.2][: len(moods)]
     pools = [(m, load_pool(m)) for m in moods]
     if sign:
@@ -383,7 +422,7 @@ def choose_images(moods, sign, n, rng):
     picked, seen = [], set()
     for m, p, _ in pools:
         order = [int(i) for i in rng.permutation(len(p))]
-        pins = [i for i in order if p[i].get("pin")][: max(1, want[m] // 3)]  # a few pins, not all of them
+        pins = [i for i in order if p[i].get("pin")][:1]  # one pin per pool, or the same few open every reel
         order = pins + [i for i in order if i not in pins]
         k = 0
         for i in order:
@@ -396,6 +435,16 @@ def choose_images(moods, sign, n, rng):
             k += 1
     rng.shuffle(picked)
     return picked[:n]
+
+
+def pop(shot):
+    """How hard a graded picture grabs at thumbnail size: a bright, coloured top third (moon,
+    lit castle, sky) against the picture's own mid-tone, the way the reference opens. Dark
+    tops (interiors, night seas with a low moon) score low."""
+    W = np.array([0.299, 0.587, 0.114], np.float32)
+    a = shot.astype(np.float32) / 255
+    top = a[: len(a) * 3 // 10]
+    return float(np.percentile(top @ W, 97) - np.median(a[::4, ::4] @ W) + 0.5 * (top.max(2) - top.min(2)).mean())
 
 
 def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, silent=False, n_imgs=12):
@@ -415,8 +464,12 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
             used.append(it)
         except OSError as e:
             print(f"  skip {it.get('id')}: {e}")
-    first = next((j for j, it in enumerate(used) if it.get("pin")), 0)
-    shots.insert(0, shots.pop(first)); used.insert(0, used.pop(first))  # open on a pinned picture
+    # open on a picture that stops a scroll (it is also the default cover): one of the four that
+    # grab hardest, pins first, never a sign-pool photo; drawn, so one famous painting can't open every reel
+    photos = {it["id"] for it in load_pool(f"signs/{line['sign']}")} if line.get("sign") else set()
+    score = [pop(s) + 0.15 * bool(it.get("pin")) - 9 * (it["id"] in photos) for s, it in zip(shots, used)]
+    first = int(rng.choice(np.argsort(score)[::-1][:4]))
+    shots.insert(0, shots.pop(first)); used.insert(0, used.pop(first))
     seq = [k % len(shots) for k in range(n_shots)]  # the reference loops one fixed order
 
     txt, lines = text_layer(line["text"], W, H)
@@ -426,7 +479,8 @@ def render(line, seed=0, preview=False, out=None, audio=None, audio_start=0.0, s
     a_txt = txt[y0:y0 + S, :, 3].max(1)
     rows = np.where(a_txt > 0.5)[0]
     c, half = (rows.min() + rows.max()) / 2, (rows.max() - rows.min()) / 2 + S * 0.04
-    guard = STYLE.get("guard", 0) * np.clip(1 - (np.abs(np.arange(S) - c) - half) / (S * 0.08), 0, 1) ** 2
+    g = np.clip(1 - (np.abs(np.arange(S) - c) - half) / (S * STYLE["guard_fade"]), 0, 1)
+    guard = STYLE.get("guard", 0) * g * g * (3 - 2 * g)  # smoothstep: no visible band edge
 
     out = out or os.path.join(HERE, "out", f"{line['id']}-s{seed}{'-preview' if preview else ''}.mp4")
     os.makedirs(os.path.dirname(out), exist_ok=True)
