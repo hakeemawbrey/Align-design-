@@ -82,6 +82,8 @@ def main():
     ap.add_argument("out")
     ap.add_argument("files", nargs="*")
     ap.add_argument("--last", type=int)
+    ap.add_argument("--title", help="page title (default Align Visions)")
+    ap.add_argument("--by-sign", action="store_true", help="filter by sign instead of theme")
     a = ap.parse_args()
     files = a.files
     if a.last:
@@ -94,26 +96,30 @@ def main():
         lid, seed = base.rsplit("-s", 1)
         ln = lines.get(lid, {"text": lid, "theme": "align"})
         th = ln.get("theme", "align")
+        if a.by_sign and ln.get("sign"):
+            th = ln["sign"]
         themes.append(th)
         vid, poster = web_copy(f, a.out)
         cap = open(f.replace(".mp4", ".txt")).read() if os.path.exists(f.replace(".mp4", ".txt")) else ""
-        label = LABELS.get(th, th) if th != "sign" else (ln.get("sign") or "").title()
+        label = LABELS.get(th, th.title()) if th != "sign" else (ln.get("sign") or "").title()
         cards.append(f"""<article class="reel" data-theme="{th}">
   <div class="frame"><video src="{vid}" poster="{poster}" controls playsinline muted loop preload="none" aria-label="{html.escape(ln['text'])}"></video></div>
   <div class="meta">{html.escape(label)} · seed {seed}</div>
   <p class="line">{html.escape(ln['text'])}</p>
   <details><summary>Caption and credits</summary><pre>{html.escape(cap)}</pre></details>
 </article>""")
-    present = [t for t in LABELS if t in themes]
-    filt = "".join(f'<button type="button" data-f="{t}" aria-pressed="false">{LABELS[t]}</button>' for t in present)
-    page = f"""<title>Align Visions</title>
+    present = list(dict.fromkeys(themes)) if a.by_sign else [t for t in LABELS if t in themes]
+    filt = "".join(f'<button type="button" data-f="{t}" aria-pressed="false">{LABELS.get(t, t.title())}</button>'
+                   for t in present)
+    title = a.title or "Align Visions"
+    page = f"""<title>{html.escape(title)}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,700&family=Sofia+Sans+Condensed:wght@400;700&display=swap">
 <style>{CSS}</style>
 <main>
   <header>
     <div class="meta">Align · {len(cards)} reels · 1080×1920 · 24 fps</div>
-    <h1>Align Visions</h1>
+    <h1>{html.escape(title)}</h1>
     <p class="lede">An endless reel maker in the moonlit dark-fantasy format: a square of night paintings cutting every quarter second under one line about love, spirit, alignment or the stars, then the Align wordmark. Every line can be re-rolled forever with new pictures, order and music.</p>
   </header>
   <nav class="filters" aria-label="Filter by theme"><button type="button" data-f="all" aria-pressed="true">All</button>{filt}</nav>

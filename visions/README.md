@@ -54,7 +54,8 @@ shows the wordmark.
   `python3 tools/sheet.py cand <mood>`, add picks to `pool/<mood>.json`
   following `CURATE.md`. A new mood is just a new pool file.
 - **Gallery:** `python3 tools/gallery.py site --last 24` builds a phone-friendly
-  page of the newest reels with web-size copies.
+  page of the newest reels with web-size copies. Add `--by-sign --title "Align Visions Signs"`
+  and a list of files for a page filtered by sign.
 
 ## Credits
 
