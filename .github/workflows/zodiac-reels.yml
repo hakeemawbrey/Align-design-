@@ -15,6 +15,10 @@ on:
         description: "Seed (blank = derived from the date)"
         required: false
 
+env:
+  # set both as repo secrets to have each reel land in Drive (see reels/tools/drive_upload.py)
+  GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -46,6 +50,15 @@ jobs:
       - name: Render
         working-directory: reels
         run: python3 render.py ${{ steps.pick.outputs.sign }} --seed ${{ steps.pick.outputs.seed }}
+      - name: Upload to Google Drive
+        if: ${{ env.GDRIVE_SA_JSON != '' }}
+        working-directory: reels
+        env:
+          GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: |
+          pip install google-auth requests
+          python3 tools/drive_upload.py out/
       - uses: actions/upload-artifact@v4
         with:
           name: reel-${{ steps.pick.outputs.sign }}-s${{ steps.pick.outputs.seed }}
