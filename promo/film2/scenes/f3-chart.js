@@ -4,8 +4,10 @@
 // the frame height, left of centre (body centre x≈700) — name, RARE PULL chip and the veiled photo window always in
 // frame. Sun / element / Moon badges glow in, the bio line catches the light, the dealbreakers re-type themselves,
 // while the photo window stays a breathing, shimmering aura veil — never a face. "Chart first." … "Face last." lands
-// as the camera settles on the veil, with a small gold lock glint on the window. Text leaves, then the card shrinks
-// (inOutCubic, 0.7s, hi-res DOM the whole way) into its slot in f4's constellation: HANDOFF (body 150px at 960, 430).
+// as the camera settles on the veil, with a small gold lock glint on the window and a "PHOTO HIDDEN UNTIL YOU BOTH
+// ALIGN" lock chip (from 8.95). "Face last." holds to 10.45 while the card shrinks (inOutCubic 10.15–10.75, hi-res DOM)
+// into its slot in f4's constellation: HANDOFF (body 220px at 960, 430). The plate starts dimming at 10.4 (plateDim,
+// shared with f4) and the grain rises to compensate (grainOpacity).
 //
 // SHARED SKY SPINE (used by f4–f8 — keep these exports stable):
 //   getSky()                       → cached layers { neb, far, mid, near, spriteS, spriteG, bright, vig, grain }
@@ -13,6 +15,8 @@
 //   drawSky(ctx, t, { pan, moon, dim }) paints the opaque sky (dim scales the nebula plate, e.g. 0.35 under cards)
 //   drawGrain(ctx, t)              → a fresh clumped silver grain frame (use on a canvas, mix-blend overlay, opacity 0.5)
 //   GRAIN_OPACITY                  → 0.5, the agreed grain-canvas opacity for every scene
+//   grainOpacity(dim)              → GRAIN_OPACITY/sqrt(dim), capped 0.8 (grain reads the same on a dimmed plate)
+//   plateDim(t)                    → the f3→f4 nebula dim (1 → DIM_MIN, gentle, 10.4–11.6)
 //   skyPan(cx, cy)                 → the parallax pan f3 applies for a card centred at (cx, cy) (f4 continues it)
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, C, PIXEL_PALETTE, TypeLine } from '../../src/lib.js'
 import { W, H, A, SERIF, MONO, SANS, fill, img } from '../../src/scenes/common.js'
@@ -21,6 +25,11 @@ import * as F2 from './f2-flip.js'
 
 export const F3 = { start: 6.5, end: 10.8 }
 export const GRAIN_OPACITY = 0.5
+/** grain-canvas opacity for a plate dimmed to `dim` — keeps the grain reading the same as on the full plate */
+export const grainOpacity = (dim = 1) => Math.min(0.8, GRAIN_OPACITY / Math.sqrt(Math.max(0.05, dim)))
+/** the nebula dim under f4's card sea: starts at 10.4 (still in f3), eases gently to DIM_MIN by 11.6 */
+export const DIM_MIN = 0.6
+export const plateDim = t => lerp(1, DIM_MIN, 0.5 - 0.5 * Math.cos(Math.PI * prog(t, 10.4, 11.6)))
 // ── card geometry (card-profile-*.png px). Body box [120,114,1374,2116] → centre (747,1115), width 1254, height 2002.
 export const PNG = { w: 1496, h: 2238, cx: 747, cy: 1115, bw: 1254, bh: 2002 }
 const WIN = [218, 342, 1292, 914]       // photo window (aura veil)
@@ -32,9 +41,9 @@ function f2End() {
   e = e || { cx: 960, cy: 470, bodyW: 520 }
   return { cx: e.cx, cy: e.cy, h: e.bodyH || e.bodyW * PNG.bh / PNG.bw }
 }
-/** f4 picks Juniper up here: body height 150 centred at (960, 430), flat, at t = 10.75 */
-export const HANDOFF = { t: 10.75, cx: 960, cy: 430, bodyH: 150 }
-const SHRINK = { a: 10.05, b: HANDOFF.t }
+/** f4 picks Juniper up here: body height 220 centred at (960, 430), flat, at t = 10.75 */
+export const HANDOFF = { t: 10.75, cx: 960, cy: 430, bodyH: 220 }
+const SHRINK = { a: 10.15, b: HANDOFF.t }
 // camera keys: [t, cx, cy, bodyH(screen px), yawDeg]  (whole card in frame: body ≤ 905px tall, top ≥ 90px)
 let CAM = null
 function camKeys() {
@@ -81,8 +90,8 @@ const B = {
   eyebrow: 7.12, chart: 7.28,
   sun: 7.5, air: 7.64, moon: 7.8,
   bio: 8.05, dbLabel: 8.22, dbType: 8.3,
-  face: 9.02, lock: 9.42, noPhoto: 9.55,
-  textOut: 9.72,
+  face: 9.02, chip: 8.95, lock: 9.42, noPhoto: 9.55,
+  textOut: 10.45,
 }
 const DB_TEXT = 'One-word texts. Refusing to talk it out the same night.\nHating my group chats.'
 const DB_PER = 0.0095
@@ -348,14 +357,25 @@ export default function build(stage) {
   const card = el('div', { position: 'absolute', left: 0, top: 0, width: PNG.w + 'px', height: PNG.h + 'px', transformOrigin: '0 0' }, root)
   img(card, A + 'card-profile-3.png', { left: 0, top: 0, width: PNG.w + 'px', height: PNG.h + 'px' })
   // breathing aura veil: additive light that drifts and swells inside the photo window (the arch stays an aura)
-  const win = el('div', { position: 'absolute', left: WIN[0] + 'px', top: WIN[1] + 'px', width: (WIN[2] - WIN[0]) + 'px', height: (WIN[3] - WIN[1]) + 'px', borderRadius: '40px', overflow: 'hidden', mixBlendMode: 'screen' }, card)
+  const win = el('div', { position: 'absolute', left: WIN[0] + 'px', top: WIN[1] + 'px', width: (WIN[2] - WIN[0]) + 'px', height: (WIN[3] - WIN[1]) + 'px', borderRadius: '40px', overflow: 'hidden', mixBlendMode: 'screen',
+    maskImage: 'linear-gradient(180deg, #000 0, #000 420px, rgba(0,0,0,0) 495px)', WebkitMaskImage: 'linear-gradient(180deg, #000 0, #000 420px, rgba(0,0,0,0) 495px)' }, card)
   const blobs = [
     ['232,98,138', 520, 0.0], ['154,123,224', 600, 2.1], ['180,92,255', 460, 4.2], ['120,140,255', 420, 1.1],
   ].map(([c, s, ph]) => ({ ph, s, e: el('div', { position: 'absolute', left: 0, top: 0, width: s + 'px', height: s + 'px', borderRadius: '50%', background: `radial-gradient(closest-side, rgba(${c},0.55), rgba(${c},0.18) 55%, rgba(${c},0) 100%)` }, win) }))
   const arch = el('div', { position: 'absolute', left: '50%', top: '18%', width: '560px', height: '760px', marginLeft: '-280px', borderRadius: '280px 280px 0 0', background: 'radial-gradient(60% 55% at 50% 40%, rgba(255,226,250,0.28), rgba(200,150,255,0.12) 55%, rgba(200,150,255,0) 80%)', transformOrigin: '50% 100%' }, win)
-  // "NO PHOTO UNTIL YOU BOTH ALIGN": a light sweep along the printed line
-  const noPh = el('div', { position: 'absolute', left: (WIN[0] + 10) + 'px', top: '852px', width: '760px', height: '44px', overflow: 'hidden', mixBlendMode: 'screen', opacity: 0 }, card)
-  const noPhBand = el('div', { position: 'absolute', top: 0, left: 0, width: '260px', height: '100%', background: 'linear-gradient(90deg, rgba(242,199,92,0), rgba(255,236,205,0.85), rgba(242,199,92,0))' }, noPh)
+  // lock chip (bottom-left of the window, over the printed line): proof that the face is locked away.
+  // PNG px — the card is ~0.44 scale here, so 54px type ≈ 24px on screen.
+  const CHIP = { l: WIN[0] + 26, b: WIN[3] - 20 }
+  const chip = el('div', { position: 'absolute', left: CHIP.l + 'px', bottom: (PNG.h - CHIP.b) + 'px', display: 'flex', alignItems: 'center', gap: '30px',
+    padding: '24px 40px 24px 34px', borderRadius: '44px', background: 'rgba(11,6,32,0.6)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
+    boxShadow: '0 0 0 2px rgba(239,230,214,0.18)', opacity: 0, overflow: 'hidden' }, card)
+  const lockIc = el('div', { position: 'relative', width: '46px', height: '62px', flex: '0 0 auto', opacity: 0.85 }, chip)
+  el('div', { position: 'absolute', left: '8px', top: '0', width: '30px', height: '34px', border: '7px solid #efe6d6', borderBottom: 'none', borderRadius: '18px 18px 0 0', boxSizing: 'border-box' }, lockIc)
+  el('div', { position: 'absolute', left: '0', top: '28px', width: '46px', height: '34px', borderRadius: '6px', background: '#efe6d6' }, lockIc)
+  el('div', { fontFamily: MONO, fontSize: '54px', lineHeight: '1.28', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(239,230,214,0.85)', whiteSpace: 'nowrap' }, chip, 'Photo hidden<br>until you both align')
+  // a light sweep across the chip as the lock glints
+  const noPh = el('div', { position: 'absolute', left: 0, top: 0, width: '100%', height: '100%', overflow: 'hidden', mixBlendMode: 'screen', opacity: 0 }, chip)
+  const noPhBand = el('div', { position: 'absolute', top: 0, left: 0, width: '260px', height: '100%', background: 'linear-gradient(90deg, rgba(242,199,92,0), rgba(255,236,205,0.55), rgba(242,199,92,0))' }, noPh)
 
   // badges: glow rings over LIBRA · AIR · GEMINI MOON (row 946–1030)
   const BADGES = [
@@ -366,8 +386,9 @@ export default function build(stage) {
     ring: el('div', { position: 'absolute', left: b.x0 + 'px', top: '940px', width: (b.x1 - b.x0) + 'px', height: '96px', borderRadius: b.round, boxShadow: `0 0 0 3px rgba(${b.col},0.95), 0 0 34px 8px rgba(${b.col},0.55), inset 0 0 26px rgba(${b.col},0.4)`, opacity: 0, transformOrigin: '50% 50%' }, card),
   }))
   // bio: a warm light sweep across the two printed lines
-  const bio = el('div', { position: 'absolute', left: '236px', top: '1058px', width: '990px', height: '144px', overflow: 'hidden', mixBlendMode: 'screen', opacity: 0 }, card)
-  const bioBand = el('div', { position: 'absolute', top: 0, left: 0, width: '420px', height: '100%', background: 'linear-gradient(90deg, rgba(242,199,92,0), rgba(255,226,236,0.55) 50%, rgba(242,199,92,0))' }, bio)
+  const bio = el('div', { position: 'absolute', left: '236px', top: '1058px', width: '990px', height: '144px', overflow: 'hidden', mixBlendMode: 'screen', opacity: 0,
+    maskImage: 'linear-gradient(180deg, rgba(0,0,0,0), #000 30%, #000 70%, rgba(0,0,0,0))', WebkitMaskImage: 'linear-gradient(180deg, rgba(0,0,0,0), #000 30%, #000 70%, rgba(0,0,0,0))' }, card)
+  const bioBand = el('div', { position: 'absolute', top: 0, left: 0, width: '420px', height: '100%', background: 'linear-gradient(90deg, rgba(242,199,92,0), rgba(255,226,236,0.42) 50%, rgba(242,199,92,0))' }, bio)
   const bioBar = el('div', { position: 'absolute', left: '214px', top: '1072px', width: '6px', height: '116px', borderRadius: '3px', background: C.gold, boxShadow: '0 0 14px rgba(242,199,92,0.8)', transformOrigin: '50% 0', transform: 'scaleY(0)' }, card)
   // dealbreakers: the printed text is covered with the card's own ink colour, then typed back in
   const dbLabelGlow = el('div', { position: 'absolute', left: '180px', top: '1748px', width: '320px', height: '46px', borderRadius: '8px', background: 'radial-gradient(closest-side, rgba(232,122,160,0.55), rgba(232,122,160,0))', mixBlendMode: 'screen', opacity: 0 }, card)
@@ -404,7 +425,9 @@ export default function build(stage) {
       pose = cardPose(t)
       const { cx, cy, h, yaw, pitch, bob } = pose
       // sky: counter-pan a little against the card move (parallax)
-      drawSky(bx, t, { pan: skyPan(cx, cy) })
+      const dim = plateDim(t)
+      drawSky(bx, t, { pan: skyPan(cx, cy), dim })
+      grainC.style.opacity = String(grainOpacity(dim))
       card.style.transform = `translate(${cx}px, ${cy + bob}px) perspective(2600px) rotateY(${yaw}deg) rotateX(${pitch}deg) scale(${h / PNG.bh}) translate(${-PNG.cx}px, ${-PNG.cy}px)`
 
       // veil breath: always alive, deeper while the camera holds on the window; it calms as the card shrinks away
@@ -425,7 +448,9 @@ export default function build(stage) {
       shim.style.left = `${lerp(-40, 120, ease.inOutQuad(sp))}%`
       const np = prog(t, B.noPhoto, B.noPhoto + 0.7)
       noPh.style.opacity = String(np > 0 && np < 1 ? 1 : 0)
-      noPhBand.style.transform = `translateX(${lerp(-280, 780, ease.inOutQuad(np))}px)`
+      noPhBand.style.transform = `translateX(${lerp(-280, 1000, ease.inOutQuad(np))}px)`
+      // the chip fades in as "Face last." starts, and away during the shrink (f4's canvas card has no chip)
+      chip.style.opacity = String(ease.outQuad(prog(t, B.chip, B.chip + 0.3)) * (1 - ease.inOutQuad(prog(t, 10.3, 10.6))))
       // lock glint: flash on, settle to a faint rim, gone before the shrink
       const lk = prog(t, B.lock, B.lock + 0.6)
       lockRim.style.opacity = String(lk > 0 ? lerp(1, 0.3, ease.outQuad(lk)) * ease.outQuad(prog(t, B.lock, B.lock + 0.06)) * (1 - prog(t, 9.85, 10.1)) : 0)
@@ -461,7 +486,7 @@ export default function build(stage) {
       } else caret.style.opacity = '0'
 
       // copy: all of it is gone before the shrink starts
-      const out = 1 - ease.inQuad(prog(t, B.textOut, B.textOut + 0.28))
+      const out = 1 - ease.inQuad(prog(t, B.textOut, B.textOut + 0.22))
       pocket.style.opacity = String(ease.outQuad(prog(t, 7.0, 7.5)) * out)
       eyebrow.style.opacity = String(ease.outQuad(prog(t, B.eyebrow, B.eyebrow + 0.25)) * out)
       eyebrow.style.transform = `translateY(${(1 - ease.outCubic(prog(t, B.eyebrow, B.eyebrow + 0.4))) * 10}px)`
@@ -469,7 +494,7 @@ export default function build(stage) {
       chart.root.style.opacity = String(out)
       face.update(t - B.face)
       face.root.style.opacity = String(out)
-      const drift = ease.outCubic(prog(t, B.textOut, B.textOut + 0.3)) * -14
+      const drift = ease.outCubic(prog(t, B.textOut, B.textOut + 0.22)) * -14
       chart.root.style.transform = face.root.style.transform = `translateY(${drift}px)`
 
       drawGrain(gx, t)

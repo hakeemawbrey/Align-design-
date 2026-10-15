@@ -1,19 +1,20 @@
-// ─────────────────────────────────────────────── F4 · EVERYONE GETS A CHANCE (10.62–15.3)
-// Picks up f3's card exactly (f3 cardPose(t): hi-res DOM until the card is < 180px tall, then this canvas takes over
-// on the same sky) — Juniper's veiled card lands in the middle of a clean three-row arc of 23 veiled mystery cards
-// (110–150px tall, no faces anywhere) dealt out of her deck. The nebula dims under them for contrast. 2px constellation
-// lines join the cards; "Everyone gets a chance." lights every card in turn (40ms stagger glow pulse); then the cards
-// fold into pixel-star nodes at their centres — the deck has become a constellation. Copy: "No snap judgements." →
-// "Everyone gets a chance."
-// Handoff to f5 (15.0): Juniper (veiled, card-profile-3) and your card (card-sign, Hakeem · Taurus) — your card sits in
-// the arc too — fly out of the constellation onto f5's own entry motion (julPose / youPose imported from f5-stars.js),
-// position AND velocity continuous across the cut; f4 keeps drawing them until 15.3 under f5's fade-in.
+// ─────────────────────────────────────────────── F4 · EVERYONE GETS A CHANCE (10.68–15.3)
+// Picks up f3's card exactly (f3 cardPose(t), same sky pan, same plateDim + grainOpacity) once "Face last." has gone
+// (10.68). Juniper's veiled card (body 220px) sits in the middle of a clean three-row arc of 17 veiled mystery cards
+// (6 · 5 · 6, bodies 180–200px, names on nameplates) dealt out of her deck at full opacity, face-up, with a drop shadow.
+// The nebula dims gently (to 0.6) under them. 2px constellation lines join the cards; "Everyone gets a chance." types
+// while a rim glow + 1→1.1 scale pulse sweeps left→right through every card in step with the letters; then the
+// cards fold into pixel-star nodes at their centres — the deck has become a constellation.
+// Copy: "No snap judgements." (10.85) → "Everyone gets a chance." (12.82)
+// Handoff to f5 (15.0): Juniper (veiled, card-profile-3) and your card (card-sign, Hakeem · Taurus) fly out of the
+// constellation (from 14.2) onto f5's own entry motion (julPose / youPose from f5-stars.js), position AND velocity
+// continuous across the cut; f4 keeps drawing them until 15.3 under f5's fade-in.
 import { clamp, lerp, prog, ease, rng, noise1, el, C, PIXEL_PALETTE, TypeLine } from '../../src/lib.js'
-import { W, H, A, SERIF, fill } from '../../src/scenes/common.js'
-import { getSky, drawSky, drawGrain, drawPixelStar, canvas, HANDOFF, cardPose, skyPan, GRAIN_OPACITY } from './f3-chart.js'
+import { W, H, A, SERIF, MONO, fill } from '../../src/scenes/common.js'
+import { getSky, drawSky, drawGrain, drawPixelStar, canvas, HANDOFF, cardPose, skyPan, GRAIN_OPACITY, plateDim, grainOpacity } from './f3-chart.js'
 import * as F5 from './f5-stars.js'
 
-const T0 = 10.62, T1 = 15.3
+const T0 = 10.68, T1 = 15.3
 // card art: PNG size + opaque body box [l, t, r, b]
 const PROF = { iw: 1496, ih: 2238, b: [120, 114, 1374, 2116] }
 const ART = {
@@ -26,31 +27,35 @@ const ART = {
 const HUE = { p1: 40, p2: -50, p4: 70, p5: -40, p6: 110 }
 const SEA = ['p1', 'p2', 'p4', 'p5', 'p6', 'p1h', 'p2h', 'p4h', 'p5h', 'p6h']   // 'h' = hue-shifted variant (more auras)
 
-// ── the arc: three gently bowed rows (8 · 7 · 8). Juniper = middle row centre (f3's HANDOFF), you = middle row #1.
+// ── the arc: three gently bowed rows (6 · 5 · 6). Juniper = middle row centre (f3's HANDOFF), you = middle row #1.
 const J = { x: HANDOFF.cx, y: HANDOFF.cy, h: HANDOFF.bodyH }
-const ROWS = [{ y: J.y - 210, n: 8, h: 124 }, { y: J.y, n: 7, h: 140 }, { y: J.y + 212, n: 8, h: 132 }]
-const DEAL0 = 10.8, DEAL_STEP = 0.034, FLY = 0.62
-const PULSE0 = 12.95, PULSE_STEP = 0.04, PULSE_LEN = 0.42
-const FOLD0 = 13.72, FOLD_STEP = 0.012, FOLD_LEN = 0.42
-const PAIR = { a: 13.8, b: 15.0 }
-const COPY = { a: 11.15, aOut: 12.5, b: 12.8, out: 14.35 }
-const LINE0 = 11.72, LINE_STEP = 0.03, LINE_LEN = 0.3
+const ROWS = [{ y: J.y - 210, n: 6, h: 180 }, { y: J.y, n: 5, h: 200 }, { y: J.y + 210, n: 6, h: 190 }]
+const COL = 250                                    // column spacing (rows of 6 sit half a step off the row of 5)
+const DEAL0 = 10.7, DEAL_STEP = 0.034, FLY = 0.5
+const PULSE0 = 12.85, PULSE_STEP = 0.055, PULSE_LEN = 0.42, PULSE_SCALE = 0.1
+const FOLD0 = 14.15, FOLD_STEP = 0.012, FOLD_LEN = 0.42
+const PAIR = { a: 14.2, b: 15.0 }
+const COPY = { a: 10.85, aOut: 12.45, b: 12.82, out: 14.35, perB: 0.04 }   // B types in step with the pulse sweep
+const LINE0 = 11.45, LINE_STEP = 0.03, LINE_LEN = 0.3
+const NAMES = ['Maya, 24', 'Rio, 29', 'Ari, 31', 'Sol, 26', 'Kai, 28', 'Lena, 26', 'Noor, 25', 'Theo, 30', 'Ines, 27', 'Malik, 29', 'Wren, 24', 'Dev, 32', 'Ana, 28', 'Jonah, 26', 'Zuri, 25', 'Eli, 30']
 
 function makeArc() {
   const r = rng(2026), cards = []
   ROWS.forEach((row, ri) => {
     for (let i = 0; i < row.n; i++) {
-      const dx = (i - (row.n - 1) / 2) * 212
-      const isJ = ri === 1 && i === 3, isYou = ri === 1 && i === 1
-      const x = J.x + dx + (isJ ? 0 : (r() - 0.5) * 40)
-      const y = row.y + 0.0001 * dx * dx + (isJ ? 0 : (r() - 0.5) * 36)
-      cards.push({ ri, i, x, y, h: isJ ? J.h : row.h + (r() - 0.5) * 22, art: isJ ? 'p3' : isYou ? 'sign' : SEA[Math.floor(r() * SEA.length)],
+      const dx = (i - (row.n - 1) / 2) * COL
+      const isJ = ri === 1 && i === 2, isYou = ri === 1 && i === 1
+      const x = J.x + dx + (isJ ? 0 : (r() - 0.5) * 30)
+      const y = row.y + 0.00008 * dx * dx + (isJ ? 0 : (r() - 0.5) * 20)
+      cards.push({ ri, i, x, y, h: isJ ? J.h : row.h + (r() - 0.5) * 12, art: isJ ? 'p3' : isYou ? 'sign' : SEA[Math.floor(r() * SEA.length)],
         roll: isJ ? 0 : (r() - 0.5) * 0.09, ph: r() * 6.28, isJ, isYou, col: PIXEL_PALETTE[Math.floor(r() * PIXEL_PALETTE.length)] })
     }
   })
   // deal from Juniper outward
   const sea = cards.filter(c => !c.isJ).sort((a, b) => Math.hypot(a.x - J.x, a.y - J.y) - Math.hypot(b.x - J.x, b.y - J.y))
   sea.forEach((c, k) => { c.td = DEAL0 + k * DEAL_STEP; c.land = c.td + FLY })
+  cards.filter(c => !c.isJ && !c.isYou).forEach((c, k) => { c.name = NAMES[k % NAMES.length] })
+  cards.find(c => c.isJ).name = 'Juniper, 27'
   const jc = cards.find(c => c.isJ); jc.td = 0; jc.land = 0
   // glow pulse: a left → right sweep through every card (Juniper included)
   ;[...cards].sort((a, b) => a.x - b.x).forEach((c, k) => { c.pulse = PULSE0 + k * PULSE_STEP; c.fold = FOLD0 + k * FOLD_STEP })
@@ -58,8 +63,8 @@ function makeArc() {
   const at = (ri, i) => cards.find(c => c.ri === ri && c.i === i)
   const links = []
   ROWS.forEach((row, ri) => { for (let i = 0; i + 1 < row.n; i++) links.push([at(ri, i), at(ri, i + 1)]) })
-  for (let i = 0; i < 7; i++) links.push(i % 2 ? [at(1, i), at(2, i + 1)] : [at(0, i), at(1, i)])
-  links.push([at(0, 7), at(1, 6)], [at(1, 0), at(2, 0)])
+  for (let i = 0; i < 5; i++) links.push(i % 2 ? [at(1, i), at(2, i + 1)] : [at(0, i), at(1, i)])
+  links.push([at(0, 5), at(1, 4)], [at(1, 0), at(2, 0)], [at(1, 4), at(2, 5)])
   const mid = ([a, b]) => Math.hypot((a.x + b.x) / 2 - J.x, (a.y + b.y) / 2 - J.y)
   const L = links.map(l => ({ a: l[0], b: l[1], d: mid(l) })).sort((p, q) => p.d - q.d)
   L.forEach((l, k) => { l.t = Math.max(LINE0 + k * LINE_STEP, Math.max(l.a.land, l.b.land) + 0.05) })
@@ -88,6 +93,8 @@ function pairPose(f, p0, t) {
 }
 const bodyH = key => ART[key].b[3] - ART[key].b[1]
 const SKY_PAN = skyPan(HANDOFF.cx, HANDOFF.cy)
+/** sky pan: f3's (card-driven) pan until the handoff, then fixed — no jump at the cut */
+const panAt = t => { if (t >= HANDOFF.t) return SKY_PAN; const p = cardPose(t); return skyPan(p.cx, p.cy) }
 
 export default async function build(stage) {
   const root = fill(stage, { background: C.void })
@@ -127,14 +134,37 @@ export default async function build(stage) {
   const pocket = el('div', { position: 'absolute', left: '260px', top: '770px', width: '1400px', height: '290px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(11,6,32,0.75), rgba(11,6,32,0.38) 60%, rgba(11,6,32,0) 100%)', opacity: 0 }, root)
   const stmt = { left: '50%', top: '836px', transform: 'translateX(-50%)', fontFamily: SERIF, fontStyle: 'italic', fontSize: '112px', lineHeight: '1', letterSpacing: '-0.01em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.9), -0.6px 0 0 rgba(232,98,138,0.3), 0.6px 0 0 rgba(140,170,255,0.25)' }
   const lineA = new TypeLine(root, 'No snap judgements.', stmt, { perChar: 0.03, fade: 0.3, accent: [C.rub, C.gold, C.violet] })
-  const lineB = new TypeLine(root, 'Everyone gets a chance.', stmt, { perChar: 0.03, fade: 0.32, accent: [C.violet, C.gold, C.rub] })
+  const lineB = new TypeLine(root, 'Everyone gets a chance.', stmt, { perChar: COPY.perB, fade: 0.32, accent: [C.violet, C.gold, C.rub] })
 
   const grainC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: GRAIN_OPACITY, pointerEvents: 'none' }, root)
   grainC.width = W; grainC.height = H
   const gx = grainC.getContext('2d')
 
-  /** flat card: BODY centred at (x, y), body height h; yaw (rad) squeezes it like a 3D turn; glow = additive light-up */
-  function drawCard(key, x, y, h, { yaw = 0, roll = 0, alpha = 1, glow = 0 } = {}) {
+  /** nameplate + rim glow, drawn in the card's PNG space (ctx already transformed so 1 unit = 1 PNG px) */
+  function cardDressing(B, ox, oy, s, { name, nameA = 1, glow = 0 }) {
+    const { a } = B
+    if (name && nameA > 0.01 && B.plate) {
+      // the printed name is ~7px at this size: cover it and set it again large enough to read (≈19px on screen)
+      cx.globalAlpha = nameA
+      cx.fillStyle = B.plate
+      cx.beginPath(); cx.roundRect(ox + 175, oy + 150, 900, 175, 40); cx.fill()
+      cx.font = `italic 500 190px ${SERIF}`; cx.fillStyle = '#efe6d6'; cx.textBaseline = 'alphabetic'
+      cx.fillText(name, ox + 215, oy + 300, 880)
+    }
+    if (glow > 0.01) {
+      // rim glow: a bright line on the body edge + soft bloom (no big haze sprites)
+      const [l, t0, r, b] = a.b
+      cx.globalCompositeOperation = 'lighter'
+      cx.globalAlpha = glow
+      cx.shadowColor = 'rgba(255,214,150,0.95)'; cx.shadowBlur = 18
+      cx.strokeStyle = 'rgba(255,236,205,0.95)'; cx.lineWidth = 3 / s
+      cx.beginPath(); cx.roundRect(ox + l + 10, oy + t0 + 10, r - l - 20, b - t0 - 20, 110); cx.stroke()
+      cx.shadowBlur = 0; cx.shadowColor = 'transparent'
+      cx.globalCompositeOperation = 'source-over'
+    }
+  }
+  /** flat card: BODY centred at (x, y), body height h; yaw (rad) squeezes it like a 3D turn; glow = rim light-up */
+  function drawCard(key, x, y, h, { yaw = 0, roll = 0, alpha = 1, glow = 0, name = null, nameA = 1, shadow = 1 } = {}) {
     const B = bmp[key]; if (!B || alpha <= 0.003 || h < 2) return
     const { a } = B
     const s = h / (a.b[3] - a.b[1])
@@ -146,11 +176,20 @@ export default async function build(stage) {
     cx.translate(x, y); cx.rotate(roll)
     cx.transform(1, Math.sin(yaw) * 0.12, 0, 1, 0, 0)    // a hint of perspective shear on the turn
     cx.scale(s * Math.cos(yaw), s)
+    if (shadow > 0) { cx.shadowColor = `rgba(4,2,14,${0.75 * shadow})`; cx.shadowBlur = 22; cx.shadowOffsetY = 10 }
     cx.drawImage(c, -bcx, -bcy, a.iw, a.ih)
-    if (glow > 0.01) { cx.globalCompositeOperation = 'lighter'; cx.globalAlpha = alpha * glow * 0.7; cx.drawImage(c, -bcx, -bcy, a.iw, a.ih) }
+    cx.shadowColor = 'transparent'; cx.shadowBlur = 0; cx.shadowOffsetY = 0
+    if (glow > 0.01) { cx.globalCompositeOperation = 'lighter'; cx.globalAlpha = alpha * glow * 0.3; cx.drawImage(c, -bcx, -bcy, a.iw, a.ih); cx.globalCompositeOperation = 'source-over' }
+    cardDressing(B, -bcx, -bcy, s, { name, nameA: nameA * alpha, glow: glow * alpha })
     cx.restore()
   }
   await Promise.all(loads)
+  // nameplate colour: the card's own header ink, sampled from each (hue-shifted) art
+  for (const B of Object.values(bmp)) {
+    const m = B.mips[B.mips.length - 1], k = m.width / B.a.iw
+    const d = m.getContext('2d').getImageData(Math.round(620 * k), Math.round(200 * k), 1, 1).data
+    B.plate = `rgb(${d[0]},${d[1]},${d[2]})`
+  }
   /** CSS-matching 3D pose: translate(x,y) perspective(1600) rotateY(ry) rotate(rz) scale(s) about the PNG centre
    *  (as f5's holder). Drawn as thin vertical strips, each an affine map of its projected corners (true taper). */
   function drawCard3D(key, x, y, s, ryDeg, rzDeg, alpha = 1, glow = 0) {
@@ -181,20 +220,23 @@ export default async function build(stage) {
     if (glow > 0.01) { cx.globalCompositeOperation = 'lighter'; pass(alpha * glow * 0.7) }
     cx.restore()
   }
-  const halo = (x, y, r, a) => {
-    if (a <= 0.003) return
-    const g = cx.createRadialGradient(x, y, 0, x, y, r)
-    g.addColorStop(0, `rgba(255,230,180,${0.75 * a})`); g.addColorStop(0.45, `rgba(242,199,92,${0.32 * a})`); g.addColorStop(1, 'rgba(242,199,92,0)')
-    cx.globalCompositeOperation = 'lighter'; cx.fillStyle = g; cx.fillRect(x - r, y - r, 2 * r, 2 * r); cx.globalCompositeOperation = 'source-over'
+  /** Juniper's nameplate + rim on her flat (ry≈0) pose: [x, y, s, ry, rz] about the PNG centre */
+  function dressFlat(key, x, y, s, rzDeg, opts) {
+    const B = bmp[key]; if (!B) return
+    cx.save(); cx.translate(x, y); cx.rotate(rzDeg * Math.PI / 180); cx.scale(s, s)
+    cardDressing(B, -B.a.iw / 2, -B.a.ih / 2, s, opts)
+    cx.restore()
   }
 
   return {
     start: T0, end: T1, root, fadeIn: 0.08,
     update(t) {
       // sky: same plate + camera as f3; the nebula dims under the arc so the cards read
-      const dim = lerp(1, 0.42, ease.inOutQuad(prog(t, 10.75, 11.5)) * (1 - ease.inOutQuad(prog(t, 14.3, 15.05))))   // back to full for f5
-      drawSky(cx, t, { pan: SKY_PAN, dim })
-      const endK = ease.inOutQuad(prog(t, 14.25, 15.0))                 // constellation steps back for f5
+      // f3's dim (starts 10.4, gentle, to 0.6), back to full for f5; grain rises as the plate dims
+      const dim = 1 - (1 - plateDim(t)) * (1 - ease.inOutQuad(prog(t, 14.3, 15.05)))
+      drawSky(cx, t, { pan: panAt(t), dim })
+      grainC.style.opacity = String(grainOpacity(dim))
+      const endK = ease.inOutQuad(prog(t, 14.35, 15.0))                 // constellation steps back for f5
       const fr = Math.round(t * 30)
 
       // card states
@@ -203,13 +245,14 @@ export default async function build(stage) {
         const p = prog(t, c.td, c.land)
         if (p <= 0) return null
         const e = ease.outCubic(p)
-        const lift = Math.sin(Math.PI * p) * 70
+        const lift = Math.sin(Math.PI * p) * 60
         const x = lerp(J.x, c.x, e), y = lerp(J.y, c.y, e) - lift
-        const h = lerp(J.h * 0.9, c.h, e)
-        const yaw = Math.PI * (1 - ease.inOutCubic(prog(p, 0.05, 0.75)))
+        const h = lerp(J.h * 0.9, c.h, e)                                  // never below half size
+        const yaw = 0.45 * (1 - ease.outCubic(p)) * (c.x < J.x ? -1 : 1)    // face-up, a slight turn that settles
         const settle = Math.sin(t * 0.9 + c.ph) * 3 * e                  // gentle float once landed
         const fold = ease.inOutCubic(prog(t, c.fold, c.fold + FOLD_LEN)) * (c.isYou ? 0 : 1)
-        return { c, x, y: y + settle, h: h * (1 - fold), a: ease.outQuad(prog(p, 0, 0.15)) * (1 - ease.inQuad(fold)), yaw, roll: c.roll * (0.4 + 0.6 * (1 - p)) + (1 - e) * 0.3, flying: p < 1, fold }
+        // full opacity in flight: only the first 0.08s fades in (out from behind Juniper)
+        return { c, x, y: y + settle, h: h * (1 - fold), a: prog(t, c.td, c.td + 0.08) * (1 - ease.inQuad(fold)), yaw, roll: c.roll * (0.4 + 0.6 * (1 - p)) + (1 - e) * 0.3, flying: p < 1, fold }
       })
       const S = new Map(st.filter(Boolean).map(s => [s.c, s]))
 
@@ -235,9 +278,8 @@ export default async function build(stage) {
       const sea = [...S.values()].filter(s => !s.c.isJ && !(s.c.isYou && t >= PAIR.a)).sort((a, b) => (a.flying - b.flying) || (b.c.land - a.c.land))
       for (const s of sea) {
         const g = pulse(s.c)
-        halo(s.x, s.y, s.h * 1.05 + 30, g * s.a)
-        const back = Math.cos(s.yaw) < 0
-        drawCard(back ? 'back' : s.c.art, s.x, s.y, s.h, { yaw: back ? Math.PI - s.yaw : s.yaw, roll: s.roll, alpha: s.a, glow: g })
+        const nameA = ease.outQuad(prog(t, s.c.land - 0.1, s.c.land + 0.2)) * (1 - prog(s.fold, 0, 0.3))
+        drawCard(s.c.art, s.x, s.y, s.h * (1 + PULSE_SCALE * g), { yaw: s.yaw, roll: s.roll, alpha: s.a, glow: g, name: s.c.name, nameA, shadow: 1 - s.fold })
       }
 
       // pixel-star nodes: they grow out of the folding cards at their centres and stay (the constellation)
@@ -260,7 +302,7 @@ export default async function build(stage) {
       if (t < HANDOFF.t) { const p = cardPose(t); jp = [p.cx, p.cy + p.bob, p.h / bodyH('p3'), p.yaw, 0] }
       else if (t < PAIR.a) jp = [J.x, J.y, J.h / bodyH('p3'), 0, 0]
       else jp = pairPose(juniperF5, [J.x, J.y, J.h / bodyH('p3'), 0, 0], t)
-      halo(jp[0], jp[1], J.h * 1.05 + 30, jg)
+      jp[2] *= 1 + PULSE_SCALE * jg
       // your card: in the arc until the pair leaves, then onto f5's youPose
       if (t >= PAIR.a) {
         const ys = S.get(YOU)
@@ -268,7 +310,9 @@ export default async function build(stage) {
         const [x, y, s, ry, rz] = pairPose(youF5, p0, t)
         if (ys) drawCard3D('sign', x, y, s, ry, rz, 1)
       }
-      drawCard3D('p3', jp[0], jp[1], jp[2], jp[3], jp[4], 1, jg)
+      drawCard3D('p3', jp[0], jp[1], jp[2], jp[3], jp[4], 1, jg * 0.3)
+      const jName = ease.outQuad(prog(t, 10.85, 11.15)) * (1 - prog(t, PAIR.a, PAIR.a + 0.2))
+      dressFlat('p3', jp[0], jp[1], jp[2], jp[4], { name: jc.name, nameA: jName, glow: jg })
 
       // copy
       const pk = ease.outQuad(prog(t, COPY.a - 0.2, COPY.a + 0.3)) * (1 - ease.inQuad(prog(t, COPY.out, COPY.out + 0.3)))
@@ -289,9 +333,9 @@ const PENTA = [739.99, 880, 987.77, 1108.73, 1318.51, 1479.98, 1661.22, 1975.53]
 const PULSE_BELLS = [...ARC.cards].sort((a, b) => a.pulse - b.pulse).filter((_, k) => k % 3 === 0)
   .map((c, k, arr) => ['bell', +c.pulse.toFixed(3), PENTA[Math.min(PENTA.length - 1, k)], 0.016, 0.9, lerp(-0.6, 0.6, k / (arr.length - 1))])
 export const cues = [
-  ['whoosh', 10.74, 0.7, 0.09],                       // the deck deals out
-  ['whoosh', 11.15, 0.6, 0.04],
-  ['glitter', 10.8, 11.9],
+  ['whoosh', DEAL0 + 0.02, 0.6, 0.09],                // the deck deals out
+  ['whoosh', 11.0, 0.6, 0.04],
+  ['glitter', DEAL0 + 0.05, 11.7],
   ...LAND_TICKS,
   ...LINE_BELLS,
   ['bell', COPY.a, 587.33, 0.04, 1.6, 0],             // "No snap judgements."
@@ -300,8 +344,8 @@ export const cues = [
   ['glitter', PULSE0, PULSE0 + ARC.cards.length * PULSE_STEP + 0.2],   // every card lights in turn
   ...PULSE_BELLS,
   ['glitter', FOLD0 + 0.1, FOLD0 + 0.6],              // cards fold into stars
-  ['riser', 13.9, 14.95, 0.06],                       // the pair drifts in
-  ['whoosh', 13.85, 0.9, 0.06],
+  ['riser', 14.1, 14.95, 0.06],                       // the pair drifts in
+  ['whoosh', PAIR.a + 0.05, 0.8, 0.06],
   ['bell', 14.88, 880, 0.04, 1.8, -0.2],
   ['bell', 14.95, 1318.51, 0.035, 1.8, 0.2],
 ]
