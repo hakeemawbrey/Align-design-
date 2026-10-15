@@ -201,17 +201,18 @@ let SKY = null
 export function getSky() {
   if (SKY) return SKY
   const neb = buildNebula()
-  const far = buildStars(9000, 101, { rMin: 0.45, rMax: 1.0, aMin: 0.3, aMax: 0.8, band: 0.45 })
-  const mid = buildStars(1900, 202, { rMin: 0.7, rMax: 1.5, aMin: 0.5, aMax: 1 })
-  const near = buildStars(180, 303, { rMin: 1.1, rMax: 2.2, aMin: 0.75, aMax: 1 })
+  const far = buildStars(7000, 101, { rMin: 0.45, rMax: 1.0, aMin: 0.3, aMax: 0.8, band: 0.45 })
+  const mid = buildStars(1600, 202, { rMin: 0.7, rMax: 1.5, aMin: 0.5, aMax: 1 })
+  const near = buildStars(160, 303, { rMin: 1.1, rMax: 2.2, aMin: 0.75, aMax: 1 })
   const spriteS = buildStarSprite(true), spriteG = buildStarSprite(false)
   const rb = rng(404), bright = []
-  while (bright.length < 34) {
+  while (bright.length < 30) {           // same field as f2's sky (seamless cut)
     const x = rb() * W, y = rb() * H
-    bright.push({ x, y, size: 26 + Math.pow(rb(), 2.5) * 110, spike: bright.length < 8, seed: 500 + bright.length, sp: 1.6 + rb() * 3, depth: rb() })
+    if (x > 620 && x < 1300) continue
+    bright.push({ x, y, size: 26 + Math.pow(rb(), 2.5) * 110, spike: bright.length < 7, seed: 500 + bright.length, sp: 1.6 + rb() * 3, depth: rb() })
   }
   const vig = canvas(W, H), vx = vig.getContext('2d')
-  const vg = vx.createRadialGradient(W / 2, H * 0.48, H * 0.32, W / 2, H * 0.5, H * 1.08)
+  const vg = vx.createRadialGradient(W / 2, H * 0.46, H * 0.3, W / 2, H * 0.5, H * 1.08)
   vg.addColorStop(0, 'rgba(11,6,32,0)'); vg.addColorStop(0.65, 'rgba(11,6,32,0.35)'); vg.addColorStop(1, 'rgba(8,4,24,0.85)')
   vx.fillStyle = vg; vx.fillRect(0, 0, W, H)
   SKY = { neb, far, mid, near, spriteS, spriteG, bright, vig, grain: buildGrain() }
@@ -219,9 +220,10 @@ export function getSky() {
 }
 /** the sky camera: one continuous slow dolly over f3 + f4 (zoom, drift) */
 export function skyCam(t) {
+  // continues f2's sky camera exactly at 6.5 (cam 1.0134, drift −6.1, 2.05) and keeps its direction of travel
   const k = prog(t, 6.5, 15.2)
-  const zoom = 1.0 + 0.06 * ease.inOutQuad(prog(t, 6.5, 10.0)) - 0.05 * ease.inOutQuad(prog(t, 10.2, 15.2))
-  return { zoom, dx: lerp(-16, 26, k), dy: lerp(8, -14, k) }
+  const zoom = 1.0134 + 0.06 * ease.inOutQuad(prog(t, 6.5, 10.0)) - 0.05 * ease.inOutQuad(prog(t, 10.2, 15.2))
+  return { zoom, dx: lerp(-6.1, -64, k), dy: lerp(2.05, 32, k) }
 }
 /** paint the sky onto ctx (opaque). opts.dim scales the plate; opts.moon draws the crescent */
 export function drawSky(bx, t, { pan = [0, 0], moon = 1 } = {}) {
@@ -233,14 +235,14 @@ export function drawSky(bx, t, { pan = [0, 0], moon = 1 } = {}) {
   bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
   bx.fillStyle = C.void; bx.fillRect(0, 0, W, H)
   bx.globalAlpha = flick
-  layer(S.neb, zoom * 0.985, driftX * 0.5, driftY * 0.5)
+  layer(S.neb, zoom, driftX * 0.5, driftY * 0.5)
   bx.globalCompositeOperation = 'lighter'
   bx.globalAlpha = 0.9; layer(S.far, zoom, driftX * 0.7, driftY * 0.7)
   bx.globalAlpha = 1
-  layer(S.mid, zoom * 1.02, driftX, driftY)
-  layer(S.near, zoom * 1.05, driftX * 1.6, driftY * 1.6)
+  layer(S.mid, zoom * 1.01, driftX, driftY)
+  layer(S.near, zoom * 1.03, driftX * 1.6, driftY * 1.6)
   for (const b of S.bright) {
-    const s = zoom * (1.02 + 0.05 * b.depth)
+    const s = zoom * (1.02 + 0.03 * b.depth)
     const x = W / 2 + (b.x - W / 2) * s + driftX * (1 + b.depth * 0.6)
     const y = H / 2 + (b.y - H / 2) * s + driftY * (1 + b.depth * 0.6)
     const tw2 = 0.55 + 0.45 * noise1(t * b.sp, b.seed) + 0.25 * Math.max(0, noise1(t * b.sp * 3.1, b.seed + 9) - 0.6)
@@ -251,8 +253,10 @@ export function drawSky(bx, t, { pan = [0, 0], moon = 1 } = {}) {
   bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
   if (moon > 0) {
     // the waxing crescent rides upper-right, as in S1 (a touch fuller: the story has moved on)
-    const s = zoom * 1.05
-    drawMoon(bx, W / 2 + (1712 - W / 2) * s + driftX * 1.3, H / 2 + (128 - H / 2) * s + driftY * 1.3, 46 * s, 0.16,
+    // starts on f2's moon (1575, 262, r64·cam, phase .09); the camera move carries it up-right, clear of the copy
+    const mv = ease.inOutCubic(prog(t, 6.62, 7.5))
+    const mx = lerp(1575, 1716, mv), my = lerp(262, 122, mv), mr = lerp(64, 52, mv) * zoom
+    drawMoon(bx, mx + driftX * 1.3, my + driftY * 1.3, mr, lerp(0.09, 0.14, prog(t, 6.5, 15.2)),
       { alpha: moon, glow: 3, earthshine: 1, darkAlpha: 0.62 })
   }
   bx.drawImage(S.vig, 0, 0)

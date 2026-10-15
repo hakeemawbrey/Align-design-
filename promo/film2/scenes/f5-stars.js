@@ -353,13 +353,14 @@ export default function build(stage) {
       const yp = youPose(t)
       you.style.transform = poseTransform({ ...yp, x: yp.x + lean + jx, y: yp.y + jy }, 0, kick)
       you.style.opacity = String(yp.op)
-      const glow = Math.max(ten, post)
+      const glow = t < LOCK ? ten : 1 - ease.inOutQuad(prog(t, LOCK, MOVE.b - 0.05))   // charged into the lock, cooling off before the hand-off
+      const mixRgb = (a, b, k) => a.map((v, i) => Math.round(lerp(v, b[i], k))).join(',')
       youCard.style.filter = glow > 0.002 ? `brightness(${1 + 0.18 * glow + 0.45 * post})` : 'none'
-      youGlow.style.boxShadow = rimGlow(post > 0.3 ? '255,236,180' : '150,240,170', glow, yp.s)
+      youGlow.style.boxShadow = rimGlow(mixRgb([150, 240, 170], [255, 236, 180], post), glow, yp.s)
       const jp = julPose(t)
       jul.holder.style.transform = poseTransform({ ...jp, x: jp.x - lean - jx, y: jp.y - jy }, 0, kick)
       jul.card.style.filter = glow > 0.002 ? `brightness(${1 + 0.18 * glow + 0.45 * post})` : 'none'
-      jul.glow.style.boxShadow = rimGlow(post > 0.3 ? '255,236,200' : JUL_RIM, glow, jp.s)
+      jul.glow.style.boxShadow = rimGlow(mixRgb([255, 150, 232], [255, 236, 200], post), glow, jp.s)
 
       // shake + chroma punch on the lock
       const sf = fi - lockF

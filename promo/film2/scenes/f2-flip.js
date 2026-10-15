@@ -207,8 +207,8 @@ export default function build(stage) {
     boxShadow: '0 0 46px 8px rgba(190,140,255,0.42), 0 36px 90px rgba(5,2,18,0.6)' }, back)
   const bBody = el('div', { position: 'absolute', left: -CARD_W / 2 + 'px', top: -CARD_H / 2 + 'px', width: CARD_W + 'px', height: CARD_H + 'px', borderRadius: R + 'px', overflow: 'hidden' }, back)
   img(bBody, A + 'card-profile-3.png', { left: -120 * SC + 'px', top: -114 * SC + 'px', width: 1496 * SC + 'px', height: 2238 * SC + 'px' })
-  const bGlint = el('div', { position: 'absolute', left: 0, top: '-25%', width: '50%', height: '150%', mixBlendMode: 'screen',
-    background: 'linear-gradient(90deg, rgba(255,220,150,0) 0%, rgba(255,226,170,0.5) 45%, rgba(255,250,235,0.75) 50%, rgba(255,226,170,0.5) 55%, rgba(255,220,150,0) 100%)', opacity: 0 }, bBody)
+  const bGlint = el('div', { position: 'absolute', left: 0, top: '-25%', width: '34%', height: '150%', mixBlendMode: 'screen',
+    background: 'linear-gradient(90deg, rgba(255,220,150,0) 0%, rgba(255,226,170,0.3) 42%, rgba(255,250,235,0.62) 50%, rgba(255,226,170,0.3) 58%, rgba(255,220,150,0) 100%)', opacity: 0 }, bBody)
   const bWash = el('div', { position: 'absolute', inset: 0, background: '#f3e6ff', mixBlendMode: 'screen', opacity: 0 }, bBody)
   const [mbF, mbB] = blurDefs(root, 2, 'f2mb')
   face.card.style.filter = 'url(#f2mb0)'
@@ -221,6 +221,8 @@ export default function build(stage) {
 
   const flash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0,
     background: 'radial-gradient(60% 75% at 50% 44%, rgba(255,246,236,0.95) 0%, rgba(201,166,255,0.6) 40%, rgba(120,70,220,0.15) 75%, rgba(0,0,0,0) 100%)' }, root)
+  const slamFlash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0,
+    background: 'radial-gradient(50% 70% at 50% 46%, rgba(220,230,255,0.9) 0%, rgba(160,175,210,0.25) 60%, rgba(0,0,0,0) 100%)', mixBlendMode: 'screen' }, root)
   const grain = grainLayer(root, 0.6)
 
   const flipAngle = t => {
@@ -253,8 +255,8 @@ export default function build(stage) {
       holder.style.transform = `translate(${x}px, ${y}px) rotate(${rz}deg) scale(${s})`
       card3d.style.transform = `perspective(2000px) rotateX(${rx}deg) rotateY(${ang}deg)`
       // motion blur ∝ angular speed (horizontal smear of the card's turning edge)
-      const dAng = Math.abs(flipAngle(t + 1 / 60) - flipAngle(t - 1 / 60)) * 30 / 2     // deg per frame
-      const smear = Math.min(30, dAng * Math.PI / 180 * 260 * 0.42 * Math.abs(Math.sin(ang * Math.PI / 180)) + dAng * 0.25)
+      const dAng = Math.abs(flipAngle(t + 1 / 60) - flipAngle(t - 1 / 60))     // deg per frame
+      const smear = t < FLIP0 ? 0 : Math.min(26, dAng * Math.PI / 180 * 260 * 0.32 * Math.abs(Math.sin(ang * Math.PI / 180)) + dAng * 0.2)
       mbF.setAttribute('stdDeviation', `${smear.toFixed(1)} 0.5`); mbB.setAttribute('stdDeviation', `${smear.toFixed(1)} 0.5`)
       // light: front catches a cold glint as it turns away; back gets a warm gold glint as it lands, then a second slow pass
       const ca = Math.cos(ang * Math.PI / 180)
@@ -274,12 +276,15 @@ export default function build(stage) {
         skyC.style.opacity = '1'
         const rad = 40 + 2300 * ease.outCubic(bloom)
         skyC.style.webkitMaskImage = skyC.style.maskImage = bloom >= 1 ? 'none'
-          : `radial-gradient(circle at ${END_X}px ${END_Y}px, #000 ${rad * 0.72}px, rgba(0,0,0,0.6) ${rad * 0.88}px, transparent ${rad}px)`
+          : `radial-gradient(circle at ${END_X}px ${END_Y}px, #000 ${rad * 0.55}px, rgba(0,0,0,0.55) ${rad * 0.8}px, transparent ${rad}px)`
         const ex = 1 + 0.9 * Math.exp(-prog(t, EDGE, EDGE + 1.0) * 4)                    // over-exposed bloom settling
         skyC.style.filter = `brightness(${ex.toFixed(3)}) saturate(${(1 + 0.3 * (ex - 1)).toFixed(3)})`
         drawSky(t)
       } else skyC.style.opacity = '0'
 
+      // slam impact: a cold pop on the stop; the cold world flashes negative for two frames right before it inverts
+      slamFlash.style.opacity = String(t >= SLAM ? 0.32 * Math.exp(-(t - SLAM) * 16) : 0)
+      cold.root.style.filter = (t >= EDGE - 0.1 && t < EDGE - 0.035) ? 'invert(1) hue-rotate(180deg) brightness(0.8)' : ''
       // flash: a hard white-violet pop at the inversion (2 frames), decaying
       const fl = t >= EDGE - 0.035 ? Math.exp(-(t - EDGE + 0.035) * 7) : 0
       flash.style.opacity = String(clamp(fl * 0.95))
@@ -292,7 +297,8 @@ export default function build(stage) {
         w.e.style.transform = `translateY(${(1 - e) * 20}px)`
         w.e.style.filter = p < 1 ? `blur(${(1 - e) * 7}px)` : 'none'
       }
-      grain.update(t)
+      grain.el.style.display = t >= 4.19 ? 'block' : 'none'
+      if (t >= 4.19) grain.update(t)
       void fr
     },
     fx(ctx, t) {
@@ -302,12 +308,14 @@ export default function build(stage) {
       const tick = Math.round(t * 30) >> 1
       // shock ring (soft violet) + pixel ring of sparks riding it
       if (dt > 0 && dt < 0.75) {
-        const u = dt / 0.75, rr = 120 + 1500 * ease.outCubic(u)
+        const u = dt / 0.75, rr = 300 + 1700 * ease.outCubic(u), a = Math.pow(1 - u, 2)
         ctx.globalCompositeOperation = 'lighter'
-        ctx.strokeStyle = `rgba(201,166,255,${0.55 * (1 - u)})`; ctx.lineWidth = 3 + 26 * (1 - u)
-        ctx.beginPath(); ctx.ellipse(END_X, END_Y, rr, rr * 0.92, 0, 0, Math.PI * 2); ctx.stroke()
-        ctx.strokeStyle = `rgba(255,243,224,${0.6 * (1 - u)})`; ctx.lineWidth = 2
-        ctx.beginPath(); ctx.ellipse(END_X, END_Y, rr * 0.97, rr * 0.9, 0, 0, Math.PI * 2); ctx.stroke()
+        ctx.filter = 'blur(6px)'
+        ctx.strokeStyle = `rgba(201,166,255,${0.45 * a})`; ctx.lineWidth = 10 + 40 * (1 - u)
+        ctx.beginPath(); ctx.ellipse(END_X, END_Y, rr, rr * 0.9, 0, 0, Math.PI * 2); ctx.stroke()
+        ctx.filter = 'none'
+        ctx.strokeStyle = `rgba(255,243,224,${0.35 * a})`; ctx.lineWidth = 1.5
+        ctx.beginPath(); ctx.ellipse(END_X, END_Y, rr * 0.985, rr * 0.885, 0, 0, Math.PI * 2); ctx.stroke()
         ctx.globalCompositeOperation = 'source-over'
       }
       // burst

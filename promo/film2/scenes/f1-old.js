@@ -14,12 +14,13 @@ const FLY_IN = 3.74                               // the last card enters from t
 export const LAST_FACE = 3                        // p3.jpg is the face that gets flipped
 
 const BONE = '#efe6d6'
-const NAMES = ['Maya, 24', 'Theo, 29', 'Nia, 26', 'Jun, 27', 'Ama, 25', 'Cole, 31', 'Rosa, 28', 'Dev, 26', 'Lena, 23', 'Kofi, 30', 'Ivy, 27', 'Sam, 29']
+// one generic name per photo (p1..p12)
+const NAMES = [null, 'Lena, 23', 'Theo, 29', 'Rosa, 28', 'Jun, 27', 'Ama, 25', 'Cole, 31', 'Maya, 24', 'Nia, 26', 'Dev, 26', 'Ivy, 27', 'Kofi, 30', 'Sara, 25']
 const DIST = ['2 miles away', '5 miles away', '1 mile away', '8 miles away', '3 miles away', '12 miles away']
 
 // ── swipe schedule: card k flies off at SW[k]; the gap shrinks 0.5s → 2 frames (accelerating tension)
 export const SWIPES = (() => {
-  const out = []; let t = 0.36, gap = 0.52
+  const out = []; let t = -0.06, gap = 0.44
   while (t < FLY_IN - 0.02) { out.push(t); t += gap; gap = Math.max(0.067, gap * 0.8) }
   return out
 })()
@@ -110,7 +111,7 @@ export function makeFaceCard(parent, face, k) {
   el('div', { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(8,10,14,0.35) 0%, rgba(8,10,14,0) 16%, rgba(8,10,14,0) 52%, rgba(8,10,14,0.9) 100%)' }, card)
   const pips = el('div', { position: 'absolute', left: '22px', right: '22px', top: '20px', height: '5px', display: 'flex', gap: '8px' }, card)
   for (let i = 0; i < 4; i++) el('div', { flex: '1', borderRadius: '3px', background: i === 0 ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.32)' }, pips)
-  el('div', { position: 'absolute', left: '34px', bottom: '78px', fontFamily: SANS, fontWeight: 600, fontSize: '46px', color: '#f4f5f7', letterSpacing: '-0.01em' }, card, NAMES[k % NAMES.length])
+  el('div', { position: 'absolute', left: '34px', bottom: '78px', fontFamily: SANS, fontWeight: 600, fontSize: '46px', color: '#f4f5f7', letterSpacing: '-0.01em' }, card, NAMES[face])
   el('div', { position: 'absolute', left: '36px', bottom: '40px', fontFamily: SANS, fontWeight: 400, fontSize: '25px', color: 'rgba(235,238,244,0.66)' }, card, DIST[k % DIST.length])
   // a cold sheen that rides across the card while it flies
   const sheen = el('div', { position: 'absolute', left: '-60%', top: '-20%', width: '60%', height: '140%', background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(220,230,255,0.22) 50%, rgba(255,255,255,0) 100%)', transform: 'rotate(18deg)', opacity: 0 }, card)
@@ -182,10 +183,10 @@ export default function build(stage) {
 
   // copy: "We swipe on faces." (left) … "in half a second." (right) — the sentence runs across the card
   const T = { fontFamily: SERIF, fontStyle: 'italic', fontSize: '92px', color: BONE, lineHeight: 1, textShadow: '0 2px 30px rgba(5,6,10,0.9), 0 0 2px rgba(5,6,10,0.6)', zIndex: '3000' }
-  const left = words(root, 'We swipe on faces.', { ...T, right: (W - 668) + 'px', top: (FEED_Y - 50) + 'px', textAlign: 'right' }, 0.1, 0.1)
+  const left = words(root, 'We swipe on faces.', { ...T, right: (W - 668) + 'px', top: (FEED_Y - 50) + 'px', textAlign: 'right' }, 0.0, 0.09)
   const right = words(root, 'in half a second.', { ...T, left: '1252px', top: (FEED_Y - 50) + 'px' }, 1.32, 0.12)
   // judge-timer under the card
-  const timer = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '884px', textAlign: 'center', fontFamily: MONO, fontSize: '28px', letterSpacing: '0.2em', color: 'rgba(239,230,214,0.62)', zIndex: '3000', whiteSpace: 'pre' }, root)
+  const timer = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '884px', textAlign: 'center', fontFamily: MONO, fontSize: '30px', letterSpacing: '0.2em', color: 'rgba(239,230,214,0.62)', zIndex: '3000', whiteSpace: 'pre' }, root)
   const tNum = el('span', { color: BONE }, null), tCount = el('span', {}, null)
   timer.append('JUDGED IN ', tNum, '   ·   ', tCount)
   const grain = grainLayer(root, 0.55)
@@ -256,7 +257,7 @@ export default function build(stage) {
 export const cues = [
   ...SWIPES.flatMap((s, k) => {
     const gap = k + 1 < SWIPES.length ? SWIPES[k + 1] - s : 0.07
-    return [['whoosh', s, Math.max(0.12, Math.min(0.3, gap * 0.9)), 0.07 + 0.05 * (k % 2)], ['tick', s, 0.05 + Math.min(0.06, k * 0.003)]]
+    return [['whoosh', Math.max(0, s), Math.max(0.12, Math.min(0.3, gap * 0.9)), 0.07 + 0.05 * (k % 2)], ['tick', Math.max(0, s), 0.05 + Math.min(0.06, k * 0.003)]]
   }),
   ['riser', 1.9, 3.95, 0.07],
   ['whoosh', FLY_IN - 0.02, 0.28, 0.2],
