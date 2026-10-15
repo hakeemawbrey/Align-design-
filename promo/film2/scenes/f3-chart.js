@@ -1,32 +1,61 @@
-// ─────────────────────────────────────────────── F3 · CHART FIRST, FACE LAST (6.5–10.7)
+// ─────────────────────────────────────────────── F3 · CHART FIRST, FACE LAST (6.5–10.8)
 // Juniper's veiled mystery card (card-profile-3.png) in the grainy deep-space nebula (S1's look, 16:9).
-// Starts on f2's end frame: card body 520px wide centred at (960, 470). The camera pushes in on the chart:
-// Sun / element / Moon badges glow in (the right column reads them out: Sun Libra · Moon Gemini · Rising Aquarius),
-// the bio line catches the light, the dealbreakers re-type themselves. Then the camera tilts up to the photo window,
-// which stays a breathing aura veil — never a face. "Chart first." / "Face last." Pulls back to the f4 handoff:
-// card body 322px wide (scale 0.62) centred at (960, 540) at 10.5.
-// The sky (nebula, star layers, bright stars, moon, grain) is exported for f4 so the cut is seamless.
+// Starts on f2's end pose exactly (F2_END from f2-flip.js). The camera eases in until the WHOLE card fills ~80% of
+// the frame height, left of centre (body centre x≈700) — name, RARE PULL chip and the veiled photo window always in
+// frame. Sun / element / Moon badges glow in, the bio line catches the light, the dealbreakers re-type themselves,
+// while the photo window stays a breathing, shimmering aura veil — never a face. "Chart first." … "Face last." lands
+// as the camera settles on the veil, with a small gold lock glint on the window. Text leaves, then the card shrinks
+// (inOutCubic, 0.7s, hi-res DOM the whole way) into its slot in f4's constellation: HANDOFF (body 150px at 960, 400).
+//
+// SHARED SKY SPINE (used by f4–f8 — keep these exports stable):
+//   getSky()                       → cached layers { neb, far, mid, near, spriteS, spriteG, bright, vig, grain }
+//   skyCam(t)                      → { zoom, dx, dy } one continuous dolly from 6.5 to 30 (never stops dead)
+//   drawSky(ctx, t, { pan, moon, dim }) paints the opaque sky (dim scales the nebula plate, e.g. 0.35 under cards)
+//   drawGrain(ctx, t)              → a fresh clumped silver grain frame (use on a canvas, mix-blend overlay, opacity 0.5)
+//   GRAIN_OPACITY                  → 0.5, the agreed grain-canvas opacity for every scene
+//   skyPan(cx, cy)                 → the parallax pan f3 applies for a card centred at (cx, cy) (f4 continues it)
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, C, PIXEL_PALETTE, TypeLine } from '../../src/lib.js'
 import { W, H, A, SERIF, MONO, SANS, fill, img } from '../../src/scenes/common.js'
 import { drawMoon } from '../../src/scenes/fx-moon.js'
+import * as F2 from './f2-flip.js'
 
-export const F3 = { start: 6.5, end: 10.7 }
-// ── card geometry (card-profile-*.png px). Body box [120,114,1374,2116] → centre (747,1115), width 1254.
-export const PNG = { w: 1496, h: 2238, cx: 747, cy: 1115, bw: 1254 }
-export const S0 = 520 / PNG.bw          // on-screen px per PNG px at camera scale 1 (f2 handoff size)
+export const F3 = { start: 6.5, end: 10.8 }
+export const GRAIN_OPACITY = 0.5
+// ── card geometry (card-profile-*.png px). Body box [120,114,1374,2116] → centre (747,1115), width 1254, height 2002.
+export const PNG = { w: 1496, h: 2238, cx: 747, cy: 1115, bw: 1254, bh: 2002 }
 const WIN = [218, 342, 1292, 914]       // photo window (aura veil)
-// camera keys: [t, cx, cy, scale, yawDeg]
-const CAM = [
-  [6.5, 960, 470, 1.0, 0],
-  [6.72, 960, 470, 1.015, 0],
-  [7.5, 640, 398, 1.45, 5],
-  [8.95, 616, 384, 1.53, 4],
-  [9.55, 640, 770, 1.6, 2],
-  [10.0, 652, 776, 1.64, 1.5],
-  [10.5, 960, 540, 0.62, 0],
-]
-export const HANDOFF = { t: 10.5, cx: 960, cy: 540, scale: 0.62 }   // f4 starts here (body 322×515)
+// f2's hand-off pose (f2 exports F2_END = { cx, cy, bodyW, bodyH }; older f2 builds export END_X/END_Y/END_W).
+// Read lazily (f2 may import this module for the sky → avoid an import-cycle TDZ at module-eval time).
+function f2End() {
+  let e = null
+  try { e = F2.F2_END || (F2.END_X != null ? { cx: F2.END_X, cy: F2.END_Y, bodyW: F2.END_W } : null) } catch (_) { e = null }
+  e = e || { cx: 960, cy: 470, bodyW: 520 }
+  return { cx: e.cx, cy: e.cy, h: e.bodyH || e.bodyW * PNG.bh / PNG.bw }
+}
+/** f4 picks Juniper up here: body height 150 centred at (960, 400), flat, at t = 10.75 */
+export const HANDOFF = { t: 10.75, cx: 960, cy: 400, bodyH: 150 }
+const SHRINK = { a: 10.05, b: HANDOFF.t }
+// camera keys: [t, cx, cy, bodyH(screen px), yawDeg]  (whole card in frame: body ≤ 905px tall, top ≥ 90px)
+let CAM = null
+function camKeys() {
+  const e = f2End()
+  return [
+    [6.5, e.cx, e.cy, e.h, 0],
+    [6.62, e.cx, e.cy, e.h * 1.008, 0],
+    [7.5, 704, 540, 862, 4],
+    [8.9, 694, 536, 876, 3],
+    [9.4, 700, 548, 900, 1.2],             // settles on the veiled window as "Face last." lands
+    [SHRINK.a, 704, 546, 904, 0.8],
+  ]
+}
+/** f3's card camera at t → [cx, cy, bodyH, yaw] (eased segments; the shrink is one inOutCubic over 0.7s) */
 function camAt(t) {
+  CAM ||= camKeys()
+  if (t >= SHRINK.a) {
+    const k = ease.inOutCubic(prog(t, SHRINK.a, SHRINK.b)), a = CAM[CAM.length - 1]
+    // shrink in log-space so the size change reads evenly; position eases on the same curve
+    return [lerp(a[1], HANDOFF.cx, k), lerp(a[2], HANDOFF.cy, k), a[3] * Math.pow(HANDOFF.bodyH / a[3], k), lerp(a[4], 0, k)]
+  }
   if (t <= CAM[0][0]) return CAM[0].slice(1)
   for (let i = 1; i < CAM.length; i++) {
     if (t <= CAM[i][0]) {
@@ -36,13 +65,23 @@ function camAt(t) {
   }
   return CAM[CAM.length - 1].slice(1)
 }
+/** the sky parallax pan for a card centred at (cx, cy) */
+export const skyPan = (cx, cy) => [(cx - 960) * -0.04, (cy - 470) * -0.03]
+/** Juniper's full card pose in f3 (body centre, body height, yaw/pitch deg, bob px) — f4 matches it frame-exactly */
+export function cardPose(t) {
+  const [cx, cy, h, yaw] = camAt(t)
+  const calm = 1 - ease.inOutCubic(prog(t, SHRINK.a, SHRINK.b))      // pitch + bob settle to zero during the shrink
+  const pitch = (Math.sin(t * 0.9) * 1.2 + (cy - 470) * -0.004) * calm
+  const bob = Math.sin(t * 1.3) * 3 * calm
+  return { cx, cy, h, yaw, pitch, bob }
+}
 // beats
 const B = {
   eyebrow: 7.12, chart: 7.28,
-  sun: 7.5, air: 7.64, moon: 7.8, rising: 7.98,
+  sun: 7.5, air: 7.64, moon: 7.8,
   bio: 8.05, dbLabel: 8.22, dbType: 8.3,
-  rowsOut: 8.92, face: 9.2, noPhoto: 9.5,
-  textOut: 10.12,
+  face: 9.02, lock: 9.42, noPhoto: 9.55,
+  textOut: 9.72,
 }
 const DB_TEXT = 'One-word texts. Refusing to talk it out the same night.\nHating my group chats.'
 const DB_PER = 0.0095
@@ -197,7 +236,7 @@ function buildGrain() {
 }
 
 let SKY = null
-/** pre-rendered sky layers, built once and shared by f3 + f4 */
+/** pre-rendered sky layers, built once and shared by f3–f8 */
 export function getSky() {
   if (SKY) return SKY
   const neb = buildNebula()
@@ -218,15 +257,19 @@ export function getSky() {
   SKY = { neb, far, mid, near, spriteS, spriteG, bright, vig, grain: buildGrain() }
   return SKY
 }
-/** the sky camera: one continuous slow dolly over f3 + f4 (zoom, drift) */
+/** the sky camera: one continuous slow dolly from f3 to the end of the film (zoom, drift).
+ *  Identical to round 0 up to 15.2; after that the drift keeps moving the same way, its speed easing off
+ *  exponentially (half speed by ~29s) — no dead holds at scene boundaries. */
 export function skyCam(t) {
   // continues f2's sky camera exactly at 6.5 (cam 1.0134, drift −6.1, 2.05) and keeps its direction of travel
   const k = prog(t, 6.5, 15.2)
   const zoom = 1.0134 + 0.06 * ease.inOutQuad(prog(t, 6.5, 10.0)) - 0.05 * ease.inOutQuad(prog(t, 10.2, 15.2))
-  return { zoom, dx: lerp(-6.1, -64, k), dy: lerp(2.05, 32, k) }
+  const L = 20, u = Math.max(0, t - 15.2), tail = L * (1 - Math.exp(-u / L)) / 8.7   // in units of the 6.5–15.2 span
+  return { zoom, dx: lerp(-6.1, -64, k + tail), dy: lerp(2.05, 32, k + tail) }
 }
-/** paint the sky onto ctx (opaque). opts.dim scales the plate; opts.moon draws the crescent */
-export function drawSky(bx, t, { pan = [0, 0], moon = 1 } = {}) {
+/** paint the sky onto ctx (opaque). opts.pan adds a parallax offset, opts.moon (0–1) draws the crescent,
+ *  opts.dim (0–1, default 1) scales the nebula plate (stars stay) — ~0.35 where cards need contrast */
+export function drawSky(bx, t, { pan = [0, 0], moon = 1, dim = 1 } = {}) {
   const S = getSky()
   const { zoom, dx: dX, dy: dY } = skyCam(t)
   const driftX = dX + pan[0], driftY = dY + pan[1]
@@ -234,7 +277,7 @@ export function drawSky(bx, t, { pan = [0, 0], moon = 1 } = {}) {
   const flick = 1 + (noise1(t * 14, 3) - 0.5) * 0.05
   bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
   bx.fillStyle = C.void; bx.fillRect(0, 0, W, H)
-  bx.globalAlpha = flick
+  bx.globalAlpha = flick * clamp(dim)
   layer(S.neb, zoom, driftX * 0.5, driftY * 0.5)
   bx.globalCompositeOperation = 'lighter'
   bx.globalAlpha = 0.9; layer(S.far, zoom, driftX * 0.7, driftY * 0.7)
@@ -332,51 +375,40 @@ export default function build(stage) {
     { perChar: DB_PER, fade: 0.2, final: 'rgb(179,166,196)', accent: [C.rub, C.gold, C.violet] })
   const caret = el('div', { position: 'absolute', width: '4px', height: '56px', background: C.gold, boxShadow: '0 0 10px rgba(242,199,92,0.9)', opacity: 0 }, card)
 
-  // ── right column copy
-  const COLX = 1150
-  const pocket = el('div', { position: 'absolute', left: (COLX - 180) + 'px', top: '120px', width: '1000px', height: '760px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(11,6,32,0.55), rgba(11,6,32,0.25) 60%, rgba(11,6,32,0) 100%)', opacity: 0 }, root)
-  const eyebrow = el('div', { position: 'absolute', left: COLX + 'px', top: '236px', fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', whiteSpace: 'nowrap', opacity: 0 }, root, '✦&nbsp;&nbsp;BLIND BY DESIGN')
-  const stmtStyle = { left: (COLX - 6) + 'px', fontFamily: SERIF, fontStyle: 'italic', fontSize: '132px', lineHeight: '1', letterSpacing: '-0.01em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), -0.6px 0 0 rgba(232,98,138,0.3), 0.6px 0 0 rgba(140,170,255,0.25)' }
-  const chart = new TypeLine(root, 'Chart first.', { ...stmtStyle, top: '290px' }, { perChar: 0.035, fade: 0.32, accent: [C.rub, C.gold, C.violet] })
-  const face = new TypeLine(root, 'Face last.', { ...stmtStyle, top: '448px' }, { perChar: 0.04, fade: 0.34, accent: [C.violet, C.plum, C.rub] })
-  // the big three, read out
-  const ICON = {
-    sun: '<svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="#f2c75c" stroke-width="2.4"/><circle cx="20" cy="20" r="3.6" fill="#f2c75c"/></svg>',
-    moon: '<svg width="40" height="40" viewBox="0 0 40 40"><path d="M25 6a14 14 0 1 0 9 22A12 12 0 0 1 25 6z" fill="none" stroke="#c9a6ff" stroke-width="2.4" stroke-linejoin="round"/></svg>',
-    rising: '<svg width="40" height="40" viewBox="0 0 40 40"><path d="M6 30h28" stroke="#ff8fb1" stroke-width="2.4" stroke-linecap="round"/><path d="M20 25V9M13 16l7-7 7 7" fill="none" stroke="#ff8fb1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  }
-  const ROWS = [['sun', 'SUN', 'Libra', B.sun], ['moon', 'MOON', 'Gemini', B.moon], ['rising', 'RISING', 'Aquarius', B.rising]]
-  const rows = ROWS.map(([k, lab, val, at], i) => {
-    const r = el('div', { position: 'absolute', left: COLX + 'px', top: (480 + i * 82) + 'px', height: '64px', display: 'flex', alignItems: 'center', gap: '22px', whiteSpace: 'nowrap', opacity: 0 }, root)
-    el('div', { width: '40px', height: '40px' }, r, ICON[k])
-    el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.2em', color: 'rgba(179,166,196,0.95)', width: '150px' }, r, lab)
-    el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '60px', color: C.bone, textShadow: '0 2px 18px rgba(11,6,32,0.8)' }, r, val)
-    return { r, at }
-  })
+  // lock glint: the photo window's rim catches gold for a beat as "Face last." lands (the face is locked away)
+  const lockRim = el('div', { position: 'absolute', left: WIN[0] + 'px', top: WIN[1] + 'px', width: (WIN[2] - WIN[0]) + 'px', height: (WIN[3] - WIN[1]) + 'px', borderRadius: '40px', boxShadow: '0 0 0 5px rgba(242,199,92,0.95), 0 0 46px 10px rgba(242,199,92,0.5), inset 0 0 40px rgba(255,226,170,0.35)', opacity: 0, pointerEvents: 'none' }, card)
+  // shimmer: a slow diagonal light that crosses the veil now and then
+  const shim = el('div', { position: 'absolute', left: '-40%', top: '-30%', width: '30%', height: '160%', background: 'linear-gradient(90deg, rgba(255,240,250,0), rgba(255,236,250,0.32) 50%, rgba(255,240,250,0))', transform: 'rotate(18deg)', opacity: 0 }, win)
 
-  // grain on top of everything in the scene
-  const grainC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: 0.62, pointerEvents: 'none' }, root)
+  // ── right column copy (card's right edge sits at x≈990; the copy column starts at 1080)
+  const COLX = 1080
+  const pocket = el('div', { position: 'absolute', left: (COLX - 160) + 'px', top: '200px', width: '1000px', height: '600px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(11,6,32,0.6), rgba(11,6,32,0.28) 60%, rgba(11,6,32,0) 100%)', opacity: 0 }, root)
+  const eyebrow = el('div', { position: 'absolute', left: COLX + 'px', top: '318px', fontFamily: MONO, fontSize: '28px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.94)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', whiteSpace: 'nowrap', opacity: 0 }, root, '✦&nbsp;&nbsp;BLIND BY DESIGN')
+  const stmtStyle = { left: (COLX - 6) + 'px', fontFamily: SERIF, fontStyle: 'italic', fontSize: '136px', lineHeight: '1', letterSpacing: '-0.01em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), -0.6px 0 0 rgba(232,98,138,0.3), 0.6px 0 0 rgba(140,170,255,0.25)' }
+  const chart = new TypeLine(root, 'Chart first.', { ...stmtStyle, top: '378px' }, { perChar: 0.035, fade: 0.32, accent: [C.rub, C.gold, C.violet] })
+  const face = new TypeLine(root, 'Face last.', { ...stmtStyle, top: '548px' }, { perChar: 0.04, fade: 0.34, accent: [C.violet, C.plum, C.rub] })
+
+  // grain on top of everything in the scene (shared look: overlay @ 0.5)
+  const grainC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: GRAIN_OPACITY, pointerEvents: 'none' }, root)
   grainC.width = W; grainC.height = H
   const gx = grainC.getContext('2d')
 
-  /** PNG-px point → screen px (ignores the small yaw) */
-  let cam = camAt(6.5)
-  const toScreen = (px, py) => [cam[0] + (px - PNG.cx) * S0 * cam[2], cam[1] + (py - PNG.cy) * S0 * cam[2]]
+  /** PNG-px point → screen px (ignores the small yaw/pitch) */
+  let pose = cardPose(6.5)
+  const toScreen = (px, py) => { const k = pose.h / PNG.bh; return [pose.cx + (px - PNG.cx) * k, pose.cy + pose.bob + (py - PNG.cy) * k] }
 
   return {
     start: F3.start, end: F3.end, root, fadeIn: 0.16,
     update(t) {
-      cam = camAt(t)
-      const [cx, cy, s, yaw] = cam
+      pose = cardPose(t)
+      const { cx, cy, h, yaw, pitch, bob } = pose
       // sky: counter-pan a little against the card move (parallax)
-      drawSky(bx, t, { pan: [(cx - 960) * -0.04, (cy - 470) * -0.03] })
-      const pitch = Math.sin(t * 0.9) * 1.2 + (cy - 470) * -0.004
-      const bob = Math.sin(t * 1.3) * 3
-      card.style.transform = `translate(${cx}px, ${cy + bob}px) perspective(2600px) rotateY(${yaw}deg) rotateX(${pitch}deg) scale(${s * S0}) translate(${-PNG.cx}px, ${-PNG.cy}px)`
+      drawSky(bx, t, { pan: skyPan(cx, cy) })
+      card.style.transform = `translate(${cx}px, ${cy + bob}px) perspective(2600px) rotateY(${yaw}deg) rotateX(${pitch}deg) scale(${h / PNG.bh}) translate(${-PNG.cx}px, ${-PNG.cy}px)`
 
-      // veil breath: always alive, deeper while the camera holds on the window
-      const deep = 0.55 + 0.45 * ease.inOutQuad(prog(t, 8.9, 9.6)) * (1 - ease.inOutQuad(prog(t, 10.0, 10.42)))
-      const outro = 1 - prog(t, 10.1, 10.42)
+      // veil breath: always alive, deeper while the camera holds on the window; it calms as the card shrinks away
+      const deep = 0.6 + 0.4 * ease.inOutQuad(prog(t, 8.8, 9.4)) * (1 - ease.inOutQuad(prog(t, 9.9, 10.4)))
+      const outro = 1 - 0.5 * prog(t, SHRINK.a, SHRINK.b)
       const breath = 0.5 + 0.5 * Math.sin((t - 6.5) * 2.4 - 1.2)
       blobs.forEach((b, i) => {
         const a = t * (0.5 + i * 0.13) + b.ph
@@ -386,16 +418,23 @@ export default function build(stage) {
       })
       arch.style.transform = `scale(${0.94 + 0.1 * breath}, ${0.92 + 0.12 * breath})`
       arch.style.opacity = String((0.35 + 0.65 * breath) * deep * outro)
+      // shimmer passes (7.0, 8.5, 9.45 — the last one rides the lock glint)
+      const sp = [7.0, 8.5, B.lock].map(a => prog(t, a, a + 0.9)).find(p => p > 0 && p < 1) ?? 0
+      shim.style.opacity = String(sp > 0 ? Math.sin(Math.PI * sp) : 0)
+      shim.style.left = `${lerp(-40, 120, ease.inOutQuad(sp))}%`
       const np = prog(t, B.noPhoto, B.noPhoto + 0.7)
       noPh.style.opacity = String(np > 0 && np < 1 ? 1 : 0)
       noPhBand.style.transform = `translateX(${lerp(-280, 780, ease.inOutQuad(np))}px)`
+      // lock glint: flash on, settle to a faint rim, gone before the shrink
+      const lk = prog(t, B.lock, B.lock + 0.6)
+      lockRim.style.opacity = String(lk > 0 ? lerp(1, 0.3, ease.outQuad(lk)) * ease.outQuad(prog(t, B.lock, B.lock + 0.06)) * (1 - prog(t, 9.85, 10.1)) : 0)
 
-      // badges pop: flash ring, settle to a soft glow, release before the pull-back
+      // badges pop: flash ring, settle to a soft glow, release before the shrink
       BADGES.forEach(b => {
         const p = prog(t, b.at, b.at + 0.5)
         const pop = 1 + 0.16 * (1 - ease.outCubic(p)) * (p > 0 ? 1 : 0)
         const flash = p > 0 ? lerp(1, 0.45, ease.outQuad(p)) : 0
-        const off = 1 - prog(t, 9.7, 10.2)
+        const off = 1 - prog(t, 9.6, 10.05)
         b.ring.style.opacity = String(flash * ease.outQuad(prog(t, b.at, b.at + 0.08)) * off)
         b.ring.style.transform = `scale(${pop})`
       })
@@ -403,7 +442,7 @@ export default function build(stage) {
       const bp = prog(t, B.bio, B.bio + 0.62)
       bio.style.opacity = String(bp > 0 && bp < 1 ? 1 : 0)
       bioBand.style.transform = `translateX(${lerp(-440, 1000, ease.inOutQuad(bp))}px)`
-      const bar = ease.outCubic(prog(t, B.bio, B.bio + 0.35)) * (1 - prog(t, 9.6, 10.1))
+      const bar = ease.outCubic(prog(t, B.bio, B.bio + 0.35)) * (1 - prog(t, 9.6, 10.05))
       bioBar.style.transform = `scaleY(${bar})`; bioBar.style.opacity = String(bar)
       // dealbreakers
       const lp = prog(t, B.dbLabel, B.dbLabel + 0.6)
@@ -420,8 +459,8 @@ export default function build(stage) {
         caret.style.top = (1808 + span.offsetTop + 6) + 'px'
       } else caret.style.opacity = '0'
 
-      // copy
-      const out = 1 - ease.inQuad(prog(t, B.textOut, B.textOut + 0.3))
+      // copy: all of it is gone before the shrink starts
+      const out = 1 - ease.inQuad(prog(t, B.textOut, B.textOut + 0.28))
       pocket.style.opacity = String(ease.outQuad(prog(t, 7.0, 7.5)) * out)
       eyebrow.style.opacity = String(ease.outQuad(prog(t, B.eyebrow, B.eyebrow + 0.25)) * out)
       eyebrow.style.transform = `translateY(${(1 - ease.outCubic(prog(t, B.eyebrow, B.eyebrow + 0.4))) * 10}px)`
@@ -429,57 +468,63 @@ export default function build(stage) {
       chart.root.style.opacity = String(out)
       face.update(t - B.face)
       face.root.style.opacity = String(out)
-      const drift = ease.outCubic(prog(t, B.textOut, B.textOut + 0.35)) * -14
+      const drift = ease.outCubic(prog(t, B.textOut, B.textOut + 0.3)) * -14
       chart.root.style.transform = face.root.style.transform = `translateY(${drift}px)`
-      rows.forEach(({ r, at }, i) => {
-        const a = ease.outCubic(prog(t, at, at + 0.35))
-        const o = 1 - ease.inQuad(prog(t, B.rowsOut + i * 0.04, B.rowsOut + 0.22 + i * 0.04))
-        r.style.opacity = String(a * o)
-        r.style.transform = `translate(${(1 - a) * 26 + (1 - o) * 0}px, ${(1 - o) * 16}px)`
-      })
 
       drawGrain(gx, t)
     },
-    // pixel-star pops at each badge + on the typed dealbreakers (fx canvas, above the scene)
+    // pixel-star pops at each badge, the bio, the dealbreakers and the lock glint (fx canvas, above the scene)
     fx(ctx, t) {
       ctx.save(); ctx.imageSmoothingEnabled = false
-      const pops = [[B.rising, -1170, -(480 + 164 + 32)], [B.sun, 365, 988], [B.air, 623, 988], [B.moon, 981, 988], [B.bio, 240, 1074], [B.dbLabel, 486, 1771]]
+      const k = pose.h / 900
+      const pops = [[B.sun, 365, 988], [B.air, 623, 988], [B.moon, 981, 988], [B.bio, 240, 1074], [B.dbLabel, 486, 1771], [B.lock, 1250, 380], [B.lock + 0.06, 260, 880]]
       pops.forEach(([at, px, py], j) => {
         const p = prog(t, at, at + 0.55)
         if (p <= 0 || p >= 1) return
-        const [sx, sy] = px < 0 ? [-px, -py] : toScreen(px, py)
+        const [sx, sy] = toScreen(px, py)
         const r = rng(j * 31 + 7)
         for (let i = 0; i < 7; i++) {
-          const a = r() * Math.PI * 2, d = (20 + r() * 70) * ease.outCubic(p) * cam[2] * 0.8
+          const a = r() * Math.PI * 2, d = (20 + r() * 70) * ease.outCubic(p) * k
           const col = PIXEL_PALETTE[Math.floor(r() * PIXEL_PALETTE.length)]
           const blink = (Math.round(t * 30) + i) & 1
           ctx.globalAlpha = 1 - ease.inQuad(p)
           drawPixelStar(ctx, sx + Math.cos(a) * d, sy + Math.sin(a) * d, 14 + r() * 10, blink ? (i % 2 ? 2 : 3) : 1, col)
         }
       })
+      // the lock glint itself: a spiked star flares on the window's top-right corner
+      const g = prog(t, B.lock - 0.02, B.lock + 0.55)
+      if (g > 0 && g < 1) {
+        const S = getSky(), [sx, sy] = toScreen(1262, 372)
+        const sz = 150 * Math.sin(Math.PI * Math.pow(g, 0.6))
+        ctx.imageSmoothingEnabled = true
+        ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = 1
+        ctx.drawImage(S.spriteS, sx - sz / 2, sy - sz / 2, sz, sz)
+        ctx.globalCompositeOperation = 'source-over'
+      }
       ctx.restore()
     },
-    fxStart: 7.4, fxEnd: 9.0,
+    fxStart: 7.4, fxEnd: 10.05,
   }
 }
 
 const DB_TICKS = []
 for (let i = 0; i < DB_TEXT.length; i += 3) if (DB_TEXT[i] !== ' ' && DB_TEXT[i] !== '\n') DB_TICKS.push(['tick', +(B.dbType + i * DB_PER).toFixed(3), 0.035])
 export const cues = [
-  ['whoosh', 6.68, 0.8, 0.08],                         // the push-in
+  ['whoosh', 6.68, 0.8, 0.07],                         // the push-in
   ['tick', B.chart, 0.05],
   ...[...'Chart first.'].map((c, i) => c === ' ' ? null : ['tick', +(B.chart + i * 0.035).toFixed(3), 0.03]).filter(Boolean),
   ['bell', B.sun, 880, 0.05, 1.2, -0.25],              // Libra (sun)
   ['bell', B.air, 1108.73, 0.035, 1.0, 0],             // air
   ['bell', B.moon, 1318.51, 0.045, 1.2, 0.2],          // Gemini moon
-  ['bell', B.rising, 1479.98, 0.04, 1.4, 0.35],        // Aquarius rising
-  ['glitter', B.sun, B.rising + 0.3],
+  ['glitter', B.sun, B.moon + 0.4],
   ['whoosh', B.bio, 0.5, 0.04],                        // bio light sweep
   ['bell', B.dbLabel, 739.99, 0.03, 0.8, -0.3],
   ...DB_TICKS,
-  ['whoosh', 8.95, 0.7, 0.07],                         // tilt up to the veil
+  ['whoosh', 8.9, 0.6, 0.05],                          // camera settles on the veil
   ['bell', B.face, 587.33, 0.05, 2.2, 0],              // "Face last."
   ['bell', B.face + 0.08, 880, 0.03, 2.0, 0.15],
+  ['tick', B.lock, 0.07],                              // the lock clicks…
+  ['bell', B.lock + 0.01, 1760, 0.04, 1.4, 0.3],       // …and glints
   ['glitter', B.noPhoto, B.noPhoto + 0.6],
-  ['whoosh', 10.05, 0.55, 0.08],                       // pull back into the deck
+  ['whoosh', SHRINK.a + 0.05, 0.7, 0.08],              // the card shrinks into the constellation
 ]

@@ -1,22 +1,63 @@
-// ─────────────────────────────────────────────── F7 · THEN YOU TALK (real time 24.0–27.2)
-// Same night sky as the first film's S7 (aurora curtain, galaxy arc, 'aurora' space mood).
+// ─────────────────────────────────────────────── F7 · THEN YOU TALK (real time 24.0–26.8, hands to f8 at 26.6)
+// One sky spine: the same S1 nebula / star layers / moon / grain as f3–f6 (./f3-chart.js), with the first film's
+// S7 aurora (curtain, galaxy arc, low bloom) laid OVER it as an overlay that fades in 24.0–24.6 and out 26.0–26.5.
+// The sky camera keeps drifting (paintSky) and f8 paints the identical sky, so the f7→f8 handoff is a content crossfade.
 // Timing (sound):
-//   24.00–24.25 fade up over f6 — the match phone ("You both aligned.") centred, as f6 leaves it
-//   24.22–24.72 phone glides left (x 960 → 640); its screen slides up into the chat + talk-card hand (24.28–24.70)
-//   24.40–24.80 a fanned hand of three talk cards rises from the bottom right (Lovers · The Fool · The Sun)
-//   24.80–24.95 The Fool lifts out of the hand · 24.95–25.42 it is PLAYED: arcs over into the phone,
-//               lands on the card-of-the-day slot at 25.42 (gold flash + ring + pixel-star burst, glint sweep 25.46–25.86)
-//   25.00–25.32 the rest of the hand sinks away
-//   25.36 caption pops (eyebrow "THE TALK DECK" + "Then you talk in cards."), full 25.48, held → out 26.86–27.04
-//   25.62–26.20 "Play it to Juniper" button breathes gold (it's been played)
-//   26.70–27.20 camera tilts up toward the sky: phone + caption drift down and dim; f8's nebula crossfades in 27.0–27.2
+//   24.00–24.18 fade up over f6 — the match phone ("You both aligned.") centred, as f6 leaves it
+//   24.15–24.60 phone glides left (x 960 → 640); its screen slides up into the chat (24.20–24.60)
+//   24.45–24.85 a fanned hand of three talk cards rises bottom-right (Lovers · The Fool · The Sun) — ticks 24.47/.52/.57
+//   24.60 caption (eyebrow "THE TALK DECK" + "Then you talk in cards.") steps in WITH the fan, full by ~24.95
+//   24.95–25.19 The Fool lifts out of the hand · 25.15–25.60 it is PLAYED: arcs over into the phone,
+//               lands on the card-of-the-day slot at 25.60 (gold flash + ring + pixel-star burst, glint sweep 25.64–26.04)
+//   25.20–25.64 the rest of the hand sinks away · 25.80–26.20 "Play it to Juniper" button breathes gold
+//   25.60–26.35 hold · 26.35–26.80 phone + caption drift down and fade (f8's line starts typing 26.68)
 import { clamp, lerp, prog, ease, tw, rng, el, C } from '../../src/lib.js'
-import { W, H, A, SERIF, MONO, fill, img, spaceBackdrop } from '../../src/scenes/common.js'
+import { W, H, A, SERIF, MONO, fill, img } from '../../src/scenes/common.js'
+import { drawMoon } from '../../src/scenes/fx-moon.js'
+import { drawSky, skyCam, drawGrain } from './f3-chart.js'
 
-const T0 = 24.0, T1 = 27.2
-const T_GLIDE = 24.22, T_GLIDE_END = 24.72, T_SCR = 24.28
-const T_HAND = 24.4, T_LIFT = 24.8, T_PLAY = 24.95, T_LAND = 25.42
-const CAP = 25.36, CAP_OUT = 26.86, T_TILT = 26.7
+const T0 = 24.0, T1 = 26.8
+const T_GLIDE = 24.15, T_GLIDE_END = 24.6, T_SCR = 24.2
+const T_HAND = 24.45, T_LIFT = 24.95, T_PLAY = 25.15, T_LAND = 25.6
+const CAP = 24.6, CAP_OUT = 26.35, T_EXIT = 26.35
+const AU_IN = [24.0, 24.6], AU_OUT = [26.0, 26.5]
+
+// ── shared sky camera for f7 + f8: continues skyCam (static after 15.2) with a slow linear drift + push-in,
+//    so nothing eases to a dead hold at the 24.0 / 26.6 handoffs. f8 imports these so its sky is identical.
+export function skyPan(t) { return [-(t - 24) * 7, (t - 24) * 3.5] }
+export function skyZoom(t) { return 1 + 0.008 * (t - 24) }
+let DIM = null
+function dimPlate() {
+  if (DIM) return DIM
+  DIM = document.createElement('canvas'); DIM.width = W; DIM.height = H
+  const x = DIM.getContext('2d')
+  x.fillStyle = 'rgba(11,6,32,0.34)'; x.fillRect(0, 0, W, H)
+  x.save(); x.translate(W / 2, H / 2); x.scale(1, 0.6)
+  const g = x.createRadialGradient(0, 0, 0, 0, 0, 1000)
+  g.addColorStop(0, 'rgba(11,6,32,0.5)'); g.addColorStop(0.55, 'rgba(11,6,32,0.32)'); g.addColorStop(1, 'rgba(11,6,32,0)')
+  x.fillStyle = g; x.fillRect(-1100, -1100, 2200, 2200); x.restore()
+  return DIM
+}
+/** paint the S1 sky (opaque) + its crescent moon at drawSky's own spot; moonGlow lets f8 brighten it */
+export function paintSky(bx, t, { moonAlpha = 1, moonGlow = 3 } = {}) {
+  const z = skyZoom(t), pan = skyPan(t)
+  bx.setTransform(z, 0, 0, z, W / 2 * (1 - z), H / 2 * (1 - z))
+  drawSky(bx, t, { pan, moon: 0 })
+  bx.setTransform(1, 0, 0, 1, 0, 0)
+  bx.drawImage(dimPlate(), 0, 0)                     // nebula dimmed toward ~35% in the middle, where phone/type sit
+  bx.setTransform(z, 0, 0, z, W / 2 * (1 - z), H / 2 * (1 - z))
+  const { zoom, dx, dy } = skyCam(t)
+  const driftX = dx + pan[0], driftY = dy + pan[1]
+  // same placement as drawSky's moon after its 7.5 move (1716, 122, r52·zoom, phase .14) — f3–f6 moon spot
+  drawMoon(bx, 1716 + driftX * 1.3, 122 + driftY * 1.3, 52 * zoom, 0.14, { alpha: moonAlpha, glow: moonGlow, earthshine: 1, darkAlpha: 0.62 })
+  bx.setTransform(1, 0, 0, 1, 0, 0)
+}
+/** shared grain look (≥0.5, overlay) */
+export function grainCanvas(parent, op = 0.55) {
+  const c = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: op, pointerEvents: 'none' }, parent)
+  c.width = W; c.height = H
+  return c.getContext('2d')
+}
 
 const PH = 880, PW = Math.round(PH * 1170 / 2532)   // 407
 const PX0 = W / 2, PX1 = 640, PCY = H / 2
@@ -32,10 +73,13 @@ const FAN = [{ src: 'card-talk-6.png', a: -15 }, { src: 'card-talk-1.png', a: 0,
 
 export default function build(stage) {
   const root = fill(stage, { background: C.void })
-  // ── sky: shared aurora mood, deepened core, galaxy arc, aurora curtain (S7 recipe)
-  const sky = fill(root, { background: 'transparent' })
-  const space = spaceBackdrop(sky, 'aurora', { seed: 17, grain: 0.22, stars: 190 })
-  fill(sky, { background: 'radial-gradient(70% 62% at 50% 44%, rgba(9,4,26,0.72) 0%, rgba(9,4,26,0.5) 55%, rgba(9,4,26,0.12) 100%)' })
+  // ── sky: the shared S1 nebula plate (canvas), then the S7 aurora as an OVERLAY layer on top of it
+  const bgC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
+  bgC.width = W; bgC.height = H
+  const bx = bgC.getContext('2d')
+  const sky = fill(root, { background: 'transparent', opacity: 0 })     // aurora overlay (fades in/out)
+  // dims the nebula's centre under the phone + caption (~35% plate there), part of the overlay
+  fill(sky, { background: 'radial-gradient(70% 62% at 50% 46%, rgba(9,4,26,0.62) 0%, rgba(9,4,26,0.42) 55%, rgba(9,4,26,0.08) 100%)' })
   const GA = el('canvas', { position: 'absolute', left: '-240px', top: '-240px', width: (W + 480) + 'px', height: (H + 480) + 'px', mixBlendMode: 'screen', transformOrigin: '50% 60%', opacity: 0.85 }, sky)
   GA.width = W + 480; GA.height = H + 480
   {
@@ -145,8 +189,6 @@ export default function build(stage) {
   // the button's gold breath (after the card is played)
   const btnGlow = el('div', { position: 'absolute', left: BTN.x + 'px', top: BTN.y + 'px', width: BTN.w + 'px', height: BTN.h + 'px', borderRadius: '999px', opacity: 0,
     boxShadow: '0 0 0 2px rgba(242,199,92,0.9), 0 0 28px rgba(242,199,92,0.75), 0 0 60px rgba(242,199,92,0.35)' }, scr)
-  // corner handles (S7 language), shown once the phone settles
-  const hs = [[0, 0], [1, 0], [0, 1], [1, 1]].map(([x, y]) => el('div', { position: 'absolute', left: (x * PW - 8) + 'px', top: (y * PH - 8) + 'px', width: '16px', height: '16px', background: C.bone, boxShadow: '0 0 0 2px rgba(20,10,46,0.85), 0 0 10px rgba(239,230,214,0.45)', opacity: 0 }, g))
 
   // hand of talk cards (children of the phone group so the played card lands in its exact space)
   const cards = FAN.map(f => {
@@ -172,7 +214,7 @@ export default function build(stage) {
   const WORDS = ['Then', 'you', 'talk', 'in', 'cards.']
   const wspans = WORDS.map((w, i) => el('span', { display: 'inline-block', opacity: 0, marginRight: i < WORDS.length - 1 ? '0.24em' : '0' }, capLine, w))
 
-  const dim = fill(root, { background: C.void, opacity: 0, pointerEvents: 'none' })
+  const gx = grainCanvas(root, 0.55)
 
   /** hero card state in phone-local coords */
   function heroState(t) {
@@ -194,10 +236,12 @@ export default function build(stage) {
   return {
     start: T0, end: T1, root,
     update(t) {
-      root.style.opacity = String(ease.outQuad(prog(t, T0, T0 + 0.25)))
-      space.update(t)
+      root.style.opacity = String(ease.outQuad(prog(t, T0, T0 + 0.18)))
+      paintSky(bx, t)
+      const auK = ease.inOutQuad(prog(t, AU_IN[0], AU_IN[1])) * (1 - ease.inOutQuad(prog(t, AU_OUT[0], AU_OUT[1])))
+      sky.style.opacity = String(auK)
       GA.style.transform = `rotate(${(t - 22.4) * 0.9}deg)`
-      drawAurora(t, 1)
+      if (auK > 0.002) drawAurora(t, 1)
       BLOOM.forEach(b => {
         b.e.style.transform = `translate(${b.x * W - b.r + Math.sin(t * 0.4 + b.i * 2) * 70}px, ${b.y * H - b.r + Math.cos(t * 0.5 + b.i) * 30}px)`
       })
@@ -210,15 +254,13 @@ export default function build(stage) {
       const ry = lerp(0, 5, st) + Math.sin(Math.PI * gl) * -14 + 1.0 * Math.sin((t - T0) * 1.1)
       const rx = lerp(0, 2.5, st) + 0.6 * hold
       const rz = Math.sin(Math.PI * gl) * -2.5 + lerp(0, -0.8, st)
-      const sc = lerp(1, 0.97, Math.sin(Math.PI * gl)) * (1 + 0.012 * prog(t, T_GLIDE_END, CAP_OUT))
+      const sc = lerp(1, 0.97, Math.sin(Math.PI * gl)) * (1 + 0.012 * prog(t, T_GLIDE_END, T1))
       const tyP = 4 * hold * st
       g.style.transform = `translate(${px}px, ${tyP}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${sc})`
       const sw = ease.outCubic(prog(t, T_SCR, T_SCR + 0.42))
       scrB.style.transform = `translateY(${(1 - sw) * 100}%)`
       scrA.style.transform = `translateY(${-sw * 12}%)`
       scrA.style.filter = `brightness(${lerp(1, 0.5, sw)})`
-      const hA = prog(t, T_GLIDE_END + 0.05, T_GLIDE_END + 0.15)
-      hs.forEach(h => { h.style.opacity = String(hA) })
       const bloom = tw(t, [[T_LAND - 0.05, 0.25], [T_LAND + 0.12, 0.95, ease.outQuad], [T_LAND + 0.8, 0.4, ease.inOutQuad]])
       aura.style.opacity = String(bloom * prog(t, T_GLIDE, T_GLIDE_END))
       aura.style.transform = `translateX(${px - PX1}px) scale(${lerp(0.9, 1.06, bloom)})`
@@ -249,7 +291,7 @@ export default function build(stage) {
       })
 
       // ── caption: eyebrow + words step in, settle, then leave with the tilt
-      const ci = ease.outCubic(prog(t, CAP, CAP + 0.32)), co = ease.inQuad(prog(t, CAP_OUT, CAP_OUT + 0.18))
+      const ci = ease.outCubic(prog(t, CAP, CAP + 0.32)), co = ease.inQuad(prog(t, CAP_OUT, CAP_OUT + 0.3))
       box.style.opacity = String(Math.min(prog(t, CAP, CAP + 0.12), 1 - co))
       box.style.transform = `translateX(${lerp(36, 0, ci)}px)`
       wspans.forEach((s, i) => {
@@ -259,18 +301,26 @@ export default function build(stage) {
         s.style.filter = p < 1 ? `blur(${(1 - p) * 6}px)` : 'none'
       })
 
-      // ── exit: camera tilts up to the sky
-      const tl = ease.inCubic(prog(t, T_TILT, T1))
-      tilt.style.transform = `translateY(${tl * 160}px)`
-      tilt.style.opacity = String(1 - ease.inQuad(prog(t, T_TILT + 0.1, T1 - 0.05)))
-      sky.style.transform = `translateY(${tl * 60}px) scale(${1 + 0.03 * tl})`
-      dim.style.opacity = String(0.2 * tl)
+      // ── exit: phone + caption drift down and fade over the (continuing) sky; f8 crossfades in 26.6–26.8
+      const tl = ease.inCubic(prog(t, T_EXIT, T1))
+      const cOut = ease.inOutQuad(prog(t, T_EXIT + 0.05, T1 - 0.05))
+      tilt.style.transform = `translateY(${tl * 140}px)`
+      tilt.style.opacity = String(1 - cOut)
 
       // ── pixel layer
       cx.clearRect(0, 0, W, H)
-      FIELD.forEach(f => pix(f.x, f.y + tl * 60, f.u, f.a * (0.55 + 0.45 * Math.sin(t * f.sp + f.ph)), '255,250,242', false))
+      FIELD.forEach(f => pix(f.x, f.y, f.u, f.a * auK * (0.55 + 0.45 * Math.sin(t * f.sp + f.ph)), '255,250,242', false))
+      // four tiny twinkling pixel stars at the phone's corners (replace the old selection-handle squares)
+      {
+        const ca = 0.5 * ease.outQuad(prog(t, T_GLIDE_END - 0.05, T_GLIDE_END + 0.25)) * (1 - cOut)
+        const ty = tl * 140
+        ;[[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([sx, sy], i) => {
+          const tw3 = 0.55 + 0.45 * Math.sin(t * (3.1 + i * 0.7) + i * 1.9)
+          pix(px + sx * (PW / 2 + 22), PCY + tyP + ty + sy * (PH / 2 + 22), 3, ca * tw3, i % 2 ? '255,226,160' : '255,246,234', false)
+        })
+      }
       // burst around the landing point (slot centre in scene space at rest)
-      const lx = PX1, ly = PCY - PH / 2 + SLOT.y
+      const lx = PX1, ly = PCY - PH / 2 + SLOT.y + tl * 140
       BURST.forEach(b => {
         const p = prog(t, T_LAND + b.dl, T_LAND + b.dl + 0.7)
         if (p <= 0 || p >= 1) return
@@ -284,20 +334,21 @@ export default function build(stage) {
         const ox = PX1 - PW / 2
         pix(ox + Hs.x + CW * Hs.s * 0.42, PCY - PH / 2 + Hs.y - CH * Hs.s * 0.42, 3, k * (0.6 + 0.4 * Math.sin(t * 40)), '255,226,160', true)
       }
+      drawGrain(gx, t)
     },
   }
 }
 
 export const cues = [
-  ['whoosh', 24.2, 0.5, 0.07],             // phone glides, chat slides up
-  ['tick', 24.42, 0.05],                    // cards fan in the hand
-  ['tick', 24.47, 0.04],
+  ['whoosh', 24.12, 0.5, 0.07],             // phone glides, chat slides up
+  ['tick', 24.47, 0.05],                    // cards fan in the hand
   ['tick', 24.52, 0.04],
-  ['whoosh', 24.88, 0.55, 0.11],            // the card is played
-  ['bell', 25.42, 1174.66, 0.05, 1.6, -0.25], // gold glint as it lands (D6)
-  ['bell', 25.45, 1760, 0.025, 1.2, -0.3],
-  ['glitter', 25.43, 25.95],
-  ['bell', 25.4, 587.33, 0.045, 2.2, 0.2],  // caption bells (D5 · A4)
-  ['bell', 25.62, 440, 0.03, 2.0, 0.25],
-  ['whoosh', 26.75, 0.6, 0.06],             // tilt up to the sky
+  ['tick', 24.57, 0.04],
+  ['bell', 24.62, 587.33, 0.045, 2.2, 0.2], // caption steps in with the fan (D5 · A4)
+  ['bell', 24.84, 440, 0.03, 2.0, 0.25],
+  ['whoosh', 25.08, 0.55, 0.11],            // the card is played
+  ['bell', 25.6, 1174.66, 0.05, 1.6, -0.25], // gold glint as it lands (D6)
+  ['bell', 25.63, 1760, 0.025, 1.2, -0.3],
+  ['glitter', 25.61, 26.1],
+  ['whoosh', 26.32, 0.5, 0.05],             // phone + caption drift away into the sky
 ]
