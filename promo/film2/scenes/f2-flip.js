@@ -14,8 +14,13 @@ const START = 4.0, END = 6.7
 export const F2_END = { cx: 960, cy: 460, bodyW: 420, bodyH: 420 * CARD_H / CARD_W }   // = 420 × 670.4 (card-profile body aspect)
 export const END_X = F2_END.cx, END_Y = F2_END.cy, END_W = F2_END.bodyW, END_S = F2_END.bodyW / CARD_W
 const WIPE = 0.35, FEATHER = 120                                   // nebula bloom: radial wipe from the edge line
-const WIND = 4.5, FLIP0 = 4.62, FLIP1 = 5.1, SETTLE = 5.55
-const EDGE = 4.865                                                 // card edge-on → the world inverts
+const WIND = 4.5, WIND_STOP = 4.6, FLIP0 = 4.68, FLIP1 = 5.22, SETTLE = 5.55   // wind-up stops dead at 4.6, a beat, then the turn
+const EDGE = 4.965                                                 // card edge-on (frame 149, 16° past) → the world inverts
+const EDGE_F = Math.round(EDGE * 30)                               // white edge hairline on frames EDGE_F-1 and EDGE_F
+// the sky's aftermath (camera settle, moon, ambient stars, burst) keeps the R1 clock (edge-on at 4.865) from SETTLE on, so the
+// 5.55–6.7 hold that f3 picks up is frame-identical; between EDGE and SETTLE that clock runs ~17% fast to catch up
+const EDGE0 = 4.865
+const skyT = t => t >= SETTLE ? t : EDGE0 + (t - EDGE) * (SETTLE - EDGE0) / (SETTLE - EDGE)
 const BONE = '#efe6d6'
 
 // ─────────────────────────────── nebula (copied from s1-imagine.js buildNebula, 16:9 branch only)
@@ -158,7 +163,7 @@ const AMBIENT = (() => {
   while (out.length < 34) {
     const x = 40 + r() * (W - 80), y = 30 + r() * (H - 60)
     if (x > 680 && x < 1240) continue
-    out.push({ x, y, px: 3 + Math.floor(r() * 2), kind: r() < 0.25 ? 0 : (r() < 0.6 ? 1 : 2), col: STAR_PAL[Math.floor(r() * 5)], t0: EDGE + 0.12 + r() * 0.7, sp: 1.5 + r() * 3, seed: out.length * 7 + 3 })
+    out.push({ x, y, px: 3 + Math.floor(r() * 2), kind: r() < 0.25 ? 0 : (r() < 0.6 ? 1 : 2), col: STAR_PAL[Math.floor(r() * 5)], t0: EDGE0 + 0.12 + r() * 0.7, sp: 1.5 + r() * 3, seed: out.length * 7 + 3 })
   }
   return out
 })()
@@ -237,7 +242,7 @@ export default function build(stage) {
 
   const flipAngle = t => {
     if (t < WIND) return 0
-    if (t < FLIP0) return -11 * ease.outQuad(prog(t, WIND, FLIP0))
+    if (t < FLIP0) return -11 * ease.outCubic(prog(t, WIND, WIND_STOP))          // winds up, stops dead, holds a beat
     if (t < FLIP1) return lerp(-11, 188, ease.inOutCubic(prog(t, FLIP0, FLIP1)))
     const u = prog(t, FLIP1, SETTLE)
     return 180 + 8 * Math.exp(-u * 5) * Math.cos(u * 9.5)
@@ -245,7 +250,7 @@ export default function build(stage) {
 
   return {
     start: START, end: END, root,
-    fxStart: EDGE - 0.02, fxEnd: END,
+    fxStart: EDGE - 0.05, fxEnd: END,
     update(t) {
       const fr = Math.round(t * 30)
       // cold world (same as f1's, incl. its grain) from 4.0 — f2 covers f1 completely — until the bloom has covered it
@@ -278,9 +283,9 @@ export default function build(stage) {
       const bloom = prog(t, EDGE - 1 / 60, EDGE + WIPE)
       if (bloom > 0) {
         skyC.style.opacity = '1'
-        const ex = 1 + 0.9 * Math.exp(-prog(t, EDGE, EDGE + 1.0) * 4)                    // over-exposed bloom settling
+        const ex = 1 + 0.9 * Math.exp(-prog(skyT(t), EDGE0, EDGE0 + 1.0) * 4)                    // over-exposed bloom settling
         skyC.style.filter = `brightness(${ex.toFixed(3)}) saturate(${(1 + 0.3 * (ex - 1)).toFixed(3)})`
-        drawSky(t)
+        drawSky(skyT(t))
         if (bloom < 1) {                                       // radial wipe from the edge line (capsule SDF, feathered)
           const e = pose(EDGE), hh = CARD_H * e.s / 2, r = 20 + 1250 * ease.outCubic(bloom)
           mx.setTransform(1, 0, 0, 1, 0, 0); mx.clearRect(0, 0, W / 2, H / 2)
@@ -291,11 +296,12 @@ export default function build(stage) {
         }
       } else skyC.style.opacity = '0'
 
-      // slam impact: a cold pop on the stop
-      slamFlash.style.opacity = String(t >= SLAM ? 0.32 * Math.exp(-(t - SLAM) * 16) : 0)
+      // slam impact: a cold bloom on the stop — 2-frame attack (0.1 → 0.2), then a fast decay
+      const sd = t - SLAM, PK = 1 / 30
+      slamFlash.style.opacity = String(sd < 0 ? 0 : sd < PK ? 0.1 + 0.1 * sd / PK : 0.2 * Math.exp(-(sd - PK) * 14))
       // flash: a white-violet pop centred on the card, peaking (0.55) on the edge-on frame, decaying fast
       const fd = t - EDGE
-      const fl = fd < -0.05 ? 0 : fd < 0 ? 0.14 : 0.55 * Math.exp(-fd * 8)
+      const fl = (fd < -0.05 ? 0 : fd < 0 ? 0.14 : 0.55 * Math.exp(-fd * 8)) * (1 - prog(t, EDGE + 0.35, SETTLE))   // fully gone by the hold
       flash.style.opacity = String(clamp(fl, 0, 0.6))
 
       // caption: lands in the hold, stays through the flip, clears for f3
@@ -313,10 +319,24 @@ export default function build(stage) {
     fx(ctx, t) {
       ctx.save()
       ctx.imageSmoothingEnabled = false
-      const dt = t - EDGE + 1 / 60                                       // frame 146 (the edge-on frame) → dt ≈ 0.018
+      const dt = skyT(t) - EDGE0 + 1 / 60                                       // frame 149 (the edge-on frame) → dt ≈ 0.018
       const tick = Math.round(t * 30) >> 1
+      // a 2-frame white hairline along the card's edge as it passes edge-on (frames EDGE_F-1, EDGE_F)
+      const fr = Math.round(t * 30)
+      if (fr === EDGE_F - 1 || fr === EDGE_F) {
+        const p = pose(t), hl = CARD_H * p.s / 2 - 18 * p.s, a = p.rz * Math.PI / 180
+        ctx.save(); ctx.imageSmoothingEnabled = true
+        ctx.translate(p.x, p.y); ctx.rotate(a)
+        ctx.globalAlpha = fr === EDGE_F ? 1 : 0.85
+        ctx.shadowColor = 'rgba(226,210,255,0.9)'; ctx.shadowBlur = 14
+        const lg = ctx.createLinearGradient(0, -hl, 0, hl)
+        lg.addColorStop(0, 'rgba(255,255,255,0)'); lg.addColorStop(0.08, '#ffffff'); lg.addColorStop(0.92, '#ffffff'); lg.addColorStop(1, 'rgba(255,255,255,0)')
+        ctx.fillStyle = lg; ctx.fillRect(-1.5, -hl, 3, 2 * hl)
+        ctx.restore()
+      }
       // burst off the edge line (no shock ring — the feathered wipe is the bloom)
-      const e = pose(EDGE), hh = CARD_H * e.s / 2, cr = Math.cos(e.rz * Math.PI / 180), sr = Math.sin(e.rz * Math.PI / 180)
+      // origin = the R1 edge line (a few px off R2's) so the sparks still drifting in the 5.55–6.7 hold are unchanged
+      const e = pose(EDGE0, 4.62, 5.1), hh = CARD_H * e.s / 2, cr = Math.cos(e.rz * Math.PI / 180), sr = Math.sin(e.rz * Math.PI / 180)
       for (const b of BURST) {
         const lt = dt - b.d
         if (lt <= 0 || lt > b.life) continue
@@ -329,7 +349,7 @@ export default function build(stage) {
       // ambient pixel stars twinkle on in the new sky (fade before the hand-off so f3 owns its own)
       const amb = 1 - prog(t, 6.3, 6.62)
       for (const a of AMBIENT) {
-        const on = ease.outQuad(prog(t, a.t0, a.t0 + 0.25)) * amb
+        const on = ease.outQuad(prog(skyT(t), a.t0, a.t0 + 0.25)) * amb
         if (on <= 0.01) continue
         const tw2 = 0.55 + 0.45 * noise1(t * a.sp, a.seed)
         ctx.globalAlpha = on * tw2
@@ -340,22 +360,22 @@ export default function build(stage) {
   }
 
   /** the card's pose at time t (f1 slam pose → hold → wind-up → flip with lift → F2_END) */
-  function pose(t) {
+  function pose(t, f0 = FLIP0, f1 = FLIP1) {
     const p0 = lastCardPose(Math.min(t, WIND))
-    const k = ease.inOutCubic(prog(t, FLIP0, SETTLE - 0.1))
+    const k = ease.inOutCubic(prog(t, f0, SETTLE - 0.1))
     const ang = flipAngle(t)
-    const fu = prog(t, FLIP0, FLIP1), lift = Math.sin(Math.PI * fu)
+    const fu = prog(t, f0, f1), lift = Math.sin(Math.PI * fu)
     return {
       ang, rx: 7 * lift, rz: lerp(p0.rot, 0, k) - 4 * lift,
       x: lerp(p0.x, END_X, k), y: lerp(p0.y, END_Y, k) - 10 * lift,
-      s: lerp(p0.s, END_S, k) * (1 + 0.02 * lift) * (t > FLIP1 ? 1 + 0.025 * Math.exp(-(t - FLIP1) * 9) * Math.sin((t - FLIP1) * 20) : 1),
+      s: lerp(p0.s, END_S, k) * (1 + 0.02 * lift) * (t > f1 ? 1 + 0.025 * Math.exp(-(t - f1) * 9) * Math.sin((t - f1) * 20) * (1 - prog(t, SETTLE - 0.15, SETTLE)) : 1),
     }
   }
 
   /** nebula plate + parallax star layers + bright stars + crescent moon (S1's recipe), slow push */
   function drawSky(t) {
-    const k = prog(t, EDGE, END + 0.6)
-    const cam = lerp(1.07, 1.0, ease.outCubic(prog(t, EDGE, EDGE + 1.2))) * lerp(1, 1.02, k)
+    const k = prog(t, EDGE0, END + 0.6)
+    const cam = lerp(1.07, 1.0, ease.outCubic(prog(t, EDGE0, EDGE0 + 1.2))) * lerp(1, 1.02, k)
     const dX = lerp(10, -14, k), dY = lerp(-6, 6, k)
     const layer = (im, sc, dx, dy) => { const w = BGW * sc, h = BGH * sc; bx.drawImage(im, W / 2 - w / 2 + dx, H / 2 - h / 2 + dy, w, h) }
     bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
@@ -375,8 +395,8 @@ export default function build(stage) {
       bx.drawImage(b.spike ? spriteS : spriteG, x - sz / 2, y - sz / 2, sz, sz)
     }
     bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
-    const mk = ease.outCubic(prog(t, EDGE, END))
-    drawMoon(bx, 1575 + dX * 1.3, lerp(300, 262, mk) + dY * 1.3, 64 * cam, 0.09, { alpha: ease.inOutQuad(prog(t, EDGE + 0.15, EDGE + 0.9)), glow: 3.4, earthshine: 1, darkAlpha: 0.62 })
+    const mk = ease.outCubic(prog(t, EDGE0, END))
+    drawMoon(bx, 1575 + dX * 1.3, lerp(300, 262, mk) + dY * 1.3, 64 * cam, 0.09, { alpha: ease.inOutQuad(prog(t, EDGE0 + 0.15, EDGE0 + 0.9)), glow: 3.4, earthshine: 1, darkAlpha: 0.62 })
     bx.drawImage(pocket, 0, 0)
     bx.drawImage(vig, 0, 0)
   }
@@ -385,8 +405,9 @@ export default function build(stage) {
 // ── sound (absolute times): slam is f1's; here — hold tick, wind-up, flip whoosh, inversion boom + D-major bell chord, glitter, landing
 export const cues = [
   ['tick', 4.14, 0.06],                                     // caption lands
-  ['whoosh', WIND, 0.18, 0.06],                             // wind-up breath
-  ['whoosh', FLIP0, 0.5, 0.24],                             // the flip
+  ['whoosh', WIND, 0.12, 0.06],                             // wind-up breath
+  ['tick', WIND_STOP, 0.12],                                // the card stops dead before the turn
+  ['whoosh', FLIP0, 0.56, 0.24],                            // the flip
   ['boom', EDGE, 0.6],                                      // the world inverts
   ...[293.66, 369.99, 440, 554.37, 587.33, 739.99].map((f, i) => ['bell', EDGE + 0.02 + i * 0.045, f, 0.07, 2.6, (i - 2.5) * 0.18]),
   ['glitter', EDGE + 0.04, EDGE + 1.1],

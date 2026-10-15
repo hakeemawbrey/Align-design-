@@ -273,9 +273,11 @@ export default function build(stage) {
       tCount.textContent = 'FACE ' + String(FACE_NO(Math.min(top, N))).padStart(3, '0')
       const tOut = 1 - ease.inQuad(prog(t, 3.84, 3.97))
       timer.style.opacity = String(tOut); tCount.style.opacity = String(tOut)
-      // nervous exposure flicker that grows with the tempo (gone before f2 takes over at 4.0)
+      // nervous exposure flicker that grows with the tempo (gone before f2 takes over at 4.0): a slow irregular
+      // drift plus sparse, uneven one-frame dips (~1 frame in 6, random depth) — no regular strobe
       const tempo = prog(t, 1.2, 3.7) * (1 - prog(t, 3.75, 3.9))
-      flick.style.opacity = String(clamp((noise1(t * 22, 5) - 0.5) * 0.18 * (0.3 + tempo) + (fr % 2 ? 0.02 * tempo : 0), 0, 0.2) * (1 - prog(t, 3.75, 3.9)))
+      const fq = rng(fr * 4271 + 11), dip = fq() < 0.16 ? (0.01 + 0.02 * fq()) * tempo : 0
+      flick.style.opacity = String(clamp((noise1(t * 7.3, 5) - 0.5) * 0.1 * (0.3 + tempo) + dip, 0, 0.1) * (1 - prog(t, 3.75, 3.9)))
       backGrain.update(t); grain.update(t)
     },
   }
