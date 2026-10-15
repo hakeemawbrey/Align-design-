@@ -23,7 +23,8 @@
 // skyPan/skyZoom at 24.0 exactly — f6 paints the same sky, so f5→f6→f7 drift is one continuous move.
 import { clamp, lerp, prog, ease, rng, noise1, el, C } from '../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill, img } from '../../src/scenes/common.js'
-import { getSky, drawSky, drawGrain } from './f3-chart.js'
+import { getSky, drawSky, drawGrain, skyCam, skyPan, HANDOFF } from './f3-chart.js'
+import { drawMoon } from '../../src/scenes/fx-moon.js'
 
 export const CC = { x: 960, y: 440 }                // column centre / moon centre / Juniper's final card centre
 export const LOCK = 18.45
@@ -76,39 +77,55 @@ export function youPose(t) {
 
 // ── shared world pieces ───────────────────────────────────────────────────────
 // ONE SKY SPINE: the S1 nebula plate + star layers + grain from f3-chart.js. f5 and f6 paint it through paintSkyF5.
-const P0 = [0, (540 - 470) * -0.03]                   // f4's constant drawSky pan (seamless at 15.0)
+const P0 = skyPan(HANDOFF.cx, HANDOFF.cy)               // f4's constant drawSky pan (seamless at 15.0)
 const LOOP = { a: 15.2, b: 24.0 }, V24 = [-7, 3.5]    // f7: skyPan(t) = [-(t-24)·7, (t-24)·3.5], skyZoom = 1 + .008(t-24)
-/** extra pan on top of skyCam: constant before 15.2; then one constant-speed loop (velocity V24 at both ends, so it
- *  picks up skyCam's drift at 15.2 and hands f7 the exact pan/velocity at 24.0); after 24.0 it IS f7's skyPan. */
+/** extra pan on top of skyCam (which keeps drifting on its own after 15.2): constant before 15.2, then a cubic
+ *  that leaves 15.2 with zero extra velocity and arrives at 24.0 on f7's exact pan (0) and velocity (V24) —
+ *  it only ever slows skyCam's drift to ~half, never to a stop. After 24.0 it IS f7's skyPan. */
 export function skyPanF5(t) {
   if (t <= LOOP.a) return P0
   if (t >= LOOP.b) return [V24[0] * (t - 24), V24[1] * (t - 24)]
-  const T = LOOP.b - LOOP.a, s = t - LOOP.a, w = 2 * Math.PI / T, k = s / T, sm = k * k * (3 - 2 * k)
-  const sn = Math.sin(w * s) / w, cs = (1 - Math.cos(w * s)) / w
-  // p(s) = sn·v + cs·perp(v): |p'| constant, p(T) = 0, p'(0) = p'(T) = v
-  return [lerp(P0[0], 0, sm) + sn * V24[0] - cs * V24[1], lerp(P0[1], 0, sm) + sn * V24[1] + cs * V24[0]]
+  const T = LOOP.b - LOOP.a, k = (t - LOOP.a) / T, sm = k * k * (3 - 2 * k), c = T * (k * k * k - k * k)
+  return [P0[0] * (1 - sm) + V24[0] * c, P0[1] * (1 - sm) + V24[1] * c]
 }
 /** relative sky zoom (×skyCam's): a slow breath in, back to 1 at 24.0; f7's slow push after */
 export function skyZoomF5(t) {
   if (t >= LOOP.b) return 1 + 0.008 * (t - 24)
   return 1 + 0.014 * Math.sin(Math.PI * prog(t, LOOP.a, LOOP.b)) ** 2
 }
-/** paint the shared sky (opaque) — moon = S1's small crescent alpha */
-export function paintSkyF5(bx, t, moon = 0) {
-  const z = skyZoomF5(t)
-  bx.setTransform(1, 0, 0, 1, 0, 0); bx.fillStyle = C.void; bx.fillRect(0, 0, W, H)
-  bx.setTransform(z, 0, 0, z, W / 2 * (1 - z), H / 2 * (1 - z))
-  drawSky(bx, t, { pan: skyPanF5(t), moon })
-  bx.setTransform(1, 0, 0, 1, 0, 0)
+// the centre dim — same recipe as f7's dimPlate (uniform .34 + an elliptical .5 core → ~33% plate under the cards)
+let DIMP = null
+function dimPlate() {
+  if (DIMP) return DIMP
+  DIMP = document.createElement('canvas'); DIMP.width = W; DIMP.height = H
+  const x = DIMP.getContext('2d')
+  x.fillStyle = 'rgba(11,6,32,0.34)'; x.fillRect(0, 0, W, H)
+  x.save(); x.translate(W / 2, H / 2); x.scale(1, 0.6)
+  const g = x.createRadialGradient(0, 0, 0, 0, 0, 1000)
+  g.addColorStop(0, 'rgba(11,6,32,0.5)'); g.addColorStop(0.55, 'rgba(11,6,32,0.32)'); g.addColorStop(1, 'rgba(11,6,32,0)')
+  x.fillStyle = g; x.fillRect(-1100, -1100, 2200, 2200); x.restore()
+  return DIMP
 }
-/** sky canvas + the centre dim (same recipe as f7's: ~35–40% plate behind the cards, edges stay rich) */
+/** paint the shared sky (opaque). moon = S1's crescent drawn by drawSky (under the vignette, as f3/f4);
+ *  dimK = centre dim; crescent = the same crescent drawn over the dim exactly as f7's paintSky does */
+export function paintSkyF5(bx, t, { moon = 0, dimK = 1, crescent = 0 } = {}) {
+  const z = skyZoomF5(t), pan = skyPanF5(t), zt = () => bx.setTransform(z, 0, 0, z, W / 2 * (1 - z), H / 2 * (1 - z))
+  bx.setTransform(1, 0, 0, 1, 0, 0); bx.fillStyle = C.void; bx.fillRect(0, 0, W, H)
+  zt(); drawSky(bx, t, { pan, moon })
+  bx.setTransform(1, 0, 0, 1, 0, 0)
+  if (dimK > 0.001) { bx.globalAlpha = clamp(dimK); bx.drawImage(dimPlate(), 0, 0); bx.globalAlpha = 1 }
+  if (crescent > 0.001) {
+    const { zoom, dx, dy } = skyCam(t)
+    zt(); drawMoon(bx, 1716 + (dx + pan[0]) * 1.3, 122 + (dy + pan[1]) * 1.3, 52 * zoom, 0.14, { alpha: crescent, glow: 3, earthshine: 1, darkAlpha: 0.62 })
+    bx.setTransform(1, 0, 0, 1, 0, 0)
+  }
+}
+/** sky canvas */
 export function skyCanvas(parent) {
   getSky()
   const c = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, parent)
   c.width = W; c.height = H
-  const dim = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0,
-    background: 'radial-gradient(70% 62% at 50% 46%, rgba(9,4,26,0.64) 0%, rgba(9,4,26,0.46) 55%, rgba(9,4,26,0.12) 100%)' }, parent)
-  return { c, bx: c.getContext('2d'), dim }
+  return { c, bx: c.getContext('2d') }
 }
 /** the shared clumped silver grain (f3's drawGrain), overlay ≥ .5 */
 export function grainCanvas(parent, op = 0.55) {
@@ -364,8 +381,7 @@ export default function build(stage) {
       drawBurst(ctx, { t: LOCK + 0.08, x: CC.x, y: CC.y, r0: 90, r1: 520, n: 16, px: 4, life: 0.8, pal: CHAKRA_HEX, centre: HOT, sy: 0.9, seed: 9 }, t)
     },
     update(t) {
-      paintSkyF5(sky.bx, t, 1 - ease.inOutQuad(prog(t, 15.1, 15.9)))
-      sky.dim.style.opacity = String(ease.inOutQuad(prog(t, 15.0, 15.9)))
+      paintSkyF5(sky.bx, t, { moon: 1 - ease.inOutQuad(prog(t, 15.1, 15.9)), dimK: ease.inOutQuad(prog(t, 15.0, 15.9)) })
       grain.update(t)
       const fi = Math.round(t * 30), lockF = Math.round(LOCK * 30)
       const ten = ease.inQuad(prog(t, GLIDE, LOCK))

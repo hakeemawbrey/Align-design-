@@ -70,7 +70,8 @@ export const skyPan = (cx, cy) => [(cx - 960) * -0.04, (cy - 470) * -0.03]
 /** Juniper's full card pose in f3 (body centre, body height, yaw/pitch deg, bob px) — f4 matches it frame-exactly */
 export function cardPose(t) {
   const [cx, cy, h, yaw] = camAt(t)
-  const calm = 1 - ease.inOutCubic(prog(t, SHRINK.a, SHRINK.b))      // pitch + bob settle to zero during the shrink
+  // pitch + bob ease in from f2's static pose (no jump at 6.5) and settle to zero during the shrink
+  const calm = ease.inOutQuad(prog(t, 6.5, 7.1)) * (1 - ease.inOutCubic(prog(t, SHRINK.a, SHRINK.b)))
   const pitch = (Math.sin(t * 0.9) * 1.2 + (cy - 470) * -0.004) * calm
   const bob = Math.sin(t * 1.3) * 3 * calm
   return { cx, cy, h, yaw, pitch, bob }

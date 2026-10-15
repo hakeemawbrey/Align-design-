@@ -135,7 +135,6 @@ function sparkle(g, x, y, s, rgb, a) {
 export default function build(stage) {
   const root = fill(stage, { background: C.void })
   const sky = skyCanvas(root)
-  sky.dim.style.opacity = '1'
   const shakeBox = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
   // the full moon (screen space, as f5 left it) — rides behind the card with parallax
   const moon = moonLayer(shakeBox, CC.x, CC.y)
@@ -254,7 +253,7 @@ export default function build(stage) {
     },
     update(t) {
       if (!veilDrawn) { const vc = veilCanvas(); if (vc) { veilCvB.getContext('2d').drawImage(vc, 0, 0); veilDrawn = true } }
-      paintSkyF5(sky.bx, t, ease.inOutQuad(prog(t, 23.35, 23.95)))   // S1's crescent returns for f7
+      paintSkyF5(sky.bx, t, { crescent: ease.inOutQuad(prog(t, 23.35, 23.95)) })   // S1's crescent returns for f7 (as its paintSky)
       grain.update(t)
       const u = t - O                                     // s3 clock
       const fi = Math.round(t * 30)
