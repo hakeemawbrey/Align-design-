@@ -6,8 +6,8 @@
 //
 // Beat map (sound):
 //   15.00–15.95  cards drift in from f4's sea (from x≈400 / 1520, small) to x 610 / 1300
-//   15.00–15.90  the shared S1 nebula (f3's getSky/drawSky) dims to ~35% under a centre vignette; S1's small crescent fades
-//   15.05–16.05  the big moon RISES behind the column (y +170 → 0, scale .8 → 1) as a thin crescent
+//   15.00–15.90  the shared S1 nebula (f3's getSky/drawSky) dims to ~35% under a centre vignette (grain .5/√dim, cap .8)
+//   15.05–16.00  ONE moon: S1's crescent (1716,122 r52) itself travels to CC, grows to r400 and starts waxing
 //   15.45        caption "✦ YOU × JUNIPER ✦ / Two charts meet." (out 16.95–17.13)
 //   15.72 SPARK · 16.12 RUB · 16.52 ALIGN   beam draws across the gap (0.2s), dots pop at +0.16/+0.23/+0.30
 //                each reading lights more of the moon (stepped waxing .10 → .22 → .34 → .62), each star lock a little more
@@ -15,15 +15,15 @@
 //   17.08–17.9   seven chakra stars streak in (stagger 0.065) → orbit → glide 17.68–
 //   18.09…18.42  stars click into the column (red bottom → violet top), STAR_LOCK[i] = 18.09 + i·0.055
 //   18.36–18.45  flash rises (3 frames, cap .7, soft edges) · 18.45 LOCK: rings, rays, gold pixel burst, shake (3 frames), moon full
-//   18.60–19.76  "The stars aligned." (after the flash has decayed)
+//   18.60–20.05  "The stars aligned." (after the flash has decayed; out 19.85–20.05 on capLayer, above f6)
 //   19.45–19.95  your card drifts out left; Juniper's card glides to centre; the stars sink into her card
-//   19.60→       Juniper's card starts a slow push-in that f6 carries on (no dead hold at 20.0)
+//   19.80→       Juniper's card starts a slow push-in that f6 carries on (no dead hold at 20.0)
 //   20.00        hand-off: f6 draws the same frame (sky + full moon + Juniper's mystery card at 960,440, julPose(20).s)
 // Sky camera: skyCam (f3) until 15.2, then skyPanF5 loops once (constant speed, never stops) and lands on f7's
 // skyPan/skyZoom at 24.0 exactly — f6 paints the same sky, so f5→f6→f7 drift is one continuous move.
 import { clamp, lerp, prog, ease, rng, noise1, el, C } from '../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill, img } from '../../src/scenes/common.js'
-import { getSky, drawSky, drawGrain, skyCam, skyPan, HANDOFF } from './f3-chart.js'
+import { getSky, drawSky, drawGrain, skyCam, skyPan, HANDOFF, GRAIN_OPACITY } from './f3-chart.js'
 import { drawMoon } from '../../src/scenes/fx-moon.js'
 
 export const CC = { x: 960, y: 440 }                // column centre / moon centre / Juniper's final card centre
@@ -62,8 +62,8 @@ export function julPose(t) {
   s *= 1 + APPROACH(t)
   return { x, y, s, ry, rz }
 }
-/** slow push-in on Juniper's card from 19.6 on (f6 continues it, so the card never stops at the 20.0 hand-off) */
-export const APPROACH = (t) => t > 19.6 ? 0.25 * (t - 19.6) ** 2 : 0
+/** slow push-in on Juniper's card from 19.8 on (f6 continues it, so the card never stops at the 20.0 hand-off) */
+export const APPROACH = (t) => t > 19.8 ? 0.25 * (t - 19.8) ** 2 : 0
 /** your card's pose (Hakeem · Taurus) — f4 imports this for its hand-off */
 export function youPose(t) {
   const e = ease.outCubic(prog(t, CARD_IN.a, CARD_IN.b))
@@ -127,100 +127,177 @@ export function skyCanvas(parent) {
   c.width = W; c.height = H
   return { c, bx: c.getContext('2d') }
 }
-/** the shared clumped silver grain (f3's drawGrain), overlay ≥ .5 */
+/** the shared clumped silver grain (f3's drawGrain), overlay ≥ .5.
+ *  update(t, { op, holes, keep }): op = canvas opacity this frame; holes = [{ x, y, R, k }] thin the grain on the
+ *  moon disc to ≤ 0.2 effective (k = how much); keep = [{ x, y, w, h }] screen rects (cards) the holes skip */
 export function grainCanvas(parent, op = 0.55) {
   const c = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: op, pointerEvents: 'none', zIndex: 50 }, parent)
   c.width = W; c.height = H
   const gx = c.getContext('2d')
-  return { update(t) { drawGrain(gx, t) } }
-}
-
-/** the moon texture (pearl disc, maria, craters, limb darkening) — from the first film's S3 */
-function moonTexture(R) {
-  const S = R * 2 + 4, c = document.createElement('canvas'); c.width = c.height = S
-  const g = c.getContext('2d'), o = S / 2
-  g.save(); g.beginPath(); g.arc(o, o, R, 0, 6.2832); g.clip()
-  const base = g.createRadialGradient(o - R * 0.22, o - R * 0.26, R * 0.05, o, o, R)
-  base.addColorStop(0, '#fbf6ec'); base.addColorStop(0.55, '#efe6d6'); base.addColorStop(0.88, '#ddd1c0'); base.addColorStop(1, '#c4b7a8')
-  g.fillStyle = base; g.fillRect(0, 0, S, S)
-  const MARIA = [[-0.32, -0.3, 0.3, 0.24], [0.05, -0.38, 0.17, 0.14], [0.2, -0.12, 0.2, 0.17], [0.52, -0.22, 0.13, 0.11], [-0.55, 0.05, 0.28, 0.36],
-    [-0.15, 0.2, 0.22, 0.16], [0.28, 0.24, 0.14, 0.12], [-0.05, -0.06, 0.12, 0.1], [0.42, 0.06, 0.1, 0.12]]
-  g.filter = `blur(${R * 0.05}px)`
-  for (const [x, y, rx, ry] of MARIA) { g.fillStyle = 'rgba(132,118,138,0.34)'; g.beginPath(); g.ellipse(o + x * R, o + y * R, rx * R, ry * R, 0.3, 0, 6.2832); g.fill() }
-  g.filter = `blur(${R * 0.012}px)`
-  const r = rng(4242)
-  for (let k = 0; k < 46; k++) {
-    const a = r() * 6.2832, d = Math.sqrt(r()) * 0.92, cr = (0.012 + r() * r() * 0.06) * R
-    const x = o + Math.cos(a) * d * R, y = o + Math.sin(a) * d * R
-    g.strokeStyle = 'rgba(120,104,120,0.28)'; g.lineWidth = cr * 0.35; g.beginPath(); g.arc(x, y, cr, 0, 6.2832); g.stroke()
-    g.strokeStyle = 'rgba(255,252,244,0.35)'; g.lineWidth = cr * 0.2; g.beginPath(); g.arc(x - cr * 0.12, y - cr * 0.12, cr * 0.9, 3.4, 5.4); g.stroke()
-  }
-  g.filter = 'none'
-  const tx = o - 0.12 * R, ty = o + 0.62 * R
-  for (let k = 0; k < 14; k++) {
-    const a = r() * 6.2832, l = (0.2 + r() * 0.5) * R
-    const lg = g.createLinearGradient(tx, ty, tx + Math.cos(a) * l, ty + Math.sin(a) * l)
-    lg.addColorStop(0, 'rgba(255,252,246,0.22)'); lg.addColorStop(1, 'rgba(255,252,246,0)')
-    g.strokeStyle = lg; g.lineWidth = R * 0.008; g.beginPath(); g.moveTo(tx, ty); g.lineTo(tx + Math.cos(a) * l, ty + Math.sin(a) * l); g.stroke()
-  }
-  g.fillStyle = 'rgba(255,253,248,0.6)'; g.beginPath(); g.arc(tx, ty, R * 0.022, 0, 6.2832); g.fill()
-  const limb = g.createRadialGradient(o, o, R * 0.6, o, o, R)
-  limb.addColorStop(0, 'rgba(70,50,90,0)'); limb.addColorStop(1, 'rgba(70,50,90,0.28)')
-  g.fillStyle = limb; g.fillRect(0, 0, S, S)
-  g.restore()
-  return c
-}
-export const MOON_R = 400
-let MOON_TEX = null
-/** waxing moon centred on (cx, cy) of `parent`; update(lit 0..1, opacity, glow, scale) */
-export function moonLayer(parent, cx, cy) {
-  const R = MOON_R
-  const glow = el('div', { position: 'absolute', left: cx - R * 2.2 + 'px', top: cy - R * 2.2 + 'px', width: R * 4.4 + 'px', height: R * 4.4 + 'px', borderRadius: '50%', mixBlendMode: 'screen', opacity: 0,
-    background: 'radial-gradient(closest-side, rgba(255,244,226,0.55) 40%, rgba(232,214,255,0.22) 52%, rgba(180,140,255,0.08) 70%, rgba(180,140,255,0) 100%)' }, parent)
-  const MS = R * 2 + 40
-  const cv = el('canvas', { position: 'absolute', left: cx - MS / 2 + 'px', top: cy - MS / 2 + 'px', width: MS + 'px', height: MS + 'px', opacity: 0 }, parent)
-  cv.width = cv.height = MS
-  const mask = document.createElement('canvas'); mask.width = mask.height = MS
-  let last = -1
-  function draw(f) {
-    MOON_TEX = MOON_TEX || moonTexture(R)
-    if (f === last) return
-    last = f
-    const g = cv.getContext('2d'), m = mask.getContext('2d'), o = MS / 2, tex = MOON_TEX
-    g.clearRect(0, 0, MS, MS)
-    g.globalAlpha = 0.05; g.drawImage(tex, o - tex.width / 2, o - tex.height / 2); g.globalAlpha = 1
-    const cphi = 1 - 2 * f
-    m.clearRect(0, 0, MS, MS)
-    m.filter = `blur(${R * 0.06}px)`
-    m.fillStyle = '#fff'; m.beginPath(); m.moveTo(o, o - R * 1.12)
-    m.arc(o, o, R * 1.12, -Math.PI / 2, Math.PI / 2, false); m.lineTo(o, o + R)        // lit limb padded past the disc
-    m.ellipse(o, o, Math.max(0.01, Math.abs(cphi) * R), R, 0, Math.PI / 2, -Math.PI / 2, cphi > 0)
-    m.closePath(); m.fill(); m.filter = 'none'
-    // the soft blur is for the terminator only: clip back to a crisp limb
-    m.globalCompositeOperation = 'destination-in'; m.beginPath(); m.arc(o, o, R, 0, 6.2832); m.fill()
-    m.globalCompositeOperation = 'source-in'; m.drawImage(tex, o - tex.width / 2, o - tex.height / 2); m.globalCompositeOperation = 'source-over'
-    g.drawImage(mask, 0, 0)
-  }
   return {
-    glow, cv,
-    update(lit, op, glowO, sc = 1, glowSc = 1, tx = 0, ty = 0) {
-      draw(Math.round(lit * 400) / 400)
-      cv.style.opacity = String(op); cv.style.transform = `translate(${tx}px, ${ty}px) scale(${sc})`
-      glow.style.opacity = String(glowO); glow.style.transform = `translate(${tx}px, ${ty}px) scale(${sc * glowSc})`
+    update(t, { op: o = op, holes = [], keep = [] } = {}) {
+      c.style.opacity = String(o)
+      drawGrain(gx, t)
+      const a0 = clamp(1 - 0.2 / Math.max(0.2, o))
+      for (const hl of holes) {
+        const a = a0 * hl.k
+        if (a < 0.01 || hl.R < 8) continue
+        gx.save()
+        if (keep.length) { gx.beginPath(); gx.rect(0, 0, W, H); for (const r of keep) gx.rect(r.x - r.w / 2, r.y - r.h / 2, r.w, r.h); gx.clip('evenodd') }
+        const g = gx.createRadialGradient(hl.x, hl.y, 0, hl.x, hl.y, hl.R + 3)
+        g.addColorStop(0, `rgba(0,0,0,${a})`); g.addColorStop(clamp((hl.R - 3) / (hl.R + 3)), `rgba(0,0,0,${a})`); g.addColorStop(1, 'rgba(0,0,0,0)')
+        gx.globalCompositeOperation = 'destination-out'; gx.fillStyle = g; gx.fillRect(hl.x - hl.R - 4, hl.y - hl.R - 4, 2 * hl.R + 8, 2 * hl.R + 8)
+        gx.restore()
+      }
     },
   }
 }
-// waxing is a beat: each reading lights more of the moon, each star lock a sliver more, the lock fills it
-const WAX = [[15.0, 0.1], [15.88, 0.22], [16.28, 0.34], [16.68, 0.62],
+
+// ── the ONE moon ──────────────────────────────────────────────────────────────
+// S1's crescent (drawSky's moon at 1716,122 r52, phase .14) IS the big moon: in f5 (15.05–16.0) it travels to CC,
+// grows to full radius and waxes (stepped, with the readings + star locks); f6 carries it full behind the reveal and
+// (23.2–23.95) sends it home, waning back to the .14 crescent f7 paints. Small sizes go through fx-moon's drawMoon
+// (pixel-identical to f4/f7's crescent); big sizes use a copy of the same renderer with stronger maria and a dimmer
+// lit side (~75% luminance at the 0.82 peak opacity) so card text in front stays dominant. Limb stays 1px crisp.
+export const R_BIG = 400
+const R_NATIVE = 90, R_TEX = 440
+const litOf = (p) => (1 - Math.cos(2 * Math.PI * p)) / 2
+const pOfLit = (k) => Math.acos(clamp(1 - 2 * k, -1, 1)) / (2 * Math.PI)
+// value noise / albedo (copied from src/scenes/fx-moon.js so the big disc matches the small one)
+function hash2(x, y, s) {
+  let h = Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ Math.imul(s, 982451653)
+  h = Math.imul(h ^ (h >>> 13), 1274126177)
+  return ((h ^ (h >>> 16)) >>> 0) / 4294967296
+}
+function vnoise(x, y, s) {
+  const ix = Math.floor(x), iy = Math.floor(y), fx = x - ix, fy = y - iy
+  const ux = fx * fx * (3 - 2 * fx), uy = fy * fy * (3 - 2 * fy)
+  const a = hash2(ix, iy, s), b = hash2(ix + 1, iy, s), c = hash2(ix, iy + 1, s), d = hash2(ix + 1, iy + 1, s)
+  return a + (b - a) * ux + (c - a) * uy + (a - b - c + d) * ux * uy
+}
+function fbm(x, y, s, oct = 4) {
+  let v = 0, amp = 0.5, f = 1, n = 0
+  for (let o = 0; o < oct; o++) { v += amp * vnoise(x * f, y * f, s + o * 31); n += amp; amp *= 0.5; f *= 2.07 }
+  return v / n
+}
+const sstep = (a, b, x) => { const k = clamp((x - a) / (b - a)); return k * k * (3 - 2 * k) }
+const MARIA = [
+  [-0.38, -0.36, 0.3, 0.26], [0.19, -0.3, 0.17, 0.16], [0.33, -0.02, 0.22, 0.2], [0.7, -0.24, 0.1, 0.12],
+  [0.55, 0.2, 0.12, 0.17], [0.32, 0.33, 0.09, 0.09], [-0.62, 0.06, 0.28, 0.46], [-0.2, 0.38, 0.18, 0.13],
+  [-0.5, 0.46, 0.1, 0.1], [-0.3, -0.66, 0.22, 0.07], [0.12, -0.63, 0.2, 0.06], [-0.02, 0.05, 0.12, 0.1],
+]
+const CRATERS = (() => {
+  const r = rng(4242), out = [[-0.12, 0.72, 0.055, 1.6], [-0.3, -0.12, 0.05, 1.2], [-0.62, -0.34, 0.035, 1]]
+  for (let i = 0; i < 46; i++) { const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 0.93; out.push([Math.cos(a) * d, Math.sin(a) * d, 0.012 + Math.pow(r(), 2.2) * 0.05, 0.5 + r() * 0.5]) }
+  return out
+})()
+function albedo(x, y) {
+  const wx = x + 0.16 * (fbm(x * 3.1 + 5, y * 3.1 + 1, 41) - 0.5), wy = y + 0.16 * (fbm(x * 3.1 + 9, y * 3.1 + 4, 43) - 0.5)
+  let m = 0
+  for (const [mx, my, rx, ry] of MARIA) m += Math.exp(-(((wx - mx) / rx) ** 2 + ((wy - my) / ry) ** 2) * 1.4)
+  const edge = fbm(x * 6 + 3, y * 6 + 7, 17)
+  m = sstep(0.22, 0.95, m * (0.7 + 0.6 * edge))
+  const mott = fbm(x * 9 + 1, y * 9 + 5, 61, 3)
+  let a = 0.88 + 0.1 * (fbm(x * 3 + 11, y * 3 + 2, 5) - 0.5) - m * (0.2 + 0.08 * mott)
+  a += 0.06 * (fbm(x * 16, y * 16, 29, 3) - 0.5)
+  for (const [cx, cy, cr, s] of CRATERS) {
+    const d = Math.hypot(x - cx, y - cy) / cr
+    if (d > 1.6) continue
+    a += s * (0.035 * Math.exp(-(((d - 1) / 0.3) ** 2)) - 0.03 * sstep(1, 0.6, d)) * (1 - 0.5 * m)
+  }
+  const tx = x + 0.12, ty = y - 0.72, td = Math.hypot(tx, ty)
+  if (td > 0.07 && td < 0.9) { const ang = Math.atan2(ty, tx); a += 0.035 * Math.pow(Math.max(0, Math.sin(ang * 7 + 1.3) * Math.sin(ang * 11 + 0.4)), 6) * (1 - td / 0.9) }
+  return clamp(a)
+}
+let ALB = null
+const PEARL = [255, 251, 240], BONE_C = [239, 230, 214], MARE = [176, 168, 194], RIM = [201, 188, 228], DARK = [20, 14, 44], EARTH = [46, 38, 88]
+const BIG = new Map()
+/** fx-moon's moonCanvas at R_TEX (earthshine 1) + mk: maria/crater contrast → ~0.5, lit side → ~95% */
+function bigMoonCanvas(p, darkAlpha, mk) {
+  const key = `${p.toFixed(4)}|${darkAlpha.toFixed(2)}|${mk.toFixed(2)}`
+  let c = BIG.get(key)
+  if (c) return c
+  if (BIG.size > 24) BIG.clear()
+  const R = R_TEX, S = 2 * R + 2
+  if (!ALB) { ALB = new Float32Array(S * S); for (let j = 0; j < S; j++) for (let i = 0; i < S; i++) ALB[j * S + i] = albedo((i + 0.5 - S / 2) / R, (j + 0.5 - S / 2) / R) }
+  c = document.createElement('canvas'); c.width = c.height = S
+  const x2 = c.getContext('2d'), id = x2.createImageData(S, S), px = id.data
+  const e = 2 * Math.PI * p, k = litOf(p)
+  const Lx = Math.sin(e), Ly = -0.12 * Math.sin(e), Lz = -Math.cos(e)
+  const gain = lerp(1, 0.95, mk), mc = 1.3 * mk
+  for (let j = 0; j < S; j++) for (let i = 0; i < S; i++) {
+    const x = (i + 0.5 - S / 2) / R, y = (j + 0.5 - S / 2) / R, rr = Math.hypot(x, y)
+    const edgeA = clamp((1 - rr) * R + 0.5), o = (j * S + i) * 4
+    if (edgeA <= 0) { px[o + 3] = 0; continue }
+    const nz = Math.sqrt(Math.max(0, 1 - rr * rr)), a = ALB[j * S + i]
+    const d = x * Lx + y * Ly + nz * Lz + (a - 0.75) * 0.05
+    const term = sstep(-0.015, 0.04, d)
+    const ls = Math.min(1.15, (2 * Math.max(d, 0)) / (Math.max(d, 0) + nz + 0.02))
+    const shade = term * (0.3 + 0.7 * Math.min(1, ls * 1.05)) * (0.86 + 0.14 * Math.sqrt(nz)) * gain * Math.max(0.3, 1 + mc * (a - 0.88))
+    const rim = sstep(0.78, 1, rr) * 0.45
+    const es = (1 - k) ** 2 * (0.55 + 0.45 * a)
+    for (let q = 0; q < 3; q++) {
+      const base = lerp(MARE[q], lerp(BONE_C[q], PEARL[q], sstep(0.8, 0.95, a)), sstep(0.55, 0.9, a))
+      const lit = lerp(base, RIM[q], rim)
+      const dark = lerp(DARK[q], EARTH[q], es) + RIM[q] * 0.12 * sstep(0.9, 1, rr)
+      px[o + q] = clamp((lit * shade + dark * (1 - term)) / 255) * 255
+    }
+    px[o + 3] = lerp(darkAlpha, 1, term) * edgeA * 255
+  }
+  x2.putImageData(id, 0, 0)
+  BIG.set(key, c)
+  return c
+}
+/** draw the one moon in screen px (identity transform). R ≤ 90 → fx-moon's drawMoon (the f4/f7 crescent) */
+export function drawOneMoon(bx, x, y, R, p, { alpha = 1, glow = 3 } = {}) {
+  if (alpha <= 0.002) return
+  const sk = clamp((R - 52) / (R_BIG - 52))
+  const darkAlpha = sk < 0.001 ? 0.62 : Math.round(lerp(0.62, 0.3, sk) * 50) / 50
+  p = Math.round(p * 1000) / 1000
+  if (R <= R_NATIVE) { drawMoon(bx, x, y, R, p, { alpha, glow, earthshine: 1, darkAlpha }); return }
+  const mk = Math.round(clamp((R - R_NATIVE) / (R_BIG - R_NATIVE)) * 20) / 20
+  const k = litOf(p), e = 2 * Math.PI * p
+  bx.save(); bx.globalAlpha = alpha
+  if (glow > 0) {                                     // fx-moon's halo, biased to the lit limb
+    const ox = x + Math.sin(e) * R * 0.45 * (1 - k), gR = R * (2 + 1.1 * k), a0 = glow * (0.08 + 0.22 * k)
+    const g = bx.createRadialGradient(ox, y, R * 0.6, ox, y, gR)
+    g.addColorStop(0, `rgba(244,234,216,${a0})`); g.addColorStop(0.35, `rgba(214,200,240,${a0 * 0.45})`); g.addColorStop(1, 'rgba(201,188,228,0)')
+    bx.globalCompositeOperation = 'lighter'; bx.fillStyle = g; bx.fillRect(ox - gR, y - gR, gR * 2, gR * 2); bx.globalCompositeOperation = 'source-over'
+  }
+  const c = bigMoonCanvas(p, darkAlpha, mk), s = R / R_TEX
+  bx.imageSmoothingQuality = 'high'
+  bx.drawImage(c, x - c.width * s / 2, y - c.height * s / 2, c.width * s, c.height * s)
+  bx.restore()
+}
+/** the crescent's home on screen at t (drawSky's / f7 paintSky's spot under f5's sky camera) */
+export function homeMoon(t) {
+  const { zoom, dx, dy } = skyCam(t), pan = skyPanF5(t), z = skyZoomF5(t)
+  const x = 1716 + (dx + pan[0]) * 1.3, y = 122 + (dy + pan[1]) * 1.3
+  return { x: W / 2 + (x - W / 2) * z, y: H / 2 + (y - H / 2) * z, r: 52 * zoom * z }
+}
+let VIG = null
+/** drawSky's vignette alpha at a screen point (f4's crescent sits under it) */
+function vigAt(x, y) {
+  if (!VIG) VIG = getSky().vig.getContext('2d').getImageData(0, 0, W, H).data
+  const i = (clamp(Math.round(y), 0, H - 1) * W + clamp(Math.round(x), 0, W - 1)) * 4
+  return VIG[i + 3] / 255
+}
+export const lerpLog = (a, b, k) => Math.exp(lerp(Math.log(a), Math.log(b), k))
+// waxing is a beat: each reading lights more of the moon, each star lock a little more, the lock fills it
+const WAX = [[15.0, litOf(0.12)], [15.5, 0.21], [15.88, 0.28], [16.28, 0.4], [16.68, 0.62],
   ...[0, 1, 2, 3, 4, 5, 6].map((i) => [18.09 + i * 0.055, 0.62 + 0.04 * (i + 1)]), [18.45, 1]]
-/** moon phase/opacity/glow/rise as a function of t (f5 raises + waxes it to full at the lock; f6 keeps it) */
+const TRAVEL = { a: 15.05, b: 16.0 }
+/** the one moon at t in f5 (screen px): home crescent → CC full radius, stepped waxing; f6 continues it */
 export function moonState(t) {
   let lit = WAX[0][1]
   for (let i = 1; i < WAX.length; i++) lit += (WAX[i][1] - WAX[i - 1][1]) * ease.outCubic(prog(t, WAX[i][0], WAX[i][0] + (i === WAX.length - 1 ? 0.12 : 0.24)))
   const post = t >= LOCK ? 1 - ease.outCubic(prog(t, LOCK, LOCK + 0.5)) : 0
-  const rise = ease.outCubic(prog(t, 15.05, 16.05))
-  const op = 0.82 * ease.inOutQuad(prog(t, 15.05, 15.75))
-  return { lit, op, glow: (op / 0.82) * (0.12 + 0.55 * lit * lit + 0.3 * post), post, sc: lerp(0.8, 1, rise), ty: lerp(170, 0, rise) }
+  const h = homeMoon(t), k = ease.inOutCubic(prog(t, TRAVEL.a, TRAVEL.b)), kr = ease.inOutQuad(prog(t, TRAVEL.a, TRAVEL.b))
+  const x = lerp(h.x, CC.x, k), y = lerp(h.y, CC.y, k), R = lerpLog(h.r, R_BIG, kr)
+  const p = Math.max(lerp(0.09, 0.14, prog(t, 6.5, 15.2)), pOfLit(lit))
+  const alpha = lerp(1, 0.82, kr) * (1 - vigAt(x, y))
+  const glow = lerp(3, 0.5 + 0.25 * lit + 0.7 * post, kr)
+  return { x, y, R, p, lit, alpha, glow, post }
 }
 
 /** Juniper's veiled mystery card (centred on its holder) */
@@ -326,11 +403,13 @@ function starState(i, t) {
 }
 
 export default function build(stage) {
-  const root = fill(stage, { background: C.void })
-  const sky = skyCanvas(root)
-  const dim = el('div', { position: 'absolute', inset: 0, background: '#07041a', opacity: 0 }, root)
-  const shakeBox = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
-  const moon = moonLayer(shakeBox, CC.x, CC.y)
+  // root is a static wrapper (no stacking context): `body` takes main.js's z-index, `capLayer` sits above the later
+  // scenes so "The stars aligned." can finish its fade (to 20.05) over f6's first frames; captions stay off the grain
+  const root = el('div', {}, stage)
+  const body = fill(root, { background: C.void })
+  const capLayer = fill(root, { zIndex: 40, pointerEvents: 'none', overflow: 'hidden' })
+  const sky = skyCanvas(body)
+  const shakeBox = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, body)
   // god-rays from the column
   const rr = rng(909); const stops = []; let ang = 0
   while (ang < 360) { const w = 1 + rr() * 3.2, gap = 2 + rr() * 9, a = (0.25 + rr() * 0.75).toFixed(2); stops.push(`rgba(255,240,214,0) ${ang.toFixed(1)}deg`, `rgba(255,240,214,${a}) ${(ang + w / 2).toFixed(1)}deg`, `rgba(255,240,214,0) ${(ang + w).toFixed(1)}deg`); ang += w + gap }
@@ -362,37 +441,41 @@ export default function build(stage) {
   const DUST = (() => { const r = rng(515); return Array.from({ length: 170 }, (_, i) => ({ x: r() * W, y: r() * H, s: 0.7 + r() * 1.8, a: 0.35 + r() * 0.65, col: i % 5 === 0 ? '242,199,92' : i % 7 === 0 ? CHAKRA[i % 7].join(',') : '255,246,234', ph: r() * 6.28 })) })()
 
   const bigFlash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0,
-    background: `radial-gradient(55% 75% at 50% ${CC.y / H * 100}%, rgba(255,253,248,1) 0%, rgba(255,246,232,0.62) 34%, rgba(240,226,255,0.25) 100%)` }, root)
+    background: `radial-gradient(55% 75% at 50% ${CC.y / H * 100}%, rgba(255,253,248,1) 0%, rgba(255,246,232,0.62) 34%, rgba(240,226,255,0.25) 100%)` }, body)
   // captions
-  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '400px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.08) 20%, rgba(11,6,32,0.28) 40%, rgba(11,6,32,0.52) 60%, rgba(11,6,32,0.72) 80%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, root)
-  const capBox = el('div', { position: 'absolute', left: '50%', bottom: '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
-  const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;You&nbsp;&nbsp;×&nbsp;&nbsp;Juniper&nbsp;&nbsp;✦')
+  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '400px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.08) 20%, rgba(11,6,32,0.28) 40%, rgba(11,6,32,0.52) 60%, rgba(11,6,32,0.72) 80%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, capLayer)
+  const capBox = el('div', { position: 'absolute', left: '50%', bottom: '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
+  const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: BONE, textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;You&nbsp;&nbsp;×&nbsp;&nbsp;Juniper&nbsp;&nbsp;✦')
   const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'Two charts meet.')
-  const lockBox = el('div', { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
+  const lockBox = el('div', { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const lockLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '116px', lineHeight: 1, color: C.bone, opacity: 0,
     textShadow: '0 0 40px rgba(255,236,200,0.45), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, lockBox, 'The stars aligned.')
-  const grain = grainCanvas(root, 0.55)
+  const grain = grainCanvas(body, 0.55)
 
   return {
-    start: 15.0, end: 20.2, root, fadeIn: 0.2, fxEnd: 20.0,
+    start: 15.0, end: 20.2, root, fxEnd: 20.0,
     fx(ctx, t) {
       drawAmbient(ctx, t, prog(t, 15.0, 15.4))
       drawBurst(ctx, { t: LOCK, x: CC.x, y: CC.y, r0: 150, r1: 900, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sy: 0.78, seed: 3 }, t)
       drawBurst(ctx, { t: LOCK + 0.08, x: CC.x, y: CC.y, r0: 90, r1: 520, n: 16, px: 4, life: 0.8, pal: CHAKRA_HEX, centre: HOT, sy: 0.9, seed: 9 }, t)
     },
     update(t) {
-      paintSkyF5(sky.bx, t, { moon: 1 - ease.inOutQuad(prog(t, 15.1, 15.9)), dimK: ease.inOutQuad(prog(t, 15.0, 15.9)) })
-      grain.update(t)
+      body.style.zIndex = root.style.zIndex                // main.js's scene order
+      body.style.opacity = String(prog(t, 15.0, 15.2))     // the 0.2s fade-in over f4 (was main.js fadeIn)
+      const dimK = ease.inOutQuad(prog(t, 15.0, 15.9))
+      paintSkyF5(sky.bx, t, { moon: 0, dimK })
       const fi = Math.round(t * 30), lockF = Math.round(LOCK * 30)
       const ten = ease.inQuad(prog(t, GLIDE, LOCK))
       const post = t >= LOCK ? 1 - ease.outCubic(prog(t, LOCK, LOCK + 0.5)) : 0
       const trem = ten * ten * 4.5 * (t < LOCK ? 1 : 0)
       const kick = t >= LOCK ? 0.035 * Math.sin(Math.PI * prog(t, LOCK, LOCK + 0.3)) : 0
 
-      // ── moon (waxes to full at the lock)
+      // ── the one moon (S1's crescent travels in, grows, waxes to full at the lock) — on the sky canvas, over the dim
+      const dimO = 0.45 * ten * (t < LOCK ? 1 : 0) + (t >= LOCK ? 0.2 * (1 - ease.outQuad(prog(t, LOCK, LOCK + 0.5))) : 0)
+      if (dimO > 0.002) { sky.bx.fillStyle = `rgba(7,4,26,${dimO.toFixed(3)})`; sky.bx.fillRect(0, 0, W, H) }
       const ms = moonState(t)
-      moon.update(ms.lit, ms.op, ms.glow, ms.sc, 1 + 0.15 * post, 0, ms.ty)
-      dim.style.opacity = String(0.45 * ten * (t < LOCK ? 1 : 0) + (t >= LOCK ? 0.2 * (1 - ease.outQuad(prog(t, LOCK, LOCK + 0.5))) : 0))
+      const sf0 = fi - lockF, SH0 = [[-16, 10], [12, -8], [-6, 5]], sh0 = sf0 >= 0 && sf0 < 3 ? SH0[sf0] : [0, 0]
+      drawOneMoon(sky.bx, ms.x + sh0[0], ms.y + sh0[1], ms.R, ms.p, { alpha: ms.alpha, glow: ms.glow })
 
       // ── cards
       const lean = 10 * ten * (t < LOCK ? 1 : 0)       // drawn toward the column as the stars commit
@@ -567,7 +650,7 @@ export default function build(stage) {
         fx.fillStyle = gg; fx.fillRect(jp.x - G, jp.y - 60 - G, G * 2, G * 2)
       }
       if (t >= LOCK && t < LOCK + 0.9) {
-        const RINGS = [[0, 1150, 30, '255,246,230'], [0.07, 900, 18, '201,166,255'], [0.15, 700, 8, '242,199,92']]
+        const RINGS = [[0, 920, 30, '255,246,230'], [0.07, 720, 18, '201,166,255'], [0.15, 560, 8, '242,199,92']]   // ×0.8: clear of the caption
         RINGS.forEach(([d, R1, w0, rgb]) => {
           const q = prog(t, LOCK + d, LOCK + d + 0.7)
           if (q <= 0 || q >= 1) return
@@ -578,6 +661,14 @@ export default function build(stage) {
       }
       fx.globalCompositeOperation = 'source-over'
 
+      // ── grain: compensate the dimmed plate (GRAIN_OPACITY/√dim, cap .8), back to f6's .55 by the hand-off;
+      //    thinned to ≤ .2 on the moon disc (not on the cards in front of it)
+      const plate = lerp(1, 0.35, dimK) * (1 - dimO)
+      const gOp = lerp(Math.min(0.8, GRAIN_OPACITY / Math.sqrt(plate)), 0.55, ease.inOutQuad(prog(t, 19.4, 20.0)))
+      const keep = [{ x: jp.x, y: jp.y, w: 1254 * jp.s, h: 2002 * jp.s }]
+      if (yp.op > 0.05) keep.push({ x: yp.x, y: yp.y, w: 606 * yp.s, h: 910 * yp.s })
+      grain.update(t, { op: gOp, holes: [{ x: ms.x, y: ms.y, R: ms.R, k: ms.alpha / 0.82 }], keep })
+
       // ── captions
       const out = 1 - ease.inQuad(prog(t, 16.95, 17.13))
       const e1 = ease.outQuad(prog(t, 15.45, 15.67)), e2 = ease.outQuad(prog(t, 15.55, 15.85))
@@ -586,7 +677,7 @@ export default function build(stage) {
       capLine.style.opacity = String(e2 * out)
       capLine.style.transform = `translateY(${(1 - ease.outCubic(prog(t, 15.55, 16.05))) * 14}px)`
       const CL = 18.6                                       // after the flash has decayed
-      const lo = ease.outQuad(prog(t, CL, CL + 0.22)) * (1 - ease.inQuad(prog(t, 19.6, 19.76)))
+      const lo = ease.outQuad(prog(t, CL, CL + 0.22)) * (1 - ease.inOutQuad(prog(t, 19.85, 20.05)))   // ≥ 1.1s readable
       lockLine.style.opacity = String(lo)
       lockLine.style.transform = `scale(${lerp(1.06, 1, ease.outCubic(prog(t, CL, CL + 0.6)))})`
       lockLine.style.letterSpacing = lerp(0.04, 0, ease.outCubic(prog(t, CL, CL + 0.8))) + 'em'
