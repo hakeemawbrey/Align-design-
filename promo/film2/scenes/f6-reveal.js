@@ -1,22 +1,26 @@
-// Film 2 · f6 THE FACE, LAST (real time 20.0–24.2). Continues f5's last frame exactly (same sky, full moon,
-// Juniper's veiled card at 960,440 ×0.33), then the first film's reveal: the card flips into her reveal
-// card, the camera pushes into the photo window, the veil lifts, an aura-camera colour sweep runs the
-// chakra spectrum over her portrait and resolves (flash) to the real photo; pull back with a gold-foil
-// sweep while the card slides left for "Then you see each other."; then the match phone lands.
+// Film 2 · f6 THE FACE, LAST (real time 20.0–24.2). Continues f5's last frame exactly (same S1 nebula + camera drift,
+// full moon, Juniper's veiled card at 960,440 already pushing in), then the first film's reveal WITHOUT a flip (the
+// film's only true flip is the hook): a straight push-in — the mystery card dissolves into her reveal card under a
+// soft bloom while the camera keeps pushing into the photo window — the veil lifts, the aura-camera sweep runs the
+// chakra spectrum over her portrait and resolves (flash) to the real photo; pull back with a gold-foil sweep while the
+// card slides left, then a still hold on her face before "Then you see each other."; then the match phone lands.
 //
 // Beat map (sound) — the reveal runs on the first film's S3 clock shifted by O = +10.82s:
-//   20.04–20.34  mystery card turns edge-on (20.18) → reveal card turns in
-//   20.22–20.52  camera pushes into the photo window
+//   20.00–20.52  straight push-in (continues f5's APPROACH) · 20.10–20.30 bloom, mystery card → reveal card dissolve
 //   20.32–20.77  veil lifts · 20.38–20.84 aura-cam sweep red → violet (AURA READING tag)
 //   20.89        resolve flash to the real photo + sparkles
-//   20.94–21.30  pull back to the whole card, drifting left to x≈620 · 21.22–21.58 gold-foil sweep
-//   21.30–22.28  "✦ NO PHOTO UNTIL YOU BOTH ALIGN ✦ / Then you see each other." (right)
-//   22.30–22.80  card recedes left; match phone (screen-match.png) drops in and settles at x≈960 (22.80)
-//   22.44        "IT’S MUTUAL / You both aligned." (right) · held to the end (24.2) for f7
+//   20.94–21.42  pull back to the whole card, drifting left to x≈620 · 21.22–21.58 gold-foil sweep
+//   21.04–21.24  echo: 6 frames of f1's cold grey Juniper card flicker through the warm one (glitch ticks)
+//   21.42–22.30  still hold on the revealed card
+//   22.30–23.10  "✦ THE VEIL LIFTS / Then you see each other." (right) — gone by 23.10
+//   23.10–23.60  card recedes left + fades; match phone (screen-match.png) drops in from 23.15, lands 23.60 at x 960
+//   23.42        "IT’S MUTUAL / You both aligned." (right) · 23.60–23.90 phone settles to f7's opening state
+//                (centred 960,540, 880 tall, no tilt) · copy fades 23.90–24.04 · S1 crescent back by 23.95 for f7
 import { clamp, lerp, prog, ease, rng, el, C } from '../../src/lib.js'
-import { W, H, A, IMG, SERIF, MONO, fill, img } from '../../src/scenes/common.js'
+import { W, H, A, IMG, SERIF, MONO, SANS, fill, img } from '../../src/scenes/common.js'
 import { veilCanvas } from '../../src/scenes/s3-veil.js'
-import { CC, MYS, skyLayer, grainLayer, moonLayer, moonState, mysteryCard, rimGlow, JUL_RIM, julPose, drawAmbient, drawBurst } from './f5-stars.js'
+import { CC, skyCanvas, paintSkyF5, grainCanvas, moonLayer, moonState, mysteryCard, rimGlow, JUL_RIM, julPose, drawAmbient, drawBurst } from './f5-stars.js'
+import { CARD_W, CARD_H, COLD_FILTER } from './f1-old.js'
 
 const O = 10.82                                   // s3 clock → film 2 clock
 // card-reveal.png 1560×2740 geometry (from the first film's S3)
@@ -29,17 +33,20 @@ const IMG_END_TY = (REV.win.w * 4 / 3 / 2 - (REV.imgTop + REV.win.h / 2)) * D
 const VPAD = { x: 96, y: 54 }
 const IW = W, IH = H, IVW = IW + VPAD.x * 2, IVH = IH + VPAD.y * 2
 // s3 timing (s3 clock)
-const FLIP_IN = { a: 9.22, m: 9.36, b: 9.52 }
 const LIFT = { a: 9.5, b: 9.95 }
 const SWEEP = { a: 9.56, b: 10.02 }
 const RES = { a: 10.0, peak: 10.07, b: 10.22 }
 const Z_PUSH = 1.6
+const MYS_BW = 1254                              // mystery card body width (card-profile-3 px)
+const REV_BW = (1494 - 66) * D                   // reveal card body width at Z = 1
+const DISS = { a: 20.12, b: 20.3 }               // mystery → reveal dissolve (under the bloom)
+const ECHO = 21.04                               // 6 frames of f1's cold card
 // film-2 clock beats
 const SHIFT = { a: 20.98, b: 21.42 }              // card drifts left during/after the pull back
 const CARD_X = -340                              // card centre offset at rest (screen x ≈ 620)
-const CAP1 = { a: 21.3, out: 22.24 }
-const T_A = 22.32, T_A_END = 22.78              // match phone lands
-const CAP2 = 22.46
+const CAP1 = { a: 22.3, out: 22.96 }             // fully gone by 23.10
+const T_A = 23.15, T_A_END = 23.6               // match phone lands
+const CAP2 = 23.42, CAP2_OUT = 23.9
 const PH = 880, PW = Math.round(PH * 1170 / 2532)
 const PX = 960                                   // phone resting centre x
 
@@ -127,14 +134,17 @@ function sparkle(g, x, y, s, rgb, a) {
 
 export default function build(stage) {
   const root = fill(stage, { background: C.void })
-  const sky = skyLayer(root)
+  const sky = skyCanvas(root)
+  sky.dim.style.opacity = '1'
   const shakeBox = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
-  // camera (world origin = screen centre; translate(0, -Z·fy) scale(Z))
+  // the full moon (screen space, as f5 left it) — rides behind the card with parallax
+  const moon = moonLayer(shakeBox, CC.x, CC.y)
+  const Z0 = MYS_BW * julPose(20.0).s / REV_BW
+  // camera (world origin = screen centre; translate(tx, ty) scale(Z))
   const cam = el('div', { position: 'absolute', left: W / 2 + 'px', top: H / 2 + 'px', width: 0, height: 0 }, shakeBox)
-  // ── reveal card (front), world coords; the full moon rides behind the card as its halo
+  // ── reveal card (front), world coords
   const world = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0 }, cam)
-  const moon = moonLayer(world, 0, 0)
-  const front = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, backfaceVisibility: 'hidden' }, world)
+  const front = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, opacity: 0 }, world)
   const cardShadow = el('div', { position: 'absolute', left: (64 - REV.w / 2) * D + 'px', top: (123 - REV.h / 2) * D + 'px', width: 1431 * D + 'px', height: 2498 * D + 'px', borderRadius: 100 * D + 'px', boxShadow: '0 0 34px 4px rgba(255,150,232,0.32), 0 30px 80px rgba(5,2,18,0.55)' }, front)
   const revImg = img(front, A + 'card-reveal.png', { left: -REV.w * D / 2 + 'px', top: -REV.h * D / 2 + 'px', width: REV.w * D + 'px', height: REV.h * D + 'px', clipPath: `inset(${123 * D}px ${65 * D}px ${119 * D}px ${64 * D}px round ${100 * D}px)` })
   const BODY = { x: 66 * D, y: 123 * D, w: (1494 - 66) * D, h: (2620 - 123) * D, r: 100 * D }
@@ -187,6 +197,14 @@ export default function build(stage) {
   const holo = el('div', { position: 'absolute', left: '-60%', top: '-60%', width: '220%', height: '220%',
     background: 'linear-gradient(115deg, rgba(255,45,58,0) 30%, rgba(255,122,46,0.16) 36%, rgba(255,210,63,0.18) 40%, rgba(95,220,84,0.16) 44%, rgba(47,208,230,0.18) 48%, rgba(74,114,255,0.16) 52%, rgba(180,92,255,0.16) 56%, rgba(180,92,255,0) 62%)' }, holoBox)
   const cardDim = el('div', { position: 'absolute', left: (66 - REV.w / 2) * D + 'px', top: (123 - REV.h / 2) * D + 'px', width: BODY.w + 'px', height: BODY.h + 'px', borderRadius: BODY.r + 'px', background: 'rgba(11,6,32,1)', opacity: 0, pointerEvents: 'none', zIndex: 4 }, front)
+  // echo: f1's cold, desaturated Juniper card (the face we swiped past) flickers through the warm reveal for 6 frames
+  const EK = REV_BW / CARD_W
+  const echo = el('div', { position: 'absolute', left: -CARD_W / 2 + 'px', top: -CARD_H / 2 + 'px', width: CARD_W + 'px', height: CARD_H + 'px', borderRadius: '30px', overflow: 'hidden',
+    background: '#1a1d24', opacity: 0, display: 'none', pointerEvents: 'none', zIndex: 5 }, front)
+  img(echo, IMG + 'juniper.jpg', { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 35%', filter: COLD_FILTER })
+  el('div', { position: 'absolute', inset: 0, background: 'rgba(84,110,150,0.24)', mixBlendMode: 'color' }, echo)
+  el('div', { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(8,10,14,0.35) 0%, rgba(8,10,14,0) 16%, rgba(8,10,14,0) 52%, rgba(8,10,14,0.9) 100%)' }, echo)
+  el('div', { position: 'absolute', left: '34px', bottom: '78px', fontFamily: SANS, fontWeight: 600, fontSize: '46px', color: '#f4f5f7', letterSpacing: '-0.01em' }, echo, 'Juniper, 27')
 
   // ── Juniper's mystery card (screen space; continues f5)
   const pre = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, shakeBox)
@@ -225,53 +243,54 @@ export default function build(stage) {
   el('div', {}, tagRow, 'Aura reading')
   const tagBar = el('div', { display: 'flex', gap: '6px', marginTop: '14px', marginLeft: '28px' }, tag)
   const tagSegs = CHAKRA.map((c) => el('div', { width: '30px', height: '5px', borderRadius: '2px', background: rgbS(c), opacity: 0.25 }, tagBar))
-  const grain = grainLayer(root, 0.2)
+  const grain = grainCanvas(root, 0.55)
 
   return {
     start: 20.0, end: 24.2, root, fxStart: 20.0,
     fx(ctx, t) {
-      drawAmbient(ctx, t, 1)
+      drawAmbient(ctx, t, 1 - prog(t, 23.5, 24.0))
       // match phone lands: white/gold pixel ring hugging the phone (clear of the caption)
       drawBurst(ctx, { t: T_A_END - 0.08, x: PX, y: H / 2, r0: 380, r1: 520, n: 16, px: 4, life: 0.85, pal: ['#ffffff', '#ffe6a0', '#ffffff', '#efe6d6'], centre: '#ffffff', sx: 0.62, sy: 1.08, seed: 7 }, t)
     },
     update(t) {
       if (!veilDrawn) { const vc = veilCanvas(); if (vc) { veilCvB.getContext('2d').drawImage(vc, 0, 0); veilDrawn = true } }
-      sky.update(t); grain.update(t)
+      paintSkyF5(sky.bx, t, ease.inOutQuad(prog(t, 23.35, 23.95)))   // S1's crescent returns for f7
+      grain.update(t)
       const u = t - O                                     // s3 clock
       const fi = Math.round(t * 30)
       const gr = rng(fi * 131 + 17), grainPos = `${Math.floor(gr() * 256)}px ${Math.floor(gr() * 256)}px`
 
-      // ── mystery card flips out
+      // ── camera: a straight push-in. Before the dissolve the reveal card is sized to the mystery card (julPose keeps
+      //    pushing from f5); then the push carries on into the photo window; pull back to the whole card.
       const jp = julPose(t)
-      const charge = ease.inQuad(prog(u, FLIP_IN.a - 0.04, FLIP_IN.m))
-      const fo = ease.inQuad(prog(u, FLIP_IN.a, FLIP_IN.m))
-      pre.style.display = u >= FLIP_IN.m ? 'none' : 'block'
-      mys.holder.style.transform = `translate(${jp.x}px, ${jp.y}px) perspective(1600px) rotateY(${90 * fo}deg) rotate(${jp.rz}deg) scale(${jp.s * (1 + 0.04 * fo)})`
-      mys.card.style.filter = charge > 0.002 ? `brightness(${1 + 0.35 * charge})` : 'none'
-      mys.glow.style.boxShadow = rimGlow(JUL_RIM, charge * 0.6, jp.s)
-
-      // ── moon: full, held; dims behind the phone beat
-      const ms = moonState(t)
-      const moonOut = 1 - 0.55 * ease.inOutQuad(prog(t, T_A, T_A_END + 0.3))
-      moon.update(ms.lit, ms.op * moonOut, ms.glow * moonOut, 1, 1)
-
-      // ── camera
+      const Zm = MYS_BW * jp.s / REV_BW
       const push = ease.inOutCubic(prog(u, 9.4, 9.7)), pull = ease.inOutCubic(prog(u, 10.12, 10.44))
       const winCy = WIN.y + WIN.h / 2
-      const Z = lerp(lerp(1, Z_PUSH, push), 1, pull)
-      const fyUse = u < 9.4 ? -(CC.y - H / 2) : lerp(lerp(-(CC.y - H / 2), winCy, push), 0, pull)
-      cam.style.transform = `translate(0px, ${-Z * fyUse}px) scale(${Z})`
+      const Z = lerp(lerp(Zm, Z_PUSH, push), 1, pull)
+      const tx = (jp.x - W / 2) * (1 - push)
+      const ty = lerp(lerp(jp.y - H / 2, -Z * winCy, push), 0, pull)
+      cam.style.transform = `translate(${tx}px, ${ty}px) scale(${Z})`
 
-      // ── reveal card: flip in, veil lift, aura-cam, resolve
-      const fin = ease.outCubic(prog(u, FLIP_IN.m, FLIP_IN.b))
-      const aIn = u < FLIP_IN.m ? -90 : -90 * (1 - fin)
-      const tiltU = prog(t, 21.12, 22.4)
-      const tilt = 7 * Math.sin(Math.PI * tiltU) * Math.sin(2 * Math.PI * 0.75 * tiltU)
-      const tiltX = 2.5 * Math.sin(Math.PI * tiltU) * Math.cos(2 * Math.PI * 0.6 * tiltU)
+      // ── mystery card dissolves into the reveal card under a soft bloom (no flip)
+      const dz = prog(t, DISS.a, DISS.b)
+      const bl = Math.sin(Math.PI * prog(t, 20.0, 20.44))
+      pre.style.display = dz >= 1 ? 'none' : 'block'
+      pre.style.opacity = String(1 - ease.inOutQuad(dz))
+      mys.holder.style.transform = `translate(${jp.x}px, ${jp.y}px) perspective(1600px) rotateY(${jp.ry}deg) rotate(${jp.rz}deg) scale(${jp.s})`
+      mys.card.style.filter = bl > 0.002 ? `brightness(${1 + 0.3 * bl})` : 'none'
+      mys.glow.style.boxShadow = rimGlow(JUL_RIM, bl * 0.6, jp.s)
+      const fIn = ease.inOutQuad(prog(t, DISS.a - 0.03, DISS.b - 0.03))
+      front.style.opacity = String(fIn)
+      front.style.filter = bl > 0.002 ? `brightness(${1 + 0.3 * bl})` : 'none'
+
+      // ── reveal card: veil lift, aura-cam, resolve
+      const tiltU = prog(t, 21.3, 23.1)
+      const tilt = 2.5 * Math.sin(Math.PI * tiltU) * Math.sin(2 * Math.PI * 0.75 * tiltU)
+      const tiltX = 1 * Math.sin(Math.PI * tiltU) * Math.cos(2 * Math.PI * 0.6 * tiltU)
       // the phone beat: the card recedes left, turning slightly toward the phone
-      const rec = ease.inOutCubic(prog(t, T_A - 0.04, T_A + 0.42))
-      front.style.transform = `perspective(1800px) rotateX(${tiltX}deg) rotateY(${aIn + tilt + 16 * rec}deg)`
-      const showCard = u >= FLIP_IN.m
+      const rec = ease.inOutCubic(prog(t, T_A - 0.05, T_A + 0.42))
+      front.style.transform = `perspective(1800px) rotateX(${tiltX}deg) rotateY(${tilt + 12 * rec}deg)`
+      const showCard = fIn > 0
       front.style.display = showCard ? 'block' : 'none'
       const p = liftEase(prog(u, LIFT.a, LIFT.b))
       const fb = Math.pow(1 - prog(u, LIFT.a + 0.05, LIFT.b + 0.12), 2)
@@ -328,20 +347,38 @@ export default function build(stage) {
         holoBox.style.opacity = String(0.85 * Math.sin(Math.PI * tiltU))
         holo.style.transform = `translate(${lerp(-18, 22, tiltU) + tilt * 3}%, ${tiltX * 2}%)`
         cardDim.style.opacity = String(0.42 * rec)
+        const ef = Math.round((t - ECHO) * 30)
+        echo.style.display = ef >= 0 && ef < 6 ? 'block' : 'none'
+        if (ef >= 0 && ef < 6) {
+          echo.style.opacity = String([0.55, 0.14, 0.5, 0.24, 0.38, 0.1][ef])
+          echo.style.transform = `translateX(${[12, -16, 6, -9, 4, 0][ef]}px) scale(${EK})`
+        }
         cardShadow.style.boxShadow = `0 0 ${34 + 30 * Math.sin(Math.PI * prog(t, 21.2, 21.8))}px 4px rgba(255,150,232,${0.32 + 0.2 * Math.sin(Math.PI * prog(t, 21.2, 21.8))}), 0 30px 80px rgba(5,2,18,0.55)`
       } else tag.style.opacity = '0'
-      // world: pop on landing, slide left for the caption, then recede for the phone
-      const pop = u < FLIP_IN.b + 0.25 ? 1 + 0.05 * Math.sin(Math.PI * prog(u, FLIP_IN.m, FLIP_IN.b + 0.25)) : 1
+      // world: slide left for the caption (during the pull back), still hold, then recede + fade for the phone
       const sh = ease.inOutCubic(prog(t, SHIFT.a, SHIFT.b))
-      const life = lerp(1, 0.96, ease.inOutQuad(prog(t, 21.3, T_A)))
-      const S = pop * life * lerp(1, 0.78, rec)
+      const life = lerp(1, 0.97, ease.inOutQuad(prog(t, SHIFT.b, T_A)))
+      const S = life * lerp(1, 0.78, rec)
       const wx = CARD_X * sh + lerp(0, -170, rec), wy = lerp(0, 30, rec)
       world.style.transform = `translate(${wx}px, ${wy}px) scale(${S})`
+      world.style.opacity = String(1 - ease.inOutQuad(prog(t, 23.45, 23.92)))
+
+      // ── moon: full, behind the card with parallax; dims away behind the phone (f7 has only S1's crescent)
+      const ms = moonState(t)
+      const moonOut = 1 - ease.inOutQuad(prog(t, T_A - 0.1, 23.95))
+      const csx = W / 2 + tx + Z * wx, csy = H / 2 + ty + Z * wy
+      moon.update(ms.lit, ms.op * moonOut, ms.glow * moonOut, Math.pow(Z / Z0, 0.6), 1, 0.6 * (csx - CC.x), 0.6 * (csy - CC.y))
       void revImg
 
       // ── resolve sparkles around the photo window (camera parked on it)
       fx.clearRect(0, 0, W, H)
       fx.globalCompositeOperation = 'lighter'
+      if (bl > 0.01) {                                    // the bloom the cards dissolve under
+        const G = 520 * Z / Z0
+        const gg = fx.createRadialGradient(csx, csy - 40, 0, csx, csy - 40, G)
+        gg.addColorStop(0, `rgba(255,240,250,${(0.42 * bl).toFixed(3)})`); gg.addColorStop(0.5, `rgba(255,190,240,${(0.16 * bl).toFixed(3)})`); gg.addColorStop(1, 'rgba(255,190,240,0)')
+        fx.fillStyle = gg; fx.fillRect(csx - G, csy - 40 - G, G * 2, G * 2)
+      }
       const rk = prog(u, RES.peak - 0.03, RES.peak + 0.75)
       if (rk > 0 && rk < 1) {
         SPK2.forEach((k) => {
@@ -358,19 +395,19 @@ export default function build(stage) {
       const La = ease.outQuart(prog(t, T_A, T_A_END + 0.1)), Sa = ease.spring(prog(t, T_A, T_A_END + 0.3), 0.04)
       const hold = Math.sin((t - T_A) * 1.6)
       // settles to f7's opening state (centred, 880 tall, no tilt) by 23.9
-      const st = 1 - ease.inOutQuad(prog(t, 23.25, 23.9))
-      const sA = lerp(1, lerp(0.7, 1, Sa) * (1 + 0.014 * prog(t, T_A_END, 23.25)), st)
+      const st = 1 - ease.inOutQuad(prog(t, T_A_END, 23.9))
+      const sA = lerp(1, lerp(0.7, 1, Sa), st)
       const rxA = (lerp(26, 3, La) + 0.8 * hold) * st
       const ryA = (lerp(-26, -6, La) + 1.2 * Math.sin((t - T_A) * 1.1)) * st
       const rzA = lerp(-8, -1.2, La) * st
       const tyA = (lerp(220, 0, La) + 5 * hold) * st
       phone.style.opacity = String(ease.outQuad(prog(t, T_A, T_A + 0.12)))
       phone.style.transform = `translate(${PX}px, ${tyA}px) rotateX(${rxA}deg) rotateY(${ryA}deg) rotateZ(${rzA}deg) scale(${sA})`
-      const hA = prog(t, T_A_END - 0.06, T_A_END + 0.04) * (1 - prog(t, 23.5, 23.85))
+      const hA = prog(t, T_A_END - 0.06, T_A_END + 0.04) * (1 - prog(t, 23.75, 23.9))
       hs.forEach(h => { h.style.opacity = String(hA) })
       psp.forEach((s, i) => {
         const tw_ = 0.65 + 0.35 * Math.sin(t * 3.2 + i * 2.1)
-        s.style.opacity = String(prog(t, T_A_END + i * 0.1, T_A_END + 0.2 + i * 0.1) * tw_ * (1 - prog(t, 23.5, 23.85)))
+        s.style.opacity = String(prog(t, T_A_END + i * 0.1, T_A_END + 0.2 + i * 0.1) * tw_ * (1 - prog(t, 23.75, 23.9)))
         s.style.transform = `translateY(${Math.sin(t * 1.4 + i) * 6}px) rotate(${(t - T_A) * 40 * (i ? -1 : 1)}deg) scale(${lerp(0.4, 1, ease.outBack(prog(t, T_A_END + i * 0.1, T_A_END + 0.3 + i * 0.1)))})`
       })
       const bloom = t < T_A + 0.2 ? 0 : t < T_A + 0.42 ? ease.outQuad(prog(t, T_A + 0.2, T_A + 0.42)) : lerp(1, 0.35, ease.inOutQuad(prog(t, T_A + 0.42, T_A + 1.0)))
@@ -384,14 +421,14 @@ export default function build(stage) {
         box.style.transform = `translate(${lerp(36, 0, i) - 40 * o}px, -50%)`
       }
       capStyle(cap1, CAP1.a, CAP1.out)
-      capStyle(cap2, CAP2, 99)
+      capStyle(cap2, CAP2, CAP2_OUT)
     },
   }
 }
 
 export const cues = [
-  ['whoosh', 20.04, 0.4, 0.1],                                            // mystery card flips into the reveal card
-  ['bell', 20.32, 739.99, 0.05, 1.6, -0.2], ['bell', 20.41, 1108.73, 0.04, 1.6, 0.2], // reveal card lands
+  ['whoosh', 20.0, 0.5, 0.07],                                            // push-in continues from f5
+  ['bell', 20.2, 739.99, 0.04, 1.6, -0.2], ['bell', 20.27, 1108.73, 0.035, 1.6, 0.2], // bloom: mystery card becomes her card
   ['whoosh', 20.22, 0.5, 0.06],                                           // push into the photo window
   ['whoosh', 20.6, 0.7, 0.06],                                            // veil rising
   // aura-cam sweep: a bell per chakra hue, panning across
@@ -399,7 +436,9 @@ export const cues = [
   ['glitter', 20.84, 21.3], ['boom', 20.89, 0.18], ['bell', 20.89, 1318.51, 0.05, 2.0, 0], ['bell', 20.95, 1975.53, 0.035, 2.0, 0], // resolve flash
   ['whoosh', 20.98, 0.55, 0.05],                                          // pull back, card drifts left
   ...[1174.66, 1318.51, 1479.98, 1760, 1975.53, 2349.32, 2637.02, 2959.96, 3520].map((f, k) => ['bell', 21.22 + k * 0.045, f, 0.02, 0.6, k / 4 - 1]), // gold-foil sweep
-  ['bell', 21.32, 587.33, 0.035, 1.4, 0.3],                                // caption
+  ['tick', ECHO, 0.05], ['tick', ECHO + 0.1, 0.035],                       // cold echo of f1's card (glitch)
+  ['bell', CAP1.a + 0.02, 587.33, 0.035, 1.4, 0.3],                        // "Then you see each other."
+  ['bell', CAP2 + 0.02, 880, 0.025, 1.4, 0.3],                             // "You both aligned." 
   ['whoosh', T_A - 0.06, 0.5, 0.1],                                       // phone drops in
   ['boom', T_A_END - 0.06, 0.32], ['tick', T_A_END - 0.06, 0.14],         // phone lands
   ['bell', T_A_END - 0.04, 587.33, 0.05, 2.2, 0], ['bell', T_A_END - 0.03, 880, 0.04, 2.2, -0.2], ['bell', T_A_END - 0.02, 1108.73, 0.03, 2.2, 0.2],

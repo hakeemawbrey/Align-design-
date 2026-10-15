@@ -5,7 +5,7 @@
 // frame. Sun / element / Moon badges glow in, the bio line catches the light, the dealbreakers re-type themselves,
 // while the photo window stays a breathing, shimmering aura veil — never a face. "Chart first." … "Face last." lands
 // as the camera settles on the veil, with a small gold lock glint on the window. Text leaves, then the card shrinks
-// (inOutCubic, 0.7s, hi-res DOM the whole way) into its slot in f4's constellation: HANDOFF (body 150px at 960, 400).
+// (inOutCubic, 0.7s, hi-res DOM the whole way) into its slot in f4's constellation: HANDOFF (body 150px at 960, 430).
 //
 // SHARED SKY SPINE (used by f4–f8 — keep these exports stable):
 //   getSky()                       → cached layers { neb, far, mid, near, spriteS, spriteG, bright, vig, grain }
@@ -32,8 +32,8 @@ function f2End() {
   e = e || { cx: 960, cy: 470, bodyW: 520 }
   return { cx: e.cx, cy: e.cy, h: e.bodyH || e.bodyW * PNG.bh / PNG.bw }
 }
-/** f4 picks Juniper up here: body height 150 centred at (960, 400), flat, at t = 10.75 */
-export const HANDOFF = { t: 10.75, cx: 960, cy: 400, bodyH: 150 }
+/** f4 picks Juniper up here: body height 150 centred at (960, 430), flat, at t = 10.75 */
+export const HANDOFF = { t: 10.75, cx: 960, cy: 430, bodyH: 150 }
 const SHRINK = { a: 10.05, b: HANDOFF.t }
 // camera keys: [t, cx, cy, bodyH(screen px), yawDeg]  (whole card in frame: body ≤ 905px tall, top ≥ 90px)
 let CAM = null
@@ -53,8 +53,8 @@ function camAt(t) {
   CAM ||= camKeys()
   if (t >= SHRINK.a) {
     const k = ease.inOutCubic(prog(t, SHRINK.a, SHRINK.b)), a = CAM[CAM.length - 1]
-    // shrink in log-space so the size change reads evenly; position eases on the same curve
-    return [lerp(a[1], HANDOFF.cx, k), lerp(a[2], HANDOFF.cy, k), a[3] * Math.pow(HANDOFF.bodyH / a[3], k), lerp(a[4], 0, k)]
+    // size and position ease together on one inOutCubic curve
+    return [lerp(a[1], HANDOFF.cx, k), lerp(a[2], HANDOFF.cy, k), lerp(a[3], HANDOFF.bodyH, k), lerp(a[4], 0, k)]
   }
   if (t <= CAM[0][0]) return CAM[0].slice(1)
   for (let i = 1; i < CAM.length; i++) {

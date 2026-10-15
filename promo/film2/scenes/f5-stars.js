@@ -5,18 +5,25 @@
 // The world (sky, grain, moon, Juniper's card pose) is exported so f6 can continue the exact frame.
 //
 // Beat map (sound):
-//   15.00–15.95  cards drift in from f4's sea (from x≈400 / 1520, small) to x 610 / 1300 · moon crescent
-//   15.45        caption "✦ JUNIPER × YOU ✦ / Two charts meet." (out 16.95–17.13)
+//   15.00–15.95  cards drift in from f4's sea (from x≈400 / 1520, small) to x 610 / 1300
+//   15.00–15.90  the shared S1 nebula (f3's getSky/drawSky) dims to ~35% under a centre vignette; S1's small crescent fades
+//   15.05–16.05  the big moon RISES behind the column (y +170 → 0, scale .8 → 1) as a thin crescent
+//   15.45        caption "✦ YOU × JUNIPER ✦ / Two charts meet." (out 16.95–17.13)
 //   15.72 SPARK · 16.12 RUB · 16.52 ALIGN   beam draws across the gap (0.2s), dots pop at +0.16/+0.23/+0.30
+//                each reading lights more of the moon (stepped waxing .10 → .22 → .34 → .62), each star lock a little more
 //   17.02–17.28  readings retract into the column
 //   17.08–17.9   seven chakra stars streak in (stagger 0.065) → orbit → glide 17.68–
 //   18.09…18.42  stars click into the column (red bottom → violet top), STAR_LOCK[i] = 18.09 + i·0.055
-//   18.45        LOCK: flash, shockwave rings, rays, gold pixel burst, shake (3 frames), moon full
-//   18.51–19.76  "The stars aligned."
+//   18.36–18.45  flash rises (3 frames, cap .7, soft edges) · 18.45 LOCK: rings, rays, gold pixel burst, shake (3 frames), moon full
+//   18.60–19.76  "The stars aligned." (after the flash has decayed)
 //   19.45–19.95  your card drifts out left; Juniper's card glides to centre; the stars sink into her card
-//   20.00        hand-off: f6 draws the same frame (sky + full moon + Juniper's mystery card at 960,440 ×0.33)
+//   19.60→       Juniper's card starts a slow push-in that f6 carries on (no dead hold at 20.0)
+//   20.00        hand-off: f6 draws the same frame (sky + full moon + Juniper's mystery card at 960,440, julPose(20).s)
+// Sky camera: skyCam (f3) until 15.2, then skyPanF5 loops once (constant speed, never stops) and lands on f7's
+// skyPan/skyZoom at 24.0 exactly — f6 paints the same sky, so f5→f6→f7 drift is one continuous move.
 import { clamp, lerp, prog, ease, rng, noise1, el, C } from '../../src/lib.js'
-import { W, H, A, IMG, SERIF, MONO, fill, img, makeStars } from '../../src/scenes/common.js'
+import { W, H, A, SERIF, MONO, fill, img } from '../../src/scenes/common.js'
+import { getSky, drawSky, drawGrain } from './f3-chart.js'
 
 export const CC = { x: 960, y: 440 }                // column centre / moon centre / Juniper's final card centre
 export const LOCK = 18.45
@@ -51,9 +58,13 @@ export function julPose(t) {
   let x = lerp(1540, R_X, e), y = lerp(480, CARD_Y, e) + bob
   let s = lerp(0.22, M5, e), ry = lerp(-24, -9, e), rz = lerp(5, 1.2, e)
   x = lerp(x, CC.x, mv); y = lerp(y, CC.y, mv); s = lerp(s, M_END, mv); ry = lerp(ry, 0, mv); rz = lerp(rz, 0, mv)
+  s *= 1 + APPROACH(t)
   return { x, y, s, ry, rz }
 }
-function youPose(t) {
+/** slow push-in on Juniper's card from 19.6 on (f6 continues it, so the card never stops at the 20.0 hand-off) */
+export const APPROACH = (t) => t > 19.6 ? 0.25 * (t - 19.6) ** 2 : 0
+/** your card's pose (Hakeem · Taurus) — f4 imports this for its hand-off */
+export function youPose(t) {
   const e = ease.outCubic(prog(t, CARD_IN.a, CARD_IN.b))
   const out = ease.inCubic(prog(t, MOVE.a - 0.02, MOVE.b - 0.05))
   const bob = Math.sin((t - 15) * 2.0) * 6 * e
@@ -64,35 +75,47 @@ function youPose(t) {
 }
 
 // ── shared world pieces ───────────────────────────────────────────────────────
-function grainURL(size = 256, seed = 7) {
-  const c = document.createElement('canvas'); c.width = c.height = size
-  const g = c.getContext('2d'); const d = g.createImageData(size, size); const r = rng(seed)
-  for (let i = 0; i < size * size; i++) {
-    const v = Math.round(128 + (r() + r() + r() - 1.5) * 120)
-    d.data[i * 4] = d.data[i * 4 + 1] = d.data[i * 4 + 2] = clamp(v, 0, 255); d.data[i * 4 + 3] = 255
-  }
-  g.putImageData(d, 0, 0)
-  return c.toDataURL()
+// ONE SKY SPINE: the S1 nebula plate + star layers + grain from f3-chart.js. f5 and f6 paint it through paintSkyF5.
+const P0 = [0, (540 - 470) * -0.03]                   // f4's constant drawSky pan (seamless at 15.0)
+const LOOP = { a: 15.2, b: 24.0 }, V24 = [-7, 3.5]    // f7: skyPan(t) = [-(t-24)·7, (t-24)·3.5], skyZoom = 1 + .008(t-24)
+/** extra pan on top of skyCam: constant before 15.2; then one constant-speed loop (velocity V24 at both ends, so it
+ *  picks up skyCam's drift at 15.2 and hands f7 the exact pan/velocity at 24.0); after 24.0 it IS f7's skyPan. */
+export function skyPanF5(t) {
+  if (t <= LOOP.a) return P0
+  if (t >= LOOP.b) return [V24[0] * (t - 24), V24[1] * (t - 24)]
+  const T = LOOP.b - LOOP.a, s = t - LOOP.a, w = 2 * Math.PI / T, k = s / T, sm = k * k * (3 - 2 * k)
+  const sn = Math.sin(w * s) / w, cs = (1 - Math.cos(w * s)) / w
+  // p(s) = sn·v + cs·perp(v): |p'| constant, p(T) = 0, p'(0) = p'(T) = v
+  return [lerp(P0[0], 0, sm) + sn * V24[0] - cs * V24[1], lerp(P0[1], 0, sm) + sn * V24[1] + cs * V24[0]]
 }
-let GRAIN = null
-/** animated film grain overlay (call update(t) every frame) */
-export function grainLayer(parent, op = 0.2) {
-  GRAIN = GRAIN || grainURL(256, 11)
-  const e = el('div', { position: 'absolute', inset: 0, backgroundImage: `url(${GRAIN})`, backgroundSize: '256px 256px', mixBlendMode: 'overlay', opacity: op, pointerEvents: 'none', zIndex: 50 }, parent)
-  return { e, update(t) { const r = rng(Math.round(t * 30) * 131 + 17); e.style.backgroundPosition = `${Math.floor(r() * 256)}px ${Math.floor(r() * 256)}px` } }
+/** relative sky zoom (×skyCam's): a slow breath in, back to 1 at 24.0; f7's slow push after */
+export function skyZoomF5(t) {
+  if (t >= LOOP.b) return 1 + 0.008 * (t - 24)
+  return 1 + 0.014 * Math.sin(Math.PI * prog(t, LOOP.a, LOOP.b)) ** 2
 }
-/** deep-space sky of the first film's S3 (indigo radial, stars, faint nebula, dust lanes) */
-export function skyLayer(parent) {
-  const sky = el('div', { position: 'absolute', inset: 0, background: 'radial-gradient(70% 80% at 50% 42%, #24124a 0%, #150b33 55%, #0b0620 100%)' }, parent)
-  const neb = el('div', { position: 'absolute', inset: '-80px', mixBlendMode: 'screen', background: 'radial-gradient(40% 50% at 18% 72%, rgba(180,92,255,0.18), rgba(180,92,255,0) 70%), radial-gradient(36% 44% at 84% 24%, rgba(232,98,138,0.14), rgba(232,98,138,0) 70%), radial-gradient(30% 22% at 70% 88%, rgba(95,220,140,0.07), rgba(95,220,140,0) 70%)' }, sky)
-  const stars = makeStars(sky, 150, 21)
-  return {
-    sky, stars,
-    update(t) {
-      stars.style.transform = `translate(${Math.sin(t * 0.15) * 10}px, ${(t - 15) * -3}px)`
-      neb.style.transform = `translate(${Math.sin(t * 0.3) * 30}px, ${Math.cos(t * 0.25) * 20}px)`
-    },
-  }
+/** paint the shared sky (opaque) — moon = S1's small crescent alpha */
+export function paintSkyF5(bx, t, moon = 0) {
+  const z = skyZoomF5(t)
+  bx.setTransform(1, 0, 0, 1, 0, 0); bx.fillStyle = C.void; bx.fillRect(0, 0, W, H)
+  bx.setTransform(z, 0, 0, z, W / 2 * (1 - z), H / 2 * (1 - z))
+  drawSky(bx, t, { pan: skyPanF5(t), moon })
+  bx.setTransform(1, 0, 0, 1, 0, 0)
+}
+/** sky canvas + the centre dim (same recipe as f7's: ~35–40% plate behind the cards, edges stay rich) */
+export function skyCanvas(parent) {
+  getSky()
+  const c = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, parent)
+  c.width = W; c.height = H
+  const dim = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0,
+    background: 'radial-gradient(70% 62% at 50% 46%, rgba(9,4,26,0.64) 0%, rgba(9,4,26,0.46) 55%, rgba(9,4,26,0.12) 100%)' }, parent)
+  return { c, bx: c.getContext('2d'), dim }
+}
+/** the shared clumped silver grain (f3's drawGrain), overlay ≥ .5 */
+export function grainCanvas(parent, op = 0.55) {
+  const c = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: op, pointerEvents: 'none', zIndex: 50 }, parent)
+  c.width = W; c.height = H
+  const gx = c.getContext('2d')
+  return { update(t) { drawGrain(gx, t) } }
 }
 
 /** the moon texture (pearl disc, maria, craters, limb darkening) — from the first film's S3 */
@@ -151,29 +174,36 @@ export function moonLayer(parent, cx, cy) {
     g.globalAlpha = 0.05; g.drawImage(tex, o - tex.width / 2, o - tex.height / 2); g.globalAlpha = 1
     const cphi = 1 - 2 * f
     m.clearRect(0, 0, MS, MS)
-    m.filter = `blur(${R * 0.022}px)`
-    m.fillStyle = '#fff'; m.beginPath(); m.moveTo(o, o - R)
-    m.arc(o, o, R, -Math.PI / 2, Math.PI / 2, false)
+    m.filter = `blur(${R * 0.06}px)`
+    m.fillStyle = '#fff'; m.beginPath(); m.moveTo(o, o - R * 1.12)
+    m.arc(o, o, R * 1.12, -Math.PI / 2, Math.PI / 2, false); m.lineTo(o, o + R)        // lit limb padded past the disc
     m.ellipse(o, o, Math.max(0.01, Math.abs(cphi) * R), R, 0, Math.PI / 2, -Math.PI / 2, cphi > 0)
     m.closePath(); m.fill(); m.filter = 'none'
+    // the soft blur is for the terminator only: clip back to a crisp limb
+    m.globalCompositeOperation = 'destination-in'; m.beginPath(); m.arc(o, o, R, 0, 6.2832); m.fill()
     m.globalCompositeOperation = 'source-in'; m.drawImage(tex, o - tex.width / 2, o - tex.height / 2); m.globalCompositeOperation = 'source-over'
     g.drawImage(mask, 0, 0)
   }
   return {
     glow, cv,
-    update(lit, op, glowO, sc = 1, glowSc = 1) {
+    update(lit, op, glowO, sc = 1, glowSc = 1, tx = 0, ty = 0) {
       draw(Math.round(lit * 400) / 400)
-      cv.style.opacity = String(op); cv.style.transform = `scale(${sc})`
-      glow.style.opacity = String(glowO); glow.style.transform = `scale(${sc * glowSc})`
+      cv.style.opacity = String(op); cv.style.transform = `translate(${tx}px, ${ty}px) scale(${sc})`
+      glow.style.opacity = String(glowO); glow.style.transform = `translate(${tx}px, ${ty}px) scale(${sc * glowSc})`
     },
   }
 }
-/** moon phase/opacity/glow as a function of t (f5 waxes it to full at the lock; f6 keeps it) */
+// waxing is a beat: each reading lights more of the moon, each star lock a sliver more, the lock fills it
+const WAX = [[15.0, 0.1], [15.88, 0.22], [16.28, 0.34], [16.68, 0.62],
+  ...[0, 1, 2, 3, 4, 5, 6].map((i) => [18.09 + i * 0.055, 0.62 + 0.04 * (i + 1)]), [18.45, 1]]
+/** moon phase/opacity/glow/rise as a function of t (f5 raises + waxes it to full at the lock; f6 keeps it) */
 export function moonState(t) {
-  const lit = 0.045 + 0.955 * Math.pow(prog(t, 15.0, LOCK), 2)
+  let lit = WAX[0][1]
+  for (let i = 1; i < WAX.length; i++) lit += (WAX[i][1] - WAX[i - 1][1]) * ease.outCubic(prog(t, WAX[i][0], WAX[i][0] + (i === WAX.length - 1 ? 0.12 : 0.24)))
   const post = t >= LOCK ? 1 - ease.outCubic(prog(t, LOCK, LOCK + 0.5)) : 0
-  const op = 0.82 * ease.inOutQuad(prog(t, 15.0, 15.5))
-  return { lit, op, glow: (op / 0.82) * (0.12 + 0.55 * lit * lit + 0.5 * post), post }
+  const rise = ease.outCubic(prog(t, 15.05, 16.05))
+  const op = 0.82 * ease.inOutQuad(prog(t, 15.05, 15.75))
+  return { lit, op, glow: (op / 0.82) * (0.12 + 0.55 * lit * lit + 0.3 * post), post, sc: lerp(0.8, 1, rise), ty: lerp(170, 0, rise) }
 }
 
 /** Juniper's veiled mystery card (centred on its holder) */
@@ -280,7 +310,7 @@ function starState(i, t) {
 
 export default function build(stage) {
   const root = fill(stage, { background: C.void })
-  const sky = skyLayer(root)
+  const sky = skyCanvas(root)
   const dim = el('div', { position: 'absolute', inset: 0, background: '#07041a', opacity: 0 }, root)
   const shakeBox = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
   const moon = moonLayer(shakeBox, CC.x, CC.y)
@@ -303,7 +333,7 @@ export default function build(stage) {
   // reading labels (above the cards)
   const rows = READ.map((R) => {
     const box = el('div', { position: 'absolute', left: (CC.x - 160) + 'px', width: '320px', top: (R.y - 30) + 'px', textAlign: 'center', opacity: 0 }, shakeBox)
-    const lab = el('div', { fontFamily: MONO, fontSize: '28px', letterSpacing: '0.26em', textIndent: '0.26em', textTransform: 'uppercase', color: R.col, lineHeight: '34px',
+    const lab = el('div', { fontFamily: MONO, fontSize: '34px', letterSpacing: '0.24em', textIndent: '0.24em', textTransform: 'uppercase', color: R.col, lineHeight: '40px',
       textShadow: `0 0 14px rgba(${R.rgb},0.75), 0 0 3px rgba(8,4,24,0.9), 0 2px 10px rgba(8,4,24,0.9)` }, box, R.k)
     const dots = el('div', { display: 'flex', justifyContent: 'center', gap: '13px', marginTop: '16px' }, box)
     const ds = [0, 1, 2].map((j) => el('div', { width: '14px', height: '14px', borderRadius: '50%', boxSizing: 'border-box', border: `2px solid ${R.col}`, background: j < R.n ? R.col : 'rgba(11,6,32,0.7)', boxShadow: j < R.n ? `0 0 12px 2px rgba(${R.rgb},0.8)` : 'none', opacity: 0 }, dots))
@@ -315,26 +345,28 @@ export default function build(stage) {
   const DUST = (() => { const r = rng(515); return Array.from({ length: 170 }, (_, i) => ({ x: r() * W, y: r() * H, s: 0.7 + r() * 1.8, a: 0.35 + r() * 0.65, col: i % 5 === 0 ? '242,199,92' : i % 7 === 0 ? CHAKRA[i % 7].join(',') : '255,246,234', ph: r() * 6.28 })) })()
 
   const bigFlash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0,
-    background: `radial-gradient(55% 75% at 50% ${CC.y / H * 100}%, rgba(255,253,248,1) 0%, rgba(255,246,232,0.92) 40%, rgba(240,226,255,0.7) 100%)` }, root)
+    background: `radial-gradient(55% 75% at 50% ${CC.y / H * 100}%, rgba(255,253,248,1) 0%, rgba(255,246,232,0.62) 34%, rgba(240,226,255,0.25) 100%)` }, root)
   // captions
   const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '400px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.08) 20%, rgba(11,6,32,0.28) 40%, rgba(11,6,32,0.52) 60%, rgba(11,6,32,0.72) 80%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, root)
   const capBox = el('div', { position: 'absolute', left: '50%', bottom: '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
-  const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Juniper&nbsp;&nbsp;×&nbsp;&nbsp;You&nbsp;&nbsp;✦')
+  const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;You&nbsp;&nbsp;×&nbsp;&nbsp;Juniper&nbsp;&nbsp;✦')
   const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'Two charts meet.')
   const lockBox = el('div', { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, root)
   const lockLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '116px', lineHeight: 1, color: C.bone, opacity: 0,
     textShadow: '0 0 40px rgba(255,236,200,0.45), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, lockBox, 'The stars aligned.')
-  const grain = grainLayer(root, 0.2)
+  const grain = grainCanvas(root, 0.55)
 
   return {
-    start: 15.0, end: 20.2, root, fadeIn: 0.25, fxEnd: 20.0,
+    start: 15.0, end: 20.2, root, fadeIn: 0.2, fxEnd: 20.0,
     fx(ctx, t) {
       drawAmbient(ctx, t, prog(t, 15.0, 15.4))
       drawBurst(ctx, { t: LOCK, x: CC.x, y: CC.y, r0: 150, r1: 900, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sy: 0.78, seed: 3 }, t)
       drawBurst(ctx, { t: LOCK + 0.08, x: CC.x, y: CC.y, r0: 90, r1: 520, n: 16, px: 4, life: 0.8, pal: CHAKRA_HEX, centre: HOT, sy: 0.9, seed: 9 }, t)
     },
     update(t) {
-      sky.update(t); grain.update(t)
+      paintSkyF5(sky.bx, t, 1 - ease.inOutQuad(prog(t, 15.1, 15.9)))
+      sky.dim.style.opacity = String(ease.inOutQuad(prog(t, 15.0, 15.9)))
+      grain.update(t)
       const fi = Math.round(t * 30), lockF = Math.round(LOCK * 30)
       const ten = ease.inQuad(prog(t, GLIDE, LOCK))
       const post = t >= LOCK ? 1 - ease.outCubic(prog(t, LOCK, LOCK + 0.5)) : 0
@@ -343,9 +375,8 @@ export default function build(stage) {
 
       // ── moon (waxes to full at the lock)
       const ms = moonState(t)
-      moon.update(ms.lit, ms.op, ms.glow, 1, 1 + 0.15 * post)
-      dim.style.opacity = String(0.5 * ten * (t < LOCK ? 1 : 0) + (t >= LOCK ? 0.2 * (1 - ease.outQuad(prog(t, LOCK, LOCK + 0.5))) : 0))
-      sky.stars.style.opacity = String(1 - 0.5 * ten * (t < LOCK ? 1 : 0))
+      moon.update(ms.lit, ms.op, ms.glow, ms.sc, 1 + 0.15 * post, 0, ms.ty)
+      dim.style.opacity = String(0.45 * ten * (t < LOCK ? 1 : 0) + (t >= LOCK ? 0.2 * (1 - ease.outQuad(prog(t, LOCK, LOCK + 0.5))) : 0))
 
       // ── cards
       const lean = 10 * ten * (t < LOCK ? 1 : 0)       // drawn toward the column as the stars commit
@@ -355,11 +386,11 @@ export default function build(stage) {
       you.style.opacity = String(yp.op)
       const glow = t < LOCK ? ten : 1 - ease.inOutQuad(prog(t, LOCK, MOVE.b - 0.05))   // charged into the lock, cooling off before the hand-off
       const mixRgb = (a, b, k) => a.map((v, i) => Math.round(lerp(v, b[i], k))).join(',')
-      youCard.style.filter = glow > 0.002 ? `brightness(${1 + 0.18 * glow + 0.45 * post})` : 'none'
+      youCard.style.filter = glow > 0.002 ? `brightness(${1 + 0.18 * glow + 0.25 * post})` : 'none'
       youGlow.style.boxShadow = rimGlow(mixRgb([150, 240, 170], [255, 236, 180], post), glow, yp.s)
       const jp = julPose(t)
       jul.holder.style.transform = poseTransform({ ...jp, x: jp.x - lean - jx, y: jp.y - jy }, 0, kick)
-      jul.card.style.filter = glow > 0.002 ? `brightness(${1 + 0.18 * glow + 0.45 * post})` : 'none'
+      jul.card.style.filter = glow > 0.002 ? `brightness(${1 + 0.18 * glow + 0.25 * post})` : 'none'
       jul.glow.style.boxShadow = rimGlow(mixRgb([255, 150, 232], [255, 236, 200], post), glow, jp.s)
 
       // shake + chroma punch on the lock
@@ -369,9 +400,10 @@ export default function build(stage) {
       shakeBox.style.transform = `translate(${sh[0]}px, ${sh[1]}px)`
       const CH = [14, 9, 5, 2]
       shakeBox.style.filter = sf >= 0 && sf < 4 ? `drop-shadow(${CH[sf]}px 0 0 rgba(255,40,90,0.6)) drop-shadow(${-CH[sf]}px 0 0 rgba(60,190,255,0.6))` : 'none'
-      const fl = t < LOCK ? ease.inQuad(prog(t, LOCK - 0.06, LOCK)) * 0.5 : 0.8 * (1 - ease.outCubic(prog(t, LOCK, LOCK + 0.34)))
+      // lock flash: 3-frame rise to .7 (soft edges, never a white frame), decayed by ~18.6
+      const fl = t < LOCK ? 0.7 * ease.inQuad(prog(t, LOCK - 0.1, LOCK)) : 0.7 * (1 - ease.outCubic(prog(t, LOCK, LOCK + 0.3)))
       bigFlash.style.opacity = String(fl)
-      const rayO = t < LOCK ? 0.2 * ease.inQuad(prog(t, LOCK - 0.32, LOCK)) : 0.7 * (1 - ease.inOutQuad(prog(t, LOCK + 0.05, LOCK + 1.1)))
+      const rayO = t < LOCK ? 0.2 * ease.inQuad(prog(t, LOCK - 0.32, LOCK)) : 0.5 * (1 - ease.inOutQuad(prog(t, LOCK + 0.05, LOCK + 1.1)))
       rays.style.opacity = String(rayO)
       rays.style.transform = `rotate(${(t - 17.7) * 7}deg) scale(${t < LOCK ? 0.7 : lerp(0.75, 1.15, ease.outCubic(prog(t, LOCK, LOCK + 0.9)))})`
 
@@ -394,7 +426,7 @@ export default function build(stage) {
         })
         if (draw <= 0 || ro >= 1) return
         // beam from both card edges toward the middle; retracts into the column
-        const by = R.y + 41 + 0
+        const by = R.y + 47
         const half = (GAP.x1 - GAP.x0) / 2 * (1 - ro)
         const xa = lerp(GAP.x0, CC.x - half, ro), xb = lerp(GAP.x1, CC.x + half, ro)
         const reach = (CC.x - xa) * draw
@@ -537,7 +569,7 @@ export default function build(stage) {
       eyebrow.style.transform = `translateY(${(1 - ease.outCubic(prog(t, 15.45, 15.85))) * 10}px)`
       capLine.style.opacity = String(e2 * out)
       capLine.style.transform = `translateY(${(1 - ease.outCubic(prog(t, 15.55, 16.05))) * 14}px)`
-      const CL = LOCK + 0.06
+      const CL = 18.6                                       // after the flash has decayed
       const lo = ease.outQuad(prog(t, CL, CL + 0.22)) * (1 - ease.inQuad(prog(t, 19.6, 19.76)))
       lockLine.style.opacity = String(lo)
       lockLine.style.transform = `scale(${lerp(1.06, 1, ease.outCubic(prog(t, CL, CL + 0.6)))})`
@@ -565,6 +597,7 @@ export const cues = [
   ['boom', LOCK, 0.55], ['tick', LOCK, 0.22],
   ['bell', LOCK, 196, 0.08, 3.0, 0], ['bell', LOCK + 0.01, 587.33, 0.06, 2.6, -0.25], ['bell', LOCK + 0.02, 739.99, 0.05, 2.6, 0.25], ['bell', LOCK + 0.03, 1174.66, 0.035, 2.6, 0],
   ['glitter', LOCK, LOCK + 0.75],
+  ['bell', 18.62, 293.66, 0.03, 2.0, 0],                                  // the stars aligned (caption)
   ['whoosh', MOVE.a, 0.55, 0.06],                                         // your card drifts off; hers glides to centre
   ['bell', MOVE.b - 0.1, 1318.51, 0.025, 1.2, 0],                          // stars sink into her card
 ]
