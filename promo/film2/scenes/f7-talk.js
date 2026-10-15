@@ -7,9 +7,10 @@
 //   24.00 f7 owns the phone (match screen, centred 960,540, 880 tall) — f6 shows only its caption until 24.45
 //   24.15–24.60 phone glides left (x 960 → 640), still on the match screen
 //   24.55–24.85 the screen crossfades (inside the phone mask) match → chat; no slide, nothing of the old screen lingers
-//   24.45–24.85 a fanned hand of three talk cards rises bottom-right (Lovers · The Fool · The Sun) — ticks 24.47/.52/.57
+//   24.55–24.95 a fanned hand of three talk cards rises bottom-right, BELOW the caption (centre ≈1460,920, partly off
+//               frame; after f6's caption has cleared at 24.45) (Lovers · The Fool · The Sun) — ticks 24.57/.62/.67
 //   24.75 caption (eyebrow "THE TALK DECK" + "Then you talk in cards.") steps in, words full by ~25.3, holds to 26.35
-//   24.95–25.19 The Fool lifts out of the hand · 25.15–25.60 it is PLAYED: arcs over into the phone,
+//   24.95–25.19 The Fool lifts out of the hand · 25.15–25.60 it is PLAYED: swoops low (under the caption) into the phone,
 //               lands on the card-of-the-day slot at 25.60 (gold flash + ring + pixel-star burst, glint sweep 25.64–26.04)
 //   25.20–25.64 the rest of the hand sinks away · 25.80–26.20 "Play it to Juniper" button breathes gold
 //   25.60–26.35 hold · 26.35–26.80 phone + caption drift down and fade (f8's line starts typing 26.68)
@@ -20,7 +21,7 @@ import { drawSky, skyCam, drawGrain } from './f3-chart.js'
 
 const T0 = 24.0, T1 = 26.8
 const T_GLIDE = 24.15, T_GLIDE_END = 24.6, T_SCR = 24.55, T_SCR_END = 24.85
-const T_HAND = 24.45, T_LIFT = 24.95, T_PLAY = 25.15, T_LAND = 25.6
+const T_HAND = 24.55, T_LIFT = 24.95, T_PLAY = 25.15, T_LAND = 25.6
 const CAP = 24.75, CAP_OUT = 26.35, T_EXIT = 26.35
 const AU_IN = [24.5, 25.1], AU_OUT = [26.0, 26.5]
 
@@ -70,7 +71,8 @@ const SLOT = { x: (339 + 831) / 2 * K, y: (1185 + 2025) / 2 * K, w: 492 * K * 1.
 const BTN = { x: 114 * K, y: (2304 - 81) * K, w: 942 * K, h: 162 * K }
 const CW = 300, CH = Math.round(CW * 1170 / 732)     // talk card in the hand (300 × 480)
 // hand, in phone-local coords (phone top-left = (PX1 - PW/2, PCY - PH/2) at rest)
-const HAND = { x: 1440 - (PX1 - PW / 2), y: 1330 - (PCY - PH / 2), R: 640 }
+// centre card rests at scene (1460, 920): below/right of the caption (text ends y≈610), bottom runs off frame
+const HAND = { x: 1460 - (PX1 - PW / 2), y: 920 + 640 - (PCY - PH / 2), R: 640 }
 const FAN = [{ src: 'card-talk-6.png', a: -15 }, { src: 'card-talk-1.png', a: 0, hero: true }, { src: 'card-talk-2.png', a: 15 }]
 
 export default function build(stage) {
@@ -231,9 +233,9 @@ export default function build(stage) {
     const fly = prog(t, T_PLAY, T_LAND)
     const fe = ease.inOutCubic(fly)
     // in the hand (centre card)
-    const hx = HAND.x, hy = HAND.y - HAND.R + lerp(420, 0, rise) - 70 * lift
+    const hx = HAND.x, hy = HAND.y - HAND.R + lerp(420, 0, rise) - 40 * lift
     const sx = SLOT.x, sy = SLOT.y
-    const arc = Math.sin(Math.PI * fe) * -150
+    const arc = Math.sin(Math.PI * fe) * 70    // sags low so the flight passes under the caption
     const x = lerp(hx, sx, fe), y = lerp(hy, sy, fe) + arc
     const w = lerp(CW * (1 + 0.06 * lift), SLOT.w, ease.inOutQuad(fly))
     const rz = lerp(-4 * lift, 0, fe) + Math.sin(Math.PI * fe) * -9
@@ -352,9 +354,9 @@ export default function build(stage) {
 
 export const cues = [
   ['whoosh', 24.12, 0.5, 0.07],             // phone glides left
-  ['tick', 24.47, 0.05],                    // cards fan in the hand
-  ['tick', 24.52, 0.04],
-  ['tick', 24.57, 0.04],
+  ['tick', 24.57, 0.05],                    // cards fan in the hand
+  ['tick', 24.62, 0.04],
+  ['tick', 24.67, 0.04],
   ['bell', 24.77, 587.33, 0.045, 2.2, 0.2], // caption steps in (D5 · A4)
   ['bell', 24.99, 440, 0.03, 2.0, 0.25],
   ['whoosh', 25.08, 0.55, 0.11],            // the card is played
