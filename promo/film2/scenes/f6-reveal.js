@@ -6,22 +6,23 @@
 // card slides left, then a still hold on her face before "Then you see each other."; then the match phone lands.
 //
 // Beat map (sound) — the reveal runs on the first film's S3 clock shifted by O = +10.82s:
-//   20.00–20.52  straight push-in (continues f5's APPROACH, sine-eased) · 19.98–20.50 bloom, 20.06–20.41 mystery → reveal
-//                dissolve (reveal comes up under it, both blurred at the crossing) · lower body text fades during the push
+//   20.00–20.52  straight push-in (continues f5's APPROACH, sine-eased) · 19.98–20.50 bloom, mystery → reveal
+//                reveal comes up under the mystery card 20.10–20.20, the two cross in 3 frames 20.20–20.30 on the bloom peak
 //   20.32–20.77  veil lifts · 20.38–20.84 aura-cam sweep red → violet (AURA READING tag)
 //   20.89        resolve flash to the real photo + sparkles
 //   20.94–21.42  pull back to the whole card, drifting left to x≈620 · 21.22–21.58 gold-foil sweep
 //   21.04–21.37  echo: 3 hits of f1's cold grey Juniper photo in the photo window (glitch ticks)
+//   21.00–21.60  face hold: grain thinned on the photo window, the photo's own aura eased to ~50%
 //   21.42–22.30  still hold on the revealed card
 //   21.55–23.09  "✦ THE VEIL LIFTS / Then you see each other." (right)
 //   23.10–23.60  card recedes left + fades; match phone (screen-match.png) drops in from 23.15, lands 23.60 at x 960
 //   23.20–23.95  the moon travels home (1716,122 r52), waning to f7's .14 crescent
-//   23.35–24.55  "IT’S MUTUAL / You both aligned." (right, capLayer above f7) · 23.60–23.90 phone settles to f7's
+//   23.35–24.55  "It’s mutual." (right, capLayer above f7) · 23.60–23.90 phone settles to f7's
 //                opening state (centred 960,540, 880 tall, no tilt); from 24.0 f7 owns sky, moon and phone
 import { clamp, lerp, prog, ease, rng, el, C } from '../../src/lib.js'
 import { W, H, A, IMG, SERIF, MONO, SANS, fill, img } from '../../src/scenes/common.js'
 import { veilCanvas } from '../../src/scenes/s3-veil.js'
-import { CC, skyCanvas, paintSkyF5, grainCanvas, drawOneMoon, homeMoon, lerpLog, R_BIG, mysteryCard, rimGlow, JUL_RIM, julPose, drawAmbient, drawBurst } from './f5-stars.js'
+import { CC, skyCanvas, paintSkyF5, grainCanvas, drawOneMoon, homeMoon, lerpLog, R_BIG, mysteryCard, rimGlow, JUL_RIM, julPose, drawAmbient, drawBurst, litOf, F6_GRAIN } from './f5-stars.js'
 import { COLD_FILTER } from './f1-old.js'
 
 const O = 10.82                                   // s3 clock → film 2 clock
@@ -30,6 +31,7 @@ const REV = { w: 1560, h: 2740, win: { x: 118, y: 314, w: 1325, h: 893 }, imgTop
 const D = 0.35
 const WIN = { x: (REV.win.x - REV.w / 2) * D, y: (REV.win.y - REV.h / 2) * D, w: REV.win.w * D, h: REV.win.h * D }
 const INSET = 2
+const fw = WIN.w - INSET * 2, fh = WIN.h - INSET * 2   // photo window (frame) size
 const IMG_END_SCALE = WIN.w / 1920
 const IMG_END_TY = (REV.win.w * 4 / 3 / 2 - (REV.imgTop + REV.win.h / 2)) * D
 const VPAD = { x: 96, y: 54 }
@@ -41,8 +43,13 @@ const RES = { a: 10.0, peak: 10.07, b: 10.22 }
 const Z_PUSH = 1.6
 const MYS_BW = 1254                              // mystery card body width (card-profile-3 px)
 const REV_BW = (1494 - 66) * D                   // reveal card body width at Z = 1
-const DISS = { a: 20.06, b: 20.41 }              // mystery → reveal dissolve, centred on the bloom peak (20.24)
-const BLOOM = { a: 19.98, b: 20.5 }
+// mystery → reveal: the reveal card comes up UNDER the (opaque) mystery card first (FIN), then the two cross in
+// ≤ 3 frames (XF) on the bloom peak (20.25), both blurred + washed, so no doubled title/badges ever read
+const FIN = { a: 20.1, b: 20.2 }
+const XF = { a: 20.2, b: 20.3 }
+const SOFT = { a: 20.12, b: 20.38 }
+const BLOOM = { a: 19.98, b: 20.52 }
+const FACE = { a: 21.0, b: 21.6 }                 // the face hold: grain thinned on the photo, the photo's aura eased to ~50%
 const ECHO = 21.04                               // 3 hits of f1's cold photo in the photo window
 // film-2 clock beats
 const SHIFT = { a: 20.98, b: 21.42 }              // card drifts left during/after the pull back
@@ -160,9 +167,15 @@ export default function build(stage) {
   }, front)
   const frame = el('div', { position: 'absolute', overflow: 'hidden', background: C.raised, borderRadius: '14px',
     left: (WIN.x + INSET) + 'px', top: (WIN.y + INSET) + 'px', width: (WIN.w - INSET * 2) + 'px', height: (WIN.h - INSET * 2) + 'px' }, front)
-  const fw = WIN.w - INSET * 2, fh = WIN.h - INSET * 2
   const real = img(frame, IMG + 'juniper.jpg', { left: '50%', top: '50%', width: '1920px', height: '2560px', objectFit: 'cover' })
   real.style.transform = `translate(-50%,-50%) translateY(${IMG_END_TY}px) scale(${IMG_END_SCALE})`
+  // the face payoff: a desaturated copy of the photo, masked off her face, eases the photo's own orange aura back to
+  // ~50% for the hold so the face reads first (FACE)
+  const faceX = fw / 2 + (335 * 8 / 3 - 960) * IMG_END_SCALE, faceY = fh / 2 + IMG_END_TY + (520 * 8 / 3 - 1280) * IMG_END_SCALE
+  const calm = el('div', { position: 'absolute', inset: 0, opacity: 0, pointerEvents: 'none',
+    webkitMaskImage: `radial-gradient(150px 175px at ${faceX}px ${faceY}px, transparent 42%, rgba(0,0,0,0.6) 70%, #000 100%)`,
+    maskImage: `radial-gradient(150px 175px at ${faceX}px ${faceY}px, transparent 42%, rgba(0,0,0,0.6) 70%, #000 100%)` }, frame)
+  img(calm, IMG + 'juniper.jpg', { left: '50%', top: '50%', width: '1920px', height: '2560px', objectFit: 'cover', filter: 'saturate(0.18) brightness(0.86) contrast(1.04)', transform: real.style.transform })
   const aura = makeAuraPrint(real)
   const auraCv = aura.cv
   Object.assign(auraCv.style, { position: 'absolute', left: '50%', top: '50%', width: '1920px', height: '2560px', display: 'none', transform: real.style.transform })
@@ -211,9 +224,6 @@ export default function build(stage) {
     transform: `translate(-50%,-50%) translateY(${IMG_END_TY}px) scale(${IMG_END_SCALE})` })
   el('div', { position: 'absolute', inset: 0, background: 'rgba(84,110,150,0.24)', mixBlendMode: 'color' }, echo)
   const ECHO_HITS = [[0, 0.62], [1, 0.5], [5, 0.55], [6, 0.4], [10, 0.38]]   // frame offset → opacity (3 hits, ~7.5 Hz)
-  // the lower body (badges, bio, facts) fades to the card's ink while the camera is pushed into the photo window
-  const lowFade = el('div', { position: 'absolute', left: (104 - REV.w / 2) * D + 'px', top: (1200 - REV.h / 2) * D + 'px', width: (1456 - 104) * D + 'px', height: (2560 - 1200) * D + 'px',
-    background: 'linear-gradient(180deg, rgba(25,12,50,0) 0%, rgba(25,12,50,1) 4%, rgba(22,10,46,1) 100%)', borderRadius: `0 0 ${80 * D}px ${80 * D}px`, opacity: 0, pointerEvents: 'none', zIndex: 4 }, front)
 
   // ── Juniper's mystery card (screen space; continues f5)
   const pre = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, shakeBox)
@@ -239,14 +249,15 @@ export default function build(stage) {
   function caption(left, top, eyebrowTxt, lineHtml, size) {
     const box = el('div', { position: 'absolute', left: left + 'px', top: top + 'px', textAlign: 'left', opacity: 0, isolation: 'isolate' }, capLayer)
     el('div', { position: 'absolute', left: '-220px', right: '-220px', top: '-160px', bottom: '-160px', background: `radial-gradient(closest-side, ${[[0, 1], [25, 0.95], [48, 0.76], [66, 0.48], [82, 0.2], [100, 0]].map(([o, k]) => `rgba(11,6,32,${(0.6 * k).toFixed(3)}) ${o}%`).join(', ')})`, zIndex: -1 }, box)
-    el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.24em', textTransform: 'uppercase', color: C.bone, textShadow: '0 0 16px rgba(8,4,24,0.85), 0 0 5px rgba(8,4,24,0.6)', marginBottom: '18px', whiteSpace: 'nowrap' }, box, eyebrowTxt)
+    if (eyebrowTxt) el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.24em', textTransform: 'uppercase', color: C.bone, textShadow: '0 0 16px rgba(8,4,24,0.85), 0 0 5px rgba(8,4,24,0.6)', marginBottom: '18px', whiteSpace: 'nowrap' }, box, eyebrowTxt)
     el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: size + 'px', lineHeight: 1.02, color: C.bone, whiteSpace: 'nowrap', textShadow: '0 0 26px rgba(8,4,24,0.75), 0 0 8px rgba(8,4,24,0.6), 0 2px 3px rgba(4,2,14,0.5)' }, box, lineHtml)
     return box
   }
   const cap1 = caption(1010, H / 2, '✦&nbsp;&nbsp;The veil lifts', 'Then you see<br>each other.', 104)
-  // CAP2's lines straddle the phone's own "You both aligned." headline (y≈668) instead of sharing its baseline
-  const CAP2_TOP = 470
-  const cap2 = caption(PX + PW / 2 + 110, CAP2_TOP, 'It’s mutual', 'You both<br>aligned.', 104)
+  // CAP2: one line, no eyebrow (the phone's own headline already says "You both aligned."), centred on the frame,
+  // clear of the phone headline's baseline (y≈668)
+  const CAP2_TOP = 488
+  const cap2 = caption(PX + PW / 2 + 110, CAP2_TOP, null, 'It’s mutual.', 104)
   // aura-cam readout
   const tag = el('div', { position: 'absolute', left: '72px', top: '64px', opacity: 0, fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.92)', textShadow: '0 1px 10px rgba(11,6,32,0.65)', textTransform: 'uppercase' }, body)
   const tagRow = el('div', { display: 'flex', alignItems: 'center', gap: '14px' }, tag)
@@ -254,7 +265,7 @@ export default function build(stage) {
   el('div', {}, tagRow, 'Aura reading')
   const tagBar = el('div', { display: 'flex', gap: '6px', marginTop: '14px', marginLeft: '28px' }, tag)
   const tagSegs = CHAKRA.map((c) => el('div', { width: '30px', height: '5px', borderRadius: '2px', background: rgbS(c), opacity: 0.25 }, tagBar))
-  const grain = grainCanvas(body, 0.55)
+  const grain = grainCanvas(body, F6_GRAIN)
 
   const capStyle = (box, t0, t1, ty, outLen = 0.14) => {
     const t = capT
@@ -298,21 +309,20 @@ export default function build(stage) {
       cam.style.transform = `translate(${tx}px, ${ty}px) scale(${Z})`
 
       // ── mystery card dissolves into the reveal card under a soft bloom (no flip)
-      //    the reveal card comes up UNDER the mystery card first, then the mystery card fades off it, both softened
-      //    (blur) and washed (brightness + bloom) through the crossing so the two text layers never read doubled
-      const dz = prog(t, DISS.a + 0.06, DISS.b)
+      //    the reveal card comes up UNDER the mystery card first, then the mystery card fades off it in ≤ 3 frames on
+      //    the bloom peak, both softened (blur) and washed (brightness + bloom) so the two text layers never read doubled
+      const dz = prog(t, XF.a, XF.b)
       const bl = Math.sin(Math.PI * prog(t, BLOOM.a, BLOOM.b))
-      const soft = Math.sin(Math.PI * prog(t, DISS.a, DISS.b))
+      const soft = Math.sin(Math.PI * prog(t, SOFT.a, SOFT.b))
       pre.style.display = dz >= 1 ? 'none' : 'block'
       pre.style.opacity = String(1 - ease.inOutQuad(dz))
       // the mystery card rides the same camera as the reveal card (identical to julPose until the push starts)
       mys.holder.style.transform = `translate(${W / 2 + tx}px, ${H / 2 + ty}px) perspective(1600px) rotateY(${jp.ry}deg) rotate(${jp.rz}deg) scale(${jp.s * Z / Zm})`
-      mys.card.style.filter = bl > 0.002 ? `brightness(${1 + 0.42 * bl}) blur(${(7 * soft / jp.s * 0.33).toFixed(2)}px)` : 'none'
+      mys.card.style.filter = bl > 0.002 ? `brightness(${1 + 0.6 * bl}) blur(${(9 * soft / jp.s * 0.33).toFixed(2)}px)` : 'none'
       mys.glow.style.boxShadow = rimGlow(JUL_RIM, bl * 0.6, jp.s)
-      const fIn = ease.outQuad(prog(t, DISS.a, DISS.a + 0.16))
+      const fIn = ease.outQuad(prog(t, FIN.a, FIN.b))
       front.style.opacity = String(fIn)
-      front.style.filter = bl > 0.002 ? `brightness(${1 + 0.42 * bl}) blur(${(2.2 * soft).toFixed(2)}px)` : 'none'
-      lowFade.style.opacity = String(ease.inOutQuad(prog(u, 9.34, 9.52)) * (1 - ease.inOutQuad(prog(u, 10.16, 10.4))))
+      front.style.filter = bl > 0.002 ? `brightness(${1 + 0.6 * bl}) blur(${(5 * soft).toFixed(2)}px)` : 'none'
 
       // ── reveal card: veil lift, aura-cam, resolve
       const tiltU = prog(t, 21.3, 23.1)
@@ -378,6 +388,7 @@ export default function build(stage) {
         holoBox.style.opacity = String(0.85 * Math.sin(Math.PI * tiltU))
         holo.style.transform = `translate(${lerp(-18, 22, tiltU) + tilt * 3}%, ${tiltX * 2}%)`
         cardDim.style.opacity = String(0.42 * rec)
+        calm.style.opacity = String(0.5 * ease.inOutQuad(prog(t, FACE.a, FACE.b)))
         const ef = Math.round((t - ECHO) * 30), hit = ECHO_HITS.find(([f]) => f === ef)
         echo.style.display = hit ? 'block' : 'none'
         if (hit) echo.style.opacity = String(hit[1])
@@ -400,10 +411,14 @@ export default function build(stage) {
       const mA = lerp(0.82, 1, khr)
       drawOneMoon(sky.bx, mx, my, mR, lerp(0.5, 0.14, kh), { alpha: mA, glow: lerp(0.75, 3, khr) })
       void revImg
-      // grain: thinned to ≤ .2 on the visible moon disc, never on the card
+      // grain (f4's level): thinned on the moon's lit part, not on the card (rounded keep, inset + feathered);
+      //    from FACE.a thinned on the photo window too, so her face is clear for the hold
       const wo = 1 - ease.inOutQuad(prog(t, 23.45, 23.92))
-      const cw = BODY.w * Z * S, ch = BODY.h * Z * S
-      grain.update(t, { holes: [{ x: mx, y: my, R: mR, k: 1 - khr }], keep: wo > 0.4 ? [{ x: csx, y: csy, w: cw, h: ch }] : [] })
+      const ZS = Z * S, cw = BODY.w * ZS, ch = BODY.h * ZS
+      const keep = wo > 0.4 ? [{ x: csx, y: csy, w: cw, h: ch, r: BODY.r * ZS, inset: 0.03, feather: 5 }] : []
+      const fk = 0.6 * ease.inOutQuad(prog(t, FACE.a, FACE.a + 0.3)) * (1 - rec) * wo
+      const free = fk > 0.01 ? [{ x: csx + ZS * (WIN.x + WIN.w / 2), y: csy + ZS * (WIN.y + WIN.h / 2), w: fw * ZS, h: fh * ZS, r: 14 * ZS, feather: 8, k: fk }] : []
+      grain.update(t, { op: F6_GRAIN, holes: [{ x: mx, y: my, R: mR, k: (1 - khr) * litOf(lerp(0.5, 0.14, kh)) }], keep, free })
 
       // ── resolve sparkles around the photo window (camera parked on it)
       fx.clearRect(0, 0, W, H)
@@ -411,7 +426,7 @@ export default function build(stage) {
       if (bl > 0.01) {                                    // the bloom the cards dissolve under
         const G = 520 * Z / Z0
         const gg = fx.createRadialGradient(csx, csy - 40, 0, csx, csy - 40, G)
-        gg.addColorStop(0, `rgba(255,240,250,${(0.42 * bl).toFixed(3)})`); gg.addColorStop(0.5, `rgba(255,190,240,${(0.16 * bl).toFixed(3)})`); gg.addColorStop(1, 'rgba(255,190,240,0)')
+        gg.addColorStop(0, `rgba(255,240,250,${(0.7 * bl).toFixed(3)})`); gg.addColorStop(0.5, `rgba(255,190,240,${(0.26 * bl).toFixed(3)})`); gg.addColorStop(1, 'rgba(255,190,240,0)')
         fx.fillStyle = gg; fx.fillRect(csx - G, csy - 40 - G, G * 2, G * 2)
       }
       const rk = prog(u, RES.peak - 0.03, RES.peak + 0.75)
@@ -465,7 +480,7 @@ export const cues = [
   ...[1174.66, 1318.51, 1479.98, 1760, 1975.53, 2349.32, 2637.02, 2959.96, 3520].map((f, k) => ['bell', 21.22 + k * 0.045, f, 0.02, 0.6, k / 4 - 1]), // gold-foil sweep
   ['tick', ECHO, 0.05], ['tick', ECHO + 5 / 30, 0.04], ['tick', ECHO + 10 / 30, 0.03],   // cold echo of f1's photo: 3 hits
   ['bell', CAP1.a + 0.02, 587.33, 0.035, 1.4, 0.3],                        // "Then you see each other."
-  ['bell', CAP2 + 0.02, 880, 0.025, 1.4, 0.3],                             // "You both aligned." 
+  ['bell', CAP2 + 0.02, 880, 0.025, 1.4, 0.3],                             // "It's mutual."
   ['whoosh', T_A - 0.06, 0.5, 0.1],                                       // phone drops in
   ['boom', T_A_END - 0.06, 0.32], ['tick', T_A_END - 0.06, 0.14],         // phone lands
   ['bell', T_A_END - 0.04, 587.33, 0.05, 2.2, 0], ['bell', T_A_END - 0.03, 880, 0.04, 2.2, -0.2], ['bell', T_A_END - 0.02, 1108.73, 0.03, 2.2, 0.2],

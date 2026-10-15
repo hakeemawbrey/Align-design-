@@ -127,28 +127,44 @@ export function skyCanvas(parent) {
   c.width = W; c.height = H
   return { c, bx: c.getContext('2d') }
 }
-/** the shared clumped silver grain (f3's drawGrain), overlay ≥ .5.
- *  update(t, { op, holes, keep }): op = canvas opacity this frame; holes = [{ x, y, R, k }] thin the grain on the
- *  moon disc to ≤ 0.2 effective (k = how much); keep = [{ x, y, w, h }] screen rects (cards) the holes skip */
+/** the shared clumped silver grain (f3's drawGrain), overlay.
+ *  update(t, { op, holes, keep, free }): op = canvas opacity this frame;
+ *  holes = [{ x, y, R, k }] thin the grain on the moon disc toward ≤ 0.2 effective (k = how much, feathered limb);
+ *  keep  = [{ x, y, w, h, rz, r, inset, feather }] card bodies (rotated, rounded, inset, feathered) the holes skip;
+ *  free  = [{ x, y, w, h, rz, r, inset, feather, k }] rounded-rect holes that ignore `keep` and remove k of the grain
+ *          (e.g. a photo window) */
 export function grainCanvas(parent, op = 0.55) {
   const c = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: op, pointerEvents: 'none', zIndex: 50 }, parent)
   c.width = W; c.height = H
   const gx = c.getContext('2d')
+  const mk = document.createElement('canvas'); mk.width = W; mk.height = H
+  const mx = mk.getContext('2d')
+  const rrect = (g, r) => {
+    const q = 1 - 2 * (r.inset || 0), w = r.w * q, h = r.h * q
+    if (w < 2 || h < 2) return
+    g.save(); g.translate(r.x, r.y); if (r.rz) g.rotate(r.rz * Math.PI / 180)
+    g.filter = r.feather ? `blur(${r.feather}px)` : 'none'
+    g.beginPath(); g.roundRect(-w / 2, -h / 2, w, h, Math.min((r.r || 0) * q, w / 2, h / 2)); g.fill()
+    g.restore()
+  }
   return {
-    update(t, { op: o = op, holes = [], keep = [] } = {}) {
+    update(t, { op: o = op, holes = [], keep = [], free = [] } = {}) {
       c.style.opacity = String(o)
       drawGrain(gx, t)
       const a0 = clamp(1 - 0.2 / Math.max(0.2, o))
-      for (const hl of holes) {
-        const a = a0 * hl.k
-        if (a < 0.01 || hl.R < 8) continue
-        gx.save()
-        if (keep.length) { gx.beginPath(); gx.rect(0, 0, W, H); for (const r of keep) gx.rect(r.x - r.w / 2, r.y - r.h / 2, r.w, r.h); gx.clip('evenodd') }
-        const g = gx.createRadialGradient(hl.x, hl.y, 0, hl.x, hl.y, hl.R + 3)
-        g.addColorStop(0, `rgba(0,0,0,${a})`); g.addColorStop(clamp((hl.R - 3) / (hl.R + 3)), `rgba(0,0,0,${a})`); g.addColorStop(1, 'rgba(0,0,0,0)')
-        gx.globalCompositeOperation = 'destination-out'; gx.fillStyle = g; gx.fillRect(hl.x - hl.R - 4, hl.y - hl.R - 4, 2 * hl.R + 8, 2 * hl.R + 8)
-        gx.restore()
+      const hs = holes.filter((hl) => a0 * hl.k >= 0.01 && hl.R >= 8), fr = free.filter((f) => f.k >= 0.01)
+      if (!hs.length && !fr.length) return
+      mx.setTransform(1, 0, 0, 1, 0, 0); mx.filter = 'none'; mx.globalCompositeOperation = 'source-over'; mx.clearRect(0, 0, W, H)
+      for (const hl of hs) {
+        const a = a0 * hl.k, e = Math.max(3, hl.R * 0.03)
+        const g = mx.createRadialGradient(hl.x, hl.y, 0, hl.x, hl.y, hl.R + e)
+        g.addColorStop(0, `rgba(0,0,0,${a})`); g.addColorStop(clamp((hl.R - e) / (hl.R + e)), `rgba(0,0,0,${a})`); g.addColorStop(1, 'rgba(0,0,0,0)')
+        mx.fillStyle = g; mx.fillRect(hl.x - hl.R - e - 1, hl.y - hl.R - e - 1, 2 * (hl.R + e) + 2, 2 * (hl.R + e) + 2)
       }
+      if (hs.length && keep.length) { mx.globalCompositeOperation = 'destination-out'; mx.fillStyle = '#000'; for (const r of keep) rrect(mx, r) }
+      mx.globalCompositeOperation = 'source-over'
+      for (const f of fr) { mx.fillStyle = `rgba(0,0,0,${clamp(f.k)})`; rrect(mx, f) }
+      gx.globalCompositeOperation = 'destination-out'; gx.drawImage(mk, 0, 0); gx.globalCompositeOperation = 'source-over'
     },
   }
 }
@@ -160,8 +176,10 @@ export function grainCanvas(parent, op = 0.55) {
 // (pixel-identical to f4/f7's crescent); big sizes use a copy of the same renderer with stronger maria and a dimmer
 // lit side (~75% luminance at the 0.82 peak opacity) so card text in front stays dominant. Limb stays 1px crisp.
 export const R_BIG = 400
+/** f6's grain-canvas opacity (matches f4's sky-patch grain); f5 eases to it by the 20.0 hand-off */
+export const F6_GRAIN = 0.42
 const R_NATIVE = 90, R_TEX = 440
-const litOf = (p) => (1 - Math.cos(2 * Math.PI * p)) / 2
+export const litOf = (p) => (1 - Math.cos(2 * Math.PI * p)) / 2
 const pOfLit = (k) => Math.acos(clamp(1 - 2 * k, -1, 1)) / (2 * Math.PI)
 // value noise / albedo (copied from src/scenes/fx-moon.js so the big disc matches the small one)
 function hash2(x, y, s) {
@@ -252,7 +270,7 @@ function bigMoonCanvas(p, darkAlpha, mk) {
 export function drawOneMoon(bx, x, y, R, p, { alpha = 1, glow = 3 } = {}) {
   if (alpha <= 0.002) return
   const sk = clamp((R - 52) / (R_BIG - 52))
-  const darkAlpha = sk < 0.001 ? 0.62 : Math.round(lerp(0.62, 0.3, sk) * 50) / 50
+  const darkAlpha = sk < 0.001 ? 0.62 : Math.round(lerp(0.62, 0.15, sk) * 50) / 50
   p = Math.round(p * 1000) / 1000
   if (R <= R_NATIVE) { drawMoon(bx, x, y, R, p, { alpha, glow, earthshine: 1, darkAlpha }); return }
   const mk = Math.round(clamp((R - R_NATIVE) / (R_BIG - R_NATIVE)) * 20) / 20
@@ -584,7 +602,9 @@ export default function build(stage) {
       }
       // stars sink into Juniper's card as she glides to the centre
       const collapse = ease.inCubic(prog(t, MOVE.a + 0.12, MOVE.b))
-      if (t < MOVE.b + 0.02) {
+      const colO = 1 - ease.inOutQuad(prog(t, 19.55, 19.7))   // the column is gone before her card glides through it
+      if (colO > 0.001) {
+        fx.globalAlpha = colO
         const SS = CHAKRA_HEX.map((_, i) => starState(i, t))
         for (let i = 0; i < 6; i++) {
           const A1 = SS[i], B1 = SS[i + 1]
@@ -641,6 +661,7 @@ export default function build(stage) {
           cgr.addColorStop(0, `rgba(255,255,255,${ent})`); cgr.addColorStop(0.45, `rgba(${rgb},${0.9 * ent})`); cgr.addColorStop(1, `rgba(${rgb},0)`)
           fx.fillStyle = cgr; fx.beginPath(); fx.arc(x, y, 10 * sz, 0, 6.2832); fx.fill()
         })
+        fx.globalAlpha = 1
       }
       // the card takes in the stars: a soft bloom on Juniper's card as they sink
       if (collapse > 0 && collapse < 1) {
@@ -663,11 +684,16 @@ export default function build(stage) {
 
       // ── grain: compensate the dimmed plate (GRAIN_OPACITY/√dim, cap .8), back to f6's .55 by the hand-off;
       //    thinned to ≤ .2 on the moon disc (not on the cards in front of it)
+      //    the lock flash lifts the plate into overlay's steep range → grain eased off under it (no TV static)
       const plate = lerp(1, 0.35, dimK) * (1 - dimO)
-      const gOp = lerp(Math.min(0.8, GRAIN_OPACITY / Math.sqrt(plate)), 0.55, ease.inOutQuad(prog(t, 19.4, 20.0)))
-      const keep = [{ x: jp.x, y: jp.y, w: 1254 * jp.s, h: 2002 * jp.s }]
-      if (yp.op > 0.05) keep.push({ x: yp.x, y: yp.y, w: 606 * yp.s, h: 910 * yp.s })
-      grain.update(t, { op: gOp, holes: [{ x: ms.x, y: ms.y, R: ms.R, k: ms.alpha / 0.82 }], keep })
+      const gOp = lerp(Math.min(0.8, GRAIN_OPACITY / Math.sqrt(plate)), F6_GRAIN, ease.inOutQuad(prog(t, 19.4, 20.0))) * (1 - fl)
+      // keep = the card bodies as drawn (rotated, rounded, foreshortened by the yaw), inset 3% and feathered so the
+      // moon's thinned grain runs right up under the rim glow — no strip of full grain past the card, no square corner
+      const sk = jp.s * (1 + kick)
+      const keep = [{ x: jp.x - lean - jx, y: jp.y - jy, w: 1254 * sk * Math.cos(jp.ry * Math.PI / 180), h: 2002 * sk, rz: jp.rz, r: 84 * sk, inset: 0.03, feather: 5 }]
+      if (yp.op > 0.05) { const sy = yp.s * (1 + kick); keep.push({ x: yp.x + lean + jx, y: yp.y + jy, w: 606 * sy * Math.cos(yp.ry * Math.PI / 180), h: 910 * sy, rz: yp.rz, r: 45 * sy, inset: 0.03, feather: 5 }) }
+      // the hole only thins the lit part's worth: the dark side of a young moon keeps its grain
+      grain.update(t, { op: gOp, holes: [{ x: ms.x, y: ms.y, R: ms.R, k: ms.alpha / 0.82 * ms.lit }], keep })
 
       // ── captions
       const out = 1 - ease.inQuad(prog(t, 16.95, 17.13))
@@ -681,7 +707,8 @@ export default function build(stage) {
       lockLine.style.opacity = String(lo)
       lockLine.style.transform = `scale(${lerp(1.06, 1, ease.outCubic(prog(t, CL, CL + 0.6)))})`
       lockLine.style.letterSpacing = lerp(0.04, 0, ease.outCubic(prog(t, CL, CL + 0.8))) + 'em'
-      scrim.style.opacity = String(Math.max(e1 * out, lo))
+      // the plate is already dimmed under "Two charts meet." → a lighter scrim there, so the grain under it still reads
+      scrim.style.opacity = String(Math.max(0.6 * e1 * out, lo))
     },
   }
 }
