@@ -5,7 +5,8 @@
 // The nebula dims gently (to 0.6) under them. 2px constellation lines join the cards; "Everyone gets a chance." types
 // while a rim glow + 1→1.1 scale pulse sweeps left→right through every card in step with the letters; then the
 // cards fold into pixel-star nodes at their centres — the deck has become a constellation.
-// Copy: "No snap judgements." (10.85) → "Everyone gets a chance." (12.82)
+// Copy: "No snap judgements." (10.85–12.15) → "Everyone gets a chance." (types 12.6–13.05, held to 14.85). On "chance" the
+// WHOLE grid brightens together (rim glow + slight lift on every card = "everyone"), then settles and folds.
 // Handoff to f5 (15.0): Juniper (veiled, card-profile-3) and your card (card-sign, Hakeem · Taurus) fly out of the
 // constellation (from 14.2) onto f5's own entry motion (julPose / youPose from f5-stars.js), position AND velocity
 // continuous across the cut; f4 keeps drawing them until 15.3 under f5's fade-in.
@@ -32,10 +33,12 @@ const J = { x: HANDOFF.cx, y: HANDOFF.cy, h: HANDOFF.bodyH }
 const ROWS = [{ y: J.y - 210, n: 6, h: 180 }, { y: J.y, n: 5, h: 200 }, { y: J.y + 210, n: 6, h: 190 }]
 const COL = 250                                    // column spacing (rows of 6 sit half a step off the row of 5)
 const DEAL0 = 10.7, DEAL_STEP = 0.034, FLY = 0.5
-const PULSE0 = 12.85, PULSE_STEP = 0.055, PULSE_LEN = 0.42, PULSE_SCALE = 0.1
+const PULSE0 = 12.6, PULSE_STEP = 0.0235, PULSE_LEN = 0.36, PULSE_SCALE = 0.1   // sweep spans the 0.4s of typing
+// "chance": every card at once — rim glow + lift, held, then settles before the fold
+const ALL = { a: 12.8, full: 13.02, hold: 13.65, end: 14.1, glow: 0.6, lift: 7, scale: 0.04 }
 const FOLD0 = 14.15, FOLD_STEP = 0.012, FOLD_LEN = 0.42
 const PAIR = { a: 14.2, b: 15.0 }
-const COPY = { a: 10.85, aOut: 12.45, b: 12.82, out: 14.35, perB: 0.04 }   // B types in step with the pulse sweep
+const COPY = { a: 10.85, aOut: 12.15, b: 12.6, out: 14.85, perB: 0.0125, fadeB: 0.18 }   // B types in step with the pulse sweep
 const LINE0 = 11.45, LINE_STEP = 0.03, LINE_LEN = 0.3
 const NAMES = ['Maya, 24', 'Rio, 29', 'Ari, 31', 'Sol, 26', 'Kai, 28', 'Lena, 26', 'Noor, 25', 'Theo, 30', 'Ines, 27', 'Malik, 29', 'Wren, 24', 'Dev, 32', 'Ana, 28', 'Jonah, 26', 'Zuri, 25', 'Eli, 30']
 
@@ -134,7 +137,7 @@ export default async function build(stage) {
   const pocket = el('div', { position: 'absolute', left: '260px', top: '770px', width: '1400px', height: '290px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(11,6,32,0.75), rgba(11,6,32,0.38) 60%, rgba(11,6,32,0) 100%)', opacity: 0 }, root)
   const stmt = { left: '50%', top: '836px', transform: 'translateX(-50%)', fontFamily: SERIF, fontStyle: 'italic', fontSize: '112px', lineHeight: '1', letterSpacing: '-0.01em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.9), -0.6px 0 0 rgba(232,98,138,0.3), 0.6px 0 0 rgba(140,170,255,0.25)' }
   const lineA = new TypeLine(root, 'No snap judgements.', stmt, { perChar: 0.03, fade: 0.3, accent: [C.rub, C.gold, C.violet] })
-  const lineB = new TypeLine(root, 'Everyone gets a chance.', stmt, { perChar: COPY.perB, fade: 0.32, accent: [C.violet, C.gold, C.rub] })
+  const lineB = new TypeLine(root, 'Everyone gets a chance.', stmt, { perChar: COPY.perB, fade: COPY.fadeB, accent: [C.violet, C.gold, C.rub] })
 
   const grainC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: GRAIN_OPACITY, pointerEvents: 'none' }, root)
   grainC.width = W; grainC.height = H
@@ -272,14 +275,18 @@ export default async function build(stage) {
       cx.restore()
 
       // pulse envelope for "Everyone gets a chance."
-      const pulse = c => { const p = prog(t, c.pulse, c.pulse + PULSE_LEN); return p > 0 && p < 1 ? Math.sin(Math.PI * p) ** 1.5 : 0 }
+      const sweep = c => { const p = prog(t, c.pulse, c.pulse + PULSE_LEN); return p > 0 && p < 1 ? Math.sin(Math.PI * p) ** 1.5 : 0 }
+      // "chance": the whole grid together
+      const allK = ease.outCubic(prog(t, ALL.a, ALL.full)) * (1 - ease.inOutCubic(prog(t, ALL.hold, ALL.end)))
+      const pulse = c => Math.max(sweep(c), allK * ALL.glow)
 
       // sea cards (landed first, then the ones still in flight above them); Juniper + you drawn last
       const sea = [...S.values()].filter(s => !s.c.isJ && !(s.c.isYou && t >= PAIR.a)).sort((a, b) => (a.flying - b.flying) || (b.c.land - a.c.land))
       for (const s of sea) {
         const g = pulse(s.c)
         const nameA = ease.outQuad(prog(t, s.c.land - 0.1, s.c.land + 0.2)) * (1 - prog(s.fold, 0, 0.3))
-        drawCard(s.c.art, s.x, s.y, s.h * (1 + PULSE_SCALE * g), { yaw: s.yaw, roll: s.roll, alpha: s.a, glow: g, name: s.c.name, nameA, shadow: 1 - s.fold })
+        const sw = sweep(s.c)
+        drawCard(s.c.art, s.x, s.y - ALL.lift * allK, s.h * (1 + PULSE_SCALE * sw + ALL.scale * allK), { yaw: s.yaw, roll: s.roll, alpha: s.a, glow: g, name: s.c.name, nameA, shadow: 1 - s.fold })
       }
 
       // pixel-star nodes: they grow out of the folding cards at their centres and stay (the constellation)
@@ -302,7 +309,8 @@ export default async function build(stage) {
       if (t < HANDOFF.t) { const p = cardPose(t); jp = [p.cx, p.cy + p.bob, p.h / bodyH('p3'), p.yaw, 0] }
       else if (t < PAIR.a) jp = [J.x, J.y, J.h / bodyH('p3'), 0, 0]
       else jp = pairPose(juniperF5, [J.x, J.y, J.h / bodyH('p3'), 0, 0], t)
-      jp[2] *= 1 + PULSE_SCALE * jg
+      jp[2] *= 1 + PULSE_SCALE * sweep(jc) + ALL.scale * allK
+      jp[1] -= ALL.lift * allK
       // your card: in the arc until the pair leaves, then onto f5's youPose
       if (t >= PAIR.a) {
         const ys = S.get(YOU)
@@ -343,6 +351,9 @@ export const cues = [
   ['bell', COPY.b + 0.1, 1108.73, 0.03, 2.0, 0.2],
   ['glitter', PULSE0, PULSE0 + ARC.cards.length * PULSE_STEP + 0.2],   // every card lights in turn
   ...PULSE_BELLS,
+  ['glitter', ALL.a, ALL.hold],                       // "chance": the whole grid lights together
+  ['bell', ALL.a + 0.02, 1108.73, 0.035, 2.2, -0.3],
+  ['bell', ALL.a + 0.04, 1479.98, 0.03, 2.2, 0.3],
   ['glitter', FOLD0 + 0.1, FOLD0 + 0.6],              // cards fold into stars
   ['riser', 14.1, 14.95, 0.06],                       // the pair drifts in
   ['whoosh', PAIR.a + 0.05, 0.8, 0.06],
