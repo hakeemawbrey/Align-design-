@@ -5,13 +5,16 @@
 // Timing (sound):
 //   26.60–26.80 crossfade over f7 (identical sky; f7's phone + caption are already drifting out 26.35–26.8)
 //   26.68 "Take a chance on the stars." types in (27 chars × 0.0175, fade 0.12 → fully typed 27.26), centred, 104px
-//   27.30–28.30 HELD still (the emotional line) · 27.42–27.86 a soft gold shimmer passes through it
-//               · 27.62–28.06 a shooting star crosses top-left → right
-//   28.28–28.58 the line rises to the top third (104 → 97px) as the lockup forms beneath it
-//   28.42–28.80 seed-of-life rings draw · chakra dots light bottom→top 28.46 + i·0.03 (→ 28.79)
-//   28.48–28.80 wordmark "Align" · 28.52–28.80 sub-line "BLIND BY DESIGN"
-//   28.80–29.60 lockup HELD (only a slow breathe) · 29.05 one soft chakra pulse up the column · 29.2 the moon brightens
-//   fade to black 29.60 → 30.00 (a black plate reaches 1.0 exactly at 30.0)
+//   26.80–27.60 f4's "Everyone gets a chance" constellation is redrawn faintly (≈0.22) behind the line: 12 pixel-star
+//               nodes over x 300–1620, y 380–700, links drawing left→right in step with the typing
+//   27.24 "stars." lands → the end node flares gold (glitter cue) · 27.32 soft gold shimmer through the words
+//               · 27.38–27.80 a shooting star crosses top-left → right
+//   27.20–27.85 the line HOLDS alone · constellation fades 27.60 → 27.85
+//   27.85–28.15 the line rises to the top third (104 → 97px) as the lockup forms beneath it
+//   27.95–28.33 seed-of-life rings draw · chakra dots light bottom→top 28.00 + i·0.03 (→ 28.33)
+//   28.05–28.37 wordmark "Align" · 28.10–28.38 sub-line "BLIND BY DESIGN"
+//   28.05–29.50 lockup reads clean (slow breathe) · 28.60 one soft chakra pulse up the column · 28.75 the moon brightens
+//   fade to black 29.50 → 30.00 (a black plate reaches 1.0 exactly at 30.0)
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C } from '../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../src/scenes/common.js'
 import { buildStarSprite, drawGrain } from './f3-chart.js'
@@ -19,8 +22,12 @@ import { paintSky, grainCanvas, skyPan, skyZoom } from './f7-talk.js'
 
 const T0 = 26.6, T1 = 30.01
 const T_TYPE = 26.68, PER = 0.0175, FADE = 0.12
-const T_SHIM = 27.42, T_RISE = 28.28, T_RINGS = 28.42, T_DOTS = 28.46
-const T_WORD = 28.48, T_SUB = 28.52, T_PULSE = 29.05, T_OUT = 29.6
+const T_SHIM = 27.32, T_RISE = 27.85, T_RINGS = 27.95, T_DOTS = 28.0
+const T_WORD = 28.05, T_SUB = 28.1, T_PULSE = 28.6, T_OUT = 29.5
+const T_HOLD = T_RINGS + 0.45                                   // lockup settled → slow breathe
+const T_STAR = 27.38                                            // shooting star
+const CON_IN = 26.8, CON_OUT = 27.6, CON_A = 0.22               // constellation callback (f4)
+const T_FLARE = T_TYPE + 26 * PER + FADE                        // "stars." fully typed (≈27.255)
 const LINE = 'Take a chance on the stars.'
 const canvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c }
 
@@ -56,6 +63,9 @@ export default function build(stage) {
   pg.addColorStop(0, 'rgba(11,6,32,0.62)'); pg.addColorStop(0.6, 'rgba(11,6,32,0.42)'); pg.addColorStop(1, 'rgba(11,6,32,0)')
   pk.fillStyle = pg; pk.fillRect(-1000, -1000, 2000, 2000); pk.restore()
 
+  // grain over the sky only: the closing line + lockup sit above it as solid bone (not grain-washed)
+  const gx = grainCanvas(root, 0.55)
+
   // pixel twinkles (fx-stars palette), deterministic positions
   const pr = rng(4471), PIXC = ['#e8628a', '#f2c75c', '#9a7be0', '#f29a4a', '#ff8fb1', '#c9a6ff', '#ffd98a']
   const PIX = []
@@ -65,6 +75,24 @@ export default function build(stage) {
     if (x > 1580 && y < 260) continue                         // clear of the moon
     PIX.push({ x, y, px: pr() < 0.3 ? 4 : 3, col: PIXC[Math.floor(pr() * PIXC.length)], ph: pr() * 6.28, sp: 2 + pr() * 3, kind: Math.floor(pr() * 4), t0: T0 + pr() * 0.9 })
   }
+
+  // ── constellation callback to f4 ("Everyone gets a chance"): 12 nodes zig-zagging above / below the line band
+  //    (text sits ≈ y 485–595), cream 2px links like f4's, drawn left→right as the line types; the last node sits
+  //    just past "stars." and flares gold when the line finishes.
+  const cr = rng(9127)
+  const NODES = Array.from({ length: 11 }, (_, i) => {
+    const x = 300 + i * (1250 / 10.5) + (cr() - 0.5) * 70
+    const up = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1][i]
+    const y = up ? 382 + cr() * 90 : 612 + cr() * 88
+    return { x, y, kind: cr() < 0.5 ? 1 : 2, col: ['#ffecc8', '#f2c75c', '#c9a6ff', '#ff8fb1'][i % 4] }
+  })
+  const END = { x: 1620, y: 520, kind: 0, col: '#ffecc8', end: true }   // x refined to the line's right edge on first update
+  NODES.push(END)
+  // reveal time per node by x, in step with the typing (line spans ≈ 385–1535 while typing 26.68 → 27.24)
+  const typeAt = x => T_TYPE + clamp((x - 385) / 1150, 0, 1) * 26 * PER
+  NODES.forEach(n => { n.t = Math.max(CON_IN, typeAt(n.x)) })
+  END.t = T_FLARE
+  let lineMeasured = false
 
   // ── closing line (per-char spans: typed with an accent shimmer, then a gold wave passes through)
   const lineBox = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', textAlign: 'center', transformOrigin: '50% 50%', willChange: 'transform' }, root)
@@ -91,8 +119,6 @@ export default function build(stage) {
   const word = el('div', { position: 'absolute', left: 0, width: W + 'px', top: WORD_TOP + 'px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: WORD_FS + 'px', lineHeight: 1.1, color: C.bone, textShadow: '0 0 40px rgba(239,230,214,0.25), 0 0 20px rgba(11,6,32,0.8)', opacity: 0 }, lock, 'Align')
   const sub = el('div', { position: 'absolute', left: 0, width: W + 'px', top: SUB_TOP + 'px', textAlign: 'center', fontFamily: MONO, fontSize: SUB_FS + 'px', letterSpacing: '0.32em', textIndent: '0.32em', color: C.bone, textShadow: '0 0 14px rgba(11,6,32,0.9)', opacity: 0 }, lock, 'BLIND BY DESIGN')
 
-  // grain over everything in the scene (type included), then the final black plate
-  const gx = grainCanvas(root, 0.55)
   const black = fill(root, { background: '#000', opacity: 0 })
 
   return {
@@ -104,11 +130,11 @@ export default function build(stage) {
       const pan = skyPan(t), z = skyZoom(t)
       const driftX = pan[0], driftY = pan[1]
       // the crescent moon (S1's motif) brightens as the lockup completes
-      const mb = tw(t, [[29.1, 0], [29.35, 1, ease.outQuad], [29.9, 0.6, ease.inOutQuad]])
+      const mb = tw(t, [[28.75, 0], [29.0, 1, ease.outQuad], [29.8, 0.6, ease.inOutQuad]])
       paintSky(bx, t, { moonGlow: 3 + 2.4 * mb })
       // shooting star: a wish crossing the top-left as the line finishes
       {
-        const p = prog(t, 27.62, 28.06)
+        const p = prog(t, T_STAR, T_STAR + 0.42)
         if (p > 0 && p < 1) {
           const e = ease.inOutQuad(p)
           const x0 = 180, y0 = 96, x1 = 980, y1 = 300
@@ -136,6 +162,46 @@ export default function build(stage) {
       bx.imageSmoothingEnabled = true
       bx.globalAlpha = ease.inOutQuad(prog(t, T0, T0 + 0.7)); bx.drawImage(pocket, 0, 0); bx.globalAlpha = 1
 
+      // ── constellation callback (behind the line, ≈0.22), gone by T_RISE
+      if (!lineMeasured && lineE.offsetWidth > 0) { lineMeasured = true; END.x = W / 2 + lineE.offsetWidth / 2 + 46; END.y = LINE_Y0 - 30; END.t = T_FLARE }
+      const conK = CON_A * ease.outQuad(prog(t, CON_IN, CON_IN + 0.2)) * (1 - ease.inOutQuad(prog(t, CON_OUT, T_RISE)))
+      if (conK > 0.003) {
+        bx.save(); bx.lineCap = 'round'; bx.lineWidth = 2; bx.strokeStyle = 'rgb(255,236,205)'
+        for (let i = 0; i + 1 < NODES.length; i++) {
+          const a = NODES[i], b = NODES[i + 1]
+          const p = ease.inOutQuad(prog(t, a.t, b.t))
+          if (p <= 0) continue
+          bx.globalAlpha = conK
+          bx.beginPath(); bx.moveTo(a.x + driftX, a.y + driftY); bx.lineTo(lerp(a.x, b.x, p) + driftX, lerp(a.y, b.y, p) + driftY); bx.stroke()
+        }
+        bx.restore()
+        bx.imageSmoothingEnabled = false
+        const fr = Math.round(t * 30)
+        NODES.forEach((n, j) => {
+          const p = ease.outQuad(prog(t, n.t - 0.04, n.t + 0.12))
+          if (p <= 0) return
+          const blink = ((fr >> 1) + j) & 3
+          if (n.end) return
+          drawPixelStar(bx, n.x + driftX, n.y + driftY, 3, blink === 0 ? 2 : n.kind, n.col, '#fff3e0', Math.min(1, conK * 1.6) * p)
+        })
+        bx.imageSmoothingEnabled = true
+      }
+      // the end node: a pixel star that flares gold as "stars." lands, then settles and leaves with the constellation
+      {
+        const ex = END.x + driftX, ey = END.y + driftY
+        const fl = tw(t, [[T_FLARE - 0.03, 0], [T_FLARE + 0.08, 1, ease.outQuad], [T_FLARE + 0.6, 0.35, ease.inOutQuad]])
+        const base = ease.outQuad(prog(t, T_FLARE - 0.03, T_FLARE + 0.05)) * (1 - ease.inOutQuad(prog(t, CON_OUT, T_RISE)))
+        const a = base * (0.55 + 0.45 * fl)
+        if (a > 0.003) {
+          bx.globalCompositeOperation = 'lighter'; bx.globalAlpha = a * (0.5 + 0.5 * fl)
+          bx.drawImage(spriteS, ex - 40 - 30 * fl, ey - 40 - 30 * fl, 80 + 60 * fl, 80 + 60 * fl)
+          bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
+          bx.imageSmoothingEnabled = false
+          drawPixelStar(bx, ex, ey, fl > 0.6 ? 5 : 4, 0, '#f2c75c', '#fff6dc', a)
+          bx.imageSmoothingEnabled = true
+        }
+      }
+
       // ── the line
       const n = chars.length
       chars.forEach((s, i) => {
@@ -155,7 +221,7 @@ export default function build(stage) {
       // ── lockup
       rings.forEach((c, i) => c.setAttribute('stroke-dashoffset', String(1 - ease.outCubic(prog(t, T_RINGS + i * 0.02, T_RINGS + 0.24 + i * 0.02)))))
       const pulse = i => 0.6 * tw(t, [[T_PULSE + i * 0.05, 0], [T_PULSE + 0.07 + i * 0.05, 1, ease.outQuad], [T_PULSE + 0.4 + i * 0.05, 0, ease.inOutQuad]])
-      const breathe = i => 1 + 0.05 * Math.sin((t - 28.8) * 2.4 - i * 0.5) * prog(t, 28.8, 29.1)
+      const breathe = i => 1 + 0.05 * Math.sin((t - T_HOLD) * 2.4 - i * 0.5) * prog(t, T_HOLD, T_HOLD + 0.3)
       halos.forEach((c, i) => {
         const p = ease.outCubic(prog(t, T_DOTS + i * 0.03, T_DOTS + i * 0.03 + 0.15))
         c.setAttribute('r', String(11.1 * p * breathe(i) * (1 + 0.45 * pulse(i))))
@@ -176,7 +242,7 @@ export default function build(stage) {
       sub.style.opacity = String(sp)
       sub.style.letterSpacing = lerp(0.42, 0.32, sp) + 'em'
       const gP = tw(t, [[T_PULSE, 0], [T_PULSE + 0.25, 1, ease.outQuad], [T_PULSE + 0.75, 0, ease.inOutQuad]])
-      glow.style.opacity = String(ease.inOutQuad(prog(t, T_RINGS, T_RINGS + 0.5)) * (0.88 + 0.12 * Math.sin((t - 28.8) * 1.9)) + 0.3 * gP)
+      glow.style.opacity = String(ease.inOutQuad(prog(t, T_RINGS, T_RINGS + 0.5)) * (0.88 + 0.12 * Math.sin((t - T_HOLD) * 1.9)) + 0.3 * gP)
       glow.style.transform = `scale(${1 + 0.06 * gP})`
       lock.style.transform = `scale(${lerp(1, 1.012, prog(t, T_RINGS, 30))})`
 
@@ -191,9 +257,9 @@ export const cues = [
   ['riser', 26.45, 26.8, 0.03],
   ...[...LINE].map((ch, i) => ch === ' ' ? null : ['tick', T_TYPE + i * PER, 0.022]).filter(Boolean),  // typing
   ['bell', T_TYPE + 0.02, 587.33, 0.04, 2.6, 0],          // the line arrives (D5)
-  ['glitter', T_SHIM, T_SHIM + 0.5],                       // gold shimmer through the words
-  ['whoosh', 27.6, 0.5, 0.05],                             // shooting star
-  ['bell', 27.86, 1318.51, 0.03, 1.8, 0.35],
+  ['glitter', T_FLARE - 0.02, T_SHIM + 0.45],              // end node flares gold as "stars." lands, shimmer runs on
+  ['bell', T_FLARE, 1760, 0.022, 1.4, 0.35],
+  ['whoosh', T_STAR - 0.02, 0.45, 0.05],                   // shooting star
   ['whoosh', T_RISE - 0.02, 0.5, 0.08],                    // line rises, rings draw
   ...[293.66, 369.99, 440, 554.37, 587.33, 739.99, 880].map((f, i) => ['bell', T_DOTS + i * 0.03, f, 0.06, 2.2, (i - 3) * 0.12]),  // chakra chimes bottom→top
   ['boom', T_WORD, 0.22],                                  // wordmark lands

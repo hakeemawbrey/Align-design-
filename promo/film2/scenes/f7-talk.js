@@ -1,12 +1,14 @@
 // ─────────────────────────────────────────────── F7 · THEN YOU TALK (real time 24.0–26.8, hands to f8 at 26.6)
 // One sky spine: the same S1 nebula / star layers / moon / grain as f3–f6 (./f3-chart.js), with the first film's
-// S7 aurora (curtain, galaxy arc, low bloom) laid OVER it as an overlay that fades in 24.0–24.6 and out 26.0–26.5.
+// S7 aurora (full-res ray curtain on a low hem y≈760–820, a flat galaxy band along it, low bloom) laid OVER it as
+// an overlay that grows in 24.5–25.1 (rays rise from the hem) and fades out 26.0–26.5.
 // The sky camera keeps drifting (paintSky) and f8 paints the identical sky, so the f7→f8 handoff is a content crossfade.
 // Timing (sound):
-//   24.00–24.18 fade up over f6 — the match phone ("You both aligned.") centred, as f6 leaves it
-//   24.15–24.60 phone glides left (x 960 → 640); its screen slides up into the chat (24.20–24.60)
+//   24.00 f7 owns the phone (match screen, centred 960,540, 880 tall) — f6 shows only its caption until 24.45
+//   24.15–24.60 phone glides left (x 960 → 640), still on the match screen
+//   24.55–24.85 the screen crossfades (inside the phone mask) match → chat; no slide, nothing of the old screen lingers
 //   24.45–24.85 a fanned hand of three talk cards rises bottom-right (Lovers · The Fool · The Sun) — ticks 24.47/.52/.57
-//   24.60 caption (eyebrow "THE TALK DECK" + "Then you talk in cards.") steps in WITH the fan, full by ~24.95
+//   24.75 caption (eyebrow "THE TALK DECK" + "Then you talk in cards.") steps in, words full by ~25.3, holds to 26.35
 //   24.95–25.19 The Fool lifts out of the hand · 25.15–25.60 it is PLAYED: arcs over into the phone,
 //               lands on the card-of-the-day slot at 25.60 (gold flash + ring + pixel-star burst, glint sweep 25.64–26.04)
 //   25.20–25.64 the rest of the hand sinks away · 25.80–26.20 "Play it to Juniper" button breathes gold
@@ -17,10 +19,10 @@ import { drawMoon } from '../../src/scenes/fx-moon.js'
 import { drawSky, skyCam, drawGrain } from './f3-chart.js'
 
 const T0 = 24.0, T1 = 26.8
-const T_GLIDE = 24.15, T_GLIDE_END = 24.6, T_SCR = 24.2
+const T_GLIDE = 24.15, T_GLIDE_END = 24.6, T_SCR = 24.55, T_SCR_END = 24.85
 const T_HAND = 24.45, T_LIFT = 24.95, T_PLAY = 25.15, T_LAND = 25.6
-const CAP = 24.6, CAP_OUT = 26.35, T_EXIT = 26.35
-const AU_IN = [24.0, 24.6], AU_OUT = [26.0, 26.5]
+const CAP = 24.75, CAP_OUT = 26.35, T_EXIT = 26.35
+const AU_IN = [24.5, 25.1], AU_OUT = [26.0, 26.5]
 
 // ── shared sky camera for f7 + f8: continues skyCam (static after 15.2) with a slow linear drift + push-in,
 //    so nothing eases to a dead hold at the 24.0 / 26.6 handoffs. f8 imports these so its sky is identical.
@@ -80,49 +82,52 @@ export default function build(stage) {
   const sky = fill(root, { background: 'transparent', opacity: 0 })     // aurora overlay (fades in/out)
   // dims the nebula's centre under the phone + caption (~35% plate there), part of the overlay
   fill(sky, { background: 'radial-gradient(70% 62% at 50% 46%, rgba(9,4,26,0.62) 0%, rgba(9,4,26,0.42) 55%, rgba(9,4,26,0.08) 100%)' })
-  const GA = el('canvas', { position: 'absolute', left: '-240px', top: '-240px', width: (W + 480) + 'px', height: (H + 480) + 'px', mixBlendMode: 'screen', transformOrigin: '50% 60%', opacity: 0.85 }, sky)
+  const GA = el('canvas', { position: 'absolute', left: '-240px', top: '-240px', width: (W + 480) + 'px', height: (H + 480) + 'px', mixBlendMode: 'screen', transformOrigin: '50% 66%', opacity: 0.8 }, sky)
   GA.width = W + 480; GA.height = H + 480
   {
     const g = GA.getContext('2d'), r = rng(7707)
-    const gx = (W + 480) * 0.56, gy = (H + 480) * 1.02, RX = 1450, RY = 980, ROT = -0.3
+    // a very flat dome whose crown sits on the aurora hem (screen y ≈ 790), never across the phone's middle
+    const gx = (W + 480) * 0.52, gy = 240 + 790 + 420, RX = 2200, RY = 420, ROT = -0.03
     const at = (a, off) => {
       const x = Math.cos(a) * (RX + off), y = Math.sin(a) * (RY + off * 0.5)
       return [gx + x * Math.cos(ROT) - y * Math.sin(ROT), gy + x * Math.sin(ROT) + y * Math.cos(ROT)]
     }
-    const A0 = Math.PI * 1.06, A1 = Math.PI * 1.94
+    const A0 = Math.PI * 1.13, A1 = Math.PI * 1.87
     for (let k = 0; k < 340; k++) {
       const u = k / 339, a = lerp(A0, A1, u), fade = Math.sin(Math.PI * u)
-      const [x, y] = at(a, (r() - 0.5) * 70)
+      const [x, y] = at(a, (r() - 0.5) * 40)
       const col = u < 0.5 ? [lerp(242, 232, u * 2), lerp(170, 98, u * 2), lerp(120, 160, u * 2)] : [lerp(232, 170, u * 2 - 1), lerp(98, 120, u * 2 - 1), lerp(160, 255, u * 2 - 1)]
-      const rad = 90 + r() * 70
+      const rad = 60 + r() * 50
       const gr = g.createRadialGradient(x, y, 0, x, y, rad)
       gr.addColorStop(0, `rgba(${col.map(Math.round)},${0.085 * fade})`); gr.addColorStop(1, `rgba(${col.map(Math.round)},0)`)
       g.fillStyle = gr; g.beginPath(); g.arc(x, y, rad, 0, 6.29); g.fill()
     }
     for (let k = 0; k < 1400; k++) {
       const u = r(), a = lerp(A0, A1, u), fade = Math.sin(Math.PI * u)
-      const off = (r() + r() + r() - 1.5) * 120
+      const off = (r() + r() + r() - 1.5) * 70
       const [x, y] = at(a, off)
       const s = r() < 0.06 ? 1.6 : 0.4 + r() * 0.8
-      g.fillStyle = `rgba(255,244,230,${(0.18 + r() * 0.55) * fade * (1 - Math.abs(off) / 220)})`
+      g.fillStyle = `rgba(255,244,230,${(0.18 + r() * 0.55) * fade * Math.max(0, 1 - Math.abs(off) / 130)})`
       g.beginPath(); g.arc(x, y, s, 0, 6.29); g.fill()
     }
   }
-  const AU = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'screen', filter: 'blur(3px)' }, sky)
-  AU.width = W / 2; AU.height = H / 2
+  // full-resolution curtain of crisp vertical rays (the first film's S7 look at ~25–26s), hem y ≈ 760–820
+  const AU = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'screen' }, sky)
+  AU.width = W; AU.height = H
   const au = AU.getContext('2d')
-  const NR = 240, HEM = 0.73
-  const ar = rng(7171), RAYS = Array.from({ length: NR }, (_, k) => ({ u: (k + ar()) / NR, h: 0.55 + ar() * 0.7, a: 0.35 + ar() * 0.65, ph: ar() * 6.28, sp: 0.6 + ar() * 1.4 }))
-  const hemY = (u, t, hh) => hh * (HEM + 0.07 * Math.sin(u * 5.2 + t * 0.45) + 0.035 * Math.sin(u * 13 - t * 0.8))
+  const NR = 300, HEM = 0.732
+  const ar = rng(7171), RAYS = Array.from({ length: NR }, (_, k) => ({ u: (k + ar()) / NR, h: 0.55 + ar() * 0.7, a: 0.35 + ar() * 0.65, ph: ar() * 6.28, sp: 0.6 + ar() * 1.4, w: 1.6 + ar() * 2.6 }))
+  const hemY = (u, t, hh) => hh * (HEM + 0.02 * Math.sin(u * 5.2 + t * 0.45) + 0.009 * Math.sin(u * 13 - t * 0.8))
   function drawAurora(t, k) {
     au.clearRect(0, 0, AU.width, AU.height)
     const w = AU.width, hh = AU.height
     au.globalCompositeOperation = 'lighter'
     RAYS.forEach(r => {
-      const x = r.u * w, hem = hemY(r.u, t, hh)
+      const x = r.u * w, hem = hemY(r.u, t, hh) + (1 - k) * 40
       const env = Math.pow(Math.sin(Math.PI * clamp(r.u * 1.08 - 0.04, 0, 1)), 0.7)
       const fl = r.a * (0.55 + 0.45 * Math.sin(t * r.sp + r.ph)) * env * k
-      const len = hh * 0.42 * r.h * (0.85 + 0.15 * Math.sin(t * 0.6 + r.ph))
+      // rays rise out of the hem as the overlay arrives
+      const len = hh * 0.34 * r.h * (0.85 + 0.15 * Math.sin(t * 0.6 + r.ph)) * lerp(0.3, 1, ease.outCubic(k))
       const warm = clamp(1 - r.u * 3.2, 0, 1)
       const c0 = warm > 0 ? `${Math.round(lerp(232, 242, warm))},${Math.round(lerp(98, 154, warm))},${Math.round(lerp(138, 74, warm))}` : '232,98,138'
       const g = au.createLinearGradient(0, hem, 0, hem - len)
@@ -132,14 +137,16 @@ export default function build(stage) {
       g.addColorStop(0.42, `rgba(190,96,240,${0.26 * fl})`)
       g.addColorStop(1, 'rgba(140,90,255,0)')
       au.fillStyle = g
-      au.fillRect(x - 2.2, hem - len, 4.4, len + 2)
+      au.globalAlpha = 0.55; au.fillRect(x - r.w * 2, hem - len, r.w * 4, len + 2)   // soft sheath
+      au.globalAlpha = 1; au.fillRect(x - r.w / 2, hem - len, r.w, len + 2)         // crisp core
+      au.globalAlpha = 1
     })
     au.beginPath()
-    for (let i = 0; i <= 96; i++) { const u = i / 96; i ? au.lineTo(u * w, hemY(u, t, hh)) : au.moveTo(u * w, hemY(u, t, hh)) }
+    for (let i = 0; i <= 96; i++) { const u = i / 96, y = hemY(u, t, hh) + (1 - k) * 40; i ? au.lineTo(u * w, y) : au.moveTo(u * w, y) }
     const hg = au.createLinearGradient(0, 0, w, 0)
     hg.addColorStop(0, 'rgba(242,154,74,0)'); hg.addColorStop(0.18, `rgba(242,154,74,${0.4 * k})`); hg.addColorStop(0.5, `rgba(255,130,180,${0.5 * k})`)
     hg.addColorStop(0.85, `rgba(190,110,255,${0.4 * k})`); hg.addColorStop(1, 'rgba(190,110,255,0)')
-    au.strokeStyle = hg; au.lineWidth = 3; au.shadowColor = `rgba(255,120,180,${0.8 * k})`; au.shadowBlur = 14
+    au.strokeStyle = hg; au.lineWidth = 4; au.shadowColor = `rgba(255,120,180,${0.8 * k})`; au.shadowBlur = 24
     au.stroke(); au.shadowBlur = 0
     au.globalCompositeOperation = 'source-over'
   }
@@ -206,15 +213,16 @@ export default function build(stage) {
   const sp = [[PW + 58, PH * 0.2, 44], [-58, PH * 0.74, 32]].map(([x, y, s]) => el('div', { position: 'absolute', left: x + 'px', top: y + 'px', width: '60px', height: '60px', marginLeft: '-30px', marginTop: '-30px', textAlign: 'center', lineHeight: '60px', fontSize: s + 'px', color: C.gold, textShadow: '0 0 16px rgba(242,199,92,0.9), 0 0 3px rgba(120,60,10,0.6)', opacity: 0 }, g, '✦'))
 
   // ── caption (S7 style): mono eyebrow + big serif italic, soft indigo scrim
-  const box = el('div', { position: 'absolute', top: (H / 2 - 74) + 'px', left: (PX1 + PW / 2 + 130) + 'px', textAlign: 'left', opacity: 0, isolation: 'isolate' }, tilt)
+  const gx = grainCanvas(root, 0.55)
+  // caption sits ABOVE the grain (solid bone, not grain-washed); it follows the phone's exit transform
+  const capTilt = fill(root, { background: 'transparent' })
+  const box = el('div', { position: 'absolute', top: (H / 2 - 74) + 'px', left: (PX1 + PW / 2 + 130) + 'px', textAlign: 'left', opacity: 0, isolation: 'isolate' }, capTilt)
   el('div', { position: 'absolute', left: '-330px', right: '-330px', top: '-140px', bottom: '-140px', zIndex: -1,
     background: `radial-gradient(closest-side, ${[[0, 1], [25, 0.95], [48, 0.76], [66, 0.48], [82, 0.2], [100, 0]].map(([o, k]) => `rgba(11,6,32,${(0.64 * k).toFixed(3)}) ${o}%`).join(', ')})` }, box)
-  el('div', { fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', color: 'rgba(255,246,234,0.92)', textShadow: '0 0 16px rgba(8,4,24,0.85), 0 0 5px rgba(8,4,24,0.6)', marginBottom: '14px' }, box, 'THE TALK DECK')
-  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '84px', lineHeight: 1.05, color: '#fff6ea', whiteSpace: 'nowrap', textShadow: '0 0 26px rgba(8,4,24,0.75), 0 0 8px rgba(8,4,24,0.6), 0 2px 3px rgba(4,2,14,0.5)' }, box, '')
+  el('div', { fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', color: C.bone, textShadow: '0 0 16px rgba(8,4,24,0.85), 0 0 5px rgba(8,4,24,0.6)', marginBottom: '14px' }, box, 'THE TALK DECK')
+  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '84px', lineHeight: 1.05, color: '#efe6d6', whiteSpace: 'nowrap', textShadow: '0 0 26px rgba(8,4,24,0.75), 0 0 8px rgba(8,4,24,0.6), 0 2px 3px rgba(4,2,14,0.5)' }, box, '')
   const WORDS = ['Then', 'you', 'talk', 'in', 'cards.']
   const wspans = WORDS.map((w, i) => el('span', { display: 'inline-block', opacity: 0, marginRight: i < WORDS.length - 1 ? '0.24em' : '0' }, capLine, w))
-
-  const gx = grainCanvas(root, 0.55)
 
   /** hero card state in phone-local coords */
   function heroState(t) {
@@ -236,12 +244,12 @@ export default function build(stage) {
   return {
     start: T0, end: T1, root,
     update(t) {
-      root.style.opacity = String(ease.outQuad(prog(t, T0, T0 + 0.18)))
+      root.style.opacity = '1'   // f7 owns the phone from 24.0 (f6 hands over its caption only), so no fade-up dip
       paintSky(bx, t)
       const auK = ease.inOutQuad(prog(t, AU_IN[0], AU_IN[1])) * (1 - ease.inOutQuad(prog(t, AU_OUT[0], AU_OUT[1])))
       sky.style.opacity = String(auK)
-      GA.style.transform = `rotate(${(t - 22.4) * 0.9}deg)`
-      if (auK > 0.002) drawAurora(t, 1)
+      GA.style.transform = `rotate(${(t - 24.8) * 0.25}deg)`
+      if (auK > 0.002) drawAurora(t, ease.inOutQuad(prog(t, AU_IN[0], AU_IN[1])))
       BLOOM.forEach(b => {
         b.e.style.transform = `translate(${b.x * W - b.r + Math.sin(t * 0.4 + b.i * 2) * 70}px, ${b.y * H - b.r + Math.cos(t * 0.5 + b.i) * 30}px)`
       })
@@ -257,10 +265,11 @@ export default function build(stage) {
       const sc = lerp(1, 0.97, Math.sin(Math.PI * gl)) * (1 + 0.012 * prog(t, T_GLIDE_END, T1))
       const tyP = 4 * hold * st
       g.style.transform = `translate(${px}px, ${tyP}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${sc})`
-      const sw = ease.outCubic(prog(t, T_SCR, T_SCR + 0.42))
-      scrB.style.transform = `translateY(${(1 - sw) * 100}%)`
-      scrA.style.transform = `translateY(${-sw * 12}%)`
-      scrA.style.filter = `brightness(${lerp(1, 0.5, sw)})`
+      // screen swap: a straight 0.3s crossfade inside the phone mask (both screens stay put, no strip can linger)
+      const sw = ease.inOutQuad(prog(t, T_SCR, T_SCR_END))
+      scrB.style.opacity = String(sw)
+      scrA.style.opacity = String(1 - sw)
+      scrA.style.display = sw >= 1 ? 'none' : 'block'
       const bloom = tw(t, [[T_LAND - 0.05, 0.25], [T_LAND + 0.12, 0.95, ease.outQuad], [T_LAND + 0.8, 0.4, ease.inOutQuad]])
       aura.style.opacity = String(bloom * prog(t, T_GLIDE, T_GLIDE_END))
       aura.style.transform = `translateX(${px - PX1}px) scale(${lerp(0.9, 1.06, bloom)})`
@@ -306,6 +315,8 @@ export default function build(stage) {
       const cOut = ease.inOutQuad(prog(t, T_EXIT + 0.05, T1 - 0.05))
       tilt.style.transform = `translateY(${tl * 140}px)`
       tilt.style.opacity = String(1 - cOut)
+      capTilt.style.transform = tilt.style.transform
+      capTilt.style.opacity = tilt.style.opacity
 
       // ── pixel layer
       cx.clearRect(0, 0, W, H)
@@ -340,12 +351,12 @@ export default function build(stage) {
 }
 
 export const cues = [
-  ['whoosh', 24.12, 0.5, 0.07],             // phone glides, chat slides up
+  ['whoosh', 24.12, 0.5, 0.07],             // phone glides left
   ['tick', 24.47, 0.05],                    // cards fan in the hand
   ['tick', 24.52, 0.04],
   ['tick', 24.57, 0.04],
-  ['bell', 24.62, 587.33, 0.045, 2.2, 0.2], // caption steps in with the fan (D5 · A4)
-  ['bell', 24.84, 440, 0.03, 2.0, 0.25],
+  ['bell', 24.77, 587.33, 0.045, 2.2, 0.2], // caption steps in (D5 · A4)
+  ['bell', 24.99, 440, 0.03, 2.0, 0.25],
   ['whoosh', 25.08, 0.55, 0.11],            // the card is played
   ['bell', 25.6, 1174.66, 0.05, 1.6, -0.25], // gold glint as it lands (D6)
   ['bell', 25.63, 1760, 0.025, 1.2, -0.3],
