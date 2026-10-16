@@ -4,14 +4,15 @@
 // (or bottom-centre while both cards are up); your card slides in from the RIGHT; the chakra column locks between.
 //
 // Beat map (sound):
-//   6.00         H2: Juniper's mystery card (card-profile-3) centre (960,520), body h 620, upright, over drawSky3 (moon 1)
-//   6.02–6.62    the card glides left + grows (650,520 h820); the plate eases to dim .72 (grain compensated)
-//   6.20 / 6.30  "No scores." / "No filters." (right column, fast shimmer-type, fully on by 6.6, out 7.60–7.72)
+//   6.00–6.20    H2: Juniper's mystery card (card-profile-3) held dead still at (960,520), body h 620, upright, over drawSky3
+//                (moon 1) — pixel-for-pixel g2's last frame; g3 cuts in opaque at 6.0 (no dissolve, so nothing ghosts)
+//   6.20–6.72    the card glides left + grows (650,520 h820); the plate eases to dim .72 (grain compensated)
+//   6.42 / 6.52  "No scores." / "No filters." (right column, clear of the card, fully on by 6.83, out 7.86–7.96)
 //   6.45–6.67    chart badges pop (LIBRA · AIR · GEMINI MOON) · 6.80 bio sweep · 6.92 lock chip "PHOTO HIDDEN UNTIL YOU
 //                BOTH ALIGN" + gold glint 7.10
-//   7.58–8.20    Juniper's card settles to (610,450 h640); your card (Hakeem · Taurus, card-sign) slides in from the right
-//                to (1316,450)
-//   7.68         "Just two charts." (bottom centre, fully on by 8.0, out 9.00–9.12)
+//   7.55–8.15    Juniper's card settles to (610,450 h640) · 7.90–8.40 your card (Hakeem · Taurus, card-sign) slides in from
+//                the right to (1316,450)
+//   7.90         "Just two charts." (bottom centre, fully on by 8.27, out 9.28–9.40)
 //   8.00–8.95    seven chakra stars streak in → orbit → glide into the column (x 958); snap red → violet 8.68…8.95
 //   8.30–9.00    riser · 9.00 LOCK: soft flash (cap .42, no white-out), rings, rays, gold + chakra pixel bursts, 3-frame
 //                shake, the chip's lock pops open
@@ -20,6 +21,7 @@
 //   9.55–10.00   the veil lifts off the window (seam glow) · 9.60–10.05 aura-cam sweep red → violet over her photo
 //   10.08        soft resolve flash in the window + sparkles → juniper.jpg clean by 10.25, grain thinned on the window
 //   10.30–10.70  gold-foil sweep across the card · face held clear to 11.0
+//   10.70–11.20  the plate eases back to dim 1 (grain with it) so the sky matches g4 exactly at 11.2
 //   11.00–11.35  H3: the revealed card drifts up-left and fades out over the sky (g4 owns 11.2→)
 import { clamp, lerp, prog, ease, rng, noise1, el, C, PIXEL_PALETTE, TypeLine } from '../../src/lib.js'
 import { W, H, A, IMG, SERIF, MONO, fill, img } from '../../src/scenes/common.js'
@@ -41,10 +43,11 @@ const SGN = { w: 848, h: 1152, cx: 424, cy: 576, bw: 606, bh: 910 }
 
 // ── beats ────────────────────────────────────────────────────────────────────
 const B = {
-  cap1a: 6.2, cap1b: 6.3, cap1Out: 7.6,
-  sun: 6.45, air: 6.56, moon: 6.67, bio: 6.8, chip: 6.92, glint: 7.1,
-  youIn: 7.58, youSet: 8.2,
-  cap2: 7.68, cap2Out: 9.0,
+  hold: 6.2,
+  cap1a: 6.42, cap1b: 6.52, cap1Out: 7.86,
+  sun: 6.5, air: 6.61, moon: 6.72, bio: 6.85, chip: 6.97, glint: 7.15,
+  youIn: 7.9, youSet: 8.4,
+  cap2: 7.9, cap2Out: 9.28,
   starIn: 8.0, glide: 8.42,
   lock: 9.0,
   youOut: 9.18, sink: { a: 9.2, b: 9.55 },
@@ -59,7 +62,8 @@ const STAR_LOCK = Array.from({ length: 7 }, (_, i) => 8.68 + i * 0.045)
 // Juniper's card keys: [t, cx, cy, bodyH, yawDeg]
 const JK = [
   [6.0, 960, 520, 620, 0],
-  [6.62, 650, 520, 820, 4],
+  [6.2, 960, 520, 620, 0],                                     // H2 hold: g2 holds the card still until 6.2
+  [6.72, 650, 520, 820, 4],
   [7.55, 642, 514, 828, 3],
   [8.15, 610, 450, 640, 8],
   [9.18, 606, 452, 648, 7],
@@ -79,9 +83,9 @@ function keyAt(K, t) {
 /** Juniper's card pose at t (screen px) */
 function julPose(t) {
   let [cx, cy, h, ry] = keyAt(JK, t)
-  const live = ease.inOutQuad(prog(t, 6.0, 6.5))                         // H2 starts dead still, life eases in
-  const bob = Math.sin((t - 6) * 1.7) * 4 * live
-  const pitch = Math.sin((t - 6) * 0.9 + 0.4) * 1.1 * live
+  const live = ease.inOutQuad(prog(t, B.hold, B.hold + 0.5))           // H2 holds dead still to 6.2, life eases in
+  const bob = Math.sin((t - B.hold) * 1.7) * 4 * live
+  const pitch = Math.sin((t - B.hold) * 0.9) * 1.1 * live
   // H3: drift up-left, shrink a touch, fade
   const ex = ease.inOutQuad(prog(t, B.exit.a, B.exit.b))
   cx += -46 * ex; cy += -18 * ex; h *= 1 - 0.06 * ex
@@ -97,14 +101,15 @@ function youPose(t) {
     ry: lerp(-36, -8, e) - 18 * o, rz: lerp(7, 1.2, e) + 5 * o, op: ease.outQuad(prog(t, B.youIn, B.youIn + 0.12)) * (1 - ease.inQuad(prog(t, B.youOut + 0.15, B.youOut + 0.42))),
   }
 }
-const dimAt = (t) => lerp(1, 0.72, ease.inOutQuad(prog(t, 6.0, 6.8)))
+// plate dim: down to .72 after the H2 hold, back up to 1 for H3 (g4 paints dim 1 from 11.2)
+const dimAt = (t) => lerp(1, 0.72, ease.inOutQuad(prog(t, B.hold, B.hold + 0.8)) * (1 - ease.inOutQuad(prog(t, 10.7, 11.2))))
 
 // ── stars (f5's chakra column, compressed) ───────────────────────────────────
 const CC = { x: 958, y: 450 }
 const CHAKRA_HEX = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
 const CHAKRA = CHAKRA_HEX.map((h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)))
 const COL_Y = (i) => CC.y + 246 - i * 82
-const ANCHOR = [[320, 730], [1620, 250], [500, 150], [1480, 720], [180, 360], [1780, 560], [1250, 120]]
+const ANCHOR = [[320, 730], [1540, 330], [500, 150], [1480, 720], [180, 360], [1780, 560], [1250, 120]]
 const ENTER_ORDER = [3, 0, 5, 2, 6, 1, 4]
 const SQ = 0.62
 function starState(i, t) {
@@ -121,10 +126,11 @@ function starState(i, t) {
   let oy = CC.y + SQ * r0 * Math.sin(th) + (noise1(t * 1.1, i * 7 + 3) - 0.5) * 30 * wob
   const v = ease.outCubic(prog(t, e, e + 0.38))
   if (v < 1) {
-    const a0 = th0 + 0.55, R = 1500
+    // the orange star (i 1) sits nearest the moon: it streaks in straight from the lower right, away from the crescent
+    const a0 = th0 + (i === 1 ? 1.1 : 0.55), R = 1500
     const px = CC.x + R * Math.cos(a0), py = CC.y + SQ * 1.25 * R * Math.sin(a0)
     const nx = -(oy - py), ny = ox - px, nl = Math.hypot(nx, ny) || 1
-    const bulge = 140 * Math.sin(Math.PI * v)
+    const bulge = (i === 1 ? 0 : 140) * Math.sin(Math.PI * v)
     ox = lerp(px, ox, v) + nx / nl * bulge; oy = lerp(py, oy, v) + ny / nl * bulge
   }
   const u = prog(t, B.glide, L - 0.08)
@@ -313,6 +319,10 @@ export default async function build(stage) {
   const chipBand = el('div', posStyle(0, 0, 300, 400, { top: '-50px', background: 'linear-gradient(90deg, rgba(242,199,92,0), rgba(255,236,205,0.6), rgba(242,199,92,0))' }), chipSweep)
   // lock glint on the window rim (gold)
   const lockRim = el('div', posStyle(WIN.x, WIN.y, WIN.w, WIN.h, { borderRadius: '40px', boxShadow: '0 0 0 5px rgba(242,199,92,0.95), 0 0 46px 10px rgba(242,199,92,0.5), inset 0 0 40px rgba(255,226,170,0.35)', opacity: 0, pointerEvents: 'none' }), card)
+  // footer: the art's baked "MYSTERY CARD" is covered in the card's own ink and re-set as "REVEALED" once the face resolves
+  const footer = el('div', posStyle(990, 2014, 318, 54, { background: 'rgb(14,9,25)', opacity: 0, pointerEvents: 'none' }), card)
+  el('div', { position: 'absolute', right: '19px', top: '0', height: '54px', lineHeight: '54px', fontFamily: MONO, fontSize: '33px', letterSpacing: '0.2em', marginRight: '-0.2em',
+    textTransform: 'uppercase', color: 'rgba(242,199,92,0.82)', whiteSpace: 'nowrap' }, footer, 'Revealed')
   // gold-foil sweep across the card body after the reveal
   const foilBox = el('div', posStyle(120, 114, PNG.bw, PNG.bh, { borderRadius: '84px', overflow: 'hidden', mixBlendMode: 'screen', opacity: 0, pointerEvents: 'none' }), card)
   const foil = el('div', { position: 'absolute', top: '-30%', left: 0, width: '520px', height: '160%', transform: 'skewX(-22deg)',
@@ -342,7 +352,7 @@ export default async function build(stage) {
   }
   const line = (box, text, size, opts = {}) => new TypeLine(box, text, { position: 'relative', fontFamily: SERIF, fontStyle: 'italic', fontSize: size + 'px', lineHeight: 1.04, letterSpacing: '-0.005em', color: C.bone, textShadow: capShadow },
     { perChar: 0.011, fade: 0.2, accent: [C.rub, C.gold, C.violet], ...opts })
-  const cap1 = capBox(1060, 368, 760, 'left')
+  const cap1 = capBox(1140, 368, 740, 'left')
   const c1a = line(cap1, 'No scores.', 128), c1b = line(cap1, 'No filters.', 128)
   const cap2 = capBox(360, 818, 1200, 'center')
   const c2 = line(cap2, 'Just two charts.', 116)
@@ -358,7 +368,7 @@ export default async function build(stage) {
   const toScreen = (px, py) => { const k = jp.h / PNG.bh; return [jp.cx + (px - PNG.cx) * k, jp.cy + (py - PNG.cy) * k] }
 
   return {
-    start: START, end: END, root, fadeIn: 0.15,
+    start: START, end: END, root, fadeIn: 0,     // H2 is a straight cut onto an identical frame
     update(t) {
       const fi = Math.round(t * 30), lockF = Math.round(LOCK * 30)
       const dim = dimAt(t)
@@ -384,7 +394,7 @@ export default async function build(stage) {
       const k = jp.h / PNG.bh
       card.style.transform = `translate(${jp.cx + lean + jx}px, ${jp.cy + jy}px) perspective(2600px) rotateY(${jp.ry}deg) rotateX(${jp.pitch}deg) scale(${k * (1 + kick)}) translate(${-PNG.cx}px, ${-PNG.cy}px)`
       card.style.opacity = String(jp.op)
-      const glowK = t < LOCK ? Math.max(0.15, ten) : lerp(1, 0.25, ease.inOutQuad(prog(t, LOCK, LOCK + 0.7)))
+      const glowK = t < LOCK ? Math.max(0.15 * prog(t, B.hold, B.hold + 0.4), ten) : lerp(1, 0.25, ease.inOutQuad(prog(t, LOCK, LOCK + 0.7)))
       const revealGlow = Math.sin(Math.PI * prog(t, B.res.peak - 0.1, B.res.peak + 0.9)) * 0.5
       julGlow.style.boxShadow = rimGlow(mixRgb([255, 150, 232], [255, 236, 200], post), clamp(glowK + revealGlow), k)
       julImg.style.filter = ten + post > 0.002 ? `brightness(${1 + 0.16 * ten + 0.22 * post})` : 'none'
@@ -475,6 +485,7 @@ export default async function build(stage) {
           leak.style.transform = `rotate(${lerp(-14, 10, prog(t, B.sweep.a - 0.1, B.res.b))}deg)`
         }
       }
+      footer.style.opacity = String(ease.inOutQuad(prog(t, B.res.peak, B.res.peak + 0.2)))
       const gp = prog(t, B.foil.a, B.foil.b)
       foilBox.style.opacity = gp > 0 && gp < 1 ? String(Math.sin(Math.PI * gp) * 0.85) : '0'
       foil.style.transform = `translateX(${lerp(-600, PNG.bw + 200, ease.inOutCubic(gp))}px) skewX(-22deg)`
@@ -628,7 +639,7 @@ export default async function build(stage) {
       }
 
       // ── captions
-      capFade(cap1, t, B.cap1a, B.cap1Out)
+      capFade(cap1, t, B.cap1a, B.cap1Out, 0.1)
       c1a.update(t - B.cap1a); c1b.update(t - B.cap1b)
       capFade(cap2, t, B.cap2, B.cap2Out)
       c2.update(t - B.cap2)
@@ -639,7 +650,7 @@ export default async function build(stage) {
 }
 
 export const cues = [
-  ['whoosh', 6.02, 0.6, 0.05],                                                     // the card glides left
+  ['whoosh', B.hold + 0.02, 0.6, 0.05],                                                     // the card glides left
   ['bell', B.cap1a + 0.02, 587.33, 0.04, 1.4, 0.2], ['bell', B.cap1b + 0.02, 880, 0.035, 1.4, 0.25],   // "No scores. No filters."
   ['bell', B.sun, 880, 0.035, 1.0, -0.3], ['bell', B.air, 1108.73, 0.028, 0.9, -0.2], ['bell', B.moon, 1318.51, 0.032, 1.0, -0.1],
   ['glitter', B.sun, B.moon + 0.35],
