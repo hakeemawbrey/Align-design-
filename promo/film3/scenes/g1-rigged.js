@@ -1,20 +1,22 @@
-// G1 · RIGGED (0–3.6s). Cold B&W, heavy grain, harsh.
-// 0–1.8  "Dating is rigged."  — a rigged machine sorts five face cards: scrambled mono scores land, the low ones are
-//         stamped HIDDEN / NOT SHOWN and shoved off, a BOOST $ tag pumps a 3.4 to 9.9 and flies it to #1 (the honest
-//         7.8 it displaces gets buried).
-// 1.8–3.6 "And superficial." — hard cut: one face fills the frame, scan brackets + beauty-filter sliders snap over it,
+// G1 · RIGGED (0–3.7s). Cold B&W, heavy grain, harsh.
+// 0–1.8  "Dating is rigged."  — a rigged machine sorts five face cards: scrambled mono scores slam in (0.04–0.16), the
+//         low ones are stamped HIDDEN (0.22) / NOT SHOWN (0.36) and shoved off, a BOOST $ tag (0.62) pumps a 3.4 to 9.9
+//         and flies it to centre as RANK #1 (0.78–1.06); the 7.8 it bumps is dimmed, the honest 9.1 is stamped NOT SHOWN.
+// 1.8–3.7 "And superficial." — hard cut: one face fills the frame, scan brackets + beauty-filter sliders snap over it,
 //         "JUDGED IN 0.3s", swiped at 2.45; then a strip of scored faces blurs past faster and faster and slams to a stop
-//         on the H1 card (p7, "SCORE 6.2") dead centre, held still 3.40–3.6. g2 draws the identical card from 3.40.
+//         on the H1 card (p7, "SCORE 6.2") dead centre, held still 3.40–3.70. g2 draws the identical card from 3.40; g1 keeps the
+//         frozen backdrop / vignette / grain under it until 3.70 (g2 paints no backdrop before its break at 3.667).
 // Pure function of t. Backdrop / card look / grain tiles copied from film2 f1-old.js.
 import { clamp, lerp, prog, ease, rng, noise1, el } from '../../src/lib.js'
 import { W, H, IMG, SERIF, MONO, fill, img } from '../../src/scenes/common.js'
-import { drawGrain, GRAIN_OPACITY, layerCanvas } from '../sky.js'
+import { drawGrain, layerCanvas } from '../sky.js'
+const TOP_GRAIN = 0.7   // heavier than the shared ≈0.5: the dark cold plate swallows overlay grain (reads like films 1/2)
 
 const BONE = '#efe6d6'
 export const COLD_FILTER = 'grayscale(1) contrast(1.42) brightness(1.08)'
 const PHOTO = i => `${IMG}people/p${i}.jpg`
 
-// ── H1 handoff (g1 → g2, 3.40–3.60): the exact end state; g2 may import makeH1Card / H1 to draw it identically
+// ── H1 handoff (g1 → g2, 3.40–3.70): the exact end state; g2 may import makeH1Card / H1 to draw it identically
 export const H1 = { x: 960, y: 520, w: 440, h: 702, r: 22, face: 7, tag: 'SCORE 6.2', still: 3.40 }
 const TAG_STYLE = { position: 'absolute', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontFamily: MONO, fontSize: '30px',
   letterSpacing: '0.12em', color: BONE, background: 'rgba(8,9,12,0.86)', border: '2px solid rgba(239,230,214,0.6)', borderRadius: '8px',
@@ -31,7 +33,7 @@ export function makeColdCard(parent, face, w, h, r, tagText, tagFont = 30) {
   if (tagText != null) tag = el('div', { ...TAG_STYLE, top: (h / 2 + 22) + 'px', fontSize: tagFont + 'px', lineHeight: Math.round(tagFont * 1.33) + 'px' }, parent, tagText)
   return { card, ph, tag }
 }
-/** the H1 card exactly as g1 leaves it at 3.40–3.60 (holder already placed at 960,520) */
+/** the H1 card exactly as g1 leaves it at 3.40–3.70 (holder already placed at 960,520) */
 export function makeH1Card(parent) {
   const holder = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, transform: `translate(${H1.x}px, ${H1.y}px)` }, parent)
   return { holder, ...makeColdCard(holder, H1.face, H1.w, H1.h, H1.r, H1.tag) }
@@ -137,14 +139,15 @@ function words(parent, text, style, at, gap = 0.1) {
 // ── act 1: the sorting machine
 const CUT = 1.8                                    // hard cut to the face
 const SLOT = i => 960 + (i - 2) * 362, ROW_Y = 612, CW = 326, CH = 470
-const M = [   // face, score, land time, fate
-  { face: 6, score: 9.1, land: 0.30 },
-  { face: 2, score: 4.1, land: 0.36, stamp: 'HIDDEN', at: 0.56, dir: -1 },
-  { face: 3, score: 7.8, land: 0.42, stamp: 'NOT SHOWN', at: 1.46, dir: 1 },
-  { face: 11, score: 2.6, land: 0.48, stamp: 'NOT SHOWN', at: 0.68, dir: 1 },
-  { face: 1, score: 3.4, land: 0.54, boost: true },
+const M = [   // face, score, land time, fate (dir 0 = stamped but stays in frame)
+  { face: 6, score: 9.1, land: 0.04, stamp: 'NOT SHOWN', at: 1.14, dir: 0, honest: true },
+  { face: 2, score: 4.1, land: 0.07, stamp: 'HIDDEN', at: 0.22, dir: -1 },
+  { face: 3, score: 7.8, land: 0.10, bumped: true },
+  { face: 11, score: 2.6, land: 0.13, stamp: 'NOT SHOWN', at: 0.36, dir: 1 },
+  { face: 1, score: 3.4, land: 0.16, boost: true },
 ]
-const BOOST_AT = 0.96, BOOST_COUNT = [1.02, 1.2], BOOST_FLY = [1.14, 1.42]
+const BOOST_AT = 0.62, BOOST_COUNT = [0.66, 0.84], BOOST_FLY = [0.78, 1.06], CROWN_AT = 1.0
+const HONEST_X = 400, BUMP_X = 1520, BOOST_RISE = 60, BOOST_S = 1.25, DIM = 0.35
 const SHOVE_D = 0.3, SHOVE_LAG = 0.16
 
 // ── act 2: the face + the blur strip
@@ -176,7 +179,7 @@ const vAt = t => vRaw(t) * S_TAB.k                  // cards / s
 export default function build(stage) {
   const root = fill(stage, { background: '#0a0c10' })
   const back = coldBackdrop(root)
-  const backGrain = grainLayer(root, 0.42)          // extra harsh grain on the backdrop only
+  const backGrain = grainLayer(root, 0.55)          // extra harsh grain on the backdrop only
   const blurs = blurDefs(root, 8, 'g1mb')
 
   // ── act 1 DOM
@@ -191,12 +194,13 @@ export default function build(stage) {
       fontSize: m.stamp.length > 7 ? '40px' : '50px', letterSpacing: '0.08em', color: '#f6f6f4', border: '6px solid #f6f6f4', borderRadius: '6px', padding: '2px 18px 0',
       background: 'rgba(6,7,10,0.55)', opacity: 0, boxShadow: '0 6px 30px rgba(0,0,0,0.6)' }, holder, m.stamp)
     if (m.boost) {
-      boost = el('div', { position: 'absolute', left: (-CW / 2 - 30) + 'px', top: (-CH / 2 - 34) + 'px', whiteSpace: 'nowrap', fontFamily: MONO, fontWeight: 700, fontSize: '34px',
+      boost = el('div', { position: 'absolute', left: (-CW / 2 - 30) + 'px', top: (-CH / 2 + 14) + 'px', whiteSpace: 'nowrap', fontFamily: MONO, fontWeight: 700, fontSize: '34px',
         letterSpacing: '0.06em', color: '#0a0b0e', background: '#f4f4f2', borderRadius: '6px 26px 26px 6px', padding: '6px 26px 4px 44px', opacity: 0,
         boxShadow: '0 10px 30px rgba(0,0,0,0.6)', transformOrigin: '20% 50%' }, holder,
         `<span style="position:absolute;left:14px;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:#0a0b0e"></span>BOOST $9.99`)
-      crown = el('div', { position: 'absolute', left: '50%', top: (-CH / 2 - 60) + 'px', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontFamily: MONO, fontWeight: 700,
-        fontSize: '30px', letterSpacing: '0.14em', color: BONE, opacity: 0 }, holder, '▲ RANK #1')
+      crown = el('div', { position: 'absolute', left: (-CW / 2 + 16) + 'px', top: (-CH / 2 + 82) + 'px', whiteSpace: 'nowrap', fontFamily: MONO, fontWeight: 700,
+        fontSize: '40px', lineHeight: '50px', letterSpacing: '0.1em', color: '#f6f6f4', background: 'rgba(6,7,10,0.82)', borderRadius: '6px', padding: '2px 14px 0',
+        opacity: 0, boxShadow: '0 6px 24px rgba(0,0,0,0.6)', transformOrigin: '0 50%' }, holder, '▲ RANK #1')
     }
     return { holder, ...c, stamp, boost, crown }
   })
@@ -234,6 +238,9 @@ export default function build(stage) {
     const knob = el('div', { position: 'absolute', top: '35px', width: '18px', height: '18px', marginLeft: '-9px', borderRadius: '50%', background: '#f4f4f2', boxShadow: '0 0 12px rgba(255,255,255,0.5)' }, row)
     return { v, at, val, fillB, knob }
   })
+  // black gradient over the photo's top so "And superficial." keeps its contrast (fades with the caption)
+  const capShade = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: '260px', zIndex: '7', pointerEvents: 'none',
+    background: 'linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.42) 45%, rgba(0,0,0,0) 100%)' }, act2)
   // readouts (right)
   const RO = [['ATTRACT', 6.4, 1, 2.0], ['SYMMETRY', 0.71, 2, 2.06], ['SKIN', 88, 0, 2.12], ['RANK', 41, 0, 2.18]]
   const ro = el('div', { position: 'absolute', left: '1460px', top: '410px', width: '390px', opacity: 0 }, act2)
@@ -265,11 +272,11 @@ export default function build(stage) {
   // exposure flash / flicker, then the shared film grain (same as g2–g4, ≈0.5)
   const flash = el('div', { position: 'absolute', inset: 0, background: '#f2f4f8', opacity: 0, pointerEvents: 'none', zIndex: '20' }, root)
   const flick = el('div', { position: 'absolute', inset: 0, background: '#000', opacity: 0, pointerEvents: 'none', zIndex: '20' }, root)
-  const gc = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_OPACITY), pointerEvents: 'none', zIndex: '30' })
+  const gc = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(TOP_GRAIN), pointerEvents: 'none', zIndex: '30' })
   const gx = gc.getContext('2d')
 
   return {
-    start: 0, end: 3.6, root,
+    start: 0, end: 3.7, root,
     update(t) {
       const fr = Math.round(t * 30)
       back.update(t)
@@ -278,63 +285,82 @@ export default function build(stage) {
       act2.style.display = a1 ? 'none' : 'block'
 
       if (a1) {
-        // scanner sweeps the row while scores scramble
-        const sp = prog(t, 0.08, 0.5)
+        // scanner sweeps the row while scores scramble (done by the last land)
+        const sp = prog(t, -0.02, 0.18)
         scan.style.opacity = String(sp > 0 && sp < 1 ? 0.9 : 0)
         scan.style.top = lerp(360, 860, ease.inOutQuad(sp)) + 'px'
-        // a gentle push-in on the whole machine so frame 0 is already moving
-        const push = 1.04 - 0.04 * ease.outCubic(prog(t, 0, 0.5))
-        act1.style.transform = `scale(${push})`; act1.style.transformOrigin = '960px 600px'
+        // push-in so frame 0 is already moving; a slow triumphant creep 1.06–1.8
+        const push = 1.04 - 0.04 * ease.outCubic(prog(t, 0, 0.4)) + 0.035 * ease.inOutQuad(prog(t, 1.06, CUT))
+        act1.style.transform = `scale(${push})`; act1.style.transformOrigin = '960px 560px'
         M.forEach((m, i) => {
           const c = mc[i]
-          let x = SLOT(i), y = ROW_Y, rot = 0, s = 1, op = 1, bl = 0, bright = 1
+          let x = SLOT(i), y = ROW_Y, rot = 0, s = 1, op = 1, bl = 0, photo = 1, hop = 1
           // entry: drop in staggered, already mostly visible at frame 0
-          const ein = ease.outCubic(prog(t, -0.1 + i * 0.03, 0.14 + i * 0.03))
-          y += (1 - ein) * -60; op = clamp(0.35 + ein)
+          const ein = ease.outCubic(prog(t, -0.1 + i * 0.02, 0.08 + i * 0.02))
+          y += (1 - ein) * -40; op = clamp(0.4 + ein)
           // score text
           let txt
           if (t < m.land) { const r = rng(fr * 97 + i * 13); txt = (1 + r() * 8.9).toFixed(1) }
           else txt = m.score.toFixed(1)
           if (m.boost && t >= BOOST_COUNT[0]) { const u = prog(t, ...BOOST_COUNT); txt = (Math.round(lerp(3.4, 9.9, u) * 10) / 10).toFixed(1) }
           c.tag.textContent = 'SCORE ' + txt
-          const landP = prog(t, m.land, m.land + 0.1)
-          c.tag.style.transform = `translateX(-50%) scale(${lerp(1.25, 1, ease.outCubic(landP))})`
-          c.tag.style.opacity = String(t < m.land ? 0.7 : 1)
-          // stamp + shove
+          const landP = prog(t, m.land, m.land + 0.06)
+          c.tag.style.transform = `translateX(-50%) scale(${lerp(1.4, 1, ease.outCubic(landP))})`
+          let tagOp = t < m.land ? 0.7 : 1
+          // stamp (text + border always at full opacity; only the photo dims) + shove
+          let shoveU = 0
           if (m.stamp) {
-            const p = prog(t, m.at, m.at + 0.08)
-            c.stamp.style.opacity = String(clamp(p * 2))
-            c.stamp.style.transform = `translate(-50%,-50%) rotate(${m.dir * -12}deg) scale(${lerp(1.9, 1, ease.outCubic(p))})`
-            bright = lerp(1, 0.45, p)
-            const u = prog(t, m.at + SHOVE_LAG, m.at + SHOVE_LAG + SHOVE_D), e = u * u
-            x += m.dir * (40 * u + 260 * e); y += 760 * e - 30 * Math.sin(Math.PI * u); rot = m.dir * 16 * e
-            bl = 14 * u
-            if (u > 0 && t >= m.at + SHOVE_LAG) { s *= 1 - 0.08 * u }
+            const p = prog(t, m.at, m.at + 0.07)
+            c.stamp.style.opacity = String(clamp(p * 3))
+            const srot = m.dir ? m.dir * -12 : -8
+            c.stamp.style.transform = `translate(-50%,-50%) rotate(${srot}deg) scale(${lerp(2.0, 1, ease.outCubic(p))})`
+            photo = lerp(1, m.dir ? 0.45 : DIM, p)
+            if (m.dir) {
+              const u = prog(t, m.at + SHOVE_LAG, m.at + SHOVE_LAG + SHOVE_D), e = u * u
+              shoveU = u
+              x += m.dir * (40 * u + 300 * e); y += 760 * e - 20 * Math.sin(Math.PI * u); rot = m.dir * 16 * e
+              bl = 14 * u
+              s *= 1 - 0.08 * u
+            } else {
+              // the honest top scorer: slam shake, and it stays in frame, buried
+              const k = prog(t, m.at + 0.04, m.at + 0.2)
+              x += (rng(fr * 53)() - 0.5) * 14 * (k > 0 && k < 1 ? 1 - k : 0)
+            }
           }
-          // the boost: price tag slaps on, score pumps, card flies to slot 0
+          // the honest 9.1 slides inward as the row re-sorts
+          if (m.honest) { const u = ease.inOutCubic(prog(t, ...BOOST_FLY)); x = lerp(SLOT(0), HONEST_X, u); s *= 1 - 0.04 * u }
+          // the 7.8 at centre is bumped right and dimmed as the boosted card takes its place
+          if (m.bumped) {
+            const u = ease.inOutCubic(prog(t, BOOST_FLY[0] - 0.02, BOOST_FLY[1]))
+            x = lerp(SLOT(2), BUMP_X, u); y += 24 * u; s *= 1 - 0.06 * u
+            photo = lerp(1, DIM, u); tagOp = lerp(1, 0.5, u)
+            bl = 6 * Math.sin(Math.PI * prog(t, BOOST_FLY[0] - 0.02, BOOST_FLY[1]))
+          }
+          // the boost: price tag slaps on, score pumps, card flies to centre, scales up and rises to RANK #1
           if (m.boost) {
-            const p = prog(t, BOOST_AT, BOOST_AT + 0.09)
-            c.boost.style.opacity = String(clamp(p * 2))
-            c.boost.style.transform = `rotate(${lerp(-24, -8, ease.outBack(p))}deg) scale(${lerp(1.8, 1, ease.outCubic(p))})`
+            const p = prog(t, BOOST_AT, BOOST_AT + 0.08)
+            c.boost.style.opacity = String(clamp(p * 3))
+            c.boost.style.transform = `rotate(${lerp(-24, -6, ease.outBack(p))}deg) scale(${lerp(1.8, 1, ease.outCubic(p))})`
             const pump = prog(t, BOOST_COUNT[0], BOOST_COUNT[1])
             s *= 1 + 0.06 * Math.sin(pump * Math.PI * 4) * (1 - pump)
-            const fl = ease.inOutCubic(prog(t, ...BOOST_FLY))
-            x = lerp(SLOT(4), SLOT(0), fl); y += -150 * Math.sin(Math.PI * fl) - 30 * fl; s *= 1 + 0.12 * fl
-            bl = 18 * Math.sin(Math.PI * prog(t, ...BOOST_FLY))
-            const glow = clamp(pump * 1.5)
-            c.card.style.boxShadow = `0 30px 70px rgba(0,0,0,0.6), 0 0 ${70 * glow}px ${10 * glow}px rgba(240,244,255,${0.35 * glow})`
-            const cp = prog(t, 1.38, 1.46)
-            c.crown.style.opacity = String(cp)
-            c.crown.style.transform = `translateX(-50%) translateY(${(1 - ease.outCubic(cp)) * 20}px)`
+            const flp = prog(t, ...BOOST_FLY), fl = ease.inOutCubic(flp)
+            x = lerp(SLOT(4), 960, fl); y -= BOOST_RISE * fl; s *= lerp(1, BOOST_S, fl)
+            bl = 12 * Math.sin(Math.PI * flp)
+            // triumphant: glow swells and breathes
+            const glow = clamp(pump * 1.5) * (1 + 0.25 * fl + 0.2 * Math.sin((t - BOOST_FLY[1]) * 9) * prog(t, BOOST_FLY[1], BOOST_FLY[1] + 0.1))
+            c.card.style.boxShadow = `0 30px 70px rgba(0,0,0,0.6), 0 0 ${80 * glow}px ${12 * glow}px rgba(240,244,255,${(0.38 * glow).toFixed(3)})`
+            const cp = prog(t, CROWN_AT, CROWN_AT + 0.07)
+            c.crown.style.opacity = String(clamp(cp * 3))
+            c.crown.style.transform = `scale(${lerp(1.6, 1, ease.outCubic(cp))})`
           }
-          // the honest #1 gets pushed down a slot as the boosted card lands
-          if (i === 0) { const u = ease.inOutCubic(prog(t, 1.2, 1.42)); x = lerp(SLOT(0), SLOT(1), u); bright = lerp(1, 0.82, u); s *= 1 - 0.04 * u }
           c.holder.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${s})`
-          c.holder.style.opacity = String(op * (1 - prog(bl > 0 && m.stamp ? prog(t, m.at + SHOVE_LAG, m.at + SHOVE_LAG + SHOVE_D) : 0, 0.7, 1)))
+          c.holder.style.opacity = String(op * (1 - prog(shoveU, 0.7, 1)))
           c.holder.style.zIndex = m.boost ? '50' : String(10 + i)
-          let f = bright < 1 ? `brightness(${bright.toFixed(3)})` : ''
-          if (bl > 0.5) { const slot = i; blurs[slot].setAttribute('stdDeviation', `${(bl * 0.4).toFixed(1)} ${bl.toFixed(1)}`); if (m.boost) blurs[slot].setAttribute('stdDeviation', `${bl.toFixed(1)} ${(bl * 0.3).toFixed(1)}`); f += ` url(#g1mb${slot})` }
-          c.holder.style.filter = f.trim()
+          c.ph.style.filter = photo < 1 ? `${COLD_FILTER} brightness(${photo.toFixed(3)})` : COLD_FILTER
+          c.tag.style.opacity = String(tagOp)
+          let f = ''
+          if (bl > 0.5) { blurs[i].setAttribute('stdDeviation', m.dir ? `${(bl * 0.4).toFixed(1)} ${bl.toFixed(1)}` : `${bl.toFixed(1)} ${(bl * 0.3).toFixed(1)}`); f = `url(#g1mb${i})` }
+          c.holder.style.filter = f
         })
       } else {
         // ── act 2
@@ -358,10 +384,11 @@ export default function build(stage) {
         bScan.style.top = (BY * (0.5 - 0.5 * Math.cos(bs * Math.PI * 2))) + 'px'
         bScan.style.opacity = String(bs > 0 && bs < 1 ? 1 : 0)
         // panel + readouts snap in, snap off on the swipe
-        const pin = ease.outCubic(prog(t, 1.94, 2.04)), pout = prog(t, SWIPE - 0.02, SWIPE + 0.08)
-        panel.style.opacity = String(pin * (1 - pout)); panel.style.transform = `translateX(${(1 - pin) * -60 - pout * 120}px)`
+        // fade out 2.36–2.45, before the incoming strip reaches them
+        const pin = ease.outCubic(prog(t, 1.94, 2.04)), pout = ease.outQuad(prog(t, 2.36, 2.45))
+        panel.style.opacity = String(pin * (1 - pout)); panel.style.transform = `translateX(${(1 - pin) * -60 - pout * 40}px)`
         const rin = ease.outCubic(prog(t, 1.98, 2.08))
-        ro.style.opacity = String(rin * (1 - pout)); ro.style.transform = `translateX(${(1 - rin) * 60 - pout * 120}px)`
+        ro.style.opacity = String(rin * (1 - pout)); ro.style.transform = `translateX(${(1 - rin) * 60 + pout * 40}px)`
         for (const s of sliders) {
           const u = ease.outCubic(prog(t, s.at, s.at + 0.22)), v = lerp(0.12, s.v, u)
           s.fillB.style.width = (340 * v) + 'px'; s.knob.style.left = (340 * v) + 'px'; s.val.textContent = Math.round(v * 100) + '%'
@@ -392,11 +419,14 @@ export default function build(stage) {
       capA.box.style.display = a1 ? 'block' : 'none'
       capA.update(t, 1)
       capB.box.style.display = a1 ? 'none' : 'block'
-      capB.update(t, 1 - ease.inQuad(prog(t, 3.22, 3.36)))
+      const capBOut = 1 - ease.inQuad(prog(t, 3.22, 3.36))
+      capB.update(t, capBOut)
+      capShade.style.opacity = String(capBOut)
 
       // flashes: a decaying exposure kick on the boom and on the cut (≥ 3 frames, never a one-frame pop)
       const kick = (t0, a, d) => t >= t0 ? a * Math.exp(-(t - t0) / d) : 0
-      flash.style.opacity = String(clamp(kick(0.16, 0.12, 0.08) + kick(CUT, 0.24, 0.08)))
+      // capped so the cut never more than ~+30 Y (QA: 0.24 took Y 42→86)
+      flash.style.opacity = String(clamp(kick(0.22, 0.1, 0.08) + kick(CUT, 0.13, 0.08), 0, 0.14))
       // nervous exposure flicker, gone before the H1 hold
       const tempo = (0.4 + prog(t, 2.45, 3.2)) * (1 - prog(t, 3.25, 3.38))
       const fq = rng(fr * 4271 + 11), dip = fq() < 0.16 ? (0.015 + 0.02 * fq()) * tempo : 0
@@ -409,12 +439,15 @@ export default function build(stage) {
 
 // ── sound: boom on "rigged", ticks on score lands + stamps, whooshes on shoves / boost / swipes, accelerating strip ticks
 export const cues = (() => {
-  const out = [['boom', 0.16, 0.55], ['tick', 0.0, 0.08]]
+  const out = [['boom', 0.22, 0.55], ['tick', 0.0, 0.08]]
   for (const m of M) out.push(['tick', m.land, 0.05])
-  for (const m of M.filter(m => m.stamp)) out.push(['tick', m.at, 0.16], ['tick', m.at + 0.03, 0.08], ['whoosh', m.at + SHOVE_LAG, 0.26, 0.12])
+  for (const m of M.filter(m => m.stamp)) {
+    out.push(['tick', m.at, 0.16], ['tick', m.at + 0.03, 0.08])
+    if (m.dir) out.push(['whoosh', m.at + SHOVE_LAG, 0.26, 0.12])
+  }
   out.push(['tick', BOOST_AT, 0.18])
   for (let i = 0; i < 6; i++) out.push(['tick', BOOST_COUNT[0] + i * 0.03, 0.04])
-  out.push(['whoosh', BOOST_FLY[0], 0.3, 0.16], ['tick', 1.42, 0.12])
+  out.push(['whoosh', BOOST_FLY[0], 0.28, 0.16], ['tick', BOOST_FLY[1], 0.12], ['tick', CROWN_AT, 0.14], ['boom', M[0].at, 0.16])
   out.push(['boom', CUT, 0.22], ['tick', CUT, 0.14], ['tick', 1.92, 0.14])
   for (const [, , at] of SL) out.push(['tick', at, 0.05])
   out.push(['tick', 2.12, 0.1], ['whoosh', SWIPE, 0.26, 0.22], ['riser', 2.5, 3.38, 0.07])
