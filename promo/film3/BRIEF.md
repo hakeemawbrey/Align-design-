@@ -42,3 +42,14 @@ for column/aura; gold only as glints. The "rigged" world is the opposite: cold, 
 - Render (FRESH --dir each time, never shared): `node promo/scripts/render.mjs --film3 --sheet --rate=6 --from=X --to=Y --dir=/tmp/claude-0/f3-<you>/a`
   or `--stills=1.2,2.4 --dir=…`. Full film (lead only): `node promo/scripts/teaser-sound.mjs --film3 && node promo/scripts/render.mjs --film3`.
 - Only edit your own scene file(s).
+
+## Shared sky & handoffs (lead decisions)
+- promo/film3/sky.js (lead-owned) = film 2's S1 nebula/stars/grain on film 3's own camera: `drawSky3(ctx, t, {pan, zoomK, moon, dim})`,
+  `drawGrain(gx, t)` (overlay canvas, mix-blend-mode overlay, opacity grainOpacity(dim) ≈ 0.5), `moonPose3(t)` (the ONE moon, crescent
+  upper-right), `drawPixelStar`, `layerCanvas`. g2, g3, g4 must paint the sky with drawSky3 (moon on) so the cuts are seamless.
+- H1 (g1→g2, 3.40–3.60): g1 ends on ONE cold B&W face card dead centre, still: centre (960,520), 440×702, rounded 22px, photo
+  app/public/img/people/p7.jpg, mono tag "SCORE 6.2" under it. g2 draws the identical card from 3.40 and breaks it.
+- H2 (g2→g3, 6.00–6.20): g2 ends with the sky (drawSky3, moon 1) and Juniper's mystery card (A+'card-profile-3.png') centre at
+  (960,520), body height 620, upright; every other dealt card gone by 6.0; caption gone by 6.0. g3 starts identical.
+- H3 (g3→g4, 11.20–11.40): g3 ends on Juniper's revealed card (face clear) which drifts/fades out 11.0–11.35 over the sky;
+  g4 draws the sky from 11.2 under it (no extra cards). g4 owns 11.2–15.0.
