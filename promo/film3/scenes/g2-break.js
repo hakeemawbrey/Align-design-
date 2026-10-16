@@ -1,17 +1,19 @@
 // G2 · THE BREAK (3.4–6.2). Picks up g1's last cold face card (H1: p7, centre 960,520, 440×702, r22, mono "SCORE 6.2"
-// tag under it). 3.6–3.87 the rigged machine glitches: RGB split, scanline tears (the colour sky leaks through the tears),
-// the score scrambles. 3.87 the card + tag SHATTER into tiles that burn into pixel stars; the nebula floods out from the
-// centre (feathered radial wipe, over-exposed, settling), moon fades on, grain carries on. Cold face cards are then dealt
+// tag under it). 3.42–3.65 the rigged machine glitches: RGB split, scanline tears (the colour sky leaks through the tears),
+// the score scrambles to "NOT SHOWN". Until the break g2 paints NO backdrop (only card, tag, glitch; transparent elsewhere)
+// over g1's frozen backdrop, which stays up to 3.70. 3.667 the card + tag SHATTER into tiles that burn into pixel stars and
+// the colour flood goes opaque over everything (dark sky + feathered over-exposed radial wipe from the centre), moon fades
+// on, grain eases 0.58 → 0.5. Cold face cards are then dealt
 // UP from below the frame by an unseen dealer, flip mid-flight into veiled mystery cards and land as a fanned hand across
-// the sky. Copy: "NO SCORES · NO FACES" → "Align deals blind." (fully on 4.70–5.78). 5.4–5.95 the hand is swept off and
-// Juniper's card (card-profile-3) settles to H2: body centre (960,520), body height 620, upright, still from 6.0.
+// the sky, with a slow push-in (1.0 → 1.05). Copy: "DEALT BY THE STARS" → "Align deals blind." (fully on ~4.74–5.8).
+// 5.2–5.75 the hand is swept off and Juniper's card (card-profile-3) settles to H2: body centre (960,520), body height 620, upright, still from 6.0.
 import { clamp, lerp, prog, ease, rng, el, C, PIXEL_PALETTE, TypeLine } from '../../src/lib.js'
 import { W, H, A, IMG, SERIF, MONO, fill } from '../../src/scenes/common.js'
 import { drawSky3, drawGrain, grainOpacity } from '../sky.js'
 
 const START = 3.4, END = 6.2
-const GL0 = 3.6                       // glitch starts (g1 gone)
-const BREAK = 116 / 30                // 3.8667 — first shatter frame
+const GL0 = 3.42                      // glitch starts (over g1's frozen backdrop)
+const BREAK = 110 / 30                // 3.6667 — first shatter frame, flood opaque from here
 const FLOOD = 0.38                    // nebula radial wipe length
 const BONE = '#efe6d6'
 // H1 card + tag
@@ -19,9 +21,10 @@ const H1 = { x: 960, y: 520, w: 440, h: 702, r: 22, tagY: 520 + 351 + 22 + 25.5 
 // H2
 const H2 = { x: 960, y: 520, h: 620 }
 // hand
-const DEAL0 = 3.94, DEAL_STEP = 0.065, FLY = 0.58
-const SWEEP0 = 5.4, SWEEP1 = 5.92, JUN0 = 5.38, JUN1 = 6.0
-const COPY = { eye: 4.2, line: 4.3, out0: 5.86, out1: 5.98 }
+const DEAL0 = 3.74, DEAL_STEP = 0.065, FLY = 0.58
+const SWEEP0 = 5.2, SWEEP1 = 5.74, JUN0 = 5.18, JUN1 = 6.0
+const PUSH0 = 4.2, PUSH1 = 5.9          // slow push-in on the dealt arc, 1.0 → 1.05 about the H2 centre
+const COPY = { eye: 4.0, line: 4.1, out0: 5.8, out1: 5.95 }
 
 // card art: PNG size + opaque body box [l, t, r, b]
 const PROF = { iw: 1496, ih: 2238, b: [120, 114, 1374, 2116] }
@@ -78,9 +81,10 @@ const BURST = (() => {
       kind: r() < 0.35 ? 0 : (r() < 0.5 ? 1 : 3), col: STAR_PAL[Math.floor(r() * STAR_PAL.length)], d: i < 60 ? 0 : r() * 0.12, ph: Math.floor(r() * 4) }
   })
 })()
-// glitch strength per frame (3.6 → break): onset kick, a couple of bursts, then it tears apart
-const GLITCH = { 108: 0.55, 109: 0.12, 110: 0.05, 111: 0.42, 112: 0.1, 113: 0.6, 114: 0.85, 115: 1 }
-const SCRAMBLE = ['SCORE 6.2', 'SCORE 9.8', 'SC0RE 1.4', 'SCORE ?.?', 'SCORE 6.2', 'ERR 0x62', 'SCORE 0.0', 'SCORE ##.#', 'SCORE 4.1']
+// glitch strength per frame (3.433 → break): onset kick, a couple of bursts, then it tears apart
+const GLITCH = { 103: 0.55, 104: 0.12, 105: 0.42, 106: 0.1, 107: 0.6, 108: 0.85, 109: 1 }
+const LEAK_FR = 107                   // from this frame some tears leak the colour sky
+const SCRAMBLE = ['NOT SHOWN', 'SCORE 9.8', 'SC0RE 1.4', 'NOT SHOWN', 'SCORE ?.?', 'ERR 0x62', 'NOT SHOWN', 'SCORE ##.#']
 
 const canvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c }
 const loadImg = src => new Promise(res => { const im = new Image(); im.decoding = 'sync'; im.onload = () => res(im); im.onerror = () => res(null); im.src = src })
@@ -111,12 +115,6 @@ export default async function build(stage) {
   const tmp = canvas(W, H), tx = tmp.getContext('2d')
   const ch = canvas(W, H), chx = ch.getContext('2d')
   const mask = canvas(W, H), mx = mask.getContext('2d')
-  // cold plate (f1's slate)
-  const cold = canvas(W, H); {
-    const x = cold.getContext('2d'), g = x.createRadialGradient(W / 2, H * 0.45, 0, W / 2, H * 0.45, W * 0.62)
-    g.addColorStop(0, '#1b1f27'); g.addColorStop(0.55, '#12151b'); g.addColorStop(1, '#0a0c10')
-    x.fillStyle = g; x.fillRect(0, 0, W, H)
-  }
   // scanlines
   const scan = canvas(W, H); {
     const x = scan.getContext('2d'); x.fillStyle = 'rgba(0,0,0,0.5)'
@@ -127,7 +125,7 @@ export default async function build(stage) {
   const pocket = el('div', { position: 'absolute', left: '260px', top: '790px', width: '1400px', height: '290px', opacity: 0,
     background: 'radial-gradient(50% 50% at 50% 50%, rgba(11,6,32,0.78), rgba(11,6,32,0.4) 60%, rgba(11,6,32,0) 100%)' }, root)
   const eyebrow = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '842px', textAlign: 'center', fontFamily: MONO, fontSize: '28px',
-    letterSpacing: '0.34em', color: BONE, opacity: 0, textShadow: '0 2px 18px rgba(11,6,32,0.9)' }, root, 'NO SCORES · NO FACES')
+    letterSpacing: '0.34em', color: BONE, opacity: 0, textShadow: '0 2px 18px rgba(11,6,32,0.9)' }, root, 'DEALT BY THE STARS')
   const line = new TypeLine(root, 'Align deals blind.', { left: '50%', top: '890px', transform: 'translateX(-50%)', fontFamily: SERIF, fontStyle: 'italic',
     fontSize: '112px', lineHeight: '1', letterSpacing: '-0.01em', color: BONE,
     textShadow: '0 2px 30px rgba(11,6,32,0.9), -0.6px 0 0 rgba(232,98,138,0.3), 0.6px 0 0 rgba(140,170,255,0.25)' }, { perChar: 0.022, fade: 0.24, accent: [C.violet, C.gold, C.rub] })
@@ -198,7 +196,7 @@ export default async function build(stage) {
     cx.fillStyle = BONE; cx.fillText(text, x - w / 2 + 20, y + 3)
     cx.restore()
   }
-  const tagText = (fr) => GLITCH[fr] > 0.3 ? SCRAMBLE[(fr * 7) % SCRAMBLE.length] : 'SCORE 6.2'
+  const tagText = (fr) => fr >= 108 ? 'NOT SHOWN' : GLITCH[fr] > 0.3 ? SCRAMBLE[(fr * 5) % SCRAMBLE.length] : 'SCORE 6.2'
 
   /** hand card state at t → { x, y, h, roll, sq, showFace, wash, alpha } */
   function handState(c, t) {
@@ -211,6 +209,8 @@ export default async function build(stage) {
     y += Math.sin(t * 1.1 + c.ph) * 3 * prog(t, c.td + FLY, c.td + FLY + 0.3)
     let alpha = 1, sq = Math.max(0.02, Math.abs(cs))
     const landGlow = p >= 1 ? Math.exp(-(t - c.td - FLY) * 5) * 0.8 : 0
+    const P = 1 + 0.05 * ease.inOutQuad(prog(t, PUSH0, PUSH1))      // slow push-in on the whole arc
+    x = H2.x + (x - H2.x) * P; y = H2.y + (y - H2.y) * P; h *= P
     if (c.isJ) {                                   // Juniper settles to H2
       const k = ease.inOutCubic(prog(t, JUN0, JUN1))
       x = lerp(x, H2.x, k); y = lerp(y, H2.y, k); h = lerp(h, H2.h, k); roll = lerp(roll, 0, k)
@@ -231,18 +231,21 @@ export default async function build(stage) {
     update(t) {
       const fr = Math.round(t * 30), g = t < BREAK ? (GLITCH[fr] || 0) : 0
       cx.setTransform(1, 0, 0, 1, 0, 0); cx.globalAlpha = 1; cx.globalCompositeOperation = 'source-over'; cx.filter = 'none'
-      // sky (needed for the leaks from the first tear)
-      const moon = ease.inOutQuad(prog(t, 4.0, 4.8))
+      // sky (for the leaks in the late tears, then the flood)
+      const moon = ease.inOutQuad(prog(t, 3.8, 4.6))
       if (t >= GL0) drawSky3(sx, t, { moon })
-      // ── plate
-      if (t < GL0) cx.clearRect(0, 0, W, H)
-      else cx.drawImage(cold, 0, 0)
-      const flood = prog(t, BREAK - 1 / 60, BREAK + FLOOD)
-      if (flood > 0) {
+      // ── plate: NOTHING before the break (g1's frozen backdrop shows through); from BREAK the flood is opaque everywhere
+      cx.clearRect(0, 0, W, H)
+      if (t >= BREAK) {
+        const flood = prog(t, BREAK - 1 / 60, BREAK + FLOOD), fe = ease.outCubic(flood)
         const ex = 1 + 0.85 * Math.exp(-prog(t, BREAK, BREAK + 1.0) * 4)
+        // base: the whole sky, held dark and cold outside the wipe front (covers g1 from the break frame)
+        cx.drawImage(skyC, 0, 0)
+        if (flood < 1) { cx.fillStyle = `rgba(7,6,14,${(0.74 * (1 - fe)).toFixed(3)})`; cx.fillRect(0, 0, W, H) }
+        // the flood: over-exposed sky in a feathered radial wipe from the card centre
         mx.globalCompositeOperation = 'copy'; mx.drawImage(skyC, 0, 0)
         if (flood < 1) {
-          const r = 30 + 1350 * ease.outCubic(flood), gr = mx.createRadialGradient(H1.x, H1.y, Math.max(0, r - 170), H1.x, H1.y, r)
+          const r = 30 + 1350 * fe, gr = mx.createRadialGradient(H1.x, H1.y, Math.max(0, r - 170), H1.x, H1.y, r)
           gr.addColorStop(0, '#000'); gr.addColorStop(1, 'rgba(0,0,0,0)')
           mx.globalCompositeOperation = 'destination-in'; mx.fillStyle = gr; mx.fillRect(0, 0, W, H)
         }
@@ -252,40 +255,49 @@ export default async function build(stage) {
       // ── the H1 card (until the break)
       if (t < BREAK) {
         const r = rng(fr * 131 + 7)
-        const jx = g > 0.2 ? (r() - 0.5) * 16 * g : 0, punch = 1 + 0.035 * ease.inQuad(prog(t, 3.72, BREAK))
+        const jx = g > 0.2 ? (r() - 0.5) * 16 * g : 0, punch = 1 + 0.035 * ease.inQuad(prog(t, GL0 + 0.1, BREAK))
         cx.save(); cx.translate(H1.x + jx, H1.y); cx.scale(punch, punch)
         cx.shadowColor = 'rgba(0,0,0,0.6)'; cx.shadowBlur = 70; cx.shadowOffsetY = 30
         cx.drawImage(h1Card, -H1.w / 2, -H1.h / 2)
         cx.restore()
         drawTag(tagText(fr), H1.x + jx * 1.4, H1.y + (H1.tagY - H1.y) * punch)
       }
-      // ── glitch pass over the composed frame
+      // ── glitch pass (card + tag only; alpha kept so g1 stays visible around them)
       if (g > 0) {
         const r = rng(fr * 977 + 3)
         tx.globalCompositeOperation = 'copy'; tx.drawImage(cv, 0, 0)
         const dx = Math.round(5 + 24 * g), dy = Math.round((r() - 0.5) * 6 * g)
+        const offs = [['#ff0000', -dx, dy], ['#00ff00', 0, 0], ['#0000ff', dx, -dy]]
+        // RGB split, composed on black, then cut back to the union of the three shifted silhouettes
         cx.fillStyle = '#000'; cx.fillRect(0, 0, W, H)
         cx.globalCompositeOperation = 'lighter'
-        for (const [col, ox, oy] of [['#ff0000', -dx, dy], ['#00ff00', 0, 0], ['#0000ff', dx, -dy]]) {
+        for (const [col, ox, oy] of offs) {
           chx.globalCompositeOperation = 'copy'; chx.drawImage(tmp, 0, 0)
+          chx.globalCompositeOperation = 'destination-over'; chx.fillStyle = '#000'; chx.fillRect(0, 0, W, H)
           chx.globalCompositeOperation = 'multiply'; chx.fillStyle = col; chx.fillRect(0, 0, W, H)
           cx.drawImage(ch, ox, oy)
         }
+        mx.globalCompositeOperation = 'copy'; mx.drawImage(tmp, offs[0][1], offs[0][2])
+        mx.globalCompositeOperation = 'source-over'; mx.drawImage(tmp, 0, 0); mx.drawImage(tmp, offs[2][1], offs[2][2])
+        cx.globalCompositeOperation = 'destination-in'; cx.drawImage(mask, 0, 0)
         cx.globalCompositeOperation = 'source-over'
         // tears: horizontal bands slide; on the late frames some bands show the colour sky leaking through
         tx.globalCompositeOperation = 'copy'; tx.drawImage(cv, 0, 0)
         const n = 3 + Math.floor(g * 9)
         for (let i = 0; i < n; i++) {
           const y = Math.floor(r() * H), h = 4 + Math.floor(Math.pow(r(), 2) * 90), sh = Math.round((r() - 0.5) * 220 * g)
-          const leak = fr >= 113 && r() < 0.35 + 0.3 * g
-          cx.drawImage(leak ? skyC : tmp, 0, y, W, h, sh, y, W, h)
+          const leak = fr >= LEAK_FR && r() < 0.35 + 0.3 * g
+          if (leak) { cx.drawImage(skyC, 0, y, W, h, sh, y, W, h); continue }
+          cx.clearRect(0, y, W, h); cx.drawImage(tmp, 0, y, W, h, sh, y, W, h)
         }
         // block noise
         if (g > 0.5) for (let i = 0; i < 6; i++) {
           cx.fillStyle = r() < 0.5 ? `rgba(235,240,250,${0.5 * r()})` : `rgba(0,0,0,${0.7 * r()})`
           cx.fillRect(Math.floor(r() * W), Math.floor(r() * H), 20 + r() * 240, 4 + r() * 18)
         }
-        cx.globalAlpha = 0.25 + 0.35 * g; cx.drawImage(scan, 0, (fr % 2) * 2); cx.globalAlpha = 1
+        // scanlines only on what we drew
+        cx.globalCompositeOperation = 'source-atop'; cx.globalAlpha = 0.25 + 0.35 * g; cx.drawImage(scan, 0, (fr % 2) * 2)
+        cx.globalAlpha = 1; cx.globalCompositeOperation = 'source-over'
       }
       // ── shatter tiles (card + tag)
       const lt = t - BREAK
@@ -325,16 +337,13 @@ export default async function build(stage) {
       // ── flash on the break
       const fd = t - BREAK
       flash.style.opacity = String(fd < 0 ? 0 : clamp(0.62 * Math.exp(-fd * 7)))
-      // ── grain: lighter during the H1 overlap (g1's grain is underneath), cold-heavy in the glitch, then the shared 0.5
-      grainC.style.opacity = String(t < GL0 ? grainOpacity(1) : t < BREAK ? 0.58 : lerp(0.58, grainOpacity(1), prog(t, BREAK, BREAK + FLOOD)))
+      // ── grain: before the break only where we drew (g1's grain is under the rest); 0.58 through the glitch,
+      //    easing to the shared 0.5 over 0.6s after the break
+      grainC.style.opacity = String(t < GL0 ? grainOpacity(1) : t < BREAK ? 0.58 : lerp(0.58, grainOpacity(1), ease.inOutQuad(prog(t, BREAK, BREAK + 0.6))))
       drawGrain(gx, t)
-      if (t < GL0) {                     // H1 overlap: g1's identical grain frame is underneath — add it only where we cover g1 (card + tag)
-        gx.globalCompositeOperation = 'destination-in'; gx.fillStyle = '#000'; gx.beginPath()
-        gx.roundRect(H1.x - H1.w / 2, H1.y - H1.h / 2, H1.w, H1.h, H1.r); gx.roundRect(H1.x - 118, H1.tagY - 25.5, 236, 51, 8); gx.fill()
-        gx.globalCompositeOperation = 'source-over'
-      }
+      if (t < BREAK) { gx.globalCompositeOperation = 'destination-in'; gx.drawImage(cv, 0, 0); gx.globalCompositeOperation = 'source-over' }
     },
-    fxStart: BREAK - 0.01, fxEnd: 5.6,
+    fxStart: BREAK - 0.01, fxEnd: 5.4,
     fx(ctx, t) {
       ctx.save(); ctx.imageSmoothingEnabled = false
       const dt = t - BREAK + 1 / 60, tick = Math.round(t * 30) >> 1
@@ -353,13 +362,13 @@ export default async function build(stage) {
 
 // ── sound: glitch tick burst, boom + bell chord + glitter on the break, a whoosh per dealt card, bell on the caption
 export const cues = [
-  ['tick', 3.6, 0.13],
-  ['whoosh', 3.6, 0.12, 0.05],
-  ['tick', 3.7, 0.1], ['tick', 3.733, 0.06],
-  ['tick', 3.767, 0.12], ['tick', 3.8, 0.14], ['tick', 3.833, 0.16], ['tick', 3.85, 0.1],
+  ['tick', 3.433, 0.13],
+  ['whoosh', 3.433, 0.12, 0.05],
+  ['tick', 3.5, 0.1], ['tick', 3.533, 0.06],
+  ['tick', 3.567, 0.12], ['tick', 3.6, 0.14], ['tick', 3.633, 0.16], ['tick', 3.65, 0.1],
   ['boom', BREAK, 0.65],
   ...[293.66, 369.99, 440, 554.37, 587.33, 739.99].map((f, i) => ['bell', +(BREAK + 0.02 + i * 0.04).toFixed(3), f, 0.06, 2.4, (i - 2.5) * 0.18]),
-  ['glitter', BREAK + 0.03, BREAK + 1.1],
+  ['glitter', +(BREAK + 0.03).toFixed(3), +(BREAK + 1.1).toFixed(3)],
   ...HAND.map((c, i) => ['whoosh', +c.td.toFixed(3), 0.34, i === 3 ? 0.11 : 0.07]),
   ...HAND.filter((_, i) => i % 2 === 0).map(c => ['tick', +(c.td + FLY - 0.05).toFixed(3), 0.03]),
   ['bell', COPY.line, 587.33, 0.05, 2.0, 0],
