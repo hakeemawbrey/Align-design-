@@ -3,6 +3,7 @@
 //   node promo/scripts/render.mjs                 → promo/out/align-promo.mp4
 //   node promo/scripts/render.mjs --stills=1,4.2  → promo/out/stills/*.png
 //   node promo/scripts/render.mjs --sheet         → contact sheet (2 fps)
+//   --film3 renders film 3 "Rigged" (promo/film3.html) → promo/out/film3/align-rigged.mp4
 //   --film2 renders film 2 "Flip it" (promo/film2.html) → promo/out/film2/align-flip-it.mp4
 //   --teaser=<id> renders a vertical teaser (promo/teaser.html?t=<id>) → promo/out/teasers/<id>.mp4
 //   --vertical renders the 9:16 (1080×1920) cut
@@ -23,11 +24,12 @@ const { chromium } = require('playwright')
 const arg = (k, d) => { const a = process.argv.find(x => x.startsWith(`--${k}=`)); return a ? a.split('=')[1] : (process.argv.includes(`--${k}`) ? true : d) }
 const TEASER = arg('teaser')
 const FILM2 = !!arg('film2')
+const FILM3 = !!arg('film3')
 const FPS = Number(arg('fps', 30)), FROM = Number(arg('from', 0)), WORKERS = Number(arg('workers', 4))
-let TO = Number(arg('to', TEASER || FILM2 ? 0 : 31.5))
+let TO = Number(arg('to', TEASER || FILM2 || FILM3 ? 0 : 31.5))
 const VERT = !!arg('vertical') || !!TEASER
 const [VW, VH] = VERT ? [1080, 1920] : [1920, 1080]
-const OUT = path.resolve(arg('out', path.join(ROOT, FILM2 ? 'promo/out/film2/align-flip-it.mp4' : TEASER ? `promo/out/teasers/${TEASER}.mp4` : VERT ? 'promo/out/align-promo-vertical.mp4' : 'promo/out/align-promo.mp4')))
+const OUT = path.resolve(arg('out', path.join(ROOT, FILM3 ? 'promo/out/film3/align-rigged.mp4' : FILM2 ? 'promo/out/film2/align-flip-it.mp4' : TEASER ? `promo/out/teasers/${TEASER}.mp4` : VERT ? 'promo/out/align-promo-vertical.mp4' : 'promo/out/align-promo.mp4')))
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.json': 'application/json' }
 const server = createServer(async (req, res) => {
@@ -36,7 +38,7 @@ const server = createServer(async (req, res) => {
   catch { res.writeHead(404); res.end() }
 }).listen(0)
 const port = server.address().port
-const URL_ = FILM2 ? `http://127.0.0.1:${port}/promo/film2.html?render` : TEASER ? `http://127.0.0.1:${port}/promo/teaser.html?render&v&t=${TEASER}` : `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
+const URL_ = FILM3 ? `http://127.0.0.1:${port}/promo/film3.html?render` : FILM2 ? `http://127.0.0.1:${port}/promo/film2.html?render` : TEASER ? `http://127.0.0.1:${port}/promo/teaser.html?render&v&t=${TEASER}` : `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
 
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--force-color-profile=srgb', '--disable-lcd-text'] }).catch(() => chromium.launch())
 async function newPage() {
@@ -53,7 +55,7 @@ async function shoot(page, t, file, type = 'jpeg') {
 }
 
 let LOOPING = false
-if (FILM2 && !TO) { const p = await newPage(); TO = await p.evaluate(() => window.DURATION); await p.close() }
+if ((FILM2 || FILM3) && !TO) { const p = await newPage(); TO = await p.evaluate(() => window.DURATION); await p.close() }
 if (TEASER) { const p = await newPage(); const info = await p.evaluate(() => ({ d: window.DURATION, l: window.LOOP })); if (!TO) TO = info.d; LOOPING = info.l; await p.close() }
 const stills = arg('stills')
 const sheet = arg('sheet')
@@ -82,7 +84,7 @@ if (stills || sheet) {
     }
   }))
   await mkdir(path.dirname(OUT), { recursive: true })
-  const audio = FILM2 ? path.join(ROOT, 'promo/out/film2/soundtrack.wav') : TEASER ? path.join(ROOT, `promo/out/teasers/${TEASER}.wav`) : path.join(ROOT, 'promo/out/soundtrack.wav')
+  const audio = FILM3 ? path.join(ROOT, 'promo/out/film3/soundtrack.wav') : FILM2 ? path.join(ROOT, 'promo/out/film2/soundtrack.wav') : TEASER ? path.join(ROOT, `promo/out/teasers/${TEASER}.wav`) : path.join(ROOT, 'promo/out/soundtrack.wav')
   const a = existsSync(audio) && !arg('mute') ? ['-i', audio] : []
   const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-framerate', String(FPS), '-i', path.join(dir, 'f%05d.jpg'), ...a,
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
