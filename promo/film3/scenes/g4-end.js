@@ -4,30 +4,31 @@
 // Then the closing line and the Align lockup (film 2 f8 recipe, retimed).
 // Timing (sound):
 //   11.20–11.38 root fades in over g3 (identical sky; g3's card is already fading) — no cards of our own
-//   11.42 "Let the stars deal." types in (19 chars × 0.025, fade 0.12 → fully typed 11.99), centred, 110px
-//   11.46–11.90 seven pixel stars are DEALT in like cards (spin + arc from an unseen dealer below the frame),
-//               landing around the line; 11.80–12.15 faint links resolve them into a constellation (≈0.24)
-//   11.84 "stars" lands → the end node flares gold (glitter + bell) · 11.98 gold glint runs through "stars"
-//   12.00–12.40 the line HOLDS alone · constellation fades 12.20 → 12.45
-//   12.40–12.75 the line rises to the top third (110 → 99px) as the lockup forms beneath it
-//   12.50–12.88 seed-of-life rings draw · chakra dots light bottom→top 12.55 + i·0.03 (→ 12.88)
-//   12.62–12.94 wordmark "Align" · 12.72–13.00 "BLIND BY DESIGN" → complete ≈13.0, held clean to 14.5
-//   13.55 one soft chakra pulse up the column · 13.70 the moon glows a touch
-//   fade to black 14.50 → 15.00 (black plate reaches 1.0 exactly at 15.0; final low boom 14.55)
+//   11.24 "Let the stars deal." types in (19 chars × 0.018, fade 0.08 → fully typed ≈11.64), centred, 128px
+//   11.28–12.03 six card-shaped glints lift off from g2's hand slots (arc x 252→1668, y≈400–500), glide in and flip
+//               over into pixel stars around the line (inside→out, every 0.09s, 0.3s each; tick on each flip);
+//               the centre slot's gold card (11.24) flips as "stars" lands ≈11.54 → flare (glitter + bell);
+//               11.68 gold glint runs through "stars" · 11.72–12.08 faint links → constellation, fades 12.06 → 12.25
+//   11.64–12.20 the line HOLDS alone, fully typed (≈0.56s)
+//   12.20–12.55 the line rises to y≈230 (stays 128px) as the lockup forms beneath it
+//   12.30–12.68 seed-of-life rings draw · chakra dots light bottom→top 12.35 + i·0.03 (→ 12.68)
+//   12.42–12.74 wordmark "Align" · 12.52–12.80 "BLIND BY DESIGN" → complete ≈12.8, held clean to 14.7
+//   13.35 one soft chakra pulse up the column · 13.50 the moon glows a touch
+//   fade to black 14.70 → 15.00 (black plate reaches 1.0 exactly at 15.0, last frame black; final low boom 14.75)
 import { clamp, lerp, prog, ease, tw, rng, mix, el, C } from '../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../src/scenes/common.js'
 import { drawSky3, drawGrain, grainOpacity, moonPose3, skyCam3, buildStarSprite, layerCanvas } from '../sky.js'
 
 const T0 = 11.2, T1 = 15.01, T_END = 15.0
-const T_TYPE = 11.42, PER = 0.025, FADE = 0.12
-const T_DEAL = 11.46, DEAL_STEP = 0.062, DEAL_DUR = 0.36
-const CON_LINK0 = 11.8, CON_LINK1 = 12.15, CON_OUT = 12.2, CON_A = 0.24
-const T_RISE = 12.4, T_RINGS = 12.5, T_DOTS = 12.55, T_WORD = 12.62, T_SUB = 12.72
-const T_PULSE = 13.55, T_MOON = 13.7, T_OUT = 14.5
+const T_TYPE = 11.24, PER = 0.018, FADE = 0.08
+const T_DEAL = 11.28, DEAL_STEP = 0.09, DEAL_DUR = 0.3, FLIP0 = 0.62   // card glint flips into a star over p FLIP0→1
+const CON_LINK0 = 11.72, CON_LINK1 = 12.08, CON_OUT = 12.06, CON_A = 0.24
+const T_RISE = 12.2, T_RINGS = 12.3, T_DOTS = 12.35, T_WORD = 12.42, T_SUB = 12.52
+const T_PULSE = 13.35, T_MOON = 13.5, T_OUT = 14.7
 const T_HOLD = T_RINGS + 0.45
 const LINE = 'Let the stars deal.'
 const STARS0 = 8, STARS1 = 12                                  // "stars" char indices
-const T_FLARE = T_TYPE + STARS1 * PER + FADE                    // "stars" fully typed (≈11.84)
+const T_FLARE = T_TYPE + STARS1 * PER + FADE                    // "stars" fully typed (≈11.54)
 const T_GLINT = T_FLARE + 0.14                                  // gold glint through "stars"
 const canvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c }
 
@@ -46,8 +47,8 @@ function drawPixelStar(ctx, cx, cy, px, kind, color, centre, a) {
 }
 
 // ── layout (1920×1080): line rises to y≈250; lockup block beneath
-const LINE_Y0 = H / 2, LINE_Y1 = 250, LINE_FS = 110, LINE_S1 = 0.9    // 99px after the rise
-const MARK = 250, MARK_CY = 492, WORD_TOP = 632, WORD_FS = 118, SUB_TOP = 806, SUB_FS = 30
+const LINE_Y0 = H / 2, LINE_Y1 = 230, LINE_FS = 128, LINE_S1 = 1.0    // stays 128px after the rise
+const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 821, SUB_FS = 30
 
 export default async function build(stage) {
   const root = fill(stage, { background: C.void, opacity: 0 })
@@ -74,15 +75,30 @@ export default async function build(stage) {
     PIX.push({ x, y, px: pr() < 0.3 ? 4 : 3, col: PIXC[Math.floor(pr() * PIXC.length)], ph: pr() * 6.28, sp: 2 + pr() * 3, kind: Math.floor(pr() * 4), t0: T0 + 0.2 + pr() * 0.8 })
   }
 
-  // ── dealt constellation: 7 pixel stars thrown in from an unseen dealer below centre, landing around the line band
-  //    (text ≈ y 480–600), then linked left→right; the last one sits just past "stars" and flares gold.
-  const DEALER = { x: W / 2, y: H + 80 }
+  // ── dealt constellation: 7 card-shaped glints lift off from where g2's hand of dealt cards sat (the fanned arc
+  //    x 252→1668, y≈400–500), glide in toward the line as if dealt by an unseen hand, and flip over into pixel stars
+  //    around the line band; then they are linked left→right. The centre (Juniper's) slot holds the gold one, which
+  //    flips exactly as "stars" lands and flares. Deal order inside→out, alternating, like g2's hand.
+  const SLOT = k => ({ x: 960 + k * 236, y: 400 + k * k * 11, rot: k * 0.085 })
   const NODES = [
-    { x: 470, y: 420 }, { x: 640, y: 655 }, { x: 830, y: 395 }, { x: 1080, y: 668 },
-    { x: 1290, y: 410 }, { x: 1470, y: 640 },
-  ].map((n, i) => ({ ...n, kind: i % 2 ? 2 : 1, col: ['#ffecc8', '#c9a6ff', '#ffecc8', '#ff8fb1', '#ffecc8', '#c9a6ff'][i], t: T_DEAL + i * DEAL_STEP, spin: (i % 2 ? -1 : 1) * (1.4 + 0.3 * i) }))
-  const GOLD = { x: 1150, y: 445, kind: 0, col: '#f2c75c', t: T_FLARE - 0.3, spin: 2.2, gold: true }   // over "stars"; x refined on first update
+    { x: 470, y: 420, k: -3, o: 5 }, { x: 640, y: 655, k: -2, o: 3 }, { x: 830, y: 395, k: -1, o: 1 }, { x: 1080, y: 668, k: 1, o: 0 },
+    { x: 1290, y: 410, k: 2, o: 2 }, { x: 1470, y: 640, k: 3, o: 4 },
+  ].map((n, i) => ({ ...n, s: SLOT(n.k), kind: i % 2 ? 2 : 1, col: ['#ffecc8', '#c9a6ff', '#ffecc8', '#ff8fb1', '#ffecc8', '#c9a6ff'][i], t: T_DEAL + n.o * DEAL_STEP, spin: n.k < 0 ? -1 : 1 }))
+  const GOLD = { x: 1150, y: 445, s: SLOT(0), kind: 0, col: '#f2c75c', t: T_FLARE - DEAL_DUR, spin: 1, gold: true }   // over "stars"; x refined on first update
   const CHAIN = [NODES[0], NODES[1], NODES[2], GOLD, NODES[4], NODES[5], NODES[3]]
+  // a small card back: hairline bone frame, faint fill, inner border, a gold edge glint that sweeps as it travels
+  const CW = 30, CH = 46
+  function drawCard(ctx, sheen, gold, a) {
+    ctx.globalAlpha = a
+    ctx.beginPath(); ctx.roundRect(-CW / 2, -CH / 2, CW, CH, 5)
+    ctx.fillStyle = gold ? 'rgba(242,199,92,0.22)' : 'rgba(201,166,255,0.16)'; ctx.fill()
+    ctx.lineWidth = 1.6; ctx.strokeStyle = gold ? 'rgba(255,226,160,0.95)' : 'rgba(255,240,214,0.9)'; ctx.stroke()
+    ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(255,240,214,0.35)'; ctx.beginPath(); ctx.roundRect(-CW / 2 + 5, -CH / 2 + 5, CW - 10, CH - 10, 2); ctx.stroke()
+    const g = ctx.createLinearGradient(-CW, -CH, CW, CH), m = clamp(sheen, 0.08, 0.92)
+    g.addColorStop(m - 0.08, 'rgba(255,236,190,0)'); g.addColorStop(m, 'rgba(255,236,190,0.75)'); g.addColorStop(m + 0.08, 'rgba(255,236,190,0)')
+    ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(-CW / 2, -CH / 2, CW, CH, 5); ctx.fill()
+    ctx.globalAlpha = 1
+  }
   let measured = false
 
   // ── closing line (per-char spans)
@@ -151,48 +167,58 @@ export default async function build(stage) {
       }
       const conOut = 1 - ease.inOutQuad(prog(t, CON_OUT, T_RISE + 0.05))
       const conK = CON_A * conOut
-      const pos = n => {   // dealt along an arc from the dealer, spinning like a thrown card, settles with a tiny overshoot
-        const p = prog(t, n.t, n.t + DEAL_DUR), e = ease.outCubic(p)
-        const cx = lerp(DEALER.x, n.x, e), cy = lerp(DEALER.y, n.y, e) - Math.sin(Math.PI * p) * 120
-        return { x: cx + driftX, y: cy + driftY, p, rot: (1 - e) * n.spin * Math.PI }
+      const pos = n => {   // glides from its g2 slot to its mark (soft lift), turning upright, then flips over into a star
+        const p = prog(t, n.t, n.t + DEAL_DUR), e = ease.inOutCubic(p)
+        const cx = lerp(n.s.x, n.x, e), cy = lerp(n.s.y, n.y, e) - Math.sin(Math.PI * p) * 36
+        const f = prog(p, FLIP0, 1)                          // flip phase: card face-down → edge-on (0.5) → star
+        return { x: cx + driftX, y: cy + driftY, p, f, rot: lerp(n.s.rot, 0, e) + (1 - e) * n.spin * 0.35, sx: Math.abs(Math.cos(Math.PI * f)) }
+      }
+      const dealt = (n, q, a, drawStar) => {   // card glint in flight, a soft flash at edge-on, then the star
+        const flash = Math.exp(-Math.pow((q.f - 0.5) / 0.16, 2)) * (q.p < 1 ? 1 : 0)
+        if (flash > 0.02) {
+          bx.globalCompositeOperation = 'lighter'; bx.globalAlpha = a * flash * 0.7
+          bx.drawImage(spriteS, q.x - 34, q.y - 34, 68, 68)
+          bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
+        }
+        bx.save(); bx.translate(q.x, q.y); bx.rotate(q.rot); bx.scale(Math.max(0.04, q.sx), 1)
+        // a card crossing the type band dims so it reads as passing behind the line
+        const behind = 1 - 0.75 * clamp(1 - Math.abs(q.y - LINE_Y0 + 8) / 80) * clamp((q.x - 520) / 40) * clamp((1400 - q.x) / 40)
+        if (q.f < 0.5) drawCard(bx, q.p / FLIP0, !!n.gold, a * behind * ease.outQuad(Math.min(1, q.p * 4)))
+        else { bx.imageSmoothingEnabled = false; drawStar(); bx.imageSmoothingEnabled = true }
+        bx.restore()
       }
       if (conK > 0.003) {
         bx.save(); bx.lineCap = 'round'; bx.lineWidth = 2; bx.strokeStyle = 'rgb(255,236,205)'
         for (let i = 0; i + 1 < CHAIN.length; i++) {
           const a = CHAIN[i], b = CHAIN[i + 1]
           const s0 = lerp(CON_LINK0, CON_LINK1, i / (CHAIN.length - 1)), s1 = lerp(CON_LINK0, CON_LINK1, (i + 1) / (CHAIN.length - 1))
-          const p = ease.inOutQuad(prog(t, Math.max(s0, a.t + DEAL_DUR, b.t + DEAL_DUR - 0.1), Math.max(s1, b.t + DEAL_DUR)))
+          const l0 = Math.max(s0, a.t + DEAL_DUR, b.t + DEAL_DUR - 0.1), l1 = Math.max(s1, b.t + DEAL_DUR, l0 + 0.1)   // link only between landed stars
+          const p = ease.inOutQuad(prog(t, l0, l1))
           if (p <= 0) continue
           bx.globalAlpha = conK
           bx.beginPath(); bx.moveTo(a.x + driftX, a.y + driftY); bx.lineTo(lerp(a.x, b.x, p) + driftX, lerp(a.y, b.y, p) + driftY); bx.stroke()
         }
         bx.restore()
       }
-      bx.imageSmoothingEnabled = false
       NODES.forEach((n, j) => {
         const q = pos(n)
         if (q.p <= 0 || conOut <= 0.003) return
-        const a = Math.min(1, CON_A * 2.6) * ease.outQuad(Math.min(1, q.p * 3)) * conOut
+        const a = conOut, sa = Math.min(1, CON_A * 2.6) * conOut
         const blink = ((fr >> 1) + j) & 3
-        bx.save(); bx.translate(q.x, q.y); bx.rotate(q.rot)
-        drawPixelStar(bx, 0, 0, q.p < 1 ? 4 : 3, blink === 0 && q.p >= 1 ? 2 : n.kind, n.col, '#fff3e0', a)
-        bx.restore()
+        dealt(n, q, a, () => drawPixelStar(bx, 0, 0, q.p < 1 ? 4 : 3, blink === 0 && q.p >= 1 ? 2 : n.kind, n.col, '#fff3e0', sa))
       })
-      bx.imageSmoothingEnabled = true
-      // the gold node: dealt last, flares as "stars" lands, settles and leaves with the constellation
+      // the gold node: centre slot, flips into a star exactly as "stars" lands, flares, settles, leaves with the constellation
       {
         const q = pos(GOLD)
         const fl = tw(t, [[T_FLARE - 0.03, 0], [T_FLARE + 0.08, 1, ease.outQuad], [T_FLARE + 0.6, 0.35, ease.inOutQuad]])
-        const a = ease.outQuad(Math.min(1, q.p * 3)) * conOut * (0.6 + 0.4 * fl)
+        const a = conOut * (0.6 + 0.4 * fl)
         if (q.p > 0 && a > 0.003) {
-          bx.globalCompositeOperation = 'lighter'; bx.globalAlpha = a * fl * 0.8
-          bx.drawImage(spriteS, q.x - 40 - 30 * fl, q.y - 40 - 30 * fl, 80 + 60 * fl, 80 + 60 * fl)
-          bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
-          bx.imageSmoothingEnabled = false
-          bx.save(); bx.translate(q.x, q.y); bx.rotate(q.rot)
-          drawPixelStar(bx, 0, 0, fl > 0.6 ? 5 : 4, 0, '#f2c75c', '#fff6dc', a)
-          bx.restore()
-          bx.imageSmoothingEnabled = true
+          if (fl > 0.003) {
+            bx.globalCompositeOperation = 'lighter'; bx.globalAlpha = a * fl * 0.8
+            bx.drawImage(spriteS, q.x - 40 - 30 * fl, q.y - 40 - 30 * fl, 80 + 60 * fl, 80 + 60 * fl)
+            bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
+          }
+          dealt(GOLD, q, conOut, () => drawPixelStar(bx, 0, 0, fl > 0.6 ? 5 : 4, 0, '#f2c75c', '#fff6dc', a))
         }
       }
 
@@ -249,7 +275,7 @@ export default async function build(stage) {
 export const cues = [
   ...[...LINE].map((ch, i) => ch === ' ' ? null : ['tick', T_TYPE + i * PER, 0.022]).filter(Boolean),   // typing
   ['bell', T_TYPE + 0.02, 587.33, 0.04, 2.4, 0],                 // the line arrives (D5)
-  ...[0, 1, 2, 3, 4, 5].map(i => ['tick', T_DEAL + i * DEAL_STEP + DEAL_DUR * 0.85, 0.012]),   // stars land like dealt cards
+  ...[0, 1, 2, 3, 4, 5].map(i => ['tick', T_DEAL + i * DEAL_STEP + DEAL_DUR * (1 + FLIP0) / 2, 0.012]),   // each card flips over into a star
   ['glitter', T_FLARE - 0.02, T_GLINT + 0.4],                    // gold node flares, glint runs through "stars"
   ['bell', T_FLARE, 1760, 0.024, 1.4, 0.3],                      // bell on "stars"
   ['whoosh', T_RISE - 0.02, 0.5, 0.08],                          // line rises, rings draw
