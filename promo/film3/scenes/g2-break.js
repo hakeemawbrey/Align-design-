@@ -288,7 +288,10 @@ export default async function build(stage) {
           const y = Math.floor(r() * H), h = 4 + Math.floor(Math.pow(r(), 2) * 90), sh = Math.round((r() - 0.5) * 220 * g)
           const leak = fr >= LEAK_FR && r() < 0.35 + 0.3 * g
           if (leak) { cx.drawImage(skyC, 0, y, W, h, sh, y, W, h); continue }
-          cx.clearRect(0, y, W, h); cx.drawImage(tmp, 0, y, W, h, sh, y, W, h)
+          // g1 still holds its intact H1 card underneath until 3.70: keep the torn band dark over the card area
+          cx.clearRect(0, y, W, h); const y0 = Math.max(y, H1.y - H1.h / 2 - 30), y1 = Math.min(y + h, H1.tagY + 40)
+          if (y1 > y0) { cx.fillStyle = '#0b0d11'; cx.fillRect(H1.x - H1.w / 2 - 30, y0, H1.w + 60, y1 - y0) }
+          cx.drawImage(tmp, 0, y, W, h, sh, y, W, h)
         }
         // block noise
         if (g > 0.5) for (let i = 0; i < 6; i++) {
