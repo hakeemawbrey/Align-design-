@@ -147,7 +147,7 @@ export default async function build(stage) {
         measured = true
         const sp = chars.slice(STARS0, STARS1 + 1)
         const l = sp[0].offsetLeft, r = sp[sp.length - 1].offsetLeft + sp[sp.length - 1].offsetWidth
-        GOLD.x = (l + r) / 2 + 24   // offsetLeft is relative to lineBox (full-width, left 0); GOLD.y = LINE_Y0 - LINE_FS * 0.55 - 34
+        GOLD.x = (l + r) / 2 + 24; GOLD.y = LINE_Y0 - LINE_FS * 0.55 - 34   // offsetLeft is relative to lineBox (full-width, left 0)
       }
       const conOut = 1 - ease.inOutQuad(prog(t, CON_OUT, T_RISE + 0.05))
       const conK = CON_A * conOut
