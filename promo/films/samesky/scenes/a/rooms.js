@@ -32,7 +32,7 @@ export function makeRoom(parent, o) {
   const room = el('div', { position: 'absolute', left: 0, top: 0, width: IW + 'px', height: IH + 'px', transformOrigin: '0 0', background: o.warm ? '#1b1020' : '#0d0c22', isolation: 'isolate' }, box)
   const photoWrap = el('div', { position: 'absolute', inset: 0, overflow: 'hidden', ...(o.mask ? { maskImage: o.mask, WebkitMaskImage: o.mask } : {}) }, room)
   const photo = img(photoWrap, o.src, { left: 0, top: 0, width: IW + 'px', height: IH + 'px', objectFit: 'cover', objectPosition: o.pos, transformOrigin: '50% 38%',
-    filter: o.warm ? 'saturate(0.35) sepia(0.2) brightness(0.98) contrast(1.4)' : 'grayscale(1) brightness(0.9) contrast(1.6)' })
+    filter: o.warm ? 'saturate(0.35) sepia(0.2) brightness(0.98) contrast(1.15)' : 'grayscale(1) brightness(0.9) contrast(1.6)' })
   // grade: multiply a tint over the (monochrome) photo; the aura behind them becomes a dim lit wall
   el('div', { position: 'absolute', inset: 0, mixBlendMode: 'multiply', background: o.warm
     ? 'linear-gradient(180deg, rgb(255,226,210) 0%, rgb(240,196,182) 100%)'

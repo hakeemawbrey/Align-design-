@@ -76,7 +76,7 @@ export const SCENES = [async (stage) => {
   const skyC = canvas(), sx = skyC.getContext('2d')
   const cityC = canvas(), cx = cityC.getContext('2d')
   const rooms = el('div', { position: 'absolute', inset: 0 }, root)
-  const roomA = makeRoom(rooms, { src: IMG + 'juniper.jpg', pos: '48% 34%', zoom: 1.5, mask: 'radial-gradient(36% 40% at 52% 56%, #000 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,0.25) 80%, rgba(0,0,0,0.12) 100%)', warm: true, phoneSide: 'r', seed: 11, cards: [PEOPLE[3], PEOPLE[8], PEOPLE[5], PEOPLE[1], PEOPLE[6]] })
+  const roomA = makeRoom(rooms, { src: IMG + 'juniper.jpg', pos: '48% 28%', zoom: 1.15, mask: 'radial-gradient(40% 44% at 50% 50%, #000 0%, #000 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0.12) 100%)', warm: true, phoneSide: 'r', seed: 11, cards: [PEOPLE[3], PEOPLE[8], PEOPLE[5], PEOPLE[1], PEOPLE[6]] })
   const roomB = makeRoom(rooms, { src: IMG + 'people/p6.jpg', pos: '55% 22%', zoom: 1.3, mirror: true, warm: false, phoneSide: 'l', seed: 23, cards: [PEOPLE[2], PEOPLE[11], PEOPLE[4], PEOPLE[0], PEOPLE[6]] })
   const fxC = canvas(), fx = fxC.getContext('2d')     // hero glints, over the rooms
   const grainC = canvas({ mixBlendMode: 'overlay', opacity: GRAIN_OPACITY, pointerEvents: 'none' }), gx = grainC.getContext('2d')

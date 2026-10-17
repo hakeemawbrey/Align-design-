@@ -8,7 +8,7 @@ const R = 1.5                                // bake resolution (layer px per ba
 
 // ── layers far → near: depth factor, base line, vertical extent, silhouette colour, haze
 export const LAYERS = [
-  { id: 'far', f: 0.30, base: 812, y0: 520, y1: 900, body: [70, 56, 128], haze: [96, 74, 158], hazeA: 0.6, hazeH: 150 },
+  { id: 'far', f: 0.30, base: 812, y0: 520, y1: 900, body: [56, 49, 86], haze: [78, 66, 112], hazeA: 0.6, hazeH: 150 },
   { id: 'mid', f: 0.55, base: 850, y0: 380, y1: 940, body: [50, 40, 104], haze: [84, 62, 146], hazeA: 0.45, hazeH: 300 },
   { id: 'down', f: 0.75, base: 910, y0: 230, y1: 1000, body: [15, 10, 36], haze: [62, 46, 118], hazeA: 0.42, hazeH: 300 },
   { id: 'near', f: 0.92, base: 1010, y0: 690, y1: 1190, body: [11, 8, 30], haze: [52, 38, 100], hazeA: 0.36, hazeH: 200 },
@@ -59,13 +59,17 @@ function shape(b) {
     case 'chamfer': return [[L, base], [L, top], [Rr - w * 0.34, top], [Rr, top + w * 0.34], [Rr, base]]
     case 'spire': { const y1 = top + w * 0.85; return [[L, base], [L, y1], [L + w * 0.18, y1 - w * 0.12], [cx, top], [Rr - w * 0.18, y1 - w * 0.12], [Rr, y1], [Rr, base]] }
     case 'needle': { const y1 = top + w * 1.6; return [[L, base], [L, y1], [cx - w * 0.2, top + w * 0.35], [cx, top], [cx + w * 0.2, top + w * 0.35], [Rr, y1], [Rr, base]] }
-    case 'mast': return [[L, base], [L, top + 46], [cx - 1.2, top + 46], [cx - 1.2, top], [cx + 1.2, top], [cx + 1.2, top + 46], [Rr, top + 46], [Rr, base]]
+    case 'mast': { const a = b.ant ?? 46; return [[L, base], [L, top + a], [cx - 1.2, top + a], [cx - 1.2, top], [cx + 1.2, top], [cx + 1.2, top + a], [Rr, top + a], [Rr, base]] }
+    case 'step2': { const h1 = w * 0.42, h2 = w * 0.36, i1 = w * 0.12, i2 = w * 0.27
+      return [[L, base], [L, top + h1 + h2], [L + i1, top + h1 + h2], [L + i1, top + h2], [L + i2, top + h2], [L + i2, top], [Rr - i2, top], [Rr - i2, top + h2], [Rr - i1, top + h2], [Rr - i1, top + h1 + h2], [Rr, top + h1 + h2], [Rr, base]] }
+    case 'crown': { const h = w * 0.22, i = w * 0.18
+      return [[L, base], [L, top + h], [L + i, top + h], [L + i + w * 0.06, top], [Rr - i - w * 0.06, top], [Rr - i, top + h], [Rr, top + h], [Rr, base]] }
     default: return [[L, base], [L, top], [Rr, top], [Rr, base]]
   }
 }
 
 // ── generation (pure)
-const STYLE_W = [['flat', 0.3], ['step', 0.2], ['chamfer', 0.15], ['slant', 0.15], ['mast', 0.1], ['spire', 0.1]]
+const STYLE_W = [['flat', 0.2], ['step', 0.2], ['step2', 0.15], ['mast', 0.12], ['spire', 0.08], ['slant', 0.1], ['crown', 0.05], ['chamfer', 0.1]]
 function pickStyle(r) {
   let u = r()
   for (const [st, w] of STYLE_W) { if (u < w) return st === 'slant' ? (r() < 0.5 ? 'slantL' : 'slantR') : st; u -= w }
@@ -73,7 +77,7 @@ function pickStyle(r) {
 }
 function genLayer(li) {
   const L = LAYERS[li], r = rng(7100 + li * 131), out = []
-  const add = (o) => { const b = { base: L.base + 40, ...o }; b.poly = shape(b); out.push(b); return b }
+  const add = (o) => { const b = { base: L.base + 40, ...o }; if (b.style === 'mast' && b.ant == null) { b.ant = 30 + r() * 50; b.beacon = li >= 1 } if (b.style === 'spire' && li >= 1) b.beacon = true; if (b.style === 'crown') b.crown = true; b.poly = shape(b); out.push(b); return b }
   if (L.id === 'far') {
     for (let x = X0; x < X1;) { const w = 18 + r() * 60; add({ cx: x + w / 2, w, top: L.base - 26 - Math.pow(r(), 1.6) * 120, style: r() < 0.12 ? 'step' : 'flat', cell: [3.2, 4.4], win: [1.6, 2.2], lit: 0.12 + r() * 0.1 }); x += w * (0.55 + r() * 0.6) }
     // a second, taller sprinkle (distant towers of the Medical Center / Galleria)
@@ -183,14 +187,14 @@ export const CITY = (() => {
   const rr = rng(4242), dyn = []
   const byLayer = [[], [], [], []]
   layers.forEach((L, li) => { if (li <= 3) L.blds.forEach(b => b.wins.forEach(w => { if (w.lit && !w.hero && w.x > 60 && w.x < 1860) byLayer[li].push(w) })) })
-  const QUOTA = [200, 140, 470, 90]            // far, mid, down, near (900)
+  const QUOTA = [1250, 1450, 1150, 999]           // far, mid, down, near (~70% of the lit windows in frame)
   const picked = new Set()
   byLayer.forEach((arr, li) => {
     const want = Math.min(QUOTA[li], arr.length)
     const shuffled = arr.map(w => [rr(), w]).sort((a, b) => a[0] - b[0]).slice(0, want)
     for (const [, w] of shuffled) {
       picked.add(w); w.lit = false
-      dyn.push({ li, w, off: 9.2 + 2.2 * clamp((w.x - 120) / 1680) + rr() * 0.25, phone: li >= 2 && rr() < 0.08 })
+      dyn.push({ li, w, off: 9.8 + 1.7 * clamp((w.x - 120) / 1680) + rr() * 0.2, phone: li >= 2 && rr() < 0.08 })
     }
   })
   dyn.sort((a, b) => a.off - b.off)
@@ -200,7 +204,7 @@ export const CITY = (() => {
   while (flick.length < 22 && pool.length) {
     const [li, w] = pool.splice(Math.floor(rr() * pool.length), 1)[0]
     picked.add(w); w.lit = false
-    flick.push({ li, w, seed: flick.length * 13 + 5, sp: 3 + rr() * 5, off: 9.2 + 2.2 * clamp((w.x - 120) / 1680) + rr() * 0.25 })
+    flick.push({ li, w, seed: flick.length * 13 + 5, sp: 3 + rr() * 5, off: 9.8 + 1.7 * clamp((w.x - 120) / 1680) + rr() * 0.2 })
   }
   // aviation beacons
   const beacons = []
@@ -231,7 +235,8 @@ export function bakeCity() {
       g.beginPath(); b.poly.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath()
       // body: a faint vertical gradient (a touch lighter up top, where the sky glow catches it)
       const bg = g.createLinearGradient(0, b.top, 0, L.base)
-      bg.addColorStop(0, rgba(L.body.map(v => v * 1.18), 1)); bg.addColorStop(1, rgba(L.body, 1))
+      bg.addColorStop(0, rgba(L.body.map(v => v * 0.82), 1)); bg.addColorStop(0.2, rgba(L.body, 1))
+      bg.addColorStop(1, rgba(L.body.map((v, i) => v + (L.haze[i] - v) * 0.1), 1))
       g.fillStyle = bg; g.fill()
       g.save(); g.clip()
       // facade: subtle vertical mullion stripes on the downtown towers
@@ -263,6 +268,17 @@ export function bakeCity() {
         g.fillStyle = cg; g.fillRect(b.cx - b.w, b.top - 4, b.w * 2, b.w * 1.2)
       }
       g.restore()
+      if (L.li < 4) {
+        g.strokeStyle = 'rgba(206,196,255,0.15)'; g.lineWidth = 1
+        const P = b.poly
+        for (let i = 0; i < P.length; i++) {
+          const [x0, y0] = P[i], [x1, y1] = P[(i + 1) % P.length], dx = x1 - x0, dy = y1 - y0, len = Math.hypot(dx, dy)
+          if (len < 0.5) continue
+          const nx = dy / len, ny = -dx / len          // outward normal (clockwise in y-down)
+          if (nx * 0.6 - ny * 0.8 < 0.35 || y0 >= L.base - 2 || y1 >= L.base - 2) continue
+          g.beginPath(); g.moveTo(x0, y0); g.lineTo(x1, y1); g.stroke()
+        }
+      }
     }
     // haze: the lower part of every building sinks into the layer's haze
     g.globalCompositeOperation = 'source-atop'
