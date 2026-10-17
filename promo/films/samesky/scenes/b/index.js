@@ -17,9 +17,9 @@
 //   22.30–23.80  phone push-in 1.0 → 1.35 (origin 50% 22%) so "Venus rules you both." reads · fades 24.20–24.70
 //   24.60–25.45  tilt back down: downtown peeks in, the two hero windows (from half A) light warm near the bottom
 //   25.12 "Look up. They might be, too." types (0.042/char → ≈26.3); the moon glow swells on "Look up."
-//   25.50–26.25  a faint 1px line rises from each window to the moon · skyline fades 27.30–27.60
-//   27.62–27.97  line rises · 27.74 rings · 27.80 chakra dots · 27.94 "Align" · 28.06 "BLIND BY DESIGN" (≈28.35)
-//   28.90 soft chakra pulse · fade to black 29.60 → 29.95 (last frame 29.967 is black)
+//   25.50–26.25  a faint 1px line rises from each window to the moon · skyline fades 27.70–28.10
+//   27.88–28.23  line rises · 27.98 rings · 28.03 chakra dots · 28.10 "Align" · 28.20 "BLIND BY DESIGN" (≈28.5)
+//   29.00 soft chakra pulse · fade to black 29.60 → 29.95 (last frame 29.967 is black)
 import { clamp, lerp, prog, ease, tw, rng, mix, el, C } from '../../../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill, img } from '../../../../src/scenes/common.js'
 import { drawSky, drawGrain, grainOpacity, buildStarSprite, layerCanvas } from '../../../sky.js'
@@ -100,13 +100,13 @@ const LINE1_TXT = 'Align reads your sky.'
 // ── end
 const END = 'Look up. They might be, too.'
 const T_TYPE = 25.12, PER = 0.042, FADE = 0.1
-const T_RISE = 27.62, T_RINGS = 27.74, T_DOTS = 27.8, T_WORD = 27.94, T_SUB = 28.06
-const T_PULSE = 28.9, T_OUT = 29.6, T_BLACK = 29.95
+const T_RISE = 27.88, T_RINGS = 27.98, T_DOTS = 28.03, T_WORD = 28.1, T_SUB = 28.2
+const T_PULSE = 29.0, T_OUT = 29.6, T_BLACK = 29.95
 const T_HOLD = T_RINGS + 0.45
 const LINE_Y0 = H / 2, LINE_Y1 = 230, LINE_FS = 112
 const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 821, SUB_FS = 30
 // the city returns under the end line: tilt down until downtown peeks in and the two hero windows sit near the bottom
-const CITY_IN0 = 24.6, CITY_IN1 = 25.45, CITY_OUT0 = 27.3, CITY_OUT1 = 27.6, MOONLINE0 = 25.5, MOONLINE1 = 26.25
+const CITY_IN0 = 24.6, CITY_IN1 = 25.45, CITY_OUT0 = 27.7, CITY_OUT1 = 28.1, MOONLINE0 = 25.5, MOONLINE1 = 26.25
 const CZ = 0.72, CF = [960, 660], CPAN = 26
 const TILT_END = (() => { const T = camLayer({ Z: CZ, F: CF, pan: CPAN, tilt: 0 }, 0.75), k = 1 + 0.14 * 0.75; return (1005 - CITY.HA.y * T.s - T.oy) / k })()
 const cityK = t => ease.outCubic(prog(t, CITY_IN0, CITY_IN1))
@@ -148,6 +148,7 @@ async function build(stage) {
 
   // ── chart wheel (drawn live: rings draw, ticks, planets pop)
   function drawChart(c, t, { x, y, R, a, pulse = 0, fly = 0 }) {
+    const lab = 1 - prog(fly, 0, 0.28)   // sign text and inner disc leave first, before the phone arrives
     if (a <= 0.003) return
     const p = prog(t, c.t, c.t + 1.1)
     if (p <= 0) return
@@ -161,7 +162,7 @@ async function build(stage) {
     bx.globalCompositeOperation = 'lighter'; bx.fillStyle = g; bx.fillRect(x - R * 2, y - R * 2, R * 4, R * 4)
     bx.globalCompositeOperation = 'source-over'
     // dark inner disc
-    bx.globalAlpha = a * (1 - fly) * ease.inOutQuad(prog(p, 0.3, 0.8))
+    bx.globalAlpha = a * lab * ease.inOutQuad(prog(p, 0.3, 0.8))
     g = bx.createRadialGradient(x, y, 0, x, y, R * 0.46)
     g.addColorStop(0, 'rgba(11,6,32,0.78)'); g.addColorStop(0.8, 'rgba(11,6,32,0.62)'); g.addColorStop(1, 'rgba(11,6,32,0)')
     bx.fillStyle = g; bx.beginPath(); bx.arc(x, y, R * 0.47, 0, Math.PI * 2); bx.fill()
@@ -212,12 +213,12 @@ async function build(stage) {
     // centre: the sign
     const tp = ease.outQuad(prog(p, 0.45, 0.85))
     if (tp > 0 && R > 60) {
-      bx.globalAlpha = a * tp * (1 - fly); bx.fillStyle = '#efe6d6'; bx.textAlign = 'center'; bx.textBaseline = 'middle'
+      bx.globalAlpha = a * tp * lab; bx.fillStyle = '#efe6d6'; bx.textAlign = 'center'; bx.textBaseline = 'middle'
       bx.font = `italic ${Math.round(R * 0.25)}px 'EB Garamond', Georgia, serif`
       bx.fillText(c.sign, x, y + R * 0.03)
       bx.font = `${Math.round(R * 0.075)}px 'Space Mono', monospace`
       bx.fillStyle = `rgb(${c.aura})`
-      bx.globalAlpha = a * tp * 0.9 * (1 - fly)
+      bx.globalAlpha = a * tp * 0.9 * lab
       bx.fillText(c.sub.split('').join(String.fromCharCode(8202)), x, y + R * 0.2)
     }
     bx.restore()
@@ -289,7 +290,7 @@ async function build(stage) {
       // ── sky + the one moon (brightens on "Look up.")
       drawSky(bx, t, { zoom: 1, dx: c.dx, dy: c.dy, dim: 1, moon: { x: m.x, y: m.y, r: m.r, phase: 0.12, alpha: 1 } })
       {
-        const mb = tw(t, [[T_TYPE + 0.05, 0], [T_TYPE + 0.45, 1, ease.outQuad], [26.6, 1], [27.7, 0.5, ease.inOutQuad], [T_PULSE, 0.5], [T_PULSE + 0.3, 0.8, ease.outQuad], [29.4, 0.45, ease.inOutQuad]])
+        const mb = tw(t, [[T_TYPE + 0.05, 0], [T_TYPE + 0.45, 1, ease.outQuad], [27.0, 1], [28.1, 0.5, ease.inOutQuad], [T_PULSE, 0.5], [T_PULSE + 0.3, 0.8, ease.outQuad], [29.4, 0.45, ease.inOutQuad]])
         if (mb > 0.003) {
           const g = bx.createRadialGradient(m.x, m.y, m.r * 0.8, m.x, m.y, m.r * 5)
           g.addColorStop(0, `rgba(255,240,214,${0.45 * mb})`); g.addColorStop(0.4, `rgba(255,240,214,${0.12 * mb})`); g.addColorStop(1, 'rgba(255,240,214,0)')
@@ -331,22 +332,38 @@ async function build(stage) {
         const ml = ease.inOutQuad(prog(t, MOONLINE0, MOONLINE1))
         ;[[CITY.HA, 0.62], [CITY.HB, 0.38]].forEach(([w, fx], k) => {
           const cx = (w.x + w.w / 2) * T2.s + T2.ox, cy = (w.y + w.h / 2) * T2.s + T2.oy
-          const ww = 15, hh = 18, br = 0.9 + 0.1 * Math.sin(t * 2.2 + k * 1.7)
-          const G = 70
+          const ww = 22, hh = 26, br = 0.9 + 0.1 * Math.sin(t * 2.2 + k * 1.7)
+          const G = 110
           const g = bx.createRadialGradient(cx, cy, 0, cx, cy, G)
           g.addColorStop(0, `rgba(255,198,132,${0.42 * lit * br * ca})`); g.addColorStop(0.3, `rgba(255,198,132,${0.12 * lit * ca})`); g.addColorStop(1, 'rgba(255,198,132,0)')
           bx.globalAlpha = 1; bx.fillStyle = g; bx.fillRect(cx - G, cy - G, G * 2, G * 2)
           bx.globalAlpha = ca * lit; bx.fillStyle = `rgb(255,${Math.round(206 * br)},146)`; bx.fillRect(cx - ww / 2, cy - hh / 2, ww, hh)
-          // a small figure, head tipped up
-          bx.fillStyle = 'rgba(16,10,32,0.85)'
+          // a figure at the glass, head tipped up toward the moon (which is up and to the right)
+          bx.fillStyle = 'rgba(14,8,30,0.92)'
           const px = cx - ww / 2 + ww * fx, py = cy + hh / 2
-          bx.beginPath(); bx.arc(px + (k ? 0.6 : -0.6), py - hh * 0.6, ww * 0.16, 0, Math.PI * 2); bx.fill()
-          bx.beginPath(); bx.ellipse(px, py, ww * 0.3, hh * 0.32, 0, Math.PI, 0); bx.fill()
+          bx.beginPath(); bx.ellipse(px + 1.2, py - hh * 0.58, ww * 0.15, ww * 0.17, -0.35, 0, Math.PI * 2); bx.fill()   // head
+          bx.fillRect(px - ww * 0.06, py - hh * 0.46, ww * 0.12, hh * 0.12)                                                // neck
+          bx.beginPath(); bx.ellipse(px, py, ww * 0.34, hh * 0.36, 0, Math.PI, 0); bx.fill()                              // shoulders
+          // frame: a thin dark sill + top edge so it reads as a window
+          bx.fillStyle = 'rgba(14,8,30,0.6)'; bx.fillRect(cx - ww / 2 - 2, cy + hh / 2, ww + 4, 2); bx.fillRect(cx - ww / 2, cy - hh / 2, ww, 1.5)
           // the line up to the moon
           if (ml > 0) {
             const x0 = cx, y0 = cy - hh / 2 - 3, x1 = lerp(x0, m.x, ml), y1 = lerp(y0, m.y + m.r * 0.9, ml)
-            bx.globalAlpha = 0.35 * ca; bx.strokeStyle = '#ffecd2'; bx.lineWidth = 1
-            bx.beginPath(); bx.moveTo(x0, y0); bx.lineTo(x1, y1); bx.stroke()
+            // drawn twice (soft glow + core), in short pieces that fade out within 40px of the end line's box
+            const N = 90, mask = (x, y) => { const dx = Math.max(370 - x, 0, x - 1550), dy = Math.max(470 - y, 0, y - 620); return clamp(Math.hypot(dx, dy) / 40) }
+            bx.strokeStyle = '#ffecd2'; bx.lineCap = 'round'
+            for (const [lw, la] of [[7, 0.12], [2, 0.75]]) {
+              bx.lineWidth = lw
+              for (let i = 0; i < N; i++) {
+                const a0 = i / N, a1 = (i + 1) / N, mx = lerp(x0, x1, (a0 + a1) / 2), my = lerp(y0, y1, (a0 + a1) / 2)
+                const mk = mask(mx, my) * (0.55 + 0.45 * a1)
+                if (mk <= 0.01) continue
+                bx.globalAlpha = la * ca * mk
+                bx.beginPath(); bx.moveTo(lerp(x0, x1, a0), lerp(y0, y1, a0)); bx.lineTo(lerp(x0, x1, a1), lerp(y0, y1, a1)); bx.stroke()
+              }
+            }
+            // a soft glint at the head as it climbs
+            if (ml < 1) { bx.globalCompositeOperation = 'lighter'; bx.globalAlpha = 0.7 * ca * mask(x1, y1); bx.drawImage(spriteS, x1 - 26, y1 - 26, 52, 52); bx.globalCompositeOperation = 'source-over' }
           }
         })
         bx.restore()
@@ -464,7 +481,7 @@ async function build(stage) {
       l1.style.transform = `translateY(${lerp(6, 0, ease.outCubic(prog(t, CAP1.type, CAP1.type + 0.8))) - 8 * prog(t, CAP1.out, CAP1.gone)}px)`
 
       // ── phone
-      phone.style.opacity = String(ease.outQuad(prog(t, PHONE_IN, PHONE_IN + 0.35)) * (1 - pout))
+      phone.style.opacity = String(ease.outQuad(prog(t, PHONE_IN, PHONE_IN + 0.07)) * (1 - pout))
       const push = lerp(1, 1.35, ease.inOutCubic(prog(t, PUSH0, PUSH1)))
       phone.style.transform = `translateY(${phoneDY}px) rotateX(${lerp(14, 0, pin)}deg) rotateY(${lerp(-10, -3, pin) + 2 * prog(t, PHONE_LAND, PHONE_OUT)}deg) scale(${push * lerp(1, 0.95, pout)})`
       pAura.style.opacity = String(ease.inOutQuad(prog(t, 20.9, 21.6)) * (0.8 + 0.2 * Math.sin((t - 21) * 1.7)) * (1 - pout))
