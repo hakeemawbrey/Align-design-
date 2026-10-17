@@ -8,11 +8,11 @@ const R = 1.5                                // bake resolution (layer px per ba
 
 // ── layers far → near: depth factor, base line, vertical extent, silhouette colour, haze
 export const LAYERS = [
-  { id: 'far', f: 0.30, base: 812, y0: 600, y1: 900, body: [42, 32, 86], haze: [96, 74, 158], hazeA: 0.8, hazeH: 150 },
-  { id: 'mid', f: 0.55, base: 850, y0: 380, y1: 940, body: [36, 27, 76], haze: [84, 62, 146], hazeA: 0.66, hazeH: 300 },
+  { id: 'far', f: 0.30, base: 812, y0: 520, y1: 900, body: [70, 56, 128], haze: [96, 74, 158], hazeA: 0.6, hazeH: 150 },
+  { id: 'mid', f: 0.55, base: 850, y0: 380, y1: 940, body: [50, 40, 104], haze: [84, 62, 146], hazeA: 0.45, hazeH: 300 },
   { id: 'down', f: 0.75, base: 910, y0: 230, y1: 1000, body: [15, 10, 36], haze: [62, 46, 118], hazeA: 0.42, hazeH: 300 },
   { id: 'near', f: 0.92, base: 1010, y0: 690, y1: 1190, body: [11, 8, 30], haze: [52, 38, 100], hazeA: 0.36, hazeH: 200 },
-  { id: 'fg', f: 1.08, base: 1120, y0: 900, y1: 1240, body: [5, 3, 14], haze: [40, 28, 80], hazeA: 0.0, hazeH: 1 },
+  { id: 'fg', f: 1.08, base: 1160, y0: 940, y1: 1380, body: [9, 6, 22], haze: [40, 28, 80], hazeA: 0.0, hazeH: 1 },
 ]
 export const FREEWAY_F = 0.97
 
@@ -65,23 +65,29 @@ function shape(b) {
 }
 
 // ── generation (pure)
+const STYLE_W = [['flat', 0.3], ['step', 0.2], ['chamfer', 0.15], ['slant', 0.15], ['mast', 0.1], ['spire', 0.1]]
+function pickStyle(r) {
+  let u = r()
+  for (const [st, w] of STYLE_W) { if (u < w) return st === 'slant' ? (r() < 0.5 ? 'slantL' : 'slantR') : st; u -= w }
+  return 'flat'
+}
 function genLayer(li) {
   const L = LAYERS[li], r = rng(7100 + li * 131), out = []
   const add = (o) => { const b = { base: L.base + 40, ...o }; b.poly = shape(b); out.push(b); return b }
   if (L.id === 'far') {
-    for (let x = X0; x < X1;) { const w = 18 + r() * 60; add({ cx: x + w / 2, w, top: L.base - 26 - Math.pow(r(), 1.6) * 120, style: r() < 0.12 ? 'step' : 'flat', cell: [3.2, 4.4], win: [1.6, 2.2], lit: 0.34 + r() * 0.2 }); x += w * (0.55 + r() * 0.6) }
+    for (let x = X0; x < X1;) { const w = 18 + r() * 60; add({ cx: x + w / 2, w, top: L.base - 26 - Math.pow(r(), 1.6) * 120, style: r() < 0.12 ? 'step' : 'flat', cell: [3.2, 4.4], win: [1.6, 2.2], lit: 0.12 + r() * 0.1 }); x += w * (0.55 + r() * 0.6) }
     // a second, taller sprinkle (distant towers of the Medical Center / Galleria)
-    for (let i = 0; i < 26; i++) { const w = 16 + r() * 30; add({ cx: X0 + r() * (X1 - X0), w, top: L.base - 120 - r() * 110, style: r() < 0.3 ? 'mast' : 'flat', cell: [3.4, 4.6], win: [1.7, 2.3], lit: 0.3 + r() * 0.2 }) }
+    for (let i = 0; i < 26; i++) { const w = 16 + r() * 30; add({ cx: X0 + r() * (X1 - X0), w, top: L.base - 120 - r() * 110, style: ['mast', 'spire', 'needle', 'flat', 'chamfer'][Math.floor(r() * 5)], cell: [3.4, 4.6], win: [1.7, 2.3], lit: 0.12 + r() * 0.1 }) }
   } else if (L.id === 'mid') {
     for (let x = X0; x < X1;) { const w = 34 + r() * 70; const tall = r() < 0.35
-      add({ cx: x + w / 2, w, top: L.base - 90 - (tall ? 180 + r() * 170 : r() * 140), style: ['flat', 'flat', 'step', 'mast', 'chamfer'][Math.floor(r() * 5)], cell: [5, 6.4], win: [2.2, 3], lit: 0.12 + r() * 0.18 })
+      add({ cx: x + w / 2, w, top: L.base - 90 - (tall ? 180 + r() * 170 : r() * 140), style: pickStyle(r), cell: [5, 6.4], win: [2.2, 3], lit: 0.2 + r() * 0.2 })
       x += w * (0.7 + r() * 0.9) }
     add({ cx: 1930, w: 58, top: 392, style: 'needle', cell: [5, 6.4], win: [2.4, 3.2], lit: 0.3, beacon: true })   // Williams Tower, far right
   } else if (L.id === 'down') {
     // filler first (behind), landmarks + the two hero towers on top
     for (let x = X0; x < X1;) { const w = 60 + r() * 90
       const inCluster = x > 560 && x < 1340
-      add({ cx: x + w / 2, w, top: (inCluster ? 470 : 600) + r() * 180, style: ['flat', 'step', 'flat', 'mast'][Math.floor(r() * 4)], cell: [7, 8.6], win: [3.2, 4.4], lit: 0.1 + r() * 0.18 })
+      add({ cx: x + w / 2, w, top: (inCluster ? 470 : 600) + r() * 180, style: pickStyle(r), cell: [7, 8.6], win: [3.2, 4.4], lit: 0.1 + r() * 0.18 })
       x += w * (0.8 + r() * 0.8) }
     const LM = [
       { cx: 668, w: 84, top: 382, style: 'pyramid' },          // Heritage Plaza
@@ -173,35 +179,36 @@ export const CITY = (() => {
     best.lit = false; best.hero = true; return best
   }
   const HA = pickHero(heroA, 362, 656), HB = pickHero(heroB, 1580, 622)
-  // windows that go dark one by one (10.4–12.1) and a few that keep a cold phone flicker
+  // the wave: ~900 windows go dark left → right (9.2–11.65); the two hero windows are the last two lit
   const rr = rng(4242), dyn = []
-  const pool = []
-  layers.forEach((L, li) => { if (li >= 1 && li <= 3) L.blds.forEach(b => b.wins.forEach(w => { if (w.lit && !w.hero) pool.push([li, w]) })) })
-  const N = 150
+  const byLayer = [[], [], [], []]
+  layers.forEach((L, li) => { if (li <= 3) L.blds.forEach(b => b.wins.forEach(w => { if (w.lit && !w.hero && w.x > 60 && w.x < 1860) byLayer[li].push(w) })) })
+  const QUOTA = [200, 140, 470, 90]            // far, mid, down, near (900)
   const picked = new Set()
-  while (dyn.length < N) {
-    const [li, w] = pool[Math.floor(rr() * pool.length)]
-    if (picked.has(w)) continue
-    // keep them inside the visible frame at the 10–12 camera and below the moon
-    if (w.x < 120 || w.x > 1800 || w.y < 330) continue
-    picked.add(w); w.lit = false
-    const k = dyn.length / N
-    dyn.push({ li, w, off: 10.5 + 1.55 * Math.pow(k, 0.8) + rr() * 0.04, phone: rr() < 0.14 })
-  }
+  byLayer.forEach((arr, li) => {
+    const want = Math.min(QUOTA[li], arr.length)
+    const shuffled = arr.map(w => [rr(), w]).sort((a, b) => a[0] - b[0]).slice(0, want)
+    for (const [, w] of shuffled) {
+      picked.add(w); w.lit = false
+      dyn.push({ li, w, off: 9.2 + 2.2 * clamp((w.x - 120) / 1680) + rr() * 0.25, phone: li >= 2 && rr() < 0.08 })
+    }
+  })
   dyn.sort((a, b) => a.off - b.off)
-  // living windows: a few TV/phone flickers through the whole half
+  // living windows: a few TV/phone flickers until the wave reaches them
   const flick = []
-  while (flick.length < 22) {
-    const [li, w] = pool[Math.floor(rr() * pool.length)]
-    if (picked.has(w)) continue
+  const pool = byLayer.slice(1).flatMap((arr, k) => arr.map(w => [k + 1, w])).filter(([, w]) => !picked.has(w))
+  while (flick.length < 22 && pool.length) {
+    const [li, w] = pool.splice(Math.floor(rr() * pool.length), 1)[0]
     picked.add(w); w.lit = false
-    flick.push({ li, w, seed: flick.length * 13 + 5, sp: 3 + rr() * 5 })
+    flick.push({ li, w, seed: flick.length * 13 + 5, sp: 3 + rr() * 5, off: 9.2 + 2.2 * clamp((w.x - 120) / 1680) + rr() * 0.25 })
   }
   // aviation beacons
   const beacons = []
   layers.forEach((L, li) => L.blds.forEach(b => { if (b.beacon || (b.style === 'mast' && li >= 1)) beacons.push({ li, x: b.cx, y: b.top - (b.style === 'needle' ? 4 : 2), ph: (b.cx * 0.013) % 1 }) }))
   return { layers, HA, HB, dyn, flick, beacons }
 })()
+/** hero windows (layer index 2, 'down'): base-px rects; half b can place them with camLayer(cam, LAYERS[2].f) */
+export const HERO = { layer: 2, A: CITY.HA, B: CITY.HB }
 
 // ── camera: { Z, F:[x,y], pan, tilt } → per-layer affine (screen = base * s + o)
 export function camLayer(cam, f) {
@@ -236,7 +243,7 @@ export function bakeCity() {
       for (const w of b.wins) {
         if (w.lit) {
           if (L.li >= 2) { g.shadowColor = rgba(w.col, 0.55 * w.a); g.shadowBlur = L.li === 2 ? 7 : 12 }
-          g.fillStyle = rgba(w.col, w.a * [0.5, 0.62, 0.9, 0.95, 1][L.li])
+          g.fillStyle = rgba(w.col, w.a * [0.6, 0.8, 0.9, 0.95, 1][L.li])
           g.fillRect(w.x, w.y, w.w, w.h)
           g.shadowBlur = 0; g.shadowColor = 'rgba(0,0,0,0)'
           if (w.person) {  // one person in the window: a tiny head-and-shoulders silhouette
@@ -277,16 +284,16 @@ export function drawLayer(ctx, cam, L, alpha = 1) {
 }
 
 // ── freeway (dynamic): an elevated deck with sodium lamps and long-exposure light trails
-const FW_Y = (x) => 968 + 22 * Math.sin((x + 300) / 620) - 0.012 * (x - 960)
+const FW_Y = (x) => 930 + 60 * Math.sin((x + 300) / 760) - 0.01 * (x - 960)
 export function drawFreeway(ctx, cam, t) {
   const T = camLayer(cam, FREEWAY_F)
   const S = (x, y) => [x * T.s + T.ox, y * T.s + T.oy]
   ctx.save()
   // deck
   ctx.beginPath()
-  for (let x = X0; x <= X1; x += 20) { const [sx, sy] = S(x, FW_Y(x) - 7); x === X0 ? ctx.moveTo(sx, sy) : ctx.lineTo(sx, sy) }
-  for (let x = X1; x >= X0; x -= 20) { const [sx, sy] = S(x, FW_Y(x) + 9); ctx.lineTo(sx, sy) }
-  ctx.closePath(); ctx.fillStyle = '#0a0720'; ctx.fill()
+  for (let x = X0; x <= X1; x += 20) { const [sx, sy] = S(x, FW_Y(x) - 9); x === X0 ? ctx.moveTo(sx, sy) : ctx.lineTo(sx, sy) }
+  for (let x = X1; x >= X0; x -= 20) { const [sx, sy] = S(x, FW_Y(x) + 12); ctx.lineTo(sx, sy) }
+  ctx.closePath(); ctx.fillStyle = '#0d0926'; ctx.fill()
   // piers
   ctx.fillStyle = '#0a0720'
   for (let x = X0 + 40; x < X1; x += 150) { const [sx, sy] = S(x, FW_Y(x)); ctx.fillRect(sx - 4 * T.s, sy, 8 * T.s, 140 * T.s) }
@@ -297,25 +304,25 @@ export function drawFreeway(ctx, cam, t) {
   // trails: lanes of headlights (warm white, toward camera-left) and taillights (red, right)
   ctx.globalCompositeOperation = 'lighter'
   const lanes = [
-    { dy: -3.2, dir: -1, col: [255, 232, 196], sp: 330, n: 16, seed: 1 },
-    { dy: -0.6, dir: -1, col: [255, 222, 180], sp: 300, n: 12, seed: 2 },
-    { dy: 2.4, dir: 1, col: [255, 60, 70], sp: 280, n: 14, seed: 3 },
-    { dy: 5.0, dir: 1, col: [255, 84, 76], sp: 250, n: 11, seed: 4 },
+    { dy: -4.5, dir: -1, col: [255, 232, 196], sp: 330, n: 28, seed: 1 },
+    { dy: -1.2, dir: -1, col: [255, 222, 180], sp: 300, n: 28, seed: 2 },
+    { dy: 2.6, dir: 1, col: [255, 60, 70], sp: 280, n: 28, seed: 3 },
+    { dy: 6.0, dir: 1, col: [255, 84, 76], sp: 250, n: 28, seed: 4 },
   ]
   const span = X1 - X0
   for (const ln of lanes) {
     const r = rng(600 + ln.seed)
     for (let i = 0; i < ln.n; i++) {
-      const o = r() * span, len = 70 + r() * 140, a = 0.35 + r() * 0.45, spd = ln.sp * (0.85 + r() * 0.3)
+      const o = r() * span, len = 36 + r() * 80, a = (0.35 + r() * 0.45) * (ln.dir > 0 ? 0.75 : 1), spd = ln.sp * (0.85 + r() * 0.3)
       let hx = ((o + ln.dir * t * spd) % span + span) % span + X0
       // a streak from (hx) back along the travel direction
       const steps = 8
       for (let s = 0; s < steps; s++) {
         const x0 = hx - ln.dir * len * s / steps, x1 = hx - ln.dir * len * (s + 1) / steps
         const [ax, ay] = S(x0, FW_Y(x0) + ln.dy), [bx, by] = S(x1, FW_Y(x1) + ln.dy)
-        ctx.strokeStyle = rgba(ln.col, a * (1 - s / steps) * 0.8)
-        ctx.lineWidth = (1.6 - s * 0.1) * T.s
-        ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke()
+        ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by)
+        ctx.strokeStyle = rgba(ln.col, a * (1 - s / steps) * 0.07); ctx.lineWidth = 7 * T.s; ctx.stroke()
+        ctx.strokeStyle = rgba(ln.col, a * (1 - s / steps) * 0.85); ctx.lineWidth = (3.2 - s * 0.2) * T.s; ctx.stroke()
       }
       const [hx2, hy2] = S(hx, FW_Y(hx) + ln.dy)
       const gl = ctx.createRadialGradient(hx2, hy2, 0, hx2, hy2, 9 * T.s)
@@ -339,3 +346,27 @@ export function winRect(cam, li, w) {
   return { x: w.x * T.s + T.ox, y: w.y * T.s + T.oy, w: w.w * T.s, h: w.h * T.s, s: T.s }
 }
 export { rgba, WARM, COLD, WHITE, clamp, lerp }
+
+/** street lamps along the foreground tree line (fg layer space) */
+export function drawStreetLamps(ctx, cam, t) {
+  const L = CITY.layers[4], T = camLayer(cam, L.f)
+  ctx.save(); ctx.globalCompositeOperation = 'lighter'
+  for (let x = X0 + 30; x < X1; x += 140) {
+    const y = L.base - 74 + 6 * Math.sin(x * 0.05)
+    const sx = x * T.s + T.ox, sy = y * T.s + T.oy, R = 46 * T.s
+    if (sx < -60 || sx > 1980 || sy > 1140) continue
+    const g = ctx.createRadialGradient(sx, sy, 0, sx, sy, R)
+    g.addColorStop(0, 'rgba(255,196,130,0.5)'); g.addColorStop(0.12, 'rgba(255,170,100,0.22)'); g.addColorStop(1, 'rgba(255,150,90,0)')
+    ctx.fillStyle = g; ctx.fillRect(sx - R, sy - R, R * 2, R * 2)
+    // pool of light on the canopy below
+    const g2 = ctx.createRadialGradient(sx, sy + 40 * T.s, 0, sx, sy + 40 * T.s, 90 * T.s)
+    g2.addColorStop(0, 'rgba(255,170,110,0.09)'); g2.addColorStop(1, 'rgba(255,170,110,0)')
+    ctx.fillStyle = g2; ctx.fillRect(sx - 90 * T.s, sy - 50 * T.s, 180 * T.s, 180 * T.s)
+  }
+  ctx.restore()
+  ctx.fillStyle = '#07051a'
+  for (let x = X0 + 30; x < X1; x += 140) {
+    const y = L.base - 74 + 6 * Math.sin(x * 0.05), sx = x * T.s + T.ox, sy = y * T.s + T.oy
+    ctx.fillRect(sx - 1.2 * T.s, sy + 2 * T.s, 2.4 * T.s, 90 * T.s)
+  }
+}
