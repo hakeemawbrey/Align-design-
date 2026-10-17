@@ -1,127 +1,134 @@
 # Align: deck style brief (hand this to a new chat)
 
-I'm making a **simple 4-slide deck for Align**. It should look like Align's promo films: grainy deep-space nebula, pixel-art stars, one crescent moon, and elegant bone-coloured serif type. Use this file as the style guide. The four `ref-*.jpg` stills that come with it are real frames from the films; match them.
+I'm making a **simple 4-slide deck for Align**. It must look like Align's first 30-second widescreen promo film. That film is the house style, and every slide should feel like a paused frame from it.
 
-**What Align is:** an astrology blind-dating app. You see someone's chart, words and dealbreakers first; their face comes last, only when you both align. The cards are tarot-like "blind cards" with an aura veil instead of a photo. Taglines used so far: "Blind by design.", "Take a chance on the stars.", "Let the stars deal.", "You deserve to be known.", "Be chosen."
-**Theme of the latest films:** people are lonelier than ever, and dating made people disposable. Align answers that with care: real questions (the Talk Deck), dealbreakers said first, and both people choosing.
+Use this file as the style guide. The nine `ref-*.jpg` images attached with it are real frames from that film; match them closely.
+
+**What Align is:** an astrology blind-dating app.
+- **Blind first:** you see someone's chart and words first, on a blind "mystery card" with an aura glow instead of a photo.
+- **Face last:** the face is revealed only when you both align.
+- **Then you talk:** you talk through tarot-like talk cards.
+
+**Lines used in the film:**
+- "What if the stars chose who you meet?"
+- "{ introducing *Align* }"
+- "The stars are giving you a chance."
+- "The stars aligned."
+- "Reading your sky"
+- "every night / a new deck"
+- "come *Align*"
+- "Dating, dealt by the stars"
+- "It's mutual. *You both aligned.*"
+- "Then you talk in cards."
+- End tagline: "PUT YOUR FAITH IN THE STARS"
 
 ---
 
 ## 1. The look in one paragraph
-Each slide is a **16:9 frame of night sky**:
-- **Sky:** deep indigo, never flat black, with soft violet and dusty-rose nebula clouds and dark dust lanes.
-- **Grain:** heavy, visible film grain over everything.
-- **Stars:** scattered tiny stars, plus a few chunky 7×7 pixel-art "plus" stars.
-- **Moon:** ONE thin waxing crescent, always upper-right.
-- **Type:** big italic serif statements in warm bone colour, with small spaced-out monospace eyebrows above them.
-- **Accents:** gold only as small glints; chakra rainbow colours only for the 7-dot column in the logo or aura glows.
+Each slide is a **soft, glowing night sky**:
+- **Background:** a smooth vertical gradient from deep indigo to plum, with large blurred colour "nebula" glows (violet, rose-pink, plum, a touch of amber) melting into each other. It is calm and luminous, not busy.
+- **Grain:** a light, fine film grain over everything.
+- **Stars:** a scatter of tiny white stars, plus a few sparkle-shaped stars (four-point twinkles and pixel "plus" stars).
+- **Type:** clean, centred and confident.
+  - Statements are in **Inter, medium weight, bone white**.
+  - Brand words and titles are in **EB Garamond italic**.
+  - Tiny **Space Mono uppercase** labels with wide letter-spacing.
+- **Moon:** moon motifs are everywhere, as in the film: a small moon-phase badge in the top-left corner, and a row of moon phases on the closing slide.
 
-Calm, cinematic, intimate. Plain warm voice, never hype.
+Premium, dreamy, minimal, with plenty of empty space.
 
 ## 2. Colour tokens
 ```css
 :root{
-  --void:   #0b0620;  /* base background */
-  --canvas: #140a2e;  /* panels / phone bg */
-  --raised: #1e1240;
-  --glass:  #34235f;
-  --bone:   #efe6d6;  /* ALL main type */
-  --label2: #b3a6c4;  /* secondary text */
-  --label3: #7d6f94;  /* tertiary */
-  --violet: #9a7be0;  /* nebula / accents */
-  --plum:   #b45cff;
-  --rub:    #e8628a;  /* pink: "Rub" / nebula rose */
-  --spark:  #7fd8b0;  /* mint: "Spark" */
-  --gold:   #f2c75c;  /* "Align" / glints only */
-  --amber:  #f29a4a;
+  --void:#0b0620;  --canvas:#140a2e; --raised:#1e1240; --glass:#34235f;
+  --bone:#efe6d6;               /* all main type */
+  --label2:#b3a6c4; --label3:#7d6f94;
+  --violet:#9a7be0; --plum:#b45cff;
+  --rub:#e8628a;                /* rose pink: also the italic "Align" accent word */
+  --spark:#7fd8b0; --gold:#f2c75c; --amber:#f29a4a;
 }
-/* chakra column (logo, aura, lock): red→violet */
+/* chakra column (logo mark, alignment): bottom→top */
 --c1:#ff2d3a; --c2:#ff7a2e; --c3:#ffd23f; --c4:#5fdc54; --c5:#2fd0e6; --c6:#4a72ff; --c7:#b45cff;
 ```
 
-## 3. Type
-| Role | Font | Style | Size (on a 1920×1080 slide) |
+## 3. Background "space moods" (the exact recipe from the film)
+A vertical base gradient, then 4–5 big soft radial glows blended with `mix-blend-mode: screen`. Each glow is a circle whose colour fades out from its centre: full alpha at 0%, 42% of that alpha at 45%, and 0 at 100%. Glow positions are fractions of the slide; radii are in px on a 1920×1080 slide.
+
+| mood | base top → bottom | glows: rgb @ (x, y), radius, alpha |
+|---|---|---|
+| **rose** (default) | #0b0620 → #1c0d3a | 154,123,224 @ (.22,.30) r900 a.55 · 232,98,138 @ (.80,.72) r820 a.42 · 180,92,255 @ (.62,.18) r640 a.30 · 242,154,74 @ (.10,.95) r560 a.16 |
+| **teal** | #080522 → #120a33 | 86,196,214 @ (.18,.78) r760 a.30 · 154,123,224 @ (.70,.28) r900 a.48 · 127,216,176 @ (.88,.85) r600 a.20 · 74,114,255 @ (.40,.10) r700 a.28 |
+| **amber** | #0c0620 → #1e0e36 | 180,92,255 @ (.25,.25) r860 a.45 · 242,154,74 @ (.82,.80) r760 a.30 · 242,199,92 @ (.55,1.0) r620 a.16 · 232,98,138 @ (.92,.20) r600 a.26 |
+| **aurora** | #0d0626 → #24103f | 232,98,138 @ (.55,.70) r980 a.62 · 180,92,255 @ (.20,.35) r900 a.58 · 154,123,224 @ (.85,.30) r800 a.50 · 242,154,74 @ (.18,.98) r640 a.30 · 255,143,177 @ (.78,.95) r560 a.34 |
+
+On top of the glows:
+- **Vignette:** `radial-gradient(120% 95% at 50% 50%, rgba(11,6,32,0) 55%, rgba(11,6,32,.6) 100%)`.
+- **Stars:** ~160 tiny white dots, 1–2px at 30–90% opacity, plus 4–8 sparkle stars.
+- **Grain:** a grey noise tile (an SVG feTurbulence works) with `mix-blend-mode: overlay` at **opacity ~0.22**. That is light, unlike the heavy grain of the later films.
+
+Use a different mood per slide for variety; rose and aurora are the signature ones.
+- **Opening slide (optional):** it may instead use a darker, grainier deep-space nebula with a thin crescent moon upper-right (see ref-1).
+- **Aurora mood:** can carry a soft pink aurora band across the lower third, with thin vertical light rays (ref-7, ref-8).
+
+## 4. Type
+| Role | Font | Style | Size on 1920×1080 |
 |---|---|---|---|
-| Statement / headline | **EB Garamond** | *italic* 400, colour --bone, letter-spacing -0.01em, line-height 1.05 | 96–136px |
-| Body (sparingly) | EB Garamond | regular or italic, --bone at 85% | 36–48px |
-| Eyebrow / label | **Space Mono** | 400, UPPERCASE, letter-spacing 0.35–0.5em, --bone at 85%, or --gold for highlights | 26–36px |
-| UI-ish words (phone UI, chips) | Inter | 400–500 | 24–32px |
+| Statement / hook | **Inter** | 500, bone, centred, sentence case | 68–84px |
+| Light statement / supporting words | Inter | 200, bone | 56px |
+| Titles and brand words | **EB Garamond** | *italic* 400, bone. The brand word *Align* inside a sans line is italic Garamond in **--rub pink** | 78–108px |
+| Eyebrow / label / status | **Space Mono** | 400, UPPERCASE, letter-spacing 0.3–0.5em, bone at ~70% | 26–30px |
+| Big input or UI text | Inter | 400, bone | 84px+ |
 
-Google Fonts: `EB+Garamond:ital@0;1` and `Space+Mono` and `Inter`.
-**Rules:**
-- One statement per slide, at most 2 lines.
-- An eyebrow sits ~24px above the statement.
-- Lots of empty sky around the type.
-- Type always sits ABOVE the grain, so it reads crisp and solid.
+Google Fonts: `Inter:wght@200;400;500`, `EB+Garamond:ital@0;1`, `Space+Mono`.
 
-## 4. Background recipe (CSS approximation)
-```css
-.slide{ position:relative; aspect-ratio:16/9; overflow:hidden; background:var(--void); color:var(--bone); }
-/* nebula clouds */
-.slide::before{ content:""; position:absolute; inset:-10%;
-  background:
-    radial-gradient(40% 30% at 30% 25%, rgba(154,123,224,.55), transparent 70%),
-    radial-gradient(35% 28% at 70% 70%, rgba(232,98,138,.35), transparent 70%),
-    radial-gradient(30% 25% at 85% 20%, rgba(180,92,255,.30), transparent 70%),
-    radial-gradient(50% 40% at 15% 85%, rgba(52,35,95,.70), transparent 70%),
-    radial-gradient(120% 90% at 50% 50%, #1a0f3d 0%, #0b0620 70%);
-  filter: blur(30px) saturate(1.1); }
-/* vignette */
-.vignette{ position:absolute; inset:0; background:radial-gradient(ellipse at 50% 46%, transparent 30%, rgba(11,6,32,.35) 65%, rgba(8,4,24,.85) 100%); }
-/* film grain: an SVG noise tile on top, blended */
-.grain{ position:absolute; inset:0; mix-blend-mode:overlay; opacity:.5; pointer-events:none;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
-/* text sits above .grain (z-index higher) */
-```
-For a richer nebula, paint it on a `<canvas>` with layered value noise (violet/rose/indigo), plus a dark dust lane running diagonally. Then scatter ~1,500 tiny 1px stars at 30–90% white and ~30 bigger soft stars.
-
-**Pixel-art stars:** chunky 7×7 sprites drawn as squares (X = colour, C = brighter centre). Scatter 6–12 per slide in bone, gold, pink or violet, at 14–40px.
-```
-...X...    .......    .......
-...X...    ...X...    .X...X.
-..XXX..    ..XXX..    ...X...
-XXXCXXX    .XXCXX.    ..XCX..
-..XXX..    ..XXX..    ...X...
-...X...    ...X...    .X...X.
-...X...    .......    .......
-```
-**Moon:**
-- ONE thin waxing crescent, upper-right (about x 89%, y 11%), radius ~2.7% of slide width.
-- Pale bone limb with a soft glow; the dark side is faintly visible (earthshine).
-- Never two moons.
-
-## 5. Motifs you can use
-- **Blind card:** a tall rounded card (radius ~22px, ratio ~0.63).
-  - Body: dark glass with a thin glowing rim; the colour comes from the aura.
-  - An "aura veil" photo window: a soft glowing arch of colour instead of a face.
-  - A serif italic name, e.g. "Juniper, 27".
-  - Small mono chips, e.g. "LIBRA", "AIR", "PHOTO HIDDEN UNTIL YOU BOTH ALIGN".
-- **Chakra column:** 7 glowing dots stacked vertically (colours c1→c7, red at the bottom), joined by a thin line. Used for "alignment".
-- **Constellation lines:** thin 1–2px bone lines at ~35% opacity joining pixel stars.
-- **Phone:** a dark rounded phone showing app UI. Bubbles have a gold rim and Inter text; mono labels such as "BOTH ANSWERED".
-- **Logo lockup:**
-  - The mark: seed-of-life circles with the chakra column inside.
-  - The wordmark "Align" in EB Garamond italic.
-  - "BLIND BY DESIGN" in Space Mono, widely spaced, small.
-  - Centred on the last slide.
+## 5. Signature devices (use 1–2 per slide)
+- **Corner-tick box:** four tiny solid squares (~10px, bone) marking the corners of an invisible box around a centred statement. Add faint thin arrows ← → on either side for a "slider" feel (ref-2).
+- **Curly-bracket line:** `{ introducing Align }`. The brackets and words are Inter; "Align" is pink italic Garamond.
+- **Moon-phase badge, top-left:** a small moon glyph plus a two-line Space Mono label, e.g. "FIRST QUARTER / DAY 1 OF 7", ~16px, at ~60% opacity. Change the phase on each slide (new → crescent → quarter → gibbous → full), so the deck "waxes" from slide 1 to slide 4.
+- **Moon-phase row:** 9 small circles going from new to full under the tagline on the last slide (ref-9).
+- **Mystery card:** a tall rounded card (ratio ~0.63, radius ~22px).
+  - Dark glass, with a thin glowing rim in the aura colour.
+  - The photo window is a soft glowing aura arch (pink/violet) instead of a face.
+  - Text: a Garamond italic name ("Juniper, 27"), a coloured sign word ("LIBRA"), and small mono chips.
+  - Often in front of a large pale full moon (ref-3).
+- **Chakra lock:** 7 glowing dots in a vertical column (red bottom → violet top), with concentric thin rings and light rays behind. Used for "The stars aligned."
+- **Pill input bar:** a huge rounded glass pill with Inter text and a blinking caret. Halftone dot-grid bands sit above and below (ref-4); good for "Your chart starts here".
+- **Checklist:** a Garamond italic title, then rows of small coloured square icons with Inter "Sun — Taurus" entries (ref-5).
+- **Card stack in perspective:** a receding 3D row of cards with lowercase Inter words placed around it, e.g. "every night" upper-right and "a new deck" lower-right (ref-6).
+- **Constellation of portraits:** small round glowing portrait dots joined by thin bone lines, framing a centred statement (ref-7).
+- **Phone:** a dark phone showing app UI, beside a mono eyebrow and a Garamond italic line ("IT'S MUTUAL / *You both aligned.*", ref-8).
+- **Lockup:**
+  - The seed-of-life mark with the chakra column, above "*Align*" in Garamond italic.
+  - "PUT YOUR FAITH IN THE STARS" in Space Mono, widely spaced.
+  - The moon-phase row underneath.
+  - Faint round aura portraits scattered dimly around the edges (ref-9).
 
 ## 6. Layout rules
-- Generous margins: at least 8% left and right, 10% top and bottom.
-- Statement either centred, or left-aligned at about x 10%, with a visual on the other side.
-- One idea per slide, with nothing extra.
-- Readable on a phone screen: big statements, few words.
-- No stock-photo look, no flat black, no bright white boxes, no drop-shadowed UI clutter, no gradients outside the palette.
-- Gold is a glint, not a fill.
-- Never invent statistics. If a number appears, it is a character's own phone UI (e.g. "214 MATCHES · 0 CONVERSATIONS").
+- Centre-weighted compositions, with lots of empty sky.
+- At most one statement and one visual per slide.
+- Margins of at least 8% on the sides and at least 10% top and bottom.
+- Statements are sentence case with no full stop for the sans hooks ("Dating, dealt by the stars"). Italic Garamond lines end with a full stop ("The stars aligned.").
+- No flat black, no hard white boxes, no heavy drop shadows. Gold is only a glint.
+- Never invent statistics.
+- Text must read on a phone screen.
 
-## 7. Suggested 4-slide shape (edit freely)
-1. **Hook:** eyebrow + one big statement over the sky, e.g. eyebrow "11:48 PM", statement "We've never been more connected. Or more alone."
-2. **The problem / the flip:** e.g. "Dating made people disposable." with a faded, desaturated row of swiped cards, or "What if we flipped it?"
-3. **How Align helps:** blind cards and the chakra lock, or the Talk Deck phone. Eyebrow = feature name ("THE TALK DECK", "DEALBREAKERS FIRST", "BLIND BY DESIGN"); statement = the benefit ("Chart first. Face last." / "Real questions." / "Nobody gets picked alone.").
-4. **Close:** "Take a chance on the stars." (or "Be chosen.") over the Align lockup, plus a small CTA in Space Mono if needed.
+## 7. Suggested 4-slide shape (edit to the real content)
+1. **Hook:** rose or deep-nebula mood, crescent moon, one centred Inter line, e.g. "What if the stars chose who you meet?"
+2. **Introduce or explain:** `{ introducing Align }` with corner ticks, or the mystery card in front of the moon with "*The stars aligned.*"
+3. **How it works:** the checklist ("*Reading your sky*": Sun / Moon / Rising / Dealing) or the card stack ("every night / a new deck"). Alternatively, the phone with "IT'S MUTUAL / *You both aligned.*".
+4. **Close:** the lockup with "PUT YOUR FAITH IN THE STARS" and the moon-phase row, plus an optional small mono CTA.
 
-## 8. Reference frames (attach these with this file)
-- `ref-1-statement-over-sky.jpg`: big statement over the sky, with the city and the crescent moon.
-- `ref-2-cards-and-caption.jpg`: blind cards, chakra column and caption.
-- `ref-3-phone-and-eyebrow.jpg`: the phone UI next to an eyebrow and statement.
-- `ref-4-end-lockup.jpg`: the end line and Align lockup.
+Moon badge progression across the 4 slides: new → first quarter → waxing gibbous → full.
+
+## 8. Reference frames (attach all nine with this file)
+| file | shows |
+|---|---|
+| `ref-1-hook-question.jpg` | the hook over a grainy nebula with the crescent moon |
+| `ref-2-bracket-intro.jpg` | `{ introducing Align }`, corner ticks and arrows on the rose mood |
+| `ref-3-mystery-card-moon.jpg` | the mystery card and chakra lock, with "*The stars aligned.*" |
+| `ref-4-birth-pill.jpg` | the giant pill input, halftone bands and the moon badge |
+| `ref-5-reading-checklist.jpg` | the "*Reading your sky*" checklist and a card |
+| `ref-6-deck-stack.jpg` | the perspective card stack, "every night / a new deck" |
+| `ref-7-dealt-by-the-stars.jpg` | the constellation of portraits, the aurora, and the hook line |
+| `ref-8-phone-mutual.jpg` | the phone with "IT'S MUTUAL / *You both aligned.*" |
+| `ref-9-end-lockup.jpg` | the mark, *Align*, the tagline and the moon-phase row |
