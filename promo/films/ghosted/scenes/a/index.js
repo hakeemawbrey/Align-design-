@@ -1,4 +1,5 @@
-// STUB — replaced by the half-a agent. Export SCENES (array of async build(stage) fns) and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 0, end: 15.2, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'ghosted half a'), update() {} })]
+// ghosted · half a (0–15.2): Seen → Ghosted. Again. → We made people disposable. → What if no one was? → the card back + sky (H).
+import a1, { cues as c1 } from './a1-seen.js'
+import a2, { cues as c2 } from './a2-stack.js'
+export const SCENES = [a1, a2]
+export const CUES = [...c1, ...c2]
