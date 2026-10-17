@@ -55,7 +55,7 @@ const SLOT = { x: 585 * K, y: 1605 * K, w: 593 * K }  // card-of-the-day slot on
 const BTN = { x: 114 * K, y: (2304 - 81) * K, w: 942 * K, h: 162 * K }
 const CLIP0 = 512 * K, CLIP1 = 2030 * K              // thread area between the cropped header and the input bar
 const ANCH = 452                                     // push-in anchor: phone-local y of the thread centre
-const PUSH_S = 1.45, PUSH_DX = -40
+const PUSH_S = 1.40, PUSH_DX = -40, PUSH_DY = 35
 const TCW = 132, TCY = 118                           // card in the thread: width, centre y inside the thread
 
 export function buildTalk(objs, type) {
@@ -160,7 +160,7 @@ export function buildTalk(objs, type) {
     const p = prog(t, TT.PH0, TT.PH1)
     const ex = ease.inCubic(prog(t, TT.EXIT0, TT.EXIT1))
     const push = ease.inOutCubic(prog(t, TT.PUSH0, TT.PUSH1))
-    return { x: PUSH_DX * push, y: lerp(80, 0, ease.outCubic(p)) + ex * 140, s: lerp(0.96, 1, ease.outCubic(p)) * (1 + 0.01 * prog(t, TT.PH1, TT.EXIT0)) * lerp(1, PUSH_S, push), op: ease.outQuad(prog(t, TT.PH0, TT.PH0 + 0.15)) }
+    return { x: PUSH_DX * push, y: lerp(80, 0, ease.outCubic(p)) + ex * 140 + PUSH_DY * push, s: lerp(0.96, 1, ease.outCubic(p)) * (1 + 0.01 * prog(t, TT.PH1, TT.EXIT0)) * lerp(1, PUSH_S, push), op: ease.outQuad(prog(t, TT.PH0, TT.PH0 + 0.15)) }
   }
   /** scene position of a phone-local point (the phone scales about (PW/2, ANCH)) */
   function toScene(t, lx, ly) { const P = phone(t); return { x: PX + P.x + (lx - PW / 2) * P.s, y: PY - PH / 2 + ANCH + P.y + (ly - ANCH) * P.s, s: P.s } }
