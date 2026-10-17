@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────── GHOSTED half b · THE ANSWER (15.0–26.7)
-// Starts on H exactly: the Align card back (card-back.png, PNG height 560) centred at (960,540), upright, still,
+// Starts on H exactly: the Align card back (card-back.png, BODY height 560) centred at (960,540), upright, still,
 // over the shared sky with the one moon (1716,122 r52 phase .12), grain 0.5. Cuts in opaque at 15.0 (same frame).
 //
 // Beat map (sound):
@@ -26,9 +26,8 @@ import { sky, twinkles, drawGrain, grainOpacity, getSky, layerCanvas, loadArt, d
 
 const T0 = 15.0, T1 = 26.7
 
-// ── H pose: card-back.png drawn 560 tall, PNG-centred at (960,540) → its BODY centre / height
-const S_H = 560 / ART.back.ih
-const HO = { x: 960 + ((ART.back.b[0] + ART.back.b[2]) / 2 - ART.back.iw / 2) * S_H, y: 540 + ((ART.back.b[1] + ART.back.b[3]) / 2 - ART.back.ih / 2) * S_H, h: bodyH('back') * S_H }
+// ── H pose: card-back.png with its BODY 560 tall, body centred at (960,540) (matches half a's H_CARD)
+const HO = { x: 960, y: 540, h: 560 }
 
 // ── beat 1: the deck and the deal
 const DECK = { x: 960, y: 400, h: 330 }
