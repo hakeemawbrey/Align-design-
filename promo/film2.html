@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Align — Flip it</title>
+<style>
+@font-face { font-family: 'Inter'; font-weight: 200; src: url(../app/node_modules/@fontsource/inter/files/inter-latin-200-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 300; src: url(../app/node_modules/@fontsource/inter/files/inter-latin-300-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 400; src: url(../app/node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 500; src: url(../app/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 600; src: url(../app/node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2) format('woff2'); }
+@font-face { font-family: 'EB Garamond'; font-style: italic; font-weight: 400; src: url(../app/node_modules/@fontsource/eb-garamond/files/eb-garamond-latin-400-italic.woff2) format('woff2'); }
+@font-face { font-family: 'EB Garamond'; font-style: normal; font-weight: 400; src: url(../app/node_modules/@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-weight: 400; src: url(../app/node_modules/@fontsource/space-mono/files/space-mono-latin-400-normal.woff2) format('woff2'); }
+html, body { margin: 0; background: #000; overflow: hidden; }
+#stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: #0b0620; -webkit-font-smoothing: antialiased; }
+#fx { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; z-index: 1000; }
+#hud { position: fixed; left: 8px; bottom: 8px; color: #fff; font: 12px monospace; z-index: 2000; }
+body.render #hud { display: none; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="thermal" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0.3 0.55 0.15 0 0  0.3 0.55 0.15 0 0  0.3 0.55 0.15 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.11 0.42 0.88 1 1"/>
+      <feFuncG type="table" tableValues="0.04 0.12 0.25 0.55 0.89"/>
+      <feFuncB type="table" tableValues="0.29 0.69 0.54 0.23 0.42"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+<div id="stage"><canvas id="fx" width="1920" height="1080"></canvas></div>
+<div id="hud"></div>
+<script type="module" src="film2/main.js"></script>
+</body>
+</html>
