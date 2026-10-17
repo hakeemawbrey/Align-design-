@@ -16,7 +16,7 @@ import { sky, twinkles, drawGrain, grainOpacity, layerCanvas, pocketCanvas, MOON
 
 const T0 = 26.45, T1 = 30.01, T_END = 30.0
 const T_TYPE = 26.64, PER = 0.042, FADE = 0.12
-const T_RISE = 27.85, T_RINGS = 27.95, T_DOTS = 28.0, T_WORD = 28.07, T_SUB = 28.17
+const T_RISE = 27.8, T_RINGS = 28.1, T_DOTS = 28.15, T_WORD = 28.2, T_SUB = 28.28
 const T_PULSE = 28.8, T_MOON = 28.95, T_OUT = 29.6
 const T_HOLD = T_RINGS + 0.45
 const LINE = 'Be chosen.'

@@ -135,6 +135,7 @@ export default async function build(stage) {
       const c = cam(t)
       // a hand-held breath on the close shot (sub-pixel, slow)
       const hx = (noise1(t * 0.6, 11) - 0.5) * 10, hy = (noise1(t * 0.5, 23) - 0.5) * 8
+      world.style.opacity = String(1 - ease.inQuad(prog(t, SCREEN_OFF, SCREEN_OFF + 0.22)))
       world.style.transform = `translate(${c.sx + hx}px, ${c.sy + hy}px) rotate(${c.rz}deg) scale(${c.s}) translate(${-c.fx}px, ${-c.fy}px)`
 
       // screen on (the phone is checked again) → screen off at the end
