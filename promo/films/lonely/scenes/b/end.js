@@ -14,7 +14,7 @@ import { clamp, lerp, prog, ease, tw, mix, el, C } from '../../../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../../../src/scenes/common.js'
 import { drawPixelStar, buildStarSprite } from '../../../sky.js'
 
-export const ET = { STARS0: 24.85, STARS1: 25.75, TYPE: 25.75, PER: 0.03, FADE: 0.12, HOLD_OUT: 27.45, RISE: 27.6, RINGS: 27.7, DOTS: 27.75, WORD: 27.87, SUB: 27.97, PULSE: 28.7, MOON: 28.85, OUT: 29.6, END: 29.95 }
+export const ET = { STARS0: 25.45, STARS1: 26.25, TYPE: 26.2, PER: 0.03, FADE: 0.12, HOLD_OUT: 27.6, RISE: 27.75, RINGS: 27.85, DOTS: 27.9, WORD: 28.02, SUB: 28.12, PULSE: 28.8, MOON: 28.9, OUT: 29.6, END: 29.95 }
 export const LINE = 'You deserve to be known.'
 const KNOWN0 = LINE.indexOf('known')
 export const T_FLARE = ET.TYPE + (LINE.length - 1) * ET.PER + ET.FADE
@@ -140,8 +140,8 @@ export const endCues = [
   ['bell', T_FLARE, 1174.66, 0.03, 1.8, -0.2],
   ['bell', T_FLARE + 0.03, 1479.98, 0.022, 1.6, 0.2],
   ['whoosh', ET.RISE - 0.02, 0.5, 0.08],                          // line rises, rings draw
-  ...[293.66, 369.99, 440, 554.37, 587.33, 739.99, 880].map((f, i) => ['bell', ET.DOTS + i * 0.03, f, 0.06, 2.2, (i - 3) * 0.12]),  // chakra chimes
-  ['boom', ET.WORD, 0.2],                                         // wordmark lands
+  ...[293.66, 369.99, 440, 554.37, 587.33, 739.99, 880].map((f, i) => ['bell', ET.DOTS + i * 0.03, f, 0.045, 2.2, (i - 3) * 0.12]),  // chakra chimes
+  ['boom', ET.WORD, 0.14],                                         // wordmark lands
   ['bell', ET.WORD + 0.02, 146.83, 0.05, 3.2, 0],
   ...[293.66, 369.99, 440, 587.33, 739.99, 880, 1174.66].map((f, i) => ['bell', ET.PULSE + i * 0.05, f, 0.018, 1.6, (i - 3) * 0.1]),
   ['boom', ET.OUT + 0.05, 0.3],                                   // final low boom into black

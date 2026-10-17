@@ -11,7 +11,7 @@ import { buildTalk, TT, ORG, MSGS } from './talk.js'
 import { buildEnd, ET, endCues } from './end.js'
 
 const T0 = 14.8, T1 = 30.01, T_H = 15.0
-const AU_IN = [19.7, 20.7], AU_OUT = [24.6, 25.4]
+const AU_IN = [19.7, 20.7], AU_OUT = [25.2, 26.0]
 
 // camera: still at 15.0 (half a's H), then eases into a slow drift + push-in (no velocity step)
 function drift(t) { const s = t - T_H; return s <= 0 ? 0 : s < 1 ? 0.5 * s * s : s - 0.5 }
@@ -52,7 +52,7 @@ async function build(stage) {
   // bursts: on the flip (16.40, around the card) and on the landing in the phone (20.20)
   const br = rng(2611)
   const burst = (n, d0, d1) => Array.from({ length: n }, (_, i) => ({ a: (i / n) * Math.PI * 2 + br() * 0.35, d: d0 + br() * (d1 - d0), s: br() < 0.4 ? 28 : 21, col: ['#ffe2a0', '#fff6ea', '#f2c75c', '#ffbed6'][i % 4], dl: br() * 0.08 }))
-  const B_FLIP = burst(18, 260, 420), B_LAND = burst(14, 150, 280)
+  const B_FLIP = burst(18, 260, 420), B_LAND = burst(14, 60, 170)
   let from = null
 
   return {
@@ -104,16 +104,16 @@ async function build(stage) {
         }
         px.globalAlpha = 1
       }
-      const doBurst = (B, t0, x0, y0) => B.forEach(b => {
+      const doBurst = (B, t0, x0, y0, r0 = 0) => B.forEach(b => {
         const p = prog(t, t0 + b.dl, t0 + b.dl + 0.75)
         if (p <= 0 || p >= 1) return
-        const d = ease.outCubic(p) * b.d
+        const d = r0 + ease.outCubic(p) * b.d
         px.globalAlpha = (1 - ease.inQuad(p)) * ((fr + Math.round(b.a * 10)) % 3 === 0 ? 0.6 : 1)
         drawPixelStar(px, x0 + Math.cos(b.a) * d, y0 + Math.sin(b.a) * d * 0.9, b.s, p < 0.5 ? 0 : 2, b.col)
         px.globalAlpha = 1
       })
       doBurst(B_FLIP, TT.FLASH, 600, 520)
-      { const s = talk.cardState(TT.LAND); doBurst(B_LAND, TT.LAND, s.x, s.y) }
+      { const s = talk.cardState(TT.LAND); doBurst(B_LAND, TT.LAND, s.x, s.y, 135) }
       // tiny twinkles at the phone's corners while it is up
       if (t > TT.PH1 - 0.2 && t < TT.EXIT1) {
         const a = 0.55 * ease.outQuad(prog(t, TT.PH1 - 0.2, TT.PH1 + 0.2)) * (1 - prog(t, TT.EXIT0, TT.EXIT1 - 0.1))
