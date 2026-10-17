@@ -7,8 +7,9 @@ const here = path.dirname(fileURLToPath(import.meta.url))
 const id = (process.argv.find(a => a.startsWith('--teaser=')) || '').split('=')[1]
 const film2 = process.argv.includes('--film2')
 const film3 = process.argv.includes('--film3')
-if (!id && !film2 && !film3) { console.error('usage: --teaser=<id> | --film2'); process.exit(1) }
-const T = film3 ? (await import('../film3/cues.js')).default : film2 ? (await import('../film2/cues.js')).default : (await import(`../teasers/t${id}.js`)).default
+const film = (process.argv.find(a => a.startsWith('--film=')) || '').split('=')[1]
+if (!id && !film2 && !film3 && !film) { console.error('usage: --teaser=<id> | --film2'); process.exit(1) }
+const T = film ? (await import(`../films/${film}/cues.js`)).default : film3 ? (await import('../film3/cues.js')).default : film2 ? (await import('../film2/cues.js')).default : (await import(`../teasers/t${id}.js`)).default
 if (T.loop) {
   // seamless loop: two cycles scheduled, second one kept
   const L = T.duration, m = createMix(2 * L)
@@ -34,6 +35,6 @@ if (T.endTagAt != null) {
   ;[293.66, 369.99, 440, 554.37, 587.33, 739.99, 880].forEach((f, i) => m.bell(s + 0.35 + i * 0.06, f, 0.06, 2.2, (i - 3) * 0.12))
   ;[261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25, 783.99].forEach((f, i) => m.bell(s + 1.1 + i * 0.06, f, 0.02, 1.2, (i - 4) * 0.1))
 }
-const out = film3 ? path.join(here, '../out/film3/soundtrack.wav') : film2 ? path.join(here, '../out/film2/soundtrack.wav') : path.join(here, `../out/teasers/${id}.wav`)
+const out = film ? path.join(here, `../out/films/${film}/soundtrack.wav`) : film3 ? path.join(here, '../out/film3/soundtrack.wav') : film2 ? path.join(here, '../out/film2/soundtrack.wav') : path.join(here, `../out/teasers/${id}.wav`)
 m.render(out)
 console.log('teaser sound →', path.relative(process.cwd(), out))
