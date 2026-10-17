@@ -4,10 +4,10 @@
 // (film 3 g4 recipe, retimed).
 //   26.64        "Be chosen." types in (10 chars × 0.042, fade 0.12 → fully typed ≈27.14), centred, 136px
 //   27.22        gold glint runs through "chosen"
-//   27.14–27.60  the line holds alone
-//   27.60–27.95  the line rises to y≈230 as the lockup forms beneath it
-//   27.70–28.20  seed-of-life rings draw · chakra dots light bottom→top 27.75 + i·0.03 · wordmark "Align" 27.82 ·
-//                "BLIND BY DESIGN" 27.92 → complete ≈28.2, held clean to 29.6
+//   27.14–27.85  the line holds alone
+//   27.85–28.20  the line rises to y≈230 as the lockup forms beneath it
+//   27.95–28.45  seed-of-life rings draw · chakra dots light bottom→top 28.0 + i·0.03 · wordmark "Align" 28.07 ·
+//                "BLIND BY DESIGN" 28.17 → complete ≈28.45, held clean to 29.6
 //   28.80 one soft chakra pulse up the column · 28.95 the moon glows a touch
 //   29.60–30.00  fade to black (plate reaches 1.0 at 30.0; last frame black; low boom 29.65)
 import { lerp, prog, ease, tw, el, mix, C } from '../../../../src/lib.js'
@@ -16,7 +16,7 @@ import { sky, twinkles, drawGrain, grainOpacity, layerCanvas, pocketCanvas, MOON
 
 const T0 = 26.45, T1 = 30.01, T_END = 30.0
 const T_TYPE = 26.64, PER = 0.042, FADE = 0.12
-const T_RISE = 27.6, T_RINGS = 27.7, T_DOTS = 27.75, T_WORD = 27.82, T_SUB = 27.92
+const T_RISE = 27.85, T_RINGS = 27.95, T_DOTS = 28.0, T_WORD = 28.07, T_SUB = 28.17
 const T_PULSE = 28.8, T_MOON = 28.95, T_OUT = 29.6
 const T_HOLD = T_RINGS + 0.45
 const LINE = 'Be chosen.'

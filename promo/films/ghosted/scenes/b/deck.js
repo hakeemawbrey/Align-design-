@@ -9,12 +9,12 @@
 //                lands (veiled profile cards: Maya, Rio, Kai, Ari; no faces) · landing ticks at +0.55
 //   17.40–17.85  the last card (Juniper) turns over in place, centre · 18.05–18.75 a gold glint runs along the hand
 //   16.10 eyebrow "TONIGHT'S DECK" · 16.35 "A few cards. Dealt with care." (typed by ≈17.4, out 19.05)
-//   19.15–19.95  the others step back; Juniper's card comes forward to the left (640,540, body h 760), dimmed a touch
+//   19.15–19.95  the others step back; Juniper's card comes forward to the left (620,540, body h 900), dimmed a touch
 //   19.85 eyebrow "DEALBREAKERS FIRST" · 20.00 "What matters, / said first." (right column, typed by ≈20.95, out 22.95)
-//   20.25 20.60 20.95  dealbreaker chips STAMP onto her photo window (ONE-WORD TEXTS · READS, NO REPLY · FLAKY PLANS):
+//   20.25 20.60 20.95  dealbreaker chips STAMP onto her photo window, darkened first (ONE-WORD TEXTS · READS, NO REPLY · FLAKY PLANS):
 //                thud + 2-frame shake each · 21.30–21.70 the rest of her card brightens · 21.55 gold glint on her footer
-//   23.00–23.75  MUTUAL: her card moves right (1290,420 h520, chips ride with it); your card (Hakeem · Taurus) turns in
-//                from the left to (630,420 h520)
+//   23.00–23.75  MUTUAL: her card moves right (1330,420 h520, chips ride with it); your card (Hakeem · Taurus) turns in
+//                from the left to (590,420 h520)
 //   24.05 "YOU ✓" pill · 24.45 "JUNIPER ✓" pill (each a tick) · 24.00 eyebrow "MUTUAL" · 24.20 "Nobody gets picked alone."
 //                (typed by ≈25.1, out 26.15)
 //   24.45–25.05  seven chakra stars streak in and click into the column between the cards (red bottom → violet top)
@@ -42,17 +42,17 @@ const COPY1 = { eb: 16.1, line: 16.35, out: 19.05 }
 
 // ── beat 2: dealbreakers first
 const STEP = { a: 19.15, b: 19.95 }
-const DB = { x: 640, y: 540, h: 760 }
+const DB = { x: 620, y: 540, h: 900 }
 const COPY2 = { eb: 19.85, line: 20.0, out: 22.95 }
 const STAMPS = [20.25, 20.6, 20.95], DROP = 0.11
 const CHIPS = ['ONE-WORD TEXTS', 'READS, NO REPLY', 'FLAKY PLANS']
-const CHIP_Y = [-662, -490, -318], CHIP_ROT = [-2.4, 1.6, -1.2]       // PNG px from the body centre (photo window)
+const CHIP_Y = [-662, -487, -312], CHIP_ROT = [-2.4, 1.6, -1.2]       // PNG px from the body centre (photo window)
 const VEIL = { in: [19.4, 19.95], out: [21.3, 21.7], k: 0.42 }
 const FOOT = { a: 21.55, b: 22.15 }
 
 // ── beat 3: mutual
 const MUT = { a: 23.0, b: 23.75 }
-const RJ = { x: 1290, y: 420, h: 520 }, LY = { x: 630, y: 420, h: 520 }
+const RJ = { x: 1330, y: 420, h: 520 }, LY = { x: 590, y: 420, h: 520 }
 const YOU_IN = { a: 23.15, b: 23.9 }
 const PILL = [24.05, 24.45]
 const COPY3 = { eb: 23.95, line: 24.1, out: 26.1 }
@@ -77,7 +77,7 @@ export default async function build(stage) {
   const spriteS = getSky().spriteS
 
   const pocket1 = pocketCanvas(960, 830, 820, 190, 0.6)
-  const pocket2 = pocketCanvas(1390, 520, 620, 330, 0.55)
+  const pocket2 = pocketCanvas(1320, 520, 640, 340, 0.55)
   const pocket3 = pocketCanvas(960, 860, 820, 170, 0.6)
 
   // grain over the sky + cards; type sits above it
@@ -85,21 +85,21 @@ export default async function build(stage) {
   const gx = gC.getContext('2d')
 
   // ── copy
-  const eyebrow = (txt, style) => el('div', { position: 'absolute', fontFamily: MONO, fontSize: '28px', letterSpacing: '0.32em', color: C.bone, opacity: 0, whiteSpace: 'pre', textShadow: '0 0 14px rgba(11,6,32,0.9)', ...style }, root, txt)
+  const eyebrow = (txt, style) => el('div', { position: 'absolute', fontFamily: MONO, fontSize: '36px', letterSpacing: '0.32em', color: C.bone, opacity: 0, whiteSpace: 'pre', textShadow: '0 0 14px rgba(11,6,32,0.9)', ...style }, root, txt)
   const stmt = { fontFamily: SERIF, fontStyle: 'italic', fontSize: '96px', lineHeight: '1.1', letterSpacing: '-0.005em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.9), 0 0 12px rgba(11,6,32,0.6)' }
-  const eb1 = eyebrow("TONIGHT'S DECK", { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '718px' })
+  const eb1 = eyebrow("TONIGHT'S DECK", { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '708px' })
   const line1 = new TypeLine(root, 'A few cards. Dealt with care.', { ...stmt, left: '50%', top: '772px', transform: 'translateX(-50%)' }, { perChar: 0.03, fade: 0.3, accent: [C.violet, C.gold, C.rub] })
-  const eb2 = eyebrow('DEALBREAKERS FIRST', { left: '1100px', top: '388px' })
-  const line2 = new TypeLine(root, 'What matters,\nsaid first.', { ...stmt, fontSize: '104px', left: '1094px', top: '440px' }, { perChar: 0.032, fade: 0.3, accent: [C.rub, C.gold, C.violet] })
-  const eb3 = eyebrow('MUTUAL', { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '800px' })
+  const eb2 = eyebrow('DEALBREAKERS FIRST', { left: '1000px', top: '378px' })
+  const line2 = new TypeLine(root, 'What matters,\nsaid first.', { ...stmt, fontSize: '104px', left: '994px', top: '440px' }, { perChar: 0.032, fade: 0.3, accent: [C.rub, C.gold, C.violet] })
+  const eb3 = eyebrow('MUTUAL', { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '792px' })
   const line3 = new TypeLine(root, 'Nobody gets picked alone.', { ...stmt, left: '50%', top: '846px', transform: 'translateX(-50%)' }, { perChar: 0.028, fade: 0.26, accent: [C.violet, C.gold, C.rub] })
 
   // ── chips (drawn in Juniper's card space, PNG px)
-  const CHIP_FS = 70
+  const CHIP_FS = 86
   bx.font = `${CHIP_FS}px 'Space Mono', monospace`
-  const chipW = CHIPS.map(s => { bx.save(); bx.font = `${CHIP_FS}px 'Space Mono', monospace`; bx.letterSpacing = '6px'; const w = bx.measureText(s).width; bx.restore(); return w + 120 + 90 })
+  const chipW = CHIPS.map(s => { bx.save(); bx.font = `${CHIP_FS}px 'Space Mono', monospace`; bx.letterSpacing = '6px'; const w = bx.measureText(s).width; bx.restore(); return w + 160 })
   function drawChip(i, a, sc) {
-    const w = chipW[i], h = 128
+    const w = chipW[i], h = 150
     bx.save()
     bx.translate(10, CHIP_Y[i]); bx.rotate(CHIP_ROT[i] * Math.PI / 180); bx.scale(sc, sc)
     bx.globalAlpha = a
@@ -109,12 +109,12 @@ export default async function build(stage) {
     bx.shadowColor = 'transparent'; bx.shadowBlur = 0; bx.shadowOffsetY = 0
     bx.lineWidth = 5; bx.strokeStyle = 'rgba(239,230,214,0.92)'; bx.stroke()
     // ✕ mark
-    const mx = -w / 2 + 78
+    const mx = -w / 2 + 70
     bx.lineWidth = 9; bx.lineCap = 'round'; bx.strokeStyle = C.bone
     bx.beginPath(); bx.moveTo(mx - 17, -17); bx.lineTo(mx + 17, 17); bx.moveTo(mx + 17, -17); bx.lineTo(mx - 17, 17); bx.stroke()
     bx.font = `${CHIP_FS}px 'Space Mono', monospace`; bx.letterSpacing = '6px'
     bx.fillStyle = C.bone; bx.textBaseline = 'middle'; bx.textAlign = 'left'
-    bx.fillText(CHIPS[i], mx + 48, 4)
+    bx.fillText(CHIPS[i], mx + 40, 5)
     bx.restore()
   }
   /** a chip's stamp state: [alpha, scale] — falls in big and fast, squashes, settles */
@@ -156,7 +156,7 @@ export default async function build(stage) {
   // ── lock burst particles
   const br = rng(2468)
   const BURST = Array.from({ length: 32 }, (_, i) => {
-    const ang = br() * Math.PI * 2, sp = 170 + br() * 300
+    const ang = br() * Math.PI * 2, sp = 80 + br() * 130
     return { ang, sp, px: br() < 0.3 ? 5 : 3, col: i % 3 === 0 ? '#f2c75c' : CHK[Math.floor(br() * 7)], life: 0.5 + br() * 0.6, kind: Math.floor(br() * 4) }
   })
 
@@ -262,7 +262,14 @@ export default async function build(stage) {
           bx.beginPath(); bx.roundRect(a.b[0] - bcx + 4, a.b[1] - bcy + 4, a.b[2] - a.b[0] - 8, a.b[3] - a.b[1] - 8, a.r); bx.fill()
           bx.restore()
         }
-        // chips
+        // chips (over a dark cover on the photo window, so none of the card's own window labels show through)
+        const cov = ease.inOutQuad(prog(t, STAMPS[0] - 0.3, STAMPS[0] - 0.02))
+        if (cov > 0.003 && J.ry < 0.05) {
+          bx.save(); cardSpace(bx, 'p3', J.x, J.y, J.h, J.rz)
+          bx.globalAlpha = 0.92 * cov * J.alpha; bx.fillStyle = '#120a24'
+          bx.beginPath(); bx.roundRect(218 - 747 - 4, 342 - 1115 - 4, 1074 + 8, 572 + 8, 40); bx.fill()
+          bx.restore()
+        }
         if (t >= STAMPS[0]) {
           bx.save(); cardSpace(bx, 'p3', J.x, J.y, J.h, J.rz)
           CHIPS.forEach((_, i) => { const [a, sc] = chipState(t, i); if (a > 0.003) drawChip(i, a * J.alpha, sc) })
@@ -353,7 +360,7 @@ export default async function build(stage) {
         if (rp > 0 && rp < 1) {
           bx.save(); bx.globalAlpha = 0.75 * (1 - rp); bx.strokeStyle = 'rgba(255,240,214,1)'; bx.lineWidth = 3 * (1 - rp) + 1
           bx.shadowColor = 'rgba(255,226,160,0.8)'; bx.shadowBlur = 16
-          bx.beginPath(); bx.arc(COL.x, COL.y, lerp(60, 340, ease.outCubic(rp)), 0, Math.PI * 2); bx.stroke(); bx.restore()
+          bx.beginPath(); bx.arc(COL.x, COL.y, lerp(50, 150, ease.outCubic(rp)), 0, Math.PI * 2); bx.stroke(); bx.restore()
         }
         bx.imageSmoothingEnabled = false
         for (const b of BURST) {
