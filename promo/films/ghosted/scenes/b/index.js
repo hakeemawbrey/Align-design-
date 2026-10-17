@@ -1,4 +1,6 @@
-// STUB — replaced by the half-b agent. Export SCENES (array of async build(stage) fns) and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 14.8, end: 30.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'ghosted half b'), update() {} })]
+// Ghosted · half b (15.0–30.0): the answer. Tonight's deck → dealbreakers first → mutual → "Be chosen." + lockup.
+// Starts on handoff H (Align card back at 960,540, PNG height 560, over the sky with the one moon) and ends on black.
+import deck, { cues as deckCues } from './deck.js'
+import end, { cues as endCues } from './end.js'
+export const SCENES = [deck, end]
+export const CUES = [...deckCues, ...endCues]
