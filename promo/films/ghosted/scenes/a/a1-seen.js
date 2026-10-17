@@ -11,7 +11,7 @@ export const A1_END = 8.0
 export const ROOM_BG = '#08090c'
 export const A1_GRAIN = 0.5
 const PW = 600, PH = 1300                        // phone screen (phone px)
-const SCREEN_ON = 0.32, SCREEN_OFF = 7.56        // the screen wakes at the top, and goes dark at the end
+const SCREEN_ON = 0.32, SCREEN_OFF = 7.75        // the screen wakes at the top, and goes dark at the end
 const PULL0 = 4.3, PULL1 = 5.3                   // camera pulls back from the receipt to the header (Theo)
 const DISSOLVE0 = 4.75, DISSOLVE1 = 5.6         // Theo's avatar + name fade to grain
 const SLIDE0 = 5.78, SLIDE1 = 6.16               // back to the thread list
@@ -120,8 +120,8 @@ export default async function build(stage) {
 
   // ── copy (right of the phone): "Seen. / 3 days ago." then "Ghosted. / Again."
   const capBox = el('div', { position: 'absolute', left: '1150px', width: '720px', top: '386px', textAlign: 'center' }, root)
-  const c1a = words(capBox, 'Seen.', { ...capStyle(124), position: 'relative', display: 'block' }, 1.0, 0.1, 0.3)
-  const c1b = words(capBox, '3 days ago.', { ...capStyle(124), position: 'relative', display: 'block' }, 1.62, 0.12, 0.3)
+  const c1a = words(capBox, 'Seen.', { ...capStyle(124), position: 'relative', display: 'block' }, 0.5, 0.1, 0.3)
+  const c1b = words(capBox, '3 days ago.', { ...capStyle(124), position: 'relative', display: 'block' }, 1.1, 0.12, 0.3)
   const capBox2 = el('div', { position: 'absolute', left: '1150px', width: '720px', top: '386px', textAlign: 'center' }, root)
   const c2a = words(capBox2, 'Ghosted.', { ...capStyle(124), position: 'relative', display: 'block' }, 4.8, 0.1, 0.3)
   const c2b = words(capBox2, 'Again.', { ...capStyle(124), position: 'relative', display: 'block' }, 5.5, 0.1, 0.3)
@@ -183,7 +183,7 @@ export default async function build(stage) {
       // copy
       const out1 = 1 - ease.inOutQuad(prog(t, 4.12, 4.42))
       c1a.update(t, out1); c1b.update(t, out1)
-      const out2 = 1 - ease.inOutQuad(prog(t, 7.25, 7.6))
+      const out2 = 1 - ease.inOutQuad(prog(t, 7.4, 7.75))
       c2a.update(t, out2); c2b.update(t, out2)
       seen.style.opacity = '1'
       grain.update(t); lift.update(t)
@@ -193,8 +193,8 @@ export default async function build(stage) {
 
 export const cues = [
   ['tick', 0.04, 0.05],                                                   // the phone wakes
-  ['bell', 1.0, 196, 0.035, 2.4, -0.2],                                   // "Seen." — low, alone
-  ['bell', 1.62, 164.81, 0.03, 2.8, -0.15],
+  ['bell', 0.5, 196, 0.035, 2.4, -0.2],                                   // "Seen." — low, alone
+  ['bell', 1.1, 164.81, 0.03, 2.8, -0.15],
   ...Array.from({ length: TYPED.length }, (_, i) => ['tick', TYPE0 + i / TYPE_CPS, 0.012 + 0.006 * ((i * 7) % 3)]),
   ...Array.from({ length: 6 }, (_, i) => ['tick', ERASE0 + i * 0.13, 0.016]),   // delete, delete, delete
   ['whoosh', PULL0, 1.0, 0.05],

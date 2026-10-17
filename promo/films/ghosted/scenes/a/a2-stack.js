@@ -25,7 +25,7 @@ const NAMES = { 1: 'Lena, 23', 2: 'Theo, 29', 3: 'Rosa, 28', 4: 'Jun, 27', 5: 'A
 const DIST = ['2 miles away', '5 miles away', '1 mile away', '8 miles away', '3 miles away', '12 miles away']
 
 // ── timing
-const SW0 = 8.55, STOP = 12.4                  // first swipe → the stack stops dead (one card left)
+const SW0 = 8.35, STOP = 12.4                  // first swipe → the stack stops dead (one card left)
 const TURN0 = 13.25, TURN1 = 14.2               // the slow turn face-down
 const EDGE = lerp(TURN0, TURN1, 0.5)            // edge-on (inOutSine midpoint) → the sky blooms from the card
 const SETTLE = 14.55                            // everything at H from here (B starts 14.8)
@@ -125,8 +125,8 @@ const BURST = (() => {
 export default function build(stage) {
   const root = fill(stage, { background: ROOM_BG })
   const cold = coldBackdrop(root)
+  cold.root.style.zIndex = '0'                                      // own stacking context: its grain stays under the sky
   const backGrain = grainLayer(cold.root, 0.32, '5')
-  const silver = grainLayer(cold.root, 0.07, '6', 'screen')         // silver in the blacks (cold world only; gone with it)
   // the dark that settles behind the one card left (before the sky)
   const hush = el('div', { position: 'absolute', inset: 0, background: 'radial-gradient(60% 70% at 50% 50%, rgba(6,7,10,0.55) 0%, rgba(6,7,10,0.92) 100%)', opacity: 0 }, root)
   // the sky (drawn under the card), revealed by a feathered bloom from the card's edge line
@@ -161,11 +161,12 @@ export default function build(stage) {
   const pocket = el('div', { position: 'absolute', left: 0, top: '820px', width: W + 'px', height: '260px', opacity: 0, zIndex: '2900',
     background: 'radial-gradient(48% 52% at 50% 52%, rgba(8,6,20,0.62) 0%, rgba(8,6,20,0.28) 60%, rgba(8,6,20,0) 100%)' }, root)
   const capA = words(root, 'We made people disposable.', { ...capStyle(92), left: 0, width: W + 'px', top: '880px', textAlign: 'center', zIndex: '3000' }, 9.05, 0.11, 0.26)
-  const capB = words(root, 'What if no one was?', { ...capStyle(96), left: 0, width: W + 'px', top: '874px', textAlign: 'center', zIndex: '3000' }, 12.72, 0.12, 0.3)
+  const capB = words(root, 'What if no one was?', { ...capStyle(96), left: 0, width: W + 'px', top: '874px', textAlign: 'center', zIndex: '3000' }, 12.55, 0.12, 0.3)
   const flash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0, zIndex: '3500',
     background: 'radial-gradient(40% 60% at 50% 50%, rgba(255,246,236,0.9) 0%, rgba(201,166,255,0.5) 40%, rgba(120,70,220,0.12) 75%, rgba(0,0,0,0) 100%)' }, root)
   const fade = el('div', { position: 'absolute', inset: 0, background: ROOM_BG, zIndex: '3800', pointerEvents: 'none' }, root)   // in from a1's dark room
   const grain = grainLayer(root, A1_GRAIN)
+  const silver = grainLayer(root, 0.07, '3900', 'screen')          // a1's silver in the blacks, carried over the fade; eases out with the bloom
 
   const turnAng = t => {
     if (t < TURN0) return 0
@@ -178,10 +179,10 @@ export default function build(stage) {
     start: START, end: END, root,
     fxStart: EDGE - 0.02, fxEnd: SETTLE,
     update(t) {
-      fade.style.opacity = String(1 - ease.inOutQuad(prog(t, START, START + 0.45)))
+      fade.style.opacity = String(1 - ease.inOutQuad(prog(t, START, START + 0.25)))
       const coldOn = t < EDGE + WIPE + 0.05
       cold.root.style.display = coldOn ? 'block' : 'none'
-      if (coldOn) { cold.update(t); backGrain.update(t); silver.update(t) }
+      if (coldOn) { cold.update(t); backGrain.update(t) }
       cold.wall.style.opacity = String(0.3 + 0.25 * ease.inQuad(prog(t, 10.2, STOP)) - 0.55 * ease.inOutQuad(prog(t, STOP + 0.1, 13.2)))
       cold.wall.style.filter = `blur(${(4 + 6 * ease.inQuad(prog(t, 10.2, STOP)) * (t < STOP ? 1 : 0)).toFixed(1)}px) grayscale(1) brightness(0.8) contrast(1.2)`
       hush.style.opacity = String(ease.inOutQuad(prog(t, STOP + 0.05, 13.1)))
@@ -262,8 +263,11 @@ export default function build(stage) {
 
       // ── copy
       capA.update(t, 1 - ease.inOutQuad(prog(t, 11.95, 12.3)))
-      capB.update(t, 1 - ease.inOutQuad(prog(t, 14.3, 14.62)))
-      pocket.style.opacity = String(ease.inOutQuad(prog(t, EDGE, EDGE + 0.3)) * (1 - ease.inOutQuad(prog(t, 14.3, 14.62))))
+      capB.update(t, 1 - ease.inOutQuad(prog(t, 14.38, 14.68)))
+      pocket.style.opacity = String(ease.inOutQuad(prog(t, EDGE, EDGE + 0.3)) * (1 - ease.inOutQuad(prog(t, 14.38, 14.68))))
+      const sv = 0.07 * (1 - ease.inOutQuad(prog(t, EDGE, EDGE + 0.4)))
+      silver.el.style.display = sv > 0 ? 'block' : 'none'
+      if (sv > 0) silver.update(t, sv)
       grain.update(t)
     },
     fx(ctx, t) {
@@ -300,7 +304,7 @@ export const cues = [
   }),
   ['riser', 10.2, STOP, 0.08],
   ['boom', STOP, 0.22],                                                  // it stops dead — then silence
-  ['tick', 12.72, 0.04],
+  ['tick', 12.55, 0.04],
   ['whoosh', TURN0, TURN1 - TURN0, 0.12],                                // the slow turn
   ['boom', EDGE, 0.45],
   ...[293.66, 369.99, 440, 554.37, 587.33].map((f, i) => ['bell', EDGE + 0.02 + i * 0.05, f, 0.06, 2.6, (i - 2) * 0.2]),
