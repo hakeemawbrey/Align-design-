@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────── SAME SKY · half B (14.8–30.0): the answer
 // Starts on handoff H: drawSky(zoom 1, dx 0, dy 0, dim 1, moon (1716,122) r52 phase .12), grain .5. The two
-// lit windows sat at x≈520 / x≈1400, below frame after half A's tilt-up: their charts bloom above them.
+// lit windows sat at x≈475 / x≈1505, below frame after half A's tilt-up: their charts bloom above them.
 // Timing (sound):
 //   15.00–15.15  root fades in over half A (identical sky, so only A's last skyline haze dissolves)
 //   15.00→       sky starts a slow drift (zero velocity at 15.0, ≈3px/s later; the moon rides with it)
@@ -10,22 +10,27 @@
 //   17.90–20.20  a constellation line draws from chart to chart in an arc across the sky; five pixel stars light
 //                as the head reaches them (tick each)
 //   20.20        CONNECT: the apex node flares gold, both charts pulse, a ring wave from each chart (boom + bell)
-//   20.50–21.22  both charts shrink and glide into the alignment phone (rises 20.72–21.38, x 1290); line fades 20.6–20.95
-//   21.35 eyebrow "YOU ARE NOT ARRIVING ALONE" · 21.50 "And finds who / you're written with." · out 24.55–24.85
-//   24.60–25.10  phone eases back + fades
-//   25.45 "Look up. They might be, too." types (0.042/char → ≈26.70); the moon brightens on "Look up."
-//   27.45–27.80  line rises · 27.58 rings · 27.64 chakra dots · 27.78 "Align" · 27.90 "BLIND BY DESIGN" (≈28.2)
-//   28.75 soft chakra pulse · fade to black 29.60 → 29.95 (last frame 29.967 is black)
+//   20.20–21.10  connected: the line holds and glows; fades 20.85–21.10
+//   21.10–21.85  both charts shrink and glide into the alignment phone, under it (rises 21.30–21.95, x 1290)
+//   21.65–22.50  flare on the phone's aura row as the charts land
+//   21.90 eyebrow "YOU ARE NOT ARRIVING ALONE" · 22.05 "And finds who / you're written with." · out 24.20–24.50
+//   22.30–23.80  phone push-in 1.0 → 1.35 (origin 50% 22%) so "Venus rules you both." reads · fades 24.20–24.70
+//   24.60–25.45  tilt back down: downtown peeks in, the two hero windows (from half A) light warm near the bottom
+//   25.12 "Look up. They might be, too." types (0.042/char → ≈26.3); the moon glow swells on "Look up."
+//   25.50–26.25  a faint 1px line rises from each window to the moon · skyline fades 27.30–27.60
+//   27.62–27.97  line rises · 27.74 rings · 27.80 chakra dots · 27.94 "Align" · 28.06 "BLIND BY DESIGN" (≈28.35)
+//   28.90 soft chakra pulse · fade to black 29.60 → 29.95 (last frame 29.967 is black)
 import { clamp, lerp, prog, ease, tw, rng, mix, el, C } from '../../../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill, img } from '../../../../src/scenes/common.js'
-import { drawSky, drawGrain, grainOpacity, drawMoon, buildStarSprite, layerCanvas } from '../../../sky.js'
+import { drawSky, drawGrain, grainOpacity, buildStarSprite, layerCanvas } from '../../../sky.js'
+import { CITY, bakeCity, drawLayer, camLayer } from '../a/city.js'
 
 const T0 = 14.8, T1 = 30.01, T_IN = 15.0
 const canvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c }
 
 // ── camera: slow drift continuing the tilt (sky sinks a touch, slides left); zero velocity at 15.0
 const soft = u => (u <= 0 ? 0 : u - (1 - Math.exp(-u)))
-const cam = t => { const s = soft(t - T_IN); return { dx: -2.6 * s, dy: 1.6 * s } }
+const cam = t => { const s = soft(t - T_IN); return { dx: -2.6 * s, dy: 1.6 * s - 70 * cityK(t) } }
 const moonAt = t => { const c = cam(t); return { x: 1716 + c.dx, y: 122 + c.dy, r: 52 } }
 
 // ── pixel-art star sprites (fx-stars language)
@@ -46,8 +51,8 @@ function pixStar(ctx, cx, cy, px, kind, color, centre, a) {
 // ── the two charts (over the two windows)
 const CR = 178, CY = 655
 const CHARTS = [
-  { x: 520, t: 15.3, sign: 'Taurus', sub: 'SUN · EARTH', aura: '95,220,84', aura2: '255,210,63', rot: 0.05, seed: 11 },
-  { x: 1400, t: 15.5, sign: 'Libra', sub: 'SUN · AIR', aura: '180,92,255', aura2: '255,143,177', rot: -0.05, seed: 23 },
+  { x: 475, t: 15.3, sign: 'Taurus', sub: 'SUN · EARTH', aura: '95,220,84', aura2: '255,210,63', rot: 0.05, seed: 11 },
+  { x: 1505, t: 15.5, sign: 'Libra', sub: 'SUN · AIR', aura: '180,92,255', aura2: '255,143,177', rot: -0.05, seed: 23 },
 ]
 const PLANET_COLS = ['#ff5a4e', '#ffb04a', '#ffe07a', '#7fe08a', '#4fd6e8', '#5a86ff', '#b77bff', '#ff7fb0', '#e8e0ff', '#9fe0c0']
 CHARTS.forEach(c => {
@@ -55,18 +60,18 @@ CHARTS.forEach(c => {
   c.planets = PLANET_COLS.map((col, i) => ({ a: (i / 10) * Math.PI * 2 + (r() - 0.5) * 0.45, orb: r() < 0.35 ? 0.84 : 0.66, s: 7 + r() * 6, col, d: i * 0.055 }))
   c.aspects = Array.from({ length: 5 }, () => [Math.floor(r() * 10), Math.floor(r() * 10)]).filter(([a, b]) => a !== b)
 })
-const CHART_OUT = 20.5, CHART_IN_PHONE = 21.22
+const CHART_OUT = 21.1, CHART_IN_PHONE = 21.85
 
 // ── constellation (left chart → arc across the sky → right chart)
 const LINE0 = 17.9, LINE1 = 20.2, T_CONNECT = 20.2
 const NODES = [
-  { x: 520 + CR * 0.62, y: CY - CR * 0.78, k: -1 },
-  { x: 760, y: 455, kind: 1, col: '#c9a6ff' },
-  { x: 880, y: 392, kind: 3, col: '#ffecc8' },
-  { x: 1000, y: 372, kind: 0, col: '#f2c75c', apex: true },
-  { x: 1120, y: 400, kind: 1, col: '#ff8fb1' },
-  { x: 1222, y: 462, kind: 3, col: '#ffecc8' },
-  { x: 1400 - CR * 0.62, y: CY - CR * 0.78, k: 1 },
+  { x: 475 + CR * 0.62, y: CY - CR * 0.78, k: -1 },
+  { x: 718, y: 468, kind: 1, col: '#c9a6ff' },
+  { x: 850, y: 400, kind: 3, col: '#ffecc8' },
+  { x: 990, y: 374, kind: 0, col: '#f2c75c', apex: true },
+  { x: 1128, y: 398, kind: 1, col: '#ff8fb1' },
+  { x: 1262, y: 466, kind: 3, col: '#ffecc8' },
+  { x: 1505 - CR * 0.62, y: CY - CR * 0.78, k: 1 },
 ]
 const SEG = []; let LEN = 0
 for (let i = 0; i + 1 < NODES.length; i++) { const a = NODES[i], b = NODES[i + 1], l = Math.hypot(b.x - a.x, b.y - a.y); SEG.push({ a, b, l0: LEN, l }); LEN += l }
@@ -79,26 +84,33 @@ const nodeT = n => { // time the head reaches node n (invert inOutQuad numerical
 }
 NODES.forEach(n => { n.t = nodeT(n) })
 const APEX = NODES[3]
-const LINE_OUT = 20.6, LINE_GONE = 20.95
+const LINE_OUT = 20.85, LINE_GONE = 21.1
 
 // ── phone (alignment reading)
 const PH = 900, PW = Math.round(PH * 1170 / 2532), PX = 1290, PY = 540
-const PHONE_IN = 20.72, PHONE_LAND = 21.38, PHONE_OUT = 24.6, PHONE_GONE = 25.1
+const PHONE_IN = 21.3, PHONE_LAND = 21.95, PHONE_OUT = 24.2, PHONE_GONE = 24.7
+const PUSH0 = 22.3, PUSH1 = 23.8
 const AURA_PT = [{ x: PX - PW / 2 + PW * 0.455, y: PY - PH / 2 + PH * 0.22 }, { x: PX - PW / 2 + PW * 0.575, y: PY - PH / 2 + PH * 0.22 }]
 
 // ── captions
 const CAP1 = { eb: 15.8, type: 16.0, per: 0.032, out: 19.55, gone: 19.85 }
-const CAP2 = { eb: 21.35, line: 21.5, out: 24.55, gone: 24.85 }
+const CAP2 = { eb: 21.9, line: 22.05, out: 24.2, gone: 24.5 }
 const LINE1_TXT = 'Align reads your sky.'
 
 // ── end
 const END = 'Look up. They might be, too.'
-const T_TYPE = 25.45, PER = 0.042, FADE = 0.1
-const T_RISE = 27.45, T_RINGS = 27.58, T_DOTS = 27.64, T_WORD = 27.78, T_SUB = 27.9
-const T_PULSE = 28.75, T_OUT = 29.6, T_BLACK = 29.95
+const T_TYPE = 25.12, PER = 0.042, FADE = 0.1
+const T_RISE = 27.62, T_RINGS = 27.74, T_DOTS = 27.8, T_WORD = 27.94, T_SUB = 28.06
+const T_PULSE = 28.9, T_OUT = 29.6, T_BLACK = 29.95
 const T_HOLD = T_RINGS + 0.45
 const LINE_Y0 = H / 2, LINE_Y1 = 230, LINE_FS = 112
 const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 821, SUB_FS = 30
+// the city returns under the end line: tilt down until downtown peeks in and the two hero windows sit near the bottom
+const CITY_IN0 = 24.6, CITY_IN1 = 25.45, CITY_OUT0 = 27.3, CITY_OUT1 = 27.6, MOONLINE0 = 25.5, MOONLINE1 = 26.25
+const CZ = 0.72, CF = [960, 660], CPAN = 26
+const TILT_END = (() => { const T = camLayer({ Z: CZ, F: CF, pan: CPAN, tilt: 0 }, 0.75), k = 1 + 0.14 * 0.75; return (1005 - CITY.HA.y * T.s - T.oy) / k })()
+const cityK = t => ease.outCubic(prog(t, CITY_IN0, CITY_IN1))
+const cityCam = t => ({ Z: CZ, F: CF, pan: CPAN, tilt: TILT_END + 780 * (1 - cityK(t)) + 90 * ease.inQuad(prog(t, CITY_OUT0, CITY_OUT1)) })
 const CHK = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
 
 function pocketCanvas(cx, cy, rx, ry, a) {
@@ -112,11 +124,11 @@ function pocketCanvas(cx, cy, rx, ry, a) {
 
 async function build(stage) {
   const root = fill(stage, { background: C.void, opacity: 0 })
-  const bgC = layerCanvas(root), bx0 = bgC.getContext('2d')
-  let bx = bx0
+  const bgC = layerCanvas(root), bx = bgC.getContext('2d')
   const spriteS = buildStarSprite(true)
   const pkTop = pocketCanvas(W / 2, 250, 760, 230, 0.55)
   const pkLeft = pocketCanvas(560, 520, 620, 360, 0.6)
+  bakeCity()
   const pkEnd = pocketCanvas(W / 2, H / 2, 820, 510, 0.58)
 
 
@@ -127,7 +139,7 @@ async function build(stage) {
     const x = pr() * W, y = pr() * H
     if (x > 380 && x < 1540 && y > 120 && y < 400) continue
     if (x > 1540 && y < 300) continue
-    if (Math.hypot(x - 520, y - CY) < CR + 90 || Math.hypot(x - 1400, y - CY) < CR + 90) continue
+    if (Math.hypot(x - 475, y - CY) < CR + 90 || Math.hypot(x - 1505, y - CY) < CR + 90) continue
     PIX.push({ x, y, px: pr() < 0.3 ? 4 : 3, col: PIXC[Math.floor(pr() * PIXC.length)], ph: pr() * 6.28, sp: 2 + pr() * 3, kind: Math.floor(pr() * 4), t0: 15.4 + pr() * 1.2 })
   }
   // motes rising from the windows (light leaving the city)
@@ -135,7 +147,7 @@ async function build(stage) {
   const MOTES = Array.from({ length: 22 }, (_, i) => ({ c: i % 2, ox: (mr() - 0.5) * 90, t0: 15.15 + mr() * 1.1, dur: 0.9 + mr() * 0.7, px: mr() < 0.4 ? 3 : 2 }))
 
   // ── chart wheel (drawn live: rings draw, ticks, planets pop)
-  function drawChart(c, t, { x, y, R, a, pulse = 0 }) {
+  function drawChart(c, t, { x, y, R, a, pulse = 0, fly = 0 }) {
     if (a <= 0.003) return
     const p = prog(t, c.t, c.t + 1.1)
     if (p <= 0) return
@@ -149,7 +161,7 @@ async function build(stage) {
     bx.globalCompositeOperation = 'lighter'; bx.fillStyle = g; bx.fillRect(x - R * 2, y - R * 2, R * 4, R * 4)
     bx.globalCompositeOperation = 'source-over'
     // dark inner disc
-    bx.globalAlpha = a * ease.inOutQuad(prog(p, 0.3, 0.8))
+    bx.globalAlpha = a * (1 - fly) * ease.inOutQuad(prog(p, 0.3, 0.8))
     g = bx.createRadialGradient(x, y, 0, x, y, R * 0.46)
     g.addColorStop(0, 'rgba(11,6,32,0.78)'); g.addColorStop(0.8, 'rgba(11,6,32,0.62)'); g.addColorStop(1, 'rgba(11,6,32,0)')
     bx.fillStyle = g; bx.beginPath(); bx.arc(x, y, R * 0.47, 0, Math.PI * 2); bx.fill()
@@ -200,12 +212,12 @@ async function build(stage) {
     // centre: the sign
     const tp = ease.outQuad(prog(p, 0.45, 0.85))
     if (tp > 0 && R > 60) {
-      bx.globalAlpha = a * tp; bx.fillStyle = '#efe6d6'; bx.textAlign = 'center'; bx.textBaseline = 'middle'
+      bx.globalAlpha = a * tp * (1 - fly); bx.fillStyle = '#efe6d6'; bx.textAlign = 'center'; bx.textBaseline = 'middle'
       bx.font = `italic ${Math.round(R * 0.25)}px 'EB Garamond', Georgia, serif`
       bx.fillText(c.sign, x, y + R * 0.03)
       bx.font = `${Math.round(R * 0.075)}px 'Space Mono', monospace`
       bx.fillStyle = `rgb(${c.aura})`
-      bx.globalAlpha = a * tp * 0.9
+      bx.globalAlpha = a * tp * 0.9 * (1 - fly)
       bx.fillText(c.sub.split('').join(String.fromCharCode(8202)), x, y + R * 0.2)
     }
     bx.restore()
@@ -224,14 +236,13 @@ async function build(stage) {
   const persp = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', perspective: '2000px' }, root)
   const pAura = el('div', { position: 'absolute', left: (PX - 460) + 'px', top: (PY - 560) + 'px', width: '920px', height: '1120px', borderRadius: '50%', opacity: 0,
     background: 'radial-gradient(closest-side, rgba(214,170,255,0.5), rgba(180,92,255,0.2) 55%, rgba(180,92,255,0) 100%)' }, persp)
-  const phone = el('div', { position: 'absolute', left: (PX - PW / 2) + 'px', top: (PY - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', opacity: 0, willChange: 'transform' }, persp)
+  const phone = el('div', { position: 'absolute', left: (PX - PW / 2) + 'px', top: (PY - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', opacity: 0, willChange: 'transform', transformOrigin: '50% 22%' }, persp)
   const scr = el('div', { position: 'absolute', inset: 0, borderRadius: '54px', overflow: 'hidden', background: C.canvas,
     boxShadow: '0 60px 120px rgba(4,2,14,0.7), 0 18px 40px rgba(4,2,14,0.45), 0 0 70px rgba(255,150,232,0.22), 0 0 0 1.5px rgba(239,230,214,0.35)' }, phone)
   img(scr, A + 'screen-alignment.png', { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover' })
   const flare = el('div', { position: 'absolute', left: (PW * 0.515 - 150) + 'px', top: (PH * 0.22 - 110) + 'px', width: '300px', height: '220px', borderRadius: '50%', mixBlendMode: 'screen', opacity: 0,
     background: 'radial-gradient(closest-side, rgba(255,236,250,0.9), rgba(220,160,255,0.35) 50%, rgba(180,92,255,0) 100%)' }, phone)
 
-  const chC = layerCanvas(root), cx2 = chC.getContext('2d')
   const capLayer = fill(root, { background: 'transparent' })
   // caption 1: top centre
   const eb1 = eyebrow(capLayer, '✦&nbsp;&nbsp;Your chart&nbsp;&nbsp;✦', { left: 0, width: W + 'px', textAlign: 'center', top: '168px', textIndent: '0.26em' })
@@ -278,11 +289,11 @@ async function build(stage) {
       // ── sky + the one moon (brightens on "Look up.")
       drawSky(bx, t, { zoom: 1, dx: c.dx, dy: c.dy, dim: 1, moon: { x: m.x, y: m.y, r: m.r, phase: 0.12, alpha: 1 } })
       {
-        const mb = tw(t, [[T_TYPE + 0.05, 0], [T_TYPE + 0.5, 1, ease.outQuad], [27.6, 0.5, ease.inOutQuad], [T_PULSE, 0.5], [T_PULSE + 0.3, 0.8, ease.outQuad], [29.4, 0.45, ease.inOutQuad]])
+        const mb = tw(t, [[T_TYPE + 0.05, 0], [T_TYPE + 0.45, 1, ease.outQuad], [26.6, 1], [27.7, 0.5, ease.inOutQuad], [T_PULSE, 0.5], [T_PULSE + 0.3, 0.8, ease.outQuad], [29.4, 0.45, ease.inOutQuad]])
         if (mb > 0.003) {
-          const g = bx.createRadialGradient(m.x, m.y, m.r * 0.8, m.x, m.y, m.r * 3.4)
-          g.addColorStop(0, `rgba(255,240,214,${0.2 * mb})`); g.addColorStop(1, 'rgba(255,240,214,0)')
-          bx.globalCompositeOperation = 'lighter'; bx.fillStyle = g; bx.fillRect(m.x - m.r * 3.5, m.y - m.r * 3.5, m.r * 7, m.r * 7)
+          const g = bx.createRadialGradient(m.x, m.y, m.r * 0.8, m.x, m.y, m.r * 5)
+          g.addColorStop(0, `rgba(255,240,214,${0.45 * mb})`); g.addColorStop(0.4, `rgba(255,240,214,${0.12 * mb})`); g.addColorStop(1, 'rgba(255,240,214,0)')
+          bx.globalCompositeOperation = 'lighter'; bx.fillStyle = g; bx.fillRect(m.x - m.r * 5, m.y - m.r * 5, m.r * 10, m.r * 10)
           bx.globalCompositeOperation = 'source-over'
         }
       }
@@ -298,10 +309,48 @@ async function build(stage) {
       // caption pockets (keep bone type on dark)
       const pk1 = ease.inOutQuad(prog(t, 15.5, 16.1)) * (1 - ease.inOutQuad(prog(t, CAP1.out, CAP1.gone + 0.1)))
       if (pk1 > 0.003) { bx.globalAlpha = pk1; bx.drawImage(pkTop, 0, 0); bx.globalAlpha = 1 }
-      const pk2 = ease.inOutQuad(prog(t, 21.0, 21.6)) * (1 - ease.inOutQuad(prog(t, CAP2.out, CAP2.gone + 0.15)))
+      const pk2 = ease.inOutQuad(prog(t, 21.6, 22.2)) * (1 - ease.inOutQuad(prog(t, CAP2.out, CAP2.gone + 0.15)))
       if (pk2 > 0.003) { bx.globalAlpha = pk2; bx.drawImage(pkLeft, 0, 0); bx.globalAlpha = 1 }
       const pk3 = ease.inOutQuad(prog(t, 25.0, 25.6))
       if (pk3 > 0.003) { bx.globalAlpha = pk3; bx.drawImage(pkEnd, 0, 0); bx.globalAlpha = 1 }
+
+      // ── the city again: downtown peeks in, the two windows lit warm, a faint line from each up to the moon
+      const ca = cityK(t) * (1 - ease.inOutQuad(prog(t, CITY_OUT0, CITY_OUT1)))
+      if (ca > 0.003) {
+        const cc = cityCam(t), Ls = CITY.layers
+        bx.save(); bx.globalAlpha = ca
+        {
+          const Tr = camLayer(cc, Ls[0].f), y = v => v * Tr.s + Tr.oy
+          const g = bx.createLinearGradient(0, y(430), 0, y(860))
+          g.addColorStop(0, 'rgba(110,80,180,0)'); g.addColorStop(0.55, `rgba(118,86,186,${0.2 * ca})`); g.addColorStop(0.85, `rgba(150,104,170,${0.34 * ca})`); g.addColorStop(1, `rgba(196,120,120,${0.3 * ca})`)
+          bx.fillStyle = g; bx.fillRect(0, y(430), W, Math.max(0, H - y(430)))
+        }
+        for (const L of Ls) drawLayer(bx, cc, L, ca)
+        const T2 = camLayer(cc, Ls[2].f)
+        const lit = ease.outQuad(prog(t, CITY_IN1 - 0.3, CITY_IN1 + 0.15))
+        const ml = ease.inOutQuad(prog(t, MOONLINE0, MOONLINE1))
+        ;[[CITY.HA, 0.62], [CITY.HB, 0.38]].forEach(([w, fx], k) => {
+          const cx = (w.x + w.w / 2) * T2.s + T2.ox, cy = (w.y + w.h / 2) * T2.s + T2.oy
+          const ww = 15, hh = 18, br = 0.9 + 0.1 * Math.sin(t * 2.2 + k * 1.7)
+          const G = 70
+          const g = bx.createRadialGradient(cx, cy, 0, cx, cy, G)
+          g.addColorStop(0, `rgba(255,198,132,${0.42 * lit * br * ca})`); g.addColorStop(0.3, `rgba(255,198,132,${0.12 * lit * ca})`); g.addColorStop(1, 'rgba(255,198,132,0)')
+          bx.globalAlpha = 1; bx.fillStyle = g; bx.fillRect(cx - G, cy - G, G * 2, G * 2)
+          bx.globalAlpha = ca * lit; bx.fillStyle = `rgb(255,${Math.round(206 * br)},146)`; bx.fillRect(cx - ww / 2, cy - hh / 2, ww, hh)
+          // a small figure, head tipped up
+          bx.fillStyle = 'rgba(16,10,32,0.85)'
+          const px = cx - ww / 2 + ww * fx, py = cy + hh / 2
+          bx.beginPath(); bx.arc(px + (k ? 0.6 : -0.6), py - hh * 0.6, ww * 0.16, 0, Math.PI * 2); bx.fill()
+          bx.beginPath(); bx.ellipse(px, py, ww * 0.3, hh * 0.32, 0, Math.PI, 0); bx.fill()
+          // the line up to the moon
+          if (ml > 0) {
+            const x0 = cx, y0 = cy - hh / 2 - 3, x1 = lerp(x0, m.x, ml), y1 = lerp(y0, m.y + m.r * 0.9, ml)
+            bx.globalAlpha = 0.35 * ca; bx.strokeStyle = '#ffecd2'; bx.lineWidth = 1
+            bx.beginPath(); bx.moveTo(x0, y0); bx.lineTo(x1, y1); bx.stroke()
+          }
+        })
+        bx.restore()
+      }
 
       // ── light rising from the two windows (below frame) + motes
       CHARTS.forEach((ch, i) => {
@@ -335,17 +384,15 @@ async function build(stage) {
       // ── charts: bloom, pulse on connect, then glide into the phone's aura row
       const pin = ease.outCubic(prog(t, PHONE_IN, PHONE_LAND)), pout = ease.inOutQuad(prog(t, PHONE_OUT, PHONE_GONE))
       const phoneDY = lerp(720, 0, pin) + 30 * pout
-      cx2.clearRect(0, 0, W, H); if (t >= CHART_OUT) bx = cx2
       const fly = ease.inOutCubic(prog(t, CHART_OUT, CHART_IN_PHONE))
       const pulse = tw(t, [[T_CONNECT - 0.02, 0], [T_CONNECT + 0.1, 1, ease.outQuad], [T_CONNECT + 0.6, 0, ease.inOutQuad]])
       CHARTS.forEach((ch, i) => {
         const x0 = ch.x + ddx, y0 = CY + ddy, tgt = AURA_PT[i]
         const x = lerp(x0, tgt.x, fly), y = lerp(y0, tgt.y + phoneDY, fly) - Math.sin(Math.PI * fly) * 40
         const R = lerp(CR, 34, fly) * (1 + 0.04 * pulse)
-        const a = 1 - ease.inQuad(prog(t, CHART_IN_PHONE - 0.3, CHART_IN_PHONE + 0.05))
-        drawChart(ch, t, { x, y, R, a, pulse })
+        const a = 1 - ease.inQuad(prog(fly, 0.55, 0.9))
+        drawChart(ch, t, { x, y, R, a, pulse, fly })
       })
-      bx = bx0
       // ring waves on connect
       {
         const q = prog(t, T_CONNECT, T_CONNECT + 0.9)
@@ -366,7 +413,7 @@ async function build(stage) {
         const d = hp * LEN
         bx.save(); bx.lineCap = 'round'; bx.lineJoin = 'round'
         const flash = tw(t, [[T_CONNECT - 0.02, 0], [T_CONNECT + 0.08, 1, ease.outQuad], [T_CONNECT + 0.7, 0.25, ease.inOutQuad]])
-        for (const pass of [[6, 0.12], [2, 0.75]]) {
+        for (const pass of [[10, 0.12], [3, 0.75]]) {
           bx.lineWidth = pass[0]; bx.strokeStyle = pass[0] > 3 ? 'rgb(201,166,255)' : 'rgb(255,240,220)'
           bx.globalAlpha = lineA * (pass[1] + 0.2 * flash)
           bx.beginPath(); bx.moveTo(NODES[0].x + ddx, NODES[0].y + ddy)
@@ -398,7 +445,7 @@ async function build(stage) {
         const a = lineA * ease.outQuad(q)
         if (pop + fl > 0.02) {
           bx.globalCompositeOperation = 'lighter'; bx.globalAlpha = a * Math.min(1, 0.55 * pop + 0.9 * fl)
-          const s = 70 + 90 * fl
+          const s = 70 + 260 * fl
           bx.drawImage(spriteS, n.x + ddx - s / 2, n.y + ddy - s / 2, s, s)
           bx.globalCompositeOperation = 'source-over'
         }
@@ -418,10 +465,10 @@ async function build(stage) {
 
       // ── phone
       phone.style.opacity = String(ease.outQuad(prog(t, PHONE_IN, PHONE_IN + 0.35)) * (1 - pout))
-      const push = 1 + 0.025 * prog(t, PHONE_LAND, PHONE_OUT)
+      const push = lerp(1, 1.35, ease.inOutCubic(prog(t, PUSH0, PUSH1)))
       phone.style.transform = `translateY(${phoneDY}px) rotateX(${lerp(14, 0, pin)}deg) rotateY(${lerp(-10, -3, pin) + 2 * prog(t, PHONE_LAND, PHONE_OUT)}deg) scale(${push * lerp(1, 0.95, pout)})`
       pAura.style.opacity = String(ease.inOutQuad(prog(t, 20.9, 21.6)) * (0.8 + 0.2 * Math.sin((t - 21) * 1.7)) * (1 - pout))
-      flare.style.opacity = String(tw(t, [[21.05, 0], [21.22, 0.9, ease.outQuad], [21.9, 0, ease.inOutQuad]]))
+      flare.style.opacity = String(tw(t, [[21.65, 0], [21.85, 0.9, ease.outQuad], [22.5, 0, ease.inOutQuad]]))
 
       // ── caption 2
       const c2in = ease.outCubic(prog(t, CAP2.eb, CAP2.eb + 0.4)), c2out = ease.inOutQuad(prog(t, CAP2.out, CAP2.gone))
@@ -492,6 +539,9 @@ export const CUES = [
   ['tick', PHONE_LAND - 0.08, 0.12], ['boom', PHONE_LAND - 0.08, 0.18],
   ['bell', CAP2.line, 440, 0.035, 2.4, -0.3],
   ['whoosh', PHONE_OUT, 0.5, 0.05],
+  ['whoosh', CITY_IN0, 0.9, 0.05],                                          // tilt back down to the city
+  ['bell', CITY_IN1 - 0.2, 392, 0.03, 2.4, -0.4], ['bell', CITY_IN1 - 0.1, 493.88, 0.03, 2.4, 0.4],   // the two windows light
+  ['glitter', MOONLINE0, MOONLINE1],
   ...[...END].map((ch, i) => ch === ' ' ? null : ['tick', T_TYPE + i * PER, 0.02]).filter(Boolean),
   ['bell', T_TYPE + 0.02, 587.33, 0.04, 2.4, 0],
   ['glitter', T_TYPE + 0.1, T_TYPE + 0.6],                                  // the moon brightens on "Look up."
