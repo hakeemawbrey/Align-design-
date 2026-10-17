@@ -108,7 +108,7 @@ export default async function build(stage) {
     // 1 · the sky behind the glass (screen-fixed: it is at infinity), cold → Align
     drawSky(sx, t, { zoom: lerp(0.965, 1, w), dx: 0, dy: 0, dim: lerp(0.8, 1, w), moon: MOON })
     ctx.save()
-    ctx.filter = w >= 1 ? 'none' : `saturate(${lerp(0.16, 1, w).toFixed(3)}) brightness(${lerp(0.6, 1, w).toFixed(3)}) contrast(${lerp(1.08, 1, w).toFixed(3)})`
+    ctx.filter = w >= 1 ? 'none' : `saturate(${lerp(0.16, 1, w).toFixed(3)}) brightness(${lerp(1, 1, w).toFixed(3)}) contrast(${lerp(1.08, 1, w).toFixed(3)})`
     ctx.drawImage(skyC, 0, 0)
     ctx.restore()
     if (w < 1) {        // a cold blue cast on the glass
@@ -140,12 +140,12 @@ export default async function build(stage) {
     ctx.clip('evenodd')
     const [fx, fy] = P(560, 560)
     const wg = ctx.createRadialGradient(fx, fy, 40 * s, fx, fy, 1500 * s)
-    wg.addColorStop(0, '#11151d'); wg.addColorStop(0.5, '#0b0e14'); wg.addColorStop(1, '#06070b')
+    wg.addColorStop(0, '#323c5a'); wg.addColorStop(0.5, '#232a3e'); wg.addColorStop(1, '#151925')
     ctx.fillStyle = wg; ctx.fillRect(0, 0, W, H)
     // moonlight scattering around the window onto the wall
     const [mx, my] = P(1500, 360)
     const mg = ctx.createRadialGradient(mx, my, 200 * s, mx, my, 900 * s)
-    mg.addColorStop(0, 'rgba(120,140,180,0.12)'); mg.addColorStop(1, 'rgba(120,140,180,0)')
+    mg.addColorStop(0, 'rgba(120,140,180,0.2)'); mg.addColorStop(1, 'rgba(120,140,180,0)')
     ctx.fillStyle = mg; ctx.fillRect(0, 0, W, H)
     // casing + muntins
     const frame = (r, col) => { const [a, b, c2, d] = R(r); ctx.fillStyle = col; ctx.fillRect(a, b, c2, d) }
@@ -186,15 +186,17 @@ export default async function build(stage) {
     if (lit > 0) {     // screen light catching the top rim
       ctx.strokeStyle = `rgba(150,185,255,${0.55 * flick})`; ctx.lineWidth = 3
       ctx.beginPath(); ctx.moveTo(-PHONE.w / 2 + 26, -PHONE.h / 2 + 1); ctx.lineTo(PHONE.w / 2 - 26, -PHONE.h / 2 + 1); ctx.stroke()
-      const lg = ctx.createLinearGradient(0, -PHONE.h / 2 - 60, 0, -PHONE.h / 2)
-      lg.addColorStop(0, 'rgba(120,160,255,0)'); lg.addColorStop(1, `rgba(120,160,255,${0.22 * flick})`)
-      ctx.fillStyle = lg; ctx.fillRect(-PHONE.w / 2 + 10, -PHONE.h / 2 - 60, PHONE.w - 20, 60)
+      // a feathered spill just above the top edge (no hard box)
+      ctx.save(); ctx.translate(0, -PHONE.h / 2 - 8); ctx.scale(1, 0.5)
+      const lg = ctx.createRadialGradient(0, 0, 0, 0, 0, 140)
+      lg.addColorStop(0, `rgba(120,160,255,${0.12 * flick})`); lg.addColorStop(1, 'rgba(120,160,255,0)')
+      ctx.fillStyle = lg; ctx.fillRect(-140, -140, 280, 280); ctx.restore()
     }
     ctx.restore()
 
     // 7 · lens: a soft vignette (fades out as the pane takes the frame)
     const vg = ctx.createRadialGradient(W / 2, H / 2, 300, W / 2, H / 2, 1150)
-    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, `rgba(0,0,0,${0.55 * (1 - w)})`)
+    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, `rgba(0,0,0,${0.4 * (1 - w)})`)
     ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H)
   }
 

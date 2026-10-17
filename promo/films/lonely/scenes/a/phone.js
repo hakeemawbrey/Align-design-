@@ -14,11 +14,11 @@ const UI = '#d8deea', UI2 = 'rgba(216,222,234,0.56)'
 const FLICK_D = [1450, 2350, 1800]
 const scrollY = t => T.flicks.reduce((y, f, i) => y + FLICK_D[i] * ease.outExpo(prog(t, f, f + 0.95)) * (t > f ? 1 : 0), 0)
 // tiles: 3 across
-const TILE = { w: 168, h: 214, gap: 14, x0: 26, y0: 236 }
+const TILE = { w: 168, h: 214, gap: 14, x0: 26, y0: 320 }
 const PITCH = TILE.h + TILE.gap
 const NAMES = { 1: 'Lena', 2: 'Theo', 3: 'Rosa', 5: 'Ama', 6: 'Cole', 7: 'Mei', 8: 'Nia', 9: 'Dev', 10: 'Ivy', 11: 'Kofi', 12: 'Sara' }
 const FACES = [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12]     // everyone but him (p4)
-const TAP = { row: 27, col: 1 }      // the tile under the thumb when the last flick settles
+const TAP = { row: 26, col: 1 }      // the tile under the thumb when the last flick settles
 
 // ── the chat
 const MSGS = [['me', 'hey'], ['them', 'hey'], ['me', 'wyd'], ['them', 'lol'], ['me', 'haha']]
@@ -37,7 +37,7 @@ export default async function build(stage) {
   const phone = el('div', { position: 'absolute', left: (PH.cx - PH.w / 2) + 'px', top: PH.top + 'px', width: PH.w + 'px', height: PH.h + 'px', borderRadius: '84px',
     background: 'linear-gradient(160deg, #1b1f27 0%, #0b0d12 40%, #08090d 100%)', transform: `rotate(${PH.rot}deg)`,
     boxShadow: '0 40px 120px rgba(0,0,0,0.8), inset 0 0 0 2px rgba(160,175,205,0.16), inset 0 0 0 7px #07080b' }, cam)
-  const screen = el('div', { position: 'absolute', left: '16px', top: '16px', width: SW + 'px', height: SH + 'px', borderRadius: '68px', overflow: 'hidden', background: '#0c0f15' }, phone)
+  const screen = el('div', { position: 'absolute', left: '16px', top: '16px', width: SW + 'px', height: SH + 'px', borderRadius: '68px', overflow: 'hidden', background: '#161c28' }, phone)
   const glow = el('div', { position: 'absolute', left: '-40px', top: '-40px', width: (PH.w + 80) + 'px', height: (PH.h + 80) + 'px', borderRadius: '120px',
     boxShadow: '0 0 160px 40px rgba(90,130,220,0.22)', pointerEvents: 'none' }, phone)
   phone.insertBefore(glow, screen)
@@ -59,10 +59,11 @@ export default async function build(stage) {
   // the cold cast over the photos
   el('div', { position: 'absolute', inset: 0, background: 'rgba(70,100,150,0.12)', mixBlendMode: 'color', pointerEvents: 'none' }, gridWrap)
   // header (stays put)
-  el('div', { position: 'absolute', left: 0, top: 0, width: SW + 'px', height: TILE.y0 - 14 + 'px', background: '#0c0f15' }, vM)
-  el('div', { position: 'absolute', left: '40px', top: '96px', fontFamily: SANS, fontWeight: 600, fontSize: '52px', color: '#f1f3f7', letterSpacing: '-0.01em' }, vM, 'Matches')
-  el('div', { position: 'absolute', left: '42px', top: '170px', fontFamily: MONO, fontSize: '26px', letterSpacing: '0.02em', color: UI, whiteSpace: 'pre' }, vM,
-    '214 MATCHES · <span style="color:#fff">0 CONVERSATIONS</span>')
+  el('div', { position: 'absolute', left: 0, top: 0, width: SW + 'px', height: TILE.y0 - 14 + 'px', background: '#161c28' }, vM)
+  el('div', { position: 'absolute', left: '40px', top: '84px', fontFamily: SANS, fontWeight: 600, fontSize: '52px', color: '#f1f3f7', letterSpacing: '-0.01em' }, vM, 'Matches')
+  const COUNT = { position: 'absolute', left: '40px', fontFamily: MONO, fontSize: '44px', lineHeight: '48px', letterSpacing: '0.01em', whiteSpace: 'pre' }
+  el('div', { ...COUNT, top: '160px', color: UI }, vM, '214 MATCHES')
+  el('div', { ...COUNT, top: '212px', color: '#fff' }, vM, '0 CONVERSATIONS')
   el('div', { position: 'absolute', left: '26px', right: '26px', top: (TILE.y0 - 15) + 'px', height: '1px', background: 'rgba(216,222,234,0.12)' }, vM)
   // the thumb's touch
   const touch = el('div', { position: 'absolute', width: '120px', height: '120px', marginLeft: '-60px', marginTop: '-60px', borderRadius: '50%',
@@ -78,7 +79,7 @@ export default async function build(stage) {
   const mb = svg.querySelector('feGaussianBlur')
 
   // ── view 2: the chat
-  const vC = el('div', { position: 'absolute', inset: 0, background: '#0c0f15', transform: `translateX(${SW}px)` }, screen)
+  const vC = el('div', { position: 'absolute', inset: 0, background: '#161c28', transform: `translateX(${SW}px)` }, screen)
   el('div', { position: 'absolute', left: '30px', top: '84px', fontFamily: SANS, fontWeight: 300, fontSize: '64px', lineHeight: '64px', color: UI }, vC, '‹')
   const av = el('div', { position: 'absolute', left: '82px', top: '86px', width: '64px', height: '64px', borderRadius: '50%', overflow: 'hidden', filter: 'url(#lonelyCold)' }, vC)
   img(av, `${IMG}people/p10.jpg`, { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%' })
@@ -104,7 +105,7 @@ export default async function build(stage) {
   glass.width = SW; glass.height = SH
   {
     const gx = glass.getContext('2d'), k = 3.5, fw = 342 * k, fh = 366 * k
-    gx.save(); gx.translate(SW / 2, 0); gx.scale(-1, 1); gx.globalAlpha = 0.2; gx.filter = 'blur(2.5px)'
+    gx.save(); gx.translate(SW / 2, 0); gx.scale(-1, 1); gx.globalAlpha = 0.8; gx.filter = 'blur(1.2px)'
     gx.drawImage(face.ref, -168 * k + 6, 470 - 142 * k, fw, fh); gx.restore()
     const gl = gx.createLinearGradient(0, 0, SW, SH * 0.6)       // a faint diagonal glare on the glass
     gl.addColorStop(0, 'rgba(200,215,240,0.0)'); gl.addColorStop(0.42, 'rgba(200,215,240,0.0)'); gl.addColorStop(0.5, 'rgba(200,215,240,0.05)'); gl.addColorStop(0.6, 'rgba(200,215,240,0.0)')
@@ -119,6 +120,8 @@ export default async function build(stage) {
   screen.appendChild(off); screen.appendChild(glass)      // keep the black + glass above the status bar
 
   const gr = grain(root, 0.5)
+  // a normal-blend grain floor so the screen-off black still has grain
+  const floor = grain(root, 0); floor.el.style.mixBlendMode = 'normal'
 
   return {
     start: T.phoneIn, end: T.roomBack, root,
@@ -175,15 +178,15 @@ export default async function build(stage) {
       // the screen dims, goes black; the glass gives back his face
       const dim = 0.5 * ease.inOutQuad(prog(t, T.dim, T.dim + 0.12)) + 0.5 * ease.inQuad(prog(t, T.off - 0.04, T.off + 0.04))
       off.style.opacity = String(dim)
-      glass.style.opacity = String(ease.inOutQuad(prog(t, T.off + 0.1, T.off + 0.7)))
+      glass.style.opacity = String(ease.inOutQuad(prog(t, T.off + 0.1, T.off + 0.45)))
       const lightOn = 1 - dim
       const scrollFlick = 1 + 0.06 * Math.min(1, v / 20)
       glow.style.opacity = String(lightOn * scrollFlick)
 
       // background: bokeh + the screen's spill on the dark
-      bx.fillStyle = '#05060a'; bx.fillRect(0, 0, W, H)
+      bx.fillStyle = '#1c2233'; bx.fillRect(0, 0, W, H)
       const rg = bx.createRadialGradient(PH.cx, 560, 100, PH.cx, 560, 1100)
-      rg.addColorStop(0, `rgba(60,90,160,${0.05 + 0.17 * lightOn})`); rg.addColorStop(1, 'rgba(60,90,160,0)')
+      rg.addColorStop(0, `rgba(70,100,170,${0.16 + 0.24 * lightOn})`); rg.addColorStop(1, 'rgba(60,90,160,0)')
       bx.fillStyle = rg; bx.fillRect(0, 0, W, H)
       for (const b of bokeh) {
         const a = b.a * (0.8 + 0.2 * Math.sin(t * 0.7 + b.ph)) * (0.55 + 0.45 * lightOn)
@@ -193,9 +196,10 @@ export default async function build(stage) {
         bx.fillStyle = g; bx.fillRect(b.x - b.R, b.y - b.R, b.R * 2, b.R * 2)
       }
       const vg = bx.createRadialGradient(W / 2, H / 2, 300, W / 2, H / 2, 1150)
-      vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.6)')
+      vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.45)')
       bx.fillStyle = vg; bx.fillRect(0, 0, W, H)
       gr.update(t, 0.5)
+      floor.update(t, 0.05 * dim)
     },
   }
 }

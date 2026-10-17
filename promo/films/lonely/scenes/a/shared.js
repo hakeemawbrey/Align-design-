@@ -6,7 +6,7 @@ import { drawGrain } from '../../../sky.js'
 // ── the timeline (seconds)
 export const T = {
   phoneIn: 4.0,            // hard cut: the room → the phone close-up
-  flicks: [4.45, 5.25, 5.95],  // thumb-scroll flicks through the matches grid
+  flicks: [4.9, 5.55, 6.15],  // thumb-scroll flicks through the matches grid
   tap: 6.7,                // a thumb lands on one match
   chatIn: 6.85,            // the chat slides in (to 7.13)
   msgs: [7.3, 7.75, 8.2, 8.65, 9.1],  // hey / hey / wyd / lol / haha
@@ -62,12 +62,15 @@ export async function faceCanvases() {
         const head = 1 - smooth(Math.hypot((px - 168) / 80, (py - 138) / 92), 0.78, 1.12)
         const neck = 1 - smooth(Math.hypot((px - 160) / 62, (py - 222) / 52), 0.7, 1.1)
         const sh = (1 - smooth(Math.hypot((px - 170) / 165, (py - 330) / 110), 0.7, 1.05)) * smooth(py, 205, 250)
-        const m = clamp(Math.max(head, neck, sh))
+        // chroma key: the aura (red/violet, far from green) is not him; hair and shirt (dark, neutral) and skin stay
+        const b = src[k + 2] / 255, core = Math.max(1 - smooth(Math.hypot((px - 164) / 58, (py - 152) / 74), 0.85, 1.0), 1 - smooth(Math.hypot((px - 160) / 46, (py - 228) / 42), 0.8, 1.0))
+        const bgKey = smooth(Math.max(r, b) - g, 0.3, 0.46) * (1 - core)
+        const m = clamp(Math.max(head, neck, sh)) * (1 - bgKey)
         let a, cr, cg, cb
         if (mode === 'lit') {
           // underlight: dark brow → bright chin/jaw/throat, falling off again down the shirt
           const up = lerp(0.22, 1.0, smooth(py, 80, 200)) * lerp(1, 0.55, smooth(py, 240, 330))
-          const v = L * up * 1.05
+          const v = L * up * 1.4
           cr = v * 0.62; cg = v * 0.8; cb = v * 1.08
           a = m
         } else if (mode === 'dark') {
