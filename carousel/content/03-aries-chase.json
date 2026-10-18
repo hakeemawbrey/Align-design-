@@ -1,0 +1,19 @@
+{
+  "id": "03-aries-chase",
+  "title": "Aries, if they wanted to, they would have",
+  "signs": ["aries"],
+  "core": ["mutual"],
+  "caption": "put the phone down, ram",
+  "hashtags": ["aries", "zodiacdating", "astrology", "datingadvice", "firesigns"],
+  "slides": [
+    { "text": "if they wanted to,", "bg": { "kind": "neon", "tint": "ember" } },
+    { "text": "they would have aligned", "bg": { "kind": "neon", "tint": "ember", "zoom": 1.15 } },
+    { "text": "three texts ago,", "bg": { "kind": "neon", "tint": "rub", "zoom": 1.3 } },
+    { "text": "aries,", "bg": { "kind": "figure", "sign": "aries", "zoom": 1.05 } },
+    { "text": "you're first to everything,", "bg": { "kind": "figure", "sign": "aries", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "but love isn't a race,", "bg": { "kind": "aura", "sign": "aries", "zoom": 1.1 } },
+    { "text": "if only one of you", "bg": { "kind": "aura", "sign": "aries", "zoom": 1.25, "focus": "48% 38%" } },
+    { "text": "is running,", "bg": { "kind": "aura", "sign": "aries", "zoom": 1.4, "focus": "48% 32%" } },
+    { "text": "it's just cardio.", "bg": { "kind": "neon", "tint": "ember", "zoom": 1.2 } }
+  ]
+}

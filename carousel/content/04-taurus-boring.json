@@ -1,0 +1,19 @@
+{
+  "id": "04-taurus-boring",
+  "title": "Taurus, boring is a green flag",
+  "signs": ["taurus"],
+  "core": ["honest"],
+  "caption": "boring is a green flag, taurus",
+  "hashtags": ["taurus", "zodiacdating", "astrology", "greenflags", "earthsigns"],
+  "slides": [
+    { "text": "taurus,", "bg": { "kind": "figure", "sign": "taurus", "zoom": 1.05 } },
+    { "text": "the butterflies", "bg": { "kind": "figure", "sign": "taurus", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "were anxiety,", "bg": { "kind": "neon", "tint": "gold" } },
+    { "text": "the boring one", "bg": { "kind": "veil", "person": 7 } },
+    { "text": "who says what they mean", "bg": { "kind": "veil", "person": 7, "zoom": 1.2 } },
+    { "text": "and shows up, like you do,", "bg": { "kind": "aura", "sign": "taurus", "zoom": 1.1 } },
+    { "text": "is the green flag,", "bg": { "kind": "aura", "sign": "taurus", "zoom": 1.3, "focus": "50% 36%" } },
+    { "text": "chemistry is a feeling,", "bg": { "kind": "neon", "tint": "gold", "zoom": 1.2 } },
+    { "text": "consistency is a person.", "bg": { "kind": "figure", "sign": "taurus", "zoom": 1.4, "focus": "50% 34%" } }
+  ]
+}

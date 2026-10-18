@@ -1,0 +1,19 @@
+{
+  "id": "02-leo-audience",
+  "title": "Leo, stop performing for someone who isn't clapping",
+  "signs": ["leo"],
+  "core": ["mutual"],
+  "caption": "the sun doesn't audition, leo",
+  "hashtags": ["leo", "zodiacdating", "astrology", "firesigns"],
+  "slides": [
+    { "text": "dear leo,", "bg": { "kind": "figure", "sign": "leo", "zoom": 1.05 } },
+    { "text": "the lights, the outfit,", "bg": { "kind": "figure", "sign": "leo", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "the encore,", "bg": { "kind": "neon", "tint": "ember" } },
+    { "text": "all for someone", "bg": { "kind": "veil", "person": 3 } },
+    { "text": "who isn't even clapping,", "bg": { "kind": "veil", "person": 3, "zoom": 1.25 } },
+    { "text": "take a bow,", "bg": { "kind": "aura", "sign": "leo", "zoom": 1.1 } },
+    { "text": "leave the stage,", "bg": { "kind": "aura", "sign": "leo", "zoom": 1.3, "focus": "50% 35%" } },
+    { "text": "and find the one", "bg": { "kind": "neon", "tint": "gold" } },
+    { "text": "already on their feet.", "bg": { "kind": "neon", "tint": "gold", "zoom": 1.25 } }
+  ]
+}

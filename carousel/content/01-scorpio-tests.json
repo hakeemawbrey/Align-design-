@@ -1,0 +1,95 @@
+{
+  "id": "01-scorpio-tests",
+  "title": "Scorpio, stop testing people who already passed",
+  "signs": [
+    "scorpio"
+  ],
+  "core": [
+    "honest",
+    "release"
+  ],
+  "caption": "no more retakes, scorpio",
+  "hashtags": [
+    "scorpio",
+    "zodiacdating",
+    "astrology",
+    "datingadvice"
+  ],
+  "slides": [
+    {
+      "text": "scorpio,",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1.05
+      }
+    },
+    {
+      "text": "they passed the test",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1.2,
+        "focus": "50% 40%"
+      }
+    },
+    {
+      "text": "you never told them about,",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1.35,
+        "focus": "52% 32%"
+      }
+    },
+    {
+      "text": "and the retake,",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    },
+    {
+      "text": "and the 2am pop quiz,",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub",
+        "zoom": 1.2
+      }
+    },
+    {
+      "text": "trust isn't a prize\nthey win,",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1.1
+      }
+    },
+    {
+      "text": "it's a decision,",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1.3,
+        "focus": "50% 38%"
+      }
+    },
+    {
+      "text": "so make it,",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1.45,
+        "focus": "50% 34%"
+      }
+    },
+    {
+      "text": "or release them kindly.",
+      "bg": {
+        "kind": "sky",
+        "tint": "violet",
+        "moon": 0.5
+      }
+    }
+  ]
+}
