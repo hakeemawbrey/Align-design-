@@ -260,7 +260,7 @@ function makeAura(fig, body, meshes, aura, glyph, rng) {
   }
 
   // bloom behind the whole body
-  const bloom = new THREE.Sprite(new THREE.SpriteMaterial({ map: softDot(aura.color), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.4 }))
+  const bloom = new THREE.Sprite(new THREE.SpriteMaterial({ map: softDot(aura.color), blending: THREE.AdditiveBlending, depthWrite: false, fog: false, transparent: true, opacity: 0.4 }))
   bloom.position.set(0, 0.95, 0)
   bloom.scale.set(2.6, 3.2, 1)
   bloom.renderOrder = 1
@@ -281,7 +281,7 @@ function makeAura(fig, body, meshes, aura, glyph, rng) {
   const geo = new THREE.BufferGeometry()
   const pos = new Float32Array(N * 3)
   geo.setAttribute('position', new THREE.BufferAttribute(pos, 3))
-  const sparks = new THREE.Points(geo, new THREE.PointsMaterial({ map: softDot(aura.light), size: 0.11, transparent: true, opacity: 0.9, depthWrite: false, blending: THREE.AdditiveBlending }))
+  const sparks = new THREE.Points(geo, new THREE.PointsMaterial({ map: softDot(aura.light), size: 0.11, transparent: true, opacity: 0.9, depthWrite: false, fog: false, blending: THREE.AdditiveBlending }))
   sparks.renderOrder = 3
   fig.add(sparks)
 
@@ -355,27 +355,85 @@ function starGeometry(R, inner, curve, depth) {
   return g
 }
 
+// Real star colours, from hot to cool: blue-white, white, yellow, gold,
+// orange. Weighted toward the warm ones, the way people picture stars.
+const STAR_COLORS = [
+  ['#9fd0ff', 2], ['#cfe6ff', 2], ['#fff6d8', 1], ['#ffe34a', 4], ['#ffc533', 3], ['#ff9d2e', 3], ['#ff7a1f', 1],
+]
+function pickStarColor(rng) {
+  const total = STAR_COLORS.reduce((n, [, w]) => n + w, 0)
+  let r = rng.next() * total
+  for (const [c, w] of STAR_COLORS) if ((r -= w) < 0) return c
+  return STAR_COLORS[0][0]
+}
+
+// Self-lit: white-hot in the middle, its colour out at the points, with a
+// little facet shading so it still reads as a solid low-poly thing.
+const STAR_VERT = /* glsl */ `
+  varying vec3 vLocal;
+  varying vec3 vN;
+  void main() {
+    vLocal = position;
+    vN = normalize(normalMatrix * normal);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`
+const STAR_FRAG = /* glsl */ `
+  uniform vec3 uColor;
+  uniform vec3 uHot;
+  uniform float uR;
+  uniform float uBright;
+  varying vec3 vLocal;
+  varying vec3 vN;
+  void main() {
+    float d = length(vLocal.xy) / uR;
+    vec3 col = mix(uHot, uColor, smoothstep(0.12, 0.8, d));
+    float facet = 0.82 + 0.18 * max(dot(normalize(vN), normalize(vec3(0.3, 0.5, 1.0))), 0.0);
+    gl_FragColor = vec4(col * facet * uBright, 1.0);
+    #include <colorspace_fragment>
+  }
+`
+
 function starGlow(color) {
+  const S = 256
   const c = document.createElement('canvas')
-  c.width = c.height = 128
+  c.width = c.height = S
   const ctx = c.getContext('2d')
   const col = new THREE.Color(color)
   const rgb = `${Math.round(col.r * 255)},${Math.round(col.g * 255)},${Math.round(col.b * 255)}`
-  const g = ctx.createRadialGradient(64, 64, 0, 64, 64, 64)
-  g.addColorStop(0, `rgba(${rgb},0.9)`)
-  g.addColorStop(0.3, `rgba(${rgb},0.35)`)
+  const h = S / 2
+  const g = ctx.createRadialGradient(h, h, 0, h, h, h)
+  g.addColorStop(0, 'rgba(255,255,255,1)')
+  g.addColorStop(0.08, `rgba(${rgb},0.95)`)
+  g.addColorStop(0.25, `rgba(${rgb},0.45)`)
+  g.addColorStop(0.55, `rgba(${rgb},0.12)`)
   g.addColorStop(1, `rgba(${rgb},0)`)
   ctx.fillStyle = g
-  ctx.fillRect(0, 0, 128, 128)
-  // long thin cross flare, like a star through a lens
+  ctx.fillRect(0, 0, S, S)
   ctx.globalCompositeOperation = 'lighter'
-  for (const [w, h] of [[128, 3], [3, 128]]) {
-    const lg = ctx.createRadialGradient(64, 64, 0, 64, 64, 64)
-    lg.addColorStop(0, 'rgba(255,255,255,0.8)')
+  // long spikes on the axes, shorter ones on the diagonals: a star through a lens
+  const spike = (angle, len, w, alpha) => {
+    ctx.save()
+    ctx.translate(h, h)
+    ctx.rotate(angle)
+    const lg = ctx.createLinearGradient(-len, 0, len, 0)
+    lg.addColorStop(0, 'rgba(255,255,255,0)')
+    lg.addColorStop(0.5, `rgba(255,255,255,${alpha})`)
     lg.addColorStop(1, 'rgba(255,255,255,0)')
     ctx.fillStyle = lg
-    ctx.fillRect(64 - w / 2, 64 - h / 2, w, h)
+    ctx.beginPath()
+    ctx.moveTo(-len, 0)
+    ctx.lineTo(0, -w)
+    ctx.lineTo(len, 0)
+    ctx.lineTo(0, w)
+    ctx.closePath()
+    ctx.fill()
+    ctx.restore()
   }
+  spike(0, h, 3.5, 0.95)
+  spike(Math.PI / 2, h, 3.5, 0.95)
+  spike(Math.PI / 4, h * 0.55, 2, 0.6)
+  spike(-Math.PI / 4, h * 0.55, 2, 0.6)
   const t = new THREE.CanvasTexture(c)
   t.colorSpace = THREE.SRGBColorSpace
   return t
@@ -395,23 +453,27 @@ export function makeSpecies(rng, colors) {
   const pupilGeo = new THREE.SphereGeometry(0.042, 10, 6)
   const eyeMat = new THREE.MeshBasicMaterial({ color: '#ffffff' })
   const pupilMat = new THREE.MeshBasicMaterial({ color: '#0a0a14' })
+  const rimMat = new THREE.MeshBasicMaterial({ color: '#3a2410' })
   const mouthGeo = new THREE.CircleGeometry(0.05, 12)
   const mouthMat = new THREE.MeshBasicMaterial({ color: '#2a0a18' })
   const hoverBase = rng.range(0.7, 1.3)
 
   return function spawn(i, irng) {
-    const color = new THREE.Color(colors[i === 0 ? 0 : irng.int(0, colors.length - 1)])
-    color.offsetHSL(irng.range(-0.02, 0.02), 0, irng.range(0, 0.08))
-    const mat = new THREE.MeshPhongMaterial({
-      color, emissive: color.clone().multiplyScalar(0.55), shininess: 90, specular: '#ffffff', flatShading: true,
+    const color = new THREE.Color(pickStarColor(irng))
+    const hot = new THREE.Color('#ffffff').lerp(color, 0.18)
+    const mat = new THREE.ShaderMaterial({
+      vertexShader: STAR_VERT,
+      fragmentShader: STAR_FRAG,
+      uniforms: { uColor: { value: color }, uHot: { value: hot }, uR: { value: R }, uBright: { value: 1.15 } },
     })
     const root = new THREE.Group()
     const body = new THREE.Group()
     root.add(body)
     const star = new THREE.Mesh(geo, mat)
     body.add(star)
-    const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: starGlow(color.getStyle()), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }))
-    glow.scale.setScalar(R * 4)
+    const glowTex = starGlow(color.getStyle())
+    const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, transparent: true, depthWrite: false, fog: false, blending: THREE.AdditiveBlending }))
+    glow.scale.setScalar(R * 6)
     glow.renderOrder = 1
     body.add(glow)
 
@@ -419,12 +481,15 @@ export function makeSpecies(rng, colors) {
     const spread = eyes === 1 ? [0] : eyes === 2 ? [-0.095, 0.095] : [-0.14, 0, 0.14]
     for (const x of spread) {
       const e = new THREE.Group()
+      const rim = new THREE.Mesh(eyeGeo, rimMat)
+      rim.scale.set(1.28, 1.48, 0.4)
+      rim.position.z = -0.006
       const white = new THREE.Mesh(eyeGeo, eyeMat)
       white.scale.set(1, 1.2, 0.5)
       const pupil = new THREE.Mesh(pupilGeo, pupilMat)
       pupil.position.z = 0.03
       pupil.scale.set(1, 1.2, 0.5)
-      e.add(white, pupil)
+      e.add(rim, white, pupil)
       e.position.set(x, 0.045, front)
       if (eyes === 1) e.scale.setScalar(1.45)
       body.add(e)
@@ -451,9 +516,12 @@ export function makeSpecies(rng, colors) {
         // twinkle
         const tw = 1 + Math.sin(t * 4.3 + phase) * 0.04 + Math.sin(t * 9.1 + phase * 2) * 0.02 + talk * 0.08
         star.scale.setScalar(tw)
-        mat.emissiveIntensity = 0.8 + 0.25 * Math.sin(t * 3.1 + phase) + alert * 0.4 + talk * 0.6
-        glow.material.opacity = 0.55 + 0.2 * Math.sin(t * 4.3 + phase) + talk * 0.3
-        glow.material.rotation = t * 0.1 + phase
+        mat.uniforms.uBright.value = 1.1 + 0.12 * Math.sin(t * 3.1 + phase) + alert * 0.15 + talk * 0.3
+        // twinkle: the halo breathes and the spikes flare and turn slowly
+        const flare = 0.75 + 0.18 * Math.sin(t * 5.3 + phase) + 0.1 * Math.sin(t * 11.7 + phase * 3) + talk * 0.25
+        glow.material.opacity = Math.min(1, flare)
+        glow.scale.setScalar(R * 6 * (0.92 + flare * 0.12))
+        glow.material.rotation = Math.sin(t * 0.35 + phase) * 0.25
         if (look) {
           const local = root.worldToLocal(look.clone())
           const yaw = Math.atan2(local.x, local.z)
