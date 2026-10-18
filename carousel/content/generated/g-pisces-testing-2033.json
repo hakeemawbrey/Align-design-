@@ -5,7 +5,7 @@
     "pisces"
   ],
   "core": [
-    "honest"
+    "mutual"
   ],
   "caption": "you know who you are",
   "hashtags": [
@@ -19,7 +19,7 @@
   "seed": 2033,
   "slides": [
     {
-      "text": "pisces, with love,",
+      "text": "pisces,",
       "bg": {
         "kind": "figure",
         "sign": "pisces",
@@ -27,7 +27,7 @@
       }
     },
     {
-      "text": "you see the best in people,",
+      "text": "you read moods through a screen,",
       "bg": {
         "kind": "figure",
         "sign": "pisces",
@@ -36,14 +36,14 @@
       }
     },
     {
-      "text": "but somehow",
+      "text": "and still",
       "bg": {
         "kind": "neon",
         "tint": "violet"
       }
     },
     {
-      "text": "you keep testing someone",
+      "text": "you set little traps",
       "bg": {
         "kind": "aura",
         "sign": "pisces",
@@ -51,7 +51,7 @@
       }
     },
     {
-      "text": "who already passed,",
+      "text": "to see if they care,",
       "bg": {
         "kind": "aura",
         "sign": "pisces",
@@ -60,7 +60,7 @@
       }
     },
     {
-      "text": "so tell them the test",
+      "text": "so put the red pen down",
       "bg": {
         "kind": "aura",
         "sign": "pisces",
@@ -69,7 +69,7 @@
       }
     },
     {
-      "text": "or stop giving it.",
+      "text": "and flip your card too.",
       "bg": {
         "kind": "neon",
         "tint": "tide"

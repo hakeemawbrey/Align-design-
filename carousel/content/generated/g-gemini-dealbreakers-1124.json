@@ -5,20 +5,21 @@
     "gemini"
   ],
   "core": [
-    "dealbreakers"
+    "honest"
   ],
-  "caption": "say it on date one",
+  "caption": "a note for gemini season",
   "hashtags": [
     "gemini",
     "zodiacdating",
-    "astrology"
+    "astrologymemes",
+    "zodiacsigns"
   ],
   "theme": "dealbreakers",
   "engine": "bank",
   "seed": 1124,
   "slides": [
     {
-      "text": "gemini, quick one,",
+      "text": "gemini,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -26,7 +27,7 @@
       }
     },
     {
-      "text": "you can talk to anyone,",
+      "text": "you say what others won't,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -35,14 +36,14 @@
       }
     },
     {
-      "text": "a real gift, but",
+      "text": "but somehow",
       "bg": {
         "kind": "neon",
         "tint": "tide"
       }
     },
     {
-      "text": "you act easy-going",
+      "text": "you said \"either's fine\"",
       "bg": {
         "kind": "aura",
         "sign": "gemini",
@@ -50,7 +51,7 @@
       }
     },
     {
-      "text": "and drop the dealbreaker",
+      "text": "about kids,",
       "bg": {
         "kind": "aura",
         "sign": "gemini",
@@ -59,7 +60,7 @@
       }
     },
     {
-      "text": "at month four,",
+      "text": "and it isn't,",
       "bg": {
         "kind": "aura",
         "sign": "gemini",
@@ -68,7 +69,7 @@
       }
     },
     {
-      "text": "so put it on your card,",
+      "text": "so lead with it,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -76,7 +77,7 @@
       }
     },
     {
-      "text": "the right one",
+      "text": "the wrong ones leave early,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -85,7 +86,7 @@
       }
     },
     {
-      "text": "will still pick you.",
+      "text": "that's the point.",
       "bg": {
         "kind": "neon",
         "tint": "violet"

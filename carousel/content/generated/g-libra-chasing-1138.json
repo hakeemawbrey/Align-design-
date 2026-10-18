@@ -7,19 +7,19 @@
   "core": [
     "mutual"
   ],
-  "caption": "a gentle intervention",
+  "caption": "libra, put your running shoes away",
   "hashtags": [
     "libra",
     "zodiacdating",
     "astrology",
-    "zodiacsigns"
+    "datingadvice"
   ],
   "theme": "chasing",
   "engine": "bank",
   "seed": 1138,
   "slides": [
     {
-      "text": "if they wanted to,",
+      "text": "dear libra,",
       "bg": {
         "kind": "figure",
         "sign": "libra",
@@ -27,7 +27,7 @@
       }
     },
     {
-      "text": "they'd walk toward you,",
+      "text": "you make everyone feel chosen,",
       "bg": {
         "kind": "figure",
         "sign": "libra",
@@ -36,31 +36,14 @@
       }
     },
     {
-      "text": "libra,",
-      "bg": {
-        "kind": "aura",
-        "sign": "libra",
-        "zoom": 1
-      }
-    },
-    {
-      "text": "you can read any room,",
-      "bg": {
-        "kind": "aura",
-        "sign": "libra",
-        "zoom": 1.3,
-        "focus": "43% 34%"
-      }
-    },
-    {
-      "text": "you've seen it before,",
+      "text": "and somehow",
       "bg": {
         "kind": "neon",
         "tint": "tide"
       }
     },
     {
-      "text": "and love you have to chase",
+      "text": "you're the one chasing",
       "bg": {
         "kind": "aura",
         "sign": "libra",
@@ -68,12 +51,45 @@
       }
     },
     {
-      "text": "isn't aligned.",
+      "text": "someone who keeps",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.15,
+        "focus": "52% 39%"
+      }
+    },
+    {
+      "text": "walking the other way,",
       "bg": {
         "kind": "aura",
         "sign": "libra",
         "zoom": 1.3,
+        "focus": "50% 37%"
+      }
+    },
+    {
+      "text": "so sit down,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you're a date,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
         "focus": "47% 40%"
+      }
+    },
+    {
+      "text": "not a search party.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
       }
     }
   ]

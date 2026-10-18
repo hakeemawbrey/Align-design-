@@ -5,21 +5,20 @@
     "scorpio"
   ],
   "core": [
-    "mutual"
+    "not-alone"
   ],
-  "caption": "a note for scorpio season",
+  "caption": "said with love",
   "hashtags": [
     "scorpio",
     "zodiacdating",
-    "astrology",
-    "zodiac"
+    "astrology"
   ],
   "theme": "breadcrumbs",
   "engine": "bank",
   "seed": 1132,
   "slides": [
     {
-      "text": "dear scorpio,",
+      "text": "scorpio, honestly,",
       "bg": {
         "kind": "figure",
         "sign": "scorpio",
@@ -36,14 +35,14 @@
       }
     },
     {
-      "text": "it's a gift, but",
+      "text": "but somehow",
       "bg": {
         "kind": "neon",
         "tint": "violet"
       }
     },
     {
-      "text": "you're living off",
+      "text": "you keep calling crumbs",
       "bg": {
         "kind": "aura",
         "sign": "scorpio",
@@ -51,33 +50,25 @@
       }
     },
     {
-      "text": "one like a week",
+      "text": "a whole meal,",
       "bg": {
         "kind": "aura",
         "sign": "scorpio",
-        "zoom": 1.3,
+        "zoom": 1.15,
         "focus": "56% 39%"
       }
     },
     {
-      "text": "and a \"we should hang,\"",
+      "text": "and someone out there",
       "bg": {
-        "kind": "figure",
-        "sign": "scorpio",
-        "zoom": 1
-      }
-    },
-    {
-      "text": "so wait for someone",
-      "bg": {
-        "kind": "figure",
+        "kind": "aura",
         "sign": "scorpio",
         "zoom": 1.3,
-        "focus": "50% 39%"
+        "focus": "59% 38%"
       }
     },
     {
-      "text": "who turns their card too.",
+      "text": "would make you dinner.",
       "bg": {
         "kind": "neon",
         "tint": "tide"

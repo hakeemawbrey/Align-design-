@@ -18,7 +18,7 @@
   "seed": 1113,
   "slides": [
     {
-      "text": "capricorn, with love,",
+      "text": "listen, capricorn,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "text": "you have a five-year plan,",
+      "text": "you're never fooled twice,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -42,35 +42,36 @@
       }
     },
     {
-      "text": "you keep choosing people",
+      "text": "you fell for the lighting",
       "bg": {
         "kind": "aura",
         "sign": "capricorn",
-        "zoom": 1.1
+        "zoom": 1
       }
     },
     {
-      "text": "by their photos,",
+      "text": "in picture three,",
+      "bg": {
+        "kind": "aura",
+        "sign": "capricorn",
+        "zoom": 1.3,
+        "focus": "56% 41%"
+      }
+    },
+    {
+      "text": "so lead with your sky,",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.48
+      }
+    },
+    {
+      "text": "your face comes last.",
       "bg": {
         "kind": "veil",
         "person": 1,
-        "zoom": 1.05
-      }
-    },
-    {
-      "text": "because a face is a cover,",
-      "bg": {
-        "kind": "veil",
-        "person": 1,
-        "zoom": 1.35,
-        "focus": "46% 40%"
-      }
-    },
-    {
-      "text": "not the book.",
-      "bg": {
-        "kind": "neon",
-        "tint": "spark"
+        "zoom": 1.15
       }
     }
   ]

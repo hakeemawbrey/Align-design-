@@ -7,10 +7,11 @@
   "core": [
     "honest"
   ],
-  "caption": "shorter, sagittarius",
+  "caption": "for the sagittarius in the group chat",
   "hashtags": [
     "sagittarius",
     "zodiacdating",
+    "zodiac",
     "astrology"
   ],
   "theme": "over-explaining",
@@ -18,7 +19,7 @@
   "seed": 1119,
   "slides": [
     {
-      "text": "with love, sagittarius,",
+      "text": "sagittarius, quick one,",
       "bg": {
         "kind": "figure",
         "sign": "sagittarius",
@@ -26,7 +27,7 @@
       }
     },
     {
-      "text": "you make it all an adventure,",
+      "text": "you're honest to a fault,",
       "bg": {
         "kind": "figure",
         "sign": "sagittarius",
@@ -35,14 +36,14 @@
       }
     },
     {
-      "text": "all true, and still",
+      "text": "but the truth is short,",
       "bg": {
         "kind": "neon",
         "tint": "ember"
       }
     },
     {
-      "text": "you're explaining yourself",
+      "text": "and you're still adding",
       "bg": {
         "kind": "aura",
         "sign": "sagittarius",
@@ -50,7 +51,7 @@
       }
     },
     {
-      "text": "to someone who",
+      "text": "footnotes",
       "bg": {
         "kind": "aura",
         "sign": "sagittarius",
@@ -59,7 +60,7 @@
       }
     },
     {
-      "text": "already decided,",
+      "text": "to a breakup,",
       "bg": {
         "kind": "aura",
         "sign": "sagittarius",

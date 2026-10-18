@@ -43,7 +43,7 @@
       }
     },
     {
-      "text": "you're grading them",
+      "text": "you keep testing someone",
       "bg": {
         "kind": "aura",
         "sign": "pisces",
@@ -51,29 +51,21 @@
       }
     },
     {
-      "text": "on a test",
+      "text": "who already passed,",
       "bg": {
         "kind": "aura",
         "sign": "pisces",
-        "zoom": 1.3,
+        "zoom": 1.15,
         "focus": "48% 38%"
       }
     },
     {
-      "text": "they never got to see,",
+      "text": "so put the red pen down",
       "bg": {
-        "kind": "figure",
-        "sign": "pisces",
-        "zoom": 1
-      }
-    },
-    {
-      "text": "so stop grading",
-      "bg": {
-        "kind": "figure",
+        "kind": "aura",
         "sign": "pisces",
         "zoom": 1.3,
-        "focus": "47% 41%"
+        "focus": "50% 40%"
       }
     },
     {

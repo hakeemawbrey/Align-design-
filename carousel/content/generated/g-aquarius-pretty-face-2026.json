@@ -18,7 +18,7 @@
   "seed": 2026,
   "slides": [
     {
-      "text": "aquarius, honestly,",
+      "text": "aquarius, my love,",
       "bg": {
         "kind": "figure",
         "sign": "aquarius",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "text": "you love like a best friend,",
+      "text": "you see the pattern first,",
       "bg": {
         "kind": "figure",
         "sign": "aquarius",
@@ -35,42 +35,43 @@
       }
     },
     {
-      "text": "which is lovely, but",
+      "text": "but somehow",
       "bg": {
         "kind": "neon",
         "tint": "tide"
       }
     },
     {
-      "text": "you keep choosing people",
+      "text": "you picked the jawline",
       "bg": {
         "kind": "aura",
         "sign": "aquarius",
-        "zoom": 1.1
+        "zoom": 1
       }
     },
     {
-      "text": "by their photos,",
+      "text": "and got the attitude,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "49% 43%"
+      }
+    },
+    {
+      "text": "so lead with your sky,",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.27
+      }
+    },
+    {
+      "text": "your face comes last.",
       "bg": {
         "kind": "veil",
         "person": 6,
-        "zoom": 1.05
-      }
-    },
-    {
-      "text": "so let them read you",
-      "bg": {
-        "kind": "veil",
-        "person": 6,
-        "zoom": 1.35,
-        "focus": "53% 30%"
-      }
-    },
-    {
-      "text": "before they see you.",
-      "bg": {
-        "kind": "neon",
-        "tint": "violet"
+        "zoom": 1.15
       }
     }
   ]

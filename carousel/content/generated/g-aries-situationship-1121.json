@@ -5,9 +5,9 @@
     "aries"
   ],
   "core": [
-    "dealbreakers"
+    "release"
   ],
-  "caption": "aries, it has a name",
+  "caption": "so what are you two",
   "hashtags": [
     "aries",
     "zodiacdating",
@@ -18,7 +18,7 @@
   "seed": 1121,
   "slides": [
     {
-      "text": "if it has no name",
+      "text": "aries, honestly,",
       "bg": {
         "kind": "figure",
         "sign": "aries",
@@ -26,49 +26,23 @@
       }
     },
     {
-      "text": "after eight months,",
+      "text": "you're loyal to the bone,",
       "bg": {
         "kind": "figure",
         "sign": "aries",
-        "zoom": 1.15,
+        "zoom": 1.3,
         "focus": "44% 44%"
       }
     },
     {
-      "text": "that's the name,",
-      "bg": {
-        "kind": "figure",
-        "sign": "aries",
-        "zoom": 1.3,
-        "focus": "41% 46%"
-      }
-    },
-    {
-      "text": "aries,",
-      "bg": {
-        "kind": "aura",
-        "sign": "aries",
-        "zoom": 1
-      }
-    },
-    {
-      "text": "you call things as they are,",
-      "bg": {
-        "kind": "aura",
-        "sign": "aries",
-        "zoom": 1.3,
-        "focus": "49% 39%"
-      }
-    },
-    {
-      "text": "this isn't news to you,",
+      "text": "and yet",
       "bg": {
         "kind": "neon",
         "tint": "ember"
       }
     },
     {
-      "text": "so say what you want",
+      "text": "you're eight months into",
       "bg": {
         "kind": "aura",
         "sign": "aries",
@@ -76,16 +50,33 @@
       }
     },
     {
-      "text": "out loud,",
+      "text": "\"let's not label it,\"",
       "bg": {
         "kind": "aura",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "50% 40%"
+      }
+    },
+    {
+      "text": "so name it",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "or release it,",
+      "bg": {
+        "kind": "figure",
         "sign": "aries",
         "zoom": 1.3,
         "focus": "54% 36%"
       }
     },
     {
-      "text": "it's allowed.",
+      "text": "those are the options.",
       "bg": {
         "kind": "neon",
         "tint": "rub"

@@ -5,20 +5,21 @@
     "leo"
   ],
   "core": [
-    "release"
+    "1111"
   ],
   "caption": "close the thread, leo",
   "hashtags": [
     "leo",
     "zodiacdating",
-    "datingadvice"
+    "datingadvice",
+    "astrologymemes"
   ],
   "theme": "the-ex",
   "engine": "bank",
   "seed": 1140,
   "slides": [
     {
-      "text": "an ex",
+      "text": "listen, leo,",
       "bg": {
         "kind": "figure",
         "sign": "leo",
@@ -26,7 +27,7 @@
       }
     },
     {
-      "text": "is not a sequel,",
+      "text": "you spot a fake fan instantly,",
       "bg": {
         "kind": "figure",
         "sign": "leo",
@@ -35,31 +36,14 @@
       }
     },
     {
-      "text": "leo,",
-      "bg": {
-        "kind": "aura",
-        "sign": "leo",
-        "zoom": 1
-      }
-    },
-    {
-      "text": "you know who's really clapping,",
-      "bg": {
-        "kind": "aura",
-        "sign": "leo",
-        "zoom": 1.3,
-        "focus": "56% 35%"
-      }
-    },
-    {
-      "text": "you've said this to friends,",
+      "text": "and yet",
       "bg": {
         "kind": "neon",
         "tint": "ember"
       }
     },
     {
-      "text": "and a clean goodbye",
+      "text": "you watch every story",
       "bg": {
         "kind": "aura",
         "sign": "leo",
@@ -67,12 +51,37 @@
       }
     },
     {
-      "text": "beats a slow fade.",
+      "text": "they post",
       "bg": {
         "kind": "aura",
         "sign": "leo",
         "zoom": 1.3,
+        "focus": "50% 36%"
+      }
+    },
+    {
+      "text": "within the minute,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "so fold the bad hand,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
         "focus": "43% 43%"
+      }
+    },
+    {
+      "text": "new deal at 11:11.",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.76
       }
     }
   ]

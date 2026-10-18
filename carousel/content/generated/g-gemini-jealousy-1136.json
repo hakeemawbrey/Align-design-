@@ -5,9 +5,9 @@
     "gemini"
   ],
   "core": [
-    "mutual"
+    "honest"
   ],
-  "caption": "she was at the wedding",
+  "caption": "log off, gemini",
   "hashtags": [
     "gemini",
     "zodiacdating",
@@ -18,7 +18,7 @@
   "seed": 1136,
   "slides": [
     {
-      "text": "gemini, quick one,",
+      "text": "gemini, my love,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "text": "you fall for minds first,",
+      "text": "you can talk to anyone,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "text": "but somehow",
+      "text": "and still",
       "bg": {
         "kind": "neon",
         "tint": "tide"
@@ -54,12 +54,21 @@
       "bg": {
         "kind": "aura",
         "sign": "gemini",
-        "zoom": 1.3,
+        "zoom": 1.15,
         "focus": "56% 34%"
       }
     },
     {
       "text": "at a wedding,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "59% 32%"
+      }
+    },
+    {
+      "text": "so ask them,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -67,7 +76,7 @@
       }
     },
     {
-      "text": "and if you can't trust them,",
+      "text": "like an adult,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -76,7 +85,7 @@
       }
     },
     {
-      "text": "it isn't aligned.",
+      "text": "not a detective.",
       "bg": {
         "kind": "neon",
         "tint": "violet"

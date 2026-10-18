@@ -5,13 +5,13 @@
     "aquarius"
   ],
   "core": [
-    "release"
+    "1111"
   ],
   "caption": "no season two",
   "hashtags": [
     "aquarius",
     "zodiacdating",
-    "zodiac"
+    "astrologymemes"
   ],
   "theme": "the-ex",
   "engine": "bank",
@@ -52,7 +52,7 @@
       }
     },
     {
-      "text": "you think before you feel,",
+      "text": "you need your own orbit,",
       "bg": {
         "kind": "aura",
         "sign": "aquarius",
@@ -61,14 +61,14 @@
       }
     },
     {
-      "text": "you knew that already,",
+      "text": "but you're still circling them,",
       "bg": {
         "kind": "neon",
         "tint": "tide"
       }
     },
     {
-      "text": "because a release",
+      "text": "so close the thread,",
       "bg": {
         "kind": "aura",
         "sign": "aquarius",
@@ -76,12 +76,20 @@
       }
     },
     {
-      "text": "is kinder than a ghost.",
+      "text": "there's a new deal",
       "bg": {
         "kind": "aura",
         "sign": "aquarius",
         "zoom": 1.3,
         "focus": "52% 34%"
+      }
+    },
+    {
+      "text": "at 11:11.",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.32
       }
     }
   ]

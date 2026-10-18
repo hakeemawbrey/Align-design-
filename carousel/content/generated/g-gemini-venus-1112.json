@@ -7,11 +7,12 @@
   "core": [
     "venus"
   ],
-  "caption": "check your venus",
+  "caption": "gemini, please",
   "hashtags": [
     "gemini",
     "zodiacdating",
-    "datingtips"
+    "zodiac",
+    "zodiacsigns"
   ],
   "theme": "venus",
   "engine": "bank",
@@ -26,7 +27,7 @@
       }
     },
     {
-      "text": "you read between every line,",
+      "text": "you say what others won't,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -35,14 +36,14 @@
       }
     },
     {
-      "text": "and somehow",
+      "text": "but somehow",
       "bg": {
         "kind": "neon",
         "tint": "tide"
       }
     },
     {
-      "text": "you keep loving people",
+      "text": "you date for your sun",
       "bg": {
         "kind": "aura",
         "sign": "gemini",
@@ -50,25 +51,16 @@
       }
     },
     {
-      "text": "the way they want",
-      "bg": {
-        "kind": "aura",
-        "sign": "gemini",
-        "zoom": 1.15,
-        "focus": "46% 42%"
-      }
-    },
-    {
-      "text": "instead of how you do,",
+      "text": "and forget how you love,",
       "bg": {
         "kind": "aura",
         "sign": "gemini",
         "zoom": 1.3,
-        "focus": "44% 44%"
+        "focus": "46% 42%"
       }
     },
     {
-      "text": "so love the way you love,",
+      "text": "so check your venus,",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -76,7 +68,7 @@
       }
     },
     {
-      "text": "that's your venus,",
+      "text": "it already knows",
       "bg": {
         "kind": "figure",
         "sign": "gemini",
@@ -85,7 +77,7 @@
       }
     },
     {
-      "text": "not a flaw.",
+      "text": "what you need.",
       "bg": {
         "kind": "neon",
         "tint": "violet"

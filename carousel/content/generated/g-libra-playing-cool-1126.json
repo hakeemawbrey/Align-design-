@@ -7,18 +7,19 @@
   "core": [
     "honest"
   ],
-  "caption": "nobody's timing you",
+  "caption": "consider this your sign",
   "hashtags": [
     "libra",
     "zodiacdating",
-    "datingtips"
+    "datingtips",
+    "zodiacsigns"
   ],
   "theme": "playing-cool",
   "engine": "bank",
   "seed": 1126,
   "slides": [
     {
-      "text": "dear libra,",
+      "text": "listen, libra,",
       "bg": {
         "kind": "figure",
         "sign": "libra",
@@ -26,7 +27,7 @@
       }
     },
     {
-      "text": "you can charm a whole room,",
+      "text": "you can charm a whole crowd,",
       "bg": {
         "kind": "figure",
         "sign": "libra",
@@ -42,7 +43,7 @@
       }
     },
     {
-      "text": "and you play it so cool",
+      "text": "and you're so unbothered",
       "bg": {
         "kind": "aura",
         "sign": "libra",
@@ -50,21 +51,12 @@
       }
     },
     {
-      "text": "they honestly think",
-      "bg": {
-        "kind": "aura",
-        "sign": "libra",
-        "zoom": 1.15,
-        "focus": "51% 43%"
-      }
-    },
-    {
-      "text": "you don't care,",
+      "text": "they think you're bored,",
       "bg": {
         "kind": "aura",
         "sign": "libra",
         "zoom": 1.3,
-        "focus": "49% 45%"
+        "focus": "51% 43%"
       }
     },
     {

@@ -5,13 +5,12 @@
     "virgo"
   ],
   "core": [
-    "1111"
+    "not-alone"
   ],
-  "caption": "more than fine, virgo",
+  "caption": "not a subtweet",
   "hashtags": [
     "virgo",
     "zodiacdating",
-    "datingtips",
     "datingadvice"
   ],
   "theme": "settling",
@@ -19,7 +18,7 @@
   "seed": 1127,
   "slides": [
     {
-      "text": "\"fine, i guess\"",
+      "text": "dear virgo,",
       "bg": {
         "kind": "figure",
         "sign": "virgo",
@@ -27,7 +26,7 @@
       }
     },
     {
-      "text": "isn't a match,",
+      "text": "you remember the little things,",
       "bg": {
         "kind": "figure",
         "sign": "virgo",
@@ -36,7 +35,14 @@
       }
     },
     {
-      "text": "virgo,",
+      "text": "and yet",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "you're settling for",
       "bg": {
         "kind": "aura",
         "sign": "virgo",
@@ -44,35 +50,45 @@
       }
     },
     {
-      "text": "you clock a haircut instantly,",
+      "text": "\"fine, i guess\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1.15,
+        "focus": "44% 30%"
+      }
+    },
+    {
+      "text": "because it's there,",
       "bg": {
         "kind": "aura",
         "sign": "virgo",
         "zoom": 1.3,
-        "focus": "55% 31%"
+        "focus": "42% 27%"
       }
     },
     {
-      "text": "you'd tell a friend the same,",
+      "text": "so get up from the table,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you were never",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "56% 38%"
+      }
+    },
+    {
+      "text": "the consolation prize.",
       "bg": {
         "kind": "neon",
-        "tint": "gold"
-      }
-    },
-    {
-      "text": "so stop clinging to this hand,",
-      "bg": {
-        "kind": "aura",
-        "sign": "virgo",
-        "zoom": 1.1
-      }
-    },
-    {
-      "text": "there's another deal tonight.",
-      "bg": {
-        "kind": "sky",
-        "tint": "violet",
-        "moon": 0.62
+        "tint": "spark"
       }
     }
   ]

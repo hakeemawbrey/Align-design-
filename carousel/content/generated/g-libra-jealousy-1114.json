@@ -7,19 +7,19 @@
   "core": [
     "honest"
   ],
-  "caption": "log off, libra",
+  "caption": "she was at the wedding",
   "hashtags": [
     "libra",
     "zodiacdating",
-    "datingtips",
-    "zodiac"
+    "zodiacsigns",
+    "datingadvice"
   ],
   "theme": "jealousy",
   "engine": "bank",
   "seed": 1114,
   "slides": [
     {
-      "text": "listen, libra,",
+      "text": "okay libra,",
       "bg": {
         "kind": "figure",
         "sign": "libra",
@@ -27,7 +27,7 @@
       }
     },
     {
-      "text": "you can charm a whole room,",
+      "text": "you hate a scene,",
       "bg": {
         "kind": "figure",
         "sign": "libra",
@@ -36,14 +36,14 @@
       }
     },
     {
-      "text": "a real gift, but",
+      "text": "but quiet isn't peace,",
       "bg": {
         "kind": "neon",
         "tint": "tide"
       }
     },
     {
-      "text": "you're checking who",
+      "text": "and you're checking who",
       "bg": {
         "kind": "aura",
         "sign": "libra",
@@ -60,7 +60,7 @@
       }
     },
     {
-      "text": "so say you felt it,",
+      "text": "so ask them,",
       "bg": {
         "kind": "figure",
         "sign": "libra",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "text": "once, plainly,",
+      "text": "like an adult,",
       "bg": {
         "kind": "figure",
         "sign": "libra",
@@ -77,7 +77,7 @@
       }
     },
     {
-      "text": "and put the phone down.",
+      "text": "not a detective.",
       "bg": {
         "kind": "neon",
         "tint": "violet"

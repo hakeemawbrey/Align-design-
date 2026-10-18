@@ -5,20 +5,20 @@
     "capricorn"
   ],
   "core": [
-    "mutual"
+    "1111"
   ],
-  "caption": "consider this your sign",
+  "caption": "a gentle intervention",
   "hashtags": [
     "capricorn",
     "zodiacdating",
-    "astrologymemes"
+    "zodiac"
   ],
   "theme": "texting-first",
   "engine": "bank",
   "seed": 1125,
   "slides": [
     {
-      "text": "listen, capricorn,",
+      "text": "oh, capricorn,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "text": "you work through everything,",
+      "text": "you have the driest humor alive,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -35,14 +35,14 @@
       }
     },
     {
-      "text": "but busy isn't a personality,",
+      "text": "and somehow",
       "bg": {
         "kind": "neon",
         "tint": "gold"
       }
     },
     {
-      "text": "and you've texted first",
+      "text": "you're the only one",
       "bg": {
         "kind": "aura",
         "sign": "capricorn",
@@ -50,7 +50,7 @@
       }
     },
     {
-      "text": "eleven days in a row,",
+      "text": "who ever starts",
       "bg": {
         "kind": "aura",
         "sign": "capricorn",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "text": "so stop,",
+      "text": "the conversation,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -67,7 +67,7 @@
       }
     },
     {
-      "text": "and see if",
+      "text": "so log off,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -76,7 +76,15 @@
       }
     },
     {
-      "text": "they ever start one.",
+      "text": "there's a new deal at 11:11,",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.46
+      }
+    },
+    {
+      "text": "and some of them reply.",
       "bg": {
         "kind": "neon",
         "tint": "spark"

@@ -26,7 +26,7 @@
       }
     },
     {
-      "text": "you hate feeling boxed in,",
+      "text": "you laugh off the serious stuff,",
       "bg": {
         "kind": "figure",
         "sign": "sagittarius",
@@ -35,14 +35,14 @@
       }
     },
     {
-      "text": "but commitment isn't a cage,",
+      "text": "but a joke isn't an answer,",
       "bg": {
         "kind": "neon",
         "tint": "ember"
       }
     },
     {
-      "text": "and you're eight months into",
+      "text": "and you're in a \"thing\"",
       "bg": {
         "kind": "aura",
         "sign": "sagittarius",
@@ -50,12 +50,21 @@
       }
     },
     {
-      "text": "\"let's not label it,\"",
+      "text": "with no name",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1.15,
+        "focus": "48% 42%"
+      }
+    },
+    {
+      "text": "and no plans,",
       "bg": {
         "kind": "aura",
         "sign": "sagittarius",
         "zoom": 1.3,
-        "focus": "48% 42%"
+        "focus": "50% 44%"
       }
     },
     {

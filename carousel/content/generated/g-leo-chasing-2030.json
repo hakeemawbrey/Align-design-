@@ -5,7 +5,7 @@
     "leo"
   ],
   "core": [
-    "1111"
+    "mutual"
   ],
   "caption": "just saying",
   "hashtags": [
@@ -18,7 +18,7 @@
   "seed": 2030,
   "slides": [
     {
-      "text": "okay leo,",
+      "text": "dear leo,",
       "bg": {
         "kind": "figure",
         "sign": "leo",
@@ -42,7 +42,7 @@
       }
     },
     {
-      "text": "and you're the one chasing",
+      "text": "and you keep running after",
       "bg": {
         "kind": "aura",
         "sign": "leo",
@@ -50,25 +50,16 @@
       }
     },
     {
-      "text": "someone who keeps",
-      "bg": {
-        "kind": "aura",
-        "sign": "leo",
-        "zoom": 1.15,
-        "focus": "45% 45%"
-      }
-    },
-    {
-      "text": "walking the other way,",
+      "text": "someone who's barely jogging,",
       "bg": {
         "kind": "aura",
         "sign": "leo",
         "zoom": 1.3,
-        "focus": "43% 47%"
+        "focus": "45% 45%"
       }
     },
     {
-      "text": "so stop running,",
+      "text": "so stand still",
       "bg": {
         "kind": "figure",
         "sign": "leo",
@@ -76,7 +67,7 @@
       }
     },
     {
-      "text": "there's a new deal",
+      "text": "and see who",
       "bg": {
         "kind": "figure",
         "sign": "leo",
@@ -85,11 +76,10 @@
       }
     },
     {
-      "text": "at 11:11.",
+      "text": "comes looking.",
       "bg": {
-        "kind": "sky",
-        "tint": "tide",
-        "moon": 0.5
+        "kind": "neon",
+        "tint": "rub"
       }
     }
   ]

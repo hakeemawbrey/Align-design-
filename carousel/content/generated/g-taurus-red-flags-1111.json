@@ -5,7 +5,7 @@
     "taurus"
   ],
   "core": [
-    "dealbreakers"
+    "honest"
   ],
   "caption": "that's not a quirk",
   "hashtags": [
@@ -26,7 +26,7 @@
       }
     },
     {
-      "text": "you like what you know,",
+      "text": "you can smell a fake,",
       "bg": {
         "kind": "figure",
         "sign": "taurus",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "text": "but familiar isn't safe,",
+      "text": "but you ate this one up,",
       "bg": {
         "kind": "neon",
         "tint": "gold"
@@ -54,29 +54,21 @@
       "bg": {
         "kind": "aura",
         "sign": "taurus",
-        "zoom": 1.3,
+        "zoom": 1.15,
         "focus": "43% 44%"
       }
     },
     {
-      "text": "so write it on your card",
+      "text": "so believe them",
       "bg": {
-        "kind": "figure",
-        "sign": "taurus",
-        "zoom": 1
-      }
-    },
-    {
-      "text": "as a dealbreaker,",
-      "bg": {
-        "kind": "figure",
+        "kind": "aura",
         "sign": "taurus",
         "zoom": 1.3,
-        "focus": "44% 34%"
+        "focus": "40% 46%"
       }
     },
     {
-      "text": "and mean it.",
+      "text": "the first time.",
       "bg": {
         "kind": "neon",
         "tint": "spark"

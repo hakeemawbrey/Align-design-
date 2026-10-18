@@ -7,11 +7,10 @@
   "core": [
     "face-last"
   ],
-  "caption": "not a subtweet",
+  "caption": "look past the face, taurus",
   "hashtags": [
     "taurus",
     "zodiacdating",
-    "zodiac",
     "astrology"
   ],
   "theme": "pretty-face",
@@ -19,24 +18,7 @@
   "seed": 1135,
   "slides": [
     {
-      "text": "the face",
-      "bg": {
-        "kind": "veil",
-        "person": 11,
-        "zoom": 1.05
-      }
-    },
-    {
-      "text": "is the least of it,",
-      "bg": {
-        "kind": "veil",
-        "person": 11,
-        "zoom": 1.35,
-        "focus": "47% 39%"
-      }
-    },
-    {
-      "text": "taurus,",
+      "text": "taurus, quick one,",
       "bg": {
         "kind": "figure",
         "sign": "taurus",
@@ -44,19 +26,36 @@
       }
     },
     {
-      "text": "you can smell a fake,",
+      "text": "you know quality on sight,",
       "bg": {
         "kind": "figure",
         "sign": "taurus",
         "zoom": 1.3,
-        "focus": "45% 36%"
+        "focus": "47% 39%"
       }
     },
     {
-      "text": "you already know this,",
+      "text": "but somehow",
       "bg": {
         "kind": "neon",
         "tint": "gold"
+      }
+    },
+    {
+      "text": "you picked the jawline",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and got the attitude,",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "56% 32%"
       }
     },
     {

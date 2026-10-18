@@ -7,11 +7,10 @@
   "core": [
     "honest"
   ],
-  "caption": "just reply, scorpio",
+  "caption": "nobody's timing you",
   "hashtags": [
     "scorpio",
     "zodiacdating",
-    "astrologymemes",
     "datingtips"
   ],
   "theme": "playing-cool",
@@ -19,7 +18,7 @@
   "seed": 2031,
   "slides": [
     {
-      "text": "scorpio,",
+      "text": "oh, scorpio,",
       "bg": {
         "kind": "figure",
         "sign": "scorpio",
@@ -27,7 +26,7 @@
       }
     },
     {
-      "text": "you know their whole story,",
+      "text": "you never fake a feeling,",
       "bg": {
         "kind": "figure",
         "sign": "scorpio",
@@ -36,14 +35,14 @@
       }
     },
     {
-      "text": "and yet",
+      "text": "and somehow",
       "bg": {
         "kind": "neon",
         "tint": "violet"
       }
     },
     {
-      "text": "you play it so cool",
+      "text": "you answered \"lol same\"",
       "bg": {
         "kind": "aura",
         "sign": "scorpio",
@@ -51,21 +50,12 @@
       }
     },
     {
-      "text": "they honestly think",
-      "bg": {
-        "kind": "aura",
-        "sign": "scorpio",
-        "zoom": 1.15,
-        "focus": "48% 35%"
-      }
-    },
-    {
-      "text": "you don't care,",
+      "text": "to \"i like you,\"",
       "bg": {
         "kind": "aura",
         "sign": "scorpio",
         "zoom": 1.3,
-        "focus": "46% 33%"
+        "focus": "48% 35%"
       }
     },
     {

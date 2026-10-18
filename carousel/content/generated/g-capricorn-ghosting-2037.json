@@ -7,19 +7,19 @@
   "core": [
     "honest"
   ],
-  "caption": "ten seconds, capricorn",
+  "caption": "not a subtweet",
   "hashtags": [
     "capricorn",
     "zodiacdating",
-    "datingadvice",
-    "zodiac"
+    "datingtips",
+    "astrologymemes"
   ],
   "theme": "ghosting",
   "engine": "bank",
   "seed": 2037,
   "slides": [
     {
-      "text": "okay capricorn,",
+      "text": "capricorn, quick one,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -27,7 +27,7 @@
       }
     },
     {
-      "text": "you're never fooled twice,",
+      "text": "you work through everything,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -36,14 +36,14 @@
       }
     },
     {
-      "text": "and somehow",
+      "text": "but \"busy\" isn't a goodbye,",
       "bg": {
         "kind": "neon",
         "tint": "gold"
       }
     },
     {
-      "text": "you'd rather vanish",
+      "text": "and you're letting a chat",
       "bg": {
         "kind": "aura",
         "sign": "capricorn",
@@ -51,7 +51,7 @@
       }
     },
     {
-      "text": "than send a goodbye",
+      "text": "die of old age",
       "bg": {
         "kind": "aura",
         "sign": "capricorn",
@@ -60,7 +60,7 @@
       }
     },
     {
-      "text": "that takes ten seconds,",
+      "text": "instead of ending it,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "text": "so say the true thing,",
+      "text": "so end it like an adult,",
       "bg": {
         "kind": "figure",
         "sign": "capricorn",
@@ -77,7 +77,7 @@
       }
     },
     {
-      "text": "not the cute one.",
+      "text": "not a ghost story.",
       "bg": {
         "kind": "neon",
         "tint": "spark"

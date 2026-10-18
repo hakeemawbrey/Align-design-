@@ -7,12 +7,12 @@
   "core": [
     "mutual"
   ],
-  "caption": "gemini, please",
+  "caption": "a note for gemini season",
   "hashtags": [
     "gemini",
     "zodiacdating",
     "astrologymemes",
-    "datingtips"
+    "zodiacsigns"
   ],
   "theme": "breadcrumbs",
   "engine": "bank",
@@ -44,7 +44,7 @@
       }
     },
     {
-      "text": "you read between every line,",
+      "text": "you can talk to anyone,",
       "bg": {
         "kind": "aura",
         "sign": "gemini",
@@ -53,7 +53,7 @@
       }
     },
     {
-      "text": "this isn't news to you,",
+      "text": "but chatting isn't dating,",
       "bg": {
         "kind": "neon",
         "tint": "tide"

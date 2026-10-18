@@ -5,7 +5,7 @@
     "taurus"
   ],
   "core": [
-    "dealbreakers"
+    "not-alone"
   ],
   "caption": "more than fine, taurus",
   "hashtags": [
@@ -18,7 +18,7 @@
   "seed": 2035,
   "slides": [
     {
-      "text": "listen, taurus,",
+      "text": "okay taurus,",
       "bg": {
         "kind": "figure",
         "sign": "taurus",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "text": "but staying isn't always loyal,",
+      "text": "but stuck isn't loyal,",
       "bg": {
         "kind": "neon",
         "tint": "gold"
@@ -68,7 +68,7 @@
       }
     },
     {
-      "text": "so put your standards",
+      "text": "so get up from the table,",
       "bg": {
         "kind": "figure",
         "sign": "taurus",
@@ -76,7 +76,7 @@
       }
     },
     {
-      "text": "on your card,",
+      "text": "you were never",
       "bg": {
         "kind": "figure",
         "sign": "taurus",
@@ -85,7 +85,7 @@
       }
     },
     {
-      "text": "and keep them.",
+      "text": "the consolation prize.",
       "bg": {
         "kind": "neon",
         "tint": "spark"

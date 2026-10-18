@@ -19,7 +19,7 @@
   "seed": 2027,
   "slides": [
     {
-      "text": "listen, cancer,",
+      "text": "who they could be",
       "bg": {
         "kind": "figure",
         "sign": "cancer",
@@ -27,7 +27,7 @@
       }
     },
     {
-      "text": "you feed the people you love,",
+      "text": "isn't who showed up,",
       "bg": {
         "kind": "figure",
         "sign": "cancer",
@@ -36,14 +36,7 @@
       }
     },
     {
-      "text": "all true, and still",
-      "bg": {
-        "kind": "neon",
-        "tint": "violet"
-      }
-    },
-    {
-      "text": "you keep loving the trailer",
+      "text": "cancer,",
       "bg": {
         "kind": "aura",
         "sign": "cancer",
@@ -51,18 +44,25 @@
       }
     },
     {
-      "text": "and ignoring the movie,",
+      "text": "you take care of everyone,",
       "bg": {
         "kind": "aura",
         "sign": "cancer",
         "zoom": 1.3,
-        "focus": "47% 41%"
+        "focus": "52% 38%"
+      }
+    },
+    {
+      "text": "but they're not a project,",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
       }
     },
     {
       "text": "so date who they are",
       "bg": {
-        "kind": "figure",
+        "kind": "aura",
         "sign": "cancer",
         "zoom": 1
       }
@@ -70,7 +70,7 @@
     {
       "text": "today,",
       "bg": {
-        "kind": "figure",
+        "kind": "aura",
         "sign": "cancer",
         "zoom": 1.3,
         "focus": "50% 36%"
