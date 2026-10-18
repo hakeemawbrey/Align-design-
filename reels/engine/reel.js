@@ -3,7 +3,7 @@
 // play it live and the exporter can step it frame by frame.
 import * as THREE from 'three'
 import { makeRng, clamp, easeInOut, smooth } from './rng.js'
-import { GLYPH, ELEMENT, BLOB_COLORS } from './signs.js'
+import { GLYPH, ELEMENT, BLOB_COLORS, AURA } from './signs.js'
 import { buildWorld, pickWorld } from './worlds.js'
 import { makeFigure, makeSpecies, makeGlyphSprite } from './actors.js'
 import { layoutPopup, drawPopup } from './popup.js'
@@ -42,6 +42,15 @@ const POST_FRAG = /* glsl */ `
     #include <colorspace_fragment>
   }
 `
+
+// The small line under the aura's name.
+const POWER_LINES = [
+  'it was in you the whole time',
+  'the power was always yours',
+  'you already have it',
+  'it never left you',
+  'it was yours all along',
+]
 
 let fontsReady = null
 export function loadFonts() {
@@ -118,7 +127,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     })
   }
 
-  async function load(item, { handle = '' } = {}) {
+  async function load(item, { handle = '', brand = true } = {}) {
     await loadFonts()
     if (state) disposeScene(state.scene)
     const seed = item.seed ?? `${item.id || item.text}`
@@ -130,7 +139,12 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
 
     const hero = world.hero.clone()
     hero.y = world.heightAt(hero.x, hero.z)
-    const figure = makeFigure(rng.fork('fig'), { hue: rng.next(), skyTop: world.skyTop, skyLow: world.skyLow })
+    const aura = AURA[sign]
+    // the figure's sheen leans toward its aura so the two read as one
+    const auraHue = new THREE.Color(aura.color).getHSL({}).h
+    const figure = makeFigure(rng.fork('fig'), {
+      hue: (auraHue + rng.range(-0.12, 0.12) + 1) % 1, skyTop: world.skyTop, skyLow: world.skyLow, aura, glyph: GLYPH[sign],
+    })
     figure.object.position.copy(hero)
     const dir = new THREE.Vector3(world.stage.x - hero.x, 0, world.stage.z - hero.z).normalize()
     const baseYaw = Math.atan2(dir.x, dir.z)
@@ -147,7 +161,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
       return { ...c, mode: s.mode }
     })
 
-    const glyph = makeGlyphSprite(GLYPH[sign], rng.pick(['#ff1f1f', '#ff1f1f', '#ff1f1f', '#ffd21f', '#ff2bd6']))
+    const glyph = makeGlyphSprite(GLYPH[sign], aura.color, aura.light)
     scene.add(glyph.object)
 
     const camera = new THREE.PerspectiveCamera(rng.range(50, 60), width / height, 0.1, 900)
@@ -175,7 +189,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
 
     state = {
       item, seed, scene, world, figure, crowd, glyph, camera, shots, tl, layout, title, hero,
-      baseYaw, turn: dy * 0.62, handle, noisePhase: rng.range(0, 100), lastOverlay: '',
+      baseYaw, turn: dy * 0.62, handle, brand, aura, sign, powerLine: rng.pick(POWER_LINES), noisePhase: rng.range(0, 100), lastOverlay: '',
     }
     return { duration: tl.duration, plan: { seed: String(seed), duration: tl.duration, ...tl }, world: worldName }
   }
@@ -215,13 +229,59 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     camera.rotateZ(Math.sin(n * 0.6) * 0.012)
   }
 
+  // Align's mark: tiny and quiet, the way the carousels carry it.
+  function drawMark() {
+    octx.save()
+    octx.globalAlpha = 0.72
+    octx.fillStyle = '#ffffff'
+    octx.textAlign = 'center'
+    octx.font = `700 ${Math.round(width * 0.024)}px "ZPoppins", "ZSymbols", sans-serif`
+    octx.letterSpacing = `${Math.round(width * 0.006)}px`
+    octx.shadowColor = 'rgba(0,0,0,0.55)'
+    octx.shadowBlur = 8
+    octx.fillText('align ✦', width / 2, height * 0.062)
+    octx.restore()
+  }
+
+  // After the surge: the aura's name, in its own light.
+  function drawAuraCard(k) {
+    const { aura, sign, powerLine } = state
+    const cx = width / 2
+    const y = height * 0.11
+    octx.save()
+    octx.globalAlpha = k
+    octx.textAlign = 'center'
+    octx.textBaseline = 'alphabetic'
+    octx.fillStyle = '#ffffff'
+    octx.shadowColor = 'rgba(0,0,0,0.6)'
+    octx.shadowBlur = 8
+    octx.font = `700 ${Math.round(width * 0.022)}px "ZPoppins", sans-serif`
+    octx.letterSpacing = `${Math.round(width * 0.008)}px`
+    octx.fillText(`${sign.toUpperCase()} · YOUR AURA`, cx, y)
+    octx.letterSpacing = '0px'
+    octx.font = `italic 600 ${Math.round(width * 0.085)}px "ZPoppins", sans-serif`
+    octx.shadowColor = aura.color
+    for (const b of [width * 0.05, width * 0.018]) {
+      octx.shadowBlur = b
+      octx.fillStyle = aura.light
+      octx.fillText(aura.name.toLowerCase(), cx, y + width * 0.095)
+    }
+    octx.shadowColor = 'rgba(0,0,0,0.6)'
+    octx.shadowBlur = 8
+    octx.fillStyle = '#ffffff'
+    octx.font = `italic 600 ${Math.round(width * 0.03)}px "ZPoppins", sans-serif`
+    octx.fillText(powerLine, cx, y + width * 0.15)
+    octx.restore()
+  }
+
   function drawOverlay(t) {
-    const { tl, layout, title, item, handle } = state
+    const { tl, layout, title, item, handle, brand } = state
     let appear = 0
     if (t >= tl.tPopup && t < tl.tClose) appear = clamp((t - tl.tPopup) / 0.1)
     else if (t >= tl.tClose && t < tl.tClose + 0.08) appear = 1 - (t - tl.tClose) / 0.08
     const typed = t < tl.typeStart ? 0 : Math.min(item.text.length, Math.floor((t - tl.typeStart) * tl.typeRate) + 1)
-    const key = `${appear.toFixed(2)}|${typed}|${handle}`
+    const card = Math.round(smooth(tl.tGlyph + 0.2, tl.tGlyph + 0.55, t) * 20) / 20
+    const key = `${appear.toFixed(2)}|${typed}|${handle}|${card}`
     if (key === state.lastOverlay) return
     state.lastOverlay = key
     octx.clearRect(0, 0, width, height)
@@ -229,7 +289,8 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     // one invisible pixel on it and tell the shader whether to use it at all.
     octx.fillStyle = 'rgba(0,0,0,0.01)'
     octx.fillRect(0, 0, 1, 1)
-    post.uniforms.uOverlayOn.value = appear > 0 || handle ? 1 : 0
+    post.uniforms.uOverlayOn.value = appear > 0 || handle || brand || card > 0 ? 1 : 0
+    if (brand) drawMark()
     if (handle) {
       octx.save()
       octx.globalAlpha = 0.55
@@ -241,6 +302,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
       octx.restore()
     }
     drawPopup(octx, layout, title, item.text, typed, appear)
+    if (card > 0) drawAuraCard(card)
     overlayTex.needsUpdate = true
   }
 
@@ -257,6 +319,9 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     figure.update(t, {
       look: turnK > 0.2 ? camera.position : state.world.stage.clone().setY(hero.y + 1.2),
       hop: hopP,
+      // the aura is there all along, and surges when the sign lands
+      power: smooth(tl.tGlyph - 0.15, tl.tGlyph + 0.25, t) * (1 - smooth(tl.tGlyph + 0.6, tl.duration + 0.4, t) * 0.35) + smooth(tl.tPopup, tl.tClose, t) * 0.12,
+      burst: t - tl.tGlyph,
     })
     const alert = smooth(tl.tPopup, tl.tPopup + 0.6, t) * (1 - smooth(tl.tClose, tl.tClose + 1, t) * 0.5)
     const lookAt = t < tl.tClose ? camera.position : figure.object.position

@@ -17,6 +17,23 @@ export const ELEMENT = {
   cancer: 'water', scorpio: 'water', pisces: 'water',
 }
 
+// Align's twelve auras ("Kit · The twelve auras" in app/src/data/signs.ts):
+// the name, the saturated outer colour and the light inner edge.
+export const AURA = {
+  aries: { name: 'Ember', color: '#f0603a', light: '#ffb39a' },
+  taurus: { name: 'Honey', color: '#e9b24a', light: '#ffe1a0' },
+  gemini: { name: 'Signal', color: '#f2cf4a', light: '#fff0a8' },
+  cancer: { name: 'Tide', color: '#3fb6f0', light: '#a8e4ff' },
+  leo: { name: 'Goldleaf', color: '#f39a3a', light: '#ffd09a' },
+  virgo: { name: 'Rose Quartz', color: '#ef5c94', light: '#ffb6d2' },
+  libra: { name: 'Orchid', color: '#e163d6', light: '#ffbdf6' },
+  scorpio: { name: 'Garnet', color: '#e23d66', light: '#ff9fb7' },
+  sagittarius: { name: 'Amethyst', color: '#a35cf0', light: '#dcbcff' },
+  capricorn: { name: 'Jade', color: '#2fc79a', light: '#a6f0d6' },
+  aquarius: { name: 'Ion', color: '#38c4ec', light: '#b2ecff' },
+  pisces: { name: 'Dusk', color: '#7c74f0', light: '#c6c1ff' },
+}
+
 // Creature body colours per sign. The first is the sign's own; the rest are
 // what the seed can wander to so not every Scorpio reel looks the same.
 export const BLOB_COLORS = {
@@ -43,6 +60,7 @@ export const TAGS = {
 export function captionFor(item) {
   const vibe = TAGS.vibe
   const topic = TAGS[item.topic] || TAGS.self
-  const tags = [item.sign, `${item.sign}season`, 'zodiac', 'astrology', topic[0], topic[1], vibe[0], vibe[1], vibe[2]]
-  return `${item.caption || 'break the loop'} 👁\n-\n-\n${tags.map((t) => '#' + t).join(' ')}`
+  const tags = [item.sign, `${item.sign}season`, 'zodiac', 'astrology', 'aura', topic[0], topic[1], vibe[0], vibe[1]]
+  const aura = AURA[item.sign]
+  return `${item.caption || 'break the loop'} 👁\n${item.sign} · ${aura.name.toLowerCase()} aura ✦\n-\n${tags.map((t) => '#' + t).join(' ')}`
 }

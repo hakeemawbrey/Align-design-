@@ -59,7 +59,7 @@ const HOLO_FRAG = /* glsl */ `
   }
 `
 
-export function makeFigure(rng, { hue = 0, skyTop = '#7fb6ff', skyLow = '#203050' } = {}) {
+export function makeFigure(rng, { hue = 0, skyTop = '#7fb6ff', skyLow = '#203050', aura = null, glyph = '' } = {}) {
   const mode = rng.chance(0.82) ? 0 : rng.chance(0.4) ? 1 : 2
   const mat = new THREE.ShaderMaterial({
     vertexShader: HOLO_VERT,
@@ -115,6 +115,7 @@ export function makeFigure(rng, { hue = 0, skyTop = '#7fb6ff', skyLow = '#203050
   const scale = rng.range(0.95, 1.12)
   fig.scale.setScalar(scale)
   const phase = rng.range(0, 10)
+  const auraFx = aura ? makeAura(fig, body, [head, torso, ...arms.map((p) => p.children[0]), ...legs.map((p) => p.children[0])], aura, glyph, rng.fork('aura')) : null
 
   return {
     object: fig,
@@ -122,8 +123,9 @@ export function makeFigure(rng, { hue = 0, skyTop = '#7fb6ff', skyLow = '#203050
     headTop: () => new THREE.Vector3(0, (1.08 + headR * 1.75) * scale, 0).applyMatrix4(fig.matrixWorld),
     headWorld: () => head.getWorldPosition(new THREE.Vector3()),
     // look: world point to turn the head to; hop: 0..1 progress of a little hop
-    update(t, { look, hop = -1, wave = 0 } = {}) {
+    update(t, { look, hop = -1, wave = 0, power = 0, burst = -1 } = {}) {
       mat.uniforms.uTime.value = t
+      auraFx?.update(t, power, burst)
       const breathe = Math.sin(t * 2.1 + phase)
       torso.scale.y = 1 + breathe * 0.02
       body.rotation.z = Math.sin(t * 0.9 + phase) * 0.03
@@ -146,6 +148,182 @@ export function makeFigure(rng, { hue = 0, skyTop = '#7fb6ff', skyLow = '#203050
     // Sets the figure's own heading, kept separate from the head's look.
     face(yaw) {
       body.rotation.y = yaw
+    },
+  }
+}
+
+// ---------- the aura ----------
+// Align's AuraCam look in 3D: inflated copies of the figure, drawn from the
+// inside with additive light, so a soft halo hugs the silhouette. Light at the
+// inner edge, the sign's colour further out, a slow flame-like shimmer.
+
+const AURA_VERT = /* glsl */ `
+  uniform float uInflate;
+  varying vec3 vN;
+  varying vec3 vView;
+  varying vec3 vWorld;
+  void main() {
+    vec3 p = position + normal * uInflate;
+    vec4 wp = modelMatrix * vec4(p, 1.0);
+    vWorld = wp.xyz;
+    vN = normalize(mat3(modelMatrix) * normal);
+    vView = normalize(cameraPosition - wp.xyz);
+    gl_Position = projectionMatrix * viewMatrix * wp;
+  }
+`
+const AURA_FRAG = /* glsl */ `
+  uniform vec3 uColor;
+  uniform vec3 uLight;
+  uniform float uStrength;
+  uniform float uTime;
+  varying vec3 vN;
+  varying vec3 vView;
+  varying vec3 vWorld;
+  void main() {
+    float facing = abs(dot(normalize(vN), normalize(vView)));
+    float a = pow(facing, 1.6);
+    float flame = 0.72 + 0.28 * sin(vWorld.y * 7.0 - uTime * 3.2 + sin(vWorld.x * 5.0 + uTime) * 1.5);
+    vec3 col = mix(uColor, uLight, a * a);
+    gl_FragColor = vec4(col * a * flame * uStrength, 1.0);
+  }
+`
+
+function glyphCanvas(glyph, fill, glow, size = 256, weight = 700) {
+  const c = document.createElement('canvas')
+  c.width = c.height = size
+  const ctx = c.getContext('2d')
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.font = `${weight} ${size * 0.62}px "ZSymbols", "Noto Sans Symbols", "DejaVu Sans", sans-serif`
+  const text = glyph + '︎'
+  for (const [blur, alpha] of [[size * 0.14, 0.9], [size * 0.06, 1]]) {
+    ctx.shadowColor = glow
+    ctx.shadowBlur = blur
+    ctx.globalAlpha = alpha
+    ctx.fillStyle = fill
+    ctx.fillText(text, size / 2, size / 2 + size * 0.03)
+  }
+  ctx.shadowBlur = 0
+  ctx.globalAlpha = 1
+  ctx.fillText(text, size / 2, size / 2 + size * 0.03)
+  const tex = new THREE.CanvasTexture(c)
+  tex.colorSpace = THREE.SRGBColorSpace
+  return tex
+}
+
+function softDot(color) {
+  const c = document.createElement('canvas')
+  c.width = c.height = 128
+  const ctx = c.getContext('2d')
+  const g = ctx.createRadialGradient(64, 64, 0, 64, 64, 64)
+  const col = new THREE.Color(color)
+  const rgb = `${Math.round(col.r * 255)},${Math.round(col.g * 255)},${Math.round(col.b * 255)}`
+  g.addColorStop(0, `rgba(${rgb},1)`)
+  g.addColorStop(0.35, `rgba(${rgb},0.45)`)
+  g.addColorStop(1, `rgba(${rgb},0)`)
+  ctx.fillStyle = g
+  ctx.fillRect(0, 0, 128, 128)
+  const tex = new THREE.CanvasTexture(c)
+  tex.colorSpace = THREE.SRGBColorSpace
+  return tex
+}
+
+// aura: { color, light }, glyph: the sign's symbol
+function makeAura(fig, body, meshes, aura, glyph, rng) {
+  const color = new THREE.Color(aura.color)
+  const light = new THREE.Color(aura.light)
+  const layers = [[0.05, 1.0], [0.14, 0.6], [0.3, 0.32]].map(([inflate, k]) => {
+    const m = new THREE.ShaderMaterial({
+      vertexShader: AURA_VERT,
+      fragmentShader: AURA_FRAG,
+      uniforms: {
+        uInflate: { value: inflate },
+        uColor: { value: color },
+        uLight: { value: light },
+        uStrength: { value: k },
+        uTime: { value: 0 },
+      },
+      side: THREE.BackSide,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    })
+    m.userData.k = k
+    return m
+  })
+  for (const mesh of meshes) {
+    for (const m of layers) {
+      const shell = new THREE.Mesh(mesh.geometry, m)
+      shell.renderOrder = 2
+      mesh.add(shell)
+    }
+  }
+
+  // bloom behind the whole body
+  const bloom = new THREE.Sprite(new THREE.SpriteMaterial({ map: softDot(aura.color), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.4 }))
+  bloom.position.set(0, 0.95, 0)
+  bloom.scale.set(2.6, 3.2, 1)
+  bloom.renderOrder = 1
+  fig.add(bloom)
+
+  // the sign glowing on the chest, like Align's aura cards
+  const chest = new THREE.Mesh(
+    new THREE.PlaneGeometry(0.3, 0.3),
+    new THREE.MeshBasicMaterial({ map: glyphCanvas(glyph, aura.light, aura.color), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }),
+  )
+  chest.position.set(0, 0.8, 0.185)
+  chest.renderOrder = 3
+  body.add(chest)
+
+  // sparks drifting up through the halo
+  const N = 46
+  const seeds = Array.from({ length: N }, () => [rng.range(0, Math.PI * 2), rng.range(0.25, 0.6), rng.range(0, 1), rng.range(0.25, 0.6)])
+  const geo = new THREE.BufferGeometry()
+  const pos = new Float32Array(N * 3)
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3))
+  const sparks = new THREE.Points(geo, new THREE.PointsMaterial({ map: softDot(aura.light), size: 0.11, transparent: true, opacity: 0.9, depthWrite: false, blending: THREE.AdditiveBlending }))
+  sparks.renderOrder = 3
+  fig.add(sparks)
+
+  // a ring of light that rolls out across the ground when the power lands
+  const ring = new THREE.Mesh(
+    new THREE.RingGeometry(0.9, 1.0, 48),
+    new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide }),
+  )
+  ring.rotation.x = -Math.PI / 2
+  ring.position.y = 0.04
+  fig.add(ring)
+
+  return {
+    // power: 0 resting glow → 1 full surge; burst: seconds since the surge (or <0)
+    update(t, power, burst) {
+      const pulse = 0.85 + 0.15 * Math.sin(t * 2.4)
+      const level = (0.55 + power * 1.1) * pulse
+      for (const m of layers) {
+        m.uniforms.uTime.value = t
+        m.uniforms.uStrength.value = m.userData.k * level
+      }
+      bloom.material.opacity = 0.22 + power * 0.45
+      const bs = 1 + power * 0.35
+      bloom.scale.set(2.6 * bs, 3.2 * bs, 1)
+      chest.material.opacity = 0.55 + power * 0.45
+      const rise = 0.35 + power * 0.9
+      for (let i = 0; i < N; i++) {
+        const [a, r, off, sp] = seeds[i]
+        const y = ((off + t * sp * rise) % 1)
+        const rr = r * (1 + power * 0.5) + Math.sin(t * 2 + a) * 0.04
+        pos[i * 3] = Math.cos(a + t * 0.4) * rr
+        pos[i * 3 + 1] = 0.1 + y * 2.0
+        pos[i * 3 + 2] = Math.sin(a + t * 0.4) * rr
+      }
+      geo.attributes.position.needsUpdate = true
+      sparks.material.opacity = 0.45 + power * 0.5
+      if (burst >= 0 && burst < 1.4) {
+        const k = burst / 1.4
+        const sc = 0.6 + k * 3.2
+        ring.scale.set(sc, sc, 1)
+        ring.material.opacity = (1 - k) * 0.9
+      } else ring.material.opacity = 0
     },
   }
 }
@@ -294,7 +472,7 @@ export function makeSpecies(rng, colors) {
 
 // The sign's glyph popping over the figure's head, red and glossy like the
 // reference's "?".
-export function makeGlyphSprite(glyph, color = '#ff1f1f') {
+export function makeGlyphSprite(glyph, color = '#ff1f1f', glow = null) {
   const s = 256
   const c = document.createElement('canvas')
   c.width = c.height = s
@@ -304,15 +482,15 @@ export function makeGlyphSprite(glyph, color = '#ff1f1f') {
   ctx.font = `700 ${s * 0.72}px "ZSymbols", "Noto Sans Symbols", "DejaVu Sans", sans-serif`
   const text = glyph + '︎'
   ctx.lineJoin = 'round'
-  ctx.shadowColor = 'rgba(0,0,0,0.45)'
-  ctx.shadowBlur = 14
-  ctx.shadowOffsetY = 6
+  const base = new THREE.Color(color)
+  ctx.shadowColor = glow || 'rgba(0,0,0,0.45)'
+  ctx.shadowBlur = glow ? 34 : 14
+  ctx.shadowOffsetY = glow ? 0 : 6
   ctx.lineWidth = 16
-  ctx.strokeStyle = '#5a0000'
+  ctx.strokeStyle = '#' + base.clone().multiplyScalar(0.35).getHexString()
   ctx.strokeText(text, s / 2, s / 2 + 6)
   ctx.shadowColor = 'transparent'
   const g = ctx.createLinearGradient(0, s * 0.15, 0, s * 0.85)
-  const base = new THREE.Color(color)
   g.addColorStop(0, '#' + base.clone().lerp(new THREE.Color('#ffffff'), 0.45).getHexString())
   g.addColorStop(0.5, color)
   g.addColorStop(1, '#' + base.clone().multiplyScalar(0.45).getHexString())

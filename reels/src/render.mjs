@@ -9,7 +9,8 @@
 //   --forever           keep rendering until stopped
 //   --line "<text>"     render one specific line (needs --sign)
 //   --world cavelake    force a world (cavelake poolrooms meadow checker dunes nightsea snow cloudtops)
-//   --handle @name      small watermark, top-left
+//   --handle @name      small watermark, lower left
+//   --no-brand          leave out the small align ✦ mark
 //   --fps 30  --internal 0.5  --out out/
 import fs from 'node:fs'
 import path from 'node:path'
@@ -32,6 +33,7 @@ const COUNT = opt('forever', false) ? Infinity : +opt('count', 1)
 const SIGN = opt('sign', null)
 const TOPIC = opt('topic', null)
 const HANDLE = opt('handle', '') === true ? '' : opt('handle', '')
+const BRAND = !args.includes('--no-brand')
 const WORLD = opt('world', null)
 const LINE = opt('line', null)
 const INTERNAL = +opt('internal', 0.5)
@@ -108,7 +110,7 @@ while (made < COUNT && !stopping) {
   const seed = `${line.id}:${Date.now().toString(36)}:${made}`
   const item = { ...line, seed, ...(WORLD ? { world: WORLD } : {}) }
   const t0 = Date.now()
-  const info = await page.evaluate(([it, h]) => window.ZEXE.prepare(it, { handle: h }), [item, HANDLE])
+  const info = await page.evaluate(([it, h, b]) => window.ZEXE.prepare(it, { handle: h, brand: b }), [item, HANDLE, BRAND])
   const base = `${stamp}-${String(made + 1).padStart(3, '0')}-${line.sign}-${line.id.split('-')[1]}`
   const mp4 = path.join(OUT, base + '.mp4')
   const wav = path.join(OUT, base + '.wav')
