@@ -1,0 +1,20 @@
+{
+  "name": "zodiac-exe-reels",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Endless low-poly zodiac advice reels: a live player and a batch MP4 renderer",
+  "scripts": {
+    "dev": "node src/serve.mjs",
+    "render": "node src/render.mjs",
+    "check": "node src/check.mjs",
+    "write": "node src/write.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "@fontsource/noto-sans-symbols": "^5.2.6",
+    "@fontsource/poppins": "^5.2.6",
+    "playwright": "^1.56.0",
+    "three": "^0.170.0"
+  }
+}

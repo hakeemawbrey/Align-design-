@@ -1,0 +1,268 @@
+<title>zodiac.exe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,600;1,800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<script>
+  // three.js: the local copy when served from the repo, a pinned CDN build elsewhere.
+  (function () {
+    var local = /^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) || location.protocol === 'file:'
+    var m = document.createElement('script')
+    m.type = 'importmap'
+    m.textContent = JSON.stringify({
+      imports: { three: local ? './vendor/three.module.min.js' : 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js' },
+    })
+    document.currentScript.after(m)
+  })()
+</script>
+<style>
+  /* A late-90s desktop the reels live on: two windows on a deep teal-indigo
+     wallpaper, beveled grey chrome, a blue title bar. One deliberate look. */
+  :root {
+    --desk: #0c2b3a;
+    --desk-2: #123f52;
+    --chrome: #d4d7de;
+    --chrome-hi: #ffffff;
+    --chrome-lo: #5b6478;
+    --ink: #17171d;
+    --ink-soft: #4a4d5a;
+    --title-a: #1747d6;
+    --title-b: #5b94ff;
+    --alarm: #e8262b;
+    --paper: #fbfbfd;
+    --display: "Poppins", "ZPoppins", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "DejaVu Sans Mono", monospace;
+    color-scheme: light;
+  }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body {
+    background:
+      radial-gradient(1200px 700px at 20% 10%, var(--desk-2), transparent 70%),
+      var(--desk);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--display);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 20px;
+    box-sizing: border-box;
+  }
+  .desk {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 420px);
+    gap: 24px;
+    justify-content: center;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .win {
+    background: var(--chrome);
+    border: 2px solid;
+    border-color: var(--chrome-hi) var(--chrome-lo) var(--chrome-lo) var(--chrome-hi);
+    box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.35);
+    padding: 3px;
+    min-width: 0;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, var(--title-a), var(--title-b));
+    color: #fff;
+    font: 700 13px/1 var(--display);
+    padding: 5px 5px 5px 8px;
+  }
+  .bar .name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bar .x, .bar .q {
+    width: 18px; height: 16px; display: grid; place-items: center;
+    font: 700 12px/1 var(--display);
+    border: 1px solid; border-color: #fff #2a2f40 #2a2f40 #fff;
+  }
+  .bar .q { background: #fff; color: var(--title-a); }
+  .bar .x { background: var(--alarm); color: #fff; }
+
+  /* the reel window */
+  .stage { position: relative; background: #000; line-height: 0; }
+  .player { width: calc(min(78vh, 760px) * 9 / 16); }
+  #reel {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    max-width: 100%;
+  }
+  .progress { height: 4px; background: #000; }
+  #bar { height: 100%; background: var(--title-b); transform-origin: 0 50%; transform: scaleX(0); }
+  .transport { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 4px 4px; }
+
+  .btn {
+    font: 600 13px/1 var(--display);
+    color: var(--ink);
+    background: var(--chrome);
+    border: 2px solid;
+    border-color: var(--chrome-hi) var(--chrome-lo) var(--chrome-lo) var(--chrome-hi);
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .btn:active, .btn[aria-pressed="true"] {
+    border-color: var(--chrome-lo) var(--chrome-hi) var(--chrome-hi) var(--chrome-lo);
+    background: #c4c8d1;
+  }
+  .btn:focus-visible, .chip:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px dotted var(--title-a);
+    outline-offset: 2px;
+  }
+  .btn.primary { background: var(--paper); font-weight: 700; }
+  .btn:disabled { color: var(--ink-soft); cursor: progress; }
+
+  /* the control window */
+  .panel { display: grid; gap: 14px; padding: 12px 10px 10px; }
+  .group { display: grid; gap: 8px; }
+  .label {
+    font: 600 11px/1 var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .well {
+    background: var(--paper);
+    border: 2px solid;
+    border-color: var(--chrome-lo) var(--chrome-hi) var(--chrome-hi) var(--chrome-lo);
+    padding: 10px 12px;
+  }
+  #line { font: italic 600 17px/1.35 var(--display); margin: 0; text-wrap: pretty; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font: 400 12px/1.4 var(--mono); color: var(--ink-soft); }
+  .meta b { color: var(--ink); font-weight: 600; }
+  .chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 5px; }
+  .chip {
+    display: flex; align-items: center; gap: 6px;
+    font: 500 12px/1 var(--display);
+    color: var(--ink);
+    background: var(--chrome);
+    border: 2px solid;
+    border-color: var(--chrome-hi) var(--chrome-lo) var(--chrome-lo) var(--chrome-hi);
+    padding: 6px 7px;
+    cursor: pointer;
+    min-width: 0;
+  }
+  .chip span:last-child { overflow: hidden; text-overflow: ellipsis; }
+  .chip .g { font: 700 16px/1 "ZSymbols", "Noto Sans Symbols", "Segoe UI Symbol", "DejaVu Sans", sans-serif; color: var(--alarm); width: 16px; text-align: center; }
+  .chip[aria-pressed="true"] {
+    border-color: var(--chrome-lo) var(--chrome-hi) var(--chrome-hi) var(--chrome-lo);
+    background: var(--paper);
+    font-weight: 700;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .check { display: flex; gap: 8px; align-items: center; font: 500 13px/1.2 var(--display); }
+  .check input { width: 16px; height: 16px; accent-color: var(--title-a); }
+  input[type="text"], textarea {
+    font: 400 13px/1.4 var(--mono);
+    color: var(--ink);
+    background: var(--paper);
+    border: 2px solid;
+    border-color: var(--chrome-lo) var(--chrome-hi) var(--chrome-hi) var(--chrome-lo);
+    padding: 7px 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  textarea { resize: vertical; min-height: 92px; }
+  #takebox video { width: 100%; max-height: 360px; background: #000; display: block; }
+  .fine { font: 400 12px/1.45 var(--mono); color: var(--ink-soft); margin: 0; }
+  .fine a { color: var(--title-a); }
+
+  /* first-tap gate, because browsers only allow sound after a tap */
+  #gate {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    background: rgba(5, 10, 20, 0.45);
+    line-height: 1.2;
+  }
+  #gate .win { width: min(86%, 320px); }
+  #gate .body { padding: 14px; display: grid; gap: 12px; background: var(--paper); }
+  #gate p { margin: 0; font: italic 600 16px/1.35 var(--display); }
+
+  @media (max-width: 820px) {
+    .desk { grid-template-columns: minmax(0, 1fr); }
+    .player { width: min(100%, 460px); justify-self: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #bar { transition: none; }
+  }
+</style>
+
+<main class="desk">
+  <section class="win player" aria-label="Reel player">
+    <div class="bar"><span class="name" id="nowtitle">zodiac.exe</span><span class="q" aria-hidden="true">?</span><span class="x" aria-hidden="true">✕</span></div>
+    <div class="stage">
+      <canvas id="reel" width="720" height="1280" aria-label="The current reel"></canvas>
+      <div id="gate">
+        <div class="win" role="dialog" aria-labelledby="gate-msg">
+          <div class="bar"><span class="name">zodiac.exe</span><span class="q" aria-hidden="true">?</span><span class="x" aria-hidden="true">✕</span></div>
+          <div class="body">
+            <p id="gate-msg">A message for every sign, forever. Turn the sound on?</p>
+            <div class="row">
+              <button class="btn primary" id="start" type="button">Play with sound</button>
+              <button class="btn" id="gate-mute" type="button">Play muted</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="progress"><div id="bar"></div></div>
+    <div class="transport">
+      <button class="btn" id="prev" type="button">◀ Back</button>
+      <button class="btn" id="pause" type="button">Pause</button>
+      <button class="btn" id="replay" type="button">Replay</button>
+      <button class="btn primary" id="next" type="button">Next ▶</button>
+      <button class="btn" id="sound" type="button" aria-pressed="false">Sound off</button>
+    </div>
+  </section>
+
+  <section class="win" aria-label="Controls">
+    <div class="bar"><span class="name">control_panel.exe</span><span class="q" aria-hidden="true">?</span><span class="x" aria-hidden="true">✕</span></div>
+    <div class="panel">
+      <div class="group">
+        <span class="label">Now playing</span>
+        <div class="well"><p id="line">Loading the deck…</p></div>
+        <div class="meta"><span>topic <b id="topic">–</b></span><span>world <b id="world">–</b></span><span><b id="total">0</b> lines total</span></div>
+      </div>
+
+      <div class="group">
+        <span class="label">Speak to</span>
+        <div class="chips" id="signs"></div>
+      </div>
+
+      <div class="group">
+        <span class="label">Advice</span>
+        <div class="row">
+          <button class="btn" type="button" data-topic="all" id="topic-all">Both</button>
+          <button class="btn" type="button" data-topic="love" id="topic-love">Relationships</button>
+          <button class="btn" type="button" data-topic="self" id="topic-self">Self</button>
+        </div>
+        <span class="fine" id="poolcount"></span>
+      </div>
+
+      <div class="group">
+        <label class="check"><input type="checkbox" id="auto" checked> Keep dealing new reels</label>
+        <label class="label" for="handle">Watermark</label>
+        <input type="text" id="handle" value="" placeholder="@yourhandle (optional)">
+      </div>
+
+      <div class="group">
+        <span class="label">Post it</span>
+        <textarea id="caption" aria-label="Caption" readonly></textarea>
+        <div class="row">
+          <button class="btn" id="copy" type="button">Copy caption</button>
+          <button class="btn primary" id="record" type="button">Record this reel</button>
+        </div>
+        <div id="takebox" hidden>
+          <video id="take" controls playsinline></video>
+          <p class="fine"><a id="takelink" href="#">Download the take</a>. If the link does nothing here, right-click or long-press the video and save it. For posting, the MP4 exporter in the repo (<code>npm run render</code>) renders full 1080×1920.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="./engine/main.js"></script>
