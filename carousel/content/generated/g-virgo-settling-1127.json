@@ -1,0 +1,79 @@
+{
+  "id": "g-virgo-settling-1127",
+  "title": "Virgo, \"fine, i guess\" is not a match",
+  "signs": [
+    "virgo"
+  ],
+  "core": [
+    "1111"
+  ],
+  "caption": "more than fine, virgo",
+  "hashtags": [
+    "virgo",
+    "zodiacdating",
+    "datingtips",
+    "datingadvice"
+  ],
+  "theme": "settling",
+  "engine": "bank",
+  "seed": 1127,
+  "slides": [
+    {
+      "text": "\"fine, i guess\"",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "isn't a match,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "51% 38%"
+      }
+    },
+    {
+      "text": "virgo,",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you clock a haircut instantly,",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "55% 31%"
+      }
+    },
+    {
+      "text": "you'd tell a friend the same,",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "so stop clinging to this hand,",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1.1
+      }
+    },
+    {
+      "text": "there's another deal tonight.",
+      "bg": {
+        "kind": "sky",
+        "tint": "violet",
+        "moon": 0.62
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "g-leo-chasing-2030",
+  "title": "Leo, stop chasing people who walk away",
+  "signs": [
+    "leo"
+  ],
+  "core": [
+    "1111"
+  ],
+  "caption": "just saying",
+  "hashtags": [
+    "leo",
+    "zodiacdating",
+    "astrologymemes"
+  ],
+  "theme": "chasing",
+  "engine": "bank",
+  "seed": 2030,
+  "slides": [
+    {
+      "text": "okay leo,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you give like it's nothing,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "51% 32%"
+      }
+    },
+    {
+      "text": "but you can't buy a yes,",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "and you're the one chasing",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "someone who keeps",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1.15,
+        "focus": "45% 45%"
+      }
+    },
+    {
+      "text": "walking the other way,",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "43% 47%"
+      }
+    },
+    {
+      "text": "so stop running,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "there's a new deal",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "53% 35%"
+      }
+    },
+    {
+      "text": "at 11:11.",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "g-capricorn-ghosting-2037",
+  "title": "Capricorn, a goodbye takes ten seconds",
+  "signs": [
+    "capricorn"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "ten seconds, capricorn",
+  "hashtags": [
+    "capricorn",
+    "zodiacdating",
+    "datingadvice",
+    "zodiac"
+  ],
+  "theme": "ghosting",
+  "engine": "bank",
+  "seed": 2037,
+  "slides": [
+    {
+      "text": "okay capricorn,",
+      "bg": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you're never fooled twice,",
+      "bg": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1.3,
+        "focus": "52% 43%"
+      }
+    },
+    {
+      "text": "and somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "you'd rather vanish",
+      "bg": {
+        "kind": "aura",
+        "sign": "capricorn",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "than send a goodbye",
+      "bg": {
+        "kind": "aura",
+        "sign": "capricorn",
+        "zoom": 1.3,
+        "focus": "56% 38%"
+      }
+    },
+    {
+      "text": "that takes ten seconds,",
+      "bg": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "so say the true thing,",
+      "bg": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1.3,
+        "focus": "52% 38%"
+      }
+    },
+    {
+      "text": "not the cute one.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

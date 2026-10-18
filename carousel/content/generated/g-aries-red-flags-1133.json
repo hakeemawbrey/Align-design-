@@ -1,0 +1,95 @@
+{
+  "id": "g-aries-red-flags-1133",
+  "title": "Aries, that red flag is not a personality",
+  "signs": [
+    "aries"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "it's red, aries",
+  "hashtags": [
+    "aries",
+    "zodiacdating",
+    "datingtips"
+  ],
+  "theme": "red-flags",
+  "engine": "bank",
+  "seed": 1133,
+  "slides": [
+    {
+      "text": "listen, aries,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you can't sit still,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "43% 34%"
+      }
+    },
+    {
+      "text": "but calm isn't a red flag,",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "and you saw the red flag",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and called it",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1.15,
+        "focus": "55% 42%"
+      }
+    },
+    {
+      "text": "their personality,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "58% 43%"
+      }
+    },
+    {
+      "text": "so call it what it is,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "a red flag,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "57% 43%"
+      }
+    },
+    {
+      "text": "not a vibe.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

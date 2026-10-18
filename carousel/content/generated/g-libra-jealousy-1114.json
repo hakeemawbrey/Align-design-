@@ -1,0 +1,87 @@
+{
+  "id": "g-libra-jealousy-1114",
+  "title": "Libra, put their following list down",
+  "signs": [
+    "libra"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "log off, libra",
+  "hashtags": [
+    "libra",
+    "zodiacdating",
+    "datingtips",
+    "zodiac"
+  ],
+  "theme": "jealousy",
+  "engine": "bank",
+  "seed": 1114,
+  "slides": [
+    {
+      "text": "listen, libra,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you can charm a whole room,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "50% 41%"
+      }
+    },
+    {
+      "text": "a real gift, but",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you're checking who",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "they followed today,",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "56% 43%"
+      }
+    },
+    {
+      "text": "so say you felt it,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "once, plainly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "48% 34%"
+      }
+    },
+    {
+      "text": "and put the phone down.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

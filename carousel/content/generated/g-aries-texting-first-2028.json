@@ -1,0 +1,86 @@
+{
+  "id": "g-aries-texting-first-2028",
+  "title": "Aries, eleven days of texting first",
+  "signs": [
+    "aries"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "day twelve, aries",
+  "hashtags": [
+    "aries",
+    "zodiacdating",
+    "astrologymemes"
+  ],
+  "theme": "texting-first",
+  "engine": "bank",
+  "seed": 2028,
+  "slides": [
+    {
+      "text": "if you always text first,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you're the only one texting,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "43% 31%"
+      }
+    },
+    {
+      "text": "aries,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you call things as they are,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "56% 33%"
+      }
+    },
+    {
+      "text": "you've seen it before,",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "so stop,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and see if",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "52% 35%"
+      }
+    },
+    {
+      "text": "they ever start one.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

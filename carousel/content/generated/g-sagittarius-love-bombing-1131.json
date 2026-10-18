@@ -1,0 +1,87 @@
+{
+  "id": "g-sagittarius-love-bombing-1131",
+  "title": "Sagittarius, forever on date two is a warning",
+  "signs": [
+    "sagittarius"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "slow is a love language",
+  "hashtags": [
+    "sagittarius",
+    "zodiacdating",
+    "zodiacsigns",
+    "datingtips"
+  ],
+  "theme": "love-bombing",
+  "engine": "bank",
+  "seed": 1131,
+  "slides": [
+    {
+      "text": "forever on date two",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "is a sales pitch,",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "50% 35%"
+      }
+    },
+    {
+      "text": "sagittarius,",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you're honest to a fault,",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "57% 38%"
+      }
+    },
+    {
+      "text": "you've said this to friends,",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "so watch what they do",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "on date ten,",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "52% 41%"
+      }
+    },
+    {
+      "text": "not what they say on two.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

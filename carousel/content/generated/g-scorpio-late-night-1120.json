@@ -1,0 +1,86 @@
+{
+  "id": "g-scorpio-late-night-1120",
+  "title": "Scorpio, don't send the 2am text",
+  "signs": [
+    "scorpio"
+  ],
+  "core": [
+    "release"
+  ],
+  "caption": "drafts are for deleting",
+  "hashtags": [
+    "scorpio",
+    "zodiacdating",
+    "zodiac"
+  ],
+  "theme": "late-night",
+  "engine": "bank",
+  "seed": 1120,
+  "slides": [
+    {
+      "text": "okay scorpio,",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you know their whole story,",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1.3,
+        "focus": "55% 38%"
+      }
+    },
+    {
+      "text": "and yet",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "you check your phone",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1.1
+      }
+    },
+    {
+      "text": "at midnight",
+      "bg": {
+        "kind": "sky",
+        "tint": "violet",
+        "moon": 0.39,
+        "zoom": 1
+      }
+    },
+    {
+      "text": "for someone who won't,",
+      "bg": {
+        "kind": "sky",
+        "tint": "violet",
+        "moon": 0.39,
+        "zoom": 1.3
+      }
+    },
+    {
+      "text": "so release the card,",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1.1
+      }
+    },
+    {
+      "text": "don't haunt it.",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    }
+  ]
+}

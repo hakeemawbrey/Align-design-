@@ -1,0 +1,80 @@
+{
+  "id": "g-libra-chasing-1138",
+  "title": "Libra, stop chasing people who walk away",
+  "signs": [
+    "libra"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "a gentle intervention",
+  "hashtags": [
+    "libra",
+    "zodiacdating",
+    "astrology",
+    "zodiacsigns"
+  ],
+  "theme": "chasing",
+  "engine": "bank",
+  "seed": 1138,
+  "slides": [
+    {
+      "text": "if they wanted to,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "they'd walk toward you,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "48% 37%"
+      }
+    },
+    {
+      "text": "libra,",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you can read any room,",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "43% 34%"
+      }
+    },
+    {
+      "text": "you've seen it before,",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "and love you have to chase",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "isn't aligned.",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "47% 40%"
+      }
+    }
+  ]
+}

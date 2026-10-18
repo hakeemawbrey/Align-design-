@@ -1,0 +1,85 @@
+{
+  "id": "g-virgo-rushing-1115",
+  "title": "Virgo, slow down, it was one coffee",
+  "signs": [
+    "virgo"
+  ],
+  "core": [
+    "1111"
+  ],
+  "caption": "it was one coffee",
+  "hashtags": [
+    "virgo",
+    "zodiacdating",
+    "astrology"
+  ],
+  "theme": "rushing",
+  "engine": "bank",
+  "seed": 1115,
+  "slides": [
+    {
+      "text": "one coffee",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "is not a wedding,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "55% 39%"
+      }
+    },
+    {
+      "text": "virgo,",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you notice everything,",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "50% 34%"
+      }
+    },
+    {
+      "text": "you've watched it happen,",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "so breathe,",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1.1
+      }
+    },
+    {
+      "text": "there's a new deal at 11:11,",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.75
+      }
+    },
+    {
+      "text": "not a deadline.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

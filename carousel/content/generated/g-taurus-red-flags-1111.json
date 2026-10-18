@@ -1,0 +1,86 @@
+{
+  "id": "g-taurus-red-flags-1111",
+  "title": "Taurus, that red flag is not a personality",
+  "signs": [
+    "taurus"
+  ],
+  "core": [
+    "dealbreakers"
+  ],
+  "caption": "that's not a quirk",
+  "hashtags": [
+    "taurus",
+    "zodiacdating",
+    "datingadvice"
+  ],
+  "theme": "red-flags",
+  "engine": "bank",
+  "seed": 1111,
+  "slides": [
+    {
+      "text": "taurus,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you like what you know,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "55% 39%"
+      }
+    },
+    {
+      "text": "but familiar isn't safe,",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "and you keep calling red flags",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "\"a bit of character,\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "43% 44%"
+      }
+    },
+    {
+      "text": "so write it on your card",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "as a dealbreaker,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "44% 34%"
+      }
+    },
+    {
+      "text": "and mean it.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

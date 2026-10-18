@@ -1,0 +1,87 @@
+{
+  "id": "g-leo-chasing-1116",
+  "title": "Leo, stop chasing people who walk away",
+  "signs": [
+    "leo"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "read twice, leo",
+  "hashtags": [
+    "leo",
+    "zodiacdating",
+    "zodiac",
+    "astrologymemes"
+  ],
+  "theme": "chasing",
+  "engine": "bank",
+  "seed": 1116,
+  "slides": [
+    {
+      "text": "leo, my love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you know who's really clapping,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "57% 38%"
+      }
+    },
+    {
+      "text": "it's a gift, but",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "you keep running after",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "someone who's barely jogging,",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "46% 35%"
+      }
+    },
+    {
+      "text": "so stop,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and see who",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "55% 32%"
+      }
+    },
+    {
+      "text": "shows up on their own.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

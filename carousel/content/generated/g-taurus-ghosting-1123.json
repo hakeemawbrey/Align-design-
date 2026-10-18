@@ -1,0 +1,96 @@
+{
+  "id": "g-taurus-ghosting-1123",
+  "title": "Taurus, a goodbye takes ten seconds",
+  "signs": [
+    "taurus"
+  ],
+  "core": [
+    "release"
+  ],
+  "caption": "ten seconds, taurus",
+  "hashtags": [
+    "taurus",
+    "zodiacdating",
+    "astrology",
+    "astrologymemes"
+  ],
+  "theme": "ghosting",
+  "engine": "bank",
+  "seed": 1123,
+  "slides": [
+    {
+      "text": "taurus, honestly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you build things that last,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "44% 36%"
+      }
+    },
+    {
+      "text": "and still",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "you went quiet on them",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "instead of sending",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.15,
+        "focus": "46% 42%"
+      }
+    },
+    {
+      "text": "one honest sentence,",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "43% 41%"
+      }
+    },
+    {
+      "text": "so send it,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "release the card,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "44% 35%"
+      }
+    },
+    {
+      "text": "don't haunt it.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

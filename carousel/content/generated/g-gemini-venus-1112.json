@@ -1,0 +1,95 @@
+{
+  "id": "g-gemini-venus-1112",
+  "title": "Gemini, your venus knows how you love",
+  "signs": [
+    "gemini"
+  ],
+  "core": [
+    "venus"
+  ],
+  "caption": "check your venus",
+  "hashtags": [
+    "gemini",
+    "zodiacdating",
+    "datingtips"
+  ],
+  "theme": "venus",
+  "engine": "bank",
+  "seed": 1112,
+  "slides": [
+    {
+      "text": "gemini, honestly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you read between every line,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "46% 36%"
+      }
+    },
+    {
+      "text": "and somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you keep loving people",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "the way they want",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.15,
+        "focus": "46% 42%"
+      }
+    },
+    {
+      "text": "instead of how you do,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "44% 44%"
+      }
+    },
+    {
+      "text": "so love the way you love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "that's your venus,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "52% 43%"
+      }
+    },
+    {
+      "text": "not a flaw.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

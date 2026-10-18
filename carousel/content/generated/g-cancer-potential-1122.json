@@ -1,0 +1,95 @@
+{
+  "id": "g-cancer-potential-1122",
+  "title": "Cancer, date who showed up, not who they could be",
+  "signs": [
+    "cancer"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "who they are, cancer",
+  "hashtags": [
+    "cancer",
+    "zodiacdating",
+    "datingadvice"
+  ],
+  "theme": "potential",
+  "engine": "bank",
+  "seed": 1122,
+  "slides": [
+    {
+      "text": "cancer, with love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you remember every anniversary,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "50% 38%"
+      }
+    },
+    {
+      "text": "which is lovely, but",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "you're dating potential",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and not the person",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1.15,
+        "focus": "52% 32%"
+      }
+    },
+    {
+      "text": "who actually showed up,",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "55% 30%"
+      }
+    },
+    {
+      "text": "so date who they are",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "today,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "52% 39%"
+      }
+    },
+    {
+      "text": "not the sequel.",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    }
+  ]
+}

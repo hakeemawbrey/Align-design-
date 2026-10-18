@@ -1,0 +1,87 @@
+{
+  "id": "g-gemini-breadcrumbs-2034",
+  "title": "Gemini, a like a week is not a relationship",
+  "signs": [
+    "gemini"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "gemini, please",
+  "hashtags": [
+    "gemini",
+    "zodiacdating",
+    "astrologymemes",
+    "datingtips"
+  ],
+  "theme": "breadcrumbs",
+  "engine": "bank",
+  "seed": 2034,
+  "slides": [
+    {
+      "text": "crumbs",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "aren't a meal,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "49% 36%"
+      }
+    },
+    {
+      "text": "gemini,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you read between every line,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "55% 34%"
+      }
+    },
+    {
+      "text": "this isn't news to you,",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "and if they wanted you,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you'd be getting",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "50% 35%"
+      }
+    },
+    {
+      "text": "the whole loaf.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

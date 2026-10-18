@@ -1,0 +1,87 @@
+{
+  "id": "g-cancer-venus-1134",
+  "title": "Cancer, your venus knows how you love",
+  "signs": [
+    "cancer"
+  ],
+  "core": [
+    "venus"
+  ],
+  "caption": "said with love",
+  "hashtags": [
+    "cancer",
+    "zodiacdating",
+    "astrology",
+    "datingadvice"
+  ],
+  "theme": "venus",
+  "engine": "bank",
+  "seed": 1134,
+  "slides": [
+    {
+      "text": "cancer, honestly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you take care of everyone,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "50% 40%"
+      }
+    },
+    {
+      "text": "and yet",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "you date for your sun",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and ignore your heart,",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "55% 36%"
+      }
+    },
+    {
+      "text": "so love the way you love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "that's your venus,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "55% 31%"
+      }
+    },
+    {
+      "text": "not a flaw.",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "g-aquarius-the-idea-1130",
+  "title": "Aquarius, you love the idea of them",
+  "signs": [
+    "aquarius"
+  ],
+  "core": [
+    "face-last"
+  ],
+  "caption": "you know who you are",
+  "hashtags": [
+    "aquarius",
+    "zodiacdating",
+    "datingtips",
+    "astrology"
+  ],
+  "theme": "the-idea",
+  "engine": "bank",
+  "seed": 1130,
+  "slides": [
+    {
+      "text": "the person you imagined",
+      "bg": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "can't text you back,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "48% 39%"
+      }
+    },
+    {
+      "text": "aquarius,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you think before you feel,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "46% 35%"
+      }
+    },
+    {
+      "text": "you've seen it before,",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "so meet the real one,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "slowly,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "44% 41%"
+      }
+    },
+    {
+      "text": "face last.",
+      "bg": {
+        "kind": "veil",
+        "person": 10,
+        "zoom": 1.15
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "g-pisces-testing-1129",
+  "title": "Pisces, stop testing people who already passed",
+  "signs": [
+    "pisces"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "okay that's all",
+  "hashtags": [
+    "pisces",
+    "zodiacdating",
+    "zodiacsigns",
+    "datingtips"
+  ],
+  "theme": "testing",
+  "engine": "bank",
+  "seed": 1129,
+  "slides": [
+    {
+      "text": "pisces,",
+      "bg": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you feel everything first,",
+      "bg": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1.3,
+        "focus": "50% 38%"
+      }
+    },
+    {
+      "text": "and somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "you're grading them",
+      "bg": {
+        "kind": "aura",
+        "sign": "pisces",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "on a test",
+      "bg": {
+        "kind": "aura",
+        "sign": "pisces",
+        "zoom": 1.3,
+        "focus": "48% 38%"
+      }
+    },
+    {
+      "text": "they never got to see,",
+      "bg": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "so stop grading",
+      "bg": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1.3,
+        "focus": "47% 41%"
+      }
+    },
+    {
+      "text": "and flip your card too.",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    }
+  ]
+}

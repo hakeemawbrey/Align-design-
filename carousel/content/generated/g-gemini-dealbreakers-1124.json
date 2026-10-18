@@ -1,0 +1,95 @@
+{
+  "id": "g-gemini-dealbreakers-1124",
+  "title": "Gemini, say the dealbreaker on date one",
+  "signs": [
+    "gemini"
+  ],
+  "core": [
+    "dealbreakers"
+  ],
+  "caption": "say it on date one",
+  "hashtags": [
+    "gemini",
+    "zodiacdating",
+    "astrology"
+  ],
+  "theme": "dealbreakers",
+  "engine": "bank",
+  "seed": 1124,
+  "slides": [
+    {
+      "text": "gemini, quick one,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you can talk to anyone,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "50% 40%"
+      }
+    },
+    {
+      "text": "a real gift, but",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you act easy-going",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and drop the dealbreaker",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.15,
+        "focus": "45% 37%"
+      }
+    },
+    {
+      "text": "at month four,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "42% 38%"
+      }
+    },
+    {
+      "text": "so put it on your card,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "the right one",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "44% 34%"
+      }
+    },
+    {
+      "text": "will still pick you.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}
