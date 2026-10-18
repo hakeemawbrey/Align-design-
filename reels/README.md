@@ -4,15 +4,18 @@ A generator for short vertical videos in the weirdcore / low-poly 3D style of
 @whonagy's "Break the loop 👁". Each reel is about 7 seconds:
 
 1. a liminal low-poly world (a cave lake, the poolrooms, a dreamcore meadow, a checker void…),
-2. a shiny holographic figure watching blob creatures with eyes and antennas,
-3. a Windows-98 popup titled `<sign>.exe` that types **one line of advice to one zodiac sign**,
-4. the camera swings to the figure, and the sign's glyph pops over its head.
+2. a holographic figure wrapped in its sign's **Align aura** (Garnet for Scorpio, Ember for Aries…),
+3. four-pointed stars with eyes hovering over the scene, watching: the sky, come down to talk to you,
+4. a Windows-98 popup titled `<sign>.exe` that types **one line of advice to one zodiac sign**, while one star speaks it,
+5. the camera swings to the figure, the sign's glyph pops over its head, the aura surges and its name appears.
 
-Every reel is generated from a seed: the world, its palette, the creatures,
+A small `align ✦` mark sits at the top (`--no-brand` leaves it out).
+
+Every reel is generated from a seed: the world, its palette, the stars,
 the figure's finish, the camera and the soundtrack (an original ambient pad,
 music box, typing ticks and pops, synthesized per reel) all come from it. Lines
 come from a hand-edited library of relationship and self-improvement advice,
-60 per sign, and `npm run write` adds more with the Claude API. The same line
+70 per sign (10 of them carrying Align's core messages), and `npm run write` adds more with the Claude API. The same line
 never looks the same twice, so the supply doesn't run out.
 
 ## Use it
@@ -66,7 +69,7 @@ against the rules and de-duplicated against the whole library before it's added.
 | --- | --- |
 | `CONTENT.md` | the writing rules for lines |
 | `ACCOUNT.md` | the account kit: name, bio, posting plan, hashtags, weekly routine |
-| `content/<sign>.json` | the line library, 60 per sign (30 love, 30 self) |
-| `engine/` | the browser engine: `reel.js` (timeline, camera, post), `worlds*.js`, `actors.js` (figure, creatures, glyph), `popup.js`, `audio.js`, `main.js` (player + render hooks) |
+| `content/<sign>.json` | the line library, 70 per sign (35 love, 35 self) |
+| `engine/` | the browser engine: `reel.js` (timeline, camera, post), `worlds*.js`, `actors.js` (figure + aura, stars, glyph), `popup.js`, `audio.js`, `main.js` (player + render hooks) |
 | `src/` | Node: `render.mjs`, `write.mjs`, `check.mjs`, `serve.mjs`, `content.mjs` |
 | `vendor/`, `fonts/` | three.js r170 and the Poppins / Noto Sans Symbols subsets, vendored so it runs offline |

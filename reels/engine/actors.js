@@ -328,143 +328,148 @@ function makeAura(fig, body, meshes, aura, glyph, rng) {
   }
 }
 
-// ---------- the creatures ----------
+// ---------- the stars ----------
+// The watchers are four-pointed stars with eyes: the sky itself, come down to
+// look at you. One of them speaks the line while the dialog types.
 
-function gumdropGeometry(shape, segs) {
-  const pts = []
-  const n = 9
-  for (let i = 0; i <= n; i++) {
-    const k = i / n
-    let r, y
-    if (shape === 'dome') {
-      y = k * 0.62
-      r = 0.52 * Math.pow(1 - k, 0.55) + 0.02
-    } else if (shape === 'bean') {
-      y = k * 0.8
-      r = 0.36 * Math.sin(Math.PI * (0.08 + k * 0.92)) + 0.06
-    } else if (shape === 'cone') {
-      y = k * 0.75
-      r = 0.5 * (1 - k) + 0.05 * Math.sin(k * Math.PI)
-    } else {
-      // 'tall' — a tall gumdrop
-      y = k * 1.05
-      r = 0.38 * Math.pow(1 - k, 0.35) + 0.02
-    }
-    pts.push(new THREE.Vector2(Math.max(0.001, r), y))
+function starGeometry(R, inner, curve, depth) {
+  const shape = new THREE.Shape()
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 2
+    const tip = [Math.cos(a) * R, Math.sin(a) * R]
+    const mid = a + Math.PI / 4
+    // the waist between two points, pulled in for the classic ✦ curve
+    const waist = [Math.cos(mid) * R * inner, Math.sin(mid) * R * inner]
+    const ctrl = [Math.cos(mid) * R * inner * curve, Math.sin(mid) * R * inner * curve]
+    if (i === 0) shape.moveTo(...tip)
+    const next = a + Math.PI / 2
+    const tip2 = [Math.cos(next) * R, Math.sin(next) * R]
+    shape.quadraticCurveTo(ctrl[0], ctrl[1], waist[0], waist[1])
+    shape.quadraticCurveTo(ctrl[0], ctrl[1], tip2[0], tip2[1])
   }
-  pts.unshift(new THREE.Vector2(0.001, 0))
-  const g = new THREE.LatheGeometry(pts, segs)
+  const g = new THREE.ExtrudeGeometry(shape, {
+    depth, curveSegments: 3, bevelEnabled: true, bevelThickness: depth * 0.45, bevelSize: R * 0.07, bevelSegments: 1,
+  })
+  g.translate(0, 0, -depth / 2)
   g.computeVertexNormals()
   return g
 }
 
-const SHAPES = ['dome', 'dome', 'dome', 'bean', 'cone', 'tall']
-
-// Builds one kind of creature for this reel (they're a species, so they
-// match), and returns a factory for individuals.
-export function makeSpecies(rng, colors) {
-  const shape = rng.pick(SHAPES)
-  const segs = rng.pick([6, 7, 8, 10])
-  const eyes = rng.pick([2, 3, 3, 3, 1])
-  const antenna = rng.chance(0.8)
-  const bulb = new THREE.Color(rng.pick(['#ff2a2a', '#ff2a2a', '#ffe14a', '#5dff8a', '#ffffff']))
-  const geo = gumdropGeometry(shape, segs)
-  geo.computeBoundingBox()
-  const height = geo.boundingBox.max.y
-  const eyeGeo = new THREE.SphereGeometry(0.1, 12, 8)
-  const pupilGeo = new THREE.SphereGeometry(0.055, 10, 6)
-  const eyeMat = new THREE.MeshPhongMaterial({ color: '#ffffff', shininess: 80, emissive: '#555555' })
-  const pupilMat = new THREE.MeshBasicMaterial({ color: '#0a0a14' })
-  const stalkGeo = new THREE.CylinderGeometry(0.018, 0.018, 0.26, 5)
-  const bulbGeo = new THREE.SphereGeometry(0.07, 10, 8)
-  const stalkMat = new THREE.MeshLambertMaterial({ color: '#222' })
-  const bulbMat = new THREE.MeshBasicMaterial({ color: bulb })
-
-  // Approximate surface radius at a given height, for placing eyes.
-  const pos = geo.attributes.position
-  const radiusAt = (y) => {
-    let best = 0, bestD = Infinity
-    for (let i = 0; i < pos.count; i++) {
-      const d = Math.abs(pos.getY(i) - y)
-      if (d < bestD) {
-        bestD = d
-        best = Math.hypot(pos.getX(i), pos.getZ(i))
-      }
-    }
-    return best
+function starGlow(color) {
+  const c = document.createElement('canvas')
+  c.width = c.height = 128
+  const ctx = c.getContext('2d')
+  const col = new THREE.Color(color)
+  const rgb = `${Math.round(col.r * 255)},${Math.round(col.g * 255)},${Math.round(col.b * 255)}`
+  const g = ctx.createRadialGradient(64, 64, 0, 64, 64, 64)
+  g.addColorStop(0, `rgba(${rgb},0.9)`)
+  g.addColorStop(0.3, `rgba(${rgb},0.35)`)
+  g.addColorStop(1, `rgba(${rgb},0)`)
+  ctx.fillStyle = g
+  ctx.fillRect(0, 0, 128, 128)
+  // long thin cross flare, like a star through a lens
+  ctx.globalCompositeOperation = 'lighter'
+  for (const [w, h] of [[128, 3], [3, 128]]) {
+    const lg = ctx.createRadialGradient(64, 64, 0, 64, 64, 64)
+    lg.addColorStop(0, 'rgba(255,255,255,0.8)')
+    lg.addColorStop(1, 'rgba(255,255,255,0)')
+    ctx.fillStyle = lg
+    ctx.fillRect(64 - w / 2, 64 - h / 2, w, h)
   }
-  const eyeY = height * (shape === 'tall' ? 0.6 : 0.42)
-  const eyeR = radiusAt(eyeY)
+  const t = new THREE.CanvasTexture(c)
+  t.colorSpace = THREE.SRGBColorSpace
+  return t
+}
+
+// Builds this reel's kind of star (they match, like a constellation) and
+// returns a factory for individuals.
+export function makeSpecies(rng, colors) {
+  const R = 0.5
+  const inner = rng.range(0.32, 0.46)
+  const curve = rng.range(0.25, 0.7)
+  const depth = rng.range(0.1, 0.2)
+  const geo = starGeometry(R, inner, curve, depth)
+  const eyes = rng.pick([2, 2, 2, 2, 1, 3])
+  const front = depth / 2 + depth * 0.45
+  const eyeGeo = new THREE.SphereGeometry(0.075, 12, 8)
+  const pupilGeo = new THREE.SphereGeometry(0.042, 10, 6)
+  const eyeMat = new THREE.MeshBasicMaterial({ color: '#ffffff' })
+  const pupilMat = new THREE.MeshBasicMaterial({ color: '#0a0a14' })
+  const mouthGeo = new THREE.CircleGeometry(0.05, 12)
+  const mouthMat = new THREE.MeshBasicMaterial({ color: '#2a0a18' })
+  const hoverBase = rng.range(0.7, 1.3)
 
   return function spawn(i, irng) {
-    const color = new THREE.Color(colors[i % colors.length === 0 ? 0 : irng.int(0, colors.length - 1)])
-    color.offsetHSL(irng.range(-0.02, 0.02), 0, irng.range(-0.05, 0.05))
-    const mat = new THREE.MeshPhongMaterial({ color, shininess: 60, flatShading: true, emissive: color.clone().multiplyScalar(0.12) })
+    const color = new THREE.Color(colors[i === 0 ? 0 : irng.int(0, colors.length - 1)])
+    color.offsetHSL(irng.range(-0.02, 0.02), 0, irng.range(0, 0.08))
+    const mat = new THREE.MeshPhongMaterial({
+      color, emissive: color.clone().multiplyScalar(0.55), shininess: 90, specular: '#ffffff', flatShading: true,
+    })
     const root = new THREE.Group()
-    const body = new THREE.Mesh(geo, mat)
+    const body = new THREE.Group()
     root.add(body)
+    const star = new THREE.Mesh(geo, mat)
+    body.add(star)
+    const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: starGlow(color.getStyle()), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }))
+    glow.scale.setScalar(R * 4)
+    glow.renderOrder = 1
+    body.add(glow)
+
     const eyeList = []
-    const spread = eyes === 1 ? [0] : eyes === 2 ? [-0.32, 0.32] : [-0.52, 0, 0.52]
-    for (const a of spread) {
+    const spread = eyes === 1 ? [0] : eyes === 2 ? [-0.095, 0.095] : [-0.14, 0, 0.14]
+    for (const x of spread) {
       const e = new THREE.Group()
       const white = new THREE.Mesh(eyeGeo, eyeMat)
-      white.scale.set(1, 1.15, 0.6)
+      white.scale.set(1, 1.2, 0.5)
       const pupil = new THREE.Mesh(pupilGeo, pupilMat)
-      pupil.position.z = 0.055
+      pupil.position.z = 0.03
       pupil.scale.set(1, 1.2, 0.5)
       e.add(white, pupil)
-      e.position.set(Math.sin(a) * eyeR * 0.98, eyeY, Math.cos(a) * eyeR * 0.98)
-      e.rotation.y = a
-      const s = eyes === 1 ? 1.6 : 1
-      e.scale.setScalar(s)
+      e.position.set(x, 0.045, front)
+      if (eyes === 1) e.scale.setScalar(1.45)
       body.add(e)
       eyeList.push({ e, pupil })
     }
-    let bulbMesh = null
-    if (antenna) {
-      const stalk = new THREE.Mesh(stalkGeo, stalkMat)
-      stalk.position.y = height + 0.11
-      bulbMesh = new THREE.Mesh(bulbGeo, bulbMat)
-      bulbMesh.position.y = height + 0.26
-      body.add(stalk, bulbMesh)
-    }
-    const size = irng.range(0.75, 1.25)
+    const mouth = new THREE.Mesh(mouthGeo, mouthMat)
+    mouth.position.set(0, -0.1, front + 0.004)
+    mouth.scale.set(0.9, 0.18, 1)
+    body.add(mouth)
+
+    const size = irng.range(0.7, 1.2)
     root.scale.setScalar(size)
     const phase = irng.range(0, 10)
+    const hover = hoverBase + irng.range(-0.35, 0.45)
     const blinkAt = irng.range(0.5, 6)
-    const hops = irng.chance(0.5)
+    const spin = irng.range(-0.5, 0.5)
     return {
       object: root,
-      height: height * size,
-      // mode: 'float' bobs on water, 'ground' sits and hops
-      update(t, { mode = 'float', look, alert = 0 } = {}) {
-        if (mode === 'float') {
-          body.position.y = Math.sin(t * 1.6 + phase) * 0.06 - 0.12
-          body.rotation.z = Math.sin(t * 1.1 + phase) * 0.06
-          body.rotation.x = Math.cos(t * 1.3 + phase) * 0.05
-        } else {
-          const hp = hops ? Math.max(0, Math.sin(t * 2.4 + phase)) : 0
-          body.position.y = Math.pow(hp, 3) * 0.18
-          const sq = 1 - Math.pow(hp, 3) * 0.08 + Math.sin(t * 3 + phase) * 0.015
-          body.scale.set(1 / Math.sqrt(sq), sq, 1 / Math.sqrt(sq))
-        }
+      height: (hover + R) * size,
+      // talk: 0..1 how open the mouth is (the speaker, while the line types)
+      update(t, { look, alert = 0, talk = 0 } = {}) {
+        body.position.y = hover + Math.sin(t * 1.4 + phase) * 0.08
+        star.rotation.z = Math.sin(t * 0.8 + phase) * 0.18 + spin * Math.sin(t * 0.3)
+        // twinkle
+        const tw = 1 + Math.sin(t * 4.3 + phase) * 0.04 + Math.sin(t * 9.1 + phase * 2) * 0.02 + talk * 0.08
+        star.scale.setScalar(tw)
+        mat.emissiveIntensity = 0.8 + 0.25 * Math.sin(t * 3.1 + phase) + alert * 0.4 + talk * 0.6
+        glow.material.opacity = 0.55 + 0.2 * Math.sin(t * 4.3 + phase) + talk * 0.3
+        glow.material.rotation = t * 0.1 + phase
         if (look) {
           const local = root.worldToLocal(look.clone())
           const yaw = Math.atan2(local.x, local.z)
-          const k = 0.04 + alert * 0.2
+          const pitch = -Math.atan2(local.y - body.position.y, Math.hypot(local.x, local.z)) * 0.6
+          const k = 0.05 + alert * 0.2
           body.rotation.y += (yaw - body.rotation.y) * k
+          body.rotation.x += (pitch - body.rotation.x) * k
         }
-        // blink every ~4s
-        const b = (t + blinkAt) % 4.2
+        const b = (t + blinkAt) % 4.4
         const lid = b < 0.12 ? 0.1 : 1
         for (const { e, pupil } of eyeList) {
-          e.scale.y = (eyes === 1 ? 1.6 : 1) * lid
-          pupil.position.x = Math.sin(t * 0.7 + phase) * 0.02 * (1 - alert)
+          e.scale.y = (eyes === 1 ? 1.45 : 1) * lid
+          pupil.position.x = Math.sin(t * 0.7 + phase) * 0.012 * (1 - alert)
         }
-        if (bulbMesh) {
-          const pulse = 0.85 + 0.15 * Math.sin(t * 5 + phase) + alert * 0.4
-          bulbMesh.scale.setScalar(pulse)
-        }
+        mouth.scale.y = 0.18 + talk * 0.9
+        mouth.scale.x = 0.9 - talk * 0.2
       },
     }
   }

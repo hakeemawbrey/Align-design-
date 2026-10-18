@@ -13,6 +13,8 @@ export const SIGNS = [
   'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces',
 ]
 export const TOPICS = ['love', 'self']
+// Optional `core`: which Align core message a line carries (see carousel/SPEC.md).
+export const CORES = ['face-last', 'mutual', 'honest', 'dealbreakers', 'release', '1111', 'venus', 'not-alone']
 
 const BANNED = [
   /—/, /;/, /!/, /#/, /\bbestie\b/i, /\bmanifest/i, /\btoxic\b/i, /\bnarcissis/i,
@@ -34,6 +36,7 @@ export function validateLine(sign, l) {
   const errs = []
   const t = l.text || ''
   if (!TOPICS.includes(l.topic)) errs.push(`topic "${l.topic}"`)
+  if (l.core !== undefined && !CORES.includes(l.core)) errs.push(`core "${l.core}"`)
   if (!t.startsWith(cap(sign) + ', ')) errs.push('must start with the sign name and a comma')
   if (t.length < 40 || t.length > 95) errs.push(`length ${t.length} (40–95)`)
   if (!/[.?]$/.test(t)) errs.push('must end with . or ?')

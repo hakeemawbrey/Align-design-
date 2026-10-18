@@ -161,6 +161,10 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
       return { ...c, mode: s.mode }
     })
 
+    let speaker = 0
+    crowd.forEach((c, i) => {
+      if (c.object.position.distanceTo(world.stage) < crowd[speaker].object.position.distanceTo(world.stage)) speaker = i
+    })
     const glyph = makeGlyphSprite(GLYPH[sign], aura.color, aura.light)
     scene.add(glyph.object)
 
@@ -188,7 +192,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     const title = `${sign}.exe`
 
     state = {
-      item, seed, scene, world, figure, crowd, glyph, camera, shots, tl, layout, title, hero,
+      item, seed, scene, world, figure, crowd, speaker, glyph, camera, shots, tl, layout, title, hero,
       baseYaw, turn: dy * 0.62, handle, brand, aura, sign, powerLine: rng.pick(POWER_LINES), noisePhase: rng.range(0, 100), lastOverlay: '',
     }
     return { duration: tl.duration, plan: { seed: String(seed), duration: tl.duration, ...tl }, world: worldName }
@@ -325,7 +329,10 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     })
     const alert = smooth(tl.tPopup, tl.tPopup + 0.6, t) * (1 - smooth(tl.tClose, tl.tClose + 1, t) * 0.5)
     const lookAt = t < tl.tClose ? camera.position : figure.object.position
-    for (const c of crowd) c.update(t, { mode: c.mode, look: lookAt, alert })
+    // the star nearest the middle speaks the line: its mouth moves with the typing
+    const typing = t >= tl.typeStart && t < tl.tTyped + 0.1
+    const talk = typing ? Math.max(0, Math.sin((t - tl.typeStart) * 17)) * 0.9 : 0
+    crowd.forEach((c, i) => c.update(t, { mode: c.mode, look: lookAt, alert, talk: i === state.speaker ? talk : 0 }))
     figure.object.updateMatrixWorld(true)
     glyph.update(t - tl.tGlyph, figure.headTop())
 

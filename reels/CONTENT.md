@@ -6,7 +6,7 @@ Every line in `content/<sign>.json` follows this file. The validator
 ## The format
 
 Each reel is ~7–9 seconds: a weird low-poly 3D world, a shiny little figure,
-some blob creatures with eyes, and **one Windows-98 popup** that types out
+some four-pointed stars with eyes, and **one Windows-98 popup** that types out
 **one line**. The popup's title bar names the sign (`scorpio.exe`). At the
 end, the sign's glyph pops over the figure's head.
 
