@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Pisces, you were never too much. You were just in the wrong water.",
       "caption": "the wrong water"
+    },
+    {
+      "topic": "love",
+      "text": "Pisces, if only you can see the future together, it's a daydream for one.",
+      "caption": "a daydream for one",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Pisces, a dealbreaker isn't mean. It saves you both a year of hoping.",
+      "caption": "a year of hoping",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Pisces, release them gently, but do it out loud. Fading is not kinder.",
+      "caption": "out loud",
+      "core": "release"
+    },
+    {
+      "topic": "love",
+      "text": "Pisces, tell them the real you, not the dreamy one. The real one is better.",
+      "caption": "the real one",
+      "core": "honest"
+    },
+    {
+      "topic": "love",
+      "text": "Pisces, you build a whole story from one photo. Meet the person before the picture.",
+      "caption": "before the picture",
+      "core": "face-last"
+    },
+    {
+      "topic": "self",
+      "text": "Pisces, stop rewriting the old ending. A new deal comes at 11:11.",
+      "caption": "stop rewriting it",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Pisces, you feel everyone's weather. Find the few who feel yours back.",
+      "caption": "who feels yours",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Pisces, your Venus shows how you love. Check it before you rescue someone again.",
+      "caption": "not a rescue",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Pisces, tell yourself the truth before you tell yourself the story.",
+      "caption": "truth before story",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Pisces, you can release a dream without failing it. Some were only for sleeping.",
+      "caption": "only for sleeping",
+      "core": "release"
     }
   ]
 }

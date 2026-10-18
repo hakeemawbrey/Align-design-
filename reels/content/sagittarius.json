@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Sagittarius, you can learn more from one person than from ten countries.",
       "caption": "one person deep"
+    },
+    {
+      "topic": "love",
+      "text": "Sagittarius, leaving is your right. Leaving a goodbye is your job.",
+      "caption": "leave a goodbye",
+      "core": "release"
+    },
+    {
+      "topic": "love",
+      "text": "Sagittarius, say you need freedom on day one, so nobody finds out on day ninety.",
+      "caption": "day one, not ninety",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Sagittarius, a love that only moves when you move is a tour, not a match.",
+      "caption": "a tour not a match",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Sagittarius, a pretty face is a postcard. Read their sky for the whole map.",
+      "caption": "the whole map",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Sagittarius, your Sun needs the open road. Your Venus may want a porch.",
+      "caption": "maybe a porch",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Sagittarius, you don't need a new city to start over. 11:11 works from home.",
+      "caption": "start over at home",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Sagittarius, adventures get better with a witness. Someone wants to come along.",
+      "caption": "bring a witness",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Sagittarius, you're honest with everyone. Try it on the plans you keep postponing.",
+      "caption": "the postponed plans",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Sagittarius, release the plan that's only exciting in your head.",
+      "caption": "only exciting in theory",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Sagittarius, your luck isn't gone. The deck reshuffles every night.",
+      "caption": "it reshuffles",
+      "core": "1111"
     }
   ]
 }

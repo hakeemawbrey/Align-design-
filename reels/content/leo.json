@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Leo, what would you build if nobody was ever going to see it?",
       "caption": "build it anyway"
+    },
+    {
+      "topic": "love",
+      "text": "Leo, let them fall for your heart before they fall for your highlights.",
+      "caption": "heart before highlights",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Leo, an audience claps. A partner shows up. Make sure it goes both ways.",
+      "caption": "both ways",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Leo, say the honest thing first, even when it doesn't flatter you.",
+      "caption": "unflattering truth",
+      "core": "honest"
+    },
+    {
+      "topic": "love",
+      "text": "Leo, your Sun loves a spotlight. Your Venus might just want to be held.",
+      "caption": "just be held",
+      "core": "venus"
+    },
+    {
+      "topic": "love",
+      "text": "Leo, an ex who still watches your stories is not a fan. Release them.",
+      "caption": "not a fan",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Leo, you don't have to be the whole show. Someone wants to share the stage.",
+      "caption": "share the stage",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Leo, one flop is not your legacy. There is always another deck.",
+      "caption": "one flop",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Leo, know what you won't put up with before someone dazzles you.",
+      "caption": "before the dazzle",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "self",
+      "text": "Leo, compliments are nice. One honest friend is worth fifty of them.",
+      "caption": "one honest friend",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Leo, you don't need to win back the crowd that left. Let them go.",
+      "caption": "let the crowd go",
+      "core": "release"
     }
   ]
 }

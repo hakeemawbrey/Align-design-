@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Aries, wanting it now is how you keep getting it never.",
       "caption": "now or never"
+    },
+    {
+      "topic": "love",
+      "text": "Aries, you fall for a face in a second. Give their sky a minute first.",
+      "caption": "a minute first",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Aries, if you're the only one chasing, it isn't a match. It's a sprint.",
+      "caption": "a sprint for one",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Aries, you leave fast. Release them with a sentence, not a silence.",
+      "caption": "a sentence not silence",
+      "core": "release"
+    },
+    {
+      "topic": "love",
+      "text": "Aries, say your dealbreakers on the first date. You'd say them by the third anyway.",
+      "caption": "say it on date one",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Aries, your Sun charges in. Your Venus might want to be courted slowly.",
+      "caption": "courted slowly",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Aries, you lost one round. At 11:11 the whole game resets.",
+      "caption": "the game resets",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Aries, the first thing out of your mouth is fast. Make it true, too.",
+      "caption": "fast and true",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Aries, going first doesn't mean going alone. Someone is already on their way.",
+      "caption": "someone is on the way",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Aries, last week's grudge is slowing you down. Release it and run.",
+      "caption": "drop it and run",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Aries, a bad hand is not a reason to quit the game. There is always another deck.",
+      "caption": "another round",
+      "core": "1111"
     }
   ]
 }

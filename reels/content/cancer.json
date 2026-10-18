@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Cancer, being careful is wise. Being closed is a different thing.",
       "caption": "careful not closed"
+    },
+    {
+      "topic": "love",
+      "text": "Cancer, keeping their hoodie is not keeping them. Release it with the rest.",
+      "caption": "give back the hoodie",
+      "core": "release"
+    },
+    {
+      "topic": "love",
+      "text": "Cancer, if only one of you does the caring, it isn't a home. It's a shift.",
+      "caption": "it's a shift",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Cancer, a face can't tell you who stays. Their sky might.",
+      "caption": "who stays",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Cancer, if you want a family someday, say it early. It's not too much.",
+      "caption": "not too much",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Cancer, you replay old chapters at night. Tonight, let 11:11 start a new one.",
+      "caption": "a new chapter",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Cancer, your mood is real information. Say it out loud before it turns to sulking.",
+      "caption": "say the mood",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Cancer, you are everyone's home. You are allowed to be someone's guest.",
+      "caption": "be the guest",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Cancer, your Sun wants a safe home. Your Venus knows who to build it with.",
+      "caption": "who to build with",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Cancer, the past is a nice room to sit in. Don't move your bed in there.",
+      "caption": "don't move in",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Cancer, care you never let yourself receive is care you'll run out of.",
+      "caption": "take some back",
+      "core": "mutual"
     }
   ]
 }

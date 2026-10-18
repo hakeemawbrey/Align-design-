@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Gemini, one honest sentence beats a hundred clever ones.",
       "caption": "one honest sentence"
+    },
+    {
+      "topic": "love",
+      "text": "Gemini, skip the clever opener. Say the true thing first and see who stays.",
+      "caption": "skip the opener",
+      "core": "honest"
+    },
+    {
+      "topic": "love",
+      "text": "Gemini, a good bio beats a good angle. Read their sky before their face.",
+      "caption": "bio over angle",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Gemini, ten open chats and no answers. Release the ones you'll never reply to.",
+      "caption": "mute the dead chats",
+      "core": "release"
+    },
+    {
+      "topic": "love",
+      "text": "Gemini, if only you keep the conversation alive, it's a monologue.",
+      "caption": "it's a monologue",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Gemini, tell them you need room to wander before they fall for the one who stays.",
+      "caption": "say it early",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "self",
+      "text": "Gemini, you can start over as many times as you need. 11:11 comes every night.",
+      "caption": "every night again",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Gemini, both of your moods deserve company. Someone out there gets the pair.",
+      "caption": "someone gets both",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Gemini, your mind moves fast. Your Venus shows how your heart moves.",
+      "caption": "how your heart moves",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Gemini, tell yourself the honest version before you tell everyone the fun one.",
+      "caption": "the honest version",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Gemini, the idea you dropped last month can stay dropped. That's allowed.",
+      "caption": "let it stay dropped",
+      "core": "release"
     }
   ]
 }

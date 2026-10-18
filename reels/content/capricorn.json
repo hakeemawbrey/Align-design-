@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Capricorn, being fine every single day is its own kind of alarm.",
       "caption": "the alarm is fine"
+    },
+    {
+      "topic": "love",
+      "text": "Capricorn, you'd never sign a deal without terms. Put your dealbreakers up front.",
+      "caption": "know your terms",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Capricorn, if you're the only one putting in the hours, it's overtime, not love.",
+      "caption": "unpaid overtime",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Capricorn, a nice face is not a plan. Learn who they are before you pencil them in.",
+      "caption": "pencil them in",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Capricorn, your Sun builds empires. Your Venus wants someone to come home to.",
+      "caption": "come home to",
+      "core": "venus"
+    },
+    {
+      "topic": "love",
+      "text": "Capricorn, say you like them before you've done the math. It counts more.",
+      "caption": "before the math",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Capricorn, a bad quarter is not a bad life. The next deal is at 11:11.",
+      "caption": "just a bad quarter",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Capricorn, the goal you outgrew can be released without shame.",
+      "caption": "you outgrew it",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Capricorn, the climb is long. You were never meant to do it alone.",
+      "caption": "not a solo climb",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Capricorn, admit you're tired before your body admits it for you.",
+      "caption": "admit you're tired",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Capricorn, rest isn't quitting. Put the work down and let it wait.",
+      "caption": "let it wait",
+      "core": "release"
     }
   ]
 }

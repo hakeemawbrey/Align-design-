@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Aquarius, the revolution will still be there after you drink some water.",
       "caption": "drink some water"
+    },
+    {
+      "topic": "love",
+      "text": "Aquarius, you want to be known for your mind. Let them read your sky first.",
+      "caption": "mind first",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Aquarius, if you're done, say so. Fading out is not a release. It's a loose end.",
+      "caption": "say you're done",
+      "core": "release"
+    },
+    {
+      "topic": "love",
+      "text": "Aquarius, a connection only you understand is not a connection yet.",
+      "caption": "not a connection yet",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Aquarius, say you need lots of space early. The right person will plan for it.",
+      "caption": "plan for the space",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Aquarius, people who think like you exist. You just haven't met them yet.",
+      "caption": "they exist",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Aquarius, the honest answer to how are you is allowed to be a feeling.",
+      "caption": "a real answer",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Aquarius, the experiment failed. Good data. Run a new one at 11:11.",
+      "caption": "good data",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Aquarius, freedom is your Sun. How you get close is your Venus. Learn both.",
+      "caption": "learn both",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Aquarius, release the need to be the most original person in the room.",
+      "caption": "not the most original",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Aquarius, give your friends the care you give your causes, and ask for it back.",
+      "caption": "ask for it back",
+      "core": "mutual"
     }
   ]
 }

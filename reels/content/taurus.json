@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Taurus, enjoy what you have without being afraid to lose it.",
       "caption": "enjoy it"
+    },
+    {
+      "topic": "love",
+      "text": "Taurus, holding on longer doesn't make it yours. Release what already left.",
+      "caption": "it already left",
+      "core": "release"
+    },
+    {
+      "topic": "love",
+      "text": "Taurus, loyalty to someone who isn't loyal back is just a habit with a name.",
+      "caption": "loyal to who",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Taurus, you notice beauty first. Let the person behind the face go first this time.",
+      "caption": "the person first",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Taurus, Venus rules you, so of course you love slowly. Slow is not the same as stuck.",
+      "caption": "slow not stuck",
+      "core": "venus"
+    },
+    {
+      "topic": "love",
+      "text": "Taurus, if you won't ever move cities, say it now, not after the lease is signed.",
+      "caption": "before the lease",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "self",
+      "text": "Taurus, you don't have to finish a bad meal. There's a new deal at 11:11.",
+      "caption": "push the plate away",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Taurus, saying you're fine to keep the peace still costs you something.",
+      "caption": "it costs something",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Taurus, comfort is better shared. The right people want the same quiet night.",
+      "caption": "the same quiet night",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Taurus, the thing you can't let go of is costing more than it's worth.",
+      "caption": "check the cost",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Taurus, the honest no today is kinder than the slow no in six months.",
+      "caption": "the honest no",
+      "core": "honest"
     }
   ]
 }

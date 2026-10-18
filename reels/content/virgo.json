@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Virgo, the world does not need you flawless. It needs you here.",
       "caption": "just be here"
+    },
+    {
+      "topic": "love",
+      "text": "Virgo, put your real list on your card, then stop editing the people who read it.",
+      "caption": "the real list",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Virgo, fixing someone who didn't ask isn't love. Love is two people choosing.",
+      "caption": "two people choosing",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Virgo, you spot flaws in a photo fast. Learn who they are before you start grading.",
+      "caption": "stop grading",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Virgo, say what you need in one line. Not a memo, a line.",
+      "caption": "not a memo",
+      "core": "honest"
+    },
+    {
+      "topic": "love",
+      "text": "Virgo, you plan everything. Venus doesn't run on your schedule.",
+      "caption": "no schedule",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Virgo, the mistake you made in March can be released. It did its job.",
+      "caption": "it did its job",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Virgo, perfect plans never start. Messy ones start tonight at 11:11.",
+      "caption": "start messy",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Virgo, you are allowed to need people. The right ones won't make you earn it.",
+      "caption": "you don't earn it",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Virgo, a bad week is a bad hand, not a bad player. New deal tonight.",
+      "caption": "new deal tonight",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Virgo, be as honest about what went well as you are about what went wrong.",
+      "caption": "count the wins",
+      "core": "honest"
     }
   ]
 }

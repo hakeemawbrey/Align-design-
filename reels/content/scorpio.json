@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Scorpio, what would you do with the energy you spend on old wounds?",
       "caption": "reclaim the energy"
+    },
+    {
+      "topic": "love",
+      "text": "Scorpio, the truth on the first night beats the secret on the fiftieth.",
+      "caption": "first night truth",
+      "core": "honest"
+    },
+    {
+      "topic": "love",
+      "text": "Scorpio, checking their profile at 2am is haunting. Release them properly.",
+      "caption": "stop haunting",
+      "core": "release"
+    },
+    {
+      "topic": "love",
+      "text": "Scorpio, you read people deep anyway. Start before you've seen the face.",
+      "caption": "start before the face",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Scorpio, tell them your rules up front instead of testing them in secret.",
+      "caption": "say the rules",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Scorpio, your Sun keeps secrets. Your Venus wants one person to tell them to.",
+      "caption": "one person to tell",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Scorpio, the grudge has had a long run. Let 11:11 end it tonight.",
+      "caption": "end the run",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Scorpio, trust a few people with the dark parts. You don't have to carry them alone.",
+      "caption": "carry less alone",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Scorpio, loyalty you give but never get is a debt you keep paying.",
+      "caption": "a debt you pay",
+      "core": "mutual"
+    },
+    {
+      "topic": "self",
+      "text": "Scorpio, revenge keeps them in your life. Letting go takes them out.",
+      "caption": "take them out",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Scorpio, admit what you want before you plan how to get it.",
+      "caption": "admit it first",
+      "core": "honest"
     }
   ]
 }

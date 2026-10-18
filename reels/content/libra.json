@@ -300,6 +300,66 @@
       "topic": "self",
       "text": "Libra, the scale was never meant to hold everyone but you.",
       "caption": "weigh yourself in"
+    },
+    {
+      "topic": "love",
+      "text": "Libra, agreeing just to keep the peace is a lie with good manners.",
+      "caption": "a lie with manners",
+      "core": "honest"
+    },
+    {
+      "topic": "love",
+      "text": "Libra, a dealbreaker you never say out loud still breaks the deal.",
+      "caption": "it still breaks",
+      "core": "dealbreakers"
+    },
+    {
+      "topic": "love",
+      "text": "Libra, you love beauty. Let them see your sky before they see your best angle.",
+      "caption": "past the best angle",
+      "core": "face-last"
+    },
+    {
+      "topic": "love",
+      "text": "Libra, balance means they lean in too. If only you lean, you just fall.",
+      "caption": "they lean too",
+      "core": "mutual"
+    },
+    {
+      "topic": "love",
+      "text": "Libra, Venus rules you, but she never said yes to everyone.",
+      "caption": "not everyone",
+      "core": "venus"
+    },
+    {
+      "topic": "self",
+      "text": "Libra, you can release a decision once you've made it. Stop reopening it.",
+      "caption": "stop reopening it",
+      "core": "release"
+    },
+    {
+      "topic": "self",
+      "text": "Libra, being alone for a while won't break you. And you won't stay alone.",
+      "caption": "you won't stay alone",
+      "core": "not-alone"
+    },
+    {
+      "topic": "self",
+      "text": "Libra, weighing every option forever is a bad hand too. Take the next deal.",
+      "caption": "take the next deal",
+      "core": "1111"
+    },
+    {
+      "topic": "self",
+      "text": "Libra, you know what you want. Saying it first is not rude.",
+      "caption": "saying it is not rude",
+      "core": "honest"
+    },
+    {
+      "topic": "self",
+      "text": "Libra, a friendship where only you adjust is not balance.",
+      "caption": "only you adjust",
+      "core": "mutual"
     }
   ]
 }
