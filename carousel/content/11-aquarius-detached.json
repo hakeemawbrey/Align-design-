@@ -1,0 +1,18 @@
+{
+  "id": "11-aquarius-detached",
+  "title": "Aquarius, detachment isn't depth",
+  "signs": ["aquarius"],
+  "core": ["honest", "face-last"],
+  "caption": "aquarius, the sticker is cool though",
+  "hashtags": ["aquarius", "zodiacdating", "astrology", "datingadvice"],
+  "slides": [
+    { "text": "aquarius,", "bg": { "kind": "figure", "sign": "aquarius", "zoom": 1.05, "focus": "50% 45%" } },
+    { "text": "being hard to read", "bg": { "kind": "figure", "sign": "aquarius", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "isn't the same as depth,", "bg": { "kind": "figure", "sign": "aquarius", "zoom": 1.32, "focus": "50% 36%" } },
+    { "text": "it's a locked door", "bg": { "kind": "neon", "tint": "violet" } },
+    { "text": "with a cool sticker on it,", "bg": { "kind": "neon", "tint": "spark" } },
+    { "text": "so let someone past the memes,", "bg": { "kind": "aura", "sign": "aquarius", "zoom": 1.05 } },
+    { "text": "let them read you", "bg": { "kind": "aura", "sign": "aquarius", "zoom": 1.25, "focus": "50% 35%" } },
+    { "text": "the way you read the stars.", "bg": { "kind": "sky", "tint": "violet", "moon": 0.5 } }
+  ]
+}
