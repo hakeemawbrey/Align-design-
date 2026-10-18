@@ -1,0 +1,18 @@
+{
+  "id": "05-gemini-honest",
+  "title": "Gemini, say the real thing in the first message",
+  "signs": ["gemini"],
+  "core": ["honest"],
+  "caption": "gemini, the bit is not a personality",
+  "hashtags": ["gemini", "geminiseason", "zodiacdating", "astrology", "datingadvice"],
+  "slides": [
+    { "text": "gemini,", "bg": { "kind": "figure", "sign": "gemini", "zoom": 1.05 } },
+    { "text": "a good bit", "bg": { "kind": "figure", "sign": "gemini", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "is not the truth.", "bg": { "kind": "neon", "tint": "violet" } },
+    { "text": "say the real thing", "bg": { "kind": "aura", "sign": "gemini", "zoom": 1.05 } },
+    { "text": "in the first message,", "bg": { "kind": "aura", "sign": "gemini", "zoom": 1.2, "focus": "50% 35%" } },
+    { "text": "not on date five,", "bg": { "kind": "sky", "tint": "violet", "moon": 0.3 } },
+    { "text": "after they've fallen", "bg": { "kind": "veil", "person": 4 } },
+    { "text": "for the bit.", "bg": { "kind": "neon", "tint": "spark" } }
+  ]
+}

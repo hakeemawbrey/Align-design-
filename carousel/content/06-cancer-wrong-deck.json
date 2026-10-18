@@ -1,0 +1,17 @@
+{
+  "id": "06-cancer-wrong-deck",
+  "title": "Cancer, you're not too much, you were in the wrong deck",
+  "signs": ["cancer"],
+  "core": ["1111", "mutual"],
+  "caption": "cancer, come out of the shell for the right ones",
+  "hashtags": ["cancer", "cancerseason", "zodiacdating", "astrology", "datingadvice"],
+  "slides": [
+    { "text": "cancer,", "bg": { "kind": "figure", "sign": "cancer", "zoom": 1.05 } },
+    { "text": "you're not too much,", "bg": { "kind": "figure", "sign": "cancer", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "you were dealt", "bg": { "kind": "figure", "sign": "cancer", "zoom": 1.35, "focus": "45% 35%" } },
+    { "text": "into the wrong deck.", "bg": { "kind": "neon", "tint": "rub" } },
+    { "text": "stop shrinking to fit", "bg": { "kind": "aura", "sign": "cancer", "zoom": 1.05 } },
+    { "text": "arms that were", "bg": { "kind": "aura", "sign": "cancer", "zoom": 1.2, "focus": "50% 45%" } },
+    { "text": "never going\nto hold you.", "bg": { "kind": "sky", "tint": "tide", "moon": 0.5 } }
+  ]
+}

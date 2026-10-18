@@ -1,0 +1,18 @@
+{
+  "id": "07-virgo-dealbreakers",
+  "title": "Virgo, a dealbreaker isn't an opening offer",
+  "signs": ["virgo"],
+  "core": ["dealbreakers"],
+  "caption": "virgo, they're not a draft",
+  "hashtags": ["virgo", "virgoseason", "zodiacdating", "astrology", "datingadvice"],
+  "slides": [
+    { "text": "virgo,", "bg": { "kind": "figure", "sign": "virgo", "zoom": 1.05 } },
+    { "text": "you can't fix someone", "bg": { "kind": "figure", "sign": "virgo", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "into loving you right,", "bg": { "kind": "figure", "sign": "virgo", "zoom": 1.35, "focus": "55% 35%" } },
+    { "text": "and a dealbreaker", "bg": { "kind": "aura", "sign": "virgo", "zoom": 1.05 } },
+    { "text": "isn't an opening offer.", "bg": { "kind": "neon", "tint": "gold" } },
+    { "text": "put it on your card,", "bg": { "kind": "aura", "sign": "virgo", "zoom": 1.25, "focus": "50% 35%" } },
+    { "text": "let the wrong ones", "bg": { "kind": "veil", "person": 7 } },
+    { "text": "walk past.", "bg": { "kind": "neon", "tint": "gold", "zoom": 1.2 } }
+  ]
+}
