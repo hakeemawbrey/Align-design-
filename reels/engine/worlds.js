@@ -449,10 +449,10 @@ export const WORLD_NAMES = Object.keys(WORLDS)
 // Water signs lean to water worlds, fire to warm ones, and so on, but any
 // sign can land anywhere.
 const LEAN = {
-  water: ['cavelake', 'poolrooms', 'nightsea'],
-  fire: ['dunes', 'checker'],
-  earth: ['meadow', 'snow'],
-  air: ['cloudtops', 'checker'],
+  water: ['cavelake', 'poolrooms', 'nightsea', 'mallcourt'],
+  fire: ['dunes', 'checker', 'hallway'],
+  earth: ['meadow', 'snow', 'playground'],
+  air: ['cloudtops', 'checker', 'moonbase'],
 }
 
 export function pickWorld(rng, element) {
