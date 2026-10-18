@@ -112,7 +112,10 @@ const WORLDS = {
       const hills = n.fbm(x * 0.12, z * 0.12) * 3
       const back = smooth(-10, -24, z) * (6 + n.fbm(x * 0.05, 3) * 18)
       const sides = smooth(10, 22, Math.abs(x)) * 10
-      return -0.9 + rim * (1.2 + hills) + back + sides
+      const raw = -0.9 + rim * (1.2 + hills) + back + sides
+      // a flat shore where the figure stands, so no ridge hides it from the camera
+      const shore = 1 - smooth(3.5, 8, Math.hypot(x * 0.8, Math.max(0, z - 0.5)))
+      return raw * (1 - shore) + 0.25 * shore
     }
     const rock = rockTexture(seed, rng.pick(['#26292f', '#2e2822', '#232833']), rng.pick(['#a3a7b3', '#b3a690', '#9aa9bc']), 10)
     scene.add(terrain(h, 70, 90, new THREE.MeshLambertMaterial({ map: rock })))
