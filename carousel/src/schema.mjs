@@ -13,6 +13,26 @@ export const ELEMENT = {
   cancer: 'water', scorpio: 'water', pisces: 'water',
 }
 
+// Each sign's colour from the app (app/src/data/signs.ts): `color` is the
+// sign itself, `light` its highlight, `dark` its shadow.
+export const SIGN_COLORS = {
+  aries: { color: '#f0603a', light: '#ffb39a', dark: '#5a1c10' },
+  taurus: { color: '#e9b24a', light: '#ffe1a0', dark: '#4e3510' },
+  gemini: { color: '#f2cf4a', light: '#fff0a8', dark: '#4f4210' },
+  cancer: { color: '#3fb6f0', light: '#a8e4ff', dark: '#0f3550' },
+  leo: { color: '#f39a3a', light: '#ffd09a', dark: '#55300f' },
+  virgo: { color: '#ef5c94', light: '#ffb6d2', dark: '#561a33' },
+  libra: { color: '#e163d6', light: '#ffbdf6', dark: '#4d1a49' },
+  scorpio: { color: '#e23d66', light: '#ff9fb7', dark: '#55102a' },
+  sagittarius: { color: '#a35cf0', light: '#dcbcff', dark: '#36165a' },
+  capricorn: { color: '#2fc79a', light: '#a6f0d6', dark: '#0e4636' },
+  aquarius: { color: '#38c4ec', light: '#b2ecff', dark: '#0e3d4e' },
+  pisces: { color: '#7c74f0', light: '#c6c1ff', dark: '#25205a' },
+}
+
+// `type`: text only, in the sign's colour. `photo`: text over each slide's bg.
+export const STYLES = ['type', 'photo']
+
 export const CORE = ['face-last', 'mutual', 'honest', 'dealbreakers', 'release', '1111', 'venus', 'not-alone']
 
 export const BG_KINDS = ['figure', 'aura', 'veil', 'sky', 'neon']
@@ -57,6 +77,8 @@ export function validate(c) {
   if (!Array.isArray(c.hashtags) || c.hashtags.length < LIMITS.minTags || c.hashtags.length > LIMITS.maxTags) {
     err(`hashtags: ${LIMITS.minTags}–${LIMITS.maxTags}`)
   } else if (c.hashtags.some((h) => !/^[a-z0-9_]+$/.test(h))) err('hashtags: lowercase, no #')
+
+  if (c.style !== undefined && !STYLES.includes(c.style)) err(`style: one of ${STYLES.join(', ')}`)
 
   const slides = c.slides
   if (!Array.isArray(slides) || slides.length < LIMITS.minSlides || slides.length > LIMITS.maxSlides) {

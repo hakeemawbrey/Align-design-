@@ -1,7 +1,7 @@
 // Bulk carousel generator.
 //
 //   node src/generate.mjs [--engine bank|ai] [--sign leo|all] [--theme <arc>] [--count N]
-//                         [--seed S] [--render] [--out out] [--format jpg|png] [--model ...]
+//                         [--seed S] [--render] [--out out] [--format jpg|png] [--style type|photo] [--model ...]
 //   node src/generate.mjs --list-themes
 //   node src/generate.mjs --calendar 30 [--engine bank|ai] [--seed S]
 //
@@ -20,7 +20,7 @@ const GEN_DIR = path.join(ROOT, 'content', 'generated')
 
 const USAGE = `usage:
   node src/generate.mjs [--engine bank|ai] [--sign <sign>|all] [--theme <theme>] [--count N]
-                        [--seed S] [--render] [--out out] [--format jpg|png] [--model <id>]
+                        [--seed S] [--render] [--out out] [--format jpg|png] [--style type|photo] [--model <id>]
   node src/generate.mjs --list-themes
   node src/generate.mjs --calendar 30 [--engine bank|ai] [--seed S] [--render]
 
@@ -30,10 +30,11 @@ const USAGE = `usage:
   --count    how many carousels (default 1, or 12 with --sign all)
   --seed     integer; same seed + args = same bank output (default: time-based, printed)
   --render   render the results with src/render.mjs
+  --style    type (text only, in the sign's colour; default) or photo (text over art)
   --model    Claude model for --engine ai (default ALIGN_MODEL or claude-fable-5-1)`
 
 function parseArgs(argv) {
-  const o = { engine: 'bank', sign: 'all', theme: null, count: null, seed: null, render: false, out: null, format: null, model: null, listThemes: false, calendar: null, help: false }
+  const o = { engine: 'bank', sign: 'all', theme: null, count: null, seed: null, render: false, out: null, format: null, style: null, model: null, listThemes: false, calendar: null, help: false }
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]
     const val = () => {
@@ -49,6 +50,7 @@ function parseArgs(argv) {
     else if (a === '--render') o.render = true
     else if (a === '--out') o.out = val()
     else if (a === '--format') o.format = val()
+    else if (a === '--style') o.style = val()
     else if (a === '--model') o.model = val()
     else if (a === '--list-themes') o.listThemes = true
     else if (a === '--calendar') o.calendar = /^\d+$/.test(argv[i + 1] ?? '') ? parseInt(argv[++i], 10) : 30
@@ -140,6 +142,7 @@ async function render(carousels, o) {
   const opts = {}
   if (o.out) opts.out = path.resolve(o.out)
   if (o.format) opts.format = o.format
+  if (o.style) opts.style = o.style
   await mod.renderCarousels(carousels, opts)
 }
 

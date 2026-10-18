@@ -5,7 +5,8 @@
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import path from 'node:path'
-import { background, hashString, OVERLAY_CSS, OVERLAY_HTML, W, H } from './backgrounds.mjs'
+import { background, hashString, OVERLAY_CSS, OVERLAY_HTML, typeGround, W, H } from './backgrounds.mjs'
+import { SIGN_COLORS } from './schema.mjs'
 
 const require = createRequire(import.meta.url)
 
@@ -41,11 +42,16 @@ const AUTO = { one: 168, two: 128 }
 const SPARK = `<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path fill="currentColor"
   d="M10 0c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10C5.4 9.4 9.4 5.4 10 0z"/></svg>`
 
-export function slideHtml(carousel, index) {
+// `style` is 'type' (text only, in the sign's colour) or 'photo' (text over
+// the slide's bg). The carousel's own `style` field wins over the option.
+export function slideHtml(carousel, index, { style = 'type' } = {}) {
   const slide = carousel.slides[index]
   const total = carousel.slides.length
   const seed = (hashString(carousel.id) + index * 7919) >>> 0
-  const bg = background(slide.bg, { seed })
+  const type = (carousel.style ?? style) === 'type'
+  const sign = carousel.signs?.[0]
+  const ink = type ? (SIGN_COLORS[sign] ?? SIGN_COLORS.pisces).color : '#fff7ec'
+  const bg = type ? typeGround(sign) : background(slide.bg, { seed })
   const text = slide.text.toLowerCase()
   // Explicit \n become <br>; inside each line the browser balances the wrap.
   const body = text.split('\n').map((l) => esc(l.trim())).join('<br>')
@@ -66,9 +72,9 @@ ${OVERLAY_CSS}
   background: linear-gradient(180deg, rgba(6,3,12,0) 0%, rgba(6,3,12,.38) 45%, rgba(6,3,12,.72) 100%); }
 .text { position:absolute; left:64px; bottom:120px; width:952px;
   font-family:'Poppins', sans-serif; font-weight:800; font-style:italic;
-  color:#fff7ec; letter-spacing:-0.02em; line-height:.98; text-transform:lowercase;
+  color:${ink}; letter-spacing:-0.02em; line-height:.98; text-transform:lowercase;
   text-wrap:balance; overflow-wrap:normal; hyphens:none;
-  text-shadow: 0 2px 6px rgba(0,0,0,.25), 0 6px 40px rgba(0,0,0,.35); }
+  text-shadow: ${type ? `0 0 48px ${ink}40` : '0 2px 6px rgba(0,0,0,.25), 0 6px 40px rgba(0,0,0,.35)'}; }
 .chrome { position:absolute; top:56px; font-family:'Space Mono', monospace; font-size:22px;
   letter-spacing:.24em; color:#fff7ec; opacity:.55; text-transform:lowercase; }
 .mark { left:64px; display:flex; align-items:center; gap:10px; }
@@ -77,7 +83,7 @@ ${OVERLAY_CSS}
 </style></head>
 <body><div class="frame">
 ${bg.html}
-<div class="shade"></div>
+${type ? '' : '<div class="shade"></div>'}
 ${OVERLAY_HTML}
 <div class="chrome mark">align ${SPARK}</div>
 <div class="chrome count">${index + 1}/${total}</div>

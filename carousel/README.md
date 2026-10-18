@@ -1,8 +1,10 @@
 # Align carousels
 
 Instagram carousels about dating through the zodiac, in the format of
-@indig0.lin's "what a life" post: a moody, glowing photo per slide and one
-sentence told a few words at a time in huge heavy italic lowercase. The advice
+@indig0.lin's "what a life" post: one sentence told a few words at a time in
+huge heavy italic lowercase. By default the slides are just text, in the
+sign's own colour on near-black; `--style photo` puts warm-white text over
+moody glowing art instead, like the reference. The advice
 is blunt; Align's ideas (read the sky before the face, it has to be mutual,
 say the honest thing, release don't ghost, a new deal at 11:11) are slipped
 in, never sold.
@@ -38,6 +40,7 @@ Rendering uses Playwright's Chromium. If Playwright can't find its own build,
 node src/render.mjs                         # everything in content/ (and content/generated/)
 node src/render.mjs content/03-aries-chase.json
 node src/render.mjs --only 12-pisces-face-last --format png
+node src/render.mjs --style photo           # text over art instead of text only
 ```
 
 Output goes to `out/` (git-ignored). Open `out/index.html` to review every

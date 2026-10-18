@@ -60,19 +60,32 @@ carousel. The rest is plain human advice.
 
 ## Visual
 
+**Default style: `type`, just text.** No photos: a near-black indigo slide
+with the faintest wash of the sign's colour at the bottom, and the words set
+in **the sign's own colour** (the app's sign colours, `SIGN_COLORS` in
+`src/schema.mjs`, e.g. Scorpio garnet `#e23d66`, Cancer tide `#3fb6f0`,
+Capricorn jade `#2fc79a`). The colour comes from the carousel's first sign.
+Slide `bg` is ignored in this style.
+
+**Optional style: `photo`.** Warm-white type over each slide's `bg` (below),
+like the reference post. Pick it per run with `--style photo`, or per carousel
+with `"style": "photo"` in its JSON.
+
+Both styles share the type and layout:
+
 - Canvas **1080 × 1350** (Instagram 4:5). Exported as JPEG.
-- Type: **Poppins 800 italic**, lowercase, warm white `#fff7ec`, tight
+- Type: **Poppins 800 italic**, lowercase, sign colour (`type`) or warm white `#fff7ec` (`photo`), tight
   tracking (-0.02em), line-height 0.98, ~118px, left-aligned with a 64px
   gutter, bottom 120px. Long fragments wrap to two lines; the size steps down
   so nothing ever overflows.
-- A soft dark gradient on the bottom 45% keeps the type legible.
+- `photo` only: a soft dark gradient on the bottom 45% keeps the type legible.
 - Film grain on everything. A tiny `align ✦` mark (Space Mono, 22px,
   0.24em tracking, 55% opacity) sits top-left, and a small `n/total` counter
   sits top-right. That's the only branding.
 
-### Backgrounds
+### Backgrounds (`photo` style)
 
-Each slide names a background. Kinds:
+Each slide still names a background, so any carousel can be rendered either way. Kinds:
 
 | kind | params | what it is |
 | --- | --- | --- |

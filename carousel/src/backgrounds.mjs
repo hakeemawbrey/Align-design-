@@ -6,7 +6,7 @@
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
-import { TINTS } from './schema.mjs'
+import { SIGN_COLORS, TINTS } from './schema.mjs'
 
 export const W = 1080
 export const H = 1350
@@ -333,6 +333,19 @@ function neon(bg) {
  * CSS + HTML for a slide's background layer.
  * `seed` should be stable per slide (e.g. hash of carousel id + slide index).
  */
+// The `type` style's ground: near-black indigo with the faintest wash of the
+// sign's own colour, so the coloured type is the only thing on the slide.
+export function typeGround(sign) {
+  const { dark } = SIGN_COLORS[sign] ?? SIGN_COLORS.pisces
+  return {
+    css: `
+.bg-type { position:absolute; inset:0; background:
+  radial-gradient(120% 80% at 20% 100%, ${dark}cc 0%, ${dark}33 45%, transparent 75%),
+  linear-gradient(180deg, #07040f 0%, #0b0620 100%); }`,
+    html: `<div class="bg-type"></div>`,
+  }
+}
+
 export function background(bg, { seed = 1 } = {}) {
   switch (bg.kind) {
     case 'figure': return photo(bg, `figure/${bg.sign}.jpg`)

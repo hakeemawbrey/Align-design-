@@ -1,14 +1,14 @@
 // Render carousels to JPEG/PNG slides, a caption file, a contact sheet and
 // a review gallery.
 //
-//   node src/render.mjs [files or dirs ...] [--out out] [--format jpg|png] [--only <id>]
+//   node src/render.mjs [files or dirs ...] [--out out] [--format jpg|png] [--style type|photo] [--only <id>]
 
 import { chromium } from 'playwright'
 import { existsSync, readdirSync, statSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
-import { validate } from './schema.mjs'
+import { STYLES, validate } from './schema.mjs'
 import { slideHtml } from './template.mjs'
 import { W, H } from './backgrounds.mjs'
 
@@ -90,7 +90,7 @@ ${rows.join('\n')}
  * Render already-validated carousel objects. Returns [{ id, dir, slides }].
  * Invalid carousels are skipped with a printed reason rather than thrown.
  */
-export async function renderCarousels(carousels, { out = path.join(ROOT, 'out'), format = 'jpg', log = console.log } = {}) {
+export async function renderCarousels(carousels, { out = path.join(ROOT, 'out'), format = 'jpg', style = 'type', log = console.log } = {}) {
   await mkdir(out, { recursive: true })
   const browser = await launch()
   const results = []
@@ -107,7 +107,7 @@ export async function renderCarousels(carousels, { out = path.join(ROOT, 'out'),
       await mkdir(dir, { recursive: true })
       const shots = []
       for (let i = 0; i < c.slides.length; i++) {
-        await page.setContent(slideHtml(c, i), { waitUntil: 'load' })
+        await page.setContent(slideHtml(c, i, { style }), { waitUntil: 'load' })
         await page.waitForFunction(() => window.__ready === true, null, { timeout: 15000 })
         const file = path.join(dir, `${pad(i + 1)}.${format}`)
         const buf = await page.screenshot(format === 'png' ? { path: file, type: 'png' } : { path: file, type: 'jpeg', quality: 92 })
@@ -129,15 +129,17 @@ export async function renderCarousels(carousels, { out = path.join(ROOT, 'out'),
 }
 
 function parseArgs(argv) {
-  const opts = { inputs: [], out: path.join(ROOT, 'out'), format: 'jpg', only: null }
+  const opts = { inputs: [], out: path.join(ROOT, 'out'), format: 'jpg', style: 'type', only: null }
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]
     if (a === '--out') opts.out = path.resolve(argv[++i])
     else if (a === '--format') opts.format = argv[++i]
+    else if (a === '--style') opts.style = argv[++i]
     else if (a === '--only') opts.only = argv[++i]
     else if (a === '-h' || a === '--help') opts.help = true
     else opts.inputs.push(a)
   }
+  if (!STYLES.includes(opts.style)) throw new Error(`--style must be ${STYLES.join(' or ')}, got ${opts.style}`)
   if (!['jpg', 'png'].includes(opts.format)) throw new Error(`--format must be jpg or png, got ${opts.format}`)
   return opts
 }
@@ -145,7 +147,7 @@ function parseArgs(argv) {
 async function main() {
   const opts = parseArgs(process.argv.slice(2))
   if (opts.help) {
-    console.log('usage: node src/render.mjs [files or dirs ...] [--out out] [--format jpg|png] [--only <id>]')
+    console.log('usage: node src/render.mjs [files or dirs ...] [--out out] [--format jpg|png] [--style type|photo] [--only <id>]')
     return
   }
   let files
