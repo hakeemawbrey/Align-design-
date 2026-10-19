@@ -937,6 +937,12 @@ export function generateBankOne({ sign, theme, seed, used = new Set(), maxTries 
     }
     lastErrs = errs
   }
+  // A long batch can use up every line this sign/theme can still pair without
+  // a repeat. Start the rotation over rather than fail the whole run.
+  if (used.size) {
+    used.clear()
+    return generateBankOne({ sign, theme, seed, used, maxTries })
+  }
   throw new Error(`bank: no valid carousel for ${sign}/${theme} after ${maxTries} seeds: ${lastErrs.join('; ')}`)
 }
 
