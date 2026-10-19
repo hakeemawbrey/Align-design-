@@ -1,5 +1,5 @@
 // UNRATIONED · 3 · END (10.8–15.0): end line + Align lockup (LOOK A: "PUT YOUR FAITH IN THE STARS" + moon-phase row).
-//   10.95        "Become a founding member." types (24 × 0.032, fade 0.15 → fully typed ≈11.87), centred, 104px
+//   10.75        "Become a founding member." types (24 × 0.032, fade 0.15 → fully typed ≈11.67), centred, 104px
 //   12.00        gold glint runs through "founding"
 //   12.20–12.55  the line rises to y≈180 as the lockup forms beneath it
 //   12.30        rings draw · 12.36 chakra dots bottom→top · 12.50 wordmark · 12.68 sub-line
@@ -10,8 +10,8 @@ import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { drawMoonGlyph } from '../../../src/scenes/fx-moon.js'
 import { typed } from './kit.js'
 
-const T0 = 10.8
-const T_TYPE = 10.95, PER = 0.032, FADE = 0.15, T_GLINT = 12.0
+const T0 = 10.6
+const T_TYPE = 10.75, PER = 0.032, FADE = 0.15, T_GLINT = 12.0
 const T_RISE = 12.2, T_RINGS = 12.3, T_DOTS = 12.36, T_WORD = 12.5, T_SUB = 12.68, T_ROW = 12.8, T_PULSE = 13.6
 const T_HOLD = T_RINGS + 0.45
 const LINE = 'Become a founding member.'

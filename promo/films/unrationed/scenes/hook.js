@@ -1,7 +1,7 @@
 // UNRATIONED · 1 · HOOK (0–4.6): generic paywall tiers flicker at you over a cold, desaturated sky.
-//   0.00        tiles already on screen; "Paying to be seen?" (Inter 500, 84px) types 0.04 → fully read ≈0.70
+//   0.00        tiles already on screen; "Paying to be seen?" (Inter 500, 112px) types 0.04 → fully read ≈0.70
 //   0.10–0.30   corner ticks frame the line (film-1 device)
-//   0–4.25      tiles flicker in and out, faster and nearer (slow push 1 → 1.06); the centre stays clear
+//   0–4.25      tiles flicker in and out, 9 phone-readable tiles (≥30px type), each easing 1 → 1.03; the centre stays clear
 //   4.25        the turn: every live tile dissolves into pixel stars that drift up and out (fx), line out 4.28–4.55
 // All UI is generic: no app names, no real prices (only "$" signs), silver buttons, padlocks.
 import { clamp, lerp, prog, ease, tw, rng, el, mix, C } from '../../../src/lib.js'
@@ -16,57 +16,50 @@ const T_LOUT = 4.28
 const UI = { bg: 'rgba(20,22,36,0.88)', bd: 'rgba(205,212,240,0.22)', fg: '#e8eaf2', fg2: '#9ba1b8', btn: 'linear-gradient(180deg,#f3f4f8,#c3c7d4)', btnFg: '#14162a' }
 const LOCK = (s = 22, c = 'currentColor') => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" style="display:block"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.4" fill="${c}"/><path d="M8 10.5V7.4a4 4 0 0 1 8 0v3.1" fill="none" stroke="${c}" stroke-width="2.2"/></svg>`
 
-// [kind, cx, cy, t0, t1, scale, extra]
+// [kind, cx, cy, t0, t1, scale, extra] — 9 tiles at phone-readable size (≥30px type); centre box x 320–1600, y 405–675 stays clear
 const SPEC = [
-  ['likes', 225, 215, -0.6, 2.0, 1.05],
-  ['pill', 1600, 150, -0.4, 1.5, 1.15, { label: 'SUPER LIKE ×1 LEFT', chip: '$' }],
-  ['tiers', 1700, 870, -0.2, 2.7, 1.1],
-  ['pill', 250, 900, 0.5, 1.9, 1.15, { label: 'BOOST', chip: '$', up: true }],
-  ['timer', 1000, 190, 0.85, 2.45, 1.12],
-  ['pill', 880, 930, 1.25, 2.95, 1.15, { label: 'SEE WHO VIEWED YOU', chip: '$' }],
-  ['pill', 1690, 470, 1.65, 3.05, 1.0, { label: 'READ RECEIPTS', chip: '$' }],
-  ['likes', 240, 640, 1.95, 3.45, 1.0],
-  ['pill', 1180, 820, 2.2, 3.55, 1.15, { label: 'PRIORITY LIKES', chip: '$' }],
-  ['tiers', 660, 200, 2.62, 3.75, 1.1],
-  ['pill', 1640, 250, 2.62, 3.7, 1.15, { label: 'REWIND', chip: '$' }],
-  ['timer', 1680, 800, 2.9, T_TURN, 1.1],
-  ['pill', 340, 930, 3.12, T_TURN, 1.2, { label: 'SUPER LIKE ×0 LEFT', chip: '$', dim: true }],
-  ['pill', 1150, 120, 3.22, T_TURN, 1.2, { label: 'BOOST', chip: '$', up: true }],
-  ['likes', 1680, 470, 3.4, T_TURN, 0.95],
-  ['pill', 960, 975, 3.5, T_TURN, 1.2, { label: 'UNLOCK EVERYONE', chip: '$$$' }],
-  ['tiers', 252, 268, 3.62, T_TURN, 1.05],
-  ['pill', 1150, 300, 3.78, T_TURN, 1.1, { label: 'SEE WHO LIKED YOU', chip: '$' }],
+  ['likes', 330, 200, -0.6, 2.4, 1.0],
+  ['pill', 1480, 142, -0.4, 2.0, 1.0, { label: 'SUPER LIKE ×0 LEFT', chip: '$' }],
+  ['tiers', 1600, 870, 0.3, 1.9, 1.0],
+  ['pill', 260, 900, 0.7, 2.6, 1.0, { label: 'BOOST', chip: '$', up: true }],
+  ['pill', 940, 960, 2.05, T_TURN, 1.0, { label: 'UNLOCK EVERYONE', chip: '$$$' }],
+  ['timer', 1560, 255, 2.15, T_TURN, 1.0],
+  ['pill', 700, 110, 2.6, T_TURN, 1.0, { label: 'SEE WHO VIEWED YOU', chip: '$' }],
+  ['pill', 290, 900, 2.8, T_TURN, 1.0, { label: 'REWIND', chip: '$' }],
+  ['pill', 1540, 790, 3.05, T_TURN, 1.0, { label: 'PRIORITY LIKES', chip: '$' }],
 ]
-const SIZE = { likes: [380, 316], tiers: [356, 300], timer: [350, 196], pill: [0, 76] }
+const SIZE = { likes: [600, 330], tiers: [570, 360], timer: [560, 264], pill: [0, 104] }
+const pillW = (x) => Math.round(31.6 * x.label.length + 230 + (x.chip.length - 1) * 22)
 
 function card(parent, w, h) {
-  return el('div', { position: 'absolute', left: 0, top: 0, width: w + 'px', height: h + 'px', boxSizing: 'border-box', borderRadius: '24px', background: UI.bg, border: `1px solid ${UI.bd}`,
-    boxShadow: '0 30px 60px rgba(2,2,10,0.55), 0 0 0 1px rgba(0,0,0,0.3)', color: UI.fg, fontFamily: SANS, overflow: 'hidden', willChange: 'transform, opacity' }, parent)
+  return el('div', { position: 'absolute', left: 0, top: 0, width: w + 'px', height: h + 'px', boxSizing: 'border-box', borderRadius: '34px', background: UI.bg, border: `1.5px solid ${UI.bd}`,
+    boxShadow: '0 40px 80px rgba(2,2,10,0.55), 0 0 0 1px rgba(0,0,0,0.3)', color: UI.fg, fontFamily: SANS, overflow: 'hidden', willChange: 'transform, opacity' }, parent)
 }
-const btn = (parent, txt, extra = {}) => el('div', { position: 'absolute', left: '22px', right: '22px', bottom: '20px', height: '50px', borderRadius: '25px', background: UI.btn, color: UI.btnFg,
-  fontFamily: SANS, fontWeight: 600, fontSize: '19px', letterSpacing: '0.06em', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', ...extra }, parent, txt)
+const btn = (parent, txt, extra = {}) => el('div', { position: 'absolute', left: '28px', right: '28px', bottom: '26px', height: '72px', borderRadius: '36px', background: UI.btn, color: UI.btnFg,
+  fontFamily: SANS, fontWeight: 600, fontSize: '30px', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', ...extra }, parent, txt)
+const HEAD = (c, txt, col = UI.fg) => el('div', { position: 'absolute', left: '32px', top: '26px', fontFamily: MONO, fontSize: '30px', lineHeight: 1, letterSpacing: '0.1em', color: col }, c, txt)
 
 function buildTile(parent, [kind, , , , , , x = {}], k) {
   if (kind === 'likes') {
     const [w, h] = SIZE.likes, c = card(parent, w, h)
-    el('div', { position: 'absolute', left: '24px', top: '22px', fontFamily: MONO, fontSize: '17px', letterSpacing: '0.16em', color: UI.fg }, c, 'SEE WHO LIKED YOU')
-    for (let i = 0; i < 6; i++) {
-      const d = el('div', { position: 'absolute', left: (30 + (i % 3) * 110) + 'px', top: (66 + Math.floor(i / 3) * 88) + 'px', width: '78px', height: '78px', borderRadius: '50%', overflow: 'hidden', background: '#333' }, c)
-      img(d, PEOPLE[(k * 5 + i * 3) % 12], { left: '-10px', top: '-10px', width: '98px', height: '98px', objectFit: 'cover', filter: 'blur(9px) saturate(0.5) brightness(0.85)' })
+    HEAD(c, 'SEE WHO LIKED YOU')
+    for (let i = 0; i < 4; i++) {
+      const d = el('div', { position: 'absolute', left: (40 + i * 136) + 'px', top: '82px', width: '112px', height: '112px', borderRadius: '50%', overflow: 'hidden', background: '#333' }, c)
+      img(d, PEOPLE[(k * 5 + i * 3) % 12], { left: '-14px', top: '-14px', width: '140px', height: '140px', objectFit: 'cover', filter: 'blur(12px) saturate(0.5) brightness(0.85)' })
     }
-    el('div', { position: 'absolute', left: (w / 2 - 28) + 'px', top: '118px', width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(20,22,36,0.82)', color: UI.fg, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 0 1px rgba(205,212,240,0.3)' }, c, LOCK(26))
-    btn(c, `${LOCK(18, UI.btnFg)}<span>UNLOCK · $</span>`)
+    el('div', { position: 'absolute', left: (w / 2 - 40) + 'px', top: '98px', width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(20,22,36,0.85)', color: UI.fg, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 0 1.5px rgba(205,212,240,0.35)' }, c, LOCK(38))
+    btn(c, `${LOCK(28, UI.btnFg)}<span>UNLOCK · $</span>`)
     return { e: c, w, h }
   }
   if (kind === 'tiers') {
     const [w, h] = SIZE.tiers, c = card(parent, w, h)
-    el('div', { position: 'absolute', left: '24px', top: '22px', fontFamily: MONO, fontSize: '17px', letterSpacing: '0.16em', color: UI.fg }, c, 'UPGRADE TO BE SEEN')
+    HEAD(c, 'UPGRADE TO BE SEEN')
     const rows = [['STANDARD', '$'], ['PLUS', '$$'], ['PREMIUM', '$$$']]
     rows.forEach(([n, p], i) => {
       const hot = i === 1
-      const r = el('div', { position: 'absolute', left: '22px', right: '22px', top: (64 + i * 54) + 'px', height: '44px', borderRadius: '12px', boxSizing: 'border-box',
-        border: `1px solid ${hot ? 'rgba(235,238,250,0.7)' : 'rgba(205,212,240,0.18)'}`, background: hot ? 'rgba(235,238,250,0.1)' : 'transparent',
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', fontSize: '19px', fontWeight: 600, letterSpacing: '0.05em', color: hot ? UI.fg : UI.fg2 }, c)
+      const r = el('div', { position: 'absolute', left: '28px', right: '28px', top: (78 + i * 58) + 'px', height: '50px', borderRadius: '14px', boxSizing: 'border-box',
+        border: `1.5px solid ${hot ? 'rgba(235,238,250,0.75)' : 'rgba(205,212,240,0.2)'}`, background: hot ? 'rgba(235,238,250,0.1)' : 'transparent',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', fontSize: '32px', fontWeight: 600, letterSpacing: '0.04em', color: hot ? UI.fg : UI.fg2 }, c)
       el('span', {}, r, n); el('span', { fontFamily: MONO, fontWeight: 400 }, r, p)
     })
     btn(c, 'CONTINUE')
@@ -74,19 +67,19 @@ function buildTile(parent, [kind, , , , , , x = {}], k) {
   }
   if (kind === 'timer') {
     const [w, h] = SIZE.timer, c = card(parent, w, h)
-    el('div', { position: 'absolute', left: '24px', top: '22px', fontFamily: MONO, fontSize: '17px', letterSpacing: '0.16em', color: UI.fg2 }, c, 'OUT OF LIKES')
-    const clock = el('div', { position: 'absolute', left: '24px', top: '48px', fontFamily: SANS, fontWeight: 500, fontSize: '50px', letterSpacing: '0.02em', color: UI.fg, fontVariantNumeric: 'tabular-nums' }, c, '11:59:59')
+    HEAD(c, 'OUT OF LIKES', UI.fg2)
+    const clock = el('div', { position: 'absolute', left: '30px', top: '64px', fontFamily: SANS, fontWeight: 500, fontSize: '80px', lineHeight: 1.05, letterSpacing: '0.01em', color: UI.fg, fontVariantNumeric: 'tabular-nums' }, c, '11:59:59')
     btn(c, `<span>GET MORE NOW · $</span>`)
     return { e: c, w, h, clock }
   }
   // pill
-  const p = el('div', { position: 'absolute', left: 0, top: 0, height: SIZE.pill[1] + 'px', boxSizing: 'border-box', borderRadius: '38px', background: UI.bg, border: `1px solid ${UI.bd}`,
-    boxShadow: '0 24px 50px rgba(2,2,10,0.5)', color: x.dim ? UI.fg2 : UI.fg, fontFamily: SANS, fontWeight: 600, fontSize: '22px', letterSpacing: '0.08em', whiteSpace: 'nowrap',
-    display: 'flex', alignItems: 'center', gap: '14px', padding: '0 12px 0 24px', willChange: 'transform, opacity' }, parent)
-  el('div', {}, p, x.up ? `<svg width="22" height="22" viewBox="0 0 24 24" style="display:block"><path d="M12 4l7 8h-4.5v8h-5v-8H5z" fill="currentColor"/></svg>` : LOCK(22))
+  const p = el('div', { position: 'absolute', left: 0, top: 0, height: SIZE.pill[1] + 'px', boxSizing: 'border-box', borderRadius: '52px', background: UI.bg, border: `1.5px solid ${UI.bd}`,
+    boxShadow: '0 30px 60px rgba(2,2,10,0.5)', color: x.dim ? UI.fg2 : UI.fg, fontFamily: SANS, fontWeight: 600, fontSize: '36px', letterSpacing: '0.06em', whiteSpace: 'nowrap',
+    display: 'flex', alignItems: 'center', gap: '18px', padding: '0 12px 0 34px', willChange: 'transform, opacity' }, parent)
+  el('div', {}, p, x.up ? `<svg width="36" height="36" viewBox="0 0 24 24" style="display:block"><path d="M12 4l7 8h-4.5v8h-5v-8H5z" fill="currentColor"/></svg>` : LOCK(36))
   el('span', {}, p, x.label)
-  el('span', { marginLeft: '6px', minWidth: '52px', height: '52px', borderRadius: '26px', padding: '0 14px', boxSizing: 'border-box', background: UI.btn, color: UI.btnFg, fontFamily: MONO, fontWeight: 400, fontSize: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center' }, p, x.chip)
-  return { e: p, w: null, h: SIZE.pill[1], pill: true }
+  el('span', { marginLeft: '6px', minWidth: '80px', height: '80px', borderRadius: '40px', padding: '0 20px', boxSizing: 'border-box', background: UI.btn, color: UI.btnFg, fontFamily: MONO, fontWeight: 400, fontSize: '34px', display: 'flex', alignItems: 'center', justifyContent: 'center' }, p, x.chip)
+  return { e: p, w: pillW(x), h: SIZE.pill[1], pill: true }
 }
 
 // flicker on entry: frame pattern of opacities (5 frames) then solid
@@ -100,14 +93,13 @@ export default async function build(stage) {
   const world = fill(root, { background: 'transparent', transformOrigin: '50% 50%' })
   const tiles = SPEC.map((s, k) => ({ s, ...buildTile(world, s, k) }))
   // measure pill widths once the DOM is laid out (fonts loaded by then in seek) — use a fixed estimate per label
-  tiles.forEach(T => { if (T.pill) T.w = Math.round(19.3 * T.s[6].label.length + 144 + (T.s[6].chip.length - 1) * 14) })
 
   // centre pocket + line + ticks
-  const pocket = el('div', { position: 'absolute', left: (W / 2 - 720) + 'px', top: (H / 2 - 260) + 'px', width: '1440px', height: '520px', borderRadius: '50%',
+  const pocket = el('div', { position: 'absolute', left: (W / 2 - 860) + 'px', top: (H / 2 - 280) + 'px', width: '1720px', height: '560px', borderRadius: '50%',
     background: 'radial-gradient(closest-side, rgba(8,8,20,0.78), rgba(8,8,20,0.5) 50%, rgba(8,8,20,0) 100%)' }, root)
-  const L = typed(root, LINE, { fontFamily: SANS, fontWeight: 500, fontSize: '84px', lineHeight: '1', letterSpacing: '-0.01em', textShadow: '0 0 30px rgba(6,6,18,0.9), 0 2px 8px rgba(6,6,18,0.7)' })
-  L.box.style.top = (H / 2 - 46) + 'px'
-  const BOXW = 980, BOXH = 236, TK = 12
+  const L = typed(root, LINE, { fontFamily: SANS, fontWeight: 500, fontSize: '112px', lineHeight: '1', letterSpacing: '-0.01em', textShadow: '0 0 30px rgba(6,6,18,0.9), 0 2px 8px rgba(6,6,18,0.7)' })
+  L.box.style.top = (H / 2 - 60) + 'px'
+  const BOXW = 1220, BOXH = 250, TK = 14
   const ticks = [[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([sx, sy]) => el('div', { position: 'absolute', width: TK + 'px', height: TK + 'px', background: C.bone, opacity: 0,
     left: (W / 2 + sx * BOXW / 2 - TK / 2) + 'px', top: (H / 2 + sy * BOXH / 2 - TK / 2) + 'px', boxShadow: '0 0 10px rgba(239,230,214,0.35)' }, root))
   const ACC = ['#c9cde0', '#9ba1b8', '#e8eaf2']
@@ -116,7 +108,7 @@ export default async function build(stage) {
     start: 0, end: 4.62, root,
     update(t) {
       const fi = FI(t)
-      world.style.transform = `scale(${lerp(1, 1.03, ease.inOutQuad(prog(t, 0, T_TURN)))})`
+      world.style.transform = `scale(${1})`
       TILE_STATE = []
       tiles.forEach((T, k) => {
         const [kind, cx, cy, t0, t1, sc] = T.s
@@ -133,7 +125,7 @@ export default async function build(stage) {
         if (T.pill && !T.measured && T.e.offsetWidth > 0) { T.w = T.e.offsetWidth; T.measured = true }
         const life = prog(t, t0, t1)
         const pop = ease.outCubic(prog(t, t0, t0 + 0.16))
-        const s = sc * lerp(0.9, 1, pop) * lerp(1, 1.05, life) * (t >= T_TURN ? lerp(1, 1.08, prog(t, T_TURN, T_TURN + 0.22)) : 1)
+        const s = sc * lerp(0.9, 1, pop) * lerp(1, 1.03, life) * (t >= T_TURN ? lerp(1, 1.08, prog(t, T_TURN, T_TURN + 0.22)) : 1)
         const jx = fi - f0 < 3 ? (k % 2 ? 6 : -6) : 0
         T.e.style.opacity = String(op)
         T.e.style.transform = `translate(${cx - T.w / 2 + jx}px, ${cy - T.h / 2}px) scale(${s})`
@@ -162,10 +154,9 @@ const PARTS = (() => {
   const r = rng(717), out = []
   for (const { s, k } of LIVE) {
     const [kind, cx, cy, , , sc] = s
-    const w = (kind === 'pill' ? 19.3 * s[6].label.length + 144 + (s[6].chip.length - 1) * 14 : SIZE[kind][0]) * sc * 1.06, h = SIZE[kind][1] * sc * 1.06
-    // world push at the turn: positions scale about the centre by 1.06
-    const X = W / 2 + (cx - W / 2) * 1.03, Y = H / 2 + (cy - H / 2) * 1.03
-    const n = Math.round(w * h / 1500)
+    const w = (kind === 'pill' ? pillW(s[6]) : SIZE[kind][0]) * sc * 1.03, h = SIZE[kind][1] * sc * 1.03
+    const X = W / 2 + (cx - W / 2) * 1.0, Y = H / 2 + (cy - H / 2) * 1.0
+    const n = Math.round(w * h / 2600)
     for (let i = 0; i < n; i++) {
       const x = X + (r() - 0.5) * w, y = Y + (r() - 0.5) * h
       const dx = x - W / 2, dy = y - H / 2, d = Math.hypot(dx, dy) || 1

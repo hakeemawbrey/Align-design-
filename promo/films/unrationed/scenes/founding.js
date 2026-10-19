@@ -1,7 +1,8 @@
 // UNRATIONED · 2 · THE ANSWER (4.45–10.95): founding member.
 //   4.55–5.05   the phone rises in (screen-founding, "Stop rationing the stars."), aura behind it
 //   4.90        moon badge top-left: NEW MOON, waxing through the beat → FULL MOON at the stamp (8.22)
-//   5.00–7.50   caption right: ALIGN+ · FOUNDING MEMBER / "Stop rationing / the stars."
+//   5.00–7.50   phone pushes 1 → 1.35 on the arch + headline; screen masked above the plan cards (no prices)
+//   5.00–7.55   caption right: ALIGN+ · FOUNDING MEMBER / "Stop rationing / the stars."
 //   7.55–8.02   the gold founding card lifts out of the phone, grows past the camera…
 //   8.02–8.22   …and stamps down centre (shake, gold ring, star burst); phone slides away
 //   8.30–10.9   stars pour down, unrationed · gold sheen across the card 8.75–9.35
@@ -12,12 +13,14 @@ import { drawMoonGlyph, litOf, phaseName } from '../../../src/scenes/fx-moon.js'
 import { FI, pixStar, STAR_COLS, typed } from './kit.js'
 
 const T0 = 4.45, T1 = 10.95
-const T_PIN = 4.55, T_CAP = 5.0, T_COUT = 7.45, T_LIFT = 7.55, T_PEAK = 8.02, T_STAMP = 8.22, T_OUT = 10.55
+const T_PIN = 4.55, T_CAP = 5.0, T_COUT = 7.25, T_LIFT = 7.55, T_PEAK = 8.02, T_STAMP = 8.22, T_OUT = 10.45
 const T_TYPE = 8.38, PER = 0.026, FADE = 0.16, T_SHEEN = 8.75
 const LINE = 'The stars, unrationed.'
 const BADGE = { in: 4.9, out: 10.3 }
 
-const PW = 404, PH = Math.round(PW * 2532 / 1170), PX = 700, PY = H / 2
+const PW = 404, PH = Math.round(PW * 2532 / 1170), PX = 690, PY = H / 2
+// no price figures in this ad: the screen fades out above the plan cards (phone-local y 445 → 565); push 1 → 1.35 centred on the arch + headline
+const PCUT = 565, PFOC = 210, PUSH = 1.35
 const CW = 620, CH = Math.round(CW * 1584 / 1264), CX = W / 2, CY = 424
 
 export default async function build(stage) {
@@ -27,7 +30,8 @@ export default async function build(stage) {
   // phone + aura
   const aura = el('div', { position: 'absolute', left: (PX - 520) + 'px', top: (PY - 600) + 'px', width: '1040px', height: '1200px', borderRadius: '50%', opacity: 0,
     background: 'radial-gradient(closest-side, rgba(255,214,150,0.42), rgba(214,150,255,0.2) 50%, rgba(180,92,255,0) 100%)' }, persp)
-  const phone = el('div', { position: 'absolute', left: (PX - PW / 2) + 'px', top: (PY - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', opacity: 0, willChange: 'transform' }, persp)
+  const phone = el('div', { position: 'absolute', left: (PX - PW / 2) + 'px', top: (PY - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', opacity: 0, willChange: 'transform', transformOrigin: `50% ${PFOC}px`,
+    WebkitMaskImage: `linear-gradient(180deg, #000 0px, #000 ${PCUT - 120}px, transparent ${PCUT}px)`, maskImage: `linear-gradient(180deg, #000 0px, #000 ${PCUT - 120}px, transparent ${PCUT}px)` }, persp)
   const scr = el('div', { position: 'absolute', inset: 0, borderRadius: '54px', overflow: 'hidden', background: C.canvas,
     boxShadow: '0 60px 120px rgba(4,2,14,0.7), 0 18px 40px rgba(4,2,14,0.45), 0 0 70px rgba(242,199,92,0.16), 0 0 0 1.5px rgba(239,230,214,0.35)' }, phone)
   img(scr, A + 'screen-founding.png', { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover' })
@@ -61,15 +65,16 @@ export default async function build(stage) {
     update(t) {
       // ── phone
       const pin = ease.outCubic(prog(t, T_PIN, T_PIN + 0.5))
+      const push = ease.inOutQuad(prog(t, 5.0, 7.5))
       const pout = ease.inOutQuad(prog(t, T_LIFT, T_LIFT + 0.45))
       const pop = Math.min(prog(t, T_PIN, T_PIN + 0.22), 1 - pout)
       phone.style.opacity = String(pop)
-      phone.style.transform = `translate(${-130 * pout}px, ${lerp(70, 0, pin) + 6 * Math.sin((t - 5) * 1.1)}px) rotateY(${lerp(20, 9, pin) + 6 * pout}deg) rotateZ(${lerp(-3, -1.2, pin)}deg) scale(${lerp(1, 0.92, pout) * lerp(1, 1.035, ease.inOutQuad(prog(t, T_CAP, T_LIFT)))})`
-      hs.forEach(h => { h.style.opacity = String(ease.outQuad(prog(t, T_PIN + 0.3, T_PIN + 0.5)) * (1 - prog(t, T_COUT, T_COUT + 0.15))) })
+      phone.style.transform = `translate(${-130 * pout - 30 * push}px, ${lerp(70, 0, pin) + 227 - 85 * lerp(1, PUSH, push) + 6 * Math.sin((t - 5) * 1.1)}px) rotateY(${lerp(20, 9, pin) + 6 * pout}deg) rotateZ(${lerp(-3, -1.2, pin)}deg) scale(${lerp(1, 0.92, pout) * lerp(1, PUSH, push)})`
+      hs.forEach((h, i) => { if (i > 1) { h.style.opacity = '0'; return } h.style.opacity = String(ease.outQuad(prog(t, T_PIN + 0.3, T_PIN + 0.5)) * (1 - prog(t, T_COUT, T_COUT + 0.3))) })
       aura.style.opacity = String(pop * (0.85 + 0.15 * Math.sin(t * 1.6)))
       aura.style.transform = `translateX(${-130 * pout}px)`
       // ── caption
-      const ci = ease.outCubic(prog(t, T_CAP, T_CAP + 0.3)), co = ease.inQuad(prog(t, T_COUT, T_COUT + 0.15))
+      const ci = ease.outCubic(prog(t, T_CAP, T_CAP + 0.3)), co = ease.inOutQuad(prog(t, T_COUT, T_COUT + 0.3))
       cap.style.opacity = String(Math.min(prog(t, T_CAP, T_CAP + 0.14), 1 - co))
       cap.style.transform = `translateX(${lerp(36, 0, ci) + 40 * co}px)`
       // ── card: lift → peak → stamp → hold → out
