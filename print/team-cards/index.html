@@ -254,7 +254,15 @@ const thumbs = SIGNS.map((s) => {
   return { s, b, c }
 })
 
+// the form is the source of truth: the viewer can restore typed values (or a browser can
+// autofill them) without an input event, so read the fields every time we draw or build
+function syncFromForm() {
+  for (const k of Object.keys(DEFAULTS)) { const f = form.elements[k]; if (f) info[k] = f.value }
+  try { localStorage.setItem(STORE, JSON.stringify(info)) } catch {}
+}
+
 function render() {
+  syncFromForm()
   const s = SIGNS.find((x) => x.id === selected)
   paint(document.getElementById('pv-front'), drawFront(s, 1))
   document.getElementById('pv-front-cap').textContent = `${s.name} · ${serialText(1)}`
@@ -268,11 +276,12 @@ function render() {
 }
 
 let raf = 0
-form.addEventListener('input', () => {
-  for (const k of Object.keys(DEFAULTS)) info[k] = form.elements[k].value
-  try { localStorage.setItem(STORE, JSON.stringify(info)) } catch {}
-  cancelAnimationFrame(raf); raf = requestAnimationFrame(render)
-})
+const schedule = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(render) }
+form.addEventListener('input', schedule)
+form.addEventListener('change', schedule)
+window.addEventListener('pageshow', schedule)
+window.addEventListener('focus', schedule)
+document.addEventListener('visibilitychange', () => { if (!document.hidden) schedule() })
 form.addEventListener('submit', (e) => e.preventDefault())
 ready.then(render)
 
@@ -375,10 +384,12 @@ function wire(btnId, statusId, build) {
   btn.addEventListener('click', async () => {
     const downloads = await downloadsP
     if (!downloads) { status('Saving files isn’t available in this view. Open this page on claude.ai to download.', 'err'); return }
+    syncFromForm()
     if (!info.name.trim()) { status('Add your name first. It prints on the back of every card.', 'err'); form.elements.name.focus(); return }
     btn.disabled = true
     try {
       await ready
+      render() // pick up exactly what is in the form right now, and show it
       const { doc, name } = await build(status)
       status('Finishing the PDF…'); await tick()
       const blob = doc.output('blob')
