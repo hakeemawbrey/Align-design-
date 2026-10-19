@@ -1,5 +1,6 @@
-// STUB — replaced by the film's agent. Export DURATION, SCENES (array of async build(stage) fns), CUES.
-import { el } from '../../../src/lib.js'
+// hey (15s, LOOK B): "Stuck on 'hey'." → talk cards ("Start with a real question.") → "Skip to the good part."
+// One scene (hey.js) on one sky; end.js holds the end line + lockup.
+import hey, { CUES as HEY_CUES } from './hey.js'
 export const DURATION = 15
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 0, end: 15.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'hey'), update() {} })]
+export const SCENES = [hey]
+export const CUES = HEY_CUES
