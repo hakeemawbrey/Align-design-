@@ -11,11 +11,11 @@
 //   19.45 19.95 20.45  each row lights in its colour (PUSH rose · PULL mint · ALIGN gold), a glint along it, and the
 //                caption word types under it: "Push." "Pull." "Align." (typed by ≈20.9) · holds · out 21.95
 //   21.95–22.80  the card pulls back and glides into the alignment phone (rising 22.10–22.80, right) · flare 22.7
-//   22.85 eyebrow "JUNIPER × YOU" · 23.00 "Venus rules / you both." (left, typed by ≈23.65) · out 24.55
+//   22.70 eyebrow "JUNIPER × YOU" · 22.85 "Venus rules / you both." (left, typed by ≈23.40) · out 24.50
 //   22.95–24.40  phone push-in 1.0 → 1.28 (origin on the reading's heading)
-//   24.55–25.00  the phone sinks away · 24.60–25.25 Juniper's card (right) and your sign card (left) turn in
-//   24.95–25.65  seven chakra stars streak in and click into the column between them (red bottom → violet top)
-//   25.65        LOCK: soft flash (cap .4), ring, pixel burst, 3-frame shake, both rims light
+//   24.40–24.75  the phone sinks away · 24.75–25.35 Juniper's card (right) and your sign card (left) turn in
+//   25.05–25.75  seven chakra stars streak in and click into the column between them (red bottom → violet top)
+//   25.75        LOCK: soft flash (cap .4), ring, pixel burst, 3-frame shake, both rims light
 //   26.05–26.40  everything drifts apart and fades (end.js owns 26.30→)
 import { clamp, lerp, prog, ease, tw, rng, el, mix, C, TypeLine } from '../../../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill, img } from '../../../../src/scenes/common.js'
@@ -45,17 +45,17 @@ const WORDS = ['Push.', 'Pull.', 'Align.']
 // ── phone
 const PH = 900, PW = Math.round(PH * 1170 / 2532), PX = 1300, PY = 540
 const INTO = { a: 21.95, b: 22.8 }
-const PHONE_IN = 22.2, PHONE_LAND = 22.8, PHONE_OUT = 24.55, PHONE_GONE = 25.0
+const PHONE_IN = 22.2, PHONE_LAND = 22.8, PHONE_OUT = 24.4, PHONE_GONE = 24.75
 const PUSH0 = 22.95, PUSH1 = 24.4
 const AURA = { x: PX - PW / 2 + PW * 0.433, y: PY - PH / 2 + PH * 0.215 }
-const COPY3 = { eb: 22.85, line: 23.0, out: 24.55 }
+const COPY3 = { eb: 22.7, line: 22.85, out: 24.5 }
 
 // ── the lock
 const RJ = { x: 1270, y: 470, h: 540 }, LY = { x: 650, y: 470, h: 540 }
-const CARDS_IN = { a: 24.6, b: 25.25 }
+const CARDS_IN = { a: 24.75, b: 25.35 }
 const COL = { x: 960, y: 470, gap: 60 }
-const STAR_IN = 24.95, STAR_STEP = 0.05, STAR_FLY = 0.4
-const LOCK = 25.65
+const STAR_IN = 25.05, STAR_STEP = 0.05, STAR_FLY = 0.4
+const LOCK = 25.75
 const EXIT = { a: 26.05, b: 26.4 }
 const CHK = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
 const STAR_FROM = [[300, 1000], [1640, 960], [120, 560], [1800, 600], [420, 70], [1480, 40], [960, -40]]
@@ -104,7 +104,7 @@ export default async function build(stage) {
     return [...w].map(ch => el('span', { opacity: 0 }, sp, ch))
   })
   const eb3 = eyebrow('JUNIPER × YOU', { left: '232px', top: '372px' })
-  const line3 = new TypeLine(root, 'Venus rules\nyou both.', { ...stmt, fontSize: '112px', left: '224px', top: '432px' }, { perChar: 0.034, fade: 0.3, accent: [C.violet, C.rub, C.gold] })
+  const line3 = new TypeLine(root, 'Venus rules\nyou both.', { ...stmt, fontSize: '112px', left: '224px', top: '432px' }, { perChar: 0.034, fade: 0.2, accent: [C.violet, C.rub, C.gold] })
 
   // ── lock burst particles
   const br = rng(9137)
@@ -162,6 +162,9 @@ export default async function build(stage) {
             bx.roundRect(PA.b[0] - BCX + 3, PA.b[1] - BCY + 3, PA.b[2] - PA.b[0] - 6, PA.b[3] - PA.b[1] - 6, PA.r)
             bx.roundRect(ROW_X[0] - BCX - 30, ROWS[0][0] - BCY - 24, ROW_X[1] - ROW_X[0] + 60, ROWS[2][1] - ROWS[0][0] + 48, 30)
             bx.fill('evenodd')
+            // below the Align row (dealbreakers, footer): fully out, so nothing ghosts behind the caption
+            bx.globalAlpha = focus * alpha
+            bx.beginPath(); bx.roundRect(PA.b[0] - BCX + 3, ROWS[2][1] - BCY + 40, PA.b[2] - PA.b[0] - 6, PA.b[3] - ROWS[2][1] - 43, [0, 0, PA.r, PA.r]); bx.fill()
           }
           // each row: dimmed until its turn, then lit in its colour
           for (let i = 0; i < 3; i++) {
