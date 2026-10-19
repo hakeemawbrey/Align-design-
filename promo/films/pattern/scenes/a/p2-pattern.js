@@ -6,7 +6,7 @@
 // alpha 1) + grain 0.5; card-profile-3.png BODY (png box 120,114 → 1374,2116) 600 tall centred at (960,540), upright,
 // the whole png drawn (its own soft edge), no extra glow, no fx.
 import { clamp, lerp, prog, ease, rng, el, C, PIXEL_PALETTE, mix } from '../../../../src/lib.js'
-import { W, H, A, MONO, fill, img } from '../../../../src/scenes/common.js'
+import { W, H, A, fill, img } from '../../../../src/scenes/common.js'
 import { drawSky, layerCanvas } from '../../../sky.js'
 import { BONE, ROOM_BG, PEOPLE, FLAG_RED, grainLayer, words, capStyle, makeProfileCard, CARD_H } from './common.js'
 
@@ -92,9 +92,8 @@ export default function build(stage) {
     background: 'linear-gradient(180deg, rgba(239,230,214,0.4), #fff6ea 20%, #d9c4ff 50%, #fff6ea 80%, rgba(239,230,214,0.4))', boxShadow: '0 0 10px 2px rgba(214,190,255,0.8)', transform: 'rotateY(90deg)' }, card3d)
   const allChips = [...others.map(o => o.chips), topCard.chips]
 
-  // copy: eyebrow under the row, then the turn line in the bottom pocket
-  const eyebrow = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '826px', textAlign: 'center', fontFamily: MONO, fontSize: '30px', letterSpacing: '0.34em',
-    color: BONE, textShadow: '0 2px 20px rgba(5,6,10,0.9)', opacity: 0, zIndex: '3000' }, root, 'THE SAME RED FLAGS')
+  // copy: "Same red flags." under the row, then the turn line in the bottom pocket
+  const flagsLine = words(root, 'Same red flags.', { ...capStyle(72), left: 0, width: W + 'px', top: '800px', textAlign: 'center', zIndex: '3000' }, FL[0], 0.12, 0.3)
   const pocket = el('div', { position: 'absolute', left: 0, top: '820px', width: W + 'px', height: '260px', opacity: 0, zIndex: '2900',
     background: 'radial-gradient(48% 52% at 50% 52%, rgba(8,6,20,0.62) 0%, rgba(8,6,20,0.28) 60%, rgba(8,6,20,0) 100%)' }, root)
   const cap = words(root, 'What if you saw it coming?', { ...capStyle(96), left: 0, width: W + 'px', top: '880px', textAlign: 'center', zIndex: '3000' }, 11.5, 0.11, 0.3)
@@ -194,8 +193,7 @@ export default function build(stage) {
       flash.style.opacity = String(clamp(fd < -0.04 ? 0 : fd < 0 ? 0.12 : 0.42 * Math.exp(-fd * 7)) * (1 - prog(t, EDGE + 0.4, SETTLE)))
 
       // ── copy
-      eyebrow.style.opacity = String(ease.outCubic(prog(t, FL[0], FL[0] + 0.35)) * (1 - ease.inOutQuad(prog(t, 10.4, 10.7))))
-      eyebrow.style.letterSpacing = (0.42 - 0.08 * ease.outCubic(prog(t, FL[0], FL[2] + 0.4))).toFixed(3) + 'em'
+      flagsLine.update(t, 1 - ease.inOutQuad(prog(t, 10.5, 10.78)))
       cap.update(t, 1 - ease.inOutQuad(prog(t, 14.38, 14.68)))
       pocket.style.opacity = String(ease.inOutQuad(prog(t, EDGE, EDGE + 0.3)) * (1 - ease.inOutQuad(prog(t, 14.38, 14.68))))
       const sv = 0.07 * (1 - ease.inOutQuad(prog(t, EDGE, EDGE + 0.4)))

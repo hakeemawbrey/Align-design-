@@ -91,11 +91,13 @@ export default async function build(stage) {
     const msgs = el('div', { position: 'absolute', left: 0, top: '198px', width: PW + 'px', height: PH - 198 - 130 + 'px', overflow: 'hidden' }, g)
     const stamp = (text, top, o = 1) => el('div', { position: 'absolute', left: 0, width: PW + 'px', top: top + 'px', textAlign: 'center', fontFamily: MONO, fontSize: '19px', letterSpacing: '0.12em', color: '#5d6472', opacity: o }, msgs, text)
     const bub = (me, text, top, o = 1) => el('div', { ...bubbleCss(me), top: top + 'px', opacity: o }, msgs, text)
-    stamp(STAMPS[k][0], 330, 0.7)
-    bub(true, 'last night was really fun', 376, 0.6)
-    bub(false, 'it was :) you’re different', 470, 0.6)
-    stamp(STAMPS[k][1], 612)
-    const lands = [bub(false, 'you’re honestly amazing', 660), bub(true, 'so… what are we?', 754), bub(false, 'it’s not you, it’s me.', 848)]
+    stamp(STAMPS[k][0], 290, 0.7)
+    bub(true, 'last night was really fun', 336, 0.6)
+    bub(false, 'it was :) you’re different', 430, 0.6)
+    stamp(STAMPS[k][1], 566)
+    const big = { fontSize: '44px', maxWidth: '540px', padding: '18px 30px', borderRadius: '36px' }
+    const lands = [bub(false, 'you’re honestly amazing', 610), bub(true, 'so… what are we?', 722), bub(false, 'it’s not you, it’s me.', 834)]
+    lands.forEach((b, i) => Object.assign(b.style, big, i === 2 ? { color: '#efe6d6', background: '#3a4150', boxShadow: '0 0 0 1px rgba(239,230,214,0.12)' } : {}))
     return { g, msgs, lands, times: bubbleTimes(k), c, next: k + 1 < CYC.length ? CYC[k + 1] : 99 }
   })
 
@@ -156,9 +158,12 @@ export default async function build(stage) {
           gr.g.style.opacity = String(o)
           gr.msgs.style.transform = `translateY(${-70 * out + 24 * (1 - vis)}px)`
           gr.lands.forEach((b, i) => {
-            const u = ease.outBack(prog(t, gr.times[i], gr.times[i] + 0.16)), a = prog(t, gr.times[i], gr.times[i] + 0.08)
+            const a = prog(t, gr.times[i], gr.times[i] + 0.08)
             b.style.opacity = String(a)
-            b.style.transform = `scale(${lerp(0.82, 1, clamp(u, 0, 1.2)).toFixed(4)})`
+            let sc
+            if (i === 2) { const p1 = ease.outCubic(prog(t, gr.times[i], gr.times[i] + 0.12)), p2 = ease.inOutQuad(prog(t, gr.times[i] + 0.12, gr.times[i] + 0.3)); sc = lerp(lerp(0.86, 1.04, p1), 1, p2) }
+            else sc = lerp(0.82, 1, clamp(ease.outBack(prog(t, gr.times[i], gr.times[i] + 0.16)), 0, 1.2))
+            b.style.transform = `scale(${sc.toFixed(4)})`
           })
         }
       }
