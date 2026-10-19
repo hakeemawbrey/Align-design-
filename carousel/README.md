@@ -23,6 +23,20 @@ contract. Read it before writing or changing anything here.
 | `src/generate.mjs` | makes new carousels in bulk (two engines, below) |
 | `src/check.mjs` | validates every carousel against the spec |
 
+## Carousel Studio (the app)
+
+`app/` is a one-page web app for making carousels without a terminal: pick a
+sign and a theme, press **Remix** (the phrase bank, instant and free) or
+**Write with Claude** (fresh copy on the viewer's Claude account), edit any
+line, choose bottom or centred text and sign colour or white, then download
+the slides as a .zip and copy the caption. It is published as an artifact at
+https://claude.ai/artifact/1GYehk8ubUTPWRAuz1HrAC (private until shared from
+the page's Share menu).
+
+`npm run studio` rebuilds `app/dist/studio.html` from `app/studio.template.html`,
+baking in the current phrase bank and the 12 examples. Rebuild and republish
+after changing the bank or the examples.
+
 ## Set up
 
 ```bash
