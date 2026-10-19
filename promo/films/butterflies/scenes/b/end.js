@@ -23,7 +23,7 @@ const LINE = 'Bring back the butterflies.'
 const CH0 = 15, CH1 = 25
 const T_GLINT = 26.6, T_LIFT = 26.65
 const LINE_Y0 = H / 2, LINE_Y1 = 230, LINE_FS = 124
-const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 821, SUB_FS = 30
+const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 817, SUB_FS = 38
 
 export default async function build(stage) {
   const root = fill(stage, { background: C.void, opacity: 0 })

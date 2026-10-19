@@ -61,7 +61,8 @@ const JK = [
   [20.35, 610, 450, 640, 8],
   [21.13, 606, 452, 648, 7],
   [21.7, 700, 530, 900, 2],
-  [24.45, 694, 524, 918, 0],
+  [22.2, 699, 530, 906, 1.6],
+  [24.45, 690, 548, 1015, 0],                                  // slow push 1.0 → 1.12 on her face
 ]
 function keyAt(K, t) {
   if (t <= K[0][0]) return K[0].slice(1)
@@ -287,6 +288,8 @@ export default async function build(stage) {
   const photoWin = el('div', posStyle(PWIN.x, PWIN.y, PWIN.w, PWIN.h, { borderRadius: PWIN.r + 'px', overflow: 'hidden', background: C.raised, display: 'none' }), card)
   const phStyle = { left: PH_L + 'px', top: PH_T + 'px', width: PH_W + 'px', height: PH_H + 'px' }
   const real = img(photoWin, IMG + 'juniper.jpg', { ...phStyle })
+  // once the reveal settles, a desaturated copy eases the photo's own orange aura down to ~35% so her face reads first
+  const calm = img(photoWin, IMG + 'juniper.jpg', { ...phStyle, filter: 'saturate(0.2) brightness(0.97) contrast(1.04)', opacity: 0 })
   const aura = makeAuraPrint(real)
   Object.assign(aura.cv.style, { position: 'absolute', ...phStyle, display: 'none' })
   photoWin.appendChild(aura.cv)
@@ -373,7 +376,7 @@ export default async function build(stage) {
   const cap3 = capBox(1110, 400, 740, 'left')
   const c3 = line(cap3, 'Then you\nboth align.', 128, { perChar: 0.026, accent: [C.violet, C.plum, C.rub] })
   // talk-card eyebrow (under the card)
-  const ebTalk = el('div', { position: 'absolute', left: (1330 - 400) + 'px', width: '800px', top: '908px', textAlign: 'center', fontFamily: MONO, fontSize: '34px', letterSpacing: '0.32em', textIndent: '0.32em',
+  const ebTalk = el('div', { position: 'absolute', left: (1330 - 400) + 'px', width: '800px', top: '908px', textAlign: 'center', fontFamily: MONO, fontSize: '41px', letterSpacing: '0.32em', textIndent: '0.32em',
     color: C.bone, textShadow: '0 0 14px rgba(11,6,32,0.95), 0 0 4px rgba(11,6,32,0.8)', opacity: 0, whiteSpace: 'pre', pointerEvents: 'none' }, root, 'TALK CARDS')
   const capFade = (box, t, a, out, outLen = 0.12) => {
     const i = ease.outCubic(prog(t, a, a + 0.4)), o = ease.inQuad(prog(t, out, out + outLen))
@@ -529,16 +532,17 @@ export default async function build(stage) {
           leak.style.transform = `rotate(${lerp(-14, 10, prog(t, B.sweep.a - 0.1, B.res.b))}deg)`
         }
       }
+      calm.style.opacity = String(0.65 * ease.inOutQuad(prog(t, 22.6, 23.1)))
       footer.style.opacity = t >= B.res.peak - 0.04 ? '1' : '0'   // swaps under the resolve flash (no doubled footer)
       const gp = prog(t, B.foil.a, B.foil.b)
       foilBox.style.opacity = gp > 0 && gp < 1 ? String(Math.sin(Math.PI * gp) * 0.85) : '0'
       foil.style.transform = `translateX(${lerp(-600, PNG.bw + 200, ease.inOutCubic(gp))}px) skewX(-22deg)`
 
       // ── lock flash + rays
-      const fl = t < LOCK ? 0.42 * ease.inQuad(prog(t, LOCK - 0.1, LOCK)) : 0.42 * (1 - ease.outCubic(prog(t, LOCK, LOCK + 0.32)))
+      const fl = t < LOCK ? 0.34 * ease.inQuad(prog(t, LOCK - 0.1, LOCK)) : 0.34 * (1 - ease.outCubic(prog(t, LOCK, LOCK + 0.32)))
       bigFlash.style.opacity = String(fl)
-      rays.style.opacity = String(t < LOCK ? 0.16 * ease.inQuad(prog(t, LOCK - 0.3, LOCK)) : 0.42 * (1 - ease.inOutQuad(prog(t, LOCK + 0.05, LOCK + 0.95))))
-      rays.style.transform = `rotate(${(t - 20.35) * 8}deg) scale(${t < LOCK ? 0.7 : lerp(0.75, 1.12, ease.outCubic(prog(t, LOCK, LOCK + 0.8)))})`
+      rays.style.opacity = String(t < LOCK ? 0.16 * ease.inQuad(prog(t, LOCK - 0.3, LOCK)) : 0.28 * (1 - ease.inOutQuad(prog(t, LOCK + 0.05, LOCK + 0.95))))
+      rays.style.transform = `rotate(${(t - 20.35) * 8}deg) scale(${t < LOCK ? 0.7 : lerp(0.75, 1.0, ease.outCubic(prog(t, LOCK, LOCK + 0.8)))})`
 
       // ── fx canvas
       fx.clearRect(0, 0, W, H)
@@ -725,7 +729,7 @@ export const cues = [
   ...[0, 1, 2, 3, 4, 5, 6].flatMap((i) => [['whoosh', B.starIn + i * 0.055 + 0.28, 0.32, 0.03], ['bell', B.starIn + i * 0.055 + 0.32, 2349.32, 0.011, 0.9, ((i % 3) - 1) * 0.5]]),
   ['riser', B.youSet - 0.05, LOCK, 0.12],                                          // tension into the lock
   ...[493.88, 587.33, 659.25, 739.99, 880, 987.77, 1174.66].flatMap((f, i) => [['tick', STAR_LOCK[i], 0.06], ['bell', STAR_LOCK[i], f, 0.045, 1.1, (i - 3) * 0.12]]),
-  ['boom', LOCK, 0.5], ['tick', LOCK, 0.2],                                        // LOCK
+  ['boom', LOCK, 0.32], ['tick', LOCK, 0.2],                                        // LOCK
   ['bell', LOCK, 220, 0.07, 2.8, 0], ['bell', LOCK + 0.01, 554.37, 0.055, 2.4, -0.25], ['bell', LOCK + 0.02, 659.25, 0.045, 2.4, 0.25], ['bell', LOCK + 0.03, 1108.73, 0.032, 2.4, 0],
   ['glitter', LOCK, LOCK + 0.7],
   ['whoosh', B.youOut, 0.5, 0.06],                                                 // your card out, her card in
