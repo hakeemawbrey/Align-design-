@@ -1,5 +1,10 @@
-// STUB — replaced by the film's agent. Export DURATION, SCENES (array of async build(stage) fns), CUES.
-import { el } from '../../../src/lib.js'
+// bios · "Everyone sounds the same." → "Your sky doesn't." → "Your sky says more." (15s, LOOK A / film 1)
+// Layers (bottom → top): bg (space moods + one grain) · hook (bios, line) · sky (answer, phone) · end (line, lockup) · overlay (badge, sparks, black)
+import bg from './bg.js'
+import hook, { cues as cHook } from './hook.js'
+import sky, { cues as cSky } from './sky.js'
+import end, { cues as cEnd } from './end.js'
+import overlay from './overlay.js'
 export const DURATION = 15
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 0, end: 15.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'bios'), update() {} })]
+export const SCENES = [bg, hook, sky, end, overlay]
+export const CUES = [...cHook, ...cSky, ...cEnd]
