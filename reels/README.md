@@ -7,7 +7,7 @@ A generator for short vertical videos in the weirdcore / low-poly 3D style of
 2. a holographic figure wrapped in its sign's **Align aura** (Garnet for Scorpio, Ember for Aries…),
 3. four-pointed stars with eyes hovering over the scene, watching: the sky, come down to talk to you,
 4. a Windows-98 popup titled `<sign>.exe` that types **one line of advice to one zodiac sign**, while one star speaks it,
-5. the camera swings to the figure, the sign's glyph pops over its head and the aura surges.
+5. the camera swings to the figure, the sign’s glyph pops over its head, the aura surges, and **come align** lands over the scene.
 
 A small `align ✦` mark sits at the top (`--no-brand` leaves it out).
 

@@ -50,6 +50,7 @@ export function loadFonts() {
   const faces = [
     new FontFace('ZPoppins', `url(${url('poppins-latin-600-italic.woff2')})`, { style: 'italic', weight: '600' }),
     new FontFace('ZPoppins', `url(${url('poppins-latin-700-normal.woff2')})`, { style: 'normal', weight: '700' }),
+    new FontFace('ZPoppins', `url(${url('poppins-latin-800-italic.woff2')})`, { style: 'italic', weight: '800' }),
     new FontFace('ZSymbols', `url(${url('noto-sans-symbols-symbols-700-normal.woff2')})`, { weight: '700' }),
   ]
   fontsReady = Promise.all(faces.map((f) => f.load().then((ff) => document.fonts.add(ff))))
@@ -63,7 +64,8 @@ export function timelineFor(text) {
   const tTyped = typeStart + text.length / typeRate
   const tClose = tTyped + clamp(text.length * 0.033, 1.7, 3.0)
   const tGlyph = tClose + 0.8
-  const duration = +(tGlyph + 1.3).toFixed(3)
+  // the ending holds long enough to read "come align"
+  const duration = +(tGlyph + 2.0).toFixed(3)
   const typeTimes = []
   for (let i = 0; i < text.length; i++) if (text[i] !== ' ') typeTimes.push(typeStart + i / typeRate)
   return { tPopup, typeStart, typeRate, tTyped, tClose, tGlyph, duration, typeTimes }
@@ -184,7 +186,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
 
     state = {
       item, seed, scene, world, figure, crowd, speaker, glyph, camera, shots, tl, layout, title, hero,
-      baseYaw, turn: dy * 0.62, handle, brand, noisePhase: rng.range(0, 100), lastOverlay: '',
+      baseYaw, turn: dy * 0.62, handle, brand, aura, noisePhase: rng.range(0, 100), lastOverlay: '',
     }
     return { duration: tl.duration, plan: { seed: String(seed), duration: tl.duration, ...tl }, world: worldName }
   }
@@ -225,6 +227,37 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
   }
 
   // Align's mark: tiny and quiet, the way the carousels carry it.
+  // The ending: as the figure realizes, "come align" lands over the scene,
+  // in the carousels' type, glowing faintly in the sign's aura colour.
+  function drawEnding(k) {
+    const { aura } = state
+    const cx = width / 2
+    const y = height * 0.17
+    const size = Math.round(width * 0.115)
+    octx.save()
+    octx.globalAlpha = k
+    octx.textAlign = 'center'
+    octx.textBaseline = 'alphabetic'
+    octx.font = `italic 800 ${size}px "ZPoppins", sans-serif`
+    octx.letterSpacing = `${Math.round(-size * 0.02)}px`
+    // rise into place as it fades in
+    const yy = y + (1 - k) * size * 0.25
+    octx.shadowColor = aura.color
+    octx.shadowBlur = width * 0.05
+    octx.fillStyle = '#fff7ec'
+    octx.fillText('come align', cx, yy)
+    octx.shadowColor = 'rgba(0,0,0,0.55)'
+    octx.shadowBlur = width * 0.012
+    octx.fillText('come align', cx, yy)
+    octx.letterSpacing = '0px'
+    octx.font = `700 ${Math.round(size * 0.42)}px "ZSymbols", sans-serif`
+    octx.shadowColor = aura.color
+    octx.shadowBlur = width * 0.03
+    octx.fillStyle = aura.light
+    octx.fillText('✦', cx, yy + size * 0.62)
+    octx.restore()
+  }
+
   function drawMark() {
     octx.save()
     octx.globalAlpha = 0.72
@@ -244,7 +277,8 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     if (t >= tl.tPopup && t < tl.tClose) appear = clamp((t - tl.tPopup) / 0.1)
     else if (t >= tl.tClose && t < tl.tClose + 0.08) appear = 1 - (t - tl.tClose) / 0.08
     const typed = t < tl.typeStart ? 0 : Math.min(item.text.length, Math.floor((t - tl.typeStart) * tl.typeRate) + 1)
-    const key = `${appear.toFixed(2)}|${typed}|${handle}`
+    const ending = Math.round(smooth(tl.tGlyph + 0.15, tl.tGlyph + 0.6, t) * 20) / 20
+    const key = `${appear.toFixed(2)}|${typed}|${handle}|${ending}`
     if (key === state.lastOverlay) return
     state.lastOverlay = key
     octx.clearRect(0, 0, width, height)
@@ -252,8 +286,9 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     // one invisible pixel on it and tell the shader whether to use it at all.
     octx.fillStyle = 'rgba(0,0,0,0.01)'
     octx.fillRect(0, 0, 1, 1)
-    post.uniforms.uOverlayOn.value = appear > 0 || handle || brand ? 1 : 0
-    if (brand) drawMark()
+    post.uniforms.uOverlayOn.value = appear > 0 || handle || brand || ending > 0 ? 1 : 0
+    // the small top mark gives way to the ending line
+    if (brand && ending === 0) drawMark()
     if (handle) {
       octx.save()
       octx.globalAlpha = 0.55
@@ -265,6 +300,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
       octx.restore()
     }
     drawPopup(octx, layout, title, item.text, typed, appear)
+    if (ending > 0) drawEnding(ending)
     overlayTex.needsUpdate = true
   }
 
