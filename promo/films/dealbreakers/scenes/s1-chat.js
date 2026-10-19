@@ -379,7 +379,7 @@ export default async function build(stage) {
             cx.globalAlpha = Math.pow(1 - u, 1.4)
             cx.setTransform(1, 0, 0, 1, x, y); cx.rotate(T.spin * lt + Math.atan2(BM.b, BM.a)); cx.scale(sc / S, sc / S)
             cx.drawImage(frozen, T.i * TILE, T.j * TILE, TILE, TILE, -TILE / 2, -TILE / 2, TILE, TILE)
-            const burn = Math.max(0.6 * (1 - lt / 0.08), 0.55 * u)
+            const burn = Math.max(0.3 * Math.min(1, (lt + 1 / 30) / (3 / 30)) * (1 - lt / 0.16), 0.45 * u)
             if (burn > 0.01) { cx.globalCompositeOperation = 'lighter'; cx.fillStyle = `rgba(226,206,255,${burn.toFixed(3)})`; cx.fillRect(-TILE / 2, -TILE / 2, TILE, TILE); cx.globalCompositeOperation = 'source-over' }
           }
           cx.restore()
@@ -390,7 +390,7 @@ export default async function build(stage) {
       const o2 = 1 - ease.inOutQuad(prog(t, CAP2.out, CAP2.out + 0.2))
       c2a.update(t, o2); c2b.update(t, o2)
       const fd = t - BREAK
-      flash.style.opacity = String(fd < 0 ? 0 : clamp(0.62 * Math.exp(-fd * 7)))
+      flash.style.opacity = String(fd < 0 ? 0 : clamp(0.4 * Math.pow(Math.min(1, (fd + 1 / 30) / (3 / 30)), 2) * Math.exp(-Math.max(0, fd - 2 / 30) * 7)))   // ramps over the first frames, gentle peak
       drawGrain(gx, t)
       drawGrain(lx, t)
       lC.style.opacity = String(0.07 * (1 - ease.inOutQuad(prog(t, BREAK, BREAK + 0.5))))

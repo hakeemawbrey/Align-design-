@@ -5,14 +5,14 @@
 //   5.45–6.10  the phone forms where the old one broke, slow push to 7.5
 //   5.85 eyebrow "DEALBREAKERS FIRST" · 6.05 "Said on / day one." (typed ≈6.85, holds to 10.6)
 //   7.15–7.50  a glint runs across "Seal my card" · 7.55 press · 7.56–7.82 the phone washes out and shrinks away
-//   7.68–8.12  the card turns in (a glimpse of its back, edge-on, then face-up) · 8.35 8.67 8.99 chips stamp: DOESN'T WANT KIDS · ONE-WORD TEXTS · FLAKY PLANS
-//   9.40–9.80  the card brightens back · 9.60–10.20 gold glint on her DEALBREAKERS footer · 10.60–10.95 drift + fade out
+//   7.68–8.12  the card turns in (a glimpse of its back, edge-on, then face-up) · 8.35 8.67 8.99 chips stamp: DOESN'T WANT KIDS · ONE-WORD TEXTS · HATES MY GROUP CHATS
+//   9.40–9.80  the card brightens back (her own footer stays dimmed under the stamps) · 9.60–10.20 gold glint down the chips · 10.60–10.95 drift + fade out
 import { clamp, lerp, prog, ease, tw, el, C, TypeLine } from '../../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { sky, twinkles, drawGrain, grainOpacity, layerCanvas, loadArt, drawCard, cardSpace, glint, pocketCanvas, ART, bodyH, pixStar, PLATE } from './kit.js'
 
 const T0 = 5.4, T1 = 11.25
-const PH_ = { x: 640, y: 540, h: 1000 }                     // phone frame (stage px)
+const PH_ = { x: 640, y: 720, y1: 575, h: 1350 }            // phone frame (stage px): big enough to read; tilts down to the button
 const SCR = { w: 1170, h: 2532 }, RIM = 11
 const FORM = { a: 5.45, b: 6.1 }
 const SEAL = { glint: [7.15, 7.5], press: 7.55 }
@@ -20,10 +20,11 @@ const MORPH = { a: 7.56, b: 7.82 }
 const FLIP = { a: 7.68, b: 8.12 }
 const CARD = { x: 640, y: 540, h: 880 }
 const STAMPS = [8.35, 8.67, 8.99], DROP = 0.11
-const CHIPS = ['DOESN’T WANT KIDS', 'ONE-WORD TEXTS', 'FLAKY PLANS']
+const CHIPS = ['DOESN’T WANT KIDS', 'ONE-WORD TEXTS', 'HATES MY GROUP CHATS']
 const CHIP_Y = [-662, -487, -312], CHIP_ROT = [-2.2, 1.6, -1.2]
 const VEIL = { in: [7.95, 8.3], out: [9.4, 9.8], k: 0.42 }
-const FOOT = { a: 9.6, b: 10.2 }
+const FOOT = { a: 9.6, b: 10.2 }                            // gold glint down the stamped chips
+const FOOT_DIM = 0.7                                         // the card's own DEALBREAKERS footer sits at ~0.3 under the stamps
 const EXIT = { a: 10.6, b: 10.95 }
 const COPY = { eb: 5.85, line: 6.05, out: 10.6 }
 
@@ -38,11 +39,11 @@ export default async function build(stage) {
   const root = fill(stage, { background: 'transparent' })
   const bgC = layerCanvas(root), bx = bgC.getContext('2d')
   await loadArt()
-  await document.fonts.load(`26px 'Space Mono'`).catch(() => {})
+  await Promise.all([document.fonts.load(`26px 'Space Mono'`), document.fonts.load(`500 37px Inter`)]).catch(() => {})
   const scr = await loadImg(A + 'screen-onboarding-dealbreakers.png')
 
-  // ── the phone, pre-rendered (frame h 1000 at 1.3×)
-  const R = 1.3, sh = PH_.h - 2 * RIM, sw = sh * SCR.w / SCR.h, fw = sw + 2 * RIM, fh = PH_.h
+  // ── the phone, pre-rendered (frame h 1350 at 1.1×)
+  const R = 1.1, sh = PH_.h - 2 * RIM, sw = sh * SCR.w / SCR.h, fw = sw + 2 * RIM, fh = PH_.h
   const phoneC = canvas(Math.ceil(fw * R), Math.ceil(fh * R)); {
     const x = phoneC.getContext('2d'); x.scale(R, R)
     const g = x.createLinearGradient(0, 0, fw * 0.6, fh); g.addColorStop(0, '#3a3350'); g.addColorStop(0.45, '#17122a'); g.addColorStop(1, '#0e0a1c')
@@ -50,6 +51,18 @@ export default async function build(stage) {
     x.strokeStyle = 'rgba(214,200,255,0.22)'; x.lineWidth = 1.5; x.beginPath(); x.roundRect(0.75, 0.75, fw - 1.5, fh - 1.5, 63); x.stroke()
     x.save(); x.beginPath(); x.roundRect(RIM, RIM, sw, sh, 54); x.clip()
     x.imageSmoothingQuality = 'high'; if (scr) x.drawImage(scr, RIM, RIM, sw, sh)
+    // her third pick, written in the "Write my own…" slot (screen px), so the phone, the stamps and the card agree
+    x.translate(RIM, RIM); x.scale(sw / SCR.w, sw / SCR.w)
+    x.fillStyle = '#0a0722'; x.beginPath(); x.roundRect(592, 1286, 400, 112, 56); x.fill()
+    x.font = `500 37px Inter, sans-serif`
+    const label = 'Doesn’t want kids', tw0 = x.measureText(label).width, cw = tw0 + 120, c0 = 600, cy = 1342
+    x.shadowColor = 'rgba(255,240,230,0.45)'; x.shadowBlur = 30
+    const cg = x.createLinearGradient(c0, 0, c0 + cw, 0); cg.addColorStop(0, '#fbf7f2'); cg.addColorStop(0.6, '#f3eef6'); cg.addColorStop(1, '#e9eefa')
+    x.fillStyle = cg; x.beginPath(); x.roundRect(c0, cy - 40, cw, 80, 40); x.fill()
+    x.shadowBlur = 0; x.shadowColor = 'transparent'
+    x.strokeStyle = '#2a2148'; x.lineWidth = 3.5; x.lineCap = 'round'; x.lineJoin = 'round'
+    x.beginPath(); x.moveTo(c0 + 40, cy + 1); x.lineTo(c0 + 48, cy + 9); x.lineTo(c0 + 63, cy - 9); x.stroke()
+    x.fillStyle = '#2a2148'; x.textBaseline = 'middle'; x.fillText(label, c0 + 82, cy + 2)
     x.restore()
   }
   // the "Seal my card" button in screen px → phone px
@@ -60,7 +73,7 @@ export default async function build(stage) {
   const gx = gC.getContext('2d')
 
   // ── copy
-  const eb = el('div', { position: 'absolute', left: '1062px', top: '392px', fontFamily: MONO, fontSize: '36px', letterSpacing: '0.32em', color: C.bone, opacity: 0, whiteSpace: 'pre', textShadow: '0 0 14px rgba(11,6,32,0.9)' }, root, 'DEALBREAKERS FIRST')
+  const eb = el('div', { position: 'absolute', left: '1062px', top: '392px', fontFamily: MONO, fontSize: '42px', letterSpacing: '0.32em', color: C.bone, opacity: 0, whiteSpace: 'pre', textShadow: '0 0 14px rgba(11,6,32,0.9)' }, root, 'DEALBREAKERS FIRST')
   const line = new TypeLine(root, 'Said on\nday one.', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '128px', lineHeight: '1.06', letterSpacing: '-0.005em', color: C.bone,
     textShadow: '0 2px 30px rgba(11,6,32,0.9), 0 0 12px rgba(11,6,32,0.6)', left: '1054px', top: '452px' }, { perChar: 0.034, fade: 0.3, accent: [C.rub, C.gold, C.violet] })
 
@@ -111,7 +124,7 @@ export default async function build(stage) {
       if (fp > 0 && mp < 1) {
         const push = 1 + 0.03 * ease.inOutQuad(prog(t, FORM.b, MORPH.a))
         const s = lerp(0.9, 1, fp) * push * lerp(1, 0.8, mp)
-        const y = PH_.y + (1 - fp) * 40
+        const y = lerp(PH_.y, PH_.y1, ease.inOutCubic(prog(t, 6.35, 7.1))) + (1 - fp) * 40
         const a = ease.outQuad(prog(t, FORM.a, FORM.a + 0.35)) * (1 - ease.inQuad(prog(t, MORPH.a + 0.04, MORPH.b)))
         bx.save(); bx.translate(PH_.x, y); bx.scale(s / R, s / R); bx.translate(-phoneC.width / 2, -phoneC.height / 2)
         bx.globalAlpha = a
@@ -165,6 +178,13 @@ export default async function build(stage) {
           bx.beginPath(); bx.roundRect(218 - 747 - 4, 342 - 1115 - 4, 1074 + 8, 572 + 8, 40); bx.fill()
           bx.restore()
         }
+        const fd = FOOT_DIM * ease.inOutQuad(prog(t, STAMPS[0] - 0.3, STAMPS[0]))
+        if (fd > 0.003 && flat) {
+          bx.save(); cardSpace(bx, 'p3', J.x, J.y, J.h, J.rz)
+          bx.globalAlpha = fd * J.alpha; bx.fillStyle = '#0b0620'
+          bx.beginPath(); bx.roundRect(a.b[0] - bcx + 40, 1700 - bcy, a.b[2] - a.b[0] - 80, 290, 24); bx.fill()
+          bx.restore()
+        }
         if (t >= STAMPS[0] && flat) {
           bx.save(); cardSpace(bx, 'p3', J.x, J.y, J.h, J.rz)
           CHIPS.forEach((_, i) => { const [ca, sc] = chipState(t, i); if (ca > 0.003) drawChip(i, ca * J.alpha, sc) })
@@ -185,7 +205,7 @@ export default async function build(stage) {
           // the first chip (the one that would have ended it) catches a gold glint
           glint(bx, 'p3', J.x, J.y, J.h, J.rz, prog(t, STAMPS[2] + 0.25, STAMPS[2] + 0.75), { alpha: 0.9 * J.alpha, y0: 1115 - 662 - 80, y1: 1115 - 662 + 80, width: 0.1 })
         }
-        if (flat) glint(bx, 'p3', J.x, J.y, J.h, J.rz, ease.inOutQuad(prog(t, FOOT.a, FOOT.b)), { alpha: J.alpha, y0: 1735, y1: 1950, width: 0.1 })
+        if (flat) glint(bx, 'p3', J.x, J.y, J.h, J.rz, ease.inOutQuad(prog(t, FOOT.a, FOOT.b)), { alpha: 0.8 * J.alpha, y0: 1115 - 662 - 90, y1: 1115 - 312 + 90, width: 0.1 })
       }
 
       // ── copy

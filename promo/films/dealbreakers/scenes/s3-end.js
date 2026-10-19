@@ -20,7 +20,7 @@ const LINE = 'What matters, first.'
 const CH0 = 14, CH1 = 18
 const T_GLINT = 11.95
 const LINE_Y0 = H / 2, LINE_Y1 = 230, LINE_FS = 136
-const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 821, SUB_FS = 30
+const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 818, SUB_FS = 36
 
 export default async function build(stage) {
   const root = fill(stage, { background: C.void, opacity: 0 })
