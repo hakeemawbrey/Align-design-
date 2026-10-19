@@ -1,0 +1,409 @@
+<title>Align City Cards</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: a workbench. Details form on the left, the live card pair and the 12 fronts on the
+     right, print downloads at the foot. The cards keep their own fixed look in both themes. */
+  :root {
+    --bg: #f3f1f8; --panel: #ffffff; --ink: #1d1530; --ink-2: #5d5470; --ink-3: #8a829c;
+    --line: #dcd6e8; --accent: #6a4cc4; --accent-ink: #ffffff; --well: #e9e5f2; --gold: #a9802e;
+    --good: #2f7a54; --bad: #b3364f;
+    --display: 'EB Garamond', Georgia, serif;
+    --label: 'Space Mono', ui-monospace, Menlo, monospace;
+    --body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0d0a1a; --panel: #171229; --ink: #efe6d6; --ink-2: #b3a6c4; --ink-3: #7d6f94;
+    --line: #2c2444; --accent: #9a7be0; --accent-ink: #0d0a1a; --well: #120e22; --gold: #f2c75c;
+    --good: #7fd8b0; --bad: #e8628a; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #0d0a1a; --panel: #171229; --ink: #efe6d6; --ink-2: #b3a6c4; --ink-3: #7d6f94;
+    --line: #2c2444; --accent: #9a7be0; --accent-ink: #0d0a1a; --well: #120e22; --gold: #f2c75c;
+    --good: #7fd8b0; --bad: #e8628a; color-scheme: dark }
+
+  @font-face { font-family: 'EB Garamond'; font-style: italic; font-weight: 400; src: url(fonts/eb-garamond-latin-400-italic.woff2) format('woff2'); }
+  @font-face { font-family: 'EB Garamond'; font-style: normal; font-weight: 400; src: url(fonts/eb-garamond-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Space Mono'; font-style: normal; font-weight: 400; src: url(fonts/space-mono-latin-400-normal.woff2) format('woff2'); }
+
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.45; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 22px; }
+  h1 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(30px, 5vw, 42px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  .eyebrow { font-family: var(--label); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  header p { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; }
+
+  .bench { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 24px; align-items: start; }
+  @media (max-width: 860px) { .bench { grid-template-columns: minmax(0, 1fr); } }
+
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; min-width: 0; }
+  .panel h2 { font-family: var(--label); font-weight: 400; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+  form { display: flex; flex-direction: column; gap: 22px; }
+  fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  legend { padding: 0; margin-bottom: 10px; font-family: var(--label); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: var(--ink-2); }
+  .row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  input { font: inherit; font-size: 15px; color: var(--ink); background: var(--well); border: 1px solid var(--line); border-radius: 9px; padding: 9px 11px; width: 100%; min-width: 0; }
+  input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .hint { font-size: 12px; color: var(--ink-3); margin: 0; }
+
+  .stage { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+  .pair { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; padding: 22px 12px; background: var(--well); border-radius: 14px; }
+  .pair figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .pair canvas { width: min(250px, 42vw); aspect-ratio: 180 / 252; height: auto; max-width: 100%; display: block; box-shadow: 0 14px 30px rgba(10, 6, 30, 0.28); border-radius: 3px; }
+  figcaption { font-family: var(--label); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+
+  .fronts { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+  @media (max-width: 1000px) { .fronts { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .fronts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .fronts button { all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 5px; align-items: center; border-radius: 6px; padding: 4px; }
+  .fronts button:focus-visible { outline: 2px solid var(--accent); }
+  .fronts canvas { width: 100%; aspect-ratio: 180 / 252; height: auto; display: block; border-radius: 2px; box-shadow: 0 4px 10px rgba(10, 6, 30, 0.22); }
+  .fronts span { font-family: var(--label); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+  .fronts button[aria-pressed="true"] { background: var(--well); }
+  .fronts button[aria-pressed="true"] span { color: var(--ink); }
+
+  .exports { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
+  @media (max-width: 700px) { .exports { grid-template-columns: minmax(0, 1fr); } }
+  .export { display: flex; flex-direction: column; gap: 10px; }
+  .export h3 { margin: 0; font-family: var(--display); font-style: italic; font-weight: 400; font-size: 22px; }
+  .export p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .specs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .specs span { font-family: var(--label); font-size: 10.5px; letter-spacing: 0.06em; color: var(--ink-2); border: 1px solid var(--line); border-radius: 99px; padding: 2px 8px; font-variant-numeric: tabular-nums; }
+  button.go { font: inherit; font-weight: 600; font-size: 15px; color: var(--accent-ink); background: var(--accent); border: 0; border-radius: 10px; padding: 11px 16px; cursor: pointer; align-self: flex-start; }
+  button.go:disabled { opacity: 0.5; cursor: default; }
+  button.go:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .status { font-size: 13px; min-height: 1.4em; color: var(--ink-2); margin: 0; font-variant-numeric: tabular-nums; }
+  .status.ok { color: var(--good); } .status.err { color: var(--bad); }
+
+  .howto { margin-top: 24px; }
+  .howto ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; color: var(--ink-2); max-width: 75ch; }
+  .howto b { color: var(--ink); font-weight: 600; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Align · trading-card business cards</div>
+      <h1>Your city’s edition</h1>
+      <p>Put your details and your city on the Align zodiac cards, then download print-ready PDFs. Your edits stay in this browser.</p>
+    </div>
+  </header>
+
+  <div class="bench">
+    <section class="panel" aria-labelledby="details-h">
+      <h2 id="details-h">Your card</h2>
+      <form id="form" autocomplete="on">
+        <fieldset>
+          <legend>Back of every card</legend>
+          <label for="f-name">Name <input id="f-name" name="name" maxlength="28" required></label>
+          <label for="f-title">Title <input id="f-title" name="title" maxlength="28"></label>
+          <label for="f-email">Email <input id="f-email" name="email" type="email" maxlength="40"></label>
+          <label for="f-phone">Phone <input id="f-phone" name="phone" type="tel" maxlength="20"></label>
+        </fieldset>
+        <fieldset>
+          <legend>Your city</legend>
+          <div class="row">
+            <label for="f-city">City <input id="f-city" name="city" maxlength="18"></label>
+            <label for="f-code">Edition code <input id="f-code" name="code" maxlength="8"></label>
+          </div>
+          <p class="hint">The city and code print along the bottom of every front, for example ALIGN · NYC-01 · NEW YORK.</p>
+        </fieldset>
+        <fieldset>
+          <legend>Print run</legend>
+          <label for="f-run">Cards of each sign <input id="f-run" name="run" type="number" min="1" max="50" inputmode="numeric"></label>
+          <p class="hint" id="run-hint"></p>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="stage" aria-label="Preview">
+      <div class="pair">
+        <figure><canvas id="pv-front" width="500" height="700" role="img" aria-label="Front preview"></canvas><figcaption id="pv-front-cap">Front</figcaption></figure>
+        <figure><canvas id="pv-back" width="500" height="700" role="img" aria-label="Back preview"></canvas><figcaption>Back · every card</figcaption></figure>
+      </div>
+      <div class="fronts" id="fronts"></div>
+    </section>
+  </div>
+
+  <section class="exports" aria-label="Downloads">
+    <div class="panel export">
+      <h3>Print sheets</h3>
+      <p>Every card, numbered, ready for FedEx Office, Staples or an office printer. Fronts and backs alternate for double-sided printing.</p>
+      <div class="specs" id="sheet-specs"></div>
+      <button class="go" type="button" id="dl-sheets">Download print sheets</button>
+      <p class="status" id="st-sheets" aria-live="polite"></p>
+    </div>
+    <div class="panel export">
+      <h3>One of each</h3>
+      <p>The back, then the 12 fronts, one card per page at actual size with crop marks. For online card printers, or to check a proof.</p>
+      <div class="specs"><span>13 pages</span><span>3.25 × 4.25 in</span><span>card 2.5 × 3.5 in</span><span>1/8 in bleed</span><span>600 dpi</span></div>
+      <button class="go" type="button" id="dl-each">Download one of each</button>
+      <p class="status" id="st-each" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="panel howto" aria-labelledby="howto-h">
+    <h2 id="howto-h">Printing</h2>
+    <ol>
+      <li>Print <b>double-sided at 100% / actual size</b>, never “fit to page”, on <b>100 lb cover cardstock or heavier</b>, matte or silk.</li>
+      <li>Cut on the crop marks. Each card has its own marks with a strip of extra artwork between neighbours, so make two cuts between cards.</li>
+      <li>Cut cards are <b>2.5 × 3.5 in</b>, standard trading-card size: they fit penny sleeves and 3 × 4 in, 35pt top-loaders. Round the corners with a 1/8 in corner punch if you like.</li>
+    </ol>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+// ── card geometry, in pt (1/72 in) ── the card is 2.5 × 3.5 in with 1/8 in bleed all round
+const B = 9, TW = 180, TH = 252, CW = 198, CH = 270
+const DPI = 600, K = DPI / 72 // px per pt in the print renders
+
+const SIGNS = [
+  ['aries', 'Aries', '#fbc1b1'], ['taurus', 'Taurus', '#d5fbb1'], ['gemini', 'Gemini', '#fbdeb1'],
+  ['cancer', 'Cancer', '#b1d1fb'], ['leo', 'Leo', '#fbd0b1'], ['virgo', 'Virgo', '#fbb1c4'],
+  ['libra', 'Libra', '#eab1fb'], ['scorpio', 'Scorpio', '#fbb1cc'], ['sagittarius', 'Sagittarius', '#deb1fb'],
+  ['capricorn', 'Capricorn', '#b1fbec'], ['aquarius', 'Aquarius', '#b1defb'], ['pisces', 'Pisces', '#c5b1fb'],
+].map(([id, name, light]) => ({ id, name, light }))
+
+const DEFAULTS = { name: 'Hakeem Awbrey', title: 'Co-Founder', email: 'hakeem@comealign.com', phone: '832-298-6442', city: 'San Francisco', code: 'SF-01', run: 15 }
+const SITE = 'comealign.com'
+const STORE = 'align-city-cards'
+
+// ── state ──
+const form = document.getElementById('form')
+let info = { ...DEFAULTS }
+try { Object.assign(info, JSON.parse(localStorage.getItem(STORE) || '{}')) } catch {}
+for (const [k, v] of Object.entries(info)) { const f = form.elements[k]; if (f) f.value = v }
+const run = () => Math.max(1, Math.min(50, parseInt(info.run, 10) || 1))
+let selected = 'aries'
+
+// ── images ──
+const imgs = {}
+const loadImg = (src) => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src })
+const ready = Promise.all([
+  loadImg('img/back.jpg').then((i) => (imgs.back = i)),
+  ...SIGNS.map((s) => loadImg(`img/front-${s.id}.jpg`).then((i) => (imgs[s.id] = i))),
+  document.fonts.load('italic 16px "EB Garamond"'), document.fonts.load('16px "Space Mono"'),
+])
+
+// ── text helpers: canvas units are pt; letter spacing like CSS (trailing space counted) ──
+const chars = (t) => [...t]
+function spacedWidth(ctx, t, ls) { let w = 0; for (const c of chars(t)) w += ctx.measureText(c).width + ls; return w }
+function drawSpaced(ctx, t, x, y, ls) { for (const c of chars(t)) { ctx.fillText(c, x, y); x += ctx.measureText(c).width + ls } }
+// a centred line that shrinks to fit maxW
+function centred(ctx, t, { font, size, ls = 0, y, color, maxW = 136, cx = TW / 2 }) {
+  if (!t) return
+  let s = size, w
+  for (;;) { ctx.font = font(s); w = ls ? spacedWidth(ctx, t, ls * (s / size)) : ctx.measureText(t).width; if (w <= maxW || s < size * 0.5) break; s -= 0.25 }
+  ctx.fillStyle = color
+  if (ls) drawSpaced(ctx, t, cx - w / 2, y, ls * (s / size)); else ctx.fillText(t, cx - w / 2, y)
+}
+
+// back text, positioned from the measured layout of the original card (trim coordinates)
+function drawBackText(ctx) {
+  ctx.textBaseline = 'alphabetic'
+  centred(ctx, info.name, { font: (s) => `italic ${s}px "EB Garamond"`, size: 16, y: 184.5, color: '#efe6d6' })
+  centred(ctx, (info.title || '').toUpperCase(), { font: (s) => `${s}px "Space Mono"`, size: 5.4, ls: 1.728, y: 196, color: 'rgba(220,188,255,0.78)' })
+  if (info.title) { const g = ctx.createLinearGradient(74, 0, 106, 0); g.addColorStop(0, 'rgba(242,199,92,0)'); g.addColorStop(0.5, '#f2c75c'); g.addColorStop(1, 'rgba(242,199,92,0)'); ctx.fillStyle = g; ctx.fillRect(74, 201, 32, 0.5) }
+  centred(ctx, info.email, { font: (s) => `${s}px "Space Mono"`, size: 6.2, ls: 0.248, y: 213.75, color: '#efe6d6' })
+  centred(ctx, info.phone, { font: (s) => `${s}px "Space Mono"`, size: 6.2, ls: 0.496, y: 223.75, color: '#efe6d6' })
+  centred(ctx, SITE.toUpperCase(), { font: (s) => `${s}px "Space Mono"`, size: 4.5, ls: 1.08, y: 235.5, color: 'rgba(220,188,255,0.55)' })
+}
+
+// front footer: ALIGN · CODE … CITY … № NN/RUN, spread like the card's own flex row
+const FOOT = { size: 4.6, ls: 0.644, y: 237.5, left: 14, right: 166 }
+const footLeft = () => `ALIGN · ${(info.code || '').toUpperCase()}`
+const footCity = () => (info.city || '').toUpperCase()
+const serialText = (n) => `№ ${n ? String(n).padStart(2, '0') : '__'}/${String(run()).padStart(2, '0')}`
+function footLayout(ctx, serial) {
+  ctx.font = `${FOOT.size}px "Space Mono"`
+  const wl = spacedWidth(ctx, footLeft(), FOOT.ls), wc = spacedWidth(ctx, footCity(), FOOT.ls), ws = spacedWidth(ctx, serial, FOOT.ls)
+  const gap = (FOOT.right - FOOT.left - wl - wc - ws) / 2
+  return { xl: FOOT.left, xc: FOOT.left + wl + gap, xs: FOOT.right - ws, ws }
+}
+function drawFooter(ctx, sign, serial, { cityAndCode = true, number = true } = {}) {
+  const L = footLayout(ctx, serial)
+  ctx.textBaseline = 'alphabetic'
+  ctx.font = `${FOOT.size}px "Space Mono"`
+  if (cityAndCode) {
+    ctx.fillStyle = sign.light + 'c0'; drawSpaced(ctx, footLeft(), L.xl, FOOT.y, FOOT.ls)
+    ctx.fillStyle = sign.light + '8c'; drawSpaced(ctx, footCity(), L.xc, FOOT.y, FOOT.ls)
+  }
+  if (number) { ctx.fillStyle = '#f2c75c'; drawSpaced(ctx, serial, L.xs, FOOT.y, FOOT.ls) }
+}
+
+// ── previews: trim-cropped, drawn at the canvas's own resolution ──
+function paint(canvas, draw) {
+  const ctx = canvas.getContext('2d'); const k = canvas.width / TW
+  ctx.setTransform(k, 0, 0, k, 0, 0); ctx.clearRect(0, 0, TW, TH)
+  draw(ctx)
+}
+const drawFront = (s, n) => (ctx) => { ctx.drawImage(imgs[s.id], -B, -B, CW, CH); drawFooter(ctx, s, serialText(n)) }
+const drawBack = (ctx) => { ctx.drawImage(imgs.back, -B, -B, CW, CH); drawBackText(ctx) }
+
+const grid = document.getElementById('fronts')
+const thumbs = SIGNS.map((s) => {
+  const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', s.id === selected)
+  b.setAttribute('aria-label', `Show the ${s.name} front`)
+  const c = document.createElement('canvas'); c.width = 270; c.height = 378
+  const l = document.createElement('span'); l.textContent = s.name
+  b.append(c, l); grid.append(b)
+  b.addEventListener('click', () => { selected = s.id; thumbs.forEach((t) => t.b.setAttribute('aria-pressed', t.s.id === selected)); render() })
+  return { s, b, c }
+})
+
+// the form is the source of truth: the viewer can restore typed values (or a browser can
+// autofill them) without an input event, so read the fields every time we draw or build
+function syncFromForm() {
+  for (const k of Object.keys(DEFAULTS)) { const f = form.elements[k]; if (f) info[k] = f.value }
+  try { localStorage.setItem(STORE, JSON.stringify(info)) } catch {}
+}
+
+function render() {
+  syncFromForm()
+  const s = SIGNS.find((x) => x.id === selected)
+  paint(document.getElementById('pv-front'), drawFront(s, 1))
+  document.getElementById('pv-front-cap').textContent = `${s.name} · ${serialText(1)}`
+  paint(document.getElementById('pv-back'), drawBack)
+  for (const t of thumbs) paint(t.c, drawFront(t.s, 1))
+  const n = run()
+  document.getElementById('run-hint').textContent = `${n * 12} cards in all, numbered 01–${String(n).padStart(2, '0')} for each sign.`
+  const sheets = Math.ceil((n * 12) / 6)
+  document.getElementById('sheet-specs').innerHTML =
+    `<span>${n * 12} cards</span><span>${sheets * 2} pages</span><span>letter, landscape</span><span>6 per sheet</span><span>1/8 in bleed</span><span>crop marks</span><span>600 dpi</span>`
+}
+
+let raf = 0
+const schedule = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(render) }
+form.addEventListener('input', schedule)
+form.addEventListener('change', schedule)
+window.addEventListener('pageshow', schedule)
+window.addEventListener('focus', schedule)
+document.addEventListener('visibilitychange', () => { if (!document.hidden) schedule() })
+form.addEventListener('submit', (e) => e.preventDefault())
+ready.then(render)
+
+// ── print files ──
+const tick = () => new Promise((r) => setTimeout(r, 0))
+async function jpegBytes(draw) {
+  const c = document.createElement('canvas'); c.width = Math.round(CW * K); c.height = Math.round(CH * K)
+  const ctx = c.getContext('2d'); ctx.setTransform(K, 0, 0, K, 0, 0); draw(ctx)
+  const blob = await new Promise((r) => c.toBlob(r, 'image/jpeg', 0.92))
+  return new Uint8Array(await blob.arrayBuffer())
+}
+// full-bleed composites: art + the text that is the same on every copy
+const backBytes = () => jpegBytes((ctx) => { ctx.drawImage(imgs.back, 0, 0, CW, CH); ctx.translate(B, B); drawBackText(ctx) })
+const frontBytes = (s, serial, withNumber) => jpegBytes((ctx) => { ctx.drawImage(imgs[s.id], 0, 0, CW, CH); ctx.translate(B, B); drawFooter(ctx, s, serial, { number: withNumber }) })
+// the serial alone, as a small transparent strip laid over the card in the PDF
+function serialStrip(serial) {
+  const probe = document.createElement('canvas').getContext('2d')
+  const L = footLayout(probe, serial)
+  const x = L.xs - 1, y = FOOT.y - 6, w = L.ws + 2, h = 8
+  const c = document.createElement('canvas'); c.width = Math.ceil(w * K); c.height = Math.ceil(h * K)
+  const ctx = c.getContext('2d'); ctx.setTransform(K, 0, 0, K, -x * K, -y * K)
+  ctx.textBaseline = 'alphabetic'; ctx.font = `${FOOT.size}px "Space Mono"`; ctx.fillStyle = '#f2c75c'
+  drawSpaced(ctx, serial, L.xs, FOOT.y, FOOT.ls)
+  return { data: c.toDataURL('image/png'), x, y, w, h }
+}
+function cropLine(doc, x1, y1, x2, y2) { doc.line(x1, y1, x2, y2) }
+const slug = (t) => (t || 'card').replace(/[^A-Za-z0-9-]+/g, '-').replace(/^-|-$/g, '')
+
+async function buildSheets(status) {
+  const { jsPDF } = window.jspdf
+  const COLS = 3, ROWS = 2, PER = 6, PW = 792, PH = 612
+  const X0 = (PW - COLS * CW) / 2, Y0 = (PH - ROWS * CH) / 2, L = 18, GAP = 5
+  const doc = new jsPDF({ unit: 'pt', format: [PW, PH], orientation: 'landscape', compress: true })
+  status('Preparing the art…')
+  const back = await backBytes(); const fronts = {}
+  for (const s of SIGNS) { fronts[s.id] = await frontBytes(s, serialText(1), false); await tick() }
+  const strips = {}
+  const cards = []; for (const s of SIGNS) for (let n = 1; n <= run(); n++) cards.push([s, n])
+  const pages = Math.ceil(cards.length / PER)
+  const marks = () => {
+    doc.setDrawColor(0); doc.setLineWidth(0.5)
+    for (let c = 0; c < COLS; c++) for (const x of [X0 + c * CW + B, X0 + c * CW + CW - B]) {
+      cropLine(doc, x, Y0 - GAP - L, x, Y0 - GAP); cropLine(doc, x, Y0 + ROWS * CH + GAP, x, Y0 + ROWS * CH + GAP + L)
+    }
+    for (let r = 0; r < ROWS; r++) for (const y of [Y0 + r * CH + B, Y0 + r * CH + CH - B]) {
+      cropLine(doc, X0 - GAP - L, y, X0 - GAP, y); cropLine(doc, X0 + COLS * CW + GAP, y, X0 + COLS * CW + GAP + L, y)
+    }
+  }
+  const label = (t) => { doc.setFont('helvetica', 'normal'); doc.setFontSize(5.5); doc.setTextColor(136); doc.text(t, 30, PH / 2 + doc.getTextWidth(t) / 2, { angle: 90 }) }
+  for (let p = 0; p < pages; p++) {
+    status(`Building sheet ${p + 1} of ${pages}…`)
+    if (p > 0) doc.addPage([PW, PH], 'landscape')
+    const batch = cards.slice(p * PER, p * PER + PER)
+    batch.forEach(([s, n], i) => {
+      const r = Math.floor(i / COLS), c = i % COLS, x = X0 + c * CW, y = Y0 + r * CH
+      doc.addImage(fronts[s.id], 'JPEG', x, y, CW, CH, 'front-' + s.id, 'NONE')
+      const t = serialText(n); strips[t] ||= serialStrip(t)
+      const st = strips[t]; doc.addImage(st.data, 'PNG', x + B + st.x, y + B + st.y, st.w, st.h, 'serial-' + n)
+    })
+    marks()
+    const a = batch[0], z = batch[batch.length - 1]
+    label(`ALIGN ${(info.code || '').toUpperCase()} · FRONTS · ${a[0].name} ${String(a[1]).padStart(2, '0')} → ${z[0].name} ${String(z[1]).padStart(2, '0')}`)
+    doc.addPage([PW, PH], 'landscape')
+    batch.forEach((_, i) => {
+      const r = Math.floor(i / COLS), c = i % COLS
+      // centred grid, so backs line up whichever edge the printer flips on
+      doc.addImage(back, 'JPEG', X0 + (COLS - 1 - c) * CW, Y0 + r * CH, CW, CH, 'back', 'NONE')
+    })
+    marks(); label(`ALIGN ${(info.code || '').toUpperCase()} · BACKS (print double-sided)`)
+    await tick()
+  }
+  return { doc, name: `Align-${slug(info.code)}-print-sheets.pdf` }
+}
+
+async function buildEach(status) {
+  const { jsPDF } = window.jspdf
+  const PW = 234, PH = 306, M = 27, GAP = 10, LEN = 15
+  const doc = new jsPDF({ unit: 'pt', format: [PW, PH], orientation: 'portrait', compress: true })
+  const marks = () => {
+    doc.setDrawColor(0); doc.setLineWidth(0.5)
+    for (const x of [M, M + TW]) { cropLine(doc, x, M - GAP - LEN, x, M - GAP); cropLine(doc, x, M + TH + GAP, x, M + TH + GAP + LEN) }
+    for (const y of [M, M + TH]) { cropLine(doc, M - GAP - LEN, y, M - GAP, y); cropLine(doc, M + TW + GAP, y, M + TW + GAP + LEN, y) }
+  }
+  status('Preparing the back…')
+  doc.addImage(await backBytes(), 'JPEG', M - B, M - B, CW, CH, 'back', 'NONE'); marks()
+  for (const s of SIGNS) {
+    status(`Adding ${s.name}…`)
+    doc.addPage([PW, PH], 'portrait')
+    doc.addImage(await frontBytes(s, serialText(0), true), 'JPEG', M - B, M - B, CW, CH, 'front-' + s.id, 'NONE'); marks()
+    await tick()
+  }
+  return { doc, name: `Align-${slug(info.code)}-one-of-each.pdf` }
+}
+
+// ── downloads (the page cannot print or download by itself; the viewer confirms each save) ──
+const downloadsP = window.claude?.use ? window.claude.use('downloads').catch(() => null) : Promise.resolve(null)
+function wire(btnId, statusId, build) {
+  const btn = document.getElementById(btnId), st = document.getElementById(statusId)
+  const status = (t, cls = '') => { st.textContent = t; st.className = 'status ' + cls }
+  btn.addEventListener('click', async () => {
+    const downloads = await downloadsP
+    if (!downloads) { status('Saving files isn’t available in this view. Open this page on claude.ai to download.', 'err'); return }
+    syncFromForm()
+    if (!info.name.trim()) { status('Add your name first. It prints on the back of every card.', 'err'); form.elements.name.focus(); return }
+    btn.disabled = true
+    try {
+      await ready
+      render() // pick up exactly what is in the form right now, and show it
+      const { doc, name } = await build(status)
+      status('Finishing the PDF…'); await tick()
+      const blob = doc.output('blob')
+      status(`Confirm the save of ${name} (${(blob.size / 1048576).toFixed(1)} MB).`)
+      await downloads.save({ filename: name, data: blob })
+      status(`Saved ${name}.`, 'ok')
+    } catch (e) {
+      const code = e && e.code
+      if (code === 'declined') status('Save cancelled. Nothing was downloaded.')
+      else if (code === 'rate_limited') status('Another save is still waiting for confirmation. Finish that one, then try again.', 'err')
+      else status(`Couldn’t make the PDF${e && e.message ? ': ' + e.message : '.'}`, 'err')
+    } finally { btn.disabled = false }
+  })
+}
+wire('dl-sheets', 'st-sheets', buildSheets)
+wire('dl-each', 'st-each', buildEach)
+</script>
