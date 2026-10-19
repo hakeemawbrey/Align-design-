@@ -1,9 +1,9 @@
 // birthtime · END (10.85–15.0): the end line, then the LOOK A lockup (film 1 S8 recipe, retimed + compacted).
 // Timing (sound):
 //   10.95 "The sky already wrote you down." types centred (EB Garamond italic 104px, perChar 0.02) → typed ≈11.73
-//   11.73–12.02 the line holds alone · 12.02–12.42 it rises to y 196 at 0.78× (clear of the mark before it draws)
-//   12.32–12.75 seed-of-life rings draw · chakra dots 12.45 + i·0.06 (→ 12.81)
-//   12.66–13.06 wordmark "Align" · 12.88–13.18 "PUT YOUR FAITH IN THE STARS"
+//   11.73–12.0 the line holds alone · 12.0–12.6 it glides (inOutCubic) up to y 196 at 0.78×
+//   12.34–12.77 seed-of-life rings draw · chakra dots 12.48 + i·0.06 (→ 12.84)
+//   12.68–13.08 wordmark "Align" · 12.90–13.20 "PUT YOUR FAITH IN THE STARS"
 //   12.92 moon row outlines · phases light 13.0 + i·0.04 → FULL 13.32 (bloom ~13.42) → lockup complete ≈13.3
 //   13.55 one chakra pulse up the column · fade to void 14.5–14.85 · black 14.85–14.95 (last frame black)
 import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../../../src/lib.js'
@@ -12,7 +12,7 @@ import { drawMoonGlyph } from '../../../src/scenes/fx-moon.js'
 
 export const END_LINE = 'The sky already wrote you down.'
 export const T_LINE = 10.95, LINE_PER = 0.02
-const T_RISE = 12.02, T_RINGS = 12.32, T_DOTS = 12.45, T_WORD = 12.66, T_SUB = 12.88, T_ROW = 12.92, T_PULSE = 13.55
+const T_RISE = 12.0, T_RINGS = 12.34, T_DOTS = 12.48, T_WORD = 12.68, T_SUB = 12.9, T_ROW = 12.94, T_PULSE = 13.55
 const LINE_Y1 = 196, LINE_S1 = 0.78
 const MARK = 250, MARK_TOP = 300, WORD_TOP = 560, WORD_FS = 112, SUB_TOP = 722, SUB_FS = 30, MR_TOP = 778
 
@@ -51,7 +51,7 @@ export default async function build(stage) {
     update(t) {
       // end line: type → hold → rise
       line.update(t - T_LINE)
-      const rp = ease.inOutCubic(prog(t, T_RISE, T_RISE + 0.4))
+      const rp = ease.inOutCubic(prog(t, T_RISE, T_RISE + 0.6))
       lineBox.style.transform = `translateY(${lerp(0, LINE_Y1 - H / 2, rp)}px) scale(${lerp(1, LINE_S1, rp)})`
       glow.style.opacity = String(ease.inOutQuad(prog(t, 11.0, 12.6)) * (0.9 + 0.1 * Math.sin(t * 1.7)) + 0.3 * tw(t, [[T_PULSE, 0], [T_PULSE + 0.2, 1, ease.outQuad], [T_PULSE + 0.7, 0]]))
       rings.forEach((c, i) => c.setAttribute('stroke-dashoffset', String(1 - ease.outCubic(prog(t, T_RINGS + i * 0.025, T_RINGS + 0.34 + i * 0.025)))))

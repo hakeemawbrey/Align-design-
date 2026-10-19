@@ -1,9 +1,9 @@
-// birthtime · THE SIGN CARD (5.38–11.2): the real onboarding pull (card-sign-back → card-sign + YOUR CARD stamp).
+// birthtime · THE SIGN CARD (5.53–11.2): the real onboarding pull (card-sign-back → card-sign + YOUR CARD stamp).
 // Card centre (1270,540), body 600px tall; copy column on the left (x ≥ 300).
 // Timing (sound):
-//   5.38–5.95 face-down sign card grows out of the green disc (spring) · 5.9–8.25 it charges:
+//   5.53–6.10 face-down sign card grows out of the green disc (spring) · 5.9–8.25 it charges:
 //             green halo + rays swell, motes stream in, slow breathe 1.00→1.04, a tremble from 7.7
-//   5.95 "YOUR FIRST PULL / One card has your name." fades up (full 6.35), held to 7.95, out 7.95–8.15
+//   6.10 "YOUR FIRST PULL / One card has your name." fades up (full 6.5), held to 7.95, out 7.95–8.15
 //   8.25–8.65 the flip (rotateY 0→180) · 8.45 flash + pixel-star burst + shock ring (boom, glitter)
 //   8.82–9.00 "YOUR CARD" stamp drops and lands 9.00 (tick + boom), card kicks 9.00–9.18
 //   8.80 "YOUR SUN SIGN / Sun in Taurus." fades up (full 9.15), held to 10.55, out 10.55–10.75
@@ -13,7 +13,7 @@ import { W, H, A, SERIF, MONO, fill, img } from '../../../src/scenes/common.js'
 import { CARD_X as CX, CARD_Y as CY } from './hook.js'
 
 const BODY = 600
-const T_IN = 5.38, T_FLIP = 8.25, T_FLIP1 = 8.65, T_FLASH = 8.45, T_STAMP = 9.0, T_OUT = 10.55
+const T_IN = 5.53, T_FLIP = 8.25, T_FLIP1 = 8.65, T_FLASH = 8.45, T_STAMP = 9.0, T_OUT = 10.55
 const GREEN = '127,230,150'
 
 function copyBlock(parent, eyebrow, lines) {
@@ -70,7 +70,7 @@ export default async function build(stage) {
       const after = prog(t, T_FLIP1, T_FLIP1 + 0.4)
       const out = ease.inOutCubic(prog(t, T_OUT, 11.1))
       // ── card transform
-      const inP = ease.spring(prog(t, T_IN, 5.95), 0.08)
+      const inP = ease.spring(prog(t, T_IN, 6.1), 0.08)
       const breathe = 1 + 0.04 * charge + 0.012 * Math.sin(t * 5) * charge
       const trem = t > 7.7 && t < T_FLIP ? Math.sin(Math.round(t * 30) * 2.1) * 2.2 * prog(t, 7.7, T_FLIP) : 0
       const fp = ease.inOutCubic(prog(t, T_FLIP, T_FLIP1))
@@ -94,17 +94,17 @@ export default async function build(stage) {
       stampWrap.style.transform = `translate(${kick * 3 - out * 150 * 0.14}px, ${kick * 6 - out * 30 + out * 42}px)`
       stampWrap.style.filter = out > 0 ? `blur(${out * 10}px)` : 'none'
       // ── copy
-      const a1 = ease.outCubic(prog(t, 5.95, 6.35)) * (1 - ease.inQuad(prog(t, 7.95, 8.15)))
+      const a1 = ease.outCubic(prog(t, 6.1, 6.5)) * (1 - ease.inQuad(prog(t, 7.95, 8.15)))
       c1.style.opacity = String(a1)
-      c1.style.filter = `blur(${(1 - ease.outCubic(prog(t, 5.95, 6.35))) * 8}px)`
-      c1.style.transform = `translateY(${(1 - ease.outCubic(prog(t, 5.95, 6.35))) * 14}px)`
+      c1.style.filter = `blur(${(1 - ease.outCubic(prog(t, 6.1, 6.5))) * 8}px)`
+      c1.style.transform = `translateY(${(1 - ease.outCubic(prog(t, 6.1, 6.5))) * 14}px)`
       const a2 = ease.outCubic(prog(t, 8.8, 9.15)) * (1 - ease.inQuad(prog(t, T_OUT, T_OUT + 0.2)))
       c2.style.opacity = String(a2)
       c2.style.filter = `blur(${(1 - ease.outCubic(prog(t, 8.8, 9.15))) * 8}px)`
       c2.style.transform = `translateY(${(1 - ease.outCubic(prog(t, 8.8, 9.15))) * 14}px)`
       // ── canvas: rays, motes, burst, shock ring
       g.clearRect(0, 0, W, H)
-      const rayA = (0.05 + 0.16 * charge + 0.4 * fl) * (t > T_FLIP1 ? lerp(1, 0.45, after) : 1) * (1 - out) * clamp(prog(t, 5.6, 6.2))
+      const rayA = (0.05 + 0.16 * charge + 0.4 * fl) * (t > T_FLIP1 ? lerp(1, 0.45, after) : 1) * (1 - out) * clamp(prog(t, 5.75, 6.35))
       if (rayA > 0.003) {
         const rot = t * 0.12
         for (const ry of RAYS) {

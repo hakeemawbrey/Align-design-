@@ -33,7 +33,7 @@ export default async function build(stage) {
     start: 0, end: 15.01, root,
     update(t) {
       rose.update(t); teal.update(t)
-      const m = ease.inOutQuad(prog(t, 5.0, 6.2))
+      const m = ease.inOutQuad(prog(t, 5.15, 6.3))
       teal.root.style.opacity = String(m)
       earth.style.opacity = String(m * (0.75 + 0.25 * Math.sin(t * 1.4)) * (1 - prog(t, 10.6, 11.6)))
       dim.style.opacity = String(ease.inOutQuad(prog(t, 10.8, 12.4)))
