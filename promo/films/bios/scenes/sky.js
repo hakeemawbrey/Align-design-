@@ -43,8 +43,8 @@ export default async function build(stage) {
   // ── text column A: the big three
   const colA = el('div', { position: 'absolute', inset: 0, opacity: 0 }, root)
   const rail = el('div', { position: 'absolute', left: (BX - 40) + 'px', top: '520px', width: '3px', height: '0px', background: 'rgba(239,230,214,0.22)' }, root)
-  const eyeA = el('div', { position: 'absolute', left: BX + 'px', top: '300px', fontFamily: MONO, fontSize: '26px', letterSpacing: '0.3em', color: 'rgba(239,230,214,0.72)', whiteSpace: 'nowrap', opacity: 0 }, colA, 'ASTROLOGY, MINUS THE HOMEWORK')
-  const titleA = charLine(colA, 'One sky. Three yous.', { left: BX + 'px', top: '338px', fontFamily: SERIF, fontStyle: 'italic', fontSize: '104px', lineHeight: 1.0, letterSpacing: '-0.01em', textShadow: '0 2px 30px rgba(8,5,34,0.55)' })
+  const eyeA = el('div', { position: 'absolute', left: BX + 'px', top: '290px', fontFamily: MONO, fontSize: '32px', letterSpacing: '0.3em', color: 'rgba(239,230,214,0.85)', whiteSpace: 'nowrap', opacity: 0 }, colA, 'ASTROLOGY, MINUS THE HOMEWORK')
+  const titleA = charLine(colA, 'One sky. Three yous.', { left: BX + 'px', top: '344px', fontFamily: SERIF, fontStyle: 'italic', fontSize: '104px', lineHeight: 1.0, letterSpacing: '-0.01em', textShadow: '0 2px 30px rgba(8,5,34,0.55)' })
   const ITEMS = [
     { label: 'Sun', sub: 'Taurus', c: '#f2c75c', g: 'radial-gradient(circle at 36% 32%, #fff6d0 0%, #f2d06a 30%, #b88a22 72%, #5a3f0c 100%)', glow: '242,199,92' },
     { label: 'Moon', sub: 'Sagittarius', c: '#8fb0ff', g: 'radial-gradient(circle at 36% 32%, #e2ecff 0%, #6f9cff 30%, #2f56d8 72%, #10215e 100%)', glow: '74,114,255' },
@@ -60,11 +60,11 @@ export default async function build(stage) {
 
   // ── text column B: the user manual
   const colB = el('div', { position: 'absolute', inset: 0, opacity: 0 }, root)
-  const eyeB = el('div', { position: 'absolute', left: BX + 'px', top: '254px', fontFamily: MONO, fontSize: '26px', letterSpacing: '0.3em', color: 'rgba(239,230,214,0.72)', whiteSpace: 'nowrap', opacity: 0 }, colB, 'KNOW YOURSELF FIRST')
-  const titleB = charLine(colB, 'Taurus, the\nuser manual.', { left: BX + 'px', top: '292px', fontFamily: SERIF, fontStyle: 'italic', fontSize: '104px', lineHeight: 1.0, letterSpacing: '-0.01em', textShadow: '0 2px 30px rgba(8,5,34,0.55)' })
+  const eyeB = el('div', { position: 'absolute', left: BX + 'px', top: '244px', fontFamily: MONO, fontSize: '32px', letterSpacing: '0.3em', color: 'rgba(239,230,214,0.85)', whiteSpace: 'nowrap', opacity: 0 }, colB, 'KNOW YOURSELF FIRST')
+  const titleB = charLine(colB, 'Taurus, the\nuser manual.', { left: BX + 'px', top: '298px', fontFamily: SERIF, fontStyle: 'italic', fontSize: '104px', lineHeight: 1.0, letterSpacing: '-0.01em', textShadow: '0 2px 30px rgba(8,5,34,0.55)' })
   const quote = el('div', { position: 'absolute', left: BX + 'px', top: '560px', opacity: 0 }, colB)
-  el('div', { fontFamily: MONO, fontSize: '24px', letterSpacing: '0.32em', color: 'rgba(239,230,214,0.6)', marginBottom: '16px' }, quote, 'STRENGTHS')
-  el('div', { fontFamily: SANS, fontWeight: 400, fontSize: '42px', lineHeight: 1.36, color: C.bone, whiteSpace: 'pre', letterSpacing: '-0.01em', textShadow: '0 2px 20px rgba(8,4,24,0.6)' }, quote, 'Steady to the bone.\nBuilds a home anywhere.\nStill knows how you take your coffee.')
+  el('div', { fontFamily: MONO, fontSize: '30px', letterSpacing: '0.32em', color: 'rgba(239,230,214,0.85)', marginBottom: '14px' }, quote, 'STRENGTHS')
+  el('div', { fontFamily: SANS, fontWeight: 400, fontSize: '48px', lineHeight: 1.3, color: C.bone, whiteSpace: 'pre', letterSpacing: '-0.01em', textShadow: '0 2px 20px rgba(8,4,24,0.6)' }, quote, 'Steady to the bone.\nBuilds a home anywhere.\nStill knows how you take your coffee.')
 
   let rw = 0
   return {
@@ -113,7 +113,7 @@ export default async function build(stage) {
       const railB = ease.outCubic(prog(t, Q_IN - 0.05, Q_IN + 0.5))
       const bOut = ease.inOutQuad(prog(t, OUT - 0.04, OUT + 0.22))
       if (t < SWAP + 0.1) { rail.style.top = '520px'; rail.style.height = (270 * railA) + 'px'; rail.style.opacity = String(railA) }
-      else { rail.style.top = '562px'; rail.style.height = (232 * railB) + 'px'; rail.style.opacity = String(railB * (1 - bOut)) }
+      else { rail.style.top = '566px'; rail.style.height = (240 * railB) + 'px'; rail.style.opacity = String(railB * (1 - bOut)) }
 
       // column B
       colB.style.opacity = String(prog(t, SWAP, SWAP + 0.05) * (1 - bOut))

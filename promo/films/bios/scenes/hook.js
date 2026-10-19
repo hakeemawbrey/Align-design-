@@ -14,7 +14,7 @@ const BIOS = [
   ['work hard, play hard', 1230, 200, 44, 0.32],
   ['here for the vibes', 420, 560, 46, 0.42],
   ["pineapple on pizza? let's talk", 1500, 570, 40, 0.5],
-  ['no drama please', 1000, 430, 48, 0.6],
+  ['no drama please', 1000, 500, 48, 0.45],
 ]
 const PER = 0.038
 const CONV = [0.94, 1.3]            // bios slide into the centre and smear

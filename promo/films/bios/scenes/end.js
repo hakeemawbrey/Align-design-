@@ -7,7 +7,7 @@ import { IMG, PEOPLE, img } from '../../../src/scenes/common.js'
 import { drawMoonGlyph } from '../../../src/scenes/fx-moon.js'
 import { W, H, SANS, SERIF, MONO, fill, makeTicks, ROSE } from './kit.js'
 
-const T_TYPE = 10.22, PER = 0.03, FADE = 0.2
+const T_TYPE = 10.06, PER = 0.03, FADE = 0.2
 const T_RISE = 11.75, LINE_Y1 = 150, LINE_S1 = 0.7
 const T_RINGS = 11.85, T_DOTS = 12.2, T_WORD = 12.5, T_SUB = 12.75, T_ROW = 12.8, T_LIT = 12.9, LIT_STEP = 0.04
 const T_PULSE = 13.5, T_FADE = 14.5
