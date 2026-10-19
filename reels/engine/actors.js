@@ -120,7 +120,8 @@ export function makeFigure(rng, { hue = 0, skyTop = '#7fb6ff', skyLow = '#203050
   return {
     object: fig,
     mode,
-    headTop: () => new THREE.Vector3(0, (1.08 + headR * 1.75) * scale, 0).applyMatrix4(fig.matrixWorld),
+    // the very top of the head, following the hop and the head's own motion
+    headTop: () => head.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, headR * 0.95 * scale, 0)),
     headWorld: () => head.getWorldPosition(new THREE.Vector3()),
     // look: world point to turn the head to; hop: 0..1 progress of a little hop
     update(t, { look, hop = -1, wave = 0, power = 0, burst = -1 } = {}) {
@@ -592,7 +593,8 @@ export function makeGlyphSprite(glyph, color = '#ff1f1f', glow = null) {
       const sc = 0.62 * easeOutBack(k, 3)
       sprite.scale.set(sc, sc, 1)
       sprite.position.copy(at)
-      sprite.position.y += 0.12 + Math.sin(p * 3) * 0.03 + smooth(0, 0.3, p) * 0.05
+      // sit the glyph's bottom edge clear of the head: half its height plus a gap
+      sprite.position.y += sc * 0.5 + 0.1 + Math.sin(p * 3) * 0.03 + smooth(0, 0.3, p) * 0.05
       sprite.material.rotation = Math.sin(p * 2.2) * 0.06
     },
   }
