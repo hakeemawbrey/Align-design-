@@ -71,16 +71,16 @@ export default async function build(stage) {
     textShadow: '0 0 8px rgba(255,140,40,0.9), 0 0 2px rgba(255,200,120,0.9)', opacity: 0 }, card, '’19 07 04')
 
   // ── left: RETOUCH sliders
-  const panel = el('div', { position: 'absolute', left: '340px', top: '318px', width: '300px', opacity: 0 }, root)
-  el('div', { fontFamily: MONO, fontSize: '19px', letterSpacing: '0.32em', color: 'rgba(239,230,214,0.6)', marginBottom: '22px' }, panel, 'RETOUCH')
+  const panel = el('div', { position: 'absolute', left: '286px', top: '286px', width: '340px', opacity: 0 }, root)
+  el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.3em', color: 'rgba(239,230,214,0.75)', marginBottom: '20px' }, panel, 'RETOUCH')
   const SL = ['SMOOTH', 'SLIM', 'EYES', 'GLOW']
   const sliders = SL.map((name) => {
-    const row = el('div', { position: 'relative', height: '62px' }, panel)
-    el('div', { position: 'absolute', left: 0, top: 0, fontFamily: MONO, fontSize: '17px', letterSpacing: '0.2em', color: 'rgba(239,230,214,0.82)' }, row, name)
-    const val = el('div', { position: 'absolute', right: 0, top: 0, fontFamily: MONO, fontSize: '17px', color: 'rgba(239,230,214,0.82)' }, row, '0')
-    el('div', { position: 'absolute', left: 0, top: '34px', width: '300px', height: '2px', background: 'rgba(239,230,214,0.22)' }, row)
-    const fillE = el('div', { position: 'absolute', left: 0, top: '34px', width: '0px', height: '2px', background: ROSE }, row)
-    const knob = el('div', { position: 'absolute', left: 0, top: '28px', width: '14px', height: '14px', marginLeft: '-7px', borderRadius: '50%', background: BONE, boxShadow: '0 0 10px rgba(255,143,177,0.7)' }, row)
+    const row = el('div', { position: 'relative', height: '84px' }, panel)
+    el('div', { position: 'absolute', left: 0, top: 0, fontFamily: MONO, fontSize: '30px', letterSpacing: '0.16em', color: 'rgba(239,230,214,0.92)' }, row, name)
+    const val = el('div', { position: 'absolute', right: 0, top: 0, fontFamily: MONO, fontSize: '30px', color: 'rgba(239,230,214,0.92)' }, row, '0')
+    el('div', { position: 'absolute', left: 0, top: '52px', width: '340px', height: '3px', background: 'rgba(239,230,214,0.25)' }, row)
+    const fillE = el('div', { position: 'absolute', left: 0, top: '52px', width: '0px', height: '3px', background: ROSE }, row)
+    const knob = el('div', { position: 'absolute', left: 0, top: '45px', width: '17px', height: '17px', marginLeft: '-8.5px', borderRadius: '50%', background: BONE, boxShadow: '0 0 10px rgba(255,143,177,0.7)' }, row)
     return { val, fillE, knob }
   })
   const BASE = [0.16, 0.08, 0.2, 0.28], MAX = [1, 0.92, 0.86, 1]
@@ -95,11 +95,11 @@ export default async function build(stage) {
 
   // ── right: the lies stack up
   const TAGS = ['GOOD ANGLE', 'FILTER · PEACH', 'TAKEN IN 2019', 'RETOUCHED']
-  const tagBox = el('div', { position: 'absolute', left: '1258px', top: '338px' }, root)
+  const tagBox = el('div', { position: 'absolute', left: '1248px', top: '300px' }, root)
   const tags = TAGS.map((txt, i) => {
-    const row = el('div', { position: 'relative', height: '66px', whiteSpace: 'nowrap', opacity: 0 }, tagBox)
-    const sq = el('div', { position: 'absolute', left: 0, top: '9px', width: '11px', height: '11px', background: BONE }, row)
-    const tx = el('div', { position: 'absolute', left: '28px', top: 0, fontFamily: MONO, fontSize: '22px', letterSpacing: '0.16em', color: BONE }, row, txt)
+    const row = el('div', { position: 'relative', height: '82px', whiteSpace: 'nowrap', opacity: 0 }, tagBox)
+    const sq = el('div', { position: 'absolute', left: 0, top: '14px', width: '16px', height: '16px', background: BONE }, row)
+    const tx = el('div', { position: 'absolute', left: '36px', top: 0, fontFamily: MONO, fontSize: '39px', lineHeight: '46px', letterSpacing: '0.1em', color: BONE }, row, txt)
     return { row, sq, tx }
   })
 
@@ -134,19 +134,19 @@ export default async function build(stage) {
       root.style.opacity = String(1 - prog(t, 3.12, 3.3))
       // sliders
       const pOut = 1 - ease.inOutQuad(prog(t, 2.6, 2.8))
-      panel.style.opacity = String(0.88 * ease.outQuad(prog(t, 0.08, 0.4)) * pOut)
+      panel.style.opacity = String(0.95 * ease.outQuad(prog(t, 0.08, 0.4)) * pOut)
       panel.style.transform = `translateX(${(1 - ease.outCubic(prog(t, 0.08, 0.5))) * -24}px)`
       sliders.forEach((sl, i) => {
         const v = sliderVal(i, t)
-        sl.fillE.style.width = (300 * v) + 'px'
-        sl.knob.style.left = (300 * v) + 'px'
+        sl.fillE.style.width = (340 * v) + 'px'
+        sl.knob.style.left = (340 * v) + 'px'
         sl.val.textContent = String(Math.round(v * 100))
       })
       // tags: each lights with its photo, then stays (dimmed) so the lies accumulate
       tags.forEach((tg, i) => {
         const a = ease.outCubic(prog(t, S[i] + 0.03, S[i] + 0.18))
         const active = t < HOOK.flick ? s === i : t < HOOK.brk ? s === i : false
-        tg.row.style.opacity = String(a * (active ? 1 : 0.55) * pOut)
+        tg.row.style.opacity = String(a * (active ? 1 : 0.9) * pOut)
         tg.row.style.transform = `translateX(${(1 - a) * 22}px)`
         tg.sq.style.background = active ? ROSE : BONE
         tg.sq.style.boxShadow = active ? '0 0 12px rgba(255,143,177,0.9)' : 'none'

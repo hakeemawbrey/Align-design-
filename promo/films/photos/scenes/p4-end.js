@@ -1,5 +1,5 @@
 // photos · P4 END (10.2–15). "Fall for the chart." → the Align lockup (film 1: PUT YOUR FAITH IN THE STARS + moon row).
-//   10.60–11.75  the end line types in at centre (Inter 500 96px, "chart." rose Garamond italic), holds
+//   10.35–11.50  the end line types in at centre (Inter 500 96px, "chart." rose Garamond italic), holds
 //   11.95–12.40  it glides up to y 190 (scale .80) as the lockup arrives under it
 //   12.22–12.62  seed-of-life rings draw · 12.48–12.95 chakra dots pop bottom→top · 12.75–13.20 wordmark "Align"
 //   12.95–13.30  PUT YOUR FAITH IN THE STARS · moon row outlines 13.00 → phases light 13.05 + i·0.04 → FULL 13.37 (bloom)
@@ -10,7 +10,7 @@ import { IMG, PEOPLE, img } from '../../../src/scenes/common.js'
 import { drawMoonGlyph } from '../../../src/scenes/fx-moon.js'
 import { W, H, SANS, SERIF, MONO, BONE, ROSE } from './kit.js'
 
-const E = { type: 10.6, per: 0.05, up: [11.95, 12.4], rings: 12.22, dots: 12.48, word: [12.75, 13.2], sub: [12.95, 13.3], mrow: 13.0, mlit: 13.05, pulse: 13.4, fade: [14.5, 14.85], black: [14.85, 14.95] }
+const E = { type: 10.35, per: 0.05, up: [11.95, 12.4], rings: 12.22, dots: 12.48, word: [12.75, 13.2], sub: [12.95, 13.3], mrow: 13.0, mlit: 13.05, pulse: 13.4, fade: [14.5, 14.85], black: [14.85, 14.95] }
 const L = { lineY: 190, mark: 300, markTop: 282, wordTop: 590, wordFS: 118, subTop: 762, subFS: 34, mrTop: 818, gap: 58, r: 12, mh: 72, OCX: 960, OCY: 560, ORX: 830, ORY: 420 }
 const LINE = [['Fall for the ', {}], ['chart.', { fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400, fontSize: '1.18em', color: ROSE }]]
 

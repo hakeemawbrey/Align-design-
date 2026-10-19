@@ -3,7 +3,7 @@
 //   2.95–3.20  Juniper's blind card (card-profile-3, aura veil) lands over the blurred-away photo, same footprint;
 //              the ticks pull in and re-frame it 3.0–3.4
 //   3.40/3.57  "Charts don't." (fully on 3.77, out 5.30–5.50)
-//   5.35–5.60  ticks converge and go · 5.40–6.05 the card glides right (1290,480 · body h 700)
+//   5.35–5.60  ticks converge and go · 5.40–6.05 the card glides right (1290,480 · body h 784, hero scale)
 //   5.78/5.98/6.18  Sun — Libra · Moon — Gemini · Rising — Aquarius (Juniper's real big three, app data)
 //   7.00       "The face comes after." (in-app line; fully on ~7.86, out 9.95–10.15)
 //   8.40–9.10  the veil lifts: aura-cam sweep across the photo window → her real, unfiltered face (juniper.jpg)
@@ -19,7 +19,7 @@ const PH = { s: 1.72, w: 720, h: 960, fx: 348, fy: 516 }
 const PH_W = PH.w * PH.s, PH_H = PH.h * PH.s, PH_L = WIN.w / 2 - PH.fx * PH.s, PH_T = WIN.h * 0.5 - PH.fy * PH.s
 
 const T = { cardIn: 2.95, cap: 3.4, capOut: 5.3, glide: [5.4, 6.05], rows: [5.78, 5.98, 6.18], line: 7.0, rev: [8.4, 9.1], chip: 9.1, out: 9.95 }
-const K = [[2.95, 960, 455, 620], [5.4, 960, 455, 620], [6.05, 1290, 480, 700], [11, 1290, 480, 700]]
+const K = [[2.95, 960, 455, 620], [5.4, 960, 455, 620], [6.05, 1290, 480, 784], [11, 1290, 480, 784]]
 function cardAt(t) {
   if (t <= K[0][0]) return K[0].slice(1)
   for (let i = 1; i < K.length; i++) if (t <= K[i][0]) {
@@ -35,7 +35,7 @@ const ICONS = {
   rise: '<svg width="30" height="30" viewBox="0 0 30 30"><path d="M15 25V6M7 13l8-8 8 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 }
 const ROWS = [['sun', '#f2c75c', 'Sun', 'Libra'], ['moon', '#b9a2ff', 'Moon', 'Gemini'], ['rise', '#ff8fb1', 'Rising', 'Aquarius']]
-const COL_X = 300, ROW_Y = [318, 440, 562]
+const COL_X = 260, ROW_Y = [318, 440, 562]
 
 export default async function build(stage) {
   const root = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, stage)
