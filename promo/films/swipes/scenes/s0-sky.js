@@ -1,10 +1,10 @@
-// swipes · S0 · THE SKY (4.15–15.0). The one sky for the rest of the film, under everything: it slides into place during
+// swipes · S0 · THE SKY (3.65–15.0). The one sky for the rest of the film, under everything: it slides into place during
 // the look-up pan (cold + dim → full colour), dims a touch under the deck, comes back for the end. Twinkles at the edges.
 import { prog, ease, lerp } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { sky, twinkles, layerCanvas, PAN, panK } from './kit.js'
 
-export const skyDim = t => 1 - 0.2 * ease.inOutQuad(prog(t, 6.1, 6.9)) + 0.2 * ease.inOutQuad(prog(t, 10.5, 11.2))
+export const skyDim = t => 1 - 0.2 * ease.inOutQuad(prog(t, 5.6, 6.4)) + 0.2 * ease.inOutQuad(prog(t, 10.1, 10.7))
 
 export default function build(stage) {
   const root = fill(stage, { background: '#0b0620' })

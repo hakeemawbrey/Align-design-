@@ -8,7 +8,7 @@ export { drawGrain, grainOpacity, getSky, layerCanvas }
 // ── the one moon (top right, where the look-up pan lands)
 export const MOON = { x: 1716, y: 122, r: 52, phase: 0.12, alpha: 1 }
 // the look-up: the camera tilts from the phone to the sky
-export const PAN = { a: 3.85, b: 5.25 }
+export const PAN = { a: 3.7, b: 4.6 }
 export const panK = t => ease.inOutCubic(prog(t, PAN.a, PAN.b))
 
 /** the sky. During the pan it slides down into place (zoomed, cold, dim → colour); then a slow push that never stops. */
@@ -21,7 +21,7 @@ export function sky(bx, t, dim = 1) {
   drawSky(bx, t, { zoom, dx: 0, dy, dim, moon: { ...MOON, y: MOON.y - 420 * (1 - p), alpha: ease.inQuad(prog(p, 0.35, 1)) } })
 }
 
-// ── ambient pixel twinkles, kept to the frame edges (clear of cards, copy and the moon). In from 5.6.
+// ── ambient pixel twinkles, kept to the frame edges (clear of cards, copy and the moon). In from 4.9.
 const PIXC = ['#e8628a', '#f2c75c', '#9a7be0', '#f29a4a', '#ff8fb1', '#c9a6ff', '#ffd98a']
 const STAR_SPRITES = [
   ['...X...', '...X...', '..XXX..', 'XXXCXXX', '..XXX..', '...X...', '...X...'],
@@ -41,7 +41,7 @@ while (PIX.length < 16) {
   const x = 60 + pr() * (W - 120), y = 50 + pr() * (H - 100)
   if (x > 230 && x < 1690 && y > 120 && y < 975) continue
   if (x > 1560 && y < 300) continue
-  PIX.push({ x, y, px: pr() < 0.3 ? 4 : 3, col: PIXC[Math.floor(pr() * PIXC.length)], ph: pr() * 6.28, sp: 1.6 + pr() * 2.4, kind: Math.floor(pr() * 4), t0: 5.6 + pr() * 1.2 })
+  PIX.push({ x, y, px: pr() < 0.3 ? 4 : 3, col: PIXC[Math.floor(pr() * PIXC.length)], ph: pr() * 6.28, sp: 1.6 + pr() * 2.4, kind: Math.floor(pr() * 4), t0: 4.9 + pr() * 1.2 })
 }
 export function twinkles(bx, t) {
   bx.imageSmoothingEnabled = false

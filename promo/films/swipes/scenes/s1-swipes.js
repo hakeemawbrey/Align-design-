@@ -1,4 +1,4 @@
-// swipes · S1 · THE PROBLEM (0–5.6). A 2am room, cold phone light. A thumb flicks faces away so fast they smear; the
+// swipes · S1 · THE PROBLEM (0–4.7). A 2am room, cold phone light. A thumb flicks faces away so fast they smear; the
 // generic app's counter rolls SWIPES TODAY 300 → 312. "312 swipes." / "0 butterflies." (both fully in by 1.4s).
 // The swiping stops; one hesitant half-drag that springs back; the screen goes off. Then the camera tilts up off the
 // phone (the room slides down out of frame) into the sky (sky.js, drawn by s0-sky underneath): look up.
@@ -22,11 +22,11 @@ const N = SWIPES.length, COUNT0 = 300                                           
 const DRAG = { a: 2.2, b: 2.95 }                                                  // one hesitant half-drag, springs back
 const CAP1 = 0.12, CAP2 = 0.9, CAP_OUT = 3.3
 const OFF = 3.58                                                                  // the screen goes off
-const END = 5.6
+const END = 4.7
 
 // ── phone geometry (phone px, origin = phone top-left)
 const PW = 470, PH = 960, INSET = 14, SW = PW - 2 * INSET, SH = PH - 2 * INSET
-const CW = 398, CH = 590, CCX = SW / 2, CCY = 126 + CH / 2
+const CW = 398, CH = 590, CCX = SW / 2, CCY = 150 + CH / 2
 const PHONE_X = 610, PHONE_Y = 560
 
 const dirOf = k => (k % 5 === 3) ? 1 : -1
@@ -85,8 +85,6 @@ export default function build(stage) {
   const root = fill(stage, { background: 'transparent' })
   // the camera: the room (and a soft tail above it into the sky) slides down as we look up
   const cam = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
-  el('div', { position: 'absolute', left: 0, top: '-560px', width: W + 'px', height: '562px',
-    background: `linear-gradient(180deg, rgba(11,13,18,0) 0%, rgba(11,13,18,0.55) 45%, ${ROOM} 100%)` }, cam)
   const room = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', overflow: 'hidden',
     background: `radial-gradient(90% 100% at 32% 55%, #161a22 0%, #0f1218 50%, ${ROOM} 100%)` }, cam)
   // the phone's cold light on the room (breathes with the faces; dies with the screen)
@@ -104,10 +102,10 @@ export default function build(stage) {
   el('div', { position: 'absolute', right: '36px', top: '27px', width: '34px', height: '15px', borderRadius: '4px', border: '2px solid rgba(240,242,246,0.7)' }, ui,
     '<div style="position:absolute;left:2px;top:2px;width:8px;height:7px;border-radius:1px;background:#e8628a"></div>')
   // the counter (generic UI)
-  const pill = el('div', { position: 'absolute', left: '50%', top: '66px', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: '14px', padding: '8px 22px 8px 24px',
-    borderRadius: '24px', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)', whiteSpace: 'nowrap' }, ui)
-  el('span', { fontFamily: MONO, fontSize: '16px', letterSpacing: '0.18em', color: 'rgba(235,238,244,0.62)' }, pill, 'SWIPES TODAY')
-  const num = el('span', { display: 'inline-block', fontFamily: SANS, fontWeight: 700, fontSize: '28px', color: '#f4f5f7', fontVariantNumeric: 'tabular-nums', minWidth: '52px', textAlign: 'right' }, pill, String(COUNT0))
+  const pill = el('div', { position: 'absolute', left: '50%', top: '66px', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: '16px', padding: '6px 26px 6px 28px',
+    borderRadius: '34px', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)', whiteSpace: 'nowrap' }, ui)
+  el('span', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.1em', color: 'rgba(235,238,244,0.72)' }, pill, 'SWIPES TODAY')
+  const num = el('span', { display: 'inline-block', fontFamily: SANS, fontWeight: 700, fontSize: '48px', lineHeight: 1.15, color: '#f4f5f7', fontVariantNumeric: 'tabular-nums', minWidth: '88px', textAlign: 'right' }, pill, String(COUNT0))
   // the stack
   const deck = el('div', { position: 'absolute', inset: 0 }, ui)
   const blurs = blurDefs(root, 6, 'swb')
@@ -140,7 +138,11 @@ export default function build(stage) {
     start: 0, end: END, root,
     update(t) {
       const p = panK(t)
-      cam.style.transform = `translateY(${((H + 580) * p).toFixed(1)}px)`
+      cam.style.transform = `translateY(${(H * 0.9 * p).toFixed(1)}px)`
+      // as it slides: a feathered top edge (no plate line) and the room fading out
+      const fe = Math.round(240 * clamp(p * 6))
+      cam.style.maskImage = cam.style.webkitMaskImage = fe > 0 ? `linear-gradient(180deg, transparent 0px, #000 ${fe}px)` : 'none'
+      cam.style.opacity = String(1 - ease.inQuad(p))
       // slow push-in on the phone, a little drift
       const push = ease.inOutQuad(prog(t, 0, 3.9))
       const sc = lerp(1.0, 1.07, push)

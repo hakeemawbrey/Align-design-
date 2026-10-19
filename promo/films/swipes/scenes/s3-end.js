@@ -1,19 +1,20 @@
-// swipes · S3 · END (10.9–15.0). Over the one sky (s0): "Slow down. Look up." types in (typed by ≈11.9), a gold glint
-// runs through "Look up.", the line rises as the lockup forms (film 3 g4 / ghosted recipe, retimed): rings 12.78,
-// chakra dots 12.83+, wordmark "Align" 12.88, "BLIND BY DESIGN" 12.96 → complete ≈13.25, held; pulse 13.6; the moon
+// swipes · S3 · END (10.45–15.0). Over the one sky (s0), crossfading in as the deck leaves: "Slow down. Look up." types
+// in (typed by ≈11.5), a gold glint runs through "Look up.", the line rises as the lockup forms (film 3 g4 / ghosted
+// recipe, retimed): rings 12.62, chakra dots 12.67+, wordmark "Align" 12.72, "BLIND BY DESIGN" 12.8 → complete ≈13.1,
+// held; pulse 13.6; the moon
 // glows a touch 13.75; fade to black 14.5–15.0 (last frame black).
 import { lerp, prog, ease, tw, el, mix, C } from '../../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { layerCanvas, pocketCanvas, MOON } from './kit.js'
 
-const T0 = 10.9, T1 = 15.01, T_END = 15.0
-const T_TYPE = 11.18, PER = 0.038, FADE = 0.12
-const T_RISE = 12.45, T_RINGS = 12.78, T_DOTS = 12.83, T_WORD = 12.88, T_SUB = 12.96
+const T0 = 10.45, T1 = 15.01, T_END = 15.0
+const T_TYPE = 10.7, PER = 0.038, FADE = 0.12
+const T_RISE = 12.3, T_RINGS = 12.62, T_DOTS = 12.67, T_WORD = 12.72, T_SUB = 12.8
 const T_PULSE = 13.6, T_MOON = 13.75, T_OUT = 14.5
 const T_HOLD = T_RINGS + 0.45
 const LINE = 'Slow down. Look up.'
 const CH0 = 11, CH1 = 17
-const T_GLINT = 12.02
+const T_GLINT = 11.62
 const LINE_Y0 = H / 2, LINE_Y1 = 230, LINE_FS = 136
 const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 821, SUB_FS = 30
 

@@ -1,4 +1,4 @@
-// swipes · S2 · TONIGHT'S DECK (5.4–11.0). One star in the sky brightens, falls and lands as the Align card back
+// swipes · S2 · TONIGHT'S DECK (4.9–10.5). One star in the sky brightens, falls and lands as the Align card back
 // (dealt from the stars). The back becomes a small deck; five cards are dealt to a soft arc, each turning face-up
 // (veiled profile cards: no faces). "TONIGHT'S DECK" / "Every night, a new deck." Then the hand drifts apart and fades.
 // (Card renderer + deal recipe from ghosted half b.)
@@ -6,20 +6,20 @@ import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../../../src/
 import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { getSky, layerCanvas, loadArt, drawCard, glint, pocketCanvas, pixStar } from './kit.js'
 
-const T0 = 5.4, T1 = 11.0
+const T0 = 4.9, T1 = 10.5
 
 // the star that falls and becomes the card
-const STAR = { x: 1290, y: 236, glow: 5.45, fall: 5.72, land: 6.05 }
+const STAR = { x: 1290, y: 236, glow: 4.95, fall: 5.22, land: 5.55 }
 const HO = { x: 960, y: 500, h: 440 }
 const DECK = { x: 960, y: 400, h: 330 }
-const FORM = { a: 6.25, b: 6.85 }
+const FORM = { a: 5.75, b: 6.35 }
 const SLOT = k => ({ x: 960 + k * 300, y: 400 + k * k * 8, rz: k * 2.2 })
 const HAND = [[-1, 'p1'], [1, 'p2'], [-2, 'p6'], [2, 'p4'], [0, 'p3']]
-const DEAL = [6.95, 7.25, 7.55, 7.85], FLY = 0.58
-const CFLIP = { a: 8.25, b: 8.7 }
-const SHINE = { a: 8.85, step: 0.12, len: 0.42 }
-const COPY = { eb: 6.95, line: 7.15, out: 10.35 }
-const EXIT = { a: 10.3, b: 10.85 }
+const DEAL = [6.45, 6.75, 7.05, 7.35], FLY = 0.58
+const CFLIP = { a: 7.75, b: 8.2 }
+const SHINE = { a: 8.35, step: 0.12, len: 0.42 }
+const COPY = { eb: 6.45, line: 6.65, out: 10.1 }
+const EXIT = { a: 10.1, b: 10.6 }
 
 export default async function build(stage) {
   const root = fill(stage, { background: 'transparent' })
@@ -45,7 +45,7 @@ export default async function build(stage) {
     update(t) {
       const fr = Math.round(t * 30)
       bx.clearRect(0, 0, W, H)
-      bx.globalAlpha = ease.inOutQuad(prog(t, 6.8, 7.3)) * (1 - ease.inOutQuad(prog(t, COPY.out, COPY.out + 0.4)))
+      bx.globalAlpha = ease.inOutQuad(prog(t, 6.3, 6.8)) * (1 - ease.inOutQuad(prog(t, COPY.out, COPY.out + 0.4)))
       if (bx.globalAlpha > 0) bx.drawImage(pocket, 0, 0)
       bx.globalAlpha = 1
 
