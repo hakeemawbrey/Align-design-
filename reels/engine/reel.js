@@ -43,15 +43,6 @@ const POST_FRAG = /* glsl */ `
   }
 `
 
-// The small line under the aura's name.
-const POWER_LINES = [
-  'it was in you the whole time',
-  'the power was always yours',
-  'you already have it',
-  'it never left you',
-  'it was yours all along',
-]
-
 let fontsReady = null
 export function loadFonts() {
   if (fontsReady) return fontsReady
@@ -193,7 +184,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
 
     state = {
       item, seed, scene, world, figure, crowd, speaker, glyph, camera, shots, tl, layout, title, hero,
-      baseYaw, turn: dy * 0.62, handle, brand, aura, sign, powerLine: rng.pick(POWER_LINES), noisePhase: rng.range(0, 100), lastOverlay: '',
+      baseYaw, turn: dy * 0.62, handle, brand, noisePhase: rng.range(0, 100), lastOverlay: '',
     }
     return { duration: tl.duration, plan: { seed: String(seed), duration: tl.duration, ...tl }, world: worldName }
   }
@@ -247,45 +238,13 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     octx.restore()
   }
 
-  // After the surge: the aura's name, in its own light.
-  function drawAuraCard(k) {
-    const { aura, sign, powerLine } = state
-    const cx = width / 2
-    const y = height * 0.11
-    octx.save()
-    octx.globalAlpha = k
-    octx.textAlign = 'center'
-    octx.textBaseline = 'alphabetic'
-    octx.fillStyle = '#ffffff'
-    octx.shadowColor = 'rgba(0,0,0,0.6)'
-    octx.shadowBlur = 8
-    octx.font = `700 ${Math.round(width * 0.022)}px "ZPoppins", sans-serif`
-    octx.letterSpacing = `${Math.round(width * 0.008)}px`
-    octx.fillText(`${sign.toUpperCase()} · YOUR AURA`, cx, y)
-    octx.letterSpacing = '0px'
-    octx.font = `italic 600 ${Math.round(width * 0.085)}px "ZPoppins", sans-serif`
-    octx.shadowColor = aura.color
-    for (const b of [width * 0.05, width * 0.018]) {
-      octx.shadowBlur = b
-      octx.fillStyle = aura.light
-      octx.fillText(aura.name.toLowerCase(), cx, y + width * 0.095)
-    }
-    octx.shadowColor = 'rgba(0,0,0,0.6)'
-    octx.shadowBlur = 8
-    octx.fillStyle = '#ffffff'
-    octx.font = `italic 600 ${Math.round(width * 0.03)}px "ZPoppins", sans-serif`
-    octx.fillText(powerLine, cx, y + width * 0.15)
-    octx.restore()
-  }
-
   function drawOverlay(t) {
     const { tl, layout, title, item, handle, brand } = state
     let appear = 0
     if (t >= tl.tPopup && t < tl.tClose) appear = clamp((t - tl.tPopup) / 0.1)
     else if (t >= tl.tClose && t < tl.tClose + 0.08) appear = 1 - (t - tl.tClose) / 0.08
     const typed = t < tl.typeStart ? 0 : Math.min(item.text.length, Math.floor((t - tl.typeStart) * tl.typeRate) + 1)
-    const card = Math.round(smooth(tl.tGlyph + 0.2, tl.tGlyph + 0.55, t) * 20) / 20
-    const key = `${appear.toFixed(2)}|${typed}|${handle}|${card}`
+    const key = `${appear.toFixed(2)}|${typed}|${handle}`
     if (key === state.lastOverlay) return
     state.lastOverlay = key
     octx.clearRect(0, 0, width, height)
@@ -293,7 +252,7 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
     // one invisible pixel on it and tell the shader whether to use it at all.
     octx.fillStyle = 'rgba(0,0,0,0.01)'
     octx.fillRect(0, 0, 1, 1)
-    post.uniforms.uOverlayOn.value = appear > 0 || handle || brand || card > 0 ? 1 : 0
+    post.uniforms.uOverlayOn.value = appear > 0 || handle || brand ? 1 : 0
     if (brand) drawMark()
     if (handle) {
       octx.save()
@@ -306,7 +265,6 @@ export function createReelRenderer(canvas, { width = 1080, height = 1920, intern
       octx.restore()
     }
     drawPopup(octx, layout, title, item.text, typed, appear)
-    if (card > 0) drawAuraCard(card)
     overlayTex.needsUpdate = true
   }
 
