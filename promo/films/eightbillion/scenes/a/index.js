@@ -17,7 +17,7 @@ import { personCanvas, FACE } from './person.js'
 const MOON = { x: 1716, y: 122, r: 52, phase: 0.12 }
 export const T = {
   hook: 0.3, hookOut: 5.05,          // "8 billion people."
-  q1: 8.55, q2: 9.05, qOut: 13.55,   // "So why does it feel" / "like no one?"
+  q1: 8.55, q2: 9.05, qOut: 14.2,   // "So why does it feel" / "like no one?"
   H: 14.8, end: 15.2,
 }
 
@@ -25,7 +25,7 @@ export const T = {
 const Z0 = 0.0175, ZC1 = 1.4, U1 = Math.log(ZC1 / Z0)     // the dolly ends at zc 1.4 (U ≈ 4.38)
 const R0 = 30000, RD = 420, UD = U1 + Math.log(R0 / RD)    // the globe is a full disc (R 420) at UD ≈ 8.65
 const UE = UD + Math.log(RD / 3)                             // R 3: a dot
-const UK = [[0, 0, 0.3], [4.75, U1, 0.85], [6.45, U1 + 1.55, 1.05], [8.45, UD - 0.06, 0.4], [9.7, UD + 0.36, 0.4], [12.7, UE - 1.0, 1.25], [14.0, UE, 0]]
+const UK = [[0, 0, 0.3], [4.75, U1, 0.85], [6.45, U1 + 1.55, 1.05], [8.45, UD - 0.06, 0.4], [9.7, UD + 0.36, 0.4], [13.5, UE - 1.0, 1.0], [14.6, UE, 0]]
 export function U(t) {
   if (t <= UK[0][0]) return UK[0][1]
   for (let i = 1; i < UK.length; i++) {
@@ -99,10 +99,10 @@ export const CUES = [
   ['whoosh', 6.9, 1.4, 0.045],
   ['bell', T.q1 + 0.1, 196, 0.04, 2.8, 0.15],
   ['bell', T.q2 + 0.1, 146.83, 0.035, 3.0, -0.1],
-  ['riser', 10.4, 13.6, 0.035],
-  ['whoosh', 11.6, 1.8, 0.04],
-  ['glitter', 13.4, 14.6],
-  ['bell', 13.85, 1174.66, 0.018, 1.8, 0.4],
+  ['riser', 11.0, 14.5, 0.035],
+  ['whoosh', 12.4, 1.8, 0.04],
+  ['glitter', 14.0, 14.8],
+  ['bell', 14.45, 1174.66, 0.018, 1.8, 0.4],
 ]
 
 export const SCENES = [async (stage) => {
@@ -318,8 +318,8 @@ export const SCENES = [async (stage) => {
   function skyState(t) {
     const u = U(t), k = ease.inOutQuad(prog(u, 0, 14))
     const zoom = lerp(1.08, 1, k)
-    const desat = lerp(0.5, 0, ease.inOutQuad(prog(t, 10.4, 14.5)))
-    const dim = lerp(0.8, 1, ease.inOutQuad(prog(t, 10.4, 14.5)))
+    const desat = lerp(0.5, 0, ease.inOutQuad(prog(t, 13.4, 14.8)))
+    const dim = lerp(0.8, 1, ease.inOutQuad(prog(t, 13.4, 14.8)))
     return { zoom, desat, dim, moon: { x: 960 + (MOON.x - 960) * zoom, y: 540 + (MOON.y - 540) * zoom, r: MOON.r * zoom, phase: MOON.phase, alpha: 1 } }
   }
 
@@ -369,7 +369,7 @@ export const SCENES = [async (stage) => {
         const G = globe(t)
         const ga = ease.inOutQuad(prog(u, U1, U1 + 0.5))
         const dotK = prog(G.R, 7, 3)               // tiny → hand over to a soft dot
-        const fadeAll = 1 - ease.inOutQuad(prog(t, 13.2, 13.95))
+        const fadeAll = 1 - ease.inOutQuad(prog(t, 14.3, 14.75))
         if (G.R >= 3 && dotK < 1) {
           const sc = G.R > 900 ? 0.5 : 1
           if (sc < 1) { gbx.clearRect(0, 0, W, H); drawGlobe(gbx, { ...G, alpha: 1 }, sc); gx2.globalAlpha = ga * fadeAll; gx2.imageSmoothingQuality = 'high'; gx2.drawImage(gbuf, 0, 0, W * sc, H * sc, 0, 0, W, H); gx2.globalAlpha = 1 }
@@ -382,7 +382,7 @@ export const SCENES = [async (stage) => {
           g.addColorStop(0, `rgba(222,234,255,${a})`); g.addColorStop(0.22, `rgba(150,185,255,${0.5 * a})`); g.addColorStop(1, 'rgba(120,160,255,0)')
           dx.fillStyle = g; dx.fillRect(GC[0] - R, GC[1] - R, 2 * R, 2 * R)
         }
-        globeC.style.filter = `saturate(${lerp(0.8, 1, prog(t, 10, 13)).toFixed(3)})`
+        globeC.style.filter = `saturate(${lerp(0.8, 1, prog(t, 12, 14.5)).toFixed(3)})`
       }
 
       // grain (a little finer over her face while we are close)
