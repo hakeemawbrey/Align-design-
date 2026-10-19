@@ -219,7 +219,7 @@ function front(s, n) {
           </div>`).join('')}
       </div>
 
-      <div class="abs foot">
+      <div class="abs foot"${Q.has('nofoot') ? ' style="visibility:hidden"' : ''}>
         <span style="color:var(--ink-2)">ALIGN · ${EDITION.code}</span>
         <span style="color:var(--ink-3)">SAN FRANCISCO</span>
         <span class="serial" style="color:var(--align)${Q.has('noserial') ? '; visibility:hidden' : ''}">№ ${n ? pad(n) : '__'}/${EDITION.run}</span>
@@ -338,12 +338,14 @@ function back() {
       </div>
       <div class="abs b-mark">Align</div>
       <div class="abs b-sol">${seedOfLife()}</div>
+      <div${Q.has('notext') ? ' style="visibility:hidden"' : ''}>
       <div class="abs b-name">${b.name}</div>
       <div class="abs b-title">${b.title}</div>
       <div class="abs b-hair"></div>
       <div class="abs b-email">${b.email}</div>
       <div class="abs b-phone">${b.phone}</div>
       <div class="abs b-site">${b.site}</div>
+      </div>
     </div>
   </div>`)
 }
