@@ -70,7 +70,7 @@ export const CUES = [
   ['tick', T.stop, 0.06],
   ['tick', 12.28, 0.06],
   // the dark → the butterfly → the sky
-  ['glitter', 13.0, 14.7],
+  ['glitter', 12.77, 14.7],
   ['riser', 13.1, 14.85, 0.06],
   ['bell', 14.58, 1318.5, 0.03, 1.2, 0.2],
 ]

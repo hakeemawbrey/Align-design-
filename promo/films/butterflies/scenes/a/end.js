@@ -28,7 +28,7 @@ const getSprite = () => {
   return (SPR = c)
 }
 
-const B0 = 12.98, B1 = 14.62          // the butterfly's life
+const B0 = 12.75, B1 = 14.62          // the butterfly's life
 const path = t => {
   const u = prog(t, B0, B1), e = ease.inOutSine ? ease.inOutSine(u) : u * u * (3 - 2 * u)
   return [lerp(880, 1150, e) + Math.sin(u * 7.2) * 70 * (1 - u * 0.6), lerp(1010, 420, e) + Math.sin(u * 21) * 12]

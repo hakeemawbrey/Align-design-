@@ -11,11 +11,11 @@ export const T = {
   n2: 6.05,     // NOW: hey / hey / wyd · Seen
   m3: 6.75,     // THEN: her smile, close, heart racing, burns out gold
   n3: 7.65,     // NOW: the swipe stack, faster and faster… then nothing. "When did dating get so numb?"
-  dark: 12.9,   // the phone is gone: dark. A tiny pixel butterfly of light rises; the sky blooms around it
+  dark: 12.75,  // the phone is gone: dark. A tiny pixel butterfly of light rises; the sky blooms around it
   sky: 14.75,   // exactly H from here: drawSky(zoom 1, dx 0, dy 0, dim 1, MOON) + grain 0.5, nothing else
   end: 15.2,
   // warm memory flashes cut into the cold (2–3 frames each), each fainter than the last
-  flashes: [[9.5, 9.6, 'm1'], [10.72, 10.79, 'm2']],
+  flashes: [[9.5, 9.6, 'm1'], [10.72, 10.79, 'm1']],
   // swipes: N1's three, then N3's run that speeds up until it smears, then stops dead
   swipesN1: [3.42, 3.66, 3.88],
   stop: 11.05,
