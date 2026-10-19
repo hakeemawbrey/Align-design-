@@ -3,41 +3,42 @@
 //
 // Beat map (sound):
 //   15.00–15.30  H held still
-//   15.35–16.60  THE FIELD: small Align card backs bloom out of the stars all over the sky, each from a glint
-//   15.95 eyebrow "333 CHARTS NEARBY" (from screen-onboarding-field), out 17.55
+//   15.05–16.30  THE FIELD: small Align card backs bloom out of the stars all over the sky, each from a glint
+//   15.50 eyebrow "333 CHARTS NEARBY" (from screen-onboarding-field), out 17.55
 //   16.95–17.85  five of them gather from far corners into a fan at centre; the rest fold back into star glints
 //   18.35–19.15  pull back: the fan shrinks into the fan of the app's own field screen ("You are not arriving alone."),
 //                the phone appears around it · 18.90–19.20 the drawn fan hands over to the screenshot's
 //   19.35–20.00  the phone slides left · 19.50 eyebrow "THE FIELD · WHO IS ALREADY HERE"
 //   19.65 "Someone's sky / lines up with yours." (typed by ≈20.95, out 22.45)
-//   21.20–21.60  the phone turns to Today's sky (screen-sky: You / Love / Move) · 21.75–22.30 gold glint on its cards
+//   21.40–21.72  the phone dips from the field to Today's sky (screen-sky: You / Love / Move) · 21.85–22.35 gold glint on its cards
 //   22.45–22.95  the phone sinks away; a deck of card backs forms at (960,390)
 //   23.10 23.40 23.70 24.00  four cards dealt to a soft arc, turning face-up (veiled cards, no faces)
 //   24.35–24.80  the centre card (Juniper) turns over · 24.95 gold glint along the hand
 //   23.20 eyebrow "NO PHOTOS UNTIL YOU BOTH ALIGN" · 23.35 "Tonight's deck is already dealt." (typed ≈24.6, out 25.8)
-//   25.80–26.25  the hand drifts apart and fades; sky back to dim 1 by 26.3 (end.js owns 26.2→)
+//   25.80–26.25  the hand drifts apart and fades; sky back to dim 1 by 26.3 (end.js owns 26.2→; this stays to 26.4 under its fade-in)
 import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../../../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../../../src/scenes/common.js'
 import { sky, twinkles, drawGrain, grainOpacity, getSky, layerCanvas, loadArt, loadScreens, drawCard, drawPhone, glint, pocketCanvas, pixStar } from './kit.js'
 
-const T0 = 15.0, T1 = 26.3
+const T0 = 15.0, T1 = 26.4
 
 // ── beat 1: the field
-const BLOOM = { a: 15.35, span: 1.25, len: 0.45 }
-const SEA_EB = { a: 15.95, out: 17.55 }
+const BLOOM = { a: 15.05, span: 1.25, len: 0.45 }
+const SEA_EB = { a: 15.5, out: 17.55 }
 const GATHER = { a: 16.95, step: 0.07, fly: 0.78 }
 const FOLD = { a: 16.95, span: 0.6, len: 0.4 }
 // fan in the app screen (screen px, relative to its centre card, phone h 900): measured off screen-onboarding-field
 const FAN = [[-140, 36, -14], [-76, 17, -8], [0, 0, 0], [77, 17, 8], [141, 36, 14]]   // [dx, dy, rz]
-const FAN_H = 181
-const ANCHOR = { x: 960, y: 466 }        // fan centre card ⇔ phone (960,540) h 900
-const ZOOM = { a: 18.35, b: 19.15, from: 2 }
+const PS = 1.5                            // phone h 1350 (bottom crops off-frame) → fan scales with it
+const FAN_H = 181 * PS
+const ANCHOR = { x: 960, y: 790 - 74 * PS }   // fan centre card ⇔ phone (960,790) h 1350
+const ZOOM = { a: 18.35, b: 19.15, from: 1.5 }
 const HANDOVER = { a: 18.9, b: 19.2 }
 // ── beat 2: someone's sky
-const PH = { h: 900, slideA: 19.35, slideB: 20.0, x1: 600 }
+const PH = { h: 900 * PS, y: 790, slideA: 19.35, slideB: 20.0, x1: 560 }
 const COPY2 = { eb: 19.5, line: 19.65, out: 22.45 }
-const SWAP = { a: 21.2, b: 21.6 }
-const SKYGLINT = { a: 21.75, b: 22.3 }
+const SWAP = { a: 21.4, m: 21.56, b: 21.72 }      // a dip, never a crossfade (no doubled text)
+const SKYGLINT = { a: 21.85, b: 22.35 }
 const PH_OUT = { a: 22.45, b: 22.95 }
 // ── beat 3: tonight's deck
 const DECK = { x: 960, y: 390, h: 330 }
@@ -92,12 +93,13 @@ export default async function build(stage) {
   const gx = gC.getContext('2d')
 
   // ── copy (above the grain)
-  const eyebrow = (txt, style) => el('div', { position: 'absolute', fontFamily: MONO, fontSize: '34px', letterSpacing: '0.32em', color: C.bone, opacity: 0, whiteSpace: 'pre', textShadow: '0 0 14px rgba(11,6,32,0.9)', ...style }, root, txt)
+  const eyebrow = (txt, style) => el('div', { position: 'absolute', fontFamily: MONO, fontSize: '42px', letterSpacing: '0.32em', color: C.bone, opacity: 0, whiteSpace: 'pre', textShadow: '0 0 14px rgba(11,6,32,0.9)', ...style }, root, txt)
   const stmt = { fontFamily: SERIF, fontStyle: 'italic', fontSize: '100px', lineHeight: '1.1', letterSpacing: '-0.005em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.9), 0 0 12px rgba(11,6,32,0.6)' }
-  const eb0 = eyebrow('333 CHARTS NEARBY', { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '946px' })
-  const eb2 = eyebrow('THE FIELD · WHO IS ALREADY HERE', { left: '1000px', top: '372px', fontSize: '28px' })
+  const eb0 = eyebrow('333 CHARTS NEARBY', { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '940px' })
+  const eb2 = eyebrow('WHO IS ALREADY HERE', { left: '1000px', top: '362px' })
+  const eb2b = eyebrow("TODAY'S SKY", { left: '1000px', top: '362px' })
   const line2 = new TypeLine(root, "Someone's sky\nlines up with yours.", { ...stmt, left: '994px', top: '428px' }, { perChar: 0.03, fade: 0.3, accent: [C.violet, C.gold, C.rub] })
-  const eb3 = eyebrow('NO PHOTOS UNTIL YOU BOTH ALIGN', { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '700px', fontSize: '30px' })
+  const eb3 = eyebrow('NO PHOTOS UNTIL YOU BOTH ALIGN', { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '690px' })
   const line3 = new TypeLine(root, "Tonight's deck is already dealt.", { ...stmt, fontSize: '96px', left: '50%', top: '760px', transform: 'translateX(-50%)' }, { perChar: 0.03, fade: 0.3, accent: [C.violet, C.gold, C.rub] })
 
   return {
@@ -110,7 +112,7 @@ export default async function build(stage) {
       gC.style.opacity = String(grainOpacity(Math.min(1, dim)))
 
       const pk = (a, b, c, d) => ease.inOutQuad(prog(t, a, b)) * (1 - ease.inOutQuad(prog(t, c, d)))
-      bx.globalAlpha = pk(15.8, 16.2, SEA_EB.out, SEA_EB.out + 0.3); if (bx.globalAlpha > 0) bx.drawImage(pocket0, 0, 0)
+      bx.globalAlpha = pk(15.4, 15.8, SEA_EB.out, SEA_EB.out + 0.3); if (bx.globalAlpha > 0) bx.drawImage(pocket0, 0, 0)
       bx.globalAlpha = pk(19.3, 19.8, COPY2.out, COPY2.out + 0.35); if (bx.globalAlpha > 0) bx.drawImage(pocket2, 0, 0)
       bx.globalAlpha = pk(23.0, 23.5, COPY3.out, COPY3.out + 0.35); if (bx.globalAlpha > 0) bx.drawImage(pocket3, 0, 0)
       bx.globalAlpha = 1
@@ -127,7 +129,7 @@ export default async function build(stage) {
         bx.imageSmoothingEnabled = true
         const Z = lerp(ZOOM.from, 1, ease.inOutCubic(prog(t, ZOOM.a, ZOOM.b)))
         const fanA = 1 - ease.inOutQuad(prog(t, HANDOVER.a, HANDOVER.b))
-        const fanPose = k => { const [dx, dy, rz] = FAN[k]; return { x: ANCHOR.x + dx * Z, y: ANCHOR.y + dy * Z, h: FAN_H * Z, rz } }
+        const fanPose = k => { const [dx, dy, rz] = FAN[k]; return { x: ANCHOR.x + dx * PS * Z, y: ANCHOR.y + dy * PS * Z, h: FAN_H * Z, rz } }
         const fanCards = []
         for (const s of SEA) {
           if (t < s.tb - 0.06) continue
@@ -169,8 +171,8 @@ export default async function build(stage) {
         }
         fanCards.sort((a, b) => FAN_ORDER.indexOf(a.k) - FAN_ORDER.indexOf(b.k))
         // the phone (around the fan) — drawn under the fan until the handover
-        const phA = ease.inOutQuad(prog(Z, 1.8, 1.2) )
-        if (phA > 0.003) drawPhone(bx, ANCHOR.x, ANCHOR.y + 74 * Z, PH.h * Z, [['field', 1]], { alpha: phA })
+        const phA = ease.inOutQuad(prog(Z, 1.4, 1.1))
+        if (phA > 0.003) drawPhone(bx, ANCHOR.x, ANCHOR.y + 74 * PS * Z, PH.h * Z, [['field', 1]], { alpha: phA })
         for (const c of fanCards) drawCard(bx, 'back', c.x, c.y, c.h, { ry: c.ry, rz: c.rz, alpha: c.alpha, shadow: c.fly ? 0.4 : 0.8 * (1 - phA * 0.7), glow: c.glow })
       }
 
@@ -178,9 +180,9 @@ export default async function build(stage) {
       if (t >= HANDOVER.b - 0.0001 && t < PH_OUT.b) {
         const sl = ease.inOutCubic(prog(t, PH.slideA, PH.slideB))
         const out = ease.inOutCubic(prog(t, PH_OUT.a, PH_OUT.b))
-        const x = lerp(960, PH.x1, sl), y = 540 + 70 * out, h = PH.h * (1 - 0.05 * out)
-        const sw = ease.inOutQuad(prog(t, SWAP.a, SWAP.b))
-        drawPhone(bx, x, y, h, [['field', 1], ['sky', sw]], { alpha: 1 - out })
+        const x = lerp(960, PH.x1, sl), y = PH.y + 70 * out, h = PH.h * (1 - 0.05 * out)
+        const f0 = 1 - ease.inOutQuad(prog(t, SWAP.a, SWAP.m)), s1 = ease.inOutQuad(prog(t, SWAP.m, SWAP.b))
+        drawPhone(bx, x, y, h, [['field', f0], ['sky', s1]], { alpha: 1 - out })
         // gold glint across the three sky cards (screen px: x 74–1096, y 624–1156 of 1170×2532)
         const gk = prog(t, SKYGLINT.a, SKYGLINT.b)
         if (gk > 0 && gk < 1) {
@@ -244,7 +246,7 @@ export default async function build(stage) {
       // ── copy
       const fadeEb = (e, a, out) => { e.style.opacity = String(ease.outQuad(prog(t, a, a + 0.35)) * (1 - ease.inQuad(prog(t, out, out + 0.2)))); e.style.letterSpacing = lerp(0.42, 0.32, ease.outCubic(prog(t, a, a + 0.5))) + 'em' }
       fadeEb(eb0, SEA_EB.a, SEA_EB.out)
-      fadeEb(eb2, COPY2.eb, COPY2.out); line2.update(t - COPY2.line, { out: COPY2.out - COPY2.line })
+      fadeEb(eb2, COPY2.eb, SWAP.a - 0.1); fadeEb(eb2b, SWAP.m, COPY2.out); line2.update(t - COPY2.line, { out: COPY2.out - COPY2.line })
       fadeEb(eb3, COPY3.eb, COPY3.out); line3.update(t - COPY3.line, { out: COPY3.out - COPY3.line })
 
       drawGrain(gx, t)
