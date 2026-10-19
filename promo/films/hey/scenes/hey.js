@@ -4,9 +4,9 @@
 //              0.25 "Stuck on ‘hey’." (fully in ≈1.0, out 4.95–5.25). 4.80 the last "hey" sticks. 5.00 "Seen".
 //   5.30       a gold star glints in the grey sky and colour blooms out of it (5.35–6.6); the phone becomes Align.
 //   5.50–6.60  a talk card is dealt out of the star and flips: 0 The Fool, "What's a hill you will die on?"
-//   6.85       "TALK CARDS" / "Start with a real question." (out 9.95–10.20)
-//   7.90–8.50  the card drops into the chat · 8.55–8.95 push in · 8.75/9.00 both answer · 9.55 she asks back
-//   10.15–10.6 the phone drifts away; end.js: two stars, "Skip to the good part.", lockup, fade (14.5–14.95)
+//   6.85       "TALK CARDS" / "Start with / a real question." (out 10.40–10.65)
+//   7.40–8.00  the card drops into the chat · 8.05–8.45 push in (1.6×, on the bubbles) · 8.25/8.50 both answer · 9.05 she asks back
+//   10.6–10.95 the phone drifts away; end.js: two stars, "Skip to the good part.", lockup, fade (14.5–14.95)
 // Layers: sky canvas · glow · objects (phone, dealt card) · pixel stars · grain · type · black plate.
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, C } from '../../../src/lib.js'
 import { W, H, A, IMG, SERIF, MONO, SANS, fill, img } from '../../../src/scenes/common.js'
@@ -18,9 +18,9 @@ export const T = {
   CAP1: 0.25, CAP1_OUT: [4.95, 5.25], STOP: 4.8, SEEN: 5.0,
   GLINT: 5.3, BLOOM: [5.35, 6.6], SWAP: [5.72, 6.3], MOVE: [5.35, 6.45],
   FLY0: 5.5, FLY1: 6.25, FLIP0: 6.12, FLIP1: 6.6, FLASH: 6.62,
-  EYE: 6.75, CAP2: 6.85, CAP2_OUT: [9.95, 10.2],
-  MOVE0: 7.9, LAND: 8.5, PUSH: [8.55, 8.95], CHIP: 9.0,
-  EXIT: [10.15, 10.6],
+  EYE: 6.75, CAP2: 6.85, CAP2_OUT: [10.4, 10.65],
+  MOVE0: 7.4, LAND: 8.0, PUSH: [8.05, 8.45], CHIP: 8.5,
+  EXIT: [10.6, 10.95],
 }
 
 // ── the loop: five lines, each gap shorter than the last (0.43 × 0.87^k, floor 0.07); ends on "hey" at 4.80
@@ -43,17 +43,17 @@ function moonPose(t) { const c = cam(t); return { x: W / 2 + (MOON0.x - W / 2) *
 
 // the dealt card
 const ORG = { x: 930, y: 214 }                        // the star it is dealt out of
-const CX = 560, CY = 432                              // its rest (scene)
-const FH = 700, FW = FH * 732 / 1170                  // card-talk-1 (glow margin incl.)
+const CX = 560, CY = 400                              // its rest (scene)
+const FH = 640, FW = FH * 732 / 1170                  // card-talk-1 (glow margin incl.)
 const BH = FH * 0.90 / 0.89, BW = BH * 1528 / 2347
-const TCW = 140, TCH = TCW * 1170 / 732               // the card in the thread
+const TCW = 110, TCH = TCW * 1170 / 732               // the card in the thread
 const TC_Y = CLIP0 + 10 + TCH / 2                     // its centre (screen-local)
 
 // the conversation after the card
 const MSGS = [
-  { who: 'j', ans: true, lab: 'JUNIPER', text: 'Breakfast for dinner is the best meal. Always.', show: 8.75 },
-  { who: 'me', ans: true, lab: 'YOUR ANSWER', text: 'Movies belong in a theatre. Big screen or nothing.', show: 9.0 },
-  { who: 'j', text: 'Okay. Defend the theatre. I’m listening.', dots: 9.25, show: 9.55 },
+  { who: 'j', ans: true, lab: 'JUNIPER', text: 'Breakfast for dinner is the best meal. Always.', show: 8.25 },
+  { who: 'me', ans: true, lab: 'YOUR ANSWER', text: 'Movies belong in a theatre. Big screen or nothing.', show: 8.5 },
+  { who: 'j', text: 'Okay. Defend the theatre. I’m listening.', dots: 8.75, show: 9.05 },
 ]
 
 export default async function build(stage) {
@@ -138,18 +138,18 @@ export default async function build(stage) {
   const area = el('div', { position: 'absolute', left: 0, top: CLIP0 + 'px', width: PHW + 'px', height: (CLIP1 - CLIP0) + 'px', overflow: 'hidden' }, al)
   const thr = el('div', { position: 'absolute', left: 0, top: 0, width: PHW + 'px', padding: '0 18px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: '11px' }, area)
   el('div', { height: (TCH + 14) + 'px', flex: 'none' }, thr)
-  const chip = el('div', { alignSelf: 'center', fontFamily: MONO, fontSize: '12px', letterSpacing: '0.2em', color: '#f2c75c', opacity: 0, textShadow: '0 0 10px rgba(242,199,92,0.6)' }, thr, '✦ BOTH ANSWERED ✦')
+  const chip = el('div', { alignSelf: 'center', fontFamily: MONO, fontSize: '20px', letterSpacing: '0.18em', color: '#f2c75c', opacity: 0, textShadow: '0 0 10px rgba(242,199,92,0.6)' }, thr, '✦ BOTH ANSWERED ✦')
   const msgs = MSGS.map(m => {
     const row = el('div', { display: 'flex', justifyContent: m.who === 'me' ? 'flex-end' : 'flex-start', position: 'relative', flex: 'none' }, thr)
     const st = m.ans ? { background: m.who === 'me' ? 'linear-gradient(135deg, rgba(242,154,74,0.34), rgba(232,98,138,0.36))' : 'linear-gradient(135deg, rgba(232,98,138,0.28), rgba(154,123,224,0.34))',
       boxShadow: '0 0 0 1px rgba(242,199,92,0.55), 0 0 22px rgba(242,170,120,0.25)' } : { background: m.who === 'me' ? '#4a2982' : 'rgba(52,35,95,0.95)' }
-    const b = el('div', { maxWidth: '300px', padding: '10px 15px 11px', borderRadius: m.who === 'me' ? '20px 20px 6px 20px' : '20px 20px 20px 6px', fontFamily: SANS, fontWeight: 400, fontSize: '19px', lineHeight: 1.3, color: C.bone, opacity: 0, ...st }, row)
-    if (m.ans) el('div', { fontFamily: MONO, fontSize: '12px', letterSpacing: '0.14em', color: '#f2c75c', marginBottom: '4px' }, b, m.lab)
+    const b = el('div', { maxWidth: '380px', padding: '12px 18px 14px', borderRadius: m.who === 'me' ? '24px 24px 7px 24px' : '24px 24px 24px 7px', fontFamily: SANS, fontWeight: 400, fontSize: '28px', lineHeight: 1.3, color: C.bone, opacity: 0, ...st }, row)
+    if (m.ans) el('div', { fontFamily: MONO, fontSize: '18px', letterSpacing: '0.12em', color: '#f2c75c', marginBottom: '5px' }, b, m.lab)
     el('div', {}, b, m.text)
     let dots = null
     if (m.dots) {
-      const box = el('div', { position: 'absolute', top: 0, left: 0, padding: '15px 16px', borderRadius: '20px', background: 'rgba(52,35,95,0.95)', display: 'flex', gap: '6px', opacity: 0 }, row)
-      dots = { box, d: [0, 1, 2].map(() => el('div', { width: '8px', height: '8px', borderRadius: '50%', background: C.bone }, box)) }
+      const box = el('div', { position: 'absolute', top: 0, left: 0, padding: '20px 20px', borderRadius: '24px', background: 'rgba(52,35,95,0.95)', display: 'flex', gap: '8px', opacity: 0 }, row)
+      dots = { box, d: [0, 1, 2].map(() => el('div', { width: '11px', height: '11px', borderRadius: '50%', background: C.bone }, box)) }
     }
     return { ...m, row, b, dots }
   })
@@ -182,11 +182,11 @@ export default async function build(stage) {
   }
   const cap1Box = el('div', { position: 'absolute', left: '150px', top: '420px' }, type)
   const cap1 = words(cap1Box, 'Stuck on ‘hey’.', 124, 'left')
-  const cap2Box = el('div', { position: 'absolute', left: (CX - 640) + 'px', width: '1280px', top: '842px', textAlign: 'center', isolation: 'isolate' }, type)
-  el('div', { position: 'absolute', left: '140px', width: '1000px', top: '-90px', height: '330px', zIndex: -1,
+  const cap2Box = el('div', { position: 'absolute', left: (CX - 640) + 'px', width: '1280px', top: '734px', textAlign: 'center', isolation: 'isolate' }, type)
+  el('div', { position: 'absolute', left: '240px', width: '800px', top: '-60px', height: '360px', zIndex: -1,
     background: 'radial-gradient(closest-side, rgba(11,6,32,0.55), rgba(11,6,32,0.32) 55%, rgba(11,6,32,0) 100%)' }, cap2Box)
   const eye = el('div', { fontFamily: MONO, fontSize: '28px', letterSpacing: '0.22em', textIndent: '0.22em', color: C.bone, opacity: 0, marginBottom: '10px', textShadow: '0 0 16px rgba(8,4,24,0.85)' }, cap2Box, 'TALK CARDS')
-  const cap2 = words(cap2Box, 'Start with a real question.', 92, 'center')
+  const cap2 = [...words(cap2Box, 'Start with', 86, 'center'), ...words(cap2Box, 'a real question.', 86, 'center')]
   const end = buildEnd(type)
   const black = fill(root, { background: '#000', opacity: 0 })
 
@@ -202,7 +202,8 @@ export default async function build(stage) {
     const pu = ease.inOutCubic(prog(t, T.PUSH[0], T.PUSH[1]))
     const ex = ease.inCubic(prog(t, T.EXIT[0], T.EXIT[1]))
     const f = 1 + 0.012 * prog(t, T.MOVE[1], T.PUSH[0])
-    return { x: lerp(p0.x, 1330, m) - 20 * pu, y: lerp(p0.y, 540, m) + 30 * pu + 150 * ex, s: lerp(p0.s, 1.0, m) * f * lerp(1, 1.24, pu), r: lerp(p0.r, 0, m) }
+    const yPush = 556 - (stackY - ANCH) * PUSH_S                        // the bubble stack's centre lands mid-frame
+    return { x: lerp(p0.x, 1330, m) - 66 * pu, y: lerp(lerp(p0.y, 540, m), yPush, pu) + 150 * ex, s: lerp(p0.s, 1.0, m) * f * lerp(1, PUSH_S, pu), r: lerp(p0.r, 0, m) }
   }
   function toScene(t, lx, ly) {
     const P = pose(t), a = P.r * Math.PI / 180
@@ -238,12 +239,21 @@ export default async function build(stage) {
   const br = rng(1907)
   const burst = (n, d0, d1) => Array.from({ length: n }, (_, i) => ({ a: (i / n) * Math.PI * 2 + br() * 0.35, d: d0 + br() * (d1 - d0), s: br() < 0.4 ? 28 : 21, col: ['#ffe2a0', '#fff6ea', '#f2c75c', '#ffbed6'][i % 4], dl: br() * 0.08 }))
   const B_FLIP = burst(18, 250, 400), B_LAND = burst(12, 50, 140)
-  let layout = null, from = null
+  let layout = null, from = null, over = 0, stackY = ANCH
+  const PUSH_S = 1.6
 
   return {
     start: 0, end: 15.01, root,
     update(t) {
-      if (!layout) layout = msgs.map(m => ({ top: m.row.offsetTop, h: m.row.offsetHeight, left: m.b.offsetLeft, w: m.b.offsetWidth }))
+      if (!layout) {
+        layout = msgs.map(m => ({ top: m.row.offsetTop, h: m.row.offsetHeight, left: m.b.offsetLeft, w: m.b.offsetWidth }))
+        const last = layout[layout.length - 1]
+        over = Math.max(0, last.top + last.h + 16 - (CLIP1 - CLIP0))          // the thread scrolls this much for her reply
+        stackY = CLIP0 + (chip.offsetTop + last.top + last.h) / 2 - over
+      }
+      const thrS = over * ease.inOutCubic(prog(t, MSGS[2].dots - 0.25, MSGS[2].dots + 0.1))
+      thr.style.transform = `translateY(${-thrS}px)`
+      tcard.style.top = (TC_Y - TCH / 2 - thrS) + 'px'
       // ── sky: colour underneath; a cold grey copy on top with a hole that blooms out of the star
       const c = cam(t), mo = moonPose(t)
       drawSky(bx, t, { zoom: c.zoom, dx: c.dx, dy: c.dy, dim: 1, moon: mo })
@@ -397,7 +407,7 @@ export default async function build(stage) {
       px.imageSmoothingEnabled = true
       if (t >= ET.STARS0) {
         if (!from) {
-          const bs = i => { const L = layout[i]; return toScene(ET.STARS0, L.left + L.w / 2 + (msgs[i].who === 'me' ? 0 : 0), CLIP0 + L.top + L.h / 2) }
+          const bs = i => { const L = layout[i]; return toScene(ET.STARS0, L.left + L.w / 2, CLIP0 + L.top + L.h / 2 - over) }
           from = [bs(MSGS.length - 1), bs(MSGS.length - 2)]
         }
         end.stars(px, t, from)
@@ -411,18 +421,18 @@ export default async function build(stage) {
 
 // ── sound
 export const CUES = [
-  ['riser', 0.4, T.STOP, 0.05],                                                     // the loop winds up
-  ...LT.map((t, k) => k % 2 === 0 ? ['tick', t, 0.03 + 0.025 * k / N_LOOP] : (k < 14 ? ['bell', t, 1174.66, 0.018, 0.25, 0.25] : ['tick', t, 0.022])),
-  ['tick', T.STOP, 0.08], ['boom', T.STOP + 0.02, 0.08],                           // …and sticks on "hey"
+  ['riser', 0.4, T.STOP, 0.04],                                                     // the loop winds up
+  ...LT.map((t, k) => k % 2 === 0 ? ['tick', t, 0.026 + 0.02 * k / N_LOOP] : (k < 14 ? ['bell', t, 1174.66, 0.018, 0.25, 0.25] : ['tick', t, 0.022])),
+  ['tick', T.STOP, 0.065], ['boom', T.STOP + 0.02, 0.065],                           // …and sticks on "hey"
   ['bell', T.GLINT, 1174.66, 0.04, 2.0, 0.2],                                      // a star glints in the grey
   ['glitter', T.GLINT, T.GLINT + 0.6],
   ['riser', T.BLOOM[0], T.BLOOM[0] + 0.9, 0.04],                                   // colour blooms
-  ['whoosh', T.FLY0, 0.65, 0.09],                                                  // dealt
+  ['whoosh', T.FLY0, 0.65, 0.07],                                                  // dealt
   ['tick', T.FLIP0 + 0.2, 0.05],
   ['bell', T.FLASH, 880, 0.05, 2.2, -0.15], ['bell', T.FLASH + 0.03, 1318.51, 0.03, 1.6, -0.2],
   ['glitter', T.FLASH, T.FLASH + 0.55],
   ['bell', T.CAP2, 587.33, 0.04, 2.2, 0.15],                                       // "Start with a real question."
-  ['whoosh', T.MOVE0 - 0.02, 0.6, 0.08],                                           // into the chat
+  ['whoosh', T.MOVE0 - 0.02, 0.6, 0.065],                                           // into the chat
   ['bell', T.LAND, 1174.66, 0.045, 1.6, 0.25], ['glitter', T.LAND, T.LAND + 0.45],
   ['tick', MSGS[0].show, 0.045], ['tick', MSGS[1].show, 0.045],
   ['bell', T.CHIP, 880, 0.04, 2.2, 0.2], ['bell', T.CHIP + 0.04, 1108.73, 0.03, 2.0, -0.2],

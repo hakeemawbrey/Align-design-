@@ -1,6 +1,6 @@
-// hey · END (10.3–15.0), copied from lonely b/end.js and retimed: two warm stars lift off the last two bubbles as the
+// hey · END (10.75–15.0), copied from lonely b/end.js and retimed: two warm stars lift off the last two bubbles as the
 // phone leaves, settle side by side, "Skip to the good part." types in beneath them; then the Align lockup.
-//   10.30–11.05 two pixel stars lift off the last two bubbles → (884, 372) / (1036, 372)
+//   10.75–11.45 two pixel stars lift off the last two bubbles → (884, 372) / (1036, 372)
 //   11.10 the line types (22 chars × 0.03, fade 0.12 → fully typed ≈11.85) · "part." lands → both stars flare gold
 //   11.85–12.55 the line HOLDS alone · 12.65 it rises to y≈230 · 12.72 rings draw · 12.77 chakras light bottom→top
 //   12.90 wordmark "Align" · 13.00 "BLIND BY DESIGN" → complete ≈13.28 · 13.70 chakra pulse · 13.80 moon glow
@@ -9,7 +9,7 @@ import { clamp, lerp, prog, ease, tw, mix, el, C } from '../../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { drawPixelStar, buildStarSprite } from '../../sky.js'
 
-export const ET = { STARS0: 10.3, STARS1: 11.05, TYPE: 11.1, PER: 0.03, FADE: 0.12, HOLD_OUT: 12.55, RISE: 12.65, RINGS: 12.72, DOTS: 12.77, WORD: 12.9, SUB: 13.0, PULSE: 13.7, MOON: 13.8, OUT: 14.5, END: 14.95 }
+export const ET = { STARS0: 10.75, STARS1: 11.45, TYPE: 11.1, PER: 0.03, FADE: 0.12, HOLD_OUT: 12.55, RISE: 12.65, RINGS: 12.72, DOTS: 12.77, WORD: 12.9, SUB: 13.0, PULSE: 13.7, MOON: 13.8, OUT: 14.5, END: 14.95 }
 export const LINE = 'Skip to the good part.'
 const KNOWN0 = LINE.indexOf('part')
 export const T_FLARE = ET.TYPE + (LINE.length - 1) * ET.PER + ET.FADE
@@ -134,11 +134,11 @@ export const endCues = [
   ['glitter', T_FLARE - 0.02, T_GLINT + 0.4],                     // both stars flare on "known."
   ['bell', T_FLARE, 1174.66, 0.03, 1.8, -0.2],
   ['bell', T_FLARE + 0.03, 1479.98, 0.022, 1.6, 0.2],
-  ['whoosh', ET.RISE - 0.02, 0.5, 0.08],                          // line rises, rings draw
+  ['whoosh', ET.RISE - 0.02, 0.5, 0.065],                          // line rises, rings draw
   ...[293.66, 369.99, 440, 554.37, 587.33, 739.99, 880].map((f, i) => ['bell', ET.DOTS + i * 0.03, f, 0.045, 2.2, (i - 3) * 0.12]),  // chakra chimes
-  ['boom', ET.WORD, 0.14],                                         // wordmark lands
+  ['boom', ET.WORD, 0.12],                                         // wordmark lands
   ['bell', ET.WORD + 0.02, 146.83, 0.05, 3.2, 0],
   ...[293.66, 369.99, 440, 587.33, 739.99, 880, 1174.66].map((f, i) => ['bell', ET.PULSE + i * 0.05, f, 0.018, 1.6, (i - 3) * 0.1]),
-  ['boom', ET.OUT + 0.05, 0.3],                                   // final low boom into black
+  ['boom', ET.OUT + 0.05, 0.24],                                   // final low boom into black
   ['bell', ET.OUT + 0.06, 73.42, 0.05, 3.0, 0],
 ]
