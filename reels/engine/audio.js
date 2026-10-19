@@ -190,11 +190,14 @@ export function scheduleSoundtrack(ctx, dest, plan, t0 = 0) {
   sweep(t0 + plan.tGlyph + 0.06, 520, 1960, 0.1, 0.06)
 }
 
-export async function renderSoundtrackOffline(plan, sampleRate = 44100) {
+export async function renderSoundtrackBuffer(plan, sampleRate = 44100) {
   const ctx = new OfflineAudioContext(2, Math.ceil(plan.duration * sampleRate), sampleRate)
   scheduleSoundtrack(ctx, ctx.destination, plan, 0)
-  const buf = await ctx.startRendering()
-  return encodeWav(buf)
+  return ctx.startRendering()
+}
+
+export async function renderSoundtrackOffline(plan, sampleRate = 44100) {
+  return encodeWav(await renderSoundtrackBuffer(plan, sampleRate))
 }
 
 function encodeWav(buf) {

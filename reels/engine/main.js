@@ -5,6 +5,8 @@ import { createReelRenderer } from './reel.js'
 import { scheduleSoundtrack, renderSoundtrackOffline } from './audio.js'
 import { loadLibrary, makeDealer } from './library.js'
 import { SIGNS, GLYPH, captionFor } from './signs.js'
+import { createExporter } from './exporter.js'
+import { createApprovals, saveFile, zipAll, baseName, glyphFor } from './approvals.js'
 
 const params = new URLSearchParams(location.search)
 
@@ -46,7 +48,6 @@ async function startPlayer() {
 
   let audio = null
   let mix = null
-  let recDest = null
   let current = null
   let duration = 8
   let plan = null
@@ -56,7 +57,7 @@ async function startPlayer() {
   let history = []
   let hIndex = -1
   let soundOn = false
-  let recording = null
+  let currentWorld = ''
 
   const now = () => (audio && soundOn ? audio.currentTime : performance.now() / 1000)
 
@@ -97,6 +98,7 @@ async function startPlayer() {
     const r = await reel.load(item, { handle: handle.value.trim() })
     duration = r.duration
     plan = r.plan
+    currentWorld = r.world
     startedAt = now()
     paused = false
     $('#pause').textContent = 'Pause'
@@ -105,6 +107,7 @@ async function startPlayer() {
     $('#topic').textContent = item.topic === 'love' ? 'love' : 'self'
     $('#line').textContent = item.text
     $('#caption').value = captionFor(item)
+    syncDecision()
     if (soundOn) scheduleSoundtrack(audio, mix, plan, audio.currentTime + 0.02)
   }
 
@@ -125,7 +128,6 @@ async function startPlayer() {
     if (!current) return
     const t = paused ? pausedAt : now() - startedAt
     if (t >= duration && !paused) {
-      if (recording) return finishRecording()
       if ($('#auto').checked) {
         if (hIndex < history.length - 1) play(history[++hIndex])
         else next()
@@ -144,8 +146,6 @@ async function startPlayer() {
       audio = new AudioContext()
       mix = audio.createGain()
       mix.connect(audio.destination)
-      recDest = audio.createMediaStreamDestination()
-      mix.connect(recDest)
     }
     await audio.resume()
     soundOn = true
@@ -198,46 +198,179 @@ async function startPlayer() {
     setTimeout(() => ($('#copy').textContent = 'Copy caption'), 1600)
   })
 
-  // Record the current reel from the top, with its sound, into a video file.
-  $('#record').addEventListener('click', async () => {
-    if (recording || !current) return
-    if (!soundOn) await enableSound()
-    const stream = canvas.captureStream(30)
-    for (const tr of recDest.stream.getAudioTracks()) stream.addTrack(tr)
-    const type = ['video/mp4;codecs=avc1,mp4a', 'video/mp4', 'video/webm;codecs=vp9,opus', 'video/webm'].find((t) => MediaRecorder.isTypeSupported(t))
-    const rec = new MediaRecorder(stream, { mimeType: type, videoBitsPerSecond: 8e6 })
-    const chunks = []
-    rec.ondataavailable = (e) => e.data.size && chunks.push(e.data)
-    rec.onstop = () => {
-      const blob = new Blob(chunks, { type: rec.mimeType })
-      const url = URL.createObjectURL(blob)
-      const ext = rec.mimeType.includes('mp4') ? 'mp4' : 'webm'
-      const v = $('#take')
-      v.src = url
-      $('#takebox').hidden = false
-      const a = $('#takelink')
-      a.href = url
-      a.download = `${current.sign}-${current.id}.${ext}`
-      $('#record').textContent = 'Record this reel'
-      $('#record').disabled = false
-    }
-    recording = rec
-    $('#record').textContent = 'Recording…'
-    $('#record').disabled = true
-    await play(current)
-    rec.start()
-  })
-  function finishRecording() {
-    const r = recording
-    recording = null
-    r.stop()
-    paused = true
-    pausedAt = duration - 0.001
+  // ---- review: approve or skip, and the approved tray ----
+  const approvals = await createApprovals()
+  const exporter = createExporter({ onProgress: (job, p) => setJob(job.item.seed, { status: 'rendering', progress: p }) })
+  const jobs = new Map() // seed -> { status, progress, blob, ext, job }
+  const setJob = (seed, patch) => {
+    jobs.set(String(seed), { ...(jobs.get(String(seed)) || {}), ...patch })
+    renderTray(approvals.rows)
   }
+  const makeVideo = (row) => {
+    const seed = String(row.seed)
+    const j = jobs.get(seed)
+    if (j && j.status !== 'error') return
+    if (!exporter.supported) return setJob(seed, { status: 'error', error: 'This browser can’t record video. Try Chrome or Edge.' })
+    const job = exporter.add({ ...row, seed }, { handle: handle.value.trim() })
+    setJob(seed, { status: 'queued', progress: 0, job })
+    job.promise.then(
+      ({ blob, ext }) => setJob(seed, { status: 'ready', blob, ext }),
+      (e) => setJob(seed, { status: 'error', error: e?.message || 'Recording failed' }),
+    )
+  }
+
+  function syncDecision() {
+    const kept = current && approvals.has(current)
+    $('#approve').setAttribute('aria-pressed', String(!!kept))
+    $('#approve span').textContent = kept ? '✓ Approved' : '✓ Approve'
+  }
+
+  async function approve() {
+    if (!current) return
+    const item = current
+    if (!approvals.has(item)) {
+      flash('Approved')
+      next()
+      await approvals.add(item, currentWorld)
+      if ($('#autovideo').checked) makeVideo(item)
+      return
+    }
+    next()
+  }
+  function skip() {
+    flash('Skipped')
+    next()
+  }
+  let flashTimer = 0
+  function flash(text) {
+    const el = $('#flash')
+    el.textContent = text
+    el.dataset.kind = text === 'Approved' ? 'ok' : 'skip'
+    el.hidden = false
+    clearTimeout(flashTimer)
+    flashTimer = setTimeout(() => (el.hidden = true), 650)
+  }
+  $('#approve').addEventListener('click', approve)
+  $('#skip').addEventListener('click', skip)
+
+  const statusText = (j) => {
+    if (!j) return 'Video not made yet'
+    if (j.status === 'queued') return 'Waiting to make video…'
+    if (j.status === 'rendering') return `Making video ${Math.round((j.progress || 0) * 100)}%`
+    if (j.status === 'ready') return `Ready · ${(j.blob.size / 1e6).toFixed(1)} MB .${j.ext}`
+    return j.error || 'Could not make the video'
+  }
+
+  function renderTray(rows) {
+    $('#approvedcount').textContent = String(rows.length)
+    const ready = rows.filter((r) => jobs.get(String(r.seed))?.status === 'ready').length
+    $('#saveall').textContent = ready ? `Save ${ready} as .zip` : 'Save all as .zip'
+    $('#saveall').disabled = !ready
+    $('#makeall').disabled = !rows.some((r) => !jobs.has(String(r.seed)))
+    $('#exportlist').disabled = !rows.length
+    $('#tray-empty').hidden = rows.length > 0
+    $('#tray').replaceChildren(
+      ...rows.map((r) => {
+        const j = jobs.get(String(r.seed))
+        const li = document.createElement('li')
+        li.className = 'item'
+        const g = document.createElement('span')
+        g.className = 'g'
+        g.textContent = glyphFor(r.sign)
+        const body = document.createElement('div')
+        body.className = 'rowbody'
+        const t = document.createElement('p')
+        t.className = 'rowtext'
+        t.textContent = r.text
+        const st = document.createElement('span')
+        st.className = 'rowstatus' + (j?.status === 'ready' ? ' ok' : j?.status === 'error' ? ' bad' : '')
+        st.textContent = statusText(j)
+        body.append(t, st)
+        if (j?.status === 'rendering' || j?.status === 'queued') {
+          const bar = document.createElement('span')
+          bar.className = 'rowbar'
+          bar.style.setProperty('--p', String(j.progress || 0))
+          body.append(bar)
+        }
+        const acts = document.createElement('div')
+        acts.className = 'rowacts'
+        const btn = (label, fn, cls = '') => {
+          const b = document.createElement('button')
+          b.type = 'button'
+          b.className = 'btn small ' + cls
+          b.textContent = label
+          b.addEventListener('click', fn)
+          return b
+        }
+        if (j?.status === 'ready') {
+          acts.append(btn('Save', async (e) => {
+            const b = e.currentTarget
+            try {
+              const res = await saveFile(`${baseName(r)}.${j.ext}`, j.blob)
+              if (res === 'saved') b.textContent = 'Saved ✓'
+            } catch {
+              b.textContent = 'Couldn’t save'
+            }
+          }, 'primary'))
+        } else if (!j || j.status === 'error') {
+          acts.append(btn('Make video', () => makeVideo(r)))
+        }
+        acts.append(btn('Play', () => {
+          history = history.slice(0, hIndex + 1)
+          history.push({ ...r })
+          hIndex = history.length - 1
+          play({ ...r })
+        }))
+        acts.append(btn('Remove', () => {
+          const jj = jobs.get(String(r.seed))
+          if (jj?.job) exporter.cancel(jj.job)
+          jobs.delete(String(r.seed))
+          approvals.remove(r.key)
+        }))
+        li.append(g, body, acts)
+        return li
+      }),
+    )
+    if (current) syncDecision()
+  }
+  approvals.onChange(renderTray)
+  $('#storenote').textContent = approvals.shared
+    ? 'Approvals are saved with this page, so they’re here next time too.'
+    : 'Approvals are saved in this browser.'
+
+  $('#makeall').addEventListener('click', () => approvals.rows.forEach((r) => makeVideo(r)))
+  $('#saveall').addEventListener('click', async () => {
+    const entries = approvals.rows
+      .map((r) => ({ item: r, j: jobs.get(String(r.seed)) }))
+      .filter((e) => e.j?.status === 'ready')
+      .map((e) => ({ item: e.item, blob: e.j.blob, ext: e.j.ext }))
+    if (!entries.length) return
+    const b = $('#saveall')
+    b.disabled = true
+    b.textContent = 'Zipping…'
+    try {
+      const zip = await zipAll(entries)
+      await saveFile(`align-reels-${new Date().toISOString().slice(0, 10)}.zip`, zip)
+    } catch {
+      // no zip library here: hand them over one at a time instead
+      for (const e of entries) await saveFile(`${baseName(e.item)}.${e.ext}`, e.blob).catch(() => {})
+    }
+    renderTray(approvals.rows)
+  })
+  $('#exportlist').addEventListener('click', () => saveFile('approved.json', approvals.exportList()))
 
   window.addEventListener('keydown', (e) => {
     if (e.target.matches('input, textarea')) return
-    if (e.key === 'ArrowRight') next()
+    if (e.metaKey || e.ctrlKey || e.altKey) return
+    const k = e.key.toLowerCase()
+    if (k === 'a' || e.key === 'ArrowUp') {
+      e.preventDefault()
+      approve()
+    }
+    if (k === 's' || e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      e.preventDefault()
+      skip()
+    }
     if (e.key === 'ArrowLeft') prev()
     if (e.key === ' ') {
       e.preventDefault()

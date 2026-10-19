@@ -73,3 +73,16 @@ against the rules and de-duplicated against the whole library before it's added.
 | `engine/` | the browser engine: `reel.js` (timeline, camera, post), `worlds*.js`, `actors.js` (figure + aura, stars, glyph), `popup.js`, `audio.js`, `main.js` (player + render hooks) |
 | `src/` | Node: `render.mjs`, `write.mjs`, `check.mjs`, `serve.mjs`, `content.mjs` |
 | `vendor/`, `fonts/` | three.js r170 and the Poppins / Noto Sans Symbols subsets, vendored so it runs offline |
+
+## Review, approve, download
+
+The player is also the review desk:
+
+- **A** (or **✓ Approve**) keeps the reel and deals the next one; **S** skips; **←** goes back.
+- Each approved reel is rebuilt from its seed on a hidden 1080×1920 canvas and turned into a
+  video in the background (frame by frame with WebCodecs: H.264 + AAC MP4 in Chrome/Edge/Safari),
+  while you keep reviewing.
+- **Save** one, or **Save N as .zip** for every finished video plus a caption `.txt` for each.
+- Approvals are kept with the published page (or in this browser when run locally).
+  **Export list** saves `approved.json`, and `npm run render -- --from approved.json` renders those
+  exact reels (same seeds) as final MP4s from the command line.

@@ -8,6 +8,7 @@
 //   --topic love|self   only this topic
 //   --forever           keep rendering until stopped
 //   --line "<text>"     render one specific line (needs --sign)
+//   --from approved.json  render exactly the reels approved in the player (same seeds)
 //   --world cavelake    force a world (cavelake poolrooms meadow checker dunes nightsea snow cloudtops)
 //   --handle @name      small watermark, lower left
 //   --no-brand          leave out the small align ✦ mark
@@ -29,7 +30,9 @@ const opt = (name, def) => {
 
 const OUT = path.resolve(ROOT, opt('out', 'out'))
 const FPS = +opt('fps', 30)
-const COUNT = opt('forever', false) ? Infinity : +opt('count', 1)
+const FROM = opt('from', null)
+const APPROVED = FROM ? JSON.parse(fs.readFileSync(path.resolve(process.cwd(), FROM), 'utf8')) : null
+const COUNT = APPROVED ? APPROVED.length : opt('forever', false) ? Infinity : +opt('count', 1)
 const SIGN = opt('sign', null)
 const TOPIC = opt('topic', null)
 const HANDLE = opt('handle', '') === true ? '' : opt('handle', '')
@@ -106,8 +109,8 @@ process.on('SIGINT', () => {
 })
 
 while (made < COUNT && !stopping) {
-  const line = deal(made)
-  const seed = `${line.id}:${Date.now().toString(36)}:${made}`
+  const line = APPROVED ? APPROVED[made] : deal(made)
+  const seed = APPROVED ? String(line.seed) : `${line.id}:${Date.now().toString(36)}:${made}`
   const item = { ...line, seed, ...(WORLD ? { world: WORLD } : {}) }
   const t0 = Date.now()
   const info = await page.evaluate(([it, h, b]) => window.ZEXE.prepare(it, { handle: h, brand: b }), [item, HANDLE, BRAND])
@@ -127,7 +130,7 @@ while (made < COUNT && !stopping) {
   fs.unlinkSync(wav)
   fs.writeFileSync(path.join(OUT, base + '.txt'), info.caption + '\n')
   fs.appendFileSync(path.join(OUT, 'manifest.jsonl'), JSON.stringify({ file: base + '.mp4', sign: line.sign, topic: line.topic, text: line.text, world: info.world, seed, duration: info.duration }) + '\n')
-  if (!LINE) saveLedger()
+  if (!LINE && !APPROVED) saveLedger()
   made++
   process.stdout.write(`\r  ✓ ${base}.mp4  ${info.world}  ${info.duration.toFixed(1)}s  (${((Date.now() - t0) / 1000).toFixed(0)}s)\n    ${line.text}\n`)
 }
