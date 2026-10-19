@@ -1,4 +1,6 @@
-// STUB — replaced by the half-a agent. Export SCENES and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 0, end: 15.2, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'pattern half a'), update() {} })]
+// pattern · half a (0–15.2): You keep falling for the same person → Different name. Same ending. → the same red flags
+// → they collapse into one card → What if you saw it coming? → the card turns to the veiled mystery card + the sky (H).
+import p1, { cues as c1 } from './p1-loop.js'
+import p2, { cues as c2 } from './p2-pattern.js'
+export const SCENES = [p1, p2]
+export const CUES = [...c1, ...c2]
