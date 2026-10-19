@@ -20,11 +20,13 @@ const SPRITE = [
   '...XX..B..XX...',
 ]
 const COL = { X: '#ff8fb1', O: '#f2c75c', o: '#ffd98a', B: '#fff3e0' }
-const sprite = (() => {
+let SPR = null   // built lazily (this module is also imported by the node sound script)
+const getSprite = () => {
+  if (SPR) return SPR
   const c = cnv(15, SPRITE.length), x = c.getContext('2d')
   SPRITE.forEach((row, j) => [...row].forEach((ch, i) => { if (COL[ch]) { x.fillStyle = COL[ch]; x.fillRect(i, j, 1, 1) } }))
-  return c
-})()
+  return (SPR = c)
+}
 
 const B0 = 12.98, B1 = 14.62          // the butterfly's life
 const path = t => {
@@ -61,7 +63,7 @@ export function prepEnd() {
       ctx.save(); ctx.imageSmoothingEnabled = false; ctx.translate(Math.round(x), Math.round(y)); ctx.rotate(0.12 * Math.sin((t - B0) * 3))
       const w = 15 * px, h = SPRITE.length * px
       ctx.globalAlpha = 1 - fold
-      ctx.save(); ctx.scale(sxk, 1); ctx.drawImage(sprite, -w / 2, -h / 2, w, h); ctx.restore()
+      ctx.save(); ctx.scale(sxk, 1); ctx.drawImage(getSprite(), -w / 2, -h / 2, w, h); ctx.restore()
       ctx.restore()
     }
     // it folds into one twinkle that fades out by 14.72
