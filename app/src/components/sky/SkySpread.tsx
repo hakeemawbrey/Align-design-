@@ -46,10 +46,13 @@ export default function SkySpread({ reading = TODAY_READING }: { reading?: SkyRe
   return (
     <div style={{ width: 342 }}>
       <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)', textAlign: 'center' }}>
-        {SIGNS[ME.sign].glyph}{'︎'} {SIGNS[ME.sign].name.toUpperCase()} · YOUR HOROSCOPE · № {reading.serial}
+        {SIGNS[ME.sign].glyph}{'︎'} {SIGNS[ME.sign].name.toUpperCase()} · TODAY’S SKY · № {reading.serial}
+      </div>
+      <div className="h-display" style={{ fontSize: 32, marginTop: 8, textAlign: 'center' }}>
+        {allUp ? 'Your horoscope' : up.some(Boolean) ? 'Keep drawing' : 'Draw your horoscope'}
       </div>
       <div style={{ fontSize: 13, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 6, textAlign: 'center' }}>
-        {allUp ? 'Today’s real sky, read against your birth chart.' : 'Turn the three cards to read your day.'}
+        {allUp ? 'Today’s real sky, read against your birth chart.' : 'Three cards from today’s sky. Tap each one to turn it.'}
       </div>
 
       {/* the three cards */}

@@ -152,7 +152,7 @@ export function DeckHeader({ title, right, rightKey, starPulse = 0, hidden, onSk
           boxShadow: '0 0 8px rgba(242,199,92,0.4)',
         }} />
         <span className="serif italic" style={{ fontSize: 16, color: 'var(--label-1)', flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'left' }}>
-          {skyDrawn ? SKY_PILL : 'Draw today’s sky'}
+          {skyDrawn ? SKY_PILL : 'Draw your horoscope'}
         </span>
         {!skyDrawn && <span aria-hidden style={{ width: 7, height: 7, borderRadius: 4, flexShrink: 0, background: 'var(--rub)', boxShadow: '0 0 6px var(--rub)' }} />}
         {energy != null && (
