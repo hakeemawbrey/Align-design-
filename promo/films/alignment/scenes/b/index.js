@@ -1,4 +1,5 @@
-// STUB — replaced by the part-b agent. Export SCENES and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 19.8, end: 40.2, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'alignment part b'), update() {} })]
+// alignment · part b (19.8–40.2): read the angles between the two charts → Align 120° · Pull 60° · Push 90°.
+// Starts on H at 19.8 and is back on exactly H from 39.6. See angles.js for the beat map.
+import angles, { cues } from './angles.js'
+export const SCENES = [angles]
+export const CUES = [...cues]
