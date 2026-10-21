@@ -5,7 +5,7 @@
 // Beat map (sound):
 //   39.80–40.20  H2 held (sky only)
 //   40.20–41.30  Juniper's mystery card (card-profile-3: veiled aura window, no face) gathers in, left (590,540 h930)
-//   40.45        eyebrow "FACE LAST" · 40.70 "You see who / someone is / before you see / their face." (right column,
+//   40.30        eyebrow "FACE LAST" · 40.70 "You see who / someone is / before you see / their face." (right column,
 //                120px, typed by ≈42.95, held to 45.45: 2.5 s)
 //   41.45–41.95  a big "PHOTO HIDDEN" lock chip settles over her window · 42.30–43.70 a slow soft light runs down
 //                her words (who she is) · slow push 930 → 965 while the copy holds
@@ -15,8 +15,8 @@
 //   47.50–49.00  seven chakra stars drift in slowly and settle into the column between the cards (red bottom → violet top)
 //   49.05        LOCK, gentle: a soft violet-warm glow (no white flash), one slow ring, a few drifting sparks, rims warm
 //   49.90–50.60  pills, cards and stars drift apart and fade
-//   50.45–51.05  the match phone (screen-match.png, 1450 tall, cropped top and bottom) rises in: "You both aligned."
-//                (≈52px on screen, opaque from 50.85, held to 53.40: 2.55 s)
+//   50.45–51.05  the match phone (screen-match.png, 1700 tall, cropped; small print masked) rises in: "You both aligned."
+//                (≈62px on screen, opaque from 50.85, held to 53.40: 2.55 s)
 //   53.40–53.75  the phone fades; the plate is back at dim 1 by 53.6 (end.js owns 53.65→)
 import { clamp, lerp, prog, ease, tw, rng, el, C, TypeLine } from '../../../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill, img } from '../../../../src/scenes/common.js'
@@ -27,7 +27,7 @@ const T0 = 39.8, T1 = 53.95
 // ── beat 1: face last
 const GATHER = { a: 40.2, b: 41.3 }
 const FL = { x: 590, y: 540, h: 930 }
-const COPY1 = { eb: 40.45, line: 40.7, out: 45.45 }
+const COPY1 = { eb: 40.3, line: 40.7, out: 45.45 }
 const CHIP = { a: 41.45, b: 41.95, out: 45.2 }
 const WORDS = { a: 42.3, b: 43.7 }
 
@@ -47,7 +47,7 @@ const ORDER = [3, 0, 5, 2, 6, 1, 4]
 
 // ── beat 3: the match phone
 const PHONE = { a: 50.45, b: 51.05, out: 53.4, gone: 53.75 }
-const PH_H = 1450, PH_W = Math.round(PH_H * 1170 / 2532), PH_TOP = -350
+const PH_H = 1700, PH_W = Math.round(PH_H * 1170 / 2532), PH_TOP = -490
 
 export default async function build(stage) {
   const root = fill(stage, { background: C.void })
@@ -64,6 +64,12 @@ export default async function build(stage) {
   const scr = el('div', { position: 'absolute', inset: 0, borderRadius: '84px', overflow: 'hidden', background: C.canvas,
     boxShadow: '0 60px 120px rgba(4,2,14,0.7), 0 18px 40px rgba(4,2,14,0.45), 0 0 70px rgba(180,92,255,0.2), 0 0 0 2px rgba(239,230,214,0.35)' }, phone)
   img(scr, A + 'screen-match.png', { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover' })
+  // hide the screen's small print (labels, body copy, footer) so only the auras, the headline and the button remain
+  for (const [a, b] of [[0.532, 0.626], [0.684, 0.792], [0.912, 0.975]]) {
+    const y0 = a * PH_H, y1 = b * PH_H, f = 26
+    el('div', { position: 'absolute', left: 0, width: '100%', top: (y0 - f) + 'px', height: (y1 - y0 + 2 * f) + 'px',
+      background: `linear-gradient(180deg, rgba(11,6,32,0) 0px, rgba(11,6,32,0.97) ${f}px, rgba(11,6,32,0.97) calc(100% - ${f}px), rgba(11,6,32,0) 100%)` }, scr)
+  }
 
   // grain over the sky + cards + phone; type sits above it
   const gC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(grainOpacity(1)), pointerEvents: 'none' })
@@ -108,8 +114,8 @@ export default async function build(stage) {
     if (p <= 0 || alpha <= 0.003) return
     const e = ease.outCubic(p)
     bx.save()
-    bx.font = `36px 'Space Mono', monospace`; bx.letterSpacing = '5px'
-    const w = bx.measureText(label).width + 120, h = 70
+    bx.font = `44px 'Space Mono', monospace`; bx.letterSpacing = '5px'
+    const w = bx.measureText(label).width + 140, h = 84
     bx.translate(x, y + lerp(10, 0, e))
     bx.globalAlpha = alpha * ease.inOutQuad(p)
     bx.fillStyle = 'rgba(16,9,40,0.9)'; bx.beginPath(); bx.roundRect(-w / 2, -h / 2, w, h, h / 2); bx.fill()
