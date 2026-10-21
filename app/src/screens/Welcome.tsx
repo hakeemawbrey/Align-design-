@@ -3,6 +3,7 @@ import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
 import CardBack from '../components/intro/CardBack'
 import { sfx } from '../lib/sfx'
+import { PERSONA, PERSONAS, switchPersona, type PersonaId } from '../data/persona'
 
 const rise = (delay: number) => ({
   initial: { opacity: 0, y: 14 },
@@ -74,6 +75,29 @@ export default function Welcome({ go }: ScreenProps) {
         </motion.div>
       </motion.div>
 
+      {/* which founder is holding the phone: each sees the app from their own chart */}
+      <motion.div {...rise(0.5)} style={{ position: 'absolute', top: 512, left: 0, right: 0, textAlign: 'center' }}>
+        <div className="mono" style={{ fontSize: 9, letterSpacing: '0.24em', color: 'var(--label-3)' }}>PLAYING AS</div>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 8 }}>
+          {(Object.keys(PERSONAS) as PersonaId[]).map((id) => {
+            const p = PERSONAS[id]
+            const on = id === PERSONA.id
+            return (
+              <motion.button key={id} whileTap={{ scale: 0.95 }} aria-pressed={on}
+                onClick={() => { if (on) return; sfx.tap(); switchPersona(id, 'welcome') }}
+                style={{
+                  height: 38, padding: '0 14px 0 4px', borderRadius: 999, display: 'flex', alignItems: 'center', gap: 8,
+                  background: on ? 'var(--chrome)' : 'rgba(90, 74, 130, 0.22)', color: on ? 'var(--chrome-ink)' : 'var(--label-2)',
+                  border: on ? 'none' : '1px solid rgba(201, 188, 228, 0.3)',
+                }}>
+                <img src={p.photo} alt="" style={{ width: 30, height: 30, borderRadius: 15, objectFit: 'cover', objectPosition: '50% 30%' }} />
+                <span className="serif italic" style={{ fontSize: 15 }}>{p.name}</span>
+              </motion.button>
+            )
+          })}
+        </div>
+      </motion.div>
+
       <motion.div {...rise(0.6)} style={{ position: 'absolute', top: 584, left: 38, width: 314 }}>
         <motion.button
           className="chrome-cta"
@@ -81,7 +105,7 @@ export default function Welcome({ go }: ScreenProps) {
           whileHover={{ scale: 1.02, boxShadow: '0 0 44px rgba(248, 237, 255, 0.55), inset 0 1px 0 rgba(255,255,255,0.9)' }}
           whileTap={{ scale: 0.97 }}
         >
-          Continue as Hakeem <span className="spark">✦</span>
+          Continue as {PERSONA.name} <span className="spark">✦</span>
         </motion.button>
       </motion.div>
       <motion.div {...rise(0.7)} style={{ position: 'absolute', top: 650, left: 38, width: 314 }}>

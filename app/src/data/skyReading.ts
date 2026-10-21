@@ -1,3 +1,4 @@
+import { PERSONA } from './persona'
 import { ME } from './profiles'
 import { SIGNS, type SignId } from './signs'
 import type { EventId } from './draws'
@@ -9,8 +10,8 @@ import { houseOf, natalChart, retrograde, signOf, skyChart, transitsToChart, typ
  * (Venus and Mars) and Move (one thing to do, with a reward for your deck).
  */
 
-/** Hakeem's birth: May 12 1998, 5 PM, Tulsa (CDT) */
-export const MY_BIRTH: Birth = { year: 1998, month: 5, day: 12, hour: 17, minute: 0, utcOffset: -5, lat: 36.154, lon: -95.993, city: 'Tulsa' }
+/** your birth: whichever founder is playing (see persona.ts) */
+export const MY_BIRTH: Birth = PERSONA.birth
 
 export const PLANET: Record<Planet, { name: string; glyph: string; color: string; means: string }> = {
   sun: { name: 'Sun', glyph: '☉', color: '#ffc66b', means: 'who you are' },

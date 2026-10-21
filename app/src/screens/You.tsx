@@ -11,6 +11,7 @@ import { SIGNS } from '../data/signs'
 import { sfx } from '../lib/sfx'
 import { useSession } from '../lib/session'
 import { resetDemo } from '../lib/demo'
+import { PERSONA, PERSONAS, switchPersona, type PersonaId } from '../data/persona'
 import { talk, useTalk } from '../lib/talk'
 import { binderNav } from '../lib/binderNav'
 import { useBinder } from '../lib/binder'
@@ -40,6 +41,19 @@ const APP_ROWS: { label: string; right: string; to: 'notifications' | 'x/setting
   { label: 'Settings', right: '', to: 'x/settings' },
   { label: 'Help & support', right: '', to: 'x/help' },
 ]
+
+/** Hand the phone to the other founder: the demo starts fresh from their chart. */
+function SwitchRow() {
+  const other = PERSONAS[(Object.keys(PERSONAS) as PersonaId[]).find((id) => id !== PERSONA.id)!]
+  return (
+    <motion.button onClick={() => { sfx.tap(); switchPersona(other.id) }} whileTap={{ backgroundColor: 'rgba(52,35,95,0.9)' }}
+      style={{ width: '100%', height: 52, display: 'flex', alignItems: 'center', gap: 12, padding: '0 14px 0 12px', textAlign: 'left', borderTop: '1px solid rgba(179,166,196,0.12)' }}>
+      <img src={other.photo} alt="" style={{ width: 30, height: 30, borderRadius: 15, objectFit: 'cover', objectPosition: '50% 30%', flexShrink: 0 }} />
+      <span style={{ flex: 1, fontSize: 15, color: 'var(--label-1)' }}>Play as {other.name}</span>
+      <span style={{ fontSize: 12.5, color: 'var(--label-3)' }}>{other.age} · {SIGNS[other.sign].name}</span>
+    </motion.button>
+  )
+}
 
 /** Clears every swipe, match, trade and post, back to the splash. Tap twice to confirm. */
 function ResetRow() {
@@ -230,6 +244,7 @@ export default function You({ go }: ScreenProps) {
                 <Chevron />
               </motion.button>
             ))}
+            <SwitchRow />
             <ResetRow />
           </div>
           <div className="mono" style={{ textAlign: 'center', margin: '18px 0 0', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)' }}>

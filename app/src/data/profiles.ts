@@ -1,3 +1,4 @@
+import { PERSONA } from './persona'
 import type { SignId } from './signs'
 
 export interface ReadingLine {
@@ -44,19 +45,18 @@ export interface Profile {
   comet?: boolean
 }
 
-/** The viewer of the demo. */
+/** The viewer of the demo: whichever founder is playing (see persona.ts). */
 export const ME = {
-  name: 'Hakeem',
-  age: 28,
-  sign: 'taurus' as SignId,
-  moon: 'sagittarius' as SignId,
-  rising: 'libra' as SignId,
-  /** Venus at 10° Aries (May 12 1998, 5 PM, Tulsa) */
-  venus: 'aries' as SignId,
-  serial: '№ 012',
+  name: PERSONA.name,
+  age: PERSONA.age,
+  sign: PERSONA.sign,
+  moon: PERSONA.moon,
+  rising: PERSONA.rising,
+  venus: PERSONA.venus,
+  serial: PERSONA.serial,
   /** shown on the flipped side of your card and on copies you trade */
-  photo: 'img/hakeem.jpg',
-  blurb: 'Sound engineer. Record stores on Sundays. Cooks too much.',
+  photo: PERSONA.photo,
+  blurb: PERSONA.blurb,
 }
 
 /**

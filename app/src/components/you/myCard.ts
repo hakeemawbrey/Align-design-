@@ -1,17 +1,8 @@
 import { ME, type Profile } from '../../data/profiles'
+import { PERSONA } from '../../data/persona'
 
-/** Hakeem's card copy (G-05b) — the defaults the Edit card pages (G-27 / G-28) start from. */
-export const MY_CARD = {
-  bio: 'Slow to warm, impossible to shake. I cook for people I like and say less than I mean.',
-  facts: [
-    ['Religion', 'Spiritual, not religious'],
-    ['Looking for', 'Long term, open to slow'],
-    ['Height', '5′8″'],
-    ['Work', 'Sound engineer'],
-  ] as const,
-  interests: ['Record stores', 'Night drives', 'Tarot', 'Thrifting', 'Late diners'],
-  dealbreakers: 'No ghosting. Answer the question you were asked.',
-}
+/** your card copy (G-05b), from whichever founder is playing — the defaults the Edit card pages (G-27 / G-28) start from */
+export const MY_CARD = PERSONA.card
 
 export interface CardEdits {
   bio: string
@@ -31,9 +22,9 @@ export function myProfile(edits?: CardEdits): Profile {
     religion: fact('Religion', 0), lookingFor: fact('Looking for', 1), height: fact('Height', 2), work: fact('Work', 3),
     interests: [...c.interests],
     reading: [
-      { kind: 'pull', text: 'Remembers your order. Plans the second date during the first.', strength: 3 },
-      { kind: 'push', text: 'Slow to say how he feels. Ask him directly.', strength: 2 },
-      { kind: 'align', text: 'Loyal and steady. Wants something that lasts.', strength: 3 },
+      { kind: 'pull', text: PERSONA.reading.pull, strength: 3 },
+      { kind: 'push', text: PERSONA.reading.push, strength: 2 },
+      { kind: 'align', text: PERSONA.reading.align, strength: 3 },
     ],
   }
 }
