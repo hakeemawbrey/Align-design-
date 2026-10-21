@@ -1,4 +1,7 @@
-// STUB — replaced by the part-a agent. Export SCENES and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 0, end: 20.2, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'disposable part a'), update() {} })]
+// disposable · part a (0–20.2): We've made people disposable. → Seen. Three days ago. → Ghosted. → What if no one was
+// disposable? → the card back + sky (H1). Slower, bigger, calmer cut of ghosted half a.
+import d1, { cues as c1 } from './d1-stack.js'
+import d2, { cues as c2 } from './d2-phone.js'
+import d3, { cues as c3 } from './d3-last.js'
+export const SCENES = [d1, d2, d3]
+export const CUES = [...c1, ...c2, ...c3]
