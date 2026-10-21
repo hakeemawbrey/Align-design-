@@ -1,4 +1,6 @@
-// STUB — replaced by the part-c agent. Export SCENES and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 39.8, end: 60.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'disposable part c'), update() {} })]
+// Disposable · part c (39.8–60.0): FACE LAST → BOTH CHOOSE → the match phone → "Be chosen." + lockup → black.
+// Starts on H2 (the sky alone, the one moon) and ends on black.
+import story, { cues as storyCues } from './story.js'
+import end, { cues as endCues } from './end.js'
+export const SCENES = [story, end]
+export const CUES = [...storyCues, ...endCues]
