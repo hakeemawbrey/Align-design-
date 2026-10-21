@@ -1,4 +1,6 @@
-// STUB — replaced by the part-a agent. Export SCENES and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 0, end: 20.2, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'alignment part a'), update() {} })]
+// alignment · part A (0–20.2): How do two charts align? → Here are two charts. → Lay one over the other. → H.
+// PLACEMENTS / TRACK / TINT / drawPlacements (placements.js) are the shared chart positions for parts B and C.
+import a1, { cues as c1 } from './a1-charts.js'
+export { PLACEMENTS, TRACK, TINT, TINT_RGB, PLACE, drawOrb, drawOrbLabel, drawSignWash, drawTrack, drawPlacements } from './placements.js'
+export const SCENES = [a1]
+export const CUES = [...c1]
