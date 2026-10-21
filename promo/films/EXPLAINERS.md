@@ -79,3 +79,6 @@ Astrology facts must be correct. Rulerships, elements and aspect angles are stan
 | 40–46 | **"And sometimes, one planet rules you both."** ♀ Venus glows and links Taurus and Libra (Venus rules both signs). Caption under: "Venus rules Taurus and Libra." |
 | 46–53.5 | **"Align turns every angle into a reading."** The app's real screen promo/assets/screen-alignment.png ("Venus rules you both"), large, then three reading cards rise one by one: Pull "She answers like you do." · Push "You want the last word. She wants silence." · Align "You read rooms the same way." (the real copy from readings.ts, in their colours). |
 | 53.5–60 | **"See how you align."**, then the Align lockup and fade. |
+
+## Shared helper (use it!)
+`promo/films/wheel.js` exports `SIGNS`, `ELEMENT_COLOR`, `READING`, `WHEEL`, `SKY_H`, `GRAIN_H`, `angOf(lon)`, `ptOf(lon, r)`, `signMid(sign)` and `drawWheelH(ctx, {k, glyphK})`. Draw H with `drawSky(ctx, t, SKY_H)` + `drawWheelH(ctx)` + grain at GRAIN_H, so all parts match pixel for pixel at the cuts. Build your own richer wheel states on top of it, but keep its geometry.
