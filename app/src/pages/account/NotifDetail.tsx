@@ -22,8 +22,12 @@ const MEANS: Record<PersonaId, Record<'venus-retro' | 'moon-pisces', Detail['mea
     'moon-pisces': { head: 'Sagittarius Moon · restless', body: 'Your moon wants to roam. Pisces asks it to sit still for one night. Write down what you keep circling.' },
   },
   xavier: {
-    'venus-retro': { head: 'Venus in Scorpio · that’s yours', body: 'Venus is backing through Scorpio, your Venus sign, so this one lands harder on you than on most. Revisit, don’t rush. The sky will carry what’s real.' },
-    'moon-pisces': { head: 'Capricorn Moon · on duty', body: 'Your moon wants to stay useful. Pisces asks it to put the list down for one night. Write down what you keep circling.' },
+    'venus-retro': { head: 'Capricorn Sun · slow on purpose', body: 'Venus isn’t your planet, but you already take love slowly, and this week rewards it. Revisit, don’t rush. The sky will carry what’s real.' },
+    'moon-pisces': { head: 'Gemini Moon · too many tabs open', body: 'Your moon wants to talk it all through. Pisces asks it to go quiet for one night. Write down what you keep circling.' },
+  },
+  jeremy: {
+    'venus-retro': { head: 'Venus in your 5th house · dating', body: 'Venus is backing through Scorpio, your house of romance and fun, so old flames come back around for you more than most. Revisit, don’t rush. The sky will carry what’s real.' },
+    'moon-pisces': { head: 'Sagittarius Moon · restless', body: 'Your moon wants to roam. Pisces asks it to sit still for one night. Write down what you keep circling.' },
   },
 }
 

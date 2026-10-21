@@ -36,6 +36,7 @@ const PHOTO = juniper.photo ?? 'img/juniper.jpg'
  * Her card: assistant curator, books by colour, vinyl. The second half picks
  * up something on yours, so it's written per founder:
  * Hakeem — sound engineer, record stores. Xavier — film cameras, late-night tacos.
+ * Jeremy — karaoke, cooking.
  */
 const OPENING: Omit<Msg, 'id'>[] = [
   { from: 'me', text: 'Ok I have to ask. Do you actually organise your books by colour?' },
@@ -61,6 +62,15 @@ const SCRIPTS: Record<PersonaId, Omit<Msg, 'id'>[]> = {
     { from: 'her', text: 'Oh you’re on. Thursday after work?' },
     { from: 'me', text: 'Thursday works' },
   ],
+  jeremy: [
+    ...OPENING,
+    { from: 'her', text: 'I’ll allow it. Your card says karaoke — what’s your song?' },
+    { from: 'me', text: 'Anything old R&B. I do a Luther that clears the room, in a good way' },
+    { from: 'her', text: 'Ha. You also put cooking. What’s the dish you show off with?' },
+    { from: 'me', text: 'Oxtail. Want to come over this week and judge it?' },
+    { from: 'her', text: 'Oh you’re on. Thursday after work?' },
+    { from: 'me', text: 'Thursday works' },
+  ],
 }
 const SCRIPT = SCRIPTS[PERSONA.id]
 
@@ -69,7 +79,7 @@ const REPLIES = [
   'Ha ok, I like that',
   'Wait, what are you listening to right now?',
   'You’re funnier than your card let on',
-  { hakeem: 'Deal. Whoever buys more gets tacos after', xavier: 'Deal. If the photos come out, you owe me prints' }[PERSONA.id],
+  { hakeem: 'Deal. Whoever buys more gets tacos after', xavier: 'Deal. If the photos come out, you owe me prints', jeremy: 'Deal. I’m bringing dessert, you’re picking the song' }[PERSONA.id],
   'Ok I have to get back to work but I’m looking forward to Thursday',
 ]
 

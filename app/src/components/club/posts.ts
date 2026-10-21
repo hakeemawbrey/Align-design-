@@ -110,29 +110,31 @@ const TAURUS_POSTS: Post[] = [
 
 /**
  * Your sun sign's room. The two memes and the bull are Taurus jokes, so any
- * other room gets its own versions of those posts; the rest is the same night.
+ * other room swaps those posts for text ones; the rest is the same night.
  */
-const OWN_POSTS: Partial<Record<SignId, Partial<Record<string, Partial<Post>>>>> = {
-  virgo: {
-    jules: {
-      text: 'Fixed the font on his menu before the first date. He said thank you. I am in trouble.',
-      image: undefined,
-      replies: [
-        { name: 'Devon', age: 31, moon: 'cancer', text: 'Was it Comic Sans. Tell me it was Comic Sans.' },
-        { name: 'Priya', age: 27, moon: 'sagittarius', text: 'This is a documentary' },
-      ],
-    },
-    tasha: {
-      text: 'Said “I’m fine” at brunch today, then rewrote the group chat plan three times.',
-      image: undefined,
-    },
-    celeste: {
-      replies: [{ name: 'Marcus', age: 34, moon: 'capricorn', text: 'Delete it before direct station. Then alphabetise the rest.' }],
-    },
+const SIGN_OFF: Partial<Record<SignId, string>> = {
+  virgo: 'Then alphabetise the rest.',
+  capricorn: 'Then put a reminder in your calendar not to.',
+  cancer: 'Then call your mom.',
+}
+const OTHER_ROOM: Record<string, Partial<Post>> = {
+  jules: {
+    text: 'Matched with someone who also reads the menu online before the date. The wedding is in June.',
+    image: undefined,
+    replies: [
+      { name: 'Devon', age: 31, moon: 'cancer', text: 'Was the menu good though. Asking for me.' },
+      { name: 'Priya', age: 27, moon: 'sagittarius', text: 'This is a documentary' },
+    ],
+  },
+  tasha: {
+    text: 'Said “I’m fine” at brunch today, then rewrote the group chat plan three times.',
+    image: undefined,
+  },
+  celeste: {
+    replies: [{ name: 'Marcus', age: 34, moon: 'capricorn', text: `Delete it before direct station. ${SIGN_OFF[ME.sign] ?? 'Trust me.'}` }],
   },
 }
-const own = ME.sign === 'taurus' ? undefined : OWN_POSTS[ME.sign]
-export const ROOM_POSTS: Post[] = own ? TAURUS_POSTS.map((p) => ({ ...p, ...own[p.id] })) : TAURUS_POSTS
+export const ROOM_POSTS: Post[] = ME.sign === 'taurus' ? TAURUS_POSTS : TAURUS_POSTS.map((p) => ({ ...p, ...OTHER_ROOM[p.id] }))
 
 export const ROOM_COUNT = 1204
 export const SAID_TONIGHT = 41

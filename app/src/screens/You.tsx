@@ -42,9 +42,11 @@ const APP_ROWS: { label: string; right: string; to: 'notifications' | 'x/setting
   { label: 'Help & support', right: '', to: 'x/help' },
 ]
 
-/** Hand the phone to the other founder: the demo starts fresh from their chart. */
-function SwitchRow() {
-  const other = PERSONAS[(Object.keys(PERSONAS) as PersonaId[]).find((id) => id !== PERSONA.id)!]
+/** Hand the phone to another founder: the demo starts fresh from their chart. One row per founder. */
+function SwitchRows() {
+  return <>{(Object.keys(PERSONAS) as PersonaId[]).filter((id) => id !== PERSONA.id).map((id) => <SwitchRow key={id} other={PERSONAS[id]} />)}</>
+}
+function SwitchRow({ other }: { other: (typeof PERSONAS)[PersonaId] }) {
   return (
     <motion.button onClick={() => { sfx.tap(); switchPersona(other.id) }} whileTap={{ backgroundColor: 'rgba(52,35,95,0.9)' }}
       style={{ width: '100%', height: 52, display: 'flex', alignItems: 'center', gap: 12, padding: '0 14px 0 12px', textAlign: 'left', borderTop: '1px solid rgba(179,166,196,0.12)' }}>
@@ -244,7 +246,7 @@ export default function You({ go }: ScreenProps) {
                 <Chevron />
               </motion.button>
             ))}
-            <SwitchRow />
+            <SwitchRows />
             <ResetRow />
           </div>
           <div className="mono" style={{ textAlign: 'center', margin: '18px 0 0', fontSize: 8.5, letterSpacing: '0.2em', color: 'var(--label-4)' }}>

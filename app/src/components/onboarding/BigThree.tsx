@@ -11,14 +11,18 @@ import { FACE_LINES } from '../../data/signFacts'
 const AT_BRUNCH: Partial<Record<SignId, string>> = {
   taurus: 'Orders for the table, pays without looking.',
   virgo: 'Fixes the order, splits the bill to the cent.',
+  capricorn: 'Booked the table, picks up the check, leaves on time.',
+  cancer: 'Feeds the whole table. Remembers who doesn’t eat dairy.',
 }
 const AT_2AM: Partial<Record<SignId, string>> = {
   sagittarius: 'Plans the trip you will not book. Feels it all, tells no one.',
   capricorn: 'Still working. Feels it all, schedules it for later.',
+  gemini: 'Three conversations at once. Feels it all, talks it out.',
 }
 const MEET_FIRST: Partial<Record<SignId, string>> = {
   libra: 'Charming. Suspiciously good lighting.',
   scorpio: 'Quiet. Hard to read. Clocking everything.',
+  cancer: 'Warm, a little guarded. Already offering you a snack.',
 }
 
 /** O-07 — "One sky. Three yous." */

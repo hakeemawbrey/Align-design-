@@ -1,5 +1,6 @@
 import { SIGNS, type Element, type SignId } from '../../data/signs'
 import { BIRTH_LABEL } from '../../data/myBirth'
+import { PERSONA } from '../../data/persona'
 
 /** O-06b — "<Sign>, the user manual." Three short reads per sun sign. */
 export const MANUAL: Record<SignId, { strengths: string; weaknesses: string; workOn: string }> = {
@@ -150,7 +151,7 @@ export interface BirthTime {
   place: string
 }
 
-/** whoever is playing: Hakeem 5:00 PM, Tulsa · Xavier 11:05 AM, Houston */
+/** whoever is playing: Hakeem 5:00 PM, Tulsa · Xavier 11:00 PM, Houston · Jeremy 7:30 AM, Houston */
 export const DEFAULT_TIME: BirthTime = { exact: true, hour: BIRTH_LABEL.hour12, minute: BIRTH_LABEL.minute, pm: BIRTH_LABEL.pm, part: BIRTH_LABEL.part, place: BIRTH_LABEL.placeLong }
 /** "Tulsa, Oklahoma" → "Tulsa" */
 export const cityOf = (place: string) => place.split(',')[0].trim()
@@ -160,6 +161,8 @@ export const timeLabel = (t: BirthTime) =>
   t.exact ? `${t.hour}:${String(t.minute).padStart(2, '0')} ${t.pm ? 'PM' : 'AM'}` : DAY_PARTS.find((p) => p.id === t.part)!.label
 
 export function risingFor(sun: SignId, t: BirthTime): SignId {
+  // your own birth sky reads your real chart; the rule of thumb covers anything typed in
+  if (t.exact && sun === PERSONA.sign && t.hour === DEFAULT_TIME.hour && t.minute === DEFAULT_TIME.minute && t.pm === DEFAULT_TIME.pm && t.place === DEFAULT_TIME.place) return PERSONA.rising
   if (t.exact) return risingAt(sun, hour24(t))
   return signAfter(sun, DAY_PARTS.find((p) => p.id === t.part)!.offsets[0])
 }

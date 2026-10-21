@@ -1,7 +1,7 @@
 /**
  * Juniper × you: the cosmic alignment — copy from S-21 / S-21b / S-21c / S-21d.
  * Written against each founder's chart (Juniper: Libra sun, Gemini moon,
- * Aquarius rising, Venus and Mercury in Virgo / Libra).
+ * Aquarius rising, Venus in Virgo, Mercury in Libra).
  */
 import { PERSONA, type PersonaId } from '../../data/persona'
 
@@ -50,34 +50,59 @@ const HAKEEM: Reading[] = [
 const XAVIER: Reading[] = [
   {
     ...HAKEEM[0],
-    headline: 'She notices like you do.',
-    body: 'Her Venus is in Virgo, your sun sign, so she shows care the way you do: small favours, details remembered, nothing announced. You will both catch it. The first five nights will feel easier than they should.',
-    tryLine: 'Bring up something small she mentioned earlier.',
+    headline: 'You feel the same way.',
+    body: 'You both have a Gemini moon, so you feel by talking: out loud, the same night, with follow-up questions. Neither of you has to drag it out of the other. The first five nights will feel easier than they should.',
+    tryLine: 'Ask the question you’d usually save for date three.',
   },
   {
     ...HAKEEM[1],
-    headline: 'You want it decided. She wants it open.',
-    body: 'Your Capricorn moon likes a plan and a clear yes. Her Libra sun weighs every option, and her Gemini moon talks it through twice. You read the wait as doubt; she reads your plan as pressure.',
+    headline: 'You want a plan. She wants options.',
+    body: 'Your Capricorn sun likes a decision and a date in the calendar. Her Libra sun weighs every option twice. You read the wait as doubt; she reads your plan as pressure.',
     tryLine: 'Offer two options, not one. Let her pick.',
   },
   {
     ...HAKEEM[2],
-    headline: 'You talk the same way.',
-    body: 'Your Mercury and hers are both in Libra, so you think out loud the same way: fair, careful, a little polite. Neither of you makes a scene. The quiet between you carries more than it looks.',
-    tryLine: 'Say the specific compliment. She will remember the detail.',
+    headline: 'You make the same first impression.',
+    body: 'Your Libra rising meets her Libra sun: you both lead with charm and hate a scene. You agree on what is beautiful and what is rude. The quiet between you carries more than it looks.',
   },
   {
     ...HAKEEM[3],
-    headline: 'You fix. She talks. Both count.',
-    body: 'You show love by doing; she shows it by talking. After a fight, let her talk first, then fix one small thing. Her taking time to decide isn’t disinterest, and your quiet isn’t judgement. Say both of those out loud once.',
+    headline: 'You build. She talks. Both count.',
+    body: 'You show love by building something; she shows it by talking it through. After a fight, let her talk first, then make one plan together. Her taking time to decide isn’t disinterest, and your quiet isn’t coldness. Say both of those out loud once.',
   },
 ]
 
-export const READINGS: Reading[] = { hakeem: HAKEEM, xavier: XAVIER }[PERSONA.id]
+const JEREMY: Reading[] = [
+  {
+    ...HAKEEM[0],
+    headline: 'You talk the way she feels.',
+    body: 'Your Mercury is in Gemini, her moon sign, so the way you talk is the way she feels: quick, curious, lots of questions. She will feel heard early. The first five nights will feel easier than they should.',
+  },
+  {
+    ...HAKEEM[1],
+    headline: 'You feel it now. She thinks it over.',
+    body: 'Your Cancer sun feels first and wants to hear it back. Her Libra sun weighs it, and her Aquarius rising keeps a little distance. You read the pause as cold; she reads the need as pressure.',
+    tryLine: 'Ask how she’s feeling, then give her a day to answer.',
+  },
+  {
+    ...HAKEEM[2],
+    headline: 'You both like it done right.',
+    body: 'Your Venus is in Leo: you love out loud, with effort and a bit of show. She is a Libra sun and loves a date done properly. You will plan the nights she tells her friends about.',
+    tryLine: 'Plan one date with a detail she’ll notice.',
+  },
+  {
+    ...HAKEEM[3],
+    headline: 'You host. She talks. Both count.',
+    body: 'You show love by taking care of people; she shows it by talking. After a fight, let her talk first, then cook. Her taking time to decide isn’t disinterest, and your feelings aren’t too much. Say both of those out loud once.',
+  },
+]
+
+export const READINGS: Reading[] = { hakeem: HAKEEM, xavier: XAVIER, jeremy: JEREMY }[PERSONA.id]
 
 /** the line over the reading tabs (S-21 card and the inline chat card) */
 export const READING_TITLE: Record<PersonaId, { title: string; line: string }> = {
   hakeem: { title: 'Venus rules you both.', line: 'She balances the room; you keep it.' },
-  xavier: { title: 'You both think in Libra.', line: 'She weighs the room; you read it.' },
+  xavier: { title: 'Two Gemini moons.', line: 'She weighs it; you build it.' },
+  jeremy: { title: 'Big heart, fair mind.', line: 'She balances the room; you feed it.' },
 }
 export const MY_READING_TITLE = READING_TITLE[PERSONA.id]

@@ -41,9 +41,12 @@ interface ChartTab {
  * natal chart); the prose is written per founder, because it reads the whole
  * chart at once.
  * Hakeem: Taurus sun, Sagittarius moon, Libra rising → sun in the 8th house.
- * Xavier: Virgo sun, Capricorn moon, Scorpio rising → sun in the 11th house.
+ * Xavier: Capricorn sun, Gemini moon, Libra rising → sun in the 4th house.
+ * Jeremy: Cancer sun, Sagittarius moon, Cancer rising → sun in the 1st house.
  */
 const SUN_FACTS = SIGN_FACTS[ME.sign]
+/** 'Venus', or 'the Moon' mid-sentence */
+const RULER = SUN_FACTS.ruler.replace(/^The /, 'the ')
 const HOUSE = ordinal(SUN_HOUSE)
 
 const HAKEEM_TABS: ChartTab[] = [
@@ -115,56 +118,104 @@ const HAKEEM_TABS: ChartTab[] = [
 const XAVIER_TABS: ChartTab[] = [
   {
     ...HAKEEM_TABS[0],
-    headline: 'You love by paying attention.',
-    meaning: 'Your sun sign is your core: what you need to feel like yourself. Virgo needs order, usefulness and a little quiet.',
-    love: 'You show care in the details: the thing they mentioned once, the plan already sorted. Someone careless with small things will feel careless with you.',
-    self: 'Stop editing yourself before you speak. The rough draft of you is already good.',
-    tryLine: 'Tell your match one small thing you noticed about them.',
+    headline: 'You love by building something that lasts.',
+    meaning: 'Your sun sign is your core: what you need to feel like yourself. Capricorn needs a goal, respect and proof over time.',
+    love: 'You take love seriously, so you start slow. Someone who keeps their word wins you faster than someone who says big things.',
+    self: 'You don’t have to earn rest. Let someone look after you before the work is done.',
+    tryLine: 'Tell your match one thing you’re building, and ask what they are.',
   },
   {
     ...HAKEEM_TABS[1],
-    headline: 'You need to feel steady before you feel close.',
-    meaning: 'Your moon is how you feel and what makes you feel safe. A Capricorn moon needs structure, respect and proof over time.',
-    love: 'You open up when someone keeps their word, not when they say big things. Flaky plans shut you down fast.',
-    self: 'Feelings aren’t a task to finish later. Say one out loud before it’s tidy.',
-    tryLine: 'Make a plan for next week, then keep it exactly.',
+    headline: 'You need to talk it out to feel close.',
+    meaning: 'Your moon is how you feel and what makes you feel safe. A Gemini moon needs conversation, variety and someone curious.',
+    love: 'You open up through talk: long texts, late calls, questions back. Silence or the same routine every week shuts you down fast.',
+    self: 'Your mind moves fast. Say the feeling, not just your thoughts about it.',
+    tryLine: 'Ask your match a question you really don’t know the answer to.',
   },
   {
     ...HAKEEM_TABS[2],
-    headline: 'People meet your quiet first.',
-    meaning: 'Your rising sign is how strangers read you before they know you. Scorpio rising comes across intense, private and hard to read.',
-    love: 'People sense depth right away but can’t tell if you like them. Your warmer Virgo core shows up later.',
-    self: 'Keep the mystery, but give one clear signal sooner. The right people stay.',
-    tryLine: 'In your next chat, say plainly that you’re enjoying it.',
+    love: 'People feel comfortable with you right away, so it can be hard to tell who likes the real you. Your serious Capricorn core shows up later.',
   },
   {
     ...HAKEEM_TABS[3],
-    headline: 'Calm on the outside, taking notes on the inside.',
-    meaning: 'People read you as reserved. In truth you notice everything, decide slowly, then go all in.',
-    love: 'Partners can mistake your quiet for judgement. Tell them what you noticed that you liked.',
-    self: 'Notice when “just being thorough” is really nerves. Good enough is often enough.',
+    headline: 'Easy on the outside, serious on the inside.',
+    meaning: 'People read you as relaxed and charming. In truth you’re planning three steps ahead and holding yourself to every one.',
+    love: 'Partners can mistake your charm for not being serious. Tell them plainly when you are.',
+    self: 'Notice when “I’ll handle it” is really not asking for help. Let someone in on the plan.',
   },
-  // Virgo is earth too: the element page reads the same
+  // Capricorn is earth too: the element page reads the same
   HAKEEM_TABS[4],
   {
-    ...HAKEEM_TABS[5], eyebrow: 'Mercury', color: '#9ec4ff',
-    headline: 'Your planet is the planet of talk.',
-    meaning: 'Every sign has a ruling planet that shapes what it wants. Yours is Mercury: thinking, talking, messages and the details.',
-    love: 'You show love by listening closely and remembering. Look for someone who says what they mean, and asks you back.',
-    self: 'Mercury turns retrograde on Oct 24. Reread before you send, and save the big talks for in person.',
-    tryLine: 'Send one message you didn’t edit three times.',
+    ...HAKEEM_TABS[5], eyebrow: 'Saturn', color: '#d8c49a',
+    headline: 'Your planet is the planet of time.',
+    meaning: 'Every sign has a ruling planet that shapes what it wants. Yours is Saturn: commitment, patience and what lasts.',
+    love: 'You show love by showing up, every time, on time. Look for someone who notices that and does it back.',
+    self: 'Saturn rewards slow work. Don’t rush a good thing to prove it’s real.',
+    tryLine: 'Write down what you want this to look like in a year.',
   },
   {
-    ...HAKEEM_TABS[6], eyebrow: '11th house', color: '#7fd8b0',
-    headline: 'Love, for you, starts as friendship.',
-    meaning: 'Houses show where in life your energy goes. Your sun sits in the 11th: friends, groups, and the future you’re building.',
-    love: 'You fall for people who fit into your life and your plans. Getting on with your friends wins you faster than any big gesture.',
-    self: 'You can be a great friend and still ask for more. Say so when it’s more than friendly.',
-    tryLine: 'Invite a match to something with your people.',
+    ...HAKEEM_TABS[6], eyebrow: '4th house', color: '#7fd8b0',
+    headline: 'Love, for you, means somewhere to come home to.',
+    meaning: 'Houses show where in life your energy goes. Your sun sits in the 4th: home, family, and the private you.',
+    love: 'You want a partner who feels like home, not an audience. People earn the private you slowly.',
+    self: 'You can keep your walls and still open the door. Invite someone into your real life sooner.',
+    tryLine: 'Tell a match about the place that feels most like home.',
   },
 ]
 
-const TABS: ChartTab[] = { hakeem: HAKEEM_TABS, xavier: XAVIER_TABS }[PERSONA.id]
+const JEREMY_TABS: ChartTab[] = [
+  {
+    ...HAKEEM_TABS[0],
+    headline: 'You love by taking care of people.',
+    meaning: 'Your sun sign is your core: what you need to feel like yourself. Cancer needs closeness, loyalty and a place that feels like home.',
+    love: 'You fall hard and protect what you love. Someone who goes cold or keeps you guessing will feel unsafe, even if they’re lovely.',
+    self: 'Stop waiting to be asked. Say what you need before you need it.',
+    tryLine: 'Tell your match what you’d cook them, and mean it.',
+  },
+  // a Sagittarius moon, like Hakeem's: the moon page reads the same
+  HAKEEM_TABS[1],
+  {
+    ...HAKEEM_TABS[2],
+    headline: 'People meet your warmth first.',
+    meaning: 'Your rising sign is how strangers read you before they know you. Cancer rising comes across warm, caring and a little guarded.',
+    love: 'People feel looked after right away. Your rising and your sun are the same sign, so who they meet first is who you are.',
+    self: 'Your shell is there for a reason, but not everyone needs it. Let a new person see you laugh first.',
+    tryLine: 'In your next chat, share something you love that you usually keep quiet.',
+  },
+  {
+    ...HAKEEM_TABS[3],
+    headline: 'Easygoing on the outside, feeling it all inside.',
+    meaning: 'People read you as fun and easy to be around. In truth you feel everything and remember all of it.',
+    love: 'Partners can miss how much a small thing hurt. Tell them when it does, kindly, the same day.',
+    self: 'Notice when “it’s fine” is really a grudge. Let it go out loud.',
+  },
+  {
+    ...HAKEEM_TABS[4], eyebrow: 'Water', color: '#7fb8f0',
+    headline: 'You need love to feel safe, not just fun.',
+    meaning: 'Water signs (Cancer, Scorpio, Pisces) feel first and think second. How someone makes you feel matters more than what they say.',
+    love: 'You click easiest with water and earth signs. Air can feel distant; fire brings warmth that can boil over.',
+    self: 'Your gut is usually right. If a date leaves you uneasy, take that seriously.',
+    tryLine: 'Plan a date that feels cosy: cook in, a long walk, somewhere quiet.',
+  },
+  {
+    ...HAKEEM_TABS[5], eyebrow: 'The Moon', color: '#b3a6c4',
+    headline: 'Your planet is the Moon.',
+    meaning: 'Every sign has a ruling planet that shapes what it wants. Yours is the Moon: feelings, home and what makes you feel safe.',
+    love: 'Your mood moves with the moon, so you need someone steady through the ups and downs. Look for someone who checks in.',
+    self: 'Watch the moon. On a full moon, sleep on big feelings before you send them.',
+    tryLine: 'Write down three things that make you feel at home.',
+  },
+  {
+    ...HAKEEM_TABS[6], eyebrow: '1st house', color: '#f2c75c',
+    headline: 'Love, for you, starts with being yourself.',
+    meaning: 'Houses show where in life your energy goes. Your sun sits in the 1st: you, your body, the way you walk into a room.',
+    love: 'What people see is what they get, and you want the same back. Mixed signals wear you out.',
+    self: 'You’re allowed to take up space. Lead with what you want instead of waiting to be read.',
+    tryLine: 'Make the first move on a match you like.',
+  },
+]
+
+const TABS: ChartTab[] = { hakeem: HAKEEM_TABS, xavier: XAVIER_TABS, jeremy: JEREMY_TABS }[PERSONA.id]
 
 /** G-23 Your chart — reached from the You tab's "Your sign" tile. */
 export default function Chart({ go }: ScreenProps) {
@@ -224,7 +275,7 @@ export default function Chart({ go }: ScreenProps) {
           </div>
 
           <div className="h-display" style={{ fontSize: 23, marginTop: 8 }}>{TITLE[t.id] ?? `Sun in ${SIGNS[ME.sign].name}.`}</div>
-          <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 4 }}>{SUBTITLE[t.id] ?? `${SUN_FACTS.mode} ${SUN_FACTS.element.toLowerCase()} · ruled by ${SUN_FACTS.ruler} · ${HOUSE} house`}</div>
+          <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 4 }}>{SUBTITLE[t.id] ?? `${SUN_FACTS.mode} ${SUN_FACTS.element.toLowerCase()} · ruled by ${RULER} · ${HOUSE} house`}</div>
 
           <div style={{
             marginTop: 10, width: '100%', height: 36, padding: 3, borderRadius: 999, display: 'flex',

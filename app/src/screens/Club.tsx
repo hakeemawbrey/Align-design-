@@ -23,7 +23,7 @@ const minePost = (m: ClubPost, founder?: number): Post => ({
   text: m.text, likes: m.likes, sparks: m.sparks, replies: [], mine: true, founder,
 })
 
-/** S-17 · Club — your sun sign's room (the Taurus room for Hakeem, Virgo for Xavier). */
+/** S-17 · Club — your sun sign's room (the Taurus room for Hakeem). */
 export default function Club({ go }: ScreenProps) {
   const { clubMine, clubLiked, alignPlus } = useSession()
   const [composer, setComposer] = useState<null | { prompt?: string }>(null)

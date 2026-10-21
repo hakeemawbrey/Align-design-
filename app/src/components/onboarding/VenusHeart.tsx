@@ -15,6 +15,14 @@ const READ: Partial<Record<SignId, { body: string; chips: string[] }>> = {
     body: 'You don’t do casual. You watch first, decide quietly, then you’re all in — and you notice who isn’t.',
     chips: ['Trust first', 'All in or nothing', 'Keeps every secret'],
   },
+  sagittarius: {
+    body: 'You don’t sit still in love. You want honesty, a laugh and somewhere new — and someone who comes along.',
+    chips: ['Says it straight', 'Books the trip', 'Allergic to boring'],
+  },
+  leo: {
+    body: 'You don’t love quietly. Big gestures, birthdays done right, and you want to be proud of who you’re with.',
+    chips: ['Loves out loud', 'Remembers birthdays', 'Wants to be chosen'],
+  },
 }
 const FALLBACK = { body: 'Venus is how you love: what you notice first, and what keeps you there.', chips: ['Notices first', 'Stays for', 'Shows it by'] }
 

@@ -12,7 +12,7 @@ export interface TradeCardData {
   /** photo, or an aura image for your own card (G-05a shows your aura, not a face) */
   img: string
   serial: string
-  /** "For Hakeem" / "For Xavier" — whose binder this copy lives in */
+  /** "For Hakeem" — whose binder this copy lives in */
   copyFor?: string
   /** small caption over the image, e.g. "AURA · HONEY" */
   caption?: string

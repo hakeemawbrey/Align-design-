@@ -2,7 +2,7 @@ import { SIGNS, type SignId } from '../../data/signs'
 import { ME } from '../../data/profiles'
 import { PERSONA, type PersonaId } from '../../data/persona'
 import { SIGN_FACTS } from '../../data/signFacts'
-import { SUN_HOUSE, VENUS_DEGREE } from '../../data/myBirth'
+import { SUN_HOUSE, VENUS_DEGREE, ordinal } from '../../data/myBirth'
 
 /**
  * The glossary (S-20) and the term explainer (S-16): every astro word Align
@@ -10,7 +10,8 @@ import { SUN_HOUSE, VENUS_DEGREE } from '../../data/myBirth'
  * Names, codes and facts follow your placements (ME, SIGN_FACTS, your natal
  * chart); "mine" and "hers" are written per founder (MINE below).
  * Hakeem: Taurus sun (8th house), Sagittarius moon, Libra rising, Venus in Aries.
- * Xavier: Virgo sun (11th house), Capricorn moon, Scorpio rising, Venus in Scorpio.
+ * Xavier: Capricorn sun (4th house), Gemini moon, Libra rising, Venus in Sagittarius.
+ * Jeremy: Cancer sun (1st house), Sagittarius moon, Cancer rising, Venus in Leo.
  * Juniper: Libra sun (7th house), Gemini moon, Aquarius rising.
  */
 
@@ -46,6 +47,19 @@ export interface Term {
 
 type Mine = Pick<Term, 'mine' | 'hers'> & Partial<Pick<Term, 'tryLine' | 'facts'>>
 
+const HAKEEM_MOON: Mine = {
+  mine: 'Sagittarius moon. You need room, honesty and something new. Holding on tight shuts you down; a plan for somewhere new opens you up.',
+  hers: 'Juniper is a Gemini moon. She feels by talking it out, out loud, the same night. Your opposite moon, which can be very good.',
+}
+const HAKEEM_EARTH: Mine = {
+  mine: 'You are earth. You click easiest with earth and water. Air brings ideas you lack; fire brings spark that can feel like too much.',
+  hers: 'Juniper is air. She lives in ideas and conversation, which is why talking to her is easy and deciding with her is slow.',
+}
+const HAKEEM_SEVENTH: Mine = {
+  mine: 'Your seventh house starts in Aries. You want a partner who keeps up and pushes back, not one who agrees with everything.',
+  hers: 'Juniper’s sun sits in her seventh house. She becomes most herself with someone across the table. That is you, on Friday.',
+}
+
 /** what each term means in each founder's chart, and in Juniper's next to it */
 const MINE: Record<PersonaId, Record<string, Mine>> = {
   hakeem: {
@@ -57,26 +71,17 @@ const MINE: Record<PersonaId, Record<string, Mine>> = {
       mine: 'Taurus sun. You need steadiness, comfort and time. A slow yes from you is worth more than a fast one.',
       hers: 'Juniper is a Libra sun. Libra and Taurus share a ruling planet, Venus, so you like the same things for different reasons.',
     },
-    moon: {
-      mine: 'Sagittarius moon. You need room, honesty and something new. Holding on tight shuts you down; a plan for somewhere new opens you up.',
-      hers: 'Juniper is a Gemini moon. She feels by talking it out, out loud, the same night. Your opposite moon, which can be very good.',
-    },
+    moon: HAKEEM_MOON,
     venus: {
       mine: 'Venus in Aries. You go first and you like being chased back. Under a calm Taurus sun, that surprises people.',
       hers: 'Juniper’s Venus is in Virgo. She shows love through small, careful favours. Notice them; she will not point them out.',
     },
-    earth: {
-      mine: 'You are earth. You click easiest with earth and water. Air brings ideas you lack; fire brings spark that can feel like too much.',
-      hers: 'Juniper is air. She lives in ideas and conversation, which is why talking to her is easy and deciding with her is slow.',
-    },
+    earth: HAKEEM_EARTH,
     mode: {
       mine: 'Taurus is fixed. Once you decide, you hold. It makes you loyal, and slow to move when you should.',
       hers: 'Libra is cardinal: she starts things. Let her pick the plan; you will be the one who keeps it.',
     },
-    'seventh-house': {
-      mine: 'Your seventh house starts in Aries. You want a partner who keeps up and pushes back, not one who agrees with everything.',
-      hers: 'Juniper’s sun sits in her seventh house. She becomes most herself with someone across the table. That is you, on Friday.',
-    },
+    'seventh-house': HAKEEM_SEVENTH,
     'eighth-house': {
       mine: 'Your sun sits in the eighth. Casual rarely satisfies you. You want to be fully seen, and you need to know it is safe first.',
       hers: 'Juniper has nothing in her eighth. She will not push for depth; you will have to offer it.',
@@ -101,60 +106,113 @@ const MINE: Record<PersonaId, Record<string, Mine>> = {
   },
   xavier: {
     rising: {
-      mine: 'Scorpio rising. You come across intense and private, so people take a while to read you. Your warmer Virgo core shows up later.',
+      mine: 'Libra rising. You come across warm, easy and put-together, so people relax around you fast. Your serious Capricorn core shows up later.',
       hers: 'Juniper is Aquarius rising: friendly but a little hard to read at first. Give it a second date before you decide what she thinks.',
     },
     sun: {
-      mine: 'Virgo sun. You need order, usefulness and a little quiet. You show care in the details, not in speeches.',
-      hers: 'Juniper is a Libra sun, the sign right after yours. She weighs things; you fix them. Let her choose, then you sort the details.',
+      mine: 'Capricorn sun. You need a goal, respect and proof over time. You mean what you say, so you say it carefully.',
+      hers: 'Juniper is a Libra sun. You are both cardinal signs, both starters. Take turns picking the plan.',
     },
     moon: {
-      mine: 'Capricorn moon. You need structure and proof over time. Big words leave you cold; a plan kept exactly opens you up.',
-      hers: 'Juniper is a Gemini moon. She feels by talking it out, the same night. You would rather sit with it first. Give her the talk; ask for the pause.',
-      tryLine: 'Make a plan for next week, then keep it exactly.',
+      mine: 'Gemini moon. You need talk, questions and something new to think about. Silence shuts you down; a good conversation opens you up.',
+      hers: 'Juniper is a Gemini moon too. You both feel by talking it out, the same night. You will not run out of things to say.',
+      tryLine: 'Ask a match a question you really don’t know the answer to.',
     },
     venus: {
-      mine: 'Venus in Scorpio. You love all in or not at all, and you need trust first. Under a careful Virgo sun, that depth surprises people.',
-      hers: 'Juniper’s Venus is in Virgo, your sun sign. She shows love through small, careful favours, the way you do. You will catch every one.',
-      tryLine: 'Tell someone plainly that you are interested.',
+      mine: 'Venus in Sagittarius. You love with honesty and a bit of adventure. Under a careful Capricorn sun, that spark surprises people.',
+      hers: 'Juniper’s Venus is in Virgo. She shows love through small, careful favours. Notice them; she will not point them out.',
+      tryLine: 'Plan a date somewhere neither of you has been.',
     },
-    earth: {
-      mine: 'You are earth. You click easiest with earth and water. Air brings ideas you lack; fire brings spark that can feel like too much.',
-      hers: 'Juniper is air. She lives in ideas and conversation, which is why talking to her is easy and deciding with her is slow.',
-    },
+    earth: HAKEEM_EARTH,
     mode: {
-      mine: 'Virgo is mutable. You adjust and fix as you go. It makes you easy to plan with, and quick to overthink.',
-      hers: 'Libra is cardinal: she starts things. Let her pick the plan; you will be the one who makes it work.',
+      mine: 'Capricorn is cardinal. You start things and then see them through. It makes you dependable, and slow to drop a plan that is not working.',
+      hers: 'Libra is cardinal too: she starts things as well. Agree on who plans the first date, and who plans the second.',
     },
-    'seventh-house': {
-      mine: 'Your seventh house starts in Taurus. You want a partner who is steady and sure, someone who shows up the same way every time.',
-      hers: 'Juniper’s sun sits in her seventh house. She becomes most herself with someone across the table. That is you, on Friday.',
-    },
+    'seventh-house': HAKEEM_SEVENTH,
     'eighth-house': {
       mine: 'Saturn sits in your eighth. Trust comes slowly, and you test it before you give it. Once it is there, it holds.',
       hers: 'Juniper has nothing in her eighth. She will not push for depth; you will have to offer it.',
     },
-    'eleventh-house': {
-      mine: 'Your sun sits in the eleventh. You fall for people who fit into your life and your plans. Friends first is not a step down for you; it is the start.',
-      hers: 'Juniper’s sun sits in her seventh: one on one. She wants you across the table; you want her at the table with your people. Do both.',
+    'sun-house': {
+      mine: 'Your sun sits in the fourth. Home and family matter more than you let on. People earn the private you, and once they do, they are in.',
+      hers: 'Juniper’s sun sits in her seventh: she is most herself across the table from someone. You are most yourself at home. Invite her over.',
     },
     ruler: {
-      mine: 'Virgo is ruled by Mercury: thinking, talking and the details. You show love by listening closely and remembering.',
-      hers: 'Libra is ruled by Venus. She wants it beautiful; you want it right. Both are ways of caring.',
-      tryLine: 'Ask a match what they meant, instead of guessing.',
+      mine: 'Capricorn is ruled by Saturn: time, commitment and what lasts. You show love by showing up, every time.',
+      hers: 'Libra is ruled by Venus. She wants it beautiful; you want it to last. Both are ways of caring.',
+      tryLine: 'Write down what you want this to look like in a year.',
     },
     retrograde: {
-      mine: 'Venus is retrograde in Scorpio, your Venus sign, until Nov 13. Then Mercury, your ruler, turns on Oct 24. Reread before you send; do not lock anything in yet.',
+      mine: 'Venus is retrograde until Nov 13. It is not your ruler, but it slows love down for everyone, and slow suits you. Do not lock anything in yet.',
       hers: 'Juniper’s sign is ruled by Venus, so she is feeling it. A slow week to start something is fine.',
     },
     'saturn-return': {
-      mine: 'Yours is five years out, at 29. Until then you get to experiment. You will still want a plan.',
+      mine: 'Yours lands in about three years, at 29, and Saturn is your ruler, so you will feel it. Expect to get very clear about what, and who, you want.',
+      hers: 'Juniper’s comes a little sooner than yours. She is about to get serious; meet her there.',
+    },
+    mercury: {
+      mine: 'Your Mercury is in Capricorn: you say less and mean all of it. Short texts from you are not cold; they are decisions.',
+      hers: 'Juniper’s Mercury is in Libra. She softens everything. Ask her what she would say if she were not being polite.',
+      facts: ['Mercury · Capricorn', 'Rules Gemini, Virgo'],
+    },
+  },
+  jeremy: {
+    rising: {
+      mine: 'Cancer rising. You come across warm and caring, a little guarded at first. Your sun is Cancer too, so who people meet first is who you are.',
+      hers: 'Juniper is Aquarius rising: friendly but a little hard to read at first. Give it a second date before you decide what she thinks.',
+    },
+    sun: {
+      mine: 'Cancer sun. You need closeness, loyalty and somewhere that feels like home. You look after people before they ask.',
+      hers: 'Juniper is a Libra sun. You lead with feeling; she leads with fairness. Neither of you likes a fight, so say the hard thing gently.',
+    },
+    // a Sagittarius moon, like Hakeem's
+    moon: HAKEEM_MOON,
+    venus: {
+      mine: 'Venus in Leo. You love out loud: big gestures, birthdays done right, compliments in public. Under a soft Cancer sun, that shine surprises people.',
+      hers: 'Juniper’s Venus is in Virgo. She shows love through small, careful favours. Notice them; she will not point them out.',
+      tryLine: 'Plan something with a little show to it.',
+    },
+    earth: {
+      mine: 'You are water, not earth, but earth is one of your best matches. Earth signs give your feelings somewhere solid to land.',
+      hers: 'Juniper is air. She lives in ideas and conversation, which is why talking to her is easy and deciding with her is slow.',
+    },
+    water: {
+      mine: 'You are water. You feel first and read a room fast. Earth gives you a shape; air can feel far away.',
+      hers: 'Juniper is air. She thinks a feeling through before she shows it. Give her time; she is not being cold.',
+    },
+    mode: {
+      mine: 'Cancer is cardinal. You start things: the plan, the dinner, the group chat. It makes you the host, and quick to feel it when nobody else steps up.',
+      hers: 'Libra is cardinal too: she starts things as well. Agree on who plans the first date, and who plans the second.',
+    },
+    'seventh-house': {
+      mine: 'Your seventh house starts in Capricorn. You want a partner who is steady and serious, someone who builds a life with you.',
+      hers: 'Juniper’s sun sits in her seventh house. She becomes most herself with someone across the table. That is you, on Friday.',
+    },
+    'eighth-house': {
+      mine: 'Nothing sits in your eighth. Depth comes to you through feeling, not tests. You let people in when they feel safe, not when they prove it.',
+      hers: 'Juniper has nothing in her eighth either. Neither of you will push for depth; one of you has to offer it.',
+    },
+    'sun-house': {
+      mine: 'Your sun sits in the first, right on your rising. What people see is what they get. You want the same back, and mixed signals wear you out.',
+      hers: 'Juniper’s sun sits in her seventh: she becomes herself with someone across the table. You walk in already yourself. Let her catch up.',
+    },
+    ruler: {
+      mine: 'Cancer is ruled by the Moon: feelings, home and what makes you feel safe. Your mood moves with it, so watch the phases.',
+      hers: 'Libra is ruled by Venus. She wants it beautiful; you want it to feel like home. Both are ways of caring.',
+      tryLine: 'Write down three things that make you feel at home.',
+    },
+    retrograde: {
+      mine: 'Venus is retrograde until Nov 13, backing through your house of dating. Old flames come back around. Look at them; do not lock anything in yet.',
+      hers: 'Juniper’s sign is ruled by Venus, so she is feeling it. A slow week to start something is fine.',
+    },
+    'saturn-return': {
+      mine: 'Yours is five years out, at 29. Until then you get to try things. You will still want somewhere to come home to.',
       hers: 'Juniper’s is a couple of years out, sooner than yours. She is about to get serious; meet her there.',
     },
     mercury: {
-      mine: 'Your Mercury is in Libra: you say it carefully and fairly. You soften hard news so well that people can miss it.',
-      hers: 'Juniper’s Mercury is in Libra too. You both soften everything. Someone has to say the blunt thing; take turns.',
-      facts: ['Mercury · Libra', 'Rules Gemini, Virgo'],
+      mine: 'Your Mercury is in Gemini: quick, funny, lots of questions. You text like you talk, and you notice when someone does not.',
+      hers: 'Juniper’s Mercury is in Libra. She softens everything. Ask her what she would say if she were not being polite.',
+      facts: ['Mercury · Gemini', 'Rules Gemini, Virgo'],
     },
   },
 }
@@ -165,8 +223,30 @@ const SUN = SIGN_FACTS[ME.sign]
 const RULER_ART: Record<string, { color: string; light: string; dark: string; tint: string }> = {
   Venus: { color: '#d9867a', light: '#ffe0d2', dark: '#3a1410', tint: '#f3a98f' },
   Mercury: { color: '#6a8ab0', light: '#dfeaff', dark: '#101a2e', tint: '#9ec4ff' },
+  Saturn: { color: '#a08a6a', light: '#f2e6cc', dark: '#2a2010', tint: '#d8c49a' },
+  'The Moon': { color: '#9a90b0', light: '#f2eefa', dark: '#1c1830', tint: '#b3a6c4' },
 }
+/** 'Venus', or 'the Moon' mid-sentence */
+const RULER_NAME = SUN.ruler.replace(/^The /, 'the ')
 const RULER = RULER_ART[SUN.ruler] ?? RULER_ART.Venus
+
+/** houses a founder's sun sits in, besides the eighth (which every chart already gets) */
+type HouseTerm = Pick<Term, 'slug' | 'name' | 'title' | 'line' | 'code' | 'headline' | 'meaning' | 'tryLine' | 'facts' | 'color'>
+const HOUSE_TERMS: Partial<Record<number, HouseTerm>> = {
+  1: {
+    slug: 'first-house', name: 'First house', title: 'The first house.', line: 'You, walking into the room.', code: 'House I',
+    headline: 'The self you lead with.',
+    meaning: 'Houses are the twelve slices of the sky, each one an area of life. The first is you: your body, your style, the way you walk into a room.',
+    tryLine: 'Make the first move on a match you like.', facts: ['House I', 'Ruled by Mars'], color: '#f2c75c',
+  },
+  4: {
+    slug: 'fourth-house', name: 'Fourth house', title: 'The fourth house.', line: 'Home, roots, the private you.', code: 'House IV',
+    headline: 'Where you go to be yourself.',
+    meaning: 'Houses are the twelve slices of the sky, each one an area of life. The fourth is home, family and the part of you only a few people see.',
+    tryLine: 'Tell a match about the place that feels most like home.', facts: ['House IV', 'Ruled by the Moon'], color: '#7fd8b0',
+  },
+}
+const SUN_HOUSE_TERM = SUN_HOUSE !== 8 && M['sun-house'] ? HOUSE_TERMS[SUN_HOUSE] : undefined
 
 export const TERMS: Term[] = [
   {
@@ -186,7 +266,7 @@ export const TERMS: Term[] = [
     meaning: 'Your sun sign is where the sun was on the day you were born. It is the sign people mean when they ask “what are you?”: your core, and what you need to feel like yourself.',
     ...M.sun,
     tryLine: M.sun.tryLine ?? 'Tell a match one thing you would happily do every week.',
-    facts: ['Changes every month', `Ruled by ${SUN.ruler}`],
+    facts: ['Changes every month', `Ruled by ${RULER_NAME}`],
     art: { kind: 'aura', sign: ME.sign }, color: '#e3e86a',
   },
   {
@@ -219,6 +299,17 @@ export const TERMS: Term[] = [
     facts: ['Taurus · Virgo · Capricorn', 'Steady, practical'],
     art: { kind: 'planet', color: '#3f9a6a', light: '#c9f0c8', dark: '#0c2a1c' }, color: '#7fd8b0',
   },
+  // your element, when it isn't earth
+  ...(SIGNS[ME.sign].element === 'water' ? [{
+    slug: 'water', kind: 'element', name: 'Water', yours: 'your element',
+    title: 'The water element.', line: 'Love you can feel.', code: 'Element · Water',
+    headline: 'Feelings first.',
+    meaning: 'Every sign belongs to one of four elements: fire, earth, air or water. Water signs (Cancer, Scorpio, Pisces) feel first and think second. How someone makes them feel matters most.',
+    ...M.water,
+    tryLine: M.water.tryLine ?? 'Plan a date that feels cosy: cook in, a long walk, somewhere quiet.',
+    facts: ['Cancer · Scorpio · Pisces', 'Deep, intuitive'],
+    art: { kind: 'planet', color: '#3f7cf0', light: '#b8d4ff', dark: '#0a1640' }, color: '#7fb8f0',
+  } satisfies Term] : []),
   {
     slug: 'mode', kind: 'element', name: 'Mode', yours: SUN.mode.toLowerCase(),
     title: 'Fixed, cardinal, mutable.', line: 'How a sign handles change.', code: `Mode · ${SUN.mode}`,
@@ -249,16 +340,12 @@ export const TERMS: Term[] = [
     facts: ['House VIII', 'Ruled by Pluto'],
     art: { kind: 'wheel', house: 8 }, color: '#e8628a',
   },
-  // the house your sun sits in, when it is not the eighth (Xavier: the eleventh)
-  ...(M['eleventh-house'] ? [{
-    slug: 'eleventh-house', kind: 'house', name: 'Eleventh house', yours: SUN_HOUSE === 11 ? 'your sun' : undefined,
-    title: 'The eleventh house.', line: 'Friends, groups, the future.', code: 'House XI',
-    headline: 'Love that starts as friendship.',
-    meaning: 'Houses are the twelve slices of the sky, each one an area of life. The eleventh is friends, groups and the future you are building with them.',
-    ...M['eleventh-house'],
-    tryLine: M['eleventh-house'].tryLine ?? 'Invite a match to something with your friends.',
-    facts: ['House XI', 'Ruled by Uranus'],
-    art: { kind: 'wheel', house: 11 }, color: '#7fd8b0',
+  // the house your sun sits in, when it is not the eighth (Xavier: the fourth, Jeremy: the first)
+  ...(SUN_HOUSE_TERM ? [{
+    ...SUN_HOUSE_TERM, kind: 'house', yours: 'your sun',
+    ...M['sun-house'],
+    tryLine: M['sun-house'].tryLine ?? SUN_HOUSE_TERM.tryLine,
+    art: { kind: 'wheel', house: SUN_HOUSE },
   } satisfies Term] : []),
   {
     slug: 'ruler', kind: 'planet', name: 'Ruling planet', yours: SUN.ruler,
@@ -310,9 +397,12 @@ export const KIND_LABEL: Record<TermKind, string> = { sign: 'Signs', element: 'E
 export const TERM_WORDS: [string, string][] = [
   ['rising sign', 'rising'], ['sun sign', 'sun'], ['moon sign', 'moon'], ['ruling planet', 'ruler'],
   ['retrograde', 'retrograde'], ['earth signs', 'earth'], ['8th house', 'eighth-house'], ['the 8th', 'eighth-house'],
-  ['7th house', 'seventh-house'], ['11th house', 'eleventh-house'], ['the 11th', 'eleventh-house'], ['rising', 'rising'], ['your moon', 'moon'], ['venus', 'venus'],
-  ['houses', TERM['eleventh-house'] && SUN_HOUSE === 11 ? 'eleventh-house' : 'eighth-house'],
-].filter(([, slug]) => slug in TERM) as [string, string][]
+  ['7th house', 'seventh-house'], ['rising', 'rising'], ['your moon', 'moon'], ['venus', 'venus'], ['houses', 'eighth-house'],
+  ['water signs', 'water'],
+  // the house your sun sits in, linked to its own card
+  ...(SUN_HOUSE_TERM ? [[`${ordinal(SUN_HOUSE)} house`, SUN_HOUSE_TERM.slug], [`the ${ordinal(SUN_HOUSE)}`, SUN_HOUSE_TERM.slug]] : []),
+].map(([w, slug]) => [w, w === 'houses' && SUN_HOUSE_TERM ? SUN_HOUSE_TERM.slug : slug] as [string, string])
+  .filter(([, slug]) => slug in TERM)
 
 /** stamped by the glossary when it opens a term, so the explainer's CTA can step back to it */
 export const termFrom = { at: 0 }

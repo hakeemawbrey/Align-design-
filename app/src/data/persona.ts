@@ -6,7 +6,7 @@ import type { Birth } from '../lib/astro'
  * their own card, birth chart and photo, and the app reads everything about
  * "you" from here. Chosen on Welcome (or the You tab) and kept on this device.
  */
-export type PersonaId = 'hakeem' | 'xavier'
+export type PersonaId = 'hakeem' | 'xavier' | 'jeremy'
 
 export interface Persona {
   id: PersonaId
@@ -53,12 +53,12 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     },
   },
   xavier: {
-    // Sept 14 2002, 11:05 AM, Houston (CDT): Virgo Sun, Capricorn Moon, Scorpio rising, Venus in Scorpio
-    id: 'xavier', name: 'Xavier', age: 24, sign: 'virgo', moon: 'capricorn', rising: 'scorpio', venus: 'scorpio',
+    // Jan 17 2000, 11 PM, Houston (CST): Capricorn Sun, Gemini Moon, Libra rising, Venus in Sagittarius
+    id: 'xavier', name: 'Xavier', age: 26, sign: 'capricorn', moon: 'gemini', rising: 'libra', venus: 'sagittarius',
     pronoun: { subj: 'he', obj: 'him', poss: 'his' },
     serial: '№ 024', photo: 'img/xavier.jpg',
     blurb: 'Builds things at 2am. Fixes your playlist. Notices everything.',
-    birth: { year: 2002, month: 9, day: 14, hour: 11, minute: 5, utcOffset: -5, lat: 29.76, lon: -95.37, city: 'Houston' },
+    birth: { year: 2000, month: 1, day: 17, hour: 23, minute: 0, utcOffset: -6, lat: 29.76, lon: -95.37, city: 'Houston' },
     card: {
       bio: 'Quiet until I’m not. I’ll remember the thing you mentioned once and bring it up three weeks later.',
       facts: [['Religion', 'Open, still figuring it out'], ['Looking for', 'Something real'], ['Height', '5′9″'], ['Work', 'Co-founder, Align']],
@@ -71,6 +71,25 @@ export const PERSONAS: Record<PersonaId, Persona> = {
       align: 'Thoughtful and patient. Builds slowly, then all in.',
     },
   },
+  jeremy: {
+    // June 23 2002, 7:30 AM (born 7–8 AM), Houston (CDT): Cancer Sun, Sagittarius Moon, Cancer rising, Venus in Leo
+    id: 'jeremy', name: 'Jeremy', age: 24, sign: 'cancer', moon: 'sagittarius', rising: 'cancer', venus: 'leo',
+    pronoun: { subj: 'he', obj: 'him', poss: 'his' },
+    serial: '№ 048', photo: 'img/jeremy.jpg',
+    blurb: 'Hosts every dinner. Remembers every birthday. Always has a plan B.',
+    birth: { year: 2002, month: 6, day: 23, hour: 7, minute: 30, utcOffset: -5, lat: 29.76, lon: -95.37, city: 'Houston' },
+    card: {
+      bio: 'Soft on the inside, loud at karaoke. I’ll cook, you pick the movie, and we argue about it after.',
+      facts: [['Religion', 'Spiritual'], ['Looking for', 'Something that lasts'], ['Height', '5′10″'], ['Work', 'Co-founder, Align']],
+      interests: ['Cooking', 'Karaoke', 'Road trips', 'Basketball', 'Old R&B'],
+      dealbreakers: 'Cold shoulders. Cancelling last minute. Not texting back after a date.',
+    },
+    reading: {
+      pull: 'Warm and protective. Makes you feel at home fast.',
+      push: 'Feels things big. Don’t brush it off when he tells you.',
+      align: 'Loyal to the bone. In it for the long run.',
+    },
+  },
 }
 
 const KEY = 'align:persona'
@@ -78,7 +97,7 @@ const KEY = 'align:persona'
 function read(): PersonaId {
   try {
     const v = localStorage.getItem(KEY)
-    return v === 'xavier' || v === 'hakeem' ? v : 'hakeem'
+    return v === 'xavier' || v === 'hakeem' || v === 'jeremy' ? v : 'hakeem'
   } catch {
     return 'hakeem'
   }

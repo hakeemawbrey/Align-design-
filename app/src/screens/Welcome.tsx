@@ -78,7 +78,7 @@ export default function Welcome({ go }: ScreenProps) {
       {/* which founder is holding the phone: each sees the app from their own chart */}
       <motion.div {...rise(0.5)} style={{ position: 'absolute', top: 512, left: 0, right: 0, textAlign: 'center' }}>
         <div className="mono" style={{ fontSize: 9, letterSpacing: '0.24em', color: 'var(--label-3)' }}>PLAYING AS</div>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 8 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: 8 }}>
           {(Object.keys(PERSONAS) as PersonaId[]).map((id) => {
             const p = PERSONAS[id]
             const on = id === PERSONA.id
@@ -86,7 +86,7 @@ export default function Welcome({ go }: ScreenProps) {
               <motion.button key={id} whileTap={{ scale: 0.95 }} aria-pressed={on}
                 onClick={() => { if (on) return; sfx.tap(); switchPersona(id, 'welcome') }}
                 style={{
-                  height: 38, padding: '0 14px 0 4px', borderRadius: 999, display: 'flex', alignItems: 'center', gap: 8,
+                  height: 38, padding: '0 12px 0 4px', borderRadius: 999, display: 'flex', alignItems: 'center', gap: 7,
                   background: on ? 'var(--chrome)' : 'rgba(90, 74, 130, 0.22)', color: on ? 'var(--chrome-ink)' : 'var(--label-2)',
                   border: on ? 'none' : '1px solid rgba(201, 188, 228, 0.3)',
                 }}>

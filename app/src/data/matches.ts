@@ -117,6 +117,14 @@ export const STARTER_CHATS: Record<string, Starter> = {
       ],
       replies: ['Ha, no way. Same.', 'Ok you have taste. That’s rare.', 'We should argue about this in person.', 'Sunday? I know a spot that’s open till 3.'],
     },
+    jeremy: {
+      opening: [
+        { from: 'them', text: 'Ok your card says karaoke. Go-to song, go.' },
+        { from: 'me', text: 'Anything Luther Vandross. Not even close.' },
+        { from: 'them', text: 'Respect. I’m a Boyz II Men guy but I’ll allow it. Where do you even sing around here?' },
+      ],
+      replies: ['Ha, no way. Same.', 'Ok you have taste. That’s rare.', 'We should settle this in person.', 'Sunday? There’s a karaoke spot on Bellaire.'],
+    },
   }),
   a31: {
     opening: [
@@ -149,6 +157,14 @@ export const STARTER_CHATS: Record<string, Starter> = {
         { from: 'them', text: 'Ha. Fix mine and I’ll tell you my whole chart.' },
       ],
       replies: ['Deal. I’m bringing wine.', 'Leo moon, so yes, I’ll want compliments on my taste too.', 'Tell me the one song you’d never cut.', 'This is going well, don’t ruin it.'],
+    },
+    jeremy: {
+      opening: [
+        { from: 'them', text: 'Saw your card. Do you actually host every dinner or is that a bit?' },
+        { from: 'me', text: 'Not a bit. There’s always a plate for one more.' },
+        { from: 'them', text: 'Ha. Feed me and I’ll tell you my whole chart.' },
+      ],
+      replies: ['Deal. I’m bringing wine.', 'Leo moon, so yes, I’ll want compliments on the food too.', 'Tell me your best dish.', 'This is going well, don’t ruin it.'],
     },
   }),
   s29: {
