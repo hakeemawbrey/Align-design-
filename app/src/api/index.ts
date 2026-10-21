@@ -32,7 +32,7 @@ let world: World = { ready: false, backend: backend.kind, matches: [], traded: [
 const subs = new Set<() => void>()
 const set = (p: Partial<World>) => { world = { ...world, ...p }; subs.forEach((f) => f()) }
 
-// Your card. Defaults to Hakeem; onboarding on a new phone replaces it, and
+// Your card. Defaults to whichever founder is playing (persona.ts); onboarding on a new phone replaces it, and
 // every screen that shows "you" reads ME, so it follows along.
 const CARD_KEY = 'mycard:v1'
 const DEFAULT_ME = { ...ME }
@@ -110,7 +110,7 @@ export const api = {
   person: (id: string): Profile | undefined => world.people.find((p) => p.id === id),
   dismissNotice() { set({ notice: undefined }) },
   async reset() {
-    // a reset hands the phone back to the default account (Hakeem)
+    // a reset hands the phone back to the default account (the playing founder)
     remove(CARD_KEY)
     Object.assign(ME, DEFAULT_ME)
     try { set({ ...(await backend.reset()), notice: undefined }) } catch (e) { console.warn('[align] reset failed', e) }

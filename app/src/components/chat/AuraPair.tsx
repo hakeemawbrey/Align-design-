@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { SIGNS, type SignId } from '../../data/signs'
+import { ME } from '../../data/profiles'
 
 interface Props {
   left?: SignId
@@ -43,7 +44,7 @@ function Aura({ sign, size, delay, animate, dir }: { sign: SignId; size: number;
 }
 
 /** Two AuraCam figures side by side, glowing — "JUNIPER × YOU". */
-export default function AuraPair({ left = 'libra', right = 'taurus', size = 80, gap = 70, animate = false, children }: Props) {
+export default function AuraPair({ left = 'libra', right = ME.sign, size = 80, gap = 70, animate = false, children }: Props) {
   return (
     <div style={{ position: 'relative', width: gap + size, height: size, margin: '0 auto' }}>
       <div style={{ position: 'absolute', left: 0, top: 0 }}>

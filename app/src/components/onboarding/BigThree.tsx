@@ -5,6 +5,21 @@ import { ME } from '../../data/profiles'
 import { sfx } from '../../lib/sfx'
 import { Caption, Cta, Header, Planet, EASE } from './shared'
 import { MONTHS, sunSign, type BirthDate } from './zodiac'
+import { FACE_LINES } from '../../data/signFacts'
+
+/** the line under each orb, written for the founders' placements; any other sign reads its card line */
+const AT_BRUNCH: Partial<Record<SignId, string>> = {
+  taurus: 'Orders for the table, pays without looking.',
+  virgo: 'Fixes the order, splits the bill to the cent.',
+}
+const AT_2AM: Partial<Record<SignId, string>> = {
+  sagittarius: 'Plans the trip you will not book. Feels it all, tells no one.',
+  capricorn: 'Still working. Feels it all, schedules it for later.',
+}
+const MEET_FIRST: Partial<Record<SignId, string>> = {
+  libra: 'Charming. Suspiciously good lighting.',
+  scorpio: 'Quiet. Hard to read. Clocking everything.',
+}
 
 /** O-07 — "One sky. Three yous." */
 export default function BigThree({ birth, rising: risingId = ME.rising, next }: { birth: BirthDate; rising?: SignId; next: () => void }) {
@@ -14,11 +29,11 @@ export default function BigThree({ birth, rising: risingId = ME.rising, next }: 
 
   const orbs = [
     { label: `Sun · ${sun.name}`, x: 80, size: 96, color: '#c9a032', light: '#fff1b8', dark: '#3a2a08', ring: '#e8c860', dot: '#e9b24a',
-      text: 'Who you are at brunch. Orders for the table, pays without looking.' },
+      text: `Who you are at brunch. ${AT_BRUNCH[sun.id] ?? FACE_LINES[sun.id].sun}` },
     { label: `Moon · ${moon.name}`, x: 198, size: 64, color: '#2f6fe0', light: '#b8d4ff', dark: '#0a1640', dot: '#3f7cf0',
-      text: 'Who you are at 2am. Plans the trip you will not book. Feels it all, tells no one.' },
+      text: `Who you are at 2am. ${AT_2AM[moon.id] ?? FACE_LINES[moon.id].moon}` },
     { label: `Rising · ${rising.name}`, x: 312, size: 64, color: '#9a4ee0', light: '#ecd8ff', dark: '#24104a', dot: '#a35cf0',
-      text: 'Who strangers meet first. Charming. Suspiciously good lighting.' },
+      text: `Who strangers meet first. ${MEET_FIRST[rising.id] ?? FACE_LINES[rising.id].rising}` },
   ]
 
   useEffect(() => {

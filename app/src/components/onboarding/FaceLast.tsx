@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import type { Profile } from '../../data/profiles'
 import { ME } from '../../data/profiles'
+import { PERSONA } from '../../data/persona'
 import type { SignId } from '../../data/signs'
 import { sfx } from '../../lib/sfx'
 import { api } from '../../api'
@@ -40,9 +41,9 @@ export default function FaceLast({ sun, moon, rising, age, dealbreakers, next }:
     dealbreakers: dealbreakers || 'Nothing yet. Brave.',
     blurb: blurb.trim() || undefined,
     reading: [
-      { kind: 'pull', text: 'Remembers your order. Plans the second date during the first.', strength: 3 },
-      { kind: 'push', text: 'Slow to say how he feels. Ask him directly.', strength: 2 },
-      { kind: 'align', text: 'Loyal and steady. Wants something that lasts.', strength: 3 },
+      { kind: 'pull', text: PERSONA.reading.pull, strength: 3 },
+      { kind: 'push', text: PERSONA.reading.push, strength: 2 },
+      { kind: 'align', text: PERSONA.reading.align, strength: 3 },
     ],
   }
 

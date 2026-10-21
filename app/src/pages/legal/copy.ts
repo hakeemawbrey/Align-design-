@@ -1,4 +1,5 @@
-import type { SignId } from '../../data/signs'
+import { SIGNS, type SignId } from '../../data/signs'
+import { ME } from '../../data/profiles'
 
 /**
  * All words for the legal, about and safety pages.
@@ -65,7 +66,7 @@ export const ABOUT = {
     'I grew up watching my mother live by the lunar calendar. Not as a hobby, as a daily framework. It told her when to start things, when to wait, and how to read the people around her.',
     'Incense in the morning. The calendar consulted before anything important. It was not superstition to her. It was infrastructure.',
   ],
-  footer: 'Align 1.0 (88) · Houston · Cast under a Taurus sun',
+  footer: `Align 1.0 (88) · Houston · Cast under a ${SIGNS[ME.sign].name} sun`,
 }
 
 export const ABOUT_CITY = {

@@ -2,19 +2,19 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScreenProps } from './types'
 import Starfield from '../components/Starfield'
-import { CAL_MONTH, CAL_MARKS, CAL_KIND_COLOR, CAL_EVENTS, CAL_TONIGHT, SKY_DATE, type CalEvent } from '../data/sky'
+import { CAL_MONTH, CAL_MARKS, CAL_KIND_COLOR, CAL_EVENTS, CAL_TONIGHT, SKY_DATE, yourMark, type CalEvent } from '../data/sky'
 import { sfx } from '../lib/sfx'
 import { cameFrom, goFrom, skyTrail } from '../components/you/origin'
 
-/** What each marked day means, shown when you tap it. */
+/** What each marked day means, shown when you tap it. Moons in your sun or moon sign say so. */
 const DAY_NOTE: Record<number, string> = {
   3: 'Venus turns retrograde in Scorpio · last quarter moon',
   5: 'Today · Moon in Leo, Sun opposite Saturn',
-  10: 'New moon in Libra · 10:50 AM',
-  18: 'First quarter moon in Capricorn',
+  10: 'New moon in Libra · 10:50 AM' + yourMark('libra'),
+  18: 'First quarter moon in Capricorn' + yourMark('capricorn'),
   23: 'Sun enters Scorpio · Scorpio season begins',
   24: 'Mercury turns retrograde in Scorpio',
-  25: 'Full moon in Taurus · 11:12 PM · your sign',
+  25: 'Full moon in Taurus · 11:12 PM' + yourMark('taurus'),
 }
 
 /** S-15 Cosmic calendar — October 2026. */

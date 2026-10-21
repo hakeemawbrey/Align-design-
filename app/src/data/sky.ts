@@ -1,5 +1,7 @@
 import { moonTonight, moonStrip, PHASE_GUIDE } from './moon'
-import { SIGNS } from './signs'
+import { SIGNS, type SignId } from './signs'
+import { ME } from './profiles'
+import { SIGN_FACTS } from './signFacts'
 import { TODAY_READING } from './skyReading'
 import { signOf, skyChart } from '../lib/astro'
 
@@ -69,8 +71,16 @@ export interface SkyTab {
 }
 
 export const SKY_HERO = {
-  sign: 'Taurus',
+  sign: SIGNS[ME.sign].name,
 }
+
+/** ' · your sign' / ' · your moon' when a moon lands in one of yours, for the calendar */
+export const yourMark = (sign: SignId) => (sign === ME.sign ? ' · your sign' : sign === ME.moon ? ' · your moon' : '')
+
+/** why Venus retrograde is personal: it rules your sign, or it's backing through your Venus sign */
+const VENUS_WHY = SIGN_FACTS[ME.sign].ruler === 'Venus'
+  ? ` (and ${SIGNS[ME.sign].name}’s ruler)`
+  : ME.venus === 'scorpio' ? ' (backing through Scorpio, your Venus sign)' : ''
 
 /** Moon right now, from the real sky */
 export const MOON_NOW = { lit: M.lit, waxing: M.waxing, sign: MSIGN.name, glyph: MSIGN.glyph, phase: M.name }
@@ -92,7 +102,7 @@ export const SKY_TABS: SkyTab[] = [
   {
     id: 'today', label: 'Today', eyebrow: 'Venus retrograde', pips: 5, color: '#f2c75c',
     headline: 'Go back before you go forward.',
-    body: 'Venus, the planet of attraction (and Taurus’s ruler), appears to move backward until Nov 13. In plain words: people from your past resurface, and first impressions are easy to get wrong. Revisit, don’t rush.',
+    body: `Venus, the planet of attraction${VENUS_WHY}, appears to move backward until Nov 13. In plain words: people from your past resurface, and first impressions are easy to get wrong. Revisit, don’t rush.`,
     tries: [
       'Open your released cards and give one person a second read.',
       'Reply to the message you’ve been putting off. Two lines is plenty.',
@@ -176,7 +186,7 @@ export const CAL_EVENTS: CalEvent[] = [
   { title: 'New moon · Libra', when: 'Sat 10th', kind: 'moon', orb: 'newmoon' },
   { title: 'Scorpio season', when: 'Fri 23rd', kind: 'season', orb: 'sun' },
   { title: 'Mercury retrograde', when: 'Sat 24th', kind: 'mercury', orb: 'mercury' },
-  { title: 'Full moon · Taurus', when: 'Sun 25th · yours', kind: 'moon', orb: 'fullmoon' },
+  { title: 'Full moon · Taurus', when: ME.sign === 'taurus' || ME.moon === 'taurus' ? 'Sun 25th · yours' : 'Sun 25th', kind: 'moon', orb: 'fullmoon' },
 ]
 
 export const CAL_TONIGHT = [

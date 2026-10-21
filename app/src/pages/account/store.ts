@@ -2,6 +2,7 @@ import { useSyncExternalStore } from 'react'
 import { load, save } from '../../lib/persist'
 import { MY_CARD } from '../../components/you/myCard'
 import { RESET_EVENT } from '../../lib/demo'
+import { BIRTH_LABEL } from '../../data/myBirth'
 
 /**
  * Account settings and card / chart edits (G-06, G-07, G-08, G-27, G-28, S-19e).
@@ -44,7 +45,7 @@ const initial = (): AccountState => ({
   morningAt: '8:11 am',
   paused: false,
   notifsCleared: false,
-  birth: { date: 'May 12, 1998', time: '5:00 PM', place: 'Tulsa, OK' },
+  birth: { date: BIRTH_LABEL.date, time: BIRTH_LABEL.time, place: BIRTH_LABEL.place },
   card: {
     bio: MY_CARD.bio,
     dealbreakers: MY_CARD.dealbreakers,

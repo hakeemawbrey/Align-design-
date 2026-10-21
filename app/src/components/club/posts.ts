@@ -1,4 +1,5 @@
 import type { SignId } from '../../data/signs'
+import { ME } from '../../data/profiles'
 
 export interface Reply {
   name: string
@@ -30,7 +31,7 @@ export interface Post {
 }
 
 /** The Taurus room tonight (S-17). First three are verbatim from Figma. */
-export const ROOM_POSTS: Post[] = [
+const TAURUS_POSTS: Post[] = [
   {
     id: 'mireya', founder: 7, name: 'Mireya', age: 28, moon: 'scorpio', ago: '2H', hood: 'Montrose',
     text: 'Third date at the Menil and he read every placard aloud. Reader, I stayed.',
@@ -106,6 +107,32 @@ export const ROOM_POSTS: Post[] = [
     ],
   },
 ]
+
+/**
+ * Your sun sign's room. The two memes and the bull are Taurus jokes, so any
+ * other room gets its own versions of those posts; the rest is the same night.
+ */
+const OWN_POSTS: Partial<Record<SignId, Partial<Record<string, Partial<Post>>>>> = {
+  virgo: {
+    jules: {
+      text: 'Fixed the font on his menu before the first date. He said thank you. I am in trouble.',
+      image: undefined,
+      replies: [
+        { name: 'Devon', age: 31, moon: 'cancer', text: 'Was it Comic Sans. Tell me it was Comic Sans.' },
+        { name: 'Priya', age: 27, moon: 'sagittarius', text: 'This is a documentary' },
+      ],
+    },
+    tasha: {
+      text: 'Said “I’m fine” at brunch today, then rewrote the group chat plan three times.',
+      image: undefined,
+    },
+    celeste: {
+      replies: [{ name: 'Marcus', age: 34, moon: 'capricorn', text: 'Delete it before direct station. Then alphabetise the rest.' }],
+    },
+  },
+}
+const own = ME.sign === 'taurus' ? undefined : OWN_POSTS[ME.sign]
+export const ROOM_POSTS: Post[] = own ? TAURUS_POSTS.map((p) => ({ ...p, ...own[p.id] })) : TAURUS_POSTS
 
 export const ROOM_COUNT = 1204
 export const SAID_TONIGHT = 41

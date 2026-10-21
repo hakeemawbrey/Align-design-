@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import AlignMark from '../intro/AlignMark'
 import AuraPair from './AuraPair'
-import { READINGS } from './readings'
+import { MY_READING_TITLE, READINGS } from './readings'
 
 /* ───────────────────────── header ───────────────────────── */
 
@@ -196,8 +196,8 @@ export function InlineAlignmentCard({ onOpen }: { onOpen: () => void }) {
       <div style={{ marginTop: 6 }}>
         <AuraPair size={46} gap={38} />
       </div>
-      <div className="serif italic" style={{ fontSize: 21, marginTop: 6, color: 'var(--label-1)' }}>Venus rules you both.</div>
-      <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 2 }}>She balances the room; you keep it.</div>
+      <div className="serif italic" style={{ fontSize: 21, marginTop: 6, color: 'var(--label-1)' }}>{MY_READING_TITLE.title}</div>
+      <div style={{ fontSize: 12.5, color: 'var(--label-2)', marginTop: 2 }}>{MY_READING_TITLE.line}</div>
 
       <div style={{
         display: 'flex', justifyContent: 'space-between', marginTop: 10, padding: 3, borderRadius: 999,

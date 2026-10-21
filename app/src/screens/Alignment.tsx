@@ -5,8 +5,10 @@ import Strength from '../components/Strength'
 import Starfield from '../components/Starfield'
 import TabBar from '../components/TabBar'
 import AuraPair from '../components/chat/AuraPair'
-import { READINGS } from '../components/chat/readings'
+import { MY_READING_TITLE, READINGS } from '../components/chat/readings'
 import { sfx } from '../lib/sfx'
+import { ME } from '../data/profiles'
+import { SIGNS } from '../data/signs'
 
 const CARD = { left: 24, top: 104, width: 342, height: 555 }
 
@@ -76,10 +78,10 @@ export default function Alignment({ go }: ScreenProps) {
           </div>
 
           <div className="h-display" style={{ position: 'absolute', top: 140, width: '100%', textAlign: 'center', fontSize: 25 }}>
-            Venus rules you both.
+            {MY_READING_TITLE.title}
           </div>
           <div style={{ position: 'absolute', top: 174, width: '100%', textAlign: 'center', fontSize: 13.5, color: 'var(--label-2)' }}>
-            She balances the room; you keep it.
+            {MY_READING_TITLE.line}
           </div>
 
           {/* segmented tabs */}
@@ -171,7 +173,7 @@ export default function Alignment({ go }: ScreenProps) {
           }}>
             <span>LIBRA · AIR</span>
             <span style={{ fontSize: 13, color: 'var(--label-1)' }}>◇</span>
-            <span>TAURUS · EARTH</span>
+            <span>{SIGNS[ME.sign].name.toUpperCase()} · {SIGNS[ME.sign].element.toUpperCase()}</span>
           </div>
           <div className="mono" style={{ position: 'absolute', top: 518, width: '100%', textAlign: 'center', fontSize: 9, letterSpacing: '0.22em', color: 'var(--label-3)' }}>
             ALIGN <span style={{ margin: '0 6px' }}>·</span> № 031/∞

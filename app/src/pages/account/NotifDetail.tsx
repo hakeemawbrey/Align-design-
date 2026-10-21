@@ -3,6 +3,7 @@ import type { PageProps } from '../types'
 import type { ScreenId } from '../../screens/types'
 import { CARD_BG, CARD_LINE, Group, Label, PageShell, Row } from '../../components/kit'
 import { rise } from '../../components/onboarding/shared'
+import { PERSONA, type PersonaId } from '../../data/persona'
 
 interface Detail {
   eyebrow: string
@@ -14,13 +15,25 @@ interface Detail {
   why: string
 }
 
+/** "What it means for you", read against each founder's chart */
+const MEANS: Record<PersonaId, Record<'venus-retro' | 'moon-pisces', Detail['means']>> = {
+  hakeem: {
+    'venus-retro': { head: 'Taurus Sun · Venus rules you', body: 'Venus is your planet, so this one lands harder on you than on most. Revisit, don’t rush. The sky will carry what’s real.' },
+    'moon-pisces': { head: 'Sagittarius Moon · restless', body: 'Your moon wants to roam. Pisces asks it to sit still for one night. Write down what you keep circling.' },
+  },
+  xavier: {
+    'venus-retro': { head: 'Venus in Scorpio · that’s yours', body: 'Venus is backing through Scorpio, your Venus sign, so this one lands harder on you than on most. Revisit, don’t rush. The sky will carry what’s real.' },
+    'moon-pisces': { head: 'Capricorn Moon · on duty', body: 'Your moon wants to stay useful. Pisces asks it to put the list down for one night. Write down what you keep circling.' },
+  },
+}
+
 /** S-19c · one notification, opened. Keyed by the address arg: x/notif-detail/<id> */
 const DETAILS: Record<string, Detail> = {
   'venus-retro': {
     eyebrow: 'Active transit · Oct 3 · 8:00',
     title: 'Venus turns retrograde.',
     body: 'Venus slows, stops and walks backwards through your love life. Old flames come back around, first impressions run soft, and second looks are worth taking. Go slow on anything new.',
-    means: { head: 'Taurus Sun · Venus rules you', body: 'Venus is your planet, so this one lands harder on you than on most. Revisit, don’t rush. The sky will carry what’s real.' },
+    means: MEANS[PERSONA.id]['venus-retro'],
     lasts: { label: 'Until November 13', value: '39 days', to: 'calendar' },
     cta: { label: 'See it on your chart', to: 'chart' },
     why: 'Sent to you because Transit alerts are on.',
@@ -29,7 +42,7 @@ const DETAILS: Record<string, Detail> = {
     eyebrow: 'Moon phase · Oct 1 · 7:40',
     title: 'Quiet your mind, look inward.',
     body: 'The Moon drifts through Pisces. Feelings run deep and blurry. It’s a night for the journal, not the deck. Let tomorrow’s cards wait.',
-    means: { head: 'Sagittarius Moon · restless', body: 'Your moon wants to roam. Pisces asks it to sit still for one night. Write down what you keep circling.' },
+    means: MEANS[PERSONA.id]['moon-pisces'],
     lasts: { label: 'Until October 3', value: '2 days', to: 'calendar' },
     cta: { label: 'Read today’s sky', to: 'sky' },
     why: 'Sent to you because your morning reading is on.',

@@ -2,7 +2,7 @@
  * The backend contract. The app talks only to this, so the same screens run
  * on the in-browser backend (no setup) or on Supabase (set the env vars).
  *
- * The demo account is a single person (Hakeem) in a seeded world: other
+ * The demo account is a single person (Hakeem or Xavier, see persona.ts) in a seeded world: other
  * people are profiles in the database, and their side of a chat is written
  * by the app. Every account sees only its own swipes, matches and messages.
  */

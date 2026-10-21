@@ -5,6 +5,7 @@ import Starfield from '../components/Starfield'
 import { CARD_BG, CARD_LINE } from '../components/kit'
 import { rise } from '../components/onboarding/shared'
 import { SIGNS, type SignId } from '../data/signs'
+import { ME } from '../data/profiles'
 import { session } from '../lib/session'
 import { sfx } from '../lib/sfx'
 import { cameFrom, goFrom } from '../components/you/origin'
@@ -29,7 +30,7 @@ const TODAY: Note[] = [
 ]
 const EARLIER: Note[] = [
   { title: 'Venus turned retrograde', body: 'Old flames come back around until Nov 13.', when: 'Sat', dot: '#9a7be0', to: 'x/notif-detail/venus-retro' },
-  { title: 'Your post hit 444 in Taurus only', body: 'Mireya and 12 others replied.', when: 'Thu', dot: '#9a7be0', to: 'club' },
+  { title: `Your post hit 444 in ${SIGNS[ME.sign].name} only`, body: 'Mireya and 12 others replied.', when: 'Thu', dot: '#9a7be0', to: 'club' },
   { title: 'Your free days end tomorrow', body: 'Align+ starts at $88.88 a year. Change or cancel any time.', when: 'Wed', dot: '#f2c75c', to: 'x/trial-ending/founding' },
   { title: 'Your payment didn’t go through', body: 'Update your card to keep forty-five a night.', when: 'Tue', dot: '#ff6b6b', to: 'x/payment-failed' },
 ]

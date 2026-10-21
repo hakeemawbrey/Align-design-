@@ -3,7 +3,7 @@ import { SIGNS, type SignId } from '../../data/signs'
 import { Cta, Header, EASE } from './shared'
 import { MANUAL } from './readings'
 
-/** O-06b — "Taurus, the user manual." Strengths, weaknesses, the work. */
+/** O-06b — "<Sign>, the user manual." Strengths, weaknesses, the work. */
 export default function UserManual({ sun, next }: { sun: SignId; next: () => void }) {
   const sign = SIGNS[sun]
   const m = MANUAL[sun]

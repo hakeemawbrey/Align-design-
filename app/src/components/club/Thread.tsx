@@ -65,7 +65,7 @@ export default function Thread({ post, liked, likes, extra, onLike, onReply, onC
         <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 2 2 10l8 8" /></svg>
       </button>
       <div className="mono" style={{ position: 'absolute', left: 0, right: 0, top: 56, height: 40, display: 'grid', placeItems: 'center', fontSize: 10, letterSpacing: '0.2em', color: 'var(--label-2)', pointerEvents: 'none' }}>
-        TAURUS ROOM · THREAD
+        {SIGNS[ME.sign].name.toUpperCase()} ROOM · THREAD
       </div>
       {onReport && (
         <button aria-label="Post menu" onClick={() => { sfx.tap(); setMenu((m) => !m) }}

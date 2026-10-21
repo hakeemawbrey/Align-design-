@@ -11,6 +11,10 @@ const READ: Partial<Record<SignId, { body: string; chips: string[] }>> = {
     body: 'You don’t fall. You settle in — same booth, same order, a hand that stays.',
     chips: ['Slow mornings', 'Loyal to a fault', 'Says it with dinner'],
   },
+  scorpio: {
+    body: 'You don’t do casual. You watch first, decide quietly, then you’re all in — and you notice who isn’t.',
+    chips: ['Trust first', 'All in or nothing', 'Keeps every secret'],
+  },
 }
 const FALLBACK = { body: 'Venus is how you love: what you notice first, and what keeps you there.', chips: ['Notices first', 'Stays for', 'Shows it by'] }
 

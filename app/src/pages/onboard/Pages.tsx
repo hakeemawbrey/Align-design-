@@ -4,6 +4,7 @@ import { DEFAULT_TIME } from '../../components/onboarding/readings'
 import { SIGN_BIRTH } from '../../components/onboarding/zodiac'
 import { SIGNS, type Element, type SignId } from '../../data/signs'
 import Deck from '../../screens/Deck'
+import { ME } from '../../data/profiles'
 
 /** O-03c — the birth-time step with "I don't know the minute" already tapped. */
 export function NoBirthTime({ go, back }: PageProps) {
@@ -12,7 +13,7 @@ export function NoBirthTime({ go, back }: PageProps) {
 
 /** O-05 — the sun-sign reveal for any sign: x/reveal/<sign>. Opens the flow with a birthday in that sign. */
 export function SignRevealPage({ go, back, arg }: PageProps) {
-  const id = (arg && arg in SIGNS ? arg : 'taurus') as SignId
+  const id = (arg && arg in SIGNS ? arg : ME.sign) as SignId
   return <OnboardingFlow key={id} go={go} exit={back} start="reveal" initialBirth={SIGN_BIRTH[id]} />
 }
 

@@ -1,5 +1,7 @@
 import type { SignId } from './signs'
-import type { Profile } from './profiles'
+import { ME, type Profile } from './profiles'
+import { SIGNS } from './signs'
+import { PERSONA, type PersonaId } from './persona'
 
 /** Days two people must stay aligned before they can trade copies of their cards. */
 export const TRADE_UNLOCK_DAYS = 3
@@ -87,26 +89,41 @@ export const ARTIST_CARDS: ArtistCard[] = [
  * "your turn" / "waiting on them" in the list is true), then replies to
  * whatever you send and to any talk card you play.
  */
-export const STARTER_CHATS: Record<string, { opening: { from: 'me' | 'them'; text: string }[]; replies: string[] }> = {
+type Starter = { opening: { from: 'me' | 'them'; text: string }[]; replies: string[] }
+/** one starter per founder, for chats that open on something from your card */
+const yours = (by: Record<PersonaId, Starter>): Starter => by[PERSONA.id]
+
+export const STARTER_CHATS: Record<string, Starter> = {
   // tonight's matches from the deck: no opening, so the chat starts with an opener to pick
   s26: { opening: [], replies: ['Sorry, slow texter, I was at the wheel. Clay, not a car.', 'Ok that made me laugh out loud in the studio.', 'Walk on Sunday? Buffalo Bayou, I’ll bring coffee.', 'I made a cup this week that looks like it’s judging me. You’d like it.'] },
   a29: { opening: [], replies: ['Landed an hour ago and you’re the first text I answered.', 'Ha, ok. You’re trouble. Good trouble.', 'I’m home Thursday to Sunday. Pick a night.', 'Tacos or karaoke? Wrong answer is both.'] },
-  b25: { opening: [], replies: ['Two Tauruses. Someone has to give in and it won’t be me.', 'I’ll bring dessert. Obviously.', 'Early dinner Saturday? I’m asleep by 9, it’s a feature.', 'Ok you passed the test. I like you.'] },
+  b25: { opening: [], replies: [`${ME.sign === 'taurus' ? 'Two Tauruses' : `A ${SIGNS[ME.sign].name} and a Taurus`}. Someone has to give in and it won’t be me.`, 'I’ll bring dessert. Obviously.', 'Early dinner Saturday? I’m asleep by 9, it’s a feature.', 'Ok you passed the test. I like you.'] },
   m27: { opening: [], replies: ['Noted. I’ll be reviewing that statement later.', 'I like that you just say things. Rare.', 'Thursday after 7. I’ll pick somewhere quiet.', 'Fine. You win this round.'] },
-  t24: {
-    opening: [
-      { from: 'them', text: 'Ok your card says record stores. Best one in Houston, go.' },
-      { from: 'me', text: 'Cactus. Not even close.' },
-      { from: 'them', text: 'Respect. I’m a Sig’s Lagoon guy but I’ll allow it. What are you listening to this week?' },
-    ],
-    replies: ['Ha, no way. Same.', 'Ok you have taste. That’s rare.', 'We should argue about this in person.', 'Sunday? I know a taco spot by Sig’s.'],
-  },
+  // opens on something from your card
+  t24: yours({
+    hakeem: {
+      opening: [
+        { from: 'them', text: 'Ok your card says record stores. Best one in Houston, go.' },
+        { from: 'me', text: 'Cactus. Not even close.' },
+        { from: 'them', text: 'Respect. I’m a Sig’s Lagoon guy but I’ll allow it. What are you listening to this week?' },
+      ],
+      replies: ['Ha, no way. Same.', 'Ok you have taste. That’s rare.', 'We should argue about this in person.', 'Sunday? I know a taco spot by Sig’s.'],
+    },
+    xavier: {
+      opening: [
+        { from: 'them', text: 'Ok your card says late-night tacos. Best spot in Houston, go.' },
+        { from: 'me', text: 'The truck on Airline. Not even close.' },
+        { from: 'them', text: 'Respect. I’m a Montrose guy but I’ll allow it. What else are you into this week?' },
+      ],
+      replies: ['Ha, no way. Same.', 'Ok you have taste. That’s rare.', 'We should argue about this in person.', 'Sunday? I know a spot that’s open till 3.'],
+    },
+  }),
   a31: {
     opening: [
       { from: 'them', text: 'Three days aligned. Do we get a medal?' },
       { from: 'me', text: 'We get to trade cards apparently. Sent you mine.' },
     ],
-    replies: ['Got it. Framing it.', 'Your Taurus is showing. I like it.', 'Ok but what are you doing Thursday?', 'Fair. Tell me something nobody asks you about.'],
+    replies: ['Got it. Framing it.', `Your ${SIGNS[ME.sign].name} is showing. I like it.`, 'Ok but what are you doing Thursday?', 'Fair. Tell me something nobody asks you about.'],
   },
   z26: {
     opening: [
@@ -115,14 +132,25 @@ export const STARTER_CHATS: Record<string, { opening: { from: 'me' | 'them'; tex
     ],
     replies: ['Paddington 2. I will not be taking questions.', 'You’re funnier than your card lets on.', 'Ok I’m saving that for later.', 'Coffee this week?'],
   },
-  m29: {
-    opening: [
-      { from: 'them', text: 'Saw your card. Do you actually cook too much or is that a bit?' },
-      { from: 'me', text: 'Not a bit. My freezer is a cry for help.' },
-      { from: 'them', text: 'Ha. Feed me and I’ll tell you my whole chart.' },
-    ],
-    replies: ['Deal. I’m bringing wine.', 'Leo moon, so yes, I’ll want compliments on the food too.', 'Tell me your best dish.', 'This is going well, don’t ruin it.'],
-  },
+  // picks up your blurb
+  m29: yours({
+    hakeem: {
+      opening: [
+        { from: 'them', text: 'Saw your card. Do you actually cook too much or is that a bit?' },
+        { from: 'me', text: 'Not a bit. My freezer is a cry for help.' },
+        { from: 'them', text: 'Ha. Feed me and I’ll tell you my whole chart.' },
+      ],
+      replies: ['Deal. I’m bringing wine.', 'Leo moon, so yes, I’ll want compliments on the food too.', 'Tell me your best dish.', 'This is going well, don’t ruin it.'],
+    },
+    xavier: {
+      opening: [
+        { from: 'them', text: 'Saw your card. Do you actually fix people’s playlists or is that a bit?' },
+        { from: 'me', text: 'Not a bit. Send me yours and brace.' },
+        { from: 'them', text: 'Ha. Fix mine and I’ll tell you my whole chart.' },
+      ],
+      replies: ['Deal. I’m bringing wine.', 'Leo moon, so yes, I’ll want compliments on my taste too.', 'Tell me the one song you’d never cut.', 'This is going well, don’t ruin it.'],
+    },
+  }),
   s29: {
     opening: [
       { from: 'them', text: 'Hey, sorry, slow week. Still here.' },

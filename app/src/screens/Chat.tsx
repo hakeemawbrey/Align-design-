@@ -12,6 +12,7 @@ import { sfx } from '../lib/sfx'
 import { session, energize } from '../lib/session'
 import { api, type Message } from '../api'
 import { ME } from '../data/profiles'
+import { PERSONA, type PersonaId } from '../data/persona'
 import { answerMsg, cardById, parseTalk, playMsg } from '../data/talkCards'
 import ChatTalkCard from '../components/talk/ChatTalkCard'
 import CardsButton from '../components/talk/CardsButton'
@@ -32,26 +33,43 @@ const PHOTO = juniper.photo ?? 'img/juniper.jpg'
 /**
  * Seeded conversation, animated in on mount. Written like two people who just
  * matched: it starts from something on her card and ends with a real plan.
- * (Her card: assistant curator, books by colour, vinyl. His: sound engineer, record stores.)
+ * Her card: assistant curator, books by colour, vinyl. The second half picks
+ * up something on yours, so it's written per founder:
+ * Hakeem — sound engineer, record stores. Xavier — film cameras, late-night tacos.
  */
-const SCRIPT: Omit<Msg, 'id'>[] = [
+const OPENING: Omit<Msg, 'id'>[] = [
   { from: 'me', text: 'Ok I have to ask. Do you actually organise your books by colour?' },
   { from: 'her', text: 'Every single one. It looks great and I can never find anything' },
   { from: 'me', text: 'That’s the most Libra thing I’ve heard all week' },
-  { from: 'her', text: 'I’ll allow it. Your card says sound engineer — studio or live?' },
-  { from: 'me', text: 'Mostly studio. I’m the guy nobody notices until the mic cuts out' },
-  { from: 'her', text: 'Ha. You also put record stores. Cactus or somewhere else?' },
-  { from: 'me', text: 'Cactus. Want to go this week and see who walks out with too many?' },
-  { from: 'her', text: 'Oh you’re on. Thursday after work?' },
-  { from: 'me', text: 'Thursday works' },
 ]
+const SCRIPTS: Record<PersonaId, Omit<Msg, 'id'>[]> = {
+  hakeem: [
+    ...OPENING,
+    { from: 'her', text: 'I’ll allow it. Your card says sound engineer — studio or live?' },
+    { from: 'me', text: 'Mostly studio. I’m the guy nobody notices until the mic cuts out' },
+    { from: 'her', text: 'Ha. You also put record stores. Cactus or somewhere else?' },
+    { from: 'me', text: 'Cactus. Want to go this week and see who walks out with too many?' },
+    { from: 'her', text: 'Oh you’re on. Thursday after work?' },
+    { from: 'me', text: 'Thursday works' },
+  ],
+  xavier: [
+    ...OPENING,
+    { from: 'her', text: 'I’ll allow it. Your card says film cameras — what do you shoot on?' },
+    { from: 'me', text: 'An old Pentax. Half my rolls are just friends waiting for food' },
+    { from: 'her', text: 'Ha. You also put late-night tacos. Best spot after midnight, go.' },
+    { from: 'me', text: 'The truck on Airline. Want to go this week and I’ll bring the camera?' },
+    { from: 'her', text: 'Oh you’re on. Thursday after work?' },
+    { from: 'me', text: 'Thursday works' },
+  ],
+}
+const SCRIPT = SCRIPTS[PERSONA.id]
 
 /** Her replies to whatever the presenter types, in order. Kept general so they fit most messages. */
 const REPLIES = [
   'Ha ok, I like that',
   'Wait, what are you listening to right now?',
   'You’re funnier than your card let on',
-  'Deal. Whoever buys more gets tacos after',
+  { hakeem: 'Deal. Whoever buys more gets tacos after', xavier: 'Deal. If the photos come out, you owe me prints' }[PERSONA.id],
   'Ok I have to get back to work but I’m looking forward to Thursday',
 ]
 

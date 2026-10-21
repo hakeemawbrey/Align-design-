@@ -7,12 +7,17 @@ import { AuraAvatar } from '../../components/club/PostParts'
 import { ROOM_COUNT } from '../../components/club/posts'
 import { rise } from '../../components/onboarding/shared'
 import { ME } from '../../data/profiles'
-import { SIGNS } from '../../data/signs'
+import { SIGNS, type SignId } from '../../data/signs'
 import { session } from '../../lib/session'
 import { sfx } from '../../lib/sfx'
 import { Cta, Eyebrow, Frame, Panel } from './ui'
 
 const SUN = SIGNS[ME.sign]
+/** what a room full of each sign calls itself */
+const PEOPLE: Record<SignId, string> = {
+  aries: 'Arians', taurus: 'Taureans', gemini: 'Geminis', cancer: 'Cancers', leo: 'Leos', virgo: 'Virgos',
+  libra: 'Librans', scorpio: 'Scorpios', sagittarius: 'Sagittarians', capricorn: 'Capricorns', aquarius: 'Aquarians', pisces: 'Pisceans',
+}
 const CX = 195
 const CY = 248
 const RINGS = [118, 86, 54]
@@ -55,7 +60,7 @@ export default function ClubEmpty({ go }: PageProps) {
         <Eyebrow delay={0.2}>{SUN.name} only · Quiet</Eyebrow>
         <motion.div className="h-display" {...rise(0.28)} style={{ fontSize: 30, marginTop: 8 }}>Nobody has posted today.</motion.div>
         <motion.p {...rise(0.36)} style={{ margin: '10px auto 0', maxWidth: 330, fontSize: 13.5, lineHeight: 1.45, color: 'var(--label-2)' }}>
-          {ROOM_COUNT.toLocaleString('en-US')} Taureans are in here. Nobody outside your sign can read a word of it, which is the whole point.
+          {ROOM_COUNT.toLocaleString('en-US')} {PEOPLE[ME.sign]} are in here. Nobody outside your sign can read a word of it, which is the whole point.
         </motion.p>
       </div>
 

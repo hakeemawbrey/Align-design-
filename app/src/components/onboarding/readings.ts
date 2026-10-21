@@ -1,6 +1,7 @@
 import { SIGNS, type Element, type SignId } from '../../data/signs'
+import { BIRTH_LABEL } from '../../data/myBirth'
 
-/** O-06b — "Taurus, the user manual." Three short reads per sun sign. */
+/** O-06b — "<Sign>, the user manual." Three short reads per sun sign. */
 export const MANUAL: Record<SignId, { strengths: string; weaknesses: string; workOn: string }> = {
   aries: {
     strengths: 'First through the door. Makes the plan happen. Says the thing out loud.',
@@ -149,8 +150,8 @@ export interface BirthTime {
   place: string
 }
 
-/** Hakeem: 5:00 PM, Tulsa */
-export const DEFAULT_TIME: BirthTime = { exact: true, hour: 5, minute: 0, pm: true, part: 'evening', place: 'Tulsa, Oklahoma' }
+/** whoever is playing: Hakeem 5:00 PM, Tulsa · Xavier 11:05 AM, Houston */
+export const DEFAULT_TIME: BirthTime = { exact: true, hour: BIRTH_LABEL.hour12, minute: BIRTH_LABEL.minute, pm: BIRTH_LABEL.pm, part: BIRTH_LABEL.part, place: BIRTH_LABEL.placeLong }
 /** "Tulsa, Oklahoma" → "Tulsa" */
 export const cityOf = (place: string) => place.split(',')[0].trim()
 

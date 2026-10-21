@@ -1,4 +1,5 @@
 import type { SignId } from '../../data/signs'
+import { PERSONA } from '../../data/persona'
 
 export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 export const MONTH_SHORT = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
@@ -11,8 +12,12 @@ export interface BirthDate {
   year: number
 }
 
-/** Hakeem: May 12, 1998, 5:00 PM, Tulsa — Taurus 22°, Sagittarius moon, Libra rising (computed). */
-export const DEFAULT_BIRTH: BirthDate = { month: 4, day: 12, year: 1998 }
+/**
+ * The birthday the flow opens on: whoever is playing.
+ * Hakeem: May 12, 1998, 5:00 PM, Tulsa — Taurus 22°, Sagittarius moon, Libra rising.
+ * Xavier: Sept 14, 2002, 11:05 AM, Houston — Virgo 22°, Capricorn moon, Scorpio rising.
+ */
+export const DEFAULT_BIRTH: BirthDate = { month: PERSONA.birth.month - 1, day: PERSONA.birth.day, year: PERSONA.birth.year }
 export const YEAR_MIN = 1950
 export const YEAR_MAX = 2012
 
@@ -88,12 +93,13 @@ export const SIGN_SKY: Record<SignId, string> = {
   sagittarius: '#6a2aa8', capricorn: '#1f7a6a', aquarius: '#1f5aa8', pisces: '#4a35b0',
 }
 
-/** a birthday that lands in each sign (mid-sign), for opening the reveal by address */
+/** a birthday that lands in each sign (mid-sign), for opening the reveal by address; your own sign opens on your birthday */
 export const SIGN_BIRTH: Record<SignId, BirthDate> = {
-  aries: { month: 3, day: 2, year: 1997 }, taurus: DEFAULT_BIRTH, gemini: { month: 5, day: 4, year: 1996 },
+  aries: { month: 3, day: 2, year: 1997 }, taurus: { month: 4, day: 12, year: 1998 }, gemini: { month: 5, day: 4, year: 1996 },
   cancer: { month: 6, day: 6, year: 1995 }, leo: { month: 7, day: 8, year: 1997 }, virgo: { month: 8, day: 5, year: 1994 },
   libra: { month: 9, day: 6, year: 1998 }, scorpio: { month: 10, day: 7, year: 1996 }, sagittarius: { month: 11, day: 6, year: 1995 },
   capricorn: { month: 0, day: 7, year: 1997 }, aquarius: { month: 1, day: 5, year: 1998 }, pisces: { month: 2, day: 6, year: 1996 },
+  [PERSONA.sign]: DEFAULT_BIRTH,
 }
 
 export const SIGN_READING: Record<SignId, string> = {

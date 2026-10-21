@@ -7,6 +7,12 @@ import { sfx } from '../lib/sfx'
 import { goFrom } from '../components/you/origin'
 import { Planet } from '../components/onboarding/shared'
 import TermText from '../pages/plus/TermText'
+import { ME } from '../data/profiles'
+import { PERSONA } from '../data/persona'
+import { SIGNS, type SignId } from '../data/signs'
+import { SIGN_FACTS } from '../data/signFacts'
+import { SUN_HOUSE, ordinal } from '../data/myBirth'
+import { DEFAULT_BIRTH, sunDegree } from '../components/onboarding/zodiac'
 
 
 interface ChartTab {
@@ -29,11 +35,18 @@ interface ChartTab {
 }
 
 /**
- * Your chart · Taurus (G-23 → G-26, plus House). Written for someone who has
- * never read a chart: what it is, what it means in love, what to do with it.
+ * Your chart (G-23 → G-26, plus House). Written for someone who has never
+ * read a chart: what it is, what it means in love, what to do with it.
+ * Labels, titles and the footer follow your placements (ME, SIGN_FACTS, your
+ * natal chart); the prose is written per founder, because it reads the whole
+ * chart at once.
  * Hakeem: Taurus sun, Sagittarius moon, Libra rising → sun in the 8th house.
+ * Xavier: Virgo sun, Capricorn moon, Scorpio rising → sun in the 11th house.
  */
-const TABS: ChartTab[] = [
+const SUN_FACTS = SIGN_FACTS[ME.sign]
+const HOUSE = ordinal(SUN_HOUSE)
+
+const HAKEEM_TABS: ChartTab[] = [
   {
     id: 'sign', label: 'Sun', eyebrow: 'Your core', pips: 5, color: '#e3e86a', art: 'figure',
     headline: 'You love by showing up, again and again.',
@@ -99,6 +112,60 @@ const TABS: ChartTab[] = [
   },
 ]
 
+const XAVIER_TABS: ChartTab[] = [
+  {
+    ...HAKEEM_TABS[0],
+    headline: 'You love by paying attention.',
+    meaning: 'Your sun sign is your core: what you need to feel like yourself. Virgo needs order, usefulness and a little quiet.',
+    love: 'You show care in the details: the thing they mentioned once, the plan already sorted. Someone careless with small things will feel careless with you.',
+    self: 'Stop editing yourself before you speak. The rough draft of you is already good.',
+    tryLine: 'Tell your match one small thing you noticed about them.',
+  },
+  {
+    ...HAKEEM_TABS[1],
+    headline: 'You need to feel steady before you feel close.',
+    meaning: 'Your moon is how you feel and what makes you feel safe. A Capricorn moon needs structure, respect and proof over time.',
+    love: 'You open up when someone keeps their word, not when they say big things. Flaky plans shut you down fast.',
+    self: 'Feelings aren’t a task to finish later. Say one out loud before it’s tidy.',
+    tryLine: 'Make a plan for next week, then keep it exactly.',
+  },
+  {
+    ...HAKEEM_TABS[2],
+    headline: 'People meet your quiet first.',
+    meaning: 'Your rising sign is how strangers read you before they know you. Scorpio rising comes across intense, private and hard to read.',
+    love: 'People sense depth right away but can’t tell if you like them. Your warmer Virgo core shows up later.',
+    self: 'Keep the mystery, but give one clear signal sooner. The right people stay.',
+    tryLine: 'In your next chat, say plainly that you’re enjoying it.',
+  },
+  {
+    ...HAKEEM_TABS[3],
+    headline: 'Calm on the outside, taking notes on the inside.',
+    meaning: 'People read you as reserved. In truth you notice everything, decide slowly, then go all in.',
+    love: 'Partners can mistake your quiet for judgement. Tell them what you noticed that you liked.',
+    self: 'Notice when “just being thorough” is really nerves. Good enough is often enough.',
+  },
+  // Virgo is earth too: the element page reads the same
+  HAKEEM_TABS[4],
+  {
+    ...HAKEEM_TABS[5], eyebrow: 'Mercury', color: '#9ec4ff',
+    headline: 'Your planet is the planet of talk.',
+    meaning: 'Every sign has a ruling planet that shapes what it wants. Yours is Mercury: thinking, talking, messages and the details.',
+    love: 'You show love by listening closely and remembering. Look for someone who says what they mean, and asks you back.',
+    self: 'Mercury turns retrograde on Oct 24. Reread before you send, and save the big talks for in person.',
+    tryLine: 'Send one message you didn’t edit three times.',
+  },
+  {
+    ...HAKEEM_TABS[6], eyebrow: '11th house', color: '#7fd8b0',
+    headline: 'Love, for you, starts as friendship.',
+    meaning: 'Houses show where in life your energy goes. Your sun sits in the 11th: friends, groups, and the future you’re building.',
+    love: 'You fall for people who fit into your life and your plans. Getting on with your friends wins you faster than any big gesture.',
+    self: 'You can be a great friend and still ask for more. Say so when it’s more than friendly.',
+    tryLine: 'Invite a match to something with your people.',
+  },
+]
+
+const TABS: ChartTab[] = { hakeem: HAKEEM_TABS, xavier: XAVIER_TABS }[PERSONA.id]
+
 /** G-23 Your chart — reached from the You tab's "Your sign" tile. */
 export default function Chart({ go }: ScreenProps) {
   const [tab, setTab] = useState(0)
@@ -135,7 +202,7 @@ export default function Chart({ go }: ScreenProps) {
           background: 'radial-gradient(30% 60% at 50% 60%, rgba(150,80,255,0.4), transparent 100%), linear-gradient(180deg, #3a1d80 0%, #34187a 50%, #2c1468 100%)',
         }}>
           <div style={{ position: 'absolute', inset: 8, borderRadius: 15, border: '1px solid rgba(222,208,246,0.28)', pointerEvents: 'none' }} />
-          <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.24em', color: 'var(--label-2)' }}>YOUR SIGN · TAURUS</div>
+          <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.24em', color: 'var(--label-2)' }}>YOUR SIGN · {SIGNS[ME.sign].name.toUpperCase()}</div>
 
           {/* the big three, from onboarding: tap one to read it */}
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 26, marginTop: 10, height: 84 }}>
@@ -156,8 +223,8 @@ export default function Chart({ go }: ScreenProps) {
             })}
           </div>
 
-          <div className="h-display" style={{ fontSize: 23, marginTop: 8 }}>{TITLE[t.id] ?? 'Sun in Taurus.'}</div>
-          <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 4 }}>{SUBTITLE[t.id] ?? 'Fixed earth · ruled by Venus · 8th house'}</div>
+          <div className="h-display" style={{ fontSize: 23, marginTop: 8 }}>{TITLE[t.id] ?? `Sun in ${SIGNS[ME.sign].name}.`}</div>
+          <div style={{ fontSize: 12, color: 'var(--label-2)', marginTop: 4 }}>{SUBTITLE[t.id] ?? `${SUN_FACTS.mode} ${SUN_FACTS.element.toLowerCase()} · ruled by ${SUN_FACTS.ruler} · ${HOUSE} house`}</div>
 
           <div style={{
             marginTop: 10, width: '100%', height: 36, padding: 3, borderRadius: 999, display: 'flex',
@@ -217,7 +284,7 @@ export default function Chart({ go }: ScreenProps) {
             ))}
           </div>
           <div className="mono" style={{ display: 'flex', gap: 14, alignItems: 'center', fontSize: 9, letterSpacing: '0.18em', color: 'var(--label-2)' }}>
-            <span>SUN · TAURUS 22°</span><span style={{ opacity: 0.6 }}>◇</span><span>8TH HOUSE</span><span style={{ opacity: 0.6 }}>◇</span><span>VENUS</span>
+            <span>SUN · {SIGNS[ME.sign].name.toUpperCase()} {sunDegree(DEFAULT_BIRTH)}°</span><span style={{ opacity: 0.6 }}>◇</span><span>{HOUSE.toUpperCase()} HOUSE</span><span style={{ opacity: 0.6 }}>◇</span><span>{SUN_FACTS.ruler.toUpperCase()}</span>
           </div>
           <div className="mono" style={{ fontSize: 8, letterSpacing: '0.2em', color: 'var(--label-3)', marginTop: 6 }}>ALIGN · CHART № 001/∞</div>
         </div>
@@ -235,17 +302,19 @@ export default function Chart({ go }: ScreenProps) {
   )
 }
 
+const mood = (id: SignId) => `${SIGN_FACTS[id].mode.toLowerCase()} ${SIGN_FACTS[id].element.toLowerCase()}`
+
 const BIG3: { id: string; label: string; size: number; color: string; light: string; dark: string; ring?: string; text: string }[] = [
-  { id: 'sun', label: 'SUN · TAURUS', size: 48, color: '#c9a032', light: '#fff1b8', dark: '#3a2a08', ring: '#e8c860', text: '#e3e86a' },
-  { id: 'moon', label: 'MOON · SAGITTARIUS', size: 36, color: '#2f6fe0', light: '#b8d4ff', dark: '#0a1640', text: '#7fa6ff' },
-  { id: 'rising', label: 'RISING · LIBRA', size: 36, color: '#9a4ee0', light: '#ecd8ff', dark: '#24104a', text: '#c9a8ff' },
+  { id: 'sun', label: `SUN · ${SIGNS[ME.sign].name.toUpperCase()}`, size: 48, color: '#c9a032', light: '#fff1b8', dark: '#3a2a08', ring: '#e8c860', text: '#e3e86a' },
+  { id: 'moon', label: `MOON · ${SIGNS[ME.moon].name.toUpperCase()}`, size: 36, color: '#2f6fe0', light: '#b8d4ff', dark: '#0a1640', text: '#7fa6ff' },
+  { id: 'rising', label: `RISING · ${SIGNS[ME.rising].name.toUpperCase()}`, size: 36, color: '#9a4ee0', light: '#ecd8ff', dark: '#24104a', text: '#c9a8ff' },
 ]
 
 const TITLE: Partial<Record<ChartTab['id'], string>> = {
-  moon: 'Moon in Sagittarius.',
-  rising: 'Libra rising.',
+  moon: `Moon in ${SIGNS[ME.moon].name}.`,
+  rising: `${SIGNS[ME.rising].name} rising.`,
 }
 const SUBTITLE: Partial<Record<ChartTab['id'], string>> = {
-  moon: 'How you feel · mutable fire',
-  rising: 'How you come across · cardinal air',
+  moon: `How you feel · ${mood(ME.moon)}`,
+  rising: `How you come across · ${mood(ME.rising)}`,
 }

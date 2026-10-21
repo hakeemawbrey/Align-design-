@@ -51,7 +51,7 @@ export default function Composer({ prompt, listening, onPost, onClose }: Props) 
       >
         <div style={{ width: 40, height: 4, borderRadius: 2, background: 'rgba(179,166,196,0.35)', margin: '0 auto 14px' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)' }}>To the Taurus room</span>
+          <span className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)' }}>To the {SIGNS[ME.sign].name} room</span>
           <span className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)' }}>{listening} listening</span>
         </div>
         {prompt && (

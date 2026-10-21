@@ -125,7 +125,7 @@ export function readingFor(date = new Date(), birth: Birth = MY_BIRTH): SkyReadi
   const where = (p: Planet) => `${PLANET[p].name} in ${SIGNS[signOf(sky[p])].name}${retrograde(p, date) ? ' ℞' : ''} · your ${ord(houseOf(sky[p], natal.asc))} house`
   const placed = (p: Planet) => {
     const house = houseOf(sky[p], natal.asc)
-    const retro = retrograde(p, date) ? ', moving backwards (retrograde),' : ''
+    const retro = retrograde(p, date) ? ', moving backwards (retrograde)' : ''
     const the = p === 'moon' || p === 'sun' ? 'The ' : ''
     return `${the}${PLANET[p].name} is in ${SIGNS[signOf(sky[p])].name}${retro}, lighting up your ${ord(house)} house: ${HOUSE_STORY[house]}.`
   }

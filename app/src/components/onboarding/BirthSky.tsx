@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { SIGNS } from '../../data/signs'
 import { ME } from '../../data/profiles'
+import { PERSONA } from '../../data/persona'
+import { BIRTH_LABEL } from '../../data/myBirth'
 import { sfx } from '../../lib/sfx'
 import { Caption, Cta, Header, Planet, EASE } from './shared'
 import { ART_GLOW, MONTH_SHORT, beast, modality, sunDegree, sunSign, type BirthDate } from './zodiac'
@@ -38,7 +40,7 @@ const LINE_GAP = 520
 const T_DONE = T_LINES + LINE_GAP * 3
 
 /** O-04 — "This was your sky." Planets place themselves; the sun blooms; the checklist ticks in. */
-export default function BirthSky({ birth, time = '5:00 PM', city = 'Tulsa', next, primaryRef }: { birth: BirthDate; time?: string; city?: string; next: () => void; primaryRef: React.MutableRefObject<(() => void) | null> }) {
+export default function BirthSky({ birth, time = BIRTH_LABEL.time, city = PERSONA.birth.city, next, primaryRef }: { birth: BirthDate; time?: string; city?: string; next: () => void; primaryRef: React.MutableRefObject<(() => void) | null> }) {
   const sign = SIGNS[sunSign(birth)]
   const moon = SIGNS[ME.moon]
   const glow = ART_GLOW[sign.id]

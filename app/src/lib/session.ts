@@ -1,4 +1,6 @@
 import type { SignId } from '../data/signs'
+import { ME } from '../data/profiles'
+import { SIGN_ORDER } from './astro'
 import type { EventId } from '../data/draws'
 import { useSyncExternalStore } from 'react'
 import { load, remove, save } from './persist'
@@ -75,7 +77,8 @@ const initial = (): SessionState => ({
   alignPlus: false,
   clubMine: [],
   clubLiked: [],
-  blockedSigns: ['scorpio', 'aries'],
+  // your opposite sign and the one just before yours (Hakeem: Scorpio, Aries)
+  blockedSigns: [SIGN_ORDER[(SIGN_ORDER.indexOf(ME.sign) + 6) % 12], SIGN_ORDER[(SIGN_ORDER.indexOf(ME.sign) + 11) % 12]],
   blockedSince: 'Jul 2',
   blockedPeople: [],
   released: [],
