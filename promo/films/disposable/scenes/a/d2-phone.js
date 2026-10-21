@@ -67,7 +67,7 @@ export default async function build(stage) {
   el('div', { position: 'absolute', left: '26px', top: '22px', fontFamily: SANS, fontWeight: 300, fontSize: '70px', lineHeight: 1, color: '#939cb0' }, head, '‹')
   const theo = dissolveAvatar(head, theoImg, 96, { left: '80px', top: '22px' })
   const theoName = el('div', { position: 'absolute', left: '196px', top: '24px', fontFamily: SANS, fontWeight: 600, fontSize: '42px', color: '#eef0f4' }, head, 'Theo')
-  const theoSub = el('div', { position: 'absolute', left: '197px', top: '80px', fontFamily: SANS, fontSize: '28px', color: '#8a91a2' }, head, 'matched 3 weeks ago')
+  const theoSub = el('div', { position: 'absolute', left: '197px', top: '78px', fontFamily: SANS, fontSize: '32px', color: '#8a91a2' }, head, 'met 3 weeks ago')
   el('div', { position: 'absolute', right: '36px', top: '46px', fontFamily: SANS, fontSize: '42px', color: '#939cb0', letterSpacing: '2px' }, head, '···')
 
   const bub = (me, text, top, extra = {}) => el('div', { ...bubbleCss(me), top: top + 'px', ...extra }, thread, text)
@@ -96,9 +96,9 @@ export default async function build(stage) {
   const ROWS = [
     { name: 'Theo', msg: 'You: had a really good time', st: 'Seen · 3d', gone: 'Seen · 3d' },
     { name: 'Maya', msg: 'You: haha yes. you?', st: 'Seen · 1w', gone: 'Seen · 1w' },
-    { name: 'Jun', msg: 'You: so when are you free?', st: 'Delivered', gone: 'Unmatched' },
+    { name: 'Jun', msg: 'You: so when are you free?', st: 'Sent', gone: 'Gone' },
     { name: 'Nia', msg: 'You: that’s my favourite too', st: 'Seen · 2w', gone: 'Seen · 2w' },
-    { name: 'Dev', msg: 'You: hey :)', st: 'Delivered', gone: 'Unmatched' },
+    { name: 'Dev', msg: 'You: hey :)', st: 'Sent', gone: 'Gone' },
   ]
   const rows = ROWS.map((r, i) => {
     const y = 196 + i * 172
@@ -158,12 +158,16 @@ export default async function build(stage) {
       theoSub.style.opacity = String(1 - ease.inOutQuad(prog(t, DISSOLVE0, DISSOLVE0 + 0.8)))
 
       // back to the list
-      const sl = ease.inOutCubic(prog(t, SLIDE0, SLIDE1))
+      // the chat fades out, then the list fades in (in sequence: never both screens' words at once)
+      const SLIDE_MID = (SLIDE0 + SLIDE1) / 2
+      const fo = ease.inOutQuad(prog(t, SLIDE0, SLIDE_MID)), sl = ease.inOutQuad(prog(t, SLIDE_MID, SLIDE1))
+      thread.style.opacity = String(1 - fo)
+      thread.style.transform = `translateX(${(fo * 40).toFixed(2)}px)`
+      thread.style.display = fo < 1 ? 'block' : 'none'
       list.style.display = sl > 0 ? 'block' : 'none'
-      list.style.transform = `translateX(${((-1 + sl) * PW * 0.3).toFixed(2)}px)`
       list.style.opacity = String(sl)
-      thread.style.transform = `translateX(${(sl * PW).toFixed(2)}px)`
-      thread.style.display = sl < 1 ? 'block' : 'none'
+      list.style.transform = `translateX(${((sl - 1) * 40).toFixed(2)}px)`
+      list.style.background = 'transparent'
       for (const r of rows) {
         const g = r.t0 < 0 ? 1 : ease.inOutQuad(prog(t, r.t0, r.t0 + 0.8))
         r.av.draw(g)
