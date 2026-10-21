@@ -40,7 +40,7 @@ const server = createServer(async (req, res) => {
   catch { res.writeHead(404); res.end() }
 }).listen(0)
 const port = server.address().port
-const URL_ = FILM ? `http://127.0.0.1:${port}/promo/film.html?render&f=${FILM}` : FILM3 ? `http://127.0.0.1:${port}/promo/film3.html?render` : FILM2 ? `http://127.0.0.1:${port}/promo/film2.html?render` : TEASER ? `http://127.0.0.1:${port}/promo/teaser.html?render&v&t=${TEASER}` : `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
+const URL_ = FILM ? `http://127.0.0.1:${port}/promo/film.html?render&f=${FILM}${VERT ? '&v' : ''}` : FILM3 ? `http://127.0.0.1:${port}/promo/film3.html?render` : FILM2 ? `http://127.0.0.1:${port}/promo/film2.html?render` : TEASER ? `http://127.0.0.1:${port}/promo/teaser.html?render&v&t=${TEASER}` : `http://127.0.0.1:${port}/promo/index.html?render${VERT ? '&v' : ''}`
 
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--force-color-profile=srgb', '--disable-lcd-text'] }).catch(() => chromium.launch())
 async function newPage() {
