@@ -13,7 +13,7 @@
 //   27.00 27.75 28.50 29.25  four cards dealt slowly to a soft arc (1.0 s flights), each turning face-up as it lands
 //   30.15–31.05  the last card (Juniper) turns over in place · 31.2–32.2 a soft gold glint along the hand
 //   32.70–33.90  the others step back and fade; Juniper's card comes forward to the left (600,540, body h 900), veiled
-//   33.60 eyebrow "DEALBREAKERS FIRST" · 33.90 "What matters / is said first." (typed by ≈35.4, out 38.4)
+//   33.60 eyebrow "DEALBREAKERS FIRST" · 33.90 "What matters / is said first." (typed by ≈35.4, out 38.8)
 //   34.70 35.70 36.70  dealbreakers stamp onto her photo window, slowly, one at a time (✕ ONE-WORD TEXTS · ✕ READS, NO REPLY
 //                · ✕ FLAKY PLANS) · 37.4–38.1 the rest of her card brightens · 37.6 gold glint on her footer
 //   38.50–39.60  her card drifts away and fades; the sky is plain H2 from 39.6
@@ -43,7 +43,7 @@ const COPY2 = { eb: 26.9, line: 27.4, out: 32.5 }
 // ── beat 3: dealbreakers first
 const STEP = { a: 32.7, b: 33.9 }
 const DB = { x: 600, y: 540, h: 900 }
-const COPY3 = { eb: 33.6, line: 33.9, out: 38.4 }
+const COPY3 = { eb: 33.6, line: 33.9, out: 38.8 }
 const STAMPS = [34.7, 35.7, 36.7], DROP = 0.45
 const CHIPS = ['ONE-WORD TEXTS', 'READS, NO REPLY', 'FLAKY PLANS']
 const CHIP_Y = [-680, -487, -294], CHIP_ROT = [-2.0, 1.4, -1.0]        // PNG px from the body centre (photo window)
@@ -123,7 +123,7 @@ export default async function build(stage) {
       const pk = (a, b, c, e) => ease.inOutQuad(prog(t, a, b)) * (1 - ease.inOutQuad(prog(t, c, e)))
       bx.globalAlpha = pk(20.7, 21.4, 25.9, 26.6); if (bx.globalAlpha > 0) bx.drawImage(pocket1, 0, 0)
       bx.globalAlpha = pk(26.6, 27.3, 32.4, 33.1); if (bx.globalAlpha > 0) bx.drawImage(pocket2, 0, 0)
-      bx.globalAlpha = pk(33.2, 33.9, 38.4, 39.2); if (bx.globalAlpha > 0) bx.drawImage(pocket3, 0, 0)
+      bx.globalAlpha = pk(33.2, 33.9, 38.8, 39.5); if (bx.globalAlpha > 0) bx.drawImage(pocket3, 0, 0)
       bx.globalAlpha = 1
 
       // ════════ the deck and the hand (until the dealbreakers step)
