@@ -1,4 +1,5 @@
-// STUB — replaced by the part-c agent. Export SCENES and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 39.8, end: 60.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'astro101 part c'), update() {} })]
+// astro101 · part c (39.8–60.01): the Big Three on the wheel → the app's Big Three screen → end line + lockup → black.
+// Starts on H exactly (39.8–40.2) and ends on black.
+import story, { cues as storyCues } from './story.js'
+export const SCENES = [story]
+export const CUES = [...storyCues]
