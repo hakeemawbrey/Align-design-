@@ -1,0 +1,95 @@
+{
+  "id": "g-taurus-settling-2035",
+  "title": "Taurus, \"fine, i guess\" is not a match",
+  "signs": [
+    "taurus"
+  ],
+  "core": [
+    "not-alone"
+  ],
+  "caption": "more than fine, taurus",
+  "hashtags": [
+    "taurus",
+    "zodiacdating",
+    "astrology"
+  ],
+  "theme": "settling",
+  "engine": "bank",
+  "seed": 2035,
+  "slides": [
+    {
+      "text": "okay taurus,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you stay when it's hard,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "48% 35%"
+      }
+    },
+    {
+      "text": "but stuck isn't loyal,",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "and you're settling for",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "\"fine, i guess\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.15,
+        "focus": "49% 38%"
+      }
+    },
+    {
+      "text": "because it's there,",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "52% 37%"
+      }
+    },
+    {
+      "text": "so get up from the table,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you were never",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "56% 39%"
+      }
+    },
+    {
+      "text": "the consolation prize.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

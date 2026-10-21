@@ -1,0 +1,95 @@
+{
+  "id": "g-gemini-jealousy-1136",
+  "title": "Gemini, put their following list down",
+  "signs": [
+    "gemini"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "log off, gemini",
+  "hashtags": [
+    "gemini",
+    "zodiacdating",
+    "zodiac"
+  ],
+  "theme": "jealousy",
+  "engine": "bank",
+  "seed": 1136,
+  "slides": [
+    {
+      "text": "gemini, my love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you can talk to anyone,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "55% 36%"
+      }
+    },
+    {
+      "text": "and still",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you're jealous of someone",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "they met once",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.15,
+        "focus": "56% 34%"
+      }
+    },
+    {
+      "text": "at a wedding,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "59% 32%"
+      }
+    },
+    {
+      "text": "so ask them,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "like an adult,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "56% 38%"
+      }
+    },
+    {
+      "text": "not a detective.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "g-cancer-venus-1134",
+  "title": "Cancer, your venus knows how you love",
+  "signs": [
+    "cancer"
+  ],
+  "core": [
+    "venus"
+  ],
+  "caption": "said with love",
+  "hashtags": [
+    "cancer",
+    "zodiacdating",
+    "astrology",
+    "datingadvice"
+  ],
+  "theme": "venus",
+  "engine": "bank",
+  "seed": 1134,
+  "slides": [
+    {
+      "text": "cancer, my love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you never hide how you feel,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "50% 40%"
+      }
+    },
+    {
+      "text": "but somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "you play \"low maintenance\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and you're not,",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "55% 36%"
+      }
+    },
+    {
+      "text": "so ask for it,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "your venus",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "55% 31%"
+      }
+    },
+    {
+      "text": "isn't too much.",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    }
+  ]
+}

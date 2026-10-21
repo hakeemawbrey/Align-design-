@@ -1,0 +1,95 @@
+{
+  "id": "g-virgo-settling-1127",
+  "title": "Virgo, \"fine, i guess\" is not a match",
+  "signs": [
+    "virgo"
+  ],
+  "core": [
+    "not-alone"
+  ],
+  "caption": "not a subtweet",
+  "hashtags": [
+    "virgo",
+    "zodiacdating",
+    "datingadvice"
+  ],
+  "theme": "settling",
+  "engine": "bank",
+  "seed": 1127,
+  "slides": [
+    {
+      "text": "dear virgo,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you remember the little things,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "51% 38%"
+      }
+    },
+    {
+      "text": "and yet",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "you're settling for",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "\"fine, i guess\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1.15,
+        "focus": "44% 30%"
+      }
+    },
+    {
+      "text": "because it's there,",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "42% 27%"
+      }
+    },
+    {
+      "text": "so get up from the table,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you were never",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "56% 38%"
+      }
+    },
+    {
+      "text": "the consolation prize.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

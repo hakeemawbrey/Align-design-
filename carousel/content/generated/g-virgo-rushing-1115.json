@@ -1,0 +1,87 @@
+{
+  "id": "g-virgo-rushing-1115",
+  "title": "Virgo, slow down, it was one coffee",
+  "signs": [
+    "virgo"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "slow down, virgo",
+  "hashtags": [
+    "virgo",
+    "zodiacdating",
+    "astrologymemes",
+    "zodiac"
+  ],
+  "theme": "rushing",
+  "engine": "bank",
+  "seed": 1115,
+  "slides": [
+    {
+      "text": "virgo, quick one,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you read the fine print,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "55% 39%"
+      }
+    },
+    {
+      "text": "and yet",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "you're picking a song",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "for a third date",
+      "bg": {
+        "kind": "aura",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "50% 38%"
+      }
+    },
+    {
+      "text": "that hasn't happened,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "so let them catch up,",
+      "bg": {
+        "kind": "figure",
+        "sign": "virgo",
+        "zoom": 1.3,
+        "focus": "44% 34%"
+      }
+    },
+    {
+      "text": "it takes two.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

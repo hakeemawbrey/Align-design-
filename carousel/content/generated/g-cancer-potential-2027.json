@@ -1,0 +1,87 @@
+{
+  "id": "g-cancer-potential-2027",
+  "title": "Cancer, date who showed up, not who they could be",
+  "signs": [
+    "cancer"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "tag your cancer",
+  "hashtags": [
+    "cancer",
+    "zodiacdating",
+    "zodiac",
+    "astrologymemes"
+  ],
+  "theme": "potential",
+  "engine": "bank",
+  "seed": 2027,
+  "slides": [
+    {
+      "text": "who they could be",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "isn't who showed up,",
+      "bg": {
+        "kind": "figure",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "51% 43%"
+      }
+    },
+    {
+      "text": "cancer,",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you take care of everyone,",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "52% 38%"
+      }
+    },
+    {
+      "text": "but they're not a project,",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "so date who they are",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "today,",
+      "bg": {
+        "kind": "aura",
+        "sign": "cancer",
+        "zoom": 1.3,
+        "focus": "50% 36%"
+      }
+    },
+    {
+      "text": "not the sequel.",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    }
+  ]
+}

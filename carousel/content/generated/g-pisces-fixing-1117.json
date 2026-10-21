@@ -1,0 +1,95 @@
+{
+  "id": "g-pisces-fixing-1117",
+  "title": "Pisces, they are not a renovation",
+  "signs": [
+    "pisces"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "tag your pisces",
+  "hashtags": [
+    "pisces",
+    "zodiacdating",
+    "zodiacsigns"
+  ],
+  "theme": "fixing",
+  "engine": "bank",
+  "seed": 1117,
+  "slides": [
+    {
+      "text": "pisces, my love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you read moods through a screen,",
+      "bg": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1.3,
+        "focus": "47% 39%"
+      }
+    },
+    {
+      "text": "and somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "you're picking out paint",
+      "bg": {
+        "kind": "aura",
+        "sign": "pisces",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "for someone",
+      "bg": {
+        "kind": "aura",
+        "sign": "pisces",
+        "zoom": 1.15,
+        "focus": "44% 38%"
+      }
+    },
+    {
+      "text": "who likes the walls,",
+      "bg": {
+        "kind": "aura",
+        "sign": "pisces",
+        "zoom": 1.3,
+        "focus": "42% 36%"
+      }
+    },
+    {
+      "text": "so put the tools down,",
+      "bg": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you're a date,",
+      "bg": {
+        "kind": "figure",
+        "sign": "pisces",
+        "zoom": 1.3,
+        "focus": "45% 35%"
+      }
+    },
+    {
+      "text": "not a contractor.",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    }
+  ]
+}

@@ -1,0 +1,598 @@
+<title>Align Carousel Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Inter:wght@400;500;600&family=Poppins:ital,wght@1,800&family=Space+Mono&display=swap">
+<style>
+/* Layout: a two-pane studio. Controls and the slide editor on the left, the
+   swipeable carousel on the right; one column on phones. Dark only: the
+   slides are dark, so the studio is too (Align's Stardust tokens). */
+:root {
+  --void: #0b0620;
+  --canvas: #140a2e;
+  --raised: #1e1240;
+  --raised-2: #281a4e;
+  --line: rgba(179, 166, 196, 0.18);
+  --label-1: #efe6d6;
+  --label-2: #b3a6c4;
+  --label-3: #7d6f94;
+  --chrome: linear-gradient(100deg, #f8edff 0%, #fff7ec 38%, #eaf4ff 72%, #ffeff7 100%);
+  --chrome-ink: #3a2c4e;
+  --warn: #f2c75c;
+  --sign: #e23d66;
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --mono: 'Space Mono', ui-monospace, monospace;
+  --slide: 'Poppins', 'Arial Black', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { background: var(--void); color: var(--label-1); }
+body {
+  margin: 0; font-family: var(--sans); font-size: 14px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--sign); outline-offset: 2px; }
+
+.wrap { max-width: 1280px; margin: 0 auto; display: grid; gap: 20px; }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: lowercase; color: var(--label-3); }
+h1 { margin: 4px 0 0; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(28px, 4vw, 38px); line-height: 1.05; text-wrap: balance; }
+.lede { margin: 6px 0 0; color: var(--label-2); max-width: 62ch; }
+
+.studio { display: grid; grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .studio { grid-template-columns: minmax(0, 1fr); } .preview { order: -1; } }
+@media (min-width: 861px) { .only-narrow { display: none; } }
+
+.panel { background: var(--canvas); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 16px; min-width: 0; }
+.group { display: grid; gap: 8px; }
+.group > label, .label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .2em; text-transform: lowercase; color: var(--label-3); }
+
+.signs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.chip { display: flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 8px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--label-2); font-size: 12.5px; text-align: left; min-width: 0; }
+.chip .g { color: var(--c); font-size: 15px; line-height: 1; }
+.chip span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip[aria-pressed="true"] { border-color: var(--c); color: var(--label-1); background: color-mix(in srgb, var(--c) 16%, transparent); }
+.chip.any { grid-column: span 4; justify-content: center; }
+
+select, .field { width: 100%; min-height: 38px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--raised); }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.row > * { flex: 1 1 auto; }
+
+.btn { min-height: 42px; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--label-1); font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn:hover { background: var(--raised); }
+.btn.primary { background: var(--chrome); color: var(--chrome-ink); border-color: transparent; font-weight: 600; }
+.btn.primary:hover { filter: brightness(1.04); }
+.btn[disabled] { opacity: .5; cursor: default; }
+.btn.small { min-height: 32px; padding: 6px 12px; font-size: 12.5px; }
+.hint { color: var(--label-3); font-size: 12.5px; margin: 0; }
+.status { min-height: 1.4em; color: var(--label-2); font-size: 12.5px; margin: 0; }
+.status.warn { color: var(--warn); }
+
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.seg button { border: 0; background: transparent; color: var(--label-2); padding: 6px 12px; border-radius: 999px; font-size: 12.5px; }
+.seg button[aria-pressed="true"] { background: var(--raised-2); color: var(--label-1); }
+
+/* preview */
+.preview { display: grid; gap: 12px; min-width: 0; }
+.preview-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.sentence { margin: 0; color: var(--label-2); font-size: 13px; min-width: 0; }
+.strip { display: grid; grid-auto-flow: column; grid-auto-columns: min(300px, 78%); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; overscroll-behavior-x: contain; }
+.strip::-webkit-scrollbar { height: 8px; }
+.strip::-webkit-scrollbar-thumb { background: var(--raised-2); border-radius: 8px; }
+.slide { scroll-snap-align: start; display: grid; gap: 6px; }
+.slide canvas { width: 100%; height: auto; aspect-ratio: 4 / 5; border-radius: 12px; display: block; background: var(--void); box-shadow: 0 8px 30px rgba(0,0,0,.35); max-width: 100%; }
+.slide .meta { display: flex; justify-content: space-between; align-items: center; color: var(--label-3); font-family: var(--mono); font-size: 11px; }
+.slide .meta button { border: 0; background: none; color: var(--label-2); font-family: var(--sans); font-size: 12px; padding: 4px 6px; border-radius: 6px; }
+.slide .meta button:hover { color: var(--label-1); background: var(--raised); }
+
+.post { display: grid; gap: 10px; background: var(--canvas); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+.caption { white-space: pre-wrap; font-size: 13.5px; margin: 0; color: var(--label-1); overflow-wrap: anywhere; }
+.tags { color: var(--sign); }
+
+/* editor */
+.slides-edit { display: grid; gap: 6px; counter-reset: s; }
+.slide-row { display: grid; grid-template-columns: 22px minmax(0, 1fr) 30px; gap: 6px; align-items: center; }
+.slide-row::before { counter-increment: s; content: counter(s); font-family: var(--mono); font-size: 11px; color: var(--label-3); text-align: right; }
+.slide-row input { min-height: 36px; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--raised); width: 100%; min-width: 0; }
+.slide-row input.bad { border-color: var(--warn); }
+.slide-row button { width: 30px; height: 30px; border-radius: 8px; border: 1px solid transparent; background: none; color: var(--label-3); font-size: 16px; line-height: 1; }
+.slide-row button:hover { color: var(--label-1); border-color: var(--line); }
+
+.recent { display: grid; gap: 4px; }
+.recent button { text-align: left; border: 0; background: none; color: var(--label-2); padding: 6px 8px; border-radius: 8px; font-size: 12.5px; display: flex; gap: 8px; align-items: baseline; min-width: 0; }
+.recent button:hover { background: var(--raised); color: var(--label-1); }
+.recent .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--c); transform: translateY(-1px); }
+.recent .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+
+details summary { cursor: pointer; color: var(--label-2); font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">align ✦ carousel studio</div>
+      <h1>Blunt advice, by sign.</h1>
+      <p class="lede">Pick a sign and a theme, then remix a fresh carousel from the phrase bank or have Claude write a new one. Edit any line, then download the slides and copy the caption.</p>
+    </div>
+  </header>
+
+  <div class="studio">
+    <aside class="panel" aria-label="Controls">
+      <div class="group">
+        <span class="label" id="sign-label">sign</span>
+        <div class="signs" id="signs" role="group" aria-labelledby="sign-label"></div>
+      </div>
+
+      <div class="group">
+        <label for="theme">theme</label>
+        <select id="theme"></select>
+      </div>
+
+      <div class="group">
+        <div class="row">
+          <button class="btn primary" id="remix" type="button">Remix</button>
+          <button class="btn" id="write" type="button" hidden>Write with Claude</button>
+          <button class="btn" id="stop" type="button" hidden>Stop</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <p class="hint" id="engine-hint">Remix is instant and free: it mixes hand-written lines, and won't repeat a line until it has used the rest.</p>
+      </div>
+
+      <div class="group">
+        <span class="label">slides</span>
+        <div class="slides-edit" id="editor"></div>
+        <div class="row">
+          <button class="btn small" id="add" type="button">Add slide</button>
+        </div>
+        <p class="status warn" id="issues"></p>
+      </div>
+
+      <div class="group">
+        <label for="caption-in">caption</label>
+        <input class="field" id="caption-in" maxlength="60" autocomplete="off">
+        <label for="tags-in">hashtags</label>
+        <input class="field" id="tags-in" autocomplete="off" placeholder="scorpio zodiacdating astrology">
+      </div>
+
+      <div class="group">
+        <span class="label">layout</span>
+        <div class="row" style="align-items:center">
+          <div class="seg" role="group" aria-label="Text position">
+            <button type="button" data-pos="bottom" aria-pressed="true">Bottom</button>
+            <button type="button" data-pos="center" aria-pressed="false">Centre</button>
+          </div>
+          <div class="seg" role="group" aria-label="Text colour">
+            <button type="button" data-ink="sign" aria-pressed="true">Sign colour</button>
+            <button type="button" data-ink="bone" aria-pressed="false">White</button>
+          </div>
+        </div>
+      </div>
+
+      <details>
+        <summary>Examples and recent</summary>
+        <div class="group" style="margin-top:10px">
+          <span class="label">the 12 hand-written examples</span>
+          <div class="recent" id="examples"></div>
+          <span class="label" style="margin-top:8px">recent</span>
+          <div class="recent" id="recent"><p class="hint">Carousels you make show up here.</p></div>
+        </div>
+      </details>
+    </aside>
+
+    <section class="preview" aria-label="Preview">
+      <div class="preview-head">
+        <p class="sentence" id="sentence"></p>
+        <div class="row" style="flex:0 0 auto">
+          <button class="btn small primary only-narrow" id="remix2" type="button">Remix</button>
+          <button class="btn small" id="zip" type="button">Download all (.zip)</button>
+        </div>
+      </div>
+      <div class="strip" id="strip"></div>
+      <div class="post">
+        <div class="preview-head">
+          <span class="label">caption</span>
+          <button class="btn small" id="copy" type="button">Copy caption</button>
+        </div>
+        <p class="caption" id="caption-out"></p>
+      </div>
+      <p class="hint">Post the slides in order (01, 02…). Swipe the strip to check every slide reads.</p>
+    </section>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+/*BANK*/
+</script>
+<script>
+const EXAMPLES = /*EXAMPLES*/;
+const GLYPHS = { aries: '♈', taurus: '♉', gemini: '♊', cancer: '♋', leo: '♌', virgo: '♍', libra: '♎', scorpio: '♏', sagittarius: '♐', capricorn: '♑', aquarius: '♒', pisces: '♓' }
+const { generateBankOne, THEMES, ARCS, SIGNS, SIGN_COLORS, validate, LIMITS } = AlignBank
+const W = 1080, H = 1350
+const $ = (id) => document.getElementById(id)
+const cap = (s) => s[0].toUpperCase() + s.slice(1)
+const pick = (a) => a[Math.floor(Math.random() * a.length)]
+
+// ---- state ---------------------------------------------------------------
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('align-studio:' + k); return v ? JSON.parse(v) : d } catch { return d } },
+  set(k, v) { try { localStorage.setItem('align-studio:' + k, JSON.stringify(v)) } catch {} },
+}
+const state = {
+  sign: store.get('sign', 'any'),
+  theme: store.get('theme', 'any'),
+  pos: store.get('pos', 'bottom'),
+  ink: store.get('ink', 'sign'),
+  carousel: null,
+}
+const used = new Set() // the bank's rotation: no line repeats until the rest are used
+let recent = store.get('recent', [])
+
+// ---- controls ------------------------------------------------------------
+function buildControls() {
+  const signs = $('signs')
+  const any = el('button', { class: 'chip any', type: 'button', 'data-sign': 'any', style: '--c: var(--label-1)' }, [el('span', { class: 'g' }, '✦'), el('span', {}, 'Any sign')])
+  signs.append(any)
+  for (const s of SIGNS) {
+    signs.append(el('button', { class: 'chip', type: 'button', 'data-sign': s, style: `--c:${SIGN_COLORS[s].color}` },
+      [el('span', { class: 'g' }, GLYPHS[s] + '︎'), el('span', {}, cap(s))]))
+  }
+  signs.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-sign]'); if (!b) return
+    state.sign = b.dataset.sign; store.set('sign', state.sign); syncControls()
+  })
+  const theme = $('theme')
+  theme.append(new Option('Any theme', 'any'))
+  for (const t of THEMES) theme.append(new Option(cap(ARCS[t].label), t))
+  theme.addEventListener('change', () => { state.theme = theme.value; store.set('theme', state.theme) })
+  document.querySelectorAll('[data-pos]').forEach((b) => b.addEventListener('click', () => { state.pos = b.dataset.pos; store.set('pos', state.pos); syncControls(); renderAll() }))
+  document.querySelectorAll('[data-ink]').forEach((b) => b.addEventListener('click', () => { state.ink = b.dataset.ink; store.set('ink', state.ink); syncControls(); renderAll() }))
+  for (const ex of EXAMPLES) {
+    const s = ex.signs[0]
+    const b = el('button', { type: 'button', style: `--c:${SIGN_COLORS[s].color}` }, [el('span', { class: 'dot' }), el('span', { class: 't' }, ex.title)])
+    b.addEventListener('click', () => load(structuredClone(ex), 'Loaded the hand-written ' + cap(s) + ' example.'))
+    $('examples').append(b)
+  }
+}
+function syncControls() {
+  document.querySelectorAll('[data-sign]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sign === state.sign)))
+  $('theme').value = THEMES.includes(state.theme) ? state.theme : 'any'
+  document.querySelectorAll('[data-pos]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.pos === state.pos)))
+  document.querySelectorAll('[data-ink]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.ink === state.ink)))
+}
+function el(tag, attrs = {}, kids = []) {
+  const n = document.createElement(tag)
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v)
+  for (const k of [].concat(kids)) n.append(k)
+  return n
+}
+
+// ---- generating ----------------------------------------------------------
+function chosenSign() { return state.sign === 'any' ? pick(SIGNS) : state.sign }
+function chosenTheme() { return state.theme === 'any' ? pick(THEMES) : state.theme }
+
+function remix() {
+  const sign = chosenSign(), theme = chosenTheme()
+  try {
+    const c = generateBankOne({ sign, theme, seed: Math.floor(Math.random() * 1e9), used })
+    load(c, `Remixed: ${cap(sign)}, ${ARCS[theme].label}.`)
+  } catch (e) {
+    used.clear()
+    setStatus('That pairing ran out of fresh lines, so the rotation started over. Press Remix again.', true)
+  }
+}
+
+// What Claude is told. It sees nothing but this prompt.
+function claudePrompt(sign, theme) {
+  const examples = EXAMPLES.slice().sort(() => Math.random() - .5).slice(0, 4)
+    .map((c) => '- ' + c.slides.map((s) => s.text.replace(/\n/g, ' ')).join(' / ') + `   (caption: "${c.caption}")`).join('\n')
+  const avoid = recent.slice(0, 12).map((r) => '- ' + r.title).join('\n') || '- (none yet)'
+  const t = ARCS[theme]
+  return `You write Instagram carousels for Align, a zodiac dating app played as a card game.
+
+FORMAT: one sentence (or two short ones) told across 6 to 9 slides. Each slide is 1 to 6 words and at most 32 characters. All lowercase. No emoji, no exclamation marks, no hashtags in slides. Break on natural pauses; a slide usually ends on a comma or mid-phrase to pull the swipe. Only the last slide ends with a full stop. The first slide is a hook that works alone (often the sign name, like "${sign},"). The last slide lands the blow.
+
+VOICE: blunt, warm, a little funny. A friend who is done watching you text them first. Name the sign and one true trait of it, then give advice that would be right for anyone. It can sting but never punches down at a sign or a person; the target is the behaviour. Never promise a soulmate or claim astrology decides anything. No therapy jargon, no "bestie", no "manifest".
+
+ALIGN'S IDEAS, slipped in subtly in the last two slides (use at most one or two, never as an ad, never "download align"): photos stay veiled until you both align, so read the sky before the face ("your face comes last"); it has to be mutual (cards only flip when you both align); say the honest thing; put dealbreakers on your card; release a card instead of ghosting; there's a new deal at 11:11; venus runs your heart.
+
+EXAMPLES of the bar to hit:
+${examples}
+
+WRITE ONE NEW CAROUSEL
+sign: ${sign}
+theme: ${t.label}
+Do not reuse lines from the examples. Avoid these recent titles:
+${avoid}
+
+Reply with only JSON in this shape:
+{"title": "Sentence-case one-line summary", "slides": ["${sign},", "..."], "caption": "lowercase offhand caption under 60 characters, no hashtags", "hashtags": ["${sign}", "zodiacdating", "astrology", "datingadvice"], "core": ["mutual"]}
+"core" lists the Align ideas used, from: face-last, mutual, honest, dealbreakers, release, 1111, venus, not-alone.`
+}
+
+let sample = null, downloads = null, ctl = null
+async function writeWithClaude() {
+  if (!sample) return
+  const sign = chosenSign(), theme = chosenTheme()
+  ctl = new AbortController()
+  $('write').disabled = true; $('remix').disabled = $('remix2').disabled = true; $('stop').hidden = false
+  setStatus(`Claude is writing a ${cap(sign)} carousel… this can take up to a minute.`)
+  try {
+    const r = await sample.json(claudePrompt(sign, theme), { signal: ctl.signal, cache: false })
+    const slides = Array.isArray(r?.slides) ? r.slides.map((s) => String(s).toLowerCase().replace(/[!#]/g, '').trim()).filter(Boolean) : []
+    if (slides.length < 2) throw { code: 'invalid_json' }
+    const c = {
+      id: `ai-${sign}-${theme}-${Date.now().toString(36)}`,
+      title: String(r.title || `${cap(sign)}, ${ARCS[theme].label}`),
+      signs: [sign],
+      core: (Array.isArray(r.core) ? r.core : []).filter((k) => AlignBank.CORE.includes(k)),
+      caption: String(r.caption || '').toLowerCase().replace(/#/g, '').slice(0, 60),
+      hashtags: (Array.isArray(r.hashtags) ? r.hashtags : [sign, 'zodiacdating', 'astrology']).map((h) => String(h).toLowerCase().replace(/[^a-z0-9_]/g, '')).filter(Boolean).slice(0, 6),
+      theme, engine: 'claude',
+      slides: slides.slice(0, LIMITS.maxSlides).map((text) => ({ text })),
+    }
+    if (!c.core.length) c.core = ['honest']
+    load(c, `Claude wrote a ${cap(sign)} carousel. Read it before posting.`)
+  } catch (e) {
+    const code = e?.code
+    if (code === 'cancelled') setStatus('Stopped.')
+    else if (code === 'not_granted' || code === 'sampling_disabled' || code === 'not_declared' || code === 'capability_disabled' || code === 'capability_removed') {
+      $('write').hidden = true; setStatus('Claude isn’t available on this page, so Remix is the way to go.', true)
+    } else if (code === 'rate_limited') setStatus('Claude is busy for you right now. Wait a minute and try again.', true)
+    else if (code === 'invalid_json' || code === 'empty_completion') setStatus('Claude’s answer didn’t come back in a usable shape. Try again.', true)
+    else if (code === 'refused') setStatus('Claude declined that one. Try a different theme.', true)
+    else setStatus('Couldn’t reach Claude. Try again in a moment.', true)
+  } finally {
+    $('write').disabled = false; $('remix').disabled = $('remix2').disabled = false; $('stop').hidden = true
+  }
+}
+
+// ---- the current carousel ------------------------------------------------
+function load(c, msg) {
+  state.carousel = c
+  store.set('current', c)
+  recent = [{ title: c.title, sign: c.signs[0], c }, ...recent.filter((r) => r.title !== c.title)].slice(0, 20)
+  store.set('recent', recent)
+  if (msg) setStatus(msg)
+  buildEditor(); renderRecent(); renderAll()
+}
+function setStatus(msg, warn = false) { const s = $('status'); s.textContent = msg; s.classList.toggle('warn', warn) }
+
+function buildEditor() {
+  const c = state.carousel, ed = $('editor')
+  ed.replaceChildren()
+  c.slides.forEach((s, i) => {
+    const input = el('input', { type: 'text', 'aria-label': `Slide ${i + 1}`, autocomplete: 'off', spellcheck: 'false' })
+    input.value = s.text.replace(/\n/g, ' / ')
+    input.addEventListener('input', () => { c.slides[i].text = input.value.replace(/\s*\/\s*/g, '\n').toLowerCase(); onEdit(i) })
+    const del = el('button', { type: 'button', 'aria-label': `Remove slide ${i + 1}`, title: 'Remove slide' }, '×')
+    del.addEventListener('click', () => { if (c.slides.length > 2) { c.slides.splice(i, 1); buildEditor(); renderAll(); persist() } })
+    ed.append(el('div', { class: 'slide-row' }, [input, del]))
+  })
+  $('add').disabled = c.slides.length >= LIMITS.maxSlides
+  $('caption-in').value = c.caption
+  $('tags-in').value = c.hashtags.join(' ')
+}
+function persist() { store.set('current', state.carousel); checkIssues(); renderPost() }
+let editTimer
+function onEdit(i) { clearTimeout(editTimer); editTimer = setTimeout(() => { renderSlide(i); persist() }, 60) }
+
+$('add').addEventListener('click', () => {
+  const c = state.carousel; if (c.slides.length >= LIMITS.maxSlides) return
+  c.slides.push({ text: '…' }); buildEditor(); renderAll(); persist()
+  $('editor').lastElementChild.querySelector('input').select()
+})
+$('caption-in').addEventListener('input', (e) => { state.carousel.caption = e.target.value.toLowerCase(); persist() })
+$('tags-in').addEventListener('input', (e) => { state.carousel.hashtags = e.target.value.toLowerCase().split(/[\s,#]+/).filter(Boolean); persist() })
+
+// Spec check, minus the bits this page fills in itself (backgrounds).
+function checkIssues() {
+  const c = state.carousel
+  const probe = { ...c, slides: c.slides.map((s) => ({ ...s, bg: { kind: 'figure', sign: c.signs[0] } })) }
+  const errs = validate(probe).filter((e) => !e.startsWith('id'))
+  const bad = new Set(errs.map((e) => +(/slides\[(\d+)\]/.exec(e)?.[1] ?? -1)))
+  $('editor').querySelectorAll('input').forEach((inp, i) => inp.classList.toggle('bad', bad.has(i)))
+  $('issues').textContent = errs.length ? 'Off-spec: ' + errs.map(friendly).join(' · ') : ''
+}
+function friendly(e) {
+  return e.replace(/slides\[(\d+)\]\.text/, (_, n) => `slide ${+n + 1}`).replace(/^slides:/, 'slides:')
+}
+
+// ---- drawing -------------------------------------------------------------
+const MAXW = 938, LEFT = 64
+let grain
+function grainCanvas() {
+  if (grain) return grain
+  grain = document.createElement('canvas'); grain.width = grain.height = 256
+  const g = grain.getContext('2d'), d = g.createImageData(256, 256)
+  for (let i = 0; i < d.data.length; i += 4) { const v = Math.random() * 255; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255 }
+  g.putImageData(d, 0, 0)
+  return grain
+}
+const font = (px) => `italic 800 ${px}px Poppins, "Arial Black", sans-serif`
+
+// Width of a line as drawn: Poppins with -0.02em tracking.
+function lineWidth(ctx, s, px) { ctx.font = font(px); if ('letterSpacing' in ctx) ctx.letterSpacing = '0px'; return ctx.measureText(s).width - 0.02 * px * Math.max(0, s.length - 1) }
+
+// Best split of `words` into exactly n lines: the one whose widest line is narrowest.
+function splitLines(ctx, words, n, px) {
+  if (n === 1) return [words.join(' ')]
+  let best = null, bestW = Infinity
+  const rec = (start, left, acc) => {
+    if (left === 1) {
+      const lines = [...acc, words.slice(start).join(' ')]
+      const w = Math.max(...lines.map((l) => lineWidth(ctx, l, px)))
+      if (w < bestW) { bestW = w; best = lines }
+      return
+    }
+    for (let i = start + 1; i <= words.length - (left - 1); i++) rec(i, left - 1, [...acc, words.slice(start, i).join(' ')])
+  }
+  if (words.length < n) return null
+  rec(0, n, [])
+  return best
+}
+
+// The same fitting rules as the command-line renderer: one huge line if it
+// can stay at 112px or more, else two balanced lines, else three.
+function fitText(ctx, text) {
+  const forced = text.split('\n').map((l) => l.trim()).filter(Boolean)
+  const fits = (lines, px) => lines && lines.every((l) => lineWidth(ctx, l, px) <= MAXW)
+  if (forced.length > 1) {
+    for (let px = forced.length === 2 ? 128 : 104; px >= 40; px -= 2) if (fits(forced, px)) return { lines: forced, px }
+    return { lines: forced, px: 40 }
+  }
+  const words = text.trim().split(/\s+/)
+  for (let px = 168; px >= 112; px -= 2) { const l = splitLines(ctx, words, 1, px); if (fits(l, px)) return { lines: l, px } }
+  for (let px = 128; px >= 80; px -= 2) { const l = splitLines(ctx, words, 2, px); if (fits(l, px)) return { lines: l, px } }
+  for (let px = 104; px >= 40; px -= 2) { const l = splitLines(ctx, words, 3, px); if (fits(l, px)) return { lines: l, px } }
+  let px = 104; while (px > 24 && lineWidth(ctx, text, px) > MAXW) px -= 2
+  return { lines: [text], px }
+}
+
+// Letter-spaced text. Uses the canvas's own tracking where the browser has it
+// (keeps Poppins' kerning); otherwise places glyphs one by one.
+function tracked(ctx, s, x, y, spacing) {
+  if ('letterSpacing' in ctx) {
+    ctx.letterSpacing = '0px'
+    const w = ctx.measureText(s).width + spacing * Math.max(0, [...s].length - 1)
+    ctx.letterSpacing = spacing + 'px'; ctx.fillText(s, x, y); ctx.letterSpacing = '0px'
+    return x + w + spacing
+  }
+  for (const ch of s) { ctx.fillText(ch, x, y); x += ctx.measureText(ch).width + spacing }
+  return x
+}
+
+function drawSlide(canvas, c, i) {
+  canvas.width = W; canvas.height = H
+  const ctx = canvas.getContext('2d')
+  const sign = c.signs[0], col = SIGN_COLORS[sign] ?? SIGN_COLORS.pisces
+  const ink = state.ink === 'sign' ? col.color : '#fff7ec'
+  // ground: near-black indigo with the faintest wash of the sign's colour
+  let g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#07040f'); g.addColorStop(1, '#0b0620')
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H)
+  const cy = state.pos === 'center' ? H * 0.62 : H
+  g = ctx.createRadialGradient(W * 0.2, cy, 0, W * 0.2, cy, W * 1.05)
+  g.addColorStop(0, col.dark + 'cc'); g.addColorStop(0.45, col.dark + '33'); g.addColorStop(1, col.dark + '00')
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H)
+  // grain
+  ctx.save(); ctx.globalAlpha = 0.07; ctx.globalCompositeOperation = 'overlay'
+  ctx.fillStyle = ctx.createPattern(grainCanvas(), 'repeat'); ctx.fillRect(0, 0, W, H); ctx.restore()
+  // the mark and the counter
+  ctx.fillStyle = 'rgba(255,247,236,.55)'; ctx.font = '22px "Space Mono", monospace'; ctx.textBaseline = 'alphabetic'
+  const end = tracked(ctx, 'align', LEFT, 82, 22 * 0.24)
+  drawSpark(ctx, end + 12, 74, 9)
+  const count = `${i + 1}/${c.slides.length}`
+  let cw = 0; for (const ch of count) cw += ctx.measureText(ch).width + 22 * 0.12
+  tracked(ctx, count, W - LEFT - cw + 22 * 0.12, 82, 22 * 0.12)
+  // the words
+  const text = (c.slides[i].text || '').toLowerCase()
+  if (!text.trim()) return
+  const { lines, px } = fitText(ctx, text)
+  const lh = px * 0.98
+  ctx.font = font(px)
+  ctx.fillStyle = ink
+  ctx.shadowColor = state.ink === 'sign' ? ink + '55' : 'rgba(0,0,0,.4)'; ctx.shadowBlur = 48
+  const block = lh * lines.length
+  // baseline of the first line: the CSS renderer sits the text box 120px off the bottom
+  let y = state.pos === 'center' ? (H - block) / 2 + px * 0.78 : H - 120 - block + px * 0.78
+  for (const l of lines) { tracked(ctx, l, LEFT, y, -0.02 * px); y += lh }
+  ctx.shadowBlur = 0
+}
+function drawSpark(ctx, x, y, r) {
+  ctx.beginPath()
+  ctx.moveTo(x, y - r); ctx.quadraticCurveTo(x + r * 0.08, y - r * 0.08, x + r, y)
+  ctx.quadraticCurveTo(x + r * 0.08, y + r * 0.08, x, y + r); ctx.quadraticCurveTo(x - r * 0.08, y + r * 0.08, x - r, y)
+  ctx.quadraticCurveTo(x - r * 0.08, y - r * 0.08, x, y - r); ctx.fill()
+}
+
+function renderAll() {
+  const c = state.carousel; if (!c) return
+  document.documentElement.style.setProperty('--sign', SIGN_COLORS[c.signs[0]]?.color ?? '#e23d66')
+  const strip = $('strip'); strip.replaceChildren()
+  c.slides.forEach((_, i) => {
+    const cv = el('canvas', { role: 'img', 'aria-label': `Slide ${i + 1}: ${c.slides[i].text}` })
+    const save = el('button', { type: 'button' }, 'Save')
+    save.addEventListener('click', () => saveSlide(i))
+    strip.append(el('figure', { class: 'slide', style: 'margin:0' }, [cv, el('div', { class: 'meta' }, [el('span', {}, String(i + 1).padStart(2, '0')), save])]))
+    drawSlide(cv, c, i)
+  })
+  checkIssues(); renderPost()
+}
+function renderSlide(i) {
+  const fig = $('strip').children[i]; if (!fig) return renderAll()
+  const cv = fig.querySelector('canvas'); drawSlide(cv, state.carousel, i)
+  cv.setAttribute('aria-label', `Slide ${i + 1}: ${state.carousel.slides[i].text}`)
+}
+function renderPost() {
+  const c = state.carousel
+  $('sentence').textContent = c.slides.map((s) => s.text.replace(/\n/g, ' ')).join(' ')
+  const out = $('caption-out'); out.replaceChildren(c.caption + '\n\n', el('span', { class: 'tags' }, c.hashtags.map((h) => '#' + h).join(' ')))
+}
+function renderRecent() {
+  const box = $('recent'); box.replaceChildren()
+  for (const r of recent) {
+    const b = el('button', { type: 'button', style: `--c:${SIGN_COLORS[r.sign]?.color}` }, [el('span', { class: 'dot' }), el('span', { class: 't' }, r.title)])
+    b.addEventListener('click', () => load(structuredClone(r.c), 'Reopened.'))
+    box.append(b)
+  }
+  if (!recent.length) box.append(el('p', { class: 'hint' }, 'Carousels you make show up here.'))
+}
+
+// ---- getting files out ---------------------------------------------------
+const captionText = (c) => `${c.caption}\n\n${c.hashtags.map((h) => '#' + h).join(' ')}\n`
+const slug = (c) => (c.signs[0] + '-' + (c.title || 'carousel')).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48)
+function slideBlob(i) {
+  const cv = document.createElement('canvas'); drawSlide(cv, state.carousel, i)
+  return new Promise((res) => cv.toBlob(res, 'image/jpeg', 0.92))
+}
+async function saveFile(filename, data) {
+  if (!downloads) { setStatus('Saving files isn’t available in this view. Open the page in claude.ai to download.', true); return }
+  try { await downloads.save({ filename, data }); setStatus(`Saved ${filename}.`) }
+  catch (e) {
+    if (e?.code === 'declined') setStatus('Save cancelled.')
+    else if (e?.code === 'rate_limited') setStatus('A save prompt is already open. Finish that one first.', true)
+    else setStatus('Couldn’t save the file here.', true)
+  }
+}
+async function saveSlide(i) { await saveFile(`${slug(state.carousel)}-${String(i + 1).padStart(2, '0')}.jpg`, await slideBlob(i)) }
+$('zip').addEventListener('click', async () => {
+  const c = state.carousel, zip = new JSZip(), dir = zip.folder(slug(c))
+  setStatus('Packing the slides…')
+  for (let i = 0; i < c.slides.length; i++) dir.file(`${String(i + 1).padStart(2, '0')}.jpg`, await slideBlob(i))
+  dir.file('caption.txt', captionText(c))
+  await saveFile(`${slug(c)}.zip`, await zip.generateAsync({ type: 'blob' }))
+})
+$('copy').addEventListener('click', async () => {
+  const t = captionText(state.carousel)
+  try { await navigator.clipboard.writeText(t); setStatus('Caption copied.') }
+  catch { const r = document.createRange(); r.selectNodeContents($('caption-out')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); setStatus('Caption selected: copy it with your keyboard or long-press.') }
+})
+
+// ---- start ---------------------------------------------------------------
+$('remix').addEventListener('click', remix)
+$('remix2').addEventListener('click', remix)
+$('write').addEventListener('click', writeWithClaude)
+$('stop').addEventListener('click', () => ctl?.abort())
+
+buildControls(); syncControls()
+const saved = store.get('current', null)
+load(saved && saved.slides ? saved : structuredClone(EXAMPLES[2]), '')
+renderRecent()
+// Fonts arrive after first paint: redraw once they're in.
+Promise.all([document.fonts.load(font(100)), document.fonts.load('22px "Space Mono"')]).then(renderAll, renderAll)
+
+if (window.claude?.use) {
+  claude.use('sample').then((s) => {
+    sample = s
+    if (s) { $('write').hidden = false; $('engine-hint').textContent = 'Remix is instant and free. Write with Claude makes brand-new copy on your Claude account; read it before posting.' }
+  })
+  claude.use('downloads').then((d) => { downloads = d })
+}
+</script>

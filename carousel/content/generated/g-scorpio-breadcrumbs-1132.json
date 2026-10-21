@@ -1,0 +1,78 @@
+{
+  "id": "g-scorpio-breadcrumbs-1132",
+  "title": "Scorpio, a like a week is not a relationship",
+  "signs": [
+    "scorpio"
+  ],
+  "core": [
+    "not-alone"
+  ],
+  "caption": "said with love",
+  "hashtags": [
+    "scorpio",
+    "zodiacdating",
+    "astrology"
+  ],
+  "theme": "breadcrumbs",
+  "engine": "bank",
+  "seed": 1132,
+  "slides": [
+    {
+      "text": "scorpio, honestly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you love all or nothing,",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1.3,
+        "focus": "50% 38%"
+      }
+    },
+    {
+      "text": "but somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "you keep calling crumbs",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "a whole meal,",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1.15,
+        "focus": "56% 39%"
+      }
+    },
+    {
+      "text": "and someone out there",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1.3,
+        "focus": "59% 38%"
+      }
+    },
+    {
+      "text": "would make you dinner.",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    }
+  ]
+}

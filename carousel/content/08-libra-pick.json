@@ -1,0 +1,18 @@
+{
+  "id": "08-libra-pick",
+  "title": "Libra, not choosing is still choosing",
+  "signs": ["libra"],
+  "core": ["release"],
+  "caption": "libra, it's a table for two",
+  "hashtags": ["libra", "libraseason", "zodiacdating", "astrology", "datingadvice"],
+  "slides": [
+    { "text": "libra,", "bg": { "kind": "figure", "sign": "libra", "zoom": 1.05 } },
+    { "text": "not choosing", "bg": { "kind": "figure", "sign": "libra", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "is still choosing.", "bg": { "kind": "neon", "tint": "violet" } },
+    { "text": "pick one,", "bg": { "kind": "aura", "sign": "libra", "zoom": 1.05 } },
+    { "text": "release the rest kindly,", "bg": { "kind": "aura", "sign": "libra", "zoom": 1.2, "focus": "50% 35%" } },
+    { "text": "or keep everyone", "bg": { "kind": "veil", "person": 2 } },
+    { "text": "at the table", "bg": { "kind": "veil", "person": 9, "zoom": 1.15 } },
+    { "text": "and eat alone.", "bg": { "kind": "neon", "tint": "violet", "zoom": 1.3 } }
+  ]
+}

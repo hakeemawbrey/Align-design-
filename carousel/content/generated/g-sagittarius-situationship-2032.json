@@ -1,0 +1,95 @@
+{
+  "id": "g-sagittarius-situationship-2032",
+  "title": "Sagittarius, eight months is not \"casual\"",
+  "signs": [
+    "sagittarius"
+  ],
+  "core": [
+    "dealbreakers"
+  ],
+  "caption": "so what are you two",
+  "hashtags": [
+    "sagittarius",
+    "zodiacdating",
+    "datingadvice"
+  ],
+  "theme": "situationship",
+  "engine": "bank",
+  "seed": 2032,
+  "slides": [
+    {
+      "text": "sagittarius, quick one,",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you laugh off the serious stuff,",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "44% 38%"
+      }
+    },
+    {
+      "text": "but a joke isn't an answer,",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "and you're in a \"thing\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "with no name",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1.15,
+        "focus": "48% 42%"
+      }
+    },
+    {
+      "text": "and no plans,",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "50% 44%"
+      }
+    },
+    {
+      "text": "so say what you want",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "out loud,",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "56% 37%"
+      }
+    },
+    {
+      "text": "it's allowed.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "g-leo-chasing-2030",
+  "title": "Leo, stop chasing people who walk away",
+  "signs": [
+    "leo"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "just saying",
+  "hashtags": [
+    "leo",
+    "zodiacdating",
+    "astrologymemes"
+  ],
+  "theme": "chasing",
+  "engine": "bank",
+  "seed": 2030,
+  "slides": [
+    {
+      "text": "dear leo,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you give like it's nothing,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "51% 32%"
+      }
+    },
+    {
+      "text": "but you can't buy a yes,",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "and you keep running after",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "someone who's barely jogging,",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "45% 45%"
+      }
+    },
+    {
+      "text": "so stand still",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and see who",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "53% 35%"
+      }
+    },
+    {
+      "text": "comes looking.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "g-scorpio-late-night-1120",
+  "title": "Scorpio, don't send the 2am text",
+  "signs": [
+    "scorpio"
+  ],
+  "core": [
+    "release"
+  ],
+  "caption": "drafts are for deleting",
+  "hashtags": [
+    "scorpio",
+    "zodiacdating",
+    "zodiac"
+  ],
+  "theme": "late-night",
+  "engine": "bank",
+  "seed": 1120,
+  "slides": [
+    {
+      "text": "nothing good",
+      "bg": {
+        "kind": "sky",
+        "tint": "violet",
+        "moon": 0.39,
+        "zoom": 1
+      }
+    },
+    {
+      "text": "gets typed at 2am,",
+      "bg": {
+        "kind": "sky",
+        "tint": "violet",
+        "moon": 0.39,
+        "zoom": 1.3
+      }
+    },
+    {
+      "text": "scorpio,",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you never forget a thing,",
+      "bg": {
+        "kind": "figure",
+        "sign": "scorpio",
+        "zoom": 1.3,
+        "focus": "51% 39%"
+      }
+    },
+    {
+      "text": "but a grudge isn't closure,",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    },
+    {
+      "text": "so release the card,",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "don't haunt it.",
+      "bg": {
+        "kind": "aura",
+        "sign": "scorpio",
+        "zoom": 1.3,
+        "focus": "55% 40%"
+      }
+    }
+  ]
+}

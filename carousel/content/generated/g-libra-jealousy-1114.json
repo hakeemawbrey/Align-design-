@@ -1,0 +1,87 @@
+{
+  "id": "g-libra-jealousy-1114",
+  "title": "Libra, put their following list down",
+  "signs": [
+    "libra"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "she was at the wedding",
+  "hashtags": [
+    "libra",
+    "zodiacdating",
+    "zodiacsigns",
+    "datingadvice"
+  ],
+  "theme": "jealousy",
+  "engine": "bank",
+  "seed": 1114,
+  "slides": [
+    {
+      "text": "okay libra,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you hate a scene,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "50% 41%"
+      }
+    },
+    {
+      "text": "but quiet isn't peace,",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "and you're checking who",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "they followed today,",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "56% 43%"
+      }
+    },
+    {
+      "text": "so ask them,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "like an adult,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "48% 34%"
+      }
+    },
+    {
+      "text": "not a detective.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

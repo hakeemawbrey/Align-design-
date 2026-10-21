@@ -1,0 +1,94 @@
+{
+  "id": "g-aries-texting-first-2028",
+  "title": "Aries, eleven days of texting first",
+  "signs": [
+    "aries"
+  ],
+  "core": [
+    "1111"
+  ],
+  "caption": "let them start one",
+  "hashtags": [
+    "aries",
+    "zodiacdating",
+    "astrology"
+  ],
+  "theme": "texting-first",
+  "engine": "bank",
+  "seed": 2028,
+  "slides": [
+    {
+      "text": "listen, aries,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you text first and mean it,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "43% 31%"
+      }
+    },
+    {
+      "text": "but they never go second,",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "and you're the only one",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "who ever starts",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "49% 32%"
+      }
+    },
+    {
+      "text": "the conversation,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "so log off,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "52% 35%"
+      }
+    },
+    {
+      "text": "there's a new deal at 11:11,",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.21
+      }
+    },
+    {
+      "text": "and some of them reply.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

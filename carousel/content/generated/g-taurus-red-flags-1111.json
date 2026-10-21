@@ -1,0 +1,78 @@
+{
+  "id": "g-taurus-red-flags-1111",
+  "title": "Taurus, that red flag is not a personality",
+  "signs": [
+    "taurus"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "that's not a quirk",
+  "hashtags": [
+    "taurus",
+    "zodiacdating",
+    "datingadvice"
+  ],
+  "theme": "red-flags",
+  "engine": "bank",
+  "seed": 1111,
+  "slides": [
+    {
+      "text": "taurus,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you can smell a fake,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "55% 39%"
+      }
+    },
+    {
+      "text": "but you ate this one up,",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "and you keep calling red flags",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "\"a bit of character,\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.15,
+        "focus": "43% 44%"
+      }
+    },
+    {
+      "text": "so believe them",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "40% 46%"
+      }
+    },
+    {
+      "text": "the first time.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

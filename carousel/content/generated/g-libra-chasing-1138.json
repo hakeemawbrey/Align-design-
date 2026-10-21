@@ -1,0 +1,96 @@
+{
+  "id": "g-libra-chasing-1138",
+  "title": "Libra, stop chasing people who walk away",
+  "signs": [
+    "libra"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "libra, put your running shoes away",
+  "hashtags": [
+    "libra",
+    "zodiacdating",
+    "astrology",
+    "datingadvice"
+  ],
+  "theme": "chasing",
+  "engine": "bank",
+  "seed": 1138,
+  "slides": [
+    {
+      "text": "dear libra,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you make everyone feel chosen,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "48% 37%"
+      }
+    },
+    {
+      "text": "and somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you're the one chasing",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "someone who keeps",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.15,
+        "focus": "52% 39%"
+      }
+    },
+    {
+      "text": "walking the other way,",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "50% 37%"
+      }
+    },
+    {
+      "text": "so sit down,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you're a date,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "47% 40%"
+      }
+    },
+    {
+      "text": "not a search party.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "12-pisces-face-last",
+  "title": "Pisces, stop falling for the person you imagined",
+  "signs": ["pisces"],
+  "core": ["face-last"],
+  "caption": "pisces, keep the playlist though",
+  "hashtags": ["pisces", "zodiacdating", "astrology", "datingadvice"],
+  "slides": [
+    { "text": "pisces,", "bg": { "kind": "figure", "sign": "pisces", "zoom": 1.05, "focus": "50% 45%" } },
+    { "text": "you're falling again", "bg": { "kind": "figure", "sign": "pisces", "zoom": 1.2, "focus": "50% 40%" } },
+    { "text": "for someone you made up,", "bg": { "kind": "figure", "sign": "pisces", "zoom": 1.32, "focus": "48% 38%" } },
+    { "text": "the playlist is real,", "bg": { "kind": "neon", "tint": "rub" } },
+    { "text": "they aren't,", "bg": { "kind": "neon", "tint": "tide" } },
+    { "text": "so read who they are", "bg": { "kind": "aura", "sign": "pisces", "zoom": 1.1 } },
+    { "text": "before the face —", "bg": { "kind": "veil", "person": 3, "zoom": 1.05 } },
+    { "text": "yours comes last,", "bg": { "kind": "veil", "person": 3, "zoom": 1.2, "focus": "50% 35%" } },
+    { "text": "theirs should too.", "bg": { "kind": "veil", "person": 3, "zoom": 1.35, "focus": "50% 30%" } }
+  ]
+}

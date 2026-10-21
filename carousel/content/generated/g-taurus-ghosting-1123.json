@@ -1,0 +1,96 @@
+{
+  "id": "g-taurus-ghosting-1123",
+  "title": "Taurus, a goodbye takes ten seconds",
+  "signs": [
+    "taurus"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "ten seconds, taurus",
+  "hashtags": [
+    "taurus",
+    "zodiacdating",
+    "astrology",
+    "astrologymemes"
+  ],
+  "theme": "ghosting",
+  "engine": "bank",
+  "seed": 1123,
+  "slides": [
+    {
+      "text": "taurus, my love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you don't play games,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "44% 36%"
+      }
+    },
+    {
+      "text": "and still",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "you went quiet on them",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "instead of sending",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.15,
+        "focus": "46% 42%"
+      }
+    },
+    {
+      "text": "one honest sentence,",
+      "bg": {
+        "kind": "aura",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "43% 41%"
+      }
+    },
+    {
+      "text": "so say it once,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "kindly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "taurus",
+        "zoom": 1.3,
+        "focus": "44% 35%"
+      }
+    },
+    {
+      "text": "and let them go.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

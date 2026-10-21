@@ -1,0 +1,87 @@
+{
+  "id": "g-gemini-breadcrumbs-2034",
+  "title": "Gemini, a like a week is not a relationship",
+  "signs": [
+    "gemini"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "a note for gemini season",
+  "hashtags": [
+    "gemini",
+    "zodiacdating",
+    "astrologymemes",
+    "zodiacsigns"
+  ],
+  "theme": "breadcrumbs",
+  "engine": "bank",
+  "seed": 2034,
+  "slides": [
+    {
+      "text": "crumbs",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "aren't a meal,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "49% 36%"
+      }
+    },
+    {
+      "text": "gemini,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you can talk to anyone,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "55% 34%"
+      }
+    },
+    {
+      "text": "but chatting isn't dating,",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "and if they wanted you,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you'd be getting",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "50% 35%"
+      }
+    },
+    {
+      "text": "the whole loaf.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

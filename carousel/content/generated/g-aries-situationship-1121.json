@@ -1,0 +1,86 @@
+{
+  "id": "g-aries-situationship-1121",
+  "title": "Aries, eight months is not \"casual\"",
+  "signs": [
+    "aries"
+  ],
+  "core": [
+    "release"
+  ],
+  "caption": "so what are you two",
+  "hashtags": [
+    "aries",
+    "zodiacdating",
+    "zodiac"
+  ],
+  "theme": "situationship",
+  "engine": "bank",
+  "seed": 1121,
+  "slides": [
+    {
+      "text": "aries, honestly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you're loyal to the bone,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "44% 44%"
+      }
+    },
+    {
+      "text": "and yet",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "you're eight months into",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "\"let's not label it,\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "50% 40%"
+      }
+    },
+    {
+      "text": "so name it",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "or release it,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "54% 36%"
+      }
+    },
+    {
+      "text": "those are the options.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

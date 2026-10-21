@@ -1,0 +1,87 @@
+{
+  "id": "g-gemini-venus-1112",
+  "title": "Gemini, your venus knows how you love",
+  "signs": [
+    "gemini"
+  ],
+  "core": [
+    "venus"
+  ],
+  "caption": "gemini, please",
+  "hashtags": [
+    "gemini",
+    "zodiacdating",
+    "zodiac",
+    "zodiacsigns"
+  ],
+  "theme": "venus",
+  "engine": "bank",
+  "seed": 1112,
+  "slides": [
+    {
+      "text": "gemini, honestly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you say what others won't,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "46% 36%"
+      }
+    },
+    {
+      "text": "but somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you date for your sun",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and forget how you love,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "46% 42%"
+      }
+    },
+    {
+      "text": "so check your venus,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "it already knows",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "52% 43%"
+      }
+    },
+    {
+      "text": "what you need.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

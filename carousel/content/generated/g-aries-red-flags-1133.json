@@ -1,0 +1,87 @@
+{
+  "id": "g-aries-red-flags-1133",
+  "title": "Aries, that red flag is not a personality",
+  "signs": [
+    "aries"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "it's red, aries",
+  "hashtags": [
+    "aries",
+    "zodiacdating",
+    "astrologymemes",
+    "zodiacsigns"
+  ],
+  "theme": "red-flags",
+  "engine": "bank",
+  "seed": 1133,
+  "slides": [
+    {
+      "text": "oh, aries,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you know what you want fast,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "43% 34%"
+      }
+    },
+    {
+      "text": "but somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "you saw the red flag",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and called it",
+      "bg": {
+        "kind": "aura",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "55% 42%"
+      }
+    },
+    {
+      "text": "their personality,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "it's not a quirk,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aries",
+        "zoom": 1.3,
+        "focus": "57% 43%"
+      }
+    },
+    {
+      "text": "it's a preview.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

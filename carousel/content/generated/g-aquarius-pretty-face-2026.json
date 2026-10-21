@@ -1,0 +1,78 @@
+{
+  "id": "g-aquarius-pretty-face-2026",
+  "title": "Aquarius, you keep picking faces",
+  "signs": [
+    "aquarius"
+  ],
+  "core": [
+    "face-last"
+  ],
+  "caption": "for the aquarius in the group chat",
+  "hashtags": [
+    "aquarius",
+    "zodiacdating",
+    "astrology"
+  ],
+  "theme": "pretty-face",
+  "engine": "bank",
+  "seed": 2026,
+  "slides": [
+    {
+      "text": "aquarius, my love,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you see the pattern first,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "50% 38%"
+      }
+    },
+    {
+      "text": "but somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you picked the jawline",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and got the attitude,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "49% 43%"
+      }
+    },
+    {
+      "text": "so lead with your sky,",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.27
+      }
+    },
+    {
+      "text": "your face comes last.",
+      "bg": {
+        "kind": "veil",
+        "person": 6,
+        "zoom": 1.15
+      }
+    }
+  ]
+}

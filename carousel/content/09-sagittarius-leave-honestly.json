@@ -1,0 +1,18 @@
+{
+  "id": "09-sagittarius-leave-honestly",
+  "title": "Sagittarius, freedom isn't running: leave honestly",
+  "signs": ["sagittarius"],
+  "core": ["release", "honest"],
+  "caption": "sagittarius, the road isn't going anywhere",
+  "hashtags": ["sagittarius", "zodiacdating", "astrology", "ghosting", "datingadvice"],
+  "slides": [
+    { "text": "sagittarius,", "bg": { "kind": "figure", "sign": "sagittarius", "zoom": 1.05, "focus": "50% 45%" } },
+    { "text": "freedom isn't running,", "bg": { "kind": "figure", "sign": "sagittarius", "zoom": 1.2, "focus": "52% 40%" } },
+    { "text": "and a one-way ticket", "bg": { "kind": "neon", "tint": "ember" } },
+    { "text": "isn't a breakup text,", "bg": { "kind": "neon", "tint": "rub" } },
+    { "text": "so if you're leaving,", "bg": { "kind": "aura", "sign": "sagittarius", "zoom": 1.05 } },
+    { "text": "say it once, out loud,", "bg": { "kind": "aura", "sign": "sagittarius", "zoom": 1.2, "focus": "50% 35%" } },
+    { "text": "release them clean,", "bg": { "kind": "sky", "tint": "ember", "moon": 0.85 } },
+    { "text": "the mountains will wait.", "bg": { "kind": "figure", "sign": "sagittarius", "zoom": 1.45, "focus": "45% 50%" } }
+  ]
+}

@@ -1,0 +1,606 @@
+<title>Align Carousel Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Inter:wght@400;500;600&family=Poppins:ital,wght@1,800&family=Space+Mono&display=swap">
+<style>
+/* Layout: a two-pane studio. Controls and the slide editor on the left, the
+   swipeable carousel on the right; one column on phones. Dark only: the
+   slides are dark, so the studio is too (Align's Stardust tokens). */
+:root {
+  --void: #0b0620;
+  --canvas: #140a2e;
+  --raised: #1e1240;
+  --raised-2: #281a4e;
+  --line: rgba(179, 166, 196, 0.18);
+  --label-1: #efe6d6;
+  --label-2: #b3a6c4;
+  --label-3: #7d6f94;
+  --chrome: linear-gradient(100deg, #f8edff 0%, #fff7ec 38%, #eaf4ff 72%, #ffeff7 100%);
+  --chrome-ink: #3a2c4e;
+  --warn: #f2c75c;
+  --sign: #e23d66;
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --mono: 'Space Mono', ui-monospace, monospace;
+  --slide: 'Poppins', 'Arial Black', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { background: var(--void); color: var(--label-1); }
+body {
+  margin: 0; font-family: var(--sans); font-size: 14px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--sign); outline-offset: 2px; }
+
+.wrap { max-width: 1280px; margin: 0 auto; display: grid; gap: 20px; }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: lowercase; color: var(--label-3); }
+h1 { margin: 4px 0 0; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(28px, 4vw, 38px); line-height: 1.05; text-wrap: balance; }
+.lede { margin: 6px 0 0; color: var(--label-2); max-width: 62ch; }
+
+.studio { display: grid; grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .studio { grid-template-columns: minmax(0, 1fr); } .preview { order: -1; } }
+@media (min-width: 861px) { .only-narrow { display: none; } }
+
+.panel { background: var(--canvas); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 16px; min-width: 0; }
+.group { display: grid; gap: 8px; }
+.group > label, .label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .2em; text-transform: lowercase; color: var(--label-3); }
+
+.signs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.chip { display: flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 8px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--label-2); font-size: 12.5px; text-align: left; min-width: 0; }
+.chip .g { color: var(--c); font-size: 15px; line-height: 1; }
+.chip span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip[aria-pressed="true"] { border-color: var(--c); color: var(--label-1); background: color-mix(in srgb, var(--c) 16%, transparent); }
+.chip.any { grid-column: span 4; justify-content: center; }
+
+select, .field { width: 100%; min-height: 38px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--raised); }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.row > * { flex: 1 1 auto; }
+
+.btn { min-height: 42px; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--label-1); font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn:hover { background: var(--raised); }
+.btn.primary { background: var(--chrome); color: var(--chrome-ink); border-color: transparent; font-weight: 600; }
+.btn.primary:hover { filter: brightness(1.04); }
+.btn[disabled] { opacity: .5; cursor: default; }
+.btn.small { min-height: 32px; padding: 6px 12px; font-size: 12.5px; }
+.hint { color: var(--label-3); font-size: 12.5px; margin: 0; }
+.status { min-height: 1.4em; color: var(--label-2); font-size: 12.5px; margin: 0; }
+.status.warn { color: var(--warn); }
+
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.seg button { border: 0; background: transparent; color: var(--label-2); padding: 6px 12px; border-radius: 999px; font-size: 12.5px; }
+.seg button[aria-pressed="true"] { background: var(--raised-2); color: var(--label-1); }
+
+/* preview */
+.preview { display: grid; gap: 12px; min-width: 0; }
+.preview-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.sentence { margin: 0; color: var(--label-2); font-size: 13px; min-width: 0; }
+.strip { display: grid; grid-auto-flow: column; grid-auto-columns: min(300px, 78%); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; overscroll-behavior-x: contain; }
+.strip::-webkit-scrollbar { height: 8px; }
+.strip::-webkit-scrollbar-thumb { background: var(--raised-2); border-radius: 8px; }
+.slide { scroll-snap-align: start; display: grid; gap: 6px; }
+.slide canvas { width: 100%; height: auto; aspect-ratio: 4 / 5; border-radius: 12px; display: block; background: var(--void); box-shadow: 0 8px 30px rgba(0,0,0,.35); max-width: 100%; }
+.slide .meta { display: flex; justify-content: space-between; align-items: center; color: var(--label-3); font-family: var(--mono); font-size: 11px; }
+.slide .meta button { border: 0; background: none; color: var(--label-2); font-family: var(--sans); font-size: 12px; padding: 4px 6px; border-radius: 6px; }
+.slide .meta button:hover { color: var(--label-1); background: var(--raised); }
+
+.post { display: grid; gap: 10px; background: var(--canvas); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+.caption { white-space: pre-wrap; font-size: 13.5px; margin: 0; color: var(--label-1); overflow-wrap: anywhere; }
+.tags { color: var(--sign); }
+
+/* editor */
+.slides-edit { display: grid; gap: 6px; counter-reset: s; }
+.slide-row { display: grid; grid-template-columns: 22px minmax(0, 1fr) 30px; gap: 6px; align-items: center; }
+.slide-row::before { counter-increment: s; content: counter(s); font-family: var(--mono); font-size: 11px; color: var(--label-3); text-align: right; }
+.slide-row input { min-height: 36px; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--raised); width: 100%; min-width: 0; }
+.slide-row input.bad { border-color: var(--warn); }
+.slide-row button { width: 30px; height: 30px; border-radius: 8px; border: 1px solid transparent; background: none; color: var(--label-3); font-size: 16px; line-height: 1; }
+.slide-row button:hover { color: var(--label-1); border-color: var(--line); }
+
+.recent { display: grid; gap: 4px; }
+.recent button { text-align: left; border: 0; background: none; color: var(--label-2); padding: 6px 8px; border-radius: 8px; font-size: 12.5px; display: flex; gap: 8px; align-items: baseline; min-width: 0; }
+.recent button:hover { background: var(--raised); color: var(--label-1); }
+.recent .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--c); transform: translateY(-1px); }
+.recent .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+
+details summary { cursor: pointer; color: var(--label-2); font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">align ✦ carousel studio</div>
+      <h1>Blunt advice, by sign.</h1>
+      <p class="lede">Pick a sign and a theme, then remix a fresh carousel from the phrase bank or have Claude write a new one. Edit any line, then download the slides and copy the caption.</p>
+    </div>
+  </header>
+
+  <div class="studio">
+    <aside class="panel" aria-label="Controls">
+      <div class="group">
+        <span class="label" id="sign-label">sign</span>
+        <div class="signs" id="signs" role="group" aria-labelledby="sign-label"></div>
+      </div>
+
+      <div class="group">
+        <label for="theme">theme</label>
+        <select id="theme"></select>
+      </div>
+
+      <div class="group">
+        <div class="row">
+          <button class="btn primary" id="remix" type="button">Remix</button>
+          <button class="btn" id="write" type="button" hidden>Write with Claude</button>
+          <button class="btn" id="stop" type="button" hidden>Stop</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <p class="hint" id="engine-hint">Remix is instant and free: it mixes hand-written lines, and won't repeat a line until it has used the rest.</p>
+      </div>
+
+      <div class="group">
+        <span class="label">slides</span>
+        <div class="slides-edit" id="editor"></div>
+        <div class="row">
+          <button class="btn small" id="add" type="button">Add slide</button>
+        </div>
+        <p class="status warn" id="issues"></p>
+      </div>
+
+      <div class="group">
+        <label for="caption-in">caption</label>
+        <input class="field" id="caption-in" maxlength="60" autocomplete="off">
+        <label for="tags-in">hashtags</label>
+        <input class="field" id="tags-in" autocomplete="off" placeholder="scorpio zodiacdating astrology">
+      </div>
+
+      <div class="group">
+        <span class="label">layout</span>
+        <div class="row" style="align-items:center">
+          <div class="seg" role="group" aria-label="Text position">
+            <button type="button" data-pos="bottom" aria-pressed="true">Bottom</button>
+            <button type="button" data-pos="center" aria-pressed="false">Centre</button>
+          </div>
+          <div class="seg" role="group" aria-label="Text colour">
+            <button type="button" data-ink="sign" aria-pressed="true">Sign colour</button>
+            <button type="button" data-ink="bone" aria-pressed="false">White</button>
+          </div>
+        </div>
+      </div>
+
+      <details>
+        <summary>Examples and recent</summary>
+        <div class="group" style="margin-top:10px">
+          <span class="label">the 12 hand-written examples</span>
+          <div class="recent" id="examples"></div>
+          <span class="label" style="margin-top:8px">recent</span>
+          <div class="recent" id="recent"><p class="hint">Carousels you make show up here.</p></div>
+        </div>
+      </details>
+    </aside>
+
+    <section class="preview" aria-label="Preview">
+      <div class="preview-head">
+        <p class="sentence" id="sentence"></p>
+        <div class="row" style="flex:0 0 auto">
+          <button class="btn small primary only-narrow" id="remix2" type="button">Remix</button>
+          <button class="btn small" id="zip" type="button">Download all (.zip)</button>
+        </div>
+      </div>
+      <div class="strip" id="strip"></div>
+      <div class="post">
+        <div class="preview-head">
+          <span class="label">caption</span>
+          <button class="btn small" id="copy" type="button">Copy caption</button>
+        </div>
+        <p class="caption" id="caption-out"></p>
+      </div>
+      <p class="hint">Post the slides in order (01, 02…). Swipe the strip to check every slide reads.</p>
+    </section>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+var AlignBank=(()=>{var B=Object.defineProperty;var te=Object.getOwnPropertyDescriptor;var oe=Object.getOwnPropertyNames;var se=Object.prototype.hasOwnProperty;var ne=(e,t)=>{for(var o in t)B(e,o,{get:t[o],enumerable:!0})},ae=(e,t,o,a)=>{if(t&&typeof t=="object"||typeof t=="function")for(let s of oe(t))!se.call(e,s)&&s!==o&&B(e,s,{get:()=>t[s],enumerable:!(a=te(t,s))||a.enumerable});return e};var ie=e=>ae(B({},"__esModule",{value:!0}),e);var Ae={};ne(Ae,{ARCS:()=>G,CORE:()=>M,LIMITS:()=>f,SIGNS:()=>$,SIGN_COLORS:()=>J,THEMES:()=>X,generateBankOne:()=>F,validate:()=>L});var $=["aries","taurus","gemini","cancer","leo","virgo","libra","scorpio","sagittarius","capricorn","aquarius","pisces"],D={aries:"fire",leo:"fire",sagittarius:"fire",taurus:"earth",virgo:"earth",capricorn:"earth",gemini:"air",libra:"air",aquarius:"air",cancer:"water",scorpio:"water",pisces:"water"},J={aries:{color:"#f0603a",light:"#ffb39a",dark:"#5a1c10"},taurus:{color:"#e9b24a",light:"#ffe1a0",dark:"#4e3510"},gemini:{color:"#f2cf4a",light:"#fff0a8",dark:"#4f4210"},cancer:{color:"#3fb6f0",light:"#a8e4ff",dark:"#0f3550"},leo:{color:"#f39a3a",light:"#ffd09a",dark:"#55300f"},virgo:{color:"#ef5c94",light:"#ffb6d2",dark:"#561a33"},libra:{color:"#e163d6",light:"#ffbdf6",dark:"#4d1a49"},scorpio:{color:"#e23d66",light:"#ff9fb7",dark:"#55102a"},sagittarius:{color:"#a35cf0",light:"#dcbcff",dark:"#36165a"},capricorn:{color:"#2fc79a",light:"#a6f0d6",dark:"#0e4636"},aquarius:{color:"#38c4ec",light:"#b2ecff",dark:"#0e3d4e"},pisces:{color:"#7c74f0",light:"#c6c1ff",dark:"#25205a"}},U=["type","photo"],M=["face-last","mutual","honest","dealbreakers","release","1111","venus","not-alone"],Y=["figure","aura","veil","sky","neon"],re={violet:"#9a7be0",rub:"#e8628a",ember:"#f0603a",gold:"#f2c75c",tide:"#3fb6f0",spark:"#7fd8b0"},f={minSlides:6,maxSlides:9,maxWords:6,maxChars:32,maxCaption:60,minTags:3,maxTags:6},le=e=>typeof e=="string"&&(e in re||/^#[0-9a-f]{6}$/i.test(e));function L(e){let t=[],o=s=>t.push(s);if(!e||typeof e!="object")return["not an object"];/^[a-z0-9][a-z0-9-]*$/.test(e.id??"")||o("id: lowercase letters, digits and dashes"),(typeof e.title!="string"||!e.title.trim())&&o("title: required"),(!Array.isArray(e.signs)||e.signs.some(s=>!$.includes(s)))&&o("signs: list of sign ids"),(!Array.isArray(e.core)||!e.core.length||e.core.some(s=>!M.includes(s)))&&o(`core: 1+ of ${M.join(", ")}`),typeof e.caption!="string"||!e.caption.trim()?o("caption: required"):(e.caption.length>f.maxCaption&&o(`caption: over ${f.maxCaption} characters`),e.caption!==e.caption.toLowerCase()&&o("caption: lowercase"),e.caption.includes("#")&&o("caption: no hashtags")),!Array.isArray(e.hashtags)||e.hashtags.length<f.minTags||e.hashtags.length>f.maxTags?o(`hashtags: ${f.minTags}\u2013${f.maxTags}`):e.hashtags.some(s=>!/^[a-z0-9_]+$/.test(s))&&o("hashtags: lowercase, no #"),e.style!==void 0&&!U.includes(e.style)&&o(`style: one of ${U.join(", ")}`);let a=e.slides;return!Array.isArray(a)||a.length<f.minSlides||a.length>f.maxSlides?(o(`slides: ${f.minSlides}\u2013${f.maxSlides}`),t):(a.forEach((s,r)=>{let i=`slides[${r}]`,u=s?.text;if(typeof u!="string"||!u.trim())return o(`${i}.text: required`);let w=u.replace(/\n/g," ").trim(),m=w.split(/\s+/).length;m>f.maxWords&&o(`${i}.text: ${m} words (max ${f.maxWords})`),w.length>f.maxChars&&o(`${i}.text: ${w.length} chars (max ${f.maxChars})`),u!==u.toLowerCase()&&o(`${i}.text: lowercase`),/[!#]/.test(u)&&o(`${i}.text: no ! or #`),/\p{Extended_Pictographic}/u.test(u)&&o(`${i}.text: no emoji`),s.size&&!["s","m","l"].includes(s.size)&&o(`${i}.size: s, m or l`);let h=s.bg;if(!h||!Y.includes(h.kind))return o(`${i}.bg.kind: one of ${Y.join(", ")}`);(h.kind==="figure"||h.kind==="aura")&&!$.includes(h.sign)&&o(`${i}.bg.sign: required for ${h.kind}`),h.kind==="veil"&&!(Number.isInteger(h.person)&&h.person>=1&&h.person<=12)&&o(`${i}.bg.person: 1\u201312`),(h.kind==="sky"||h.kind==="neon")&&h.tint!==void 0&&!le(h.tint)&&o(`${i}.bg.tint: named tint or #hex`),h.kind==="neon"&&h.tint===void 0&&o(`${i}.bg.tint: required for neon`),h.moon!==void 0&&!(h.moon>=0&&h.moon<=1)&&o(`${i}.bg.moon: 0\u20131`),h.zoom!==void 0&&!(h.zoom>=1&&h.zoom<=1.6)&&o(`${i}.bg.zoom: 1\u20131.6`),h.focus!==void 0&&!/^\d{1,3}% \d{1,3}%$/.test(h.focus)&&o(`${i}.bg.focus: "x% y%"`)}),t)}function N(e){let t=2166136261;for(let o=0;o<e.length;o++)t^=e.charCodeAt(o),t=Math.imul(t,16777619);return t>>>0}function O(e){let t=(typeof e=="string"?N(e):e>>>0)||2654435769,o=()=>{t=t+1831565813>>>0;let a=t;return a=Math.imul(a^a>>>15,a|1),a^=a+Math.imul(a^a>>>7,a|61),((a^a>>>14)>>>0)/4294967296};return o.int=a=>Math.floor(o()*a),o.pick=a=>a[Math.floor(o()*a.length)],o.range=(a,s)=>a+o()*(s-a),o.shuffle=a=>{let s=[...a];for(let r=s.length-1;r>0;r--){let i=Math.floor(o()*(r+1));[s[r],s[i]]=[s[i],s[r]]}return s},o}var he={fire:["ember","rub"],earth:["gold","spark"],air:["tide","violet"],water:["violet","tide"]},ue=/\b(face|faces|looks|photo|photos|pic|pics|selfie|selfies|swiped|swipe|profile|pretty)\b/,de=/11:11|\bnight\b|midnight|tonight|\b\d{1,2}\s?am\b|\bmoon\b|\bstars?\b|\bsky\b|\basleep\b|\bawake\b|\bsleep\b/,ce=/^(but|and still|and yet|and somehow|which is|a real gift|all true|it's a gift|still|except|instead|meanwhile)\b/,ye=/\b(but|still|yet|except|instead)\b/,K=e=>Math.round(e*100)/100,R=(e,t,o)=>Math.max(t,Math.min(o,e));function ge(e){let t=e.length,o=2,a=t-2;for(let s=o;s<=a;s++)if(ce.test(e[s]))return s;for(let s=o;s<=a;s++)if(ye.test(e[s]))return s;return R(Math.floor(t/2),o,a)}function V(e,t=0,{turn:o}={}){let a=O(N(`${e.id??""}:${t}`)),s=e.slides.map(l=>({...l})),r=s.map(l=>String(l.text??"").replace(/\n/g," ").toLowerCase()),i=s.length,u=(e.signs??[]).find(l=>$.includes(l)),w=u?he[D[u]]:["violet","rub"],m=Number.isInteger(o)&&o>=2&&o<=i-2?o:ge(r),h=r.map(l=>ue.test(l)?"veil":de.test(l)?"sky":null),b=u?r.findIndex((l,c)=>c>=2&&c<=3&&c<=m&&l.startsWith(u)):-1,j=b>0?b:R(m,2,3),k=h[0]||h[1]||(u?"figure":"sky"),g=k==="figure"?"aura":u?"figure":"neon1",p=new Array(i);for(let l=0;l<i;l++)l<j?p[l]=k:l<m?p[l]=g:l===m?p[l]="neon0":l===i-1&&i-1-m>=3?p[l]="neon1":p[l]=u?"aura":"neon1";for(let l=j;l<i;l++){if(!h[l]||l===m)continue;p[l]=h[l];let c=l+1;c<i-1&&c!==m&&!h[c]&&(p[c]=h[l])}for(let l=0;l<i;){let c=l;for(;c+1<i&&p[c+1]===p[l];)c++;let E=c-l+1;if(E>3){let C=Math.ceil(E/2),A={figure:"aura",aura:"figure"}[p[l]]??`${p[l]}#2`;for(let d=l+C;d<=c;d++)p[d]=A}l=c+1}let T=1+a.int(12),I=K(a.range(.15,.85)),q=a.pick(["violet","tide"]),v=0;for(;v<i;){let l=v;for(;l+1<i&&p[l+1]===p[v];)l++;let c=l-v+1,E=50+a.int(9)-4,C=38+a.int(11)-5,A=a.pick([-3,-2,2,3]),d=a.pick([-3,-2,-1,1,2]);for(let y=0;y<=l-v;y++){let x=c===1?1.1:K(1+.3*y/(c-1)),z=`${R(E+A*y,20,80)}% ${R(C+d*y,20,70)}%`;s[v+y].bg=fe(p[v].split("#")[0],{sign:u,tints:w,person:T,moon:I,skyTint:q,zoom:x,focus:z,held:c>1,k:y})}v=l+1}return{...e,slides:s}}function fe(e,t){switch(e){case"figure":case"aura":{let o={kind:e,sign:t.sign,zoom:t.zoom};return t.held&&t.k>0&&(o.focus=t.focus),o}case"veil":{let o={kind:"veil",person:t.person,zoom:K(R(t.zoom+.05,1,1.6))};return t.held&&t.k>0&&(o.focus=t.focus),o}case"sky":return{kind:"sky",tint:t.skyTint,moon:t.moon,...t.held?{zoom:t.zoom}:{}};case"neon0":return{kind:"neon",tint:t.tints[0]};case"neon1":return{kind:"neon",tint:t.tints[1]};default:return{kind:"neon",tint:t.tints[0]}}}var pe={aries:{traits:[{t:"you say it to their face",s:"h",b:"not when it\u2019s goodbye",arcs:["ghosting"]},{t:"you\u2019d go to war for them",s:"w"},{t:"you\u2019re loyal to the bone",s:"w"},{t:"you know what you want fast",s:"i"},{t:"you can smell a bluff",s:"i"},{t:"you call things as they are",s:"h",b:"never the red ones",arcs:["red-flags"]},{t:"you text first and mean it",b:"they never go second",arcs:["texting-first","chasing"]},{t:"you fall at full speed",b:"a crash isn\u2019t chemistry",arcs:["love-bombing","rushing","the-idea"]},{t:"you love a challenge",b:"a no isn\u2019t a dare",arcs:["chasing","mixed-signals","breadcrumbs"]},{t:"you can\u2019t sit still",b:"slow isn\u2019t a red flag",arcs:["love-bombing","rushing"]}]},taurus:{traits:[{t:"you remember their coffee order",s:"w"},{t:"you build things that last",s:"w",flips:{fixing:"people aren\u2019t flat-pack"}},{t:"you love through food and touch",s:"w",flips:{venus:"you ask for neither"}},{t:"you don\u2019t play games",s:"h"},{t:"you know quality on sight",s:"i"},{t:"you can smell a fake",s:"i",b:"you ate this one up",arcs:["love-bombing","red-flags"]},{t:"you stay when it\u2019s hard",s:"w",b:"stuck isn\u2019t loyal",arcs:["situationship","settling","breadcrumbs"]},{t:"you don\u2019t let go easily",b:"you can\u2019t out-wait a no",arcs:["the-ex","chasing","mixed-signals"]},{t:"you like what you know",b:"familiar isn\u2019t safe",arcs:["the-ex","settling","red-flags"]}]},gemini:{traits:[{t:"you can talk to anyone",s:"w",b:"chatting isn\u2019t dating",arcs:["situationship","breadcrumbs","texting-first"],flips:{"over-explaining":"nobody asked for a podcast"}},{t:"you fall for minds first",s:"w",flips:{"pretty-face":"you swipe like you don\u2019t"}},{t:"you say what others won\u2019t",s:"h"},{t:"you can spot a script",s:"i"},{t:"you read between every line",s:"i",b:"\u201Ck\u201D has no subtext",arcs:["mixed-signals"]},{t:"you could flirt in your sleep",s:"w",b:"charm isn\u2019t a feeling",arcs:["love-bombing","the-idea"]},{t:"you\u2019ve got three chats going",b:"nobody knows the real you",arcs:["situationship","playing-cool"]},{t:"you\u2019re never the same twice",b:"gone isn\u2019t a mood",arcs:["ghosting"]}]},cancer:{traits:[{t:"you take care of everyone",s:"w",b:"they\u2019re not a project",arcs:["fixing","potential"]},{t:"you remember every anniversary",s:"w"},{t:"you love like a home",s:"w",flips:{settling:"you\u2019re living in \u201Cfine\u201D"}},{t:"you never hide how you feel",s:"h",flips:{"over-explaining":"a no needs no preface"}},{t:"you sense a lie early",s:"i"},{t:"you feel a mood change first",s:"i",flips:{jealousy:"it\u2019s not always about you"}},{t:"you hold onto everything",b:"a memory isn\u2019t a maybe",arcs:["the-ex","late-night"]},{t:"you feed the people you love",s:"w",b:"caring isn\u2019t a contract",arcs:["texting-first","chasing"]},{t:"you forgive too fast",b:"a pattern isn\u2019t a mistake",arcs:["red-flags","the-ex"]}]},leo:{traits:[{t:"you love out loud",s:"w",b:"lately you whisper",arcs:["playing-cool","venus"]},{t:"you plan the best birthdays",s:"w",b:"yours get a text",arcs:["settling","breadcrumbs"]},{t:"you say it with your chest",s:"h"},{t:"you spot a fake fan instantly",s:"i"},{t:"you dress for the occasion",b:"a fit isn\u2019t a feeling",arcs:["pretty-face"]},{t:"you know who\u2019s really clapping",s:"i",flips:{"the-ex":"they left mid-show",testing:"they\u2019re already standing"}},{t:"you light up every room",s:"w",b:"you\u2019re not their only sun",arcs:["jealousy"]},{t:"you give like it\u2019s nothing",s:"w",b:"you can\u2019t buy a yes",arcs:["chasing","over-explaining"],flips:{fixing:"you\u2019re not a charity"}},{t:"you do grand gestures properly",b:"they don\u2019t do them back",arcs:["texting-first","breadcrumbs","chasing"]}]},virgo:{traits:[{t:"you notice everything",s:"i",flips:{jealousy:"nothing here is evidence"}},{t:"you clock a haircut instantly",s:"i",flips:{"pretty-face":"you miss the personality"}},{t:"you remember the little things",s:"w"},{t:"you love in small details",s:"w",flips:{venus:"you ask for nothing"}},{t:"you tell them about the spinach",s:"h"},{t:"you fix what others ignore",b:"people aren\u2019t a to-do list",arcs:["fixing","potential"]},{t:"you read the fine print",s:"i",b:"nobody\u2019s perfect on paper",arcs:["testing"]},{t:"you have a list for everything",b:"you hide the big one",arcs:["dealbreakers"]},{t:"you think it through twice",b:"a draft isn\u2019t a decision",arcs:["over-explaining","late-night"]}]},libra:{traits:[{t:"you make everyone feel chosen",s:"w"},{t:"you love romance done right",s:"w"},{t:"you can say no beautifully",s:"h"},{t:"you can read any room",s:"i"},{t:"you clock bad manners instantly",s:"i"},{t:"you love beautiful things",b:"pretty isn\u2019t kind",arcs:["pretty-face","red-flags"]},{t:"you can charm a whole crowd",s:"w",b:"liked isn\u2019t known",arcs:["playing-cool","the-idea"]},{t:"you see both sides, always",b:"you\u2019re allowed an opinion",arcs:["dealbreakers","situationship","red-flags"]},{t:"you take ages to choose",b:"maybe isn\u2019t an answer",arcs:["situationship","mixed-signals"],flips:{"the-ex":"they already chose"}},{t:"you hate a scene",b:"quiet isn\u2019t peace",arcs:["ghosting","jealousy","dealbreakers"]}]},scorpio:{traits:[{t:"you know their whole story",s:"i",flips:{"over-explaining":"they don\u2019t need yours"}},{t:"you never fake a feeling",s:"h"},{t:"you\u2019re loyal to a fault",s:"w"},{t:"you see straight through people",s:"i",b:"not everyone is a suspect",arcs:["testing","jealousy"],flips:{"pretty-face":"except the pretty ones"}},{t:"you love all or nothing",s:"w",b:"intensity isn\u2019t intimacy",arcs:["love-bombing","rushing"]},{t:"you never forget a thing",b:"a grudge isn\u2019t closure",arcs:["the-ex","late-night"]},{t:"you can read a room cold",s:"i",b:"silence isn\u2019t a strategy",arcs:["playing-cool","ghosting"]},{t:"you keep your cards close",b:"guarded isn\u2019t deep",arcs:["playing-cool","dealbreakers"]}]},sagittarius:{traits:[{t:"you say the funny true thing",s:"h"},{t:"you make it all an adventure",s:"w",flips:{settling:"this is a waiting room"}},{t:"you\u2019re honest to a fault",s:"h",flips:{"over-explaining":"the truth is short"}},{t:"you make strangers laugh",s:"w"},{t:"you call a bluff fast",s:"i"},{t:"you spot a dead end fast",s:"i",flips:{"pretty-face":"not if it\u2019s cute"}},{t:"you suggest a road trip early",b:"a map isn\u2019t a plan",arcs:["rushing","situationship"]},{t:"you need room to breathe",b:"space isn\u2019t vanishing",arcs:["ghosting"]},{t:"you hate feeling boxed in",b:"commitment isn\u2019t a cage",arcs:["situationship"]},{t:"you laugh off the serious stuff",b:"a joke isn\u2019t an answer",arcs:["situationship","dealbreakers"]}]},capricorn:{traits:[{t:"you\u2019re built for the long run",s:"w",flips:{settling:"endurance isn\u2019t love"}},{t:"you have the driest humor alive",s:"w"},{t:"you show love by showing up",s:"w"},{t:"you mean every word you say",s:"h",flips:{"over-explaining":"you say too many"}},{t:"you read people like contracts",s:"i"},{t:"you\u2019re never fooled twice",s:"i",flips:{jealousy:"they haven\u2019t lied once"}},{t:"you have a five-year plan",s:"w",b:"a person isn\u2019t a milestone",arcs:["potential","the-idea","rushing"],flips:{fixing:"they didn\u2019t sign up"}},{t:"you date like it\u2019s a merger",b:"they\u2019re not an interview",arcs:["testing"]},{t:"you work through everything",b:"\u201Cbusy\u201D isn\u2019t a goodbye",arcs:["ghosting"]}]},aquarius:{traits:[{t:"you love like a best friend",s:"w",flips:{venus:"you date like a stranger"}},{t:"you\u2019d rather be weird than fake",s:"h"},{t:"you make any night interesting",s:"w"},{t:"you see the pattern first",s:"i"},{t:"you think before you feel",s:"i",b:"detached isn\u2019t deep",arcs:["playing-cool","ghosting","the-idea"]},{t:"you send memes mid-date",b:"a gif isn\u2019t a feeling",arcs:["playing-cool"]},{t:"you need your own orbit",b:"distance isn\u2019t depth",arcs:["situationship","ghosting"],flips:{"the-ex":"you\u2019re still circling them"}}]},pisces:{traits:[{t:"you feel everything first",s:"i"},{t:"you feel it and say it",s:"h"},{t:"you read moods through a screen",s:"i"},{t:"you see the best in people",s:"w",b:"potential isn\u2019t a person",arcs:["potential","fixing","red-flags"]},{t:"you love like the movies",s:"w",b:"this isn\u2019t a plot twist",arcs:["red-flags","mixed-signals"],flips:{settling:"this is a rerun"}},{t:"you make the playlist early",b:"a song isn\u2019t a promise",arcs:["rushing","love-bombing","the-idea"]},{t:"you write the ending in advance",b:"a daydream isn\u2019t a date",arcs:["the-idea","potential","late-night"],flips:{"the-ex":"this one\u2019s already written"}}]}},me=["{sign},","dear {sign},","listen, {sign},","okay {sign},","{sign}, honestly,","{sign}, quick one,","{sign}, my love,","oh, {sign},"],we=["and still","and yet","and somehow","but somehow"];var n=(e,...t)=>({core:e,lines:t}),G={chasing:{label:"chasing people who walk away",title:"{Sign}, stop chasing people who walk away",core:["mutual","1111"],pools:["mutual","1111"],turn:["w"],openers:[["if they wanted to,","they\u2019d walk toward you,"],["nobody worth having","needs chasing,"]],bodies:[["you\u2019re the one chasing","someone who keeps","walking the other way,"],["you keep running after","someone who\u2019s barely jogging,"],["you\u2019re sprinting after","someone who won\u2019t","even turn around,"],["you\u2019re running a marathon","for someone","who never signed up,"]],closers:[n("1111","so stop running,","there\u2019s a new deal","at 11:11."),n("mutual","so stand still","and see who","comes looking."),n("mutual","so sit down,","you\u2019re a date,","not a search party.")],captions:["stop jogging after people","{sign}, put your running shoes away"]},ghosting:{label:"ghosting instead of saying it",title:"{Sign}, a goodbye takes ten seconds",core:["release","honest"],pools:["release","honest"],turn:["h"],openers:[["a goodbye","takes ten seconds,"],["vanishing","is still an answer,","just a lazy one,"]],bodies:[["you went quiet on them","instead of sending","one honest sentence,"],["you\u2019d rather vanish","than type a goodbye","that takes ten seconds,"],["you left them on read","for three weeks","and called it \u201Cspace,\u201D"],["you\u2019re letting a chat","die of old age","instead of ending it,"]],closers:[n("release","so send it,","release the card,","don\u2019t haunt it."),n("honest","so say it once,","kindly,","and let them go."),n("release","and a kind \u201Cno\u201D","beats a slow fade."),n("honest","so end it like an adult,","not a ghost story.")],captions:["ten seconds, {sign}","it\u2019s one text"]},testing:{label:"testing people who already passed",title:"{Sign}, stop testing people who already passed",core:["mutual","honest"],pools:[],turn:["i"],openers:[["a test they never saw","isn\u2019t fair,"],["trust","isn\u2019t a pop quiz,"]],bodies:[["you\u2019re grading them","on a test","they never got to see,"],["you keep testing someone","who already passed,"],["you set little traps","to see if they care,"],["you made them earn","your trust","three times over,"]],closers:[n("honest","so tell them the test","or stop giving it."),n("mutual","so put the red pen down","and flip your card too."),n("mutual","they passed,","you\u2019re the one","still sitting the exam.")],captions:["put the clipboard down","{sign}, they passed"]},"over-explaining":{label:"over-explaining",title:'{Sign}, "no thanks" is a full sentence',core:["honest","release"],pools:["honest"],turn:["h"],openers:[["\u201Cno thanks\u201D","is a full sentence,"],["nobody needs","a closing argument,"]],bodies:[["you send four paragraphs","when \u201Cno thanks\u201D","would have done it,"],["you\u2019re explaining yourself","to someone who","already decided,"],["you wrote an essay","to say","\u201Ci\u2019m not feeling it,\u201D"],["you\u2019re still adding","footnotes","to a breakup,"]],closers:[n("release","so send the short one","and release the card."),n("honest","so say it once,","shorter,","and log off."),n("honest","and the kind version","fits in one text."),n("honest","so delete everything","after the first line,","and hit send.")],captions:["delete the third paragraph","shorter, {sign}"]},situationship:{label:"situationships",title:'{Sign}, eight months is not "casual"',core:["dealbreakers","release"],pools:["release"],turn:["w"],openers:[["eight months in","isn\u2019t casual anymore,"],["\u201Cwe\u2019re just vibing\u201D","isn\u2019t a relationship status,"]],bodies:[["you\u2019re eight months into","\u201Clet\u2019s not label it,\u201D"],["you\u2019re in a \u201Cthing\u201D","with no name","and no plans,"],["you\u2019ve met their dog","but not their friends,"],["you\u2019re doing partner work","for situationship pay,"]],closers:[n("dealbreakers","so say what you want","out loud,","it\u2019s allowed."),n("release","so name it","or release it,","those are the options."),n("dealbreakers","so ask \u201Cwhat are we,\u201D","and believe the answer.")],captions:["so what are you two","{sign}, it has a name"]},"love-bombing":{label:"love-bombing",title:"{Sign}, forever on date two is a warning",core:["honest","mutual"],pools:[],turn:["i"],openers:[["forever on date two","is a sales pitch,"],["a flood of compliments","isn\u2019t a foundation,"]],bodies:[["you fell for someone","who said forever","on the second date,"],["you mistook a flood","of compliments","for a foundation,"],["you\u2019re dazzled by someone","who called you \u201Csoulmate\u201D","in week one,"]],closers:[n("honest","so watch what they do","on date ten,","not what they say on two."),n("mutual","so slow it down,","the real thing","can keep up."),n("honest","so let it cool,","anything real","survives a boring tuesday.")],captions:["slow is a love language","{sign}, it was a lot, fast"]},potential:{label:"picking potential over reality",title:"{Sign}, date who showed up, not who they could be",core:["honest","not-alone"],pools:[],turn:["i"],openers:[["potential","is just a guess,"],["who they could be","isn\u2019t who showed up,"]],bodies:[["you\u2019re dating potential","and not the person","who actually showed up,"],["you keep loving the trailer","and ignoring the movie,"],["you\u2019re waiting on a version","of them","that lives in your head,"],["you\u2019re holding out","for a glow-up","they never promised,"]],closers:[n("honest","so date who they are","today,","not the sequel."),n("not-alone","and someone out there","is already","the finished version."),n("honest","so stop scouting,","you\u2019re a date,","not their agent.")],captions:["the trailer was better","who they are, {sign}"]},"texting-first":{label:"always texting first",title:"{Sign}, eleven days of texting first",core:["mutual","1111"],pools:["mutual","1111"],turn:["w"],openers:[["if you always go first,","you\u2019re the only one playing,"],["a conversation","takes two thumbs,"]],bodies:[["you\u2019ve texted first","eleven days in a row,"],["you\u2019re the only one","who ever starts","the conversation,"],["you keep sending \u201Cmorning\u201D","into a quiet room,"],["you plan every hangout","with someone who","never picks a day,"]],closers:[n("mutual","so stop,","and see if","they ever start one."),n("mutual","so put the phone down,","if it\u2019s mutual,","it\u2019ll ring."),n("1111","so log off,","there\u2019s a new deal at 11:11,","and some of them reply.")],captions:["let them start one","day twelve, {sign}"]},"red-flags":{label:"red flags as personality",title:"{Sign}, that red flag is not a personality",core:["honest","dealbreakers"],pools:[],turn:["i"],openers:[["good hair","doesn\u2019t make it","less of a red flag,"],["a red flag","isn\u2019t a personality,"]],bodies:[["you keep calling red flags","\u201Ca bit of character,\u201D"],["you saw the red flag","and called it","their personality,"],["you call it \u201Cmysterious\u201D","when they won\u2019t say","where they were,"],["you laughed off","the rude waiter thing","on date one,"]],closers:[n("honest","so call it what it is,","a red flag,","not a vibe."),n("dealbreakers","so put it on your card","as a dealbreaker,","and mean it."),n("honest","so believe them","the first time."),n("honest","it\u2019s not a quirk,","it\u2019s a preview.")],captions:["that\u2019s not a quirk","it\u2019s red, {sign}"]},"the-ex":{label:"the ex",title:"{Sign}, your ex is not a sequel",core:["release","1111"],pools:["1111"],turn:["i"],openers:[["an ex","is not a sequel,"],["the old texts","say the same thing","every time,"]],bodies:[["you\u2019re rereading old texts","from someone","who already left,"],["you keep checking in","on an ex","like it\u2019s a cliffhanger,"],["you watch every story","they post","within the minute,"],["you kept the hoodie","and the hope,"]],closers:[n("release","so release the card,","they\u2019re an ex,","not a sequel."),n("1111","so close the thread,","there\u2019s a new deal","at 11:11."),n("release","so archive the chat,","some stories","just end.")],captions:["no season two","close the thread, {sign}"]},jealousy:{label:"jealousy",title:"{Sign}, put their following list down",core:["honest","mutual"],pools:[],turn:["w"],openers:[["checking who they follow","at 1am","isn\u2019t love,"],["their phone","isn\u2019t a crime scene,"]],bodies:[["you\u2019re checking who","they followed today,"],["you\u2019re jealous of someone","they met once","at a wedding,"],["you zoomed in","on a stranger\u2019s like","at 2am,"],["you\u2019re keeping score","of who they laugh with,"]],closers:[n("honest","so say you felt it,","once, plainly,","and put the phone down."),n("mutual","and if you can\u2019t trust them,","it isn\u2019t aligned."),n("honest","so ask them,","like an adult,","not a detective.")],captions:["log off, {sign}","she was at the wedding"]},"the-idea":{label:"loving the idea of someone",title:"{Sign}, you love the idea of them",core:["face-last","honest"],pools:[],turn:["i"],openers:[["the person you imagined","can\u2019t text you back,"],["the version in your head","never shows up late,"]],bodies:[["you\u2019re in love with","a version of them","you made up,"],["you fell for the idea","and skipped the person,"],["you wrote their lines","before they spoke,"],["you\u2019ve planned a whole life","with someone","you\u2019ve met twice,"]],closers:[n("face-last","so meet the real one,","slowly,","face last."),n("honest","so ask them something real","and listen to the answer."),n("face-last","so read who they are,","not who you\u2019d cast.")],captions:["meet the real one","{sign}, you wrote them"]},"mixed-signals":{label:"decoding mixed signals",title:'{Sign}, "haha ok" is not scripture',core:["mutual","release"],pools:["mutual"],turn:["h","i"],openers:[["mixed signals","are a clear answer,"],["\u201Chaha ok\u201D","isn\u2019t a riddle,"]],bodies:[["you\u2019re decoding","a \u201Chaha ok\u201D","like it\u2019s scripture,"],["you\u2019re reading tea leaves","in a two-word reply,"],["you sent a screenshot","to four friends","for a translation,"],["you\u2019re waiting on someone","who\u2019s hot on monday","and gone by thursday,"]],closers:[n("mutual","and a clear yes","never needs decoding."),n("release","so take the hint,","release the card,","and keep your evenings."),n("mutual","and someone who wants you","doesn\u2019t need translating.")],captions:["it said haha ok","stop decoding, {sign}"]},settling:{label:"settling",title:'{Sign}, "fine, i guess" is not a match',core:["not-alone","1111","dealbreakers"],pools:["not-alone","1111"],turn:["w"],openers:[["\u201Cfine, i guess\u201D","isn\u2019t a match,"],["\u201Cthey\u2019re nice\u201D","isn\u2019t a reason,"]],bodies:[["you\u2019re settling for","\u201Cfine, i guess\u201D","because it\u2019s there,"],["you\u2019re keeping the wrong one","because the right one","hasn\u2019t shown up yet,"],["you stayed","because leaving","felt like effort,"],["you call it \u201Ccomfortable\u201D","when you mean \u201Cbored,\u201D"]],closers:[n("1111","so fold this hand,","the deck is bigger","than this."),n("dealbreakers","so put your standards","on your card,","and keep them."),n("not-alone","so get up from the table,","you were never","the consolation prize.")],captions:["fine isn\u2019t the bar","more than fine, {sign}"]},"pretty-face":{label:"choosing by looks",title:"{Sign}, you keep picking faces",core:["face-last"],pools:["face-last"],turn:["i"],openers:[["a good photo","isn\u2019t a personality,"],["the face","is the least of it,"]],bodies:[["you swiped on a face","and ended up","with a stranger,"],["you keep choosing people","by their photos,"],["you picked the jawline","and got the attitude,"],["you fell for the lighting","in picture three,"]],closers:[n("face-last","so read the sky first,","the face can wait."),n("face-last","so read their chart,","not their angles."),n("face-last","so start with the sky,","the face can wait.")],captions:["it was a good photo","look past the face, {sign}"]},dealbreakers:{label:"hiding dealbreakers",title:"{Sign}, say the dealbreaker on date one",core:["dealbreakers","honest"],pools:["dealbreakers","honest"],turn:["h"],openers:[["a dealbreaker","at month four","is an ambush,"],["the hard part","goes first,"]],bodies:[["you hide the dealbreaker","until month four,"],["you act easy-going","and drop the dealbreaker","at month four,"],["you said \u201Ceither\u2019s fine\u201D","about kids,","and it isn\u2019t,"],["you\u2019re saving \u201Ci want kids\u201D","for date nine,"]],closers:[n("dealbreakers","so put it on your card,","the right one","will still pick you."),n("honest","so lead with it,","the wrong ones leave early,","that\u2019s the point.")],captions:["say it on date one","month four, {sign}, really"]},"late-night":{label:"late-night texts",title:"{Sign}, don't send the 2am text",core:["1111","release"],pools:["1111","release"],turn:["i"],openers:[["nothing good","gets typed at 2am,"],["\u201Cyou up?\u201D","isn\u2019t a love letter,"]],bodies:[["you\u2019re up at 2am","drafting a text","you shouldn\u2019t send,"],["you check your phone","at midnight","for someone who won\u2019t,"],["you\u2019re rereading their bio","at 3am","like it\u2019s a clue,"],["you typed \u201Chey stranger\u201D","at one in the morning,"]],closers:[n("1111","so go to sleep,","the deck reshuffles","at 11:11."),n("release","so mute the chat","and release the card."),n("release","so put the phone","in another room,","and go to bed.")],captions:["go to sleep, {sign}","drafts are for deleting"]},breadcrumbs:{label:"living on breadcrumbs",title:"{Sign}, a like a week is not a relationship",core:["mutual","release","not-alone"],pools:["mutual","release"],turn:["w"],openers:[["one like a week","isn\u2019t interest,"],["crumbs","aren\u2019t a meal,"]],bodies:[["you\u2019re living off","one like a week","and a \u201Cwe should hang,\u201D"],["you keep calling crumbs","a whole meal,"],["you\u2019re rationing","one \u201Cmiss you\u201D","for a month,"],["you light up","when they watch your story,"]],closers:[n("mutual","and if they wanted you,","you\u2019d be getting","the whole loaf."),n("release","so stop waiting","for the next crumb,","and go eat."),n("not-alone","and someone out there","would make you dinner.")],captions:["that was a crumb","eat a real meal, {sign}"]},fixing:{label:"trying to fix them",title:"{Sign}, they are not a renovation",core:["honest","not-alone"],pools:[],turn:["i"],openers:[["nobody","is a renovation,"],["love","isn\u2019t a repair job,"]],bodies:[["you\u2019re trying to fix","someone who never asked","for help,"],["you date people","like renovation projects,"],["you\u2019re picking out paint","for someone","who likes the walls,"],["you fell for the before","and you\u2019re planning the after,"]],closers:[n("honest","so put the tools down,","you\u2019re a date,","not a contractor."),n("not-alone","and someone out there","already fits."),n("honest","so take them as is,","or not at all.")],captions:["put the toolbox down","not a fixer-upper, {sign}"]},"playing-cool":{label:"playing it cool",title:"{Sign}, playing it cool looks like not caring",core:["honest","mutual"],pools:["honest"],turn:["h"],openers:[["act like you don\u2019t care","long enough,","and they\u2019ll believe you,"],["cool","is just cold","with better shoes,"]],bodies:[["you play it so cool","they honestly think","you don\u2019t care,"],["you wait three hours","to reply","so you look busy,"],["you answered \u201Clol same\u201D","to \u201Ci like you,\u201D"],["you\u2019re so unbothered","they think you\u2019re bored,"]],closers:[n("honest","so just reply,","warmly,","like you mean it."),n("mutual","and nobody aligns","with someone","pretending not to care."),n("honest","so text back quickly,","it\u2019s not desperate,","it\u2019s a pulse.")],captions:["just reply, {sign}","nobody\u2019s timing you"]},rushing:{label:"rushing it",title:"{Sign}, slow down, it was one coffee",core:["1111","mutual"],pools:[],turn:["i"],openers:[["one coffee","is not a wedding,"],["a third date","isn\u2019t a lease,"]],bodies:[["you\u2019re naming the kids","after one coffee,"],["you\u2019re picking a song","for a third date","that hasn\u2019t happened,"],["you\u2019re choosing curtains","with someone","you met on tuesday,"],["you said \u201Cwe\u201D","by the second drink,"]],closers:[n("1111","so breathe,","there\u2019s a new deal at 11:11,","not a deadline."),n("mutual","so let them catch up,","it takes two."),n("mutual","so slow down,","the good ones","don\u2019t expire.")],captions:["it was one coffee","slow down, {sign}"]},venus:{label:"loving how they want, not how you do",title:"{Sign}, your venus knows how you love",core:["venus"],pools:["venus"],turn:["h"],openers:[["you love one way","and date another,"],["your sun","is who you are,"]],bodies:[["you keep loving people","the way they want","instead of how you do,"],["you date for your sun","and forget how you love,"],["you\u2019re shrinking your needs","to fit their schedule,"],["you play \u201Clow maintenance\u201D","and you\u2019re not,"]],closers:[n("venus","so check your venus,","it already knows","what you need."),n("venus","so ask for it,","your venus","isn\u2019t too much."),n("venus","so read the whole thing,","your sun is the cover,","your venus is the plot.")],captions:["how do you love, {sign}","check your venus"]}},be={"face-last":[["so lead with your sky,","your face comes last."],["so let them read you","before they see you."],["and the right one","reads your chart","before your face."]],mutual:[["and if it\u2019s one-sided,","it\u2019s not alignment,","it\u2019s a hobby."],["so wait for someone","who flips their card too."],["and the right one","meets you halfway,","at least."]],honest:[["so say the true thing,","not the cute one."],["so just say it,","plainly, once."]],dealbreakers:[["so put it on your card","and let them choose."],["so say it on date one,","not in year two."]],release:[["so release the card,","don\u2019t haunt it."],["and a clean goodbye","beats a slow fade."]],1111:[["and there\u2019s a new deal","at 11:11."],["so fold the bad hand,","new deal at 11:11."]],venus:[["so read your venus,","not just your sun."],["and your venus","already knows the way."]],"not-alone":[["so don\u2019t settle,","your people are out there."],["and you don\u2019t have to","arrive alone."]]},ke=["said with love","a gentle intervention","{sign}, please","for the {sign} in the group chat","tag your {sign}","not a subtweet","you know who you are","just saying","consider this your sign","read twice, {sign}","okay that\u2019s all","a note for {sign} season"],ve=["astrology","zodiac","datingadvice","zodiacsigns","astrologymemes","datingtips"],X=Object.keys(G),xe=new Set(`
+  you're your yours you've you'd you'll yourself they they're their theirs them they'd they've they'll
+  with that that's this these those isn't it's what what's when where which while who's whose
+  someone somebody something anyone everyone still just don't doesn't didn't can't won't wasn't aren't
+  haven't hasn't about have having been then than every only like really even also into onto from
+  over some more most much very there there's here here's because would could should wouldn't
+  couldn't shouldn't does doing being ever before after each other until
+`.trim().split(/\s+/)),$e=e=>{let t=e.replace(/'s$/,"");for(let o of["ing","ly","ed","es","s"])if(t.endsWith(o)&&t.length-o.length>=3&&!t.endsWith("ss")&&!t.endsWith("eed")){t=t.slice(0,-o.length);break}return/([b-df-hj-np-tv-z])\1$/.test(t)&&(t=t.slice(0,-1)),t.replace(/e$/,"")};function H(e){let t=new Map,o=new Set;return e.forEach((a,s)=>{let r=ee(a).toLowerCase().match(/[a-z][a-z'-]*/g)??[];for(let i of new Set(r)){if(i.replace(/'/g,"").length<4||xe.has(i)||$.includes(i))continue;let u=$e(i);t.has(u)&&t.get(u)!==s?o.add(i):t.has(u)||t.set(u,s)}}),[...o]}var Z=e=>{let t=e.trim();return t.split(/\s+/).length<=f.maxWords&&t.length<=f.maxChars},Se=e=>e.charAt(0).toUpperCase()+e.slice(1),ee=e=>e.replace(/[‘’]/g,"'").replace(/[“”]/g,'"'),_=(e,t)=>ee(e.replaceAll("{sign}",t).replaceAll("{Sign}",Se(t))),W=e=>e.split(/\s+/)[0],Q=e=>e.endsWith("\u201D")?`${e.slice(0,-1)},\u201D`:`${e},`;function S(e,t,o,a,s=r=>JSON.stringify(r)){let r=t.filter(u=>!o.has(`${a}:${s(u)}`));if(!r.length){for(let u of t)o.delete(`${a}:${s(u)}`);r=t}let i=e.pick(r);return o.add(`${a}:${s(i)}`),i}function je(e){return[...e.closers.map(t=>({...t,own:!0})),...(e.pools??e.core).flatMap(t=>be[t].map(o=>({core:t,lines:o,own:!1})))]}function Ee(e,t,o){let a=e.traits.flatMap(i=>[...i.b&&i.arcs?.includes(t)?[{t:i.t,b:i.b}]:[],...i.flips?.[t]?[{t:i.t,b:i.flips[t]}]:[]]).filter(i=>Z(`but ${i.b},`)),s=e.traits.filter(i=>i.s&&(o.turn??["w","i","h"]).includes(i.s)),r=[];return a.length&&r.push(["blunt",5]),s.length&&r.push(["turn",3]),a.length&&o.openers?.length&&r.push(["open",3.5]),{shapes:r,blunt:a,strong:s}}function ze(e,t){let o=t.reduce((s,[,r])=>s+r,0),a=e()*o;for(let[s,r]of t)if((a-=r)<0)return s;return t[t.length-1][0]}function Te({sign:e,theme:t,arc:o,data:a,rng:s,used:r,strict:i}){let{shapes:u,blunt:w,strong:m}=Ee(a,t,o);if(!u.length)return null;let h=[...r].find(d=>d.startsWith("shape-last:")),b=ze(s,u.map(([d,y])=>[d,h===`shape-last:${d}`?y/4:y]));h&&r.delete(h),r.add(`shape-last:${b}`);let j=S(s,me,r,"hook"),k=S(s,o.bodies,r,`body-${t}`),g;if(b==="blunt"){let d=S(s,w,r,`trait-${e}`,x=>x.t),y=Z(`and ${k[0]}`)?`and ${k[0]}`:k[0];g=[j,`${d.t},`,Q(`but ${d.b}`),y,...k.slice(1)]}else if(b==="turn"){let d=S(s,m,r,`trait-${e}`,z=>z.t),y=z=>z.split(/\W+/).some(P=>P.length>2&&k.join(" ").includes(P)),x=S(s,we.filter(z=>!y(z)),r,"turn");g=[j,`${d.t},`,x,...k]}else{let d=S(s,o.openers,r,`opener-${t}`),y=S(s,w,r,`trait-${e}`,x=>x.t);g=[...d,"{sign},",`${y.t},`,Q(`but ${y.b}`)]}let p=b==="open"?g.length-1:2,T=g.some((d,y)=>y>1&&W(d)==="and"),I=W(g[g.length-1]),q=je(o).filter(d=>{let y=g.length+d.lines.length;return y<f.minSlides||y>f.maxSlides||T&&W(d.lines[0])==="and"||W(d.lines[0])===I?!1:!H([...g,...d.lines].map(x=>_(x,e))).length});if(!q.length)return null;let v=q.filter(d=>d.own),l=v.length&&s()<.7?v:q,c=S(s,l,r,"closer",d=>d.lines.join("/")),E=[...g,...c.lines].map(d=>_(d,e));if(H(E).length)return null;let C=g.findIndex(d=>d.startsWith("you")),A=`opening:${e}:${g[C]}|${b==="turn"?"":g[C+1]}`;return i&&r.has(A)?null:(r.add(A),{texts:E,closer:c,turnAt:p})}function Ce({sign:e,theme:t,seed:o,used:a=new Set}){if(!$.includes(e))throw new Error(`unknown sign: ${e}`);let s=G[t];if(!s)throw new Error(`unknown theme: ${t} (try --list-themes)`);let r=O(N(`${e}|${t}|${o}`)),i=pe[e],u=null;for(let g=0;g<40&&!u;g++){let p=new Set(a),T=Te({sign:e,theme:t,arc:s,data:i,rng:r,used:p,strict:g<30});if(T){u=T,a.clear();for(let I of p)a.add(I)}}if(!u)return null;let{texts:w,closer:m,turnAt:h}=u,b=_(S(r,r()<.6?s.captions:ke,a,"caption"),e),j=r.shuffle(ve).slice(0,1+r.int(2)),k={id:`g-${e}-${t}-${o}`,title:_(s.title,e),signs:[e],core:[m.core],caption:b,hashtags:[e,"zodiacdating",...j],theme:t,engine:"bank",seed:o,slides:w.map(g=>({text:g}))};return V(k,o,{turn:h})}function F({sign:e,theme:t,seed:o,used:a=new Set,maxTries:s=50}){let r=["repetition guard: no combination without a repeated word"];for(let i=o,u=0;u<s;i++,u++){let w=new Set(a),m=Ce({sign:e,theme:t,seed:i,used:w});if(!m)continue;let h=L(m);if(!h.length){a.clear();for(let b of w)a.add(b);return m}r=h}if(a.size)return a.clear(),F({sign:e,theme:t,seed:o,used:a,maxTries:s});throw new Error(`bank: no valid carousel for ${e}/${t} after ${s} seeds: ${r.join("; ")}`)}return ie(Ae);})();
+
+</script>
+<script>
+const EXAMPLES = [{"id":"01-scorpio-tests","title":"Scorpio, stop testing people who already passed","signs":["scorpio"],"core":["honest","release"],"caption":"no more retakes, scorpio","hashtags":["scorpio","zodiacdating","astrology","datingadvice"],"slides":[{"text":"scorpio,"},{"text":"they passed the test"},{"text":"you never told them about,"},{"text":"and the retake,"},{"text":"and the 2am pop quiz,"},{"text":"trust isn't a prize\nthey win,"},{"text":"it's a decision,"},{"text":"so make it,"},{"text":"or release them kindly."}]},{"id":"02-leo-audience","title":"Leo, stop performing for someone who isn't clapping","signs":["leo"],"core":["mutual"],"caption":"the sun doesn't audition, leo","hashtags":["leo","zodiacdating","astrology","firesigns"],"slides":[{"text":"dear leo,"},{"text":"the lights, the outfit,"},{"text":"the encore,"},{"text":"all for someone"},{"text":"who isn't even clapping,"},{"text":"take a bow,"},{"text":"leave the stage,"},{"text":"and find the one"},{"text":"already on their feet."}]},{"id":"03-aries-chase","title":"Aries, if they wanted to, they would have","signs":["aries"],"core":["mutual"],"caption":"put the phone down, ram","hashtags":["aries","zodiacdating","astrology","datingadvice","firesigns"],"slides":[{"text":"if they wanted to,"},{"text":"they would have aligned"},{"text":"three texts ago,"},{"text":"aries,"},{"text":"you're first to everything,"},{"text":"but love isn't a race,"},{"text":"if only one of you"},{"text":"is running,"},{"text":"it's just cardio."}]},{"id":"04-taurus-boring","title":"Taurus, boring is a green flag","signs":["taurus"],"core":["honest"],"caption":"boring is a green flag, taurus","hashtags":["taurus","zodiacdating","astrology","greenflags","earthsigns"],"slides":[{"text":"taurus,"},{"text":"the butterflies"},{"text":"were anxiety,"},{"text":"the boring one"},{"text":"who says what they mean"},{"text":"and shows up, like you do,"},{"text":"is the green flag,"},{"text":"chemistry is a feeling,"},{"text":"consistency is a person."}]},{"id":"05-gemini-honest","title":"Gemini, say the real thing in the first message","signs":["gemini"],"core":["honest"],"caption":"gemini, the bit is not a personality","hashtags":["gemini","geminiseason","zodiacdating","astrology","datingadvice"],"slides":[{"text":"gemini,"},{"text":"a good bit"},{"text":"is not the truth."},{"text":"say the real thing"},{"text":"in the first message,"},{"text":"not on date five,"},{"text":"after they've fallen"},{"text":"for the bit."}]},{"id":"06-cancer-wrong-deck","title":"Cancer, you're not too much, you were in the wrong deck","signs":["cancer"],"core":["1111","mutual"],"caption":"cancer, come out of the shell for the right ones","hashtags":["cancer","cancerseason","zodiacdating","astrology","datingadvice"],"slides":[{"text":"cancer,"},{"text":"you're not too much,"},{"text":"you were dealt"},{"text":"into the wrong deck."},{"text":"stop shrinking to fit"},{"text":"arms that were"},{"text":"never going\nto hold you."}]},{"id":"07-virgo-dealbreakers","title":"Virgo, a dealbreaker isn't an opening offer","signs":["virgo"],"core":["dealbreakers"],"caption":"virgo, they're not a draft","hashtags":["virgo","virgoseason","zodiacdating","astrology","datingadvice"],"slides":[{"text":"virgo,"},{"text":"you can't fix someone"},{"text":"into loving you right,"},{"text":"and a dealbreaker"},{"text":"isn't an opening offer."},{"text":"put it on your card,"},{"text":"let the wrong ones"},{"text":"walk past."}]},{"id":"08-libra-pick","title":"Libra, not choosing is still choosing","signs":["libra"],"core":["release"],"caption":"libra, it's a table for two","hashtags":["libra","libraseason","zodiacdating","astrology","datingadvice"],"slides":[{"text":"libra,"},{"text":"not choosing"},{"text":"is still choosing."},{"text":"pick one,"},{"text":"release the rest kindly,"},{"text":"or keep everyone"},{"text":"at the table"},{"text":"and eat alone."}]},{"id":"09-sagittarius-leave-honestly","title":"Sagittarius, freedom isn't running: leave honestly","signs":["sagittarius"],"core":["release","honest"],"caption":"sagittarius, the road isn't going anywhere","hashtags":["sagittarius","zodiacdating","astrology","ghosting","datingadvice"],"slides":[{"text":"sagittarius,"},{"text":"freedom isn't running,"},{"text":"and a one-way ticket"},{"text":"isn't a breakup text,"},{"text":"so if you're leaving,"},{"text":"say it once, out loud,"},{"text":"release them clean,"},{"text":"the mountains will wait."}]},{"id":"10-capricorn-schedule","title":"Capricorn, you scheduled everything except your heart","signs":["capricorn"],"core":["1111"],"caption":"capricorn, block out an evening","hashtags":["capricorn","zodiacdating","astrology","datingadvice"],"slides":[{"text":"capricorn,"},{"text":"you've booked the dentist"},{"text":"for next march"},{"text":"but not one night"},{"text":"for your own heart —"},{"text":"put love on the calendar,"},{"text":"there's a new deal at 11:11,"},{"text":"and you've never been late"},{"text":"to anything else."}]},{"id":"11-aquarius-detached","title":"Aquarius, detachment isn't depth","signs":["aquarius"],"core":["honest","face-last"],"caption":"aquarius, the sticker is cool though","hashtags":["aquarius","zodiacdating","astrology","datingadvice"],"slides":[{"text":"aquarius,"},{"text":"being hard to read"},{"text":"isn't the same as depth,"},{"text":"it's a locked door"},{"text":"with a cool sticker on it,"},{"text":"so let someone past the memes,"},{"text":"let them read you"},{"text":"the way you read the stars."}]},{"id":"12-pisces-face-last","title":"Pisces, stop falling for the person you imagined","signs":["pisces"],"core":["face-last"],"caption":"pisces, keep the playlist though","hashtags":["pisces","zodiacdating","astrology","datingadvice"],"slides":[{"text":"pisces,"},{"text":"you're falling again"},{"text":"for someone you made up,"},{"text":"the playlist is real,"},{"text":"they aren't,"},{"text":"so read who they are"},{"text":"before the face —"},{"text":"yours comes last,"},{"text":"theirs should too."}]}];
+const GLYPHS = { aries: '♈', taurus: '♉', gemini: '♊', cancer: '♋', leo: '♌', virgo: '♍', libra: '♎', scorpio: '♏', sagittarius: '♐', capricorn: '♑', aquarius: '♒', pisces: '♓' }
+const { generateBankOne, THEMES, ARCS, SIGNS, SIGN_COLORS, validate, LIMITS } = AlignBank
+const W = 1080, H = 1350
+const $ = (id) => document.getElementById(id)
+const cap = (s) => s[0].toUpperCase() + s.slice(1)
+const pick = (a) => a[Math.floor(Math.random() * a.length)]
+
+// ---- state ---------------------------------------------------------------
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('align-studio:' + k); return v ? JSON.parse(v) : d } catch { return d } },
+  set(k, v) { try { localStorage.setItem('align-studio:' + k, JSON.stringify(v)) } catch {} },
+}
+const state = {
+  sign: store.get('sign', 'any'),
+  theme: store.get('theme', 'any'),
+  pos: store.get('pos', 'bottom'),
+  ink: store.get('ink', 'sign'),
+  carousel: null,
+}
+const used = new Set() // the bank's rotation: no line repeats until the rest are used
+let recent = store.get('recent', [])
+
+// ---- controls ------------------------------------------------------------
+function buildControls() {
+  const signs = $('signs')
+  const any = el('button', { class: 'chip any', type: 'button', 'data-sign': 'any', style: '--c: var(--label-1)' }, [el('span', { class: 'g' }, '✦'), el('span', {}, 'Any sign')])
+  signs.append(any)
+  for (const s of SIGNS) {
+    signs.append(el('button', { class: 'chip', type: 'button', 'data-sign': s, style: `--c:${SIGN_COLORS[s].color}` },
+      [el('span', { class: 'g' }, GLYPHS[s] + '︎'), el('span', {}, cap(s))]))
+  }
+  signs.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-sign]'); if (!b) return
+    state.sign = b.dataset.sign; store.set('sign', state.sign); syncControls()
+  })
+  const theme = $('theme')
+  theme.append(new Option('Any theme', 'any'))
+  for (const t of THEMES) theme.append(new Option(cap(ARCS[t].label), t))
+  theme.addEventListener('change', () => { state.theme = theme.value; store.set('theme', state.theme) })
+  document.querySelectorAll('[data-pos]').forEach((b) => b.addEventListener('click', () => { state.pos = b.dataset.pos; store.set('pos', state.pos); syncControls(); renderAll() }))
+  document.querySelectorAll('[data-ink]').forEach((b) => b.addEventListener('click', () => { state.ink = b.dataset.ink; store.set('ink', state.ink); syncControls(); renderAll() }))
+  for (const ex of EXAMPLES) {
+    const s = ex.signs[0]
+    const b = el('button', { type: 'button', style: `--c:${SIGN_COLORS[s].color}` }, [el('span', { class: 'dot' }), el('span', { class: 't' }, ex.title)])
+    b.addEventListener('click', () => load(structuredClone(ex), 'Loaded the hand-written ' + cap(s) + ' example.'))
+    $('examples').append(b)
+  }
+}
+function syncControls() {
+  document.querySelectorAll('[data-sign]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sign === state.sign)))
+  $('theme').value = THEMES.includes(state.theme) ? state.theme : 'any'
+  document.querySelectorAll('[data-pos]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.pos === state.pos)))
+  document.querySelectorAll('[data-ink]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.ink === state.ink)))
+}
+function el(tag, attrs = {}, kids = []) {
+  const n = document.createElement(tag)
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v)
+  for (const k of [].concat(kids)) n.append(k)
+  return n
+}
+
+// ---- generating ----------------------------------------------------------
+function chosenSign() { return state.sign === 'any' ? pick(SIGNS) : state.sign }
+function chosenTheme() { return state.theme === 'any' ? pick(THEMES) : state.theme }
+
+function remix() {
+  const sign = chosenSign(), theme = chosenTheme()
+  try {
+    const c = generateBankOne({ sign, theme, seed: Math.floor(Math.random() * 1e9), used })
+    load(c, `Remixed: ${cap(sign)}, ${ARCS[theme].label}.`)
+  } catch (e) {
+    used.clear()
+    setStatus('That pairing ran out of fresh lines, so the rotation started over. Press Remix again.', true)
+  }
+}
+
+// What Claude is told. It sees nothing but this prompt.
+function claudePrompt(sign, theme) {
+  const examples = EXAMPLES.slice().sort(() => Math.random() - .5).slice(0, 4)
+    .map((c) => '- ' + c.slides.map((s) => s.text.replace(/\n/g, ' ')).join(' / ') + `   (caption: "${c.caption}")`).join('\n')
+  const avoid = recent.slice(0, 12).map((r) => '- ' + r.title).join('\n') || '- (none yet)'
+  const t = ARCS[theme]
+  return `You write Instagram carousels for Align, a zodiac dating app played as a card game.
+
+FORMAT: one sentence (or two short ones) told across 6 to 9 slides. Each slide is 1 to 6 words and at most 32 characters. All lowercase. No emoji, no exclamation marks, no hashtags in slides. Break on natural pauses; a slide usually ends on a comma or mid-phrase to pull the swipe. Only the last slide ends with a full stop. The first slide is a hook that works alone (often the sign name, like "${sign},"). The last slide lands the blow.
+
+VOICE: blunt, warm, a little funny. A friend who is done watching you text them first. Name the sign and one true trait of it, then give advice that would be right for anyone. It can sting but never punches down at a sign or a person; the target is the behaviour. Never promise a soulmate or claim astrology decides anything. No therapy jargon, no "bestie", no "manifest".
+
+ALIGN'S IDEAS, slipped in subtly in the last two slides (use at most one or two, never as an ad, never "download align"): photos stay veiled until you both align, so read the sky before the face ("your face comes last"); it has to be mutual (cards only flip when you both align); say the honest thing; put dealbreakers on your card; release a card instead of ghosting; there's a new deal at 11:11; venus runs your heart.
+
+EXAMPLES of the bar to hit:
+${examples}
+
+WRITE ONE NEW CAROUSEL
+sign: ${sign}
+theme: ${t.label}
+Do not reuse lines from the examples. Avoid these recent titles:
+${avoid}
+
+Reply with only JSON in this shape:
+{"title": "Sentence-case one-line summary", "slides": ["${sign},", "..."], "caption": "lowercase offhand caption under 60 characters, no hashtags", "hashtags": ["${sign}", "zodiacdating", "astrology", "datingadvice"], "core": ["mutual"]}
+"core" lists the Align ideas used, from: face-last, mutual, honest, dealbreakers, release, 1111, venus, not-alone.`
+}
+
+let sample = null, downloads = null, ctl = null
+async function writeWithClaude() {
+  if (!sample) return
+  const sign = chosenSign(), theme = chosenTheme()
+  ctl = new AbortController()
+  $('write').disabled = true; $('remix').disabled = $('remix2').disabled = true; $('stop').hidden = false
+  setStatus(`Claude is writing a ${cap(sign)} carousel… this can take up to a minute.`)
+  try {
+    const r = await sample.json(claudePrompt(sign, theme), { signal: ctl.signal, cache: false })
+    const slides = Array.isArray(r?.slides) ? r.slides.map((s) => String(s).toLowerCase().replace(/[!#]/g, '').trim()).filter(Boolean) : []
+    if (slides.length < 2) throw { code: 'invalid_json' }
+    const c = {
+      id: `ai-${sign}-${theme}-${Date.now().toString(36)}`,
+      title: String(r.title || `${cap(sign)}, ${ARCS[theme].label}`),
+      signs: [sign],
+      core: (Array.isArray(r.core) ? r.core : []).filter((k) => AlignBank.CORE.includes(k)),
+      caption: String(r.caption || '').toLowerCase().replace(/#/g, '').slice(0, 60),
+      hashtags: (Array.isArray(r.hashtags) ? r.hashtags : [sign, 'zodiacdating', 'astrology']).map((h) => String(h).toLowerCase().replace(/[^a-z0-9_]/g, '')).filter(Boolean).slice(0, 6),
+      theme, engine: 'claude',
+      slides: slides.slice(0, LIMITS.maxSlides).map((text) => ({ text })),
+    }
+    if (!c.core.length) c.core = ['honest']
+    load(c, `Claude wrote a ${cap(sign)} carousel. Read it before posting.`)
+  } catch (e) {
+    const code = e?.code
+    if (code === 'cancelled') setStatus('Stopped.')
+    else if (code === 'not_granted' || code === 'sampling_disabled' || code === 'not_declared' || code === 'capability_disabled' || code === 'capability_removed') {
+      $('write').hidden = true; setStatus('Claude isn’t available on this page, so Remix is the way to go.', true)
+    } else if (code === 'rate_limited') setStatus('Claude is busy for you right now. Wait a minute and try again.', true)
+    else if (code === 'invalid_json' || code === 'empty_completion') setStatus('Claude’s answer didn’t come back in a usable shape. Try again.', true)
+    else if (code === 'refused') setStatus('Claude declined that one. Try a different theme.', true)
+    else setStatus('Couldn’t reach Claude. Try again in a moment.', true)
+  } finally {
+    $('write').disabled = false; $('remix').disabled = $('remix2').disabled = false; $('stop').hidden = true
+  }
+}
+
+// ---- the current carousel ------------------------------------------------
+function load(c, msg) {
+  state.carousel = c
+  store.set('current', c)
+  recent = [{ title: c.title, sign: c.signs[0], c }, ...recent.filter((r) => r.title !== c.title)].slice(0, 20)
+  store.set('recent', recent)
+  if (msg) setStatus(msg)
+  buildEditor(); renderRecent(); renderAll()
+}
+function setStatus(msg, warn = false) { const s = $('status'); s.textContent = msg; s.classList.toggle('warn', warn) }
+
+function buildEditor() {
+  const c = state.carousel, ed = $('editor')
+  ed.replaceChildren()
+  c.slides.forEach((s, i) => {
+    const input = el('input', { type: 'text', 'aria-label': `Slide ${i + 1}`, autocomplete: 'off', spellcheck: 'false' })
+    input.value = s.text.replace(/\n/g, ' / ')
+    input.addEventListener('input', () => { c.slides[i].text = input.value.replace(/\s*\/\s*/g, '\n').toLowerCase(); onEdit(i) })
+    const del = el('button', { type: 'button', 'aria-label': `Remove slide ${i + 1}`, title: 'Remove slide' }, '×')
+    del.addEventListener('click', () => { if (c.slides.length > 2) { c.slides.splice(i, 1); buildEditor(); renderAll(); persist() } })
+    ed.append(el('div', { class: 'slide-row' }, [input, del]))
+  })
+  $('add').disabled = c.slides.length >= LIMITS.maxSlides
+  $('caption-in').value = c.caption
+  $('tags-in').value = c.hashtags.join(' ')
+}
+function persist() { store.set('current', state.carousel); checkIssues(); renderPost() }
+let editTimer
+function onEdit(i) { clearTimeout(editTimer); editTimer = setTimeout(() => { renderSlide(i); persist() }, 60) }
+
+$('add').addEventListener('click', () => {
+  const c = state.carousel; if (c.slides.length >= LIMITS.maxSlides) return
+  c.slides.push({ text: '…' }); buildEditor(); renderAll(); persist()
+  $('editor').lastElementChild.querySelector('input').select()
+})
+$('caption-in').addEventListener('input', (e) => { state.carousel.caption = e.target.value.toLowerCase(); persist() })
+$('tags-in').addEventListener('input', (e) => { state.carousel.hashtags = e.target.value.toLowerCase().split(/[\s,#]+/).filter(Boolean); persist() })
+
+// Spec check, minus the bits this page fills in itself (backgrounds).
+function checkIssues() {
+  const c = state.carousel
+  const probe = { ...c, slides: c.slides.map((s) => ({ ...s, bg: { kind: 'figure', sign: c.signs[0] } })) }
+  const errs = validate(probe).filter((e) => !e.startsWith('id'))
+  const bad = new Set(errs.map((e) => +(/slides\[(\d+)\]/.exec(e)?.[1] ?? -1)))
+  $('editor').querySelectorAll('input').forEach((inp, i) => inp.classList.toggle('bad', bad.has(i)))
+  $('issues').textContent = errs.length ? 'Off-spec: ' + errs.map(friendly).join(' · ') : ''
+}
+function friendly(e) {
+  return e.replace(/slides\[(\d+)\]\.text/, (_, n) => `slide ${+n + 1}`).replace(/^slides:/, 'slides:')
+}
+
+// ---- drawing -------------------------------------------------------------
+const MAXW = 938, LEFT = 64
+let grain
+function grainCanvas() {
+  if (grain) return grain
+  grain = document.createElement('canvas'); grain.width = grain.height = 256
+  const g = grain.getContext('2d'), d = g.createImageData(256, 256)
+  for (let i = 0; i < d.data.length; i += 4) { const v = Math.random() * 255; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255 }
+  g.putImageData(d, 0, 0)
+  return grain
+}
+const font = (px) => `italic 800 ${px}px Poppins, "Arial Black", sans-serif`
+
+// Width of a line as drawn: Poppins with -0.02em tracking.
+function lineWidth(ctx, s, px) { ctx.font = font(px); if ('letterSpacing' in ctx) ctx.letterSpacing = '0px'; return ctx.measureText(s).width - 0.02 * px * Math.max(0, s.length - 1) }
+
+// Best split of `words` into exactly n lines: the one whose widest line is narrowest.
+function splitLines(ctx, words, n, px) {
+  if (n === 1) return [words.join(' ')]
+  let best = null, bestW = Infinity
+  const rec = (start, left, acc) => {
+    if (left === 1) {
+      const lines = [...acc, words.slice(start).join(' ')]
+      const w = Math.max(...lines.map((l) => lineWidth(ctx, l, px)))
+      if (w < bestW) { bestW = w; best = lines }
+      return
+    }
+    for (let i = start + 1; i <= words.length - (left - 1); i++) rec(i, left - 1, [...acc, words.slice(start, i).join(' ')])
+  }
+  if (words.length < n) return null
+  rec(0, n, [])
+  return best
+}
+
+// The same fitting rules as the command-line renderer: one huge line if it
+// can stay at 112px or more, else two balanced lines, else three.
+function fitText(ctx, text) {
+  const forced = text.split('\n').map((l) => l.trim()).filter(Boolean)
+  const fits = (lines, px) => lines && lines.every((l) => lineWidth(ctx, l, px) <= MAXW)
+  if (forced.length > 1) {
+    for (let px = forced.length === 2 ? 128 : 104; px >= 40; px -= 2) if (fits(forced, px)) return { lines: forced, px }
+    return { lines: forced, px: 40 }
+  }
+  const words = text.trim().split(/\s+/)
+  for (let px = 168; px >= 112; px -= 2) { const l = splitLines(ctx, words, 1, px); if (fits(l, px)) return { lines: l, px } }
+  for (let px = 128; px >= 80; px -= 2) { const l = splitLines(ctx, words, 2, px); if (fits(l, px)) return { lines: l, px } }
+  for (let px = 104; px >= 40; px -= 2) { const l = splitLines(ctx, words, 3, px); if (fits(l, px)) return { lines: l, px } }
+  let px = 104; while (px > 24 && lineWidth(ctx, text, px) > MAXW) px -= 2
+  return { lines: [text], px }
+}
+
+// Letter-spaced text. Uses the canvas's own tracking where the browser has it
+// (keeps Poppins' kerning); otherwise places glyphs one by one.
+function tracked(ctx, s, x, y, spacing) {
+  if ('letterSpacing' in ctx) {
+    ctx.letterSpacing = '0px'
+    const w = ctx.measureText(s).width + spacing * Math.max(0, [...s].length - 1)
+    ctx.letterSpacing = spacing + 'px'; ctx.fillText(s, x, y); ctx.letterSpacing = '0px'
+    return x + w + spacing
+  }
+  for (const ch of s) { ctx.fillText(ch, x, y); x += ctx.measureText(ch).width + spacing }
+  return x
+}
+
+function drawSlide(canvas, c, i) {
+  canvas.width = W; canvas.height = H
+  const ctx = canvas.getContext('2d')
+  const sign = c.signs[0], col = SIGN_COLORS[sign] ?? SIGN_COLORS.pisces
+  const ink = state.ink === 'sign' ? col.color : '#fff7ec'
+  // ground: near-black indigo with the faintest wash of the sign's colour
+  let g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#07040f'); g.addColorStop(1, '#0b0620')
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H)
+  const cy = state.pos === 'center' ? H * 0.62 : H
+  g = ctx.createRadialGradient(W * 0.2, cy, 0, W * 0.2, cy, W * 1.05)
+  g.addColorStop(0, col.dark + 'cc'); g.addColorStop(0.45, col.dark + '33'); g.addColorStop(1, col.dark + '00')
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H)
+  // grain
+  ctx.save(); ctx.globalAlpha = 0.07; ctx.globalCompositeOperation = 'overlay'
+  ctx.fillStyle = ctx.createPattern(grainCanvas(), 'repeat'); ctx.fillRect(0, 0, W, H); ctx.restore()
+  // the mark and the counter
+  ctx.fillStyle = 'rgba(255,247,236,.55)'; ctx.font = '22px "Space Mono", monospace'; ctx.textBaseline = 'alphabetic'
+  const end = tracked(ctx, 'align', LEFT, 82, 22 * 0.24)
+  drawSpark(ctx, end + 12, 74, 9)
+  const count = `${i + 1}/${c.slides.length}`
+  let cw = 0; for (const ch of count) cw += ctx.measureText(ch).width + 22 * 0.12
+  tracked(ctx, count, W - LEFT - cw + 22 * 0.12, 82, 22 * 0.12)
+  // the words
+  const text = (c.slides[i].text || '').toLowerCase()
+  if (!text.trim()) return
+  const { lines, px } = fitText(ctx, text)
+  const lh = px * 0.98
+  ctx.font = font(px)
+  ctx.fillStyle = ink
+  ctx.shadowColor = state.ink === 'sign' ? ink + '55' : 'rgba(0,0,0,.4)'; ctx.shadowBlur = 48
+  const block = lh * lines.length
+  // baseline of the first line: the CSS renderer sits the text box 120px off the bottom
+  let y = state.pos === 'center' ? (H - block) / 2 + px * 0.78 : H - 120 - block + px * 0.78
+  for (const l of lines) { tracked(ctx, l, LEFT, y, -0.02 * px); y += lh }
+  ctx.shadowBlur = 0
+}
+function drawSpark(ctx, x, y, r) {
+  ctx.beginPath()
+  ctx.moveTo(x, y - r); ctx.quadraticCurveTo(x + r * 0.08, y - r * 0.08, x + r, y)
+  ctx.quadraticCurveTo(x + r * 0.08, y + r * 0.08, x, y + r); ctx.quadraticCurveTo(x - r * 0.08, y + r * 0.08, x - r, y)
+  ctx.quadraticCurveTo(x - r * 0.08, y - r * 0.08, x, y - r); ctx.fill()
+}
+
+function renderAll() {
+  const c = state.carousel; if (!c) return
+  document.documentElement.style.setProperty('--sign', SIGN_COLORS[c.signs[0]]?.color ?? '#e23d66')
+  const strip = $('strip'); strip.replaceChildren()
+  c.slides.forEach((_, i) => {
+    const cv = el('canvas', { role: 'img', 'aria-label': `Slide ${i + 1}: ${c.slides[i].text}` })
+    const save = el('button', { type: 'button' }, 'Save')
+    save.addEventListener('click', () => saveSlide(i))
+    strip.append(el('figure', { class: 'slide', style: 'margin:0' }, [cv, el('div', { class: 'meta' }, [el('span', {}, String(i + 1).padStart(2, '0')), save])]))
+    drawSlide(cv, c, i)
+  })
+  checkIssues(); renderPost()
+}
+function renderSlide(i) {
+  const fig = $('strip').children[i]; if (!fig) return renderAll()
+  const cv = fig.querySelector('canvas'); drawSlide(cv, state.carousel, i)
+  cv.setAttribute('aria-label', `Slide ${i + 1}: ${state.carousel.slides[i].text}`)
+}
+function renderPost() {
+  const c = state.carousel
+  $('sentence').textContent = c.slides.map((s) => s.text.replace(/\n/g, ' ')).join(' ')
+  const out = $('caption-out'); out.replaceChildren(c.caption + '\n\n', el('span', { class: 'tags' }, c.hashtags.map((h) => '#' + h).join(' ')))
+}
+function renderRecent() {
+  const box = $('recent'); box.replaceChildren()
+  for (const r of recent) {
+    const b = el('button', { type: 'button', style: `--c:${SIGN_COLORS[r.sign]?.color}` }, [el('span', { class: 'dot' }), el('span', { class: 't' }, r.title)])
+    b.addEventListener('click', () => load(structuredClone(r.c), 'Reopened.'))
+    box.append(b)
+  }
+  if (!recent.length) box.append(el('p', { class: 'hint' }, 'Carousels you make show up here.'))
+}
+
+// ---- getting files out ---------------------------------------------------
+const captionText = (c) => `${c.caption}\n\n${c.hashtags.map((h) => '#' + h).join(' ')}\n`
+const slug = (c) => (c.signs[0] + '-' + (c.title || 'carousel')).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48)
+function slideBlob(i) {
+  const cv = document.createElement('canvas'); drawSlide(cv, state.carousel, i)
+  return new Promise((res) => cv.toBlob(res, 'image/jpeg', 0.92))
+}
+async function saveFile(filename, data) {
+  if (!downloads) { setStatus('Saving files isn’t available in this view. Open the page in claude.ai to download.', true); return }
+  try { await downloads.save({ filename, data }); setStatus(`Saved ${filename}.`) }
+  catch (e) {
+    if (e?.code === 'declined') setStatus('Save cancelled.')
+    else if (e?.code === 'rate_limited') setStatus('A save prompt is already open. Finish that one first.', true)
+    else setStatus('Couldn’t save the file here.', true)
+  }
+}
+async function saveSlide(i) { await saveFile(`${slug(state.carousel)}-${String(i + 1).padStart(2, '0')}.jpg`, await slideBlob(i)) }
+$('zip').addEventListener('click', async () => {
+  const c = state.carousel, zip = new JSZip(), dir = zip.folder(slug(c))
+  setStatus('Packing the slides…')
+  for (let i = 0; i < c.slides.length; i++) dir.file(`${String(i + 1).padStart(2, '0')}.jpg`, await slideBlob(i))
+  dir.file('caption.txt', captionText(c))
+  await saveFile(`${slug(c)}.zip`, await zip.generateAsync({ type: 'blob' }))
+})
+$('copy').addEventListener('click', async () => {
+  const t = captionText(state.carousel)
+  try { await navigator.clipboard.writeText(t); setStatus('Caption copied.') }
+  catch { const r = document.createRange(); r.selectNodeContents($('caption-out')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); setStatus('Caption selected: copy it with your keyboard or long-press.') }
+})
+
+// ---- start ---------------------------------------------------------------
+$('remix').addEventListener('click', remix)
+$('remix2').addEventListener('click', remix)
+$('write').addEventListener('click', writeWithClaude)
+$('stop').addEventListener('click', () => ctl?.abort())
+
+buildControls(); syncControls()
+const saved = store.get('current', null)
+load(saved && saved.slides ? saved : structuredClone(EXAMPLES[2]), '')
+renderRecent()
+// Fonts arrive after first paint: redraw once they're in.
+Promise.all([document.fonts.load(font(100)), document.fonts.load('22px "Space Mono"')]).then(renderAll, renderAll)
+
+if (window.claude?.use) {
+  claude.use('sample').then((s) => {
+    sample = s
+    if (s) { $('write').hidden = false; $('engine-hint').textContent = 'Remix is instant and free. Write with Claude makes brand-new copy on your Claude account; read it before posting.' }
+  })
+  claude.use('downloads').then((d) => { downloads = d })
+}
+</script>

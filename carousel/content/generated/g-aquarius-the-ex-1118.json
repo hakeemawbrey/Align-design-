@@ -1,0 +1,96 @@
+{
+  "id": "g-aquarius-the-ex-1118",
+  "title": "Aquarius, your ex is not a sequel",
+  "signs": [
+    "aquarius"
+  ],
+  "core": [
+    "1111"
+  ],
+  "caption": "no season two",
+  "hashtags": [
+    "aquarius",
+    "zodiacdating",
+    "astrologymemes"
+  ],
+  "theme": "the-ex",
+  "engine": "bank",
+  "seed": 1118,
+  "slides": [
+    {
+      "text": "the old texts",
+      "bg": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "say the same thing",
+      "bg": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1.15,
+        "focus": "49% 31%"
+      }
+    },
+    {
+      "text": "every time,",
+      "bg": {
+        "kind": "figure",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "51% 29%"
+      }
+    },
+    {
+      "text": "aquarius,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you need your own orbit,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "49% 39%"
+      }
+    },
+    {
+      "text": "but you're still circling them,",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "so close the thread,",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "there's a new deal",
+      "bg": {
+        "kind": "aura",
+        "sign": "aquarius",
+        "zoom": 1.3,
+        "focus": "52% 34%"
+      }
+    },
+    {
+      "text": "at 11:11.",
+      "bg": {
+        "kind": "sky",
+        "tint": "tide",
+        "moon": 0.32
+      }
+    }
+  ]
+}

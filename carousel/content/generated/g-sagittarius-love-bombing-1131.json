@@ -1,0 +1,95 @@
+{
+  "id": "g-sagittarius-love-bombing-1131",
+  "title": "Sagittarius, forever on date two is a warning",
+  "signs": [
+    "sagittarius"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "slow is a love language",
+  "hashtags": [
+    "sagittarius",
+    "zodiacdating",
+    "astrologymemes"
+  ],
+  "theme": "love-bombing",
+  "engine": "bank",
+  "seed": 1131,
+  "slides": [
+    {
+      "text": "sagittarius, quick one,",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you spot a dead end fast,",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "50% 35%"
+      }
+    },
+    {
+      "text": "and still",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "you fell for someone",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "who said forever",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1.15,
+        "focus": "56% 34%"
+      }
+    },
+    {
+      "text": "on the second date,",
+      "bg": {
+        "kind": "aura",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "58% 33%"
+      }
+    },
+    {
+      "text": "so let it cool,",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "anything real",
+      "bg": {
+        "kind": "figure",
+        "sign": "sagittarius",
+        "zoom": 1.3,
+        "focus": "52% 41%"
+      }
+    },
+    {
+      "text": "survives a boring tuesday.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "g-capricorn-rushing-1137",
+  "title": "Capricorn, slow down, it was one coffee",
+  "signs": [
+    "capricorn"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "it was one coffee",
+  "hashtags": [
+    "capricorn",
+    "zodiacdating",
+    "datingadvice",
+    "astrology"
+  ],
+  "theme": "rushing",
+  "engine": "bank",
+  "seed": 1137,
+  "slides": [
+    {
+      "text": "oh, capricorn,",
+      "bg": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you have a five-year plan,",
+      "bg": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1.3,
+        "focus": "51% 41%"
+      }
+    },
+    {
+      "text": "but a person isn't a milestone,",
+      "bg": {
+        "kind": "neon",
+        "tint": "gold"
+      }
+    },
+    {
+      "text": "and you're choosing curtains",
+      "bg": {
+        "kind": "aura",
+        "sign": "capricorn",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "with someone",
+      "bg": {
+        "kind": "aura",
+        "sign": "capricorn",
+        "zoom": 1.15,
+        "focus": "46% 34%"
+      }
+    },
+    {
+      "text": "you met on tuesday,",
+      "bg": {
+        "kind": "aura",
+        "sign": "capricorn",
+        "zoom": 1.3,
+        "focus": "43% 31%"
+      }
+    },
+    {
+      "text": "so slow down,",
+      "bg": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "the good ones",
+      "bg": {
+        "kind": "figure",
+        "sign": "capricorn",
+        "zoom": 1.3,
+        "focus": "48% 36%"
+      }
+    },
+    {
+      "text": "don't expire.",
+      "bg": {
+        "kind": "neon",
+        "tint": "spark"
+      }
+    }
+  ]
+}

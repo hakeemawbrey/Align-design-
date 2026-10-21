@@ -1,0 +1,87 @@
+{
+  "id": "g-leo-chasing-1116",
+  "title": "Leo, stop chasing people who walk away",
+  "signs": [
+    "leo"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "read twice, leo",
+  "hashtags": [
+    "leo",
+    "zodiacdating",
+    "zodiac",
+    "astrologymemes"
+  ],
+  "theme": "chasing",
+  "engine": "bank",
+  "seed": 1116,
+  "slides": [
+    {
+      "text": "nobody worth having",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "needs chasing,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "57% 38%"
+      }
+    },
+    {
+      "text": "leo,",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you do grand gestures properly,",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "49% 34%"
+      }
+    },
+    {
+      "text": "but they don't do them back,",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "so stand still",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "and see who",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "55% 32%"
+      }
+    },
+    {
+      "text": "comes looking.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

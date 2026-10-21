@@ -1,0 +1,96 @@
+{
+  "id": "g-leo-mixed-signals-1128",
+  "title": "Leo, \"haha ok\" is not scripture",
+  "signs": [
+    "leo"
+  ],
+  "core": [
+    "release"
+  ],
+  "caption": "you know who you are",
+  "hashtags": [
+    "leo",
+    "zodiacdating",
+    "zodiacsigns",
+    "zodiac"
+  ],
+  "theme": "mixed-signals",
+  "engine": "bank",
+  "seed": 1128,
+  "slides": [
+    {
+      "text": "okay leo,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you know who's really clapping,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "48% 43%"
+      }
+    },
+    {
+      "text": "but somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "ember"
+      }
+    },
+    {
+      "text": "you're decoding",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "a \"haha ok\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1.15,
+        "focus": "44% 44%"
+      }
+    },
+    {
+      "text": "like it's scripture,",
+      "bg": {
+        "kind": "aura",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "42% 46%"
+      }
+    },
+    {
+      "text": "so take the hint,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "release the card,",
+      "bg": {
+        "kind": "figure",
+        "sign": "leo",
+        "zoom": 1.3,
+        "focus": "55% 39%"
+      }
+    },
+    {
+      "text": "and keep your evenings.",
+      "bg": {
+        "kind": "neon",
+        "tint": "rub"
+      }
+    }
+  ]
+}

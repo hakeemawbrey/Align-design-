@@ -1,0 +1,95 @@
+{
+  "id": "g-libra-love-bombing-2029",
+  "title": "Libra, forever on date two is a warning",
+  "signs": [
+    "libra"
+  ],
+  "core": [
+    "mutual"
+  ],
+  "caption": "libra, it was a lot, fast",
+  "hashtags": [
+    "libra",
+    "zodiacdating",
+    "astrology"
+  ],
+  "theme": "love-bombing",
+  "engine": "bank",
+  "seed": 2029,
+  "slides": [
+    {
+      "text": "libra, honestly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you clock bad manners instantly,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "44% 39%"
+      }
+    },
+    {
+      "text": "and yet",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you're dazzled by someone",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "who called you \"soulmate\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.15,
+        "focus": "54% 43%"
+      }
+    },
+    {
+      "text": "in week one,",
+      "bg": {
+        "kind": "aura",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "56% 44%"
+      }
+    },
+    {
+      "text": "so slow it down,",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "the real thing",
+      "bg": {
+        "kind": "figure",
+        "sign": "libra",
+        "zoom": 1.3,
+        "focus": "56% 30%"
+      }
+    },
+    {
+      "text": "can keep up.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}

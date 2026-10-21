@@ -1,0 +1,96 @@
+{
+  "id": "g-gemini-dealbreakers-1124",
+  "title": "Gemini, say the dealbreaker on date one",
+  "signs": [
+    "gemini"
+  ],
+  "core": [
+    "honest"
+  ],
+  "caption": "a note for gemini season",
+  "hashtags": [
+    "gemini",
+    "zodiacdating",
+    "astrologymemes",
+    "zodiacsigns"
+  ],
+  "theme": "dealbreakers",
+  "engine": "bank",
+  "seed": 1124,
+  "slides": [
+    {
+      "text": "gemini,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "you say what others won't,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "50% 40%"
+      }
+    },
+    {
+      "text": "but somehow",
+      "bg": {
+        "kind": "neon",
+        "tint": "tide"
+      }
+    },
+    {
+      "text": "you said \"either's fine\"",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "about kids,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.15,
+        "focus": "45% 37%"
+      }
+    },
+    {
+      "text": "and it isn't,",
+      "bg": {
+        "kind": "aura",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "42% 38%"
+      }
+    },
+    {
+      "text": "so lead with it,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1
+      }
+    },
+    {
+      "text": "the wrong ones leave early,",
+      "bg": {
+        "kind": "figure",
+        "sign": "gemini",
+        "zoom": 1.3,
+        "focus": "44% 34%"
+      }
+    },
+    {
+      "text": "that's the point.",
+      "bg": {
+        "kind": "neon",
+        "tint": "violet"
+      }
+    }
+  ]
+}
