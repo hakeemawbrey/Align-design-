@@ -78,7 +78,8 @@ export default function PackOpen({ pack, cards: source, onDone, onClose = onDone
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      style={{ position: 'absolute', inset: 0, zIndex: 45, overflow: 'hidden', background: '#07031a' }}>
+      // above every sheet: the chat's hand sheet sits at 80-81
+      style={{ position: 'absolute', inset: 0, zIndex: 95, overflow: 'hidden', background: '#07031a' }}>
       <motion.div animate={shake} style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Rays color={glow} strong={stage !== 'all'} />
         <Motes color={glow} />
@@ -155,29 +156,50 @@ function Packet({ pack, count, onTorn }: { pack: { name: string; color: string }
   const [p, setP] = useState(0)
   const [done, setDone] = useState(false)
   const start = useRef<number | null>(null)
-  const taps = useRef(0)
-  const wiggle = useAnimationControls()
+  const dragged = useRef(false)
+  const doneRef = useRef(false)
+  const pRef = useRef(0)
   const lastTick = useRef(0)
 
-  const finish = () => { if (done) return; setDone(true); setP(1); onTorn() }
-  const move = (x: number) => {
-    if (start.current == null || done) return
-    const v = Math.min(1, Math.abs(x - start.current) / 150)
-    setP(v)
-    if (v - lastTick.current > 0.12) { lastTick.current = v; sfx.peekTick(v) }
-    if (v >= 0.75) finish()
+  const set = (v: number) => { pRef.current = v; setP(v) }
+  const finish = () => {
+    if (doneRef.current) return
+    doneRef.current = true
+    setDone(true); set(1); onTorn()
   }
-  const up = () => {
-    if (start.current == null || done) return
-    start.current = null
-    if (p < 0.08) {
-      // a tap: the pack bucks; three taps open it too
-      taps.current += 1
-      sfx.tap()
-      void wiggle.start({ rotate: [0, -4, 4, -2, 0], transition: { duration: 0.35 } })
-      if (taps.current >= 3) finish()
+  /** a tap tears it for you: the light runs along the line, then the strip flies */
+  const autoTear = () => {
+    if (doneRef.current) return
+    doneRef.current = true
+    sfx.tap()
+    const t0 = performance.now()
+    const step = (now: number) => {
+      const v = Math.min(1, (now - t0) / 380)
+      setP(v)
+      if (v - lastTick.current > 0.2) { lastTick.current = v; sfx.peekTick(v) }
+      if (v < 1) requestAnimationFrame(step)
+      else { setDone(true); onTorn() }
     }
-    if (!done) { setP(0); lastTick.current = 0 }
+    requestAnimationFrame(step)
+  }
+  const down = (x: number) => { if (doneRef.current) return; start.current = x; dragged.current = false }
+  const move = (x: number) => {
+    if (start.current == null || doneRef.current) return
+    // a short swipe is enough: 60px of travel tears it
+    const v = Math.min(1, Math.abs(x - start.current) / 100)
+    if (v > 0.06) dragged.current = true
+    set(v)
+    if (v - lastTick.current > 0.12) { lastTick.current = v; sfx.peekTick(v) }
+    if (v >= 0.6) finish()
+  }
+  // a release (or a cancelled gesture, which iOS fires mid-swipe) still counts:
+  // any real drag tears it, and a tap tears it for you
+  const up = () => {
+    if (start.current == null || doneRef.current) return
+    start.current = null
+    if (pRef.current >= 0.2) finish()
+    else if (!dragged.current) autoTear()
+    else { set(0); lastTick.current = 0 }
   }
 
   const foil = `linear-gradient(115deg, #f8edff 0%, #e6d8ff 18%, ${pack.color} 34%, #fff7ec 50%, #eaf4ff 64%, ${pack.color} 80%, #ffeff7 100%)`
@@ -191,9 +213,12 @@ function Packet({ pack, count, onTorn }: { pack: { name: string; color: string }
         transition={{ duration: 0.9, ease: 'easeOut' }}
         style={{ position: 'relative', marginTop: 34 }}>
         <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}>
-          <motion.div animate={wiggle}
-            onPointerDown={(e) => { start.current = e.clientX; (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId) }}
+          <div
+            onPointerDown={(e) => { down(e.clientX); try { (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId) } catch { /* not capturable */ } }}
             onPointerMove={(e) => move(e.clientX)} onPointerUp={up} onPointerCancel={up}
+            onTouchStart={(e) => { if (start.current == null) down(e.touches[0].clientX) }}
+            onTouchMove={(e) => move(e.touches[0].clientX)} onTouchEnd={up}
+            onClick={() => { if (!dragged.current) autoTear() }}
             style={{ position: 'relative', width: W, height: H, touchAction: 'none', cursor: 'grab', filter: `drop-shadow(0 0 34px ${pack.color}aa) drop-shadow(0 20px 30px rgba(0,0,0,0.6))` }}>
             {/* body */}
             <div style={{ position: 'absolute', left: 0, right: 0, top: LINE, bottom: 0, borderRadius: '0 0 12px 12px', background: foil, backgroundSize: '220% 220%', animation: 'foil-sweep 5s linear infinite', overflow: 'hidden' }}>
@@ -220,14 +245,14 @@ function Packet({ pack, count, onTorn }: { pack: { name: string; color: string }
             {/* the tear line: dashed until you cut it, then light pours through */}
             <div style={{ position: 'absolute', left: 8, right: 8, top: LINE - 1, height: 2, borderTop: '2px dashed rgba(58,44,78,0.5)' }} />
             <div style={{ position: 'absolute', left: 0, top: LINE - 3, height: 6, width: `${p * 100}%`, borderRadius: 3, background: '#fff', boxShadow: `0 0 16px #fff, 0 0 30px ${pack.color}` }} />
-          </motion.div>
+          </div>
         </motion.div>
       </motion.div>
       {/* the hint */}
       {!done && (
         <div style={{ position: 'relative', marginTop: 34, height: 40, width: 220, textAlign: 'center' }}>
           <span style={{ position: 'absolute', left: '50%', top: 0, marginLeft: -11, fontSize: 22, animation: 'pack-hint 2.2s ease-in-out infinite' }}>☝︎</span>
-          <div className="mono" style={{ position: 'absolute', left: 0, right: 0, bottom: 0, fontSize: 9, letterSpacing: '0.22em', color: 'var(--label-2)' }}>SWIPE ACROSS THE TOP TO TEAR</div>
+          <div className="mono" style={{ position: 'absolute', left: 0, right: 0, bottom: 0, fontSize: 9, letterSpacing: '0.22em', color: 'var(--label-2)' }}>TAP OR SWIPE TO TEAR IT OPEN</div>
         </div>
       )}
     </>
