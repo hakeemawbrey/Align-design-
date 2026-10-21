@@ -38,6 +38,14 @@ export const SKY_DATE = {
   long: NOW.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }),
   season: `${SEASON_NOW.sign} season · day ${SEASON_NOW.day}`,
   serial: `SKY № ${TODAY_READING.serial}/365`,
+  /** the parts of the date the Sky screen sets huge */
+  day: NOW.getDate(),
+  month: NOW.toLocaleDateString('en-US', { month: 'long' }),
+  weekday: NOW.toLocaleDateString('en-US', { weekday: 'long' }),
+  year: NOW.getFullYear(),
+  sunSign: SEASON_NOW.sign,
+  /** the Moon's sign right now (the horoscope reads this); MOON_NOW is tonight's */
+  moonNow: SIGNS[signOf(skyChart(NOW).moon)].name,
   city: 'Houston',
 }
 

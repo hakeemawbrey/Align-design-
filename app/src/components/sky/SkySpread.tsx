@@ -4,10 +4,14 @@ import { TAROT_RATIO } from '../talk/TalkCardFace'
 import { SkyCardBack, SkyCardFace, SLOT_LABEL } from './SkyCardFace'
 import { PLANET, TODAY_READING, type SkyReading } from '../../data/skyReading'
 import { ME } from '../../data/profiles'
+import { SIGNS } from '../../data/signs'
 import { talk, useTalk } from '../../lib/talk'
 import { sfx } from '../../lib/sfx'
 
 const W = 104
+
+/** how each card's part of the horoscope is headed */
+const SECTION = { you: 'Your mood', love: 'Love', move: 'Your move' } as const
 const GAP = (342 - W * 3) / 2
 
 /** where the reward lands, in words */
@@ -38,18 +42,14 @@ export default function SkySpread({ reading = TODAY_READING }: { reading?: SkyRe
       window.setTimeout(() => sfx.match(), 450)
     }
   }
-  const card = sel != null ? reading.cards[sel] : null
 
   return (
     <div style={{ width: 342 }}>
-      <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)' }}>
-        TODAY’S SKY · FOR {ME.name.toUpperCase()} · № {reading.serial}
+      <div className="mono" style={{ fontSize: 9.5, letterSpacing: '0.2em', color: 'var(--label-2)', textAlign: 'center' }}>
+        {SIGNS[ME.sign].glyph}{'︎'} {SIGNS[ME.sign].name.toUpperCase()} · YOUR HOROSCOPE · № {reading.serial}
       </div>
-      <div className="h-display" style={{ fontSize: 28, marginTop: 6 }}>
-        {allUp ? 'Your sky today' : up.some(Boolean) ? 'Keep turning' : 'Draw your sky'}
-      </div>
-      <div style={{ fontSize: 13, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 4 }}>
-        {allUp ? 'Worked out from today’s planets and your birth chart. Tap a card to read it.' : 'Three cards from today’s real sky, read against your birth chart. Tap each one to turn it.'}
+      <div style={{ fontSize: 13, lineHeight: 1.4, color: 'var(--label-2)', marginTop: 6, textAlign: 'center' }}>
+        {allUp ? 'Today’s real sky, read against your birth chart.' : 'Turn the three cards to read your day.'}
       </div>
 
       {/* the three cards */}
@@ -72,25 +72,37 @@ export default function SkySpread({ reading = TODAY_READING }: { reading?: SkyRe
         ))}
       </div>
 
-      {/* the card you're reading */}
-      <AnimatePresence mode="wait">
-        {card && (
-          <motion.div key={card.slot} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.25 }}
-            style={{ marginTop: 14, padding: '14px 16px', borderRadius: 16, background: 'rgba(30,18,64,0.82)', border: `1px solid ${PLANET[card.planet].color}55` }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-              <span className="mono" style={{ fontSize: 9, letterSpacing: '0.2em', color: PLANET[card.planet].color }}>{SLOT_LABEL[card.slot].toUpperCase()}</span>
-              <span className="serif italic" style={{ fontSize: 17, color: 'var(--label-1)' }}>{card.title}</span>
+      {/* the horoscope: each card you turn writes its paragraph */}
+      <div style={{ marginTop: 18 }}>
+        {reading.cards.map((c, i) => {
+          const pl = PLANET[c.planet]
+          return (
+            <div key={c.slot} onClick={() => tap(i)}
+              style={{ padding: '14px 0', borderTop: i ? '1px solid rgba(179,166,196,0.14)' : 'none', cursor: up[i] ? 'default' : 'pointer' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+                <span className="mono" style={{ fontSize: 9.5, letterSpacing: '0.22em', textTransform: 'uppercase', color: up[i] ? pl.color : 'var(--label-3)' }}>{SECTION[c.slot]}</span>
+                {up[i] && <span className="mono" style={{ fontSize: 9, letterSpacing: '0.14em', color: 'var(--label-3)' }}>{pl.glyph}{'︎'} {pl.name.toUpperCase()}</span>}
+              </div>
+              <AnimatePresence mode="wait" initial={false}>
+                {up[i] ? (
+                  <motion.div key="read" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
+                    <div className="serif italic" style={{ fontSize: 22, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 6 }}>{c.headline}</div>
+                    <p style={{ margin: '8px 0 0', fontSize: 14.5, lineHeight: 1.55, color: 'var(--label-2)' }}>{c.story}</p>
+                    <div style={{ display: 'flex', gap: 10, marginTop: 8, fontSize: 14.5, lineHeight: 1.45 }}>
+                      <span className="mono" style={{ flexShrink: 0, fontSize: 9, letterSpacing: '0.2em', color: pl.color, paddingTop: 4 }}>TRY</span>
+                      <span style={{ color: 'var(--label-1)' }}>{c.tryThis}</span>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div key="wait" exit={{ opacity: 0 }} style={{ fontSize: 13.5, color: 'var(--label-3)', marginTop: 6 }}>
+                    Turn the {SLOT_LABEL[c.slot]} card to read this.
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-            <div className="mono" style={{ fontSize: 8.5, letterSpacing: '0.12em', color: 'var(--label-3)', marginTop: 3 }}>{card.where.toUpperCase()}</div>
-            <div className="serif italic" style={{ fontSize: 20, lineHeight: 1.2, color: 'var(--label-1)', marginTop: 8 }}>{card.headline}</div>
-            <div style={{ fontSize: 13, lineHeight: 1.45, color: 'var(--label-2)', marginTop: 6 }}>{card.body}</div>
-            <div style={{ display: 'flex', gap: 8, marginTop: 10, paddingTop: 9, borderTop: '1px solid rgba(179,166,196,0.16)', fontSize: 13, lineHeight: 1.4 }}>
-              <span className="mono" style={{ flexShrink: 0, fontSize: 8.5, letterSpacing: '0.18em', color: PLANET[card.planet].color, paddingTop: 2 }}>TRY</span>
-              <span style={{ color: 'var(--label-1)' }}>{card.tryThis}</span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )
+        })}
+      </div>
 
       {/* the reward, once all three are turned */}
       {allUp && (

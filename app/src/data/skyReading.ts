@@ -47,6 +47,11 @@ const MOON_HOUSE: { head: string; tryThis: string }[] = [
   { head: 'Quiet and inward. Rest.', tryThis: 'Early night. The deck will be there at 11:11.' },
 ]
 
+/** the aspect as a phrase a horoscope would use */
+const VERB_ING = { conjunct: 'sitting right on', sextile: 'opening a door for', trine: 'flowing easily with', square: 'pushing against', opposite: 'pulling against' } as const
+/** how each house reads in a sentence: "lights up …" */
+const HOUSE_STORY = ['', 'how you come across', 'what you value and what makes you feel secure', 'texts, small talk and quick plans', 'home, family and how cozy you feel', 'romance, flirting and fun', 'your routines and how you take care of yourself', 'partners and the people across from you', 'intimacy, trust and what you keep close', 'adventure, travel and big ideas', 'your goals and how people see you', 'friends and groups', 'rest, dreams and what you keep to yourself']
+
 const ord = (n: number) => `${n}${n === 1 ? 'st' : n === 2 ? 'nd' : n === 3 ? 'rd' : 'th'}`
 
 type Tone = Hit['tone']
@@ -96,6 +101,8 @@ export interface SkyCard {
   headline: string
   body: string
   tryThis: string
+  /** the same reading written as a horoscope paragraph, plain words, no symbols */
+  story: string
 }
 
 export interface SkyReading {
@@ -115,8 +122,16 @@ export function readingFor(date = new Date(), birth: Birth = MY_BIRTH): SkyReadi
   const sky = skyChart(date)
   const hits = transitsToChart(sky, natal)
   const where = (p: Planet) => `${PLANET[p].name} in ${SIGNS[signOf(sky[p])].name}${retrograde(p, date) ? ' ℞' : ''} · your ${ord(houseOf(sky[p], natal.asc))} house`
+  const placed = (p: Planet) => {
+    const house = houseOf(sky[p], natal.asc)
+    const retro = retrograde(p, date) ? ', moving backwards (retrograde),' : ''
+    const the = p === 'moon' || p === 'sun' ? 'The ' : ''
+    return `${the}${PLANET[p].name} is in ${SIGNS[signOf(sky[p])].name}${retro}, lighting up your ${ord(house)} house: ${HOUSE_STORY[house]}.`
+  }
+  const natalWord = (n: Point) => (n === 'asc' ? 'rising sign' : NATAL[n].name)
   const fromHit = (slot: SkyCard['slot'], h: Hit): SkyCard => ({
     slot, planet: h.transit,
+    story: `${placed(h.transit)} It’s ${VERB_ING[h.aspect]} your ${natalWord(h.natal)}, ${NATAL[h.natal].means}.`,
     title: `${PLANET[h.transit].name} ${ASPECT_GLYPH[h.aspect]} your ${NATAL[h.natal].name}`,
     where: where(h.transit),
     headline: HEAD[h.transit][h.tone],
@@ -128,6 +143,7 @@ export function readingFor(date = new Date(), birth: Birth = MY_BIRTH): SkyReadi
     const sign = SIGNS[signOf(sky[p])].name
     return {
       slot, planet: p, title: `${PLANET[p].name} in your ${ord(house)} house`, where: where(p),
+      story: placed(p),
       headline: p === 'moon' ? MOON_HOUSE[house].head : HEAD[p].blend,
       body: `${PLANET[p].name} (${PLANET[p].means}) is in ${sign}, your ${ord(house)} house of ${HOUSE[house]}. That’s where ${PLANET[p].means} shows up for you today.`,
       tryThis: p === 'moon' ? MOON_HOUSE[house].tryThis : TRY[p].blend,

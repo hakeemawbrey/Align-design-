@@ -34,15 +34,13 @@ export default function Sky({ go }: ScreenProps) {
         style={{ position: 'absolute', left: 16, top: 56, width: 40, height: 40, display: 'grid', placeItems: 'center', color: 'var(--label-1)', zIndex: 2 }}>
         <svg width="11" height="18" viewBox="0 0 12 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2 2 10l8 8" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
-      <div className="mono" style={{ position: 'absolute', left: 0, right: 0, top: 56, height: 40, display: 'grid', placeItems: 'center', fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--label-2)', pointerEvents: 'none' }}>
-        {SKY_DATE.season}
-      </div>
       <button onClick={() => { sfx.tap(); goFrom(go, 'calendar', 'sky') }} className="mono"
         style={{ position: 'absolute', right: 16, top: 56, height: 40, padding: '0 8px', fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--label-2)', zIndex: 2 }}>
-        {SKY_DATE.label} ›
+        Calendar ›
       </button>
 
       <div style={{ position: 'absolute', left: 0, right: 0, top: 100, bottom: 0, overflowY: 'auto', overflowX: 'hidden', padding: '6px 24px 130px', scrollbarWidth: 'none' }}>
+      <DateHero />
       <SkySpread />
       <div className="eyebrow" style={{ fontSize: 9.5, color: 'var(--label-3)', margin: '24px 0 8px' }}>The rest of the sky</div>
       {/* the reading card */}
@@ -129,6 +127,39 @@ export default function Sky({ go }: ScreenProps) {
       </div>
 
     </div>
+  )
+}
+
+/** Today's date, set huge: the first thing you read, like the top of a horoscope column. */
+function DateHero() {
+  return (
+    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
+      style={{ position: 'relative', textAlign: 'center', padding: '0 0 22px' }}>
+      <div className="mono" style={{ fontSize: 10, letterSpacing: '0.32em', textTransform: 'uppercase', color: 'var(--label-2)' }}>
+        {SKY_DATE.weekday}
+      </div>
+      <div style={{ position: 'relative', height: 150, marginTop: 2 }}>
+        {/* soft glow behind the number */}
+        <div style={{ position: 'absolute', left: '50%', top: '50%', width: 220, height: 160, transform: 'translate(-50%, -50%)', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(216,208,255,0.28), transparent)', pointerEvents: 'none' }} />
+        <div className="serif italic" style={{
+          position: 'relative', fontSize: 168, lineHeight: '150px', fontWeight: 400, letterSpacing: '-0.04em', color: 'var(--label-1)',
+          textShadow: '0 0 40px rgba(216,208,255,0.35)',
+        }}>{SKY_DATE.day}</div>
+      </div>
+      <div className="h-display" style={{ fontSize: 30, marginTop: -4 }}>{SKY_DATE.month} {SKY_DATE.year}</div>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 14 }}>
+        <MoonPhase size={26} lit={MOON_NOW.lit} waxing={MOON_NOW.waxing} />
+        <span style={{ textAlign: 'left' }}>
+          <span className="mono" style={{ display: 'block', fontSize: 9.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--label-1)' }}>
+            {MOON_NOW.phase} moon
+          </span>
+          <span className="mono" style={{ display: 'block', fontSize: 9, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--label-2)', marginTop: 3 }}>
+            {SKY_DATE.moonNow === MOON_NOW.sign ? `In ${MOON_NOW.sign}` : `In ${SKY_DATE.moonNow}, ${MOON_NOW.sign} tonight`} · {SKY_DATE.sunSign} season
+          </span>
+        </span>
+      </div>
+      <div style={{ width: 120, height: 1, margin: '20px auto 0', background: 'linear-gradient(90deg, transparent, rgba(222,208,246,0.5), transparent)' }} />
+    </motion.div>
   )
 }
 
