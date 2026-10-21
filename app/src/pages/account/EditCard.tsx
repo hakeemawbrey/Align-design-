@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { PageProps } from '../types'
 import { CARD_BG, CARD_LINE, Group, Label, PageShell, Row } from '../../components/kit'
 import ProfileCard from '../../components/deck/ProfileCard'
+import ProfileFace from '../../components/reveal/ProfileFace'
+import RevealStyles from '../../components/reveal/RevealStyles'
 import { CARD_W, CARD_H } from '../../components/deck/fx'
 import { myProfile, type CardEdits } from '../../components/you/myCard'
 import { ME } from '../../data/profiles'
@@ -14,6 +16,11 @@ import { EditableRow, Segment, TextCard, useToast } from './bits'
 type Side = 'down' | 'flipped'
 const PREVIEW_W = 160
 const S = PREVIEW_W / CARD_W
+/** the revealed side is drawn at 358 × 625, the same card a match sees when you both align */
+const FACE_W = 358
+const FACE_H = 625
+const FLIP_W = 210
+const FS = FLIP_W / FACE_W
 
 /** G-27 / G-28 · Edit card — face down (what strangers see) and flipped (what a match sees). */
 export default function EditCard({ go, back, arg }: PageProps) {
@@ -66,7 +73,15 @@ export default function EditCard({ go, back, arg }: PageProps) {
             </motion.div>
           ) : (
             <motion.div key="flipped" initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 16 }} transition={{ type: 'spring', stiffness: 380, damping: 34 }}>
-              <Label style={{ marginTop: 12 }}>Revealed photo</Label>
+              {/* the finished flipped card, redrawn as you edit */}
+              <RevealStyles />
+              <div style={{ width: FLIP_W, height: Math.round(FACE_H * FS), margin: '14px auto 0', position: 'relative' }}>
+                <div style={{ position: 'relative', width: FACE_W, height: FACE_H, transform: `scale(${FS})`, transformOrigin: '0 0', pointerEvents: 'none' }}>
+                  <ProfileFace p={myProfile(draft)} shown lift revealed />
+                </div>
+              </div>
+              <div className="mono" style={{ textAlign: 'center', marginTop: 12, fontSize: 8.5, letterSpacing: '0.18em', color: 'var(--label-3)' }}>LIVE PREVIEW · WHAT A MATCH SEES WHEN IT FLIPS</div>
+              <Label>Revealed photo</Label>
               <div style={{ borderRadius: 16, background: CARD_BG, border: CARD_LINE, overflow: 'hidden' }}>
                 <Row onClick={() => go('x/verify-photo')} value="Replace"
                   icon={<span style={{ width: 40, height: 40, borderRadius: 20, overflow: 'hidden', flexShrink: 0, boxShadow: `0 0 12px ${sun.color}88` }}>
