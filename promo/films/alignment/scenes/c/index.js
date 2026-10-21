@@ -1,4 +1,5 @@
-// STUB — replaced by the part-c agent. Export SCENES and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 39.8, end: 60.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'alignment part c'), update() {} })]
+// Alignment · part c (39.8–60.01): Venus rules you both → the reading (phone + Pull/Push/Align cards) →
+// "See how you align." + lockup → black. Starts exactly on H.
+import story, { cues } from './story.js'
+export const SCENES = [story]
+export const CUES = cues
