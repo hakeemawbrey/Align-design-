@@ -64,3 +64,5 @@ Helpers you may import:
   - `--stills=1.2,3`
   - Full film: `node promo/scripts/teaser-sound.mjs --film=<name> && node promo/scripts/render.mjs --film=<name>`. The lead does the full render.
 - **Ending:** the end line types in by about 27.0, then the Align lockup (mark draws, chakras, wordmark "Align", "BLIND BY DESIGN") is complete by about 28.6, holds, and fades to black 29.6–30.0. The last frame is black.
+
+| promo/films/disposable30 | "We've made people disposable." on the first frame, over a swipe stack that smears into thousands → "Seen. 3 days ago." → "Ghosted. Again." → "What if no one was disposable?" | Same answer as ghosted (half b reused unchanged): tonight's deck, dealbreakers first, mutual | "Be chosen." |
