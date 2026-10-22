@@ -1,47 +1,55 @@
-// dummies · part a (0–20.2): "Astrology for dummies." → Q1 "What's my sign?" → Q2 "Why do they want my birth time?" →
-// "So you're not one sign." Ends exactly on H (wheel.js: SKY_H + drawWheelH + grain GRAIN_H) from 19.6.
-// One canvas (sky + diagram), DOM type above it, grain on top. Pure function of t. v2 style (springy, big, bold).
+// dummies v2 · part a (0–20.2): "Astrology for dummies." (floating glyphs) → Q1 "What's my sign?" (top-down Sun + Earth,
+// line of sight to the Taurus panel, MAY 12 page) → Q2 "Why do they want my birth time?" (flipping calendar + Moon hopping
+// signs; spinning Earth whose horizon sweeps the band, ~2 HRS stopwatch) → "So you're not one sign." (three trading cards).
+// Hand-off H (v2): ONLY drawSky(SKY_H) + grain GRAIN_H, from 19.6. One canvas, DOM type above it, grain on top. Pure f(t).
 import { clamp, lerp, prog, ease, el, rng, noise1, hexToRgb } from '../../../../src/lib.js'
 import { W, fill } from '../../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../../sky.js'
-import { SIGNS, WHEEL, SKY_H, GRAIN_H, TYPE, angOf, ptOf, drawWheelH, easeOutBack } from '../../../wheel.js'
+import { SIGNS, SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../../wheel.js'
 
-const BONE = '#efe6d6', GOLD = '#f2c75c', PINK = '#ff8fb1', SILVER = '#e8e6f6'
+const BONE = '#efe6d6', GOLD = '#f2c75c', PINK = '#ff8fb1', ROSE = '#e8628a', SILVER = '#e3ecff', INK = '#1a1430', EARTH = '#4f9cf0'
 const SHADOW = '0 4px 30px rgba(6,4,18,0.9), 0 0 4px rgba(6,4,18,0.6)'
-const GLYPH_FONT = "'EB Garamond', 'Segoe UI Symbol', 'Noto Sans Symbols', serif"   // drawWheelH's stack (no glyph jump at H)
+const GLYPH_FONT = "'EB Garamond', 'Segoe UI Symbol', 'Noto Sans Symbols', serif"
 const INTER = "Inter, 'Helvetica Neue', Arial, sans-serif"
 const MONO = "'Space Mono', monospace"
-const { cx: CX, cy: CY } = WHEEL
-const TRACK = WHEEL.rIn - 52        // placements ride just inside the ring
 const START = 0, END = 20.2, SETTLE = 19.6
 const BEAT = n => 0.6 + n * 0.5556  // 108 bpm grid
 const sign = id => SIGNS.find(s => s.id === id)
 const TAU = sign('taurus'), SAG = sign('sagittarius'), LIB = sign('libra')
+const D2R = Math.PI / 180
+const angOf = lon => Math.PI - lon * D2R            // same orientation as the wheel: Aries at 9 o'clock, signs counter-clockwise
+const at = (cx, cy, lon, r) => ({ x: cx + Math.cos(angOf(lon)) * r, y: cy + Math.sin(angOf(lon)) * r })
 
 // ── beats
 const T = {
-  you: BEAT(2), q: BEAT(2) + 0.3, qOut: 6.3, youOut1: 9.0, youBack: 17.0, youOut2: 18.95,
-  ring: [3.95, 4.5], glyph0: 4.2, glyphGap: 0.07,
-  sunIn: BEAT(8), roll: [5.35, 6.45],
-  taurus: 6.45, taurusOut: [8.7, 8.9],
-  clockIn: BEAT(16) - 0.05, clockOut: 14.45,
-  moonIn: 9.55, moonWalk: [9.8, 11.75],
-  spin: [12.2, 14.0], rotMax: 75,
-  rewind: [14.65, 15.45],
-  lblSun: BEAT(27), lblMoon: BEAT(28), rising: BEAT(29),
-  placeOut: 18.7,
+  q0: BEAT(2), q0Out: 3.3,
+  // Q1
+  sun: BEAT(6), band0: 4.1, bandGap: 0.05, orbit: [4.55, 5.0], earth: BEAT(8), earthMove: [5.15, 5.75],
+  cal: BEAT(9), sight: [5.95, 6.45], taurus: 6.45, q1Out: 8.72,
+  // Q2a: calendar + Moon hops
+  cal2: 9.3, days: [9.55, 11.65], q2aOut: 11.72,
+  // Q2b: spinning Earth
+  globe: 11.95, spin: [12.35, 14.2], q2bOut: 14.38,
+  // cards
+  cards: [BEAT(27), BEAT(28), BEAT(29)], cardsOut: 18.7,
 }
-const SUN_LON = 51                  // May 12 ≈ 21° Taurus
-const MOON_A = 240.6, MOON_B = 268.2, MOON_BIRTH = 258   // the Moon inches through Sagittarius; rewinds to the birth moment
-const RISING_LON = 192              // ~12° Libra
+const SUN_LON = 51                   // May 12 ≈ 21° Taurus
+const EARTH_LON = SUN_LON + 180      // seen from Earth, the Sun sits against the opposite side of the band
+const DAYS = 7, HOPS = [1, 3.5, 6]   // the Moon changes sign every ~2.5 days
+const dayAt = t => DAYS * prog(t, ...T.days)
+const ASC0 = 5, ASC1 = 95
+const ascAt = t => ASC0 + (ASC1 - ASC0) * ease.inOutQuad(prog(t, ...T.spin))
+const crossT = deg => { let lo = T.spin[0], hi = T.spin[1]; for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (ascAt(m) < deg) lo = m; else hi = m } return lo }
+const ASC_CROSS = [30, 60, 90].map(crossT)
 
 const rgba = (hex, a) => { const [r, g, b] = hexToRgb(hex); return `rgba(${r},${g},${b},${a})` }
 const pop01 = (t, t0, d = 0.32) => easeOutBack(prog(t, t0, t0 + d))
 const outScale = (t, t0, d = 0.3) => { const p = prog(t, t0, t0 + d); return p <= 0 ? 1 : p >= 1 ? 0 : 1 + 0.25 * Math.sin(Math.PI * Math.min(1, p * 2)) - ease.inCubic(p) }
 const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
+const glowStroke = (x, color, w, blur = 16) => { x.strokeStyle = color; x.lineWidth = w; x.shadowColor = rgba(color === BONE ? GOLD : color, 0.7); x.shadowBlur = blur; x.lineCap = 'round'; x.lineJoin = 'round' }
 
-/** a glowing orb: big soft halo, shaded sphere, a pixel-star glint (glintAng lets it "roll") */
-function orb(x, px, py, r, color, a, halo = 3.6, glintAng = -Math.PI / 4) {
+/** a glowing orb: big soft halo, shaded sphere, a pixel-star glint */
+function orb(x, px, py, r, color, a, halo = 3.6) {
   if (a <= 0 || r <= 0.5) return
   x.save()
   x.globalCompositeOperation = 'lighter'
@@ -53,10 +61,9 @@ function orb(x, px, py, r, color, a, halo = 3.6, glintAng = -Math.PI / 4) {
   const s = x.createRadialGradient(px - r * 0.35, py - r * 0.4, r * 0.08, px, py, r)
   s.addColorStop(0, '#fffaf0'); s.addColorStop(0.4, color); s.addColorStop(1, rgba(color, 0.85))
   x.fillStyle = s; x.beginPath(); x.arc(px, py, r, 0, Math.PI * 2); x.fill()
-  drawPixelStar(x, Math.round(px + Math.cos(glintAng) * r * 1.13), Math.round(py + Math.sin(glintAng) * r * 1.13), r > 24 ? 21 : 14, 0, rgba('#fff3e0', 0.9))
+  drawPixelStar(x, Math.round(px + r * 0.8), Math.round(py - r * 0.8), r > 24 ? 21 : 14, 0, rgba('#fff3e0', 0.9))
   x.restore()
 }
-
 function makeBurst(seed, n = 8, dist = 90) {
   const r = rng(seed)
   return Array.from({ length: n }, (_, i) => ({ a: (i / n) * Math.PI * 2 + r() * 0.6, d: dist * (0.6 + r() * 0.6), size: 10 + Math.round(r() * 2) * 4, kind: Math.floor(r() * 4) }))
@@ -74,7 +81,7 @@ function drawBurst(x, parts, px, py, t, t0, color, dur = 0.7) {
 }
 
 /** springy word-by-word type: `*word*` = accent (Garamond italic, colour), `|` = line break; the last word may pop late with a wobble */
-function popText(parent, text, { top, size, font, weight, accentColor = GOLD, accentSize, gap = 0.07, at, lastAt = null, wobble = false, color = BONE }) {
+function popText(parent, text, { top, size, font, weight, accentColor = GOLD, accentSize, gap = 0.07, at: t0, lastAt = null, wobble = false, color = BONE }) {
   const box = el('div', { position: 'absolute', left: '70px', width: (W - 140) + 'px', top: top + 'px', textAlign: 'center',
     fontFamily: font, fontWeight: weight, fontSize: size + 'px', lineHeight: 1.02, color, textShadow: SHADOW, letterSpacing: '-0.01em' }, parent)
   let n = 0
@@ -86,37 +93,63 @@ function popText(parent, text, { top, size, font, weight, accentColor = GOLD, ac
     const style = { display: 'inline-block', margin: '0 0.13em', opacity: 0, transformOrigin: '50% 80%' }
     if (acc) Object.assign(style, { fontFamily: "'EB Garamond', serif", fontStyle: 'italic', fontWeight: 500, fontSize: (accentSize || size * 1.09) + 'px', color: accentColor, letterSpacing: '0' })
     const isLast = i === toks.length - 1
-    ws.push({ t: isLast && lastAt != null ? lastAt : at + n * gap, big: isLast && lastAt != null, e: el('span', style, box, w.replace(/\*/g, '')) })
+    ws.push({ t: isLast && lastAt != null ? lastAt : t0 + n * gap, big: isLast && lastAt != null, e: el('span', style, box, w.replace(/\*/g, '')) })
     n++
   })
   return {
-    box,
     update(t, out = 1) {
-      box.style.display = out <= 0 || t < at ? 'none' : 'block'
+      box.style.display = out <= 0 || t < t0 ? 'none' : 'block'
       if (box.style.display === 'none') return
       for (const w of ws) {
         const p = prog(t, w.t, w.t + (w.big ? 0.4 : 0.28))
         const sc = w.big ? 0.3 + 0.7 * easeOutBack(p, 3.2) : 0.6 + 0.4 * easeOutBack(p, 2.4)
-        const rot = w.big && wobble ? 9 * Math.sin((t - w.t) * 14) * Math.exp(-(t - w.t) * 3.2) * (t > w.t ? 1 : 0) : 0
+        const rot = w.big && wobble && t > w.t ? 9 * Math.sin((t - w.t) * 14) * Math.exp(-(t - w.t) * 3.2) : 0
         w.e.style.opacity = String(clamp(p * 3) * out)
         w.e.style.transform = `translateY(${((1 - ease.outCubic(p)) * 30 + (1 - out) * 10).toFixed(2)}px) scale(${(sc * lerp(0.9, 1, out)).toFixed(4)}) rotate(${rot.toFixed(2)}deg)`
       }
     },
   }
 }
-const head = (root, text, at, opts = {}) => popText(root, text, { top: 215, size: TYPE.headSize, font: INTER, weight: 800, at, ...opts })
-const sub = (root, text, at, opts = {}) => popText(root, text, { top: TYPE.subY, size: TYPE.subSize, font: INTER, weight: 700, at, gap: 0.06, accentSize: 68, ...opts })
+const head = (root, text, t0, opts = {}) => popText(root, text, { top: 215, size: TYPE.headSize, font: INTER, weight: 800, at: t0, ...opts })
+const sub = (root, text, t0, opts = {}) => popText(root, text, { top: TYPE.subY, size: TYPE.subSize, font: INTER, weight: 700, at: t0, gap: 0.06, accentSize: 68, ...opts })
 
-// ── the wheel's rotation (clockwise on screen, like the sky turning through a day) and the clock
-const rotAt = t => {
-  if (t < T.spin[0]) return 0
-  if (t < T.rewind[0]) return T.rotMax * ease.inOutCubic(prog(t, ...T.spin))
-  return T.rotMax * (1 - easeOutBack(prog(t, ...T.rewind), 1.6))
+/** a ring-shaped zodiac band (12 coloured panels + glyphs). panelK(i) 0..1 pops each panel; lit(i) 0..1 brightens it */
+function drawBand(x, cx, cy, rIn, rOut, glyphPx, panelK, lit) {
+  for (let i = 0; i < 12; i++) {
+    const k = panelK(i)
+    if (k <= 0) continue
+    const s = SIGNS[i], L = lit(i)
+    const mid = (rIn + rOut) / 2, half = (rOut - rIn) / 2 * Math.min(1.15, k)
+    const a0 = angOf(i * 30 + 1.2), a1 = angOf(i * 30 + 28.8)
+    x.save()
+    x.globalAlpha = clamp(k * 2)
+    x.beginPath(); x.arc(cx, cy, mid + half, a0, a1, true); x.arc(cx, cy, mid - half, a1, a0, false); x.closePath()
+    x.fillStyle = rgba(s.color, 0.26 + 0.5 * L); x.fill()
+    glowStroke(x, L > 0.05 ? s.color : BONE, 5, 12 + 22 * L); x.globalAlpha = clamp(k * 2) * (0.75 + 0.25 * L); x.stroke()
+    const g = at(cx, cy, i * 30 + 15, mid)
+    x.translate(g.x, g.y); const sc = Math.min(1.2, k) * (1 + 0.25 * L); x.scale(sc, sc)
+    x.shadowBlur = 0; x.globalAlpha = clamp(k * 2)
+    x.fillStyle = L > 0.3 ? '#fffaf0' : s.color; x.font = `bold ${glyphPx}px ${GLYPH_FONT}`; x.textAlign = 'center'; x.textBaseline = 'middle'
+    x.fillText(s.glyph + '︎', 0, 0)
+    x.restore()
+  }
 }
-const L = (lon, t) => lon - rotAt(t)          // screen longitude of a zodiac longitude while the wheel turns
-// clock time (hours after 5:00 PM): 2.5 days whizz by while the Moon crosses Sagittarius, then rot/15 hours
-const clockH = t => 60 * ease.inOutQuad(prog(t, ...T.moonWalk)) + rotAt(Math.min(t, T.rewind[0])) / 15
-const moonLon = t => t < T.rewind[0] ? lerp(MOON_A, MOON_B, ease.inOutQuad(prog(t, ...T.moonWalk))) : lerp(MOON_B, MOON_BIRTH, ease.inOutCubic(prog(t, ...T.rewind)))
+
+/** a tear-off calendar page (bone page, rose header). flip 0..1 = hinged in from the top */
+function drawPage(x, cx, cy, w, h, top, big, flip = 1, a = 1) {
+  if (flip <= 0 || a <= 0) return
+  x.save(); x.translate(cx, cy - h / 2); x.scale(1, Math.max(0.02, flip)); x.globalAlpha = a
+  x.shadowColor = 'rgba(0,0,0,0.5)'; x.shadowBlur = 24
+  x.fillStyle = BONE; x.beginPath(); x.roundRect(-w / 2, 0, w, h, 22); x.fill(); x.shadowBlur = 0
+  x.fillStyle = ROSE; x.beginPath(); x.roundRect(-w / 2, 0, w, h * 0.3, [22, 22, 0, 0]); x.fill()
+  x.strokeStyle = GOLD; x.lineWidth = 6; x.shadowColor = rgba(GOLD, 0.7); x.shadowBlur = 16
+  x.beginPath(); x.roundRect(-w / 2, 0, w, h, 22); x.stroke(); x.shadowBlur = 0
+  for (const dx of [-w * 0.25, w * 0.25]) { x.fillStyle = INK; x.beginPath(); x.arc(dx, h * 0.07, 7, 0, Math.PI * 2); x.fill() }
+  x.textAlign = 'center'; x.textBaseline = 'middle'
+  x.fillStyle = BONE; x.font = `700 ${Math.round(h * 0.14)}px ${MONO}`; x.fillText(top, 0, h * 0.17)
+  x.fillStyle = INK; x.font = `800 ${Math.round(h * 0.42)}px ${INTER}`; x.fillText(big, 0, h * 0.64)
+  x.restore()
+}
 
 async function build(stage) {
   try {
@@ -126,7 +159,7 @@ async function build(stage) {
   const cv = layerCanvas(root), x = cv.getContext('2d')
   const black = el('div', { position: 'absolute', inset: 0, background: '#000' }, root)
 
-  // ── type
+  // ── type (copy + timings unchanged from v1)
   const eyebrow = txt => el('div', { position: 'absolute', left: 0, width: W + 'px', top: (TYPE.eyebrowY - 28) + 'px', textAlign: 'center', font: TYPE.eyebrow,
     letterSpacing: '0.25em', color: GOLD, textShadow: SHADOW, opacity: 0 }, root, txt)
   const EYES = [[eyebrow('NO JUDGEMENT'), 0.15, [3.42, 3.58]], [eyebrow('Q1'), 3.62, [8.8, 8.98]], [eyebrow('Q2'), 9.05, [14.4, 14.58]]]
@@ -139,184 +172,264 @@ async function build(stage) {
   const P2 = sub(root, 'The Moon changes sign | every ~2.5 days.', 9.85)
   const P3 = sub(root, 'Your *Rising* changes | every ~2 hours.', 12.0, { accentColor: LIB.color })
   const P4 = sub(root, "You're a whole *sky.*", 17.1)
-  const SUBS = [[P1, [8.75, 8.93]], [P2, [11.8, 11.96]], [P3, [14.4, 14.58]], [P4, [19.2, 19.45]]]
-  const youLbl = el('div', { position: 'absolute', left: 0, width: W + 'px', top: CY + 40 + 'px', textAlign: 'center', fontFamily: INTER, fontWeight: 800,
-    fontSize: '50px', color: BONE, textShadow: SHADOW, opacity: 0, transformOrigin: '50% 20%' }, root, 'you')
-  const qMark = el('div', { position: 'absolute', left: (CX - 100) + 'px', width: '200px', top: (CY - 175) + 'px', textAlign: 'center', fontFamily: INTER, fontWeight: 800,
-    fontSize: '110px', lineHeight: 1, color: PINK, textShadow: SHADOW + ', 0 0 30px rgba(255,143,177,0.5)', opacity: 0, transformOrigin: '50% 90%' }, root, '?')
-  const taurusLbl = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (CY - 210) + 'px', textAlign: 'center', fontFamily: INTER, fontWeight: 800,
-    fontSize: '104px', lineHeight: 1, color: TAU.color, textShadow: SHADOW + `, 0 0 40px ${rgba(TAU.color, 0.45)}`, opacity: 0, letterSpacing: '0.02em' }, root,
-    `TAURUS <span style="font-family:${GLYPH_FONT.replace(/'/g, '&#39;')};font-weight:700">${TAU.glyph}&#xFE0E;</span>`)
-  const counter = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (CY + 196) + 'px', textAlign: 'center', fontFamily: MONO, fontWeight: 700,
-    fontSize: '40px', letterSpacing: '0.12em', color: GOLD, textShadow: SHADOW, opacity: 0 }, root, '')
+  const SUBS = [[P1, [8.75, 8.93]], [P2, [11.7, 11.88]], [P3, [14.4, 14.58]], [P4, [19.2, 19.45]]]
 
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
+  const B = (k, n = 8, d = 90) => makeBurst(200 + k, n, d)
 
-  // twinkling pixel stars around the edges in the opening
-  const r = rng(777)
-  const STARS = Array.from({ length: 12 }, (_, i) => {
-    let px, py
-    do { px = 50 + r() * 980; py = 120 + r() * 1760 } while (Math.hypot(px - CX, py - CY) < 520 || (py > 130 && py < 580) || Math.hypot(px - 930, py - 150) < 120 || (py > 1530 && py < 1720))
-    return { x: px, y: py, kind: i % 4, size: 14 + Math.round(r() * 2) * 7, seed: i * 17 + 3, sp: 0.8 + r() * 0.8, t0: 0.3 + r() * 1.4, color: [GOLD, '#c9a6ff', PINK, '#8fd8f6'][i % 4] }
-  })
-  const B = k => makeBurst(100 + k, 8, 90)
-  const B_YOU = B(1), B_YOU2 = B(2), B_SUN = B(3), B_LAND = makeBurst(4, 12, 130), B_MOON = B(5), B_CROSS = [B(6), B(7)], B_SUNL = B(8), B_MOONL = B(9), B_RISE = makeBurst(10, 10, 110)
-  const B_GLYPH = SIGNS.map((_, i) => makeBurst(30 + i, 5, 60))
+  // ── title: big glyphs + a gold "?" floating in zero-g
+  const FLOAT = [
+    { g: '♈', c: SIGNS[0].color, x: 200, y: 760, s: 120, sp: 22, t0: BEAT(2) },
+    { g: '♋', c: SIGNS[3].color, x: 875, y: 800, s: 104, sp: -18, t0: BEAT(2) + 0.14 },
+    { g: '♎', c: SIGNS[6].color, x: 225, y: 1330, s: 112, sp: -26, t0: BEAT(3) },
+    { g: '♑', c: SIGNS[9].color, x: 860, y: 1300, s: 120, sp: 16, t0: BEAT(3) + 0.14 },
+    { g: '♌', c: SIGNS[4].color, x: 540, y: 1560, s: 96, sp: 30, t0: BEAT(4) },
+  ].map((f, i) => ({ ...f, b: B(i, 6, 70) }))
+  function drawTitle(t) {
+    if (t > 3.7) return
+    x.save(); x.textAlign = 'center'; x.textBaseline = 'middle'
+    FLOAT.forEach((f, i) => {
+      if (t < f.t0) return
+      const k = pop01(t, f.t0, 0.42) * outScale(t, T.q0Out + i * 0.04)
+      if (k <= 0) return
+      const bx = f.x + 14 * Math.sin(t * 1.3 + i), by = f.y + 22 * Math.sin(t * 1.7 + i * 2)
+      x.save(); x.translate(bx, by); x.rotate((f.sp * (t - f.t0) + 10 * i) * D2R); x.scale(k, k)
+      x.shadowColor = f.c; x.shadowBlur = 26; x.fillStyle = f.c; x.font = `bold ${f.s}px ${GLYPH_FONT}`
+      x.fillText(f.g + '︎', 0, 0); x.restore()
+      drawBurst(x, f.b, bx, by, t, f.t0, f.c, 0.6)
+    })
+    // the gold "?" tumbling slowly in the middle
+    const qk = t >= T.q0 ? pop01(t, T.q0, 0.5) * outScale(t, T.q0Out + 0.1) : 0
+    if (qk > 0) {
+      const by = 1040 + 26 * Math.sin((t - T.q0) * 2.2)
+      x.save(); x.translate(540, by); x.rotate((18 * Math.sin((t - T.q0) * 1.6) + 40 * (t - T.q0)) * D2R); x.scale(qk, qk)
+      x.shadowColor = rgba(GOLD, 0.8); x.shadowBlur = 40; x.fillStyle = GOLD; x.font = `800 300px ${INTER}`
+      x.fillText('?', 0, 0); x.restore()
+    }
+    x.restore()
+  }
 
-  /** the wheel: equals drawWheelH exactly when rot = 0, scale = 1 and every pop has settled */
-  function drawWheel(t) {
-    if (t < T.ring[0]) return
-    const rot = rotAt(t)
-    const rk = prog(t, ...T.ring), sc = rk >= 1 ? 1 : lerp(0.55, 1, easeOutBack(rk, 2.2)), ak = clamp(rk * 3)
-    const glow = 1 - ease.inOutQuad(prog(t, 17.6, 18.6))
-    x.save()
-    x.translate(CX, CY); x.scale(sc, sc); x.translate(-CX, -CY)
-    // bands: the H wash, plus flashes (Taurus landing, a new Rising sign, the final three)
-    SIGNS.forEach((s, i) => {
-      const a1 = angOf(L(i * 30, t)), a0 = angOf(L(i * 30 + 30, t))
-      let fl = 0
-      if (s.id === 'taurus') fl = Math.max(fl, Math.sin(Math.PI * prog(t, T.taurus, T.taurus + 0.9)), 0.6 * Math.sin(Math.PI * prog(t, T.lblSun, T.lblSun + 0.8)))
-      if (s.id === 'sagittarius') fl = Math.max(fl, 0.55 * Math.sin(Math.PI * prog(t, T.moonIn, T.moonWalk[1] + 0.3)), 0.6 * Math.sin(Math.PI * prog(t, T.lblMoon, T.lblMoon + 0.8)))
-      if (s.id === 'libra') fl = Math.max(fl, 0.6 * Math.sin(Math.PI * prog(t, T.rising, T.rising + 0.8)))
-      // the sign on the horizon (9 o'clock) during the spin
-      if (t >= T.spin[0] - 0.2 && t < T.rewind[0] + 0.3) {
-        const onH = Math.floor(((rot % 360) + 360) % 360 / 30)
-        if (onH === i) fl = Math.max(fl, 0.5 * ease.inOutQuad(prog(t, T.spin[0] - 0.2, T.spin[0] + 0.2)) * (1 - ease.inOutQuad(prog(t, T.rewind[0], T.rewind[0] + 0.3))))
+  // ── Q1: top-down Sun, Earth, the zodiac band and a line of sight
+  const S1 = { cx: 540, cy: 1040, rIn: 345, rOut: 430, orbit: 205 }
+  const B_SUN = B(10, 10, 120), B_EARTH = B(11), B_TAU = B(12, 12, 140), B_CAL = B(13)
+  function drawQ1(t) {
+    if (t < T.sun - 0.05 || t > T.q1Out + 0.6) return
+    const { cx, cy } = S1
+    const outAll = i => outScale(t, T.q1Out + i * 0.05)
+    // band
+    const lit = i => i === 1 ? ease.outCubic(prog(t, T.taurus, T.taurus + 0.25)) * (0.85 + 0.15 * Math.sin((t - T.taurus) * 6)) : 0
+    drawBand(x, cx, cy, S1.rIn, S1.rOut, 52, i => pop01(t, T.band0 + i * T.bandGap, 0.36) * outAll(0), lit)
+    // Earth's orbit (dashed, draws in)
+    const ok = ease.inOutCubic(prog(t, ...T.orbit)) * outAll(1)
+    if (ok > 0) {
+      x.save(); glowStroke(x, BONE, 4, 10); x.globalAlpha = 0.55 * clamp(ok * 1.5); x.setLineDash([16, 18])
+      x.beginPath(); x.arc(cx, cy, S1.orbit, angOf(EARTH_LON - 200), angOf(EARTH_LON - 200 + 360 * clamp(ok)), true); x.stroke(); x.restore()
+    }
+    // line of sight: Earth → Sun → the band (lands in Taurus)
+    const ePos = at(cx, cy, lerp(EARTH_LON - 70, EARTH_LON, easeOutBack(prog(t, ...T.earthMove), 1.5)), S1.orbit)
+    const sk = ease.inOutCubic(prog(t, ...T.sight)) * outAll(1)
+    if (sk > 0) {
+      const end = at(cx, cy, SUN_LON, (S1.rIn + S1.rOut) / 2)
+      x.save(); glowStroke(x, GOLD, 6, 18); x.globalAlpha = 0.95; x.setLineDash([22, 16]); x.lineDashOffset = -t * 60
+      x.beginPath(); x.moveTo(ePos.x, ePos.y); x.lineTo(lerp(ePos.x, end.x, sk), lerp(ePos.y, end.y, sk)); x.stroke()
+      x.setLineDash([])
+      // a little eye-ish chevron at Earth's end (an arrowhead pointing along the sight line, no face)
+      if (sk >= 1) {
+        const a = Math.atan2(end.y - ePos.y, end.x - ePos.x), tip = { x: end.x - Math.cos(a) * 30, y: end.y - Math.sin(a) * 30 }
+        x.beginPath(); x.moveTo(tip.x - Math.cos(a - 0.5) * 34, tip.y - Math.sin(a - 0.5) * 34); x.lineTo(tip.x, tip.y); x.lineTo(tip.x - Math.cos(a + 0.5) * 34, tip.y - Math.sin(a + 0.5) * 34); x.stroke()
       }
-      x.globalAlpha = ak * (0.16 + 0.34 * fl); x.fillStyle = s.color
-      x.beginPath(); x.arc(CX, CY, WHEEL.rOut, a1, a0, true); x.arc(CX, CY, WHEEL.rIn, a0, a1, false); x.closePath(); x.fill()
-    })
-    x.globalAlpha = WHEEL.alpha * ak
-    x.strokeStyle = BONE
-    if (glow > 0) { x.shadowColor = rgba(GOLD, 0.6); x.shadowBlur = 16 * glow }
-    x.lineWidth = 4; x.beginPath(); x.arc(CX, CY, WHEEL.rOut, 0, Math.PI * 2); x.stroke()
-    x.lineWidth = 3; x.beginPath(); x.arc(CX, CY, WHEEL.rIn, 0, Math.PI * 2); x.stroke()
-    for (let i = 0; i < 12; i++) {
-      const a = ptOf(L(i * 30, t), WHEEL.rIn), b = ptOf(L(i * 30, t), WHEEL.rOut)
-      x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(b.x, b.y); x.stroke()
-    }
-    x.shadowBlur = 0
-    // glyphs pop in one by one with a bounce, upright as the wheel turns
-    x.font = `bold 58px ${GLYPH_FONT}`; x.textAlign = 'center'; x.textBaseline = 'middle'
-    SIGNS.forEach((s, i) => {
-      const g0 = T.glyph0 + i * T.glyphGap, gk = prog(t, g0, g0 + 0.42)
-      if (gk <= 0) return
-      const p = ptOf(L(i * 30 + 15, t), WHEEL.rGlyph)
-      const gsc = gk >= 1 ? 1 : lerp(0.2, 1, easeOutBack(gk, 3.4))
-      x.save(); x.translate(p.x, p.y); x.scale(gsc, gsc)
-      x.globalAlpha = clamp(gk * 4); x.fillStyle = s.color
-      x.fillText(s.glyph + '︎', 0, 0)
       x.restore()
-      drawBurst(x, B_GLYPH[i], p.x, p.y, t, g0, s.color, 0.5)
-    })
-    x.restore()
-    // the horizon marker during the spin
-    const hz = ease.outCubic(prog(t, T.spin[0] - 0.35, T.spin[0])) * outScale(t, T.rewind[0])
-    if (hz > 0) {
-      x.save(); x.globalAlpha = clamp(hz); x.strokeStyle = GOLD; x.lineWidth = 6; x.lineCap = 'round'
-      x.shadowColor = rgba(GOLD, 0.8); x.shadowBlur = 14
-      const x0 = CX - WHEEL.rOut - 46, x1 = CX - WHEEL.rIn + 30
-      x.beginPath(); x.moveTo(x0, CY); x.lineTo(lerp(x0, x1, clamp(hz)), CY); x.stroke()
+      drawBurst(x, B_TAU, end.x, end.y, t, T.taurus - 0.02, TAU.color, 0.8)
+    }
+    // the Sun (big, centre) and Earth (small, blue)
+    const sunK = t >= T.sun ? pop01(t, T.sun, 0.45) * outAll(2) : 0
+    orb(x, cx, cy, 70 * sunK * (1 + 0.03 * Math.sin(t * 4)), GOLD, clamp(sunK * 2), 3.2)
+    drawBurst(x, B_SUN, cx, cy, t, T.sun, GOLD, 0.7)
+    if (t >= T.earth) {
+      const ek = pop01(t, T.earth, 0.4) * outAll(3)
+      orb(x, ePos.x, ePos.y, 28 * ek, EARTH, clamp(ek * 2), 3.4)
+      if (ek > 0.2) {   // a tiny green continent so it reads as Earth
+        x.save(); x.globalAlpha = clamp(ek); x.beginPath(); x.arc(ePos.x, ePos.y, 28 * ek, 0, Math.PI * 2); x.clip()
+        x.fillStyle = 'rgba(70,200,140,0.75)'; x.beginPath(); x.ellipse(ePos.x - 6 * ek, ePos.y + 4 * ek, 12 * ek, 8 * ek, 0.6, 0, Math.PI * 2); x.fill(); x.restore()
+      }
+      drawBurst(x, B_EARTH, ePos.x, ePos.y, t, T.earth, EARTH, 0.6)
+      // label
+      x.save(); x.globalAlpha = clamp(ek * 2) * outK(t, [T.sight[0], T.sight[0] + 0.2]); x.font = `800 42px ${INTER}`; x.fillStyle = BONE; x.textAlign = 'center'
+      x.shadowColor = 'rgba(6,4,18,0.95)'; x.shadowBlur = 12; x.fillText('Earth', ePos.x + 6, ePos.y + 76); x.restore()
+    }
+    // MAY 12 page flips in beside Earth, with a little tail
+    if (t >= T.cal) {
+      const fk = easeOutBack(prog(t, T.cal, T.cal + 0.45), 2.2), ck = outAll(4)
+      const px = 845, py = 700
+      x.save(); glowStroke(x, BONE, 4, 8); x.globalAlpha = 0.7 * clamp(fk) * clamp(ck); x.setLineDash([8, 10])
+      x.beginPath(); x.moveTo(px - 70, py + 80); x.lineTo(ePos.x + 30, ePos.y - 24); x.stroke(); x.restore()
+      drawPage(x, px, py, 190 * ck, 210 * ck, 'MAY', '12', fk, clamp(ck * 2))
+      drawBurst(x, B_CAL, px, py, t, T.cal + 0.15, ROSE, 0.6)
+    }
+    // "TAURUS ♉" pops big in the empty quadrant
+    if (t >= T.taurus) {
+      const k = pop01(t, T.taurus, 0.45) * outAll(5)
+      const wob = 6 * Math.sin((t - T.taurus) * 13) * Math.exp(-(t - T.taurus) * 3.5)
+      x.save(); x.translate(540, 488); x.rotate(wob * D2R); x.scale(k, k); x.globalAlpha = clamp(k * 2)
+      x.textAlign = 'center'; x.textBaseline = 'middle'; x.shadowColor = rgba(TAU.color, 0.7); x.shadowBlur = 30; x.fillStyle = TAU.color
+      x.font = `800 100px ${INTER}`; const w = x.measureText('TAURUS').width
+      x.fillText('TAURUS', -40, 0); x.font = `bold 100px ${GLYPH_FONT}`; x.fillText(TAU.glyph + '︎', w / 2 + 16, 4)
       x.restore()
     }
   }
 
-  function drawClock(t) {
-    const k = pop01(t, T.clockIn, 0.4) * outScale(t, T.clockOut)
-    if (k <= 0 || t < T.clockIn) return
-    const R = 150, h = clockH(t), hDot = (clockH(t + 0.02) - clockH(t - 0.02)) / 0.04   // hours per second
-    x.save(); x.translate(CX, CY - 10); x.scale(k, k)
-    x.globalAlpha = clamp(k * 2)
-    x.fillStyle = 'rgba(12,9,28,0.72)'; x.beginPath(); x.arc(0, 0, R, 0, Math.PI * 2); x.fill()
-    x.strokeStyle = BONE; x.lineWidth = 9; x.shadowColor = rgba(GOLD, 0.6); x.shadowBlur = 18
-    x.beginPath(); x.arc(0, 0, R, 0, Math.PI * 2); x.stroke(); x.shadowBlur = 0
-    for (let i = 0; i < 12; i++) {
-      const a = (i / 12) * Math.PI * 2, big = i % 3 === 0
-      x.lineWidth = big ? 8 : 4; x.lineCap = 'round'
-      x.beginPath(); x.moveTo(Math.cos(a) * (R - (big ? 34 : 24)), Math.sin(a) * (R - (big ? 34 : 24))); x.lineTo(Math.cos(a) * (R - 14), Math.sin(a) * (R - 14)); x.stroke()
-    }
-    const hand = (ang, len, w, col) => { x.strokeStyle = col; x.lineWidth = w; x.beginPath(); x.moveTo(-Math.sin(ang) * len * 0.15, Math.cos(ang) * len * 0.15); x.lineTo(Math.sin(ang) * len, -Math.cos(ang) * len); x.stroke() }
-    // minute hand: when it whizzes faster than the eye (> 3 turns/s) it becomes a soft blur disc
-    const mAng = (5 + h) * Math.PI * 2, blur = clamp((hDot - 3) / 4)
-    if (blur > 0) { x.globalAlpha = clamp(k * 2) * 0.2 * blur; x.fillStyle = BONE; x.beginPath(); x.arc(0, 0, R - 36, 0, Math.PI * 2); x.fill() }
-    x.globalAlpha = clamp(k * 2) * (1 - 0.75 * blur)
-    hand(mAng, R - 36, 9, BONE)
-    x.globalAlpha = clamp(k * 2)
-    hand(((5 + h) / 12) * Math.PI * 2, R - 72, 14, GOLD)
-    x.fillStyle = GOLD; x.beginPath(); x.arc(0, 0, 13, 0, Math.PI * 2); x.fill()
+  // ── Q2a: a flipping calendar while the Moon hops from sign to sign
+  const STRIP = ['scorpio', 'sagittarius', 'capricorn', 'aquarius'].map(sign)
+  const SX = i => 540 + (i - 1.5) * 232, SY = 1235
+  const B_MOON = HOPS.map((_, i) => B(20 + i)), B_DAY = B(25, 6, 80)
+  function drawQ2a(t) {
+    if (t < T.cal2 - 0.05 || t > T.q2aOut + 0.5) return
+    const d = dayAt(t)
+    // the sign strip
+    x.save(); x.textAlign = 'center'; x.textBaseline = 'middle'
+    STRIP.forEach((s, i) => {
+      const k = pop01(t, T.cal2 + 0.1 + i * 0.07, 0.36) * outScale(t, T.q2aOut + i * 0.04)
+      if (k <= 0) return
+      const moonHere = (d < HOPS[0] ? 0 : d < HOPS[1] ? 1 : d < HOPS[2] ? 2 : 3) === i
+      const L = moonHere ? 1 : 0
+      x.save(); x.translate(SX(i), SY); x.scale(k, k); x.globalAlpha = clamp(k * 2)
+      x.beginPath(); x.roundRect(-102, -96, 204, 192, 26)
+      x.fillStyle = rgba(s.color, 0.24 + 0.32 * L); x.fill()
+      glowStroke(x, L ? s.color : BONE, 6, 10 + 18 * L); x.globalAlpha = clamp(k * 2) * (0.8 + 0.2 * L); x.stroke()
+      x.shadowBlur = 0; x.globalAlpha = clamp(k * 2)
+      x.fillStyle = s.color; x.font = `bold 92px ${GLYPH_FONT}`; x.fillText(s.glyph + '︎', 0, 6)
+      x.fillStyle = BONE; x.font = `800 30px ${INTER}`; x.fillText(s.name.toUpperCase(), 0, 128)
+      x.restore()
+    })
     x.restore()
+    // the calendar page (flips each day)
+    const ck = pop01(t, T.cal2, 0.42) * outScale(t, T.q2aOut + 0.1)
+    if (ck > 0) {
+      const day = Math.min(DAYS, Math.floor(d)) + 1, ft = d - Math.floor(d)
+      const flip = t < T.days[0] || d >= DAYS ? 1 : ease.outCubic(clamp(ft / 0.35))
+      // the page underneath, then the new page hinging down over it
+      if (flip < 1) drawPage(x, 540, 830, 300 * ck, 300 * ck, 'DAY', String(day - 1), 1, clamp(ck * 2))
+      drawPage(x, 540, 830, 300 * ck, 300 * ck, 'DAY', String(day), flip, clamp(ck * 2))
+      if (flip < 1 && day > 1) drawBurst(x, B_DAY, 540, 700, t, T.days[0] + (day - 1) / DAYS * (T.days[1] - T.days[0]), BONE, 0.4)
+    }
+    // the Moon hops panel to panel (squash on landing)
+    const mk = pop01(t, T.cal2 + 0.35, 0.4) * outScale(t, T.q2aOut + 0.16)
+    if (mk > 0 && t >= T.cal2 + 0.35) {
+      const hopDur = 0.34 * DAYS / (T.days[1] - T.days[0])         // in days
+      let px = SX(0), py = SY - 2, sq = 1
+      for (let h = 0; h < HOPS.length; h++) {
+        const p = clamp((d - HOPS[h] + hopDur / 2) / hopDur)
+        if (p > 0) { px = lerp(SX(h), SX(h + 1), ease.inOutQuad(p)); py = SY - 2 - 190 * Math.sin(Math.PI * p) }
+        const land = (d - HOPS[h] - hopDur / 2) / hopDur
+        if (land > 0 && land < 0.6) sq = 1 - 0.2 * Math.sin(Math.PI * land / 0.6)
+      }
+      x.save(); x.translate(px, py); x.scale(1 / sq, sq); orb(x, 0, 0, 36 * mk, SILVER, clamp(mk * 2), 3.4); x.restore()
+      HOPS.forEach((hd, h) => drawBurst(x, B_MOON[h], SX(h + 1), SY, t, T.days[0] + (hd + hopDur / 2) / DAYS * (T.days[1] - T.days[0]), SILVER, 0.55))
+    }
   }
 
-  function drawPlacements(t) {
-    // the Sun: pops in at Aries, rolls to Taurus and lands with a bounce; rides the wheel after
-    if (t >= T.sunIn) {
-      const rl = prog(t, ...T.roll), lon = SUN_LON * easeOutBack(rl, 1.4)
-      const k = pop01(t, T.sunIn, 0.4) * outScale(t, T.placeOut + 0.2)
-      const p = ptOf(L(lon, t), TRACK)
-      const roll = -(lon * Math.PI / 180) * (TRACK / 34)            // the glint turns as it rolls
-      const squash = 1 + 0.12 * Math.sin(Math.PI * prog(t, T.roll[1] - 0.15, T.roll[1] + 0.25))
-      orb(x, p.x, p.y, 34 * k * squash, GOLD, clamp(k * 2), 4, roll - Math.PI / 4)
-      drawBurst(x, B_SUN, ptOf(0, TRACK).x, ptOf(0, TRACK).y, t, T.sunIn, GOLD, 0.6)
-      drawBurst(x, B_LAND, p.x, p.y, t, T.taurus - 0.05, TAU.color, 0.8)
-      label(t, p, lon, T.lblSun, 'Sun', TAU, B_SUNL)
+  // ── Q2b: a spinning Earth; the pin-person's horizon sweeps the band; ~2 HRS stopwatch
+  const S2 = { cx: 540, cy: 1085, rE: 140, rIn: 300, rOut: 380 }
+  const CONT = (() => { const r = rng(91); return Array.from({ length: 6 }, (_, i) => ({ a: i * 1.05 + r() * 0.4, d: 40 + r() * 70, rx: 30 + r() * 30, ry: 18 + r() * 22, rot: r() * 3 })) })()
+  const B_RISE = ASC_CROSS.map((_, i) => B(30 + i, 8, 90)), B_GLOBE = B(35, 10, 120)
+  function drawQ2b(t) {
+    if (t < T.globe - 0.05 || t > T.q2bOut + 0.5) return
+    const { cx, cy, rE } = S2
+    const out = i => outScale(t, T.q2bOut + i * 0.05)
+    const asc = ascAt(t), ascSign = Math.floor(asc / 30)
+    const tangentReach = Math.atan(Math.sqrt(((S2.rIn + S2.rOut) / 2) ** 2 - rE ** 2) / rE)
+    const aP = angOf(asc) + tangentReach                          // the pin-person's screen angle on the globe
+    // band around Earth; the rising panel lights
+    const litK = ease.outCubic(prog(t, T.spin[0] - 0.3, T.spin[0]))
+    drawBand(x, cx, cy, S2.rIn, S2.rOut, 46, i => pop01(t, T.globe + 0.1 + i * 0.035, 0.34) * out(0), i => i === ascSign ? litK : 0)
+    // the globe (continents turn with it)
+    const gk = pop01(t, T.globe, 0.45) * out(1)
+    if (gk > 0) {
+      x.save(); x.translate(cx, cy); x.scale(gk, gk)
+      const gg = x.createRadialGradient(-40, -50, 10, 0, 0, rE)
+      gg.addColorStop(0, '#9fd0ff'); gg.addColorStop(0.5, EARTH); gg.addColorStop(1, '#2350a8')
+      x.globalAlpha = clamp(gk * 2); x.fillStyle = gg; x.beginPath(); x.arc(0, 0, rE, 0, Math.PI * 2); x.fill()
+      x.save(); x.clip(); x.rotate(aP + Math.PI / 2)
+      x.fillStyle = 'rgba(80,210,150,0.8)'
+      for (const c of CONT) { x.beginPath(); x.ellipse(Math.cos(c.a) * c.d, Math.sin(c.a) * c.d, c.rx, c.ry, c.rot, 0, Math.PI * 2); x.fill() }
+      x.restore()
+      glowStroke(x, BONE, 7, 18); x.beginPath(); x.arc(0, 0, rE, 0, Math.PI * 2); x.stroke()
+      x.restore()
+      drawBurst(x, B_GLOBE, cx, cy, t, T.globe, EARTH, 0.6)
     }
-    // the Moon: pops in at the start of Sagittarius and inches through it
-    if (t >= T.moonIn) {
-      const k = pop01(t, T.moonIn, 0.4) * outScale(t, T.placeOut + 0.1)
-      const lon = moonLon(t), p = ptOf(L(lon, t), TRACK)
-      orb(x, p.x, p.y, 26 * k, SILVER, clamp(k * 2), 3.8)
-      drawBurst(x, B_MOON, p.x, p.y, t, T.moonIn, SILVER, 0.6)
-      label(t, p, lon, T.lblMoon, 'Moon', SAG, B_MOONL)
+    // the pin-person and their horizon (tangent at their feet, east end marked)
+    const pk = pop01(t, T.globe + 0.3, 0.4) * out(2)
+    if (pk > 0 && t >= T.globe + 0.3) {
+      const nx = Math.cos(aP), ny = Math.sin(aP), feet = { x: cx + nx * rE, y: cy + ny * rE }
+      const ex = Math.cos(aP - Math.PI / 2), ey = Math.sin(aP - Math.PI / 2)    // east along the horizon
+      const L = Math.sqrt(((S2.rIn + S2.rOut) / 2) ** 2 - rE ** 2) * clamp(pk)
+      x.save(); glowStroke(x, GOLD, 6, 18); x.globalAlpha = 0.95 * clamp(pk)
+      x.beginPath(); x.moveTo(feet.x - ex * L, feet.y - ey * L); x.lineTo(feet.x + ex * L, feet.y + ey * L); x.stroke()
+      // the eastern end: an arrowhead + glow dot where the horizon meets the band
+      const E = { x: feet.x + ex * L, y: feet.y + ey * L }
+      x.beginPath(); x.moveTo(E.x - ex * 26 + nx * 18, E.y - ey * 26 + ny * 18); x.lineTo(E.x, E.y); x.lineTo(E.x - ex * 26 - nx * 18, E.y - ey * 26 - ny * 18); x.stroke()
+      x.restore()
+      // pictogram figure standing along the normal (no face)
+      x.save(); x.translate(feet.x, feet.y); x.rotate(aP + Math.PI / 2); x.scale(pk * 1.45, pk * 1.45)
+      glowStroke(x, BONE, 5, 12)
+      x.beginPath(); x.moveTo(-12, -2); x.lineTo(0, -26); x.lineTo(12, -2); x.moveTo(0, -26); x.lineTo(0, -56); x.moveTo(-16, -44); x.lineTo(16, -44); x.stroke()
+      x.fillStyle = BONE; x.beginPath(); x.arc(0, -72, 13, 0, Math.PI * 2); x.fill()
+      x.restore()
+      ASC_CROSS.forEach((tc, i) => { const p = at(cx, cy, 30 * (i + 1) + 15, (S2.rIn + S2.rOut) / 2); drawBurst(x, B_RISE[i], p.x, p.y, t, tc, SIGNS[i + 1].color, 0.55) })
     }
-    // Rising: a marker at ~12° Libra (spike through the ring + orb)
-    if (t >= T.rising) {
-      const k = pop01(t, T.rising, 0.4) * outScale(t, T.placeOut)
-      const p = ptOf(RISING_LON, TRACK), a = ptOf(RISING_LON, TRACK + 30), b = ptOf(RISING_LON, WHEEL.rOut + 34)
-      x.save(); x.globalAlpha = clamp(k); x.strokeStyle = LIB.color; x.lineWidth = 6; x.lineCap = 'round'; x.shadowColor = LIB.color; x.shadowBlur = 14
-      x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(lerp(a.x, b.x, clamp(k)), lerp(a.y, b.y, clamp(k))); x.stroke(); x.restore()
-      orb(x, p.x, p.y, 26 * k, LIB.color, clamp(k * 2), 3.8)
-      drawBurst(x, B_RISE, p.x, p.y, t, T.rising, LIB.color, 0.7)
-      label(t, p, RISING_LON, T.rising + 0.05, 'Rising', LIB, null)
+    // the stopwatch: one sweep per sign, "~2 HRS"
+    const wk = pop01(t, T.globe + 0.2, 0.42) * out(3)
+    if (wk > 0 && t >= T.globe + 0.2) {
+      const sx = 885, sy = 650, R = 62
+      const bump = ASC_CROSS.reduce((m, tc) => Math.max(m, Math.sin(Math.PI * prog(t, tc, tc + 0.3))), 0)
+      x.save(); x.translate(sx, sy); x.scale(wk * (1 + 0.1 * bump), wk * (1 + 0.1 * bump)); x.globalAlpha = clamp(wk * 2)
+      x.fillStyle = 'rgba(14,10,32,0.8)'; x.beginPath(); x.arc(0, 0, R, 0, Math.PI * 2); x.fill()
+      glowStroke(x, BONE, 7, 14); x.beginPath(); x.arc(0, 0, R, 0, Math.PI * 2); x.stroke()
+      x.beginPath(); x.moveTo(0, -R - 4); x.lineTo(0, -R - 18); x.moveTo(-14, -R - 20); x.lineTo(14, -R - 20); x.stroke()
+      const ha = ((asc - ASC0) / 30) * Math.PI * 2
+      glowStroke(x, GOLD, 7, 12); x.beginPath(); x.moveTo(0, 0); x.lineTo(Math.sin(ha) * (R - 16), -Math.cos(ha) * (R - 16)); x.stroke()
+      x.fillStyle = GOLD; x.beginPath(); x.arc(0, 0, 8, 0, Math.PI * 2); x.fill()
+      x.shadowBlur = 10; x.shadowColor = 'rgba(6,4,18,0.95)'
+      x.font = `800 44px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = GOLD; x.fillText('~2 HRS', 0, R + 44)
+      x.restore()
     }
-  }
-  /** a two-line label inward of a placement: "Sun" (bone, bold) over "♉ Taurus" (sign colour) */
-  function label(t, p, lon, t0, word, s, burst) {
-    if (t < t0) return
-    const k = pop01(t, t0, 0.36) * outScale(t, T.placeOut + (word === 'Sun' ? 0.2 : word === 'Moon' ? 0.1 : 0))
-    if (k <= 0) return
-    const q = ptOf(L(lon, t), TRACK - (word === 'Sun' ? 116 : 140))
-    x.save(); x.translate(q.x, q.y); x.scale(k, k); x.globalAlpha = clamp(k * 2)
-    x.textAlign = 'center'; x.textBaseline = 'middle'; x.shadowColor = 'rgba(6,4,18,0.95)'; x.shadowBlur = 14
-    x.fillStyle = BONE; x.font = `800 52px ${INTER}`; x.fillText(word, 0, -28)
-    x.fillStyle = s.color; x.font = `bold 44px ${GLYPH_FONT}`
-    const nm = s.name; x.font = `800 44px ${INTER}`; const wn = x.measureText(nm).width
-    x.fillText(nm, 24, 26)
-    x.font = `bold 48px ${GLYPH_FONT}`; x.fillText(s.glyph + '︎', 24 - wn / 2 - 28, 26)
-    x.restore()
-    if (burst) drawBurst(x, burst, p.x, p.y, t, t0, s.color, 0.6)
   }
 
-  function drawYou(t) {
-    const k1 = t >= T.you ? Math.max(0, ease.spring(prog(t, T.you, T.you + 0.7), 0.3)) * outScale(t, T.youOut1) : 0
-    const k2 = t >= T.youBack ? Math.max(0, ease.spring(prog(t, T.youBack, T.youBack + 0.7), 0.3)) * outScale(t, T.youOut2) : 0
-    const k = Math.max(k1, k2)
-    if (k <= 0) return
-    const bob = 1 + 0.06 * Math.sin((t - T.you) * Math.PI * 2 / 1.111)
-    orb(x, CX, CY, 15 * k * bob, '#8fd8f6', 1, 4.2)
-    drawBurst(x, B_YOU, CX, CY, t, T.you, '#8fd8f6', 0.6)
-    drawBurst(x, B_YOU2, CX, CY, t, T.youBack, '#8fd8f6', 0.6)
-  }
-
-  function drawPixelStars(t) {
-    const out = 1 - ease.inOutQuad(prog(t, 3.6, 4.6))
-    if (out <= 0) return
-    x.save()
-    for (const s of STARS) {
-      const a = ease.outCubic(prog(t, s.t0, s.t0 + 0.8)) * out * (0.55 + 0.45 * noise1(t * s.sp, s.seed))
-      if (a <= 0.01) continue
-      x.globalAlpha = a; drawPixelStar(x, s.x, s.y, s.size, s.kind, s.color)
+  // ── cards: SUN ♉ TAURUS · MOON ♐ SAGITTARIUS · RISING ♎ LIBRA deal in and fan out
+  const CARDS = [
+    { role: 'SUN', s: TAU, rim: GOLD, x: 225, y: 1090, rot: -9 },
+    { role: 'MOON', s: SAG, rim: SILVER, x: 540, y: 1030, rot: 0 },
+    { role: 'RISING', s: LIB, rim: LIB.color, x: 855, y: 1090, rot: 9 },
+  ].map((c, i) => ({ ...c, t0: T.cards[i], b: B(40 + i, 10, 130) }))
+  function drawCards(t) {
+    if (t < T.cards[0] - 0.05 || t > T.cardsOut + 0.9) return
+    // draw back to front: left, right, then centre on top
+    for (const i of [0, 2, 1]) {
+      const c = CARDS[i]
+      if (t < c.t0) continue
+      const p = prog(t, c.t0, c.t0 + 0.5), e = easeOutBack(p, 1.8)
+      const o = prog(t, T.cardsOut + i * 0.1, T.cardsOut + i * 0.1 + 0.5), oe = ease.inCubic(o)
+      if (o >= 1) continue
+      const bob = 8 * Math.sin((t - c.t0) * 2.4 + i)
+      const cx = lerp(540, c.x, e) + (i - 1) * 500 * oe, cy = lerp(2200, c.y, e) + bob - 1300 * oe
+      const rot = lerp(c.rot * 3 - 30, c.rot, e) + (i - 1 || 0.6) * 40 * oe
+      const w = 280, h = 410
+      x.save(); x.translate(cx, cy); x.rotate(rot * D2R); x.globalAlpha = clamp(p * 4) * (1 - ease.inQuad(o))
+      x.shadowColor = 'rgba(0,0,0,0.55)'; x.shadowBlur = 40; x.shadowOffsetY = 16
+      x.fillStyle = 'rgba(16,12,36,0.86)'; x.beginPath(); x.roundRect(-w / 2, -h / 2, w, h, 30); x.fill()
+      x.shadowOffsetY = 0
+      const gr = x.createLinearGradient(0, -h / 2, 0, h / 2); gr.addColorStop(0, rgba(c.rim, 0.22)); gr.addColorStop(1, rgba(c.rim, 0.04))
+      x.fillStyle = gr; x.fill()
+      glowStroke(x, c.rim, 9, 26); x.beginPath(); x.roundRect(-w / 2, -h / 2, w, h, 30); x.stroke()
+      x.shadowBlur = 0; x.lineWidth = 2; x.globalAlpha *= 0.4; x.beginPath(); x.roundRect(-w / 2 + 16, -h / 2 + 16, w - 32, h - 32, 20); x.stroke()
+      x.globalAlpha = clamp(p * 4) * (1 - ease.inQuad(o))
+      x.textAlign = 'center'; x.textBaseline = 'middle'
+      x.fillStyle = c.rim; x.font = `700 36px ${MONO}`; x.fillText(c.role, 0, -h / 2 + 58)
+      x.shadowColor = c.s.color; x.shadowBlur = 30; x.fillStyle = c.s.color; x.font = `bold 170px ${GLYPH_FONT}`; x.fillText(c.s.glyph + '︎', 0, 4)
+      x.shadowBlur = 0; x.fillStyle = BONE; x.font = `800 ${c.s.name.length > 8 ? 33 : 48}px ${INTER}`; x.fillText(c.s.name.toUpperCase(), 0, h / 2 - 66)
+      x.restore()
+      drawBurst(x, c.b, c.x, c.y, t, c.t0 + 0.3, c.rim, 0.7)
     }
-    x.restore()
   }
 
   return {
@@ -324,42 +437,14 @@ async function build(stage) {
     update(t) {
       const ss = ease.inOutCubic(prog(t, 0, 3.4))
       drawSky(x, t, t < 3.4 ? { ...SKY_H, zoom: lerp(1.58, SKY_H.zoom, ss), dy: lerp(-30, 0, ss) } : SKY_H)
-      if (t >= SETTLE) drawWheelH(x)
-      else {
-        drawPixelStars(t)
-        drawWheel(t)
-        drawClock(t)
-        drawPlacements(t)
-        drawYou(t)
-      }
+      if (t < SETTLE) { drawTitle(t); drawQ1(t); drawQ2a(t); drawQ2b(t); drawCards(t) }
       black.style.opacity = String(1 - ease.inOutQuad(prog(t, 0, 0.5)))
-
       for (const [e, t0, o] of EYES) {
         const p = ease.outCubic(prog(t, t0, t0 + 0.35))
         e.style.opacity = String(p * outK(t, o)); e.style.transform = `translateY(${((1 - p) * 16).toFixed(2)}px)`
       }
       for (const [h, o] of HEADS) h.update(t, outK(t, o))
       for (const [p, o] of SUBS) p.update(t, outK(t, o))
-      // "you" + its bouncing "?"
-      const yl = prog(t, T.you + 0.15, T.you + 0.5), yl2 = prog(t, T.youBack + 0.15, T.youBack + 0.5)
-      const ylk = t < 12 ? clamp(yl * 3) * outK(t, [T.youOut1 - 0.1, T.youOut1 + 0.1]) : clamp(yl2 * 3) * outK(t, [T.youOut2 - 0.1, T.youOut2 + 0.1])
-      youLbl.style.opacity = String(ylk)
-      youLbl.style.transform = `scale(${(0.6 + 0.4 * easeOutBack(t < 12 ? yl : yl2, 2.6)).toFixed(4)})`
-      const qk = pop01(t, T.q, 0.4) * outScale(t, T.qOut)
-      qMark.style.display = qk > 0 && t >= T.q ? 'block' : 'none'
-      const hop = Math.abs(Math.sin((t - T.q) * Math.PI / 0.5556))      // a hop per beat
-      qMark.style.opacity = String(clamp(qk * 2))
-      qMark.style.transform = `translateY(${(-26 * hop).toFixed(2)}px) scale(${(qk * (1 + 0.06 * (1 - hop))).toFixed(4)}, ${(qk * (1 - 0.06 * (1 - hop))).toFixed(4)}) rotate(${(8 * Math.sin((t - T.q) * 3)).toFixed(2)}deg)`
-      // TAURUS ♉ pops big when the Sun lands
-      const tk = pop01(t, T.taurus, 0.45)
-      taurusLbl.style.display = t >= T.taurus && t < T.taurusOut[1] ? 'block' : 'none'
-      taurusLbl.style.opacity = String(clamp(tk * 3) * outK(t, T.taurusOut))
-      taurusLbl.style.transform = `scale(${(0.3 + 0.7 * easeOutBack(prog(t, T.taurus, T.taurus + 0.45), 3)).toFixed(4)}) rotate(${(6 * Math.sin((t - T.taurus) * 13) * Math.exp(-(t - T.taurus) * 3.5)).toFixed(2)}deg)`
-      // the clock's counter
-      const ck = clamp(pop01(t, T.moonWalk[0], 0.3)) * outScale(t, T.clockOut)
-      counter.style.display = ck > 0 && t >= T.moonWalk[0] ? 'block' : 'none'
-      counter.style.opacity = String(clamp(ck * 2))
-      counter.textContent = t < T.spin[0] - 0.2 ? `+${(2.5 * ease.inOutQuad(prog(t, ...T.moonWalk))).toFixed(1)} DAYS` : `+${Math.floor(rotAt(Math.min(t, T.rewind[0])) / 15 + 1e-6)} HRS`
       drawGrain(gx, t)
     },
   }
@@ -368,26 +453,31 @@ async function build(stage) {
 export const SCENES = [build]
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
 const wordPops = (t0, n, gap, base = 0, gain = 0.03) => Array.from({ length: n }, (_, i) => ['pop', +(t0 + i * gap).toFixed(3), NOTE[(base + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
+const dayT = d => +(T.days[0] + d / DAYS * (T.days[1] - T.days[0])).toFixed(3)
 export const CUES = [
   ...wordPops(0.45, 2, 0.07, 0),
   ['pluck', BEAT(1), 1174.66, 0.05, 0.6, 0], ['pop', BEAT(1), 1318.51, 0.05, 0],                 // dummies.
-  ['pop', T.you, 880, 0.06, 0], ['pop', T.q, 1174.66, 0.045, 0.1],                               // you + ?
+  ['pop', BEAT(2), 740, 0.045, -0.3], ['pop', BEAT(2) + 0.14, 880, 0.045, 0.3], ['pop', BEAT(3), 987.77, 0.045, -0.3], ['pop', BEAT(3) + 0.14, 1174.66, 0.045, 0.3], ['pop', BEAT(4), 1318.51, 0.04, 0],
+  ['pluck', T.q0, 587.33, 0.04, 0.5, 0],
   ...wordPops(3.62, 3, 0.07, 1),
-  ['whoosh', T.ring[0], 0.5, 0.03],
-  ...SIGNS.map((_, i) => ['pop', +(T.glyph0 + i * T.glyphGap).toFixed(3), [587.33, 659.25, 739.99, 880, 987.77, 1108.73, 1174.66, 1318.51, 1479.98, 1174.66, 1318.51, 1396.91][i], 0.03, (i % 2 ? 0.2 : -0.2)]),
-  ['pop', T.sunIn, 740, 0.06, -0.2],
-  ['whoosh', T.roll[0], T.roll[1] - T.roll[0], 0.035],
-  ['pluck', T.taurus, 880, 0.055, 0.7, 0], ['pop', T.taurus, 1174.66, 0.06, 0], ['glitter', T.taurus, T.taurus + 0.8],
+  ['pop', T.sun, 587.33, 0.06, 0], ['glitter', T.sun, T.sun + 0.5],
+  ...SIGNS.map((_, i) => ['pop', +(T.band0 + i * T.bandGap).toFixed(3), [587.33, 659.25, 739.99, 880, 987.77, 1108.73, 1174.66, 1318.51, 1479.98, 1174.66, 1318.51, 1396.91][i], 0.025, (i % 2 ? 0.2 : -0.2)]),
+  ['whoosh', T.orbit[0], 0.45, 0.03],
+  ['pop', T.earth, 880, 0.06, 0.2], ['pop', T.cal, 1174.66, 0.05, 0.3], ['tick', T.cal + 0.2, 0.04],
+  ['whoosh', T.sight[0], 0.5, 0.035],
+  ['pluck', T.taurus, 880, 0.055, 0.7, 0], ['pop', T.taurus, 1174.66, 0.06, -0.2], ['glitter', T.taurus, T.taurus + 0.8],
   ...wordPops(6.75, 3, 0.06, 2, 0.022),
   ...wordPops(9.05, 4, 0.07, 3),
-  ['pop', T.clockIn, 987.77, 0.055, 0.1], ['pop', T.moonIn, 659.25, 0.05, -0.15],
-  ['riser', T.moonWalk[0], T.moonWalk[1], 0.03],
-  ...[0, 1, 2, 3, 4].map(i => ['tick', +(T.moonWalk[0] + 0.15 + i * 0.36).toFixed(3), 0.03]),
-  ['whoosh', T.spin[0], T.spin[1] - T.spin[0], 0.04],
-  ...[30, 60].map(d => ['pop', +(T.spin[0] + (T.spin[1] - T.spin[0]) * (d < 45 ? 0.464 : 0.63)).toFixed(3), d < 45 ? 880 : 987.77, 0.045, -0.3]),
+  ['pop', T.cal2, 987.77, 0.05, 0],
+  ...Array.from({ length: DAYS }, (_, d) => ['tick', dayT(d + 0.02), 0.035]),
+  ...HOPS.map((h, i) => ['pop', dayT(h), [659.25, 880, 1174.66][i], 0.06, (i - 1) * 0.3]),
+  ['pop', T.globe, 587.33, 0.06, 0], ['pop', T.globe + 0.2, 1318.51, 0.045, 0.3],
+  ['whoosh', T.spin[0], T.spin[1] - T.spin[0], 0.035],
+  ...ASC_CROSS.map((tc, i) => ['pop', +tc.toFixed(3), [740, 880, 987.77][i], 0.06, -0.25]),
+  ...ASC_CROSS.map(tc => ['tick', +(tc + 0.02).toFixed(3), 0.03]),
   ...wordPops(14.65, 4, 0.07, 0),
-  ['whoosh', T.rewind[0], 0.6, 0.035],
-  ['pop', T.lblSun, 740, 0.06, -0.2], ['pop', T.lblMoon, 880, 0.06, 0.2], ['pop', T.rising, 1108.73, 0.06, 0.3],
-  ['pop', T.youBack, 1318.51, 0.05, 0], ['glitter', T.youBack, T.youBack + 0.8], ['pluck', 17.15, 587.33, 0.045, 0.7, 0],
-  ...[0, 1, 2, 3].map(i => ['pop', +(T.placeOut + i * 0.08 + 0.12).toFixed(3), NOTE[5 - i], 0.025, (i - 1.5) * 0.2]),
+  ...T.cards.map((tc, i) => ['whoosh', +(tc - 0.05).toFixed(3), 0.35, 0.03]),
+  ...T.cards.map((tc, i) => ['pop', +(tc + 0.3).toFixed(3), [740, 880, 1108.73][i], 0.06, (i - 1) * 0.3]),
+  ['glitter', 17.1, 17.9], ['pluck', 17.15, 587.33, 0.045, 0.7, 0],
+  ['whoosh', T.cardsOut, 0.7, 0.04],
 ]
