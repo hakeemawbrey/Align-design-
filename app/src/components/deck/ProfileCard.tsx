@@ -4,6 +4,7 @@ import type { Profile } from '../../data/profiles'
 import { SIGNS, ELEMENT_COLOR } from '../../data/signs'
 import { CARD_W, CARD_H } from './fx'
 import { strengthWord } from '../Strength'
+import ElementBadge from '../ElementBadge'
 
 export type PeekState = 'none' | 'charging' | 'open' | 'sealing'
 
@@ -100,14 +101,9 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
         <div className="serif italic" style={{ position: 'absolute', left: 36, top: 16, fontSize: 23, color: 'var(--label-1)' }}>
           {profile.initial}, {profile.age}
         </div>
-        {/* moon badge */}
-        <div style={{
-          position: 'absolute', right: 26, top: 14, width: 38, height: 38, borderRadius: '50%',
-          background: `radial-gradient(circle at 30% 25%, ${sign.light} 0%, ${sign.color} 45%, #7b3df0 100%)`,
-          boxShadow: `0 0 14px ${sign.color}aa, inset 0 1px 1px rgba(255,255,255,0.6)`,
-          display: 'grid', placeItems: 'center',
-        }}>
-          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M15.5 3.2A9 9 0 1 0 20.8 15 7.2 7.2 0 0 1 15.5 3.2Z" fill="#1a0f2e" /></svg>
+        {/* element orb */}
+        <div style={{ position: 'absolute', right: 26, top: 14 }}>
+          <ElementBadge element={sign.element} size={38} />
         </div>
 
         {/* image panel */}

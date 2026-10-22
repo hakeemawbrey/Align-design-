@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import type { Profile } from '../../data/profiles'
 import { ELEMENT_COLOR, SIGNS } from '../../data/signs'
 import VeilPhoto from './VeilPhoto'
+import ElementBadge from '../ElementBadge'
 
 interface Props {
   p: Profile
@@ -14,21 +15,6 @@ interface Props {
 }
 
 const PHOTO_H = 216
-
-function MoonBadge() {
-  return (
-    <div style={{
-      width: 36, height: 36, borderRadius: '50%', flexShrink: 0,
-      background: 'radial-gradient(circle at 35% 30%, #ffd4f8 0%, #e163d6 45%, #9a3ad0 100%)',
-      boxShadow: '0 0 16px rgba(225,99,214,0.55), inset 0 1px 0 rgba(255,255,255,0.5)',
-      display: 'grid', placeItems: 'center',
-    }}>
-      <svg width="18" height="18" viewBox="0 0 24 24">
-        <path d="M15.5 3.2A9 9 0 1 0 20.8 15 7.2 7.2 0 0 1 15.5 3.2Z" fill="#3a1450" />
-      </svg>
-    </div>
-  )
-}
 
 function Chip({ label, color, pearl = false }: { label: string; color: string; pearl?: boolean }) {
   return (
@@ -78,7 +64,7 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
           <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 29, color: 'var(--label-1)', letterSpacing: '-0.01em' }}>
             {p.name}, {p.age}
           </div>
-          <MoonBadge />
+          <ElementBadge element={sign.element} />
         </div>
 
         {/* photo */}
