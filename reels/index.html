@@ -1,0 +1,947 @@
+<title>Align Gradient Reels</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Nunito:wght@800;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a sticky studio bar (what to make) over a queue of 9:16 post cards (what to keep); one post opens full size in a sheet. */
+:root {
+  --bg: #f6f3fb; --surface: #ffffff; --sunk: #eee9f6; --line: #ddd5ea;
+  --fg: #1d1729; --dim: #6c6380; --accent: #c2337a; --accent-fg: #ffffff;
+  --ok: #138a4b; --ok-soft: #dff3e8; --bad: #b4233c; --bad-soft: #fbe3e7;
+  --warn-soft: #fff1d6; --shadow: 0 1px 2px rgba(40,20,70,.06), 0 8px 24px rgba(40,20,70,.07);
+  --f-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --r: 12px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #120f19; --surface: #1b1725; --sunk: #241f31; --line: #332c44;
+  --fg: #f1ecfa; --dim: #a59bba; --accent: #ff6aa9; --accent-fg: #1a0c14;
+  --ok: #4fd28c; --ok-soft: #173326; --bad: #ff7a8e; --bad-soft: #3a1820;
+  --warn-soft: #3a2e12; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #120f19; --surface: #1b1725; --sunk: #241f31; --line: #332c44;
+  --fg: #f1ecfa; --dim: #a59bba; --accent: #ff6aa9; --accent-fg: #1a0c14;
+  --ok: #4fd28c; --ok-soft: #173326; --bad: #ff7a8e; --bad-soft: #3a1820;
+  --warn-soft: #3a2e12; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  color-scheme: dark }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); margin: 0; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+button, select, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1400px; margin: 0 auto; }
+
+/* studio bar */
+.studio { z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.studio .wrap { padding-block: 14px; display: flex; flex-direction: column; gap: 12px; }
+.brandrow { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.brand { font: 800 22px/1 var(--f-display); letter-spacing: -.02em; margin: 0; }
+.brand i { font-style: normal; background: linear-gradient(100deg, #ff5fa2, #b86bff 55%, #00c2ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sync { font: 500 12px var(--f-mono); color: var(--dim); display: inline-flex; align-items: center; gap: 6px; }
+.sync::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--dim); }
+.sync.cloud::before { background: var(--ok); }
+.sync.local::before { background: #d9a400; }
+.brandrow .spacer { flex: 1; }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.field { display: flex; flex-direction: column; gap: 3px; }
+.field label, .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--dim); font-weight: 600; }
+select, .custom input { background: var(--sunk); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; min-height: 38px; }
+.custom { display: flex; gap: 8px; min-width: 0; max-width: 720px; }
+.custom input { flex: 1; min-width: 0; }
+.btn { border: 1px solid var(--line); background: var(--sunk); border-radius: 10px; padding: 8px 14px; min-height: 38px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.btn:hover { border-color: var(--dim); }
+.btn:disabled { opacity: .55; cursor: progress; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.btn.claude { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+.btn.ok { background: var(--ok); border-color: var(--ok); color: #fff; }
+.btn.ghost { background: none; }
+.btn.small { min-height: 32px; padding: 5px 10px; font-size: 13px; }
+.status { font-size: 13px; color: var(--dim); min-height: 1.45em; }
+.status.err { color: var(--bad); }
+.toggles { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; color: var(--dim); }
+.toggles label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+
+/* tabs */
+.tabsbar .wrap { padding-block: 14px 4px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.tab { border: 1px solid var(--line); background: var(--surface); color: var(--dim); border-radius: 99px; padding: 6px 14px; font-size: 14px; font-weight: 600; display: inline-flex; gap: 8px; align-items: center; }
+.tab b { font: 500 12px var(--f-mono); color: var(--dim); }
+.tab[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.tab[aria-selected="true"] b { color: var(--bg); opacity: .7; }
+.tabsbar .spacer { flex: 1; }
+
+/* grid */
+main .wrap { padding-block: 14px 60px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(170px, 100%), 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); min-width: 0; }
+.card.approved { border-color: var(--ok); }
+.card.rejected { opacity: .62; }
+.card.ghost { min-height: 300px; }
+.thumbbtn { display: block; padding: 0; border: 0; background: var(--sunk); width: 100%; aspect-ratio: 9/16; max-width: 100%; position: relative; }
+.thumbbtn canvas { width: 100%; height: 100%; display: block; }
+.thumbbtn .ph { position: absolute; inset: 0; display: grid; place-items: center; color: var(--dim); font-size: 13px; }
+.cmeta { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 8px; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.chip { font: 600 11px var(--f-body); text-transform: uppercase; letter-spacing: .06em; padding: 3px 8px; border-radius: 99px; background: var(--sunk); color: var(--dim); }
+.chip.mode { color: #fff; }
+.chip.st-approved { background: var(--ok-soft); color: var(--ok); }
+.chip.st-rejected { background: var(--bad-soft); color: var(--bad); }
+.chip.st-posted { background: var(--warn-soft); color: var(--fg); }
+.chip.src { margin-left: auto; background: none; padding: 0; text-transform: none; letter-spacing: 0; font-family: var(--f-mono); font-weight: 500; }
+.cbtns { display: grid; grid-template-columns: 1fr 1fr auto; gap: 6px; }
+.cbtns .btn { justify-content: center; min-height: 34px; padding: 5px 8px; font-size: 13px; }
+.approve { background: var(--ok-soft); border-color: transparent; color: var(--ok); }
+.reject { background: var(--bad-soft); border-color: transparent; color: var(--bad); }
+.empty { grid-column: 1 / -1; border: 1px dashed var(--line); border-radius: var(--r); padding: 40px 20px; text-align: center; color: var(--dim); display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.empty h2 { font: 700 20px var(--f-display); color: var(--fg); margin: 0; text-wrap: balance; }
+.empty p { margin: 0; max-width: 52ch; }
+
+/* plan */
+.plan { display: flex; flex-direction: column; gap: 18px; }
+.planhead { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.planhead p { margin: 0; color: var(--dim); flex: 1 1 300px; min-width: 0; }
+.day { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+.day h3 { margin: 0; font: 700 17px var(--f-display); display: flex; gap: 10px; align-items: baseline; }
+.day h3 span { font: 500 12px var(--f-mono); color: var(--dim); }
+.slots { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
+.slot { display: grid; grid-template-columns: 84px 1fr; gap: 12px; align-items: start; min-width: 0; }
+.slot canvas { width: 84px; height: 149px; border-radius: 8px; display: block; }
+.slot .stext { min-width: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.slot .time { font: 500 12px var(--f-mono); color: var(--accent); }
+.slot pre { margin: 0; white-space: pre-wrap; word-break: break-word; font: 13px/1.4 var(--f-body); color: var(--fg); max-height: 6.2em; overflow: hidden; }
+.slot .row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* sheet */
+dialog.sheet { border: 0; padding: 0; background: var(--surface); color: var(--fg); border-radius: 16px; width: min(1000px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); box-shadow: 0 20px 80px rgba(0,0,0,.35); }
+dialog.sheet::backdrop { background: rgba(10,6,18,.6); }
+.sheetin { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 20px; padding: 18px; max-height: calc(100dvh - 24px); overflow: auto; }
+.bigwrap { position: relative; width: 100%; aspect-ratio: 9/16; max-width: 100%; border-radius: 12px; overflow: hidden; background: var(--sunk); align-self: start; }
+.bigwrap canvas { width: 100%; height: 100%; display: block; }
+.safe { position: absolute; inset: 0; pointer-events: none; }
+.safe div { position: absolute; background: repeating-linear-gradient(135deg, rgba(0,0,0,.28) 0 8px, rgba(0,0,0,.14) 8px 16px); color: #fff; font: 600 10px var(--f-mono); padding: 4px 6px; }
+.safe .top { left: 0; right: 0; top: 0; height: 11.5%; }
+.safe .bottom { left: 0; right: 0; bottom: 0; height: 21.9%; display: flex; align-items: flex-end; }
+.safe .side { right: 0; top: 40%; bottom: 21.9%; width: 13%; }
+.side-panel { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.sheethead { display: flex; gap: 8px; align-items: center; }
+.sheethead h2 { margin: 0; font: 700 20px var(--f-display); flex: 1; }
+textarea { width: 100%; background: var(--sunk); border: 1px solid var(--line); border-radius: 10px; padding: 10px; font: 14px/1.45 var(--f-body); resize: vertical; }
+textarea:focus { outline: none; border-color: var(--accent); }
+#sText { min-height: 90px; font-weight: 600; }
+#sCaption { min-height: 130px; }
+.swatches { display: flex; gap: 6px; flex-wrap: wrap; }
+.sw { width: 34px; height: 34px; border-radius: 50%; border: 2px solid transparent; padding: 0; }
+.sw[aria-pressed="true"] { border-color: var(--fg); }
+.btnrow { display: flex; gap: 8px; flex-wrap: wrap; }
+.kbd { font: 500 11px var(--f-mono); color: var(--dim); }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 10px; font-weight: 600; font-size: 14px; z-index: 30; box-shadow: var(--shadow); max-width: calc(100vw - 32px); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+@media (min-width: 900px) { .studio { position: sticky; top: env(safe-area-inset-top, 0px); } }
+@media (max-width: 720px) {
+  .sheetin { grid-template-columns: 1fr; }
+  .bigwrap { max-width: 300px; justify-self: center; }
+  .brand { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<header class="studio">
+  <div class="wrap">
+    <div class="brandrow">
+      <h1 class="brand"><i>Align</i> Gradient Reels</h1>
+      <span class="sync" id="sync">connecting…</span>
+      <span class="spacer"></span>
+      <div class="toggles">
+        <label><input type="checkbox" id="optCta"> CTA on image</label>
+        <label><input type="checkbox" id="optWm"> comealign.com watermark</label>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="field"><label for="genMode">Genre</label><select id="genMode"></select></div>
+      <div class="field"><label for="genSign">Sign</label><select id="genSign"></select></div>
+      <div class="field"><label for="genCount">How many</label>
+        <select id="genCount"><option>6</option><option selected>12</option><option>24</option></select></div>
+      <button class="btn claude" id="btnClaude" title="Opus 5.5 writes brand-new captions in this genre">✦ Write new with Claude</button>
+      <button class="btn" id="btnBank" title="Render lines from the built-in caption library with fresh gradients">From library</button>
+      <button class="btn" id="btnInspo" title="Upload a screenshot of a post you like; Claude copies its voice and colors">Copy an inspo post</button>
+      <input type="file" id="inspoFile" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+      <button class="btn ghost" id="btnStop" hidden>Stop</button>
+    </div>
+    <form class="custom" id="customForm">
+      <label class="sr" for="customText">Your own line</label>
+      <input id="customText" placeholder="Or type your own line and press Add…" maxlength="400" autocomplete="off">
+      <button class="btn" type="submit">Add</button>
+    </form>
+    <div class="status" id="status" role="status"></div>
+  </div>
+</header>
+
+<nav class="tabsbar" aria-label="Queue">
+  <div class="wrap" id="tabs" role="tablist"></div>
+</nav>
+
+<main><div class="wrap" id="view"></div></main>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sTitle">
+  <div class="sheetin">
+    <div class="bigwrap"><canvas id="bigCanvas" width="1080" height="1920"></canvas>
+      <div class="safe" id="safe" hidden><div class="top">IG header</div><div class="side"></div><div class="bottom">caption + audio overlay</div></div>
+    </div>
+    <div class="side-panel">
+      <div class="sheethead">
+        <h2 id="sTitle">Post</h2>
+        <button class="btn small ghost" id="sPrev" aria-label="Previous post">←</button>
+        <button class="btn small ghost" id="sNext" aria-label="Next post">→</button>
+        <button class="btn small ghost" id="sClose" aria-label="Close">✕</button>
+      </div>
+      <div class="chips" id="sChips"></div>
+      <div class="field"><label for="sText">On-image text</label><textarea id="sText" maxlength="600"></textarea></div>
+      <div class="field"><span class="lbl">Gradient</span><div class="swatches" id="sSwatches"></div></div>
+      <div class="toggles"><label><input type="checkbox" id="sSafe"> Show Instagram safe zones</label></div>
+      <div class="field"><label for="sCaption">Instagram caption (paste this)</label><textarea id="sCaption"></textarea></div>
+      <div class="btnrow">
+        <button class="btn small" id="sCopyCap">Copy caption</button>
+        <button class="btn small" id="sCopyCom">Copy first comment</button>
+      </div>
+      <div class="btnrow">
+        <button class="btn approve" id="sApprove">✓ Approve <span class="kbd">A</span></button>
+        <button class="btn reject" id="sReject">✕ Reject <span class="kbd">R</span></button>
+        <button class="btn" id="sUndo" hidden>↩ Back to pending</button>
+        <button class="btn" id="sPosted" hidden>Mark posted</button>
+      </div>
+      <div class="btnrow">
+        <button class="btn primary" id="sPng">Download PNG</button>
+        <button class="btn" id="sVideo">Download animated video</button>
+        <button class="btn" id="sMore">✦ More like this</button>
+      </div>
+      <div class="status" id="sStatus" role="status"></div>
+    </div>
+  </div>
+</dialog>
+
+<script type="application/json" id="bank">{"brainrot":[["aries","aries don't have red flags. they have a whole opening ceremony"],["taurus","taurus will cancel plans just to lay in bed and think about the plans"],["gemini","gemini has 4 personalities and somehow you're texting the wrong one rn"],["cancer","cancer said \"im over it\" then wrote a 3 page essay in their notes app"],["leo","leo apologizes like \"im sorry you made me do that\""],["virgo","virgo said \"im not judging\" with the eyes of someone filing a full report"],["libra","libra can't even pick a favorite color and you want them to pick a person??"],["scorpio","scorpio knows your birth time, your ex's birth time, and your wifi password. you met tuesday"],["sagittarius","sagittarius will ghost you from inside the same room"],["capricorn","capricorn flirts by sending you a calendar invite"],["aquarius","aquarius heard \"be normal\" one time and took it as a threat"],["pisces","pisces already had the whole relationship with you in their head. you lost. you weren't even there"]],"dating":[["aries","dating an aries is easy. just be exciting forever and never once be boring. good luck"],["taurus","how to win a taurus: feed them, don't rush them, never touch their side of the bed. that's the whole manual"],["gemini","asking for help: im dating a gemini and i need to know which one"],["cancer","if a cancer cooks for you, that was a proposal. legally you're engaged now"],["leo","date a leo and you'll never need a hype man again. you WILL need to clap though"],["virgo","a virgo criticizing your parking is a love language. it means they see a future with your car"],["libra","asking for a friend: how do you get a libra to choose you when they can't even choose a restaurant"],["scorpio","scorpio dating tip: they already know. whatever it is. they know. just confess"],["sagittarius","how to date a sagittarius: buy plane tickets. that's it. that's the tip"],["capricorn","a capricorn saying \"i took tomorrow off\" is the biggest romantic gesture in the zodiac. flowers could never"],["aquarius","dating an aquarius means being best friends for 4 years first. year 5 is when they notice"],["pisces","help. i complimented a pisces once and now im the main character of their dreams. no further questions"]],"delu":[["aries","he hasn't texted back in 3 days but im an aries so technically im still winning"],["taurus","im a taurus. im not stubborn. the universe is just wrong sometimes"],["gemini","im a gemini so when i contradict myself that's actually both of us agreeing"],["cancer","im a cancer. i didn't get attached too fast. you were just late"],["leo","im a leo and the room literally got brighter when i walked in. the room agrees"],["virgo","im a virgo. i don't have anxiety. i have a detailed awareness of everything that could go wrong"],["libra","im a libra so if i keep both of them that's not indecision. that's balance"],["scorpio","im a scorpio. i wasn't stalking his page. i was conducting research"],["sagittarius","im a sag. i didn't run from commitment. commitment was slow"],["capricorn","im a capricorn so this situationship is actually a 5 year investment strategy"],["aquarius","im an aquarius. im not emotionally distant. im in the group chat spiritually"],["pisces","im a pisces and he looked at me for 2 whole seconds so the wedding is in june"]],"hater":[["aries","i will never date an aries again. my ex was an aries and i aged 4 years in 4 months"],["taurus","not me stuck in a 2 hour argument with a taurus over something they already know they're wrong about. never again"],["gemini","my ex was a gemini and i still don't know which one of them i actually dated. block, delete, move states"],["cancer","dated a cancer once. still getting subtweeted about it. from 2021."],["leo","i will never date a leo again, i have thanked ONE (1) person for existing today and it wasn't the leo"],["virgo","my ex was a virgo and he critiqued my parking, my texting, and my personality. in that order. in one sitting."],["libra","dated a libra. asked where they wanted to eat. we are still deciding. it is 2026."],["scorpio","i will never date a scorpio again, i broke up with mine in my head and they somehow still knew before i said it"],["sagittarius","my ex was a sagittarius. he's currently 'finding himself' in a country he can't point to on a map. we were together 6 months."],["capricorn","dated a capricorn who rescheduled our anniversary for a work call. never again. i deserve a whole calendar invite of love"],["aquarius","i will never date an aquarius again, i had to text his best friend to find out if we were still together"],["pisces","my ex was a pisces and cried during the breakup he initiated. sir. you did this. to yourself."]],"nonsense":[["aries","An Aries can hear you getting over them. Like a dog whistle."],["taurus","Every Taurus has one blanket they would testify in court for."],["gemini","Geminis don't sleep. They just close all 400 tabs at once."],["cancer","A Cancer's \"im fine\" has 47 layers. Scientists have only reached layer 3."],["leo","A Leo has never lost an argument. Witnesses, yes. Arguments, never."],["virgo","Virgos alphabetize their emotions and file grief under \"later\""],["libra","A Libra spent 45 minutes choosing this gradient. It was the wrong one."],["scorpio","Scorpios don't forgive. They archive."],["sagittarius","A Sagittarius is legally required to mention their trip abroad every 11 minutes."],["capricorn","Capricorns rest by working on something else."],["aquarius","An Aquarius has 900 friends and 0 people who know their address."],["pisces","Pisces cry at commercials for products they already own."]],"random":[["all","your zodiac sign is why your ex is like that. yes, yours too."],["all","water signs invented crying in the car. fire signs invented the reason."],["all","earth signs don't fall in love. they run a background check that catches feelings."],["all","mercury retrograde is over. you can no longer blame the planet. the texts were you."],["all","\"i don't believe in astrology\" said the gemini, doing the most gemini thing possible"],["all","the zodiac isn't real until a scorpio guesses your entire personality in one look"],["all","dating without knowing their sign is just gambling with extra steps"],["all","your soulmate's sign is the one you swore you would never date again"],["all","fire signs: act first, think never. water signs: feel first, text at 2am. air signs: think first, vanish. earth signs: plan first, love forever."],["all","somewhere out there your rising sign is ruining a first impression on your behalf"],["all","every friend group has a virgo mom, a libra lawyer, a sagittarius flight risk, and a leo cult leader"],["all","checking his sign before the first date isn't judgy. it's due diligence."]],"short":[["aries","aries just challenged the vending machine to a fight"],["taurus","taurus said no. that's the whole post."],["gemini","gemini forgot what they were saying mid sentenc—"],["cancer","cancer cried at the self checkout. no reason."],["leo","leo just clapped for themselves. no one else did."],["virgo","virgo alphabetized their trauma"],["libra","libra: \"i don't care.\" libra: cares deeply"],["scorpio","scorpio knows. that's it. that's the post."],["sagittarius","sagittarius left. no note. no goodbye."],["capricorn","capricorn worked through lunch again"],["aquarius","aquarius unplugged the router for fun"],["pisces","pisces just cried at a car commercial"]],"spiritual":[["aries","aries, mars is literally begging you to stop texting first. protect your fire."],["taurus","taurus, venus said the person meant for you moves slow too. stop rushing the garden."],["gemini","gemini, mercury sees both versions of you and loves them equally. someone else will too."],["cancer","cancer, the moon keeps receipts of everyone who made you cry. rest easy."],["leo","leo, the sun does not ask the clouds for permission. neither should you."],["virgo","virgo, the universe is not grading you. put the red pen down."],["libra","libra, balance doesn't mean carrying both sides alone. venus said put it down."],["scorpio","scorpio, pluto destroyed itself so you would know transformation is survivable."],["sagittarius","sagittarius, jupiter expands whatever you feed it. stop feeding the doubt."],["capricorn","capricorn, saturn says the mountain isn't going anywhere. you're allowed to sleep."],["aquarius","aquarius, uranus made you different on purpose. the frequency finds its people."],["pisces","pisces, neptune gave you the dreams because you're the only one who would believe them."]],"yapping":[["aries","ok so basically he texted me \"hey\" at 11:47pm and I know that doesn't sound like a lot but as an aries I read tone into EVERYTHING and \"hey\" with no punctuation is giving unbothered and I refuse to be the unbothered one in this dynamic so I left him on read for exactly 46 minutes which is longer than he took but not so long it looks calculated and anyway that's why I'm not sleeping tonight"],["taurus","so today I reorganized my entire pantry by color and expiration date and I know that's not the assignment but I'm a taurus and when I'm stressed I need my Tupperware lids to match their bases or I spiral, and also side note my ex texted me and I didn't reply because I was busy alphabetizing my spice rack, priorities, anyway how's everyone doing"],["gemini","wait no ok let me back up, so there's three versions of this story depending on who you ask, my version, his version, and the version I told my group chat which is slightly different from both, as a gemini I contain multitudes and also I forgot the original point I was making but it was funnier in my head, anyway"],["cancer","I wasn't going to say anything but since we're all sharing, I've been thinking about a conversation from 2019 nonstop, not because it was bad, just because I'm a cancer and my brain filed it under \"important\" and never let me access the delete button, so if anyone needs me I'll be replaying it during my commute again today, love that for me"],["leo","so I walked into the room and I swear the energy shifted, I'm not saying it was because of me, I'm just saying nobody has explained an alternate reason, as a leo I don't need the validation but I will accept it if offered, anyway someone said my hair looked good today and I've been thinking about it for six hours"],["virgo","ok this is going to sound unhinged but I made a spreadsheet, not because I don't trust the situation but because I need to SEE the pattern, as a virgo I don't do gut feelings I do documented evidence, and the documented evidence currently says he's texted me first zero times this month, so, we'll workshop that"],["libra","so he asked me what I wanted for dinner and genuinely I stood in the kitchen for eleven minutes, not being dramatic, ELEVEN MINUTES, because as a libra I need to weigh every option including the ones we don't have ingredients for, and then he ordered without me and honestly I respect that more than I expected to"],["scorpio","I'm not going to name names but SOMEONE liked a photo from 47 weeks ago at 2am and as a scorpio I noticed immediately, I've said nothing, I will say nothing, I am simply holding this information the way one holds a loaded piece of context, anyway how is everyone, I'm great, everything's great"],["sagittarius","so this is kind of a whole thing but basically I booked a flight during the conversation, not to end the conversation, just because as a sagittarius when something feels heavy my nervous system goes \"what if plane\" and honestly? I don't make the rules, I just fly the flights, anyway I leave thursday"],["capricorn","ok not to make this weird but I built a 5 year plan around a 3 week situationship and as a capricorn I don't do that ironically, I had a whole tab open, projections and everything, and now I have to deal with the emotional equivalent of a project getting cancelled after the budget was already approved, cool cool cool"],["aquarius","so I disappeared for like two weeks and I know that's confusing but as an aquarius I wasn't upset I just needed to go be a weird little cloud somewhere by myself, I thought about everyone the whole time, I just couldn't prove it with a text, anyway I'm back, act normal"],["pisces","ok so I had a dream that we got married and I woke up genuinely emotional about a relationship that has not happened in real life yet, as a pisces I don't just fall for people I fall for entire timelines, so now I'm just walking around today grieving something that was never confirmed, it's fine, I'm fine"]]}</script>
+<script>
+"use strict";
+const W = 1080, H = 1920;
+const SIGNS = ["aries","taurus","gemini","cancer","leo","virgo","libra","scorpio","sagittarius","capricorn","aquarius","pisces"];
+const BANK = JSON.parse(document.getElementById("bank").textContent);
+const CLAUDE_MODEL = "claude-opus-5-5";
+
+const MODES = {
+  brainrot:  { label: "brainrot", chip: "#7b2ff7", voice: "unhinged gen-alpha absurdity; chaotic, terminally online, oddly specific",
+    pairs: [["#7b2ff7","#00e5a0"],["#4e0eff","#00c2ff"],["#7b2ff7","#ff2fb8"],["#0f2027","#00e5a0"]],
+    ig: "tag a {sign} and say nothing 💀", tags: "#relatable #memes #fyp" },
+  delu:      { label: "delu", chip: "#e0458a", voice: "delusional first-person confidence; 'im a {sign} so technically…' logic that refuses reality",
+    pairs: [["#ff5fa2","#b86bff"],["#ff8fd6","#c9a8ff"],["#ff5fa2","#ffb3d9"],["#c9a8ff","#ff8fd6"]],
+    ig: "the delulu is the solulu ✨ {sign} energy is undefeated", tags: "#delulu #relatable #datingmemes" },
+  nonsense:  { label: "nonsense", chip: "#c26a00", voice: "surreal deadpan 'facts' in sentence case with a period, like a nature documentary about a sign",
+    pairs: [["#ff8a00","#00b3a4"],["#ffd900","#ff5e5e"],["#00b3a4","#7ee8fa"],["#ff8a00","#ffd900"]],
+    ig: "no notes. just {sign} facts.", tags: "#memes #funny #relatable" },
+  spiritual: { label: "spiritual", chip: "#5b3fb8", voice: "cosmic woo-woo affirmation addressed to the sign, names a planet, oddly tender with a dating twist",
+    pairs: [["#2d1b69","#f7b32b"],["#2d1b69","#7b2ff7"],["#4b2e83","#ff9d6c"],["#0f0c29","#7b2ff7"]],
+    ig: "the universe asked us to pass this along to every {sign} 🔮", tags: "#spiritualawakening #manifestation #astrologypost" },
+  dating:    { label: "dating", chip: "#e0264a", voice: "dating advice or a cry for help about dating the sign; 'how to win a…', 'asking for help:'",
+    pairs: [["#ff2d55","#8e2de2"],["#ff7eb3","#8e2de2"],["#6a3093","#ff9a9e"],["#ff2d55","#ff9a9e"]],
+    ig: "dating a {sign}? drop your survival tips below 👇", tags: "#datingmemes #situationship #relationshipmemes" },
+  yapping:   { label: "yapping", chip: "#e2572b", voice: "one long breathless overshare run-on sentence, 250-420 characters, stream of consciousness, ends with 'anyway'",
+    pairs: [["#ff6a3d","#ffd93d"],["#ff3d7f","#8b5cf6"],["#3dd6ff","#8b5cf6"],["#ff6a3d","#ff3d7f"]],
+    ig: "{sign}s will turn a 2 word update into a whole podcast episode 🎤", tags: "#storytime #relatable #overshare" },
+  short:     { label: "short blurt", chip: "#0063db", voice: "a tiny random blurt, under 60 characters, one beat, no setup",
+    pairs: [["#00c2a8","#0072ff"],["#ff6a88","#f9d423"],["#6a3093","#0072ff"],["#00c2a8","#f9d423"]],
+    ig: "{sign} said what they said", tags: "#relatable #memes #zodiacmemes" },
+  hater:     { label: "hater", chip: "#8b0000", voice: "bitter ex-dated-one shade; 'never again', 'block delete move states' energy, petty and specific",
+    pairs: [["#8b0000","#1a0000"],["#6b0f1a","#2b0b3d"],["#3a0519","#8b0000"],["#1a0000","#5c0a2e"]],
+    ig: "the tea on dating a {sign} ☕ spill yours below", tags: "#shade #tea #datingmemes #exmemes" },
+  random:    { label: "random", chip: "#4b5563", voice: "general zodiac chaos about elements, retrogrades or all signs at once, not about one sign",
+    pairs: null, ig: "which sign is guilty of this 👀 wrong answers only", tags: "#relatable #memes #fyp" },
+  inspo:     { label: "inspo", chip: "#0d9488", voice: "", pairs: null, ig: "which {sign} needs to see this 👀", tags: "#relatable #memes" },
+  custom:    { label: "custom", chip: "#4b5563", voice: "", pairs: null, ig: "which {sign} needs to see this 👀", tags: "#relatable #memes" },
+};
+const ALL_PAIRS = Object.values(MODES).flatMap(m => m.pairs || []);
+const DIAGONALS = [[0,0,W,H],[W,0,0,H],[0,H,W,0],[W,H,0,0],[0,0,W,H/2],[W,0,0,H/2]];
+const HASHTAGS_BASE = "#zodiac #astrology #zodiacsigns #zodiacmemes #astrologymemes #horoscope";
+const FIRST_COMMENT = "we're building align — dating based on your chart, not your camera roll ✨ waitlist is open → comealign.com";
+const POST_TIMES = ["9:00 am", "1:00 pm", "7:30 pm"];
+
+/* ---------- small helpers ---------- */
+const $ = id => document.getElementById(id);
+const el = (tag, props = {}, ...kids) => { const n = Object.assign(document.createElement(tag), props); for (const k of kids) if (k != null) n.append(k); return n; };
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } };
+const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+let toastT;
+function toast(msg) { document.querySelector(".toast")?.remove(); const t = el("div", { className: "toast", textContent: msg }); document.body.append(t); clearTimeout(toastT); toastT = setTimeout(() => t.remove(), 2600); }
+function setStatus(msg, err) { const s = $("status"); s.textContent = msg || ""; s.classList.toggle("err", !!err); }
+
+function pairsFor(mode) { return MODES[mode]?.pairs || ALL_PAIRS; }
+function freshLook(mode, avoid) {
+  const pairs = pairsFor(mode);
+  let colors, tries = 0;
+  do { colors = pick(pairs).slice(); tries++; } while (avoid && colors.join() === avoid.join() && tries < 8);
+  return { colors, line: Math.floor(Math.random() * DIAGONALS.length) };
+}
+function igCaption(p) {
+  const m = MODES[p.mode] || MODES.custom;
+  const sign = p.sign && p.sign !== "all" ? p.sign : "toxic person";
+  let tags = `${HASHTAGS_BASE} ${m.tags}`;
+  if (p.sign && p.sign !== "all") tags += ` #${p.sign} #${p.sign}memes`;
+  return `${m.ig.replaceAll("{sign}", sign)}\n\nwaitlist → comealign.com (link in bio)\n\n${tags}`;
+}
+function makePost(mode, sign, text, source, look) {
+  look = look || freshLook(mode);
+  const p = { id: uid(), mode, sign: sign || "all", text: String(text).trim(), colors: look.colors, line: look.line,
+    status: "pending", source, createdAt: Date.now() };
+  p.caption = igCaption(p);
+  return p;
+}
+
+/* ---------- the renderer: one canvas recipe for thumbnails, full-size PNG and video ---------- */
+const FONT = '"Nunito", "Arial Rounded MT Bold", "Arial Rounded MT", system-ui, sans-serif';
+let fontsLoaded = false;
+const fontsReady = (document.fonts ? Promise.all([document.fonts.load(`900 100px Nunito`), document.fonts.load(`800 40px Nunito`)]).catch(() => {}) : Promise.resolve())
+  .then(() => { fontsLoaded = true; layoutCache.clear(); });
+const measurer = document.createElement("canvas").getContext("2d");
+
+const layoutCache = new Map();
+function layout(text) {
+  let hit = layoutCache.get(text);
+  if (!hit) { hit = computeLayout(text); if (fontsLoaded) layoutCache.set(text, hit); }
+  return hit;
+}
+function computeLayout(text) {
+  // biggest size (104 → 44px) where every line fits 86% of the width and the block fits 55% of the height
+  const maxW = W * 0.86, maxH = H * 0.55;
+  let best;
+  for (let fs = 104; fs >= 44; fs -= 2) {
+    measurer.font = `900 ${fs}px ${FONT}`;
+    const lines = [];
+    let fits = true;
+    for (const para of text.split("\n")) {
+      const words = para.split(/\s+/).filter(Boolean);
+      let cur = "";
+      for (const w of words) {
+        if (measurer.measureText(w).width > maxW) { fits = false; break; }
+        const next = cur ? cur + " " + w : w;
+        if (measurer.measureText(next).width <= maxW) cur = next; else { lines.push(cur); cur = w; }
+      }
+      if (!fits) break;
+      lines.push(cur);
+    }
+    const lh = fs * 1.38;
+    best = { fs, lines, lh };
+    if (fits && lines.length * lh <= maxH) return text.includes("\n") ? best : balance(best, maxW);
+  }
+  return best;
+}
+function balance(l, maxW) {
+  // narrow the measure until the line count would grow, so the last line isn't a lonely word
+  if (l.lines.length < 2) return l;
+  measurer.font = `900 ${l.fs}px ${FONT}`;
+  const words = l.lines.join(" ").split(" ");
+  let bestLines = l.lines;
+  for (let w = maxW - 20; w > maxW * 0.55; w -= 20) {
+    const lines = []; let cur = "";
+    for (const wd of words) { const n = cur ? cur + " " + wd : wd; if (measurer.measureText(n).width <= w) cur = n; else { if (!cur) return { ...l, lines: bestLines }; lines.push(cur); cur = wd; } }
+    lines.push(cur);
+    if (lines.length > l.lines.length) break;
+    bestLines = lines;
+  }
+  return { ...l, lines: bestLines };
+}
+
+function draw(ctx, p, opts = {}) {
+  const s = ctx.canvas.width / W;
+  const t = opts.t ?? 0;
+  ctx.setTransform(s, 0, 0, s, 0, 0);
+  let [x0, y0, x1, y1] = DIAGONALS[p.line % DIAGONALS.length];
+  if (t) {
+    // video: the gradient line swings slowly around the centre and the stops breathe
+    const a = Math.sin(t * 0.55) * 0.5, cx = W / 2, cy = H / 2;
+    const rot = (x, y) => [cx + (x - cx) * Math.cos(a) - (y - cy) * Math.sin(a), cy + (x - cx) * Math.sin(a) + (y - cy) * Math.cos(a)];
+    [x0, y0] = rot(x0, y0); [x1, y1] = rot(x1, y1);
+  }
+  const g = ctx.createLinearGradient(x0, y0, x1, y1);
+  const c = p.colors.length > 1 ? p.colors : [p.colors[0], p.colors[0]];
+  const shift = t ? (Math.sin(t * 0.9) * 0.12) : 0;
+  c.forEach((col, i) => g.addColorStop(Math.min(1, Math.max(0, i / (c.length - 1) + (i === 0 ? Math.max(0, shift) : i === c.length - 1 ? Math.min(0, shift) : 0))), col));
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, H);
+
+  const L = layout(p.text || " ");
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillStyle = "#fff";
+  ctx.shadowColor = "rgba(0,0,0,.30)";
+  ctx.shadowOffsetX = 4 * s; ctx.shadowOffsetY = 5 * s; ctx.shadowBlur = 6 * s;
+  ctx.font = `900 ${L.fs}px ${FONT}`;
+  const blockH = L.lines.length * L.lh;
+  const top = H / 2 - 40 - blockH / 2 + L.lh / 2;
+  L.lines.forEach((ln, i) => ctx.fillText(ln, W / 2, top + i * L.lh));
+
+  const showCta = opts.cta && (opts.ctaFrom == null || t >= opts.ctaFrom);
+  if (showCta) {
+    ctx.font = `900 52px ${FONT}`;
+    ctx.shadowOffsetX = 3 * s; ctx.shadowOffsetY = 3 * s;
+    ctx.fillText("the zodiac dating app", W / 2, H - 420);
+    ctx.fillText("comealign.com", W / 2, H - 420 + 70);
+  }
+  if (opts.watermark) {
+    ctx.font = `800 38px ${FONT}`;
+    ctx.fillStyle = "rgba(255,255,255,.85)";
+    ctx.shadowOffsetX = 2 * s; ctx.shadowOffsetY = 2 * s; ctx.shadowBlur = 3 * s;
+    ctx.fillText("comealign.com", W / 2, H - 150);
+  }
+  ctx.shadowColor = "transparent";
+}
+const renderOpts = () => ({ cta: $("optCta").checked, watermark: $("optWm").checked });
+const durationFor = text => Math.round(Math.min(11, Math.max(6, 3.5 + 0.34 * text.split(/\s+/).length)) * 10) / 10;
+
+/* ---------- storage: the shared cloud queue when the viewer offers it, this browser otherwise ---------- */
+const Store = {
+  kind: "starting", db: null, posts: new Map(),
+  async init() {
+    let db = null;
+    try { db = window.claude?.use ? await window.claude.use("db") : null; } catch { db = null; }
+    if (db) {
+      this.db = db; this.kind = "cloud";
+      db.collection("posts").orderBy("createdAt", "desc").limit(1000).onSnapshot(snap => {
+        const next = new Map();
+        for (const d of snap.docs) { const v = clean(d.data()); if (v) next.set(d.id, { ...v, id: d.id }); }
+        // keep optimistic local writes that the server hasn't echoed yet
+        for (const [id, p] of this.posts) if (p._pending && !next.has(id)) next.set(id, p);
+        this.posts = next; render();
+      }, err => { setStatus(`Lost the cloud queue (${err.code}). Reload to reconnect.`, true); });
+    } else {
+      this.kind = "local";
+      for (const p of lsGet("agr-posts", [])) { const v = clean(p); if (v && p.id) this.posts.set(p.id, { ...v, id: p.id }); }
+    }
+    const s = $("sync");
+    s.className = "sync " + this.kind;
+    s.textContent = this.kind === "cloud" ? "cloud queue · synced across devices" : "saved in this browser only";
+    render();
+  },
+  saveLocal() { if (this.kind === "local") lsSet("agr-posts", [...this.posts.values()]); },
+  async add(p) {
+    this.posts.set(p.id, { ...p, _pending: true }); this.saveLocal(); render();
+    if (this.db) {
+      const { _pending, id, ...data } = p;
+      try { await this.db.collection("posts").doc(id).set(data); } catch (e) { writeFailed(e); }
+    }
+  },
+  async update(id, patch) {
+    const cur = this.posts.get(id); if (!cur) return;
+    this.posts.set(id, { ...cur, ...patch }); this.saveLocal(); render();
+    if (this.db) { try { await this.db.collection("posts").doc(id).update(patch); } catch (e) { writeFailed(e); } }
+  },
+  async remove(id) {
+    this.posts.delete(id); this.saveLocal(); render();
+    if (this.db) { try { await this.db.collection("posts").doc(id).delete(); } catch (e) { writeFailed(e); } }
+  },
+};
+const HEX = /^#[0-9a-f]{6}$/i;
+const STATUSES = ["pending", "approved", "rejected", "posted"];
+function clean(v) {
+  // rows come from anyone who can edit the queue: keep only the shapes the page draws
+  if (!v || typeof v.text !== "string" || !v.text.trim()) return null;
+  const colors = Array.isArray(v.colors) ? v.colors.filter(c => typeof c === "string" && HEX.test(c)).slice(0, 4) : [];
+  return {
+    ...v, text: v.text.slice(0, 600),
+    mode: MODES[v.mode] ? v.mode : "custom",
+    sign: SIGNS.includes(v.sign) ? v.sign : "all",
+    colors: colors.length ? colors : ["#7b2ff7", "#ff2fb8"],
+    line: Math.abs(parseInt(v.line, 10) || 0) % DIAGONALS.length,
+    status: STATUSES.includes(v.status) ? v.status : "pending",
+    caption: typeof v.caption === "string" ? v.caption : "",
+    createdAt: Number(v.createdAt) || 0,
+  };
+}
+function writeFailed(e) {
+  const code = e?.code || "error";
+  setStatus(code === "not_granted" ? "You can view this queue but not change it. Ask the owner for edit access." : `Couldn't save to the cloud queue (${code}).`, true);
+}
+
+/* ---------- Claude ---------- */
+let sampleFn = null, sampleImages = false, activeCtl = null;
+async function initClaude() {
+  try { sampleFn = window.claude?.use ? await window.claude.use("sample") : null; } catch { sampleFn = null; }
+  if (sampleFn) { try { sampleImages = !!(await sampleFn.limits())?.images; } catch { sampleImages = false; } }
+  $("btnClaude").hidden = !sampleFn;
+  $("btnInspo").hidden = !sampleFn;
+  $("sMore").hidden = !sampleFn;
+  if (!sampleFn) setStatus("Claude isn't available in this view, so new captions come from the built-in library. Open the published page on claude.ai to write fresh ones.");
+}
+function claudeErr(e) {
+  switch (e?.code) {
+    case "cancelled": return "Stopped.";
+    case "not_granted": case "sampling_disabled": return "Claude isn't allowed on this page for your account, so only the library is available.";
+    case "rate_limited": return "Claude is busy or you've hit a usage limit. Try again in a minute.";
+    case "refused": return "Claude declined that one. Try a different genre or sign.";
+    case "image_rejected": return "That image didn't work. Try a PNG or JPEG screenshot under 20 MB.";
+    case "session_expired": return "Your claude.ai session expired. Sign in again and retry.";
+    default: return "Claude couldn't finish. Try again.";
+  }
+}
+function examplesFor(mode, sign) {
+  const rows = BANK[mode] || [];
+  const same = rows.filter(r => r[0] === sign);
+  const rest = rows.filter(r => r[0] !== sign).sort(() => Math.random() - .5);
+  return [...same, ...rest].slice(0, 6).map(r => `- (${r[0]}) ${r[1]}`).join("\n");
+}
+function usedLines(mode) {
+  return [...Store.posts.values()].filter(p => p.mode === mode).slice(0, 40).map(p => `- ${p.text}`).join("\n");
+}
+const BRIEF = `You write the on-image text for gradient-background meme posts on the Instagram of Align, a zodiac dating app (waitlist at comealign.com). Each post is one line of big white text centered on a two-tone gradient, boomer-Facebook-post style, read in two seconds while scrolling. It has to make someone tag a friend or send it to their group chat.
+
+What makes these land:
+- One specific, observed behavior of the sign, not a generic trait list.
+- A real punchline or a turn at the end; cut every word that isn't doing work.
+- Dating, exes, texting, situationships and red flags are the home turf.
+- Written like a person posting, not a brand: lowercase unless caps are part of the joke.
+- No hashtags, links, emoji, quotes around the whole line, or the word "align".`;
+
+async function streamPosts(prompt, onPost, opts = {}) {
+  // ask for one JSON object per line so cards appear as Claude writes them
+  let pending = "", made = 0;
+  const eat = line => {
+    line = line.trim().replace(/^[-*\d.)\s]+(?=\{)/, "").replace(/,$/, "");
+    if (!line.startsWith("{")) return;
+    try { const o = JSON.parse(line); if (o && typeof o.text === "string" && o.text.trim()) { onPost(o); made++; } } catch {}
+  };
+  activeCtl = new AbortController();
+  $("btnStop").hidden = false;
+  try {
+    await sampleFn(prompt, {
+      model: CLAUDE_MODEL, modelTier: "complex", cache: false, signal: activeCtl.signal, images: opts.images,
+      onText: ({ delta }) => { const parts = (pending + delta).split("\n"); pending = parts.pop(); parts.forEach(eat); opts.onProgress?.(made); },
+    });
+    eat(pending);
+    return { made };
+  } catch (e) {
+    eat(pending);
+    throw Object.assign(e || {}, { made });
+  } finally {
+    $("btnStop").hidden = true; activeCtl = null;
+  }
+}
+const normSign = (s, fallback) => { s = String(s || "").toLowerCase().trim(); return SIGNS.includes(s) || s === "all" ? s : fallback; };
+
+async function writeWithClaude() {
+  const mode = $("genMode").value, sign = $("genSign").value, n = +$("genCount").value;
+  const target = mode === "random" ? 'Use "all" as the sign for every post.'
+    : sign === "all" ? `Spread them across the twelve signs (${SIGNS.join(", ")}), at most two per sign.`
+    : `Every post is about ${sign}, and each one takes a different angle on ${sign}.`;
+  const used = usedLines(mode);
+  const prompt = `${BRIEF}
+
+Genre: ${mode}. Voice: ${MODES[mode].voice}.
+
+Lines from this genre that already did well (match the voice and format, never reuse the joke):
+${examplesFor(mode, sign)}
+${used ? `\nAlready in the queue, so don't repeat these premises:\n${used}\n` : ""}
+Write ${n} new posts. ${target} Every post must be a different joke, not a rephrase of another one. ${mode === "yapping" ? "Each is 250-420 characters." : mode === "short" ? "Each is under 60 characters." : "Each is under 200 characters."}
+
+Output format: exactly ${n} lines, each one JSON object and nothing else, like
+{"sign": "leo", "text": "the post text"}
+No numbering, no code fence, no commentary.`;
+  await runGeneration(`Opus 5.5 is writing ${n} ${mode} posts…`, prompt, o => makePost(mode, normSign(o.sign, sign === "all" ? "all" : sign), o.text, "claude"));
+}
+
+async function runGeneration(label, prompt, toPost, opts = {}) {
+  const btns = ["btnClaude", "btnBank", "btnInspo"].map($);
+  btns.forEach(b => b.disabled = true);
+  setStatus(label + " First lines usually show up within a minute.");
+  filter = "pending"; render();
+  try {
+    const { made } = await streamPosts(prompt, o => Store.add(toPost(o)), { ...opts, onProgress: m => m && setStatus(`${label} ${m} so far.`) });
+    setStatus(made ? `Added ${made} new posts to Pending.` : "Claude replied but no posts came through. Try again.", !made);
+  } catch (e) {
+    setStatus((e.made ? `Kept ${e.made} posts. ` : "") + claudeErr(e), e.code !== "cancelled");
+  } finally { btns.forEach(b => b.disabled = false); }
+}
+
+function fromLibrary() {
+  const mode = $("genMode").value, sign = $("genSign").value, n = +$("genCount").value;
+  let rows = (BANK[mode] || []).filter(r => sign === "all" || r[0] === sign || r[0] === "all");
+  if (!rows.length) rows = BANK[mode] || [];
+  rows = rows.slice().sort(() => Math.random() - .5);
+  const out = [];
+  for (let i = 0; i < Math.min(n, sign === "all" ? rows.length : n); i++) out.push(rows[i % rows.length]);
+  out.forEach(r => Store.add(makePost(mode, r[0], r[1], "library")));
+  filter = "pending";
+  setStatus(`Added ${out.length} ${mode} posts from the library with fresh gradients.${sign !== "all" && rows.length < n && sampleFn ? " The library only has one line per sign; use Write new with Claude for unique ones." : ""}`);
+}
+
+async function moreLikeThis(p) {
+  if (!sampleFn) return;
+  const sign = p.sign;
+  const prompt = `${BRIEF}
+
+Here is one post that's working, in the "${p.mode}" genre${sign !== "all" ? ` about ${sign}` : ""}:
+"${p.text}"
+
+Write 6 variations that riff on this exact premise or structure: same setup with a fresh punchline, or the same punchline reached a different way. Still about ${sign === "all" ? "zodiac signs in general" : sign}, still this voice. Not six new jokes; six takes on this one.
+
+Output format: exactly 6 lines, each one JSON object and nothing else, like
+{"sign": "${sign}", "text": "the post text"}
+No numbering, no code fence, no commentary.`;
+  closeSheet();
+  await runGeneration("Opus 5.5 is riffing on that post…", prompt, o => makePost(p.mode, sign, o.text, "claude", freshLook(p.mode, p.colors)));
+}
+
+function colorsFromImage(img) {
+  // average the top and bottom fifths: that's where a two-tone gradient lives, away from the text
+  const c = document.createElement("canvas"); c.width = 30; c.height = 50;
+  const x = c.getContext("2d"); x.drawImage(img, 0, 0, 30, 50);
+  const avg = (y0, y1) => { const d = x.getImageData(0, y0, 30, y1 - y0).data; let r = 0, g = 0, b = 0, n = 0;
+    for (let i = 0; i < d.length; i += 4) { const lum = d[i] + d[i + 1] + d[i + 2]; if (lum > 720) continue; r += d[i]; g += d[i + 1]; b += d[i + 2]; n++; }
+    n = n || 1; return "#" + [r, g, b].map(v => Math.round(v / n).toString(16).padStart(2, "0")).join(""); };
+  return [avg(0, 10), avg(40, 50)];
+}
+async function useInspo(file) {
+  if (!file) return;
+  const url = URL.createObjectURL(file);
+  const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; }).catch(() => null);
+  URL.revokeObjectURL(url);
+  if (!img) { setStatus("That file isn't an image this browser can read.", true); return; }
+  const colors = colorsFromImage(img);
+  const sign = $("genSign").value, n = +$("genCount").value;
+  const target = sign === "all" ? `one for each of these signs: ${SIGNS.slice(0, Math.min(n, 12)).join(", ")}` : `${Math.min(n, 12)} posts, all about ${sign}, each a different joke`;
+  if (!sampleImages) {
+    setStatus("This view can't send images to Claude, so I matched the colors only. Pick Write new with Claude to fill them.");
+    fromLibraryWith(colors); return;
+  }
+  const prompt = `${BRIEF}
+
+The attached image is a meme post whose voice, humor, format and length we want to copy exactly (ignore its specific topic and any watermark). Write zodiac versions of it: ${target}.
+
+Output format: one line per post, each one JSON object and nothing else, like
+{"sign": "${sign === "all" ? "aries" : sign}", "text": "the post text"}
+No numbering, no code fence, no commentary.`;
+  await runGeneration("Opus 5.5 is studying your inspo post…", prompt, o => makePost("inspo", normSign(o.sign, sign), o.text, "claude", { colors, line: 0 }), { images: [file] });
+}
+function fromLibraryWith(colors) {
+  const mode = $("genMode").value;
+  (BANK[mode] || []).slice(0, +$("genCount").value).forEach(r => Store.add(makePost("inspo", r[0], r[1], "library", { colors, line: 0 })));
+  filter = "pending";
+}
+
+/* ---------- views ---------- */
+let filter = lsGet("agr-tab", "pending");
+if (!["pending", "approved", "plan", "posted", "rejected"].includes(filter)) filter = "pending";
+const TABS = [["pending", "Pending"], ["approved", "Approved"], ["plan", "Week plan"], ["posted", "Posted"], ["rejected", "Rejected"]];
+
+function sorted() { return [...Store.posts.values()].sort((a, b) => b.createdAt - a.createdAt); }
+
+function renderTabs(all) {
+  const count = s => all.filter(p => p.status === s).length;
+  const tabs = $("tabs"); tabs.replaceChildren();
+  for (const [k, label] of TABS) {
+    const n = k === "plan" ? Math.min(21, count("approved")) : count(k);
+    const b = el("button", { className: "tab", role: "tab" }, label, " ", el("b", { textContent: k === "plan" ? `${n}/21` : n }));
+    b.setAttribute("aria-selected", String(filter === k));
+    b.onclick = () => { filter = k; lsSet("agr-tab", k); render(); };
+    tabs.append(b);
+  }
+  tabs.append(el("span", { className: "spacer" }));
+  if (filter === "rejected" && count("rejected")) {
+    const b = el("button", { className: "btn small ghost", textContent: "Delete all rejected" });
+    b.onclick = () => {
+      if (b.dataset.armed) { all.filter(p => p.status === "rejected").forEach(p => Store.remove(p.id)); return; }
+      b.dataset.armed = "1"; b.textContent = "Tap again to delete for good";
+      setTimeout(() => { if (b.isConnected) { delete b.dataset.armed; b.textContent = "Delete all rejected"; } }, 3000);
+    };
+    tabs.append(b);
+  }
+}
+
+function thumb(p, w) {
+  const c = el("canvas", { width: w, height: Math.round(w * 16 / 9) });
+  if (fontsLoaded) draw(c.getContext("2d"), p, renderOpts());
+  else fontsReady.then(() => draw(c.getContext("2d"), p, renderOpts()));
+  return c;
+}
+
+function card(p, list) {
+  const modeInfo = MODES[p.mode] || MODES.custom;
+  const tb = el("button", { className: "thumbbtn", title: "Open full size" }, thumb(p, 300));
+  tb.setAttribute("aria-label", `Open post: ${p.text.slice(0, 80)}`);
+  tb.onclick = () => openSheet(p.id, list);
+  const chips = el("div", { className: "chips" },
+    el("span", { className: "chip mode", textContent: modeInfo.label, style: `background:${modeInfo.chip}` }),
+    p.sign && p.sign !== "all" ? el("span", { className: "chip", textContent: p.sign }) : null,
+    p.status !== "pending" ? el("span", { className: `chip st-${p.status}`, textContent: p.status }) : null,
+    el("span", { className: "chip src", textContent: p.source === "claude" ? "✦ claude" : p.source || "" }));
+  const btns = el("div", { className: "cbtns" });
+  if (p.status === "pending") {
+    const a = el("button", { className: "btn approve", textContent: "✓ Approve" }); a.onclick = () => Store.update(p.id, { status: "approved", decidedAt: Date.now() });
+    const r = el("button", { className: "btn reject", textContent: "✕ Reject" }); r.onclick = () => Store.update(p.id, { status: "rejected", decidedAt: Date.now() });
+    const g = el("button", { className: "btn", textContent: "🎨", title: "New gradient" }); g.setAttribute("aria-label", "New gradient");
+    g.onclick = () => Store.update(p.id, freshLook(p.mode === "inspo" || p.mode === "custom" ? "random" : p.mode, p.colors));
+    btns.append(a, r, g);
+  } else {
+    btns.style.gridTemplateColumns = "1fr 1fr";
+    const u = el("button", { className: "btn", textContent: "↩ Pending" }); u.onclick = () => Store.update(p.id, { status: "pending" });
+    const d = el("button", { className: "btn", textContent: "⬇ PNG" }); d.onclick = () => savePng(p);
+    btns.append(u, d);
+  }
+  return el("article", { className: `card ${p.status}` }, tb, el("div", { className: "cmeta" }, chips, btns));
+}
+
+function emptyState(kind) {
+  const copy = {
+    pending: ["Nothing waiting for review", sampleFn ? "Pick a genre and a sign, then Write new with Claude for fresh captions, or From library to render the built-in lines with new gradients." : "Pick a genre and a sign, then From library to render the built-in lines with fresh gradients."],
+    approved: ["No approved posts yet", "Approve posts from Pending. They show up here and fill the week plan."],
+    posted: ["Nothing marked posted", "Once a post is live on Instagram, mark it posted from the Week plan so it leaves the queue."],
+    rejected: ["Nothing rejected", "Rejected posts collect here. Send one back to Pending if you change your mind."],
+  }[kind];
+  const box = el("div", { className: "empty" }, el("h2", { textContent: copy[0] }), el("p", { textContent: copy[1] }));
+  if (kind === "pending") {
+    const row = el("div", { className: "btnrow" });
+    if (sampleFn) { const c = el("button", { className: "btn claude", textContent: "✦ Write new with Claude" }); c.onclick = writeWithClaude; row.append(c); }
+    const l = el("button", { className: "btn", textContent: "Render 12 from library" }); l.onclick = fromLibrary; row.append(l);
+    box.append(row);
+  }
+  return box;
+}
+
+function planView(all) {
+  const approved = all.filter(p => p.status === "approved").sort((a, b) => (a.decidedAt || a.createdAt) - (b.decidedAt || b.createdAt)).slice(0, 21);
+  const wrap = el("div", { className: "plan" });
+  const dl = el("button", { className: "btn primary", textContent: "Download post_plan.txt" });
+  dl.onclick = () => saveFile("post_plan.txt", planText(approved), "text/plain");
+  dl.disabled = !approved.length;
+  wrap.append(el("div", { className: "planhead" },
+    el("p", { textContent: "Three a day for a week, spaced hours apart, oldest approval first. Instagram throttles accounts that dump posts, so 3 a day for 7 days beats 10 a day for 2. Add a trending sound in the Instagram app before you post, and pin the first comment, since captions can't hold a clickable link." }), dl));
+  if (!approved.length) { wrap.append(emptyState("approved")); return wrap; }
+  for (let d = 0; d < 7; d++) {
+    const today = approved.slice(d * 3, d * 3 + 3);
+    if (!today.length) break;
+    const slots = el("div", { className: "slots" });
+    today.forEach((p, i) => {
+      const cv = thumb(p, 168);
+      const cap = el("button", { className: "btn small", textContent: "Copy caption" }); cap.onclick = () => copy(p.caption, "Caption copied");
+      const com = el("button", { className: "btn small", textContent: "Copy comment" }); com.onclick = () => copy(FIRST_COMMENT, "First comment copied");
+      const png = el("button", { className: "btn small", textContent: "PNG" }); png.onclick = () => savePng(p);
+      const done = el("button", { className: "btn small ok", textContent: "Mark posted" }); done.onclick = () => Store.update(p.id, { status: "posted", postedAt: Date.now() });
+      const open = el("button", { className: "thumbbtn", style: "width:84px;aspect-ratio:auto;border-radius:8px;overflow:hidden" }, cv);
+      open.setAttribute("aria-label", "Open post"); open.onclick = () => openSheet(p.id, approved.map(x => x.id));
+      slots.append(el("div", { className: "slot" }, open,
+        el("div", { className: "stext" }, el("span", { className: "time", textContent: POST_TIMES[i] }), el("pre", { textContent: p.caption }), el("div", { className: "row" }, cap, com, png, done))));
+    });
+    wrap.append(el("section", { className: "day" }, el("h3", {}, `Day ${d + 1}`, el("span", { textContent: `${today.length} post${today.length > 1 ? "s" : ""}` })), slots));
+  }
+  return wrap;
+}
+function planText(list) {
+  const out = [];
+  for (let d = 0; d < 7; d++) {
+    const today = list.slice(d * 3, d * 3 + 3);
+    if (!today.length) break;
+    out.push(`# Day ${d + 1} post plan\n`);
+    today.forEach((p, i) => out.push(`## ${POST_TIMES[i]} · ${fileBase(p)}.png`, `on-image text: ${p.text}`, "", "PASTE AS CAPTION:", p.caption, "", "PIN AS FIRST COMMENT:", FIRST_COMMENT, "", "reminder: add a trending sound in the IG app before posting", "-".repeat(60), ""));
+  }
+  return out.join("\n");
+}
+
+let renderQueued = false;
+function render() {
+  if (renderQueued) return; renderQueued = true;
+  requestAnimationFrame(() => {
+    renderQueued = false;
+    const all = sorted();
+    renderTabs(all);
+    const view = $("view"); view.replaceChildren();
+    if (Store.kind === "starting") { view.append(el("div", { className: "empty" }, el("h2", { textContent: "Loading your queue…" }))); return; }
+    if (filter === "plan") { view.append(planView(all)); return; }
+    const shown = all.filter(p => p.status === filter);
+    const grid = el("div", { className: "grid" });
+    if (!shown.length) grid.append(emptyState(filter));
+    const ids = shown.map(p => p.id);
+    shown.forEach(p => grid.append(card(p, ids)));
+    view.append(grid);
+    if (sheetId) refreshSheet(false);
+  });
+}
+
+/* ---------- full-size sheet ---------- */
+let sheetId = null, sheetList = [];
+function openSheet(id, list) { sheetId = id; sheetList = list || []; refreshSheet(true); if (!$("sheet").open) $("sheet").showModal(); }
+function closeSheet() { $("sheet").close(); }
+$("sheet").addEventListener("close", () => { flushEdits(); sheetId = null; });
+function refreshSheet(fill) {
+  const p = Store.posts.get(sheetId);
+  if (!p) { closeSheet(); return; }
+  const m = MODES[p.mode] || MODES.custom;
+  $("sTitle").textContent = `${m.label}${p.sign && p.sign !== "all" ? " · " + p.sign : ""}`;
+  $("sChips").replaceChildren(el("span", { className: `chip st-${p.status}`, textContent: p.status }), el("span", { className: "chip src", textContent: p.source === "claude" ? "written by Claude" : p.source === "library" ? "from the library" : "your line" }));
+  if (fill || document.activeElement !== $("sText")) $("sText").value = p.text;
+  if (fill || document.activeElement !== $("sCaption")) $("sCaption").value = p.caption;
+  const pairs = pairsFor(p.mode === "inspo" || p.mode === "custom" ? "random" : p.mode);
+  const sw = $("sSwatches"); sw.replaceChildren();
+  const options = [...pairs.map(c => ({ colors: c })), ...(pairs.some(c => c.join() === p.colors.join()) ? [] : [{ colors: p.colors }])];
+  options.forEach(o => {
+    const b = el("button", { className: "sw", style: `background:linear-gradient(135deg,${o.colors[0]},${o.colors[1] || o.colors[0]})` });
+    b.setAttribute("aria-label", `Gradient ${o.colors.join(" to ")}`);
+    b.setAttribute("aria-pressed", String(o.colors.join() === p.colors.join()));
+    b.onclick = () => Store.update(p.id, { colors: o.colors });
+    sw.append(b);
+  });
+  const flip = el("button", { className: "sw", textContent: "↻", title: "Change direction" });
+  flip.setAttribute("aria-label", "Change gradient direction");
+  flip.style.background = "var(--sunk)";
+  flip.onclick = () => Store.update(p.id, { line: (p.line + 1) % DIAGONALS.length });
+  sw.append(flip);
+  $("sApprove").hidden = p.status !== "pending"; $("sReject").hidden = p.status !== "pending";
+  $("sUndo").hidden = p.status === "pending"; $("sPosted").hidden = p.status !== "approved";
+  const i = sheetList.indexOf(p.id);
+  $("sPrev").disabled = i <= 0; $("sNext").disabled = i < 0 || i >= sheetList.length - 1;
+  drawBig();
+}
+function drawBig() {
+  const p = Store.posts.get(sheetId); if (!p) return;
+  const preview = { ...p, text: $("sText").value };
+  fontsReady.then(() => draw($("bigCanvas").getContext("2d"), preview, renderOpts()));
+}
+let editT;
+function flushEdits() {
+  clearTimeout(editT);
+  const id = editT && editT.id; editT = null;
+  const p = Store.posts.get(id || sheetId); if (!p) return;
+  const text = $("sText").value.trim(), caption = $("sCaption").value;
+  const patch = {};
+  if (text && text !== p.text) patch.text = text;
+  if (caption !== p.caption) patch.caption = caption;
+  if (Object.keys(patch).length) Store.update(p.id, patch);
+}
+function queueEdit() { clearTimeout(editT); const id = sheetId; editT = setTimeout(flushEdits, 700); editT.id = id; }
+$("sText").addEventListener("input", () => { drawBig(); queueEdit(); });
+$("sCaption").addEventListener("input", queueEdit);
+$("sSafe").addEventListener("change", e => { $("safe").hidden = !e.target.checked; lsSet("agr-safe", e.target.checked); });
+$("sClose").onclick = closeSheet;
+function step(d) { flushEdits(); const i = sheetList.indexOf(sheetId); const n = sheetList[i + d]; if (n && Store.posts.has(n)) { sheetId = n; refreshSheet(true); } }
+$("sPrev").onclick = () => step(-1); $("sNext").onclick = () => step(1);
+function decideInSheet(status) {
+  const id = sheetId; flushEdits();
+  const i = sheetList.indexOf(id);
+  Store.update(id, { status, decidedAt: Date.now() });
+  const next = sheetList[i + 1] || sheetList[i - 1];
+  sheetList = sheetList.filter(x => x !== id);
+  if (next && filter === "pending") { sheetId = next; refreshSheet(true); } else refreshSheet(false);
+}
+$("sApprove").onclick = () => decideInSheet("approved");
+$("sReject").onclick = () => decideInSheet("rejected");
+$("sUndo").onclick = () => Store.update(sheetId, { status: "pending" });
+$("sPosted").onclick = () => Store.update(sheetId, { status: "posted", postedAt: Date.now() });
+$("sCopyCap").onclick = () => copy($("sCaption").value, "Caption copied");
+$("sCopyCom").onclick = () => copy(FIRST_COMMENT, "First comment copied");
+$("sPng").onclick = () => { flushEdits(); savePng(Store.posts.get(sheetId)); };
+$("sVideo").onclick = () => { flushEdits(); saveVideo(Store.posts.get(sheetId)); };
+$("sMore").onclick = () => { flushEdits(); moreLikeThis(Store.posts.get(sheetId)); };
+$("sheet").addEventListener("keydown", e => {
+  if (e.target.matches("textarea, input")) return;
+  const p = Store.posts.get(sheetId); if (!p) return;
+  if (e.key === "ArrowRight") step(1);
+  else if (e.key === "ArrowLeft") step(-1);
+  else if ((e.key === "a" || e.key === "A") && p.status === "pending") decideInSheet("approved");
+  else if ((e.key === "r" || e.key === "R") && p.status === "pending") decideInSheet("rejected");
+});
+
+/* ---------- export ---------- */
+let downloadsNs;
+const downloadsReady = (async () => { try { downloadsNs = window.claude?.use ? await window.claude.use("downloads") : null; } catch { downloadsNs = null; } })();
+const fileBase = p => `${p.mode}_${p.sign}_${p.id.slice(-5)}`;
+async function saveFile(filename, data, type) {
+  await downloadsReady;
+  if (downloadsNs) {
+    try { await downloadsNs.save({ filename, data }); toast(`Saved ${filename}`); }
+    catch (e) { if (e?.code !== "declined") toast(e?.code === "rate_limited" ? "Another save is waiting for your OK." : "This view can't save files."); }
+    return;
+  }
+  const blob = data instanceof Blob ? data : new Blob([data], { type });
+  const a = el("a", { href: URL.createObjectURL(blob), download: filename });
+  document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+async function savePng(p) {
+  if (!p) return;
+  await fontsReady;
+  const c = el("canvas", { width: W, height: H });
+  draw(c.getContext("2d"), p, renderOpts());
+  const blob = await new Promise(r => c.toBlob(r, "image/png"));
+  await saveFile(fileBase(p) + ".png", blob, "image/png");
+}
+async function saveVideo(p) {
+  if (!p) return;
+  const types = ["video/mp4;codecs=avc1.42E01F", "video/mp4", "video/webm;codecs=vp9", "video/webm"];
+  const type = window.MediaRecorder && types.find(t => MediaRecorder.isTypeSupported(t));
+  if (!type) { $("sStatus").textContent = "This browser can't record video. Download the PNG and post it as a reel with a sound."; return; }
+  await fontsReady;
+  const btn = $("sVideo"); btn.disabled = true;
+  const dur = durationFor(p.text);
+  const c = el("canvas", { width: W, height: H });
+  const ctx = c.getContext("2d");
+  const opts = renderOpts();
+  draw(ctx, p, { ...opts, t: 0.0001, ctaFrom: dur - 2 });
+  const rec = new MediaRecorder(c.captureStream(30), { mimeType: type, videoBitsPerSecond: 8_000_000 });
+  const chunks = []; rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+  const done = new Promise(r => rec.onstop = r);
+  rec.start(250);
+  const t0 = performance.now();
+  await new Promise(res => {
+    const tick = () => {
+      const t = (performance.now() - t0) / 1000;
+      draw(ctx, p, { ...opts, t: Math.max(t, 0.0001), ctaFrom: dur - 2 });
+      $("sStatus").textContent = `Recording ${Math.min(dur, t).toFixed(1)} / ${dur}s… keep this tab open.`;
+      if (t >= dur) res(); else requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+  rec.stop(); await done;
+  const ext = type.startsWith("video/mp4") ? "mp4" : "webm";
+  $("sStatus").textContent = ext === "webm" ? "Saved as WebM, the only video format this browser records. Instagram takes MP4; Safari and recent Chrome record MP4." : "";
+  btn.disabled = false;
+  await saveFile(`${fileBase(p)}.${ext}`, new Blob(chunks, { type }), type);
+}
+async function copy(text, msg) {
+  try { await navigator.clipboard.writeText(text); toast(msg); }
+  catch {
+    const ta = el("textarea", { value: text }); ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.append(ta); ta.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch {}
+    ta.remove(); toast(ok ? msg : "Copy blocked here. Select the text and copy it yourself.");
+  }
+}
+
+/* ---------- wire up ---------- */
+for (const [k, m] of Object.entries(MODES)) if (BANK[k]) $("genMode").append(el("option", { value: k, textContent: m.label }));
+$("genSign").append(el("option", { value: "all", textContent: "all signs" }), ...SIGNS.map(s => el("option", { value: s, textContent: s })));
+const prefs = lsGet("agr-prefs", {});
+if (prefs.mode && BANK[prefs.mode]) $("genMode").value = prefs.mode;
+if (prefs.sign) $("genSign").value = prefs.sign;
+$("optCta").checked = !!prefs.cta; $("optWm").checked = !!prefs.wm;
+$("sSafe").checked = lsGet("agr-safe", false); $("safe").hidden = !$("sSafe").checked;
+const savePrefs = () => lsSet("agr-prefs", { mode: $("genMode").value, sign: $("genSign").value, cta: $("optCta").checked, wm: $("optWm").checked });
+["genMode", "genSign"].forEach(id => $(id).addEventListener("change", savePrefs));
+["optCta", "optWm"].forEach(id => $(id).addEventListener("change", () => { savePrefs(); render(); if (sheetId) drawBig(); }));
+$("btnClaude").onclick = writeWithClaude;
+$("btnBank").onclick = fromLibrary;
+$("btnInspo").onclick = () => $("inspoFile").click();
+$("inspoFile").onchange = e => { const f = e.target.files[0]; e.target.value = ""; useInspo(f); };
+$("btnStop").onclick = () => activeCtl?.abort();
+$("customForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const t = $("customText").value.trim(); if (!t) return;
+  const sign = $("genSign").value, mode = $("genMode").value;
+  const p = makePost("custom", sign, t, "you", freshLook(mode));
+  Store.add(p); $("customText").value = ""; filter = "pending"; setStatus("Added your line to Pending.");
+});
+fontsReady.then(render);
+render();
+Store.init();
+initClaude();
+</script>
