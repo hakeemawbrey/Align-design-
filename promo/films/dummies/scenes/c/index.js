@@ -1,4 +1,5 @@
-// STUB — replaced by the part-c agent. Export SCENES and CUES.
-import { el } from '../../../../src/lib.js'
-export const CUES = []
-export const SCENES = [async (stage) => ({ start: 39.8, end: 60.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'dummies part c'), update() {} })]
+// dummies · part c (39.8–60.01): Q6 "Who do I get along with?" (element triangles, fire+air / earth+water pairs) →
+// Q7 "Okay but… is it real?" → "Congrats. You're not a dummy anymore." + graduation confetti → black. Starts on H exactly.
+import story, { cues as storyCues } from './story.js'
+export const SCENES = [story]
+export const CUES = [...storyCues]
