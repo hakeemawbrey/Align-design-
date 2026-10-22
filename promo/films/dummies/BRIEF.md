@@ -38,3 +38,38 @@ The user asked: "Can you make a vid called astrology for dummies".
 - The lead owns cues.js.
 - Render: `node promo/scripts/render.mjs --film=dummies --vertical --sheet --rate=4 --from=X --to=Y --dir=/tmp/claude-0/dummies-<part>/<fresh>`, or use `--stills=`.
 - Commit and push your folder only (`git pull --rebase --autostash` first), then report your timings briefly.
+
+---
+# v2: MORE VISUALS, NOT JUST THE CHART WHEEL
+
+User feedback on v1: "Need more visuals to explain besides just using birth chart."
+
+**Keep:** the copy, the Q&A format, the v2 type, the springy motion, the sounds, the 60 s length and the same part timings.
+
+**Change: each question gets its own illustration.** Draw it as a scene on canvas, in the Align palette (bone #efe6d6 line art with glow, sign, element and gold colours, the nebula sky behind). Use the zodiac wheel only where the brief below says so; it should appear in at most ~25% of the film.
+
+Illustration style:
+- Bold, simple, friendly line art, like animated explainer icons.
+- Thick glowing strokes (5–9 px) with flat colour fills at 20–40%.
+- Big shapes that read on a phone.
+- No faces on people or objects.
+- Little people, if any, are simple silhouettes or pictogram figures.
+
+**New handoff H:** at 19.8–20.2 and 39.8–40.2, show ONLY `drawSky(ctx, t, SKY_H)` + grain at GRAIN_H. There is no wheel at the cuts any more, so each part opens and ends on the plain sky.
+
+| beat | new visual (replace the wheel) |
+|---|---|
+| title (A) | The title is unchanged. Around it, a few big sign glyphs and a gold "?" bob and spin like they're floating in zero-g. |
+| Q1 What's my sign? (A) | **Top-down solar system:** a big glowing Sun in the middle, a small blue Earth on its orbit, and around it all a ring-shaped **zodiac band** split into 12 coloured panels with glyphs (signs, not constellations). A tear-off calendar page "MAY 12" flips in beside Earth. A dashed **line of sight** goes from Earth through the Sun and out to the band, landing in the ♉ Taurus panel, which lights up; "TAURUS ♉" pops. (Correct geometry: from Earth the Sun appears against the opposite side of the band.) Do NOT draw real constellations here; the tropical sign ≠ constellation. |
+| Q2 birth time (A) | Two mini-scenes, side by side or in sequence: (1) a **calendar** flipping days (DAY 1, 2, 3) while a Moon orb hops from one sign panel to the next at 2.5 days; (2) a **spinning Earth** (a globe with simple continents, or just a circle with a pin-person standing on top). As Earth spins, the pin-person's **horizon** line sweeps past sign panels in the band; a stopwatch reads "~2 HRS" for each sign change. |
+| "So you're not one sign" (A) | Three big **trading cards** deal in and fan out: SUN ♉ TAURUS (gold), MOON ♐ SAGITTARIUS (pale blue-white), RISING ♎ LIBRA (Libra pink). Bold Inter on dark glass, with a thick rim in the sign colour. "You're a whole sky." Then the cards fly off and leave the plain sky (H). |
+| Q3 Rising (B) | A **landscape at dawn**: a silhouette of rolling hills or a city skyline along the lower third, with a gold horizon glow. A big ♎ Libra glyph (in a glowing disc) **rises up over the hills like a sunrise**, from the left/east side, with rays. A tiny "you, born here" pin-person stands on a hill with a little ✦ above them. For "Your first impression.", a **HELLO name-tag sticker** slaps on: "HELLO, my Rising is ♎ LIBRA". |
+| Q4 Mercury (B) | **The race-track explanation:** a top-down view of the Sun with two orbit lanes, Mercury (small, fast, inner lane) and Earth (outer lane), and the zodiac band (sign panels) around the outside. Mercury laps Earth. A **line of sight** from Earth through Mercury hits the band, and its marker on the band clearly **slides backwards** while Mercury overtakes (on the near side, between Earth and the Sun), then forwards again. Show a "℞" pop and the punchline "Retrograde: it *looks* like it's moving backwards." Then "It isn't. Happens ~3× a year." with three small calendar ticks popping. The geometry must be right: retrograde happens around when Mercury passes between Earth and the Sun. |
+| Q5 cusp (B) | A **timeline ruler / date strip**: "APR 19 · APR 20 · APR 21", with a bold line where Aries ♈ (red section) meets Taurus ♉ (gold section). The Sun orb teeters ON the line like a tightrope walker (with a little balance pole), wobbles, then hops into one side. For "Your birth time settles it.", a clock face pops onto the line and the hour hand ticks to decide. Don't show specific ingress times as fact. |
+| Q6 get along (C) | Four big **element icons**: a flame (fire), a mountain with a sprout (earth), a wind swirl (air), a water drop (water), each in its element colour. "Same element: easy.": two flames merge into a bigger flame. "Fire + Air fan the flames.": the wind swirl blows on the flame, which roars bigger. "Earth + Water grow things.": a drop falls on the soil and a sprout shoots up and blooms. |
+| Q7 is it real? (C) | "People have read the sky for thousands of years.": a quick **timeline** of sky-watchers as simple silhouettes and line art (a clay tablet with star marks, a stone circle, an astrolabe, a phone with a star app), sliding past under the stars. "Try it on. Keep what fits.": a **clothes rack** of shirts, each with a sign glyph on it; one shirt (♉) swings forward with a little ✓ sparkle. |
+| end (C) | The end line is unchanged. Add a **graduation cap** that tosses up and spins, plus glyph confetti; fade to black 59.3–60.0. |
+
+Facts still apply.
+
+Render with fresh dirs, commit and push your folder, then report back briefly.
