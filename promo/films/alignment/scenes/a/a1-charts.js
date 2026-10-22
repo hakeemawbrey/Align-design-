@@ -1,76 +1,76 @@
-// alignment · part A (0–20.2): How do two charts align? → Here are two charts. → Lay one over the other. → H.
-// Two small wheels (yours above, Juniper's below) draw in; each gains its three placements one by one with a label that
-// builds in step; then the two wheels slide together into the one central H wheel (you on the outer track, her on the
-// inner), hold, and the placements clear so the frame is exactly H from 19.5.
+// alignment v2 · part A (0–20.2): "Two charts walk into a date." → "Meet the charts." → "Now stack them." → H.
+// Two wheels bounce in from the sides (yours top-left, Juniper's bottom-right, each with a bold legend beside it); the
+// placements pop on, on the beat, with sparkle bursts; then the wheels wind up, SLAM together into the big central wheel
+// (squash and settle, shockwave, glitter), the placements bounce onto their tracks (you outside, Juniper inside), hold,
+// pop off, and the frame is exactly H (wheel.js) from 19.5.
 import { clamp, lerp, prog, ease, el } from '../../../../src/lib.js'
-import { W, H, fill, SERIF, MONO } from '../../../../src/scenes/common.js'
+import { W, H, fill, SANS, MONO } from '../../../../src/scenes/common.js'
 import { drawSky, layerCanvas } from '../../../sky.js'
-import { SIGNS, WHEEL, SKY_H, GRAIN_H, ptOf, drawWheelH } from '../../../wheel.js'
-import { PLACEMENTS, TINT, TRACK, drawOrb, drawSignWash, drawTrack, drawOrbLabel, drawTick } from './placements.js'
-import { grainLayer, words, BONE, CAP_SHADOW } from './text.js'
+import { SIGNS, WHEEL, SKY_H, GRAIN_H, TYPE, easeOutBack, ptOf, angOf, drawWheelH } from '../../../wheel.js'
+import { PLACEMENTS, TINT, TINT_RGB, TRACK, drawOrb, drawSignWash, drawTrack, drawOrbLabel, drawTick, drawSparkle } from './placements.js'
+import { grainLayer, popWords, BONE, CAP_SHADOW } from './text.js'
 
 const START = 0, END = 20.2
 const BODIES = ['sun', 'moon', 'rising']
+const BEAT = n => 0.6 + n * 0.5556            // 108 bpm
 
 // ── timings
 export const T = {
-  black: [0, 1.0],                       // up from black
-  eyebrow: [0.3, 3.75, 4.1],             // in, out0, out1
-  cap1: [0.5, 3.75, 4.1],               // "How do two charts align?"
-  wheelYou: [1.1, 2.3], wheelHer: [1.5, 2.7],
-  cap2: [4.3, 10.45, 10.85],            // "Here are two charts."
-  youLabel: 4.8, youOrbs: [5.2, 5.85, 6.5],
-  herLabel: 7.2, herOrbs: [7.6, 8.25, 8.9],
-  labelsOut: [10.4, 10.85],
-  cap3: [11.05, 18.55, 18.95],           // "Lay one over the other."
-  merge: [11.6, 13.2],
-  tracks: [12.9, 13.7],
-  sub: [13.7, 18.45, 18.85],             // "You on the outer ring. Juniper on the inner."
-  clear: [18.7, 19.5],                   // placements clear → H
+  black: [0, 0.5],
+  eyebrow: [0.25, 3.8, 4.05],
+  head1: [0.6, 3.8, 4.05],                    // "Two charts walk into a date."
+  inYou: [BEAT(1), 0.75], inHer: [BEAT(2), 0.75],   // wheels bounce in (start, dur)
+  head2: [4.15, 10.5, 10.75],                 // "Meet the charts."
+  youLabel: BEAT(8) - 0.3, youOrbs: [BEAT(8), BEAT(9), BEAT(10)],
+  herLabel: BEAT(12) - 0.3, herOrbs: [BEAT(12), BEAT(13), BEAT(14)],
+  labelsOut: [10.35, 10.65],
+  head3: [10.85, 18.5, 18.75],                // "Now stack them."
+  windUp: [11.75, 12.1], slam: [12.1, BEAT(21)], // impact on the beat (12.27)
+  squash: 0.95,
+  tracks: [12.5, 13.1],
+  punch: [13.0, 18.35, 18.6],                 // "You outside. Juniper inside."
+  hello: [BEAT(26), BEAT(27), BEAT(28), BEAT(30), BEAT(31), BEAT(32)],   // little hello bounces (you, then her)
+  clear: [18.75, 19.45],                      // placements pop off → H
 }
-const ORB_IN = 0.7
+const IMPACT = T.slam[1]
+const ORB_IN = 0.42
 
-// ── small-wheel geometry (same proportions as H, half size)
-const SMALL = 0.5
-const POS = { you: { cx: 540, cy: 745 }, juniper: { cx: 540, cy: 1335 } }
-const geom = (who, m) => {
-  const s = lerp(SMALL, 1, m)
-  return { cx: lerp(POS[who].cx, WHEEL.cx, m), cy: lerp(POS[who].cy, WHEEL.cy, m), rOut: WHEEL.rOut * s, rIn: WHEEL.rIn * s, rGlyph: WHEEL.rGlyph * s, alpha: WHEEL.alpha, s }
-}
+// ── small-wheel layout (same proportions as H, ~r 210)
+const SMALL = 210 / WHEEL.rOut
+const POS = { you: { cx: 316, cy: 820 }, juniper: { cx: 764, cy: 1420 } }
+const FROM = { you: -340, juniper: W + 340 }
 
-/** the H wheel at any centre/scale, built in by d (0–1): ring sweeps, divisions, glyphs. At s = 1, d = 1 it IS drawWheelH. */
-function drawWheel(ctx, G, { k = 1, d = 1 } = {}) {
+/** the wheel at scale s on geometry G (cx, cy, rOut…), screen-px line widths; at s = 1 it matches drawWheelH */
+function drawWheel(ctx, G, s, k = 1) {
   if (k <= 0) return
-  if (G.s === 1 && d >= 1) return drawWheelH(ctx, { k })
-  const ring = ease.inOutCubic(prog(d, 0, 0.6)), divs = prog(d, 0.3, 0.85), gl = prog(d, 0.5, 1)
   ctx.save()
-  ctx.globalAlpha = G.alpha * k
-  ctx.strokeStyle = BONE; ctx.lineWidth = 2
-  // the rings sweep counter-clockwise from Aries (9 o'clock), like the signs
-  if (ring > 0) {
-    ctx.beginPath(); ctx.arc(G.cx, G.cy, G.rOut, Math.PI, Math.PI - ring * Math.PI * 2, true); ctx.stroke()
-    ctx.lineWidth = 1.5
-    ctx.beginPath(); ctx.arc(G.cx, G.cy, G.rIn, Math.PI, Math.PI - ring * Math.PI * 2, true); ctx.stroke()
-  }
-  ctx.lineWidth = 1.5
+  SIGNS.forEach((sg, i) => {
+    const a0 = angOf(i * 30), a1 = angOf(i * 30 + 30)
+    ctx.globalAlpha = 0.16 * k; ctx.fillStyle = sg.color
+    ctx.beginPath(); ctx.arc(G.cx, G.cy, G.rOut, a1, a0); ctx.arc(G.cx, G.cy, G.rIn, a0, a1, true); ctx.closePath(); ctx.fill()
+  })
+  const lw = Math.max(s, 0.8)
+  ctx.globalAlpha = WHEEL.alpha * k
+  ctx.strokeStyle = BONE; ctx.lineWidth = 4 * lw
+  ctx.beginPath(); ctx.arc(G.cx, G.cy, G.rOut, 0, Math.PI * 2); ctx.stroke()
+  ctx.lineWidth = 3 * lw
+  ctx.beginPath(); ctx.arc(G.cx, G.cy, G.rIn, 0, Math.PI * 2); ctx.stroke()
   for (let i = 0; i < 12; i++) {
-    const q = ease.outCubic(clamp(divs * 12 - i * 0.85))
-    if (q <= 0) continue
-    const a = ptOf(i * 30, G.rIn, G), b = ptOf(i * 30, lerp(G.rIn, G.rOut, q), G)
+    const a = ptOf(i * 30, G.rIn, G), b = ptOf(i * 30, G.rOut, G)
     ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke()
   }
-  ctx.restore()
-  if (gl <= 0) return
-  ctx.save()
-  ctx.font = `${Math.round(40 * G.s)}px 'EB Garamond', 'Segoe UI Symbol', 'Noto Sans Symbols', serif`
+  ctx.font = `bold ${Math.round(58 * Math.max(s, 0.66))}px 'EB Garamond', 'Segoe UI Symbol', 'Noto Sans Symbols', serif`
   ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
-  SIGNS.forEach((s, i) => {
+  SIGNS.forEach((sg, i) => {
     const p = ptOf(i * 30 + 15, G.rGlyph, G)
-    ctx.globalAlpha = 0.85 * k * ease.inOutQuad(clamp(gl * 12 - i * 0.9)); ctx.fillStyle = s.color
-    ctx.fillText(s.glyph + '︎', p.x, p.y)
+    ctx.globalAlpha = k; ctx.fillStyle = sg.color
+    ctx.fillText(sg.glyph + '︎', p.x, p.y)
   })
   ctx.restore()
 }
+
+/** damped spring wobble: 0 at x=0, decays to 0 by x=1 */
+const wobble = (x, f = 2.2) => (x <= 0 || x >= 1) ? 0 : Math.exp(-5 * x) * Math.sin(2 * Math.PI * f * x)
 
 export default function build(stage) {
   const root = fill(stage, { background: '#05040c' })
@@ -80,33 +80,47 @@ export default function build(stage) {
   const grain = grainLayer(root, GRAIN_H)
 
   // ── copy
-  const cap = (size = 76) => ({ fontFamily: SERIF, fontStyle: 'italic', fontSize: size + 'px', lineHeight: 1.1, color: BONE, textShadow: CAP_SHADOW, left: 0, width: W + 'px', textAlign: 'center', zIndex: '3000' })
-  const eyebrow = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '262px', textAlign: 'center', fontFamily: MONO, fontSize: '31px', letterSpacing: '0.3em', color: BONE, textShadow: CAP_SHADOW, opacity: 0, zIndex: '3000', textIndent: '0.3em' }, root, 'ALIGN, EXPLAINED')
-  const cap1 = words(root, 'How do two charts align?', { ...cap(78), top: '326px' }, T.cap1[0], 0.13, 0.6)
-  const cap2 = words(root, 'Here are two charts.', { ...cap(78), top: '300px' }, T.cap2[0], 0.13, 0.6)
-  const cap3 = words(root, 'Lay one over the other.', { ...cap(78), top: '300px' }, T.cap3[0], 0.13, 0.6)
+  const eyebrow = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (TYPE.eyebrowY - 24) + 'px', textAlign: 'center', font: TYPE.eyebrow, letterSpacing: '0.25em', textIndent: '0.25em', color: '#f2c75c', textShadow: CAP_SHADOW, opacity: 0, zIndex: '3000' }, root, 'COMPATIBILITY 101')
+  const headBox = { left: '70px', width: (W - 140) + 'px', top: (TYPE.headY - 18) + 'px', zIndex: '3000' }
+  const head1 = popWords(root, [['Two'], ['charts'], ['walk'], ['into'], ['a'], ['date.', '#f59cc4']], headBox, T.head1[0])
+  const head2 = popWords(root, [['Meet'], ['the'], ['charts.', '#f2c75c']], headBox, T.head2[0])
+  const head3 = popWords(root, [['Now'], ['stack', '#f2c75c'], ['them.']], headBox, T.head3[0])
+  const punch = popWords(root, [['You', TINT.you, 'sans'], ['outside.'], ['Juniper', TINT.juniper, 'sans'], ['inside.']],
+    { left: '70px', width: (W - 140) + 'px', top: '1590px', zIndex: '3000' }, T.punch[0], { font: TYPE.sub, accentFont: TYPE.sub, line: 1.12 })
 
-  // the chart labels under each small wheel: NAME, then "Taurus Sun · Sagittarius Moon · Libra Rising" building in step
-  const label = (who, name, top) => {
-    const box = el('div', { position: 'absolute', left: 0, width: W + 'px', top: top + 'px', textAlign: 'center', zIndex: '3000' }, root)
-    const nm = el('div', { fontFamily: MONO, fontSize: '30px', letterSpacing: '0.3em', textIndent: '0.3em', color: TINT[who], textShadow: CAP_SHADOW, opacity: 0 }, box, name)
-    const line = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '44px', color: BONE, textShadow: CAP_SHADOW, marginTop: '8px', whiteSpace: 'nowrap' }, box)
-    const parts = BODIES.map((b, i) => {
-      const p = PLACEMENTS[who][b]
-      const word = b === 'rising' ? 'Rising' : b === 'sun' ? 'Sun' : 'Moon'
-      const sp = el('span', { display: 'inline-block', opacity: 0 }, line, `${i ? '<span style="opacity:.5;margin:0 .45em">·</span>' : ''}${p.name} ${word}`)
-      return sp
+  // legends beside each small wheel: NAME, then one line per placement popping in with its orb
+  const legend = (who, name, left, top, align) => {
+    const box = el('div', { position: 'absolute', left: left + 'px', top: top + 'px', width: '440px', textAlign: align, zIndex: '3000' }, root)
+    const nm = el('div', { font: "700 36px 'Space Mono', monospace", letterSpacing: '0.25em', color: TINT[who], textShadow: CAP_SHADOW, opacity: 0, marginBottom: '10px', transformOrigin: align === 'left' ? '0 50%' : '100% 50%' }, box, name)
+    const rows = BODIES.map(b => {
+      const p = PLACEMENTS[who][b], word = { sun: 'Sun', moon: 'Moon', rising: 'Rising' }[b]
+      const sg = SIGNS.find(s => s.id === p.sign)
+      return el('div', { font: `700 48px ${SANS}`, lineHeight: 1.18, color: BONE, textShadow: CAP_SHADOW, opacity: 0, whiteSpace: 'nowrap', transformOrigin: align === 'left' ? '0 50%' : '100% 50%' }, box,
+        `<span style="color:${sg.color}">${p.name}</span> ${word}`)
     })
-    return { box, nm, parts }
+    return { box, nm, rows }
   }
-  const youL = label('you', 'YOU', 1000)
-  const herL = label('juniper', 'JUNIPER', 1588)
+  const youL = legend('you', 'YOU', 582, POS.you.cy - 118, 'left')
+  const herL = legend('juniper', 'JUNIPER', 58, POS.juniper.cy - 118, 'right')
 
-  // sub-caption under the merged wheel
-  const sub = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '1520px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: '48px', lineHeight: 1.25, color: BONE, textShadow: CAP_SHADOW, opacity: 0, zIndex: '3000' }, root,
-    `<span style="color:${TINT.you}">You</span> on the outer ring.<br><span style="color:${TINT.juniper}">Juniper</span> on the inner.`)
+  const pop = (t, t0, d = 0.3) => easeOutBack(prog(t, t0, t0 + d))
 
-  const orbK = (t, t0) => ease.outCubic(prog(t, t0, t0 + ORB_IN))
+  // geometry of each person's wheel at time t → { G, s, rot }
+  function wheelState(who, t) {
+    const [t0, d] = who === 'you' ? T.inYou : T.inHer
+    const pIn = prog(t, t0, t0 + d)
+    const xIn = lerp(FROM[who], POS[who].cx, easeOutBack(pIn, 1.4))
+    const rot = (who === 'you' ? -1 : 1) * 0.9 * (1 - easeOutBack(pIn, 1.2))
+    let cx = xIn, cy = POS[who].cy, s = SMALL
+    // wind-up: pull apart a touch, then slam to the centre (accelerating)
+    const wu = ease.inOutQuad(prog(t, ...T.windUp)) * (1 - prog(t, T.slam[0], T.slam[0] + 0.01))
+    const dir = who === 'you' ? -1 : 1
+    cx += dir * 26 * wu; cy += dir * 30 * wu; s *= 1 - 0.04 * wu
+    const m = ease.inCubic(prog(t, ...T.slam))
+    if (t >= T.slam[0]) { cx = lerp(POS[who].cx + dir * 26, WHEEL.cx, m); cy = lerp(POS[who].cy + dir * 30, WHEEL.cy, m); s = lerp(SMALL * 0.96, 1, m) }
+    const G = { cx, cy, rOut: WHEEL.rOut * s, rIn: WHEEL.rIn * s, rGlyph: WHEEL.rGlyph * s }
+    return { G, s, rot, m, pIn }
+  }
 
   return {
     start: START, end: END, root,
@@ -115,87 +129,149 @@ export default function build(stage) {
       black.style.display = t < T.black[1] ? 'block' : 'none'
       drawSky(sx, t, SKY_H)
 
-      // copy
-      eyebrow.style.opacity = String(ease.inOutQuad(prog(t, T.eyebrow[0], T.eyebrow[0] + 0.6)) * (1 - ease.inOutQuad(prog(t, T.eyebrow[1], T.eyebrow[2]))))
-      const vis = (c, a) => { c.box.style.display = t >= a[0] - 0.05 && t < a[2] + 0.05 ? 'block' : 'none'; c.update(t, 1 - ease.inOutQuad(prog(t, a[1], a[2]))) }
-      vis(cap1, T.cap1); vis(cap2, T.cap2); vis(cap3, T.cap3)
-      const lOut = 1 - ease.inOutQuad(prog(t, ...T.labelsOut))
+      // ── copy
+      const eb = pop(t, T.eyebrow[0], 0.35), ebOut = 1 - ease.inQuad(prog(t, T.eyebrow[1], T.eyebrow[2]))
+      eyebrow.style.opacity = String(clamp(prog(t, T.eyebrow[0], T.eyebrow[0] + 0.15)) * ebOut)
+      eyebrow.style.transform = `scale(${(0.7 + 0.3 * eb).toFixed(4)})`
+      head1.update(t, T.head1); head2.update(t, T.head2); head3.update(t, T.head3); punch.update(t, T.punch)
+      const lOut = 1 - ease.inQuad(prog(t, ...T.labelsOut))
       for (const [L, t0, orbs] of [[youL, T.youLabel, T.youOrbs], [herL, T.herLabel, T.herOrbs]]) {
-        L.box.style.display = t >= t0 - 0.05 && t < T.labelsOut[1] + 0.05 ? 'block' : 'none'
-        L.nm.style.opacity = String(ease.inOutQuad(prog(t, t0, t0 + 0.6)) * lOut)
-        L.parts.forEach((p, i) => {
-          const e = ease.outCubic(prog(t, orbs[i] + 0.1, orbs[i] + 0.75))
-          p.style.opacity = String(e * lOut)
-          p.style.transform = `translateY(${((1 - e) * 10).toFixed(2)}px)`
+        const on = t >= t0 - 0.05 && t < T.labelsOut[1] + 0.05
+        L.box.style.display = on ? 'block' : 'none'
+        if (!on) continue
+        const pn = pop(t, t0, 0.32)
+        L.nm.style.opacity = String(clamp(prog(t, t0, t0 + 0.12)) * lOut)
+        L.nm.style.transform = `scale(${(0.6 + 0.4 * pn).toFixed(4)})`
+        L.rows.forEach((r, i) => {
+          const p = pop(t, orbs[i] + 0.04, 0.3)
+          r.style.opacity = String(clamp(prog(t, orbs[i] + 0.04, orbs[i] + 0.16)) * lOut)
+          r.style.transform = `translateY(${((1 - p) * 26).toFixed(2)}px) scale(${(0.6 + 0.4 * p).toFixed(4)})`
         })
       }
-      const subK = ease.inOutQuad(prog(t, T.sub[0], T.sub[0] + 0.7)) * (1 - ease.inOutQuad(prog(t, T.sub[1], T.sub[2])))
-      sub.style.opacity = String(subK)
-      sub.style.transform = `translateY(${((1 - ease.outCubic(prog(t, T.sub[0], T.sub[0] + 0.8))) * 12).toFixed(2)}px)`
 
       // ── diagram
       dx.clearRect(0, 0, W, H)
-      const m = ease.inOutCubic(prog(t, ...T.merge))
-      const clear = 1 - ease.inOutQuad(prog(t, ...T.clear))
       if (t >= T.clear[1]) { drawWheelH(dx); grain.update(t); return }   // exactly H
+      const merged = t >= IMPACT
 
-      const G = { you: geom('you', m), juniper: geom('juniper', m) }
-      // soft glow behind each small wheel (gone once they are one)
-      const glowK = (1 - m) * ease.inOutQuad(prog(t, 1.0, 2.6))
-      if (glowK > 0) for (const who of ['you', 'juniper']) {
-        const g = G[who], gr = dx.createRadialGradient(g.cx, g.cy, g.rIn * 0.2, g.cx, g.cy, g.rOut * 1.35)
-        gr.addColorStop(0, `rgba(${who === 'you' ? '247,185,139' : '185,169,255'},${0.07 * glowK})`); gr.addColorStop(1, 'rgba(0,0,0,0)')
-        dx.fillStyle = gr; dx.beginPath(); dx.arc(g.cx, g.cy, g.rOut * 1.35, 0, Math.PI * 2); dx.fill()
-      }
+      // squash and settle after the impact (about the wheel centre)
+      const sqx = (t - IMPACT) / T.squash
+      const sq = merged ? 0.075 * wobble(sqx, 2.1) : 0
 
-      // sign washes under the ring (in each orb's sign)
-      // the wheels: yours draws first; hers fades out as it lands on yours so the one wheel is never doubled
-      const herK = 1 - ease.inOutQuad(prog(m, 0.4, 0.95))
-      for (const [who, orbs] of [['you', T.youOrbs], ['juniper', T.herOrbs]]) BODIES.forEach((b, i) => {
-        const k = 0.5 * orbK(t, orbs[i]) * clear, sg = PLACEMENTS[who][b].sign
-        if (who === 'you' || m >= 1) drawSignWash(dx, sg, k, G.you)
-        else { drawSignWash(dx, sg, k * herK, G.juniper); drawSignWash(dx, sg, k * (1 - herK), G.you) }
-      })
-
-      if (m >= 1) drawWheel(dx, G.you)
-      else {
-        drawWheel(dx, G.you, { d: prog(t, ...T.wheelYou) })
-        drawWheel(dx, G.juniper, { k: herK, d: prog(t, ...T.wheelHer) })
-      }
-
-      // the tracks (on the merged wheel)
-      const trK = ease.inOutQuad(prog(t, ...T.tracks)) * clear
-      drawTrack(dx, 'you', trK); drawTrack(dx, 'juniper', trK)
-
-      // the placements: each orb lands with a gentle ripple, and rides its track as the wheels slide together
-      for (const [who, orbs] of [['you', T.youOrbs], ['juniper', T.herOrbs]]) BODIES.forEach((b, i) => {
-        const k = orbK(t, orbs[i]) * clear
-        if (k <= 0) return
-        const g = G[who], r = TRACK[who] * g.s, lon = PLACEMENTS[who][b].lon
-        const p = ptOf(lon, r, g)
-        const sz = lerp(0.72, 1, m) * lerp(0.5, 1, ease.outCubic(prog(t, orbs[i], orbs[i] + ORB_IN)))
-        const rp = prog(t, orbs[i] + 0.05, orbs[i] + 1.1)
-        if (rp > 0 && rp < 1) {
-          dx.save(); dx.globalAlpha = 0.45 * (1 - rp) * (1 - rp); dx.strokeStyle = TINT[who]; dx.lineWidth = 1.5
-          dx.beginPath(); dx.arc(p.x, p.y, 10 + 34 * ease.outCubic(rp), 0, Math.PI * 2); dx.stroke(); dx.restore()
+      if (merged) {
+        dx.save()
+        dx.translate(WHEEL.cx, WHEEL.cy); dx.scale(1 + sq, 1 - sq); dx.translate(-WHEEL.cx, -WHEEL.cy)
+        drawWheelH(dx)
+        // occupied signs light up (fading as the placements leave)
+        for (const who of ['you', 'juniper']) for (const b of BODIES) drawSignWash(dx, PLACEMENTS[who][b].sign, 0.5 * (1 - ease.inOutQuad(prog(t, ...T.clear))))
+        const trK = ease.inOutQuad(prog(t, ...T.tracks)) * (1 - ease.inOutQuad(prog(t, ...T.clear)))
+        drawTrack(dx, 'you', trK); drawTrack(dx, 'juniper', trK)
+        dx.restore()
+        // shockwave + sparkles round the rim
+        const sw = prog(t, IMPACT, IMPACT + 0.7)
+        if (sw > 0 && sw < 1) {
+          dx.save(); dx.globalAlpha = 0.55 * (1 - sw) * (1 - sw); dx.strokeStyle = '#fff1d8'; dx.lineWidth = 8 * (1 - sw) + 2
+          dx.shadowColor = '#f2c75c'; dx.shadowBlur = 24
+          dx.beginPath(); dx.arc(WHEEL.cx, WHEEL.cy, WHEEL.rOut + 20 + 170 * ease.outCubic(sw), 0, Math.PI * 2); dx.stroke(); dx.restore()
+          for (let i = 0; i < 12; i++) {
+            const p = ptOf(i * 30 + 15, WHEEL.rOut + 10, WHEEL)
+            drawSparkle(dx, p.x, p.y, prog(t, IMPACT + i * 0.012, IMPACT + 0.75 + i * 0.012), { n: 4, dist: 70, colors: [SIGNS[i].color, '#fff3d6'], size: 21, seed: i + 3 })
+          }
         }
-        drawTick(dx, who, b, ease.inOutQuad(prog(t, orbs[i] + 0.2, orbs[i] + 0.8)) * clear, g)
-        drawOrb(dx, p.x, p.y, who, { k, s: sz, t, seed: (who === 'you' ? 10 : 20) + i })
-        drawOrbLabel(dx, who, b, ease.inOutQuad(prog(t, orbs[i] + 0.3, orbs[i] + 0.9)) * clear, g, lerp(0.78, 1, m))
-      })
+      } else {
+        // two small wheels (hers fades into yours over the last of the slam so the one wheel is never doubled)
+        for (const who of ['juniper', 'you']) {
+          const st = wheelState(who, t)
+          const k = who === 'juniper' ? 1 - ease.inOutQuad(prog(st.m, 0.55, 1)) : 1
+          if (st.pIn <= 0) continue
+          dx.save()
+          dx.translate(st.G.cx, st.G.cy); dx.rotate(st.rot)
+          // landing squash
+          const ls = 0.06 * wobble(prog(t, (who === 'you' ? T.inYou : T.inHer)[0] + 0.45, (who === 'you' ? T.inYou : T.inHer)[0] + 1.3), 2)
+          dx.scale(1 + ls, 1 - ls)
+          const G0 = { ...st.G, cx: 0, cy: 0 }
+          // soft glow behind
+          const gr = dx.createRadialGradient(0, 0, G0.rIn * 0.2, 0, 0, G0.rOut * 1.4)
+          gr.addColorStop(0, `rgba(${TINT_RGB[who]},${0.1 * (1 - st.m)})`); gr.addColorStop(1, 'rgba(0,0,0,0)')
+          dx.fillStyle = gr; dx.beginPath(); dx.arc(0, 0, G0.rOut * 1.4, 0, Math.PI * 2); dx.fill()
+          drawWheel(dx, G0, st.s, k)
+          const orbs = who === 'you' ? T.youOrbs : T.herOrbs
+          BODIES.forEach((b, i) => drawSignWash(dx, PLACEMENTS[who][b].sign, 0.5 * clamp(prog(t, orbs[i], orbs[i] + 0.2)) * k, G0))
+          dx.restore()
+        }
+      }
+
+      // ── the placements (they ride their wheels; after the impact each bounces onto its track)
+      for (const who of ['you', 'juniper']) {
+        const orbs = who === 'you' ? T.youOrbs : T.herOrbs
+        const st = merged ? null : wheelState(who, t)
+        BODIES.forEach((b, i) => {
+          const pIn = prog(t, orbs[i], orbs[i] + ORB_IN)
+          if (pIn <= 0) return
+          const idx = (who === 'you' ? 0 : 3) + i
+          const off0 = T.clear[0] + idx * 0.09, pOff = prog(t, off0, off0 + 0.28)
+          if (pOff >= 1) return
+          let x, y, s, G
+          const lon = PLACEMENTS[who][b].lon
+          if (merged) {
+            G = WHEEL
+            const bx = (t - IMPACT - 0.04 * idx) / 0.8
+            const rr = TRACK[who] * (1 + (who === 'you' ? 0.05 : -0.08) * wobble(bx, 1.8))
+            const p = ptOf(lon, rr, WHEEL)
+            x = WHEEL.cx + (p.x - WHEEL.cx) * (1 + sq); y = WHEEL.cy + (p.y - WHEEL.cy) * (1 - sq)
+            s = 1
+          } else {
+            G = st.G
+            const a = angOf(lon) + st.rot, r = TRACK[who] * st.s
+            x = G.cx + Math.cos(a) * r; y = G.cy + Math.sin(a) * r
+            s = lerp(0.62, 1, st.m)
+          }
+          // pop in (overshoot), hello bounce, pop off
+          const hi = T.hello[idx], hb = 0.28 * Math.sin(Math.PI * prog(t, hi, hi + 0.36))
+          const sIn = easeOutBack(pIn, 2.4), sOff = 1 - ease.inCubic(pOff) * 1, preOff = 1 + 0.18 * Math.sin(Math.PI * clamp(pOff * 2))
+          const size = s * sIn * (1 + hb) * (pOff > 0 ? sOff * (pOff < 0.5 ? preOff : 1) : 1)
+          const k = clamp(pIn * 4) * (1 - ease.inQuad(pOff))
+          if (merged) drawTick(dx, who, b, ease.inOutQuad(prog(t, IMPACT + 0.25, IMPACT + 0.6)) * (1 - ease.inQuad(pOff)))
+          else {
+            dx.save(); dx.translate(G.cx, G.cy); dx.rotate(st.rot)
+            drawTick(dx, who, b, ease.inOutQuad(prog(t, orbs[i] + 0.15, orbs[i] + 0.4)) * (1 - ease.inOutQuad(prog(t, T.windUp[0], T.slam[0] + 0.1))), { ...G, cx: 0, cy: 0 })
+            dx.restore()
+          }
+          drawOrb(dx, x, y, who, { k, s: size, t, seed: 10 + idx })
+          drawSparkle(dx, x, y, prog(t, orbs[i] + 0.04, orbs[i] + 0.7), { n: 8, dist: 90 * s, colors: [TINT[who], '#fff3d6', '#f2c75c'], size: 21, seed: idx + 1 })
+          drawSparkle(dx, x, y, prog(t, off0 + 0.1, off0 + 0.6), { n: 6, dist: 60, colors: [TINT[who], '#fff3d6'], size: 14, seed: idx + 7 })
+          // tag
+          const lk = merged ? 0 : clamp(prog(t, orbs[i] + 0.18, orbs[i] + 0.35)) * (1 - ease.inOutQuad(prog(t, T.windUp[0], T.slam[0] + 0.1)))
+          if (merged) drawOrbLabel(dx, who, b, ease.inOutQuad(prog(t, IMPACT + 0.3, IMPACT + 0.65)) * (1 - ease.inQuad(pOff)), WHEEL, 1 * (1 + 0.5 * hb))
+          else if (lk > 0) {
+            dx.save(); dx.translate(G.cx, G.cy); dx.rotate(st.rot)
+            drawOrbLabel(dx, who, b, lk, { ...G, cx: 0, cy: 0 }, 0.72 * easeOutBack(prog(t, orbs[i] + 0.18, orbs[i] + 0.45)))
+            dx.restore()
+          }
+        })
+      }
       grain.update(t)
     },
   }
 }
 
 export const cues = [
-  ['bell', T.cap1[0] + 0.05, 293.66, 0.022, 3.2, 0],
-  ['whoosh', T.wheelYou[0], 1.4, 0.03],
-  ['bell', T.cap2[0] + 0.05, 220, 0.02, 3, 0],
-  ...T.youOrbs.map((t, i) => ['bell', t + 0.08, [587.33, 739.99, 880][i], 0.024, 2.4, -0.25]),
-  ...T.herOrbs.map((t, i) => ['bell', t + 0.08, [659.25, 880, 987.77][i], 0.024, 2.4, 0.25]),
-  ['bell', T.cap3[0] + 0.05, 246.94, 0.02, 3, 0],
-  ['whoosh', T.merge[0], T.merge[1] - T.merge[0], 0.05],
-  ['bell', T.merge[1] - 0.1, 369.99, 0.026, 3.6, 0],
-  ['glitter', T.merge[1] - 0.2, T.merge[1] + 0.9],
+  ['pop', T.eyebrow[0], 700, 0.04, 0],
+  ...[0, 1, 2, 3, 4, 5].map(i => ['pop', T.head1[0] + i * 0.07, [660, 740, 830, 880, 990, 1320][i], i === 5 ? 0.06 : 0.035, 0]),
+  ['whoosh', T.inYou[0] - 0.1, 0.6, 0.05], ['pluck', T.inYou[0] + 0.45, 293.66, 0.05, 0.45, -0.3],
+  ['whoosh', T.inHer[0] - 0.1, 0.6, 0.05], ['pluck', T.inHer[0] + 0.45, 369.99, 0.05, 0.45, 0.3],
+  ...[0, 1, 2].map(i => ['pop', T.head2[0] + i * 0.07, [740, 880, 1175][i], 0.04, 0]),
+  ['pop', T.youLabel, 600, 0.04, -0.25],
+  ...T.youOrbs.map((t, i) => ['pop', t, [880, 990, 1175][i], 0.06, -0.25]),
+  ['pop', T.herLabel, 660, 0.04, 0.25],
+  ...T.herOrbs.map((t, i) => ['pop', t, [1110, 1320, 1480][i] * 0.9, 0.06, 0.25]),
+  ...[0, 1, 2].map(i => ['pop', T.head3[0] + i * 0.07, [740, 990, 880][i], 0.04, 0]),
+  ['riser', T.windUp[0] - 0.4, IMPACT, 0.04],
+  ['whoosh', T.slam[0], IMPACT - T.slam[0] + 0.05, 0.07],
+  ['boom', IMPACT, 0.12],
+  ['glitter', IMPACT, IMPACT + 1.0],
+  ['bell', IMPACT + 0.05, 587.33, 0.025, 2.6, 0],
+  ...[0, 1, 2, 3].map(i => ['pop', T.punch[0] + i * 0.07, [880, 990, 1110, 1320][i], 0.04, 0]),
+  ...T.hello.map((t, i) => ['pluck', t, [587.33, 739.99, 880, 659.25, 830.61, 987.77][i], 0.035, 0.4, i < 3 ? -0.25 : 0.25]),
+  ...[0, 1, 2, 3, 4, 5].map(i => ['pop', T.clear[0] + i * 0.09 + 0.1, 1320 - i * 110, 0.03, 0]),
 ]
