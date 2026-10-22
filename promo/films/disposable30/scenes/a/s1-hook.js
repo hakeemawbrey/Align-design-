@@ -268,7 +268,7 @@ export default function build(stage) {
       flash.style.opacity = String(clamp(fd < -0.04 ? 0 : fd < 0 ? 0.12 : 0.42 * Math.exp(-fd * 7)) * (1 - prog(t, EDGE + 0.4, SETTLE)))
 
       // ── copy
-      const outA = 1 - ease.inOutQuad(prog(t, STOP - 0.4, STOP - 0.1)), outB = 1 - ease.inOutQuad(prog(t, 10.9, 11.25))
+      const outA = 1 - ease.inOutQuad(prog(t, STOP - 0.4, STOP - 0.1)), outB = 1 - ease.inOutQuad(prog(t, 11.55, 11.9))
       capA.update(t, outA)
       capB.update(t, outB)
       capPocket.style.opacity = String(ease.inOutQuad(prog(t, 0, 0.5)) * Math.max(outA, t > STOP - 0.1 ? ease.inOutQuad(prog(t, CAP_B - 0.1, CAP_B + 0.3)) * outB : 0) * (1 - ease.inOutQuad(prog(t, EDGE, EDGE + 0.3))))

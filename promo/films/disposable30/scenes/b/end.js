@@ -14,14 +14,14 @@ import { lerp, prog, ease, tw, el, mix, C } from '../../../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../../../src/scenes/common.js'
 import { sky, twinkles, drawGrain, grainOpacity, layerCanvas, pocketCanvas, MOON } from './kit.js'
 
-const T0 = 26.3, T1 = 30.01, T_END = 30.0
-const T_TYPE = 26.5, PER = 0.032, FADE = 0.12
-const T_RISE = 27.8, T_RINGS = 28.1, T_DOTS = 28.15, T_WORD = 28.2, T_SUB = 28.28
-const T_PULSE = 28.8, T_MOON = 28.95, T_OUT = 29.6
+const T0 = 27.55, T1 = 31.26, T_END = 31.25
+const T_TYPE = 27.75, PER = 0.032, FADE = 0.12
+const T_RISE = 29.05, T_RINGS = 29.35, T_DOTS = 29.4, T_WORD = 29.45, T_SUB = 29.53
+const T_PULSE = 30.05, T_MOON = 30.2, T_OUT = 30.85
 const T_HOLD = T_RINGS + 0.45
 const LINE = 'No one is disposable.'
 const CH0 = 10, CH1 = 19
-const T_GLINT = 27.25
+const T_GLINT = 28.5
 const LINE_Y0 = H / 2, LINE_Y1 = 230, LINE_FS = 136
 const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 821, SUB_FS = 30
 
@@ -65,7 +65,7 @@ export default async function build(stage) {
       root.style.opacity = String(ease.inOutQuad(prog(t, T0, T0 + 0.17)))
       sky(bx, t, 1)
       // the moon glows a touch as the lockup holds
-      const mb = tw(t, [[T_MOON, 0], [T_MOON + 0.3, 1, ease.outQuad], [29.5, 0.55, ease.inOutQuad]])
+      const mb = tw(t, [[T_MOON, 0], [T_MOON + 0.3, 1, ease.outQuad], [30.75, 0.55, ease.inOutQuad]])
       if (mb > 0.003) {
         const g = bx.createRadialGradient(MOON.x, MOON.y, MOON.r * 0.8, MOON.x, MOON.y, MOON.r * 3.2)
         g.addColorStop(0, `rgba(255,240,214,${0.16 * mb})`); g.addColorStop(1, 'rgba(255,240,214,0)')

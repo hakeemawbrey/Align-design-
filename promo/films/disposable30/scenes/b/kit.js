@@ -11,7 +11,7 @@ export const T_H = 15.0
 
 /** the sky: exactly H until 15.2, then a slow push-in (zoom 1 → 1.035 by 30s) that never stops */
 export function sky(bx, t, dim = 1) {
-  const k = prog(t, 15.2, 30)
+  const k = prog(t, 15.2, 31.25)
   const zoom = 1 + 0.035 * (k * k * (3 - 2 * k) * 0.5 + k * 0.5)
   drawSky(bx, t, { zoom, dx: 0, dy: 0, dim, moon: MOON })
 }
@@ -54,6 +54,7 @@ const PROF = { iw: 1496, ih: 2238, b: [120, 114, 1374, 2116], r: 84 }
 export const ART = {
   p3: { src: 'card-profile-3.png', ...PROF, big: 1496 },
   sign: { src: 'card-sign.png', iw: 848, ih: 1152, b: [121, 121, 727, 1031], r: 45, big: 848 },
+  reveal: { src: 'card-reveal.png', iw: 1560, ih: 2740, b: [63, 122, 1496, 2623], r: 84, big: 1560 },   // the face, after you both align
 }
 export const bodyH = k => ART[k].b[3] - ART[k].b[1]
 const canvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c }

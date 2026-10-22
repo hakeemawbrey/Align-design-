@@ -5,8 +5,8 @@
 //
 // Beat map (sound):
 //   15.00–15.20  H held still
-//   15.20–16.00  the card glides left and grows (590,540 h800) · 15.75 eyebrow "THE ALIGNMENT READING"
-//   15.95        "See how you fit / before you meet." types (right column, ≈17.2) · holds · out 18.65
+//   15.20–16.00  the card glides left and grows (590,540 h800) · 15.75 eyebrow "THE BLIND CARD"
+//   15.95        "No photo until / you both align." types (right column, ≈17.2) · holds · out 18.65
 //   17.45–18.35  the reading wakes: a gold glint runs down the card, the Push / Pull / Align rows breathe
 //   18.70–19.45  PUSH-IN: the card pushes in until its Push / Pull / Align rows fill the upper frame; the rest dims
 //   19.45 19.95 20.45  each row lights in its colour (PUSH rose · PULL mint · ALIGN gold), a glint along it, and the
@@ -17,12 +17,13 @@
 //   24.40–24.75  the phone sinks away · 24.75–25.35 Juniper's card (right) and your sign card (left) turn in
 //   25.05–25.75  seven chakra stars streak in and click into the column between them (red bottom → violet top)
 //   25.75        LOCK: soft flash (cap .4), ring, pixel burst, 3-frame shake, both rims light
-//   26.05–26.40  everything drifts apart and fades (end.js owns 26.30→)
+//   26.05–26.70  REVEAL: Juniper's blind card flips to the revealed card (card-reveal.png), eyebrow "YOU BOTH ALIGNED"
+//   27.30–27.65  everything drifts apart and fades (end.js owns 27.55→)
 import { clamp, lerp, prog, ease, tw, rng, el, mix, C, TypeLine } from '../../../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill, img } from '../../../../src/scenes/common.js'
 import { sky, twinkles, drawGrain, grainOpacity, getSky, layerCanvas, loadArt, drawCard, cardSpace, glint, pocketCanvas, ART, bodyH, pixStar } from './kit.js'
 
-const T0 = 15.0, T1 = 26.45
+const T0 = 15.0, T1 = 27.7
 
 // ── card geometry (PNG px of card-profile-3.png)
 const PA = ART.p3, BCX = (PA.b[0] + PA.b[2]) / 2, BCY = (PA.b[1] + PA.b[3]) / 2
@@ -57,7 +58,8 @@ const CARDS_IN = { a: 24.75, b: 25.35 }
 const COL = { x: 960, y: 470, gap: 60 }
 const STAR_IN = 25.05, STAR_STEP = 0.05, STAR_FLY = 0.4
 const LOCK = 25.75
-const EXIT = { a: 26.05, b: 26.4 }
+const REV = { a: 26.05, b: 26.7 }                 // you both aligned → Juniper's card flips: the face, at last
+const EXIT = { a: 27.3, b: 27.65 }
 const CHK = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
 const STAR_FROM = [[300, 1000], [1640, 960], [120, 560], [1800, 600], [420, 70], [1480, 40], [960, -40]]
 
@@ -96,8 +98,8 @@ export default async function build(stage) {
   // ── copy
   const eyebrow = (txt, style) => el('div', { position: 'absolute', fontFamily: MONO, fontSize: '34px', letterSpacing: '0.32em', color: C.bone, opacity: 0, whiteSpace: 'pre', textShadow: '0 0 14px rgba(11,6,32,0.9)', ...style }, root, txt)
   const stmt = { fontFamily: SERIF, fontStyle: 'italic', fontSize: '104px', lineHeight: '1.08', letterSpacing: '-0.005em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.9), 0 0 12px rgba(11,6,32,0.6)' }
-  const eb1 = eyebrow('THE ALIGNMENT READING', { left: '1004px', top: '384px' })
-  const line1 = new TypeLine(root, 'See how you fit\nbefore you meet.', { ...stmt, left: '996px', top: '442px' }, { perChar: 0.032, fade: 0.3, accent: [C.violet, C.gold, C.rub] })
+  const eb1 = eyebrow('THE BLIND CARD', { left: '1004px', top: '384px' })
+  const line1 = new TypeLine(root, 'No photo until\nyou both align.', { ...stmt, left: '996px', top: '442px' }, { perChar: 0.032, fade: 0.3, accent: [C.violet, C.gold, C.rub] })
   const eb2 = eyebrow('HOW YOU TWO ACTUALLY FIT', { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '688px' })
   const wordsBox = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '748px', textAlign: 'center', ...stmt, fontSize: '128px', lineHeight: '1', whiteSpace: 'pre' }, root)
   const wordChars = WORDS.map((w, wi) => {
@@ -105,6 +107,7 @@ export default async function build(stage) {
     return [...w].map(ch => el('span', { opacity: 0 }, sp, ch))
   })
   const eb3 = eyebrow('JUNIPER × YOU', { left: '232px', top: '372px' })
+  const ebR = eyebrow('YOU BOTH ALIGNED', { left: 0, width: W + 'px', textAlign: 'center', textIndent: '0.32em', top: '92px' })
   const line3 = new TypeLine(root, 'Venus rules\nyou both.', { ...stmt, fontSize: '112px', left: '224px', top: '432px' }, { perChar: 0.034, fade: 0.2, accent: [C.violet, C.rub, C.gold] })
 
   // ── lock burst particles
@@ -209,7 +212,9 @@ export default async function build(stage) {
         const Y = { x: lerp(-260, LY.x, p) - 90 * ex + dl[0], y: lerp(520, LY.y, p) + fl(2) - 20 * ex + dl[1], ry: lerp(40, 0, p), rz: lerp(-6, 1.5, p) }
         const J = { x: lerp(W + 260, RJ.x, p) + 90 * ex + dl[0], y: lerp(520, RJ.y, p) + fl(0) - 20 * ex + dl[1], ry: lerp(-40, 0, p), rz: lerp(6, -1.5, p) }
         drawCard(bx, 'sign', Y.x, Y.y, LY.h, { ry: Y.ry, rz: Y.rz, alpha: aIn, glow: lockK * 0.9, rim: '200,255,190' })
-        drawCard(bx, 'p3', J.x, J.y, RJ.h, { ry: J.ry, rz: J.rz, alpha: aIn, glow: lockK * 0.9, rim: '255,170,240' })
+        const rv = ease.inOutCubic(prog(t, REV.a, REV.b)), rvLift = Math.sin(Math.PI * rv)
+        const rvGlow = tw(t, [[REV.b - 0.1, 0], [REV.b + 0.05, 1, ease.outQuad], [REV.b + 0.9, 0.35, ease.inOutQuad]])
+        drawCard(bx, 'p3', J.x, J.y - 18 * rvLift, RJ.h * (1 + 0.1 * rv + 0.04 * rvLift), { ry: J.ry + 180 * rv, rz: J.rz * (1 - rv), alpha: aIn, glow: Math.max(lockK * 0.9, rvGlow), rim: '255,170,240', back: 'reveal' })
       }
       if (t >= STAR_IN) {
         bx.save()
@@ -299,6 +304,7 @@ export default async function build(stage) {
         s.style.color = p >= 1 ? C.bone : mix(hex, C.bone, ease.inQuad(p))
       }))
       fadeEb(eb3, COPY3.eb, COPY3.out); line3.update(t - COPY3.line, { out: COPY3.out - COPY3.line })
+      fadeEb(ebR, LOCK + 0.15, EXIT.a)
 
       drawGrain(gx, t)
     },
@@ -308,7 +314,7 @@ export default async function build(stage) {
 // ── sound
 export const cues = [
   ['whoosh', GO1.a + 0.02, 0.7, 0.05],                                    // the card steps aside
-  ['bell', COPY1.line, 493.88, 0.04, 2.2, 0],                             // "See how you fit before you meet."
+  ['bell', COPY1.line, 493.88, 0.04, 2.2, 0],                             // "No photo until you both align."
   ['glitter', WAKE.a, WAKE.b],
   ['bell', WAKE.a + 0.3, 1318.51, 0.02, 1.6, -0.3],
   ['whoosh', GO2.a, 0.8, 0.07],                                           // push-in on the rows
@@ -325,5 +331,8 @@ export const cues = [
   ['boom', LOCK, 0.22],                                                    // LOCK
   ...[293.66, 369.99, 440, 554.37, 587.33, 739.99, 880].map((f, i) => ['bell', LOCK + i * 0.025, f, 0.045, 2.4, (i - 3) * 0.12]),
   ['glitter', LOCK, LOCK + 0.7],
+  ['whoosh', REV.a, REV.b - REV.a, 0.08],                                  // the blind card flips
+  ...[587.33, 739.99, 880, 1174.66].map((f, i) => ['bell', REV.b - 0.12 + i * 0.05, f, 0.04, 2.4, (i - 1.5) * 0.2]),
+  ['glitter', REV.b - 0.1, REV.b + 0.6],
   ['whoosh', EXIT.a, 0.6, 0.04],
 ]

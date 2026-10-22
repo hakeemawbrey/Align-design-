@@ -1,12 +1,12 @@
-// disposable30 · half b (12.0–30.0): the answer, aligning. Pattern's half b (the alignment reading → Push / Pull / Align
-// → "Venus rules you both." → the chakra lock → end line + lockup), copied with new copy, and played on a clock that
-// maps its native 15–30 onto 12–30 (0.83× speed). Starts on H: Juniper's veiled card (card-profile-3, body h 600 at
+// disposable30 · half b (12.0–30.0): the answer, aligning. Pattern's half b (the blind card "No photo until you both
+// align." → Push / Pull / Align → "Venus rules you both." → the chakra lock → the blind card flips to her face → end line + lockup), copied with new copy, and played on a clock that
+// maps its native 15–31.25 onto 12–30 (0.9× speed). Starts on H: Juniper's veiled card (card-profile-3, body h 600 at
 // 960,540) over the sky with the one moon, which is exactly where half a lands.
 import read, { cues as readCues } from './read.js'
 import end, { cues as endCues } from './end.js'
 
 export const B_START = 12.0
-const L0 = 15.0, L1 = 30.0, G1 = 30.0
+const L0 = 15.0, L1 = 31.25, G1 = 30.0                // end.js runs 1.25 s later than pattern's (room for the reveal)
 const K = (L1 - L0) / (G1 - B_START)                       // local seconds per global second
 const local = t => L0 + (t - B_START) * K
 const glob = u => B_START + (u - L0) / K
