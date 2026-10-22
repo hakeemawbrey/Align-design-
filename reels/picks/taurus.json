@@ -1,0 +1,299 @@
+{
+ "plate": {
+  "file": "assets/plates/taurus.jpg",
+  "crop": [
+   0.22,
+   0.04,
+   0.66,
+   0.97
+  ],
+  "id": "commons-Sidney Hall - Urania's Mirror - Taurus.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sidney_Hall_-_Urania%27s_Mirror_-_Taurus.jpg/1280px-Sidney_Hall_-_Urania%27s_Mirror_-_Taurus.jpg",
+  "title": "Urania's Mirror: Taurus (1824)",
+  "creator": "Sidney Hall",
+  "license": "public domain",
+  "landing": "https://commons.wikimedia.org/wiki/File:Sidney_Hall_-_Urania%27s_Mirror_-_Taurus.jpg"
+ },
+ "images": [
+  {
+   "file": "cache/taurus/cand/ov-2876553e-7721-4157-a18f-808e8f76e89f.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "pin": true,
+   "note": "Apulian vase, Europa riding the white bull on black",
+   "id": "ov-2876553e-7721-4157-a18f-808e8f76e89f",
+   "source": "openverse/wikimedia",
+   "title": "Asteas - RFVP 2-129 - Europa on the bull - Dionysos with satyrs and maenads and Pan - Montesarchio MANdSC - 07",
+   "creator": "ArchaiOptix",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=94297887",
+   "url": "https://api.openverse.org/v1/images/2876553e-7721-4157-a18f-808e8f76e89f/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Asteas_-_RFVP_2-129_-_Europa_on_the_bull_-_Dionysos_with_satyrs_and_maenads_and_Pan_-_Montesarchio_MANdSC_-_07.jpg",
+   "w": 1280,
+   "h": 1280,
+   "query": "Europa and the bull",
+   "n": 18
+  },
+  {
+   "file": "cache/taurus/cand/ov-224e1188-c72d-4a63-bafb-73cdcacac182.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "pin": true,
+   "note": "black-figure Minotaur in a tondo, orange on black",
+   "id": "ov-224e1188-c72d-4a63-bafb-73cdcacac182",
+   "source": "openverse/wikimedia",
+   "title": "File:Tondo Minotaur London E4 MAN.jpg",
+   "creator": "Painter of London E 4",
+   "license": "by 2.5",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=4040633",
+   "url": "https://api.openverse.org/v1/images/224e1188-c72d-4a63-bafb-73cdcacac182/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Tondo_Minotaur_London_E4_MAN.jpg",
+   "w": 1280,
+   "h": 1280,
+   "query": "minotaur",
+   "n": 91
+  },
+  {
+   "file": "cache/taurus/cand/aic-39542.jpg",
+   "focus": [
+    0.45,
+    0.64
+   ],
+   "zoom": 1.5,
+   "pin": true,
+   "note": "Bonheur, bull at rest below an Alpine peak",
+   "id": "aic-39542",
+   "source": "aic",
+   "title": "Cattle at Rest on a Hillside in the Alps",
+   "creator": "Rosa Bonheur (French, 1822–1899)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/39542",
+   "url": "https://www.artic.edu/iiif/2/efdd5540-5579-8761-fd1d-af318f65a0a6/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1393,
+   "query": "pastoral landscape cattle",
+   "n": 98
+  },
+  {
+   "file": "cache/taurus/cand/nasa-PIA01320.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Crab Nebula, the supernova in Taurus",
+   "id": "nasa-PIA01320",
+   "source": "nasa",
+   "title": "Dead Star Creates Celestial Havoc",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA01320",
+   "url": "https://images-assets.nasa.gov/image/PIA01320/PIA01320~orig.jpg",
+   "w": 2448,
+   "h": 2244,
+   "query": "Taurus constellation",
+   "n": 153
+  },
+  {
+   "file": "cache/taurus/cand/ov-6fde8120-5169-406f-b225-97115736e3cd.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ],
+   "note": "Rogers, The Lost Pleiad, marble in the dark",
+   "id": "ov-6fde8120-5169-406f-b225-97115736e3cd",
+   "source": "openverse/wikimedia",
+   "title": "WLA brooklynmuseum Randolph Rogers The Lost Pleiad",
+   "creator": "",
+   "license": "by-sa 2.5",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=8748564",
+   "url": "https://api.openverse.org/v1/images/6fde8120-5169-406f-b225-97115736e3cd/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/WLA_brooklynmuseum_Randolph_Rogers_The_Lost_Pleiad.jpg",
+   "w": 1280,
+   "h": 1925,
+   "query": "Pleiades",
+   "n": 74
+  },
+  {
+   "file": "cache/taurus/cand/aic-86298.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ],
+   "zoom": 1.3,
+   "note": "Study of a bull's head against a stormy sky",
+   "id": "aic-86298",
+   "source": "aic",
+   "title": "Study of a Cow",
+   "creator": "Emile van Marcke de Lummen (French, 1827–1890)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/86298",
+   "url": "https://www.artic.edu/iiif/2/c2bf35ea-3878-ffd1-18c3-311f13db873a/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1146,
+   "query": "cow",
+   "n": 290
+  },
+  {
+   "file": "cache/taurus/cand/aic-94240.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "note": "Redon, red poppies on black",
+   "id": "aic-94240",
+   "source": "aic",
+   "title": "Flowers: Poppies and Daisies",
+   "creator": "Odilon Redon (French, 1840–1916)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/94240",
+   "url": "https://www.artic.edu/iiif/2/d424c734-f5c1-5f89-3bb8-d83e4e0287e3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1340,
+   "query": "flowers",
+   "n": 201
+  },
+  {
+   "file": "cache/taurus/cand/aic-64754.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "zoom": 1.4,
+   "note": "Inness, moonrise over a pasture",
+   "id": "aic-64754",
+   "source": "aic",
+   "title": "Moonrise",
+   "creator": "George Inness (American, 1825–1894)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/64754",
+   "url": "https://www.artic.edu/iiif/2/4425984b-e241-6413-1404-cdac0fb06518/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2021,
+   "query": "fertile fields harvest",
+   "n": 78
+  },
+  {
+   "file": "cache/taurus/cand/met-437095.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "note": "Millet, calling the cows home at dusk",
+   "id": "met-437095",
+   "source": "met",
+   "title": "Calling the Cows Home",
+   "creator": "Jean-François Millet",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437095",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP345570.jpg",
+   "w": 1792,
+   "h": 2600,
+   "query": "cattle sunset",
+   "n": 323
+  },
+  {
+   "file": "cache/taurus/cand/aic-64029.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Brueghel, flower bouquet on dark ground",
+   "id": "aic-64029",
+   "source": "aic",
+   "title": "Bouquet of Flowers in an Earthenware Vase",
+   "creator": "Attributed to Jan Brueghel the Elder (Flemish, 1568–1625)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/64029",
+   "url": "https://www.artic.edu/iiif/2/599e0546-ed58-0224-a623-39a8e3b51ef8/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2483,
+   "query": "peonies",
+   "n": 267
+  },
+  {
+   "file": "cache/taurus/cand/ov-c4160656-ab9e-4df5-a899-c1ddf8bc00cd.jpg",
+   "focus": [
+    0.72,
+    0.62
+   ],
+   "zoom": 1.6,
+   "pin": true,
+   "note": "Pompeii fresco, Europa and the bull",
+   "id": "ov-c4160656-ab9e-4df5-a899-c1ddf8bc00cd",
+   "source": "openverse/wikimedia",
+   "title": "Wall painting - Europa and the bull - Pompeii (IX 5 18-21) - Napoli MAN 111475 - 02",
+   "creator": "ArchaiOptix",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=91624935",
+   "url": "https://api.openverse.org/v1/images/c4160656-ab9e-4df5-a899-c1ddf8bc00cd/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Wall_painting_-_Europa_and_the_bull_-_Pompeii_%28IX_5_18-21%29_-_Napoli_MAN_111475_-_02.jpg",
+   "w": 1280,
+   "h": 1920,
+   "query": "Europa and the bull",
+   "n": 14
+  },
+  {
+   "file": "cache/taurus/cand/met-11392.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Lambdin, roses on dark ground",
+   "id": "met-11392",
+   "source": "met",
+   "title": "Roses",
+   "creator": "George Cochran Lambdin",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11392",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap18.116.jpg",
+   "w": 1080,
+   "h": 2227,
+   "query": "roses",
+   "n": 194
+  },
+  {
+   "file": "cache/taurus/cand/ov-07dd2f8c-c826-43b3-89da-2664e58ca883.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "zoom": 1.2,
+   "note": "Minoan bull's head rhyton",
+   "id": "ov-07dd2f8c-c826-43b3-89da-2664e58ca883",
+   "source": "openverse/wikimedia",
+   "title": "LM IA dark on light style rhyton in the form of a bull´s head from Gournia - Herakleion AM 2840 - 01",
+   "creator": "ArchaiOptix",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=99510924",
+   "url": "https://api.openverse.org/v1/images/07dd2f8c-c826-43b3-89da-2664e58ca883/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/LM_IA_dark_on_light_style_rhyton_in_the_form_of_a_bull%C2%B4s_head_from_Gournia_-_Herakleion_AM_2840_-_01.jpg",
+   "w": 1280,
+   "h": 1526,
+   "query": "bull dark",
+   "n": 320
+  },
+  {
+   "file": "cache/taurus/cand/nasa-PIA00342.jpg",
+   "focus": [
+    0.3,
+    0.5
+   ],
+   "note": "Earth and Moon from Galileo",
+   "id": "nasa-PIA00342",
+   "source": "nasa",
+   "title": "The Earth & Moon",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA00342",
+   "url": "https://images-assets.nasa.gov/image/PIA00342/PIA00342~orig.jpg",
+   "w": 1700,
+   "h": 2164,
+   "query": "Earth",
+   "n": 272
+  }
+ ]
+}
