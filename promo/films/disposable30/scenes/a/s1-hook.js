@@ -1,7 +1,7 @@
-// S1 · WE'VE MADE PEOPLE DISPOSABLE → WHAT IF NO ONE WAS DISPOSABLE? (0–12.2). The whole problem half, one shot.
-// Frame one: a cold, grainy stack of B&W profile cards in front of a wall of faces, and the hook "We’ve made people
+// S1 · WE MADE DATING DISPOSABLE → WHAT IF WE FLIPPED IT? (0–12.2). The whole problem half, one shot.
+// Frame one: a cold, grainy stack of B&W profile cards in front of a wall of faces, and the hook "We made dating
 // disposable." (readable by ~0.9). Card after card is flicked away, faster and faster, until it smears into thousands.
-// Then it stops dead: one card left, still. "What if no one was disposable?" The card slowly turns face-down; its back
+// Then it stops dead: one card left, still. "What if we flipped it?" The card slowly turns face-down; its back
 // is Juniper's veiled mystery card (card-profile-3), and the sky blooms out of the dark from its edge.
 // Hand-off H (from 11.8, still from 10.05): drawSky(zoom 1, dx 0, dy 0, dim 1, moon (1716,122) r52 phase .12 alpha 1)
 // + grain 0.5, card-profile-3.png BODY height 600 centred at (960,540), upright, no fx — where half b (pattern's
@@ -29,7 +29,7 @@ const DIST = ['2 miles away', '5 miles away', '1 mile away', '8 miles away', '3 
 // ── timing
 const CAP_A = 0.2                               // the hook, on frame one
 const SW0 = 0.75, STOP = 5.4                   // first swipe → the stack stops dead (one card left)
-const CAP_B = STOP + 0.35                       // "What if no one was disposable?"
+const CAP_B = 7.3                               // "What if we flipped it?" — a silent beat on the one card, then the question, then the flip answers it
 const TURN0 = 8.7, TURN1 = 9.65                 // the slow turn face-down
 const EDGE = lerp(TURN0, TURN1, 0.5)            // edge-on (inOutSine midpoint) → the sky blooms from the card
 const SETTLE = 10.05                            // everything at H from here (B starts 12.0)
@@ -161,11 +161,11 @@ export default function build(stage) {
     background: 'linear-gradient(180deg, rgba(239,230,214,0.4), #fff6ea 20%, #d9c4ff 50%, #fff6ea 80%, rgba(239,230,214,0.4))', boxShadow: '0 0 10px 2px rgba(214,190,255,0.8)', transform: 'rotateY(90deg)' }, card3d)
   void backImg
 
-  // copy (bottom pocket, under the card): "We made people disposable." → "What if no one was?"
+  // copy (bottom pocket, under the card): "We made dating disposable." → "What if we flipped it?"
   const pocket = el('div', { position: 'absolute', left: 0, top: '820px', width: W + 'px', height: '260px', opacity: 0, zIndex: '2900',
     background: 'radial-gradient(48% 52% at 50% 52%, rgba(8,6,20,0.62) 0%, rgba(8,6,20,0.28) 60%, rgba(8,6,20,0) 100%)' }, root)
-  const capA = words(root, 'We’ve made people disposable.', { ...capStyle(100), left: 0, width: W + 'px', top: '880px', textAlign: 'center', zIndex: '3000' }, CAP_A, 0.13, 0.32)
-  const capB = words(root, 'What if no one was disposable?', { ...capStyle(100), left: 0, width: W + 'px', top: '880px', textAlign: 'center', zIndex: '3000' }, CAP_B, 0.12, 0.3)
+  const capA = words(root, 'We made dating disposable.', { ...capStyle(100), left: 0, width: W + 'px', top: '880px', textAlign: 'center', zIndex: '3000' }, CAP_A, 0.13, 0.32)
+  const capB = words(root, 'What if we flipped it?', { ...capStyle(100), left: 0, width: W + 'px', top: '880px', textAlign: 'center', zIndex: '3000' }, CAP_B, 0.12, 0.3)
   const capPocket = el('div', { position: 'absolute', left: 0, top: '820px', width: W + 'px', height: '260px', zIndex: '2890',
     background: 'radial-gradient(52% 55% at 50% 55%, rgba(8,9,13,0.66) 0%, rgba(8,9,13,0.3) 60%, rgba(8,9,13,0) 100%)' }, root)
   const flash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0, zIndex: '3500',
