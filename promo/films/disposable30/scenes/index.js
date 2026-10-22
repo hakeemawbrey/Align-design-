@@ -1,4 +1,4 @@
-// disposable30 (30s): ghosted re-cut to open on the hook "We’ve made people disposable." Half b is ghosted b, unchanged.
+// disposable30 (30s): opens on the hook "We’ve made people disposable." → the answer is aligning: the alignment reading + chakra lock (from pattern b).
 import * as A from './a/index.js'
 import * as B from './b/index.js'
 export const DURATION = 30

@@ -1,10 +1,10 @@
-// ─────────────────────────────────────────────── GHOSTED half b · END (26.45–30.0)
-// Same sky as deck.js (kit sky + twinkles + grain), so the handoff is a pure content dissolve: deck.js's cards have
-// drifted apart and faded by 26.55 while this root fades in over it 26.45–26.62. Then the end line and the lockup
-// (film 3 g4 recipe, retimed).
-//   26.64        "Be chosen." types in (10 chars × 0.042, fade 0.12 → fully typed ≈27.14), centred, 136px
-//   27.22        gold glint runs through "chosen"
-//   27.14–27.85  the line holds alone
+// ─────────────────────────────────────────────── DISPOSABLE30 half b · END (copied from pattern b; end line changed)
+// (26.30–30.0)  (adapted from ghosted b)
+// Same sky as read.js (kit sky + twinkles + grain), so the handoff is a pure content dissolve: read.js's cards have
+// drifted apart and faded by 26.40 while this root fades in over it 26.30–26.47. Then the end line and the lockup.
+//   26.50        "No one is disposable." types in (18 chars × 0.032, fade 0.12 → fully typed ≈27.16), centred, 136px
+//   27.25        gold glint runs through "disposable"
+//   27.16–27.80  the line holds alone
 //   27.85–28.20  the line rises to y≈230 as the lockup forms beneath it
 //   27.95–28.45  seed-of-life rings draw · chakra dots light bottom→top 28.0 + i·0.03 · wordmark "Align" 28.07 ·
 //                "BLIND BY DESIGN" 28.17 → complete ≈28.45, held clean to 29.6
@@ -14,14 +14,14 @@ import { lerp, prog, ease, tw, el, mix, C } from '../../../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../../../src/scenes/common.js'
 import { sky, twinkles, drawGrain, grainOpacity, layerCanvas, pocketCanvas, MOON } from './kit.js'
 
-const T0 = 26.45, T1 = 30.01, T_END = 30.0
-const T_TYPE = 26.64, PER = 0.042, FADE = 0.12
+const T0 = 26.3, T1 = 30.01, T_END = 30.0
+const T_TYPE = 26.5, PER = 0.032, FADE = 0.12
 const T_RISE = 27.8, T_RINGS = 28.1, T_DOTS = 28.15, T_WORD = 28.2, T_SUB = 28.28
 const T_PULSE = 28.8, T_MOON = 28.95, T_OUT = 29.6
 const T_HOLD = T_RINGS + 0.45
-const LINE = 'Be chosen.'
-const CH0 = 3, CH1 = 8
-const T_GLINT = 27.22
+const LINE = 'No one is disposable.'
+const CH0 = 10, CH1 = 19
+const T_GLINT = 27.25
 const LINE_Y0 = H / 2, LINE_Y1 = 230, LINE_FS = 136
 const MARK = 250, MARK_CY = 507, WORD_TOP = 647, WORD_FS = 118, SUB_TOP = 821, SUB_FS = 30
 
@@ -126,7 +126,7 @@ export default async function build(stage) {
 
 export const cues = [
   ...[...LINE].map((ch, i) => ch === ' ' ? null : ['tick', T_TYPE + i * PER, 0.022]).filter(Boolean),
-  ['bell', T_TYPE + 0.02, 587.33, 0.045, 2.6, 0],                 // "Be chosen."
+  ['bell', T_TYPE + 0.02, 587.33, 0.045, 2.6, 0],                 // "No one is disposable."
   ['glitter', T_GLINT - 0.05, T_GLINT + 0.35],
   ['bell', T_GLINT, 1760, 0.022, 1.4, 0.3],
   ['whoosh', T_RISE - 0.02, 0.5, 0.08],

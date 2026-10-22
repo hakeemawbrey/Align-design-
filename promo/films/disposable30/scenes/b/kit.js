@@ -1,11 +1,11 @@
-// Ghosted half b · shared kit: the sky camera (handoff H exactly, then a slow push), ambient pixel twinkles,
-// card art (mip chains) and a card renderer that centres the card BODY and can turn it in 3D (back ↔ face).
+// Pattern half b · shared kit (adapted from ghosted b): the sky camera (handoff H exactly, then a slow push), ambient
+// pixel twinkles, card art (mip chains) and a card renderer that centres the card BODY and can turn it in 3D.
 import { clamp, lerp, prog, ease, rng, noise1, C } from '../../../../src/lib.js'
 import { W, H, A } from '../../../../src/scenes/common.js'
 import { drawSky, drawGrain, grainOpacity, getSky, layerCanvas } from '../../../sky.js'
 export { drawGrain, grainOpacity, getSky, layerCanvas }
 
-// ── H: the moon and the card back that half a hands over
+// ── H: the moon that half a hands over (the card is Juniper's veiled profile card, body h 600 at 960,540)
 export const MOON = { x: 1716, y: 122, r: 52, phase: 0.12, alpha: 1 }
 export const T_H = 15.0
 
@@ -30,7 +30,7 @@ export function pixStar(ctx, cx, cy, px, kind, color, centre, a) {
   for (const [x, y, c] of STAR_SPRITES[kind]) { ctx.fillStyle = c ? centre : color; ctx.fillRect(x0 + x * px, y0 + y * px, px, px) }
   ctx.globalAlpha = 1
 }
-const pr = rng(7071)
+const pr = rng(8088)
 const PIX = []
 while (PIX.length < 16) {
   const x = 60 + pr() * (W - 120), y = 50 + pr() * (H - 100)
@@ -52,10 +52,7 @@ export function twinkles(bx, t) {
 // ── card art: PNG size + opaque body box [l, t, r, b] + body corner radius (PNG px)
 const PROF = { iw: 1496, ih: 2238, b: [120, 114, 1374, 2116], r: 84 }
 export const ART = {
-  back: { src: 'card-back.png', iw: 1528, ih: 2347, b: [120, 119, 1440, 2227], r: 90, big: 1100 },
-  p1: { src: 'card-profile-1.png', ...PROF }, p2: { src: 'card-profile-2.png', ...PROF },
-  p3: { src: 'card-profile-3.png', ...PROF, big: 1200 }, p4: { src: 'card-profile-4.png', ...PROF },
-  p6: { src: 'card-profile-6.png', ...PROF },
+  p3: { src: 'card-profile-3.png', ...PROF, big: 1496 },
   sign: { src: 'card-sign.png', iw: 848, ih: 1152, b: [121, 121, 727, 1031], r: 45, big: 848 },
 }
 export const bodyH = k => ART[k].b[3] - ART[k].b[1]

@@ -1,17 +1,23 @@
-// S1 · WE'VE MADE PEOPLE DISPOSABLE (0–4.4). The film opens on the hook. A cold, grainy stack of generic B&W
-// profile cards in front of a wall of faces; the line "We’ve made people disposable." lands at once (readable by ~0.9)
-// while card after card is flicked away — calm at first, then faster and faster until it smears into thousands.
-// At 3.95 it cuts dead to the dark room (one low boom, then silence); a1 wakes the phone out of that dark at 4.4.
-// (Stack, face cards and face wall copied from ghosted a2-stack.)
-import { clamp, prog, ease, el } from '../../../../src/lib.js'
-import { W, H, SANS, fill, img } from '../../../../src/scenes/common.js'
+// S1 · WE'VE MADE PEOPLE DISPOSABLE → WHAT IF NO ONE WAS DISPOSABLE? (0–12.2). The whole problem half, one shot.
+// Frame one: a cold, grainy stack of B&W profile cards in front of a wall of faces, and the hook "We’ve made people
+// disposable." (readable by ~0.9). Card after card is flicked away, faster and faster, until it smears into thousands.
+// Then it stops dead: one card left, still. "What if no one was disposable?" The card slowly turns face-down; its back
+// is Juniper's veiled mystery card (card-profile-3), and the sky blooms out of the dark from its edge.
+// Hand-off H (from 11.8, still from 10.05): drawSky(zoom 1, dx 0, dy 0, dim 1, moon (1716,122) r52 phase .12 alpha 1)
+// + grain 0.5, card-profile-3.png BODY height 600 centred at (960,540), upright, no fx — where half b (pattern's
+// alignment reading) starts. Swipe stack, wall and turn copied from ghosted a2-stack; back card from pattern p2.
+import { clamp, lerp, prog, ease, rng, noise1, el, C, PIXEL_PALETTE } from '../../../../src/lib.js'
+import { W, H, A, SANS, fill, img } from '../../../../src/scenes/common.js'
+import { drawSky, layerCanvas } from '../../../sky.js'
 import { BONE, PHOTO, COLD_FILTER, grainLayer, words, capStyle } from './common.js'
-import { ROOM_BG, A1_GRAIN } from './a1-seen.js'
 
-export const S1_END = 4.4
-const START = 0, END = S1_END
-// the stack sits at the hand-off pose (same card size as the last card in s3)
-const H_CARD = { cx: 960, cy: 540, bodyH: 560 }
+export const ROOM_BG = '#08090c', A1_GRAIN = 0.5
+const START = 0, END = 12.2
+// hand-off H
+export const H_CARD = { cx: 960, cy: 540, bodyH: 600 }
+export const H_MOON = { x: 1716, y: 122, r: 52, phase: 0.12, alpha: 1 }
+const BACK = { iw: 1496, ih: 2238, bx0: 120, by0: 114, bx1: 1374, by1: 2116 }   // card-profile-3.png body box
+const BACK_S = H_CARD.bodyH / (BACK.by1 - BACK.by0)                                 // png px → stage px
 
 // face cards (copied from film2 f1): body 520×830, drawn at the hand-off size so the last one IS the H card
 const CARD_W = 520, CARD_H = 830, CARD_S = H_CARD.bodyH / CARD_H
@@ -21,20 +27,25 @@ const NAMES = { 1: 'Lena, 23', 2: 'Theo, 29', 3: 'Rosa, 28', 4: 'Jun, 27', 5: 'A
 const DIST = ['2 miles away', '5 miles away', '1 mile away', '8 miles away', '3 miles away', '12 miles away']
 
 // ── timing
-const SW0 = 0.7, STOP = 3.95                   // first swipe → the smear stops dead on a cut to black
-const CAP0 = 0.2                               // the hook line lands at once
-const DARK0 = STOP, DARK1 = STOP + 0.1         // hard-ish cut to the dark room (a1 wakes the phone from it at 4.4)
+const CAP_A = 0.2                               // the hook, on frame one
+const SW0 = 0.75, STOP = 5.4                   // first swipe → the stack stops dead (one card left)
+const CAP_B = STOP + 0.35                       // "What if no one was disposable?"
+const TURN0 = 8.7, TURN1 = 9.65                 // the slow turn face-down
+const EDGE = lerp(TURN0, TURN1, 0.5)            // edge-on (inOutSine midpoint) → the sky blooms from the card
+const SETTLE = 10.05                            // everything at H from here (B starts 12.0)
+const WIPE = 0.45
 
 // swipe schedule: gentle first (0.5s a face), then the gap shrinks ×0.84 down to 2 frames — a smear of faces
-const SWIPES = (() => {
+export const SWIPES = (() => {
   const out = []; let t = SW0, gap = 0.5
   while (t < STOP - 0.05) { out.push(t); t += gap; if (out.length >= 2) gap = Math.max(1 / 15, gap * 0.84) }
   return out
 })()
-const N = SWIPES.length
+const N = SWIPES.length                         // card N (index N) is the one left
 const dirOf = k => (k % 5 === 2 || k % 9 === 6) ? 1 : -1
 const flightOf = k => clamp((k + 1 < N ? SWIPES[k + 1] - SWIPES[k] : 0.2) * 1.6, 0.27, 0.42)   // ≥ 8 frames: at full speed ~4 faces are in the air at once
 const faceOf = k => [7, 2, 11, 5, 9, 1, 4, 12, 6, 10, 8, 2, 5, 11, 1, 9, 7, 12, 4, 6, 10, 8, 1, 5, 9, 2, 11, 7, 4, 12, 6, 3][k % 32]
+const LAST_FACE = 3
 
 function makeFaceCard(parent, face, k) {
   const card = el('div', { position: 'absolute', left: -CARD_W / 2 + 'px', top: -CARD_H / 2 + 'px', width: CARD_W + 'px', height: CARD_H + 'px',
@@ -94,48 +105,106 @@ function blurDefs(parent, n, prefix) {
   return blurs
 }
 
+// ── pixel stars thrown off the card's edge line at edge-on (from f2), all gone before the hand-off
+const SPRITES = [
+  ['...X...', '...X...', '..XXX..', 'XXXCXXX', '..XXX..', '...X...', '...X...'],
+  ['.......', '...X...', '..XXX..', '.XXCXX.', '..XXX..', '...X...', '.......'],
+  ['.......', '.......', '...X...', '..XCX..', '...X...', '.......', '.......'],
+  ['.......', '.X...X.', '...X...', '..XCX..', '...X...', '.X...X.', '.......'],
+].map(rows => rows.flatMap((row, y) => [...row].map((ch, x) => ch === '.' ? null : [x - 3, y - 3, ch === 'C'])).filter(Boolean))
+function sprite(ctx, cx, cy, px, kind, color, centre) {
+  const x0 = Math.round(cx) - Math.floor(px / 2), y0 = Math.round(cy) - Math.floor(px / 2)
+  for (const [x, y, c] of SPRITES[kind]) { ctx.fillStyle = c ? centre : color; ctx.fillRect(x0 + x * px, y0 + y * px, px, px) }
+}
+const HOT = '#fff3e0', STAR_PAL = [BONE, BONE, C.gold, '#c9a6ff', '#ff8fb1', ...PIXEL_PALETTE]
+const BURST = (() => {
+  const r = rng(5151)
+  return Array.from({ length: 64 }, (_, i) => {
+    const side = r() < 0.5 ? 0 : Math.PI, a = side + (r() - 0.5) * 1.3
+    return { a, ly: r() - 0.5, v: 900 + Math.pow(r(), 1.4) * 1700, life: 0.38 + r() * 0.4, px: 3 + Math.floor(r() * 3), kind: r() < 0.35 ? 0 : (r() < 0.5 ? 1 : 3),
+      col: STAR_PAL[Math.floor(r() * STAR_PAL.length)], d: i < 30 ? 0 : r() * 0.08, ph: Math.floor(r() * 4) }
+  })
+})()
+
 export default function build(stage) {
   const root = fill(stage, { background: ROOM_BG })
   const cold = coldBackdrop(root)
-  cold.root.style.zIndex = '0'
+  cold.root.style.zIndex = '0'                                      // own stacking context: its grain stays under the sky
   const backGrain = grainLayer(cold.root, 0.32, '5')
+  // the dark that settles behind the one card left (before the sky)
+  const hush = el('div', { position: 'absolute', inset: 0, background: 'radial-gradient(60% 70% at 50% 50%, rgba(6,7,10,0.55) 0%, rgba(6,7,10,0.92) 100%)', opacity: 0 }, root)
+  // the sky (drawn under the card), revealed by a feathered bloom from the card's edge line
+  const skyC = layerCanvas(root, { opacity: 0 }), sx = skyC.getContext('2d')
+  const maskC = document.createElement('canvas'); maskC.width = W / 2; maskC.height = H / 2
+  const mx = maskC.getContext('2d')
 
+  // the stack
   const deck = el('div', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
-  const blurs = blurDefs(root, 8, 'hookb')
-  // N swipes + a few cards still waiting underneath when it cuts
-  const cards = Array.from({ length: N + 3 }, (_, k) => {
+  const blurs = blurDefs(root, 8, 'gamb')
+  const cards = Array.from({ length: N }, (_, k) => {
     const holder = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, zIndex: String(1000 - k) }, deck)
     return { holder, ...makeFaceCard(holder, faceOf(k), k) }
   })
+  // the last card: 3D, front = face card, back = Align card back (BODY 560 tall at the H pose)
+  const holder = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, zIndex: '500' }, deck)
+  const card3d = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, transformStyle: 'preserve-3d' }, holder)
+  const front = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, backfaceVisibility: 'hidden' }, card3d)
+  const frontS = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, transform: `scale(${CARD_S})` }, front)
+  const face = makeFaceCard(frontS, LAST_FACE, 2)
+  const fWash = el('div', { position: 'absolute', inset: 0, background: '#dfe6ff', mixBlendMode: 'screen', opacity: 0 }, face.card)
+  const back = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }, card3d)
+  const bcx = (BACK.bx0 + BACK.bx1) / 2, bcy = (BACK.by0 + BACK.by1) / 2
+  const backImg = img(back, A + 'card-profile-3.png', { left: -bcx * BACK_S + 'px', top: -bcy * BACK_S + 'px', width: BACK.iw * BACK_S + 'px', height: BACK.ih * BACK_S + 'px' })
+  const bWash = el('div', { position: 'absolute', left: -(bcx - BACK.bx0) * BACK_S + 'px', top: -(bcy - BACK.by0) * BACK_S + 'px', width: (BACK.bx1 - BACK.bx0) * BACK_S + 'px', height: (BACK.by1 - BACK.by0) * BACK_S + 'px',
+    borderRadius: 84 * BACK_S + 'px', background: '#f3e6ff', mixBlendMode: 'screen', opacity: 0 }, back)
+  const edge = el('div', { position: 'absolute', left: '-2px', top: -H_CARD.bodyH / 2 + 16 + 'px', width: '4px', height: H_CARD.bodyH - 32 + 'px', borderRadius: '2px',
+    background: 'linear-gradient(180deg, rgba(239,230,214,0.4), #fff6ea 20%, #d9c4ff 50%, #fff6ea 80%, rgba(239,230,214,0.4))', boxShadow: '0 0 10px 2px rgba(214,190,255,0.8)', transform: 'rotateY(90deg)' }, card3d)
+  void backImg
 
-  // the hook (bottom pocket, under the stack)
-  const pocket = el('div', { position: 'absolute', left: 0, top: '800px', width: W + 'px', height: '280px', zIndex: '2900',
+  // copy (bottom pocket, under the card): "We made people disposable." → "What if no one was?"
+  const pocket = el('div', { position: 'absolute', left: 0, top: '820px', width: W + 'px', height: '260px', opacity: 0, zIndex: '2900',
+    background: 'radial-gradient(48% 52% at 50% 52%, rgba(8,6,20,0.62) 0%, rgba(8,6,20,0.28) 60%, rgba(8,6,20,0) 100%)' }, root)
+  const capA = words(root, 'We’ve made people disposable.', { ...capStyle(100), left: 0, width: W + 'px', top: '880px', textAlign: 'center', zIndex: '3000' }, CAP_A, 0.13, 0.32)
+  const capB = words(root, 'What if no one was disposable?', { ...capStyle(100), left: 0, width: W + 'px', top: '880px', textAlign: 'center', zIndex: '3000' }, CAP_B, 0.12, 0.3)
+  const capPocket = el('div', { position: 'absolute', left: 0, top: '820px', width: W + 'px', height: '260px', zIndex: '2890',
     background: 'radial-gradient(52% 55% at 50% 55%, rgba(8,9,13,0.66) 0%, rgba(8,9,13,0.3) 60%, rgba(8,9,13,0) 100%)' }, root)
-  const cap = words(root, 'We’ve made people disposable.', { ...capStyle(108), left: 0, width: W + 'px', top: '866px', textAlign: 'center', zIndex: '3000' }, CAP0, 0.13, 0.32)
-
-  const dark = el('div', { position: 'absolute', inset: 0, background: ROOM_BG, zIndex: '3800', pointerEvents: 'none' }, root)
+  const flash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0, zIndex: '3500',
+    background: 'radial-gradient(40% 60% at 50% 50%, rgba(255,246,236,0.9) 0%, rgba(201,166,255,0.5) 40%, rgba(120,70,220,0.12) 75%, rgba(0,0,0,0) 100%)' }, root)
+  const fade = el('div', { position: 'absolute', inset: 0, background: ROOM_BG, zIndex: '3800', pointerEvents: 'none' }, root)   // up from black
   const grain = grainLayer(root, A1_GRAIN)
-  const silver = grainLayer(root, 0.07, '3900', 'screen')
+  const silver = grainLayer(root, 0.07, '3900', 'screen')          // a1's silver in the blacks, carried over the fade; eases out with the bloom
+
+  const turnAng = t => {
+    if (t < TURN0) return 0
+    if (t < TURN1) return 180 * (0.5 - 0.5 * Math.cos(Math.PI * prog(t, TURN0, TURN1)))
+    const u = prog(t, TURN1, SETTLE)
+    return 180 + 4 * Math.exp(-u * 5) * Math.sin(u * 9) * (1 - u)
+  }
 
   return {
     start: START, end: END, root,
+    fxStart: EDGE - 0.02, fxEnd: SETTLE,
     update(t) {
-      cold.update(t); backGrain.update(t)
-      cold.wall.style.opacity = String(0.3 + 0.25 * ease.inQuad(prog(t, 2.2, STOP)))
-      cold.wall.style.filter = `blur(${(4 + 6 * ease.inQuad(prog(t, 2.2, STOP))).toFixed(1)}px) grayscale(1) brightness(0.8) contrast(1.2)`
+      fade.style.opacity = String(1 - ease.inOutQuad(prog(t, START, START + 0.3)))
+      const coldOn = t < EDGE + WIPE + 0.05
+      cold.root.style.display = coldOn ? 'block' : 'none'
+      if (coldOn) { cold.update(t); backGrain.update(t) }
+      cold.wall.style.opacity = String(0.3 + 0.25 * ease.inQuad(prog(t, STOP - 2.2, STOP)) - 0.55 * ease.inOutQuad(prog(t, STOP + 0.1, STOP + 0.9)))
+      cold.wall.style.filter = `blur(${(4 + 6 * ease.inQuad(prog(t, STOP - 2.2, STOP)) * (t < STOP ? 1 : 0)).toFixed(1)}px) grayscale(1) brightness(0.8) contrast(1.2)`
+      hush.style.opacity = String(ease.inOutQuad(prog(t, STOP + 0.05, STOP + 0.8)))
 
-      // ── the stack (ghosted a2's swipe physics)
+      // ── the stack
       let top = SWIPES.findIndex(s => t < s); if (top < 0) top = N
       let slot = 0
       cards.forEach((c, k) => {
-        const s = k < N ? SWIPES[k] : Infinity, fl = k < N ? flightOf(k) : 1, d = dirOf(k)
+        const s = SWIPES[k], fl = flightOf(k), d = dirOf(k)
         if (t >= s + fl || k > top + 3) { c.holder.style.display = 'none'; return }
         c.holder.style.display = 'block'
         let x = STACK_X, y = STACK_Y, rot = 0, sc = CARD_S, bright = 1, bl = 0, sheen = 0
         if (t >= s) {
           const u = prog(t, s, s + fl)
           x += d * (140 * u + 1500 * u * u); y += -30 * u + 120 * u * u; rot = d * (3 + 12 * u)
-          bl = Math.min(22, 4 + 30 * u) * clamp(u * 4) * (1 + 0.6 * prog(t, 2.4, STOP)); sheen = u
+          bl = Math.min(22, 4 + 30 * u) * clamp(u * 4) * (1 + 0.6 * prog(t, STOP - 1.9, STOP)); sheen = u
         } else {
           let depth = k - top
           if (top > 0) { const ps = SWIPES[top - 1]; depth += 1 - ease.outCubic(prog(t, ps, ps + Math.min(0.1, flightOf(top - 1) * 0.5))) }
@@ -146,32 +215,108 @@ export default function build(stage) {
         c.holder.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${sc})`
         c.holder.style.opacity = String(clamp(bright * 1.5))
         c.card.style.filter = bright < 1 ? `brightness(${Math.max(0.25, bright)})` : ''
-        if (bl > 0.5 && slot < 8) { blurs[slot].setAttribute('stdDeviation', `${bl.toFixed(1)} ${(bl * 0.12).toFixed(1)}`); c.card.style.filter = `url(#hookb${slot})`; slot++ }
+        if (bl > 0.5 && slot < 8) { blurs[slot].setAttribute('stdDeviation', `${bl.toFixed(1)} ${(bl * 0.12).toFixed(1)}`); c.card.style.filter = `url(#gamb${slot})`; slot++ }
         c.sheen.style.opacity = String(sheen > 0 ? 1 - sheen : 0)
         c.sheen.style.transform = `translateX(${sheen * 260}%) rotate(18deg)`
         const sp = prog(t, s - 0.067, s + 0.02), st = d < 0 ? c.stampX : c.stampH
         st.style.opacity = String(sp > 0 ? clamp(sp * 3) : 0)
-        st.style.transform = `scale(${1.35 - 0.35 * ease.outBack(sp)}) rotate(${d * -8}deg)`
+        st.style.transform = `scale(${lerp(1.35, 1, ease.outBack(sp))}) rotate(${d * -8}deg)`
       })
 
-      // ── the hook holds through the whole smear, then goes with the cut
-      const out = 1 - ease.inQuad(prog(t, DARK0, DARK1))
-      cap.update(t, out)
-      pocket.style.opacity = String(ease.inOutQuad(prog(t, 0, 0.5)) * out)
-      // up from black over the first beat; the cut to dark at STOP
-      dark.style.opacity = String(Math.max(1 - ease.inOutQuad(prog(t, 0, 0.35)), ease.inQuad(prog(t, DARK0, DARK1))))
-      grain.update(t); silver.update(t)
+      // ── the one card left: in the stack under the rest, then alone and still, then the turn
+      let depth = N - top
+      if (top > 0 && top <= N) { const ps = SWIPES[top - 1]; depth += 1 - ease.outCubic(prog(t, ps, ps + Math.min(0.1, flightOf(top - 1) * 0.5))) }
+      depth = Math.max(0, depth)
+      holder.style.display = depth > 2.5 ? 'none' : 'block'
+      const ang = turnAng(t), ca = Math.cos(ang * Math.PI / 180)
+      const lift = Math.sin(Math.PI * prog(t, TURN0, TURN1))
+      const yy = STACK_Y + 22 * depth - 8 * lift, sc = (1 - 0.05 * depth) * (1 + 0.025 * lift)
+      if (t >= SETTLE) {                                                     // exactly H: flat, upright, centred, still
+        holder.style.transform = `translate(${H_CARD.cx}px, ${H_CARD.cy}px)`
+        card3d.style.transform = 'rotateY(180deg)'
+      } else {
+        holder.style.transform = `translate(${STACK_X}px, ${yy}px) scale(${sc})`
+        card3d.style.transform = `perspective(2600px) rotateX(${(4 * lift).toFixed(3)}deg) rotateY(${ang.toFixed(3)}deg)`
+      }
+      const br = 1 - 0.32 * depth
+      front.style.filter = br < 1 ? `brightness(${Math.max(0.25, br)})` : ''
+      holder.style.opacity = String(clamp(br * 1.5))
+      fWash.style.opacity = String(ang < 90 ? 0.4 * clamp(1 - ca) : 0)
+      bWash.style.opacity = String(ang > 90 ? 0.42 * clamp(1 + ca) * (t < SETTLE ? 1 : 0) : 0)
+      edge.style.opacity = String(t < SETTLE ? clamp((0.3 - Math.abs(ca)) / 0.2) : 0)
+
+      // ── the sky blooms from the card's edge line at edge-on
+      const bloom = prog(t, EDGE - 1 / 60, EDGE + WIPE)
+      if (bloom > 0) {
+        skyC.style.opacity = '1'
+        const settle = ease.inOutCubic(prog(t, EDGE, SETTLE))
+        const ex = 1 + 0.55 * (1 - ease.outCubic(prog(t, EDGE, SETTLE)))
+        skyC.style.filter = ex > 1.0005 ? `brightness(${ex.toFixed(3)}) saturate(${(1 + 0.3 * (ex - 1)).toFixed(3)})` : 'none'
+        const zoom = lerp(1.07, 1, settle)
+        const ma = ease.inOutQuad(prog(t, EDGE + 0.2, SETTLE))
+        drawSky(sx, t, { zoom, dx: 0, dy: 0, dim: 1, moon: { ...H_MOON, alpha: ma } })
+        if (bloom < 1) {
+          const hh = H_CARD.bodyH / 2, r = 16 + 1300 * ease.outCubic(bloom)
+          mx.setTransform(1, 0, 0, 1, 0, 0); mx.clearRect(0, 0, W / 2, H / 2)
+          mx.filter = 'blur(24px)'; mx.fillStyle = '#000'
+          mx.setTransform(0.5, 0, 0, 0.5, 0, 0)
+          mx.beginPath(); mx.roundRect(STACK_X - r, STACK_Y - hh - r, 2 * r, 2 * hh + 2 * r, r); mx.fill(); mx.filter = 'none'
+          sx.globalCompositeOperation = 'destination-in'; sx.drawImage(maskC, 0, 0, W, H); sx.globalCompositeOperation = 'source-over'
+        }
+      } else skyC.style.opacity = '0'
+      const fd = t - EDGE
+      flash.style.opacity = String(clamp(fd < -0.04 ? 0 : fd < 0 ? 0.12 : 0.42 * Math.exp(-fd * 7)) * (1 - prog(t, EDGE + 0.4, SETTLE)))
+
+      // ── copy
+      const outA = 1 - ease.inOutQuad(prog(t, STOP - 0.4, STOP - 0.1)), outB = 1 - ease.inOutQuad(prog(t, 10.9, 11.25))
+      capA.update(t, outA)
+      capB.update(t, outB)
+      capPocket.style.opacity = String(ease.inOutQuad(prog(t, 0, 0.5)) * Math.max(outA, t > STOP - 0.1 ? ease.inOutQuad(prog(t, CAP_B - 0.1, CAP_B + 0.3)) * outB : 0) * (1 - ease.inOutQuad(prog(t, EDGE, EDGE + 0.3))))
+      pocket.style.opacity = String(ease.inOutQuad(prog(t, EDGE, EDGE + 0.3)) * outB)
+      const sv = 0.07 * (1 - ease.inOutQuad(prog(t, EDGE, EDGE + 0.4)))
+      silver.el.style.display = sv > 0 ? 'block' : 'none'
+      if (sv > 0) silver.update(t, sv)
+      grain.update(t)
+    },
+    fx(ctx, t) {
+      ctx.save(); ctx.imageSmoothingEnabled = false
+      const tick = Math.round(t * 30) >> 1, hh = H_CARD.bodyH / 2
+      const fr = Math.round(t * 30), EF = Math.round(EDGE * 30)
+      if (fr === EF || fr === EF - 1) {                                    // a 2-frame white hairline at edge-on
+        ctx.save(); ctx.imageSmoothingEnabled = true; ctx.globalAlpha = fr === EF ? 1 : 0.8
+        ctx.shadowColor = 'rgba(226,210,255,0.9)'; ctx.shadowBlur = 14
+        const lg = ctx.createLinearGradient(0, STACK_Y - hh, 0, STACK_Y + hh)
+        lg.addColorStop(0, 'rgba(255,255,255,0)'); lg.addColorStop(0.08, '#fff'); lg.addColorStop(0.92, '#fff'); lg.addColorStop(1, 'rgba(255,255,255,0)')
+        ctx.fillStyle = lg; ctx.fillRect(STACK_X - 1.5, STACK_Y - hh, 3, 2 * hh); ctx.restore()
+      }
+      const dt = t - EDGE
+      for (const b of BURST) {
+        const lt = dt - b.d
+        if (lt <= 0 || lt > b.life) continue
+        const u = lt / b.life, dist = 14 + b.v * (1 - Math.exp(-lt * 3.2)) / 3.2
+        const x = STACK_X + Math.cos(b.a) * dist, y = STACK_Y + b.ly * 2 * hh + Math.sin(b.a) * dist * 0.9 + 40 * lt * lt
+        ctx.globalAlpha = clamp((1 - u) * 1.6) * (((tick + b.ph) & 3) === 0 ? 0.55 : 1)
+        sprite(ctx, x, y, b.px, ((tick + b.ph) & 1) ? b.kind : 2, b.col, HOT)
+      }
+      ctx.restore()
+      void noise1
     },
   }
 }
 
 export const cues = [
-  ['bell', CAP0 + 0.05, 164.81, 0.035, 2.6, 0],                          // the hook line — low, alone
   ...SWIPES.flatMap((s, k) => {
     const gap = k + 1 < SWIPES.length ? SWIPES[k + 1] - s : 0.07, fast = gap < 0.12
     if (fast && k % 2) return [['tick', s, 0.025]]
     return [['whoosh', s, Math.max(0.12, Math.min(0.32, gap * 0.9)), 0.06 + 0.04 * (k % 2)], ['tick', s, 0.04 + Math.min(0.05, k * 0.002)]]
   }),
-  ['riser', 2.2, STOP, 0.08],
-  ['boom', STOP, 0.3],                                                   // cut dead — then silence
+  ['bell', CAP_A + 0.05, 164.81, 0.035, 2.6, 0],                         // the hook — low, alone
+  ['riser', STOP - 2.2, STOP, 0.08],
+  ['boom', STOP, 0.22],                                                  // it stops dead — then silence
+  ['tick', CAP_B, 0.04],
+  ['bell', CAP_B + 0.05, 146.83, 0.03, 2.6, 0],
+  ['whoosh', TURN0, TURN1 - TURN0, 0.12],                                // the slow turn
+  ['boom', EDGE, 0.45],
+  ...[293.66, 369.99, 440, 554.37, 587.33].map((f, i) => ['bell', EDGE + 0.02 + i * 0.05, f, 0.06, 2.6, (i - 2) * 0.2]),
+  ['glitter', EDGE + 0.04, EDGE + 0.9],
 ]
