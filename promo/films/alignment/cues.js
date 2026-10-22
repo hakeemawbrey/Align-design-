@@ -1,8 +1,8 @@
-// alignment (60s, vertical) score — lead-owned. Calm, curious, warm throughout (explainer), 80 bpm.
+// alignment v2 (60s, vertical) score — lead-owned. Bright, bouncy, playful: 108 bpm, D–A–Bm–G, plucked arpeggio, light hats.
 import { DURATION, CUES } from './scenes/index.js'
-export default { id: 'alignment', duration: DURATION, music: { chords: [
-  [0,8,[146.83,220,293.66,369.99,440]], [8,16,[123.47,185,293.66,329.63,440]],
-  [16,24,[98,196,293.66,369.99,493.88]], [24,32,[110,220,277.18,329.63,493.88]],
-  [32,40,[146.83,220,329.63,369.99,554.37]], [40,48,[123.47,185,293.66,329.63,440]],
-  [48,54,[98,196,293.66,369.99,493.88]], [54,60,[146.83,220,293.66,369.99,440,659.25]] ],
-  bpm: 80, beatFrom: 3, beatTo: 55, padGain: 0.022, pulseGain: 0.16 }, cues: CUES }
+const BAR = (60 / 108) * 4
+const PROG = [[146.83, 220, 293.66, 369.99, 440], [110, 220, 277.18, 329.63, 440], [123.47, 246.94, 293.66, 369.99], [98, 196, 293.66, 392, 493.88]]
+const chords = []
+for (let i = 0, t = 0; t < 58; i++, t += BAR) chords.push([t, Math.min(t + BAR, 60), PROG[i % 4]])
+chords.push([chords.at(-1)[1], 60, [146.83, 220, 293.66, 369.99, 440, 587.33]])
+export default { id: 'alignment', duration: DURATION, music: { chords, bpm: 108, beatFrom: 0.6, beatTo: 57.5, padGain: 0.018, pulseGain: 0.15, hatGain: 0.035, arpGain: 0.032, arpFrom: 0.6, arpTo: 58 }, cues: CUES }

@@ -17,8 +17,8 @@ export const SIGNS = [
 ]
 export const ELEMENT_COLOR = { fire: '#f0603a', earth: '#e9b24a', air: '#7fd0f0', water: '#3f7cf0' }
 export const READING = { pull: '#8fd8f6', push: '#f59cc4', align: '#f2c75c', relationship: '#dcaaf2' }
-export const WHEEL = { cx: 540, cy: 960, rOut: 400, rIn: 330, rGlyph: 365, alpha: 0.7 }
-export const SKY_H = { zoom: 1.5, dx: 0, dy: 0, dim: 0.62, moon: { x: 930, y: 150, r: 44, phase: 0.12, alpha: 1 } }
+export const WHEEL = { cx: 540, cy: 1010, rOut: 460, rIn: 368, rGlyph: 414, alpha: 0.92 }  // v2: bigger, bolder
+export const SKY_H = { zoom: 1.5, dx: 0, dy: 0, dim: 0.56, moon: { x: 930, y: 150, r: 44, phase: 0.12, alpha: 1 } }
 export const GRAIN_H = 0.4
 
 /** screen angle (radians, canvas convention) of ecliptic longitude `lon` (0° = start of Aries) */
@@ -32,10 +32,16 @@ export const signMid = s => (typeof s === 'number' ? s : SIGNS.findIndex(x => x.
 export function drawWheelH(ctx, { k = 1, glyphK = 1, W = WHEEL } = {}) {
   if (k <= 0) return
   ctx.save()
+  // v2: each sign's band carries a faint wash of its colour
+  SIGNS.forEach((s, i) => {
+    const a0 = angOf(i * 30), a1 = angOf(i * 30 + 30)
+    ctx.globalAlpha = 0.16 * k; ctx.fillStyle = s.color
+    ctx.beginPath(); ctx.arc(W.cx, W.cy, W.rOut, a1, a0); ctx.arc(W.cx, W.cy, W.rIn, a0, a1, true); ctx.closePath(); ctx.fill()
+  })
   ctx.globalAlpha = W.alpha * k
-  ctx.strokeStyle = '#efe6d6'; ctx.lineWidth = 2
+  ctx.strokeStyle = '#efe6d6'; ctx.lineWidth = 4
   ctx.beginPath(); ctx.arc(W.cx, W.cy, W.rOut, 0, Math.PI * 2); ctx.stroke()
-  ctx.lineWidth = 1.5
+  ctx.lineWidth = 3
   ctx.beginPath(); ctx.arc(W.cx, W.cy, W.rIn, 0, Math.PI * 2); ctx.stroke()
   for (let i = 0; i < 12; i++) {
     const a = ptOf(i * 30, W.rIn, W), b = ptOf(i * 30, W.rOut, W)
@@ -44,12 +50,22 @@ export function drawWheelH(ctx, { k = 1, glyphK = 1, W = WHEEL } = {}) {
   ctx.restore()
   if (glyphK <= 0) return
   ctx.save()
-  ctx.font = "40px 'EB Garamond', 'Segoe UI Symbol', 'Noto Sans Symbols', serif"
+  ctx.font = "bold 58px 'EB Garamond', 'Segoe UI Symbol', 'Noto Sans Symbols', serif"
   ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
   SIGNS.forEach((s, i) => {
     const p = ptOf(i * 30 + 15, W.rGlyph, W)
-    ctx.globalAlpha = 0.85 * k * glyphK; ctx.fillStyle = s.color
+    ctx.globalAlpha = k * glyphK; ctx.fillStyle = s.color
     ctx.fillText(s.glyph + '︎', p.x, p.y)
   })
   ctx.restore()
 }
+
+// v2 type tokens (bigger, bolder). Headlines: Inter 800. Accent word: EB Garamond italic in a colour.
+export const TYPE = {
+  head: "800 108px Inter, 'Helvetica Neue', Arial, sans-serif", headSize: 108, headLine: 1.02, headY: 230,
+  accent: "italic 500 118px 'EB Garamond', serif",
+  sub: "700 62px Inter, 'Helvetica Neue', Arial, sans-serif", subSize: 62, subY: 1560,
+  eyebrow: "700 34px 'Space Mono', monospace", eyebrowY: 170,
+}
+/** springy overshoot ease (0→1, overshoots ~10%) */
+export const easeOutBack = (x, s = 1.9) => { x = Math.min(1, Math.max(0, x)); const c = s + 1; return 1 + c * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2) }

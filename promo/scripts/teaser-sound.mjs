@@ -27,6 +27,8 @@ const m = createMix(T.duration)
 const music = T.music || {}
 m.pad(music.chords || [[0, T.duration, [146.83, 220, 329.63, 369.99, 554.37]]], music.padGain ?? 0.022)
 if (music.bpm) m.pulse(music.beatFrom ?? 0.5, music.beatTo ?? T.duration - 2.5, music.bpm, music.pulseGain ?? 0.26)
+if (music.bpm && music.hatGain) m.hats(music.beatFrom ?? 0.5, music.beatTo ?? T.duration - 2.5, music.bpm, music.hatGain)
+if (music.arpGain) m.arp(music.chords, music.bpm, music.arpFrom ?? music.beatFrom ?? 0.5, music.arpTo ?? music.beatTo ?? T.duration - 2.5, music.arpGain)
 for (const [kind, ...a] of T.cues || []) m[kind](...a)
 // shared end tag (see kit.endTag): rings, chakra chimes, wordmark, moon row
 if (T.endTagAt != null) {

@@ -59,6 +59,25 @@ export function createMix(DUR, SR = 48000) {
     const i0 = Math.floor(t0 * SR), n = Math.floor((t1 - t0) * SR); let b1 = 0, b2 = 0
     for (let k = 0; k < n; k++) { const p = k / n, f = 200 + 4000 * p * p, w = 2 * Math.PI * f / SR, x = noise(); b1 += w * (x - b1 - 0.3 * b2); b2 += w * b1; const v = b2 * gain * p * p; add(i0 + k, v, v, 0.3) }
   }
+  // bubbly pitched blip (playful UI pop)
+  function pop(t, f = 880, gain = 0.06, pan = 0) {
+    const i0 = Math.floor(t * SR); let ph = 0
+    for (let k = 0; k < SR * 0.16; k++) { const tt = k / SR, ff = f * (0.55 + 0.45 * Math.min(1, tt / 0.03)); ph += ff / SR; const v = Math.sin(2 * Math.PI * ph) * Math.exp(-tt * 28) * gain * Math.min(1, tt / 0.002); add(i0 + k, v * (1 - pan), v * (1 + pan), 0.25) }
+  }
+  // soft plucked note
+  function pluck(t, f, gain = 0.05, decay = 0.45, pan = 0) {
+    const i0 = Math.floor(t * SR)
+    for (let k = 0; k < SR * decay * 2; k++) { const tt = k / SR, e = Math.exp(-tt / decay * 2.2) * Math.min(1, tt / 0.003); const v = (Math.sin(2 * Math.PI * f * tt) + 0.35 * Math.sin(4 * Math.PI * f * tt) * Math.exp(-tt * 8)) * e * gain; add(i0 + k, v * (1 - pan), v * (1 + pan), 0.35) }
+  }
+  // 8th-note arpeggio over chords [[s0, s1, freqs]] between from..to
+  function arp(chords, bpm, from, to, gain = 0.04) {
+    const step = 30 / bpm; let n = 0
+    for (let t = from; t < to; t += step, n++) {
+      const c = chords.find(([a, b]) => t >= a && t < b); if (!c) continue
+      const tones = c[2].filter(f => f >= 180).map(f => f * 2), pat = [0, 1, 2, 3, 2, 1, 3, 4]
+      pluck(t, tones[pat[n % 8] % tones.length], gain * (n % 2 ? 0.7 : 1), 0.4, ((n % 4) - 1.5) * 0.25)
+    }
+  }
   function renderLoop(file, loop) {
     // caller schedules events across [0, 2*loop); output keeps [loop, 2*loop) with no fades → seamless
     render(file, { from: loop, to: 2 * loop, fades: false })
@@ -83,5 +102,5 @@ export function createMix(DUR, SR = 48000) {
     const beat = 60 / bpm
     for (let t = from + beat / 2; t < to; t += beat) { const i0 = Math.floor(t * SR); let hp = 0, prev = 0; for (let k = 0; k < SR * 0.05; k++) { const x = noise(); hp = 0.9 * (hp + x - prev); prev = x; add(i0 + k, hp * Math.exp(-k / SR * 90) * gain * 0.8, hp * Math.exp(-k / SR * 90) * gain) } }
   }
-  return { pad, pulse, hats, tick, whoosh, bell, boom, glitter, riser, render, renderLoop }
+  return { pad, pulse, hats, pop, pluck, arp, tick, whoosh, bell, boom, glitter, riser, render, renderLoop }
 }

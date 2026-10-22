@@ -15,6 +15,7 @@ fit(); addEventListener('resize', fit)
 
 async function boot() {
   window.DURATION = DURATION
+  await Promise.all(['800 100px Inter', '900 100px Inter', '700 100px Inter', 'italic 500 100px "EB Garamond"', 'italic 600 100px "EB Garamond"', 'bold 58px "EB Garamond"', '700 30px "Space Mono"'].map(f => document.fonts.load(f).catch(() => {})))
   const scenes = []
   for (const [i, build] of SCENES.entries()) { const s = await build(stage); s.root && (s.root.style.zIndex = String(10 + i)); scenes.push(s) }
   stage.appendChild(fx)
