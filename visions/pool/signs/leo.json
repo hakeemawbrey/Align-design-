@@ -1,0 +1,237 @@
+{
+ "from": "reels/picks (zodiac reels), re-cropped square here",
+ "images": [
+  {
+   "file": "cache/signs/leo/ov-893cb881-adc2-4115-83be-7257a93975cf.jpg",
+   "focus": [
+    0.4,
+    0.3
+   ],
+   "note": "Asiatic lion face, warm light",
+   "pin": true,
+   "id": "ov-893cb881-adc2-4115-83be-7257a93975cf",
+   "source": "openverse/wikimedia",
+   "title": "Male Asiatic lion face portrait 2011",
+   "creator": "Krishna7797k",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=49744247",
+   "url": "https://api.openverse.org/v1/images/893cb881-adc2-4115-83be-7257a93975cf/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Male_Asiatic_lion_face_portrait_2011.jpg",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "cache/signs/leo/ov-fe6230f3-c330-4466-9bc3-f8c49fba93dc.jpg",
+   "focus": [
+    0.52,
+    0.5
+   ],
+   "note": "maned lion roaring",
+   "pin": true,
+   "id": "ov-fe6230f3-c330-4466-9bc3-f8c49fba93dc",
+   "source": "openverse/wordpress",
+   "title": "Lion roaring.",
+   "creator": "Michelle Frechette",
+   "license": "cc0 1.0",
+   "landing": "https://wordpress.org/photos/photo/42061b26a7/",
+   "url": "https://api.openverse.org/v1/images/fe6230f3-c330-4466-9bc3-f8c49fba93dc/thumb/?full_size=true",
+   "alt_url": "https://pd.w.org/2021/12/42061b26a7b52b2e4.81945534-2048x1365.jpg",
+   "w": 2048,
+   "h": 1365
+  },
+  {
+   "file": "cache/signs/leo/ov-bdedb80a-4cc2-44a9-93db-5ab4413414e8.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "total solar eclipse corona",
+   "id": "ov-bdedb80a-4cc2-44a9-93db-5ab4413414e8",
+   "source": "openverse/wikimedia",
+   "title": "Total eclipse of the Sun",
+   "creator": "Ababamov",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=84009181",
+   "url": "https://api.openverse.org/v1/images/bdedb80a-4cc2-44a9-93db-5ab4413414e8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Total_eclipse_of_the_Sun.jpg",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "cache/signs/leo/ov-2339530a-c740-4ce5-8a22-82a07c64838d.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "lion roaring, open jaws",
+   "pin": true,
+   "id": "ov-2339530a-c740-4ce5-8a22-82a07c64838d",
+   "source": "openverse/wikimedia",
+   "title": "Lion Roaring",
+   "creator": "Atsme (Betty Wills)",
+   "license": "by-sa 4.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=45544480",
+   "url": "https://api.openverse.org/v1/images/2339530a-c740-4ce5-8a22-82a07c64838d/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Lion_Roaring.jpg",
+   "w": 1280,
+   "h": 1186
+  },
+  {
+   "file": "cache/signs/leo/nasa-PIA19821.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "NuSTAR x-ray sun",
+   "id": "nasa-PIA19821",
+   "source": "nasa",
+   "title": "NuSTAR Stares at the Sun",
+   "creator": "JPL",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/PIA19821",
+   "url": "https://images-assets.nasa.gov/image/PIA19821/PIA19821~orig.jpg",
+   "w": 2600,
+   "h": 2600
+  },
+  {
+   "file": "cache/signs/leo/aic-95998.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "Rembrandt, old man with a gold chain",
+   "id": "aic-95998",
+   "source": "aic",
+   "title": "Old Man with a Gold Chain",
+   "creator": "Rembrandt van Rijn (Dutch, 1606\u20131669)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/95998",
+   "url": "https://www.artic.edu/iiif/2/3eaab3a3-2b47-9fdd-121c-050f6b8d9ccb/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1837
+  },
+  {
+   "file": "cache/signs/leo/ov-5e4e45bf-906a-4b1e-a50d-da18e2c0d15c.jpg",
+   "focus": [
+    0.44,
+    0.62
+   ],
+   "note": "lion roaring in the bush",
+   "id": "ov-5e4e45bf-906a-4b1e-a50d-da18e2c0d15c",
+   "source": "openverse/wikimedia",
+   "title": "Lion Roaring (1)",
+   "creator": "nearsjasmine",
+   "license": "by-sa 2.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=113212394",
+   "url": "https://api.openverse.org/v1/images/5e4e45bf-906a-4b1e-a50d-da18e2c0d15c/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Lion_Roaring_%281%29.jpg",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "cache/signs/leo/nasa-GSFC_20171208_Archive_e000962.jpg",
+   "focus": [
+    0.75,
+    0.45
+   ],
+   "note": "solar flare erupting from the sun's limb",
+   "id": "nasa-GSFC_20171208_Archive_e000962",
+   "source": "nasa",
+   "title": "Mid-level Solar Flare",
+   "creator": "GSFC",
+   "license": "public domain (NASA)",
+   "landing": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000962",
+   "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000962/GSFC_20171208_Archive_e000962~orig.jpg",
+   "w": 1312,
+   "h": 1768
+  },
+  {
+   "file": "cache/signs/leo/ov-fc85fe4d-62da-4b1f-8f8a-d2c67c0e7bd8.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "gold mask, Museo del Oro",
+   "id": "ov-fc85fe4d-62da-4b1f-8f8a-d2c67c0e7bd8",
+   "source": "openverse/wikimedia",
+   "title": "File:BOG 04 2012 Museo de Oro Gold Mask 1219.jpg",
+   "creator": "Mariordo (Mario Roberto Dur\u00e1n Ortiz)",
+   "license": "by-sa 3.0",
+   "landing": "https://commons.wikimedia.org/w/index.php?curid=19263779",
+   "url": "https://api.openverse.org/v1/images/fc85fe4d-62da-4b1f-8f8a-d2c67c0e7bd8/thumb/?full_size=true",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/BOG_04_2012_Museo_de_Oro_Gold_Mask_1219.jpg",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "cache/signs/leo/ov-628fce56-f408-488b-a753-a543a784cd54.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "sleeping lion's face and mane",
+   "id": "ov-628fce56-f408-488b-a753-a543a784cd54",
+   "source": "openverse/stocksnap",
+   "title": "Lion Animal",
+   "creator": "Nathalie E. Julien",
+   "license": "cc0 1.0",
+   "landing": "https://stocksnap.io/photo/lion-animal-RKAECBZ4CP",
+   "url": "https://api.openverse.org/v1/images/628fce56-f408-488b-a753-a543a784cd54/thumb/?full_size=true",
+   "alt_url": "https://cdn.stocksnap.io/img-thumbs/960w/RKAECBZ4CP.jpg",
+   "w": 960,
+   "h": 1810
+  },
+  {
+   "file": "cache/signs/leo/ov-cbd2d5c9-1658-499c-a6fd-82e090b3c2b4.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "note": "sun bursting through a dark forest",
+   "id": "ov-cbd2d5c9-1658-499c-a6fd-82e090b3c2b4",
+   "source": "openverse/stocksnap",
+   "title": "Nature Landscape",
+   "creator": "Ju On",
+   "license": "cc0 1.0",
+   "landing": "https://stocksnap.io/photo/nature-landscape-ZD6WAL4LGT",
+   "url": "https://api.openverse.org/v1/images/cbd2d5c9-1658-499c-a6fd-82e090b3c2b4/thumb/?full_size=true",
+   "alt_url": "https://cdn.stocksnap.io/img-thumbs/960w/ZD6WAL4LGT.jpg",
+   "w": 960,
+   "h": 720
+  },
+  {
+   "file": "cache/signs/leo/aic-94841.jpg",
+   "focus": [
+    0.55,
+    0.55
+   ],
+   "note": "Breton, Song of the Lark, red sunrise",
+   "id": "aic-94841",
+   "source": "aic",
+   "title": "The Song of the Lark",
+   "creator": "Jules Breton (French, 1827\u20131906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/94841",
+   "url": "https://www.artic.edu/iiif/2/48b2de88-ba73-8e19-f448-d1cef4a1c847/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2186
+  },
+  {
+   "file": "cache/signs/leo/met-438159.jpg",
+   "focus": [
+    0.45,
+    0.72
+   ],
+   "note": "Vesuvius erupting, fire and smoke",
+   "id": "met-438159",
+   "source": "met",
+   "title": "An Eruption of Vesuvius",
+   "creator": "Johan Christian Dahl",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/438159",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP155336.jpg",
+   "w": 2600,
+   "h": 1750
+  }
+ ]
+}

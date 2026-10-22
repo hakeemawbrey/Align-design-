@@ -1,0 +1,767 @@
+{
+ "images": [
+  {
+   "file": "cache/castle/cand/wc-97993383.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "note": "Dahl, Kronborg Castle in moonlight",
+   "id": "wc-97993383",
+   "source": "commons",
+   "title": "Johan Christian Dahl - Kronborg Castle in Moonlight - NG.M.00208 - National Museum of Art, Architecture and Design",
+   "creator": "Johan Christian Dahl",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Johan_Christian_Dahl_-_Kronborg_Castle_in_Moonlight_-_NG.M.00208_-_National_Museum_of_Art,_Architecture_and_Design.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Johan_Christian_Dahl_-_Kronborg_Castle_in_Moonlight_-_NG.M.00208_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/1920px-Johan_Christian_Dahl_-_Kronborg_Castle_in_Moonlight_-_NG.M.00208_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Johan_Christian_Dahl_-_Kronborg_Castle_in_Moonlight_-_NG.M.00208_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1384,
+   "pin": true
+  },
+  {
+   "file": "cache/castle/cand/wc-13318327.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ],
+   "pin": true,
+   "note": "Oehme, Burg Scharfenberg by night",
+   "id": "wc-13318327",
+   "source": "commons",
+   "title": "Ernst Ferdinand Oehme - Burg Scharfenberg bei Nacht - Google Art Project",
+   "creator": "Ernst Ferdinand Oehme",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ernst_Ferdinand_Oehme_-_Burg_Scharfenberg_bei_Nacht_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Ernst_Ferdinand_Oehme_-_Burg_Scharfenberg_bei_Nacht_-_Google_Art_Project.jpg/1920px-Ernst_Ferdinand_Oehme_-_Burg_Scharfenberg_bei_Nacht_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Ernst_Ferdinand_Oehme_-_Burg_Scharfenberg_bei_Nacht_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1377
+  },
+  {
+   "file": "cache/castle/cand/wc-70331604.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "pin": true,
+   "note": "Böcklin, castle ruin with lit windows",
+   "id": "wc-70331604",
+   "source": "commons",
+   "title": "Arnold Böcklin - Landschaft mit Burgruine (1847)",
+   "creator": "Arnold Böcklin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Landschaft_mit_Burgruine_(1847).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Arnold_B%C3%B6cklin_-_Landschaft_mit_Burgruine_%281847%29.jpg/1920px-Arnold_B%C3%B6cklin_-_Landschaft_mit_Burgruine_%281847%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Arnold_B%C3%B6cklin_-_Landschaft_mit_Burgruine_%281847%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1444
+  },
+  {
+   "file": "cache/castle/cand/wc-24541771.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "Schinkel, Gothic cathedral by the water",
+   "id": "wc-24541771",
+   "source": "commons",
+   "title": "Karl Friedrich Schinkel Gotischer Dom am Wasser",
+   "creator": "Karl Friedrich Schinkel",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Karl_Friedrich_Schinkel_Gotischer_Dom_am_Wasser.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Karl_Friedrich_Schinkel_Gotischer_Dom_am_Wasser.tif/lossless-page1-1920px-Karl_Friedrich_Schinkel_Gotischer_Dom_am_Wasser.tif.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Karl_Friedrich_Schinkel_Gotischer_Dom_am_Wasser.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1434
+  },
+  {
+   "file": "cache/castle/cand/wc-13265468.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Friedrich, Abbey in the Oakwood",
+   "id": "wc-13265468",
+   "source": "commons",
+   "title": "Caspar David Friedrich - Abtei im Eichwald - Google Art Project",
+   "creator": "Caspar David Friedrich",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg/1920px-Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1230
+  },
+  {
+   "file": "cache/castle/cand/wc-21926516.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Rigalt, night landscape with gothic ruins",
+   "id": "wc-21926516",
+   "source": "commons",
+   "title": "Lluís Rigalt - Night Landscape with Gothic Ruins - Google Art Project",
+   "creator": "Lluís Rigalt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Llu%C3%ADs_Rigalt_-_Night_Landscape_with_Gothic_Ruins_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Llu%C3%ADs_Rigalt_-_Night_Landscape_with_Gothic_Ruins_-_Google_Art_Project.jpg/1920px-Llu%C3%ADs_Rigalt_-_Night_Landscape_with_Gothic_Ruins_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Llu%C3%ADs_Rigalt_-_Night_Landscape_with_Gothic_Ruins_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1576
+  },
+  {
+   "file": "cache/castle/cand/wc-160754507.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Friedrich, monastery graveyard in snow",
+   "id": "wc-160754507",
+   "source": "commons",
+   "title": "Friedrich, Caspar David - Klosterfriedhof im Schnee (Farbe)",
+   "creator": "Caspar David Friedrich",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Friedrich,_Caspar_David_-_Klosterfriedhof_im_Schnee_(Farbe).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Friedrich%2C_Caspar_David_-_Klosterfriedhof_im_Schnee_%28Farbe%29.jpg/1920px-Friedrich%2C_Caspar_David_-_Klosterfriedhof_im_Schnee_%28Farbe%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Friedrich%2C_Caspar_David_-_Klosterfriedhof_im_Schnee_%28Farbe%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1354
+  },
+  {
+   "file": "cache/castle/cand/wc-76271144.jpg",
+   "focus": [
+    0.6,
+    0.3
+   ],
+   "note": "Carus, Schloss Milkel in moonlight",
+   "id": "wc-76271144",
+   "source": "commons",
+   "title": "Carl Gustav Carus - Schloss Milkel im Mondschein (1833-1835)",
+   "creator": "Carl Gustav Carus",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Gustav_Carus_-_Schloss_Milkel_im_Mondschein_(1833-1835).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Carl_Gustav_Carus_-_Schloss_Milkel_im_Mondschein_%281833-1835%29.jpg/1920px-Carl_Gustav_Carus_-_Schloss_Milkel_im_Mondschein_%281833-1835%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Carl_Gustav_Carus_-_Schloss_Milkel_im_Mondschein_%281833-1835%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1837,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/met-439122.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "zoom": 1.12,
+   "note": "Carus, gothic windows of Oybin ruin",
+   "id": "met-439122",
+   "source": "met",
+   "title": "Gothic Windows in the Ruins of the Monastery at Oybin",
+   "creator": "Carl Gustav Carus",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/439122",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-34306-001.jpg",
+   "w": 1898,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/wc-2184609.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Friedrich, Eldena abbey ruin",
+   "id": "wc-2184609",
+   "source": "commons",
+   "title": "Klosterruine Eldena bei Greifswald (1824) - Caspar David Friedrich (Alte Nationalgalerie, Berlin)",
+   "creator": "Caspar David Friedrich",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Klosterruine_Eldena_bei_Greifswald_(1824)_-_Caspar_David_Friedrich_(Alte_Nationalgalerie,_Berlin).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Klosterruine_Eldena_bei_Greifswald_%281824%29_-_Caspar_David_Friedrich_%28Alte_Nationalgalerie%2C_Berlin%29.jpg/1920px-Klosterruine_Eldena_bei_Greifswald_%281824%29_-_Caspar_David_Friedrich_%28Alte_Nationalgalerie%2C_Berlin%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Klosterruine_Eldena_bei_Greifswald_%281824%29_-_Caspar_David_Friedrich_%28Alte_Nationalgalerie%2C_Berlin%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1377
+  },
+  {
+   "file": "cache/castle/cand/aic-60755.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Ruisdael, ruins of Egmond castle",
+   "id": "aic-60755",
+   "source": "aic",
+   "title": "Landscape with the Ruins of the Castle of Egmond",
+   "creator": "Jacob van Ruisdael (Dutch, 1628/29-1682)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/60755",
+   "url": "https://www.artic.edu/iiif/2/12086520-2e48-cc75-df86-916bb801e61f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1291
+  },
+  {
+   "file": "cache/castle/cand/wc-196727682.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "note": "Schinkel, medieval town on a river",
+   "id": "wc-196727682",
+   "source": "commons",
+   "title": "Schinkel, Karl Friedrich - Mittelalterliche Stadt an einem Fluß - Alte Nationalgalerie NG6a-91",
+   "creator": "Karl Friedrich Schinkel",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Schinkel,_Karl_Friedrich_-_Mittelalterliche_Stadt_an_einem_Flu%C3%9F_-_Alte_Nationalgalerie_NG6a-91.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Schinkel%2C_Karl_Friedrich_-_Mittelalterliche_Stadt_an_einem_Flu%C3%9F_-_Alte_Nationalgalerie_NG6a-91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Schinkel%2C_Karl_Friedrich_-_Mittelalterliche_Stadt_an_einem_Flu%C3%9F_-_Alte_Nationalgalerie_NG6a-91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1654,
+   "h": 1105,
+   "pin": true
+  },
+  {
+   "file": "cache/castle/cand/wc-24216347.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Blechen, gothic church ruin",
+   "id": "wc-24216347",
+   "source": "commons",
+   "title": "Carl Blechen - Gothic Church Ruin - Google Art Project",
+   "creator": "Carl Blechen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Blechen_-_Gothic_Church_Ruin_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Carl_Blechen_-_Gothic_Church_Ruin_-_Google_Art_Project.jpg/1920px-Carl_Blechen_-_Gothic_Church_Ruin_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Carl_Blechen_-_Gothic_Church_Ruin_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2274
+  },
+  {
+   "file": "cache/castle/cand/wc-137140972.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Eilean Donan at night",
+   "id": "wc-137140972",
+   "source": "commons",
+   "title": "Eilean Donan Castle, At Night - geograph.org.uk - 5405948",
+   "creator": "Peter Jeffery",
+   "license": "CC BY-SA 2.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Eilean_Donan_Castle,_At_Night_-_geograph.org.uk_-_5405948.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Eilean_Donan_Castle%2C_At_Night_-_geograph.org.uk_-_5405948.jpg/1920px-Eilean_Donan_Castle%2C_At_Night_-_geograph.org.uk_-_5405948.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Eilean_Donan_Castle%2C_At_Night_-_geograph.org.uk_-_5405948.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1280
+  },
+  {
+   "file": "cache/castle/cand/wc-9695295.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "note": "Eilean Donan night reflection",
+   "id": "wc-9695295",
+   "source": "commons",
+   "title": "Eilean Donan night",
+   "creator": "krb&nah from highlands, scotland",
+   "license": "CC BY 2.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Eilean_Donan_night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Eilean_Donan_night.jpg/1920px-Eilean_Donan_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Eilean_Donan_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1358
+  },
+  {
+   "file": "cache/castle/cand/wc-86532837.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Mont Saint-Michel at night",
+   "id": "wc-86532837",
+   "source": "commons",
+   "title": "Mont Saint-Michel at night, view from the south. France",
+   "creator": "Ввласенко",
+   "license": "CC BY-SA 3.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Mont_Saint-Michel_at_night,_view_from_the_south._France.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Mont_Saint-Michel_at_night%2C_view_from_the_south._France.tif/lossy-page1-1920px-Mont_Saint-Michel_at_night%2C_view_from_the_south._France.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Mont_Saint-Michel_at_night%2C_view_from_the_south._France.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1288
+  },
+  {
+   "file": "cache/castle/cand/wc-25663883.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Spitzweg, moonlit castle ruin",
+   "id": "wc-25663883",
+   "source": "commons",
+   "title": "Carl Spitzweg - Mondlichtszene mit Burgruine",
+   "creator": "Carl Spitzweg",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Spitzweg_-_Mondlichtszene_mit_Burgruine.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Carl_Spitzweg_-_Mondlichtszene_mit_Burgruine.jpg/1920px-Carl_Spitzweg_-_Mondlichtszene_mit_Burgruine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Carl_Spitzweg_-_Mondlichtszene_mit_Burgruine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1883,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/wc-18289545.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Carus, Eldena ruin in moonlight",
+   "id": "wc-18289545",
+   "source": "commons",
+   "title": "Carl Gustav Carus - Ruine Eldena mit Hütte bei Greifswald im Mondschein",
+   "creator": "Carl Gustav Carus",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Gustav_Carus_-_Ruine_Eldena_mit_H%C3%BCtte_bei_Greifswald_im_Mondschein.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Carl_Gustav_Carus_-_Ruine_Eldena_mit_H%C3%BCtte_bei_Greifswald_im_Mondschein.jpg/1920px-Carl_Gustav_Carus_-_Ruine_Eldena_mit_H%C3%BCtte_bei_Greifswald_im_Mondschein.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Carl_Gustav_Carus_-_Ruine_Eldena_mit_H%C3%BCtte_bei_Greifswald_im_Mondschein.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1842,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/wc-65512334.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "note": "Dahl, Frederiksborg Castle in moonlight",
+   "id": "wc-65512334",
+   "source": "commons",
+   "title": "J.C. Dahl, Frederiksborg Slot i måneskin, 1817, 0189NMK, Nivaagaards Malerisamling",
+   "creator": "Johan Christian Dahl",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:J.C._Dahl,_Frederiksborg_Slot_i_m%C3%A5neskin,_1817,_0189NMK,_Nivaagaards_Malerisamling.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/J.C._Dahl%2C_Frederiksborg_Slot_i_m%C3%A5neskin%2C_1817%2C_0189NMK%2C_Nivaagaards_Malerisamling.jpg/1920px-J.C._Dahl%2C_Frederiksborg_Slot_i_m%C3%A5neskin%2C_1817%2C_0189NMK%2C_Nivaagaards_Malerisamling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/J.C._Dahl%2C_Frederiksborg_Slot_i_m%C3%A5neskin%2C_1817%2C_0189NMK%2C_Nivaagaards_Malerisamling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1339
+  },
+  {
+   "file": "cache/castle/cand/wc-21131104.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "zoom": 1.1,
+   "note": "Cole, The Departure",
+   "id": "wc-21131104",
+   "source": "commons",
+   "title": "The Departure by Thomas Cole, 1837 - Corcoran Gallery of Art - DSC01118",
+   "creator": "Thomas Cole",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:The_Departure_by_Thomas_Cole,_1837_-_Corcoran_Gallery_of_Art_-_DSC01118.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/The_Departure_by_Thomas_Cole%2C_1837_-_Corcoran_Gallery_of_Art_-_DSC01118.JPG/1920px-The_Departure_by_Thomas_Cole%2C_1837_-_Corcoran_Gallery_of_Art_-_DSC01118.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/The_Departure_by_Thomas_Cole%2C_1837_-_Corcoran_Gallery_of_Art_-_DSC01118.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1201
+  },
+  {
+   "file": "cache/castle/cand/wc-81332756.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "note": "Cole, The Return",
+   "id": "wc-81332756",
+   "source": "commons",
+   "title": "Thomas Cole, The Return, 1837, NGA 166438",
+   "creator": "Thomas Cole",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Thomas_Cole,_The_Return,_1837,_NGA_166438.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Thomas_Cole%2C_The_Return%2C_1837%2C_NGA_166438.jpg/1920px-Thomas_Cole%2C_The_Return%2C_1837%2C_NGA_166438.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Thomas_Cole%2C_The_Return%2C_1837%2C_NGA_166438.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1187
+  },
+  {
+   "file": "cache/castle/cand/wc-116441194.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ],
+   "note": "Cole, The Past",
+   "id": "wc-116441194",
+   "source": "commons",
+   "title": "Thomas Cole - The Past - 1838",
+   "creator": "Thomas Cole",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Past_-_1838.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Thomas_Cole_-_The_Past_-_1838.jpg/1920px-Thomas_Cole_-_The_Past_-_1838.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Thomas_Cole_-_The_Past_-_1838.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1231
+  },
+  {
+   "file": "cache/castle/cand/wc-182972.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "note": "Cole, The Present (ruin)",
+   "id": "wc-182972",
+   "source": "commons",
+   "title": "Cole Thomas The Present 1838",
+   "creator": "Thomas Cole",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Cole_Thomas_The_Present_1838.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Cole_Thomas_The_Present_1838.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Cole_Thomas_The_Present_1838.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1000,
+   "h": 647
+  },
+  {
+   "file": "cache/castle/cand/wc-13318630.jpg",
+   "focus": [
+    0.35,
+    0.4
+   ],
+   "note": "Schinkel, Gothic church on a rock by the sea",
+   "id": "wc-13318630",
+   "source": "commons",
+   "title": "Karl Friedrich Schinkel - Gotische Kirche auf einem Felsen am Meer - Google Art Project",
+   "creator": "Karl Friedrich Schinkel",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Karl_Friedrich_Schinkel_-_Gotische_Kirche_auf_einem_Felsen_am_Meer_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Karl_Friedrich_Schinkel_-_Gotische_Kirche_auf_einem_Felsen_am_Meer_-_Google_Art_Project.jpg/1920px-Karl_Friedrich_Schinkel_-_Gotische_Kirche_auf_einem_Felsen_am_Meer_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Karl_Friedrich_Schinkel_-_Gotische_Kirche_auf_einem_Felsen_am_Meer_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1420
+  },
+  {
+   "file": "cache/castle/cand/wc-21847255.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Blechen, gothic church ruins interior",
+   "id": "wc-21847255",
+   "source": "commons",
+   "title": "Carl Blechen - Gothic Church Ruins - Google Art Project",
+   "creator": "Carl Blechen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carl_Blechen_-_Gothic_Church_Ruins_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Carl_Blechen_-_Gothic_Church_Ruins_-_Google_Art_Project.jpg/1920px-Carl_Blechen_-_Gothic_Church_Ruins_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Carl_Blechen_-_Gothic_Church_Ruins_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1702,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/wc-6672095.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Oehme, cathedral in winter",
+   "id": "wc-6672095",
+   "source": "commons",
+   "title": "Oehme Dom 1821",
+   "creator": "Ernst Ferdinand Oehme",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Oehme_Dom_1821.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Oehme_Dom_1821.jpg/1920px-Oehme_Dom_1821.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Oehme_Dom_1821.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1862,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/wc-126141607.jpg",
+   "focus": [
+    0.4,
+    0.45
+   ],
+   "note": "Böcklin, ruined villa by the sea",
+   "id": "wc-126141607",
+   "source": "commons",
+   "title": "Böcklin - Ruine einer Villa am Meer, 1878–1880, A DSC 9416 (cropped)",
+   "creator": "Arnold Böcklin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:B%C3%B6cklin_-_Ruine_einer_Villa_am_Meer,_1878%E2%80%931880,_A_DSC_9416_(cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/B%C3%B6cklin_-_Ruine_einer_Villa_am_Meer%2C_1878%E2%80%931880%2C_A_DSC_9416_%28cropped%29.jpg/1920px-B%C3%B6cklin_-_Ruine_einer_Villa_am_Meer%2C_1878%E2%80%931880%2C_A_DSC_9416_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/B%C3%B6cklin_-_Ruine_einer_Villa_am_Meer%2C_1878%E2%80%931880%2C_A_DSC_9416_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1366
+  },
+  {
+   "file": "cache/castle/cand/wc-61116739.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "note": "Böcklin, ruin by the sea",
+   "id": "wc-61116739",
+   "source": "commons",
+   "title": "Arnold Böcklin - Ruine am Meer (1881)",
+   "creator": "Arnold Böcklin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Ruine_am_Meer_(1881).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Arnold_B%C3%B6cklin_-_Ruine_am_Meer_%281881%29.jpg/1920px-Arnold_B%C3%B6cklin_-_Ruine_am_Meer_%281881%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Arnold_B%C3%B6cklin_-_Ruine_am_Meer_%281881%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1763,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/wc-35062210.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "note": "Lichtenstein Castle",
+   "id": "wc-35062210",
+   "source": "commons",
+   "title": "Lichtenstein Castle Honau",
+   "creator": "Rklengel",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Lichtenstein_Castle_Honau.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Lichtenstein_Castle_Honau.jpg/1920px-Lichtenstein_Castle_Honau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Lichtenstein_Castle_Honau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1150
+  },
+  {
+   "file": "cache/castle/cand/wc-29150871.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Edinburgh Castle by night",
+   "id": "wc-29150871",
+   "source": "commons",
+   "title": "Edinburgh castle by night 01",
+   "creator": "Ad Meskens",
+   "license": "CC BY-SA 3.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edinburgh_castle_by_night_01.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Edinburgh_castle_by_night_01.JPG/1920px-Edinburgh_castle_by_night_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Edinburgh_castle_by_night_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1429
+  },
+  {
+   "file": "cache/castle/cand/wc-11168326.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "note": "Moon over Cologne, photochrom c.1895",
+   "id": "wc-11168326",
+   "source": "commons",
+   "title": "Flickr - …trialsanderrors - Moon over Cologne, Germany, ca. 1895",
+   "creator": "…trialsanderrors",
+   "license": "CC BY 2.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Flickr_-_%E2%80%A6trialsanderrors_-_Moon_over_Cologne,_Germany,_ca._1895.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Flickr_-_%E2%80%A6trialsanderrors_-_Moon_over_Cologne%2C_Germany%2C_ca._1895.jpg/1920px-Flickr_-_%E2%80%A6trialsanderrors_-_Moon_over_Cologne%2C_Germany%2C_ca._1895.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Flickr_-_%E2%80%A6trialsanderrors_-_Moon_over_Cologne%2C_Germany%2C_ca._1895.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1400
+  },
+  {
+   "file": "cache/castle/cand/wc-7312873.jpg",
+   "focus": [
+    0.4,
+    0.3
+   ],
+   "note": "Stäck, Italian ruins in moonlight",
+   "id": "wc-7312873",
+   "source": "commons",
+   "title": "Joseph Magnus Stäck - Italienskt ruinlandskap i månsken",
+   "creator": "Joseph Magnus Stäck",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Magnus_St%C3%A4ck_-_Italienskt_ruinlandskap_i_m%C3%A5nsken.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Joseph_Magnus_St%C3%A4ck_-_Italienskt_ruinlandskap_i_m%C3%A5nsken.jpg/1920px-Joseph_Magnus_St%C3%A4ck_-_Italienskt_ruinlandskap_i_m%C3%A5nsken.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Joseph_Magnus_St%C3%A4ck_-_Italienskt_ruinlandskap_i_m%C3%A5nsken.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2203
+  },
+  {
+   "file": "cache/castle/cand/wc-201305230.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Mehun-sur-Yèvre castle ruins lit at night",
+   "id": "wc-201305230",
+   "source": "commons",
+   "title": "Ruines du château de Mehun-sur-Yèvre illuminées de nuit",
+   "creator": "Rolf Kranz",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ruines_du_ch%C3%A2teau_de_Mehun-sur-Y%C3%A8vre_illumin%C3%A9es_de_nuit.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Ruines_du_ch%C3%A2teau_de_Mehun-sur-Y%C3%A8vre_illumin%C3%A9es_de_nuit.jpg/1920px-Ruines_du_ch%C3%A2teau_de_Mehun-sur-Y%C3%A8vre_illumin%C3%A9es_de_nuit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ruines_du_ch%C3%A2teau_de_Mehun-sur-Y%C3%A8vre_illumin%C3%A9es_de_nuit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1662
+  },
+  {
+   "file": "cache/castle/cand/wc-187549928.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "zoom": 1.1,
+   "note": "Kircher, Parzival sees the Grail castle",
+   "id": "wc-187549928",
+   "source": "commons",
+   "title": "Wewelsburg, die Burg, Kreismuseum, Alexander Kircher, Parzival erblickt die Gralsburg",
+   "creator": "Dguendel",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Wewelsburg,_die_Burg,_Kreismuseum,_Alexander_Kircher,_Parzival_erblickt_die_Gralsburg.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Wewelsburg%2C_die_Burg%2C_Kreismuseum%2C_Alexander_Kircher%2C_Parzival_erblickt_die_Gralsburg.jpg/1920px-Wewelsburg%2C_die_Burg%2C_Kreismuseum%2C_Alexander_Kircher%2C_Parzival_erblickt_die_Gralsburg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Wewelsburg%2C_die_Burg%2C_Kreismuseum%2C_Alexander_Kircher%2C_Parzival_erblickt_die_Gralsburg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2134
+  },
+  {
+   "file": "cache/castle/cand/wc-35087163.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Burg Lüdinghausen at night",
+   "id": "wc-35087163",
+   "source": "commons",
+   "title": "Lüdinghausen, Burg Lüdinghausen -- 2014 -- 5500-2",
+   "creator": "Dietmar Rabich",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:L%C3%BCdinghausen,_Burg_L%C3%BCdinghausen_--_2014_--_5500-2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/L%C3%BCdinghausen%2C_Burg_L%C3%BCdinghausen_--_2014_--_5500-2.jpg/1920px-L%C3%BCdinghausen%2C_Burg_L%C3%BCdinghausen_--_2014_--_5500-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/L%C3%BCdinghausen%2C_Burg_L%C3%BCdinghausen_--_2014_--_5500-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1267
+  },
+  {
+   "file": "cache/castle/cand/wc-64128945.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "note": "Carcassonne at night",
+   "id": "wc-64128945",
+   "source": "commons",
+   "title": "Carcassonne at night",
+   "creator": "Inferno986return",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Carcassonne_at_night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Carcassonne_at_night.jpg/1920px-Carcassonne_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Carcassonne_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1440
+  },
+  {
+   "file": "cache/castle/cand/wc-93628040.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "note": "Heidelberg Castle under a full moon",
+   "id": "wc-93628040",
+   "source": "commons",
+   "title": "Castle North and East Front (Heidelberg) Night Aug 2020",
+   "creator": "R. J. Mathar",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Castle_North_and_East_Front_(Heidelberg)_Night_Aug_2020.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Castle_North_and_East_Front_%28Heidelberg%29_Night_Aug_2020.jpg/1920px-Castle_North_and_East_Front_%28Heidelberg%29_Night_Aug_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Castle_North_and_East_Front_%28Heidelberg%29_Night_Aug_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1282
+  },
+  {
+   "file": "cache/castle/cand/wc-179393097.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "note": "Cologne Cathedral facade at night",
+   "id": "wc-179393097",
+   "source": "commons",
+   "title": "Exterior of Cologne Cathedral night (1)",
+   "creator": "MOs810",
+   "license": "CC BY 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Exterior_of_Cologne_Cathedral_night_(1).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Exterior_of_Cologne_Cathedral_night_%281%29.jpg/1920px-Exterior_of_Cologne_Cathedral_night_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Exterior_of_Cologne_Cathedral_night_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1807,
+   "h": 2400
+  },
+  {
+   "file": "cache/castle/cand/wc-54296666.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "note": "Notre-Dame de Paris at night",
+   "id": "wc-54296666",
+   "source": "commons",
+   "title": "Notre-Dame de Paris from the Pont de l'Archevêché by Night",
+   "creator": "Livioandronico2013",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg/1920px-Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Notre-Dame_de_Paris_from_the_Pont_de_l%27Archev%C3%AAch%C3%A9_by_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1323
+  },
+  {
+   "file": "cache/castle/cand/wc-111149212.jpg",
+   "focus": [
+    0.6,
+    0.45
+   ],
+   "note": "Château de Chillon at dusk",
+   "id": "wc-111149212",
+   "source": "commons",
+   "title": "Château de Chillon depuis le sud - lumière et coucher de soleil",
+   "creator": "Christian David",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg/1920px-Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Ch%C3%A2teau_de_Chillon_depuis_le_sud_-_lumi%C3%A8re_et_coucher_de_soleil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1280
+  },
+  {
+   "file": "cache/castle/cand/wc-81363689.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "note": "Malbork castle reflected at night",
+   "id": "wc-81363689",
+   "source": "commons",
+   "title": "Malbork (84000391)",
+   "creator": "Jurikowski",
+   "license": "CC BY-SA 3.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Malbork_(84000391).jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Malbork_%2884000391%29.jpeg/1920px-Malbork_%2884000391%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Malbork_%2884000391%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1080
+  },
+  {
+   "file": "cache/castle/cand/met-436455.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "zoom": 1.06,
+   "tone": 0.25,
+   "note": "Gericault, landscape with aqueduct at dusk (gold outlier)",
+   "id": "met-436455",
+   "source": "met",
+   "title": "Evening: Landscape with an Aqueduct",
+   "creator": "Théodore Géricault",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436455",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2138.jpg",
+   "w": 2104,
+   "h": 2400
+  }
+ ]
+}
