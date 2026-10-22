@@ -9,9 +9,9 @@ import { drawGrain } from './f3-chart.js'
 import { paintSky, grainCanvas } from './f7-talk.js'
 
 const T0 = 21.95, T1 = 26.85
-const BEAT = 60 / 104
+const BEAT = 60 / 132                                        // the post-flip tempo (cues.js), grid from 4.15
 const DEAL = [22.05, 22.18, 22.31], DEAL_DUR = 0.6
-const LIT = [23.25, 23.25 + BEAT, 23.25 + 2 * BEAT]          // each question lights, on the beat
+const LIT0 = 4.15 + 42 * BEAT, LIT = [LIT0, LIT0 + 2 * BEAT, LIT0 + 4 * BEAT]   // on the grid          // each question lights, on the beat
 const CAP1 = { in: 22.35, out: 24.4 }, CAP2 = { in: 24.6, out: 26.2 }
 const EXIT = { a: 25.95, b: 26.5 }
 // card png 732×1170, body 60..672 × 60..1110 (centred)
