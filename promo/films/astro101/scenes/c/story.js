@@ -8,7 +8,7 @@
 //   46.71–47.70  the wheel spins (−168°, springy) so the Ascendant, ~12° Libra (May 12 1998 · 5 PM · Tulsa), sits on
 //                the 9 o'clock horizon; AC marker
 //   47.82        card 3 RISING · LIBRA "You to strangers. Charming. Suspiciously good lighting."
-//   50.85        headline pops out · 51.16 all three cards wiggle · "That's *you.* In three planets." pops in
+//   50.85        headline pops out · 51.16 all three cards wiggle · "That's *you.* In three signs." pops in
 //   53.00–53.45  cards, punchline and wheel pop away
 //   53.94        "Now you speak *astrology*." pops in huge, word by word; 54.30 the accent bounces in
 //   54.49        12-glyph + pixel-star confetti bursts from the centre, drifts and twinkles
@@ -181,7 +181,7 @@ export default async function build(stage) {
     return spans
   }
   const head = headline(['Your', { w: 'Big Three.', col: GOLD }], { top: 196 })
-  const punch = headline(['That’s', { w: 'you.', col: GOLD, size: 96 }, '\n', 'In', 'three', 'planets.'], { top: 200, size: 84, lh: 1.12 })
+  const punch = headline(['That’s', { w: 'you.', col: GOLD, size: 96 }, '\n', 'In', 'three', 'signs.'], { top: 200, size: 84, lh: 1.12 })
 
   // ── the three cards
   const cards = P.map((p, i) => {
