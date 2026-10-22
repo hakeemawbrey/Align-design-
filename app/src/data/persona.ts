@@ -6,7 +6,7 @@ import type { Birth } from '../lib/astro'
  * their own card, birth chart and photo, and the app reads everything about
  * "you" from here. Chosen on Welcome (or the You tab) and kept on this device.
  */
-export type PersonaId = 'hakeem' | 'xavier' | 'jeremy'
+export type PersonaId = 'hakeem' | 'xavier' | 'jeremy' | 'samid'
 
 export interface Persona {
   id: PersonaId
@@ -90,6 +90,25 @@ export const PERSONAS: Record<PersonaId, Persona> = {
       align: 'Loyal to the bone. In it for the long run.',
     },
   },
+  samid: {
+    // Nov 13 2000, 4:35 PM, Houston (CST): Scorpio Sun, Gemini Moon, Taurus rising, Venus in Capricorn
+    id: 'samid', name: 'Samid', age: 25, sign: 'scorpio', moon: 'gemini', rising: 'taurus', venus: 'capricorn',
+    pronoun: { subj: 'he', obj: 'him', poss: 'his' },
+    serial: '№ 113', photo: 'img/samid.jpg',
+    blurb: 'Laughs with his whole face. Owns too many bandanas. Will talk to anyone.',
+    birth: { year: 2000, month: 11, day: 13, hour: 16, minute: 35, utcOffset: -6, lat: 29.76, lon: -95.37, city: 'Houston' },
+    card: {
+      bio: 'Easy to talk to, hard to read. I’ll ask you one more question than you expect and remember the answer.',
+      facts: [['Religion', 'Spiritual, curious'], ['Looking for', 'Something real, no rush'], ['Height', '5′9″'], ['Work', 'Creative, always making something']],
+      interests: ['Live music', 'Thrifting', 'Street food', 'Photo booths', 'Deep talks at 2am'],
+      dealbreakers: 'Fake energy. Small talk forever. Not laughing at my jokes.',
+    },
+    reading: {
+      pull: 'Warm, funny and actually listens. You’ll feel known fast.',
+      push: 'Feels more than he shows. Earn the trust and you get all of it.',
+      align: 'All in or not at all. Once he picks you, he stays.',
+    },
+  },
 }
 
 const KEY = 'align:persona'
@@ -97,7 +116,7 @@ const KEY = 'align:persona'
 function read(): PersonaId {
   try {
     const v = localStorage.getItem(KEY)
-    return v === 'xavier' || v === 'hakeem' || v === 'jeremy' ? v : 'hakeem'
+    return v === 'xavier' || v === 'hakeem' || v === 'jeremy' || v === 'samid' ? v : 'hakeem'
   } catch {
     return 'hakeem'
   }

@@ -97,12 +97,39 @@ const JEREMY: Reading[] = [
   },
 ]
 
-export const READINGS: Reading[] = { hakeem: HAKEEM, xavier: XAVIER, jeremy: JEREMY }[PERSONA.id]
+const SAMID: Reading[] = [
+  {
+    ...HAKEEM[0],
+    headline: 'You both feel by talking.',
+    body: 'You both have a Gemini moon, so you feel things out loud, the same night, with follow-up questions. You will not run out of things to say. The first five nights will feel easier than they should.',
+    tryLine: 'Ask the question you’d usually save for date three.',
+  },
+  {
+    ...HAKEEM[1],
+    headline: 'You go deep. She keeps it light.',
+    body: 'Your Scorpio sun wants the real answer, now. Her Libra sun smooths things over, and her Aquarius rising keeps a little distance. You read her polish as hiding; she reads your questions as a test.',
+    tryLine: 'Tell her one true thing first, then ask hers.',
+  },
+  {
+    ...HAKEEM[2],
+    headline: 'She is your seventh house.',
+    body: 'Your sun sits in your seventh, the house of partners, and she is a Libra, the sign that house belongs to. You become most yourself across the table from someone. She likes being that someone.',
+    tryLine: 'Plan a date that’s just the two of you, no crowd.',
+  },
+  {
+    ...HAKEEM[3],
+    headline: 'You commit. She weighs it. Both count.',
+    body: 'You show love by going all in; she shows it by talking it through. After a fight, let her talk first, then tell her you are still here. Her taking time to decide isn’t disinterest, and your intensity isn’t too much. Say both of those out loud once.',
+  },
+]
+
+export const READINGS: Reading[] = { hakeem: HAKEEM, xavier: XAVIER, jeremy: JEREMY, samid: SAMID }[PERSONA.id]
 
 /** the line over the reading tabs (S-21 card and the inline chat card) */
 export const READING_TITLE: Record<PersonaId, { title: string; line: string }> = {
   hakeem: { title: 'Venus rules you both.', line: 'She balances the room; you keep it.' },
   xavier: { title: 'Two Gemini moons.', line: 'She weighs it; you build it.' },
   jeremy: { title: 'Big heart, fair mind.', line: 'She balances the room; you feed it.' },
+  samid: { title: 'Two Gemini moons.', line: 'She keeps it light; you take it deep.' },
 }
 export const MY_READING_TITLE = READING_TITLE[PERSONA.id]

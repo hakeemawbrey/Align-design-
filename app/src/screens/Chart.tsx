@@ -43,6 +43,7 @@ interface ChartTab {
  * Hakeem: Taurus sun, Sagittarius moon, Libra rising → sun in the 8th house.
  * Xavier: Capricorn sun, Gemini moon, Libra rising → sun in the 4th house.
  * Jeremy: Cancer sun, Sagittarius moon, Cancer rising → sun in the 1st house.
+ * Samid: Scorpio sun, Gemini moon, Taurus rising → sun in the 7th house.
  */
 const SUN_FACTS = SIGN_FACTS[ME.sign]
 /** 'Venus', or 'the Moon' mid-sentence */
@@ -215,7 +216,59 @@ const JEREMY_TABS: ChartTab[] = [
   },
 ]
 
-const TABS: ChartTab[] = { hakeem: HAKEEM_TABS, xavier: XAVIER_TABS, jeremy: JEREMY_TABS }[PERSONA.id]
+const SAMID_TABS: ChartTab[] = [
+  {
+    ...HAKEEM_TABS[0],
+    headline: 'You love all the way, or not at all.',
+    meaning: 'Your sun sign is your core: what you need to feel like yourself. Scorpio needs trust, honesty and something real.',
+    love: 'You go deep fast and stay loyal. Someone who keeps it surface-level or plays games will lose you, even if they’re lovely.',
+    self: 'Not everyone has to earn the whole of you on day one. Let trust build a little at a time.',
+    tryLine: 'Tell your match one true thing you don’t usually say early.',
+  },
+  // a Gemini moon, like Xavier's: the moon page reads the same
+  XAVIER_TABS[1],
+  {
+    ...HAKEEM_TABS[2],
+    headline: 'People meet your calm first.',
+    meaning: 'Your rising sign is how strangers read you before they know you. Taurus rising comes across warm, grounded and easy to be around.',
+    love: 'People feel safe with you right away. Your Scorpio core runs much deeper than that easy first impression.',
+    self: 'Your calm draws people in. Let them see the intensity too, once they’ve earned it.',
+    tryLine: 'In your next chat, share something you care about a lot.',
+  },
+  {
+    ...HAKEEM_TABS[3],
+    headline: 'Easy on the outside, intense on the inside.',
+    meaning: 'People read you as relaxed, funny and easy to talk to. In truth you feel everything and notice who is being real.',
+    love: 'Partners can miss how much a small thing mattered. Tell them when it does, the same day.',
+    self: 'Notice when you go quiet to test someone. Say the thing instead.',
+  },
+  {
+    ...HAKEEM_TABS[4], eyebrow: 'Water', color: '#7fb8f0',
+    headline: 'You need love to feel real, not just fun.',
+    meaning: 'Water signs (Cancer, Scorpio, Pisces) feel first and think second. How someone makes you feel matters more than what they say.',
+    love: 'You click easiest with water and earth signs. Air can feel distant; fire brings warmth that can boil over.',
+    self: 'Your gut is usually right. If a date feels off, take that seriously.',
+    tryLine: 'Plan a date with room to talk: a late dinner, a long drive.',
+  },
+  {
+    ...HAKEEM_TABS[5], eyebrow: 'Pluto & Mars', color: '#c9708a',
+    headline: 'Your planets are change and drive.',
+    meaning: 'Every sign has a ruling planet that shapes what it wants. Scorpio has two: Pluto, for depth and change, and Mars, for drive.',
+    love: 'Love changes you, and you want it to. Look for someone who isn’t scared of the real conversation.',
+    self: 'Not every feeling needs acting on right away. Sleep on the big ones.',
+    tryLine: 'Write down one thing you want love to change in you.',
+  },
+  {
+    ...HAKEEM_TABS[6], eyebrow: '7th house', color: '#dcaaf2',
+    headline: 'Love, for you, means a partner across the table.',
+    meaning: 'Houses show where in life your energy goes. Your sun sits in the 7th: partners, the people you choose one-on-one.',
+    love: 'You become most yourself with one person, not a crowd. You want a real partner, not someone to pass the time.',
+    self: 'You are still you without a partner. Don’t lose your own plans in someone else’s.',
+    tryLine: 'Ask a match what they want in a partner, and answer it too.',
+  },
+]
+
+const TABS: ChartTab[] = { hakeem: HAKEEM_TABS, xavier: XAVIER_TABS, jeremy: JEREMY_TABS, samid: SAMID_TABS }[PERSONA.id]
 
 /** G-23 Your chart — reached from the You tab's "Your sign" tile. */
 export default function Chart({ go }: ScreenProps) {

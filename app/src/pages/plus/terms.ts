@@ -12,6 +12,7 @@ import { SUN_HOUSE, VENUS_DEGREE, ordinal } from '../../data/myBirth'
  * Hakeem: Taurus sun (8th house), Sagittarius moon, Libra rising, Venus in Aries.
  * Xavier: Capricorn sun (4th house), Gemini moon, Libra rising, Venus in Sagittarius.
  * Jeremy: Cancer sun (1st house), Sagittarius moon, Cancer rising, Venus in Leo.
+ * Samid: Scorpio sun (7th house), Gemini moon, Taurus rising, Venus in Capricorn.
  * Juniper: Libra sun (7th house), Gemini moon, Aquarius rising.
  */
 
@@ -215,6 +216,68 @@ const MINE: Record<PersonaId, Record<string, Mine>> = {
       facts: ['Mercury · Gemini', 'Rules Gemini, Virgo'],
     },
   },
+  samid: {
+    rising: {
+      mine: 'Taurus rising. You come across calm, warm and easy to be around, so people relax fast. Your intense Scorpio core shows up later.',
+      hers: 'Juniper is Aquarius rising: friendly but a little hard to read at first. Give it a second date before you decide what she thinks.',
+    },
+    sun: {
+      mine: 'Scorpio sun. You need trust, honesty and something real. You are all in or not at all, and you can tell when someone is faking it.',
+      hers: 'Juniper is a Libra sun. She smooths things over; you want the real answer. Ask once, gently, then let her get there.',
+    },
+    moon: {
+      mine: 'Gemini moon. You need talk, questions and something new to think about. A good conversation is how you get close.',
+      hers: 'Juniper is a Gemini moon too. You both feel by talking it out, the same night. You will not run out of things to say.',
+      tryLine: 'Ask a match a question you really don’t know the answer to.',
+    },
+    venus: {
+      mine: 'Venus in Capricorn. You love by showing up and keeping your word. Under an intense Scorpio sun, that steadiness surprises people.',
+      hers: 'Juniper’s Venus is in Virgo. She shows love through small, careful favours. You are both earth here: you love with actions.',
+      tryLine: 'Plan a date and keep every detail you promised.',
+    },
+    earth: {
+      mine: 'You are water, not earth, but your rising and Venus are both earth. Earth signs give your feelings somewhere solid to land.',
+      hers: 'Juniper is air. She lives in ideas and conversation, which is why talking to her is easy and deciding with her is slow.',
+    },
+    water: {
+      mine: 'You are water. You feel first and read people fast, especially who is being real. Earth steadies you; air can feel far away.',
+      hers: 'Juniper is air. She thinks a feeling through before she shows it. Give her time; she is not being cold.',
+    },
+    mode: {
+      mine: 'Scorpio is fixed. Once you decide, you hold. It makes you loyal, and slow to let go when you should.',
+      hers: 'Libra is cardinal: she starts things. Let her pick the plan; you will be the one who keeps it.',
+    },
+    'seventh-house': {
+      mine: 'Your sun sits in your seventh, the house of partners. You are most yourself one-on-one, and you want a real partner, not a pastime.',
+      hers: 'Juniper’s sun sits in her seventh house too. You both become yourselves across the table from someone. That is a good start.',
+    },
+    'eighth-house': {
+      mine: 'Nothing sits in your eighth, but your Scorpio sun rules it. Depth comes naturally to you; you go there whether you mean to or not.',
+      hers: 'Juniper has nothing in her eighth. She will not push for depth; you will bring it. Go gently.',
+    },
+    'sun-house': {
+      mine: 'Your sun sits in the seventh: partners. You become yourself with one person across the table, not in a crowd.',
+      hers: 'Juniper’s sun sits in her seventh too. You both light up one-on-one. Skip the group hang.',
+    },
+    ruler: {
+      mine: 'Scorpio is ruled by Pluto and Mars: depth, change and drive. Love changes you, and you want it to.',
+      hers: 'Libra is ruled by Venus. She wants it beautiful; you want it real. Both are ways of caring.',
+      tryLine: 'Write down one thing you want love to change in you.',
+    },
+    retrograde: {
+      mine: 'Venus is retrograde in your seventh house, partners, and turns direct on Nov 13: your birthday. Old flames come back around until then. Do not lock anything in yet.',
+      hers: 'Juniper’s sign is ruled by Venus, so she is feeling it. A slow week to start something is fine.',
+    },
+    'saturn-return': {
+      mine: 'Yours is about four years out, at 29, and Saturn sits on your rising. You will feel it in how you show up. Until then, get to know what you want.',
+      hers: 'Juniper’s comes a little sooner than yours. She is about to get serious; meet her there.',
+    },
+    mercury: {
+      mine: 'Your Mercury is in Scorpio: you ask the question under the question. You notice what people leave out, and you remember it.',
+      hers: 'Juniper’s Mercury is in Libra. She softens everything. Ask her what she would say if she were not being polite.',
+      facts: ['Mercury · Scorpio', 'Rules Gemini, Virgo'],
+    },
+  },
 }
 const M = MINE[PERSONA.id]
 const name = (id: SignId) => SIGNS[id].name
@@ -225,6 +288,7 @@ const RULER_ART: Record<string, { color: string; light: string; dark: string; ti
   Mercury: { color: '#6a8ab0', light: '#dfeaff', dark: '#101a2e', tint: '#9ec4ff' },
   Saturn: { color: '#a08a6a', light: '#f2e6cc', dark: '#2a2010', tint: '#d8c49a' },
   'The Moon': { color: '#9a90b0', light: '#f2eefa', dark: '#1c1830', tint: '#b3a6c4' },
+  'Pluto & Mars': { color: '#9a3a52', light: '#ffd2dc', dark: '#2a0a14', tint: '#c9708a' },
 }
 /** 'Venus', or 'the Moon' mid-sentence */
 const RULER_NAME = SUN.ruler.replace(/^The /, 'the ')

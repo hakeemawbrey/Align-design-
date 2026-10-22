@@ -29,6 +29,10 @@ const MEANS: Record<PersonaId, Record<'venus-retro' | 'moon-pisces', Detail['mea
     'venus-retro': { head: 'Venus in your 5th house · dating', body: 'Venus is backing through Scorpio, your house of romance and fun, so old flames come back around for you more than most. Revisit, don’t rush. The sky will carry what’s real.' },
     'moon-pisces': { head: 'Sagittarius Moon · restless', body: 'Your moon wants to roam. Pisces asks it to sit still for one night. Write down what you keep circling.' },
   },
+  samid: {
+    'venus-retro': { head: 'Venus in your 7th house · partners', body: 'Venus turns direct on your birthday, Nov 13. Until then it backs through your house of partners, so an old flame may come back around. Revisit, don’t rush. The sky will carry what’s real.' },
+    'moon-pisces': { head: 'Gemini Moon · too many tabs open', body: 'Your moon wants to talk it all through. Pisces asks it to go quiet for one night. Write down what you keep circling.' },
+  },
 }
 
 /** S-19c · one notification, opened. Keyed by the address arg: x/notif-detail/<id> */

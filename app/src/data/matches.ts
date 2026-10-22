@@ -125,6 +125,14 @@ export const STARTER_CHATS: Record<string, Starter> = {
       ],
       replies: ['Ha, no way. Same.', 'Ok you have taste. That’s rare.', 'We should settle this in person.', 'Sunday? There’s a karaoke spot on Bellaire.'],
     },
+    samid: {
+      opening: [
+        { from: 'them', text: 'Ok your card says live music. Best small venue in Houston, go.' },
+        { from: 'me', text: 'The Continental Club. Not even close.' },
+        { from: 'them', text: 'Respect. I’m a White Oak guy but I’ll allow it. Who are you seeing next?' },
+      ],
+      replies: ['Ha, no way. Same.', 'Ok you have taste. That’s rare.', 'We should settle this in person.', 'Friday? There’s a show on Main I want to see.'],
+    },
   }),
   a31: {
     opening: [
@@ -165,6 +173,14 @@ export const STARTER_CHATS: Record<string, Starter> = {
         { from: 'them', text: 'Ha. Feed me and I’ll tell you my whole chart.' },
       ],
       replies: ['Deal. I’m bringing wine.', 'Leo moon, so yes, I’ll want compliments on the food too.', 'Tell me your best dish.', 'This is going well, don’t ruin it.'],
+    },
+    samid: {
+      opening: [
+        { from: 'them', text: 'Saw your card. Do you actually talk to anyone or is that a bit?' },
+        { from: 'me', text: 'Not a bit. I made a friend in line at the DMV last week.' },
+        { from: 'them', text: 'Ha. Talk to me then and I’ll tell you my whole chart.' },
+      ],
+      replies: ['Deal. I’m bringing wine.', 'Leo moon, so yes, I’ll want compliments on my stories too.', 'Tell me the best stranger you ever met.', 'This is going well, don’t ruin it.'],
     },
   }),
   s29: {

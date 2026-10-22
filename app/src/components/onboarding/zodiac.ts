@@ -16,6 +16,7 @@ export interface BirthDate {
  * The birthday the flow opens on: whoever is playing.
  * Hakeem: May 12, 1998, 5:00 PM, Tulsa — Taurus 22°, Sagittarius moon, Libra rising.
  * Xavier: Jan 17, 2000, 11:00 PM, Houston — Capricorn, Gemini moon, Libra rising.
+ * Samid: Nov 13, 2000, 4:35 PM, Houston — Scorpio, Gemini moon, Taurus rising.
  * Jeremy: June 23, 2002, 7:30 AM, Houston — Cancer, Sagittarius moon, Cancer rising.
  */
 export const DEFAULT_BIRTH: BirthDate = { month: PERSONA.birth.month - 1, day: PERSONA.birth.day, year: PERSONA.birth.year }
