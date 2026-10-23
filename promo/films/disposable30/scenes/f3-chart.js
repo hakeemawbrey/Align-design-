@@ -407,8 +407,8 @@ export default function build(stage) {
   const pocket = el('div', { position: 'absolute', left: (COLX - 160) + 'px', top: '200px', width: '1000px', height: '600px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(11,6,32,0.6), rgba(11,6,32,0.28) 60%, rgba(11,6,32,0) 100%)', opacity: 0 }, root)
   const eyebrow = el('div', { position: 'absolute', left: COLX + 'px', top: '318px', fontFamily: MONO, fontSize: '28px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.94)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', whiteSpace: 'nowrap', opacity: 0 }, root, '✦&nbsp;&nbsp;BLIND BY DESIGN')
   const stmtStyle = { left: (COLX - 6) + 'px', fontFamily: SERIF, fontStyle: 'italic', fontSize: '136px', lineHeight: '1', letterSpacing: '-0.01em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), -0.6px 0 0 rgba(232,98,138,0.3), 0.6px 0 0 rgba(140,170,255,0.25)' }
-  const chart = new TypeLine(root, 'Chart first.', { ...stmtStyle, top: '378px' }, { perChar: 0.035, fade: 0.32, accent: [C.rub, C.gold, C.violet] })
-  const face = new TypeLine(root, 'Face last.', { ...stmtStyle, top: '548px' }, { perChar: 0.04, fade: 0.34, accent: [C.violet, C.plum, C.rub] })
+  const chart = new TypeLine(root, 'Fall for the card.', { ...stmtStyle, fontSize: '120px', top: '386px' }, { perChar: 0.035, fade: 0.32, accent: [C.rub, C.gold, C.violet] })
+  const face = new TypeLine(root, 'Face last.', { ...stmtStyle, fontSize: '120px', top: '540px' }, { perChar: 0.04, fade: 0.34, accent: [C.violet, C.plum, C.rub] })
 
   // grain on top of everything in the scene (shared look: overlay @ 0.5)
   const grainC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: GRAIN_OPACITY, pointerEvents: 'none' }, root)
@@ -538,7 +538,7 @@ for (let i = 0; i < DB_TEXT.length; i += 3) if (DB_TEXT[i] !== ' ' && DB_TEXT[i]
 export const cues = [
   ['whoosh', 6.68, 0.8, 0.07],                         // the push-in
   ['tick', B.chart, 0.05],
-  ...[...'Chart first.'].map((c, i) => c === ' ' ? null : ['tick', +(B.chart + i * 0.035).toFixed(3), 0.03]).filter(Boolean),
+  ...[...'Fall for the card.'].map((c, i) => c === ' ' ? null : ['tick', +(B.chart + i * 0.035).toFixed(3), 0.03]).filter(Boolean),
   ['bell', B.sun, 880, 0.05, 1.2, -0.25],              // Libra (sun)
   ['bell', B.air, 1108.73, 0.035, 1.0, 0],             // air
   ['bell', B.moon, 1318.51, 0.045, 1.2, 0.2],          // Gemini moon

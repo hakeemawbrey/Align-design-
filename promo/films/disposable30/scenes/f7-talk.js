@@ -193,7 +193,8 @@ export default function build(stage) {
   const aura = el('div', { position: 'absolute', left: (PX1 - 460) + 'px', top: (PCY - 560) + 'px', width: '920px', height: '1120px', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(214,190,255,0.75), rgba(180,120,255,0.32) 55%, rgba(180,92,255,0) 100%)', opacity: 0 }, persp)
   const g = el('div', { position: 'absolute', left: -PW / 2 + 'px', top: (PCY - PH / 2) + 'px', width: PW + 'px', height: PH + 'px', transformStyle: 'preserve-3d', willChange: 'transform' }, persp)
   const scr = el('div', { position: 'absolute', inset: 0, borderRadius: '52px', overflow: 'hidden', background: C.canvas, boxShadow: '0 60px 120px rgba(4,2,14,0.7), 0 18px 40px rgba(4,2,14,0.45), 0 0 60px rgba(180,92,255,0.18), 0 0 0 1.5px rgba(239,230,214,0.35)' }, g)
-  const scrA = img(scr, A + 'screen-match.png', { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover' })
+  const scrA = img(scr, A + 'screen-chat-cards.png',   // (no match screenshot: the cards flipped in f5)
+   { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover' })
   const scrB = img(scr, A + 'screen-chat-cards.png', { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', willChange: 'transform' })
   // the button's gold breath (after the card is played)
   const btnGlow = el('div', { position: 'absolute', left: BTN.x + 'px', top: BTN.y + 'px', width: BTN.w + 'px', height: BTN.h + 'px', borderRadius: '999px', opacity: 0,
@@ -266,7 +267,9 @@ export default function build(stage) {
       const rz = Math.sin(Math.PI * gl) * -2.5 + lerp(0, -0.8, st)
       const sc = lerp(1, 0.97, Math.sin(Math.PI * gl)) * (1 + 0.012 * prog(t, T_GLIDE_END, T1))
       const tyP = 4 * hold * st
-      g.style.transform = `translate(${px}px, ${tyP}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${sc})`
+      const enter = 1 - ease.outCubic(prog(t, T0, T0 + 0.45))          // the phone rises in (f6's hand-off is cut)
+      g.style.opacity = String(ease.outQuad(prog(t, T0, T0 + 0.2)))
+      g.style.transform = `translate(${px}px, ${tyP + 760 * enter}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${sc})`
       // screen swap: a straight 0.3s crossfade inside the phone mask (both screens stay put, no strip can linger)
       const sw = ease.inOutQuad(prog(t, T_SCR, T_SCR_END))
       scrB.style.opacity = String(sw)

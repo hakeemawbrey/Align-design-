@@ -21,7 +21,7 @@
 //   20.00        hand-off: f6 draws the same frame (sky + full moon + Juniper's mystery card at 960,440, julPose(20).s)
 // Sky camera: skyCam (f3) until 15.2, then skyPanF5 loops once (constant speed, never stops) and lands on f7's
 // skyPan/skyZoom at 24.0 exactly — f6 paints the same sky, so f5→f6→f7 drift is one continuous move.
-import { clamp, lerp, prog, ease, rng, noise1, el, C } from '../../../src/lib.js'
+import { clamp, lerp, prog, ease, tw, rng, noise1, el, C } from '../../../src/lib.js'
 import { W, H, A, SERIF, MONO, fill, img } from '../../../src/scenes/common.js'
 import { getSky, drawSky, drawGrain, skyCam, skyPan, HANDOFF, GRAIN_OPACITY } from './f3-chart.js'
 import { drawMoon } from '../../../src/scenes/fx-moon.js'
@@ -49,7 +49,10 @@ const SGN = { w: 1560, h: 2345 }
 const S5 = 2002 * M5 / 2108
 const L_X = 610, R_X = 1300, CARD_Y = 440
 const CARD_IN = { a: 15.0, b: 15.95 }
-const MOVE = { a: 19.45, b: 19.95 }
+const MOVE = { a: 99, b: 99.5 }                       // (film 2's your-card exit is off: both cards stay and FLIP)
+// ── BOTH FLIP (disposable30): after the lock both blind cards turn over to the revealed cards; "It's mutual."
+export const FLIP = { you: { a: 20.0, b: 20.55 }, jul: { a: 20.12, b: 20.67 } }
+const MUT = { in: 20.7, out: 23.25 }, PUSH = { a: 20.6, b: 23.4 }, GONE = { a: 23.4, b: 23.95 }, HOME = { a: 22.7, b: 23.85 }
 
 /** Juniper's mystery card pose (screen px / scale / deg) — f6 continues from julPose(20.0) */
 export function julPose(t) {
@@ -64,7 +67,7 @@ export function julPose(t) {
   return { x, y, s, ry, rz }
 }
 /** slow push-in on Juniper's card from 19.8 on (f6 continues it, so the card never stops at the 20.0 hand-off) */
-export const APPROACH = (t) => t > 19.8 ? 0.25 * (t - 19.8) ** 2 : 0
+export const APPROACH = () => 0
 /** your card's pose (Hakeem · Taurus) — f4 imports this for its hand-off */
 export function youPose(t) {
   const e = ease.outCubic(prog(t, CARD_IN.a, CARD_IN.b))
@@ -311,9 +314,10 @@ export function moonState(t) {
   let lit = WAX[0][1]
   for (let i = 1; i < WAX.length; i++) lit += (WAX[i][1] - WAX[i - 1][1]) * ease.outCubic(prog(t, WAX[i][0], WAX[i][0] + (i === WAX.length - 1 ? 0.12 : 0.24)))
   const post = t >= LOCK ? 1 - ease.outCubic(prog(t, LOCK, LOCK + 0.5)) : 0
-  const h = homeMoon(t), k = ease.inOutCubic(prog(t, TRAVEL.a, TRAVEL.b)), kr = ease.inOutQuad(prog(t, TRAVEL.a, TRAVEL.b))
+  const hk = ease.inOutCubic(prog(t, HOME.a, HOME.b))     // after the flip the moon travels home + wanes to f7's crescent
+  const h = homeMoon(t), k = ease.inOutCubic(prog(t, TRAVEL.a, TRAVEL.b)) * (1 - hk), kr = ease.inOutQuad(prog(t, TRAVEL.a, TRAVEL.b)) * (1 - hk)
   const x = lerp(h.x, CC.x, k), y = lerp(h.y, CC.y, k), R = lerpLog(h.r, R_BIG, kr)
-  const p = Math.max(lerp(0.09, 0.14, prog(t, 6.5, 15.2)), pOfLit(lit))
+  const p = lerp(Math.max(lerp(0.09, 0.14, prog(t, 6.5, 15.2)), pOfLit(lit)), 0.14, hk)
   const alpha = lerp(1, 0.82, kr) * (1 - vigAt(x, y))
   const glow = lerp(3, 0.5 + 0.25 * lit + 0.7 * post, kr)
   return { x, y, R, p, lit, alpha, glow, post }
@@ -444,7 +448,14 @@ export default function build(stage) {
   const you = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0 }, shakeBox)
   const youGlow = el('div', { position: 'absolute', left: (120 - SGN.w / 2) + 'px', top: (119 - SGN.h / 2) + 'px', width: '1320px', height: '2108px', borderRadius: '88px' }, you)
   const youCard = img(you, A + 'card-profile-me.png', { left: -SGN.w / 2 + 'px', top: -SGN.h / 2 + 'px', width: SGN.w + 'px', height: SGN.h + 'px', clipPath: 'inset(119px 120px 118px 120px round 88px)' })
+  const youRev = img(you, A + 'card-reveal-me.png', { left: -780 + 'px', top: -1272 + 'px', width: '1560px', height: '2544px', clipPath: 'inset(120px 120px 120px 120px round 88px)', display: 'none' })
   const jul = mysteryCard(shakeBox)
+  const JR = 1254 / 1433                              // card-reveal.png body 1433 wide → her mystery body width
+  const julRev = img(jul.holder, A + 'card-reveal.png', { left: -780 * JR + 'px', top: -1370 * JR + 'px', width: 1560 * JR + 'px', height: 2740 * JR + 'px', clipPath: `inset(${122 * JR}px ${64 * JR}px ${117 * JR}px ${63 * JR}px round ${100 * JR}px)`, display: 'none' })
+  const mutBox = el('div', { position: 'absolute', zIndex: '2', left: '50%', bottom: '58px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
+  const mutEb = el('div', { fontFamily: MONO, fontSize: '28px', letterSpacing: '0.3em', textIndent: '0.3em', color: BONE, textShadow: '0 1px 12px rgba(11,6,32,0.85)', marginBottom: '14px', opacity: 0 }, mutBox, '✦&nbsp;&nbsp;YOU BOTH ALIGNED&nbsp;&nbsp;✦')
+  const mutLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '112px', lineHeight: 1, color: C.bone, opacity: 0,
+    textShadow: '0 0 40px rgba(255,236,200,0.4), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, mutBox, 'It’s mutual.')
   // reading labels (above the cards)
   const rows = READ.map((R) => {
     const box = el('div', { position: 'absolute', left: (CC.x - 160) + 'px', width: '320px', top: (R.y - 30) + 'px', textAlign: 'center', opacity: 0 }, shakeBox)
@@ -465,14 +476,14 @@ export default function build(stage) {
   const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '400px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.08) 20%, rgba(11,6,32,0.28) 40%, rgba(11,6,32,0.52) 60%, rgba(11,6,32,0.72) 80%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, capLayer)
   const capBox = el('div', { position: 'absolute', left: '50%', bottom: '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: BONE, textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;You&nbsp;&nbsp;×&nbsp;&nbsp;Juniper&nbsp;&nbsp;✦')
-  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'Two charts meet.')
+  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'Two cards meet.')
   const lockBox = el('div', { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const lockLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '116px', lineHeight: 1, color: C.bone, opacity: 0,
     textShadow: '0 0 40px rgba(255,236,200,0.45), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, lockBox, 'The stars aligned.')
   const grain = grainCanvas(body, 0.55)
 
   return {
-    start: 15.0, end: 20.2, root, fxEnd: 20.0,
+    start: 15.0, end: 24.05, root, fxEnd: 24.0,
     fx(ctx, t) {
       drawAmbient(ctx, t, prog(t, 15.0, 15.4))
       drawBurst(ctx, { t: LOCK, x: CC.x, y: CC.y, r0: 150, r1: 900, n: 30, px: 5, life: 1.0, pal: [GOLD, '#ffe6a0', GOLD, BONE], centre: HOT, sy: 0.78, seed: 3 }, t)
@@ -499,17 +510,29 @@ export default function build(stage) {
       // ── cards
       const lean = 10 * ten * (t < LOCK ? 1 : 0)       // drawn toward the column as the stars commit
       const jx = (noise1(t * 38, 5) - 0.5) * 2 * trem, jy = (noise1(t * 41, 9) - 0.5) * 2 * trem
-      const yp = youPose(t)
-      you.style.transform = poseTransform({ ...yp, x: yp.x + lean + jx, y: yp.y + jy }, 0, kick)
-      you.style.opacity = String(yp.op)
-      const glow = t < LOCK ? ten : 1 - ease.inOutQuad(prog(t, LOCK, MOVE.b - 0.05))   // charged into the lock, cooling off before the hand-off
+      // ── both flip, then a slow push together, then they lift away for f7
+      const fA = k => 180 * ease.inOutCubic(prog(t, FLIP[k].a, FLIP[k].b))
+      const fY = fA('you'), fJ = fA('jul'), side = a => a <= 90 ? a : a - 180
+      const lift = k => Math.sin(Math.PI * prog(t, FLIP[k].a, FLIP[k].b))
+      const pu = ease.inOutQuad(prog(t, PUSH.a, PUSH.b)), go = ease.inCubic(prog(t, GONE.a, GONE.b))
+      const flipPose = (p, k, dir) => ({ ...p, x: p.x + dir * (40 * pu) - dir * 260 * go, y: p.y + 20 * pu - 30 * lift(k) + 60 * go, s: p.s * (1 + 0.08 * lift(k) + 0.1 * pu) * (1 - 0.15 * go), rz: p.rz * (1 - pu) })
+      const yp = flipPose(youPose(t), 'you', 1)
+      you.style.transform = poseTransform({ ...yp, x: yp.x + lean + jx, y: yp.y + jy }, side(fY), kick)
+      you.style.opacity = String(yp.op * (1 - go))
+      youCard.style.display = fY > 90 ? 'none' : 'block'; youRev.style.display = fY > 90 ? 'block' : 'none'
+      youGlow.style.top = (fY > 90 ? -1152 : 119 - SGN.h / 2) + 'px'; youGlow.style.height = (fY > 90 ? 2304 : 2108) + 'px'
+      jul.card.style.display = fJ > 90 ? 'none' : 'block'; julRev.style.display = fJ > 90 ? 'block' : 'none'
+      jul.glow.style.top = (fJ > 90 ? -1250 * JR : 114 - MYS.h / 2) + 'px'; jul.glow.style.height = (fJ > 90 ? 2501 * JR : 2002) + 'px'
+      const revG = k => tw(t, [[FLIP[k].b - 0.12, 0], [FLIP[k].b + 0.04, 1, ease.outQuad], [FLIP[k].b + 0.9, 0.3, ease.inOutQuad]])
+      const glow = t < LOCK ? ten : 1 - ease.inOutQuad(prog(t, LOCK, 19.9))   // charged into the lock, cooling off before the hand-off
       const mixRgb = (a, b, k) => a.map((v, i) => Math.round(lerp(v, b[i], k))).join(',')
       youCard.style.filter = glow > 0.002 ? `brightness(${1 + 0.18 * glow + 0.25 * post})` : 'none'
-      youGlow.style.boxShadow = rimGlow(mixRgb([150, 240, 170], [255, 236, 180], post), glow, yp.s)
-      const jp = julPose(t)
-      jul.holder.style.transform = poseTransform({ ...jp, x: jp.x - lean - jx, y: jp.y - jy }, 0, kick)
+      youGlow.style.boxShadow = rimGlow(mixRgb([150, 240, 170], [255, 236, 180], post), Math.max(glow, revG('you')), yp.s)
+      const jp = flipPose(julPose(t), 'jul', -1)
+      jul.holder.style.transform = poseTransform({ ...jp, x: jp.x - lean - jx, y: jp.y - jy }, side(fJ), kick)
+      jul.holder.style.opacity = String(1 - go)
       jul.card.style.filter = glow > 0.002 ? `brightness(${1 + 0.18 * glow + 0.25 * post})` : 'none'
-      jul.glow.style.boxShadow = rimGlow(mixRgb([255, 150, 232], [255, 236, 200], post), glow, jp.s)
+      jul.glow.style.boxShadow = rimGlow(mixRgb([255, 150, 232], [255, 236, 200], post), Math.max(glow, revG('jul')), jp.s)
 
       // shake + chroma punch on the lock
       const sf = fi - lockF
@@ -709,7 +732,11 @@ export default function build(stage) {
       lockLine.style.transform = `scale(${lerp(1.06, 1, ease.outCubic(prog(t, CL, CL + 0.6)))})`
       lockLine.style.letterSpacing = lerp(0.04, 0, ease.outCubic(prog(t, CL, CL + 0.8))) + 'em'
       // the plate is already dimmed under "Two charts meet." → a lighter scrim there, so the grain under it still reads
-      scrim.style.opacity = String(Math.max(0.6 * e1 * out, lo))
+      const mo = ease.outQuad(prog(t, MUT.in, MUT.in + 0.25)) * (1 - ease.inOutQuad(prog(t, MUT.out, MUT.out + 0.25)))
+      mutEb.style.opacity = String(ease.outQuad(prog(t, MUT.in - 0.1, MUT.in + 0.15)) * (1 - ease.inOutQuad(prog(t, MUT.out, MUT.out + 0.25))))
+      mutLine.style.opacity = String(mo)
+      mutLine.style.transform = `scale(${lerp(1.06, 1, ease.outCubic(prog(t, MUT.in, MUT.in + 0.6)))})`
+      scrim.style.opacity = String(Math.max(0.6 * e1 * out, lo, mo))
     },
   }
 }
@@ -733,6 +760,10 @@ export const cues = [
   ['bell', LOCK, 196, 0.08, 3.0, 0], ['bell', LOCK + 0.01, 587.33, 0.06, 2.6, -0.25], ['bell', LOCK + 0.02, 739.99, 0.05, 2.6, 0.25], ['bell', LOCK + 0.03, 1174.66, 0.035, 2.6, 0],
   ['glitter', LOCK, LOCK + 0.75],
   ['bell', 18.62, 293.66, 0.03, 2.0, 0],                                  // the stars aligned (caption)
-  ['whoosh', MOVE.a, 0.55, 0.06],                                         // your card drifts off; hers glides to centre
-  ['bell', MOVE.b - 0.1, 1318.51, 0.025, 1.2, 0],                          // stars sink into her card
+  ['whoosh', FLIP.you.a, 0.5, 0.09], ['whoosh', FLIP.jul.a, 0.5, 0.08],   // both blind cards flip
+  ['tick', FLIP.you.b - 0.04, 0.07], ['tick', FLIP.jul.b - 0.04, 0.07],
+  ...[587.33, 739.99, 880, 1174.66].map((f, i) => ['bell', FLIP.jul.b - 0.05 + i * 0.05, f, 0.05, 2.4, (i - 1.5) * 0.25]),   // faces, at last
+  ['glitter', FLIP.you.b - 0.05, FLIP.jul.b + 0.7],
+  ['bell', MUT.in + 0.02, 880, 0.03, 1.6, 0],                                // "It's mutual."
+  ['whoosh', GONE.a, 0.5, 0.05]
 ]
