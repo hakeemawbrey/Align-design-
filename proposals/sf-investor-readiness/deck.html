@@ -27,7 +27,7 @@
   @media screen { body { overflow-x: hidden; } .slide { transform-origin: top left; } .wrap { overflow: hidden; margin: 0 auto 24px; } .wrap .slide { margin: 0; } }
   body { font-family: "Geist", "Inter", system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
   @page { size: 1920px 1080px; margin: 0; }
-  @media print { html, body { background: none; } .slide { margin: 0 !important; box-shadow: none !important; } }
+  @media print { html, body { background: none; padding: 0 !important; } .wrap { width: auto !important; height: auto !important; margin: 0 !important; overflow: visible !important; } .slide { margin: 0 !important; box-shadow: none !important; transform: none !important; } }
 
   .slide {
     width: var(--W); height: var(--H);
@@ -99,12 +99,12 @@
     <p class="lede" style="margin-top: 48px;">[Company] has $1.6M raised and $600K in revenue. The crop is in the field. Now the story has to land in San Francisco.</p>
   </div>
   <div class="art" style="right: var(--pad); top: 150px; width: 640px; height: 700px;">
-    <img class="fill" src="img/gleaners.jpg" alt="Millet, The Gleaners" style="object-position: 60% 60%;">
+    <img class="fill" src="img/sahurs.jpg" alt="Alfred Sisley, Sahurs Meadows in Morning Sun" style="object-position: 35% 50%;">
   </div>
-  <div class="cap" style="position:absolute; right: var(--pad); top: 872px; width: 640px;">[ Millet, The Gleaners, 1855 ] What isn’t carried home gets left in the field.</div>
+  <div class="cap" style="position:absolute; right: var(--pad); top: 872px; width: 640px;">[ Sisley, Sahurs Meadows in Morning Sun, 1894 ] The field is ready. Now it has to be brought in.</div>
 </section>
 
-<!-- 3 · Story sample: from stars to satellites -->
+<!-- 3 · Story sample: from fields to GPS -->
 <section class="slide mist">
   <div style="position:absolute; left: var(--pad); top: 110px;">
     <div class="tag">[ How I’d tell your story ]</div>
@@ -112,9 +112,9 @@
   </div>
   <div class="cards" style="top: 400px; bottom: 110px; grid-template-columns: repeat(3, 1fr);">
     <div class="card">
-      <div class="hd"><span>Read the sky</span><span class="num">[ 1515 ]</span></div>
-      <div class="pic" style="background:#fff;"><img src="img/durer_north.jpg" alt="Dürer, Celestial Map, Northern Hemisphere" style="object-position: 50% 45%; mix-blend-mode: multiply;"></div>
-      <div class="bd">For centuries, planting and travel ran on the stars.<span class="cap cardcap">[ Dürer, Celestial Map ]</span></div>
+      <div class="hd"><span>Read the seasons</span><span class="num">[ 1565 ]</span></div>
+      <div class="pic"><img src="img/harvesters.jpg" alt="Bruegel, The Harvesters" style="object-position: 40% 70%;"></div>
+      <div class="bd">For centuries, farming ran on instinct and the weather.<span class="cap cardcap">[ Bruegel, The Harvesters ]</span></div>
     </div>
     <div class="card">
       <div class="hd"><span>Map the land</span><span class="num">[ 1836 ]</span></div>
@@ -149,13 +149,13 @@
   <div class="cards" style="top: 290px; bottom: 120px; grid-template-columns: repeat(4, 1fr);">
     <div class="card">
       <div class="hd"><span>Pitch Coaching</span><span class="num">[ 1 ]</span></div>
-      <div class="pic"><img src="img/grafting.jpg" alt="Winslow Homer, Spring Farm Work: Grafting" style="object-position: 40% 30%;"></div>
-      <div class="bd">8–10 sessions: mock pitches, hard questions, debriefs<span class="cap cardcap">[ Homer, Grafting, 1870 ]</span></div>
+      <div class="pic"><img src="img/poplars.jpg" alt="Camille Pissarro, Poplars, Eragny" style="object-position: 50% 45%;"></div>
+      <div class="bd">8–10 sessions: mock pitches, hard questions, debriefs<span class="cap cardcap">[ Pissarro, Poplars, 1895 ]</span></div>
     </div>
     <div class="card">
       <div class="hd"><span>CEO Presence</span><span class="num">[ 2 ]</span></div>
-      <div class="pic"><img src="img/knitting.jpg" alt="Jules Breton, A Peasant Girl Knitting" style="object-position: 50% 45%;"></div>
-      <div class="bd">Confidence, founder story, LinkedIn and SF networking<span class="cap cardcap">[ Breton, c. 1870 ]</span></div>
+      <div class="pic"><img src="img/cypresses.jpg" alt="Vincent van Gogh, Cypresses" style="object-position: 40% 45%;"></div>
+      <div class="bd">Confidence, founder story, LinkedIn and SF networking<span class="cap cardcap">[ Van Gogh, Cypresses, 1889 ]</span></div>
     </div>
     <div class="card">
       <div class="hd"><span>US Positioning</span><span class="num">[ 3 ]</span></div>
@@ -164,8 +164,8 @@
     </div>
     <div class="card">
       <div class="hd"><span>Pitch Materials</span><span class="num">[ 4 ]</span></div>
-      <div class="pic" style="background:#A7A9AB;"><img src="img/astrolabe.jpg" alt="Regiomontanus, Astrolabe" style="object-position: 50% 50%;"></div>
-      <div class="bd">Investor deck, teaser, one-pager and intro emails<span class="cap cardcap">[ Astrolabe, 1462 ]</span></div>
+      <div class="pic"><img src="img/spring_blossoms.jpg" alt="George Inness, Spring Blossoms, Montclair" style="object-position: 70% 60%;"></div>
+      <div class="bd">Investor deck, teaser, one-pager and intro emails<span class="cap cardcap">[ Inness, 1891 ]</span></div>
     </div>
   </div>
 </section>
@@ -196,42 +196,36 @@
 
 <!-- 7 · Network -->
 <section class="slide dark">
-  <div class="art" style="inset: 0 0 0 auto; width: 1000px;">
-    <img class="fill" src="img/cygnus.jpg" alt="Paul Henry, A Section of the Constellation Cygnus" style="filter: grayscale(1) contrast(1.35) brightness(1.15);">
+  <div class="art" style="inset: 0;">
+    <img class="fill" src="img/brook_meadow.jpg" alt="John Singer Sargent, Brook and Meadow" style="object-position: 50% 50%;">
   </div>
-  <div style="position:absolute; inset:0; background: linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 45%, rgba(10,10,10,.4) 70%, rgba(10,10,10,.1) 100%);"></div>
-  <svg style="position:absolute; right: 120px; top: 170px;" width="640" height="720" viewBox="0 0 640 720" aria-hidden="true">
-    <g stroke="#3DB54A" stroke-width="1.5" fill="none" opacity=".85">
-      <polyline points="80,110 250,190 330,360 520,300"/><polyline points="330,360 300,560 160,640"/><polyline points="250,190 470,90"/><polyline points="300,560 520,610"/>
-    </g>
-    <g fill="#3DB54A"><circle cx="80" cy="110" r="6"/><circle cx="250" cy="190" r="6"/><circle cx="330" cy="360" r="9"/><circle cx="520" cy="300" r="6"/><circle cx="300" cy="560" r="6"/><circle cx="160" cy="640" r="6"/><circle cx="470" cy="90" r="6"/><circle cx="520" cy="610" r="6"/></g>
-  </svg>
+  <div style="position:absolute; inset:0; background: linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 45%, rgba(10,10,10,.6) 62%, rgba(10,10,10,.05) 92%);"></div>
   <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 1000px; display:flex; flex-direction:column; justify-content:center;">
     <div class="tag">[ Your network, opened ]</div>
     <h2 style="margin-top: 50px; font-size: 116px;">Warm intros from <span class="g">my network.</span></h2>
     <p class="lede" style="margin-top: 50px; max-width: 880px;">Investors, founders who’ve raised in SF &amp; Texas, advisors and US partners, once the pitch is ready.</p>
   </div>
-  <div class="cap" style="position:absolute; right: 36px; bottom: 30px;">[ Paul Henry, Constellation Cygnus, 1885 ]</div>
+  <div class="cap" style="position:absolute; right: 36px; bottom: 30px;">[ John Singer Sargent, Brook and Meadow, c. 1907 ]</div>
 </section>
 
 <!-- 8 · Six weeks -->
 <section class="slide">
-  <h2 style="position:absolute; left: var(--pad); top: 120px;">Ready to pitch investors <span class="g">in six weeks.</span></h2>
+  <h2 style="position:absolute; left: var(--pad); top: 120px;">Ready to pitch investors <span class="g">in eight weeks.</span></h2>
   <div class="cards" style="top: 290px; bottom: 120px; grid-template-columns: repeat(4, 1fr);">
     <div class="card" style="background: var(--mist);">
       <div class="hd"><span>Weeks 1–2</span><span class="num">[ 1 ]</span></div>
-      <div class="pic"><span class="season">Sow</span><img src="img/sower.jpg" alt="Millet, The Sower" style="object-position: 40% 40%;"></div>
-      <div class="bd">Seoul on-site, founder story, positioning<span class="cap cardcap">[ Millet, 1851 ]</span></div>
+      <div class="pic"><span class="season">Sow</span><img src="img/orchard.jpg" alt="Vincent van Gogh, The Flowering Orchard" style="object-position: 50% 60%;"></div>
+      <div class="bd">Seoul on-site, founder story, positioning<span class="cap cardcap">[ Van Gogh, 1888 ]</span></div>
     </div>
     <div class="card" style="background: var(--mist);">
-      <div class="hd"><span>Weeks 3–4</span><span class="num">[ 2 ]</span></div>
+      <div class="hd"><span>Weeks 3–5</span><span class="num">[ 2 ]</span></div>
       <div class="pic"><span class="season">Grow</span><img src="img/olive.jpg" alt="Van Gogh, Olive Trees" style="object-position: 30% 50%;"></div>
       <div class="bd">New deck built, mock pitches begin<span class="cap cardcap">[ Van Gogh, 1889 ]</span></div>
     </div>
     <div class="card" style="background: var(--mist);">
-      <div class="hd"><span>Weeks 5–6</span><span class="num">[ 3 ]</span></div>
-      <div class="pic"><span class="season">Harvest</span><img src="img/harvesters.jpg" alt="Bruegel, The Harvesters" style="object-position: 40% 70%;"></div>
-      <div class="bd">Q&amp;A drills and final run-throughs<span class="cap cardcap">[ Bruegel, 1565 ]</span></div>
+      <div class="hd"><span>Weeks 6–8</span><span class="num">[ 3 ]</span></div>
+      <div class="pic"><span class="season">Harvest</span><img src="img/reapers.jpg" alt="John Singer Sargent, Reapers Resting in a Wheat Field" style="object-position: 30% 60%;"></div>
+      <div class="bd">Q&amp;A drills and final run-throughs<span class="cap cardcap">[ Sargent, 1885 ]</span></div>
     </div>
     <div class="card black">
       <div class="hd"><span>After launch</span><span class="num">[ 4 ]</span></div>
@@ -300,13 +294,14 @@
 
 <!-- 12 · Close -->
 <section class="slide dark">
-  <img src="img/durer_north.jpg" alt="" style="position:absolute; left: 50%; top: 50%; width: 1500px; transform: translate(-50%, -50%); filter: invert(1) grayscale(1) brightness(.75); opacity: .22; mix-blend-mode: screen;">
+  <img src="img/wheat.jpg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: 50% 60%; opacity:.9;">
+  <div style="position:absolute; inset:0; background: radial-gradient(ellipse at center, rgba(10,10,10,.78) 0%, rgba(10,10,10,.55) 45%, rgba(10,10,10,.25) 85%);"></div>
   <div style="position:absolute; inset: 0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
     <div class="tag">[ Let’s make it happen ]</div>
     <h1 style="margin-top: 50px; font-size: 156px;">Your vision,<br><span class="g">pitched in US.</span></h1>
     <div style="margin-top: 64px; background: #fff; color: #000; font-size: 30px; padding: 22px 44px; border-radius: 4px;">Hakeem · Expressive Space · expressivespace.co</div>
   </div>
-  <div class="cap" style="position:absolute; left: 0; right: 0; bottom: 30px; text-align:center;">[ Dürer, Celestial Map, 1515 ] Farmers navigated by these. Your story starts there.</div>
+  <div class="cap" style="position:absolute; left: 0; right: 0; bottom: 30px; text-align:center;">[ Van Gogh, Wheat Field with Cypresses, 1889 ]</div>
 </section>
 
 <!-- 13 · Credits -->
@@ -315,25 +310,25 @@
     <div class="tag">[ Image credits ]</div>
     <h2 style="margin-top: 34px; font-size: 64px;">Every image is <span class="g">public domain.</span></h2>
     <div style="margin-top: 60px; columns: 2; column-gap: 80px; font-size: 22px; line-height: 1.7; color: var(--ink-2); font-weight: 300;">
-      <div>Vincent van Gogh, <i>Wheat Field with Cypresses</i>, 1889 · The Met</div>
-      <div>Jean-François Millet, <i>The Gleaners</i>, c. 1855 · Cleveland Museum of Art</div>
-      <div>Albrecht Dürer, <i>Celestial Map, Northern Hemisphere</i>, 1515 · The Met</div>
-      <div>Thomas Cole, <i>The Oxbow</i>, 1836 · The Met</div>
-      <div>Winslow Homer, <i>Spring Farm Work: Grafting</i>, 1870 · The Met</div>
-      <div>Jules Breton, <i>A Peasant Girl Knitting</i>, c. 1870 · The Met</div>
-      <div>Thomas Cole, <i>View on the Catskill, Early Autumn</i>, 1836–37 · The Met</div>
-      <div>Regiomontanus, <i>Astrolabe</i>, 1462 · The Met</div>
-      <div>Jules Breton, <i>The Weeders</i>, 1868 · The Met</div>
-      <div>Paul Henry, <i>A Section of the Constellation Cygnus</i>, 1885 · The Met</div>
-      <div>Jean-François Millet, <i>The Sower</i>, 1851 · The Met</div>
-      <div>Vincent van Gogh, <i>Olive Trees</i>, 1889 · The Met</div>
-      <div>Pieter Bruegel the Elder, <i>The Harvesters</i>, 1565 · The Met</div>
-      <div>Camille Pissarro, <i>The Harvest, Pontoise</i>, 1881 · The Met</div>
-      <div>Eadweard Muybridge, <i>Attitudes of Animals in Motion</i>, 1879 · The Met</div>
-      <div>Hugo Henneberg, <i>Pflügen (Plowing)</i>, 1890–1901 · The Met</div>
-      <div>Albert Bierstadt, <i>Merced River, Yosemite Valley</i>, 1866 · The Met</div>
+      <div>Vincent van Gogh, <i>Wheat Field with Cypresses</i>, 1889</div>
+      <div>Alfred Sisley, <i>Sahurs Meadows in Morning Sun</i>, 1894</div>
+      <div>Pieter Bruegel the Elder, <i>The Harvesters</i>, 1565</div>
+      <div>Thomas Cole, <i>The Oxbow</i>, 1836</div>
+      <div>Camille Pissarro, <i>Poplars, Eragny</i>, 1895</div>
+      <div>Vincent van Gogh, <i>Cypresses</i>, 1889</div>
+      <div>Thomas Cole, <i>View on the Catskill, Early Autumn</i>, 1836–37</div>
+      <div>George Inness, <i>Spring Blossoms, Montclair, New Jersey</i>, c. 1891</div>
+      <div>Jules Breton, <i>The Weeders</i>, 1868</div>
+      <div>John Singer Sargent, <i>Brook and Meadow</i>, c. 1907</div>
+      <div>Vincent van Gogh, <i>The Flowering Orchard</i>, 1888</div>
+      <div>Vincent van Gogh, <i>Olive Trees</i>, 1889</div>
+      <div>John Singer Sargent, <i>Reapers Resting in a Wheat Field</i>, 1885</div>
+      <div>Camille Pissarro, <i>The Harvest, Pontoise</i>, 1881</div>
+      <div>Eadweard Muybridge, <i>Attitudes of Animals in Motion</i>, 1879</div>
+      <div>Hugo Henneberg, <i>Pflügen (Plowing)</i>, 1890–1901</div>
+      <div>Albert Bierstadt, <i>Merced River, Yosemite Valley</i>, 1866</div>
     </div>
-    <p class="cap" style="margin-top: 50px; font-size: 18px;">The Met Open Access and Cleveland Museum of Art Open Access, both released under CC0.</p>
+    <p class="cap" style="margin-top: 50px; font-size: 18px;">All from The Metropolitan Museum of Art Open Access, released under CC0.</p>
   </div>
 </section>
 
