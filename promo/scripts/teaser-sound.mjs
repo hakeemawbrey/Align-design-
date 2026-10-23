@@ -26,9 +26,18 @@ if (T.loop) {
 const m = createMix(T.duration)
 const music = T.music || {}
 m.pad(music.chords || [[0, T.duration, [146.83, 220, 329.63, 369.99, 554.37]]], music.padGain ?? 0.022)
+if (music.tempo) {
+  // optional tempo sections: [{ from, to, bpm, pulseGain?, hatGain?, arpGain? }] — e.g. a slow cold intro, then a faster beat
+  for (const s of music.tempo) {
+    m.pulse(s.from, s.to, s.bpm, s.pulseGain ?? 0.26)
+    if (s.hatGain) m.hats(s.from, s.to, s.bpm, s.hatGain)
+    if (s.arpGain) m.arp(music.chords, s.bpm, s.from, s.to, s.arpGain)
+  }
+} else {
 if (music.bpm) m.pulse(music.beatFrom ?? 0.5, music.beatTo ?? T.duration - 2.5, music.bpm, music.pulseGain ?? 0.26)
 if (music.bpm && music.hatGain) m.hats(music.beatFrom ?? 0.5, music.beatTo ?? T.duration - 2.5, music.bpm, music.hatGain)
 if (music.arpGain) m.arp(music.chords, music.bpm, music.arpFrom ?? music.beatFrom ?? 0.5, music.arpTo ?? music.beatTo ?? T.duration - 2.5, music.arpGain)
+}
 for (const [kind, ...a] of T.cues || []) m[kind](...a)
 // shared end tag (see kit.endTag): rings, chakra chimes, wordmark, moon row
 if (T.endTagAt != null) {
