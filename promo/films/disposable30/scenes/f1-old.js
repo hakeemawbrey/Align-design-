@@ -200,10 +200,10 @@ export default function build(stage) {
   const lastBlur = blurs[5]
   last.card.style.filter = 'url(#f1mb5)'
 
-  // copy: ONE centred stacked block to the right of the feed — "We made dating" / "disposable." (the hook, frame one)
+  // copy: ONE centred stacked block to the right of the feed — "We made people" / "disposable." (the hook, frame one)
   const T = { fontFamily: SERIF, fontStyle: 'italic', fontSize: '116px', color: BONE, lineHeight: 1.12, textShadow: '0 2px 30px rgba(5,6,10,0.9), 0 0 2px rgba(5,6,10,0.6)' }
   const block = el('div', { position: 'absolute', left: '990px', width: '840px', top: (FEED_Y - 112) + 'px', textAlign: 'center', zIndex: '3000' }, root)
-  const line1 = words(block, 'We made dating', { ...T, position: 'relative', display: 'block' }, 0.0, 0.08)
+  const line1 = words(block, 'We made people', { ...T, position: 'relative', display: 'block' }, 0.0, 0.08)
   const line2 = words(block, 'disposable.', { ...T, position: 'relative', display: 'block' }, 0.5, 0.1)
   // the hero judge-timer under the feed card (ticks down 0.4 → 0.0 per face) + the face counter to its right
   const timer = el('div', { position: 'absolute', left: (FEED_X - 360) + 'px', width: '720px', top: '858px', textAlign: 'center', fontFamily: MONO, fontSize: '64px',

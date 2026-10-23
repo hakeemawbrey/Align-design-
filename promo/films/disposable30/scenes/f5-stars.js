@@ -391,9 +391,9 @@ export function drawAmbient(ctx, t, alpha = 1) {
 
 // ── readings ──────────────────────────────────────────────────────────────────
 const READ = [
-  { k: 'Push', col: '#e8628a', rgb: '232,98,138', n: 2, t: 15.72, y: 318 },      // the app's reading: Push / Pull / Align
-  { k: 'Pull', col: '#7fd8b0', rgb: '127,216,176', n: 3, t: 16.12, y: 446 },
-  { k: 'Align', col: '#f2c75c', rgb: '242,199,92', n: 3, t: 16.52, y: 574 },
+  { k: 'Push', col: '#e8628a', rgb: '232,98,138', n: 2, t: 99, y: 318 },      // the app's reading: Push / Pull / Align
+  { k: 'Pull', col: '#7fd8b0', rgb: '127,216,176', n: 3, t: 99, y: 446 },
+  { k: 'Align', col: '#f2c75c', rgb: '242,199,92', n: 3, t: 99, y: 574 },   // (readings between the cards are off: p1-rows shows Push / Pull / Align on her card)
 ]
 const READ_OUT = { a: 17.02, b: 17.28 }
 const GAP = { x0: 800, x1: 1124 }   // beams run under the cards' inner edges
@@ -476,7 +476,7 @@ export default function build(stage) {
   const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '400px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.08) 20%, rgba(11,6,32,0.28) 40%, rgba(11,6,32,0.52) 60%, rgba(11,6,32,0.72) 80%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, capLayer)
   const capBox = el('div', { position: 'absolute', left: '50%', bottom: '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: BONE, textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Marcus&nbsp;&nbsp;×&nbsp;&nbsp;Juniper&nbsp;&nbsp;✦')
-  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'How you push, pull, align.')
+  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'Two cards meet.')
   const lockBox = el('div', { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const lockLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '116px', lineHeight: 1, color: C.bone, opacity: 0,
     textShadow: '0 0 40px rgba(255,236,200,0.45), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, lockBox, 'The stars aligned.')
@@ -744,12 +744,6 @@ export default function build(stage) {
 export const cues = [
   ['whoosh', 15.0, 0.9, 0.07],                                           // two cards drift together
   ['bell', 15.47, 587.33, 0.035, 1.2, 0], ['bell', 15.58, 880, 0.03, 1.2, 0],  // "Two charts meet."
-  // readings: a bell per reading + a tick per dot
-  ...[[15.72, 739.99, -0.2], [16.12, 554.37, 0], [16.52, 987.77, 0.2]].flatMap(([t, hz, pan], k) => [
-    ['whoosh', t - 0.02, 0.25, 0.035], ['bell', t + 0.04, hz, 0.045, 1.0, pan],
-    ...[0, 1, 2].map((j) => ['tick', t + 0.18 + j * 0.07, k === 1 && j === 2 ? 0.025 : 0.06]),
-  ]),
-  ['whoosh', 17.02, 0.3, 0.04],                                          // readings retract
   // seven stars streak in
   ...[0, 1, 2, 3, 4, 5, 6].flatMap((k) => [['whoosh', STAR_IN + k * 0.065 + 0.32, 0.38, 0.035], ['bell', STAR_IN + k * 0.065 + 0.36, 2349.32, 0.012, 1.0, ((k % 3) - 1) * 0.5]]),
   ['riser', 17.6, LOCK, 0.12],                                           // tension into the lock
