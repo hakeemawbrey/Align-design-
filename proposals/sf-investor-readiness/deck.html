@@ -23,7 +23,8 @@
     --pad: 130px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: #888; }
+  html, body { background: #1A1A1A; }
+  @media screen { body { overflow-x: hidden; } .slide { transform-origin: top left; } .wrap { overflow: hidden; margin: 0 auto 24px; } .wrap .slide { margin: 0; } }
   body { font-family: "Geist", "Inter", system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
   @page { size: 1920px 1080px; margin: 0; }
   @media print { html, body { background: none; } .slide { margin: 0 !important; box-shadow: none !important; } }
@@ -74,7 +75,7 @@
   .cardcap { display: block; margin-top: 12px; }
 </style>
 </head>
-<body>
+<body style="padding-top: 24px;">
 
 <!-- 1 · Title -->
 <section class="slide">
@@ -349,6 +350,21 @@
     });
   };
   window.addEventListener('load', layout);
+
+  // Fit each 1920px slide to the screen width (screen only; print stays full size)
+  const fit = () => {
+    if (matchMedia('print').matches) return;
+    const k = Math.min(1, (document.documentElement.clientWidth - 32) / 1920);
+    document.querySelectorAll('.slide').forEach(sl => {
+      let w = sl.parentElement.classList.contains('wrap') ? sl.parentElement : null;
+      if (!w) { w = document.createElement('div'); w.className = 'wrap'; sl.before(w); w.appendChild(sl); }
+      sl.style.transform = `scale(${k})`;
+      w.style.width = 1920 * k + 'px'; w.style.height = 1080 * k + 'px';
+    });
+  };
+  window.addEventListener('load', () => { fit(); layout(); });
+  window.addEventListener('resize', fit);
+  window.addEventListener('beforeprint', () => document.querySelectorAll('.slide').forEach(sl => sl.style.transform = 'none'));
 </script>
 </body>
 </html>
