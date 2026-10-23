@@ -64,5 +64,5 @@ Captured from the running app by `node promo/scripts/capture-assets.mjs` (from r
 | align-lockup.png | 351x630 | Mark + wordmark lockup at native splash size |
 | align-mark.png | 988x1050 | Align mark alone, rendered 2.9x (seed-of-life circles + glowing 7-chakra dots) |
 | align-wordmark.png | 780x470 | "Align" serif italic wordmark alone, rendered 2.5x |
-| card-profile-me.png | 1560x2345 | YOUR mystery card (veiled), from the You tab's "Your card" sheet: Hakeem, 28 · Taurus (green aura, Steady Pull) — same ProfileCard design as card-profile-1..6 |
-| card-reveal-me.png | 1560x2544 | YOUR revealed card, from the "Your card" sheet's REVEALED side: Hakeem, 28 · Taurus, photo + full bio — same design as card-reveal.png |
+| card-profile-marcus.png | 1560x2345 | Stand-in user's mystery card (veiled), rendered by the app's "Your card" sheet with ME = Marcus, 29 · Taurus (photo people/p4) — same ProfileCard design as card-profile-1..6 |
+| card-reveal-marcus.png | 1560x2544 | The same stand-in's revealed card (REVEALED side): Marcus, 29 · Taurus, photo + full bio — same design as card-reveal.png |

@@ -43,8 +43,8 @@ const SQ = 0.62
 export const MYS = { w: 1496, h: 2238 }
 export const M_END = 0.33                             // Juniper's card scale at the hand-off (= first film's S3)
 const M5 = 0.30                                       // both cards while they sit side by side
-// card-profile-me.png 1560×2345 (Hakeem, 28 · Taurus — YOUR mystery card, captured from the app's Your card sheet, same
-// design as Juniper's) opaque body x 120..1440, y 119..2227 → drawn at the same body height as Juniper's
+// card-profile-marcus.png 1560×2345 (Marcus, 29 · Taurus — his mystery card, captured from the app's Your card sheet
+// with a stand-in profile, same design as Juniper's) opaque body x 120..1440, y 119..2227 → drawn at the same body height as Juniper's
 const SGN = { w: 1560, h: 2345 }
 const S5 = 2002 * M5 / 2108
 const L_X = 610, R_X = 1300, CARD_Y = 440
@@ -68,7 +68,7 @@ export function julPose(t) {
 }
 /** slow push-in on Juniper's card from 19.8 on (f6 continues it, so the card never stops at the 20.0 hand-off) */
 export const APPROACH = () => 0
-/** your card's pose (Hakeem · Taurus) — f4 imports this for its hand-off */
+/** his card's pose (Marcus · Taurus) — f4 imports this for its hand-off */
 export function youPose(t) {
   const e = ease.outCubic(prog(t, CARD_IN.a, CARD_IN.b))
   const out = ease.inCubic(prog(t, MOVE.a - 0.02, MOVE.b - 0.05))
@@ -391,8 +391,8 @@ export function drawAmbient(ctx, t, alpha = 1) {
 
 // ── readings ──────────────────────────────────────────────────────────────────
 const READ = [
-  { k: 'Spark', col: '#7fd8b0', rgb: '127,216,176', n: 3, t: 15.72, y: 318 },
-  { k: 'Rub', col: '#e8628a', rgb: '232,98,138', n: 2, t: 16.12, y: 446 },
+  { k: 'Push', col: '#e8628a', rgb: '232,98,138', n: 2, t: 15.72, y: 318 },      // the app's reading: Push / Pull / Align
+  { k: 'Pull', col: '#7fd8b0', rgb: '127,216,176', n: 3, t: 16.12, y: 446 },
   { k: 'Align', col: '#f2c75c', rgb: '242,199,92', n: 3, t: 16.52, y: 574 },
 ]
 const READ_OUT = { a: 17.02, b: 17.28 }
@@ -447,8 +447,8 @@ export default function build(stage) {
   // your mystery card (Hakeem · Taurus, same design as hers) · Juniper's card
   const you = el('div', { position: 'absolute', left: 0, top: 0, width: 0, height: 0 }, shakeBox)
   const youGlow = el('div', { position: 'absolute', left: (120 - SGN.w / 2) + 'px', top: (119 - SGN.h / 2) + 'px', width: '1320px', height: '2108px', borderRadius: '88px' }, you)
-  const youCard = img(you, A + 'card-profile-me.png', { left: -SGN.w / 2 + 'px', top: -SGN.h / 2 + 'px', width: SGN.w + 'px', height: SGN.h + 'px', clipPath: 'inset(119px 120px 118px 120px round 88px)' })
-  const youRev = img(you, A + 'card-reveal-me.png', { left: -780 + 'px', top: -1272 + 'px', width: '1560px', height: '2544px', clipPath: 'inset(120px 120px 120px 120px round 88px)', display: 'none' })
+  const youCard = img(you, A + 'card-profile-marcus.png', { left: -SGN.w / 2 + 'px', top: -SGN.h / 2 + 'px', width: SGN.w + 'px', height: SGN.h + 'px', clipPath: 'inset(119px 120px 118px 120px round 88px)' })
+  const youRev = img(you, A + 'card-reveal-marcus.png', { left: -780 + 'px', top: -1272 + 'px', width: '1560px', height: '2544px', clipPath: 'inset(120px 120px 120px 120px round 88px)', display: 'none' })
   const jul = mysteryCard(shakeBox)
   const JR = 1254 / 1433                              // card-reveal.png body 1433 wide → her mystery body width
   const julRev = img(jul.holder, A + 'card-reveal.png', { left: -780 * JR + 'px', top: -1370 * JR + 'px', width: 1560 * JR + 'px', height: 2740 * JR + 'px', clipPath: `inset(${122 * JR}px ${64 * JR}px ${117 * JR}px ${63 * JR}px round ${100 * JR}px)`, display: 'none' })
@@ -475,8 +475,8 @@ export default function build(stage) {
   // captions
   const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '400px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.08) 20%, rgba(11,6,32,0.28) 40%, rgba(11,6,32,0.52) 60%, rgba(11,6,32,0.72) 80%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, capLayer)
   const capBox = el('div', { position: 'absolute', left: '50%', bottom: '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
-  const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: BONE, textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;You&nbsp;&nbsp;×&nbsp;&nbsp;Juniper&nbsp;&nbsp;✦')
-  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'Two cards meet.')
+  const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: BONE, textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Marcus&nbsp;&nbsp;×&nbsp;&nbsp;Juniper&nbsp;&nbsp;✦')
+  const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'How you push, pull, align.')
   const lockBox = el('div', { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const lockLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '116px', lineHeight: 1, color: C.bone, opacity: 0,
     textShadow: '0 0 40px rgba(255,236,200,0.45), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, lockBox, 'The stars aligned.')

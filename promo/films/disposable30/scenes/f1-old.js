@@ -36,7 +36,7 @@ const dirOf = k => k === N - 1 ? -1 : ((k % 4 === 1 || k % 7 === 5) ? 1 : -1)   
 const flightOf = k => clamp((k + 1 < N ? SWIPES[k + 1] - SWIPES[k] : 0.2) * 0.95, 0.18, 0.3)
 const ROSE = '#e8628a'
 const FACE_NO = k => 38 - N + k                   // the slammed card is FACE 038
-const faceOf = k => [7, 2, 11, 5, 9, 1, 4, 12, 6, 10, 8, 2, 5, 11, 1, 9, 7, 12, 4, 6, 10, 8, 1, 5, 9, 2, 11, 7, 4, 12, 6][k % 31]
+const faceOf = k => [7, 2, 11, 5, 9, 1, 3, 12, 6, 10, 8, 2, 5, 11, 1, 9, 7, 12, 3, 6, 10, 8, 1, 5, 9, 2, 11, 7, 3, 12, 6][k % 31]   // (p4 = Marcus: kept out of the feed)
 
 // ── film grain (copied from s1-imagine.js buildGrain): clumped silver, 6 tiles, new tile + offset every frame
 const GRAIN_N = 6, GRAIN_TILE = 512
