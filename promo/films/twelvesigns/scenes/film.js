@@ -12,7 +12,7 @@ import { clamp, lerp, prog, ease, rng, C } from '../../../src/lib.js'
 import { W, H, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar, drawMoon } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { B, BONE, GOLD, VOID, tint, hexA, ink, pistol, snacks, tabs, house, stage, sheet, scales, keyhole, backpack, peak, bulb, fishes } from './props.js'
+import { B, BONE, GOLD, VOID, tint, hexA, ink, rocket, snacks, tabs, house, stage, sheet, scales, keyhole, backpack, peak, bulb, fishes } from './props.js'
 
 export const DURATION = 60
 const beat = n => 0.6 + n * B
@@ -35,7 +35,7 @@ const WIPE = [0, ...S.map((s, i) => s - DUR[KIND[i]] * 0.5), E0 - DUR.spin * 0.5
 
 // ── copy
 const INFO = [
-  { dates: 'MAR 21 – APR 19', quip: ['Goes', 'first.', '\n', 'Asks', 'questions', { w: 'later.' }], acc: '#ffd36b', prop: pistol },
+  { dates: 'MAR 21 – APR 19', quip: ['Goes', 'first.', '\n', 'Asks', 'questions', { w: 'later.' }], acc: '#ffd36b', prop: rocket },
   { dates: 'APR 20 – MAY 20', quip: ['Comfort', 'is', 'a', '\n', { w: 'lifestyle.' }], acc: '#fff0c2', prop: snacks },
   { dates: 'MAY 21 – JUN 20', quip: ['Forty', 'tabs', 'open.', '\n', 'All', { w: 'important.' }], acc: '#fff4b8', prop: tabs },
   { dates: 'JUN 21 – JUL 22', quip: ['Home', 'is', 'the', 'whole', '\n', { w: 'personality.' }], acc: '#bfeaff', prop: house },

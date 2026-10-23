@@ -40,31 +40,53 @@ function burstStar(ctx, n, r0, r1) {
   ctx.closePath()
 }
 
-// ───────────────────────── ♈ a starting pistol that fires a GO! flag on beat 4
-export function pistol(ctx, x, y, s, u, col) {
-  const fire = 4 * B, kick = wob(u, fire, 0.32, 14, 6)
-  begin(ctx, x - 70, y + 40, s, 1, -0.32 - Math.abs(kick))
-  // the flag shoots out of the barrel
+// ───────────────────────── ♈ a little rocket on a launch pad: rumbles, then blasts off on beat 4 with a GO! burst
+export function rocket(ctx, x, y, s, u, col) {
+  const fire = 4 * B
+  const lift = ease.inQuad(prog(u, fire, fire + 0.95)) * 1500
+  const shake = u > 3 * B && u < fire + 0.3 ? 4 * Math.sin(u * 70) * prog(u, 3 * B, fire) : 0
+  begin(ctx, x, y, s)
+  // launch pad + tower
+  ctx.beginPath(); ctx.moveTo(-220, 200); ctx.lineTo(220, 200); ink(ctx, col, { w: 8, fa: 0 })
+  rr(ctx, -110, 170, 220, 30, 8); ink(ctx, col, { w: 7, fa: 0.3 })
+  ctx.beginPath(); ctx.moveTo(-170, 170); ctx.lineTo(-170, -120); ctx.moveTo(-200, 170); ctx.lineTo(-200, -120)
+  for (let k = 0; k < 6; k++) { const yy = 170 - k * 48; ctx.moveTo(-200, yy); ctx.lineTo(-170, yy - 48) }
+  ink(ctx, BONE, { w: 5, fa: 0, glow: 6 })
+  // smoke clouds at the pad after ignition
+  const sm = prog(u, fire - 0.1, fire + 0.5)
+  if (sm > 0) {
+    for (let k = 0; k < 7; k++) {
+      const d = (k - 3) / 3, g = ease.outCubic(sm), r = (34 + 20 * (1 - Math.abs(d))) * (0.5 + g)
+      ctx.beginPath(); ctx.arc(d * 170 * g, 165 - 20 * (1 - Math.abs(d)) * g + 4 * Math.sin(u * 3 + k), r, 0, TAU); ink(ctx, BONE, { w: 5, fa: 0.3, glow: 8 })
+    }
+  }
+  // the rocket
+  ctx.save(); ctx.translate(shake, -lift)
+  // exhaust flame (flickers before lift-off, roars after)
+  const fl = u > fire - 0.15 ? 1 : u > 3 * B ? 0.35 : 0
+  if (fl > 0) {
+    const L = (fl > 0.5 ? 150 : 60) * (1 + 0.15 * Math.sin(u * 40))
+    ctx.beginPath(); ctx.moveTo(-34, 150); ctx.quadraticCurveTo(-30, 150 + L * 0.6, 0, 150 + L); ctx.quadraticCurveTo(30, 150 + L * 0.6, 34, 150); ctx.closePath(); ink(ctx, '#f0603a', { w: 6, fa: 0.6, fill: '#ffb03a' })
+    ctx.beginPath(); ctx.moveTo(-16, 150); ctx.quadraticCurveTo(0, 150 + L * 0.7, 16, 150); ink(ctx, '#ffe7a8', { w: 5, fa: 0.8, fill: '#fff3e0' })
+  }
+  // fins
+  ;[-1, 1].forEach(d => { ctx.beginPath(); ctx.moveTo(d * 50, 40); ctx.lineTo(d * 105, 130); ctx.lineTo(d * 105, 165); ctx.lineTo(d * 50, 130); ctx.closePath(); ink(ctx, '#f0603a', { w: 7, fa: 0.45 }) })
+  // body + nose
+  ctx.beginPath(); ctx.moveTo(-55, 150); ctx.lineTo(-55, -60); ctx.quadraticCurveTo(-55, -150, 0, -215); ctx.quadraticCurveTo(55, -150, 55, -60); ctx.lineTo(55, 150); ctx.closePath()
+  ink(ctx, BONE, { w: 8, fa: 0.3, fill: col })
+  ctx.beginPath(); ctx.moveTo(-42, -120); ctx.quadraticCurveTo(0, -105, 42, -120); ink(ctx, '#f0603a', { w: 6, fa: 0, glow: 8 })
+  // porthole
+  ctx.beginPath(); ctx.arc(0, -20, 26, 0, TAU); ink(ctx, '#8fd8f6', { w: 7, fa: 0.5 })
+  rr(ctx, -38, 150, 76, 16, 4); ink(ctx, BONE, { w: 5, fa: 0.4 })
+  ctx.restore()
+  // GO! burst
   const f = pop(u, fire, 0.32, 2.4)
   if (f > 0.01) {
-    const L = 230 * f, fx = 175 + L
-    ctx.save(); ctx.translate(fx + 70, -62); ctx.rotate(0.32 + wob(u, fire + 0.1, 0.15, 12, 4)); ctx.scale(f, f)
+    ctx.save(); ctx.translate(165, -150); ctx.rotate(0.18 + wob(u, fire + 0.1, 0.15, 12, 4)); ctx.scale(f, f)
     burstStar(ctx, 11, 92, 150); ink(ctx, GOLD, { w: 7, fa: 0.35 })
     label(ctx, 'GO!', 0, 4, 84, '#fff3e0', { italic: true })
     ctx.restore()
-    ctx.beginPath(); ctx.moveTo(175, -62); ctx.lineTo(fx, -62); ink(ctx, BONE, { w: 7, fa: 0, glow: 10 })
   }
-  // barrel, body, grip, trigger guard
-  rr(ctx, -40, -95, 220, 66, 18); ink(ctx, col, { w: 8, fa: 0.32 })
-  ctx.beginPath(); ctx.moveTo(-60, -40); ctx.lineTo(-60, -110); ctx.quadraticCurveTo(-60, -120, -50, -120); ctx.lineTo(-10, -120); ctx.lineTo(-10, -95); ink(ctx, col, { w: 8, fa: 0 })
-  ctx.beginPath(); ctx.moveTo(-60, -29); ctx.lineTo(35, -29); ctx.lineTo(10, 150); ctx.quadraticCurveTo(6, 170, -14, 170); ctx.lineTo(-90, 170); ctx.quadraticCurveTo(-110, 170, -104, 148); ctx.closePath()
-  ink(ctx, col, { w: 8, fa: 0.32 })
-  ctx.beginPath(); ctx.moveTo(35, -29); ctx.quadraticCurveTo(110, -20, 92, 40); ctx.lineTo(25, 40); ink(ctx, col, { w: 7, fa: 0 })
-  ctx.beginPath(); ctx.moveTo(52, -26); ctx.quadraticCurveTo(60, 5, 46, 20); ink(ctx, tint(col, '#ffffff', 0.4), { w: 6, fa: 0, glow: 8 })
-  ctx.beginPath(); ctx.moveTo(-70, 60); ctx.lineTo(-20, 60); ctx.moveTo(-75, 100); ctx.lineTo(-25, 100); ink(ctx, tint(col, '#ffffff', 0.35), { w: 5, fa: 0, glow: 6 })
-  // muzzle flash puff
-  const fl = prog(u, fire, fire + 0.35)
-  if (fl > 0 && fl < 1) { ctx.save(); ctx.translate(195, -62); ctx.globalAlpha *= 1 - fl; ctx.scale(0.5 + fl, 0.5 + fl); burstStar(ctx, 8, 40, 80); ink(ctx, '#ffd36b', { w: 6, fa: 0.6, fill: '#fff3e0' }); ctx.restore() }
   ctx.restore()
 }
 
