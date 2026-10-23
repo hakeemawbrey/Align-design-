@@ -72,6 +72,9 @@
   .card.black .hd { border-color: #2A2A2A; }
   .card.black .bd { color: #E2E2E2; }
   .season { position: absolute; left: 14px; bottom: 12px; z-index: 1; font-family: "Geist Mono", monospace; font-size: 17px; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: rgba(0,0,0,.55); padding: 6px 10px; }
+  .video .hd { padding-top: 30px; padding-bottom: 18px; }
+  .video .pic { margin-top: 18px; }
+  .video .bd { padding: 24px 42px 28px; }
   .cardcap { display: block; margin-top: 12px; }
 </style>
 </head>
@@ -93,15 +96,15 @@
 
 <!-- 2 · The problem -->
 <section class="slide">
-  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 920px; display:flex; flex-direction:column; justify-content:center;">
+  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 800px; display:flex; flex-direction:column; justify-content:center;">
     <div class="tag">[ The gap ]</div>
     <h2 style="margin-top: 44px;">Strong companies lose US rounds on story, <span class="g">not product.</span></h2>
     <p class="lede" style="margin-top: 48px;">[Company] has $1.6M raised and $600K in revenue. The crop is in the field. Now the story has to land in San Francisco.</p>
   </div>
-  <div class="art" style="right: var(--pad); top: 150px; width: 640px; height: 700px;">
+  <div class="art" style="right: var(--pad); top: 286px; width: 800px; height: 507px;">
     <img class="fill" src="img/veteran.jpg" alt="Winslow Homer, The Veteran in a New Field" style="object-position: 52% 50%;">
   </div>
-  <div class="cap" style="position:absolute; right: var(--pad); top: 872px; width: 640px;">[ Winslow Homer, The Veteran in a New Field, 1865 ] Same hands, a new field.</div>
+  <div class="cap" style="position:absolute; right: var(--pad); top: 811px; width: 800px;">[ Winslow Homer, The Veteran in a New Field, 1865 ] Same hands, a new field.</div>
 </section>
 
 <!-- 4 · Four parts -->
@@ -215,19 +218,19 @@
 <!-- 10 · Optional video -->
 <section class="slide">
   <h2 style="position:absolute; left: var(--pad); top: 120px;">Optional, <span class="g">but recommended.</span></h2>
-  <div class="cards" style="top: 290px; bottom: 160px; grid-template-columns: 1fr 1fr;">
+  <div class="cards video" style="top: 240px; bottom: 130px; grid-template-columns: 1fr 1fr;">
     <div class="card" style="background: var(--mist);">
       <div class="hd"><span>Motion Graphic Video <span class="g" style="margin-left: 14px;">$5K</span></span><span class="num">[ A ]</span></div>
-      <div class="pic" style="background:#3B2F2A;"><img src="img/muybridge.jpg" alt="Muybridge, Attitudes of Animals in Motion" style="object-position: 50% 40%;"></div>
+      <div class="pic"><img src="img/muybridge.jpg" alt="Muybridge, Attitudes of Animals in Motion" style="object-fit: contain;"></div>
       <div class="bd" style="min-height: 0;">An animated explainer of the product and vision, built for investor emails, the deck and social.<span class="cap cardcap">[ Muybridge, 1879 ]</span></div>
     </div>
     <div class="card black">
       <div class="hd"><span>Filmed Launch Video <span style="margin-left: 14px; color: var(--green-bright);">$10K</span></span><span class="num">[ B ]</span></div>
-      <div class="pic"><img src="img/apple_seller.jpg" alt="Pierre-Auguste Renoir, The Apple Seller" style="object-position: 50% 52%;"></div>
+      <div class="pic"><img src="img/apple_seller.jpg" alt="Pierre-Auguste Renoir, The Apple Seller" style="object-fit: contain;"></div>
       <div class="bd" style="min-height: 0;">A real-life film with the founders, team and product, directed by Expressive Space.<span class="cap cardcap on-dark">[ Renoir, The Apple Seller, c. 1890 ]</span></div>
     </div>
   </div>
-  <p class="lede" style="position:absolute; left: var(--pad); bottom: 90px; font-size: 24px;">Both directed by Hakeem · Add-ons to either program</p>
+  <p class="lede" style="position:absolute; left: var(--pad); bottom: 76px; font-size: 24px;">Both directed by Hakeem · Add-ons to either program</p>
 </section>
 
 <!-- 11 · Then -->
