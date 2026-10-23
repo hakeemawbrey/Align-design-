@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SF Investor Readiness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* Expressive Space: Geist, pale steel, one green, black for emphasis */
+  :root {
+    --paper: #F2F7FA;
+    --mist: #E4EDF2;
+    --line: #D6E0E6;
+    --ink: #000000;
+    --ink-2: #2B2F33;
+    --green: #269731;
+    --green-bright: #3DB54A;
+    --night: #0A0A0A;
+    --W: 1920px;
+    --H: 1080px;
+    --pad: 130px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #888; }
+  body { font-family: "Geist", "Inter", system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  @page { size: 1920px 1080px; margin: 0; }
+  @media print { html, body { background: none; } .slide { margin: 0 !important; box-shadow: none !important; } }
+
+  .slide {
+    width: var(--W); height: var(--H);
+    position: relative; overflow: hidden;
+    background: var(--paper);
+    margin: 0 auto 40px;
+    page-break-after: always; break-after: page;
+  }
+  .slide.mist { background: var(--mist); }
+  .slide.dark { background: var(--night); color: #fff; }
+
+  /* Type */
+  .tag { font-family: "Geist", sans-serif; font-size: 22px; letter-spacing: .22em; text-transform: uppercase; font-weight: 400; color: var(--ink-2); }
+  .dark .tag { color: #CFCFCF; }
+  h1, h2 { font-weight: 300; letter-spacing: -0.035em; line-height: 1.02; }
+  h1 { font-size: 168px; }
+  h2 { font-size: 92px; }
+  .g { color: var(--green); }
+  .dark .g { color: var(--green-bright); }
+  .lede { font-size: 34px; font-weight: 300; line-height: 1.35; color: var(--ink-2); letter-spacing: -0.01em; }
+  .dark .lede { color: #D9D9D9; }
+  .num { font-family: "Geist Mono", monospace; font-size: 24px; letter-spacing: .05em; }
+  .cap { font-family: "Geist Mono", monospace; font-size: 16px; letter-spacing: .04em; color: #6B7680; }
+  .dark .cap, .cap.on-dark { color: rgba(255,255,255,.62); }
+
+  .art { position: absolute; background-size: cover; background-position: center; }
+  .art img, .fill { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* Grid lines from the original title */
+  .grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0 207px, var(--line) 207px 208px); opacity: .7; }
+
+  /* Cards */
+  .cards { position: absolute; left: var(--pad); right: var(--pad); display: grid; gap: 34px; }
+  .card { background: var(--paper); border: 1px solid #fff; box-shadow: 0 18px 50px rgba(30,50,70,.08); display: flex; flex-direction: column; overflow: hidden; }
+  .mist .card { background: var(--paper); }
+  .card .hd { display: flex; justify-content: space-between; align-items: baseline; padding: 40px 42px 22px; margin: 0 0 0; border-bottom: 1px solid var(--line); font-size: 32px; letter-spacing: -0.01em; }
+  .card .pic { flex: 1; position: relative; overflow: hidden; margin: 24px 42px 0; }
+  .card .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card .pic .cap { position: absolute; left: 0; bottom: -2px; transform: translateY(100%); }
+  .card .bd { padding: 46px 42px 42px; font-size: 27px; line-height: 1.38; color: var(--ink-2); font-weight: 300; min-height: 168px; }
+  .card.black { background: #000; color: #fff; border-color: #000; }
+  .card.black .hd { border-color: #2A2A2A; }
+  .card.black .bd { color: #E2E2E2; }
+  .season { position: absolute; left: 14px; bottom: 12px; z-index: 1; font-family: "Geist Mono", monospace; font-size: 17px; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: rgba(0,0,0,.55); padding: 6px 10px; }
+  .cardcap { display: block; margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Title -->
+<section class="slide">
+  <div class="grid" style="right: 760px;"></div>
+  <div style="position:absolute; left: var(--pad); top: 250px; width: 900px;">
+    <div class="tag">[ A proposal for Jason ]</div>
+    <h1 style="margin-top: 56px;">SF Investor<br><span class="g">Readiness</span></h1>
+    <p class="lede" style="margin-top: 60px;">Expressive Space · October 2026</p>
+  </div>
+  <div class="art" style="right:0; top:0; width:760px; height:100%;">
+    <img class="fill" src="img/wheat.jpg" alt="Van Gogh, Wheat Field with Cypresses" style="object-position: 62% 50%;">
+  </div>
+  <div class="cap on-dark" style="position:absolute; right: 36px; bottom: 30px; color: rgba(255,255,255,.85);">[ Van Gogh, Wheat Field with Cypresses, 1889 ]</div>
+</section>
+
+<!-- 2 · The problem -->
+<section class="slide">
+  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 920px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="tag">[ The gap ]</div>
+    <h2 style="margin-top: 44px;">Strong companies lose US rounds on delivery, <span class="g">not product.</span></h2>
+    <p class="lede" style="margin-top: 48px;">[Company] has $1.6M raised and $600K in revenue. The crop is in the field. Now the story has to land in San Francisco.</p>
+  </div>
+  <div class="art" style="right: var(--pad); top: 150px; width: 640px; height: 700px;">
+    <img class="fill" src="img/gleaners.jpg" alt="Millet, The Gleaners" style="object-position: 60% 60%;">
+  </div>
+  <div class="cap" style="position:absolute; right: var(--pad); top: 872px; width: 640px;">[ Millet, The Gleaners, 1855 ] What isn’t carried home gets left in the field.</div>
+</section>
+
+<!-- 3 · Story sample: from stars to satellites -->
+<section class="slide mist">
+  <div style="position:absolute; left: var(--pad); top: 110px;">
+    <div class="tag">[ How I’d tell your story ]</div>
+    <h2 style="margin-top: 34px; font-size: 76px; white-space: nowrap;">Farmers have always read the land. <span class="g">Now it reads back.</span></h2>
+  </div>
+  <div class="cards" style="top: 400px; bottom: 110px; grid-template-columns: repeat(3, 1fr);">
+    <div class="card">
+      <div class="hd"><span>Read the sky</span><span class="num">[ 1515 ]</span></div>
+      <div class="pic" style="background:#fff;"><img src="img/durer_north.jpg" alt="Dürer, Celestial Map, Northern Hemisphere" style="object-position: 50% 45%; mix-blend-mode: multiply;"></div>
+      <div class="bd">For centuries, planting and travel ran on the stars.<span class="cap cardcap">[ Dürer, Celestial Map ]</span></div>
+    </div>
+    <div class="card">
+      <div class="hd"><span>Map the land</span><span class="num">[ 1836 ]</span></div>
+      <div class="pic"><img src="img/oxbow.jpg" alt="Thomas Cole, The Oxbow" style="object-position: 78% 60%;"></div>
+      <div class="bd">Then fields were surveyed, fenced and plotted by hand.<span class="cap cardcap">[ Cole, The Oxbow ]</span></div>
+    </div>
+    <div class="card black">
+      <div class="hd"><span>The land reads back</span><span class="num">[ 2026 ]</span></div>
+      <div class="pic" style="display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 400 300" width="100%" height="100%" aria-hidden="true">
+          <g fill="none" stroke="#3DB54A" stroke-width="1.4">
+            <path d="M0 230 Q100 210 200 222 T400 214" opacity=".35"/>
+            <path d="M0 250 Q100 230 200 242 T400 234" opacity=".55"/>
+            <path d="M0 270 Q100 250 200 262 T400 254" opacity=".8"/>
+            <path d="M0 290 Q100 270 200 282 T400 274"/>
+            <line x1="200" y1="40" x2="200" y2="244" stroke-dasharray="4 7" opacity=".7"/>
+            <line x1="80" y1="70" x2="200" y2="244" stroke-dasharray="4 7" opacity=".45"/>
+            <line x1="330" y1="60" x2="200" y2="244" stroke-dasharray="4 7" opacity=".45"/>
+          </g>
+          <g fill="#3DB54A"><rect x="192" y="32" width="16" height="16"/><rect x="72" y="62" width="16" height="16"/><rect x="322" y="52" width="16" height="16"/></g>
+          <circle cx="200" cy="244" r="7" fill="#fff"/><circle cx="200" cy="244" r="20" fill="none" stroke="#fff" opacity=".5"/>
+        </svg>
+      </div>
+      <div class="bd">[Company] puts every row on a centimeter grid, from orbit.<span class="cap cardcap on-dark">[ Your chapter ]</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · Four parts -->
+<section class="slide mist">
+  <h2 style="position:absolute; left: var(--pad); top: 120px;">Four parts. <span class="g">One goal: ready to raise.</span></h2>
+  <div class="cards" style="top: 290px; bottom: 120px; grid-template-columns: repeat(4, 1fr);">
+    <div class="card">
+      <div class="hd"><span>Pitch Coaching</span><span class="num">[ 1 ]</span></div>
+      <div class="pic"><img src="img/grafting.jpg" alt="Winslow Homer, Spring Farm Work: Grafting" style="object-position: 40% 30%;"></div>
+      <div class="bd">8–10 sessions: mock pitches, hard questions, debriefs<span class="cap cardcap">[ Homer, Grafting, 1870 ]</span></div>
+    </div>
+    <div class="card">
+      <div class="hd"><span>CEO Presence</span><span class="num">[ 2 ]</span></div>
+      <div class="pic"><img src="img/knitting.jpg" alt="Jules Breton, A Peasant Girl Knitting" style="object-position: 50% 45%;"></div>
+      <div class="bd">Confidence, founder story, LinkedIn and SF networking<span class="cap cardcap">[ Breton, c. 1870 ]</span></div>
+    </div>
+    <div class="card">
+      <div class="hd"><span>US Positioning</span><span class="num">[ 3 ]</span></div>
+      <div class="pic"><img src="img/catskill.jpg" alt="Thomas Cole, View on the Catskill, Early Autumn" style="object-position: 45% 50%;"></div>
+      <div class="bd">A narrative US investors understand and remember<span class="cap cardcap">[ Cole, The Catskill, 1836 ]</span></div>
+    </div>
+    <div class="card">
+      <div class="hd"><span>Pitch Materials</span><span class="num">[ 4 ]</span></div>
+      <div class="pic" style="background:#A7A9AB;"><img src="img/astrolabe.jpg" alt="Regiomontanus, Astrolabe" style="object-position: 50% 50%;"></div>
+      <div class="bd">Investor deck, teaser, one-pager and intro emails<span class="cap cardcap">[ Astrolabe, 1462 ]</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · What I bring -->
+<section class="slide dark">
+  <div class="art" style="inset: 0 0 0 auto; width: 1150px;">
+    <img class="fill" src="img/weeders.jpg" alt="Jules Breton, The Weeders" style="object-position: 70% 50%;">
+  </div>
+  <div style="position:absolute; inset:0; background: linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 38%, rgba(10,10,10,.75) 56%, rgba(10,10,10,0) 80%);"></div>
+  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 1150px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="tag">[ What I bring ]</div>
+    <h2 style="margin-top: 50px; font-size: 104px;">I help brands tell their story, <span class="g">with passion and emotion.</span></h2>
+  </div>
+  <div class="cap" style="position:absolute; right: 36px; bottom: 30px; color: rgba(255,255,255,.8);">[ Jules Breton, The Weeders, 1868 ]</div>
+</section>
+
+<!-- 6 · Credentials -->
+<section class="slide">
+  <h2 style="position:absolute; left: var(--pad); top: 120px;">Hakeem, ENFP: <span class="g">the Campaigner.</span></h2>
+  <div class="cards" style="top: 290px; bottom: 130px; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;">
+    <div class="card" style="background: var(--mist); padding: 44px 44px; justify-content: space-between;"><div class="g" style="font-size: 110px; font-weight:300; letter-spacing:-.03em; line-height:1;">50M+</div><div class="lede" style="font-size: 30px;">Views across social media</div></div>
+    <div class="card" style="background: var(--mist); padding: 44px 44px; justify-content: space-between;"><div class="g" style="font-size: 110px; font-weight:300; letter-spacing:-.03em; line-height:1;">$3M → $6M</div><div class="lede" style="font-size: 30px;">Early team through a pre-seed and seed raise</div></div>
+    <div class="card" style="background: var(--mist); padding: 44px 44px; justify-content: space-between;"><div class="g" style="font-size: 110px; font-weight:300; letter-spacing:-.03em; line-height:1;">Google</div><div class="lede" style="font-size: 30px;">Built communities for Google and more</div></div>
+    <div class="card black" style="padding: 44px 44px; justify-content: space-between;"><div style="font-size: 110px; font-weight:300; letter-spacing:-.03em; line-height:1; color: var(--green-bright);">350K</div><div class="lede" style="font-size: 30px; color:#E2E2E2;">Votes as Texas-wide campaign director</div></div>
+  </div>
+</section>
+
+<!-- 7 · Network -->
+<section class="slide dark">
+  <div class="art" style="inset: 0 0 0 auto; width: 1000px;">
+    <img class="fill" src="img/cygnus.jpg" alt="Paul Henry, A Section of the Constellation Cygnus" style="filter: grayscale(1) contrast(1.35) brightness(1.15);">
+  </div>
+  <div style="position:absolute; inset:0; background: linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 45%, rgba(10,10,10,.4) 70%, rgba(10,10,10,.1) 100%);"></div>
+  <svg style="position:absolute; right: 120px; top: 170px;" width="640" height="720" viewBox="0 0 640 720" aria-hidden="true">
+    <g stroke="#3DB54A" stroke-width="1.5" fill="none" opacity=".85">
+      <polyline points="80,110 250,190 330,360 520,300"/><polyline points="330,360 300,560 160,640"/><polyline points="250,190 470,90"/><polyline points="300,560 520,610"/>
+    </g>
+    <g fill="#3DB54A"><circle cx="80" cy="110" r="6"/><circle cx="250" cy="190" r="6"/><circle cx="330" cy="360" r="9"/><circle cx="520" cy="300" r="6"/><circle cx="300" cy="560" r="6"/><circle cx="160" cy="640" r="6"/><circle cx="470" cy="90" r="6"/><circle cx="520" cy="610" r="6"/></g>
+  </svg>
+  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 1000px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="tag">[ Your network, opened ]</div>
+    <h2 style="margin-top: 50px; font-size: 116px;">Warm intros from <span class="g">my network.</span></h2>
+    <p class="lede" style="margin-top: 50px; max-width: 880px;">Investors, founders who’ve raised in SF &amp; Texas, advisors and US partners, once the pitch is ready.</p>
+  </div>
+  <div class="cap" style="position:absolute; right: 36px; bottom: 30px;">[ Paul Henry, Constellation Cygnus, 1885 ]</div>
+</section>
+
+<!-- 8 · Six weeks -->
+<section class="slide">
+  <h2 style="position:absolute; left: var(--pad); top: 120px;">Ready to pitch investors <span class="g">in six weeks.</span></h2>
+  <div class="cards" style="top: 290px; bottom: 120px; grid-template-columns: repeat(4, 1fr);">
+    <div class="card" style="background: var(--mist);">
+      <div class="hd"><span>Weeks 1–2</span><span class="num">[ 1 ]</span></div>
+      <div class="pic"><span class="season">Sow</span><img src="img/sower.jpg" alt="Millet, The Sower" style="object-position: 40% 40%;"></div>
+      <div class="bd">Seoul on-site, founder story, positioning<span class="cap cardcap">[ Millet, 1851 ]</span></div>
+    </div>
+    <div class="card" style="background: var(--mist);">
+      <div class="hd"><span>Weeks 3–4</span><span class="num">[ 2 ]</span></div>
+      <div class="pic"><span class="season">Grow</span><img src="img/olive.jpg" alt="Van Gogh, Olive Trees" style="object-position: 30% 50%;"></div>
+      <div class="bd">New deck built, mock pitches begin<span class="cap cardcap">[ Van Gogh, 1889 ]</span></div>
+    </div>
+    <div class="card" style="background: var(--mist);">
+      <div class="hd"><span>Weeks 5–6</span><span class="num">[ 3 ]</span></div>
+      <div class="pic"><span class="season">Harvest</span><img src="img/harvesters.jpg" alt="Bruegel, The Harvesters" style="object-position: 40% 70%;"></div>
+      <div class="bd">Q&amp;A drills and final run-throughs<span class="cap cardcap">[ Bruegel, 1565 ]</span></div>
+    </div>
+    <div class="card black">
+      <div class="hd"><span>After launch</span><span class="num">[ 4 ]</span></div>
+      <div class="pic"><span class="season">Market</span><img src="img/pissarro.jpg" alt="Pissarro, The Harvest, Pontoise" style="object-position: 40% 60%;"></div>
+      <div class="bd">Debriefs after real investor meetings<span class="cap cardcap on-dark">[ Pissarro, Pontoise, 1881 ]</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · Pricing -->
+<section class="slide mist">
+  <h2 style="position:absolute; left: var(--pad); top: 120px;">Simple, <span class="g">honest pricing.</span></h2>
+  <div class="cards" style="top: 290px; bottom: 180px; grid-template-columns: 1fr 1fr;">
+    <div class="card" style="padding: 0;">
+      <div class="hd"><span>Full Program</span><span class="num">[ 1 ]</span></div>
+      <div style="padding: 30px 42px;"><div class="g" style="font-size: 150px; font-weight: 300; letter-spacing: -.04em; line-height: 1;">$35K</div><p class="lede" style="font-size: 29px; margin-top: 26px; max-width: 640px;">Everything, including teaser deck, one-pager and intro emails</p></div>
+    </div>
+    <div class="card" style="padding: 0;">
+      <div class="hd"><span>Focused</span><span class="num">[ 2 ]</span></div>
+      <div style="padding: 30px 42px;"><div style="font-size: 150px; font-weight: 300; letter-spacing: -.04em; line-height: 1;">$30K</div><p class="lede" style="font-size: 29px; margin-top: 26px; max-width: 640px;">Coaching, CEO presence, positioning, investor deck and intros</p></div>
+    </div>
+  </div>
+  <p class="lede" style="position:absolute; left: var(--pad); bottom: 100px; font-size: 24px;">Seoul travel billed at cost, capped at $4,500 · 50% to start, 50% on delivery</p>
+</section>
+
+<!-- 10 · Optional video -->
+<section class="slide">
+  <h2 style="position:absolute; left: var(--pad); top: 120px;">Optional, <span class="g">but recommended.</span></h2>
+  <div class="cards" style="top: 290px; bottom: 160px; grid-template-columns: 1fr 1fr;">
+    <div class="card" style="background: var(--mist);">
+      <div class="hd"><span>Motion Graphic Video</span><span class="num">[ A ]</span></div>
+      <div class="pic" style="background:#3B2F2A;"><img src="img/muybridge.jpg" alt="Muybridge, Attitudes of Animals in Motion" style="object-position: 50% 40%;"></div>
+      <div class="bd" style="min-height: 0;">An animated explainer of the product and vision, built for investor emails, the deck and social.<span class="cap cardcap">[ Muybridge, 1879 ]</span></div>
+    </div>
+    <div class="card black">
+      <div class="hd"><span>Filmed Launch Video</span><span class="num">[ B ]</span></div>
+      <div class="pic"><img src="img/plowing_photo.jpg" alt="Hugo Henneberg, Pflügen (Plowing)" style="object-position: 40% 55%;"></div>
+      <div class="bd" style="min-height: 0;">A real-life film with the founders, team and product, shot and edited by Expressive Space.<span class="cap cardcap on-dark">[ Henneberg, Plowing, c. 1895 ]</span></div>
+    </div>
+  </div>
+  <p class="lede" style="position:absolute; left: var(--pad); bottom: 90px; font-size: 24px;">Both produced in-house under Hakeem’s direction · Extra costs, quoted separately</p>
+</section>
+
+<!-- 11 · Then -->
+<section class="slide">
+  <h2 style="position:absolute; left: var(--pad); top: 110px; width: 1500px;">Then: Head of US Strategy <span class="g">or Strategic Advisor.</span></h2>
+  <div class="cards triptych" style="top: 380px; bottom: 110px; grid-template-columns: repeat(3, 1fr);">
+    <div class="card" style="background: var(--mist);">
+      <div class="hd"><span>The Raise</span><span class="num">[ 1 ]</span></div>
+      <div class="pic tri" data-i="0"></div>
+      <div class="bd" style="min-height: 0;">Intros and SF investor meetings all the way through</div>
+    </div>
+    <div class="card" style="background: var(--mist);">
+      <div class="hd"><span>US Growth</span><span class="num">[ 2 ]</span></div>
+      <div class="pic tri" data-i="1"></div>
+      <div class="bd" style="min-height: 0;">Go-to-market, brand and US partnerships</div>
+    </div>
+    <div class="card" style="background: var(--mist);">
+      <div class="hd"><span>Structure</span><span class="num">[ 3 ]</span></div>
+      <div class="pic tri" data-i="2"></div>
+      <div class="bd" style="min-height: 0;">Part-time, monthly fee plus equity, terms open to discussion</div>
+    </div>
+  </div>
+  <div class="cap" style="position:absolute; right: var(--pad); bottom: 62px;">[ Bierstadt, Merced River, Yosemite Valley, 1866 ] One view, three parts.</div>
+</section>
+
+<!-- 12 · Close -->
+<section class="slide dark">
+  <img src="img/durer_north.jpg" alt="" style="position:absolute; left: 50%; top: 50%; width: 1500px; transform: translate(-50%, -50%); filter: invert(1) grayscale(1) brightness(.75); opacity: .22; mix-blend-mode: screen;">
+  <div style="position:absolute; inset: 0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+    <div class="tag">[ Let’s make it happen ]</div>
+    <h1 style="margin-top: 50px; font-size: 156px;">Your vision,<br><span class="g">pitched in US.</span></h1>
+    <div style="margin-top: 64px; background: #fff; color: #000; font-size: 30px; padding: 22px 44px; border-radius: 4px;">Hakeem · Expressive Space · expressivespace.co</div>
+  </div>
+  <div class="cap" style="position:absolute; left: 0; right: 0; bottom: 30px; text-align:center;">[ Dürer, Celestial Map, 1515 ] Farmers navigated by these. Your story starts there.</div>
+</section>
+
+<!-- 13 · Credits -->
+<section class="slide">
+  <div style="position:absolute; left: var(--pad); top: 120px; right: var(--pad);">
+    <div class="tag">[ Image credits ]</div>
+    <h2 style="margin-top: 34px; font-size: 64px;">Every image is <span class="g">public domain.</span></h2>
+    <div style="margin-top: 60px; columns: 2; column-gap: 80px; font-size: 22px; line-height: 1.7; color: var(--ink-2); font-weight: 300;">
+      <div>Vincent van Gogh, <i>Wheat Field with Cypresses</i>, 1889 · The Met</div>
+      <div>Jean-François Millet, <i>The Gleaners</i>, c. 1855 · Cleveland Museum of Art</div>
+      <div>Albrecht Dürer, <i>Celestial Map, Northern Hemisphere</i>, 1515 · The Met</div>
+      <div>Thomas Cole, <i>The Oxbow</i>, 1836 · The Met</div>
+      <div>Winslow Homer, <i>Spring Farm Work: Grafting</i>, 1870 · The Met</div>
+      <div>Jules Breton, <i>A Peasant Girl Knitting</i>, c. 1870 · The Met</div>
+      <div>Thomas Cole, <i>View on the Catskill, Early Autumn</i>, 1836–37 · The Met</div>
+      <div>Regiomontanus, <i>Astrolabe</i>, 1462 · The Met</div>
+      <div>Jules Breton, <i>The Weeders</i>, 1868 · The Met</div>
+      <div>Paul Henry, <i>A Section of the Constellation Cygnus</i>, 1885 · The Met</div>
+      <div>Jean-François Millet, <i>The Sower</i>, 1851 · The Met</div>
+      <div>Vincent van Gogh, <i>Olive Trees</i>, 1889 · The Met</div>
+      <div>Pieter Bruegel the Elder, <i>The Harvesters</i>, 1565 · The Met</div>
+      <div>Camille Pissarro, <i>The Harvest, Pontoise</i>, 1881 · The Met</div>
+      <div>Eadweard Muybridge, <i>Attitudes of Animals in Motion</i>, 1879 · The Met</div>
+      <div>Hugo Henneberg, <i>Pflügen (Plowing)</i>, 1890–1901 · The Met</div>
+      <div>Albert Bierstadt, <i>Merced River, Yosemite Valley</i>, 1866 · The Met</div>
+    </div>
+    <p class="cap" style="margin-top: 50px; font-size: 18px;">The Met Open Access and Cleveland Museum of Art Open Access, both released under CC0.</p>
+  </div>
+</section>
+
+<script>
+  // Slide 11: one painting split across three cards, so the panels line up as a single view
+  const tri = [...document.querySelectorAll('.pic.tri')];
+  const layout = () => {
+    const rects = tri.map(el => el.getBoundingClientRect());
+    const left = rects[0].left, right = rects[2].right, w = right - left;
+    tri.forEach((el, i) => {
+      el.style.backgroundImage = 'url(img/merced.jpg)';
+      el.style.backgroundSize = `${w}px auto`;
+      el.style.backgroundPosition = `${left - rects[i].left}px 62%`;
+    });
+  };
+  window.addEventListener('load', layout);
+</script>
+</body>
+</html>
