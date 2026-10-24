@@ -1,5 +1,6 @@
 // Shared vertical END CARD for the Houston series (1080×1920): "come" … the seed-of-life logo blooms … "Align".
 //   import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+//   buildEndcard(stage, { start, cta })  — cta defaults to 'JOIN THE HOUSTON BETA'; other cities pass e.g. 'JOIN THE WAITLIST'
 //   SCENES: [...yourScenes, (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN })]
 //   CUES:   [...yourCues, ...endcardCues(DURATION - ENDCARD_LEN)]
 // Contract: at `start` your film must be showing ONLY the plain sky H (drawSky(ctx,t,SKY_H) + grain GRAIN_H, from
@@ -34,7 +35,7 @@ const BONE = '#efe6d6', GOLD = '#f2c75c', PINK = '#ff8fb1', LAV = '#d9cdf0', VIO
 const INTER = "Inter, 'Helvetica Neue', Arial, sans-serif"
 const SERIF = "'EB Garamond', Georgia, serif"
 const MONO = "'Space Mono', ui-monospace, monospace"
-const BETA = 'JOIN THE HOUSTON BETA', BETA_FS = 34, BETA_Y = 1440, BETA_T = 0.5   // subtle line under the phrase; in once "come" has landed, stays to the fade
+const BETA_FS = 34, BETA_Y = 1440, BETA_T = 0.5   // subtle line under the phrase; in once "come" has landed, stays to the fade
 const CHK = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
 
 // beats, relative to start
@@ -72,7 +73,7 @@ function drawBurst(x, parts, px, py, t, t0, dur = 0.75) {
   x.restore()
 }
 
-export async function buildEndcard(stage, { start }) {
+export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA' }) {   // cta: the quiet line under the phrase (e.g. 'JOIN THE WAITLIST', 'VOTE FOR YOUR CITY')
   const S = start, T = k => S + k, END = S + ENDCARD_LEN
   try {
     await Promise.all([`800 ${COME_FS0}px Inter`, `italic 400 ${WORD_FS}px 'EB Garamond'`, `700 ${BETA_FS}px 'Space Mono'`].map(f => document.fonts.load(f)))
@@ -249,7 +250,7 @@ export async function buildEndcard(stage, { start }) {
     mx.globalAlpha = 0.72 * p
     mx.shadowColor = 'rgba(6,4,18,0.9)'; mx.shadowBlur = 16
     mx.fillStyle = BONE
-    mx.fillText(BETA, W / 2 + 0.15 * BETA_FS, BETA_Y + (1 - p) * 14)   // + half the trailing letter-space so it centres by eye
+    mx.fillText(cta, W / 2 + 0.15 * BETA_FS, BETA_Y + (1 - p) * 14)   // + half the trailing letter-space so it centres by eye
     mx.restore()
   }
 
