@@ -429,6 +429,10 @@ function renderDetail() {
   const src = el('div', { class: 'panel' }, [
     el('div', { class: 'eyebrow' }, `@${v.creator} · ${v.platform ?? 'instagram'}${v.date ? ' · ' + v.date : ''}`),
     el('p', { class: 'quote' }, v.hook ? `“${v.hook}”` : v.topic),
+    v.hook ? el('div', { class: 'actions', style: 'margin-bottom:12px' }, [
+      el('button', { class: 'btn small', type: 'button', id: 'use-hook', onclick: () => useTheirHook(v) }, 'Use this hook for Align'),
+      el('button', { class: 'btn quiet small', type: 'button', onclick: () => copyText(v.hook, 'Their hook copied.') }, 'Copy hook'),
+    ]) : null,
     el('div', { class: 'scoreline' }, [
       el('span', { class: 'big' }, [String(v.score.total), el('small', {}, ' /100 · ' + grade(v.score.total))]),
       el('div', { class: 'basis' }, [
@@ -603,6 +607,48 @@ function doRemix(v, surprise) {
 }
 function scriptText(d) {
   return [`HOOK: ${d.hook}`, ...d.beats.map((b, i) => `${i + 1}. ${b.line}${b.broll ? `\n   [b-roll: ${b.broll}]` : ''}${b.onScreen ? `\n   [on screen: ${b.onScreen}]` : ''}`), `CTA: ${d.cta}`, '', d.caption, (d.hashtags ?? []).map((h) => '#' + h).join(' ')].join('\n')
+}
+async function copyText(text, done) {
+  try { await navigator.clipboard.writeText(text); setStatus(done) }
+  catch { setStatus('Copying isn’t allowed here. Select the text and copy it yourself.', true) }
+}
+// Their hook into your Align version. With Claude on the page, it keeps
+// their exact shape (length, rhythm, caps, punctuation) and swaps the
+// subject for a true Align one. Without Claude, their words go in as they
+// are, for you to rework before filming.
+async function useTheirHook(v) {
+  const d = state.draft
+  if (!d) { setStatus('Remix first to make an Align version.', true); return }
+  const put = (hook, note) => {
+    d.hook = hook
+    d.notes = note
+    state.dirty = true
+    renderDetail()
+    const f = $('f-hook'); if (f) { f.focus(); f.setSelectionRange(f.value.length, f.value.length) }
+  }
+  if (!sample) {
+    put(v.hook, `This hook is @${v.creator}'s words. Make it about Align before you film.`)
+    setStatus('Their hook is in your Align version. Make it about Align before you film.')
+    return
+  }
+  const btn = $('use-hook'); if (btn) { btn.disabled = true; btn.textContent = 'Aligning…' }
+  const prompt = [
+    'Rewrite a short-video hook for Hakeem, founder of Align, a dating app played as a card game.',
+    'Keep the reference hook\'s exact shape: about the same number of words, the same rhythm and sentence structure, the same capitalization style and punctuation. Swap its subject for one true thing about Align, ideally what this script is about: ' + (d.title || '') + '. Current Align hook for context: "' + d.hook + '".',
+    'Voice: plain, short, no exclamation marks, no emoji, never the word manifest, no hard sell. Do not invent numbers, users or revenue.',
+    'True facts you may use: ' + DATA.brief.facts.join(' | '),
+    'Reference hook from @' + v.creator + ': "' + v.hook + '"',
+    'Reply with only JSON: {"hook": string}',
+  ].join('\n\n')
+  try {
+    const out = await sample.json(prompt, { modelTier: 'quick' })
+    if (!out?.hook) throw new Error('bad shape')
+    put(String(out.hook), `Hook written by Claude in the shape of @${v.creator}'s. Read it out loud before filming.`)
+    setStatus('Their hook, Aligned. Save version to keep it.')
+  } catch (e) {
+    put(v.hook, `This hook is @${v.creator}'s words. Make it about Align before you film.`)
+    setStatus(e?.code === 'rate_limited' ? 'Claude is busy, so their exact words went in. Rework them before filming.' : 'Their exact words went in. Rework them before filming.', true)
+  } finally { const b = $('use-hook'); if (b) { b.disabled = false; b.textContent = 'Use this hook for Align' } }
 }
 async function copyScript(d) {
   try { await navigator.clipboard.writeText(scriptText(d)); setStatus('Script copied.') }

@@ -45,6 +45,10 @@ It's published as an artifact at **https://claude.ai/artifact/3RfMzDbkrhUZ5tumif
 - **Scored reels**: her reels ranked. Pick one to see its score, the reasons,
   and your Align version beside it. Edit any line and the score updates as you
   type.
+- **Use this hook for Align**: under their hook. On claude.ai, Claude rewrites
+  it in the same shape (length, rhythm, caps, punctuation) about Align and
+  puts it in your version. Opened as a plain file, their exact words go in for
+  you to rework. **Copy hook** copies their hook as it is.
 - **Remix**: choose a different hook type, format or Align story (or press
   **Surprise me**), then **Save version**. **Rewrite with Claude** sharpens a
   version on your Claude account; read it before filming.
