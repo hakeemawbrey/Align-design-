@@ -1,55 +1,56 @@
 {
   "id": "align-hhp-024",
   "sourceId": "hhp-024",
-  "title": "Talk cards: the real questions, early",
-  "angleKey": "talk-cards",
+  "title": "No photos until you both say yes",
+  "angleKey": "no-photos",
   "hookKey": "named_method",
   "formatKey": "method_tutorial",
-  "hook": "THE SEALED-ANSWER METHOD: how to ask the big questions without it being weird.",
+  "hook": "THE FACE-LAST METHOD: how to know if you like someone before you see their face.",
   "beats": [
     {
-      "line": "In any chat on Align you can play a talk card. Planned date or spontaneous date.",
-      "broll": "Chat: card button, play a talk card (#chat)",
+      "line": "On Align your card is your sky, your words and your dealbreakers. The photo is veiled.",
+      "broll": "Deck: veiled cards (#deck)",
       "onScreen": ""
     },
     {
-      "line": "You both answer. Neither answer shows until you both have, so nobody copies.",
+      "line": "If you both align, the cards flip and the veil lifts. Only then do you see a face.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Fifty-one cards across nine topics: money, family, the future, how you fight, and some just for fun.",
-      "broll": "Talk card sheet, tarot arcana",
-      "onScreen": "51 cards · 9 topics"
+      "line": "And if you pass on someone, you never see who they were. Nobody gets judged by a photo.",
+      "broll": "Swipe left to release (#deck, ←)",
+      "onScreen": "pass = you never see them"
     },
     {
-      "line": "You learn the stuff that matters in the first week, not the first year.",
-      "broll": "Both answers reveal",
+      "line": "You still see the face. It just comes last.",
+      "broll": "Reveal: veil lifts (#reveal)",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Both answer. Neither shows until you both have.",
+  "caption": "No photo until you both say yes. The face comes last.",
   "hashtags": [
-    "datingtips",
     "datingapp",
-    "relationships"
+    "buildinpublic",
+    "founder"
   ],
-  "lengthSec": 34,
+  "lengthSec": 35,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 70,
-    "craft": 62,
+    "total": 66,
+    "craft": 57,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 80,
+        "score": 70,
         "hits": [
-          "the"
+          "the",
+          "-last"
         ]
       },
       {
@@ -63,9 +64,9 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 80,
+        "score": 60,
         "hits": [
-          "until"
+          "then"
         ]
       },
       {

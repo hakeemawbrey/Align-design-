@@ -1,42 +1,41 @@
 {
   "id": "align-hhp-001",
   "sourceId": "hhp-001",
-  "title": "Built with AI",
-  "angleKey": "built-with-ai",
+  "title": "You earn power by going on dates",
+  "angleKey": "energy",
   "hookKey": "built_that",
   "formatKey": "relatable_pain_plug",
-  "hook": "So I built a whole dating app, iPhone build and backend included, with an AI as my engineer.",
+  "hook": "So I built a dating app that rewards you for going on dates, not for swiping.",
   "beats": [
     {
-      "line": "I'm not an engineer. A year ago an app like this meant hiring a team I couldn't pay.",
-      "broll": "Screen recording: the git log",
-      "onScreen": ""
-    },
-    {
-      "line": "So I built a whole dating app, iPhone build and backend included, with an AI as my engineer.",
+      "line": "Every dating app rewards swiping. So people swipe.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "I describe the screen, Claude writes the code, and I test it on my phone.",
-      "broll": "Screen recording: Claude Code writing a screen",
+      "line": "So I built a dating app that rewards you for going on dates, not for swiping.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
+      "broll": "Energy meter in the deck",
       "onScreen": ""
     }
   ],
-  "cta": "Follow along. I'm building the whole thing in public.",
-  "caption": "One founder, one AI, one dating app. Every commit is in the history.",
+  "cta": "Follow along. I'm building it in public.",
+  "caption": "Message +2. Talk card +5. Show up +15.",
   "hashtags": [
-    "buildinpublic",
-    "claudecode",
-    "founder",
-    "aiapps"
+    "gamification",
+    "datingapp",
+    "buildinpublic"
   ],
-  "lengthSec": 32,
+  "lengthSec": 29,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 75,
-    "craft": 69,
+    "total": 77,
+    "craft": 71,
     "fit": 100,
     "breakdown": [
       {
@@ -52,10 +51,8 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 30,
-        "hits": [
-          "claude"
-        ]
+        "score": 50,
+        "hits": []
       },
       {
         "key": "storyTension",
@@ -70,7 +67,7 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 88,
+        "score": 59,
         "hits": [
           "i"
         ]
@@ -79,8 +76,9 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 60,
+        "score": 79,
         "hits": [
+          "you",
           "dating app"
         ]
       },
@@ -88,8 +86,10 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 50,
-        "hits": []
+        "score": 60,
+        "hits": [
+          "send"
+        ]
       },
       {
         "key": "cta",
@@ -105,11 +105,8 @@
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 85,
-        "hits": [
-          "ai",
-          "build"
-        ]
+        "score": 70,
+        "hits": []
       }
     ]
   }

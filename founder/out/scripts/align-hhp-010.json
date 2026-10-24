@@ -1,42 +1,42 @@
 {
   "id": "align-hhp-010",
   "sourceId": "hhp-010",
-  "title": "Three peeks, three seconds",
-  "angleKey": "peek",
+  "title": "You earn power by going on dates",
+  "angleKey": "energy",
   "hookKey": "built_that",
   "formatKey": "relatable_pain_plug",
-  "hook": "So I built a dating app where you can peek at a photo for three seconds, three times a day.",
+  "hook": "So I built a dating app that rewards you for going on dates, not for swiping.",
   "beats": [
     {
-      "line": "No photos sounds great until you really want to know.",
+      "line": "Every dating app rewards swiping. So people swipe.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So I built a dating app where you can peek at a photo for three seconds, three times a day.",
+      "line": "So I built a dating app that rewards you for going on dates, not for swiping.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So you can cheat, a little. Hold a card and the photo opens for about three seconds.",
-      "broll": "Peek: hold on Juniper (#deck, hold Space)",
+      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
+      "broll": "Energy meter in the deck",
       "onScreen": ""
     }
   ],
-  "cta": "Would you use your three peeks or save them? Tell me.",
-  "caption": "Hold to peek. Three seconds. Three a day.",
+  "cta": "Follow along. I'm building it in public.",
+  "caption": "Message +2. Talk card +5. Show up +15.",
   "hashtags": [
+    "gamification",
     "datingapp",
-    "founder",
     "buildinpublic"
   ],
-  "lengthSec": 32,
+  "lengthSec": 29,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 72,
-    "craft": 67,
-    "fit": 94,
+    "total": 77,
+    "craft": 71,
+    "fit": 100,
     "breakdown": [
       {
         "key": "hook",
@@ -51,16 +51,15 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 20,
+        "score": 50,
         "hits": []
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 100,
+        "score": 90,
         "hits": [
-          "until",
           "so i"
         ]
       },
@@ -77,7 +76,7 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 88,
+        "score": 79,
         "hits": [
           "you",
           "dating app"
@@ -89,24 +88,25 @@
         "weight": 10,
         "score": 60,
         "hits": [
-          "save"
+          "send"
         ]
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 70,
-        "hits": []
+        "score": 95,
+        "hits": [
+          "follow along",
+          "follow"
+        ]
       },
       {
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 75,
-        "hits": [
-          "day."
-        ]
+        "score": 70,
+        "hits": []
       }
     ]
   }

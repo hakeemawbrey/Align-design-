@@ -1,41 +1,41 @@
 {
   "id": "align-hhp-036",
   "sourceId": "hhp-036",
-  "title": "You earn power by going on dates",
-  "angleKey": "energy",
+  "title": "What's real and what's still fake",
+  "angleKey": "whats-real",
   "hookKey": "built_that",
   "formatKey": "pov_skit",
-  "hook": "So I built a dating app that rewards you for going on dates, not for swiping.",
+  "hook": "So I built a dating app, and I'm going to show you exactly what's real and what's still fake.",
   "beats": [
     {
-      "line": "Every dating app rewards swiping. So people swipe.",
+      "line": "Every demo looks finished. Almost none of them are.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
-      "broll": "Energy meter in the deck",
+      "line": "Real today: the app, the iPhone build, accounts, swipes, matches, live chat, and the chart math.",
+      "broll": "Two phones side by side matching",
       "onScreen": ""
     },
     {
-      "line": "Make the game reward what you actually want.",
-      "broll": "",
+      "line": "Next is the real dealing algorithm, verification and push notifications.",
+      "broll": "GitHub issues / roadmap",
       "onScreen": ""
     }
   ],
-  "cta": "Follow along. I'm building it in public.",
-  "caption": "Message +2. Talk card +5. Show up +15.",
+  "cta": "Follow along. Next update I'll show what moved from fake to real.",
+  "caption": "What's real, what's seeded, what's next.",
   "hashtags": [
-    "gamification",
-    "datingapp",
-    "buildinpublic"
+    "buildinpublic",
+    "startup",
+    "founder"
   ],
-  "lengthSec": 26,
+  "lengthSec": 27,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 76,
-    "craft": 70,
+    "total": 74,
+    "craft": 68,
     "fit": 100,
     "breakdown": [
       {
@@ -51,8 +51,11 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 50,
-        "hits": []
+        "score": 40,
+        "hits": [
+          "exactly",
+          "chart"
+        ]
       },
       {
         "key": "storyTension",
@@ -60,6 +63,7 @@
         "weight": 14,
         "score": 90,
         "hits": [
+          "almost",
           "so i"
         ]
       },
@@ -67,7 +71,7 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 56,
+        "score": 59,
         "hits": [
           "i"
         ]
@@ -76,7 +80,7 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 79,
+        "score": 63,
         "hits": [
           "you",
           "dating app"
@@ -86,10 +90,8 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 60,
-        "hits": [
-          "send"
-        ]
+        "score": 70,
+        "hits": []
       },
       {
         "key": "cta",
@@ -105,8 +107,10 @@
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 70,
-        "hits": []
+        "score": 75,
+        "hits": [
+          "build,"
+        ]
       }
     ]
   }

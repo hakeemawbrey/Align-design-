@@ -1,48 +1,48 @@
 {
   "id": "align-hhp-020",
   "sourceId": "hhp-020",
-  "title": "Three peeks, three seconds",
-  "angleKey": "peek",
+  "title": "Yes, you can block a whole sign",
+  "angleKey": "block-a-sign",
   "hookKey": "built_that",
   "formatKey": "pov_skit",
-  "hook": "So I built a dating app where you can peek at a photo for three seconds, three times a day.",
+  "hook": "So I built a dating app where you can block an entire zodiac sign.",
   "beats": [
     {
-      "line": "No photos sounds great until you really want to know.",
+      "line": "Everyone has a sign they swear they're done with.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So you can cheat, a little. Hold a card and the photo opens for about three seconds.",
-      "broll": "Peek: hold on Juniper (#deck, hold Space)",
+      "line": "On Align+ you can block a sign. Block Virgo and the deal skips every Virgo.",
+      "broll": "Block a sign screen (#block)",
       "onScreen": ""
     },
     {
-      "line": "A rule you can break three times is more fun than no rule at all.",
+      "line": "It's a joke until it isn't. Then it's a filter.",
       "broll": "",
       "onScreen": ""
     }
   ],
-  "cta": "Would you use your three peeks or save them? Tell me.",
-  "caption": "Hold to peek. Three seconds. Three a day.",
+  "cta": "Which sign are you blocking? Wrong answers only.",
+  "caption": "Yes, you can block a whole sign.",
   "hashtags": [
-    "datingapp",
-    "founder",
-    "buildinpublic"
+    "zodiac",
+    "astrologymemes",
+    "datingapp"
   ],
-  "lengthSec": 30,
+  "lengthSec": 24,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 74,
-    "craft": 67,
+    "total": 70,
+    "craft": 62,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 70,
+        "score": 90,
         "hits": [
           "i built"
         ]
@@ -68,7 +68,7 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 56,
+        "score": 33,
         "hits": [
           "i"
         ]
@@ -77,36 +77,33 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 88,
+        "score": 79,
         "hits": [
           "you",
-          "dating app"
+          "dating app",
+          "everyone"
         ]
       },
       {
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 60,
-        "hits": [
-          "save"
-        ]
+        "score": 50,
+        "hits": []
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 70,
+        "score": 20,
         "hits": []
       },
       {
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 75,
-        "hits": [
-          "day."
-        ]
+        "score": 70,
+        "hits": []
       }
     ]
   }

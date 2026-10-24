@@ -103,9 +103,9 @@ from the reel's panel.
 To bake reels into the repo instead:
 
 Instagram doesn't let this program read either account directly. Public
-search turned up 48 of hers (mostly TikTok captions as indexed) and 129 of
-his (TikTok captions, plus 55 YouTube videos with views and likes read from
-the channel's public feed). To add
+search turned up 133 of hers and 129 of his. TikTok captions come from
+search results and press embeds; YouTube titles, views and likes are read
+from each channel's public pages and feed, so those numbers are exact. To add
 the reels you actually watch, put a CSV in `data/imports/` (any filename):
 
 ```csv

@@ -1,46 +1,46 @@
 {
   "id": "align-hhp-014",
   "sourceId": "hhp-014",
-  "title": "The app you keep after you find someone",
-  "angleKey": "churn-hedge",
+  "title": "The dating app with a mulligan",
+  "angleKey": "event-cards",
   "hookKey": "built_that",
   "formatKey": "method_tutorial",
-  "hook": "So I built a dating app people keep after they find someone.",
+  "hook": "So I built a dating app with a mulligan.",
   "beats": [
     {
-      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
-      "broll": "Binder (#collection)",
+      "line": "On Align every sixth card is a gold event. Second look brings back the last person you released.",
+      "broll": "Gold event card in the deck (#deck)",
       "onScreen": ""
     },
     {
-      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
+      "line": "Mulligan shuffles back everyone you released. Comet, Spotlight, Lunar peek.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Subscribers get a starter box, then three real packs every season.",
-      "broll": "Physical card pack on a table",
-      "onScreen": "starter box + 3 packs a season"
+      "line": "Every draw is five people, then an event card. You play events with energy.",
+      "broll": "Draw tracker: ✦ slot",
+      "onScreen": "5 people + 1 event"
     },
     {
-      "line": "The goal is an app you don't have to leave when it works.",
-      "broll": "Couple playing a talk card",
+      "line": "Dating is a game anyway. We just wrote down the rules.",
+      "broll": "",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
+  "caption": "Every sixth card is an event. One of them is a mulligan.",
   "hashtags": [
-    "startup",
-    "businessmodel",
-    "buildinpublic"
+    "datingapp",
+    "venusretrograde",
+    "cardgame"
   ],
-  "lengthSec": 30,
+  "lengthSec": 29,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 75,
-    "craft": 69,
+    "total": 76,
+    "craft": 70,
     "fit": 100,
     "breakdown": [
       {
@@ -73,20 +73,20 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 36,
+        "score": 33,
         "hits": [
-          "i",
-          "don't"
+          "i"
         ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 75,
+        "score": 82,
         "hits": [
-          "your",
-          "dating app"
+          "you",
+          "dating app",
+          "everyone"
         ]
       },
       {

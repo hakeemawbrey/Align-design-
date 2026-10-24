@@ -1,41 +1,41 @@
 {
   "id": "align-hhp-029",
   "sourceId": "hhp-029",
-  "title": "A dating app that plays like a card game",
-  "angleKey": "trading-cards",
+  "title": "The app you keep after you find someone",
+  "angleKey": "churn-hedge",
   "hookKey": "named_method",
   "formatKey": "method_tutorial",
-  "hook": "THE BOOSTER PACK METHOD: how to make dating feel like a game again.",
+  "hook": "THE KEEP-THE-CARDS METHOD: why my dating app doesn't lose you when it works.",
   "beats": [
     {
-      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
-      "broll": "Dealing: cards fly in (#dealing)",
+      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     },
     {
-      "line": "Every match gives you a pack. Twelve cards, and the last one is always a sign card in the rare slot.",
+      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Myths, Gilded about one pack in five, Mythic about one in twenty-five. Each season prints a fixed run.",
-      "broll": "Pack opening: tear across the top",
-      "onScreen": "Gilded 1 in 5 · Mythic 1 in 25"
+      "line": "Subscribers get a starter box, then three real packs every season.",
+      "broll": "Physical card pack on a table",
+      "onScreen": "starter box + 3 packs a season"
     },
     {
-      "line": "It feels like play. And that's why they come back.",
-      "broll": "Binder (#collection)",
+      "line": "The goal is an app you don't have to leave when it works.",
+      "broll": "Couple playing a talk card",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Every match gives you a pack. The last card is always a sign.",
+  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
   "hashtags": [
-    "tradingcards",
-    "datingapp",
+    "startup",
+    "businessmodel",
     "buildinpublic"
   ],
-  "lengthSec": 35,
+  "lengthSec": 30,
   "needsFacts": false,
   "notes": "",
   "score": {
@@ -47,7 +47,7 @@
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 80,
+        "score": 60,
         "hits": [
           "the"
         ]
@@ -63,26 +63,29 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 70,
+        "score": 80,
         "hits": [
-          "then",
-          "and that's why"
+          "then"
         ]
       },
       {
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 30,
-        "hits": []
+        "score": 36,
+        "hits": [
+          "my",
+          "don't"
+        ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 56,
+        "score": 78,
         "hits": [
-          "you"
+          "you",
+          "dating app"
         ]
       },
       {

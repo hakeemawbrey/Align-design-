@@ -1,53 +1,53 @@
 {
   "id": "align-hhp-030",
   "sourceId": "hhp-030",
-  "title": "The bar pays, not you",
-  "angleKey": "venues-pay",
+  "title": "The app you keep after you find someone",
+  "angleKey": "churn-hedge",
   "hookKey": "named_method",
   "formatKey": "method_tutorial",
-  "hook": "THE BAR-PAYS METHOD: how to turn a match into an actual date.",
+  "hook": "THE KEEP-THE-CARDS METHOD: why my dating app doesn't lose you when it works.",
   "beats": [
     {
-      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
-      "broll": "Chat: place card, Agnes Cafe (#chat)",
+      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     },
     {
-      "line": "Check in at a partner venue and you both get a card you can only get there.",
+      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "And the venue pays us for the date. Not you.",
-      "broll": "Check in screen",
-      "onScreen": "the venue pays, not you"
+      "line": "Subscribers get a starter box, then three real packs every season.",
+      "broll": "Physical card pack on a table",
+      "onScreen": "starter box + 3 packs a season"
     },
     {
-      "line": "Everybody wins when the date actually happens. That's the business.",
-      "broll": "Houston venue exterior",
+      "line": "The goal is an app you don't have to leave when it works.",
+      "broll": "Couple playing a talk card",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
+  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
   "hashtags": [
-    "houston",
-    "datingapp",
-    "businessmodel"
+    "startup",
+    "businessmodel",
+    "buildinpublic"
   ],
-  "lengthSec": 33,
+  "lengthSec": 30,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 64,
-    "craft": 55,
+    "total": 68,
+    "craft": 60,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 80,
+        "score": 60,
         "hits": [
           "the"
         ]
@@ -63,23 +63,29 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 30,
-        "hits": []
+        "score": 80,
+        "hits": [
+          "then"
+        ]
       },
       {
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 30,
-        "hits": []
+        "score": 36,
+        "hits": [
+          "my",
+          "don't"
+        ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 65,
+        "score": 78,
         "hits": [
-          "you"
+          "you",
+          "dating app"
         ]
       },
       {

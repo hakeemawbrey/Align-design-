@@ -1,53 +1,53 @@
 {
   "id": "align-hhp-013",
   "sourceId": "hhp-013",
-  "title": "The bar pays, not you",
-  "angleKey": "venues-pay",
+  "title": "Three peeks, three seconds",
+  "angleKey": "peek",
   "hookKey": "built_with_ai",
   "formatKey": "method_tutorial",
-  "hook": "I built a dating app where the bar pays for your date, not you, and an AI wrote the code.",
+  "hook": "I built a dating app where you can peek at a photo for three seconds, three times a day, and an AI wrote the code.",
   "beats": [
     {
-      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
-      "broll": "Chat: place card, Agnes Cafe (#chat)",
+      "line": "So you can cheat, a little. Hold a card and the photo opens for about three seconds.",
+      "broll": "Peek: hold on Juniper (#deck, hold Space)",
       "onScreen": ""
     },
     {
-      "line": "Check in at a partner venue and you both get a card you can only get there.",
+      "line": "Let go and it seals. Free gets three peeks a day.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "And the venue pays us for the date. Not you.",
-      "broll": "Check in screen",
-      "onScreen": "the venue pays, not you"
+      "line": "Three peeks a day free. Thirty-three a week on Align+.",
+      "broll": "THE PHOTO IS CLOSING",
+      "onScreen": "3 a day · 33 a week"
     },
     {
-      "line": "Everybody wins when the date actually happens. That's the business.",
-      "broll": "Houston venue exterior",
+      "line": "A rule you can break three times is more fun than no rule at all.",
+      "broll": "",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
+  "caption": "Hold to peek. Three seconds. Three a day.",
   "hashtags": [
-    "houston",
     "datingapp",
-    "businessmodel"
+    "founder",
+    "buildinpublic"
   ],
-  "lengthSec": 36,
+  "lengthSec": 35,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 66,
-    "craft": 58,
+    "total": 65,
+    "craft": 56,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 80,
+        "score": 60,
         "hits": [
           "i",
           "i built"
@@ -64,7 +64,7 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 30,
+        "score": 50,
         "hits": []
       },
       {
@@ -80,9 +80,9 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 78,
+        "score": 72,
         "hits": [
-          "your",
+          "you",
           "dating app"
         ]
       },
@@ -110,9 +110,10 @@
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 80,
+        "score": 85,
         "hits": [
-          "ai"
+          "ai",
+          "day,"
         ]
       }
     ]

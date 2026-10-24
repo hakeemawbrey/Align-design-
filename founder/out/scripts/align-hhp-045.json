@@ -1,46 +1,46 @@
 {
   "id": "align-hhp-045",
   "sourceId": "hhp-045",
-  "title": "Talk cards: the real questions, early",
-  "angleKey": "talk-cards",
+  "title": "A dating app that plays like a card game",
+  "angleKey": "trading-cards",
   "hookKey": "named_method",
   "formatKey": "method_tutorial",
-  "hook": "THE SEALED-ANSWER METHOD: how to ask the big questions without it being weird.",
+  "hook": "THE BOOSTER PACK METHOD: how to make dating feel like a game again.",
   "beats": [
     {
-      "line": "In any chat on Align you can play a talk card. Planned date or spontaneous date.",
-      "broll": "Chat: card button, play a talk card (#chat)",
+      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
+      "broll": "Dealing: cards fly in (#dealing)",
       "onScreen": ""
     },
     {
-      "line": "You both answer. Neither answer shows until you both have, so nobody copies.",
+      "line": "Every match gives you a pack. Twelve cards, and the last one is always a sign card in the rare slot.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Fifty-one cards across nine topics: money, family, the future, how you fight, and some just for fun.",
-      "broll": "Talk card sheet, tarot arcana",
-      "onScreen": "51 cards · 9 topics"
+      "line": "Myths, Gilded about one pack in five, Mythic about one in twenty-five. Each season prints a fixed run.",
+      "broll": "Pack opening: tear across the top",
+      "onScreen": "Gilded 1 in 5 · Mythic 1 in 25"
     },
     {
-      "line": "You learn the stuff that matters in the first week, not the first year.",
-      "broll": "Both answers reveal",
+      "line": "It feels like play. And that's why they come back.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Both answer. Neither shows until you both have.",
+  "caption": "Every match gives you a pack. The last card is always a sign.",
   "hashtags": [
-    "datingtips",
+    "tradingcards",
     "datingapp",
-    "relationships"
+    "buildinpublic"
   ],
-  "lengthSec": 34,
+  "lengthSec": 35,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 70,
-    "craft": 62,
+    "total": 68,
+    "craft": 60,
     "fit": 100,
     "breakdown": [
       {
@@ -63,9 +63,10 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 80,
+        "score": 70,
         "hits": [
-          "until"
+          "then",
+          "and that's why"
         ]
       },
       {
@@ -79,7 +80,7 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 68,
+        "score": 56,
         "hits": [
           "you"
         ]

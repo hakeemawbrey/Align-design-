@@ -1,47 +1,47 @@
 {
   "id": "align-hhp-022",
   "sourceId": "hhp-022",
-  "title": "A dating app that plays like a card game",
-  "angleKey": "trading-cards",
+  "title": "No compatibility score, on purpose",
+  "angleKey": "no-score",
   "hookKey": "named_method",
   "formatKey": "method_tutorial",
-  "hook": "This is the booster pack method: how to make dating feel like a game again.",
+  "hook": "This is the push-pull method: how to read someone instead of trusting a percentage.",
   "beats": [
     {
-      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
-      "broll": "Dealing: cards fly in (#dealing)",
+      "line": "On Align every card reads three things. Push is where you'll rub. Pull is what draws you in. Align is where it holds.",
+      "broll": "Card detail: Push / Pull / Align (#deck, Enter)",
       "onScreen": ""
     },
     {
-      "line": "Every match gives you a pack. Twelve cards, and the last one is always a sign card in the rare slot.",
+      "line": "Each one says how strong it is, from slow burn to rare pull.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Myths, Gilded about one pack in five, Mythic about one in twenty-five. Each season prints a fixed run.",
-      "broll": "Pack opening: tear across the top",
-      "onScreen": "Gilded 1 in 5 · Mythic 1 in 25"
+      "line": "There's no score anywhere in the app. That's a design rule, not a missing feature.",
+      "broll": "Cosmic alignment tabs (#alignment)",
+      "onScreen": "no score, by design"
     },
     {
-      "line": "It feels like play. And that's why they come back.",
-      "broll": "Binder (#collection)",
+      "line": "The sky reads. It doesn't decide. You do.",
+      "broll": "",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Every match gives you a pack. The last card is always a sign.",
+  "caption": "Push, pull, align. No percentages.",
   "hashtags": [
-    "tradingcards",
+    "astrology",
     "datingapp",
-    "buildinpublic"
+    "zodiac"
   ],
-  "lengthSec": 36,
+  "lengthSec": 34,
   "needsFacts": false,
   "notes": "",
   "score": {
     "total": 64,
-    "craft": 55,
-    "fit": 100,
+    "craft": 56,
+    "fit": 94,
     "breakdown": [
       {
         "key": "hook",
@@ -63,10 +63,9 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 70,
+        "score": 60,
         "hits": [
-          "then",
-          "and that's why"
+          "instead"
         ]
       },
       {
@@ -80,7 +79,7 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 56,
+        "score": 62,
         "hits": [
           "you"
         ]
@@ -89,9 +88,10 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 80,
+        "score": 95,
         "hits": [
           "save this",
+          "three things",
           "save"
         ]
       },

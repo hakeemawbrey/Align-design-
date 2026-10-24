@@ -1,0 +1,120 @@
+{
+  "id": "align-hhp-132",
+  "sourceId": "hhp-132",
+  "title": "The app you keep after you find someone",
+  "angleKey": "churn-hedge",
+  "hookKey": "named_method",
+  "formatKey": "storytime_near_failure",
+  "hook": "This is the keep-the-cards method: why my dating app doesn't lose you when it works.",
+  "beats": [
+    {
+      "line": "I'm Hakeem. I'm building Align, a dating app played as a card game.",
+      "broll": "You, to camera",
+      "onScreen": "founder, Align"
+    },
+    {
+      "line": "Here's the dirty secret of dating apps. When it works, you delete it.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
+      "broll": "Binder (#collection)",
+      "onScreen": ""
+    },
+    {
+      "line": "People cancel the app once they find someone. But they keep collecting the cards.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "The goal is an app you don't have to leave when it works.",
+      "broll": "Couple playing a talk card",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Would you keep collecting after you met someone? Be honest.",
+  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
+  "hashtags": [
+    "startup",
+    "businessmodel",
+    "buildinpublic"
+  ],
+  "lengthSec": 38,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 66,
+    "craft": 58,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 60,
+        "hits": [
+          "this"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 80,
+        "hits": [
+          "but"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 62,
+        "hits": [
+          "my",
+          "don't"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 100,
+        "hits": [
+          "you",
+          "be honest",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}
