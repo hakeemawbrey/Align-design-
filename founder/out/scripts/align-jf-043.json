@@ -1,46 +1,46 @@
 {
   "id": "align-jf-043",
   "sourceId": "jf-043",
-  "title": "The bar pays, not you",
-  "angleKey": "venues-pay",
+  "title": "You earn power by going on dates",
+  "angleKey": "energy",
   "hookKey": "built_that",
   "formatKey": "insider_secrets",
-  "hook": "So I built a dating app where the bar pays for your date, not you.",
+  "hook": "So I built a dating app that rewards you for going on dates, not for swiping.",
   "beats": [
     {
-      "line": "Most matches never turn into a date. The chat just dies.",
+      "line": "Every dating app rewards swiping. So people swipe.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
-      "broll": "Chat: place card, Agnes Cafe (#chat)",
+      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
+      "broll": "Energy meter in the deck",
       "onScreen": ""
     },
     {
-      "line": "Check in at a partner venue and you both get a card you can only get there.",
+      "line": "Check in at the date, +15. You spend energy on event cards.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Everybody wins when the date actually happens. That's the business.",
-      "broll": "Houston venue exterior",
+      "line": "Make the game reward what you actually want.",
+      "broll": "",
       "onScreen": ""
     }
   ],
-  "cta": "Houston, tell me where your first date should be.",
-  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
+  "cta": "Follow along. I'm building it in public.",
+  "caption": "Message +2. Talk card +5. Show up +15.",
   "hashtags": [
-    "houston",
+    "gamification",
     "datingapp",
-    "businessmodel"
+    "buildinpublic"
   ],
-  "lengthSec": 35,
+  "lengthSec": 30,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 70,
-    "craft": 63,
+    "total": 79,
+    "craft": 74,
     "fit": 100,
     "breakdown": [
       {
@@ -56,14 +56,14 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 20,
+        "score": 70,
         "hits": []
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 70,
+        "score": 90,
         "hits": [
           "so i"
         ]
@@ -81,9 +81,9 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 88,
+        "score": 82,
         "hits": [
-          "your",
+          "you",
           "dating app"
         ]
       },
@@ -91,15 +91,20 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 70,
-        "hits": []
+        "score": 60,
+        "hits": [
+          "send"
+        ]
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 70,
-        "hits": []
+        "score": 95,
+        "hits": [
+          "follow along",
+          "follow"
+        ]
       },
       {
         "key": "trendFit",

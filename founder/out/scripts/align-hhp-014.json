@@ -1,41 +1,41 @@
 {
   "id": "align-hhp-014",
   "sourceId": "hhp-014",
-  "title": "You earn power by going on dates",
-  "angleKey": "energy",
+  "title": "The app you keep after you find someone",
+  "angleKey": "churn-hedge",
   "hookKey": "built_that",
   "formatKey": "method_tutorial",
-  "hook": "So I built a dating app that rewards you for going on dates, not for swiping.",
+  "hook": "So I built a dating app people keep after they find someone.",
   "beats": [
     {
-      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
-      "broll": "Energy meter in the deck",
+      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     },
     {
-      "line": "Check in at the date, +15. You spend energy on event cards.",
+      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Checking in at a real date is worth the most. More than anything you do on the screen.",
-      "broll": "Check in at Agnes Cafe",
-      "onScreen": "message +2 · talk card +5 · check in +15"
+      "line": "Subscribers get a starter box, then three real packs every season.",
+      "broll": "Physical card pack on a table",
+      "onScreen": "starter box + 3 packs a season"
     },
     {
-      "line": "Make the game reward what you actually want.",
-      "broll": "",
+      "line": "The goal is an app you don't have to leave when it works.",
+      "broll": "Couple playing a talk card",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Message +2. Talk card +5. Show up +15.",
+  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
   "hashtags": [
-    "gamification",
-    "datingapp",
+    "startup",
+    "businessmodel",
     "buildinpublic"
   ],
-  "lengthSec": 35,
+  "lengthSec": 30,
   "needsFacts": false,
   "notes": "",
   "score": {
@@ -47,7 +47,7 @@
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 70,
+        "score": 90,
         "hits": [
           "i built"
         ]
@@ -56,15 +56,16 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 70,
+        "score": 20,
         "hits": []
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 70,
+        "score": 100,
         "hits": [
+          "then",
           "so i"
         ]
       },
@@ -72,18 +73,19 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 33,
+        "score": 36,
         "hits": [
-          "i"
+          "i",
+          "don't"
         ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 78,
+        "score": 75,
         "hits": [
-          "you",
+          "your",
           "dating app"
         ]
       },
@@ -91,10 +93,9 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 90,
+        "score": 80,
         "hits": [
           "save this",
-          "send",
           "save"
         ]
       },

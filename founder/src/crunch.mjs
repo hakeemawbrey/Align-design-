@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url'
 import { loadCreators, loadSources } from './sources.mjs'
 import { scoreVideo, scoreScript, grade } from './score.mjs'
 import { adapt, classify, LIB } from './adapt.mjs'
-import { BRIDGES } from './library.mjs'
+import { ANGLES, BRIDGES } from './library.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const read = (p) => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8'))
@@ -43,7 +43,9 @@ sources.sort((a, b) => b.score.total - a.score.total)
 const used = new Map()
 const scripts = sources.map((v) => {
   if (!used.has(v.creator)) used.set(v.creator, new Map())
-  const s = adapt(v, { used: used.get(v.creator) })
+  // Each story gets an even share of a creator's reels, at least three.
+  const cap = Math.max(3, Math.ceil(byCreator.get(v.creator).length / ANGLES.length) + 1)
+  const s = adapt(v, { used: used.get(v.creator), cap })
   s.score = scoreScript(s, { rubric, brief })
   v.alignId = s.id
   return s

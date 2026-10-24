@@ -1,53 +1,53 @@
 {
   "id": "align-hhp-046",
   "sourceId": "hhp-046",
-  "title": "Yes, you can block a whole sign",
-  "angleKey": "block-a-sign",
+  "title": "You earn power by going on dates",
+  "angleKey": "energy",
   "hookKey": "built_that",
   "formatKey": "method_tutorial",
-  "hook": "So I built a dating app where you can block an entire zodiac sign.",
+  "hook": "So I built a dating app that rewards you for going on dates, not for swiping.",
   "beats": [
     {
-      "line": "On Align+ you can block a sign. Block Virgo and the deal skips every Virgo.",
-      "broll": "Block a sign screen (#block)",
+      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
+      "broll": "Energy meter in the deck",
       "onScreen": ""
     },
     {
-      "line": "Your own card only ever shows your sun sign, nothing else from your chart.",
+      "line": "Check in at the date, +15. You spend energy on event cards.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "One tap, and that sign is gone from your deck.",
-      "broll": "Deck reshuffles",
-      "onScreen": "block a sign"
+      "line": "Checking in at a real date is worth the most. More than anything you do on the screen.",
+      "broll": "Check in at Agnes Cafe",
+      "onScreen": "message +2 · talk card +5 · check in +15"
     },
     {
-      "line": "It's a joke until it isn't. Then it's a filter.",
+      "line": "Make the game reward what you actually want.",
       "broll": "",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Yes, you can block a whole sign.",
+  "caption": "Message +2. Talk card +5. Show up +15.",
   "hashtags": [
-    "zodiac",
-    "astrologymemes",
-    "datingapp"
+    "gamification",
+    "datingapp",
+    "buildinpublic"
   ],
-  "lengthSec": 30,
+  "lengthSec": 35,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 77,
-    "craft": 71,
+    "total": 75,
+    "craft": 69,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 90,
+        "score": 70,
         "hits": [
           "i built"
         ]
@@ -56,18 +56,15 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 30,
-        "hits": [
-          "chart."
-        ]
+        "score": 70,
+        "hits": []
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 100,
+        "score": 70,
         "hits": [
-          "until",
           "so i"
         ]
       },
@@ -94,9 +91,10 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 80,
+        "score": 90,
         "hits": [
           "save this",
+          "send",
           "save"
         ]
       },

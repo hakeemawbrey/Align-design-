@@ -1,66 +1,63 @@
 {
   "id": "align-hhp-025",
   "sourceId": "hhp-025",
-  "title": "Yes, you can block a whole sign",
-  "angleKey": "block-a-sign",
+  "title": "Talk cards: the real questions, early",
+  "angleKey": "talk-cards",
   "hookKey": "named_method",
   "formatKey": "method_tutorial",
-  "hook": "THE BLOCK-A-SIGN METHOD: how to never match with your ex's sign again.",
+  "hook": "THE SEALED-ANSWER METHOD: how to ask the big questions without it being weird.",
   "beats": [
     {
-      "line": "On Align+ you can block a sign. Block Virgo and the deal skips every Virgo.",
-      "broll": "Block a sign screen (#block)",
+      "line": "In any chat on Align you can play a talk card. Planned date or spontaneous date.",
+      "broll": "Chat: card button, play a talk card (#chat)",
       "onScreen": ""
     },
     {
-      "line": "Your own card only ever shows your sun sign, nothing else from your chart.",
+      "line": "You both answer. Neither answer shows until you both have, so nobody copies.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "One tap, and that sign is gone from your deck.",
-      "broll": "Deck reshuffles",
-      "onScreen": "block a sign"
+      "line": "Fifty-one cards across nine topics: money, family, the future, how you fight, and some just for fun.",
+      "broll": "Talk card sheet, tarot arcana",
+      "onScreen": "51 cards · 9 topics"
     },
     {
-      "line": "It's a joke until it isn't. Then it's a filter.",
-      "broll": "",
+      "line": "You learn the stuff that matters in the first week, not the first year.",
+      "broll": "Both answers reveal",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Yes, you can block a whole sign.",
+  "caption": "Both answer. Neither shows until you both have.",
   "hashtags": [
-    "zodiac",
-    "astrologymemes",
-    "datingapp"
+    "datingtips",
+    "datingapp",
+    "relationships"
   ],
-  "lengthSec": 29,
+  "lengthSec": 34,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 74,
-    "craft": 68,
+    "total": 70,
+    "craft": 62,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 100,
+        "score": 80,
         "hits": [
-          "the",
-          "never"
+          "the"
         ]
       },
       {
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 30,
-        "hits": [
-          "chart."
-        ]
+        "score": 20,
+        "hits": []
       },
       {
         "key": "storyTension",
@@ -84,7 +81,7 @@
         "weight": 12,
         "score": 68,
         "hits": [
-          "your"
+          "you"
         ]
       },
       {

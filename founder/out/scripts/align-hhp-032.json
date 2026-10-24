@@ -1,46 +1,46 @@
 {
   "id": "align-hhp-032",
   "sourceId": "hhp-032",
-  "title": "The bar pays, not you",
-  "angleKey": "venues-pay",
+  "title": "A dating app that plays like a card game",
+  "angleKey": "trading-cards",
   "hookKey": "named_method",
   "formatKey": "method_tutorial",
-  "hook": "This is the bar-pays method: how to turn a match into an actual date.",
+  "hook": "This is the booster pack method: how to make dating feel like a game again.",
   "beats": [
     {
-      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
-      "broll": "Chat: place card, Agnes Cafe (#chat)",
+      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
+      "broll": "Dealing: cards fly in (#dealing)",
       "onScreen": ""
     },
     {
-      "line": "Check in at a partner venue and you both get a card you can only get there.",
+      "line": "Every match gives you a pack. Twelve cards, and the last one is always a sign card in the rare slot.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "And the venue pays us for the date. Not you.",
-      "broll": "Check in screen",
-      "onScreen": "the venue pays, not you"
+      "line": "Myths, Gilded about one pack in five, Mythic about one in twenty-five. Each season prints a fixed run.",
+      "broll": "Pack opening: tear across the top",
+      "onScreen": "Gilded 1 in 5 · Mythic 1 in 25"
     },
     {
-      "line": "Everybody wins when the date actually happens. That's the business.",
-      "broll": "Houston venue exterior",
+      "line": "It feels like play. And that's why they come back.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
+  "caption": "Every match gives you a pack. The last card is always a sign.",
   "hashtags": [
-    "houston",
+    "tradingcards",
     "datingapp",
-    "businessmodel"
+    "buildinpublic"
   ],
-  "lengthSec": 34,
+  "lengthSec": 36,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 61,
-    "craft": 51,
+    "total": 64,
+    "craft": 55,
     "fit": 100,
     "breakdown": [
       {
@@ -63,8 +63,11 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 30,
-        "hits": []
+        "score": 70,
+        "hits": [
+          "then",
+          "and that's why"
+        ]
       },
       {
         "key": "authenticity",
@@ -77,7 +80,7 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 65,
+        "score": 56,
         "hits": [
           "you"
         ]

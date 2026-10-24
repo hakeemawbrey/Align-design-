@@ -841,7 +841,7 @@ async function addReels() {
   const btn = $('add-go'); btn.disabled = true
   for (const v of fresh) {
     v.score = scoreVideo(v, { rubric: DATA.rubric, brief: DATA.brief, set })
-    const s = adapt(v, { used })
+    const s = adapt(v, { used, cap: Math.max(3, Math.ceil(set.length / LIB.angles.length) + 1) })
     s.score = scoreScript(s, { rubric: DATA.rubric, brief: DATA.brief })
     v.alignId = s.id
     const rec = { source: v, script: s, createdAt: Date.now() }

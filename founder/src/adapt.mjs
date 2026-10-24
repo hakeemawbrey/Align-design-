@@ -31,6 +31,9 @@ const lower = (v) => [v.hook, v.topic, v.format, v.caption, ...(v.beats ?? []).m
 const HOOK_RULES = [
   [/\b(effect|trilemma|paradox|principle|law)\b|^#(psychology|philosophy|socrates)/, 'named_concept'],
   [/^guess my/, 'guess_my'],
+  [/^(you aren't|you're not|you are not|you're|if you)\b/, 'if_youre'],
+  [/done to me|what i learned|i spent|i lived|years of|i was\b/, 'nobody_tells_you'],
+  [/^(why|how come)\b/, 'insider_secret'],
   [/replying to|reply to/, 'reply_hater'],
   [/\bmethod\b/, 'named_method'],
   [/repeat|for \d+ days|listen (three|3) times|save this/, 'save_bait'],
@@ -136,12 +139,12 @@ export function build(source, { angleKey, hookKey, formatKey, seed = 1 }) {
 }
 
 /** The first Align version of a reel: same hook type and format, best-fit angle. */
-export function adapt(source, { used = new Map(), seed } = {}) {
+export function adapt(source, { used = new Map(), seed, cap = 3 } = {}) {
   const { hookKey, formatKey } = classify(source)
-  // Spread the angles across one creator's set: an angle used three times
+  // Spread the angles across one creator's set: an angle used `cap` times
   // already gives way to the next best one.
   const ranked = rankAngles(source)
-  const angle = ranked.find((x) => (used.get(x.key) ?? 0) < 3) ?? ranked[0]
+  const angle = ranked.find((x) => (used.get(x.key) ?? 0) < cap) ?? ranked[0]
   used.set(angle.key, (used.get(angle.key) ?? 0) + 1)
   return build(source, { angleKey: angle.key, hookKey, formatKey, seed: seed ?? source.id })
 }

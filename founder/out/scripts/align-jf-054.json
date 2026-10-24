@@ -1,0 +1,120 @@
+{
+  "id": "align-jf-054",
+  "sourceId": "jf-054",
+  "title": "Yes, you can block a whole sign",
+  "angleKey": "block-a-sign",
+  "hookKey": "built_that",
+  "formatKey": "storytime_near_failure",
+  "hook": "So I built a dating app where you can block an entire zodiac sign.",
+  "beats": [
+    {
+      "line": "I'm Hakeem. I'm building Align, a dating app played as a card game.",
+      "broll": "You, to camera",
+      "onScreen": "founder, Align"
+    },
+    {
+      "line": "Everyone has a sign they swear they're done with.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align+ you can block a sign. Block Virgo and the deal skips every Virgo.",
+      "broll": "Block a sign screen (#block)",
+      "onScreen": ""
+    },
+    {
+      "line": "The most-requested feature was the pettiest one. So we built it.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "It's a joke until it isn't. Then it's a filter.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Which sign are you blocking? Wrong answers only.",
+  "caption": "Yes, you can block a whole sign.",
+  "hashtags": [
+    "zodiac",
+    "astrologymemes",
+    "datingapp"
+  ],
+  "lengthSec": 33,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 73,
+    "craft": 66,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 90,
+        "hits": [
+          "i built"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 100,
+        "hits": [
+          "until",
+          "so i"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 59,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 89,
+        "hits": [
+          "you",
+          "dating app",
+          "everyone"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

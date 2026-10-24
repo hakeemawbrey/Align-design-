@@ -1,11 +1,11 @@
 {
   "id": "align-hhp-044",
   "sourceId": "hhp-044",
-  "title": "Talk cards: the real questions, early",
-  "angleKey": "talk-cards",
+  "title": "No photos until you both say yes",
+  "angleKey": "no-photos",
   "hookKey": "outcome_speed",
   "formatKey": "storytime_near_failure",
-  "hook": "Find out if they want kids in one message.",
+  "hook": "Know if you like someone before you see their face.",
   "beats": [
     {
       "line": "I'm Hakeem. I'm building Align, a dating app played as a card game.",
@@ -13,39 +13,39 @@
       "onScreen": "founder, Align"
     },
     {
-      "line": "\"Hey, how was your weekend\" has never told anyone anything.",
+      "line": "Every dating app asks the same first question: are they hot. You decide in half a second, and you never read a word they wrote.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "In any chat on Align you can play a talk card. Planned date or spontaneous date.",
-      "broll": "Chat: card button, play a talk card (#chat)",
+      "line": "On Align your card is your sky, your words and your dealbreakers. The photo is veiled.",
+      "broll": "Deck: veiled cards (#deck)",
       "onScreen": ""
     },
     {
-      "line": "The sealed answer is the whole trick. People are more honest when they can't see yours first.",
+      "line": "The first time I matched with someone this way, I already knew how they answer a hard question before I knew what they looked like.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "You learn the stuff that matters in the first week, not the first year.",
-      "broll": "Both answers reveal",
+      "line": "You still see the face. It just comes last.",
+      "broll": "Reveal: veil lifts (#reveal)",
       "onScreen": ""
     }
   ],
-  "cta": "Planned date or spontaneous date? Answer in the comments.",
-  "caption": "Both answer. Neither shows until you both have.",
+  "cta": "Would you date like this? Tell me honestly.",
+  "caption": "No photo until you both say yes. The face comes last.",
   "hashtags": [
-    "datingtips",
     "datingapp",
-    "relationships"
+    "buildinpublic",
+    "founder"
   ],
-  "lengthSec": 36,
+  "lengthSec": 43,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 64,
-    "craft": 55,
+    "total": 70,
+    "craft": 62,
     "fit": 100,
     "breakdown": [
       {
@@ -73,20 +73,22 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 59,
+        "score": 100,
         "hits": [
           "i",
-          "can't"
+          "honestly",
+          "honestly."
         ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 79,
+        "score": 98,
         "hits": [
-          "your",
-          "dating app"
+          "you",
+          "dating app",
+          "same"
         ]
       },
       {

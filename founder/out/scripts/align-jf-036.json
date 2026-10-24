@@ -3,9 +3,9 @@
   "sourceId": "jf-036",
   "title": "Release, don't haunt",
   "angleKey": "release-dont-haunt",
-  "hookKey": "unpopular_opinion",
+  "hookKey": "insider_secret",
   "formatKey": "method_tutorial",
-  "hook": "Unpopular opinion: ghosting is a design problem.",
+  "hook": "As the founder of a dating app, here's something I can tell you: on Align, chats fade if nobody talks.",
   "beats": [
     {
       "line": "On Align, passing on someone is called release. Letting a card go is clean.",
@@ -35,21 +35,21 @@
     "datingapp",
     "datingadvice"
   ],
-  "lengthSec": 25,
+  "lengthSec": 30,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 66,
-    "craft": 59,
-    "fit": 94,
+    "total": 65,
+    "craft": 56,
+    "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 90,
+        "score": 80,
         "hits": [
-          "unpopular opinion"
+          "nobody"
         ]
       },
       {
@@ -70,27 +70,28 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 30,
-        "hits": []
+        "score": 33,
+        "hits": [
+          "i"
+        ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 66,
+        "score": 69,
         "hits": [
           "you",
-          "ghosting"
+          "dating app"
         ]
       },
       {
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 95,
+        "score": 80,
         "hits": [
           "save this",
-          "unpopular opinion",
           "save"
         ]
       },

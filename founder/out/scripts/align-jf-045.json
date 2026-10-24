@@ -1,41 +1,41 @@
 {
   "id": "align-jf-045",
   "sourceId": "jf-045",
-  "title": "Houston first: $15 for life",
-  "angleKey": "houston-beta",
+  "title": "The dating app with a mulligan",
+  "angleKey": "event-cards",
   "hookKey": "built_that",
   "formatKey": "method_tutorial",
-  "hook": "So I built a dating app launching one city at a time, starting in Houston.",
+  "hook": "So I built a dating app with a mulligan.",
   "beats": [
     {
-      "line": "So Align launches city by city. Houston first, with partner venues like Agnes Cafe.",
-      "broll": "Houston skyline / venue",
+      "line": "On Align every sixth card is a gold event. Second look brings back the last person you released.",
+      "broll": "Gold event card in the deck (#deck)",
       "onScreen": ""
     },
     {
-      "line": "Beta members pay $15 once and keep Align+ for life.",
+      "line": "Mulligan shuffles back everyone you released. Comet, Spotlight, Lunar peek.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Fifteen dollars, once, lifetime. Only for the Houston beta.",
-      "broll": "Founding member card (#founding)",
-      "onScreen": "Houston beta · $15 once · lifetime"
+      "line": "Every draw is five people, then an event card. You play events with energy.",
+      "broll": "Draw tracker: ✦ slot",
+      "onScreen": "5 people + 1 event"
     },
     {
-      "line": "Houston first. Then the next city earns it.",
-      "broll": "Club room (#club)",
+      "line": "Dating is a game anyway. We just wrote down the rules.",
+      "broll": "",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Houston first. $15 once, Align+ for life.",
+  "caption": "Every sixth card is an event. One of them is a mulligan.",
   "hashtags": [
-    "houston",
-    "houstonsingles",
-    "datingapp"
+    "datingapp",
+    "venusretrograde",
+    "cardgame"
   ],
-  "lengthSec": 27,
+  "lengthSec": 29,
   "needsFacts": false,
   "notes": "",
   "score": {
@@ -47,7 +47,7 @@
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 70,
+        "score": 90,
         "hits": [
           "i built"
         ]
@@ -56,10 +56,8 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 70,
-        "hits": [
-          "$15"
-        ]
+        "score": 20,
+        "hits": []
       },
       {
         "key": "storyTension",
@@ -84,10 +82,11 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 63,
+        "score": 82,
         "hits": [
-          "your",
-          "dating app"
+          "you",
+          "dating app",
+          "everyone"
         ]
       },
       {

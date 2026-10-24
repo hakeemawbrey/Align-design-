@@ -1,11 +1,11 @@
 {
   "id": "align-jf-039",
   "sourceId": "jf-039",
-  "title": "The dating app with a mulligan",
-  "angleKey": "event-cards",
+  "title": "Yes, you can block a whole sign",
+  "angleKey": "block-a-sign",
   "hookKey": "built_that",
   "formatKey": "storytime_near_failure",
-  "hook": "So I built a dating app with a mulligan.",
+  "hook": "So I built a dating app where you can block an entire zodiac sign.",
   "beats": [
     {
       "line": "I'm Hakeem. I'm building Align, a dating app played as a card game.",
@@ -13,39 +13,39 @@
       "onScreen": "founder, Align"
     },
     {
-      "line": "Everyone has passed on someone and regretted it.",
+      "line": "Everyone has a sign they swear they're done with.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "On Align every sixth card is a gold event. Second look brings back the last person you released.",
-      "broll": "Gold event card in the deck (#deck)",
+      "line": "On Align+ you can block a sign. Block Virgo and the deal skips every Virgo.",
+      "broll": "Block a sign screen (#block)",
       "onScreen": ""
     },
     {
-      "line": "The event cards are what people talk about. Nobody talks about a swipe.",
+      "line": "The most-requested feature was the pettiest one. So we built it.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Dating is a game anyway. We just wrote down the rules.",
+      "line": "It's a joke until it isn't. Then it's a filter.",
       "broll": "",
       "onScreen": ""
     }
   ],
-  "cta": "Which event card would you play first? Comment it.",
-  "caption": "Every sixth card is an event. One of them is a mulligan.",
+  "cta": "Which sign are you blocking? Wrong answers only.",
+  "caption": "Yes, you can block a whole sign.",
   "hashtags": [
-    "datingapp",
-    "venusretrograde",
-    "cardgame"
+    "zodiac",
+    "astrologymemes",
+    "datingapp"
   ],
   "lengthSec": 33,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 75,
-    "craft": 69,
+    "total": 73,
+    "craft": 66,
     "fit": 100,
     "breakdown": [
       {
@@ -68,8 +68,9 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 70,
+        "score": 100,
         "hits": [
+          "until",
           "so i"
         ]
       },
@@ -86,7 +87,7 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 86,
+        "score": 89,
         "hits": [
           "you",
           "dating app",
@@ -97,19 +98,15 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 65,
-        "hits": [
-          "nobody talks about"
-        ]
+        "score": 50,
+        "hits": []
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 90,
-        "hits": [
-          "comment it"
-        ]
+        "score": 20,
+        "hits": []
       },
       {
         "key": "trendFit",

@@ -1,42 +1,42 @@
 {
   "id": "align-jf-017",
   "sourceId": "jf-017",
-  "title": "The app you keep after you find someone",
-  "angleKey": "churn-hedge",
+  "title": "Three peeks, three seconds",
+  "angleKey": "peek",
   "hookKey": "unpopular_opinion",
   "formatKey": "pov_skit",
-  "hook": "Unpopular opinion: a good dating app is a bad business.",
+  "hook": "Unpopular opinion: a little temptation makes the game better.",
   "beats": [
     {
-      "line": "Here's the dirty secret of dating apps. When it works, you delete it.",
+      "line": "No photos sounds great until you really want to know.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
-      "broll": "Binder (#collection)",
+      "line": "So you can cheat, a little. Hold a card and the photo opens for about three seconds.",
+      "broll": "Peek: hold on Juniper (#deck, hold Space)",
       "onScreen": ""
     },
     {
-      "line": "The goal is an app you don't have to leave when it works.",
-      "broll": "Couple playing a talk card",
+      "line": "A rule you can break three times is more fun than no rule at all.",
+      "broll": "",
       "onScreen": ""
     }
   ],
-  "cta": "Would you keep collecting after you met someone? Be honest.",
-  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
+  "cta": "Would you use your three peeks or save them? Tell me.",
+  "caption": "Hold to peek. Three seconds. Three a day.",
   "hashtags": [
-    "startup",
-    "businessmodel",
+    "datingapp",
+    "founder",
     "buildinpublic"
   ],
   "lengthSec": 26,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 67,
-    "craft": 59,
-    "fit": 100,
+    "total": 70,
+    "craft": 64,
+    "fit": 94,
     "breakdown": [
       {
         "key": "hook",
@@ -58,8 +58,10 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 50,
-        "hits": []
+        "score": 80,
+        "hits": [
+          "until"
+        ]
       },
       {
         "key": "authenticity",
@@ -67,34 +69,33 @@
         "weight": 12,
         "score": 33,
         "hits": [
-          "don't"
+          "me"
         ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 98,
+        "score": 65,
         "hits": [
-          "you",
-          "be honest",
-          "dating app"
+          "you"
         ]
       },
       {
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 65,
+        "score": 75,
         "hits": [
-          "unpopular opinion"
+          "unpopular opinion",
+          "save"
         ]
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 20,
+        "score": 70,
         "hits": []
       },
       {

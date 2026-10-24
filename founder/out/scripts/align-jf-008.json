@@ -1,46 +1,46 @@
 {
   "id": "align-jf-008",
   "sourceId": "jf-008",
-  "title": "The app you keep after you find someone",
-  "angleKey": "churn-hedge",
+  "title": "The bar pays, not you",
+  "angleKey": "venues-pay",
   "hookKey": "unpopular_opinion",
   "formatKey": "insider_secrets",
-  "hook": "Unpopular opinion: a good dating app is a bad business.",
+  "hook": "Unpopular opinion: dating apps charge the wrong person.",
   "beats": [
     {
-      "line": "Here's the dirty secret of dating apps. When it works, you delete it.",
+      "line": "Most matches never turn into a date. The chat just dies.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
-      "broll": "Binder (#collection)",
+      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
+      "broll": "Chat: place card, Agnes Cafe (#chat)",
       "onScreen": ""
     },
     {
-      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
+      "line": "Check in at a partner venue and you both get a card you can only get there.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "The goal is an app you don't have to leave when it works.",
-      "broll": "Couple playing a talk card",
+      "line": "Everybody wins when the date actually happens. That's the business.",
+      "broll": "Houston venue exterior",
       "onScreen": ""
     }
   ],
-  "cta": "Would you keep collecting after you met someone? Be honest.",
-  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
+  "cta": "Houston, tell me where your first date should be.",
+  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
   "hashtags": [
-    "startup",
-    "businessmodel",
-    "buildinpublic"
+    "houston",
+    "datingapp",
+    "businessmodel"
   ],
-  "lengthSec": 30,
+  "lengthSec": 32,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 67,
-    "craft": 59,
+    "total": 66,
+    "craft": 57,
     "fit": 100,
     "breakdown": [
       {
@@ -63,7 +63,7 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 50,
+        "score": 30,
         "hits": []
       },
       {
@@ -72,18 +72,17 @@
         "weight": 12,
         "score": 33,
         "hits": [
-          "don't"
+          "me"
         ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 98,
+        "score": 72,
         "hits": [
           "you",
-          "be honest",
-          "dating app"
+          "dating apps"
         ]
       },
       {
@@ -99,7 +98,7 @@
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 20,
+        "score": 70,
         "hits": []
       },
       {

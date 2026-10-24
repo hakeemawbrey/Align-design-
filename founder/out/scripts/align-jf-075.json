@@ -1,0 +1,118 @@
+{
+  "id": "align-jf-075",
+  "sourceId": "jf-075",
+  "title": "The bar pays, not you",
+  "angleKey": "venues-pay",
+  "hookKey": "unpopular_opinion",
+  "formatKey": "storytime_near_failure",
+  "hook": "Unpopular opinion: dating apps charge the wrong person.",
+  "beats": [
+    {
+      "line": "I'm Hakeem. I'm building Align, a dating app played as a card game.",
+      "broll": "You, to camera",
+      "onScreen": "founder, Align"
+    },
+    {
+      "line": "Most matches never turn into a date. The chat just dies.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
+      "broll": "Chat: place card, Agnes Cafe (#chat)",
+      "onScreen": ""
+    },
+    {
+      "line": "Bars spend money to get people through the door. We bring them two people who already said yes.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Everybody wins when the date actually happens. That's the business.",
+      "broll": "Houston venue exterior",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Houston, tell me where your first date should be.",
+  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
+  "hashtags": [
+    "houston",
+    "datingapp",
+    "businessmodel"
+  ],
+  "lengthSec": 37,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 68,
+    "craft": 60,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 90,
+        "hits": [
+          "unpopular opinion"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 30,
+        "hits": []
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 59,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 76,
+        "hits": [
+          "you",
+          "dating apps"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 65,
+        "hits": [
+          "unpopular opinion"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

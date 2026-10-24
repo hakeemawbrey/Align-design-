@@ -1,63 +1,63 @@
 {
   "id": "align-hhp-018",
   "sourceId": "hhp-018",
-  "title": "Houston first: $15 for life",
-  "angleKey": "houston-beta",
+  "title": "The app you keep after you find someone",
+  "angleKey": "churn-hedge",
   "hookKey": "named_concept",
   "formatKey": "method_tutorial",
-  "hook": "Network effects. Here's how it shaped my dating app.",
+  "hook": "The endowment effect. Here's how it shaped my dating app.",
   "beats": [
     {
-      "line": "So Align launches city by city. Houston first, with partner venues like Agnes Cafe.",
-      "broll": "Houston skyline / venue",
+      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     },
     {
-      "line": "Beta members pay $15 once and keep Align+ for life.",
+      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Fifteen dollars, once, lifetime. Only for the Houston beta.",
-      "broll": "Founding member card (#founding)",
-      "onScreen": "Houston beta · $15 once · lifetime"
+      "line": "Subscribers get a starter box, then three real packs every season.",
+      "broll": "Physical card pack on a table",
+      "onScreen": "starter box + 3 packs a season"
     },
     {
-      "line": "Houston first. Then the next city earns it.",
-      "broll": "Club room (#club)",
+      "line": "The goal is an app you don't have to leave when it works.",
+      "broll": "Couple playing a talk card",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Houston first. $15 once, Align+ for life.",
+  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
   "hashtags": [
-    "houston",
-    "houstonsingles",
-    "datingapp"
+    "startup",
+    "businessmodel",
+    "buildinpublic"
   ],
-  "lengthSec": 25,
+  "lengthSec": 29,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 74,
-    "craft": 68,
+    "total": 71,
+    "craft": 64,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 70,
-        "hits": []
+        "score": 80,
+        "hits": [
+          "the"
+        ]
       },
       {
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 70,
-        "hits": [
-          "$15"
-        ]
+        "score": 20,
+        "hits": []
       },
       {
         "key": "storyTension",
@@ -72,16 +72,17 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 33,
+        "score": 36,
         "hits": [
-          "my"
+          "my",
+          "don't"
         ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 63,
+        "score": 75,
         "hits": [
           "your",
           "dating app"

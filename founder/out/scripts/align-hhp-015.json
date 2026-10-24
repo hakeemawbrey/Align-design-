@@ -1,48 +1,48 @@
 {
   "id": "align-hhp-015",
   "sourceId": "hhp-015",
-  "title": "Houston first: $15 for life",
-  "angleKey": "houston-beta",
+  "title": "Three peeks, three seconds",
+  "angleKey": "peek",
   "hookKey": "built_that",
   "formatKey": "pov_skit",
-  "hook": "I built a dating app launching one city at a time, starting in Houston.",
+  "hook": "I built a dating app where you can peek at a photo for three seconds, three times a day.",
   "beats": [
     {
-      "line": "A dating app with no one near you is a dating app with no one.",
+      "line": "No photos sounds great until you really want to know.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So Align launches city by city. Houston first, with partner venues like Agnes Cafe.",
-      "broll": "Houston skyline / venue",
+      "line": "So you can cheat, a little. Hold a card and the photo opens for about three seconds.",
+      "broll": "Peek: hold on Juniper (#deck, hold Space)",
       "onScreen": ""
     },
     {
-      "line": "Houston first. Then the next city earns it.",
-      "broll": "Club room (#club)",
+      "line": "A rule you can break three times is more fun than no rule at all.",
+      "broll": "",
       "onScreen": ""
     }
   ],
-  "cta": "Houston, the beta link is in my bio.",
-  "caption": "Houston first. $15 once, Align+ for life.",
+  "cta": "Would you use your three peeks or save them? Tell me.",
+  "caption": "Hold to peek. Three seconds. Three a day.",
   "hashtags": [
-    "houston",
-    "houstonsingles",
-    "datingapp"
+    "datingapp",
+    "founder",
+    "buildinpublic"
   ],
-  "lengthSec": 25,
+  "lengthSec": 30,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 74,
-    "craft": 68,
+    "total": 73,
+    "craft": 66,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 100,
+        "score": 80,
         "hits": [
           "i",
           "i built"
@@ -61,7 +61,7 @@
         "weight": 14,
         "score": 80,
         "hits": [
-          "then"
+          "until"
         ]
       },
       {
@@ -77,7 +77,7 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 63,
+        "score": 88,
         "hits": [
           "you",
           "dating app"
@@ -87,27 +87,26 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 50,
-        "hits": []
+        "score": 60,
+        "hits": [
+          "save"
+        ]
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 100,
-        "hits": [
-          "in my bio",
-          "link",
-          "bio.",
-          "beta"
-        ]
+        "score": 70,
+        "hits": []
       },
       {
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 70,
-        "hits": []
+        "score": 75,
+        "hits": [
+          "day."
+        ]
       }
     ]
   }

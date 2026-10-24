@@ -1,48 +1,48 @@
 {
   "id": "align-jf-032",
   "sourceId": "jf-032",
-  "title": "Yes, you can block a whole sign",
-  "angleKey": "block-a-sign",
+  "title": "What's real and what's still fake",
+  "angleKey": "whats-real",
   "hookKey": "built_that",
   "formatKey": "pov_skit",
-  "hook": "I built a dating app where you can block an entire zodiac sign.",
+  "hook": "I built a dating app, and I'm going to show you exactly what's real and what's still fake.",
   "beats": [
     {
-      "line": "Everyone has a sign they swear they're done with.",
+      "line": "Every demo looks finished. Almost none of them are.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "On Align+ you can block a sign. Block Virgo and the deal skips every Virgo.",
-      "broll": "Block a sign screen (#block)",
+      "line": "Real today: the app, the iPhone build, accounts, swipes, matches, live chat, and the chart math.",
+      "broll": "Two phones side by side matching",
       "onScreen": ""
     },
     {
-      "line": "It's a joke until it isn't. Then it's a filter.",
-      "broll": "",
+      "line": "Next is the real dealing algorithm, verification and push notifications.",
+      "broll": "GitHub issues / roadmap",
       "onScreen": ""
     }
   ],
-  "cta": "Which sign are you blocking? Wrong answers only.",
-  "caption": "Yes, you can block a whole sign.",
+  "cta": "Follow along. Next update I'll show what moved from fake to real.",
+  "caption": "What's real, what's seeded, what's next.",
   "hashtags": [
-    "zodiac",
-    "astrologymemes",
-    "datingapp"
+    "buildinpublic",
+    "startup",
+    "founder"
   ],
-  "lengthSec": 23,
+  "lengthSec": 27,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 69,
-    "craft": 61,
+    "total": 72,
+    "craft": 65,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 100,
+        "score": 80,
         "hits": [
           "i",
           "i built"
@@ -52,23 +52,26 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 20,
-        "hits": []
+        "score": 40,
+        "hits": [
+          "exactly",
+          "chart"
+        ]
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 80,
+        "score": 50,
         "hits": [
-          "until"
+          "almost"
         ]
       },
       {
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 33,
+        "score": 59,
         "hits": [
           "i"
         ]
@@ -77,33 +80,37 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 79,
+        "score": 63,
         "hits": [
           "you",
-          "dating app",
-          "everyone"
+          "dating app"
         ]
       },
       {
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 50,
+        "score": 70,
         "hits": []
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 20,
-        "hits": []
+        "score": 95,
+        "hits": [
+          "follow along",
+          "follow"
+        ]
       },
       {
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 70,
-        "hits": []
+        "score": 75,
+        "hits": [
+          "build,"
+        ]
       }
     ]
   }

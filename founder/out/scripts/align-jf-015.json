@@ -1,47 +1,46 @@
 {
   "id": "align-jf-015",
   "sourceId": "jf-015",
-  "title": "Built with AI",
-  "angleKey": "built-with-ai",
+  "title": "A dating app that plays like a card game",
+  "angleKey": "trading-cards",
   "hookKey": "named_method",
   "formatKey": "insider_secrets",
-  "hook": "This is the one-founder method: how one founder builds a whole app with an AI.",
+  "hook": "This is the booster pack method: how to make dating feel like a game again.",
   "beats": [
     {
-      "line": "I'm not an engineer. A year ago an app like this meant hiring a team I couldn't pay.",
-      "broll": "Screen recording: the git log",
-      "onScreen": ""
-    },
-    {
-      "line": "I describe the screen, Claude writes the code, and I test it on my phone.",
-      "broll": "Screen recording: Claude Code writing a screen",
-      "onScreen": ""
-    },
-    {
-      "line": "Supabase runs the backend. Capacitor turns it into a real iPhone app.",
+      "line": "Dating apps feel like work. Swipe, wait, swipe.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Taste is the job now. The code is the easy part.",
-      "broll": "App running on phone (#deck)",
+      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
+      "broll": "Dealing: cards fly in (#dealing)",
+      "onScreen": ""
+    },
+    {
+      "line": "Every match gives you a pack. Twelve cards, and the last one is always a sign card in the rare slot.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "It feels like play. And that's why they come back.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     }
   ],
-  "cta": "Follow along. I'm building the whole thing in public.",
-  "caption": "One founder, one AI, one dating app. Every commit is in the history.",
+  "cta": "Comment which card you'd want to pull first.",
+  "caption": "Every match gives you a pack. The last card is always a sign.",
   "hashtags": [
-    "buildinpublic",
-    "claudecode",
-    "founder",
-    "aiapps"
+    "tradingcards",
+    "datingapp",
+    "buildinpublic"
   ],
-  "lengthSec": 33,
+  "lengthSec": 32,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 66,
-    "craft": 57,
+    "total": 65,
+    "craft": 56,
     "fit": 100,
     "breakdown": [
       {
@@ -57,60 +56,60 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 30,
-        "hits": [
-          "claude"
-        ]
+        "score": 20,
+        "hits": []
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 30,
-        "hits": []
+        "score": 70,
+        "hits": [
+          "then",
+          "and that's why"
+        ]
       },
       {
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 88,
-        "hits": [
-          "i"
-        ]
+        "score": 30,
+        "hits": []
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 50,
-        "hits": []
+        "score": 66,
+        "hits": [
+          "you",
+          "dating apps"
+        ]
       },
       {
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 50,
-        "hits": []
+        "score": 60,
+        "hits": [
+          "comment which"
+        ]
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 95,
+        "score": 90,
         "hits": [
-          "follow along",
-          "follow"
+          "comment which"
         ]
       },
       {
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 85,
-        "hits": [
-          "ai",
-          "part."
-        ]
+        "score": 70,
+        "hits": []
       }
     ]
   }

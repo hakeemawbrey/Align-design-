@@ -1,41 +1,41 @@
 {
   "id": "align-hhp-004",
   "sourceId": "hhp-004",
-  "title": "Three peeks, three seconds",
-  "angleKey": "peek",
+  "title": "No compatibility score, on purpose",
+  "angleKey": "no-score",
   "hookKey": "does_anyone_else",
   "formatKey": "relatable_pain_plug",
-  "hook": "Does anyone else want to know what someone looks like before you commit? So I built a dating app where you can peek at a photo for three seconds, three times a day.",
+  "hook": "Does anyone else trust a 96% match and then have nothing to say on the date? So I built a dating app with no compatibility score, on purpose.",
   "beats": [
     {
-      "line": "No photos sounds great until you really want to know.",
+      "line": "Every app gives you a number. 94% match. Nobody knows what it means.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So I built a dating app where you can peek at a photo for three seconds, three times a day.",
+      "line": "So I built a dating app with no compatibility score, on purpose.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So you can cheat, a little. Hold a card and the photo opens for about three seconds.",
-      "broll": "Peek: hold on Juniper (#deck, hold Space)",
+      "line": "On Align every card reads three things. Push is where you'll rub. Pull is what draws you in. Align is where it holds.",
+      "broll": "Card detail: Push / Pull / Align (#deck, Enter)",
       "onScreen": ""
     }
   ],
-  "cta": "Would you use your three peeks or save them? Tell me.",
-  "caption": "Hold to peek. Three seconds. Three a day.",
+  "cta": "Tell me your sign and I'll tell you where you'd rub.",
+  "caption": "Push, pull, align. No percentages.",
   "hashtags": [
+    "astrology",
     "datingapp",
-    "founder",
-    "buildinpublic"
+    "zodiac"
   ],
-  "lengthSec": 37,
+  "lengthSec": 35,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 71,
-    "craft": 64,
+    "total": 77,
+    "craft": 71,
     "fit": 100,
     "breakdown": [
       {
@@ -51,8 +51,10 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 20,
-        "hits": []
+        "score": 60,
+        "hits": [
+          "96%"
+        ]
       },
       {
         "key": "storyTension",
@@ -60,7 +62,7 @@
         "weight": 14,
         "score": 100,
         "hits": [
-          "until",
+          "then",
           "so i"
         ]
       },
@@ -68,7 +70,7 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 59,
+        "score": 62,
         "hits": [
           "i"
         ]
@@ -88,9 +90,10 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 60,
+        "score": 75,
         "hits": [
-          "save"
+          "three things",
+          "tell me your"
         ]
       },
       {
@@ -104,10 +107,8 @@
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 75,
-        "hits": [
-          "day."
-        ]
+        "score": 70,
+        "hits": []
       }
     ]
   }

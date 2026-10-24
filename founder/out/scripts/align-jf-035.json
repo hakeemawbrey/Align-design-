@@ -1,53 +1,53 @@
 {
   "id": "align-jf-035",
   "sourceId": "jf-035",
-  "title": "Release, don't haunt",
-  "angleKey": "release-dont-haunt",
+  "title": "A dating app that plays like a card game",
+  "angleKey": "trading-cards",
   "hookKey": "unpopular_opinion",
   "formatKey": "method_tutorial",
-  "hook": "Unpopular opinion: ghosting is a design problem.",
+  "hook": "Unpopular opinion: dating apps should feel like a game you want to play, not a chore you check.",
   "beats": [
     {
-      "line": "On Align, passing on someone is called release. Letting a card go is clean.",
-      "broll": "Swipe left to release (#deck)",
+      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
+      "broll": "Dealing: cards fly in (#dealing)",
       "onScreen": ""
     },
     {
-      "line": "After a match you have seven days to speak. If nobody does, the chat fades.",
+      "line": "Every match gives you a pack. Twelve cards, and the last one is always a sign card in the rare slot.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Release, not reject. And no chat sits open forever.",
-      "broll": "Reveal: Seven days to speak (#reveal)",
-      "onScreen": "release · 7 days to speak"
+      "line": "Myths, Gilded about one pack in five, Mythic about one in twenty-five. Each season prints a fixed run.",
+      "broll": "Pack opening: tear across the top",
+      "onScreen": "Gilded 1 in 5 · Mythic 1 in 25"
     },
     {
-      "line": "Letting go is clean. Ghosting isn't.",
-      "broll": "",
+      "line": "It feels like play. And that's why they come back.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "Release, don't haunt.",
+  "caption": "Every match gives you a pack. The last card is always a sign.",
   "hashtags": [
-    "ghosting",
+    "tradingcards",
     "datingapp",
-    "datingadvice"
+    "buildinpublic"
   ],
-  "lengthSec": 25,
+  "lengthSec": 37,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 66,
-    "craft": 59,
-    "fit": 94,
+    "total": 69,
+    "craft": 61,
+    "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 90,
+        "score": 70,
         "hits": [
           "unpopular opinion"
         ]
@@ -63,8 +63,11 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 30,
-        "hits": []
+        "score": 70,
+        "hits": [
+          "then",
+          "and that's why"
+        ]
       },
       {
         "key": "authenticity",
@@ -77,10 +80,10 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 66,
+        "score": 72,
         "hits": [
           "you",
-          "ghosting"
+          "dating apps"
         ]
       },
       {

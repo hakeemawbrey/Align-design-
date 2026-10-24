@@ -1,46 +1,46 @@
 {
   "id": "align-jf-019",
   "sourceId": "jf-019",
-  "title": "Every price is an angel number",
-  "angleKey": "pricing-angel-numbers",
+  "title": "Houston first: $15 for life",
+  "angleKey": "houston-beta",
   "hookKey": "built_that",
   "formatKey": "concept_explainer",
-  "hook": "I built a dating app where every price is an angel number.",
+  "hook": "I built a dating app launching one city at a time, starting in Houston.",
   "beats": [
     {
-      "line": "$9.99 reads as nine dollars because we read the first digit. Prices are read, not calculated.",
+      "line": "A network gets more valuable with every person on it, near you. A dating app with nobody nearby is worth nothing.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Every app costs $9.99. Nobody remembers $9.99.",
+      "line": "A dating app with no one near you is a dating app with no one.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Align's founding price is $88.88 a year, or $14.44 a month.",
-      "broll": "Paywall (#paywall)",
+      "line": "So Align launches city by city. Houston first, with partner venues like Agnes Cafe.",
+      "broll": "Houston skyline / venue",
       "onScreen": ""
     },
     {
-      "line": "If your audience notices numbers, make the numbers mean something.",
-      "broll": "",
+      "line": "Houston first. Then the next city earns it.",
+      "broll": "Club room (#club)",
       "onScreen": ""
     }
   ],
   "cta": "Which idea should I explain next?",
-  "caption": "$88.88 a year. On purpose.",
+  "caption": "Houston first. $15 once, Align+ for life.",
   "hashtags": [
-    "angelnumbers",
-    "1111",
-    "pricing"
+    "houston",
+    "houstonsingles",
+    "datingapp"
   ],
-  "lengthSec": 26,
+  "lengthSec": 32,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 73,
-    "craft": 66,
+    "total": 72,
+    "craft": 65,
     "fit": 100,
     "breakdown": [
       {
@@ -57,17 +57,17 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 90,
-        "hits": [
-          "$9.99"
-        ]
+        "score": 20,
+        "hits": []
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 30,
-        "hits": []
+        "score": 80,
+        "hits": [
+          "then"
+        ]
       },
       {
         "key": "authenticity",
@@ -82,9 +82,9 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 63,
+        "score": 76,
         "hits": [
-          "your",
+          "you",
           "dating app"
         ]
       },

@@ -1,38 +1,38 @@
 {
   "id": "align-jf-018",
   "sourceId": "jf-018",
-  "title": "Yes, you can block a whole sign",
-  "angleKey": "block-a-sign",
+  "title": "Demos die at 12%",
+  "angleKey": "founder-camp",
   "hookKey": "built_that",
   "formatKey": "mood_one_liner",
-  "hook": "So I built a dating app where you can block an entire zodiac sign.",
+  "hook": "So I built a 60-second demo of my dating app, and the one rule that saves it.",
   "beats": [
     {
-      "line": "It's a joke until it isn't. Then it's a filter.",
+      "line": "Bring a power bank. Demos die at 12%.",
       "broll": "Slow push-in at night, cinematic sound, text on screen",
       "onScreen": ""
     }
   ],
   "cta": "",
-  "caption": "Yes, you can block a whole sign.",
+  "caption": "The 60-second demo. Bring a power bank.",
   "hashtags": [
-    "zodiac",
-    "astrologymemes",
-    "datingapp"
+    "foundercamp",
+    "startup",
+    "pitch"
   ],
   "lengthSec": 12,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 70,
+    "total": 68,
     "craft": 62,
-    "fit": 100,
+    "fit": 94,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 90,
+        "score": 70,
         "hits": [
           "i built"
         ]
@@ -41,16 +41,17 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 20,
-        "hits": []
+        "score": 60,
+        "hits": [
+          "12%"
+        ]
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 100,
+        "score": 70,
         "hits": [
-          "until",
           "so i"
         ]
       },
@@ -58,7 +59,7 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 53,
+        "score": 76,
         "hits": [
           "i"
         ]
@@ -67,9 +68,8 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 63,
+        "score": 60,
         "hits": [
-          "you",
           "dating app"
         ]
       },

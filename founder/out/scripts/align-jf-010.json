@@ -1,64 +1,65 @@
 {
   "id": "align-jf-010",
   "sourceId": "jf-010",
-  "title": "Fifteen people a night, a new deal at 11:11",
-  "angleKey": "1111",
+  "title": "No compatibility score, on purpose",
+  "angleKey": "no-score",
   "hookKey": "unpopular_opinion",
   "formatKey": "insider_secrets",
-  "hook": "Unpopular opinion: infinite swiping is why nobody remembers anybody.",
+  "hook": "Unpopular opinion: a 94% match is made up.",
   "beats": [
     {
-      "line": "Infinite swiping makes everyone feel disposable. Including you.",
+      "line": "Every app gives you a number. 94% match. Nobody knows what it means.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "On Align you're dealt a hand. Free is fifteen people and three event cards a night.",
-      "broll": "Deck tracker: Draw 1/3 (#deck)",
+      "line": "On Align every card reads three things. Push is where you'll rub. Pull is what draws you in. Align is where it holds.",
+      "broll": "Card detail: Push / Pull / Align (#deck, Enter)",
       "onScreen": ""
     },
     {
-      "line": "When it's spent, it's spent. A new deal lands at 11:11.",
+      "line": "Each one says how strong it is, from slow burn to rare pull.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Less is the feature. You remember who you met.",
-      "broll": "Clock at 11:11",
+      "line": "The sky reads. It doesn't decide. You do.",
+      "broll": "",
       "onScreen": ""
     }
   ],
-  "cta": "Comment 11:11 if you'd wait for the deal.",
-  "caption": "Fifteen a night. A new deal at 11:11.",
+  "cta": "Tell me your sign and I'll tell you where you'd rub.",
+  "caption": "Push, pull, align. No percentages.",
   "hashtags": [
-    "1111",
+    "astrology",
     "datingapp",
-    "astrology"
+    "zodiac"
   ],
-  "lengthSec": 25,
+  "lengthSec": 31,
   "needsFacts": false,
   "notes": "",
   "score": {
     "total": 72,
-    "craft": 65,
-    "fit": 100,
+    "craft": 69,
+    "fit": 86,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 100,
+        "score": 90,
         "hits": [
-          "unpopular opinion",
-          "nobody"
+          "unpopular opinion"
         ]
       },
       {
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 50,
-        "hits": []
+        "score": 60,
+        "hits": [
+          "94%"
+        ]
       },
       {
         "key": "storyTension",
@@ -71,27 +72,29 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 30,
-        "hits": []
+        "score": 56,
+        "hits": [
+          "me"
+        ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 85,
+        "score": 78,
         "hits": [
-          "you",
-          "swiping",
-          "everyone"
+          "you"
         ]
       },
       {
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 65,
+        "score": 90,
         "hits": [
-          "unpopular opinion"
+          "three things",
+          "unpopular opinion",
+          "tell me your"
         ]
       },
       {

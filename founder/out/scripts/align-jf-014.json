@@ -1,64 +1,63 @@
 {
   "id": "align-jf-014",
   "sourceId": "jf-014",
-  "title": "Built with AI",
-  "angleKey": "built-with-ai",
+  "title": "Release, don't haunt",
+  "angleKey": "release-dont-haunt",
   "hookKey": "named_concept",
   "formatKey": "concept_explainer",
-  "hook": "Leverage. Here's how it shaped my dating app.",
+  "hook": "The Zeigarnik effect. Here's how it shaped my dating app.",
   "beats": [
     {
-      "line": "Leverage is getting more out than you put in. Code is leverage. Now one person can write it with an AI.",
+      "line": "Unfinished things stay stuck in your head. Being ghosted is an open loop that never closes.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "I'm not an engineer. A year ago an app like this meant hiring a team I couldn't pay.",
-      "broll": "Screen recording: the git log",
+      "line": "Ghosting happens because apps make it the easiest option.",
+      "broll": "",
       "onScreen": ""
     },
     {
-      "line": "I describe the screen, Claude writes the code, and I test it on my phone.",
-      "broll": "Screen recording: Claude Code writing a screen",
+      "line": "On Align, passing on someone is called release. Letting a card go is clean.",
+      "broll": "Swipe left to release (#deck)",
       "onScreen": ""
     },
     {
-      "line": "Taste is the job now. The code is the easy part.",
-      "broll": "App running on phone (#deck)",
+      "line": "Letting go is clean. Ghosting isn't.",
+      "broll": "",
       "onScreen": ""
     }
   ],
   "cta": "Which idea should I explain next?",
-  "caption": "One founder, one AI, one dating app. Every commit is in the history.",
+  "caption": "Release, don't haunt.",
   "hashtags": [
-    "buildinpublic",
-    "claudecode",
-    "founder",
-    "aiapps"
+    "ghosting",
+    "datingapp",
+    "datingadvice"
   ],
-  "lengthSec": 32,
+  "lengthSec": 25,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 62,
+    "total": 61,
     "craft": 53,
-    "fit": 100,
+    "fit": 94,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 70,
-        "hits": []
+        "score": 80,
+        "hits": [
+          "the"
+        ]
       },
       {
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 30,
-        "hits": [
-          "claude"
-        ]
+        "score": 20,
+        "hits": []
       },
       {
         "key": "storyTension",
@@ -71,10 +70,9 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 68,
+        "score": 56,
         "hits": [
-          "my",
-          "leverage"
+          "my"
         ]
       },
       {
@@ -83,7 +81,7 @@
         "weight": 12,
         "score": 63,
         "hits": [
-          "you",
+          "your",
           "dating app"
         ]
       },
@@ -91,9 +89,10 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 60,
+        "score": 70,
         "hits": [
-          "?"
+          "?",
+          "loop"
         ]
       },
       {
@@ -107,11 +106,8 @@
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 85,
-        "hits": [
-          "ai",
-          "part."
-        ]
+        "score": 70,
+        "hits": []
       }
     ]
   }

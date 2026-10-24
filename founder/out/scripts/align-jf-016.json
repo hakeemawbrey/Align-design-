@@ -1,38 +1,38 @@
 {
   "id": "align-jf-016",
   "sourceId": "jf-016",
-  "title": "Three peeks, three seconds",
-  "angleKey": "peek",
+  "title": "Every price is an angel number",
+  "angleKey": "pricing-angel-numbers",
   "hookKey": "built_that",
   "formatKey": "mood_one_liner",
-  "hook": "So I built a dating app where you can peek at a photo for three seconds, three times a day.",
+  "hook": "So I built a dating app where every price is an angel number.",
   "beats": [
     {
-      "line": "A rule you can break three times is more fun than no rule at all.",
+      "line": "If your audience notices numbers, make the numbers mean something.",
       "broll": "Slow push-in at night, cinematic sound, text on screen",
       "onScreen": ""
     }
   ],
   "cta": "",
-  "caption": "Hold to peek. Three seconds. Three a day.",
+  "caption": "$88.88 a year. On purpose.",
   "hashtags": [
-    "datingapp",
-    "founder",
-    "buildinpublic"
+    "angelnumbers",
+    "1111",
+    "pricing"
   ],
-  "lengthSec": 15,
+  "lengthSec": 12,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 64,
-    "craft": 56,
+    "total": 65,
+    "craft": 58,
     "fit": 94,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 70,
+        "score": 90,
         "hits": [
           "i built"
         ]
@@ -66,9 +66,9 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 66,
+        "score": 63,
         "hits": [
-          "you",
+          "your",
           "dating app"
         ]
       },
@@ -76,7 +76,7 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 70,
+        "score": 50,
         "hits": []
       },
       {
@@ -90,10 +90,8 @@
         "key": "trendFit",
         "label": "Trend and format fit",
         "weight": 7,
-        "score": 75,
-        "hits": [
-          "day."
-        ]
+        "score": 70,
+        "hits": []
       }
     ]
   }

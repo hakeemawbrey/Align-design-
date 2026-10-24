@@ -1,11 +1,11 @@
 {
   "id": "align-hhp-019",
   "sourceId": "hhp-019",
-  "title": "The app you keep after you find someone",
-  "angleKey": "churn-hedge",
+  "title": "The bar pays, not you",
+  "angleKey": "venues-pay",
   "hookKey": "reply_hater",
   "formatKey": "reply_to_hate",
-  "hook": "Someone commented \"dating apps only make money by keeping you single.\" So I'll show you.",
+  "hook": "Someone commented \"no one will ever pay for a dating app.\" So I'll show you.",
   "beats": [
     {
       "line": "Fair question. Here's how it actually works.",
@@ -13,42 +13,44 @@
       "onScreen": ""
     },
     {
-      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
-      "broll": "Binder (#collection)",
+      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
+      "broll": "Chat: place card, Agnes Cafe (#chat)",
       "onScreen": ""
     },
     {
-      "line": "Subscribers get a starter box, then three real packs every season.",
-      "broll": "Physical card pack on a table",
-      "onScreen": "starter box + 3 packs a season"
+      "line": "And the venue pays us for the date. Not you.",
+      "broll": "Check in screen",
+      "onScreen": "the venue pays, not you"
     },
     {
-      "line": "It's a bet. Ask me in a year if it paid off.",
+      "line": "It only works city by city. We're starting in Houston.",
       "broll": "",
       "onScreen": ""
     }
   ],
-  "cta": "Would you keep collecting after you met someone? Be honest.",
-  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
+  "cta": "Houston, tell me where your first date should be.",
+  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
   "hashtags": [
-    "startup",
-    "businessmodel",
-    "buildinpublic"
+    "houston",
+    "datingapp",
+    "businessmodel"
   ],
-  "lengthSec": 29,
+  "lengthSec": 30,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 70,
-    "craft": 63,
+    "total": 69,
+    "craft": 61,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 50,
-        "hits": []
+        "score": 70,
+        "hits": [
+          "no one"
+        ]
       },
       {
         "key": "specificity",
@@ -61,11 +63,9 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 100,
+        "score": 70,
         "hits": [
-          "then",
-          "so i",
-          "bet."
+          "so i"
         ]
       },
       {
@@ -81,11 +81,10 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 100,
+        "score": 82,
         "hits": [
           "you",
-          "be honest",
-          "dating apps"
+          "dating app"
         ]
       },
       {

@@ -1,0 +1,122 @@
+{
+  "id": "align-jf-065",
+  "sourceId": "jf-065",
+  "title": "What's real and what's still fake",
+  "angleKey": "whats-real",
+  "hookKey": "built_that",
+  "formatKey": "concept_explainer",
+  "hook": "I built a dating app, and I'm going to show you exactly what's real and what's still fake.",
+  "beats": [
+    {
+      "line": "People who admit a flaw come across as more likable, not less. Say what's fake and they trust the rest.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Every demo looks finished. Almost none of them are.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Real today: the app, the iPhone build, accounts, swipes, matches, live chat, and the chart math.",
+      "broll": "Two phones side by side matching",
+      "onScreen": ""
+    },
+    {
+      "line": "Next is the real dealing algorithm, verification and push notifications.",
+      "broll": "GitHub issues / roadmap",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Which idea should I explain next?",
+  "caption": "What's real, what's seeded, what's next.",
+  "hashtags": [
+    "buildinpublic",
+    "startup",
+    "founder"
+  ],
+  "lengthSec": 32,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 67,
+    "craft": 59,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 80,
+        "hits": [
+          "i",
+          "i built"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 40,
+        "hits": [
+          "exactly",
+          "chart"
+        ]
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 50,
+        "hits": [
+          "almost"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 69,
+        "hits": [
+          "i",
+          "admit"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 63,
+        "hits": [
+          "you",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 60,
+        "hits": [
+          "?"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 75,
+        "hits": [
+          "build,"
+        ]
+      }
+    ]
+  }
+}

@@ -1,46 +1,46 @@
 {
   "id": "align-hhp-013",
   "sourceId": "hhp-013",
-  "title": "The app you keep after you find someone",
-  "angleKey": "churn-hedge",
+  "title": "The bar pays, not you",
+  "angleKey": "venues-pay",
   "hookKey": "built_with_ai",
   "formatKey": "method_tutorial",
-  "hook": "I built a dating app people keep after they find someone, and an AI wrote the code.",
+  "hook": "I built a dating app where the bar pays for your date, not you, and an AI wrote the code.",
   "beats": [
     {
-      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
-      "broll": "Binder (#collection)",
+      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
+      "broll": "Chat: place card, Agnes Cafe (#chat)",
       "onScreen": ""
     },
     {
-      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
+      "line": "Check in at a partner venue and you both get a card you can only get there.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "Subscribers get a starter box, then three real packs every season.",
-      "broll": "Physical card pack on a table",
-      "onScreen": "starter box + 3 packs a season"
+      "line": "And the venue pays us for the date. Not you.",
+      "broll": "Check in screen",
+      "onScreen": "the venue pays, not you"
     },
     {
-      "line": "The goal is an app you don't have to leave when it works.",
-      "broll": "Couple playing a talk card",
+      "line": "Everybody wins when the date actually happens. That's the business.",
+      "broll": "Houston venue exterior",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
+  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
   "hashtags": [
-    "startup",
-    "businessmodel",
-    "buildinpublic"
+    "houston",
+    "datingapp",
+    "businessmodel"
   ],
-  "lengthSec": 32,
+  "lengthSec": 36,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 72,
-    "craft": 65,
+    "total": 66,
+    "craft": 58,
     "fit": 100,
     "breakdown": [
       {
@@ -64,26 +64,23 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 80,
-        "hits": [
-          "then"
-        ]
+        "score": 30,
+        "hits": []
       },
       {
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 36,
+        "score": 33,
         "hits": [
-          "i",
-          "don't"
+          "i"
         ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 75,
+        "score": 78,
         "hits": [
           "your",
           "dating app"

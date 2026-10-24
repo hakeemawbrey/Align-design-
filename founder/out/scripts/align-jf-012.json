@@ -1,11 +1,11 @@
 {
   "id": "align-jf-012",
   "sourceId": "jf-012",
-  "title": "No compatibility score, on purpose",
-  "angleKey": "no-score",
+  "title": "A dating app that plays like a card game",
+  "angleKey": "trading-cards",
   "hookKey": "reply_hater",
   "formatKey": "reply_to_hate",
-  "hook": "Someone commented \"astrology dating is just made-up compatibility.\" So I'll show you.",
+  "hook": "Someone commented \"turning dating into a card game is childish.\" So I'll show you.",
   "beats": [
     {
       "line": "Fair question. Here's how it actually works.",
@@ -13,34 +13,34 @@
       "onScreen": ""
     },
     {
-      "line": "On Align every card reads three things. Push is where you'll rub. Pull is what draws you in. Align is where it holds.",
-      "broll": "Card detail: Push / Pull / Align (#deck, Enter)",
+      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
+      "broll": "Dealing: cards fly in (#dealing)",
       "onScreen": ""
     },
     {
-      "line": "There's no score anywhere in the app. That's a design rule, not a missing feature.",
-      "broll": "Cosmic alignment tabs (#alignment)",
-      "onScreen": "no score, by design"
+      "line": "Myths, Gilded about one pack in five, Mythic about one in twenty-five. Each season prints a fixed run.",
+      "broll": "Pack opening: tear across the top",
+      "onScreen": "Gilded 1 in 5 · Mythic 1 in 25"
     },
     {
-      "line": "I know some people want the number. I'd rather tell you the truth than a percentage.",
+      "line": "People are never in a pack. You collect signs and questions, not humans.",
       "broll": "",
       "onScreen": ""
     }
   ],
-  "cta": "Tell me your sign and I'll tell you where you'd rub.",
-  "caption": "Push, pull, align. No percentages.",
+  "cta": "Comment which card you'd want to pull first.",
+  "caption": "Every match gives you a pack. The last card is always a sign.",
   "hashtags": [
-    "astrology",
+    "tradingcards",
     "datingapp",
-    "zodiac"
+    "buildinpublic"
   ],
-  "lengthSec": 34,
+  "lengthSec": 31,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 74,
-    "craft": 67,
+    "total": 70,
+    "craft": 63,
     "fit": 100,
     "breakdown": [
       {
@@ -61,8 +61,9 @@
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 70,
+        "score": 100,
         "hits": [
+          "then",
           "so i"
         ]
       },
@@ -70,7 +71,7 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 85,
+        "score": 33,
         "hits": [
           "i"
         ]
@@ -79,7 +80,7 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 78,
+        "score": 59,
         "hits": [
           "you"
         ]
@@ -88,18 +89,19 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 75,
+        "score": 60,
         "hits": [
-          "three things",
-          "tell me your"
+          "comment which"
         ]
       },
       {
         "key": "cta",
         "label": "CTA clarity and softness",
         "weight": 8,
-        "score": 70,
-        "hits": []
+        "score": 90,
+        "hits": [
+          "comment which"
+        ]
       },
       {
         "key": "trendFit",

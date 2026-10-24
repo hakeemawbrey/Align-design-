@@ -1,41 +1,41 @@
 {
   "id": "align-hhp-027",
   "sourceId": "hhp-027",
-  "title": "Every price is an angel number",
-  "angleKey": "pricing-angel-numbers",
+  "title": "The app you keep after you find someone",
+  "angleKey": "churn-hedge",
   "hookKey": "named_method",
   "formatKey": "method_tutorial",
-  "hook": "This is the angel-number method: why every price in my app is an angel number.",
+  "hook": "This is the keep-the-cards method: why my dating app doesn't lose you when it works.",
   "beats": [
     {
-      "line": "Align's founding price is $88.88 a year, or $14.44 a month.",
-      "broll": "Paywall (#paywall)",
+      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
+      "broll": "Binder (#collection)",
       "onScreen": ""
     },
     {
-      "line": "The deal lands at 11:11. The founders cards stop at 1,111.",
+      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "$88.88 a year. $14.44 a month. 1,111 founders cards. A new deal at 11:11.",
-      "broll": "Founding member card (#founding)",
-      "onScreen": "$88.88 · $14.44 · 1,111 · 11:11"
+      "line": "Subscribers get a starter box, then three real packs every season.",
+      "broll": "Physical card pack on a table",
+      "onScreen": "starter box + 3 packs a season"
     },
     {
-      "line": "If your audience notices numbers, make the numbers mean something.",
-      "broll": "",
+      "line": "The goal is an app you don't have to leave when it works.",
+      "broll": "Couple playing a talk card",
       "onScreen": ""
     }
   ],
   "cta": "Save this and try it on your next deal.",
-  "caption": "$88.88 a year. On purpose.",
+  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
   "hashtags": [
-    "angelnumbers",
-    "1111",
-    "pricing"
+    "startup",
+    "businessmodel",
+    "buildinpublic"
   ],
-  "lengthSec": 29,
+  "lengthSec": 31,
   "needsFacts": false,
   "notes": "",
   "score": {
@@ -56,34 +56,36 @@
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 90,
-        "hits": [
-          "$88.88"
-        ]
+        "score": 20,
+        "hits": []
       },
       {
         "key": "storyTension",
         "label": "Story tension and payoff",
         "weight": 14,
-        "score": 30,
-        "hits": []
+        "score": 80,
+        "hits": [
+          "then"
+        ]
       },
       {
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 33,
+        "score": 36,
         "hits": [
-          "my"
+          "my",
+          "don't"
         ]
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 56,
+        "score": 78,
         "hits": [
-          "your"
+          "you",
+          "dating app"
         ]
       },
       {
