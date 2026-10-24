@@ -1,9 +1,9 @@
-// STUB — replaced by the htxonesky agent. Export DURATION, SCENES and CUES.
-import { el } from '../../../src/lib.js'
+// htxonesky · "Every culture. Every language. One city." (30 s vertical Align ad). Story 0–25.6 (film.js), then the shared END CARD.
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { build, CUES as FILM_CUES } from './film.js'
 export const DURATION = 30
-export const CUES = [...endcardCues(DURATION - ENDCARD_LEN)]
+export const CUES = [...FILM_CUES, ...endcardCues(DURATION - ENDCARD_LEN)]
 export const SCENES = [
-  async (stage) => ({ start: 0, end: DURATION - ENDCARD_LEN + 0.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'htxonesky'), update() {} }),
+  build,
   (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN }),
 ]
