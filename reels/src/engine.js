@@ -64,12 +64,12 @@ const SKIES = {
 }
 // Ridge colours per sky, far → near. Collage-bright, like cut-out prints.
 const RIDGES = {
-  night: ['#2b3a72', '#1d6a78', '#123848', '#0a1a26'],
-  dusk: ['#8a5a9a', '#5a3a7a', '#a8486a', '#2a1630'],
-  teal: ['#7ab890', '#2f8a6e', '#c24a5a', '#0e3a34'],
-  ember: ['#c8644a', '#8a2a2a', '#5a3a2a', '#1e0c0c'],
-  dawn: ['#a0a8c8', '#7a8ab0', '#4a6a5a', '#1a2a2a'],
-  violet: ['#7a4aa8', '#c04a8a', '#3a2a6a', '#140a24'],
+  night: ['#5a6690', '#3e6a74', '#2b3a52', '#14182a'],
+  dusk: ['#a27a98', '#7a5a82', '#b8707a', '#2b2a3a'],
+  teal: ['#9ab8a0', '#6f8c7e', '#b8707a', '#1e3a36'],
+  ember: ['#c88a6a', '#9a4a3e', '#6a4a3a', '#24141a'],
+  dawn: ['#b4b8cc', '#8a96b4', '#6a7e70', '#26302e'],
+  violet: ['#8a6aa8', '#b8709a', '#4a3a72', '#1a1028'],
 }
 
 let SIGN = '#f39a3a'
@@ -228,7 +228,7 @@ function makeBody(type, r, seed) {
     g.fillRect(cx - r, cy - r, r * 2, r * 2)
   }
 
-  if (type === 'moon' || type === 'crescent') {
+  if (type === 'moon') {
     glow([255, 250, 235], 1.55, 0.16)
     disc(() => {
       const grd = g.createRadialGradient(cx - r * 0.2, cy - r * 0.2, 0, cx, cy, r)
@@ -240,20 +240,31 @@ function makeBody(type, r, seed) {
       blotches(60, [[90, 90, 100], [255, 255, 255]], 0.02, 0.08, 0.15, 0.4)
       shade(-0.3, -0.3, 0.45)
     })
-    if (type === 'crescent') {
-      g.save()
-      g.globalCompositeOperation = 'destination-out'
-      g.filter = `blur(${r * 0.04}px)`
-      g.beginPath()
-      g.arc(cx + r * 0.42, cy - r * 0.18, r * 0.96, 0, Math.PI * 2)
-      g.fill()
-      g.restore()
-      g.save()
-      g.globalCompositeOperation = 'source-atop'
-      g.fillStyle = css(tint([255, 190, 120], 0.3), 0.55)
-      g.fillRect(0, 0, size, size)
-      g.restore()
-    }
+  } else if (type === 'crescent') {
+    // A lit sliver with a faint earthshine disc, glowing only where it's lit.
+    const lit = layer(size, size)
+    const lg = lit.getContext('2d')
+    lg.beginPath()
+    lg.arc(cx, cy, r, 0, Math.PI * 2)
+    const grd = lg.createRadialGradient(cx - r * 0.4, cy, 0, cx, cy, r)
+    grd.addColorStop(0, '#fff6e2')
+    grd.addColorStop(1, css(tint([240, 200, 150], 0.25)))
+    lg.fillStyle = grd
+    lg.fill()
+    lg.globalCompositeOperation = 'destination-out'
+    lg.beginPath()
+    lg.arc(cx + r * 0.38, cy - r * 0.16, r * 0.92, 0, Math.PI * 2)
+    lg.fill()
+    g.fillStyle = 'rgba(150,160,200,0.10)'
+    g.beginPath()
+    g.arc(cx, cy, r, 0, Math.PI * 2)
+    g.fill()
+    g.save()
+    g.shadowColor = css(tint([255, 214, 160], 0.2), 0.8)
+    g.shadowBlur = r * 0.5
+    g.drawImage(lit, 0, 0)
+    g.restore()
+    g.drawImage(lit, 0, 0)
   } else if (type === 'ringed') {
     const cols = ['#e9d6a6', '#c9a46a', '#f1e4c0', '#a9824e', '#dcc08a'].map((c) => tint(c, 0.1))
     const ring = (front) => {
@@ -340,7 +351,7 @@ function ridgeLine(seed, base, amp, rough = 0.55, steps = 256) {
     a *= rough
     step = half
   }
-  return pts.map((v) => base - Math.abs(v) * 0.6 - v * 0.4)
+  return pts.map((v) => base - Math.abs(v) * 0.9 - Math.max(0, v) * 0.5)
 }
 function fillRidge(g, pts, col, opts = {}) {
   const steps = pts.length - 1
@@ -351,6 +362,13 @@ function fillRidge(g, pts, col, opts = {}) {
   pts.forEach((y, i) => g.lineTo((i / steps) * (W + 40) - 20, y))
   g.lineTo(W + 20, H + 20)
   g.closePath()
+  g.save()
+  g.shadowColor = 'rgba(0,0,8,0.45)'
+  g.shadowBlur = 22
+  g.shadowOffsetY = -6
+  g.fillStyle = css(col)
+  g.fill()
+  g.restore()
   g.clip()
   const grd = g.createLinearGradient(0, top, 0, top + (opts.depth ?? 500))
   grd.addColorStop(0, css(mix(col, '#ffffff', opts.light ?? 0.28)))
@@ -373,24 +391,43 @@ function fillRidge(g, pts, col, opts = {}) {
   }
   g.restore()
 }
-// Puffy white clouds tucked between cut-out ridges, in a few clumps.
+// Cut-paper clouds: two or three solid off-white clumps with a warm
+// underside and a soft drop shadow, at different heights, never edge to edge.
 function cloudBand(g, y, seed, a = 0.85) {
   const r = rng(seed)
-  const clumps = 3 + Math.floor(r() * 3)
+  const clumps = 2 + Math.floor(r() * 2)
   for (let c = 0; c < clumps; c++) {
-    const cx = (c + 0.2 + r() * 0.6) * (W / clumps), cw = 140 + r() * 200
-    for (let i = 0; i < 26; i++) {
-      const x = cx + (r() - 0.5) * cw * 2, s = 22 + r() * 46
-      const yy = y - Math.abs(Math.sin(((x - cx) / cw) * 1.4)) * -10 - r() * 34 * (1 - Math.abs(x - cx) / (cw * 1.2))
-      const grd = g.createRadialGradient(x - s * 0.3, yy - s * 0.4, s * 0.1, x, yy, s)
-      grd.addColorStop(0, `rgba(255,253,250,${a})`)
-      grd.addColorStop(0.65, `rgba(236,236,244,${a * 0.85})`)
-      grd.addColorStop(1, 'rgba(220,222,236,0)')
-      g.fillStyle = grd
-      g.beginPath()
-      g.arc(x, yy, s, 0, Math.PI * 2)
-      g.fill()
+    const cx = (c + 0.15 + r() * 0.7) * (W / clumps)
+    const cy = y + (r() - 0.5) * 70
+    const cw = 120 + r() * 170
+    const puffs = []
+    for (let i = 0; i < 9; i++) {
+      const k = i / 8 - 0.5
+      puffs.push([cx + k * cw * 2 + (r() - 0.5) * 20, cy - (1 - Math.abs(k) * 2) * (30 + r() * 30), 26 + (1 - Math.abs(k) * 1.6) * 36 * (0.7 + r() * 0.5)])
     }
+    const shape = () => {
+      g.beginPath()
+      for (const [x, yy, s] of puffs) { g.moveTo(x + s, yy); g.arc(x, yy, s, 0, Math.PI * 2) }
+      g.rect(cx - cw - 26, cy - 4, cw * 2 + 52, 18)
+    }
+    g.save()
+    g.globalAlpha = a
+    g.shadowColor = 'rgba(0,0,10,0.35)'
+    g.shadowBlur = 18
+    g.shadowOffsetY = 8
+    shape()
+    g.fillStyle = '#ede4d3'
+    g.fill()
+    g.shadowColor = 'transparent'
+    shape()
+    g.clip()
+    const under = g.createLinearGradient(0, cy - 60, 0, cy + 16)
+    under.addColorStop(0, 'rgba(255,252,244,0.6)')
+    under.addColorStop(0.6, 'rgba(255,252,244,0)')
+    under.addColorStop(1, css(tint([232, 168, 140], 0.2), 0.7))
+    g.fillStyle = under
+    g.fillRect(cx - cw - 80, cy - 140, cw * 2 + 160, 170)
+    g.restore()
   }
 }
 function mountains(g, sky, seed, horizon, count = 3, clouds = true) {
@@ -398,7 +435,7 @@ function mountains(g, sky, seed, horizon, count = 3, clouds = true) {
   const span = H - horizon
   for (let i = 0; i < count; i++) {
     const base = horizon + span * (i / count) * 0.55 + 40
-    const amp = 340 - i * 60
+    const amp = 620 - i * 130
     fillRidge(g, ridgeLine(seed + i * 31, base, amp, 0.52 + i * 0.03), cols[i + (4 - count)] ?? cols[i], { depth: 420 + i * 120 })
     if (clouds && i < count - 1 && i % 2 === 0) cloudBand(g, base + 60, seed + i)
   }
@@ -424,38 +461,71 @@ function road(g, horizon, seed, opts = {}) {
       g.fill()
     }
   }
+  const dirt = !!opts.dirt
+  const bwk = dirt ? 0.55 : 1
   g.save()
   g.beginPath()
-  g.moveTo(vx - 6, horizon)
-  g.lineTo(vx + 6, horizon)
-  g.lineTo(W / 2 + bw / 2, H)
-  g.lineTo(W / 2 - bw / 2, H)
+  g.moveTo(vx - 4, horizon)
+  g.lineTo(vx + 4, horizon)
+  g.lineTo(W / 2 + (bw * bwk) / 2, H)
+  g.lineTo(W / 2 - (bw * bwk) / 2, H)
   g.closePath()
   const grd = g.createLinearGradient(0, horizon, 0, H)
-  grd.addColorStop(0, css(mix(asph, '#9aa0b0', 0.4)))
-  grd.addColorStop(1, css(asph))
+  if (dirt) {
+    grd.addColorStop(0, css(tint([170, 140, 110], 0.1)))
+    grd.addColorStop(1, css(tint([96, 70, 50], 0.1)))
+  } else {
+    grd.addColorStop(0, css(mix(asph, '#9aa0b0', 0.4)))
+    grd.addColorStop(1, css(asph))
+  }
   g.fillStyle = grd
   g.fill()
   g.clip()
-  // Asphalt speckle.
+  // Speckle: gravel on asphalt, ruts and pebbles on dirt.
   const r = rng(seed)
   for (let i = 0; i < 2600; i++) {
     const y = horizon + Math.pow(r(), 0.7) * (H - horizon)
-    g.fillStyle = `rgba(${r() > 0.5 ? 255 : 0},${r() > 0.5 ? 255 : 0},${r() > 0.5 ? 255 : 0},0.06)`
+    const v = r() > 0.5 ? 255 : 0
+    g.fillStyle = `rgba(${v},${v},${v},${dirt ? 0.1 : 0.06})`
     g.fillRect(r() * W, y, 2, 2)
   }
   g.restore()
-  // Edge lines.
-  g.strokeStyle = 'rgba(240,236,226,0.75)'
-  for (const side of [-1, 1]) {
-    g.lineWidth = 6
-    g.beginPath()
-    g.moveTo(vx + side * 4, horizon)
-    g.lineTo(W / 2 + side * bw * 0.42, H)
-    g.stroke()
+  if (!dirt) {
+    // Edge lines.
+    g.strokeStyle = 'rgba(240,236,226,0.75)'
+    for (const side of [-1, 1]) {
+      g.lineWidth = 6
+      g.beginPath()
+      g.moveTo(vx + side * 4, horizon)
+      g.lineTo(W / 2 + side * bw * 0.42, H)
+      g.stroke()
+    }
+  }
+  if (opts.poles) {
+    // Telephone poles marching to the horizon on one side, wire sagging between.
+    const side = r() > 0.5 ? 1 : -1
+    let prev = null
+    for (let i = 0; i < 7; i++) {
+      const k = Math.pow(1 - i / 7, 2.2)
+      const bx = lerp(vx, W / 2 + side * bw * 0.62, k), by = lerp(horizon, H, k)
+      const h = lerp(14, 900, k), w = lerp(1, 16, k)
+      g.fillStyle = css(tint([28, 22, 26], 0.1))
+      g.fillRect(bx - w / 2, by - h, w, h)
+      g.fillRect(bx - w * 4, by - h * 0.94, w * 8, w * 0.8)
+      if (prev) {
+        g.strokeStyle = 'rgba(20,16,20,0.55)'
+        g.lineWidth = Math.max(1, w * 0.12)
+        g.beginPath()
+        g.moveTo(prev[0], prev[1])
+        g.quadraticCurveTo((prev[0] + bx) / 2, Math.max(prev[1], by - h * 0.92) + h * 0.06, bx, by - h * 0.92)
+        g.stroke()
+      }
+      prev = [bx, by - h * 0.92]
+    }
   }
 }
-// Centre dashes scroll toward the viewer, so it feels like driving.
+// Each road scene gets its own vanishing point, so roads don't all look alike.
+const ROADVX = (seed) => 0.36 + rng(seed + 41)() * 0.28
 function roadDashes(g, horizon, t, vx = 0.5) {
   const x0 = W * vx
   const col = 'rgba(246,206,74,0.9)'
@@ -523,7 +593,7 @@ const BUILD = {
     const stars = twinklers(seed + 1, 40, 0, H)
     return {
       layers,
-      live: (g, t, p) => { drawTwinkle(g, stars, t, 0.9); comet(g, seed, t) },
+      back: (g, t) => { drawTwinkle(g, stars, t, 0.9); comet(g, seed, t) },
       textY: body === 'none' ? H * 0.46 : H * 0.53,
     }
   },
@@ -534,13 +604,13 @@ const BUILD = {
     paintStars(sky.getContext('2d'), seed, 500, 0, horizon, 0.7)
     texture(sky, 0.3)
     mountains(land.getContext('2d'), s.sky ?? 'night', seed, horizon, 3)
-    if (s.road) road(land.getContext('2d'), H * 0.78, seed)
+    if (s.road) road(land.getContext('2d'), H * 0.78, seed, { vx: ROADVX(seed) })
     texture(land, 0.5)
     const layers = [{ canvas: sky, depth: 0 }]
     if ((s.body ?? 'moon') !== 'none') layers.push(bodyLayer(s.body ?? 'moon', 150, W * 0.5, H * 0.2, seed, 0.4))
     layers.push({ canvas: land, depth: 1 })
     const stars = twinklers(seed + 2, 18, 0, horizon * 0.8)
-    return { layers, live: (g, t) => { drawTwinkle(g, stars, t, 0.6); if (s.road) roadDashes(g, H * 0.78, t) }, textY: H * 0.37 }
+    return { layers, back: (g, t) => drawTwinkle(g, stars, t, 0.6), live: (g, t) => { if (s.road) roadDashes(g, H * 0.78, t, ROADVX(seed)) }, textY: H * 0.37 }
   },
   road(s, seed) {
     const horizon = H * 0.6
@@ -551,51 +621,70 @@ const BUILD = {
     texture(sky, 0.3)
     const lg = land.getContext('2d')
     const cols = (RIDGES[s.sky] ?? RIDGES.dusk).map((c) => tint(c, 0.12))
-    fillRidge(lg, ridgeLine(seed + 9, horizon - 60, 520, 0.5), cols[0], { depth: 400 })
+    fillRidge(lg, ridgeLine(seed + 9, horizon - 30, 360, 0.5), cols[0], { depth: 400 })
     fillRidge(lg, ridgeLine(seed, horizon + 10, 260, 0.52), cols[1], { depth: 300 })
     fillRidge(lg, ridgeLine(seed + 3, horizon + 40, 120, 0.55), cols[3], { depth: 600, light: 0.12 })
-    road(lg, horizon, seed)
+    road(lg, horizon, seed, { vx: ROADVX(seed), poles: true })
     texture(land, 0.5)
     const layers = [{ canvas: sky, depth: 0 }]
     if ((s.body ?? 'moon') !== 'none') layers.push(bodyLayer(s.body ?? 'moon', 120, W * 0.5, H * 0.22, seed, 0.35))
     layers.push({ canvas: land, depth: 1 })
-    return { layers, live: (g, t) => roadDashes(g, horizon, t), textY: H * 0.4 }
+    return { layers, live: (g, t) => roadDashes(g, horizon, t, ROADVX(seed)), textY: H * 0.4 }
   },
   lake(s, seed) {
     const horizon = H * 0.58
+    const sky = s.sky ?? 'night'
+    const body = s.body ?? 'moon'
+    // Sky, ridges, then the whole top half mirrored into the water. The body is
+    // its own layer between sky and land, so it hides behind peaks and its
+    // reflection is the shimmer column drawn live, not a second disc.
     const top = layer()
     const g = top.getContext('2d')
-    paintSky(g, s.sky ?? 'night', 0.58)
+    paintSky(g, sky, 0.58)
     paintStars(g, seed, 500, 0, horizon, 0.7)
-    const body = s.body ?? 'moon'
-    if (body !== 'none') {
-      const b = makeBody(body, 110, seed)
-      g.drawImage(b, W * 0.62 - b.width / 2, H * 0.24 - b.height / 2)
-    }
-    const cols = (RIDGES[s.sky] ?? RIDGES.night).map((c) => tint(c, 0.12))
-    fillRidge(g, ridgeLine(seed, horizon - 120, 620, 0.5), cols[0], { depth: 500 })
-    cloudBand(g, horizon - 70, seed, 0.7)
-    fillRidge(g, ridgeLine(seed + 7, horizon - 20, 300, 0.56), cols[2], { depth: 300 })
-    texture(top, 0.4)
-    // Mirror the top half into the water, darker and tinted.
-    const full = layer()
-    const f = full.getContext('2d')
-    f.drawImage(top, 0, 0, W, horizon, 0, 0, W, horizon)
+    texture(top, 0.3)
+    const ridges = layer()
+    const rg = ridges.getContext('2d')
+    const cols = (RIDGES[sky] ?? RIDGES.night).map((c) => tint(c, 0.12))
+    fillRidge(rg, ridgeLine(seed, horizon - 40, 820, 0.5), cols[0], { depth: 500 })
+    cloudBand(rg, horizon - 70, seed, 0.7)
+    fillRidge(rg, ridgeLine(seed + 7, horizon - 20, 300, 0.56), cols[2], { depth: 300 })
+    rg.clearRect(0, horizon, W, H - horizon)
+    texture(ridges, 0.4)
+    const land = layer()
+    const f = land.getContext('2d')
+    f.drawImage(ridges, 0, 0)
     f.save()
     f.translate(0, horizon * 2)
     f.scale(1, -1)
-    f.globalAlpha = 0.75
+    f.globalAlpha = 0.8
     f.drawImage(top, 0, 0, W, horizon, 0, 0, W, horizon)
+    f.drawImage(ridges, 0, 0, W, horizon, 0, 0, W, horizon)
     f.restore()
     const wg = f.createLinearGradient(0, horizon, 0, H)
     wg.addColorStop(0, css(tint([20, 60, 90], 0.15), 0.35))
-    wg.addColorStop(1, css(tint([4, 10, 24], 0.1), 0.85))
+    wg.addColorStop(1, css(tint([4, 10, 24], 0.1), 0.9))
     f.fillStyle = wg
     f.fillRect(0, horizon, W, H - horizon)
+    const layers = [{ canvas: top, depth: 0 }]
+    if (body !== 'none') layers.push(bodyLayer(body, 110, W * 0.62, H * 0.2, seed, 0.3))
+    layers.push({ canvas: land, depth: 0.5 })
     return {
-      layers: [{ canvas: full, depth: 0.5 }],
-      live: (g, t) => shimmer(g, horizon, t, seed),
-      textY: H * 0.44,
+      layers,
+      live: (gg, t, p, bodyA = 1) => {
+        shimmer(gg, horizon, t, seed)
+        if (body === 'none') return
+        // Light on the water under the body, breaking up and gone by y≈1450.
+        const r = rng(seed + 3)
+        for (let i = 0; i < 26; i++) {
+          const k = i / 26
+          const y = horizon + 14 + k * (1450 - horizon - 14)
+          const w = lerp(90, 20, k) * (0.5 + r()) * (0.7 + 0.3 * Math.sin(t * 2.2 + i))
+          gg.fillStyle = `rgba(255,248,226,${(1 - k) * 0.45 * bodyA})`
+          gg.fillRect(W * 0.62 - w / 2 + (r() - 0.5) * 20, y, w, 3 + (1 - k) * 3)
+        }
+      },
+      textY: H * 0.31,
     }
   },
   arch(s, seed) {
@@ -613,7 +702,7 @@ const BUILD = {
     paintStars(ig, seed + 5, 300, 0, horizon, 0.7)
     if ((s.body ?? 'moon') !== 'none') {
       const b = makeBody(s.body ?? 'moon', 70, seed)
-      ig.drawImage(b, W / 2 - b.width / 2, H * 0.27 - b.height / 2)
+      ig.drawImage(b, W / 2 + 60 - b.width / 2, H * 0.39 - b.height / 2)
     }
     mountains(ig, s.sky ?? 'violet', seed, horizon, 3)
     texture(inner, 0.5)
@@ -645,8 +734,23 @@ const BUILD = {
         gg.translate(-W / 2, -(ay + ah * 0.6) + (H * 0.5 - (ay + ah * 0.6)) * -0.6)
         gg.drawImage(inner, 0, -H * 0.12 + p * 30)
         gg.restore()
+        // A thin frame and a stone sill, so the window feels like an object.
+        gg.save()
+        path(gg)
+        gg.strokeStyle = 'rgba(236,226,206,0.35)'
+        gg.lineWidth = 3
+        gg.stroke()
+        const sill = gg.createLinearGradient(0, ay + ah, 0, ay + ah + 30)
+        sill.addColorStop(0, css(tint([214, 200, 178], 0.1)))
+        sill.addColorStop(1, css(tint([120, 106, 96], 0.1)))
+        gg.fillStyle = sill
+        gg.shadowColor = 'rgba(0,0,0,0.6)'
+        gg.shadowBlur = 24
+        gg.shadowOffsetY = 10
+        gg.fillRect(ax - 28, ay + ah - 4, aw + 56, 30)
+        gg.restore()
       },
-      textY: ay + ah + 150,
+      textY: ay + ah + 170,
     }
   },
   ripple(s, seed) {
@@ -685,27 +789,25 @@ const BUILD = {
         g.rotate(t * 0.06)
         const n = 72
         for (let i = 0; i < n; i += 2) {
-          g.fillStyle = css(c2, 0.8)
+          g.fillStyle = css(c2, 0.42)
           g.beginPath()
           g.moveTo(0, 0)
           g.arc(0, 0, H * 1.2, (i / n) * Math.PI * 2, ((i + 1) / n) * Math.PI * 2)
           g.fill()
         }
-        // Concentric halo pulsing outward.
-        for (let i = 0; i < 9; i++) {
-          const k = (i / 9 + t * 0.12) % 1
-          g.strokeStyle = css(mix(c1, '#000000', 0.3), 0.35 * (1 - k))
-          g.lineWidth = 10 * (1 - k) + 3
-          g.beginPath()
-          g.arc(0, 0, 200 + k * 700, 0, Math.PI * 2)
-          g.stroke()
-        }
         g.restore()
         const v = g.createRadialGradient(W / 2, H * 0.36, 200, W / 2, H * 0.36, H * 0.75)
         v.addColorStop(0, 'rgba(0,0,0,0)')
-        v.addColorStop(1, 'rgba(0,0,0,0.55)')
+        v.addColorStop(1, 'rgba(0,0,0,0.7)')
         g.fillStyle = v
         g.fillRect(0, 0, W, H)
+        // A calm dark band where the line sits.
+        const band = g.createLinearGradient(0, H * 0.45, 0, H * 0.62)
+        band.addColorStop(0, 'rgba(4,3,14,0)')
+        band.addColorStop(0.5, 'rgba(4,3,14,0.5)')
+        band.addColorStop(1, 'rgba(4,3,14,0)')
+        g.fillStyle = band
+        g.fillRect(0, H * 0.45, W, H * 0.17)
       },
       textY: H * 0.53,
     }
@@ -722,9 +824,11 @@ const BUILD = {
     const planet = makeBody(s.body ?? 'red', R, seed)
     return {
       layers: [{ canvas: sky, depth: 0 }],
-      live: (g, t, p) => {
+      live: (g, t, p, bodyA = 1) => {
         const y = horizon + R * 0.62 - ease(p) * 160
+        g.globalAlpha = bodyA
         g.drawImage(planet, W / 2 - planet.width / 2, y - planet.height / 2)
+        g.globalAlpha = 1
         const s2 = 1.02 + p * 0.07
         g.save()
         g.translate(W / 2, H)
@@ -746,14 +850,14 @@ const BUILD = {
     const stars = twinklers(seed, 30, 0, H)
     return {
       layers: [{ canvas: sky, depth: 0 }],
-      live: (gg, t, p) => {
-        drawTwinkle(gg, stars, t, 0.8)
-        if (!img) return
+      back: (gg, t) => drawTwinkle(gg, stars, t, 0.8),
+      live: (gg, t, p, bodyA = 1) => {
+        if (!img || bodyA <= 0) return
         const w = W * (0.92 + p * 0.08)
         const h = (w * img.height) / img.width
         gg.save()
         gg.globalCompositeOperation = 'screen'
-        gg.globalAlpha = 0.95
+        gg.globalAlpha = 0.95 * bodyA
         gg.drawImage(img, W / 2 - w / 2, H * 0.36 - h / 2 + Math.sin(t * 0.8) * 10, w, h)
         gg.restore()
       },
@@ -771,12 +875,12 @@ const BUILD = {
     fillRidge(lg, ridgeLine(seed, horizon, 140, 0.5), cols[0], { depth: 200, light: 0.35 })
     cloudBand(lg, horizon + 10, seed, 0.6)
     wheat(lg, horizon + 30, seed)
-    if (s.road) road(lg, horizon + 30, seed)
+    if (s.road) road(lg, horizon + 30, seed, { dirt: true, vx: ROADVX(seed), ground: false })
     texture(land, 0.45)
     const layers = [{ canvas: sky, depth: 0 }]
     if ((s.body ?? 'sun') !== 'none') layers.push(bodyLayer(s.body ?? 'sun', 110, W * 0.5, H * 0.24, seed, 0.35))
     layers.push({ canvas: land, depth: 1 })
-    return { layers, live: (g, t) => { if (s.road) roadDashes(g, horizon + 30, t) }, textY: H * 0.42 }
+    return { layers, textY: H * 0.42 }
   },
 }
 
@@ -934,23 +1038,29 @@ function duration() {
   return SCENES.length * SCENE + OUTRO
 }
 
-function renderScene(g, sc, t, local) {
+// bodyA fades planets on their own during crossfades, so the outgoing and
+// incoming bodies never sit on top of each other.
+function renderScene(g, sc, t, local, bodyA = 1) {
   // local: seconds since this scene's nominal start; visible from -FADE/2.
   const p = clamp((local + FADE) / (SCENE + FADE * 2))
   g.save()
   g.fillStyle = '#000'
   g.fillRect(0, 0, W, H)
   if (sc.under) sc.under(g, t)
-  for (const l of sc.layers) {
+  sc.layers.forEach((l, i) => {
+    if (l.float && bodyA <= 0) return
     const s = 1 + (0.025 + 0.06 * l.depth) * p
     const dy = l.float ? -p * 26 : 0
     g.save()
+    if (l.float) g.globalAlpha = bodyA
     g.translate(W / 2 + sc.drift * p * 10 * l.depth, H * 0.5 + dy)
     g.scale(s, s)
     g.drawImage(l.canvas, -W / 2, -H * 0.5)
     g.restore()
-  }
-  if (sc.live) sc.live(g, t, p)
+    // Twinkling stars go right behind the bodies, never in front of them.
+    if (i === 0 && sc.back) sc.back(g, t, p)
+  })
+  if (sc.live) sc.live(g, t, p, bodyA)
   g.restore()
 }
 
@@ -962,13 +1072,15 @@ window.frame = (t) => {
   // Crossfade into the next scene near the end of this one.
   if (idx < n - 1 && local > SCENE - FADE / 2) {
     const k = ease((local - (SCENE - FADE / 2)) / FADE)
-    renderScene(sbg, SCENES[idx + 1], t, local - SCENE)
+    renderScene(ctx, SCENES[idx], t, local, clamp(1 - k / 0.5))
+    renderScene(sbg, SCENES[idx + 1], t, local - SCENE, clamp((k - 0.5) / 0.5))
     ctx.globalAlpha = k
     ctx.drawImage(sceneBuf, 0, 0)
     ctx.globalAlpha = 1
   } else if (idx > 0 && local < FADE / 2) {
     const k = ease((local + FADE / 2) / FADE)
-    renderScene(sbg, SCENES[idx - 1], t, local + SCENE)
+    renderScene(ctx, SCENES[idx], t, local, clamp((k - 0.5) / 0.5))
+    renderScene(sbg, SCENES[idx - 1], t, local + SCENE, clamp(1 - k / 0.5))
     ctx.globalAlpha = 1 - k
     ctx.drawImage(sceneBuf, 0, 0)
     ctx.globalAlpha = 1
@@ -1005,7 +1117,7 @@ window.frame = (t) => {
   drawText(ctx, sc.text, sc.textY, ease(a), (1 - ease(clamp((local - tin) / 0.9))) * 14)
 
   // The quiet align mark at the end.
-  if (outroT > 0) drawMark(ctx, ease(clamp((outroT - 0.6) / 0.8)), H * 0.48, 34)
+  if (outroT > 0) drawMark(ctx, ease(clamp((outroT - 0.6) / 0.8)), H * 0.46, 46)
 
   return canvas.toDataURL('image/jpeg', 0.9)
 }

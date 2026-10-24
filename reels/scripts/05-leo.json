@@ -3,20 +3,84 @@
   "sign": "leo",
   "title": "Leo, you can shine for no one and still be held",
   "caption": "for the leos who keep the porch light on",
-  "hashtags": ["leo", "astrology", "zodiac", "leoseason", "firesigns"],
+  "hashtags": [
+    "leo",
+    "astrology",
+    "zodiac",
+    "leoseason",
+    "firesigns"
+  ],
   "scenes": [
-    { "text": "dear leo,", "kind": "void", "body": "sun" },
-    { "text": "you're ruled by the sun, the one star that never asks to rise.", "kind": "ridge", "body": "sun", "sky": "dusk" },
-    { "text": "you walk in warm, and every room leans a little toward you.", "kind": "field", "body": "sun", "sky": "dawn", "road": true },
-    { "text": "you remember the birthdays. you answer at 3am. you cover the bill.", "kind": "road", "body": "ringed", "sky": "dusk" },
-    { "text": "but some nights you wonder who'd stay if the lights went down.", "kind": "road", "body": "moon", "sky": "night" },
-    { "text": "here is what the sky knows about the sun:", "kind": "burst", "body": "sun", "sky": "ember" },
-    { "text": "it burns all night, with half the world turned away from it.", "kind": "rise", "body": "red", "sky": "ember" },
-    { "text": "so you don't have to earn the warmth you hand out for free.", "kind": "lake", "body": "moon", "sky": "night" },
-    { "text": "and you don't have to be dazzling to be worth keeping.", "kind": "lake", "body": "crescent", "sky": "violet" },
-    { "text": "let someone read your sky first, before they ever see the glow.", "kind": "arch", "body": "blue", "sky": "teal" },
-    { "text": "it has to be mutual. warmth is meant to come back to you, too.", "kind": "ripple", "body": "moon", "sky": "night" },
-    { "text": "you can shine for no one, and still ask to be loved back.", "kind": "figure", "body": "none" },
-    { "text": "rest now, leo. the sun comes back on its own.", "kind": "void", "body": "sun" }
+    {
+      "text": "dear leo,",
+      "kind": "void",
+      "body": "sun"
+    },
+    {
+      "text": "ruled by the sun, so of course rooms turn toward you.",
+      "kind": "ridge",
+      "body": "sun",
+      "sky": "dusk"
+    },
+    {
+      "text": "you remember the birthdays. you take the late call.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "but some nights you wonder who'd stay in the dark.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "here's what the sky knows about the sun:",
+      "kind": "burst",
+      "body": "sun",
+      "sky": "ember"
+    },
+    {
+      "text": "it keeps burning, even with half the world turned away.",
+      "kind": "rise",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "so you don't have to earn the warmth you give away.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "and you don't have to dazzle to be worth staying for.",
+      "kind": "lake",
+      "body": "crescent",
+      "sky": "violet"
+    },
+    {
+      "text": "let someone read your sky before they see the glow.",
+      "kind": "arch",
+      "body": "blue",
+      "sky": "teal"
+    },
+    {
+      "text": "warmth is meant to come back to you, too.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "you can shine for no one and still ask to be held.",
+      "kind": "figure",
+      "body": "none"
+    },
+    {
+      "text": "you don't have to audition for the morning, leo.",
+      "kind": "void",
+      "body": "sun",
+      "sky": "dawn"
+    }
   ]
 }

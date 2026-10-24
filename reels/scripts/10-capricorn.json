@@ -23,7 +23,7 @@
       "sky": "dusk"
     },
     {
-      "text": "you climb slowly, and you almost never fall.",
+      "text": "the goat in you climbs slowly and almost never falls.",
       "kind": "ridge",
       "body": "sun",
       "sky": "dawn"
@@ -54,12 +54,12 @@
       "sky": "night"
     },
     {
-      "text": "here's the quiet part.",
+      "text": "but love doesn't have a summit.",
       "kind": "void",
       "body": "none"
     },
     {
-      "text": "love isn't a summit. there's no top to reach.",
+      "text": "no top, no flag, no view that proves you made it.",
       "kind": "burst",
       "body": "red",
       "sky": "ember"
@@ -77,7 +77,7 @@
       "sky": "teal"
     },
     {
-      "text": "you've carried the whole sky long enough. share a corner.",
+      "text": "you've carried enough sky. let someone take a corner.",
       "kind": "figure"
     },
     {
@@ -85,6 +85,12 @@
       "kind": "field",
       "body": "crescent",
       "sky": "dusk"
+    },
+    {
+      "text": "the mountain will wait. sit down a while.",
+      "kind": "ridge",
+      "body": "moon",
+      "sky": "night"
     }
   ]
 }

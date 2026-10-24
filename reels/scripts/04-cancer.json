@@ -12,7 +12,7 @@
   ],
   "scenes": [
     {
-      "text": "dear cancer, the moon is up, so i know you're awake.",
+      "text": "cancer, the moon is up, so i know you're awake.",
       "kind": "lake",
       "body": "moon",
       "sky": "night"
@@ -76,7 +76,7 @@
       "sky": "ember"
     },
     {
-      "text": "leave a light on for yourself tonight, cancer.",
+      "text": "tonight, let someone else set the table.",
       "kind": "void",
       "body": "crescent",
       "sky": "night"

@@ -2,7 +2,7 @@
   "id": "03-gemini",
   "sign": "gemini",
   "title": "Gemini, say the plain sentence",
-  "caption": "for the geminis with eleven tabs open",
+  "caption": "eleven tabs open, one sentence unsaid",
   "hashtags": [
     "gemini",
     "astrology",
@@ -29,7 +29,7 @@
       "sky": "night"
     },
     {
-      "text": "you're the funny one, the curious one, the one with a new plan.",
+      "text": "the funny one, the curious one, the one with a plan.",
       "kind": "ridge",
       "body": "ringed",
       "sky": "violet"
@@ -41,7 +41,7 @@
       "sky": "violet"
     },
     {
-      "text": "the twins aren't a flaw. you really are more than one thing.",
+      "text": "the twins aren't a flaw. you are more than one thing.",
       "kind": "figure"
     },
     {
@@ -75,7 +75,7 @@
       "sky": "dawn"
     },
     {
-      "text": "being known is the one conversation you haven't had yet.",
+      "text": "being known is the one conversation you haven't had.",
       "kind": "field",
       "body": "sun",
       "sky": "dusk",

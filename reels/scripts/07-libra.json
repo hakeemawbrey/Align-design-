@@ -3,20 +3,90 @@
   "sign": "libra",
   "title": "Libra, you are allowed to tip the scale",
   "caption": "for the libras who said whatever you want",
-  "hashtags": ["libra", "astrology", "zodiac", "libraseason", "airsigns"],
+  "hashtags": [
+    "libra",
+    "astrology",
+    "zodiac",
+    "libraseason",
+    "airsigns"
+  ],
   "scenes": [
-    { "text": "libra, stay with me for one minute.", "kind": "arch", "body": "ringed", "sky": "violet" },
-    { "text": "venus rules you, so you were born knowing how beauty should sit.", "kind": "arch", "body": "blue", "sky": "dusk" },
-    { "text": "the right word, the right light, the chair that softens a room.", "kind": "field", "body": "sun", "sky": "dawn" },
-    { "text": "and you carry the scales, weighing every side before you speak.", "kind": "figure", "body": "none" },
-    { "text": "you see their point so clearly, you forget you had one.", "kind": "ridge", "body": "crescent", "sky": "teal" },
-    { "text": "you keep the peace so well, nobody notices you paid for it.", "kind": "road", "body": "moon", "sky": "night" },
-    { "text": "but balance was never meant to mean you weigh nothing.", "kind": "burst", "body": "ringed", "sky": "violet" },
-    { "text": "a scale with you missing from it isn't fair. it's just quiet.", "kind": "rise", "body": "blue", "sky": "dusk" },
-    { "text": "so say the honest thing, even if it makes the room uneven.", "kind": "field", "body": "moon", "sky": "dusk", "road": true },
-    { "text": "the people worth keeping can hold a little disagreement.", "kind": "lake", "body": "crescent", "sky": "dawn" },
-    { "text": "venus runs your heart. let her want something out loud.", "kind": "lake", "body": "moon", "sky": "violet" },
-    { "text": "you're allowed to be the thing that tips the scale.", "kind": "ripple", "body": "moon", "sky": "night" },
-    { "text": "goodnight, libra. order the dessert you actually want.", "kind": "void", "body": "ringed" }
+    {
+      "text": "libra, you don't have to weigh this one.",
+      "kind": "arch",
+      "body": "ringed",
+      "sky": "violet"
+    },
+    {
+      "text": "venus gave you an eye for where beauty belongs.",
+      "kind": "arch",
+      "body": "blue",
+      "sky": "dusk"
+    },
+    {
+      "text": "the right word, the right light, the softest chair.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "you carry the scales. you weigh every side first.",
+      "kind": "figure",
+      "body": "none"
+    },
+    {
+      "text": "you see their point so clearly, you forget you had one.",
+      "kind": "ridge",
+      "body": "crescent",
+      "sky": "teal"
+    },
+    {
+      "text": "you keep the peace so well, no one sees what it costs.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "but balance was never meant to mean you weigh nothing.",
+      "kind": "burst",
+      "body": "ringed",
+      "sky": "violet"
+    },
+    {
+      "text": "a scale with you missing isn't fair. it's just quiet.",
+      "kind": "rise",
+      "body": "blue",
+      "sky": "dusk"
+    },
+    {
+      "text": "say the honest thing, even if the room goes uneven.",
+      "kind": "field",
+      "body": "moon",
+      "sky": "dusk",
+      "road": true
+    },
+    {
+      "text": "anyone worth keeping can hold a little disagreement.",
+      "kind": "lake",
+      "body": "crescent",
+      "sky": "dawn"
+    },
+    {
+      "text": "venus runs your heart. let her want something out loud.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "some days, you get to be what tips the scale.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "goodnight, libra. order the dessert you actually want.",
+      "kind": "void",
+      "body": "ringed"
+    }
   ]
 }

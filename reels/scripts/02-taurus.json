@@ -18,14 +18,14 @@
       "sky": "dawn"
     },
     {
-      "text": "venus rules you, so you love with your hands.",
+      "text": "venus is your planet, so you love with your hands.",
       "kind": "field",
       "body": "sun",
       "sky": "dawn",
       "road": true
     },
     {
-      "text": "in warm plates, fixed shelves, promises you actually keep.",
+      "text": "warm plates, fixed shelves, promises you keep.",
       "kind": "arch",
       "body": "moon",
       "sky": "dusk"
@@ -42,7 +42,7 @@
       "body": "crescent"
     },
     {
-      "text": "you'll keep tending a garden that stopped growing in april.",
+      "text": "you'll tend a garden that stopped growing in april.",
       "kind": "lake",
       "body": "moon",
       "sky": "night"
@@ -78,7 +78,7 @@
       "sky": "night"
     },
     {
-      "text": "someone worth it won't need to be kept. they'll just stay.",
+      "text": "the ones worth it don't need keeping. they stay.",
       "kind": "figure"
     },
     {

@@ -2,7 +2,7 @@
   "id": "12-pisces",
   "sign": "pisces",
   "title": "Pisces, keep your name",
-  "caption": "for the pisces who feel the room before they enter it",
+  "caption": "for the pisces who become whoever they're with",
   "hashtags": [
     "pisces",
     "astrology",
@@ -23,34 +23,28 @@
       "body": "blue"
     },
     {
-      "text": "you feel a room before you walk into it.",
+      "text": "you hear what people mean, not what they say.",
       "kind": "arch",
       "body": "crescent",
       "sky": "violet"
     },
     {
-      "text": "and you love the way water does,",
-      "kind": "ripple",
-      "body": "moon",
-      "sky": "teal"
-    },
-    {
-      "text": "filling every shape it's given,",
-      "kind": "ripple",
-      "body": "moon",
-      "sky": "teal"
-    },
-    {
-      "text": "until you can't remember your own.",
-      "kind": "field",
-      "body": "sun",
-      "sky": "dusk"
-    },
-    {
-      "text": "venus is exalted in your sky. you were made to love.",
+      "text": "venus is exalted in you. you were made for love.",
       "kind": "rise",
       "body": "red",
       "sky": "ember"
+    },
+    {
+      "text": "you love the way a lake loves the sky,",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "taking on their colour until you lose your own.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "dusk"
     },
     {
       "text": "but loving someone isn't disappearing into them.",
@@ -73,18 +67,24 @@
     },
     {
       "text": "don't swim back every night to check.",
-      "kind": "lake",
+      "kind": "ripple",
       "body": "moon",
       "sky": "night"
     },
     {
-      "text": "the right one will meet you at the water's edge.",
+      "text": "the one for you will want you, not your reflection.",
       "kind": "figure"
     },
     {
-      "text": "you can be the whole ocean and still keep your name.",
+      "text": "you can be all that water and still keep your name.",
       "kind": "void",
       "body": "crescent"
+    },
+    {
+      "text": "breathe, pisces. the surface is right here.",
+      "kind": "field",
+      "body": "moon",
+      "sky": "dawn"
     }
   ]
 }

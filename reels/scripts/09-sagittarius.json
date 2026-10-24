@@ -54,7 +54,7 @@
       "sky": "teal"
     },
     {
-      "text": "but here's what the road never told you.",
+      "text": "but the road leaves one thing out.",
       "kind": "void",
       "body": "none"
     },
@@ -71,16 +71,22 @@
       "sky": "dawn"
     },
     {
-      "text": "so say the honest thing: you need the horizon.",
+      "text": "so tell them early: you need the horizon.",
       "kind": "ripple",
       "body": "moon",
       "sky": "night"
     },
     {
-      "text": "the right one won't hold the door. they'll ask for the window seat.",
+      "text": "the right one won't stand in the doorway.",
       "kind": "rise",
       "body": "blue",
       "sky": "dusk"
+    },
+    {
+      "text": "they'll ask for the window seat.",
+      "kind": "rise",
+      "body": "blue",
+      "sky": "dawn"
     },
     {
       "text": "the sky is wide enough for two of you.",

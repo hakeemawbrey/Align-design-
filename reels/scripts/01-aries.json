@@ -12,7 +12,7 @@
   ],
   "scenes": [
     {
-      "text": "dear aries, stay still for this one.",
+      "text": "aries, stand still for this one.",
       "kind": "void",
       "body": "red"
     },
@@ -35,7 +35,7 @@
       "sky": "night"
     },
     {
-      "text": "people call it reckless. it's just courage that never rests.",
+      "text": "they call it reckless. really, it's courage in a hurry.",
       "kind": "ridge",
       "body": "red",
       "sky": "ember",
@@ -60,7 +60,7 @@
       "road": true
     },
     {
-      "text": "the third dinner. the ordinary tuesday. the second fight.",
+      "text": "the third dinner. the dull tuesday. the second fight.",
       "kind": "arch",
       "body": "crescent",
       "sky": "violet"
@@ -76,7 +76,7 @@
       "sky": "dusk"
     },
     {
-      "text": "you don't have to win love. you just have to stay for it.",
+      "text": "you don't have to win love. just stay for it.",
       "kind": "ripple",
       "body": "moon",
       "sky": "night"
