@@ -1,0 +1,114 @@
+{
+  "id": "align-hhp-023",
+  "sourceId": "hhp-023",
+  "title": "The dating app with a mulligan",
+  "angleKey": "event-cards",
+  "hookKey": "reply_hater",
+  "formatKey": "reply_to_hate",
+  "hook": "Someone said \"event cards are a gimmick.\" Okay. Let me show you.",
+  "beats": [
+    {
+      "line": "Fair question. Here's how it actually works.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align every sixth card is a gold event. Second look brings back the last person you released.",
+      "broll": "Gold event card in the deck (#deck)",
+      "onScreen": ""
+    },
+    {
+      "line": "Every draw is five people, then an event card. You play events with energy.",
+      "broll": "Draw tracker: ✦ slot",
+      "onScreen": "5 people + 1 event"
+    },
+    {
+      "line": "Yes, Second look is themed on Venus retrograde. I couldn't help it.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Which event card would you play first? Comment it.",
+  "caption": "Every sixth card is an event. One of them is a mulligan.",
+  "hashtags": [
+    "datingapp",
+    "venusretrograde",
+    "cardgame"
+  ],
+  "lengthSec": 30,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 68,
+    "craft": 60,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 60,
+        "hits": [
+          "then"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 56,
+        "hits": [
+          "me"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 72,
+        "hits": [
+          "you"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 90,
+        "hits": [
+          "comment it"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 85,
+        "hits": [
+          "someone said"
+        ]
+      }
+    ]
+  }
+}

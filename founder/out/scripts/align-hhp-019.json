@@ -1,0 +1,116 @@
+{
+  "id": "align-hhp-019",
+  "sourceId": "hhp-019",
+  "title": "The app you keep after you find someone",
+  "angleKey": "churn-hedge",
+  "hookKey": "reply_hater",
+  "formatKey": "reply_to_hate",
+  "hook": "Someone commented \"dating apps only make money by keeping you single.\" So I'll show you.",
+  "beats": [
+    {
+      "line": "Fair question. Here's how it actually works.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
+      "broll": "Binder (#collection)",
+      "onScreen": ""
+    },
+    {
+      "line": "Subscribers get a starter box, then three real packs every season.",
+      "broll": "Physical card pack on a table",
+      "onScreen": "starter box + 3 packs a season"
+    },
+    {
+      "line": "It's a bet. Ask me in a year if it paid off.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Would you keep collecting after you met someone? Be honest.",
+  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
+  "hashtags": [
+    "startup",
+    "businessmodel",
+    "buildinpublic"
+  ],
+  "lengthSec": 29,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 70,
+    "craft": 63,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 100,
+        "hits": [
+          "then",
+          "so i",
+          "bet."
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 56,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 100,
+        "hits": [
+          "you",
+          "be honest",
+          "dating apps"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 85,
+        "hits": [
+          "someone commented"
+        ]
+      }
+    ]
+  }
+}

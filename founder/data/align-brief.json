@@ -1,0 +1,681 @@
+{
+  "_sources": "README.md, docs/BUSINESS-MODEL.md, docs/FOUNDER-CAMP.md, docs/BRAND-QA.md, reels/SPEC.md, carousel/SPEC.md, carousel/content/*.json, reels/scripts/*.json, app/src (persona.ts, places.ts, plans.ts, talkCards.ts, HowToPlay.tsx, Spent.tsx, Paywall.tsx, FoundersDrop.tsx, App.tsx), git log. Nothing invented; demo/seeded numbers are flagged as such.",
+  "product": {
+    "oneLiner": "Align is a dating app played as a card game: every night you're dealt a hand of veiled cards (sky, chart, dealbreakers, no photos), and faces only flip when you both align.",
+    "oneLinerAlts": [
+      "Every night you're dealt a hand of people. No photos, just their sky. (app copy, HowToPlay)",
+      "A dating app played as a card game. (BUSINESS-MODEL.md)",
+      "Read the sky before the face. (carousel core message)"
+    ],
+    "coreLoop": "deal -> deck -> align -> match -> reveal -> chat",
+    "howItWorks": [
+      "Onboarding reads your chart: birth date (wheel picker), time and place, your sky, a sign reveal that flips like pulling a rare card, your big three (Sun, Moon, Rising), Venus, your element 'weather', then up to three dealbreakers that go on your card.",
+      "Your card is veiled: aura, chart and dealbreakers, no photo. Only your sun sign is ever shown to anyone; time and place never show on your card.",
+      "Every night you're dealt a deck. Each draw is six cards: five people, then a gold event card. Free gets three draws (15 people, 3 events).",
+      "Swipe right to align, left to release. Pass, and you never see who they were.",
+      "Hold a card to peek at the photo for ~3 seconds; it seals when you let go. Free gets 3 peeks a day.",
+      "Each card reads Push (where you'll rub), Pull (what draws you in) and Align (where it holds), with a strength badge from Slow burn to Rare pull. No compatibility score, by design.",
+      "If you both align, it's a match: the auras collide, 'You both aligned', then the cards flip and the veil lifts off the photo.",
+      "Chat opens from something on their card ('Say the honest thing'). Chats fade if nobody talks ('Seven days to speak').",
+      "In chat you play talk cards (both answer, neither shows until both have) and place cards (pick a place and a night; if they say yes, it's a date; check in at partner venues for an exclusive card).",
+      "After 3 days aligned you can trade copies of your cards into each other's binder.",
+      "A new deal lands at 11:11 every night."
+    ],
+    "features": [
+      {
+        "name": "Veiled cards",
+        "oneLine": "Profiles are cards with aura, chart, bio and dealbreakers; photos stay hidden until it's mutual.",
+        "demoMoment": "Deck (key 4): the veiled card; 'No photo is shown until you both align.'"
+      },
+      {
+        "name": "Peek",
+        "oneLine": "Press and hold to see the photo for 3 seconds, then it seals. 3 a day free, 33 a week on Align+.",
+        "demoMoment": "Deck: hold Space (or press and hold) on Juniper; 'THE PHOTO IS CLOSING'."
+      },
+      {
+        "name": "Align / release",
+        "oneLine": "Swipe right to align, left to release; aligning gives a gold star burst and '+1 aligned'.",
+        "demoMoment": "Deck: release Maya (left), align Rio (right), arrow keys work."
+      },
+      {
+        "name": "Match + reveal",
+        "oneLine": "Mutual align: auras collide, 'You both aligned', the card flips and the veil lifts with a holographic tilt.",
+        "demoMoment": "Keys 5 (match) and 6 (reveal); mouse over the card for holo tilt."
+      },
+      {
+        "name": "Push / Pull / Align reading",
+        "oneLine": "Every pairing reads where you'll rub, what draws you in, and where it holds. No compatibility score.",
+        "demoMoment": "Key 8: Cosmic alignment, switch Spark, Rub, Align, Relationship tabs."
+      },
+      {
+        "name": "Event cards",
+        "oneLine": "Gold cards in every draw: Second look, Lunar peek, Mulligan, Comet, Spotlight. Played with energy; swipe left to save for later.",
+        "demoMoment": "Deck: the sixth card of each draw (tracker shows Draw 1/3 and the ✦ slot)."
+      },
+      {
+        "name": "Talk cards",
+        "oneLine": "51 tarot-styled relationship questions (everyday, romance, intimacy, food, family, money, future, conflict, fun) in three kinds: open, this-or-that, who's more likely. Answers stay sealed until you both answer.",
+        "demoMoment": "Chat (key 7): card button left of the message box; play 'Planned date or spontaneous date?'"
+      },
+      {
+        "name": "Place cards / partner venues",
+        "oneLine": "Play a Houston place in chat to plan a date; partner venues give a card you can only get by checking in there together.",
+        "demoMoment": "Chat card sheet -> Places -> Agnes Cafe; Juniper says yes; tap Check in."
+      },
+      {
+        "name": "Packs",
+        "oneLine": "Every pack is 12 cards (signs, talk, events, places, energy; never people); the last card is always a sign card in the rare slot, numbered from a fixed season run.",
+        "demoMoment": "Hand (fanned-cards button) -> Open packs -> Align pack; swipe across the top to tear it; sign card last, № 1,204 / 5,000."
+      },
+      {
+        "name": "Sign cards",
+        "oneLine": "48 sign cards: 12 signs x 4 faces (Sun, Moon, Rising, Venus), in Myths, Gilded (~1 in 5 packs) and Mythic (~1 in 25). Backs carry the myth, a famous one and a perfect first date.",
+        "demoMoment": "Binder (key L): tap a sign card to read its back."
+      },
+      {
+        "name": "Binder + trading",
+        "oneLine": "After 3 days aligned, trade copies of your cards; completing fire, earth, air, water triggers 'All four elements'.",
+        "demoMoment": "Key B -> Binder -> Tobias -> drag your card up -> TRADED stamp."
+      },
+      {
+        "name": "Rare series (future vision)",
+        "oneLine": "Verified famous people as limited-edition Rare cards fans collect and trade; NOVA (fictional K-pop idol) № 001 / 500.",
+        "demoMoment": "Binder -> RARE SERIES › (or →); NOVA showcase, 41 collectors want it (demo)."
+      },
+      {
+        "name": "Energy",
+        "oneLine": "Earned by actually dating: message +2, answer a talk card +5, say yes to a date +5, check in +15. Playing an event costs 10.",
+        "demoMoment": "Deck: energy sits in the sky pill."
+      },
+      {
+        "name": "Today's sky / horoscope",
+        "oneLine": "A daily reading from real planet positions against your birth chart; three cards to turn, and it puts a card in your hand.",
+        "demoMoment": "Key S (Today's sky); 'Read today's horoscope' pill on the deck."
+      },
+      {
+        "name": "Cosmic calendar",
+        "oneLine": "October 2026 sky events, tap any day.",
+        "demoMoment": "Key K."
+      },
+      {
+        "name": "Your chart",
+        "oneLine": "Big three, traits, element, ruler, house.",
+        "demoMoment": "You tab (Y) -> tap Your sign."
+      },
+      {
+        "name": "Club",
+        "oneLine": "Your sign's room (e.g. the Taurus room): posts, threads, 'Say it to the room', and a pinned founders card drop.",
+        "demoMoment": "Key C."
+      },
+      {
+        "name": "Block a sign",
+        "oneLine": "Align+ can block whole sun signs from their deck.",
+        "demoMoment": "You -> BLOCKED · 2 › -> Choose signs to block."
+      },
+      {
+        "name": "Founding member offer",
+        "oneLine": "End of onboarding: claim founding member; the gold № 0112 card stamps in.",
+        "demoMoment": "Key F."
+      },
+      {
+        "name": "Real two-phone matching",
+        "oneLine": "With Supabase, anyone who onboards makes a real card that's dealt first in others' decks as NEW · NEAR YOU; mutual align matches on both phones and chat is live.",
+        "demoMoment": "'Download it and match with me' flow in FOUNDER-CAMP.md."
+      }
+    ],
+    "pricing": {
+      "free": {
+        "peopleANight": 15,
+        "peeks": "3 a day",
+        "packs": "1 Align pack a day",
+        "draws": "3 draws (15 people + 3 events), then 'Your deck is spent'"
+      },
+      "alignPlus": {
+        "peopleANight": "45, then a new deal at 11:11",
+        "peeks": "33 a week (deck shows ∞)",
+        "packs": "3 a day",
+        "realPacks": "Starter box once when you join, then 3 packs shipped every season (4x a year)",
+        "other": [
+          "Block any sign",
+          "Rare card skins",
+          "Private Align events",
+          "Align+ season pass track",
+          "Comet and Spotlight events"
+        ]
+      },
+      "regular": {
+        "yearly": "$122.22/yr (works out to $10.19/mo)",
+        "monthly": "$23.33/mo"
+      },
+      "foundingOnboardingOffer": {
+        "yearly": "$88.88/yr ($7.41/mo), locked while you stay",
+        "monthly": "$14.44/mo, locked while you stay"
+      },
+      "trial": "3 days free on every plan (docs/plans.ts; the paywall CTA in README says 'Start seven days free' -- inconsistency in repo, app code says 3)",
+      "houstonBeta": "$15 once for lifetime Align+",
+      "otherRevenue": [
+        "Sign boxes (blind-box packs by sign, retail + online)",
+        "Printed talk decks, also sold to couples",
+        "Venue partners pay for placement, host Align nights, give venue-exclusive cards ('they pay us for the date')",
+        "Ticketed blind-date events with partners, private for Align+",
+        "Season pass for non-subscribers",
+        "Marketplace for trading; later a fee on sales"
+      ],
+      "unitEconomicsNote": "Shipping is quarterly not monthly: 3 packs a month ~ $8/subscriber/month to ship (loses money on yearly); 3 a season ~ $2.67/month."
+    },
+    "differentiators": [
+      "No photos until you both say yes; you read the sky before the face.",
+      "No compatibility score, by design: Push / Pull / Align readings instead.",
+      "Played as a card game: decks, draws, event cards, rarity, packs, a binder.",
+      "Cards are a collectible people keep after they find someone: the hedge against dating-app churn.",
+      "Physical cards: sign cards and talk cards are printed; Align+ gets real packs in the mail each season.",
+      "Fixed, numbered print runs per season (5,000 Myths / 500 Gilded / 50 Mythic), online and real life combined. When it's gone it's gone.",
+      "Energy rewards actually dating (messages, talk-card answers, dates, check-ins) over swiping.",
+      "Talk cards surface what matters early: kids, money, how you fight.",
+      "Partner venues pay for the date and hand out venue-only cards.",
+      "Dealbreakers go on your card up front.",
+      "Chart math is computed from real planet positions, not made up.",
+      "Scarcity by design: 15 a night, a new deal at 11:11."
+    ],
+    "stageAndTraction": {
+      "statedFacts": [
+        "Started as a recordable investor demo; now an installable app (PWA, Add to Home Screen) plus a native iOS build via Capacitor (TestFlight-ready).",
+        "Real: the app, a Supabase backend (accounts, swipes, matches, chat, photos) with server-side matching and row-level security, two real people matching and chatting live, and the chart math.",
+        "Seeded: tonight's people, who aligns back (Juniper, Sol, Amara, Bianca, Mina), and their replies; 'they stand in for a city's worth of users'.",
+        "Next: a real dealing algorithm across real users, verification and safety, push notifications.",
+        "Launch city is Houston (Houston beta pricing, Houston partner venues, 'Serialized for the first 1,111 in Houston').",
+        "Being demoed at a founder camp (docs/FOUNDER-CAMP.md).",
+        "Content engine in repo: 12 zodiac carousels + generated variants, and 12 zodiac reels (1080x1920, ~45s) with an original score."
+      ],
+      "demoNumbersNotTraction": [
+        "333 charts near you (onboarding animation)",
+        "Founders card № 0112 of 1,111, 1,047 claimed / 64 left (hardcoded in FoundersDrop.tsx)",
+        "NOVA: 41 collectors want it, 3 traded this week",
+        "Pack serial № 1,204 / 5,000"
+      ],
+      "noRealUserOrRevenueNumbersInRepo": true
+    }
+  },
+  "founder": {
+    "name": "Hakeem (Hakeem Awbrey; GitHub hakeemawbrey)",
+    "whatIsKnown": [
+      "The demo plays as Hakeem: 'No sign-up. You are Hakeem.' Welcome button: 'Continue as Hakeem'.",
+      "Hakeem's in-app persona (persona.ts): 28, Taurus sun, Sagittarius moon, Libra rising, Venus in Aries; born May 12 1998, 5:00 PM, Tulsa.",
+      "Persona blurb: 'Sound engineer. Record stores on Sundays. Cooks too much.' Bio: 'Slow to warm, impossible to shake. I cook for people I like and say less than I mean.' (treat as persona copy; confirm with Hakeem before using as biography)",
+      "Persona interests: record stores, night drives, tarot, thrifting, late diners. Dealbreaker: 'No ghosting. Answer the question you were asked.'",
+      "Persona reading: Pull 'Remembers your order. Plans the second date during the first.' Push 'Slow to say how he feels. Ask him directly.' Align 'Loyal and steady. Wants something that lasts.'",
+      "The onboarding reads 'Venus runs your heart: Hakeem's Venus is in Aries.'",
+      "Other founders playable in the demo: Xavier (26, Capricorn, card says 'Co-founder, Align') and Jeremy (24, Cancer, card says 'Co-founder, Align'); commit says 'Jeremy as a third founder to play as'. Samid (25, Scorpio) is a fourth playable profile.",
+      "Taking Align to a founder camp; the demo guide has him run a 60-second walkthrough, practise it three times, bring a power bank ('Demos die at 12%').",
+      "Built with AI: every commit in the visible git history (60 commits, 2026-10-09 to 2026-10-24) is authored by Claude; the design comes from a Figma file 'Align — design v2 Stardust'.",
+      "Deploys on Vercel from hakeemawbrey/align-design-, backend on Supabase.",
+      "Launching in Houston."
+    ]
+  },
+  "voice": {
+    "rules": [
+      "BRAND-QA: Plain and practical. Short sentences. Sentence case for body, uppercase only in mono eyebrows. No jargon, no exclamation-heavy hype.",
+      "BRAND-QA: Buttons say what happens (\"Open packs\", \"Play it to Juniper\").",
+      "Carousel: Lowercase. Blunt, warm and a little funny. A friend who is done watching you text them first.",
+      "Carousel: Short words. No hashtag-speak, no emoji in slides, no exclamation marks, no \"bestie\", no \"manifest\", no therapy jargon (\"attachment style\" etc.).",
+      "Carousel: Astrology is the lens, not a lecture: name the sign and one true trait, then give advice that would be right for anyone.",
+      "Carousel: It can sting, but it never punches down at a sign or a person. The target is the behaviour.",
+      "Carousel: Never promise a soulmate or claim astrology decides anything. Align says \"read\".",
+      "Carousel: Align's core message is sprinkled in subtly: never an ad, never \"download Align\". At most two Align vocabulary words per piece.",
+      "Reels: Calm, warm and honest, like a letter written at 2am by someone who knows you. Reflective rather than blunt; it can still sting a little.",
+      "Reels: No emoji, no hashtags in lines, no exclamation marks, no \"manifest\", no therapy jargon, no promises of a soulmate. Astrology \"reads\", it never decides.",
+      "Reels: Align's ideas are slipped in at most twice, never sold, never \"download\".",
+      "Original only: never reuse another creator's footage, narration, lines or audio."
+    ],
+    "banned": [
+      "exclamation marks / exclamation-heavy hype",
+      "emoji (in slides/lines)",
+      "hashtags in lines or captions",
+      "\"bestie\"",
+      "\"manifest\"",
+      "therapy jargon (e.g. \"attachment style\")",
+      "\"download Align\" / any hard sell",
+      "promising a soulmate",
+      "saying astrology decides anything (it reads)",
+      "punching down at a sign or person",
+      "jargon",
+      "compatibility score / percent match framing (the product has none by design)",
+      "reusing other creators' footage, lines or audio",
+      "visual: gold buttons/pills/badges, pure black or grey surfaces, pure white text"
+    ],
+    "vocabulary": [
+      "align",
+      "release",
+      "the deck",
+      "your card",
+      "veiled",
+      "flip",
+      "your sky",
+      "11:11",
+      "venus",
+      "deal",
+      "peek",
+      "push / pull",
+      "rare pull",
+      "binder",
+      "say the honest thing"
+    ],
+    "coreMessages": [
+      "read the sky before the face",
+      "it has to be mutual",
+      "say the honest thing",
+      "dealbreakers up front",
+      "release, don't haunt",
+      "a new deal at 11:11",
+      "Venus runs your heart",
+      "you won't arrive alone"
+    ],
+    "examples": [
+      "Every night you're dealt a hand of people. No photos, just their sky.",
+      "Pass, and you never see who they were. Nobody gets judged by a photo.",
+      "Push is where you'll rub. Pull is what draws you in. Align is where it holds. Each one says how strong it is. Rare pull is the rarest card in the deck. There's no compatibility score, by design, and no photo until you both say yes.",
+      "Partner venues give you a card you can only get there, and they pay us for the date.",
+      "It's how you find out the stuff that matters: kids, money, how you fight. And you collect the cards from packs.",
+      "Every season prints a fixed run, online and in real life. When it's gone it's gone.",
+      "Your deck is spent. Fifteen people and three events, gone in one sitting. A new deal lands at 11:11.",
+      "Chats fade if nobody talks. Say something before the bar runs out.",
+      "Neither answer shows until you've both answered, so nobody copies.",
+      "The stars kept your seat warm.",
+      "The face comes after.",
+      "You fall for the chart.",
+      "The universe loves a boundary.",
+      "Only your sun sign is ever shown to anyone.",
+      "Venus is how you love, not who you are.",
+      "Energy is earned by actually dating.",
+      "if only one of you / is running, / it's just cardio.",
+      "chemistry is a feeling, / consistency is a person.",
+      "a dealbreaker / isn't an opening offer. / put it on your card,",
+      "not choosing / is still choosing.",
+      "it's a locked door / with a cool sticker on it,",
+      "so read who they are / before the face — / yours comes last, / theirs should too.",
+      "the best things don't happen at the start. / they happen in the slow middle you keep skipping.",
+      "so let this one burn clean. release it. don't haunt it.",
+      "a scale with you missing isn't fair. it's just quiet.",
+      "you're allowed to be loved before you're finished."
+    ]
+  },
+  "audience": {
+    "who": "Single, astrology-curious daters (onboarding blocks under-18s; seeded profiles are mid-20s to ~30) who are tired of photo-first swiping; launching in Houston. Secondary: collectors and couples (talk decks sold to couples, cards kept after the app is cancelled).",
+    "pains": [
+      "Being judged by a photo first",
+      "Swiping endlessly with nothing real said",
+      "Ghosting and one-sided chasing",
+      "Learning the dealbreakers (kids, money, how you fight) on date five instead of up front",
+      "Opening lines that are cute instead of true",
+      "Compatibility scores that pretend to decide for you",
+      "Dating apps you delete the moment they work"
+    ],
+    "desires": [
+      "To be read for who they are (their sky, their words) before their face",
+      "Mutual interest, not chasing",
+      "Something honest and lasting ('Wants something that lasts')",
+      "Dating that feels like play: decks, pulls, rare cards, packs",
+      "Real dates at real places",
+      "Something to keep and collect, online and in real life",
+      "Not arriving alone: people near them who match their sky"
+    ]
+  },
+  "storyAngles": [
+    {
+      "key": "no-photos",
+      "label": "No photos until you both say yes",
+      "angle": "Why I built a dating app where you can't see anyone's face until it's mutual.",
+      "proofPoint": "'No photo is shown until you both align.' Pass, and you never see who they were."
+    },
+    {
+      "key": "face-last",
+      "label": "Your face comes last",
+      "angle": "Onboarding ends by showing you your own veiled card, what a match sees before your face.",
+      "proofPoint": "Onboarding step 13 'Your face comes last'; 'WHAT A MATCH SEES'."
+    },
+    {
+      "key": "built-with-ai",
+      "label": "Built with AI",
+      "angle": "I'm building a full dating app, iOS build and backend included, with an AI as my engineer.",
+      "proofPoint": "Every commit in the visible history (60, Oct 9 to Oct 24 2026) is authored by Claude; Supabase backend, Capacitor iOS build."
+    },
+    {
+      "key": "trading-cards",
+      "label": "Cards and packs like trading cards",
+      "angle": "What if a dating app was a trading card game?",
+      "proofPoint": "12-card packs, the rare slot is always a sign card, Myths / Gilded (~1 in 5) / Mythic (~1 in 25)."
+    },
+    {
+      "key": "venues-pay",
+      "label": "Partner venues pay for the date",
+      "angle": "The business model where the bar pays, not you.",
+      "proofPoint": "'Partner venues give you a card you can only get there, and they pay us for the date.' Agnes Cafe: first glass on them, Align night Thursdays."
+    },
+    {
+      "key": "talk-cards",
+      "label": "Talk cards",
+      "angle": "51 questions that get kids, money and how you fight on the table early, and you can't copy their answer.",
+      "proofPoint": "Answers stay sealed until both answer; three kinds: open, this-or-that, who's more likely; tarot arcana per topic."
+    },
+    {
+      "key": "founding-0112",
+      "label": "Founding member № 0112",
+      "angle": "Serialized founders cards for the first 1,111 in Houston, never reissued.",
+      "proofPoint": "Founding card № 0112; 'Serialized for the first 1,111 in Houston. Never reissued, and it trades like any card.'"
+    },
+    {
+      "key": "no-score",
+      "label": "No compatibility score, by design",
+      "angle": "Why there's no 94% match on Align.",
+      "proofPoint": "Push / Pull / Align readings with strength badges (Slow burn to Rare pull) instead of a score."
+    },
+    {
+      "key": "churn-hedge",
+      "label": "The app you keep after you find someone",
+      "angle": "Dating apps lose you when they work. Collectibles don't.",
+      "proofPoint": "BUSINESS-MODEL: 'people cancel the app once they find someone, but they keep collecting the cards.'"
+    },
+    {
+      "key": "1111",
+      "label": "A new deal at 11:11",
+      "angle": "Why you only get 15 people a night, and the deck resets at 11:11.",
+      "proofPoint": "Free: 15 people + 3 events; 'Your deck is spent'; new deal lands at 11:11."
+    },
+    {
+      "key": "peek",
+      "label": "Three peeks, three seconds",
+      "angle": "You get to cheat, a little: hold to peek for three seconds and the photo seals.",
+      "proofPoint": "3 peeks a day free, 33 a week Align+; 'THE PHOTO IS CLOSING'."
+    },
+    {
+      "key": "energy",
+      "label": "Rewarding dating, not swiping",
+      "angle": "In my app you earn power by actually going on dates.",
+      "proofPoint": "Message +2, talk card +5, yes to a date +5, check in +15; events cost 10."
+    },
+    {
+      "key": "print-runs",
+      "label": "When it's gone it's gone",
+      "angle": "Each season prints a fixed numbered run, so your cards only get rarer.",
+      "proofPoint": "5,000 Myths / 500 Gilded / 50 Mythic per card per season; Fall '26 is The Equinox (Libra, Scorpio, Sagittarius)."
+    },
+    {
+      "key": "real-packs",
+      "label": "Real packs in the mail",
+      "angle": "Subscribers get physical card packs every season, and here's why it's quarterly not monthly.",
+      "proofPoint": "Starter box + 3 packs a season; monthly shipping ~$8/sub/mo vs ~$2.67 quarterly."
+    },
+    {
+      "key": "pricing-angel-numbers",
+      "label": "Angel-number pricing",
+      "angle": "Every price is an angel number, on purpose.",
+      "proofPoint": "$88.88/yr, $14.44/mo, $122.22/yr, $23.33/mo; 1,111 founders cards; deal at 11:11; 333 charts near you."
+    },
+    {
+      "key": "houston-beta",
+      "label": "$15 for lifetime, Houston only",
+      "angle": "Launching city by city, starting in Houston, with a lifetime deal for the beta.",
+      "proofPoint": "Houston beta: $15 once for lifetime Align+; Houston partner venues (Agnes Cafe, Cureton's, Warehouse Live)."
+    },
+    {
+      "key": "venus-runs-heart",
+      "label": "Venus runs your heart",
+      "angle": "Your sun sign is who you are; your Venus is how you love. My Venus is in Aries.",
+      "proofPoint": "Onboarding 'Venus runs your heart: Hakeem's Venus is in Aries'; sign cards have a Venus face, 'Venus is the find'."
+    },
+    {
+      "key": "real-chart-math",
+      "label": "The chart math is real",
+      "angle": "We compute your chart from real planet positions, not vibes.",
+      "proofPoint": "FOUNDER-CAMP 'What's real': chart math computed; Today's sky Oct 5 2026 uses real positions (Venus retrograde in Scorpio Oct 3)."
+    },
+    {
+      "key": "dealbreakers-upfront",
+      "label": "Dealbreakers on your card",
+      "angle": "Your dealbreakers go on your card before anyone sees your face.",
+      "proofPoint": "Onboarding: pick up to three or write your own; Hakeem's: 'No ghosting. Answer the question you were asked.'"
+    },
+    {
+      "key": "release-dont-haunt",
+      "label": "Release, don't haunt",
+      "angle": "We renamed 'swipe left' to release, and it changes how it feels.",
+      "proofPoint": "Swipe left to release; core message 'Letting a card go is clean. Ghosting isn't.'; chats fade if nobody talks."
+    },
+    {
+      "key": "event-cards",
+      "label": "Event cards: Mulligan, Second look",
+      "angle": "The dating app with a mulligan.",
+      "proofPoint": "Second look brings back the last person you released (Venus retrograde); Mulligan shuffles back everyone you released."
+    },
+    {
+      "key": "two-phones",
+      "label": "Download it and match with me",
+      "angle": "At founder camp I hand people my phone, they make a card in two minutes, and we match live.",
+      "proofPoint": "NEW · NEAR YOU cards dealt first; mutual align matches on both phones; live chat on Supabase."
+    },
+    {
+      "key": "whats-real",
+      "label": "What's real vs seeded",
+      "angle": "Honest build-in-public: what works today and what's still scripted.",
+      "proofPoint": "Real: app, iOS build, backend, two-person matching, chart math. Seeded: tonight's people, Juniper's replies. Next: dealing algorithm, verification, push."
+    },
+    {
+      "key": "founder-camp",
+      "label": "Demos die at 12%",
+      "angle": "My 60-second founder camp demo, and the power bank rule.",
+      "proofPoint": "FOUNDER-CAMP.md: practise three times; 'Charge: a power bank. Demos die at 12%.'"
+    },
+    {
+      "key": "rare-series",
+      "label": "Rare cards of famous people",
+      "angle": "The future: verified celebrities as limited-edition cards fans trade.",
+      "proofPoint": "Rare series demo: NOVA № 001 / 500 (fictional), 'Offer a trade' coming soon."
+    },
+    {
+      "key": "three-day-trade",
+      "label": "Trade cards after 3 days",
+      "angle": "You can only trade cards with someone after you've been aligned for three days.",
+      "proofPoint": "Binder trade; completing fire/earth/air/water gives 'All four elements'."
+    },
+    {
+      "key": "zodiac-content",
+      "label": "Letters to each sign",
+      "angle": "Why our content is letters to your sign at 2am, not ads.",
+      "proofPoint": "12 reels and 12 carousels; rule: never 'download Align', core message at most twice."
+    },
+    {
+      "key": "block-a-sign",
+      "label": "Block a whole sign",
+      "angle": "Yes, you can block every Gemini.",
+      "proofPoint": "Align+: Block any sign; block Virgo and the deal opens on Rio instead of Maya."
+    },
+    {
+      "key": "design-language",
+      "label": "Stardust: no gold buttons",
+      "angle": "The design rules behind the app: indigo not black, pearl foil buttons, gold only for rare cards.",
+      "proofPoint": "BRAND-QA: 'No gold buttons, gold pills or gold badges anywhere'; every tap makes a sound; sound synthesised live."
+    },
+    {
+      "key": "places-houston",
+      "label": "Date ideas built into chat",
+      "angle": "Pick a place and a night; if they say yes, it's a date.",
+      "proofPoint": "Place cards: The Menil ('Free, quiet, and you learn how they see things'), Tacos A Go Go ('you see how they eat')."
+    }
+  ],
+  "facts": [
+    "Align is a dating app played as a card game.",
+    "Photos stay veiled until both people align.",
+    "Only your sun sign is ever shown to anyone.",
+    "There is no compatibility score, by design.",
+    "Each card reads Push, Pull and Align.",
+    "Pull strength badges: Rare pull, Strong pull, Steady pull, Slow burn, Wild card. Rare pull is the rarest.",
+    "Every draw is six cards: five people, then an event.",
+    "Free users get 15 people and 3 events a night.",
+    "Align+ deals 45 a night, then a new deal at 11:11.",
+    "A new deal lands at 11:11 every night.",
+    "Free gets 3 peeks a day; Align+ gets 33 a week.",
+    "A peek shows the photo for about 3 seconds, then it seals.",
+    "There are 51 talk cards across 9 topics.",
+    "Talk card answers stay hidden until both people answer.",
+    "Talk cards come in three kinds: open, this-or-that, who's more likely.",
+    "Each talk topic is an arcana (e.g. money is Wheel of Fortune, conflict is The Tower).",
+    "Every new match gives you a pack.",
+    "Every pack is 12 cards; the last is always a sign card.",
+    "People are never printed and never in packs.",
+    "There are 48 sign cards: 12 signs x Sun, Moon, Rising, Venus.",
+    "Finishes: Myths, Gilded (about 1 in 5 packs), Mythic (about 1 in 25).",
+    "Each season prints 5,000 Myths, 500 Gilded, 50 Mythic of every card.",
+    "Fall '26 season is The Equinox: Libra, Scorpio, Sagittarius.",
+    "Free gets 1 pack a day; Align+ gets 3.",
+    "Align+ ships a starter box, then 3 real packs every season.",
+    "Energy: message +2, talk card +5, yes to a date +5, check in +15; events cost 10.",
+    "You can trade card copies after 3 days aligned.",
+    "Chats fade if nobody talks.",
+    "Founding price: $88.88 a year ($7.41/mo) or $14.44 a month.",
+    "Regular price: $122.22 a year or $23.33 a month.",
+    "3 days free on every plan.",
+    "Houston beta: $15 once for lifetime Align+.",
+    "Founders cards are serialized for the first 1,111 in Houston, never reissued.",
+    "Hakeem's founding card is № 0112.",
+    "Partner venues pay for placement and give venue-only cards on check-in.",
+    "Onboarding is 14+ steps, about two minutes, birth date to founding offer.",
+    "Under 18 sees 'Come back at eighteen'.",
+    "Installable on iPhone from Safari, plus a native iOS build.",
+    "The server decides matches, so a client can't fake one.",
+    "Sound effects are synthesised live."
+  ],
+  "assetsForBroll": [
+    {
+      "moment": "Splash: mark + wordmark",
+      "open": "key 1 or #splash"
+    },
+    {
+      "moment": "Welcome: 'The stars kept your seat warm.' + persona picker (Hakeem / Xavier / Jeremy / Samid)",
+      "open": "key 2 or #welcome"
+    },
+    {
+      "moment": "Dealing: cards fly in",
+      "open": "key 3 or #dealing"
+    },
+    {
+      "moment": "Deck: veiled cards, swipe release/align, gold star burst '+1 aligned'",
+      "open": "key 4 or #deck; ← / → to release/align"
+    },
+    {
+      "moment": "Peek: hold to reveal photo for 3s, then it seals",
+      "open": "#deck, hold Space on Juniper (card 3)"
+    },
+    {
+      "moment": "Card detail (Push / Pull / Align, dealbreakers)",
+      "open": "#deck, Enter / Esc"
+    },
+    {
+      "moment": "Match: auras collide, 'You both aligned'",
+      "open": "key 5 or #match"
+    },
+    {
+      "moment": "Reveal: card flips, veil lifts, holographic tilt; 'Seven days to speak'",
+      "open": "key 6 or #reveal; move mouse over card"
+    },
+    {
+      "moment": "Chat with Juniper; type a line, she replies",
+      "open": "key 7 or #chat"
+    },
+    {
+      "moment": "Talk card played in chat, sealed answers",
+      "open": "#chat -> card button left of message box -> 'Planned date or spontaneous date?'"
+    },
+    {
+      "moment": "Place card -> Agnes Cafe -> yes -> Check in",
+      "open": "#chat -> card sheet -> Places"
+    },
+    {
+      "moment": "Cosmic alignment reading tabs (Spark, Rub, Align, Relationship)",
+      "open": "key 8 or #alignment"
+    },
+    {
+      "moment": "Your deck is spent",
+      "open": "key 9 or #spent"
+    },
+    {
+      "moment": "Matches",
+      "open": "key 0 or #matches"
+    },
+    {
+      "moment": "Binder with fresh trades; Tobias trade, TRADED stamp, All four elements",
+      "open": "key B, then Binder -> Tobias (#trade)"
+    },
+    {
+      "moment": "Rare series: NOVA rainbow-holo card",
+      "open": "Binder -> RARE SERIES › (or →)"
+    },
+    {
+      "moment": "Collection / binder: packs, sets, season, print runs",
+      "open": "key L or #collection"
+    },
+    {
+      "moment": "Pack opening: tear across the top, 12 cards, sign card last numbered № 1,204 / 5,000",
+      "open": "hand (fanned-cards button) -> Open packs -> Align pack"
+    },
+    {
+      "moment": "Onboarding: birth date wheel with live constellation, planets placing on the ring, sign card charging and flipping",
+      "open": "key O or #onboarding"
+    },
+    {
+      "moment": "Founding member: gold № 0112 card stamps in",
+      "open": "key F or #founding"
+    },
+    {
+      "moment": "Align+ paywall: 'Start ... free' flares into 'The whole sky is yours.'",
+      "open": "key P or #paywall"
+    },
+    {
+      "moment": "You tab: your card, flip FACE DOWN / FLIPPED",
+      "open": "key Y or #you"
+    },
+    {
+      "moment": "Your chart: big three",
+      "open": "#chart (or You -> Your sign)"
+    },
+    {
+      "moment": "Club: Taurus room, pinned founders card drop (№ 0112 of 1,111)",
+      "open": "key C or #club"
+    },
+    {
+      "moment": "Today's sky / draw your horoscope: turn three cards",
+      "open": "key S or #sky"
+    },
+    {
+      "moment": "Cosmic calendar (October 2026)",
+      "open": "key K or #calendar"
+    },
+    {
+      "moment": "Notifications",
+      "open": "key N or #notifications"
+    },
+    {
+      "moment": "How to play rulebook",
+      "open": "key H or #howto"
+    },
+    {
+      "moment": "Block a sign",
+      "open": "#block"
+    },
+    {
+      "moment": "Extra pages (settings, verify photo, meet safely, glossary, trial, waitlist, match expired...)",
+      "open": "#x/<page>, e.g. #x/meet-safely, #x/glossary, #x/match-expired, #x/waitlist"
+    },
+    {
+      "moment": "Fresh run",
+      "open": "key R, #reset, or triple-tap the 9:41 clock; M mutes sound"
+    },
+    {
+      "moment": "Static art",
+      "open": "app/public/img/figure/<sign>.jpg (constellation figures), app/public/img/aura/<sign>.jpg (aura silhouettes), founder photos app/public/img/{hakeem,xavier,jeremy,samid}.jpg"
+    },
+    {
+      "moment": "Recording setup",
+      "open": "npm run dev in app/, desktop Chrome, http://localhost:5173, renders a 390x844 iPhone; click once to allow audio"
+    }
+  ]
+}

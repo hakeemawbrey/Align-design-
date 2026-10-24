@@ -1,0 +1,14 @@
+{
+  "name": "align-founder",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Score a creator's reels and turn each into an Align founder talking-head script",
+  "scripts": {
+    "crunch": "node src/crunch.mjs --top 10",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.10"
+  }
+}

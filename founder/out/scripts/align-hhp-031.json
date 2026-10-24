@@ -1,0 +1,113 @@
+{
+  "id": "align-hhp-031",
+  "sourceId": "hhp-031",
+  "title": "No photos until you both say yes",
+  "angleKey": "no-photos",
+  "hookKey": "insider_secret",
+  "formatKey": "relatable_pain_plug",
+  "hook": "As the founder of a dating app, here's something I can tell you: when you pass on someone in my app, you never find out what they looked like.",
+  "beats": [
+    {
+      "line": "Every dating app asks the same first question: are they hot. You decide in half a second, and you never read a word they wrote.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "So I built a dating app where you can't see anyone's face until you both say yes.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align your card is your sky, your words and your dealbreakers. The photo is veiled.",
+      "broll": "Deck: veiled cards (#deck)",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Would you date like this? Tell me honestly.",
+  "caption": "No photo until you both say yes. The face comes last.",
+  "hashtags": [
+    "datingapp",
+    "buildinpublic",
+    "founder"
+  ],
+  "lengthSec": 39,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 74,
+    "craft": 67,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 50,
+        "hits": [
+          "never"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 100,
+        "hits": [
+          "until",
+          "so i"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 95,
+        "hits": [
+          "i",
+          "honestly",
+          "can't",
+          "honestly."
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 98,
+        "hits": [
+          "you",
+          "dating app",
+          "same"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

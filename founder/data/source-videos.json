@@ -1,0 +1,1237 @@
+{
+  "creator": {
+    "name": "Sarah Perl (also reported as 'Sarah Pearl')",
+    "handles": {
+      "instagram": "@hothighpriestess",
+      "tiktok": "@hothighpriestess",
+      "x": "@hhpriestess",
+      "youtube": "@HotHighPriestess",
+      "podcast_ig": "@priestess.perspective (~8K followers)",
+      "others_requested_not_found": [
+        "@getpaidtoexist (a TikTok account by that name exists but ownership unconfirmed)",
+        "@downloadstella (no indexed results)"
+      ]
+    },
+    "audience": {
+      "instagram": "~1.2M (Starter Story, Jul 2026)",
+      "tiktok": "~2.8M (Starter Story) / 2.9M followers, 203.5M likes (cached profile)",
+      "combined_views": "1B+ (self-reported)",
+      "secondary_tiktok": "700K+ 'spam post' account (self-reported)",
+      "new_tiktok_2026": "~40K in ~2 months (self-reported)"
+    },
+    "bio_line": "founder of Stella app - manifest your dream life (TikTok bio, links downloadstella.com)",
+    "stella": {
+      "app_store": "https://apps.apple.com/us/app/stella-manifest-anything/id6757347283",
+      "name": "Stella - Manifest Anything",
+      "publisher": "Perl Productions LLC (per search snippet)",
+      "pitch": "Spotify but for your dream life. Custom audios from the version of you on your vision board.",
+      "pricing": "~$6.99/week, 7-day trial (per competitor Noesis blog, unverified)",
+      "launch": "Press says May 2026; however her TikTok Stella promo posts date from early March 2026 (decoded from video IDs), so launch was likely Feb-Mar 2026",
+      "reported_metrics": "$300K-$360K MRR (one source: $341,537 MRR, 12,379 subs), 200K+ downloads, ~2 months post-launch (self-reported via Starter Story, Jul 2026)",
+      "stack": "Claude Code, Claude, Google AI Studio; MVP in ~2 days, full app 2-3 months"
+    },
+    "prior_business": "Courses on Stan Store (Manifest Magic Workshop $222, Become Their Obsession, Princess Treatment Academy, Body Breakthrough $97, Rich B*tch Bootcamp); ~$1M course revenue (Fortune, Feb 2024); TikTok Shop brand claimed 7 figures/month",
+    "origin": "Soviet-born, Brooklyn; college sophomore with 3 jobs; first tarot video went viral (~Nov 2020)"
+  },
+  "patterns": {
+    "hook_formulas": [
+      "Named method in ALL CAPS: 'THE LOVE LETTER METHOD', 'THEY NEED ME METHOD', 'I AM SIMPLY DECIDING METHOD!!!', 'this is the \"I am sure\" method'",
+      "High-desire outcome promise, often with a speed claim: 'manifest anyone OVERNIGHT', 'manifest a text instantly', 'get them obsessed!!!!', 'HOW I MANIFESTED A TEXT IN ONE MINUTE'",
+      "Save-bait instruction: 'repeat these affirmations for 7 days or listen three times' / 'repeat for 21 days'",
+      "Destiny/second-person address: 'The one you see is the one you're meant to hear'",
+      "Single-line mantra as hook: 'I get paid to exist'",
+      "Reply-to-comment ('Replying to @...') for follow-ups and clapbacks",
+      "Stella era: outcome + app in one line ('get your custom visualization audio of them obsessed w you on Stella!!!'); disbelief testimonial ('wdym i've been manifesting for YEARS & NOW i'm finding this??')"
+    ],
+    "persona_voice": "Gen-Z 'hot girl' high priestess / big-sister mystic turned founder; lowercase casual captions mixed with ALL-CAPS excitement and stacked exclamation marks; emojis 🧿🤍💗✨; unapologetically 'delusional' (podcast 'The Most Delusional People Always Win'); luxury/self-worth framing ('Start believing you're a luxury...'); spite and pain as fuel ('Peace and love doesn't build empires, pain does'); women-vs-men founder framing ('Women are going to dominate this app space, and men should prepare for that').",
+    "pacing_format": "Mostly direct-to-camera talking head, fast method walk-throughs, affirmation lists read rapidly; text-on-screen headline; trending sounds on lighter posts; reply-to-comment videos; occasional skit interruption (a guy asking 'How can I remember all these?') used to insert the app naturally.",
+    "recurring_themes": [
+      "Manifesting a specific person / getting them obsessed (largest likes: 1.6M)",
+      "Manifest a text / ex back / love letter method",
+      "Money affirmations ('I get paid to exist', 'My mind is worth millions', 'I don't work for money, money works for me')",
+      "Self-concept, law of assumption, detachment",
+      "Weight loss through mindset (Body Breakthrough)",
+      "Princess treatment / high-value woman dating",
+      "Stella: future self, custom audio stories, dream-life visualization",
+      "Founder/revenue narrative (MRR, built with AI in days, women in apps, spite, haters boost the algorithm) - present mainly in interviews (Starter Story) rather than in indexed short-form captions"
+    ],
+    "cta_patterns": [
+      "Link in bio / 'at the top of my page' pinned product (Stan Store courses)",
+      "Comment keyword -> ManyChat DM (IG): comment 'download' -> custom affirmations + App Store link -> 'if you review the app, let me know so I can thank you personally'",
+      "Long version on YouTube ('PINNED AND ON MY YT FOR IN DEPTH')",
+      "Stella: 'download Stella to meet your future self', 'get your custom ... on Stella', 'you can actually get custom affirmations on your lock screen every single day using my app Stella'",
+      "Implicit save CTA via 'repeat for X days / listen 3x'"
+    ],
+    "strategy_notes": [
+      "Recreate proven virals 'to infinity' (e.g. re-posting 'manifest a text' in 2024 with 'if youre new here, this method was one of the first videos i had go viral')",
+      "Content first, product second: mine comments for 'I wish this existed'; Stella productizes a prior ChatGPT future-self prompt video",
+      "Insert the app into the existing top niche rather than making pure ads; demo videos that show the use case convert better than name-drops",
+      "Controversy/haters reframed as algorithm boost: 'My most successful videos are the most controversial ones'",
+      "Multiple accounts: main, a 700K 'spam post' account, and a new 2026 account (~40K) for Stella"
+    ],
+    "gaps": "Very few build-in-public/founder-story short-form videos by her own accounts were indexed publicly; founder narrative is documented mostly via Starter Story (YouTube/Threads) and press. Instagram reels mostly not indexed. No verified view counts; all metrics are search-snippet like/comment counts or self-reported."
+  },
+  "videos": [
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7613815282284367117",
+      "approx_date": "2026-03-05",
+      "hook": "custom stories of your dream life on stella",
+      "topic": "Stella promo: AI-generated audio stories of your dream life",
+      "format": "talking head / app promo (inferred)",
+      "structure": [
+        "Hook names the outcome (dream-life story)",
+        "Shows/mentions Stella output",
+        "Points to download"
+      ],
+      "cta": "Download Stella (link in bio / downloadstella.com)",
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Hook is the indexed caption/title; spoken hook not verified. Date decoded from TikTok video ID."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7614722130424401165",
+      "approx_date": "2026-03-08",
+      "hook": "get your custom visualization audio of them obsessed w you on Stella!!!💗🎧",
+      "topic": "Stella promo bridged from her 'specific person / get them obsessed' niche",
+      "format": "talking head / app promo (inferred)",
+      "structure": [
+        "Hook reuses proven 'get them obsessed' love-manifestation desire",
+        "Introduces Stella custom audio as the tool",
+        "CTA to app"
+      ],
+      "cta": "Get the custom audio on Stella",
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption verbatim from index. Shows her strategy of inserting the app into her highest-performing niche (manifesting a specific person)."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7615106631117950239",
+      "approx_date": "2026-03-09",
+      "hook": "& you can download Stella to meet your future self who has it 💗",
+      "topic": "Stella promo: 'meet your future self who already has it'",
+      "format": "talking head / affirmation-style (inferred)",
+      "structure": [
+        "Opens with a desire/affirmation (caption begins with '&', implying it continues an on-screen statement)",
+        "Future-self framing",
+        "Download CTA"
+      ],
+      "cta": "Download Stella",
+      "metrics": {
+        "views": null,
+        "likes": "464.8K",
+        "comments": "17.4K",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Highest-engagement Stella-era post found. Caption verbatim; on-screen hook unknown."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7620858561295404302",
+      "approx_date": "2026-03-24",
+      "hook": "wdym i've been manifesting for YEARS & NOW i'm finding this??",
+      "topic": "Stella promo in 'discovery/testimonial' style",
+      "format": "text-on-screen reaction / POV-style testimonial (inferred)",
+      "structure": [
+        "Disbelief hook (been doing this for years, only now found this)",
+        "Reveal Stella",
+        "Implied CTA"
+      ],
+      "cta": "Try Stella",
+      "metrics": {
+        "views": null,
+        "likes": "1,985",
+        "comments": null,
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Indexed title 'Stella is a game changer'; on-screen/caption text 'wdym i've been manifesting for YEARS & NOW i'm finding this??'. Low performer vs. other Stella posts."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7621007557435428109",
+      "approx_date": "2026-03-25",
+      "hook": "i use Stella app to visualize & manifest. so good",
+      "topic": "Stella promo: founder using her own app as a user",
+      "format": "talking head / app demo (inferred)",
+      "structure": [
+        "Personal-use statement",
+        "Show visualization/manifestation use",
+        "Endorsement"
+      ],
+      "cta": "Download Stella",
+      "metrics": {
+        "views": null,
+        "likes": "48.9K",
+        "comments": "325",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7631008398007389453",
+      "approx_date": "2026-04-21",
+      "hook": null,
+      "topic": "Manifestation / self-improvement, 'becoming a different person' (per search summary)",
+      "format": "trending-sound video (sound: 'The night we met')",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Only the sound and a vague topic summary were indexed. A separate snippet reported a post with 113.5K likes / 1,192 comments on 'manifestation, self-improvement, becoming a different person' but it could not be tied to this URL with certainty."
+    },
+    {
+      "platform": "unknown (IG and/or TikTok)",
+      "url": null,
+      "approx_date": "2026 (Mar-Jul)",
+      "hook": "repeat these affirmations for 7 days or listen three times",
+      "topic": "Affirmation video with natural Stella insertion; credited by Sarah with the 'majority of signups and revenue'",
+      "format": "talking head affirmation + skit/interruption (co-star)",
+      "structure": [
+        "Save-bait instruction hook ('repeat for 7 days / listen 3x')",
+        "Rapid list of affirmations (e.g. 'My mind is worth millions', 'I don't work for money, money works for me')",
+        "A guy interrupts: 'How can I remember all these?'",
+        "She answers: get custom affirmations on your lock screen every day with my app Stella"
+      ],
+      "cta": "'You can actually get custom affirmations on your lock screen every single day using my app Stella.' + IG ManyChat comment keyword ('download') -> DM with custom affirmations + App Store link + review request",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "Starter Story interview / transcript",
+      "notes": "Described by Sarah in the Starter Story interview (Jul 2026). Hook phrase and CTA line quoted from the interview transcript; exact post URL not found. She says she recreates this format repeatedly."
+    },
+    {
+      "platform": "unknown (IG and/or TikTok)",
+      "url": null,
+      "approx_date": "2026",
+      "hook": null,
+      "topic": "Stella app demo showing the UI/use case",
+      "format": "screen-recording app demo / talking head",
+      "structure": [
+        "Show the problem",
+        "Demo the app's custom audio/affirmation output",
+        "CTA"
+      ],
+      "cta": "Download Stella",
+      "metrics": {
+        "views": "~300K",
+        "likes": null,
+        "comments": null,
+        "verified": false,
+        "basis": "self-reported by Sarah in Starter Story interview"
+      },
+      "confidence": "inferred",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "Starter Story interview",
+      "notes": "Sarah: a demo-style video with ~300K views 'converted super well'; videos that only mention the app without showing the use case 'convert a little worse'."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "2026",
+      "hook": "Today I'm looking at the App Store and seeing my app hit number one on the App Store.",
+      "topic": "Founder-flavored affirmation / scripting (manifesting the app's success)",
+      "format": "affirmation / scripting (spoken)",
+      "structure": [
+        "Present-tense 'end state' scripting about the app hitting #1"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": true,
+      "source": "BigGo Finance / Starter Story",
+      "notes": "Line quoted in BigGo/Starter Story coverage as a 'sample affirmation'; unclear whether it was posted as a standalone short. Included because it is the closest thing to a build-in-public line in her own voice."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": "2026",
+      "hook": "listen to my new song on my app stella 💗",
+      "topic": "Stella promo framing custom audio as 'my new song'",
+      "format": "trending-audio / lip-sync style promo (inferred)",
+      "structure": [
+        "Curiosity hook ('my new song')",
+        "Reveal it's Stella custom audio"
+      ],
+      "cta": "Listen on Stella",
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption reported in search results as appearing on several of her videos; specific URLs not returned."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": "2026",
+      "hook": null,
+      "topic": "'Stella method' to manifest while you sleep; listen 3x before bed",
+      "format": "talking head / bedtime routine (inferred)",
+      "structure": [
+        "Night-routine framing",
+        "Listen 3x before you sleep for best results",
+        "Stella CTA"
+      ],
+      "cta": "Use Stella before bed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": false,
+      "source": "TikTok discover snippet",
+      "notes": "From TikTok discover-page aggregation; wording 'listen 3x before you sleep for best results' attributed to her posts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Eg93po_DAYo",
+      "approx_date": "2026-07 (page dated Jul 12, 2026)",
+      "hook": "She Built This $340K/Month App in 60 Days",
+      "topic": "Founder story: Stella to $300-360K MRR in ~2 months, built with Claude Code + Google AI Studio, content-first 'work backwards' strategy",
+      "format": "long-form interview (Starter Story channel, not her account)",
+      "structure": [
+        "Revenue reveal ($340K MRR, 12K paying, 200K+ downloads)",
+        "Origin: audience first, comments as product research",
+        "Build: MVP in ~2 days, full app 2-3 months, vibe coding",
+        "Distribution: affirmation format, ManyChat, controversy",
+        "Thesis: 'Women are going to dominate this app space'",
+        "Motivation: spite/pain"
+      ],
+      "cta": "N/A (third-party interview)",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "era": "stella",
+      "stella_related": true,
+      "founder_story": true,
+      "source": "Starter Story",
+      "notes": "Not her own short-form, but the main public founder-story source; widely clipped by Starter Story on Threads/YouTube posts. Title verbatim."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": "pre-2026 (date unknown)",
+      "hook": "tell me a story of a day in the life as my future self based off this description",
+      "topic": "ChatGPT prompt for future-self visualization (precursor to Stella's core feature)",
+      "format": "talking head / tutorial (inferred)",
+      "structure": [
+        "Problem: hard to visualize",
+        "Give the ChatGPT prompt",
+        "Listen/read the future-self story"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "27.6K",
+        "comments": "159",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "paraphrased",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "TikTok discover snippet",
+      "notes": "Attributed to her account on a TikTok discover page; quoted prompt text. Strong evidence of 'content first, then product' - this is Stella's feature as a manual prompt."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7516667615453007147",
+      "approx_date": "2025-06-16",
+      "hook": null,
+      "topic": "Manifestation techniques for people with ADHD",
+      "format": "talking head (inferred)",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Indexed title 'Understanding ADHD and Effective Manifestation Techniques' is an SEO title generated by TikTok, not her caption."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7504792032217484575",
+      "approx_date": "2025-05-15",
+      "hook": null,
+      "topic": "Unknown (manifestation)",
+      "format": "trending-sound video",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Only sound metadata indexed."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7502208297060093227",
+      "approx_date": "2025-05-08",
+      "hook": "ahhhhhbut if you DO want to manifest them to be obsessed run thru Become Their Obsession at the top of my page ;)",
+      "topic": "Specific-person manifestation; product plug",
+      "format": "talking head / text-on-screen (inferred)",
+      "structure": [
+        "Disclaimer/tease ('but if you DO want...')",
+        "Plug paid course pinned at top of page"
+      ],
+      "cta": "Buy 'Become Their Obsession' (pinned / link in bio)",
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption verbatim."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7489499774899572010",
+      "approx_date": "2025-04-04",
+      "hook": "i teach you how in body breakthrough",
+      "topic": "Weight loss via mindset ('I am sure' method referenced on-screen)",
+      "format": "talking head + text-on-screen",
+      "structure": [
+        "Result/claim",
+        "Method tease",
+        "Course plug"
+      ],
+      "cta": "Buy Body Breakthrough ($97) via Stan store",
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption verbatim; on-screen text reportedly references the 'I am sure' method."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7467984349720218926",
+      "approx_date": "2025-02-05",
+      "hook": null,
+      "topic": "Law of detachment",
+      "format": "talking head (inferred)",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Indexed as 'video of law of detachment'."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7457277873712270634",
+      "approx_date": "2025-01-07",
+      "hook": "Replying to @Shadow ➿",
+      "topic": "Reply-to-comment video (topic: her influence / manifestation)",
+      "format": "reply-to-comment talking head",
+      "structure": [
+        "Comment sticker on screen",
+        "Answer/clapback"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "5,465",
+        "comments": "149",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption verbatim (reply prefix). SEO title 'Understanding the Influence of Hot High Priestess'. Surfaced in a 'haters/delusional' search, possibly a response to criticism."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7445095209442069806",
+      "approx_date": "2024-12-06",
+      "hook": null,
+      "topic": "Unknown (desire/manifestation)",
+      "format": "trending-sound video ('desire')",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7431586464544148766",
+      "approx_date": "2024-10-30",
+      "hook": null,
+      "topic": "Daily positive affirmations",
+      "format": "affirmation list, talking head (inferred)",
+      "structure": [
+        "Affirmation list"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "SEO title 'Positive Affirmations for Daily Motivation'."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7413490812950007070",
+      "approx_date": "2024-09-11",
+      "hook": "THEY NEED ME METHOD",
+      "topic": "Specific-person manifestation method",
+      "format": "talking head tutorial (inferred)",
+      "structure": [
+        "Named-method hook in caps",
+        "Steps",
+        "Implied save"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption/title verbatim."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7397632590133480734",
+      "approx_date": "2024-07-31",
+      "hook": "Replying to @tashaxxxi GET THEM OBSESSEDDD!!!!",
+      "topic": "Love letter spell / get them obsessed; 'perfect to do now since it's mercury retrograde'",
+      "format": "reply-to-comment talking head",
+      "structure": [
+        "Comment sticker",
+        "Method/spell",
+        "Timing urgency (mercury retrograde)"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Tags #witch #boyfriend #lovespell."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7391943199293459743",
+      "approx_date": "2024-07-15",
+      "hook": "manifest a text",
+      "topic": "Re-post of an early viral method ('if youre new here, this method was one of the first videos i had go viral')",
+      "format": "talking head tutorial / remake of past viral",
+      "structure": [
+        "Hook: 'manifest a text'",
+        "Credibility: one of my first viral videos",
+        "Visualization steps"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "221.9K",
+        "comments": null,
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Direct evidence of her 'recreate the viral to infinity' strategy."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7385960640625544478",
+      "approx_date": "2024-06-29",
+      "hook": "LOVE LETTER METHOD #lovelettermethod",
+      "topic": "Love Letter Method (her signature method)",
+      "format": "talking head tutorial",
+      "structure": [
+        "Named method",
+        "Steps: write a letter to yourself from their perspective"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7380779193069587742",
+      "approx_date": "2024-06-15",
+      "hook": "amen!!!!",
+      "topic": "Get-them-obsessed / love manifestation (surfaced in that search)",
+      "format": "talking head (inferred)",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption only."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7375371818485435691",
+      "approx_date": "2024-06-01",
+      "hook": null,
+      "topic": "Love Letter Method",
+      "format": "talking head tutorial (inferred)",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Indexed as 'video of Love Letter Method'."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7369043725093195054",
+      "approx_date": "2024-05-15",
+      "hook": "get them obsessed!!!!",
+      "topic": "How to manifest him / get them obsessed",
+      "format": "talking head tutorial",
+      "structure": [
+        "High-desire hook",
+        "Method",
+        "Implied course upsell"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "1.6M",
+        "comments": "16.4K-16.9K",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Her biggest-liked video found. Tags #manifestation #witchcraft."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7343752697847336235",
+      "approx_date": "2024-03-07",
+      "hook": "the love letter method",
+      "topic": "Love Letter Method",
+      "format": "talking head tutorial",
+      "structure": [
+        "Named method",
+        "Steps"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7321515748441083182",
+      "approx_date": "2024-01-08",
+      "hook": "how to get Princess Treatment ❤️‍🔥🤭",
+      "topic": "Dating: princess treatment",
+      "format": "talking head (inferred)",
+      "structure": [
+        "How-to hook",
+        "Tips",
+        "Course plug (Princess Treatment Academy)"
+      ],
+      "cta": "Princess Treatment Academy (link in bio)",
+      "metrics": {
+        "views": null,
+        "likes": "38K",
+        "comments": "696",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": "unknown",
+      "hook": "WHEN i say this is the secret i mean it👏 everything changed when I watched the high value women formula videos (instant access in my 🔗in profile)",
+      "topic": "High-value woman / dating course plug",
+      "format": "talking head / testimonial-style",
+      "structure": [
+        "'This is the secret' hook",
+        "Transformation claim",
+        "Link in profile"
+      ],
+      "cta": "Link in profile",
+      "metrics": {
+        "views": null,
+        "likes": "1.6M",
+        "comments": null,
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption returned in search attributed to her account; URL not returned."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7309643585522076959",
+      "approx_date": "2023-12-07",
+      "hook": "THE LOVE LETTER METHOD #lovelettermethod",
+      "topic": "Love Letter Method",
+      "format": "talking head tutorial",
+      "structure": [
+        "Named method",
+        "Steps"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7294035532655496494",
+      "approx_date": "2023-10-25",
+      "hook": "I AM SIMPLY DECIDING METHOD!!!",
+      "topic": "'I am simply deciding' affirmation method",
+      "format": "talking head + text-on-screen",
+      "structure": [
+        "Named-method hook",
+        "'IT IS ‼️FOOL PROOF‼️'",
+        "Script: SAY: \"I AM SIMPLY DECIDING ____ IS HAPPENING\""
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "~54K (another snapshot 515.5K)",
+        "comments": "615 (another snapshot 8,587)",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Counts conflict between aggregator snapshots."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7273963636874382635",
+      "approx_date": "2023-09-01",
+      "hook": "🤍",
+      "topic": "Unknown (surfaced near her tarot 'the one you see' search)",
+      "format": "unknown",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "613K",
+        "comments": "7,453",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption is just an emoji; one of her top-liked posts."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": "2023 (summer; article dated 2023-09-29)",
+      "hook": "this is the \"I am sure\" method #iamsuremethod",
+      "topic": "'I am sure' method: say 'I am sure ___' in present tense 10x",
+      "format": "talking head tutorial",
+      "structure": [
+        "Named method hook",
+        "Formula: 'I am sure that I got X job'",
+        "Repeat aloud 10x or write it",
+        "'our words create our reality even faster'"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "xoNecole",
+      "notes": "Embedded post text per xoNecole; URL not exposed."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7264006290953817386",
+      "approx_date": "2023-08-06",
+      "hook": null,
+      "topic": "Manifestation (unknown)",
+      "format": "trending-sound video ('Habits (Stay High)')",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7194878483519049003",
+      "approx_date": "2023-01-31",
+      "hook": "manifest a text instantly, you're welcome 🤝 #manifestatext",
+      "topic": "Manifest a text within 24 hours",
+      "format": "talking head tutorial",
+      "structure": [
+        "Promise hook",
+        "'how i manifest a text within 24-hours'",
+        "Visualize them typing your name + message"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "225.2K",
+        "comments": "11.9K",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/CnCdNlCoy8s/",
+      "approx_date": "2023-01-05",
+      "hook": null,
+      "topic": "Unknown (manifestation; embedded in ELLE India article)",
+      "format": "reel",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "ELLE India",
+      "notes": "Shortcode from ELLE India embed; date decoded from shortcode."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7175897468276706606",
+      "approx_date": "2022-12-11",
+      "hook": "I get paid to exist",
+      "topic": "Money affirmation to repeat for 21 days (became her brand mantra)",
+      "format": "talking head affirmation",
+      "structure": [
+        "Single-affirmation hook",
+        "Instruction: repeat for 21 days"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "171.7K",
+        "comments": "3,552",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "paraphrased",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Indexed as 'Manifest Money: The Powerful Affirmation for 2023'; affirmation text verbatim, exact hook wording unverified."
+    },
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/Cl_Bz4xDqRC/",
+      "approx_date": "2022-12-10",
+      "hook": null,
+      "topic": "Unknown (manifestation; embedded in ELLE India)",
+      "format": "reel",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "ELLE India",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7174012013016878382",
+      "approx_date": "2022-12-06",
+      "hook": "THE LOVE LETTER METHOD - manifest anyone OVERNIGHT",
+      "topic": "Love Letter Method origin video",
+      "format": "talking head tutorial",
+      "structure": [
+        "Big-promise hook (anyone, overnight)",
+        "Method",
+        "Long version on YouTube"
+      ],
+      "cta": "'LOVE LETTER METHOD TUTORIAL PINNED AND ON MY YT FOR IN DEPTH!'",
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7159266377583430954",
+      "approx_date": "2022-10-27",
+      "hook": "Replying to @Ash AH",
+      "topic": "Love/ex manifestation (surfaced in that search)",
+      "format": "reply-to-comment",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7138488295721372970",
+      "approx_date": "2022-09-01",
+      "hook": "Replying to @hothighpriestess 🧿🤍 to help y'all w the o method i'm hooking you up with t0ys 👀 l!nk on my prof!le, you're welcome🤍✨",
+      "topic": "'O method' (pleasure manifestation) + affiliate link",
+      "format": "reply-to-own-comment",
+      "structure": [
+        "Self-reply continuation",
+        "Affiliate plug"
+      ],
+      "cta": "Link on profile",
+      "metrics": {
+        "views": null,
+        "likes": "231K",
+        "comments": "1,246",
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Shows early affiliate/link-in-bio monetization; censored spelling to dodge filters."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/7132506340299394350",
+      "approx_date": "2022-08-16",
+      "hook": "HOW I MANIFESTED A TEXT IN ONE MINUTE",
+      "topic": "Manifest a text",
+      "format": "talking head storytime/tutorial",
+      "structure": [
+        "Result-first hook",
+        "Method"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "paraphrased",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": "Caption shown as hashtags; quoted phrase came from search summary."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": "2022 (April, inferred)",
+      "hook": null,
+      "topic": "Whisper Method (visualize whispering your request 3x into their ear)",
+      "format": "talking head tutorial",
+      "structure": [
+        "Method name",
+        "Visualize approaching your person",
+        "Whisper what you want 3 times"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": "~3M viewers",
+        "likes": null,
+        "comments": null,
+        "verified": false,
+        "basis": "third-party article (Hype Drop Daily)"
+      },
+      "confidence": "paraphrased",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "ELLE India / Her World / Hype Drop Daily",
+      "notes": "Her most popular method per ELLE; credited with spreading the trend."
+    },
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/CXogtxkjsDs/",
+      "approx_date": "2021-12-18",
+      "hook": null,
+      "topic": "Unknown (manifestation; embedded in ELLE India)",
+      "format": "reel",
+      "structure": [
+        "Unknown"
+      ],
+      "cta": null,
+      "metrics": null,
+      "confidence": "inferred",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "ELLE India",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@hothighpriestess/video/6955288285962931461",
+      "approx_date": "2021-04-26",
+      "hook": "✨hot✨ high priestess #fyp #tarot #manifestation #spirituality",
+      "topic": "Early tarot/brand video",
+      "format": "tarot / talking head",
+      "structure": [
+        "Brand-name hook"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": null,
+        "likes": "8,339",
+        "comments": null,
+        "verified": false,
+        "basis": "search-engine snippet of TikTok page (unverified, snapshot date unknown)"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": false,
+      "source": "web search snippet",
+      "notes": null
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": "~late 2020 (account started Nov 2020)",
+      "hook": "The one you see is the one you're meant to hear",
+      "topic": "First viral tarot reading (30K -> 50K -> 100K views overnight)",
+      "format": "tarot reading, pick-a-card style",
+      "structure": [
+        "Destiny hook addressing the viewer ('meant to hear')",
+        "Tarot reading"
+      ],
+      "cta": null,
+      "metrics": {
+        "views": "100K+ overnight",
+        "likes": null,
+        "comments": null,
+        "verified": false,
+        "basis": "creatorinpublic / Fortune retelling"
+      },
+      "confidence": "verbatim",
+      "era": "pre-stella",
+      "stella_related": false,
+      "founder_story": true,
+      "source": "Fortune / Creator in Public",
+      "notes": "Caption verbatim per Fortune & Creator in Public; the origin of her account."
+    }
+  ],
+  "sources": [
+    "https://www.starterstory.com/stories/she-built-this-300k-month-app-in-60-days",
+    "https://www.youtube.com/watch?v=Eg93po_DAYo",
+    "https://viewrankai.com/tools/youtube-transcript/Eg93po_DAYo",
+    "https://podcasttranscript.ai/library/she-built-this-300k-month-app-in-60-days",
+    "https://www.threads.com/@starter_story/post/Dcbn-nQmXk_/she-built-a-manifesting-app-in-days-it-now-does-k-month-meet-sarah-pearl-aka/",
+    "https://www.youtube.com/post/Ugkxz9BSSmz3B2fMyUceAhQhPtPljzRyFQWD",
+    "https://finance.biggo.com/news/435ccd9f4d05042a",
+    "https://finance.biggo.com/podcast/435ccd9f4d05042a",
+    "https://www.stork.ai/blog/spite-built-this-340kmonth-app",
+    "https://www.stork.ai/blog/360kmo-with-zero-code-the-creator-takeover",
+    "https://www.stork.ai/blog/es/this-ai-app-makes-300kmonth",
+    "https://www.startupfinder.co/posts/how-a-manifesting-app-hit-340kmonth-in-just-2-months-eg93",
+    "https://www.trynoesis.app/blog/noesis-vs-stella/",
+    "https://creatorinpublic.com/p/hothighpriestess-built-a-1m-tiktok-business-at-23",
+    "https://fortune.com/2024/02/04/what-is-manifesting-gen-z-spirituality-23-year-old-tiktok-almost-1-million-revenue/",
+    "https://elle.in/manifestation-techniques-to-attract-your-dream-life/",
+    "https://www.xonecole.com/i-am-sure-manifestation/",
+    "https://www.herworld.com/gallery/life/tiktok-whisper-method-manifestation-viral/",
+    "https://www.refinery29.com/en-gb/manifesting-magical-thinking-control-reality-goals",
+    "https://stan.store/hothighpriestess",
+    "https://hothighpriestess.com/about",
+    "https://apps.apple.com/us/app/stella-manifest-anything/id6757347283",
+    "https://www.listennotes.com/podcasts/the-priestess-perspective-hot-high-priestess-Emw6cYLgGX8/",
+    "https://www.instagram.com/priestess.perspective/",
+    "https://www.tiktok.com/@hothighpriestess",
+    "https://www.tiktok.com/discover/my-mind-is-worth-millions",
+    "https://www.tiktok.com/discover/i-get-paid-to-exist",
+    "https://www.tiktok.com/discover/how-to-use-the-stella-manifest-app",
+    "https://www.tiktok.com/@thejennamillion/video/7611295166317464862",
+    "https://www.tiktok.com/@hothighpriestess/video/7613815282284367117",
+    "https://www.tiktok.com/@hothighpriestess/video/7614722130424401165",
+    "https://www.tiktok.com/@hothighpriestess/video/7615106631117950239",
+    "https://www.tiktok.com/@hothighpriestess/video/7620858561295404302",
+    "https://www.tiktok.com/@hothighpriestess/video/7621007557435428109",
+    "https://www.tiktok.com/@hothighpriestess/video/7631008398007389453",
+    "https://www.tiktok.com/@hothighpriestess/video/7516667615453007147",
+    "https://www.tiktok.com/@hothighpriestess/video/7504792032217484575",
+    "https://www.tiktok.com/@hothighpriestess/video/7502208297060093227",
+    "https://www.tiktok.com/@hothighpriestess/video/7489499774899572010",
+    "https://www.tiktok.com/@hothighpriestess/video/7467984349720218926",
+    "https://www.tiktok.com/@hothighpriestess/video/7457277873712270634",
+    "https://www.tiktok.com/@hothighpriestess/video/7445095209442069806",
+    "https://www.tiktok.com/@hothighpriestess/video/7431586464544148766",
+    "https://www.tiktok.com/@hothighpriestess/video/7413490812950007070",
+    "https://www.tiktok.com/@hothighpriestess/video/7397632590133480734",
+    "https://www.tiktok.com/@hothighpriestess/video/7391943199293459743",
+    "https://www.tiktok.com/@hothighpriestess/video/7385960640625544478",
+    "https://www.tiktok.com/@hothighpriestess/video/7380779193069587742",
+    "https://www.tiktok.com/@hothighpriestess/video/7375371818485435691",
+    "https://www.tiktok.com/@hothighpriestess/video/7369043725093195054",
+    "https://www.tiktok.com/@hothighpriestess/video/7343752697847336235",
+    "https://www.tiktok.com/@hothighpriestess/video/7321515748441083182",
+    "https://www.tiktok.com/@hothighpriestess/video/7309643585522076959",
+    "https://www.tiktok.com/@hothighpriestess/video/7294035532655496494",
+    "https://www.tiktok.com/@hothighpriestess/video/7273963636874382635",
+    "https://www.tiktok.com/@hothighpriestess/video/7264006290953817386",
+    "https://www.tiktok.com/@hothighpriestess/video/7194878483519049003",
+    "https://www.instagram.com/reel/CnCdNlCoy8s/",
+    "https://www.tiktok.com/@hothighpriestess/video/7175897468276706606",
+    "https://www.instagram.com/reel/Cl_Bz4xDqRC/",
+    "https://www.tiktok.com/@hothighpriestess/video/7174012013016878382",
+    "https://www.tiktok.com/@hothighpriestess/video/7159266377583430954",
+    "https://www.tiktok.com/@hothighpriestess/video/7138488295721372970",
+    "https://www.tiktok.com/@hothighpriestess/video/7132506340299394350",
+    "https://www.instagram.com/reel/CXogtxkjsDs/",
+    "https://www.tiktok.com/@hothighpriestess/video/6955288285962931461"
+  ],
+  "method": {
+    "note": "Collected via WebSearch snippets and WebFetch of public article pages only. TikTok/YouTube/X/LinkedIn pages blocked or rendered empty for WebFetch, so TikTok captions/metrics come from search-engine snippets. Dates for TikTok/IG URLs decoded from the video ID / shortcode timestamp (reliable). No metrics are verified.",
+    "counts": {
+      "videos": 48,
+      "by_confidence": {
+        "verbatim": 28,
+        "inferred": 13,
+        "paraphrased": 7
+      },
+      "with_url": 38,
+      "stella_related": 11,
+      "founder_story": 3
+    }
+  }
+}

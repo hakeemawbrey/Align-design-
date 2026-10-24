@@ -1,0 +1,119 @@
+{
+  "id": "align-hhp-021",
+  "sourceId": "hhp-021",
+  "title": "You earn power by going on dates",
+  "angleKey": "energy",
+  "hookKey": "built_that",
+  "formatKey": "method_tutorial",
+  "hook": "I built a dating app that rewards you for going on dates, not for swiping.",
+  "beats": [
+    {
+      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
+      "broll": "Energy meter in the deck",
+      "onScreen": ""
+    },
+    {
+      "line": "Check in at the date, +15. You spend energy on event cards.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Checking in at a real date is worth the most. More than anything you do on the screen.",
+      "broll": "Check in at Agnes Cafe",
+      "onScreen": "message +2 · talk card +5 · check in +15"
+    },
+    {
+      "line": "Make the game reward what you actually want.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Save this and try it on your next deal.",
+  "caption": "Message +2. Talk card +5. Show up +15.",
+  "hashtags": [
+    "gamification",
+    "datingapp",
+    "buildinpublic"
+  ],
+  "lengthSec": 35,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 73,
+    "craft": 66,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 80,
+        "hits": [
+          "i",
+          "i built"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 30,
+        "hits": []
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 33,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 78,
+        "hits": [
+          "you",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 90,
+        "hits": [
+          "save this",
+          "send",
+          "save"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 75,
+        "hits": [
+          "try it",
+          "try"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}
