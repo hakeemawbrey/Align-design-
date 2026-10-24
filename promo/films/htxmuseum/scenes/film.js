@@ -7,7 +7,7 @@
 //               (from behind) stare, heads tilting. Each artwork spins away into a big "?" on the beats. "Deep art. *Small talk.*"
 //  11.10–16.90  "You see who they | are *first.*" — the middle frame grows into a gilded frame; a velvet drape drops and
 //               the real veiled mystery card (card-profile-3) hangs there like a painting under a spotlight. Museum
-//               placards pop: SUN · Libra, MOON · Gemini, RISING · Leo, then a red DEALBREAKER placard ("One-word texts.").
+//               placards pop: SUN · Libra, MOON · Gemini, RISING · ♒ Aquarius, then a red DEALBREAKER placard ("One-word texts.").
 //  17.10–21.30  "Skip the | *small talk.*" — small-talk bubbles ("so… art?", "cool.", "lol") pop; the painting flips to a
 //               real talk card (card-talk-1, "What's a hill you will die on?"). "Ask something *real.*"
 //  21.50–25.30  "Skip the | *guessing.*" — the gallery is back; the "?"s burst into gold stars, the pair (gold + pink)
@@ -248,9 +248,9 @@ function qmark(x, f, k, col, t, t0) {
 }
 
 // ── museum placards (white wall labels)
-const PLAC = [{ cx: 220, label: 'SUN', val: 'Libra', col: '#c0407a' }, { cx: 540, label: 'MOON', val: 'Gemini', col: '#5a4fc9' }, { cx: 860, label: 'RISING', val: 'Leo', col: '#c46a12' }]
+const PLAC = [{ cx: 220, label: 'SUN', val: 'Libra', col: '#c0407a' }, { cx: 540, label: 'MOON', val: 'Gemini', col: '#5a4fc9' }, { cx: 860, label: 'RISING', val: 'Aquarius', col: '#1f9cc4', glyph: '♒\uFE0E', gcol: '#38c4ec', valSize: 50 }]
 const PLAC_Y = 1515, DEAL_Y = 1700
-function placard(x, w, h, label, val, col, { valFont = `italic 600 60px ${SERIF}`, valCol = INK, mark = false } = {}) {
+function placard(x, w, h, label, val, col, { valFont = `italic 600 60px ${SERIF}`, valCol = INK, mark = false, glyph = null, gcol = col } = {}) {
   x.shadowColor = 'rgba(0,0,0,0.55)'; x.shadowBlur = 26; x.shadowOffsetY = 10
   x.fillStyle = '#f6f1e6'; x.beginPath(); x.roundRect(-w / 2, -h / 2, w, h, 12); x.fill()
   x.shadowOffsetY = 0; x.shadowBlur = 0
@@ -262,6 +262,11 @@ function placard(x, w, h, label, val, col, { valFont = `italic 600 60px ${SERIF}
     const tw = x.measureText(val).width, ox = 30
     x.fillText(val, ox, 18)
     x.save(); x.translate(ox - tw / 2 - 40, 16); x.beginPath(); x.moveTo(-15, -15); x.lineTo(15, 15); x.moveTo(15, -15); x.lineTo(-15, 15); ink(x, RED, { w: 9, fa: 0, glow: 8 }); x.restore()
+  } else if (glyph) {
+    const tw = x.measureText(val).width, gw = 44, ox = gw / 2 + 4
+    x.fillText(val, ox, 18)
+    x.save(); x.font = "bold 50px 'EB Garamond', 'Segoe UI Symbol', 'Noto Sans Symbols', serif"; x.fillStyle = gcol; x.shadowColor = gcol; x.shadowBlur = 8
+    x.fillText(glyph, ox - tw / 2 - gw / 2 - 6, 18); x.restore()
   } else x.fillText(val, 0, 18)
 }
 
@@ -539,7 +544,7 @@ export async function build(stage) {
       const k = pop01(t, T.plac[i], 0.38, 2.4)
       if (k <= 0) return
       x.save(); x.translate(P.cx, PLAC_Y + 120 * o); x.rotate([-2, 1, 2.5][i] * D2R); x.scale(k * (1 - 0.3 * o), k * (1 - 0.3 * o)); x.globalAlpha = clamp(k * 3) * (1 - o)
-      placard(x, 288, 132, P.label, P.val, P.col)
+      placard(x, 288, 132, P.label, P.val, P.col, P.glyph ? { valFont: `italic 600 ${P.valSize}px ${SERIF}`, glyph: P.glyph, gcol: P.gcol } : {})
       x.restore()
       sparkle(x, P.cx, PLAC_Y, t, T.plac[i], { n: 8, R: 170, seed: 40 + i, size: 22 })
     })
