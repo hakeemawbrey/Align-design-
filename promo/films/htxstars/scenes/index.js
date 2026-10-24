@@ -1,9 +1,6 @@
-// STUB — replaced by the htxstars agent. Export DURATION, SCENES and CUES.
-import { el } from '../../../src/lib.js'
+// htxstars (45 s vertical): "In Houston, you can barely see the stars." → Hakeem's chart → the feature tour → "Look up." → END CARD.
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import * as S from './story.js'
 export const DURATION = 45
-export const CUES = [...endcardCues(DURATION - ENDCARD_LEN)]
-export const SCENES = [
-  async (stage) => ({ start: 0, end: DURATION - ENDCARD_LEN + 0.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'htxstars'), update() {} }),
-  (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN }),
-]
+export const SCENES = [...S.SCENES, (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN })]
+export const CUES = [...S.CUES, ...endcardCues(DURATION - ENDCARD_LEN)]
