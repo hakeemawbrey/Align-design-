@@ -1,8 +1,5 @@
-// origins score — owned by the film's agent (tune freely). Bright, bouncy, playful: 108 bpm, D–A–Bm–G, plucked arpeggio, light hats.
+// origins score — cinematic, G minor, 108 bpm (arranged by the style engine in promo/scripts/teaser-sound.mjs).
+// Pads + strings for the question; toms drop in Babylon (3.93) with bars landing on the 12 stamp, the Greeks and
+// the 0° stamp; it breaks down for “Plot twist: Earth wobbles.” (27.82), lifts on the seasons (34.49), lands on “Old sky.” (40.6).
 import { DURATION, CUES } from './scenes/index.js'
-const BAR = (60 / 108) * 4, END = DURATION - 1.6
-const PROG = [[146.83, 220, 293.66, 369.99, 440], [110, 220, 277.18, 329.63, 440], [123.47, 246.94, 293.66, 369.99], [98, 196, 293.66, 392, 493.88]]
-const chords = []
-for (let i = 0, t = 0; t < END; i++, t += BAR) chords.push([t, Math.min(t + BAR, END), PROG[i % 4]])
-chords.push([END, DURATION, [146.83, 220, 293.66, 369.99, 440, 587.33]])
-export default { id: 'origins', duration: DURATION, music: { chords, bpm: 108, beatFrom: 0.6, beatTo: DURATION - 2.2, padGain: 0.018, pulseGain: 0.15, hatGain: 0.035, arpGain: 0.032, arpFrom: 0.6, arpTo: DURATION - 1.8 }, cues: CUES }
+export default { id: 'origins', duration: DURATION, music: { style: 'cinematic', key: 'Gm', seed: 2, sections: { drop: 3.93, breakdown: 27.82, lift: 34.49, outroAt: 40.6 }, hits: [8.38, 23.93] }, cues: CUES }

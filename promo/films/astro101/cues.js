@@ -1,8 +1,5 @@
-// astro101 v2 (60s, vertical) score — lead-owned. Bright, bouncy, playful: 108 bpm, D–A–Bm–G, plucked arpeggio, light hats.
+// astro101 score — pop, A major, 108 bpm (arranged by the style engine in promo/scripts/teaser-sound.mjs).
+// Pop: the verse groove drops at 2.82 (bars land on 20.6, 40.6 and 53.94); breakdown under the slot-machine spin
+// (33.38) → chorus lift on the SNAP (35.6); breakdown for “That’s you.” (50.6) → lift on “Now you speak astrology.” (53.94).
 import { DURATION, CUES } from './scenes/index.js'
-const BAR = (60 / 108) * 4
-const PROG = [[146.83, 220, 293.66, 369.99, 440], [110, 220, 277.18, 329.63, 440], [123.47, 246.94, 293.66, 369.99], [98, 196, 293.66, 392, 493.88]]
-const chords = []
-for (let i = 0, t = 0; t < 58; i++, t += BAR) chords.push([t, Math.min(t + BAR, 60), PROG[i % 4]])
-chords.push([chords.at(-1)[1], 60, [146.83, 220, 293.66, 369.99, 440, 587.33]])
-export default { id: 'astro101', duration: DURATION, music: { chords, bpm: 108, beatFrom: 0.6, beatTo: 57.5, padGain: 0.018, pulseGain: 0.15, hatGain: 0.035, arpGain: 0.032, arpFrom: 0.6, arpTo: 58 }, cues: CUES }
+export default { id: 'astro101', duration: DURATION, music: { style: 'pop', key: 'A', seed: 71, sections: { drop: 2.82, breakdown: [33.38, 50.6], lift: [35.6, 53.94], outroAt: 57.27 } }, cues: CUES }
