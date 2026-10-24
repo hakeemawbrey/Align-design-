@@ -1,9 +1,12 @@
-// Loading source videos: the researched set in data/source-videos.json plus
+// Loading source videos: one folder per creator under data/creators/<handle>/
+// (videos.json from research, patterns.json for the "What works" view) plus
 // anything you add yourself under data/imports/ (CSV or JSON).
 //
 // CSV columns (header row, any order, all but one of hook/caption optional):
-//   url, date, platform, hook, caption, transcript, format, topic,
+//   creator, url, date, platform, hook, caption, transcript, format, topic,
 //   views, likes, comments, shares, saves
+// `creator` is the handle without @ (it matches a folder in data/creators/);
+// left blank, the row counts as yours ("imports").
 // Paste a row per reel you watched. Numbers read off the post count as
 // verified; leave them blank if you don't know them, never guess.
 
@@ -56,6 +59,7 @@ export function normalize(r, i, origin) {
   const hasAny = Object.values(metrics).some((n) => n != null)
   return {
     id: r.id || `${origin}-${String(i + 1).padStart(3, '0')}`,
+    creator: (r.creator || '').replace(/^@/, '') || 'imports',
     platform: r.platform || (/tiktok/.test(r.url ?? '') ? 'tiktok' : 'instagram'),
     url: r.url || null,
     date: r.date || null,
@@ -72,12 +76,13 @@ export function normalize(r, i, origin) {
   }
 }
 
-/** One researched video (data/source-videos.json) → the common shape. */
-export function fromResearch(v, i) {
+/** One researched video (data/creators/<handle>/videos.json) → the common shape. */
+export function fromResearch(v, i, creator = { handle: 'hothighpriestess', prefix: 'hhp' }) {
   const m = v.metrics
   const metrics = m && { views: num(m.views), likes: num(m.likes), comments: num(m.comments), verified: Boolean(m.verified), basis: m.basis ?? '' }
   return {
-    id: v.id ?? `hhp-${String(i + 1).padStart(3, '0')}`,
+    id: v.id ?? `${creator.prefix}-${String(i + 1).padStart(3, '0')}`,
+    creator: creator.handle,
     platform: v.platform?.startsWith('unknown') ? 'unknown' : v.platform,
     url: v.url ?? null,
     date: v.approx_date ?? v.date ?? null,
@@ -96,13 +101,27 @@ export function fromResearch(v, i) {
   }
 }
 
+/** Every creator folder: { handle, prefix, name, company, patterns, ... }. */
+export function loadCreators(root) {
+  const dir = path.join(root, 'data', 'creators')
+  if (!existsSync(dir)) return []
+  return readdirSync(dir).sort().flatMap((handle) => {
+    const p = path.join(dir, handle, 'videos.json')
+    if (!existsSync(p)) return []
+    const d = JSON.parse(readFileSync(p, 'utf8'))
+    const pp = path.join(dir, handle, 'patterns.json')
+    const patterns = existsSync(pp) ? JSON.parse(readFileSync(pp, 'utf8')) : { summary: [], forAlign: [] }
+    const c = d.creator ?? {}
+    return [{
+      handle, prefix: c.prefix ?? handle.slice(0, 3), name: c.name ?? handle, company: c.company ?? '',
+      bio: c.bio_line ?? '', patterns, videos: d.videos ?? [],
+    }]
+  })
+}
+
 export function loadSources(root) {
   const out = []
-  const base = path.join(root, 'data', 'source-videos.json')
-  if (existsSync(base)) {
-    const d = JSON.parse(readFileSync(base, 'utf8'))
-    ;(d.videos ?? []).forEach((v, i) => out.push(fromResearch(v, i)))
-  }
+  for (const c of loadCreators(root)) c.videos.forEach((v, i) => out.push(fromResearch(v, i, c)))
   const dir = path.join(root, 'data', 'imports')
   if (existsSync(dir)) {
     for (const f of readdirSync(dir).sort()) {

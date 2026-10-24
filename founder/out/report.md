@@ -1,8 +1,12 @@
 # Founder Studio: scored reels
 
-48 source reels, scored out of 100. 18 have public numbers (none verified, so they count for less). Each has an Align version.
+48 source reels from @hothighpriestess, scored out of 100 against each creator's own set. Each has an Align version. No public numbers are verified, so they count for less.
 
-| # | Score | Her hook | Type · format | Numbers | Align version | Align score |
+## @hothighpriestess
+
+48 reels, 18 with public numbers.
+
+| # | Score | Hook | Type · format | Numbers | Align version | Align score |
 | ---: | ---: | --- | --- | --- | --- | ---: |
 | 1 | 73 | WHEN i say this is the secret i mean it👏 everything changed when I watched the high value | Insider secret · Relatable pain | 1,600,000 likes | As the founder of a dating app, here's something I can tell you: when you pass on someone in my app, you never find out what they looked like. | 74 |
 | 2 | 69 | [She Built This $340K/Month App in 60 Days](https://www.youtube.com/watch?v=Eg93po_DAYo) | Proof-first number · Storytime | — | 60 commits in 16 days. Here's what's behind that number. | 74 |

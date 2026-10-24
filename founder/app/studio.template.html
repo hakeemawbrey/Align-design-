@@ -203,6 +203,7 @@ textarea.hook { font-family: var(--serif); font-style: italic; font-size: 20px; 
     <div>
       <div class="summary" id="summary"></div>
       <div class="list-tools">
+        <select id="creator" aria-label="Creator"></select>
         <input id="q" type="search" placeholder="Search hooks and topics" aria-label="Search">
         <select id="sort" aria-label="Sort">
           <option value="total">Best overall</option>
@@ -310,6 +311,7 @@ const state = {
   draft: null, // the script in the editor
   dirty: false,
   q: '', sort: 'total',
+  creator: local.get('creator', 'all'),
   calMonth: null,
 }
 
@@ -319,8 +321,9 @@ function bestFor(sourceId) {
 }
 
 // ---- board ------------------------------------------------------------------
+const inView = () => DATA.sources.filter((v) => state.creator === 'all' || v.creator === state.creator)
 function renderSummary() {
-  const s = DATA.sources
+  const s = inView()
   const withNums = s.filter((v) => v.score.proof != null).length
   const avg = Math.round(s.reduce((a, v) => a + v.score.total, 0) / (s.length || 1))
   const promoted = [...takes.values()].filter((t) => t.promoted).length
@@ -331,11 +334,11 @@ function renderSummary() {
     el('span', {}, ['avg ', el('b', {}, avg)]),
     el('span', {}, [el('b', {}, promoted), ' promoted · ', el('b', {}, sched), ' scheduled']),
   )
-  $('n-src').textContent = s.length
+  $('n-src').textContent = DATA.sources.length
 }
 function sortedSources() {
   const q = state.q.trim().toLowerCase()
-  let list = DATA.sources.filter((v) => !q || [v.hook, v.topic, v.caption, v.format].join(' ').toLowerCase().includes(q))
+  let list = inView().filter((v) => !q || [v.hook, v.topic, v.caption, v.format].join(' ').toLowerCase().includes(q))
   const key = {
     total: (v) => v.score.total,
     align: (v) => bestFor(v.id)?.score?.total ?? 0,
@@ -352,6 +355,7 @@ function renderRank() {
     const best = bestFor(v.id)
     const st = takesFor(v.id).map((t) => t.status).filter((x) => x && x !== 'draft')
     const chips = [
+      state.creator === 'all' && DATA.creators.length > 1 ? el('span', { class: 'chip' }, '@' + v.creator) : null,
       el('span', { class: 'chip' }, labelOf('formats', v.formatKey) || v.format || 'reel'),
       v.metrics?.views != null ? el('span', { class: 'chip ' + (v.metrics.verified ? 'v' : 'e') }, fmtNum(v.metrics.views) + ' views' + (v.metrics.verified ? '' : ' est')) : null,
       best?.score ? el('span', { class: 'chip' }, 'align ' + best.score.total) : null,
@@ -400,7 +404,7 @@ function renderDetail() {
   if (!v) { box.append(el('div', { class: 'panel' }, el('p', { class: 'hint' }, 'Pick a reel on the left.'))); return }
   const m = v.metrics
   const src = el('div', { class: 'panel' }, [
-    el('div', { class: 'eyebrow' }, `Her reel · ${v.platform ?? 'instagram'}${v.date ? ' · ' + v.date : ''}`),
+    el('div', { class: 'eyebrow' }, `@${v.creator} · ${v.platform ?? 'instagram'}${v.date ? ' · ' + v.date : ''}`),
     el('p', { class: 'quote' }, v.hook ? `“${v.hook}”` : v.topic),
     el('div', { class: 'scoreline' }, [
       el('span', { class: 'big' }, [String(v.score.total), el('small', {}, ' /100 · ' + grade(v.score.total))]),
@@ -593,7 +597,7 @@ async function rewriteWithClaude(v) {
     'Rewrite the Align script below so it is sharper, more specific and more like him talking. Keep the same structure (one hook, ' + d.beats.length + ' beats, one CTA). Learn from what made the reference reel work, but never copy its lines, claims or numbers: everything must be true of Align.',
     'Voice rules: ' + DATA.brief.voice.join(' '),
     'True facts about Align you may use (do not invent others, no made-up user counts or revenue): ' + DATA.brief.facts.join(' | '),
-    'Reference reel (another founder): hook "' + v.hook + '"; format ' + (v.format || '') + '; topic ' + (v.topic || '') + '.',
+    'Reference reel (from @' + v.creator + ', another founder): hook "' + v.hook + '"; format ' + (v.format || '') + '; topic ' + (v.topic || '') + '.',
     'Current Align script as JSON: ' + JSON.stringify({ hook: d.hook, beats: d.beats, cta: d.cta, caption: d.caption, hashtags: d.hashtags }),
     'Reply with only JSON: {"hook": string, "beats": [{"line": string, "broll": string, "onScreen": string}], "cta": string, "caption": string, "hashtags": [string]}. Hashtags without #.',
   ].join('\n\n')
@@ -697,17 +701,17 @@ $('cal-next').addEventListener('click', () => { const m = state.calMonth; state.
 
 // ---- what works ---------------------------------------------------------------
 function renderStudy() {
-  const P = DATA.patterns
   const box = $('study'); box.replaceChildren()
-  const top = DATA.sources.slice().sort((a, b) => b.score.total - a.score.total).slice(0, 5)
-  const byHook = Object.entries(DATA.sources.reduce((acc, v) => { (acc[v.hookKey] ??= []).push(v.score.total); return acc }, {}))
+  const shown = DATA.creators.filter((c) => state.creator === 'all' || c.handle === state.creator)
+  const top = inView().slice().sort((a, b) => b.score.total - a.score.total).slice(0, 5)
+  const byHook = Object.entries(inView().reduce((acc, v) => { (acc[v.hookKey] ??= []).push(v.score.total); return acc }, {}))
     .map(([k, arr]) => [k, Math.round(arr.reduce((a, b) => a + b, 0) / arr.length), arr.length]).sort((a, b) => b[1] - a[1])
   const panel = (eyebrow, title, kids) => el('div', { class: 'panel' }, [el('div', { class: 'eyebrow' }, eyebrow), el('h2', { class: 'h-display' }, title), ...kids])
   box.append(
-    panel('Her playbook', 'What her reels do', [el('ul', {}, (P.summary ?? []).map((s) => el('li', {}, s)))]),
+    ...shown.map((c) => panel(`@${c.handle} · ${c.count} reels`, `What ${c.name.split(' (')[0]}'s reels do`, [c.bio ? el('p', { class: 'hint' }, c.bio) : null, el('ul', {}, (c.patterns.summary ?? []).map((s) => el('li', {}, s)))])),
     panel('By hook type', 'Average score', [el('div', { class: 'bars' }, byHook.map(([k, avg, n]) => el('div', { class: 'bar' }, [el('span', {}, `${labelOf('hooks', k)} (${n})`), el('span', { class: 'track' }, el('span', { class: 'fill', style: `width:${avg}%;--c:${scoreColor(avg)}` })), el('span', { class: 'v' }, avg)])))]),
-    panel('Top five', 'Highest scoring', [el('ul', {}, top.map((v) => el('li', {}, [el('button', { type: 'button', class: 'btn quiet small', style: 'margin-right:6px', onclick: () => { show('board'); select(v.id) } }, v.score.total), v.hook])))]),
-    panel('For Align', 'How to carry it over', [el('ul', {}, (P.forAlign ?? []).map((s) => el('li', {}, s)))]),
+    panel('Top five', 'Highest scoring', [el('ul', {}, top.map((v) => el('li', {}, [el('button', { type: 'button', class: 'btn quiet small', style: 'margin-right:6px', onclick: () => { show('board'); select(v.id) } }, v.score.total), v.hook || v.topic])))]),
+    ...shown.map((c) => panel(`For Align · from @${c.handle}`, 'How to carry it over', [el('ul', {}, (c.patterns.forAlign ?? []).map((s) => el('li', {}, s)))])),
     panel('The rubric', 'How a reel is scored', [el('ul', {}, DATA.rubric.dimensions.map((d) => el('li', {}, [el('b', {}, `${d.label} (${d.weight})`), ' ', d.description])))]),
   )
 }
@@ -751,10 +755,24 @@ function refresh() {
   renderSummary(); renderRank(); renderDetail()
   renderBoard(); renderCal()
 }
+function buildCreatorFilter() {
+  const sel = $('creator')
+  sel.replaceChildren(
+    el('option', { value: 'all', selected: state.creator === 'all' }, `All creators (${DATA.sources.length})`),
+    ...DATA.creators.map((c) => el('option', { value: c.handle, selected: state.creator === c.handle }, `@${c.handle} (${c.count})`)),
+  )
+  if (DATA.creators.length < 2) sel.hidden = true
+  if (state.creator !== 'all' && !DATA.creators.some((c) => c.handle === state.creator)) state.creator = 'all'
+}
+$('creator').addEventListener('change', (e) => {
+  state.creator = e.target.value; local.set('creator', state.creator)
+  renderSummary(); renderRank(); if (state.view === 'study') renderStudy()
+})
 $('q').addEventListener('input', (e) => { state.q = e.target.value; renderRank() })
 $('sort').addEventListener('change', (e) => { state.sort = e.target.value; renderRank() })
 
 // ---- start ---------------------------------------------------------------
+buildCreatorFilter()
 for (const t of local.get('takes', [])) takes.set(t.id, t)
 if (!srcById.has(state.sel)) state.sel = sortedSources()[0]?.id
 openVersion(bestFor(state.sel))

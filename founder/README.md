@@ -20,10 +20,10 @@ date) is left as a `[bracket]` to fill in, never guessed.
 | `out/scores.csv` | the same as a spreadsheet, with craft / proof / fit columns |
 | `out/scripts/*.json` | one Align script per reel: hook, beats with b-roll and on-screen text, CTA, caption |
 | `app/dist/studio.html` | the studio (below), with all of the above baked in |
-| `data/source-videos.json` | the research: 48 of her videos with hooks, formats, beats, public numbers and sources |
+| `data/creators/<handle>/videos.json` | the research per creator: their videos with hooks, formats, beats, public numbers and sources |
+| `data/creators/<handle>/patterns.json` | what that creator's videos do, and how to carry it over to Align |
 | `data/rubric.json` | how a reel is scored: 8 weighted dimensions, 24 hook formulas, 13 formats, with sources |
 | `data/align-brief.json` | Align's facts, voice rules, story angles and b-roll moments, pulled from this repo |
-| `data/patterns.json` | what her videos do, and how to carry it over to Align |
 | `src/library.mjs` | the Align side: 19 true story angles, 27 hook types, 15 video formats |
 | `src/score.mjs` | the scorer |
 | `src/adapt.mjs` | reel → Align script, and remix |
@@ -61,8 +61,8 @@ Out of 100, from three parts:
   under 14 words, three or more numbers, the last line looping back to the
   hook...) adjusts it. Weights: hook 22, specificity 15, story tension 14,
   authenticity 12, relatability 12, share/save 10, CTA 8, trend fit 7.
-- **Proof**: how it did, ranked against the rest of her set on views or likes
-  and comments. Every number we have came from search snippets or her own
+- **Proof**: how it did, ranked against the rest of that creator's set (never
+  across creators: their audiences differ) on views or likes and comments. Every number we have came from search snippets or her own
   claims, so all of them count for 75%.
 - **Fit**: how well it becomes an Align founder video. Talking-head formats and
   topics Align has a story for score higher.
@@ -86,7 +86,8 @@ url,date,hook,caption,transcript,format,views,likes,comments
 https://www.instagram.com/reel/XXXX/,2026-10-01,"THE ___ METHOD","caption text","what she says","talking head tutorial",1.2M,85K,1,204
 ```
 
-Only `hook` or `caption` is required. Numbers you read off the post count as
+Only `hook` or `caption` is required. Add a `creator` column (the handle,
+without @) to file a row under that creator; blank rows count as yours. Numbers you read off the post count as
 verified. Leave them blank if you don't know them. A row with the same URL as a
 researched video replaces it. Then:
 
@@ -99,6 +100,13 @@ npm test
 
 Republish `app/dist/studio.html` to the same artifact after a crunch, and your
 saved versions carry over.
+
+## Add another creator
+
+Make `data/creators/<handle>/videos.json` in the same shape as the existing
+ones (a `creator` object with a short `prefix` for ids, and a `videos` list),
+plus a `patterns.json` with `summary` and `forAlign`. Run `npm run crunch`:
+the creator shows up in the report and in the studio's creator filter.
 
 ## Write a new Align story
 
