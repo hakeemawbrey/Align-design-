@@ -1,0 +1,22 @@
+{
+  "id": "08-scorpio",
+  "sign": "scorpio",
+  "title": "Scorpio, you were just in shallow water",
+  "caption": "for the scorpios who read this twice",
+  "hashtags": ["scorpio", "astrology", "zodiac", "scorpioseason", "watersigns"],
+  "scenes": [
+    { "text": "scorpio, i know you're already reading between these lines.", "kind": "void", "body": "red" },
+    { "text": "pluto rules you. you were made in the deep part of the water.", "kind": "lake", "body": "moon", "sky": "night" },
+    { "text": "you skip the small talk and wait for the hour where it gets real.", "kind": "lake", "body": "crescent", "sky": "teal" },
+    { "text": "you'll know their whole story before they learn your middle name.", "kind": "ridge", "body": "crescent", "sky": "night" },
+    { "text": "it isn't coldness. it's how you keep the soft things alive.", "kind": "arch", "body": "red", "sky": "ember" },
+    { "text": "but a locked door keeps out the ones who would have stayed, too.", "kind": "road", "body": "moon", "sky": "night" },
+    { "text": "and when it ends, you leave a window open, just to watch.", "kind": "road", "body": "crescent", "sky": "violet" },
+    { "text": "you're the sign of the phoenix. you know how to burn and return.", "kind": "rise", "body": "red", "sky": "ember" },
+    { "text": "so let it burn clean this time. release it. don't haunt it.", "kind": "burst", "body": "red", "sky": "ember" },
+    { "text": "the right one won't pry. they'll wait at the water's edge.", "kind": "field", "body": "moon", "sky": "night" },
+    { "text": "let them read your sky long before they ever see your face.", "kind": "figure", "body": "none" },
+    { "text": "you were never too much, scorpio. you were just in shallow water.", "kind": "ripple", "body": "moon", "sky": "violet" },
+    { "text": "rest now. the deep will keep until morning.", "kind": "void", "body": "moon" }
+  ]
+}

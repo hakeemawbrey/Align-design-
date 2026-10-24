@@ -1,0 +1,90 @@
+{
+  "id": "10-capricorn",
+  "sign": "capricorn",
+  "title": "Capricorn, love isn't a summit",
+  "caption": "for the capricorns who answer emails at midnight",
+  "hashtags": [
+    "capricorn",
+    "astrology",
+    "zodiac",
+    "capricornseason",
+    "zodiaclove"
+  ],
+  "scenes": [
+    {
+      "text": "capricorn, put the work down for one minute.",
+      "kind": "void",
+      "body": "ringed"
+    },
+    {
+      "text": "saturn raised you on patience and deadlines.",
+      "kind": "rise",
+      "body": "ringed",
+      "sky": "dusk"
+    },
+    {
+      "text": "you climb slowly, and you almost never fall.",
+      "kind": "ridge",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "so you treat love like another mountain.",
+      "kind": "ridge",
+      "body": "sun",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "something to earn, one careful step at a time.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "ember"
+    },
+    {
+      "text": "you show up early. you remember everything.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "and you still wonder if it's enough.",
+      "kind": "lake",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "here's the quiet part.",
+      "kind": "void",
+      "body": "none"
+    },
+    {
+      "text": "love isn't a summit. there's no top to reach.",
+      "kind": "burst",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "it's the person who sits with you on the ledge.",
+      "kind": "arch",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "put your terms on the table, then let them in.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "you've carried the whole sky long enough. share a corner.",
+      "kind": "figure"
+    },
+    {
+      "text": "you're allowed to be loved before you're finished.",
+      "kind": "field",
+      "body": "crescent",
+      "sky": "dusk"
+    }
+  ]
+}

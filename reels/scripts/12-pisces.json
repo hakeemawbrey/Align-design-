@@ -1,0 +1,90 @@
+{
+  "id": "12-pisces",
+  "sign": "pisces",
+  "title": "Pisces, keep your name",
+  "caption": "for the pisces who feel the room before they enter it",
+  "hashtags": [
+    "pisces",
+    "astrology",
+    "zodiac",
+    "piscesseason",
+    "zodiaclove"
+  ],
+  "scenes": [
+    {
+      "text": "pisces, come up for air.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "neptune made you part ocean, part rumour.",
+      "kind": "void",
+      "body": "blue"
+    },
+    {
+      "text": "you feel a room before you walk into it.",
+      "kind": "arch",
+      "body": "crescent",
+      "sky": "violet"
+    },
+    {
+      "text": "and you love the way water does,",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "filling every shape it's given,",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "until you can't remember your own.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dusk"
+    },
+    {
+      "text": "venus is exalted in your sky. you were made to love.",
+      "kind": "rise",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "but loving someone isn't disappearing into them.",
+      "kind": "ridge",
+      "body": "moon",
+      "sky": "dusk"
+    },
+    {
+      "text": "keep a shoreline. keep one thing that's only yours.",
+      "kind": "ridge",
+      "body": "crescent",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "and when it ends, let it go out with the tide.",
+      "kind": "burst",
+      "body": "sun",
+      "sky": "ember"
+    },
+    {
+      "text": "don't swim back every night to check.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "the right one will meet you at the water's edge.",
+      "kind": "figure"
+    },
+    {
+      "text": "you can be the whole ocean and still keep your name.",
+      "kind": "void",
+      "body": "crescent"
+    }
+  ]
+}

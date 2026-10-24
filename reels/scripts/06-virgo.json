@@ -1,0 +1,22 @@
+{
+  "id": "06-virgo",
+  "sign": "virgo",
+  "title": "Virgo, you were never the rough draft",
+  "caption": "for the virgos editing themselves at midnight",
+  "hashtags": ["virgo", "astrology", "zodiac", "virgoseason", "earthsigns"],
+  "scenes": [
+    { "text": "dear virgo,", "kind": "figure", "body": "none" },
+    { "text": "you notice everything. the typo, the tone, the pause before fine.", "kind": "ridge", "body": "crescent", "sky": "teal" },
+    { "text": "mercury built you a mind that edits the world while it walks.", "kind": "field", "body": "earth", "sky": "dawn" },
+    { "text": "so you love the way you do everything: carefully, and in lists.", "kind": "field", "body": "sun", "sky": "dusk", "road": true },
+    { "text": "you'd fix their week, their sink, their cover letter, quietly.", "kind": "arch", "body": "moon", "sky": "teal" },
+    { "text": "and then you go home and edit yourself harder than anyone.", "kind": "road", "body": "moon", "sky": "night" },
+    { "text": "every flaw you catch in them, you caught in yourself first.", "kind": "lake", "body": "crescent", "sky": "night" },
+    { "text": "you're an earth sign. soil is never tidy, and it still grows things.", "kind": "rise", "body": "earth", "sky": "dawn" },
+    { "text": "so stop drafting a cleaner version of you to send out.", "kind": "void", "body": "blue" },
+    { "text": "put your dealbreakers up front, then let the rest be human.", "kind": "ripple", "body": "moon", "sky": "violet" },
+    { "text": "say the honest thing early. the right one will read it as care.", "kind": "ridge", "body": "ringed", "sky": "violet", "road": true },
+    { "text": "you are not a draft, virgo. no one is waiting on a final copy.", "kind": "burst", "body": "sun", "sky": "dawn" },
+    { "text": "put the red pen down tonight. nothing here needs fixing.", "kind": "lake", "body": "moon", "sky": "dusk" }
+  ]
+}
