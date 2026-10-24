@@ -93,7 +93,7 @@ writeFileSync(path.join(out, 'report.md'), md)
 // 5. The studio: one self-contained page with the engine and data baked in.
 const engine = await esbuild({
   stdin: {
-    contents: `export { scoreScript, grade } from './src/score.mjs'\nexport { remix } from './src/adapt.mjs'`,
+    contents: `export { scoreScript, scoreVideo, grade } from './src/score.mjs'\nexport { remix, adapt, classify } from './src/adapt.mjs'\nexport { normalize, parsePasted } from './src/parse.mjs'`,
     resolveDir: ROOT, loader: 'js',
   },
   bundle: true, format: 'iife', globalName: 'AlignFounder', minify: true, write: false,

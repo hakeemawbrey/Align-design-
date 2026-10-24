@@ -32,6 +32,7 @@ date) is left as a `[bracket]` to fill in, never guessed.
 | `data/rubric.json` | how a reel is scored: 8 weighted dimensions, 24 hook formulas, 13 formats, with sources |
 | `data/align-brief.json` | Align's facts, voice rules, story angles and b-roll moments, pulled from this repo |
 | `src/library.mjs` | the Align side: 19 true story angles, 29 hook types, 17 video formats |
+| `src/parse.mjs` | reading pasted reels, CSV rows and research entries into one shape |
 | `src/score.mjs` | the scorer |
 | `src/adapt.mjs` | reel → Align script, and remix |
 | `src/crunch.mjs` | runs it all and builds the studio |
@@ -83,6 +84,23 @@ The weights are an informed estimate from public research (see
 view counts once you've posted a few.
 
 ## Add more reels
+
+The fastest way: in the studio, press **Add reels**, pick the creator (or
+**Someone new…**), and paste. A link starts each reel, then its caption, then
+its numbers with labels:
+
+```
+https://www.instagram.com/reel/…
+THE LOVE LETTER METHOD. write it tonight
+1.2M views 85K likes 1,204 comments
+```
+
+Paste one or fifty. Each is scored against that creator's set and gets an
+Align version on the spot. Links already on the list are skipped. Added reels
+are kept with the studio (on claude.ai, on every device) and can be removed
+from the reel's panel.
+
+To bake reels into the repo instead:
 
 Instagram doesn't let this program read either account directly. Public
 search turned up 48 of hers and 46 of his, mostly TikTok, with captions as

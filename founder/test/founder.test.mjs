@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs'
 import { craftScore, scoreVideo, scoreScript, proofScore } from '../src/score.mjs'
 import { classify, adapt, remix, build } from '../src/adapt.mjs'
 import { ANGLES, HOOKS, FORMATS, BRIDGES } from '../src/library.mjs'
-import { parseCsv, normalize, num } from '../src/sources.mjs'
+import { parseCsv, normalize, num } from '../src/parse.mjs'
 
 const rubric = JSON.parse(readFileSync(new URL('../data/rubric.json', import.meta.url)))
 const brief = { bridges: BRIDGES }
@@ -75,4 +75,25 @@ test('adapt spreads angles, remix honors choices, scripts score', () => {
   const sc = scoreScript(r, { rubric, brief })
   assert.ok(sc.total > 0 && sc.total <= 100)
   assert.ok(scoreVideo(src, { rubric, brief }).total > 0)
+})
+
+test('pasted reels split on links and blank lines, numbers need labels', async () => {
+  const { parsePasted } = await import('../src/parse.mjs')
+  const rows = parsePasted(`https://www.instagram.com/reel/ABC/
+THE LOVE LETTER METHOD
+write it tonight
+1.2M views · 85K likes · 1,204 comments
+https://www.tiktok.com/@x/video/1
+day 3 of building
+
+just a caption with 3 ideas`)
+  assert.equal(rows.length, 3)
+  assert.equal(rows[0].url, 'https://www.instagram.com/reel/ABC/')
+  assert.equal(rows[0].caption, 'THE LOVE LETTER METHOD\nwrite it tonight')
+  assert.equal(num(rows[0].views), 1200000)
+  assert.equal(num(rows[0].comments), 1204)
+  assert.equal(rows[1].caption, 'day 3 of building')
+  assert.equal(rows[2].url, undefined)
+  assert.equal(rows[2].caption, 'just a caption with 3 ideas')
+  assert.equal(parsePasted('url,hook,likes\nhttps://a,Hi,5\n')[0].hook, 'Hi')
 })

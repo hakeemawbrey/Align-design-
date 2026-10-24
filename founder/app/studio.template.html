@@ -79,6 +79,12 @@ nav.tabs .n { font-family: var(--mono); font-size: 10px; margin-left: 6px; opaci
 .list-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
 .list-tools select, .list-tools input { background: var(--raised); border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; min-height: 32px; }
 .list-tools input { flex: 1; min-width: 120px; }
+#add-panel { background: var(--canvas); border: 1px solid var(--line-2); border-radius: 16px; padding: 14px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; }
+#add-panel .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+#add-panel select, #add-panel input { background: var(--raised); border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; min-height: 32px; }
+#add-panel input { flex: 1; min-width: 120px; }
+#add-text { min-height: 130px; font-size: 13px; }
+.chip.added { border-color: rgba(143, 184, 255, 0.5); color: var(--spark); }
 .summary { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; color: var(--label-2); font-size: 12px; }
 .summary b { color: var(--label-1); font-variant-numeric: tabular-nums; font-weight: 600; }
 ol.rank { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; max-height: calc(100vh - 210px); overflow: auto; padding-right: 4px; }
@@ -202,7 +208,22 @@ textarea.hook { font-family: var(--serif); font-style: italic; font-size: 20px; 
   <section id="view-board" class="desk" aria-label="Scored reels">
     <div>
       <div class="summary" id="summary"></div>
+      <div id="add-panel" hidden>
+        <div class="eyebrow">Add reels</div>
+        <div class="row">
+          <label class="hint" for="add-creator" style="margin:0">From</label>
+          <select id="add-creator"></select>
+          <input id="add-handle" placeholder="new handle, without @" aria-label="New creator handle" hidden>
+        </div>
+        <textarea id="add-text" placeholder="Paste one reel or many. A link starts each reel, then its caption, then its numbers:&#10;&#10;https://www.instagram.com/reel/…&#10;THE LOVE LETTER METHOD. write it tonight&#10;1.2M views 85K likes 1,204 comments"></textarea>
+        <p class="hint" style="margin:0">Numbers count only with a label (views, likes, comments, shares, saves). Copy them off the post; they're treated as exact. A CSV with a header row works too.</p>
+        <div class="row">
+          <button class="btn small" id="add-go" type="button">Score them</button>
+          <button class="btn quiet small" id="add-close" type="button">Close</button>
+        </div>
+      </div>
       <div class="list-tools">
+        <button class="btn small" id="add-open" type="button">Add reels</button>
         <select id="creator" aria-label="Creator"></select>
         <input id="q" type="search" placeholder="Search hooks and topics" aria-label="Search">
         <select id="sort" aria-label="Sort">
@@ -250,7 +271,7 @@ textarea.hook { font-family: var(--serif); font-style: italic; font-size: 20px; 
 <script>/*ENGINE*/</script>
 <script>
 const DATA = /*DATA*/null
-const { scoreScript, grade, remix: remixScript } = AlignFounder
+const { scoreScript, scoreVideo, grade, remix: remixScript, adapt, classify, normalize, parsePasted } = AlignFounder
 const $ = (id) => document.getElementById(id)
 function el(tag, attrs = {}, kids = []) {
   const n = document.createElement(tag)
@@ -302,8 +323,9 @@ async function deleteTake(id) {
 }
 
 // ---- state ------------------------------------------------------------------
-const baseById = new Map(DATA.scripts.map((s) => [s.id, s]))
-const srcById = new Map(DATA.sources.map((s) => [s.id, s]))
+const BASE = { sources: DATA.sources, scripts: DATA.scripts, creators: DATA.creators }
+let baseById = new Map(DATA.scripts.map((s) => [s.id, s]))
+let srcById = new Map(DATA.sources.map((s) => [s.id, s]))
 const state = {
   view: 'board',
   sel: local.get('sel', DATA.sources[0]?.id),
@@ -355,6 +377,7 @@ function renderRank() {
     const best = bestFor(v.id)
     const st = takesFor(v.id).map((t) => t.status).filter((x) => x && x !== 'draft')
     const chips = [
+      v.origin === 'added' ? el('span', { class: 'chip added' }, 'added') : null,
       state.creator === 'all' && DATA.creators.length > 1 ? el('span', { class: 'chip' }, '@' + v.creator) : null,
       el('span', { class: 'chip' }, labelOf('formats', v.formatKey) || v.format || 'reel'),
       v.metrics?.views != null ? el('span', { class: 'chip ' + (v.metrics.verified ? 'v' : 'e') }, fmtNum(v.metrics.views) + ' views' + (v.metrics.verified ? '' : ' est')) : null,
@@ -421,6 +444,7 @@ function renderDetail() {
       el('dt', {}, 'numbers'), el('dd', {}, m ? `${fmtNum(m.views)} views · ${fmtNum(m.likes)} likes · ${fmtNum(m.comments)} comments ${m.verified ? '(read off the post)' : '(estimate)'}` : 'none public'),
       el('dt', {}, 'source'), el('dd', {}, v.url ? el('a', { href: v.url, target: '_blank', rel: 'noopener' }, v.url.replace(/^https?:\/\/(www\.)?/, '')) : (v.sourceNote || '—')),
       el('dt', {}, 'confidence'), el('dd', {}, v.confidence || '—'),
+      ...(v.origin === 'added' ? [el('dt', {}, 'added'), el('dd', {}, el('button', { class: 'btn quiet small', type: 'button', onclick: () => removeReel(v.id) }, 'Remove this reel'))] : []),
     ]),
     v.beats?.length ? el('h3', { class: 'eyebrow' }, 'Beats') : null,
     v.beats?.length ? el('ul', { class: 'beats-src' }, v.beats.map((b) => el('li', {}, typeof b === 'string' ? b : b.line))) : null,
@@ -761,7 +785,11 @@ function buildCreatorFilter() {
     el('option', { value: 'all', selected: state.creator === 'all' }, `All creators (${DATA.sources.length})`),
     ...DATA.creators.map((c) => el('option', { value: c.handle, selected: state.creator === c.handle }, `@${c.handle} (${c.count})`)),
   )
-  if (DATA.creators.length < 2) sel.hidden = true
+  $('add-creator').replaceChildren(
+    ...DATA.creators.map((c) => el('option', { value: c.handle, selected: c.handle === (state.creator === 'all' ? DATA.creators[0]?.handle : state.creator) }, '@' + c.handle)),
+    el('option', { value: '__new' }, 'Someone new…'),
+  )
+  sel.hidden = DATA.creators.length < 2
   if (state.creator !== 'all' && !DATA.creators.some((c) => c.handle === state.creator)) state.creator = 'all'
 }
 $('creator').addEventListener('change', (e) => {
@@ -771,8 +799,85 @@ $('creator').addEventListener('change', (e) => {
 $('q').addEventListener('input', (e) => { state.q = e.target.value; renderRank() })
 $('sort').addEventListener('change', (e) => { state.sort = e.target.value; renderRank() })
 
+// ---- added reels ------------------------------------------------------------
+// Reels you paste in are scored here, against that creator's set, and get
+// an Align version on the spot. They're kept like takes: in the artifact's
+// database on claude.ai, otherwise in this browser.
+let reelsCol = null
+let added = new Map() // id -> { source, script }
+function applyAdded() {
+  const extra = [...added.values()]
+  DATA.sources = BASE.sources.concat(extra.map((x) => x.source)).sort((a, b) => b.score.total - a.score.total)
+  DATA.scripts = BASE.scripts.concat(extra.map((x) => x.script))
+  const handles = new Map(BASE.creators.map((c) => [c.handle, c]))
+  for (const x of extra) if (!handles.has(x.source.creator)) handles.set(x.source.creator, { handle: x.source.creator, prefix: x.source.creator.slice(0, 3), name: '@' + x.source.creator, company: '', bio: 'Added by you.', patterns: { summary: [], forAlign: [] } })
+  DATA.creators = [...handles.values()].map((c) => ({ ...c, count: DATA.sources.filter((v) => v.creator === c.handle).length }))
+  baseById = new Map(DATA.scripts.map((s) => [s.id, s]))
+  srcById = new Map(DATA.sources.map((s) => [s.id, s]))
+  buildCreatorFilter()
+}
+const urlKey = (u) => (u ? (/youtube\.com\/watch/.test(u) ? u.replace(/&.*$/, '') : u.replace(/[?#].*$/, '').replace(/\/$/, '')) : null)
+async function addReels() {
+  let creator = $('add-creator').value
+  if (creator === '__new') creator = $('add-handle').value.trim().replace(/^@/, '').toLowerCase()
+  if (!creator || !/^[a-z0-9._]+$/.test(creator)) { setStatus('Type the creator’s handle, letters, numbers, dots and underscores only.', true); return }
+  const rows = parsePasted($('add-text').value)
+  if (!rows.length) { setStatus('Paste at least one reel: a link and its caption.', true); return }
+  const have = new Set(DATA.sources.map((v) => urlKey(v.url)).filter(Boolean))
+  const stamp = Date.now().toString(36)
+  const fresh = []
+  let skipped = 0
+  rows.forEach((r, i) => {
+    if (r.url && have.has(urlKey(r.url))) { skipped++; return }
+    if (r.url) have.add(urlKey(r.url))
+    const v = { ...normalize({ ...r, creator }, i, creator), id: `${creator}-u${stamp}${i}`, origin: 'added' }
+    Object.assign(v, classify(v))
+    fresh.push(v)
+  })
+  if (!fresh.length) { setStatus(skipped ? 'Those reels are already on the list.' : 'Nothing to add.', true); return }
+  const set = DATA.sources.filter((v) => v.creator === creator).concat(fresh)
+  const used = new Map()
+  for (const v of DATA.sources) if (v.creator === creator) { const s = baseById.get(v.alignId); if (s) used.set(s.angleKey, (used.get(s.angleKey) ?? 0) + 1) }
+  const btn = $('add-go'); btn.disabled = true
+  for (const v of fresh) {
+    v.score = scoreVideo(v, { rubric: DATA.rubric, brief: DATA.brief, set })
+    const s = adapt(v, { used })
+    s.score = scoreScript(s, { rubric: DATA.rubric, brief: DATA.brief })
+    v.alignId = s.id
+    const rec = { source: v, script: s, createdAt: Date.now() }
+    added.set(v.id, rec)
+    if (reelsCol) {
+      try { await reelsCol.doc(v.id).set(JSON.parse(JSON.stringify(rec))) }
+      catch (e) { added.delete(v.id); btn.disabled = false; setStatus(e?.code === 'not_granted' ? 'You can view this studio but not add to it.' : 'Couldn’t save those reels. Try again in a moment.', true); applyAdded(); renderSummary(); renderRank(); return }
+    }
+  }
+  btn.disabled = false
+  if (!reelsCol) local.set('reels', [...added.values()])
+  applyAdded()
+  $('add-text').value = ''
+  const best = fresh.slice().sort((a, b) => b.score.total - a.score.total)[0]
+  state.creator = creator; local.set('creator', creator); buildCreatorFilter()
+  select(best.id); renderSummary()
+  setStatus(`Scored ${fresh.length} reel${fresh.length > 1 ? 's' : ''}${skipped ? `, skipped ${skipped} already listed` : ''}. Best: ${best.score.total}.`)
+}
+let reelArmed = null
+async function removeReel(id) {
+  if (reelArmed !== id) { reelArmed = id; setStatus('Click Remove this reel again to remove it. Its saved takes stay.'); setTimeout(() => (reelArmed = null), 4000); return }
+  reelArmed = null
+  added.delete(id)
+  if (reelsCol) { try { await reelsCol.doc(id).delete() } catch { setStatus('Couldn’t remove that reel.', true) } }
+  else local.set('reels', [...added.values()])
+  applyAdded()
+  state.sel = sortedSources()[0]?.id; openVersion(bestFor(state.sel)); refresh(); setStatus('Reel removed.')
+}
+$('add-open').addEventListener('click', () => { $('add-panel').hidden = false; $('add-text').focus() })
+$('add-close').addEventListener('click', () => { $('add-panel').hidden = true })
+$('add-creator').addEventListener('change', (e) => { $('add-handle').hidden = e.target.value !== '__new' })
+$('add-go').addEventListener('click', addReels)
+
 // ---- start ---------------------------------------------------------------
-buildCreatorFilter()
+for (const r of local.get('reels', [])) if (r?.source?.id) added.set(r.source.id, r)
+applyAdded()
 for (const t of local.get('takes', [])) takes.set(t.id, t)
 if (!srcById.has(state.sel)) state.sel = sortedSources()[0]?.id
 openVersion(bestFor(state.sel))
@@ -783,7 +888,15 @@ show(VIEWS.includes(hashView) ? hashView : local.get('view', 'board'))
 if (window.claude?.use) {
   claude.use('db').then((d) => {
     if (!d) return
-    db = d; takesCol = db.collection('takes')
+    db = d; takesCol = db.collection('takes'); reelsCol = db.collection('reels')
+    reelsCol.onSnapshot((snap) => {
+      added = new Map()
+      for (const doc of snap.docs) { const r = doc.data(); if (r?.source?.id) added.set(doc.id, r) }
+      applyAdded()
+      if (!srcById.has(state.sel)) state.sel = sortedSources()[0]?.id
+      renderSummary(); renderRank(); if (!state.dirty) { openVersion(takes.get(state.ver) ?? bestFor(state.sel)); renderDetail() }
+      if (state.view === 'study') renderStudy()
+    }, () => setStatus('Lost the connection to your added reels. Reload to reconnect.', true))
     takesCol.onSnapshot((snap) => {
       const next = new Map()
       for (const doc of snap.docs) next.set(doc.id, doc.data())
