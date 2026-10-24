@@ -78,3 +78,35 @@ Your story's last line should **lead into "come Align."**, for example "So stop 
   Claude-Session: https://claude.ai/code/session_011q84hoGAFybJgojtyW8xw2
   ```
 - Report back briefly: the timings and anything you weren't sure about.
+
+---
+# Houston round 2: five more, plus a NEW end card
+
+The user asked: "More videos pls like 5 more Houston specific and then for all make the end the word come then the logo saying align not align twice on screen. No tag line. Maybe do a logo animation of the flower/seed of life"
+
+## New end card (applies to ALL Houston films automatically through promo/films/endcard.js; the API is unchanged)
+- The end card says **"come"**, then the **logo forms and its wordmark "Align" completes the phrase.** "Align" must appear only ONCE on screen.
+- **No tagline.**
+- The **logo animation features the flower / seed of life:** circles bloom out from the centre petal by petal, the chakra column lights up, then the wordmark settles under the mark.
+- Films should therefore NOT say "Align" in the frames just before the end card either.
+
+## Music (new engine)
+Each film's cues.js now uses `music: { style, key, seed, sections: { drop, breakdown, lift, outroAt } }`. These five are pre-assigned a style:
+- htxtaste: house, G
+- htxrodeo: funk, A
+- htxbayou: lofi, F
+- htxbrunch: pop, C
+- htxsprawl: synthwave, Em
+
+Set `sections` to your film's big visual moments. Keep `outroAt: DURATION - 4.4`, which is the end card. Keep the music object's shape, and don't change the style. Pitched SFX are shifted into the film's key automatically.
+
+## The five
+| folder | len | hook | turn (the Align feature) | last line before the end card (which then says "come" plus the logo) |
+|---|---|---|---|---|
+| **htxtaste** | 15 | **"Houston has *taste*."** Tacos, kolaches and a crawfish boil pop in as bold line-art food icons (generic; no restaurant brands). | "Your dating app should too." Two charts snap together with a gold Align line: "Matched by your birth chart, not your best angle." | "Have good taste in *people*." |
+| **htxrodeo** | 15 | **"Rodeo season: suddenly *everyone's* a cowboy."** Pictogram people pop on cowboy hats one by one, and boots stomp. Say "rodeo season" only, no event names or logos. | "Want someone real?" The hats fly off and a mystery card with an aura veil drops in: "Chart first. Face last. No costumes." | "Find the *real thing*." |
+| **htxbayou** | 15 | **"Perfect date: a sunset walk on *Buffalo Bayou*."** Line-art bayou path, a skyline at sunset, a pictogram walking alone, then a "?" pops beside them. | "Who with?" Tonight's deck deals in from the stars: card backs fan, and one card glows. "A new deck, every night." | "Your walk *partner* is out there." |
+| **htxbrunch** | 30 | **"Another Midtown brunch with someone who's '*just seeing where it goes*'."** A brunch table with mimosas and a chat bubble that shrugs. Then a quick montage: "No kids?", "Moving to Austin?", "Not looking for anything serious." Thought bubbles land too late. | "On Align, dealbreakers come *first*." Chips stamp onto a card: "✕ NOT LOOKING FOR SERIOUS", "✕ NO KIDS EVER". Then the Push / Pull / Align reading: "See how you fit before the first mimosa." | "Brunch with *intention*." |
+| **htxsprawl** | 30 | **"Houston is *huge*."** A map grows tile by tile into endless sprawl, and a pin-person zooms out tiny. Don't state any area or population number. | "So how do you find *your* person in all this?" The sprawl's lights become stars, and the stars become two charts that light up across the map: "Align reads your sky, and finds who lines up with it." Two dots far apart connect with a glowing gold arc. | "Somewhere out there, *someone's sky* lines up with yours." |
+
+Same style, Houston rules, Align truth, contract and commit rules as above. Your scaffold already includes the shared end card. Don't edit endcard.js; another agent is updating it right now.
