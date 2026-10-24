@@ -89,7 +89,7 @@ function drawBurst(x, parts, px, py, t, t0, color, dur = 0.7) {
 }
 
 /** springy word-by-word type: `*word*` = accent (Garamond italic, colour), `|` = line break; the last word may pop late with a wobble */
-function popText(parent, text, { top, size, font, weight, accentColor = GOLD, accentSize, gap = 0.07, at: t0, lastAt = null, wobble = false, color = BONE }) {
+function popText(parent, text, { top, size, font, weight, accentColor = GOLD, tintColor = null, accentSize, gap = 0.07, at: t0, lastAt = null, wobble = false, color = BONE }) {
   const box = el('div', { position: 'absolute', left: '70px', width: (W - 140) + 'px', top: top + 'px', textAlign: 'center',
     fontFamily: font, fontWeight: weight, fontSize: size + 'px', lineHeight: 1.04, color, textShadow: SHADOW, letterSpacing: '-0.01em' }, parent)
   let n = 0
@@ -97,11 +97,12 @@ function popText(parent, text, { top, size, font, weight, accentColor = GOLD, ac
   const ws = []
   toks.forEach((w, i) => {
     if (w === '|') { el('br', {}, box); return }
-    const acc = w.startsWith('*') || w.endsWith('*')
+    const acc = w.startsWith('*') || w.endsWith('*'), tint = w.startsWith('~') || w.endsWith('~')
     const style = { display: 'inline-block', margin: '0 0.13em', opacity: 0, transformOrigin: '50% 80%' }
+    if (tint) style.color = tintColor || accentColor
     if (acc) Object.assign(style, { fontFamily: "'EB Garamond', serif", fontStyle: 'italic', fontWeight: 500, fontSize: (accentSize || size * 1.09) + 'px', color: accentColor, letterSpacing: '0' })
     const isLast = i === toks.length - 1
-    ws.push({ t: isLast && lastAt != null ? lastAt : t0 + n * gap, big: isLast && lastAt != null, e: el('span', style, box, w.replace(/\*/g, '')) })
+    ws.push({ t: isLast && lastAt != null ? lastAt : t0 + n * gap, big: isLast && lastAt != null, e: el('span', style, box, w.replace(/[*~]/g, '')) })
     n++
   })
   return {
@@ -305,7 +306,7 @@ async function build(stage) {
     sub(root, 'No photo until | you *both* align.', F[0] + FEAT_SUB, { accentColor: PINK }),
     sub(root, 'Dealt from the *stars.*', F[1] + FEAT_SUB),
     sub(root, 'Questions worth | *answering.*', F[2] + FEAT_SUB, { accentColor: BLUE }),
-    sub(root, 'Where you *click.* | Where you clash.', F[3] + FEAT_SUB),
+    sub(root, 'Where you ~click.~ | Where you clash.', F[3] + FEAT_SUB, { tintColor: GOLD }),
   ]
   const SUBS = [[S0, T.s0Out], [S2, T.s2Out], ...SF.map((s, i) => [s, [F[i] + FEAT_OUT, F[i] + FEAT_OUT + 0.2]])]
 
