@@ -35,7 +35,7 @@ const CHK = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '
 
 // beats, relative to start
 const R = {
-  come: 0.08, align: 0.28, burst: 0.34,
+  come: 0.08, align: 0.28, burst: 0.4,
   rise: [1.8, 2.28],
   rings: 1.92, ringGap: 0.05, ringDur: 0.34,
   dots: 2.08, dotGap: 0.055,
@@ -52,7 +52,7 @@ const rgba = (hex, a) => { const [r, g, b] = hexToRgb(hex); return `rgba(${r},${
 
 function makeBurst(seed, n, dist) {
   const r = rng(seed)
-  return Array.from({ length: n }, (_, i) => ({ a: (i / n) * Math.PI * 2 + r() * 0.5, d: dist * (0.65 + r() * 0.55), size: 12 + Math.round(r() * 2) * 5, kind: Math.floor(r() * 4), c: [PINK, GOLD, BONE, ROSE][i % 4], sx: 1.35 + r() * 0.3 }))
+  return Array.from({ length: n }, (_, i) => ({ a: (i / n) * Math.PI * 2 + r() * 0.5, d: dist * (0.65 + r() * 0.55), size: 18 + Math.round(r() * 2) * 7, kind: Math.floor(r() * 4), c: [PINK, GOLD, BONE, ROSE][i % 4], sx: 1.35 + r() * 0.3 }))
 }
 function drawBurst(x, parts, px, py, t, t0, dur = 0.75) {
   const p = prog(t, t0, t0 + dur)
@@ -115,7 +115,7 @@ export async function buildEndcard(stage, { start }) {
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
   const black = el('div', { position: 'absolute', inset: '0', background: '#000', opacity: 0 }, root)
 
-  const BURST = makeBurst(4401, 12, 230)
+  const BURST = makeBurst(4401, 14, 260)
   const TOPB = makeBurst(4402, 8, 90)
   const T_HOLD = T(R.dots + 6 * R.dotGap + 0.2)
 
@@ -179,7 +179,7 @@ export async function buildEndcard(stage, { start }) {
 
       // ── sparkles: the burst on "Align.", a little one at the crown when the pulse arrives
       fx.clearRect(0, 0, W, H)
-      drawBurst(fx, BURST, W / 2, LINE_Y0 + ALIGN_FS * 0.32, t, T(R.burst), 0.8)
+      drawBurst(fx, BURST, W / 2, LINE_Y0 + ALIGN_FS * 0.3, t, T(R.burst), 0.95)
       const crown = MARK_CY - 3 * DY * MARK / 88
       drawBurst(fx, TOPB, W / 2, crown, t, T(R.pulse + 6 * R.pulseGap + 0.04), 0.6)
 
