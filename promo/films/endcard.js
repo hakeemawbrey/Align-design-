@@ -11,14 +11,14 @@
 // Timeline (seconds after `start`):
 //   0.00         plain sky H (identical to the film's hand-off frame)
 //   0.06         "come" pops in big at the centre (Inter 800, bone, springy overshoot); readable to ~1.0
-//   0.95–1.40    "come" glides down and shrinks to its place on the wordmark line
+//   0.95–1.40    "come" glides down and shrinks onto the wordmark line, centred under the mark, and waits there
 //   1.00         a single point of light appears at the mark's centre
 //   1.18–1.52    the centre circle draws on out of the light
 //   1.38 + k·0.13  the six petal circles bloom out one after another, rotating into place (each 0.42 s; done ≈2.45)
 //   2.28–2.78    the outer circle draws round; the whole mark settles its rotation; a petal-fill shimmer passes
 //   2.62         the bloom glow swells and then breathes
 //   2.70 + i·0.06  the seven chakra dots light the column bottom → top (done ≈3.2)
-//   2.92         the wordmark "Align" lands next to "come" (de-blur, rise, tracking in) · 3.18–3.62 a light sweep across it
+//   2.92         "come" springs left as the wordmark "Align" slides in beside it (pair centred by eye) (de-blur, rise, tracking in) · 3.18–3.62 a light sweep across it
 //   3.70–4.40    fade to black (last frame black)
 // Pure function of t; nothing touches `document` at module top level (the sound build imports this in node).
 import { clamp, lerp, prog, ease, tw, el, rng, hexToRgb } from '../src/lib.js'
@@ -84,7 +84,7 @@ export async function buildEndcard(stage, { start }) {
   // measure the "come Align" line once (canvas metrics; no layout reads)
   mx.font = `800 ${COME_FS}px ${INTER}`; const wCome = mx.measureText('come').width
   mx.font = `italic 400 ${WORD_FS}px ${SERIF}`; const wWord = mx.measureText('Align').width
-  const x0 = W / 2 - (wCome + GAP + wWord) / 2
+  const x0 = W / 2 - (wCome + GAP + wWord) / 2 - 16   // optical nudge left: the italic's right overhang reads heavy
   const COME_X1 = x0 + wCome / 2, WORD_X = x0 + wCome + GAP + wWord / 2
 
   // wordmark scratch canvas (for the light sweep, clipped to the glyphs)
@@ -200,7 +200,8 @@ export async function buildEndcard(stage, { start }) {
       const pop = 0.5 + 0.5 * easeOutBack(pc, 2.6)
       const sq = t > T(R.come) ? 0.05 * Math.sin((t - T(R.come)) * 17) * Math.exp(-(t - T(R.come)) * 5) : 0
       const fs = lerp(COME_FS0, COME_FS, g)
-      const x = lerp(W / 2, COME_X1, g), y = lerp(COME_Y0, LINE_Y, g) + (1 - ease.outCubic(pc)) * 40 - Math.sin(Math.PI * g) * 26
+      const sl = easeOutBack(prog(t, T(R.word - 0.16), T(R.word + 0.26)), 1.5)   // waits centred, then springs left as Align lands
+      const x = lerp(W / 2, COME_X1, sl), y = lerp(COME_Y0, LINE_Y, g) + (1 - ease.outCubic(pc)) * 40 - Math.sin(Math.PI * g) * 26
       mx.save(); mx.translate(x, y); mx.scale(pop * (1 + sq), pop * (1 - sq))
       mx.globalAlpha = clamp(pc * 3)
       mx.font = `800 ${fs}px ${INTER}`
@@ -229,7 +230,7 @@ export async function buildEndcard(stage, { start }) {
       mx.globalAlpha = wp
       mx.filter = wp < 1 ? `blur(${lerp(9, 0, wp).toFixed(2)}px)` : 'none'
       mx.shadowColor = 'rgba(239,230,214,0.3)'; mx.shadowBlur = 36
-      mx.drawImage(wc, WORD_X - wc.width / 2, LINE_Y - by + lerp(24, 0, wp))
+      mx.drawImage(wc, WORD_X - wc.width / 2 + lerp(60, 0, wp), LINE_Y - by + lerp(24, 0, wp))
       mx.restore()
     }
   }
