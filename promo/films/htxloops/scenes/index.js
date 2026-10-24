@@ -1,9 +1,7 @@
-// STUB — replaced by the htxloops agent. Export DURATION, SCENES and CUES.
-import { el } from '../../../src/lib.js'
+// htxloops (30s, vertical): "Inside the Loop. Outside the Beltway." → ring roads morph into a zodiac wheel → two dots
+// across town connect in gold → "Align reads both charts…" → "Whatever side of the Loop you're on…" → shared END CARD.
+import * as F from './film.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
 export const DURATION = 30
-export const CUES = [...endcardCues(DURATION - ENDCARD_LEN)]
-export const SCENES = [
-  async (stage) => ({ start: 0, end: DURATION - ENDCARD_LEN + 0.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'htxloops'), update() {} }),
-  (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN }),
-]
+export const SCENES = [...F.SCENES, (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN })]
+export const CUES = [...F.CUES, ...endcardCues(DURATION - ENDCARD_LEN)]
