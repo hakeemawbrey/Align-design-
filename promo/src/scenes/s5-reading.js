@@ -1,0 +1,250 @@
+import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C, PIXEL_PALETTE, TypeLine } from '../lib.js'
+import { W, H, VERT, A, IMG, PEOPLE, SANS, SERIF, MONO, fill, img, Ticks, makeCard, makeStars, spaceBackdrop } from "./common.js"
+import { drawMoonGlyph, litOf } from './fx-moon.js'
+
+// first dealt card (S6 opens on it) — fxDots samples its colours
+const DOT_SRC = A + 'card-profile-1.png'
+let dotImg = null
+
+// ───────────────────────────────────────────── S5 · Reading your sky
+// Your own sign card (Taurus, "YOUR CARD" stamp) floats in on the right after Sun lands.
+const VIOLET_HI = '#b9a2f0'
+// tonight's moon (S5's beat of the waxing moon motif — the corner moon clock hides in this scene)
+const MOON_P = 0.36
+const STRIP = [0, 0.0625, 0.125, 0.25, 0.36, 0.5, 0.625, 0.75]   // new → … → full → waning; index 4 = tonight
+const STRIP_CUR = 4
+const SIGN = { src: 'card-sign-stamped.png', iw: 904, ih: 1156, body: [116, 124, 724, 1042] }
+// 9:16 cut: title on top, the sign card large in the middle with the phase strip under it, the list below
+// (16:9 keeps its original side-by-side numbers in the else branch)
+const V5 = VERT ? { titleTop: 236, cardBody: 600, cardCY: 682, stripTop: 1004, stripScale: 1.3, listTop: 1164, ROW: 82, icon: 52, iconFS: 32, iconR: 12, labFS: 54, subFS: 46, gap: 20, titleFS: 104 } : null
+export function sceneReading(stage) {
+  const root = fill(stage, { background: C.canvas })
+  // deep-space backdrop (teal mood) — first child so everything else sits above it
+  const bg = spaceBackdrop(root, 'teal', { seed: 5 })
+  // thin bone rim riding the circle-wipe edge (continues S4's loading-disc rim), fades as it grows
+  const rim = el('div', { position: 'absolute', left: '50%', top: '50%', borderRadius: '50%', boxSizing: 'border-box', border: '1.5px solid rgba(239,230,214,0.5)', pointerEvents: 'none' }, root)
+  // hidden copy of the first deck card so the loader waits for it (fxDots samples it)
+  dotImg = img(root, DOT_SRC, { left: 0, top: 0, width: '2px', height: '3px', opacity: 0 })
+  const block = el('div', { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px' }, root)
+  const title = el('div', { position: 'absolute', fontFamily: SERIF, fontStyle: 'italic', fontSize: (VERT ? V5.titleFS : 108) + 'px', fontWeight: 400, color: C.bone, whiteSpace: 'nowrap', letterSpacing: '-0.01em', lineHeight: 1, textShadow: '0 2px 30px rgba(8,5,34,0.55)' }, block)
+  const tChars = [...'Reading your sky'].map((ch, i) => el('span', { opacity: 0, color: i === 0 ? VIOLET_HI : C.bone }, title, ch === ' ' ? ' ' : ch))
+  const rail = el('div', { position: 'absolute', width: '3px', background: 'rgba(239,230,214,0.22)' }, block)
+  const ITEMS = [
+    { g: '☉', c: C.gold, label: 'Sun', sub: 'Taurus' },
+    { g: ' ', moon: true, c: VIOLET_HI, label: 'Moon', sub: 'Sagittarius' },
+    { g: '↑', c: '#ff8fb1', label: 'Rising', sub: 'Libra' },
+    { g: '♀', c: C.spark, label: 'Venus', sub: 'Aries' },
+    { g: '', c: '#ff8fb1', label: 'Dealing', sub: 'your first deck' },
+  ]
+  const AT = [14.75, 15.15, 15.55, 15.95, 16.35]
+  const ROW = VERT ? V5.ROW : 96, INDENT = 72
+  const rows = ITEMS.map(it => {
+    const r = el('div', { position: 'absolute', left: '0', display: 'flex', alignItems: 'center', gap: (VERT ? V5.gap : 24) + 'px', whiteSpace: 'nowrap', fontFamily: SANS }, block)
+    const ic = el('div', { width: (VERT ? V5.icon : 58) + 'px', height: (VERT ? V5.icon : 58) + 'px', boxSizing: 'border-box', borderRadius: (VERT ? V5.iconR : 13) + 'px', border: `3.5px solid ${it.c}`, color: it.c, display: it.g ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', fontSize: (VERT ? V5.iconFS : 36) + 'px', lineHeight: 1 }, r, it.g)
+    if (it.moon) {   // moon-phase line icon (waxing gibbous, same phase as the strip below the card)
+      ic.textContent = ''
+      const mc = el('canvas', { width: '40px', height: '40px' }, ic); mc.width = mc.height = 80
+      const mx = mc.getContext('2d'); mx.scale(2, 2)
+      drawMoonGlyph(mx, 20, 20, 15, MOON_P, { color: it.c, lw: 3, discAlpha: 0 })
+    }
+    const lab = el('div', { fontSize: (VERT ? V5.labFS : 58) + 'px', fontWeight: 500, color: it.c, letterSpacing: '-0.01em' }, r, it.label)
+    const sub = el('div', { fontSize: (VERT ? V5.subFS : 50) + 'px', color: 'rgba(239,230,214,0.7)', letterSpacing: '-0.01em' }, r, '— ' + it.sub)
+    return { r, ic, lab, sub, it }
+  })
+  const working = el('div', { position: 'absolute', fontFamily: MONO, fontSize: '30px', letterSpacing: '0.22em', textTransform: 'uppercase', whiteSpace: 'nowrap' }, block, 'Shuffling your deck…')
+
+  // sign card: crop the baked green glow — body + stamp only, clean dark backing shadow
+  const SC = (VERT ? V5.cardBody : 500) / (SIGN.body[3] - SIGN.body[1]) // body ≈ 46% of frame height
+  const cw = SIGN.iw * SC, chh = SIGN.ih * SC
+  const card = el('div', { position: 'absolute', left: (VERT ? W / 2 - (SIGN.body[0] + SIGN.body[2]) / 2 * SC : 1400 - cw / 2) + 'px', top: (VERT ? V5.cardCY - (SIGN.body[1] + SIGN.body[3]) / 2 * SC : H / 2 - chh / 2 - 6) + 'px', width: cw + 'px', height: chh + 'px', opacity: 0, willChange: 'transform' }, root)
+  const [bl, bt, br, bb] = SIGN.body.map(v => v * SC)
+  el('div', { position: 'absolute', left: bl + 'px', top: bt + 'px', width: (br - bl) + 'px', height: (bb - bt) + 'px', borderRadius: (34 * SC) + 'px', boxShadow: '0 0 70px 6px rgba(127,216,176,0.22), 0 0 140px 30px rgba(120,96,230,0.30), 0 30px 60px -10px rgba(4,2,16,0.7)' }, card)
+  const layer = (clip) => img(card, A + SIGN.src, { left: 0, top: 0, width: cw + 'px', height: chh + 'px', clipPath: clip })
+  layer(`inset(${bt}px ${cw - br}px ${chh - bb}px ${bl}px round ${34 * SC}px)`)
+  layer(`polygon(${[[458, 99], [783, 65], [793, 143], [466, 179]].map(([x, y]) => `${x * SC}px ${y * SC}px`).join(',')})`)
+
+  // phase strip under the sign card: 8 phases, a highlight walks to tonight's (sound: ticks 15.62 + i*0.09, lands 15.98)
+  const SW = 560, SHh = 120
+  const strip = el('canvas', { position: 'absolute', left: ((VERT ? W / 2 : 1400) - SW / 2) + 'px', top: (VERT ? V5.stripTop : 842) + 'px', width: SW + 'px', height: SHh + 'px', ...(VERT ? { transform: `scale(${V5.stripScale})`, transformOrigin: '50% 0' } : {}) }, root)
+  strip.width = SW * 2; strip.height = SHh * 2
+  const sx = strip.getContext('2d')
+
+  let titleW = 0, blockW = 0
+  return {
+    start: 14.05, end: 17.6, root,
+    update(t) {
+      bg.update(t)
+      const wp = ease.inOutQuad(prog(t, 14.05, 14.55)), wr = 36 + wp * 1150 - 1
+      rim.style.width = rim.style.height = (2 * wr) + 'px'; rim.style.margin = (-wr) + 'px 0 0 ' + (-wr) + 'px'
+      rim.style.opacity = String(1 - prog(t, 14.05, 14.4))
+      rim.style.display = t < 14.4 ? 'block' : 'none'
+      if (!titleW) titleW = title.offsetWidth || 780
+      if (!blockW) blockW = Math.max(titleW * 0.94, INDENT + Math.max(...rows.map(r => r.r.offsetWidth || 700)))
+      // title types in at frame centre while the circle reveal (14.05–14.55, centred) opens around it
+      tChars.forEach((s, i) => { s.style.opacity = String(ease.outQuad(prog(t, 14.2 + i * 0.018, 14.4 + i * 0.018))) })
+      // title then glides up/left: the list settles centre-left (x≈300), the sign card fills the right
+      const g = ease.spring(prog(t, 14.6, 15.2), 0.04)
+      // each slot opens *before* its row shows (lead), so the eyebrow below is already clear when the row fades in
+      const lead = AT.map(a => ease.outCubic(prog(t, a - 0.24, a + 0.06)))
+      const listH = lead.reduce((h, l) => h + ROW * l, 0)
+      const LX = VERT ? Math.round((W - (blockW - 0)) / 2) : 300
+      const tx = VERT ? W / 2 - titleW / 2 : lerp(W / 2 - titleW / 2, LX, g)
+      const blockTop = VERT ? Math.max(V5.titleTop - 10, lerp(H / 2 - V5.titleFS / 2, V5.titleTop, g)) : lerp(H / 2 - 54, H / 2 - listH / 2 - 120, g)
+      title.style.left = tx + 'px'; title.style.top = blockTop + 'px'
+      title.style.transform = `scale(${lerp(1, 0.94, g)})`; title.style.transformOrigin = VERT ? '50% 0' : '0 0'
+      // vertical: the list column sits below the sign card + phase strip, left-aligned at LX and centred as a block
+      const listTop = VERT ? V5.listTop : blockTop + 146
+      const colX = VERT ? LX : tx
+      let y = listTop
+      rows.forEach((row, i) => {
+        const p = ease.outCubic(prog(t, AT[i], AT[i] + 0.32))
+        row.r.style.left = (colX + INDENT) + 'px'
+        row.r.style.top = y + 'px'
+        row.r.style.opacity = String(clamp(prog(t, AT[i], AT[i] + 0.16)))
+        row.r.style.transform = `translateX(${(1 - p) * -26}px)`
+        // active colour blends in on arrival and back to ink as the next row lands (or "Dealing" settles at 17.0)
+        const off = i < AT.length - 1 ? AT[i + 1] : 17.0
+        const act = prog(t, AT[i], AT[i] + 0.15) * (1 - prog(t, off, off + 0.15))
+        row.lab.style.color = mix(C.bone, row.it.c, act)
+        y += ROW * lead[i]
+      })
+      const eyeTop = y + (VERT ? 26 : 30)
+      const railTop = VERT ? listTop - 6 : blockTop + 140
+      rail.style.left = (colX + 24) + 'px'; rail.style.top = railTop + 'px'
+      rail.style.height = Math.max(0, eyeTop - 18 - railTop) + 'px'
+      rail.style.opacity = String(g)
+      working.style.left = (colX) + 'px'; working.style.top = eyeTop + 'px'
+      const sh = (t * 1.1) % 1
+      working.style.background = `linear-gradient(90deg, rgba(239,230,214,0.72) ${sh * 140 - 40}%, rgba(239,230,214,1) ${sh * 140 - 20}%, rgba(239,230,214,0.72) ${sh * 140}%)`
+      working.style.webkitBackgroundClip = 'text'; working.style.color = 'transparent'
+      working.style.opacity = String(g)
+      // late life: the whole block slowly breathes forward and lifts, then clears before the dots arrive
+      const hold = ease.inOutQuad(prog(t, 16.3, 17.18))
+      const bcx = VERT ? W / 2 : LX + blockW / 2, bcy = VERT ? V5.listTop + 200 : H / 2
+      block.style.transformOrigin = `${bcx}px ${bcy}px`
+      block.style.transform = VERT ? `translate(0px, ${-hold * 18}px) scale(${1 + 0.04 * hold})` : `translate(${hold * 40}px, ${-hold * 18}px) scale(${1 + 0.05 * hold})`
+      block.style.opacity = String(1 - ease.inQuad(prog(t, 17.06, 17.18)))
+      // "Dealing" row: soft pulse while the deck shuffles
+      const pulse = prog(t, 16.6, 17.06)
+      rows[4].lab.style.opacity = String(1 - 0.35 * pulse * (0.5 + 0.5 * Math.sin((t - 16.6) * 14)))
+
+      // phase strip
+      sx.setTransform(2, 0, 0, 2, 0, 0); sx.clearRect(0, 0, SW, SHh)
+      const sIn = prog(t, 15.4, 15.75), sOut = ease.inQuad(prog(t, 16.42, 16.62))
+      strip.style.display = sIn > 0 && sOut < 1 ? 'block' : 'none'
+      if (sIn > 0 && sOut < 1) {
+        const hi = Math.min(STRIP_CUR, Math.floor((t - 15.62) / 0.09))
+        STRIP.forEach((p, i) => {
+          const a = ease.outCubic(prog(t, 15.4 + i * 0.035, 15.65 + i * 0.035)) * (1 - sOut)
+          const cur = i === STRIP_CUR && hi >= STRIP_CUR
+          const pass = i === hi && !cur ? 1 - clamp((t - 15.62 - i * 0.09) / 0.12) * 0.6 : 0
+          const on = cur ? ease.outCubic(prog(t, 15.98, 16.18)) : 0
+          drawMoonGlyph(sx, 36 + i * 69.7, 40, 12 + 2 * on, p, { alpha: a * (0.42 + 0.3 * pass + 0.58 * on), lw: 1.4, discAlpha: 0.08, glow: on * 1.2 })
+        })
+        sx.globalAlpha = ease.outQuad(prog(t, 15.95, 16.2)) * (1 - sOut)
+        sx.font = "400 17px 'Space Mono', monospace"; sx.letterSpacing = '3.4px'
+        sx.textAlign = 'center'; sx.fillStyle = 'rgba(239,230,214,0.78)'
+        sx.fillText(`TONIGHT · WAXING GIBBOUS · ${Math.round(litOf(MOON_P) * 100)}%`, SW / 2 + 2, 96)
+        sx.globalAlpha = 1
+      }
+      // sign card: swings in from the right after Sun lands, floats, then slides away as the deck is dealt
+      const ci = ease.outCubic(prog(t, 14.9, 15.4)), co = ease.inCubic(prog(t, 16.55, 16.9))
+      card.style.display = ci > 0 && co < 1 ? 'block' : 'none'
+      if (ci > 0 && co < 1) {
+        const fl = Math.sin((t - 14.9) * 2.2)
+        const yaw = lerp(38, -11, ci) + 3 * fl * ci + co * 26
+        const rx = lerp(-8, 4, ci) + co * -6
+        const x = (1 - ci) * 160 + co * 140, yy = (1 - ci) * 30 - 6 * fl - co * 20
+        card.style.opacity = String(clamp(ci * 2.5) * (1 - co))
+        card.style.transform = `translate(${x}px, ${yy}px) perspective(2000px) rotateY(${yaw}deg) rotateX(${rx}deg) rotateZ(${lerp(4, 2, ci)}deg) scale(${lerp(0.88, 1, ci) * (1 - 0.1 * co)})`
+      }
+    },
+  }
+}
+
+// ── fxDots: contained dot-matrix patch over the first dealt card (S5 → S6).
+// Geometry must match S6's first card: card-profile-1 body (PNG box 120,114–1374,2116), PATCH_H tall, centred at (W/2, H/2 − 10).
+// Beats (frame = Math.round(t*30)): sparse random dots grow 17.12–17.5 in aura palette → tint to the card colours 17.32–17.56
+// (S6's first card fades in underneath 17.45–17.62) → 2-frame square mosaic (frames 527–528, 17.567/17.6) hides the hand-off
+// → card is opaque, the last dots shrink and thin off it 17.62–17.78. Monotonic: dots → mosaic → sharp card.
+const BODY = [120, 114, 1374, 2116]
+// vertical: S6 uses BODY_H = 1000 (first card still centred at W/2, H/2 − 10) — keep in sync
+const PATCH_H = VERT ? 1000 : 700, PATCH_W = PATCH_H * (BODY[2] - BODY[0]) / (BODY[3] - BODY[1]), PATCH_CX = W / 2, PATCH_CY = H / 2 - 10
+const CELL = VERT ? 28 : 22
+let grid = null
+function sampleGrid() {
+  if (grid) return grid
+  const cols = Math.round(PATCH_W / CELL), rows = Math.round(PATCH_H / CELL)
+  if (!dotImg || !dotImg.complete || !dotImg.naturalWidth) return null
+  const k = 4
+  const cv = document.createElement('canvas'); cv.width = cols * k; cv.height = rows * k
+  const c2 = cv.getContext('2d'); c2.imageSmoothingQuality = 'high'
+  c2.drawImage(dotImg, BODY[0], BODY[1], BODY[2] - BODY[0], BODY[3] - BODY[1], 0, 0, cv.width, cv.height)
+  const d = c2.getImageData(0, 0, cv.width, cv.height).data
+  const cells = []
+  for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+    let r = 0, g = 0, b = 0, a = 0
+    for (let j = 0; j < k; j++) for (let i = 0; i < k; i++) {
+      const o = ((y * k + j) * cv.width + x * k + i) * 4
+      const al = d[o + 3] / 255
+      r += d[o] * al; g += d[o + 1] * al; b += d[o + 2] * al; a += al
+    }
+    const n = k * k
+    if (a / n < 0.55) { cells.push(null); continue }
+    const raw = [r / a, g / a, b / a]
+    const lum = 0.299 * raw[0] + 0.587 * raw[1] + 0.114 * raw[2]
+    // lift dark card base strongly so the patch reads as aura colour, never a black block
+    const lift = raw.map(v => Math.round(Math.min(255, v * 1.3 + 46)))
+    cells.push({ raw: raw.map(Math.round), lift, lum })
+  }
+  grid = { cols, rows, cells }
+  return grid
+}
+
+export function fxDots(ctx, t, opts = {}) {
+  // timing is owned here (args from main.js are ignored)
+  const t0 = 17.12, t1 = 17.78
+  if (t <= t0 || t >= t1) return
+  const gd = sampleGrid()
+  const cols = gd ? gd.cols : Math.round(PATCH_W / CELL), rows = gd ? gd.rows : Math.round(PATCH_H / CELL)
+  const cw = PATCH_W / cols, ch = PATCH_H / rows
+  const ox = PATCH_CX - PATCH_W / 2, oy = PATCH_CY - PATCH_H / 2
+  // square mosaic: two frames (17.567, 17.6) while the card underneath is still resolving
+  if (t >= 17.55 && t < 17.617) {
+    ctx.globalAlpha = t < 17.583 ? 0.95 : 0.7
+    for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+      const cell = gd ? gd.cells[y * cols + x] : { raw: [60, 30, 80] }
+      if (!cell) continue
+      ctx.fillStyle = `rgb(${cell.raw[0]},${cell.raw[1]},${cell.raw[2]})`
+      ctx.fillRect(Math.floor(ox + x * cw), Math.floor(oy + y * ch), Math.ceil(cw) + 1, Math.ceil(ch) + 1)
+    }
+    ctx.globalAlpha = 1
+    return
+  }
+  const pg = (t - t0) / 0.36                       // growth (random order, sparse first)
+  const ps = (t - 17.555) / 0.2                    // thinning after the mosaic, over the now-sharp card
+  const tint = ease.inOutQuad(prog(t, 17.3, 17.5))  // palette → sampled card colour
+  for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+    const cell = gd ? gd.cells[y * cols + x] : { lift: [200, 120, 170], lum: 120 }
+    const r = rng(9 + x * 131 + y * 7)
+    const jit = r()
+    const pal = PIXEL_PALETTE[Math.floor(r() * PIXEL_PALETTE.length)]
+    const ph = r() * 6.283
+    if (!cell) continue
+    const dx = (x + 0.5) / cols - 0.5, dy = (y + 0.5) / rows - 0.5
+    const d = Math.hypot(dx * 0.8, dy) / 0.62 // 0 centre … ~1 corners
+    const grow = clamp((pg * 1.5 - jit * 1.1 - d * 0.25) * 4)
+    const thin = clamp((ps * 1.3 - jit) * 3)
+    // very dark cells give way to the aura colours as the tint lands
+    const dark = clamp((70 - cell.lum) / 40)
+    const keep = 1 - dark * 0.9 * ease.inQuad(prog(t, 17.42, 17.6))
+    const wob = 0.86 + 0.14 * Math.sin(t * 11 + ph)
+    const rad = Math.min(cw, ch) * 0.47 * ease.outQuad(grow) * wob * keep * (1 - 0.6 * thin)
+    if (rad < 0.4) continue
+    const pr = parseInt(pal.slice(1, 3), 16), pgc = parseInt(pal.slice(3, 5), 16), pb = parseInt(pal.slice(5, 7), 16)
+    const tc = tint * (1 - 0.7 * dark) // dark cells keep their aura-palette colour while they shrink away
+    const cr = Math.round(lerp(pr, cell.lift[0], tc)), cg = Math.round(lerp(pgc, cell.lift[1], tc)), cb = Math.round(lerp(pb, cell.lift[2], tc))
+    ctx.fillStyle = `rgb(${cr},${cg},${cb})`
+    ctx.beginPath(); ctx.arc(ox + (x + 0.5) * cw, oy + (y + 0.5) * ch, rad, 0, Math.PI * 2); ctx.fill()
+  }
+}
