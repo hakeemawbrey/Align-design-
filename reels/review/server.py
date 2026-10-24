@@ -8,6 +8,7 @@ IG caption + pinned first comment, ready to upload.
 """
 
 import base64
+import hmac
 import json
 import os
 import re
@@ -18,12 +19,19 @@ import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "out")
-APPROVED = os.path.join(ROOT, "approved")
-INSPO = os.path.join(ROOT, "inspo")
-STATE_FILE = os.path.join(ROOT, "review-state.json")
-MANIFEST_FILE = os.path.join(ROOT, "out-manifest.json")
-PORT = 4319
+# where renders and review decisions live; point it at a persistent disk on
+# a cloud host (defaults to this folder, as on the Mac)
+DATA = os.environ.get("REELS_DATA", ROOT)
+OUT = os.path.join(DATA, "out")
+APPROVED = os.path.join(DATA, "approved")
+INSPO = os.path.join(DATA, "inspo")
+STATE_FILE = os.path.join(DATA, "review-state.json")
+MANIFEST_FILE = os.path.join(DATA, "out-manifest.json")
+PORT = int(os.environ.get("PORT", 4319))
+# 127.0.0.1 keeps it private on a laptop; a cloud host sets HOST=0.0.0.0
+HOST = os.environ.get("HOST", "127.0.0.1")
+# set REVIEW_PASSWORD when the dashboard is reachable from the internet
+PASSWORD = os.environ.get("REVIEW_PASSWORD", "")
 
 sys.path.insert(0, ROOT)
 import render  # caption banks + IG caption templates
@@ -114,13 +122,75 @@ def extract_colors(img):
             for i in range(0, 9, 3)]
 
 
-def inspo_captions(img, sign):
-    """Ask headless Claude to write zodiac captions in the inspo image's style."""
+MODEL = os.environ.get("REELS_MODEL", "claude-opus-5-5")
+
+
+def ask_claude(prompt, image=None):
+    """Run one prompt on Claude Opus 5.5 and return the reply text, or None.
+
+    With ANTHROPIC_API_KEY set (a hosted server) it calls the API through the
+    anthropic SDK; otherwise it uses the Claude Code CLI like before, so a
+    signed-in Mac or a Claude Code cloud session needs no key."""
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return _ask_api(prompt, image)
     if not shutil.which("claude"):
         return None
+    if image:
+        prompt = f"Read the image file at {image} — {prompt}"
+    try:
+        r = subprocess.run(["claude", "-p", "--model", MODEL, prompt],
+                           capture_output=True, text=True, timeout=300)
+        return r.stdout
+    except Exception:
+        return None
+
+
+def _ask_api(prompt, image=None):
+    try:
+        import anthropic
+    except ImportError:
+        print("note: pip install anthropic to write captions with an API key")
+        return None
+    content = []
+    if image:
+        ext = os.path.splitext(image)[1].lower()
+        media = {".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+                 ".webp": "image/webp", ".gif": "image/gif"}.get(ext, "image/png")
+        with open(image, "rb") as f:
+            data = base64.standard_b64encode(f.read()).decode()
+        content.append({"type": "image", "source": {
+            "type": "base64", "media_type": media, "data": data}})
+        prompt = f"The attached image — {prompt}"
+    content.append({"type": "text", "text": prompt})
+    try:
+        resp = anthropic.Anthropic().beta.messages.create(
+            model=MODEL, max_tokens=16000,
+            output_config={"effort": "high"},
+            # if Opus declines, let the API retry on a fallback model
+            betas=["server-side-fallback-2026-07-01"],
+            extra_body={"fallbacks": "default"},
+            messages=[{"role": "user", "content": content}])
+    except anthropic.APIError as e:
+        print(f"claude api error: {e}")
+        return None
+    if resp.stop_reason == "refusal":
+        return None
+    return "".join(b.text for b in resp.content if b.type == "text")
+
+
+def parse_json_array(text):
+    m = re.search(r"\[.*\]", text or "", re.S)
+    try:
+        return json.loads(m.group(0)) if m else None
+    except ValueError:
+        return None
+
+
+def inspo_captions(img, sign):
+    """Ask headless Claude to write zodiac captions in the inspo image's style."""
     signs = render.SIGNS if sign in (None, "", "all") else [sign]
     prompt = (
-        f"Read the image file at {img} — it's an example of a meme post whose "
+        f"it's an example of a meme post whose "
         f"voice, humor style, and format we want to copy. Write one short funny "
         f"caption in that exact style for each of these zodiac signs: "
         f"{', '.join(signs)}. Zodiac/dating themed, lowercase unless the style "
@@ -128,23 +198,16 @@ def inspo_captions(img, sign):
         'each. Reply with ONLY a JSON array like '
         '[{"sign":"aries","text":"..."}] and nothing else.'
     )
-    try:
-        r = subprocess.run(["claude", "-p", prompt], capture_output=True,
-                           text=True, timeout=240)
-        m = re.search(r"\[.*\]", r.stdout, re.S)
-        caps = json.loads(m.group(0)) if m else None
-        if caps and all(c.get("sign") and c.get("text") for c in caps):
-            return caps
-    except Exception:
-        pass
+    caps = parse_json_array(ask_claude(prompt, image=img))
+    if caps and all(isinstance(c, dict) and c.get("sign") and c.get("text")
+                    for c in caps):
+        return caps
     return None
 
 
 def variation_captions(mode, sign, n=12):
     """Ask headless Claude for N unique captions in this mode's voice for one
     sign, using the existing bank entry (if any) as a style example."""
-    if not shutil.which("claude"):
-        return None
     example = bank_lookup().get(f"{mode}_{sign}")
     example_line = f'\nExample of the tone/format to match: "{example["text"]}"' \
         if example else ""
@@ -157,15 +220,9 @@ def variation_captions(mode, sign, n=12):
         'under 220 characters each. Reply with ONLY a JSON array of strings '
         'like ["caption one", "caption two", ...] and nothing else.'
     )
-    try:
-        r = subprocess.run(["claude", "-p", prompt], capture_output=True,
-                           text=True, timeout=240)
-        m = re.search(r"\[.*\]", r.stdout, re.S)
-        caps = json.loads(m.group(0)) if m else None
-        if caps and all(isinstance(c, str) and c.strip() for c in caps):
-            return caps[:n]
-    except Exception:
-        pass
+    caps = parse_json_array(ask_claude(prompt))
+    if caps and all(isinstance(c, str) and c.strip() for c in caps):
+        return caps[:n]
     return None
 
 
@@ -173,8 +230,6 @@ def more_like_this(mode, sign, seed_text, n=6):
     """Ask headless Claude for N captions riffing on this SPECIFIC post's
     joke/angle for the same sign — a tighter ask than variation_captions,
     which only anchors on the mode's generic bank example."""
-    if not shutil.which("claude"):
-        return None
     prompt = (
         f"Here is one zodiac meme caption for {sign}, in the '{mode}' "
         f'voice for a zodiac dating app\'s Instagram: "{seed_text}"\n\n'
@@ -187,15 +242,9 @@ def more_like_this(mode, sign, seed_text, n=6):
         'with ONLY a JSON array of strings like ["caption one", "caption '
         'two", ...] and nothing else.'
     )
-    try:
-        r = subprocess.run(["claude", "-p", prompt], capture_output=True,
-                           text=True, timeout=240)
-        m = re.search(r"\[.*\]", r.stdout, re.S)
-        caps = json.loads(m.group(0)) if m else None
-        if caps and all(isinstance(c, str) and c.strip() for c in caps):
-            return caps[:n]
-    except Exception:
-        pass
+    caps = parse_json_array(ask_claude(prompt))
+    if caps and all(isinstance(c, str) and c.strip() for c in caps):
+        return caps[:n]
     return None
 
 
@@ -262,6 +311,23 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, *a):
         pass
 
+    def authorized(self):
+        if not PASSWORD:
+            return True
+        auth = self.headers.get("Authorization", "")
+        try:
+            given = base64.b64decode(auth.split(" ", 1)[1]).decode().split(":", 1)[1] \
+                if auth.startswith("Basic ") else ""
+        except Exception:
+            given = ""
+        if hmac.compare_digest(given.encode(), PASSWORD.encode()):
+            return True
+        self.send_response(401)
+        self.send_header("WWW-Authenticate", 'Basic realm="Align Gradient Reels"')
+        self.send_header("Content-Length", "0")
+        self.end_headers()
+        return False
+
     def send_json(self, obj, code=200):
         body = json.dumps(obj).encode()
         self.send_response(code)
@@ -271,6 +337,8 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
+        if not self.authorized():
+            return
         parsed = urllib.parse.urlparse(self.path)
         if parsed.path == "/":
             with open(os.path.join(ROOT, "review", "index.html"), "rb") as f:
@@ -342,6 +410,8 @@ class Handler(BaseHTTPRequestHandler):
                 remaining -= len(chunk)
 
     def do_POST(self):
+        if not self.authorized():
+            return
         length = int(self.headers.get("Content-Length", 0))
         data = json.loads(self.rfile.read(length)) if length else {}
         if self.path == "/api/decide":
@@ -461,4 +531,4 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     print(f"Align Gradient Reels review → http://localhost:{PORT}")
-    ThreadingHTTPServer(("127.0.0.1", PORT), Handler).serve_forever()
+    ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()

@@ -36,8 +36,27 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 # Hakeem's machine so this still runs out of the box for him
 FFMPEG = (shutil.which("ffmpeg")
           or "/Users/expressivespace/claude code/align-engine/bin/ffmpeg")
-FONT = "/System/Library/Fonts/Supplemental/Arial Rounded Bold.ttf"
-FONT_WM = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+
+
+def first_font(*paths):
+    """First font file that exists. Arial Rounded only ships with macOS, so
+    anywhere else (a cloud box, Linux) fall back to the bundled Nunito Black,
+    the closest open rounded face."""
+    for p in paths:
+        if p and os.path.isfile(p):
+            return p
+    return paths[-1]
+
+
+BUNDLED_FONT = os.path.join(ROOT, "fonts", "Nunito-Black.ttf")
+FONT = first_font(os.environ.get("REELS_FONT"),
+                  "/System/Library/Fonts/Supplemental/Arial Rounded Bold.ttf",
+                  BUNDLED_FONT)
+FONT_WM = first_font(os.environ.get("REELS_FONT_WM"),
+                     "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+                     "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+                     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                     BUNDLED_FONT)
 
 W, H = 1080, 1920
 WATERMARK = "comealign.com"

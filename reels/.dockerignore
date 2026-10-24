@@ -1,0 +1,5 @@
+out/
+approved/
+review-state.json
+out-manifest.json
+__pycache__/

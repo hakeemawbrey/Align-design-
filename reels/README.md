@@ -10,7 +10,7 @@ comment. Pass `--watermark` / `--cta` if you want it on the image.
 ## Quick start
 
 ```bash
-cd "/Users/expressivespace/claude code/align-gradient-reels"
+cd reels        # from the root of this repo
 
 python3 render.py --all --cta                  # the full 72-caption library
 python3 render.py --batch 21 --days 7 --cta    # a week: 3 posts/day + post plans
@@ -21,6 +21,35 @@ python3 render.py --mode delu --sign leo --video   # mp4 instead of png
 
 python3 review/server.py                       # approval GUI → localhost:4319
 ```
+
+## Running it in the cloud
+
+Nothing here needs your Mac anymore. It runs anywhere with Python 3 and ffmpeg.
+
+- **Fonts:** it uses Arial Rounded Bold when the Mac has it, and otherwise the
+  bundled `fonts/Nunito-Black.ttf`, the closest free rounded font (SIL Open
+  Font License, see `fonts/OFL.txt`). Set `REELS_FONT` to use another file.
+- **Captions by Claude:** Generate (with one sign picked), More like this and
+  Inspo use **Claude Opus 5.5**. With `ANTHROPIC_API_KEY` set, the dashboard
+  calls the API (`pip install -r requirements.txt` first). Without it, it uses
+  the `claude` command like before, which works on a signed-in Mac and in a
+  Claude Code cloud session. `REELS_MODEL` picks a different model.
+- **In a Claude Code cloud session:** just ask, e.g. "render a week batch in
+  reels/ and send me the images". The session has ffmpeg and `claude` already.
+- **As a hosted dashboard you open from your phone:** deploy the `Dockerfile`
+  to a container host such as Render, Railway or Fly.io, with:
+  - a persistent disk mounted at `/data`, where renders and approvals are saved
+  - `REVIEW_PASSWORD`, so the dashboard asks for a password (any username)
+  - `ANTHROPIC_API_KEY`, for Claude-written captions
+
+| Setting | Default | What it does |
+|---|---|---|
+| `HOST` / `PORT` | `127.0.0.1` / `4319` | where the dashboard listens (Docker uses `0.0.0.0`) |
+| `REVIEW_PASSWORD` | none | require a password for the dashboard |
+| `REELS_DATA` | this folder | where `out/`, `approved/` and the review state live |
+| `ANTHROPIC_API_KEY` | none | write captions through the API instead of the `claude` CLI |
+| `REELS_MODEL` | `claude-opus-5-5` | model for captions |
+| `REELS_FONT`, `REELS_FONT_WM` | Arial Rounded, else Nunito | font files for the post text and the watermark |
 
 ## Review / approval GUI
 
