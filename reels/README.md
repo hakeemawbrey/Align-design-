@@ -1,49 +1,79 @@
 # Align Gradient Reels
 
-Gradient-background zodiac meme posts (boomer-Facebook-post style) for the
-Align waitlist (comealign.com) on Instagram, 1080×1920.
+Gradient-background text meme posts (boomer-Facebook-post style) for promoting
+the Align waitlist (comealign.com) on Instagram. Output is 1080x1920 **still
+PNGs by default** — post as a reel/story/photo and add trending audio in the
+IG app. Pass `--video` for animated-gradient mp4s instead. Images are clean
+(text only) — the comealign.com promo lives in the caption + pinned first
+comment. Pass `--watermark` / `--cta` if you want it on the image.
 
-This replaces the local `align-gradient-reels` folder (`render.py`, ffmpeg and a
-`localhost:4319` review server that only ran on one Mac). Everything now runs in
-the browser, so it works from any computer or phone:
+## Quick start
 
-- **Published page:** https://claude.ai/artifact/NhdFZcLbWcY586Du52KdVB
-  (private until you share it from the page's Share menu)
-- **Source:** `reels/index.html`, one self-contained file
+```bash
+cd "/Users/expressivespace/claude code/align-gradient-reels"
 
-## What it does
+python3 render.py --all --cta                  # the full 72-caption library
+python3 render.py --batch 21 --days 7 --cta    # a week: 3 posts/day + post plans
+python3 render.py --mode delu --sign pisces    # one specific post
+python3 render.py --mode brainrot --all-signs  # one mode, all 12 signs
+python3 render.py --text "your custom line" --mode dating
+python3 render.py --mode delu --sign leo --video   # mp4 instead of png
 
-| | Before (local) | Now (cloud) |
-| --- | --- | --- |
-| Rendering | ffmpeg on the Mac | canvas in the browser, same palettes and diagonals |
-| Review queue | `review-state.json` on disk | shared cloud queue, live on every device |
-| New captions | headless `claude -p` if installed | Claude Opus 5.5, streamed in as cards |
-| Inspo | copied colors, `claude -p` read the file | upload a screenshot; Claude copies its voice, the page copies its colors |
-| Output | PNG, or mp4 via `--video` | PNG download, or an animated video recorded in the browser (MP4 where the browser supports it, WebM elsewhere) |
-| Week plan | `post_plan.txt` per day folder | Week plan tab: 3 approved posts a day for 7 days, copy buttons, and `post_plan.txt` download |
+python3 review/server.py                       # approval GUI → localhost:4319
+```
 
-Also new: edit the on-image text and caption in place, pick or flip the
-gradient, toggle Instagram's safe zones to keep text clear of the UI overlay,
-keyboard review in the full-size view (A approve, R reject, ← →), a Posted tab,
-and your own custom lines.
+## Review / approval GUI
 
-## Editing the caption library
+`review/server.py` serves a dashboard on **http://localhost:4319**: pick a
+genre in the header and hit **⚡ Generate 12** to render that mode's captions
+(clicking again makes fresh variants with new gradients). Every render in
+`out/` shows as a card with an editable IG caption and Approve / Reject
+buttons. Approving copies the file + a caption/first-comment `.txt` sidecar
+into `approved/` — that folder is the upload queue. Decisions persist in
+`review-state.json`; Undo available on the approved/rejected tabs.
 
-The built-in library (9 genres × 12 lines) is the JSON in
-`<script type="application/json" id="bank">` inside `index.html`, keyed by
-genre as `[sign, text]` pairs. Genre voices, palettes and Instagram caption
-templates are in the `MODES` table in the script.
+Batch output lands in `out/batch_<date>/day1..7/`, each day with its reels plus
+`post_plan.txt` containing the paste-ready IG caption, hashtags, and the pinned
+first comment (that's where the comealign.com link goes).
 
-## Opening the file directly
+## The modes
 
-Opened outside claude.ai (say, double-clicked from the repo), the page still
-renders, reviews and downloads. The queue is then saved in that browser only, and
-Claude writing is off, because both come from the claude.ai viewer.
+| mode | vibe | gradient |
+|---|---|---|
+| brainrot | unhinged gen-alpha absurdity | acid purple/green/cyan |
+| delu | delusional first-person confidence | hot pink/lilac |
+| nonsense | surreal deadpan "facts" | orange/teal/yellow |
+| spiritual | cosmic woo-woo affirmations | deep purple/gold |
+| dating | love advice / crying for help as a sign | red/rose/violet |
+| random | general zodiac chaos, not sign-specific | random palette |
 
-## Posting strategy
+Caption banks live in `captions/*.json` — edit freely, or ask Claude:
+"write 20 more brainrot captions" / "make a villain-era mode".
 
-- 2–4 posts a day, hours apart. Instagram throttles accounts that dump posts.
-- Captions aren't clickable: comealign.com goes in the bio, the pinned first
-  comment (copy button on every post), and optionally the image (CTA and
-  watermark toggles).
-- Add a trending sound in the Instagram app. It performs better than baked-in audio.
+## Music
+
+Default renders are **silent on purpose**: add a trending sound inside the
+Instagram app when posting — reels with trending audio get pushed far harder
+than reels with baked-in files. If you want baked-in audio anyway, drop mp3s
+into `music/` and pass `--music`.
+
+## Learning from examples (inspo/)
+
+Drop screen-recordings or screenshots of gradient reels you like into `inspo/`
+and tell Claude: "study inspo/ and make Align versions." For reels you only
+have a URL for, use `/remix <url>` — it downloads, transcribes, and scripts a
+zodiac version.
+
+## Posting strategy (read this, it matters)
+
+- **Pace: 2–4 reels/day, spaced hours apart.** Instagram throttles accounts
+  that dump posts; 3/day for a week beats 10/day for two days.
+- **Link discipline:** captions aren't clickable. comealign.com goes in your
+  bio, the watermark, and the pinned first comment (`post_plan.txt` has it).
+- **Trending audio in-app**, always.
+- **Auto-posting:** Instagram only allows scheduled/API posting via a
+  Business/Creator account — easiest paths are Meta Business Suite (free,
+  schedules a week ahead) or Later/Buffer/Metricool. Upload a day-folder,
+  paste from `post_plan.txt`, schedule, done — ~10 min per week.
+- **Daily fresh batch:** ask Claude Code to "schedule a daily task that renders
+  3 fresh reels every morning" and it'll be waiting in `out/` each day.

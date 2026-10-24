@@ -1,0 +1,8 @@
+out/
+approved/
+review-state.json
+out-manifest.json
+music/*
+!music/README.md
+inspo/*
+!inspo/README.txt

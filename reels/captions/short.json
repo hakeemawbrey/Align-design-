@@ -1,0 +1,17 @@
+{
+  "mode": "short",
+  "entries": [
+    { "sign": "aries", "text": "aries just challenged the vending machine to a fight" },
+    { "sign": "taurus", "text": "taurus said no. that's the whole post." },
+    { "sign": "gemini", "text": "gemini forgot what they were saying mid sentenc—" },
+    { "sign": "cancer", "text": "cancer cried at the self checkout. no reason." },
+    { "sign": "leo", "text": "leo just clapped for themselves. no one else did." },
+    { "sign": "virgo", "text": "virgo alphabetized their trauma" },
+    { "sign": "libra", "text": "libra: \"i don't care.\" libra: cares deeply" },
+    { "sign": "scorpio", "text": "scorpio knows. that's it. that's the post." },
+    { "sign": "sagittarius", "text": "sagittarius left. no note. no goodbye." },
+    { "sign": "capricorn", "text": "capricorn worked through lunch again" },
+    { "sign": "aquarius", "text": "aquarius unplugged the router for fun" },
+    { "sign": "pisces", "text": "pisces just cried at a car commercial" }
+  ]
+}
