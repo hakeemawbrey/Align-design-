@@ -1,10 +1,9 @@
-// STUB — replaced by the cityaustin agent. Export DURATION, SCENES and CUES.
-import { el } from '../../../src/lib.js'
+// cityaustin (15 s vertical Align ad): "Austin: everyone's 'in a band' … and 'between things.'" → on Align, dealbreakers
+// come first (✕ "BETWEEN THINGS", ✕ FLAKY PLANS, ✕ "WE'LL SEE") → "Know what they're about, first."
+// → shared end card ("come" + the Align logo, VOTE FOR YOUR CITY).
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import * as F from './film.js'
 export const DURATION = 15
 export const CTA = 'VOTE FOR YOUR CITY'
-export const CUES = [...endcardCues(DURATION - ENDCARD_LEN)]
-export const SCENES = [
-  async (stage) => ({ start: 0, end: DURATION - ENDCARD_LEN + 0.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'cityaustin'), update() {} }),
-  (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN, cta: CTA }),
-]
+export const SCENES = [...F.SCENES, (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN, cta: CTA })]
+export const CUES = [...F.CUES, ...endcardCues(DURATION - ENDCARD_LEN)]
