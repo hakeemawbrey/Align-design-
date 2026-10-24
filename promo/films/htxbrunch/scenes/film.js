@@ -87,14 +87,14 @@ function orb(x, px, py, r, color, a = 1, halo = 3.2) {
  *  The last `late` words pop at lateAt (big, optional wobble or a heavy drop). `times` overrides per-word times; `colors` per-word colours. */
 function popText(parent, text, { top, size, weight = 800, accentColor = GOLD, accentSize, gap = 0.07, at: t0, late = 0, lateAt = null, lateGap = 0.1, wobble = false, drop = false, times = null, colors = {}, lineHeight = 1.02 }) {
   const box = el('div', { position: 'absolute', left: '70px', width: (W - 140) + 'px', top: top + 'px', textAlign: 'center',
-    fontFamily: INTER, fontWeight: weight, fontSize: size + 'px', lineHeight, color: BONE, textShadow: SHADOW, letterSpacing: '-0.01em' }, parent)
+    fontFamily: INTER, fontWeight: weight, fontSize: size + 'px', lineHeight, color: BONE, textShadow: SHADOW, letterSpacing: '-0.01em', display: 'none' }, parent)
   const toks = text.split(' '), nW = toks.filter(w => w !== '|').length
   const ws = []
   let n = 0
   toks.forEach(w => {
     if (w === '|') { el('br', {}, box); return }
     const acc = w.startsWith('*') || w.endsWith('*')
-    const style = { display: 'inline-block', margin: '0 0.12em', opacity: 0, transformOrigin: '50% 85%' }
+    const style = { display: 'inline-block', margin: '0 0.12em', opacity: 0, visibility: 'hidden', transformOrigin: '50% 85%' }
     if (acc) Object.assign(style, { fontFamily: "'EB Garamond', serif", fontStyle: 'italic', fontWeight: 500, fontSize: (accentSize || size * 1.09) + 'px', color: accentColor, letterSpacing: '0', margin: '0 0.08em' })
     if (colors[n]) style.color = colors[n]
     const big = late > 0 && n >= nW - late
@@ -108,6 +108,10 @@ function popText(parent, text, { top, size, weight = 800, accentColor = GOLD, ac
       box.style.display = out <= 0 || t < first ? 'none' : 'block'
       if (box.style.display === 'none') return
       for (const w of ws) {
+        // a word is fully hidden until its own pop time
+        const on = t >= w.t && out > 0
+        w.e.style.visibility = on ? 'visible' : 'hidden'
+        if (!on) { w.e.style.opacity = '0'; continue }
         if (w.big && drop) {
           const p = prog(t, w.t, w.t + 0.34), land = w.t + 0.34
           const y = -420 * (1 - ease.inQuad(p))
