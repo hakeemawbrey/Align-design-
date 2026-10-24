@@ -86,7 +86,8 @@ export function fromResearch(v, i, creator = { handle: 'hothighpriestess', prefi
     platform: v.platform?.startsWith('unknown') ? 'unknown' : v.platform,
     url: v.url ?? null,
     date: v.approx_date ?? v.date ?? null,
-    hook: v.hook ?? '',
+    // "(paraphrased) ..." and "(possible) ..." are research notes, not words.
+    hook: (v.hook ?? '').replace(/^\((paraphrased|possible)\)\s*/i, ''),
     caption: v.caption ?? '',
     transcript: v.transcript ?? '',
     topic: v.topic ?? '',
@@ -137,6 +138,8 @@ export function loadSources(root) {
   // An imported reel with the same url replaces the researched one: your
   // own reading of the post beats a search snippet.
   const byKey = new Map()
-  for (const v of out) byKey.set(v.url ? v.url.replace(/[?#].*$/, '').replace(/\/$/, '') : v.id, v)
+  // YouTube keeps the video in the query (?v=); everywhere else it's tracking.
+  const key = (u) => (/youtube\.com\/watch/.test(u) ? u.replace(/&.*$/, '') : u.replace(/[?#].*$/, '').replace(/\/$/, ''))
+  for (const v of out) byKey.set(v.url ? `${v.creator}:${key(v.url)}` : v.id, v)
   return [...byKey.values()]
 }

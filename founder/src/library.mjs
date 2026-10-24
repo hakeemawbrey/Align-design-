@@ -15,6 +15,7 @@
 export const ANGLES = [
   {
     key: 'no-photos', label: 'No photos until you both say yes',
+    concept: 'The halo effect', conceptDef: 'When someone is good-looking, we assume they\'re kind, smart and honest too. One photo colors everything you read after it.',
     promise: 'how to know if you like someone before you see their face', fast: 'Know if you like someone before you see their face', mantra: 'The face comes last.',
     method: 'the face-last method',
     thing: 'a dating app where you can\'t see anyone\'s face until you both say yes',
@@ -41,6 +42,7 @@ export const ANGLES = [
   },
   {
     key: 'built-with-ai', label: 'Built with AI',
+    concept: 'Leverage', conceptDef: 'Leverage is getting more out than you put in. Code is leverage. Now one person can write it with an AI.',
     promise: 'how one founder builds a whole app with an AI', fast: 'Build a real app without writing the code yourself', mantra: 'Taste is the job now.',
     method: 'the one-founder method',
     thing: 'a whole dating app, iPhone build and backend included, with an AI as my engineer',
@@ -67,6 +69,7 @@ export const ANGLES = [
   },
   {
     key: 'trading-cards', label: 'A dating app that plays like a card game',
+    concept: 'Variable rewards', conceptDef: 'You don\'t know what\'s in the next pack. That uncertainty is what makes opening it feel good.',
     promise: 'how to make dating feel like a game again', fast: 'Make dating fun again in one night', mantra: 'It\'s a dating app. It plays like a card game.',
     method: 'the booster pack method',
     thing: 'a dating app that plays like a trading card game',
@@ -93,6 +96,7 @@ export const ANGLES = [
   },
   {
     key: 'venues-pay', label: 'The bar pays, not you',
+    concept: 'Two-sided markets', conceptDef: 'Some businesses charge the side that gets the most value. For a first date, that\'s the bar.',
     promise: 'how to turn a match into an actual date', fast: 'Turn a match into a date in one message', mantra: 'The bar pays for the date. Not you.',
     method: 'the bar-pays method',
     thing: 'a dating app where the bar pays for your date, not you',
@@ -119,6 +123,7 @@ export const ANGLES = [
   },
   {
     key: 'talk-cards', label: 'Talk cards: the real questions, early',
+    concept: 'The 36 questions', conceptDef: 'In a 1997 study, strangers who asked each other 36 increasingly personal questions felt closer in under an hour.',
     promise: 'how to ask the big questions without it being weird', fast: 'Find out if they want kids in one message', mantra: 'Say the honest thing first.',
     method: 'the sealed-answer method',
     thing: 'a deck of 51 questions that gets kids, money and how you fight on the table early',
@@ -145,6 +150,7 @@ export const ANGLES = [
   },
   {
     key: 'no-score', label: 'No compatibility score, on purpose',
+    concept: 'False precision', conceptDef: 'A number with a decimal point feels true. A 94% match is a guess wearing a lab coat.',
     promise: 'how to read someone instead of trusting a percentage', fast: 'Know where you\'ll clash before the first date', mantra: 'The sky reads. You decide.',
     method: 'the push-pull method',
     thing: 'a dating app with no compatibility score, on purpose',
@@ -171,6 +177,7 @@ export const ANGLES = [
   },
   {
     key: 'churn-hedge', label: 'The app you keep after you find someone',
+    concept: 'The endowment effect', conceptDef: 'We value things more once they\'re ours. A card in your binder is worth more to you than the same card in a shop.',
     promise: 'why my dating app doesn\'t lose you when it works', fast: 'Keep something when the app finally works', mantra: 'Find someone. Keep the cards.',
     method: 'the keep-the-cards method',
     thing: 'a dating app people keep after they find someone',
@@ -197,6 +204,7 @@ export const ANGLES = [
   },
   {
     key: '1111', label: 'Fifteen people a night, a new deal at 11:11',
+    concept: 'The paradox of choice', conceptDef: 'More options can make you less happy with the one you pick. Endless swiping is endless options.',
     promise: 'how to stop swiping until 2am', fast: 'Stop swiping until 2am tonight', mantra: 'Fifteen a night. A new deal at 11:11.',
     method: 'the fifteen-a-night method',
     thing: 'a dating app that only deals you fifteen people a night',
@@ -223,6 +231,7 @@ export const ANGLES = [
   },
   {
     key: 'peek', label: 'Three peeks, three seconds',
+    concept: 'The scarcity principle', conceptDef: 'We want things more when there\'s less of them. Three peeks a day make every peek matter.',
     promise: 'how to cheat on a no-photo app, a little', fast: 'See their face in three seconds, if you really need to', mantra: 'Three peeks. Three seconds. Make them count.',
     method: 'the three-second method',
     thing: 'a dating app where you can peek at a photo for three seconds, three times a day',
@@ -249,6 +258,7 @@ export const ANGLES = [
   },
   {
     key: 'energy', label: 'You earn power by going on dates',
+    concept: 'Goodhart\'s law', conceptDef: 'When a measure becomes a target, it stops being a good measure. Reward swipes and you get swipes, not dates.',
     promise: 'how to get rewarded for actually going on dates', fast: 'Get rewarded for a date, not a swipe', mantra: 'Show up. That\'s the whole game.',
     method: 'the show-up method',
     thing: 'a dating app that rewards you for going on dates, not for swiping',
@@ -275,6 +285,7 @@ export const ANGLES = [
   },
   {
     key: 'pricing-angel-numbers', label: 'Every price is an angel number',
+    concept: 'The left-digit effect', conceptDef: '$9.99 reads as nine dollars because we read the first digit. Prices are read, not calculated.',
     promise: 'why every price in my app is an angel number', fast: 'Make people screenshot your price', mantra: 'Every price is an angel number.',
     method: 'the angel-number method',
     thing: 'a dating app where every price is an angel number',
@@ -301,6 +312,7 @@ export const ANGLES = [
   },
   {
     key: 'houston-beta', label: 'Houston first: $15 for life',
+    concept: 'Network effects', conceptDef: 'A network gets more valuable with every person on it, near you. A dating app with nobody nearby is worth nothing.',
     promise: 'why my dating app only launches in one city', fast: 'Get lifetime access for $15, if you\'re in Houston', mantra: 'One full city beats a hundred empty ones.',
     method: 'the one-city method',
     thing: 'a dating app launching one city at a time, starting in Houston',
@@ -327,6 +339,7 @@ export const ANGLES = [
   },
   {
     key: 'release-dont-haunt', label: 'Release, don\'t haunt',
+    concept: 'The Zeigarnik effect', conceptDef: 'Unfinished things stay stuck in your head. Being ghosted is an open loop that never closes.',
     promise: 'how to stop ghosting and still say no', fast: 'Say no without ghosting, in one swipe', mantra: 'Release. Don\'t haunt.',
     method: 'the release method',
     thing: 'a dating app where "swipe left" is called release',
@@ -353,6 +366,7 @@ export const ANGLES = [
   },
   {
     key: 'event-cards', label: 'The dating app with a mulligan',
+    concept: 'Loss aversion', conceptDef: 'Losing something hurts about twice as much as gaining it feels good. That\'s why a left swipe you regret stings.',
     promise: 'how to get back the person you swiped left on', fast: 'Get back the one you passed on', mantra: 'Everyone deserves a mulligan.',
     method: 'the mulligan method',
     thing: 'a dating app with a mulligan',
@@ -379,6 +393,7 @@ export const ANGLES = [
   },
   {
     key: 'block-a-sign', label: 'Yes, you can block a whole sign',
+    concept: 'Pattern recognition', conceptDef: 'Your brain finds patterns so it can skip the same mistake twice. Even when the pattern is a birthday.',
     promise: 'how to never match with your ex\'s sign again', fast: 'Never see your ex\'s sign again', mantra: 'You\'re allowed to have a type.',
     method: 'the block-a-sign method',
     thing: 'a dating app where you can block an entire zodiac sign',
@@ -405,6 +420,7 @@ export const ANGLES = [
   },
   {
     key: 'whats-real', label: 'What\'s real and what\'s still fake',
+    concept: 'The pratfall effect', conceptDef: 'People who admit a flaw come across as more likable, not less. Say what\'s fake and they trust the rest.',
     promise: 'how to demo an app that isn\'t finished', fast: 'Show what\'s real in one demo', mantra: 'Say what\'s fake. People trust the rest.',
     method: 'the say-what\'s-fake method',
     thing: 'a dating app, and I\'m going to show you exactly what\'s real and what\'s still fake',
@@ -431,6 +447,7 @@ export const ANGLES = [
   },
   {
     key: 'founder-camp', label: 'Demos die at 12%',
+    concept: 'The peak-end rule', conceptDef: 'People remember an experience by its best moment and its ending. A demo is remembered the same way.',
     promise: 'how to demo your app in 60 seconds', fast: 'Explain your app in 60 seconds', mantra: 'Demos die at 12%.',
     method: 'the 60-second demo method',
     thing: 'a 60-second demo of my dating app, and the one rule that saves it',
@@ -457,6 +474,7 @@ export const ANGLES = [
   },
   {
     key: 'real-chart-math', label: 'The chart math is real',
+    concept: 'The Barnum effect', conceptDef: 'Vague readings feel personal because they fit almost anyone. That\'s the problem with most horoscopes.',
     promise: 'how to read someone\'s chart before their face', fast: 'Read their real chart before you read their face', mantra: 'Read the sky before the face.',
     method: 'the real-sky method',
     thing: 'an astrology dating app that computes your chart from real planet positions',
@@ -483,6 +501,7 @@ export const ANGLES = [
   },
   {
     key: 'dealbreakers-upfront', label: 'Dealbreakers on your card',
+    concept: 'The sunk cost fallacy', conceptDef: 'The more time you put into something, the harder it is to walk away. Even from a dealbreaker on date three.',
     promise: 'how to stop finding the dealbreaker on date three', fast: 'Find the dealbreaker before the first date', mantra: 'Dealbreakers first. Faces last.',
     method: 'the dealbreakers-first method',
     thing: 'a dating app where your dealbreakers go on your card before your face does',
@@ -540,6 +559,9 @@ export const HOOKS = [
   { key: 'save_bait', label: 'Save this', t: ['Save this: {promise}.', 'Save this for your next deal: {promise}.'] },
   { key: 'mantra', label: 'One-line mantra', t: ['{Mantra}'] },
   { key: 'outcome_speed', label: 'Outcome, fast', t: ['{Fast}.', 'How to {fast_lc}.'] },
+  // His signature moves, from the @jettfranzen research.
+  { key: 'named_concept', label: 'Name an idea', t: ['{Concept}. Here\'s how it shaped my dating app.', '{Concept}, and why my dating app is built around it.'] },
+  { key: 'guess_my', label: 'Guess my ___', t: ['Guess my sign from how I built this app.', 'Guess my sign. Wrong answers only.'] },
   { key: 'copied_competitor', label: 'Big company copied me', t: ['[Company] just shipped [feature]. Here\'s how we did it first.'], needsFacts: true },
 ]
 
@@ -562,6 +584,10 @@ export const FORMATS = [
   // interrupts, and the app is the answer.
   { key: 'skit_interrupt', label: 'Skit: the interruption', lengthSec: 22, beats: ['problem', { line: '(Friend, off camera) "Okay, so what did you do about it?"', broll: 'Second person enters frame' }, 'how0', 'proof'] },
   { key: 'method_tutorial', label: 'Method walk-through', lengthSec: 30, beats: ['how0', 'how1', 'proof', 'payoff'], cta: 'Save this and try it on your next deal.' },
+  // His: name an idea, define it in two lines, then apply it to your life.
+  { key: 'concept_explainer', label: 'Idea explained', lengthSec: 26, beats: [{ line: '{ConceptDef}' }, 'problem', 'how0', 'payoff'], cta: 'Which idea should I explain next?' },
+  // His: one line on screen over a slow sound. Almost no editing.
+  { key: 'mood_one_liner', label: 'One-liner over a sound', lengthSec: 9, beats: [{ line: '{Payoff}', broll: 'Slow push-in at night, cinematic sound, text on screen' }], cta: '' },
   { key: 'before_after_pivot', label: 'Before / after', lengthSec: 30, beats: ['problem', 'turn', 'how0', 'payoff'] },
 ]
 
@@ -587,6 +613,11 @@ export const BRIDGES = [
   { angle: 'energy', words: ['reward', 'points', 'gamify', 'streak', 'motivation'] },
   { angle: 'peek', words: ['secret', 'sneak', 'tease', 'reveal', 'curious'] },
   { angle: 'event-cards', words: ['second chance', 'retrograde', 'undo', 'mercury'] },
+  { angle: 'no-photos', words: ['lonely', 'isolation', 'alone', 'looks', 'beauty', 'attract', 'romance'] },
+  { angle: 'energy', words: ['discipline', 'gym', 'action', 'effort', 'shame', 'cope'] },
+  { angle: 'talk-cards', words: ['philosophy', 'socrates', 'nietzsche', 'meaning', 'think', 'thinking', 'speaking', 'nervous'] },
+  { angle: 'no-score', words: ['god', 'religion', 'belief', 'prove', 'trilemma', 'certain'] },
+  { angle: 'release-dont-haunt', words: ['leaving', 'moving away', 'hurt', 'trusted', 'butterfly'] },
   { angle: 'block-a-sign', words: ['gemini', 'scorpio', 'sign', 'type', 'petty', 'meme'] },
 ]
 

@@ -1,0 +1,118 @@
+{
+  "id": "align-jf-033",
+  "sourceId": "jf-033",
+  "title": "A dating app that plays like a card game",
+  "angleKey": "trading-cards",
+  "hookKey": "named_concept",
+  "formatKey": "method_tutorial",
+  "hook": "Variable rewards, and why my dating app is built around it.",
+  "beats": [
+    {
+      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
+      "broll": "Dealing: cards fly in (#dealing)",
+      "onScreen": ""
+    },
+    {
+      "line": "Every match gives you a pack. Twelve cards, and the last one is always a sign card in the rare slot.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Myths, Gilded about one pack in five, Mythic about one in twenty-five. Each season prints a fixed run.",
+      "broll": "Pack opening: tear across the top",
+      "onScreen": "Gilded 1 in 5 · Mythic 1 in 25"
+    },
+    {
+      "line": "It feels like play. And that's why they come back.",
+      "broll": "Binder (#collection)",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Save this and try it on your next deal.",
+  "caption": "Every match gives you a pack. The last card is always a sign.",
+  "hashtags": [
+    "tradingcards",
+    "datingapp",
+    "buildinpublic"
+  ],
+  "lengthSec": 35,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 67,
+    "craft": 59,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 70,
+        "hits": [
+          "then",
+          "and that's why"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 33,
+        "hits": [
+          "my"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 66,
+        "hits": [
+          "you",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 80,
+        "hits": [
+          "save this",
+          "save"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 75,
+        "hits": [
+          "try it",
+          "try"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

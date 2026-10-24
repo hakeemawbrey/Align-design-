@@ -34,9 +34,9 @@
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 70,
+    "total": 71,
     "craft": 64,
-    "fit": 94,
+    "fit": 100,
     "breakdown": [
       {
         "key": "hook",

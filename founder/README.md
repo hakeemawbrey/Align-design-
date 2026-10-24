@@ -1,14 +1,21 @@
 # Align Founder Studio
 
-Talking-head scripts for Hakeem's founder page, learned from a creator whose
-founder videos work: Sarah Perl, **@hothighpriestess**, the founder of the
-manifestation app Stella. The program scores every reel of hers we could find,
-then writes an Align version of each. It keeps her move (the hook type and the
-shape of the video) and swaps the subject for a true Align story. You can
+Talking-head scripts for Hakeem's founder page, learned from two creators
+whose videos work:
+
+- **@hothighpriestess** (Sarah Perl), founder of the manifestation app Stella:
+  named methods, save bait, replies to comments, and the interruption skit.
+- **@jettfranzen** (Jett Franzen), philosophy and self-improvement for young
+  men: a hook that just names an idea, blunt claims, one-liners over a mood
+  sound, and "guess my ___" questions.
+
+The program scores every reel of theirs we could find, then writes an Align
+version of each. It keeps the move (the hook type and the shape of the video)
+and swaps the subject for a true Align story. You can
 remix any version, promote the best take, schedule it for filming, and read it
 off a teleprompter.
 
-Nothing of hers is reused. Only the structure carries over. Every Align line
+Nothing of theirs is reused. Only the structure carries over. Every Align line
 comes from facts in this repo, and anything only Hakeem knows (a real number, a
 date) is left as a `[bracket]` to fill in, never guessed.
 
@@ -24,7 +31,7 @@ date) is left as a `[bracket]` to fill in, never guessed.
 | `data/creators/<handle>/patterns.json` | what that creator's videos do, and how to carry it over to Align |
 | `data/rubric.json` | how a reel is scored: 8 weighted dimensions, 24 hook formulas, 13 formats, with sources |
 | `data/align-brief.json` | Align's facts, voice rules, story angles and b-roll moments, pulled from this repo |
-| `src/library.mjs` | the Align side: 19 true story angles, 27 hook types, 15 video formats |
+| `src/library.mjs` | the Align side: 19 true story angles, 29 hook types, 17 video formats |
 | `src/score.mjs` | the scorer |
 | `src/adapt.mjs` | reel → Align script, and remix |
 | `src/crunch.mjs` | runs it all and builds the studio |
@@ -77,8 +84,9 @@ view counts once you've posted a few.
 
 ## Add more reels
 
-Instagram doesn't let this program read her account directly. Public search
-only turned up 48 videos, mostly TikTok, with captions as indexed. To add
+Instagram doesn't let this program read either account directly. Public
+search turned up 48 of hers and 46 of his, mostly TikTok, with captions as
+indexed. To add
 the reels you actually watch, put a CSV in `data/imports/` (any filename):
 
 ```csv

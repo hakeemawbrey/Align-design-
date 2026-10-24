@@ -3,9 +3,9 @@
   "sourceId": "hhp-018",
   "title": "Houston first: $15 for life",
   "angleKey": "houston-beta",
-  "hookKey": "built_that",
+  "hookKey": "named_concept",
   "formatKey": "method_tutorial",
-  "hook": "I built a dating app launching one city at a time, starting in Houston.",
+  "hook": "Network effects. Here's how it shaped my dating app.",
   "beats": [
     {
       "line": "So Align launches city by city. Houston first, with partner venues like Agnes Cafe.",
@@ -35,23 +35,20 @@
     "houstonsingles",
     "datingapp"
   ],
-  "lengthSec": 27,
+  "lengthSec": 25,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 79,
-    "craft": 74,
+    "total": 74,
+    "craft": 68,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 100,
-        "hits": [
-          "i",
-          "i built"
-        ]
+        "score": 70,
+        "hits": []
       },
       {
         "key": "specificity",
@@ -77,7 +74,7 @@
         "weight": 12,
         "score": 33,
         "hits": [
-          "i"
+          "my"
         ]
       },
       {

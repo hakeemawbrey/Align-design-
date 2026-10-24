@@ -1,56 +1,60 @@
 {
   "id": "align-hhp-002",
   "sourceId": "hhp-002",
-  "title": "The bar pays, not you",
-  "angleKey": "venues-pay",
+  "title": "No compatibility score, on purpose",
+  "angleKey": "no-score",
   "hookKey": "outcome_speed",
   "formatKey": "relatable_pain_plug",
-  "hook": "Turn a match into a date in one message.",
+  "hook": "Know where you'll clash before the first date.",
   "beats": [
     {
-      "line": "Most matches never turn into a date. The chat just dies.",
+      "line": "Every app gives you a number. 94% match. Nobody knows what it means.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "So I built a dating app where the bar pays for your date, not you.",
+      "line": "So I built a dating app with no compatibility score, on purpose.",
       "broll": "",
       "onScreen": ""
     },
     {
-      "line": "In Align you play a place card in the chat. Pick a spot and a night. If they say yes, it's a date.",
-      "broll": "Chat: place card, Agnes Cafe (#chat)",
+      "line": "On Align every card reads three things. Push is where you'll rub. Pull is what draws you in. Align is where it holds.",
+      "broll": "Card detail: Push / Pull / Align (#deck, Enter)",
       "onScreen": ""
     }
   ],
-  "cta": "Houston, tell me where your first date should be.",
-  "caption": "Pick a place in the chat. If they say yes, it's a date. The bar pays.",
+  "cta": "Tell me your sign and I'll tell you where you'd rub.",
+  "caption": "Push, pull, align. No percentages.",
   "hashtags": [
-    "houston",
+    "astrology",
     "datingapp",
-    "businessmodel"
+    "zodiac"
   ],
   "lengthSec": 28,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 68,
-    "craft": 60,
+    "total": 78,
+    "craft": 72,
     "fit": 100,
     "breakdown": [
       {
         "key": "hook",
         "label": "Hook strength (first 2-3s)",
         "weight": 22,
-        "score": 70,
-        "hits": []
+        "score": 80,
+        "hits": [
+          "first"
+        ]
       },
       {
         "key": "specificity",
         "label": "Specificity and proof (numbers, names, receipts)",
         "weight": 15,
-        "score": 20,
-        "hits": []
+        "score": 60,
+        "hits": [
+          "94%"
+        ]
       },
       {
         "key": "storyTension",
@@ -65,7 +69,7 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 56,
+        "score": 59,
         "hits": [
           "i"
         ]
@@ -74,9 +78,9 @@
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 82,
+        "score": 88,
         "hits": [
-          "your",
+          "you",
           "dating app"
         ]
       },
@@ -84,8 +88,11 @@
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 50,
-        "hits": []
+        "score": 75,
+        "hits": [
+          "three things",
+          "tell me your"
+        ]
       },
       {
         "key": "cta",

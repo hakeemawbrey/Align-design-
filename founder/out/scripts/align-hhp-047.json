@@ -3,9 +3,9 @@
   "sourceId": "hhp-047",
   "title": "Fifteen people a night, a new deal at 11:11",
   "angleKey": "1111",
-  "hookKey": "built_that",
+  "hookKey": "unpopular_opinion",
   "formatKey": "fake_demo_validation",
-  "hook": "I built a dating app that only deals you fifteen people a night.",
+  "hook": "Unpopular opinion: infinite swiping is why nobody remembers anybody.",
   "beats": [
     {
       "line": "On Align you're dealt a hand. Free is fifteen people and three event cards a night.",
@@ -25,12 +25,12 @@
     "datingapp",
     "astrology"
   ],
-  "lengthSec": 20,
+  "lengthSec": 19,
   "needsFacts": false,
   "notes": "",
   "score": {
-    "total": 73,
-    "craft": 66,
+    "total": 71,
+    "craft": 64,
     "fit": 100,
     "breakdown": [
       {
@@ -39,8 +39,8 @@
         "weight": 22,
         "score": 100,
         "hits": [
-          "i",
-          "i built"
+          "unpopular opinion",
+          "nobody"
         ]
       },
       {
@@ -61,28 +61,28 @@
         "key": "authenticity",
         "label": "Founder authenticity and vulnerability",
         "weight": 12,
-        "score": 53,
-        "hits": [
-          "i"
-        ]
+        "score": 30,
+        "hits": []
       },
       {
         "key": "relatability",
         "label": "Relatability and identity",
         "weight": 12,
-        "score": 86,
+        "score": 83,
         "hits": [
           "you",
           "be honest",
-          "dating app"
+          "swiping"
         ]
       },
       {
         "key": "shareSaveReplay",
         "label": "Share / save / replay trigger",
         "weight": 10,
-        "score": 50,
-        "hits": []
+        "score": 65,
+        "hits": [
+          "unpopular opinion"
+        ]
       },
       {
         "key": "cta",

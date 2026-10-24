@@ -1,0 +1,989 @@
+{
+  "creator": {
+    "handle": "jettfranzen",
+    "prefix": "jf",
+    "company": {
+      "name": "Franzen Media (Whop storefront, Denver)",
+      "product": "'Mindset Coaching' listing; 6 members shown",
+      "app": "Chris Williamson says on Modern Wisdom #1130 'you've already got an app' but no app name was found. Critics allege an LLC ('Success AI LLC') and trademark filings; unverified.",
+      "founder_status": "Not a startup founder in the usual sense. He is a writer and philosophy/self-improvement creator who recently graduated college."
+    },
+    "bio_line": "Writer and YouTuber: philosophy and self-improvement for young men. TikTok ~705K, Instagram ~477K, YouTube ~227K (as reported).",
+    "name": "Jett Franzen",
+    "handles": {
+      "tiktok": "@jettfranzen",
+      "instagram": "@jettfranzen",
+      "youtube": "@Jett.franzen",
+      "substack": "jettfranzen.substack.com",
+      "whop": "whop.com/@jettfranzen (Franzen Media)",
+      "x": null
+    },
+    "audience": {
+      "tiktok_followers": "~705.5K (profile snippet; TokPortal 680,162 in a separate check)",
+      "tiktok_likes": "~84.6M (profile snippet)",
+      "tiktok_videos": "~2,402 (TokPortal)",
+      "tiktok_avg_last10": "159,620 views / 20,272 likes / 387 comments (TokPortal); an earlier July 2026 check showed ~257K avg views",
+      "instagram_followers": "~477K, 289 posts (Instagram profile search snippet)",
+      "youtube_subscribers": "~227K, ~13.25M views as of mid-June 2026, channel created Dec 2025 (Social Blade via search)",
+      "substack_subscribers": "9,000+",
+      "demographic_note": "young men interested in self-improvement, loneliness and philosophy (inferred from topics and podcast hosts)"
+    }
+  },
+  "patterns": {
+    "hook_formulas": [
+      "Named-concept title card: the caption is just the name of an idea ('The Von Restorff effect', 'Agrippas Trilemma', '#socrates'). Curiosity comes from the unfamiliar term.",
+      "Thinker + modern verdict: '[Philosopher] on [taboo topic]' with a blunt on-screen claim ('You can't win if you play fair' / Machiavelli on cheating).",
+      "Relatable one-liner punchline: 'Nothing is worse than thinking in 4k but speaking in 144p'.",
+      "Direct challenge or question to the viewer: 'Guess My Religion', 'Can you prove God exists without scripture?'.",
+      "Pop-culture lens: anime, Batman, Avatar, Kanye or athletes as the doorway to a life lesson.",
+      "Numbered trap/contrast: 'Two traps you need to avoid...', 'discipline vs devotion'.",
+      "Existential 'why' question titles on YouTube: 'Why Does Any of This Feel Normal', 'Is This All Life Is?'."
+    ],
+    "persona_voice": "Earnest, introspective young man who has been alone a long time and read a lot. Speaks as 'an attempt rather than a verdict', but lands contrarian takes on effort, discipline, sex and religion. Leans on his own story: years of isolation, parents' basement, couch-surfing, 1,162 videos before 1,000 followers.",
+    "pacing_format": "Short vertical talking-head clips, often green screen or text-on-screen over slowed+reverb or cinematic sounds. Many are filmed fast in one or two takes, including at night outdoors. Captions are frequently just the hook or hashtags. Very high volume: about 2,400 TikToks, and he describes 12 to 14 recordings a day early on.",
+    "recurring_themes": [
+      "self-belief and taking action",
+      "loneliness and the 'lonely chapter'",
+      "Gen Z men, romance and dating",
+      "philosophers made practical (Socrates, Nietzsche, Machiavelli, Dostoevsky)",
+      "psychology effects and named biases",
+      "religion, morality and later Christian faith",
+      "AI and beauty standards / modern life feeling abnormal",
+      "pop culture as parable"
+    ],
+    "cta_patterns": [
+      "Mostly no explicit CTA on TikTok; the question in the hook drives comments",
+      "YouTube clips point to the long original video",
+      "Bio routes to Instagram and email; Substack for long essays",
+      "Controversial takes invite stitches, which he acknowledges ('every time I get stitched a hundred times')"
+    ],
+    "strategy_notes": [
+      "Volume first: he posted 1,162 videos before reaching 1,000 followers, then grew fast.",
+      "Low-production batches can outperform polished ones: his eight one-take snow videos reportedly all reached hundreds of thousands of views.",
+      "Pivoted from feel-good comedy to philosophy and social commentary, but still mixes in light videos.",
+      "Uses podcasts (Modern Wisdom, Jack Neel, Barbarian Banter) to convert short-form reach into long-form authority.",
+      "Polarization is a growth engine: critic channels make whole videos about him, which keeps his name searched.",
+      "Trending/slowed sounds plus a single text line give emotional mood with almost no editing."
+    ],
+    "gaps": [
+      "TikTok and Instagram pages could not be fetched directly, so most captions come from search snippets and several caption-to-ID matches are guesses.",
+      "No Instagram reel URLs were found.",
+      "View counts were rarely visible; most metrics are likes from snippets and unverified.",
+      "No app name was found despite a podcast mention.",
+      "Uploader of the 'Jett Franzen: ...' YouTube shorts is not confirmed."
+    ]
+  },
+  "videos": [
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7610555135629987085",
+      "approx_date": "2026-02-24",
+      "hook": null,
+      "topic": "Moving away / leaving a place behind (title as indexed: 'video of Moving Away')",
+      "format": "talking head over emotional sound",
+      "structure": [
+        "Hook line on screen",
+        "Reflective monologue",
+        "Emotional music bed"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "839.5K",
+        "comments": "4,266",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Highest like count found. 'Moving Away' may be the sound or SEO title, not his caption."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7572607687452527885",
+      "approx_date": "2025-11-14",
+      "hook": "You can't win if you play fair",
+      "topic": "Machiavelli on cheating: never play fair in an unfair game",
+      "format": "green screen",
+      "structure": [
+        "On-screen claim 'You can't win if you play fair'",
+        "Cites Machiavelli",
+        "Explains the idea in modern terms"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "678.4K",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet; one snippet called the 678.4K figure views, another likes"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Tagged #greenscreen #literature #booktok. Indexed title: 'Machiavelli on Cheating: Never Play Fair in an Unfair Game'."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7648084074719923469",
+      "approx_date": "2026-06-06",
+      "hook": "#psychology",
+      "topic": "Psychology concept (exact topic not indexed)",
+      "format": "talking head",
+      "structure": [
+        "Psychology claim",
+        "Explanation"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "605.2K",
+        "comments": "13.8K",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Very high comment ratio suggests a debate-provoking take."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7553873784323820814",
+      "approx_date": "2025-09-25",
+      "hook": null,
+      "topic": "Mood/reflective video on 'September - slowed + reverb' sound",
+      "format": "trending-sound video",
+      "structure": [
+        "Text overlay or monologue",
+        "Slowed+reverb sound sets mood"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "456.3K",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Earliest dated viral clip found; predates the philosophy pivot being widely known."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7618361452172250381",
+      "approx_date": "2026-03-17",
+      "hook": "#socrates #philosophy",
+      "topic": "Socrates idea explained",
+      "format": "talking head",
+      "structure": [
+        "Names Socrates",
+        "States the idea",
+        "Applies to viewer's life"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "137.6K",
+        "comments": "598",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Caption is hashtags only."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "Nothing is worse than thinking in 4k but speaking in 144p",
+      "topic": "Gap between inner thought and how you express it",
+      "format": "talking head / text-on-screen one-liner",
+      "structure": [
+        "One-line relatable punchline",
+        "Short elaboration"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "86.4K",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet; could not match to a video ID"
+      },
+      "confidence": "verbatim",
+      "source": "web search snippet of @jettfranzen TikTok pages",
+      "notes": "URL unknown."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7623217094871567629",
+      "approx_date": "2026-03-31",
+      "hook": "(paraphrased) Survived all the snakes, but a butterfly killed me",
+      "topic": "Being hurt by the gentle person you trusted, not the obvious threats",
+      "format": "trending-sound video",
+      "structure": [
+        "Dark-witty one-liner on screen",
+        "'3 am walk - daniel.mp3' sound"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "27.8K",
+        "comments": "170",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "paraphrased",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Tagged #greenscreen per one snippet."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7668118948021439758",
+      "approx_date": "2026-07-30",
+      "hook": "#fullmetalalchemist",
+      "topic": "Lesson drawn from Fullmetal Alchemist",
+      "format": "talking head / pop-culture commentary",
+      "structure": [
+        "Anime reference",
+        "Philosophical lesson"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "26K",
+        "comments": "122",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Uses anime as the hook vehicle."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7620086473487928590",
+      "approx_date": "2026-03-22",
+      "hook": "Guess My Religion",
+      "topic": "Religion and politics: viewers guess his religion",
+      "format": "talking head",
+      "structure": [
+        "Direct question to viewer",
+        "Gives reasoning",
+        "Invites guesses"
+      ],
+      "cta": "comment your guess (implied by the question)",
+      "metrics": {
+        "views": null,
+        "likes": "23.8K",
+        "comments": "518",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Caption tags #religion #politics. Comment-bait question format."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7626537905623682318",
+      "approx_date": "2026-04-08",
+      "hook": "#kanye",
+      "topic": "Commentary on Kanye West",
+      "format": "talking head / celebrity commentary",
+      "structure": [
+        "Celebrity name as hook",
+        "Take on his behavior or idea"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "12.6K",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Caption is a hashtag."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7598818858668936462",
+      "approx_date": "2026-01-24",
+      "hook": "Nothing in life is that serious I promise 😂",
+      "topic": "Lighthearted reminder not to take life too seriously",
+      "format": "skit / light humor",
+      "structure": [
+        "Light caption",
+        "Funny or dance-like visual"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "7,893",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Shows he still mixes in comedy from his earlier feel-good era."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7593537562254363918",
+      "approx_date": "2026-01-10",
+      "hook": "Replying to @Sara Lynn",
+      "topic": "Answer to a viewer comment",
+      "format": "reply-to-comment (green screen)",
+      "structure": [
+        "Comment sticker on screen",
+        "14-second answer over green screen"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "14 seconds long, tagged #greenscreen. Metrics garbled in snippet."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7602735046809767181",
+      "approx_date": "2026-02-03",
+      "hook": "Agrippas Trilemma #philosophy #psychology",
+      "topic": "Agrippa's Trilemma: every belief ends in circularity, infinite regress, or an unproven axiom",
+      "format": "talking head explainer",
+      "structure": [
+        "Names an obscure concept",
+        "Explains the three options",
+        "Applies to how we justify beliefs"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Named-concept explainer."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7572981661982264631",
+      "approx_date": "2025-11-15",
+      "hook": "The Von Restorff effect",
+      "topic": "Von Restorff (isolation) effect: the item that stands out is remembered",
+      "format": "talking head explainer",
+      "structure": [
+        "Names the effect",
+        "Defines it",
+        "Ties it to standing out in life"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Named-concept explainer, posted a day after the Machiavelli video."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7622716011812359437",
+      "approx_date": "2026-03-29",
+      "hook": "How To Not Be Nervous",
+      "topic": "How to stop being nervous",
+      "format": "talking head advice",
+      "structure": [
+        "Problem named in title",
+        "Reframe",
+        "Tip"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Indexed as 'video of How To Not Be Nervous'; may be SEO title."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7634148942250380574",
+      "approx_date": "2026-04-29",
+      "hook": null,
+      "topic": "Attract without chasing, using Avatar: The Last Airbender",
+      "format": "talking head over sound / pop-culture lesson",
+      "structure": [
+        "Avatar reference",
+        "Lesson about not chasing people"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Indexed as 'video of attract without chasing'; tags #ala #avatarthelastairbender #avatar."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7617949017674173710",
+      "approx_date": "2026-03-16",
+      "hook": "batman",
+      "topic": "Batman as a lens on pain or purpose",
+      "format": "trending-sound video",
+      "structure": [
+        "Batman reference",
+        "Hans Zimmer S.T.A.Y slowed and reverb sound"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Snippet credits sound 'created by jettfranzen with all my pain's Hans Zimmer S.T.A.Y slowed and reverb'."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7604464996801629454",
+      "approx_date": "2026-02-08",
+      "hook": null,
+      "topic": "Devastating literary quotes about time, guilt, loneliness and imagination (inferred match)",
+      "format": "quote montage over cinematic sound",
+      "structure": [
+        "Quote 1 on screen",
+        "Quote 2",
+        "Quote 3"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Uses 'Mia & Sebastian's Theme' (La La Land). Topic match to this ID is uncertain."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7611779754517105934",
+      "approx_date": "2026-02-28",
+      "hook": null,
+      "topic": "Nietzsche's Beyond Good and Evil in about two minutes (inferred match)",
+      "format": "talking head book summary",
+      "structure": [
+        "Names the book",
+        "Compressed summary",
+        "Takeaway"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Snippet tied a #book #booktok Nietzsche summary to this account; ID match uncertain."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7617911207911050509",
+      "approx_date": "2026-03-16",
+      "hook": "(paraphrased) Can you prove the existence of God without using scripture?",
+      "topic": "Morality without religion",
+      "format": "talking head / green screen",
+      "structure": [
+        "Challenge question",
+        "Empathy does not require belief",
+        "Morality is not owned by religion"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Tagged #agnostic #atheist per snippet. Note that he later says he returned to Christian faith (Jack Neel episode)."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7630308952349199630",
+      "approx_date": "2026-04-19",
+      "hook": "(possible) Two traps you need to avoid: caring what they think, thinking that they care",
+      "topic": "Freedom from other people's opinions",
+      "format": "text-on-screen over 'Ethereal - Txmy' sound",
+      "structure": [
+        "Numbered setup 'two traps'",
+        "Trap 1",
+        "Trap 2 twist"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "The quote appeared in results for this account; mapping to this ID is a guess."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7617691401056226573",
+      "approx_date": "2026-03-16",
+      "hook": null,
+      "topic": "Commentary video on a phonk sound",
+      "format": "green screen",
+      "structure": [
+        "Green screen background",
+        "Monologue over 'Originalton - the_phonkface'"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Topic not indexed."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7618021035878796558",
+      "approx_date": "2026-03-17",
+      "hook": "(possible) You got this :)",
+      "topic": "Encouragement for people struggling",
+      "format": "talking head",
+      "structure": [
+        "Reassurance",
+        "Self-improvement nudge"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Tagged #mentalhealth #selfimprovement #relatable per one snippet; ID mapping uncertain."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7596222890509405495",
+      "approx_date": "2026-01-17",
+      "hook": "(possible) Gen Z never experiencing romance",
+      "topic": "Gen Z and the loss of romance",
+      "format": "talking head social commentary",
+      "structure": [
+        "Generational claim",
+        "Why it happened",
+        "What it costs"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Caption seen in results for his original-sound videos; ID mapping uncertain."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7628241570742979853",
+      "approx_date": "2026-04-13",
+      "hook": null,
+      "topic": "Cartoon/kids-show reference (indexed as 'cartoon for kids videos')",
+      "format": "talking head / pop-culture commentary",
+      "structure": [
+        "Kids cartoon reference",
+        "Adult lesson"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Likely SEO title."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7670280489902591246",
+      "approx_date": "2026-08-04",
+      "hook": null,
+      "topic": "Unknown (original sound)",
+      "format": "talking head",
+      "structure": [],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Only the ID and sound are known."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Going to the gym as cope for lacking discipline",
+      "format": "talking head hot take",
+      "structure": [
+        "Contrarian claim",
+        "Reasoning"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": "A reaction clip called it a slogan-style take; drew stitches."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Discipline built on shame vs devotion fueled by love",
+      "format": "talking head",
+      "structure": [
+        "Contrast two words",
+        "Define each",
+        "Tell viewer which to choose"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": ""
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Parenting rule: ban negative self-talk at home",
+      "format": "talking head",
+      "structure": [
+        "One rule",
+        "Why it builds self-belief"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": "Mirrors his Substack 'I Just Never Thought I Couldn't'."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Why walking boosts creativity and mental health (Tesla, Nietzsche, Kierkegaard)",
+      "format": "talking head, possibly filmed walking",
+      "structure": [
+        "Claim",
+        "Three famous walkers as proof",
+        "Invite to walk"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": ""
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Signs of high intelligence",
+      "format": "listicle talking head",
+      "structure": [
+        "'Signs of' list opener",
+        "Sign 1..n"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": ""
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Spider-Man / Tom Holland and Zendaya",
+      "format": "trending pop-culture video",
+      "structure": [
+        "Celebrity couple reference",
+        "Take"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search snippet (#tomholland #zendaya #spiderman)",
+      "notes": ""
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/KarSnbckXeQ",
+      "approx_date": null,
+      "hook": "Everybody's Busy, But Nobody's Fulfilled",
+      "topic": "Busyness vs fulfillment",
+      "format": "short clip of a longer video",
+      "structure": [
+        "Title states a paradox",
+        "Clip of monologue",
+        "Link to full video"
+      ],
+      "cta": "link to original long video",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result title",
+      "notes": "Title format 'Jett Franzen: ...' suggests a clip channel or his own clips; uploader not confirmed."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/1kEkBBHUk2M",
+      "approx_date": null,
+      "hook": "Why Does Any of This Feel Normal",
+      "topic": "Questioning normalized modern life",
+      "format": "short clip of a longer video",
+      "structure": [
+        "Rhetorical question title",
+        "Monologue clip"
+      ],
+      "cta": "link to original long video",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result title",
+      "notes": "Uploader not confirmed."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=bL0ZlaSrTW0",
+      "approx_date": null,
+      "hook": "Is This All Life Is?",
+      "topic": "Existential meaning",
+      "format": "clip",
+      "structure": [
+        "Existential question",
+        "Monologue"
+      ],
+      "cta": "link to original",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result title",
+      "notes": "Uploader not confirmed."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=1XU3t1NuIVQ",
+      "approx_date": null,
+      "hook": "Why Leaving the House Feels Exhausting",
+      "topic": "Social exhaustion and isolation",
+      "format": "clip / monologue",
+      "structure": [
+        "Relatable 'why' question",
+        "Explanation"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result title",
+      "notes": "Uploader not confirmed."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/a0_XXdO2d-w",
+      "approx_date": null,
+      "hook": "TAKE ACTION. 🔥",
+      "topic": "Take action / discipline",
+      "format": "motivational short",
+      "structure": [
+        "Imperative title",
+        "Monologue"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result",
+      "notes": "Description calls him an entrepreneur, philosopher and content creator; likely a fan or clip channel."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": "I have lived more in my head than real life",
+      "topic": "Living in your head because of isolation",
+      "format": "talking head confession",
+      "structure": [
+        "Confessional line",
+        "Explains isolation",
+        "Reflection"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "actualized.org forum thread quoting a video title",
+      "notes": ""
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Having no friends",
+      "format": "talking head confession",
+      "structure": [
+        "Admits no friends",
+        "What it taught him"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "actualized.org forum thread",
+      "notes": ""
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "winter 2025-26 (inferred)",
+      "hook": null,
+      "topic": "Batch of eight videos filmed outdoors at about 3 a.m. in falling snow",
+      "format": "talking head, outdoors at night, one or two takes",
+      "structure": [
+        "Low-effort single take",
+        "Night/snow atmosphere"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "'hundreds of thousands' each, 'most of them got millions'",
+        "likes": null,
+        "comments": null,
+        "verified": false,
+        "basis": "his own claim on Modern Wisdom #1130"
+      },
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript (podscripts.co)",
+      "notes": "Counts as a batch, not one video."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "2026-07 (inferred)",
+      "hook": null,
+      "topic": "Erling Haaland compared to another figure",
+      "format": "talking head sports-to-philosophy commentary",
+      "structure": [
+        "Athlete news hook",
+        "Lesson"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript",
+      "notes": "He said he had just made it and would post it."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "2026 (inferred)",
+      "hook": null,
+      "topic": "Scottie Scheffler's comments after winning a major about success not fulfilling",
+      "format": "talking head news reaction",
+      "structure": [
+        "Quote from athlete",
+        "His interpretation"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript",
+      "notes": ""
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Success and effort: anyone can climb the ladder if they pay the price",
+      "format": "talking head hot take",
+      "structure": [
+        "Contrarian claim",
+        "Personal proof (basement, couch-surfing)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": null,
+        "comments": null,
+        "verified": false,
+        "basis": "he says 'every time I get stitched a hundred times'"
+      },
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript",
+      "notes": "Several videos on this theme; drives stitches and backlash."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Narcissism (an unpopular take)",
+      "format": "talking head",
+      "structure": [
+        "Unpopular claim",
+        "Defense"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript",
+      "notes": "He calls these videos 'very unpopular'."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Self-belief is the absence of doubt",
+      "format": "talking head",
+      "structure": [
+        "Reframe a familiar idea",
+        "Personal story"
+      ],
+      "cta": "read the Substack (implied)",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 + Substack post 'I Just Never Thought I Couldn't' (Oct 2026)",
+      "notes": "He says he talks about self-belief a lot on YouTube."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "2026-10 (inferred)",
+      "hook": "AI is going to destroy the beauty standards and make everyone, yes EVERYONE, insecure.",
+      "topic": "AI-generated attractive people and self-image",
+      "format": "talking head / text note",
+      "structure": [
+        "Bold prediction",
+        "Personal admission it affects him",
+        "'Now apply this on a grand scale'"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "Substack note c-358333067 (Oct 11, 2026)",
+      "notes": "Written note; likely mirrors a video topic but not confirmed as a video."
+    }
+  ],
+  "sources": [
+    "https://www.tokportal.com/tool/tiktok-profile-analytics-checker/Jettfranzen",
+    "https://www.tiktok.com/@jettfranzen",
+    "https://podscripts.co/podcasts/modern-wisdom/why-almost-nobody-gets-the-life-they-want-jett-franzen-1130",
+    "https://podlume.ai/profiles/jett-franzen",
+    "https://jettfranzen.substack.com/",
+    "https://jettfranzen.substack.com/archive",
+    "https://substack.com/@jettfranzen/note/c-358333067",
+    "https://whop.com/franzen-media/",
+    "https://whop.com/@jettfranzen/",
+    "https://socialblade.com/youtube/handle/jett.franzen",
+    "https://youtubesummary.com/summary/fUS4absP_hk",
+    "https://anchor.fm/s/10d9805f4/podcast/rss",
+    "https://www.actualized.org/forum/topic/115516-what-are-your-thoughts-on-jett-franz%C3%A9n/",
+    "https://www.youtube.com/watch?v=D60hHjROMts",
+    "https://www.youtube.com/watch?v=fUS4absP_hk",
+    "https://www.youtube.com/watch?v=3Pi4l-sgB4Q",
+    "https://www.youtube.com/watch?v=1t02F4pxLIE",
+    "https://www.youtube.com/watch?v=MOClmR6LB_M",
+    "https://www.tiktok.com/@chadlet_maxxing/video/7689560066877295903",
+    "https://www.instagram.com/jettfranzen/",
+    "https://www.famousbirthdays.com/people/jettfranzen.html"
+  ],
+  "method": {
+    "note": "WebSearch plus WebFetch of public pages only. TikTok, Instagram and YouTube pages returned empty shells, 429 or bot-check redirects, so they were not retried. Video dates decoded from TikTok IDs (id >> 32). Metrics are from search snippets or self-reports and are unverified. Some caption-to-ID pairings are inferred and flagged in notes.",
+    "counts": {
+      "total": 46,
+      "platform:tiktok": 32,
+      "platform:youtube": 5,
+      "platform:unknown": 9,
+      "confidence:inferred": 14,
+      "confidence:verbatim": 17,
+      "confidence:paraphrased": 15,
+      "with_url": 30,
+      "with_metrics": 13
+    }
+  }
+}

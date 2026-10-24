@@ -1,0 +1,116 @@
+{
+  "id": "align-jf-022",
+  "sourceId": "jf-022",
+  "title": "Every price is an angel number",
+  "angleKey": "pricing-angel-numbers",
+  "hookKey": "built_that",
+  "formatKey": "concept_explainer",
+  "hook": "I built a dating app where every price is an angel number.",
+  "beats": [
+    {
+      "line": "$9.99 reads as nine dollars because we read the first digit. Prices are read, not calculated.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Every app costs $9.99. Nobody remembers $9.99.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Align's founding price is $88.88 a year, or $14.44 a month.",
+      "broll": "Paywall (#paywall)",
+      "onScreen": ""
+    },
+    {
+      "line": "If your audience notices numbers, make the numbers mean something.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Which idea should I explain next?",
+  "caption": "$88.88 a year. On purpose.",
+  "hashtags": [
+    "angelnumbers",
+    "1111",
+    "pricing"
+  ],
+  "lengthSec": 26,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 73,
+    "craft": 66,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 100,
+        "hits": [
+          "i",
+          "i built"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 90,
+        "hits": [
+          "$9.99"
+        ]
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 30,
+        "hits": []
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 56,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 63,
+        "hits": [
+          "your",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 60,
+        "hits": [
+          "?"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

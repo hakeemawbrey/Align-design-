@@ -29,6 +29,8 @@ const lower = (v) => [v.hook, v.topic, v.format, v.caption, ...(v.beats ?? []).m
 
 // Rules are checked in order; the first match wins.
 const HOOK_RULES = [
+  [/\b(effect|trilemma|paradox|principle|law)\b|^#(psychology|philosophy|socrates)/, 'named_concept'],
+  [/^guess my/, 'guess_my'],
   [/replying to|reply to/, 'reply_hater'],
   [/\bmethod\b/, 'named_method'],
   [/repeat|for \d+ days|listen (three|3) times|save this/, 'save_bait'],
@@ -46,6 +48,10 @@ const HOOK_RULES = [
   [/download|on stella|my app|using stella|stella app/, 'built_that'],
 ]
 const FORMAT_RULES = [
+  [/explainer|book summary|^green screen$/, 'concept_explainer'],
+  [/one-liner|quote montage|emotional sound|over .*sound/, 'mood_one_liner'],
+  [/confession/, 'storytime_near_failure'],
+  [/hot take|commentary|advice|listicle|news reaction/, 'insider_secrets'],
   [/interrupt|skit|co-?star/, 'skit_interrupt'],
   [/reply/, 'reply_to_hate'],
   [/interview|storytime|long-form/, 'storytime_near_failure'],
@@ -60,7 +66,7 @@ export function classify(v) {
   const hook = (v.hook ?? '').toLowerCase()
   const all = lower(v)
   const fmt = (v.format ?? '').toLowerCase()
-  const hookKey = v.hookKey ?? HOOK_RULES.find(([re]) => re.test(hook))?.[1] ?? HOOK_RULES.find(([re]) => re.test(all))?.[1] ?? 'built_that'
+  const hookKey = v.hookKey ?? HOOK_RULES.find(([re]) => re.test(hook))?.[1] ?? HOOK_RULES.find(([re]) => re.test(all))?.[1] ?? (hook ? 'unpopular_opinion' : 'built_that')
   const formatKey = v.formatKey ?? FORMAT_RULES.find(([re]) => re.test(fmt))?.[1] ?? (hookKey === 'reply_hater' ? 'reply_to_hate' : 'method_tutorial')
   return { hookKey, formatKey }
 }

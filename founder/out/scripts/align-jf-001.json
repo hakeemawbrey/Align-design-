@@ -1,0 +1,97 @@
+{
+  "id": "align-jf-001",
+  "sourceId": "jf-001",
+  "title": "Release, don't haunt",
+  "angleKey": "release-dont-haunt",
+  "hookKey": "built_that",
+  "formatKey": "mood_one_liner",
+  "hook": "So I built a dating app where \"swipe left\" is called release.",
+  "beats": [
+    {
+      "line": "Letting go is clean. Ghosting isn't.",
+      "broll": "Slow push-in at night, cinematic sound, text on screen",
+      "onScreen": ""
+    }
+  ],
+  "cta": "",
+  "caption": "Release, don't haunt.",
+  "hashtags": [
+    "ghosting",
+    "datingapp",
+    "datingadvice"
+  ],
+  "lengthSec": 12,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 65,
+    "craft": 58,
+    "fit": 94,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 90,
+        "hits": [
+          "i built"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 70,
+        "hits": [
+          "so i"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 73,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 60,
+        "hits": [
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 40,
+        "hits": []
+      }
+    ]
+  }
+}
