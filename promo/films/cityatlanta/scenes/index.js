@@ -1,10 +1,9 @@
-// STUB — replaced by the cityatlanta agent. Export DURATION, SCENES and CUES.
-import { el } from '../../../src/lib.js'
+// cityatlanta (30 s vertical Align ad): "Atlanta: a city in a forest." → "So many trees. So hard to find the one." →
+// tonight's deck falls through the canopy from the stars → a mystery card: "Chart first. Face last." →
+// "Find your one in the forest." → shared end card ("come" + the Align logo + VOTE FOR YOUR CITY).
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import * as F from './film.js'
 export const DURATION = 30
 export const CTA = 'VOTE FOR YOUR CITY'
-export const CUES = [...endcardCues(DURATION - ENDCARD_LEN)]
-export const SCENES = [
-  async (stage) => ({ start: 0, end: DURATION - ENDCARD_LEN + 0.01, root: el('div', { position: 'absolute', inset: '0', background: '#0b0620', color: '#efe6d6', font: '60px serif', display: 'grid', placeItems: 'center' }, stage, 'cityatlanta'), update() {} }),
-  (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN, cta: CTA }),
-]
+export const SCENES = [...F.SCENES, (stage) => buildEndcard(stage, { start: DURATION - ENDCARD_LEN, cta: CTA })]
+export const CUES = [...F.CUES, ...endcardCues(DURATION - ENDCARD_LEN)]
