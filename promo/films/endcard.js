@@ -7,7 +7,8 @@
 // cut is invisible, and it runs to start + ENDCARD_LEN (= DURATION), ending on a black frame.
 //
 // The screen reads as one phrase: "come" pops in big, then glides down to its place on the line under the mark, the
-// mark blooms, and the wordmark "Align" lands right after "come" → "come Align" (Align appears once; no tagline).
+// mark blooms, and the wordmark "Align" lands right after "come" → "come Align" (Align appears once; no tagline) and a quiet
+// "JOIN THE HOUSTON BETA" line sits under it.
 // Timeline (seconds after `start`):
 //   0.00         plain sky H (identical to the film's hand-off frame)
 //   0.06         "come" pops in big at the centre (Inter 800, bone, springy overshoot); readable to ~1.0
@@ -19,6 +20,7 @@
 //   2.62         the bloom glow swells and then breathes
 //   2.70 + i·0.06  the seven chakra dots light the column bottom → top (done ≈3.2)
 //   2.92         "come" springs left as the wordmark "Align" slides in beside it (pair centred by eye) (de-blur, rise, tracking in) · 3.18–3.62 a light sweep across it
+//   0.50–1.00    "JOIN THE HOUSTON BETA" (Space Mono, bone ~72%) fades up under the phrase at y 1440 and stays to the fade
 //   3.70–4.40    fade to black (last frame black)
 // Pure function of t; nothing touches `document` at module top level (the sound build imports this in node).
 import { clamp, lerp, prog, ease, tw, el, rng, hexToRgb } from '../src/lib.js'
@@ -31,6 +33,8 @@ export const ENDCARD_LEN = 4.4
 const BONE = '#efe6d6', GOLD = '#f2c75c', PINK = '#ff8fb1', LAV = '#d9cdf0', VIOLET = '#9a7be0'
 const INTER = "Inter, 'Helvetica Neue', Arial, sans-serif"
 const SERIF = "'EB Garamond', Georgia, serif"
+const MONO = "'Space Mono', ui-monospace, monospace"
+const BETA = 'JOIN THE HOUSTON BETA', BETA_FS = 34, BETA_Y = 1440, BETA_T = 0.5   // subtle line under the phrase; in once "come" has landed, stays to the fade
 const CHK = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
 
 // beats, relative to start
@@ -71,7 +75,7 @@ function drawBurst(x, parts, px, py, t, t0, dur = 0.75) {
 export async function buildEndcard(stage, { start }) {
   const S = start, T = k => S + k, END = S + ENDCARD_LEN
   try {
-    await Promise.all([`800 ${COME_FS0}px Inter`, `italic 400 ${WORD_FS}px 'EB Garamond'`].map(f => document.fonts.load(f)))
+    await Promise.all([`800 ${COME_FS0}px Inter`, `italic 400 ${WORD_FS}px 'EB Garamond'`, `700 ${BETA_FS}px 'Space Mono'`].map(f => document.fonts.load(f)))
   } catch (_) { /* fonts optional */ }
 
   const root = fill(stage, { background: '#05040c' })
@@ -235,6 +239,20 @@ export async function buildEndcard(stage, { start }) {
     }
   }
 
+  // "JOIN THE HOUSTON BETA": quiet Space Mono line under the phrase, fades up once "come" is fully on screen and stays
+  function drawBeta(t) {
+    const p = ease.outCubic(prog(t, T(BETA_T), T(BETA_T + 0.5)))
+    if (p <= 0) return
+    mx.save()
+    mx.textAlign = 'center'; mx.textBaseline = 'alphabetic'
+    mx.font = `700 ${BETA_FS}px ${MONO}`; mx.letterSpacing = `${(0.3 * BETA_FS).toFixed(1)}px`
+    mx.globalAlpha = 0.72 * p
+    mx.shadowColor = 'rgba(6,4,18,0.9)'; mx.shadowBlur = 16
+    mx.fillStyle = BONE
+    mx.fillText(BETA, W / 2 + 0.15 * BETA_FS, BETA_Y + (1 - p) * 14)   // + half the trailing letter-space so it centres by eye
+    mx.restore()
+  }
+
   return {
     start: S, end: END + 0.01, root,
     update(t) {
@@ -242,6 +260,7 @@ export async function buildEndcard(stage, { start }) {
       mx.clearRect(0, 0, W, H)
       drawMark(t)
       drawType(t)
+      drawBeta(t)
       fx.clearRect(0, 0, W, H)
       drawBurst(fx, SPARKS, MARK_CX, MARK_CY, t, T(R.swell), 0.9)
       drawGrain(gx, t)
