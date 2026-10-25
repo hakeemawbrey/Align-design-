@@ -14,6 +14,7 @@ import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, CYAN, INTER, MONO, SHADOW, D2R, rgba, mixHex, pop01, outScale, outK, glowStroke, makeBurst, drawBurst, popText } from './kit.js'
 
 export const DURATION = 15
@@ -531,7 +532,11 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: END })]
+// card-motif cuts: each lands where one beat has cleared and the next is about to pop in
+//   3.26 the walker's puddle / hook line leaving (3.12–3.3) → "Too hot to waste a night" (3.38) · 5.38 café table out → "Dealbreakers" (5.45)
+//   8.35 the DEALBREAKERS card out (8.38) → "Save your evenings." (8.42)                · the end card does its own card flip at 10.6
+const CUTS = [{ t: 3.26, kind: 'shuffle' }, { t: 5.38, kind: 'flip' }, { t: 8.35, kind: 'deal' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: END }), cardFrame({ start: 0, end: END }), cardCuts(CUTS)]
 
 // ── cues (B minor pentatonic pops on the 108 bpm grid; the funk score is arranged by the style engine)
 const r3 = v => +v.toFixed(3)
@@ -572,5 +577,6 @@ export const CUES = [
   ['pop', T.partner, 739.99, 0.055, 0.3],
   ['bell', T.spark, 987.77, 0.05, 1.6, 0], ['bell', T.spark + 0.07, 1318.51, 0.04, 1.6, 0.2], ['glitter', T.spark, T.spark + 0.6],
   ['whoosh', T.endOut, 0.4, 0.035],
+  ...cardCutCues(CUTS),
   ...endcardCues(END),
 ]
