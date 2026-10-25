@@ -10,6 +10,7 @@ import { W, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
 import { ICONS, ink, BONE, GOLD } from './icons.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 
 export const DURATION = 30
 const SHADOW = '0 4px 30px rgba(6,4,18,0.9), 0 0 4px rgba(6,4,18,0.6)'
@@ -49,6 +50,11 @@ const T = {
 }
 const ROOM_T = i => BEAT(T.room0 + T.roomStep * i)
 const ROOM_END = ROOM_T(12) - 0.05   // ≈ 23.38
+// card-motif cuts between the big sections only (the 12 rooms are one continuous build):
+//   2.72 building folds away (2.42–2.72) → triad (2.82) · 6.58 mini building has grown back (6.55) → 1st house (6.71)
+//   23.30 last room label out (23.30) → clock/"birth time" (23.38) · 26.36 caption out (26.35) → "Welcome home." (26.45)
+//   (no 'deal' here: its last card lingers over the top headline zone for ~0.3 s after the cut)
+const CUTS = [{ t: 2.72, kind: 'flip' }, { t: 6.58, kind: 'fan' }, { t: 23.3, kind: 'shuffle' }, { t: 26.36, kind: 'flip', dir: -1 }]
 const WX = 92
 const SETTLE_T = i => T.spin[1] + i * 0.035
 
@@ -416,7 +422,7 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build]
+export const SCENES = [build, cardFrame({ start: 0, end: DURATION, fadeOut: T.fade[1] - T.fade[0] }), cardCuts(CUTS)]
 
 // ── cues
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -452,4 +458,5 @@ export const CUES = [
   ['glitter', T.ripple, r3(T.ripple + 1.6)], ['bell', T.ripple, 1174.66, 0.025, 1.8, 0.2], ['boom', T.ripple, 0.04],
   ...[587.33, 739.99, 880, 1174.66].map((f, i) => ['pop', r3(T.ripple + 0.12 * i), f, 0.03, (i - 1.5) * 0.2]),
   ['bell', 29.2, 293.66, 0.03, 2.4, 0],
+  ...cardCutCues(CUTS),
 ]

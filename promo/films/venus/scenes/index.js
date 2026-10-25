@@ -16,6 +16,7 @@ import { clamp, lerp, prog, ease, el, rng, hexToRgb } from '../../../src/lib.js'
 import { W, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, TYPE, ELEMENT_COLOR, easeOutBack } from '../../wheel.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { ink, heartPath, pixelHeart, fireworks, giftBox, bread, bubble, waveHeart, splash, BONE, GOLD, PINK, ROSE, hexA } from './illus.js'
 
 export const DURATION = 30
@@ -41,6 +42,14 @@ const F0 = BEAT(34)                                   // fun fact
 const FACT = { sun: F0 + 0.35, orbits: [F0 + 0.45, F0 + 0.9], earth: F0 + 0.75, venus: BEAT(36), fan: [F0 + 1.25, F0 + 1.6], swing: [F0 + 1.55, F0 + 3.75], out: BEAT(41) - 0.15 }
 const STRIP = { in: BEAT(41), sun: BEAT(41.5), venus: BEAT(42), hop1: BEAT(43), tug: BEAT(43.75), back: BEAT(44.25), leap: BEAT(45.5), out: 26.45 }
 const E0 = BEAT(47), END = { venus: BEAT(48), confetti: BEAT(48.5), out: 29.3, black: 29.965 }
+
+// card-motif cuts, 0.08 s before each beat's headline pops (the old beat's art/type is out by then):
+//   hook → FIRE → EARTH → AIR → WATER → FUN FACT → "Go look up your Venus." (no cut at the sign strip, 23.38: the
+//   FUN FACT headline holds over it, so a card would only hide and re-reveal the same title)
+const CUTS = [
+  { t: SEG_T[0] - 0.08, kind: 'flip' }, { t: SEG_T[1] - 0.08, kind: 'fan' }, { t: SEG_T[2] - 0.08, kind: 'shuffle' }, { t: SEG_T[3] - 0.08, kind: 'flip', dir: -1 },
+  { t: F0 - 0.08, kind: 'fan', dir: -1 }, { t: E0 - 0.08, kind: 'shuffle' },   // no 'deal' here: its last card lingers over the top headline zone for ~0.3 s after the cut
+].map(c => ({ ...c, t: +c.t.toFixed(3) }))
 
 // ── orbit geometry (top-down): Venus's orbit radius = sin 47° × Earth's, so the max elongation is 47°
 const MAXE = 47
@@ -528,7 +537,7 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build]
+export const SCENES = [build, cardFrame({ start: 0, end: DURATION, fadeOut: END.black - END.out }), cardCuts(CUTS)]
 
 // ───────────── cues
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -591,6 +600,7 @@ export const CUES = [
   ['pluck', r3(END.venus), 1174.66, 0.055, 0.8, 0], ['bell', r3(END.venus), 1318.51, 0.035, 1.6, 0],
   ['pop', r3(END.confetti), 880, 0.05, 0], ['glitter', r3(END.confetti), r3(END.confetti + 1.2)],
   ['bell', r3(END.confetti + 0.1), 1760, 0.025, 1.8, 0.3],
+  ...cardCutCues(CUTS),
 ]
 function ROCKETS_T() {
   const s = SEG_T[0], fb = k => s + k * 0.5556 - 0.42

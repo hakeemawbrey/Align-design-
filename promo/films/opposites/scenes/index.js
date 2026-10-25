@@ -6,6 +6,7 @@ import { clamp, lerp, prog, ease, el, rng, hexToRgb } from '../../../src/lib.js'
 import { W, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../sky.js'
 import { SIGNS, ELEMENT_COLOR, SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 
 export const DURATION = 15
 const BONE = '#efe6d6', GOLD = '#f2c75c', PINK = '#ff8fb1', INK = '#1a1430'
@@ -30,6 +31,9 @@ const T = {
   split: 10.3, endW: BEAT(18), snap: BEAT(20), bonk: BEAT(21),
   fade: [14.3, 15],
 }
+// card-motif cuts (the six pairs are one continuous seesaw build, so no cuts between them):
+//   6.62 seesaw shrinking out (6.38–6.68) → the coin pops (6.71) · 10.2 coin out (10.18) → ♉/♏ split (10.3), "Opposites attract." (10.6)
+const CUTS = [{ t: 6.62, kind: 'flip' }, { t: 10.2, kind: 'shuffle' }]
 const TILT = 13 * D2R
 const SIDE_DOWN = i => (i % 2 ? 1 : -1)        // even pairs: left end slams down; odd: right end
 
@@ -390,7 +394,7 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build]
+export const SCENES = [build, cardFrame({ start: 0, end: DURATION, fadeOut: T.fade[1] - T.fade[0] }), cardCuts(CUTS)]
 
 // ── sound
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -422,4 +426,5 @@ export const CUES = [
   ['pop', T.snap, 1174.66, 0.07, 0], ['pluck', T.snap, 587.33, 0.06, 0.7, 0], ['bell', T.snap, 1479.98, 0.05, 1.4, 0], ['glitter', T.snap, T.snap + 0.6],
   ['pop', T.bonk, 659.25, 0.07, 0], ['pluck', T.bonk, 440, 0.05, 0.4, 0], ['pop', r3(T.bonk + 0.12), 554.37, 0.05, 0.2], ['tick', T.bonk, 0.06],
   ['bell', 13.4, 587.33, 0.035, 2.0, -0.2], ['bell', 13.46, 880, 0.03, 2.0, 0.2],
+  ...cardCutCues(CUTS),
 ]

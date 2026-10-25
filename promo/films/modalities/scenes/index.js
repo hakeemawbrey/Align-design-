@@ -16,6 +16,7 @@ import { lerp, prog, ease, el, rng, clamp, C } from '../../../src/lib.js'
 import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { startButton, cursor, playTri, padlock, loopArrow, shuffle, chip, sparkle as spark, SPARK_COLS, GOLD, INTER } from './illus.js'
 
 export const DURATION = 15
@@ -38,6 +39,10 @@ const M = [
   { name: 'Mutable:', col: SKY, signs: [2, 5, 8, 11], S: 8.95, act: beat(16.5), act2: beat(19.5), sh1: beat(17.5), sh2: beat(19.5), punchT: 10.1, out: 11.9,
     punch: ['They', { w: 'switch', acc: 1 }, { w: 'it', acc: 1 }, { w: 'up.', acc: 1 }] },
 ]
+// card-motif cuts, 0.11 s before each beat's headline pops (as in elements): the old beat is already shrinking out.
+//   hook → CARDINAL (fan) → FIXED (flip) → MUTABLE (shuffle, the changers) → "Every team needs all three." (fan)
+//   (no 'deal' here: its last card lingers over the top headline zone for ~0.3 s after the cut)
+const CUTS = [{ t: 2.69, kind: 'fan' }, { t: 5.79, kind: 'flip' }, { t: 8.89, kind: 'shuffle' }, { t: 11.97, kind: 'fan', dir: -1 }]
 const END = { t: 12.05, all: beat(21.5), icons: [12.2, 12.32, 12.44], fire: beat(23) }
 
 // ── layout
@@ -261,7 +266,7 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build]
+export const SCENES = [build, cardFrame({ start: 0, end: DURATION, fadeOut: T_END - T_OUT }), cardCuts(CUTS)]
 
 // ── sound
 const r3 = v => +v.toFixed(3)
@@ -300,4 +305,5 @@ export const CUES = [
   ['tick', END.fire, 0.06], ['boom', END.fire, 0.1], ['pluck', END.fire, 293.66, 0.05, 0.9, 0], ['glitter', END.fire, END.fire + 1.4],
   ...[1046.5, 1318.51, 1568, 1760].map((f, i) => ['pop', r3(END.fire + 0.05 + i * 0.09), f, 0.035, (i - 1.5) * 0.3]),
   ['bell', r3(T_OUT + 0.05), 293.66, 0.03, 2.4, 0],
+  ...cardCutCues(CUTS),
 ]

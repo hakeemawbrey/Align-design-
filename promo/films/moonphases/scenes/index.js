@@ -19,6 +19,7 @@ import { clamp, lerp, prog, ease, el, rng, hexToRgb } from '../../../src/lib.js'
 import { W, H, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 
 export const DURATION = 15
 const BONE = '#efe6d6', GOLD = '#f2c75c', PINK = '#ff8fb1', SILVER = '#e3ecff', GREEN = '#5fdc7a', SOIL = '#c98a4a', LAV = '#b9a6ff'
@@ -35,6 +36,10 @@ const T = {
   rowGo: 9.9, row: 10.05, h3: 10.1, sweep: [10.8, 11.9], loop: [11.9, 12.2], rowOut: 12.25,
   end: BEAT(21.5), endWord: BEAT(22), out: 14.3, fin: 15.0,
 }
+// card-motif cuts: title clears (3.0) → mound/"plant the seed." (3.3/3.38) · caption out (6.0) → the Moon waxes (6.16)
+//   plant pops away (9.9) → phase row/"One cycle" (10.05/10.1) · row out (12.25) → "Look up tonight." (12.55)
+//   'deal' only at 6.1, where nothing new pops at the top (its last card lingers there ~0.3 s)
+const CUTS = [{ t: 3.2, kind: 'flip' }, { t: 6.1, kind: 'deal' }, { t: 9.99, kind: 'shuffle' }, { t: 12.45, kind: 'fan' }]
 const SLOTS = 8, ROW_Y = 900, SLOT = i => 540 + (i - 3.5) * 122, ROW_R = 52
 const WAX_PH = [0.03, 0.125, 0.25, 0.375, 0.5]                               // phases the wax passes through (ticks)
 const waxP = t => ease.inOutQuad(prog(t, ...T.wax))
@@ -419,7 +424,7 @@ async function build(stage) {
     },
   }
 }
-export const SCENES = [build]
+export const SCENES = [build, cardFrame({ start: 0, end: DURATION, fadeOut: T.fin - T.out }), cardCuts(CUTS)]
 
 // ── sound
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]   // D major pentatonic-ish
@@ -447,4 +452,5 @@ export const CUES = [
   ...pops('h4', 0, 0.05), ['pop', T.endWord, 1318.51, 0.065, 0], ['bell', T.endWord + 0.02, 1760, 0.03, 1.8, 0.4], ['glitter', T.endWord, T.endWord + 1.2],
   ['pluck', T.endWord + 0.02, 587.33, 0.05, 1.0, 0],
   ['bell', T.out + 0.05, 293.66, 0.03, 2.2, 0],
+  ...cardCutCues(CUTS),
 ].sort((a, b) => a[1] - b[1])

@@ -14,6 +14,7 @@ import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, READING, easeOutBack, drawWheelH } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, CYAN, SILVER, VIOLET, HAIR, INTER, rgba, ink, sparkle, person, heart, bigHair, truck, bigStar } from './props.js'
 
 export const DURATION = 15
@@ -315,7 +316,11 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: CTA })]
+// card-motif cuts: each lands where one beat has cleared and the next is about to pop in
+//   4.20 hook type gone (4.25), hair popping out → "Meet someone" (4.30)  · 8.02 h1 out (8.05), charts popping → "Big love," (8.10)
+//   (the hook builds without clearing, so no cut inside it; the end card does its own card flip at 10.6)
+const CUTS = [{ t: 4.2, kind: 'flip' }, { t: 8.02, kind: 'fan' }]   // no 'deal' here: its last card lingers over the top headline zone for ~0.3 s after the cut
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: CTA }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
 
 // ── sound (pitched SFX are shifted into the film's key by the engine)
 const NOTE = [440, 493.88, 554.37, 659.25, 739.99, 880, 987.77]
@@ -348,5 +353,6 @@ export const CUES = [
   ['whoosh', T.beams[0], 0.45, 0.03], ['pluck', T.beams[1], 659.25, 0.04, 0.6, 0],
   ['bell', T.heart, 880, 0.05, 1.4, 0], ['bell', T.heart + 0.08, 1318.51, 0.035, 1.4, 0.2], ['glitter', T.heart, T.heart + 0.6],
   ['whoosh', T.out[0], 0.35, 0.03],
+  ...cardCutCues(CUTS),
   ...endcardCues(STORY_END),
 ]
