@@ -9,6 +9,7 @@ import { fill, A } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, RED, GREEN, SHADOW, MONO, GLYPH_FONT, D2R, rgba, pop01, outScale, outK, glowStroke, makeBurst, drawBurst,
   popText, drawConsole, drawController, drawGenericCard, drawPhone, CARD_HUES } from './illus.js'
 
@@ -210,7 +211,11 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: END })]
+// card-motif cuts: each lands where one beat has cleared and the next is about to pop in
+//   2.84 hook console gone (2.78) → "Your dating life." (2.9)       · 5.58 phone shrinking out → the mystery card drops (5.6)
+//   8.60 mystery card out (8.66) → the console returns (8.62)       · the end card does its own card flip at 10.6
+const CUTS = [{ t: 2.84, kind: 'flip' }, { t: 5.58, kind: 'deal' }, { t: 8.6, kind: 'fan' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: END }), cardFrame({ start: 0, end: END }), cardCuts(CUTS)]
 
 // ── cues (D major pentatonic-ish pops on the 108 bpm grid)
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -246,5 +251,6 @@ export const CUES = [
   ['bell', T.solLast, 587.33, 0.06, 2.0, -0.2], ['bell', T.solLast + 0.06, 739.99, 0.05, 2.0, 0], ['bell', T.solLast + 0.12, 880, 0.05, 2.0, 0.2],
   ['pluck', T.solLast, 1174.66, 0.055, 0.8, 0], ['glitter', T.solLast, T.solLast + 0.8],
   ['whoosh', T.console2Out, 0.4, 0.035],
+  ...cardCutCues(CUTS),
   ...endcardCues(END),
 ]

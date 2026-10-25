@@ -10,6 +10,7 @@ import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, ELEMENT_COLOR, easeOutBack } from '../../wheel.js'
 import { flame, mountain, wind, gusts, wave, stopwatch, hexA, BONE } from './illus.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 
 export const DURATION = 15
 const T_END = 15.0, T_OUT = 14.3
@@ -28,6 +29,12 @@ const NAME_DT = [0.24, 0.36, 0.48]
 const PUNCH_DT = 0.833                                                                       // on the half-beat
 const OUT_DT = 2.28
 const END_T = beat(21), END_YOU = END_T + 0.42, GRID_T = [0, 1, 2, 3].map(i => END_T + 0.12 + i * 0.12)
+// card-motif cuts, 0.07 s before each beat: the outgoing panel is mid-shrink (out at p0-0.22 … p0) and the incoming
+// headline pops at p0+0.04, so it lands just as the cards clear. Title → FIRE → EARTH → AIR → WATER → "Which one are you?"
+const CUTS = [
+  { t: PANEL[0] - 0.07, kind: 'shuffle' }, { t: PANEL[1] - 0.07, kind: 'flip' }, { t: PANEL[2] - 0.07, kind: 'deal' },
+  { t: PANEL[3] - 0.07, kind: 'fan' }, { t: END_T - 0.07, kind: 'flip', dir: -1 },
+].map(c => ({ ...c, t: +c.t.toFixed(3) }))
 
 const ELS = [
   { id: 'fire', name: 'Fire:', col: ELEMENT_COLOR.fire, txt: ELEMENT_COLOR.fire, word: 'Go.', signs: ['aries', 'leo', 'sagittarius'] },
@@ -225,7 +232,7 @@ export const SCENES = [async function build(stage) {
       black.style.opacity = String(t >= T_END - 0.035 ? 1 : 1 - ease.outQuad(prog(t, 0, 0.4)) + ease.inOutQuad(prog(t, T_OUT, T_END)))
     },
   }
-}]
+}, cardFrame({ start: 0, end: DURATION, fadeOut: T_END - T_OUT, corners: 'tr bl br' }), cardCuts(CUTS)]   // tl: the stopwatch lives there
 
 // ── sound (D major pentatonic melody; every pop-in gets a note)
 const NOTES = [[784, 880, 988, 1175], [880, 988, 1175, 1318], [988, 1175, 1318, 1480], [1175, 1318, 1480, 1568]]
@@ -239,7 +246,6 @@ export const CUES = [
   ...[0, 1, 2, 3].map(i => ['pop', TITLE_OUT + i * 0.04, [1175, 988, 880, 740][i], 0.035, (i - 1.5) * 0.3]),
   ['whoosh', TITLE_OUT + 0.05, 0.45, 0.035],
   ...PANEL.flatMap((p0, i) => [
-    ['whoosh', p0 - 0.12, 0.35, 0.03],
     ['pop', p0 + 0.04, NOTES[i][0] * 0.75, 0.065, 0],
     ['pop', p0 + 0.06, 587, 0.04, 0],
     ...NAME_DT.map((d, k) => ['pop', p0 + d, NOTES[i][k + 1] * (k === 2 ? 1 : 1), 0.055, (k - 1) * 0.45]),
@@ -254,4 +260,5 @@ export const CUES = [
   ['pop', END_YOU, 1568, 0.07, 0], ['bell', END_YOU + 0.02, 1174.66, 0.035, 1.8, 0], ['glitter', END_YOU + 0.1, END_YOU + 0.9],
   ...[0, 1, 2].map(n => ['tick', END_T + 0.6 + n * 0.5556 + 0.28, 0.025]),
   ['bell', T_OUT + 0.05, 293.66, 0.03, 2.0, 0],
+  ...cardCutCues(CUTS),
 ]

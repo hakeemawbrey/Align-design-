@@ -7,12 +7,18 @@
 // wheel.js). The end card is opaque from `start` (it draws that same sky itself, same layer recipe as dummies a), so the
 // cut is invisible, and it runs to start + ENDCARD_LEN (= DURATION), ending on a black frame.
 //
+// CARD FLIP hand-off (the Align card motif, see cardfx.js): that plain-sky frame is the face of a card. It pulls back a
+// touch, rounds its corners, grows a slim glowing rim and flips over around the vertical axis (CSS 3D perspective); its
+// back is the end-card sky, which lands flat and flush as "come" pops in.
+//
 // The screen reads as one phrase: "come" pops in big, then glides down to its place on the line under the mark, the
 // mark blooms, and the wordmark "Align" lands right after "come" → "come Align" (Align appears once; no tagline) and a quiet
 // "JOIN THE HOUSTON BETA" line sits under it.
 // Timeline (seconds after `start`):
 //   0.00         plain sky H (identical to the film's hand-off frame)
-//   0.06         "come" pops in big at the centre (Inter 800, bone, springy overshoot); readable to ~1.0
+//   0.02–0.21    CARD FLIP, front: the sky card pulls back to 0.86, corners round, rim glows, turns edge-on (sparkles shed at 0.21)
+//   0.21–0.42    CARD FLIP, back: the end-card sky turns in from edge-on (a hair of overshoot), 0.24–0.52 grows back flush to full frame
+//   0.34         "come" pops in big at the centre (Inter 800, bone, springy overshoot) as the back lands; readable to ~1.0
 //   0.95–1.40    "come" glides down and shrinks onto the wordmark line, centred under the mark, and waits there
 //   1.00         a single point of light appears at the mark's centre
 //   1.18–1.52    the centre circle draws on out of the light
@@ -29,6 +35,8 @@ import { W, H, fill } from '../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from './sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from './wheel.js'
 
+const D2R = Math.PI / 180
+
 export const ENDCARD_LEN = 4.4
 
 const BONE = '#efe6d6', GOLD = '#f2c75c', PINK = '#ff8fb1', LAV = '#d9cdf0', VIOLET = '#9a7be0'
@@ -40,7 +48,8 @@ const CHK = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '
 
 // beats, relative to start
 const R = {
-  come: 0.06, glide: [0.95, 1.4],
+  flip: [0.02, 0.21, 0.42], flush: [0.24, 0.52],
+  come: 0.34, glide: [0.95, 1.4],
   spark: 1.0, centre: [1.18, 1.52],
   petal: 1.38, petalGap: 0.13, petalDur: 0.42,
   outer: [2.28, 2.78], settle: [1.3, 2.75], shimmer: 2.45,
@@ -80,11 +89,21 @@ export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA'
   } catch (_) { /* fonts optional */ }
 
   const root = fill(stage, { background: '#05040c' })
-  const bx = layerCanvas(root).getContext('2d')           // sky
-  const mx = layerCanvas(root).getContext('2d')           // mark + type
-  const fx = layerCanvas(root, { pointerEvents: 'none' }).getContext('2d')   // sparkles
-  const gx = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }).getContext('2d')
+  // the card flip: backdrop (seen around the card while it turns) · front face (the film's plain-sky frame) · back face (everything else)
+  const dx = layerCanvas(root, { pointerEvents: 'none' }).getContext('2d')
+  const face = () => fill(root, { transformOrigin: '50% 50%', willChange: 'transform' })
+  const front = face(), back = face()
+  const fsx = layerCanvas(front).getContext('2d')
+  const fgx = layerCanvas(front, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }).getContext('2d')
+  const fShade = el('div', { position: 'absolute', inset: '0', background: '#07031a', opacity: 0 }, front)
+  const bx = layerCanvas(back).getContext('2d')           // sky
+  const mx = layerCanvas(back).getContext('2d')           // mark + type
+  const fx = layerCanvas(back, { pointerEvents: 'none' }).getContext('2d')   // sparkles
+  const gx = layerCanvas(back, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }).getContext('2d')
+  const bShade = el('div', { position: 'absolute', inset: '0', background: '#07031a', opacity: 0 }, back)
+  const tx = layerCanvas(root, { pointerEvents: 'none' }).getContext('2d')  // flip sparkles over the card
   const black = el('div', { position: 'absolute', inset: '0', background: '#000', opacity: 0 }, root)
+  const FLIP_SPARKS = makeBurst(7321, 14, 560)
 
   // measure the "come Align" line once (canvas metrics; no layout reads)
   mx.font = `800 ${COME_FS}px ${INTER}`; const wCome = mx.measureText('come').width
@@ -254,9 +273,48 @@ export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA'
     mx.restore()
   }
 
+  // ── the card flip (pure function of t)
+  let flipDirty = true
+  function drawFlip(t) {
+    const u = t - S, [f0, fm, f1] = R.flip
+    if (u >= R.flush[1]) {
+      if (flipDirty) {
+        for (const f of [front, back]) { f.style.transform = 'none'; f.style.borderRadius = '0'; f.style.boxShadow = 'none' }
+        front.style.display = 'none'; back.style.display = 'block'; bShade.style.opacity = '0'
+        dx.clearRect(0, 0, W, H); tx.clearRect(0, 0, W, H); flipDirty = false
+      }
+      return
+    }
+    flipDirty = true
+    const sc = u < fm ? lerp(1, 0.86, ease.inOutQuad(prog(u, 0, fm))) : lerp(0.86, 1, ease.inOutCubic(prog(u, R.flush[0], R.flush[1])))
+    const lift = (1 - sc) / 0.14                                   // 0 flat & flush … 1 pulled back
+    const onFront = u < fm
+    const ang = onFront ? 90 * ease.inQuad(prog(u, f0, fm)) : -90 * (1 - easeOutBack(prog(u, fm, f1), 0.7))
+    const k = Math.min(1, Math.abs(Math.sin(ang * D2R)))
+    const f = onFront ? front : back
+    front.style.display = onFront ? 'block' : 'none'; back.style.display = onFront ? 'none' : 'block'
+    f.style.transform = `perspective(2400px) rotateY(${ang.toFixed(3)}deg) scale(${sc.toFixed(4)})`
+    f.style.borderRadius = (58 * lift).toFixed(1) + 'px'
+    f.style.boxShadow = lift > 0.01 ? `0 0 0 ${(3 * lift).toFixed(2)}px rgba(217,205,240,${(0.7 * lift).toFixed(3)}), 0 0 ${(46 * lift).toFixed(1)}px rgba(154,123,224,${(0.75 * lift).toFixed(3)}), 0 30px 80px rgba(0,0,0,${(0.6 * lift).toFixed(3)})` : 'none'
+    ;(onFront ? fShade : bShade).style.opacity = String((0.5 * k).toFixed(3))
+    if (onFront) { drawSky(fsx, t, SKY_H); drawGrain(fgx, t) }
+    // backdrop: deep void with a violet bloom behind the card
+    dx.clearRect(0, 0, W, H)
+    const bl = clamp(lift * 1.4)
+    if (bl > 0.003) {
+      const g = dx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, 1100)
+      g.addColorStop(0, `rgba(154,123,224,${0.42 * bl})`); g.addColorStop(0.5, `rgba(90,60,170,${0.16 * bl})`); g.addColorStop(1, 'rgba(20,10,50,0)')
+      dx.fillStyle = g; dx.fillRect(0, 0, W, H)
+    }
+    // sparkles shed off the card as it goes edge-on
+    tx.clearRect(0, 0, W, H)
+    drawBurst(tx, FLIP_SPARKS, W / 2, H / 2, t, T(fm - 0.05), 0.55)
+  }
+
   return {
     start: S, end: END + 0.01, root,
     update(t) {
+      drawFlip(t)
       drawSky(bx, t, SKY_H)
       mx.clearRect(0, 0, W, H)
       drawMark(t)
@@ -274,6 +332,9 @@ export function endcardCues(start) {
   const T = k => start + k
   const PET = [587.33, 659.25, 739.99, 880, 987.77, 1174.66]          // one soft rising chime per petal
   return [
+    // the card flip hand-off: a soft whoosh into the turn, a card flick at edge-on, a quieter one as the back lands
+    ['whoosh', T(R.flip[1] + 0.02), 0.42, 0.035], ['tick', T(R.flip[1]), 0.055], ['tick', T(R.flip[2] - 0.02), 0.035],
+    ['glitter', T(R.flip[1] - 0.02), T(R.flip[1] + 0.3)],
     ['pop', T(R.come), 659.25, 0.06, 0],
     ['whoosh', T(R.glide[0]), 0.45, 0.04],
     ['bell', T(R.spark), 1760, 0.02, 1.4, 0],                          // the point of light
