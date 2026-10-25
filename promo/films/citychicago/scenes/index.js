@@ -14,6 +14,7 @@ import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, easeOutBack, drawWheelH } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, FIRE, ICE, SILVER, VIOLET, INTER, rgba, ink, sparkle, drawSnow, drawGust, gustEnv, drawSkyline, drawEl, drawGround, bundled, heart } from './props.js'
 
 export const DURATION = 15
@@ -302,7 +303,12 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: CTA })]
+// card-motif cuts, each just before the next headline pops (old type already out):
+//   3.31 hook type out (3.32), pictogram starting to slide left → "Find someone whose chart lines up" (3.38)
+//   7.54 type out (7.55) → "Get cuffed by someone who fits." (7.6) · the end card flips in at 10.6
+// (only two: the middle beat's chart link at 5.6 is the payoff and stays uncut)
+const CUTS = [{ t: 3.31, kind: 'deal', from: 'right' }, { t: 7.54, kind: 'flip' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: CTA }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
 
 // ── sound (pitched SFX are shifted into the film's key by the engine)
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -330,5 +336,6 @@ export const CUES = [
   ['whoosh', T.scarf[0], 0.5, 0.03], ['pluck', T.scarf[1], 880, 0.045, 0.6, 0],
   ['bell', T.heart, 1174.66, 0.05, 1.4, 0], ['bell', T.heart + 0.08, 1760, 0.035, 1.4, 0.2], ['glitter', T.heart, T.heart + 0.6],
   ['whoosh', T.out[0], 0.35, 0.03],
+  ...cardCutCues(CUTS),
   ...endcardCues(STORY_END),
 ]

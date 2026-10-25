@@ -12,6 +12,7 @@ import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, easeOutBack, drawWheelH } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, CYAN, INK, GLYPH_FONT, D2R, rgba, mixHex, pop01, outScale, outK, glowStroke, makeBurst, drawBurst, popText } from './kit.js'
 
 export const DURATION = 15
@@ -405,7 +406,12 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: END, cta: CTA })]
+// card-motif cuts, each just before the next headline pops (old type already out):
+//   3.45 hook type out (3.48) → "On Align, the face comes last." (3.52)
+//   5.55 turn type out (5.56) → the ring light becomes the chart, "Chart first." (5.62)
+//   8.05 chart type out (8.1), chart shrinking → "Fall for the chart, not the lighting." (8.12) · the end card flips in at 10.6
+const CUTS = [{ t: 3.45, kind: 'shuffle' }, { t: 5.55, kind: 'flip' }, { t: 8.05, kind: 'deal' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: END, cta: CTA }), cardFrame({ start: 0, end: END }), cardCuts(CUTS)]
 
 // ── cues (E major pops on the 108 bpm grid; the pop score is arranged by the style engine)
 const NOTE = [329.63, 369.99, 415.3, 493.88, 554.37, 659.25, 739.99, 830.61, 987.77, 1108.73]
@@ -443,5 +449,6 @@ export const CUES = [
   ['bell', T.hearts + 0.05, 987.77, 0.045, 1.8, -0.2], ['bell', T.hearts + 0.12, 1244.51, 0.04, 1.8, 0.2], ['glitter', T.hearts, T.hearts + 0.8],
   ['whoosh', T.tip, 0.35, 0.03], ['tick', T.tip + 0.5, 0.05],
   ['whoosh', T.wheelOut, 0.4, 0.035],
+  ...cardCutCues(CUTS),
   ...endcardCues(END),
 ]

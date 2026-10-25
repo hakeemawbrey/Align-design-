@@ -14,6 +14,7 @@ import { fill, A } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, easeOutBack, drawWheelH } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, ROSE, TEAL, AQUA, RED, VIOLET, SUN, LIME, INTER, MONO, SERIF, rgba, ink, sparkle, palm, hotel, ocean, suitcase, person, heart } from './props.js'
 
 export const DURATION = 15
@@ -340,7 +341,12 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: CTA })]
+// card-motif cuts, each just before the next headline pops (old type and scenery already out):
+//   3.49 hook scene out (3.48) → "Dealbreakers come first." (3.55)
+//   6.29 type out (6.3) → the wheel whirls in, "See who's here for real." (6.35)
+//   8.33 type out (8.35) → back on the beach, "Find someone who stays." (8.4) · the end card flips in at 10.6
+const CUTS = [{ t: 3.49, kind: 'fan' }, { t: 6.29, kind: 'shuffle' }, { t: 8.33, kind: 'flip', dir: -1 }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: CTA }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
 
 // ── sound (pitched SFX are shifted into the film's key by the engine; written in Bb minor)
 const NOTE = [466.16, 523.25, 554.37, 622.25, 698.46, 830.61, 932.33]
@@ -371,5 +377,6 @@ export const CUES = [
   ['glitter', T.sun[0] + 0.3, T.sun[1]],
   ['whoosh', T.arc[0], 0.4, 0.03], ['bell', T.heart, 932.33, 0.05, 1.4, 0], ['bell', T.heart + 0.08, 1396.91, 0.035, 1.4, 0.2], ['glitter', T.heart, T.heart + 0.6],
   ['whoosh', T.out[0], 0.35, 0.03],
+  ...cardCutCues(CUTS),
   ...endcardCues(STORY_END),
 ]

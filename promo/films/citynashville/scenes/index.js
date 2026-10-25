@@ -15,6 +15,7 @@ import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, READING, easeOutBack, drawWheelH } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, HOT, CYAN, SILVER, TAN, VIOLET, INTER, rgba, ink, sparkle, flick, facades, festoon, guitar, neonGuitar, neonLive, cowboyHat, person, heartNote, note } from './props.js'
 
 export const DURATION = 15
@@ -340,7 +341,12 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: CTA })]
+// card-motif cuts, each just before the next headline pops (old type already out):
+//   2.42 hook type leaving (2.28–2.48) → the heart note (2.42) + "Every song's about heartbreak." (2.5)
+//   4.44 type out (4.45), bar row dropping → staff lines, "Write a different song." (4.5)
+//   8.22 type out (8.25) → the charts nest, "Your love song starts here." (8.28) · the end card flips in at 10.6
+const CUTS = [{ t: 2.42, kind: 'deal' }, { t: 4.44, kind: 'fan' }, { t: 8.22, kind: 'flip' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: CTA }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
 
 // ── sound (written in D; the engine keeps pitched SFX in the film's key)
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -376,5 +382,6 @@ export const CUES = [
   ['boom', T.join, 0.12], ['bell', T.join, 1174.66, 0.055, 1.6, 0], ['bell', T.join + 0.08, 1760, 0.035, 1.4, 0.2], ['glitter', T.join, T.join + 0.7],
   ...strum(T.join + 0.02, 293.66, 0.04, 0),
   ['whoosh', T.out[0], 0.35, 0.03],
+  ...cardCutCues(CUTS),
   ...endcardCues(STORY_END),
 ]
