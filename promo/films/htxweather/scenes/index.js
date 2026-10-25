@@ -15,6 +15,7 @@ import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, easeOutBack, drawWheelH, READING, SIGNS } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, BLUE, VIOLET, SILVER, INTER, MONO, rgba, ink, sparkle, sun, cloud, rain, skyline, umbrellaPerson, canopy, person, orb } from './props.js'
 
 export const DURATION = 15
@@ -300,7 +301,9 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END })]
+// card-motif cuts, just before each beat's headline: hook → "Mixed signals?" → "See exactly how you fit." → "Read the signs."
+const CUTS = [{ t: 4.16, kind: 'flip' }, { t: 6.57, kind: 'deal' }, { t: 8.58, kind: 'fan' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
 
 // ── sound (pitched SFX are shifted into the film's key by the engine)
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -338,5 +341,6 @@ export const CUES = [
   ['pop', T.people[0], 587.33, 0.05, -0.5], ['pop', T.people[1], 739.99, 0.05, 0.5],
   ['whoosh', T.bow[0], 0.5, 0.03], ['bell', T.bow[1] - 0.05, 1174.66, 0.05, 1.4, 0], ['glitter', T.glyphs, T.glyphs + 0.7],
   ['whoosh', T.out[0], 0.35, 0.03],
+  ...cardCutCues(CUTS),
   ...endcardCues(STORY_END),
 ]
