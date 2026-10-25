@@ -15,6 +15,7 @@ import { W, H, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
 import { BONE, GOLD, PINK, SAND, ink, hexA, ziggurat, tablet, scroll, rolled, ANIMALS, ANIMAL_COLORS, dayNight, branch, BRANCH_FLOWERS, badge0, earthTop, CONSTELLATIONS, seasonIcon, MONO, INTER, GLYPH_FONT, VS } from './illus.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 
 export const DURATION = 45
 const BEAT = n => +(0.6 + n * 0.5556).toFixed(3)
@@ -457,13 +458,20 @@ function orb(x, px, py, r, color, a) {
   x.restore()
 }
 
-export const SCENES = [build]
+// card-motif cuts ~0.15 s before each part's headline (the eyebrow fades in at h-0.1, the old type is out underneath):
+// hook → Babylon 3.78 · → Greece 10.45 · scroll → "circle of little animals" 15.5 · → Spring 20.45 · → Wobble 27.67 ·
+// "use the seasons" 34.35 · → "Old sky. New you." 39.9
+const CUTS = [
+  { t: 3.78, kind: 'flip' }, { t: 10.45, kind: 'deal' }, { t: 15.5, kind: 'fan' }, { t: 20.45, kind: 'shuffle' },
+  { t: 27.67, kind: 'flip', dir: -1 }, { t: 34.35, kind: 'deal', from: 'left' }, { t: 39.9, kind: 'fan', dir: -1 },
+]
+export const SCENES = [build, cardFrame({ start: 0, end: DURATION, fadeOut: 0.7 }), cardCuts(CUTS)]
 
 // ── sound
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
 const words = (t0, n, gap, base = 0, gain = 0.03) => Array.from({ length: n }, (_, i) => ['pop', +(t0 + i * gap).toFixed(3), NOTE[(base + i) % NOTE.length], gain, i % 2 ? 0.15 : -0.15])
 const SCALE = [587.33, 659.25, 739.99, 880, 987.77, 1108.73, 1174.66, 1318.51, 1479.98, 1661.22, 1760, 1975.53]
-export const CUES = [
+const FILM_CUES = [
   // hook
   ...words(T.h0, 3, 0.07, 0),
   ['pop', T.zodiac, 1318.51, 0.06, 0], ['pluck', T.zodiac, 1174.66, 0.05, 0.6, 0],
@@ -519,3 +527,4 @@ export const CUES = [
   ...[0, 1, 2, 3].map(i => ['tick', +(T.parade + 0.6 + i * 1.1).toFixed(3), 0.025]),
   ['bell', T.fade[0] + 0.05, 293.66, 0.03, 2.2, 0],
 ]
+export const CUES = [...FILM_CUES, ...cardCutCues(CUTS)]

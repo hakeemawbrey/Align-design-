@@ -11,6 +11,7 @@ import {
   BONE, GOLD, PINK, SAT, FIRE, EARTHC, AIR, GREEN, INTER, MONO, D2R, rgba, pop01, outScale, outK, glowStroke, wob,
   makeBurst, drawBurst, wave, saturn, sun, earth, star, flag, boxes, briefcase, weddingRing, plant, signpost, clipboard, bigCheck,
 } from './draw.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 
 export const DURATION = 45
 const SHADOW = '0 4px 30px rgba(6,4,18,0.9), 0 0 4px rgba(6,4,18,0.6)'
@@ -406,7 +407,14 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build]
+// card-motif cuts at each beat change, after the old headline is out and just before the next one pops:
+// hook → orbit 4.25 (h0 out 4.15, Saturn mid-flight, h1 4.45) · orbit → dial 11.9 (h1 out 11.75, diagram mid-shrink, h2 12.6) ·
+// dial → montage 22.45 (out2 22.1, h4 22.7) · montage → round two 31.6 (out3 30.95, h5 31.9) · → end 39.8 (out4 39.4, h6 39.95).
+// None lands on the DINGs (17.82 / ~37) or the montage icons.
+const CUTS = [
+  { t: 4.25, kind: 'flip' }, { t: 11.9, kind: 'deal' }, { t: 22.45, kind: 'fan' }, { t: 31.6, kind: 'shuffle' }, { t: 39.8, kind: 'flip', dir: -1 },
+]
+export const SCENES = [build, cardFrame({ start: 0, end: DURATION, fadeOut: 0.7 }), cardCuts(CUTS)]
 
 // ── sound cues
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -418,7 +426,7 @@ const yearTicks = (f, a, b, n0, n1, gain) => {
   for (let n = n0; n <= n1; n++) { let lo = a, hi = b; for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (f(m) < n) lo = m; else hi = m } out.push(['tick', +hi.toFixed(3), gain]) }
   return out
 }
-export const CUES = [
+const FILM_CUES = [
   // hook
   ...pops(0.3, 3, 0.09, 0, 0.04), ['pop', BEAT(1), 1318.51, 0.06, 0], ['pluck', BEAT(1), 659.25, 0.05, 0.6, 0],
   ['whoosh', T.satIn - 0.1, 0.4, 0.04], ['boom', T.satIn + 0.42, 0.06], ['glitter', T.satIn + 0.4, T.satIn + 1.1],
@@ -459,3 +467,4 @@ export const CUES = [
   ['boom', T.h7Last, 0.08], ['glitter', T.h7Last, T.h7Last + 1.2],
   ['bell', T.fadeOut[0] + 0.05, 293.66, 0.03, 2.4, 0],
 ]
+export const CUES = [...FILM_CUES, ...cardCutCues(CUTS)]
