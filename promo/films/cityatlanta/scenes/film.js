@@ -288,7 +288,7 @@ export async function build(stage) {
   const H1 = popText(root, 'So many | *trees.*', { top: 210, size: 150, accentSize: 200, at: T.many, gap: 0.1, late: 1, lateAt: T.manyLate, wobble: true, accentColor: LEAF, lineHeight: 0.98 })
   const H2 = popText(root, 'So hard to find | *the* *one.*', { top: 210, size: 112, accentSize: 176, at: T.one, gap: 0.08, late: 2, lateAt: T.oneLate, lateGap: 0.12, wobble: true, accentColor: PINK })
   const H3 = popText(root, "Tonight's deck is | dealt from the | *stars.*", { top: 190, size: 100, accentSize: 150, at: T.turn, gap: 0.07, late: 1, lateAt: T.turnLate, wobble: true, accentColor: GOLD, lineHeight: 1.0 })
-  const H4 = popText(root, 'Chart first. | *Face* *last.*', { top: 200, size: 136, accentSize: 176, at: T.chart, gap: 0.1, late: 2, lateAt: T.chartLate, lateGap: 0.12, wobble: true, accentColor: TEAL, lineHeight: 0.98 })
+  const H4 = popText(root, 'Card first. | *Face* *last.*', { top: 200, size: 136, accentSize: 176, at: T.chart, gap: 0.1, late: 2, lateAt: T.chartLate, lateGap: 0.12, wobble: true, accentColor: TEAL, lineHeight: 0.98 })
   const H5 = popText(root, 'Find your one | *in* *the* *forest.*', { top: 210, size: 116, accentSize: 150, at: T.end, gap: 0.08, late: 3, lateAt: T.endLate, lateGap: 0.1, wobble: true, accentColor: LEAF })
   const HEADS = [[H0, T.hookOut], [H1, T.manyOut], [H2, T.oneOut], [H3, T.turnOut], [H4, T.chartOut], [H5, T.endOut]]
 

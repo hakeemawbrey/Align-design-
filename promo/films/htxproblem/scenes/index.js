@@ -54,7 +54,7 @@ async function build(stage) {
   const H0 = big('Houston, | we have a | *problem.*', T.hook, { accentColor: RED, lastAt: T.hookLast })
   const H1 = popText(root, 'Your *dating* | life.', { top: 215, size: TYPE.headSize, weight: 800, at: T.life, accentColor: PINK })
   const S1 = popText(root, 'Swipe. Swipe. *Swipe.*', { top: 1615, size: TYPE.subSize, weight: 700, at: SWIPES[0], gap: 0.42, accentSize: 72, accentColor: PINK })
-  const H2 = popText(root, 'The *chart* | comes first.', { top: 215, size: TYPE.headSize, weight: 800, at: T.chart, accentColor: GOLD })
+  const H2 = popText(root, 'The *card* | comes first.', { top: 215, size: TYPE.headSize, weight: 800, at: T.chart, accentColor: GOLD })
   const S2 = popText(root, 'The face comes *last.*', { top: 1600, size: TYPE.subSize, weight: 700, at: T.face, gap: 0.07, accentSize: 72, accentColor: PINK })
   const H3 = big('Houston, | we have a | *solution.*', T.sol, { accentColor: GREEN, lastAt: T.solLast })
   const TEXTS = [[H0, T.hookOut], [H1, T.lifeOut], [S1, T.lifeOut], [H2, T.chartOut], [S2, T.chartOut], [H3, T.solOut]]

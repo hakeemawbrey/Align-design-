@@ -292,7 +292,7 @@ async function build(stage) {
   const H0 = popText(root, 'Houston | humidity: | *100%* | hair damage.', { top: 205, size: 104, accentColor: FIRE, accentSize: 210, times: T.hook, big: [2], lineHeight: 0.98 })
   const S0 = popText(root, 'Step outside. *Poof.*', { top: 1590, size: TYPE.subSize, weight: 700, accentSize: 84, accentColor: HAIR, times: T.sub0, big: [2] })
   const H1 = popText(root, "On Align, they | don't see your | *face* first.", { top: 215, size: 104, accentColor: PINK, accentSize: 124, times: [0, 1, 2, 3, 4, 5].map(i => T.head1 + i * 0.07).concat([T.face, T.face + 0.1]), big: [6] })
-  const S1 = popText(root, 'Chart first. *Face* *last.*', { top: 1580, size: TYPE.subSize, weight: 700, accentSize: 72, accentColor: GOLD, times: T.sub1 })
+  const S1 = popText(root, 'Card first. *Face* *last.*', { top: 1580, size: TYPE.subSize, weight: 700, accentSize: 72, accentColor: GOLD, times: T.sub1 })
   const H2 = popText(root, 'Fall for | the chart. | *Not* *the* *hair.*', { top: 205, size: 112, accentColor: HAIR, accentSize: 134, times: [0, 1, 2, 3].map(i => T.head2 + i * 0.07).concat([T.not, T.not + 0.09, T.not + 0.2]), big: [6] })
   const TEXTS = [[H0, T.hookOut], [S0, T.hookOut], [H1, T.out1], [S1, T.out1], [H2, T.out2]]
 

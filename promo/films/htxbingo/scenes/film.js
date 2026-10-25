@@ -269,7 +269,7 @@ export async function build(stage) {
   const H1 = popText(root, 'Align skips | the *bingo.*', { top: 215, size: 132, accentSize: 172, at: T.h1, gap: 0.08, late: 1, lateAt: T.h1Late, wobble: true, accentColor: GOLD, lineHeight: 1.0 })
   const H2 = popText(root, 'Talk cards, | not *small* *talk.*', { top: 225, size: 116, accentSize: 150, at: T.h2, gap: 0.08, late: 2, lateAt: T.h2Late, lateGap: 0.12, wobble: true, accentColor: CYAN, lineHeight: 1.0 })
   const H3 = popText(root, 'Dealbreakers | come *first.*', { top: 225, size: 124, accentSize: 156, at: T.h3, gap: 0.08, late: 1, lateAt: T.h3Late, wobble: true, accentColor: GOLD })
-  const H4 = popText(root, 'Chart *first.* | Face last.', { top: 225, size: 130, accentSize: 164, times: [T.h4, T.h4 + 0.12, T.h4Late, T.h4Late + 0.12], big: [1], wobble: true, accentColor: GOLD })
+  const H4 = popText(root, 'Card *first.* | Face last.', { top: 225, size: 130, accentSize: 164, times: [T.h4, T.h4 + 0.12, T.h4Late, T.h4Late + 0.12], big: [1], wobble: true, accentColor: GOLD })
   const H5 = popText(root, 'Get a *real* | first date.', { top: 215, size: 136, accentSize: 184, times: [T.h5, T.h5 + 0.08, T.h5Real, T.h5Real + 0.3, T.h5Real + 0.38], big: [2], wobble: true, accentColor: GOLD, lineHeight: 1.0 })
   const HEADS = [[H0, T.h0Out], [S0, T.h0Out], [H1, T.h1Out], [H2, T.h2Out], [H3, T.h3Out], [H4, T.h4Out], [H5, T.h5Out]]
 

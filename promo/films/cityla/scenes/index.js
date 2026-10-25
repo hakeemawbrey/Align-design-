@@ -97,7 +97,7 @@ async function build(stage) {
   // ── type
   const H0 = popText(root, 'LA: everyone\'s | photo is | *perfect.*', { top: 150, size: 128, weight: 800, accentSize: 172, at: T.hook, gap: 0.1, accentColor: GOLD, lastAt: T.hookLast, wobble: true })
   const H1 = popText(root, 'On Align, | the face comes | *last.*', { top: 190, size: 112, weight: 800, accentSize: 170, at: T.turn, gap: 0.07, accentColor: PINK, lastAt: T.turnLast, wobble: true })
-  const H2 = popText(root, 'Chart | *first.*', { top: 170, size: 170, weight: 800, accentSize: 220, at: T.chart, gap: 0.1, accentColor: GOLD, lastAt: T.chartLast, wobble: true })
+  const H2 = popText(root, 'Card | *first.*', { top: 170, size: 170, weight: 800, accentSize: 220, at: T.chart, gap: 0.1, accentColor: GOLD, lastAt: T.chartLast, wobble: true })
   const H3 = popText(root, 'Fall for | the chart, | *not the lighting.*', { top: 180, size: 120, weight: 800, accentSize: 124, at: T.fall, gap: 0.08, accentColor: PINK, lastAt: T.fallLast, wobble: true })
   const TEXTS = [[H0, T.hookOut], [H1, T.turnOut], [H2, T.chartOut], [H3, T.fallOut]]
 

@@ -86,7 +86,7 @@ async function build(stage) {
   const H0a = popText(root, 'Rodeo season:', { top: 190, size: 104, weight: 800, at: T.rodeo, gap: 0.09 })
   const H0 = popText(root, 'Suddenly | *everyone\'s* | a cowboy.', { top: 318, size: 140, weight: 800, accentSize: 168, at: T.hook, gap: 0.12, accentColor: GOLD, lastAt: T.hookLast, wobble: true })
   const H1 = popText(root, 'Want someone | *real?*', { top: 300, size: 128, weight: 800, accentSize: 190, at: T.want, gap: 0.08, accentColor: PINK, lastAt: T.wantLast, wobble: true })
-  const H2 = popText(root, 'Chart *first.* | Face last.', { top: 200, size: TYPE.headSize, weight: 800, at: T.chart, gap: 0.09, accentColor: GOLD })
+  const H2 = popText(root, 'Card *first.* | Face last.', { top: 200, size: TYPE.headSize, weight: 800, at: T.chart, gap: 0.09, accentColor: GOLD })
   const S2 = popText(root, 'No *costumes.*', { top: 1610, size: 72, weight: 800, at: T.costumes, gap: 0.1, accentSize: 92, accentColor: PINK })
   const H3 = popText(root, 'Find the | *real thing.*', { top: 250, size: 150, weight: 800, accentSize: 180, at: T.find, gap: 0.1, accentColor: GOLD, lastAt: T.findLast, wobble: true })
   const TEXTS = [[H0a, T.hookOut], [H0, T.hookOut], [H1, T.wantOut], [H2, T.chartOut], [S2, T.chartOut], [H3, T.findOut]]

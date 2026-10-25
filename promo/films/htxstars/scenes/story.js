@@ -292,7 +292,7 @@ async function build(stage) {
   const H1 = head(root, "We'll show you | *yours.*", T.h1, { accentColor: GOLD, lastAt: T.h1Last, wobble: true, accentSize: 150 })
   const H2 = head(root, 'Your chart | says more than | any *selfie.*', T.h2, { size: 100, accentSize: 116, accentColor: PINK, lastAt: T.h2Last, wobble: true })
   const HF = [
-    head(root, 'Chart *first.* | Face last.', F[0] + 0.05, { accentColor: PINK }),
+    head(root, 'Card *first.* | Face last.', F[0] + 0.05, { accentColor: PINK }),
     head(root, 'A new *deck,* | every night.', F[1] + 0.05, { accentColor: GOLD }),
     head(root, 'Skip the | *small talk.*', F[2] + 0.05, { accentColor: BLUE, accentSize: 128 }),
     head(root, 'See how | you *fit.*', F[3] + 0.05, { accentColor: GOLD, accentSize: 128 }),
@@ -444,7 +444,7 @@ async function build(stage) {
     x.restore()
     drawBurst(x, B_F[0], 540, 1000, t, s + 0.8, LIB.color, 0.7)
     sticker(x, 270, 800, 'FACE: LAST', PINK, t, s + 1.15, -9, k)
-    sticker(x, 815, 1110, 'CHART: FIRST', GOLD, t, s + 1.55, 7, k)
+    sticker(x, 815, 1110, 'CARD: FIRST', GOLD, t, s + 1.55, 7, k)
   }
   // 02 · tonight's deck: card backs deal into a fan
   const FAN = [-2, -1, 0, 1, 2].map(j => ({ j, x: 540 + j * 150, y: 1060 + Math.abs(j) * 34 + j * j * 6, rot: j * 11 }))

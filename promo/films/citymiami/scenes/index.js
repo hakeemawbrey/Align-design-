@@ -116,7 +116,7 @@ async function build(stage) {
   const H1 = popText(root, 'Dealbreakers | come *first.*', { top: 205, size: 124, accentSize: 160, at: T.h1, gap: 0.09, late: 1, lateAt: T.h1Late, wobble: true, accentColor: GOLD })
   const S1 = popText(root, 'Up front, not after | *the* *weekend.*', { top: 1530, size: 70, accentSize: 90, at: T.sub1, gap: 0.06, late: 2, lateAt: T.sub1 + 0.3, accentColor: ROSE })
   const H2 = popText(root, 'See who’s here | for *real.*', { top: 215, size: 108, accentSize: 168, at: T.h2, gap: 0.08, late: 1, lateAt: T.h2Late, wobble: true, accentColor: PINK })
-  const S2 = popText(root, 'Chart first. *Face* *last.*', { top: 1600, size: 72, accentSize: 88, at: T.sub2, gap: 0.08, accentColor: GOLD })
+  const S2 = popText(root, 'Card first. *Face* *last.*', { top: 1600, size: 72, accentSize: 88, at: T.sub2, gap: 0.08, accentColor: GOLD })
   const H3 = popText(root, 'Find someone | who *stays.*', { top: 200, size: 136, accentSize: 184, at: T.h3, gap: 0.08, late: 1, lateAt: T.h3Late, wobble: true, accentColor: SUN, lineHeight: 1.0 })
   const HEADS = [[H0a, T.hookOut], [H0, T.hookOut], [H1, T.h1Out], [S1, T.h1Out], [H2, T.h2Out], [S2, T.h2Out], [H3, T.h3Out]]
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')

@@ -341,7 +341,7 @@ export async function build(stage) {
   const H2 = popText(root, 'Align reads | your *chart.*', { top: 210, size: 124, accentSize: 160, at: T.h2, gap: 0.09, late: 1, lateAt: T.h2Late, wobble: true, accentColor: LILAC })
   const S2 = popText(root, 'Then deals you a *person.*', { top: 1590, size: 70, accentSize: 92, at: T.s2, gap: 0.08, late: 1, lateAt: T.s2 + 0.4, accentColor: PINK })
   const H3 = popText(root, 'Talk cards, | not *small* *talk.*', { top: 210, size: 124, accentSize: 160, at: T.h3, gap: 0.09, late: 2, lateAt: T.h3Late, lateGap: 0.12, wobble: true, accentColor: GOLD })
-  const H4 = popText(root, 'Chart *first.* | Face last.', { top: 200, size: 124, accentSize: 160, times: [T.h4 + 0.2, T.h4 + 0.32, T.h4b, T.h4b + 0.1], accentColor: GOLD })
+  const H4 = popText(root, 'Card *first.* | Face last.', { top: 200, size: 124, accentSize: 160, times: [T.h4 + 0.2, T.h4 + 0.32, T.h4b, T.h4b + 0.1], accentColor: GOLD })
   const H5 = popText(root, 'Let the *cards* | decide.', { top: 230, size: 140, accentSize: 176, at: T.h5, gap: 0.09, late: 1, lateAt: T.h5Late, drop: true, accentColor: GOLD, lineHeight: 1.04 })
   const HEADS = [[H0, T.h0Out], [H1, T.h1Out], [S1, T.h1Out], [H2, T.h2Out], [S2, T.h2Out], [H3, T.h3Out], [H4, T.h4Out], [H5, T.h5Out]]
 

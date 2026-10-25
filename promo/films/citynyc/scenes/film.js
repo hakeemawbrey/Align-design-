@@ -163,7 +163,7 @@ export async function build(stage) {
   const h2t = [T.h2, T.h2 + 0.1, T.hand, T.hand + 0.1, T.hand + 0.24, T.night, T.night + 0.1]
   const H2 = popText(root, 'Tonight’s deck: | a *new* hand, | every night.', { top: 196, size: 106, accentSize: 168, times: h2t, big: [3], wobble: true, accentColor: PINK, lineHeight: 1.02 })
   const S2 = popText(root, 'Never the *same_five.*', { top: 1640, size: 66, weight: 700, accentSize: 84, times: [T.never, T.never + 0.1, T.never + 0.24], big: [2], accentColor: GOLD })
-  const H3 = popText(root, 'Chart *first.* | Face last.', { top: 196, size: 122, accentSize: 176, times: [T.h3, T.h3 + 0.12, BEAT(33), BEAT(33) + 0.1], big: [1], wobble: true, accentColor: GOLD, lineHeight: 1.0 })
+  const H3 = popText(root, 'Card *first.* | Face last.', { top: 196, size: 122, accentSize: 176, times: [T.h3, T.h3 + 0.12, BEAT(33), BEAT(33) + 0.1], big: [1], wobble: true, accentColor: GOLD, lineHeight: 1.0 })
   const S3 = popText(root, 'Someone you’ve | *never_seen.*', { top: 1650, size: 64, weight: 700, accentSize: 88, times: [T.seen, T.seen + 0.1, T.seen + 0.32], big: [2], accentColor: PINK, lineHeight: 1.0 })
   const H4 = popText(root, 'Meet someone | *actually_new.*', { top: 236, size: 118, accentSize: 172, times: [T.h4, T.h4 + 0.12, T.actually], big: [2], wobble: true, accentColor: PINK, lineHeight: 1.0 })
 

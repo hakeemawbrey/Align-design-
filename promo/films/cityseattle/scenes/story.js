@@ -396,7 +396,7 @@ async function build(stage) {
   const H0b = head(root, 'You can never | see the *stars.*', T.h0b, { accentColor: GOLD, lastAt: T.h0bLast, wobble: true, accentSize: 132 })
   const H1 = head(root, "We'll show you | *yours.*", T.h1, { accentColor: GOLD, lastAt: T.h1Last, wobble: true, accentSize: 150 })
   const H2 = head(root, 'Then we find | who *lines up.*', T.h2, { accentColor: GOLD, times: [T.h2, T.h2 + 0.07, T.h2 + 0.14, T.h2 + 0.21, T.h2Last, T.h2Last + 0.12], wobble: true, accentSize: 128 })
-  const H3 = head(root, 'Chart *first.* | Face last.', T.m0 + 0.05, { accentColor: PINK })
+  const H3 = head(root, 'Card *first.* | Face last.', T.m0 + 0.05, { accentColor: PINK })
   const H4 = head(root, 'The stars are | still *up there.*', T.fin, { times: [T.fin, T.fin + 0.07, T.fin + 0.14, T.fin + 0.21, T.finLast, T.finLast + 0.14], accentColor: GOLD, accentSize: 140, wobble: true })
   const HEADS = [[H0, T.h0Out], [H0b, T.h0bOut], [H1, T.h1Out], [H2, T.out2], [H3, T.out3], [H4, T.finOut]]
   const S0 = sub(root, 'Sky status: *nope.*', T.s0, { accentColor: PINK, lastAt: T.s0Last, wobble: true, top: 880, size: 72, accentSize: 92 })
@@ -571,7 +571,7 @@ async function build(stage) {
     x.restore()
     drawBurst(x, B_CARD, 540, 980, t, s + 0.8, BLUE, 0.7)
     sticker(x, 250, 720, 'FACE: LAST', PINK, t, s + 1.15, -9, k)
-    sticker(x, 830, 1180, 'CHART: FIRST', GOLD, t, s + 1.55, 7, k)
+    sticker(x, 830, 1180, 'CARD: FIRST', GOLD, t, s + 1.55, 7, k)
   }
 
   // ── finale: stars pop through the clouds
