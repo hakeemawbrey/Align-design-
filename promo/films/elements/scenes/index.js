@@ -10,7 +10,7 @@ import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, ELEMENT_COLOR, easeOutBack } from '../../wheel.js'
 import { flame, mountain, wind, gusts, wave, stopwatch, hexA, BONE } from './illus.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { cardCuts, cardCutCues, cardFrame, cutPlays } from '../../cardfx.js'
 
 export const DURATION = 15
 const T_END = 15.0, T_OUT = 14.3
@@ -246,6 +246,7 @@ export const CUES = [
   ...[0, 1, 2, 3].map(i => ['pop', TITLE_OUT + i * 0.04, [1175, 988, 880, 740][i], 0.035, (i - 1.5) * 0.3]),
   ['whoosh', TITLE_OUT + 0.05, 0.45, 0.035],
   ...PANEL.flatMap((p0, i) => [
+    ...(cutPlays(CUTS, CUTS[i].t) ? [] : [['whoosh', p0 - 0.12, 0.35, 0.03]]),   // the panel whoosh, unless a card cut plays here
     ['pop', p0 + 0.04, NOTES[i][0] * 0.75, 0.065, 0],
     ['pop', p0 + 0.06, 587, 0.04, 0],
     ...NAME_DT.map((d, k) => ['pop', p0 + d, NOTES[i][k + 1] * (k === 2 ? 1 : 1), 0.055, (k - 1) * 0.45]),

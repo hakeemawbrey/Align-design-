@@ -15,7 +15,7 @@ import { W, H, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar, drawMoon } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { cardCuts, cardCutCues, cardFrame, cutPlays } from '../../cardfx.js'
 import { B, BONE, GOLD, VOID, PINK, tint, hexA, ink, pin, rr, eado, heights, midtown, bellaire, galleria, village, museum, tunnels, bayou, downtown, montrose, bay } from './props.js'
 
 export const DURATION = 45
@@ -426,7 +426,8 @@ export const CUES = [
   // signs
   ...SIGNS.flatMap((s, i) => {
     const t = S[i], nq = count(INFO[i].quip), o = []
-    // (the colour wipe's own whoosh is dropped: the card cut over it brings its own)
+    // the colour wipe's own whoosh, unless a card cut plays over this change (it brings its own)
+    if (!cutPlays(CUTS, CUTS[i].t)) o.push(['whoosh', +(WIPE[i + 1] - 0.05).toFixed(3), DUR[KIND[i]] + 0.1, 0.045])
     o.push(['pop', t, MEL[(i * 2) % 7], 0.065, 0], ['pluck', t, BASS[i], 0.06, 0.7, 0])
     o.push(['pop', +(t + 0.2).toFixed(3), MEL[(i * 2 + 2) % 7], 0.05, 0.2], ['pluck', +(t + 0.22).toFixed(3), MEL[(i * 2 + 4) % 7], 0.04, 0.5, 0])
     o.push(['pop', +(t + 0.4).toFixed(3), MEL[(i + 4) % 7] * 0.75, 0.05, -0.2])
@@ -440,7 +441,7 @@ export const CUES = [
   ...[0.62, 0.7, 0.78, 0.84].map(d => ['tick', +(S[10] + d).toFixed(3), 0.04]),  // Montrose neon flicker
   ['whoosh', S[8] + 0.5, 1.2, 0.025],                                           // runner
   // turn
-  ['boom', TN, 0.08],
+  ...(cutPlays(CUTS, CUTS[12].t) ? [] : [['whoosh', +(WIPE[13] - 0.05).toFixed(3), 0.5, 0.05]]), ['boom', TN, 0.08],
   ...[0, 1, 2].map(i => ['pop', +(TN + 0.05 + i * 0.09).toFixed(3), [880, 988, 1318.51][i], 0.05, (i - 1) * 0.2]),
   ['whoosh', TN + 0.25, 0.5, 0.04], ['pop', TN + 0.8, 587.33, 0.05, -0.5], ['pop', TN + 0.92, 739.99, 0.05, 0.5],
   ...[0, 1, 2, 3, 4, 5, 6].map(i => ['pop', +(TN + 0.85 + i * 0.08).toFixed(3), MEL[(i + 2) % 7], 0.03, (i - 3) * 0.12]),
@@ -448,6 +449,7 @@ export const CUES = [
   ['pluck', LINK[0] + 0.2, 987.77, 0.045, 0.7, -0.3], ['pluck', LINK[1] - 0.05, 1318.51, 0.045, 0.7, 0.3],
   ['bell', LINK[1], 1174.66, 0.05, 1.6, 0], ['bell', LINK[1] + 0.08, 1760, 0.035, 1.4, 0.2], ['glitter', LINK[1], LINK[1] + 0.7],
   // end line
+  ...(cutPlays(CUTS, CUTS[13].t) ? [] : [['whoosh', +(WIPE[14] - 0.05).toFixed(3), 0.55, 0.05]]),
   ...[0, 1, 2].map(i => ['pop', +(E0 + 0.05 + i * 0.12).toFixed(3), [880, 988, 1318.51][i], 0.06, (i - 1) * 0.2]),
   ['bell', E0 + 0.3, 1318.51, 0.035, 1.8, 0], ['boom', E0, 0.09], ['glitter', E0 + 0.3, E0 + 1.6],
   ...TAGS.map((_, i) => ['pop', +(E0 + 0.55 + i * 0.075).toFixed(3), MEL[(i * 3) % 7], 0.028, TAG_POS[i][0] > 540 ? 0.45 : -0.45]),
