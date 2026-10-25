@@ -9,6 +9,7 @@ import { W, fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 
 export const DURATION = 15
 const END = DURATION - ENDCARD_LEN          // 10.6: from here only the end card
@@ -439,7 +440,12 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: END })]
+// card-motif cuts:
+//   4.38 frizz hook out (4.32) → the head shrinks into a profile card, "On Align, they don't see your face first." (4.45)
+//   6.10 the veil has risen over the photo → it flips over to the real veiled mystery card (6.18)
+//   8.08 turn type out (8.1) → "Fall for the chart. Not the hair." (8.14) · end card flips at 10.6
+const CUTS = [{ t: 4.38, kind: 'fan' }, { t: 6.1, kind: 'flip' }, { t: 8.08, kind: 'shuffle' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: END }), cardFrame({ start: 0, end: END }), cardCuts(CUTS)]
 
 // ── cues (108 bpm; key hits on beats)
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -465,5 +471,6 @@ export const CUES = [
   ['pluck', T.not, 739.99, 0.045, 0.6, 0], ['pop', T.not, 880, 0.045, -0.15], ['pop', T.not + 0.09, 987.77, 0.045, 0.15], ['pop', T.not + 0.2, 1174.66, 0.055, 0],
   ['pop', T.curl, 1318.51, 0.05, 0.3], ['glitter', T.curlPoof, T.curlPoof + 0.4], ['pop', T.curlPoof, 1479.98, 0.04, 0.3],
   ['whoosh', T.cardOut, 0.5, 0.035],
+  ...cardCutCues(CUTS),
   ...endcardCues(END),
 ]

@@ -14,6 +14,7 @@ import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, TYPE, easeOutBack, drawWheelH } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { BONE, GOLD, PINK, FIRE, RED, SILVER, VIOLET, CRUST, INTER, MONO, rgba, ink, sparkle, taco, kolache, crawfish, plate, person, heart } from './props.js'
 
 export const DURATION = 15
@@ -279,7 +280,12 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END })]
+// card-motif cuts, ~0.07 s before each new headline (the old one's out-anim is done or finishing):
+//   3.29 food hook out (3.32) → "Your dating app should too." + the plate (3.36)
+//   5.43 plate-wheel head out (5.48) → "Matched by your birth chart," + the second chart flies in (5.5)
+//   8.23 charts head out (8.25) → "Have good taste in people." + charts float up (8.3) · end card flips at 10.6
+const CUTS = [{ t: 3.29, kind: 'shuffle' }, { t: 5.43, kind: 'fan' }, { t: 8.23, kind: 'flip' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
 
 // ── sound (pitched SFX are shifted into the film's key by the engine)
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -309,5 +315,6 @@ export const CUES = [
   ['pop', T.people[0], 587.33, 0.05, -0.5], ['pop', T.people[1], 739.99, 0.05, 0.5],
   ['whoosh', T.arc[0], 0.45, 0.03], ['bell', T.heart, 1174.66, 0.05, 1.4, 0], ['bell', T.heart + 0.08, 1760, 0.035, 1.4, 0.2], ['glitter', T.heart, T.heart + 0.6],
   ['whoosh', T.out[0], 0.35, 0.03],
+  ...cardCutCues(CUTS),
   ...endcardCues(STORY_END),
 ]

@@ -11,6 +11,7 @@ import { fill, A } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SIGNS, SKY_H, GRAIN_H, TYPE, easeOutBack } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { el } from '../../../src/lib.js'
 import { BONE, GOLD, PINK, CYAN, SHADOW, GLYPH_FONT, D2R, rgba, mixHex, pop01, outScale, outK, glowStroke, makeBurst, drawBurst, popText } from './kit.js'
 
@@ -375,7 +376,12 @@ async function build(stage) {
   }
 }
 
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: END })]
+// card-motif cuts, just before each new headline:
+//   3.26 hook type out (3.28) → "Want someone real?" (3.32) as the hats are about to fly
+//   5.13 people popped away + head out (5.18) → the mystery card drops in (5.2)
+//   8.30 card + glyph ring out (8.28) → the lasso, "Find the real thing." (8.36) · end card flips at 10.6
+const CUTS = [{ t: 3.26, kind: 'flip' }, { t: 5.13, kind: 'deal' }, { t: 8.3, kind: 'fan' }]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: END }), cardFrame({ start: 0, end: END }), cardCuts(CUTS)]
 
 // ── cues (A major pentatonic pops on the 108 bpm grid; the funk score is arranged by the style engine)
 const NOTE = [440, 493.88, 554.37, 659.25, 739.99, 880, 987.77, 1108.73]
@@ -417,5 +423,6 @@ export const CUES = [
   ['pluck', T.cinch, 440, 0.06, 0.9, 0], ['bell', T.cinch, 880, 0.05, 2.0, -0.2], ['bell', T.cinch + 0.06, 1108.73, 0.045, 2.0, 0], ['bell', T.cinch + 0.12, 1318.51, 0.045, 2.0, 0.2],
   ['glitter', T.cinch, T.cinch + 0.8],
   ['whoosh', T.lassoOut, 0.4, 0.035],
+  ...cardCutCues(CUTS),
   ...endcardCues(END),
 ]
