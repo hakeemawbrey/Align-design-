@@ -1,0 +1,22 @@
+{
+  "id": "05-new-moon-scorpio",
+  "sign": "scorpio",
+  "sky": "night",
+  "moon": "none",
+  "title": "New moon in Scorpio: one empty chair per house",
+  "caption": "new moon in scorpio, nov 9. every house set out a chair. who's it for?",
+  "hashtags": ["newmoon", "newmooninscorpio", "scorpio", "astrology", "moonritual"],
+  "beats": [
+    {"text": "every house set out one empty chair", "accent": "empty chair", "icon": "door", "sub": "new moon · nov 9"},
+    {"text": "no moon tonight. that's the point", "accent": "point", "icon": "moon", "sub": "new moon · scorpio"},
+    {"text": "it's for whoever's next. not who's gone", "accent": "next", "icon": "star", "sub": "the ritual"},
+    {"text": "new moon in scorpio. it starts in the dark", "accent": "dark", "icon": "glyph:scorpio", "sub": "scorpio · fixed water"},
+    {"text": "write what you'd give, not just what you want", "accent": "give", "icon": "card", "sub": "on the back of a card"},
+    {"text": "scorpio doesn't do halfway. write it all", "accent": "halfway", "icon": "eye", "sub": "pluto · scorpio's ruler"},
+    {"text": "then three things you won't bend on", "accent": "won't bend", "icon": "key", "sub": "align · dealbreakers up front"},
+    {"text": "nothing arrives tonight. it begins", "accent": "begins", "icon": "heart", "sub": "new moon · a beginning"},
+    {"text": "who's the chair for? describe them, no names", "accent": "no names", "icon": "glyph:scorpio", "sub": "tell the dark"}
+  ],
+  "end": "align",
+  "endSub": "a new deal at 11:11"
+}

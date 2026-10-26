@@ -1,7 +1,7 @@
 """An original ambient score for one reel: slow detuned pad chords, a soft
 air bed and a quiet chime at every scene change, in a key per sign.
 
-    python3 score.py <sign> <seconds> <scenes> <out.wav>
+    python3 score.py <sign> <seconds> <scenes> <out.wav> [scene seconds]
 """
 import sys
 import wave
@@ -29,6 +29,9 @@ def hz(semi):
 
 def main():
     sign, seconds, scenes, out = sys.argv[1], float(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
+    global SCENE
+    if len(sys.argv) > 5:
+        SCENE = float(sys.argv[5])
     rng = np.random.default_rng(SIGNS.index(sign) + 11)
     root = ROOTS[SIGNS.index(sign)] - 12 * (ROOTS[SIGNS.index(sign)] > 6)
     prog = DARK if sign in DARK_SIGNS else BRIGHT

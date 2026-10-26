@@ -1,0 +1,22 @@
+{
+  "id": "08-cancer-keeps-everything",
+  "sign": "cancer",
+  "sky": "night",
+  "moon": "crescent",
+  "title": "Cancer, you still have the napkin",
+  "caption": "for the cancer who still has the napkin. what's in your shoebox?",
+  "hashtags": ["cancer", "cancerzodiac", "astrology", "zodiac", "watersign"],
+  "beats": [
+    {"text": "the cancer next door kept the napkin", "accent": "napkin", "icon": "glyph:cancer", "sub": "cancer · the keeper"},
+    {"text": "first date, 2021. his number's on it", "accent": "2021", "icon": "card", "sub": "in a shoebox"},
+    {"text": "you know birthdays of people who forgot yours", "accent": "forgot yours", "icon": "heart", "sub": "cancer · cardinal water"},
+    {"text": "ruled by the moon, so you feel it in phases", "accent": "phases", "icon": "moon", "sub": "the moon · your ruler"},
+    {"text": "you walk sideways toward what you want", "accent": "sideways", "icon": "star", "sub": "cancer · the crab"},
+    {"text": "a hard shell, and a kitchen full of guests", "accent": "kitchen", "icon": "door", "sub": "the 4th · home"},
+    {"text": "you're not too much. you're a whole house", "accent": "whole house", "icon": "key", "sub": "cancer · a lesson"},
+    {"text": "it has to be mutual. let someone keep you", "accent": "mutual", "icon": "heart", "sub": "align · a rule"},
+    {"text": "cancer, what's in your shoebox?", "accent": "shoebox", "icon": "glyph:cancer", "sub": "tell the moon"}
+  ],
+  "end": "align",
+  "endSub": "a new deal at 11:11"
+}
