@@ -75,9 +75,9 @@ function palette(color) {
     base: color,
     light: mixHex(color, '#fff7e6', 0.42),
     hi: mixHex(color, '#ffffff', 0.72),
-    shade: mixHex(color, '#3a1460', 0.28),
-    deep: mixHex(color, '#2a0f4a', 0.5),
-    line: mixHex(color, '#120826', 0.78),
+    shade: mixHex(color, '#b0306a', 0.26),
+    deep: mixHex(color, '#6a1f6e', 0.42),
+    line: mixHex(color, '#1a0b33', 0.72),
     blush: mixHex(color, '#ff4f86', 0.6),
   }
   PAL.set(color, p); return p
@@ -92,7 +92,7 @@ function bodyMask() {
   for (let j = 0; j < G; j++) for (let i = 0; i < G; i++) {
     const u = (i + 0.5 - HALF) / (HALF * 0.93), v = (j + 0.5 - HALF) / (HALF * 0.93)
     // a round belly + four tapered points (the drawPixelStar cross, grown chubby)
-    const belly = u * u + v * v <= 0.6 * 0.6
+    const belly = u * u + v * v <= 0.62 * 0.62
     const pt = (a, b) => a <= 1 && b <= 0.62 * Math.pow(Math.max(0, 1 - a), 1.15)
     if (belly || pt(Math.abs(u), Math.abs(v)) || pt(Math.abs(v), Math.abs(u))) m[j * G + i] = 1
   }
@@ -251,7 +251,7 @@ function glowAt(ctx, x, y, r, color, a) {
   if (a <= 0) return
   ctx.save(); ctx.globalCompositeOperation = 'lighter'
   const g = ctx.createRadialGradient(x, y, 0, x, y, r)
-  g.addColorStop(0, rgba(color, 0.42 * a)); g.addColorStop(0.35, rgba(color, 0.16 * a)); g.addColorStop(1, rgba(color, 0))
+  g.addColorStop(0, rgba(color, 0.5 * a)); g.addColorStop(0.4, rgba(color, 0.2 * a)); g.addColorStop(1, rgba(color, 0))
   ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill()
   ctx.restore()
 }
@@ -292,7 +292,7 @@ export function drawStarChar(ctx, x, y, size, t, opts = {}) {
   const base = S * 0.32                                      // squash anchor: the bottom of the belly
   ctx.save()
   ctx.globalAlpha *= alpha
-  glowAt(ctx, x, cy, S * 0.78, color, glow * (0.9 + 0.1 * Math.sin(t * 2.6 + seed)))
+  glowAt(ctx, x, cy, S * 0.9, color, glow * (0.9 + 0.1 * Math.sin(t * 2.6 + seed)))
   ctx.translate(Math.round(x), Math.round(cy + base)); ctx.scale(sx, sy)
   const sm = ctx.imageSmoothingEnabled
   ctx.imageSmoothingEnabled = false
