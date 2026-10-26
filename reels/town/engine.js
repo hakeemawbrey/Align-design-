@@ -173,7 +173,7 @@ function skyTexture(mood) {
   const [c, x] = canvas(2048, 1024)
   const m = {
     dusk: ['#2e2744', '#5e4f7e', '#b39cc4', '#e8cdd2'],
-    night: ['#0d0d18', '#1f1d2e', '#4a4252', '#6e5f63'],
+    night: ['#141026', '#2a2148', '#5e4a78', '#8a6a86'],
     sepia: ['#3a2630', '#7a4f58', '#d0988a', '#f0c9a8'],
   }[mood] || ['#1d1a26', '#3c3542', '#8a7a80', '#b59d8f']
   const g = x.createLinearGradient(0, 0, 0, 1024)
@@ -298,14 +298,19 @@ function cardTexture(beat, sign) {
   x.strokeRect(40, 40, Wc - 80, Hc - 80)
   x.strokeStyle = 'rgba(70,60,52,0.25)'; x.lineWidth = 2
   x.strokeRect(56, 56, Wc - 112, Hc - 112)
-  drawIcon(x, beat.icon || 'star', Wc / 2, 300, 220, ROSE)
+  drawIcon(x, beat.icon || 'star', Wc / 2, 250, 170, ROSE)
   // the line
-  const size = beat.text.length > 36 ? 90 : beat.text.length > 30 ? 100 : 112
+  const size = beat.text.length > 36 ? 104 : beat.text.length > 26 ? 116 : 128
   x.font = `italic 500 ${size}px "EB Garamond", serif`
   x.textAlign = 'left'; x.textBaseline = 'middle'
-  const lines = wrapWords(x, beat.text, Wc - 190)
+  // balance the lines: the narrowest width that still needs no more lines
+  const maxW = Wc - 170
+  const count = wrapWords(x, beat.text, maxW).length
+  let lo = 200, hi = maxW
+  while (hi - lo > 4) { const mid = (lo + hi) / 2; if (wrapWords(x, beat.text, mid).length > count) lo = mid; else hi = mid }
+  const lines = wrapWords(x, beat.text, hi)
   const lh = size * 1.12
-  const top = 690 - ((lines.length - 1) * lh) / 2
+  const top = 640 - ((lines.length - 1) * lh) / 2
   const accent = (beat.accent || '').toLowerCase().split(/\s+/).filter(Boolean)
   lines.forEach((ws, li) => {
     const full = ws.join(' ')
@@ -658,7 +663,6 @@ function constellationTexture(sign) {
   }
   x.fillStyle = 'rgba(255,240,215,0.8)'
   x.font = '44px "Space Mono", monospace'; x.textAlign = 'center'
-  x.fillText(sign.toUpperCase().split('').join(' '), 512, 960)
   return tex(c)
 }
 
@@ -719,9 +723,9 @@ window.setup = async (script, assets) => {
   for (const [k, src] of Object.entries(assets.images)) imgs[k] = await loadImg(src)
 
   const mood = script.sky || 'dusk'
-  const haze = { dusk: '#b9a4c8', night: '#4a4060', sepia: '#d2a493' }[mood] || '#b9a4c8'
+  const haze = { dusk: '#b9a4c8', night: '#5a4874', sepia: '#d2a493' }[mood] || '#b9a4c8'
   scene.fog = new THREE.Fog(haze, 16, 70)
-  scene.add(new THREE.HemisphereLight('#ecd8f4', '#7a5a4a', 1.9))
+  scene.add(new THREE.HemisphereLight('#ecd8f4', '#7a5a4a', mood === 'night' ? 1.25 : 1.9))
   const key = new THREE.DirectionalLight('#ffe2c0', 1.3)
   key.position.set(-20, 30, 10); scene.add(key)
 
@@ -748,9 +752,14 @@ window.setup = async (script, assets) => {
   for (const ch of script.id) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0
   const R = rng(hash)
   const a0 = -Math.PI / 2 + R() * Math.PI * 2
+  camera.fov = 50 + R() * 10; camera.updateProjectionMatrix()
+  const baseDist = 4.4 + R() * 1.0
+  const eye = 1.5 + R() * 0.5
+  let outerNext = R() < 0.5
   S.holds = beats.map((b, i) => {
     const ang = a0 + i * step
-    const outer = i % 2 === 0
+    const outer = outerNext
+    outerNext = R() < 0.75 ? !outerNext : outerNext
     const dir = new THREE.Vector3(Math.cos(ang), 0, Math.sin(ang))
     const rP = outer ? 10 : 3.2
     const P = dir.clone().multiplyScalar(rP)
@@ -758,13 +767,13 @@ window.setup = async (script, assets) => {
     const yaw = Math.atan2(face.x, face.z)
     const cardTex = cardTexture(b, sign)
     easel(cardTex, 1.5, 2.0, P, yaw, 1.6)
-    const dist = 4.9
+    const dist = i === 0 ? 3.9 : baseDist
     const cam = P.clone().addScaledVector(face, dist)
-    cam.y = 1.75
-    const side = i % 2 ? -1 : 1 // card sits left or right of centre
+    cam.y = eye
+    const side = R() < 0.5 ? -1 : 1 // card sits left or right of centre
     const tangent = new THREE.Vector3(face.z, 0, -face.x)
-    const look = P.clone().addScaledVector(tangent, side * 0.5)
-    look.y = 2.0
+    const look = P.clone().addScaledVector(tangent, side * 0.3)
+    look.y = 2.0 + (eye - 1.75) * 0.5
     const dx = look.x - cam.x, dz = look.z - cam.z
     return { P, face, tangent, side, cam, yaw: Math.atan2(dx, dz), pitch: Math.atan2(look.y - cam.y, Math.hypot(dx, dz)) }
   })
@@ -855,21 +864,23 @@ window.setup = async (script, assets) => {
   // paper cutouts of the sign figures, hung round the sky; the reel's own
   // sign goes behind the first card, big
   S.ghosts = []
-  const others = script.ghosts || [6, 4, 8, 3, 9].map((k) => SIGNS[(SIGNS.indexOf(sign) + k) % 12])
+  const others = script.ghosts || [6, 4, 8, 3, 9, 2, 10].map((k) => SIGNS[(SIGNS.indexOf(sign) + k) % 12])
+  const shapes = ['arch', 'circle', 'card']
+  const heroShape = Math.floor(R() * 3)
   const h0dir = Math.atan2(-S.holds[0].face.z, -S.holds[0].face.x)
   ;[sign, ...others].forEach((s, i) => {
     const img = imgs['figure:' + s]
     if (!img) return
-    const size = i ? 8 + R() * 4 : 11
-    const [map, aspect] = cutoutTexture(img, ['arch', 'circle', 'card'][i % 3], s)
+    const size = i ? 10 + R() * 5 : 11
+    const [map, aspect] = cutoutTexture(img, shapes[(heroShape + i) % 3], s)
     const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size * aspect), new THREE.MeshBasicMaterial({ map, transparent: true, alphaTest: 0.05, depthWrite: false, fog: false }))
     const ang = i ? h0dir + 0.9 + (i - 1) * ((Math.PI * 2 - 1.8) / Math.max(1, others.length - 1)) : h0dir + 0.12 * S.holds[0].side
-    const r = 42
-    m.position.set(Math.cos(ang) * r, i ? 15 + R() * 12 : 12.5, Math.sin(ang) * r)
+    const r = i ? 30 : 42
+    m.position.set(Math.cos(ang) * r, i ? 11 + R() * 9 : 15.5, Math.sin(ang) * r)
     m.lookAt(0, m.position.y * 0.6, 0)
     m.renderOrder = -1
     scene.add(m)
-    S.ghosts.push({ m, base: m.position.clone(), i, spin: (R() - 0.5) * 0.12 })
+    S.ghosts.push({ m, base: m.position.clone(), q0: m.quaternion.clone(), i, spin: (R() - 0.5) * 0.12 })
   })
 
   {
@@ -966,7 +977,7 @@ function cameraAt(t) {
   let pos, yaw, pitch
   const holdPose = (h, u) => {
     // slow push toward the card while holding (a bigger one on the hook)
-    const p = h.cam.clone().addScaledVector(h.face, (h === H_[0] ? -1.1 : -0.5) * ease(u))
+    const p = h.cam.clone().addScaledVector(h.face, (h === H_[0] ? -0.6 : -0.45) * ease(u))
     return p
   }
   if (t >= n * BEAT) {
@@ -976,7 +987,7 @@ function cameraAt(t) {
     const target = S.moonPos
     const away = new THREE.Vector3(-target.x, 0, -target.z).normalize()
     pos = holdPose(h, 1).lerp(away.multiplyScalar(6).setY(8), u)
-    const ty = Math.atan2(target.x - pos.x, target.z - pos.z)
+    const ty = Math.atan2(target.x - pos.x, target.z - pos.z) + 0.15
     const tp = Math.atan2(target.y - pos.y, Math.hypot(target.x - pos.x, target.z - pos.z)) * 0.72
     yaw = angLerp(h.yaw, ty, u)
     pitch = lerp(h.pitch, tp, u)
@@ -988,7 +999,7 @@ function cameraAt(t) {
     const rA = Math.hypot(pa.x, pa.z), rB = Math.hypot(b.cam.x, b.cam.z)
     const ang = angLerp(angA, angB, u)
     const rad = lerp(rA, rB, u) + Math.sin(u * Math.PI) * 0.8
-    pos = new THREE.Vector3(Math.cos(ang) * rad, 1.75 + Math.sin(u * Math.PI) * 0.25, Math.sin(ang) * rad)
+    pos = new THREE.Vector3(Math.cos(ang) * rad, b.cam.y + Math.sin(u * Math.PI) * 0.25, Math.sin(ang) * rad)
     // glance along the walk, then settle on the next card
     const walkYaw = Math.atan2(-pos.x, -pos.z)
     yaw = u < 0.5 ? angLerp(a.yaw, walkYaw, ease(u * 2) * 0.3) : angLerp(angLerp(a.yaw, walkYaw, 0.3), b.yaw, ease((u - 0.5) * 2))
@@ -1019,8 +1030,9 @@ window.frame = (t) => {
   const n = S.holds.length
   const at = (k) => {
     const h = S.holds[Math.min(n - 1, k)]
-    if (k % 2 === 1 && k !== n - 1) return h.P.clone().addScaledVector(h.tangent, h.side * 2.4).addScaledVector(h.face, -2.6)
-    return h.P.clone().addScaledVector(h.tangent, h.side * 1.25).addScaledVector(h.face, 0.25)
+    // in front of the card on the open side, or peeking out from behind its edge
+    if (k % 2 === 1 && k !== n - 1) return h.P.clone().addScaledVector(h.tangent, h.side * 0.95).addScaledVector(h.face, -0.4)
+    return h.P.clone().addScaledVector(h.tangent, h.side * 0.95).addScaledVector(h.face, 0.6)
   }
   let wp
   const i = c.i
@@ -1028,10 +1040,9 @@ window.frame = (t) => {
   else if (i > 0 && c.local < TRAVEL) wp = at(i - 1).lerp(at(i), ease(c.local / TRAVEL))
   else wp = at(i)
   if (t < BEAT) {
-    // opening: peeking out from behind the foreground lamppost
+    // opening: already in frame, hopping across to its spot
     const h = S.holds[0]
-    // opening: hops in from the side of the frame
-    const from = at(0).addScaledVector(h.tangent, h.side * 1.2)
+    const from = at(0).addScaledVector(h.tangent, h.side * 0.5)
     wp = from.lerp(at(0), ease(t / 0.9))
   }
   const hop = Math.abs(Math.sin(t * 6)) * 0.08
@@ -1045,15 +1056,23 @@ window.frame = (t) => {
   S.hands.hour.rotation.z = -((minutes / 60) % 12 / 12) * Math.PI * 2
   S.hands.flag.rotation.y = Math.sin(t * 2) * 0.25
 
-  for (const g of S.ghosts) { g.m.position.y = g.base.y + Math.sin(t * 0.4 + g.i) * 0.8; g.m.rotation.z = Math.sin(t * 0.25 + g.i) * 0.05 + g.spin }
+    const Z = new THREE.Vector3(0, 0, 1)
+  const outro = clamp((t - S.holds.length * BEAT) / 1.2)
+  for (const g of S.ghosts) {
+    g.m.position.y = g.base.y + Math.sin(t * 0.4 + g.i) * 0.8
+    g.m.quaternion.copy(g.q0).multiply(new THREE.Quaternion().setFromAxisAngle(Z, Math.sin(t * 0.25 + g.i) * 0.05 + g.spin))
+    if (g.i) g.m.material.opacity = 1 - outro
+  }
   for (const k of S.cards) {
     const a = k.ang + t * 0.05
     k.m.position.set(Math.cos(a) * k.r, k.y + Math.sin(t * 0.8 + k.ph) * 0.25, Math.sin(a) * k.r)
-    k.m.rotation.y = t * 0.5 + k.ph
-    k.m.rotation.z = Math.sin(t * 0.6 + k.ph) * 0.15
+    k.m.lookAt(camera.position)
+    k.m.rotateY(Math.sin(t * 0.5 + k.ph) * 1.1)
+    k.m.rotateZ(Math.sin(t * 0.6 + k.ph) * 0.15)
+    k.m.visible = outro < 0.98
+    k.m.children.forEach((c) => { c.material.opacity = 1 - outro })
   }
   S.rays.material.rotation = t * 0.12
-  const outro = clamp((t - S.holds.length * BEAT) / 1.2)
   S.rays.material.opacity = (0.5 + Math.sin(t * 1.7) * 0.15) * (1 - outro)
   const p = S.moteGeo.attributes.position
   S.motes.forEach(([x, y, z, ph], k) => {
@@ -1074,7 +1093,7 @@ window.frame = (t) => {
   if (end > 0) {
     o.globalAlpha = end
     const plate = o.createRadialGradient(W / 2, H * 0.66, 0, W / 2, H * 0.66, 480)
-    plate.addColorStop(0, 'rgba(20,12,30,0.55)'); plate.addColorStop(1, 'rgba(20,12,30,0)')
+    plate.addColorStop(0, 'rgba(20,12,30,0.72)'); plate.addColorStop(1, 'rgba(20,12,30,0)')
     o.fillStyle = plate; o.fillRect(0, H * 0.66 - 480, W, 960)
     o.fillStyle = PAPER
     o.textAlign = 'center'; o.textBaseline = 'middle'
@@ -1086,6 +1105,5 @@ window.frame = (t) => {
     o.globalAlpha = 1
   }
   // a quick fade in from black on the very first frames
-  if (t < 0.25) { o.fillStyle = `rgba(0,0,0,${1 - t / 0.25})`; o.fillRect(0, 0, W, H) }
   return S.out.toDataURL('image/jpeg', 0.9)
 }
