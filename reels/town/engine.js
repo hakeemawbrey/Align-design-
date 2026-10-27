@@ -8,8 +8,8 @@ import * as THREE from 'three'
 const W = 1080
 const H = 1920
 const FPS = 30
-const BEAT = 3.4 // seconds per line
-const TRAVEL = 0.95 // of which walking to the next card
+const BEAT = 3.6 // seconds per line
+const TRAVEL = 1.4 // of which walking to the next card
 const OUTRO = 3.2
 
 const INK = '#2b2522'
@@ -759,20 +759,20 @@ window.setup = async (script, assets) => {
   S.holds = beats.map((b, i) => {
     const ang = a0 + i * step
     const outer = outerNext
-    outerNext = R() < 0.75 ? !outerNext : outerNext
+    outerNext = R() < 0.25 ? !outerNext : outerNext
     const dir = new THREE.Vector3(Math.cos(ang), 0, Math.sin(ang))
-    const rP = outer ? 10 : 3.2
+    const rP = outer ? 10 : 4.4
     const P = dir.clone().multiplyScalar(rP)
     const face = outer ? dir.clone().negate() : dir.clone()
     const yaw = Math.atan2(face.x, face.z)
     const cardTex = cardTexture(b, sign)
-    easel(cardTex, 1.5, 2.0, P, yaw, 1.6)
-    const dist = i === 0 ? 3.9 : baseDist
+    easel(cardTex, 1.5, 2.0, P, yaw, 1.6).userData.card = true
+    const dist = i === 0 ? 5.0 : baseDist
     const cam = P.clone().addScaledVector(face, dist)
     cam.y = eye
     const side = R() < 0.5 ? -1 : 1 // card sits left or right of centre
     const tangent = new THREE.Vector3(face.z, 0, -face.x)
-    const look = P.clone().addScaledVector(tangent, side * 0.3)
+    const look = P.clone().addScaledVector(tangent, i === 0 ? side * 0.12 : side * 0.3)
     look.y = 2.0 + (eye - 1.75) * 0.5
     const dx = look.x - cam.x, dz = look.z - cam.z
     return { P, face, tangent, side, cam, yaw: Math.atan2(dx, dz), pitch: Math.atan2(look.y - cam.y, Math.hypot(dx, dz)) }
@@ -957,12 +957,20 @@ window.setup = async (script, assets) => {
         for (const hit of ray.intersectObjects(scene.children, true)) {
           if (hit.object.isSprite || hit.object.isPoints || hit.object.isLine) continue
           const g = top(hit.object)
-          if (g === sky || g === ground || g === wheel || g === S.walker || S.cards.some((k) => k.m === g)) continue
+          if (g === sky || g === ground || g === wheel || g === S.walker || g.userData.card || S.cards.some((k) => k.m === g)) continue
           g.visible = false
         }
       }
     }
   })
+
+  // and nothing the camera would walk through
+  const box = new THREE.Box3()
+  const solid = scene.children.filter((g) => g !== sky && g !== ground && g !== wheel && g !== S.walker && !g.userData.card && !g.isSprite && !g.isPoints && !g.isLine && !S.cards.some((k) => k.m === g) && g.position.length() < 20)
+  for (let k = 1; k < n; k++) for (let f = 0; f <= TRAVEL; f += 0.1) {
+    const p = cameraAt(k * BEAT + f).pos
+    for (const g of solid) if (g.visible && box.setFromObject(g).distanceToPoint(p) < 1.0) g.visible = false
+  }
 
   S.duration = n * BEAT + OUTRO
   return { duration: S.duration, frames: Math.round(S.duration * FPS), beat: BEAT }
@@ -977,23 +985,24 @@ function cameraAt(t) {
   let pos, yaw, pitch
   const holdPose = (h, u) => {
     // slow push toward the card while holding (a bigger one on the hook)
-    const p = h.cam.clone().addScaledVector(h.face, (h === H_[0] ? -0.6 : -0.45) * ease(u))
-    return p
+    if (h === H_[0]) return h.cam.clone().addScaledVector(h.face, -0.75 * (1 - Math.pow(1 - clamp(u * 2.2), 3)))
+    return h.cam.clone().addScaledVector(h.face, -0.45 * ease(u))
   }
   if (t >= n * BEAT) {
     // outro: turn from the last card up to the clock and the moon
     const h = H_[n - 1]
-    const u = easeIO((t - n * BEAT) / (OUTRO * 0.85))
+    const u = easeIO((t - n * BEAT) / (OUTRO * 0.6))
     const target = S.moonPos
     const away = new THREE.Vector3(-target.x, 0, -target.z).normalize()
     pos = holdPose(h, 1).lerp(away.multiplyScalar(6).setY(8), u)
-    const ty = Math.atan2(target.x - pos.x, target.z - pos.z) + 0.15
+    const ty = Math.atan2(target.x - pos.x, target.z - pos.z) + 0.35
     const tp = Math.atan2(target.y - pos.y, Math.hypot(target.x - pos.x, target.z - pos.z)) * 0.72
     yaw = angLerp(h.yaw, ty, u)
     pitch = lerp(h.pitch, tp, u)
   } else if (i > 0 && local < TRAVEL) {
     const a = H_[i - 1], b = H_[i]
-    const u = easeIO(local / TRAVEL)
+    const v = local / TRAVEL
+    const u = easeIO(v)
     const pa = holdPose(a, 1)
     const angA = Math.atan2(pa.z, pa.x), angB = Math.atan2(b.cam.z, b.cam.x)
     const rA = Math.hypot(pa.x, pa.z), rB = Math.hypot(b.cam.x, b.cam.z)
@@ -1001,8 +1010,12 @@ function cameraAt(t) {
     const rad = lerp(rA, rB, u) + Math.sin(u * Math.PI) * 0.8
     pos = new THREE.Vector3(Math.cos(ang) * rad, b.cam.y + Math.sin(u * Math.PI) * 0.25, Math.sin(ang) * rad)
     // glance along the walk, then settle on the next card
-    const walkYaw = Math.atan2(-pos.x, -pos.z)
-    yaw = u < 0.5 ? angLerp(a.yaw, walkYaw, ease(u * 2) * 0.3) : angLerp(angLerp(a.yaw, walkYaw, 0.3), b.yaw, ease((u - 0.5) * 2))
+    // one turn in one direction, with a small glance along the way if it agrees
+    const wrap = (d) => ((d + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI
+    const d = wrap(b.yaw - a.yaw)
+    const g = wrap(Math.atan2(-pos.x, -pos.z) - a.yaw)
+    const glance = Math.sign(g) === Math.sign(d) ? Math.sign(d) * Math.min(0.15, Math.abs(g)) : 0
+    yaw = a.yaw + d * ease(v) + glance * Math.sin(v * Math.PI)
     pitch = lerp(a.pitch, b.pitch, u) + Math.sin(u * Math.PI) * 0.12
   } else {
     const h = H_[i]
@@ -1031,7 +1044,7 @@ window.frame = (t) => {
   const at = (k) => {
     const h = S.holds[Math.min(n - 1, k)]
     // in front of the card on the open side, or peeking out from behind its edge
-    if (k % 2 === 1 && k !== n - 1) return h.P.clone().addScaledVector(h.tangent, h.side * 0.95).addScaledVector(h.face, -0.4)
+    if ((k % 2 === 1 || k === 0) && k !== n - 1) return h.P.clone().addScaledVector(h.tangent, h.side * 0.95).addScaledVector(h.face, -0.4)
     return h.P.clone().addScaledVector(h.tangent, h.side * 0.95).addScaledVector(h.face, 0.6)
   }
   let wp
@@ -1042,8 +1055,8 @@ window.frame = (t) => {
   if (t < BEAT) {
     // opening: already in frame, hopping across to its spot
     const h = S.holds[0]
-    const from = at(0).addScaledVector(h.tangent, h.side * 0.5)
-    wp = from.lerp(at(0), ease(t / 0.9))
+    const from = at(0).addScaledVector(h.tangent, -h.side * 0.35)
+    wp = from.lerp(at(0), ease((t - 0.15) / 0.8))
   }
   const hop = Math.abs(Math.sin(t * 6)) * 0.08
   S.walker.position.set(wp.x, hop, wp.z)
@@ -1061,7 +1074,7 @@ window.frame = (t) => {
   for (const g of S.ghosts) {
     g.m.position.y = g.base.y + Math.sin(t * 0.4 + g.i) * 0.8
     g.m.quaternion.copy(g.q0).multiply(new THREE.Quaternion().setFromAxisAngle(Z, Math.sin(t * 0.25 + g.i) * 0.05 + g.spin))
-    if (g.i) g.m.material.opacity = 1 - outro
+    g.m.material.opacity = 1 - outro
   }
   for (const k of S.cards) {
     const a = k.ang + t * 0.05
@@ -1092,16 +1105,16 @@ window.frame = (t) => {
   const end = clamp((t - (n * BEAT + 1.2)) / 1.0)
   if (end > 0) {
     o.globalAlpha = end
-    const plate = o.createRadialGradient(W / 2, H * 0.66, 0, W / 2, H * 0.66, 480)
-    plate.addColorStop(0, 'rgba(20,12,30,0.72)'); plate.addColorStop(1, 'rgba(20,12,30,0)')
-    o.fillStyle = plate; o.fillRect(0, H * 0.66 - 480, W, 960)
+    const plate = o.createRadialGradient(W / 2, H * 0.3, 0, W / 2, H * 0.3, 480)
+    plate.addColorStop(0, 'rgba(20,12,30,0.85)'); plate.addColorStop(1, 'rgba(20,12,30,0)')
+    o.fillStyle = plate; o.fillRect(0, H * 0.3 - 480, W, 960)
     o.fillStyle = PAPER
     o.textAlign = 'center'; o.textBaseline = 'middle'
     o.font = 'italic 500 150px "EB Garamond", serif'
-    o.fillText(S.script.end || 'align', W / 2, H * 0.64)
+    o.fillText(S.script.end || 'align', W / 2, H * 0.28)
     o.font = '700 40px "Space Mono", monospace'
     o.fillStyle = 'rgba(243,236,224,0.85)'
-    o.fillText((S.script.endSub || 'a new deal at 11:11').toUpperCase().split('').join('\u200A'), W / 2, H * 0.64 + 120)
+    o.fillText((S.script.endSub || 'a new deal at 11:11').toUpperCase().split('').join('\u200A'), W / 2, H * 0.28 + 120)
     o.globalAlpha = 1
   }
   // a quick fade in from black on the very first frames

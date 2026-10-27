@@ -118,7 +118,7 @@ async function renderOne(browser, file) {
   ff.stdin.end()
   await done
   execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', mp4, '-vf', 'scale=720:-2', '-c:v', 'libx264', '-preset', 'slow',
-    '-crf', '25', '-maxrate', '2M', '-bufsize', '4M', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k',
+    '-crf', '25', '-maxrate', '2M', '-bufsize', '4M', '-pix_fmt', 'yuv420p', '-c:a', 'copy',
     '-movflags', '+faststart', path.join(outDir, `${script.id}.web.mp4`)])
   await page.close()
   console.log(`${script.id}: ${frames} frames in ${((Date.now() - t0) / 1000).toFixed(0)}s → ${path.relative(REPO, mp4)}`)
