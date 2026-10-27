@@ -3,11 +3,11 @@
 // ═══════════════════════════════════════ API (copy-paste) ═══════════════════════════════════════
 //   import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, STAR, signStar } from '../../startalk.js'
 //
-// drawStarChar(ctx, x, y, size, t, opts)   draws one pixel-star character centred on (x, y). size = tip-to-tip px
-//   (about 160–360 for a hero; 60–120 for a crowd). Crisp pixels (a 28-cell sprite scaled with smoothing off) + a soft glow.
+// drawStarChar(ctx, x, y, size, t, opts)   draws one pixel five-pointed-star character centred on (x, y). size = sprite px
+//   (about 160–360 for a hero; 60–120 for a crowd). Crisp pixels (a 36-cell chubby ★ sprite scaled with smoothing off) + a soft glow + twinkles.
 //   opts (all optional):
 //     color   body colour (hex). STAR.sky (warm gold) is "the stars" narrator; signStar('scorpio') → { color, glyph }.
-//     glyph   small badge in the lower-right notch, e.g. '♏' (null = no badge; skip it below ~120 px).
+//     glyph   small coin badge pinned on the lower-right point, e.g. '♏' (null = no badge; skip it below ~120 px).
 //     mood    'neutral' | 'happy' (^ ^) | 'wink' | 'squint' | 'wide' (surprised: whites + pupils) | 'heart' (beating)
 //             | 'eyeroll' (pupils up, sweeping) | 'sleepy' (– – plus rising pixel z's) | 'sparkle' (big glossy soft eyes)
 //     look    [x, y] in −1…1: where the pupils point (snapped to whole pixels). [0, 0] = straight at you.
@@ -20,7 +20,7 @@
 //     seed    integer, to de-sync blinks/glances/bob in a crowd (default 1).
 //     glow    glow strength 0…1.5 (default 1).   alpha  0…1.   pop  0…1 scale (use easeOutBack for pop-ins).
 //     blush   true/false/0…1 cheek pixels (default: on for happy, wink, heart, sparkle).
-//     zzz     sleepy z's on/off (default true).   tips  tip twinkles on/off (default true).
+//     zzz     sleepy z's on/off (default true).   tips  tip + floating twinkles on/off (default true).
 //   Returns { x, y, size, top } (top = y of the upper tip, handy for placing things above it).
 //   Pure f(t): no state, safe to call any number of times per frame, any frame order.
 //
@@ -68,56 +68,92 @@ const TAU = Math.PI * 2
 const toHex = (r, g, b) => '#' + [r, g, b].map(v => Math.round(clamp(v, 0, 255)).toString(16).padStart(2, '0')).join('')
 const mixHex = (a, b, k) => { const A = hexToRgb(a), B = hexToRgb(b); return toHex(...A.map((v, i) => lerp(v, B[i], k))) }
 const rgba = (hex, a) => { const [r, g, b] = hexToRgb(hex); return `rgba(${r},${g},${b},${clamp(a)})` }
+const lum = hex => { const [r, g, b] = hexToRgb(hex); return (0.299 * r + 0.587 * g + 0.114 * b) / 255 }
 const PAL = new Map()
+/** a glowing-toy palette from any colour: the body is lifted toward warm white (more for darker colours) so every sign
+ *  reads as a lit star, and the true sign colour comes back as the shade band + rim */
 function palette(color) {
   if (PAL.has(color)) return PAL.get(color)
+  const lift = clamp((0.78 - lum(color)) * 0.75, 0.1, 0.5)
+  const body = mixHex(color, '#fff3dc', lift)
   const p = {
     base: color,
-    light: mixHex(color, '#fff7e6', 0.42),
-    hi: mixHex(color, '#ffffff', 0.72),
-    shade: mixHex(color, '#b0306a', 0.26),
-    deep: mixHex(color, '#6a1f6e', 0.42),
-    line: mixHex(color, '#1a0b33', 0.72),
-    blush: mixHex(color, '#ff4f86', 0.6),
+    body,
+    core: mixHex(body, '#fffbea', 0.2),
+    light: mixHex(body, '#fffbea', 0.5),
+    hi: '#fffef6',
+    shade: mixHex(color, '#a02a6c', 0.14),
+    deep: mixHex(color, '#4a1660', 0.42),
+    line: mixHex(color, '#140a2e', 0.74),
+    blush: mixHex(color, '#ff5c8e', 0.72),
   }
   PAL.set(color, p); return p
 }
 
-// ─────────────────────────────────────────────── the body (28-cell grid)
-const G = 28, HALF = G / 2
-let MASK = null
-function bodyMask() {
-  if (MASK) return MASK
-  const m = new Uint8Array(G * G)
-  for (let j = 0; j < G; j++) for (let i = 0; i < G; i++) {
-    const u = (i + 0.5 - HALF) / (HALF * 0.93), v = (j + 0.5 - HALF) / (HALF * 0.93)
-    // a round belly + four tapered points (the drawPixelStar cross, grown chubby)
-    const belly = u * u + v * v <= 0.62 * 0.62
-    const pt = (a, b) => a <= 1 && b <= 0.62 * Math.pow(Math.max(0, 1 - a), 1.15)
-    if (belly || pt(Math.abs(u), Math.abs(v)) || pt(Math.abs(v), Math.abs(u))) m[j * G + i] = 1
+// ─────────────────────────────────────────────── the body: a chubby five-pointed star on a 36-cell grid
+const G = 36, HALF = G / 2
+const SC = { x: HALF, y: 19.6, R: 17.6, r: 9.4, round: 2.6 }   // centre, outer/inner radius (after rounding), tip rounding
+const TOP_ROW = SC.y - SC.R                                       // the upper tip (cells)
+const FOOT_ROW = SC.y + SC.R * Math.cos(Math.PI / 5)             // the two lower tips: squash anchor
+function starPoly() {
+  const V = [], R0 = SC.R - SC.round, r0 = SC.r - SC.round * 0.55
+  for (let k = 0; k < 10; k++) {
+    const a = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? r0 : R0
+    V.push([SC.x + Math.cos(a) * rr, SC.y + Math.sin(a) * rr])
   }
-  MASK = m; return m
+  return V
+}
+function sdPoly(px, py, V) {
+  let d = (px - V[0][0]) ** 2 + (py - V[0][1]) ** 2, s = 1
+  for (let i = 0, j = V.length - 1; i < V.length; j = i, i++) {
+    const ex = V[j][0] - V[i][0], ey = V[j][1] - V[i][1], wx = px - V[i][0], wy = py - V[i][1]
+    const h = clamp((wx * ex + wy * ey) / (ex * ex + ey * ey), 0, 1), bx = wx - ex * h, by = wy - ey * h
+    d = Math.min(d, bx * bx + by * by)
+    const c1 = py >= V[i][1], c2 = py < V[j][1], c3 = ex * wy > ey * wx
+    if ((c1 && c2 && c3) || (!c1 && !c2 && !c3)) s = -s
+  }
+  return s * Math.sqrt(d)
+}
+let BODY = null
+/** per cell: inside mask + a shading tone (0 body, 1 core, 2 light, 3 shade, 4 deep) — computed once */
+function bodyMask() {
+  if (BODY) return BODY
+  const V = starPoly(), sd = (x, y) => sdPoly(x, y, V) - SC.round
+  const m = new Uint8Array(G * G), tone = new Uint8Array(G * G)
+  const Lx = -0.62, Ly = -0.78                                   // light from the upper-left
+  for (let j = 0; j < G; j++) for (let i = 0; i < G; i++) {
+    const x = i + 0.5, y = j + 0.5, d = sd(x, y)
+    if (d > 0) continue
+    m[j * G + i] = 1
+    const e = 0.35, nx = sd(x + e, y) - sd(x - e, y), ny = sd(x, y + e) - sd(x, y - e), nl = Math.hypot(nx, ny) || 1
+    const facing = (nx * Lx + ny * Ly) / nl                       // +1: edge faces the light, −1: faces away
+    const rc = Math.hypot(x - SC.x, y - SC.y)
+    let tn = 0
+    if (d > -1.15 && facing < -0.25) tn = 4
+    else if (d > -2.1 && facing < -0.12) tn = 3
+    else if (d > -1.3 && facing > 0.3) tn = 2
+    tone[j * G + i] = tn
+  }
+  BODY = { m, tone }; return BODY
 }
 const inM = (m, i, j) => i >= 0 && j >= 0 && i < G && j < G && m[j * G + i] === 1
 
 // ─────────────────────────────────────────────── eyes (bitmaps: X ink, W white glint, w sclera, H heart)
 const BM = s => s.trim().split(/\s+/)
 const EYES = {
-  open: BM(`.XXX. XWWXX XWWXX XXXXX XXXWX .XXX.`),
-  half: BM(`..... ..... XXXXX XWXXX .XXX. .....`),
-  shut: BM(`..... ..... ..... XXXXX .XXX. .....`),
-  happy: BM(`..... .XXX. XX.XX X...X ..... .....`),
-  sleepy: BM(`..... ..... ..... XXXXX ..... .....`),
-  squint: BM(`..... ..... XXXXX XWXXX .XXX. .....`),
-  sparkle: BM(`.XXXX. XWWXXX XWWXXX XXXXXX XXXXWX XXXWXX .XXXX.`),
-  sclera: BM(`.XXXX. XwwwwX XwwwwX XwwwwX XwwwwX XwwwwX .XXXX.`),
-  heartBig: BM(`.HH.HH. HWHHHHH HHHHHHH .HHHHH. ..HHH.. ...H...`),
-  heartSmall: BM(`....... .H.H... HWHHH.. HHHHH.. .HHH... ..H.... .......`),
+  open: BM(`.XXXX. XWWXXX XWWXXX XWXXXX XXXXXX XXXXXX XXXXWX .XXXX.`),
+  half: BM(`...... ...... ...... ...... XXXXXX XWXXXX XXXXXX .XXXX.`),
+  shut: BM(`...... ...... ...... ...... ...... XXXXXX .XXXX. ......`),
+  happy: BM(`...... ...... .XXXX. XXXXXX XX..XX X....X ...... ......`),
+  sleepy: BM(`...... ...... ...... ...... XX..XX .XXXX. ...... ......`),
+  squint: BM(`...... ...... ...... XXXXXX XXXXXX XWXXXX .XXXX. ......`),
+  sparkle: BM(`..XXX.. .XXXXX. XWWXXXX XWWXXXX XWXXXXX XXXXXXX XXXXXWX .XXXWX. ..XXX..`),
+  sclera: BM(`.XXXX. XwwwwX XwwwwX XwwwwX XwwwwX XwwwwX XwwwwX .XXXX.`),
+  heartBig: BM(`.HH.HH. HWHHHHH HHHHHHH HHHHHHH .HHHHH. ..HHH.. ...H...`),
+  heartSmall: BM(`....... ....... .HH.HH. .HWHHH. .HHHHH. ..HHH.. ...H...`),
 }
-// heartSmall is drawn shifted so it stays centred on the big one
-EYES.heartSmall = BM(`....... ..H.H.. .HWHHH. .HHHHH. ..HHH.. ...H... .......`)
-
-const EYE_Y = 15, EYE_X = 10.5          // left eye centre (cells); the right eye mirrors around HALF
+const EYE_Y = 19.2, EYE_X = 13.4         // left eye centre (cells); the right eye mirrors around HALF
+const CHEEK_Y = 23, CHEEKS = [10, 11, 12, 23, 24, 25]
 
 /** natural blink closure 0…1 at time t (deterministic per seed): blinks every ~2.5–4.5 s, sometimes a double blink */
 function autoBlink(t, seed) {
@@ -146,41 +182,36 @@ function buffer() {
   return BUF
 }
 
+// the five tips (cells), clockwise from the top; the badge sits on the lower-right one
+const TIPS = Array.from({ length: 5 }, (_, k) => { const a = -Math.PI / 2 + k * TAU / 5, rr = SC.R - 1.3; return [Math.floor(SC.x + Math.cos(a) * rr), Math.floor(SC.y + Math.sin(a) * rr)] })
+const BADGE = { x: 27.6, y: 29.4, r: 4.3 }
+
 /** paint the sprite for this frame into the G×G buffer */
 function paintSprite(t, P, mood, lx, ly, closure, blush, tips, seed, glyph) {
-  const { x } = buffer(), m = bodyMask()
+  const { x } = buffer(), { m, tone } = bodyMask()
   x.clearRect(0, 0, G, G)
   const px = (i, j, c) => { x.fillStyle = c; x.fillRect(i, j, 1, 1) }
-  // body with banded light from the upper-left
+  const TONES = [P.body, P.core, P.light, P.shade, P.deep]
   for (let j = 0; j < G; j++) for (let i = 0; i < G; i++) {
     if (!inM(m, i, j)) {
       if (inM(m, i + 1, j) || inM(m, i - 1, j) || inM(m, i, j + 1) || inM(m, i, j - 1)) px(i, j, P.line)
       continue
     }
-    const u = (i + 0.5 - HALF) / HALF, v = (j + 0.5 - HALF) / HALF
-    let c = P.base
-    const edgeBR = !inM(m, i + 1, j) || !inM(m, i, j + 1), edgeTL = !inM(m, i - 1, j) || !inM(m, i, j - 1)
-    if (u * 0.55 + v * 0.85 > 0.5) c = P.shade
-    if (edgeBR) c = P.deep
-    else if (edgeTL) c = P.light
-    const du = u + 0.24, dv = v + 0.3
-    if (du * du + dv * dv < 0.03) c = P.light
-    px(i, j, c)
+    px(i, j, TONES[tone[j * G + i]])
   }
-  // belly glint
-  px(8, 9, P.hi); px(9, 9, P.hi); px(8, 10, P.hi); px(9, 8, P.light)
+  // toy gloss: a highlight streak down the upper-left of the top arm + a dot on the left arm
+  for (const [i, j] of [[16, 6], [16, 7], [15, 8], [15, 9], [16, 5]]) px(i, j, P.hi)
+  for (const [i, j] of [[7, 15], [8, 15], [6, 16]]) px(i, j, P.light)
+  px(7, 15, P.hi)
   // tip twinkles: each tip flashes white now and then
-  if (tips) {
-    const TIPS = [[HALF - 1, 1], [HALF, 1], [1, HALF - 1], [1, HALF], [G - 2, HALF - 1], [G - 2, HALF], [HALF - 1, G - 2], [HALF, G - 2]]
-    for (let k = 0; k < 4; k++) {
-      const ph = (t * 0.55 + k * 0.29 + seed * 0.17) % 1
-      if (ph < 0.06) { for (const [i, j] of TIPS.slice(k * 2, k * 2 + 2)) if (inM(m, i, j)) px(i, j, '#fff7e6') }
-    }
+  if (tips) for (let k = 0; k < 5; k++) {
+    const ph = (t * 0.5 + k * 0.23 + seed * 0.17) % 1
+    if (ph < 0.07) { const [i, j] = TIPS[k]; for (const [a, b] of [[0, 0], [1, 0], [0, 1], [-1, 0], [0, -1]]) if (inM(m, i + a, j + b)) px(i + a, j + b, a || b ? P.light : P.hi) }
   }
   // cheeks
   if (blush > 0) {
     x.globalAlpha = clamp(blush)
-    for (const i of [6, 7, 20, 21]) px(i, 18, P.blush)
+    for (const i of CHEEKS) { px(i, CHEEK_Y, P.blush); px(i, CHEEK_Y + 1, P.blush) }
     x.globalAlpha = 1
   }
   // eyes
@@ -200,7 +231,7 @@ function paintSprite(t, P, mood, lx, ly, closure, blush, tips, seed, glyph) {
   }
   const place = (bm, spread = 0) => {
     const w = bm[0].length, h = bm.length
-    const x0 = Math.floor(EYE_X - w / 2) - spread, y0 = Math.floor(EYE_Y - h / 2)
+    const x0 = Math.round(EYE_X - w / 2) - spread, y0 = Math.round(EYE_Y - h / 2)
     return [[x0, y0], [G - x0 - w, y0]]
   }
   const pair = (bm, dx = lx, dy = ly, spread = 0, opts) => { for (const [x0, y0] of place(bm, spread)) put(bm, x0 + dx, y0 + dy, opts) }
@@ -209,7 +240,7 @@ function paintSprite(t, P, mood, lx, ly, closure, blush, tips, seed, glyph) {
     case 'happy': pair(EYES.happy, 0, 0); break
     case 'sleepy': pair(EYES.sleepy, 0, 0); break
     case 'wink': {
-      const [[ax, ay], [bx, by]] = place(EYES.open)
+      const [[ax, ay]] = place(EYES.open), [, [bx, by]] = place(EYES.happy)
       put(blinkBm || EYES.open, ax + lx, ay + ly); put(EYES.happy, bx, by)
       break
     }
@@ -217,7 +248,7 @@ function paintSprite(t, P, mood, lx, ly, closure, blush, tips, seed, glyph) {
     case 'sparkle': pair(blinkBm || EYES.sparkle, lx, ly); break
     case 'heart': {
       const big = Math.sin(t * TAU * 1.8) > -0.2
-      pair(big ? EYES.heartBig : EYES.heartSmall, 0, 0, 1, { outline: true })
+      pair(big ? EYES.heartBig : EYES.heartSmall, 0, 0, 0, { outline: true })
       break
     }
     case 'wide': case 'eyeroll': {
@@ -226,22 +257,21 @@ function paintSprite(t, P, mood, lx, ly, closure, blush, tips, seed, glyph) {
       for (const [x0, y0] of place(EYES.sclera)) {
         put(EYES.sclera, x0, y0)
         const pxx = roll ? Math.round(2 + 1.4 * Math.sin(t * 5)) : 2 + lx, pyy = roll ? 1 : 3 + ly
-        const ix = clamp(pxx, 1, 3), iy = clamp(pyy, 1, 4)
+        const ix = clamp(pxx, 1, 3), iy = clamp(pyy, 1, 5)
         x.fillStyle = INK; x.fillRect(x0 + ix, y0 + iy, 2, 2)
       }
-      if (roll) for (const [x0, y0] of place(EYES.sclera)) { x.fillStyle = P.shade; x.fillRect(x0 + 1, y0 + 5, 4, 1) }
+      if (roll) for (const [x0, y0] of place(EYES.sclera)) { x.fillStyle = P.shade; x.fillRect(x0 + 1, y0 + 6, 4, 1) }
       break
     }
     default: pair(blinkBm || EYES.open, lx, ly)
   }
-  // glyph badge disc (lower-right notch)
+  // glyph badge: a little coin pinned on the lower-right point
   if (glyph) {
-    const cx = 23, cy = 23
-    for (let j = 18; j < G; j++) for (let i = 18; i < G; i++) {
-      const d = Math.hypot(i + 0.5 - cx, j + 0.5 - cy)
-      if (d < 2.9) px(i, j, '#140c2c')
-      else if (d < 3.8) px(i, j, P.base)
-      else if (d < 4.6 && !inM(m, i, j)) px(i, j, P.line)
+    for (let j = 22; j < G; j++) for (let i = 20; i < G; i++) {
+      const d = Math.hypot(i + 0.5 - BADGE.x, j + 0.5 - BADGE.y)
+      if (d < BADGE.r - 1) px(i, j, '#140c2c')
+      else if (d < BADGE.r) px(i, j, i + j < BADGE.x + BADGE.y ? P.light : P.base)
+      else if (d < BADGE.r + 0.9) px(i, j, P.line)
     }
   }
 }
@@ -270,6 +300,9 @@ function hopState(t, hops) {
   return { lift: 0, sq: 0.16 * Math.exp(-d * 11) * Math.cos(d * 26) }                                // land + wobble
 }
 
+// twinkle pixels floating around the star (cells from the centre, phase offset)
+const TWINKLES = [[-15.5, -9, 0], [15, -11.5, 0.37], [-17, 9.5, 0.71], [17.5, 5, 0.18]]
+
 export function drawStarChar(ctx, x, y, size, t, opts = {}) {
   const { color = STAR.sky, glyph = null, mood = 'neutral', look, blink, bob, squash = 0, hops = null, seed = 1, glow = 1, alpha = 1, pop = 1, blush, zzz = true, tips = true } = opts
   if (alpha <= 0 || pop <= 0 || size <= 0) return { x, y, size, top: y }
@@ -281,7 +314,7 @@ export function drawStarChar(ctx, x, y, size, t, opts = {}) {
   paintSprite(t, P, mood, lx, ly, closure, bl, tips, seed, glyph)
 
   const s = size * pop
-  const cell = s >= 56 ? Math.max(1, Math.round(s / G)) : s / G
+  const cell = s >= 100 ? Math.max(1, Math.round(s / G)) : s / G
   const S = cell * G
   const bobA = bob === undefined ? size * 0.035 : bob
   const hs = hopState(t, hops)
@@ -289,18 +322,33 @@ export function drawStarChar(ctx, x, y, size, t, opts = {}) {
   const sq = squash + hs.sq + breathe
   const sx = 1 + sq, sy = 1 - sq * 0.9
   const cy = y + Math.sin(t * 2.2 + seed * 2.1) * bobA - hs.lift * size * 0.09
-  const base = S * 0.32                                      // squash anchor: the bottom of the belly
+  const base = (FOOT_ROW - HALF) * cell                      // squash anchor: the two lower tips
   ctx.save()
   ctx.globalAlpha *= alpha
-  glowAt(ctx, x, cy, S * 0.9, color, glow * (0.9 + 0.1 * Math.sin(t * 2.6 + seed)))
+  glowAt(ctx, x, cy + (SC.y - HALF) * cell, S * 0.85, P.base, glow * (0.9 + 0.1 * Math.sin(t * 2.6 + seed)))
+  glowAt(ctx, x, cy + (SC.y - HALF) * cell, S * 0.42, P.body, glow * 0.35)
+  // twinkles: tiny 4-point pixel sparkles that wink in and out around the star
+  if (tips) {
+    const tc = Math.max(1, Math.round(cell))
+    TWINKLES.forEach(([u, v, o], k) => {
+      const ph = (t * 0.42 + o + seed * 0.13) % 1, a = Math.max(0, Math.sin(ph * TAU)) ** 2
+      if (a < 0.05) return
+      const qx = Math.round(x + u * cell), qy = Math.round(cy + v * cell), big = a > 0.55 && s >= 100
+      ctx.globalAlpha = alpha * a
+      ctx.fillStyle = k % 2 ? P.light : '#fffbea'
+      ctx.fillRect(qx - tc / 2, qy - tc / 2, tc, tc)
+      if (big) { ctx.fillRect(qx - tc * 1.5, qy - tc / 2, tc * 3, tc); ctx.fillRect(qx - tc / 2, qy - tc * 1.5, tc, tc * 3) }
+    })
+    ctx.globalAlpha = alpha
+  }
   ctx.translate(Math.round(x), Math.round(cy + base)); ctx.scale(sx, sy)
   const sm = ctx.imageSmoothingEnabled
   ctx.imageSmoothingEnabled = false
   ctx.drawImage(buffer().c, -S / 2, -S / 2 - base, S, S)
   ctx.imageSmoothingEnabled = sm
   if (glyph) {
-    const gx = (23 - HALF) * cell, gy = (23 - HALF) * cell - base
-    ctx.font = `700 ${Math.round(cell * 4.1)}px ${GLYPH_FONT}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
+    const gx = (BADGE.x - HALF) * cell, gy = (BADGE.y - HALF) * cell - base
+    ctx.font = `700 ${Math.round(cell * 4.4)}px ${GLYPH_FONT}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
     ctx.fillStyle = P.light; ctx.fillText(glyph + '︎', gx, gy + cell * 0.3)
   }
   ctx.restore()
@@ -309,15 +357,15 @@ export function drawStarChar(ctx, x, y, size, t, opts = {}) {
     ctx.save(); ctx.globalAlpha *= alpha
     const Z = ['XXX', '..X', '.X.', 'X..', 'XXX']
     for (let k = 0; k < 3; k++) {
-      const ph = ((t * 0.45 + k / 3) % 1), zc = Math.max(2, Math.round(cell * (0.6 + 0.5 * ph)))
-      const zx = Math.round(x + S * (0.22 + 0.16 * ph) + Math.sin(ph * 6 + k) * cell), zy = Math.round(cy - S * (0.2 + 0.38 * ph))
+      const ph = ((t * 0.45 + k / 3) % 1), zc = Math.max(2, Math.round(cell * (0.75 + 0.6 * ph)))
+      const zx = Math.round(x + S * (0.22 + 0.16 * ph) + Math.sin(ph * 6 + k) * cell), zy = Math.round(cy - S * (0.24 + 0.36 * ph))
       ctx.globalAlpha = alpha * Math.sin(Math.PI * ph) * 0.95
       ctx.fillStyle = BONE
       Z.forEach((row, j) => [...row].forEach((ch, i) => { if (ch === 'X') ctx.fillRect(zx + i * zc, zy + j * zc, zc, zc) }))
     }
     ctx.restore()
   }
-  return { x, y: cy, size: S, top: cy - S / 2 }
+  return { x, y: cy, size: S, top: cy - S / 2 + TOP_ROW * cell }
 }
 
 // ─────────────────────────────────────────────── typing schedule
