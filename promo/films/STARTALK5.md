@@ -17,10 +17,18 @@ Same series as STARTALK.md and STARTALK3.md (read both first: the look, the shar
 
 This plan avoids them. Its "Our Stars Met First" episodes pair signs as an anthology; in this season the six couples below are the canon.
 
-## Before building: open questions for the user
-1. **End-card lines.** Phase 1 uses the real default, JOIN THE HOUSTON BETA. Proposed for phase 2: JOIN THE TEXAS BETA. Proposed for phase 3: SIGN UP TO VOTE YOUR CITY. The vote line promises that signing up records your city, so the signup form has to ask for one. (The end card fits a line of up to about 30 characters.)
-2. **The older vote films.** votenext, voteballot and votemap say launch city #2 is chosen by vote. With Texas locked in, they should either be retired or reworded to "the region after Texas".
-3. **Posting cadence.** For example, daily (about 100 days) or five a week (about 20 weeks). Films marked *flex* should post during the real sky event; check an ephemeris and never invent dates.
+## Decided
+- **End-card lines:**
+  - EP 001–040: JOIN THE HOUSTON BETA (the default)
+  - EP 041–069: `cta: 'JOIN THE TEXAS BETA'`
+  - EP 070–100: `cta: 'SIGN UP TO VOTE YOUR CITY'`
+- **Posting:** five a day, so the season runs 20 days.
+  - Houston: days 1–8
+  - Texas: days 9–14
+  - The vote: days 15–20
+  - The films post in EP order.
+- **Sky-event films are written to be true any day** ("when Mercury goes retrograde…"). If a real event lands in the 20 days, move that film next to it.
+- **Still open:** what to do with the older vote films (votenext, voteballot and votemap say launch city #2 is chosen by vote). Retire them, or reword them for "the region after Texas".
 
 ## The rollout, locked
 - **Phase 1, Houston (EP 001–040).** The stars come down from the sky and land in Space City.
@@ -108,7 +116,7 @@ This plan avoids them. Its "Our Stars Met First" episodes pair signs as an antho
   - no hurricane, flood or disaster jokes;
   - affectionate, never mean about a place or its people.
 - **Astrology** must be real: rulers, elements, modalities, opposites and houses as written here. Advice must be healthy. Never say "Align" in the frames just before the end card.
-- **End-card line by phase:** EP 001–040 JOIN THE HOUSTON BETA; EP 041–069 the Texas line; EP 070–100 the vote line (see the open questions).
+- **End-card line by phase:** EP 001–040 JOIN THE HOUSTON BETA (the default); EP 041–069 `cta: 'JOIN THE TEXAS BETA'`; EP 070–100 `cta: 'SIGN UP TO VOTE YOUR CITY'`.
 - **Talk cards** use the real prompts in promo/assets/MANIFEST.md (card-talk-1…6, daily).
 
 ## How it gets made
@@ -140,7 +148,7 @@ This plan avoids them. Its "Our Stars Met First" episodes pair signs as an antho
 | 012 | st4saturn1 | 20 | cinematic | D1 | **"Saturn is teaching in *Houston*."** Saturn stands at a chalkboard reading "SATURN RETURN 101", with four sign stars at tiny desks. SATURN: "lesson one: say what you *want*." → "don't know yet? that's your homework." ★ LESSON UNLOCKED: "Say what you want." | **"Class is in *session*."** |
 | 013 | st4scorpio | 15 | funk | F | **"Dear Scorpio: the *detective*."** Scorpio, in a pixel trench coat, studies a corkboard of facts about its kolache date. THE STARS: "you know everything about them." → "they know nothing about you. go *first*." (It flips the board to its own blank card.) | **"Be *known*, too."** |
 | 014 | st4beltway | 15 | house | F | **"Houston is *big*."** The map zooms out past Beltway 8 to the Grand Parkway: Aries and Libra live on opposite sides. ARIES: "they're 45 minutes away!" → THE STARS: "distance is a *plan*, not a dealbreaker." (A pin drops halfway.) | **"Meet in the *middle*."** |
-| 015 | st4retro1 | 20 | screwed | E1 | **"Mercury went *retrograde* again."** At 2 a.m. Retro rolls into an apartment and nudges a phone with "u up?" to an ex. Leo hovers over SEND. RETRO: "go on. for old times' sake." → THE STARS: "retrograde is for *reflecting*, not re-texting." (Phone goes face down; Retro sulks.) *flex* | **"Reflect. Don't *resend*."** |
+| 015 | st4retro1 | 20 | screwed | E1 | **"When Mercury goes *retrograde*…"** At 2 a.m. Retro rolls into an apartment and nudges a phone with "u up?" to an ex. Leo hovers over SEND. RETRO: "go on. for old times' sake." → THE STARS: "retrograde is for *reflecting*, not re-texting." (Phone goes face down; Retro sulks.) | **"Reflect. Don't *resend*."** |
 | 016 | st4talkcard | 15 | pop | talk cards | **"First-date small talk in *Houston*."** "so… the weather." "humid." Silence. A talk card flips in: card-talk-1, "What's a hill you will die on?" THE STARS: "skip the weather." → "ask what they'd *argue* for." (Both light up, debating.) | **"Talk *deeper* than the weather."** |
 | 017 | st4hotcold | 20 | cinematic | dealbreakers | **"Houston weather: hot, then *cold*."** A pixel thermometer swings, and so do a date's texts: "miss u!!", then three days of nothing, then "hey." THE STARS: "the weather can run hot and cold." → "your person *shouldn't*." The chip "✕ HOT AND COLD" stamps onto a card. | **"Steady is *sexy*."** |
 | 018 | st4leomirror | 20 | funk | B2 | **"Leo has a *crush*."** Leo rehearses in its mirror (starleo), and every line is about itself. Across town, Aquarius pretends not to look at Leo's veiled card. LEO: "should i lead with my best angle?" → THE STARS: "lead with a *question*." | **"Ask about *them*."** |
@@ -167,7 +175,7 @@ This plan avoids them. Its "Our Stars Met First" episodes pair signs as an antho
 | 031 | st4fromwhere | 15 | house | A | **"In Houston, your date could be from *anywhere*."** Two bone stars on a date; postcards of mountains, ocean and city float up as one talks about home. SAGITTARIUS (Jupiter, the traveller) leans in: "ask where they're from." → "then *listen* to the whole story." | **"Ask where they're *from*."** |
 | 032 | st4kisscam | 20 | pop | A | **"The stars go to a *ballgame*."** A generic stadium with no team marks. The kiss cam lands on two stars who just met, and both freeze. THE STARS: "nobody should be pushed into a moment." → "ask first. *always*." (They high-five instead, laughing.) | **"Consent is *cute*."** |
 | 033 | st4venus1 | 20 | dreamy | G | **"Venus moved to Houston, *too*."** The pink Venus star runs an advice booth at a farmers market. VENUS: "Venus rules Taurus and Libra." → "but everyone has a Venus sign. it's *how* you love." A talk card flips in: card-talk-6, "Planned date or spontaneous date?" | **"Know your *Venus*."** |
-| 034 | st4retro2 | 20 | screwed | E2 | **"Retrograde, *again*."** Retro scrambles the water signs' chat so messages arrive backwards ("?rennid"). CANCER: "remember 'k.'? they were *driving*." → THE STARS: "when it's confusing, don't decode. *call*." *flex* | **"When in doubt, *call*."** |
+| 034 | st4retro2 | 20 | screwed | E2 | **"Retro is *back*."** Retro scrambles the water signs' chat so messages arrive backwards ("?rennid"). CANCER: "remember 'k.'? they were *driving*." → THE STARS: "when it's confusing, don't decode. *call*." | **"When in doubt, *call*."** |
 | 035 | st4seventh | 15 | jazzy | G | **"Your *7th house* is open."** The chart wheel is drawn as a Houston high-rise with twelve floors, and the 7th-floor door glows. THE STARS: "the 7th house is partnership." → "the sign on its door shows what you're *drawn* to." | **"Who's on your *7th* floor?"** |
 | 036 | st4fifth | 15 | pop | G | **"The *5th house* is the fun floor."** The 5th-floor apartment is a party, disco ball and all. THE STARS: "5th house: romance and play." → "dating should feel a little like *play*." | **"Keep it *fun*."** |
 | 037 | st4spacecity | 20 | cinematic | A | **"Space City, you *did* it."** Mission Control watches a map: Houston glows, and a dotted line pulses out to the edges of Texas. THE STARS: "Houston, you were first." → "next: the *whole* state." | **"Texas, you're *next*."** |
@@ -198,7 +206,7 @@ This plan avoids them. Its "Our Stars Met First" episodes pair signs as an antho
 | 054 | st4marfa | 20 | synthwave | A | **"Near *Marfa*, there are mystery lights."** Lights bob on the dark horizon (the real, unexplained Marfa lights), and the stars squint. ARIES: "who ARE they?" → THE STARS: "some mysteries are fun." → "your date shouldn't be one. *say* what you mean." (One of the lights is the ghost.) | **"Be clear, not *mysterious*."** |
 | 055 | st4bbq | 15 | funk | F | **"Texas BBQ takes *hours*."** Aries taps its foot by a pixel smoker. ARIES: "is it ready YET?" → THE STARS: "brisket can't be rushed." → "neither can *trust*." | **"Low and *slow*."** |
 | 056 | st4fridaylights | 20 | pop | A | **"Texas Friday *nights*."** Generic high-school stadium lights, no team marks. In the stands, a shy star holds a sign: "CAN I SIT WITH YOU?" THE STARS: "cheer for them." → "even the *small* wins." | **"Be their *biggest* fan."** |
-| 057 | st4retro3 | 20 | screwed | E3 | **"Retrograde on the *road*."** Retro hijacks the van's GPS: "turn around. go back. to your ex's town." Sagittarius almost does it. VIRGO: "that's not on the map." → THE STARS: "going back isn't the same as going *forward*." *flex* | **"Eyes on the road *ahead*."** |
+| 057 | st4retro3 | 20 | screwed | E3 | **"Retro is on the *road* trip."** Retro hijacks the van's GPS: "turn around. go back. to your ex's town." Sagittarius almost does it. VIRGO: "that's not on the map." → THE STARS: "going back isn't the same as going *forward*." | **"Eyes on the road *ahead*."** |
 | 058 | st4saturn4 | 20 | cinematic | D4 | **"Saturn's class: *boundaries*."** Saturn draws a pixel gate around a star's tiny garden. SATURN: "a boundary isn't a wall." → "it's a gate with *rules*. say them kindly." ★ LESSON UNLOCKED: "Kind boundaries keep love close." | **"Boundaries are *love*, too."** |
 | 059 | st4queso | 15 | jazzy | F | **"Tex-Mex is a love *language*."** Pisces double-dips in the queso; Virgo is horrified, then laughs. THE STARS: "you'll disagree on small stuff." → "laugh about it *together*." | **"Pick your battles. *Not* the queso."** |
 | 060 | st4lonestar | 25 | cinematic | A | **"The Lone Star *State*."** A single pixel star sits on a generic Texas outline, then more stars light up over every road-trip stop. THE STARS: "they call it the Lone Star State." → "let's fix the *lone* part." | **"No more *lone* stars."** |
@@ -209,7 +217,7 @@ This plan avoids them. Its "Our Stars Met First" episodes pair signs as an antho
 | 061 | st4repair | 20 | funk | B6 | **"Leo and Aquarius make *up*."** After Dallas, they sit at opposite ends of a pixel couch, arms crossed and both waiting for the other to speak. THE STARS: "somebody has to go first." → "say sorry. say what you need. then *listen*." (Leo goes first; they scoot together.) | **"Repair is *romantic*."** |
 | 062 | st4ghostfriend | 15 | lofi | C5 | **"The ghost made a *friend*."** In a roadside diner, a shy star asks the ghost to hang out. The ghost almost vanishes (old habit), then stays. GHOST: "i usually disappear here." → THE STARS: "stay. *awkward* beats gone." | **"Awkward beats *absent*."** |
 | 063 | st4dancehall | 15 | jazzy | F | **"Texas dance hall: *two-step* night."** Capricorn spends its free Friday two-stepping with Cancer, and they keep stepping on each other's boots. THE STARS: "nobody's good at this the first time." → "be *new* at something together." | **"Two left boots. One great *night*."** |
-| 064 | st4fullmoon | 20 | dreamy | G | **"Full moon over *Texas*."** The Moon glows full over the desert, and every star gets emotional. MOON: "full moons bring things up." → "if something's bugging you, say it *gently*." *flex* | **"Gentle is *brave*."** |
+| 064 | st4fullmoon | 20 | dreamy | G | **"When the Moon is *full*…"** The Moon glows full over the desert, and every star gets emotional. MOON: "full moons bring things up." → "if something's bugging you, say it *gently*." | **"Gentle is *brave*."** |
 | 065 | st4texasdeck | 15 | house | tonight's deck | **"Tonight's deck, now in *Texas*."** Card backs deal across a generic Texas map with city labels. THE STARS: "same deal, bigger table." → "a new hand every night, all over *Texas*." Post only once the Texas beta is real. | **"Texas, *deal* me in."** |
 | 066 | st4rivals | 15 | pop | Push / Pull / Align | **"A Houston star and an Austin star *match*."** A friendly rivalry: two bone stars with pixel city pins, and their Push / Pull / Align reading draws between them. HOUSTON: "Austin? really?" → THE STARS: "Push: you're different. Pull: you're curious. that's a *start*." | **"Different cities. *Same* sky."** |
 | 067 | st4saturn5 | 20 | cinematic | D5 | **"Saturn's class: your *own* standards."** Each student lists what it wants in a partner on a long scroll. Saturn turns the scroll around. SATURN: "now: do *you* do all this?" → "be the partner you're asking for." ★ LESSON UNLOCKED: "Be who you're looking for." | **"Be your own *standard*."** |
@@ -229,7 +237,7 @@ This plan avoids them. Its "Our Stars Met First" episodes pair signs as an antho
 | 077 | st4chicago | 15 | jazzy | A | **"Dear *Chicago*."** Snow and wind; Capricorn is bundled up and still working. THE STARS: "cuffing season isn't a deadline." → "find someone you'd want in *July*, too." | **"Not just for *winter*."** |
 | 078 | st4miami | 15 | house | A | **"Dear *Miami*."** Neon palms; Sagittarius rolls a suitcase past: "just visiting!" THE STARS: "everyone's passing through." → "be the one who *says* what they're looking for." | **"Say what you're *here* for."** |
 | 079 | st4atlanta | 15 | lofi | A | **"Dear *Atlanta*."** A canopy of pixel trees; Cancer peeks out from behind a trunk. THE STARS: "come out of the woods." → "the right one is looking for you, *too*." | **"Be *findable*."** |
-| 080 | st4retro4 | 20 | screwed | E4 | **"Retrograde hit the *ballot box*."** Retro spins the ballots backwards; one now reads "VOTE FOR YOUR EX." Every star screams. THE STARS: "nice try, Retro." → "the only thing on this ballot is *forward*." *flex* | **"Vote *forward*."** |
+| 080 | st4retro4 | 20 | screwed | E4 | **"Retro hit the *ballot box*."** Retro spins the ballots backwards; one now reads "VOTE FOR YOUR EX." Every star screams. THE STARS: "nice try, Retro." → "the only thing on this ballot is *forward*." | **"Vote *forward*."** |
 
 ### Drop 9: "Anyone's game" (EP 081–090)
 | EP | folder | len | music | thread | the film | last line |
@@ -239,7 +247,7 @@ This plan avoids them. Its "Our Stars Met First" episodes pair signs as an antho
 | 083 | st4neworleans | 15 | jazzy | A | **"Dear *New Orleans*."** A pixel brass band plays under a wrought-iron balcony while Libra dances. THE STARS: "you know how to celebrate." → "celebrate the *small* dates, too." | **"Celebrate the *small* stuff."** |
 | 084 | st4surprise | 20 | funk | B7 | **"Leo plans a *surprise*."** Leo builds a huge public surprise: a spotlight, a banner, a crowd. Aquarius, the private one, freezes. Leo scraps it for a quiet rooftop with two cups and two pairs of headphones. LEO: "too much?" → THE STARS: "the best surprise is about *them*, not the show." | **"Surprise them *their* way."** |
 | 085 | st4tauscorp | 20 | dreamy | F | **"Taurus and Scorpio, *finally*."** The kolache date from EP 004: the veil lifts, and it's Scorpio. Two fixed signs argue about where to sit, then both laugh. THE STARS: "opposites: same intensity, different *style*." → "loyalty looks good on you two." | **"Stubborn, but *together*."** |
-| 086 | st4venusretro | 20 | dreamy | G | **"When Venus goes *retrograde*."** Venus dims while old flames glow on the horizon. It really happens about every 18 months, for about 40 days. VENUS: "when Venus goes retrograde, exes look brighter." → "that's nostalgia, not a *sign*. stay present." *flex* | **"Let old flames stay *old*."** |
+| 086 | st4venusretro | 20 | dreamy | G | **"When Venus goes *retrograde*."** Venus dims while old flames glow on the horizon. It really happens about every 18 months, for about 40 days. VENUS: "when Venus goes retrograde, exes look brighter." → "that's nostalgia, not a *sign*. stay present." | **"Let old flames stay *old*."** |
 | 087 | st4map | 20 | cinematic | A | **"The map is *lighting up*."** A stylised US map: Texas glows, and the candidate cities pulse (no numbers, no leader). THE STARS: "every sign-up is a star." → "which city lights up *next*?" | **"Light it *up*."** |
 | 088 | st4sheetoff | 15 | lofi | C6 | **"The ghost takes the *sheet* off."** On a date, it's time for the face reveal. The ghost slides the sheet off: a regular little star, blushing. DATE: "you're cute!" → GHOST: "i'm also *here*. i'm staying." | **"Nobody hides *forever*."** |
 | 089 | st4live5th | 20 | funk | A | **"LIVE from the *campaign trail*."** The sports booth from stlive5th (and batch 4's stmeetfriends) calls the vote like a game, with no numbers: "AND SEATTLE PULSES! NEW YORK ANSWERS!" THE STARS: "no winner yet." → "it's still anyone's *game*." | **"Anyone's *game*."** |
@@ -248,7 +256,7 @@ This plan avoids them. Its "Our Stars Met First" episodes pair signs as an antho
 ### Drop 10: "The finale" (EP 091–100)
 | EP | folder | len | music | thread | the film | last line |
 |---|---|---|---|---|---|---|
-| 091 | st4newmoon | 20 | dreamy | G | **"New moon, new *intentions*."** The Moon goes dark and whispers. MOON: "new moons are for starting things." → "write what you want in love. *one* line." (A card fills in: "someone who shows up".) *flex* | **"Start with *one* line."** |
+| 091 | st4newmoon | 20 | dreamy | G | **"Every new moon is a *fresh start*."** The Moon goes dark and whispers. MOON: "new moons are for starting things." → "write what you want in love. *one* line." (A card fills in: "someone who shows up".) | **"Start with *one* line."** |
 | 092 | st4retrosorry | 20 | screwed | E5 | **"Retro *apologizes*."** The Mercury orb stops spinning backwards and reads a draft apology. RETRO: "i made everyone text their exes. sorry." → THE STARS: "looking back is fine. *learn* something." → "then look forward." | **"Look back. Then *forward*."** |
 | 093 | st4graduation | 25 | cinematic | D7 | **"Saturn's class *graduates*."** Pixel caps and gowns. Saturn hands out diplomas: "KNOWS WHAT THEY WANT", "KIND GOODBYES", "PATTERNS: SPOTTED". SATURN: "i was strict because i *believe* in you." → "class dismissed. go love *well*." ★ LESSON UNLOCKED: "Grown-up love is a choice." | **"Class *dismissed*."** |
 | 094 | st4movingin | 20 | dreamy | F | **"Cancer and Capricorn move *in*."** Moving boxes: Cancer packs the shell, Capricorn packs the calendar. CANCER: "where does your calendar go?" → CAPRICORN: "next to your shell. we'll make *room*." → THE STARS: "home is a schedule *and* a feeling." | **"Make *room*."** |
