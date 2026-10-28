@@ -1,0 +1,91 @@
+{
+  "id": "03-gemini",
+  "sign": "gemini",
+  "title": "Gemini, say the plain sentence",
+  "caption": "eleven tabs open, one sentence unsaid",
+  "hashtags": [
+    "gemini",
+    "astrology",
+    "zodiac",
+    "airsigns",
+    "geminiseason"
+  ],
+  "scenes": [
+    {
+      "text": "gemini, close the other tab for a second.",
+      "kind": "void",
+      "body": "ringed"
+    },
+    {
+      "text": "mercury handed you every word in the language.",
+      "kind": "burst",
+      "body": "ringed",
+      "sky": "teal"
+    },
+    {
+      "text": "you can talk to anyone about anything until three a.m.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "the funny one, the curious one, the one with a plan.",
+      "kind": "ridge",
+      "body": "ringed",
+      "sky": "violet"
+    },
+    {
+      "text": "and somehow nobody quite knows which one is you.",
+      "kind": "ridge",
+      "body": "ringed",
+      "sky": "violet"
+    },
+    {
+      "text": "the twins aren't a flaw. you are more than one thing.",
+      "kind": "figure"
+    },
+    {
+      "text": "but a joke is a door you close very politely.",
+      "kind": "arch",
+      "body": "crescent",
+      "sky": "dusk"
+    },
+    {
+      "text": "and you've gotten so good at closing it.",
+      "kind": "arch",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "next time, try the sentence you'd usually laugh off.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "the plain one. the 'i like you and it scares me' one.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "say the honest thing before the clever one.",
+      "kind": "rise",
+      "body": "blue",
+      "sky": "dawn"
+    },
+    {
+      "text": "being known is the one conversation you haven't had.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dusk",
+      "road": true
+    },
+    {
+      "text": "go on. we're listening.",
+      "kind": "void",
+      "body": "ringed",
+      "sky": "night"
+    }
+  ]
+}

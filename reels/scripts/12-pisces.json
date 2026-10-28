@@ -1,0 +1,90 @@
+{
+  "id": "12-pisces",
+  "sign": "pisces",
+  "title": "Pisces, keep your name",
+  "caption": "for the pisces who become whoever they're with",
+  "hashtags": [
+    "pisces",
+    "astrology",
+    "zodiac",
+    "piscesseason",
+    "zodiaclove"
+  ],
+  "scenes": [
+    {
+      "text": "pisces, come up for air.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "neptune made you part ocean, part rumour.",
+      "kind": "void",
+      "body": "blue"
+    },
+    {
+      "text": "you hear what people mean, not what they say.",
+      "kind": "arch",
+      "body": "crescent",
+      "sky": "violet"
+    },
+    {
+      "text": "venus is exalted in you. you were made for love.",
+      "kind": "rise",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "you love the way a lake loves the sky,",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "taking on their colour until you lose your own.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "dusk"
+    },
+    {
+      "text": "but loving someone isn't disappearing into them.",
+      "kind": "ridge",
+      "body": "moon",
+      "sky": "dusk"
+    },
+    {
+      "text": "keep a shoreline. keep one thing that's only yours.",
+      "kind": "ridge",
+      "body": "crescent",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "and when it ends, let it go out with the tide.",
+      "kind": "burst",
+      "body": "sun",
+      "sky": "ember"
+    },
+    {
+      "text": "don't swim back every night to check.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "the one for you will want you, not your reflection.",
+      "kind": "figure"
+    },
+    {
+      "text": "you can be all that water and still keep your name.",
+      "kind": "void",
+      "body": "crescent"
+    },
+    {
+      "text": "breathe, pisces. the surface is right here.",
+      "kind": "field",
+      "body": "moon",
+      "sky": "dawn"
+    }
+  ]
+}

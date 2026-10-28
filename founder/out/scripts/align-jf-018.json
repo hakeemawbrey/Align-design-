@@ -1,0 +1,99 @@
+{
+  "id": "align-jf-018",
+  "sourceId": "jf-018",
+  "title": "Demos die at 12%",
+  "angleKey": "founder-camp",
+  "hookKey": "built_that",
+  "formatKey": "mood_one_liner",
+  "hook": "So I built a 60-second demo of my dating app, and the one rule that saves it.",
+  "beats": [
+    {
+      "line": "Bring a power bank. Demos die at 12%.",
+      "broll": "Slow push-in at night, cinematic sound, text on screen",
+      "onScreen": ""
+    }
+  ],
+  "cta": "",
+  "caption": "The 60-second demo. Bring a power bank.",
+  "hashtags": [
+    "foundercamp",
+    "startup",
+    "pitch"
+  ],
+  "lengthSec": 12,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 68,
+    "craft": 62,
+    "fit": 94,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 70,
+        "hits": [
+          "i built"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 60,
+        "hits": [
+          "12%"
+        ]
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 70,
+        "hits": [
+          "so i"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 76,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 60,
+        "hits": [
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

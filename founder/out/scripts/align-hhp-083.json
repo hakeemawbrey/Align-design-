@@ -1,0 +1,124 @@
+{
+  "id": "align-hhp-083",
+  "sourceId": "hhp-083",
+  "title": "A dating app that plays like a card game",
+  "angleKey": "trading-cards",
+  "hookKey": "unpopular_opinion",
+  "formatKey": "storytime_near_failure",
+  "hook": "Unpopular opinion: dating apps should feel like a game you want to play, not a chore you check.",
+  "beats": [
+    {
+      "line": "I'm Hakeem. I'm building Align, a dating app played as a card game.",
+      "broll": "You, to camera",
+      "onScreen": "founder, Align"
+    },
+    {
+      "line": "Dating apps feel like work. Swipe, wait, swipe.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
+      "broll": "Dealing: cards fly in (#dealing)",
+      "onScreen": ""
+    },
+    {
+      "line": "The moment people tear open their first pack, they stop treating it like a dating app.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "It feels like play. And that's why they come back.",
+      "broll": "Binder (#collection)",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Comment which card you'd want to pull first.",
+  "caption": "Every match gives you a pack. The last card is always a sign.",
+  "hashtags": [
+    "tradingcards",
+    "datingapp",
+    "buildinpublic"
+  ],
+  "lengthSec": 36,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 71,
+    "craft": 64,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 70,
+        "hits": [
+          "unpopular opinion"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 70,
+        "hits": [
+          "then",
+          "and that's why"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 56,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 79,
+        "hits": [
+          "you",
+          "dating apps"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 75,
+        "hits": [
+          "unpopular opinion",
+          "comment which"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 90,
+        "hits": [
+          "comment which"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

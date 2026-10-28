@@ -1,0 +1,120 @@
+{
+  "id": "align-jf-126",
+  "sourceId": "jf-126",
+  "title": "The app you keep after you find someone",
+  "angleKey": "churn-hedge",
+  "hookKey": "unpopular_opinion",
+  "formatKey": "method_tutorial",
+  "hook": "Unpopular opinion: a good dating app is a bad business.",
+  "beats": [
+    {
+      "line": "So Align is also a card game. Your binder, your packs, your sign cards stay yours.",
+      "broll": "Binder (#collection)",
+      "onScreen": ""
+    },
+    {
+      "line": "Couples keep playing the talk cards. Align+ ships real packs every season.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Subscribers get a starter box, then three real packs every season.",
+      "broll": "Physical card pack on a table",
+      "onScreen": "starter box + 3 packs a season"
+    },
+    {
+      "line": "The goal is an app you don't have to leave when it works.",
+      "broll": "Couple playing a talk card",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Save this and try it on your next deal.",
+  "caption": "When a dating app works, you delete it. Unless it's also a card game.",
+  "hashtags": [
+    "startup",
+    "businessmodel",
+    "buildinpublic"
+  ],
+  "lengthSec": 29,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 74,
+    "craft": 67,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 90,
+        "hits": [
+          "unpopular opinion"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 80,
+        "hits": [
+          "then"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 33,
+        "hits": [
+          "don't"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 75,
+        "hits": [
+          "your",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 95,
+        "hits": [
+          "save this",
+          "unpopular opinion",
+          "save"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 75,
+        "hits": [
+          "try it",
+          "try"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

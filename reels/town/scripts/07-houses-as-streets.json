@@ -1,0 +1,23 @@
+{
+  "id": "07-houses-as-streets",
+  "sign": "leo",
+  "sky": "dusk",
+  "moon": "full",
+  "title": "The houses of your chart, as streets in town",
+  "caption": "the streets here are named for your chart. which one do you keep ending up on?",
+  "hashtags": ["astrologyhouses", "birthchart", "astrology", "zodiac", "love"],
+  "signposts": [["the 8th · intimacy", "the 5th · romance"], ["the 7th · partners", "the 4th · home"], ["the 3rd · messages", "the 12th · the hidden"], ["the 2nd · values", "the 11th · friends"]],
+  "beats": [
+    {"text": "nobody walks down 8th street alone", "accent": "alone", "icon": "door", "sub": "the 8th · intimacy"},
+    {"text": "the streets here are named for your chart", "accent": "chart", "icon": "star", "sub": "twelve houses"},
+    {"text": "on 5th, every table is a first date", "accent": "first date", "icon": "heart", "sub": "the 5th · romance"},
+    {"text": "on 7th, two people are signing one lease", "accent": "one lease", "icon": "key", "sub": "the 7th · partners"},
+    {"text": "on 4th, someone's learning his mother's soup", "accent": "soup", "icon": "door", "sub": "the 4th · home"},
+    {"text": "on 3rd, neighbors text across the street", "accent": "text", "icon": "card", "sub": "the 3rd · messages"},
+    {"text": "on 12th, a letter is written and never sent", "accent": "never sent", "icon": "moon", "sub": "the 12th · the hidden"},
+    {"text": "on 8th, the doors only open for two", "accent": "two", "icon": "eye", "sub": "the 8th · intimacy"},
+    {"text": "which street do you keep ending up on?", "accent": "ending up", "icon": "glyph:leo", "sub": "pick a house"}
+  ],
+  "end": "align",
+  "endSub": "a new deal at 11:11"
+}

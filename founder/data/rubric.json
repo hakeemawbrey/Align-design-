@@ -1,0 +1,360 @@
+{
+  "meta": {
+    "version": "2026-10",
+    "scope": "Founder/CEO talking-head short-form (TikTok, Instagram Reels) for consumer-app founders doing build-in-public",
+    "howToScore": "Each dimension scores 0-10. Start every dimension at 5. Each matched pattern/word adds or subtracts per its sign. 'scope' says which slice of the script to scan: 'hook' = first sentence or first 12 words (about 0-3s spoken at ~2.5 words/sec), 'reHook' = words 12-30, 'ending' = last 2 sentences, 'full' = whole script. Clamp to 0-10, then total = sum(score/10 * weight). Patterns are JavaScript/PCRE regex source strings, compile with the 'gi' flags. Words are lowercase tokens or phrases matched on word boundaries. Weight evidence: platform ranking signals cited by Mosseri (watch time, likes per reach, sends per reach) and widely reported TikTok signals (completion, rewatch, shares, saves, comments); exact weights are unpublished, so these weights are an informed heuristic, not platform truth.",
+    "lengthTargets": {
+      "wordsPerSecond": 2.6,
+      "idealSecRange": [15, 45],
+      "sweetSpotSec": 18,
+      "maxSecBeforePenalty": 75,
+      "hookMaxWords": 14
+    }
+  },
+  "dimensions": [
+    {
+      "key": "hook",
+      "label": "Hook strength (first 2-3s)",
+      "weight": 22,
+      "description": "Does the first line stop the scroll? Retention at 3s is the single biggest predictor of distribution (vendor analyses cite ~65-70% 3s hold as the threshold). Strong founder hooks lead with the result, the stakes, a contrarian claim, or a specific open loop, in 14 words or fewer, with no greeting or setup.",
+      "raise": [
+        "Result or number in the first sentence (proof-first: 'My app made $41K last month')",
+        "Open loop or curiosity gap ('...and that's the mistake that almost killed it')",
+        "Contrarian or taboo claim ('Stop building features nobody asked for')",
+        "Direct identity call-out ('If you're a solo founder...')",
+        "Named stakes or conflict in line one (quit job, down to last $X, got banned, got sued)",
+        "First line under 14 words; starts with I/My/This/POV/Stop/Nobody",
+        "On-screen visual proof promised (screenshot, dashboard, App Store rank)"
+      ],
+      "lower": [
+        "Greetings or throat-clearing ('Hey guys', 'So today I want to talk about', 'Welcome back')",
+        "Self-introduction before value ('My name is X and I'm the founder of')",
+        "Generic question with obvious answer ('Want to grow your app?')",
+        "First sentence over 20 words",
+        "Leading with the product name before any reason to care",
+        "Vague hype words without a number ('This is crazy', 'game changer')"
+      ],
+      "heuristics": {
+        "scope": "hook",
+        "patterns": [
+          "\\$\\s?\\d[\\d,.]*\\s?(k|m|mm|million|thousand)?",
+          "\\b\\d[\\d,.]*\\s?(k|m)?\\s?(users|downloads|subscribers|followers|views|signups|customers|mrr|arr|dau|mau)\\b",
+          "^(i|my|we|this|pov|stop|nobody|never|here'?s|the|why|if you)\\b",
+          "\\b(i built|i made|i launched|i quit|i got|i lost|i spent|we hit|we made)\\b",
+          "\\b(stop|don'?t|never|nobody|no one|everyone is wrong|unpopular opinion|hot take)\\b",
+          "\\b(until|but then|and that'?s why|here'?s what happened|the reason)\\b",
+          "\\b(if you'?re|if you are|for anyone who|solo founder|indie hacker)\\b",
+          "^(hey|hi|hello|what'?s up|so,? today|welcome|in this video|my name is)\\b",
+          "\\b(game ?changer|insane|crazy|you won'?t believe)\\b"
+        ],
+        "patternSigns": [2, 2, 1, 2, 2, 1, 1, -3, -1],
+        "words": ["pov", "secret", "mistake", "nobody", "stop", "banned", "rejected", "quit", "fired", "broke", "viral", "overnight", "almost", "failed", "first", "last"],
+        "wordSign": 1,
+        "lengthRule": "hookWords <= 14 => +2; 15-20 => 0; > 20 => -2"
+      }
+    },
+    {
+      "key": "specificity",
+      "label": "Specificity and proof (numbers, names, receipts)",
+      "weight": 15,
+      "description": "Build-in-public content works because it is verifiable. Concrete revenue, user counts, dates, timeframes, tools, and screenshots convert claims into proof. Every major claim should have a number, a named tool, or a shown artifact. Revenue/MRR reveals and 'X in Y days' framing are the backbone of viral founder videos (e.g. Cal AI, PushScroll, Natural Right case studies).",
+      "raise": [
+        "Exact figures ($4,812 not 'about 5k'); multiple distinct numbers in script",
+        "Timeframes ('in 30 days', 'week 6', 'day 143')",
+        "Named tools/platforms (Cursor, Claude, Lovable, RevenueCat, Stripe, App Store, TestFlight)",
+        "Screenshot/dashboard cues ('look at this', 'here's the Stripe dashboard')",
+        "Before/after comparisons with numbers",
+        "Costs and unit economics (CAC, conversion %, price point)"
+      ],
+      "lower": [
+        "Vague magnitude words without numbers ('a lot', 'tons of', 'huge')",
+        "Unbacked superlatives ('best app ever')",
+        "Advice with no example from the founder's own data",
+        "Rounding everything to vague claims ('pretty good revenue')"
+      ],
+      "heuristics": {
+        "scope": "full",
+        "patterns": [
+          "\\$\\s?\\d[\\d,.]*\\s?(k|m|million|thousand)?",
+          "\\b\\d+(\\.\\d+)?\\s?%",
+          "\\b\\d[\\d,.]*\\s?(k|m)?\\s?(users|downloads|subscribers|followers|views|signups|customers|installs|reviews|ratings|matches)\\b",
+          "\\b(mrr|arr|revenue|profit|churn|retention|conversion|cac|ltv|trial|paywall|subscription)\\b",
+          "\\b(in|after|within)\\s\\d+\\s(days?|weeks?|months?|hours?)\\b",
+          "\\b(day|week|month)\\s\\d+\\b",
+          "\\b(cursor|claude|chatgpt|gpt|lovable|replit|bolt|v0|vercel|supabase|firebase|revenuecat|superwall|stripe|app store|testflight|xcode|swiftui|react native|expo|figma|notion)\\b",
+          "\\b(look at this|here'?s the (dashboard|screenshot|number)|on screen|right here)\\b",
+          "\\b(a lot|tons of|so many|huge|massive|really good|pretty good)\\b"
+        ],
+        "patternSigns": [2, 1, 2, 1, 1, 1, 1, 1, -1],
+        "words": ["exactly", "precisely", "dashboard", "screenshot", "receipts", "proof", "stripe", "ranked", "chart", "#1"],
+        "wordSign": 1,
+        "densityRule": "distinctNumbers >= 3 => +2; 0 numbers => -3"
+      }
+    },
+    {
+      "key": "storyTension",
+      "label": "Story tension and payoff",
+      "weight": 14,
+      "description": "Keeps viewers through the middle. A setup -> conflict/doubt -> turn -> payoff arc with a re-hook around 3-7s and at least one 'but' moment. Storytime founder videos (near-failure, rejection, the moment it took off) outperform listicles on completion. Ending should resolve the loop or loop back to the opening line to drive rewatches.",
+      "raise": [
+        "Explicit conflict or obstacle (rejected, banned, broke, competitor copied us, nobody downloaded it)",
+        "Turn words ('but', 'until', 'then', 'turns out', 'plot twist')",
+        "Re-hook after the first line that raises stakes",
+        "Doubt-then-proof structure ('Everyone told me X. Here's what happened.')",
+        "Time-sequenced narrative (day 1 ... day 30)",
+        "Payoff delivered near the end, not given away entirely in second 1"
+      ],
+      "lower": [
+        "Flat list of tips with no arc",
+        "No obstacle; everything went well",
+        "Payoff fully revealed in line one with nothing left to learn",
+        "Rambling tangents; sentences > 30 words"
+      ],
+      "heuristics": {
+        "scope": "full",
+        "patterns": [
+          "\\b(but|until|then|suddenly|turns out|plot twist|except|instead|the problem (was|is))\\b",
+          "\\b(rejected|banned|failed|broke|lost|quit|fired|crashed|copied|sued|almost|nearly|zero|nobody (downloaded|used|cared))\\b",
+          "\\b(everyone (told|said)|they said|people said|my (parents|friends|investors) (said|thought))\\b",
+          "\\b(here'?s what happened|what happened next|so i|that'?s when|the next day|a week later|fast forward)\\b",
+          "\\b(and that'?s (how|why)|which is why|the lesson)\\b"
+        ],
+        "patternSigns": [1, 2, 2, 2, 1],
+        "words": ["struggle", "doubt", "risk", "bet", "panic", "desperate", "finally", "twist", "comeback", "secretly"],
+        "wordSign": 1,
+        "structureRule": "count of turn words 2-6 => +2; 0 => -2; any sentence > 30 words => -1"
+      }
+    },
+    {
+      "key": "authenticity",
+      "label": "Founder authenticity and vulnerability",
+      "weight": 12,
+      "description": "Raw, first-person, slightly vulnerable delivery outperforms polished ad copy; audiences detect scripted marketing fast. High I/my ratio, admissions of mistakes, honest numbers including bad ones, conversational contractions. Share processed lessons, not unresolved venting.",
+      "raise": [
+        "First-person singular voice (I, my, me) dominates",
+        "Admitting mistakes, fears, or embarrassing numbers",
+        "Conversational contractions and spoken rhythm (I'm, don't, gonna)",
+        "Behind-the-scenes specifics (where you're filming, what time it is, what you're eating)",
+        "Honest uncertainty ('I don't know if this will work')"
+      ],
+      "lower": [
+        "Corporate/marketing voice ('we're excited to announce', 'revolutionary', 'seamless', 'leverage')",
+        "Third-person brand speak ('Our platform empowers users')",
+        "Hype stacked adjectives",
+        "Overly polished, no contractions"
+      ],
+      "heuristics": {
+        "scope": "full",
+        "patterns": [
+          "\\b(i|i'?m|i'?ve|i'?d|my|me|myself)\\b",
+          "\\b(honestly|truth is|to be honest|real talk|not gonna lie|ngl|i was wrong|i messed up|i screwed up|my mistake|embarrassing|i was scared|i don'?t know)\\b",
+          "\\b(don'?t|can'?t|won'?t|gonna|wanna|kinda|literally)\\b",
+          "\\b(excited to announce|revolutionary|seamless|leverage|empower|cutting[- ]edge|best[- ]in[- ]class|synergy|solution|innovative|unlock your potential)\\b",
+          "\\b(our platform|our solution|users can|customers can)\\b"
+        ],
+        "patternSigns": [0.3, 2, 0.3, -2, -2],
+        "words": ["honestly", "scared", "embarrassing", "broke", "tired", "3am", "bedroom", "dorm", "parents", "alone", "solo", "vulnerable", "admit"],
+        "wordSign": 1,
+        "ratioRule": "firstPersonSingular / totalWords >= 0.05 => +2; < 0.02 => -2"
+      }
+    },
+    {
+      "key": "relatability",
+      "label": "Relatability and identity",
+      "weight": 12,
+      "description": "Viewers share content that says something about who they are. Pain-point framing ('does anyone else...'), naming a tribe (solo founders, Gen Z, people on dating apps, college students), and 'you' address make the viewer the subject. For consumer apps, framing the problem as an identity or personality trait (not a clinical/feature description) widens reach. ~95% of TikTok FYP watch time is from unfamiliar accounts, so the video must work for a stranger.",
+      "raise": [
+        "Second-person address (you, your) balanced with founder 'I'",
+        "Universal pain points tied to the app's job (swiping fatigue, ghosting, forgetting, procrastination, counting calories)",
+        "Tribe/identity labels (Gen Z, solo founder, 9-5er, college kid, girlies, single people)",
+        "'Does anyone else' / 'tell me I'm not the only one' framing",
+        "Cultural references to the moment (city, school, current dating discourse)"
+      ],
+      "lower": [
+        "Jargon only insiders get (TAM, PMF, Series A) without translation",
+        "Feature-first description rather than problem-first",
+        "Zero 'you' and zero shared pain"
+      ],
+      "heuristics": {
+        "scope": "full",
+        "patterns": [
+          "\\b(you|your|you'?re|you'?ve)\\b",
+          "\\b(does anyone else|anyone else|am i the only one|tell me i'?m not the only|we all|we'?ve all|be honest)\\b",
+          "\\b(gen z|millennials?|solo founders?|indie hackers?|college|students?|9[- ]?to[- ]?5|single (people|girls|guys)|girlies|introverts?|adhd|first[- ]time founders?)\\b",
+          "\\b(ghost(ed|ing)?|swip(e|ing)|situationship|dating apps?|burnout|procrastinat\\w*|overthink\\w*|doomscroll\\w*|lonely|anxiety)\\b",
+          "\\b(tam|sam|pmf|product[- ]market fit|series [a-c]|cap table|ebitda|b2b|saas)\\b"
+        ],
+        "patternSigns": [0.3, 2, 1.5, 1, -1],
+        "words": ["relatable", "literally me", "same", "everyone", "nobody tells you", "real life", "struggle", "vibe"],
+        "wordSign": 1,
+        "ratioRule": "youCount >= 2 and iCount >= 2 => +1 (dialogue balance)"
+      }
+    },
+    {
+      "key": "shareSaveReplay",
+      "label": "Share / save / replay trigger",
+      "weight": 10,
+      "description": "Sends-per-reach is the key signal for reaching non-followers on Reels (Mosseri, Jan 2025), and shares/saves are weighted above likes on TikTok. Triggers: a 'send this to' prompt, a surprising stat worth repeating, a saveable list/framework, a controversial take that invites tagging, or a loop ending that drives rewatch.",
+      "raise": [
+        "Explicit send/tag prompt ('send this to the friend who...')",
+        "Save-worthy structure (numbered steps, 'the 3 things', tool stack)",
+        "Surprising or counterintuitive stat",
+        "Hot take that invites debate in comments",
+        "Loop ending that flows back into the first line",
+        "Comment-bait question tied to the topic ('Which one would you pick?')"
+      ],
+      "lower": [
+        "Nothing quotable or repeatable",
+        "Ending that fades out ('so yeah, that's it')",
+        "Generic 'like and follow' ask instead of a reason to share"
+      ],
+      "heuristics": {
+        "scope": "full",
+        "patterns": [
+          "\\b(send this|share this|tag (someone|a friend|your)|show this to|send it to)\\b",
+          "\\b(save this|bookmark|screenshot this|you'?ll need this|steal this|copy this)\\b",
+          "\\b(\\d+|three|five|seven|ten) (things|steps|mistakes|tools|apps|lessons|rules|reasons|ways)\\b",
+          "\\b(unpopular opinion|hot take|controversial|fight me|change my mind|nobody talks about|no one tells you)\\b",
+          "\\b(comment|drop|tell me) (below|\\w+ in the comments|which|what|your)\\b",
+          "\\?\\s*$",
+          "\\b(so yeah|that'?s it|that'?s all|anyway,? bye)\\b"
+        ],
+        "patternSigns": [2, 2, 1.5, 1.5, 1, 1, -2],
+        "words": ["send", "save", "tag", "share", "steal", "framework", "checklist", "stack", "template", "loop", "watch again"],
+        "wordSign": 1,
+        "loopRule": "if >= 2 content words from the hook reappear in the final sentence => +2 (loop)"
+      }
+    },
+    {
+      "key": "cta",
+      "label": "CTA clarity and softness",
+      "weight": 8,
+      "description": "One clear, low-friction next step tied to value, placed after the payoff (product mention after ~50-70% of watch time is earned). Soft, native CTAs ('link in bio if you want to try it', 'follow to see if I hit $10K', 'comment APP and I'll send it') outperform hard sells. Follow-the-journey CTAs fit build-in-public best.",
+      "raise": [
+        "Exactly one CTA, in the final 20% of the script",
+        "Follow-for-the-journey framing ('follow to see day 31')",
+        "Keyword comment CTA ('comment BETA')",
+        "App named naturally inside the story, not as an ad",
+        "Value-tied ask ('it's free for the first week')"
+      ],
+      "lower": [
+        "No CTA at all",
+        "Multiple competing CTAs (follow AND like AND download AND subscribe)",
+        "Hard sell in the first 3 seconds",
+        "Salesy phrases ('limited time', 'buy now', 'use code' without context)"
+      ],
+      "heuristics": {
+        "scope": "ending",
+        "patterns": [
+          "\\b(link in (my )?bio|in my bio|app store|download (it|the app)|try it|it'?s free|waitlist|join the beta|testflight)\\b",
+          "\\b(follow (along|me|for)|follow to see|part \\d+|day \\d+ tomorrow|i'?ll update you|stay tuned)\\b",
+          "\\bcomment\\s+[\"'“]?[A-Z]{2,}[\"'”]?\\b",
+          "\\b(buy now|limited time|act now|don'?t miss out|use code|discount|sale ends)\\b",
+          "\\b(like,? (comment,? )?(and )?(share|subscribe|follow)|smash that)\\b"
+        ],
+        "patternSigns": [2, 2, 2, -2, -1.5],
+        "words": ["link", "bio", "follow", "waitlist", "beta", "free", "download", "try"],
+        "wordSign": 0.5,
+        "countRule": "distinct CTA types in full script: 1 => +2; 0 => -3; >= 3 => -2; CTA in hook scope => -2"
+      }
+    },
+    {
+      "key": "trendFit",
+      "label": "Trend and format fit",
+      "weight": 7,
+      "description": "Does the script ride a recognizable 2025-2026 format the audience already knows how to watch: POV, storytime, replying to a comment, day X of building, revenue reveal, 'things I'd never do', AI/vibe-coding builds, reacting to hate. Native platform language and a repeatable series format compound reach. Length near 15-45s (top founder clips ~18s) unless storytime earns more.",
+      "raise": [
+        "Recognized format marker (POV:, Day X of, Replying to @, Part 2, storytime, 'things I'd never')",
+        "Current-topic tie-ins (AI, vibe coding, building with Claude/Cursor, app store charts, dating discourse)",
+        "Series framing that implies more episodes",
+        "Duration estimate within 15-45s"
+      ],
+      "lower": [
+        "Reads like a press release or blog post",
+        "Estimated length > 75s without strong story tension",
+        "Dated slang or dead memes",
+        "No recognizable format"
+      ],
+      "heuristics": {
+        "scope": "full",
+        "patterns": [
+          "^\\s*pov\\b|\\bpov:",
+          "\\bday \\d+ of\\b",
+          "\\b(replying to|reply to) @?\\w+|\\b(someone|this guy|this girl|a hater) (commented|said)\\b",
+          "\\b(part \\d+|ep(isode)? \\d+|series)\\b",
+          "\\b(storytime|story time)\\b",
+          "\\b(things i'?d never|things i would never|red flags?|green flags?|ick|tier list|rating|ranking)\\b",
+          "\\b(ai|vibe[- ]?cod(ed|ing)|no[- ]code|built with (ai|claude|cursor|chatgpt)|agent|prompt(ed)?)\\b",
+          "\\b(press release|we are pleased|in conclusion|furthermore|additionally)\\b"
+        ],
+        "patternSigns": [1.5, 1.5, 1.5, 1, 1, 1.5, 1, -2],
+        "words": ["pov", "storytime", "replying", "day", "part", "ick", "tier", "vibe", "build", "building in public"],
+        "wordSign": 0.5,
+        "lengthRule": "estSec = words / 2.6; 15<=estSec<=45 => +2; 45<estSec<=75 => 0; estSec>75 => -2; estSec<8 => -1"
+      }
+    }
+  ],
+  "hooks": [
+    {"key": "built_that", "label": "I built a ___ that ___", "template": "I built a {product} that {surprising outcome or behavior}.", "example": "I built a dating app that only lets you match with people your friends already like."},
+    {"key": "proof_first_revenue", "label": "Proof-first revenue", "template": "My {app type} made ${amount} {timeframe}. Here's exactly how.", "example": "My calorie app made $41,000 last month. Here's exactly how."},
+    {"key": "x_in_y_days", "label": "X in Y days", "template": "I went from {before} to {after} in {N} days.", "example": "I went from 0 to 12,000 users in 21 days with zero ad spend."},
+    {"key": "pov_founder", "label": "POV: you're the founder", "template": "POV: you're the founder of {app} and {absurd or painful situation}.", "example": "POV: you're the founder of a dating app and your own match ghosts you."},
+    {"key": "day_n_of", "label": "Day N of building", "template": "Day {N} of building {app} until it makes ${goal}/month.", "example": "Day 47 of building my app until it makes $10K a month. Today was bad."},
+    {"key": "almost_quit", "label": "Almost quit", "template": "I was {N} {days/dollars} away from shutting down {app}. Then {event}.", "example": "I was $800 away from shutting down my app. Then one TikTok hit 2 million views."},
+    {"key": "nobody_tells_you", "label": "Nobody tells you", "template": "Nobody tells you this about {building/launching/running} a {category} app.", "example": "Nobody tells you this about running a dating app: most of your users are lying about their height."},
+    {"key": "contrarian_stop", "label": "Contrarian stop", "template": "Stop {common advice}. It's why your {thing} isn't working.", "example": "Stop adding features. It's why your app has 40 users."},
+    {"key": "reply_hater", "label": "Replying to the hater", "template": "Someone said '{hate comment}'. So I {action}.", "example": "Someone said 'nobody will pay for this app.' So I showed them the Stripe dashboard."},
+    {"key": "age_flex", "label": "Age / underdog", "template": "I'm {age} and my app {achievement}.", "example": "I'm 19 and my app just passed Tinder in the App Store charts in France."},
+    {"key": "built_with_ai", "label": "Built with AI in hours", "template": "I built {app} in {short time} using {AI tool}, and it {result}.", "example": "I built this app in one weekend with Claude, and it already has 600 paying users."},
+    {"key": "insider_secret", "label": "Insider secret", "template": "As the founder of a {category} app, here's what {platform/apps} won't tell you about {topic}.", "example": "As the founder of a dating app, here's what the algorithm actually does when you swipe left on everyone."},
+    {"key": "mistake_cost", "label": "Mistake that cost me", "template": "This one mistake cost my app ${amount} / {N} users.", "example": "This one paywall mistake cost my app $14,000 in a month."},
+    {"key": "does_anyone_else", "label": "Does anyone else", "template": "Does anyone else {relatable pain}? I got so annoyed I built an app for it.", "example": "Does anyone else forget why they walked into a room? I got so annoyed I built an app for it."},
+    {"key": "things_id_never", "label": "Things I'd never do", "template": "{N} things I'd never do as a {role} founder.", "example": "3 things I'd never do again as a first-time app founder."},
+    {"key": "rejected_by", "label": "Rejected by", "template": "{Authority} rejected my app {N} times. Here's what finally got it approved.", "example": "Apple rejected my app 6 times. Here's what finally got it approved."},
+    {"key": "screenshot_this", "label": "Look at this", "template": "Look at this {graph/review/notification}. {One-line context}.", "example": "Look at this graph. That spike is the day my mom posted about my app."},
+    {"key": "quit_job", "label": "Quit my job", "template": "I quit my {job} {timeframe} ago to build {app}. Here's my bank account now.", "example": "I quit my $180K Google job 8 months ago to build an app. Here's my bank account now."},
+    {"key": "if_youre", "label": "Identity call-out", "template": "If you're a {identity} who {pain}, this is for you.", "example": "If you're single and tired of swiping for 3 hours a night, watch this."},
+    {"key": "bet_challenge", "label": "Public bet / challenge", "template": "I have {N} days to get {app} to {goal} or I {stake}.", "example": "I have 30 days to get my app to $5K MRR or I go back to my old job."},
+    {"key": "unpopular_opinion", "label": "Unpopular opinion", "template": "Unpopular opinion: {category} apps are {bold claim}.", "example": "Unpopular opinion: dating apps are designed to keep you single. So I built one that isn't."},
+    {"key": "how_much_made", "label": "Honest numbers", "template": "Here's how much my {N}-month-old app actually makes.", "example": "Here's how much my 4-month-old AI app actually makes, no cap."},
+    {"key": "fake_demo", "label": "Should I build this?", "template": "Would you use an app that {novel premise}? Be honest.", "example": "Would you use an app that locks TikTok until you do 20 pushups? Be honest."},
+    {"key": "copied_competitor", "label": "Big company copied me", "template": "{Big company} just {copied/launched} the feature I built {timeframe} ago.", "example": "Hinge just launched the feature I built in my dorm room last year."}
+  ],
+  "formats": [
+    {"key": "revenue_reveal", "label": "Revenue / metrics reveal", "beats": ["0-2s: hook with exact number on screen (dashboard screenshot)", "2-6s: re-hook with contrast (age, timeframe, zero budget)", "6-20s: 2-3 drivers of the number, each with a specific", "20-28s: one honest downside or cost", "28-32s: follow-for-next-month CTA"], "lengthSec": 30, "notes": "Backbone of build-in-public. Must show proof on screen. Rotate with non-revenue content to avoid looking like flexing."},
+    {"key": "storytime_near_failure", "label": "Storytime: the moment it almost died", "beats": ["0-3s: stakes hook ('$800 from shutting down')", "3-8s: context (who I am, what the app is, in one line)", "8-30s: escalating obstacles with timestamps", "30-45s: the turn (viral video, one user, one change)", "45-55s: payoff number + lesson", "55-60s: soft CTA or loop to opening line"], "lengthSec": 55, "notes": "Longest format that still performs; earns length via tension. Keep sentences short; cut any tangent."},
+    {"key": "reply_to_hate", "label": "Replying to a hate comment", "beats": ["0-2s: comment sticker on screen, founder reads it aloud", "2-5s: reaction beat (laugh, pause, 'okay so')", "5-20s: rebuttal with receipts (screenshot, number, user review)", "20-25s: concede one fair point (authenticity)", "25-30s: invite more questions / follow"], "lengthSec": 25, "notes": "Use TikTok 'reply with video' feature for native distribution. Generates comments and debate; keep tone calm, not defensive."},
+    {"key": "day_n_series", "label": "Day N of building until $X", "beats": ["0-2s: 'Day N of...' with goal", "2-5s: today's current number", "5-18s: what happened today (one win, one setback)", "18-22s: tomorrow's plan", "22-25s: 'follow to see day N+1'"], "lengthSec": 22, "notes": "Repeatable series format; compounds followers who return for updates. Consistency (daily) matters more than any single episode."},
+    {"key": "pov_skit", "label": "POV founder skit", "beats": ["0-1s: on-screen 'POV: you're the founder of X and...'", "1-12s: acted situation, often founder playing two roles", "12-18s: punchline or reveal", "18-20s: app shown naturally in the scene"], "lengthSec": 18, "notes": "Low-fi skits with drama and a reveal mirror the Cal AI style. Product mention after the joke lands."},
+    {"key": "things_id_never", "label": "Things I'd never do as a founder", "beats": ["0-2s: '3 things I'd never do as an app founder'", "2-10s: #1 with a specific example", "10-18s: #2", "18-26s: #3 (strongest/most contrarian last)", "26-30s: 'which one do you disagree with?'"], "lengthSec": 30, "notes": "Saveable list format; contrarian items drive comments. Number on screen per item."},
+    {"key": "build_with_ai", "label": "I built this with AI in X hours", "beats": ["0-2s: finished app on screen + time claim", "2-6s: 'here's the exact stack' (tools named)", "6-25s: sped-up screen recording with 3 key prompts/moments", "25-35s: result (users, revenue, App Store link)", "35-40s: 'comment STACK for the prompts' CTA"], "lengthSec": 40, "notes": "Rides the 2025-2026 vibe-coding wave. High save rate if tools/prompts are concrete. Avoid overpromising; show one thing that broke."},
+    {"key": "insider_secrets", "label": "Insider secrets from a founder", "beats": ["0-2s: authority + secret hook ('As a dating app founder...')", "2-20s: the secret explained plainly with one example", "20-28s: what it means for the viewer (practical tip)", "28-32s: how our app does it differently (soft)"], "lengthSec": 30, "notes": "Kippo CEO pattern: blunt industry truths (height filters, algorithms). Very strong for dating/social apps; drives shares to friends."},
+    {"key": "fake_demo_validation", "label": "Would you use this? (pre-launch validation)", "beats": ["0-2s: 'Would you use an app that...'", "2-10s: Figma mockup or rough prototype walkthrough", "10-14s: 'comment if I should build it'"], "lengthSec": 15, "notes": "PushScroll and Breezy pattern: 15s rough-mockup videos drove 80K views / 5,000 waitlist signups before code existed. Comments become the demand signal."},
+    {"key": "day_in_life", "label": "Day in the life of a (solo / young) founder", "beats": ["0-2s: time-stamped opener ('5:30am, 19-year-old app founder')", "2-25s: 6-10 quick clips with captions (code, calls, gym, support tickets)", "25-35s: one real number or problem of the day", "35-40s: reflective line + follow"], "lengthSec": 40, "notes": "Identity and aspiration content; voiceover over b-roll rather than pure talking head. Include one unglamorous moment."},
+    {"key": "relatable_pain_plug", "label": "Relatable pain + soft plug", "beats": ["0-3s: 'Does anyone else...' pain point", "3-10s: exaggerate the pain relatably", "10-14s: 'so I built an app for it' with quick screen", "14-18s: 'link in bio, it's free'"], "lengthSec": 18, "notes": "Product appears after 50-70% watch time is earned. Frame the pain as identity (Gen Z, ADHD, single), not a clinical feature."},
+    {"key": "public_bet", "label": "Public bet / challenge", "beats": ["0-2s: stakes ('30 days to $5K MRR or I go back to my job')", "2-8s: starting numbers", "8-20s: the plan in 3 moves", "20-25s: 'follow to hold me accountable'"], "lengthSec": 25, "notes": "Creates a built-in narrative for a series and a reason to follow. Follow-ups must report honestly, including failure."},
+    {"key": "before_after_pivot", "label": "Before / after pivot", "beats": ["0-2s: two numbers side by side (before vs after)", "2-12s: what the old version was and why it failed", "12-25s: the one change made", "25-30s: lesson + CTA"], "lengthSec": 30, "notes": "Works well for onboarding/paywall/pricing changes. Show the actual old vs new screen."}
+  ],
+  "sources": [
+    {"title": "Founder Playbook: TikTok virality TL;DR (RevenueCat Sub Club summary)", "url": "https://www.betterlaunch.co/playbooks/episodes/tiktok-virality-tldr", "used_for": "95% FYP watch time from unfamiliar accounts; Breezy 15s founder video -> ~5,000 waitlist; product mention after 50-70% watch time; 'does anyone else' hooks"},
+    {"title": "Founder build-in-public content playbook 2026 (Socialync)", "url": "https://www.socialync.io/blog/founder-build-in-public-content-playbook-2026", "used_for": "Hook 0-3s / re-hook 3-7s / doubt-then-proof / loop ending; top founder videos ~18s; proof on screen; follow-the-journey CTAs"},
+    {"title": "3 types of content that convert on TikTok for product founders", "url": "https://buildingafrika.substack.com/p/3-types-of-content-that-convert-on", "used_for": "Human-perspective, repeatable series, storytime formats; Tripbff and Jenni AI examples"},
+    {"title": "The dating app CEO that's going viral on TikTok (Global Dating Insights)", "url": "https://www.globaldatinginsights.com/news/the-dating-app-ceo-thats-going-viral-on-tiktok/", "used_for": "Kippo CEO insider-secrets format for dating apps"},
+    {"title": "TikTok Hook Formulas That Drive 3-Second Holds (Opus Clip)", "url": "https://www.opus.pro/blog/tiktok-hook-formulas", "used_for": "Bold statement, question, pattern interrupt, proof-first hooks; >65% 3s retention -> 4-7x impressions"},
+    {"title": "Why the First Few Seconds Matter (Virlo)", "url": "https://virlo.ai/blog/why-the-first-few-seconds-matter", "used_for": "3s retention threshold (~70%)"},
+    {"title": "Video length sweet spots: TikTok, Reels, Shorts (Shortimize)", "url": "https://www.shortimize.com/blog/video-length-sweet-spots-tiktok-reels-shorts", "used_for": "Length guidance (conflicting: 15-30s viral, 60-90s Reels engagement)"},
+    {"title": "Instagram Reels Algorithm 2025 (Fanpage Karma)", "url": "https://www.fanpagekarma.com/insights/?p=9293", "used_for": "Mosseri's 3 ranking signals: watch time, likes per reach, sends per reach"},
+    {"title": "How does the algorithm for Reels work in 2025 (Stack Influence)", "url": "https://stackinfluence.com/how-does-the-algorithm-for-reels-work-in-2025/", "used_for": "Connected vs unconnected reach; DM shares for discovery"},
+    {"title": "TikTok engagement strategy (Socialkit)", "url": "https://socialk.it/en/blog/tiktok-engagement-strategy", "used_for": "Shares/saves weighted above likes; saves = future intent"},
+    {"title": "TikTok algorithm 2025 (Socialz)", "url": "https://socialz.ai/blog/tiktok-algorithm-2025", "used_for": "Completion rate / rewatch as primary signal"},
+    {"title": "We cracked TikTok and made $100K in 3 months (Natural Right / PushScroll summaries)", "url": "https://onepage-research.sliplane.app/articles/youtube.com/yt-1nfPvJKrYYQ", "used_for": "Copying proven viral formats; 9M views -> $100K revenue (self-reported)"},
+    {"title": "How two founders made $30K/month by building content before product (PushScroll)", "url": "https://onepage-research.sliplane.app/articles/youtube.com/yt-ST2ROU-0932ccd0", "used_for": "Fake-demo validation video: 80K views, 500 comments, then $30K MRR"},
+    {"title": "When it came to Cal AI's viral success, a small army of influencers paid off", "url": "https://www.winzheng.com/en/article/cal-ai-influencer-marketing-success", "used_for": "Cal AI: founder-made TikToks first, then hundreds of hook tests, raw skit-with-reveal style"},
+    {"title": "Vibe-coded app that sells: the Cal AI framework (MindStudio)", "url": "https://www.mindstudio.ai/blog/vibe-coded-app-that-sells-cal-ai-framework/", "used_for": "Built-with-AI narrative as content angle"},
+    {"title": "The vibe coding wave: 5 builders who turned vibe coding into money", "url": "https://iamjohnellison.substack.com/p/the-vibe-coding-wave-is-here-5-builders", "used_for": "Public MRR posts as build-in-public content (2025)"},
+    {"title": "French dating app just passed Tinder in the App Store (Playkit)", "url": "https://playkit.beehiiv.com/p/french-dating-app-just-passed-tinder-app-store", "used_for": "Chart-rank milestone as hook material for dating apps"},
+    {"title": "How founders can leverage their personal TikTok to supercharge growth", "url": "https://tiktoktips.substack.com/p/how-founders-can-leverage-their-personal", "used_for": "Founder personal account as distribution channel for consumer/social apps"},
+    {"title": "25 Viral Video Hooks for Short-Form Videos (Metricool)", "url": "https://metricool.com/viral-video-hooks/", "used_for": "General hook templates"},
+    {"title": "15 TikTok Hook Templates (CreatorsJet)", "url": "https://www.creatorsjet.com/blog/15-tiktok-hook-templates", "used_for": "Before/after and time-boxed experiment hooks"}
+  ]
+}

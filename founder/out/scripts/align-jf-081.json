@@ -1,0 +1,123 @@
+{
+  "id": "align-jf-081",
+  "sourceId": "jf-081",
+  "title": "You earn power by going on dates",
+  "angleKey": "energy",
+  "hookKey": "unpopular_opinion",
+  "formatKey": "storytime_near_failure",
+  "hook": "Unpopular opinion: dating apps reward the wrong thing.",
+  "beats": [
+    {
+      "line": "I'm Hakeem. I'm building Align, a dating app played as a card game.",
+      "broll": "You, to camera",
+      "onScreen": "founder, Align"
+    },
+    {
+      "line": "Every dating app rewards swiping. So people swipe.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
+      "broll": "Energy meter in the deck",
+      "onScreen": ""
+    },
+    {
+      "line": "Once the points pointed at real life, people started planning dates to earn them.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Make the game reward what you actually want.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Follow along. I'm building it in public.",
+  "caption": "Message +2. Talk card +5. Show up +15.",
+  "hashtags": [
+    "gamification",
+    "datingapp",
+    "buildinpublic"
+  ],
+  "lengthSec": 33,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 78,
+    "craft": 72,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 90,
+        "hits": [
+          "unpopular opinion"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 59,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 86,
+        "hits": [
+          "you",
+          "dating apps",
+          "real life,"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 75,
+        "hits": [
+          "unpopular opinion",
+          "send"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 95,
+        "hits": [
+          "follow along",
+          "follow"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": "10-capricorn",
+  "sign": "capricorn",
+  "title": "Capricorn, love isn't a summit",
+  "caption": "for the capricorns who answer emails at midnight",
+  "hashtags": [
+    "capricorn",
+    "astrology",
+    "zodiac",
+    "capricornseason",
+    "zodiaclove"
+  ],
+  "scenes": [
+    {
+      "text": "capricorn, put the work down for one minute.",
+      "kind": "void",
+      "body": "ringed"
+    },
+    {
+      "text": "saturn raised you on patience and deadlines.",
+      "kind": "rise",
+      "body": "ringed",
+      "sky": "dusk"
+    },
+    {
+      "text": "the goat in you climbs slowly and almost never falls.",
+      "kind": "ridge",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "so you treat love like another mountain.",
+      "kind": "ridge",
+      "body": "sun",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "something to earn, one careful step at a time.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "ember"
+    },
+    {
+      "text": "you show up early. you remember everything.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "and you still wonder if it's enough.",
+      "kind": "lake",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "but love doesn't have a summit.",
+      "kind": "void",
+      "body": "none"
+    },
+    {
+      "text": "no top, no flag, no view that proves you made it.",
+      "kind": "burst",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "it's the person who sits with you on the ledge.",
+      "kind": "arch",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "put your terms on the table, then let them in.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "you've carried enough sky. let someone take a corner.",
+      "kind": "figure"
+    },
+    {
+      "text": "you're allowed to be loved before you're finished.",
+      "kind": "field",
+      "body": "crescent",
+      "sky": "dusk"
+    },
+    {
+      "text": "the mountain will wait. sit down a while.",
+      "kind": "ridge",
+      "body": "moon",
+      "sky": "night"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "03-mercury-retrograde",
+  "sign": "gemini",
+  "sky": "dusk",
+  "moon": "crescent",
+  "title": "Mercury retrograde: the post office is returning letters",
+  "caption": "mercury turned back on the 24th. what did you almost send this week?",
+  "hashtags": ["mercuryretrograde", "retrograde", "astrology", "texting", "zodiac"],
+  "signposts": [["the 3rd · messages", "the 12th · endings"], ["the 7th · partners", "the 8th · secrets"], ["the 5th · romance", "the 11th · friends"], ["the 4th · home", "the 1st · you"]],
+  "beats": [
+    {"text": "the post office is delivering 2019", "accent": "2019", "icon": "card", "sub": "mercury retrograde · oct 24"},
+    {"text": "mercury turned back on the 24th, in scorpio", "accent": "turned", "icon": "star", "sub": "mercury · in scorpio"},
+    {"text": "half the town is rereading old threads", "accent": "rereading", "icon": "eye", "sub": "the 3rd · messages"},
+    {"text": "you scrolled up until it was summer again", "accent": "summer", "icon": "moon", "sub": "2:14am"},
+    {"text": "there's a draft that starts with hey stranger", "accent": "hey stranger", "icon": "door", "sub": "unsent"},
+    {"text": "retrograde is for rereading, not resending", "accent": "rereading resending", "icon": "key", "sub": "mercury · a lesson"},
+    {"text": "you can miss them and still not text", "accent": "miss", "icon": "heart", "sub": "the 12th · endings"},
+    {"text": "let the thread rest. release, don't haunt", "accent": "haunt", "icon": "moon", "sub": "align · a rule"},
+    {"text": "what did you almost send this week?", "accent": "almost", "icon": "glyph:gemini", "sub": "tell the post office"}
+  ],
+  "end": "align",
+  "endSub": "a new deal at 11:11"
+}

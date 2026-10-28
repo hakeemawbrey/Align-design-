@@ -1,0 +1,86 @@
+{
+  "id": "05-leo",
+  "sign": "leo",
+  "title": "Leo, you can shine for no one and still be held",
+  "caption": "for the leos who keep the porch light on",
+  "hashtags": [
+    "leo",
+    "astrology",
+    "zodiac",
+    "leoseason",
+    "firesigns"
+  ],
+  "scenes": [
+    {
+      "text": "dear leo,",
+      "kind": "void",
+      "body": "sun"
+    },
+    {
+      "text": "ruled by the sun, so of course rooms turn toward you.",
+      "kind": "ridge",
+      "body": "sun",
+      "sky": "dusk"
+    },
+    {
+      "text": "you remember the birthdays. you take the late call.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "but some nights you wonder who'd stay in the dark.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "here's what the sky knows about the sun:",
+      "kind": "burst",
+      "body": "sun",
+      "sky": "ember"
+    },
+    {
+      "text": "it keeps burning, even with half the world turned away.",
+      "kind": "rise",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "so you don't have to earn the warmth you give away.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "and you don't have to dazzle to be worth staying for.",
+      "kind": "lake",
+      "body": "crescent",
+      "sky": "violet"
+    },
+    {
+      "text": "let someone read your sky before they see the glow.",
+      "kind": "arch",
+      "body": "blue",
+      "sky": "teal"
+    },
+    {
+      "text": "warmth is meant to come back to you, too.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "you can shine for no one and still ask to be held.",
+      "kind": "figure",
+      "body": "none"
+    },
+    {
+      "text": "you don't have to audition for the morning, leo.",
+      "kind": "void",
+      "body": "sun",
+      "sky": "dawn"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "06-virgo",
+  "sign": "virgo",
+  "title": "Virgo, you were never the rough draft",
+  "caption": "no notes, virgo. none.",
+  "hashtags": [
+    "virgo",
+    "astrology",
+    "zodiac",
+    "virgoseason",
+    "earthsigns"
+  ],
+  "scenes": [
+    {
+      "text": "virgo, you've already found the typo in this.",
+      "kind": "figure",
+      "body": "none"
+    },
+    {
+      "text": "you notice the tone, the pause before the word fine.",
+      "kind": "ridge",
+      "body": "crescent",
+      "sky": "teal"
+    },
+    {
+      "text": "mercury gave you a mind that edits as it walks.",
+      "kind": "field",
+      "body": "earth",
+      "sky": "dawn"
+    },
+    {
+      "text": "so you love the way you do everything: in lists.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dusk",
+      "road": true
+    },
+    {
+      "text": "you'd fix their sink, their week, their cover letter.",
+      "kind": "arch",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "then you go home and edit yourself hardest of all.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "every flaw you catch in them, you caught in you first.",
+      "kind": "lake",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "you're earth. soil is messy, and things still grow.",
+      "kind": "rise",
+      "body": "earth",
+      "sky": "dawn"
+    },
+    {
+      "text": "so stop drafting a cleaner version of you to send out.",
+      "kind": "void",
+      "body": "blue"
+    },
+    {
+      "text": "put your dealbreakers up front. let the rest be human.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "you're not a draft. no one's waiting on a final copy.",
+      "kind": "burst",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "put the red pen down. nothing here needs fixing.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "dusk"
+    }
+  ]
+}

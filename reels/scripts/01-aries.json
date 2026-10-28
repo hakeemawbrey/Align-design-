@@ -1,0 +1,91 @@
+{
+  "id": "01-aries",
+  "sign": "aries",
+  "title": "Aries, stay for the middle",
+  "caption": "for the aries who love the first chapter most",
+  "hashtags": [
+    "aries",
+    "astrology",
+    "zodiac",
+    "firesigns",
+    "ariesseason"
+  ],
+  "scenes": [
+    {
+      "text": "aries, stand still for this one.",
+      "kind": "void",
+      "body": "red"
+    },
+    {
+      "text": "mars gave you a match that lights on anything.",
+      "kind": "burst",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "you're the first to text, the first to leave the party,",
+      "kind": "road",
+      "body": "sun",
+      "sky": "dusk"
+    },
+    {
+      "text": "the first to say it out loud.",
+      "kind": "road",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "they call it reckless. really, it's courage in a hurry.",
+      "kind": "ridge",
+      "body": "red",
+      "sky": "ember",
+      "road": true
+    },
+    {
+      "text": "but here's the part nobody tells you.",
+      "kind": "void",
+      "body": "none"
+    },
+    {
+      "text": "the best things don't happen at the start.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "dusk"
+    },
+    {
+      "text": "they happen in the slow middle you keep skipping.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "the third dinner. the dull tuesday. the second fight.",
+      "kind": "arch",
+      "body": "crescent",
+      "sky": "violet"
+    },
+    {
+      "text": "that's where someone actually gets to meet you.",
+      "kind": "figure"
+    },
+    {
+      "text": "it has to be mutual, so let them catch up.",
+      "kind": "rise",
+      "body": "red",
+      "sky": "dusk"
+    },
+    {
+      "text": "you don't have to win love. just stay for it.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "go easy on the gas tonight, ram.",
+      "kind": "ridge",
+      "body": "red",
+      "sky": "night"
+    }
+  ]
+}

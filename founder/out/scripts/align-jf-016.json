@@ -1,0 +1,98 @@
+{
+  "id": "align-jf-016",
+  "sourceId": "jf-016",
+  "title": "Every price is an angel number",
+  "angleKey": "pricing-angel-numbers",
+  "hookKey": "built_that",
+  "formatKey": "mood_one_liner",
+  "hook": "So I built a dating app where every price is an angel number.",
+  "beats": [
+    {
+      "line": "If your audience notices numbers, make the numbers mean something.",
+      "broll": "Slow push-in at night, cinematic sound, text on screen",
+      "onScreen": ""
+    }
+  ],
+  "cta": "",
+  "caption": "$88.88 a year. On purpose.",
+  "hashtags": [
+    "angelnumbers",
+    "1111",
+    "pricing"
+  ],
+  "lengthSec": 12,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 65,
+    "craft": 58,
+    "fit": 94,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 90,
+        "hits": [
+          "i built"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 70,
+        "hits": [
+          "so i"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 53,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 63,
+        "hits": [
+          "your",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

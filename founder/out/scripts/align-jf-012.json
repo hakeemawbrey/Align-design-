@@ -1,0 +1,117 @@
+{
+  "id": "align-jf-012",
+  "sourceId": "jf-012",
+  "title": "A dating app that plays like a card game",
+  "angleKey": "trading-cards",
+  "hookKey": "reply_hater",
+  "formatKey": "reply_to_hate",
+  "hook": "Someone commented \"turning dating into a card game is childish.\" So I'll show you.",
+  "beats": [
+    {
+      "line": "Fair question. Here's how it actually works.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align every night is a deal: draws of five people, then a gold event card.",
+      "broll": "Dealing: cards fly in (#dealing)",
+      "onScreen": ""
+    },
+    {
+      "line": "Myths, Gilded about one pack in five, Mythic about one in twenty-five. Each season prints a fixed run.",
+      "broll": "Pack opening: tear across the top",
+      "onScreen": "Gilded 1 in 5 · Mythic 1 in 25"
+    },
+    {
+      "line": "People are never in a pack. You collect signs and questions, not humans.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Comment which card you'd want to pull first.",
+  "caption": "Every match gives you a pack. The last card is always a sign.",
+  "hashtags": [
+    "tradingcards",
+    "datingapp",
+    "buildinpublic"
+  ],
+  "lengthSec": 31,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 70,
+    "craft": 63,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 100,
+        "hits": [
+          "then",
+          "so i"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 33,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 59,
+        "hits": [
+          "you"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 60,
+        "hits": [
+          "comment which"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 90,
+        "hits": [
+          "comment which"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 85,
+        "hits": [
+          "someone commented"
+        ]
+      }
+    ]
+  }
+}

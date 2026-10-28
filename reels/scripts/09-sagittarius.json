@@ -1,0 +1,96 @@
+{
+  "id": "09-sagittarius",
+  "sign": "sagittarius",
+  "title": "Sagittarius, the right one asks for the window seat",
+  "caption": "for the sagittarians with a bag already packed",
+  "hashtags": [
+    "sagittarius",
+    "astrology",
+    "zodiac",
+    "sagittariusseason",
+    "zodiaclove"
+  ],
+  "scenes": [
+    {
+      "text": "dear sagittarius,",
+      "kind": "void",
+      "body": "sun"
+    },
+    {
+      "text": "you were born with one foot out the door.",
+      "kind": "road",
+      "body": "red",
+      "sky": "dusk"
+    },
+    {
+      "text": "jupiter made you big, curious, impossible to hold.",
+      "kind": "burst",
+      "body": "ringed",
+      "sky": "ember"
+    },
+    {
+      "text": "every map you own has a corner folded down.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "and when love goes quiet, you start packing.",
+      "kind": "ridge",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "not because you're cold.",
+      "kind": "ridge",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "because still water makes the fire in you restless.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "but the road leaves one thing out.",
+      "kind": "void",
+      "body": "none"
+    },
+    {
+      "text": "some people don't want to keep you.",
+      "kind": "arch",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "they want to see where you're going.",
+      "kind": "arch",
+      "body": "earth",
+      "sky": "dawn"
+    },
+    {
+      "text": "so tell them early: you need the horizon.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "the right one won't stand in the doorway.",
+      "kind": "rise",
+      "body": "blue",
+      "sky": "dusk"
+    },
+    {
+      "text": "they'll ask for the window seat.",
+      "kind": "rise",
+      "body": "blue",
+      "sky": "dawn"
+    },
+    {
+      "text": "the sky is wide enough for two of you.",
+      "kind": "figure"
+    }
+  ]
+}

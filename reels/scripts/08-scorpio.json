@@ -1,0 +1,90 @@
+{
+  "id": "08-scorpio",
+  "sign": "scorpio",
+  "title": "Scorpio, your depth is an invitation",
+  "caption": "you're going to read this one twice",
+  "hashtags": [
+    "scorpio",
+    "astrology",
+    "zodiac",
+    "scorpioseason",
+    "watersigns"
+  ],
+  "scenes": [
+    {
+      "text": "scorpio, you're already reading between these lines.",
+      "kind": "void",
+      "body": "red"
+    },
+    {
+      "text": "mars and pluto made you for deep water.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "you skip small talk and wait for the hour it gets real.",
+      "kind": "lake",
+      "body": "crescent",
+      "sky": "teal"
+    },
+    {
+      "text": "they get your first name. you get their whole story.",
+      "kind": "ridge",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "it isn't cold. it's how you keep the soft things safe.",
+      "kind": "arch",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "but a locked door keeps out the ones who'd stay, too.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "and when it ends, you leave a window open to watch.",
+      "kind": "road",
+      "body": "crescent",
+      "sky": "violet"
+    },
+    {
+      "text": "you've burned down before. you always come back.",
+      "kind": "rise",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "so let this one burn clean. release it. don't haunt it.",
+      "kind": "burst",
+      "body": "red",
+      "sky": "ember"
+    },
+    {
+      "text": "someone good won't pry. they'll knock, and wait.",
+      "kind": "field",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "let them read your sky long before they see your face.",
+      "kind": "figure",
+      "body": "none"
+    },
+    {
+      "text": "your depth was never a warning. it's an invitation.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "rest now. the deep will keep until morning.",
+      "kind": "void",
+      "body": "moon"
+    }
+  ]
+}

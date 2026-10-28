@@ -1,0 +1,85 @@
+{
+  "id": "04-cancer",
+  "sign": "cancer",
+  "title": "Cancer, you're allowed to come home too",
+  "caption": "for the cancers who feed everyone else first",
+  "hashtags": [
+    "cancer",
+    "astrology",
+    "zodiac",
+    "watersigns",
+    "cancerseason"
+  ],
+  "scenes": [
+    {
+      "text": "cancer, the moon is up, so i know you're awake.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "she rules you, which explains the tides.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "you feel a room before you've walked into it.",
+      "kind": "arch",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "you make everyone a home, then wait by the door.",
+      "kind": "road",
+      "body": "crescent",
+      "sky": "dusk"
+    },
+    {
+      "text": "the shell isn't the problem. you're allowed a shell.",
+      "kind": "figure"
+    },
+    {
+      "text": "the problem is you only open it to give.",
+      "kind": "ridge",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "never to be given to.",
+      "kind": "ridge",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "let someone cook for you. let them be clumsy at it.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "let them learn you slowly, the way you learn everyone.",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "it has to be mutual, even for the one who takes care.",
+      "kind": "rise",
+      "body": "earth",
+      "sky": "dusk"
+    },
+    {
+      "text": "you can be someone's home and still get to come home.",
+      "kind": "burst",
+      "body": "moon",
+      "sky": "ember"
+    },
+    {
+      "text": "tonight, let someone else set the table.",
+      "kind": "void",
+      "body": "crescent",
+      "sky": "night"
+    }
+  ]
+}

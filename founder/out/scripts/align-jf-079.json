@@ -1,0 +1,121 @@
+{
+  "id": "align-jf-079",
+  "sourceId": "jf-079",
+  "title": "Three peeks, three seconds",
+  "angleKey": "peek",
+  "hookKey": "unpopular_opinion",
+  "formatKey": "storytime_near_failure",
+  "hook": "Unpopular opinion: a little temptation makes the game better.",
+  "beats": [
+    {
+      "line": "I'm Hakeem. I'm building Align, a dating app played as a card game.",
+      "broll": "You, to camera",
+      "onScreen": "founder, Align"
+    },
+    {
+      "line": "No photos sounds great until you really want to know.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "So you can cheat, a little. Hold a card and the photo opens for about three seconds.",
+      "broll": "Peek: hold on Juniper (#deck, hold Space)",
+      "onScreen": ""
+    },
+    {
+      "line": "Scarcity changes it. You save your peeks for the cards you've actually read.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "A rule you can break three times is more fun than no rule at all.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Would you use your three peeks or save them? Tell me.",
+  "caption": "Hold to peek. Three seconds. Three a day.",
+  "hashtags": [
+    "datingapp",
+    "founder",
+    "buildinpublic"
+  ],
+  "lengthSec": 36,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 76,
+    "craft": 70,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 90,
+        "hits": [
+          "unpopular opinion"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 80,
+        "hits": [
+          "until"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 59,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 88,
+        "hits": [
+          "you",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 75,
+        "hits": [
+          "unpopular opinion",
+          "save"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

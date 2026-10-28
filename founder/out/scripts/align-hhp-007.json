@@ -1,0 +1,115 @@
+{
+  "id": "align-hhp-007",
+  "sourceId": "hhp-007",
+  "title": "Every price is an angel number",
+  "angleKey": "pricing-angel-numbers",
+  "hookKey": "save_bait",
+  "formatKey": "skit_interrupt",
+  "hook": "Save this: why every price in my app is an angel number.",
+  "beats": [
+    {
+      "line": "Every app costs $9.99. Nobody remembers $9.99.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "(Friend, off camera) \"Okay, so what did you do about it?\"",
+      "broll": "Second person enters frame",
+      "onScreen": ""
+    },
+    {
+      "line": "Align's founding price is $88.88 a year, or $14.44 a month.",
+      "broll": "Paywall (#paywall)",
+      "onScreen": ""
+    },
+    {
+      "line": "$88.88 a year. $14.44 a month. 1,111 founders cards. A new deal at 11:11.",
+      "broll": "Founding member card (#founding)",
+      "onScreen": "$88.88 · $14.44 · 1,111 · 11:11"
+    }
+  ],
+  "cta": "Comment the number you always see.",
+  "caption": "$88.88 a year. On purpose.",
+  "hashtags": [
+    "angelnumbers",
+    "1111",
+    "pricing"
+  ],
+  "lengthSec": 25,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 72,
+    "craft": 65,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 90,
+        "hits": [
+          "$9.99."
+        ]
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 33,
+        "hits": [
+          "my"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 56,
+        "hits": [
+          "you"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 80,
+        "hits": [
+          "save this",
+          "save"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 70,
+        "hits": [
+          "comment the"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

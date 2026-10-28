@@ -1,0 +1,115 @@
+{
+  "id": "align-hhp-106",
+  "sourceId": "hhp-106",
+  "title": "You earn power by going on dates",
+  "angleKey": "energy",
+  "hookKey": "named_method",
+  "formatKey": "method_tutorial",
+  "hook": "This is the show-up method: how to get rewarded for actually going on dates.",
+  "beats": [
+    {
+      "line": "On Align you earn energy for real things. Send a message, +2. Play a talk card, +5. Say yes to a date, +5.",
+      "broll": "Energy meter in the deck",
+      "onScreen": ""
+    },
+    {
+      "line": "Check in at the date, +15. You spend energy on event cards.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Checking in at a real date is worth the most. More than anything you do on the screen.",
+      "broll": "Check in at Agnes Cafe",
+      "onScreen": "message +2 · talk card +5 · check in +15"
+    },
+    {
+      "line": "Make the game reward what you actually want.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Save this and try it on your next deal.",
+  "caption": "Message +2. Talk card +5. Show up +15.",
+  "hashtags": [
+    "gamification",
+    "datingapp",
+    "buildinpublic"
+  ],
+  "lengthSec": 34,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 67,
+    "craft": 59,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 60,
+        "hits": [
+          "this"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 30,
+        "hits": []
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 30,
+        "hits": []
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 65,
+        "hits": [
+          "you"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 90,
+        "hits": [
+          "save this",
+          "send",
+          "save"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 75,
+        "hits": [
+          "try it",
+          "try"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

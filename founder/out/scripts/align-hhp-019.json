@@ -1,0 +1,117 @@
+{
+  "id": "align-hhp-019",
+  "sourceId": "hhp-019",
+  "title": "Houston first: $15 for life",
+  "angleKey": "houston-beta",
+  "hookKey": "reply_hater",
+  "formatKey": "reply_to_hate",
+  "hook": "Someone commented \"launching in one city is too small to matter.\" So I'll show you.",
+  "beats": [
+    {
+      "line": "Fair question. Here's how it actually works.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "So Align launches city by city. Houston first, with partner venues like Agnes Cafe.",
+      "broll": "Houston skyline / venue",
+      "onScreen": ""
+    },
+    {
+      "line": "Fifteen dollars, once, lifetime. Only for the Houston beta.",
+      "broll": "Founding member card (#founding)",
+      "onScreen": "Houston beta · $15 once · lifetime"
+    },
+    {
+      "line": "If you're not in Houston, I'm sorry. You're on the list.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Houston, the beta link is in my bio.",
+  "caption": "Houston first. $15 once, Align+ for life.",
+  "hashtags": [
+    "houston",
+    "houstonsingles",
+    "datingapp"
+  ],
+  "lengthSec": 27,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 68,
+    "craft": 60,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 90,
+        "hits": [
+          "so i"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 59,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 69,
+        "hits": [
+          "you"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 50,
+        "hits": []
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 85,
+        "hits": [
+          "in my bio",
+          "link",
+          "bio.",
+          "beta"
+        ]
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 85,
+        "hits": [
+          "someone commented"
+        ]
+      }
+    ]
+  }
+}

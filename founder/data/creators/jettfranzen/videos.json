@@ -1,0 +1,2775 @@
+{
+  "creator": {
+    "handle": "jettfranzen",
+    "prefix": "jf",
+    "company": {
+      "name": "Franzen Media (Whop storefront, Denver)",
+      "product": "'Mindset Coaching' listing; 6 members shown",
+      "app": "Chris Williamson says on Modern Wisdom #1130 'you've already got an app' but no app name was found. Critics allege an LLC ('Success AI LLC') and trademark filings; unverified.",
+      "founder_status": "Not a startup founder in the usual sense. He is a writer and philosophy/self-improvement creator who recently graduated college."
+    },
+    "bio_line": "Writer and YouTuber: philosophy and self-improvement for young men. TikTok ~705K, Instagram ~477K, YouTube ~227K (as reported).",
+    "name": "Jett Franzen",
+    "handles": {
+      "tiktok": "@jettfranzen",
+      "instagram": "@jettfranzen",
+      "youtube": "@Jett.franzen",
+      "substack": "jettfranzen.substack.com",
+      "whop": "whop.com/@jettfranzen (Franzen Media)",
+      "x": null
+    },
+    "audience": {
+      "tiktok_followers": "~705.5K (profile snippet; TokPortal 680,162 in a separate check)",
+      "tiktok_likes": "~84.6M (profile snippet)",
+      "tiktok_videos": "~2,402 (TokPortal)",
+      "tiktok_avg_last10": "159,620 views / 20,272 likes / 387 comments (TokPortal); an earlier July 2026 check showed ~257K avg views",
+      "instagram_followers": "~477K, 289 posts (Instagram profile search snippet)",
+      "youtube_subscribers": "~227K, ~13.25M views as of mid-June 2026, channel created Dec 2025 (Social Blade via search)",
+      "substack_subscribers": "9,000+",
+      "demographic_note": "young men interested in self-improvement, loneliness and philosophy (inferred from topics and podcast hosts)"
+    }
+  },
+  "patterns": {
+    "hook_formulas": [
+      "Named-concept title card: the caption is just the name of an idea ('The Von Restorff effect', 'Agrippas Trilemma', '#socrates'). Curiosity comes from the unfamiliar term.",
+      "Thinker + modern verdict: '[Philosopher] on [taboo topic]' with a blunt on-screen claim ('You can't win if you play fair' / Machiavelli on cheating).",
+      "Relatable one-liner punchline: 'Nothing is worse than thinking in 4k but speaking in 144p'.",
+      "Direct challenge or question to the viewer: 'Guess My Religion', 'Can you prove God exists without scripture?'.",
+      "Pop-culture lens: anime, Batman, Avatar, Kanye or athletes as the doorway to a life lesson.",
+      "Numbered trap/contrast: 'Two traps you need to avoid...', 'discipline vs devotion'.",
+      "Existential 'why' question titles on YouTube: 'Why Does Any of This Feel Normal', 'Is This All Life Is?'."
+    ],
+    "persona_voice": "Earnest, introspective young man who has been alone a long time and read a lot. Speaks as 'an attempt rather than a verdict', but lands contrarian takes on effort, discipline, sex and religion. Leans on his own story: years of isolation, parents' basement, couch-surfing, 1,162 videos before 1,000 followers.",
+    "pacing_format": "Short vertical talking-head clips, often green screen or text-on-screen over slowed+reverb or cinematic sounds. Many are filmed fast in one or two takes, including at night outdoors. Captions are frequently just the hook or hashtags. Very high volume: about 2,400 TikToks, and he describes 12 to 14 recordings a day early on.",
+    "recurring_themes": [
+      "self-belief and taking action",
+      "loneliness and the 'lonely chapter'",
+      "Gen Z men, romance and dating",
+      "philosophers made practical (Socrates, Nietzsche, Machiavelli, Dostoevsky)",
+      "psychology effects and named biases",
+      "religion, morality and later Christian faith",
+      "AI and beauty standards / modern life feeling abnormal",
+      "pop culture as parable"
+    ],
+    "cta_patterns": [
+      "Mostly no explicit CTA on TikTok; the question in the hook drives comments",
+      "YouTube clips point to the long original video",
+      "Bio routes to Instagram and email; Substack for long essays",
+      "Controversial takes invite stitches, which he acknowledges ('every time I get stitched a hundred times')"
+    ],
+    "strategy_notes": [
+      "Volume first: he posted 1,162 videos before reaching 1,000 followers, then grew fast.",
+      "Low-production batches can outperform polished ones: his eight one-take snow videos reportedly all reached hundreds of thousands of views.",
+      "Pivoted from feel-good comedy to philosophy and social commentary, but still mixes in light videos.",
+      "Uses podcasts (Modern Wisdom, Jack Neel, Barbarian Banter) to convert short-form reach into long-form authority.",
+      "Polarization is a growth engine: critic channels make whole videos about him, which keeps his name searched.",
+      "Trending/slowed sounds plus a single text line give emotional mood with almost no editing."
+    ],
+    "gaps": [
+      "TikTok and Instagram pages could not be fetched directly, so most captions come from search snippets and several caption-to-ID matches are guesses.",
+      "No Instagram reel URLs were found.",
+      "View counts were rarely visible; most metrics are likes from snippets and unverified.",
+      "No app name was found despite a podcast mention.",
+      "Uploader of the 'Jett Franzen: ...' YouTube shorts is not confirmed."
+    ]
+  },
+  "videos": [
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7610555135629987085",
+      "approx_date": "2026-02-24",
+      "hook": null,
+      "topic": "Moving away / leaving a place behind (title as indexed: 'video of Moving Away')",
+      "format": "talking head over emotional sound",
+      "structure": [
+        "Hook line on screen",
+        "Reflective monologue",
+        "Emotional music bed"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "839.5K",
+        "comments": "4,266",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Highest like count found. 'Moving Away' may be the sound or SEO title, not his caption."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7572607687452527885",
+      "approx_date": "2025-11-14",
+      "hook": "You can't win if you play fair",
+      "topic": "Machiavelli on cheating: never play fair in an unfair game",
+      "format": "green screen",
+      "structure": [
+        "On-screen claim 'You can't win if you play fair'",
+        "Cites Machiavelli",
+        "Explains the idea in modern terms"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "678.4K",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet; one snippet called the 678.4K figure views, another likes"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Tagged #greenscreen #literature #booktok. Indexed title: 'Machiavelli on Cheating: Never Play Fair in an Unfair Game'."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7648084074719923469",
+      "approx_date": "2026-06-06",
+      "hook": "#psychology",
+      "topic": "Psychology concept (exact topic not indexed)",
+      "format": "talking head",
+      "structure": [
+        "Psychology claim",
+        "Explanation"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "605.2K",
+        "comments": "13.8K",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Very high comment ratio suggests a debate-provoking take."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7553873784323820814",
+      "approx_date": "2025-09-25",
+      "hook": null,
+      "topic": "Mood/reflective video on 'September - slowed + reverb' sound",
+      "format": "trending-sound video",
+      "structure": [
+        "Text overlay or monologue",
+        "Slowed+reverb sound sets mood"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "456.3K",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Earliest dated viral clip found; predates the philosophy pivot being widely known."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7618361452172250381",
+      "approx_date": "2026-03-17",
+      "hook": "#socrates #philosophy",
+      "topic": "Socrates idea explained",
+      "format": "talking head",
+      "structure": [
+        "Names Socrates",
+        "States the idea",
+        "Applies to viewer's life"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "137.6K",
+        "comments": "598",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Caption is hashtags only."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "Nothing is worse than thinking in 4k but speaking in 144p",
+      "topic": "Gap between inner thought and how you express it",
+      "format": "talking head / text-on-screen one-liner",
+      "structure": [
+        "One-line relatable punchline",
+        "Short elaboration"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "86.4K",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet; could not match to a video ID"
+      },
+      "confidence": "verbatim",
+      "source": "web search snippet of @jettfranzen TikTok pages",
+      "notes": "URL unknown."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7623217094871567629",
+      "approx_date": "2026-03-31",
+      "hook": "(paraphrased) Survived all the snakes, but a butterfly killed me",
+      "topic": "Being hurt by the gentle person you trusted, not the obvious threats",
+      "format": "trending-sound video",
+      "structure": [
+        "Dark-witty one-liner on screen",
+        "'3 am walk - daniel.mp3' sound"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "27.8K",
+        "comments": "170",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "paraphrased",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Tagged #greenscreen per one snippet."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7668118948021439758",
+      "approx_date": "2026-07-30",
+      "hook": "#fullmetalalchemist",
+      "topic": "Lesson drawn from Fullmetal Alchemist",
+      "format": "talking head / pop-culture commentary",
+      "structure": [
+        "Anime reference",
+        "Philosophical lesson"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "26K",
+        "comments": "122",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Uses anime as the hook vehicle."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7620086473487928590",
+      "approx_date": "2026-03-22",
+      "hook": "Guess My Religion",
+      "topic": "Religion and politics: viewers guess his religion",
+      "format": "talking head",
+      "structure": [
+        "Direct question to viewer",
+        "Gives reasoning",
+        "Invites guesses"
+      ],
+      "cta": "comment your guess (implied by the question)",
+      "metrics": {
+        "views": null,
+        "likes": "23.8K",
+        "comments": "518",
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Caption tags #religion #politics. Comment-bait question format."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7626537905623682318",
+      "approx_date": "2026-04-08",
+      "hook": "#kanye",
+      "topic": "Commentary on Kanye West",
+      "format": "talking head / celebrity commentary",
+      "structure": [
+        "Celebrity name as hook",
+        "Take on his behavior or idea"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "12.6K",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Caption is a hashtag."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7598818858668936462",
+      "approx_date": "2026-01-24",
+      "hook": "Nothing in life is that serious I promise 😂",
+      "topic": "Lighthearted reminder not to take life too seriously",
+      "format": "skit / light humor",
+      "structure": [
+        "Light caption",
+        "Funny or dance-like visual"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "7,893",
+        "comments": null,
+        "verified": false,
+        "basis": "search snippet of TikTok page"
+      },
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Shows he still mixes in comedy from his earlier feel-good era."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7593537562254363918",
+      "approx_date": "2026-01-10",
+      "hook": "Replying to @Sara Lynn",
+      "topic": "Answer to a viewer comment",
+      "format": "reply-to-comment (green screen)",
+      "structure": [
+        "Comment sticker on screen",
+        "14-second answer over green screen"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "14 seconds long, tagged #greenscreen. Metrics garbled in snippet."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7602735046809767181",
+      "approx_date": "2026-02-03",
+      "hook": "Agrippas Trilemma #philosophy #psychology",
+      "topic": "Agrippa's Trilemma: every belief ends in circularity, infinite regress, or an unproven axiom",
+      "format": "talking head explainer",
+      "structure": [
+        "Names an obscure concept",
+        "Explains the three options",
+        "Applies to how we justify beliefs"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Named-concept explainer."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7572981661982264631",
+      "approx_date": "2025-11-15",
+      "hook": "The Von Restorff effect",
+      "topic": "Von Restorff (isolation) effect: the item that stands out is remembered",
+      "format": "talking head explainer",
+      "structure": [
+        "Names the effect",
+        "Defines it",
+        "Ties it to standing out in life"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Named-concept explainer, posted a day after the Machiavelli video."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7622716011812359437",
+      "approx_date": "2026-03-29",
+      "hook": "How To Not Be Nervous",
+      "topic": "How to stop being nervous",
+      "format": "talking head advice",
+      "structure": [
+        "Problem named in title",
+        "Reframe",
+        "Tip"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Indexed as 'video of How To Not Be Nervous'; may be SEO title."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7634148942250380574",
+      "approx_date": "2026-04-29",
+      "hook": null,
+      "topic": "Attract without chasing, using Avatar: The Last Airbender",
+      "format": "talking head over sound / pop-culture lesson",
+      "structure": [
+        "Avatar reference",
+        "Lesson about not chasing people"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Indexed as 'video of attract without chasing'; tags #ala #avatarthelastairbender #avatar."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7617949017674173710",
+      "approx_date": "2026-03-16",
+      "hook": "batman",
+      "topic": "Batman as a lens on pain or purpose",
+      "format": "trending-sound video",
+      "structure": [
+        "Batman reference",
+        "Hans Zimmer S.T.A.Y slowed and reverb sound"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Snippet credits sound 'created by jettfranzen with all my pain's Hans Zimmer S.T.A.Y slowed and reverb'."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7604464996801629454",
+      "approx_date": "2026-02-08",
+      "hook": null,
+      "topic": "Devastating literary quotes about time, guilt, loneliness and imagination (inferred match)",
+      "format": "quote montage over cinematic sound",
+      "structure": [
+        "Quote 1 on screen",
+        "Quote 2",
+        "Quote 3"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Uses 'Mia & Sebastian's Theme' (La La Land). Topic match to this ID is uncertain."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7611779754517105934",
+      "approx_date": "2026-02-28",
+      "hook": null,
+      "topic": "Nietzsche's Beyond Good and Evil in about two minutes (inferred match)",
+      "format": "talking head book summary",
+      "structure": [
+        "Names the book",
+        "Compressed summary",
+        "Takeaway"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Snippet tied a #book #booktok Nietzsche summary to this account; ID match uncertain."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7617911207911050509",
+      "approx_date": "2026-03-16",
+      "hook": "(paraphrased) Can you prove the existence of God without using scripture?",
+      "topic": "Morality without religion",
+      "format": "talking head / green screen",
+      "structure": [
+        "Challenge question",
+        "Empathy does not require belief",
+        "Morality is not owned by religion"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Tagged #agnostic #atheist per snippet. Note that he later says he returned to Christian faith (Jack Neel episode)."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7630308952349199630",
+      "approx_date": "2026-04-19",
+      "hook": "(possible) Two traps you need to avoid: caring what they think, thinking that they care",
+      "topic": "Freedom from other people's opinions",
+      "format": "text-on-screen over 'Ethereal - Txmy' sound",
+      "structure": [
+        "Numbered setup 'two traps'",
+        "Trap 1",
+        "Trap 2 twist"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "The quote appeared in results for this account; mapping to this ID is a guess."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7617691401056226573",
+      "approx_date": "2026-03-16",
+      "hook": null,
+      "topic": "Commentary video on a phonk sound",
+      "format": "green screen",
+      "structure": [
+        "Green screen background",
+        "Monologue over 'Originalton - the_phonkface'"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Topic not indexed."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7618021035878796558",
+      "approx_date": "2026-03-17",
+      "hook": "(possible) You got this :)",
+      "topic": "Encouragement for people struggling",
+      "format": "talking head",
+      "structure": [
+        "Reassurance",
+        "Self-improvement nudge"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Tagged #mentalhealth #selfimprovement #relatable per one snippet; ID mapping uncertain."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7596222890509405495",
+      "approx_date": "2026-01-17",
+      "hook": "(possible) Gen Z never experiencing romance",
+      "topic": "Gen Z and the loss of romance",
+      "format": "talking head social commentary",
+      "structure": [
+        "Generational claim",
+        "Why it happened",
+        "What it costs"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Caption seen in results for his original-sound videos; ID mapping uncertain."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7628241570742979853",
+      "approx_date": "2026-04-13",
+      "hook": null,
+      "topic": "Cartoon/kids-show reference (indexed as 'cartoon for kids videos')",
+      "format": "talking head / pop-culture commentary",
+      "structure": [
+        "Kids cartoon reference",
+        "Adult lesson"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Likely SEO title."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7670280489902591246",
+      "approx_date": "2026-08-04",
+      "hook": null,
+      "topic": "Unknown (original sound)",
+      "format": "talking head",
+      "structure": [],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search result snippet of the public TikTok video page (page itself not fetchable)",
+      "notes": "Only the ID and sound are known."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Going to the gym as cope for lacking discipline",
+      "format": "talking head hot take",
+      "structure": [
+        "Contrarian claim",
+        "Reasoning"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": "A reaction clip called it a slogan-style take; drew stitches."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Discipline built on shame vs devotion fueled by love",
+      "format": "talking head",
+      "structure": [
+        "Contrast two words",
+        "Define each",
+        "Tell viewer which to choose"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": ""
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Parenting rule: ban negative self-talk at home",
+      "format": "talking head",
+      "structure": [
+        "One rule",
+        "Why it builds self-belief"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": "Mirrors his Substack 'I Just Never Thought I Couldn't'."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Why walking boosts creativity and mental health (Tesla, Nietzsche, Kierkegaard)",
+      "format": "talking head, possibly filmed walking",
+      "structure": [
+        "Claim",
+        "Three famous walkers as proof",
+        "Invite to walk"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": ""
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Signs of high intelligence",
+      "format": "listicle talking head",
+      "structure": [
+        "'Signs of' list opener",
+        "Sign 1..n"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "web search summary of TikTok discover pages",
+      "notes": ""
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Spider-Man / Tom Holland and Zendaya",
+      "format": "trending pop-culture video",
+      "structure": [
+        "Celebrity couple reference",
+        "Take"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "web search snippet (#tomholland #zendaya #spiderman)",
+      "notes": ""
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/KarSnbckXeQ",
+      "approx_date": null,
+      "hook": "Everybody's Busy, But Nobody's Fulfilled",
+      "topic": "Busyness vs fulfillment",
+      "format": "short clip of a longer video",
+      "structure": [
+        "Title states a paradox",
+        "Clip of monologue",
+        "Link to full video"
+      ],
+      "cta": "link to original long video",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result title",
+      "notes": "Title format 'Jett Franzen: ...' suggests a clip channel or his own clips; uploader not confirmed."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/1kEkBBHUk2M",
+      "approx_date": null,
+      "hook": "Why Does Any of This Feel Normal",
+      "topic": "Questioning normalized modern life",
+      "format": "short clip of a longer video",
+      "structure": [
+        "Rhetorical question title",
+        "Monologue clip"
+      ],
+      "cta": "link to original long video",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result title",
+      "notes": "Uploader not confirmed."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=bL0ZlaSrTW0",
+      "approx_date": null,
+      "hook": "Is This All Life Is?",
+      "topic": "Existential meaning",
+      "format": "clip",
+      "structure": [
+        "Existential question",
+        "Monologue"
+      ],
+      "cta": "link to original",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result title",
+      "notes": "Uploader not confirmed."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=1XU3t1NuIVQ",
+      "approx_date": null,
+      "hook": "Why Leaving the House Feels Exhausting",
+      "topic": "Social exhaustion and isolation",
+      "format": "clip / monologue",
+      "structure": [
+        "Relatable 'why' question",
+        "Explanation"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result title",
+      "notes": "Uploader not confirmed."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/a0_XXdO2d-w",
+      "approx_date": null,
+      "hook": "TAKE ACTION. 🔥",
+      "topic": "Take action / discipline",
+      "format": "motivational short",
+      "structure": [
+        "Imperative title",
+        "Monologue"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "YouTube search result",
+      "notes": "Description calls him an entrepreneur, philosopher and content creator; likely a fan or clip channel."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": "I have lived more in my head than real life",
+      "topic": "Living in your head because of isolation",
+      "format": "talking head confession",
+      "structure": [
+        "Confessional line",
+        "Explains isolation",
+        "Reflection"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "actualized.org forum thread quoting a video title",
+      "notes": ""
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Having no friends",
+      "format": "talking head confession",
+      "structure": [
+        "Admits no friends",
+        "What it taught him"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "actualized.org forum thread",
+      "notes": ""
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "winter 2025-26 (inferred)",
+      "hook": null,
+      "topic": "Batch of eight videos filmed outdoors at about 3 a.m. in falling snow",
+      "format": "talking head, outdoors at night, one or two takes",
+      "structure": [
+        "Low-effort single take",
+        "Night/snow atmosphere"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "'hundreds of thousands' each, 'most of them got millions'",
+        "likes": null,
+        "comments": null,
+        "verified": false,
+        "basis": "his own claim on Modern Wisdom #1130"
+      },
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript (podscripts.co)",
+      "notes": "Counts as a batch, not one video."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "2026-07 (inferred)",
+      "hook": null,
+      "topic": "Erling Haaland compared to another figure",
+      "format": "talking head sports-to-philosophy commentary",
+      "structure": [
+        "Athlete news hook",
+        "Lesson"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript",
+      "notes": "He said he had just made it and would post it."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "2026 (inferred)",
+      "hook": null,
+      "topic": "Scottie Scheffler's comments after winning a major about success not fulfilling",
+      "format": "talking head news reaction",
+      "structure": [
+        "Quote from athlete",
+        "His interpretation"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript",
+      "notes": ""
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Success and effort: anyone can climb the ladder if they pay the price",
+      "format": "talking head hot take",
+      "structure": [
+        "Contrarian claim",
+        "Personal proof (basement, couch-surfing)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": null,
+        "comments": null,
+        "verified": false,
+        "basis": "he says 'every time I get stitched a hundred times'"
+      },
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript",
+      "notes": "Several videos on this theme; drives stitches and backlash."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Narcissism (an unpopular take)",
+      "format": "talking head",
+      "structure": [
+        "Unpopular claim",
+        "Defense"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 transcript",
+      "notes": "He calls these videos 'very unpopular'."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Self-belief is the absence of doubt",
+      "format": "talking head",
+      "structure": [
+        "Reframe a familiar idea",
+        "Personal story"
+      ],
+      "cta": "read the Substack (implied)",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "Modern Wisdom #1130 + Substack post 'I Just Never Thought I Couldn't' (Oct 2026)",
+      "notes": "He says he talks about self-belief a lot on YouTube."
+    },
+    {
+      "platform": "unknown",
+      "url": null,
+      "approx_date": "2026-10 (inferred)",
+      "hook": "AI is going to destroy the beauty standards and make everyone, yes EVERYONE, insecure.",
+      "topic": "AI-generated attractive people and self-image",
+      "format": "talking head / text note",
+      "structure": [
+        "Bold prediction",
+        "Personal admission it affects him",
+        "'Now apply this on a grand scale'"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "Substack note c-358333067 (Oct 11, 2026)",
+      "notes": "Written note; likely mirrors a video topic but not confirmed as a video."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7629652479713496334",
+      "approx_date": "2026-04-17",
+      "hook": "Dostoevsky saw it coming.",
+      "topic": "Dostoevsky as prophet of the present: politics and free speech",
+      "format": "talking head explainer",
+      "structure": [
+        "Hook: 'Dostoevsky saw it coming.'",
+        "Claim that we are living in his warning",
+        "Tie to current politics / free speech"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": null,
+        "likes": "160K",
+        "comments": "1,714",
+        "verified": false,
+        "basis": "search-result snippet of TikTok discover/aggregator page (not fetched; TikTok blocked)"
+      },
+      "confidence": "paraphrased",
+      "source": "WebSearch (allowed_domains tiktok.com) for 'jettfranzen Dostoevsky saw it coming' -> page titled \"jettfranzen's short video with ♬ son original\"",
+      "notes": "Caption per search summary: 'Dostoevsky saw it coming. We're living in his warning' with #politics #freespeech #philosophy tags. Date decoded from video ID. Sound: 'son original'."
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jettfranzen/video/7598152516848651575",
+      "approx_date": "2026-01-22",
+      "hook": "Understanding Autism: Insights from Jett Franzen",
+      "topic": "Autism (likely reply-to-comment)",
+      "format": "reply-to-comment (inferred)",
+      "structure": [
+        "Responds to viewer comment (inferred from 'replying to' search hit)",
+        "Explains his view on autism"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "inferred",
+      "source": "WebSearch 'jettfranzen replying to' (allowed_domains tiktok.com)",
+      "notes": "Title is TikTok's SEO title, not necessarily his caption. Date decoded from video ID."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "Self-Perception Theory: How Acting Shapes Your Identity",
+      "topic": "Self-perception theory: acting like your future self changes your identity",
+      "format": "talking head explainer",
+      "structure": [
+        "Name the psych theory",
+        "Claim: behavior shapes identity",
+        "Practice/role-play your future self"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/psychological-theories?lang=en",
+      "notes": "SEO-style title from discover page; caption not verbatim. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Søren Kierkegaard's philosophy, in-depth explanation",
+      "format": "talking head explainer",
+      "structure": [
+        "Introduce Kierkegaard",
+        "Walk through key ideas/concepts"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-philosophy-explained",
+      "notes": "Discover page text: 'Explore the philosophy of Søren Kierkegaard in this in-depth explanation.' URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Brandolini's Law (bullshit asymmetry) and why arguments are draining",
+      "format": "talking head explainer",
+      "structure": [
+        "Pose: why arguing is exhausting",
+        "Name Brandolini's Law",
+        "Psychology of arguments"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/why-are-people-saying-this-argument-is-too-broad",
+      "notes": "Discover page: video 'explores Brandolini's Law and its implications on arguments and psychology'. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Cognitive dissonance and self-awareness: why we repeat mistakes despite knowing better",
+      "format": "talking head explainer",
+      "structure": [
+        "Hook question: why do we repeat mistakes?",
+        "Define cognitive dissonance",
+        "Self-awareness takeaway"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-height",
+      "notes": "Aggregator description, paraphrased. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Frequent profile-picture changes as a sign of insecurity, identity searching and validation-seeking",
+      "format": "talking head explainer",
+      "structure": [
+        "Observation about pfp changes",
+        "Psych reading: insecurity / validation"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/who-is-jettfranzen",
+      "notes": "Aggregator description, paraphrased. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Loneliness: wanting someone to share life's best moments with",
+      "format": "talking head confessional",
+      "structure": [
+        "Personal admission of loneliness",
+        "Wanting to share best moments",
+        "Easing the desire for companionship"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen",
+      "notes": "Discover page: 'Personal reflection on loneliness and wanting to share life's best moments.' URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Praying to lose the desire for love; the ache of experiencing life alone",
+      "format": "talking head confessional",
+      "structure": [
+        "Raw admission: praying to stop wanting love",
+        "Ache of doing life alone"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen",
+      "notes": "Aggregator description, paraphrased. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Lifelong quiet loneliness: only child, divorced parents, moving countries, hyper-independence, perfectionism as avoidance",
+      "format": "talking head confessional / story",
+      "structure": [
+        "'I've had a quiet loneliness all my life'",
+        "Backstory: only child, alone in childhood",
+        "Result: hyper independent",
+        "Perfectionism as avoidance"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen",
+      "notes": "Seen as transcript-style excerpt on a repost page; original video URL unknown. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Nietzsche-inspired take on obsession, gratitude and moving on",
+      "format": "text-on-screen one-liner / short quote",
+      "structure": [
+        "Nietzsche framing",
+        "Obsession vs gratitude",
+        "Moving on"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/beyond-good-and-evil-book",
+      "notes": "Described as 'short, witty' Nietzsche-inspired clip. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Nietzsche: 'He who has a why to live can bear almost any how'",
+      "format": "talking head explainer",
+      "structure": [
+        "Quote Nietzsche",
+        "Apply to purpose/suffering"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/nietzsche-and-philosophy",
+      "notes": "One Nietzsche-tagged clip on account shows ~160.4K likes / 929 comments but mapping to this specific video is unclear, so metrics left null. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Dostoevsky on consciousness and happiness: how awareness affects joy",
+      "format": "talking head explainer",
+      "structure": [
+        "Dostoevsky premise: too much consciousness is a disease",
+        "Awareness vs happiness"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jeff-franzen-deeply-conscious",
+      "notes": "Aggregator text: 'Explore Dostoevsky's insights on consciousness and happiness.' URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Dostoevsky's existentialist philosophy and his view on peace and humanity",
+      "format": "talking head explainer",
+      "structure": [
+        "Introduce Dostoevsky",
+        "Existentialism",
+        "His view on peace/humanity"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-philosophy-explained",
+      "notes": "Aggregator description, paraphrased. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "And I'm never the idiot",
+      "topic": "Dostoevsky 'The Idiot' joke / self-reference",
+      "format": "text-on-screen one-liner",
+      "structure": [
+        "Short caption-driven clip tagged #dostoevsky"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-philosophy-explained",
+      "notes": "Caption quoted in search summary; may be verbatim. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "#batman #greenscreen",
+      "topic": "Batman commentary",
+      "format": "green screen",
+      "structure": [
+        "Green-screen Batman image/clip",
+        "Commentary over it"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/batman-meaning-in-chat",
+      "notes": "Distinct from known 'batman' S.T.A.Y video per search summary; could still be the same post. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "Carl Jung #philosophy",
+      "topic": "Carl Jung ideas",
+      "format": "talking head explainer",
+      "structure": [
+        "Introduce Jung",
+        "Key idea"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/carl-jung?lang=en",
+      "notes": "Caption cited in search summary. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Machiavelli on morality and corruption in politics",
+      "format": "talking head explainer",
+      "structure": [
+        "Machiavelli premise",
+        "Morality vs political corruption"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/machiavelli-once-said-jett-franzen",
+      "notes": "Part of a Machiavelli series. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Machiavelli on power, wealth and the importance of appearances",
+      "format": "talking head explainer",
+      "structure": [
+        "Machiavelli premise",
+        "Power and wealth",
+        "Appearances matter more than reality"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/machiavelli-once-said-jett-franzen",
+      "notes": "Part of a Machiavelli series. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Law of Equivalent Exchange (Fullmetal Alchemist): sacrifice leads to transformation; metaphors of arrow, tree, pearl",
+      "format": "talking head explainer",
+      "structure": [
+        "Anime law setup",
+        "Sacrifice -> transformation",
+        "Metaphors: arrow, tree, pearl",
+        "Practical takeaways"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen",
+      "notes": "May overlap with known #fullmetalalchemist video 7668118948021439758; kept because description differs. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Do genetics and biology shape traits, intelligence and criminality?",
+      "format": "talking head explainer",
+      "structure": [
+        "Provocative question on genetics",
+        "Intelligence / crime"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-controversy",
+      "notes": "Described as a recent post. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "Replying to @rolf🤼‍♂️🥊 I thought we had an understanding. You just had to expose me 🤦",
+      "topic": "Joke reply to a commenter who 'exposed' him",
+      "format": "reply-to-comment",
+      "structure": [
+        "Comment sticker",
+        "Mock-betrayed reaction"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-philosophy-explained",
+      "notes": "Caption quoted verbatim in search summary. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "Replying to @Nate_didntknowshewas8come on now dawg",
+      "topic": "Reply to a commenter",
+      "format": "reply-to-comment",
+      "structure": [
+        "Comment sticker",
+        "Reaction"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "verbatim",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-philosophy-explained",
+      "notes": "Caption quoted in search summary; handle text as shown. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Camus and Sisyphus: everyday struggle vs waiting for rare achievement, through modern stoicism",
+      "format": "talking head explainer",
+      "structure": [
+        "Camus / Sisyphus",
+        "Daily struggle is the point"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-philosophy-explained",
+      "notes": "Attribution to his account is uncertain (aggregator). URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Twin Peaks ending take",
+      "format": "talking head / movie take",
+      "structure": [
+        "TV ending interpretation"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-movie-take",
+      "notes": "Mentioned in aggregator summary as recent clip. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "Morality as cope for lacking the work ethic to succeed",
+      "format": "talking head",
+      "structure": [
+        "Claim: 'morality' is cope",
+        "Work ethic as real reason"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-philosophy-explained",
+      "notes": "Drew critic responses about opportunity. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": null,
+      "topic": "'We need more pseudo intellectuals'",
+      "format": "talking head",
+      "structure": [
+        "Contrarian claim",
+        "Defense of amateur thinking"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jett-franzen-philosophy-explained",
+      "notes": "Aggregator: he 'argues we need more pseudo intellectuals'. URL not found in index."
+    },
+    {
+      "platform": "tiktok",
+      "url": null,
+      "approx_date": null,
+      "hook": "Being loved by the right person makes even the ordinary feel extraordinary.",
+      "topic": "Love making ordinary life special",
+      "format": "text-on-screen one-liner",
+      "structure": [
+        "Single quote on screen over music"
+      ],
+      "cta": "none observed",
+      "metrics": null,
+      "confidence": "paraphrased",
+      "source": "WebSearch summary of TikTok discover/aggregator page https://www.tiktok.com/discover/jeff-franzen-corny",
+      "notes": "Quote shown in search summary; attribution to his account moderately likely. URL not found in index."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=iKMbosJ_s28",
+      "approx_date": "2026-10-21",
+      "hook": "October 21.     F*ck It, We Ball",
+      "topic": "Nothing else needs to be said.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: October 21.     F*ck It, We Ball",
+        "Thesis per description: Nothing else needs to be said.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "31007",
+        "likes": "814",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): Nothing else needs to be said. Dated-diary style title."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=hW5HPdAZG0Q",
+      "approx_date": "2026-10-20",
+      "hook": "How I Would Fix the World",
+      "topic": "I am not an academic on these matters, I have no credentials or expertise, but these are my thoughts.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: How I Would Fix the World",
+        "Thesis per description: I am not an academic on these matters, I have no credentials or expertise, but these are my thoughts.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "12792",
+        "likes": "276",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): I am not an academic on these matters, I have no credentials or expertise, but these are my thoughts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=CIuu62HdoGc",
+      "approx_date": "2026-10-20",
+      "hook": "Having Friends Who Don't Actually Care",
+      "topic": "Often times people become friends because of proximity and convenience. They don't care about you and you don't care about them. This leads to an empty life.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Having Friends Who Don't Actually Care",
+        "Thesis per description: Often times people become friends because of proximity and convenience. They don't care about you and you don't care about them. This leads to an empty life.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "18783",
+        "likes": "408",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): Often times people become friends because of proximity and convenience. They don't care about you and you don't care about them. This leads to an empty life."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=DLA0T9vQcmM",
+      "approx_date": "2026-10-19",
+      "hook": "Ego.",
+      "topic": "The ego is essential not only to our survival, but to our ability to thrive and achieve greatness. You must learn to embrace your ego, not suppress it.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Ego.",
+        "Thesis per description: The ego is essential not only to our survival, but to our ability to thrive and achieve greatness. You must learn to embrace your ego, not suppress it.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: sponsor link (MyFutureSelf App)",
+      "metrics": {
+        "views": "27279",
+        "likes": "645",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): The ego is essential not only to our survival, but to our ability to thrive and achieve greatness. You must learn to embrace your ego, not suppress it."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=sHR1z3XvwJM",
+      "approx_date": "2026-10-19",
+      "hook": "To live is the rarest thing in the world. Most people exist, that is all.",
+      "topic": "Quote from Oscar Wilde. Most people never question anything, they just follow the script made for them. Living means to take advantage of life, to create a path",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: To live is the rarest thing in the world. Most people exist, that is all.",
+        "Thesis per description: Quote from Oscar Wilde. Most people never question anything, they just follow the script made for them. Living means to take advantage of life, to create a path for yourself. To believe in something and commit to it, des",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "18874",
+        "likes": "437",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): Quote from Oscar Wilde. Most people never question anything, they just follow the script made for them. Living means to take advantage of life, to create a path for yourself. To believe in something and commit to it, despite how others might view you."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=nNFMxsy959k",
+      "approx_date": "2026-10-18",
+      "hook": "Just Have Audacity",
+      "topic": "Being audacious will create opportunities that often times intelligence and talent doesn't. Most people never ask, they never put themselves out there. Chances ",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Just Have Audacity",
+        "Thesis per description: Being audacious will create opportunities that often times intelligence and talent doesn't. Most people never ask, they never put themselves out there. Chances are, you are not going to get lucky and have opportunities f",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "24523",
+        "likes": "564",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): Being audacious will create opportunities that often times intelligence and talent doesn't. Most people never ask, they never put themselves out there. Chances are, you are not going to get lucky and have opportunities fall on your lap, so you have to create them."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=NSYo2rCrDMw",
+      "approx_date": "2026-10-18",
+      "hook": "Superiority Is Beautiful",
+      "topic": "Superiority has pushed the world further than anything else. Everything in nature is hierarchal. If you embrace this instead of cope, you too can contribute to ",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Superiority Is Beautiful",
+        "Thesis per description: Superiority has pushed the world further than anything else. Everything in nature is hierarchal. If you embrace this instead of cope, you too can contribute to the world.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "16686",
+        "likes": "451",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): Superiority has pushed the world further than anything else. Everything in nature is hierarchal. If you embrace this instead of cope, you too can contribute to the world."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=kNocWI6-Aqk",
+      "approx_date": "2026-10-17",
+      "hook": "If I Must Fall, Let It Be From a Great Height",
+      "topic": "This quote is applicable to everyone. If you can fail at what you don't want to do, you might as well fail at what you do want to do.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: If I Must Fall, Let It Be From a Great Height",
+        "Thesis per description: This quote is applicable to everyone. If you can fail at what you don't want to do, you might as well fail at what you do want to do.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "23316",
+        "likes": "650",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): This quote is applicable to everyone. If you can fail at what you don't want to do, you might as well fail at what you do want to do."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=3022qAehAAY",
+      "approx_date": "2026-10-17",
+      "hook": "I'm already so tired of tomorrow",
+      "topic": "Sometimes I get exhausted before I have to do the thing that is supposed to make me exhausted. Living the same day over and over makes everything predictable, a",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: I'm already so tired of tomorrow",
+        "Thesis per description: Sometimes I get exhausted before I have to do the thing that is supposed to make me exhausted. Living the same day over and over makes everything predictable, and predictability breeds exhaustion.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "21382",
+        "likes": "544",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): Sometimes I get exhausted before I have to do the thing that is supposed to make me exhausted. Living the same day over and over makes everything predictable, and predictability breeds exhaustion."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=aDfUesWHjGs",
+      "approx_date": "2026-10-16",
+      "hook": "October 16.    i think i'm losing it.",
+      "topic": "I will not be elaborating.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: October 16.    i think i'm losing it.",
+        "Thesis per description: I will not be elaborating.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "48681",
+        "likes": "1336",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): I will not be elaborating. Dated-diary style title."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Dk8A9hJYpEs",
+      "approx_date": "2026-10-15",
+      "hook": "You will never be enough",
+      "topic": "Nothing will ever be enough for people who's entire ideology is based in moral superiority. They are THRILLED when other people make mistakes because it allows ",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: You will never be enough",
+        "Thesis per description: Nothing will ever be enough for people who's entire ideology is based in moral superiority. They are THRILLED when other people make mistakes because it allows them to think they are better. Ironically most people who ar",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "28839",
+        "likes": "542",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): Nothing will ever be enough for people who's entire ideology is based in moral superiority. They are THRILLED when other people make mistakes because it allows them to think they are better. Ironically most people who are woke do nothing of significance in their life. Very little change is ever made"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=mS8uXTb6g_g",
+      "approx_date": "2026-10-15",
+      "hook": "Women only want men other women desire",
+      "topic": "Social proofing is very important in dating. If you want to attract someone, you must seem desirable to others.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Women only want men other women desire",
+        "Thesis per description: Social proofing is very important in dating. If you want to attract someone, you must seem desirable to others.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "38033",
+        "likes": "614",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): Social proofing is very important in dating. If you want to attract someone, you must seem desirable to others."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=c_GyXzsEjTM",
+      "approx_date": "2026-10-14",
+      "hook": "We're all just slaves comparing our chains",
+      "topic": "At the end of the day, we all answer to someone. Who are any of us to feel superior?",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: We're all just slaves comparing our chains",
+        "Thesis per description: At the end of the day, we all answer to someone. Who are any of us to feel superior?",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "18607",
+        "likes": "427",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): At the end of the day, we all answer to someone. Who are any of us to feel superior?"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=LGiCdMhIfBg",
+      "approx_date": "2026-10-14",
+      "hook": "Let them.",
+      "topic": "If you constantly try to control others behavior, you will never see who they truly are. Its cope. You want them to be someone who they never will be.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Let them.",
+        "Thesis per description: If you constantly try to control others behavior, you will never see who they truly are. Its cope. You want them to be someone who they never will be.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "45081",
+        "likes": "962",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): If you constantly try to control others behavior, you will never see who they truly are. Its cope. You want them to be someone who they never will be."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=ef3EBHuYZAw",
+      "approx_date": "2026-10-13",
+      "hook": "The Internet Is About To Change Forever",
+      "topic": "The PS5 to PC open source project is just the tip of the iceberg. The whole internet is about to be open source, access to whatever you want. What does this say",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: The Internet Is About To Change Forever",
+        "Thesis per description: The PS5 to PC open source project is just the tip of the iceberg. The whole internet is about to be open source, access to whatever you want. What does this say about the future?",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "36203",
+        "likes": "621",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: uploads, long-form uploads. Description (verbatim, truncated): The PS5 to PC open source project is just the tip of the iceberg. The whole internet is about to be open source, access to whatever you want. What does this say about the future?"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=kShwkbcHFKc",
+      "approx_date": "2026-04-17",
+      "hook": "You aren't crazy... Something isn't right with people nowadays",
+      "topic": "Something feels off about people lately and you can’t quite explain it. Conversations feel empty, attention spans are gone, and everyone seems more disconnected",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: You aren't crazy... Something isn't right with people nowadays",
+        "Thesis per description: Something feels off about people lately and you can’t quite explain it. Conversations feel empty, attention spans are gone, and everyone seems more disconnected despite being constantly online. It’s like people are perfo",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: support link (buymeacoffee.com/jettfranzen)",
+      "metrics": {
+        "views": "1479356",
+        "likes": "94514",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Something feels off about people lately and you can’t quite explain it. Conversations feel empty, attention spans are gone, and everyone seems more disconnected despite being constantly online. It’s like people are performing instead of actually living, chasing validation instead of being real. Hashtags: #deepthoughts #philosophy #society #criticalthinking"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=MHha4ErMnCU",
+      "approx_date": "2026-03-24",
+      "hook": "What years of extreme isolation have done to me",
+      "topic": "Years of extreme solitude forced me to confront everything I used to avoid. Without constant noise, distractions, or validation from others, I was left alone wi",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: What years of extreme isolation have done to me",
+        "Thesis per description: Years of extreme solitude forced me to confront everything I used to avoid. Without constant noise, distractions, or validation from others, I was left alone with my thoughts, and that’s where the real change started. Th",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: support link (buymeacoffee.com/jettfranzen)",
+      "metrics": {
+        "views": "1169756",
+        "likes": "42399",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Years of extreme solitude forced me to confront everything I used to avoid. Without constant noise, distractions, or validation from others, I was left alone with my thoughts, and that’s where the real change started. This is about what happens when you spend long periods in isolation, how it reshap Hashtags: #solitude #isolation #lonely #deepthoughts"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=O4UnPgJe5cM",
+      "approx_date": "2026-06-08",
+      "hook": "Lust will destroy you...",
+      "topic": "Lust thrives on immediate gratification and convinces people to trade long-term fulfillment for short-term pleasure. What begins as a simple desire can graduall",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Lust will destroy you...",
+        "Thesis per description: Lust thrives on immediate gratification and convinces people to trade long-term fulfillment for short-term pleasure. What begins as a simple desire can gradually become a habit that consumes attention, weakens discipline",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: support link (buymeacoffee.com/jettfranzen)",
+      "metrics": {
+        "views": "722068",
+        "likes": "17752",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Lust thrives on immediate gratification and convinces people to trade long-term fulfillment for short-term pleasure. What begins as a simple desire can gradually become a habit that consumes attention, weakens discipline, and pulls focus away from meaningful goals. A life driven by impulse often lea Hashtags: #lust #addiction #deepthoughts #philosophy #criticalthinking #society"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=DbFYDsXJ11M",
+      "approx_date": "2026-02-12",
+      "hook": "Trying to Get a Job in 2026 is a Humiliation Ritual",
+      "topic": "Trying to get hired in 2026 feels less like opportunity and more like degradation. Endless applications. Ghosted emails. Fake optimism. Algorithms deciding your",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Trying to Get a Job in 2026 is a Humiliation Ritual",
+        "Thesis per description: Trying to get hired in 2026 feels less like opportunity and more like degradation. Endless applications. Ghosted emails. Fake optimism. Algorithms deciding your worth. This is about how modern job hunting strips dignity,",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: support link (buymeacoffee.com/jettfranzen)",
+      "metrics": {
+        "views": "538620",
+        "likes": "35998",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Trying to get hired in 2026 feels less like opportunity and more like degradation. Endless applications. Ghosted emails. Fake optimism. Algorithms deciding your worth. This is about how modern job hunting strips dignity, wastes time, and turns people into data points, and why so many feel burned out Hashtags: #deepthoughts #philosophy #corporatelife #jobsearch"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=PdxL5j8hh4Q",
+      "approx_date": "2026-08-31",
+      "hook": "Your Lack of Personal Purpose Is Causing Your Romantic Obsession",
+      "topic": "An empty life leaves you desperately searching for solutions. Most people think its a romantic partner, but only you can fill the void.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Your Lack of Personal Purpose Is Causing Your Romantic Obsession",
+        "Thesis per description: An empty life leaves you desperately searching for solutions. Most people think its a romantic partner, but only you can fill the void.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "506888",
+        "likes": "14014",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): An empty life leaves you desperately searching for solutions. Most people think its a romantic partner, but only you can fill the void."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=LQ5L0ntEBoc",
+      "approx_date": "2026-05-20",
+      "hook": "Working at a warehouse taught me how f*cked life is",
+      "topic": "Warehouse jobs are a perfect reflection for society. People that work the hardest are often at the bottom, but those are also the most cool people. The higher u",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Working at a warehouse taught me how f*cked life is",
+        "Thesis per description: Warehouse jobs are a perfect reflection for society. People that work the hardest are often at the bottom, but those are also the most cool people. The higher up, the more full of sh*t you are. People from all different ",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: support link (buymeacoffee.com/jettfranzen)",
+      "metrics": {
+        "views": "439976",
+        "likes": "15742",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Warehouse jobs are a perfect reflection for society. People that work the hardest are often at the bottom, but those are also the most cool people. The higher up, the more full of sh*t you are. People from all different walks of life work these jobs. In the end it will teach you more than anything e Hashtags: #warehouse #deepthoughts #philosophy #criticalthinking #society"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=4c3hPSxjWks",
+      "approx_date": "2026-09-01",
+      "hook": "Everything Is Going to Change After 2027",
+      "topic": "We may be approaching the end of what we consider “normal.” AI is advancing rapidly, the internet is becoming increasingly artificial, social relationships are ",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Everything Is Going to Change After 2027",
+        "Thesis per description: We may be approaching the end of what we consider “normal.” AI is advancing rapidly, the internet is becoming increasingly artificial, social relationships are being reshaped by technology, and the way we work, communica",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "403658",
+        "likes": "7090",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): We may be approaching the end of what we consider “normal.” AI is advancing rapidly, the internet is becoming increasingly artificial, social relationships are being reshaped by technology, and the way we work, communicate, and consume information is changing faster than ever. The most significant c"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=fteeqrEwa-k",
+      "approx_date": "2026-05-07",
+      "hook": "Everyone is Gooning",
+      "topic": "The average person is addicted to gooning and its destroying an entire generation.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Everyone is Gooning",
+        "Thesis per description: The average person is addicted to gooning and its destroying an entire generation.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: support link (buymeacoffee.com/jettfranzen)",
+      "metrics": {
+        "views": "358765",
+        "likes": "13634",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): The average person is addicted to gooning and its destroying an entire generation. Hashtags: #deepthoughts #philosophy #criticalthinking #society"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=XiNsfLuKJC0",
+      "approx_date": "2025-12-04",
+      "hook": "Only a slave quantifies its existence through productivity",
+      "topic": "We live in a world obsessed with output, numbers, achievements, checklists. But at what point does productivity stop being empowering and start becoming a form ",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Only a slave quantifies its existence through productivity",
+        "Thesis per description: We live in a world obsessed with output, numbers, achievements, checklists. But at what point does productivity stop being empowering and start becoming a form of self-imposed slavery?",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: support link (buymeacoffee.com/jettfranzen)",
+      "metrics": {
+        "views": "340534",
+        "likes": "26844",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): We live in a world obsessed with output, numbers, achievements, checklists. But at what point does productivity stop being empowering and start becoming a form of self-imposed slavery? Hashtags: #LifePerspective #DeepThoughts #SocialCommentary #ModernPhilosophy #MindsetShift #WakeUpCall #TruthTalk #UncomfortableTruths #QuestionEverything #BreakTheCycle #ProductivityCulture #PhilosophyTalk #SocietyToday #SelfReflection #realitycheck"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=RtdrjZwiLgg",
+      "approx_date": "2026-05-11",
+      "hook": "The Top 10 Worst Decisions You Can Make in Your 20s",
+      "topic": "Your 20s can either build your future or slowly destroy it without you realizing. A lot of the biggest mistakes don’t look dangerous at first, they look normal.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: The Top 10 Worst Decisions You Can Make in Your 20s",
+        "Thesis per description: Your 20s can either build your future or slowly destroy it without you realizing. A lot of the biggest mistakes don’t look dangerous at first, they look normal. Chasing validation, wasting years online, avoiding discomfo",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "description: support link (buymeacoffee.com/jettfranzen)",
+      "metrics": {
+        "views": "324633",
+        "likes": "10768",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Your 20s can either build your future or slowly destroy it without you realizing. A lot of the biggest mistakes don’t look dangerous at first, they look normal. Chasing validation, wasting years online, avoiding discomfort, surrounding yourself with the wrong people, and drifting through life withou Hashtags: #deepthoughts #philosophy #criticalthinking #society #20s"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=oWhRuHoIM5k",
+      "approx_date": "2026-05-03",
+      "hook": "How to Kill Every Limiting Belief and Become Unstoppable",
+      "topic": "Control what you consume and you can control the way you think. Negativity will always lead to a negative life. Eliminate exposure to anything low vibrational. ",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: How to Kill Every Limiting Belief and Become Unstoppable",
+        "Thesis per description: Control what you consume and you can control the way you think. Negativity will always lead to a negative life. Eliminate exposure to anything low vibrational. Cut off negative friends, hateful content, and people who do",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "316799",
+        "likes": "15184",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Control what you consume and you can control the way you think. Negativity will always lead to a negative life. Eliminate exposure to anything low vibrational. Cut off negative friends, hateful content, and people who don't believe in themselves. Your mind is the key to your dream life. Master your  Hashtags: #deepthoughts #philosophy #criticalthinking #society #confidence #selfbelief"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Yvkfvef5GJU",
+      "approx_date": "2026-02-21",
+      "hook": "Never Chase Women",
+      "topic": "Most men are exhausted from chasing validation, attention, and approval. Running after women won’t fix loneliness, insecurity, or lack of direction, it usually ",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Never Chase Women",
+        "Thesis per description: Most men are exhausted from chasing validation, attention, and approval. Running after women won’t fix loneliness, insecurity, or lack of direction, it usually makes it worse. When energy is constantly spent trying to im",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "296817",
+        "likes": "12228",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Most men are exhausted from chasing validation, attention, and approval. Running after women won’t fix loneliness, insecurity, or lack of direction, it usually makes it worse. When energy is constantly spent trying to impress, there’s nothing left to build discipline, purpose, strength, or self-resp Hashtags: #philosophy #dating #relationships #advice #deepthoughts"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=TEZd4aUIFno",
+      "approx_date": "2026-04-08",
+      "hook": "How to Build Delusional Self-Belief",
+      "topic": "Most people aren’t lacking potential, they’re lacking belief. You’re taught to be realistic, to wait for proof, to only feel confident once you’ve “earned it.” ",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: How to Build Delusional Self-Belief",
+        "Thesis per description: Most people aren’t lacking potential, they’re lacking belief. You’re taught to be realistic, to wait for proof, to only feel confident once you’ve “earned it.” But that mindset keeps you stuck in the same place. The trut",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "284732",
+        "likes": "14936",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Most people aren’t lacking potential, they’re lacking belief. You’re taught to be realistic, to wait for proof, to only feel confident once you’ve “earned it.” But that mindset keeps you stuck in the same place. The truth is, every person who’s ever done something great had a phase where they looked Hashtags: #deepthoughts #philosophy #selfbelief #criticalthinking #selfimprovement"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=6aakayPJq8I",
+      "approx_date": "2026-08-11",
+      "hook": "Please get addicted to thinking everything will always work out for you",
+      "topic": "Positivity always wins in the end.",
+      "format": "long-form talking head essay (inferred from title/description; not watched)",
+      "structure": [
+        "Title hook: Please get addicted to thinking everything will always work out for you",
+        "Thesis per description: Positivity always wins in the end.",
+        "Extended monologue expanding the thesis (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "242276",
+        "likes": "7300",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular long-form. Description (verbatim, truncated): Positivity always wins in the end."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/aIxnk8RlB3s",
+      "approx_date": "2026-07-08",
+      "hook": "The Psychology of Messi",
+      "topic": "The Psychology of Messi",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: The Psychology of Messi",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "58274",
+        "likes": "1344",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts, popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/XNPGsryGu28",
+      "approx_date": "2026-07-02",
+      "hook": "Talent is a Debt, Not a Gift",
+      "topic": "Talent is a Debt, Not a Gift",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Talent is a Debt, Not a Gift",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "38623",
+        "likes": "1664",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/2nPgwfOLO_0",
+      "approx_date": "2026-06-30",
+      "hook": "June 30, 2026",
+      "topic": "June 30, 2026",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: June 30, 2026",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "29747",
+        "likes": "1539",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts. Dated-diary style title."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/Yn6ptL0njnA",
+      "approx_date": "2026-06-30",
+      "hook": "The cost of knowing your potential",
+      "topic": "The cost of knowing your potential",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: The cost of knowing your potential",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "33740",
+        "likes": "1694",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/75JzQ3lxh9I",
+      "approx_date": "2026-06-28",
+      "hook": "Mordecai = Law of Attraction #regularshow",
+      "topic": "Mordecai = Law of Attraction #regularshow",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Mordecai = Law of Attraction #regularshow",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "45025",
+        "likes": "3302",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts, popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/eQs9vYGKAFM",
+      "approx_date": "2026-06-28",
+      "hook": "Video Games = IRL Success",
+      "topic": "Video Games = IRL Success",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Video Games = IRL Success",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "48865",
+        "likes": "1222",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts, popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/-iQJ10upNaI",
+      "approx_date": "2026-06-28",
+      "hook": "How to Defeat Evil 👀",
+      "topic": "How to Defeat Evil 👀",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: How to Defeat Evil 👀",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "32472",
+        "likes": "1637",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/Q2QzNhLCzdo",
+      "approx_date": "2026-06-28",
+      "hook": "Are they really your friend?",
+      "topic": "Are they really your friend?",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Are they really your friend?",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "43476",
+        "likes": "1288",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/WlyyffGMBGg",
+      "approx_date": "2026-06-25",
+      "hook": "Cartoon Villians 😂",
+      "topic": "Cartoon Villians 😂",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Cartoon Villians 😂",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "23482",
+        "likes": "1267",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/jQIKlyRogT4",
+      "approx_date": "2026-06-24",
+      "hook": "Duality of Man 😂",
+      "topic": "Duality of Man 😂",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Duality of Man 😂",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "70254",
+        "likes": "1653",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts, popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/qotSvs_x3K0",
+      "approx_date": "2026-06-23",
+      "hook": "Smart people love criticism, dumb people hate it.",
+      "topic": "Smart people love criticism, dumb people hate it.",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Smart people love criticism, dumb people hate it.",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "27627",
+        "likes": "1435",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/F2UBob-drn0",
+      "approx_date": "2026-06-23",
+      "hook": "Messi is the personification of self belief #messi #worldcup",
+      "topic": "Messi is the personification of self belief #messi #worldcup",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Messi is the personification of self belief #messi #worldcup",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "7953",
+        "likes": "235",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/De4OCRXANb8",
+      "approx_date": "2026-06-23",
+      "hook": "Will I make it?",
+      "topic": "Will I make it?",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Will I make it?",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "42560",
+        "likes": "1384",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/0rpH57Zty6E",
+      "approx_date": "2026-06-22",
+      "hook": "Real wisdom here 😂 #philosophy",
+      "topic": "Real wisdom here 😂 #philosophy",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Real wisdom here 😂 #philosophy",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "42416",
+        "likes": "2234",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/SPcTabv_n8A",
+      "approx_date": "2026-06-22",
+      "hook": "Messi vs. Ronaldo 🤷🏻‍♂️ #messi #ronaldo #fcbarcelona #realmadrid",
+      "topic": "Messi vs. Ronaldo 🤷🏻‍♂️ #messi #ronaldo #fcbarcelona #realmadrid",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Messi vs. Ronaldo 🤷🏻‍♂️ #messi #ronaldo #fcbarcelona #realmadrid",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "14797",
+        "likes": "451",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/MSmmfyTuL7M",
+      "approx_date": "2026-05-30",
+      "hook": "I moved out!",
+      "topic": "I moved out!",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: I moved out!",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "150263",
+        "likes": "5507",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/C9kCY4y4wX4",
+      "approx_date": "2026-06-06",
+      "hook": "#obsession",
+      "topic": "#obsession",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: #obsession",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "128514",
+        "likes": "2170",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/eZa_qj8vud8",
+      "approx_date": "2026-06-07",
+      "hook": "Fake people have the most friends",
+      "topic": "Fake people have the most friends",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Fake people have the most friends",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "74513",
+        "likes": "3593",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/1-RNtVdrQgE",
+      "approx_date": "2026-06-13",
+      "hook": "Love is the reflection of ourselves we project",
+      "topic": "Love is the reflection of ourselves we project",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Love is the reflection of ourselves we project",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "57367",
+        "likes": "3546",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/NH3UPOCJjCg",
+      "approx_date": "2026-06-09",
+      "hook": "God forbid a white boy chill 😂",
+      "topic": "God forbid a white boy chill 😂",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: God forbid a white boy chill 😂",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "55072",
+        "likes": "1562",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/lIn_u4QhIoc",
+      "approx_date": "2026-06-07",
+      "hook": "Old Money",
+      "topic": "Old Money",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Old Money",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "52680",
+        "likes": "1638",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/_ycaCaUQGtk",
+      "approx_date": "2026-06-03",
+      "hook": "Algorithm = Cigarette",
+      "topic": "Algorithm = Cigarette",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Algorithm = Cigarette",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "51983",
+        "likes": "3611",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/6SR4YbR10Ps",
+      "approx_date": "2026-06-06",
+      "hook": "IshowSpeed changed the internet forever #ishowspeed #speed",
+      "topic": "IshowSpeed changed the internet forever #ishowspeed #speed",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: IshowSpeed changed the internet forever #ishowspeed #speed",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "51165",
+        "likes": "2039",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/IjxjSM6dpkI",
+      "approx_date": "2026-06-10",
+      "hook": "Act like that guy!",
+      "topic": "Act like that guy!",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: Act like that guy!",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "48306",
+        "likes": "2413",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/XMIQMTHeif8",
+      "approx_date": "2026-06-02",
+      "hook": "The game gets more fun the less it matters",
+      "topic": "The game gets more fun the less it matters",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: The game gets more fun the less it matters",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "45346",
+        "likes": "2779",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts."
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/shorts/zyzkZAzK0g4",
+      "approx_date": "2026-05-02",
+      "hook": "May 1, 2026",
+      "topic": "May 1, 2026",
+      "format": "YouTube Short (vertical; on-camera format not verified)",
+      "structure": [
+        "Title as on-screen hook: May 1, 2026",
+        "Single idea delivered in under a minute (inferred)"
+      ],
+      "cta": "none observed",
+      "metrics": {
+        "views": "43563",
+        "likes": "1570",
+        "comments": null,
+        "verified": true,
+        "basis": "YouTube public channel RSS feed (media:statistics views, media:starRating count = likes), fetched 2026-10-24 Read from YouTube itself, October 2026."
+      },
+      "confidence": "verbatim",
+      "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCRBMUySQ2syRKfqaBb7oVaw (and UUSH/UULF/UUPS/UULP playlist feeds of @Jett.franzen)",
+      "notes": "Listed in channel feeds: popular shorts. Dated-diary style title."
+    }
+  ],
+  "sources": [
+    "https://www.tokportal.com/tool/tiktok-profile-analytics-checker/Jettfranzen",
+    "https://www.tiktok.com/@jettfranzen",
+    "https://podscripts.co/podcasts/modern-wisdom/why-almost-nobody-gets-the-life-they-want-jett-franzen-1130",
+    "https://podlume.ai/profiles/jett-franzen",
+    "https://jettfranzen.substack.com/",
+    "https://jettfranzen.substack.com/archive",
+    "https://substack.com/@jettfranzen/note/c-358333067",
+    "https://whop.com/franzen-media/",
+    "https://whop.com/@jettfranzen/",
+    "https://socialblade.com/youtube/handle/jett.franzen",
+    "https://youtubesummary.com/summary/fUS4absP_hk",
+    "https://anchor.fm/s/10d9805f4/podcast/rss",
+    "https://www.actualized.org/forum/topic/115516-what-are-your-thoughts-on-jett-franz%C3%A9n/",
+    "https://www.youtube.com/watch?v=D60hHjROMts",
+    "https://www.youtube.com/watch?v=fUS4absP_hk",
+    "https://www.youtube.com/watch?v=3Pi4l-sgB4Q",
+    "https://www.youtube.com/watch?v=1t02F4pxLIE",
+    "https://www.youtube.com/watch?v=MOClmR6LB_M",
+    "https://www.tiktok.com/@chadlet_maxxing/video/7689560066877295903",
+    "https://www.instagram.com/jettfranzen/",
+    "https://www.famousbirthdays.com/people/jettfranzen.html"
+  ],
+  "method": {
+    "note": "WebSearch plus WebFetch of public pages only. TikTok, Instagram and YouTube pages returned empty shells, 429 or bot-check redirects, so they were not retried. Video dates decoded from TikTok IDs (id >> 32). Metrics are from search snippets or self-reports and are unverified. Some caption-to-ID pairings are inferred and flagged in notes.",
+    "counts": {
+      "total": 46,
+      "platform:tiktok": 32,
+      "platform:youtube": 5,
+      "platform:unknown": 9,
+      "confidence:inferred": 14,
+      "confidence:verbatim": 17,
+      "confidence:paraphrased": 15,
+      "with_url": 30,
+      "with_metrics": 13
+    },
+    "round2": "83 more from a second search: 55 from the channel's public YouTube RSS feeds (views and likes as YouTube reports them), 28 TikTok from search snippets."
+  }
+}

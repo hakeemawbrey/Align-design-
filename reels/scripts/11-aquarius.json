@@ -1,0 +1,89 @@
+{
+  "id": "11-aquarius",
+  "sign": "aquarius",
+  "title": "Aquarius, the safest distance",
+  "caption": "loving everyone from orbit, as usual",
+  "hashtags": [
+    "aquarius",
+    "astrology",
+    "zodiac",
+    "aquariusseason"
+  ],
+  "scenes": [
+    {
+      "text": "aquarius, come in for a landing.",
+      "kind": "figure"
+    },
+    {
+      "text": "you think in centuries and forget to eat lunch.",
+      "kind": "void",
+      "body": "blue"
+    },
+    {
+      "text": "uranus gave you lightning and a very long view.",
+      "kind": "burst",
+      "body": "blue",
+      "sky": "violet"
+    },
+    {
+      "text": "you can love the whole world from up there.",
+      "kind": "rise",
+      "body": "earth",
+      "sky": "night"
+    },
+    {
+      "text": "it's one person, up close, that feels like weather.",
+      "kind": "ridge",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "so you go quiet, and you call it independence.",
+      "kind": "road",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "and sometimes it is.",
+      "kind": "road",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "sometimes it's just the safest distance.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "dusk"
+    },
+    {
+      "text": "you don't have to become ordinary to be close.",
+      "kind": "arch",
+      "body": "ringed",
+      "sky": "violet"
+    },
+    {
+      "text": "your strange parts are the ones worth reading.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "find the one who leans in when you get strange,",
+      "kind": "ripple",
+      "body": "moon",
+      "sky": "teal"
+    },
+    {
+      "text": "and lean back. that's the whole experiment.",
+      "kind": "ridge",
+      "body": "ringed",
+      "sky": "dusk",
+      "road": true
+    },
+    {
+      "text": "the future has room for one more.",
+      "kind": "void",
+      "body": "none"
+    }
+  ]
+}

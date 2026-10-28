@@ -1,0 +1,113 @@
+{
+  "id": "align-hhp-002",
+  "sourceId": "hhp-002",
+  "title": "No compatibility score, on purpose",
+  "angleKey": "no-score",
+  "hookKey": "outcome_speed",
+  "formatKey": "relatable_pain_plug",
+  "hook": "Know where you'll clash before the first date.",
+  "beats": [
+    {
+      "line": "Every app gives you a number. 94% match. Nobody knows what it means.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "So I built a dating app with no compatibility score, on purpose.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align every card reads three things. Push is where you'll rub. Pull is what draws you in. Align is where it holds.",
+      "broll": "Card detail: Push / Pull / Align (#deck, Enter)",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Tell me your sign and I'll tell you where you'd rub.",
+  "caption": "Push, pull, align. No percentages.",
+  "hashtags": [
+    "astrology",
+    "datingapp",
+    "zodiac"
+  ],
+  "lengthSec": 28,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 78,
+    "craft": 72,
+    "fit": 100,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 80,
+        "hits": [
+          "first"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 60,
+        "hits": [
+          "94%"
+        ]
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 70,
+        "hits": [
+          "so i"
+        ]
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 59,
+        "hits": [
+          "i"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 88,
+        "hits": [
+          "you",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 75,
+        "hits": [
+          "three things",
+          "tell me your"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 70,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}

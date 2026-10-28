@@ -1,0 +1,91 @@
+{
+  "id": "02-taurus",
+  "sign": "taurus",
+  "title": "Taurus, holding on isn't being held",
+  "caption": "for the taurus still watering last spring",
+  "hashtags": [
+    "taurus",
+    "astrology",
+    "zodiac",
+    "earthsigns",
+    "venus"
+  ],
+  "scenes": [
+    {
+      "text": "dear taurus,",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn"
+    },
+    {
+      "text": "venus is your planet, so you love with your hands.",
+      "kind": "field",
+      "body": "sun",
+      "sky": "dawn",
+      "road": true
+    },
+    {
+      "text": "warm plates, fixed shelves, promises you keep.",
+      "kind": "arch",
+      "body": "moon",
+      "sky": "dusk"
+    },
+    {
+      "text": "you build slowly, and what you build stays standing.",
+      "kind": "ridge",
+      "body": "earth",
+      "sky": "teal"
+    },
+    {
+      "text": "that's the gift. it's also the trap.",
+      "kind": "void",
+      "body": "crescent"
+    },
+    {
+      "text": "you'll tend a garden that stopped growing in april.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "out of loyalty, out of habit, out of pure stubbornness.",
+      "kind": "lake",
+      "body": "moon",
+      "sky": "night"
+    },
+    {
+      "text": "but holding on isn't the same as being held.",
+      "kind": "rise",
+      "body": "blue",
+      "sky": "dusk"
+    },
+    {
+      "text": "ask what you're still watering, and why.",
+      "kind": "road",
+      "body": "moon",
+      "sky": "violet"
+    },
+    {
+      "text": "letting go cleanly is its own kind of loyalty.",
+      "kind": "ripple",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "to yourself, first.",
+      "kind": "ripple",
+      "body": "crescent",
+      "sky": "night"
+    },
+    {
+      "text": "the ones worth it don't need keeping. they stay.",
+      "kind": "figure"
+    },
+    {
+      "text": "rest now, taurus. the ground will hold.",
+      "kind": "field",
+      "body": "moon",
+      "sky": "night"
+    }
+  ]
+}

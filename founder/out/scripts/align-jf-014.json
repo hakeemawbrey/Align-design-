@@ -1,0 +1,114 @@
+{
+  "id": "align-jf-014",
+  "sourceId": "jf-014",
+  "title": "Release, don't haunt",
+  "angleKey": "release-dont-haunt",
+  "hookKey": "named_concept",
+  "formatKey": "concept_explainer",
+  "hook": "The Zeigarnik effect. Here's how it shaped my dating app.",
+  "beats": [
+    {
+      "line": "Unfinished things stay stuck in your head. Being ghosted is an open loop that never closes.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "Ghosting happens because apps make it the easiest option.",
+      "broll": "",
+      "onScreen": ""
+    },
+    {
+      "line": "On Align, passing on someone is called release. Letting a card go is clean.",
+      "broll": "Swipe left to release (#deck)",
+      "onScreen": ""
+    },
+    {
+      "line": "Letting go is clean. Ghosting isn't.",
+      "broll": "",
+      "onScreen": ""
+    }
+  ],
+  "cta": "Which idea should I explain next?",
+  "caption": "Release, don't haunt.",
+  "hashtags": [
+    "ghosting",
+    "datingapp",
+    "datingadvice"
+  ],
+  "lengthSec": 25,
+  "needsFacts": false,
+  "notes": "",
+  "score": {
+    "total": 61,
+    "craft": 53,
+    "fit": 94,
+    "breakdown": [
+      {
+        "key": "hook",
+        "label": "Hook strength (first 2-3s)",
+        "weight": 22,
+        "score": 80,
+        "hits": [
+          "the"
+        ]
+      },
+      {
+        "key": "specificity",
+        "label": "Specificity and proof (numbers, names, receipts)",
+        "weight": 15,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "storyTension",
+        "label": "Story tension and payoff",
+        "weight": 14,
+        "score": 30,
+        "hits": []
+      },
+      {
+        "key": "authenticity",
+        "label": "Founder authenticity and vulnerability",
+        "weight": 12,
+        "score": 56,
+        "hits": [
+          "my"
+        ]
+      },
+      {
+        "key": "relatability",
+        "label": "Relatability and identity",
+        "weight": 12,
+        "score": 63,
+        "hits": [
+          "your",
+          "dating app"
+        ]
+      },
+      {
+        "key": "shareSaveReplay",
+        "label": "Share / save / replay trigger",
+        "weight": 10,
+        "score": 70,
+        "hits": [
+          "?",
+          "loop"
+        ]
+      },
+      {
+        "key": "cta",
+        "label": "CTA clarity and softness",
+        "weight": 8,
+        "score": 20,
+        "hits": []
+      },
+      {
+        "key": "trendFit",
+        "label": "Trend and format fit",
+        "weight": 7,
+        "score": 70,
+        "hits": []
+      }
+    ]
+  }
+}
