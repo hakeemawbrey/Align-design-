@@ -1,0 +1,30 @@
+{
+  "mode": "houston",
+  "voice": "oddly Houston-specific callouts that only someone from Houston would get: name real places, roads and habits (610, the Beltway, 45, the feeder, Katy, Sugar Land, the Heights, Montrose, the Galleria, Westheimer potholes, H-E-B, Whataburger, Buc-ee's, kolaches, crawfish season, the rodeo, EZ TAG, flooded underpasses, hurricane prep, the humidity, 'inside the loop'), and call the sign out like a friend roasting them",
+  "entries": [
+    { "sign": "aries", "text": "an aries will run a yellow on westheimer, hit 4 potholes, and still call you slow" },
+    { "sign": "taurus", "text": "a taurus will drive past three h-e-bs to get to the one they like" },
+    { "sign": "gemini", "text": "gemini says they live in houston. they live in katy. both are true depending on who's asking" },
+    { "sign": "cancer", "text": "cancer has a hurricane kit, a backup hurricane kit, and a group chat called 'shelter plans'" },
+    { "sign": "leo", "text": "a leo will pull up to the galleria in july and act surprised everyone's looking. you're sweating, babe" },
+    { "sign": "virgo", "text": "a virgo knows every underpass that floods and won't date you if you don't" },
+    { "sign": "libra", "text": "libra spent 45 minutes deciding between pappasito's and pappadeaux and ended up at taco cabana" },
+    { "sign": "scorpio", "text": "scorpio said 'i'm 20 minutes away.' they have not left sugar land" },
+    { "sign": "sagittarius", "text": "sagittarius says 'let's go to galveston real quick.' there is nothing quick about 45 south on a saturday" },
+    { "sign": "capricorn", "text": "capricorn has a spreadsheet ranking every kolache in the city by price per ounce" },
+    { "sign": "aquarius", "text": "an aquarius will defend houston having no zoning like it's a personality trait" },
+    { "sign": "pisces", "text": "pisces still thinks about someone they made eye contact with at a crawfish boil in 2019" },
+    { "sign": "aries", "text": "aries will merge onto 610 from the far left lane with no signal and call it confidence" },
+    { "sign": "taurus", "text": "taurus has a whataburger order so specific the drive-thru knows their voice" },
+    { "sign": "gemini", "text": "a gemini in houston has 2 personalities: inside the loop and outside the loop" },
+    { "sign": "cancer", "text": "a cancer will cry at the rodeo. not at the bull riding. at the calf scramble" },
+    { "sign": "leo", "text": "leo spent $400 on a rodeo outfit to stand in line for a turkey leg" },
+    { "sign": "virgo", "text": "virgo leaves 40 minutes early for a 10 minute drive. in houston that's just being realistic" },
+    { "sign": "libra", "text": "a libra won't date anyone who lives more than one beltway away" },
+    { "sign": "scorpio", "text": "a scorpio knows which of your exes lives in the heights and what time they go to the farmers market" },
+    { "sign": "sagittarius", "text": "a sagittarius has 3 ez tags and no idea which car they're on" },
+    { "sign": "capricorn", "text": "a capricorn moved to the woodlands 'for the schools.' they don't have kids. they have a 5 year plan" },
+    { "sign": "aquarius", "text": "aquarius only dates people they met at a montrose house show that technically didn't exist" },
+    { "sign": "pisces", "text": "a pisces will say 'the humidity is good for my skin' while visibly melting at a red light" }
+  ]
+}

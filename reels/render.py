@@ -81,6 +81,9 @@ PALETTES = {
                             ["#6a3093", "#0072ff"], ["#00c2a8", "#f9d423"]]},
     "hater":     {"pairs": [["#8b0000", "#1a0000"], ["#6b0f1a", "#2b0b3d"],
                             ["#3a0519", "#8b0000"], ["#1a0000", "#5c0a2e"]]},
+    # astros navy/orange, bayou city sunset, gulf teal
+    "houston":   {"pairs": [["#002d62", "#eb6e1f"], ["#eb6e1f", "#002d62"],
+                            ["#c8102e", "#ff8a00"], ["#006d75", "#ff9e3d"]]},
     "random":    {"pairs": None},
 }
 
@@ -118,6 +121,7 @@ HASHTAGS_MODE = {
     "yapping": "#storytime #relatable #overshare",
     "short": "#relatable #memes #zodiacmemes",
     "hater": "#shade #tea #datingmemes #exmemes",
+    "houston": "#houston #htx #houstontx #houstonmemes #htown",
     "random": "#relatable #memes #fyp",
 }
 
@@ -130,6 +134,7 @@ IG_CAPTION = {
     "yapping": "{sign}s will turn a 2 word update into a whole podcast episode \U0001f3a4",
     "short": "{sign} said what they said",
     "hater": "the tea on dating a {sign} ☕ spill yours below",
+    "houston": "tag the houston {sign} who needs to see this \U0001f920",
     "random": "which sign is guilty of this \U0001f440 wrong answers only",
 }
 
@@ -238,6 +243,17 @@ def render(text, mode, outfile, music=None, cta=False, seed=None, still=True,
     subprocess.run(cmd, check=True)
     os.unlink(tf.name)
     return outfile, (None if still else dur)
+
+
+def load_voices():
+    """Optional "voice" line per caption file, telling Claude what a genre is
+    about when its name alone isn't enough (e.g. houston)."""
+    voices = {}
+    for path in glob.glob(os.path.join(ROOT, "captions", "*.json")):
+        data = json.load(open(path))
+        if data.get("voice"):
+            voices[data["mode"]] = data["voice"]
+    return voices
 
 
 def load_bank():

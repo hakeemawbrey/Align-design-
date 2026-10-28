@@ -205,17 +205,23 @@ def inspo_captions(img, sign):
     return None
 
 
+def voice_line(mode):
+    voice = render.load_voices().get(mode)
+    return f"\nThe '{mode}' genre is: {voice}." if voice else ""
+
+
 def variation_captions(mode, sign, n=12):
     """Ask headless Claude for N unique captions in this mode's voice for one
-    sign, using the existing bank entry (if any) as a style example."""
-    example = bank_lookup().get(f"{mode}_{sign}")
-    example_line = f'\nExample of the tone/format to match: "{example["text"]}"' \
-        if example else ""
+    sign, using the sign's bank entries (if any) as style examples."""
+    examples = [e["text"] for e in render.load_bank()
+                if e["mode"] == mode and e["sign"] == sign]
+    example_line = "".join(f'\nExample of the tone/format to match: "{t}"'
+                           for t in examples)
     prompt = (
         f"Write {n} completely different short zodiac meme captions about "
         f"the sign {sign}, all in the '{mode}' voice/genre for a zodiac "
-        f"dating app's Instagram.{example_line} Each one must be a distinct "
-        f"joke/angle — no rephrasing the same idea twice. Lowercase unless "
+        f"dating app's Instagram.{voice_line(mode)}{example_line} Each one "
+        f"must be a distinct joke/angle — no rephrasing the same idea twice. Lowercase unless "
         "the style needs caps for emphasis, no links, no hashtags, no emoji, "
         'under 220 characters each. Reply with ONLY a JSON array of strings '
         'like ["caption one", "caption two", ...] and nothing else.'
@@ -232,7 +238,8 @@ def more_like_this(mode, sign, seed_text, n=6):
     which only anchors on the mode's generic bank example."""
     prompt = (
         f"Here is one zodiac meme caption for {sign}, in the '{mode}' "
-        f'voice for a zodiac dating app\'s Instagram: "{seed_text}"\n\n'
+        f'voice for a zodiac dating app\'s Instagram: "{seed_text}"'
+        f"{voice_line(mode)}\n\n"
         f"Write {n} more captions that riff on this exact same joke/idea/"
         f"angle — same specific premise or structure, different wording or "
         f"a fresh punchline on the same setup — still about {sign}, still "

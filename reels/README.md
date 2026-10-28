@@ -74,6 +74,7 @@ first comment (that's where the comealign.com link goes).
 | nonsense | surreal deadpan "facts" | orange/teal/yellow |
 | spiritual | cosmic woo-woo affirmations | deep purple/gold |
 | dating | love advice / crying for help as a sign | red/rose/violet |
+| houston | oddly Houston-specific callouts (610, Katy, H-E-B, the rodeo, the humidity) | Astros navy/orange, Gulf teal |
 | random | general zodiac chaos, not sign-specific | random palette |
 
 Caption banks live in `captions/*.json` — edit freely, or ask Claude:
