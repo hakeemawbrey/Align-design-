@@ -494,7 +494,7 @@ export function makeEpisode(spec) {
       const last = ls[ls.length - 1]
       return dialogueBox(root, { lines: ls.map(({ t, speaker, text, color }) => ({ t, speaker, text, color })), y: 1450, width: 960, height: 290, open: r3(ls[0].t - 0.25), close: r3(Math.min(T[seg][1] - 0.05, last.done + READ + hold)), cps: CPS })
     }).filter(Boolean)
-    const take = popText(root, spec.takeaway.text, { top: spec.takeaway.top ?? 300, size: spec.takeaway.size ?? 104, accentSize: spec.takeaway.accentSize ?? 160, at: T.take[0] + 0.35, gap: 0.09, accentColor: sign.color, wobble: true, late: 1, lateAt: T.take[0] + 0.35 + 0.09 * (spec.takeaway.words ?? 6) + 0.25, fit: true })
+    const take = popText(root, spec.takeaway.text, { top: spec.takeaway.top ?? 300, size: spec.takeaway.size ?? 104, accentSize: spec.takeaway.accentSize ?? 160, at: T.take[0] + 0.35, gap: 0.09, accentColor: sign.color, wobble: true, late: spec.takeaway.late ?? 1, lateAt: T.take[0] + 0.35 + 0.09 * (spec.takeaway.words ?? 6) + 0.25, fit: true })
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const black = el('div', { position: 'absolute', inset: 0, background: '#000' }, root)
 
