@@ -235,14 +235,19 @@ const Store = {
     try { this.db = window.claude?.use ? await window.claude.use("db") : null; } catch { this.db = null; }
     if (this.db) {
       this.kind = "cloud";
-      // no orderBy: posts saved by the earlier version of this page have no
-      // sortAt, and ordering by it would hide them; sync() sorts instead
-      this.db.collection("posts").limit(1000).onSnapshot(snap => {
-        const next = new Map();
-        for (const d of snap.docs) { const v = clean(d.data()); if (v) next.set(d.id, { ...v, id: d.id }); }
-        for (const [id, p] of this.posts) if (p._pending && !next.has(id)) next.set(id, p);
-        this.posts = next; sync();
-      }, e => note(`Lost the cloud queue (${e.code}). Reload to reconnect.`, true));
+      try {
+        // posts saved by the earlier version of this page have no sortAt;
+        // they still come back (missing fields sort last) and sync() sorts
+        // them by their createdAt
+        this.db.collection("posts").orderBy("sortAt", "desc").limit(1000).onSnapshot(snap => {
+          const next = new Map();
+          for (const d of snap.docs) { const v = clean(d.data()); if (v) next.set(d.id, { ...v, id: d.id }); }
+          for (const [id, p] of this.posts) if (p._pending && !next.has(id)) next.set(id, p);
+          this.posts = next; sync();
+        }, e => note(`Lost the cloud queue (${e.code}). Reload to reconnect.`, true));
+      } catch (e) {
+        note(`Couldn't open the cloud queue (${e?.code || e?.message || e}).`, true);
+      }
     } else {
       this.kind = "local";
       try { for (const p of JSON.parse(localStorage.getItem("agr-queue") || "[]")) { const v = clean(p); if (v && p.id) this.posts.set(p.id, { ...v, id: p.id }); } } catch {}
@@ -290,12 +295,14 @@ function makePost(mode, sign, text, source, look) {
 function addPosts(list) { list.forEach(p => Store.add(p)); sync(); return list.length; }
 
 /* ---------- Claude (Opus 5.5) ---------- */
+// never declare a global named `claude`: it would collide with the viewer's
+// window.claude and stop the whole script
 let samplePromise = null;
-function claude() { if (!samplePromise) samplePromise = (async () => { try { return window.claude?.use ? await window.claude.use("sample") : null; } catch { return null; } })(); return samplePromise; }
+function getSample() { if (!samplePromise) samplePromise = (async () => { try { return window.claude?.use ? await window.claude.use("sample") : null; } catch { return null; } })(); return samplePromise; }
 const voiceLine = mode => VOICES[mode] ? `\nThe '${mode}' genre is: ${VOICES[mode]}.` : "";
 const examplesLine = texts => texts.map(t => `\nExample of the tone/format to match: "${t}"`).join("");
 async function askJson(prompt, images) {
-  const sample = await claude();
+  const sample = await getSample();
   if (!sample) return null;
   try {
     const opts = { model: MODEL, modelTier: "complex", effort: "high", cache: false };
@@ -529,6 +536,9 @@ async function downloadAllApproved(btn) {
 }
 
 /* ---------- start ---------- */
+// show any failure on the page instead of hanging quietly on "connecting…"
+window.addEventListener("error", e => note(`Something broke: ${e.message}`, true));
+window.addEventListener("unhandledrejection", e => note(`Something broke: ${e.reason?.code || e.reason?.message || e.reason}`, true));
 for (const m of Object.keys(BANK)) $("genMode").insertAdjacentHTML("beforeend", `<option value="${m}">${MODE_LABELS[m] || m}</option>`);
 $("genSign").innerHTML = `<option value="all">all signs</option>` + SIGNS.map(s => `<option value="${s}">${s}</option>`).join("");
 fontReady.then(() => { imgCache.clear(); draw(); });
