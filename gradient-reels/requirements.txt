@@ -1,0 +1,3 @@
+# only needed when captions come from the API (ANTHROPIC_API_KEY) instead of
+# the claude CLI; rendering itself is the standard library plus ffmpeg
+anthropic>=1.0
