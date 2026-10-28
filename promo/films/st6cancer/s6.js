@@ -40,7 +40,7 @@
 //     hero.under(ctx, t, { x, y, size, seg, k })   drawn just BEFORE the star (a cape behind it).
 //     sky.map.stars[i].hide                        project the point (for the box + extras) but don't draw it.
 //     personal.draw(ctx, t, { k, item, r })        anything extra in the interview (e.g. a clipboard).
-//     ghost: { seg, at (s after the seg starts) | t, x, y, from, cell, where, layer: 'over' }
+//     ghost: { seg, at (s after the seg starts) | t, x, y, from, cell, where, layer: 'over' }  (item: n → at is after question n)
 // Helpers exported for episodes: drawBits, pixLine, PLATE, archive colours, the bitmaps HEROFIG (Heracles), KID.
 // Nothing touches `document` at module top level.
 import { clamp, lerp, prog, ease, el, rng, noise1, hexToRgb } from '../../src/lib.js'
@@ -473,7 +473,7 @@ export function makeEpisode(spec) {
   const allLines = [...LN.cold, ...LN.myth, ...LN.sky, ...LN.personal]
   const HOPS = talkHops(allLines, TAG, { cps: CPS })
   const ghost = spec.ghost
-  const ghostAt = r3(ghost.t ?? (T[ghost.seg] ? (Array.isArray(T[ghost.seg]) ? T[ghost.seg][0] : T[ghost.seg]) + ghost.at : ghost.at))
+  const ghostAt = r3(ghost.t ?? (ghost.item !== undefined ? T.items[ghost.item].q + ghost.at : T[ghost.seg] ? (Array.isArray(T[ghost.seg]) ? T[ghost.seg][0] : T[ghost.seg]) + ghost.at : ghost.at))
   const GHOST = { at: ghostAt, x: ghost.x, y: ghost.y, where: ghost.where }
 
   // the sky map, projected once
