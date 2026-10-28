@@ -94,8 +94,6 @@ const HEART = ['.H.H.', 'HWHHH', 'HHHHH', '.HHH.', '..H..']
 const HEART_C = { H: '#ff4f86', W: '#ffd1de' }
 const CROWN = ['g...g...g', 'gg.YgY.gg', 'YYYYYYYYY', 'YRYYBYYRY', 'YYYYYYYYY', 'ddddddddd']
 const CROWN_C = { g: '#fff1c8', Y: '#f7c948', R: '#ff3d6e', B: '#5fd0ff', d: '#c98a1f' }
-const HEADPH = ['.kkkkkkk.', 'k.......k', 'k.......k', 'cc.....cc', 'cc.....cc']
-const HEADPH_C = { k: '#2a2350', c: '#7fe0ff' }
 
 // ── layout
 const SUN = { x: 540, y: 780, R: 150 }
@@ -259,6 +257,21 @@ async function build(stage) {
     const tw = (Math.sin(t * 5.3) + 1) / 2
     if (lift < 0.2 && tw > 0.6) { x.save(); x.globalAlpha = a * (tw - 0.6) * 2.5; drawPixelStar(x, bx + 2, by - 64, 22, 1, '#ffffff'); x.restore() }
   }
+  /** Aquarius's pink headphones (staraqua), over the head: band along a half ellipse, a cup on each side */
+  function headphones(r) {
+    const s = r.size, c = Math.max(4, Math.round(s / 30)), cupY = r.y - s * 0.06, cupX = s * 0.4, ry = -s * 0.44
+    for (const [col, q] of [[INK, 1.5], ['#3a2a6e', 1]]) for (let i = 0; i <= 26; i++) {
+      const a = Math.PI * i / 26, bx = r.x - Math.cos(a) * cupX, by = cupY + Math.sin(a) * ry
+      x.fillStyle = col; x.fillRect(Math.round(bx - c * q), Math.round(by - c * q), c * 2 * q, c * 2 * q)
+    }
+    for (const sd of [-1, 1]) {
+      const cx = r.x + sd * cupX, w = c * 5, h = c * 8
+      x.fillStyle = INK; x.fillRect(Math.round(cx - w / 2 - c), Math.round(cupY - h / 2 - c), w + 2 * c, h + 2 * c)
+      x.fillStyle = '#ff4fd8'; x.fillRect(Math.round(cx - w / 2), Math.round(cupY - h / 2), w, h)
+      x.fillStyle = '#ffb3f0'; x.fillRect(Math.round(cx - w / 2), Math.round(cupY - h / 2), c, h)
+      x.fillStyle = '#b02a98'; x.fillRect(Math.round(cx + w / 2 - c), Math.round(cupY - h / 2), c, h)
+    }
+  }
   function sparkles(t, cx, cy, t0, n, R, seed, cols = [GOLD, BONE, PINK, LAV], dur = 0.7) {
     const tt = t - t0
     if (tt < 0 || tt > dur) return
@@ -395,7 +408,7 @@ async function build(stage) {
       const hops = m.id === 'leo' ? LEO_HOPS : [m.at + 0.3, T.gasp1 + (m.seed % 4) * 0.05, T.gasp2 + (m.seed % 3) * 0.07, T.gasp3]
       const r = drawStarChar(x, m.x, m.y, m.size, t, { color: st.color, glyph: st.glyph, ...s, pop: p, seed: m.seed, glow: 0.85, hops })
       if (m.id === 'leo') { rLeo = r; drawBits(x, CROWN, CROWN_C, Math.round(r.x), Math.round(r.top + 2), 6 * p, { rot: -0.16 + 0.04 * Math.sin(t * 3) }) }
-      if (m.id === 'aquarius') drawBits(x, HEADPH, HEADPH_C, Math.round(r.x), Math.round(r.y - r.size * 0.12), Math.max(1, Math.round(r.size / 36)) * 2.4 * p)
+      if (m.id === 'aquarius' && p > 0.3) headphones(r)
       glasses(r, t, m)
       if (s.mood === 'heart' && t > T.gasp2 + 1.2) for (let i = 0; i < 2; i++) {
         const ph = (t * 0.6 + i * 0.5 + m.seed * 0.17) % 1
