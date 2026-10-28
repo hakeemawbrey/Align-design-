@@ -7,7 +7,7 @@
 //              to fit them both.
 //   6.20–14.0  "Headphones | *off.*"  Aquarius lifts the headphones off and lets them rest round its neck.
 //              AQUARIUS: "you're my favorite *spotlight.*" (Leo: heart eyes.) → THE STARS: "fixed fire, fixed air.
-//              fixed means *committed.*"  (The ghost peeks over the rooftop AC unit.)
+//              fixed means *committed.*"  (The ghost hangs upside down from the string lights.)
 //   14.0 cut → "Fixed means | *committed.*"  Every star comes out: the other ten sign stars pop up across the sky,
 //              cheering, and a big pixel heart pops between the two. Everything pops out by 20.45; the end card at 20.6.
 // One canvas (sky + skyline + roof + spotlight + stars), DOM type + the dialogue box above it, grain on top. Pure f(t).
@@ -77,7 +77,7 @@ const NOTE_BM = ['..XX', '..XX', '..X.', '..X.', 'XXX.', 'XXX.']
 const ROOF = 1300
 const LEO0 = { x: 345, y: 1150, size: 290 }, AQU0 = { x: 740, y: 1150, size: 280 }
 const AC = { x0: 905, x1: 1040, top: 1195 }
-export const GHOST = { at: T.ghost, x: 975, y: AC.top, where: 'peeking over the rooftop AC unit' }
+export const GHOST = { at: T.ghost, x: 165, y: 922, where: 'hanging upside down from the rooftop string lights' }
 const CROWD = ['aries', 'taurus', 'gemini', 'cancer', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'pisces'].map((id, i) => {
   const a = Math.PI * (0.06 + 0.88 * i / 9)
   return { id, x: 540 - Math.cos(a) * 420, y: 930 - Math.sin(a) * 270 + (i % 2) * 24, size: 104 + (i % 3) * 10, seed: 20 + i }
@@ -258,7 +258,7 @@ async function build(stage) {
       drawSkyline(t, rk)
       if (t > T.cut) drawCrowd(t, ok)
       drawRoof(t, rk)
-      drawGhostCameo(x, t, { x: GHOST.x, y: GHOST.y, at: GHOST.at, dur: 1.4, from: 'below', cell: 3 })
+      drawGhostCameo(x, t, { x: GHOST.x, y: GHOST.y, at: GHOST.at, dur: 1.4, from: 'above', cell: 3 })
       drawSpot(t)
       if (ok > 0) {
         const lp = pop01(t, T.leoIn, 0.38, 2.2) * ok, ap = pop01(t, T.aquIn, 0.38, 2.2) * ok
