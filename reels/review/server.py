@@ -11,6 +11,7 @@ import base64
 import hmac
 import json
 import os
+import random
 import re
 import shutil
 import subprocess
@@ -239,6 +240,37 @@ def variation_captions(mode, sign, n=12):
     return None
 
 
+def mix_captions(mode):
+    """Ask headless Claude for one fresh caption per zodiac sign in this
+    mode's voice, so one click gives a post for every sign."""
+    examples = [e["text"] for e in render.load_bank() if e["mode"] == mode]
+    random.shuffle(examples)
+    example_line = "".join(f'\nExample of the tone/format to match: "{t}"'
+                           for t in examples[:6])
+    prompt = (
+        f"Write 12 short zodiac meme captions, exactly one for each sign "
+        f"({', '.join(render.SIGNS)}), all in the '{mode}' voice/genre for "
+        f"a zodiac dating app's Instagram.{voice_line(mode)}{example_line} "
+        "Each caption is about its own sign and is a different joke, not "
+        "the same joke with the sign swapped. Lowercase unless the style "
+        "needs caps for emphasis, no links, no hashtags, no emoji, under "
+        "220 characters each. Reply with ONLY a JSON array like "
+        '[{"sign":"aries","text":"..."}] and nothing else.'
+    )
+    caps = parse_json_array(ask_claude(prompt))
+    if not caps:
+        return None
+    by_sign = {}
+    for c in caps:
+        if isinstance(c, dict) and isinstance(c.get("text"), str) \
+                and c["text"].strip():
+            sign = str(c.get("sign", "")).lower().strip()
+            if sign in render.SIGNS:
+                by_sign.setdefault(sign, c["text"].strip())
+    # accept a reply that misses a sign or two; the caller fills the gaps
+    return by_sign if len(by_sign) >= 9 else None
+
+
 def more_like_this(mode, sign, seed_text, n=6):
     """Ask headless Claude for N captions riffing on this SPECIFIC post's
     joke/angle for the same sign — a tighter ask than variation_captions,
@@ -273,6 +305,21 @@ def resolve_entry(rel):
     if not entry:
         return None
     return {"mode": entry["mode"], "sign": entry["sign"], "text": entry["text"]}
+
+
+def render_entries(mode, entries):
+    """Render each {sign, text} as a fresh still in out/ and record it."""
+    manifest = load_manifest()
+    made = []
+    for e in entries:
+        path = free_path(mode, e["sign"])
+        render.render(e["text"], mode, path, still=True,
+                      watermark=False, cta=False)
+        rel = os.path.relpath(path, OUT)
+        manifest[rel] = {"mode": mode, "sign": e["sign"], "text": e["text"]}
+        made.append(rel)
+    save_manifest(manifest)
+    return made
 
 
 def free_path(mode, sign):
@@ -449,19 +496,32 @@ class Handler(BaseHTTPRequestHandler):
                     used_claude = True
                 elif entries:
                     entries = entries * 12
-            manifest = load_manifest()
-            made = []
-            for e in entries:
-                path = free_path(mode, e["sign"])
-                render.render(e["text"], mode, path, still=True,
-                              watermark=False, cta=False)
-                rel = os.path.relpath(path, OUT)
-                manifest[rel] = {"mode": mode, "sign": e["sign"],
-                                 "text": e["text"]}
-                made.append(rel)
-            save_manifest(manifest)
+            made = render_entries(mode, entries)
             self.send_json({"ok": True, "count": len(made), "files": made,
                             "claude": used_claude})
+        elif self.path == "/api/mix":
+            # one post per sign, all 12, in the chosen genre
+            mode = data.get("mode")
+            if mode not in render.PALETTES:
+                self.send_json({"ok": False, "error": "unknown mode"}, 400)
+                return
+            written = mix_captions(mode) or {}
+            bank = [e for e in render.load_bank() if e["mode"] == mode]
+            entries = []
+            for sign in render.SIGNS:
+                text = written.get(sign)
+                if not text:
+                    # no Claude, or it skipped this sign: a random bank line
+                    # for the sign, else any line from the genre
+                    pool = [e["text"] for e in bank if e["sign"] == sign] \
+                        or [e["text"] for e in bank]
+                    if not pool:
+                        continue
+                    text = random.choice(pool)
+                entries.append({"sign": sign, "text": text})
+            made = render_entries(mode, entries)
+            self.send_json({"ok": True, "count": len(made), "files": made,
+                            "claude": bool(written)})
         elif self.path == "/api/regen":
             rel = data["id"]
             full = os.path.normpath(os.path.join(OUT, rel))

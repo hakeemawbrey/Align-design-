@@ -112,6 +112,7 @@
       <option value="aquarius">aquarius</option><option value="pisces">pisces</option>
     </select>
     <button id="genBtn" onclick="generate()">⚡ Generate</button>
+    <button id="mixBtn" onclick="mixAll()" title="one fresh post for each of the 12 signs, in this genre">🎲 Mix all 12</button>
     <button id="inspoBtn" class="inspo" onclick="document.getElementById('inspoFile').click()">🖼 Inspo</button>
     <input type="file" id="inspoFile" accept="image/*" hidden onchange="uploadInspo(this)">
   </div>
@@ -200,6 +201,25 @@ async function generate() {
     btn.textContent = "error — retry";
   }
   setTimeout(() => { btn.textContent = "⚡ Generate"; btn.disabled = false; }, 3000);
+}
+
+async function mixAll() {
+  const btn = document.getElementById("mixBtn");
+  const mode = document.getElementById("genMode").value;
+  btn.disabled = true;
+  btn.textContent = "writing one for every sign… (~1 min)";
+  try {
+    const res = await fetch("/api/mix", { method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode }) });
+    const data = await res.json();
+    filter = "pending";
+    await load();
+    btn.textContent = data.claude ? `✓ ${data.count} signs, all new` : `✓ ${data.count} signs from library`;
+  } catch (e) {
+    btn.textContent = "error — retry";
+  }
+  setTimeout(() => { btn.textContent = "🎲 Mix all 12"; btn.disabled = false; }, 3000);
 }
 
 async function uploadInspo(input) {

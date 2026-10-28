@@ -55,7 +55,11 @@ Nothing here needs your Mac anymore. It runs anywhere with Python 3 and ffmpeg.
 
 `review/server.py` serves a dashboard on **http://localhost:4319**: pick a
 genre in the header and hit **⚡ Generate 12** to render that mode's captions
-(clicking again makes fresh variants with new gradients). Every render in
+(clicking again makes fresh variants with new gradients). **🎲 Mix all 12**
+has Claude write one new post for each of the 12 signs in that genre (from the
+library when Claude isn't available). **📋 Copy text** on a card copies the
+words on the gradient; on the approved tab, **📋 Copy all approved text** copies
+every approved post's text as one list. Every render in
 `out/` shows as a card with an editable IG caption and Approve / Reject
 buttons. Approving copies the file + a caption/first-comment `.txt` sidecar
 into `approved/` — that folder is the upload queue. Decisions persist in
