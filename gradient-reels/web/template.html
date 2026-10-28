@@ -1,0 +1,537 @@
+<title>Align Gradient Reels</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* The review dashboard from review/index.html, as one cloud page: same
+     dark look, same header, same cards. Posts are drawn in the browser with
+     render.py's layout math and the same bundled font. */
+  @font-face { font-family: "ReelFont"; font-weight: 900;
+               src: url(data:font/ttf;base64,__FONT__) format("truetype"); }
+  :root {
+    --bg: #0d0b14; --card: #17131f; --line: #2a2438; --text: #f2eefa;
+    --dim: #9a8fb0; --ok: #22c55e; --bad: #ef4444; --accent: #b86bff;
+    --field: #100d18; --raised: #262033; --head: rgba(13,11,20,.92);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  [hidden] { display: none !important; }
+  body { background: var(--bg); color: var(--text);
+         font: 15px/1.45 -apple-system, "Helvetica Neue", "Segoe UI", sans-serif; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto;
+                 height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--head); }
+  button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--head);
+           backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+           padding-block: 14px; padding-left: max(20px, env(safe-area-inset-left, 0px));
+           padding-right: max(20px, env(safe-area-inset-right, 0px));
+           display: flex; align-items: center; gap: 12px 16px; flex-wrap: wrap; }
+  header h1 { font-size: 17px; }
+  header h1 span { background: linear-gradient(90deg,#ff5fa2,#b86bff,#00c2ff);
+                   -webkit-background-clip: text; background-clip: text;
+                   -webkit-text-fill-color: transparent; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tab { border: 1px solid var(--line); background: none; color: var(--dim);
+         padding: 6px 14px; border-radius: 99px; cursor: pointer; font-size: 13px; }
+  .tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .gen { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .gen select { background: var(--field); color: var(--text); border: 1px solid var(--line);
+                border-radius: 10px; padding: 7px 10px; font-size: 13px; }
+  .gen button { background: linear-gradient(90deg,#ff5fa2,#b86bff); color: #fff;
+                border: none; border-radius: 10px; padding: 8px 16px;
+                font-weight: 700; font-size: 13px; cursor: pointer; }
+  .gen button:disabled { opacity: .5; cursor: wait; }
+  .gen button.inspo { background: var(--raised); border: 1px solid var(--line); }
+  .chip.mode-inspo { background: #0d9488; } .chip.mode-custom { background: #4b5563; }
+  .regen { flex: 0 0 auto !important; padding: 10px 14px !important;
+           background: var(--raised) !important; color: var(--dim) !important; }
+  .counts { margin-left: auto; color: var(--dim); font-size: 13px; }
+  .counts b { color: var(--ok); }
+  .sync { font-size: 11px; color: var(--dim); }
+  #grid { display: grid; gap: 18px; justify-content: center;
+          padding-block: 20px; padding-left: max(16px, env(safe-area-inset-left, 0px));
+          padding-right: max(16px, env(safe-area-inset-right, 0px));
+          grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 330px)); }
+  .card { background: var(--card); border: 1px solid var(--line);
+          border-radius: 16px; overflow: hidden; display: flex;
+          flex-direction: column; min-width: 0; }
+  .card.approved { border-color: rgba(34,197,94,.55); }
+  .card.rejected { border-color: rgba(239,68,68,.45); opacity: .6; }
+  .still { width: 100%; max-width: 100%; aspect-ratio: 9/16; background: #000;
+           display: block; object-fit: cover; }
+  .meta { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+  .chips { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .chip { font-size: 11px; text-transform: uppercase; letter-spacing: .5px;
+          padding: 3px 10px; border-radius: 99px; font-weight: 700; color: #fff; }
+  .chip.mode-brainrot { background: #7b2ff7; } .chip.mode-delu { background: #ff5fa2; }
+  .chip.mode-nonsense { background: #cc7000; } .chip.mode-spiritual { background: #5b3fb8; }
+  .chip.mode-dating { background: #ff2d55; } .chip.mode-random { background: #4b5563; }
+  .chip.mode-yapping { background: #ff6a3d; } .chip.mode-short { background: #0072ff; }
+  .chip.mode-hater { background: #8b0000; }
+  .chip.mode-houston { background: #eb6e1f; }
+  .chip.sign { background: var(--raised); color: var(--dim); }
+  .folder { font-size: 11px; color: var(--dim); margin-left: auto; }
+  .status-pill { font-size: 11px; font-weight: 700; }
+  .status-pill.approved { color: var(--ok); } .status-pill.rejected { color: var(--bad); }
+  textarea { width: 100%; min-height: 96px; background: var(--field); color: var(--text);
+             border: 1px solid var(--line); border-radius: 10px; padding: 9px;
+             font: 13px/1.4 ui-monospace, Menlo, monospace; resize: vertical; }
+  textarea:focus { outline: none; border-color: var(--accent); }
+  .label { font-size: 11px; text-transform: uppercase; letter-spacing: .6px;
+           color: var(--dim); }
+  .btns { display: flex; gap: 8px; padding: 0 14px 14px; }
+  .btns button { flex: 1; padding: 10px 0; border-radius: 10px; border: none;
+                 font-weight: 700; font-size: 14px; cursor: pointer; color: #fff; }
+  .approve { background: var(--ok); } .reject { background: #3a2430; color: #ff9caa !important; }
+  .undo { background: var(--raised); color: var(--dim) !important; }
+  .download { background: var(--ok); color: #fff; }
+  .btns2 { padding: 0 14px 14px; display: flex; gap: 8px; }
+  .btns2 .more { flex: 1; padding: 9px 0; border-radius: 10px; border: 1px
+                 solid var(--line); background: none; color: var(--accent);
+                 font-weight: 700; font-size: 13px; cursor: pointer; }
+  .btns2 .more:disabled { opacity: .5; cursor: wait; }
+  #copyAllBtn { border: 1px solid var(--line); background: none; color: var(--text);
+                border-radius: 99px; padding: 7px 16px; font-weight: 700;
+                font-size: 13px; cursor: pointer; }
+  #dlAllBtn { border: none; border-radius: 99px; padding: 7px 16px;
+              font-weight: 700; font-size: 13px; cursor: pointer; }
+  .empty { grid-column: 1/-1; text-align: center; color: var(--dim); padding: 60px 0; }
+  .note { padding-left: max(20px, env(safe-area-inset-left, 0px));
+          padding-right: max(20px, env(safe-area-inset-right, 0px));
+          padding-block: 10px 0; color: var(--dim); font-size: 13px; }
+  .note.err { color: #ff9caa; }
+</style>
+
+<header>
+  <h1>✨ <span>Align Gradient Reels</span> review</h1>
+  <div class="gen">
+    <select id="genMode" aria-label="Genre"></select>
+    <select id="genSign" aria-label="Sign"></select>
+    <button id="genBtn" onclick="generate()">⚡ Generate</button>
+    <button id="mixBtn" onclick="mixAll()" title="one fresh post for each of the 12 signs, in this genre">🎲 Mix all 12</button>
+    <button id="inspoBtn" class="inspo" onclick="document.getElementById('inspoFile').click()">🖼 Inspo</button>
+    <input type="file" id="inspoFile" accept="image/png,image/jpeg,image/webp,image/gif" hidden onchange="uploadInspo(this)">
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <button id="copyAllBtn" hidden onclick="copyAllApproved(this)">📋 Copy all approved text</button>
+  <button id="dlAllBtn" class="download" hidden onclick="downloadAllApproved(this)">⬇ Download all approved</button>
+  <div class="counts"><span id="counts"></span><div class="sync" id="sync">connecting…</div></div>
+</header>
+<p class="note" id="note" role="status" hidden></p>
+<div id="grid"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+"use strict";
+// genres, palettes, captions and hashtags come from render.py and captions/
+// via web/build.py, so this page and the Python renderer stay in step
+const CONFIG = __CONFIG__;
+const { W, H, SIGNS, PALETTES, DIAGONALS, BANK, VOICES, HASHTAGS_BASE,
+        HASHTAGS_MODE, IG_CAPTION, FIRST_COMMENT, GRADIENT_LINES } = CONFIG;
+const MODEL = "claude-opus-5-5";
+const MODE_LABELS = { yapping: "yapping / oversharing", short: "short / random blurt",
+                      hater: "hater / shade", houston: "houston / oddly specific" };
+const TABS = ["pending", "approved", "rejected", "all"];
+const STATUSES = ["pending", "approved", "rejected"];
+const HEX = /^#[0-9a-f]{6}$/i;
+
+let reels = [], filter = "pending";
+const $ = id => document.getElementById(id);
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+function note(msg, err) { const n = $("note"); n.textContent = msg || ""; n.hidden = !msg; n.classList.toggle("err", !!err); }
+
+/* ---------- render.py, ported ---------- */
+function pickPalette(mode) {
+  let pairs = PALETTES[mode] || null;
+  if (!pairs) pairs = pick(Object.values(PALETTES).filter(Boolean));
+  return { colors: pick(pairs).slice(), ...randomLine() };
+}
+// render.py picks one of its DIAGONALS, and ffmpeg's random seed then swings
+// the blend's angle and length; v picks one of the lines measured from real
+// ffmpeg renders of that diagonal
+function randomLine() {
+  const line = Math.floor(Math.random() * DIAGONALS.length);
+  return { line, v: Math.floor(Math.random() * GRADIENT_LINES[line].length) };
+}
+function pyWrap(para, width) {
+  // textwrap.wrap: greedy on spaces, long words broken at the width
+  const lines = []; let cur = "";
+  for (let w of para.split(/\s+/).filter(Boolean)) {
+    while (w.length > width) { if (cur) { lines.push(cur); cur = ""; } lines.push(w.slice(0, width)); w = w.slice(width); }
+    if (!w) continue;
+    if (!cur) cur = w; else if (cur.length + 1 + w.length <= width) cur += " " + w; else { lines.push(cur); cur = w; }
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+function wrapText(text) {
+  const n = text.length, width = n <= 60 ? 16 : n <= 110 ? 20 : 24;
+  const lines = [];
+  for (const para of text.split("\n")) { const w = pyWrap(para, width); lines.push(...(w.length ? w : [""])); }
+  return lines;
+}
+function fontSize(lines) {
+  const maxlen = Math.max(...lines.map(l => l.length), 1);
+  const fsW = (W * 0.86) / (maxlen * 0.58), fsH = (H * 0.55) / (lines.length * 1.4);
+  return Math.trunc(Math.max(44, Math.min(fsW, fsH, 104)));
+}
+// ffmpeg drawtext with Nunito: each line advances floor(1.364*fs) plus the
+// line gap, and the baseline sits 1.04*fs below the line's top (measured)
+function drawBlock(ctx, lines, fs, gap, top, color, shadow) {
+  const pitch = Math.floor(fs * 1.364) + gap;
+  ctx.font = `900 ${fs}px ReelFont, "Arial Rounded MT Bold", sans-serif`;
+  ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+  lines.forEach((ln, i) => {
+    const y = top + i * pitch + fs * 1.04;
+    if (shadow) { ctx.fillStyle = shadow.color; ctx.fillText(ln, W / 2 + shadow.x, y + shadow.y); }
+    ctx.fillStyle = color; ctx.fillText(ln, W / 2, y);
+  });
+  return lines.length * pitch - gap;
+}
+function paint(ctx, p) {
+  const s = ctx.canvas.width / W;
+  ctx.setTransform(s, 0, 0, s, 0, 0);
+  const variants = GRADIENT_LINES[p.line % GRADIENT_LINES.length];
+  const [x0, y0, x1, y1] = variants[p.v % variants.length];
+  const g = ctx.createLinearGradient(x0, y0, x1, y1);
+  p.colors.forEach((c, i) => g.addColorStop(p.colors.length > 1 ? i / (p.colors.length - 1) : 0, c));
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  const lines = wrapText(p.text), fs = fontSize(lines), gap = Math.trunc(fs * 0.38);
+  const textH = lines.length * (Math.floor(fs * 1.364) + gap) - gap;
+  drawBlock(ctx, lines, fs, gap, (H - textH) / 2 - 40, "#fff", { color: "rgba(0,0,0,.30)", x: 4, y: 5 });
+}
+function igCaption(p) {
+  const tmpl = IG_CAPTION[p.mode] || "which {sign} needs to see this \u{1F440}";
+  const cap = tmpl.replaceAll("{sign}", p.sign !== "all" ? p.sign : "toxic person");
+  let tags = `${HASHTAGS_BASE} ${HASHTAGS_MODE[p.mode] || "#relatable #memes"}`;
+  if (p.sign !== "all") tags += ` #${p.sign} #${p.sign}memes`;
+  return `${cap}\n\nwaitlist → comealign.com (link in bio)\n\n${tags}`;
+}
+const fontReady = document.fonts ? document.fonts.load("900 100px ReelFont").catch(() => {}) : Promise.resolve();
+const imgCache = new Map();
+async function imageUrl(p) {
+  const key = `${p.text}|${p.colors}|${p.line}|${p.v}`;
+  if (imgCache.has(key)) return imgCache.get(key);
+  await fontReady;
+  const c = document.createElement("canvas"); c.width = 540; c.height = 960;
+  paint(c.getContext("2d"), p);
+  const blob = await new Promise(r => c.toBlob(r, "image/jpeg", 0.9));
+  const url = URL.createObjectURL(blob);
+  imgCache.set(key, url);
+  return url;
+}
+async function pngBlob(p) {
+  await fontReady;
+  const c = document.createElement("canvas"); c.width = W; c.height = H;
+  paint(c.getContext("2d"), p);
+  return new Promise(r => c.toBlob(r, "image/png"));
+}
+
+/* ---------- storage: the cloud queue when the viewer offers it ---------- */
+const Store = {
+  db: null, kind: "starting", posts: new Map(),
+  async init() {
+    try { this.db = window.claude?.use ? await window.claude.use("db") : null; } catch { this.db = null; }
+    if (this.db) {
+      this.kind = "cloud";
+      // no orderBy: posts saved by the earlier version of this page have no
+      // sortAt, and ordering by it would hide them; sync() sorts instead
+      this.db.collection("posts").limit(1000).onSnapshot(snap => {
+        const next = new Map();
+        for (const d of snap.docs) { const v = clean(d.data()); if (v) next.set(d.id, { ...v, id: d.id }); }
+        for (const [id, p] of this.posts) if (p._pending && !next.has(id)) next.set(id, p);
+        this.posts = next; sync();
+      }, e => note(`Lost the cloud queue (${e.code}). Reload to reconnect.`, true));
+    } else {
+      this.kind = "local";
+      try { for (const p of JSON.parse(localStorage.getItem("agr-queue") || "[]")) { const v = clean(p); if (v && p.id) this.posts.set(p.id, { ...v, id: p.id }); } } catch {}
+    }
+    $("sync").textContent = this.kind === "cloud" ? "saved in the cloud · same queue on every device" : "saved in this browser only";
+    sync();
+  },
+  saveLocal() { if (this.kind === "local") try { localStorage.setItem("agr-queue", JSON.stringify([...this.posts.values()])); } catch {} },
+  add(p) {
+    this.posts.set(p.id, { ...p, _pending: true }); this.saveLocal();
+    if (this.db) { const { id, _pending, ...data } = p; this.db.collection("posts").doc(id).set(data).catch(writeFailed); }
+  },
+  update(id, patch) {
+    const cur = this.posts.get(id); if (!cur) return;
+    this.posts.set(id, { ...cur, ...patch }); this.saveLocal(); sync();
+    if (this.db) this.db.collection("posts").doc(id).update(patch).catch(writeFailed);
+  },
+};
+function clean(v) {
+  // rows come from anyone who can edit the queue: keep only what the page draws
+  if (!v || typeof v.text !== "string" || !v.text.trim()) return null;
+  const colors = Array.isArray(v.colors) ? v.colors.filter(c => typeof c === "string" && HEX.test(c)).slice(0, 4) : [];
+  return {
+    text: v.text.slice(0, 600), mode: typeof v.mode === "string" ? v.mode.slice(0, 20) : "random",
+    sign: SIGNS.includes(v.sign) ? v.sign : "all", colors: colors.length ? colors : ["#7b2ff7", "#ff2fb8"],
+    line: Math.abs(parseInt(v.line, 10) || 0) % DIAGONALS.length,
+    v: Math.abs(parseInt(v.v, 10) || 0),
+    // the earlier version had a "posted" step after approval
+    status: STATUSES.includes(v.status) ? v.status : v.status === "posted" ? "approved" : "pending",
+    caption: typeof v.caption === "string" ? v.caption : "", source: v.source === "claude" ? "claude" : "library",
+    sortAt: Number(v.sortAt) || Number(v.createdAt) || 0, n: Number(v.n) || 0,
+  };
+}
+function writeFailed(e) {
+  note(e?.code === "not_granted" ? "You can view this queue but not change it. Ask the owner for edit access." : `Couldn't save to the cloud queue (${e?.code || "error"}).`, true);
+}
+let nextN = 0;
+function makePost(mode, sign, text, source, look) {
+  look = look || pickPalette(mode);
+  const p = { id: uid(), mode, sign, text: String(text).trim(), colors: look.colors, line: look.line, v: look.v,
+              status: "pending", source, sortAt: Date.now() + (nextN++) * 0.001, n: 0 };
+  p.caption = igCaption(p);
+  return p;
+}
+function addPosts(list) { list.forEach(p => Store.add(p)); sync(); return list.length; }
+
+/* ---------- Claude (Opus 5.5) ---------- */
+let samplePromise = null;
+function claude() { if (!samplePromise) samplePromise = (async () => { try { return window.claude?.use ? await window.claude.use("sample") : null; } catch { return null; } })(); return samplePromise; }
+const voiceLine = mode => VOICES[mode] ? `\nThe '${mode}' genre is: ${VOICES[mode]}.` : "";
+const examplesLine = texts => texts.map(t => `\nExample of the tone/format to match: "${t}"`).join("");
+async function askJson(prompt, images) {
+  const sample = await claude();
+  if (!sample) return null;
+  try {
+    const opts = { model: MODEL, modelTier: "complex", effort: "high", cache: false };
+    if (images) opts.images = images;
+    const out = await sample.json(prompt, opts);
+    return Array.isArray(out) ? out : null;
+  } catch (e) {
+    if (e?.code === "rate_limited") note("Claude is busy or you hit a usage limit, so these came from the library. Try again in a minute.", true);
+    else if (e?.code && !["not_granted", "sampling_disabled", "cancelled"].includes(e.code)) note("Claude couldn't finish, so these came from the library.", true);
+    return null;
+  }
+}
+async function variationCaptions(mode, sign, n = 12) {
+  const examples = (BANK[mode] || []).filter(e => e.sign === sign).map(e => e.text);
+  const prompt = `Write ${n} completely different short zodiac meme captions about the sign ${sign}, all in the '${mode}' voice/genre for a zodiac dating app's Instagram.${voiceLine(mode)}${examplesLine(examples)} Each one must be a distinct joke/angle — no rephrasing the same idea twice. Lowercase unless the style needs caps for emphasis, no links, no hashtags, no emoji, under 220 characters each. Reply with ONLY a JSON array of strings like ["caption one", "caption two", ...] and nothing else.`;
+  const caps = await askJson(prompt);
+  return caps && caps.every(c => typeof c === "string" && c.trim()) ? caps.slice(0, n) : null;
+}
+async function mixCaptions(mode) {
+  const examples = shuffle((BANK[mode] || []).map(e => e.text)).slice(0, 6);
+  const prompt = `Write 12 short zodiac meme captions, exactly one for each sign (${SIGNS.join(", ")}), all in the '${mode}' voice/genre for a zodiac dating app's Instagram.${voiceLine(mode)}${examplesLine(examples)} Each caption is about its own sign and is a different joke, not the same joke with the sign swapped. Lowercase unless the style needs caps for emphasis, no links, no hashtags, no emoji, under 220 characters each. Reply with ONLY a JSON array like [{"sign":"aries","text":"..."}] and nothing else.`;
+  const caps = await askJson(prompt);
+  if (!caps) return null;
+  const bySign = {};
+  for (const c of caps) {
+    const sign = String(c?.sign || "").toLowerCase().trim();
+    if (SIGNS.includes(sign) && typeof c.text === "string" && c.text.trim() && !bySign[sign]) bySign[sign] = c.text.trim();
+  }
+  return Object.keys(bySign).length >= 9 ? bySign : null;
+}
+async function moreLikeThisCaptions(mode, sign, seed, n = 6) {
+  const prompt = `Here is one zodiac meme caption for ${sign}, in the '${mode}' voice for a zodiac dating app's Instagram: "${seed}"${voiceLine(mode)}\n\nWrite ${n} more captions that riff on this exact same joke/idea/angle — same specific premise or structure, different wording or a fresh punchline on the same setup — still about ${sign}, still in the '${mode}' voice. Not a generic new joke, a variation ON this one. Lowercase unless the style needs caps for emphasis, no links, no hashtags, no emoji, under 220 characters each. Reply with ONLY a JSON array of strings like ["caption one", "caption two", ...] and nothing else.`;
+  const caps = await askJson(prompt);
+  return caps && caps.every(c => typeof c === "string" && c.trim()) ? caps.slice(0, n) : null;
+}
+async function inspoCaptions(file, sign) {
+  const signs = sign === "all" ? SIGNS : [sign];
+  const prompt = `The attached image — it's an example of a meme post whose voice, humor style, and format we want to copy. Write one short funny caption in that exact style for each of these zodiac signs: ${signs.join(", ")}. Zodiac/dating themed, lowercase unless the style says otherwise, no links, no hashtags, no emoji, under 140 characters each. Reply with ONLY a JSON array like [{"sign":"aries","text":"..."}] and nothing else.`;
+  const caps = await askJson(prompt, [file]);
+  return caps && caps.every(c => c && c.sign && c.text) ? caps : null;
+}
+
+/* ---------- the dashboard ---------- */
+function sync() { reels = [...Store.posts.values()].sort((a, b) => b.sortAt - a.sortAt); draw(); }
+async function busy(btn, label, work) {
+  const idle = btn.textContent;
+  btn.disabled = true; btn.textContent = label; note("");
+  try { btn.textContent = await work(); }
+  catch (e) { btn.textContent = "error — retry"; }
+  filter = "pending"; sync();
+  setTimeout(() => { btn.textContent = idle; btn.disabled = false; }, 3000);
+}
+
+async function generate() {
+  const mode = $("genMode").value, sign = $("genSign").value;
+  await busy($("genBtn"), sign === "all" ? "generating…" : "writing 12 unique captions… (~1 min)", async () => {
+    let entries = (BANK[mode] || []).filter(e => sign === "all" || e.sign === sign || e.sign === "all");
+    // locking to one sign means "give me 12 unique jokes for this sign"
+    if (sign !== "all") {
+      const v = await variationCaptions(mode, sign, 12);
+      if (v) return `✓ ${addPosts(v.map(t => makePost(mode, sign, t, "claude")))} unique`;
+      if (entries.length) entries = Array.from({ length: 12 }, (_, i) => entries[i % entries.length]);
+    }
+    return `✓ made ${addPosts(entries.map(e => makePost(mode, e.sign, e.text, "library")))}`;
+  });
+}
+
+async function mixAll() {
+  const mode = $("genMode").value;
+  await busy($("mixBtn"), "writing one for every sign… (~1 min)", async () => {
+    const written = await mixCaptions(mode) || {};
+    const bank = BANK[mode] || [];
+    const posts = [];
+    for (const sign of SIGNS) {
+      let text = written[sign], source = "claude";
+      if (!text) {
+        // no Claude, or it skipped this sign: a random bank line for the sign
+        const pool = bank.filter(e => e.sign === sign).map(e => e.text);
+        const any = pool.length ? pool : bank.map(e => e.text);
+        if (!any.length) continue;
+        text = pick(any); source = "library";
+      }
+      posts.push(makePost(mode, sign, text, source));
+    }
+    const n = addPosts(posts);
+    return Object.keys(written).length ? `✓ ${n} signs, all new` : `✓ ${n} signs from library`;
+  });
+}
+
+function colorsFromImage(img) {
+  // like render.py's extract_colors: scale to 1x3, one colour per third
+  const c = document.createElement("canvas"); c.width = 1; c.height = 3;
+  const x = c.getContext("2d"); x.drawImage(img, 0, 0, 1, 3);
+  const d = x.getImageData(0, 0, 1, 3).data;
+  return [0, 4, 8].map(i => "#" + [d[i], d[i + 1], d[i + 2]].map(v => v.toString(16).padStart(2, "0")).join(""));
+}
+async function uploadInspo(input) {
+  const file = input.files[0]; input.value = "";
+  if (!file) return;
+  const sign = $("genSign").value, mode = $("genMode").value;
+  await busy($("inspoBtn"), "studying inspo… (can take a minute)", async () => {
+    const url = URL.createObjectURL(file);
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
+    URL.revokeObjectURL(url);
+    const colors = colorsFromImage(img);
+    let caps = await inspoCaptions(file, sign);
+    const used = !!caps;
+    if (!caps) caps = (BANK[mode] || []).filter(e => sign === "all" || e.sign === sign || e.sign === "all");
+    const n = addPosts(caps.map(c => makePost("inspo", SIGNS.includes(c.sign) ? c.sign : "all", c.text, used ? "claude" : "library", { colors, ...randomLine() })));
+    return used ? `✓ ${n} from inspo` : `✓ ${n} (inspo colors)`;
+  });
+}
+
+function draw() {
+  $("tabs").innerHTML = TABS.map(t => `<button class="tab ${t === filter ? "active" : ""}" data-tab="${t}">${t}</button>`).join("");
+  const n = s => reels.filter(r => r.status === s).length;
+  $("counts").innerHTML = `<b>${n("approved")} approved</b> · ${n("pending")} pending · ${n("rejected")} rejected`;
+  $("dlAllBtn").hidden = $("copyAllBtn").hidden = !(filter === "approved" && n("approved") > 0);
+  const shown = reels.filter(r => filter === "all" || r.status === filter);
+  window._shown = shown;
+  const grid = $("grid");
+  if (Store.kind === "starting") { grid.innerHTML = `<div class="empty">loading your queue…</div>`; return; }
+  if (!shown.length) {
+    grid.innerHTML = `<div class="empty">nothing ${filter === "all" ? "here" : filter} — pick a genre and hit <b>⚡ Generate</b> or <b>🎲 Mix all 12</b></div>`;
+    return;
+  }
+  grid.innerHTML = shown.map((r, i) => `
+    <div class="card ${r.status}">
+      <img class="still" id="img${i}" alt="${esc(r.text)}">
+      <div class="meta">
+        <div class="chips">
+          <span class="chip mode-${esc(r.mode)}">${esc(r.mode)}</span>
+          ${r.sign !== "all" ? `<span class="chip sign">${r.sign}</span>` : ""}
+          ${r.status !== "pending" ? `<span class="status-pill ${r.status}">${r.status.toUpperCase()}</span>` : ""}
+          <span class="folder">${r.source === "claude" ? "✦ claude" : "library"}</span>
+        </div>
+        <label class="label" for="cap${i}">IG caption (editable)</label>
+        <textarea id="cap${i}" data-i="${i}">${esc(r.caption)}</textarea>
+      </div>
+      <div class="btns">
+        ${r.status === "pending" ? `
+          <button class="approve" data-act="approved" data-i="${i}">✓ Approve</button>
+          <button class="reject" data-act="rejected" data-i="${i}">✕ Reject</button>
+          <button class="regen" data-act="regen" data-i="${i}" title="new gradient" aria-label="New gradient">🎨</button>`
+        : `<button class="undo" data-act="pending" data-i="${i}">↩ Undo</button>
+          ${r.status === "approved" ? `<button class="download" data-act="download" data-i="${i}">⬇ Download</button>` : ""}`}
+      </div>
+      <div class="btns2">
+        <button class="more" data-act="copy" data-i="${i}" title="copy the words on the gradient">📋 Copy text</button>
+        <button class="more" data-act="more" data-i="${i}" title="riff on this exact caption, same sign">🔁 More like this</button>
+      </div>
+    </div>`).join("");
+  shown.forEach((r, i) => imageUrl(r).then(u => { const im = $("img" + i); if (im && window._shown[i] === r) im.src = u; }));
+}
+
+$("tabs").addEventListener("click", e => { const t = e.target.closest("[data-tab]"); if (t) { filter = t.dataset.tab; draw(); } });
+$("grid").addEventListener("change", e => {
+  if (e.target.matches("textarea[data-i]")) { const r = window._shown[+e.target.dataset.i]; if (r) Store.update(r.id, { caption: e.target.value }); }
+});
+$("grid").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-act]"); if (!b) return;
+  const r = window._shown[+b.dataset.i]; if (!r) return;
+  const act = b.dataset.act;
+  const caption = $("cap" + b.dataset.i)?.value ?? r.caption;
+  if (STATUSES.includes(act)) Store.update(r.id, { status: act, caption });
+  else if (act === "regen") {
+    // inspo posts keep their sampled colours, like the original's regen
+    const look = r.mode === "inspo" ? { colors: r.colors, ...randomLine() } : pickPalette(r.mode);
+    Store.update(r.id, { ...look, status: "pending", sortAt: Date.now() });
+  } else if (act === "download") saveFile(fileName(r, "png"), await pngBlob(r));
+  else if (act === "copy") flash(b, await copyToClipboard(r.text), "✓ copied");
+  else if (act === "more") {
+    b.disabled = true; b.textContent = "riffing on this one… (~30-60s)";
+    const v = await moreLikeThisCaptions(r.mode, r.sign, r.text, 6);
+    const n = addPosts((v || Array(6).fill(r.text)).map(t => makePost(r.mode, r.sign, t, v ? "claude" : "library", r.mode === "inspo" ? { colors: r.colors, ...randomLine() } : null)));
+    filter = "pending"; sync();
+    note(v ? `✓ ${n} more added` : `✓ ${n} added (Claude unavailable, so copies with new gradients)`);
+  }
+});
+
+async function copyToClipboard(text) {
+  try { await navigator.clipboard.writeText(text); return true; }
+  catch {
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch {}
+    ta.remove(); return ok;
+  }
+}
+function flash(el, ok, msg) {
+  const label = el.textContent;
+  el.textContent = ok ? msg : "copy blocked — select it by hand";
+  setTimeout(() => { if (el.isConnected) el.textContent = label; }, 1500);
+}
+async function copyAllApproved(el) {
+  // same order as the grid, one post per paragraph
+  const texts = reels.filter(r => r.status === "approved").map(r => r.text);
+  flash(el, await copyToClipboard(texts.join("\n\n")), `✓ copied ${texts.length}`);
+}
+
+/* ---------- downloads ---------- */
+let downloads;
+const downloadsReady = (async () => { try { downloads = window.claude?.use ? await window.claude.use("downloads") : null; } catch { downloads = null; } })();
+const fileName = (r, ext) => `${r.mode}_${r.sign}_${r.id.slice(-4)}.${ext}`;
+async function saveFile(name, blob) {
+  await downloadsReady;
+  if (downloads) {
+    try { await downloads.save({ filename: name, data: blob }); }
+    catch (e) { if (e?.code !== "declined") note(e?.code === "rate_limited" ? "Another download is waiting for your OK." : "This view can't save files.", true); }
+    return;
+  }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+async function downloadAllApproved(btn) {
+  // one zip laid out like the original approved/ folder: each image plus a
+  // .txt with the caption and the pinned first comment
+  const approved = reels.filter(r => r.status === "approved");
+  if (!window.JSZip) { for (const r of approved) await saveFile(fileName(r, "png"), await pngBlob(r)); return; }
+  const label = btn.textContent; btn.disabled = true;
+  const zip = new JSZip();
+  for (const [i, r] of approved.entries()) {
+    btn.textContent = `zipping ${i + 1}/${approved.length}…`;
+    zip.file(fileName(r, "png"), await pngBlob(r));
+    zip.file(fileName(r, "txt"), `CAPTION:\n${r.caption}\n\nPIN AS FIRST COMMENT:\n${FIRST_COMMENT}\n\nreminder: add a trending sound in the IG app before posting\n`);
+  }
+  const blob = await zip.generateAsync({ type: "blob" });
+  btn.textContent = label; btn.disabled = false;
+  await saveFile(`align-approved-${new Date().toISOString().slice(0, 10)}.zip`, blob);
+}
+
+/* ---------- start ---------- */
+for (const m of Object.keys(BANK)) $("genMode").insertAdjacentHTML("beforeend", `<option value="${m}">${MODE_LABELS[m] || m}</option>`);
+$("genSign").innerHTML = `<option value="all">all signs</option>` + SIGNS.map(s => `<option value="${s}">${s}</option>`).join("");
+fontReady.then(() => { imgCache.clear(); draw(); });
+draw();
+Store.init();
+</script>

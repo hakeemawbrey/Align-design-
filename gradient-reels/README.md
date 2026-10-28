@@ -22,6 +22,28 @@ python3 render.py --mode delu --sign leo --video   # mp4 instead of png
 python3 review/server.py                       # approval GUI → localhost:4319
 ```
 
+## The cloud version (just open a link)
+
+**https://claude.ai/artifact/NhdFZcLbWcY586Du52KdVB** is this same review
+dashboard as a web page: same look, genres (Houston too), Generate, 🎲 Mix all
+12, More like this, Inspo, Copy text / Copy all approved text, and Download all
+approved (a zip of each image plus its caption `.txt`, like `approved/`).
+Captions come from Claude Opus 5.5 on your claude.ai account, and the queue is
+saved in the cloud, so it's the same on your phone and laptop. Nothing to
+install.
+
+It draws posts in the browser with `render.py`'s layout math and the bundled
+font, and its gradient lines were measured from real ffmpeg renders, so posts
+match the Python output. Its genres, colors, captions and hashtags are read
+from `render.py` and `captions/` when it's built:
+
+```bash
+python3 web/build.py               # after editing captions/ or render.py
+python3 web/measure_gradients.py   # only after changing render.py's DIAGONALS
+```
+
+Then republish `web/index.html` to the link above (ask Claude to).
+
 ## Running it in the cloud
 
 Nothing here needs your Mac anymore. It runs anywhere with Python 3 and ffmpeg.
