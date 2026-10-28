@@ -49,16 +49,23 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 
-def bank_lookup():
-    by_slug = {}
-    for e in render.load_bank():
-        by_slug.setdefault(f"{e['mode']}_{e['sign']}", e)
-    return by_slug
+def guess_entry(base):
+    """Bank entry for a render the manifest doesn't know, from its filename:
+    "houston_scorpio_2" is the 2nd houston/scorpio line, matching how
+    render.py numbers files."""
+    m = re.match(r"([a-z]+)_([a-z]+?)(?:_(\d+))?$", base)
+    if not m:
+        return None
+    entries = [e for e in render.load_bank()
+               if e["mode"] == m.group(1) and e["sign"] == m.group(2)]
+    if not entries:
+        return None
+    n = int(m.group(3) or 1)
+    return entries[n - 1] if n <= len(entries) else entries[0]
 
 
 def list_reels():
     state = load_state()
-    bank = bank_lookup()
     manifest = load_manifest()
     reels = []
     for dirpath, _, files in os.walk(OUT):
@@ -76,7 +83,7 @@ def list_reels():
                 m = re.match(r"([a-z]+)_([a-z]+?)(?:_\d+)?$", base)
                 mode = m.group(1) if m and m.group(1) in render.PALETTES else "random"
                 sign = m.group(2) if m else ""
-                entry = bank.get(f"{mode}_{sign}")
+                entry = guess_entry(base)
             st = state.get(rel, {})
             caption = st.get("caption")
             if caption is None:
@@ -262,9 +269,7 @@ def resolve_entry(rel):
     info = manifest.get(rel)
     if info:
         return info
-    base = os.path.basename(rel)[:-4]
-    m = re.match(r"([a-z]+)_([a-z]+?)(?:_\d+)?$", base)
-    entry = bank_lookup().get(f"{m.group(1)}_{m.group(2)}") if m else None
+    entry = guess_entry(os.path.basename(rel)[:-4])
     if not entry:
         return None
     return {"mode": entry["mode"], "sign": entry["sign"], "text": entry["text"]}

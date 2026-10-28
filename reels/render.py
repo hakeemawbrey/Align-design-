@@ -276,6 +276,28 @@ def pick_music(enabled):
     return random.choice(tracks)
 
 
+# the review dashboard reads each render's text from this manifest; without
+# it, it can only guess from the filename (and picks the wrong line when a
+# sign has more than one)
+DATA = os.environ.get("REELS_DATA", ROOT)
+MANIFEST = os.path.join(DATA, "out-manifest.json")
+
+
+def record(outfile, mode, sign, text):
+    out_dir = os.path.realpath(os.path.join(DATA, "out"))
+    full = os.path.realpath(outfile)
+    if not full.startswith(out_dir + os.sep):
+        return
+    manifest = {}
+    if os.path.exists(MANIFEST):
+        with open(MANIFEST) as f:
+            manifest = json.load(f)
+    manifest[os.path.relpath(full, out_dir)] = {"mode": mode, "sign": sign,
+                                                "text": text}
+    with open(MANIFEST, "w") as f:
+        json.dump(manifest, f, indent=2)
+
+
 _slug_counts = {}
 
 
@@ -323,6 +345,7 @@ def main():
         out = os.path.join(args.out, f"custom_{mode}{ext}")
         render(args.text, mode, out, pick_music(args.music and args.video),
                args.cta, still=still, watermark=args.watermark)
+        record(out, mode, args.sign or "all", args.text)
         print(f"rendered {out}")
         return
 
@@ -352,6 +375,8 @@ def main():
                     "", "reminder: add a trending sound in the IG app before posting",
                     "-" * 60, "",
                 ]
+                record(os.path.join(day_dir, name), e["mode"], e["sign"],
+                       e["text"])
                 print(f"day{d+1}: {name}")
             with open(os.path.join(day_dir, "post_plan.txt"), "w") as f:
                 f.write("\n".join(plan_lines))
@@ -371,6 +396,7 @@ def main():
         _, dur = render(e["text"], e["mode"], out,
                         pick_music(args.music and args.video), args.cta,
                         still=still, watermark=args.watermark)
+        record(out, e["mode"], e["sign"], e["text"])
         print(f"rendered {out}" + (f" ({dur}s)" if dur else ""))
 
 
