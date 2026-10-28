@@ -108,6 +108,40 @@ def pick_palette(mode):
     line = random.choice(DIAGONALS)
     return colors, 0, 0.02, line
 
+# "meta" style: smooth top-to-bottom two-tone backgrounds modeled on the
+# presets in Instagram's story Create mode (Meta doesn't publish the exact
+# values, so these are close approximations)
+META_GRADIENTS = [
+    ["#833ab4", "#fd7c3c"],  # purple -> orange
+    ["#5b51d8", "#e1306c"],  # blue-violet -> pink
+    ["#e1306c", "#ffb35c"],  # pink -> peach
+    ["#fd1d1d", "#fcb045"],  # red -> amber
+    ["#0b7bd4", "#3fd0c9"],  # blue -> aqua
+    ["#11998e", "#8fd85d"],  # teal -> lime
+    ["#3a1c71", "#d76d77"],  # indigo -> rose
+    ["#1f1c2c", "#5b4a9e"],  # night -> violet
+]
+
+
+def meta_background(colors):
+    """Write a W x H vertical gradient through `colors` to a temp PPM file."""
+    rgb = [tuple(int(c[i:i + 2], 16) for i in (1, 3, 5)) for c in colors]
+    if len(rgb) == 1:
+        rgb *= 2
+    rows = []
+    for y in range(H):
+        t = y / (H - 1) * (len(rgb) - 1)
+        i = min(int(t), len(rgb) - 2)
+        f = t - i
+        a, b = rgb[i], rgb[i + 1]
+        px = bytes(round(a[k] + (b[k] - a[k]) * f) for k in range(3))
+        rows.append(px * W)
+    tf = tempfile.NamedTemporaryFile("wb", suffix=".ppm", delete=False)
+    tf.write(b"P6 %d %d 255\n" % (W, H) + b"".join(rows))
+    tf.close()
+    return tf.name
+
+
 SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra",
          "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
 
@@ -177,11 +211,14 @@ def esc(path):
 
 
 def render(text, mode, outfile, music=None, cta=False, seed=None, still=True,
-           watermark=False, colors=None, gtype=None, line=None):
+           watermark=False, colors=None, gtype=None, line=None,
+           style="classic"):
     lines = wrap_text(text)
     fs = font_size(lines)
     dur = duration_for(text)
     picked_colors, picked_type, speed, picked_line = pick_palette(mode)
+    if style == "meta" and colors is None:
+        colors = list(random.choice(META_GRADIENTS))
     if colors is None:
         colors = picked_colors
     if gtype is None:
@@ -225,8 +262,13 @@ def render(text, mode, outfile, music=None, cta=False, seed=None, still=True,
             f"{enable}"
         )
 
-    cmd = [FFMPEG, "-y", "-hide_banner", "-loglevel", "error",
-           "-f", "lavfi", "-i", src]
+    cmd = [FFMPEG, "-y", "-hide_banner", "-loglevel", "error"]
+    bg = None
+    if style == "meta":
+        bg = meta_background(colors)
+        cmd += ([] if still else ["-loop", "1", "-framerate", "30"]) + ["-i", bg]
+    else:
+        cmd += ["-f", "lavfi", "-i", src]
     if still:
         cmd += ["-vf", ",".join(filters), "-frames:v", "1", outfile]
     else:
@@ -242,6 +284,8 @@ def render(text, mode, outfile, music=None, cta=False, seed=None, still=True,
 
     subprocess.run(cmd, check=True)
     os.unlink(tf.name)
+    if bg:
+        os.unlink(bg)
     return outfile, (None if still else dur)
 
 
@@ -332,6 +376,9 @@ def main():
                     help="render mp4 video instead of still png (default: still)")
     ap.add_argument("--watermark", action="store_true",
                     help="add comealign.com watermark (default: clean image)")
+    ap.add_argument("--style", choices=["classic", "meta"], default="classic",
+                    help="meta: smooth top-to-bottom backgrounds like "
+                         "Instagram's story Create mode (default: classic)")
     ap.add_argument("--out", default=os.path.join(ROOT, "out"))
     args = ap.parse_args()
 
@@ -344,7 +391,8 @@ def main():
         mode = args.mode or "random"
         out = os.path.join(args.out, f"custom_{mode}{ext}")
         render(args.text, mode, out, pick_music(args.music and args.video),
-               args.cta, still=still, watermark=args.watermark)
+               args.cta, still=still, watermark=args.watermark,
+               style=args.style)
         record(out, mode, args.sign or "all", args.text)
         print(f"rendered {out}")
         return
@@ -366,7 +414,7 @@ def main():
                 name = slug(e) + ext
                 render(e["text"], e["mode"], os.path.join(day_dir, name),
                        pick_music(args.music and args.video), args.cta,
-                       still=still, watermark=args.watermark)
+                       still=still, watermark=args.watermark, style=args.style)
                 plan_lines += [
                     f"## {name}",
                     f"on-video text: {e['text']}",
@@ -395,7 +443,8 @@ def main():
         out = os.path.join(args.out, slug(e) + ext)
         _, dur = render(e["text"], e["mode"], out,
                         pick_music(args.music and args.video), args.cta,
-                        still=still, watermark=args.watermark)
+                        still=still, watermark=args.watermark,
+                        style=args.style)
         record(out, e["mode"], e["sign"], e["text"])
         print(f"rendered {out}" + (f" ({dur}s)" if dur else ""))
 

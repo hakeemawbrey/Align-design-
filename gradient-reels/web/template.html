@@ -105,6 +105,10 @@
   <div class="gen">
     <select id="genMode" aria-label="Genre"></select>
     <select id="genSign" aria-label="Sign"></select>
+    <select id="genStyle" aria-label="Background">
+      <option value="meta">Meta story gradients</option>
+      <option value="classic">Genre colors</option>
+    </select>
     <button id="genBtn" onclick="generate()">⚡ Generate</button>
     <button id="mixBtn" onclick="mixAll()" title="one fresh post for each of the 12 signs, in this genre">🎲 Mix all 12</button>
     <button id="inspoBtn" class="inspo" onclick="document.getElementById('inspoFile').click()">🖼 Inspo</button>
@@ -125,7 +129,7 @@
 // via web/build.py, so this page and the Python renderer stay in step
 const CONFIG = __CONFIG__;
 const { W, H, SIGNS, PALETTES, DIAGONALS, BANK, VOICES, HASHTAGS_BASE,
-        HASHTAGS_MODE, IG_CAPTION, FIRST_COMMENT, GRADIENT_LINES } = CONFIG;
+        HASHTAGS_MODE, IG_CAPTION, FIRST_COMMENT, GRADIENT_LINES, META_GRADIENTS } = CONFIG;
 const MODEL = "claude-opus-5-5";
 const MODE_LABELS = { yapping: "yapping / oversharing", short: "short / random blurt",
                       hater: "hater / shade", houston: "houston / oddly specific" };
@@ -142,10 +146,14 @@ const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { c
 function note(msg, err) { const n = $("note"); n.textContent = msg || ""; n.hidden = !msg; n.classList.toggle("err", !!err); }
 
 /* ---------- render.py, ported ---------- */
-function pickPalette(mode) {
+// "meta": Instagram-story-style presets, smooth top to bottom; "classic":
+// the genre's own colours on render.py's diagonals
+const currentStyle = () => $("genStyle").value;
+function pickPalette(mode, style = currentStyle()) {
+  if (style === "meta") return { colors: pick(META_GRADIENTS).slice(), style, line: 0, v: 0 };
   let pairs = PALETTES[mode] || null;
   if (!pairs) pairs = pick(Object.values(PALETTES).filter(Boolean));
-  return { colors: pick(pairs).slice(), ...randomLine() };
+  return { colors: pick(pairs).slice(), style, ...randomLine() };
 }
 // render.py picks one of its DIAGONALS, and ffmpeg's random seed then swings
 // the blend's angle and length; v picks one of the lines measured from real
@@ -192,9 +200,13 @@ function drawBlock(ctx, lines, fs, gap, top, color, shadow) {
 function paint(ctx, p) {
   const s = ctx.canvas.width / W;
   ctx.setTransform(s, 0, 0, s, 0, 0);
-  const variants = GRADIENT_LINES[p.line % GRADIENT_LINES.length];
-  const [x0, y0, x1, y1] = variants[p.v % variants.length];
-  const g = ctx.createLinearGradient(x0, y0, x1, y1);
+  let g;
+  if (p.style === "meta") g = ctx.createLinearGradient(0, 0, 0, H);
+  else {
+    const variants = GRADIENT_LINES[p.line % GRADIENT_LINES.length];
+    const [x0, y0, x1, y1] = variants[p.v % variants.length];
+    g = ctx.createLinearGradient(x0, y0, x1, y1);
+  }
   p.colors.forEach((c, i) => g.addColorStop(p.colors.length > 1 ? i / (p.colors.length - 1) : 0, c));
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
   const lines = wrapText(p.text), fs = fontSize(lines), gap = Math.trunc(fs * 0.38);
@@ -211,7 +223,7 @@ function igCaption(p) {
 const fontReady = document.fonts ? document.fonts.load("900 100px ReelFont").catch(() => {}) : Promise.resolve();
 const imgCache = new Map();
 async function imageUrl(p) {
-  const key = `${p.text}|${p.colors}|${p.line}|${p.v}`;
+  const key = `${p.text}|${p.colors}|${p.style}|${p.line}|${p.v}`;
   if (imgCache.has(key)) return imgCache.get(key);
   await fontReady;
   const c = document.createElement("canvas"); c.width = 540; c.height = 960;
@@ -275,6 +287,7 @@ function clean(v) {
     sign: SIGNS.includes(v.sign) ? v.sign : "all", colors: colors.length ? colors : ["#7b2ff7", "#ff2fb8"],
     line: Math.abs(parseInt(v.line, 10) || 0) % DIAGONALS.length,
     v: Math.abs(parseInt(v.v, 10) || 0),
+    style: v.style === "meta" ? "meta" : "classic",
     // the earlier version had a "posted" step after approval
     status: STATUSES.includes(v.status) ? v.status : v.status === "posted" ? "approved" : "pending",
     caption: typeof v.caption === "string" ? v.caption : "", source: v.source === "claude" ? "claude" : "library",
@@ -287,7 +300,7 @@ function writeFailed(e) {
 let nextN = 0;
 function makePost(mode, sign, text, source, look) {
   look = look || pickPalette(mode);
-  const p = { id: uid(), mode, sign, text: String(text).trim(), colors: look.colors, line: look.line, v: look.v,
+  const p = { id: uid(), mode, sign, text: String(text).trim(), colors: look.colors, style: look.style || "classic", line: look.line, v: look.v,
               status: "pending", source, sortAt: Date.now() + (nextN++) * 0.001, n: 0 };
   p.caption = igCaption(p);
   return p;
@@ -411,7 +424,7 @@ async function uploadInspo(input) {
     let caps = await inspoCaptions(file, sign);
     const used = !!caps;
     if (!caps) caps = (BANK[mode] || []).filter(e => sign === "all" || e.sign === sign || e.sign === "all");
-    const n = addPosts(caps.map(c => makePost("inspo", SIGNS.includes(c.sign) ? c.sign : "all", c.text, used ? "claude" : "library", { colors, ...randomLine() })));
+    const n = addPosts(caps.map(c => makePost("inspo", SIGNS.includes(c.sign) ? c.sign : "all", c.text, used ? "claude" : "library", { colors, style: currentStyle(), ...randomLine() })));
     return used ? `✓ ${n} from inspo` : `✓ ${n} (inspo colors)`;
   });
 }
@@ -470,14 +483,16 @@ $("grid").addEventListener("click", async e => {
   if (STATUSES.includes(act)) Store.update(r.id, { status: act, caption });
   else if (act === "regen") {
     // inspo posts keep their sampled colours, like the original's regen
-    const look = r.mode === "inspo" ? { colors: r.colors, ...randomLine() } : pickPalette(r.mode);
+    // 🎨 uses the Background menu, so it also switches an older post's style;
+    // inspo posts keep their sampled colours
+    const look = r.mode === "inspo" ? { colors: r.colors, style: currentStyle(), ...randomLine() } : pickPalette(r.mode);
     Store.update(r.id, { ...look, status: "pending", sortAt: Date.now() });
   } else if (act === "download") saveFile(fileName(r, "png"), await pngBlob(r));
   else if (act === "copy") flash(b, await copyToClipboard(r.text), "✓ copied");
   else if (act === "more") {
     b.disabled = true; b.textContent = "riffing on this one… (~30-60s)";
     const v = await moreLikeThisCaptions(r.mode, r.sign, r.text, 6);
-    const n = addPosts((v || Array(6).fill(r.text)).map(t => makePost(r.mode, r.sign, t, v ? "claude" : "library", r.mode === "inspo" ? { colors: r.colors, ...randomLine() } : null)));
+    const n = addPosts((v || Array(6).fill(r.text)).map(t => makePost(r.mode, r.sign, t, v ? "claude" : "library", r.mode === "inspo" ? { colors: r.colors, style: r.style, ...randomLine() } : pickPalette(r.mode, r.style))));
     filter = "pending"; sync();
     note(v ? `✓ ${n} more added` : `✓ ${n} added (Claude unavailable, so copies with new gradients)`);
   }
@@ -541,6 +556,8 @@ window.addEventListener("error", e => note(`Something broke: ${e.message}`, true
 window.addEventListener("unhandledrejection", e => note(`Something broke: ${e.reason?.code || e.reason?.message || e.reason}`, true));
 for (const m of Object.keys(BANK)) $("genMode").insertAdjacentHTML("beforeend", `<option value="${m}">${MODE_LABELS[m] || m}</option>`);
 $("genSign").innerHTML = `<option value="all">all signs</option>` + SIGNS.map(s => `<option value="${s}">${s}</option>`).join("");
+try { const st = localStorage.getItem("agr-style"); if (st === "meta" || st === "classic") $("genStyle").value = st; } catch {}
+$("genStyle").addEventListener("change", e => { try { localStorage.setItem("agr-style", e.target.value); } catch {} });
 fontReady.then(() => { imgCache.clear(); draw(); });
 draw();
 Store.init();

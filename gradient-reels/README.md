@@ -18,6 +18,7 @@ python3 render.py --mode delu --sign pisces    # one specific post
 python3 render.py --mode brainrot --all-signs  # one mode, all 12 signs
 python3 render.py --text "your custom line" --mode dating
 python3 render.py --mode delu --sign leo --video   # mp4 instead of png
+python3 render.py --mode houston --all-signs --style meta   # Instagram-story-style backgrounds
 
 python3 review/server.py                       # approval GUI → localhost:4319
 ```
@@ -31,6 +32,13 @@ approved (a zip of each image plus its caption `.txt`, like `approved/`).
 Captions come from Claude Opus 5.5 on your claude.ai account, and the queue is
 saved in the cloud, so it's the same on your phone and laptop. Nothing to
 install.
+
+The **Background** menu picks the look: **Meta story gradients** (the
+default) are smooth top-to-bottom blends modeled on the presets in Instagram's
+story Create mode; **Genre colors** are each genre's own palette on the
+original diagonals. 🎨 on a card re-colors it in whichever style is selected.
+Meta doesn't publish its preset colors, so `META_GRADIENTS` in `render.py` are
+close approximations; edit them there and rebuild.
 
 It draws posts in the browser with `render.py`'s layout math and the bundled
 font, and its gradient lines were measured from real ffmpeg renders, so posts

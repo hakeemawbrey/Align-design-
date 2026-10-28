@@ -27,7 +27,7 @@ order = [m for m in render.PALETTES if m in bank] + [m for m in bank if m not in
 config = {
     "W": render.W, "H": render.H, "SIGNS": render.SIGNS,
     "PALETTES": {m: c["pairs"] for m, c in render.PALETTES.items()},
-    "DIAGONALS": render.DIAGONALS,
+    "DIAGONALS": render.DIAGONALS, "META_GRADIENTS": render.META_GRADIENTS,
     "BANK": {m: bank[m] for m in order},
     "VOICES": render.load_voices(),
     "HASHTAGS_BASE": render.HASHTAGS_BASE, "HASHTAGS_MODE": render.HASHTAGS_MODE,
