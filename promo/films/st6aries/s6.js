@@ -37,6 +37,8 @@
 //     myth.tint(ctx, t, info)                      hand-tinted bits, drawn after the sepia grade.
 //     sky.extras(ctx, t, { at, k, pos, P })         extra marks on the chart (pos(id) → {x, y} of a projected star).
 //     hero.prop(ctx, t, r, { seg, k, size })       the star's season prop (r = drawStarChar's return).
+//     hero.under(ctx, t, { x, y, size, seg, k })   drawn just BEFORE the star (a cape behind it).
+//     sky.map.stars[i].hide                        project the point (for the box + extras) but don't draw it.
 //     personal.draw(ctx, t, { k, item, r })        anything extra in the interview (e.g. a clipboard).
 //     ghost: { seg, at (s after the seg starts) | t, x, y, from, cell, where, layer: 'over' }
 // Helpers exported for episodes: drawBits, pixLine, PLATE, archive colours, the bitmaps HEROFIG (Heracles), KID.
@@ -163,7 +165,7 @@ export function projectStars(stars, { cx, cy, w, h, rot = 0 }) {
   stars.forEach((s, i) => { out[s.id] = { ...s, x: cx + (raw[i][0] - mx) * sc, y: cy + (raw[i][1] - my) * sc } })
   return out
 }
-function drawChart(ctx, t, { at, k, map, color, cap = true }) {
+function drawChart(ctx, t, { at, k, map, color, cap = true, capLeft = false }) {
   if (k <= 0) return
   const P = PLATE, w = P.x1 - P.x0, h = P.y1 - P.y0
   ctx.save(); ctx.globalAlpha *= k
@@ -183,7 +185,7 @@ function drawChart(ctx, t, { at, k, map, color, cap = true }) {
   // the stars pop in, sized by magnitude
   Object.values(pos).forEach((s, i) => {
     const p = easeOutBack(prog(t, at + 0.05 + i * 0.05, at + 0.35 + i * 0.05), 2.4)
-    if (p <= 0) return
+    if (p <= 0 || s.hide) return
     const big = s.id === map.bright
     const sz = (big ? 72 : Math.max(26, 58 - s.mag * 8)) * p
     const tw = 0.8 + 0.2 * Math.sin(t * 3 + i * 1.7)
@@ -209,7 +211,7 @@ function drawChart(ctx, t, { at, k, map, color, cap = true }) {
   if (cap) {
     ctx.globalAlpha = k * 0.8
     monoText(ctx, `CONSTELLATION ${map.name.toUpperCase()}`, P.x0 + 44, P.y0 + 52, { size: 26, color: '#9fc8ff', spacing: 0.14, align: 'left', shadow: false })
-    monoText(ctx, 'NOT THE SIGN · SIMPLIFIED', P.x1 - 44, P.y1 - 46, { size: 20, color: '#9fc8ff', spacing: 0.12, align: 'right', shadow: false, alpha: 0.75 })
+    monoText(ctx, 'NOT THE SIGN · SIMPLIFIED', capLeft ? P.x0 + 44 : P.x1 - 44, P.y1 - 46, { size: 20, color: '#9fc8ff', spacing: 0.12, align: capLeft ? 'left' : 'right', shadow: false, alpha: 0.75 })
   }
   ctx.restore()
 }
@@ -506,6 +508,7 @@ export function makeEpisode(spec) {
     function drawHero(t, k, seg, X = 540, Y = 960, size = 320) {
       if (k <= 0) return null
       const st = heroState(t, seg)
+      if (spec.hero.under) { x.save(); x.globalAlpha *= k; spec.hero.under(x, t, { x: X, y: Y, size, seg, k }); x.restore() }
       const r = drawStarChar(x, X, Y, size, t, { color: sign.color, glyph: size >= 120 ? sign.glyph : null, ...st, alpha: k, pop: 1, hops: HOPS, seed: 3, glow: 1 })
       if (spec.hero.prop) { x.save(); x.globalAlpha *= k; spec.hero.prop(x, t, r, { seg, k, size }); x.restore() }
       return r
@@ -549,7 +552,7 @@ export function makeEpisode(spec) {
         // THE SKY: the chart
         if (ks > 0) {
           x.save(); x.fillStyle = `rgba(2,4,16,${0.35 * ks})`; x.fillRect(0, 0, 1080, 1920); x.restore()
-          drawChart(x, t, { at: T.sky[0] + 0.25, k: ks, map: MAP, color: sign.color })
+          drawChart(x, t, { at: T.sky[0] + 0.25, k: ks, map: MAP, color: sign.color, capLeft: (spec.sky.heroAt?.[0] ?? 912) > 540 })
           if (spec.sky.extras) { x.save(); x.globalAlpha *= ks; spec.sky.extras(x, t, { at: T.sky[0] + 0.25, k: ks, pos: id => MAP.pos[id], P: PLATE, T }); x.restore() }
           const hk = ks * easeOutBack(prog(t, T.sky[0] + 1.2, T.sky[0] + 1.6), 2)
           drawHero(t, hk, 'sky', spec.sky.heroAt?.[0] ?? 912, spec.sky.heroAt?.[1] ?? 1250, 170)
