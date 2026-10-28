@@ -15,7 +15,8 @@
 //   The season's dialogue look, a two-deep chat thread in the lower third: every line is its own retro pixel box with
 //   the speaker's sign-coloured name tag on its top edge (left side for 'L' speakers, right side for 'R', centred 'C'),
 //   a sign-coloured border + glow while it is the live line, and a ▼ when typed. When the next line starts, the old box
-//   slides up one slot and dims (border to slate, 50 % opacity, 94 % scale) so the newest line is always the bright one
+//   slides up one slot (over the 0.28 s before the new line) and, as the new line starts, dims (border to slate, 50 %
+//   opacity, 94 % scale) so the newest line is always the bright one
 //   at the bottom; a box two lines old slides up and fades out. 'L' boxes sit 60 px left of centre, 'R' 60 px right.
 //   → { update(t), times }.  Build after fonts load (Space Mono 700, Inter 800).
 // skyNote(root, { at, out, text, top = 520, width = 860 }) → { update(t) }   the "✦ SKY NOTE" footnote chip: a small
@@ -139,7 +140,7 @@ export function chatThread(root, { lines, cast, open, close, cps = 28, size = 42
     { const a = arrow.getContext('2d'); ['XXXXXXX', '.XXXXX.', '..XXX..', '...X...'].forEach((r, j) => [...r].forEach((ch, i) => { if (ch === 'X') { a.fillStyle = j === 0 && i < 3 ? '#fff1c8' : lite(c.color, 0.35); a.fillRect(i * 6, j * 6, 6, 6) } })) }
     return { b, txt, spans, h, live, dim, tag, arrow, tm: times[n], L }
   })
-  const slide = (j, t) => ease.outCubic(prog(t, lines[j].t - 0.08, lines[j].t + 0.26))
+  const slide = (j, t) => ease.inOutCubic(prog(t, lines[j].t - 0.36, lines[j].t - 0.08))   // the old boxes clear the slot first
   return {
     times,
     update(t) {
@@ -148,7 +149,7 @@ export function chatThread(root, { lines, cast, open, close, cps = 28, size = 42
       if (!on) return
       const kc = 1 - ease.inCubic(prog(t, tClose, tClose + 0.28))
       boxes.forEach((B, i) => {
-        const appear = lines[i].t - 0.14
+        const appear = lines[i].t - 0.1
         if (t < appear) { B.b.style.display = 'none'; return }
         // how far the newer boxes have pushed this one up, and how old it is
         let lift = 0, age = 0
@@ -156,7 +157,7 @@ export function chatThread(root, { lines, cast, open, close, cps = 28, size = 42
         if (age >= 2) { B.b.style.display = 'none'; return }
         B.b.style.display = 'block'
         const pop = easeOutBack(prog(t, appear, appear + 0.3), 2.2)
-        const dimK = clamp(age), fade = age > 1 ? 1 - (age - 1) : 1
+        const dimK = i + 1 < lines.length ? ease.outCubic(prog(t, lines[i + 1].t - 0.05, lines[i + 1].t + 0.25)) : 0, fade = age > 1 ? 1 - (age - 1) : 1
         const sc = lerp(0.6, 1, pop) * lerp(1, 0.94, dimK) * lerp(0.7, 1, kc)
         const y = bottom - B.h - lift + (1 - kc) * 20
         B.b.style.top = y.toFixed(1) + 'px'
