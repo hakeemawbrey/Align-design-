@@ -814,6 +814,11 @@ export const CUES = [
   ...sob(T.sob, A.C6), ...sob(T.sob + 0.55, A.A5), ...sob(T.sob + 1.1, A.C6, 2),
   // the lesson
   ...lessonCues(LESSON.at, { ...LESSON, key: KEY }),
+  // lesson.js plays its level-up chiptune on the 'fx' bus, which the screwed preset levels down with the vinyl crackle
+  // (−21 here vs −9 in the other styles): double it, same notes and times (A minor), on this film's own sfx bus
+  ...[A.A4, A.C5, A.E5, A.A5, A.C6].map((f, i) => ['chip', +(LESSON.at + i * 0.075).toFixed(3), f, 0.09, { ...FX, duty: 0.25, gain: 0.03, decay: 0.08, sustain: 0.6, dly: 0.1 }]),
+  ['chip', +(LESSON.at + 0.38).toFixed(3), A.C6, 0.62, { ...FX, duty: 0.25, arp: [0, 4, 7, 12], gain: 0.026, decay: 0.4, sustain: 0.55, vib: 0.004 }],
+  ['chip', +(LESSON.at + 0.38).toFixed(3), A.C5, 0.62, { ...FX, wave: 'tri', gain: 0.03, decay: 0.4, sustain: 0.6 }],
   // the picker
   ...head(T.h8, 2, T.h8Land, 3), ['whoosh', T.panel[0], 0.4, 0.06],
   ...T.taps.flatMap(stamp), ...T.taps.map((s, i) => ['pop', s + 0.22, NOTE[(i * 2) % 7], 0.03, 0]),
