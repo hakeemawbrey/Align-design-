@@ -314,7 +314,7 @@ async function build(stage) {
       drawStadium(t, dy * 0.5)
       if (ok > 0) {
         drawScreen(t, dy * 0.5)
-        drawGhostCameo(x, t, { x: SCREEN.x + SCREEN.w / 2 + 22, y: SCREEN.y + 40, at: T.ghost, dur: 1.3, from: 'right', cell: 3 })
+        drawGhostCameo(x, t, { x: SCREEN.x + SCREEN.w / 2 + 22, y: SCREEN.y + 40, at: T.ghost, dur: 1.3, from: 'left', cell: 3 })
         // the crowd (back rows), cheering after the high-five
         const hf = t >= T.five
         for (const c of CROWD) {
