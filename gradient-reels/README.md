@@ -10,7 +10,7 @@ comment. Pass `--watermark` / `--cta` if you want it on the image.
 ## Quick start
 
 ```bash
-cd reels        # from the root of this repo
+cd gradient-reels   # from the root of this repo
 
 python3 render.py --all --cta                  # the full 72-caption library
 python3 render.py --batch 21 --days 7 --cta    # a week: 3 posts/day + post plans
@@ -35,7 +35,7 @@ Nothing here needs your Mac anymore. It runs anywhere with Python 3 and ffmpeg.
   the `claude` command like before, which works on a signed-in Mac and in a
   Claude Code cloud session. `REELS_MODEL` picks a different model.
 - **In a Claude Code cloud session:** just ask, e.g. "render a week batch in
-  reels/ and send me the images". The session has ffmpeg and `claude` already.
+  gradient-reels/ and send me the images". The session has ffmpeg and `claude` already.
 - **As a hosted dashboard you open from your phone:** deploy the `Dockerfile`
   to a container host such as Render, Railway or Fly.io, with:
   - a persistent disk mounted at `/data`, where renders and approvals are saved
