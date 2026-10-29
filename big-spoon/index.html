@@ -181,10 +181,10 @@
   .dash-layers .dl { display: block; font-family: "Geist Mono", monospace; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
   .dash-cad { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .06em; color: var(--muted); text-transform: uppercase; }
   /* Credits list */
-  .credits { position: absolute; left: var(--pad); right: var(--pad); top: 250px; columns: 3; column-gap: 40px; }
-  .cr { break-inside: avoid; padding: 7px 0; border-top: 1px solid var(--line); }
-  .cr .ca { font-size: 17px; }
-  .cr .ct { font-size: 15px; font-weight: 300; color: var(--ink-2); line-height: 1.3; }
+  .credits { position: absolute; left: var(--pad); right: var(--pad); top: 236px; columns: 3; column-gap: 40px; }
+  .cr { break-inside: avoid; padding: 5px 0; border-top: 1px solid var(--line); }
+  .cr .ca { font-size: 16px; }
+  .cr .ct { font-size: 14px; font-weight: 300; color: var(--ink-2); line-height: 1.3; }
   .cr .cm { font-family: "Geist Mono", monospace; font-size: 13px; color: var(--muted); margin-top: 2px; }
 
 
@@ -233,6 +233,27 @@
   .gantt .gbar.p1 { background: var(--green); }
   .gantt .gbar.p4 { background: transparent; border: 2px dashed var(--green); }
   .gantt .gd { position: absolute; top: 42px; font-family: "Geist Mono", monospace; font-size: 17px; letter-spacing: .06em; color: var(--ink-2); text-transform: uppercase; white-space: nowrap; z-index: 1; }
+
+
+  /* Investment options */
+  .opts { position: absolute; left: var(--pad); right: 640px; top: 390px; height: 440px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .opt { border: 1px solid var(--line); background: var(--paper); padding: 24px 24px 22px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums; }
+  .opt.rec { border: 2px solid var(--green); background: #fff; }
+  .op-n { font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .opt.rec .op-n { color: var(--green); }
+  .op-t { font-size: 28px; letter-spacing: -0.02em; margin-top: 10px; }
+  .op-p { font-size: 54px; font-weight: 300; letter-spacing: -0.04em; margin-top: 6px; }
+  .opt.rec .op-p { color: var(--green); }
+  .op-l { margin-top: 16px; border-top: 1px solid var(--line); }
+  .op-l > div { display: flex; justify-content: space-between; font-size: 16px; color: var(--ink-2); padding: 8px 0; border-bottom: 1px solid var(--line); font-weight: 300; }
+  .op-f { margin-top: auto; font-size: 18px; line-height: 1.35; }
+  .advline { position: absolute; left: var(--pad); right: 640px; top: 856px; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--ink); padding-top: 18px; font-size: 22px; }
+  .advline b { font-weight: 500; }
+  /* Terms */
+  .terms { position: absolute; left: var(--pad); right: 760px; top: 320px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .tm { display: grid; grid-template-columns: 84px 1fr; padding: 22px 0; border-top: 1px solid var(--line); }
+  .tm-t { font-size: 28px; letter-spacing: -0.015em; }
+  .tm-d { font-size: 19px; font-weight: 300; color: var(--ink-2); margin-top: 8px; line-height: 1.4; }
 
   /* Timeline */
   .tl { position: absolute; left: var(--pad); width: 1660px; top: 620px; height: 2px; }
@@ -516,7 +537,7 @@
       <div style="font-size: 20px; font-weight: 300; color: var(--ink-2); line-height: 1.35;">Business results, attribution and every channel, all 7 concepts in one view</div>
     </div>
     <div style="background: var(--ink); color: #fff; padding: 24px 28px; display:flex; flex-direction:column; justify-content:space-between;">
-      <div style="display:flex; justify-content:space-between;"><span style="font-size: 28px; letter-spacing: -0.015em;">Review &amp; revision</span><span class="num" style="color: #CFCFCF;">[ E ]</span></div>
+      <div style="display:flex; justify-content:space-between;"><span style="font-size: 28px; letter-spacing: -0.015em;">Review &amp; revision · 3 rounds</span><span class="num" style="color: #CFCFCF;">[ E ]</span></div>
       <div class="rsteps"><span>Draft</span><i>→</i><span>Review with ownership</span><i>→</i><span>Revise</span><i>→</i><span class="g2">Sign-off</span></div>
     </div>
   </div>
@@ -697,27 +718,75 @@
 
 <!-- 20 · Investment -->
 <section class="slide">
-  <div class="head">
+  <div class="head" style="right: 640px;">
     <div class="tag">Investment</div>
     <h2>$86,000 through April.<br><span class="g">Then $3,500 a month.</span></h2>
   </div>
-  <div class="rows money" style="left: var(--pad); top: 420px; width: 1040px;">
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 1 ]</span><div><span class="t">Audit</span><div class="d" style="margin-top: 4px;">On site at all 7 concepts</div></div><span class="t">$10,000</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 2 ]</span><div><span class="t">Strategy</span><div class="d" style="margin-top: 4px;">50% of the audit fee credited</div></div><span class="t">$25,000 <span style="color: var(--muted);">− $5,000</span></span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 3 ]</span><span class="t">Build &amp; launch</span><span class="t">$14,000/mo × 4</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 22px 0; border-top: 1px solid var(--ink);"><span></span><span class="t" style="font-weight: 500;">Total through April</span><span class="t g" style="font-weight: 500;">$86,000</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 4 ]</span><span class="t">Advisory, from May</span><span class="t">$3,500/mo</span></div>
+  <div class="opts">
+    <div class="opt">
+      <div class="op-n">Option A</div>
+      <div class="op-t">Audit only</div>
+      <div class="op-p">$10,000</div>
+      <div class="op-l"><div><span>Phase 1 · Audit</span><span>$10,000</span></div></div>
+      <div class="op-f">The baseline, scorecards and top 10 quick wins</div>
+    </div>
+    <div class="opt">
+      <div class="op-n">Option B</div>
+      <div class="op-t">Audit + Strategy</div>
+      <div class="op-p">$30,000</div>
+      <div class="op-l"><div><span>Phase 1 · Audit</span><span>$10,000</span></div><div><span>Phase 2 · Strategy</span><span>$25,000</span></div><div><span>Audit credit</span><span>−$5,000</span></div></div>
+      <div class="op-f">A 12-month plan your team can run</div>
+    </div>
+    <div class="opt rec">
+      <div class="op-n">Option C · Recommended</div>
+      <div class="op-t">Full build</div>
+      <div class="op-p">$86,000</div>
+      <div class="op-l"><div><span>Phase 1 · Audit</span><span>$10,000</span></div><div><span>Phase 2 · Strategy</span><span>$25,000</span></div><div><span>Audit credit</span><span>−$5,000</span></div><div><span>Phase 3 · Build</span><span>$14,000 × 4</span></div></div>
+      <div class="op-f">A hired, trained team by April 30</div>
+    </div>
   </div>
-  <div class="tile art" style="position:absolute; right: var(--pad); top: 110px; width: 480px; height: 280px;"><img src="assets/art/vanbeyeren-lobster.jpg" alt="Abraham van Beyeren, Still Life with Lobster and Fruit" style="object-position: 50% 55%;"><span class="bcap">[ Van Beyeren, 1650s ]</span></div>
-  <div class="card black" style="position:absolute; right: var(--pad); top: 420px; width: 480px; height: 426px; padding: 40px 38px; justify-content: space-between;">
-    <span class="cap" style="color: #CFCFCF; text-transform: uppercase; letter-spacing: .14em;">For comparison</span>
-    <div><div style="font-size: 64px; font-weight: 300; letter-spacing: -0.035em; line-height: 1.05;">$17,500–<br>35,000/mo</div><div style="font-size: 24px; font-weight: 300; color: #E2E2E2; margin-top: 22px; line-height: 1.38;">Typical agency fee for 7 concepts. No end date.</div></div>
+  <div class="advline"><span>Then Phase 4 · Advisory</span><span><b>$3,500/mo</b> · 6-month minimum · up to 8 hours</span></div>
+  <div class="tile art" style="position:absolute; right: var(--pad); top: 110px; width: 460px; height: 250px;"><img src="assets/art/vanbeyeren-lobster.jpg" alt="Abraham van Beyeren, Still Life with Lobster and Fruit" style="object-position: 50% 55%;"><span class="bcap">[ Van Beyeren, 1650s ]</span></div>
+  <div class="card black" style="position:absolute; right: var(--pad); top: 380px; width: 460px; height: 540px; padding: 34px 34px; justify-content: space-between;">
+    <span class="cap" style="color: #CFCFCF; text-transform: uppercase; letter-spacing: .14em;">Agency vs. owned</span>
+    <div>
+      <div style="font-size: 20px; color: #9AA3AA; font-family: 'Geist Mono', monospace; letter-spacing: .06em; text-transform: uppercase;">Agency</div>
+      <div style="font-size: 44px; font-weight: 300; letter-spacing: -0.03em; line-height: 1.1; margin-top: 6px;">$17,500–35,000/mo</div>
+      <div style="font-size: 20px; font-weight: 300; color: #CFCFCF; margin-top: 8px; line-height: 1.35;">No end date. The team, data and logins stay with them.</div>
+    </div>
+    <div style="border-top: 1px solid #2E2E2E; padding-top: 22px;">
+      <div style="font-size: 20px; color: var(--green-bright); font-family: 'Geist Mono', monospace; letter-spacing: .06em; text-transform: uppercase;">Big Spoon, owned</div>
+      <div style="font-size: 44px; font-weight: 300; letter-spacing: -0.03em; line-height: 1.1; margin-top: 6px; color: var(--green-bright);">Yours to keep</div>
+      <div style="font-size: 20px; font-weight: 300; color: #CFCFCF; margin-top: 8px; line-height: 1.35;">Your team, playbooks, data and logins. Built once, then yours.</div>
+    </div>
   </div>
-  <p class="cap" style="position:absolute; left: var(--pad); top: 945px; width: 1660px; font-size: 18px; line-height: 1.6;">Ad spend, UGC and influencer fees, production, events, tools and salaries are paid by Big Spoon directly. No markup.</p>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
+  <p class="cap" style="position:absolute; left: var(--pad); right: 640px; top: 960px; font-size: 15px; line-height: 1.5;">Ad spend, UGC and influencer fees, production, events, tools and salaries are paid by Big Spoon directly. No markup.</p>
+  <div class="foot" style="right: 640px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 21 · Next steps -->
+<!-- 21 · Terms -->
+<section class="slide">
+  <div class="head" style="right: 760px;">
+    <div class="tag">Terms</div>
+    <h2>Clear terms. <span class="g">No surprises.</span></h2>
+  </div>
+  <div class="terms">
+    <div class="tm"><span class="num">[ 1 ]</span><div><div class="tm-t">Payment</div><div class="tm-d">Audit 100% up front. Strategy 50% at kickoff, 50% at sign-off. Build billed monthly, in advance.</div></div></div>
+    <div class="tm"><span class="num">[ 2 ]</span><div><div class="tm-t">Audit credit</div><div class="tm-d">50% of the audit fee ($5,000) is credited to Strategy if Phase 2 starts within 14 days of the readout.</div></div></div>
+    <div class="tm"><span class="num">[ 3 ]</span><div><div class="tm-t">Revisions</div><div class="tm-d">Strategy includes 3 revision rounds. Extra rounds are billed hourly.</div></div></div>
+    <div class="tm"><span class="num">[ 4 ]</span><div><div class="tm-t">Hiring</div><div class="tm-d">If key hires aren’t in place by Feb 1, Build extends month to month at $14,000.</div></div></div>
+    <div class="tm"><span class="num">[ 5 ]</span><div><div class="tm-t">On-site visits</div><div class="tm-d">Meals and visits at the 7 concepts are covered by Big Spoon.</div></div></div>
+    <div class="tm"><span class="num">[ 6 ]</span><div><div class="tm-t">Advisory</div><div class="tm-d">6-month minimum. Up to 8 hours a month; extra hours billed hourly.</div></div></div>
+  </div>
+  <div class="bleed" style="right: 0; width: 640px;">
+    <img src="assets/art/korin-cranes-pines.jpg" alt="Ogata Kōrin, Cranes, Pines, and Bamboo" style="object-position: 30% 50%;">
+    <span class="bcap">[ Kōrin, Cranes, Pines, and Bamboo, early 18th c. ]</span>
+  </div>
+  <div class="foot" style="right: 760px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
+</section>
+
+
+<!-- 22 · Next steps -->
 <section class="slide">
   <div class="head" style="right: auto; width: 960px;">
     <div class="tag">Next steps</div>
@@ -736,7 +805,7 @@
   <div class="foot" style="right: 910px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 22 · Image credits -->
+<!-- 23 · Image credits -->
 <section class="slide">
   <div class="head">
     <div class="tag">Image credits</div>
@@ -770,8 +839,9 @@
       <div class="cr"><div class="ca">Félix Vallotton</div><div class="ct"><i>The Bistro</i>, c. 1895</div><div class="cm">Cleveland Museum of Art · 2020.114 · CC0</div></div>
       <div class="cr"><div class="ca">Hishikawa Moronobu</div><div class="ct"><i>The Kitchen of a Joroya</i>, ca. 1680</div><div class="cm">The Met · JP810 · Public Domain (CC0)</div></div>
       <div class="cr"><div class="ca">Camille Pissarro</div><div class="ct"><i>Fishmarket</i>, 1902</div><div class="cm">Cleveland Museum of Art · 2020.113 · CC0</div></div>
+      <div class="cr"><div class="ca">Ogata Kōrin</div><div class="ct"><i>Cranes, Pines, and Bamboo</i>, early 18th century</div><div class="cm">The Met · 1975.268.62, .63 · Public Domain (CC0)</div></div>
   </div>
-  <p class="cap" style="position:absolute; left: var(--pad); right: var(--pad); top: 960px; font-size: 15px; line-height: 1.5;">Open Access collections of The Metropolitan Museum of Art and The Cleveland Museum of Art, released as Public Domain (CC0). Color and contrast lightly enhanced; some cropped. Restaurant names are set in type.</p>
+  <p class="cap" style="position:absolute; left: var(--pad); right: var(--pad); top: 1000px; font-size: 14px; line-height: 1.5;">Open Access collections of The Metropolitan Museum of Art and The Cleveland Museum of Art, released as Public Domain (CC0). Color and contrast lightly enhanced; some cropped. Restaurant names are set in type.</p>
 </section>
 
 </div></div>

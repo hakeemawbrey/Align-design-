@@ -1,6 +1,6 @@
 # Big Spoon Concepts — Marketing Build: Scope & Audit
 
-22-slide proposal deck. Open `index.html` in a browser.
+23-slide proposal deck. Open `index.html` in a browser.
 
 - Navigate: arrow keys, space, PageUp/PageDown, Home/End, or click (left third goes back). `#n` in the URL jumps to slide n.
 - PDF: `big-spoon-marketing-build.pdf` (one slide per page). Re-export with the browser's Print → Save as PDF, or headless Chromium.
