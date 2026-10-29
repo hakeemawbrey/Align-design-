@@ -130,6 +130,16 @@
   .rsteps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: #CFCFCF; }
   .rsteps i { font-style: normal; color: #6B7680; }
   .rsteps .g2 { color: var(--green-bright); }
+  .handoff { position: absolute; left: var(--pad); width: 940px; top: 800px; }
+  .hm-head { display: flex; justify-content: space-between; align-items: center; }
+  .hm-key { display: flex; align-items: center; gap: 8px; font-family: "Geist Mono", monospace; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .hm-key i { display: inline-block; width: 12px; height: 12px; margin-left: 12px; }
+  .hm-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
+  .hm-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+  .hm-r { font-size: 22px; letter-spacing: -0.01em; }
+  .hm-bar { display: flex; height: 22px; }
+  .hm-me { background: var(--ink); }
+  .hm-team { flex: 1; background: var(--green); }
   .big { font-size: 96px; font-weight: 300; letter-spacing: -0.04em; line-height: 1; }
 
   /* Rows (lists with hairlines) */
@@ -523,26 +533,27 @@
     <div class="tag">Phase 3 · Build &amp; launch · Jan 4–Apr 30</div>
     <h2>Hire, launch, <span class="g">step back.</span></h2>
   </div>
-  <div class="rows" style="left: var(--pad); top: 330px; width: 940px;">
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 10px 0;"><span class="num">[ 1 ]</span><span class="d" style="font-size: 26px;">Hire 4: creative director, events &amp; production coordinator, content creator, intern. Plus staff ambassadors</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 10px 0;"><span class="num">[ 2 ]</span><span class="d" style="font-size: 26px;">Playbooks and SOPs</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 10px 0;"><span class="num">[ 3 ]</span><span class="d" style="font-size: 26px;">Full metrics dashboard live, reviewed weekly</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 10px 0;"><span class="num">[ 4 ]</span><span class="d" style="font-size: 26px;">Launch series, campaigns and first events</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 10px 0;"><span class="num">[ 5 ]</span><span class="d" style="font-size: 26px;">Monthly experimentation lab</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 10px 0;"><span class="num" style="color: var(--green);">[ 6 ]</span><span class="d" style="font-size: 26px; color: var(--ink);">Competitor monitoring dashboard: 21 competitors, 3 per concept</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 10px 0;"><span class="num" style="color: var(--green);">[ 7 ]</span><span class="d" style="font-size: 26px; color: var(--ink);">UGC &amp; influencer program, on a steady monthly budget</span></div>
+  <div class="rows" style="left: var(--pad); top: 310px; width: 940px;">
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 9px 0;"><span class="num">[ 1 ]</span><span class="d" style="font-size: 24px; color: var(--ink);">Hire 4: creative director, events &amp; production coordinator, content creator, intern. Plus staff ambassadors</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 9px 0;"><span class="num">[ 2 ]</span><span class="d" style="font-size: 24px; color: var(--ink);">Playbooks and SOPs</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 9px 0;"><span class="num">[ 3 ]</span><span class="d" style="font-size: 24px; color: var(--ink);">Launch the 3 signature series per concept, campaigns and first events</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 9px 0;"><span class="num">[ 4 ]</span><span class="d" style="font-size: 24px; color: var(--ink);">Full metrics dashboard live, reviewed weekly</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 9px 0;"><span class="num">[ 5 ]</span><span class="d" style="font-size: 24px; color: var(--ink);">Competitor monitoring: 21 competitors, 3 per concept</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 9px 0;"><span class="num">[ 6 ]</span><span class="d" style="font-size: 24px; color: var(--ink);">UGC &amp; influencer program, on a steady monthly budget</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 9px 0;"><span class="num">[ 7 ]</span><span class="d" style="font-size: 24px; color: var(--ink);">Monthly experimentation lab</span></div>
   </div>
   <div class="bleed" style="right: 0; width: 720px;">
     <img src="assets/art/lautrec-aristide-bruant.jpg" alt="Henri de Toulouse-Lautrec, Aristide Bruant, at His Cabaret" style="object-position: 50% 35%;">
     <span class="bcap">[ Toulouse-Lautrec, Aristide Bruant, 1893 ]</span>
   </div>
-  <!-- My role steps down -->
-  <div style="position:absolute; left: var(--pad); width: 940px; top: 820px;">
-    <div class="cap" style="text-transform: uppercase; letter-spacing: .14em;">My role</div>
-    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 16px;">
-      <div><div style="height: 10px; background: var(--ink);"></div><div style="display:flex; justify-content:space-between; margin-top: 16px;"><span style="font-size: 26px;">Lead</span><span class="num">JAN</span></div></div>
-      <div style="grid-column: span 2;"><div style="height: 10px; background: var(--line);"><div style="height: 10px; width: 50%; background: var(--ink);"></div></div><div style="display:flex; justify-content:space-between; margin-top: 16px;"><span style="font-size: 26px;">Co-pilot</span><span class="num">FEB–MAR</span></div></div>
-      <div><div style="height: 10px; background: var(--line);"><div style="height: 10px; width: 18%; background: var(--ink);"></div></div><div style="display:flex; justify-content:space-between; margin-top: 16px;"><span style="font-size: 26px;">Review only</span><span class="num">APR</span></div></div>
+  <!-- Hand-off: my share (black) vs team share (green) per month -->
+  <div class="handoff">
+    <div class="hm-head"><span class="cap" style="text-transform: uppercase; letter-spacing: .14em;">Hand-off</span><span class="hm-key"><i style="background: var(--ink);"></i>Me<i style="background: var(--green);"></i>Your team</span></div>
+    <div class="hm-grid">
+      <div class="hm"><div class="hm-top"><span class="num">JAN</span><span class="hm-r">Lead</span></div><div class="hm-bar"><div class="hm-me" style="width:85%"></div><div class="hm-team"></div></div></div>
+      <div class="hm"><div class="hm-top"><span class="num">FEB</span><span class="hm-r">Co-pilot</span></div><div class="hm-bar"><div class="hm-me" style="width:60%"></div><div class="hm-team"></div></div></div>
+      <div class="hm"><div class="hm-top"><span class="num">MAR</span><span class="hm-r">Co-pilot</span></div><div class="hm-bar"><div class="hm-me" style="width:35%"></div><div class="hm-team"></div></div></div>
+      <div class="hm"><div class="hm-top"><span class="num">APR</span><span class="hm-r">Review only</span></div><div class="hm-bar"><div class="hm-me" style="width:10%"></div><div class="hm-team"></div></div></div>
     </div>
   </div>
   <div class="foot" style="right: 850px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
