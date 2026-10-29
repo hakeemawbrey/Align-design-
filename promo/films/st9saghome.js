@@ -3,7 +3,7 @@
 // Owned by the Sag + Capricorn session. st9caphome.js imports the kit from here. Pure f(t), no `document` at top level.
 //
 // ═══════════════════════════════════════ API (copy-paste) ═══════════════════════════════════════
-//   import { DIO, SAG, drawSagHome, drawSagHomeFront, drawSag, SAG_SPOTS, SAG_EP,
+//   import { DIO, SAG, drawBackpack, jupiterLamp, drawSagHome, drawSagHomeFront, drawSag, SAG_SPOTS, SAG_EP,
 //            R, blk, bubble, bubbleCues, bubbleDone, whip, whipCues, popIn, drawHeart, PIX } from '../../st9saghome.js'
 //
 // ── the set: a pixel diorama box floating in the Star Talk sky (DIO = { x0: 50, x1: 1030, y0: 560, y1: 1500,
@@ -15,6 +15,7 @@
 //   dark  0…1: the night overlay (3 AM uses ≈ 0.8; the window stays clear so the stars read).
 //   lamp  0…1: the Jupiter lamp's warm glow (it's the room's night light).
 //   unpacked 0…1: the backpack (always packed, by the door) slumps open with a shirt and a compass out (E45's payoff).
+//   noPack: true hides the room's backpack (when Sag is wearing it). drawBackpack(ctx, cx, cy, cell, t, unpacked) draws one.
 // drawSagHomeFront(ctx, t, opts)  the pieces in FRONT of a character: the blanket ('bed'), the desk front ('desk'),
 //   the window-seat cushion lip ('window'). Same opts. Call it after you draw the characters.
 // drawSag(ctx, x, y, size, t, opts)  the purple ♐ star (drawStarChar) with its packed hiking backpack on (opts.pack =
@@ -320,7 +321,7 @@ export function jupiterLamp(x, cx, cy, r, t, glow = 0) {
   R(x, P.jupSpot, cx + c, cy + 2 * c, 2 * c, c)
   R(x, INK, cx - 2 * c, cy + 7 * c, 4 * c, c); R(x, P.wood2, cx - 3 * c, cy + 8 * c, 6 * c, c * 1.4)
 }
-function backpack(x, cx, cy, cell, t, unpacked = 0) {
+export function drawBackpack(x, cx, cy, cell, t, unpacked = 0) {
   if (unpacked < 0.5) { drawBits(x, PIX.BACKPACK, PIX.BACKPACK_C, cx, cy, cell); return }
   // slumped open: flap up, a folded shirt and a compass out on the floor
   drawBits(x, PIX.BACKPACK.slice(3), PIX.BACKPACK_C, cx, cy + 1.5 * cell, cell, { rot: -0.12 })
@@ -366,7 +367,7 @@ function roomBed(x, t, o) {
   blk(x, 660, 1120, 130, 150, P.wood, { o: 6, hi: P.woodHi }); R(x, INK, 690, 1180, 70, 6); R(x, GOLD, 716, 1196, 18, 8)
   if (!o.noLamp) jupiterLamp(x, 725, 1050, 42, t, o.lamp)
   rug(x, 760, F + 70, 360)
-  backpack(x, 940, 1236, 7, t, o.unpacked)
+  if (!o.noPack) drawBackpack(x, 940, 1236, 7, t, o.unpacked)
 }
 function roomKitchen(x, t, o) {
   const i = epIdx(o.ep), F = DIO.floor
@@ -383,7 +384,7 @@ function roomKitchen(x, t, o) {
   blk(x, 840, 1030, 70, 56, '#ff7b54', { o: 6, hi: '#ffa77f' }); R(x, INK, 900, 1040, 26, 8)
   // hanging string lights
   for (let k = 0; k < 9; k++) { const px = 330 + k * 80, py = 610 + Math.sin(k * 0.8) * 10; R(x, INK, px, py, 4, 14); R(x, ['#ffd27a', '#ff9db8', '#7fe0a8'][k % 3], px - 4, py + 12, 12, 12) }
-  backpack(x, 1000, 1240, 6, t, o.unpacked)
+  if (!o.noPack) drawBackpack(x, 1000, 1240, 6, t, o.unpacked)
 }
 function roomDesk(x, t, o) {
   const i = epIdx(o.ep)
@@ -393,7 +394,7 @@ function roomDesk(x, t, o) {
   for (let k = 0; k < 3; k++) R(x, ['#ff4f6e', '#3a76aa', '#3f9a58'][k], 470 + k * 56, 1000, 44, 10)
   worldMap(x, 800, 930, 190, 110, 3 + i, t)
   if (!o.noLamp) jupiterLamp(x, 940, 1090, 26, t, o.lamp)
-  backpack(x, 120, 1232, 6, t, o.unpacked)
+  if (!o.noPack) drawBackpack(x, 120, 1232, 6, t, o.unpacked)
 }
 function roomWindow(x, t, o) {
   const F = DIO.floor
@@ -404,7 +405,7 @@ function roomWindow(x, t, o) {
   telescope(x, 920, 1170, t)
   plant(x, 110, F, 120)
   if (!o.noLamp) jupiterLamp(x, 1000, 1080, 22, t, o.lamp)
-  backpack(x, 300, 1380, 6, t, o.unpacked)
+  if (!o.noPack) drawBackpack(x, 300, 1380, 6, t, o.unpacked)
 }
 
 export function drawSagHome(x, t, o = {}) {
