@@ -173,6 +173,36 @@
   .cr .ct { font-size: 15px; font-weight: 300; color: var(--ink-2); line-height: 1.3; }
   .cr .cm { font-family: "Geist Mono", monospace; font-size: 13px; color: var(--muted); margin-top: 2px; }
 
+
+  /* Bento v2: phase-coded tiles */
+  .bento2 { position: absolute; left: var(--pad); right: var(--pad); top: 290px; bottom: 112px; display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: 1fr 1.2fr 1fr; gap: 14px; }
+  .bt { position: relative; background: var(--paper); border: 1px solid var(--line); padding: 22px 24px 22px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+  .bt .bp { font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .bt .bp::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+  .bt-t { font-size: 28px; letter-spacing: -0.02em; line-height: 1.1; }
+  .bt-d { font-size: 18px; font-weight: 300; color: var(--ink-2); margin-top: 8px; line-height: 1.35; }
+  .bn { font-size: 96px; font-weight: 300; letter-spacing: -0.05em; line-height: .9; color: var(--green); }
+  .brow { display: flex; align-items: flex-end; gap: 26px; }
+  .bt.dark { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .bt.dark .bt-t { font-size: 40px; }
+  .bt.dark .bt-d { color: #CFCFCF; font-size: 20px; }
+  .bt.dark .bp { color: #9AA3AA; }
+  .bt.dark .bn { color: var(--green-bright); font-size: 150px; }
+  .bt.dark .bp::before, .bkey .k1 { background: #000; outline: 1px solid #9AA3AA; }
+  .bt.p2 .bp::before, .bkey .k2 { background: var(--green); }
+  .bt.p2 { background: #fff; }
+  .bt.p3 .bp::before, .bkey .k3 { background: var(--amber); }
+  .bt.green { background: var(--green); border-color: var(--green); color: #fff; }
+  .bt.green .bp, .bt.green .bt-d { color: #E6F4E8; }
+  .bt.green .bp::before, .bkey .k4 { background: #fff; outline: 1px solid var(--green); }
+  .bt.art { padding: 0; }
+  .bt.art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bt.art .bcap { left: 14px; bottom: 14px; }
+  .spark { position: absolute; right: 24px; top: 22px; width: 160px; height: 48px; color: var(--green); }
+  .bkey { display: flex; flex-wrap: wrap; justify-content: flex-end; max-width: 620px; gap: 10px 22px; font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-bottom: 12px; }
+  .bkey span { display: flex; align-items: center; gap: 8px; }
+  .bkey i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+
   /* Timeline */
   .tl { position: absolute; left: var(--pad); width: 1660px; top: 620px; height: 2px; }
   .tl .base { position: absolute; left: 0; top: 0; height: 2px; background: var(--ink); }
@@ -576,21 +606,54 @@
 
 <!-- 18 · Included -->
 <section class="slide mist">
-  <div class="head">
-    <div class="tag">What’s included</div>
-    <h2>Everything the team <span class="g">needs.</span></h2>
+  <div class="head" style="display:flex; justify-content: space-between; align-items: flex-end;">
+    <div style="flex: none;"><div class="tag">What’s included</div>
+    <h2 style="white-space: nowrap;">Everything the team <span class="g">needs.</span></h2></div>
+    <div class="bkey"><span><i class="k1"></i>Phase 1 · Audit</span><span><i class="k2"></i>Phase 2 · Strategy</span><span><i class="k3"></i>Phase 3 · Build</span><span><i class="k4"></i>Phase 4 · Advisory</span></div>
   </div>
-  <div class="bento">
-    <div class="tile black" style="grid-column: span 2; font-size: 1.2em;"><span class="num">[ 1 ]</span><div><div class="tn">On-site audit, all 7 concepts</div><div class="td">Eating the menu, watching service, interviews with staff and managers</div></div></div>
-    <div class="tile art" style="grid-row: span 2;"><img src="assets/art/korin-chrysanthemums.jpg" alt="Ogata Kōrin, Chrysanthemums by a Stream" style="object-position: 20% 22%;"><span class="bcap">[ Kōrin, Chrysanthemums by a Stream ]</span></div>
-    <div class="tile" style=""><span class="num">[ 2 ]</span><div><div class="tn">12-month strategy</div><div class="td">A custom voice and plan for every concept</div></div></div>
-    <div class="tile" style=""><span class="num">[ 3 ]</span><div><div class="tn">KPI dashboard</div><div class="td">Built in Phase 2, reviewed weekly</div></div></div>
-    <div class="tile" style=""><span class="num">[ 4 ]</span><div><div class="tn">Competitor monitoring</div><div class="td">21 competitors, 3 per concept</div></div></div>
-    <div class="tile" style=""><span class="num">[ 5 ]</span><div><div class="tn">Hiring 5 roles</div><div class="td">Plus staff ambassadors</div></div></div>
-    <div class="tile" style=""><span class="num">[ 6 ]</span><div><div class="tn">Playbooks &amp; SOPs</div><div class="td">How the team runs without me</div></div></div>
-    <div class="tile" style=""><span class="num">[ 7 ]</span><div><div class="tn">UGC &amp; influencer program</div><div class="td">On a steady monthly budget</div></div></div>
-    <div class="tile" style=""><span class="num">[ 8 ]</span><div><div class="tn">Experimentation lab</div><div class="td">Live streams, POV, creator collab items, monthly</div></div></div>
-    <div class="tile green" style=""><span class="num">[ 9 ]</span><div><div class="tn">Advisory from May</div><div class="td">Up to 8 hours a month</div></div></div>
+  <div class="bento2">
+    <div class="bt dark" style="grid-column: 1 / 4; grid-row: 1;">
+      <div class="bp">Phase 1 · Audit</div>
+      <div class="brow"><div class="bn">7</div><div><div class="bt-t">On-site audit of every concept</div><div class="bt-d">I eat the menu, watch service, and sit down with staff and managers.</div></div></div>
+    </div>
+    <div class="bt art" style="grid-column: 4 / 6; grid-row: 1 / 3;">
+      <img src="assets/art/korin-chrysanthemums.jpg" alt="Ogata Kōrin, Chrysanthemums by a Stream" style="object-position: 18% 25%;">
+      <span class="bcap">[ Kōrin, Chrysanthemums by a Stream ]</span>
+    </div>
+    <div class="bt p2" style="grid-column: 6; grid-row: 1 / 3;">
+      <div class="bp">Phase 2 · Strategy</div>
+      <div><div class="bt-t">12-month strategy</div><div class="bt-d">A custom voice per concept and 3 signature series each, plus events, paid media and KPI targets.</div></div>
+    </div>
+    <div class="bt p2" style="grid-column: 1 / 3; grid-row: 2;">
+      <div class="bp">Phase 2 · Strategy</div>
+      <div><div class="bt-t">KPI dashboard</div><div class="bt-d">Sales, reservations and channel data in one view, reviewed weekly.</div></div>
+      <svg class="spark" viewBox="0 0 200 60" aria-hidden="true"><polyline points="0,50 30,44 60,46 90,34 120,30 150,20 200,8" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+    </div>
+    <div class="bt p3" style="grid-column: 3; grid-row: 2;">
+      <div class="bp">Phase 3 · Build</div>
+      <div class="bn" style="font-size: 80px;">21</div>
+      <div><div class="bt-t">Competitors monitored</div><div class="bt-d">3 per concept, live</div></div>
+    </div>
+    <div class="bt p3" style="grid-column: 1 / 3; grid-row: 3;">
+      <div class="bp">Phase 3 · Build</div>
+      <div class="brow"><div class="bn">5</div><div><div class="bt-t">Hires, plus staff ambassadors</div><div class="bt-d">Creative director, events &amp; production coordinator, 2 content creators, intern</div></div></div>
+    </div>
+    <div class="bt p3" style="grid-column: 3; grid-row: 3;">
+      <div class="bp">Phase 3 · Build</div>
+      <div><div class="bt-t">Playbooks &amp; SOPs</div><div class="bt-d">How the team runs without me</div></div>
+    </div>
+    <div class="bt p3" style="grid-column: 4; grid-row: 3;">
+      <div class="bp">Phase 3 · Build</div>
+      <div><div class="bt-t">UGC &amp; influencers</div><div class="bt-d">On a steady monthly budget</div></div>
+    </div>
+    <div class="bt p3" style="grid-column: 5; grid-row: 3;">
+      <div class="bp">Phase 3 · Build</div>
+      <div><div class="bt-t">Experimentation lab</div><div class="bt-d">Live streams, POV, creator collab items</div></div>
+    </div>
+    <div class="bt green" style="grid-column: 6; grid-row: 3;">
+      <div class="bp">Phase 4 · Advisory</div>
+      <div><div class="bt-t">From May</div><div class="bt-d">Up to 8 hours a month</div></div>
+    </div>
   </div>
   <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
