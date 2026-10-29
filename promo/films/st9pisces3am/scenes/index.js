@@ -153,7 +153,7 @@ let HOMES = null, OFF = null, OX = null
 const DK = 0.4
 const HOME_CALL = {
   aries: m => (x, t) => m.drawAriesHome(x, t, { room: 'bedroom', ep: 5, dark: DK }),
-  taurus: m => (x, t) => m.drawTaurusHome(x, t, { room: 'bedroom', ep: '3am', dark: DK }),
+  taurus: m => (x, t) => m.drawTaurusHome(x, t, { room: 'bedroom', ep: 5, dark: DK }),
   gemini: m => (x, t) => m.drawGeminiHome(x, t, { room: 'bedroom', ep: '3am', dark: DK, hour: 3 }),
   cancer: m => (x, t) => m.drawCancerHome(x, t, { room: 'bedroom', ep: '3am', dark: DK, hour: 3 }),
   leo: m => (x, t) => m.drawLeoHome(x, t, { room: 'bedroom', ep: '3am', dark: DK }),
