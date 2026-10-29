@@ -250,8 +250,9 @@
   .advline { position: absolute; left: var(--pad); right: 640px; top: 856px; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--ink); padding-top: 18px; font-size: 22px; }
   .advline b { font-weight: 500; }
   /* Terms */
-  .terms { position: absolute; left: var(--pad); right: 760px; top: 320px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
-  .tm { display: grid; grid-template-columns: 84px 1fr; padding: 22px 0; border-top: 1px solid var(--line); }
+  .terms { position: absolute; left: var(--pad); right: 760px; top: 300px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .tm { display: grid; grid-template-columns: 84px 1fr; padding: 18px 0; border-top: 1px solid var(--line); }
+  .tm-hero { grid-column: span 2; background: #fff; border: 2px solid var(--green); padding: 22px 24px; margin-bottom: 8px; }
   .tm-t { font-size: 28px; letter-spacing: -0.015em; }
   .tm-d { font-size: 19px; font-weight: 300; color: var(--ink-2); margin-top: 8px; line-height: 1.4; }
 
@@ -723,11 +724,11 @@
     <h2>$86,000 through April.<br><span class="g">Then $3,500 a month.</span></h2>
   </div>
   <div class="rows money" style="left: var(--pad); right: 640px; top: 410px;">
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 1 ]</span><div><span class="t">Audit</span><div class="d" style="margin-top: 4px;">On site at all 7 concepts</div></div><span class="t">$10,000</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 2 ]</span><div><span class="t">Strategy</span><div class="d" style="margin-top: 4px;">50% of the audit fee credited</div></div><span class="t">$25,000 <span style="color: var(--muted);">− $5,000</span></span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 3 ]</span><span class="t">Build &amp; launch</span><span class="t">$14,000/mo × 4</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 22px 0; border-top: 1px solid var(--ink);"><span></span><span class="t" style="font-weight: 500;">Total through April</span><span class="t g" style="font-weight: 500;">$86,000</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 4 ]</span><div><span class="t">Advisory, from May</span><div class="d" style="margin-top: 4px;">6-month minimum · up to 8 hours a month</div></div><span class="t">$3,500/mo</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 15px 0;"><span class="num">[ 1 ]</span><div><span class="t">Audit</span><div class="d" style="margin-top: 4px;">On site at all 7 concepts</div></div><span class="t">$10,000</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 15px 0;"><span class="num">[ 2 ]</span><div><span class="t">Strategy</span><div class="d" style="margin-top: 4px;">50% of the audit fee credited</div></div><span class="t">$25,000 <span style="color: var(--muted);">− $5,000</span></span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 15px 0;"><span class="num">[ 3 ]</span><span class="t">Build &amp; launch</span><span class="t">$14,000/mo × 4</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 16px 0; border-top: 1px solid var(--ink);"><span></span><div><span class="t" style="font-weight: 500;">Total through April</span><div class="d" style="margin-top: 4px; color: var(--green);">Each phase contracted on its own. No all-in commitment.</div></div><span class="t g" style="font-weight: 500;">$86,000</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 15px 0;"><span class="num">[ 4 ]</span><div><span class="t">Advisory, from May</span><div class="d" style="margin-top: 4px;">6-month minimum · up to 8 hours a month</div></div><span class="t">$3,500/mo</span></div>
   </div>
   <div class="tile art" style="position:absolute; right: var(--pad); top: 110px; width: 460px; height: 250px;"><img src="assets/art/vanbeyeren-lobster.jpg" alt="Abraham van Beyeren, Still Life with Lobster and Fruit" style="object-position: 50% 55%;"><span class="bcap">[ Van Beyeren, 1650s ]</span></div>
   <div class="card black" style="position:absolute; right: var(--pad); top: 380px; width: 460px; height: 540px; padding: 34px 34px; justify-content: space-between;">
@@ -754,12 +755,13 @@
     <h2>Clear terms. <span class="g">No surprises.</span></h2>
   </div>
   <div class="terms">
-    <div class="tm"><span class="num">[ 1 ]</span><div><div class="tm-t">Payment</div><div class="tm-d">Audit 100% up front. Strategy 50% at kickoff, 50% at sign-off. Build billed monthly, in advance.</div></div></div>
-    <div class="tm"><span class="num">[ 2 ]</span><div><div class="tm-t">Audit credit</div><div class="tm-d">50% of the audit fee ($5,000) is credited to Strategy if Phase 2 starts within 14 days of the readout.</div></div></div>
-    <div class="tm"><span class="num">[ 3 ]</span><div><div class="tm-t">Revisions</div><div class="tm-d">Strategy includes 3 revision rounds. Extra rounds are billed hourly.</div></div></div>
-    <div class="tm"><span class="num">[ 4 ]</span><div><div class="tm-t">Hiring</div><div class="tm-d">If key hires aren’t in place by Feb 1, Build extends month to month at $14,000.</div></div></div>
-    <div class="tm"><span class="num">[ 5 ]</span><div><div class="tm-t">On-site visits</div><div class="tm-d">Meals and visits at the 7 concepts are covered by Big Spoon.</div></div></div>
-    <div class="tm"><span class="num">[ 6 ]</span><div><div class="tm-t">Advisory</div><div class="tm-d">6-month minimum. Up to 8 hours a month; extra hours billed hourly.</div></div></div>
+    <div class="tm tm-hero"><span class="num" style="color: var(--green);">[ 1 ]</span><div><div class="tm-t">One phase at a time</div><div class="tm-d">Each phase is its own contract. Commit to the audit first, then decide on the next phase. No all-in commitment.</div></div></div>
+    <div class="tm"><span class="num">[ 2 ]</span><div><div class="tm-t">Payment</div><div class="tm-d">Audit 100% up front. Strategy 50% at kickoff, 50% at sign-off. Build billed monthly, in advance.</div></div></div>
+    <div class="tm"><span class="num">[ 3 ]</span><div><div class="tm-t">Audit credit</div><div class="tm-d">50% of the audit fee ($5,000) is credited to Strategy if Phase 2 starts within 14 days of the readout.</div></div></div>
+    <div class="tm"><span class="num">[ 4 ]</span><div><div class="tm-t">Revisions</div><div class="tm-d">Strategy includes 3 revision rounds. Extra rounds are billed hourly.</div></div></div>
+    <div class="tm"><span class="num">[ 5 ]</span><div><div class="tm-t">Hiring</div><div class="tm-d">If key hires aren’t in place by Feb 1, Build extends month to month at $14,000.</div></div></div>
+    <div class="tm"><span class="num">[ 6 ]</span><div><div class="tm-t">On-site visits</div><div class="tm-d">Meals and visits at the 7 concepts are covered by Big Spoon.</div></div></div>
+    <div class="tm"><span class="num">[ 7 ]</span><div><div class="tm-t">Advisory</div><div class="tm-d">6-month minimum. Up to 8 hours a month; extra hours billed hourly.</div></div></div>
   </div>
   <div class="bleed" style="right: 0; width: 640px;">
     <img src="assets/art/korin-cranes-pines.jpg" alt="Ogata Kōrin, Cranes, Pines, and Bamboo" style="object-position: 30% 50%;">
