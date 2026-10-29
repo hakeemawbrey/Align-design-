@@ -4,7 +4,8 @@
 //
 // ═══════════════════════════════════════ API (copy-paste) ═══════════════════════════════════════
 //   import { drawBabyStar, drawNursery, drawAcademy, drawCrayonFrame, growUp, growUpCues, ageCaption, ageCaptionCues,
-//            drawMoonNurse, drawCloudCrib, drawHomeVideo, kidSign, pastel, NURSERY, ACADEMY, KIDS_FONTS } from '../../st10kids.js'
+//            drawMoonNurse, drawCloudCrib, drawHomeVideo, kidSign, pastel, NURSERY, ACADEMY, KIDS_FONTS,
+//            crayonPow, crayonPowCues, speedLines, dustPuffs, confetti, drawStoryPage, drawRibbon } from '../../st10kids.js'
 //
 //   In build():  try { await Promise.all(KIDS_FONTS.map(f => document.fonts.load(f))) } catch (_) {}
 //   Everything here is canvas + pure f(t): call it every frame, in any order. Nothing touches `document` at module top
@@ -73,6 +74,20 @@
 //   Returns { x, y, size, top, k } (k 0 → 1 = how grown).   growUpCues(at, { key }) → a rising harp sweep, a whoosh, the
 //   flash (boom + bell) and a landing pop.
 //
+// ── extras (added with S10 E01; shared, use freely)
+// crayonPow(ctx, t, { text = 'BONK!', at, dur = 0.9, x, y, color = '#ffd36e', size = 72, rot = −0.12 })   a comic
+//   onomatopoeia in crayon (Inter 800, crayon-textured, ink outline) with a jagged crayon burst behind it. Pops in at
+//   `at` with an overshoot, jiggles, pops out by at + dur.   crayonPowCues(at, { kind = 'bonk' | 'pop' | 'yay' }) → sound.
+// speedLines(ctx, t, { x, y, dir = −1, len = 220, n = 6, color = '#fffaf0', alpha = 1, spread = 120 })   flickering
+//   pixel speed streaks trailing behind a runner at (x, y); dir −1 = the lines trail to the left (it runs right).
+// dustPuffs(ctx, t, { x, y, at, dir = −1, color = '#fff2f6' })   three little pixel puffs kicked up at `at` (0.6 s).
+// confetti(ctx, t, { x, y, at, dur = 2, n = 40, spread = 420, colors })   a crayon-colour confetti pop from (x, y).
+// drawStoryPage(ctx, t, { x = 540, y = 820, w = 860, h = 620, open = 1, title = null, art = (ctx, w, h, t) => {} })
+//   an open picture book (two cream pages, a spine, a ribbon); art() draws inside it in local coords (0…w, 0…h, origin
+//   top-left of the spread, already clipped). open 0…1 swings it open. title: a crayon line at the top of the page.
+//   Use it for the myth / real-sky beats ("story time").
+// drawRibbon(ctx, x, y, s, t, { place = 1, color = '#ffd36e' })   a pixel prize rosette ("1ST"); place 1…3.
+//
 // KIDS_FONTS: the font strings to preload (Inter 800, Space Mono 700, EB Garamond italic).
 // ═══════════════════════════════════════════════════════════════════════════════════════════════════
 import { clamp, lerp, prog, ease, rng, hexToRgb } from '../src/lib.js'
@@ -85,6 +100,7 @@ const INTER = "Inter, 'Helvetica Neue', Arial, sans-serif"
 const TAU = Math.PI * 2
 const R = Math.round
 const r3 = v => +v.toFixed(3)
+const inBack = x => { const c1 = 1.70158; return (c1 + 1) * x * x * x - c1 * x * x }
 
 export const KIDS_FONTS = ["800 64px Inter", "800 112px Inter", "700 26px 'Space Mono'", "italic 500 140px 'EB Garamond'"]
 
@@ -790,7 +806,7 @@ function crayonText(ctx, text, x, y, size, col, frame, { align = 'center', font 
 }
 export function ageCaption(ctx, t, { text = 'AGE 3 ½', at = 0, out = null, x = 540, y = 1660, color = '#ffd36e', size = 64, rot = -0.04, sub = null } = {}) {
   if (t < at || (out != null && t > out + 0.25)) return null
-  const kIn = easeOutBack(prog(t, at, at + 0.35), 2.2), kOut = out == null ? 1 : 1 - ease.inBack(prog(t, out, out + 0.25))
+  const kIn = easeOutBack(prog(t, at, at + 0.35), 2.2), kOut = out == null ? 1 : 1 - inBack(prog(t, out, out + 0.25))
   const k = kIn * kOut
   if (k <= 0.01) return null
   const frame = Math.floor(t * 8) % 3
@@ -902,4 +918,87 @@ export function growUpCues(at, { gain = 0.03 } = {}) {
     ['boom', r3(at + 0.7), gain * 5], ['bell', r3(at + 0.7), 1567.98, gain * 1.2, 2.2, 0], ['glitter', r3(at + 0.7), r3(at + 1.4)],
     ['pop', r3(at + 0.88), 783.99, gain * 1.2, 0],
   ]
+}
+
+// ─────────────────────────────────────────────── extras
+export function crayonPow(ctx, t, { text = 'BONK!', at, dur = 0.9, x, y, color = '#ffd36e', size = 72, rot = -0.12 } = {}) {
+  if (t < at || t > at + dur) return
+  const d = t - at, k = easeOutBack(prog(d, 0, 0.18), 3) * (1 - inBack(prog(d, dur - 0.18, dur)))
+  if (k <= 0.01) return
+  const frame = Math.floor(t * 8) % 3, r = rng(text.length * 17 + frame)
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot + Math.sin(d * 30) * 0.03 * (1 - prog(d, 0, 0.4))); ctx.scale(k, k)
+  ctx.font = `800 ${size}px ${INTER}`
+  const w = ctx.measureText(text).width
+  // jagged burst
+  ctx.beginPath()
+  const N = 14
+  for (let i = 0; i <= N; i++) { const a = i * TAU / N, rr = (i % 2 ? 0.62 : 0.86) + (r() - 0.5) * 0.1; const px_ = Math.cos(a) * (w * 0.62 + size * 0.3) * rr, py = Math.sin(a) * size * 1.15 * rr; i ? ctx.lineTo(px_, py) : ctx.moveTo(px_, py) }
+  ctx.closePath(); ctx.fillStyle = '#fffaf0'; ctx.fill(); ctx.lineWidth = 6; ctx.strokeStyle = INK; ctx.stroke()
+  crayonText(ctx, text, 0, 0, size, color, frame, { outline: INK })
+  ctx.restore()
+}
+export function crayonPowCues(at, { kind = 'bonk', gain = 0.04 } = {}) {
+  if (kind === 'bonk') return [['boom', r3(at), gain * 4], ['pop', r3(at), 330, gain * 1.2, 0], ['pop', r3(at + 0.07), 220, gain, 0], ['tick', r3(at), gain * 1.5]]
+  if (kind === 'yay') return [['pop', r3(at), 1046.5, gain, -0.2], ['pop', r3(at + 0.08), 1318.51, gain, 0], ['pop', r3(at + 0.16), 1567.98, gain, 0.2], ['glitter', r3(at), r3(at + 0.6)]]
+  return [['pop', r3(at), 880, gain, 0], ['tick', r3(at), gain]]
+}
+export function speedLines(ctx, t, { x, y, dir = -1, len = 220, n = 6, color = '#fffaf0', alpha = 1, spread = 120 } = {}) {
+  if (alpha <= 0) return
+  ctx.save()
+  const f = Math.floor(t * 15)
+  for (let i = 0; i < n; i++) {
+    const r = rng(i * 31 + f * 7), oy = (i / (n - 1) - 0.5) * spread + (r() - 0.5) * 14
+    const l = len * (0.5 + r() * 0.5), ox = 40 + r() * 40
+    ctx.globalAlpha = alpha * (0.45 + r() * 0.5)
+    rect(ctx, dir < 0 ? x - ox - l : x + ox, y + oy, l, 6, color)
+  }
+  ctx.restore()
+}
+export function dustPuffs(ctx, t, { x, y, at, dir = -1, color = '#fff2f6' } = {}) {
+  const d = t - at
+  if (d < 0 || d > 0.6) return
+  ctx.save()
+  for (let i = 0; i < 3; i++) {
+    const p = d / 0.6, r_ = 14 + i * 6 + p * 20
+    ctx.globalAlpha = 1 - p
+    blob(ctx, x + dir * (20 + i * 30) * (0.4 + p), y - i * 8 - p * 20, r_, 6, color)
+  }
+  ctx.restore()
+}
+export function confetti(ctx, t, { x, y, at, dur = 2, n = 40, spread = 420, colors = CRAYONS } = {}) {
+  const d = t - at
+  if (d < 0 || d > dur) return
+  ctx.save()
+  for (let i = 0; i < n; i++) {
+    const r = rng(i * 13 + 5), a = -Math.PI / 2 + (r() - 0.5) * 2.2, v = spread * (0.5 + r() * 0.8)
+    const px_ = x + Math.cos(a) * v * Math.min(1, d * 2.2) + Math.sin(d * 5 + i) * 10
+    const py = y + Math.sin(a) * v * Math.min(1, d * 2.2) + d * d * 180
+    ctx.globalAlpha = 1 - prog(d, dur * 0.7, dur)
+    const s = 8 + (i % 3) * 3, flipK = Math.abs(Math.sin(d * 9 + i))
+    rect(ctx, px_, py, s, Math.max(2, s * flipK), colors[i % colors.length])
+  }
+  ctx.restore()
+}
+export function drawStoryPage(ctx, t, { x = 540, y = 820, w = 860, h = 620, open = 1, title = null, art = null } = {}) {
+  if (open <= 0.01) return
+  const k = easeOutBack(clamp(open), 1.4)
+  ctx.save(); ctx.translate(x, y); ctx.scale(clamp(k, 0, 1.2), 1)
+  rect(ctx, -w / 2 - 22, -h / 2 - 10, w + 44, h + 40, '#7a3a5a'); rect(ctx, -w / 2 - 22, h / 2 + 18, w + 44, 12, '#5a2a44')
+  rect(ctx, -w / 2 - 8, -h / 2 - 8, w + 16, h + 16, INK)
+  rect(ctx, -w / 2, -h / 2, w, h, '#fff6e2'); rect(ctx, -6, -h / 2, 12, h, '#e8d6b4'); rect(ctx, -2, -h / 2, 4, h, '#cdb894')
+  for (let j = 0; j < 4; j++) rect(ctx, -w / 2 + 6 + j * 2, -h / 2 + 4, 2, h - 8, 'rgba(180,150,110,0.25)')
+  rect(ctx, w * 0.28, -h / 2 - 8, 26, h * 0.18, '#ff6f8a'); rect(ctx, w * 0.28, -h / 2 - 8 + h * 0.18, 13, 14, '#ff6f8a'); rect(ctx, w * 0.28 + 13, -h / 2 - 8 + h * 0.18, 13, 8, '#ff6f8a')
+  if (art) { ctx.save(); ctx.beginPath(); ctx.rect(-w / 2, -h / 2, w, h); ctx.clip(); ctx.translate(-w / 2, -h / 2); art(ctx, w, h, t); ctx.restore() }
+  if (title) crayonText(ctx, title, 0, -h / 2 + 50, 40, '#ff6f8a', Math.floor(t * 8) % 3, { outline: null })
+  ctx.restore()
+}
+export function drawRibbon(ctx, x, y, s, t, { place = 1, color = null } = {}) {
+  const col = color || ['#ffd36e', '#d6dbe6', '#e0a070'][clamp(place - 1, 0, 2)]
+  const c = Math.max(2, R(s / 14)), sw = Math.sin(t * 3 + x) * 0.08
+  ctx.save(); ctx.translate(x, y); ctx.rotate(sw)
+  for (const sd of [-1, 1]) { rect(ctx, sd * s * 0.12 - s * 0.12, s * 0.2, s * 0.24, s * 0.7, sd < 0 ? '#3f7cf0' : '#2f5fd0'); rect(ctx, sd * s * 0.12 - s * 0.12, s * 0.84, s * 0.24, c * 2, INK) }
+  blob(ctx, 0, 0, s * 0.42 + c, c, INK); blob(ctx, 0, 0, s * 0.42, c, mixHex(col, '#ffffff', 0.25)); blob(ctx, 0, 0, s * 0.3, c, col)
+  ctx.font = `800 ${R(s * 0.26)}px ${INTER}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = INK
+  ctx.fillText(['1ST', '2ND', '3RD'][clamp(place - 1, 0, 2)], 0, c * 0.5)
+  ctx.restore()
 }
