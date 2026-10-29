@@ -16,7 +16,7 @@ import { drawScorpioHome, drawPinkSock, SCORPIO } from '../../st9scorpiohome.js'
 import { makeDay, star, tag, pop01 } from '../../st9lskit.js'
 
 const DUR = 22
-const T = { hookOut: 2.6, ff: 2.6, l1: 3.0, flip: 2.9, punch: 5.2, l2: 5.4, drawer: 7.8, l3: 8.0, ghost: 8.6, wear: 10.8, l4: 11.0, fact: 11.2, rhyme: 14.0, wink: 14.3, last: 14.6 }
+const T = { hookOut: 2.6, ff: 2.6, l1: 3.0, flip: 2.9, punch: 5.2, l2: 5.4, drawer: 7.8, l3: 8.0, ghost: 8.6, wear: 10.8, l4: 11.0, fact: 10.4, rhyme: 14.0, wink: 14.3, last: 14.6 }
 const SCO = tag('scorpio')
 const LINES = [
   { t: T.l1, speaker: SCO, text: 'today’s vibe: *black.*', color: SCORPIO.redHi },
@@ -113,7 +113,7 @@ const EP = makeDay({
     { at: T.drawer + 0.2, out: T.wear - 0.1, time: '7:14 AM', text: 'the *secret*' },
   ],
   lines: LINES, box: { close: 14.4 },
-  fact: { at: T.fact, dur: 2.4, label: '★ ASTROLOGY SAYS', text: 'Scorpio is ruled by Mars in traditional astrology, and by Pluto in modern astrology.', color: SCORPIO.red },
+  fact: { at: T.fact, dur: 3.6, label: '★ ASTROLOGY SAYS', text: 'Scorpio is ruled by Mars traditionally, and by Pluto in modern astrology.', color: SCORPIO.red },
   ghost: { room: 'bedroom', at: T.ghost, x: 800, y: 1000, from: 'left' },
   battery: 0.95,
   pitch: { [SCO]: 523.25 },

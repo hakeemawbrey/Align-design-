@@ -16,7 +16,7 @@ import { drawLibraScale, LIBRA } from '../../st9librahome.js'
 import { makeDay, star, tag, pop01 } from '../../st9lskit.js'
 
 const DUR = 25
-const T = { hookOut: 2.8, ff1: 3.0, l1: 3.2, gem: 6.8, l2: 7.0, ghost: 8.0, aqu: 9.2, l3: 9.4, ff2: 12.2, taurusGo: 11.6, l4: 12.6, back: 14.6, drop: 14.9, l5: 15.2, fact: 14.8, rhyme: 17.4, last: 17.6 }
+const T = { hookOut: 2.8, ff1: 3.0, l1: 3.2, gem: 6.8, l2: 7.0, ghost: 8.0, aqu: 9.2, l3: 9.4, ff2: 12.2, taurusGo: 11.6, l4: 12.6, back: 14.6, drop: 14.9, l5: 15.2, fact: 13.2, rhyme: 17.4, last: 17.6 }
 const LIB = tag('libra'), GEM = tag('gemini'), AQU = tag('aquarius'), TAU = tag('taurus')
 const LINES = [
   { t: T.l1, speaker: LIB, text: 'thai is cozy. sushi is fresh. tacos are *tacos.*', color: LIBRA.rose },
@@ -121,7 +121,7 @@ const EP = makeDay({
     { at: T.ff2 + 0.2, out: T.back - 0.1, time: '6:45 PM', text: 'Taurus has *left*' },
   ],
   lines: LINES, box: { close: 17.4 },
-  fact: { at: T.fact, dur: 2.3, label: '★ REAL SKY', text: 'Libra is the only zodiac sign that’s an object, the scales, not a creature.', color: LIBRA.rose },
+  fact: { at: T.fact, dur: 3.9, label: '★ REAL SKY', text: 'Libra is the only zodiac sign that’s an object, the scales, not a creature.', color: LIBRA.rose },
   ghost: { room: 'street', at: T.ghost, x: 115, y: 1150, from: 'below' },
   battery: 0.32,
   pitch: { [LIB]: 880, [GEM]: 1046.5, [AQU]: 740, [TAU]: 440 },

@@ -121,7 +121,7 @@ const EP = makeDay({
     { at: T.text + 0.2, out: T.level + 0.2, time: '3:21 AM', text: 'sending the *hard* texts' },
   ],
   lines: LINES, box: { close: 23.4 },
-  fact: { at: T.claws + 0.2, dur: 3.2, label: '★ REAL SKY', text: 'The Greeks saw Libra’s stars as the Scorpion’s claws. Two star names still mean “claw.”', color: '#ff8a7a' },
+  fact: { at: T.claws + 0.2, dur: 5.0, label: '★ REAL SKY', text: 'The Greeks saw Libra’s stars as the Scorpion’s claws. Two star names still mean “claw.”', color: '#ff8a7a' },
   ghost: { room: 'window', at: T.ghost, x: 94, y: 760, from: 'left' },
   battery: 0.12,
   pitch: { [LIB]: 880, [NARR]: 784 },

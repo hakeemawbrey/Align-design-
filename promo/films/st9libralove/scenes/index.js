@@ -17,7 +17,7 @@ import { drawLibraHome, drawLibraScale, LIBRA } from '../../st9librahome.js'
 import { makeDay, star, tag, pop01 } from '../../st9lskit.js'
 
 const DUR = 30
-const T = { hookOut: 2.8, flash: 3.0, l1: 3.4, pick: 5.0, aries: 6.6, l2: 7.0, grab: 7.4, table: 8.6, l3: 9.4, food: 10.6, punch: 12.4, l4: 12.6, wide: 14.6, l5: 14.8, ghost: 15.6, fact: 17.0, ariesP: 17.8, l6: 18.0, laugh: 19.6, rhyme: 20.4, last: 22.2 }
+const T = { hookOut: 2.8, flash: 3.0, l1: 3.4, pick: 5.0, aries: 6.6, l2: 7.0, grab: 7.4, table: 8.6, l3: 9.4, food: 10.6, punch: 12.4, l4: 12.6, wide: 14.6, l5: 14.8, ghost: 15.6, fact: 16.6, ariesP: 17.8, l6: 18.0, laugh: 19.6, rhyme: 20.4, last: 22.2 }
 const LIB = tag('libra'), ARI = tag('aries')
 const LINES = [
   { t: T.l1, speaker: LIB, text: 'tonight i’m *decisive.* mint scarf. done.', color: LIBRA.mint },
@@ -148,7 +148,7 @@ const EP = makeDay({
     { at: T.table + 0.15, out: T.l3 + 2.4, time: '8:03 PM', text: 'the *date*' },
   ],
   lines: LINES, box: { close: 22.0 },
-  fact: { at: T.fact, dur: 2.8, label: '★ REAL SKY', text: 'Libra season starts near the September equinox, when day and night are about equal.', color: LIBRA.mint },
+  fact: { at: T.fact, dur: 4.8, label: '★ REAL SKY', text: 'Libra season starts near the September equinox, when day and night are about equal.', color: LIBRA.mint },
   ghost: { room: 'taco', at: T.ghost, x: 790, y: 700, from: 'right' },
   battery: 0.45,
   pitch: { [LIB]: 880, [ARI]: 660 },

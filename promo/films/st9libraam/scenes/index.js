@@ -69,7 +69,7 @@ const EP = makeDay({
     { at: 11.6, out: 14.4, time: '8:58 AM', text: 'still day *three*' },
   ],
   lines: LINES, box: { close: 15.0 },
-  fact: { at: 11.6, dur: 2.5, label: '★ ASTROLOGY SAYS', text: 'Libra is ruled by Venus, named for the Roman goddess of love.', color: COL },
+  fact: { at: 10.6, dur: 3.6, label: '★ ASTROLOGY SAYS', text: 'Libra is ruled by Venus, named for the Roman goddess of love.', color: COL },
   ghost: { room: 'bedroom', at: 4.4, x: 820, y: 1060, from: 'right' },
   battery: 0.92,
   pitch: { [LIB]: 880 },

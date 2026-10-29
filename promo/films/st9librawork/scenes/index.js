@@ -147,7 +147,7 @@ const EP = makeDay({
     { at: T.back + 0.2, out: T.l5 - 0.2, time: '10:31 AM', text: 'peace *achieved*' },
   ],
   lines: LINES, box: { close: 17.6 },
-  fact: { at: T.back + 0.3, dur: 3.0, label: '★ ASTROLOGY SAYS', text: 'Libra is the natural ruler of the 7th house: partnerships.', color: LIBRA.color },
+  fact: { at: T.back + 0.3, dur: 4.0, label: '★ ASTROLOGY SAYS', text: 'Libra is the natural ruler of the 7th house: partnerships.', color: LIBRA.color },
   ghost: { room: 'office', at: 9.6, x: 540, y: 892, from: 'below' },
   battery: 0.72,
   pitch: { [LIB]: 880, [ARI]: 660, [TAU]: 440 },
