@@ -143,7 +143,7 @@ const shotAt = t => { let s = SHOTS[0]; for (const sh of SHOTS) if (t >= sh.at) 
 const nextAt = sh => { const i = SHOTS.indexOf(sh); return i < SHOTS.length - 1 ? SHOTS[i + 1].at : STORY_END }
 /** the shot's camera ([zoom, cx, cy] + a slow push-in) times any punch-ins */
 function applyCam(x, t, sh) {
-  let [z, cx, cy] = sh.cam
+  let [z, cx, cy] = typeof sh.cam === 'function' ? sh.cam(t) : sh.cam
   z *= 1 + (sh.push ?? 0.04) * prog(t, sh.at, nextAt(sh))
   for (const p of PUNCH) {
     const k = ease.outCubic(prog(t, p.at, p.at + 0.16)) * (1 - ease.inOutQuad(prog(t, p.at + p.dur - 0.3, p.at + p.dur)))
@@ -158,6 +158,7 @@ const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
 
 async function build(stage) {
   try { await Promise.all([...DAY_FONTS, "800 112px Inter", "italic 500 176px 'EB Garamond'", "700 52px 'Space Mono'", "700 22px 'Space Mono'"].map(f => document.fonts.load(f))) } catch (_) { /* fonts optional */ }
+  if (typeof PRELOAD === 'function') await PRELOAD()
   const root = fill(stage, { background: '#05040c' })
   const cv = layerCanvas(root), x = cv.getContext('2d')
   const hook = hookPOV(root, { text: HOOK.text, at: 0, out: HOOK.out, top: HOOK.top ?? 262, size: HOOK.size ?? 92, accentSize: HOOK.accentSize ?? 132, accentColor: HOOK.color ?? GOLD })
