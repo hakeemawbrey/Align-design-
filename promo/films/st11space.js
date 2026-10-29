@@ -25,7 +25,8 @@
 //   The sign star (drawStarChar, sign colour + glyph from signStar(sign); pass color/glyph to override) in a pixel bubble
 //   helmet: glass tint, a stepped pixel rim, a curved visor glare top-left, a metal collar ring at the base, twin air
 //   tanks behind it and a little antenna with a blinking light. Every drawStarChar opt works (mood, look, hops, bob,
-//   seed, glow, alpha, pop…) and the helmet follows the hops. helmet: false = helmet off (tanks + collar stay).
+//   seed, glow, alpha, pop…) and the helmet follows the hops. helmet: false = helmet off (tanks + collar go too).
+//   star: the drawer for the wearer (default drawStarChar; any fn with its signature, e.g. st5cast's drawTwin).
 //   Returns drawStarChar's { x, y, size, top } plus helmet: { x, y, r }.
 //
 // drawMissionControl(ctx, t, { mission = 'MISSION 01', screens = {}, cheer = 0, cheerAt = null, crew = true,
@@ -267,7 +268,7 @@ function pixelRing(ctx, cx, cy, R, c, col, a = 1, w = 1) {
 }
 
 export function drawSpaceSuit(ctx, x, y, size, t, opts = {}) {
-  const { sign = null, helmet = true, tank = helmet, glare = 1, antenna = true, ...rest } = opts
+  const { sign = null, helmet = true, tank = helmet, glare = 1, antenna = true, star = drawStarChar, ...rest } = opts
   const S0 = sign ? signStar(sign) : { color: STAR.sky, glyph: null }
   const color = rest.color ?? S0.color, glyph = rest.glyph !== undefined ? rest.glyph : S0.glyph
   const alpha = rest.alpha ?? 1, pop = rest.pop ?? 1, seed = rest.seed ?? 1
@@ -296,7 +297,7 @@ export function drawSpaceSuit(ctx, x, y, size, t, opts = {}) {
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(hx, hy, R, 0, TAU); ctx.fill()
   }
   ctx.restore()
-  const r = drawStarChar(ctx, x, y, size, t, { ...rest, color, glyph })
+  const r = star(ctx, x, y, size, t, { ...rest, color, glyph })
   ctx.save(); ctx.globalAlpha *= alpha
   // collar ring at the base
   if (helmet || tank) {
