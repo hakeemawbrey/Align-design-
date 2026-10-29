@@ -46,7 +46,10 @@ export function camAt(t, shots) {
 }
 export function camApply(x, cam) {
   if (!cam || (cam.s === 1 && cam.x === 540 && cam.y === 960)) return
-  x.translate(540, 960); x.scale(cam.s, cam.s); x.translate(-cam.x, -cam.y)
+  // keep the frame inside the 1080×1920 room (the canvas is never cleared, so nothing may show past its edges)
+  const s = Math.max(1, cam.s), hw = 540 / s, hh = 960 / s
+  const cx = clamp(cam.x, hw, 1080 - hw, ), cy = clamp(cam.y, hh, 1920 - hh)
+  x.translate(540, 960); x.scale(s, s); x.translate(-cx, -cy)
 }
 
 export function sparkles(x, t, cx, cy, t0, n, R, seed, cols = [GOLD, BONE, PINK, CYAN]) {
