@@ -99,7 +99,7 @@ const HEART_C = { H: '#ff4f86', W: '#ffd1de' }
 const NOTE8 = ['..nn', '..nn', '..n.', '..n.', 'nnn.', 'nnn.']
 const NOTE_C = { n: '#ffd23f' }
 
-export const GHOST = { at: T.ghost, x: EX.reserved - 2700 + 540 - 92, y: 1120, where: 'peeking round the left side of the empty RESERVED plinth (gallery stop 04)' }
+export const GHOST = { at: T.ghost, x: EX.reserved - 2700 + 540 - 118, y: 1120, where: 'peeking round the left side of the empty RESERVED plinth (gallery stop 04)' }
 export const COMET_AT = T.comet
 
 function canState(t) {
@@ -256,7 +256,7 @@ async function build(stage) {
       portrait(S(EX.reserved - 420), 860, 170, 130, () => drawComet(x, S(EX.reserved - 420) + 20, 860, 90, t, { sunDir: [1, 0.3], aura: false, exPin: false, mood: 'happy', tail: 160 }), 'The Comeback, oil on canvas')
       portrait(S(EX.reserved + 420), 860, 170, 130, () => drawSatellite(x, S(EX.reserved + 420), 860, 150, t, { aura: false, exPin: false }), 'Still Watching, mixed media')
       spotlight(S(EX.reserved), 0.7)
-      drawGhostCameo(x, t, { x: GHOST.x, y: GHOST.y, at: GHOST.at, dur: 1.5, from: 'left', cell: 4 })
+      drawGhostCameo(x, t, { x: GHOST.x, y: GHOST.y, at: GHOST.at, dur: 1.5, from: 'right', cell: 4 })
       plinth(S(EX.reserved), null, { caseOn: false })
       plaque(S(EX.reserved), 1180, 'RESERVED', 'a new acquisition', 'LATER THIS SEASON')
     }
