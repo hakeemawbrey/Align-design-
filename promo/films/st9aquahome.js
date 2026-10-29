@@ -136,7 +136,7 @@ const BOARD_LINES = [
   ['THEORY #47', 'cereal = soup?', 'pigeons: govt?', 'uranus tilt: 98°'],
   ['THEORY #48', 'meetings → memos', 'stand-ups: sit?', 'ASK TEAM FIRST'],
   ['THEORY #49', 'leo + me =', 'sun + sideways', 'planet ✓'],
-  ['THEORY #50', '12 chats ≠', '1 close friend', 'call maya ✓'],
+  ['THEORY #50', '12 chats ≠', '1 close friend', 'call gemini ✓'],
   ['THEORY #51', 'overwhelm ≠', 'distance', 'headphones off'],
 ]
 function whiteboard(x, t, X, Y, w, h, ep, lines) {
@@ -196,7 +196,7 @@ function hangingPhones(x, X, Y) {
   x.strokeStyle = '#ff6f9f'; x.lineWidth = 9; x.beginPath(); x.arc(X, Y + 40, 34, Math.PI * 1.05, Math.PI * 1.95); x.stroke(); x.restore()
   block(x, X - 48, Y + 34, 22, 40, A.pink, { o: 4 }); block(x, X + 26, Y + 34, 22, 40, A.pink, { o: 4 })
 }
-const FRIDGE_NOTES = ['buy oat milk', 'ask team 1st', 'leo: thurs ♡', 'call maya', 'you are ok']
+const FRIDGE_NOTES = ['buy oat milk', 'ask team 1st', 'leo: thurs ♡', 'call gemini', 'you are ok']
 function kitchen(x, t, o) {
   const W_ = AQUA_ROOMS.kitchen.window
   shell(x, t, W_, FLOOR, o)
