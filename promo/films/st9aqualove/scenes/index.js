@@ -211,7 +211,7 @@ async function build(stage) {
   const cv = layerCanvas(root), x = cv.getContext('2d')
   const hook = hookPOV(root, { text: HOOK.text, at: 0, out: HOOK.out, top: HOOK.top ?? 262, size: HOOK.size ?? 92, accentSize: HOOK.accentSize ?? 132, accentColor: HOOK.color ?? GOLD })
   const stamps = STAMPS.map(s => stampCaption(root, s))
-  const box = LINES.length ? dialogueBox(root, { lines: LINES, y: BOX.y ?? 1440, width: 960, height: BOX.h ?? 270, open: BOX.open, close: BOX.close, cps: CPS }) : null
+  const boxes = (Array.isArray(BOX) ? BOX : [{ ...BOX, from: 0, to: LINES.length }]).filter(b => b.to > b.from).map(b => dialogueBox(root, { lines: LINES.slice(b.from, b.to), y: b.y ?? 1440, width: 960, height: b.h ?? 270, open: b.open, close: b.close, cps: CPS }))
   const last = popText(root, LAST.text, { top: LAST.top ?? 300, size: LAST.size ?? 112, accentSize: LAST.accentSize ?? 176, at: LAST.at, gap: 0.08, accentColor: LAST.color ?? GOLD, wobble: true, late: 1, lateAt: LAST.at + 0.4, fit: true })
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
   return {
@@ -236,7 +236,7 @@ async function build(stage) {
       for (const f of FACTS) factChip(x, t, f)
       hook.update(t)
       for (const s of stamps) s.update(t)
-      if (box) box.update(t)
+      for (const b of boxes) b.update(t)
       last.update(t, outK(t, [STORY_END - 0.35, STORY_END]))
       drawGrain(gx, t)
     },
@@ -255,7 +255,7 @@ export const CUES = [
   ...CLOCK.filter(c => c.dur > 0.2 && c.at > 0).flatMap(c => clockCues(c.at, c.dur)),
   ...STAMPS.flatMap(s => stampCues(s.at)),
   ...FACTS.flatMap(f => factChipCues(f.at, { dur: f.dur })),
-  ...(LINES.length ? [['pop', r3(BOX.open ?? LINES[0].t - 0.22), 739.99, 0.035, 0], ...talkCues(LINES, { cps: CPS, pitch: PITCH })] : []),
+  ...(Array.isArray(BOX) ? BOX : [BOX]).map(b => ['pop', r3(b.open ?? LINES[0].t - 0.22), 739.99, 0.035, 0]), ...(LINES.length ? talkCues(LINES, { cps: CPS, pitch: PITCH }) : []),
   ...wordPops(LAST.at, 3, 0.08, 2), ['pop', r3(LAST.at + 0.4), 1174.66, 0.05, 0], ['bell', r3(LAST.at + 0.42), 1567.98, 0.025, 1.2, 0],
   ['tick', r3(GHOST.at + 0.05), 0.015],
   ...EXTRA_CUES,
