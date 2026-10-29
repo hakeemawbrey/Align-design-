@@ -3,7 +3,7 @@
 //
 // ═══════════════════════════════════════ API (copy-paste) ═══════════════════════════════════════
 //   import { drawRecFrame, drawClock, stampCaption, stampCues, hookPOV, hookPOVCues, daySky, factChip, factChipCues,
-//            phoneScreen, phoneCues, clockCues, DAY_FONTS, daySign } from '../../st9day.js'
+//            phoneScreen, phoneCues, clockCues, speechBubble, speechCues, DAY_FONTS, daySign } from '../../st9day.js'
 //
 //   In build():  try { await Promise.all(DAY_FONTS.map(f => document.fonts.load(f))) } catch (_) {}
 //   Canvas helpers (drawRecFrame, drawClock, daySky, factChip, phoneScreen) are pure f(t): call them every frame, any
@@ -64,6 +64,20 @@
 //                is highlighted and the bars bounce.
 //   title = the app bar title (chat: the group name). pop = 0…1 scale for pop-ins, rot = tilt in radians.
 //   phoneCues(lines, { app }) → a ping per incoming line (chat / notes typing ticks / alarm beeps).
+//
+// speechBubble(ctx, t, { text, at, out, x, y, name = null, color = BONE, side = 0, size = 46, w = 620 })
+//   A pixel speech bubble whose tail points DOWN at (x, y) (put y at the speaker's top). It springs in at `at` and pops
+//   out at `out`. name = a small name tag on its top-left edge in `color` (e.g. '♈ ARIES'), so it's always clear who
+//   talks. '*word*' = gold Garamond italic accent. side: −1…1 shifts the body left/right of the tail. Wraps to w.
+//   speechCues(at, { pitch = 880 }) → a soft blip + pop.
+//
+// clockTrack(t, segs) → the drawClock opts for the active segment of a day's clock: segs = [{ at, dur, from, to }] in
+//   order; before the first it shows its `from`. Spread it: drawClock(ctx, t, { ...clockTrack(t, SEGS), sign: 'aries' }).
+//
+// vlogCam(t, { cuts = [], punches = [] }) → { dx, flash, zoom, cx, cy, apply(ctx) }   the handheld vlog camera:
+//   cuts: jump-cut times (a 0.2 s whip from the right + a white blink); punches: [{ at, out, zoom = 1.25, x, y }] punch-ins
+//   that snap in (0.12 s) about (x, y) (that point stays put) and back out at `out`. A tiny handheld drift always runs. apply(ctx) = translate/scale
+//   for the room + cast layer (wrap it in save/restore); draw the chrome after, outside it. vlogCutCues(cuts) → whooshes.
 //
 // daySign(id) → { id, name, NAME, glyph, color, el, article }  (accepts 'sag', 'cap', 'aqua' too).
 // DAY_FONTS → the font specs these helpers use (load them in build()).
@@ -294,7 +308,8 @@ function fitBox(box, ws, size, accentSize, maxW, floor = 0.6) {
   let widest = 0, cur = 0
   for (const n of box.childNodes) {
     if (n.nodeName === 'BR') { widest = Math.max(widest, cur); cur = 0; continue }
-    cur += n.offsetWidth + 0.24 * (parseFloat(n.style.fontSize) || size)
+    if (n.nodeType !== 1) { cur += size * 0.26; continue }                  // the space between words
+    cur += n.offsetWidth + 0.04 * (parseFloat(n.style.fontSize) || size)
   }
   widest = Math.max(widest, cur)
   if (!(widest > maxW)) return 1
@@ -660,4 +675,90 @@ export function phoneCues(lines, { app = 'chat', gain = 0.035 } = {}) {
     if (app === 'alarm') break
   }
   return out
+}
+
+// ─────────────────────────────────────────────── speech bubbles
+export function speechBubble(ctx, t, { text, at, out, x, y, name = null, color = BONE, side = 0, size = 46, w = 620 } = {}) {
+  const k = popEnv(t, at, out ?? 1e9)
+  if (k <= 0.001) return
+  ctx.save()
+  ctx.font = `700 ${size}px ${INTER}`
+  const toks = tokens(text)
+  const plain = toks.filter(z => !z.br).map(z => z.w).join(' ')
+  const lines = wrap(ctx, plain, w - 56)
+  const lh = Math.round(size * 1.22)
+  const widths = lines.map(l => measureMixed(ctx, l, toks, size))
+  const bw = Math.min(w, Math.max(...widths) + 56), bh = lines.length * lh + 34
+  const bx = clamp(x - bw / 2 + side * bw * 0.35, 40, W - 40 - bw), by = y - 26 - bh
+  ctx.translate(x, y); ctx.scale(k, k); ctx.translate(-x, -y)
+  ctx.globalAlpha = clamp(k * 2)
+  // tail
+  ctx.fillStyle = INK
+  ctx.beginPath(); ctx.moveTo(x - 16, by + bh - 6); ctx.lineTo(x + 16, by + bh - 6); ctx.lineTo(x + 2, y + 2); ctx.closePath(); ctx.fill()
+  pixPanel(ctx, bx, by, bw, bh, { fill: '#fbf4e6', border: INK, P: 6 })
+  ctx.fillStyle = '#fbf4e6'
+  ctx.beginPath(); ctx.moveTo(x - 9, by + bh - 7); ctx.lineTo(x + 9, by + bh - 7); ctx.lineTo(x + 2, y - 8); ctx.closePath(); ctx.fill()
+  // text (accent words in Garamond)
+  ctx.textBaseline = 'middle'; ctx.textAlign = 'left'
+  const acc = new Set(toks.filter(z => z.accent).map(z => z.w))
+  lines.forEach((l, i) => {
+    let tx = bx + (bw - widths[i]) / 2
+    const ty = by + 17 + i * lh + lh / 2
+    for (const word of l.split(' ')) {
+      const isA = acc.has(word)
+      ctx.font = isA ? `italic 500 ${Math.round(size * 1.3)}px ${SERIF}` : `700 ${size}px ${INTER}`
+      ctx.fillStyle = isA ? '#c4572f' : '#1b1236'
+      ctx.fillText(word, tx, ty + (isA ? -2 : 0)); tx += ctx.measureText(word + ' ').width
+    }
+  })
+  if (name) {
+    ctx.font = `700 22px ${MONO}`; ctx.letterSpacing = '2px'
+    const nw = ctx.measureText(name).width + name.length * 2 + 22
+    ctx.fillStyle = INK; ctx.fillRect(bx + 14, by - 18, nw, 32)
+    ctx.fillStyle = color; ctx.fillText(name, bx + 25, by - 1)
+    ctx.letterSpacing = '0px'
+  }
+  ctx.restore()
+}
+function measureMixed(ctx, line, toks, size) {
+  const acc = new Set(toks.filter(z => z.accent).map(z => z.w))
+  let w = 0
+  const words = line.split(' ')
+  words.forEach((word, i) => {
+    ctx.font = acc.has(word) ? `italic 500 ${Math.round(size * 1.3)}px ${SERIF}` : `700 ${size}px ${INTER}`
+    w += ctx.measureText(i < words.length - 1 ? word + ' ' : word).width
+  })
+  ctx.font = `700 ${size}px ${INTER}`
+  return w
+}
+export function speechCues(at, { pitch = 880, gain = 0.03 } = {}) {
+  return [['pop', r3(at), pitch, gain, 0], ['pop', r3(at + 0.06), pitch * 1.5, gain * 0.7, 0]]
+}
+
+// ─────────────────────────────────────────────── the day's clock track, the vlog camera
+export function clockTrack(t, segs) {
+  let cur = segs[0]
+  for (const s of segs) if (t >= s.at) cur = s
+  return { from: cur.from, to: cur.to ?? cur.from, at: cur.at, dur: cur.dur ?? 0.8 }
+}
+export function vlogCam(t, { cuts = [], punches = [] } = {}) {
+  let dx = 0, flash = 0
+  for (const c of cuts) {
+    const p = (t - c) / 0.2
+    if (p >= 0 && p < 1) { dx = (1 - ease.outCubic(p)) * 90; flash = Math.max(flash, 1 - p) }
+  }
+  let zoom = 1.03, cx = 540, cy = 960
+  for (const pu of punches) {
+    const a = prog(t, pu.at, pu.at + 0.12), b = 1 - prog(t, pu.out, pu.out + 0.12)
+    const k = Math.min(a, b)
+    if (k > 0) { zoom = lerp(1.03, pu.zoom ?? 1.25, ease.outCubic(k)); cx = pu.x ?? 540; cy = pu.y ?? 960 }
+  }
+  const hx = (noise1(t * 0.7, 11) - 0.5) * 10, hy = (noise1(t * 0.6, 23) - 0.5) * 8
+  return {
+    dx, flash, zoom, cx, cy,
+    apply(ctx) { ctx.translate(dx + hx + cx, hy + cy); ctx.scale(zoom, zoom); ctx.translate(-cx, -cy) },
+  }
+}
+export function vlogCutCues(cuts, { gain = 0.05 } = {}) {
+  return cuts.flatMap(c => [['whoosh', r3(c - 0.06), 0.3, gain], ['tick', r3(c), gain * 1.4]])
 }
