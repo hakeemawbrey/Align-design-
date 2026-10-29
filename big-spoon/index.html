@@ -18,6 +18,7 @@
     --muted: #6B7680;
     --green: #269731;
     --green-deep: #185E20;
+    --green-bright: #3DB54A;
     --amber: #E0A526;
     --red: #DD2400;
     --night: #0A0A0A;
@@ -105,6 +106,21 @@
   .concept .name { font-size: 64px; font-weight: 400; letter-spacing: -0.035em; line-height: 1; padding: 40px 34px 0; }
   .concept .desc { margin-top: auto; padding: 0 34px 32px; font-size: 24px; font-weight: 300; color: var(--ink-2); line-height: 1.35; }
 
+
+  /* Concept cards with art */
+  .concept .pic { position: relative; flex: 1; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .concept .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .concept .chip { position: absolute; left: 12px; top: 12px; font-family: "Geist Mono", monospace; font-size: 16px; letter-spacing: .08em; color: #fff; background: rgba(0,0,0,.6); padding: 5px 9px; }
+  .concept .txt { padding: 18px 24px 20px; }
+  .concept .txt .name { font-size: 44px; font-weight: 400; letter-spacing: -0.035em; line-height: 1; padding: 0; }
+  .concept .txt .desc { margin-top: 10px; padding: 0; font-size: 21px; font-weight: 300; color: var(--ink-2); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Stat cards (About me) */
+  .card.stat { background: var(--mist); padding: 44px; justify-content: space-between; }
+  .card.stat .sn { font-size: 110px; font-weight: 300; letter-spacing: -0.03em; line-height: 1; }
+  .card.stat.black { background: var(--ink); }
+  .card.stat .sl { font-size: 30px; font-weight: 300; line-height: 1.35; color: var(--ink-2); }
+
   /* Timeline */
   .tl { position: absolute; left: var(--pad); width: 1660px; top: 690px; height: 2px; }
   .tl .base { position: absolute; left: 0; top: 0; height: 2px; background: var(--ink); }
@@ -140,17 +156,17 @@
 <div class="deck"><div class="stage" id="stage">
 
 <!-- 1 · Cover -->
-<section class="slide">
-  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 1000px; display:flex; flex-direction:column; justify-content:center;">
+<section class="slide dark">
+  <div class="art" style="position:absolute; right:0; top:0; width:1180px; height:100%;">
+    <img src="assets/art/hulsdonck-still-life.jpg" alt="Jacob van Hulsdonck, Still Life with Meat, Fish, Vegetables, and Fruit" style="object-position: 40% 50%;">
+  </div>
+  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 640px; display:flex; flex-direction:column; justify-content:center;">
     <div class="tag">Proposal</div>
-    <h1 style="margin-top: 48px;">Big Spoon<br>Concepts</h1>
-    <p style="margin-top: 44px; font-size: 54px; font-weight: 300; letter-spacing: -0.025em; line-height: 1.1;">Marketing Build: <span class="g">Scope &amp; Audit</span></p>
-    <p class="lede" style="margin-top: 64px; font-size: 28px;">Prepared by Hakeem, Expressive Space · October 2026</p>
+    <h1 style="margin-top: 48px; font-size: 136px;">Big Spoon<br>Concepts</h1>
+    <p style="margin-top: 44px; font-size: 46px; font-weight: 300; letter-spacing: -0.025em; line-height: 1.12;">Marketing Build:<br><span class="g">Scope &amp; Audit</span></p>
+    <p class="lede" style="margin-top: 64px; font-size: 24px; color: #BFC7CD;">Prepared by Hakeem, Expressive Space<br>October 2026</p>
   </div>
-  <div class="art" style="position:absolute; right:0; top:0; width:700px; height:100%;">
-    <img src="assets/art/heda-still-life-oysters.jpg" alt="Willem Claesz Heda, Still Life with Oysters, a Silver Tazza, and Glassware" style="object-position: 58% 50%;">
-  </div>
-  <div class="cap" style="position:absolute; right: 36px; top: 30px; color: rgba(255,255,255,.78);">[ Heda, Still Life with Oysters, 1635 ]</div>
+  <div class="cap" style="position:absolute; right: 36px; bottom: 30px; color: rgba(255,255,255,.8);">[ Hulsdonck, Still Life with Meat, Fish, Vegetables, and Fruit, c. 1615–20 ]</div>
 </section>
 
 <!-- 2 · Situation -->
@@ -165,7 +181,7 @@
     <div class="card black"><div class="hd"><span>Trusted reporting</span><span class="num">[ 3 ]</span></div><div class="bd" style="display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big">0</div><div>Reports Big Spoon can trust</div></div></div>
   </div>
   <p class="lede" style="position:absolute; left: var(--pad); top: 850px; width: 1200px;">Measurement is the bare minimum. It was never set up.</p>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 02 ]</span></div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
 <!-- 3 · Goal -->
@@ -180,33 +196,62 @@
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 22px 0;"><span class="num">[ 2 ]</span><span class="t">Results measured every week</span></div>
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 22px 0;"><span class="num">[ 3 ]</span><span class="t">No agency dependency</span></div>
   </div>
-  <div class="frame" style="right: var(--pad); top: 200px; width: 700px; height: 507px;">
-    <div class="art"><img src="assets/art/hiroshige-katsuo.jpg" alt="Utagawa Hiroshige, Katsuo Fish with Cherry Buds"></div>
-    <div class="cap">[ Hiroshige, Katsuo Fish with Cherry Buds, 1830s ]</div>
+  <div class="art" style="position:absolute; right: 0; top: 0; width: 700px; height: 100%;">
+    <img src="assets/art/goshun-cherry-blossoms.jpg" alt="Matsumura Goshun, Cherry Blossoms" style="object-position: 50% 15%;">
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 03 ]</span></div>
+  <div class="cap" style="position:absolute; right: 36px; bottom: 30px; color: var(--ink-2);">[ Matsumura Goshun, Cherry Blossoms, late 18th century ]</div>
+  <div class="foot" style="right: 830px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
 <!-- 4 · Concepts -->
 <section class="slide mist">
   <div class="head">
     <div class="tag">The concepts</div>
-    <h2>Seven concepts. <span class="g">One team.</span></h2>
+    <h2>Seven concepts. <span class="g">Seven stories.</span></h2>
   </div>
-  <div class="cards" style="top: 330px; bottom: 120px; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1fr;">
-    <div class="card concept"><div class="hd"><span class="num">[ 1 ]</span></div><div class="name">AYA</div><div class="desc">Japanese fine dining</div></div>
-    <div class="card concept"><div class="hd"><span class="num">[ 2 ]</span></div><div class="name">KA</div><div class="desc">Sushi &amp; bar</div></div>
-    <div class="card concept"><div class="hd"><span class="num">[ 3 ]</span></div><div class="name">FatBao</div><div class="desc">Stuffed buns</div></div>
-    <div class="card concept"><div class="hd"><span class="num">[ 4 ]</span></div><div class="name">LTS</div><div class="desc">Little Taco Shop</div></div>
-    <div class="card concept"><div class="hd"><span class="num">[ 5 ]</span></div><div class="name">IKTO</div><div class="desc">“I Know The Owner.” Bar, vibes &amp; bites</div></div>
-    <div class="card concept"><div class="hd"><span class="num">[ 6 ]</span></div><div class="name">DiDi</div><div class="desc">Coffee + croffles</div></div>
-    <div class="card concept"><div class="hd"><span class="num">[ 7 ]</span></div><div class="name" style="font-size: 52px; line-height: 1.04;">Sandwich<br>Pho Reel</div><div class="desc">Pho &amp; banh mi</div></div>
-    <div class="card concept black"><div class="hd"><span class="num">Houston</span></div><div class="desc" style="font-size: 30px; line-height: 1.3; color: #fff;">One in-house marketing team for all seven.</div></div>
+  <div class="cards" style="top: 300px; bottom: 110px; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1fr; gap: 20px;">
+    <div class="card concept"><div class="pic"><img src="assets/art/goshun-cherry-blossoms.jpg" alt="Matsumura Goshun, Cherry Blossoms" style="object-position: 50% 22%;"><span class="chip">[ 1 ]</span></div><div class="txt"><div class="name">AYA</div><div class="desc">Japanese fine dining</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/hiroshige-suzuki-kinmedai.jpg" alt="Utagawa Hiroshige, Suzuki and Kinmedai Fish" style="object-position: 62% 60%;"><span class="chip">[ 2 ]</span></div><div class="txt"><div class="name">KA</div><div class="desc">Sushi &amp; bar</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/yun-shouping-lotuses.jpg" alt="Yun Shouping, Lotuses on a summer evening" style="object-position: 50% 62%;"><span class="chip">[ 3 ]</span></div><div class="txt"><div class="name">FatBao</div><div class="desc">Stuffed buns</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/posada-calavera-tortillas.jpg" alt="José Guadalupe Posada, A skeleton selling tortillas" style="object-position: 50% 32%;"><span class="chip">[ 4 ]</span></div><div class="txt"><div class="name">LTS</div><div class="desc">Little Taco Shop</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/lautrec-irish-american-bar.jpg" alt="Henri de Toulouse-Lautrec, The Irish and American Bar" style="object-position: 55% 40%;"><span class="chip">[ 5 ]</span></div><div class="txt"><div class="name">IKTO</div><div class="desc">“I Know The Owner.” Bar, vibes &amp; bites</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/bonnet-woman-taking-coffee.jpg" alt="Louis-Marin Bonnet, The Woman Taking Coffee" style="object-position: 45% 45%;"><span class="chip">[ 6 ]</span></div><div class="txt"><div class="name">DiDi</div><div class="desc">Coffee + croffles</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/pepper-plant-florilegium.jpg" alt="Pepper Plant, from a Florilegium, 1608" style="object-position: 50% 70%;"><span class="chip">[ 7 ]</span></div><div class="txt"><div class="name" style="font-size: 36px;">Sandwich Pho Reel</div><div class="desc">Pho &amp; banh mi</div></div></div>
+    <div class="card concept black" style="justify-content: space-between; padding: 30px;"><span class="num">Houston</span><div style="font-size: 34px; font-weight: 300; line-height: 1.25; letter-spacing: -0.015em;">One in-house team for all seven.</div></div>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 04 ]</span></div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 5 · Approach -->
+<!-- 5 · What I bring -->
+<section class="slide dark">
+  <div class="art" style="position:absolute; inset: 0;">
+    <img src="assets/art/heda-still-life-oysters.jpg" alt="Willem Claesz Heda, Still Life with Oysters, a Silver Tazza, and Glassware" style="object-position: 60% 50%;">
+  </div>
+  <div style="position:absolute; inset: 0; background: rgba(10,10,10,.2);"></div>
+  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 1180px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="tag">What I bring</div>
+    <h2 style="margin-top: 50px; font-size: 128px;">I make brands<br><span style="color: var(--green-bright);">emotional.</span></h2>
+    <p class="lede" style="margin-top: 56px; width: 900px; color: #E2E2E2;">I help brands tell their story, with passion and emotion. Seven concepts, seven stories worth feeling.</p>
+  </div>
+  <div class="cap" style="position:absolute; right: 36px; bottom: 30px; color: rgba(255,255,255,.8);">[ Heda, Still Life with Oysters, a Silver Tazza, and Glassware, 1635 ]</div>
+</section>
+
+<!-- 6 · Credentials -->
+<section class="slide">
+  <div class="head">
+    <div class="tag">About me</div>
+    <h2>Hakeem, ENFP: <span class="g">the Campaigner.</span></h2>
+  </div>
+  <div class="cards" style="top: 320px; bottom: 120px; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;">
+    <div class="card stat"><div class="sn g">50M+</div><div class="sl">Views across social media</div></div>
+    <div class="card stat"><div class="sn g">$3M + $6M</div><div class="sl">Early team through a pre-seed and seed raise</div></div>
+    <div class="card stat"><div class="sn g">Google</div><div class="sl">Built communities for Google’s Flutter framework in Silicon Valley</div></div>
+    <div class="card stat black"><div class="sn" style="color: var(--green-bright);">350K</div><div class="sl" style="color: #E2E2E2;">Votes as Texas-wide campaign director</div></div>
+  </div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
+</section>
+
+<!-- 7 · Approach -->
 <section class="slide">
   <div class="head">
     <div class="tag">Approach</div>
@@ -236,28 +281,28 @@
   <!-- below the line -->
   <div class="ph" style="left: 312px; top: 770px;"><span class="num">[ 1 ]</span><div class="t">Strategy &amp; 12-month plan</div><div class="d">Nov 23–Dec 18 · 4 weeks</div></div>
   <div class="ph" style="left: 1430px; top: 770px; width: 360px;"><span class="num">[ 3 ]</span><div class="t">Advisory</div><div class="d">April onward</div></div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 05 ]</span></div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 6 · Phase 0 overview -->
-<section class="slide">
-  <div class="head" style="right: auto; width: 920px;">
-    <div class="tag"><span class="g">Phase 0</span> · Audit</div>
-    <h2>The audit sets the baseline every result is <span class="g">measured against.</span></h2>
+<!-- 8 · Phase 0 overview -->
+<section class="slide dark">
+  <div class="head" style="right: auto; width: 860px;">
+    <div class="tag"><span style="color: var(--green-bright);">Phase 0</span> · Audit</div>
+    <h2>The audit sets the baseline every result is <span style="color: var(--green-bright);">measured against.</span></h2>
   </div>
-  <div style="position:absolute; left: var(--pad); top: 640px; width: 900px; display:grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line);">
-    <div style="padding: 30px 30px 0 0;"><div class="big">3</div><div class="lede" style="font-size: 24px; margin-top: 14px;">Weeks, Nov 2–20</div></div>
-    <div style="padding: 30px 30px 0; border-left: 1px solid var(--line);"><div class="big">7</div><div class="lede" style="font-size: 24px; margin-top: 14px;">Concepts</div></div>
-    <div style="padding: 30px 0 0 30px; border-left: 1px solid var(--line);"><div class="big">8</div><div class="lede" style="font-size: 24px; margin-top: 14px;">Areas per concept</div></div>
+  <div style="position:absolute; left: var(--pad); top: 660px; width: 860px; display:grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2A2A2A;">
+    <div style="padding: 30px 30px 0 0;"><div class="big">3</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Weeks, Nov 2–20</div></div>
+    <div style="padding: 30px 30px 0; border-left: 1px solid #2A2A2A;"><div class="big">7</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Concepts</div></div>
+    <div style="padding: 30px 0 0 30px; border-left: 1px solid #2A2A2A;"><div class="big">8</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Areas per concept</div></div>
   </div>
-  <div class="frame" style="right: var(--pad); top: 200px; width: 700px; height: 506px;">
+  <div class="frame" style="right: var(--pad); top: 200px; width: 760px; height: 548px; border-color: #fff;">
     <div class="art"><img src="assets/art/hiroshige-suzuki-kinmedai.jpg" alt="Utagawa Hiroshige, Suzuki and Kinmedai Fish"></div>
-    <div class="cap">[ Hiroshige, Suzuki and Kinmedai Fish, 1840s ]</div>
+    <div class="cap" style="color: #9AA3AA;">[ Hiroshige, Suzuki and Kinmedai Fish, 1840s ]</div>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 06 ]</span></div>
+  <div class="foot" style="color: #8A949C;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 7 · What we audit -->
+<!-- 9 · What we audit -->
 <section class="slide mist">
   <div class="head">
     <div class="tag"><span class="g">Phase 0</span> · What we audit</div>
@@ -273,10 +318,10 @@
     <div class="card"><div class="hd" style="font-size: 27px;"><span>Past agency work</span><span class="num">[ 7 ]</span></div><div class="bd" style="font-size: 28px;">What was made, and who owns the assets</div></div>
     <div class="card"><div class="hd" style="font-size: 27px;"><span>People &amp; process</span><span class="num">[ 8 ]</span></div><div class="bd" style="font-size: 28px;">Who does what, and how</div></div>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 07 ]</span></div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 8 · Sample scorecard -->
+<!-- 10 · Sample scorecard -->
 <section class="slide">
   <div class="head">
     <div class="tag"><span class="g">Phase 0</span> · Scorecard</div>
@@ -293,10 +338,10 @@
     <span><span class="sd y"></span>Needs work</span>
     <span><span class="sd r"></span>Missing or broken</span>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 08 ]</span></div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 9 · Audit deliverables -->
+<!-- 11 · Audit deliverables -->
 <section class="slide">
   <div class="head" style="right: auto; width: 640px;">
     <div class="tag"><span class="g">Phase 0</span> · Deliverables</div>
@@ -309,10 +354,14 @@
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num">[ 4 ]</span><div><div class="t">Top 10 quick wins</div><div class="d" style="margin-top: 8px;">What to fix first</div></div></div>
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num" style="color: var(--green);">[ 5 ]</span><div><div class="t">90-minute readout</div><div class="d" style="margin-top: 8px;">With ownership</div></div></div>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 09 ]</span></div>
+  <div class="frame" style="left: var(--pad); top: 440px; width: 380px; height: 500px;">
+    <div class="art"><img src="assets/art/pepper-plant-florilegium.jpg" alt="Pepper Plant, from a Florilegium, 1608" style="object-position: 50% 45%;"></div>
+    <div class="cap">[ Pepper Plant, Florilegium, 1608 ]</div>
+  </div>
+  <div class="foot" style="left: 860px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 10 · Phase 1 strategy -->
+<!-- 12 · Phase 1 strategy -->
 <section class="slide">
   <div class="head" style="right: auto; width: 1180px;">
     <div class="tag">Phase 1 · Strategy · Nov 23–Dec 18</div>
@@ -324,13 +373,13 @@
     <div class="card"><div class="hd"><span>Team</span><span class="num">[ C ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Org design<br>Recruiting</div></div>
   </div>
   <div class="frame" style="right: var(--pad); top: 110px; width: 380px; height: 790px;">
-    <div class="art"><img src="assets/art/jakuchu-banana-leaves.jpg" alt="Itō Jakuchū, Banana Leaves" style="object-position: 50% 40%;"></div>
-    <div class="cap">[ Itō Jakuchū, Banana Leaves, 1790s ]</div>
+    <div class="art"><img src="assets/art/yun-shouping-lotuses.jpg" alt="Yun Shouping, Lotuses on a summer evening" style="object-position: 50% 60%;"></div>
+    <div class="cap">[ Yun Shouping, Lotuses, 18th c. ]</div>
   </div>
-  <div class="foot" style="right: 640px;"><span>Big Spoon Concepts · Marketing Build</span><span>[ 10 ]</span></div>
+  <div class="foot" style="right: 640px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 11 · Phase 2 build & launch -->
+<!-- 13 · Phase 2 build & launch -->
 <section class="slide">
   <div class="head" style="right: auto; width: 1000px;">
     <div class="tag">Phase 2 · Build &amp; launch · Jan 4–Mar 31</div>
@@ -343,12 +392,12 @@
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 14px 0;"><span class="num">[ 4 ]</span><span class="d" style="font-size: 26px;">Launch series, campaigns and first events</span></div>
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 14px 0;"><span class="num">[ 5 ]</span><span class="d" style="font-size: 26px;">Monthly experimentation lab</span></div>
   </div>
-  <div class="frame" style="right: var(--pad); top: 250px; width: 640px; height: 420px;">
-    <div class="art"><img src="assets/art/jung-cafe-heinrichhof.jpg" alt="Moriz Jung, Café Heinrichhof" style="object-position: 50% 50%;"></div>
-    <div class="cap">[ Moriz Jung, Café Heinrichhof, 1912 ]</div>
+  <div class="frame" style="right: var(--pad); top: 110px; width: 600px; height: 790px;">
+    <div class="art"><img src="assets/art/bonnet-woman-taking-coffee.jpg" alt="Louis-Marin Bonnet, The Woman Taking Coffee" style="object-position: 50% 50%;"></div>
+    <div class="cap">[ Louis-Marin Bonnet, The Woman Taking Coffee, 1774 ]</div>
   </div>
   <!-- My role steps down -->
-  <div style="position:absolute; left: var(--pad); right: var(--pad); top: 790px;">
+  <div style="position:absolute; left: var(--pad); width: 940px; top: 760px;">
     <div class="cap" style="text-transform: uppercase; letter-spacing: .14em;">My role</div>
     <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 16px;">
       <div><div style="height: 10px; background: var(--ink);"></div><div style="display:flex; justify-content:space-between; margin-top: 16px;"><span style="font-size: 30px;">Lead</span><span class="num">JAN</span></div></div>
@@ -356,10 +405,10 @@
       <div><div style="height: 10px; background: var(--line);"><div style="height: 10px; width: 18%; background: var(--ink);"></div></div><div style="display:flex; justify-content:space-between; margin-top: 16px;"><span style="font-size: 30px;">Review only</span><span class="num">MAR</span></div></div>
     </div>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 11 ]</span></div>
+  <div class="foot" style="right: 790px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 12 · Metrics & reporting -->
+<!-- 14 · Metrics & reporting -->
 <section class="slide mist">
   <div class="head">
     <div class="tag">Metrics &amp; reporting</div>
@@ -376,10 +425,10 @@
     <span style="font-size: 32px; letter-spacing: -0.015em;">Monthly report</span>
     <span style="font-size: 32px; letter-spacing: -0.015em;">Quarterly review</span>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 12 ]</span></div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 13 · Phase 3 advisory -->
+<!-- 15 · Phase 3 advisory -->
 <section class="slide">
   <div class="frame" style="left: var(--pad); top: 140px; width: 600px; height: 736px;">
     <div class="art"><img src="assets/art/posada-calavera-tortillas.jpg" alt="José Guadalupe Posada, A skeleton selling tortillas" style="object-position: 50% 40%;"></div>
@@ -395,10 +444,10 @@
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 3 ]</span><span class="t">Campaign review</span></div>
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 4 ]</span><span class="t">Up to 8 hours a month</span></div>
   </div>
-  <div class="foot" style="left: 900px;"><span>Big Spoon Concepts · Marketing Build</span><span>[ 13 ]</span></div>
+  <div class="foot" style="left: 900px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 14 · Investment -->
+<!-- 16 · Investment -->
 <section class="slide">
   <div class="head">
     <div class="tag">Investment</div>
@@ -416,10 +465,10 @@
     <div><div style="font-size: 64px; font-weight: 300; letter-spacing: -0.035em; line-height: 1.05;">$17,500–<br>35,000/mo</div><div style="font-size: 24px; font-weight: 300; color: #E2E2E2; margin-top: 22px; line-height: 1.38;">Typical agency fee for 7 concepts. No end date.</div></div>
   </div>
   <p class="cap" style="position:absolute; left: var(--pad); top: 945px; width: 1300px; font-size: 18px; line-height: 1.6;">Ad spend, production, events, tools and salaries are paid by Big Spoon directly. No markup.</p>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 14 ]</span></div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 15 · Next steps -->
+<!-- 17 · Next steps -->
 <section class="slide">
   <div class="head" style="right: auto; width: 960px;">
     <div class="tag">Next steps</div>
@@ -431,29 +480,31 @@
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num" style="color: var(--green);">[ 3 ]</span><span class="t">Kickoff, Monday Nov 2</span></div>
   </div>
   <p class="lede" style="position:absolute; left: var(--pad); top: 880px; font-size: 26px;">Hakeem · Expressive Space · expressivespace.co</p>
-  <div class="frame" style="right: var(--pad); top: 200px; width: 700px; height: 546px;">
-    <div class="art"><img src="assets/art/flegel-still-life.jpg" alt="Georg Flegel, Still Life"></div>
-    <div class="cap">[ Georg Flegel, Still Life, ca. 1625–30 ]</div>
+  <div class="frame" style="right: var(--pad); top: 200px; width: 680px; height: 498px;">
+    <div class="art"><img src="assets/art/lautrec-irish-american-bar.jpg" alt="Henri de Toulouse-Lautrec, The Irish and American Bar, Rue Royale"></div>
+    <div class="cap">[ Toulouse-Lautrec, The Irish and American Bar, 1896 ]</div>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span>[ 15 ]</span></div>
+  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
-<!-- 16 · Image credits -->
+<!-- 18 · Image credits -->
 <section class="slide">
   <div class="head">
     <div class="tag">Image credits</div>
     <h2 style="font-size: 64px;">Every image is <span class="g">public domain.</span></h2>
   </div>
-  <div class="rows" style="left: var(--pad); right: var(--pad); top: 320px; font-size: 23px;">
-    <div class="row" style="grid-template-columns: 330px 1fr 470px; padding: 16px 0;"><span>Willem Claesz Heda</span><span style="font-weight:300;"><i>Still Life with Oysters, a Silver Tazza, and Glassware</i>, 1635</span><span class="cap">The Met · 2005.331.4 · Public Domain (CC0)</span></div>
-    <div class="row" style="grid-template-columns: 330px 1fr 470px; padding: 16px 0;"><span>Utagawa Hiroshige</span><span style="font-weight:300;"><i>Katsuo Fish with Cherry Buds</i>, from <i>Uozukushi</i>, 1830s</span><span class="cap">The Met · JP3594 · Public Domain (CC0)</span></div>
-    <div class="row" style="grid-template-columns: 330px 1fr 470px; padding: 16px 0;"><span>Utagawa Hiroshige</span><span style="font-weight:300;"><i>Suzuki and Kinmedai Fish</i>, from <i>Uozukushi</i>, 1840s</span><span class="cap">The Met · JP3604 · Public Domain (CC0)</span></div>
-    <div class="row" style="grid-template-columns: 330px 1fr 470px; padding: 16px 0;"><span>Itō Jakuchū</span><span style="font-weight:300;"><i>Banana Leaves</i>, 1790s</span><span class="cap">The Met · 2020.396.35 · Public Domain (CC0)</span></div>
-    <div class="row" style="grid-template-columns: 330px 1fr 470px; padding: 16px 0;"><span>Moriz Jung</span><span style="font-weight:300;"><i>Café Heinrichhof</i>, 1912</span><span class="cap">The Met · WW.486 · Public Domain (CC0)</span></div>
-    <div class="row" style="grid-template-columns: 330px 1fr 470px; padding: 16px 0;"><span>José Guadalupe Posada</span><span style="font-weight:300;"><i>A skeleton selling tortillas</i>, from <i>Una Calavera Chusca</i>, ca. 1880–1910</span><span class="cap">The Met · 60.678.53 · Public Domain (CC0)</span></div>
-    <div class="row" style="grid-template-columns: 330px 1fr 470px; padding: 16px 0;"><span>Georg Flegel</span><span style="font-weight:300;"><i>Still Life</i>, probably ca. 1625–30</span><span class="cap">The Met · 21.152.1 · Public Domain (CC0)</span></div>
+  <div class="rows" style="left: var(--pad); right: var(--pad); top: 290px; font-size: 22px;">
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Jacob van Hulsdonck</span><span style="font-weight:300;"><i>Still Life with Meat, Fish, Vegetables, and Fruit</i>, c. 1615–20</span><span class="cap">Cleveland Museum of Art · 2018.258 · CC0</span></div>
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Willem Claesz Heda</span><span style="font-weight:300;"><i>Still Life with Oysters, a Silver Tazza, and Glassware</i>, 1635</span><span class="cap">The Met · 2005.331.4 · CC0</span></div>
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Matsumura Goshun</span><span style="font-weight:300;"><i>Cherry Blossoms</i>, late 18th century</span><span class="cap">The Met · 1975.268.77 · CC0</span></div>
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Utagawa Hiroshige</span><span style="font-weight:300;"><i>Suzuki and Kinmedai Fish</i>, from <i>Uozukushi</i>, 1840s</span><span class="cap">The Met · JP3604 · CC0</span></div>
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Yun Shouping</span><span style="font-weight:300;"><i>Lotuses on a Summer Evening</i>, likely 18th century</span><span class="cap">The Met · 1982.470 · CC0</span></div>
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>José Guadalupe Posada</span><span style="font-weight:300;"><i>A skeleton selling tortillas</i>, <i>Una Calavera Chusca</i>, ca. 1880–1910</span><span class="cap">The Met · 60.678.53 · CC0</span></div>
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Henri de Toulouse-Lautrec</span><span style="font-weight:300;"><i>The Irish and American Bar, Rue Royale</i>, 1896</span><span class="cap">Cleveland Museum of Art · 1925.1201 · CC0</span></div>
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Louis-Marin Bonnet</span><span style="font-weight:300;"><i>The Woman Taking Coffee</i>, 1774</span><span class="cap">Cleveland Museum of Art · 2003.49 · CC0</span></div>
+    <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Unknown artist, France</span><span style="font-weight:300;"><i>Pepper Plant</i>, folio 46, from <i>Florilegium</i>, 1608</span><span class="cap">Cleveland Museum of Art · 1963.594.46.b · CC0</span></div>
   </div>
-  <p class="cap" style="position:absolute; left: var(--pad); top: 900px; width: 1660px; font-size: 17px; line-height: 1.6;">All images: The Metropolitan Museum of Art, New York, Open Access program, Public Domain (CC0). Shown with light desaturation; some cropped to the image area. Restaurant names are set in type.</p>
+  <p class="cap" style="position:absolute; left: var(--pad); top: 900px; width: 1660px; font-size: 17px; line-height: 1.6;">Open Access collections of The Metropolitan Museum of Art and The Cleveland Museum of Art, released as Public Domain (CC0). Shown with light desaturation; some cropped to the image area. Restaurant names are set in type.</p>
 </section>
 
 </div></div>
@@ -486,6 +537,7 @@
     const k = Math.min(innerWidth / 1920, innerHeight / 1080);
     stage.style.transform = `translate(-50%, -50%) scale(${k})`;
   };
+  slides.forEach((s, k) => s.querySelectorAll('.pg').forEach(e => e.textContent = `[ ${pad(k + 1)} ]`));
   addEventListener('keydown', e => {
     if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
     else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
