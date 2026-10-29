@@ -689,7 +689,7 @@ export function drawCluster(ctx, cx, cy, R, t, opts = {}) {
   if (alpha <= 0) return { stars }
   ctx.save(); ctx.globalAlpha *= alpha
   if (haze > 0) for (let k = 0; k < 7; k++) {
-    const [sx, sy] = stars[k % Math.max(1, bright)]
+    const [sx, sy] = bright > 0 ? stars[k % bright] : [cx + Math.cos(k * 2.4) * R * 0.35, cy + Math.sin(k * 2.4) * R * 0.3]
     glowAt(ctx, sx + Math.sin(k * 2.1) * R * 0.15, sy + Math.cos(k * 1.3) * R * 0.12, R * (0.45 + 0.1 * Math.sin(t * 0.6 + k)), hazeColor, 0.45 * haze)
   }
   stars.forEach(([sx, sy, px, isB], k) => {
