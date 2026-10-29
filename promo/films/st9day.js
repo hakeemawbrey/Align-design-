@@ -54,7 +54,7 @@
 // phoneScreen(ctx, t, { x, y, w = 380, h = 680, lines = [], app = 'chat', title = null, clock = '9:41', alpha = 1,
 //                        rot = 0, pop = 1, accent = '#5fa8ff', glow = 0.5, size = 26 })
 //   A pixel phone (x, y = its centre). app:
-//     'chat'     a group chat: lines [{ from, text, at }] arrive as bubbles at `at` (a typing "…" shows 0.5 s before);
+//     'chat'     a group chat: lines [{ from, text, at }] arrive as bubbles at `at` (a typing "…" shows 0.5 s before, or from `typing`);
 //                from 'me' = right, accent blue; anyone else = left, grey, with their name. Old bubbles scroll up.
 //     'notes'    a notes page: each line types on at `at` (lines starting '[ ]' / '[x]' draw as checkboxes).
 //     'alarm'    a ringing alarm: lines[0].text = the time ('6:00'), lines[1].text = the label; title = the snooze label.
@@ -540,7 +540,7 @@ function drawChat(ctx, t, { sx, sy, sw, sh, lines, title, accent, size }) {
       const ls = wrap(ctx, L.text, maxB - 2 * pad)
       const bw = Math.min(maxB, Math.max(...ls.map(l => ctx.measureText(l).width)) + 2 * pad)
       items.push({ me, from: L.from, ls, bw, bh: ls.length * lh + 2 * pad - 4, at, name: !me && (i === 0 || lines[i - 1].from !== L.from) })
-    } else if (t >= at - 0.5 && !me) { items.push({ typing: true, me, at: at - 0.5, bw: 80, bh: 44 }); break }
+    } else if (t >= (L.typing ?? at - 0.5) && !me) { items.push({ typing: true, me, at: L.typing ?? at - 0.5, bw: 80, bh: 44 }); break }
   }
   // stack from the bottom up, newest at the bottom
   let yy = sy + sh - 16
