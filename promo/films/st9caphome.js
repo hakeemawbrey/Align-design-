@@ -13,7 +13,7 @@
 //   friday = 'free' (glowing, empty) | 'mtg' (a scribbled "MTG?") | 'heart' (a pink ♥)), the Saturn alarm clock
 //   (clock = the time it shows) and the tie on its hook (it is on the hook only when Capricorn isn't wearing it).
 //   dark 0…1 night overlay (window kept clear) · lamp 0…1 the brass reading lamp / desk lamp glow · rain 0…1 streaks on
-//   the glass (E49).
+//   the glass (E49). noChair: true clears the armchair out of the window room (E49 needs the floor).
 // drawCapHomeFront(ctx, t, opts)  pieces in front of a character: the blanket ('bed'), the desk front + the monitor
 //   backs ('desk'), the armchair arm ('window').
 // drawCap(ctx, x, y, size, t, opts)  the green ♑ star with its pixel tie (opts.tie = true | 'loose' | false) plus every
@@ -225,9 +225,11 @@ function roomWindow(x, t, o) {
   rainOn(x, win, t, o.rain)
   readingLamp(x, 200, F + 10, o.lamp)
   // armchair (the seat: drawCapHomeFront draws the arm in front)
-  blk(x, 420, 1020, 300, 180, P.blanket, { o: 8, hi: P.blanket2 })
-  blk(x, 400, 1190, 340, 90, P.blanketLo, { o: 8 })
-  R(x, INK, 420, 1280, 16, 26); R(x, INK, 700, 1280, 16, 26)
+  if (!o.noChair) {
+    blk(x, 420, 1020, 300, 180, P.blanket, { o: 8, hi: P.blanket2 })
+    blk(x, 400, 1190, 340, 90, P.blanketLo, { o: 8 })
+    R(x, INK, 420, 1280, 16, 26); R(x, INK, 700, 1280, 16, 26)
+  }
   saturnClock(x, 900, 1210, 26, t, { time: o.clock })
   blk(x, 840, 1250, 120, 50, P.wood, { o: 6 })
   rug(x, 570, F + 80, 420)
@@ -265,7 +267,7 @@ export function drawCapHomeFront(x, t, o = {}) {
     blk(x, 180, 1170, 720, 36, P.woodHi, { o: 8 }); blk(x, 200, 1206, 680, DIO.floor - 1206 + 40, P.wood, { o: 0 })
     R(x, INK, 200, 1206, 680, 6); for (let k = 0; k < 3; k++) R(x, P.trim, 290 + k * 220, 1240, 40, 6)
   }
-  if (opts.room === 'window') blk(x, 690, 1110, 60, 120, P.blanket2, { o: 8 })
+  if (opts.room === 'window' && !opts.noChair) blk(x, 690, 1110, 60, 120, P.blanket2, { o: 8 })
   if (opts.dark > 0) {
     x.save(); x.globalAlpha = 0.78 * clamp(opts.dark); x.fillStyle = 'rgb(6,10,30)'
     if (opts.room === 'bed') x.fillRect(282, 1132, 356, 146)
