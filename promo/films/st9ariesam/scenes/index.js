@@ -117,14 +117,23 @@ function speedrunHUD(x, t, mins, a) {
   x.restore()
 }
 
+/** a soft dark wash behind the top type (the hook at frame 0, the last line at the end) */
+function topScrim(x, t) {
+  const k = Math.max(1 - prog(t, T.hookOut - 0.1, T.hookOut + 0.2), prog(t, T.last - 0.2, T.last + 0.2) * (1 - prog(t, ...T.lastOut)))
+  if (k <= 0) return
+  const g = x.createLinearGradient(0, 0, 0, 820)
+  g.addColorStop(0, `rgba(10,6,24,${0.7 * k})`); g.addColorStop(0.6, `rgba(10,6,24,${0.45 * k})`); g.addColorStop(1, 'rgba(10,6,24,0)')
+  x.fillStyle = g; x.fillRect(0, 0, 1080, 820)
+}
+
 async function build(stage) {
   try { await Promise.all([...DAY_FONTS, "800 110px Inter", "italic 500 170px 'EB Garamond'"].map(f => document.fonts.load(f))) } catch (_) { /* optional */ }
   const root = fill(stage, { background: '#05040c' })
   const cv = layerCanvas(root), x = cv.getContext('2d')
   const endC = layerCanvas(root, { opacity: '0' }), ex = endC.getContext('2d')
-  const hook = hookPOV(root, { text: 'POV: an Aries’ alarm | goes *off.*', out: T.hookOut, accentColor: '#ff8a5c' })
+  const hook = hookPOV(root, { text: 'POV: an Aries’ alarm | goes *off.*', out: T.hookOut, accentColor: GOLD })
   const stamps = STAMPS.map(s => stampCaption(root, { ...s, top: 1560 }))
-  const last = popText(root, 'Start fast. | *Eat* first.', { top: 290, size: 112, accentSize: 150, lineHeight: 1.2, at: T.last, gap: 0.09, accentColor: '#ff8a5c', wobble: true, late: 1, lateAt: T.last + 0.38, fit: true })
+  const last = popText(root, 'Start fast. | *Eat* first.', { top: 290, size: 112, accentSize: 150, lineHeight: 1.2, at: T.last, gap: 0.09, accentColor: GOLD, wobble: true, late: 1, lateAt: T.last + 0.38, fit: true })
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
 
   return {
@@ -181,6 +190,7 @@ async function build(stage) {
       x.restore()
 
       // the chrome
+      topScrim(x, t)
       const mins = drawClock(x, t, { ...ck, sign: 'aries' }).minutes
       speedrunHUD(x, t, mins, (t >= T.workout ? ease.outCubic(prog(t, T.workout, T.workout + 0.25)) : 0) * (1 - prog(t, T.back - 0.25, T.back)))
       for (const s of SAY) speechBubble(x, t, { ...s, x: s.at > T.kitchen && s.at < T.sit ? 520 : s.at > T.sit ? 780 : 800, y: s.at > T.sit ? 1050 : s.at > T.kitchen ? 980 : 940, name: NAME, color: AR.color })
