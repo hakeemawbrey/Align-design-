@@ -11,7 +11,8 @@
 //   numeral 'S9 E31'      sign 'libra'    ep 'am'|'work'|'love'|'crew'|'3am'    home  the sign's drawXHome
 //   duration (incl. the 4.4 s end card)   key 'F'
 //   hook   { text, out }                  last  { at, text, accentColor }        (last line: Inter 800 + Garamond accent)
-//   shots  [{ at, room, dark, hour, zoom: { x, y, s }, punch = true, home: {extra home opts} }]  hard cuts; each one
+//   shots  [{ at, room, dark, hour, zoom: { x, y, s }, punch = true, home: {extra home opts}, set }]  hard cuts; each one
+//          (set: (x, t, shot) => anchors paints a location that isn't the home)
 //          opens with a small camera punch (a pattern interrupt) and a whoosh.
 //   clock  [{ at, dur, from, to }]       segments; the clock fast-forwards at each (hidden from `clockOut` on)
 //   stamps [{ at, out, time, text }]      lines [{ t, speaker, text, color }]  box { y, height, open, close }
@@ -75,9 +76,10 @@ export function makeDay(spec) {
         const pk = sh.punch === false || sh.at === 0 ? 0 : 0.07 * (1 - ease.outCubic(prog(t, sh.at, sh.at + 0.35)))
         const s = (typeof z.s === 'function' ? z.s(t) : z.s) * (1 + pk)
         x.translate(540, 960); x.scale(s, s); x.translate(-z.x, -z.y)
-        const a = spec.home(x, t, {
+        const skyFn = (c) => { drawSky(c, t, SKY_H); daySky(c, t, { hour }) }
+        const a = sh.set ? sh.set(x, t, { ...sh, sky: skyFn, hour }) : spec.home(x, t, {
           room: sh.room, ep: spec.ep, dark: typeof sh.dark === 'function' ? sh.dark(t) : (sh.dark || 0), hour,
-          sky: (c) => { drawSky(c, t, SKY_H); daySky(c, t, { hour }) }, ...(sh.home || {}), ...(spec.homeOpts ? spec.homeOpts(t, sh) : {}),
+          sky: skyFn, ...(sh.home || {}), ...(spec.homeOpts ? spec.homeOpts(t, sh) : {}),
         })
         if (spec.ghost && sh.room === spec.ghost.room) drawGhostCameo(x, t, { cell: 3, dur: 1.5, ...spec.ghost })
         spec.draw?.(x, t, a, sh)
