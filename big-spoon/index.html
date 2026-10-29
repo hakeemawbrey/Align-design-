@@ -204,6 +204,23 @@
   .bkey span { display: flex; align-items: center; gap: 8px; }
   .bkey i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
 
+
+  /* Gantt timeline */
+  .gantt { position: absolute; left: var(--pad); right: var(--pad); top: 320px; display: grid; gap: 0; }
+  .gantt .gaxis, .gantt .grow { display: grid; grid-template-columns: 360px 1300px; align-items: center; }
+  .gantt .gaxis { height: 40px; }
+  .gantt .grow { height: 108px; border-top: 1px solid var(--line); }
+  .gantt .grow:last-child { border-bottom: 1px solid var(--line); }
+  .gantt .gtrack { position: relative; height: 100%; }
+  .gantt .gm { position: absolute; top: 8px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .1em; color: var(--muted); transform: translateX(-50%); }
+  .gantt .gm::after { content: ""; position: absolute; left: 50%; top: 32px; width: 1px; height: 432px; background: var(--line); }
+  .gantt .gl { display: flex; align-items: baseline; gap: 18px; }
+  .gantt .gt { font-size: 32px; letter-spacing: -0.02em; }
+  .gantt .gbar { position: absolute; top: 34px; height: 40px; background: var(--ink); z-index: 1; }
+  .gantt .gbar.p1 { background: var(--green); }
+  .gantt .gbar.p4 { background: transparent; border: 2px dashed var(--green); }
+  .gantt .gd { position: absolute; top: 42px; font-family: "Geist Mono", monospace; font-size: 17px; letter-spacing: .06em; color: var(--ink-2); text-transform: uppercase; white-space: nowrap; z-index: 1; }
+
   /* Timeline */
   .tl { position: absolute; left: var(--pad); width: 1660px; top: 620px; height: 2px; }
   .tl .base { position: absolute; left: 0; top: 0; height: 2px; background: var(--ink); }
@@ -367,33 +384,16 @@
     <div class="tag">Approach</div>
     <h2>Four phases. <span class="g">Six months to hand-off.</span></h2>
   </div>
-  <!-- Scale: 1300px = Nov 2 → May 1 (180 days, 7.22px/day); advisory continues dashed -->
-  <div class="tl">
-    <div class="base" style="width: 1300px;"></div>
-    <div class="open" style="left: 1300px; width: 360px;"></div>
-    <div class="seg" style="left: 0; width: 130px; background: var(--green);"></div>
-    <div class="seg" style="left: 152px; width: 180px; background: var(--ink);"></div>
-    <div class="seg" style="left: 455px; width: 838px; background: var(--ink);"></div>
-    <div class="dot on" style="left: 0;"></div>
-    <div class="dot" style="left: 152px;"></div>
-    <div class="dot" style="left: 455px;"></div>
-    <div class="dot" style="left: 1300px;"></div>
-    <div class="tick" style="left: 0;">NOV</div>
-    <div class="tick" style="left: 209px;">DEC</div>
-    <div class="tick" style="left: 433px;">JAN</div>
-    <div class="tick" style="left: 657px;">FEB</div>
-    <div class="tick" style="left: 859px;">MAR</div>
-    <div class="tick" style="left: 1083px;">APR</div>
-    <div class="tick" style="left: 1300px;">MAY</div>
+  <!-- Gantt: x = 6.132px per day from Nov 1; Jun 1 = 1300px -->
+  <div class="gantt">
+    <div class="gaxis"><div></div><div class="gtrack"><div class="gm" style="left:0px">NOV</div><div class="gm" style="left:184px">DEC</div><div class="gm" style="left:374px">JAN</div><div class="gm" style="left:564px">FEB</div><div class="gm" style="left:736px">MAR</div><div class="gm" style="left:926px">APR</div><div class="gm" style="left:1110px">MAY</div><div class="gm" style="left:1300px">JUN</div></div></div>
+    <div class="grow"><div class="gl"><span class="num">[ 1 ]</span><span class="gt">Audit</span></div><div class="gtrack"><div class="gbar p1" style="left:6px; width:111px"></div><div class="gd" style="left:131px">Nov 2–20 · 3 weeks</div></div></div>
+    <div class="grow"><div class="gl"><span class="num">[ 2 ]</span><span class="gt">Strategy</span></div><div class="gtrack"><div class="gbar p2" style="left:135px; width:153px"></div><div class="gd" style="left:302px">Nov 23–Dec 18 · 4 weeks</div></div></div>
+    <div class="grow"><div class="gl"><span class="num">[ 3 ]</span><span class="gt">Build &amp; launch</span></div><div class="gtrack"><div class="gbar p3" style="left:392px; width:712px"></div><div class="gd" style="left:410px; color:#fff;">Jan 4–Apr 30 · 17 weeks</div></div></div>
+    <div class="grow"><div class="gl"><span class="num">[ 4 ]</span><span class="gt">Advisory</span></div><div class="gtrack"><div class="gbar p4" style="left:1110px; width:190px"></div><div class="gd" style="right:204px; text-align:right;">May onward →</div></div></div>
   </div>
-  <!-- above the line -->
-  <div class="ph" style="left: var(--pad); top: 390px;"><span class="num" style="color: var(--green);">[ 1 ]</span><div class="t">Audit</div><div class="d">Nov 2–20 · 3 weeks</div></div>
-  <div class="ph" style="left: 585px; top: 390px;"><span class="num">[ 3 ]</span><div class="t">Build &amp; launch</div><div class="d">Jan 4–Apr 30 · 17 weeks</div></div>
-  <!-- below the line -->
-  <div class="ph" style="left: 282px; top: 700px;"><span class="num">[ 2 ]</span><div class="t">Strategy &amp; 12-month plan</div><div class="d">Nov 23–Dec 18 · 4 weeks</div></div>
-  <div class="ph" style="left: 1430px; top: 700px; width: 360px;"><span class="num">[ 4 ]</span><div class="t">Advisory</div><div class="d">May onward</div></div>
     <div class="bleed" style="left: 0; width: 1920px; top: 870px;">
-    <img src="assets/art/hokusai-rice-fields.jpg" alt="Katsushika Hokusai, Spring in the Rice Fields" style="object-position: 50% 62%;">
+    <img src="assets/art/hokusai-rice-fields.jpg" alt="Katsushika Hokusai, Spring in the Rice Fields" style="object-position: 50% 62%; transform: scale(1.08);">
     <span class="bcap">[ Hokusai, Spring in the Rice Fields, c. 1800 ]</span>
   </div>
   <div class="foot" style="display: none;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
