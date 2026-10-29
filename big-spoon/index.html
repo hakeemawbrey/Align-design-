@@ -127,6 +127,9 @@
   .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .tile.art .bcap { left: 14px; bottom: 14px; }
   .dark .rows.exp .row { border-color: #2E2E2E; }
+  .rsteps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: #CFCFCF; }
+  .rsteps i { font-style: normal; color: #6B7680; }
+  .rsteps .g2 { color: var(--green-bright); }
   .big { font-size: 96px; font-weight: 300; letter-spacing: -0.04em; line-height: 1; }
 
   /* Rows (lists with hairlines) */
@@ -491,14 +494,20 @@
     <div class="tag">Phase 2 · Strategy · Nov 23–Dec 18</div>
     <h2>A 12-month plan <span class="g">for 2027.</span></h2>
   </div>
-  <div class="cards" style="top: 340px; height: 400px; right: 690px; grid-template-columns: 1fr 1.25fr 1fr;">
-    <div class="card"><div class="hd"><span>Group</span><span class="num">[ A ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Brand framework<br>12-month calendar for 2027</div></div>
+  <div class="cards" style="top: 300px; height: 400px; right: 690px; grid-template-columns: 1fr 1.25fr 1fr;">
+    <div class="card"><div class="hd"><span>Group</span><span class="num">[ A ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Brand framework<br>12-month calendar<br>2027 marketing budget</div></div>
     <div class="card black"><div class="hd"><span>Per concept</span><span class="num">[ B ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Positioning<br>3 signature content series<br>Offline &amp; events plan<br>Paid media plan<br>KPI targets</div></div>
     <div class="card"><div class="hd"><span>Team</span><span class="num">[ C ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Org design<br>Recruiting</div></div>
   </div>
-  <div style="position:absolute; left: var(--pad); right: 690px; top: 766px; height: 140px; border: 1px solid var(--green); display:grid; grid-template-columns: 1fr auto; align-items: center; padding: 0 34px;">
-    <div><div style="font-size: 30px; letter-spacing: -0.015em;">Build the full metrics dashboard</div><div style="font-size: 22px; font-weight: 300; color: var(--ink-2); margin-top: 8px;">Business results, attribution and every channel, all 7 concepts in one view</div></div>
-    <span class="num" style="color: var(--green);">[ D ]</span>
+  <div style="position:absolute; left: var(--pad); right: 690px; top: 724px; height: 196px; display:grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+    <div style="border: 1px solid var(--green); padding: 24px 28px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between;"><span style="font-size: 28px; letter-spacing: -0.015em;">Full metrics dashboard</span><span class="num" style="color: var(--green);">[ D ]</span></div>
+      <div style="font-size: 20px; font-weight: 300; color: var(--ink-2); line-height: 1.35;">Business results, attribution and every channel, all 7 concepts in one view</div>
+    </div>
+    <div style="background: var(--ink); color: #fff; padding: 24px 28px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between;"><span style="font-size: 28px; letter-spacing: -0.015em;">Review &amp; revision</span><span class="num" style="color: #CFCFCF;">[ E ]</span></div>
+      <div class="rsteps"><span>Draft</span><i>→</i><span>Review with ownership</span><i>→</i><span>Revise</span><i>→</i><span class="g2">Sign-off</span></div>
+    </div>
   </div>
   <div class="bleed" style="right: 0; width: 560px;">
     <img src="assets/art/yun-shouping-peony.jpg" alt="Yun Shouping, Herbaceous Peony" style="object-position: 50% 60%;">
@@ -619,7 +628,7 @@
     </div>
     <div class="bt p2" style="grid-column: 6; grid-row: 1 / 3;">
       <div class="bp">Phase 2 · Strategy</div>
-      <div><div class="bt-t">12-month strategy</div><div class="bt-d">A custom voice per concept and 3 signature series each, plus events, paid media and KPI targets.</div></div>
+      <div><div class="bt-t">12-month strategy</div><div class="bt-d">A custom voice and 3 signature series per concept, the 2027 budget, and a review-and-revise round with ownership.</div></div>
     </div>
     <div class="bt p2" style="grid-column: 1 / 3; grid-row: 2;">
       <div class="bp">Phase 2 · Strategy</div>
