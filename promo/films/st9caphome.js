@@ -2,7 +2,7 @@
 // Owned by the Sag + Capricorn session. Same diorama box (DIO) and kit as st9saghome.js. Pure f(t), no `document` at top level.
 //
 // ═══════════════════════════════════════ API (copy-paste) ═══════════════════════════════════════
-//   import { CAP, CAP_EP, CAP_SPOTS, drawCapHome, drawCapHomeFront, drawCap, saturnClock, wallCalendar } from '../../st9caphome.js'
+//   import { CAP, CAP_EP, CAP_SPOTS, drawCapHome, drawCapHomeFront, drawCap, saturnClock, wallCalendar, drawSheet } from '../../st9caphome.js'
 //
 // drawCapHome(ctx, t, { room = 'bed', ep = 'am', dark = 0, lamp = 0, clock = '5:00', friday = 'free', rain = 0 })
 //   room  'bed' | 'kitchen' | 'desk' | 'window'. Each room's window is a hole (the sky you drew shows through); the window
@@ -48,11 +48,11 @@ const ROOMS = {
   window: { win: { x0: 300, y0: 620, x1: 980, y1: 1120 } },
 }
 export const CAP_SPOTS = {
-  bed: { x: 640, y: 1110, from: 'right', where: 'leaning out from behind the nightstand under the Saturn clock' },
-  kitchen: { x: 300, y: 1076, from: 'below', where: 'rising from behind the coffee machine on the counter' },
-  desk: { x: 400, y: 680, from: 'right', where: 'leaning out from behind the BOOKED TILL 2031 calendar' },
-  window: { x: 200, y: 1010, from: 'below', where: 'rising over the reading-lamp shade by the armchair' },
-  desk3am: { x: 890, y: 1068, from: 'left', where: 'leaning out from behind the right-hand monitor' },
+  bed: { x: 654, y: 1150, from: 'right', where: 'leaning out from behind the nightstand under the Saturn clock' },
+  kitchen: { x: 300, y: 928, from: 'below', where: 'rising from behind the coffee machine on the counter' },
+  desk: { x: 407, y: 760, from: 'left', where: 'leaning out from behind the BOOKED TILL 2031 calendar' },
+  window: { x: 200, y: 1014, from: 'below', where: 'rising over the reading-lamp shade by the armchair' },
+  desk3am: { x: 896, y: 1068, from: 'left', where: 'leaning out from behind the right-hand monitor' },
 }
 const epIdx = ep => Math.max(0, CAP_EP.indexOf(ep))
 
@@ -284,4 +284,59 @@ export function drawCap(x, cx, cy, size, t, o = {}) {
     drawBits(x, TIE, TIE_C, Math.round(r.x + (tie === 'loose' ? c * 2 : 0)), Math.round(r.y + size * 0.2), c, { rot: tie === 'loose' ? 0.35 : 0, alpha: rest.alpha ?? 1 })
   }
   return r
+}
+
+// ── the spreadsheet (Capricorn's love language): a pixel laptop-window with a green title bar, a formula bar and a
+// two-or-three-column grid whose rows type on.
+// drawSheet(ctx, t, { x, y, w = 620, h = 440, title = 'PLAN.xlsx', cols = ['A', 'B'], widths, rows = [], formula = null,
+//                     pop = 1, cps = 26, size = 30 })
+//   (x, y) = the window's centre. rows: [{ at, cells: ['5:00', 'COFFEE'], check, hl: { at, color }, color }]
+//   Each row types on from `at` (cell by cell); check: true adds a green ✓ when it's typed (false = a red ✗ box);
+//   hl highlights the row's fill from hl.at (a sweeping marker). formula: a string for the "fx" bar (typed by the caller).
+export function drawSheet(x, t, { x: cx, y: cy, w = 620, h = 440, title = 'PLAN.xlsx', cols = ['A', 'B'], widths = null, rows = [], formula = null, pop = 1, cps = 26, size = 30 } = {}) {
+  if (pop <= 0.01) return
+  x.save(); x.translate(cx, cy); x.scale(pop, pop)
+  const x0 = -w / 2, y0 = -h / 2
+  blk(x, x0, y0, w, h, '#f7f5ef', { o: 8 })
+  R(x, '#1f7a4f', x0, y0, w, 46)
+  x.font = `700 24px ${MONO}`; x.fillStyle = '#ffffff'; x.textBaseline = 'middle'; x.textAlign = 'left'
+  x.fillText(title, x0 + 16, y0 + 24)
+  for (let k = 0; k < 3; k++) R(x, '#ffffff', x0 + w - 28 - k * 26, y0 + 18, 14, 10)
+  let gy = y0 + 46
+  if (formula != null) {
+    R(x, '#e6e2d8', x0, gy, w, 46); R(x, '#cfc9bb', x0, gy + 44, w, 2)
+    x.font = `italic 700 24px ${MONO}`; x.fillStyle = '#1f7a4f'; x.fillText('fx', x0 + 14, gy + 24)
+    x.font = `700 26px ${MONO}`; x.fillStyle = INK; x.fillText(formula, x0 + 62, gy + 24)
+    gy += 46
+  }
+  const n = cols.length, ws = widths || cols.map(() => (w - 44) / n)
+  // the header row
+  R(x, '#dfe9e2', x0, gy, w, 34)
+  let cx2 = x0 + 44
+  x.font = `700 20px ${MONO}`; x.fillStyle = '#3d6f66'
+  cols.forEach((c, i) => { x.fillText(c, cx2 + 10, gy + 18); cx2 += ws[i] })
+  gy += 34
+  const rh = Math.min(62, (y0 + h - gy) / Math.max(5, rows.length))
+  rows.forEach((r, j) => {
+    const ry = gy + j * rh
+    R(x, '#dfe9e2', x0, ry, 44, rh); x.font = `700 18px ${MONO}`; x.fillStyle = '#3d6f66'; x.fillText(String(j + 1), x0 + 12, ry + rh / 2)
+    if (r.hl && t >= r.hl.at) { const p = clamp((t - r.hl.at) / 0.4); R(x, r.hl.color || '#ffe680', x0 + 44, ry + 2, (w - 44) * p, rh - 4) }
+    R(x, '#d6d1c4', x0 + 44, ry + rh - 2, w - 44, 2)
+    if (t < r.at) return
+    let typed = Math.floor((t - r.at) * cps), cx3 = x0 + 44
+    x.font = `700 ${size}px ${MONO}`
+    r.cells.forEach((c, i) => {
+      const vis = c.slice(0, Math.max(0, typed)); typed -= c.length
+      x.fillStyle = r.color || INK; x.fillText(vis, cx3 + 10, ry + rh / 2 + 1)
+      cx3 += ws[i]
+    })
+    const done = r.at + r.cells.join('').length / cps
+    if (r.check != null && t >= done) {
+      const bx = x0 + w - 50, by = ry + rh / 2 - 15
+      if (r.check) { R(x, '#1f9a5f', bx, by, 30, 30); x.fillStyle = '#ffffff'; x.font = `700 24px ${MONO}`; x.fillText('✓', bx + 5, by + 16) }
+      else { R(x, '#c94a4a', bx, by, 30, 30); R(x, '#ffffff', bx + 5, by + 5, 20, 20) }
+    }
+  })
+  for (let i = 1; i < n; i++) { const vx = x0 + 44 + ws.slice(0, i).reduce((a, b) => a + b, 0); R(x, '#d6d1c4', vx, gy - 34, 2, h - (gy - 34 - y0)) }
+  x.restore(); x.textBaseline = 'alphabetic'
 }
