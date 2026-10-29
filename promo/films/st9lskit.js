@@ -75,7 +75,10 @@ export function makeDay(spec) {
         const z = sh.zoom || { x: 540, y: 960, s: 1 }
         const pk = sh.punch === false || sh.at === 0 ? 0 : 0.07 * (1 - ease.outCubic(prog(t, sh.at, sh.at + 0.35)))
         const s = (typeof z.s === 'function' ? z.s(t) : z.s) * (1 + pk)
-        x.translate(540, 960); x.scale(s, s); x.translate(-z.x, -z.y)
+        x.fillStyle = '#05040c'; x.fillRect(0, 0, 1080, 1920)
+        // keep the camera inside the 1080 × 1920 set
+        const zx = clamp(z.x, 540 / s, 1080 - 540 / s), zy = clamp(z.y, 960 / s, 1920 - 960 / s)
+        x.translate(540, 960); x.scale(s, s); x.translate(-zx, -zy)
         const skyFn = (c) => { drawSky(c, t, SKY_H); daySky(c, t, { hour }) }
         const a = sh.set ? sh.set(x, t, { ...sh, sky: skyFn, hour }) : spec.home(x, t, {
           room: sh.room, ep: spec.ep, dark: typeof sh.dark === 'function' ? sh.dark(t) : (sh.dark || 0), hour,
