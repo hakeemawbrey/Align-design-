@@ -133,7 +133,7 @@ function lavaLamp(x, t, X, Y, s = 1, lampK = 1) {
 }
 /** prop 2: the theory whiteboard (desk room). Its theory number counts up each episode. */
 const BOARD_LINES = [
-  ['THEORY #47', 'cereal = soup?', 'pigeons: govt?', 'URANUS ⟲ 98°'],
+  ['THEORY #47', 'cereal = soup?', 'pigeons: govt?', 'uranus tilt: 98°'],
   ['THEORY #48', 'meetings → memos', 'stand-ups: sit?', 'ASK TEAM FIRST'],
   ['THEORY #49', 'leo + me =', 'sun + sideways', 'planet ✓'],
   ['THEORY #50', '12 chats ≠', '1 close friend', 'call maya ✓'],
