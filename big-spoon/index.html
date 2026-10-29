@@ -76,8 +76,11 @@
   .foot { position: absolute; left: var(--pad); right: var(--pad); bottom: 48px; display: flex; justify-content: space-between; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
 
   /* Art: one treatment for every image */
-  /* Treatment (desaturated to 70%, contrast 96%) is baked into the files in assets/art */
+  /* Treatment (color and contrast lifted, lightly sharpened) is baked into the files in assets/art */
   .art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .bleed { position: absolute; top: 0; bottom: 0; overflow: hidden; }
+  .bleed img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bcap { position: absolute; left: 20px; bottom: 20px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .04em; color: #fff; background: rgba(0,0,0,.62); padding: 7px 11px; white-space: nowrap; }
   .frame { position: absolute; background: #fff; border: 1px solid var(--line); padding: 18px; }
   .frame .art { width: 100%; height: 100%; }
   .frame .cap { position: absolute; left: 0; top: 100%; margin-top: 16px; white-space: nowrap; }
@@ -93,6 +96,15 @@
   .card.black .bd { color: #E2E2E2; }
   .card.black .num { color: #CFCFCF; }
 
+  .dark .card { background: transparent; border-color: #2E2E2E; color: #fff; }
+  .dark .card .hd { border-color: #2E2E2E; }
+  .dark .card .bd { color: #CFCFCF; }
+  .dark .card .num { color: #9AA3AA; }
+  .dark .card.white { background: #fff; color: var(--ink); border-color: #fff; }
+  .dark .card.white .hd { border-color: var(--line); }
+  .dark .card.white .bd { color: var(--ink-2); }
+  .dark .lede { color: #CFCFCF; }
+  .dark .foot { color: #8A949C; }
   .big { font-size: 96px; font-weight: 300; letter-spacing: -0.04em; line-height: 1; }
 
   /* Rows (lists with hairlines) */
@@ -170,15 +182,15 @@
 </section>
 
 <!-- 2 · Situation -->
-<section class="slide">
+<section class="slide dark">
   <div class="head">
     <div class="tag">Situation</div>
-    <h2>Two agencies. No strategy<br>Big Spoon <span class="g">owns.</span></h2>
+    <h2>Two agencies. No strategy<br>Big Spoon <span style="color: var(--green-bright);">owns.</span></h2>
   </div>
   <div class="cards" style="top: 470px; height: 330px; grid-template-columns: repeat(3, 1fr);">
-    <div class="card"><div class="hd"><span>Agencies</span><span class="num">[ 1 ]</span></div><div class="bd" style="display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big">2</div><div>Working on the brand today</div></div></div>
+    <div class="card"><div class="hd"><span>Agencies</span><span class="num">[ 1 ]</span></div><div class="bd" style="display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big" style="color: var(--green-bright);">2</div><div>Working on the brand today</div></div></div>
     <div class="card"><div class="hd"><span>Owned strategy</span><span class="num">[ 2 ]</span></div><div class="bd" style="display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big">0</div><div>Plans Big Spoon holds itself</div></div></div>
-    <div class="card black"><div class="hd"><span>Trusted reporting</span><span class="num">[ 3 ]</span></div><div class="bd" style="display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big">0</div><div>Reports Big Spoon can trust</div></div></div>
+    <div class="card white"><div class="hd"><span>Trusted reporting</span><span class="num">[ 3 ]</span></div><div class="bd" style="display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big">0</div><div>Reports Big Spoon can trust</div></div></div>
   </div>
   <p class="lede" style="position:absolute; left: var(--pad); top: 850px; width: 1200px;">Measurement is the bare minimum. It was never set up.</p>
   <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
@@ -227,7 +239,7 @@
   <div class="art" style="position:absolute; inset: 0;">
     <img src="assets/art/heda-still-life-oysters.jpg" alt="Willem Claesz Heda, Still Life with Oysters, a Silver Tazza, and Glassware" style="object-position: 60% 50%;">
   </div>
-  <div style="position:absolute; inset: 0; background: rgba(10,10,10,.2);"></div>
+  <div style="position:absolute; inset: 0; background: rgba(10,10,10,.28);"></div>
   <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 1180px; display:flex; flex-direction:column; justify-content:center;">
     <div class="tag">What I bring</div>
     <h2 style="margin-top: 50px; font-size: 128px;">I make brands<br><span style="color: var(--green-bright);">emotional.</span></h2>
@@ -286,20 +298,20 @@
 
 <!-- 8 · Phase 0 overview -->
 <section class="slide dark">
-  <div class="head" style="right: auto; width: 860px;">
+  <div class="head" style="right: auto; width: 720px;">
     <div class="tag"><span style="color: var(--green-bright);">Phase 0</span> · Audit</div>
-    <h2>The audit sets the baseline every result is <span style="color: var(--green-bright);">measured against.</span></h2>
+    <h2 style="font-size: 76px;">The audit sets the baseline every result is <span style="color: var(--green-bright);">measured against.</span></h2>
   </div>
-  <div style="position:absolute; left: var(--pad); top: 660px; width: 860px; display:grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2A2A2A;">
+  <div style="position:absolute; left: var(--pad); top: 660px; width: 720px; display:grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2A2A2A;">
     <div style="padding: 30px 30px 0 0;"><div class="big">3</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Weeks, Nov 2–20</div></div>
     <div style="padding: 30px 30px 0; border-left: 1px solid #2A2A2A;"><div class="big">7</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Concepts</div></div>
     <div style="padding: 30px 0 0 30px; border-left: 1px solid #2A2A2A;"><div class="big">8</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Areas per concept</div></div>
   </div>
-  <div class="frame" style="right: var(--pad); top: 200px; width: 760px; height: 548px; border-color: #fff;">
-    <div class="art"><img src="assets/art/hiroshige-suzuki-kinmedai.jpg" alt="Utagawa Hiroshige, Suzuki and Kinmedai Fish"></div>
-    <div class="cap" style="color: #9AA3AA;">[ Hiroshige, Suzuki and Kinmedai Fish, 1840s ]</div>
+  <div class="bleed" style="right: 0; width: 1000px;">
+    <img src="assets/art/hiroshige-suzuki-kinmedai.jpg" alt="Utagawa Hiroshige, Suzuki and Kinmedai Fish" style="object-position: 62% 55%;">
+    <span class="bcap">[ Hiroshige, Suzuki and Kinmedai Fish, 1840s ]</span>
   </div>
-  <div class="foot" style="color: #8A949C;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
+  <div class="foot" style="color: #8A949C; right: 1050px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
 <!-- 9 · What we audit -->
@@ -343,22 +355,22 @@
 
 <!-- 11 · Audit deliverables -->
 <section class="slide">
-  <div class="head" style="right: auto; width: 640px;">
+  <div class="head" style="left: 740px; right: var(--pad);">
     <div class="tag"><span class="g">Phase 0</span> · Deliverables</div>
-    <h2>Five things<br>Big Spoon <span class="g">owns.</span></h2>
+    <h2>Five things Big Spoon <span class="g">owns.</span></h2>
   </div>
-  <div class="rows" style="left: 860px; right: var(--pad); top: 250px;">
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num">[ 1 ]</span><div><div class="t">Audit report</div><div class="d" style="margin-top: 8px;">A scorecard for every concept</div></div></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num">[ 2 ]</span><div><div class="t">Baseline metrics snapshot</div><div class="d" style="margin-top: 8px;">The “before” picture</div></div></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num">[ 3 ]</span><div><div class="t">Asset &amp; access inventory</div><div class="d" style="margin-top: 8px;">Every login moved to Big Spoon ownership</div></div></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num">[ 4 ]</span><div><div class="t">Top 10 quick wins</div><div class="d" style="margin-top: 8px;">What to fix first</div></div></div>
-    <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num" style="color: var(--green);">[ 5 ]</span><div><div class="t">90-minute readout</div><div class="d" style="margin-top: 8px;">With ownership</div></div></div>
+  <div class="rows" style="left: 740px; right: var(--pad); top: 330px;">
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 1 ]</span><div><div class="t">Audit report</div><div class="d" style="margin-top: 8px;">A scorecard for every concept</div></div></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 2 ]</span><div><div class="t">Baseline metrics snapshot</div><div class="d" style="margin-top: 8px;">The “before” picture</div></div></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 3 ]</span><div><div class="t">Asset &amp; access inventory</div><div class="d" style="margin-top: 8px;">Every login moved to Big Spoon ownership</div></div></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 4 ]</span><div><div class="t">Top 10 quick wins</div><div class="d" style="margin-top: 8px;">What to fix first</div></div></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num" style="color: var(--green);">[ 5 ]</span><div><div class="t">90-minute readout</div><div class="d" style="margin-top: 8px;">With ownership</div></div></div>
   </div>
-  <div class="frame" style="left: var(--pad); top: 440px; width: 380px; height: 500px;">
-    <div class="art"><img src="assets/art/pepper-plant-florilegium.jpg" alt="Pepper Plant, from a Florilegium, 1608" style="object-position: 50% 45%;"></div>
-    <div class="cap">[ Pepper Plant, Florilegium, 1608 ]</div>
+  <div class="bleed" style="left: 0; width: 620px;">
+    <img src="assets/art/pepper-plant-florilegium.jpg" alt="Pepper Plant, from a Florilegium, 1608" style="object-position: 50% 45%;">
+    <span class="bcap">[ Pepper Plant, Florilegium, 1608 ]</span>
   </div>
-  <div class="foot" style="left: 860px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
+  <div class="foot" style="left: 740px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
 <!-- 12 · Phase 1 strategy -->
@@ -367,16 +379,16 @@
     <div class="tag">Phase 1 · Strategy · Nov 23–Dec 18</div>
     <h2>A 12-month plan <span class="g">for 2027.</span></h2>
   </div>
-  <div class="cards" style="top: 360px; height: 540px; right: 640px; grid-template-columns: 1fr 1.25fr 1fr;">
+  <div class="cards" style="top: 360px; height: 540px; right: 690px; grid-template-columns: 1fr 1.25fr 1fr;">
     <div class="card"><div class="hd"><span>Group</span><span class="num">[ A ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Brand framework<br>12-month calendar for 2027</div></div>
     <div class="card black"><div class="hd"><span>Per concept</span><span class="num">[ B ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Positioning<br>2 signature content series<br>Offline &amp; events plan<br>Paid media plan<br>KPI targets</div></div>
     <div class="card"><div class="hd"><span>Team</span><span class="num">[ C ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Org design<br>Recruiting</div></div>
   </div>
-  <div class="frame" style="right: var(--pad); top: 110px; width: 380px; height: 790px;">
-    <div class="art"><img src="assets/art/yun-shouping-lotuses.jpg" alt="Yun Shouping, Lotuses on a summer evening" style="object-position: 50% 60%;"></div>
-    <div class="cap">[ Yun Shouping, Lotuses, 18th c. ]</div>
+  <div class="bleed" style="right: 0; width: 560px;">
+    <img src="assets/art/yun-shouping-lotuses.jpg" alt="Yun Shouping, Lotuses on a summer evening" style="object-position: 50% 70%;">
+    <span class="bcap">[ Yun Shouping, Lotuses, 18th c. ]</span>
   </div>
-  <div class="foot" style="right: 640px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
+  <div class="foot" style="right: 690px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
 <!-- 13 · Phase 2 build & launch -->
@@ -392,9 +404,9 @@
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 14px 0;"><span class="num">[ 4 ]</span><span class="d" style="font-size: 26px;">Launch series, campaigns and first events</span></div>
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 14px 0;"><span class="num">[ 5 ]</span><span class="d" style="font-size: 26px;">Monthly experimentation lab</span></div>
   </div>
-  <div class="frame" style="right: var(--pad); top: 110px; width: 600px; height: 790px;">
-    <div class="art"><img src="assets/art/bonnet-woman-taking-coffee.jpg" alt="Louis-Marin Bonnet, The Woman Taking Coffee" style="object-position: 50% 50%;"></div>
-    <div class="cap">[ Louis-Marin Bonnet, The Woman Taking Coffee, 1774 ]</div>
+  <div class="bleed" style="right: 0; width: 720px;">
+    <img src="assets/art/bonnet-woman-taking-coffee.jpg" alt="Louis-Marin Bonnet, The Woman Taking Coffee" style="object-position: 50% 45%;">
+    <span class="bcap">[ Bonnet, The Woman Taking Coffee, 1774 ]</span>
   </div>
   <!-- My role steps down -->
   <div style="position:absolute; left: var(--pad); width: 940px; top: 760px;">
@@ -405,7 +417,7 @@
       <div><div style="height: 10px; background: var(--line);"><div style="height: 10px; width: 18%; background: var(--ink);"></div></div><div style="display:flex; justify-content:space-between; margin-top: 16px;"><span style="font-size: 30px;">Review only</span><span class="num">MAR</span></div></div>
     </div>
   </div>
-  <div class="foot" style="right: 790px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
+  <div class="foot" style="right: 850px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
 <!-- 14 · Metrics & reporting -->
@@ -430,9 +442,9 @@
 
 <!-- 15 · Phase 3 advisory -->
 <section class="slide">
-  <div class="frame" style="left: var(--pad); top: 140px; width: 600px; height: 736px;">
-    <div class="art"><img src="assets/art/posada-calavera-tortillas.jpg" alt="José Guadalupe Posada, A skeleton selling tortillas" style="object-position: 50% 40%;"></div>
-    <div class="cap">[ Posada, Una Calavera Chusca, ca. 1880–1910 ]</div>
+  <div class="bleed" style="left: 0; width: 780px;">
+    <img src="assets/art/posada-calavera-tortillas.jpg" alt="José Guadalupe Posada, A skeleton selling tortillas" style="object-position: 50% 40%;">
+    <span class="bcap">[ Posada, Una Calavera Chusca, ca. 1880–1910 ]</span>
   </div>
   <div class="head" style="left: 900px;">
     <div class="tag">Phase 3 · Advisory · April onward</div>
@@ -457,7 +469,7 @@
     <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 0 ]</span><span class="t">Audit</span><span class="t">$8,500</span></div>
     <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 1 ]</span><div><span class="t">Strategy</span><div class="d" style="margin-top: 4px;">50% of the audit fee credited</div></div><span class="t">$25,000 <span style="color: var(--muted);">− $4,250</span></span></div>
     <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 2 ]</span><span class="t">Build &amp; launch</span><span class="t">$14,000/mo × 3</span></div>
-    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 22px 0; border-top: 1px solid var(--ink);"><span></span><span class="t" style="font-weight: 500;">Total through March</span><span class="t" style="font-weight: 500;">$71,250</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 22px 0; border-top: 1px solid var(--ink);"><span></span><span class="t" style="font-weight: 500;">Total through March</span><span class="t g" style="font-weight: 500;">$71,250</span></div>
     <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 20px 0;"><span class="num">[ 3 ]</span><span class="t">Advisory, from April</span><span class="t">$3,500/mo</span></div>
   </div>
   <div class="card black" style="position:absolute; right: var(--pad); top: 420px; width: 480px; height: 426px; padding: 40px 38px; justify-content: space-between;">
@@ -480,11 +492,11 @@
     <div class="row" style="grid-template-columns: 90px 1fr; padding: 30px 0;"><span class="num" style="color: var(--green);">[ 3 ]</span><span class="t">Kickoff, Monday Nov 2</span></div>
   </div>
   <p class="lede" style="position:absolute; left: var(--pad); top: 880px; font-size: 26px;">Hakeem · Expressive Space · expressivespace.co</p>
-  <div class="frame" style="right: var(--pad); top: 200px; width: 680px; height: 498px;">
-    <div class="art"><img src="assets/art/lautrec-irish-american-bar.jpg" alt="Henri de Toulouse-Lautrec, The Irish and American Bar, Rue Royale"></div>
-    <div class="cap">[ Toulouse-Lautrec, The Irish and American Bar, 1896 ]</div>
+  <div class="bleed" style="right: 0; width: 860px;">
+    <img src="assets/art/lautrec-irish-american-bar.jpg" alt="Henri de Toulouse-Lautrec, The Irish and American Bar, Rue Royale" style="object-position: 62% 50%;">
+    <span class="bcap">[ Toulouse-Lautrec, The Irish and American Bar, 1896 ]</span>
   </div>
-  <div class="foot"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
+  <div class="foot" style="right: 910px;"><span>Big Spoon Concepts · Marketing Build</span><span class="pg"></span></div>
 </section>
 
 <!-- 18 · Image credits -->
@@ -504,7 +516,7 @@
     <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Louis-Marin Bonnet</span><span style="font-weight:300;"><i>The Woman Taking Coffee</i>, 1774</span><span class="cap">Cleveland Museum of Art · 2003.49 · CC0</span></div>
     <div class="row" style="grid-template-columns: 340px 1fr 500px; padding: 13px 0;"><span>Unknown artist, France</span><span style="font-weight:300;"><i>Pepper Plant</i>, folio 46, from <i>Florilegium</i>, 1608</span><span class="cap">Cleveland Museum of Art · 1963.594.46.b · CC0</span></div>
   </div>
-  <p class="cap" style="position:absolute; left: var(--pad); top: 900px; width: 1660px; font-size: 17px; line-height: 1.6;">Open Access collections of The Metropolitan Museum of Art and The Cleveland Museum of Art, released as Public Domain (CC0). Shown with light desaturation; some cropped to the image area. Restaurant names are set in type.</p>
+  <p class="cap" style="position:absolute; left: var(--pad); top: 900px; width: 1660px; font-size: 17px; line-height: 1.6;">Open Access collections of The Metropolitan Museum of Art and The Cleveland Museum of Art, released as Public Domain (CC0). Color and contrast lightly enhanced; some cropped to the image area. Restaurant names are set in type.</p>
 </section>
 
 </div></div>
