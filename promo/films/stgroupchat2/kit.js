@@ -139,7 +139,7 @@ export function actor(x, t, A, { cam = null } = {}) {
     for (const [a, b] of A.blow || []) if (t >= a && t < b) bk = 0.6 + 0.4 * Math.sin((t - a) * 40)
     drawWhistle(x, r.x - cs * 0.47 + bk * 6, r.y - cs * 0.06, Math.max(3, cs / 30), { blow: bk })
   }
-  if (A.prop === 'clipboard' || A.clipboard) drawClipboard(x, r.x - cs * 0.62, r.y + cs * 0.04, Math.max(3, cs / 27), { rot: -0.14 + 0.05 * Math.sin(t * 2), strike: step(A.strike, t, 0) })
+  if (A.prop === 'clipboard' || (Array.isArray(A.clipboard) ? step(A.clipboard, t, 0) : A.clipboard)) drawClipboard(x, r.x - cs * 0.62, r.y + cs * 0.04, Math.max(3, cs / 27), { rot: -0.14 + 0.05 * Math.sin(t * 2), strike: step(A.strike, t, 0) })
   x.restore()
   // tears / sweat
   const tr = step(A.tears, t, 0)
