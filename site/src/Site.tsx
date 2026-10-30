@@ -91,7 +91,7 @@ export default function Site() {
     u.searchParams.delete('paid')
     window.history.replaceState(null, '', u)
     try { sessionStorage.removeItem('align-vote') } catch { /* private mode */ }
-    void confetti({ particleCount: 90, spread: 70, origin: { y: 0.2 }, colors: ['#f2c75c', '#fff4cf', '#c9b6f0', '#9a7be0'], disableForReducedMotion: true })
+    void confetti({ particleCount: 90, spread: 70, origin: { y: 0.2 }, colors: ['#f8edff', '#ddd0ff', '#c9b6f0', '#9a7be0'], disableForReducedMotion: true })
   }, [paid])
 
   // back from Stripe without paying: the page can come back from the cache mid-"Saving"

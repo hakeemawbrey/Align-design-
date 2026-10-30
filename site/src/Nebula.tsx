@@ -51,8 +51,8 @@ function fbm(n: (x: number, y: number) => number, x: number, y: number) {
 
 /** the little four-point stars scattered over the sky, as in the videos: [x%, y%, size, colour] */
 const SPARKS: [number, number, number, string][] = [
-  [8, 14, 9, '#f2c75c'], [91, 9, 7, '#c9b6f0'], [72, 22, 6, '#ffbdf6'], [14, 47, 6, '#c9b6f0'], [86, 41, 10, '#f2c75c'],
-  [5, 72, 7, '#ffbdf6'], [94, 66, 6, '#efe6d6'], [38, 6, 5, '#efe6d6'], [58, 88, 8, '#f2c75c'], [27, 91, 6, '#c9b6f0'],
+  [8, 14, 9, '#f8edff'], [91, 9, 7, '#c9b6f0'], [72, 22, 6, '#ffbdf6'], [14, 47, 6, '#c9b6f0'], [86, 41, 10, '#f8edff'],
+  [5, 72, 7, '#ffbdf6'], [94, 66, 6, '#efe6d6'], [38, 6, 5, '#efe6d6'], [58, 88, 8, '#f8edff'], [27, 91, 6, '#c9b6f0'],
   [80, 83, 7, '#ffbdf6'], [48, 33, 5, '#efe6d6'], [65, 57, 5, '#c9b6f0'], [20, 26, 5, '#efe6d6'],
 ]
 

@@ -8,7 +8,7 @@ import { votesLive, type Tally } from './votes'
 function Count({ n }: { n: number }) {
   return (
     <AnimatePresence mode="popLayout" initial={false}>
-      <motion.span key={n} initial={{ y: -10, opacity: 0, color: '#f2c75c' }} animate={{ y: 0, opacity: 1, color: 'var(--label-1)' }}
+      <motion.span key={n} initial={{ y: -10, opacity: 0, color: '#ddd0ff' }} animate={{ y: 0, opacity: 1, color: 'var(--label-1)' }}
         exit={{ y: 10, opacity: 0 }} transition={{ duration: 0.35, color: { duration: 1.6 } }} style={{ display: 'inline-block' }}>
         {n.toLocaleString()}
       </motion.span>
