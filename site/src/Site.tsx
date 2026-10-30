@@ -192,7 +192,7 @@ export default function Site() {
 
           <div className="cta-block">
             <a className="chrome-cta" id="hero-cta" href="#vote">Join the beta · $15 <span className="spark" aria-hidden>✦</span></a>
-            <span className="fine">Houston first · Texas next · vote now</span>
+            <span className="fine">Houston first · your city next · vote now</span>
           </div>
 
           <HeroCard />
