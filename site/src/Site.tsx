@@ -279,6 +279,7 @@ export default function Site() {
             <li><span><b>A vote for your city</b> to launch after Texas, counted today</span></li>
             <li><span><b>Align+ for 2 years</b></span></li>
             <li><span><b>Access to events</b> and member benefits</span></li>
+            <li>A numbered founding member card</li>
           </ul>
         </form>
       </section>
