@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import PixelMoon from './PixelMoon'
+import ShootingStars from './ShootingStars'
 import { moonTonight } from '@app/data/moon'
 
 /** the videos' sky: violet clouds with pink edges, on deep indigo */
@@ -140,6 +141,7 @@ export default function Nebula() {
   return (
     <div className="sky" aria-hidden>
       <canvas ref={ref} className="nebula" />
+      <ShootingStars />
       {SPARKS.map(([x, y, s, c], i) => (
         <svg key={i} className="spark-star" width={s} height={s} viewBox="0 0 10 10"
           style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${(i * 0.73) % 5}s`, color: c }}>
