@@ -47,6 +47,23 @@ export default function Site() {
     void confetti({ particleCount: 90, spread: 70, origin: { y: 0.2 }, colors: ['#f2c75c', '#fff4cf', '#c9b6f0', '#9a7be0'] })
   }, [paid])
 
+  // phones: a pay bar rides along between the hero button and the form
+  const [bar, setBar] = useState(false)
+  useEffect(() => {
+    const hero = document.getElementById('hero-cta')
+    const join = document.getElementById('join-form')
+    if (!hero || !join) return
+    const check = () => {
+      const h = hero.getBoundingClientRect(), j = join.getBoundingClientRect()
+      // past the hero button, and the form isn't on screen yet (or is behind us)
+      setBar(h.bottom < 0 && (j.top > window.innerHeight || j.bottom < 0))
+    }
+    const io = new IntersectionObserver(check, { threshold: [0, 1] })
+    io.observe(hero)
+    io.observe(join)
+    return () => io.disconnect()
+  }, [])
+
   const pick = (c: City) => {
     setCityText(label(c))
     document.getElementById('join')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -96,7 +113,7 @@ export default function Site() {
 
           <div className="cta-block">
             <p className="lede">Every night you’re dealt cards: sign, moon, how you’d pull and push. No photos. When you both align, the card flips.</p>
-            <a className="chrome-cta" href="#join">Join the beta · $15 <span className="spark">✦</span></a>
+            <a className="chrome-cta" id="hero-cta" href="#join">Join the beta · $15 <span className="spark">✦</span></a>
             <span className="fine">Houston first · your $15 is your city’s vote</span>
           </div>
         </header>
@@ -135,7 +152,7 @@ export default function Site() {
         <p className="sub">Same price everywhere. Pick your city: if it’s Houston or Texas you’re early, anywhere else your $15 pushes it up the board.</p>
 
         <div className="join">
-          <form className="panel" onSubmit={(e) => { e.preventDefault(); pay() }}>
+          <form className="panel" id="join-form" onSubmit={(e) => { e.preventDefault(); pay() }}>
             <div className="price"><b>$15</b><span className="fine">once</span></div>
             <ul className="gets">
               <li>Beta access the night your city lights</li>
@@ -145,12 +162,12 @@ export default function Site() {
             </ul>
             <label className="field">
               <span>Your city</span>
-              <input list="cities" value={cityText} onChange={(e) => setCityText(e.target.value)} placeholder="Houston, TX" autoComplete="address-level2" required />
+              <input id="city" list="cities" enterKeyHint="next" value={cityText} onChange={(e) => setCityText(e.target.value)} placeholder="Houston, TX" autoComplete="address-level2" required />
               <datalist id="cities">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
             </label>
             <label className="field">
               <span>Email</span>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
+              <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
             </label>
             <button className="chrome-cta" type="submit" disabled={!city || !checkoutReady} style={{ width: '100%', marginTop: 6 }}>
               {city ? `Pay $15 · vote ${city.name}` : 'Pay $15 · cast your vote'} <span className="spark">✦</span>
@@ -182,6 +199,15 @@ export default function Site() {
           </details>
         </div>
       </section>
+
+      <AnimatePresence>
+        {bar && (
+          <motion.div className="pay-bar" initial={{ y: 90 }} animate={{ y: 0 }} exit={{ y: 90 }} transition={{ type: 'spring', stiffness: 380, damping: 34 }}>
+            <span className="pay-bar-copy"><b>$15</b> · one seat, one vote</span>
+            <a className="chrome-cta" href="#join">Join the beta</a>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <footer className="wrap">
         <span className="serif italic" style={{ fontSize: 18, color: 'var(--label-2)' }}>Align ✦</span>

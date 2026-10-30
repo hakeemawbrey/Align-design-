@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "artifact": "tsc -b && vite build --mode artifact && node scripts/artifact.mjs"
   },
   "dependencies": {
     "@fontsource/eb-garamond": "^5.3.0",
