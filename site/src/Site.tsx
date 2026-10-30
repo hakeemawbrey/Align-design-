@@ -43,20 +43,39 @@ export default function Site() {
   const vote = picked && stageOf(picked.slug) === 'vote' ? picked : null
   const lockedIn = !!picked && !vote
   const nameRef = useRef<HTMLInputElement>(null)
-  const ready = !!vote && !!name.trim() && !!birthDate && (noTime || !!birthTime) && !!birthPlace.trim() && /\S+@\S+\.\S+/.test(email)
+  const sendingRef = useRef(false)
+  // 18+, and born after 1900; the date input's own min/max say the same
+  const [minDate, maxDate, today] = useMemo(() => {
+    const ymd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+    const d = new Date(); d.setFullYear(d.getFullYear() - 18)
+    return ['1900-01-01', ymd(d), ymd(new Date())]
+  }, [])
+  const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(birthDate) && birthDate >= minDate && birthDate <= maxDate
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
+  const ready = !!vote && !!name.trim() && dateOk && (noTime || !!birthTime) && !!birthPlace.trim() && emailOk
 
-  // back from Stripe on ?paid=1; the vote was remembered on the way out
+  // back from Stripe on ?paid=1; the vote was remembered on the way out, if this tab still has it
   const [paid] = useState(() => {
     if (!new URLSearchParams(window.location.search).get('paid')) return null
     let slug: string | null = null
     try { slug = sessionStorage.getItem('align-vote') } catch { /* private mode */ }
-    return slug ? cityFromSlug(slug) : null
+    return { city: slug ? cityFromSlug(slug) : null }
   })
   useEffect(() => {
     if (!paid) return
-    window.history.replaceState(null, '', window.location.pathname)
+    const u = new window.URL(window.location.href)
+    u.searchParams.delete('paid')
+    window.history.replaceState(null, '', u)
+    try { sessionStorage.removeItem('align-vote') } catch { /* private mode */ }
     void confetti({ particleCount: 90, spread: 70, origin: { y: 0.2 }, colors: ['#f2c75c', '#fff4cf', '#c9b6f0', '#9a7be0'] })
   }, [paid])
+
+  // back from Stripe without paying: the page can come back from the cache mid-"Saving"
+  useEffect(() => {
+    const on = (e: PageTransitionEvent) => { if (e.persisted) { sendingRef.current = false; setSending(false) } }
+    window.addEventListener('pageshow', on)
+    return () => window.removeEventListener('pageshow', on)
+  }, [])
 
   // phones: a pay bar rides along once the hero button is gone, until the ballot is on screen
   const [bar, setBar] = useState(false)
@@ -94,14 +113,17 @@ export default function Site() {
   }, [])
 
   const pay = async () => {
-    if (!vote || !ready || sending) return
+    // a ref, so a second tap in the same frame can't save twice
+    if (!vote || !ready || sendingRef.current) return
+    sendingRef.current = true
     setSending(true); setError('')
     try {
       const url = await checkout({ vote: vote.slug, name: name.trim(), birthDate, birthTime: noTime ? '' : birthTime, birthPlace: birthPlace.trim(), email: email.trim() })
-      if (!url) { setSending(false); return }
+      if (!url) { sendingRef.current = false; setSending(false); return }
       try { sessionStorage.setItem('align-vote', vote.slug) } catch { /* private mode */ }
       window.location.href = url
     } catch {
+      sendingRef.current = false
       setSending(false)
       setError('We couldn’t save your vote. Check your connection and try again.')
     }
@@ -117,7 +139,7 @@ export default function Site() {
         {paid && (
           <motion.div className="thanks" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} role="status">
             <span style={{ color: 'var(--align)' }}>✦</span>
-            <span>You’re in, and your vote is in for <b>{paid.name}</b>. We’ll email you your beta invite.</span>
+            <span>{paid.city ? <>You’re in, and your vote is in for <b>{paid.city.name}</b>.</> : 'You’re in, and your vote is in.'} We’ll email you your beta invite.</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -170,7 +192,7 @@ export default function Site() {
 
             <label className="city-field">
               <span className="field-label">Your vote · the city after Texas</span>
-              <input id="vote" list="race" enterKeyHint="next" value={voteText} onChange={(e) => setVoteText(e.target.value)}
+              <input id="vote-city" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
                 placeholder="Pick a city" autoComplete="off" required />
               <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
             </label>
@@ -181,7 +203,7 @@ export default function Site() {
 
             <label className="field">
               <span>Your first name</span>
-              <input ref={nameRef} id="name" enterKeyHint="next" value={name} onChange={(e) => setName(e.target.value)} placeholder="First name" autoComplete="given-name" required />
+              <input ref={nameRef} id="name" enterKeyHint="next" maxLength={60} value={name} onChange={(e) => setName(e.target.value)} placeholder="First name" autoComplete="given-name" required />
             </label>
 
             <fieldset className="birth">
@@ -189,7 +211,7 @@ export default function Site() {
               <div className="birth-row">
                 <label className="field">
                   <span>Date</span>
-                  <input id="birth-date" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
+                  <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
                 </label>
                 <label className="field">
                   <span>Time</span>
@@ -200,16 +222,18 @@ export default function Site() {
                 <input id="no-time" type="checkbox" checked={noTime} onChange={(e) => setNoTime(e.target.checked)} />
                 <span>I don’t know my birth time</span>
               </label>
+              {/* not while a year is half typed */}
+              {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
               <label className="field">
                 <span>Place</span>
-                <input id="birth-place" list="places" value={birthPlace} onChange={(e) => setBirthPlace(e.target.value)} placeholder="City you were born in" autoComplete="off" required />
+                <input id="birth-place" list="places" maxLength={120} value={birthPlace} onChange={(e) => setBirthPlace(e.target.value)} placeholder="City you were born in" autoComplete="off" required />
                 <datalist id="places">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
               </label>
             </fieldset>
 
             <label className="field">
               <span>Email</span>
-              <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false}
+              <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false} maxLength={254}
                 value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
             </label>
 
