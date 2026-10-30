@@ -129,6 +129,13 @@ export default function Site() {
     if (r.top < 0 || r.bottom > window.innerHeight) b.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })
   }
 
+  /** the Join links: scroll to the beta card in the page itself (a bare #hash can misfire in an embed) */
+  const toBallotLink = (e: React.MouseEvent) => {
+    e.preventDefault()
+    document.getElementById('ballot')?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })
+    window.setTimeout(() => voteRef.current?.focus({ preventScroll: true }), 600)
+  }
+
   /** a row in the list: that's your vote (stable, so the list doesn't re-render as you type) */
   const pickVote = useCallback((c: City) => {
     setVoteText(label(c))
@@ -177,7 +184,7 @@ export default function Site() {
       <div className="wrap">
         <nav className="nav">
           <a className="wordmark" href="#top" aria-label="Align"><AlignMark size={34} glow={0.8} dotRadius={3.2} strokeOpacity={0.7} strokeWidth={1.1} /><span>Align</span></a>
-          <a className="nav-cta" href="#vote">Beta · $15</a>
+          <a className="nav-cta" href="#ballot" onClick={toBallotLink}>Beta · $15</a>
         </nav>
       </div>
 
@@ -191,7 +198,7 @@ export default function Site() {
           </div>
 
           <div className="cta-block">
-            <a className="chrome-cta" id="hero-cta" href="#vote">Join the beta · $15 <span className="spark" aria-hidden>✦</span></a>
+            <a className="chrome-cta" id="hero-cta" href="#ballot" onClick={toBallotLink}>Join the beta · $15 <span className="spark" aria-hidden>✦</span></a>
             <span className="fine">Houston first · your city next · vote now</span>
           </div>
 
@@ -316,7 +323,7 @@ export default function Site() {
             <span className="pay-bar-copy">
               {vote ? <>Beta + vote for <b>{vote.name}</b></> : <><b>$15</b> · beta access + a vote</>}
             </span>
-            <button type="button" className="chrome-cta" onClick={() => document.getElementById(vote ? 'ballot' : 'vote')?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })}>
+            <button type="button" className="chrome-cta" onClick={() => document.getElementById('ballot')?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })}>
               {vote ? 'Finish' : 'Join'}
             </button>
           </motion.div>

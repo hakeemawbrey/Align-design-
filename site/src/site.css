@@ -403,3 +403,7 @@ button.vrow { cursor: pointer; transition: border-color .15s ease, background-co
 .price-deal s { font-family: var(--serif); font-size: 22px; color: var(--label-3); text-decoration-thickness: 1.5px; }
 .price-deal b { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1; color: var(--label-1); }
 .price-deal span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--align); }
+
+/* links to the beta card land with a little room above it */
+#ballot { scroll-margin-top: 24px; }
+html { scroll-padding-top: 0; }
