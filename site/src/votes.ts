@@ -52,8 +52,6 @@ export interface Signup {
   vote: string
   name: string
   birthDate: string
-  /** empty when they don't know it */
-  birthTime: string
   birthPlace: string
   email: string
 }
@@ -72,7 +70,7 @@ export async function checkout(s: Signup): Promise<string | null> {
       method: 'POST',
       headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
       body: JSON.stringify({
-        id: ref, vote: s.vote, name: s.name, birth_date: s.birthDate, birth_time: s.birthTime || null,
+        id: ref, vote: s.vote, name: s.name, birth_date: s.birthDate,
         birth_place: s.birthPlace, email: s.email,
       }),
     })

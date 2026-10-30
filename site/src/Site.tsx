@@ -36,8 +36,6 @@ export default function Site() {
   const [voteText, setVoteText] = useState('')
   const [name, setName] = useState('')
   const [birthDate, setBirthDate] = useState('')
-  const [birthTime, setBirthTime] = useState('')
-  const [noTime, setNoTime] = useState(false)
   const [birthPlace, setBirthPlace] = useState('')
   const [email, setEmail] = useState('')
   const [sending, setSending] = useState(false)
@@ -55,7 +53,7 @@ export default function Site() {
   }, [])
   const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(birthDate) && birthDate >= minDate && birthDate <= maxDate
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
-  const ready = !!vote && !!name.trim() && dateOk && (noTime || !!birthTime) && !!birthPlace.trim() && emailOk
+  const ready = !!vote && !!name.trim() && dateOk && !!birthPlace.trim() && emailOk
 
   // back from Stripe on ?paid=1; the vote was remembered on the way out, if this tab still has it
   const [paid] = useState(() => {
@@ -121,7 +119,7 @@ export default function Site() {
     sendingRef.current = true
     setSending(true); setError('')
     try {
-      const url = await checkout({ vote: vote.slug, name: name.trim(), birthDate, birthTime: noTime ? '' : birthTime, birthPlace: birthPlace.trim(), email: email.trim() })
+      const url = await checkout({ vote: vote.slug, name: name.trim(), birthDate, birthPlace: birthPlace.trim(), email: email.trim() })
       if (!url) { sendingRef.current = false; setSending(false); return }
       try { sessionStorage.setItem('align-vote', vote.slug) } catch { /* private mode */ }
       window.location.href = url
@@ -211,19 +209,9 @@ export default function Site() {
 
             <fieldset className="birth">
               <legend>Your birth details · for your card</legend>
-              <div className="birth-row">
-                <label className="field">
-                  <span>Date</span>
-                  <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
-                </label>
-                <label className="field">
-                  <span>Time</span>
-                  <input id="birth-time" type="time" value={birthTime} disabled={noTime} onChange={(e) => setBirthTime(e.target.value)} required={!noTime} />
-                </label>
-              </div>
-              <label className="check">
-                <input id="no-time" type="checkbox" checked={noTime} onChange={(e) => setNoTime(e.target.checked)} />
-                <span>I don’t know my birth time</span>
+              <label className="field">
+                <span>Date</span>
+                <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
               </label>
               {/* not while a year is half typed */}
               {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
@@ -265,7 +253,7 @@ export default function Site() {
         </div>
         <div>
           <h3>Why my birth details?</h3>
-          <p>They cast your card: your sign, moon and rising, and how you’d push, pull and align with everyone you’re dealt.</p>
+          <p>They cast your card: your sign and moon, and how you’d push, pull and align with everyone you’re dealt.</p>
         </div>
       </section>
       </main>

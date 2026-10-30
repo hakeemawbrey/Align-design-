@@ -6,7 +6,7 @@ when it's mutual her card turns over to show her photo. The site always matches 
 
 - **$15, every city.** Houston lights first and Texas (Austin, Dallas–Fort Worth,
   San Antonio) is locked in next. Every seat votes today for the city after Texas.
-- **The ballot** is the vote city, first name, birth date/time/place (to cast their
+- **The ballot** is the vote city, first name, birth date and place (to cast their
   card) and email. The site saves it to `beta_signups` (unpaid), then opens the
   Stripe Payment Link with the signup's id as `client_reference_id` and the email
   prefilled.

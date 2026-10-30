@@ -10,7 +10,6 @@ create table public.beta_signups (
   vote           text not null check (vote ~ '^[a-z0-9-]{2,60}$' and vote !~ '-tx$'),  -- the city they want after Texas; Houston and Texas are locked in
   name           text not null check (char_length(name) between 1 and 60),
   birth_date     date not null check (birth_date between date '1900-01-01' and current_date),
-  birth_time     time,                                               -- null: they don't know it
   birth_place    text not null check (char_length(birth_place) between 1 and 120),
   email          text not null check (char_length(email) between 3 and 254 and email ~ '^[^\s@]+@[^\s@]+\.[^\s@]{2,}$'),  -- the form's check
   paid           boolean not null default false,
