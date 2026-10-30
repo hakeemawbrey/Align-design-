@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import RevealStyles from '@app/components/reveal/RevealStyles'
@@ -27,10 +27,7 @@ function useCardScale() {
 }
 
 export default function Site() {
-  const scale = useCardScale()
   const tally = useVotes()
-  const [caption, setCaption] = useState<Caption>(['Tonight’s deck', 'Dealt by the stars.'])
-  const [replay, setReplay] = useState<(() => void) | null>(null)
 
   // the ballot: the city you vote for, your name, your birth details, your email
   const [voteText, setVoteText] = useState('')
@@ -42,7 +39,7 @@ export default function Site() {
   const [email, setEmail] = useState('')
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
-  const picked = parseCity(voteText)
+  const picked = useMemo(() => parseCity(voteText), [voteText])
   const vote = picked && stageOf(picked.slug) === 'vote' ? picked : null
   const lockedIn = !!picked && !vote
   const nameRef = useRef<HTMLInputElement>(null)
@@ -74,8 +71,11 @@ export default function Site() {
     const io = new IntersectionObserver(check, { threshold: [0, 0.25, 1] })
     io.observe(hero)
     io.observe(ballot)
-    window.addEventListener('scroll', check, { passive: true })
-    return () => { io.disconnect(); window.removeEventListener('scroll', check) }
+    // at most one check a frame while scrolling
+    let raf = 0
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; check() }) }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => { io.disconnect(); cancelAnimationFrame(raf); window.removeEventListener('scroll', onScroll) }
   }, [])
 
   const toBallot = () => {
@@ -86,12 +86,12 @@ export default function Site() {
     if (r.top < 0 || r.bottom > window.innerHeight) b.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  /** a row on the board: that's your vote */
-  const pickVote = (c: City) => {
+  /** a row on the board: that's your vote (stable, so the board doesn't re-render as you type) */
+  const pickVote = useCallback((c: City) => {
     setVoteText(label(c))
     toBallot()
-    if (!name) window.setTimeout(() => nameRef.current?.focus({ preventScroll: true }), 450)
-  }
+    if (!nameRef.current?.value) window.setTimeout(() => nameRef.current?.focus({ preventScroll: true }), 450)
+  }, [])
 
   const pay = async () => {
     if (!vote || !ready || sending) return
@@ -134,18 +134,7 @@ export default function Site() {
             <p className="lede"><b>Not what they look like.</b> Align matches you by zodiac, and photos stay hidden until you both align.</p>
           </div>
 
-          <div className="card-col">
-            <FlipCard scale={scale} onCaption={setCaption} onReplay={(fn) => setReplay(() => fn)} />
-            <div className="scene" aria-live="polite">
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div key={caption[1]} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.3 }}>
-                  <span className="scene-label">{caption[0]}</span>
-                  <span className="scene-line">{caption[1]}</span>
-                </motion.div>
-              </AnimatePresence>
-              {replay && <button type="button" className="deal-again" onClick={replay}>↻ Deal again</button>}
-            </div>
-          </div>
+          <HeroCard />
 
           <div className="cta-block">
             <a className="chrome-cta" id="hero-cta" href="#vote">Get your seat · $15 <span className="spark">✦</span></a>
@@ -267,5 +256,26 @@ export default function Site() {
         )}
       </AnimatePresence>
     </>
+  )
+}
+
+/** the hero card and its scene title; its own state, so each beat re-renders only this */
+function HeroCard() {
+  const scale = useCardScale()
+  const [caption, setCaption] = useState<Caption>(['Tonight’s deck', 'Dealt by the stars.'])
+  const [replay, setReplay] = useState<(() => void) | null>(null)
+  return (
+    <div className="card-col">
+      <FlipCard scale={scale} onCaption={setCaption} onReplay={(fn) => setReplay(() => fn)} />
+      <div className="scene" aria-live="polite">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div key={caption[1]} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.3 }}>
+            <span className="scene-label">{caption[0]}</span>
+            <span className="scene-line">{caption[1]}</span>
+          </motion.div>
+        </AnimatePresence>
+        {replay && <button type="button" className="deal-again" onClick={replay}>↻ Deal again</button>}
+      </div>
+    </div>
   )
 }

@@ -45,7 +45,7 @@ function noise2(seed: number) {
 
 function fbm(n: (x: number, y: number) => number, x: number, y: number) {
   let v = 0, amp = 0.5, fr = 1
-  for (let o = 0; o < 5; o++) { v += amp * n(x * fr, y * fr); fr *= 2.03; amp *= 0.5 }
+  for (let o = 0; o < 4; o++) { v += amp * n(x * fr, y * fr); fr *= 2.03; amp *= 0.5 }
   return v
 }
 
@@ -67,37 +67,60 @@ export default function Nebula() {
   useEffect(() => {
     const cv = ref.current
     if (!cv) return
-    // drawn small and stretched: the clouds are soft, the grain on top supplies the texture
-    const W = 220, H = Math.round(W * (window.innerHeight / window.innerWidth))
-    cv.width = W; cv.height = H
-    const g = cv.getContext('2d')!
-    const img = g.createImageData(W, H)
-    const n = noise2(7), m = noise2(29)
-    const sc = 3.2 / W
-    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
-      const u = x * sc, v = y * sc
-      // domain warp gives the clouds their marbled, smoky edges
-      const wx = fbm(n, u + 1.7, v + 9.2), wy = fbm(n, u + 8.3, v + 2.8)
-      let t = fbm(n, u + 2.2 * wx, v + 2.2 * wy)
-      t = Math.min(1, Math.max(0, (t - 0.32) * 1.9))
-      // darker toward the middle of the page so text and cards read
-      const cx = x / W - 0.5, cy = y / H - 0.42
-      t *= 1 - 0.55 * Math.exp(-(cx * cx * 3.2 + cy * cy * 1.6))
-      const [r0, g0, b0] = ramp(t)
-      const pink = Math.max(0, fbm(m, u * 1.3, v * 1.3) - 0.48) * 2.4 * t
-      const i = (y * W + x) * 4
-      img.data[i] = r0 + (PINK[0] - r0) * pink
-      img.data[i + 1] = g0 + (PINK[1] - g0) * pink
-      img.data[i + 2] = b0 + (PINK[2] - b0) * pink
-      img.data[i + 3] = 255
+    // drawn once, off the critical path, so the hero's first frames aren't held up
+    const draw = () => {
+      // the clouds are soft, so they're worked out small...
+      const W = 128, H = Math.round(W * (window.innerHeight / window.innerWidth))
+      const small = document.createElement('canvas')
+      small.width = W; small.height = H
+      const sg = small.getContext('2d')!
+      const img = sg.createImageData(W, H)
+      const n = noise2(7), m = noise2(29)
+      const sc = 3.2 / W
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+        const u = x * sc, v = y * sc
+        // domain warp gives the clouds their marbled, smoky edges
+        const wx = fbm(n, u + 1.7, v + 9.2), wy = fbm(n, u + 8.3, v + 2.8)
+        let t = fbm(n, u + 2.2 * wx, v + 2.2 * wy)
+        t = Math.min(1, Math.max(0, (t - 0.32) * 1.9))
+        // darker toward the middle of the page so text and cards read
+        const cx = x / W - 0.5, cy = y / H - 0.42
+        t *= 1 - 0.55 * Math.exp(-(cx * cx * 3.2 + cy * cy * 1.6))
+        const [r0, g0, b0] = ramp(t)
+        const pink = Math.max(0, fbm(m, u * 1.3, v * 1.3) - 0.48) * 2.4 * t
+        const i = (y * W + x) * 4
+        img.data[i] = r0 + (PINK[0] - r0) * pink
+        img.data[i + 1] = g0 + (PINK[1] - g0) * pink
+        img.data[i + 2] = b0 + (PINK[2] - b0) * pink
+        img.data[i + 3] = 255
+      }
+      sg.putImageData(img, 0, 0)
+      // ...then drawn up to about screen size, blurred and grained once, so the page carries
+      // no live blur or blend layer while it scrolls
+      const BW = Math.min(900, Math.round(window.innerWidth * 0.75)), BH = Math.round(BW * (H / W))
+      cv.width = BW; cv.height = BH
+      const g = cv.getContext('2d')!
+      g.filter = `blur(${Math.round(BW / 120)}px) saturate(1.1)`
+      g.drawImage(small, -BW * 0.02, -BH * 0.02, BW * 1.04, BH * 1.04)
+      g.filter = 'none'
+      const px = g.getImageData(0, 0, BW, BH)
+      let s = 99
+      for (let i = 0; i < px.data.length; i += 4) {
+        s = (s * 16807) % 2147483647
+        const d = ((s & 255) - 128) * 0.11
+        px.data[i] += d; px.data[i + 1] += d; px.data[i + 2] += d
+      }
+      g.putImageData(px, 0, 0)
+      cv.classList.add('on')
     }
-    g.putImageData(img, 0, 0)
+    const ric = (window as unknown as { requestIdleCallback?: (f: () => void, o?: object) => number }).requestIdleCallback
+    const id = ric ? ric(draw, { timeout: 1200 }) : window.setTimeout(draw, 300)
+    return () => { (window as unknown as { cancelIdleCallback?: (n: number) => void }).cancelIdleCallback?.(id); window.clearTimeout(id) }
   }, [])
 
   return (
     <div className="sky" aria-hidden>
       <canvas ref={ref} className="nebula" />
-      <div className="sky-grain" />
       {SPARKS.map(([x, y, s, c], i) => (
         <svg key={i} className="spark-star" width={s} height={s} viewBox="0 0 10 10"
           style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${(i * 0.73) % 5}s`, color: c }}>

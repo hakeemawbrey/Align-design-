@@ -65,6 +65,17 @@ const BACK: Caption = ['How strangers see her', 'Fall for the card.']
 
 const face: React.CSSProperties = { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }
 
+/** when each flip passes 90°, in seconds (from its duration and easing) */
+const DEAL_MID = 0.263
+const REVEAL_MID = 0.126
+/**
+ * Show one side of a flipping card, switching exactly as the card passes edge-on. Safari lets
+ * layers with their own animation (the Rare pull holo ring, the reveal's halo) show through a
+ * hidden back face, so the side facing away is switched off rather than trusted to backface-visibility.
+ */
+const side = (on: boolean, mid: number): React.CSSProperties =>
+  ({ visibility: on ? 'visible' : 'hidden', transition: `visibility 0s linear ${reduced ? 0 : mid}s` })
+
 /** the app's swipe stamps (Deck.tsx) */
 function Stamp({ kind, on }: { kind: 'align' | 'release'; on: boolean }) {
   const align = kind === 'align'
@@ -193,7 +204,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
 
       {/* gold bloom behind the card at the reveal */}
       <motion.div aria-hidden initial={{ opacity: 0 }} animate={flash}
-        style={{ position: 'absolute', inset: '-15%', borderRadius: '50%', pointerEvents: 'none', background: 'radial-gradient(closest-side, rgba(255,236,170,0.8), rgba(242,199,92,0.35) 45%, transparent 75%)', mixBlendMode: 'screen' }} />
+        style={{ position: 'absolute', inset: '-15%', borderRadius: '50%', pointerEvents: 'none', background: 'radial-gradient(closest-side, rgba(255,236,170,0.7), rgba(242,199,92,0.3) 45%, transparent 75%)' }} />
 
       <PixelStars fire={stars.n} from={stars.from} w={FLIP_W * scale} h={FLIP_H * scale} />
 
@@ -220,11 +231,14 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
           return (
             <motion.div key={p.id}
               initial={reduced ? false : i === 0 ? { x: 120, y: 700, rotate: 18, scale: 1.08, opacity: 0 } : { x: 0, y: 14, rotate: 0, scale: 0.93, opacity: 0 }}
+              // a card off the table stops rendering once it's out of sight
               animate={gone
-                ? { x: dir * 560, y: dir > 0 ? -70 : 30, rotate: dir * 20, scale: 1, opacity: 0 }
+                ? { x: dir * 560, y: dir > 0 ? -70 : 30, rotate: dir * 20, scale: 1, opacity: 0, transitionEnd: { visibility: 'hidden' } }
                 : top
-                  ? { x: lean ? dir * 46 : 0, y: 0, rotate: lean ? dir * 5 : 0, scale: 1, opacity: 1 }
-                  : { x: 0, y: 14, rotate: 0, scale: 0.93, opacity: under && beat.at !== 'deal' ? 1 : 0 }}
+                  ? { x: lean ? dir * 46 : 0, y: 0, rotate: lean ? dir * 5 : 0, scale: 1, opacity: 1, visibility: 'visible' }
+                  : under && beat.at !== 'deal'
+                    ? { x: 0, y: 14, rotate: 0, scale: 0.93, opacity: 1, visibility: 'visible' }
+                    : { x: 0, y: 14, rotate: 0, scale: 0.93, opacity: 0, transitionEnd: { visibility: 'hidden' } }}
               transition={gone
                 ? { duration: 0.42, ease: [0.25, 0.6, 0.35, 1], opacity: { duration: 0.2, delay: 0.24 } }
                 : i === 0 && beat.at === 'deal' ? { ...DEAL_SPRING, delay: TOP_DELAY, opacity: { duration: 0.12, delay: TOP_DELAY } }
@@ -241,7 +255,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
                     style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}
                   >
                     {i === 0 && (
-                      <div style={{ ...face, top: CARD_TOP, bottom: 'auto', width: CARD_W, height: CARD_H }}><CardBack /></div>
+                      <div style={{ ...face, top: CARD_TOP, bottom: 'auto', width: CARD_W, height: CARD_H, ...side(beat.at === 'deal', DEAL_MID) }}><CardBack /></div>
                     )}
                     <div style={{ ...face, transform: 'rotateY(180deg)', transformStyle: 'preserve-3d', backfaceVisibility: 'visible', WebkitBackfaceVisibility: 'visible' }}>
                       {/* Juniper's card turns once more, to what a match sees */}
@@ -251,7 +265,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
                         transition={reduced ? { duration: 0 } : { duration: 0.9, ease: [0.3, 1.2, 0.4, 1] }}
                         style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d' }}
                       >
-                        <div style={{ ...face, top: CARD_TOP, bottom: 'auto', width: CARD_W, height: CARD_H }}>
+                        <div style={{ ...face, top: CARD_TOP, bottom: 'auto', width: CARD_W, height: CARD_H, ...side((i > 0 || beat.at !== 'deal') && !(isJ && revealed), isJ ? REVEAL_MID : DEAL_MID) }}>
                           <ProfileCard profile={p} peek="none" glow={top} />
                           {/* gold wash as it turns mutual */}
                           {isJ && (
@@ -261,8 +275,9 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
                           {top && <Stamp kind="align" on={(lean && dir > 0) || (isJ && mutual)} />}
                           {top && <Stamp kind="release" on={lean && dir < 0} />}
                         </div>
-                        {isJ && (
-                          <div style={{ ...face, transform: 'rotateY(180deg)', visibility: turns > 0 ? 'visible' : 'hidden' }}>
+                        {/* her face mounts at the first reveal; until then its halo and foil would animate unseen */}
+                        {isJ && turns > 0 && (
+                          <div style={{ ...face, transform: 'rotateY(180deg)', ...side(revealed, REVEAL_MID) }}>
                             <div style={{ width: FACE_W, height: 625, transform: `scale(${FACE_S})`, transformOrigin: '0 0', position: 'relative' }}>
                               <ProfileFace key={turns} p={p} shown={revealed} lift={revealed} revealed={revealed} />
                             </div>

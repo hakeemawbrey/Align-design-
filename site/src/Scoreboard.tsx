@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { memo, useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HOUSTON, TEXAS, cityFromSlug, label, stageOf, type City } from './cities'
 import type { Tally } from './votes'
@@ -31,7 +31,7 @@ function Count({ n }: { n: number }) {
 interface Props { tally: Tally; mine: City | null; onPick: (c: City) => void }
 
 /** The order cities light in: Houston, then Texas, then the vote, which is open now. `vote` is your pick. */
-export function Track({ tally, vote }: { tally: Tally; vote: City | null }) {
+export const Track = memo(function Track({ tally, vote }: { tally: Tally; vote: City | null }) {
   const cast = Object.values(tally.votes).reduce((n, v) => n + v, 0)
   return (
     <ol className="track">
@@ -51,10 +51,10 @@ export function Track({ tally, vote }: { tally: Tally; vote: City | null }) {
       </li>
     </ol>
   )
-}
+})
 
 /** The live race for what lights after Texas. `mine` is the city you're voting for; tap a row to vote for it. */
-export default function Scoreboard({ tally, mine, onPick }: Props) {
+function Scoreboard({ tally, mine, onPick }: Props) {
   const { votes, live, updatedAt } = tally
   const ago = useAgo(updatedAt)
 
@@ -99,3 +99,6 @@ export default function Scoreboard({ tally, mine, onPick }: Props) {
     </div>
   )
 }
+
+/** memoised: it only re-renders when the votes or your pick change, not as the page does */
+export default memo(Scoreboard)

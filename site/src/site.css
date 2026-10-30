@@ -12,12 +12,9 @@ html { scroll-behavior: smooth; }
 
 /* the sky from the promo videos: nebula, grain, little four-point stars, tonight's moon */
 .sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.nebula { position: absolute; inset: -2%; width: 104%; height: 104%; filter: blur(3px) saturate(1.1); }
-.sky-grain {
-  position: absolute; inset: 0; opacity: .5; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
-.spark-star { position: absolute; filter: drop-shadow(0 0 4px currentColor); animation: twinkle 5s ease-in-out infinite; }
+.nebula { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s ease; }
+.nebula.on { opacity: 1; }
+.spark-star { position: absolute; animation: twinkle 5s ease-in-out infinite; }
 .sky-moon { position: absolute; top: 78px; right: max(5%, 16px); scale: .8; opacity: .9; filter: drop-shadow(0 0 18px rgba(239,230,214,0.35)); }
 @media (min-width: 900px) { .sky-moon { top: 120px; right: 9%; } }
 @media (prefers-reduced-motion: reduce) { .spark-star { animation: none; } }
@@ -244,6 +241,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--align); outline
   box-shadow: 0 0 60px rgba(239,230,214,0.35), 0 0 140px rgba(201,182,240,0.25);
 }
 .match-moon::after {
-  content: ''; position: absolute; inset: 0; border-radius: 50%; mix-blend-mode: multiply; opacity: .35;
+  content: ''; position: absolute; inset: 0; border-radius: 50%; opacity: .14;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
