@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, MotionConfig, motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import RevealStyles from '@app/components/reveal/RevealStyles'
 import AlignMark from '@app/components/intro/AlignMark'
@@ -108,7 +108,8 @@ export default function Site() {
   }
 
   return (
-    <>
+    // reduced motion: framer-motion drops its movement and keeps the fades
+    <MotionConfig reducedMotion="user">
       <RevealStyles />
       <Nebula />
 
@@ -126,7 +127,10 @@ export default function Site() {
           <a className="wordmark" href="#top" aria-label="Align"><AlignMark size={34} glow={0.8} dotRadius={3.2} strokeOpacity={0.7} strokeWidth={1.1} /><span>Align</span></a>
           <a className="nav-cta" href="#vote">Beta · $15</a>
         </nav>
+      </div>
 
+      <main>
+      <div className="wrap">
         <header className="hero" id="top">
           <div className="hero-copy">
             <span className="kicker">Blind by design</span>
@@ -137,7 +141,7 @@ export default function Site() {
           <HeroCard />
 
           <div className="cta-block">
-            <a className="chrome-cta" id="hero-cta" href="#vote">Get your seat · $15 <span className="spark">✦</span></a>
+            <a className="chrome-cta" id="hero-cta" href="#vote">Get your seat · $15 <span className="spark" aria-hidden>✦</span></a>
             <span className="fine">Houston first · Texas next · vote now</span>
           </div>
         </header>
@@ -223,7 +227,8 @@ export default function Site() {
         </div>
       </section>
 
-      <section className="wrap qa">
+      <section className="wrap qa" aria-labelledby="qa-title">
+        <h2 className="sr" id="qa-title">Questions</h2>
         <div>
           <h3>Why pay for a beta?</h3>
           <p>A deck only works when enough real people are in it. Seats tell us who’s coming, and votes tell us where.</p>
@@ -233,11 +238,12 @@ export default function Site() {
           <p>They cast your card: your sign, moon and rising, and how you’d push, pull and align with everyone you’re dealt.</p>
         </div>
       </section>
+      </main>
 
       {/* the end card from the videos */}
       <footer className="wrap end">
         <p className="end-line">No one is disposable.</p>
-        <AlignMark size={112} glow={1} dotRadius={3.6} strokeOpacity={0.75} strokeWidth={0.8} />
+        <span aria-hidden style={{ display: 'contents' }}><AlignMark size={112} glow={1} dotRadius={3.6} strokeOpacity={0.75} strokeWidth={0.8} /></span>
         <span className="end-name">Align</span>
         <span className="kicker" style={{ margin: 0 }}>Blind by design</span>
         <span className="end-fine">© 2026 Align · 18+</span>
@@ -255,7 +261,7 @@ export default function Site() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </MotionConfig>
   )
 }
 
@@ -264,17 +270,28 @@ function HeroCard() {
   const scale = useCardScale()
   const [caption, setCaption] = useState<Caption>(['Tonight’s deck', 'Dealt by the stars.'])
   const [replay, setReplay] = useState<(() => void) | null>(null)
+  // the caption changes every beat, too often to read out; screen readers hear only the turns
+  const [said, setSaid] = useState('')
+  const col = useRef<HTMLDivElement>(null)
+  const dealAgain = () => {
+    replay?.()
+    setSaid('Dealing again.')
+    // this button goes while the hand plays, so focus moves to the card
+    requestAnimationFrame(() => col.current?.querySelector('button')?.focus())
+  }
   return (
-    <div className="card-col">
-      <FlipCard scale={scale} onCaption={setCaption} onReplay={(fn) => setReplay(() => fn)} />
-      <div className="scene" aria-live="polite">
+    <div className="card-col" ref={col}>
+      <FlipCard scale={scale} onCaption={setCaption} onReplay={(fn) => setReplay(() => fn)}
+        onFlip={(up) => setSaid(up ? 'You both aligned. Her card turns over to show her photo.' : 'Her card is face down again.')} />
+      <p className="sr" role="status">{said}</p>
+      <div className="scene">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div key={caption[1]} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.3 }}>
             <span className="scene-label">{caption[0]}</span>
             <span className="scene-line">{caption[1]}</span>
           </motion.div>
         </AnimatePresence>
-        {replay && <button type="button" className="deal-again" onClick={replay}>↻ Deal again</button>}
+        {replay && <button type="button" className="deal-again" onClick={dealAgain}><span aria-hidden>↻</span> Deal again</button>}
       </div>
     </div>
   )

@@ -1,8 +1,8 @@
 # Align · beta site
 
-One page that sells the $15 beta and counts votes. The hero is the real Align card
-(drawn from `app/src`, Juniper's deck card flipping to her revealed card), so the
-site always matches the app.
+One page that sells the $15 beta and counts votes. The hero deals a hand of real Align
+cards (drawn from `app/src`): you release Maya, align on Rio, then align on Juniper, and
+when it's mutual her card turns over to show her photo. The site always matches the app.
 
 - **$15, every city.** Houston lights first and Texas (Austin, Dallas–Fort Worth,
   San Antonio) is locked in next. Every seat votes today for the city after Texas.
@@ -28,6 +28,7 @@ cd site && npm install && npm run dev
    URL for `checkout.session.completed`.
 3. **Site env** (`site/.env.local`, or Vercel env vars): `VITE_BETA_LINK`,
    `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`. Without the link the pay button
-   says "Checkout opens soon"; without Supabase the board shows labelled sample numbers.
+   stays off and the line under it says "Checkout opens soon". Without Supabase the board
+   shows labelled sample numbers, and checkout carries only the vote (no signup is saved).
 4. **Vercel**: new project, root directory `site`. It reads `../app/src` and
    `../app/public`, so keep the whole repo checked out (the default).
