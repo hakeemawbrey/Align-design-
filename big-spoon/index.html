@@ -121,6 +121,8 @@
   .tile.art { padding: 0; }
   .tile.art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .tile.out { border: 1px dashed var(--muted); background: transparent; padding: 34px 40px; }
+  .tile.out { justify-content: flex-end; }
+  .xrow { display: grid; grid-template-columns: 84px 1fr; align-items: baseline; }
   .tile.out .tn { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 2px; }
   .thumbs { position: absolute; right: var(--pad); top: 140px; width: 520px; height: 800px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 10px; }
   .thumb { position: relative; overflow: hidden; }
@@ -251,7 +253,7 @@
   .advline b { font-weight: 500; }
   /* Terms */
   .terms { position: absolute; left: var(--pad); right: 760px; top: 300px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
-  .tm { display: grid; grid-template-columns: 84px 1fr; padding: 18px 0; border-top: 1px solid var(--line); }
+  .tm { display: grid; grid-template-columns: 84px 1fr; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--line); }
   .tm-hero { grid-column: span 2; background: #fff; border: 2px solid var(--green); padding: 22px 24px; margin: 0 -26px 8px -26px; }
   .tm-t { font-size: 28px; letter-spacing: -0.015em; }
   .tm-d { font-size: 19px; font-weight: 300; color: var(--ink-2); margin-top: 8px; line-height: 1.4; }
@@ -694,8 +696,8 @@
     <p class="lede" style="margin-top: 44px;">Both add cost and slow the team down. We do them once messaging and feel are A/B tested in the wild.</p>
   </div>
   <div style="position:absolute; left: 1010px; right: var(--pad); top: 200px; bottom: 140px; display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
-    <div class="tile out"><span class="num">[ × ]</span><div><div class="tn" style="font-size: 64px;">Brand redesign</div><div class="td">For any of the 7 concepts</div></div></div>
-    <div class="tile out"><span class="num">[ × ]</span><div><div class="tn" style="font-size: 64px;">Website redo</div><div class="td">For any of the 7 concepts</div></div></div>
+    <div class="tile out"><div class="xrow"><span class="num">[ × ]</span><div><div class="tn" style="font-size: 64px;">Brand redesign</div><div class="td">For any of the 7 concepts</div></div></div></div>
+    <div class="tile out"><div class="xrow"><span class="num">[ × ]</span><div><div class="tn" style="font-size: 64px;">Website redo</div><div class="td">For any of the 7 concepts</div></div></div></div>
   </div>
   <div class="tile art" style="position:absolute; left: var(--pad); width: 760px; top: 470px; height: 340px;"><img src="assets/art/rousseau-tiger-buffalo.jpg" alt="Henri Rousseau, Fight Between a Tiger and a Buffalo" style="object-position: 50% 50%;"><span class="bcap">[ Rousseau, Fight Between a Tiger and a Buffalo, 1908 ]</span></div>
   <div style="position:absolute; left: var(--pad); width: 760px; top: 850px; border-top: 1px solid var(--ink); padding-top: 26px; display:grid; grid-template-columns: 160px 1fr; align-items: baseline;">
