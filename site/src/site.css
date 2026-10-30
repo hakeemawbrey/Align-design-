@@ -322,6 +322,15 @@ button.vrow { cursor: pointer; transition: border-color .15s ease, background-co
 
 /* ── the ballot: one tall gold card, in three numbered parts ── */
 .ballot.one { max-width: 480px; margin: 56px auto 0; }
+/* the beta card's frame: a thick band of the app's pearl, with a holo shift running round it */
+.ballot.one {
+  border: 6px solid transparent; border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(38,24,80,0.97), rgba(24,14,54,0.97)) padding-box,
+    conic-gradient(from 210deg, #f8edff, #ffc6e6, #fff7ec, #ffe0a8, #c2ffe4, #eaf4ff, #c4d6ff, #dcc6ff, #ffeff7, #f8edff) border-box;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.35), 0 0 30px rgba(248,237,255,0.3), 0 0 70px rgba(201,182,240,0.18), 0 28px 70px rgba(0,0,0,0.45);
+}
+.ballot.one::before { inset: 8px; border-radius: 15px; border: 1px solid rgba(248,237,255,0.4); }
 .bsec { border: 0; margin: 0; padding: 24px 0 4px; min-width: 0; }
 .bsec + .bsec { border-top: 1px solid rgba(179,166,196,0.16); }
 .bsec legend {
