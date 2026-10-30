@@ -52,7 +52,6 @@ export interface Signup {
   vote: string
   name: string
   birthDate: string
-  birthPlace: string
   email: string
 }
 
@@ -71,7 +70,7 @@ export async function checkout(s: Signup): Promise<string | null> {
       headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
       body: JSON.stringify({
         id: ref, vote: s.vote, name: s.name, birth_date: s.birthDate,
-        birth_place: s.birthPlace, email: s.email,
+        email: s.email,
       }),
     })
     if (!r.ok) throw new Error(`signup not saved (${r.status})`)

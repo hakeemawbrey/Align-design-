@@ -8,7 +8,7 @@ import { SIGNS, type SignId } from '@app/data/signs'
 import FlipCard, { FLIP_H, FLIP_W, type Caption } from './FlipCard'
 import Nebula from './Nebula'
 import Scoreboard from './Scoreboard'
-import { ALL_CITIES, VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
+import { VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
 import { checkout, checkoutReady, useVotes } from './votes'
 
 /** the sun sign for a YYYY-MM-DD birth date (tropical, by the usual cut-off days) */
@@ -45,11 +45,10 @@ function useCardScale() {
 export default function Site() {
   const tally = useVotes()
 
-  // the ballot: the city you vote for, your name, your birth details, your email
+  // the ballot: the city you vote for, your name, your birth date, your email
   const [voteText, setVoteText] = useState('')
   const [name, setName] = useState('')
   const [birthDate, setBirthDate] = useState('')
-  const [birthPlace, setBirthPlace] = useState('')
   const [email, setEmail] = useState('')
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
@@ -67,7 +66,7 @@ export default function Site() {
   }, [])
   const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(birthDate) && birthDate >= minDate && birthDate <= maxDate
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
-  const ready = !!vote && !!name.trim() && dateOk && !!birthPlace.trim() && emailOk
+  const ready = !!vote && !!name.trim() && dateOk && emailOk
 
   // the card section shows their sun sign and age as they type the birth date
   const sign = dateOk ? SIGNS[sunSign(birthDate)] : null
@@ -143,7 +142,7 @@ export default function Site() {
     sendingRef.current = true
     setSending(true); setError('')
     try {
-      const url = await checkout({ vote: vote.slug, name: name.trim(), birthDate, birthPlace: birthPlace.trim(), email: email.trim() })
+      const url = await checkout({ vote: vote.slug, name: name.trim(), birthDate, email: email.trim() })
       if (!url) { sendingRef.current = false; setSending(false); return }
       try { sessionStorage.setItem('align-vote', vote.slug) } catch { /* private mode */ }
       window.location.href = url
@@ -241,11 +240,6 @@ export default function Site() {
             </label>
             {/* not while a year is half typed */}
             {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
-            <label className="field">
-              <span>Birthplace</span>
-              <input id="birth-place" list="places" enterKeyHint="next" maxLength={120} value={birthPlace} onChange={(e) => setBirthPlace(e.target.value)} placeholder="City you were born in" autoComplete="off" required />
-              <datalist id="places">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
-            </label>
             {sign && (
               <p className="sign-line" aria-live="polite">
                 <ElementBadge element={sign.element} size={28} />
@@ -271,7 +265,7 @@ export default function Site() {
           <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field to join'}</span>
 
           <ul className="gets">
-            <li>Beta access, with your card cast from your birth details</li>
+            <li>Beta access, with your card cast from your birthday</li>
             <li>Align+ for life</li>
             <li>A numbered founding member card</li>
             <li>One vote, counted today, for the city after Texas</li>
@@ -286,7 +280,7 @@ export default function Site() {
           <p>A deck only works when enough real people are in it. Seats tell us who’s coming, and votes tell us where.</p>
         </div>
         <div>
-          <h3>Why my birth details?</h3>
+          <h3>Why my birthday?</h3>
           <p>They cast your card: your sign and moon, and how you’d push, pull and align with everyone you’re dealt.</p>
         </div>
       </section>
