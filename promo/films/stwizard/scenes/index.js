@@ -186,7 +186,7 @@ async function build(stage) {
       s = 1 + 0.04 * k; fx = lerp(540, 580, k); fy = lerp(1000, 1070, k)
     } else if (t < T.cut2) {
       const k = ease.inOutCubic(prog(t, T.wake - 0.1, T.wake + 0.5)) * (1 - ease.inOutCubic(prog(t, 24.9, T.wear)))
-      s = 1 + 0.05 * k; fx = lerp(540, 660, k); fy = lerp(1000, 920, k)
+      s = 1 + 0.04 * k; fx = lerp(540, 560, k); fy = lerp(1000, 940, k)
     }
     return { s, fx, fy }
   }
