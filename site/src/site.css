@@ -320,59 +320,20 @@ button.vrow { cursor: pointer; transition: border-color .15s ease, background-co
 .vrow.write-in { border-style: dashed; background: transparent; }
 @media (min-width: 900px) { .vlist-wrap { max-width: 720px; } }
 
-/* ── the ballot as a deck of three cards ──────────── */
-.deck { max-width: 440px; margin: 56px auto 0; }
-.deck-stack { position: relative; }
-.deck .ballot { margin: 0; min-width: 0; position: relative; z-index: 1; }
-.card-count {
-  position: absolute; top: 18px; left: 50%; translate: -50% 0; font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--label-3); white-space: nowrap;
+/* ── the ballot: one tall gold card, in three numbered parts ── */
+.ballot.one { max-width: 480px; margin: 56px auto 0; }
+.bsec { border: 0; margin: 0; padding: 24px 0 4px; min-width: 0; }
+.bsec + .bsec { border-top: 1px solid rgba(179,166,196,0.16); }
+.bsec legend {
+  float: left; width: 100%; display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding: 0;
+  font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--label-1);
 }
-.deck .ballot-head { padding-top: 12px; }
-.deck .ballot-head + .field { margin-top: 24px; }
-.deck-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
-.deck-next {
-  min-height: 48px; padding: 0 28px; border-radius: 999px; font-family: var(--serif); font-style: italic; font-size: 19px;
-  background: var(--chrome); color: var(--chrome-ink); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 0 24px rgba(248,237,255,0.25);
+.bsec legend + * { clear: both; }
+.bsec legend span {
+  display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  font-family: var(--mono); font-style: normal; font-size: 11px; color: #2a1a06; background: var(--align);
 }
-.deck-next[aria-disabled='true'] { background: transparent; color: var(--label-2); box-shadow: none; border: 1px solid rgba(242,199,92,0.4); }
-.deck-back { min-height: 44px; padding: 0 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--label-2); text-decoration: underline; text-underline-offset: 4px; }
-.deck-back.solo { display: block; margin: 16px auto 0; }
-
-/* ── the ballot cards: the app's mystery card, as a form ── */
-.mc { margin: 0; min-width: 0; padding: 5px; border: 0; border-radius: 22px; position: relative; z-index: 1;
-  box-shadow: 0 0 26px rgba(154,123,224,0.3), 0 24px 56px rgba(5,2,15,0.55); }
-.mc-in {
-  display: grid; padding: 20px 20px 16px; border-radius: 17px;
-  background: radial-gradient(120% 50% at 50% 0%, rgba(91,47,184,0.3) 0%, transparent 60%), linear-gradient(180deg, #160e28 0%, #100a1d 55%, #0e0919 100%);
-}
-.mc-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; margin-bottom: 12px; }
-.mc-title { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.05; color: var(--label-1); overflow-wrap: anywhere; }
-.mc-orb {
-  flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-size: 18px; color: #1a0f38;
-  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #ece6ff 25%, #9a7be0 65%, #5b3aa8 100%); box-shadow: 0 0 12px rgba(154,123,224,0.6);
-}
-.mc-orb.gold { background: radial-gradient(circle at 35% 30%, #ffffff 0%, #fff4cf 25%, #f2c75c 62%, #b88a2c 100%); box-shadow: 0 0 12px rgba(242,199,92,0.6); }
-/* the panel where the photo would be: an aura with a badge and a caption, like the deck card */
-.mc-panel {
-  position: relative; display: grid; place-items: center; height: 148px; margin-bottom: 20px; border-radius: 10px; overflow: hidden;
-  background: radial-gradient(48% 62% at 50% 96%, #f8d8ff 0%, #c58ef0 30%, #6b3fc4 60%, transparent 82%), radial-gradient(90% 90% at 50% 45%, #2a1660 0%, #07040f 100%);
-  background-size: cover; background-position: center 30%;
-  box-shadow: 0 0 0 1.5px rgba(201,182,240,0.75), 0 0 16px rgba(154,123,224,0.35);
-}
-.mc-panel.mc-gold {
-  background: radial-gradient(55% 70% at 50% 100%, #fff4cf 0%, #f2c75c 32%, #8a5a1a 62%, transparent 85%), radial-gradient(90% 90% at 50% 45%, #2c1a48 0%, #07040f 100%);
-  box-shadow: 0 0 0 1.5px rgba(242,199,92,0.85), 0 0 18px rgba(242,199,92,0.35);
-}
-.mc-big { position: relative; z-index: 2; padding: 0 16px; text-align: center; font-family: var(--serif); font-style: italic; font-size: 30px; line-height: 1.05; color: #fff; text-shadow: 0 2px 14px rgba(11,6,32,0.9); }
-.mc-big b { font-style: normal; font-weight: 400; font-size: 40px; }
-.mc-badge {
-  position: absolute; top: 8px; right: 8px; z-index: 2; padding: 3px 9px; border-radius: 999px;
-  font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-  color: #ffd36a; background: rgba(11,6,32,0.82); border: 1px solid rgba(242,199,92,0.7);
-}
-.mc-cap { position: absolute; left: 8px; bottom: 6px; z-index: 2; font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(239,230,214,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.9); }
-.mc-sign { display: flex; align-items: baseline; gap: 10px; margin: -8px 0 16px; font-family: var(--serif); font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; }
-.mc-sign span { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.16em; color: var(--label-3); }
-.mc .gets { margin: 20px -20px 0; padding: 20px 20px 4px; }
-.mc-foot { display: flex; justify-content: space-between; gap: 8px; margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(179,166,196,0.18); font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label-3); }
+.bsec .note { margin: -8px 0 16px; }
+.sign-line { display: flex; align-items: center; gap: 10px; margin: -4px 0 16px; font-size: 14px; color: var(--label-2); }
+.sign-line b { font-family: var(--serif); font-weight: 400; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; }
+.ballot.one .chrome-cta { margin-top: 12px; }
