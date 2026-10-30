@@ -51,12 +51,12 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
 
   return (
     <div style={{
-      position: 'absolute', inset: 0, borderRadius: 24, padding: 1.5,
+      position: 'absolute', inset: 0, borderRadius: 24, padding: 5,
       background: sign.foil, backgroundSize: '200% 100%', animation: 'rv-foil 6s linear infinite',
       boxShadow: `0 0 28px ${sign.color}66, 0 0 70px ${sign.color}22, 0 30px 60px rgba(0,0,0,0.5)`,
     }}>
       <div style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 22.5, overflow: 'hidden',
+        position: 'relative', width: '100%', height: '100%', borderRadius: 19, overflow: 'hidden',
         background: 'linear-gradient(180deg, #1b0d38 0%, #150a2e 60%, #120826 100%)',
       }}>
         {/* name row */}

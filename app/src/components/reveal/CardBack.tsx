@@ -48,13 +48,13 @@ export default function CardBack({ lit, serial, initial }: Props) {
   const dots = [...CHAKRA].reverse()
   return (
     <div style={{
-      position: 'absolute', inset: 0, borderRadius: 24, padding: 1.5,
+      position: 'absolute', inset: 0, borderRadius: 24, padding: 5,
       background: 'linear-gradient(90deg, #7a5ad0 0%, #dcbcff 22%, #ffffff 42%, #dcbcff 58%, #9a7be0 78%, #e9d6ff 100%)',
       backgroundSize: '200% 100%', animation: 'rv-foil 5s linear infinite',
       boxShadow: '0 0 40px rgba(154,123,224,0.45), 0 30px 60px rgba(0,0,0,0.5)',
     }}>
       <div className="grain" style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 22.5, overflow: 'hidden',
+        position: 'relative', width: '100%', height: '100%', borderRadius: 19, overflow: 'hidden',
         background: 'radial-gradient(70% 55% at 50% 42%, #5b2bc4 0%, #3a1690 45%, #210a5a 80%, #170741 100%)',
       }}>
         {/* corner violet blooms like the kit */}

@@ -5,7 +5,7 @@ import ProfileCard from '@app/components/deck/ProfileCard'
 import ProfileFace from '@app/components/reveal/ProfileFace'
 import { CARD_W, CARD_H } from '@app/components/deck/fx'
 import { profileById, type Profile } from '@app/data/profiles'
-import PixelStars from './PixelStars'
+import PixelStars, { BURST } from './PixelStars'
 
 /** the reveal card is drawn at 358 × 625; both sides share the deck card's width */
 const FACE_W = 358
@@ -101,9 +101,10 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
   const [turns, setTurns] = useState(reduced ? 1 : 0)
   const shake = useAnimationControls()
   const flash = useAnimationControls()
-  // pixel stars align over her card: they gather during the shake and burst as it turns
-  const [stars, setStars] = useState(0)
+  // pixel stars align over her card: they gather from "mutual" and burst as it turns
+  const [stars, setStars] = useState({ n: 0, from: 0 })
   const starred = useRef(false)
+  const burstNow = () => setStars((s) => ({ n: s.n + 1, from: BURST - 0.12 }))
 
   useEffect(() => {
     if (reduced) return
@@ -114,9 +115,11 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
   // the beats that are more than a pose
   useEffect(() => {
     onCaption?.(CAPTION[beat.at])
-    if (beat.at === 'shake') {
+    if (beat.at === 'mutual') {
       starred.current = true
-      setStars((n) => n + 1)
+      setStars((s) => ({ n: s.n + 1, from: 0 }))
+    }
+    if (beat.at === 'shake') {
       void shake.start({
         x: [0, -5, 6, -8, 9, -11, 12, -10, 8, -4, 0], rotate: [0, -1, 1.2, -1.8, 2, -2.4, 2.6, -2, 1.4, -0.6, 0],
         transition: { duration: 0.85, ease: 'easeInOut' },
@@ -126,7 +129,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
       setRevealed(true); setTurns((n) => n + 1); onFlip?.(true)
       void flash.start({ opacity: [0, 1, 0], scale: [0.6, 1.4, 1.8], transition: { duration: 1.2, ease: 'easeOut' } })
       // skipped straight here: the stars still get their moment
-      if (!starred.current) setStars((n) => n + 1)
+      if (!starred.current) burstNow()
       starred.current = false
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -144,7 +147,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
     if (!done) { setBeat({ at: 'revealed' }); return }
     const to = !revealed
     setRevealed(to)
-    if (to) { setTurns((n) => n + 1); setStars((n) => n + 1) }
+    if (to) { setTurns((n) => n + 1); burstNow() }
     onFlip?.(to)
     onCaption?.(to ? CAPTION.revealed : 'How strangers see her')
   }
@@ -184,7 +187,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
       <motion.div aria-hidden initial={{ opacity: 0 }} animate={flash}
         style={{ position: 'absolute', inset: '-15%', borderRadius: '50%', pointerEvents: 'none', background: 'radial-gradient(closest-side, rgba(255,236,170,0.8), rgba(242,199,92,0.35) 45%, transparent 75%)', mixBlendMode: 'screen' }} />
 
-      <PixelStars fire={stars} w={FLIP_W * scale} h={FLIP_H * scale} />
+      <PixelStars fire={stars.n} from={stars.from} w={FLIP_W * scale} h={FLIP_H * scale} />
 
       <button
         key={`hand${run}`}

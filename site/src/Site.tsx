@@ -5,7 +5,7 @@ import RevealStyles from '@app/components/reveal/RevealStyles'
 import AlignMark from '@app/components/intro/AlignMark'
 import FlipCard, { FLIP_H, FLIP_W } from './FlipCard'
 import Scoreboard, { Track } from './Scoreboard'
-import { ALL_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
+import { ALL_CITIES, VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
 import { checkoutReady, checkoutUrl, useVotes } from './votes'
 
 /** card size: as big as the screen allows, never past 1.1× */
@@ -34,14 +34,20 @@ export default function Site() {
   const [cityText, setCityText] = useState('')
   const [email, setEmail] = useState('')
   const city = parseCity(cityText)
+  // every seat votes now for the city after Texas: your own city if it's in the race, otherwise your pick
+  const [voteText, setVoteText] = useState('')
+  const picked = parseCity(voteText)
+  const vote = picked && stageOf(picked.slug) === 'vote' ? picked : !voteText && city && stageOf(city.slug) === 'vote' ? city : null
+  const voteBad = !!voteText.trim() && !!picked && stageOf(picked.slug) !== 'vote'
   const emailRef = useRef<HTMLInputElement>(null)
 
-  // back from Stripe on ?paid=1; the city was remembered on the way out
+  // back from Stripe on ?paid=1; the seat was remembered on the way out as city__vote
   const [paid] = useState(() => {
     if (!new URLSearchParams(window.location.search).get('paid')) return null
-    let slug: string | null = null
-    try { slug = sessionStorage.getItem('align-vote') } catch { /* private mode */ }
-    return slug ? cityFromSlug(slug) : null
+    let seat: string | null = null
+    try { seat = sessionStorage.getItem('align-vote') } catch { /* private mode */ }
+    const [c, v] = (seat ?? '').split('__')
+    return c ? { city: cityFromSlug(c), vote: cityFromSlug(v || c) } : null
   })
   useEffect(() => {
     if (!paid) return
@@ -74,17 +80,23 @@ export default function Site() {
     if (r.top < 0 || r.bottom > window.innerHeight) b.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 
-  const pick = (c: City) => {
-    setCityText(label(c))
+  const nextField = () => {
     toBallot()
     if (!email) window.setTimeout(() => emailRef.current?.focus({ preventScroll: true }), 450)
   }
+  /** Houston and Texas on the track: that's where you'll use Align */
+  const pickCity = (c: City) => { setCityText(label(c)); nextField() }
+  /** a row on the board: that's your vote, and your city too if you haven't said one */
+  const pickVote = (c: City) => {
+    if (!cityText.trim()) { setCityText(label(c)); setVoteText('') } else setVoteText(c.slug === city?.slug ? '' : label(c))
+    nextField()
+  }
 
   const pay = () => {
-    if (!city) return
-    const url = checkoutUrl(city.slug, email.trim())
+    if (!city || !vote) return
+    const url = checkoutUrl(city.slug, vote.slug, email.trim())
     if (!url) return
-    try { sessionStorage.setItem('align-vote', city.slug) } catch { /* private mode */ }
+    try { sessionStorage.setItem('align-vote', `${city.slug}__${vote.slug}`) } catch { /* private mode */ }
     window.location.href = url
   }
 
@@ -97,7 +109,7 @@ export default function Site() {
         {paid && (
           <motion.div className="thanks" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} role="status">
             <span style={{ color: 'var(--align)' }}>✦</span>
-            <span>You’re in. One vote for <b>{label(paid)}</b>. We’ll email you the night it lights.</span>
+            <span>You’re in for <b>{paid.city.name}</b>, and your vote is in for <b>{paid.vote.name}</b>. We’ll email you the night {paid.city.name} lights.</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -124,7 +136,7 @@ export default function Site() {
 
           <div className="cta-block">
             <a className="chrome-cta" id="hero-cta" href="#vote">Get your seat · $15 <span className="spark">✦</span></a>
-            <span className="fine">Houston first · Texas next · then you vote</span>
+            <span className="fine">Houston first · Texas next · vote now for what’s after</span>
           </div>
         </header>
       </div>
@@ -132,15 +144,15 @@ export default function Site() {
       {/* the vote: where it lights, the race, and the ballot, in one place */}
       <section className="wrap vote" id="vote">
         <div className="vote-head">
-          <span className="eyebrow">The beta is the vote</span>
+          <span className="eyebrow">Voting is open now</span>
           <h2>Which city lights after Texas?</h2>
-          <p className="sub">$15 buys one seat, and one seat is one vote for your city. Same price everywhere.</p>
+          <p className="sub">$15 buys one seat, and every seat casts one vote today, wherever you live. Houston and Texas seats vote too.</p>
         </div>
 
-        <Track tally={tally} mine={city} onPick={pick} />
+        <Track tally={tally} mine={city} vote={vote} onPick={pickCity} />
 
         <div className="vote-grid">
-          <Scoreboard tally={tally} mine={city} onPick={pick} />
+          <Scoreboard tally={tally} mine={vote} onPick={pickVote} />
 
           <form className="ballot" id="ballot" onSubmit={(e) => { e.preventDefault(); pay() }}>
             <div className="ballot-top">
@@ -154,7 +166,15 @@ export default function Site() {
                 placeholder="Your city" autoComplete="address-level2" required />
               <datalist id="cities">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
             </label>
-            <p className="note" aria-live="polite">{city ? <StageNote city={city} /> : 'Tap a city on the board, or type yours.'}</p>
+            <p className="note" aria-live="polite">{city ? <StageNote city={city} /> : 'Where you’ll use Align. Type it, or tap a city.'}</p>
+
+            <label className="field">
+              <span>Your vote · the city after Texas</span>
+              <input id="vote" list="race" enterKeyHint="next" value={voteText} onChange={(e) => setVoteText(e.target.value)}
+                placeholder={city && stageOf(city.slug) === 'vote' ? `${label(city)} (your city)` : 'Tap the board, or type a city'} />
+              <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
+            </label>
+            {voteBad && <p className="note" role="alert">Houston and Texas are already in. Vote for a city beyond Texas.</p>}
 
             <label className="field">
               <span>Email</span>
@@ -162,8 +182,8 @@ export default function Site() {
                 value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
             </label>
 
-            <button className="chrome-cta" type="submit" disabled={!city || !checkoutReady}>
-              {city ? `Pay $15 · vote ${city.name}` : 'Pay $15 · cast your vote'} <span className="spark">✦</span>
+            <button className="chrome-cta" type="submit" disabled={!city || !vote || !checkoutReady}>
+              {vote ? `Pay $15 · vote ${vote.name}` : 'Pay $15 · cast your vote'} <span className="spark">✦</span>
             </button>
             <span className="fine checkout">{checkoutReady ? 'Secure checkout with Stripe' : 'Checkout opens soon'}</span>
 
@@ -171,7 +191,7 @@ export default function Site() {
               <li>Beta access the night your city lights</li>
               <li>Align+ for life</li>
               <li>A numbered founding member card</li>
-              <li>One vote for your city</li>
+              <li>One vote, counted today, for the city after Texas</li>
             </ul>
           </form>
         </div>
@@ -184,7 +204,7 @@ export default function Site() {
         </div>
         <div>
           <h3>My city isn’t next?</h3>
-          <p>Your seat and your vote stay put until it lights. Bring friends and it lights sooner.</p>
+          <p>Your vote counts today and your seat waits for your city. Bring friends and it lights sooner.</p>
         </div>
       </section>
 
@@ -192,12 +212,12 @@ export default function Site() {
         {bar && (
           <motion.div className="pay-bar" initial={{ y: 90 }} animate={{ y: 0 }} exit={{ y: 90 }} transition={{ type: 'spring', stiffness: 380, damping: 34 }}>
             <span className="pay-bar-copy">
-              {city ? <><b>{city.name}</b> · $15</> : <><b>$15</b> · one seat, one vote</>}
+              {vote ? <>Vote <b>{vote.name}</b> · $15</> : <><b>$15</b> · one seat, one vote</>}
             </span>
-            <button type="button" className="chrome-cta" onClick={() => city
+            <button type="button" className="chrome-cta" onClick={() => vote
               ? document.getElementById('ballot')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
               : document.getElementById('vote')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
-              {city ? 'Finish vote' : 'Vote'}
+              {vote ? 'Finish vote' : 'Vote'}
             </button>
           </motion.div>
         )}
@@ -213,7 +233,7 @@ export default function Site() {
 
 function StageNote({ city }: { city: City }) {
   const stage = stageOf(city.slug)
-  if (stage === 'first') return <>Houston opens first. <b>You’re in the opening deck.</b></>
-  if (stage === 'texas') return <>{city.name} is <b>locked in next</b>, right after Houston.</>
-  return <>Your $15 is <b>one vote for {city.name}</b>.</>
+  if (stage === 'first') return <>Houston opens first. <b>You’re in the opening deck.</b> Now pick the city after Texas.</>
+  if (stage === 'texas') return <>{city.name} is <b>locked in next</b>. Now pick the city after Texas.</>
+  return <>Your vote goes to {city.name} unless you pick another.</>
 }

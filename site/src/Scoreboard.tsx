@@ -31,12 +31,15 @@ function Count({ n }: { n: number }) {
 
 interface Props { tally: Tally; mine: City | null; onPick: (c: City) => void }
 
-/** The order cities light in: Houston, then Texas, then the vote. Seats so far ride along. */
-export function Track({ tally, mine, onPick }: Props) {
-  const { votes } = tally
-  const houston = sum(votes, [HOUSTON.slug])
-  const texas = Object.entries(votes).filter(([s]) => stageOf(s) === 'texas').reduce((n, [, v]) => n + v, 0)
-  const race = Object.entries(votes).filter(([s]) => stageOf(s) === 'vote').reduce((n, [, v]) => n + v, 0)
+/**
+ * The order cities light in: Houston, then Texas, then the vote, which is open now.
+ * `mine` is your city, `vote` the city you're voting for.
+ */
+export function Track({ tally, mine, vote, onPick }: Props & { vote: City | null }) {
+  const { seats, votes } = tally
+  const houston = sum(seats, [HOUSTON.slug])
+  const texas = Object.entries(seats).filter(([s]) => stageOf(s) === 'texas').reduce((n, [, v]) => n + v, 0)
+  const race = Object.values(votes).reduce((n, v) => n + v, 0)
   const stage = mine ? stageOf(mine.slug) : null
 
   return (
@@ -56,16 +59,16 @@ export function Track({ tally, mine, onPick }: Props) {
           ))}
         </span>
       </li>
-      <li className={`stop open${stage === 'vote' ? ' on' : ''}`}>
-        <span className="when">Then, by vote</span>
-        <span className="where">{stage === 'vote' && mine ? mine.name : 'Your city?'}</span>
+      <li className={`stop open${vote ? ' on' : ''}`}>
+        <span className="when">Then, by vote · voting now</span>
+        <span className="where">{vote ? vote.name : 'Your pick?'}</span>
         <span className="seats"><Count n={race} /> votes cast</span>
       </li>
     </ol>
   )
 }
 
-/** The live race for what lights after Texas. Tap a row to put that city on your ballot. */
+/** The live race for what lights after Texas. `mine` is the city you're voting for; tap a row to vote for it. */
 export default function Scoreboard({ tally, mine, onPick }: Props) {
   const { votes, live, updatedAt } = tally
   const ago = useAgo(updatedAt)
