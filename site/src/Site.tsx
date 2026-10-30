@@ -296,6 +296,10 @@ export default function Site() {
         <span aria-hidden style={{ display: 'contents' }}><AlignMark size={112} glow={1} dotRadius={3.6} strokeOpacity={0.75} strokeWidth={0.8} /></span>
         <span className="end-name">Align</span>
         <span className="kicker" style={{ margin: 0 }}>Blind by design</span>
+        <nav className="end-links" aria-label="Legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </nav>
         <span className="end-fine">© 2026 Align · 18+</span>
       </footer>
 

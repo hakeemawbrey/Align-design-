@@ -378,3 +378,9 @@ button.vrow { cursor: pointer; transition: border-color .15s ease, background-co
 .tx-list { display: flex; flex-wrap: wrap; gap: 2px 12px; }
 .tx-list span { white-space: nowrap; }
 .board-head { margin-top: 24px; }
+
+/* footer links: privacy and terms */
+.end-links { display: flex; gap: 24px; margin-top: 28px; }
+.end-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13.5px; color: var(--label-2); text-decoration: underline; text-decoration-color: rgba(179,166,196,0.4); text-underline-offset: 4px; }
+.end-links a:hover { color: var(--label-1); }
+.end-links + .end-fine { margin-top: 4px; }
