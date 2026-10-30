@@ -68,9 +68,11 @@ export default function Nebula() {
     const cv = ref.current
     if (!cv) return
     // drawn once, off the critical path, so the hero's first frames aren't held up
+    let drawnW = 0, drawnAspect = 0
     const draw = () => {
+      drawnW = window.innerWidth; drawnAspect = window.innerHeight / window.innerWidth
       // the clouds are soft, so they're worked out small...
-      const W = 128, H = Math.round(W * (window.innerHeight / window.innerWidth))
+      const W = 128, H = Math.round(W * drawnAspect)
       const small = document.createElement('canvas')
       small.width = W; small.height = H
       const sg = small.getContext('2d')!
@@ -96,8 +98,9 @@ export default function Nebula() {
       }
       sg.putImageData(img, 0, 0)
       // ...then drawn up to about screen size, blurred and grained once, so the page carries
-      // no live blur or blend layer while it scrolls
-      const BW = Math.min(900, Math.round(window.innerWidth * 0.75)), BH = Math.round(BW * (H / W))
+      // no live blur or blend layer while it scrolls; wide screens get enough pixels that the grain
+      // stays fine rather than blocky
+      const BW = Math.min(1600, Math.round(window.innerWidth * 0.75)), BH = Math.round(BW * (H / W))
       cv.width = BW; cv.height = BH
       const g = cv.getContext('2d')!
       g.filter = `blur(${Math.round(BW / 120)}px) saturate(1.1)`
@@ -115,7 +118,23 @@ export default function Nebula() {
     }
     const ric = (window as unknown as { requestIdleCallback?: (f: () => void, o?: object) => number }).requestIdleCallback
     const id = ric ? ric(draw, { timeout: 1200 }) : window.setTimeout(draw, 300)
-    return () => { (window as unknown as { cancelIdleCallback?: (n: number) => void }).cancelIdleCallback?.(id); window.clearTimeout(id) }
+    // object-fit: cover keeps small resizes (a phone's toolbar) from stretching it; a turned phone
+    // or a much wider window gets the sky drawn again at its new shape
+    let again = 0
+    const onResize = () => {
+      window.clearTimeout(again)
+      again = window.setTimeout(() => {
+        if (!drawnW) return
+        const aspect = window.innerHeight / window.innerWidth
+        if (Math.abs(aspect / drawnAspect - 1) > 0.3 || window.innerWidth > drawnW * 1.3) draw()
+      }, 400)
+    }
+    window.addEventListener('resize', onResize)
+    return () => {
+      (window as unknown as { cancelIdleCallback?: (n: number) => void }).cancelIdleCallback?.(id)
+      window.clearTimeout(id); window.clearTimeout(again)
+      window.removeEventListener('resize', onResize)
+    }
   }, [])
 
   return (

@@ -12,11 +12,14 @@ html { scroll-behavior: smooth; }
 
 /* the sky from the promo videos: nebula, grain, little four-point stars, tonight's moon */
 .sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.nebula { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s ease; }
+.nebula { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; }
 .nebula.on { opacity: 1; }
 .spark-star { position: absolute; animation: twinkle 5s ease-in-out infinite; }
-.sky-moon { position: absolute; top: 78px; right: max(5%, 16px); scale: .8; opacity: .9; filter: drop-shadow(0 0 18px rgba(239,230,214,0.35)); }
-@media (min-width: 900px) { .sky-moon { top: 120px; right: 9%; } }
+.sky-moon { position: absolute; top: 68px; right: max(5%, 16px); scale: .8; opacity: .9; filter: drop-shadow(0 0 18px rgba(239,230,214,0.35)); }
+/* desktop: in the nav row beside the pill, clear of the hero card... */
+@media (min-width: 900px) { .sky-moon { top: 18px; right: calc(max(28px, (100vw - 1024px) / 2) + 148px); } }
+/* ...and out past the card once the page has a margin wide enough to hold it */
+@media (min-width: 1240px) { .sky-moon { top: 120px; right: calc((100vw - 1024px) / 4); } }
 @media (prefers-reduced-motion: reduce) { .spark-star { animation: none; } }
 
 .wrap {
@@ -24,32 +27,38 @@ html { scroll-behavior: smooth; }
   padding-left: max(28px, env(safe-area-inset-left, 0px)); padding-right: max(28px, env(safe-area-inset-right, 0px));
 }
 
-.nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-.wordmark { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--label-1); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-.wordmark { gap: 10px; }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+@media (min-width: 900px) { .nav { height: 80px; } }
+.wordmark { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--label-1); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; }
 .wordmark svg { flex-shrink: 0; }
 .nav-cta {
   height: 36px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center;
   border: 1px solid rgba(239,230,214,0.32); background: rgba(40,26,78,0.55); color: var(--label-1);
   font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+  position: relative;
 }
+/* small pills and links keep their look but get a 44px tap area */
+.nav-cta::after, .deal-again::after { content: ''; position: absolute; inset: -4px 0; }
 
 /* ── hero ─────────────────────────────────────────── */
-.hero { display: grid; grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 28px; padding: 16px 0 80px; }
+/* phones: headline, line, card and button share the first screen, so the hero runs tight here */
+.hero { display: grid; grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 20px; padding: 0 0 80px; }
 .hero h1 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(40px, 11.5vw, 84px); line-height: 1; letter-spacing: -0.015em; max-width: 14ch; text-wrap: balance; }
 .hero .lede { color: var(--label-2); font-size: 15.5px; line-height: 1.55; max-width: 30ch; text-wrap: balance; }
 .hero .lede b { display: block; margin-bottom: 6px; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.55em; line-height: 1.15; color: var(--label-1); }
 .hero-copy { display: grid; justify-items: center; gap: 14px; }
-.card-col { display: grid; justify-items: center; gap: 22px; margin-top: 8px; }
-.deal-again { margin-left: 12px; padding: 4px 0; font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--label-2); text-decoration: underline; text-underline-offset: 3px; }
+.card-col { display: grid; justify-items: center; gap: 14px; }
+.deal-again { position: relative; margin-left: 12px; padding: 4px 0; font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--label-2); text-decoration: underline; text-underline-offset: 3px; }
 .deal-again:hover { color: var(--label-1); }
 /* text below the hero paints over the hand's faded cards */
 .scene, .cta-block { position: relative; z-index: 2; }
 /* under the card, titled like a scene in the videos: a small spaced label, then an italic line */
-.scene { display: grid; justify-items: center; gap: 6px; min-height: 58px; text-align: center; }
+/* room for "Deal again" from the start, so the button below doesn't jump when it appears */
+.scene { display: grid; justify-items: center; align-content: start; gap: 6px; min-height: 74px; text-align: center; }
 .scene > div { display: grid; justify-items: center; gap: 6px; }
 .scene-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--label-2); }
 .scene-line { font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.1; color: var(--label-1); text-shadow: 0 0 18px rgba(201,182,240,0.35); }
+.scene .deal-again::after { inset: -11px -8px; }
 .scene .deal-again { margin: 0; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; }
 /* ✦ BLIND BY DESIGN ✦ */
 .kicker {
@@ -73,6 +82,8 @@ h1, h2, .end-line { text-shadow: 0 0 28px rgba(201,182,240,0.25); }
   .hero .lede { font-size: 18px; max-width: 30ch; }
   .hero .card-col { grid-column: 2; grid-row: 1 / span 2; justify-self: center; }
 }
+/* short desktops: the card is sized to the screen, so less air above it keeps its caption on screen */
+@media (min-width: 900px) and (max-height: 940px) { .hero { padding-top: 24px; } }
 
 /* ── shared type ──────────────────────────────────── */
 .eyebrow { display: block; margin-bottom: 18px; }
@@ -122,7 +133,6 @@ h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size:
 .vote-grid { display: grid; gap: 64px; margin-top: 24px; }
 @media (min-width: 900px) {
   .vote-grid { grid-template-columns: 1.25fr 1fr; column-gap: 112px; align-items: start; margin-top: 48px; }
-  .ballot { position: sticky; top: 24px; }
 }
 
 /* the live race: open rows on the page, no box */
@@ -161,6 +171,8 @@ h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size:
   box-shadow: 0 0 34px rgba(242,199,92,0.22), 0 0 2px rgba(255,244,207,0.8), 0 28px 70px rgba(0,0,0,0.45);
 }
 .ballot::before { content: ''; position: absolute; inset: 9px; border-radius: 15px; border: 1px solid rgba(242,199,92,0.3); pointer-events: none; }
+/* sticky only where the whole ballot fits on screen (after .ballot, whose position: relative would win) */
+@media (min-width: 900px) and (min-height: 1100px) { .ballot { position: sticky; top: 24px; } }
 .ballot-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--align); }
 .ballot-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .price { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label-3); }
@@ -183,13 +195,22 @@ h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size:
 }
 .birth-row .field input { padding: 0 8px; font-size: 14.5px; }
 .field input:focus { border-color: var(--align); box-shadow: 0 0 0 3px rgba(242,199,92,0.18); }
-.ballot .chrome-cta { width: 100%; }
+/* a long city name wraps inside the pill rather than spilling out of it */
+.ballot .chrome-cta { width: 100%; height: auto; min-height: 54px; padding-block: 8px; line-height: 1.15; text-wrap: balance; font-size: clamp(17px, 5vw, 19px); }
 .birth { border: 0; margin: 4px 0 0; padding: 0; min-width: 0; }
 .birth legend { padding: 0; margin-bottom: 14px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--label-2); }
 .birth-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 10px; }
 .birth-row .field { margin-bottom: 12px; min-width: 0; }
+/* narrow phones: date over time, so neither value is clipped */
+@media (max-width: 359px) {
+  .birth-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  /* and a little less frame, so the pay button keeps to one line */
+  .ballot { padding-inline: 20px; }
+  .ballot .gets { margin-inline: -18px; padding-inline: 18px; }
+  .ballot .chrome-cta { padding-inline: 14px; font-size: 16px; }
+}
 .field input:disabled { opacity: .4; }
-.check { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 14px; color: var(--label-2); cursor: pointer; }
+.check { display: flex; align-items: center; gap: 10px; min-height: 44px; margin: -12px 0 8px; font-size: 14px; color: var(--label-2); cursor: pointer; }
 .check input { width: 18px; height: 18px; accent-color: var(--align); }
 .checkout { display: block; text-align: center; margin-top: 16px; }
 .gets {
@@ -204,7 +225,7 @@ h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size:
 @media (min-width: 900px) { .qa { grid-template-columns: 1fr 1fr; column-gap: 96px; padding-block: 112px 72px; } }
 
 .thanks {
-  position: relative; z-index: 2; margin: 8px auto 0; max-width: 1040px; border-radius: 18px; padding: 14px 18px;
+  position: relative; z-index: 2; margin: 8px auto 0; width: min(1040px, calc(100% - 32px)); border-radius: 18px; padding: 14px 18px;
   display: flex; gap: 12px; align-items: center; background: rgba(242,199,92,0.12); border: 1px solid rgba(242,199,92,0.45);
 }
 /* the end card from the videos: the line, the mark, the name */
