@@ -87,14 +87,14 @@ function ProfileCardImpl({ profile, peek = 'none', ring, ringText, glow = true }
 
   return (
     <div className={profile.founder ? 'holo-frame' : undefined} style={{
-      position: 'relative', width: CARD_W, height: CARD_H, borderRadius: 20, padding: profile.founder ? 3 : 2.5,
+      position: 'relative', width: CARD_W, height: CARD_H, borderRadius: 20, padding: profile.founder ? 5.5 : 5,
       ...(profile.founder ? {} : { background: foil }),
       boxShadow: glow
         ? `0 0 26px ${sign.color}66, 0 0 2px ${sign.light}, 0 18px 40px rgba(5,2,15,0.6)`
         : '0 10px 30px rgba(5,2,15,0.5)',
     }}>
       <div style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 17.5, overflow: 'hidden',
+        position: 'relative', width: '100%', height: '100%', borderRadius: 15, overflow: 'hidden',
         background: `radial-gradient(120% 60% at 50% 0%, ${sign.dark}55 0%, transparent 60%), linear-gradient(180deg, #160e28 0%, #100a1d 55%, #0e0919 100%)`,
       }}>
         {/* name + age */}

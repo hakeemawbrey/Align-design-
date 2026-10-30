@@ -14,11 +14,11 @@ function CardBackImpl({ glow = true }: { glow?: boolean }) {
   })
   return (
     <div style={{
-      width: CARD_W, height: CARD_H, borderRadius: 20, padding: 1.5,
+      width: CARD_W, height: CARD_H, borderRadius: 20, padding: 5,
       background: 'linear-gradient(160deg, #c8b4ff 0%, #6b4bd0 30%, #f2d784 52%, #6b4bd0 72%, #c8b4ff 100%)',
       boxShadow: glow ? '0 0 24px rgba(154,123,224,0.45), 0 18px 40px rgba(5,2,15,0.6)' : '0 10px 30px rgba(5,2,15,0.5)',
     }}>
-      <svg width={CARD_W - 3} height={CARD_H - 3} viewBox={`0 0 ${CARD_W} ${CARD_H}`} style={{ display: 'block', borderRadius: 18.5 }}>
+      <svg width={CARD_W - 10} height={CARD_H - 10} viewBox={`0 0 ${CARD_W} ${CARD_H}`} style={{ display: 'block', borderRadius: 15 }}>
         <defs>
           <linearGradient id="cb-bg" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#2a1260" />

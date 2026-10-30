@@ -1,0 +1,12 @@
+// the app's fonts, resolved from the site's own node_modules
+import '@fontsource/eb-garamond/latin-400.css'
+import '@fontsource/eb-garamond/latin-500.css'
+import '@fontsource/eb-garamond/latin-600.css'
+import '@fontsource/eb-garamond/latin-400-italic.css'
+import '@fontsource/eb-garamond/latin-500-italic.css'
+import '@fontsource/eb-garamond/latin-600-italic.css'
+import '@fontsource/space-mono/latin-400.css'
+import '@fontsource/space-mono/latin-700.css'
+import '@fontsource/inter/latin-400.css'
+import '@fontsource/inter/latin-500.css'
+import '@fontsource/inter/latin-600.css'

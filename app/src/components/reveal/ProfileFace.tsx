@@ -51,12 +51,16 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
 
   return (
     <div style={{
-      position: 'absolute', inset: 0, borderRadius: 24, padding: 1.5,
-      background: sign.foil, backgroundSize: '200% 100%', animation: 'rv-foil 6s linear infinite',
+      position: 'absolute', inset: 0, borderRadius: 24, padding: 5, overflow: 'hidden', isolation: 'isolate',
       boxShadow: `0 0 28px ${sign.color}66, 0 0 70px ${sign.color}22, 0 30px 60px rgba(0,0,0,0.5)`,
     }}>
+      {/* the foil edge: a strip two tiles wide slides by transform, so it never repaints */}
       <div style={{
-        position: 'relative', width: '100%', height: '100%', borderRadius: 22.5, overflow: 'hidden',
+        position: 'absolute', top: 0, bottom: 0, left: 0, width: '400%', zIndex: -1,
+        background: sign.foil, backgroundSize: '50% 100%', animation: 'foil-slide 6s linear infinite', willChange: 'transform',
+      }} />
+      <div style={{
+        position: 'relative', width: '100%', height: '100%', borderRadius: 19, overflow: 'hidden',
         background: 'linear-gradient(180deg, #1b0d38 0%, #150a2e 60%, #120826 100%)',
       }}>
         {/* name row */}
@@ -82,7 +86,7 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
               animation: 'rv-spin 6s linear infinite', opacity: 0.75,
             }} />
           </motion.div>
-          <VeilPhoto photo={p.photo ?? ''} veil={sign.auraImg} lift={lift} height={PHOTO_H} onPeak={onPeak} onDone={onDone}>
+          <VeilPhoto photo={p.photo ?? ''} veil={sign.auraImg} lift={lift} height={PHOTO_H} position={p.photoPos} onPeak={onPeak} onDone={onDone}>
             <motion.div
               initial={{ opacity: 0, scale: 0.6 }}
               animate={revealed ? { opacity: 1, scale: [1.35, 0.95, 1] } : { opacity: 0, scale: 0.6 }}
