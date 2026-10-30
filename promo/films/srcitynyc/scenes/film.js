@@ -1,5 +1,5 @@
 // srcitynyc · "Millions of people in New York…" (Star Talk Remix of citynyc, 30 s vertical) · story 0–25.6, then the
-// shared END CARD (default CTA). The stars guide you through the original: THE STARS (the gold narrator star) rises over
+// shared END CARD (cta JOIN THE WAITLIST). The stars guide you through the original: THE STARS (the gold narrator star) rises over
 // the skyline and talks you through the same-five problem; ♓ Pisces sits on a water-tower roof and knows the regulars.
 // Beats on the 108 bpm grid (beat n at 0.6 + n·0.5556). One canvas, DOM type + the dialogue box above it, grain on top.
 //   0.00–5.40   HOOK  "Millions | of people | in *New York…*" — the skyline rises, a sleepy gold star blinks awake

@@ -1,5 +1,5 @@
 // srcitynyc · "Millions of people in New York…" (Star Talk Remix of citynyc, 30 s vertical). Story 0–25.6 (film.js), then the
-// shared END CARD (default CTA).
+// shared END CARD (cta JOIN THE WAITLIST, as the original).
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
 import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { build, CUES as FILM_CUES, T } from './film.js'
@@ -16,7 +16,7 @@ const CUTS = [{ t: 2.78, kind: 'shuffle' }, { t: 5.54, kind: 'flip' }, { t: 12.1
 export const CUES = [...FILM_CUES, ...cardCutCues(CUTS), ...endcardCues(END)]
 export const SCENES = [
   build,
-  (stage) => buildEndcard(stage, { start: END }),
+  (stage) => buildEndcard(stage, { start: END, cta: 'JOIN THE WAITLIST' }),
   cardFrame({ start: 0, end: END }),
   cardCuts(CUTS),
 ]

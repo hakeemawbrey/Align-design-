@@ -1,5 +1,5 @@
 // srcityla · "LA: everyone's photo is perfect." (Star Talk Remix of cityla, 20 s vertical, music: pop, F) · story 0–15.6,
-// then the shared end card (default CTA).
+// then the shared end card (cta VOTE FOR YOUR CITY, as the original).
 //   0.00–5.45  "LA: everyone's | photo is *perfect.*"  A ring light, a phone on a tripod, a faceless profile photo. The ♎ Libra
 //              star (Venus-ruled, lives for aesthetics) hops on the shutter: flash + GOLDEN HOUR, flash + PALM TREES (drop),
 //              flash + GLOW. LIBRA: "ok. just one more *filter.*" → + 1 MORE FILTER, + 1 MORE, + MORE: the photo blows out
@@ -54,7 +54,7 @@ const STICKERS = [
   { text: '+ MORE', col: '#fff3c0', x: 740, y: 690, rot: 0.08 },
 ]
 const CUTS = [5.45, { t: T.cut, kind: 'flip' }]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: 'VOTE FOR YOUR CITY' }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
 
 // ── helpers
 const pop01 = (t, t0, d = 0.32, s = 1.9) => easeOutBack(prog(t, t0, t0 + d), s)
