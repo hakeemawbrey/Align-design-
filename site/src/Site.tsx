@@ -135,15 +135,17 @@ export default function Site() {
           <div className="hero-copy">
             <span className="kicker">Blind by design</span>
             <h1>Fall for who they are.</h1>
-            <p className="lede"><b>Not what they look like.</b> Align matches you by zodiac, and photos stay hidden until you both align.</p>
+            <p className="lede-not">Not what they look like.</p>
           </div>
-
-          <HeroCard />
 
           <div className="cta-block">
             <a className="chrome-cta" id="hero-cta" href="#vote">Get your seat · $15 <span className="spark" aria-hidden>✦</span></a>
             <span className="fine">Houston first · Texas next · vote now</span>
           </div>
+
+          <HeroCard />
+
+          <p className="lede">Align matches you by zodiac, and photos stay hidden until you both align.</p>
         </header>
       </div>
 
