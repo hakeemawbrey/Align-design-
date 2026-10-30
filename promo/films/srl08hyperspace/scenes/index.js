@@ -35,8 +35,8 @@ const T = {
   brake: BEAT(15), brakeLen: 0.42,              // 8.93
   hero: [9.0, 9.75],
   h1b: 9.05, h1bLand: 9.4, h1bOut: [11.45, 11.62], l3: 9.15,
-  cut: 11.65, h2: 11.7, h2Land: 12.08, l4: 11.85, close: 13.95,
-  heart: 12.15, h2Out: [15.18, 15.42], out: [15.1, 15.45],
+  cut: 11.65, h2: 11.7, h2Land: 12.08, l4: 11.98, close: 14.05,
+  heart: 12.6, h2Out: [15.18, 15.42], out: [15.1, 15.45],
 }
 const SS = '♐ SAG STAR', SPEAK = 'THE STARS'
 const LINES = [
