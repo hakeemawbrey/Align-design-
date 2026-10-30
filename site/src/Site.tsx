@@ -1,18 +1,19 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import RevealStyles from '@app/components/reveal/RevealStyles'
 import FlipCard, { FLIP_H, FLIP_W } from './FlipCard'
-import { ALL_CITIES, HOUSTON, TEXAS, VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
-import { checkoutReady, checkoutUrl, useVotes, votesLive, type Votes } from './votes'
+import Scoreboard from './Scoreboard'
+import { ALL_CITIES, TEXAS, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
+import { checkoutReady, checkoutUrl, useVotes } from './votes'
 
 /** card size: as big as the screen allows, never past 1.1× */
 function useCardScale() {
   const fit = () => {
     const w = window.innerWidth, h = window.innerHeight
     if (w >= 900) return Math.min(1.1, (h - 150) / FLIP_H)
-    // phones: headline, card and the button in one screen
-    return Math.max(0.6, Math.min(1, (w - 40) / FLIP_W, (h - 330) / FLIP_H))
+    // phones: a card about two-thirds of the screen wide, so the headline and button sit around it
+    return Math.max(0.55, Math.min(0.72, (w * 0.66) / FLIP_W, (h - 400) / FLIP_H))
   }
   const [s, setS] = useState(fit)
   useEffect(() => {
@@ -23,12 +24,10 @@ function useCardScale() {
   return s
 }
 
-const count = (v: Votes | null, slugs: string[]) => (v ? slugs.reduce((n, s) => n + (v[s] ?? 0), 0) : null)
-const seats = (n: number | null) => (n == null ? '' : `${n.toLocaleString()} ${n === 1 ? 'seat' : 'seats'}`)
 
 export default function Site() {
   const scale = useCardScale()
-  const votes = useVotes()
+  const tally = useVotes()
   const [revealed, setRevealed] = useState(false)
   const [cityText, setCityText] = useState('')
   const [email, setEmail] = useState('')
@@ -66,7 +65,7 @@ export default function Site() {
 
   const pick = (c: City) => {
     setCityText(label(c))
-    document.getElementById('join')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    document.getElementById('join-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   const pay = () => {
@@ -101,7 +100,7 @@ export default function Site() {
         <header className="hero" id="top">
           <div className="hero-copy">
             <span className="eyebrow" style={{ marginBottom: 0 }}>A dating app played as a card game</span>
-            <h1>Fall for the chart. The face comes after.</h1>
+            <h1>Fall for the card. The face comes after.</h1>
           </div>
 
           <div className="card-col">
@@ -128,7 +127,7 @@ export default function Site() {
             <span className="tag" style={{ color: 'var(--align)' }}>First</span>
             <div className="n">01</div>
             <div className="t">Houston</div>
-            <div className="d">The beta opens here first.{votes && <> {seats(count(votes, [HOUSTON.slug]))} so far.</>}</div>
+            <div className="d">The beta opens here first.</div>
           </div>
           <div className="stop">
             <span className="tag" style={{ color: '#c9b6f0' }}>Locked in</span>
@@ -143,6 +142,13 @@ export default function Site() {
             <div className="d">Every beta seat is one vote. The city with the most lights after Texas.</div>
           </div>
         </div>
+      </section>
+
+      {/* the live vote */}
+      <section className="wrap" id="board">
+        <span className="eyebrow">The board</span>
+        <h2>Who lights after Texas?</h2>
+        <Scoreboard tally={tally} mine={city} onPick={pick} />
       </section>
 
       {/* pay + vote */}
@@ -177,7 +183,6 @@ export default function Site() {
             </p>
           </form>
 
-          <Board votes={votes} mine={city} onPick={pick} />
         </div>
       </section>
 
@@ -195,7 +200,7 @@ export default function Site() {
           </details>
           <details>
             <summary>How does the card flip work?</summary>
-            <p>Strangers see your mystery card: your chart, your reading, a line about you, no photo. Align on each other and you both see the full card, face and all.</p>
+            <p>Strangers see your mystery card: your sign, your reading, a line about you, no photo. Align on each other and you both see the full card, face and all.</p>
           </details>
         </div>
       </section>
@@ -222,39 +227,4 @@ function StageNote({ city }: { city: City }) {
   if (stage === 'first') return <>Houston is first. <b>You’re in the opening deck.</b></>
   if (stage === 'texas') return <>{city.name} is <b>locked in next</b>, right after Houston.</>
   return <>Your $15 is <b>one vote for {city.name}</b> to light after Texas.</>
-}
-
-/** the race for after Texas */
-function Board({ votes, mine, onPick }: { votes: Votes | null; mine: City | null; onPick: (c: City) => void }) {
-  const rows = useMemo(() => {
-    const race = new Map<string, number>()
-    if (votes) for (const [slug, n] of Object.entries(votes)) if (stageOf(slug) === 'vote') race.set(slug, n)
-    // with no tally yet, list the usual contenders so there's something to pick
-    if (!votes) VOTE_CITIES.slice(0, 6).forEach((c) => race.set(c.slug, 0))
-    const list = [...race].sort((a, b) => b[1] - a[1]).slice(0, 7)
-    if (mine && stageOf(mine.slug) === 'vote' && !list.some(([s]) => s === mine.slug)) list.push([mine.slug, race.get(mine.slug) ?? 0])
-    return list.map(([slug, n]) => ({ city: slug === mine?.slug ? mine : cityFromSlug(slug), n }))
-  }, [votes, mine])
-  const top = Math.max(1, ...rows.map((r) => r.n))
-
-  return (
-    <div className="panel">
-      <span className="eyebrow">After Texas · the vote</span>
-      {rows.length === 0 && <p className="sub" style={{ marginTop: 0 }}>No votes yet. Yours could be the first.</p>}
-      {rows.map(({ city, n }, i) => {
-        const isMine = city.slug === mine?.slug
-        return (
-          <button key={city.slug} type="button" className={`board-row${isMine ? ' mine' : ''}`} onClick={() => onPick(city)}>
-            <span className="rank">{String(i + 1).padStart(2, '0')}</span>
-            <span className="nm">{label(city)}</span>
-            <span className="ct">{votesLive && votes ? `${n}${isMine ? ' + you' : ''}` : isMine ? '+ you' : ''}</span>
-            {votesLive && votes && (
-              <span className="bar"><motion.i initial={{ width: 0 }} whileInView={{ width: `${(n / top) * 100}%` }} viewport={{ once: true }} transition={{ duration: 0.9, delay: i * 0.05 }} /></span>
-            )}
-          </button>
-        )
-      })}
-      <p className="fine" style={{ marginTop: 14 }}>{votesLive ? 'Live count · one paid seat, one vote' : 'Tap a city to vote for it'}</p>
-    </div>
-  )
 }
