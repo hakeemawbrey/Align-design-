@@ -6,21 +6,21 @@
 //              THE STARS: "ok. sixty seconds. *keep up.*"  Pisces pops in, sweating at the clock.
 //   4.40–10.6  "The Sun drives | the *same loop.*"  A road loop; the Sun (in shades) drives one lap. THE STARS: "every
 //              year, the Sun drives *one lap.*" → "that road? it's called *the zodiac.*" (a road sign pops: THE ZODIAC)
-//  10.6–16.3   "Everybody's | on the *road.*"  The Moon zooms laps; Mercury, Venus, Mars cruise; Saturn crawls, asleep.
+//  10.6–16.95  "Everybody's | on the *road.*"  The Moon zooms laps; Mercury, Venus, Mars cruise; Saturn crawls, asleep.
 //              THE STARS: "the Moon laps it *every month.*" → "Saturn? 29 years. *take your time.*" (eye-roll)
-//  16.40       card cut (deal)
-//  16.5–22.3   "Slice it | into *12.*"  The loop becomes the 12-slice wheel. THE STARS: "30° a slice. *Aries* goes first."
+//  17.00       card cut (deal)
+//  17.1–22.9   "Slice it | into *12.*"  The loop becomes the 12-slice wheel. THE STARS: "30° a slice. *Aries* goes first."
 //              ♈ ARIES skids into slot one: "FIRST. I'M FIRST. *write it down.*" The other eleven pop into their slots.
-//  22.4–28.4   "Every sign gets | an *element.*"  Fire, earth, air, water triangles snap in with chips (go go go · build
+//  23.0–30.1   "Every sign gets | an *element.*"  Fire, earth, air, water triangles snap in with chips (go go go · build
 //              it · talk it out · feel everything); Pisces bawls. THE STARS: "Pisces. it was *one word.*"
-//  28.50       card cut (shuffle)
-//  28.6–35.0   "Planets are | the *characters.*"  Five planet characters: Sun main character (shades), Moon your
+//  30.15       card cut (shuffle)
+//  30.25–35.65 "Planets are | the *characters.*"  Five planet characters: Sun main character (shades), Moon your
 //              feelings, Mercury your texts (phone), Venus your crush (heart-eyes), Mars your temper (steam).
 //              THE STARS: "Mars is why you *typed in caps.*"
-//  35.1–40.4   "Your chart: | the sky the | *second* you were born."  Slot-machine spin, SNAP onto May 12 1998, 5 PM,
+//  35.75–41.0  "Your chart: | the sky the | *second* you were born."  Slot-machine spin, SNAP onto May 12 1998, 5 PM,
 //              Tulsa; a gold frame + plaque "BABY PHOTO · 1998". THE STARS: "a baby photo. *of space.*" (Pisces: hearts)
-//  40.50       card cut (flip)
-//  40.6–46.6   "Your | *Big Three.*"  THE STARS: "Sun, Moon, Rising. *meet yourselves.*"  Three cards with the app's copy.
+//  41.00       card cut (flip)
+//  41.1–46.6   "Your | *Big Three.*"  THE STARS: "Sun, Moon, Rising. *meet yourselves.*"  Three cards with the app's copy.
 //  46.71–51.1  ★ LESSON UNLOCKED: "You're not one sign. | You're a whole *sky.*"  +1 FLUENT
 //  51.1–55.45  THE STARS: "Card first. *Face last.*" (a veiled mystery card deals in), then "Now you speak | *astrology.*";
 //              the teacher slaps the stopwatch: 0:07 · NEW RECORD. The end card takes over at 55.6.
@@ -195,7 +195,7 @@ async function build(stage) {
 
   const P = (lon, r) => ptOf(lon, r, WH)
 
-  // ── the road (4.6–16.4)
+  // ── the road (4.6–17.0)
   function drawRoad(t) {
     if (t < T.road[0] || t >= T.cut1) return
     const k = ease.outCubic(prog(t, ...T.road))
@@ -244,7 +244,7 @@ async function build(stage) {
     }
   }
 
-  // ── the wheel + the twelve (16.5–28.4)
+  // ── the wheel + the twelve (17.1–30.1)
   function drawSlices(t) {
     if (t < T.cut1 || t >= T.cut2) return
     const k = ease.outCubic(prog(t, ...T.wheel))
@@ -304,7 +304,7 @@ async function build(stage) {
     })
   }
 
-  // ── the planet characters (28.6–35.0)
+  // ── the planet characters (30.25–35.65)
   function drawRows(t) {
     if (t < T.cut2 || t >= T.h6) return
     const o = popOut(t, T.rowsOut)
@@ -339,7 +339,7 @@ async function build(stage) {
     })
   }
 
-  // ── the chart: slot machine → SNAP → baby photo (35.1–40.45)
+  // ── the chart: slot machine → SNAP → baby photo (35.75–41.0)
   function drawChart(t) {
     if (t < T.wheel2[0] || t >= T.cut3) return
     const o = popOut(t, T.chartOut)
