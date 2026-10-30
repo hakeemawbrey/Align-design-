@@ -6,6 +6,7 @@ import ProfileFace from '@app/components/reveal/ProfileFace'
 import { CARD_W, CARD_H } from '@app/components/deck/fx'
 import { profileById, type Profile } from '@app/data/profiles'
 import PixelStars, { BURST } from './PixelStars'
+import PixelMoon from './PixelMoon'
 
 /** the reveal card is drawn at 358 × 625; both sides share the deck card's width */
 const FACE_W = 358
@@ -224,8 +225,9 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
       {/* the moon rises behind her card when it's mutual, as in the videos */}
       <motion.div aria-hidden className="match-moon" initial={false}
         animate={mutual || done ? { opacity: 0.92, scale: 1 } : { opacity: 0, scale: 0.82 }}
-        transition={{ duration: reduced ? 0 : 1.1, ease: [0.16, 1, 0.3, 1] }}
-        style={{ width: FLIP_W * scale * 1.18, height: FLIP_W * scale * 1.18 }} />
+        transition={{ duration: reduced ? 0 : 1.1, ease: [0.16, 1, 0.3, 1] }}>
+        <PixelMoon size={Math.round(FLIP_W * scale * 1.18)} grid={44} lit={1} waxing glow={false} />
+      </motion.div>
 
       {/* gold bloom behind the card at the reveal */}
       <motion.div aria-hidden initial={{ opacity: 0 }} animate={flash}

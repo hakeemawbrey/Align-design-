@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import MoonPhase from '@app/components/sky/MoonPhase'
+import PixelMoon from './PixelMoon'
 import { moonTonight } from '@app/data/moon'
 
 /** the videos' sky: violet clouds with pink edges, on deep indigo */
@@ -147,7 +147,7 @@ export default function Nebula() {
         </svg>
       ))}
       <div className="sky-moon" title={`${moon.name} tonight`}>
-        <MoonPhase size={44} lit={moon.lit} waxing={moon.waxing} />
+        <PixelMoon size={44} grid={18} lit={moon.lit} waxing={moon.waxing} />
       </div>
     </div>
   )
