@@ -3,6 +3,7 @@
 //   starFrame / inSprite / cellToWorld (mirror startalk.js) · tearsCells · bmp · confetti / sparkBurst / drawHearts / sweatDrop ·
 //   pixelPanel · drawShaft / drawCables / drawRoof / drawCar / drawFrame / drawFloorDisplay / drawButtons / drawDoors ·
 //   drawNotes (muzak) · drawChip · drawPlan (thought bubble + laminated plan) · drawViolin · drawBanner · drawMysteryCard · speedLines
+import { clamp, lerp, prog, ease, rng } from '../../../src/lib.js'
 import { drawPixelStar } from '../../sky.js'
 import { easeOutBack } from '../../wheel.js'
 
@@ -316,7 +317,7 @@ export function drawChip(ctx, x, y, text, { k = 1, col = BONE, bar = GOLD, size 
   ctx.restore()
 }
 /** a thought bubble holding a laminated plan card. k = pop, (hx, hy) = the thinker's head (tail dots) */
-export function drawPlan(ctx, t, { cx, cy, w = 420, h = 270, k = 1, hx, hy, title, rows, tag = null, col = '#d23f73', burst = 0 }) {
+export function drawPlan(ctx, t, { cx, cy, w = 460, h = 290, k = 1, hx, hy, title, rows, tag = null, col = '#d23f73', burst = 0 }) {
   if (k <= 0.01) return
   // tail dots
   for (let i = 0; i < 3; i++) { const u = (i + 1) / 4, dx = lerp(cx, hx, u), dy = lerp(cy + h / 2, hy, u), r = (12 - i * 3) * k; ctx.fillStyle = INK; ctx.beginPath(); ctx.arc(dx, dy, r + 4, 0, TAU); ctx.fill(); ctx.fillStyle = '#f4efff'; ctx.beginPath(); ctx.arc(dx, dy, r, 0, TAU); ctx.fill() }
@@ -337,8 +338,8 @@ export function drawPlan(ctx, t, { cx, cy, w = 420, h = 270, k = 1, hx, hy, titl
   ctx.font = `800 34px ${INTER}`; ctx.fillStyle = col; ctx.fillText(title, -cw / 2 + 20, -ch / 2 + 32)
   if (tag) { ctx.textAlign = 'right'; ctx.font = `700 20px ${MONO}`; ctx.fillStyle = '#6b5a7a'; ctx.fillText(tag, cw / 2 - 16, -ch / 2 + 34); ctx.textAlign = 'left' }
   ctx.fillStyle = col; ctx.fillRect(-cw / 2 + 20, -ch / 2 + 56, cw - 40, 4)
-  ctx.font = `700 26px ${MONO}`; ctx.fillStyle = INK
-  rows.forEach((r, i) => ctx.fillText(r, -cw / 2 + 20, -ch / 2 + 90 + i * 40))
+  ctx.font = `700 29px ${MONO}`; ctx.fillStyle = INK
+  rows.forEach((r, i) => ctx.fillText(r, -cw / 2 + 20, -ch / 2 + 96 + i * 44))
   ctx.restore()
 }
 // the violin (for Taurus, on the roof)
