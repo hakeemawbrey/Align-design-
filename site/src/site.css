@@ -360,3 +360,21 @@ button.vrow { cursor: pointer; transition: border-color .15s ease, background-co
 .sign-line { display: flex; align-items: center; gap: 10px; margin: -4px 0 16px; font-size: 14px; color: var(--label-2); }
 .sign-line b { font-family: var(--serif); font-weight: 400; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; }
 .ballot.one .chrome-cta { margin-top: 12px; }
+
+/* Houston: first, so it gets the beta card's pearl holo frame */
+.vrow.houston {
+  border: 4px solid transparent; min-height: 64px;
+  background:
+    linear-gradient(180deg, rgba(38,24,80,0.97), rgba(24,14,54,0.97)) padding-box,
+    conic-gradient(from 210deg, #f8edff, #ffc6e6, #fff7ec, #ffe0a8, #c2ffe4, #eaf4ff, #c4d6ff, #dcc6ff, #ffeff7, #f8edff) border-box;
+  box-shadow: 0 0 22px rgba(248,237,255,0.22);
+}
+.vrow.houston .vr-city { font-size: 22px; }
+.vrow.houston .vr-lock { color: #f8edff; border-color: rgba(248,237,255,0.6); }
+/* the rest of Texas in one compact row */
+.vrow.texas { min-height: 0; padding-block: 10px; }
+.vrow.texas .vr-city { font-size: 16px; line-height: 1.3; }
+.vrow.texas { grid-template-columns: 32px 1fr; }
+.tx-list { display: flex; flex-wrap: wrap; gap: 2px 12px; }
+.tx-list span { white-space: nowrap; }
+.board-head { margin-top: 24px; }
