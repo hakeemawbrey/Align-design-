@@ -40,7 +40,7 @@ The 93 videos in the film archive (https://claude.ai/artifact/DukMG6Gz1rf8dbPFuE
 - **`sr07aura`** · 20 s · pop · Dm — remix of **"What color is your aura?"** (Teasers; original 12 s, from promo/teasers/ (t01-blind.js style files, README.md); rendered teasers/07-aura-share.mp4). Original: Aura-camera portraits drop like Polaroids and sweep the spectrum: your aura says what your bio won't.
 
 ### Group 3: Teasers
-- **`sr04charcard`** · 20 s · chiptune · Bb — remix of **"You were born a card"** (Teasers; original 12 s, from promo/teasers/ (t01-blind.js style files, README.md); rendered teasers/04-chart-card-share.mp4). Original: Birth details type in, a sign card charges with light and flips to Taurus.
+- **`sr04chartcard`** · 20 s · chiptune · Bb — remix of **"You were born a card"** (Teasers; original 12 s, from promo/teasers/ (t01-blind.js style files, README.md); rendered teasers/04-chart-card-share.mp4). Original: Birth details type in, a sign card charges with light and flips to Taurus.
 - **`sr03moon`** · 20 s · house · G — remix of **"Tonight's moon"** (Teasers; original 12 s, from promo/teasers/ (t01-blind.js style files, README.md); rendered teasers/03-moon-share.mp4). Original: A huge moon waxes through the frame: tonight's moon has notes for you.
 - **`sr06newdeck`** · 20 s · jazzy · Gm — remix of **"A new deck every night"** (Teasers; original 12 s, from promo/teasers/ (t01-blind.js style files, README.md); rendered teasers/06-new-deck-share.mp4). Original: Night falls and the deck is cut, riffled and dealt: every night, the stars deal again.
 
