@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion, useAnimationControls, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, useAnimationControls, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import CardBack from '@app/components/deck/CardBack'
 import ProfileCard from '@app/components/deck/ProfileCard'
@@ -58,7 +58,7 @@ const CAPTION: Record<Beat['at'], string> = {
   gone: 'Release or align',
   mutual: 'It’s mutual ✦',
   shake: 'It’s mutual ✦',
-  revealed: 'Revealed · tap to turn back',
+  revealed: 'It’s a match ✦',
 }
 
 const face: React.CSSProperties = { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }
@@ -86,7 +86,13 @@ function Stamp({ kind, on }: { kind: 'align' | 'release'; on: boolean }) {
  * align on another, then align on Juniper. It's mutual: her card shakes and turns over
  * to show her. After that it's yours to flip.
  */
-export default function FlipCard({ scale, onFlip, onCaption }: { scale: number; onFlip?: (revealed: boolean) => void; onCaption?: (text: string) => void }) {
+export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
+  scale: number
+  onFlip?: (revealed: boolean) => void
+  onCaption?: (text: string) => void
+  /** once the match is revealed, a way to deal again (null while it plays) */
+  onReplay?: (again: (() => void) | null) => void
+}) {
   const [beat, setBeat] = useState<Beat>(reduced ? { at: 'revealed' } : { at: 'deal' })
   const [run, setRun] = useState(0)
   // after the script, a tap turns Juniper's card back and forth
@@ -142,11 +148,16 @@ export default function FlipCard({ scale, onFlip, onCaption }: { scale: number; 
     setRevealed(to)
     if (to) setTurns((n) => n + 1)
     onFlip?.(to)
-    onCaption?.(to ? CAPTION.revealed : 'Her card, as a stranger sees it · tap')
+    onCaption?.(to ? CAPTION.revealed : 'How strangers see her')
   }
   const again = () => {
     setRevealed(false); onFlip?.(false); setBeat({ at: 'deal' }); setRun((n) => n + 1)
   }
+
+  useEffect(() => {
+    onReplay?.(done && !reduced ? again : null)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [done])
 
   // pointer tilt so the card feels like an object
   const px = useMotionValue(0)
@@ -199,12 +210,12 @@ export default function FlipCard({ scale, onFlip, onCaption }: { scale: number; 
             <motion.div key={p.id}
               initial={reduced ? false : i === 0 ? { x: 120, y: 700, rotate: 18, scale: 1.08, opacity: 0 } : { x: 0, y: 14, rotate: 0, scale: 0.93, opacity: 0 }}
               animate={gone
-                ? { x: dir * 560, y: dir > 0 ? -70 : 30, rotate: dir * 20, scale: 1, opacity: 1 }
+                ? { x: dir * 560, y: dir > 0 ? -70 : 30, rotate: dir * 20, scale: 1, opacity: 0 }
                 : top
                   ? { x: lean ? dir * 46 : 0, y: 0, rotate: lean ? dir * 5 : 0, scale: 1, opacity: 1 }
                   : { x: 0, y: 14, rotate: 0, scale: 0.93, opacity: under && beat.at !== 'deal' ? 1 : 0 }}
               transition={gone
-                ? { duration: 0.42, ease: [0.25, 0.6, 0.35, 1] }
+                ? { duration: 0.42, ease: [0.25, 0.6, 0.35, 1], opacity: { duration: 0.2, delay: 0.24 } }
                 : i === 0 && beat.at === 'deal' ? { ...DEAL_SPRING, delay: TOP_DELAY, opacity: { duration: 0.12, delay: TOP_DELAY } }
                   : { type: 'spring', stiffness: 260, damping: 24 }}
               style={{ position: 'absolute', inset: 0, transformStyle: 'preserve-3d' }}
@@ -256,14 +267,6 @@ export default function FlipCard({ scale, onFlip, onCaption }: { scale: number; 
         })}
       </button>
 
-      <AnimatePresence>
-        {done && !reduced && (
-          <motion.button key="again" type="button" onClick={again} className="mono deal-again"
-            initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 2.4 } }} exit={{ opacity: 0 }}>
-            ↻ Deal again
-          </motion.button>
-        )}
-      </AnimatePresence>
     </div>
   )
 }

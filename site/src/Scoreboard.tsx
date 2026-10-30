@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { HOUSTON, cityFromSlug, label, stageOf, type City } from './cities'
+import { HOUSTON, TEXAS, cityFromSlug, label, stageOf, type City } from './cities'
 import type { Tally } from './votes'
 
 const sum = (v: Record<string, number>, slugs: string[]) => slugs.reduce((n, s) => n + (v[s] ?? 0), 0)
@@ -29,14 +29,46 @@ function Count({ n }: { n: number }) {
   )
 }
 
-/** The live board: seats so far, then the race for what lights after Texas. */
-export default function Scoreboard({ tally, mine, onPick }: { tally: Tally; mine: City | null; onPick: (c: City) => void }) {
-  const { votes, live, updatedAt } = tally
-  const ago = useAgo(updatedAt)
+interface Props { tally: Tally; mine: City | null; onPick: (c: City) => void }
 
-  const total = Object.values(votes).reduce((a, b) => a + b, 0)
+/** The order cities light in: Houston, then Texas, then the vote. Seats so far ride along. */
+export function Track({ tally, mine, onPick }: Props) {
+  const { votes } = tally
   const houston = sum(votes, [HOUSTON.slug])
   const texas = Object.entries(votes).filter(([s]) => stageOf(s) === 'texas').reduce((n, [, v]) => n + v, 0)
+  const race = Object.entries(votes).filter(([s]) => stageOf(s) === 'vote').reduce((n, [, v]) => n + v, 0)
+  const stage = mine ? stageOf(mine.slug) : null
+
+  return (
+    <ol className="track">
+      <li className={`stop lit${stage === 'first' ? ' on' : ''}`}>
+        <span className="when">Opens first</span>
+        <button type="button" className="where" onClick={() => onPick(HOUSTON)}>Houston</button>
+        <span className="seats"><Count n={houston} /> seats</span>
+      </li>
+      <li className={`stop${stage === 'texas' ? ' on' : ''}`}>
+        <span className="when">Locked in next</span>
+        <span className="where">Texas</span>
+        <span className="seats"><Count n={texas} /> seats</span>
+        <span className="tx">
+          {TEXAS.map((c) => (
+            <button type="button" key={c.slug} className={mine?.slug === c.slug ? 'on' : ''} onClick={() => onPick(c)}>{c.name}</button>
+          ))}
+        </span>
+      </li>
+      <li className={`stop open${stage === 'vote' ? ' on' : ''}`}>
+        <span className="when">Then, by vote</span>
+        <span className="where">{stage === 'vote' && mine ? mine.name : 'Your city?'}</span>
+        <span className="seats"><Count n={race} /> votes cast</span>
+      </li>
+    </ol>
+  )
+}
+
+/** The live race for what lights after Texas. Tap a row to put that city on your ballot. */
+export default function Scoreboard({ tally, mine, onPick }: Props) {
+  const { votes, live, updatedAt } = tally
+  const ago = useAgo(updatedAt)
 
   const rows = useMemo(() => {
     const race = Object.entries(votes).filter(([s]) => stageOf(s) === 'vote').sort((a, b) => b[1] - a[1])
@@ -51,38 +83,31 @@ export default function Scoreboard({ tally, mine, onPick }: { tally: Tally; mine
   return (
     <div className="board">
       <div className="board-head">
-        <span className={`live${live ? ' on' : ''}`}><i />{live ? 'Live' : 'Sample'}</span>
-        <span className="fine">{live ? `Updated ${ago}` : 'Real numbers once checkout opens'}</span>
+        <span className={`live${live ? ' on' : ''}`}><i />{live ? 'Live' : 'Sample numbers'}</span>
+        <span className="fine">
+          {live ? `Updated ${ago}` : 'Real votes once checkout opens'}
+        </span>
       </div>
 
-      <div className="stats">
-        <div><b><Count n={total} /></b><span>Seats</span></div>
-        <div><b><Count n={houston} /></b><span>Houston</span></div>
-        <div><b><Count n={texas} /></b><span>Texas</span></div>
-      </div>
-
-      <div className="race-head">
-        <span className="eyebrow" style={{ margin: 0 }}>After Texas</span>
-        {lead && second && lead.n > second.n && <span className="fine">{lead.city.name} leads by {lead.n - second.n}</span>}
-      </div>
-
-      {rows.length === 0 && <p className="sub" style={{ marginTop: 4 }}>No votes yet. Yours could be the first.</p>}
+      {rows.length === 0 && <p className="sub" style={{ marginTop: 12 }}>No votes yet. Yours could be the first.</p>}
       <motion.ol layout className="race">
         {rows.map(({ city, n, rank }) => {
           const isMine = city.slug === mine?.slug
           return (
             <motion.li layout key={city.slug} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
-              <button type="button" className={`board-row${isMine ? ' mine' : ''}${rank === 1 ? ' first' : ''}`} onClick={() => onPick(city)}>
-                <span className="rank">{rank === 1 ? '✦' : String(rank).padStart(2, '0')}</span>
+              <button type="button" aria-pressed={isMine} className={`board-row${isMine ? ' mine' : ''}${rank === 1 ? ' first' : ''}`} onClick={() => onPick(city)}>
+                <span className="rank">{rank === 1 ? '✦' : rank}</span>
                 <span className="nm">{label(city)}</span>
-                <span className="ct"><Count n={n} />{isMine && <em> +1</em>}</span>
+                <span className="ct"><Count n={n} />{isMine && <em>+1</em>}</span>
                 <span className="bar"><motion.i animate={{ width: `${(n / top) * 100}%` }} initial={{ width: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }} /></span>
               </button>
             </motion.li>
           )
         })}
       </motion.ol>
-      <p className="fine" style={{ marginTop: 14 }}>One paid seat, one vote · tap a city to back it</p>
+      <p className="fine board-foot">
+        {lead && second && lead.n > second.n ? `${lead.city.name} leads by ${lead.n - second.n} · ` : ''}Not listed? Type it in.
+      </p>
     </div>
   )
 }
