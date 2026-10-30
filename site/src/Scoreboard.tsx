@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { HOUSTON, TEXAS, cityFromSlug, label, stageOf, type City } from './cities'
-import type { Tally } from './votes'
+import { votesLive, type Tally } from './votes'
 
 
 /** "12s ago", ticking */
@@ -32,7 +32,8 @@ interface Props { tally: Tally; mine: City | null; onPick: (c: City) => void }
 
 /** The order cities light in: Houston, then Texas, then the vote, which is open now. `vote` is your pick. */
 export const Track = memo(function Track({ tally, vote }: { tally: Tally; vote: City | null }) {
-  const cast = Object.values(tally.votes).reduce((n, v) => n + v, 0)
+  // the same votes the board counts: cities beyond Texas
+  const cast = Object.entries(tally.votes).reduce((n, [s, v]) => (stageOf(s) === 'vote' ? n + v : n), 0)
   return (
     <ol className="track">
       <li className="stop lit">
@@ -71,13 +72,13 @@ function Scoreboard({ tally, mine, onPick }: Props) {
   return (
     <div className="board">
       <div className="board-head">
-        <span className={`live${live ? ' on' : ''}`}><i />{live ? 'Live' : 'Sample numbers'}</span>
+        <span className={`live${live ? ' on' : ''}`}><i />{live || votesLive ? 'Live' : 'Sample numbers'}</span>
         <span className="fine">
-          {live ? `Updated ${ago}` : 'Real votes once checkout opens'}
+          {live ? `Updated ${ago}` : votesLive ? 'Loading the votes…' : 'Real votes once checkout opens'}
         </span>
       </div>
 
-      {rows.length === 0 && <p className="sub" style={{ marginTop: 12 }}>No votes yet. Yours could be the first.</p>}
+      {rows.length === 0 && (live || !votesLive) && <p className="sub" style={{ marginTop: 12 }}>No votes yet. Yours could be the first.</p>}
       <motion.ol layout className="race">
         {rows.map(({ city, n, rank }) => {
           const isMine = city.slug === mine?.slug

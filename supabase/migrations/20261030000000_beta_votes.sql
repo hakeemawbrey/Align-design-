@@ -7,12 +7,12 @@
 
 create table public.beta_signups (
   id             uuid primary key,
-  vote           text not null check (vote ~ '^[a-z0-9-]{2,60}$'),  -- the city they want after Texas
+  vote           text not null check (vote ~ '^[a-z0-9-]{2,60}$' and vote !~ '-tx$'),  -- the city they want after Texas; Houston and Texas are locked in
   name           text not null check (char_length(name) between 1 and 60),
-  birth_date     date not null,
+  birth_date     date not null check (birth_date between date '1900-01-01' and current_date),
   birth_time     time,                                               -- null: they don't know it
   birth_place    text not null check (char_length(birth_place) between 1 and 120),
-  email          text not null check (char_length(email) between 3 and 254),
+  email          text not null check (char_length(email) between 3 and 254 and email ~ '^[^\s@]+@[^\s@]+\.[^\s@]{2,}$'),  -- the form's check
   paid           boolean not null default false,
   stripe_session text unique,                                        -- set by the webhook; a retry can't pay twice
   amount_cents   int,
@@ -30,5 +30,8 @@ create policy "sign up" on public.beta_signups for insert to anon, authenticated
 create view public.city_votes as
   select vote as city, count(*)::int as votes from public.beta_signups where paid group by vote;
 
+-- supabase grants everything on new public tables by default; take it back, so only RLS-checked inserts are left
+revoke all on public.beta_signups from anon, authenticated;
+revoke all on public.city_votes from anon, authenticated;
 grant insert on public.beta_signups to anon, authenticated;
 grant select on public.city_votes to anon, authenticated;
