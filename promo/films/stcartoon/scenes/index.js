@@ -419,7 +419,7 @@ async function build(stage) {
 
   // ═══════════════════════ 3 · the week (drawn at "week time" te, so the tape can rewind it) ═══════════════════════
   function weekTime(t) {
-    if (inW(t, ...T.rew)) { const p = prog(t, ...T.rew); return lerp(19.95, 9.7, ease.inOutSine(p)) }
+    if (inW(t, ...T.rew)) { const p = prog(t, ...T.rew); return lerp(19.95, 9.7, ease.inOutQuad(p)) }
     return t
   }
   const rewinding = t => inW(t, ...T.rew)
