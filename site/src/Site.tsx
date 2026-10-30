@@ -22,6 +22,12 @@ function ageOn(ymd: string, now = new Date()) {
   const [y, m, d] = ymd.split('-').map(Number)
   return now.getFullYear() - y - (now.getMonth() + 1 < m || (now.getMonth() + 1 === m && now.getDate() < d) ? 1 : 0)
 }
+/** the questions, closed until tapped */
+const FAQ: [string, string][] = [
+  ['Why pay for a beta?', 'A deck only works when enough real people are in it. Seats tell us who’s coming, and votes tell us where.'],
+  ['Why my birthday?', 'It casts your card: your sign and moon, and how you’d push, pull and align with everyone you’re dealt.'],
+]
+
 /** smooth scrolling, unless the viewer asked for less motion */
 const scrollBehavior = (): ScrollBehavior => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth')
 
@@ -275,14 +281,12 @@ export default function Site() {
 
       <section className="wrap qa" aria-labelledby="qa-title">
         <h2 className="sr" id="qa-title">Questions</h2>
-        <div>
-          <h3>Why pay for a beta?</h3>
-          <p>A deck only works when enough real people are in it. Seats tell us who’s coming, and votes tell us where.</p>
-        </div>
-        <div>
-          <h3>Why my birthday?</h3>
-          <p>They cast your card: your sign and moon, and how you’d push, pull and align with everyone you’re dealt.</p>
-        </div>
+        {FAQ.map(([q, ans]) => (
+          <details key={q} className="faq">
+            <summary><h3>{q}</h3><span className="faq-mark" aria-hidden /></summary>
+            <p>{ans}</p>
+          </details>
+        ))}
       </section>
       </main>
 
