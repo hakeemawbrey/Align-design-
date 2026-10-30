@@ -280,6 +280,7 @@ export default function Site() {
             <li><span><b>Align+ for 2 years</b></span></li>
             <li><span><b>Access to events</b> and member benefits</span></li>
             <li>A numbered founding member card</li>
+            <li><span><b>Houston only:</b> entry to the Align TCG giveaway</span></li>
           </ul>
         </form>
       </section>
