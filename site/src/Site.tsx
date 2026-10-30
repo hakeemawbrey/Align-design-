@@ -126,7 +126,7 @@ export default function Site() {
     } catch {
       sendingRef.current = false
       setSending(false)
-      setError('We couldn’t save your vote. Check your connection and try again.')
+      setError('We couldn’t save your seat. Check your connection and try again.')
     }
   }
 
@@ -162,7 +162,7 @@ export default function Site() {
           </div>
 
           <div className="cta-block">
-            <a className="chrome-cta" id="hero-cta" href="#vote">Get your seat · $15 <span className="spark" aria-hidden>✦</span></a>
+            <a className="chrome-cta" id="hero-cta" href="#vote">Join the beta · $15 <span className="spark" aria-hidden>✦</span></a>
             <span className="fine">Houston first · Texas next · vote now</span>
           </div>
 
@@ -186,9 +186,11 @@ export default function Site() {
           <Scoreboard tally={tally} mine={vote} onPick={pickVote} />
 
           <form className="ballot" id="ballot" onSubmit={(e) => { e.preventDefault(); void pay() }}>
-            <div className="ballot-top">
-              <h3 className="ballot-title">Your seat</h3>
-              <span className="price"><b>$15</b> once</span>
+            {/* it's a pass into the beta first; the vote comes with it */}
+            <div className="ballot-head">
+              <span className="kicker">Beta access</span>
+              <h3 className="ballot-title">Join the Align beta</h3>
+              <p className="price"><b>$15</b> once · your vote for the city after Texas is included</p>
             </div>
 
             <label className="city-field">
@@ -230,7 +232,7 @@ export default function Site() {
 
             <button className="chrome-cta" type="submit" aria-disabled={!ready || !checkoutReady || sending}
               aria-describedby={error ? 'pay-hint pay-error' : 'pay-hint'}>
-              {sending ? 'Saving your vote…' : vote ? `Pay $15 · vote ${vote.name}` : 'Pay $15 · cast your vote'} <span className="spark" aria-hidden>✦</span>
+              {sending ? 'Saving your seat…' : 'Join the beta · $15'} <span className="spark" aria-hidden>✦</span>
             </button>
             {error && <p className="note" id="pay-error" role="alert">{error}</p>}
             <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field to vote'}</span>
@@ -271,10 +273,10 @@ export default function Site() {
         {bar && (
           <motion.div className="pay-bar" initial={{ y: 90 }} animate={{ y: 0 }} exit={{ y: 90 }} transition={{ type: 'spring', stiffness: 380, damping: 34 }}>
             <span className="pay-bar-copy">
-              {vote ? <>Vote <b>{vote.name}</b> · $15</> : <><b>$15</b> · one seat, one vote</>}
+              {vote ? <>Beta + vote for <b>{vote.name}</b></> : <><b>$15</b> · beta access + a vote</>}
             </span>
             <button type="button" className="chrome-cta" onClick={() => document.getElementById(vote ? 'ballot' : 'vote')?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })}>
-              {vote ? 'Finish vote' : 'Vote'}
+              {vote ? 'Finish' : 'Join'}
             </button>
           </motion.div>
         )}

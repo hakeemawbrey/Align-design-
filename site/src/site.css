@@ -168,20 +168,21 @@ h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size:
 /* the ballot: framed like the videos' gold tarot talk cards */
 .ballot {
   --pad: 28px;
-  min-width: 0; border-radius: 22px; padding: 32px var(--pad) 28px; position: relative;
-  background: linear-gradient(180deg, rgba(38,24,80,0.94), rgba(24,14,54,0.94));
-  border: 1.5px solid rgba(242,199,92,0.75);
+  min-width: 0; border-radius: 24px; padding: 36px var(--pad) 28px; position: relative;
+  background: linear-gradient(180deg, rgba(38,24,80,0.95), rgba(24,14,54,0.95));
+  border: 3px solid #e2b54e;
   box-shadow: 0 0 34px rgba(242,199,92,0.22), 0 0 2px rgba(255,244,207,0.8), 0 28px 70px rgba(0,0,0,0.45);
 }
 /* the inner gold rule, 9px in */
-.ballot::before { content: ''; position: absolute; inset: 9px; border-radius: 15px; border: 1px solid rgba(242,199,92,0.3); pointer-events: none; }
+.ballot::before { content: ''; position: absolute; inset: 9px; border-radius: 14px; border: 1.5px solid rgba(242,199,92,0.5); pointer-events: none; }
 /* sticky only where the whole ballot fits on screen (after .ballot, whose position: relative would win) */
 @media (min-width: 900px) and (min-height: 1100px) { .ballot { position: sticky; top: 24px; } }
 
-.ballot-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.ballot-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--align); }
-.price { display: inline-flex; align-items: baseline; gap: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label-3); }
-.price b { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1; letter-spacing: 0; color: var(--label-1); }
+.ballot-head { display: grid; justify-items: center; text-align: center; gap: 10px; padding-bottom: 24px; border-bottom: 1px solid rgba(242,199,92,0.35); }
+.ballot-head .kicker { color: var(--align); }
+.ballot-title { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(28px, 8vw, 34px); line-height: 1.05; color: var(--label-1); }
+.price { max-width: 30ch; font-size: 14px; line-height: 1.45; color: var(--label-2); text-wrap: balance; }
+.price b { font-family: var(--serif); font-weight: 400; font-size: 20px; color: var(--align); }
 
 /* the vote: the big italic line the whole ballot is about */
 .city-field { display: grid; gap: 4px; margin-top: 24px; }
