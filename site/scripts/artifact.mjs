@@ -30,8 +30,9 @@ rmSync(out, { recursive: true, force: true })
 mkdirSync(out, { recursive: true })
 writeFileSync(join(out, 'align-beta.html'), page)
 
-// Juniper's card: her aura, her sign figure (the deck card's fallback) and her photo
-for (const img of ['img/aura/libra.jpg', 'img/figure/libra.jpg', 'img/juniper.jpg']) {
+// the hero's hand (Maya, Rio, Juniper): each sign's aura and figure, and their photos
+const signs = ['virgo', 'leo', 'libra']
+for (const img of [...signs.flatMap((s) => [`img/aura/${s}.jpg`, `img/figure/${s}.jpg`]), 'img/people/p3.jpg', 'img/people/p9.jpg', 'img/juniper.jpg']) {
   mkdirSync(join(out, dirname(img)), { recursive: true })
   copyFileSync(join('../app/public', img), join(out, img))
 }

@@ -28,7 +28,8 @@ function useCardScale() {
 export default function Site() {
   const scale = useCardScale()
   const tally = useVotes()
-  const [revealed, setRevealed] = useState(false)
+  const [, setRevealed] = useState(false)
+  const [caption, setCaption] = useState('Dealing tonight’s deck')
   const [cityText, setCityText] = useState('')
   const [email, setEmail] = useState('')
   const city = parseCity(cityText)
@@ -100,13 +101,13 @@ export default function Site() {
         <header className="hero" id="top">
           <div className="hero-copy">
             <span className="eyebrow" style={{ marginBottom: 0 }}>A dating app played as a card game</span>
-            <h1>Fall for the card. The face comes after.</h1>
+            <h1>Fall for who they are, not what they look like.</h1>
           </div>
 
           <div className="card-col">
-            <FlipCard scale={scale} onFlip={setRevealed} />
+            <FlipCard scale={scale} onFlip={setRevealed} onCaption={setCaption} />
             <div className="flip-hint" aria-live="polite">
-              {revealed ? 'Once you both align · tap to turn back' : 'In your deck tonight · tap to flip'}
+              {caption}
             </div>
           </div>
 
