@@ -74,7 +74,7 @@ export const T = {
   grab1: 20.3, put1: 20.6, pale1: [20.8, 21.55], faint1: BEAT(38), l7: 22.85, revive: 23.75,
   h4b: 23.95, h4bLand: BEAT(43), h4bOut: [26.5, 26.66], hop: [24.05, 24.42], put2: 24.5, pale2: [24.6, 25.15], faint2: 25.2, l8: 25.4,
   // the captain
-  capIn: 26.7, h5: 26.75, h5Land: BEAT(48), h5Out: [28.92, 29.08], l9: 27.7, spare: 28.0, look: 28.35, own: BEAT(51) + 0.02, breathe: [28.98, 29.55],
+  capIn: 26.7, h5: 26.75, h5Land: BEAT(48), h5Out: [28.92, 29.08], l9: 27.8, spare: 28.0, look: 28.35, own: BEAT(51) + 0.02, breathe: [28.98, 29.55],
   rise: [29.45, 29.8], h5b: 29.12, h5bLand: 29.5, h5bOut: [30.85, 31.0], help: 30.1, closeA: 30.9,
   cut2: 31.05,
   // the lesson
@@ -127,7 +127,7 @@ const SAG_P = [140, 1200, 160], CAN_P = [330, 1190, 165], ARI_P = [750, 1200, 15
 const PIS_P = [330, 815, 92], TAU_P = [750, 815, 92]
 const AISLE = [455, 1135, 165], FLOOR = [520, 1262, 165]
 const CAP = { x: 920, y: 572, r: 86 }
-const EXITS = [{ x: 180, y: 735, label: '✕ RUDE TO WAITERS', look: [-1, -1] }, { x: 900, y: 735, label: "✕ 'I DON'T DO PLANS'", look: [1, -1] }, { x: 540, y: 655, label: '✕ NEVER ASKS ABOUT YOU', look: [0, -1] }]
+const EXITS = [{ x: 220, y: 735, label: '✕ RUDE TO WAITERS', look: [-1, -1] }, { x: 860, y: 735, label: "✕ 'I DON'T DO PLANS'", look: [1, -1] }, { x: 540, y: 655, label: '✕ NEVER ASKS ABOUT YOU', look: [0, -1] }]
 const HATCH_Y = 590
 const SEED = { vir: 5, can: 9, sag: 3, ari: 13, leo: 17, pis: 23, tau: 29, stars: 11, f1: 31, f2: 37 }
 const COLS = { vir: VIR, can: CAN, sag: SAG, ari: ARI, leo: LEO, pis: PIS, tau: TAU }
@@ -227,7 +227,7 @@ async function build(stage) {
 
   // ── camera: a slow push, little bumps on the thuds
   function cam(t) {
-    let s = 1 + 0.025 * ease.inOutQuad(prog(t, 0.3, 4.4))
+    let s = 1.06 + 0.025 * ease.inOutQuad(prog(t, 0.3, 4.4))
     s += 0.02 * bump(t, T.faint1, 0.3) + 0.03 * bump(t, T.faint2 + 0.25, 0.3) + 0.02 * bump(t, T.tab, 0.3) + 0.03 * bump(t, T.own, 0.4)
     return s
   }
@@ -441,25 +441,28 @@ async function build(stage) {
     x.restore()
   }
   function drawHatches(t) {
+    if (t < T.drop - 0.4 || t >= T.masksOut[1]) return
+    x.save(); x.globalAlpha *= prog(t, T.drop - 0.4, T.drop - 0.1) * (1 - prog(t, ...T.masksOut))
     const open = prog(t, T.drop - 0.1, T.drop + 0.1) * (1 - prog(t, ...T.masksOut))
     for (const hx of [140, 330, 750, 945, 640]) drawHatch(x, hx, HATCH_Y, 4, open)
     for (const hx of [330, 750]) drawHatch(x, hx, 650, 3, open)
     drawHatch(x, 600, 640, 4, prog(t, T.spare - 0.1, T.spare) * (1 - prog(t, ...T.masksOut)))
+    x.restore()
   }
 
   // ── signs
-  function drawSigns(t) {
+  function drawSigns(t, labels = false) {
     const belt = t < T.signOff ? (t >= T.chime ? (Math.floor((t - T.chime) * 3) % 2 === 0 || t > T.chime + 1 ? 1 : 0.3) : 0) : (t < T.h1Out[1] ? 1 : 0)
-    drawSeatbeltSign(x, 540, 520, belt)
+    if (!labels) drawSeatbeltSign(x, 540, 520, belt)
     const cur = exitIdx(t)
     EXITS.forEach((E, i) => {
       const lit = (t >= T.exits[i] && t < T.exitsOff) ? 1 : (t >= T.panelOut[1] ? 0.6 : 0)
-      drawExitSign(x, E.x, E.y, lit)
-      if (lit >= 1) {
+      if (!labels) drawExitSign(x, E.x, E.y, lit)
+      if (lit >= 1 && labels) {
         const k = pop01(t, T.exits[i], 0.3, 2.2) * (1 - ease.inCubic(prog(t, T.exitsOff - 0.2, T.exitsOff)))
         x.save(); x.translate(E.x, E.y + 66); x.scale(k, k)
-        x.font = `700 28px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'
-        const w = x.measureText(E.label).width + 36
+        x.font = `700 24px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'
+        const w = x.measureText(E.label).width + 30
         x.fillStyle = 'rgba(16,9,38,0.94)'; x.beginPath(); x.roundRect(-w / 2, -24, w, 48, 24); x.fill()
         x.lineWidth = 3; x.strokeStyle = RED; x.stroke()
         x.fillStyle = '#fff1ea'; x.fillText(E.label, 0, 2)
@@ -564,6 +567,7 @@ async function build(stage) {
         drawHatches(t)
         const refs = {}
         drawBackRow(t, refs)
+        drawSigns(t, true)
         drawVirgo(t, refs)
         // front row: seat backs, the passengers, seat fronts
         for (const P of [SAG_P, CAN_P, ARI_P, LEO_P]) drawSeatBack(x, P[0], P[1], P[2])

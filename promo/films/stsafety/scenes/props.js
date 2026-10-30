@@ -159,18 +159,18 @@ export function drawSeatBelt(ctx, x, y, s) {
   R(ctx, x - 4 * px, y - 5 * px, 8 * px, 10 * px, OUT); R(ctx, x - 3 * px, y - 4 * px, 6 * px, 8 * px, '#d8dce8')
 }
 export function drawVest(ctx, x, y, s, inflate = 0) {
-  const px = Math.max(3, Math.round(s / 36)), k = 1 + 0.45 * inflate
+  const px = Math.max(3, Math.round(s / 36)), k = 1 + 0.35 * inflate
   for (const side of [-1, 1]) {
-    const cx = x + side * s * (0.17 + 0.05 * inflate), cy = y + s * 0.2, w = s * 0.16 * k, h = s * 0.3 * (1 + 0.15 * inflate)
+    const cx = x + side * s * (0.27 + 0.03 * inflate), cy = y + s * 0.44, w = s * 0.11 * k, h = s * 0.15 * (1 + 0.12 * inflate)
     ctx.save(); ctx.fillStyle = OUT; ctx.beginPath(); ctx.ellipse(cx, cy, w + px, h + px, side * 0.25, 0, Math.PI * 2); ctx.fill()
     ctx.fillStyle = YEL; ctx.beginPath(); ctx.ellipse(cx, cy, w, h, side * 0.25, 0, Math.PI * 2); ctx.fill()
     ctx.fillStyle = YEL_L; ctx.beginPath(); ctx.ellipse(cx - side * w * 0.35, cy - h * 0.35, w * 0.3, h * 0.25, 0, 0, Math.PI * 2); ctx.fill()
     ctx.restore()
   }
   // the collar strap and the red tab + whistle
-  R(ctx, x - s * 0.16, y - s * 0.02, s * 0.32, px * 2, '#e09a1a')
-  R(ctx, x + s * 0.2, y + s * 0.44, px * 2, px * 4, '#c8324a')
-  R(ctx, x - s * 0.27, y + s * 0.02, px * 3, px * 2, '#ff6f4a')
+  R(ctx, x - s * 0.24, y + s * 0.34, s * 0.48, px * 2, '#e09a1a')
+  R(ctx, x + s * 0.24, y + s * 0.56, px * 2, px * 4, '#c8324a')
+  R(ctx, x - s * 0.36, y + s * 0.34, px * 3, px * 2, '#ff6f4a')
 }
 
 // ─────────────────────────────── signs
