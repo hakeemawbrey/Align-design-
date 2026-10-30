@@ -20,6 +20,11 @@ The 93 videos in the film archive (https://claude.ai/artifact/DukMG6Gz1rf8dbPFuE
 - **Lengths include the 4.4 s end card** (endcard.js default CTA). Card cuts from cardfx.js as usual (a cut every 12–15 s; a 20 s film may have one or none).
 - Music: the style and key given below, so the batch sounds varied.
 
+## End card CTA (cities, Toronto, vote)
+The Houston default ("JOIN THE HOUSTON BETA") is only for Houston and the general films. A remix of a city, Toronto or vote film passes **the same CTA as its original** (the original's `scenes/index.js` exports it as `CTA`): `buildEndcard(stage, { start, cta: 'JOIN THE WAITLIST' })` or `cta: 'VOTE FOR YOUR CITY'`.
+- JOIN THE WAITLIST: citychicago, citymiami, citynashville, cityneworleans, citynyc, torglass, torpatio.
+- VOTE FOR YOUR CITY: cityatlanta, cityaustin, citydallas, cityla, cityseattle, torsorry, torsubway, torworld, voteballot, votemap, votenext.
+
 ## Folders and temp dirs
 - Your films are new folders `promo/films/<folder>/` (cues.js, scenes/index.js, scenes/props.js as needed). Never edit the originals.
 - Temp files only in `/tmp/claude-0/s3/<folder>/`; delete them at the end.

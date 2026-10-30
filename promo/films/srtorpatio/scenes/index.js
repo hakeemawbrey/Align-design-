@@ -471,7 +471,7 @@ async function build(stage) {
 
 // card motif: one cut for a 20 s film, where the date has left and the box has shut → "Dealbreakers come first."
 const CUTS = [{ t: T.cut, kind: 'flip' }]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: 'JOIN THE WAITLIST' }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
 
 // ── sound (pitched SFX are shifted into the film's key by the engine)
 const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
