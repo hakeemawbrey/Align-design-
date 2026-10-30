@@ -3,18 +3,19 @@ import { AnimatePresence, motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import RevealStyles from '@app/components/reveal/RevealStyles'
 import AlignMark from '@app/components/intro/AlignMark'
-import FlipCard, { FLIP_H, FLIP_W } from './FlipCard'
+import FlipCard, { FLIP_H, FLIP_W, type Caption } from './FlipCard'
+import Nebula from './Nebula'
 import Scoreboard, { Track } from './Scoreboard'
 import { ALL_CITIES, VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
-import { checkoutReady, checkoutUrl, useVotes } from './votes'
+import { checkout, checkoutReady, useVotes } from './votes'
 
-/** card size: as big as the screen allows, never past 1.1× */
+/** card size: as big as the screen allows, never past 1.05× */
 function useCardScale() {
   const fit = () => {
     const w = window.innerWidth, h = window.innerHeight
     if (w >= 900) return Math.min(1.05, (h - 200) / FLIP_H)
     // phones: headline, line, card and button all on the first screen
-    return Math.max(0.55, Math.min(0.74, (w * 0.64) / FLIP_W, (h - 440) / FLIP_H))
+    return Math.max(0.55, Math.min(0.74, (w * 0.64) / FLIP_W, (h - 470) / FLIP_H))
   }
   const [s, setS] = useState(fit)
   useEffect(() => {
@@ -28,26 +29,31 @@ function useCardScale() {
 export default function Site() {
   const scale = useCardScale()
   const tally = useVotes()
-  const [, setRevealed] = useState(false)
-  const [caption, setCaption] = useState('Dealing tonight’s deck')
+  const [caption, setCaption] = useState<Caption>(['Tonight’s deck', 'Dealt by the stars.'])
   const [replay, setReplay] = useState<(() => void) | null>(null)
-  const [cityText, setCityText] = useState('')
-  const [email, setEmail] = useState('')
-  const city = parseCity(cityText)
-  // every seat votes now for the city after Texas: your own city if it's in the race, otherwise your pick
-  const [voteText, setVoteText] = useState('')
-  const picked = parseCity(voteText)
-  const vote = picked && stageOf(picked.slug) === 'vote' ? picked : !voteText && city && stageOf(city.slug) === 'vote' ? city : null
-  const voteBad = !!voteText.trim() && !!picked && stageOf(picked.slug) !== 'vote'
-  const emailRef = useRef<HTMLInputElement>(null)
 
-  // back from Stripe on ?paid=1; the seat was remembered on the way out as city__vote
+  // the ballot: the city you vote for, your name, your birth details, your email
+  const [voteText, setVoteText] = useState('')
+  const [name, setName] = useState('')
+  const [birthDate, setBirthDate] = useState('')
+  const [birthTime, setBirthTime] = useState('')
+  const [noTime, setNoTime] = useState(false)
+  const [birthPlace, setBirthPlace] = useState('')
+  const [email, setEmail] = useState('')
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
+  const picked = parseCity(voteText)
+  const vote = picked && stageOf(picked.slug) === 'vote' ? picked : null
+  const lockedIn = !!picked && !vote
+  const nameRef = useRef<HTMLInputElement>(null)
+  const ready = !!vote && !!name.trim() && !!birthDate && (noTime || !!birthTime) && !!birthPlace.trim() && /\S+@\S+\.\S+/.test(email)
+
+  // back from Stripe on ?paid=1; the vote was remembered on the way out
   const [paid] = useState(() => {
     if (!new URLSearchParams(window.location.search).get('paid')) return null
-    let seat: string | null = null
-    try { seat = sessionStorage.getItem('align-vote') } catch { /* private mode */ }
-    const [c, v] = (seat ?? '').split('__')
-    return c ? { city: cityFromSlug(c), vote: cityFromSlug(v || c) } : null
+    let slug: string | null = null
+    try { slug = sessionStorage.getItem('align-vote') } catch { /* private mode */ }
+    return slug ? cityFromSlug(slug) : null
   })
   useEffect(() => {
     if (!paid) return
@@ -77,39 +83,40 @@ export default function Site() {
     if (!b) return
     const r = b.getBoundingClientRect()
     // desktop keeps the ballot beside the board; only scroll when it's off screen
-    if (r.top < 0 || r.bottom > window.innerHeight) b.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    if (r.top < 0 || r.bottom > window.innerHeight) b.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  const nextField = () => {
-    toBallot()
-    if (!email) window.setTimeout(() => emailRef.current?.focus({ preventScroll: true }), 450)
-  }
-  /** Houston and Texas on the track: that's where you'll use Align */
-  const pickCity = (c: City) => { setCityText(label(c)); nextField() }
-  /** a row on the board: that's your vote, and your city too if you haven't said one */
+  /** a row on the board: that's your vote */
   const pickVote = (c: City) => {
-    if (!cityText.trim()) { setCityText(label(c)); setVoteText('') } else setVoteText(c.slug === city?.slug ? '' : label(c))
-    nextField()
+    setVoteText(label(c))
+    toBallot()
+    if (!name) window.setTimeout(() => nameRef.current?.focus({ preventScroll: true }), 450)
   }
 
-  const pay = () => {
-    if (!city || !vote) return
-    const url = checkoutUrl(city.slug, vote.slug, email.trim())
-    if (!url) return
-    try { sessionStorage.setItem('align-vote', `${city.slug}__${vote.slug}`) } catch { /* private mode */ }
-    window.location.href = url
+  const pay = async () => {
+    if (!vote || !ready || sending) return
+    setSending(true); setError('')
+    try {
+      const url = await checkout({ vote: vote.slug, name: name.trim(), birthDate, birthTime: noTime ? '' : birthTime, birthPlace: birthPlace.trim(), email: email.trim() })
+      if (!url) { setSending(false); return }
+      try { sessionStorage.setItem('align-vote', vote.slug) } catch { /* private mode */ }
+      window.location.href = url
+    } catch {
+      setSending(false)
+      setError('We couldn’t save your vote. Check your connection and try again.')
+    }
   }
 
   return (
     <>
       <RevealStyles />
-      <div className="stars" aria-hidden />
+      <Nebula />
 
       <AnimatePresence>
         {paid && (
           <motion.div className="thanks" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} role="status">
             <span style={{ color: 'var(--align)' }}>✦</span>
-            <span>You’re in for <b>{paid.city.name}</b>, and your vote is in for <b>{paid.vote.name}</b>. We’ll email you the night {paid.city.name} lights.</span>
+            <span>You’re in, and your vote is in for <b>{paid.name}</b>. We’ll email you your beta invite.</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -122,14 +129,20 @@ export default function Site() {
 
         <header className="hero" id="top">
           <div className="hero-copy">
+            <span className="kicker">Blind by design</span>
             <h1>Fall for who they are.</h1>
             <p className="lede"><b>Not what they look like.</b> Align matches you by zodiac, and photos stay hidden until you both align.</p>
           </div>
 
           <div className="card-col">
-            <FlipCard scale={scale} onFlip={setRevealed} onCaption={setCaption} onReplay={(fn) => setReplay(() => fn)} />
-            <div className="flip-hint" aria-live="polite">
-              {caption}
+            <FlipCard scale={scale} onCaption={setCaption} onReplay={(fn) => setReplay(() => fn)} />
+            <div className="scene" aria-live="polite">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div key={caption[1]} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.3 }}>
+                  <span className="scene-label">{caption[0]}</span>
+                  <span className="scene-line">{caption[1]}</span>
+                </motion.div>
+              </AnimatePresence>
               {replay && <button type="button" className="deal-again" onClick={replay}>↻ Deal again</button>}
             </div>
           </div>
@@ -144,51 +157,75 @@ export default function Site() {
       {/* the vote: where it lights, the race, and the ballot, in one place */}
       <section className="wrap vote" id="vote">
         <div className="vote-head">
-          <span className="eyebrow">Voting is open now</span>
+          <span className="kicker">Voting is open now</span>
           <h2>Which city lights after Texas?</h2>
-          <p className="sub">$15 buys one seat, and every seat casts one vote today, wherever you live. Houston and Texas seats vote too.</p>
+          <p className="sub">$15 gets you into the beta and one vote, counted today. Same price everywhere.</p>
         </div>
 
-        <Track tally={tally} mine={city} vote={vote} onPick={pickCity} />
+        <Track tally={tally} vote={vote} />
 
         <div className="vote-grid">
           <Scoreboard tally={tally} mine={vote} onPick={pickVote} />
 
-          <form className="ballot" id="ballot" onSubmit={(e) => { e.preventDefault(); pay() }}>
+          <form className="ballot" id="ballot" onSubmit={(e) => { e.preventDefault(); void pay() }}>
             <div className="ballot-top">
-              <span className="eyebrow" style={{ margin: 0 }}>Your seat</span>
+              <span className="ballot-title">Your seat</span>
               <span className="price"><b>$15</b> once</span>
             </div>
 
             <label className="city-field">
-              <span className="sr">Your city</span>
-              <input id="city" list="cities" enterKeyHint="next" value={cityText} onChange={(e) => setCityText(e.target.value)}
-                placeholder="Your city" autoComplete="address-level2" required />
-              <datalist id="cities">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
-            </label>
-            <p className="note" aria-live="polite">{city ? <StageNote city={city} /> : 'Where you’ll use Align. Type it, or tap a city.'}</p>
-
-            <label className="field">
-              <span>Your vote · the city after Texas</span>
+              <span className="field-label">Your vote · the city after Texas</span>
               <input id="vote" list="race" enterKeyHint="next" value={voteText} onChange={(e) => setVoteText(e.target.value)}
-                placeholder={city && stageOf(city.slug) === 'vote' ? `${label(city)} (your city)` : 'Tap the board, or type a city'} />
+                placeholder="Pick a city" autoComplete="off" required />
               <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
             </label>
-            {voteBad && <p className="note" role="alert">Houston and Texas are already in. Vote for a city beyond Texas.</p>}
+            <p className="note" aria-live="polite">
+              {lockedIn ? 'Houston and Texas are already locked in. Vote for a city beyond Texas.'
+                : vote ? <>One vote for <b>{vote.name}</b>, counted today.</> : 'Tap a city on the board, or type one.'}
+            </p>
+
+            <label className="field">
+              <span>Your first name</span>
+              <input ref={nameRef} id="name" enterKeyHint="next" value={name} onChange={(e) => setName(e.target.value)} placeholder="First name" autoComplete="given-name" required />
+            </label>
+
+            <fieldset className="birth">
+              <legend>Your birth details · for your card</legend>
+              <div className="birth-row">
+                <label className="field">
+                  <span>Date</span>
+                  <input id="birth-date" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
+                </label>
+                <label className="field">
+                  <span>Time</span>
+                  <input id="birth-time" type="time" value={birthTime} disabled={noTime} onChange={(e) => setBirthTime(e.target.value)} required={!noTime} />
+                </label>
+              </div>
+              <label className="check">
+                <input id="no-time" type="checkbox" checked={noTime} onChange={(e) => setNoTime(e.target.checked)} />
+                <span>I don’t know my birth time</span>
+              </label>
+              <label className="field">
+                <span>Place</span>
+                <input id="birth-place" list="places" value={birthPlace} onChange={(e) => setBirthPlace(e.target.value)} placeholder="City you were born in" autoComplete="off" required />
+                <datalist id="places">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
+              </label>
+            </fieldset>
 
             <label className="field">
               <span>Email</span>
-              <input ref={emailRef} id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false}
+              <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false}
                 value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
             </label>
 
-            <button className="chrome-cta" type="submit" disabled={!city || !vote || !checkoutReady}>
-              {vote ? `Pay $15 · vote ${vote.name}` : 'Pay $15 · cast your vote'} <span className="spark">✦</span>
+            <button className="chrome-cta" type="submit" disabled={!ready || !checkoutReady || sending}>
+              {sending ? 'Saving your vote…' : vote ? `Pay $15 · vote ${vote.name}` : 'Pay $15 · cast your vote'} <span className="spark">✦</span>
             </button>
+            {error && <p className="note" role="alert">{error}</p>}
             <span className="fine checkout">{checkoutReady ? 'Secure checkout with Stripe' : 'Checkout opens soon'}</span>
 
             <ul className="gets">
-              <li>Beta access the night your city lights</li>
+              <li>Beta access, with your card cast from your birth details</li>
               <li>Align+ for life</li>
               <li>A numbered founding member card</li>
               <li>One vote, counted today, for the city after Texas</li>
@@ -200,13 +237,22 @@ export default function Site() {
       <section className="wrap qa">
         <div>
           <h3>Why pay for a beta?</h3>
-          <p>A deck only works when enough real people in one city are in it. Seats tell us where they are.</p>
+          <p>A deck only works when enough real people are in it. Seats tell us who’s coming, and votes tell us where.</p>
         </div>
         <div>
-          <h3>My city isn’t next?</h3>
-          <p>Your vote counts today and your seat waits for your city. Bring friends and it lights sooner.</p>
+          <h3>Why my birth details?</h3>
+          <p>They cast your card: your sign, moon and rising, and how you’d push, pull and align with everyone you’re dealt.</p>
         </div>
       </section>
+
+      {/* the end card from the videos */}
+      <footer className="wrap end">
+        <p className="end-line">No one is disposable.</p>
+        <AlignMark size={112} glow={1} dotRadius={3.6} strokeOpacity={0.75} strokeWidth={0.8} />
+        <span className="end-name">Align</span>
+        <span className="kicker" style={{ margin: 0 }}>Blind by design</span>
+        <span className="end-fine">© 2026 Align · 18+</span>
+      </footer>
 
       <AnimatePresence>
         {bar && (
@@ -214,26 +260,12 @@ export default function Site() {
             <span className="pay-bar-copy">
               {vote ? <>Vote <b>{vote.name}</b> · $15</> : <><b>$15</b> · one seat, one vote</>}
             </span>
-            <button type="button" className="chrome-cta" onClick={() => vote
-              ? document.getElementById('ballot')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-              : document.getElementById('vote')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+            <button type="button" className="chrome-cta" onClick={() => document.getElementById(vote ? 'ballot' : 'vote')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
               {vote ? 'Finish vote' : 'Vote'}
             </button>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <footer className="wrap">
-        <span className="serif italic" style={{ fontSize: 18, color: 'var(--label-2)' }}>Align ✦</span>
-        <span>© 2026 Align · 18+</span>
-      </footer>
     </>
   )
-}
-
-function StageNote({ city }: { city: City }) {
-  const stage = stageOf(city.slug)
-  if (stage === 'first') return <>Houston opens first. <b>You’re in the opening deck.</b> Now pick the city after Texas.</>
-  if (stage === 'texas') return <>{city.name} is <b>locked in next</b>. Now pick the city after Texas.</>
-  return <>Your vote goes to {city.name} unless you pick another.</>
 }

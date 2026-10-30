@@ -50,16 +50,18 @@ const SCRIPT: [number, Beat][] = [
   [7500, { at: 'shake' }], [8400, { at: 'revealed' }],
 ]
 
-/** a line for under the card at each beat */
-const CAPTION: Record<Beat['at'], string> = {
-  deal: 'Dealing tonight’s deck',
-  up: 'No photos. Just who they are.',
-  lean: 'Release or align',
-  gone: 'Release or align',
-  mutual: 'It’s mutual ✦',
-  shake: 'It’s mutual ✦',
-  revealed: 'It’s a match ✦',
+/** under the card at each beat, the way the videos title a scene: a small label, then the line */
+export type Caption = [label: string, line: string]
+const CAPTION: Record<Beat['at'], Caption> = {
+  deal: ['Tonight’s deck', 'Dealt by the stars.'],
+  up: ['Blind by design', 'Fall for the card.'],
+  lean: ['Release or align', 'Who they are, first.'],
+  gone: ['Release or align', 'Who they are, first.'],
+  mutual: ['You both aligned', 'It’s mutual.'],
+  shake: ['You both aligned', 'It’s mutual.'],
+  revealed: ['Revealed tonight', 'The stars aligned.'],
 }
+const BACK: Caption = ['How strangers see her', 'Fall for the card.']
 
 const face: React.CSSProperties = { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }
 
@@ -89,7 +91,7 @@ function Stamp({ kind, on }: { kind: 'align' | 'release'; on: boolean }) {
 export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
   scale: number
   onFlip?: (revealed: boolean) => void
-  onCaption?: (text: string) => void
+  onCaption?: (caption: Caption) => void
   /** once the match is revealed, a way to deal again (null while it plays) */
   onReplay?: (again: (() => void) | null) => void
 }) {
@@ -149,7 +151,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
     setRevealed(to)
     if (to) { setTurns((n) => n + 1); burstNow() }
     onFlip?.(to)
-    onCaption?.(to ? CAPTION.revealed : 'How strangers see her')
+    onCaption?.(to ? CAPTION.revealed : BACK)
   }
   const again = () => {
     setRevealed(false); onFlip?.(false); setBeat({ at: 'deal' }); setRun((n) => n + 1)
@@ -182,6 +184,12 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
           </motion.div>
         ))}
       </div>
+
+      {/* the moon rises behind her card when it's mutual, as in the videos */}
+      <motion.div aria-hidden className="match-moon" initial={false}
+        animate={mutual || done ? { opacity: 0.92, scale: 1 } : { opacity: 0, scale: 0.82 }}
+        transition={{ duration: reduced ? 0 : 1.1, ease: [0.16, 1, 0.3, 1] }}
+        style={{ width: FLIP_W * scale * 1.18, height: FLIP_W * scale * 1.18 }} />
 
       {/* gold bloom behind the card at the reveal */}
       <motion.div aria-hidden initial={{ opacity: 0 }} animate={flash}

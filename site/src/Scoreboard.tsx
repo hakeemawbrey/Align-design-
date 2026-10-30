@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { HOUSTON, TEXAS, cityFromSlug, label, stageOf, type City } from './cities'
 import type { Tally } from './votes'
 
-const sum = (v: Record<string, number>, slugs: string[]) => slugs.reduce((n, s) => n + (v[s] ?? 0), 0)
 
 /** "12s ago", ticking */
 function useAgo(at: number | null) {
@@ -31,38 +30,24 @@ function Count({ n }: { n: number }) {
 
 interface Props { tally: Tally; mine: City | null; onPick: (c: City) => void }
 
-/**
- * The order cities light in: Houston, then Texas, then the vote, which is open now.
- * `mine` is your city, `vote` the city you're voting for.
- */
-export function Track({ tally, mine, vote, onPick }: Props & { vote: City | null }) {
-  const { seats, votes } = tally
-  const houston = sum(seats, [HOUSTON.slug])
-  const texas = Object.entries(seats).filter(([s]) => stageOf(s) === 'texas').reduce((n, [, v]) => n + v, 0)
-  const race = Object.values(votes).reduce((n, v) => n + v, 0)
-  const stage = mine ? stageOf(mine.slug) : null
-
+/** The order cities light in: Houston, then Texas, then the vote, which is open now. `vote` is your pick. */
+export function Track({ tally, vote }: { tally: Tally; vote: City | null }) {
+  const cast = Object.values(tally.votes).reduce((n, v) => n + v, 0)
   return (
     <ol className="track">
-      <li className={`stop lit${stage === 'first' ? ' on' : ''}`}>
+      <li className="stop lit">
         <span className="when">Opens first</span>
-        <button type="button" className="where" onClick={() => onPick(HOUSTON)}>Houston</button>
-        <span className="seats"><Count n={houston} /> seats</span>
+        <span className="where">{HOUSTON.name}</span>
       </li>
-      <li className={`stop${stage === 'texas' ? ' on' : ''}`}>
+      <li className="stop">
         <span className="when">Locked in next</span>
         <span className="where">Texas</span>
-        <span className="seats"><Count n={texas} /> seats</span>
-        <span className="tx">
-          {TEXAS.map((c) => (
-            <button type="button" key={c.slug} className={mine?.slug === c.slug ? 'on' : ''} onClick={() => onPick(c)}>{c.name}</button>
-          ))}
-        </span>
+        <span className="tx">{TEXAS.map((c) => <span key={c.slug}>{c.name}</span>)}</span>
       </li>
       <li className={`stop open${vote ? ' on' : ''}`}>
         <span className="when">Then, by vote · voting now</span>
         <span className="where">{vote ? vote.name : 'Your pick?'}</span>
-        <span className="seats"><Count n={race} /> votes cast</span>
+        <span className="seats"><Count n={cast} /> votes cast</span>
       </li>
     </ol>
   )
