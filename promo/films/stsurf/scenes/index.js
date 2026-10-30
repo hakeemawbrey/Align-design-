@@ -118,9 +118,9 @@ const HORIZON = 1060, WL = 1240, P = 12
 const MOON = { x: 830, y: 640, r: 74 }
 const TOWER = { x: 104, base: 1236, seat: 1010 }
 const TAU_P = [104, 952, 112]
-const SAND = [[0, 1166], [140, 1172], [300, 1236], [470, 1480], [0, 1480]]
+const SAND = [[0, 1166], [100, 1172], [215, 1236], [345, 1480], [0, 1480]]
 const ARI_SZ = 200, PIS_SZ = 190
-const LIFT = s => s * 0.42                    // star centre above the board
+const LIFT = s => s * 0.47                    // star centre above the board
 const BG_PIS = [880, 1074, 80]
 
 // ── the waves: { cx, h, w, lip, jag, look } by time
@@ -140,7 +140,7 @@ function waveState(t) {
   // 2 · sadness: slow, low, follows Aries across the screen, then flops over it
   if (inW(t, T.w2[0], T.plop + 0.9)) {
     const r = ease.inOutQuad(prog(t, T.w2[0], T.plop - 0.3)), hh = ease.outCubic(prog(t, ...T.w2)), c = ease.inQuad(prog(t, T.plop - 0.55, T.plop)), k = ease.inCubic(prog(t, T.plop, T.plop + 0.8))
-    out.push({ ...WAVES.sad, cx: lerp(1300, 450, r) - 60 * k, h: 360 * hh * (1 - k) * (1 - 0.06 * c), lip: c, alpha: 1 - prog(t, T.plop + 0.5, T.plop + 0.9) })
+    out.push({ ...WAVES.sad, cx: lerp(1300, 570, r) - 60 * k, h: 360 * hh * (1 - k) * (1 - 0.06 * c), lip: c, alpha: 1 - prog(t, T.plop + 0.5, T.plop + 0.9) })
   }
   // 3 · anxiety: grows at every STOP, trembles, crashes
   if (inW(t, T.w3[0], T.crash2 + 0.9)) {
@@ -153,7 +153,7 @@ function waveState(t) {
   // 4 · feelings: the one you ride; it rolls on under them and away
   if (inW(t, T.w4[0], T.pass[1])) {
     const r = ease.outCubic(prog(t, ...T.w4)), m = ease.inOutQuad(prog(t, ...T.ride)), p = ease.inQuad(prog(t, ...T.pass))
-    out.push({ ...WAVES.zen, cx: lerp(1360, 760, r) - 380 * m - 700 * p, h: 430 * r * (1 - 0.95 * p), lip: 0.35 * r * (1 - p), alpha: 1 })
+    out.push({ ...WAVES.zen, cx: lerp(1360, 760, r) - 150 * m - 900 * p, h: 430 * r * (1 - 0.95 * p), lip: 0.35 * r * (1 - p), alpha: 1 - 0.7 * p })
   }
   return out
 }
@@ -198,12 +198,12 @@ function ariesPose(t) {
   }
   if (t < T.h3 - 0.05) {
     // wave two: paddle away… plop
-    if (t < T.plop) { const p = ease.inOutSine(prog(t, ...T.paddle)), x = lerp(560, 250, p); const r = onBoard(x, surfaceAt(t, x) + 3 * Math.sin(t * 30) * (p > 0 && p < 1 ? 1 : 0)); return { ...r, paddling: p > 0 && p < 1 } }
-    const S = { ...P0, board: { show: true, x: 330, y: WL - 6 + bobY, rot: Math.PI, flipped: true } }
-    if (t < T.plop + 0.18) return { ...S, x: 250, y: WL - 8 - LIFT(ARI_SZ) + 40 * prog(t, T.plop, T.plop + 0.18), sq: 0.4 }
+    if (t < T.plop) { const p = ease.inOutQuad(prog(t, ...T.paddle)), x = lerp(600, 370, p); const r = onBoard(x, surfaceAt(t, x) + 3 * Math.sin(t * 30) * (p > 0 && p < 1 ? 1 : 0)); return { ...r, paddling: p > 0 && p < 1 } }
+    const S = { ...P0, board: { show: true, x: 470, y: WL - 6 + bobY, rot: Math.PI, flipped: true } }
+    if (t < T.plop + 0.18) return { ...S, x: 370, y: WL - 8 - LIFT(ARI_SZ) + 40 * prog(t, T.plop, T.plop + 0.18), sq: 0.4 }
     if (t < T.surf2) return { ...S, show: false }
     const k = easeOutBack(prog(t, T.surf2, T.surf2 + 0.4), 2)
-    return { ...S, x: 250, y: WL + 70 - 120 * k + bobY, under: 1, seaweed: true }
+    return { ...S, x: 370, y: WL + 70 - 120 * k + bobY, under: 1, seaweed: true }
   }
   if (t < T.crash2) {
     const r = onBoard(400, surfaceAt(t, 400))
@@ -216,7 +216,7 @@ function ariesPose(t) {
     const p = prog(t, ...T.wash), a = p * Math.PI * 7
     return { ...P0, x: 470 + Math.cos(a) * 90, y: 1150 + Math.sin(a) * 70, rot: -a * 1.3, board: { show: true, x: 470 - Math.cos(a) * 110, y: 1150 - Math.sin(a) * 80, rot: a * 1.6 }, wash: p }
   }
-  const SANDP = [236, 1330]
+  const SANDP = [150, 1296]
   if (t < T.spit[1]) {
     const p = prog(t, ...T.spit)
     return { ...P0, x: lerp(470, SANDP[0], p), y: lerp(1100, SANDP[1], p) - Math.sin(p * Math.PI) * 260, rot: -p * Math.PI * 2.5, board: { show: true, x: 560, y: WL - 6 + bobY, rot: Math.PI, flipped: true }, sand: true }
@@ -233,7 +233,7 @@ function ariesPose(t) {
     return { ...P0, x: lerp(SANDP[0], BOARD_POS[0], p), y: lerp(SANDP[1], yB, p) - Math.sin(p * Math.PI) * 200, rot: 0, board: boardSea, sand: p < 0.5 }
   }
   if (t < T.lessonOut[1]) {
-    const x = riderX(t, -0.62)
+    const x = riderX(t, -0.5)
     let wob = 0
     if (inW(t, T.w4[0] + 0.5, T.balance)) wob = 0.22 * Math.sin((t - T.w4[0]) * 13) * (1 - prog(t, T.balance - 0.4, T.balance))
     const r = onBoard(x, surfaceAt(t, x), wob - (inW(t, T.ride[0], T.pass[0]) ? 0.12 : 0))
@@ -426,9 +426,9 @@ async function build(stage) {
     x.save()
     x.fillStyle = '#e9c98f'; x.beginPath(); SAND.forEach(([a, b], i) => i ? x.lineTo(a, b) : x.moveTo(a, b)); x.closePath(); x.fill()
     x.fillStyle = '#c8a26a'
-    for (let k = 0; k < 40; k++) { const px = (k * 137) % 420, py = 1180 + ((k * 89) % 300); if (py > 1172 + px * 0.42) x.fillRect(px, py, 8, 8) }
+    for (let k = 0; k < 40; k++) { const px = (k * 137) % 420, py = 1180 + ((k * 89) % 300); if (py > 1172 + px * 0.6 && px < 100 + (py - 1172) * 0.8) x.fillRect(px, py, 8, 8) }
     // the foam line along the shore
-    x.fillStyle = 'rgba(234,255,255,0.8)'; x.beginPath(); x.moveTo(300, 1236); x.lineTo(470, 1480); x.lineTo(486, 1480); x.lineTo(316, 1236); x.closePath(); x.fill()
+    x.fillStyle = 'rgba(234,255,255,0.8)'; x.beginPath(); x.moveTo(215, 1236); x.lineTo(345, 1480); x.lineTo(361, 1480); x.lineTo(231, 1236); x.closePath(); x.fill()
     x.restore()
   }
   // ── the waves
@@ -505,7 +505,7 @@ async function build(stage) {
     if (wv.face === 'zen') { for (let k = -2; k <= 2; k++) x.fillRect(Math.round(mx + k * c), Math.round(my + (Math.abs(k) === 2 ? -c : 0)), c, c) }
     // the tag on its back, like a board sticker
     const tx = wv.cx + wv.w * 0.55, ty = WL - heightAt(wv, tx) * 0.55
-    if (tx < W + 60 && heightAt(wv, tx) > 150) {
+    if (tx < W + 60 && wv.cx > 360 && heightAt(wv, tx) > 150) {
       x.save(); x.translate(tx, ty); x.rotate(-0.06)
       x.font = `700 40px ${MONO}`; const tw = x.measureText(wv.tag).width + 36
       R(x, -tw / 2 - 6, -34, tw + 12, 68, INK); R(x, -tw / 2, -28, tw, 56, '#fffaf0')
@@ -516,7 +516,7 @@ async function build(stage) {
     if (wv.face === 'sad') drawCloud(x, wv.cx + 20, WL - wv.h - 120 + 6 * Math.sin(t * 2), 11, t, 1, clamp((wv.h - 160) / 80))
     if (wv.face === 'anxious') {
       x.save(); x.font = `700 34px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'
-      const spots = [[0.25, 0.2], [0.9, 0.45], [0.6, 0.78], [1.3, 0.3], [-0.05, 0.12], [1.15, 0.7]]
+      const spots = [[-0.2, 0.3], [0.45, 0.12], [1.05, 0.88]]
       spots.forEach(([dx, dy], i) => {
         const px = wv.cx + dx * wv.w * 0.6, py = WL - heightAt(wv, px) * (1 - dy) + 30
         if (heightAt(wv, px) < 120 || px > W - 40) return
@@ -685,14 +685,14 @@ async function build(stage) {
         // splashes and onomatopoeia
         splash(t, 520, WL - 20, T.crash1, { n: 26, pow: 1.1 })
         splash(t, 330, WL, T.fly1[1], { n: 14, pow: 0.6 })
-        splash(t, 280, WL - 10, T.plop, { n: 16, pow: 0.55 })
+        splash(t, 400, WL - 10, T.plop, { n: 16, pow: 0.55 })
         splash(t, 470, WL - 40, T.crash2, { n: 30, pow: 1.3 })
-        splash(t, 236, 1330, T.spit[1], { n: 12, pow: 0.4, life: 0.6 })
+        splash(t, 150, 1296, T.spit[1], { n: 12, pow: 0.4, life: 0.6 })
         ono('*CRASH*', 560, 900, t, T.crash1, { size: 60, color: '#bff0ff', rot: -0.08 })
         ono('*pfft*', 420, 1080, t, T.pfft, { size: 46, life: 0.8, rise: 20 })
-        ono('*plop.*', 300, 1000, t, T.plop + 0.05, { size: 52, color: '#bfd8ff', life: 1.0, rise: 20 })
+        ono('*plop.*', 420, 1000, t, T.plop + 0.05, { size: 52, color: '#bfd8ff', life: 1.0, rise: 20 })
         ono('*CRASH*', 540, 820, t, T.crash2, { size: 70, color: '#e6d0ff', rot: 0.08 })
-        ono('*thud*', 236, 1180, t, T.spit[1], { size: 44, life: 0.8, rise: 18, color: '#ffe0b0' })
+        ono('*thud*', 170, 1150, t, T.spit[1], { size: 44, life: 0.8, rise: 18, color: '#ffe0b0' })
         T.stop.forEach((s, i) => ono('*whoosh*', 840, 600 - i * 40, t, s, { size: 38, life: 0.6, rise: 20, color: '#e6d0ff', ticks: false }))
         ono('*sob*', BG_PIS[0], BG_PIS[1] - 90, t, T.crash1 + 0.3, { size: 34, life: 0.8, rise: 20, color: PIS_T, ticks: false })
         ono('*sniff*', BG_PIS[0] - 20, BG_PIS[1] - 90, t, T.pisIn[0] - 0.4, { size: 34, life: 0.8, rise: 20, color: PIS_T, ticks: false })
