@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useAnimationControls, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import confetti from 'canvas-confetti'
 import CardBack from '@app/components/deck/CardBack'
 import ProfileCard from '@app/components/deck/ProfileCard'
 import ProfileFace from '@app/components/reveal/ProfileFace'
 import { CARD_W, CARD_H } from '@app/components/deck/fx'
 import { profileById, type Profile } from '@app/data/profiles'
+import PixelStars from './PixelStars'
 
 /** the reveal card is drawn at 358 × 625; both sides share the deck card's width */
 const FACE_W = 358
@@ -101,7 +101,9 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
   const [turns, setTurns] = useState(reduced ? 1 : 0)
   const shake = useAnimationControls()
   const flash = useAnimationControls()
-  const box = useRef<HTMLDivElement>(null)
+  // pixel stars align over her card: they gather during the shake and burst as it turns
+  const [stars, setStars] = useState(0)
+  const starred = useRef(false)
 
   useEffect(() => {
     if (reduced) return
@@ -113,6 +115,8 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
   useEffect(() => {
     onCaption?.(CAPTION[beat.at])
     if (beat.at === 'shake') {
+      starred.current = true
+      setStars((n) => n + 1)
       void shake.start({
         x: [0, -5, 6, -8, 9, -11, 12, -10, 8, -4, 0], rotate: [0, -1, 1.2, -1.8, 2, -2.4, 2.6, -2, 1.4, -0.6, 0],
         transition: { duration: 0.85, ease: 'easeInOut' },
@@ -121,15 +125,9 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
     if (beat.at === 'revealed' && !reduced) {
       setRevealed(true); setTurns((n) => n + 1); onFlip?.(true)
       void flash.start({ opacity: [0, 1, 0], scale: [0.6, 1.4, 1.8], transition: { duration: 1.2, ease: 'easeOut' } })
-      const r = box.current?.getBoundingClientRect()
-      if (r) {
-        const origin = { x: (r.left + r.width / 2) / window.innerWidth, y: (r.top + r.height * 0.4) / window.innerHeight }
-        const colors = ['#f2c75c', '#fff4cf', '#f8edff', '#c9b6f0', '#ff9fd8']
-        window.setTimeout(() => {
-          void confetti({ particleCount: 70, spread: 75, startVelocity: 38, origin, colors, scalar: 0.9, disableForReducedMotion: true })
-          void confetti({ particleCount: 36, spread: 120, startVelocity: 24, origin, colors, shapes: ['star'], scalar: 1.1, disableForReducedMotion: true })
-        }, 300)
-      }
+      // skipped straight here: the stars still get their moment
+      if (!starred.current) setStars((n) => n + 1)
+      starred.current = false
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [beat])
@@ -146,7 +144,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
     if (!done) { setBeat({ at: 'revealed' }); return }
     const to = !revealed
     setRevealed(to)
-    if (to) setTurns((n) => n + 1)
+    if (to) { setTurns((n) => n + 1); setStars((n) => n + 1) }
     onFlip?.(to)
     onCaption?.(to ? CAPTION.revealed : 'How strangers see her')
   }
@@ -168,7 +166,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
   const scaled: React.CSSProperties = { position: 'absolute', left: 0, top: 0, width: FLIP_W, height: FLIP_H, transform: `scale(${scale})`, transformOrigin: '0 0' }
 
   return (
-    <div ref={box} style={{ width: FLIP_W * scale, height: FLIP_H * scale, position: 'relative' }}>
+    <div style={{ width: FLIP_W * scale, height: FLIP_H * scale, position: 'relative' }}>
       {/* the pile: backs dealt in from the lower right, easing back once the deck is up */}
       <div aria-hidden key={`pile${run}`} style={{ ...scaled, pointerEvents: 'none' }}>
         {DEALS.map((d, i) => (
@@ -185,6 +183,8 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
       {/* gold bloom behind the card at the reveal */}
       <motion.div aria-hidden initial={{ opacity: 0 }} animate={flash}
         style={{ position: 'absolute', inset: '-15%', borderRadius: '50%', pointerEvents: 'none', background: 'radial-gradient(closest-side, rgba(255,236,170,0.8), rgba(242,199,92,0.35) 45%, transparent 75%)', mixBlendMode: 'screen' }} />
+
+      <PixelStars fire={stars} w={FLIP_W * scale} h={FLIP_H * scale} />
 
       <button
         key={`hand${run}`}

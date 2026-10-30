@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import RevealStyles from '@app/components/reveal/RevealStyles'
+import AlignMark from '@app/components/intro/AlignMark'
 import FlipCard, { FLIP_H, FLIP_W } from './FlipCard'
 import Scoreboard, { Track } from './Scoreboard'
 import { ALL_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
@@ -103,7 +104,7 @@ export default function Site() {
 
       <div className="wrap">
         <nav className="nav">
-          <a className="wordmark" href="#top">Align <span className="spark">✦</span></a>
+          <a className="wordmark" href="#top" aria-label="Align"><AlignMark size={34} glow={0.8} dotRadius={3.2} strokeOpacity={0.7} strokeWidth={1.1} /><span>Align</span></a>
           <a className="nav-cta" href="#vote">Beta · $15</a>
         </nav>
 

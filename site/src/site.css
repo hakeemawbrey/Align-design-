@@ -37,7 +37,8 @@ html { scroll-behavior: smooth; }
 
 .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .wordmark { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--label-1); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-.wordmark .spark { color: var(--align); font-size: 14px; font-style: normal; }
+.wordmark { gap: 10px; }
+.wordmark svg { flex-shrink: 0; }
 .nav-cta {
   height: 36px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center;
   border: 1px solid rgba(239,230,214,0.32); background: rgba(40,26,78,0.55); color: var(--label-1);
