@@ -47,15 +47,15 @@ export const T = {
   black: [0, 0.25], neon: [0.08, 0.62],
   ariIn: 0.22, whistle1: BEAT(0), h1: 0.3, h1Land: 0.86, l1: 1.0, capIn: 1.25, pisIn: 1.6, h1Out: [3.02, 3.2],
   cut1: 3.3,
-  barIn: [3.3, 3.62], h2: 3.36, h2Land: 3.7, l2: 3.75,
+  barIn: [3.3, 3.62], h2: 3.36, h2Land: 3.7, l2: 4.05,
   rep1: BEAT(9), rep2: BEAT(11), rep3: BEAT(13), l3: 8.15, h2Out: [9.22, 9.4],
   flip: [9.42, 9.72], h3: 9.5, h3Land: 9.86,
-  fake1: BEAT(17), fake2: BEAT(19), l4: 11.75, reps2: REPS2, l5: 16.05, h3Out: [17.0, 17.18],
+  fake1: BEAT(17), fake2: BEAT(19), l4: 11.75, reps2: REPS2, l5: 15.9, h3Out: [17.0, 17.18],
   cut2: 17.45,
   h4: 17.52, h4Land: 17.86, roll: [17.62, BEAT(32)], drop: BEAT(32), l6: 18.75, l7: 21.95, h4Out: [22.62, 22.78],
   strain: [BEAT(40), BEAT(43)], h5: 22.86, h5Land: 23.6, h5Out: [24.3, 24.46],
   lock: BEAT(43), h6: 24.56, h6Land: 24.86, pisFly: [24.6, 25.15],
-  notif: BEAT(45), faint: [BEAT(46), BEAT(46) + 0.36], float: [26.3, 29.4], l8: 26.45, notifOut: [27.55, 27.85], h6Out: [27.05, 27.2],
+  notif: BEAT(45), faint: [BEAT(46), BEAT(46) + 0.36], float: [26.3, 27.3], l8: 26.45, notifOut: [27.55, 27.85], h6Out: [27.05, 27.2],
   h7: 27.3, h7Land: 27.62, up: [BEAT(50), BEAT(50) + 0.32], pisBack: [28.1, 28.5], bell: BEAT(51) + 0.05, close2: 29.65, h7Out: [30.1, 30.28],
   cut3: 30.45,
   lesson: BEAT(54), lessonOut: [34.95, 35.15], spread: [34.85, 35.3],
@@ -337,9 +337,9 @@ async function build(stage) {
   }
   function pisPos(t) {
     if (t < T.pisFly[0]) return [...PIS_RUN, 0]
-    if (t < T.pisFly[1]) { const q = arcTo(t, T.pisFly, PIS_RUN, [360, 1372, 104], 200); return [q[0], q[1], 104, prog(t, ...T.pisFly) * Math.PI * 2.2] }
-    if (t < T.pisBack[0]) return [360, 1372, 104, Math.PI * 0.2]
-    if (t < T.pisBack[1]) { const q = arcTo(t, T.pisBack, [360, 1372, 104], PIS_RUN, 160); return [q[0], q[1], 104, Math.PI * 0.2 * (1 - prog(t, ...T.pisBack))] }
+    if (t < T.pisFly[1]) { const q = arcTo(t, T.pisFly, PIS_RUN, [724, 1243, 104], 200); return [q[0], q[1], 104, prog(t, ...T.pisFly) * Math.PI * 2.2] }
+    if (t < T.pisBack[0]) return [724, 1243, 104, Math.PI * 0.2]
+    if (t < T.pisBack[1]) { const q = arcTo(t, T.pisBack, [724, 1243, 104], PIS_RUN, 160); return [q[0], q[1], 104, Math.PI * 0.2 * (1 - prog(t, ...T.pisBack))] }
     return [...PIS_RUN, 0]
   }
   function drawPisces(t, a) {
@@ -358,7 +358,7 @@ async function build(stage) {
     const s = starAt(px, py, size, t, o)
     if (!flying) tears(s, size, t, T.pisIn + 0.2, STORY_END, { gap: watching ? 0.07 : 0.11, wind: 1, life: 0.55 })
     else tears(s, size, t, T.pisFly[0], T.pisBack[1], { gap: 0.07, spread: 1.4 })
-    if (inW(t, T.pisFly[0] + 0.1, T.pisFly[0] + 1.2)) drawPop(t, T.pisFly[0] + 0.1, 'WAAAH!', 380, 1200, '#b7b1ff', 36)
+    if (inW(t, T.pisFly[0] + 0.1, T.pisFly[0] + 1.2)) drawPop(t, T.pisFly[0] + 0.1, 'WAAAH!', 600, 1450, '#b7b1ff', 36)
   }
 
   // ── the bars
@@ -383,7 +383,7 @@ async function build(stage) {
     else {
       const p = prog(t, ...T.float), e = ease.inQuad(p)
       const s0 = starAt(...CAP_HOME, T.faint[0], capOpts(T.faint[0]))
-      y = lerp(s0.top[1] - 8, -420, e) + Math.sin(t * 5) * 8 * (1 - p); bend = 0; rot = Math.sin(t * 2.4) * 0.08
+      y = lerp(s0.top[1] - 8, -560, e) + Math.sin(t * 5) * 8 * (1 - p); bend = 0; rot = Math.sin(t * 2.4) * 0.08
       // balloon string + hearts
       x.save(); x.strokeStyle = 'rgba(239,230,214,0.6)'; x.lineWidth = 3; x.beginPath(); x.moveTo(540, y + 10); x.quadraticCurveTo(560 + Math.sin(t * 4) * 20, y + 140, 530, y + 260); x.stroke(); x.restore()
     }
@@ -403,7 +403,7 @@ async function build(stage) {
     const nk = t < T.neon[1] ? (Math.sin(t * 70) > 0 ? 1 : 0.2) * prog(t, T.neon[0], T.neon[0] + 0.1) : 1
     drawNeon(x, 290, 572, t, a * (t < T.neon[0] ? 0 : 1), t < T.neon[1] ? 1 : 0)
     void nk
-    if (t < T.barIn[0] || t >= T.float[0] + 1) return
+    if (t < T.barIn[0] || t >= T.float[1] + 0.5) return
     const set2 = t >= T.flip[0] + 0.15
     const heavy = t >= T.cut2
     const real2 = T.reps2.filter(r => t >= r).length
@@ -459,7 +459,7 @@ async function build(stage) {
         else if (t >= T.faint[0]) heavyBar(t, s || starAt(...CAP_HOME, t, capOpts(t)))
         drawAries(t, a)
         // the rep pops
-        for (const [t0, text, size, col, side] of POPS) drawPop(t, t0 + 0.02, text, 540 + side * 210, 860 - (side === 0 ? 20 : 0), col, size, 1.05)
+        for (const [t0, text, size, col, side] of POPS) drawPop(t, t0 + 0.02, text, 540 + side * (text.length > 16 ? 120 : 210), 860 - (side === 0 ? 20 : 0), col, size, text.length > 16 ? (side === 0 ? 1.0 : 0.56) : 1.05)
         for (const f of [T.fake1, T.fake2]) drawPop(t, f + 0.3, '✕', 540 + (f === T.fake1 ? -1 : 1) * 380, 930, RED, 64, 0.7)
         drawPop(t, T.drop + 0.02, 'THUD.', 820, 900, BONE, 70, 0.9, INTER)
         drawPop(t, T.lock + 0.02, 'I LIKE YOU.', 540, 830, PINK, 96, 1.5, INTER)
