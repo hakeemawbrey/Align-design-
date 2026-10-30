@@ -217,7 +217,8 @@ export default function Site() {
           <div className="ballot-head">
             <span className="kicker">Beta access</span>
             <h3 className="ballot-title">Join the Align beta</h3>
-            <p className="price"><b>$15</b> once · first access to the beta, and a vote for your city</p>
+            <p className="price-deal"><s aria-label="Regular price $25">$25</s> <b>$15</b> <span>special price</span></p>
+            <p className="price">Only 100 spots per city · first access to the beta, and a vote for your city</p>
           </div>
 
           <fieldset className="bsec">
