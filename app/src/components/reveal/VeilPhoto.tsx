@@ -26,6 +26,8 @@ export default function VeilPhoto({ photo, veil, lift, height, position = '50% 3
 
   useEffect(() => {
     if (!lift) return
+    // reduced motion: the photo is simply there
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { p.set(1); onPeak?.(); onDone?.(); return }
     let peaked = false
     const unsub = p.on('change', (v) => {
       if (!peaked && v > 0.55) { peaked = true; onPeak?.() }

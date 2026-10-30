@@ -235,7 +235,7 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
 
       <button
         key={`hand${run}`}
-        aria-label={done ? (revealed ? 'Turn her card back over' : 'Turn her card over') : 'Skip to the match'}
+        aria-label={done ? (revealed ? 'Juniper, revealed. Turn her card back over' : 'Juniper’s card: Libra, Gemini moon. Turn it over to see her') : 'Tonight’s deck. Skip to the match'}
         onPointerMove={(e) => {
           if (e.pointerType !== 'mouse') return
           const r = e.currentTarget.getBoundingClientRect()

@@ -71,7 +71,7 @@ export const DECK: Profile[] = [
     serial: '№ 027', pull: 'Slow burn', alignsBack: false,
     photo: 'img/people/p3.jpg',
     reading: [
-      { kind: 'pull', text: 'She notices the small stuff — and remembers it.', strength: 3 },
+      { kind: 'pull', text: 'She notices the small stuff and remembers it.', strength: 3 },
       { kind: 'push', text: 'She plans, you go with the flow. Agree on plans early.', strength: 2 },
       { kind: 'align', text: 'You both want steady. Easy to build a routine together.', strength: 2 },
     ],
@@ -95,7 +95,7 @@ export const DECK: Profile[] = [
     photoPos: '50% 64%',
     house: '7th house',
     reading: [
-      { kind: 'pull', text: 'Easy to talk to — it flows from the very first text.', strength: 3 },
+      { kind: 'pull', text: 'Easy to talk to. It flows from the very first text.', strength: 3 },
       { kind: 'push', text: 'She takes time to decide. Give her two options, not ten.', strength: 2 },
       { kind: 'align', text: 'Same taste, same values. You’d host great dinners together.', strength: 3 },
     ],

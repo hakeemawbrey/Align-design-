@@ -25,7 +25,7 @@ cd site && npm install && npm run dev
 2. **Stripe**: make a $15 one-time Payment Link. Under *After payment*, redirect to
    `https://YOUR-SITE/?paid=1` (the page
    thanks them and names the city they voted for). Add a webhook endpoint pointing at the function
-   URL for `checkout.session.completed`.
+   URL for `checkout.session.completed` and `checkout.session.async_payment_succeeded`.
 3. **Site env** (`site/.env.local`, or Vercel env vars): `VITE_BETA_LINK`,
    `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`. Without the link the pay button
    stays off and the line under it says "Checkout opens soon". Without Supabase the board

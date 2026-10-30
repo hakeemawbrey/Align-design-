@@ -9,13 +9,16 @@ import Scoreboard, { Track } from './Scoreboard'
 import { ALL_CITIES, VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
 import { checkout, checkoutReady, useVotes } from './votes'
 
+/** smooth scrolling, unless the viewer asked for less motion */
+const scrollBehavior = (): ScrollBehavior => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth')
+
 /** card size: as big as the screen allows, never past 1.05× */
 function useCardScale() {
   const fit = () => {
     const w = window.innerWidth, h = window.innerHeight
     if (w >= 900) return Math.min(1.05, (h - 200) / FLIP_H)
     // phones: headline, line, card and button all on the first screen
-    return Math.max(0.55, Math.min(0.74, (w * 0.64) / FLIP_W, (h - 470) / FLIP_H))
+    return Math.max(0.42, Math.min(0.74, (w * 0.64) / FLIP_W, (h - 470) / FLIP_H))
   }
   const [s, setS] = useState(fit)
   useEffect(() => {
@@ -67,7 +70,7 @@ export default function Site() {
     u.searchParams.delete('paid')
     window.history.replaceState(null, '', u)
     try { sessionStorage.removeItem('align-vote') } catch { /* private mode */ }
-    void confetti({ particleCount: 90, spread: 70, origin: { y: 0.2 }, colors: ['#f2c75c', '#fff4cf', '#c9b6f0', '#9a7be0'] })
+    void confetti({ particleCount: 90, spread: 70, origin: { y: 0.2 }, colors: ['#f2c75c', '#fff4cf', '#c9b6f0', '#9a7be0'], disableForReducedMotion: true })
   }, [paid])
 
   // back from Stripe without paying: the page can come back from the cache mid-"Saving"
@@ -102,7 +105,7 @@ export default function Site() {
     if (!b) return
     const r = b.getBoundingClientRect()
     // desktop keeps the ballot beside the board; only scroll when it's off screen
-    if (r.top < 0 || r.bottom > window.innerHeight) b.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (r.top < 0 || r.bottom > window.innerHeight) b.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })
   }
 
   /** a row on the board: that's your vote (stable, so the board doesn't re-render as you type) */
@@ -138,7 +141,7 @@ export default function Site() {
       <AnimatePresence>
         {paid && (
           <motion.div className="thanks" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} role="status">
-            <span style={{ color: 'var(--align)' }}>✦</span>
+            <span style={{ color: 'var(--align)' }} aria-hidden>✦</span>
             <span>{paid.city ? <>You’re in, and your vote is in for <b>{paid.city.name}</b>.</> : 'You’re in, and your vote is in.'} We’ll email you your beta invite.</span>
           </motion.div>
         )}
@@ -186,19 +189,19 @@ export default function Site() {
 
           <form className="ballot" id="ballot" onSubmit={(e) => { e.preventDefault(); void pay() }}>
             <div className="ballot-top">
-              <span className="ballot-title">Your seat</span>
+              <h3 className="ballot-title">Your seat</h3>
               <span className="price"><b>$15</b> once</span>
             </div>
 
             <label className="city-field">
               <span className="field-label">Your vote · the city after Texas</span>
-              <input id="vote-city" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
+              <input id="vote-city" aria-describedby="vote-note" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
                 placeholder="Pick a city" autoComplete="off" required />
               <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
             </label>
-            <p className="note" aria-live="polite">
+            <p className="note" id="vote-note" aria-live="polite">
               {lockedIn ? 'Houston and Texas are already locked in. Vote for a city beyond Texas.'
-                : vote ? <>One vote for <b>{vote.name}</b>, counted today.</> : 'Tap a city on the board, or type one.'}
+                : vote ? <>One vote for <b>{vote.name}</b>, counted today.</> : 'Pick a city on the board, or type one.'}
             </p>
 
             <label className="field">
@@ -237,11 +240,12 @@ export default function Site() {
                 value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
             </label>
 
-            <button className="chrome-cta" type="submit" disabled={!ready || !checkoutReady || sending}>
-              {sending ? 'Saving your vote…' : vote ? `Pay $15 · vote ${vote.name}` : 'Pay $15 · cast your vote'} <span className="spark">✦</span>
+            <button className="chrome-cta" type="submit" aria-disabled={!ready || !checkoutReady || sending}
+              aria-describedby={error ? 'pay-hint pay-error' : 'pay-hint'}>
+              {sending ? 'Saving your vote…' : vote ? `Pay $15 · vote ${vote.name}` : 'Pay $15 · cast your vote'} <span className="spark" aria-hidden>✦</span>
             </button>
-            {error && <p className="note" role="alert">{error}</p>}
-            <span className="fine checkout">{checkoutReady ? 'Secure checkout with Stripe' : 'Checkout opens soon'}</span>
+            {error && <p className="note" id="pay-error" role="alert">{error}</p>}
+            <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field to vote'}</span>
 
             <ul className="gets">
               <li>Beta access, with your card cast from your birth details</li>
@@ -281,7 +285,7 @@ export default function Site() {
             <span className="pay-bar-copy">
               {vote ? <>Vote <b>{vote.name}</b> · $15</> : <><b>$15</b> · one seat, one vote</>}
             </span>
-            <button type="button" className="chrome-cta" onClick={() => document.getElementById(vote ? 'ballot' : 'vote')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+            <button type="button" className="chrome-cta" onClick={() => document.getElementById(vote ? 'ballot' : 'vote')?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })}>
               {vote ? 'Finish vote' : 'Vote'}
             </button>
           </motion.div>
@@ -312,7 +316,7 @@ function HeroCard() {
       <p className="sr" role="status">{said}</p>
       <div className="scene">
         <AnimatePresence mode="wait" initial={false}>
-          <motion.div key={caption[1]} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.3 }}>
+          <motion.div key={caption.join('|')} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.3 }}>
             <span className="scene-label">{caption[0]}</span>
             <span className="scene-line">{caption[1]}</span>
           </motion.div>

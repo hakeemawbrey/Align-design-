@@ -37,7 +37,7 @@ export const Track = memo(function Track({ tally, vote }: { tally: Tally; vote: 
   return (
     <ol className="track">
       <li className="stop lit">
-        <span className="when">Opens first</span>
+        <span className="when">Lights first</span>
         <span className="where">{HOUSTON.name}</span>
       </li>
       <li className="stop">
@@ -46,7 +46,7 @@ export const Track = memo(function Track({ tally, vote }: { tally: Tally; vote: 
         <span className="tx">{TEXAS.map((c) => <span key={c.slug}>{c.name}</span>)}</span>
       </li>
       <li className={`stop open${vote ? ' on' : ''}`}>
-        <span className="when">Then, by vote · voting now</span>
+        <span className="when">Then by vote · open now</span>
         <span className="where">{vote ? vote.name : 'Your pick?'}</span>
         <span className="seats"><Count n={cast} /> votes cast</span>
       </li>
@@ -84,8 +84,9 @@ function Scoreboard({ tally, mine, onPick }: Props) {
           const isMine = city.slug === mine?.slug
           return (
             <motion.li layout key={city.slug} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
-              <button type="button" aria-pressed={isMine} className={`board-row${isMine ? ' mine' : ''}${rank === 1 ? ' first' : ''}`} onClick={() => onPick(city)}>
-                <span className="rank">{rank === 1 ? '✦' : rank}</span>
+              <button type="button" aria-pressed={isMine}
+                aria-label={`Vote for ${label(city)}, ${rank === 1 ? 'in the lead' : `number ${rank}`}, ${n} votes`} className={`board-row${isMine ? ' mine' : ''}${rank === 1 ? ' first' : ''}`} onClick={() => onPick(city)}>
+                <span className="rank" aria-hidden>{rank === 1 ? '✦' : rank}</span>
                 <span className="nm">{label(city)}</span>
                 <span className="ct"><Count n={n} />{isMine && <em>+1</em>}</span>
                 <span className="bar"><motion.i animate={{ width: `${(n / top) * 100}%` }} initial={{ width: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }} /></span>
