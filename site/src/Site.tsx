@@ -12,9 +12,9 @@ import { checkoutReady, checkoutUrl, useVotes } from './votes'
 function useCardScale() {
   const fit = () => {
     const w = window.innerWidth, h = window.innerHeight
-    if (w >= 900) return Math.min(1.1, (h - 150) / FLIP_H)
+    if (w >= 900) return Math.min(1.05, (h - 200) / FLIP_H)
     // phones: headline, line, card and button all on the first screen
-    return Math.max(0.55, Math.min(0.8, (w * 0.68) / FLIP_W, (h - 360) / FLIP_H))
+    return Math.max(0.55, Math.min(0.74, (w * 0.64) / FLIP_W, (h - 440) / FLIP_H))
   }
   const [s, setS] = useState(fit)
   useEffect(() => {
@@ -122,8 +122,8 @@ export default function Site() {
 
         <header className="hero" id="top">
           <div className="hero-copy">
-            <h1>Fall for who they are, not what they look like.</h1>
-            <p className="lede">Align matches you by zodiac. Photos stay hidden until you both align.</p>
+            <h1>Fall for who they are.</h1>
+            <p className="lede"><b>Not what they look like.</b> Align matches you by zodiac, and photos stay hidden until you both align.</p>
           </div>
 
           <div className="card-col">
@@ -136,7 +136,7 @@ export default function Site() {
 
           <div className="cta-block">
             <a className="chrome-cta" id="hero-cta" href="#vote">Get your seat · $15 <span className="spark">✦</span></a>
-            <span className="fine">Houston first · Texas next · vote now for what’s after</span>
+            <span className="fine">Houston first · Texas next · vote now</span>
           </div>
         </header>
       </div>
