@@ -183,7 +183,7 @@ export default function Site() {
 
       <div className="wrap">
         <nav className="nav">
-          <a className="wordmark" href="#top" aria-label="Align"><AlignMark size={34} glow={0.8} dotRadius={3.2} strokeOpacity={0.7} strokeWidth={1.1} /><span>Align</span></a>
+          <a className="wordmark" href="#top" aria-label="Align"><AlignMark size={34} glow={0.8} dotRadius={3.2} strokeOpacity={0.7} strokeWidth={1.1} /><span>Align<sup className="tm">™</sup></span></a>
           <a className="nav-cta" href="#ballot" onClick={toBallotLink}>Beta · $15</a>
         </nav>
       </div>
@@ -204,7 +204,7 @@ export default function Site() {
 
           <HeroCard />
 
-          <p className="lede">Align matches you by zodiac, and photos stay hidden until you both align.</p>
+          <p className="lede">Align<sup className="tm">™</sup> matches you by zodiac, and photos stay hidden until you both align.</p>
         </header>
       </div>
 
@@ -222,8 +222,7 @@ export default function Site() {
         {/* the ballot: one card, a pass into the beta with the vote inside it */}
         <form className="ballot one" id="ballot" onSubmit={(e) => { e.preventDefault(); void pay() }}>
           <div className="ballot-head">
-            <span className="kicker">Beta access</span>
-            <h3 className="ballot-title">Join the Align beta</h3>
+            <h3 className="ballot-title">Join the Align<sup className="tm">™</sup> beta</h3>
             <p className="price-deal"><s aria-label="Regular price $25">$25</s> <b>$15</b> <span>special price</span></p>
             <p className="price">Only 100 spots per city · first access to the beta, and a vote for your city</p>
           </div>
@@ -267,7 +266,7 @@ export default function Site() {
           </fieldset>
 
           <fieldset className="bsec">
-            <legend><span aria-hidden>3</span>Beta access</legend>
+            <legend><span aria-hidden>3</span>Your email</legend>
             <label className="field">
               <span>Email</span>
               <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false} maxLength={254}
@@ -308,7 +307,7 @@ export default function Site() {
       <footer className="wrap end">
         <p className="end-line">No one is disposable.</p>
         <span aria-hidden style={{ display: 'contents' }}><AlignMark size={112} glow={1} dotRadius={3.6} strokeOpacity={0.75} strokeWidth={0.8} /></span>
-        <span className="end-name">Align</span>
+        <span className="end-name">Align<sup className="tm">™</sup></span>
         <span className="kicker" style={{ margin: 0 }}>Blind by design</span>
         <nav className="end-links" aria-label="Legal">
           <a href="/privacy">Privacy</a>

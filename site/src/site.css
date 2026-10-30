@@ -394,3 +394,7 @@ button.vrow { cursor: pointer; transition: border-color .15s ease, background-co
 /* links to the beta card land with a little room above it */
 #ballot { scroll-margin-top: 24px; }
 html { scroll-padding-top: 0; }
+
+/* the trademark: small, raised, never part of the headline's weight */
+.tm { font-family: var(--sans); font-style: normal; font-size: 0.32em; font-weight: 400; vertical-align: super; line-height: 0; margin-left: 0.08em; letter-spacing: 0; opacity: .8; }
+.lede .tm, .wordmark .tm { font-size: 0.5em; }
