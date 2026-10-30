@@ -4,6 +4,9 @@ import { HOUSTON, TEXAS, cityFromSlug, label, stageOf, type City } from './citie
 import { votesLive, type Tally } from './votes'
 
 
+/** a stable hue per city for its aura panel */
+const hue = (slug: string) => { let h = 0; for (const c of slug) h = (h * 31 + c.charCodeAt(0)) % 360; return h }
+
 /** "12s ago", ticking */
 function useAgo(at: number | null) {
   const [now, setNow] = useState(() => Date.now())
@@ -84,32 +87,52 @@ function Scoreboard({ tally, mine, onPick, onWriteIn }: Props & { onWriteIn: () 
       </div>
 
       {rows.length === 0 && (live || !votesLive) && <p className="sub" style={{ marginTop: 12 }}>No votes yet. Yours could be the first.</p>}
-      <motion.ol layout className="city-cards">
+      <motion.ol layout className="vote-cards" aria-label="Cities in the vote">
         {rows.map(({ city, n, rank }) => {
           const isMine = city.slug === mine?.slug
+          const gap = lead && city.slug !== lead.city.slug ? lead.n - n : second ? n - second.n : 0
           return (
             <motion.li layout key={city.slug} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
               <button type="button" aria-pressed={isMine}
                 aria-label={`Vote for ${label(city)}, ${rank === 1 ? 'in the lead' : `number ${rank}`}, ${n} votes`}
-                className={`city-card${isMine ? ' mine' : ''}${rank === 1 ? ' first' : ''}`} onClick={() => onPick(city)}>
-                <span className="cc-top" aria-hidden>
-                  <span className="cc-rank">{rank === 1 ? '✦ 1' : rank}</span>
-                  <span className="cc-count"><Count n={n} />{isMine && <em>+1</em>}</span>
+                className={`vc${isMine ? ' mine' : ''}${rank === 1 ? ' first' : ''}`} onClick={() => onPick(city)}>
+                <span className="vc-in" aria-hidden>
+                  <span className="vc-head">
+                    <span className="vc-name">{city.name}</span>
+                    <span className="vc-orb">{city.state || '✦'}</span>
+                  </span>
+                  {/* the aura panel, in this city's own colour */}
+                  <span className="vc-panel grain" style={{ '--h': hue(city.slug) } as React.CSSProperties}>
+                    <span className="vc-badge">{isMine ? 'Your vote' : rank === 1 ? '✦ Leading' : `№ ${rank}`}</span>
+                    <span className="vc-cap">The city after Texas?</span>
+                  </span>
+                  <span className="vc-read">
+                    <span className="vc-n"><Count n={n} />{isMine && <em>+1</em>}</span>
+                    <span className="vc-k">votes</span>
+                    <span className="vc-gap">{rank === 1 ? (gap > 0 ? `Leads by ${gap}` : 'In the lead') : `${gap} behind`}</span>
+                  </span>
+                  <span className="vc-bar"><motion.i animate={{ width: `${(n / top) * 100}%` }} initial={{ width: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }} /></span>
+                  <span className="vc-foot"><span>Align · № {String(rank).padStart(2, '0')}/∞</span><span>City card</span></span>
                 </span>
-                <span className="cc-name">{city.name}</span>
-                <span className="cc-state">{city.state || ' '}</span>
-                <span className="cc-bar"><motion.i animate={{ width: `${(n / top) * 100}%` }} initial={{ width: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }} /></span>
-                {isMine && <span className="cc-tag">Your vote</span>}
               </button>
             </motion.li>
           )
         })}
         {/* the write-in card: any city beyond Texas */}
         <li>
-          <button type="button" className={`city-card write-in${mine && !picked ? ' mine' : ''}`} onClick={onWriteIn}>
-            <span className="cc-top" aria-hidden><span className="cc-rank">+</span><span /></span>
-            <span className="cc-name">{mine && !picked ? mine.name : 'Your city'}</span>
-            <span className="cc-state">{mine && !picked ? 'Your vote' : 'Not listed? Write it in'}</span>
+          <button type="button" className={`vc write-in${mine && !picked ? ' mine' : ''}`} onClick={onWriteIn}>
+            <span className="vc-in">
+              <span className="vc-head">
+                <span className="vc-name">{mine && !picked ? mine.name : 'Your city'}</span>
+                <span className="vc-orb" aria-hidden>+</span>
+              </span>
+              <span className="vc-panel" aria-hidden>
+                <span className="vc-badge">{mine && !picked ? 'Your vote' : 'Write-in'}</span>
+                <span className="vc-cap">Any city beyond Texas</span>
+              </span>
+              <span className="vc-read"><span className="vc-k">Not listed? Write it in</span></span>
+              <span className="vc-foot" aria-hidden><span>Align · №  ?/∞</span><span>City card</span></span>
+            </span>
           </button>
         </li>
       </motion.ol>

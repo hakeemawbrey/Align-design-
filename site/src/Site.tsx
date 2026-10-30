@@ -11,7 +11,6 @@ import { checkout, checkoutReady, useVotes } from './votes'
 
 /** the ballot's three cards */
 const STEPS = ['Your vote', 'Your card', 'Beta access']
-const ROMAN = ['I', 'II', 'III']
 /** dealing between the cards: the next one slides in from the right, going back from the left */
 const DEAL = {
   enter: (d: number) => ({ opacity: 0, x: 48 * d, rotate: 2 * d }),
@@ -216,25 +215,14 @@ export default function Site() {
 
         {/* the ballot, dealt as three cards: your vote, your card, your seat */}
         <form className="deck" id="ballot" onSubmit={(e) => { e.preventDefault(); if (step < 2) next(); else void pay() }}>
-          <ol className="deck-steps" aria-label="Three cards">
-            {STEPS.map((t, i) => (
-              <li key={t} className={i === step ? 'on' : i < step ? 'done' : ''}>
-                <button type="button" onClick={() => go(i)} disabled={i > step && !stepOk.slice(0, i).every(Boolean)} aria-current={i === step ? 'step' : undefined}>
-                  <span aria-hidden>{ROMAN[i]}</span> {t}
-                </button>
-              </li>
-            ))}
-          </ol>
 
           <div className="deck-stack">
-            {/* the cards still to come peek out behind this one */}
-            {[2, 1].filter((k) => step + k <= 2).map((k) => <div key={k} className={`deck-under u${k}`} aria-hidden />)}
 
             <AnimatePresence mode="wait" initial={false} custom={dir}>
               <motion.fieldset key={step} className="ballot" custom={dir}
                 variants={DEAL} initial="enter" animate="center" exit="leave" transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}>
-                <legend className="sr">{`Card ${ROMAN[step]} of III: ${STEPS[step]}`}</legend>
-                <span className="card-numeral" aria-hidden>{ROMAN[step]}</span>
+                <legend className="sr">{`Card ${step + 1} of 3: ${STEPS[step]}`}</legend>
+                <span className="card-count" aria-hidden>{step + 1} of 3</span>
 
                 {step === 0 && (<>
                   <div className="ballot-head">
