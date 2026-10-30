@@ -68,9 +68,12 @@ export default function PixelStars({ fire, from = 0, w, h }: { fire: number; fro
   const ref = useRef<HTMLCanvasElement>(null)
   // the canvas overhangs the card so the gather and the burst have room
   const OW = Math.ceil((w * 2) / PX), OH = Math.ceil((h * 1.45) / PX)
+  // when this play started, kept across a resize so the stars re-lay out without starting over
+  const start = useRef({ fire: 0, t0: 0 })
 
   useEffect(() => {
     const cv = ref.current
+    if (!fire) start.current.fire = 0
     if (!fire || !cv) return
     const g = cv.getContext('2d')!
     const r = rng(17 + fire * 13)
@@ -99,7 +102,8 @@ export default function PixelStars({ fire, from = 0, w, h }: { fire: number; fro
 
     let raf = 0
     let last = -1
-    const t0 = performance.now() - from * 1000
+    if (start.current.fire !== fire) start.current = { fire, t0: performance.now() - from * 1000 }
+    const t0 = start.current.t0
     const frame = (now: number) => {
       const t = (now - t0) / 1000
       const step = Math.floor(t * FPS)
@@ -172,7 +176,7 @@ export default function PixelStars({ fire, from = 0, w, h }: { fire: number; fro
     raf = requestAnimationFrame(frame)
     return () => { cancelAnimationFrame(raf); g.clearRect(0, 0, OW, OH) }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fire])
+  }, [fire, OW, OH])
 
   return (
     <canvas ref={ref} width={OW} height={OH} aria-hidden
