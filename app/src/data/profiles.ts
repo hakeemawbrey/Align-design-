@@ -28,6 +28,8 @@ export interface Profile {
   /** demo script: does this person align back? */
   alignsBack: boolean
   photo?: string
+  /** where the photo sits in the reveal card's wide frame (CSS object-position); default 50% 38% */
+  photoPos?: string
   bio?: string
   religion?: string
   lookingFor?: string
@@ -90,6 +92,7 @@ export const DECK: Profile[] = [
     id: 'j27', initial: 'Juniper', name: 'Juniper', age: 27, sign: 'libra', moon: 'gemini', rising: 'aquarius',
     serial: '№ 031', pull: 'Rare pull', alignsBack: true,
     photo: 'img/juniper.jpg',
+    photoPos: '50% 64%',
     house: '7th house',
     reading: [
       { kind: 'pull', text: 'Easy to talk to — it flows from the very first text.', strength: 3 },

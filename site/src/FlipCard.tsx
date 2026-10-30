@@ -5,6 +5,7 @@ import ProfileCard from '@app/components/deck/ProfileCard'
 import ProfileFace from '@app/components/reveal/ProfileFace'
 import { CARD_W, CARD_H } from '@app/components/deck/fx'
 import { profileById } from '@app/data/profiles'
+import { SIGNS } from '@app/data/signs'
 
 /** the reveal card is drawn at 358 × 625; both sides share the deck card's width */
 const FACE_W = 358
@@ -44,6 +45,8 @@ export default function FlipCard({ scale, onFlip }: { scale: number; onFlip?: (r
   // remount the face each time it turns over, so the veil lifts again
   const [turns, setTurns] = useState(0)
   const touched = useRef(false)
+  // "she aligned back" drops in, then the card turns over
+  const [notice, setNotice] = useState(false)
 
   useEffect(() => {
     if (reduced) return
@@ -60,10 +63,23 @@ export default function FlipCard({ scale, onFlip }: { scale: number; onFlip?: (r
 
   useEffect(() => {
     if (reduced || touched.current || !settled) return
-    const t = window.setTimeout(() => { if (!touched.current) flip() }, revealed ? 5200 : turns === 0 ? 2000 : 3400)
-    return () => window.clearTimeout(t)
+    const ts: number[] = []
+    ts.push(window.setTimeout(() => {
+      if (touched.current) return
+      if (revealed) { flip(false); return }
+      setNotice(true)
+      ts.push(window.setTimeout(() => { if (!touched.current) flip(true) }, 1300))
+    }, revealed ? 5200 : turns === 0 ? 1400 : 3000))
+    return () => ts.forEach(window.clearTimeout)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [revealed, settled])
+
+  // the notice stays a moment after the card turns, and goes when it turns back
+  useEffect(() => {
+    if (!revealed) { setNotice(false); return }
+    const t = window.setTimeout(() => setNotice(false), 2600)
+    return () => window.clearTimeout(t)
+  }, [revealed])
 
   // pointer tilt so the card feels like an object
   const px = useMotionValue(0)
@@ -86,6 +102,23 @@ export default function FlipCard({ scale, onFlip }: { scale: number; onFlip?: (r
         ))}
       </div>
 
+      {/* the match, the way the app tells you: a banner from the top */}
+      <AnimatePresence>
+        {notice && (
+          <motion.div key="match" role="status"
+            initial={{ y: -24, opacity: 0, scale: 0.96 }} animate={{ y: 0, opacity: 1, scale: 1 }} exit={{ y: -16, opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+            className="match-notice">
+            <img src={SIGNS[JUNIPER.sign].auraImg} alt="" />
+            <span style={{ flex: 1, minWidth: 0 }}>
+              <span className="match-title">{JUNIPER.name} aligned back</span>
+              <span className="mono match-sub">IT’S MUTUAL · HER CARD IS OPEN</span>
+            </span>
+            <span style={{ color: 'var(--align)', fontSize: 18 }}>✦</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <button
         aria-label={!dealt ? 'Dealing' : revealed ? 'Turn the card back over' : 'Flip the card'}
         aria-pressed={revealed}
@@ -100,6 +133,7 @@ export default function FlipCard({ scale, onFlip }: { scale: number; onFlip?: (r
           touched.current = true
           // a tap mid-deal finishes the deal
           if (!settled) { setDealt(true); setSettled(true); return }
+          if (!revealed) setNotice(true)
           flip()
         }}
         style={{

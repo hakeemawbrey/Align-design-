@@ -49,6 +49,17 @@ html { scroll-behavior: smooth; }
 .hero .lede { color: var(--label-2); font-size: 16.5px; line-height: 1.45; max-width: 34ch; }
 .hero-copy { display: grid; justify-items: center; gap: 10px; }
 .card-col { display: grid; justify-items: center; gap: 14px; }
+/* the match banner over the top of the hero card, styled like the app's */
+.match-notice {
+  position: absolute; z-index: 5; left: 50%; top: 10px; translate: -50% 0; width: min(330px, calc(100vw - 32px));
+  display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 18px; text-align: left;
+  background: rgba(30,18,64,0.94); border: 1px solid rgba(248,237,255,0.4);
+  box-shadow: 0 0 30px rgba(248,237,255,0.18), 0 12px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.match-notice img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 0 0 1.5px #f2c75c, 0 0 12px rgba(242,199,92,0.5); }
+.match-title { display: block; font-size: 15px; color: var(--label-1); }
+.match-sub { display: block; margin-top: 2px; font-size: 8.5px; letter-spacing: 0.16em; color: var(--align); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 /* text below the hero paints over the hand's faded cards */
 .flip-hint, .cta-block { position: relative; z-index: 2; }
 .cta-block .lede { order: 3; margin-top: 10px; }

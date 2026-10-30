@@ -82,7 +82,7 @@ export default function ProfileFace({ p, shown, lift, revealed, onPeak, onDone }
               animation: 'rv-spin 6s linear infinite', opacity: 0.75,
             }} />
           </motion.div>
-          <VeilPhoto photo={p.photo ?? ''} veil={sign.auraImg} lift={lift} height={PHOTO_H} onPeak={onPeak} onDone={onDone}>
+          <VeilPhoto photo={p.photo ?? ''} veil={sign.auraImg} lift={lift} height={PHOTO_H} position={p.photoPos} onPeak={onPeak} onDone={onDone}>
             <motion.div
               initial={{ opacity: 0, scale: 0.6 }}
               animate={revealed ? { opacity: 1, scale: [1.35, 0.95, 1] } : { opacity: 0, scale: 0.6 }}
