@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { motion, useAnimationControls, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import CardBack from '@app/components/deck/CardBack'
 import ProfileCard from '@app/components/deck/ProfileCard'
@@ -76,6 +76,21 @@ const REVEAL_MID = 0.126
 const side = (on: boolean, mid: number): React.CSSProperties =>
   ({ visibility: on ? 'visible' : 'hidden', transition: `visibility 0s linear ${reduced ? 0 : mid}s` })
 
+/**
+ * The back of her card, which mounts mid-flip. It's first styled hidden, so side() still waits
+ * for the edge: mounted straight onto visible, there'd be no transition and it would show at once.
+ */
+function FaceSide({ on, children }: { on: boolean; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [ready, setReady] = useState(false)
+  useLayoutEffect(() => {
+    // settle the hidden style before switching, so the switch is a transition
+    if (ref.current) void getComputedStyle(ref.current).visibility
+    setReady(true)
+  }, [])
+  return <div ref={ref} style={{ ...face, transform: 'rotateY(180deg)', ...side(on && ready, REVEAL_MID) }}>{children}</div>
+}
+
 /** the app's swipe stamps (Deck.tsx) */
 function Stamp({ kind, on }: { kind: 'align' | 'release'; on: boolean }) {
   const align = kind === 'align'
@@ -118,11 +133,14 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
   const [stars, setStars] = useState({ n: 0, from: 0 })
   const starred = useRef(false)
   const burstNow = () => setStars((s) => ({ n: s.n + 1, from: BURST - 0.12 }))
+  // the script's pending beats, so a tap can stop them
+  const timers = useRef<number[]>([])
+  const stopScript = () => { timers.current.forEach(window.clearTimeout); timers.current = [] }
 
   useEffect(() => {
     if (reduced) return
-    const ts = SCRIPT.map(([ms, b]) => window.setTimeout(() => setBeat(b), ms))
-    return () => ts.forEach(window.clearTimeout)
+    timers.current = SCRIPT.map(([ms, b]) => window.setTimeout(() => setBeat(b), ms))
+    return stopScript
   }, [run])
 
   // the beats that are more than a pose
@@ -157,15 +175,22 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
   const mutual = beat.at === 'mutual' || beat.at === 'shake'
 
   const tap = () => {
-    if (!done) { setBeat({ at: 'revealed' }); return }
+    if (!done) {
+      // skipped: the rest of the script mustn't play over the reveal, and the stars burst now, not on cue
+      stopScript(); starred.current = false
+      setBeat({ at: 'revealed' }); return
+    }
     const to = !revealed
     setRevealed(to)
-    if (to) { setTurns((n) => n + 1); burstNow() }
+    // reduced motion: a plain swap, no stars and no veil lifting again
+    if (to && !reduced) { setTurns((n) => n + 1); burstNow() }
     onFlip?.(to)
     onCaption?.(to ? CAPTION.revealed : BACK)
   }
   const again = () => {
-    setRevealed(false); onFlip?.(false); setBeat({ at: 'deal' }); setRun((n) => n + 1)
+    // a clean table: her face unmounts again and any stars still bursting are cleared
+    setRevealed(false); setTurns(0); setStars({ n: 0, from: 0 }); starred.current = false
+    onFlip?.(false); setBeat({ at: 'deal' }); setRun((n) => n + 1)
   }
 
   useEffect(() => {
@@ -277,11 +302,11 @@ export default function FlipCard({ scale, onFlip, onCaption, onReplay }: {
                         </div>
                         {/* her face mounts at the first reveal; until then its halo and foil would animate unseen */}
                         {isJ && turns > 0 && (
-                          <div style={{ ...face, transform: 'rotateY(180deg)', ...side(revealed, REVEAL_MID) }}>
+                          <FaceSide on={revealed}>
                             <div style={{ width: FACE_W, height: 625, transform: `scale(${FACE_S})`, transformOrigin: '0 0', position: 'relative' }}>
-                              <ProfileFace key={turns} p={p} shown={revealed} lift={revealed} revealed={revealed} />
+                              <ProfileFace key={turns} p={p} shown={reduced || revealed} lift={reduced || revealed} revealed={reduced || revealed} />
                             </div>
-                          </div>
+                          </FaceSide>
                         )}
                       </motion.div>
                     </div>
