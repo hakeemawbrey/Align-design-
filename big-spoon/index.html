@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big Spoon Marketing Build</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* Expressive Space tokens (expressivespace.co): Geist, pale steel, one green, black for emphasis */
+  :root {
+    --paper: #F2F7FA;
+    --mist: #E4EDF2;
+    --line: #D6E0E6;
+    --ink: #000000;
+    --ink-2: #2B2F33;
+    --muted: #6B7680;
+    --green: #269731;
+    --green-deep: #185E20;
+    --green-bright: #3DB54A;
+    --amber: #E0A526;
+    --red: #DD2400;
+    --night: #0A0A0A;
+    --W: 1920px;
+    --H: 1080px;
+    --pad: 130px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #1A1A1A; }
+  body { font-family: "Geist", "Inter", system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+  /* Deck: one slide on screen, scaled to fit */
+  .deck { position: fixed; inset: 0; overflow: hidden; }
+  .stage { position: absolute; left: 50%; top: 50%; width: var(--W); height: var(--H); transform-origin: center center; }
+  .slide {
+    position: absolute; inset: 0;
+    width: var(--W); height: var(--H); overflow: hidden;
+    background: var(--paper);
+    display: none;
+  }
+  .slide.active { display: block; }
+  .slide.mist { background: var(--mist); }
+  .slide.dark { background: var(--night); color: #fff; }
+
+  .counter {
+    position: fixed; left: 50%; transform: translateX(-50%); bottom: 14px; z-index: 5;
+    font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .08em;
+    color: #8A949C; user-select: none;
+  }
+
+  @page { size: 1920px 1080px; margin: 0; }
+  @media print {
+    html, body { background: none; }
+    .deck { position: static; overflow: visible; }
+    .stage { position: static; transform: none !important; width: auto; height: auto; }
+    .slide { display: block !important; position: relative; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .counter { display: none; }
+  }
+
+  /* Type */
+  .tag { font-size: 20px; letter-spacing: .22em; text-transform: uppercase; font-weight: 400; color: var(--ink-2); }
+  .dark .tag { color: #CFCFCF; }
+  h1, h2 { font-weight: 300; letter-spacing: -0.035em; line-height: 1.02; }
+  h1 { font-size: 160px; }
+  h2 { font-size: 88px; }
+  .g { color: var(--green); }
+  .lede { font-size: 32px; font-weight: 300; line-height: 1.38; color: var(--ink-2); letter-spacing: -0.01em; }
+  .num { font-family: "Geist Mono", monospace; font-size: 22px; letter-spacing: .05em; color: var(--ink-2); white-space: nowrap; }
+  .cap { font-family: "Geist Mono", monospace; font-size: 16px; letter-spacing: .04em; color: var(--muted); }
+
+  /* Slide chrome */
+  .head { position: absolute; left: var(--pad); top: 110px; right: var(--pad); }
+  .head h2 { margin-top: 34px; }
+  .foot { position: absolute; left: var(--pad); right: var(--pad); bottom: 48px; display: flex; justify-content: space-between; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+
+  /* Art: one treatment for every image */
+  /* Treatment (color and contrast lifted, lightly sharpened) is baked into the files in assets/art */
+  .art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .bleed { position: absolute; top: 0; bottom: 0; overflow: hidden; }
+  .bleed img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bcap { position: absolute; left: 20px; bottom: 20px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .04em; color: #fff; background: rgba(0,0,0,.62); padding: 7px 11px; white-space: nowrap; }
+  .frame { position: absolute; background: #fff; border: 1px solid var(--line); padding: 18px; }
+  .frame .art { width: 100%; height: 100%; }
+  .frame .cap { position: absolute; left: 0; top: 100%; margin-top: 16px; white-space: nowrap; }
+
+  /* Cards */
+  .cards { position: absolute; left: var(--pad); right: var(--pad); display: grid; gap: 24px; }
+  .card { border: 1px solid var(--line); background: var(--paper); display: flex; flex-direction: column; }
+  .mist .card { background: var(--paper); }
+  .card .hd { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 30px 34px 22px; border-bottom: 1px solid var(--line); font-size: 28px; letter-spacing: -0.01em; }
+  .card .bd { padding: 26px 34px 30px; font-size: 24px; line-height: 1.38; color: var(--ink-2); font-weight: 300; }
+  .card.black { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .card.black .hd { border-color: #2A2A2A; }
+  .card.black .bd { color: #E2E2E2; }
+  .card.black .num { color: #CFCFCF; }
+
+  .dark .card { background: transparent; border-color: #2E2E2E; color: #fff; }
+  .dark .card .hd { border-color: #2E2E2E; }
+  .dark .card .bd { color: #CFCFCF; }
+  .dark .card .num { color: #9AA3AA; }
+  .dark .card.white { background: #fff; color: var(--ink); border-color: #fff; }
+  .dark .card.white .hd { border-color: var(--line); }
+  .dark .card.white .bd { color: var(--ink-2); }
+  .dark .lede { color: #CFCFCF; }
+  .dark .foot { color: #8A949C; }
+  .strips { position: absolute; left: var(--pad); right: var(--pad); top: 510px; bottom: 120px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+  .strip { position: relative; overflow: hidden; }
+  .strip img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .strip .sname { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.7); color: #fff; font-size: 22px; letter-spacing: -0.01em; padding: 12px 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bento { position: absolute; left: var(--pad); right: var(--pad); top: 300px; bottom: 110px; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 16px; }
+  .tile { background: var(--paper); border: 1px solid var(--line); padding: 22px 26px 24px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; }
+  .tile .tn { font-size: 30px; letter-spacing: -0.02em; line-height: 1.1; }
+  .tile .td { font-size: 20px; font-weight: 300; color: var(--ink-2); margin-top: 8px; line-height: 1.3; }
+  .tile.black { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .tile.black .tn { font-size: 44px; }
+  .tile.black .td, .tile.black .num { color: #CFCFCF; }
+  .tile.green { border: 2px solid var(--green); }
+  .tile.green .num, .tile.green .tn { color: var(--green); }
+  .tile.art { padding: 0; }
+  .tile.art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tile.out { border: 1px dashed var(--muted); background: transparent; padding: 34px 40px; }
+  .tile.out { justify-content: flex-end; }
+  .xrow { display: grid; grid-template-columns: 84px 1fr; align-items: baseline; }
+  .tile.out .tn { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 2px; }
+  .thumbs { position: absolute; right: var(--pad); top: 140px; width: 520px; height: 800px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 10px; }
+  .thumb { position: relative; overflow: hidden; }
+  .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tile.art .bcap { left: 14px; bottom: 14px; }
+  .dark .rows.exp .row { border-color: #2E2E2E; }
+  .rsteps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: #CFCFCF; }
+  .rsteps i { font-style: normal; color: #6B7680; }
+  .rsteps .g2 { color: var(--green-bright); }
+  .handoff { position: absolute; left: var(--pad); width: 940px; top: 800px; }
+  .hm-head { display: flex; justify-content: space-between; align-items: center; }
+  .hm-key { display: flex; align-items: center; gap: 8px; font-family: "Geist Mono", monospace; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .hm-key i { display: inline-block; width: 12px; height: 12px; margin-left: 12px; }
+  .hm-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
+  .hm-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+  .hm-r { font-size: 22px; letter-spacing: -0.01em; }
+  .hm-bar { display: flex; height: 22px; }
+  .hm-me { background: var(--ink); }
+  .hm-team { flex: 1; background: var(--green); }
+  .big { font-size: 96px; font-weight: 300; letter-spacing: -0.04em; line-height: 1; }
+
+  /* Rows (lists with hairlines) */
+  .rows { position: absolute; }
+  .row { display: grid; align-items: baseline; border-top: 1px solid var(--line); }
+  .row:last-child { border-bottom: 1px solid var(--line); }
+  .row .t { font-size: 34px; letter-spacing: -0.015em; }
+  .row .d { font-size: 24px; font-weight: 300; color: var(--ink-2); }
+
+  /* Concepts */
+  .concept .name { font-size: 64px; font-weight: 400; letter-spacing: -0.035em; line-height: 1; padding: 40px 34px 0; }
+  .concept .desc { margin-top: auto; padding: 0 34px 32px; font-size: 24px; font-weight: 300; color: var(--ink-2); line-height: 1.35; }
+
+
+  /* Concept cards with art */
+  .concept .pic { position: relative; flex: 1; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .concept .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .concept .chip { position: absolute; left: 12px; top: 12px; font-family: "Geist Mono", monospace; font-size: 16px; letter-spacing: .08em; color: #fff; background: rgba(0,0,0,.6); padding: 5px 9px; }
+  .concept .txt { padding: 18px 24px 20px; }
+  .concept .txt .name { font-size: 44px; font-weight: 400; letter-spacing: -0.035em; line-height: 1; padding: 0; }
+  .concept .txt .desc { margin-top: 10px; padding: 0; font-size: 21px; font-weight: 300; color: var(--ink-2); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Stat cards (About me) */
+  .card.stat { background: var(--mist); padding: 44px; justify-content: space-between; }
+  .card.stat .sn { font-size: 92px; font-weight: 300; letter-spacing: -0.03em; line-height: 1; }
+  .card.stat.black { background: var(--ink); }
+  .card.stat .sl { font-size: 30px; font-weight: 300; line-height: 1.35; color: var(--ink-2); }
+
+
+  /* Stat row on the emotional slide */
+  .statrow { position: absolute; left: var(--pad); right: var(--pad); bottom: 90px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .statrow > div { background: rgba(10,10,10,.62); border-top: 2px solid var(--green-bright); padding: 24px 26px 26px; }
+  .statrow .sv { font-size: 64px; font-weight: 300; letter-spacing: -0.03em; line-height: 1; color: var(--green-bright); }
+  .statrow .sl { font-size: 20px; font-weight: 300; color: #E2E2E2; margin-top: 14px; line-height: 1.35; }
+  /* KPI dashboard strip with the three measurement layers */
+  .dash { position: absolute; left: var(--pad); right: 690px; top: 700px; border: 1px solid var(--green); padding: 22px 30px 20px; }
+  .dash-hd { display: flex; justify-content: space-between; align-items: baseline; font-size: 30px; letter-spacing: -0.015em; }
+  .dash-layers { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 22px; margin-top: 16px; font-size: 19px; font-weight: 300; color: var(--ink-2); line-height: 1.35; }
+  .dash-layers .dl { display: block; font-family: "Geist Mono", monospace; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
+  .dash-cad { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .06em; color: var(--muted); text-transform: uppercase; }
+  /* Credits list */
+  .credits { position: absolute; left: var(--pad); right: var(--pad); top: 236px; columns: 3; column-gap: 40px; }
+  .cr { break-inside: avoid; padding: 5px 0; border-top: 1px solid var(--line); }
+  .cr .ca { font-size: 16px; }
+  .cr .ct { font-size: 14px; font-weight: 300; color: var(--ink-2); line-height: 1.3; }
+  .cr .cm { font-family: "Geist Mono", monospace; font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+
+  /* Bento v2: phase-coded tiles */
+  .bento2 { position: absolute; left: var(--pad); right: var(--pad); top: 290px; bottom: 112px; display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: 1fr 1.2fr 1fr; gap: 14px; }
+  .bt { position: relative; background: var(--paper); border: 1px solid var(--line); padding: 22px 24px 22px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+  .bt .bp { font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .bt .bp::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+  .bt-t { font-size: 28px; letter-spacing: -0.02em; line-height: 1.1; }
+  .bt-d { font-size: 18px; font-weight: 300; color: var(--ink-2); margin-top: 8px; line-height: 1.35; }
+  .bn { font-size: 96px; font-weight: 300; letter-spacing: -0.05em; line-height: .9; color: var(--green); }
+  .brow { display: flex; align-items: flex-end; gap: 26px; }
+  .bt.dark { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .bt.dark .bt-t { font-size: 40px; }
+  .bt.dark .bt-d { color: #CFCFCF; font-size: 20px; }
+  .bt.dark .bp { color: #9AA3AA; }
+  .bt.dark .bn { color: var(--green-bright); font-size: 150px; }
+  .bt.dark .bp::before, .bkey .k1 { background: #000; outline: 1px solid #9AA3AA; }
+  .bt.p2 .bp::before, .bkey .k2 { background: var(--green); }
+  .bt.p2 { background: #fff; }
+  .bt.p3 .bp::before, .bkey .k3 { background: var(--amber); }
+  .bt.green { background: var(--green); border-color: var(--green); color: #fff; }
+  .bt.green .bp, .bt.green .bt-d { color: #E6F4E8; }
+  .bt.green .bp::before, .bkey .k4 { background: #fff; outline: 1px solid var(--green); }
+  .bt.art { padding: 0; }
+  .bt.art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bt.art .bcap { left: 14px; bottom: 14px; }
+  .spark { position: absolute; right: 24px; top: 22px; width: 160px; height: 48px; color: var(--green); }
+  .bkey { display: flex; flex-wrap: wrap; justify-content: flex-end; max-width: 620px; gap: 10px 22px; font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-bottom: 12px; }
+  .bkey span { display: flex; align-items: center; gap: 8px; }
+  .bkey i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+
+
+  /* Gantt timeline */
+  .gantt { position: absolute; left: var(--pad); right: var(--pad); top: 320px; display: grid; gap: 0; }
+  .gantt .gaxis, .gantt .grow { display: grid; grid-template-columns: 360px 1300px; align-items: center; }
+  .gantt .gaxis { height: 40px; }
+  .gantt .grow { height: 108px; border-top: 1px solid var(--line); }
+  .gantt .grow:last-child { border-bottom: 1px solid var(--line); }
+  .gantt .gtrack { position: relative; height: 100%; }
+  .gantt .gm { position: absolute; top: 8px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .1em; color: var(--muted); transform: translateX(-50%); }
+  .gantt .gm::after { content: ""; position: absolute; left: 50%; top: 32px; width: 1px; height: 432px; background: var(--line); }
+  .gantt .gl { display: flex; align-items: baseline; gap: 18px; }
+  .gantt .gt { font-size: 32px; letter-spacing: -0.02em; }
+  .gantt .gbar { position: absolute; top: 34px; height: 40px; background: var(--ink); z-index: 1; }
+  .gantt .gbar.p1 { background: var(--green); }
+  .gantt .gbar.p4 { background: transparent; border: 2px dashed var(--green); }
+  .gantt .gd { position: absolute; top: 42px; font-family: "Geist Mono", monospace; font-size: 17px; letter-spacing: .06em; color: var(--ink-2); text-transform: uppercase; white-space: nowrap; z-index: 1; }
+
+
+  /* Investment options */
+  .opts { position: absolute; left: var(--pad); right: 640px; top: 390px; height: 440px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .opt { border: 1px solid var(--line); background: var(--paper); padding: 24px 24px 22px; display: flex; flex-direction: column; font-variant-numeric: tabular-nums; }
+  .opt.rec { border: 2px solid var(--green); background: #fff; }
+  .op-n { font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .opt.rec .op-n { color: var(--green); }
+  .op-t { font-size: 28px; letter-spacing: -0.02em; margin-top: 10px; }
+  .op-p { font-size: 54px; font-weight: 300; letter-spacing: -0.04em; margin-top: 6px; }
+  .opt.rec .op-p { color: var(--green); }
+  .op-l { margin-top: 16px; border-top: 1px solid var(--line); }
+  .op-l > div { display: flex; justify-content: space-between; font-size: 16px; color: var(--ink-2); padding: 8px 0; border-bottom: 1px solid var(--line); font-weight: 300; }
+  .op-f { margin-top: auto; font-size: 18px; line-height: 1.35; }
+  .advline { position: absolute; left: var(--pad); right: 640px; top: 856px; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--ink); padding-top: 18px; font-size: 22px; }
+  .advline b { font-weight: 500; }
+  /* Terms */
+  .terms { position: absolute; left: var(--pad); right: 760px; top: 300px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .tm { display: grid; grid-template-columns: 84px 1fr; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--line); }
+  .tm-hero { grid-column: span 2; background: #fff; border: 2px solid var(--green); padding: 22px 24px; margin: 0 -26px 8px -26px; }
+  .tm-t { font-size: 28px; letter-spacing: -0.015em; }
+  .tm-d { font-size: 19px; font-weight: 300; color: var(--ink-2); margin-top: 8px; line-height: 1.4; }
+
+  /* Timeline */
+  .tl { position: absolute; left: var(--pad); width: 1660px; top: 620px; height: 2px; }
+  .tl .base { position: absolute; left: 0; top: 0; height: 2px; background: var(--ink); }
+  .tl .open { position: absolute; top: 0; height: 0; border-top: 2px dashed var(--ink); }
+  .tl .seg { position: absolute; top: -5px; height: 12px; }
+  .tl .dot { position: absolute; top: -9px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: var(--paper); border: 2px solid var(--ink); }
+  .tl .dot.on { background: var(--green); border-color: var(--green); }
+  .tl .tick { position: absolute; top: 14px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .1em; color: var(--muted); transform: translateX(-50%); }
+  .tl .tick::before { content: ""; position: absolute; left: 50%; top: -14px; width: 1px; height: 8px; background: var(--muted); }
+  .ph { position: absolute; width: 470px; }
+  .ph .t { font-size: 38px; letter-spacing: -0.02em; margin-top: 14px; line-height: 1.1; }
+  .ph .d { font-family: "Geist Mono", monospace; font-size: 18px; letter-spacing: .06em; color: var(--muted); margin-top: 12px; text-transform: uppercase; }
+  .ph .stem { position: absolute; left: 0; width: 1px; background: var(--line); }
+
+  /* Scorecard */
+  .score { position: absolute; left: var(--pad); top: 330px; width: 1660px; border-collapse: collapse; table-layout: fixed; }
+  .score th, .score td { border-bottom: 1px solid var(--line); height: 72px; }
+  .score thead th { font-family: "Geist Mono", monospace; font-weight: 400; font-size: 16px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); height: 56px; vertical-align: bottom; padding-bottom: 14px; text-align: center; }
+  .score thead th:first-child { text-align: left; }
+  .score tbody th { text-align: left; font-weight: 400; font-size: 28px; letter-spacing: -0.015em; white-space: nowrap; }
+  .score td { text-align: center; }
+  .sd { display: inline-block; width: 22px; height: 22px; border-radius: 50%; vertical-align: middle; }
+  .sd.r { background: var(--red); } .sd.y { background: var(--amber); } .sd.gr { background: var(--green); }
+  .legend { display: flex; gap: 34px; align-items: center; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: .06em; color: var(--muted); text-transform: uppercase; }
+  .legend .sd { width: 14px; height: 14px; margin-right: 10px; }
+  .example { font-family: "Geist Mono", monospace; font-size: 17px; letter-spacing: .06em; color: var(--ink); border: 1px solid var(--ink); padding: 10px 16px; text-transform: uppercase; }
+
+  /* Investment */
+  .money { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div class="deck"><div class="stage" id="stage">
+
+<!-- 1 · Cover -->
+<section class="slide dark">
+  <div class="art" style="position:absolute; right:0; top:0; width:1080px; height:100%;">
+    <img src="assets/art/hulsdonck-still-life.jpg" alt="Jacob van Hulsdonck, Still Life with Meat, Fish, Vegetables, and Fruit" style="object-position: 40% 50%;">
+  </div>
+  <div style="position:absolute; left: var(--pad); top: 0; bottom: 0; width: 640px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="tag">Proposal</div>
+    <h1 style="margin-top: 48px; font-size: 136px;">Big Spoon<br>Concepts</h1>
+    <p class="lede" style="margin-top: 64px; font-size: 24px; color: #BFC7CD;">Prepared by Hakeem, Expressive Space<br>October 2026</p>
+  </div>
+  <div class="cap" style="position:absolute; right: 36px; bottom: 30px; color: rgba(255,255,255,.8);">[ Hulsdonck, Still Life with Meat, Fish, Vegetables, and Fruit, c. 1615–20 ]</div>
+</section>
+
+<!-- 2 · Situation -->
+<section class="slide dark">
+  <div class="head">
+    <div class="tag">Situation</div>
+    <h2>Two agencies previously.<br>No strategy Big Spoon <span style="color: var(--green-bright);">owns.</span></h2>
+  </div>
+  <div class="cards" style="right: 660px; top: 470px; height: 330px; grid-template-columns: repeat(3, 1fr);">
+    <div class="card"><div class="hd" style="font-size: 24px; padding: 26px 26px 18px;"><span>Agencies</span><span class="num">[ 1 ]</span></div><div class="bd" style="padding: 22px 26px 26px; display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big" style="color: var(--green-bright);">2</div><div>Hired previously</div></div></div>
+    <div class="card"><div class="hd" style="font-size: 24px; padding: 26px 26px 18px;"><span>Owned strategy</span><span class="num">[ 2 ]</span></div><div class="bd" style="padding: 22px 26px 26px; display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big">0</div><div>Plans Big Spoon holds itself</div></div></div>
+    <div class="card white"><div class="hd" style="font-size: 24px; padding: 26px 26px 18px;"><span>Trusted reporting</span><span class="num">[ 3 ]</span></div><div class="bd" style="padding: 22px 26px 26px; display:flex; flex-direction:column; justify-content:space-between; flex:1;"><div class="big">0</div><div>Reports Big Spoon can trust</div></div></div>
+  </div>
+  <p class="lede" style="position:absolute; left: var(--pad); top: 850px; width: 1100px;">Measurement is the bare minimum. It was never set up.</p>
+    <div class="bleed" style="right: 0; width: 600px;">
+    <img src="assets/art/deheem-glass-oysters.jpg" alt="Jan Davidsz de Heem, Still Life with a Glass and Oysters" style="object-position: 50% 45%;">
+    <span class="bcap">[ de Heem, Still Life with a Glass and Oysters, c. 1640 ]</span>
+  </div>
+  <div class="foot" style="right: 660px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 3 · Goal -->
+<section class="slide">
+  <div class="head" style="right: auto; width: 960px;">
+    <div class="tag">Goal</div>
+    <h2>An in-house team that <span class="g">runs itself.</span></h2>
+    <p class="lede" style="margin-top: 40px; width: 860px;">All 7 concepts, by April 30, 2027.</p>
+  </div>
+  <div class="rows" style="left: var(--pad); top: 600px; width: 900px;">
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 22px 0;"><span class="num">[ 1 ]</span><span class="t">A 12-month plan for 2027</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 22px 0;"><span class="num">[ 2 ]</span><span class="t">Results measured every week</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 22px 0;"><span class="num">[ 3 ]</span><span class="t">No agency dependency</span></div>
+  </div>
+  <div class="bleed" style="right: 0; width: 700px;">
+    <img src="assets/art/hiroshige-moon-viewing.jpg" alt="Utagawa Hiroshige, The Moon-Viewing Promontory, from One Hundred Views of Edo" style="object-position: 50% 50%;">
+    <span class="bcap">[ Hiroshige, The Moon-Viewing Promontory, 1857 ]</span>
+  </div>
+  <div class="foot" style="right: 830px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 4 · Concepts -->
+<section class="slide mist">
+  <div class="head">
+    <div class="tag">The concepts</div>
+    <h2>Seven concepts. <span class="g">Seven stories.</span></h2>
+  </div>
+  <div class="cards" style="top: 300px; bottom: 110px; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1fr; gap: 20px;">
+    <div class="card concept"><div class="pic"><img src="assets/art/goshun-cherry-blossoms.jpg" alt="Matsumura Goshun, Cherry Blossoms" style="object-position: 50% 22%;"><span class="chip">[ 1 ]</span></div><div class="txt"><div class="name">AYA</div><div class="desc">Japanese fine dining</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/hiroshige-suzuki-kinmedai.jpg" alt="Utagawa Hiroshige, Suzuki and Kinmedai Fish, from Uozukushi" style="object-position: 62% 60%;"><span class="chip">[ 2 ]</span></div><div class="txt"><div class="name">KA</div><div class="desc">Sushi &amp; bar</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/happy-new-year.jpg" alt="Unknown, Happy New Year" style="object-position: 50% 35%;"><span class="chip">[ 3 ]</span></div><div class="txt"><div class="name">FatBao</div><div class="desc">Stuffed buns</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/posada-calavera-cheese.jpg" alt="José Guadalupe Posada, A skeleton selling cheese, from Una Calavera Chusca" style="object-position: 50% 30%;"><span class="chip">[ 4 ]</span></div><div class="txt"><div class="name">LTS</div><div class="desc">Little Taco Shop</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/lautrec-divan-japonais.jpg" alt="Henri de Toulouse-Lautrec, Divan Japonais" style="object-position: 50% 30%;"><span class="chip">[ 5 ]</span></div><div class="txt"><div class="name">IKTO</div><div class="desc">“I Know The Owner.” Bar, vibes &amp; bites</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/heade-apple-blossoms.jpg" alt="Martin Johnson Heade, Apple Blossoms" style="object-position: 50% 45%;"><span class="chip">[ 6 ]</span></div><div class="txt"><div class="name">DiDi</div><div class="desc">Coffee + croffles</div></div></div>
+    <div class="card concept"><div class="pic"><img src="assets/art/shunman-rice-plant.jpg" alt="Kubo Shunman, Rice Plant and Butter-Burs" style="object-position: 72% 78%;"><span class="chip">[ 7 ]</span></div><div class="txt"><div class="name" style="font-size: 36px;">Sandwich Pho Reel</div><div class="desc">Pho &amp; banh mi</div></div></div>
+    <div class="card concept black" style="justify-content: space-between; padding: 30px;"><span class="num">Houston</span><div style="font-size: 34px; font-weight: 300; line-height: 1.25; letter-spacing: -0.015em;">One in-house team for all seven.</div></div>
+  </div>
+  <div class="foot"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 5 · Baseline -->
+<section class="slide">
+  <div class="head" style="right: auto; width: 960px;">
+    <div class="tag">The baseline</div>
+    <h2 style="font-size: 78px;">Posting every day<br>is the floor.<br><span class="g">Not the strategy.</span></h2>
+    <p class="lede" style="margin-top: 40px; width: 860px;">Every concept gets its own strategy and voice. Not one size fits all. We innovate and experiment.</p>
+  </div>
+  <div class="rows" style="left: var(--pad); top: 640px; width: 900px;">
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 22px 0;"><span class="num">[ 1 ]</span><span class="t">A custom voice per concept</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 22px 0;"><span class="num">[ 2 ]</span><span class="t">3 signature series, not filler posts</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 22px 0;"><span class="num">[ 3 ]</span><span class="t">Tested, measured, improved</span></div>
+  </div>
+  <div class="bleed" style="right: 0; width: 780px;">
+    <img src="assets/art/shinsai-sake-sushi.jpg" alt="Ryūryūkyo Shinsai, New Year’s Sake and Sushi" style="object-position: 50% 50%;">
+    <span class="bcap">[ Ryūryūkyo Shinsai, New Year’s Sake and Sushi, c. 1810 ]</span>
+  </div>
+  <div class="foot" style="right: 910px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 6 · What I bring -->
+<section class="slide dark">
+  <div class="art" style="position:absolute; inset: 0;">
+    <img src="assets/art/heda-still-life-oysters.jpg" alt="Willem Claesz Heda, Still Life with Oysters, a Silver Tazza, and Glassware" style="object-position: 60% 50%;">
+  </div>
+  <div style="position:absolute; inset: 0; background: rgba(10,10,10,.3);"></div>
+  <div style="position:absolute; left: var(--pad); top: 110px; width: 1180px;">
+    <div class="tag">What I bring</div>
+    <h2 style="margin-top: 40px; font-size: 100px;">I help brands tell their story, <span style="color: var(--green-bright);">with passion and emotion.</span></h2>
+    <p class="lede" style="margin-top: 36px; width: 900px; color: #E2E2E2;">Seven concepts, seven stories worth feeling.</p>
+  </div>
+  <div class="cap" style="position:absolute; right: 36px; bottom: 30px; color: rgba(255,255,255,.8);">[ Heda, Still Life with Oysters, a Silver Tazza, and Glassware, 1635 ]</div>
+</section>
+
+<!-- 7 · Credentials -->
+<section class="slide">
+  <div class="head">
+    <div class="tag">About me · Gen Z</div>
+    <h2>Hakeem, ENFP: <span class="g">the Campaigner.</span></h2>
+  </div>
+  <div class="cards" style="right: 620px; top: 320px; bottom: 120px; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;">
+    <div class="card stat"><div class="sn g">50M+</div><div class="sl">Views across social media</div></div>
+    <div class="card stat"><div class="sn g">#1</div><div class="sl">Ranked advertising program in the U.S.: Stan Richards School of Advertising, UT Austin</div></div>
+    <div class="card stat"><div class="sn g">Google</div><div class="sl">Built communities for Google’s Flutter framework in Silicon Valley</div></div>
+    <div class="card stat black"><div class="sn" style="color: var(--green-bright);">350K</div><div class="sl" style="color: #E2E2E2;">Votes as Texas-wide campaign director</div></div>
+  </div>
+    <div class="bleed" style="right: 0; width: 560px;">
+    <img src="assets/art/korean-tiger-family.jpg" alt="Korean, Tiger Family, late 1800s" style="object-position: 40% 55%;">
+    <span class="bcap">[ Korea, Tiger Family, late 1800s ]</span>
+  </div>
+  <div class="foot" style="right: 620px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 8 · Approach -->
+<section class="slide">
+  <div class="head">
+    <div class="tag">Approach</div>
+    <h2>Four phases. <span class="g">Six months to hand-off.</span></h2>
+  </div>
+  <!-- Gantt: x = 6.132px per day from Nov 1; Jun 1 = 1300px -->
+  <div class="gantt">
+    <div class="gaxis"><div></div><div class="gtrack"><div class="gm" style="left:0px">NOV</div><div class="gm" style="left:184px">DEC</div><div class="gm" style="left:374px">JAN</div><div class="gm" style="left:564px">FEB</div><div class="gm" style="left:736px">MAR</div><div class="gm" style="left:926px">APR</div><div class="gm" style="left:1110px">MAY</div><div class="gm" style="left:1300px">JUN</div></div></div>
+    <div class="grow"><div class="gl"><span class="num">[ 1 ]</span><span class="gt">Audit</span></div><div class="gtrack"><div class="gbar p1" style="left:6px; width:111px"></div><div class="gd" style="left:131px">Nov 2–20 · 3 weeks</div></div></div>
+    <div class="grow"><div class="gl"><span class="num">[ 2 ]</span><span class="gt">Strategy</span></div><div class="gtrack"><div class="gbar p2" style="left:135px; width:153px"></div><div class="gd" style="left:302px">Nov 23–Dec 18 · 4 weeks</div></div></div>
+    <div class="grow"><div class="gl"><span class="num">[ 3 ]</span><span class="gt">Build &amp; launch</span></div><div class="gtrack"><div class="gbar p3" style="left:392px; width:712px"></div><div class="gd" style="left:410px; color:#fff;">Jan 4–Apr 30 · 17 weeks</div></div></div>
+    <div class="grow"><div class="gl"><span class="num">[ 4 ]</span><span class="gt">Advisory</span></div><div class="gtrack"><div class="gbar p4" style="left:1110px; width:190px"></div><div class="gd" style="right:204px; text-align:right;">May onward →</div></div></div>
+  </div>
+    <div class="bleed" style="left: 0; width: 1920px; top: 870px;">
+    <img src="assets/art/hokusai-rice-fields.jpg" alt="Katsushika Hokusai, Spring in the Rice Fields" style="object-position: 50% 62%; transform: scale(1.08);">
+    <span class="bcap">[ Hokusai, Spring in the Rice Fields, c. 1800 ]</span>
+  </div>
+  <div class="foot" style="display: none;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 9 · Phase 0 overview -->
+<section class="slide dark">
+  <div class="head" style="right: auto; width: 720px;">
+    <div class="tag"><span style="color: var(--green-bright);">Phase 1</span> · Audit</div>
+    <h2 style="font-size: 76px;">The audit sets the baseline every result is <span style="color: var(--green-bright);">measured against.</span></h2>
+  </div>
+  <p class="lede" style="position:absolute; left: var(--pad); top: 540px; width: 720px; font-size: 28px;">On site at every concept: I eat the menu, watch service, and sit down with staff and managers.</p>
+  <div style="position:absolute; left: var(--pad); top: 700px; width: 720px; display:grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2A2A2A;">
+    <div style="padding: 30px 30px 0 0;"><div class="big">3</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Weeks, Nov 2–20</div></div>
+    <div style="padding: 30px 30px 0; border-left: 1px solid #2A2A2A;"><div class="big">7</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Concepts visited</div></div>
+    <div style="padding: 30px 0 0 30px; border-left: 1px solid #2A2A2A;"><div class="big">8</div><div class="lede" style="font-size: 24px; margin-top: 14px; color: #CFCFCF;">Areas per concept</div></div>
+  </div>
+  <div class="bleed" style="right: 0; width: 1000px;">
+    <img src="assets/art/kuniyoshi-tamatori.jpg" alt="Utagawa Kuniyoshi, Tamatori-ama, from Scenes amid Genji Clouds" style="object-position: 50% 58%;">
+    <span class="bcap">[ Kuniyoshi, Tamatori-ama and the Octopus, 1845–46 ]</span>
+  </div>
+  <div class="foot" style="color: #8A949C; right: 1050px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 10 · What we audit -->
+<section class="slide mist">
+  <div class="bleed" style="left: 0; width: 560px;">
+    <img src="assets/art/kunisada-sakurai-room.jpg" alt="Utagawa Kunisada, A View of the Large New Room at Sakurai" style="object-position: 50% 40%;">
+    <span class="bcap">[ Kunisada, The New Room at Sakurai, 1830s ]</span>
+  </div>
+  <div class="head" style="left: 680px;">
+    <div class="tag"><span class="g">Phase 1</span> · What we audit</div>
+    <h2>Eight areas, <span class="g">for each concept.</span></h2>
+  </div>
+  <div class="rows" style="left: 680px; right: var(--pad); top: 330px;">
+    <div class="row" style="grid-template-columns: 80px 330px 1fr; padding: 17px 0;"><span class="num">[ 1 ]</span><span class="t" style="font-size: 30px;">Social &amp; content</span><span class="d">Accounts, output, engagement</span></div>
+    <div class="row" style="grid-template-columns: 80px 330px 1fr; padding: 17px 0;"><span class="num">[ 2 ]</span><span class="t" style="font-size: 30px;">Paid media</span><span class="d">Spend, targeting, return</span></div>
+    <div class="row" style="grid-template-columns: 80px 330px 1fr; padding: 17px 0;"><span class="num">[ 3 ]</span><span class="t" style="font-size: 30px;">Search &amp; listings</span><span class="d">Google, Yelp, reviews</span></div>
+    <div class="row" style="grid-template-columns: 80px 330px 1fr; padding: 17px 0;"><span class="num">[ 4 ]</span><span class="t" style="font-size: 30px;">Website &amp; booking</span><span class="d">Menus, speed, reservation flow</span></div>
+    <div class="row" style="grid-template-columns: 80px 330px 1fr; padding: 17px 0;"><span class="num" style="color: var(--green);">[ 5 ]</span><span class="t" style="font-size: 30px; color: var(--green);">Sales data</span><span class="d">Covers, average check, reservation sources, day-part trends</span></div>
+    <div class="row" style="grid-template-columns: 80px 330px 1fr; padding: 17px 0;"><span class="num">[ 6 ]</span><span class="t" style="font-size: 30px;">Competitors</span><span class="d">3 per concept</span></div>
+    <div class="row" style="grid-template-columns: 80px 330px 1fr; padding: 17px 0;"><span class="num">[ 7 ]</span><span class="t" style="font-size: 30px;">Past agency work</span><span class="d">What was made, and who owns the assets</span></div>
+    <div class="row" style="grid-template-columns: 80px 330px 1fr; padding: 17px 0;"><span class="num">[ 8 ]</span><span class="t" style="font-size: 30px;">People &amp; process</span><span class="d">Interviews with staff and managers</span></div>
+  </div>
+  <div class="foot" style="left: 680px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 11 · Sample scorecard -->
+<section class="slide">
+  <div class="head">
+    <div class="tag"><span class="g">Phase 1</span> · Scorecard</div>
+    <h2>Every concept, <span class="g">on one page.</span></h2>
+  </div>
+  <div style="position:absolute; right: 580px; top: 908px;"><span class="example">Example layout. Actual scores come from the audit.</span></div>
+  <table class="score" id="score" style="width: 1210px;">
+    <colgroup><col style="width: 330px;"><col><col><col><col><col><col></colgroup>
+    <thead><tr><th></th><th>Social</th><th>Paid</th><th>Search</th><th>Reviews</th><th>Website</th><th>Data</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="legend" style="position:absolute; left: var(--pad); top: 920px;">
+    <span><span class="sd gr"></span>Working</span>
+    <span><span class="sd y"></span>Needs work</span>
+    <span><span class="sd r"></span>Missing or broken</span>
+  </div>
+    <div class="bleed" style="right: 0; width: 520px;">
+    <img src="assets/art/kao-bamboo.jpg" alt="Kaō, Bamboo" style="object-position: 50% 50%;">
+    <span class="bcap">[ Kaō, Bamboo, 16th century ]</span>
+  </div>
+  <div class="foot" style="right: 580px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 12 · Audit deliverables -->
+<section class="slide">
+  <div class="head" style="left: 740px; right: var(--pad);">
+    <div class="tag"><span class="g">Phase 1</span> · Deliverables</div>
+    <h2>Five things Big Spoon <span class="g">owns.</span></h2>
+  </div>
+  <div class="rows" style="left: 740px; right: var(--pad); top: 330px;">
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 1 ]</span><div><div class="t">Audit report</div><div class="d" style="margin-top: 8px;">A scorecard for every concept</div></div></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 2 ]</span><div><div class="t">Baseline metrics snapshot</div><div class="d" style="margin-top: 8px;">The “before” picture</div></div></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 3 ]</span><div><div class="t">Asset &amp; access inventory</div><div class="d" style="margin-top: 8px;">Every login moved to Big Spoon ownership</div></div></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 4 ]</span><div><div class="t">Top 10 quick wins</div><div class="d" style="margin-top: 8px;">What to fix first</div></div></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num" style="color: var(--green);">[ 5 ]</span><div><div class="t">90-minute readout</div><div class="d" style="margin-top: 8px;">With ownership</div></div></div>
+  </div>
+  <div class="bleed" style="left: 0; width: 620px;">
+    <img src="assets/art/brookshaw-peaches.jpg" alt="George Brookshaw, Peaches, from Pomona Britannica" style="object-position: 50% 50%;">
+    <span class="bcap">[ Brookshaw, Peaches, 1812 ]</span>
+  </div>
+  <div class="foot" style="left: 740px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 13 · Phase 1 strategy -->
+<section class="slide">
+  <div class="head" style="right: auto; width: 1180px;">
+    <div class="tag">Phase 2 · Strategy · Nov 23–Dec 18</div>
+    <h2>A 12-month plan <span class="g">for 2027.</span></h2>
+  </div>
+  <div class="cards" style="top: 300px; height: 400px; right: 690px; grid-template-columns: 1fr 1.25fr 1fr;">
+    <div class="card"><div class="hd"><span>Group</span><span class="num">[ A ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Brand framework<br>12-month calendar<br>2027 marketing budget</div></div>
+    <div class="card black"><div class="hd"><span>Per concept</span><span class="num">[ B ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Positioning<br>3 signature content series<br>Offline &amp; events plan<br>Paid media plan<br>KPI targets</div></div>
+    <div class="card"><div class="hd"><span>Team</span><span class="num">[ C ]</span></div><div class="bd" style="font-size: 28px; line-height: 1.75;">Org design<br>Recruiting</div></div>
+  </div>
+  <div style="position:absolute; left: var(--pad); right: 690px; top: 724px; height: 196px; display:grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+    <div style="border: 1px solid var(--green); padding: 24px 28px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between;"><span style="font-size: 28px; letter-spacing: -0.015em;">Full metrics dashboard</span><span class="num" style="color: var(--green);">[ D ]</span></div>
+      <div style="font-size: 20px; font-weight: 300; color: var(--ink-2); line-height: 1.35;">Business results, attribution and every channel, all 7 concepts in one view</div>
+    </div>
+    <div style="background: var(--ink); color: #fff; padding: 24px 28px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between;"><span style="font-size: 28px; letter-spacing: -0.015em;">Review &amp; revision · 3 rounds</span><span class="num" style="color: #CFCFCF;">[ E ]</span></div>
+      <div class="rsteps"><span>Draft</span><i>→</i><span>Review with ownership</span><i>→</i><span>Revise</span><i>→</i><span class="g2">Sign-off</span></div>
+    </div>
+  </div>
+  <div class="bleed" style="right: 0; width: 560px;">
+    <img src="assets/art/yun-shouping-peony.jpg" alt="Yun Shouping, Herbaceous Peony" style="object-position: 50% 60%;">
+    <span class="bcap">[ Yun Shouping, Herbaceous Peony, 1685 ]</span>
+  </div>
+  <div class="foot" style="right: 690px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 14 · Phase 2 build & launch -->
+<section class="slide">
+  <div class="head" style="right: auto; width: 1000px;">
+    <div class="tag">Phase 3 · Build &amp; launch · Jan 4–Apr 30</div>
+    <h2>Hire, launch, <span class="g">step back.</span></h2>
+  </div>
+  <div class="rows" style="left: var(--pad); top: 320px; width: 960px;">
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 18px 0;"><span class="num">[ 1 ]</span><span class="d" style="font-size: 28px; color: var(--ink);">Hire 4: creative strategist (team lead), events &amp; production coordinator, content creator, intern. Plus staff ambassadors</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 18px 0;"><span class="num">[ 2 ]</span><span class="d" style="font-size: 28px; color: var(--ink);">Playbooks and SOPs</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 18px 0;"><span class="num">[ 3 ]</span><span class="d" style="font-size: 28px; color: var(--ink);">Launch the 3 signature series per concept, campaigns and first events</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 18px 0;"><span class="num">[ 4 ]</span><span class="d" style="font-size: 28px; color: var(--ink);">Full metrics dashboard live, reviewed weekly</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 18px 0;"><span class="num">[ 5 ]</span><span class="d" style="font-size: 28px; color: var(--ink);">Competitor monitoring: 21 competitors, 3 per concept</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 18px 0;"><span class="num">[ 6 ]</span><span class="d" style="font-size: 28px; color: var(--ink);">UGC &amp; influencer program, on a steady monthly budget</span></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 18px 0;"><span class="num">[ 7 ]</span><span class="d" style="font-size: 28px; color: var(--ink);">Monthly experimentation lab</span></div>
+  </div>
+  <div class="bleed" style="right: 0; width: 720px;">
+    <img src="assets/art/lautrec-aristide-bruant.jpg" alt="Henri de Toulouse-Lautrec, Aristide Bruant, at His Cabaret" style="object-position: 50% 35%;">
+    <span class="bcap">[ Toulouse-Lautrec, Aristide Bruant, 1893 ]</span>
+  </div>
+  <div class="foot" style="right: 850px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 15 · Experimentation -->
+<section class="slide dark">
+  <div class="head">
+    <div class="tag"><span style="color: var(--green-bright);">Experimentation</span> · Always on</div>
+    <h2>Look to Asia.<br><span style="color: var(--green-bright);">Always try new things.</span></h2>
+  </div>
+  <div class="rows exp" style="left: var(--pad); right: 660px; top: 430px;">
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 22px 0;"><span class="num" style="color: #9AA3AA;">[ 1 ]</span><div><span class="t" style="font-size: 32px;">Live-stream creators</span><span style="font-size: 22px; font-weight: 300; color: #9AA3AA; margin-left: 16px;">from the table</span></div></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 22px 0;"><span class="num" style="color: #9AA3AA;">[ 2 ]</span><div><span class="t" style="font-size: 32px;">Live-streamed restaurant</span><span style="font-size: 22px; font-weight: 300; color: #9AA3AA; margin-left: 16px;">kitchen and room, on air</span></div></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 22px 0;"><span class="num" style="color: #9AA3AA;">[ 3 ]</span><div><span class="t" style="font-size: 32px;">POV content</span><span style="font-size: 22px; font-weight: 300; color: #9AA3AA; margin-left: 16px;">chef and guest</span></div></div>
+    <div class="row" style="grid-template-columns: 80px 1fr; padding: 22px 0;"><span class="num" style="color: #9AA3AA;">[ 4 ]</span><div><span class="t" style="font-size: 32px;">Creator collab item</span><span style="font-size: 22px; font-weight: 300; color: #9AA3AA; margin-left: 16px;">a local creator’s drink or dish</span></div></div>
+  </div>
+  <p style="position:absolute; left: var(--pad); right: 660px; top: 840px; font-size: 40px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.2;">Virality isn’t the goal. <span style="color: var(--green-bright);">Tested monthly, built to compound.</span></p>
+  <div class="bleed" style="right: 0; width: 600px;">
+    <img src="assets/art/kiyochika-fireworks.jpg" alt="Kobayashi Kiyochika, Fireworks at Ikenohata" style="object-position: 58% 50%;">
+    <span class="bcap">[ Kiyochika, Fireworks at Ikenohata, 1881 ]</span>
+  </div>
+  <div class="foot" style="right: 660px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 16 · Metrics & reporting -->
+<section class="slide mist">
+  <div class="head">
+    <div class="tag">Metrics &amp; reporting</div>
+    <h2>Three layers, <span class="g">sales first.</span></h2>
+  </div>
+  <div class="cards" style="right: 580px; top: 340px; height: 340px; grid-template-columns: 1fr 1fr 1fr;">
+    <div class="card black"><div class="hd"><span>Business results</span><span class="num">[ 1 ]</span></div><div class="bd" style="font-size: 30px; line-height: 1.45;">Covers · sales · average check · reservations · events · gift cards</div></div>
+    <div class="card"><div class="hd"><span>Attribution</span><span class="num">[ 2 ]</span></div><div class="bd" style="font-size: 30px; line-height: 1.45;">Promo codes · links · reservation source</div></div>
+    <div class="card"><div class="hd"><span>Channel</span><span class="num">[ 3 ]</span></div><div class="bd" style="font-size: 30px; line-height: 1.45;">Reach · saves · cost per reservation</div></div>
+  </div>
+  <div style="position:absolute; left: var(--pad); right: 580px; top: 770px; display:grid; grid-template-columns: 160px repeat(3, 1fr); align-items: baseline; border-top: 1px solid var(--ink); padding-top: 26px;">
+    <span class="cap" style="text-transform: uppercase; letter-spacing: .14em;">Cadence</span>
+    <span style="font-size: 28px; letter-spacing: -0.015em;">Weekly dashboard</span>
+    <span style="font-size: 28px; letter-spacing: -0.015em;">Monthly report</span>
+    <span style="font-size: 28px; letter-spacing: -0.015em;">Quarterly review</span>
+  </div>
+    <div class="bleed" style="right: 0; width: 520px;">
+    <img src="assets/art/moronobu-kitchen.jpg" alt="Hishikawa Moronobu, The Kitchen of a Joroya" style="object-position: 42% 50%;">
+    <span class="bcap">[ Moronobu, The Kitchen of a Joroya, c. 1680 ]</span>
+  </div>
+  <div class="foot" style="right: 580px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 17 · Phase 3 advisory -->
+<section class="slide">
+  <div class="bleed" style="left: 0; width: 780px;">
+    <img src="assets/art/pissarro-fishmarket.jpg" alt="Camille Pissarro, Fishmarket" style="object-position: 40% 50%;">
+    <span class="bcap">[ Pissarro, Fishmarket, 1902 ]</span>
+  </div>
+  <div class="head" style="left: 900px;">
+    <div class="tag">Phase 4 · Advisory · May onward</div>
+    <h2>Your team runs it.<br><span class="g">I stay close.</span></h2>
+  </div>
+  <div class="rows" style="left: 900px; right: var(--pad); top: 520px;">
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 1 ]</span><span class="t">Monthly strategy session</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 2 ]</span><span class="t">Quarterly reviews</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 3 ]</span><span class="t">Campaign review</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 24px 0;"><span class="num">[ 4 ]</span><span class="t">Up to 8 hours a month</span></div>
+  </div>
+  <div class="foot" style="left: 900px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 18 · Included -->
+<section class="slide mist">
+  <div class="head" style="display:flex; justify-content: space-between; align-items: flex-end;">
+    <div style="flex: none;"><div class="tag">What’s included</div>
+    <h2 style="white-space: nowrap;">Everything the team <span class="g">needs.</span></h2></div>
+    <div class="bkey"><span><i class="k1"></i>Phase 1 · Audit</span><span><i class="k2"></i>Phase 2 · Strategy</span><span><i class="k3"></i>Phase 3 · Build</span><span><i class="k4"></i>Phase 4 · Advisory</span></div>
+  </div>
+  <div class="bento2">
+    <div class="bt dark" style="grid-column: 1 / 4; grid-row: 1;">
+      <div class="bp">Phase 1 · Audit</div>
+      <div class="brow"><div class="bn">7</div><div><div class="bt-t">On-site audit of every concept</div><div class="bt-d">I eat the menu, watch service, and sit down with staff and managers.</div></div></div>
+    </div>
+    <div class="bt art" style="grid-column: 4 / 6; grid-row: 1 / 3;">
+      <img src="assets/art/korin-chrysanthemums.jpg" alt="Ogata Kōrin, Chrysanthemums by a Stream" style="object-position: 18% 25%;">
+      <span class="bcap">[ Kōrin, Chrysanthemums by a Stream ]</span>
+    </div>
+    <div class="bt p2" style="grid-column: 6; grid-row: 1 / 3;">
+      <div class="bp">Phase 2 · Strategy</div>
+      <div><div class="bt-t">12-month strategy</div><div class="bt-d">A custom voice and 3 signature series per concept, the 2027 budget, and a review-and-revise round with ownership.</div></div>
+    </div>
+    <div class="bt p2" style="grid-column: 1 / 3; grid-row: 2;">
+      <div class="bp">Phase 2 · Strategy</div>
+      <div><div class="bt-t">Full metrics dashboard</div><div class="bt-d">Business results, attribution and every channel, for all 7 concepts. Reviewed weekly.</div></div>
+      <svg class="spark" viewBox="0 0 200 60" aria-hidden="true"><polyline points="0,50 30,44 60,46 90,34 120,30 150,20 200,8" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+    </div>
+    <div class="bt p3" style="grid-column: 3; grid-row: 2;">
+      <div class="bp">Phase 3 · Build</div>
+      <div class="bn" style="font-size: 80px;">21</div>
+      <div><div class="bt-t">Competitors monitored</div><div class="bt-d">3 per concept, live</div></div>
+    </div>
+    <div class="bt p3" style="grid-column: 1 / 3; grid-row: 3;">
+      <div class="bp">Phase 3 · Build</div>
+      <div class="brow"><div class="bn">4</div><div><div class="bt-t">Hires, plus staff ambassadors</div><div class="bt-d">Creative strategist (team lead), events &amp; production coordinator, content creator, intern</div></div></div>
+    </div>
+    <div class="bt p3" style="grid-column: 3; grid-row: 3;">
+      <div class="bp">Phase 3 · Build</div>
+      <div><div class="bt-t">Playbooks &amp; SOPs</div><div class="bt-d">How the team runs without me</div></div>
+    </div>
+    <div class="bt p3" style="grid-column: 4; grid-row: 3;">
+      <div class="bp">Phase 3 · Build</div>
+      <div><div class="bt-t">UGC &amp; influencers</div><div class="bt-d">On a steady monthly budget</div></div>
+    </div>
+    <div class="bt p3" style="grid-column: 5; grid-row: 3;">
+      <div class="bp">Phase 3 · Build</div>
+      <div><div class="bt-t">Experimentation lab</div><div class="bt-d">Live streams, POV, creator collab items</div></div>
+    </div>
+    <div class="bt green" style="grid-column: 6; grid-row: 3;">
+      <div class="bp">Phase 4 · Advisory</div>
+      <div><div class="bt-t">From May</div><div class="bt-d">Up to 8 hours a month</div></div>
+    </div>
+  </div>
+  <div class="foot"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 19 · Not included -->
+<section class="slide">
+  <div class="head" style="right: auto; width: 820px;">
+    <div class="tag">Not included</div>
+    <h2>Not now. <span class="g">Not yet.</span></h2>
+    <p class="lede" style="margin-top: 44px;">Both add cost and slow the team down. We do them once messaging and feel are A/B tested in the wild.</p>
+  </div>
+  <div style="position:absolute; left: 1010px; right: var(--pad); top: 200px; bottom: 140px; display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
+    <div class="tile out"><div class="xrow"><span class="num">[ × ]</span><div><div class="tn" style="font-size: 64px;">Brand redesign</div><div class="td">For any of the 7 concepts</div></div></div></div>
+    <div class="tile out"><div class="xrow"><span class="num">[ × ]</span><div><div class="tn" style="font-size: 64px;">Website redo</div><div class="td">For any of the 7 concepts</div></div></div></div>
+  </div>
+  <div class="tile art" style="position:absolute; left: var(--pad); width: 760px; top: 470px; height: 340px;"><img src="assets/art/rousseau-tiger-buffalo.jpg" alt="Henri Rousseau, Fight Between a Tiger and a Buffalo" style="object-position: 50% 50%;"><span class="bcap">[ Rousseau, Fight Between a Tiger and a Buffalo, 1908 ]</span></div>
+  <div style="position:absolute; left: var(--pad); width: 760px; top: 850px; border-top: 1px solid var(--ink); padding-top: 26px; display:grid; grid-template-columns: 160px 1fr; align-items: baseline;">
+    <span class="cap" style="text-transform: uppercase; letter-spacing: .14em;">When</span>
+    <span style="font-size: 30px; letter-spacing: -0.015em;">After the data shows what works</span>
+  </div>
+  <div class="foot" style="right: 930px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 20 · Investment -->
+<section class="slide">
+  <div class="head" style="right: 640px;">
+    <div class="tag">Investment</div>
+    <h2>$86,000 through April.<br><span class="g">Then $3,500 a month.</span></h2>
+  </div>
+  <div class="rows money" style="left: var(--pad); right: 640px; top: 410px;">
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 12px 0;"><span class="num">[ 1 ]</span><div><span class="t">Audit</span><div class="d" style="margin-top: 4px;">November · On site at all 7 concepts</div></div><span class="t">$10,000</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 12px 0;"><span class="num">[ 2 ]</span><div><span class="t">Strategy</span><div class="d" style="margin-top: 4px;">November–December · 50% of the audit fee credited</div></div><span class="t">$25,000 <span style="color: var(--muted);">− $5,000</span></span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 12px 0;"><span class="num">[ 3 ]</span><div><span class="t">Build &amp; launch</span><div class="d" style="margin-top: 4px;">January–April</div></div><span class="t">$14,000/mo × 4</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 13px 0; border-top: 1px solid var(--ink);"><span></span><div><span class="t" style="font-weight: 500;">Total through April</span><div class="d" style="margin-top: 4px; color: var(--green);">Each phase contracted on its own. No all-in commitment.</div></div><span class="t g" style="font-weight: 500;">$86,000</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr auto; padding: 12px 0;"><span class="num">[ 4 ]</span><div><span class="t">Advisory, from May</span><div class="d" style="margin-top: 4px;">6-month minimum · up to 8 hours a month</div></div><span class="t">$3,500/mo</span></div>
+  </div>
+  <div class="tile art" style="position:absolute; right: var(--pad); top: 110px; width: 460px; height: 250px;"><img src="assets/art/vanbeyeren-lobster.jpg" alt="Abraham van Beyeren, Still Life with Lobster and Fruit" style="object-position: 50% 55%;"><span class="bcap">[ Van Beyeren, 1650s ]</span></div>
+  <div class="card black" style="position:absolute; right: var(--pad); top: 380px; width: 460px; height: 540px; padding: 34px 34px; justify-content: space-between;">
+    <span class="cap" style="color: #CFCFCF; text-transform: uppercase; letter-spacing: .14em;">Agency vs. owned</span>
+    <div>
+      <div style="font-size: 20px; color: #9AA3AA; font-family: 'Geist Mono', monospace; letter-spacing: .06em; text-transform: uppercase;">Agency</div>
+      <div style="font-size: 44px; font-weight: 300; letter-spacing: -0.03em; line-height: 1.1; margin-top: 6px;">$17,500–35,000/mo</div>
+      <div style="font-size: 20px; font-weight: 300; color: #CFCFCF; margin-top: 8px; line-height: 1.35;">No end date. The team, data and logins stay with them.</div>
+    </div>
+    <div style="border-top: 1px solid #2E2E2E; padding-top: 22px;">
+      <div style="font-size: 20px; color: var(--green-bright); font-family: 'Geist Mono', monospace; letter-spacing: .06em; text-transform: uppercase;">Big Spoon, owned</div>
+      <div style="font-size: 44px; font-weight: 300; letter-spacing: -0.03em; line-height: 1.1; margin-top: 6px; color: var(--green-bright);">Yours to keep</div>
+      <div style="font-size: 20px; font-weight: 300; color: #CFCFCF; margin-top: 8px; line-height: 1.35;">Your team, playbooks, data and logins. Built once, then yours.</div>
+    </div>
+  </div>
+  <p class="cap" style="position:absolute; left: var(--pad); right: 640px; top: 975px; font-size: 15px; line-height: 1.5;">Ad spend, UGC and influencer fees, production, events, tools and salaries are paid by Big Spoon directly. No markup.</p>
+  <div class="foot" style="right: 640px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 21 · Terms -->
+<section class="slide">
+  <div class="head" style="right: 760px;">
+    <div class="tag">Terms</div>
+    <h2>Clear terms. <span class="g">No surprises.</span></h2>
+  </div>
+  <div class="terms">
+    <div class="tm tm-hero"><span class="num" style="color: var(--green);">[ 1 ]</span><div><div class="tm-t">One phase at a time</div><div class="tm-d">Each phase is its own contract. Commit to the audit first, then decide on the next phase. No all-in commitment.</div></div></div>
+    <div class="tm"><span class="num">[ 2 ]</span><div><div class="tm-t">Payment</div><div class="tm-d">Audit 100% up front. Strategy 50% at kickoff, 50% at sign-off. Build billed monthly, in advance.</div></div></div>
+    <div class="tm"><span class="num">[ 3 ]</span><div><div class="tm-t">Audit credit</div><div class="tm-d">50% of the audit fee ($5,000) is credited to Strategy if Phase 2 starts within 14 days of the readout.</div></div></div>
+    <div class="tm"><span class="num">[ 4 ]</span><div><div class="tm-t">Revisions</div><div class="tm-d">Strategy includes 3 revision rounds. Extra rounds are billed hourly.</div></div></div>
+    <div class="tm"><span class="num">[ 5 ]</span><div><div class="tm-t">Hiring</div><div class="tm-d">If key hires aren’t in place by Feb 1, Build extends month to month at $14,000.</div></div></div>
+    <div class="tm"><span class="num">[ 6 ]</span><div><div class="tm-t">On-site visits</div><div class="tm-d">Meals and visits at the 7 concepts are covered by Big Spoon.</div></div></div>
+    <div class="tm"><span class="num">[ 7 ]</span><div><div class="tm-t">Advisory</div><div class="tm-d">6-month minimum. Up to 8 hours a month; extra hours billed hourly.</div></div></div>
+  </div>
+  <div class="bleed" style="right: 0; width: 640px;">
+    <img src="assets/art/korin-cranes-pines.jpg" alt="Ogata Kōrin, Cranes, Pines, and Bamboo" style="object-position: 30% 50%;">
+    <span class="bcap">[ Kōrin, Cranes, Pines, and Bamboo, early 18th c. ]</span>
+  </div>
+  <div class="foot" style="right: 760px;"><span></span><span class="pg"></span></div>
+</section>
+
+
+<!-- 22 · Next steps -->
+<section class="slide">
+  <div class="head" style="right: auto; width: 960px;">
+    <div class="tag">Next steps</div>
+    <h2>Thank you.<br><span class="g">Open to negotiation and revisions.</span></h2>
+  </div>
+  <div class="rows" style="left: var(--pad); top: 540px; width: 900px;">
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 26px 0;"><span class="num">[ 1 ]</span><span class="t">Review the scope</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 26px 0;"><span class="num">[ 2 ]</span><span class="t">Sign, and pay Phase 1 ($10,000)</span></div>
+    <div class="row" style="grid-template-columns: 90px 1fr; padding: 26px 0;"><span class="num" style="color: var(--green);">[ 3 ]</span><span class="t">Kickoff in November</span></div>
+  </div>
+  <p class="lede" style="position:absolute; left: var(--pad); top: 900px; font-size: 26px;">Hakeem · Expressive Space · expressivespace.co</p>
+  <div class="bleed" style="right: 0; width: 860px;">
+    <img src="assets/art/prendergast-bastille-day.jpg" alt="Maurice Prendergast, Bastille Day" style="object-position: 50% 45%;">
+    <span class="bcap">[ Prendergast, Bastille Day, 1892 ]</span>
+  </div>
+  <div class="foot" style="right: 910px;"><span></span><span class="pg"></span></div>
+</section>
+
+<!-- 23 · Image credits -->
+<section class="slide">
+  <div class="head">
+    <div class="tag">Image credits</div>
+    <h2 style="font-size: 56px;">Every image is <span class="g">public domain.</span></h2>
+  </div>
+  <div class="credits">
+      <div class="cr"><div class="ca">Jacob van Hulsdonck</div><div class="ct"><i>Still Life with Meat, Fish, Vegetables, and Fruit</i>, c. 1615–20</div><div class="cm">Cleveland Museum of Art · 2018.258 · CC0</div></div>
+      <div class="cr"><div class="ca">Jan Davidsz de Heem</div><div class="ct"><i>Still Life with a Glass and Oysters</i>, ca. 1640</div><div class="cm">The Met · 71.78 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Utagawa Hiroshige</div><div class="ct"><i>The Moon-Viewing Promontory, from One Hundred Views of Edo</i>, 1857</div><div class="cm">Cleveland Museum of Art · 1985.320 · CC0</div></div>
+      <div class="cr"><div class="ca">Matsumura Goshun</div><div class="ct"><i>Cherry Blossoms</i>, late 18th century</div><div class="cm">The Met · 1975.268.77 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Utagawa Hiroshige</div><div class="ct"><i>Suzuki and Kinmedai Fish, from Uozukushi</i>, 1840s</div><div class="cm">The Met · JP3604 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Unknown</div><div class="ct"><i>Happy New Year</i>, 1662–1722</div><div class="cm">Cleveland Museum of Art · 2025.93 · CC0</div></div>
+      <div class="cr"><div class="ca">José Guadalupe Posada</div><div class="ct"><i>A skeleton selling cheese, from Una Calavera Chusca</i>, ca. 1880–1910</div><div class="cm">The Met · 60.678.58 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Henri de Toulouse-Lautrec</div><div class="ct"><i>Divan Japonais</i>, 1892–93</div><div class="cm">The Met · 58.621.17 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Martin Johnson Heade</div><div class="ct"><i>Apple Blossoms</i>, 1873</div><div class="cm">Cleveland Museum of Art · 1915.687 · CC0</div></div>
+      <div class="cr"><div class="ca">Kubo Shunman</div><div class="ct"><i>Rice Plant and Butter-Burs</i>, 19th century</div><div class="cm">The Met · JP2166 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Willem Claesz Heda</div><div class="ct"><i>Still Life with Oysters, a Silver Tazza, and Glassware</i>, 1635</div><div class="cm">The Met · 2005.331.4 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Katsushika Hokusai</div><div class="ct"><i>Spring in the Rice Fields</i>, ca. 1800</div><div class="cm">The Met · JP1854 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Utagawa Kuniyoshi</div><div class="ct"><i>Tamatori-ama, from Scenes amid Genji Clouds</i>, 1845–46</div><div class="cm">The Met · 2019.4 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Utagawa Kunisada</div><div class="ct"><i>A View of the Large New Room at Sakurai</i>, early or mid 1830s</div><div class="cm">Cleveland Museum of Art · 1943.7.b · CC0</div></div>
+      <div class="cr"><div class="ca">Kaō</div><div class="ct"><i>Bamboo</i>, ca. 16th century</div><div class="cm">The Met · 36.100.35 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">George Brookshaw</div><div class="ct"><i>Peaches, from Pomona Britannica</i>, 1805, published 1812</div><div class="cm">Cleveland Museum of Art · 2020.166 · CC0</div></div>
+      <div class="cr"><div class="ca">Yun Shouping</div><div class="ct"><i>Herbaceous Peony</i>, 1685</div><div class="cm">Cleveland Museum of Art · 1967.192 · CC0</div></div>
+      <div class="cr"><div class="ca">Henri de Toulouse-Lautrec</div><div class="ct"><i>Aristide Bruant, at His Cabaret</i>, 1893</div><div class="cm">The Met · 32.88.17 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Kobayashi Kiyochika</div><div class="ct"><i>Fireworks at Ikenohata</i>, 1881 (Meiji 14)</div><div class="cm">The Met · 2016.577 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Ogata Kōrin</div><div class="ct"><i>Chrysanthemums by a Stream</i>, c. 1715–30 or later</div><div class="cm">Cleveland Museum of Art · 1958.206 · CC0</div></div>
+      <div class="cr"><div class="ca">Henri Rousseau</div><div class="ct"><i>Fight Between a Tiger and a Buffalo</i>, 1908</div><div class="cm">Cleveland Museum of Art · 1949.186 · CC0</div></div>
+      <div class="cr"><div class="ca">Abraham van Beyeren</div><div class="ct"><i>Still Life with Lobster and Fruit</i>, probably early 1650s</div><div class="cm">The Met · 1971.254 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Maurice Prendergast</div><div class="ct"><i>Bastille Day</i>, 1892</div><div class="cm">Cleveland Museum of Art · 1954.337 · CC0</div></div>
+      <div class="cr"><div class="ca">Ryūryūkyo Shinsai</div><div class="ct"><i>New Year’s Sake and Sushi</i>, ca. 1810</div><div class="cm">The Met · JP1916 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Unknown artist, Korea</div><div class="ct"><i>Tiger Family</i>, late 1800s</div><div class="cm">Cleveland Museum of Art · 1997.148 · CC0</div></div>
+      <div class="cr"><div class="ca">Hishikawa Moronobu</div><div class="ct"><i>The Kitchen of a Joroya</i>, ca. 1680</div><div class="cm">The Met · JP810 · Public Domain (CC0)</div></div>
+      <div class="cr"><div class="ca">Camille Pissarro</div><div class="ct"><i>Fishmarket</i>, 1902</div><div class="cm">Cleveland Museum of Art · 2020.113 · CC0</div></div>
+      <div class="cr"><div class="ca">Ogata Kōrin</div><div class="ct"><i>Cranes, Pines, and Bamboo</i>, early 18th century</div><div class="cm">The Met · 1975.268.62, .63 · Public Domain (CC0)</div></div>
+  </div>
+  <p class="cap" style="position:absolute; left: var(--pad); right: var(--pad); top: 1000px; font-size: 14px; line-height: 1.5;">Open Access collections of The Metropolitan Museum of Art and The Cleveland Museum of Art, released as Public Domain (CC0). Color and contrast lightly enhanced; some cropped. Restaurant names are set in type.</p>
+</section>
+
+</div></div>
+<div class="counter" id="counter"></div>
+
+<script>
+  // Sample scorecard: an example pattern only
+  (() => {
+    const concepts = ['AYA', 'KA Sushi & Bar', 'FatBao', 'LTS', 'IKTO', 'DiDi', 'Sandwich Pho Reel'];
+    const pattern = ['gyrygr', 'yyrgyr', 'grygyy', 'yrrgyr', 'ryyyrr', 'gyrgyr', 'yrgyyy'];
+    const cls = { g: 'gr', y: 'y', r: 'r' };
+    document.querySelector('#score tbody').innerHTML = concepts.map((c, i) =>
+      `<tr><th>${c.replace('&', '&amp;')}</th>${[...pattern[i]].map(k => `<td><span class="sd ${cls[k]}"></span></td>`).join('')}</tr>`
+    ).join('');
+  })();
+
+  // Navigation: arrows, space, PageUp/Down, Home/End, click (left third goes back)
+  const slides = [...document.querySelectorAll('.slide')];
+  const stage = document.getElementById('stage');
+  const counter = document.getElementById('counter');
+  let i = Math.min(Math.max((parseInt(location.hash.slice(1), 10) || 1) - 1, 0), slides.length - 1);
+  const pad = n => String(n).padStart(2, '0');
+  const show = n => {
+    i = Math.min(Math.max(n, 0), slides.length - 1);
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    counter.textContent = `${pad(i + 1)} / ${pad(slides.length)}`;
+    history.replaceState(null, '', '#' + (i + 1));
+  };
+  const fit = () => {
+    const k = Math.min(innerWidth / 1920, innerHeight / 1080);
+    stage.style.transform = `translate(-50%, -50%) scale(${k})`;
+  };
+  slides.forEach((s, k) => s.querySelectorAll('.pg').forEach(e => e.textContent = `[ ${pad(k + 1)} ]`));
+  addEventListener('keydown', e => {
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(slides.length - 1);
+  });
+  addEventListener('click', e => show(e.clientX < innerWidth / 3 ? i - 1 : i + 1));
+  addEventListener('hashchange', () => show((parseInt(location.hash.slice(1), 10) || 1) - 1));
+  addEventListener('resize', fit);
+  fit(); show(i);
+</script>
+</body>
+</html>
