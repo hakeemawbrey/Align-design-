@@ -167,59 +167,88 @@ h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size:
 
 /* the ballot: framed like the videos' gold tarot talk cards */
 .ballot {
-  min-width: 0; border-radius: 22px; padding: 34px 28px 30px; position: relative;
+  --pad: 28px;
+  min-width: 0; border-radius: 22px; padding: 32px var(--pad) 28px; position: relative;
   background: linear-gradient(180deg, rgba(38,24,80,0.94), rgba(24,14,54,0.94));
   border: 1.5px solid rgba(242,199,92,0.75);
   box-shadow: 0 0 34px rgba(242,199,92,0.22), 0 0 2px rgba(255,244,207,0.8), 0 28px 70px rgba(0,0,0,0.45);
 }
+/* the inner gold rule, 9px in */
 .ballot::before { content: ''; position: absolute; inset: 9px; border-radius: 15px; border: 1px solid rgba(242,199,92,0.3); pointer-events: none; }
 /* sticky only where the whole ballot fits on screen (after .ballot, whose position: relative would win) */
 @media (min-width: 900px) and (min-height: 1100px) { .ballot { position: sticky; top: 24px; } }
+
+.ballot-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .ballot-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--align); }
-.ballot-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.price { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label-3); }
-.price b { font-family: var(--serif); font-weight: 400; font-size: 34px; letter-spacing: 0; color: var(--label-1); margin-right: 4px; }
-.city-field { display: grid; gap: 4px; margin-top: 22px; }
+.price { display: inline-flex; align-items: baseline; gap: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label-3); }
+.price b { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1; letter-spacing: 0; color: var(--label-1); }
+
+/* the vote: the big italic line the whole ballot is about */
+.city-field { display: grid; gap: 4px; margin-top: 24px; }
 .field-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--label-3); }
 .city-field input {
-  width: 100%; height: 56px; padding: 0; outline: none; background: transparent; color: var(--align);
-  font-family: var(--serif); font-style: italic; font-size: 34px; border: 0; border-bottom: 1px solid rgba(154,123,224,0.5); border-radius: 0;
+  width: 100%; height: 52px; padding: 0; outline: none; background: transparent; color: var(--align);
+  font-family: var(--serif); font-style: italic; font-size: clamp(24px, 7.6vw, 30px); text-overflow: ellipsis; border: 0; border-bottom: 1px solid rgba(154,123,224,0.5); border-radius: 0;
 }
-.city-field input::placeholder { color: var(--label-4); }
 .city-field input:focus { border-bottom-color: var(--align); }
-.note { margin: 14px 0 28px; font-size: 14px; line-height: 1.4; color: var(--label-2); min-height: 20px; }
+.note { margin: 12px 0 24px; font-size: 14px; line-height: 1.45; color: var(--label-2); min-height: 20px; }
 .note b { color: var(--align); font-weight: 500; }
-.field { display: grid; gap: 10px; margin-bottom: 24px; }
-.field span { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--label-3); }
+
+/* the fields: one label style, one input style, one rhythm (8 inside a field, 20 between) */
+.field { display: grid; gap: 8px; margin-bottom: 20px; min-width: 0; }
+.field > span { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--label-3); }
 .field input {
-  height: 50px; padding: 0 16px; border-radius: 14px; font-size: 16px; color: var(--label-1); outline: none; width: 100%;
-  background: rgba(11,6,32,0.5); border: 1px solid rgba(154,123,224,0.45); font-family: inherit; min-width: 0;
+  height: 48px; padding: 0 14px; border-radius: 12px; font-size: 16px; color: var(--label-1); outline: none; width: 100%; min-width: 0;
+  background: rgba(11,6,32,0.55); border: 1px solid rgba(154,123,224,0.4); font-family: inherit;
+  transition: border-color .15s ease, box-shadow .15s ease;
 }
-.birth-row .field input { padding: 0 8px; font-size: 14.5px; }
-.field input:focus { border-color: var(--align); box-shadow: 0 0 0 3px rgba(242,199,92,0.18); }
-/* a long city name wraps inside the pill rather than spilling out of it */
-.ballot .chrome-cta { width: 100%; height: auto; min-height: 54px; padding-block: 8px; line-height: 1.15; text-wrap: balance; font-size: clamp(17px, 5vw, 19px); }
-.birth { border: 0; margin: 4px 0 0; padding: 0; min-width: 0; }
-.birth legend { padding: 0; margin-bottom: 14px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--label-2); }
-.birth-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 10px; }
-.birth-row .field { margin-bottom: 12px; min-width: 0; }
-/* narrow phones: date over time, so neither value is clipped */
+.field input:focus { border-color: var(--align); box-shadow: 0 0 0 3px rgba(242,199,92,0.16); }
+.field input:disabled { opacity: .4; }
+/* the browser's date and time icons, in the field's colour instead of black */
+.field input::-webkit-calendar-picker-indicator { filter: invert(1) brightness(0.8); opacity: .9; cursor: pointer; }
+/* typed fields with suggestions don't need the browser's arrow */
+.field input[list]::-webkit-calendar-picker-indicator, .city-field input::-webkit-calendar-picker-indicator { display: none !important; }
+.field input::-webkit-datetime-edit { padding: 0; }
+
+.birth { border: 0; margin: 0; padding: 0; min-width: 0; }
+.birth legend { padding: 0; margin-bottom: 12px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--label-2); }
+.birth-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 12px; }
+.birth-row .field { margin-bottom: 8px; }
+.birth-row .field input { padding: 0 10px; font-size: 15px; }
+
+/* "I don't know my birth time": a small gold box, not the browser's grey one */
+.check { display: flex; align-items: center; gap: 12px; min-height: 44px; margin: 0 0 12px; font-size: 14px; color: var(--label-2); cursor: pointer; }
+.check input {
+  appearance: none; -webkit-appearance: none; flex-shrink: 0; width: 20px; height: 20px; margin: 0; border-radius: 6px; cursor: pointer;
+  background: rgba(11,6,32,0.55); border: 1px solid rgba(154,123,224,0.55); transition: background-color .15s ease, border-color .15s ease;
+}
+.check input:checked {
+  background: var(--align) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%231a0f38' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / 16px no-repeat;
+  border-color: var(--align);
+}
+.check input:focus-visible { outline: 2px solid var(--align); outline-offset: 2px; }
+
+/* pay: the chrome pill once the ballot is complete, a quiet gold outline until then */
+.ballot .chrome-cta { width: 100%; height: auto; min-height: 54px; margin-top: 4px; padding-block: 8px; line-height: 1.15; text-wrap: balance; font-size: clamp(17px, 5vw, 19px); }
+.ballot .chrome-cta[aria-disabled='true'] {
+  opacity: 1; background: transparent; color: var(--label-2); box-shadow: none; border: 1px solid rgba(242,199,92,0.4);
+}
+.checkout { display: block; text-align: center; margin-top: 14px; }
+
+/* what $15 gets, below a dashed tear line that runs between the inner gold rules */
+.gets {
+  list-style: none; display: grid; gap: 10px; margin: 24px calc(9px - var(--pad)) 0; padding: 24px calc(var(--pad) - 9px) 4px;
+  border-top: 1.5px dashed rgba(179,166,196,0.28); color: var(--label-2); font-size: 14.5px; line-height: 1.4;
+}
+.gets li { display: grid; grid-template-columns: 16px 1fr; column-gap: 8px; }
+.gets li::before { content: '✦'; color: var(--align); font-size: 11px; line-height: 1.85; }
+
+/* narrow phones: date over time, so neither value is clipped, and a little less frame */
 @media (max-width: 359px) {
+  .ballot { --pad: 20px; }
   .birth-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  /* and a little less frame, so the pay button keeps to one line */
-  .ballot { padding-inline: 20px; }
-  .ballot .gets { margin-inline: -18px; padding-inline: 18px; }
   .ballot .chrome-cta { padding-inline: 14px; font-size: 16px; }
 }
-.field input:disabled { opacity: .4; }
-.check { display: flex; align-items: center; gap: 10px; min-height: 44px; margin: -12px 0 8px; font-size: 14px; color: var(--label-2); cursor: pointer; }
-.check input { width: 18px; height: 18px; accent-color: var(--align); }
-.checkout { display: block; text-align: center; margin-top: 16px; }
-.gets {
-  list-style: none; display: grid; gap: 12px; margin: 28px -26px 0; padding: 28px 26px 2px;
-  border-top: 1.5px dashed rgba(179,166,196,0.28); color: var(--label-2); font-size: 14.5px;
-}
-.gets li::before { content: '✦'; color: var(--align); margin-right: 10px; font-size: 11px; }
 /* ── two answers ──────────────────────────────────── */
 .qa { display: grid; gap: 44px; padding-block: 72px 48px; }
 .qa h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--label-1); }
