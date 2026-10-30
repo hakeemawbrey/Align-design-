@@ -174,14 +174,14 @@ function shake(t) {
 const toS = (C, wx, wy) => ({ x: C.sx + (wx - C.fx) * C.z, y: C.sy + (wy - C.fy) * C.z })
 
 // ── the world
-const ROOF = 1250
+const ROOF = 1300
 const sY = (s, base = ROOF) => base - FOOT * s
-const PIS_X = 300, PIS_S = 190
-const VIL_X = 660, VIL_S = 190
-const WALL_X = 480
-const CAP_H = { x: 170, y: 640, s: 170 }, CAP_W = { x: 480, y: 690, s: 200 }, CAP_BG = { x: 840, y: 650, s: 120 }
-const CAP_STAND = { x: 700, s: 270 }, CAP_BACK = { x: 650, s: 230 }, CAP_REV = { x: 660, s: 260 }
-const TOWERS = [{ x: 0, w: 190, top: 1046 }, { x: 160, w: 150, top: 992 }, { x: 560, w: 170, top: 968 }, { x: 790, w: 180, top: 1018 }, { x: 940, w: 150, top: 1066 }]
+const PIS_X = 290, PIS_S = 235
+const VIL_X = 690, VIL_S = 235
+const WALL_X = 500
+const CAP_H = { x: 170, y: 680, s: 200 }, CAP_W = { x: 500, y: 690, s: 230 }, CAP_BG = { x: 840, y: 650, s: 120 }
+const CAP_STAND = { x: 710, s: 300 }, CAP_BACK = { x: 680, s: 260 }, CAP_REV = { x: 690, s: 290 }
+const TOWERS = [{ x: 0, w: 190, top: 1076 }, { x: 160, w: 150, top: 1022 }, { x: 560, w: 170, top: 998 }, { x: 790, w: 180, top: 1048 }, { x: 940, w: 150, top: 1096 }]
 const CITS = [
   { x: 92, s: 64, c: CYAN, tw: 0 }, { x: 236, s: 58, c: '#ff9a7a', tw: 1 }, { x: 650, s: 56, c: MINT, tw: 2 },
   { x: 884, s: 62, c: '#ffd66e', tw: 3 }, { x: 1012, s: 60, c: PINK, tw: 4 },
@@ -279,7 +279,7 @@ function docPose(t) {
   if (t < T.bonk2[0]) { const p = ease.outCubic(prog(t, ...T.docIn)); return { x: lerp(1320, VIL_X, p), y: sY(VIL_S), rot: 0, s: VIL_S, sq: 0 } }
   const p = prog(t, ...T.bonk2), e = ease.outQuad(p)
   const k = t - T.bonk2[1]
-  return { x: lerp(VIL_X, 900, e), y: sY(170) - Math.sin(Math.PI * p) * 260, rot: p < 1 ? p * TAU : 0, s: lerp(VIL_S, 170, e), sq: p >= 1 ? 0.18 + 0.1 * Math.exp(-k * 8) * Math.cos(k * 20) : 0 }
+  return { x: lerp(VIL_X, 900, e), y: sY(200) - Math.sin(Math.PI * p) * 260, rot: p < 1 ? p * TAU : 0, s: lerp(VIL_S, 200, e), sq: p >= 1 ? 0.18 + 0.1 * Math.exp(-k * 8) * Math.cos(k * 20) : 0 }
 }
 
 // talk hops
@@ -401,7 +401,7 @@ async function build(stage) {
     const pos = [[150, 960], [470, 930], [300, 850]]
     T.yes.forEach((y0, i) => {
       const k = pop01(t, y0, 0.3, 2.4) * outK(t, [T.swoop[0] + 0.1, T.land])
-      drawBalloon(x, pos[i][0], pos[i][1], YES[i], { k, tx: PIS_X, ty: sY(PIS_S) - 40, size: 30 })
+      drawBalloon(x, pos[i][0], pos[i][1], YES[i], { k, tx: PIS_X, ty: sY(PIS_S) - 40, size: 36 })
     })
   }
 
@@ -451,7 +451,7 @@ async function build(stage) {
       if (t >= T.moth) { const m = t - T.moth; drawMoth(x, px + 108 + Math.sin(m * 5) * 40 + m * 30, py - m * 150, 7, t) }
     } else if (t >= T.no1 && t < T.cut2 && t - T.moth < 3) { const m = t - T.moth; drawMoth(x, px + 108 + Math.sin(m * 5) * 40 + m * 30, py - m * 150, 7, t) }
     // the phone (V3)
-    if (ps.phone) drawPhone(x, px + 130, py + 10, t, { k: ease.outBack(prog(t, ...T.phone)) * 0.72, rot: 0.06 })
+    if (ps.phone) drawPhone(x, px + 150, py + 10, t, { k: ease.outBack(prog(t, ...T.phone)) * 0.72, rot: 0.06 })
     // shrink sparkle / grow sparkle
     sparkleRing(t, px, py, T.grow[0], 10, 150, 1, [GOLD, PINK, BONE, LAV], 0.7, 24)
   }
@@ -481,13 +481,13 @@ async function build(stage) {
     // the periscope (retracts on the wall)
     const up = ease.outCubic(prog(t, ...T.scope)) * (1 - ease.inCubic(prog(t, T.wall3, T.wall3 + 0.25)))
     const glint = bump(t, T.scopeTurn[1], 0.4) + bump(t, T.scopeTurn[1] + 0.9, 0.4)
-    drawPeriscope(x, 600, ROOF + 10, up * 360, t, { dir: -1, glint })
+    drawPeriscope(x, 640, ROOF + 10, up * 400, t, { dir: -1, glint })
     // the Peeker rises out of the cloud behind (and gets bonked back down)
     const rise = ease.outBack(prog(t, ...T.peekUp)) * (1 - ease.inCubic(prog(t, T.wall3 + 0.06, T.wall3 + 0.3)))
     if (rise <= 0.01) return
-    const s = 176, y = lerp(ROOF + s * 0.7, sY(s) + 30, rise)
+    const s = 210, y = lerp(ROOF + s * 0.7, sY(s) + 30, rise)
     x.save(); x.beginPath(); x.rect(0, 0, W, ROOF + 4); x.clip()
-    star(660, y, s, t, { color: PEEK_C, mood: t >= T.wall3 ? 'wide' : 'neutral', look: [-1, 1], hops: K_HOPS, seed: 9 }, () => { shadesCells(x, (t * 0.7) % 1); fedoraCells(x) })
+    star(720, y, s, t, { color: PEEK_C, mood: t >= T.wall3 ? 'wide' : 'neutral', look: [-1, 1], hops: K_HOPS, seed: 9 }, () => { shadesCells(x, (t * 0.7) % 1); fedoraCells(x) })
     x.restore()
   }
   function cameo(t) {
@@ -508,34 +508,34 @@ async function build(stage) {
   // ═══════════════════════ effects ═══════════════════════
   function fields(t) {
     // the Captain's gold force field (V1, V2) and Pisces' own pink one (V3)
-    if (inR(t, T.no1 - 0.25, T.cut2)) drawField(x, WALL_X, 790, ROOF + 6, 48, t, { k: ease.inQuad(prog(t, T.no1 - 0.2, T.no1)), alpha: outK(t, [18.6, 19.1]) })
-    if (inR(t, T.no2 - 0.25, T.cut3)) drawField(x, WALL_X + 40, 790, ROOF + 6, 48, t, { k: ease.inQuad(prog(t, T.no2 - 0.2, T.no2)), alpha: outK(t, [29.9, 30.4]), seed: 0.4 })
-    if (inR(t, T.wall3 - 0.25, T.cut4)) drawField(x, 520, 930, ROOF + 6, 40, t, { k: ease.inQuad(prog(t, T.wall3 - 0.18, T.wall3)), col: '#ff8fb1', hi: '#ffe0ea', alpha: outK(t, [40.6, 41.1]), seed: 0.7 })
+    if (inR(t, T.no1 - 0.25, T.cut2)) drawField(x, WALL_X, 820, ROOF + 6, 64, t, { k: ease.inQuad(prog(t, T.no1 - 0.2, T.no1)), alpha: outK(t, [18.6, 19.1]) })
+    if (inR(t, T.no2 - 0.25, T.cut3)) drawField(x, WALL_X + 40, 820, ROOF + 6, 64, t, { k: ease.inQuad(prog(t, T.no2 - 0.2, T.no2)), alpha: outK(t, [29.9, 30.4]), seed: 0.4 })
+    if (inR(t, T.wall3 - 0.25, T.cut4)) drawField(x, 540, 960, ROOF + 6, 52, t, { k: ease.inQuad(prog(t, T.wall3 - 0.18, T.wall3)), col: '#ff8fb1', hi: '#ffe0ea', alpha: outK(t, [40.6, 41.1]), seed: 0.7 })
     puff(t, WALL_X, ROOF, T.no1, 10, 200)
     puff(t, WALL_X + 40, ROOF, T.no2, 10, 200)
-    puff(t, 520, ROOF, T.wall3, 12, 240)
+    puff(t, 540, ROOF, T.wall3, 12, 240)
     puff(t, CAP_STAND.x, ROOF, T.land, 12, 260, 0.7)
   }
   function bursts(t) {
     const B = (t0, t1, bx, by, r, text, o = {}) => { if (t < t0 || t > t1) return; drawBurst(x, bx, by, r, { text, k: easeOutBack(prog(t, t0, t0 + 0.22), 2.6) * outK(t, [t1 - 0.2, t1]), ...o }) }
-    B(T.no1 - 0.02, T.no1 + 1.2, 760, 880, 180, 'NO!', { size: 150, rot: -0.08, seed: 3 })
-    B(T.bonk1, T.bonk1 + 0.75, 860, 1000, 100, 'BOING!', { size: 54, rot: 0.15, seed: 5, fill: '#7fe0ff', dots: '#4aa8ff', ink: '#ffffff' })
-    B(T.no2 - 0.02, T.no2 + 1.2, 780, 860, 190, 'NOPE!', { size: 128, rot: 0.07, seed: 7 })
-    B(T.bonk2[0], T.bonk2[0] + 0.7, 820, 1000, 100, 'BOING!', { size: 54, rot: -0.12, seed: 9, fill: '#7fe0ff', dots: '#4aa8ff', ink: '#ffffff' })
-    B(T.tinyNo, T.wall3 + 0.1, 420, 850, 52, 'no.', { size: 40, rot: -0.05, seed: 11, fill: '#ffd6e2', dots: '#ff9ab8', ink: '#c42540' })
-    B(T.wall3 + 0.08, T.wall3 + 1.15, 730, 1010, 150, 'BONK!', { size: 104, rot: 0.1, seed: 13, fill: '#ff8fb1', dots: '#ff5a8a', ink: '#ffffff' })
+    B(T.no1 - 0.02, T.no1 + 1.2, 780, 800, 180, 'NO!', { size: 150, rot: -0.08, seed: 3 })
+    B(T.bonk1, T.bonk1 + 0.75, 900, 1090, 100, 'BOING!', { size: 54, rot: 0.15, seed: 5, fill: '#7fe0ff', dots: '#4aa8ff', ink: '#ffffff' })
+    B(T.no2 - 0.02, T.no2 + 1.2, 790, 790, 190, 'NOPE!', { size: 128, rot: 0.07, seed: 7 })
+    B(T.bonk2[0], T.bonk2[0] + 0.7, 880, 1100, 100, 'BOING!', { size: 54, rot: -0.12, seed: 9, fill: '#7fe0ff', dots: '#4aa8ff', ink: '#ffffff' })
+    B(T.tinyNo, T.wall3 + 0.1, 430, 860, 52, 'no.', { size: 40, rot: -0.05, seed: 11, fill: '#ffd6e2', dots: '#ff9ab8', ink: '#c42540' })
+    B(T.wall3 + 0.08, T.wall3 + 1.15, 700, 990, 140, 'BONK!', { size: 104, rot: 0.1, seed: 13, fill: '#ff8fb1', dots: '#ff5a8a', ink: '#ffffff' })
   }
   function balloons(t) {
     const D = docPose(t)
-    if (D && t >= T.wallQuip[0]) drawBalloon(x, 790, 880, "wall... you're|overreacting.", { k: pop01(t, T.wallQuip[0], 0.3, 2.2) * outK(t, [T.wallQuip[1] - 0.2, T.wallQuip[1]]), tx: D.x - 20, ty: D.y - 80, size: 30 })
+    if (D && t >= T.wallQuip[0]) drawBalloon(x, 790, 900, "wall... you're|overreacting.", { k: pop01(t, T.wallQuip[0], 0.3, 2.2) * outK(t, [T.wallQuip[1] - 0.2, T.wallQuip[1]]), tx: D.x - 20, ty: D.y - 80, size: 38 })
     if (inR(t, ...T.heroQuip)) drawBalloon(x, 330, 900, "I'M A HERO!!", { k: pop01(t, T.heroQuip[0], 0.3, 2.4) * outK(t, [T.heroQuip[1] - 0.2, T.heroQuip[1]]), tx: PIS_X, ty: sY(PIS_S) - 20, size: 36, color: '#c42540' })
   }
   // credit / villain chips (world, so they ride the camera)
   const CHIPS = [
-    { win: [T.cred[0], T.cut1 - 0.25], text: '♍︎ CAPTAIN BOUNDARIES', sub: '(power: saying no)', col: '#ff7e8e', x: CAP_STAND.x, y: 880 },
-    { win: [T.cred[1], T.cut1 - 0.25], text: '♓︎ PISCES', sub: '(says yes to everything)', col: LAV, x: 300, y: 1000 },
-    { win: T.borChip, text: 'WEAKNESS: PAYING BACK', col: BOR_C, x: VIL_X + 70, y: 950 },
-    { win: T.docChip, text: 'PHD IN DISMISSING', col: DOC_C, x: VIL_X + 60, y: 950 },
+    { win: [T.cred[0], T.cut1 - 0.25], text: '♍︎ CAPTAIN BOUNDARIES', sub: '(power: saying no)', col: '#ff7e8e', x: CAP_STAND.x, y: 900 },
+    { win: [T.cred[1], T.cut1 - 0.25], text: '♓︎ PISCES', sub: '(says yes to everything)', col: LAV, x: 290, y: 1010 },
+    { win: T.borChip, text: 'WEAKNESS: PAYING BACK', col: BOR_C, x: VIL_X + 40, y: 960 },
+    { win: T.docChip, text: 'PHD IN DISMISSING', col: DOC_C, x: VIL_X + 40, y: 960 },
     { win: T.peekChip, text: 'READS OVER SHOULDERS', col: PEEK_C, x: 760, y: 880 },
   ]
   function chips(t) {
