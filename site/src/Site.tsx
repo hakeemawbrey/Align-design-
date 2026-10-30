@@ -275,12 +275,12 @@ export default function Site() {
           <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field to join'}</span>
 
           <ul className="gets">
-            <li><span><b>First access</b> for your city</span></li>
-            <li><span><b>A vote for your city</b> to launch after Texas, counted today</span></li>
-            <li><span><b>Align+ for 2 years</b></span></li>
-            <li><span><b>Access to events</b> and member benefits</span></li>
+            <li>First access for your city</li>
+            <li>A vote for your city to launch after Texas</li>
+            <li>Align+ for 2 years</li>
+            <li>Access to events and member benefits</li>
             <li>A numbered founding member card</li>
-            <li><span><b>Houston only:</b> entry to the Align TCG giveaway</span></li>
+            <li>Houston only: entry to the Align TCG giveaway</li>
           </ul>
         </form>
       </section>
