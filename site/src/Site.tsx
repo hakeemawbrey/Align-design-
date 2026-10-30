@@ -9,6 +9,16 @@ import Scoreboard, { Track } from './Scoreboard'
 import { ALL_CITIES, VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
 import { checkout, checkoutReady, useVotes } from './votes'
 
+/** the ballot's three cards */
+const STEPS = ['Your vote', 'Your card', 'Beta access']
+const ROMAN = ['I', 'II', 'III']
+/** dealing between the cards: the next one slides in from the right, going back from the left */
+const DEAL = {
+  enter: (d: number) => ({ opacity: 0, x: 48 * d, rotate: 2 * d }),
+  center: { opacity: 1, x: 0, rotate: 0 },
+  leave: (d: number) => ({ opacity: 0, x: -48 * d, rotate: -2 * d }),
+}
+
 /** smooth scrolling, unless the viewer asked for less motion */
 const scrollBehavior = (): ScrollBehavior => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth')
 
@@ -44,6 +54,8 @@ export default function Site() {
   const vote = picked && stageOf(picked.slug) === 'vote' ? picked : null
   const lockedIn = !!picked && !vote
   const nameRef = useRef<HTMLInputElement>(null)
+  const voteRef = useRef<HTMLInputElement>(null)
+  const emailRef = useRef<HTMLInputElement>(null)
   const sendingRef = useRef(false)
   // 18+, and born after 1900; the date input's own min/max say the same
   const [minDate, maxDate, today] = useMemo(() => {
@@ -54,6 +66,14 @@ export default function Site() {
   const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(birthDate) && birthDate >= minDate && birthDate <= maxDate
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
   const ready = !!vote && !!name.trim() && dateOk && !!birthPlace.trim() && emailOk
+
+  // the ballot deck: which card is up, and which way the last deal went
+  const [step, setStep] = useState(0)
+  const [dir, setDir] = useState(1)
+  const stepOk = [!!vote, !!name.trim() && dateOk && !!birthPlace.trim(), emailOk]
+  const focusStep = (i: number) => window.setTimeout(() => [voteRef, nameRef, emailRef][i].current?.focus({ preventScroll: true }), 360)
+  const go = (i: number) => { setDir(i > step ? 1 : -1); setStep(i); focusStep(i) }
+  const next = () => { if (stepOk[step]) go(step + 1) }
 
   // back from Stripe on ?paid=1; the vote was remembered on the way out, if this tab still has it
   const [paid] = useState(() => {
@@ -110,7 +130,17 @@ export default function Site() {
   const pickVote = useCallback((c: City) => {
     setVoteText(label(c))
     toBallot()
-    if (!nameRef.current?.value) window.setTimeout(() => nameRef.current?.focus({ preventScroll: true }), 450)
+    // the vote is in: deal the next card
+    setStep((s) => { if (s === 0) { setDir(1); focusStep(1) } return s === 0 ? 1 : s })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  /** the write-in card: back to card I, typing */
+  const writeIn = useCallback(() => {
+    setVoteText('')
+    setStep((s) => { setDir(s > 0 ? -1 : 1); return 0 })
+    toBallot()
+    focusStep(0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const pay = async () => {
@@ -182,69 +212,107 @@ export default function Site() {
 
         <Track tally={tally} vote={vote} />
 
-        <div className="vote-grid">
-          <Scoreboard tally={tally} mine={vote} onPick={pickVote} />
+        <Scoreboard tally={tally} mine={vote} onPick={pickVote} onWriteIn={writeIn} />
 
-          <form className="ballot" id="ballot" onSubmit={(e) => { e.preventDefault(); void pay() }}>
-            {/* it's a pass into the beta first; the vote comes with it */}
-            <div className="ballot-head">
-              <span className="kicker">Beta access</span>
-              <h3 className="ballot-title">Join the Align beta</h3>
-              <p className="price"><b>$15</b> once · your vote for the city after Texas is included</p>
-            </div>
+        {/* the ballot, dealt as three cards: your vote, your card, your seat */}
+        <form className="deck" id="ballot" onSubmit={(e) => { e.preventDefault(); if (step < 2) next(); else void pay() }}>
+          <ol className="deck-steps" aria-label="Three cards">
+            {STEPS.map((t, i) => (
+              <li key={t} className={i === step ? 'on' : i < step ? 'done' : ''}>
+                <button type="button" onClick={() => go(i)} disabled={i > step && !stepOk.slice(0, i).every(Boolean)} aria-current={i === step ? 'step' : undefined}>
+                  <span aria-hidden>{ROMAN[i]}</span> {t}
+                </button>
+              </li>
+            ))}
+          </ol>
 
-            <label className="city-field">
-              <span className="field-label">Your vote · the city after Texas</span>
-              <input id="vote-city" aria-describedby="vote-note" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
-                placeholder="Pick a city" autoComplete="off" required />
-              <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
-            </label>
-            <p className="note" id="vote-note" aria-live="polite">
-              {lockedIn ? 'Houston and Texas are already locked in. Vote for a city beyond Texas.'
-                : vote ? <>One vote for <b>{vote.name}</b>, counted today.</> : 'Pick a city on the board, or type one.'}
-            </p>
+          <div className="deck-stack">
+            {/* the cards still to come peek out behind this one */}
+            {[2, 1].filter((k) => step + k <= 2).map((k) => <div key={k} className={`deck-under u${k}`} aria-hidden />)}
 
-            <label className="field">
-              <span>Your first name</span>
-              <input ref={nameRef} id="name" enterKeyHint="next" maxLength={60} value={name} onChange={(e) => setName(e.target.value)} placeholder="First name" autoComplete="given-name" required />
-            </label>
+            <AnimatePresence mode="wait" initial={false} custom={dir}>
+              <motion.fieldset key={step} className="ballot" custom={dir}
+                variants={DEAL} initial="enter" animate="center" exit="leave" transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}>
+                <legend className="sr">{`Card ${ROMAN[step]} of III: ${STEPS[step]}`}</legend>
+                <span className="card-numeral" aria-hidden>{ROMAN[step]}</span>
 
-            <fieldset className="birth">
-              <legend>Your birth details · for your card</legend>
-              <label className="field">
-                <span>Date</span>
-                <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
-              </label>
-              {/* not while a year is half typed */}
-              {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
-              <label className="field">
-                <span>Place</span>
-                <input id="birth-place" list="places" maxLength={120} value={birthPlace} onChange={(e) => setBirthPlace(e.target.value)} placeholder="City you were born in" autoComplete="off" required />
-                <datalist id="places">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
-              </label>
-            </fieldset>
+                {step === 0 && (<>
+                  <div className="ballot-head">
+                    <span className="kicker">Your vote</span>
+                    <h3 className="ballot-title">The city after Texas</h3>
+                  </div>
+                  <label className="city-field">
+                    <span className="field-label">Your vote</span>
+                    <input ref={voteRef} id="vote-city" aria-describedby="vote-note" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
+                      placeholder="Pick a city" autoComplete="off" required />
+                    <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
+                  </label>
+                  <p className="note" id="vote-note" aria-live="polite">
+                    {lockedIn ? 'Houston and Texas are already locked in. Vote for a city beyond Texas.'
+                      : vote ? <>One vote for <b>{vote.name}</b>, counted today.</> : 'Pick a city card above, or type one.'}
+                  </p>
+                </>)}
 
-            <label className="field">
-              <span>Email</span>
-              <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false} maxLength={254}
-                value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
-            </label>
+                {step === 1 && (<>
+                  <div className="ballot-head">
+                    <span className="kicker">Your card</span>
+                    <h3 className="ballot-title">Who’s voting</h3>
+                    <p className="price">Your birth details cast your card for the beta</p>
+                  </div>
+                  <label className="field">
+                    <span>Your first name</span>
+                    <input ref={nameRef} id="name" enterKeyHint="next" maxLength={60} value={name} onChange={(e) => setName(e.target.value)} placeholder="First name" autoComplete="given-name" required />
+                  </label>
+                  <label className="field">
+                    <span>Birth date</span>
+                    <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
+                  </label>
+                  {/* not while a year is half typed */}
+                  {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
+                  <label className="field">
+                    <span>Birthplace</span>
+                    <input id="birth-place" list="places" enterKeyHint="next" maxLength={120} value={birthPlace} onChange={(e) => setBirthPlace(e.target.value)} placeholder="City you were born in" autoComplete="off" required />
+                    <datalist id="places">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
+                  </label>
+                </>)}
 
-            <button className="chrome-cta" type="submit" aria-disabled={!ready || !checkoutReady || sending}
-              aria-describedby={error ? 'pay-hint pay-error' : 'pay-hint'}>
-              {sending ? 'Saving your seat…' : 'Join the beta · $15'} <span className="spark" aria-hidden>✦</span>
-            </button>
-            {error && <p className="note" id="pay-error" role="alert">{error}</p>}
-            <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field to vote'}</span>
+                {step === 2 && (<>
+                  {/* it's a pass into the beta first; the vote comes with it */}
+                  <div className="ballot-head">
+                    <span className="kicker">Beta access</span>
+                    <h3 className="ballot-title">Join the Align beta</h3>
+                    <p className="price"><b>$15</b> once · your vote for {vote?.name ?? 'the city after Texas'} is included</p>
+                  </div>
+                  <label className="field">
+                    <span>Email</span>
+                    <input ref={emailRef} id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false} maxLength={254}
+                      value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
+                  </label>
+                  <button className="chrome-cta" type="submit" aria-disabled={!ready || !checkoutReady || sending}
+                    aria-describedby={error ? 'pay-hint pay-error' : 'pay-hint'}>
+                    {sending ? 'Saving your seat…' : 'Join the beta · $15'} <span className="spark" aria-hidden>✦</span>
+                  </button>
+                  {error && <p className="note" id="pay-error" role="alert">{error}</p>}
+                  <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Add your email to join'}</span>
+                  <ul className="gets">
+                    <li>Beta access, with your card cast from your birth details</li>
+                    <li>Align+ for life</li>
+                    <li>A numbered founding member card</li>
+                    <li>One vote, counted today, for the city after Texas</li>
+                  </ul>
+                </>)}
 
-            <ul className="gets">
-              <li>Beta access, with your card cast from your birth details</li>
-              <li>Align+ for life</li>
-              <li>A numbered founding member card</li>
-              <li>One vote, counted today, for the city after Texas</li>
-            </ul>
-          </form>
-        </div>
+                {step < 2 && (
+                  <div className="deck-nav">
+                    {step > 0 ? <button type="button" className="deck-back" onClick={() => go(step - 1)}>Back</button> : <span />}
+                    <button type="submit" className="deck-next" aria-disabled={!stepOk[step]}>Next card</button>
+                  </div>
+                )}
+                {step === 2 && <button type="button" className="deck-back solo" onClick={() => go(1)}>Back</button>}
+              </motion.fieldset>
+            </AnimatePresence>
+          </div>
+        </form>
       </section>
 
       <section className="wrap qa" aria-labelledby="qa-title">

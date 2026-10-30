@@ -132,11 +132,6 @@ h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size:
   .stop .where { font-size: 36px; }
 }
 
-.vote-grid { display: grid; gap: 64px; margin-top: 24px; }
-@media (min-width: 900px) {
-  .vote-grid { grid-template-columns: 1.25fr 1fr; column-gap: 112px; align-items: start; margin-top: 48px; }
-}
-
 /* the live race: open rows on the page, no box */
 .board { min-width: 0; }
 .board-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid rgba(179,166,196,0.18); }
@@ -290,3 +285,74 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--align); outline
 .city-field input:focus-visible { box-shadow: 0 2px 0 var(--align); }
 /* the app's card loops (holo ring, foil, halo) hold still for reduced motion */
 @media (prefers-reduced-motion: reduce) { .card-col * { animation: none !important; } }
+
+/* ── the race as city cards ───────────────────────── */
+.city-cards { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+@media (min-width: 640px) { .city-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .city-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; } }
+.city-card {
+  position: relative; display: grid; grid-template-rows: auto 1fr auto auto; align-items: end; gap: 4px; width: 100%; min-height: 148px;
+  padding: 16px 16px 14px; border-radius: 16px; text-align: left; cursor: pointer;
+  background: linear-gradient(180deg, rgba(40,26,80,0.9), rgba(22,13,50,0.92));
+  border: 1.5px solid rgba(201,182,240,0.28); box-shadow: 0 12px 28px rgba(5,2,15,0.35);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+/* the inner rule, like every card in the deck */
+.city-card::before { content: ''; position: absolute; inset: 5px; border-radius: 11px; border: 1px solid rgba(201,182,240,0.14); pointer-events: none; }
+@media (hover: hover) { .city-card:hover { transform: translateY(-3px); border-color: rgba(242,199,92,0.6); } }
+.city-card:active { transform: scale(0.98); }
+.cc-top { align-self: start; display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 11px; color: var(--label-3); }
+.cc-count { display: inline-flex; gap: 4px; font-variant-numeric: tabular-nums; color: var(--label-2); }
+.cc-count em { font-style: normal; color: var(--align); }
+.cc-name { font-family: var(--serif); font-style: italic; font-size: clamp(21px, 5.6vw, 26px); line-height: 1.05; color: var(--label-1); overflow-wrap: anywhere; }
+.cc-state { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--label-3); }
+.cc-bar { height: 3px; margin-top: 8px; border-radius: 3px; background: rgba(179,166,196,0.14); overflow: hidden; }
+.cc-bar i { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #9a7be0, #c9b6f0); }
+.city-card.first { border: 2px solid rgba(242,199,92,0.85); box-shadow: 0 0 22px rgba(242,199,92,0.18), 0 12px 28px rgba(5,2,15,0.35); }
+.city-card.first::before { border-color: rgba(242,199,92,0.3); }
+.city-card.first .cc-rank { color: var(--align); }
+.city-card.first .cc-bar i { background: linear-gradient(90deg, #f2c75c, #fff4cf); }
+.city-card.mine { border: 2px solid var(--align); background: linear-gradient(180deg, rgba(74,52,30,0.55), rgba(30,18,56,0.94)); }
+.city-card.mine .cc-name { color: var(--align); }
+.city-card.mine .cc-bar i { background: var(--align); }
+.cc-tag {
+  position: absolute; top: -10px; left: 50%; translate: -50% 0; padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #2a1a06; background: var(--align);
+}
+.city-card.write-in { border-style: dashed; background: rgba(22,13,50,0.5); }
+.city-card.write-in .cc-name { color: var(--label-2); }
+
+/* ── the ballot as a deck of three cards ──────────── */
+.deck { max-width: 460px; margin: 64px auto 0; }
+.deck-steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
+.deck-steps button {
+  width: 100%; min-height: 44px; padding: 8px 4px; border-radius: 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--label-3); border: 1px solid rgba(179,166,196,0.18); background: rgba(22,13,50,0.5); cursor: pointer;
+}
+.deck-steps button span { display: block; font-family: var(--serif); font-size: 17px; letter-spacing: 0; text-transform: none; margin-bottom: 2px; }
+.deck-steps .done button { color: var(--label-2); }
+.deck-steps .on button { color: var(--align); border-color: rgba(242,199,92,0.7); background: rgba(40,26,80,0.8); }
+.deck-steps button:disabled { cursor: default; opacity: .6; }
+.deck-stack { position: relative; }
+/* the cards still to come, peeking out behind */
+.deck-under {
+  position: absolute; inset: 0; border-radius: 24px; border: 3px solid rgba(226,181,78,0.55);
+  background: linear-gradient(180deg, rgba(34,21,70,0.9), rgba(20,12,46,0.9)); pointer-events: none;
+}
+.deck-under.u1 { transform: translate(10px, 12px) rotate(1.6deg); opacity: .75; }
+.deck-under.u2 { transform: translate(18px, 22px) rotate(3deg); opacity: .45; }
+.deck .ballot { margin: 0; min-width: 0; position: relative; z-index: 1; }
+.card-numeral {
+  position: absolute; top: 14px; left: 50%; translate: -50% 0; padding: 0 10px; background: rgba(38,24,80,1);
+  font-family: var(--serif); font-size: 18px; line-height: 1; color: var(--align);
+}
+.deck .ballot-head { padding-top: 12px; }
+.deck .ballot-head + .field { margin-top: 24px; }
+.deck-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.deck-next {
+  min-height: 48px; padding: 0 28px; border-radius: 999px; font-family: var(--serif); font-style: italic; font-size: 19px;
+  background: var(--chrome); color: var(--chrome-ink); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 0 24px rgba(248,237,255,0.25);
+}
+.deck-next[aria-disabled='true'] { background: transparent; color: var(--label-2); box-shadow: none; border: 1px solid rgba(242,199,92,0.4); }
+.deck-back { min-height: 44px; padding: 0 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--label-2); text-decoration: underline; text-underline-offset: 4px; }
+.deck-back.solo { display: block; margin: 16px auto 0; }
