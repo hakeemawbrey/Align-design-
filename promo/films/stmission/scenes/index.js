@@ -213,16 +213,16 @@ async function build(stage) {
   const cv = layerCanvas(root), x = cv.getContext('2d')
 
   // ── type (DOM, above the canvas)
-  const H0 = popText(root, 'Incoming | *text.*', { top: 182, size: 112, accentSize: 176, at: T.h0, late: 1, lateAt: T.h0Land, wobble: true, accentColor: PINK })
+  const H0 = popText(root, 'Incoming | *text.*', { top: 150, size: 100, accentSize: 150, at: T.h0, late: 1, lateAt: T.h0Land, wobble: true, accentColor: PINK })
   const H1 = popText(root, 'The reply’s on | the *launch pad.*', { top: 172, size: 96, accentSize: 140, at: T.h1, late: 2, lateAt: T.h1Land, wobble: true, accentColor: AMBER, fit: true })
-  const H2 = popText(root, 'Go or | *no-go?*', { top: 182, size: 112, accentSize: 170, at: T.h2, late: 1, lateAt: T.h2Land, wobble: true, accentColor: GOLD })
-  const H3 = popText(root, 'Rule one: | the *3-hour rule.*', { top: 172, size: 96, accentSize: 140, at: T.h3, late: 2, lateAt: T.h3Land, wobble: true, accentColor: VIR_T, fit: true })
-  const H4 = popText(root, 'Strategy: | be *mysterious.*', { top: 172, size: 100, accentSize: 146, at: T.h4, late: 1, lateAt: T.h4Land, wobble: true, accentColor: SCO_T, fit: true })
-  const H5 = popText(root, '*ABORT!* | Too eager!', { top: 172, size: 104, accentSize: 168, at: T.h5, wobble: true, accentColor: RED, gap: 0.09 })
-  const H6 = popText(root, 'Hour two. | *Riveting.*', { top: 182, size: 108, accentSize: 164, at: T.h6, late: 1, lateAt: T.h6Land, wobble: true, accentColor: LAV })
+  const H2 = popText(root, 'Go or | *no-go?*', { top: 150, size: 100, accentSize: 150, at: T.h2, late: 1, lateAt: T.h2Land, wobble: true, accentColor: GOLD })
+  const H3 = popText(root, 'Rule one: | the *3-hour rule.*', { top: 150, size: 92, accentSize: 134, at: T.h3, late: 2, lateAt: T.h3Land, wobble: true, accentColor: VIR_T, fit: true })
+  const H4 = popText(root, 'Strategy: | be *mysterious.*', { top: 150, size: 92, accentSize: 134, at: T.h4, late: 1, lateAt: T.h4Land, wobble: true, accentColor: SCO_T, fit: true })
+  const H5 = popText(root, '*ABORT!* | Too eager!', { top: 150, size: 100, accentSize: 150, at: T.h5, wobble: true, accentColor: RED, gap: 0.09 })
+  const H6 = popText(root, 'Hour two. | *Riveting.*', { top: 150, size: 100, accentSize: 150, at: T.h6, late: 1, lateAt: T.h6Land, wobble: true, accentColor: LAV })
   const H7 = popText(root, 'T-minus | *zero.*', { top: 182, size: 108, accentSize: 180, at: T.h7, late: 1, lateAt: T.h7Land, wobble: true, accentColor: MINT })
-  const H8 = popText(root, 'Reply time: | *4 seconds.*', { top: 172, size: 100, accentSize: 156, at: T.h8, late: 2, lateAt: T.h8Land, wobble: true, accentColor: PINK, fit: true })
-  const H9 = popText(root, 'No countdown. | You *both play.*', { top: 172, size: 92, accentSize: 132, at: T.h9, late: 2, lateAt: T.h9Land, wobble: true, accentColor: LAV, fit: true })
+  const H8 = popText(root, 'Reply time: | *4 seconds.*', { top: 150, size: 92, accentSize: 134, at: T.h8, late: 2, lateAt: T.h8Land, wobble: true, accentColor: PINK, fit: true })
+  const H9 = popText(root, 'No countdown. | You *both play.*', { top: 150, size: 92, accentSize: 132, at: T.h9, late: 2, lateAt: T.h9Land, wobble: true, accentColor: LAV, fit: true })
   const H10 = popText(root, '*Liftoff.*', { top: 196, size: 120, accentSize: 210, at: T.h10, late: 1, lateAt: T.h10Land, wobble: true, accentColor: GOLD })
   const HEADS = [[H0, T.h0Out], [H1, T.h1Out], [H2, T.h2Out], [H3, T.h3Out], [H4, T.h4Out], [H5, T.h5Out], [H6, T.h6Out], [H7, T.h7Out], [H8, T.h8Out], [H9, T.h9Out], [H10, T.h10Out]]
   const boxA = dialogueBox(root, { lines: LINES_A, y: 1478, width: 960, height: 290, open: T.l1 - 0.24, close: T.closeA, cps: CPS })
@@ -482,6 +482,7 @@ async function build(stage) {
       star('stars', STARS_P, t, S_(t < T.l9 + 1.2 ? 'happy' : t > T.flip ? 'sparkle' : 'wink', [-1, 0]), { pop: k, hops: HOPS.stars })
     }
     // the three at the desk
+    const pills = []
     const hatFly = t >= T.hats[0]
     const flyOff = (i, r) => { const p = prog(t, ...T.hats); return { dx: (i - 1) * 260 * p, dy: -Math.sin(p * Math.PI) * 300 - p * 400, rot: (i - 1.1) * p * 7, alpha: 1 - prog(t, T.hats[1] - 0.2, T.hats[1]) } }
     const shake = panic(t) ? 4 * Math.sin(t * 70) : 0
@@ -492,7 +493,7 @@ async function build(stage) {
       if (r) {
         drawHeadset(x, r, hatFly ? flyOff(0, r) : {})
         if (inW(t, T.binder, T.v3)) { const k = pop01(t, T.binder, 0.3, 2.2); x.save(); x.translate(r.x + r.size * 0.5, r.y - r.size * 0.05); x.scale(k, k); drawBinder(x, 0, 0, 6, 0.1 + 0.05 * Math.sin(t * 4)); x.restore() }
-        if (inW(t, T.nogoV, T.v3)) drawPill(x, r.x, r.top - 40, 'NO-GO', '#c8243e', pop01(t, T.nogoV, 0.3, 2.4))
+        if (inW(t, T.nogoV, T.v3)) pills.push([r.x, T.nogoV])
         if (panic(t) || inW(t, T.v6, T.yank)) sweat(r, t, 0.3, -1)
       }
     }
@@ -507,7 +508,7 @@ async function build(stage) {
           const fly = t >= T.reply ? prog(t, T.reply, T.reply + 0.8) : 0
           drawShades(x, r, { dy: dy - fly * 400, rot: fly * 4, alpha: 1 - fly })
         }
-        if (inW(t, T.nogoS, T.v3)) drawPill(x, r.x, r.top - 40, 'NO-GO', '#c8243e', pop01(t, T.nogoS, 0.3, 2.4))
+        if (inW(t, T.nogoS, T.v3)) pills.push([r.x, T.nogoS])
         if (panic(t)) sweat(r, t, 0.6, 1)
       }
     }
@@ -522,6 +523,7 @@ async function build(stage) {
       }
     }
     drawDesk(x, DESK_Y, W, t, [[VIR_P[0], 'RULES'], [CAP_P[0], 'FLIGHT'], [SCO_P[0], 'STRATEGY']])
+    for (const [px, t0] of pills) drawPill(x, px, DESK_Y + 87, 'NO-GO', '#c8243e', pop01(t, t0, 0.3, 2.4))
     // the big HOLD button on Capricorn's desk
     {
       const dn = bump(t, T.hold, 0.25)
@@ -632,10 +634,10 @@ async function build(stage) {
         ono('WEE-OO', 300, 470, t, T.klaxon, { size: 52, life: 0.6, rise: 10, color: RED })
         ono('WEE-OO', 780, 470, t, T.klaxon + 0.6, { size: 52, life: 0.6, rise: 10, color: RED, rot: 0.08 })
         ono('WEE-OO', 300, 470, t, T.klaxon + 1.2, { size: 52, life: 0.6, rise: 10, color: RED, rot: -0.06 })
-        ono('*yoink*', 770, 1060, t, T.yank, { size: 48, life: 0.8, rise: 30, color: GOLD })
-        ono('*click*', 290, 1060, t, T.press, { size: 44, life: 0.6, rise: 20, color: MINT })
-        ono('*scrub scrub*', 560, 640, t, T.wipe[0], { size: 40, life: 0.7, rise: 16, ticks: false })
-        T.crk.forEach((c, i) => ono('*chirp*', [250, 830][i], [1120, 1080][i], t, c, { size: 38, color: 'rgba(239,230,214,0.92)', life: 1.0, rise: 24, ticks: false }))
+        if (v === 'room') ono('*yoink*', 770, 1060, t, T.yank, { size: 48, life: 0.14 + T.v7 - T.yank, rise: 30, color: GOLD })
+        ono('*click*', 700, 1080, t, T.press, { size: 44, life: 0.6, rise: 20, color: MINT })
+        ono('*scrub scrub*', 235, 1110, t, T.wipe[0], { size: 40, life: 0.7, rise: 16, ticks: false })
+        if (v === 'room') T.crk.forEach((c, i) => ono('*chirp*', [250, 830][i], [1120, 1080][i], t, c, { size: 38, color: 'rgba(239,230,214,0.92)', life: 1.0, rise: 24, ticks: false }))
         if (t >= T.reply && t < T.reply + 0.7) sparkleRing(t, 540, 1000, T.reply, 14, 380, 0.6)
         if (t >= T.out[0] && t < T.out[1] + 0.3) sparkleRing(t, 540, 1050, T.out[0] + 0.1, 16, 420, 0.2)
         staticFlash(t)
