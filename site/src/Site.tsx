@@ -242,7 +242,11 @@ export default function Site() {
             </label>
             <label className="field">
               <span>Birth date</span>
-              <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
+              <span className="date-wrap">
+                <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
+                {/* iPhone shows an empty box until a date is picked */}
+                {!birthDate && <span className="date-ph" aria-hidden>mm / dd / yyyy</span>}
+              </span>
             </label>
             {/* not while a year is half typed */}
             {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
