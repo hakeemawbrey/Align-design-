@@ -109,13 +109,13 @@ export const silentK = t => 1 - ease.inOutQuad(prog(t, ...T.colorK))
 
 // ── where things are (world coords == screen coords at the rest camera)
 const GROUND = 1330
-const GEM_P = [410, 1205, 230]
-const TAU_P = [850, 1150, 190], BENCH_X = 850
-const PIS_P = [128, 1210, 112], PIANO = { x0: 18, y0: 1238, w: 222, h: 170 }
+const GEM_P = [400, 1208, 290]
+const TAU_P = [850, 1140, 250], BENCH_X = 850
+const PIS_P = [128, 1140, 170], PIANO = { x0: 18, y0: 1238, w: 222, h: 170 }
 const LAMP = { cx: 640, top: 640 }
 const STARS_P = [905, 600, 140]
-const HEART = { cx: 610, cy: 830, s: 10 }
-const BOX = { cx: 410, w0: 300, h0: 300, w1: 228, h1: 236 }
+const HEART = { cx: 420, cy: 800, s: 10 }
+const BOX = { cx: 400, w0: 360, h0: 360, w1: 280, h1: 290 }
 const SEED = { gem: 5, tau: 17, pis: 23, stars: 11 }
 const COLS = { gem: GEM, tau: TAU, pis: PIS }
 
@@ -263,7 +263,7 @@ async function build(stage) {
   function benchShift(t) { let s = 0; T.tugs.forEach((v, i) => { s += 34 * ease.outBack(prog(t, v + 0.05, v + 0.3)) * (i < 4 ? 1 : 0) }); return -s }
   function drawTaurus(t) {
     const dx = benchShift(t)
-    drawBench(x, BENCH_X + dx, GROUND)
+    drawBench(x, BENCH_X + dx, GROUND, 6, 380)
     const k = popOut(t, T.out)
     const st = keyed(t, TAU_K)
     const hops = [...HOPS.tau, ...T.tugs.map(v => v + 0.05), T.color + 0.02, T.color + 0.55, T.color + 1.1, T.flip + 0.35, ...T.claps]

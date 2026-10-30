@@ -3,7 +3,7 @@
 //   bitmap(ctx, rows, pal, x, y, px)         rows of chars → pixels; (x, y) = top-left; '.' = empty
 //   drawBeret(ctx, x, y, px, rot)            a black mime beret; (x, y) = the middle of its band
 //   drawCroissant(ctx, x, y, px, rot)        Taurus' croissant; (x, y) = centre
-//   drawBench(ctx, cx, ground, px)           a park bench; cx = its middle, ground = where its feet stand
+//   drawBench(ctx, cx, ground, px, w)         a park bench; cx = its middle, ground = where its feet stand
 //   drawLamp(ctx, cx, top, ground, glow)     a park lamppost (the lamp at top)
 //   drawPiano(ctx, x0, y0, w, h)             the cinema's upright piano (seen from the audience)
 //   drawKey(ctx, x, y, px, rot)              the little key a mime throws away
@@ -51,8 +51,8 @@ export function drawCroissant(ctx, x, y, px, rot = 0) {
   ctx.restore()
 }
 
-export function drawBench(ctx, cx, ground, px = 6) {
-  const w = 300, x0 = cx - w / 2
+export function drawBench(ctx, cx, ground, px = 6, w = 300) {
+  const x0 = cx - w / 2
   // legs
   for (const lx of [x0 + 24, x0 + w - 24 - 3 * px]) { R(ctx, lx - px, ground - 92, 5 * px, 92, OUT); R(ctx, lx, ground - 90, 3 * px, 90, '#3a3a48') }
   // back slats
