@@ -217,7 +217,7 @@ export default function Site() {
           <div className="ballot-head">
             <span className="kicker">Beta access</span>
             <h3 className="ballot-title">Join the Align beta</h3>
-            <p className="price"><b>$15</b> once · your vote for the city after Texas is included</p>
+            <p className="price"><b>$15</b> once · first access to the beta, and a vote for your city</p>
           </div>
 
           <fieldset className="bsec">
@@ -271,10 +271,10 @@ export default function Site() {
           <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field to join'}</span>
 
           <ul className="gets">
-            <li>Beta access, with your card cast from your birthday</li>
+            <li><span><b>First access</b> to the beta, before it opens to everyone</span></li>
+            <li><span><b>A vote for your city</b> to launch after Texas, counted today</span></li>
             <li>Align+ for life</li>
             <li>A numbered founding member card</li>
-            <li>One vote, counted today, for the city after Texas</li>
           </ul>
         </form>
       </section>
