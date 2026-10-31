@@ -50,7 +50,10 @@ async function newPage() {
   await page.waitForFunction(() => window.ready === true, null, { timeout: 60000 })
   return page
 }
-async function shoot(page, t, file, type = 'jpeg') {
+// a frame that hangs (rAF that never fires, a stalled page) times out so the retry below takes over
+const timeout = (p, ms, what) => Promise.race([p, new Promise((_, no) => setTimeout(() => no(new Error(`${what} timed out after ${ms / 1000}s`)), ms).unref())])
+async function shoot(page, t, file, type = 'jpeg') { return timeout(shootOnce(page, t, file, type), 60000, `frame at ${t.toFixed(2)}s`) }
+async function shootOnce(page, t, file, type) {
   await page.evaluate(t => window.seek(t), t)
   await page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))))
   await page.screenshot({ path: file, type, ...(type === 'jpeg' ? { quality: 96 } : {}) })
@@ -90,7 +93,7 @@ if (stills || sheet) {
         catch (e) {
           if (tries >= 2) throw e
           console.error(`worker ${w}: frame ${i} failed (${e.message.split('\n')[0]}), retrying on a fresh page`)
-          await page.close().catch(() => {}); page = await newPage(); shot = 0
+          await timeout(page.close(), 10000, 'close').catch(() => {}); page = await timeout(newPage(), 90000, 'new page'); shot = 0
         }
       }
       if (++shot >= RECYCLE) { await page.close().catch(() => {}); page = await newPage(); shot = 0 }
