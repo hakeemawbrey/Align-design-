@@ -13,14 +13,15 @@
 //     boardTitle                          chalk title written across the top of the board
 //     lines: [[ 'teacher' | 'student', text, { hold?, tag?: 'sky' | 'astro' | 'tip', mark?, bulb?, tagAt?: [x, y, align] } ], …]
 //                                         tag = the claim's tag, popping as the line starts; mark = a name for the line's
-//                                         start time (T.M[name]) so the board can draw on cue; bulb = the student's lightbulb
+//                                         start time (T.M[name]) so the board can draw on cue; bulb = the student's lightbulb;
+//                                         as / asColor = a different name tag for this line (e.g. one of two students)
 //     board(ctx, t, B, M, T)              chalk on the board: B = { x0, y0, x1, y1, k }, M = line marks
 //     chalk?(M, T) → [{ text, at, u, v, size?, color?, align?, cps? }]   chalk labels; (u, v) = 0…1 across the board's
 //                                         drawable area. The engine writes them on and adds their chalk-scratch cues
-//     items, last, lastWho                THE SHORT VERSION items (≤ 34 chars, one *accent* each) and the last line
+//     items, last, lastWho, lastSize?     THE SHORT VERSION items (≤ 34 chars, one *accent* each) and the last line (88 px)
 //     moods(phase, t, T) → [teacherOpts, studentOpts]   phase: 'q' | line index 0… | 'recap' | 'last'
 //     set?(ctx, t, T, k)                  scenery behind the stars; front?(ctx, t, T, rt, rs, k) in front of them
-//     cues?(T)                            extra sound cues
+//     cues?(T)                            extra sound cues;  pitches?: { tag: hz } for `as` name tags
 //   }
 // Pure f(t); nothing touches `document` at module top level.
 import { clamp, prog, ease, el } from '../../../src/lib.js'
@@ -75,7 +76,7 @@ export function schedule(cfg) {
   const lines = []
   raw.forEach((L, i) => {
     const c = cast[L.who]
-    lines.push({ t: r3(t), speaker: c.tag, text: L.text, color: c.accent || c.color, who: L.who, o: L.o })
+    lines.push({ t: r3(t), speaker: L.o.as || c.tag, text: L.text, color: L.o.asColor || c.accent || c.color, who: L.who, o: L.o })
     t += L.dur + holds[i] + extra
   })
   T.lines = lines
@@ -130,7 +131,7 @@ export function makeEpisode(cfg) {
     const recap = gotIt(root, { items: cfg.items, at: T.recap, out: [r3(STORY_END - 0.4), r3(STORY_END - 0.05)], top: cfg.recapTop ?? 520 })
     const who = cfg[lastWho]
     const tag = el('div', { position: 'absolute', left: '0', width: '1080px', top: '1430px', textAlign: 'center', font: "700 30px 'Space Mono', monospace", letterSpacing: '0.08em', color: who.accent || who.color, textShadow: '0 3px 0 rgba(6,4,18,0.9)', display: 'none' }, root, who.tag)
-    const last = popText(root, cfg.last, { top: 1488, size: 88, accentSize: 132, at: T.last + 0.12, gap: 0.08, accentColor: who.accent || who.color, wobble: true, fit: true })
+    const last = popText(root, cfg.last, { top: 1488, size: cfg.lastSize || 88, accentSize: Math.round((cfg.lastSize || 88) * 1.5), at: T.last + 0.12, gap: 0.08, accentColor: who.accent || who.color, wobble: true, fit: true })
     const cv2 = layerCanvas(root, { pointerEvents: 'none' }), x2 = cv2.getContext('2d')
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
 
@@ -214,7 +215,7 @@ export function makeEpisode(cfg) {
   const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, cta: 'SIGN UP TO VOTE YOUR CITY' }), cardFrame({ start: 0, end: STORY_END, numeral: cfg.numeral })]
 
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]
-  const pitch = { [cfg.teacher.tag]: cfg.teacher.pitch || 440, [cfg.student.tag]: cfg.student.pitch || 700 }
+  const pitch = { [cfg.teacher.tag]: cfg.teacher.pitch || 440, [cfg.student.tag]: cfg.student.pitch || 700, ...(cfg.pitches || {}) }
   const CUES = [
     ...questionCues(0, { key: cfg.key }),
     ['whoosh', r3(T.boardAt - 0.1), 0.4, 0.03],
