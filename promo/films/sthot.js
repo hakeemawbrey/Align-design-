@@ -152,7 +152,7 @@ function wordBox(parent, text, { size, accentSize, accentColor, color = HOT.bone
   for (const tk of tokens(text)) {
     if (tk.br) { el('br', {}, box); continue }
     const st = { display: 'inline-block', margin: '0 0.11em', transformOrigin: '50% 85%' }
-    if (tk.accent) Object.assign(st, { fontFamily: SERIF, fontStyle: 'italic', fontWeight: 500, fontSize: accentSize + 'px', color: accentColor, letterSpacing: '0' })
+    if (tk.accent) Object.assign(st, { fontFamily: SERIF, fontStyle: 'italic', fontWeight: 500, fontSize: accentSize + 'px', color: accentColor, letterSpacing: '0', margin: '0 0.11em 0 0.3em' })
     ws.push({ accent: tk.accent, e: el('span', st, box, tk.w) })
   }
   return { box, ws }
