@@ -1,0 +1,23 @@
+{
+  "id": "04-venus-retrograde-scorpio",
+  "sign": "scorpio",
+  "sky": "sepia",
+  "moon": "crescent",
+  "title": "Venus retrograde in Scorpio: everyone's ex moved back",
+  "caption": "venus turned back in scorpio on oct 3. who came back for you?",
+  "hashtags": ["venusretrograde", "scorpio", "astrology", "exes", "zodiac"],
+  "ghosts": ["taurus", "libra"],
+  "beats": [
+    {"text": "everyone's ex moved back to town", "accent": "ex", "icon": "door", "sub": "venus retrograde · oct 3"},
+    {"text": "venus turned back in scorpio on the 3rd", "accent": "turned back", "icon": "glyph:scorpio", "sub": "venus · in scorpio"},
+    {"text": "the cafe is making their old order again", "accent": "old order", "icon": "heart", "sub": "the 5th · romance"},
+    {"text": "so the old names get louder at night", "accent": "louder", "icon": "moon", "sub": "the 12th · endings"},
+    {"text": "begun in scorpio, nothing comes back casually", "accent": "casually", "icon": "eye", "sub": "scorpio · fixed water"},
+    {"text": "ask why they left before why they're back", "accent": "left", "icon": "key", "sub": "the 7th · partners"},
+    {"text": "some just want to see if you'll answer", "accent": "answer", "icon": "star", "sub": "venus · a lesson"},
+    {"text": "a second look is not a second chance", "accent": "chance", "icon": "card", "sub": "venus · a lesson"},
+    {"text": "who came back for you this october?", "accent": "came back", "icon": "glyph:scorpio", "sub": "tell the town"}
+  ],
+  "end": "align",
+  "endSub": "a new deal at 11:11"
+}

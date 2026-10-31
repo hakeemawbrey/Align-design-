@@ -1,0 +1,23 @@
+{
+  "id": "06-town-rules",
+  "sign": "capricorn",
+  "sky": "sepia",
+  "moon": "crescent",
+  "title": "The town's rules for dating",
+  "caption": "a newcomer broke five of our rules in a week. which would you break first?",
+  "hashtags": ["datingrules", "capricorn", "astrology", "dating", "zodiac"],
+  "exhibits": [["Sky Before Face", "capricorn · a rule"], ["One Text, Then Wait", "gemini · a rule"], ["Not Yet on Date Two", "taurus · a rule"], ["Say It at the Door", "virgo · a kindness"]],
+  "beats": [
+    {"text": "a newcomer broke five of our rules", "accent": "five", "icon": "door", "sub": "capricorn · the notice board"},
+    {"text": "he asked for her photo before her sign", "accent": "photo sign", "icon": "eye", "sub": "rule one · sky before face"},
+    {"text": "he double texted while she was at work", "accent": "double", "icon": "card", "sub": "rule two · one text"},
+    {"text": "he said we on the second date", "accent": "we", "icon": "star", "sub": "rule four · not yet"},
+    {"text": "he kept his dealbreakers in his pocket", "accent": "pocket", "icon": "heart", "sub": "rule three · up front"},
+    {"text": "he called her intense. she's a scorpio", "accent": "intense", "icon": "key", "sub": "rule five · read the sky"},
+    {"text": "she said hers before the menus came", "accent": "menus", "icon": "card", "sub": "rule three · kept"},
+    {"text": "saturn built this town. it rewards patience", "accent": "patience", "icon": "glyph:capricorn", "sub": "saturn · capricorn's ruler"},
+    {"text": "which rule would you break first?", "accent": "break", "icon": "glyph:capricorn", "sub": "tell the board"}
+  ],
+  "end": "align",
+  "endSub": "posted in the square"
+}

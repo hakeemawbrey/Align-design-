@@ -1,0 +1,22 @@
+{
+  "id": "02-scorpio-season",
+  "sign": "scorpio",
+  "sky": "night",
+  "moon": "crescent",
+  "title": "Scorpio season: the town got quieter",
+  "caption": "scorpio season, day four. a stranger asked what i'm afraid of. you?",
+  "hashtags": ["scorpioseason", "scorpio", "astrology", "zodiac"],
+  "beats": [
+    {"text": "a stranger asked what i'm afraid of", "accent": "stranger", "icon": "eye", "sub": "at the bus stop · oct 23"},
+    {"text": "it's scorpio season. nobody does small talk", "accent": "small talk", "icon": "glyph:scorpio", "sub": "scorpio · fixed water"},
+    {"text": "people say less, and mean all of it", "accent": "mean", "icon": "card", "sub": "the 3rd · conversation"},
+    {"text": "the curtains stay half drawn now", "accent": "half drawn", "icon": "door", "sub": "the 8th · secrets"},
+    {"text": "the barber asked who i still think about", "accent": "still", "icon": "moon", "sub": "on main street"},
+    {"text": "pluto rules scorpio. it wants the real thing", "accent": "real thing", "icon": "star", "sub": "pluto · scorpio's ruler"},
+    {"text": "you can't fake depth here. the town can tell", "accent": "depth", "icon": "key", "sub": "scorpio · a lesson"},
+    {"text": "so say the honest thing first", "accent": "honest", "icon": "heart", "sub": "align · a habit"},
+    {"text": "answer the stranger. what are you afraid of?", "accent": "afraid", "icon": "glyph:scorpio", "sub": "tell the town"}
+  ],
+  "end": "align",
+  "endSub": "a new deal at 11:11"
+}

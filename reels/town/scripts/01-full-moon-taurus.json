@@ -1,0 +1,21 @@
+{
+  "id": "01-full-moon-taurus",
+  "sign": "taurus",
+  "sky": "dusk",
+  "moon": "full",
+  "title": "Full moon in Taurus: what you're still holding",
+  "caption": "full moon in taurus. nobody locked up. what are you setting down?",
+  "hashtags": ["fullmoon", "fullmoonintaurus", "taurus", "astrology", "moonritual"],
+  "beats": [
+    {"text": "nobody in town locked up tonight", "accent": "locked", "icon": "door", "sub": "taurus · full moon"},
+    {"text": "full moon in taurus. bring one thing", "accent": "one thing", "icon": "full", "sub": "the ritual"},
+    {"text": "a name you still check at 2am", "accent": "2am", "icon": "eye", "sub": "the 8th · secrets"},
+    {"text": "a door left on the latch", "accent": "latch", "icon": "door", "sub": "the 7th · partners"},
+    {"text": "the sun in scorpio says drop it. taurus won't", "accent": "drop", "icon": "glyph:taurus", "sub": "scorpio sun · taurus moon"},
+    {"text": "holding on isn't the same as being held", "accent": "held", "icon": "heart", "sub": "taurus · a lesson"},
+    {"text": "release them. don't haunt them", "accent": "haunt", "icon": "moon", "sub": "align · rule three"},
+    {"text": "what are you setting down tonight?", "accent": "setting down", "icon": "glyph:taurus", "sub": "tell the moon"}
+  ],
+  "end": "align",
+  "endSub": "a new deal at 11:11"
+}
