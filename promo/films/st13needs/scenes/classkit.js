@@ -16,7 +16,8 @@
 //     board: { y?, h?, w?, title? }      the chalkboard (default y 740, h 560, w 860: inner rect 140…940 × 490…990)
 //     chalk: [ITEM, …]                   ITEM = { text | line | circle, at, out?, … } drawn on the board; at = number |
 //                                         'mark' | ['mark', dt]; text items take x, y relative to the board's top-left
-//     tags: [{ kind, at, x, y, align }]  the ✓ / ✦ / ♥ pills (board-relative), out at the recap
+//     tags: [{ kind, at, out?, x, y, align }]  the ✓ / ✦ / ♥ pills (board-relative), out at `out` or the recap
+//     CHAR.pointer = true: the teacher holds the pointer stick up at the board and taps it as each of their lines starts
 //     bulb: at                          the lightbulb over the student
 //     recap: [3 items], last, lastWho
 //     moods(who, t, T) → drawStarChar opts
@@ -34,7 +35,7 @@ import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 import {
-  loadExplainFonts, questionCard, drawClassroom, chalkboard, chalkText, chalkLine, chalkCircle, factTag, lightbulb,
+  loadExplainFonts, questionCard, drawClassroom, chalkboard, chalkText, chalkLine, chalkCircle, factTag, lightbulb, drawPointer,
   gotIt, questionCues, chalkCues, tagCues, bulbCues, gotItCues, EX,
 } from '../../stexplain.js'
 
@@ -171,7 +172,7 @@ export function makeLesson(cfg) {
             else if (it.circle) chalkCircle(x, t, { x: B.x0 + it.circle[0], y: B.y0 + it.circle[1], r: it.circle[2], at, dur: it.dur ?? 0.6, color: it.color ?? CHALK.white, width: it.width ?? 6, from: it.from ?? -Math.PI / 2, sweep: it.sweep ?? Math.PI * 2 })
             x.restore()
           }
-          for (const tg of cfg.tags || []) factTag(x, t, { kind: tg.kind, at: r3(T.at(tg.at)), out: [T.recap - 0.2, T.recap], x: B.x0 + tg.x, y: B.y0 + tg.y, align: tg.align ?? 'left' })
+          for (const tg of cfg.tags || []) factTag(x, t, { kind: tg.kind, at: r3(T.at(tg.at)), out: tg.out != null ? [r3(T.at(tg.out)) - 0.2, r3(T.at(tg.out))] : [T.recap - 0.2, T.recap], x: B.x0 + tg.x, y: B.y0 + tg.y, align: tg.align ?? 'left' })
           x.restore()
         }
         // the cast
@@ -188,6 +189,12 @@ export function makeLesson(cfg) {
           Rr[n] = drawOf(c)(x, p.x, p.y, p.size, t, { seed: c.seed ?? names.indexOf(n) * 5 + 2, hops: HOPS[n], pop, ...o })
           x.restore()
           if (Rr[n] && c.prop) c.prop(x, Rr[n], t, T)
+          if (Rr[n] && c.pointer && t < T.recap) {
+            let tap = 0
+            for (const L of LINES) if (L.who === n) { const d = t - L.t; if (d > 0 && d < 0.35) tap = Math.max(tap, Math.sin(Math.PI * d / 0.35)) }
+            const r = Rr[n], pk = clamp(prog(t, T.boardAt, T.boardAt + 0.3)) * (1 - clamp(prog(t, T.recap - 0.3, T.recap)))
+            if (pk > 0) { x.save(); x.globalAlpha *= pk; drawPointer(x, r.x + r.size * 0.36, r.y - r.size * 0.02, c.pointerAng ?? -0.85, { tap, len: 210 }); x.restore() }
+          }
         }
         if (cfg.front) cfg.front(x, t, T, Rr, ok)
         const st = Rr[cfg.student]
