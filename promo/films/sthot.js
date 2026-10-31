@@ -648,7 +648,7 @@ function _hotEpisode(C) {
     const stamp = hotStamp(root, { ...C.take, take: C.take.text, at: 0 })
     const box = LINES.length ? dialogueBox(root, { lines: LINES, y: C.boxY || 1440, width: 960, height: 270, open: LINES[0].t - 0.2, close: T.close, cps: CPS }) : null
     const verdict = verdictCard(root, { ...V, out: T.vOut })
-    const last = popText(root, LAST.text, { top: LAST.top || 250, size: LAST.size || 112, accentSize: LAST.accentSize || 160, at: LAST.at, gap: 0.12, accentColor: C.accentColor || HOT.gold, wobble: true, fit: true })
+    const last = popText(root, LAST.text, { top: LAST.top || 250, size: LAST.size || 112, accentSize: LAST.accentSize || 160, at: LAST.at, gap: LAST.gap || 0.12, accentColor: C.accentColor || HOT.gold, wobble: true, fit: true })
     const ov = layerCanvas(root), ox = ov.getContext('2d')
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     function scene(t) {
@@ -696,7 +696,7 @@ function _hotEpisode(C) {
     ...objectionCues(OBJ, { key: C.key }), ['whoosh', T.slide[0], 0.35, 0.05],
     ...verdictCues(V.at, { text: V.text, key: C.key }),
     ...agreeCues(P.at, P),
-    ...Array.from({ length: nLast }, (_, i) => ['pop', r3(LAST.at + i * 0.12), NOTE[(1 + i) % 7], 0.028, i % 2 ? 0.15 : -0.15]),
+    ...Array.from({ length: nLast }, (_, i) => ['pop', r3(LAST.at + i * (LAST.gap || 0.12)), NOTE[(1 + i) % 7], 0.028, i % 2 ? 0.15 : -0.15]),
     ['pluck', r3(LAST.at + 0.12), 1174.66, 0.04, 0.6, 0],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(LINES.length ? talkCues(LINES, { cps: CPS, pitch: { [C.pro.name]: 987.77, [C.con.name]: 659.25 } }) : []),
