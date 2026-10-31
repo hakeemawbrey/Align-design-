@@ -32,6 +32,7 @@ date) is left as a `[bracket]` to fill in, never guessed.
 | `data/rubric.json` | how a reel is scored: 8 weighted dimensions, 24 hook formulas, 13 formats, with sources |
 | `data/align-brief.json` | Align's facts, voice rules, story angles and b-roll moments, pulled from this repo |
 | `src/library.mjs` | the Align side: 19 true story angles, 29 hook types, 17 video formats |
+| `src/import-ig.mjs` | pulls a creator's Instagram posts from Meta's official API |
 | `src/parse.mjs` | reading pasted reels, CSV rows and research entries into one shape |
 | `src/score.mjs` | the scorer |
 | `src/adapt.mjs` | reel → Align script, and remix |
@@ -131,6 +132,40 @@ npm test
 
 Republish `app/dist/studio.html` to the same artifact after a crunch, and your
 saved versions carry over.
+
+## Instagram, officially
+
+`src/import-ig.mjs` reads any public Business or Creator account through
+Meta's Business Discovery API: every post's caption, likes, comments, link
+and date, plus views where Meta returns them. Personal, private and
+age-gated accounts can't be read.
+
+One-time setup:
+
+1. Make your Instagram a professional account (Business or Creator) and link
+   it to a Facebook Page.
+2. At developers.facebook.com, create an app, add **Instagram API with
+   Facebook Login**, and generate a token with `instagram_basic` and
+   `pages_show_list`. Exchange it for a long-lived (60-day) token.
+3. Find your Instagram account's numeric id (Graph API Explorer:
+   `me/accounts?fields=instagram_business_account`).
+4. In the cloud environment's settings (the environment menu in the session
+   title bar, then Edit), add `IG_ACCESS_TOKEN` and `IG_USER_ID` under
+   Network secrets or as environment variables. Never paste the token into a
+   chat. A new session picks them up.
+
+Then:
+
+```bash
+cd founder
+npm run import-ig -- hothighpriestess jettfranzen   # → data/imports/ig-<handle>.json
+npm run import-ig -- hothighpriestess --reels --max 400
+npm run crunch
+```
+
+Meta's numbers count as exact. A post already in the research (same link) is
+replaced by Meta's version. Set `IG_API_VERSION` to use a newer Graph API
+version than the default `v24.0`.
 
 ## Add another creator
 

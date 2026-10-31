@@ -97,3 +97,31 @@ just a caption with 3 ideas`)
   assert.equal(rows[2].caption, 'just a caption with 3 ideas')
   assert.equal(parsePasted('url,hook,likes\nhttps://a,Hi,5\n')[0].hook, 'Hi')
 })
+
+test('instagram import pages through Business Discovery and drops views when Meta refuses them', async () => {
+  const { fetchCreator, toRow } = await import('../src/import-ig.mjs')
+  const urls = []
+  const page = (ids, after) => ({ business_discovery: { username: 'x', media_count: 3, media: { data: ids.map((id) => ({ id, caption: `hook ${id}\nmore`, like_count: 10, comments_count: 2, media_product_type: 'REELS', media_type: 'VIDEO', permalink: `https://www.instagram.com/reel/${id}/`, timestamp: '2026-10-01T10:00:00+0000' })), paging: after ? { cursors: { after }, next: 'n' } : { cursors: {} } } } })
+  const answers = [
+    { ok: false, status: 400, body: { error: { message: '(#100) Tried accessing nonexisting field (view_count)', code: 100 } } },
+    { ok: true, body: page(['a', 'b'], 'CUR') },
+    { ok: true, body: page(['c']) },
+  ]
+  const fetch = async (u) => { urls.push(u); const a = answers.shift(); return { ok: a.ok, status: a.status ?? 200, json: async () => a.body } }
+  const { posts, views } = await fetchCreator('x', { token: 'SECRET', userId: '1', fetch, limit: 2 })
+  assert.equal(posts.length, 3)
+  assert.equal(views, false)
+  assert.match(decodeURIComponent(urls[0]), /view_count/)
+  assert.doesNotMatch(decodeURIComponent(urls[1]), /view_count/)
+  assert.match(decodeURIComponent(urls[2]), /media\.after\(CUR\)/)
+  const row = toRow(posts[0], 'x')
+  assert.equal(row.hook, 'hook a')
+  assert.equal(row.format, 'instagram reel')
+  assert.equal(row.date, '2026-10-01')
+  const v = normalize(row, 0, 'ig-x')
+  assert.equal(v.creator, 'x')
+  assert.equal(v.metrics.likes, 10)
+  assert.equal(v.metrics.verified, true)
+  const bad = async () => ({ ok: false, status: 400, json: async () => ({ error: { message: 'Invalid OAuth access token', code: 190 } }) })
+  await assert.rejects(fetchCreator('x', { token: 'SECRET', userId: '1', fetch: bad }), (e) => /code 190/.test(e.message) && !/SECRET/.test(e.message))
+})
