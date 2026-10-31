@@ -342,7 +342,7 @@ export function verdictCard(root, { text, at, out = null, title = 'THE STARS RUL
       const k = outK(t, out)
       if (t < at || k <= 0) { wrap.style.display = 'none'; return }
       wrap.style.display = 'block'
-      if (!fitted) { fitBox(box, ws, size, Math.round(size * 1.3), 836); fitted = true }
+      if (!fitted) { fitBox(box, ws, size, Math.round(size * 1.3), 796); fitted = true }
       scrim.style.opacity = String(clamp(dim / 0.6) * clamp((t - at) / 0.25) * k)
       const din = easeOutBack(clamp((t - at) / 0.26), 1.6)
       const sh = slamShake(t, TM.slam, 10, 0.35)
