@@ -46,7 +46,7 @@ const LINES = chain([
 ], OBJ + 0.1)
 const LT = lineTimes(LINES, { cps: CPS })
 const CLOSE = r3(LT[2].done + 1.5)
-const VERDICT = { at: r3(CLOSE + 0.05), text: 'astrology describes, | it doesn’t excuse. own your *actions.*' }
+const VERDICT = { at: r3(CLOSE + 0.05), text: 'astrology describes, | it doesn’t excuse. own your actions.' }
 export const TIMING = { lines: LINES.map(l => l.t), done: LT.map(l => r3(l.done)), close: CLOSE, verdict: VERDICT.at, vEnd: verdictTimes(VERDICT.at, VERDICT.text).end }
 const PILL = { at: 13.2, dur: 0.6, pick: 'agree' }
 const LAST = { text: 'Signs describe. | *You* decide.', at: 13.75 }
