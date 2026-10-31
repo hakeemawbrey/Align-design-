@@ -31,6 +31,8 @@
 //   buildNextTime(root, { at, out })      the pink "NEXT TIME ON Orbit…" card. → { update(t) }
 //   soapZoom helpers: makeCam(keys), toS, dramaFx(ctx, t, snaps, ranges)   the soap-opera snap zooms + rose vignette.
 //   drawMysteryCard(ctx, cx, cy, w, t, o) a veiled blind mystery card (sign coin, aura, "NO PHOTO YET").
+//                                         o.face(ctx, x, y, size) + o.faceK 0…1: the reveal (Ep 2) draws a portrait in the aura.
+//   makeTalkCard(doc, img, lines)         a talk card asset (card-talk-*.png, 732×1170) with our own question set in.
 //   drawYes(ctx, cx, cy, s, t, o)         the YES pill under a card (o.on = pressed / stamped).
 //   tearsCells / starFrame / inSprite     overlays seated on a star sprite (36-cell grid).
 // Pure functions of their arguments; nothing touches `document` at module load.
@@ -373,7 +375,7 @@ const CARD_SIGN = {
 const rrect = (x, X, Y, w, h, r) => { x.beginPath(); x.roundRect(X, Y, w, h, r) }
 /** a veiled blind mystery card centred at (cx, cy), width w (height 1.5 w). o: sign 'aries'|'cancer', rot, alpha,
  *  lift 0…1 (the veil starts to lift: the aura brightens, a light bar climbs), glow 0…1 */
-export function drawMysteryCard(x, cx, cy, w, t, { sign = 'cancer', rot = 0, alpha = 1, lift = 0, glow = 0, scaleX = 1, seed = 0 } = {}) {
+export function drawMysteryCard(x, cx, cy, w, t, { sign = 'cancer', rot = 0, alpha = 1, lift = 0, glow = 0, scaleX = 1, seed = 0, face = null, faceK = 0 } = {}) {
   if (alpha <= 0 || w <= 0) return
   const C = CARD_SIGN[sign], h = w * 1.5, u = w / 300
   x.save(); x.globalAlpha *= alpha; x.translate(cx, cy); x.rotate(rot); x.scale(scaleX, 1)
@@ -410,8 +412,12 @@ export function drawMysteryCard(x, cx, cy, w, t, { sign = 'cancer', rot = 0, alp
   }
   x.font = `800 ${Math.round(aw * 0.36)}px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = rgba(BONE, 0.85 * (1 - lift))
   x.fillText('?', 0, ay + ah * 0.46)
+  if (face && faceK > 0) {   // the reveal: face(ctx, cx, cy, size) draws the star's portrait inside the aura
+    x.save(); x.globalAlpha *= clamp(faceK); face(x, 0, ay + ah * 0.52, ah * 0.92); x.restore()
+    if (faceK < 1) { x.fillStyle = `rgba(255,248,236,${1 - faceK})`; x.fillRect(ax, ay, aw, ah) }
+  }
   x.font = `700 ${Math.round(14 * u)}px ${MONO}`; x.textAlign = 'left'; x.textBaseline = 'alphabetic'; x.fillStyle = rgba(BONE, 0.8)
-  x.fillText('NO PHOTO YET', ax + 10 * u, ay + ah - 12 * u)
+  x.fillText(faceK > 0.5 ? 'FACE LAST ✓' : 'NO PHOTO YET', ax + 10 * u, ay + ah - 12 * u)
   x.restore()
   // sign + element pill
   const ry = ay + ah + 44 * u
@@ -639,4 +645,20 @@ export function buildNextTime(root, { at, out = null, top = 600 } = {}) {
       shine.style.left = lerp(-200, 1100, prog(t, at + 0.35, at + 1.2)) + 'px'
     },
   }
+}
+
+/** card-talk-*.png (732×1170) with its question repainted: lines = ['Your perfect', 'Sunday?'] (call in build only) */
+export function makeTalkCard(doc, img, lines, { label = 'QUESTION' } = {}) {
+  if (!img) return null
+  const c = doc.createElement('canvas'); c.width = img.width; c.height = img.height
+  const x = c.getContext('2d'); x.drawImage(img, 0, 0)
+  const g = x.createLinearGradient(0, 822, 0, 990); g.addColorStop(0, 'rgb(17,9,45)'); g.addColorStop(1, 'rgb(15,8,40)')
+  x.fillStyle = g; x.fillRect(114, 822, 504, 162)
+  x.fillStyle = '#efe6d6'; x.font = "italic 500 58px 'EB Garamond', Georgia, serif"; x.textAlign = 'center'; x.textBaseline = 'alphabetic'
+  lines.forEach((s, i) => x.fillText(s, 366, 874 + i * 62))
+  x.fillStyle = 'rgb(14,7,38)'; x.fillRect(340, 1036, 250, 23)
+  x.font = "400 21px 'Space Mono', monospace"; x.letterSpacing = '4px'; x.textAlign = 'right'; x.fillStyle = 'rgb(166,144,105)'
+  x.fillText(label, 574, 1055)
+  x.letterSpacing = '0px'
+  return c
 }
