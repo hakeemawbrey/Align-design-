@@ -25,7 +25,8 @@ import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
 import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { buildLesson, lessonCues, popText } from '../../lesson.js'
-import { starFrame, inSprite, tearsCells, hankieCells, drawComet, drawCometTail, makeTalkCard, mixHex, rgba, drawTide, drawShell, drawViolin, drawTissues, flyingTissue, drawBubble, buildBug, drawNextTime } from './props.js'
+import { makeTalkCard, rgba, drawViolin, flyingTissue, drawBubble } from './props.js'
+import { drawTide, drawPisces, drawStreak, drawStreakTail, drawFreeze, showBug, buildPreviously, buildNextTime, starFrame, inSprite } from './orbit.js'
 
 export const DURATION = 45
 const W = 1080, H = 1920
@@ -47,7 +48,7 @@ const T = {
   cut1: 11.9,
   // the turn
   violin: 12.1, play: [BEAT(21), BEAT(31)], peek: [12.8, 13.3], cardUp: [13.3, 13.85], open2: 14.0, lA: 14.2, brace: [14.9, 17.82], lB: 16.4,
-  scratch: BEAT(31), hearts: 17.95, topple: [18.3, 18.75], thud: 18.75, close2: 18.7, cardOff: [17.85, 18.3],
+  scratch: BEAT(31), hearts: 17.95, comeOut: [19.45, 19.95], topple: [18.3, 18.75], thud: 18.75, close2: 18.7, cardOff: [17.85, 18.3],
   // relief
   open3: 20.0, lC: 20.2, springUp: [21.65, 22.1], tideBlush: 21.9, close3: 23.0,
   cut2: 23.5,
@@ -134,36 +135,38 @@ const dramaK = t => DRAMA.reduce((m, [a, b, k]) => Math.max(m, k * clamp((t - a)
 // ── cast positions & sizes
 const EMB = { x: 300, y: 1060 }, S_EMB = 300
 const TID = { x: 790, y: 1030 }, S_TID = 270
-const PIS_AT = { x: 958, y: 1322, s: 118 }, TISSUE_AT = { x: 840, y: 1392 }
+const PIS_AT = { x: 900, y: 1318, s: 118 }, TISSUE_AT = { x: 965, y: 1368 }
 const VIO_AT = { x: 900, y: 560, s: 150 }
 const FR_AT = [{ x: 140, y: 590 }, { x: 320, y: 500 }, { x: 540, y: 462 }, { x: 760, y: 500 }, { x: 940, y: 590 }]
 
 // hide: 1 = all the way in the shell
+// Group A's kit: hide 1 = only the shell shows; peek = eyes in the doorway; thump = a heartbeat over the shell
 function tideHide(t) {
-  if (t < T.peek[0]) return 1
-  if (t < T.peek[1]) return lerp(1, 0.5, ease.outBack(prog(t, ...T.peek)))
-  if (t < T.tideBlush) return 0.5
-  if (t < T.dive[0]) return lerp(0.5, 0.38, ease.inOutCubic(prog(t, T.tideBlush, T.tideBlush + 0.4)))
-  if (t < T.resurface[0]) return lerp(0.38, 1, ease.inCubic(prog(t, ...T.dive)))
-  return lerp(1, 0.48, ease.outBack(prog(t, ...T.resurface)))
+  if (t < T.comeOut[0]) return 1
+  if (t < T.dive[0]) return 1 - ease.inOutCubic(prog(t, ...T.comeOut))
+  return ease.inCubic(prog(t, ...T.dive))
 }
+function tidePeek(t) {
+  if (t < T.comeOut[0]) return t < T.peek[0] ? (inR(t, 1.1, T.z[0]) || inR(t, T.l1, T.close1) ? 1 : 0.55) : clamp(0.55 + prog(t, ...T.peek))
+  if (t < T.resurface[0]) return 0
+  return ease.outBack(prog(t, ...T.resurface))
+}
+const tideThump = t => (inR(t, T.lA, T.comeOut[0]) ? 0.55 + 0.45 * Math.max(0, Math.sin((t - T.lA) * TAU * 1.6)) : 0) + (inR(t, T.lB, T.scratch) ? 0.3 : 0)
 function tideState(t) {
   const st = { mood: 'neutral', look: [-1, 0], blink: undefined, blush: undefined, shellLook: [-1, 0], shellBlink: 0, shake: 0 }
   // shell eyes while hidden
   st.shellBlink = (t % 2.7) < 0.14 ? 1 : 0
-  if (t < T.peek[0]) {
-    st.shellLook = t < T.z[0] ? [-1, 0] : inR(t, T.l1, T.z3) ? [-1, -1] : [-1, 0]
-    st.shake = inR(t, T.b1, T.close1) ? 0.5 : 0
+  if (t < T.comeOut[0]) {
+    st.shellLook = t < T.z[0] ? [-1, 0] : inR(t, T.l1, T.z3) ? [-1, -1] : t >= T.scratch ? [-1, 1] : [-1, 0]
+    st.shake = inR(t, T.b1, T.close1) ? 0.4 : inR(t, T.hearts, T.comeOut[0]) ? 0.6 : 0
     return st
   }
-  if (t < T.lA) { st.mood = 'wide'; st.look = [-1, 0]; return st }
-  if (t < T.scratch) { st.mood = 'sparkle'; st.look = t < T.lB ? [-1, 1] : [-1, 0]; st.blush = 0.9; return st }
   if (t < T.lC) { st.mood = 'wide'; st.look = [-1, 1]; return st }
   if (t < T.tideBlush) { st.mood = 'sparkle'; st.look = [-1, 1]; return st }
   if (t < T.cut3) { st.mood = 'happy'; st.blush = 1; return st }
   if (t < T.friends) { st.mood = 'sparkle'; st.look = [-1, 0]; st.blush = 0.8; return st }
-  if (t < T.resurface[0]) { st.shellLook = [-1, -1]; st.shake = 1; return st }
-  st.mood = 'wide'; st.look = [-1, -1]; st.blink = false
+  if (t < T.resurface[0]) { st.shake = t > T.dive[1] ? 1 : 0; return st }
+  st.shellLook = [-1, -1]; st.shake = 0.3
   return st
 }
 function emberState(t) {
@@ -227,8 +230,9 @@ async function build(stage) {
     dialogueBox(root, { ...BOX, lines: LINES4, open: T.open4, close: T.close4 }),
   ]
   const lesson = buildLesson(root, { ...LESSON, accentColor: ORBIT_PINK, dim: 0.62 })
-  const fx = layerCanvas(root), f = fx.getContext('2d')          // over the type: the freeze tint, the NEXT TIME card, the PREVIOUSLY flash
-  buildBug(root, 4)
+  const prev = buildPreviously(root, { at: 0, len: 1.1 })
+  const next = buildNextTime(root, { at: T.next, out: T.nextOut, top: 560 })
+  const bug = showBug(root, 4)
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
   const black = el('div', { position: 'absolute', inset: 0, background: '#000' }, root)
 
@@ -301,18 +305,14 @@ async function build(stage) {
   }
   function drawTideAt(t, C, k) {
     const tt = frz(t), st = tideState(tt), P = toS(C, TID.x, TID.y, S_TID)
-    drawTide(x, P.x, P.y, P.s, tt, { hide: tideHide(tt), mood: st.mood, look: st.look, blink: st.blink, blush: st.blush, hops: T_HOPS, seed: 6, pop: k, shellLook: st.shellLook, shellBlink: st.shellBlink, shake: st.shake })
+    drawTide(x, P.x, P.y, P.s, tt, { hide: tideHide(tt), peek: tidePeek(tt), peekLook: st.shellLook, thump: tideThump(tt), mood: st.mood, look: st.look, blink: st.blink, blush: st.blush, hops: T_HOPS, pop: k, shake: st.shake })
     // a tiny heart floats up from Tide when it blushes
     const hk = tt - T.tideBlush
     if (hk > 0 && hk < 1.4) { x.save(); x.globalAlpha = 1 - prog(hk, 1.0, 1.4); x.fillStyle = '#ff4f7e'; pixHeart(P.x + 40 * C.z, P.y - (150 + hk * 120) * C.z, 7 * C.z * easeOutBack(prog(hk, 0, 0.3), 2.5)); x.restore() }
   }
-  function drawPisces(t, C, k) {
+  function drawPiscesAt(t, C, k) {
     const tt = frz(t), st = pisState(tt), P = toS(C, PIS_AT.x, PIS_AT.y, PIS_AT.s)
-    const opts = { color: PIS.color, glyph: null, mood: st.mood, look: st.look, squash: st.squash, hops: PIS_HOPS, seed: 12, pop: k, glow: 0.8 }
-    drawStarChar(x, P.x, P.y, P.s, tt, opts)
-    inSprite(x, starFrame(P.x, P.y, P.s, tt, opts), () => { tearsCells(x, tt, st.tears); if (st.hank) hankieCells(x, st.hank) })
-    const B = toS(C, TISSUE_AT.x, TISSUE_AT.y)
-    drawTissues(x, B.x, B.y, 7 * C.z * k, { puff: bump(tt, T.scratch + 0.2, 0.3) * 2 })
+    drawPisces(x, P.x, P.y, P.s, tt, { mood: st.mood, look: st.look, squash: st.squash, hops: PIS_HOPS, pop: k, tears: st.tears, hank: st.hank, pull: bump(tt, T.scratch + 0.2, 0.4) + bump(tt, T.thud, 0.4) })
     // the tissue fountain
     for (const [tb, n] of [[T.scratch + 0.2, 10], [T.thud, 8]]) {
       const dt = tt - tb
@@ -385,8 +385,8 @@ async function build(stage) {
       x.fillStyle = '#2a1650'; x.fillRect(bx, by, bw, bh)
       const cx = bx + bw / 2, cy = by + bh / 2, tt = t
       if (i === 0) {          // Streak, with an entrance
-        drawCometTail(x, cx + 40, cy - 10, 62, tt, { ang: -0.45, len: 4, wag: 0.1 })
-        drawComet(x, cx + 40, cy - 10, 62, tt, { mood: 'happy', look: [-1, 0], shades: 1, tagText: 'STREAK' })
+        drawStreakTail(x, cx + 40, cy - 10, 62, tt, { ang: -0.45, len: 4, wag: 0.1 })
+        drawStreak(x, cx + 40, cy - 10, 62, tt, { mood: 'happy', look: [-1, 0], shades: 1 })
         stroked(x, '✨ STREAK ✨', cx, by + bh - 34, 30, CYAN, 8)
       } else if (i === 1) {   // Ember jogging, sweatband, 10K
         const jx = cx - 30 + Math.sin(tt * 14) * 6, jy = cy + 10 - Math.abs(Math.sin(tt * 14)) * 18
@@ -442,30 +442,13 @@ async function build(stage) {
   }
 
   // ═══════════════════════ PREVIOUSLY ON / freeze / NEXT TIME (fx layer) ═══════════════════════
-  function previously(t) {
+  // PREVIOUSLY ON: the recap is this same scene, graded pink (the kit's DOM band + scanlines sit on top)
+  function previouslyGrade(t) {
     if (t >= T.prevOut[1]) return
     const k = 1 - prog(t, ...T.prevOut)
-    x.save(); x.globalAlpha = k; x.globalCompositeOperation = 'color'; x.fillStyle = '#ff6fae'; x.fillRect(0, 0, W, H); x.restore()
-    f.save(); f.globalAlpha = k
-    f.fillStyle = 'rgba(70,0,40,0.28)'; f.fillRect(0, 0, W, H)
-    for (let y = 0; y < H; y += 6) { f.fillStyle = 'rgba(0,0,0,0.16)'; f.fillRect(0, y, W, 2) }
-    const ty = (t * 900) % H; f.fillStyle = 'rgba(255,255,255,0.08)'; f.fillRect(0, ty, W, 40)
-    f.textAlign = 'center'; f.textBaseline = 'alphabetic'
-    f.font = `700 44px ${MONO}`; f.letterSpacing = '12px'; f.fillStyle = '#fff4f9'; f.fillText('PREVIOUSLY ON', 546, 330); f.letterSpacing = '0px'
-    f.font = "italic 600 190px 'EB Garamond', Georgia, serif"; f.fillStyle = 'rgba(80,0,40,0.5)'; f.fillText('Orbit…', 546, 498)
-    f.fillStyle = '#ffffff'; f.fillText('Orbit…', 540, 490)
-    f.font = `700 30px ${MONO}`; f.fillStyle = '#ffd1e6'; f.fillText('▶ REC  EP 3', 540, 1860)
-    f.restore()
-    if (t > 1.0) { f.fillStyle = `rgba(255,240,248,${0.6 * bump(t, 1.0, 0.16)})`; f.fillRect(0, 0, W, H) }
-  }
-  function freezeFx(t) {
-    if (t < T.freeze) return
-    const k = clamp((t - T.freeze) / 0.12) * (1 - prog(t, ...T.out))
-    x.save(); x.globalAlpha = 0.5 * k; x.globalCompositeOperation = 'color'; x.fillStyle = '#ff6fae'; x.fillRect(0, 0, W, H); x.restore()
-    const fl = t - T.freeze; if (fl < 0.14) { f.fillStyle = `rgba(255,255,255,${0.55 * (1 - fl / 0.14)})`; f.fillRect(0, 0, W, H) }
-    // a still-frame border
-    f.save(); f.globalAlpha = k * 0.8 * (1 - prog(t, T.next - 0.1, T.next + 0.2)); f.strokeStyle = '#ffd1e6'; f.lineWidth = 6; f.strokeRect(40, 40, W - 80, H - 80)
-    f.font = `700 30px ${MONO}`; f.fillStyle = '#ffd1e6'; f.textAlign = 'right'; f.fillText('❚❚ PAUSED', W - 70, H - 70); f.restore()
+    x.save(); x.globalAlpha = k; x.globalCompositeOperation = 'color'; x.fillStyle = '#ff6fae'; x.fillRect(0, 0, W, H)
+    x.globalCompositeOperation = 'source-over'; x.fillStyle = 'rgba(70,0,40,0.3)'; x.fillRect(0, 0, W, H); x.restore()
+    if (t > 1.0) { x.fillStyle = `rgba(255,240,248,${0.6 * bump(t, 1.0, 0.16)})`; x.fillRect(0, 0, W, H) }
   }
 
   return {
@@ -474,14 +457,13 @@ async function build(stage) {
       const C = cam(t)
       const zs = 1 + (C.z - 1) * 0.12
       drawSky(x, t, { ...SKY_H, zoom: SKY_H.zoom * zs, dx: (540 - C.fx) * 0.06 * (C.z - 1), dy: (960 - C.fy) * 0.06 * (C.z - 1), moon: { ...SKY_H.moon, alpha: clamp(1.4 - C.z * 0.4) } })
-      f.clearRect(0, 0, W, H)
       const outA = 1 - ease.inQuad(prog(t, ...T.out))
       if (t < T.out[1] + 0.02) {
         x.save(); x.globalAlpha = outA
         drawFriends(t, C)
         drawViolinist(t, C)
         drawTideAt(t, C, 1)
-        drawPisces(t, C, 1)
+        drawPiscesAt(t, C, 1)
         drawEmber(t, C, 1)
         thudText(frz(t), C)
         talkCard(t, C)
@@ -491,13 +473,15 @@ async function build(stage) {
         sparkleRing(t, toS(C, EMB.x, EMB.y).x, toS(C, EMB.x, EMB.y).y, T.springUp[1], 12, 190, 0.2)
         dramaFx(t)
         x.restore()
+        previouslyGrade(t)
+        x.save(); x.globalAlpha = outA; drawFreeze(x, t, T.freeze); x.restore()
       }
       for (const b of boxes) b.update(t)
       for (const h of heads) h.pt.update(t, outK(t, h.out))
       lesson.update(t)
-      previously(t)
-      freezeFx(t)
-      drawNextTime(f, t, T.next, { out: T.nextOut, sub: 'EP 5 · THE CONSTELLATION' })
+      prev.update(t)
+      next.update(t)
+      bug.update(t)
       black.style.opacity = String(1 - ease.inOutQuad(prog(t, ...T.black)))
       drawGrain(gx, t)
     },
@@ -506,7 +490,7 @@ async function build(stage) {
 
 // card cuts: the hook → the turn, the faint → the lesson, the freeze → NEXT TIME (one every ~12 s)
 export const CUTS = [{ t: T.cut1, keep: true }, T.cut2, { t: T.cut4, keep: true }]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
 
 // ═══════════════════════════════════════ sound ═══════════════════════════════════════
 // pop / pluck / bell are written in the films' D-major palette (the engine moves them into B♭); brass / chip / strings are absolute (B♭ major / G minor).
