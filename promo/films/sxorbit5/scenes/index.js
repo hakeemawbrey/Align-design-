@@ -1,5 +1,5 @@
 // sxorbit5 — ORBIT · Ep 5: "The Constellation." (45 s vertical Align ad, Star Talk Shows · ORBIT, music: funk, G).
-// Cast from the shared ORBIT kit (./orbit.js = a snapshot of sxorbit1/scenes/orbit.js): ♈ EMBER, ♋ TIDE + her shell,
+// Cast from the shared ORBIT kit (promo/films/sxorbit1/scenes/orbit.js, imported directly): ♈ EMBER, ♋ TIDE + her shell,
 // ♓ PISCES (sobbing, as always). New: Ember's friends, a constellation of LOUD fire signs (♌ LEO, ♐ SAG, ♈ ALSO ARIES,
 // ♌ ANOTHER LEO), and ♍ VIRGO, the one quiet star in the corner. Story 0–40.6, then the shared end card.
 //   0.00–1.10  PREVIOUSLY ON ORBIT… "then… meet my friends? the whole constellation?"
@@ -28,7 +28,7 @@ import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { buildLesson, lessonCues, popText } from '../../lesson.js'
 import { rgba } from './props.js'
-import { drawEmber, drawTide, drawPisces, drawFreeze, showBug, buildPreviously, buildNextTime } from './orbit.js'
+import { drawEmber, drawTide, drawPisces, drawFreeze, showBug, buildPreviously, buildNextTime } from '../../sxorbit1/scenes/orbit.js'
 
 export const DURATION = 45
 const W = 1080, H = 1920

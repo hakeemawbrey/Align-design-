@@ -26,7 +26,7 @@ import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { buildLesson, lessonCues, popText } from '../../lesson.js'
 import { makeTalkCard, rgba, drawViolin, flyingTissue, drawBubble } from './props.js'
-import { drawTide, drawPisces, drawStreak, drawStreakTail, drawFreeze, showBug, buildPreviously, buildNextTime, starFrame, inSprite } from './orbit.js'
+import { drawTide, drawPisces, drawStreak, drawStreakTail, drawFreeze, showBug, buildPreviously, buildNextTime, starFrame, inSprite } from '../../sxorbit1/scenes/orbit.js'
 
 export const DURATION = 45
 const W = 1080, H = 1920
