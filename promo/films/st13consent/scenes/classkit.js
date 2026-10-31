@@ -12,7 +12,7 @@
 //     lines: [[ 't' | 's', text, { hold?, pre?, bulb? } ], …]   the dialogue (≤ 46 chars a line); bulb marks the student's "oh!"
 //     board: { title? }                   the chalkboard (BOARD below; writable 900 × 480)
 //     chalk: [ITEM, …]                     what the board builds. ITEM.at = seconds, or [lineIndex, offset] (from that line's start)
-//       { kind: 'text', text, x, y, at, size?, color?, cps?, align? }      x, y relative to the board's top-left (x0, y0)
+//       { kind: 'text', text, x, y, at, size?, color?, accent?, cps?, align?, lineH? }      x, y relative to the board's top-left (x0, y0)
 //       { kind: 'line', pts: [[x, y], …], at, dur?, color?, width?, dash?, arrow? }
 //       { kind: 'circle', x, y, r, at, dur?, color?, width?, from?, sweep? }
 //       { kind: 'tag', tag: 'sky' | 'astro' | 'tip', x, y, at, align? = 'right', scale? = 0.75 }   (the claim tag; sound included)
@@ -141,7 +141,7 @@ export function makeEpisode(cfg) {
       for (const c of items) {
         if (t < c.at - 0.001) continue
         const X = v => B.x0 + v, Y = v => B.y0 + v
-        if (c.kind === 'text') chalkText(x, t, { text: c.text, x: X(c.x), y: Y(c.y), at: c.at, size: c.size || 40, color: c.color || CHALK, cps: c.cps || 22, align: c.align || 'left' })
+        if (c.kind === 'text') chalkText(x, t, { text: c.text, x: X(c.x), y: Y(c.y), at: c.at, size: c.size || 40, color: c.color || CHALK, cps: c.cps || 22, align: c.align || 'left', ...(c.accent ? { accent: c.accent } : {}), ...(c.lineH ? { lineH: c.lineH } : {}) })
         else if (c.kind === 'line') chalkLine(x, t, { pts: c.pts.map(([a, b]) => [X(a), Y(b)]), at: c.at, dur: c.dur || 0.6, color: c.color || CHALK, width: c.width || 6, dash: c.dash, arrow: !!c.arrow })
         else if (c.kind === 'circle') chalkCircle(x, t, { x: X(c.x), y: Y(c.y), r: c.r, at: c.at, dur: c.dur || 0.6, color: c.color || CHALK, width: c.width || 6, from: c.from ?? -Math.PI / 2, sweep: c.sweep ?? Math.PI * 2 })
         else if (c.kind === 'tag') factTag(x, t, { kind: c.tag, at: c.at, out: T.boardOut[0], x: X(c.x), y: Y(c.y), align: c.align || 'right', scale: c.scale || 0.75 })
@@ -188,7 +188,7 @@ export function makeEpisode(cfg) {
         x.restore()
         // on top: the lightbulb over the student
         x2.clearRect(0, 0, 1080, 1920)
-        if (T.bulb !== null) { x2.save(); x2.globalAlpha = ok; lightbulb(x2, t, { at: T.bulb, x: rs.x, y: rs.top - 90, scale: 1.5 }); x2.restore() }
+        if (T.bulb !== null) { x2.save(); x2.globalAlpha = ok; lightbulb(x2, t, { at: T.bulb, x: rs.x + 150, y: rs.top + 4, scale: 1.4 }); x2.restore() }
         card.update(t)
         box.update(t)
         recap.update(t)
