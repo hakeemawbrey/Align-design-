@@ -187,7 +187,7 @@ export function makeEpisode(cfg) {
             else if (c.line) chalkLine(x, t, { pts: c.line.map(([u, v]) => [B.x0 + u, B.y0 + v]), at: c.at, dur: c.dur ?? 0.6, color: c.color, width: c.width ?? 6, dash: c.dash })
             else if (c.circle) chalkCircle(x, t, { x: B.x0 + c.circle[0], y: B.y0 + c.circle[1], r: c.circle[2], at: c.at, dur: c.dur ?? 0.8, color: c.color, width: c.width ?? 6, from: c.from ?? -Math.PI / 2, sweep: c.sweep ?? Math.PI * 2 })
           }
-          for (const g of tags) factTag(x, t, { kind: g.kind, at: g.at, out: [T.recap - 0.3, T.recap], x: B.x0 + g.x, y: B.y0 + g.y, align: g.align ?? 'left' })
+          for (const g of tags) factTag(x, t, { kind: g.kind, at: g.at, out: [T.recap - 0.3, T.recap], x: B.x0 + g.x, y: B.y0 + g.y, align: g.align ?? 'left', scale: g.scale ?? 1 })
           x.restore()
         }
         x.restore()
