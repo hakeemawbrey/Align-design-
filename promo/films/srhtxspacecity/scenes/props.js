@@ -135,7 +135,7 @@ export function aside(ctx, x, y, text, k, { size = 30, col = BONE, edge = '#c9a6
 /** a glass bubble helmet centred on (cx, cy), radius r. water 0…1 fills it from the bottom (Pisces' tears); fish = t for a
  *  tiny pixel fish swimming in the water (null = none). Draw it AFTER the star so the glass sits in front. */
 export function helmet(ctx, cx, cy, r, t, { a = 1, water = 0, fish = null, tint = BLUE } = {}) {
-  if (a <= 0 || r <= 1) return
+  if (a <= 0 || r <= 6) return
   ctx.save(); ctx.globalAlpha *= a
   // water
   if (water > 0.001) {
