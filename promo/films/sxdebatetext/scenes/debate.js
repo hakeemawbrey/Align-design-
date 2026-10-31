@@ -134,7 +134,7 @@ export function debateTimeline(cfg) {
 
 export function makeDebate(cfg) {
   const { T, L } = debateTimeline(cfg)
-  const SG = cfg.signs.map(s => ({ ...s, ...signStar(s.id) }))
+  const SG = cfg.signs.map(s => ({ ...signStar(s.id), ...s }))      // a sign may override its colour (e.g. two gold signs)
   const TAG = SG.map(s => `${s.glyph} ${s.name}`)
   const NARRATOR = 'THE STARS'
   const LINES = [
