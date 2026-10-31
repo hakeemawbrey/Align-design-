@@ -78,12 +78,25 @@ if (stills || sheet) {
   const n = Math.round((TO - FROM) * FPS)
   let done = 0
   const t0 = Date.now()
+  // each worker swaps in a fresh page every RECYCLE frames (long films can grow a page until Chromium kills it),
+  // and retries a frame on a fresh page if the page crashes anyway
+  const RECYCLE = Number(arg('recycle', 150))
   await Promise.all(Array.from({ length: WORKERS }, async (_, w) => {
-    const page = await newPage()
+    let page = await newPage(), shot = 0
     for (let i = w; i < n; i += WORKERS) {
-      await shoot(page, FROM + i / FPS, path.join(dir, `f${String(i).padStart(5, '0')}.jpg`))
+      const file = path.join(dir, `f${String(i).padStart(5, '0')}.jpg`)
+      for (let tries = 0; ; tries++) {
+        try { await shoot(page, FROM + i / FPS, file); break }
+        catch (e) {
+          if (tries >= 2) throw e
+          console.error(`worker ${w}: frame ${i} failed (${e.message.split('\n')[0]}), retrying on a fresh page`)
+          await page.close().catch(() => {}); page = await newPage(); shot = 0
+        }
+      }
+      if (++shot >= RECYCLE) { await page.close().catch(() => {}); page = await newPage(); shot = 0 }
       if (++done % 60 === 0) console.log(`${done}/${n} frames  ${((Date.now() - t0) / 1000).toFixed(0)}s`)
     }
+    await page.close().catch(() => {})
   }))
   await mkdir(path.dirname(OUT), { recursive: true })
   const audio = FILM ? path.join(ROOT, `promo/out/films/${FILM}/soundtrack.wav`) : FILM3 ? path.join(ROOT, 'promo/out/film3/soundtrack.wav') : FILM2 ? path.join(ROOT, 'promo/out/film2/soundtrack.wav') : TEASER ? path.join(ROOT, `promo/out/teasers/${TEASER}.wav`) : path.join(ROOT, 'promo/out/soundtrack.wav')
