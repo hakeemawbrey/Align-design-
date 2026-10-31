@@ -35,7 +35,7 @@ export function drawBits(x, bm, cols, cx, cy, cell, { rot = 0, outline = INK, al
 const DIGITS = {
   3: ['XXXX.', '....X', '....X', '.XXX.', '....X', '....X', 'XXXX.'],
   2: ['.XXX.', 'X...X', '....X', '...X.', '..X..', '.X...', 'XXXXX'],
-  1: ['..X..', '.XX..', 'X.X..', '..X..', '..X..', '..X..', 'XXXXX'],
+  1: ['..X..', '.XX..', 'XXX..', '..X..', '..X..', '..X..', 'XXXXX'],
 }
 const FACE = ['#fff1c8', '#ffe08a', '#f7d06a', '#f2c75c', '#ebb84a', '#e0a83e', '#d39535']
 /** draw digit d centred on (cx, cy) with cell size `cell`. glow 0…1, shine = 0…1 sweep position (null = none) */
