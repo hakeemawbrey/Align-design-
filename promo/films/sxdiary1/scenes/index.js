@@ -23,7 +23,7 @@ import { buildLesson, lessonCues } from '../../lesson.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes } from '../../startalk.js'
 import { drawRecFrame, vlogCam, vlogCutCues } from '../../st9day.js'
 import { TAU, GOLD, BONE, INK, PINK, MINT, INTER, MONO, SERIF, DIARY_FONTS, pop01, popOut, pix, rr, txt,
-  drawRoom, drawPiscesWindow, drawTaurus, drawPhone, drawCardBack, showBug, dayTitle, heads, headCues } from './diary.js'
+  drawRoom, drawPiscesWindow, drawTaurus, drawPhone, drawCardBack, showBug, dayTitle, heads, headCues, drawRoomBlurred } from './diary.js'
 
 export const DURATION = 45
 const KEY = 'D'
@@ -178,7 +178,7 @@ async function build(stage) {
   }
   function phone(t, which) {
     // the room, out of focus behind
-    x.save(); x.filter = 'blur(10px) brightness(0.45)'; drawRoom(x, t); x.restore()
+    drawRoomBlurred(x, t)
     const k = pop01(t, which === 1 ? T.phone1 : T.phone2, 0.35, 1.8)
     drawPhone(x, 540, 990, 540, 930, { rot: -0.03 + Math.sin(t * 1.3) * 0.01, pop: 0.6 + 0.4 * k }, (xx, sx, sy, sw, sh) => {
       if (which === 1) step2(t, sx, sy, sw, sh, { q: true })
@@ -211,7 +211,7 @@ async function build(stage) {
     txt(x, '♥', cx + 6 * s, cy + 38 * s, { size: 22 * s, color: '#e0344a', font: INTER, shadow: false })
   }
   function call(t) {
-    x.save(); x.filter = 'blur(10px) brightness(0.45)'; drawRoom(x, t); x.restore()
+    drawRoomBlurred(x, t)
     const k = pop01(t, T.call, 0.35, 1.8)
     const picked = t >= T.pick
     drawPhone(x, 540, 990, 560, 930, { rot: 0.02 + Math.sin(t * 1.1) * 0.012, pop: 0.6 + 0.4 * k }, (xx, sx, sy, sw, sh) => {

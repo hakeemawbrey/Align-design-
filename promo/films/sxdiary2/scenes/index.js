@@ -21,7 +21,7 @@ import { buildLesson, lessonCues } from '../../lesson.js'
 import { dialogueBox, talkCues, talkHops, lineTimes } from '../../startalk.js'
 import { drawRecFrame, vlogCam, vlogCutCues } from '../../st9day.js'
 import { TAU, GOLD, BONE, INK, PINK, MINT, INTER, SERIF, DIARY_FONTS, pop01, pix, rr, txt,
-  drawRoom, drawPiscesWindow, drawTaurus, drawPhone, showBug, dayTitle, heads, headCues } from '../../sxdiary1/scenes/diary.js'
+  drawRoom, drawPiscesWindow, drawTaurus, drawPhone, showBug, dayTitle, heads, headCues, drawRoomBlurred } from '../../sxdiary1/scenes/diary.js'
 
 export const DURATION = 45
 const KEY = 'Ab'
@@ -155,7 +155,7 @@ async function build(stage) {
     x.restore()
   }
   function phone(t) {
-    x.save(); x.filter = 'blur(10px) brightness(0.45)'; drawRoom(x, t); x.restore()
+    drawRoomBlurred(x, t)
     const first = t < T.conf2
     const k = pop01(t, first ? T.phone1 : T.phone2, 0.35, 1.8)
     drawPhone(x, 540, 990, 540, 930, { rot: -0.02 + Math.sin(t * 1.3) * 0.01, pop: 0.6 + 0.4 * k }, (xx, sx, sy, sw, sh) => {

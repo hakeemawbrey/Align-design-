@@ -21,7 +21,7 @@ import { buildLesson, lessonCues } from '../../lesson.js'
 import { dialogueBox, talkCues, talkHops, lineTimes, signStar } from '../../startalk.js'
 import { drawRecFrame, vlogCam, vlogCutCues } from '../../st9day.js'
 import { TAU, GOLD, BONE, INK, PINK, MINT, INTER, SERIF, MONO, DIARY_FONTS, pop01, pix, rr, txt,
-  drawRoom, drawPiscesWindow, drawTaurus, drawPhone, showBug, dayTitle, heads, headCues } from '../../sxdiary1/scenes/diary.js'
+  drawRoom, drawPiscesWindow, drawTaurus, drawPhone, showBug, dayTitle, heads, headCues, drawRoomBlurred } from '../../sxdiary1/scenes/diary.js'
 
 export const DURATION = 45
 const KEY = 'Bb'
@@ -176,7 +176,7 @@ async function build(stage) {
     if (t > T.ok) { const k = pop01(t, T.ok + (who === 'YOU' ? 0 : 0.12), 0.3, 3); x.save(); x.translate(cx, cy + h / 2 + 50); x.scale(k, k); x.fillStyle = '#2fa05a'; x.beginPath(); x.arc(0, 0, 34, 0, 6.28); x.fill(); txt(x, '✓', 0, 2, { size: 40, color: '#ffffff', font: INTER, weight: 800 }); x.restore() }
   }
   function phone(t, which) {
-    x.save(); x.filter = 'blur(10px) brightness(0.45)'; drawRoom(x, t); x.restore()
+    drawRoomBlurred(x, t)
     const k = pop01(t, which === 1 ? T.phone1 : T.phone2, 0.35, 1.8)
     drawPhone(x, 540, 990, 540, 930, { rot: 0.02 + Math.sin(t * 1.2) * 0.01, pop: 0.6 + 0.4 * k }, (xx, sx, sy, sw, sh) => {
       const cx = sx + sw / 2

@@ -46,6 +46,18 @@ export function txt(x, s, X, Y, { size = 30, color = BONE, align = 'center', fon
 const WALL = '#4a2f5c', WALL2 = '#42295a', WALL3 = '#56386a', TRIM = '#e8d9c0', FLOOR = '#6b4630', PLANK = '#5a3a28'
 export const WIN = { x0: 648, y0: 470, x1: 948, y1: 800 }
 export const FLOOR_Y = 1330
+// The room out of focus (behind the phone). Drawn sharp to an offscreen canvas, then blurred as one image:
+// a canvas filter on the hundreds of small room rects would blur each one on its own (~24 s a frame in the renderer).
+let soft
+export function drawRoomBlurred(x, t, filter = 'blur(10px) brightness(0.45)') {
+  const c = x.canvas
+  if (!soft || soft.width !== c.width || soft.height !== c.height) { soft = document.createElement('canvas'); soft.width = c.width; soft.height = c.height }
+  const o = soft.getContext('2d')
+  o.setTransform(1, 0, 0, 1, 0, 0); o.clearRect(0, 0, soft.width, soft.height)
+  o.setTransform(x.getTransform()); drawRoom(o, t)
+  x.save(); x.setTransform(1, 0, 0, 1, 0, 0); x.filter = filter; x.drawImage(soft, 0, 0); x.restore()
+}
+
 export function drawRoom(x, t, { lamp = 1 } = {}) {
   const W = 1080, H = 1920
   x.save()
