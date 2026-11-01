@@ -311,6 +311,9 @@ export function makeNobody(cfg) {
     const card1 = cardShell(root, C1)
     el('div', { position: 'absolute', left: '52px', top: '34px', font: `800 60px ${INTER}`, color: 'rgba(27,18,54,0.5)', letterSpacing: '-0.01em' }, card1, 'Nobody:')
     const cap = memeLine(card1, cfg.caption, { size: 88, accentSize: 104, accentColor: cfg.capAccent || '#7a4fd0', top: 152, left: 52 })
+    // a long sign line shrinks (never grows) to fit the card
+    { card1.style.display = 'block'; const wd = cap.box.scrollWidth, maxW = C1.width - 104; card1.style.display = 'none'
+      if (wd > maxW) { const f = maxW / wd; cap.box.style.fontSize = (88 * f) + 'px'; cap.box.style.top = (152 + 40 * (1 - f)) + 'px'; for (const w of cap.ws) if (w.accent) w.e.style.fontSize = (104 * f) + 'px' } }
 
     const box = LINES.length ? dialogueBox(root, { lines: LINES, y: cfg.boxY ?? 1400, close: boxClose, cps: CPS }) : null
     const last = popText(root, cfg.last, { top: cfg.lastTop ?? 1500, size: 104, accentSize: 140, at: T.P, late: 1, lateAt: T.PLate, wobble: true, accentColor: cfg.lastAccent || GOLD, fit: true })
