@@ -406,7 +406,7 @@ export function makeSilent(cfg) {
     }
     const dx = F.shake ? F.shake * Math.sin(t * 57) : 0
     x.save(); x.translate(REV.x + dx, REV.y + dy); x.rotate(F.tilt || 0); x.translate(-REV.x, -REV.y)
-    const opts = { color: REVS.color, glyph: REVS.glyph, mood: F.mood, look: F.look, blink: F.blink, blush: F.blush, hops: F.hops, squash: sq, seed: 3, glow: 1.1, pop: F.pop ?? 1 }
+    const opts = { color: REVS.color, glyph: REVS.glyph, mood: F.mood, look: F.look, blink: F.blink, blush: F.blush, hops: F.hops, squash: sq, seed: 3, glow: 1.1, pop: F.pop ?? 1, zzz: false }
     drawStarChar(x, REV.x, REV.y, REV.s, t, opts)
     const SF = starFrame(REV.x, REV.y, REV.s, t, opts)
     inSprite(x, SF, () => {
