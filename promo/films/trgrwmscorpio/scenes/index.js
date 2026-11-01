@@ -36,7 +36,7 @@ const T = {
   scoIn: 0.3, moody: [0.95, 1.25], shades: [2.82, 3.12], look1: 3.4,
   h1: 7.0, h1Out: [13.45, 13.65], look2: 7.3, look3: 10.0,
   cut: 13.9,
-  h2: 14.0, h2Out: [20.05, 20.25], fog: [15.4, 16.4], starsIn: 14.3, starsOut: [20.0, 20.3],
+  h2: 14.0, h2Out: [20.05, 20.25], fog: [15.4, 16.4], starsIn: 14.1, starsOut: [20.0, 20.3],
   buzz: [20.25, 20.55], notif: 20.6, notifOut: [22.3, 22.6], grin: 20.95, clear: [20.95, 21.4], heart: 21.6,
   h3: 22.45, h3Land: 23.05, smitten: 23.5,
   out: [25.08, 25.48], h3Out: [25.18, 25.45], bugOut: [25.3, 25.55],
@@ -50,11 +50,11 @@ const LINES = [
   { t: 1.4, speaker: SSP, color: ACC, text: 'tonight I reveal *nothing.*' },
   { t: 4.3, speaker: SSP, color: ACC, text: "they'll wonder about me for *weeks.*" },
   { t: 9.6, speaker: SSP, color: ACC, text: 'I am a closed book. a *locked* one.' },
-  { t: 14.7, speaker: SPEAK, text: 'mysterious. you checked your phone *14 times.*' },
-  { t: 17.4, speaker: SSP, color: ACC, text: 'that was… *research.*' },
+  { t: 14.4, speaker: SPEAK, text: 'mysterious. you checked your phone *14 times.*' },
+  { t: 17.75, speaker: SSP, color: ACC, text: 'that was… *research.*' },
 ]
 const CPS = 30
-const BOX1 = { open: 1.25, close: 12.95 }, BOX2 = { open: 14.5, close: 20.15 }
+const BOX1 = { open: 1.25, close: 12.95 }, BOX2 = { open: 14.25, close: 20.5 }
 const CLOCK = [[0, '7:10'], [T.h1, '7:25'], [T.h2, '7:50'], [T.notif, '7:54']]
 
 // layout

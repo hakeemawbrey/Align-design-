@@ -3,7 +3,7 @@
 //   0.0–6.9    "Talk card | *rehearsal.*"  7:00 PM. ♋ Cancer faces a standing vanity mirror (its reflection copies it):
 //              "ok mirror. we're practicing." Card one drops in: "Morning person or night owl?" → "morning! I make tea for
 //              everyone." The reflection nods. Sticker: "nailed it."
-//   7.0–13.7   "Card two. | *Uh oh.*"  7:20. "What's your comfort meal?" → "my grandma's soup. she'd hum while—" The sniffles
+//   7.0–13.7   "Card two. | *Uh oh.*"  7:20. "What's your comfort meal?" → "my grandma's soup. she'd hum—" The sniffles
 //              start, in the mirror too. "I'm fine. it's the onions." Sticker: "there are no onions."
 //  13.9        card cut.
 //  14.0–20.2   "Card three. | *The big one.*"  7:45. "What does a perfect lazy Sunday look like for you?" → "someone to come
@@ -37,7 +37,7 @@ const T = {
   canIn: 0.3, card1: 2.82, nailed: 5.4, nailedOut: [6.6, 6.85],
   h1: 7.0, h1Out: [13.45, 13.65], card2: 7.15, sniff: 9.0, stream: 10.0, onions: 11.95, onionsOut: [13.3, 13.55],
   cut: 13.9,
-  h2: 14.0, h2Out: [20.05, 20.25], card3: 14.15, spiral: 14.6, sob: 16.4, starsIn: 17.1, starsOut: [20.0, 20.3], tissues: 18.3,
+  h2: 14.0, h2Out: [20.05, 20.25], card3: 14.15, spiral: 14.6, sob: 16.4, starsIn: 17.35, starsOut: [20.0, 20.3], tissues: 18.3,
   cardsOut: [20.0, 20.3],
   buzz: [20.25, 20.55], notif: 20.6, notifOut: [22.3, 22.6], stop: 20.7, heart: 21.45,
   morph: [22.2, 22.6], h3: 22.45, h3Land: 23.05, mutual: 23.5,
@@ -47,13 +47,13 @@ const CSP = `${CAN.glyph}︎ CANCER`, SPEAK = 'THE STARS'
 const LINES = [
   { t: 0.9, speaker: CSP, color: ACC, text: "ok mirror. we're *practicing.*" },
   { t: 3.6, speaker: CSP, color: ACC, text: 'morning! I make tea for *everyone.*' },
-  { t: 7.9, speaker: CSP, color: ACC, text: "my grandma's soup. she'd hum *while—*" },
-  { t: 10.55, speaker: CSP, color: ACC, text: "I'm fine. it's the *onions.*" },
-  { t: 14.9, speaker: CSP, color: ACC, text: 'someone to come home to, *and…*' },
-  { t: 17.5, speaker: SPEAK, text: 'sweetie, that was the *practice* round.' },
+  { t: 7.9, speaker: CSP, color: ACC, text: "my grandma's soup. she'd *hum—*" },
+  { t: 10.6, speaker: CSP, color: ACC, text: "I'm fine. it's the *onions.*" },
+  { t: 14.75, speaker: CSP, color: ACC, text: 'someone to come home to, *and…*' },
+  { t: 17.75, speaker: SPEAK, text: 'sweetie, that was the *practice* round.' },
 ]
 const CPS = 30
-const BOX1 = { open: 0.75, close: 12.95 }, BOX2 = { open: 14.7, close: 20.15 }
+const BOX1 = { open: 0.75, close: 13.25 }, BOX2 = { open: 14.55, close: 20.9 }
 const CLOCK = [[0, '7:00'], [T.h1, '7:20'], [T.h2, '7:45'], [T.notif, '7:52']]
 const CARDS = [{ img: 'card-talk-2.png', at: T.card1, out: T.h1 - 0.1 }, { img: 'card-talk-5.png', at: T.card2, out: T.cut - 0.4 }, { img: 'card-talk-3.png', at: T.card3, out: T.cardsOut[0] }]
 

@@ -7,7 +7,7 @@
 //              a "re-ready #n" counter, Aries pacing, the spiral of "8?" "now?" "!!" starting up.
 //              "is it eight yet? it feels like eight."
 //  13.9        card cut.
-//  14.0–20.2   "7:15. | *Fully layered.*"  Aries is now wearing every outfit at once: three hats, two bow ties.
+//  14.0–20.2   "Maximum | *readiness.*"  Aries is now wearing every outfit at once: three hats, two bow ties.
 //              THE STARS: "sweetie. you're wearing every outfit." Aries: "layers are readiness." 7:58: Aries dozes off.
 //  20.2–22.3   the turn: the phone buzzes; the date's text: "got ready way too early lol. come now?" Aries wakes.
 //  22.3–25.5   "Ready. | *Still.*"  One last spin (0.4 s) back to the very first outfit; heart eyes; Pisces fountains.
@@ -64,7 +64,7 @@ const LINES = [
   { t: 4.45, speaker: ASP, color: ACC, text: "ready! …wait, the date's at *eight?*" },
   { t: 9.3, speaker: ASP, color: ACC, text: 'is it eight yet? it feels like *eight.*' },
   { t: 14.55, speaker: SPEAK, text: "sweetie. you're wearing *every* outfit." },
-  { t: 17.0, speaker: ASP, color: ACC, text: 'layers are *readiness.*' },
+  { t: 17.5, speaker: ASP, color: ACC, text: 'layers are *readiness.*' },
 ]
 const CPS = 30
 const BOX1 = { open: 0.75, close: 12.95 }, BOX2 = { open: 14.4, close: 20.15 }
@@ -87,7 +87,7 @@ async function build(stage) {
   const cv = layerCanvas(root), x = cv.getContext('2d')
   const H0 = popText(root, 'Ready in | *four seconds.*', { top: 172, size: 104, accentSize: 146, at: T.h0, late: 2, lateAt: T.h0Land, wobble: true, accentColor: ACC })
   const H1 = popText(root, 'Re-ready. | *Every ten minutes.*', { top: 178, size: 104, accentSize: 126, at: T.h1, gap: 0.1, accentColor: GOLD })
-  const H2 = popText(root, '7:15. | *Fully layered.*', { top: 178, size: 104, accentSize: 142, at: T.h2, gap: 0.1, accentColor: '#9fe6b0' })
+  const H2 = popText(root, 'Maximum | *readiness.*', { top: 178, size: 104, accentSize: 142, at: T.h2, gap: 0.1, accentColor: '#9fe6b0' })
   const H3 = popText(root, 'Ready. | *Still.*', { top: 172, size: 116, accentSize: 170, at: T.h3, late: 1, lateAt: T.h3Land, wobble: true, accentColor: ACC })
   const HEADS = [[H0, T.h0Out], [H1, T.h1Out], [H2, T.h2Out], [H3, T.h3Out]]
   const box1 = dialogueBox(root, { lines: LINES.slice(0, 3), y: 1400, ...BOX1, cps: CPS })
@@ -172,7 +172,7 @@ async function build(stage) {
       aries(t)
       drawTable(x, t, { phone: { cx: 330, buzz: T.buzz } })
       theStars(t)
-      drawSpiral(x, t, ARI_P.x, ARI_P.y - 60, { from: T.spiral, stop: T.cut - 0.15, R: 250, tokens: ['8?', 'now?', '!', '8?', '…', '?!', 'now?', '!!'] })
+      drawSpiral(x, t, ARI_P.x, ARI_P.y - 60, { from: T.spiral, stop: T.cut - 0.8, R: 250, tokens: ['8?', 'now?', '!', '8?', '…', '?!', 'now?', '!!'] })
       drawSpiral(x, t, ARI_P.x, ARI_P.y - 60, { from: T.h2 + 0.3, stop: T.doze, R: 260, tokens: ['8?', 'now?', '!', '8?', '…', '?!', 'now?', '!!'], ramp: 3 })
       // stickers
       drawSticker(x, t, { at: T.watch, out: T.readyOut, text: 'time: *0:04*', cx: 250, cy: 860, rot: -0.08, size: 44 })
