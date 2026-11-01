@@ -5,7 +5,7 @@ user's Google Drive, one subfolder per show/section. Safe to re-run: skip any fi
 
 ## Where the videos are
 
-Use the **Star Talk library** first: eight pages holding the re-cut versions and the new Trends films (one card transition per video, no
+Use the **Star Talk library** first: nine pages holding the re-cut versions plus the new Trends and Then vs Now films (one card transition per video, no
 season numbers). Each page's films JSON lists every film on it; films whose `video` is empty are still rendering.
 Use the **Artifact** tool on all of these, never curl/WebFetch.
 
@@ -19,6 +19,7 @@ Use the **Artifact** tool on all of these, never curl/WebFetch.
 | 6 Season 13 | "Season 13" | https://claude.ai/artifact/J2peBiXxgZJm3ErvVz94PL |
 | 7 Remix | "Star Talk Remix" | https://claude.ai/artifact/7kLNcQpRUJQDJ575ht3sd4 |
 | 8 Trends | one per trend format (POV, Starter Pack, …) | https://claude.ai/artifact/YBmX7eEisoz96hDjvyucoT |
+| 9 Then vs Now | one per section (Signs dating, Dating moments, …) | https://claude.ai/artifact/G1vpVY9Nkno8t86qkUwW23 |
 
 Each film has `id`, `group` (section key), `show`, `title`, `video`, `poster`; the page's `PAGE.sections` maps group
 keys to section names.
