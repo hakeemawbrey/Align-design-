@@ -4,7 +4,7 @@
 //
 // A documentary profile, one sign per episode, a gentle music-biopic parody. Every episode runs the same seven beats:
 //   1. COLD OPEN   the sign's star in a soft interview spotlight says a one-line hook (dialogue box).
-//   2. TITLE CARD  "★ STAR TALK · SEASON 6 ★" (Space Mono bone), "BEHIND THE SIGN" (Space Mono 700 gold, letter-spaced,
+//   2. TITLE CARD  "★ STAR TALK ★" (Space Mono bone), "BEHIND THE SIGN" (Space Mono 700 gold, letter-spaced,
 //                  typed on, gold pixel rules either side), the glyph huge in the sign colour with a halo, the NAME in
 //                  Inter 800 bone, a Garamond-italic accent subtitle in the sign colour ("the first one."), then the FACT
 //                  STRIP: a gold stepped pixel panel with two Space Mono rows (element · modality · ruler / symbol · dates),
@@ -328,7 +328,7 @@ function drawTitleCard(ctx, t, { at, sign, accent, facts }) {
   ctx.fillStyle = `rgba(5,3,12,${0.72 * kin * o})`; ctx.fillRect(0, 0, 1080, 1920)
   ctx.globalAlpha = o
   // tag + BEHIND THE SIGN, typed on
-  monoText(ctx, '★ STAR TALK · SEASON 6 ★', 540, 470, { size: 26, color: BONE, spacing: 0.22, n: Math.floor((t - T.tag) / 0.025) + 1, alpha: 0.7 })
+  monoText(ctx, '★ STAR TALK ★', 540, 470, { size: 26, color: BONE, spacing: 0.22, n: Math.floor((t - T.tag) / 0.025) + 1, alpha: 0.7 })
   const n = Math.floor((t - T.bts) / 0.04) + 1
   if (t >= T.bts) {
     const w = monoText(ctx, BTS, 540, 546, { size: 58, color: GOLD, spacing: 0.22, n })
