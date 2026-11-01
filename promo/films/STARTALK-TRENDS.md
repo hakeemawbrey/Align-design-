@@ -18,7 +18,8 @@ film should feel like something you'd send to the group chat: instantly readable
 - **Folders:** `promo/films/tr<name>/` exactly as listed. Never edit another folder or a shared module.
 - **Commit:** `/tmp/claude-0/commit.sh "Star Talk Trends: <format>: <title> (<len> s)" promo/films/<f>`.
 - **Queue the render at the FRONT of the queue** (the user wants these sooner than the re-renders already waiting):
-  `flock /tmp/claude-0/queue.lock sed -i '1i <f> v1' /tmp/claude-0/queue.txt`
+  `flock /tmp/claude-0/queue.lock sh -c 'q=/tmp/claude-0/queue.txt; { echo "<f> v1"; cat $q 2>/dev/null; } > $q.new && mv $q.new $q'`
+  (works when the queue is empty too; `sed -i '1i'` does not)
 - **No season numbers anywhere** (not on cards, bugs or captions). The format name is the bug, e.g. "POV" or
   "NOBODY:", in Inter 800 small caps, letter-spaced, top-left, 56 px from the edges, clear of captions and boxes.
 - **Card cuts:** cardfx.js now plays exactly one card transition per video (the middle candidate of your `CUTS`), and
