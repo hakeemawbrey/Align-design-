@@ -24,11 +24,9 @@
 // 5. Check:  node promo/scripts/render.mjs --film=<name> --vertical --stills=<cut-0.15>,<cut>,<cut+0.15> --dir=/tmp/…
 //            node promo/scripts/teaser-sound.mjs --film=<name>
 //
-// SELECTION (not every beat change gets cards: about one card transition per 12–15 s)
-//   selectCuts(cuts, opts) keeps n = min(clamp(round(cuts.length / 2.5), 1, 4), max(1, round((lastCut - firstCut + 8) / 13)))
-//   cuts (the 2nd term caps it at ≈1 per 13 s, so a 15 s film with many beats still gets one) at evenly spaced indices
-//   floor((j + ½)·len / n), j = 0…n-1 (so the middle ones win: 3 cuts → the 2nd; 5 → 2nd + 4th), plus any { keep: true }.
-//   cardCuts(cuts, { all: true }) / cardCutCues(cuts, { all: true }) play every cut. Deterministic.
+// SELECTION: exactly ONE card transition per video (the middle candidate cut), and each video gets its own kind,
+//   picked from the film's name (VARIANTS: flip ±, deal from bottom/left/right, shuffle). A cut's own kind/dir/from,
+//   { keep: true } and { all: true } are ignored now. Deterministic: pictures and sound pick the same cut and kind.
 //
 // PICKING CUT TIMES
 //   • A cut covers the screen completely from t-0.03 to t+0.03 and is in motion over about t-0.26 … t+0.26.
@@ -88,15 +86,29 @@ function normCuts(cuts, { kinds = CUT_KINDS } = {}) {
     .map((c, i) => { const k = c.kind || kinds[i % kinds.length]; return { ...c, kind: KIND_ALIAS[k] || k, i } })
 }
 
-/** the cuts that actually play (shared by cardCuts and cardCutCues, so pictures and sound always agree) */
+// ONE card transition per video, and each video gets its own kind (flip / deal / shuffle and their directions),
+// chosen from the film's name so the picture (browser, ?f=<name>) and the sound (node, --film=<name>) always agree.
+const VARIANTS = [{ kind: 'flip', dir: 1 }, { kind: 'deal', from: 'bottom' }, { kind: 'shuffle' },
+  { kind: 'flip', dir: -1 }, { kind: 'deal', from: 'left' }, { kind: 'deal', from: 'right' }]
+function filmId() {
+  try { if (typeof location !== 'undefined') { const f = new URLSearchParams(location.search).get('f'); if (f) return f } } catch (_) { /* no location */ }
+  try { const a = (globalThis.process?.argv || []).find(x => x.startsWith('--film=')); if (a) return a.slice(7) } catch (_) { /* no argv */ }
+  return ''
+}
+function variantFor(id, all) {
+  const key = id || all.map(c => c.t.toFixed(2)).join(',')
+  let h = 2166136261; for (let i = 0; i < key.length; i++) { h ^= key.charCodeAt(i); h = Math.imul(h, 16777619) }
+  return VARIANTS[(h >>> 0) % VARIANTS.length]
+}
+
+/** the cut that actually plays (shared by cardCuts and cardCutCues, so pictures and sound always agree): just one, the
+ *  middle candidate, in this video's own transition kind. opts.all / { keep } no longer add more. */
 export function selectCuts(cuts, opts = {}) {
   const all = normCuts(cuts, opts)
-  if (opts.all || all.length <= 1) return all
-  const byCount = clamp(Math.round(all.length / 2.5), 1, 4)
-  const bySpan = Math.max(1, Math.round((all[all.length - 1].t - all[0].t + 8) / 13))   // ≈1 per 13 s of film the cuts span
-  const n = Math.min(all.length, byCount, bySpan)
-  const pick = new Set(Array.from({ length: n }, (_, j) => Math.floor((j + 0.5) * all.length / n)))
-  return all.filter((c, i) => pick.has(i) || c.keep)
+  if (!all.length) return all
+  const c = all[Math.floor(all.length / 2)], v = variantFor(opts.film ?? filmId(), all)
+  const { dir, from, ...rest } = c
+  return [{ ...rest, ...v }]
 }
 /** does the cut at time t play? */
 export const cutPlays = (cuts, t, opts) => selectCuts(cuts, opts).some(c => Math.abs(c.t - t) < 1e-6)
@@ -329,6 +341,8 @@ export function cardCutCues(cuts, opts = {}) {
 
 // ═══════════════════════════════════════════ cardFrame
 export function cardFrame({ start = 0, end, label = 'ALIGN · TONIGHT', numeral = null, fadeIn = 0.4, fadeOut = 0.4, opacity = 1, corners = 'tl tr bl br' } = {}) {
+  // no season numbers on the cards: 'S9 E52' → 'E52', 'S2' / 'SEASON 3' → the plain star
+  if (numeral) numeral = String(numeral).replace(/\b(SEASON|Season)\s*[0-9IVX]+\s*[·•:,-]?\s*/g, '').replace(/\bS\d+\s*[·•:,-]?\s*/g, '').trim() || null
   return async function buildCardFrame(stage) {
     try { await document.fonts.load(`700 20px 'Space Mono'`) } catch (_) { /* optional */ }
     const root = fill(stage, { pointerEvents: 'none' })

@@ -431,7 +431,7 @@ async function build(stage) {
     x.font = `800 104px ${INTER}`; x.fillStyle = BONE; x.fillText('THE END…', 0, -10)
     const fk = clamp((tau - 0.8) / 0.3), fs = easeOutBack(fk, 2.6)
     x.save(); x.translate(0, 120); x.rotate(-0.06); x.scale(fs, fs); x.font = `italic 600 130px ${SERIF}`; x.fillStyle = ORBIT_PINK; x.fillText('for now', 0, 0); x.restore()
-    x.font = `700 24px ${MONO}`; x.letterSpacing = '6px'; x.fillStyle = rgba(GOLD, 0.85); x.fillText('ORBIT · SEASON ONE', 3, -h / 2 + 70); x.letterSpacing = '0px'
+    x.font = `700 24px ${MONO}`; x.letterSpacing = '6px'; x.fillStyle = rgba(GOLD, 0.85); x.fillText('ORBIT', 3, -h / 2 + 70); x.letterSpacing = '0px'
     x.restore()
     if (tau > 0.8) sparkleRing(t, 540, 1010, T.end + 0.8, 14, 260, 0.2)
   }
