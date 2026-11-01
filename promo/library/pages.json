@@ -1,0 +1,251 @@
+[
+ {
+  "n": 1,
+  "slug": "shows",
+  "title": "Star Talk Shows",
+  "sections": [
+   {
+    "key": "shows",
+    "name": "The shows",
+    "sub": null
+   },
+   {
+    "key": "guide",
+    "name": "Your Star Guide",
+    "sub": null
+   },
+   {
+    "key": "ask",
+    "name": "Ask the Stars",
+    "sub": null
+   }
+  ],
+  "url": "https://claude.ai/artifact/Y1A9dvVHzNCkZHVSHVrShL"
+ },
+ {
+  "n": 2,
+  "slug": "s1-3",
+  "title": "Star Talk Seasons 1–3",
+  "sections": [
+   {
+    "key": "specials",
+    "name": "Season 1 & specials",
+    "sub": null
+   },
+   {
+    "key": "s2",
+    "name": "Season 2",
+    "sub": null
+   },
+   {
+    "key": "s3",
+    "name": "Season 3",
+    "sub": null
+   }
+  ],
+  "url": "https://claude.ai/artifact/PYfdgxDomLRCfJPYd5o41m"
+ },
+ {
+  "n": 3,
+  "slug": "s4-6",
+  "title": "Star Talk Seasons 4–6",
+  "sections": [
+   {
+    "key": "s4",
+    "name": "Season 4",
+    "sub": "Houston, We Have a Match"
+   },
+   {
+    "key": "s5",
+    "name": "Season 5",
+    "sub": "Star-Crossed"
+   },
+   {
+    "key": "s6",
+    "name": "Season 6",
+    "sub": "Behind the Sign"
+   }
+  ],
+  "url": "https://claude.ai/artifact/7tmBGxVECMsY26EdGH8jEz"
+ },
+ {
+  "n": 4,
+  "slug": "s7-9",
+  "title": "Star Talk Seasons 7–9",
+  "sections": [
+   {
+    "key": "s7",
+    "name": "Season 7",
+    "sub": "Sign to Sign"
+   },
+   {
+    "key": "s8",
+    "name": "Season 8",
+    "sub": "Ex Retrograde"
+   },
+   {
+    "key": "s9",
+    "name": "Season 9",
+    "sub": "A Day in the Life"
+   }
+  ],
+  "url": "https://claude.ai/artifact/4x6PZMRzDhAdyKQ464TaQ4"
+ },
+ {
+  "n": 5,
+  "slug": "s10-12",
+  "title": "Star Talk Seasons 10–12",
+  "sections": [
+   {
+    "key": "s10",
+    "name": "Season 10",
+    "sub": "Little Stars"
+   },
+   {
+    "key": "s11",
+    "name": "Season 11",
+    "sub": "Far Out"
+   },
+   {
+    "key": "s12",
+    "name": "Season 12",
+    "sub": "Hot Takes"
+   }
+  ],
+  "url": "https://claude.ai/artifact/2w5je7j2ehCPWyzCnN7bQx"
+ },
+ {
+  "n": 6,
+  "slug": "s13",
+  "title": "Star Talk Season 13",
+  "sections": [
+   {
+    "key": "s13",
+    "name": "Season 13",
+    "sub": "Star Talk Explains"
+   }
+  ],
+  "url": "https://claude.ai/artifact/J2peBiXxgZJm3ErvVz94PL"
+ },
+ {
+  "n": 7,
+  "slug": "remix",
+  "title": "Star Talk Remix",
+  "sections": [
+   {
+    "key": "remix",
+    "name": "Star Talk Remix",
+    "sub": null
+   }
+  ],
+  "url": "https://claude.ai/artifact/7kLNcQpRUJQDJ575ht3sd4"
+ },
+ {
+  "n": 8,
+  "slug": "trends",
+  "title": "Star Talk Trends",
+  "sections": [
+   {
+    "key": "ttellmewithou",
+    "name": "Tell Me Without Telling Me",
+    "sub": null
+   },
+   {
+    "key": "tnobody",
+    "name": "Nobody:",
+    "sub": null
+   },
+   {
+    "key": "texpectationv",
+    "name": "Expectation vs Reality",
+    "sub": null
+   },
+   {
+    "key": "tgetreadywith",
+    "name": "Get Ready with Me",
+    "sub": null
+   },
+   {
+    "key": "tstarterpack",
+    "name": "Starter Pack",
+    "sub": null
+   },
+   {
+    "key": "thowitstarted",
+    "name": "How It Started vs How It's Going",
+    "sub": null
+   },
+   {
+    "key": "tmyromanempir",
+    "name": "My Roman Empire",
+    "sub": null
+   },
+   {
+    "key": "tputafingerdo",
+    "name": "Put a Finger Down",
+    "sub": null
+   },
+   {
+    "key": "tpov",
+    "name": "POV",
+    "sub": null
+   },
+   {
+    "key": "tadayinthelif",
+    "name": "A Day in the Life of…",
+    "sub": null
+   },
+   {
+    "key": "tcutenotanick",
+    "name": "Cute, Not an Ick",
+    "sub": null
+   },
+   {
+    "key": "twaitforit",
+    "name": "Wait For It",
+    "sub": null
+   },
+   {
+    "key": "tthesignsas",
+    "name": "The Signs As…",
+    "sub": null
+   },
+   {
+    "key": "tratingmydate",
+    "name": "Rating My Date, Honestly",
+    "sub": null
+   },
+   {
+    "key": "thearmeout",
+    "name": "Hear Me Out",
+    "sub": null
+   },
+   {
+    "key": "tsilentreview",
+    "name": "Silent Review",
+    "sub": null
+   },
+   {
+    "key": "twronganswers",
+    "name": "Wrong Answers Only",
+    "sub": null
+   },
+   {
+    "key": "tlittlethings",
+    "name": "Little Things",
+    "sub": null
+   },
+   {
+    "key": "tstorytime",
+    "name": "Storytime",
+    "sub": null
+   },
+   {
+    "key": "tmeat2pmvsmea",
+    "name": "Me at 2 PM vs me at 2 AM",
+    "sub": null
+   }
+  ],
+  "url": "https://claude.ai/artifact/YBmX7eEisoz96hDjvyucoT"
+ }
+]

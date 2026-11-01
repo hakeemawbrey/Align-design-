@@ -1,0 +1,7162 @@
+[
+ {
+  "id": "askaquarius",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "Am I too weird to date?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "askaries",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "Should I make the first move?",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "askcancer",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "They want me to meet their family.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "askcapricorn",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "I'm too busy to date.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "askgemini",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "I never know what to say.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "askleo",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "How do I give a real compliment?",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "asklibra",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "We can never pick where to eat.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "askpisces",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "How do I get over someone?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "asksag",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "Is it okay to want space?",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "askscorpio",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "How do I know if I can trust them?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "asktaurus",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "What's a good first date?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "askvirgo",
+  "page": 1,
+  "group": "ask",
+  "show": null,
+  "title": "How long should I wait to text back?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guideair",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Air signs, gather round.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guideaquarius1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Aquarius: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guideaquarius2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Aquarius: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guideaquarius3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Aquarius: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidearies1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Aries: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidearies2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Aries: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidearies3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Aries: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidecancer1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Cancer: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidecancer2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Cancer: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidecancer3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Cancer: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidecapricorn1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Capricorn: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidecapricorn2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Capricorn: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidecapricorn3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Capricorn: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guideearth",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Earth signs, gather round.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidefire",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Fire signs, gather round.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidegemini1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Gemini: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidegemini2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Gemini: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidegemini3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Gemini: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guideleo1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Leo: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guideleo2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Leo: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guideleo3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Leo: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidelibra1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Libra: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidelibra2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Libra: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidelibra3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Libra: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidepisces1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Pisces: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidepisces2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Pisces: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidepisces3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Pisces: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidesag1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Sagittarius: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidesag2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Sagittarius: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidesag3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Sagittarius: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidescorpio1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Scorpio: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidescorpio2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Scorpio: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidescorpio3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Scorpio: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidetaurus1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Taurus: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidetaurus2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Taurus: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidetaurus3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Taurus: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidevirgo1",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Virgo: the blind spot",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidevirgo2",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Virgo: what you need",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidevirgo3",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Virgo: try this week",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "guidewater",
+  "page": 1,
+  "group": "guide",
+  "show": null,
+  "title": "Water signs, gather round.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "sr01blind",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Blind by design",
+  "len": 20,
+  "blurb": "THE STARS wear a sleep mask and try to catch flying mystery cards blind. Card first, face last. Take the chance.",
+  "lesson": null
+ },
+ {
+  "id": "sr02aligned",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "The stars aligned",
+  "len": 20,
+  "blurb": "THE STARS tries to get seven chakra stars into a line while violet naps. When it's right, the stars line up.",
+  "lesson": null
+ },
+ {
+  "id": "sr03moon",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Tonight's moon",
+  "len": 20,
+  "blurb": "The moon is covered in sticky notes for you. The Moon star says: say the honest thing. Kindly.",
+  "lesson": null
+ },
+ {
+  "id": "sr04chartcard",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "You were born a card",
+  "len": 20,
+  "blurb": "THE STARS polish your sign card like a collector until it flips to Taurus. Mint condition, never been swiped.",
+  "lesson": null
+ },
+ {
+  "id": "sr05talkcards",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Talk in cards",
+  "len": 20,
+  "blurb": "Scorpio and Libra seal their answers to the same card, and Scorpio gets caught peeking. One card, two answers.",
+  "lesson": null
+ },
+ {
+  "id": "sr06newdeck",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "A new deck every night",
+  "len": 20,
+  "blurb": "THE STARS deal six cards at midnight in a green visor. That's the hand; tomorrow, they deal again.",
+  "lesson": null
+ },
+ {
+  "id": "sr07aura",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "What color is your aura?",
+  "len": 20,
+  "blurb": "An aura photo booth: Leo comes out gold, Pisces sea green, Scorpio blocks the lens. What color is yours?",
+  "lesson": null
+ },
+ {
+  "id": "sr08houston",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Houston, the stars are dealing",
+  "len": 20,
+  "blurb": "Twelve sign stars light up over Houston and rush the gold founding card. Sag is 10 minutes away, so an hour.",
+  "lesson": null
+ },
+ {
+  "id": "sr09sparkrubalign",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Spark · Rub · Align",
+  "len": 20,
+  "blurb": "Libra and Taurus spark, then bonk, then the chakra stars line up between them. Push, pull, align.",
+  "lesson": null
+ },
+ {
+  "id": "sr10faith",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Put your faith in the stars",
+  "len": 20,
+  "blurb": "Three jobs, two are ours: Scorpio hides the faces, Virgo reads the sky, and you bring the courage.",
+  "lesson": null
+ },
+ {
+  "id": "sralignment",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Two charts walk into a date",
+  "len": 60,
+  "blurb": "A Virgo star measures the angles between two charts: 120° easy, 60° click, 90° spicy. Don't fear the push.",
+  "lesson": null
+ },
+ {
+  "id": "srastro101",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Astrology in 60 seconds",
+  "len": 60,
+  "blurb": "THE STARS teach astrology against a stopwatch, from the zodiac road to your Big Three. You're a whole sky.",
+  "lesson": null
+ },
+ {
+  "id": "srbios",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Everyone sounds the same.",
+  "len": 20,
+  "blurb": "Every bio says 'love to travel' and the gold star falls asleep. Your Sun, Moon and Rising say more.",
+  "lesson": null
+ },
+ {
+  "id": "srbirthtime",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "The most honest thing about you",
+  "len": 20,
+  "blurb": "The gold star fact-checks a bio with red stamps. Your birth time never fibs; the sky already wrote you down.",
+  "lesson": null
+ },
+ {
+  "id": "srbutterflies",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Remember butterflies?",
+  "len": 30,
+  "blurb": "Cancer remembers when one note did all this, then a mystery card brings the butterflies back. Be curious again.",
+  "lesson": null
+ },
+ {
+  "id": "srcityatlanta",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Atlanta: a city in a forest",
+  "len": 30,
+  "blurb": "Taurus wanders a forest where every tree is tall and never texts back. Look up; find your one in the forest.",
+  "lesson": null
+ },
+ {
+  "id": "srcityaustin",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Austin: everyone's 'in a band'",
+  "len": 20,
+  "blurb": "Gemini is in a band and also kinda between things. 'Between things' is not a genre. Know what they're about, first.",
+  "lesson": null
+ },
+ {
+  "id": "srcitychicago",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Chicago winter",
+  "len": 20,
+  "blurb": "A frozen Aries is cold enough to date a dibs chair, until a Leo with a matching chart walks in.",
+  "lesson": null
+ },
+ {
+  "id": "srcitydallas",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Dallas: big expectations",
+  "len": 20,
+  "blurb": "Leo's hair and list get bigger every beat, until THE STARS say: skip the list, check the fit. Big love, by the stars.",
+  "lesson": null
+ },
+ {
+  "id": "srcityla",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "LA: everyone's photo is perfect.",
+  "len": 20,
+  "blurb": "Libra adds one filter too many and the photo turns to glare. Fall for the chart, not the lighting.",
+  "lesson": null
+ },
+ {
+  "id": "srcitymiami",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Miami: 'just visiting'",
+  "len": 20,
+  "blurb": "Star travellers roll their suitcases past Taurus. A 4-hour layover isn't a date, it's a gate. Find someone who stays.",
+  "lesson": null
+ },
+ {
+  "id": "srcitynashville",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Nashville heartbreak",
+  "len": 20,
+  "blurb": "Pisces sings verse nine of 'left on read' until its heart note cracks; Push / Pull / Align writes a duet. Your love song starts here.",
+  "lesson": null
+ },
+ {
+  "id": "srcityneworleans",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "New Orleans reads your cards",
+  "len": 30,
+  "blurb": "Scorpio the card reader sees love, probably. Cards never say who; the stars do. Let the cards decide.",
+  "lesson": null
+ },
+ {
+  "id": "srcitynyc",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Millions of people in New York…",
+  "len": 30,
+  "blurb": "The stars watch the same five faces ride past, now in mustaches, then deal a new deck. No reruns.",
+  "lesson": null
+ },
+ {
+  "id": "srcityseattle",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Seattle: you never see the stars",
+  "len": 30,
+  "blurb": "THE STARS yell through the Seattle clouds and shove them apart so your chart can bloom. Even when you can't see us.",
+  "lesson": null
+ },
+ {
+  "id": "srdealbreakers",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Three months in.",
+  "len": 20,
+  "blurb": "Cancer falls harder every month until one sentence ends it. Put dealbreakers on your card, day one.",
+  "lesson": null
+ },
+ {
+  "id": "srdisposable",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "We've made people disposable",
+  "len": 60,
+  "blurb": "The stars run a lost and found for people; the aunties hit STOP and give everyone their colour back. Be chosen.",
+  "lesson": null
+ },
+ {
+  "id": "srdummies",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Astrology for dummies",
+  "len": 60,
+  "blurb": "A new star asks every beginner question and THE STARS answer, with Mercury blamed for the wifi. Try it on.",
+  "lesson": null
+ },
+ {
+  "id": "sreightbillion",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "8 billion people.",
+  "len": 30,
+  "blurb": "The gold star pulls back from one lonely window to the whole Earth. You're not the only one looking up.",
+  "lesson": null
+ },
+ {
+  "id": "srelements",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "The 4 elements in 15 seconds",
+  "len": 20,
+  "blurb": "Against a ticking stopwatch: fire goes, earth builds, air talks, water feels. Psst, your chart has all four.",
+  "lesson": null
+ },
+ {
+  "id": "srflipit",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Flip it",
+  "len": 30,
+  "blurb": "The gold star stops a 0.3-second face swipe and flips the card: card first, face last. Everyone gets a real look.",
+  "lesson": null
+ },
+ {
+  "id": "srghosted",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Seen. 3 days ago.",
+  "len": 30,
+  "blurb": "A ghost floats out of the phone; Capricorn blows the whistle: nobody's disposable. Tonight's deck lets you be chosen.",
+  "lesson": null
+ },
+ {
+  "id": "srhey",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Stuck on 'hey'.",
+  "len": 20,
+  "blurb": "Day 41 of 'hey', and the gold star calls it a screensaver, then deals a talk card. Skip to the good part.",
+  "lesson": null
+ },
+ {
+  "id": "srhouses",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "The 12 houses, explained",
+  "len": 30,
+  "blurb": "Your landlord star gives a tour of the 12-room building in your chart. Your birth time is the key.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxbayou",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Sunset walk on Buffalo Bayou",
+  "len": 20,
+  "blurb": "Libra, the partnership sign, walks the bayou at sunset beside an empty star. Your walk partner is out there.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxbingo",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Houston first-date bingo",
+  "len": 30,
+  "blurb": "A caller star in a green visor calls BINGO on your first-date card, again. Skip the small talk; ask something real.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxbrunch",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Another Midtown brunch",
+  "len": 30,
+  "blurb": "THE STARS wait your table through brunch #12 of 'idk lol', then serve the dealbreakers menu. Brunch with intention.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxenergy",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "The energy capital",
+  "len": 30,
+  "blurb": "Aries tries to force a spark with jumper cables. It was never wires; it's your charts. Find your spark.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxeta",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "\"10 minutes away.\"",
+  "len": 20,
+  "blurb": "The gold star waits with you through Houston minutes until it grows a cobweb, then deals a talk card. Talk like you mean it.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxgameday",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Game day",
+  "len": 20,
+  "blurb": "Twelve sign stars turn the same teal for the game, but matching colours aren't matching charts. Match on more than colors.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxheat",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Houston summer",
+  "len": 20,
+  "blurb": "The Sun, in sunglasses, watches Libra melt into a puddle for a date who texts 'k.' Say dealbreakers before the sweat.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxhoods",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Your sign as a Houston hood",
+  "len": 45,
+  "blurb": "A tour-guide star takes you round Houston, one sign per neighbourhood; Pisces cries at each one. Love crosses the Beltway.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxhumidity",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Houston humidity",
+  "len": 20,
+  "blurb": "Leo's quiff frizzes into a full mane, so it hides under a paper bag. Card first, face last, hair whenever.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxlatenight",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "2 AM taco run",
+  "len": 20,
+  "blurb": "Taurus's perfect date is one taco at 2 AM, until tonight's deck deals in a Cancer and a second taco. Next run's for two.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxloops",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Inside the Loop.",
+  "len": 30,
+  "blurb": "Leo won't leave the Loop; Sag will drive anywhere. Both fire signs, 120°: whatever side of the Loop you're on.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxmuseum",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Museum District first date",
+  "len": 30,
+  "blurb": "A tour-guide star leads Aquarius and a sweating Virgo past abstract art, then hangs a mystery card. Skip the guessing.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxonesky",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Every culture. One city.",
+  "len": 30,
+  "blurb": "Hellos in seven languages float up into stars over Houston. Your person is under the same sky.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxproblem",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Houston, we have a problem",
+  "len": 20,
+  "blurb": "Mission Control star detects heavy swiping and slams ABORT. New flight plan: card first, face last.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxrodeo",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Rodeo season",
+  "len": 20,
+  "blurb": "Sagittarius, actually half horse, spots the price tags on everyone's new cowboy hats. Find the real thing.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxspacecity",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "They call it Space City.",
+  "len": 30,
+  "blurb": "The gold star in a space helmet watches swiping in circles, then launches a rocket; Pisces's helmet becomes a fishbowl. Mission: find your person.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxsprawl",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Houston is huge",
+  "len": 30,
+  "blurb": "The star searches Katy to Pearland with a magnifying glass, then looks up: two charts trine across the city.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxstars",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "You can barely see the stars.",
+  "len": 45,
+  "blurb": "The one star visible through the haze gets called a plane, then blows the haze away. Can't see them? They're still up there.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxtaste",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Houston has taste",
+  "len": 20,
+  "blurb": "Taurus, food critic, scores the crawfish an 11 and calls your dating app fast food. Have good taste in people.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxtraffic",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "An hour on the Katy Freeway…",
+  "len": 20,
+  "blurb": "Aries honks through an hour of traffic for a date who just says 'hey'. Dealbreakers up front; know before you drive.",
+  "lesson": null
+ },
+ {
+  "id": "srhtxweather",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Sunny, pouring, sunny again",
+  "len": 20,
+  "blurb": "The weather star's forecast is 'yes', which isn't weather, it's a situationship. Push, pull, align: read the signs.",
+  "lesson": null
+ },
+ {
+  "id": "srl01chakra",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Chakra",
+  "len": 20,
+  "blurb": "Seven chakra stars line up, except the heart star, which is swiping in yoga. Open hearts ask real questions.",
+  "lesson": null
+ },
+ {
+  "id": "srl02moon",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Moon",
+  "len": 20,
+  "blurb": "A Cancer star waits on read for a whole moon cycle. The moon starts over, and so can you.",
+  "lesson": null
+ },
+ {
+  "id": "srl03aura",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Aura",
+  "len": 20,
+  "blurb": "Gemini's bio says chill; the aura camera says all of it. What color is yours?",
+  "lesson": null
+ },
+ {
+  "id": "srl04deck",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Deck",
+  "len": 20,
+  "blurb": "Aries rides the card carousel shouting NEXT until THE STARS hit the brakes. One card; read it.",
+  "lesson": null
+ },
+ {
+  "id": "srl05zodiac",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Zodiac",
+  "len": 20,
+  "blurb": "DJ STARS spins the zodiac wheel; Capricorn refuses to give up the top seat. Love is taking turns.",
+  "lesson": null
+ },
+ {
+  "id": "srl06constellation",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Constellation",
+  "len": 20,
+  "blurb": "Sag connects everyone until the network is a knot. Snip: you only need one line. It only takes two.",
+  "lesson": null
+ },
+ {
+  "id": "srl07orbit",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Orbit",
+  "len": 20,
+  "blurb": "Taurus and Libra circle each other for weeks while Pisces holds a SAY HI sign. Stop circling. Say hi.",
+  "lesson": null
+ },
+ {
+  "id": "srl08hyperspace",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Hyperspace",
+  "len": 20,
+  "blurb": "Sagittarius flies you past six people in hyperspace, then slams the brakes for one card. Fast travel. Slow love.",
+  "lesson": null
+ },
+ {
+  "id": "srl09talk",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Talk",
+  "len": 20,
+  "blurb": "A first date stuck on the weather, until Gemini deals a talk card and both flip the same answer.",
+  "lesson": null
+ },
+ {
+  "id": "srl10faith",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Faith",
+  "len": 20,
+  "blurb": "Your heart shows up in chains and padlocks. The stars do a trust fall first; little sign stars catch them.",
+  "lesson": null
+ },
+ {
+  "id": "srlaunch",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "What if the stars chose?",
+  "len": 30,
+  "blurb": "THE STARS take the phone away, read your birthday and sky, and deal tonight's deck. Dating, dealt by the stars.",
+  "lesson": null
+ },
+ {
+  "id": "srlonely",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Never more connected",
+  "len": 30,
+  "blurb": "2:14 AM, 214 matches, 0 conversations. A talk card drops from the sky and suddenly it's 3:41. You deserve to be known.",
+  "lesson": null
+ },
+ {
+  "id": "srmodalities",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Starters, keepers, changers",
+  "len": 20,
+  "blurb": "Aries starts it, Taurus locks it, Gemini switches it up. Love's a group project; every team needs all three.",
+  "lesson": null
+ },
+ {
+  "id": "srmoonphases",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "New Moon vs Full Moon",
+  "len": 20,
+  "blurb": "The gold star plants a seed at the New Moon and naps two weeks until the Full Moon. Look up tonight.",
+  "lesson": null
+ },
+ {
+  "id": "sropposites",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Meet your opposite sign",
+  "len": 20,
+  "blurb": "The stars referee a seesaw of the six opposite pairs, then Taurus flips to Scorpio. Opposites attract. Sometimes.",
+  "lesson": null
+ },
+ {
+  "id": "srorigins",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Where did the zodiac come from?",
+  "len": 45,
+  "blurb": "Story time from Babylon to Earth's wobble, while the Aries star takes everything personally. Old sky, new you.",
+  "lesson": null
+ },
+ {
+  "id": "srp1mystery",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "The stars give you a chance",
+  "len": 20,
+  "blurb": "Seven chakra stars try to peek behind Juniper's card and keep getting bonked. No peeking; give them a chance.",
+  "lesson": null
+ },
+ {
+  "id": "srp2constellation",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Dating, dealt by the stars",
+  "len": 20,
+  "blurb": "You drew lines between us for centuries. Now the stars draw lines between you and tonight's deck.",
+  "lesson": null
+ },
+ {
+  "id": "srp3faith",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Put your wish in the stars",
+  "len": 20,
+  "blurb": "A shooting star on a schedule gives you one wish. 'Make them hot' gets stamped FACE LAST; wish again.",
+  "lesson": null
+ },
+ {
+  "id": "srpattern",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Same person, different name",
+  "len": 30,
+  "blurb": "Cole, Dev and Kofi are the same red flags in worse disguises. If the ending repeats, change the beginning.",
+  "lesson": null
+ },
+ {
+  "id": "srphotos",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Photos lie.",
+  "len": 20,
+  "blurb": "Virgo inspects a photo with a magnifier: good angle, peach filter, taken in 2019. Charts don't lie.",
+  "lesson": null
+ },
+ {
+  "id": "srplanets",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Every planet in 30 seconds",
+  "len": 30,
+  "blurb": "A tour-guide star rushes you past ten planets and falls behind schedule at the outer three. Ten planets, one you.",
+  "lesson": null
+ },
+ {
+  "id": "srrigged",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Rigged",
+  "len": 20,
+  "blurb": "Scorpio investigates a face-ranking machine with paid boosts and breaks it into stars. Let the stars deal.",
+  "lesson": null
+ },
+ {
+  "id": "srsamesky",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Same moon. Never met.",
+  "len": 30,
+  "blurb": "Leo's and Libra's stars watch two lonely windows across Houston, then draw the line between them themselves. Look up.",
+  "lesson": null
+ },
+ {
+  "id": "srsaturnreturn",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "What's a Saturn return?",
+  "len": 45,
+  "blurb": "Saturn turns up at 29 as a very thorough landlord with a clipboard. Growing pains mean you're growing.",
+  "lesson": null
+ },
+ {
+  "id": "srswipes",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "312 swipes. 0 butterflies.",
+  "len": 20,
+  "blurb": "The gold star gets dizzy watching you swipe, then deals one small deck a night. A butterfly wakes up.",
+  "lesson": null
+ },
+ {
+  "id": "srtorglass",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "A city of glass towers",
+  "len": 30,
+  "blurb": "Nine sign stars alone in their glass boxes, until Cancer and Taurus's windows turn gold. Come out of your box.",
+  "lesson": null
+ },
+ {
+  "id": "srtorpatio",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Two seasons: winter and patio",
+  "len": 20,
+  "blurb": "A Leo star thaws out for patio season and won't waste it on 'k.' Dealbreakers come first. Make it count.",
+  "lesson": null
+ },
+ {
+  "id": "srtorsorry",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "So polite, nobody says it",
+  "len": 30,
+  "blurb": "Libra and Virgo stack polite bubbles until they pop. Polite is nice; clear is kinder. Say what you mean.",
+  "lesson": null
+ },
+ {
+  "id": "srtorsubway",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Swiping the same faces",
+  "len": 20,
+  "blurb": "Taurus loves a routine, even the same three faces on the subway. The conductor star deals a new deck.",
+  "lesson": null
+ },
+ {
+  "id": "srtorworld",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Everyone's from somewhere",
+  "len": 20,
+  "blurb": "THE STARS tries to say hi in every language, then two charts link over the lakeshore. Find them under one sky.",
+  "lesson": null
+ },
+ {
+  "id": "srtwelvesigns",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "All 12 signs in 60 seconds",
+  "len": 60,
+  "blurb": "Twelve sign stars hop up one by one to introduce themselves; Leo won't leave the spotlight. Tag your sign.",
+  "lesson": null
+ },
+ {
+  "id": "srunrationed",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Paying to be seen?",
+  "len": 20,
+  "blurb": "The gold star is padlocked behind a paywall: insert coin to twinkle. Then it breaks free. The stars, unrationed.",
+  "lesson": null
+ },
+ {
+  "id": "srvenus",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Your Venus sign = how you love",
+  "len": 30,
+  "blurb": "Venus walks you through four love styles, while the Sun keeps her on a very short leash.",
+  "lesson": null
+ },
+ {
+  "id": "srvoteballot",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Launch city #2 is up to you",
+  "len": 20,
+  "blurb": "A Libra star can't pick a city, so you do. Every vote becomes a brand-new baby star.",
+  "lesson": null
+ },
+ {
+  "id": "srvotemap",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Align starts in Houston",
+  "len": 30,
+  "blurb": "The Houston star lights up and tries to wake ten sleepy cities. Your vote is their wake-up call.",
+  "lesson": null
+ },
+ {
+  "id": "srvotenext",
+  "page": 7,
+  "group": "remix",
+  "show": null,
+  "title": "Houston got the stars first",
+  "len": 20,
+  "blurb": "The gold star tops the Houston skyline, sweats, and can't choose among ten cities. Your city could be next.",
+  "lesson": null
+ },
+ {
+  "id": "st10aquarius",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Aquarius invented a weird thing.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10aries",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Baby Aries skipped crawling.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10cancer",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Baby Cancer won't let go of the blanket.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10capricorn",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Capricorn was born forty.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10gemini",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Gemini's first word was two words.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10leo",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Leo's first show-and-tell.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10libra",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Libra can't pick a lunch table.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10pisces",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Pisces has an imaginary friend.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10sag",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Baby Sag escaped the playpen.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10scorpio",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Baby Scorpio hides in the nursery.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10taurus",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Baby Taurus has one food.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st10virgo",
+  "page": 5,
+  "group": "s10",
+  "show": null,
+  "title": "Baby Virgo lined up the crayons.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11aquarius",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Aquarius visited the planet that rolls.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11aries",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Aries is racing to the equinox.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11cancer",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Cancer is lost in the Beehive.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11capricorn",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Capricorn is visiting its boss.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11gemini",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Gemini found out Castor is six stars.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11leo",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Mission 05: Regulus, the lion's heart star.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11libra",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Libra is shopping for a planet.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11pisces",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Pisces sailed to the windiest planet.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11sag",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Sag is going to the centre of the galaxy.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11scorpio",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Mission 08: Antares, the scorpion's heart.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11taurus",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Mission: rescue the Seven Sisters.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st11virgo",
+  "page": 5,
+  "group": "s11",
+  "show": null,
+  "title": "Mission 06: the Virgo Cluster.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12allin",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Scorpios aren't jealous. They're all in.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12alonetime",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Wanting alone time isn't a red flag.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12aquarius",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Aquarius isn't cold. It's just thinking.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12aries",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Aries isn't impatient. It's excited.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12austin",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Austin is overrated for dating.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12bestfriend",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Falling for your best friend? Worth the talk.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12cancer",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Cancers aren't clingy. They're loyal.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12capricorn",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Capricorns show love in calendars.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12chores",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Splitting chores is a love language.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12coffeedate",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Coffee beats dinner for a first date.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12dallas",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Dallas dresses up for brunch. Houston dresses for the heat.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12dealbreaker",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Astrology is a conversation starter, not a dealbreaker.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12diverse",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "In Houston, date outside your bubble.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12doubletext",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Double texting is allowed.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12exfriends",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Being friends with your ex? Usually no.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12exscroll",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Checking your ex's profile is not closure.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12finale",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Your city doesn't decide your love life. You do.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12firstfight",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Your first fight can be good news.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12foodfight",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Houston food beats Austin food.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12friendsvote",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Your friends' opinion matters.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12gemini",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Geminis aren't two-faced. They're two-hearted.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12ghosting",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Ghosting is never the chill option.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12hobbies",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Couples don't need the same hobbies.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12houstonbest",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Houston is the best dating city in Texas.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12humidity",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Houston humidity is a test of true love.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12kind",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Being kind on the apps is rare. Be rare.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12la",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "LA dates are about being seen. Houston's are about being fed.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12leoseason",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Leo season is the best season.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12libra",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Libras aren't indecisive. They're fair.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12lovelangs",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Love languages aren't a personality.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12matching",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Matching outfits are cute, actually.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12meetfriends",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Meet their friends before month three.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12mercury",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Mercury retrograde didn't make you text your ex.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12nobadsign",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "No sign is bad at love.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12notredflag",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Your sign isn't a red flag. Your behavior is.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12nyc",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "NYC dates move fast. Houston moves at traffic speed.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12opposites",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Opposite signs aren't doomed. They're balanced.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12pastlove",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "You don't owe your whole past on date one.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12phonecheck",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Checking their phone is never okay.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12pisces",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Pisces aren't too soft. Soft is strong.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12planning",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Planning a date is the most romantic thing.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12rising",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Your rising sign is who shows up on the first date.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12sag",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Sagittarius isn't scared of commitment.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12single30",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Single at 30 is a flex.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12softlaunch",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Soft launches are fine. Hard launch when sure.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12sorry",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "'Sorry you feel that way' isn't an apology.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12splitbill",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Splitting the bill on date one is fine.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12summer",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Houston summer is hotter than Miami summer.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12sunsign",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Your sun sign is the least interesting part of you.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12surprise",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Surprise parties are for the planner.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12talkingstage",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Talking stage over a month? Just ask.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12taurus",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Taurus isn't stubborn. It's loyal.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12textback",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Texting back fast isn't desperate.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12tuesday",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Small daily effort beats one grand gesture.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12twentymin",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "In Houston, 20 minutes away is long distance.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12venus",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Check their Venus sign, not their sun.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st12virgo",
+  "page": 5,
+  "group": "s12",
+  "show": null,
+  "title": "Virgos aren't picky. They have standards.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13aspects",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's an aspect in astrology?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13attachment",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's an attachment style?",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13birthchart",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What is a birth chart?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13boundaries",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's a boundary, really?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13composite",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's a composite chart?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13consent",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What does enthusiastic consent mean?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13eclipse",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Why do astrologers love eclipses?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13elementsx",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Fire, earth, air, water: which are you?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13feelings",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "How do you say how you feel?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13finale",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What did the stars teach us?",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13flags",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Red flag or green flag?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13goodbye",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "How do you end things kindly?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13houses",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What are the 12 houses?",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13jealousy",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Where does jealousy come from?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13juno",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Who is Juno in astrology?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13lasting",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What keeps love lasting?",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13lens",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Is astrology a science?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13listen",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "How do you actually listen?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13lovebomb",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's love bombing?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13mars",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's your Mars sign about?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13mercury",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Why does Mercury run your texts?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13modes",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Cardinal, fixed, mutable: what?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13moonsign",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Why does my Moon sign matter?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13needs",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Is it needy to have needs?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13nodes",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What are the lunar nodes?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13opposites",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Do opposite signs attract?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13pace",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "How fast is too fast?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13repair",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "How do you fix a fight?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13retroreal",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Do planets really go backwards?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13risingexp",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What does rising sign mean?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13sameteam",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "How do you fight fair?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13saturnreturn",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's a Saturn return?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13selfworth",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Why does self-worth come first?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13seventh",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's your 7th house?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13sunsign",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What is a sun sign, actually?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13synastry",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What's synastry?",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13tropical",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Is my sign wrong now?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13trust",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "How is trust actually built?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13venus",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "What does your Venus sign say?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st13zodiac",
+  "page": 6,
+  "group": "s13",
+  "show": null,
+  "title": "Why are there 12 signs?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4anniversary",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Aries and Libra's anniversary.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4aries",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Aries: Houston traffic.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4atlanta",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Atlanta.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4aunties1",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The Auntie Council reviews Houston.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4aunties2",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The Auntie Council reviews Texas.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4austin",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Austin.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4bayou",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Buffalo Bayou at night.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4bbq",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Texas BBQ takes hours.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4beltway",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Houston is big.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4campaign",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The stars are campaigning.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4capfriday",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Capricorn: you have a free Friday.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4cats",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Virgo and Pisces, date #20.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4checkin",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Houston, a check-in.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4chicago",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Chicago.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4confession",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The ghost has a confession.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4corpus",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Corpus Christi: it's windy.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4dallas",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Road trip: Dallas",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4dancehall",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Texas dance hall: two-step night.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4dealbreakers",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Houston dealbreakers, ranked.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4debate",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The great city debate.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4deck",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Houston is full of people.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4elpaso",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Road trip: El Paso",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4exam",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Saturn's class: the final exam.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4exit",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "LAP 1 · LAST TIME: 9",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4fifth",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The 5th house is the fun floor.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4finale",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Houston, we have a match.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4firstdate",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Leo and Aquarius: the first date.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4fortworth",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Road trip: Fort Worth",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4fridaylights",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Texas Friday nights.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4fromwhere",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "In Houston, your date could be from anywhere.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4fullmoon",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "When the Moon is full…",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4galveston",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Galveston.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4gemini",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Gemini: you kept one chat.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4ghostdate",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The ghost's first date.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4ghosted",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The ghost got ghosted.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4ghostfriend",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The ghost made a friend.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4ghostmoves",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The ghost moved to Houston.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4graduation",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Saturn's class graduates.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4heights",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Virgo: date number three.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4hotcold",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Houston weather: hot, then cold.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4jacket",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Houston rule: bring a jacket indoors.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4katy",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The Katy Freeway has a lot of lanes.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4kisscam",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The stars go to a ballgame.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4kolache",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Kolaches or breakfast tacos?",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4la",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear LA.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4landing",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Houston, we have a…",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4leomirror",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Leo has a crush.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4live5th",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "LIVE from the campaign trail.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4lonestar",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The Lone Star State.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4loop",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Houston: the Loop.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4lubbock",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Lubbock: look up.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4map",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The map is lighting up.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4marfa",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Near Marfa, there are mystery lights.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4matched",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Tonight's deck dealt them each other.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4miami",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Miami.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4mission",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Mission Control, we have a profile.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4montrose",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Meanwhile, in Montrose…",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4moon1",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The Moon has notes for Houston.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4movingin",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Cancer and Capricorn move in.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4nashville",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Nashville.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4newmoon",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Every new moon is a fresh start.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4neworleans",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear New Orleans.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4newyork",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear New York.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4official",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Leo and Aquarius make it official.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4queso",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Tex-Mex is a love language.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4repair",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Leo and Aquarius make up.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4report1",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The stars' Houston report card.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4retro1",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Retro the gremlin",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4retro2",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Retro is back.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4retro3",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Retro is on the road trip.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4retro4",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Retro hit the ballot box.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4retrosorry",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Retro apologizes.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4rivals",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Texas, then where?",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4roadhome",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The road trip ends.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4roadtrip",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The stars are going on a road trip.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4sanantonio",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Road trip: San Antonio",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4saturn1",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Saturn's class",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4saturn2",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Saturn's class: how to apologize.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4saturn3",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Saturn's class: road trip edition.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4saturn4",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Saturn's class: boundaries.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4saturn5",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Saturn's class: your own standards.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4scorpio",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Scorpio: the detective.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4seattle",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Seattle.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4seventh",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Your 7th house is open.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4sheetoff",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "The ghost takes the sheet off.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4sixcouples",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Six couples, one sky.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4spacecity",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Space City, you did it.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4stowaway",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "There's a stowaway.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4sunset",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Texas sunsets are unfair.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4surprise",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Leo plans a surprise.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4swimhole",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Road trip: the swimming hole",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4tacos",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Libra: Thai or sushi, part two.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4talkcard",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "First-date small talk in Houston.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4tally",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Virgo is counting the votes.",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4tauscorp",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Taurus and Scorpio, finally.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4texasdeck",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "tonight's deck",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4unpack",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Dear Sagittarius: you're staying?",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4venus1",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Venus moved to Houston, too.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4venusretro",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "When Venus goes retrograde.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st4wherenext",
+  "page": 3,
+  "group": "s4",
+  "show": null,
+  "title": "Texas first. Then where?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5amnesia",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "Retro has amnesia.",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5blackhole",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "The black hole.",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5eclipse",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "The Sun and the Moon have a secret.",
+  "len": 40,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5finale",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "Star-crossed.",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5objection",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "The proposal… interrupted.",
+  "len": 40,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5pluto",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "The ex who got demoted.",
+  "len": 40,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5reveal",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "Who is Ophiuchus?",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5taken",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "Ophiuchus slides into Aquarius's DMs.",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5thirteenth",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "There's a 13th sign?!",
+  "len": 40,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st5twins",
+  "page": 3,
+  "group": "s5",
+  "show": null,
+  "title": "Gemini has a twin?!",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6aquarius",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "one ear on. i’m listening. promise.",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6aries",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "you want my story? okay. i'll go first.",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6cancer",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "Cancer",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6capricorn",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "you’re two minutes late. …kidding. mostly.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6gemini",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "hi! hi. we're— i'm— hi.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6leo",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "is my light okay? okay. roll it.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6libra",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "myth or sky first? …you pick.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6pisces",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "sorry, i was somewhere else. …okay. here.",
+  "len": 75,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6sag",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "can we do this walking? i’ve got a flight.",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6scorpio",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "before we start. who sent you?",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6taurus",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "you want the story? sit down. this takes a minute.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st6virgo",
+  "page": 3,
+  "group": "s6",
+  "show": null,
+  "title": "sorry, one sec. just fixing the lighting. okay.",
+  "len": 90,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7archer",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "the point",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7campfire",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "a campfire, the last night of the season",
+  "len": 90,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7cardinals",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "season starters",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7claws",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "southern claw",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7equinox",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "a seesaw, after dark",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7heracles",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "CAST AS THE VILLAIN?",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7opposites",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "always",
+  "len": 75,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7royals",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "royal stars",
+  "len": 90,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7ruler",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "a group chat, two editors",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7solstice",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "moving day, year one",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7twins",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "we should see other people",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st7typhon",
+  "page": 4,
+  "group": "s7",
+  "show": null,
+  "title": "a phone call, 2:14 a.m.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8airport",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Mars is running through the airport.",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8auction",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Going once… your ex’s hoodie.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8bossfight",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "FINAL BOSS: comparison.",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8breaking",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "BREAKING: Venus is going backwards.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8comeback",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "UNBELIEVABLE. he rehearsed this!",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8confessional",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Who almost texted their ex? Everyone.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8court",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Venus vs. Mars. All rise.",
+  "len": 40,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8descent",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Inanna's Descent",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8direct",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "BREAKING: Venus is going forward.",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8forecast",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Today: 90% chance of nostalgia.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8gameshow",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Who wants to text an ex?",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8heist",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "unfollow",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8karaoke",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Pisces is singing the song.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8knock",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Libra’s ex is at the door.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8meteor",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Tired of slow, steady love?",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8missing",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Venus has gone missing.",
+  "len": 40,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8morning",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Morning Star",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8museum",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Welcome to the Museum of Exes.",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8noir",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Someone liked a photo from 2021.",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8orbiter",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "The orbiter, in its natural habitat.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8rebound",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Ophiuchus is in love. It’s been two days.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8rewind",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "The twin built a time machine.",
+  "len": 40,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8rose",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "Venus has been drawing a rose.",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8sitcom",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "ooooh",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st8wedding",
+  "page": 4,
+  "group": "s8",
+  "show": null,
+  "title": "They waited. Today's the day.",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9aqua3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "An Aquarius at 3 AM, headphones on.",
+  "len": 32,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9aquaam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: an Aquarius has a new theory before coffee.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9aquacrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "An Aquarius is in every group chat.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9aqualove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "How an Aquarius flirts: 40 minutes about space.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9aquawork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "An Aquarius just reinvented your workflow.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9aries3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "What an Aries thinks about at 3 AM.",
+  "len": 32,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9ariesam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: an Aries’ alarm goes off.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9ariescrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Never challenge an Aries to anything.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9arieslove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "How an Aries flirts: a speedrun.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9arieswork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "An Aries in a meeting that could’ve been an email.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9cancer3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "What a Cancer feels at 3 AM: everything.",
+  "len": 32,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9canceram",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Cancer checks on everyone before 8 AM.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9cancercrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Cancer's home is everyone's home.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9cancerlove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Cancer remembers what you said in 2019.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9cancerwork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Cancer is the office mom.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9cap3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Capricorn at 3 AM: am I enough if I stop?",
+  "len": 33,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9capam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Capricorn's morning started yesterday.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9capcrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Capricorn: the friend who's basically a parent.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9caplove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Capricorn schedules a date… in a spreadsheet.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9capwork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Capricorn's 5-year plan has a 10-year plan.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9gemini3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Which twin is up at 3 AM?",
+  "len": 33,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9geminiam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Gemini's brain at 7 AM: 47 tabs.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9geminicrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Gemini at a party knows everyone.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9geminilove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Dating a Gemini: you'll never be bored.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9geminiwork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Gemini explaining their six side hustles.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9leo3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Leo at 3 AM: did they like me?",
+  "len": 32,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9leoam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Leo's morning lighting check.",
+  "len": 24,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9leocrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Leo hypes every friend like a headliner.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9leolove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Leo in love is a whole parade.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9leowork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Leo presents the report like it's the Oscars.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9libra3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Libra at 3 AM: did I say yes to too much?",
+  "len": 32,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9libraam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Libra picks an outfit. Day three.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9libracrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "'Where should we eat?' A Libra, for 45 minutes.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9libralove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Libra on a date: matching outfits, by accident.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9librawork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Libra mediating the office fight.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9pisces3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Pisces at 3 AM, crying at a dog commercial.",
+  "len": 35,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9piscesam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Pisces wakes up still in the dream.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9piscescrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Pisces is everyone's 2 AM phone call.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9pisceslove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Dating a Pisces: they wrote you a song on date one.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9pisceswork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Pisces' playlist made the whole office cry.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9sag3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Sag at 3 AM, booking a flight to avoid a feeling.",
+  "len": 33,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9sagam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Sag wakes up in a different city.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9sagcrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Sag tells the truth. Too much truth.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9saglove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Dating a Sagittarius: passport required.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9sagwork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Sag at work: ‘what if the office was in Lisbon?’",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9scorpio3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Scorpio at 3 AM: feeling 100% of everything.",
+  "len": 32,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9scorpioam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Scorpio's morning. All black.",
+  "len": 22,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9scorpiocrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Scorpio's friendship is a lifetime contract.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9scorpiolove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Dating a Scorpio: the background check is free.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9scorpiowork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Scorpio already knows who ate your yogurt.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9taurus3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Taurus at 3 AM, wide awake.",
+  "len": 32,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9taurusam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Taurus’ 14-step morning.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9tauruscrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "Never ask a Taurus out after 8 PM.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9tauruslove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "How a Taurus says I love you.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9tauruswork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Taurus when the plan changes.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9virgo3am",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "tiny typo in the deck, fixed it.",
+  "len": 32,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9virgoam",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "POV: a Virgo's to-do list has a to-do list.",
+  "len": 24,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9virgocrew",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "A Virgo planned the group trip to the minute.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9virgolove",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "6:32 PM — date night, organised.",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "st9virgowork",
+  "page": 4,
+  "group": "s9",
+  "show": null,
+  "title": "their going to love it",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stabducted",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Abducted.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Clear is kind. Even aliens *get it*."
+ },
+ {
+  "id": "stair",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The air signs draft a text.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "staraqua",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Aquarius…",
+  "len": 16,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starcancer",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Cancer…",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starcap",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Capricorn…",
+  "len": 16,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starchaeology",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "That's archaeology.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Attention isn't *intention*. Wait for a plan."
+ },
+ {
+  "id": "stargemini",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Gemini…",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starhello",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Psst. Up here.",
+  "len": 15,
+  "blurb": null,
+  "lesson": "Astrology is just *talking* to the stars."
+ },
+ {
+  "id": "staries",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Aries…",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starleo",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Leo",
+  "len": 15,
+  "blurb": null,
+  "lesson": "You're amazing. Now let them talk about *their* day."
+ },
+ {
+  "id": "starlibra",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Libra…",
+  "len": 16,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starmercury",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Two stars walk into a group chat",
+  "len": 30,
+  "blurb": null,
+  "lesson": "Same ruler. Different *dialect*."
+ },
+ {
+  "id": "starpisces",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Pisces…",
+  "len": 16,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starsag",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Sagittarius…",
+  "len": 16,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starscorpio",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Scorpio",
+  "len": 15,
+  "blurb": null,
+  "lesson": "Don't read texts like evidence. Just *ask*."
+ },
+ {
+  "id": "startaurus",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Taurus…",
+  "len": 16,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "starvenus",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Your ex just texted",
+  "len": 30,
+  "blurb": null,
+  "lesson": "Looking for someone new, not someone *again*."
+ },
+ {
+  "id": "starvirgo",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear Virgo…",
+  "len": 16,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "staunties",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "The Auntie Council",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Nobody's perfect for you. Find who's *worth* the work."
+ },
+ {
+  "id": "stawards",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The Star Talk Awards.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "The best love stories are the *kind* ones."
+ },
+ {
+  "id": "stbaggage",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Baggage Claim.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Everyone has baggage. Find someone who helps you *carry it*."
+ },
+ {
+  "id": "stbreakup",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "The Aunties Heard",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stcartoon",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Saturday Morning Stars.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Notice the little things. Say *thank you*."
+ },
+ {
+  "id": "stcomet",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "The Comet.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Jealous? Say it *kindly*. Don't let it orbit."
+ },
+ {
+  "id": "stcooking",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Love Kitchen.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "A real sorry has no *but*."
+ },
+ {
+  "id": "stdistance",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "Long distance, but make it stars",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stearth",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The earth signs plan a date.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stelders",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The Elders.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "You're not late. You're on *your* time."
+ },
+ {
+  "id": "stelevator",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Stuck.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Stop waiting for the perfect moment. *This* is it."
+ },
+ {
+  "id": "stescape",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "First Date Escape Room.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "The way out is *in*. Open up."
+ },
+ {
+  "id": "stexfiles",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "The Ex Files.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Closure isn't on their profile. It's in *you*."
+ },
+ {
+  "id": "stfairytale",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Once Upon a Star.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Find someone who loves the *sweatpants* you."
+ },
+ {
+  "id": "stfightfair",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "The stars' rules for fighting fair",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stfire",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The fire signs group chat.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stfirstfight",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "The First Fight.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "It's you two vs the problem. Not each *other*."
+ },
+ {
+  "id": "stfishpic",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "The stars rated your profile.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Lead with who you are, not what you *caught*."
+ },
+ {
+  "id": "stflags",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Red Flag, Green Flag.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Not every flag is universal. Know *yours*."
+ },
+ {
+  "id": "stfog",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Neptune is literally fog.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "If all your friends see the flag, it's a *flag*."
+ },
+ {
+  "id": "stghost",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Dear ghoster…",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stghostprotocol",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "The Protocol",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stgroupchat",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "✨her date tonight✨",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Chemistry starts in conversation, not the *camera roll*."
+ },
+ {
+  "id": "stgroupchat2",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "The Group Chat",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stgym",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Love Gym.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Feelings are a muscle. Use them *daily*."
+ },
+ {
+  "id": "sthero",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Captain Boundaries.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "A boundary is a superpower. Use it *early*."
+ },
+ {
+  "id": "sthey",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "hey",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Effort is attractive. Send something worth *answering*."
+ },
+ {
+  "id": "sthold",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Cosmic Customer Service.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "You don't need to be fully healed. Just *honest*."
+ },
+ {
+  "id": "stick",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Is it, though?",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Everyone's a little cringe. Look for *kind*."
+ },
+ {
+  "id": "stintervention",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "The Intervention",
+  "len": 60,
+  "blurb": null,
+  "lesson": "If it keeps hurting, it's not your type. It's a *pattern*."
+ },
+ {
+  "id": "stjealous",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "Meet the jealousy monster",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stkaiju",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Overthinkzilla.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Overthinking grows when you *feed* it."
+ },
+ {
+  "id": "stlightyears",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Light-Years.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Distance is just space. *Effort* closes it."
+ },
+ {
+  "id": "stlive5th",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "Live from Your 5th House",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Skip the résumé. Ask what they'd *defend*."
+ },
+ {
+  "id": "stlovelang",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Love, Translated.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Ask how they feel loved. Then *speak* it."
+ },
+ {
+  "id": "stlovelang2",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "The Love Language Olympics",
+  "len": 60,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stmagic",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The Great Starzini.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "No tricks. Just *talk* it through."
+ },
+ {
+  "id": "stmeetfriends",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Live from Your 5th House, Ep. 2",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Watch how they treat your *people*."
+ },
+ {
+  "id": "stmeetfriends2",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "Your date is meeting your friends",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stmetfirst",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "Our Stars Met First",
+  "len": 45,
+  "blurb": null,
+  "lesson": "The spark isn't the face. It's what you *share*."
+ },
+ {
+  "id": "stmetfirst2",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Our Stars Met First, Ep. 2",
+  "len": 45,
+  "blurb": null,
+  "lesson": "The right person doesn't fix you. They help you *grow*."
+ },
+ {
+  "id": "stmime",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The Mime.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Nobody reads minds. Say it *out loud*."
+ },
+ {
+  "id": "stmission",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Mission Control.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Text back when you *want* to. Games are boring."
+ },
+ {
+  "id": "stmoon",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Your Moon sign knows.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stmusical",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Leo: The Musical.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "You don't need a whole number. Just say *hi*."
+ },
+ {
+  "id": "stname",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Even stars get a name.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Wanting clarity isn't *too much*."
+ },
+ {
+  "id": "stolympics",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The Relationship Olympics.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Love isn't a competition. Root for *each other*."
+ },
+ {
+  "id": "stopposites",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Opposites attract.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "storion",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Orion's Ex Era.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Chasing isn't romance. *Mutual* is."
+ },
+ {
+  "id": "stoversharing",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Too Much, Too Soon.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Share your story in chapters, not all at *once*."
+ },
+ {
+  "id": "stpirates",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Pirates of the Heart.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "The treasure is how they treat you on an *ordinary* day."
+ },
+ {
+  "id": "stpregame",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Pre-Game.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "A no isn't a verdict. It's just not your *match*."
+ },
+ {
+  "id": "stpreviously",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Previously On… Your Love Life.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Your past is a season, not the whole *series*."
+ },
+ {
+  "id": "stretro",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Mercury is retrograde.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "strising",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "First impressions are your Rising.",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stsafety",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Safety Demonstration.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Put your own mask on *first*. Then love well."
+ },
+ {
+  "id": "stsaturn",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Turning 29? That's your Saturn return.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stsolodate",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Table for One.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "You're not half of anything. You're *whole*."
+ },
+ {
+  "id": "stspy",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Agent Double-O-Star.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Grand gestures are nice. *Presence* is better."
+ },
+ {
+  "id": "stsupernova",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Supernova.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Intensity isn't *intimacy*. Let it grow."
+ },
+ {
+  "id": "stsurf",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Catch the Wave.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Feelings come in waves. Let them *pass*."
+ },
+ {
+  "id": "stswap",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Sign Swap.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Spend a day in their *orbit*. You'll get it."
+ },
+ {
+  "id": "stswipe",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Swipe Fatigue.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Fewer people. *Deeper* conversations."
+ },
+ {
+  "id": "sttake47",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "Take 47.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Don't perform. Be *curious*."
+ },
+ {
+  "id": "stunbox",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Unboxing Your Match.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Specs aren't the person. Go *meet* them."
+ },
+ {
+  "id": "stwater",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "The water signs group chat.",
+  "len": 25,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "stwereup",
+  "page": 2,
+  "group": "s2",
+  "show": null,
+  "title": "We're up.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Date someone who shows up in *daylight*."
+ },
+ {
+  "id": "stwestern",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "High Noon.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Nobody wins a text-first standoff. Just *text*."
+ },
+ {
+  "id": "stwizard",
+  "page": 2,
+  "group": "specials",
+  "show": null,
+  "title": "Potion Class.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "You can't make someone love you. Let them *choose*."
+ },
+ {
+  "id": "stwontgiveup",
+  "page": 2,
+  "group": "s3",
+  "show": null,
+  "title": "The Star Who Won't Give Up.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Look up. Life is trying to *find you*."
+ },
+ {
+  "id": "sxcount1",
+  "page": 1,
+  "group": "shows",
+  "show": "Countdown",
+  "title": "1.",
+  "len": 20,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxcount2",
+  "page": 1,
+  "group": "shows",
+  "show": "Countdown",
+  "title": "2.",
+  "len": 20,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxcount3",
+  "page": 1,
+  "group": "shows",
+  "show": "Countdown",
+  "title": "3.",
+  "len": 20,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxdebatebill",
+  "page": 1,
+  "group": "shows",
+  "show": "Two Stars Disagree",
+  "title": "Split it, or I've got this?",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxdebatephone",
+  "page": 1,
+  "group": "shows",
+  "show": "Two Stars Disagree",
+  "title": "Phone face-up, or face-down?",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxdebatetext",
+  "page": 1,
+  "group": "shows",
+  "show": "Two Stars Disagree",
+  "title": "Text first, or wait?",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxdiary1",
+  "page": 1,
+  "group": "shows",
+  "show": "Beta Diaries",
+  "title": "Day 1: What's my birth time?",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Know where you *came from*. Literally."
+ },
+ {
+  "id": "sxdiary2",
+  "page": 1,
+  "group": "shows",
+  "show": "Beta Diaries",
+  "title": "Day 2: My first blind card.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Let them in before you *look*."
+ },
+ {
+  "id": "sxdiary3",
+  "page": 1,
+  "group": "shows",
+  "show": "Beta Diaries",
+  "title": "Day 3: We matched answers.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Small things are *big* things."
+ },
+ {
+  "id": "sxfieldair",
+  "page": 1,
+  "group": "shows",
+  "show": "First-Date Field Guide",
+  "title": "Dating an Air Sign.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxfieldearth",
+  "page": 1,
+  "group": "shows",
+  "show": "First-Date Field Guide",
+  "title": "Dating an Earth Sign.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxfieldfire",
+  "page": 1,
+  "group": "shows",
+  "show": "First-Date Field Guide",
+  "title": "Dating a Fire Sign.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxfieldwater",
+  "page": 1,
+  "group": "shows",
+  "show": "First-Date Field Guide",
+  "title": "Dating a Water Sign.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxfriendafter",
+  "page": 1,
+  "group": "shows",
+  "show": "Friends & Self-Love",
+  "title": "After the Breakup.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Healing isn't a straight line. It's a *constellation*."
+ },
+ {
+  "id": "sxfriendhype",
+  "page": 1,
+  "group": "shows",
+  "show": "Friends & Self-Love",
+  "title": "The Hype Friend.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "The friend who *hypes you* is a love story too."
+ },
+ {
+  "id": "sxfriendmirror",
+  "page": 1,
+  "group": "shows",
+  "show": "Friends & Self-Love",
+  "title": "Your Own Biggest Fan.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Talk to yourself like you'd talk to a *friend*."
+ },
+ {
+  "id": "sxhoodeado",
+  "page": 1,
+  "group": "shows",
+  "show": "Neighborhood Stars",
+  "title": "EaDo.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxhoodmidtown",
+  "page": 1,
+  "group": "shows",
+  "show": "Neighborhood Stars",
+  "title": "Midtown.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxhoodthirdward",
+  "page": 1,
+  "group": "shows",
+  "show": "Neighborhood Stars",
+  "title": "Third Ward.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxmail1",
+  "page": 1,
+  "group": "shows",
+  "show": "Star Mail",
+  "title": "My Gemini texts in paragraphs.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxmail2",
+  "page": 1,
+  "group": "shows",
+  "show": "Star Mail",
+  "title": "They said 'lol' to my heartfelt text.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxmail3",
+  "page": 1,
+  "group": "shows",
+  "show": "Star Mail",
+  "title": "Is it too soon to say I like them?",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxmail4",
+  "page": 1,
+  "group": "shows",
+  "show": "Star Mail",
+  "title": "I roasted Virgos for years. Now I'm dating one.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxmomchart",
+  "page": 1,
+  "group": "shows",
+  "show": "Explain It to Mom",
+  "title": "What's a sun, moon and rising?",
+  "len": 45,
+  "blurb": null,
+  "lesson": "You're more than *one* sign."
+ },
+ {
+  "id": "sxmomfaces",
+  "page": 1,
+  "group": "shows",
+  "show": "Explain It to Mom",
+  "title": "Why are there no photos?",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Fall for the *person* first."
+ },
+ {
+  "id": "sxmomtalk",
+  "page": 1,
+  "group": "shows",
+  "show": "Explain It to Mom",
+  "title": "What's a talk card?",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Good questions beat good *lines*."
+ },
+ {
+  "id": "sxmythgemini",
+  "page": 1,
+  "group": "shows",
+  "show": "Myth-Busters",
+  "title": "Geminis are two-faced.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxmythscorpio",
+  "page": 1,
+  "group": "shows",
+  "show": "Myth-Busters",
+  "title": "Scorpios are scary.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxmythsun",
+  "page": 1,
+  "group": "shows",
+  "show": "Myth-Busters",
+  "title": "Your sun sign is the whole story.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxorbit1",
+  "page": 1,
+  "group": "shows",
+  "show": "Orbit",
+  "title": "Dealt.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Nervous and *interested* can live in the same star."
+ },
+ {
+  "id": "sxorbit2",
+  "page": 1,
+  "group": "shows",
+  "show": "Orbit",
+  "title": "Face Last.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Different isn't a dealbreaker. *Curious* is the move."
+ },
+ {
+  "id": "sxorbit3",
+  "page": 1,
+  "group": "shows",
+  "show": "Orbit",
+  "title": "The Comet Returns.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Ask before you *assume*. The shell can't hear your feelings."
+ },
+ {
+  "id": "sxorbit4",
+  "page": 1,
+  "group": "shows",
+  "show": "Orbit",
+  "title": "We Need to Talk.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Say the *scary* true thing. It's usually the kind one."
+ },
+ {
+  "id": "sxorbit5",
+  "page": 1,
+  "group": "shows",
+  "show": "Orbit",
+  "title": "The Constellation.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "A good partner *makes room* for you."
+ },
+ {
+  "id": "sxorbit6",
+  "page": 1,
+  "group": "shows",
+  "show": "Orbit",
+  "title": "Same Sky.",
+  "len": 60,
+  "blurb": null,
+  "lesson": "Love isn't keeping someone close. It's *cheering* them on."
+ },
+ {
+  "id": "sxrecapbowl",
+  "page": 1,
+  "group": "shows",
+  "show": "Date Night Recap",
+  "title": "The Bowling Date.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "The stumble is the *story*."
+ },
+ {
+  "id": "sxrecapcook",
+  "page": 1,
+  "group": "shows",
+  "show": "Date Night Recap",
+  "title": "The Cooking Date.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Plans flop. *Chemistry* doesn't need a recipe."
+ },
+ {
+  "id": "sxrecapgolf",
+  "page": 1,
+  "group": "shows",
+  "show": "Date Night Recap",
+  "title": "The Mini-Golf Date.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Win the *date*, not the game."
+ },
+ {
+  "id": "sxseasoncap",
+  "page": 1,
+  "group": "shows",
+  "show": "Seasonal Sky",
+  "title": "Capricorn Season.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxseasonsag",
+  "page": 1,
+  "group": "shows",
+  "show": "Seasonal Sky",
+  "title": "Sagittarius Season.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxseasonscorpio",
+  "page": 1,
+  "group": "shows",
+  "show": "Seasonal Sky",
+  "title": "Scorpio Season.",
+  "len": 30,
+  "blurb": "",
+  "lesson": ""
+ },
+ {
+  "id": "sxsignaricap",
+  "page": 1,
+  "group": "shows",
+  "show": "Sign × Sign",
+  "title": "Aries × Cancer: A Survival Guide.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Fast hearts and soft hearts *can* sync up."
+ },
+ {
+  "id": "sxsignscolib",
+  "page": 1,
+  "group": "shows",
+  "show": "Sign × Sign",
+  "title": "Scorpio × Libra: A Survival Guide.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Depth and balance make a great *pair*."
+ },
+ {
+  "id": "sxsignvirsag",
+  "page": 1,
+  "group": "shows",
+  "show": "Sign × Sign",
+  "title": "Virgo × Sagittarius: A Survival Guide.",
+  "len": 45,
+  "blurb": null,
+  "lesson": "Structure and adventure make a great *road trip*."
+ },
+ {
+  "id": "trtellleo",
+  "page": 8,
+  "group": "ttellmewithou",
+  "show": null,
+  "title": "Tell me you're a Leo without telling me",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trtellvirgo",
+  "page": 8,
+  "group": "ttellmewithou",
+  "show": null,
+  "title": "Tell me you're a Virgo without telling me",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trtellscorpio",
+  "page": 8,
+  "group": "ttellmewithou",
+  "show": null,
+  "title": "Tell me you're a Scorpio without telling me",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trtellsag",
+  "page": 8,
+  "group": "ttellmewithou",
+  "show": null,
+  "title": "Tell me you're a Sagittarius without telling me",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trtelltaurus",
+  "page": 8,
+  "group": "ttellmewithou",
+  "show": null,
+  "title": "Tell me you're a Taurus without telling me",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trnobodygemini",
+  "page": 8,
+  "group": "tnobody",
+  "show": null,
+  "title": "Gemini at 2 AM starting three new hobbies for us",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trnobodycancer",
+  "page": 8,
+  "group": "tnobody",
+  "show": null,
+  "title": "Cancer saving every voice note in a little labeled shell box",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trnobodycap",
+  "page": 8,
+  "group": "tnobody",
+  "show": null,
+  "title": "Capricorn making a color-coded calendar of date ideas",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trnobodyaqua",
+  "page": 8,
+  "group": "tnobody",
+  "show": null,
+  "title": "Aquarius explaining a theory about the moon to the date",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trnobodypisces",
+  "page": 8,
+  "group": "tnobody",
+  "show": null,
+  "title": "Pisces crying at a pixel commercial about socks",
+  "len": 15,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trexpectpicnic",
+  "page": 8,
+  "group": "texpectationv",
+  "show": null,
+  "title": "Expectation: a perfect picnic",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trexpectcook",
+  "page": 8,
+  "group": "texpectationv",
+  "show": null,
+  "title": "Expectation: candlelit homemade dinner",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trexpectstars",
+  "page": 8,
+  "group": "texpectationv",
+  "show": null,
+  "title": "Expectation: shooting stars",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trexpectdance",
+  "page": 8,
+  "group": "texpectationv",
+  "show": null,
+  "title": "Expectation: a smooth slow dance",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trexpectoutfit",
+  "page": 8,
+  "group": "texpectationv",
+  "show": null,
+  "title": "Expectation: a sleek date outfit",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trgrwmlibra",
+  "page": 8,
+  "group": "tgetreadywith",
+  "show": null,
+  "title": "Libra can't pick an outfit; holds up two identical shirts",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trgrwmaries",
+  "page": 8,
+  "group": "tgetreadywith",
+  "show": null,
+  "title": "Aries is ready in four seconds",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trgrwmcancer",
+  "page": 8,
+  "group": "tgetreadywith",
+  "show": null,
+  "title": "Cancer rehearses talk card answers to the mirror and cries at their own answer",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trgrwmscorpio",
+  "page": 8,
+  "group": "tgetreadywith",
+  "show": null,
+  "title": "Scorpio perfects a mysterious look",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trgrwmvirgo",
+  "page": 8,
+  "group": "tgetreadywith",
+  "show": null,
+  "title": "Virgo builds a checklist",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpacknerves",
+  "page": 8,
+  "group": "tstarterpack",
+  "show": null,
+  "title": "First date nerves pack",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpackastro",
+  "page": 8,
+  "group": "tstarterpack",
+  "show": null,
+  "title": "Just got into astrology pack",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpackromantic",
+  "page": 8,
+  "group": "tstarterpack",
+  "show": null,
+  "title": "Hopeless romantic pack",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpackmatchmaker",
+  "page": 8,
+  "group": "tstarterpack",
+  "show": null,
+  "title": "The friend who's always matchmaking pack",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpackhomebody",
+  "page": 8,
+  "group": "tstarterpack",
+  "show": null,
+  "title": "Homebody in love pack",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstartedhi",
+  "page": 8,
+  "group": "thowitstarted",
+  "show": null,
+  "title": "Started: an awkward hi… hi… hi collision",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstartedcard",
+  "page": 8,
+  "group": "thowitstarted",
+  "show": null,
+  "title": "Started: a blind mystery card both almost skipped",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstartedpancake",
+  "page": 8,
+  "group": "thowitstarted",
+  "show": null,
+  "title": "Started: burnt pancakes on date two",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstartedpun",
+  "page": 8,
+  "group": "thowitstarted",
+  "show": null,
+  "title": "Started: a terrible pun, total silence",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstartedplaylist",
+  "page": 8,
+  "group": "thowitstarted",
+  "show": null,
+  "title": "Started: one shared song",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trromecompliment",
+  "page": 8,
+  "group": "tmyromanempir",
+  "show": null,
+  "title": "Libra thinks about one compliment on their shoes, daily",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trromesandwich",
+  "page": 8,
+  "group": "tmyromanempir",
+  "show": null,
+  "title": "Taurus thinks about the sandwich their date shared on date one",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trromehome",
+  "page": 8,
+  "group": "tmyromanempir",
+  "show": null,
+  "title": "Cancer thinks about text me when you get home",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trrometypo",
+  "page": 8,
+  "group": "tmyromanempir",
+  "show": null,
+  "title": "Virgo thinks about the typo in their first message",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trromeeyes",
+  "page": 8,
+  "group": "tmyromanempir",
+  "show": null,
+  "title": "Scorpio thinks about eye contact across the room",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trfingeroverthink",
+  "page": 8,
+  "group": "tputafingerdo",
+  "show": null,
+  "title": "Overthinker edition",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trfingerromantic",
+  "page": 8,
+  "group": "tputafingerdo",
+  "show": null,
+  "title": "Hopeless romantic edition",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trfingertexter",
+  "page": 8,
+  "group": "tputafingerdo",
+  "show": null,
+  "title": "Texter edition",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trfingerfirst",
+  "page": 8,
+  "group": "tputafingerdo",
+  "show": null,
+  "title": "First-date edition",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trfingerplanner",
+  "page": 8,
+  "group": "tputafingerdo",
+  "show": null,
+  "title": "Planner edition",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpovthirdwheel",
+  "page": 8,
+  "group": "tpov",
+  "show": null,
+  "title": "POV",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpovguess",
+  "page": 8,
+  "group": "tpov",
+  "show": null,
+  "title": "POV: your crush says my sign?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpovmoon",
+  "page": 8,
+  "group": "tpov",
+  "show": null,
+  "title": "POV: your date asks your moon sign and you don't know it",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpovshoulder",
+  "page": 8,
+  "group": "tpov",
+  "show": null,
+  "title": "POV",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trpovtalkcard",
+  "page": 8,
+  "group": "tpov",
+  "show": null,
+  "title": "POV: you're a talk card about to be answered",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trdaycard",
+  "page": 8,
+  "group": "tadayinthelif",
+  "show": null,
+  "title": "A blind mystery card's day",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trdaymoon",
+  "page": 8,
+  "group": "tadayinthelif",
+  "show": null,
+  "title": "The moon on date night",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trdaytissues",
+  "page": 8,
+  "group": "tadayinthelif",
+  "show": null,
+  "title": "Pisces' tissue box: busy from 7 AM",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trdayporch",
+  "page": 8,
+  "group": "tadayinthelif",
+  "show": null,
+  "title": "The porch light at the end of a date",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trdayphone",
+  "page": 8,
+  "group": "tadayinthelif",
+  "show": null,
+  "title": "A phone waiting for a text back",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trickclap",
+  "page": 8,
+  "group": "tcutenotanick",
+  "show": null,
+  "title": "They clap when the plane lands",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trickmenu",
+  "page": 8,
+  "group": "tcutenotanick",
+  "show": null,
+  "title": "They read the menu out loud, with voices",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trickdogs",
+  "page": 8,
+  "group": "tcutenotanick",
+  "show": null,
+  "title": "They wave at every dog",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trickyummy",
+  "page": 8,
+  "group": "tcutenotanick",
+  "show": null,
+  "title": "They say yummy at every bite",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trickrun",
+  "page": 8,
+  "group": "tcutenotanick",
+  "show": null,
+  "title": "They run to catch up for a hug",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwaittaurus",
+  "page": 8,
+  "group": "twaitforit",
+  "show": null,
+  "title": "Taurus slowly making a sandwich… gives away the bigger half",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwaitcap",
+  "page": 8,
+  "group": "twaitforit",
+  "show": null,
+  "title": "Capricorn's packed calendar… one block reads free time with you",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwaitscorpio",
+  "page": 8,
+  "group": "twaitforit",
+  "show": null,
+  "title": "Scorpio staring across the café",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwaitaqua",
+  "page": 8,
+  "group": "twaitforit",
+  "show": null,
+  "title": "Aquarius building a weird machine",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwaitleo",
+  "page": 8,
+  "group": "twaitforit",
+  "show": null,
+  "title": "Leo clearing their throat for a big speech",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsignswedding",
+  "page": 8,
+  "group": "tthesignsas",
+  "show": null,
+  "title": "The signs as wedding guests",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsignsroomies",
+  "page": 8,
+  "group": "tthesignsas",
+  "show": null,
+  "title": "The signs as roommates",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsignswaiting",
+  "page": 8,
+  "group": "tthesignsas",
+  "show": null,
+  "title": "The signs waiting for a text back",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsignsdinner",
+  "page": 8,
+  "group": "tthesignsas",
+  "show": null,
+  "title": "The signs ordering at a dinner date",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsignsmovie",
+  "page": 8,
+  "group": "tthesignsas",
+  "show": null,
+  "title": "The signs at a movie date",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trratefirst",
+  "page": 8,
+  "group": "tratingmydate",
+  "show": null,
+  "title": "Rating the first date: the hello, the laugh, the goodbye",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trratecooked",
+  "page": 8,
+  "group": "tratingmydate",
+  "show": null,
+  "title": "Rating the first meal they cooked",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trratefriends",
+  "page": 8,
+  "group": "tratingmydate",
+  "show": null,
+  "title": "Rating how they met my friends",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trrategoodbye",
+  "page": 8,
+  "group": "tratingmydate",
+  "show": null,
+  "title": "Rating the goodbye at the door: three tries, one wave too many",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trratemix",
+  "page": 8,
+  "group": "tratingmydate",
+  "show": null,
+  "title": "Rating the playlist they made me",
+  "len": 30,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trhearlabel",
+  "page": 8,
+  "group": "thearmeout",
+  "show": null,
+  "title": "Hear me out: Virgo's label maker",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trhearwalk",
+  "page": 8,
+  "group": "thearmeout",
+  "show": null,
+  "title": "Hear me out: someone who says I'll walk you to your car",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trhearcoffee",
+  "page": 8,
+  "group": "thearmeout",
+  "show": null,
+  "title": "Hear me out: someone who remembers your order",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trhearhate",
+  "page": 8,
+  "group": "thearmeout",
+  "show": null,
+  "title": "Hear me out: someone who hates the same song you do",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trhearearly",
+  "page": 8,
+  "group": "thearmeout",
+  "show": null,
+  "title": "Hear me out: someone who shows up five minutes early",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsilentletter",
+  "page": 8,
+  "group": "tsilentreview",
+  "show": null,
+  "title": "Silent review: a handwritten love note",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsilentplaylist",
+  "page": 8,
+  "group": "tsilentreview",
+  "show": null,
+  "title": "Silent review: a playlist made for them",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsilentdinner",
+  "page": 8,
+  "group": "tsilentreview",
+  "show": null,
+  "title": "Silent review: a homemade dinner",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsilentvoice",
+  "page": 8,
+  "group": "tsilentreview",
+  "show": null,
+  "title": "Silent review: a voice note good-morning",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trsilentpicnic",
+  "page": 8,
+  "group": "tsilentreview",
+  "show": null,
+  "title": "Silent review: a surprise picnic for two",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwrongdate",
+  "page": 8,
+  "group": "twronganswers",
+  "show": null,
+  "title": "Describe the perfect first date",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwronglove",
+  "page": 8,
+  "group": "twronganswers",
+  "show": null,
+  "title": "How do you know it's love?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwrongsay",
+  "page": 8,
+  "group": "twronganswers",
+  "show": null,
+  "title": "What do you say on a first date?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwronglang",
+  "page": 8,
+  "group": "twronganswers",
+  "show": null,
+  "title": "What's your love language?",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trwrongdeal",
+  "page": 8,
+  "group": "twronganswers",
+  "show": null,
+  "title": "Name a dealbreaker",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trlittlehome",
+  "page": 8,
+  "group": "tlittlethings",
+  "show": null,
+  "title": "Text me when you get home",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trlittlebite",
+  "page": 8,
+  "group": "tlittlethings",
+  "show": null,
+  "title": "Saving the last bite",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trlittleplate",
+  "page": 8,
+  "group": "tlittlethings",
+  "show": null,
+  "title": "I made you a plate",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trlittlehoodie",
+  "page": 8,
+  "group": "tlittlethings",
+  "show": null,
+  "title": "You can keep the hoodie",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trlittlecharge",
+  "page": 8,
+  "group": "tlittlethings",
+  "show": null,
+  "title": "Charging their phone without asking",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstoryskip",
+  "page": 8,
+  "group": "tstorytime",
+  "show": null,
+  "title": "We matched on the blind card I almost skipped",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstorydare",
+  "page": 8,
+  "group": "tstorytime",
+  "show": null,
+  "title": "My friend dared me to answer the talk card honestly",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstorypizza",
+  "page": 8,
+  "group": "tstorytime",
+  "show": null,
+  "title": "We argued about pizza toppings for an hour",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstoryearly",
+  "page": 8,
+  "group": "tstorytime",
+  "show": null,
+  "title": "We were both twenty minutes early",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "trstorypun",
+  "page": 8,
+  "group": "tstorytime",
+  "show": null,
+  "title": "They laughed at my worst joke",
+  "len": 45,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "tr2amcalm",
+  "page": 8,
+  "group": "tmeat2pmvsmea",
+  "show": null,
+  "title": "My plan to play it cool",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "tr2amconfidence",
+  "page": 8,
+  "group": "tmeat2pmvsmea",
+  "show": null,
+  "title": "My confidence",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "tr2amlove",
+  "page": 8,
+  "group": "tmeat2pmvsmea",
+  "show": null,
+  "title": "My belief in love",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "tr2ambedtime",
+  "page": 8,
+  "group": "tmeat2pmvsmea",
+  "show": null,
+  "title": "My bedtime, ruined by one good conversation",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ },
+ {
+  "id": "tr2amtext",
+  "page": 8,
+  "group": "tmeat2pmvsmea",
+  "show": null,
+  "title": "The text I drafted",
+  "len": 20,
+  "blurb": null,
+  "lesson": null
+ }
+]
