@@ -3,7 +3,7 @@
 //   0.0–3.7   "Hear me *out.*"  The curtains open; ♏ Scorpio pops up behind the podium, taps the mic: tap, tap, EEEEEE.
 //             The front row (♈ ♍ ♐ + ♓) flinches. Sticker: "an *unpopular* crush opinion:".
 //   3.9–7.4   "They hate | *the same song.*"  On the drop the screen unrolls on a boombox and a made-up song title,
-//             “Wiggle Wiggle (Extended Mix)”, which gets a big red NO sign. Front row: "?", "…" (Virgo's eye-roll), "?".
+//             “Bop Bop Boop (Extended Mix)”, which gets a big red NO sign. Front row: "?", "…" (Virgo's eye-roll), "?".
 //   7.5–11.0  "Okay. *Listen.*"  REASON 1 it came on at a *party.* · REASON 2 we made *eye contact.*
 //             · REASON 3 we groaned. *same pitch.*  The row comes round one by one; the needle climbs.
 //  11.2       card cut.
@@ -68,7 +68,7 @@ const EP = makeEpisode({
     const cx = S.cx, cy = S.cy + 18
     // the song title (made up)
     x.font = `italic 700 28px ${INTER}`; x.fillStyle = '#5b5246'; x.textAlign = 'center'; x.textBaseline = 'middle'
-    x.globalAlpha = pk > 1 ? 1 : pk; x.fillText('♪ “Wiggle Wiggle (Extended Mix)”', cx, S.y0 + 38); x.globalAlpha = 1
+    x.globalAlpha = pk > 1 ? 1 : pk; x.fillText('♪ “Bop Bop Boop (Extended Mix)”', cx, S.y0 + 38); x.globalAlpha = 1
     drawBits(x, BOOM, BOOM_COLS, cx, cy, 11 * pk, { sx: 1 + 0.06 * b, sy: 1 - 0.05 * b })
     // notes float out while it plays
     if (playing) for (let i = 0; i < 6; i++) {
