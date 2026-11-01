@@ -12,7 +12,7 @@
 //   12.2–15.6 the patch shrinks up. Last line: "*Home* safe."
 import {
   makeLittle, drawStarChar, signStar, R, S, speech, sfx, hearts, sparkles, drawBits, pisces, drawPhoneMini, room, pop01,
-  outK, r3, clamp, lerp, prog, ease, INK, BONE, GOLD, PINK, HEART, INTER, MONO, HEART_BM, CREAM,
+  outK, r3, crescent, clamp, lerp, prog, ease, INK, BONE, GOLD, PINK, HEART, INTER, MONO, HEART_BM, CREAM,
 } from './little.js'
 
 const CAP = signStar('capricorn'), GEM = signStar('gemini')
@@ -24,7 +24,7 @@ function street(x, t) {
   const g = x.createLinearGradient(0, 0, 0, 560); g.addColorStop(0, '#191444'); g.addColorStop(1, '#3a2c6e')
   x.fillStyle = g; x.fillRect(0, 0, S, 560)
   for (let i = 0; i < 14; i++) { x.globalAlpha = 0.5 + 0.5 * Math.sin(t * 2 + i * 1.3); R(x, BONE, (i * 137) % S, 20 + (i * 59) % 300, 4, 4); x.globalAlpha = 1 }
-  R(x, '#fff1c8', 640, 70, 52, 52); R(x, '#191444', 658, 60, 46, 46)                                   // moon
+  crescent(x, 470, 90, 7)                                                                               // moon
   R(x, '#5b3f6e', 0, 120, 330, 440); R(x, INK, 330, 120, 8, 440)                                          // house wall
   for (let j = 0; j < 9; j++) R(x, '#674a7c', 0, 140 + j * 48, 330, 6)                                    // siding
   R(x, INK, 0, 108, 350, 16)                                                                              // roof edge

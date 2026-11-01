@@ -205,6 +205,10 @@ export function drawPhoneMini(x, cx, cy, w, h, { screen, rot = 0, glow = 0, body
   x.restore()
 }
 
+export const MOON_BM = ['..MMM..', '.MMM...', 'MMM....', 'MMM....', 'MMM....', '.MMM...', '..MMM..']
+/** a little pixel crescent moon */
+export function crescent(x, cx, cy, cell) { drawBits(x, MOON_BM, { M: '#fff1c8' }, cx, cy, cell, { outline: null }) }
+
 /** a cosy room backdrop: wall with stripes, floor, a window with the night sky. opts: { wall, wall2, floor, window: [x,y,w,h] | null, moon } */
 export function room(x, t, { wall = '#4a3a78', wall2 = '#53428a', floor = '#2e2350', floorLine = '#3a2d62', horizon = 600, window = [470, 90, 250, 230], moon = true, lamp = null } = {}) {
   R(x, wall, 0, 0, S, horizon)
@@ -216,7 +220,7 @@ export function room(x, t, { wall = '#4a3a78', wall2 = '#53428a', floor = '#2e23
     const [wx, wy, ww, wh] = window
     R(x, INK, wx - 10, wy - 10, ww + 20, wh + 20); R(x, '#16123a', wx, wy, ww, wh)
     for (let i = 0; i < 9; i++) { const sx = wx + ((i * 73) % ww), sy = wy + ((i * 41) % wh); x.globalAlpha = 0.5 + 0.5 * Math.sin(t * 2 + i); R(x, BONE, sx, sy, 4, 4); x.globalAlpha = 1 }
-    if (moon) { R(x, '#fff1c8', wx + ww - 80, wy + 30, 44, 44); R(x, '#16123a', wx + ww - 64, wy + 22, 40, 40) }
+    if (moon) crescent(x, wx + ww - 56, wy + 54, 6)
     R(x, INK, wx + ww / 2 - 4, wy, 8, wh); R(x, INK, wx, wy + wh / 2 - 4, ww, 8)
     R(x, '#f6d2e2', wx - 26, wy - 18, 30, wh + 40); R(x, '#f6d2e2', wx + ww - 4, wy - 18, 30, wh + 40)   // curtains
   }
