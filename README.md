@@ -99,6 +99,8 @@ For a founder-camp walkthrough, see [docs/FOUNDER-CAMP.md](docs/FOUNDER-CAMP.md)
 
 For Align Town reels (a walk through a 3D astrology town, one card per line), see [reels/town/README.md](reels/town/README.md).
 
+To post reels to one or more Instagram accounts as trial reels and see how they did, see [instagram/README.md](instagram/README.md).
+
 For founder-page videos, see [founder/README.md](founder/README.md): her reels scored, an Align script for each, and a studio to remix, promote and schedule them for filming.
 
 ## Online demo

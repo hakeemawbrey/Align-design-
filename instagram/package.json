@@ -1,0 +1,13 @@
+{
+  "name": "align-instagram",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Post Align reels to several Instagram accounts as trial reels through Meta's official API, then pull back skip rate and watch time",
+  "scripts": {
+    "accounts": "node src/cli.mjs accounts",
+    "post": "node src/cli.mjs post",
+    "stats": "node src/cli.mjs stats",
+    "test": "node --test test/*.test.mjs"
+  }
+}
