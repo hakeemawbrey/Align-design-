@@ -7,9 +7,8 @@
 // wheel.js). The end card is opaque from `start` (it draws that same sky itself, same layer recipe as dummies a), so the
 // cut is invisible, and it runs to start + ENDCARD_LEN (= DURATION), ending on a black frame.
 //
-// CARD FLIP hand-off (the Align card motif, see cardfx.js): that plain-sky frame is the face of a card. It pulls back a
-// touch, rounds its corners, shows a slim faint rim and flips over around the vertical axis (CSS 3D perspective); its
-// back is the end-card sky, which lands flat and flush as "come" pops in.
+// No card flip at the hand-off (removed: one card animation per video, the film's own cardfx cut). The end-card sky
+// takes over flat at `start`, identical to the film's last frame, and "come" pops in on it.
 //
 // The screen reads as one phrase: "come" pops in big, then glides down to its place on the line under the mark, the
 // mark blooms, and the wordmark "Align" lands right after "come" → "come Align" (Align appears once; no tagline) and a quiet
@@ -273,42 +272,14 @@ export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA'
     mx.restore()
   }
 
-  // ── the card flip (pure function of t)
-  let flipDirty = true
-  function drawFlip(t) {
-    const u = t - S, [f0, fm, f1] = R.flip
-    if (u >= R.flush[1]) {
-      if (flipDirty) {
-        for (const f of [front, back]) { f.style.transform = 'none'; f.style.borderRadius = '0'; f.style.boxShadow = 'none' }
-        front.style.display = 'none'; back.style.display = 'block'; bShade.style.opacity = '0'
-        dx.clearRect(0, 0, W, H); tx.clearRect(0, 0, W, H); flipDirty = false
-      }
-      return
-    }
-    flipDirty = true
-    const sc = u < fm ? lerp(1, 0.88, ease.inOutQuad(prog(u, 0, fm))) : lerp(0.88, 1, ease.inOutCubic(prog(u, R.flush[0], R.flush[1])))
-    const lift = (1 - sc) / 0.12                                   // 0 flat & flush … 1 pulled back
-    const onFront = u < fm
-    const ang = onFront ? 90 * ease.inQuad(prog(u, f0, fm)) : -90 * (1 - easeOutBack(prog(u, fm, f1), 0.7))
-    const k = Math.min(1, Math.abs(Math.sin(ang * D2R)))
-    const f = onFront ? front : back
-    front.style.display = onFront ? 'block' : 'none'; back.style.display = onFront ? 'none' : 'block'
-    f.style.transform = `perspective(2400px) rotateY(${ang.toFixed(3)}deg) scale(${sc.toFixed(4)})`
-    f.style.borderRadius = (52 * lift).toFixed(1) + 'px'
-    f.style.boxShadow = lift > 0.01 ? `0 0 0 ${(2 * lift).toFixed(2)}px rgba(217,205,240,${(0.38 * lift).toFixed(3)}), 0 0 ${(26 * lift).toFixed(1)}px rgba(154,123,224,${(0.4 * lift).toFixed(3)}), 0 30px 80px rgba(0,0,0,${(0.5 * lift).toFixed(3)})` : 'none'
-    ;(onFront ? fShade : bShade).style.opacity = String((0.42 * k).toFixed(3))
-    if (onFront) { drawSky(fsx, t, SKY_H); drawGrain(fgx, t) }
-    // backdrop: deep void with a violet bloom behind the card
-    dx.clearRect(0, 0, W, H)
-    const bl = clamp(lift * 1.4)
-    if (bl > 0.003) {
-      const g = dx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, 1100)
-      g.addColorStop(0, `rgba(154,123,224,${0.24 * bl})`); g.addColorStop(0.5, `rgba(90,60,170,${0.09 * bl})`); g.addColorStop(1, 'rgba(20,10,50,0)')
-      dx.fillStyle = g; dx.fillRect(0, 0, W, H)
-    }
-    // sparkles shed off the card as it goes edge-on
-    tx.clearRect(0, 0, W, H)
-    tx.globalAlpha = 0.6; drawBurst(tx, FLIP_SPARKS, W / 2, H / 2, t, T(fm - 0.05), 0.5); tx.globalAlpha = 1
+  // ── no card flip any more (one card animation per video, and that one is the film's own cardfx cut): the back is the
+  //    same plain sky the film hands off on, so it simply takes over flat at `start` and "come" pops in on it.
+  let flipDone = false
+  function drawFlip() {
+    if (flipDone) return
+    for (const f of [front, back]) { f.style.transform = 'none'; f.style.borderRadius = '0'; f.style.boxShadow = 'none' }
+    front.style.display = 'none'; back.style.display = 'block'; bShade.style.opacity = '0'
+    dx.clearRect(0, 0, W, H); tx.clearRect(0, 0, W, H); flipDone = true
   }
 
   return {
@@ -332,8 +303,6 @@ export function endcardCues(start) {
   const T = k => start + k
   const PET = [587.33, 659.25, 739.99, 880, 987.77, 1174.66]          // one soft rising chime per petal
   return [
-    // the card flip hand-off: a soft whoosh into the turn, a card flick at edge-on, a quieter one as the back lands
-    ['whoosh', T(R.flip[1] + 0.02), 0.42, 0.021], ['tick', T(R.flip[1]), 0.033], ['tick', T(R.flip[2] - 0.02), 0.021],
     ['pop', T(R.come), 659.25, 0.06, 0],
     ['whoosh', T(R.glide[0]), 0.45, 0.04],
     ['bell', T(R.spark), 1760, 0.02, 1.4, 0],                          // the point of light
