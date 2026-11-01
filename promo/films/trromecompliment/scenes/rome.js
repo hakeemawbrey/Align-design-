@@ -7,7 +7,7 @@
 //
 // The beats (identical timing in every episode):
 //   0.0–3.7   HOOK      "What's your | *Roman Empire?*" + the sticker "(the thing you think about every day)". Marble
-//                       columns rise, the hero star (gold laurel wreath) stands on a plinth, dreaming: thought puffs rise.
+//                       columns rise, the hero star (laurel wreath) stands on a plinth, dreaming: thought puffs rise.
 //   3.9–7.4   MONUMENT  On the music drop a marble monument of the tiny moment BOOMs up out of the floor, god rays, dust;
 //                       its inscription carves on letter by letter. Pisces peeks from behind the right column, crying.
 //   7.5–11.0  DAILY     "Every. *Single.* | Day." Three timestamp stickers stack up (rule of three, the third twisted).
@@ -151,18 +151,18 @@ export function tearsCells(ctx, t, k) {
   }
 }
 
-// ── the gold laurel wreath, worn round the upper point (sprite cells)
+// ── the laurel wreath, worn round the upper point (sprite cells)
 const LAUREL = [
-  '..L..........L..',
-  '.LLl........lLL.',
-  'LLl..........lLL',
-  '.Ll..........lL.',
-  'LLl..........lLL',
-  '.LLggggggggggLL.',
-  '..LLGGGGGGGGLL..',
+  '.l..............l.',
+  'lL..............Ll',
+  '.Ll............lL.',
+  'lL..............Ll',
+  '.Ll............lL.',
+  '..LlL........LlL..',
+  '....LlLlLlLlLl....',
 ]
 export function drawLaurel(ctx, F, { alpha = 1 } = {}) {
-  inSprite(ctx, F, () => drawBits(ctx, LAUREL, { L: GOLD, l: '#ffe7a0', G: GOLD, g: '#c9952f' }, 18, 8.6, 1, { alpha, outline: INK }))
+  inSprite(ctx, F, () => drawBits(ctx, LAUREL, { L: '#8fdc6a', l: '#3f9a4f' }, 18, 8.6, 1, { alpha, outline: INK }))
 }
 
 // ── the show bug: a pixel laurel + "MY ROMAN EMPIRE" (Inter 800, letter-spaced small caps, gold), top-left 56 px

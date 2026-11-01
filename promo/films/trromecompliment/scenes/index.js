@@ -1,6 +1,6 @@
 // trromecompliment: MY ROMAN EMPIRE, "Nice shoes." (20 s vertical, Star Talk Trends §7.1, music: cinematic · Cm)
 // Story 0–15.6, then the shared end card. The format look and timing live in ./rome.js (identical in all five episodes).
-//   0.0–3.7   "What's your | *Roman Empire?*"  Columns rise; ♎ Libra (gold laurel, tiny white sneakers on its two lower
+//   0.0–3.7   "What's your | *Roman Empire?*"  Columns rise; ♎ Libra (laurel wreath, tiny white sneakers on its two lower
 //             points) stands on a plinth and dreams: thought puffs, a cloud with a "?".
 //   3.9–7.4   "Mine? | *“Nice shoes.”*"  On the drop a marble SNEAKER booms up on a pedestal, god rays, dust. The
 //             inscription carves on: “NICE SHOES.” / DATE ONE · IN PASSING. Libra's real sneakers twinkle; Libra
