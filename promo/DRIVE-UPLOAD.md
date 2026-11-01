@@ -1,9 +1,28 @@
 # Upload the Star Talk videos to Google Drive
 
-Copy every Star Talk video from the two private claude.ai Artifact pages below into a **"Star Talk"** folder in the
+Copy every Star Talk video from the private claude.ai Artifact pages below into a **"Star Talk"** folder in the
 user's Google Drive, one subfolder per show/section. Safe to re-run: skip any file already in the target folder.
 
 ## Where the videos are
+
+Use the **Star Talk library** first: seven pages holding the re-cut versions (one card transition per video, no
+season numbers). Each page's films JSON lists every film on it; films whose `video` is empty are still rendering.
+Use the **Artifact** tool on all of these, never curl/WebFetch.
+
+| Page | Drive subfolder(s) | URL |
+|---|---|---|
+| 1 Shows | one per show, plus "Your Star Guide" and "Ask the Stars" | https://claude.ai/artifact/Y1A9dvVHzNCkZHVSHVrShL |
+| 2 Seasons 1–3 | "Season 1 & specials", "Season 2", "Season 3" | https://claude.ai/artifact/PYfdgxDomLRCfJPYd5o41m |
+| 3 Seasons 4–6 | one per season | https://claude.ai/artifact/7tmBGxVECMsY26EdGH8jEz |
+| 4 Seasons 7–9 | one per season | https://claude.ai/artifact/4x6PZMRzDhAdyKQ464TaQ4 |
+| 5 Seasons 10–12 | one per season | https://claude.ai/artifact/2w5je7j2ehCPWyzCnN7bQx |
+| 6 Season 13 | "Season 13" | https://claude.ai/artifact/J2peBiXxgZJm3ErvVz94PL |
+| 7 Remix | "Star Talk Remix" | https://claude.ai/artifact/7kLNcQpRUJQDJ575ht3sd4 |
+
+Each film has `id`, `group` (section key), `show`, `title`, `video`, `poster`; the page's `PAGE.sections` maps group
+keys to section names.
+
+The older pages hold the previous versions. Only use them for a film whose library `video` is still empty:
 
 Both are the user's own Artifacts (use the **Artifact** tool, never curl/WebFetch on them):
 
