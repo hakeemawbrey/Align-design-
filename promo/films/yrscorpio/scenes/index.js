@@ -52,10 +52,10 @@ function feed(x, t, T, ctx) {
   })
   x.restore()
   // the date's question marks, one per post
-  if (ctx.date) shown.forEach((p, i) => {
+  shown.forEach((p, i) => {
     const q = pop01(t, p.t + 0.5, 0.3, 2.8)
     const wob = Math.sin(t * 5 + i * 2) * 0.12
-    drawBits(x, QM, { q: [BONE, GOLD, PINK][i] }, ctx.date.x - 70 + i * 70, ctx.date.F.cy - 170 - (i % 2) * 30, 9 * q, { rot: wob })
+    drawBits(x, QM, { q: [BONE, GOLD, PINK][i] }, ctx.P.date.x - 70 + i * 70, ctx.P.date.y - 170 - (i % 2) * 30, 9 * q, { rot: wob })
   })
 }
 
