@@ -50,7 +50,7 @@ export const T = {
   hush: [8.35, 8.9], laugh: BEAT(15),                  // 8.933
   cut: BEAT(16),                                       // 9.489
   widen: [10.05, 10.6], h2: 10.1, h2Out: [12.6, 12.8],
-  line: 10.65, boxOpen: 10.45, boxClose: 13.1,
+  line: 10.5, boxOpen: 10.3, boxClose: 13.25,
   h3: BEAT(22), stamp: BEAT(23),                       // 12.823 · 13.379
   out: [15.05, 15.45], bugOut: [15.2, 15.5],
 }
