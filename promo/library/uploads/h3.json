@@ -1,1 +1,34 @@
-{}
+{
+ "askgemini": {
+  "poster": "/_blob/36d8afe6f44ab86fa503db6cba7f0cd3",
+  "video": "/_blob/50e3da3e20e24506c9cc1b342d40d7c1"
+ },
+ "askleo": {
+  "poster": "/_blob/c47985d8bcbb42c19273f7dfafbe54ce",
+  "video": "/_blob/edce5367c3d6aada9e9c87baec05b0b6"
+ },
+ "askvirgo": {
+  "poster": "/_blob/9b3df98ab397caa1cf2b6dee946d3457",
+  "video": "/_blob/4d41e13651587203e150b3bdc3fa37d5"
+ },
+ "sxcount1": {
+  "poster": "/_blob/486fb483908021f9bcffbbc012b6e4e5",
+  "video": "/_blob/03373d3886822599b73905f46a72e987"
+ },
+ "sxorbit3": {
+  "poster": "/_blob/056ab0f41f31274b69695ec712774a7c",
+  "video": "/_blob/0b50ea8251dca20a5a07aaad0b4e13ca"
+ },
+ "sxrecapbowl": {
+  "poster": "/_blob/6dae020ded0a5e9362d0d123d2b0949f",
+  "video": "/_blob/22a527ef62cfb427f50f38fdd9befe0d"
+ },
+ "sxseasonscorpio": {
+  "poster": "/_blob/32292c8a4b369a779d0dae307d6d07fd",
+  "video": "/_blob/cb5087386b21ef1e2406f2ee420e9bea"
+ },
+ "sxsignscolib": {
+  "poster": "/_blob/51dbc17c5c4f254cd841ea90fbd3e85b",
+  "video": "/_blob/152b471f73b94c6a5057097d93ba3093"
+ }
+}
