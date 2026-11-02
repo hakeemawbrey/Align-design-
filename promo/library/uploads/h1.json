@@ -215,9 +215,41 @@
   "poster": "/_blob/bd3d2c27f7f2a8a7865e857c350b7baa",
   "video": "/_blob/b057c2bfc5daa8a61610e612c09284e5"
  },
+ "st13aspects": {
+  "poster": "/_blob/a80355cac322948711f25f97d4bfb5c3",
+  "video": "/_blob/69ad92e58f42353581c9e683e640bca0"
+ },
  "st13birthchart": {
   "poster": "/_blob/b1236ee8fe26bccf71f9a790ed6a6323",
   "video": "/_blob/104479d822fb63b34e5f566470fab7aa"
+ },
+ "st13finale": {
+  "poster": "/_blob/6ff5b9e32549d2b41776459a7f59e966",
+  "video": "/_blob/350799565edcd4db835530472f00f097"
+ },
+ "st13flags": {
+  "poster": "/_blob/af9a1c85583edc83d69e091b44b8ac9d",
+  "video": "/_blob/60ce0b1a0bb91e57978decb53ffd676c"
+ },
+ "st13goodbye": {
+  "poster": "/_blob/2e728e933d2f1286393a0eaca421891b",
+  "video": "/_blob/07757bd5571038af721e0ea10a37cbf0"
+ },
+ "st13mercury": {
+  "poster": "/_blob/05c43170431f59c222b2ae55a5c890ba",
+  "video": "/_blob/a6623063ae9ebb49252fd3afbe5c6363"
+ },
+ "st13nodes": {
+  "poster": "/_blob/094c88fee48d589540d6d7c8e19c8624",
+  "video": "/_blob/22cb9ee1d3dacaf1bac022d7e285252e"
+ },
+ "st13retroreal": {
+  "poster": "/_blob/ddd5bb374848e1270d074100d65808c7",
+  "video": "/_blob/abd0404ed593b05df685718406a021f3"
+ },
+ "st13sunsign": {
+  "poster": "/_blob/9ddd2bc8b5c7f7237b0800973a3a16ec",
+  "video": "/_blob/86d61553d8c3a5195b6b995138d78f04"
  },
  "sxcount2": {
   "poster": "/_blob/06056f6136f8941d27295c5b8b56c48f",
