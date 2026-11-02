@@ -236,6 +236,10 @@ export default function Site() {
 
         {/* the ballot: one short card, a pass into the beta with the vote inside it */}
         <form className="ballot one" id="ballot" onSubmit={(e) => { e.preventDefault(); void pay() }}>
+          <span className="ballot-ribbon" aria-hidden>✦ Founding beta ✦</span>
+          <span className="ob-twinkle ballot-twinkle" aria-hidden>
+            {TWINKLES.slice(0, 8).map(([x, y, d, sz], i) => <i key={i} style={{ left: `${x}%`, top: `${y * 0.22}%`, animationDelay: `${d}s`, width: sz, height: sz }} />)}
+          </span>
           <div className="ballot-head">
             <h3 className="ballot-title">Join the Align<sup className="tm">™</sup> beta</h3>
             <p className="price-deal"><s aria-label="Regular price $25">$25</s> <b>$15</b> <span>special price · 100 per city</span></p>
