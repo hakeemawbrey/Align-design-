@@ -167,6 +167,10 @@
   "poster": "/_blob/296a12581bc9557050143a880ab53707",
   "video": "/_blob/0cdf26770fcb6c577b3fcc9cd235e957"
  },
+ "st12allin": {
+  "poster": "/_blob/4d9ec52f3345f2bdaa38366b852b44ba",
+  "video": "/_blob/df5646763438f459f54b00ec206d1cef"
+ },
  "st12austin": {
   "poster": "/_blob/0dbcb4f26b7bc28f0f0a809ce6049986",
   "video": "/_blob/c4caa9ba2c34cc6563f809c0194048e3"
@@ -174,6 +178,34 @@
  "st12coffeedate": {
   "poster": "/_blob/2dd3c55a3acdc09c9984b99ecfeb1897",
   "video": "/_blob/cc88d060f2d0c37d63cbaaa733bab96a"
+ },
+ "st12exscroll": {
+  "poster": "/_blob/caeeb44dd46e9c4518fc72a44d0d869c",
+  "video": "/_blob/d2efc120b93c084883907eadd9920251"
+ },
+ "st12finale": {
+  "poster": "/_blob/798ebd7525e410dcadaae4afac286363",
+  "video": "/_blob/a27371d11be7779a639373724c07d93a"
+ },
+ "st12gemini": {
+  "poster": "/_blob/8cb57137dd2f421b26eb483cdbd433de",
+  "video": "/_blob/8f6c9cd1bbfc16db0392c7cc0e4b6908"
+ },
+ "st12houstonbest": {
+  "poster": "/_blob/120f04ba695a08134e6c202300e6e926",
+  "video": "/_blob/8b4b9a45fd9c6f5ea1a4c1f1781bbd77"
+ },
+ "st12la": {
+  "poster": "/_blob/e60027ba33045f1a11b76eb665df2a12",
+  "video": "/_blob/ee2f6d91fec337ab4c29e9f958cb4616"
+ },
+ "st12meetfriends": {
+  "poster": "/_blob/036057b9000061dc1dbe3fffb56d8d36",
+  "video": "/_blob/90bdb637d917572673f76eafaaa05a9b"
+ },
+ "st12pastlove": {
+  "poster": "/_blob/648ea1f12087d6e27f9ba6bece6dc860",
+  "video": "/_blob/aa2bc85d48ce2462cd8790f7be3d8970"
  },
  "sxcount3": {
   "poster": "/_blob/a28fe20b7439689cd4743b21462b2fd8",
