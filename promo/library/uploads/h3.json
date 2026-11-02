@@ -167,6 +167,10 @@
   "poster": "/_blob/e38b51871457a2622f5d27efff9aba1c",
   "video": "/_blob/4c63a9c93cfc5cbb56a6a0c998c0912e"
  },
+ "st11virgo": {
+  "poster": "/_blob/2326e50755f2a5662c27d87558d40f02",
+  "video": "/_blob/1bd6aae60f09444f4f72c4fb7c8082f5"
+ },
  "st12aries": {
   "poster": "/_blob/79a4f62a98a3842250e6f03b27eba40b",
   "video": "/_blob/d930080a991d9902bc932b89da0e8960"
@@ -174,6 +178,38 @@
  "st12chores": {
   "poster": "/_blob/b7400cc1128fc13e0bd560292471bc53",
   "video": "/_blob/0490fda2775aef4faf537e15df48d564"
+ },
+ "st12diverse": {
+  "poster": "/_blob/0560fb335b30a071db98e11e8832dcda",
+  "video": "/_blob/da8d29e8a0cd55c1fb1a2b8ccd7c7a28"
+ },
+ "st12doubletext": {
+  "poster": "/_blob/f86982144f5229585470b23ed4210ab5",
+  "video": "/_blob/a6b137413ad8241d8a38763ec43e8d5d"
+ },
+ "st12foodfight": {
+  "poster": "/_blob/2a8f092b85e3d6cbc332cc7114a8b832",
+  "video": "/_blob/8cb23f7f17c2f3ec2b155e97aa27eb86"
+ },
+ "st12humidity": {
+  "poster": "/_blob/15498185a36c1858bc52eb65d354080b",
+  "video": "/_blob/98563cfe2bac95b91e79072803f3013c"
+ },
+ "st12leoseason": {
+  "poster": "/_blob/7802941981a620485f7fe1595c77be5b",
+  "video": "/_blob/efe8d971337cc7f4f02a6e7bd8a5223e"
+ },
+ "st12notredflag": {
+  "poster": "/_blob/5512be700de6900759c3f25e6ee3b423",
+  "video": "/_blob/6ca75b92e99a4b4164f293607ee9cf56"
+ },
+ "st12nyc": {
+  "poster": "/_blob/46eee94fe866fff970f67aeda7c7b89b",
+  "video": "/_blob/a7b2a7a72a37d23955034ec7898f66a3"
+ },
+ "st12rising": {
+  "poster": "/_blob/d8f60742f145f0e8267bc2b65985886a",
+  "video": "/_blob/2ab280fc7a8dd2d8177136bd41e508f6"
  },
  "sxcount1": {
   "poster": "/_blob/486fb483908021f9bcffbbc012b6e4e5",
