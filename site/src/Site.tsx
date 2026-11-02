@@ -3,25 +3,17 @@ import { AnimatePresence, MotionConfig, motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import RevealStyles from '@app/components/reveal/RevealStyles'
 import AlignMark from '@app/components/intro/AlignMark'
-import ElementBadge from '@app/components/ElementBadge'
-import { SIGNS, type SignId } from '@app/data/signs'
 import FlipCard, { FLIP_H, FLIP_W, type Caption } from './FlipCard'
 import Nebula from './Nebula'
-import Scoreboard from './Scoreboard'
-import { VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
-import { checkout, checkoutReady, useVotes } from './votes'
+import { TEXAS, VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
+import { checkout, checkoutReady } from './votes'
 
-/** the sun sign for a YYYY-MM-DD birth date (tropical, by the usual cut-off days) */
-const CUSPS: [number, SignId][] = [[120, 'capricorn'], [219, 'aquarius'], [321, 'pisces'], [420, 'aries'], [521, 'taurus'], [621, 'gemini'],
-  [723, 'cancer'], [823, 'leo'], [923, 'virgo'], [1023, 'libra'], [1122, 'scorpio'], [1222, 'sagittarius'], [1232, 'capricorn']]
-function sunSign(ymd: string): SignId {
-  const md = Number(ymd.slice(5, 7)) * 100 + Number(ymd.slice(8, 10))
-  return CUSPS.find(([cut]) => md < cut)![1]
-}
-function ageOn(ymd: string, now = new Date()) {
-  const [y, m, d] = ymd.split('-').map(Number)
-  return now.getFullYear() - y - (now.getMonth() + 1 < m || (now.getMonth() + 1 === m && now.getDate() < d) ? 1 : 0)
-}
+/**
+ * The city shown third in the launch order. Hard-coded for now; once the vote is live,
+ * set it from the leader in useVotes() (votes.ts) instead.
+ */
+const NEXT_CITY: City = { slug: 'new-york-ny', name: 'New York City', state: 'NY' }
+
 /** the questions, closed until tapped */
 const FAQ: [string, string][] = [
   ['Why pay for a beta?', 'A deck only works when enough real people are in it. Seats tell us who’s coming, and votes tell us where.'],
@@ -49,7 +41,6 @@ function useCardScale() {
 }
 
 export default function Site() {
-  const tally = useVotes()
 
   // the ballot: the city you vote for, your name, your birth date, your email
   const [voteText, setVoteText] = useState('')
@@ -73,10 +64,6 @@ export default function Site() {
   const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(birthDate) && birthDate >= minDate && birthDate <= maxDate
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
   const ready = !!vote && !!name.trim() && dateOk && emailOk
-
-  // the card section shows their sun sign and age as they type the birth date
-  const sign = dateOk ? SIGNS[sunSign(birthDate)] : null
-  const age = dateOk ? ageOn(birthDate) : null
 
   // back from Stripe on ?paid=1; the vote was remembered on the way out, if this tab still has it
   const [paid] = useState(() => {
@@ -142,12 +129,6 @@ export default function Site() {
     toBallot()
     if (!nameRef.current?.value) window.setTimeout(() => nameRef.current?.focus({ preventScroll: true }), 450)
   }, [])
-  /** the write-in row: empty the city and type one */
-  const writeIn = useCallback(() => {
-    setVoteText('')
-    toBallot()
-    window.setTimeout(() => voteRef.current?.focus({ preventScroll: true }), 450)
-  }, [])
 
   const pay = async () => {
     // a ref, so a second tap in the same frame can't save twice
@@ -212,37 +193,47 @@ export default function Site() {
       <section className="wrap vote" id="vote">
         <div className="vote-head">
           <span className="kicker">Voting is open now</span>
-          <h2>Which city lights after Texas?</h2>
-          <p className="sub">$15 gets you into the beta and one vote, counted today. Same price everywhere.</p>
+          <h2>Which city launches after Texas?</h2>
         </div>
 
-        <Scoreboard tally={tally} mine={vote} onPick={pickVote} onWriteIn={writeIn} />
+        {/* the launch order: three blocks, no counts */}
+        <ol className="order">
+          <li className="ob houston">
+            <span className="ob-n" aria-hidden>1</span>
+            <span className="ob-city">Houston</span>
+            <span className="ob-tag">Launches first</span>
+          </li>
+          <li className="ob">
+            <span className="ob-n" aria-hidden>2</span>
+            <span className="ob-city">Texas</span>
+            <span className="ob-sub">{TEXAS.map((c) => c.name).join(' · ')}</span>
+            <span className="ob-tag">Locked in next</span>
+          </li>
+          <li>
+            <button type="button" className="ob vote-next" onClick={() => pickVote(NEXT_CITY)}>
+              <span className="ob-n" aria-hidden>3</span>
+              <span className="ob-city">{NEXT_CITY.name}</span>
+              <span className="ob-tag">Leading the vote · yours decides</span>
+            </button>
+          </li>
+        </ol>
 
-        {/* the ballot, dealt as three cards: your vote, your card, your seat */}
-        {/* the ballot: one card, a pass into the beta with the vote inside it */}
+        {/* the ballot: one short card, a pass into the beta with the vote inside it */}
         <form className="ballot one" id="ballot" onSubmit={(e) => { e.preventDefault(); void pay() }}>
           <div className="ballot-head">
             <h3 className="ballot-title">Join the Align<sup className="tm">™</sup> beta</h3>
-            <p className="price-deal"><s aria-label="Regular price $25">$25</s> <b>$15</b> <span>special price</span></p>
-            <p className="price">Only 100 spots per city · first access to the beta, and a vote for your city</p>
+            <p className="price-deal"><s aria-label="Regular price $25">$25</s> <b>$15</b> <span>special price · 100 per city</span></p>
           </div>
 
-          <fieldset className="bsec">
-            <legend><span aria-hidden>1</span>Your vote</legend>
-            <label className="field">
-              <span>The city after Texas</span>
-              <input ref={voteRef} id="vote-city" aria-describedby="vote-note" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
-                placeholder="Pick from the list, or type one" autoComplete="off" required />
-              <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
-            </label>
-            <p className="note" id="vote-note" aria-live="polite">
-              {lockedIn ? 'Houston and Texas are already locked in. Vote for a city beyond Texas.'
-                : vote ? <>One vote for <b>{vote.name}</b>, counted today.</> : 'Tap a city in the list, or type one.'}
-            </p>
-          </fieldset>
+          <label className="field">
+            <span>Your vote · the city after Texas</span>
+            <input ref={voteRef} id="vote-city" aria-describedby="vote-note" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
+              placeholder="e.g. New York City" autoComplete="off" required />
+            <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
+          </label>
+          {lockedIn && <p className="note" id="vote-note" role="alert">Houston and Texas are already locked in. Vote for a city beyond Texas.</p>}
 
-          <fieldset className="bsec">
-            <legend><span aria-hidden>2</span>Your card</legend>
+          <div className="pair">
             <label className="field">
               <span>First name</span>
               <input ref={nameRef} id="name" enterKeyHint="next" maxLength={60} value={name} onChange={(e) => setName(e.target.value)} placeholder="First name" autoComplete="given-name" required />
@@ -252,27 +243,18 @@ export default function Site() {
               <span className="date-wrap">
                 <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
                 {/* iPhone shows an empty box until a date is picked */}
-                {!birthDate && <span className="date-ph" aria-hidden>mm / dd / yyyy</span>}
+                {!birthDate && <span className="date-ph" aria-hidden>mm/dd/yyyy</span>}
               </span>
             </label>
-            {/* not while a year is half typed */}
-            {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
-            {sign && (
-              <p className="sign-line" aria-live="polite">
-                <ElementBadge element={sign.element} size={28} />
-                <span><b style={{ color: sign.color }}>{sign.name}</b>{name.trim() ? ` · ${name.trim()}, ${age}` : ` · ${age}`}</span>
-              </p>
-            )}
-          </fieldset>
+          </div>
+          {/* not while a year is half typed */}
+          {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
 
-          <fieldset className="bsec">
-            <legend><span aria-hidden>3</span>Your email</legend>
-            <label className="field">
-              <span>Email</span>
-              <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false} maxLength={254}
-                value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
-            </label>
-          </fieldset>
+          <label className="field">
+            <span>Email</span>
+            <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false} maxLength={254}
+              value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
+          </label>
 
           <button className="chrome-cta" type="submit" aria-disabled={!ready || !checkoutReady || sending}
             aria-describedby={error ? 'pay-hint pay-error' : 'pay-hint'}>

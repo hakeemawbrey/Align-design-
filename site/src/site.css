@@ -96,7 +96,7 @@ h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size:
 /* ── the vote: rollout, race, ballot ──────────────── */
 .vote { padding-block: 96px 80px; }
 .vote-head { display: grid; justify-items: center; text-align: center; gap: 18px; }
-.vote-head h2 { max-width: 15ch; }
+.vote-head h2 { max-width: 18ch; }
 .vote-head .sub { margin: 0; }
 
 /* where it lights, in order: a rail, not boxes */
@@ -401,3 +401,44 @@ html { scroll-padding-top: 0; }
 
 /* the falling stars, over the clouds and under everything else */
 .falling { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+
+/* ── the launch order: three numbered blocks ── */
+.order { list-style: none; display: grid; gap: 12px; max-width: 760px; margin: 40px auto 0; }
+@media (min-width: 760px) { .order { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+.order > li { display: grid; }
+.ob {
+  position: relative; display: grid; align-content: start; gap: 6px; width: 100%; padding: 20px 20px 18px; border-radius: 18px; text-align: left;
+  background: rgba(30,18,64,0.7); border: 1px solid rgba(179,166,196,0.2);
+}
+.ob-n {
+  display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; margin-bottom: 6px;
+  font-family: var(--mono); font-size: 12px; color: #2a1d4a; background: #ddd0ff;
+}
+.ob-city { font-family: var(--serif); font-style: italic; font-size: 28px; line-height: 1.05; color: var(--label-1); }
+.ob-sub { font-size: 14px; color: var(--label-2); }
+.ob-tag { margin-top: 4px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--label-3); }
+/* Houston: the pearl holo frame */
+.ob.houston {
+  border: 4px solid transparent;
+  background:
+    linear-gradient(180deg, rgba(38,24,80,0.97), rgba(24,14,54,0.97)) padding-box,
+    conic-gradient(from 210deg, #f8edff, #ffc6e6, #fff7ec, #ffe0a8, #c2ffe4, #eaf4ff, #c4d6ff, #dcc6ff, #ffeff7, #f8edff) border-box;
+  box-shadow: 0 0 22px rgba(248,237,255,0.2);
+}
+/* the vote's leader: tap to vote for it */
+.ob.vote-next { cursor: pointer; border-style: dashed; border-color: rgba(221,208,255,0.5); transition: border-color .15s ease, background-color .15s ease; }
+@media (hover: hover) { .ob.vote-next:hover { border-color: #ddd0ff; background: rgba(40,26,80,0.8); } }
+
+/* ── the short beta card ── */
+.ballot.one .ballot-head { padding-bottom: 20px; margin-bottom: 20px; }
+.ballot.one .field { margin-bottom: 16px; }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+@media (max-width: 479px) { .pair { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+.pair .field input { padding: 0 12px; font-size: 15px; }
+.pair .date-ph { left: 12px; font-size: 15px; }
+.ballot.one .gets { gap: 6px; margin-top: 20px; padding-top: 16px; font-size: 14px; }
+@media (min-width: 420px) { .ballot.one .gets { grid-template-columns: 1fr 1fr; column-gap: 16px; } }
+.ballot.one .chrome-cta { margin-top: 4px; }
+.ballot.one .checkout { margin-top: 10px; }
+.ballot.one .price-deal { flex-wrap: wrap; row-gap: 4px; }
+.ballot.one .price-deal span { flex-basis: 100%; text-align: center; }
