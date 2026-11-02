@@ -34,6 +34,7 @@ import {
 } from './mlkit.js'
 
 export const DURATION = 120
+const MOON = { x: 860, y: 610, r: 100 }   // (as mlpilot: clear of the headlines)
 const END = DURATION - ENDCARD_LEN            // 115.6
 const SG = s => signStar(s)
 const sp = (s, name) => `${SG(s).glyph}︎ ${name}`
@@ -166,9 +167,9 @@ function crickets(g, t, t0, x, y) {
 
 // ── the previously stills (painted once at build)
 const PREV = [
-  { caption: 'One balloon. 7 PM.', crop: [520, 820, 620, 732], scene: g => drawLane(g, 1, { time: 'dusk', pan: 300, lampsAt: 0 }, c => { drawSign(c, 'virgo', 720, standY(200), 200, 1, { mood: 'happy' }); drawSign(c, 'aries', 920, standY(200), 200, 1, { mood: 'happy', look: [-1, 0] }); balloon(c, 990, 1340, 1) }) },
+  { caption: 'One balloon. 7 PM.', crop: [520, 820, 620, 732], scene: g => drawLane(g, 1, { moon: MOON, time: 'dusk', pan: 300, lampsAt: 0 }, c => { drawSign(c, 'virgo', 720, standY(200), 200, 1, { mood: 'happy' }); drawSign(c, 'aries', 920, standY(200), 200, 1, { mood: 'happy', look: [-1, 0] }); balloon(c, 990, 1340, 1) }) },
   { caption: 'Still here.', crop: [300, 700, 560, 661], scene: g => { drawApartment(g, 1, {}); drawPisces(g, 560, standY(220, 1400), 220, 1, { tears: 3, mood: 'happy' }); drawIcon(g, 'moon', 470, 760, 14) } },
-  { caption: 'Scorpio knew the name.', crop: [480, 840, 600, 708], scene: g => drawLane(g, 1, { pan: 1150 }, c => { drawSign(c, 'scorpio', 1780, standY(200), 200, 1, { mood: 'happy' }); drawSign(c, 'libra', 1960, standY(200), 200, 1, { mood: 'heart', look: [-1, 0] }) }) },
+  { caption: 'Scorpio knew the name.', crop: [480, 840, 600, 708], scene: g => drawLane(g, 1, { moon: MOON, pan: 1150 }, c => { drawSign(c, 'scorpio', 1780, standY(200), 200, 1, { mood: 'happy' }); drawSign(c, 'libra', 1960, standY(200), 200, 1, { mood: 'heart', look: [-1, 0] }) }) },
 ]
 
 async function build(stage) {
@@ -207,7 +208,7 @@ async function build(stage) {
 
   function walk(t) {
     const pan = path(t, [[10, 240], [19.4, 520]])
-    drawLane(x, t, { time: 'dusk', pan, lampsAt: 12.5 }, c => {
+    drawLane(x, t, { moon: MOON, time: 'dusk', pan, lampsAt: 12.5 }, c => {
       const vX = path(t, [[10, 560], [19.4, 1000]]), aX = vX + 230
       const moving = H.V
       const hop = steps(10.2, 19.2)
@@ -249,7 +250,7 @@ async function build(stage) {
   }
 
   function advice(t) {
-    drawLane(x, t, { pan: 560 }, c => {
+    drawLane(x, t, { moon: MOON, pan: 560 }, c => {
       const S = 210
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: 2, box: false, mood: 'wide', look: [1, 1] })
       const lx = 820, gx2 = 1340, vx = 1080
@@ -272,7 +273,7 @@ async function build(stage) {
   function tries(t) {
     const pan = 360
     // attempt bubbles, reactions
-    drawLane(x, t, { pan, lit: { pisces: 1, cafe: 1, a0: 1, a4: 1, c0: 1, c2: 1, d1: 1 } }, c => {
+    drawLane(x, t, { moon: MOON, pan, lit: { pisces: 1, cafe: 1, a0: 1, a4: 1, c0: 1, c2: 1, d1: 1 } }, c => {
       const S = 220, vx = 760, ax = 1000, vy = standY(S)
       const sob = t > T.pisSob
       // Pisces: in the window, then flinging it open and leaning out
@@ -306,7 +307,7 @@ async function build(stage) {
     // zoom in on the pair under the café lamp, then the slump on the bench
     const z = t < T.slump ? lerp(1, 1.35, ease.inOutCubic(prog(t, T.press, 63.5))) : lerp(1.35, 1, ease.inOutCubic(prog(t, T.slump, T.slump + 0.8)))
     const shake = t > 62.4 && t < T.yogurt ? Math.sin(t * 60) * 3 : 0
-    drawLane(x, t, { pan: 360, zoom: z, focus: [540, 1180], shake, lit: { pisces: 1, cafe: 1, a0: 1, a4: 1, c0: 1, c2: 1, d1: 1 } }, c => {
+    drawLane(x, t, { moon: MOON, pan: 360, zoom: z, focus: [540, 1180], shake, lit: { pisces: 1, cafe: 1, a0: 1, a4: 1, c0: 1, c2: 1, d1: 1 } }, c => {
       const S = 220, vx = 760, vy = standY(S)
       const ax = lerp(1000, 1500, ease.inCubic(prog(t, 67.6, 69.4)))
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: 2, mood: 'wide', box: false, look: [1, 1] })
@@ -326,7 +327,7 @@ async function build(stage) {
 
   function bench(t) {
     const pan = 650
-    drawLane(x, t, { time: 'late', pan, lit: { pisces: 1, cafe: 0.6, c2: 1, d6: 1, a4: 1 } }, c => {
+    drawLane(x, t, { moon: MOON, time: 'late', pan, lit: { pisces: 1, cafe: 0.6, c2: 1, d6: 1, a4: 1 } }, c => {
       const S = 200, vx = 1080, ax = 1300, sy = standY(S, LANE.bench.seatY)
       const said = t > T.said + 1.7, fx = t > T.fx
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: t > T.too ? 3 : 2, mood: t > T.too ? 'happy' : 'sparkle', box: false, look: [1, 1], hops: t > T.too ? [T.too + 0.1, T.too + 0.7, T.too + 1.3] : null })
@@ -355,7 +356,7 @@ async function build(stage) {
     drawCafe(x, t, { behind: c => drawSign(c, 'scorpio', CAFE.counter.x, standY(220, CAFE.counter.y), 220, t, { mood: t > 110.2 ? 'sparkle' : 'neutral', look: [0, 1], hops: [109.3, 110.3], seed: 8 }) })
     x.restore()
     x.save(); x.beginPath(); x.rect(540, 0, 540, 1920); x.clip()
-    drawLane(x, t, { pan: 1890 - 810 + (1 - k) * 120 }, c => drawSign(c, 'libra', 1890, standY(220), 220, t, { mood: t > 110.2 ? 'sparkle' : 'neutral', look: [0, 1], hops: [109.5, 110.3], seed: 6 }))
+    drawLane(x, t, { moon: MOON, pan: 1890 - 810 + (1 - k) * 120 }, c => drawSign(c, 'libra', 1890, standY(220), 220, t, { mood: t > 110.2 ? 'sparkle' : 'neutral', look: [0, 1], hops: [109.5, 110.3], seed: 6 }))
     x.restore()
     R(x, 534, 0, 12, 1920, INK); R(x, 537, 0, 6, 1920, ML_GOLD)
     drawBubble(x, 300, 1340, 'tomorrow, I ask.', { size: 30, k: pop01(t, 109.3, 0.25, 2.2) })
