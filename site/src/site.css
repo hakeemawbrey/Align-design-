@@ -495,3 +495,25 @@ html { scroll-padding-top: 0; }
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%233a2c4e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>"), var(--chrome);
 }
 .check input:focus-visible { outline: 2px solid #ddd0ff; outline-offset: 2px; }
+
+/* ── the short card on phones ── */
+.ballot.one .field { gap: 0; margin-bottom: 12px; }
+.ballot.one .pair { gap: 12px; }
+@media (max-width: 479px) { .ballot.one .pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; } }
+.ballot.one .pair .field input { padding: 0 12px; font-size: 15px; }
+.ballot.one .consents { margin: 0 0 8px; gap: 0; }
+.ballot.one .check { min-height: 36px; font-size: 13.5px; }
+.perks { margin: 16px calc(9px - var(--pad)) 0; padding: 0 calc(var(--pad) - 9px); border-top: 1.5px dashed rgba(179,166,196,0.28); }
+.perks summary {
+  display: flex; align-items: center; justify-content: space-between; min-height: 48px; cursor: pointer; list-style: none;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--label-2);
+}
+.perks summary::-webkit-details-marker { display: none; }
+.perks summary::after { content: '+'; font-size: 16px; letter-spacing: 0; color: #ddd0ff; transition: transform .2s ease; }
+.perks[open] summary::after { transform: rotate(45deg); }
+.ballot.one .perks .gets { margin: 0 0 8px; padding: 0 0 4px; border-top: 0; }
+@media (max-width: 899px) {
+  .ballot.one { --pad: 20px; padding-top: 28px; padding-bottom: 16px; }
+  .ballot.one .ballot-head { padding-bottom: 16px; margin-bottom: 16px; }
+  .ballot.one .ballot-title { font-size: 28px; }
+}

@@ -54,6 +54,9 @@ export default function Site() {
   const [birthDate, setBirthDate] = useState('')
   const [email, setEmail] = useState('')
   const [adult, setAdult] = useState(false)
+  const [dateFocus, setDateFocus] = useState(false)
+  // the perks start open on wide screens, folded on phones
+  const [wide] = useState(() => window.innerWidth >= 900)
   const [agreed, setAgreed] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
@@ -230,9 +233,9 @@ export default function Site() {
           </div>
 
           <label className={`field${vote ? ' has-vote' : ''}`}>
-            <span>Your vote · the city after Texas</span>
+            <span className="sr">Your vote, the city after Texas</span>
             <input ref={voteRef} id="vote-city" aria-describedby="vote-note" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
-              placeholder="e.g. New York City" autoComplete="off" required />
+              placeholder="Your vote: a city after Texas" autoComplete="off" required />
             <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
           </label>
           {vote && <p className="vote-ok" id="vote-note" aria-live="polite">✓ Voting for {vote.name}</p>}
@@ -240,25 +243,23 @@ export default function Site() {
 
           <div className="pair">
             <label className="field">
-              <span>First name</span>
+              <span className="sr">First name</span>
               <input ref={nameRef} id="name" enterKeyHint="next" maxLength={60} value={name} onChange={(e) => setName(e.target.value)} placeholder="First name" autoComplete="given-name" required />
             </label>
             <label className="field">
-              <span>Birth date</span>
-              <span className="date-wrap">
-                <input id="birth-date" type="date" min={minDate} max={maxDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
-                {/* iPhone shows an empty box until a date is picked */}
-                {!birthDate && <span className="date-ph" aria-hidden>mm/dd/yyyy</span>}
-              </span>
+              <span className="sr">Birth date</span>
+              {/* reads "Birth date" until tapped, then it's the date picker */}
+              <input id="birth-date" type={birthDate || dateFocus ? 'date' : 'text'} placeholder="Birth date" min={minDate} max={maxDate} value={birthDate}
+                onFocus={() => setDateFocus(true)} onBlur={() => setDateFocus(false)} onChange={(e) => setBirthDate(e.target.value)} required />
             </label>
           </div>
           {/* not while a year is half typed */}
           {birthDate >= '1000' && !dateOk && <p className="note" role="alert">{birthDate > maxDate && birthDate <= today ? 'Align is 18+.' : 'Check your birth date.'}</p>}
 
           <label className="field">
-            <span>Email</span>
+            <span className="sr">Email</span>
             <input id="email" type="email" inputMode="email" enterKeyHint="go" autoCapitalize="off" spellCheck={false} maxLength={254}
-              value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
+              value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" autoComplete="email" required />
           </label>
 
           <div className="consents">
@@ -279,14 +280,18 @@ export default function Site() {
           {error && <p className="note" id="pay-error" role="alert">{error}</p>}
           <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field and tick both boxes'}</span>
 
-          <ul className="gets">
-            <li>First access for your city</li>
-            <li>A vote for your city to launch after Texas</li>
-            <li>Align+ for 2 years</li>
-            <li>Access to events and member benefits</li>
-            <li>A numbered founding member card</li>
-            <li>Houston only: entry to the Align TCG giveaway</li>
-          </ul>
+          {/* the perks fold away on phones so the card stays short */}
+          <details className="perks" open={wide}>
+            <summary>What you get</summary>
+            <ul className="gets">
+              <li>First access for your city</li>
+              <li>A vote for your city to launch after Texas</li>
+              <li>Align+ for 2 years</li>
+              <li>Access to events and member benefits</li>
+              <li>A numbered founding member card</li>
+              <li>Houston only: entry to the Align TCG giveaway</li>
+            </ul>
+          </details>
         </form>
       </section>
 
