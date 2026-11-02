@@ -195,10 +195,17 @@ async function build(stage) {
       const aqX = 950, aqY = standY(190)
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: t > T.pisMoon ? 3 : 2, mood: t > T.pisMoon ? 'happy' : 'sparkle', box: false, look: [1, 1], hops: [T.pisMoon + 0.4, T.pisSend] })
       drawSign(c, 'aquarius', aqX, aqY, 190, t, { mood: t > T.pisSend + 0.5 ? 'heart' : 'happy', look: [-0.6, -1], hops: [T.pisMoon - 0.1, T.pisSend + 0.5], seed: 15 })
+      // pixel moon, 1.8x with a dark halo + gold glow so it reads on a phone against the lit awning
+      const pxMoon = (mx, my) => {
+        c.save(); const g = c.createRadialGradient(mx, my, 10, mx, my, 95)
+        g.addColorStop(0, 'rgba(40,20,70,0.85)'); g.addColorStop(0.55, 'rgba(242,199,92,0.28)'); g.addColorStop(1, 'rgba(242,199,92,0)')
+        c.fillStyle = g; c.beginPath(); c.arc(mx, my, 95, 0, Math.PI * 2); c.fill(); c.restore()
+        drawIcon(c, 'moon', mx - 50, my - 44, 11)
+      }
       const arc = (p, x0, y0, x1, y1) => [lerp(x0, x1, p), lerp(y0, y1, p) - Math.sin(Math.PI * p) * 120]
       const up = prog(t, T.pisMoon - 0.1, T.pisMoon + 0.4), down = prog(t, T.pisSend, T.pisSend + 0.5)
-      { const [mx, my] = up <= 0 ? [aqX + 70, aqY - 60] : arc(up, aqX + 70, aqY - 60, LANE.pisces.x + 60, LANE.pisces.y - 20); drawIcon(c, 'moon', mx - 27, my - 24, 6) }
-      if (t > T.pisSend - 0.6) { const [mx, my] = down <= 0 ? [LANE.pisces.x - 60, LANE.pisces.y - 20] : arc(down, LANE.pisces.x - 60, LANE.pisces.y - 20, aqX - 70, aqY - 60); drawIcon(c, 'moon', mx - 27, my - 24, 6) }
+      { const [mx, my] = up <= 0 ? [aqX + 70, aqY - 60] : arc(up, aqX + 70, aqY - 60, LANE.pisces.x + 60, LANE.pisces.y - 20); pxMoon(mx, my) }
+      if (t > T.pisSend - 0.6) { const [mx, my] = down <= 0 ? [LANE.pisces.x - 60, LANE.pisces.y - 20] : arc(down, LANE.pisces.x - 60, LANE.pisces.y - 20, aqX - 70, aqY - 60); pxMoon(mx, my) }
       sparkles(c, t, LANE.pisces.x + 60, LANE.pisces.y - 20, T.pisMoon + 0.4, 10, 90, 3, [ML_GOLD, CYAN, BONE])
       sparkles(c, t, aqX - 70, aqY - 60, T.pisSend + 0.5, 10, 90, 5, [ML_GOLD, CYAN, BONE])
       // Capricorn & Leo (the Ep 1 blind date): the HARD STOP alarm, snoozed; they stay, then head up to the roof
