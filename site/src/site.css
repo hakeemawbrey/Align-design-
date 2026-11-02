@@ -442,3 +442,24 @@ html { scroll-padding-top: 0; }
 .ballot.one .checkout { margin-top: 10px; }
 .ballot.one .price-deal { flex-wrap: wrap; row-gap: 4px; }
 .ballot.one .price-deal span { flex-basis: 100%; text-align: center; }
+
+/* ── voting, made obvious ── */
+.ob-cta {
+  justify-self: start; margin-top: 10px; padding: 8px 14px; border-radius: 999px; font-size: 13.5px;
+  color: #2a1d4a; background: var(--chrome); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+}
+.ob.vote-next.voted {
+  border: 4px solid transparent; border-style: solid;
+  background:
+    linear-gradient(180deg, rgba(48,30,96,0.97), rgba(28,16,62,0.97)) padding-box,
+    conic-gradient(from 30deg, #f8edff, #ffc6e6, #fff7ec, #ffe0a8, #c2ffe4, #eaf4ff, #c4d6ff, #dcc6ff, #ffeff7, #f8edff) border-box;
+  box-shadow: 0 0 34px rgba(248,237,255,0.4), 0 0 80px rgba(201,182,240,0.25);
+}
+.ob.voted .ob-tag { color: #ddd0ff; }
+.ob-plus {
+  position: absolute; top: 16px; right: 16px; padding: 4px 10px; border-radius: 999px;
+  font-family: var(--mono); font-size: 12px; font-weight: 700; color: #2a1d4a; background: var(--chrome);
+  box-shadow: 0 0 18px rgba(248,237,255,0.6);
+}
+.field.has-vote input { border-color: #ddd0ff; box-shadow: 0 0 0 3px rgba(221,208,255,0.18), 0 0 20px rgba(221,208,255,0.2); }
+.vote-ok { margin: -4px 0 16px; font-size: 14px; color: #ddd0ff; }

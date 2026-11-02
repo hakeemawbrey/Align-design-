@@ -210,11 +210,16 @@ export default function Site() {
             <span className="ob-tag">Locked in next</span>
           </li>
           <li>
-            <button type="button" className="ob vote-next" onClick={() => pickVote(NEXT_CITY)}>
+            {/* block 3: the leader until you vote, then your vote, with a pop */}
+            <motion.button type="button" key={vote?.slug ?? 'leader'} className={`ob vote-next${vote ? ' voted' : ''}`}
+              onClick={() => pickVote(vote ?? NEXT_CITY)} aria-live="polite"
+              initial={vote ? { scale: 0.92 } : false} animate={{ scale: [0.92, 1.05, 1] }} transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}>
               <span className="ob-n" aria-hidden>3</span>
-              <span className="ob-city">{NEXT_CITY.name}</span>
-              <span className="ob-tag">Leading the vote · yours decides</span>
-            </button>
+              {vote && <motion.span className="ob-plus" initial={{ opacity: 0, y: 8, scale: 0.6 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ delay: 0.15, type: 'spring', stiffness: 420, damping: 14 }}>+1 ✦</motion.span>}
+              <span className="ob-city">{(vote ?? NEXT_CITY).name}</span>
+              <span className="ob-tag">{vote ? 'Your vote · counted when you join' : 'Leading the vote'}</span>
+              {!vote && <span className="ob-cta">Vote for this city →</span>}
+            </motion.button>
           </li>
         </ol>
 
@@ -225,12 +230,13 @@ export default function Site() {
             <p className="price-deal"><s aria-label="Regular price $25">$25</s> <b>$15</b> <span>special price · 100 per city</span></p>
           </div>
 
-          <label className="field">
+          <label className={`field${vote ? ' has-vote' : ''}`}>
             <span>Your vote · the city after Texas</span>
             <input ref={voteRef} id="vote-city" aria-describedby="vote-note" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
               placeholder="e.g. New York City" autoComplete="off" required />
             <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
           </label>
+          {vote && <p className="vote-ok" id="vote-note" aria-live="polite">✓ Voting for {vote.name}</p>}
           {lockedIn && <p className="note" id="vote-note" role="alert">Houston and Texas are already locked in. Vote for a city beyond Texas.</p>}
 
           <div className="pair">
