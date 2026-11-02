@@ -43,9 +43,41 @@
   "poster": "/_blob/83d67255b6a319d3e4143a2061d2f6a4",
   "video": "/_blob/65b624d833d7e3f392bcdb7f59de37b8"
  },
+ "guidewater": {
+  "poster": "/_blob/8da267f2d649a5162398114ee62d8197",
+  "video": "/_blob/bfe55ae0f60fd34b582c0ed60ef7a39f"
+ },
  "sr01blind": {
   "poster": "/_blob/c8f7a0cf070798dede3db12533162ec7",
   "video": "/_blob/b178658046906285a71b270814640a45"
+ },
+ "sr05talkcards": {
+  "poster": "/_blob/65de19fcf70e75610f572ae0f3c5c31c",
+  "video": "/_blob/b168ee081bb2e3464975737ffefb4c1f"
+ },
+ "sr09sparkrubalign": {
+  "poster": "/_blob/3791aa3c2a14268c5a9b00bc93f1739a",
+  "video": "/_blob/ea833b89e0183cd8670acf7afbe1cb60"
+ },
+ "srcityaustin": {
+  "poster": "/_blob/9d8b33d722fa1262f224d33fe6c066b9",
+  "video": "/_blob/c2347ec82a92cbbdfc16c942f186030e"
+ },
+ "srcitymiami": {
+  "poster": "/_blob/a35e9bc44232b2e03e7dae9bf6eab55b",
+  "video": "/_blob/48225550d96d467058be6531bc305875"
+ },
+ "srcitynyc": {
+  "poster": "/_blob/a6a40ec34e6db237184eb70261a8d4f4",
+  "video": "/_blob/5aeecb80423598696b672c79c4657371"
+ },
+ "srghosted": {
+  "poster": "/_blob/4998e3c8750f0637b603375f8f1d8e30",
+  "video": "/_blob/14e5840bd5478292a177fd54e91effcd"
+ },
+ "srhey": {
+  "poster": "/_blob/653adc5e25a43e8c6db07d7440838754",
+  "video": "/_blob/9df7fc387087a75fba9faeb2623933ed"
  },
  "sxcount2": {
   "poster": "/_blob/06056f6136f8941d27295c5b8b56c48f",
