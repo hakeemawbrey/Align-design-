@@ -103,6 +103,10 @@
   "poster": "/_blob/ca00b27320892a02fd2920841661b7f3",
   "video": "/_blob/8a4923873db1915fb873752afd7df9d0"
  },
+ "srhtxstars": {
+  "poster": "/_blob/4ef1344797b3c78b52c721d5f99d1623",
+  "video": "/_blob/559885da9e747a198b59806bb55eb89c"
+ },
  "srhtxtaste": {
   "poster": "/_blob/0b9a12ebefba50244bfea255074ee6cc",
   "video": "/_blob/b26ca7c02b81116d7faf30a5bb21a55c"
@@ -110,6 +114,34 @@
  "srl02moon": {
   "poster": "/_blob/06bcafda535fb797db253108099d9b65",
   "video": "/_blob/37f6aa0c353274d3c158b244e02d04a2"
+ },
+ "srl06constellation": {
+  "poster": "/_blob/fdd5af3eda4b997ff77ff6bae4b4ae0a",
+  "video": "/_blob/40c3ba6ac5dc25ef67997b9646f8bb42"
+ },
+ "srl10faith": {
+  "poster": "/_blob/033170a772667c61b0a217ec0a6f6b02",
+  "video": "/_blob/af016fd144ef5825be6698495001dc9c"
+ },
+ "srlonely": {
+  "poster": "/_blob/ace41b362fe31be073bb710f620b494a",
+  "video": "/_blob/2f8c99edcad9fca3e863b0ccab8d81ea"
+ },
+ "srp1mystery": {
+  "poster": "/_blob/57930c302b83d2c47ba337f2c7b2e560",
+  "video": "/_blob/35364f6bb15bc120d8e9fcb92b8c3849"
+ },
+ "srrigged": {
+  "poster": "/_blob/45b4fc77c7a80a7cde960b2f2b9a3912",
+  "video": "/_blob/3e957f1b86a7d8a5b2e9487f608f957e"
+ },
+ "srtorglass": {
+  "poster": "/_blob/b1c25cb8daa6c83918d7be91a83b3158",
+  "video": "/_blob/cba2592f6efaa68b105d4f92d2051cc8"
+ },
+ "srtorworld": {
+  "poster": "/_blob/c6901242de64d20328b2c7dfe8db5216",
+  "video": "/_blob/7950a20f9ca290bf3de3121f2e8b8ed5"
  },
  "sxcount3": {
   "poster": "/_blob/a28fe20b7439689cd4743b21462b2fd8",
