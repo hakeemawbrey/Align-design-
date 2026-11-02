@@ -12,6 +12,9 @@ function voice() {
   } catch { return '- Short sentences. No exclamation marks, no emoji, no "manifest". Astrology reads, it never decides. Never "download Align".' }
 }
 
+/** A self-contained module's source, ready to sit in the page's script. */
+const inline = (f) => readFileSync(path.join(ROOT, 'src', f), 'utf8').replace(/^export /gm, '').replace(/<\/script/gi, '<\\/script')
+
 const json = (v) => JSON.stringify(v).replace(/</g, '\\u003c')
 
 export function build({ write = true } = {}) {
@@ -20,6 +23,7 @@ export function build({ write = true } = {}) {
     .replace('/*INSPO_ITEMS*/[]', json(items))
     .replace('/*INSPO_USES*/[]', json(USES))
     .replace('/*ALIGN_VOICE*/""', json(voice()))
+    .replace('/*INSPO_LIB*/', () => ['spins.mjs', 'spec.mjs'].map(inline).join('\n'))
   const out = path.join(ROOT, 'app', 'dist', 'review.html')
   if (write) { ensureDir(path.dirname(out)); writeFileSync(out, html) }
   return { out, html, items: items.length, bytes: Buffer.byteLength(html) }

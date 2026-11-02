@@ -5,11 +5,22 @@
 // Writes:
 //   out/brief.md        what you liked and why, grouped by what to take from it, plus what you skipped
 //   out/accepted.json   the same as data, for a generator to read
+//   out/GENERATOR.md    instructions for Claude Code to build the endless Align generator
 //   ../founder/data/imports/inspo.csv   accepted reels, so `cd founder && npm run crunch` scores them and writes Align scripts
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ROOT, USES, cleanDecision, ensureDir, loadDecisions, loadItems, mediaIndex, saveDecisions } from './items.mjs'
+import { SPINS } from './spins.mjs'
+import { generatorSpec } from './spec.mjs'
+
+/** out/GENERATOR.md: build instructions for the endless generator, from the current picks. */
+export function writeSpec(decisions = loadDecisions()) {
+  ensureDir(path.join(ROOT, 'out'))
+  const md = generatorSpec({ items: loadItems(), decisions, uses: USES, spins: SPINS })
+  writeFileSync(path.join(ROOT, 'out', 'GENERATOR.md'), md)
+  return md
+}
 
 const csvCell = (s) => /[",\n]/.test(s ?? '') ? `"${String(s).replace(/"/g, '""')}"` : (s ?? '')
 const quote = (s, n = 220) => { const t = (s || '').replace(/\s+/g, ' ').trim(); return t.length > n ? t.slice(0, n - 1) + '…' : t }
@@ -92,13 +103,14 @@ function main() {
   ensureDir(path.join(ROOT, 'out'))
   writeFileSync(path.join(ROOT, 'out', 'brief.md'), md)
   writeFileSync(path.join(ROOT, 'out', 'accepted.json'), JSON.stringify(data, null, 1) + '\n')
+  writeSpec(decisions)
   const founderImports = path.join(ROOT, '..', 'founder', 'data', 'imports')
-  if (existsSync(path.join(ROOT, '..', 'founder'))) {
+  if (reels && existsSync(path.join(ROOT, '..', 'founder'))) {
     ensureDir(founderImports)
     writeFileSync(path.join(founderImports, 'inspo.csv'), csv)
   }
   const c = data.counts
-  console.log(`out/brief.md and out/accepted.json: ${c.accepted} to use, ${c.maybe} maybe, ${c.rejected} skipped of ${c.total}.`)
+  console.log(`out/brief.md, out/accepted.json and out/GENERATOR.md: ${c.accepted} to use, ${c.maybe} maybe, ${c.rejected} skipped of ${c.total}.`)
   if (reels) console.log(`${reels} accepted reels written to founder/data/imports/inspo.csv. Run: cd ../founder && npm run crunch`)
 }
 

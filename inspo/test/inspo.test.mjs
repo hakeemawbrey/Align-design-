@@ -125,3 +125,66 @@ test('gallery-dl numbers carousel slides and uses the browser login', () => {
   assert.deepEqual(a.slice(-3), ['--cookies-from-browser', 'chrome', 'https://www.instagram.com/p/X/'])
   assert.ok(a.includes('{num:>02}.{extension}'))
 })
+
+import { SPINS, suggestSpins } from '../src/spins.mjs'
+import { generatorSpec } from '../src/spec.mjs'
+
+test('every spin is in Align voice and names real uses', () => {
+  assert.equal(new Set(SPINS.map((s) => s.id)).size, SPINS.length)
+  for (const s of SPINS) {
+    assert.doesNotMatch(s.spin, /!|manifest|download|soulmate|attachment style/i, s.id)
+    for (const u of s.uses) assert.ok(USES.some((x) => x.key === u), `${s.id}: ${u}`)
+  }
+})
+
+test('every post gets three different spins, matched to its caption when it can be', () => {
+  const items = loadItems()
+  for (const it of items) assert.equal(new Set(suggestSpins(it).map((s) => s.id)).size, 3, it.id)
+  const by = (id) => suggestSpins(items.find((i) => i.id === id)).map((s) => s.id)
+  assert.ok(by('i0004').includes('built-with-claude'))   // "He asked Claude for a million views"
+  assert.ok(by('i0012').includes('dear-sign'))           // "Taurus 👀"
+  assert.ok(by('i0013').includes('sound-led'))           // "most used sounds"
+  assert.ok(by('i0005').includes('comment-card'))        // "Comment HARVEY"
+  assert.ok(by('i0002').includes('deal-night-series'))   // "7 parts, every one decided by your votes"
+})
+
+test('the generator instructions carry every note, recipe and avoid rule', () => {
+  const items = loadItems()
+  const spin = SPINS.find((s) => s.id === 'deal-night-series').spin
+  const md = generatorSpec({ items, uses: USES, spins: SPINS, now: '2026-11-02T00:00:00Z', decisions: {
+    i0002: { status: 'accepted', uses: ['series'], feedback: 'Votes make people come back', spin },
+    i0007: { status: 'maybe', uses: [], feedback: '', spin: '' },
+    i0012: { status: 'rejected', uses: [], feedback: 'Too much horoscope bait', spin: '' },
+    i0013: { status: 'rejected', uses: [], feedback: '', spin: '' },
+  } })
+  assert.match(md, /2 to use|1 to use/)
+  assert.match(md, /\(use, i0002 @yourtrainerarc\) Votes make people come back/)
+  assert.match(md, /\(avoid, i0012 @xoamparo\) Too much horoscope bait/)
+  assert.match(md, /### i0002 · @yourtrainerarc · Reel · use \(weight 3\)/)
+  assert.match(md, /### i0007 .* maybe \(weight 1\)/)
+  assert.match(md, /\*\*Align spin:\*\* A nightly series called Deal Night/)
+  assert.match(md, /picked: deal-night-series ×3/)
+  assert.match(md, /1 more skipped without a reason/)
+  assert.match(md, /## Spin library/)
+  assert.match(md, /Built with Claude Code/)
+})
+
+test('the local server rewrites out/GENERATOR.md after a save', async () => {
+  const { makeServer } = await import('../src/review-server.mjs')
+  const fs = await import('node:fs')
+  const dec = path.join(import.meta.dirname, '..', 'data', 'decisions.json')
+  const gen = path.join(import.meta.dirname, '..', 'out', 'GENERATOR.md')
+  const before = fs.readFileSync(dec, 'utf8')
+  const server = makeServer().listen(0)
+  try {
+    const port = server.address().port
+    const r = await fetch(`http://127.0.0.1:${port}/api/decision`, { method: 'POST', body: JSON.stringify({ id: 'i0003', decision: { status: 'accepted', uses: ['format'], feedback: 'Test note from the server test', spin: '' } }) })
+    assert.equal(r.status, 204)
+    await new Promise((res) => setTimeout(res, 1800))
+    assert.match(fs.readFileSync(gen, 'utf8'), /Test note from the server test/)
+  } finally {
+    server.close()
+    fs.writeFileSync(dec, before);
+    (await import('../src/brief.mjs')).writeSpec()
+  }
+})

@@ -7,6 +7,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { build } from './build.mjs'
 import { MEDIA, cleanDecision, loadDecisions, loadItems, mediaIndex, saveDecisions } from './items.mjs'
+import { writeSpec } from './brief.mjs'
 
 const TYPES = { '.mp4': 'video/mp4', '.mov': 'video/quicktime', '.webm': 'video/webm', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp' }
 
@@ -33,6 +34,8 @@ function sendFile(req, res, file) {
 export function makeServer() {
   const ids = new Set(loadItems().map((i) => i.id))
   let page = null
+  let specTimer = null
+  const respec = () => { clearTimeout(specTimer); specTimer = setTimeout(() => { try { writeSpec() } catch (e) { console.error('Could not write out/GENERATOR.md:', e.message) } }, 1500) }
   return createServer(async (req, res) => {
     const url = new URL(req.url, 'http://localhost')
     try {
@@ -53,6 +56,7 @@ export function makeServer() {
         const all = loadDecisions()
         all[id] = cleanDecision(decision)
         saveDecisions(all)
+        respec()
         res.writeHead(204); return res.end()
       }
       if (url.pathname.startsWith('/media/')) {

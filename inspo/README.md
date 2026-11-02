@@ -50,7 +50,10 @@ git-ignored) as reference. Only the structure carries over to Align.
 | `out/brief.md`, `out/accepted.json` | the brief |
 | `src/download.mjs` | the downloader |
 | `src/review-server.mjs` | the review page on your computer |
+| `out/GENERATOR.md` | your picks as build instructions for the endless generator (rewritten on every save) |
 | `src/brief.mjs` | decisions → brief |
+| `src/spins.mjs` | the suggested Align spins and how they're matched to posts |
+| `src/spec.mjs` | decisions → `GENERATOR.md` |
 | `mac/install.sh`, `mac/run.sh` | the one-click Mac setup and the Desktop buttons |
 
 ## 1. Download
@@ -154,6 +157,30 @@ from the artifact into inspo/data/decisions.json and run the brief."* Or press
 **Save decisions** on the page and run `npm run brief -- --merge ~/Downloads/decisions.json`.
 The newer edit of each post wins.
 
+### Suggested spins
+
+Under **Align spin**, every post shows three suggested spins, picked from its
+caption (a "comment X" post gets *Comment your sign*, a zodiac post gets *Dear
+[sign]*, a Claude pipeline gets *Built with Claude Code*...). Tap one (or press
+`Q`, `W`, `E`) to drop it into your spin, tick its uses, and mark the post
+**Use it**. Edit it from there. There are 27 in `src/spins.mjs`; add your own
+the same way.
+
+### Instructions for Claude (the endless generator)
+
+Every pick and every line of feedback is written into **`out/GENERATOR.md`**
+a second or two after you save (on your computer), or shown under **Instructions for
+Claude** at the top of the page (press `G`; copy or save it from there). It's a build
+brief addressed to Claude Code for a program that never runs out of Align
+content:
+
+- each post you keep becomes a **recipe** (format, what to take, your feedback, your spin), weighted 3 for Use it and 1 for Maybe;
+- recipes are crossed with things that change (the 12 signs, tonight's real sky, Align's features, story angles, talk cards), so there are thousands of combinations;
+- your feedback becomes **taste rules** for every piece, and your skip reasons become **avoid** rules;
+- it never repeats itself, writes scripts in the shapes `reels/`, `carousel/` and `founder/` already render, and reweights recipes from your trial-reel results.
+
+When you're ready, send your picks and tell Claude: *"build the generator from my inspo."*
+
 ### Keys
 
 | Key | Does |
@@ -161,6 +188,8 @@ The newer edit of each post wins.
 | `A` / `M` / `R` | Use it / Maybe / Skip it (skip moves to the next post) |
 | `1`–`9`, `0` | tick what to take: Hook, Format, Look, Editing, On-screen text, Sound, Caption/CTA, Carousel, Series, Automation |
 | `J` `→` / `K` `←` | next / previous |
+| `Q` / `W` / `E` | use suggested spin 1, 2 or 3 |
+| `G` | instructions for Claude |
 | `F` / `S` | write feedback / the Align spin; `Esc` to leave the box, `Ctrl+Enter` to save and go to the next post |
 | `O` | open on Instagram |
 

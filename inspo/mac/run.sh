@@ -19,7 +19,8 @@ pause_close() { printf "\nPress Enter to close this window."; read -r _; }
 if [ "$1" = "send" ]; then
   say "Sending your picks to GitHub"
   cd "$REPO_DIR" || exit 1
-  if git diff --quiet -- inspo/data/decisions.json; then
+  (cd inspo && node src/brief.mjs >/dev/null)   # refresh the brief and GENERATOR.md
+  if git diff --quiet -- inspo/data/decisions.json inspo/out; then
     note "No new picks since last time."
   else
     if ! gh auth status >/dev/null 2>&1; then
@@ -28,10 +29,10 @@ if [ "$1" = "send" ]; then
       gh auth login --hostname github.com --git-protocol https --web && gh auth setup-git
     fi
     n=$(node -e "const d=require('./inspo/data/decisions.json');const v=Object.values(d);console.log(v.filter(x=>x.status==='accepted').length+' use it, '+v.filter(x=>x.status==='maybe').length+' maybe, '+v.filter(x=>x.status==='rejected').length+' skipped')")
-    git add inspo/data/decisions.json
+    git add inspo/data/decisions.json inspo/out founder/data/imports 2>/dev/null
     git -c user.name="${USER}" -c user.email="${USER}@users.noreply.github.com" commit -q -m "Inspo picks: $n"
     if git pull --rebase -q && git push -q; then
-      say "Sent ($n). Tell Claude: make Align content from my inspo picks."
+      say "Sent ($n). Tell Claude: build the generator from my inspo."
     else
       say "Couldn't send. Check your internet and double-click Send Picks again."
     fi

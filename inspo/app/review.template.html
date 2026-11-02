@@ -96,6 +96,15 @@ textarea { width: 100%; min-height: 92px; resize: vertical; background: var(--ra
 .help { color: var(--ink-dim); font-size: 12px; margin: 0 }
 .keys { font: 11px/1.8 var(--mono); color: var(--ink-dim); border-top: 1px solid var(--line); padding-top: 12px }
 .empty { color: var(--ink-dim); padding: 20px 4px }
+.ideas { display: grid; gap: 6px }
+.ideas button { text-align: left; background: var(--canvas); border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; display: grid; gap: 3px; font-size: 13px; line-height: 1.4 }
+.ideas button:hover { border-color: var(--violet) }
+.ideas b { font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--align); font-weight: 400 }
+.ideas kbd { font: 10px var(--mono); color: var(--ink-dim); margin-left: 6px }
+.sheet { position: fixed; inset: 0; z-index: 20; background: color-mix(in srgb, var(--void) 70%, transparent); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)) }
+.sheet > div { width: min(860px, 100%); max-height: 100%; display: grid; grid-template-rows: auto auto 1fr; gap: 12px; background: var(--raised); border: 1px solid var(--line); border-radius: 14px; padding: 18px; min-height: 0 }
+.sheet h2 { font: 500 24px/1.1 var(--display); margin: 0 }
+.sheet pre { margin: 0; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.55 var(--mono); background: var(--canvas); border: 1px solid var(--line); border-radius: 10px; padding: 14px; min-height: 0 }
 
 @media (max-width: 1100px) { .desk { grid-template-columns: 240px minmax(0, 1fr) 320px } }
 @media (max-width: 860px) {
@@ -118,6 +127,7 @@ textarea { width: 100%; min-height: 92px; resize: vertical; background: var(--ra
     </div>
     <div class="tools">
       <span class="mode" id="mode">loading…</span>
+      <button class="ghost" id="specBtn" type="button">Instructions for Claude</button>
       <button class="ghost" id="export" type="button">Save decisions</button>
     </div>
   </header>
@@ -163,17 +173,38 @@ textarea { width: 100%; min-height: 92px; resize: vertical; background: var(--ra
         <span class="eyebrow">Align spin</span>
         <textarea id="spin" placeholder="How Align would do it. e.g. same 7-part vote series, but the audience votes on which card gets dealt next"></textarea>
       </label>
+      <div class="field">
+        <div class="eyebrow">Suggested spins · tap to use</div>
+        <div class="ideas" id="ideas" style="margin-top:6px"></div>
+      </div>
       <div class="row">
         <button class="ghost" id="draft" type="button" hidden>Draft a spin with Claude</button>
         <span class="saved" id="saved"></span>
       </div>
       <p class="help" id="draftNote" hidden></p>
-      <div class="keys">A use it · M maybe · R skip it and move on<br>1–0 toggle uses · J / → next · K / ← previous<br>F feedback · S spin · Esc leave a text box · O open on Instagram</div>
+      <div class="keys">A use it · M maybe · R skip it and move on<br>1–0 toggle uses · J / → next · K / ← previous<br>F feedback · S spin · Esc leave a text box · O open on Instagram<br>Q W E use suggested spin 1, 2, 3 · G instructions for Claude</div>
     </section>
   </div>
 </div>
 
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div>
+    <div class="row" style="justify-content:space-between">
+      <h2 id="sheetTitle">Instructions for Claude</h2>
+      <button class="ghost" id="sheetClose" type="button">Close</button>
+    </div>
+    <div class="row">
+      <p class="help" style="flex:1 1 280px">Everything you've picked, written as a build brief for an endless Align content generator. It updates every time you save. Give it to Claude Code, or say "build the generator from my inspo".</p>
+      <button class="ghost" id="specCopy" type="button">Copy</button>
+      <button class="ghost" id="specSave" type="button" hidden>Save as GENERATOR.md</button>
+      <span class="saved" id="specNote"></span>
+    </div>
+    <pre id="specText"></pre>
+  </div>
+</div>
+
 <script>
+/*INSPO_LIB*/
 const ITEMS = /*INSPO_ITEMS*/[];
 const USES = /*INSPO_USES*/[];
 const VOICE = /*ALIGN_VOICE*/"";
@@ -325,6 +356,7 @@ function renderItem() {
   if (document.activeElement !== $('feedback')) $('feedback').value = d.feedback || '';
   if (document.activeElement !== $('spin')) $('spin').value = d.spin || '';
   $('saved').textContent = d.updatedAt ? 'Saved ' + new Date(d.updatedAt).toLocaleString() : '';
+  renderIdeas(it);
   $('draftNote').hidden = true;
 }
 
@@ -358,6 +390,31 @@ function renderScreen(it) {
   card.querySelector('a').href = it.url;
   scr.append(card);
 }
+
+let ideas = [];
+function renderIdeas(it) {
+  ideas = suggestSpins(it, 3);
+  $('ideas').innerHTML = ideas.map((s, i) => `<button type="button" data-i="${i}"><b>${escapeHtml(s.name)}<kbd>${'QWE'[i]}</kbd></b><span></span></button>`).join('');
+  $('ideas').querySelectorAll('span').forEach((el, i) => { el.textContent = ideas[i].spin });
+}
+
+function useIdea(i) {
+  const s = ideas[i];
+  if (!s) return;
+  const it = item(), d = decisions[it.id] || {};
+  const cur = (d.spin || '').trim();
+  if (cur.includes(s.spin)) return;
+  const spin = cur ? `${cur}\n\n${s.spin}` : s.spin;
+  const uses = [...new Set([...(d.uses || []), ...s.uses])];
+  const patch = { spin, uses };
+  if (!d.status) patch.status = 'accepted';
+  change(patch, { now: true });
+  renderItem();
+}
+
+function specMarkdown() { return generatorSpec({ items: ITEMS, decisions, uses: USES, spins: SPINS }) }
+function openSpec() { $('specText').textContent = specMarkdown(); $('specNote').textContent = ''; $('sheet').hidden = false; $('sheetClose').focus() }
+function closeSpec() { $('sheet').hidden = true }
 
 function escapeHtml(s) { return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]) }
 
@@ -495,8 +552,22 @@ $('next').addEventListener('click', () => go(1));
 $('screen').addEventListener('click', (e) => { const b = e.target.closest('[data-p]'); if (!b) return; const n = media[item().shortcode].length; page = (page + Number(b.dataset.p) + n) % n; renderScreen(item()) });
 $('export').addEventListener('click', exportDecisions);
 $('draft').addEventListener('click', draftSpin);
+$('ideas').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) useIdea(Number(b.dataset.i)) });
+$('specBtn').addEventListener('click', openSpec);
+$('sheetClose').addEventListener('click', closeSpec);
+$('sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') closeSpec() });
+$('specCopy').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText($('specText').textContent); $('specNote').textContent = 'Copied' }
+  catch { const r = document.createRange(); r.selectNodeContents($('specText')); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); $('specNote').textContent = 'Selected. Copy it with Cmd+C.' }
+});
+$('specSave').addEventListener('click', async () => {
+  const dl = await window.claude?.use?.('downloads');
+  if (!dl) return;
+  try { await dl.save({ filename: 'GENERATOR.md', data: $('specText').textContent }); $('specNote').textContent = 'Saved' } catch (e) { if (e?.code !== 'declined') $('specNote').textContent = 'Could not save. Use Copy instead.' }
+});
 
 document.addEventListener('keydown', (e) => {
+  if (!$('sheet').hidden) { if (e.key === 'Escape') closeSpec(); return }
   const typing = /^(TEXTAREA|INPUT|SELECT)$/.test(document.activeElement?.tagName);
   if (typing) {
     if (e.key === 'Escape') document.activeElement.blur();
@@ -513,6 +584,8 @@ document.addEventListener('keydown', (e) => {
   else if (k === 'f') { e.preventDefault(); $('feedback').focus() }
   else if (k === 's') { e.preventDefault(); $('spin').focus() }
   else if (k === 'o') window.open(item().url, '_blank', 'noopener');
+  else if (k === 'q' || k === 'w' || k === 'e') useIdea('qwe'.indexOf(k));
+  else if (k === 'g') openSpec();
   else if (/^[0-9]$/.test(k)) { const u = USES[(Number(k) + 9) % 10]; if (u) toggleUse(u.key) }
 });
 
@@ -521,6 +594,8 @@ document.addEventListener('keydown', (e) => {
   backend = (await localBackend()) || (await artifactBackend()) || browserBackend();
   $('mode').textContent = backend.name;
   $('export').hidden = !backend.exportFile;
+  $('specBtn').textContent = backend.name.startsWith('local') ? 'Instructions for Claude (out/GENERATOR.md)' : 'Instructions for Claude';
+  if (await window.claude?.use?.('downloads')) $('specSave').hidden = false;
   if (backend.name.startsWith('claude.ai') && await window.claude?.use?.('sample')) $('draft').hidden = false;
   render();
 })();
