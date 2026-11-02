@@ -135,6 +135,10 @@
   "poster": "/_blob/55d47a1112c3988032c2f785fc7e729a",
   "video": "/_blob/44ef4c947651b4c52804b6c42b7bedb0"
  },
+ "srtwelvesigns": {
+  "poster": "/_blob/77d54cbf4091d62a5d8eddddc7a3c836",
+  "video": "/_blob/0c108030a733fb075d2b501faae971db"
+ },
  "srvenus": {
   "poster": "/_blob/1ce78118aff2e6ebf9693075bdaf9643",
   "video": "/_blob/7bf347798453ab089010736b2c67f748"
@@ -142,6 +146,34 @@
  "srvoteballot": {
   "poster": "/_blob/5eb64771a04d4de4364bd284e4cb6c2e",
   "video": "/_blob/8828a365ef130f3879ffce22c7497e04"
+ },
+ "st10capricorn": {
+  "poster": "/_blob/d5c8d53c30761cdcadb1d3548240c853",
+  "video": "/_blob/cc1b199169d3b9f2f117074ab367ba23"
+ },
+ "st10pisces": {
+  "poster": "/_blob/5a10bcb6875b4bafae86923fedb3f451",
+  "video": "/_blob/521108641c7bb29e39b62df08cb348c8"
+ },
+ "st10virgo": {
+  "poster": "/_blob/90004a5bc164bc5d9b2aca9d876bc9df",
+  "video": "/_blob/b27a0f8f031e0cfa5ec5ae6e1a0d97aa"
+ },
+ "st11capricorn": {
+  "poster": "/_blob/073dd927a52098c75dac34892ef9db52",
+  "video": "/_blob/d173d9293b9a1167146e8e384cd65855"
+ },
+ "st11pisces": {
+  "poster": "/_blob/e38b51871457a2622f5d27efff9aba1c",
+  "video": "/_blob/4c63a9c93cfc5cbb56a6a0c998c0912e"
+ },
+ "st12aries": {
+  "poster": "/_blob/79a4f62a98a3842250e6f03b27eba40b",
+  "video": "/_blob/d930080a991d9902bc932b89da0e8960"
+ },
+ "st12chores": {
+  "poster": "/_blob/b7400cc1128fc13e0bd560292471bc53",
+  "video": "/_blob/0490fda2775aef4faf537e15df48d564"
  },
  "sxcount1": {
   "poster": "/_blob/486fb483908021f9bcffbbc012b6e4e5",
