@@ -30,5 +30,13 @@
  "mlparty": {
   "video": "/_blob/fa900c12d60c37dc18fc3cd2f02a3bef",
   "poster": "/_blob/de7697d0c2a3ae9dadbe06fc587834d4"
+ },
+ "mlfight": {
+  "video": "/_blob/af5ce6ddced375f52b9065ccb2880dc5",
+  "poster": "/_blob/53110dce93a8a0acb511a2a61d070c51"
+ },
+ "mljealous": {
+  "video": "/_blob/7224e683ec2dfa6b2faa221508222781",
+  "poster": "/_blob/ae950c7fe7105bc4aa118763a39c918a"
  }
 }
