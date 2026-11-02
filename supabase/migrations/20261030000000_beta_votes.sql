@@ -7,7 +7,7 @@
 
 create table public.beta_signups (
   id             uuid primary key,
-  vote           text not null check (vote ~ '^[a-z0-9-]{2,60}$' and vote !~ '-tx$'),  -- the city they want after Texas; Houston and Texas are locked in
+  vote           text not null check (vote ~ '^[a-z0-9-]{2,60}$'),  -- their city: Houston, Texas or the one they want next
   name           text not null check (char_length(name) between 1 and 60),
   birth_date     date not null check (birth_date between date '1900-01-01' and current_date),
   email          text not null check (char_length(email) between 3 and 254 and email ~ '^[^\s@]+@[^\s@]+\.[^\s@]{2,}$'),  -- the form's check

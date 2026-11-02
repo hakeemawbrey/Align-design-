@@ -5,7 +5,7 @@ import RevealStyles from '@app/components/reveal/RevealStyles'
 import AlignMark from '@app/components/intro/AlignMark'
 import FlipCard, { FLIP_H, FLIP_W, type Caption } from './FlipCard'
 import Nebula from './Nebula'
-import { TEXAS, VOTE_CITIES, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
+import { ALL_CITIES, TEXAS, cityFromSlug, label, parseCity, stageOf, type City } from './cities'
 import { checkout, checkoutReady } from './votes'
 
 /**
@@ -18,6 +18,16 @@ const NEXT_CITY: City = { slug: 'new-york-ny', name: 'New York City', state: 'NY
 const TWINKLES: [number, number, number, number][] = [
   [8, 12, 0, 15], [84, 10, 0.7, 12], [64, 34, 1.4, 15], [92, 56, 0.3, 9], [76, 82, 1.9, 15], [44, 88, 1.1, 9],
   [18, 64, 2.3, 12], [52, 6, 2.6, 9], [32, 40, 0.9, 9], [70, 60, 2.0, 12], [94, 30, 1.6, 9], [6, 88, 2.8, 12],
+]
+
+/** what $15 gets: [icon, title, detail] */
+const PERKS: [string, string, string][] = [
+  ['✦', 'First access', 'in your city'],
+  ['◎', 'City vote', 'what’s next'],
+  ['+', 'Align+', 'for 2 years'],
+  ['☾', 'Events', 'and perks'],
+  ['№', 'Founder №', 'your card'],
+  ['♦', 'TCG entry', 'Houston only'],
 ]
 
 /** the questions, closed until tapped */
@@ -55,14 +65,13 @@ export default function Site() {
   const [email, setEmail] = useState('')
   const [adult, setAdult] = useState(false)
   const [dateFocus, setDateFocus] = useState(false)
-  // the perks start open on wide screens, folded on phones
-  const [wide] = useState(() => window.innerWidth >= 900)
   const [agreed, setAgreed] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
-  const picked = useMemo(() => parseCity(voteText), [voteText])
-  const vote = picked && stageOf(picked.slug) === 'vote' ? picked : null
-  const lockedIn = !!picked && !vote
+  // their city: any city, Houston and Texas included; one beyond Texas is also a vote for what's next
+  const city = useMemo(() => parseCity(voteText), [voteText])
+  const stage = city ? stageOf(city.slug) : null
+  const vote = city && stage === 'vote' ? city : null
   const nameRef = useRef<HTMLInputElement>(null)
   const voteRef = useRef<HTMLInputElement>(null)
   const sendingRef = useRef(false)
@@ -74,7 +83,7 @@ export default function Site() {
   }, [])
   const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(birthDate) && birthDate >= minDate && birthDate <= maxDate
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
-  const ready = !!vote && !!name.trim() && dateOk && emailOk && adult && agreed
+  const ready = !!city && !!name.trim() && dateOk && emailOk && adult && agreed
 
   // back from Stripe on ?paid=1; the vote was remembered on the way out, if this tab still has it
   const [paid] = useState(() => {
@@ -135,13 +144,13 @@ export default function Site() {
 
   const pay = async () => {
     // a ref, so a second tap in the same frame can't save twice
-    if (!vote || !ready || sendingRef.current) return
+    if (!city || !ready || sendingRef.current) return
     sendingRef.current = true
     setSending(true); setError('')
     try {
-      const url = await checkout({ vote: vote.slug, name: name.trim(), birthDate, email: email.trim() })
+      const url = await checkout({ vote: city.slug, name: name.trim(), birthDate, email: email.trim() })
       if (!url) { sendingRef.current = false; setSending(false); return }
-      try { sessionStorage.setItem('align-vote', vote.slug) } catch { /* private mode */ }
+      try { sessionStorage.setItem('align-vote', city.slug) } catch { /* private mode */ }
       window.location.href = url
     } catch {
       sendingRef.current = false
@@ -232,14 +241,17 @@ export default function Site() {
             <p className="price-deal"><s aria-label="Regular price $25">$25</s> <b>$15</b> <span>special price · 100 per city</span></p>
           </div>
 
-          <label className={`field${vote ? ' has-vote' : ''}`}>
-            <span className="sr">Your vote, the city after Texas</span>
+          <label className={`field${city ? ' has-vote' : ''}`}>
+            <span className="sr">Your city</span>
             <input ref={voteRef} id="vote-city" aria-describedby="vote-note" list="race" enterKeyHint="next" maxLength={80} value={voteText} onChange={(e) => setVoteText(e.target.value)}
-              placeholder="Your vote: a city after Texas" autoComplete="off" required />
-            <datalist id="race">{VOTE_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
+              placeholder="Your city" autoComplete="address-level2" required />
+            <datalist id="race">{ALL_CITIES.map((c) => <option key={c.slug} value={label(c)} />)}</datalist>
           </label>
-          {vote && <p className="vote-ok" id="vote-note" aria-live="polite">✓ Voting for {vote.name}</p>}
-          {lockedIn && <p className="note" id="vote-note" role="alert">Houston and Texas are already locked in. Vote for a city beyond Texas.</p>}
+          {city && (
+            <p className="vote-ok" id="vote-note" aria-live="polite">
+              {stage === 'first' ? '✓ Houston launches first' : stage === 'texas' ? `✓ ${city.name} is locked in next` : `✓ Your vote goes to ${city.name}`}
+            </p>
+          )}
 
           <div className="pair">
             <label className="field">
@@ -280,18 +292,19 @@ export default function Site() {
           {error && <p className="note" id="pay-error" role="alert">{error}</p>}
           <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field and tick both boxes'}</span>
 
-          {/* the perks fold away on phones so the card stays short */}
-          <details className="perks" open={wide}>
-            <summary>What you get</summary>
-            <ul className="gets">
-              <li>First access for your city</li>
-              <li>A vote for your city to launch after Texas</li>
-              <li>Align+ for 2 years</li>
-              <li>Access to events and member benefits</li>
-              <li>A numbered founding member card</li>
-              <li>Houston only: entry to the Align TCG giveaway</li>
+          {/* what $15 gets: six small tiles */}
+          <div className="perks">
+            <p className="perks-title">What you get</p>
+            <ul className="perk-grid">
+              {PERKS.map(([icon, title, sub]) => (
+                <li key={title}>
+                  <span className="perk-icon" aria-hidden>{icon}</span>
+                  <span className="perk-t">{title}</span>
+                  <span className="perk-s">{sub}</span>
+                </li>
+              ))}
             </ul>
-          </details>
+          </div>
         </form>
       </section>
 
@@ -322,10 +335,10 @@ export default function Site() {
         {bar && (
           <motion.div className="pay-bar" initial={{ y: 90 }} animate={{ y: 0 }} exit={{ y: 90 }} transition={{ type: 'spring', stiffness: 380, damping: 34 }}>
             <span className="pay-bar-copy">
-              {vote ? <>Beta + vote for <b>{vote.name}</b></> : <><b>$15</b> · beta access + a vote</>}
+              {city ? <>Beta for <b>{city.name}</b> · $15</> : <><b>$15</b> · beta access + a vote</>}
             </span>
             <button type="button" className="chrome-cta" onClick={() => document.getElementById('ballot')?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })}>
-              {vote ? 'Finish' : 'Join'}
+              {city ? 'Finish' : 'Join'}
             </button>
           </motion.div>
         )}

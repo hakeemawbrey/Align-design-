@@ -503,15 +503,21 @@ html { scroll-padding-top: 0; }
 .ballot.one .pair .field input { padding: 0 12px; font-size: 15px; }
 .ballot.one .consents { margin: 0 0 8px; gap: 0; }
 .ballot.one .check { min-height: 36px; font-size: 13.5px; }
-.perks { margin: 16px calc(9px - var(--pad)) 0; padding: 0 calc(var(--pad) - 9px); border-top: 1.5px dashed rgba(179,166,196,0.28); }
-.perks summary {
-  display: flex; align-items: center; justify-content: space-between; min-height: 48px; cursor: pointer; list-style: none;
-  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--label-2);
+.perks { margin: 20px calc(9px - var(--pad)) 0; padding: 18px calc(var(--pad) - 9px) 4px; border-top: 1.5px dashed rgba(179,166,196,0.28); }
+.perks-title { margin-bottom: 12px; text-align: center; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--label-2); }
+.perk-grid { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+@media (min-width: 900px) { .perk-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.perk-grid li {
+  display: grid; grid-template-columns: 26px minmax(0, 1fr); grid-template-rows: auto auto; align-content: center; column-gap: 8px; row-gap: 1px;
+  min-height: 56px; padding: 8px 10px; border-radius: 12px;
+  background: rgba(11,6,32,0.4); border: 1px solid rgba(221,208,255,0.16);
 }
-.perks summary::-webkit-details-marker { display: none; }
-.perks summary::after { content: '+'; font-size: 16px; letter-spacing: 0; color: #ddd0ff; transition: transform .2s ease; }
-.perks[open] summary::after { transform: rotate(45deg); }
-.ballot.one .perks .gets { margin: 0 0 8px; padding: 0 0 4px; border-top: 0; }
+.perk-icon {
+  grid-row: 1 / span 2; align-self: center; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px;
+  font-family: var(--serif); font-size: 15px; color: #2a1d4a; background: var(--chrome);
+}
+.perk-t { font-size: 13.5px; font-weight: 500; line-height: 1.2; color: var(--label-1); }
+.perk-s { font-size: 12px; line-height: 1.25; color: var(--label-2); }
 @media (max-width: 899px) {
   .ballot.one { --pad: 20px; padding-top: 28px; padding-bottom: 16px; }
   .ballot.one .ballot-head { padding-bottom: 16px; margin-bottom: 16px; }
