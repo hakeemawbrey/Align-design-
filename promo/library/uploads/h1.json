@@ -71,6 +71,10 @@
   "poster": "/_blob/a6a40ec34e6db237184eb70261a8d4f4",
   "video": "/_blob/5aeecb80423598696b672c79c4657371"
  },
+ "srdisposable": {
+  "poster": "/_blob/b24de1ca100a1df362e712a8073c7ccd",
+  "video": "/_blob/5dda5db78620a4a9a46ad00867175eb9"
+ },
  "srghosted": {
   "poster": "/_blob/4998e3c8750f0637b603375f8f1d8e30",
   "video": "/_blob/14e5840bd5478292a177fd54e91effcd"
@@ -78,6 +82,38 @@
  "srhey": {
   "poster": "/_blob/653adc5e25a43e8c6db07d7440838754",
   "video": "/_blob/9df7fc387087a75fba9faeb2623933ed"
+ },
+ "srhtxenergy": {
+  "poster": "/_blob/1b132aa8abfbbcf5da5849f332be058d",
+  "video": "/_blob/dfe1119a6357905ab6745472ee3db1c6"
+ },
+ "srhtxheat": {
+  "poster": "/_blob/3d47f262fb55e5e8dfc0440b0485ef37",
+  "video": "/_blob/f6600b901f18e92b68305d675139deee"
+ },
+ "srhtxhoods": {
+  "poster": "/_blob/c4d40cd62b8e59e46ad0e4581534390d",
+  "video": "/_blob/3a47dc56e7430ef3f5fcce8e4713a9d2"
+ },
+ "srhtxrodeo": {
+  "poster": "/_blob/354129c38f208e0fdcf67785725d4ea6",
+  "video": "/_blob/f09a6b6bf1285f3d37957c52e79b254b"
+ },
+ "srhtxspacecity": {
+  "poster": "/_blob/8970bf6fc254d0eaaf165cf40328557f",
+  "video": "/_blob/fdc923c432bf24b1ccfd7e2ea297e83b"
+ },
+ "srl01chakra": {
+  "poster": "/_blob/0a13d283ef724bd8544238cb8c273bea",
+  "video": "/_blob/7ccbe8915b3ab9bb5cbb41d3255bef07"
+ },
+ "srl05zodiac": {
+  "poster": "/_blob/09a57a139994b7f2020f7b23c9e3c015",
+  "video": "/_blob/370ef74d9ee96ffcd1c412daf8cd9063"
+ },
+ "srl09talk": {
+  "poster": "/_blob/722653c2a891a8129609ac5945046abe",
+  "video": "/_blob/141fbb45488927fa203a2be056379e66"
  },
  "sxcount2": {
   "poster": "/_blob/06056f6136f8941d27295c5b8b56c48f",
