@@ -271,9 +271,41 @@
   "poster": "/_blob/7c717eec1bb22e0e226080f4b7aaacef",
   "video": "/_blob/2c989844bf97b64ea8b3b1edee703918"
  },
+ "st4checkin": {
+  "poster": "/_blob/2d36b25b567aa4224f196ca9c3fd723f",
+  "video": "/_blob/fe84e61c3449f6ab900a3041373a7faf"
+ },
  "st4corpus": {
   "poster": "/_blob/8dceb48444c84f34076477e51b7f3f47",
   "video": "/_blob/850906d21f2e226c622cea6550db2be8"
+ },
+ "st4debate": {
+  "poster": "/_blob/d23f5a9208ad56f78966df955139ed07",
+  "video": "/_blob/0630c6a40038e64dab26bb8ae35ed23f"
+ },
+ "st4finale": {
+  "poster": "/_blob/1b3556b356ac69f40edec4970a26d594",
+  "video": "/_blob/fb949e97b914ce535d15b7187063469c"
+ },
+ "st4fortworth": {
+  "poster": "/_blob/f18192d8be25ce4b80d654459d5b0bfd",
+  "video": "/_blob/992818b863b8514b02d62c37a702b515"
+ },
+ "st4fromwhere": {
+  "poster": "/_blob/8cc43c3f7f7a81d7793ee6c318a4bb61",
+  "video": "/_blob/47802ac2fbaa069904bfbfe04b2ce1fa"
+ },
+ "st4ghostfriend": {
+  "poster": "/_blob/9e6f8845fbf5c88c1f7d9044e5d86c2b",
+  "video": "/_blob/f2dc0b8b4b9bf3b2b43ee9eb6ebd6236"
+ },
+ "st4hotcold": {
+  "poster": "/_blob/b2e533e84e5fbec70b4891ce10f7b6c9",
+  "video": "/_blob/e5a904e286acd5b0a6a9ab3bd591b64b"
+ },
+ "st4katy": {
+  "poster": "/_blob/1112d629412460fc72c520a3c8f9801b",
+  "video": "/_blob/f28ceb481f5faaf1d0e75399a7d6ddb4"
  },
  "sxcount1": {
   "poster": "/_blob/486fb483908021f9bcffbbc012b6e4e5",
