@@ -7158,5 +7158,105 @@
   "len": 20,
   "blurb": null,
   "lesson": null
+ },
+ {
+  "id": "mlpilot",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 1: The Blind Card",
+  "len": 120,
+  "blurb": "Make room.",
+  "lesson": null
+ },
+ {
+  "id": "mlpace",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 2: Too Much, Too Soon",
+  "len": 120,
+  "blurb": "*Slow* is still a yes.",
+  "lesson": null
+ },
+ {
+  "id": "mlfriends",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 3: Meet the Friends",
+  "len": 120,
+  "blurb": "*Your people*, our table.",
+  "lesson": null
+ },
+ {
+  "id": "mlfight",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 4: The First Fight",
+  "len": 120,
+  "blurb": "*Us* vs the problem.",
+  "lesson": null
+ },
+ {
+  "id": "mlmixed",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 5: Mixed Signals",
+  "len": 120,
+  "blurb": "*Say* the thing.",
+  "lesson": null
+ },
+ {
+  "id": "mljealous",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 6: Jealous Moon",
+  "len": 120,
+  "blurb": "*Chosen*, out loud.",
+  "lesson": null
+ },
+ {
+  "id": "mldistance",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 7: Long Distance",
+  "len": 120,
+  "blurb": "*Far*, not apart.",
+  "lesson": null
+ },
+ {
+  "id": "mlneeds",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 8: Different Speeds",
+  "len": 120,
+  "blurb": "*Still here*.",
+  "lesson": null
+ },
+ {
+  "id": "mlfirst",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 9: Saying It First",
+  "len": 120,
+  "blurb": "*No* perfect moment. Just this one.",
+  "lesson": null
+ },
+ {
+  "id": "mlparty",
+  "page": 10,
+  "group": "moonlight",
+  "show": "Moonlight Lane",
+  "title": "Ep 10: The Block Party",
+  "len": 120,
+  "blurb": "*Would you?* Yes.",
+  "lesson": null
  }
 ]
