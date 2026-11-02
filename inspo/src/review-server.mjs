@@ -37,7 +37,7 @@ export function makeServer() {
     const url = new URL(req.url, 'http://localhost')
     try {
       if (url.pathname === '/' || url.pathname === '/index.html') {
-        page ??= (await import('node:fs')).readFileSync(build().out, 'utf8')
+        page ??= build({ write: false }).html
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' })
         return res.end(shell(page))
       }

@@ -14,15 +14,15 @@ function voice() {
 
 const json = (v) => JSON.stringify(v).replace(/</g, '\\u003c')
 
-export function build() {
+export function build({ write = true } = {}) {
   const items = loadItems().map(({ id, shortcode, creator, type, url, about }) => ({ id, shortcode, creator, type, url, about }))
   const html = readFileSync(path.join(ROOT, 'app', 'review.template.html'), 'utf8')
     .replace('/*INSPO_ITEMS*/[]', json(items))
     .replace('/*INSPO_USES*/[]', json(USES))
     .replace('/*ALIGN_VOICE*/""', json(voice()))
-  const out = path.join(ensureDir(path.join(ROOT, 'app', 'dist')), 'review.html')
-  writeFileSync(out, html)
-  return { out, items: items.length, bytes: Buffer.byteLength(html) }
+  const out = path.join(ROOT, 'app', 'dist', 'review.html')
+  if (write) { ensureDir(path.dirname(out)); writeFileSync(out, html) }
+  return { out, html, items: items.length, bytes: Buffer.byteLength(html) }
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

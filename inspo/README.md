@@ -14,6 +14,29 @@ The loop:
    `out/accepted.json`, and hands your accepted reels to `founder/` for Align scripts.
 4. Ask Claude Code to make content from `inspo/out/brief.md`.
 
+## One click on a Mac
+
+**First time:** open Terminal (Cmd+Space, type Terminal), paste this and press Enter:
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/hakeemawbrey/align-design-/HEAD/inspo/mac/install.sh)"
+```
+
+It installs what's needed (Homebrew, Node, yt-dlp, gallery-dl), puts the project in
+`~/Align-design-`, adds two buttons to your Desktop and starts:
+
+- **Align Inspo**: double-click any time. It updates itself, opens the review
+  page in your browser, and downloads every post you don't have yet. You can
+  review while it downloads; new videos show up in the page as they land. It keeps your
+  Mac awake while it works. If Instagram pushes back, it waits 30 minutes and
+  carries on by itself. Close the window to stop; double-click again to pick up where it left off.
+- **Send Picks to Claude**: sends your calls to GitHub (a one-time GitHub
+  sign-in the first time), so Claude can make content from them.
+
+The first run checks you're logged into Instagram in your browser (Chrome,
+Brave, Edge, Firefox or Safari, whichever you have) and opens the login page
+if not. All 1,068 take a few hours and a few GB.
+
 Nothing of theirs gets reposted. Downloads stay on your computer (`media/` is
 git-ignored) as reference. Only the structure carries over to Align.
 
@@ -28,6 +51,7 @@ git-ignored) as reference. Only the structure carries over to Align.
 | `src/download.mjs` | the downloader |
 | `src/review-server.mjs` | the review page on your computer |
 | `src/brief.mjs` | decisions → brief |
+| `mac/install.sh`, `mac/run.sh` | the one-click Mac setup and the Desktop buttons |
 
 ## 1. Download
 
@@ -76,21 +100,21 @@ npm run download -- --via meta
 
 These are the same two variables `founder/` uses, so if you've set those up already, you're done.
 
-### Option B: yt-dlp (fills the gaps)
+### Option B: yt-dlp and gallery-dl (what the Mac buttons use)
 
-[yt-dlp](https://github.com/yt-dlp/yt-dlp) downloads public posts from any account,
+[yt-dlp](https://github.com/yt-dlp/yt-dlp) (reels) and [gallery-dl](https://github.com/mikf/gallery-dl) (image posts and carousels) download public posts from any account,
 including the ones Meta won't give. It isn't Meta's API, and scripted
 downloading is against Instagram's terms of use, so it's your call. Keep it to
 personal reference, go slowly, and use your own logged-in browser:
 
 ```bash
-pip install -U yt-dlp          # or: brew install yt-dlp
+brew install yt-dlp gallery-dl   # or: pip install -U yt-dlp gallery-dl
 npm run download -- --via ytdlp --cookies-from-browser chrome   # or safari / firefox
 npm run download -- --via both  # Meta first, yt-dlp for what Meta couldn't give
 ```
 
-It waits 3 seconds between posts (`--sleep 5` to go slower). If Instagram asks for a
-login or starts refusing, stop for a few hours.
+It waits 3 seconds between posts (`--sleep 5` to go slower). After 8 failures in a row it
+stops (exit code 75) rather than marking everything failed; run it again later.
 
 ### Options
 

@@ -15,6 +15,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { MEDIA, ensureDir, loadItems, mediaIndex } from './items.mjs'
 
+const STREAK = 8
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 const FIELDS = 'permalink,media_type,media_product_type,media_url,thumbnail_url,timestamp'
 
@@ -87,14 +88,35 @@ function ytdlpArgs(item, dir, opts) {
   return args
 }
 
-function runYtdlp(item, dir, opts) {
+/** gallery-dl handles image posts and mixed carousels, which yt-dlp skips. */
+export function galleryArgs(item, dir, opts) {
+  const args = ['--quiet', '--sleep-request', String(opts.sleep ?? 2), '-D', dir, '-f', '{num:>02}.{extension}']
+  if (opts.cookiesFromBrowser) args.push('--cookies-from-browser', opts.cookiesFromBrowser)
+  if (opts.cookies) args.push('--cookies', opts.cookies)
+  args.push(item.url)
+  return args
+}
+
+function run(bin, args) {
   return new Promise((resolve) => {
-    const p = spawn(opts.ytdlpBin ?? 'yt-dlp', ytdlpArgs(item, dir, opts), { stdio: ['ignore', 'ignore', 'pipe'] })
+    const p = spawn(bin, args, { stdio: ['ignore', 'ignore', 'pipe'] })
     let err = ''
     p.stderr.on('data', (d) => { err += d })
-    p.on('error', (e) => resolve(e.code === 'ENOENT' ? 'yt-dlp is not installed (pip install yt-dlp, or brew install yt-dlp)' : e.message))
-    p.on('close', (code) => resolve(code === 0 ? null : (err.trim().split('\n').pop() || `yt-dlp exited with ${code}`)))
+    p.on('error', (e) => resolve(e.code === 'ENOENT' ? `${bin} is not installed (brew install ${bin})` : e.message))
+    p.on('close', (code) => resolve(code === 0 ? null : (err.trim().split('\n').pop() || `${bin} exited with ${code}`)))
   })
+}
+
+/** Reels go to yt-dlp; image posts and carousels to gallery-dl when it's installed. Each falls back to the other. */
+async function fetchOne(item, dir, opts) {
+  const tools = item.type === 'Reel' ? ['yt-dlp', 'gallery-dl'] : ['gallery-dl', 'yt-dlp']
+  let why = null
+  for (const bin of tools.filter((t) => opts.have[t])) {
+    why = await run(bin, bin === 'yt-dlp' ? ytdlpArgs(item, dir, opts) : galleryArgs(item, dir, opts))
+    if (!why && mediaIndex(path.dirname(dir))[item.shortcode]) return null
+    why ??= `${bin} finished but saved nothing`
+  }
+  return why
 }
 
 function parseArgs(argv) {
@@ -126,7 +148,9 @@ async function main() {
   const o = parseArgs(process.argv.slice(2))
   const token = process.env.IG_ACCESS_TOKEN, userId = process.env.IG_USER_ID
   const hasMeta = Boolean(token && userId)
-  const hasYtdlp = spawnSync('yt-dlp', ['--version']).status === 0
+  const have = { 'yt-dlp': spawnSync('yt-dlp', ['--version']).status === 0, 'gallery-dl': spawnSync('gallery-dl', ['--version']).status === 0 }
+  o.have = have
+  const hasYtdlp = have['yt-dlp'] || have['gallery-dl']
   o.via ??= hasMeta ? (hasYtdlp ? 'both' : 'meta') : 'ytdlp'
   if (o.via !== 'ytdlp' && !hasMeta) { console.error('Meta needs IG_ACCESS_TOKEN and IG_USER_ID (see README → "Download with Meta"). Or run with --via ytdlp.'); process.exit(1) }
   if (o.via !== 'meta' && !hasYtdlp) {
@@ -137,13 +161,13 @@ async function main() {
   ensureDir(MEDIA)
   const failedFile = path.join(MEDIA, '_failed.json')
   const failed = existsSync(failedFile) ? JSON.parse(readFileSync(failedFile, 'utf8')) : {}
-  const have = mediaIndex()
+  const onDisk = mediaIndex()
   const inRange = idFilter(o.only)
-  const todo = loadItems().filter((it) => inRange(it.id) && !have[it.shortcode]
+  const todo = loadItems().filter((it) => inRange(it.id) && !onDisk[it.shortcode]
     && (!o.creator || it.creator === o.creator) && (!o.type || it.type.toLowerCase() === o.type)
     && (o.retryFailed || !failed[it.shortcode])).slice(0, o.limit)
   const skippedFailed = Object.keys(failed).length
-  console.log(`${Object.keys(have).length} already downloaded. ${todo.length} to go via ${o.via}.${skippedFailed && !o.retryFailed ? ` (${skippedFailed} failed before; add --retry-failed to try them again.)` : ''}`)
+  console.log(`${Object.keys(onDisk).length} already downloaded. ${todo.length} to go via ${o.via}.${skippedFailed && !o.retryFailed ? ` (${skippedFailed} failed before; add --retry-failed to try them again.)` : ''}`)
 
   let ok = 0
   const done = (it, how) => { ok++; delete failed[it.shortcode]; console.log(`  ✓ ${it.id} @${it.creator} ${it.shortcode} (${how})`) }
@@ -180,12 +204,20 @@ async function main() {
     }
   }
   if (o.via !== 'meta') {
+    let streak = 0
     for (const [i, it] of leftover.entries()) {
       process.stdout.write(`[${i + 1}/${leftover.length}] `)
-      const why = await runYtdlp(it, ensureDir(path.join(MEDIA, it.shortcode)), o)
-      why ? fail(it, why) : done(it, 'yt-dlp')
-      if (/not installed/.test(why ?? '')) break
-      if (/login|rate|429|401/i.test(why ?? '') && !o.cookiesFromBrowser && !o.cookies) {
+      const why = await fetchOne(it, ensureDir(path.join(MEDIA, it.shortcode)), o)
+      why ? fail(it, why) : done(it, 'downloaded')
+      streak = why ? streak + 1 : 0
+      if (streak >= STREAK) {
+        // Many failures in a row means Instagram is refusing, not that the posts are gone.
+        for (const x of leftover.slice(i + 1 - STREAK, i + 1)) delete failed[x.shortcode]
+        flush()
+        console.log(`\n${STREAK} failed in a row, so Instagram is probably asking us to slow down. Stopping for now; run again later and it picks up here.`)
+        process.exit(75)
+      }
+      if (/login|rate|429|401|cookie/i.test(why ?? '') && !o.cookiesFromBrowser && !o.cookies) {
         console.log('  Instagram wants a login. Try --cookies-from-browser chrome (or safari / firefox) while signed in to Instagram there.')
       }
       flush()

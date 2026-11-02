@@ -202,6 +202,17 @@ async function localBackend() {
     if (!r.ok) return null;
     const s = await r.json();
     decisions = s.decisions || {}; media = s.media || {};
+    // Downloads may still be running: pick up new files every 20 seconds.
+    setInterval(async () => {
+      try {
+        const m = (await (await fetch('/api/state')).json()).media || {};
+        const had = Boolean(media[item()?.shortcode]);
+        const before = Object.keys(media).length;
+        media = m;
+        if (Object.keys(m).length !== before) $('mode').textContent = backend.name.replace(/\d+ downloaded/, `${Object.keys(m).length} downloaded`);
+        if (!had && media[item()?.shortcode]) renderScreen(item());
+      } catch {}
+    }, 20000);
     return {
       name: `local · ${Object.keys(media).length} downloaded · saves to data/decisions.json`,
       async save(id, d) {

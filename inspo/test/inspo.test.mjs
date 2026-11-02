@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { mkdtempSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
-import { findOnMeta, shortcodeOf, idFilter, extFor } from '../src/download.mjs'
+import { findOnMeta, shortcodeOf, idFilter, extFor, galleryArgs } from '../src/download.mjs'
 import { makeBrief, merge } from '../src/brief.mjs'
 import { cleanDecision, loadItems, mediaIndex, USES } from '../src/items.mjs'
 import { build } from '../src/build.mjs'
@@ -118,4 +118,10 @@ test('the review page has every post and use baked in, with no placeholders left
   for (const u of USES) assert.ok(html.includes(`"key":"${u.key}"`))
   assert.ok(USES.length <= 10, 'number keys 1–0 cover every use')
   assert.doesNotMatch(html, /<\/script>[^]*<\/script>[^]*<\/script>/, 'one inline script')
+})
+
+test('gallery-dl numbers carousel slides and uses the browser login', () => {
+  const a = galleryArgs({ url: 'https://www.instagram.com/p/X/' }, '/m/X', { cookiesFromBrowser: 'chrome', sleep: 3 })
+  assert.deepEqual(a.slice(-3), ['--cookies-from-browser', 'chrome', 'https://www.instagram.com/p/X/'])
+  assert.ok(a.includes('{num:>02}.{extension}'))
 })
