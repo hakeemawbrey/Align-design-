@@ -403,6 +403,10 @@
   "poster": "/_blob/51e6100b9169d1d19c3e352ef1f1ecdb",
   "video": "/_blob/97e2646ce1627aed6b5d2c2787297d0f"
  },
+ "st8museum": {
+  "poster": "/_blob/71d612fd0cb9d32a6fd7ae043a4ca8af",
+  "video": "/_blob/a31d2be63e445082bd8db4f3a7d8a5a4"
+ },
  "st8orbiter": {
   "poster": "/_blob/cb104d63f19052192d20deabfbd27b6d",
   "video": "/_blob/da2a693e101a901375ad8c9b61914d3f"
@@ -410,6 +414,38 @@
  "st8rebound": {
   "poster": "/_blob/a422a7b9e0e870162865f87632d56b58",
   "video": "/_blob/59e04ae11b3c67fe9888e1ba23f395c9"
+ },
+ "st8rewind": {
+  "poster": "/_blob/c2841f94056d3f0364c410dde9b86d54",
+  "video": "/_blob/6cd5e6b474ae8256fc6d558f482550ee"
+ },
+ "st9aries3am": {
+  "poster": "/_blob/fc2f829a04ab3c8ac2f31a191036401e",
+  "video": "/_blob/60a8c26f0c68639a9c13367e39f34c44"
+ },
+ "st9arieswork": {
+  "poster": "/_blob/138c7a5d81e7451ba9bb7f0e742a94e1",
+  "video": "/_blob/c78b6185a95136009a95cbfe86433b31"
+ },
+ "st9cap3am": {
+  "poster": "/_blob/4b4a4522686897a8dc02769182b127e3",
+  "video": "/_blob/9a347de39be6285b30a06784e0ead708"
+ },
+ "st9capam": {
+  "poster": "/_blob/c61cc339b86612e758aa9727a97d71dd",
+  "video": "/_blob/d548f008364e81a75c3a3c62feaf04fb"
+ },
+ "st9caplove": {
+  "poster": "/_blob/019812c5d15039bb75fe23513a2ea678",
+  "video": "/_blob/d7c266f794b1248c05b754984ed71e90"
+ },
+ "st9capwork": {
+  "poster": "/_blob/7d43d05d0054f5db4a60557eaf850f08",
+  "video": "/_blob/d427be10972728ee7aa98e649a4ddd79"
+ },
+ "st9leowork": {
+  "poster": "/_blob/36bc5483acbd16509665eb6bef47392f",
+  "video": "/_blob/3b1c8099902fb4101a3f99b9eb6e5d9b"
  },
  "sxcount2": {
   "poster": "/_blob/06056f6136f8941d27295c5b8b56c48f",
