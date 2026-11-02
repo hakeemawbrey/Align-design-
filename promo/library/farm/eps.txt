@@ -8,3 +8,4 @@ mlneeds v1
 mlparty v1
 mlfirst v2
 mlfight v1
+mlfriends v2
