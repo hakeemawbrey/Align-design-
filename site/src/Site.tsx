@@ -22,7 +22,7 @@ const TWINKLES: [number, number, number, number][] = [
 
 /** what $15 gets: [icon, title, detail] */
 const PERKS: [string, string, string][] = [
-  ['✦', 'First access', 'in your city'],
+  ['✦', 'First access to the beta', 'when it launches in your city'],
   ['◎', 'City vote', 'what’s next'],
   ['+', 'Align+', 'for 2 years'],
   ['☾', 'Events', 'and perks'],
