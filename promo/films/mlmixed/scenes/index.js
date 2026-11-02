@@ -39,6 +39,7 @@ import {
 export const DURATION = 120
 const STORY_END = DURATION - ENDCARD_LEN       // 115.6
 const EP = 5
+const MOON = { x: 860, y: 610, r: 100 }   // the series' lane moon (clear of the headlines)
 
 // ── speakers
 const who = (sign, name) => { const S = signStar(sign); return { speaker: `${S.glyph}︎ ${name}`, color: mixHex(S.color, '#ffffff', 0.35) } }
@@ -362,15 +363,15 @@ async function build(stage) {
   const title = buildTitle(root, { ep: EP, title: 'Mixed Signals', at: T.title, len: 3 })
   const prev = buildPreviously(root, { at: T.prev, len: 2, stills: [
     { caption: 'The last pastry.', scene: c => { drawCafe(c, 5, {}); drawSign(c, 'libra', 330, standY(240, 1400), 240, 5, { mood: 'happy', seed: 3 }); drawSign(c, 'scorpio', 750, standY(240, 1400), 240, 5, { mood: 'happy', seed: 7, blush: 0.9 }); drawCafeTable(c, 5, { cups: 0, pastry: 'croissant' }) }, crop: [60, 820, 960, 1130] },
-    { caption: 'Scorpio, slowing down.', scene: c => drawLane(c, 3, { pan: 700 }, g => drawSign(g, 'scorpio', 1240, standY(240), 240, 3, { mood: 'squint', seed: 7 })), crop: [260, 760, 800, 945] },
-    { caption: 'A mystery loaf.', scene: c => drawLane(c, 4, { pan: 1080, zoom: 1.5, focus: [540, 1300] }, g => { drawPastry(g, 1860, 1270, 7, 'loaf'); drawSign(g, 'libra', 1960, standY(200), 200, 4, { mood: 'wide', seed: 3, look: [-1, 0.5] }) }), crop: [140, 760, 800, 945] },
+    { caption: 'Scorpio, slowing down.', scene: c => drawLane(c, 3, { moon: MOON, pan: 700 }, g => drawSign(g, 'scorpio', 1240, standY(240), 240, 3, { mood: 'squint', seed: 7 })), crop: [260, 760, 800, 945] },
+    { caption: 'A mystery loaf.', scene: c => drawLane(c, 4, { moon: MOON, pan: 1080, zoom: 1.5, focus: [540, 1300] }, g => { drawPastry(g, 1860, 1270, 7, 'loaf'); drawSign(g, 'libra', 1960, standY(200), 200, 4, { mood: 'wide', seed: 3, look: [-1, 0.5] }) }), crop: [140, 760, 800, 945] },
   ] })
   const bug = showBug(root, EP)
   const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
 
   // ── scenes (each paints the whole frame)
   function cold(t) {
-    drawLane(x, t, { pan: 1180, zoom: 1.25, focus: [540, 1250] }, c => {
+    drawLane(x, t, { moon: MOON, pan: 1180, zoom: 1.25, focus: [540, 1250] }, c => {
       const k = pop01(t, 2.3, 0.35, 2)
       const L0 = cast(c, 'libra', 1850, LANE.feet, 240, t, { mood: t > 4.4 ? 'squint' : 'neutral', look: [-1, -0.6], hops: [2.5, 4.4], pop: k })
       // the croissant, held up to the lamp light like evidence
@@ -383,7 +384,7 @@ async function build(stage) {
   }
   function act1(t) {
     const pan = lerp(520, 1080, ease.inOutCubic(prog(t, 10.6, 12.9)))
-    drawLane(x, t, { pan }, c => {
+    drawLane(x, t, { moon: MOON, pan }, c => {
       // Libra at the stall, turned away, humming over the buckets
       const turned = t > T.libTurn
       const lm = t > T.libGrab + 0.3 ? 'squint' : turned ? 'wide' : 'happy'
@@ -419,7 +420,7 @@ async function build(stage) {
     if (t > T.sob) drawBubble(x, 330, 1060, '*sob* so romantic', { k: pop01(t, T.sob + 0.1, 0.25, 2.2), size: 26 })
   }
   function note(t) {
-    drawLane(x, t, { pan: 1230, zoom: 1.4, focus: [540, 1300] }, c => {
+    drawLane(x, t, { moon: MOON, pan: 1230, zoom: 1.4, focus: [540, 1300] }, c => {
       const wob = prog(t, ...T.wobble)
       const happy = t > T.wobble[1] && t < 36.4
       cast(c, 'libra', 1860, LANE.feet, 210, t, { mood: t > 36.4 ? 'eyeroll' : happy ? 'wide' : 'squint', look: t < T.noteOut[0] ? [-0.5, -1] : [0, -1], hops: [30.1, 33.6, 34.4, 35.2, T.wobble[1]] })
@@ -459,7 +460,7 @@ async function build(stage) {
   }
   function standoff(t) {
     const z = 0.91, pan = 909
-    drawLane(x, t, { pan, zoom: z, focus: [540, 1300] }, c => {
+    drawLane(x, t, { moon: MOON, pan, zoom: z, focus: [540, 1300] }, c => {
       // Libra, "reading" the catalog upside down, shades on, looking anywhere but the café
       const L0 = cast(c, 'libra', 1920, LANE.feet, 200, t, { mood: 'neutral', look: [1, -0.4], shades: 1, hops: [56.0, 60.6], squash: 0 })
       drawCatalog(c, 2030, L0.y + 40, 1.3)
@@ -480,7 +481,7 @@ async function build(stage) {
     })
   }
   function low(t) {
-    drawLane(x, t, { time: 'late', pan: 600, lit: ['a4', 'pisces', 'cafe', 'd6'] }, c => {
+    drawLane(x, t, { moon: MOON, time: 'late', pan: 600, lit: ['a4', 'pisces', 'cafe', 'd6'] }, c => {
       // Scorpio in the café window, looking out
       cast(c, 'scorpio', 760, 1312, 120, t, { mood: 'neutral', look: [1, 0.3], alpha: 0.9, hops: talkHops(LINES.low, SCO.speaker, { cps: CPS }) })
       // Pisces upstairs, inconsolable
@@ -491,7 +492,7 @@ async function build(stage) {
     })
   }
   function act3(t) {
-    drawLane(x, t, { pan: 909, zoom: 0.91, focus: [540, 1300] }, c => {
+    drawLane(x, t, { moon: MOON, pan: 909, zoom: 0.91, focus: [540, 1300] }, c => {
       const startled = t > T.honk[0] && t < 98.5
       // Libra: shades off, walks to the middle, asks… then retreats
       let lx = walkX(t, T.walk3, 1860, 1520)
@@ -515,7 +516,7 @@ async function build(stage) {
     honkText(x, t, T.honk[0], 300, 860, -0.12); honkText(x, t, T.honk[1], 760, 780, 0.1)
   }
   function nextNight(t) {
-    drawLane(x, t, { pan: 1230, zoom: 1.4, focus: [540, 1300] }, c => {
+    drawLane(x, t, { moon: MOON, pan: 1230, zoom: 1.4, focus: [540, 1300] }, c => {
       const lk = pop01(t, T.libIn, 0.35, 2)
       cast(c, 'libra', 1900, LANE.feet, 210, t, { mood: t > T.forYou ? 'heart' : 'wide', look: [-1, 0.6], blush: t > T.forYou ? 1 : 0, pop: lk, hops: [T.libIn + 0.3, T.forYou, T.forYou + 0.45, 105.5, 106.8] })
       // Scorpio, peeking round the lamp post
