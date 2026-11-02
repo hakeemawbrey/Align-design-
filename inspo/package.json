@@ -1,0 +1,16 @@
+{
+  "name": "align-inspo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Download inspiration posts, review them (use / maybe / skip + feedback), and turn the review into a brief for Align content",
+  "engines": { "node": ">=21" },
+  "scripts": {
+    "import": "python3 src/import-sheet.py",
+    "download": "node src/download.mjs",
+    "review": "node src/review-server.mjs",
+    "build": "node src/build.mjs",
+    "brief": "node src/brief.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

@@ -1,0 +1,516 @@
+<title>Align Inspo Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500;600&family=Space+Mono&display=swap">
+<style>
+/* Layout: a triage desk. Queue on the left, the post in the middle, your call on the right; one column on a phone. */
+:root {
+  --void: #0b0620; --canvas: #140a2e; --raised: #1e1240; --glass: #34235f;
+  --ink: #efe9ff; --ink-dim: #b3a6d6; --line: #3a2a66;
+  --align: #f2c75c; --spark: #7fd8b0; --rub: #e8628a; --violet: #9a7be0;
+  --on-accent: #1a1030;
+  --display: "EB Garamond", Georgia, "Times New Roman", serif;
+  --body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Space Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --void: #f4f0fb; --canvas: #fbf9ff; --raised: #ffffff; --glass: #e6def7;
+  --ink: #1d1236; --ink-dim: #5f5480; --line: #d8cdef;
+  --align: #a5770f; --spark: #1d8a5d; --rub: #c23a63; --violet: #6b4fc0; --on-accent: #ffffff; color-scheme: light } }
+:root[data-theme="light"] {
+  --void: #f4f0fb; --canvas: #fbf9ff; --raised: #ffffff; --glass: #e6def7;
+  --ink: #1d1236; --ink-dim: #5f5480; --line: #d8cdef;
+  --align: #a5770f; --spark: #1d8a5d; --rub: #c23a63; --violet: #6b4fc0; --on-accent: #ffffff; color-scheme: light }
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+body { background: var(--void); color: var(--ink); font: 14px/1.5 var(--body); margin: 0 }
+button, input, textarea, select { font: inherit; color: inherit }
+button { cursor: pointer }
+:focus-visible { outline: 2px solid var(--align); outline-offset: 2px }
+.eyebrow { font: 11px/1.2 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-dim) }
+
+.app { display: grid; grid-template-rows: auto 1fr; height: 100%; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-block: 14px 12px; border-bottom: 1px solid var(--line) }
+header h1 { font: 500 26px/1 var(--display); margin: 0; letter-spacing: .01em }
+header h1 em { color: var(--align); font-style: italic }
+.progress { flex: 1 1 260px; min-width: 0; display: grid; gap: 6px }
+.bar { height: 6px; background: var(--raised); border-radius: 3px; overflow: hidden; display: flex }
+.bar i { display: block; height: 100% }
+.counts { display: flex; flex-wrap: wrap; gap: 4px 14px; font: 12px var(--mono); color: var(--ink-dim); font-variant-numeric: tabular-nums }
+.counts b { font-weight: 400; color: var(--ink) }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: 0 }
+.tools { display: flex; gap: 8px; flex-wrap: wrap; align-items: center }
+.ghost { background: transparent; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font-size: 13px }
+.ghost:hover { border-color: var(--violet) }
+.mode { font: 11px var(--mono); color: var(--ink-dim); border: 1px dashed var(--line); border-radius: 999px; padding: 3px 10px }
+
+.desk { display: grid; grid-template-columns: 290px minmax(0, 1fr) 360px; gap: 20px; min-height: 0; padding-block: 16px }
+.queue { display: grid; grid-template-rows: auto 1fr; gap: 10px; min-height: 0 }
+.filters { display: grid; gap: 8px }
+.filters input, .filters select { width: 100%; background: var(--raised); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px }
+.tabs button { background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; font-size: 12px; color: var(--ink-dim) }
+.tabs button[aria-pressed="true"] { background: var(--glass); color: var(--ink); border-color: var(--glass) }
+.list { overflow-y: auto; min-height: 0; border-top: 1px solid var(--line); margin: 0; padding: 0; list-style: none }
+.list button { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 8px; align-items: center; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 8px 4px }
+.list button:hover { background: var(--canvas) }
+.list button[aria-current="true"] { background: var(--raised) }
+.list .who { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.list .what { grid-column: 2 / 4; color: var(--ink-dim); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.list .num { font: 11px var(--mono); color: var(--ink-dim) }
+.more { width: 100%; margin-top: 8px }
+
+.stage { display: grid; grid-template-rows: auto 1fr auto; gap: 12px; min-height: 0; min-width: 0 }
+.meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px }
+.meta h2 { font: 500 24px/1.1 var(--display); margin: 0; overflow-wrap: anywhere }
+.meta a { color: var(--align) }
+.screen { min-height: 0; display: grid; place-items: center; background: var(--canvas); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; position: relative }
+.screen video, .screen img { max-width: 100%; max-height: 100%; display: block; object-fit: contain }
+.screen iframe { width: min(100%, 420px); height: 100%; border: 0; background: #fff }
+.frame { width: min(100%, 360px); aspect-ratio: 9 / 16; max-height: 100%; display: grid; grid-template-rows: auto 1fr auto; gap: 14px; padding: 22px; border-radius: 12px; background: linear-gradient(160deg, var(--glass), var(--raised) 60%); border: 1px solid var(--line) }
+.frame p { margin: 0; font: 500 19px/1.35 var(--display); overflow: auto; overflow-wrap: anywhere }
+.watch { display: inline-flex; justify-content: center; align-items: center; gap: 8px; padding: 12px 16px; background: var(--align); color: var(--on-accent); border-radius: 10px; text-decoration: none; font-weight: 600 }
+.pager { position: absolute; inset: auto 0 10px; display: flex; justify-content: center; gap: 6px }
+.pager button { background: var(--raised); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font: 12px var(--mono) }
+.nav { display: flex; justify-content: space-between; gap: 8px; align-items: center }
+.nav .eyebrow { text-align: center }
+
+.call { display: grid; gap: 16px; align-content: start; overflow-y: auto; min-height: 0 }
+.verdict { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px }
+.verdict button { border: 1px solid var(--line); border-radius: 10px; padding: 12px 6px; background: var(--raised); font-weight: 600; display: grid; gap: 2px; justify-items: center }
+.verdict kbd { font: 10px var(--mono); color: var(--ink-dim); font-weight: 400 }
+.verdict [data-s="accepted"][aria-pressed="true"] { background: var(--spark); color: var(--on-accent); border-color: var(--spark) }
+.verdict [data-s="maybe"][aria-pressed="true"] { background: var(--align); color: var(--on-accent); border-color: var(--align) }
+.verdict [data-s="rejected"][aria-pressed="true"] { background: var(--rub); color: var(--on-accent); border-color: var(--rub) }
+.verdict [aria-pressed="true"] kbd { color: inherit }
+.uses { display: flex; flex-wrap: wrap; gap: 6px }
+.uses button { border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 5px 11px; font-size: 13px }
+.uses button[aria-pressed="true"] { background: var(--violet); border-color: var(--violet); color: var(--on-accent) }
+.uses kbd { font: 10px var(--mono); opacity: .7; margin-left: 4px }
+label.field { display: grid; gap: 6px }
+textarea { width: 100%; min-height: 92px; resize: vertical; background: var(--raised); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; line-height: 1.45 }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap }
+.saved { font: 11px var(--mono); color: var(--ink-dim); min-height: 1.2em }
+.help { color: var(--ink-dim); font-size: 12px; margin: 0 }
+.keys { font: 11px/1.8 var(--mono); color: var(--ink-dim); border-top: 1px solid var(--line); padding-top: 12px }
+.empty { color: var(--ink-dim); padding: 20px 4px }
+
+@media (max-width: 1100px) { .desk { grid-template-columns: 240px minmax(0, 1fr) 320px } }
+@media (max-width: 860px) {
+  html, body { height: auto }
+  .app { height: auto }
+  .desk { grid-template-columns: minmax(0, 1fr) }
+  .queue { order: 3 } .list { max-height: 50vh }
+  .screen { height: 62vh }
+  .keys { display: none }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+</style>
+
+<div class="app">
+  <header>
+    <h1>Align <em>inspo</em></h1>
+    <div class="progress">
+      <div class="bar" id="bar" aria-hidden="true"></div>
+      <div class="counts" id="counts"></div>
+    </div>
+    <div class="tools">
+      <span class="mode" id="mode">loading…</span>
+      <button class="ghost" id="export" type="button">Save decisions</button>
+    </div>
+  </header>
+
+  <div class="desk">
+    <aside class="queue">
+      <div class="filters">
+        <div class="tabs" id="statusTabs" role="group" aria-label="Show"></div>
+        <div class="row">
+          <select id="type" aria-label="Post type" style="flex:1"><option value="">All types</option><option>Reel</option><option>Carousel</option><option>Post</option></select>
+          <select id="useFilter" aria-label="Used for" style="flex:1"><option value="">Any use</option></select>
+        </div>
+        <input id="q" type="search" placeholder="Search creator or caption" aria-label="Search">
+      </div>
+      <ul class="list" id="list"></ul>
+    </aside>
+
+    <main class="stage">
+      <div class="meta" id="meta"></div>
+      <div class="screen" id="screen"></div>
+      <div class="nav">
+        <button class="ghost" id="prev" type="button">← Previous</button>
+        <span class="eyebrow" id="pos"></span>
+        <button class="ghost" id="next" type="button">Next →</button>
+      </div>
+    </main>
+
+    <section class="call" aria-label="Your call">
+      <div class="verdict" id="verdict">
+        <button type="button" data-s="accepted">Use it<kbd>A</kbd></button>
+        <button type="button" data-s="maybe">Maybe<kbd>M</kbd></button>
+        <button type="button" data-s="rejected">Skip it<kbd>R</kbd></button>
+      </div>
+      <div class="field">
+        <div class="eyebrow">Take this from it</div>
+        <div class="uses" id="uses" style="margin-top:6px"></div>
+      </div>
+      <label class="field" for="feedback">
+        <span class="eyebrow">Feedback</span>
+        <textarea id="feedback" placeholder="What works here, what to copy, what to avoid"></textarea>
+      </label>
+      <label class="field" for="spin">
+        <span class="eyebrow">Align spin</span>
+        <textarea id="spin" placeholder="How Align would do it. e.g. same 7-part vote series, but the audience votes on which card gets dealt next"></textarea>
+      </label>
+      <div class="row">
+        <button class="ghost" id="draft" type="button" hidden>Draft a spin with Claude</button>
+        <span class="saved" id="saved"></span>
+      </div>
+      <p class="help" id="draftNote" hidden></p>
+      <div class="keys">A use it · M maybe · R skip it and move on<br>1–0 toggle uses · J / → next · K / ← previous<br>F feedback · S spin · Esc leave a text box · O open on Instagram</div>
+    </section>
+  </div>
+</div>
+
+<script>
+const ITEMS = /*INSPO_ITEMS*/[];
+const USES = /*INSPO_USES*/[];
+const VOICE = /*ALIGN_VOICE*/"";
+const STATUS = { accepted: ['Use it', 'var(--spark)'], maybe: ['Maybe', 'var(--align)'], rejected: ['Skip it', 'var(--rub)'] };
+const PAGE = 300;
+
+const $ = (id) => document.getElementById(id);
+const store = (() => { try { return window.localStorage } catch { return null } })();
+const remember = (k, v) => { try { store?.setItem('inspo.' + k, JSON.stringify(v)) } catch {} };
+const recall = (k, d) => { try { const v = store?.getItem('inspo.' + k); return v == null ? d : JSON.parse(v) } catch { return d } };
+
+let decisions = {};
+let media = {};
+let backend = null;   // { name, save(id, d), exportFile() }
+let view = { status: recall('status', 'todo'), type: '', use: '', q: '' };
+let shown = [];
+let limit = PAGE;
+let current = recall('current', ITEMS[0]?.id);
+let page = 0;
+
+// ---------- backends: local server, claude.ai database, or this browser ----------
+async function localBackend() {
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return null;
+  try {
+    const r = await fetch('/api/state');
+    if (!r.ok) return null;
+    const s = await r.json();
+    decisions = s.decisions || {}; media = s.media || {};
+    return {
+      name: `local · ${Object.keys(media).length} downloaded · saves to data/decisions.json`,
+      async save(id, d) {
+        const r = await fetch('/api/decision', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ id, decision: d }) });
+        if (!r.ok) throw new Error('The local server did not save it. Is npm run review still running?');
+      },
+      exportFile: null,
+    };
+  } catch { return null }
+}
+
+async function artifactBackend() {
+  const db = await window.claude?.use?.('db');
+  if (!db) return null;
+  const col = db.collection('decisions');
+  await new Promise((resolve) => {
+    const t = setTimeout(resolve, 10000);
+    col.onSnapshot((snap) => {
+      clearTimeout(t);
+      for (const c of snap.docChanges()) {
+        if (c.type === 'removed') delete decisions[c.doc.id];
+        else if (!pendingIds.has(c.doc.id)) decisions[c.doc.id] = c.doc.data();
+      }
+      resolve(); render();
+    }, () => { clearTimeout(t); resolve() });
+  });
+  return {
+    name: 'claude.ai · saved to your account, on every device',
+    save: (id, d) => col.doc(id).set(d),
+    exportFile: true,
+  };
+}
+
+function browserBackend() {
+  decisions = recall('decisions', {});
+  return { name: 'this browser only', save: async (id, d) => remember('decisions', decisions), exportFile: true };
+}
+
+// ---------- filtering ----------
+function matches(it) {
+  const d = decisions[it.id];
+  const s = d?.status || 'todo';
+  if (view.status !== 'all' && s !== view.status) return false;
+  if (view.type && it.type !== view.type) return false;
+  if (view.use && !(d?.uses || []).includes(view.use)) return false;
+  if (view.q) {
+    const q = view.q.toLowerCase();
+    if (!it.creator.toLowerCase().includes(q) && !it.about.toLowerCase().includes(q) && !(d?.feedback || '').toLowerCase().includes(q) && !(d?.spin || '').toLowerCase().includes(q)) return false;
+  }
+  return true;
+}
+
+function render() {
+  renderCounts();
+  shown = ITEMS.filter(matches);
+  renderList();
+  renderItem();
+}
+
+function renderCounts() {
+  const n = { accepted: 0, maybe: 0, rejected: 0 };
+  for (const it of ITEMS) { const s = decisions[it.id]?.status; if (s) n[s]++ }
+  const done = n.accepted + n.maybe + n.rejected, total = ITEMS.length;
+  $('bar').innerHTML = ['accepted', 'maybe', 'rejected'].map((s) => `<i style="width:${(n[s] / total) * 100}%;background:${STATUS[s][1]}"></i>`).join('');
+  $('counts').innerHTML = `<span><b>${done}</b> of ${total} reviewed</span>` +
+    ['accepted', 'maybe', 'rejected'].map((s) => `<span><span class="dot" style="background:${STATUS[s][1]}"></span>${STATUS[s][0]} <b>${n[s]}</b></span>`).join('');
+  const tabs = [['todo', `To review ${total - done}`], ['accepted', `Use it ${n.accepted}`], ['maybe', `Maybe ${n.maybe}`], ['rejected', `Skipped ${n.rejected}`], ['all', 'All']];
+  $('statusTabs').innerHTML = tabs.map(([k, l]) => `<button type="button" data-k="${k}" aria-pressed="${view.status === k}">${l}</button>`).join('');
+}
+
+function renderList() {
+  const list = $('list');
+  list.textContent = '';
+  if (!shown.length) { list.innerHTML = '<li class="empty">Nothing here. Try another filter.</li>'; return }
+  const frag = document.createDocumentFragment();
+  for (const it of shown.slice(0, limit)) {
+    const li = document.createElement('li');
+    const b = document.createElement('button');
+    b.type = 'button'; b.dataset.id = it.id;
+    if (it.id === current) b.setAttribute('aria-current', 'true');
+    const s = decisions[it.id]?.status;
+    b.innerHTML = `<span class="dot" style="background:${s ? STATUS[s][1] : 'var(--line)'}"></span><span class="who"></span><span class="num">${it.type[0]}·${it.id.slice(1)}</span><span class="what"></span>`;
+    b.querySelector('.who').textContent = '@' + it.creator;
+    b.querySelector('.what').textContent = it.about || 'No caption';
+    li.append(b); frag.append(li);
+  }
+  if (shown.length > limit) {
+    const li = document.createElement('li');
+    li.innerHTML = `<button type="button" class="ghost more" id="more">Show ${Math.min(PAGE, shown.length - limit)} more of ${shown.length - limit}</button>`;
+    frag.append(li);
+  }
+  list.append(frag);
+}
+
+function item() { return ITEMS.find((i) => i.id === current) || shown[0] || ITEMS[0] }
+
+function renderItem() {
+  const it = item();
+  if (!it) return;
+  current = it.id;
+  const d = decisions[it.id] || {};
+  $('meta').innerHTML = `<span class="eyebrow">${it.type} · #${Number(it.id.slice(1))}</span><h2></h2><a target="_blank" rel="noopener">Open on Instagram ↗</a>`;
+  $('meta').querySelector('h2').textContent = '@' + it.creator;
+  $('meta').querySelector('a').href = it.url;
+  renderScreen(it);
+  const i = shown.findIndex((x) => x.id === it.id);
+  $('pos').textContent = i >= 0 ? `${i + 1} of ${shown.length} in this list` : 'not in this list';
+  for (const b of $('verdict').querySelectorAll('button')) b.setAttribute('aria-pressed', String(d.status === b.dataset.s));
+  for (const b of $('uses').querySelectorAll('button')) b.setAttribute('aria-pressed', String((d.uses || []).includes(b.dataset.u)));
+  if (document.activeElement !== $('feedback')) $('feedback').value = d.feedback || '';
+  if (document.activeElement !== $('spin')) $('spin').value = d.spin || '';
+  $('saved').textContent = d.updatedAt ? 'Saved ' + new Date(d.updatedAt).toLocaleString() : '';
+  $('draftNote').hidden = true;
+}
+
+function renderScreen(it) {
+  const scr = $('screen');
+  const files = media[it.shortcode];
+  scr.textContent = '';
+  if (files?.length) {
+    page = Math.min(page, files.length - 1);
+    const f = files[page], src = `/media/${it.shortcode}/${f}`;
+    const el = /\.(mp4|mov|webm)$/i.test(f) ? Object.assign(document.createElement('video'), { src, controls: true, autoplay: true, loop: true, playsInline: true }) : Object.assign(document.createElement('img'), { src, alt: `${it.type} by @${it.creator}, part ${page + 1}` });
+    scr.append(el);
+    if (files.length > 1) {
+      const p = document.createElement('div'); p.className = 'pager';
+      p.innerHTML = `<button type="button" data-p="-1">‹</button><button type="button" disabled>${page + 1} / ${files.length}</button><button type="button" data-p="1">›</button>`;
+      scr.append(p);
+    }
+    return;
+  }
+  if (backend?.name.startsWith('local')) {
+    // Not downloaded yet: Instagram's own embed player works on localhost.
+    const f = document.createElement('iframe');
+    f.src = `https://www.instagram.com/${it.type === 'Reel' ? 'reel' : 'p'}/${it.shortcode}/embed/captioned/`;
+    f.title = `Post by @${it.creator}`; f.loading = 'lazy'; f.allow = 'autoplay; encrypted-media';
+    scr.append(f);
+    return;
+  }
+  const card = document.createElement('div'); card.className = 'frame';
+  card.innerHTML = `<span class="eyebrow">@${escapeHtml(it.creator)} · ${it.type}</span><p></p><a class="watch" target="_blank" rel="noopener">Watch on Instagram ↗</a>`;
+  card.querySelector('p').textContent = it.about || 'No caption. Open it to see what it is.';
+  card.querySelector('a').href = it.url;
+  scr.append(card);
+}
+
+function escapeHtml(s) { return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]) }
+
+// ---------- saving ----------
+const pendingIds = new Set();
+let saveTimer = null;
+function change(patch, { now = false } = {}) {
+  const it = item();
+  const d = { status: null, uses: [], feedback: '', spin: '', ...decisions[it.id], ...patch, updatedAt: new Date().toISOString() };
+  decisions[it.id] = d;
+  pendingIds.add(it.id);
+  $('saved').textContent = 'Saving…';
+  clearTimeout(saveTimer);
+  const id = it.id;
+  const go = async () => {
+    try { await backend.save(id, decisions[id]); if (current === id) $('saved').textContent = 'Saved' }
+    catch (e) { $('saved').textContent = e?.message || 'Not saved. Check your connection and try again.' }
+    finally { pendingIds.delete(id) }
+  };
+  now ? go() : (saveTimer = setTimeout(go, 600));
+  renderCounts(); refreshRow(id);
+}
+
+function refreshRow(id) {
+  const b = $('list').querySelector(`[data-id="${id}"] .dot`);
+  const s = decisions[id]?.status;
+  if (b) b.style.background = s ? STATUS[s][1] : 'var(--line)';
+}
+
+function go(delta) {
+  flushSave();
+  const i = shown.findIndex((x) => x.id === current);
+  const next = shown[Math.max(0, Math.min(shown.length - 1, (i < 0 ? 0 : i + delta)))];
+  if (!next) return;
+  select(next.id);
+}
+
+function select(id) {
+  flushSave();
+  current = id; page = 0; remember('current', id);
+  const idx = shown.findIndex((x) => x.id === id);
+  if (idx >= limit) { limit = idx + PAGE; renderList() }
+  for (const b of $('list').querySelectorAll('[aria-current]')) b.removeAttribute('aria-current');
+  const row = $('list').querySelector(`[data-id="${id}"]`);
+  row?.setAttribute('aria-current', 'true');
+  row?.scrollIntoView({ block: 'nearest' });
+  renderItem();
+}
+
+function flushSave() {
+  if (!saveTimer) return;
+  clearTimeout(saveTimer); saveTimer = null;
+  const id = current;
+  backend.save(id, decisions[id]).catch(() => {}).finally(() => pendingIds.delete(id));
+}
+
+function setStatus(s) {
+  const it = item();
+  const was = decisions[it.id]?.status;
+  change({ status: was === s ? null : s }, { now: true });
+  for (const b of $('verdict').querySelectorAll('button')) b.setAttribute('aria-pressed', String(decisions[it.id].status === b.dataset.s));
+  if (s === 'rejected' && was !== s) setTimeout(() => {
+    // Skipped posts leave the To review list; step to whatever is next.
+    const i = shown.findIndex((x) => x.id === it.id);
+    const after = shown.slice(i + 1).find(matches) || shown.slice(0, Math.max(i, 0)).reverse().find(matches);
+    shown = ITEMS.filter(matches); renderList();
+    if (after) select(after.id); else renderItem();
+  }, 180);
+}
+
+function toggleUse(u) {
+  const d = decisions[item().id] || {};
+  const uses = new Set(d.uses || []);
+  uses.has(u) ? uses.delete(u) : uses.add(u);
+  change({ uses: [...uses] }, { now: true });
+  for (const b of $('uses').querySelectorAll('button')) b.setAttribute('aria-pressed', String(uses.has(b.dataset.u)));
+}
+
+// ---------- export ----------
+async function exportDecisions() {
+  const out = Object.fromEntries(Object.entries(decisions).filter(([, d]) => d && (d.status || d.feedback || d.spin || d.uses?.length)));
+  const json = JSON.stringify(out, null, 1);
+  const dl = await window.claude?.use?.('downloads');
+  if (dl) {
+    try { await dl.save({ filename: 'decisions.json', data: json }); $('saved').textContent = 'Saved decisions.json'; return } catch (e) { if (e?.code === 'declined') return }
+  }
+  try { await navigator.clipboard.writeText(json); $('saved').textContent = 'Copied all decisions as JSON. Paste into inspo/data/decisions.json.' }
+  catch { $('saved').textContent = 'Could not copy. Ask Claude to sync your decisions instead.' }
+}
+
+// ---------- Claude drafts a spin (claude.ai only) ----------
+async function draftSpin() {
+  const sample = await window.claude?.use?.('sample');
+  if (!sample) return;
+  const it = item(), d = decisions[it.id] || {};
+  const btn = $('draft'); btn.disabled = true; btn.textContent = 'Drafting…';
+  const prompt = `You help a founder adapt other creators' Instagram posts into content for Align, a dating app played as a card game: every night you're dealt a hand of veiled cards (sky, chart, dealbreakers, no photos), and faces only flip when you both align. Core loop: deal, deck, align, match, reveal, chat. Talk cards, peeks, event cards, a new deal at 11:11 every night.
+
+Voice rules:
+${VOICE}
+
+The reference post (by @${it.creator}, a ${it.type}): "${it.about || 'no caption'}"
+What the founder wants to take from it: ${(d.uses || []).map((u) => USES.find((x) => x.key === u)?.label).join(', ') || 'not said'}
+Their notes: ${d.feedback || 'none'}
+
+Write the Align spin in 2 to 4 short sentences: keep the move (structure, hook shape, format) and swap the subject for Align. Do not copy their words. Say what the post would show and the first line. Plain text only.`;
+  try {
+    const r = await sample(prompt, { onText: ({ text }) => { $('spin').value = text } });
+    $('spin').value = r.text.trim();
+    change({ spin: $('spin').value }, { now: true });
+    $('draftNote').textContent = 'Drafted by Claude. Edit it so it sounds like you.'; $('draftNote').hidden = false;
+  } catch (e) {
+    if (e?.code === 'not_granted') btn.hidden = true;
+    else { $('draftNote').textContent = e?.code === 'rate_limited' ? 'Claude is busy. Try again in a minute.' : 'Could not draft one this time.'; $('draftNote').hidden = false }
+  } finally { btn.disabled = false; btn.textContent = 'Draft a spin with Claude' }
+}
+
+// ---------- wiring ----------
+$('uses').innerHTML = USES.map((u, i) => `<button type="button" data-u="${u.key}" title="${u.hint}">${u.label}<kbd>${(i + 1) % 10}</kbd></button>`).join('');
+$('useFilter').innerHTML += USES.map((u) => `<option value="${u.key}">${u.label}</option>`).join('');
+$('verdict').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setStatus(b.dataset.s) });
+$('uses').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) toggleUse(b.dataset.u) });
+$('feedback').addEventListener('input', (e) => change({ feedback: e.target.value }));
+$('spin').addEventListener('input', (e) => change({ spin: e.target.value }));
+$('list').addEventListener('click', (e) => {
+  if (e.target.id === 'more') { limit += PAGE; renderList(); return }
+  const b = e.target.closest('button[data-id]'); if (b) select(b.dataset.id);
+});
+$('statusTabs').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; view.status = b.dataset.k; remember('status', view.status); limit = PAGE; render() });
+$('type').addEventListener('change', (e) => { view.type = e.target.value; limit = PAGE; render() });
+$('useFilter').addEventListener('change', (e) => { view.use = e.target.value; limit = PAGE; render() });
+$('q').addEventListener('input', (e) => { view.q = e.target.value.trim(); limit = PAGE; shown = ITEMS.filter(matches); renderList() });
+$('prev').addEventListener('click', () => go(-1));
+$('next').addEventListener('click', () => go(1));
+$('screen').addEventListener('click', (e) => { const b = e.target.closest('[data-p]'); if (!b) return; const n = media[item().shortcode].length; page = (page + Number(b.dataset.p) + n) % n; renderScreen(item()) });
+$('export').addEventListener('click', exportDecisions);
+$('draft').addEventListener('click', draftSpin);
+
+document.addEventListener('keydown', (e) => {
+  const typing = /^(TEXTAREA|INPUT|SELECT)$/.test(document.activeElement?.tagName);
+  if (typing) {
+    if (e.key === 'Escape') document.activeElement.blur();
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { document.activeElement.blur(); go(1) }
+    return;
+  }
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key.toLowerCase();
+  if (k === 'a') setStatus('accepted');
+  else if (k === 'm') setStatus('maybe');
+  else if (k === 'r' || k === 'x') setStatus('rejected');
+  else if (k === 'j' || e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1) }
+  else if (k === 'k' || e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1) }
+  else if (k === 'f') { e.preventDefault(); $('feedback').focus() }
+  else if (k === 's') { e.preventDefault(); $('spin').focus() }
+  else if (k === 'o') window.open(item().url, '_blank', 'noopener');
+  else if (/^[0-9]$/.test(k)) { const u = USES[(Number(k) + 9) % 10]; if (u) toggleUse(u.key) }
+});
+
+(async () => {
+  render();
+  backend = (await localBackend()) || (await artifactBackend()) || browserBackend();
+  $('mode').textContent = backend.name;
+  $('export').hidden = !backend.exportFile;
+  if (backend.name.startsWith('claude.ai') && await window.claude?.use?.('sample')) $('draft').hidden = false;
+  render();
+})();
+</script>

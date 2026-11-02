@@ -103,6 +103,8 @@ To post reels to one or more Instagram accounts as trial reels and see how they 
 
 For founder-page videos, see [founder/README.md](founder/README.md): her reels scored, an Align script for each, and a studio to remix, promote and schedule them for filming.
 
+To go through the 1,068 inspiration posts (download them, mark each one use / maybe / skip with feedback and an Align spin, and turn that into a content brief), see [inspo/README.md](inspo/README.md).
+
 ## Online demo
 
 A hosted copy runs at **https://claude.ai/artifact/V4y14GqpBoBrv6VwAM7NYD**.

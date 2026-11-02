@@ -1,0 +1,31 @@
+// Bake the post list into the review page: app/dist/review.html.
+import { readFileSync, writeFileSync } from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { ROOT, USES, ensureDir, loadItems } from './items.mjs'
+
+/** Align's voice rules, for Claude's drafted spins. */
+function voice() {
+  try {
+    const brief = JSON.parse(readFileSync(path.join(ROOT, '..', 'founder', 'data', 'align-brief.json'), 'utf8'))
+    return brief.voice.rules.map((r) => '- ' + r).join('\n')
+  } catch { return '- Short sentences. No exclamation marks, no emoji, no "manifest". Astrology reads, it never decides. Never "download Align".' }
+}
+
+const json = (v) => JSON.stringify(v).replace(/</g, '\\u003c')
+
+export function build() {
+  const items = loadItems().map(({ id, shortcode, creator, type, url, about }) => ({ id, shortcode, creator, type, url, about }))
+  const html = readFileSync(path.join(ROOT, 'app', 'review.template.html'), 'utf8')
+    .replace('/*INSPO_ITEMS*/[]', json(items))
+    .replace('/*INSPO_USES*/[]', json(USES))
+    .replace('/*ALIGN_VOICE*/""', json(voice()))
+  const out = path.join(ensureDir(path.join(ROOT, 'app', 'dist')), 'review.html')
+  writeFileSync(out, html)
+  return { out, items: items.length, bytes: Buffer.byteLength(html) }
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const r = build()
+  console.log(`${path.relative(ROOT, r.out)}: ${r.items} posts, ${(r.bytes / 1024).toFixed(0)} KB`)
+}
