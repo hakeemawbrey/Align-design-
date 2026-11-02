@@ -2,3 +2,5 @@ mlpilot v1
 mlfirst v1
 mlmixed v1
 mldistance v1
+mlfriends v1
+mlpace v1
