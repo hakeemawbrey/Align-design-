@@ -173,7 +173,6 @@ export default function Site() {
       <div className="wrap">
         <header className="hero" id="top">
           <div className="hero-copy">
-            <span className="kicker">Blind by design</span>
             <h1>Fall for who they are.</h1>
             <p className="lede-not">Not what they look like.</p>
           </div>
@@ -296,7 +295,6 @@ export default function Site() {
         <p className="end-line">No one is disposable.</p>
         <span aria-hidden style={{ display: 'contents' }}><AlignMark size={112} glow={1} dotRadius={3.6} strokeOpacity={0.75} strokeWidth={0.8} /></span>
         <span className="end-name">Align<sup className="tm">™</sup></span>
-        <span className="kicker" style={{ margin: 0 }}>Blind by design</span>
         <nav className="end-links" aria-label="Legal">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>

@@ -60,7 +60,7 @@ html { scroll-behavior: smooth; }
 .scene-line { font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.1; color: var(--label-1); text-shadow: 0 0 18px rgba(201,182,240,0.35); }
 .scene .deal-again::after { inset: -11px -8px; }
 .scene .deal-again { margin: 0; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; }
-/* ✦ BLIND BY DESIGN ✦ */
+/* ✦ SPACED LABELS ✦ */
 .kicker {
   display: inline-flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.34em;
   text-transform: uppercase; color: var(--label-2);

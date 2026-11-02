@@ -55,7 +55,7 @@ const SCRIPT: [number, Beat][] = [
 export type Caption = [label: string, line: string]
 const CAPTION: Record<Beat['at'], Caption> = {
   deal: ['Tonight’s deck', 'Dealt by the stars.'],
-  up: ['Blind by design', 'Fall for the card.'],
+  up: ['No photos yet', 'Fall for the card.'],
   lean: ['Release or align', 'Who they are, first.'],
   gone: ['Release or align', 'Who they are, first.'],
   mutual: ['You both aligned', 'It’s mutual.'],
