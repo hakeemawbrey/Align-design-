@@ -4,9 +4,9 @@
 //    2.0–7.0    cold open: garlands and lamps flicker on down the whole lane. LIBRA: "tonight I ask Scorpio out."
 //    7.0–10.0   title card
 //   10.0–40.0   Act 1 · one long pan down the lane, a callback per couple:
-//               ♑ Capricorn snoozes the HARD STOP alarm (Ep 1) · ♈ Aries brings ONE balloon, ♍ Virgo brings yogurt (Eps 2, 9)
-//               · ♓ Pisces gets a pixel moon and sends one back, crying (Ep 8) · ♉ Taurus & ♊ Gemini's napkin plan
-//               "PARTY 1 HR → SOUP" (Ep 4) · ♋ Cancer on a video call with ♐ Sagittarius (Ep 7) · ♌ Leo & ♒ Aquarius on
+//               ♑ Capricorn snoozes the HARD STOP alarm and stays with ♌ Leo (Ep 1) · ♈ Aries brings ONE balloon, ♍ Virgo brings yogurt (Eps 2, 9)
+//               · ♓ Pisces (window) and ♒ Aquarius (street) trade pixel moons (Ep 8) · ♉ Taurus & ♊ Gemini's napkin plan
+//               "PARTY 1 HR → SOUP" (Ep 4) · ♋ Cancer on a video call with ♐ Sagittarius (Ep 7) · ♌ Leo & ♑ Capricorn on
 //               the rooftop (Ep 6) · ♎ Libra at the stall, with a plan.
 //   40.0        card cut (the middle candidate)
 //   40.0–61.0   Act 2 · three near misses: they swap places through the crowd · a conga line sweeps Libra away mid
@@ -64,12 +64,12 @@ const H = Object.fromEntries(Object.keys(SPK).map(k => [k, talkHops(LINES, SPK[k
 
 const CAPS = [
   { text: 'The whole lane. | *One* party.', kicker: 'SATURDAY · 9:00 PM', at: 2.15, out: [6.6, 6.9] },
-  { text: 'Capricorn: | *no* hard stop.', at: 10.3, out: [14.0, 14.3] },
+  { text: 'Capricorn & Leo: | *past* the hard stop.', at: 10.3, out: [14.0, 14.3] },
   { text: 'Aries: | *one* balloon.', at: 14.8, out: [18.6, 18.9] },
-  { text: 'Pisces: | *still here.*', at: 19.3, out: [22.9, 23.2] },
+  { text: 'Pisces & Aquarius: | *still here.*', at: 19.3, out: [22.9, 23.2] },
   { text: 'Taurus & Gemini: | *then* soup.', at: 23.8, out: [27.6, 27.9] },
   { text: 'Cancer: | *far,* not apart.', at: 28.3, out: [32.0, 32.3] },
-  { text: 'Leo & Aquarius: | the *rooftop.*', at: 32.8, out: [36.6, 36.9] },
+  { text: 'Leo & Capricorn: | the *rooftop.*', at: 32.8, out: [36.6, 36.9] },
   { text: 'And Libra… | has a *plan.*', at: 37.3, out: [39.6, 39.9] },
   { text: 'Near miss *one.*', at: 40.35, out: [46.7, 47.0] },
   { text: 'Near miss *two.*', at: 47.3, out: [53.6, 53.9] },
@@ -186,30 +186,34 @@ async function build(stage) {
   }
 
   function tour(t) {
-    const pan = path(t, [[10, 0], [14.0, 0], [14.8, 260], [18.5, 260], [19.3, 330], [23.0, 330], [23.8, 680], [27.5, 680], [28.3, 880], [32.0, 880], [32.8, 900], [36.5, 900], [37.3, 1080]])
-    const pz = 1 + 0.35 * clamp(prog(t, 19.3, 19.9)) * (1 - prog(t, 22.6, 23.2))
-    drawLane(x, t, { moon: MOON, pan, zoom: pz, focus: [505, 960] }, c => {
+    const pan = path(t, [[10, 0], [14.0, 0], [14.8, 140], [18.5, 140], [19.3, 330], [23.0, 330], [23.8, 680], [27.5, 680], [28.3, 880], [32.0, 880], [32.8, 900], [36.5, 900], [37.3, 1080]])
+    const pz = 1 + 0.12 * clamp(prog(t, 19.3, 19.9)) * (1 - prog(t, 22.6, 23.2))
+    drawLane(x, t, { moon: MOON, pan, zoom: pz, focus: [505, 1000] }, c => {
       garlands(c, t)
-      // Pisces (window): a pixel moon arrives… one goes back
-      drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: t > T.pisMoon ? 3 : 2, mood: t > T.pisMoon ? 'happy' : 'sparkle', box: false, hops: [T.pisMoon + 0.1, T.pisSend] })
-      if (t > 19.4 && t < 23.4) {
-        phone(c, 940, 880, 90, 150, () => { if (t > T.pisMoon) drawIcon(c, 'moon', 912, 850 - (t > T.pisSend ? (t - T.pisSend) * 300 : 0), 6) })
-        if (t > T.pisSend) drawIcon(c, 'moon', 880 + (t - T.pisSend) * 200, 760 - (t - T.pisSend) * 260, 6)
-        sparkles(c, t, 940, 860, T.pisMoon, 10, 90, 3, [ML_GOLD, CYAN, BONE])
-      }
-      // Capricorn: the HARD STOP alarm, snoozed
       const S = 200
-      // Leo (Capricorn's Ep 1 blind date, now a friend) laughs at the snooze, then heads up to the roof
-      const leoX = path(t, [[14.0, 470], [15.6, -220]])
-      if (t < 15.6) drawSign(c, 'leo', leoX, standY(180), 180, t, { mood: 'happy', look: [-1, 0], hops: [T.snooze + 0.35, T.snooze + 0.7, ...steps(14.0, 15.6, 0.3)], seed: 17 })
-      drawSign(c, 'capricorn', 260, standY(S), S, t, { mood: t > T.snooze + 0.3 ? 'happy' : 'neutral', look: [1, -0.5], hops: [...H.CP, ...(t > T.snooze + 0.3 ? steps(T.snooze + 0.4, 14.6, 0.42) : [])], seed: 11 })
-      drawMysteryCard(c, 130, standY(S) - 20, 70, t, { sign: 'leo', rot: -0.2 })
-      if (t < T.snooze + 0.8) drawBubble(c, 300, standY(S) - 190, t < T.snooze ? 'HARD STOP 9:00' : 'snoozed.', { size: 30, col: t < T.snooze ? '#ffb0b0' : BONE, k: pop01(t, 10.4, 0.25, 2.2) * (1 + 0.08 * Math.sin(t * 40) * (t < T.snooze ? 1 : 0)) })
+      // Pisces (window) and Aquarius (on the street below) trade pixel moons, in person
+      const aqX = 950, aqY = standY(190)
+      drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: t > T.pisMoon ? 3 : 2, mood: t > T.pisMoon ? 'happy' : 'sparkle', box: false, look: [1, 1], hops: [T.pisMoon + 0.4, T.pisSend] })
+      drawSign(c, 'aquarius', aqX, aqY, 190, t, { mood: t > T.pisSend + 0.5 ? 'heart' : 'happy', look: [-0.6, -1], hops: [T.pisMoon - 0.1, T.pisSend + 0.5], seed: 15 })
+      const arc = (p, x0, y0, x1, y1) => [lerp(x0, x1, p), lerp(y0, y1, p) - Math.sin(Math.PI * p) * 120]
+      const up = prog(t, T.pisMoon - 0.1, T.pisMoon + 0.4), down = prog(t, T.pisSend, T.pisSend + 0.5)
+      { const [mx, my] = up <= 0 ? [aqX + 70, aqY - 60] : arc(up, aqX + 70, aqY - 60, LANE.pisces.x + 60, LANE.pisces.y - 20); drawIcon(c, 'moon', mx - 27, my - 24, 6) }
+      if (t > T.pisSend - 0.6) { const [mx, my] = down <= 0 ? [LANE.pisces.x - 60, LANE.pisces.y - 20] : arc(down, LANE.pisces.x - 60, LANE.pisces.y - 20, aqX - 70, aqY - 60); drawIcon(c, 'moon', mx - 27, my - 24, 6) }
+      sparkles(c, t, LANE.pisces.x + 60, LANE.pisces.y - 20, T.pisMoon + 0.4, 10, 90, 3, [ML_GOLD, CYAN, BONE])
+      sparkles(c, t, aqX - 70, aqY - 60, T.pisSend + 0.5, 10, 90, 5, [ML_GOLD, CYAN, BONE])
+      // Capricorn & Leo (the Ep 1 blind date): the HARD STOP alarm, snoozed; they stay, then head up to the roof
+      const off = path(t, [[14.0, 0], [15.6, -480]])
+      drawMysteryCard(c, 70 + off, standY(S) - 20, 70, t, { sign: 'leo', rot: -0.2 })
+      if (t < 15.6) {
+        drawSign(c, 'capricorn', 200 + off, standY(S), S, t, { mood: t > T.snooze + 0.3 ? 'happy' : 'neutral', look: [1, -0.5], hops: [...H.CP, ...(t > T.snooze + 0.3 ? steps(T.snooze + 0.4, 15.6, 0.42) : [])], seed: 11 })
+        drawSign(c, 'leo', 400 + off, standY(S), S, t, { mood: t > T.snooze + 0.3 ? 'heart' : 'happy', look: [-1, 0], hops: [T.snooze + 0.35, ...steps(T.snooze + 0.6, 15.6, 0.42)], seed: 17 })
+      }
+      if (t < T.snooze + 0.8) drawBubble(c, 240, standY(S) - 190, t < T.snooze ? 'HARD STOP 9:00' : 'snoozed.', { size: 30, col: t < T.snooze ? '#ffb0b0' : BONE, k: pop01(t, 10.4, 0.25, 2.2) * (1 + 0.08 * Math.sin(t * 40) * (t < T.snooze ? 1 : 0)) })
       // Aries (one balloon) + Virgo (yogurt)
-      drawSign(c, 'virgo', 700, standY(S), S, t, { mood: 'happy', look: [1, 0], seed: 3 })
-      yogurtCup(c, 600, standY(S) + 10, 3)
-      drawSign(c, 'aries', 900, standY(S), S, t, { mood: t > 15 ? 'sparkle' : 'happy', look: [-1, 0], hops: H.AR, seed: 5 })
-      balloon(c, 970, standY(S) + 30, t)
+      drawSign(c, 'virgo', 560, standY(S), S, t, { mood: 'happy', look: [1, 0], seed: 3 })
+      yogurtCup(c, 465, standY(S) + 10, 3)
+      drawSign(c, 'aries', 750, standY(S), S, t, { mood: t > 15 ? 'sparkle' : 'happy', look: [-1, 0], hops: H.AR, seed: 5 })
+      balloon(c, 815, standY(S) + 30, t)
       // Taurus & Gemini: the food table + the napkin plan
       R(c, 1050, 1300, 330, 24, INK); R(c, 1054, 1302, 322, 18, '#c0703a')
       drawSign(c, 'taurus', 1120, standY(S), S, t, { mood: 'happy', look: [1, 0], seed: 9 })
@@ -220,9 +224,9 @@ async function build(stage) {
       // Cancer on the bench, video-calling Sagittarius
       drawSign(c, 'cancer', 1520, standY(S), S, t, { mood: t > 28.9 ? 'happy' : 'sparkle', look: [1, -0.4], hops: H.CA, seed: 13 })
       phone(c, 1665, 1250, 130, 200, () => { R(c, 1608, 1172, 114, 160, '#2a3a7a'); drawSign(c, 'sagittarius', 1665, 1258, 100, t, { mood: 'happy', hops: [29.4, 30.2, 31.0], seed: 14 }) })
-      // Leo & Aquarius on the rooftop
+      // Leo & Capricorn on the rooftop (they went up after the hard stop)
       if (t > 30.5) drawSign(c, 'leo', 1330, standY(160, LANE.roof.y + 10), 160, t, { pop: pop01(t, 30.5, 0.35, 2), mood: t > 33.3 ? 'heart' : 'happy', look: [1, 0], hops: H.LE, seed: 7 })
-      drawSign(c, 'aquarius', 1490, standY(160, LANE.roof.y + 10), 160, t, { mood: t > 34.4 ? 'heart' : 'happy', look: [-1, 0], hops: [34.4], seed: 15 })
+      if (t > 30.6) drawSign(c, 'capricorn', 1490, standY(160, LANE.roof.y + 10), 160, t, { pop: pop01(t, 30.6, 0.35, 2), mood: t > 34.4 ? 'heart' : 'happy', look: [-1, 0], hops: [34.4], seed: 11 })
       // Libra at the stall, looking toward the café
       drawSign(c, 'libra', 1960, standY(210), 210, t, { mood: t > 37.6 ? 'sparkle' : 'neutral', look: [-1, 0], hops: [38.0], seed: 6 })
     })
