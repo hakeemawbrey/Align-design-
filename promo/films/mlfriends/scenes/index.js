@@ -144,8 +144,8 @@ async function build(stage) {
   // ── stills for PREVIOUSLY ON
   const prevStills = [
     { caption: 'Capricorn stayed.', scene: c => { drawCafe(c, 3, { chairsUp: 0.8, view: 'late', behind: k => drawSign(k, 'taurus', CAFE.counter.x, standY(190, CAFE.counter.y), 190, 3, { mood: 'happy' }) }); drawSign(c, 'capricorn', 420, standY(260, 1450), 260, 3, { mood: 'heart' }) }, crop: [120, 780, 860, 1010] },
-    { caption: 'Aries: one balloon.', scene: c => drawLane(c, 2, { pan: 900 }, k => { drawSign(k, 'aries', 1250, standY(230), 230, 2, { mood: 'happy' }); balloon(k, 1380, 1000, 2); drawSign(k, 'virgo', 1470, standY(210), 210, 2, { mood: 'sparkle' }) }), crop: [140, 700, 900, 1060] },
-    { caption: 'Scorpio… slowed down.', scene: c => drawLane(c, 4, { pan: 1080 }, k => { drawSign(k, 'libra', 1890, standY(210), 210, 4, { mood: 'happy' }); drawSign(k, 'scorpio', 1640, standY(210), 210, 4, { mood: 'sleepy', zzz: false }) }), crop: [300, 760, 780, 920] },
+    { caption: 'Aries: one balloon.', scene: c => drawLane(c, 2, { moon: { x: 860, y: 610, r: 100 }, pan: 900 }, k => { drawSign(k, 'aries', 1250, standY(230), 230, 2, { mood: 'happy' }); balloon(k, 1380, 1000, 2); drawSign(k, 'virgo', 1470, standY(210), 210, 2, { mood: 'sparkle' }) }), crop: [140, 700, 900, 1060] },
+    { caption: 'Scorpio… slowed down.', scene: c => drawLane(c, 4, { moon: { x: 860, y: 610, r: 100 }, pan: 1080 }, k => { drawSign(k, 'libra', 1890, standY(210), 210, 4, { mood: 'happy' }); drawSign(k, 'scorpio', 1640, standY(210), 210, 4, { mood: 'sleepy', zzz: false }) }), crop: [300, 760, 780, 920] },
   ]
   const prev = buildPreviously(root, { at: T.prev, len: 2, stills: prevStills })
   const title = buildTitle(root, { ep: 3, title: 'Meet the Friends', at: T.title, len: 3 })
@@ -270,7 +270,7 @@ async function build(stage) {
   // ─────────── scenes
   function coldOpen(t) {
     const pan = 380 + (t - T.cold) * 14
-    drawLane(x, t, { pan }, c => {
+    drawLane(x, t, { moon: { x: 860, y: 610, r: 100 }, pan }, c => {
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 108, t, { tears: t > 5.3 ? 3 : 2, box: false, look: [0, 1] })
       const cHop = [2.3, T.cancerX, T.cancerX + 0.3]
       drawSign(c, 'cancer', 650, standY(220), 220, t, { mood: t > T.cancerX ? 'wide' : 'neutral', look: [1, 0], hops: cHop, seed: 3 })
@@ -300,7 +300,7 @@ async function build(stage) {
   }
   function act1b(t) {
     const pan = lerp(520, 640, prog(t, T.a1b, T.a1c))
-    drawLane(x, t, { time: 'dusk', pan, lampsAt: T.lamps }, c => {
+    drawLane(x, t, { moon: { x: 860, y: 610, r: 100 }, time: 'dusk', pan, lampsAt: T.lamps }, c => {
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 108, t, { tears: t > T.heart ? 3 : 1, box: false, mood: t > T.heart ? 'happy' : 'sparkle', look: [1, 1] })
       const sp = ease.outCubic(prog(t, ...T.sagIn))
       const sx = lerp(1820, 1300, sp)
