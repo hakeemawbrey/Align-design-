@@ -5,7 +5,7 @@ user's Google Drive, one subfolder per show/section. Safe to re-run: skip any fi
 
 ## Where the videos are
 
-Use the **Star Talk library** first: nine pages holding the re-cut versions plus the new Trends and Then vs Now films (one card transition per video, no
+Use the **Star Talk library** first: ten pages holding the re-cut versions plus the new Trends and Then vs Now films (one card transition per video, no
 season numbers). Each page's films JSON lists every film on it; films whose `video` is empty are still rendering.
 Use the **Artifact** tool on all of these, never curl/WebFetch.
 
@@ -20,6 +20,7 @@ Use the **Artifact** tool on all of these, never curl/WebFetch.
 | 7 Remix | "Star Talk Remix" | https://claude.ai/artifact/7kLNcQpRUJQDJ575ht3sd4 |
 | 8 Trends | one per trend format (POV, Starter Pack, …) | https://claude.ai/artifact/YBmX7eEisoz96hDjvyucoT |
 | 9 Then vs Now | one per section (Signs dating, Dating moments, …) | https://claude.ai/artifact/G1vpVY9Nkno8t86qkUwW23 |
+| 10 Moonlight Lane | "Moonlight Lane" (2-minute episodes, name files "Ep 01 - <title>" …) | https://claude.ai/artifact/21GPZ77mecozvQ1o8SJ13q |
 
 Each film has `id`, `group` (section key), `show`, `title`, `video`, `poster`; the page's `PAGE.sections` maps group
 keys to section names.
@@ -39,9 +40,8 @@ Steps:
 2. For each video: `Artifact` action `read` with `url` and `path: "<asset id>"` saves it locally (the result says where).
    Do them in small batches and delete each local file after it uploads (the disk is small).
 
-New renders are still being added to these pages by another session (all 616 Star Talk films are being re-rendered
-with one card transition per video and no season numbers). Re-running this later picks up the new ones; when a
-film's video changed, replace the Drive file of the same name.
+All films on the ten library pages are finished (every `video` is filled), so the older pages should not be needed.
+When a film's video changed since an earlier run, replace the Drive file of the same name.
 
 ## Google Drive access
 
