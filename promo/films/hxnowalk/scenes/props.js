@@ -1,0 +1,203 @@
+// props — hxnowalk's field kit: a Buffalo-Bayou-style trail at sunset (generic skyline, live oaks, the bayou with the
+// sun's reflection, a concrete trail that scrolls), the trailhead parking lot, and small pixel props (a sneaker, a dog,
+// a heron, a stroller, cars, a talk card). Generic city, no real buildings or brands. Pure f(t); no `document` at top level.
+import { clamp, lerp, ease, rng } from '../../../src/lib.js'
+import { drawStarChar } from '../../startalk.js'
+import { drawBits, INK, BONE, GOLD, MONO, rgba } from './lab.js'
+
+const SERIF = "'EB Garamond', Georgia, serif"
+export const HORIZON = 1010, WATER = [1046, 1196], TRAIL = [1232, 1330]
+
+// ── the sky: a warm Houston sunset (k = 1) that can sink to dusk (k = 0)
+export function drawSunsetSky(x, t, { k = 1, sunY = 930 } = {}) {
+  const g = x.createLinearGradient(0, 0, 0, HORIZON + 40)
+  const top = k > 0.5 ? '#2b1656' : '#140a33'
+  g.addColorStop(0, top)
+  g.addColorStop(0.45, rgba('#8a2f7a', 0.6 + 0.4 * k))
+  g.addColorStop(0.75, k > 0.5 ? '#e0566a' : '#6a2a6a')
+  g.addColorStop(1, k > 0.5 ? '#ffb14a' : '#c2506a')
+  x.fillStyle = g; x.fillRect(0, 0, 1080, HORIZON + 40)
+  // pixel cloud streaks lit from below
+  const r = rng(12)
+  for (let i = 0; i < 7; i++) {
+    const cy = 560 + i * 62 + r() * 20, cx = ((r() * 1400 + t * (6 + i * 2)) % 1400) - 200, w = 160 + r() * 260
+    x.fillStyle = rgba(i % 2 ? '#ff9fb0' : '#ffc27a', (0.22 + 0.1 * (i / 7)) * (0.4 + 0.6 * k))
+    x.fillRect(Math.round(cx), Math.round(cy), Math.round(w), 10); x.fillRect(Math.round(cx + 30), Math.round(cy - 8), Math.round(w * 0.5), 8)
+  }
+  // the sun: a big low disc with horizontal cut bands (sinks with k)
+  const sy = lerp(sunY + 140, sunY, k), R = 150
+  x.save(); x.beginPath(); x.rect(0, 0, 1080, HORIZON); x.clip()
+  x.globalCompositeOperation = 'lighter'
+  const sg = x.createRadialGradient(760, sy, 20, 760, sy, 420); sg.addColorStop(0, `rgba(255,200,120,${0.55 * k})`); sg.addColorStop(1, 'rgba(255,200,120,0)')
+  x.fillStyle = sg; x.fillRect(300, sy - 440, 900, 880)
+  x.globalCompositeOperation = 'source-over'
+  for (let yy = -R; yy < R; yy += 8) {
+    const band = yy > 30 && Math.floor((yy - 30) / 22) % 2 === 1
+    if (band) continue
+    const hw = Math.sqrt(Math.max(0, R * R - (yy + 4) ** 2))
+    x.fillStyle = yy < -40 ? '#ffe6a0' : yy < 30 ? '#ffc65a' : '#ff8a4a'
+    x.fillRect(Math.round(760 - hw), Math.round(sy + yy), Math.round(hw * 2), 8)
+  }
+  x.restore()
+  // first stars at dusk
+  if (k < 0.9) for (let i = 0; i < 26; i++) {
+    const sx = (i * 397) % 1080, syy = 120 + ((i * 263) % 520), tw = 0.5 + 0.5 * Math.sin(t * 3 + i)
+    x.fillStyle = rgba('#fff6d8', (1 - k) * 0.8 * tw); x.fillRect(sx, syy, 4, 4)
+  }
+}
+
+// ── a generic downtown skyline silhouette (no real towers), scrolling slowly
+const TOWERS = (() => { const r = rng(77), out = []; let xx = -40; while (xx < 2400) { const w = 50 + Math.floor(r() * 70), h = 90 + Math.floor(r() * (xx > 500 && xx < 1300 ? 340 : 170)); out.push({ x: xx, w, h, cap: Math.floor(r() * 4), seed: Math.floor(r() * 99) }); xx += w + 6 + Math.floor(r() * 20) } return out })()
+export function drawSkyline(x, t, { scroll = 0, k = 1 } = {}) {
+  const col = k > 0.5 ? '#3c1c4c' : '#1c1030'
+  for (const b of TOWERS) {
+    const bx = Math.round(((b.x - scroll * 0.12) % 2400 + 2400) % 2400 - 300)
+    if (bx > 1100 || bx + b.w < -20) continue
+    const top = HORIZON - b.h
+    x.fillStyle = col; x.fillRect(bx, top, b.w, b.h + 40)
+    if (b.cap === 1) { x.fillRect(bx + 8, top - 16, b.w - 16, 16); x.fillRect(bx + b.w / 2 - 3, top - 50, 6, 34) }
+    if (b.cap === 2) for (let s = 0; s < 4; s++) x.fillRect(bx + s * 6, top - (s + 1) * 10, b.w - s * 12, 10)
+    // windows
+    const r = rng(b.seed + 3)
+    for (let wy = top + 14; wy < HORIZON - 10; wy += 18) for (let wx = bx + 8; wx < bx + b.w - 8; wx += 14) {
+      if (r() < 0.78) continue
+      x.fillStyle = rgba('#ffd27a', 0.55 + 0.35 * (1 - k)); x.fillRect(wx, wy, 6, 8)
+    }
+  }
+}
+
+// ── live-oak tree line (a row of round pixel canopies), parallax f
+function treeRow(x, y, scroll, f, cols, seed, size = 70) {
+  const r = rng(seed), list = []
+  for (let i = 0; i < 26; i++) list.push({ x: i * 110 + r() * 50, s: size * (0.7 + r() * 0.6) })
+  for (const tr of list) {
+    const tx = ((tr.x - scroll * f) % 2860 + 2860) % 2860 - 200
+    if (tx > 1200 || tx < -260) continue
+    const s = tr.s
+    x.fillStyle = cols[0]; x.fillRect(Math.round(tx - s), Math.round(y - s * 0.9), Math.round(s * 2), Math.round(s))
+    x.fillRect(Math.round(tx - s * 0.7), Math.round(y - s * 1.3), Math.round(s * 1.4), Math.round(s * 0.6))
+    x.fillStyle = cols[1]; x.fillRect(Math.round(tx - s * 0.6), Math.round(y - s * 1.2), Math.round(s * 0.7), Math.round(s * 0.3))
+    x.fillStyle = cols[2]; x.fillRect(Math.round(tx - 6), Math.round(y - 4), 12, 30)
+  }
+}
+
+// ── the bayou: water with the sun's broken reflection, banks, trees
+export function drawBayou(x, t, { scroll = 0, k = 1 } = {}) {
+  drawSkyline(x, t, { scroll, k })
+  treeRow(x, HORIZON + 40, scroll, 0.35, k > 0.5 ? ['#24302e', '#34463a', '#1a1a22'] : ['#141a24', '#1e2a30', '#0e0e18'], 5, 54)
+  // water
+  const g = x.createLinearGradient(0, WATER[0], 0, WATER[1]); g.addColorStop(0, k > 0.5 ? '#6a3a6a' : '#2a1a40'); g.addColorStop(1, k > 0.5 ? '#2a2246' : '#120c26')
+  x.fillStyle = g; x.fillRect(0, WATER[0], 1080, WATER[1] - WATER[0])
+  // the reflection: broken bright bars under the sun
+  for (let yy = WATER[0] + 6; yy < WATER[1] - 4; yy += 10) {
+    const d = (yy - WATER[0]) / (WATER[1] - WATER[0]), w = lerp(220, 90, d) * (0.7 + 0.3 * Math.sin(t * 3 + yy * 0.1)) * k
+    const off = Math.sin(t * 2 + yy * 0.07) * 18
+    if (w < 8) continue
+    x.fillStyle = rgba(d < 0.3 ? '#ffd88a' : '#ff9a5a', 0.75 - d * 0.4); x.fillRect(Math.round(760 - w / 2 + off), yy, Math.round(w), 4)
+  }
+  // ripples
+  for (let i = 0; i < 18; i++) { const rx = ((i * 211 - scroll * 0.6) % 1180 + 1180) % 1180 - 50, ry = WATER[0] + 20 + (i * 47) % (WATER[1] - WATER[0] - 30); x.fillStyle = 'rgba(255,220,240,0.18)'; x.fillRect(Math.round(rx), ry, 26, 3) }
+  // the near bank: grass + reeds
+  x.fillStyle = k > 0.5 ? '#2e5a36' : '#1a3424'; x.fillRect(0, WATER[1], 1080, TRAIL[0] - WATER[1])
+  for (let i = 0; i < 40; i++) { const rx = ((i * 61 - scroll * 0.9) % 1120 + 1120) % 1120 - 20; x.fillStyle = k > 0.5 ? '#3f7a42' : '#24442c'; x.fillRect(Math.round(rx), WATER[1] - 14 - (i % 3) * 6, 6, 18 + (i % 3) * 6) }
+  // the trail: pale concrete with expansion joints
+  x.fillStyle = INK; x.fillRect(0, TRAIL[0] - 4, 1080, 4)
+  x.fillStyle = k > 0.5 ? '#d9b994' : '#8a7a8a'; x.fillRect(0, TRAIL[0], 1080, TRAIL[1] - TRAIL[0])
+  x.fillStyle = k > 0.5 ? '#f0d4ae' : '#a898a8'; x.fillRect(0, TRAIL[0], 1080, 8)
+  x.fillStyle = k > 0.5 ? '#b8956e' : '#6a5a6a'
+  for (let i = 0; i < 12; i++) { const jx = ((i * 140 - scroll) % 1680 + 1680) % 1680 - 120; x.fillRect(Math.round(jx), TRAIL[0] + 8, 4, TRAIL[1] - TRAIL[0] - 8) }
+  // the grass below
+  const gg = x.createLinearGradient(0, TRAIL[1], 0, 1920); gg.addColorStop(0, k > 0.5 ? '#3a6a3a' : '#1c3424'); gg.addColorStop(1, '#0e1a16')
+  x.fillStyle = gg; x.fillRect(0, TRAIL[1], 1080, 1920 - TRAIL[1])
+  x.fillStyle = INK; x.fillRect(0, TRAIL[1], 1080, 4)
+}
+
+// ── the trailhead parking lot: asphalt, painted lines, a row of cars, a TRAILHEAD sign
+const CAR = ['...BBBBB....', '..BWWBWWB...', '.BBBBBBBBBB.', 'BBBBBBBBBBBB', 'BBLBBBBBBLBB', '.KK......KK.']
+const CAR_COLS = ['#5fb6ff', '#ff6a7a', '#f2c75c', '#7dffb0', '#c9a6ff', '#ff9a4a']
+export function drawLot(x, t, { k = 1 } = {}) {
+  drawSkyline(x, t, { scroll: 300, k })
+  treeRow(x, HORIZON + 40, 300, 0.35, ['#24302e', '#34463a', '#1a1a22'], 5, 54)
+  x.fillStyle = '#3a3448'; x.fillRect(0, HORIZON + 30, 1080, 1920)
+  x.fillStyle = '#463e56'; for (let i = 0; i < 30; i++) x.fillRect((i * 173) % 1080, HORIZON + 60 + (i * 89) % 800, 8, 4)
+  // painted stall lines
+  for (let i = 0; i < 7; i++) { x.fillStyle = '#e8e0f0'; x.fillRect(40 + i * 170, 1080, 8, 120); x.fillRect(40 + i * 170, 1280, 8, 120) }
+  // two rows of cars
+  for (let i = 0; i < 6; i++) drawBits(x, CAR, { B: CAR_COLS[i], W: '#bfe8ff', L: '#ffe6a0', K: INK }, 124 + i * 170, 1140, 11)
+  for (let i = 0; i < 6; i++) if (i !== 2) drawBits(x, CAR, { B: CAR_COLS[(i + 3) % 6], W: '#bfe8ff', L: '#ffe6a0', K: INK }, 124 + i * 170, 1340, 11)
+  // the sign
+  x.fillStyle = INK; x.fillRect(886, 830, 16, 190); x.fillRect(796, 806, 196, 74)
+  x.fillStyle = '#3f7a42'; x.fillRect(802, 812, 184, 62)
+  x.font = `700 26px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = BONE
+  x.fillText('TRAIL →', 894, 845)
+  void k
+}
+
+// ── small pixel props
+const SNEAKER = ['...WWWW.....', '...WPPW.....', '..WWWWWW....', '.WWWWWWWWW..', 'WWWWWWWWWWWW', 'GGGGGGGGGGGG']
+export const drawSneaker = (x, cx, cy, cell, o = {}) => drawBits(x, SNEAKER, { W: '#f4ecdc', P: o.lace || '#ff8fb1', G: o.sole || '#7fe0ff' }, cx, cy, cell, o)
+
+const DOG = [
+  ['.BB.........', 'BBBB.......T', 'BKBBBBBBBBT.', 'NBBBBBBBBB..', '.BBBBBBBBB..', '.B.B....B.B.', '.B.B....B.B.'],
+  ['.BB.........', 'BBBB......T.', 'BKBBBBBBBBT.', 'NBBBBBBBBB..', '.BBBBBBBBB..', 'B...B..B...B', 'B...B..B...B'],
+]
+export const drawDog = (x, cx, cy, cell, t, o = {}) => drawBits(x, DOG[Math.floor(t * 8) % 2], { B: o.color || '#c98a4a', K: INK, T: o.color || '#c98a4a', N: INK }, cx, cy, cell, o)
+
+const HERON = [
+  ['......GGG...', '.....GGKGYYY', '......GG....', '......G.....', '.....GG.....', '..GGGGGG....', 'GGGGGGGG....', '.GGGGGG.....', '...GGG......', '...L.L......', '...L.L......', '...L..L.....', '..L...L.....'],
+  ['......GGG...', '.....GGKGYYY', '......GG....', '......G.....', '.....GG.....', '..GGGGGG....', 'GGGGGGGG....', '.GGGGGG.....', '...GGG......', '...L.L......', '...L.L......', '..L..L......', '..L...L.....'],
+]
+export const drawHeron = (x, cx, cy, cell, t, { walk = 0, ...o } = {}) => drawBits(x, HERON[walk ? Math.floor(t * 4) % 2 : 0], { G: '#9aa6c8', K: INK, Y: GOLD, L: '#6a6f8a' }, cx, cy, cell, o)
+
+const STROLLER = ['.HHHHH.....', 'HHHHHHH....', 'HHHHHHH...P', 'BBBBBBBB.P.', 'BBBBBBBBP..', '.W....W....']
+export const drawStroller = (x, cx, cy, cell, o = {}) => drawBits(x, STROLLER, { H: '#5fb6ff', B: '#3a7cff', P: '#c9cde8', W: INK }, cx, cy, cell, o)
+
+const BAND = (x, r, size, col) => { const c = size / 36; x.fillStyle = col; x.fillRect(Math.round(r.x - 7 * c), Math.round(r.y - size * 0.2), Math.round(14 * c), Math.round(2.2 * c)) }
+/** a walking star: a quick step bob + squash in time with `pace` steps/s; returns drawStarChar's result */
+export function walker(x, cx, baseY, size, t, opts = {}, { pace = 2.4, band = null } = {}) {
+  const ph = t * pace * Math.PI + (opts.seed || 0)
+  const lift = Math.abs(Math.sin(ph)) * size * 0.07
+  const r = drawStarChar(x, cx, baseY - size * 0.5 - lift, size, t, { bob: 0, squash: 0.05 * Math.cos(ph * 2), ...opts })
+  if (band) BAND(x, r, size, band)
+  return r
+}
+
+/** a talk card prop (cream face, gold border, a question in Garamond italic). pop scales it; rot tilts it */
+export function drawTalkCard(x, cx, cy, w, { pop = 1, rot = 0, q = ['What’s your', 'favorite view?'], alpha = 1 } = {}) {
+  if (pop <= 0.01 || alpha <= 0) return
+  const h = w * 1.4
+  x.save(); x.globalAlpha *= alpha; x.translate(cx, cy); x.rotate(rot); x.scale(pop, pop)
+  x.fillStyle = 'rgba(6,4,18,0.5)'; x.fillRect(-w / 2 + 10, -h / 2 + 14, w, h)
+  x.fillStyle = INK; x.fillRect(-w / 2 - 6, -h / 2 - 6, w + 12, h + 12)
+  x.fillStyle = '#f6eedb'; x.fillRect(-w / 2, -h / 2, w, h)
+  x.strokeStyle = GOLD; x.lineWidth = 5; x.strokeRect(-w / 2 + 12, -h / 2 + 12, w - 24, h - 24)
+  x.font = `700 ${Math.round(w * 0.075)}px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = '#8a6a2a'
+  x.fillText('TALK CARD', 0, -h / 2 + w * 0.17)
+  x.font = `italic 500 ${Math.round(w * 0.15)}px ${SERIF}`; x.fillStyle = INK
+  q.forEach((ln, i) => x.fillText(ln, 0, -w * 0.1 + i * w * 0.18))
+  x.fillStyle = GOLD; x.fillText('✦', 0, h / 2 - w * 0.2)
+  x.restore()
+}
+
+/** a small HUD panel with tally marks (no numerals): n marks, grouped in fives with a slash */
+export function drawTally(x, cx, cy, n, t, { label = 'WALKERS SPOTTED', alpha = 1, w = 330 } = {}) {
+  if (alpha <= 0) return
+  const h = 128
+  x.save(); x.globalAlpha *= alpha
+  x.fillStyle = INK; x.fillRect(cx - w / 2 - 5, cy - h / 2 - 5, w + 10, h + 10)
+  x.fillStyle = 'rgba(16,9,38,0.94)'; x.fillRect(cx - w / 2, cy - h / 2, w, h)
+  x.fillStyle = GOLD; x.fillRect(cx - w / 2, cy - h / 2, w, 4)
+  x.font = `700 20px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = BONE
+  x.fillText(label, cx, cy - h / 2 + 26)
+  const whole = Math.floor(n), part = n - whole
+  for (let i = 0; i < Math.ceil(n); i++) {
+    const g = Math.floor(i / 5), j = i % 5, a = i < whole ? 1 : part
+    const gx = cx - w / 2 + 34 + g * 92, gy = cy + 18
+    x.globalAlpha = alpha * a
+    x.fillStyle = '#7dffb0'
+    if (j < 4) x.fillRect(gx + j * 16, gy - 26, 6, 52)
+    else { x.save(); x.translate(gx + 26, gy); x.rotate(-0.95); x.fillRect(-42, -3, 84, 6); x.restore() }
+  }
+  x.restore()
+  void t; void clamp; void ease
+}

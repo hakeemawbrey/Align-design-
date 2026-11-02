@@ -54,7 +54,7 @@ builder owns one pack of 5 and copies that format's existing film as its templat
   - check the master has an audio stream (`ffprobe -v error -select_streams a -show_entries stream=codec_name <master>`)
   - `ffmpeg -y -i /tmp/htx/<f>/<f>-m.mp4 -c:v libx264 -preset slow -crf 26 -maxrate 3.2M -bufsize 6.4M -vf scale=720:1280 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart promo/out/htx/<f>.mp4`
   - `ffmpeg -y -ss 0 -i /tmp/htx/<f>/<f>-m.mp4 -frames:v 1 -vf scale=540:960 -q:v 4 promo/out/htx/<f>.jpg` (frame 0 is the thumbnail)
-  - delete /tmp/htx/<f> (disk is limited).
+  - delete /tmp/htx/<f> and promo/out/frames/<f>-m (render.mjs keeps every final render's frames there, about 1.3 GB a film; disk is limited).
   - append one line to promo/out/htx/DONE.tsv: `<folder>\t<title>\t<len>\t<last line>\t<format>`
 - Finish each film completely before starting the next.
 - Report back: per film the folder, length, last line, and anything you changed from the row and why.
