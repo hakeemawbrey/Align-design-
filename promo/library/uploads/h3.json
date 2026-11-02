@@ -239,9 +239,41 @@
   "poster": "/_blob/a495dc9b14c400d44d0362652754ce8c",
   "video": "/_blob/2ada6444f980edb0c621bea55270073c"
  },
+ "st13lasting": {
+  "poster": "/_blob/6e317ebe7c77e7904e7d9da6ce16310d",
+  "video": "/_blob/16a2bfd4bbd8f5a373514780aab5d7a1"
+ },
+ "st13lens": {
+  "poster": "/_blob/61a28048892951466b331fcbb52cd4ad",
+  "video": "/_blob/e8819674ecd8df6818f62a85a445401c"
+ },
  "st13modes": {
   "poster": "/_blob/6fb6d0d780dbb7e04615ab806164980f",
   "video": "/_blob/08173d6a260432ae418c52ffc0a501ae"
+ },
+ "st13pace": {
+  "poster": "/_blob/1451aeda8589c251431e1b16d43149c0",
+  "video": "/_blob/dcd445ddce159b1c36800ec25f72a2bd"
+ },
+ "st13sameteam": {
+  "poster": "/_blob/4321b58233052c37eab331a2d43e69a9",
+  "video": "/_blob/4cd34e264898c8506a8fbcaf32953227"
+ },
+ "st13tropical": {
+  "poster": "/_blob/77d268e7201280fd958aec6612c298de",
+  "video": "/_blob/603b2b02cdaa149366d0480763a1cede"
+ },
+ "st4bbq": {
+  "poster": "/_blob/f94d09ab89460fd4f30ca105031636ee",
+  "video": "/_blob/9ae797011413cfba4b65d3d399de52ee"
+ },
+ "st4campaign": {
+  "poster": "/_blob/7c717eec1bb22e0e226080f4b7aaacef",
+  "video": "/_blob/2c989844bf97b64ea8b3b1edee703918"
+ },
+ "st4corpus": {
+  "poster": "/_blob/8dceb48444c84f34076477e51b7f3f47",
+  "video": "/_blob/850906d21f2e226c622cea6550db2be8"
  },
  "sxcount1": {
   "poster": "/_blob/486fb483908021f9bcffbbc012b6e4e5",
