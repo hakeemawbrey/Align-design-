@@ -111,9 +111,45 @@
   "poster": "/_blob/1babd6690c8077dec21ceba33f072050",
   "video": "/_blob/143821b49b908b3c20af2ccc93bcbb25"
  },
+ "srlaunch": {
+  "poster": "/_blob/b59ce3683ece7836b8d7add39b281ed2",
+  "video": "/_blob/582180f4c799061fa21bcd48f6bfc9d6"
+ },
  "srmodalities": {
   "poster": "/_blob/f53a547a3ee388989b239a88ef9c1213",
   "video": "/_blob/cbbd98c9dbae2e50ca4920ce2bb3008f"
+ },
+ "srp2constellation": {
+  "poster": "/_blob/bc3edab03094e5771bc530d2583a1c56",
+  "video": "/_blob/aa8673e6bf0767f8669348c9e23fcf19"
+ },
+ "srsamesky": {
+  "poster": "/_blob/0c15d02910fe3196a09486efacc66b0f",
+  "video": "/_blob/69789addfcb3b4fb2298957415cffc18"
+ },
+ "srsaturnreturn": {
+  "poster": "/_blob/95be40d168cf41303b9b9bbdc13af5e1",
+  "video": "/_blob/8f2beb1bc46b3bdc1a7b0ebf0d10ce52"
+ },
+ "srswipes": {
+  "poster": "/_blob/0a4f2cc6752b7bf1bcecaf7e7f1712f1",
+  "video": "/_blob/d37664393e39ed894401b541acbbd25f"
+ },
+ "srunrationed": {
+  "poster": "/_blob/7bc4828bf83f9dbbeaa20e64c52c4256",
+  "video": "/_blob/5dc294136252b501488747a664beabe1"
+ },
+ "srvotemap": {
+  "poster": "/_blob/7199c4967660a36603c99332be224cd7",
+  "video": "/_blob/08c7ac0ef77a6708b4107b88c4d0407a"
+ },
+ "st10aquarius": {
+  "poster": "/_blob/8717e9d91989f87f2a634c8d695fab2a",
+  "video": "/_blob/1a192839efcfd05c4a79313fec574414"
+ },
+ "st10gemini": {
+  "poster": "/_blob/0ab34774f160cc0a8273656fb5c6b2a8",
+  "video": "/_blob/6132910dbbb144442d5a1775e1319855"
  },
  "sxorbit4": {
   "poster": "/_blob/dacc33eb93a618c7e5db6d470a1d6a90",
