@@ -6,5 +6,13 @@
  "mlfirst": {
   "video": "/_blob/558cf577a28a73abb3d1c33e41b8ad6d",
   "poster": "/_blob/c1c370f1c6fbeb4c9e541ba215397b13"
+ },
+ "mlmixed": {
+  "video": "/_blob/0fb857c9b1268b2adad53297b9427673",
+  "poster": "/_blob/f7795579cfa1ef5bab69169947203656"
+ },
+ "mldistance": {
+  "video": "/_blob/5b4c39caa4ff5bb89fc7e1c040a96680",
+  "poster": "/_blob/2053333d12f8282a9297525a5097735d"
  }
 }
