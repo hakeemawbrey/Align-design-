@@ -499,9 +499,41 @@
   "poster": "/_blob/4b5f4bec1cd1890d3e5d943f6c89a9dc",
   "video": "/_blob/50179c45dedc109d005f2cae7bc22a23"
  },
+ "stawards": {
+  "poster": "/_blob/4c2c70b300aa8673bc0b351dfae18b76",
+  "video": "/_blob/727f665f4502a3704813b3eccc2d9cbd"
+ },
+ "stdistance": {
+  "poster": "/_blob/5a0985a73ba6c69e6987566ac20354a4",
+  "video": "/_blob/01b88695a18bbd4bb29d7cf816ed41d6"
+ },
  "stexfiles": {
   "poster": "/_blob/01e1f9923b3bb03fb0e52e369260f5a4",
   "video": "/_blob/a964af090eb015e4901acc4e0ba655fb"
+ },
+ "stfightfair": {
+  "poster": "/_blob/332ead9d18aee213048182f23029927c",
+  "video": "/_blob/e667e0c9f6512bdd887c8a335408d38a"
+ },
+ "stfog": {
+  "poster": "/_blob/7ae8f6f7ffbfb3e6aa7bf478497f4bbd",
+  "video": "/_blob/96b782d2b4684345684d4d606ea122ff"
+ },
+ "stgym": {
+  "poster": "/_blob/dd4f368d8a0725be137215521f3436b5",
+  "video": "/_blob/639ec10469b4bb9e0b6dfa7570e3b337"
+ },
+ "stkaiju": {
+  "poster": "/_blob/625ab482d58dff515e57e38a3f9769dc",
+  "video": "/_blob/5c0e89a0c77af387235e5a02501c3234"
+ },
+ "stlive5th": {
+  "poster": "/_blob/ceb0749101d6b200bcdf50e906e19a12",
+  "video": "/_blob/b50549bde93d25768773eb93db6d21b9"
+ },
+ "stmetfirst": {
+  "poster": "/_blob/0fca81f87652864c32ffb050323a2403",
+  "video": "/_blob/7383f5619bac6fcb6cc1cc20b6098cc9"
  },
  "sxcount3": {
   "poster": "/_blob/a28fe20b7439689cd4743b21462b2fd8",
