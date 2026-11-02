@@ -1,558 +1,590 @@
 {
- "askcapricorn": {
-  "poster": "/_blob/83403b409b47b276582b98e313edbdb0",
-  "video": "/_blob/f5f08c7750d98d64793896b7a95a76c4"
- },
- "asksag": {
-  "poster": "/_blob/f240b8df818c6a4ba51cdb8b341ab76d",
-  "video": "/_blob/9ba7e271085b6be8793e90cdb0bf407b"
- },
- "askscorpio": {
-  "poster": "/_blob/6bb7074a42cd0a4962c51388a302a0c8",
-  "video": "/_blob/2ad2c8657e0e2172ad4d32174a629c40"
- },
- "guideaquarius3": {
-  "poster": "/_blob/f6ae1575253f6a70ff973be765269464",
-  "video": "/_blob/6b1c4b5116b158c5c983f5162123e587"
- },
- "guidecancer3": {
-  "poster": "/_blob/a93ad32e45cc50ef1d82bd85044c682e",
-  "video": "/_blob/6e577e25e2aba3ce906cd2e51fd42fcb"
- },
- "guidecapricorn2": {
-  "poster": "/_blob/df5bcbb0732cd47797d92b2650d1536c",
-  "video": "/_blob/3e158fcc747a66a5a8d7c6f4b26d7296"
- },
- "guidefire": {
-  "poster": "/_blob/f52bd6c00a999ec1e70fc91c638a73e5",
-  "video": "/_blob/4280794c69c939fdd25a826e2845c40e"
- },
- "guidegemini3": {
-  "poster": "/_blob/275058c0f427673022ec43f9c36dc6de",
-  "video": "/_blob/1e6a7b94047de7f99162291c01becfce"
- },
- "guidelibra3": {
-  "poster": "/_blob/7a3ad39444c591875667d1055953c05c",
-  "video": "/_blob/a36de66b33f4ac573007563a3d5efd6c"
- },
- "guidepisces2": {
-  "poster": "/_blob/47e5ed1a63e457a321b22d17cac1bdd8",
-  "video": "/_blob/9545976731dc1253efffc31a990acada"
- },
- "guidesag3": {
-  "poster": "/_blob/8ed835c350a3f21468b1eed0d571cef1",
-  "video": "/_blob/5d918066a96eb2d6bbd067d5fd6f7b09"
- },
- "guidetaurus3": {
-  "poster": "/_blob/90c8c3358a6872ea1db1cdd130a0acf2",
-  "video": "/_blob/49775b4ec963cfec41039683cf2c7fff"
- },
- "guidevirgo2": {
-  "poster": "/_blob/8ea3c99d38eb429b35bbc6a9804178b5",
-  "video": "/_blob/e8598acc8b2b1a44c9248ce5b6b381ee"
- },
- "sr02aligned": {
-  "poster": "/_blob/1ca2152e1c0eb48eb7a123b466b934d2",
-  "video": "/_blob/202c5c39e5ba023c16ade3c4ee053a75"
- },
- "sr06newdeck": {
-  "poster": "/_blob/984485ad8d903a99b9b5b8504f010c2e",
-  "video": "/_blob/0273da7ce226f8fec142eeb827c5812b"
- },
- "sr10faith": {
-  "poster": "/_blob/f38f43b06fec35caa5f7ff74b9dd4f46",
-  "video": "/_blob/475647f609985b9a233741259fbb84a3"
- },
- "sralignment": {
-  "poster": "/_blob/e98ba38f7e5d9f9eff20703d7e026415",
-  "video": "/_blob/37fc2fbe2c8724b6f9109c9134be7466"
- },
- "srcitychicago": {
-  "poster": "/_blob/97e22be6465ca0ed7b24a2c12ac9e853",
-  "video": "/_blob/825ce724141c8e6c461c82793b44689f"
- },
- "srcitynashville": {
-  "poster": "/_blob/c7f33fb8d509b93d1081c07d3c70d5fb",
-  "video": "/_blob/e914d04ffc5ec6910d88ce9ab5377b7c"
- },
- "srcityneworleans": {
-  "poster": "/_blob/32a7d37ff0d05cb372bd81d65c939bf3",
-  "video": "/_blob/340f2d2250de0671d128580e4ec2a42b"
- },
- "srdummies": {
-  "poster": "/_blob/57567e55e6e52d5d03874706a5b8edfb",
-  "video": "/_blob/5529629a3cafde514539b85d3c223e7f"
- },
- "srflipit": {
-  "poster": "/_blob/34d43e062bf144dc067996e336ca3b66",
-  "video": "/_blob/a46842896a01dbb8236979e9038e910a"
- },
- "srhtxbayou": {
-  "poster": "/_blob/2cdc2893dfa7713cc7f2ef96fbf0944a",
-  "video": "/_blob/c2ec8542d90902b94073de5c6ac4cf0e"
- },
- "srhtxbrunch": {
-  "poster": "/_blob/1a00c77110e26d5f2c466dbd1dbe90ae",
-  "video": "/_blob/940e002ec05403d336fdf75bcf65e46a"
- },
- "srhtxhumidity": {
-  "poster": "/_blob/f2722e53aa619e4a7da9a7ef36f18b9a",
-  "video": "/_blob/feeb7cf1df563cabbc1c46f45776a3e7"
- },
- "srhtxonesky": {
-  "poster": "/_blob/ca00b27320892a02fd2920841661b7f3",
-  "video": "/_blob/8a4923873db1915fb873752afd7df9d0"
- },
- "srhtxstars": {
-  "poster": "/_blob/4ef1344797b3c78b52c721d5f99d1623",
-  "video": "/_blob/559885da9e747a198b59806bb55eb89c"
- },
- "srhtxtaste": {
-  "poster": "/_blob/0b9a12ebefba50244bfea255074ee6cc",
-  "video": "/_blob/b26ca7c02b81116d7faf30a5bb21a55c"
- },
- "srl02moon": {
-  "poster": "/_blob/06bcafda535fb797db253108099d9b65",
-  "video": "/_blob/37f6aa0c353274d3c158b244e02d04a2"
- },
- "srl06constellation": {
-  "poster": "/_blob/fdd5af3eda4b997ff77ff6bae4b4ae0a",
-  "video": "/_blob/40c3ba6ac5dc25ef67997b9646f8bb42"
- },
- "srl10faith": {
-  "poster": "/_blob/033170a772667c61b0a217ec0a6f6b02",
-  "video": "/_blob/af016fd144ef5825be6698495001dc9c"
- },
- "srlonely": {
-  "poster": "/_blob/ace41b362fe31be073bb710f620b494a",
-  "video": "/_blob/2f8c99edcad9fca3e863b0ccab8d81ea"
- },
- "srp1mystery": {
-  "poster": "/_blob/57930c302b83d2c47ba337f2c7b2e560",
-  "video": "/_blob/35364f6bb15bc120d8e9fcb92b8c3849"
- },
- "srrigged": {
-  "poster": "/_blob/45b4fc77c7a80a7cde960b2f2b9a3912",
-  "video": "/_blob/3e957f1b86a7d8a5b2e9487f608f957e"
- },
- "srtorglass": {
-  "poster": "/_blob/b1c25cb8daa6c83918d7be91a83b3158",
-  "video": "/_blob/cba2592f6efaa68b105d4f92d2051cc8"
- },
- "srtorworld": {
-  "poster": "/_blob/c6901242de64d20328b2c7dfe8db5216",
-  "video": "/_blob/7950a20f9ca290bf3de3121f2e8b8ed5"
- },
- "st10cancer": {
-  "poster": "/_blob/1477842c541f159fa12b40d6b75a0c43",
-  "video": "/_blob/ebbccb685abd159b33bb9e730867d70a"
- },
- "st10libra": {
-  "poster": "/_blob/5f5bb3fbf1e755cbddcf6d2f296b0432",
-  "video": "/_blob/c824457b7479dc07e55b47f4c93d8c6a"
- },
- "st10taurus": {
-  "poster": "/_blob/e38a583e3c1c2d6f720f7e628f956d5a",
-  "video": "/_blob/61c667289769642e629995b19aac07d7"
- },
- "st11cancer": {
-  "poster": "/_blob/c3d0df1a88a5254dabdfc6979966a760",
-  "video": "/_blob/f95bb29ae9bc70b7fefd76681574d85f"
- },
- "st11libra": {
-  "poster": "/_blob/39c32a2f751b81a2fba2f705243838db",
-  "video": "/_blob/2ba0ab737e634e05651a1eb6e973d258"
- },
- "st11taurus": {
-  "poster": "/_blob/296a12581bc9557050143a880ab53707",
-  "video": "/_blob/0cdf26770fcb6c577b3fcc9cd235e957"
- },
- "st12allin": {
-  "poster": "/_blob/4d9ec52f3345f2bdaa38366b852b44ba",
-  "video": "/_blob/df5646763438f459f54b00ec206d1cef"
- },
- "st12austin": {
-  "poster": "/_blob/0dbcb4f26b7bc28f0f0a809ce6049986",
-  "video": "/_blob/c4caa9ba2c34cc6563f809c0194048e3"
- },
- "st12coffeedate": {
-  "poster": "/_blob/2dd3c55a3acdc09c9984b99ecfeb1897",
-  "video": "/_blob/cc88d060f2d0c37d63cbaaa733bab96a"
- },
- "st12exscroll": {
-  "poster": "/_blob/caeeb44dd46e9c4518fc72a44d0d869c",
-  "video": "/_blob/d2efc120b93c084883907eadd9920251"
- },
- "st12finale": {
-  "poster": "/_blob/798ebd7525e410dcadaae4afac286363",
-  "video": "/_blob/a27371d11be7779a639373724c07d93a"
- },
- "st12gemini": {
-  "poster": "/_blob/8cb57137dd2f421b26eb483cdbd433de",
-  "video": "/_blob/8f6c9cd1bbfc16db0392c7cc0e4b6908"
- },
- "st12houstonbest": {
-  "poster": "/_blob/120f04ba695a08134e6c202300e6e926",
-  "video": "/_blob/8b4b9a45fd9c6f5ea1a4c1f1781bbd77"
- },
- "st12la": {
-  "poster": "/_blob/e60027ba33045f1a11b76eb665df2a12",
-  "video": "/_blob/ee2f6d91fec337ab4c29e9f958cb4616"
- },
- "st12meetfriends": {
-  "poster": "/_blob/036057b9000061dc1dbe3fffb56d8d36",
-  "video": "/_blob/90bdb637d917572673f76eafaaa05a9b"
- },
- "st12nobadsign": {
-  "poster": "/_blob/0ab08b18d27ad3b8b19539c6a475803d",
-  "video": "/_blob/8c517ed692ff22d14a0eba25799e9f17"
- },
- "st12pastlove": {
-  "poster": "/_blob/648ea1f12087d6e27f9ba6bece6dc860",
-  "video": "/_blob/aa2bc85d48ce2462cd8790f7be3d8970"
- },
- "st12phonecheck": {
-  "poster": "/_blob/6eaa125306c1023eae2147300ee11639",
-  "video": "/_blob/e7a0cf42985bf1e8311eb40ed3691226"
- },
- "st12sorry": {
-  "poster": "/_blob/56a173e2035aaf68149e7147758d4241",
-  "video": "/_blob/d0868fb6f23c93da929444ed76f9e63b"
- },
- "st12splitbill": {
-  "poster": "/_blob/ead14780617997798a9202bde8b7b838",
-  "video": "/_blob/42f4f5cf075aa4737a650712828c521a"
- },
- "st12textback": {
-  "poster": "/_blob/9c43c156fe2e094bdaf0569251235ea0",
-  "video": "/_blob/f44708f3352beea8b4bb0c7b3c4e6307"
- },
- "st12virgo": {
-  "poster": "/_blob/7977e22949ef3ffb16f16e8f07e1dde2",
-  "video": "/_blob/7e520908ca6d5fce08fdbb8a4050cea0"
- },
- "st13boundaries": {
-  "poster": "/_blob/5e8263d48cc697d0391cda80d414d7ab",
-  "video": "/_blob/7282edf23fb3e21c5c35e2f42f1e325e"
- },
- "st13feelings": {
-  "poster": "/_blob/6864694ec21bd5e3ffd8feada4a5d2b0",
-  "video": "/_blob/bfe5ecc7eeca27f63bd4947c2f0c6dfc"
- },
- "st13houses": {
-  "poster": "/_blob/2f335b00a10fec2dcef866e0bbfabddd",
-  "video": "/_blob/b7a1556f8fc27520f0da5787bae1f465"
- },
- "st13jealousy": {
-  "poster": "/_blob/7c65f9e088abaed83b2e319af28a4288",
-  "video": "/_blob/5ff4d5b8f36f4ba7422eff4260d06bca"
- },
- "st13mars": {
-  "poster": "/_blob/8687121b3bbe2e4b6b18b1948068570a",
-  "video": "/_blob/bbf88d7d5e8fd59d5f6e32ce1332eeaa"
- },
- "st13needs": {
-  "poster": "/_blob/0ece3d2c05be712c98159fcaf474fabc",
-  "video": "/_blob/850ea5df411cafdf50ba4434d604ada7"
- },
- "st13opposites": {
-  "poster": "/_blob/6a571a5e1a964614986fb602bd19741a",
-  "video": "/_blob/2cae00bf22df6384653b400daadedcad"
- },
- "st13risingexp": {
-  "poster": "/_blob/c66073306b4ea03c299b3bf81a50798e",
-  "video": "/_blob/1b2a81d2e18a8e3c292622aef62f32b4"
- },
- "st13seventh": {
-  "poster": "/_blob/e2c05589ed23e9dc902e4d89980b297f",
-  "video": "/_blob/5541bc7e1b7690feb0044c986341f7e0"
- },
- "st13zodiac": {
-  "poster": "/_blob/2ec7d334ee69eabd45efe47f5e7befb8",
-  "video": "/_blob/02514b953291471c7782dc28685f4c2a"
- },
- "st4aunties2": {
-  "poster": "/_blob/55d0f231ca6ed9a5ceb24d23ba785bbf",
-  "video": "/_blob/54ebe6d64f0d2bf8fb23e2adb26c2692"
- },
- "st4austin": {
-  "poster": "/_blob/7a92eff526b256e80034e47d81d97715",
-  "video": "/_blob/16e5f3d7c09b0595175fd42a99206043"
- },
- "st4beltway": {
-  "poster": "/_blob/5d2b2f6bbe1eab57cdc4a43c45d84d3d",
-  "video": "/_blob/c0002d01f01dfe98b25c95178bca59f1"
- },
- "st4dallas": {
-  "poster": "/_blob/37bcef9b58e20dbbe570593e8095cf17",
-  "video": "/_blob/04c86c46cec5b1da6cd23387a2011f4e"
- },
- "st4dancehall": {
-  "poster": "/_blob/68ca83eb27ff7a635a75e7090f902bc0",
-  "video": "/_blob/eef0b7bd21b195a4ed2c2849dac48126"
- },
- "st4exit": {
-  "poster": "/_blob/2a0f5d311ae7ebab6c774fb0ce5b76b0",
-  "video": "/_blob/1d192038fd8fe44c19c91a599a19693f"
- },
- "st4fullmoon": {
-  "poster": "/_blob/ba7cfd29f68e4a86177e755f453961db",
-  "video": "/_blob/08133c225f0a9b20347951e2765b5506"
- },
- "st4gemini": {
-  "poster": "/_blob/38ebaf1c390e340b7db9588cad697cdf",
-  "video": "/_blob/a132fed713db4489744b2663d100b44c"
- },
- "st4ghostmoves": {
-  "poster": "/_blob/8c22978e8fc520e493f69dc0f87a8b24",
-  "video": "/_blob/daceb9665345ed5d48f53a41242f3415"
- },
- "st4graduation": {
-  "poster": "/_blob/4fa2745ec5bb95daa7115d46433f1b11",
-  "video": "/_blob/62209f65c948e1925d75097e9620cfa5"
- },
- "st4kolache": {
-  "poster": "/_blob/cd09eb90efc8943f68c31b401206a925",
-  "video": "/_blob/630b93897e839a63bb90ba7a9273dbb8"
- },
- "st4landing": {
-  "poster": "/_blob/11d77a188b5e0cd6715937539a5fe980",
-  "video": "/_blob/99ce7d6d75160466f6c887a921a74f54"
- },
- "st4map": {
-  "poster": "/_blob/86432558d5db5cafd115dd735a879e7e",
-  "video": "/_blob/332ebe3eb87b1a5859a41767b9c2e707"
- },
- "st4montrose": {
-  "poster": "/_blob/c5b9dcd165fb31c52163090c5c27fed9",
-  "video": "/_blob/3fee355b5585f07981cd2f4f32d96ff5"
- },
- "st4nashville": {
-  "poster": "/_blob/3cc84395e8fc34d851f932e3bd1e921d",
-  "video": "/_blob/5345e78b06389d621c1b88a5624cdb8e"
- },
- "st4repair": {
-  "poster": "/_blob/5533348e7b468e53c380b7082be0868a",
-  "video": "/_blob/ddf2017bd63ff40c4abf49894e701988"
- },
- "st4retro4": {
-  "poster": "/_blob/49ec6082d5552519abb97c978e69cd58",
-  "video": "/_blob/b58398f8d2b1698de5ae4d4acb85a9c6"
- },
- "st4rivals": {
-  "poster": "/_blob/f23e4dd654f659f9b5500b7c95e707ee",
-  "video": "/_blob/9ada4534a345206c56e2b098d8935aff"
- },
- "st4sanantonio": {
-  "poster": "/_blob/430cade013534e949abbd0a4cf97ba5f",
-  "video": "/_blob/c44d741877698b232e7654588fe9bfbc"
- },
- "st4saturn4": {
-  "poster": "/_blob/0b9c61b0d48fc8659424cb19d5675955",
-  "video": "/_blob/44a6ffdca6cd204f0e8a65c25ab2f95d"
- },
- "st4sheetoff": {
-  "poster": "/_blob/5b9db6a4efc49cff5e2ae66095c96a30",
-  "video": "/_blob/6aa725985f37b08145df74ab1205e75d"
- },
- "st4sixcouples": {
-  "poster": "/_blob/3c1f682888592132dedc0d9f7c34db11",
-  "video": "/_blob/8e391c4855ce840869f420c3d23ba498"
- },
- "st4tacos": {
-  "poster": "/_blob/10d2b00b29d1b3c7b2db80ea49ac3f5d",
-  "video": "/_blob/29b78a89f12d17e3bf349e9d49c0e523"
- },
- "st4tauscorp": {
-  "poster": "/_blob/a9a588ef1d835898199c99a57141b16c",
-  "video": "/_blob/9d50d082b30a28bee2d94895f46fe139"
- },
- "st4unpack": {
-  "poster": "/_blob/126d5114b137b859b63dd8e19e1d230d",
-  "video": "/_blob/3d60dcb20534d51145f7bc797a252ae5"
- },
- "st5twins": {
-  "poster": "/_blob/0e039d88c6606baebfcf97878bbd4ce6",
-  "video": "/_blob/f23d948731ead7c47896ba34ab9bf071"
- },
- "st6aquarius": {
-  "poster": "/_blob/ede8e352e28baf82ff23e3e418ad5865",
-  "video": "/_blob/0eb65d6c0fd97e17723384b69cf2fa34"
- },
- "st6leo": {
-  "poster": "/_blob/cd46bb07b6c1e72d230066c8e2fe52d8",
-  "video": "/_blob/9eb2f458acdafa7131fc21fcd9a20a7b"
- },
- "st6libra": {
-  "poster": "/_blob/daf8f678995813b03df91d5901f31dd7",
-  "video": "/_blob/34385460653dc65ee2524d8ffe0974a8"
- },
- "st7archer": {
-  "poster": "/_blob/fbb0fa270bad1706baaf6d88f2dcaedc",
-  "video": "/_blob/505a3aec84aea848e08960e56f357402"
- },
- "st7campfire": {
-  "poster": "/_blob/0fd06fbf400cae55bc99eb67aaa5fde8",
-  "video": "/_blob/e717e2d9406c61c65f871b47743098f5"
- },
- "st7heracles": {
-  "poster": "/_blob/4e7dfbe98cfec5c68ee905628d1ea53d",
-  "video": "/_blob/b08ed1733431fb155bfa5c224c9d7cbe"
- },
- "st7twins": {
-  "poster": "/_blob/7d3cf387eea42c9f04584944546df071",
-  "video": "/_blob/2b17d528c2eb34ac9484447b06540da0"
- },
- "st8comeback": {
-  "poster": "/_blob/c8c3cdf58f50ab6910bd9c6530209fed",
-  "video": "/_blob/2803d7e758a191b28740dfadecaaab3d"
- },
- "st8descent": {
-  "poster": "/_blob/b639551d2f877cbea09f917fe6aac828",
-  "video": "/_blob/0f6e3476bf165cdc39330c096cd56928"
- },
- "st8heist": {
-  "poster": "/_blob/7da4389b1863aea292db43e6b61556d2",
-  "video": "/_blob/3cfe5c76731277297181e0ae60ac8ff4"
- },
- "st8meteor": {
-  "poster": "/_blob/896dd5129eb4c1664f9bc7adbc9afe4f",
-  "video": "/_blob/041880adc708c1c89b2bc320b3175d99"
- },
- "st8missing": {
-  "poster": "/_blob/3daa4a3e5aff555166f5e775a39dcf0f",
-  "video": "/_blob/ec2efd5c9e00002b7c1143ff5fa1430e"
- },
- "st9aqua3am": {
-  "poster": "/_blob/5bfc6b944f5ceace5bdeae8f4c0ffef0",
-  "video": "/_blob/dab56b3bda85e42bcb2f1e6e9fa92453"
- },
- "st9aquaam": {
-  "poster": "/_blob/38194738b0879a4685e9c0591a11cf4b",
-  "video": "/_blob/8c10c072c7abf43f3504c6228ac51d36"
- },
- "st9aquacrew": {
-  "poster": "/_blob/79da8a5f954162d4dc61a9fc6009e733",
-  "video": "/_blob/674da781b1de3cf1bdf61ab75e4034db"
- },
- "st9cancercrew": {
-  "poster": "/_blob/c0cea8b0d41d0372a2631b55fbc663a6",
-  "video": "/_blob/5a29ea46218fbb0c0ef083e95d3c9f21"
- },
- "st9cancerlove": {
-  "poster": "/_blob/52162bce7e681c4101d60c173454e073",
-  "video": "/_blob/be8a0c3424b934af3ff30d9d52481d0d"
- },
- "st9geminiam": {
-  "poster": "/_blob/bdad008c9e5de2080cc42b3c6630f0b4",
-  "video": "/_blob/39c0132e380d4f05f50f36148c5e1b2a"
- },
- "st9geminicrew": {
-  "poster": "/_blob/932e53ffae762db6480cc3eb72ee31c1",
-  "video": "/_blob/cbc78fc0e5411ed66df15ec76f7ba5f4"
- },
- "st9libra3am": {
-  "poster": "/_blob/25d1d7d3073e499385682ce0d14a1084",
-  "video": "/_blob/9e8b8ba50b86f2c5a925266a1eb6d5d4"
- },
- "st9libracrew": {
-  "poster": "/_blob/ed272ff259c6d18fc79f2af0db76cc20",
-  "video": "/_blob/3e4a9ebd6a94a830f7ea19c239dd2d6b"
- },
- "st9libralove": {
-  "poster": "/_blob/9956e0a366cc81ccb896d24dc33f238c",
-  "video": "/_blob/a702855b8bc64dd8553506e375787f46"
- },
- "st9pisces3am": {
-  "poster": "/_blob/37d75403eacbfa140a9286bdd1f682cf",
-  "video": "/_blob/08598f75bb7bff575d5fdadf8773b439"
- },
- "st9sagcrew": {
-  "poster": "/_blob/e218a4bc8a8b285d3e926913fa8d2d1f",
-  "video": "/_blob/cbb8cfc5b7ada158ee8258ce0cbaaa46"
- },
- "st9scorpioam": {
-  "poster": "/_blob/68915c53a62e239839df84faacdcf5bd",
-  "video": "/_blob/ccedd118670590b02d7b957a04edc9f9"
- },
- "st9taurusam": {
-  "poster": "/_blob/89fcd90cdbac572aa491757779994019",
-  "video": "/_blob/80c3cdf9acb09d7873bcdee2e8d4a19b"
- },
- "st9tauruslove": {
-  "poster": "/_blob/ba4e19688bd88faf4c23b0bf42add65b",
-  "video": "/_blob/f8d2a7b100bc67df68d868e150b40eb3"
- },
- "st9virgowork": {
-  "poster": "/_blob/41409202539b3743c292263232ff2e9f",
-  "video": "/_blob/e77c7bf424aa644e9ee7fe0509391be4"
- },
- "starchaeology": {
-  "poster": "/_blob/49438bffa5153b594a2bfffc6e8358e8",
-  "video": "/_blob/6e39862479fcbf44a52c92655df22c69"
- },
- "staries": {
-  "poster": "/_blob/17acaf67cc23ab7c10b5719ed85cc9b5",
-  "video": "/_blob/5aff0a77c46e62aa2a44762eff2bd18e"
- },
- "startaurus": {
-  "poster": "/_blob/4b5f4bec1cd1890d3e5d943f6c89a9dc",
-  "video": "/_blob/50179c45dedc109d005f2cae7bc22a23"
- },
- "stawards": {
-  "poster": "/_blob/4c2c70b300aa8673bc0b351dfae18b76",
-  "video": "/_blob/727f665f4502a3704813b3eccc2d9cbd"
- },
- "stdistance": {
-  "poster": "/_blob/5a0985a73ba6c69e6987566ac20354a4",
-  "video": "/_blob/01b88695a18bbd4bb29d7cf816ed41d6"
- },
- "stexfiles": {
-  "poster": "/_blob/01e1f9923b3bb03fb0e52e369260f5a4",
-  "video": "/_blob/a964af090eb015e4901acc4e0ba655fb"
- },
- "stfightfair": {
-  "poster": "/_blob/332ead9d18aee213048182f23029927c",
-  "video": "/_blob/e667e0c9f6512bdd887c8a335408d38a"
- },
- "stfog": {
-  "poster": "/_blob/7ae8f6f7ffbfb3e6aa7bf478497f4bbd",
-  "video": "/_blob/96b782d2b4684345684d4d606ea122ff"
- },
- "stgym": {
-  "poster": "/_blob/dd4f368d8a0725be137215521f3436b5",
-  "video": "/_blob/639ec10469b4bb9e0b6dfa7570e3b337"
- },
- "stkaiju": {
-  "poster": "/_blob/625ab482d58dff515e57e38a3f9769dc",
-  "video": "/_blob/5c0e89a0c77af387235e5a02501c3234"
- },
- "stlive5th": {
-  "poster": "/_blob/ceb0749101d6b200bcdf50e906e19a12",
-  "video": "/_blob/b50549bde93d25768773eb93db6d21b9"
- },
- "stmetfirst": {
-  "poster": "/_blob/0fca81f87652864c32ffb050323a2403",
-  "video": "/_blob/7383f5619bac6fcb6cc1cc20b6098cc9"
- },
- "sxcount3": {
-  "poster": "/_blob/a28fe20b7439689cd4743b21462b2fd8",
-  "video": "/_blob/0f14878354bb6d334d771543075b8186"
- },
- "sxorbit2": {
-  "poster": "/_blob/c95e64a6431f3140cb3296256964c2d3",
-  "video": "/_blob/c254922a7fddc228675f3d661a81725e"
- },
- "sxorbit5": {
-  "poster": "/_blob/38a7ad0b9481b1bebd16025202a7c373",
-  "video": "/_blob/b994db72289ba8466f6cc7aacc3517a1"
- },
- "sxseasoncap": {
-  "poster": "/_blob/ac311082f9455b0c6d62262473bae947",
-  "video": "/_blob/9e393c0a504d11116159eb41be66e74f"
- },
- "sxsignaricap": {
-  "poster": "/_blob/73274d33deaed66693b63191a91b1d2d",
-  "video": "/_blob/1a3ee0efd13c74818df54e2a1a439cf9"
- }
+  "askcapricorn": {
+    "poster": "/_blob/83403b409b47b276582b98e313edbdb0",
+    "video": "/_blob/f5f08c7750d98d64793896b7a95a76c4"
+  },
+  "asksag": {
+    "poster": "/_blob/f240b8df818c6a4ba51cdb8b341ab76d",
+    "video": "/_blob/9ba7e271085b6be8793e90cdb0bf407b"
+  },
+  "askscorpio": {
+    "poster": "/_blob/6bb7074a42cd0a4962c51388a302a0c8",
+    "video": "/_blob/2ad2c8657e0e2172ad4d32174a629c40"
+  },
+  "guideaquarius3": {
+    "poster": "/_blob/f6ae1575253f6a70ff973be765269464",
+    "video": "/_blob/6b1c4b5116b158c5c983f5162123e587"
+  },
+  "guidecancer3": {
+    "poster": "/_blob/a93ad32e45cc50ef1d82bd85044c682e",
+    "video": "/_blob/6e577e25e2aba3ce906cd2e51fd42fcb"
+  },
+  "guidecapricorn2": {
+    "poster": "/_blob/df5bcbb0732cd47797d92b2650d1536c",
+    "video": "/_blob/3e158fcc747a66a5a8d7c6f4b26d7296"
+  },
+  "guidefire": {
+    "poster": "/_blob/f52bd6c00a999ec1e70fc91c638a73e5",
+    "video": "/_blob/4280794c69c939fdd25a826e2845c40e"
+  },
+  "guidegemini3": {
+    "poster": "/_blob/275058c0f427673022ec43f9c36dc6de",
+    "video": "/_blob/1e6a7b94047de7f99162291c01becfce"
+  },
+  "guidelibra3": {
+    "poster": "/_blob/7a3ad39444c591875667d1055953c05c",
+    "video": "/_blob/a36de66b33f4ac573007563a3d5efd6c"
+  },
+  "guidepisces2": {
+    "poster": "/_blob/47e5ed1a63e457a321b22d17cac1bdd8",
+    "video": "/_blob/9545976731dc1253efffc31a990acada"
+  },
+  "guidesag3": {
+    "poster": "/_blob/8ed835c350a3f21468b1eed0d571cef1",
+    "video": "/_blob/5d918066a96eb2d6bbd067d5fd6f7b09"
+  },
+  "guidetaurus3": {
+    "poster": "/_blob/90c8c3358a6872ea1db1cdd130a0acf2",
+    "video": "/_blob/49775b4ec963cfec41039683cf2c7fff"
+  },
+  "guidevirgo2": {
+    "poster": "/_blob/8ea3c99d38eb429b35bbc6a9804178b5",
+    "video": "/_blob/e8598acc8b2b1a44c9248ce5b6b381ee"
+  },
+  "sr02aligned": {
+    "poster": "/_blob/1ca2152e1c0eb48eb7a123b466b934d2",
+    "video": "/_blob/202c5c39e5ba023c16ade3c4ee053a75"
+  },
+  "sr06newdeck": {
+    "poster": "/_blob/984485ad8d903a99b9b5b8504f010c2e",
+    "video": "/_blob/0273da7ce226f8fec142eeb827c5812b"
+  },
+  "sr10faith": {
+    "poster": "/_blob/f38f43b06fec35caa5f7ff74b9dd4f46",
+    "video": "/_blob/475647f609985b9a233741259fbb84a3"
+  },
+  "sralignment": {
+    "poster": "/_blob/e98ba38f7e5d9f9eff20703d7e026415",
+    "video": "/_blob/37fc2fbe2c8724b6f9109c9134be7466"
+  },
+  "srcitychicago": {
+    "poster": "/_blob/97e22be6465ca0ed7b24a2c12ac9e853",
+    "video": "/_blob/825ce724141c8e6c461c82793b44689f"
+  },
+  "srcitynashville": {
+    "poster": "/_blob/c7f33fb8d509b93d1081c07d3c70d5fb",
+    "video": "/_blob/e914d04ffc5ec6910d88ce9ab5377b7c"
+  },
+  "srcityneworleans": {
+    "poster": "/_blob/32a7d37ff0d05cb372bd81d65c939bf3",
+    "video": "/_blob/340f2d2250de0671d128580e4ec2a42b"
+  },
+  "srdummies": {
+    "poster": "/_blob/57567e55e6e52d5d03874706a5b8edfb",
+    "video": "/_blob/5529629a3cafde514539b85d3c223e7f"
+  },
+  "srflipit": {
+    "poster": "/_blob/34d43e062bf144dc067996e336ca3b66",
+    "video": "/_blob/a46842896a01dbb8236979e9038e910a"
+  },
+  "srhtxbayou": {
+    "poster": "/_blob/2cdc2893dfa7713cc7f2ef96fbf0944a",
+    "video": "/_blob/c2ec8542d90902b94073de5c6ac4cf0e"
+  },
+  "srhtxbrunch": {
+    "poster": "/_blob/1a00c77110e26d5f2c466dbd1dbe90ae",
+    "video": "/_blob/940e002ec05403d336fdf75bcf65e46a"
+  },
+  "srhtxhumidity": {
+    "poster": "/_blob/f2722e53aa619e4a7da9a7ef36f18b9a",
+    "video": "/_blob/feeb7cf1df563cabbc1c46f45776a3e7"
+  },
+  "srhtxonesky": {
+    "poster": "/_blob/ca00b27320892a02fd2920841661b7f3",
+    "video": "/_blob/8a4923873db1915fb873752afd7df9d0"
+  },
+  "srhtxstars": {
+    "poster": "/_blob/4ef1344797b3c78b52c721d5f99d1623",
+    "video": "/_blob/559885da9e747a198b59806bb55eb89c"
+  },
+  "srhtxtaste": {
+    "poster": "/_blob/0b9a12ebefba50244bfea255074ee6cc",
+    "video": "/_blob/b26ca7c02b81116d7faf30a5bb21a55c"
+  },
+  "srl02moon": {
+    "poster": "/_blob/06bcafda535fb797db253108099d9b65",
+    "video": "/_blob/37f6aa0c353274d3c158b244e02d04a2"
+  },
+  "srl06constellation": {
+    "poster": "/_blob/fdd5af3eda4b997ff77ff6bae4b4ae0a",
+    "video": "/_blob/40c3ba6ac5dc25ef67997b9646f8bb42"
+  },
+  "srl10faith": {
+    "poster": "/_blob/033170a772667c61b0a217ec0a6f6b02",
+    "video": "/_blob/af016fd144ef5825be6698495001dc9c"
+  },
+  "srlonely": {
+    "poster": "/_blob/ace41b362fe31be073bb710f620b494a",
+    "video": "/_blob/2f8c99edcad9fca3e863b0ccab8d81ea"
+  },
+  "srp1mystery": {
+    "poster": "/_blob/57930c302b83d2c47ba337f2c7b2e560",
+    "video": "/_blob/35364f6bb15bc120d8e9fcb92b8c3849"
+  },
+  "srrigged": {
+    "poster": "/_blob/45b4fc77c7a80a7cde960b2f2b9a3912",
+    "video": "/_blob/3e957f1b86a7d8a5b2e9487f608f957e"
+  },
+  "srtorglass": {
+    "poster": "/_blob/b1c25cb8daa6c83918d7be91a83b3158",
+    "video": "/_blob/cba2592f6efaa68b105d4f92d2051cc8"
+  },
+  "srtorworld": {
+    "poster": "/_blob/c6901242de64d20328b2c7dfe8db5216",
+    "video": "/_blob/7950a20f9ca290bf3de3121f2e8b8ed5"
+  },
+  "st10cancer": {
+    "poster": "/_blob/1477842c541f159fa12b40d6b75a0c43",
+    "video": "/_blob/ebbccb685abd159b33bb9e730867d70a"
+  },
+  "st10libra": {
+    "poster": "/_blob/5f5bb3fbf1e755cbddcf6d2f296b0432",
+    "video": "/_blob/c824457b7479dc07e55b47f4c93d8c6a"
+  },
+  "st10taurus": {
+    "poster": "/_blob/e38a583e3c1c2d6f720f7e628f956d5a",
+    "video": "/_blob/61c667289769642e629995b19aac07d7"
+  },
+  "st11cancer": {
+    "poster": "/_blob/c3d0df1a88a5254dabdfc6979966a760",
+    "video": "/_blob/f95bb29ae9bc70b7fefd76681574d85f"
+  },
+  "st11libra": {
+    "poster": "/_blob/39c32a2f751b81a2fba2f705243838db",
+    "video": "/_blob/2ba0ab737e634e05651a1eb6e973d258"
+  },
+  "st11taurus": {
+    "poster": "/_blob/296a12581bc9557050143a880ab53707",
+    "video": "/_blob/0cdf26770fcb6c577b3fcc9cd235e957"
+  },
+  "st12allin": {
+    "poster": "/_blob/4d9ec52f3345f2bdaa38366b852b44ba",
+    "video": "/_blob/df5646763438f459f54b00ec206d1cef"
+  },
+  "st12austin": {
+    "poster": "/_blob/0dbcb4f26b7bc28f0f0a809ce6049986",
+    "video": "/_blob/c4caa9ba2c34cc6563f809c0194048e3"
+  },
+  "st12coffeedate": {
+    "poster": "/_blob/2dd3c55a3acdc09c9984b99ecfeb1897",
+    "video": "/_blob/cc88d060f2d0c37d63cbaaa733bab96a"
+  },
+  "st12exscroll": {
+    "poster": "/_blob/caeeb44dd46e9c4518fc72a44d0d869c",
+    "video": "/_blob/d2efc120b93c084883907eadd9920251"
+  },
+  "st12finale": {
+    "poster": "/_blob/798ebd7525e410dcadaae4afac286363",
+    "video": "/_blob/a27371d11be7779a639373724c07d93a"
+  },
+  "st12gemini": {
+    "poster": "/_blob/8cb57137dd2f421b26eb483cdbd433de",
+    "video": "/_blob/8f6c9cd1bbfc16db0392c7cc0e4b6908"
+  },
+  "st12houstonbest": {
+    "poster": "/_blob/120f04ba695a08134e6c202300e6e926",
+    "video": "/_blob/8b4b9a45fd9c6f5ea1a4c1f1781bbd77"
+  },
+  "st12la": {
+    "poster": "/_blob/e60027ba33045f1a11b76eb665df2a12",
+    "video": "/_blob/ee2f6d91fec337ab4c29e9f958cb4616"
+  },
+  "st12meetfriends": {
+    "poster": "/_blob/036057b9000061dc1dbe3fffb56d8d36",
+    "video": "/_blob/90bdb637d917572673f76eafaaa05a9b"
+  },
+  "st12nobadsign": {
+    "poster": "/_blob/0ab08b18d27ad3b8b19539c6a475803d",
+    "video": "/_blob/8c517ed692ff22d14a0eba25799e9f17"
+  },
+  "st12pastlove": {
+    "poster": "/_blob/648ea1f12087d6e27f9ba6bece6dc860",
+    "video": "/_blob/aa2bc85d48ce2462cd8790f7be3d8970"
+  },
+  "st12phonecheck": {
+    "poster": "/_blob/6eaa125306c1023eae2147300ee11639",
+    "video": "/_blob/e7a0cf42985bf1e8311eb40ed3691226"
+  },
+  "st12sorry": {
+    "poster": "/_blob/56a173e2035aaf68149e7147758d4241",
+    "video": "/_blob/d0868fb6f23c93da929444ed76f9e63b"
+  },
+  "st12splitbill": {
+    "poster": "/_blob/ead14780617997798a9202bde8b7b838",
+    "video": "/_blob/42f4f5cf075aa4737a650712828c521a"
+  },
+  "st12textback": {
+    "poster": "/_blob/9c43c156fe2e094bdaf0569251235ea0",
+    "video": "/_blob/f44708f3352beea8b4bb0c7b3c4e6307"
+  },
+  "st12virgo": {
+    "poster": "/_blob/7977e22949ef3ffb16f16e8f07e1dde2",
+    "video": "/_blob/7e520908ca6d5fce08fdbb8a4050cea0"
+  },
+  "st13boundaries": {
+    "poster": "/_blob/5e8263d48cc697d0391cda80d414d7ab",
+    "video": "/_blob/7282edf23fb3e21c5c35e2f42f1e325e"
+  },
+  "st13feelings": {
+    "poster": "/_blob/6864694ec21bd5e3ffd8feada4a5d2b0",
+    "video": "/_blob/bfe5ecc7eeca27f63bd4947c2f0c6dfc"
+  },
+  "st13houses": {
+    "poster": "/_blob/2f335b00a10fec2dcef866e0bbfabddd",
+    "video": "/_blob/b7a1556f8fc27520f0da5787bae1f465"
+  },
+  "st13jealousy": {
+    "poster": "/_blob/7c65f9e088abaed83b2e319af28a4288",
+    "video": "/_blob/5ff4d5b8f36f4ba7422eff4260d06bca"
+  },
+  "st13mars": {
+    "poster": "/_blob/8687121b3bbe2e4b6b18b1948068570a",
+    "video": "/_blob/bbf88d7d5e8fd59d5f6e32ce1332eeaa"
+  },
+  "st13needs": {
+    "poster": "/_blob/0ece3d2c05be712c98159fcaf474fabc",
+    "video": "/_blob/850ea5df411cafdf50ba4434d604ada7"
+  },
+  "st13opposites": {
+    "poster": "/_blob/6a571a5e1a964614986fb602bd19741a",
+    "video": "/_blob/2cae00bf22df6384653b400daadedcad"
+  },
+  "st13risingexp": {
+    "poster": "/_blob/c66073306b4ea03c299b3bf81a50798e",
+    "video": "/_blob/1b2a81d2e18a8e3c292622aef62f32b4"
+  },
+  "st13seventh": {
+    "poster": "/_blob/e2c05589ed23e9dc902e4d89980b297f",
+    "video": "/_blob/5541bc7e1b7690feb0044c986341f7e0"
+  },
+  "st13zodiac": {
+    "poster": "/_blob/2ec7d334ee69eabd45efe47f5e7befb8",
+    "video": "/_blob/02514b953291471c7782dc28685f4c2a"
+  },
+  "st4aunties2": {
+    "poster": "/_blob/55d0f231ca6ed9a5ceb24d23ba785bbf",
+    "video": "/_blob/54ebe6d64f0d2bf8fb23e2adb26c2692"
+  },
+  "st4austin": {
+    "poster": "/_blob/7a92eff526b256e80034e47d81d97715",
+    "video": "/_blob/16e5f3d7c09b0595175fd42a99206043"
+  },
+  "st4beltway": {
+    "poster": "/_blob/5d2b2f6bbe1eab57cdc4a43c45d84d3d",
+    "video": "/_blob/c0002d01f01dfe98b25c95178bca59f1"
+  },
+  "st4dallas": {
+    "poster": "/_blob/37bcef9b58e20dbbe570593e8095cf17",
+    "video": "/_blob/04c86c46cec5b1da6cd23387a2011f4e"
+  },
+  "st4dancehall": {
+    "poster": "/_blob/68ca83eb27ff7a635a75e7090f902bc0",
+    "video": "/_blob/eef0b7bd21b195a4ed2c2849dac48126"
+  },
+  "st4exit": {
+    "poster": "/_blob/2a0f5d311ae7ebab6c774fb0ce5b76b0",
+    "video": "/_blob/1d192038fd8fe44c19c91a599a19693f"
+  },
+  "st4fullmoon": {
+    "poster": "/_blob/ba7cfd29f68e4a86177e755f453961db",
+    "video": "/_blob/08133c225f0a9b20347951e2765b5506"
+  },
+  "st4gemini": {
+    "poster": "/_blob/38ebaf1c390e340b7db9588cad697cdf",
+    "video": "/_blob/a132fed713db4489744b2663d100b44c"
+  },
+  "st4ghostmoves": {
+    "poster": "/_blob/8c22978e8fc520e493f69dc0f87a8b24",
+    "video": "/_blob/daceb9665345ed5d48f53a41242f3415"
+  },
+  "st4graduation": {
+    "poster": "/_blob/4fa2745ec5bb95daa7115d46433f1b11",
+    "video": "/_blob/62209f65c948e1925d75097e9620cfa5"
+  },
+  "st4kolache": {
+    "poster": "/_blob/cd09eb90efc8943f68c31b401206a925",
+    "video": "/_blob/630b93897e839a63bb90ba7a9273dbb8"
+  },
+  "st4landing": {
+    "poster": "/_blob/11d77a188b5e0cd6715937539a5fe980",
+    "video": "/_blob/99ce7d6d75160466f6c887a921a74f54"
+  },
+  "st4map": {
+    "poster": "/_blob/86432558d5db5cafd115dd735a879e7e",
+    "video": "/_blob/332ebe3eb87b1a5859a41767b9c2e707"
+  },
+  "st4montrose": {
+    "poster": "/_blob/c5b9dcd165fb31c52163090c5c27fed9",
+    "video": "/_blob/3fee355b5585f07981cd2f4f32d96ff5"
+  },
+  "st4nashville": {
+    "poster": "/_blob/3cc84395e8fc34d851f932e3bd1e921d",
+    "video": "/_blob/5345e78b06389d621c1b88a5624cdb8e"
+  },
+  "st4repair": {
+    "poster": "/_blob/5533348e7b468e53c380b7082be0868a",
+    "video": "/_blob/ddf2017bd63ff40c4abf49894e701988"
+  },
+  "st4retro4": {
+    "poster": "/_blob/49ec6082d5552519abb97c978e69cd58",
+    "video": "/_blob/b58398f8d2b1698de5ae4d4acb85a9c6"
+  },
+  "st4rivals": {
+    "poster": "/_blob/f23e4dd654f659f9b5500b7c95e707ee",
+    "video": "/_blob/9ada4534a345206c56e2b098d8935aff"
+  },
+  "st4sanantonio": {
+    "poster": "/_blob/430cade013534e949abbd0a4cf97ba5f",
+    "video": "/_blob/c44d741877698b232e7654588fe9bfbc"
+  },
+  "st4saturn4": {
+    "poster": "/_blob/0b9c61b0d48fc8659424cb19d5675955",
+    "video": "/_blob/44a6ffdca6cd204f0e8a65c25ab2f95d"
+  },
+  "st4sheetoff": {
+    "poster": "/_blob/5b9db6a4efc49cff5e2ae66095c96a30",
+    "video": "/_blob/6aa725985f37b08145df74ab1205e75d"
+  },
+  "st4sixcouples": {
+    "poster": "/_blob/3c1f682888592132dedc0d9f7c34db11",
+    "video": "/_blob/8e391c4855ce840869f420c3d23ba498"
+  },
+  "st4tacos": {
+    "poster": "/_blob/10d2b00b29d1b3c7b2db80ea49ac3f5d",
+    "video": "/_blob/29b78a89f12d17e3bf349e9d49c0e523"
+  },
+  "st4tauscorp": {
+    "poster": "/_blob/a9a588ef1d835898199c99a57141b16c",
+    "video": "/_blob/9d50d082b30a28bee2d94895f46fe139"
+  },
+  "st4unpack": {
+    "poster": "/_blob/126d5114b137b859b63dd8e19e1d230d",
+    "video": "/_blob/3d60dcb20534d51145f7bc797a252ae5"
+  },
+  "st5twins": {
+    "poster": "/_blob/0e039d88c6606baebfcf97878bbd4ce6",
+    "video": "/_blob/f23d948731ead7c47896ba34ab9bf071"
+  },
+  "st6aquarius": {
+    "poster": "/_blob/ede8e352e28baf82ff23e3e418ad5865",
+    "video": "/_blob/0eb65d6c0fd97e17723384b69cf2fa34"
+  },
+  "st6leo": {
+    "poster": "/_blob/cd46bb07b6c1e72d230066c8e2fe52d8",
+    "video": "/_blob/9eb2f458acdafa7131fc21fcd9a20a7b"
+  },
+  "st6libra": {
+    "poster": "/_blob/daf8f678995813b03df91d5901f31dd7",
+    "video": "/_blob/34385460653dc65ee2524d8ffe0974a8"
+  },
+  "st7archer": {
+    "poster": "/_blob/fbb0fa270bad1706baaf6d88f2dcaedc",
+    "video": "/_blob/505a3aec84aea848e08960e56f357402"
+  },
+  "st7campfire": {
+    "poster": "/_blob/0fd06fbf400cae55bc99eb67aaa5fde8",
+    "video": "/_blob/e717e2d9406c61c65f871b47743098f5"
+  },
+  "st7heracles": {
+    "poster": "/_blob/4e7dfbe98cfec5c68ee905628d1ea53d",
+    "video": "/_blob/b08ed1733431fb155bfa5c224c9d7cbe"
+  },
+  "st7twins": {
+    "poster": "/_blob/7d3cf387eea42c9f04584944546df071",
+    "video": "/_blob/2b17d528c2eb34ac9484447b06540da0"
+  },
+  "st8comeback": {
+    "poster": "/_blob/c8c3cdf58f50ab6910bd9c6530209fed",
+    "video": "/_blob/2803d7e758a191b28740dfadecaaab3d"
+  },
+  "st8descent": {
+    "poster": "/_blob/b639551d2f877cbea09f917fe6aac828",
+    "video": "/_blob/0f6e3476bf165cdc39330c096cd56928"
+  },
+  "st8heist": {
+    "poster": "/_blob/7da4389b1863aea292db43e6b61556d2",
+    "video": "/_blob/3cfe5c76731277297181e0ae60ac8ff4"
+  },
+  "st8meteor": {
+    "poster": "/_blob/896dd5129eb4c1664f9bc7adbc9afe4f",
+    "video": "/_blob/041880adc708c1c89b2bc320b3175d99"
+  },
+  "st8missing": {
+    "poster": "/_blob/3daa4a3e5aff555166f5e775a39dcf0f",
+    "video": "/_blob/ec2efd5c9e00002b7c1143ff5fa1430e"
+  },
+  "st9aqua3am": {
+    "poster": "/_blob/5bfc6b944f5ceace5bdeae8f4c0ffef0",
+    "video": "/_blob/dab56b3bda85e42bcb2f1e6e9fa92453"
+  },
+  "st9aquaam": {
+    "poster": "/_blob/38194738b0879a4685e9c0591a11cf4b",
+    "video": "/_blob/8c10c072c7abf43f3504c6228ac51d36"
+  },
+  "st9aquacrew": {
+    "poster": "/_blob/79da8a5f954162d4dc61a9fc6009e733",
+    "video": "/_blob/674da781b1de3cf1bdf61ab75e4034db"
+  },
+  "st9cancercrew": {
+    "poster": "/_blob/c0cea8b0d41d0372a2631b55fbc663a6",
+    "video": "/_blob/5a29ea46218fbb0c0ef083e95d3c9f21"
+  },
+  "st9cancerlove": {
+    "poster": "/_blob/52162bce7e681c4101d60c173454e073",
+    "video": "/_blob/be8a0c3424b934af3ff30d9d52481d0d"
+  },
+  "st9geminiam": {
+    "poster": "/_blob/bdad008c9e5de2080cc42b3c6630f0b4",
+    "video": "/_blob/39c0132e380d4f05f50f36148c5e1b2a"
+  },
+  "st9geminicrew": {
+    "poster": "/_blob/932e53ffae762db6480cc3eb72ee31c1",
+    "video": "/_blob/cbc78fc0e5411ed66df15ec76f7ba5f4"
+  },
+  "st9libra3am": {
+    "poster": "/_blob/25d1d7d3073e499385682ce0d14a1084",
+    "video": "/_blob/9e8b8ba50b86f2c5a925266a1eb6d5d4"
+  },
+  "st9libracrew": {
+    "poster": "/_blob/ed272ff259c6d18fc79f2af0db76cc20",
+    "video": "/_blob/3e4a9ebd6a94a830f7ea19c239dd2d6b"
+  },
+  "st9libralove": {
+    "poster": "/_blob/9956e0a366cc81ccb896d24dc33f238c",
+    "video": "/_blob/a702855b8bc64dd8553506e375787f46"
+  },
+  "st9pisces3am": {
+    "poster": "/_blob/37d75403eacbfa140a9286bdd1f682cf",
+    "video": "/_blob/08598f75bb7bff575d5fdadf8773b439"
+  },
+  "st9sagcrew": {
+    "poster": "/_blob/e218a4bc8a8b285d3e926913fa8d2d1f",
+    "video": "/_blob/cbb8cfc5b7ada158ee8258ce0cbaaa46"
+  },
+  "st9scorpioam": {
+    "poster": "/_blob/68915c53a62e239839df84faacdcf5bd",
+    "video": "/_blob/ccedd118670590b02d7b957a04edc9f9"
+  },
+  "st9taurusam": {
+    "poster": "/_blob/89fcd90cdbac572aa491757779994019",
+    "video": "/_blob/80c3cdf9acb09d7873bcdee2e8d4a19b"
+  },
+  "st9tauruslove": {
+    "poster": "/_blob/ba4e19688bd88faf4c23b0bf42add65b",
+    "video": "/_blob/f8d2a7b100bc67df68d868e150b40eb3"
+  },
+  "st9virgowork": {
+    "poster": "/_blob/41409202539b3743c292263232ff2e9f",
+    "video": "/_blob/e77c7bf424aa644e9ee7fe0509391be4"
+  },
+  "starchaeology": {
+    "poster": "/_blob/49438bffa5153b594a2bfffc6e8358e8",
+    "video": "/_blob/6e39862479fcbf44a52c92655df22c69"
+  },
+  "staries": {
+    "poster": "/_blob/17acaf67cc23ab7c10b5719ed85cc9b5",
+    "video": "/_blob/5aff0a77c46e62aa2a44762eff2bd18e"
+  },
+  "startaurus": {
+    "poster": "/_blob/4b5f4bec1cd1890d3e5d943f6c89a9dc",
+    "video": "/_blob/50179c45dedc109d005f2cae7bc22a23"
+  },
+  "stawards": {
+    "poster": "/_blob/4c2c70b300aa8673bc0b351dfae18b76",
+    "video": "/_blob/727f665f4502a3704813b3eccc2d9cbd"
+  },
+  "stdistance": {
+    "poster": "/_blob/5a0985a73ba6c69e6987566ac20354a4",
+    "video": "/_blob/01b88695a18bbd4bb29d7cf816ed41d6"
+  },
+  "stexfiles": {
+    "poster": "/_blob/01e1f9923b3bb03fb0e52e369260f5a4",
+    "video": "/_blob/a964af090eb015e4901acc4e0ba655fb"
+  },
+  "stfightfair": {
+    "poster": "/_blob/332ead9d18aee213048182f23029927c",
+    "video": "/_blob/e667e0c9f6512bdd887c8a335408d38a"
+  },
+  "stfog": {
+    "poster": "/_blob/7ae8f6f7ffbfb3e6aa7bf478497f4bbd",
+    "video": "/_blob/96b782d2b4684345684d4d606ea122ff"
+  },
+  "stgym": {
+    "poster": "/_blob/dd4f368d8a0725be137215521f3436b5",
+    "video": "/_blob/639ec10469b4bb9e0b6dfa7570e3b337"
+  },
+  "stkaiju": {
+    "poster": "/_blob/625ab482d58dff515e57e38a3f9769dc",
+    "video": "/_blob/5c0e89a0c77af387235e5a02501c3234"
+  },
+  "stlive5th": {
+    "poster": "/_blob/ceb0749101d6b200bcdf50e906e19a12",
+    "video": "/_blob/b50549bde93d25768773eb93db6d21b9"
+  },
+  "stmetfirst": {
+    "poster": "/_blob/0fca81f87652864c32ffb050323a2403",
+    "video": "/_blob/7383f5619bac6fcb6cc1cc20b6098cc9"
+  },
+  "stmusical": {
+    "poster": "/_blob/6e741b9781321820c8687f99f84d6c8d",
+    "video": "/_blob/e8f598336ed2675f6a3574ef46e1f59a"
+  },
+  "stolympics": {
+    "poster": "/_blob/79789182d61579d31142f72dabdc6d59",
+    "video": "/_blob/08822e86eed15b2b91d1e3a66df09316"
+  },
+  "stpregame": {
+    "poster": "/_blob/4bde05cefa89d747e40a4dbe38c83839",
+    "video": "/_blob/31b42218a01fc8654458cf80138529c8"
+  },
+  "stretro": {
+    "poster": "/_blob/add8c317dcfc776a8cc5e290c4a4fa24",
+    "video": "/_blob/651ce771c070576a6caef4b5076ad2f2"
+  },
+  "stsaturn": {
+    "poster": "/_blob/3795385806cdea1762e4ff6d274ed13e",
+    "video": "/_blob/f411ffb816497cb34dec46ea6affb51d"
+  },
+  "stsupernova": {
+    "poster": "/_blob/ab802990415082c9b3c0f6bbcd2f550f",
+    "video": "/_blob/60ff20b163098d085631a6e7c424d7f8"
+  },
+  "stswipe": {
+    "poster": "/_blob/9f78d93892615f428b830ea6988a927d",
+    "video": "/_blob/ba48fca867f9fa8ab26899402022b426"
+  },
+  "stwizard": {
+    "poster": "/_blob/ee53fbab36395e933d33939039c2596c",
+    "video": "/_blob/e519bde54a1e10c8ee60784feb3b874f"
+  },
+  "sxcount3": {
+    "poster": "/_blob/a28fe20b7439689cd4743b21462b2fd8",
+    "video": "/_blob/0f14878354bb6d334d771543075b8186"
+  },
+  "sxorbit2": {
+    "poster": "/_blob/c95e64a6431f3140cb3296256964c2d3",
+    "video": "/_blob/c254922a7fddc228675f3d661a81725e"
+  },
+  "sxorbit5": {
+    "poster": "/_blob/38a7ad0b9481b1bebd16025202a7c373",
+    "video": "/_blob/b994db72289ba8466f6cc7aacc3517a1"
+  },
+  "sxseasoncap": {
+    "poster": "/_blob/ac311082f9455b0c6d62262473bae947",
+    "video": "/_blob/9e393c0a504d11116159eb41be66e74f"
+  },
+  "sxsignaricap": {
+    "poster": "/_blob/73274d33deaed66693b63191a91b1d2d",
+    "video": "/_blob/1a3ee0efd13c74818df54e2a1a439cf9"
+  }
 }
