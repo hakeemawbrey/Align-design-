@@ -242,11 +242,11 @@ async function build(stage) {
   const boxes = BOXES.map(([lines, open, close]) => dialogueBox(root, { lines, open, close, y: 1600, height: 250, size: 48, cps: 28 }))
   const prevScene = (fn) => ctx => fn(ctx)
   const prev = buildPreviously(root, { at: 0, len: 2, stills: [
-    { caption: 'Leo said it out loud.', crop: [180, 560, 640, 755], scene: prevScene(c => drawLane(c, 3, { pan: 950 }, w => {
+    { caption: 'Leo said it out loud.', crop: [180, 560, 640, 755], scene: prevScene(c => drawLane(c, 3, { moon: { x: 860, y: 610, r: 100 }, pan: 950 }, w => {
       drawSign(w, 'leo', 1330, standY(170, LANE.roof.y), 170, 3, { mood: 'happy', look: [1, 0] })
       drawSign(w, 'aquarius', 1480, standY(170, LANE.roof.y), 170, 3, { mood: 'heart', look: [-1, 0] })
     })) },
-    { caption: 'Scorpio bought a flower.', crop: [500, 760, 580, 684], scene: prevScene(c => drawLane(c, 3, { pan: 1080 }, w => {
+    { caption: 'Scorpio bought a flower.', crop: [500, 760, 580, 684], scene: prevScene(c => drawLane(c, 3, { moon: { x: 860, y: 610, r: 100 }, pan: 1080 }, w => {
       drawSign(w, 'scorpio', 1700, standY(200), 200, 3, { mood: 'happy', look: [1, 0] })
       drawSign(w, 'libra', 1960, standY(200), 200, 3, { mood: 'sparkle', look: [-1, 0] })
       drawIcon(w, 'flower', 1770, 1190, 7)
@@ -262,7 +262,7 @@ async function build(stage) {
 
   // ── scene painters
   function coldOpen(t) {
-    drawLane(x, t, { pan: 650 }, c => {
+    drawLane(x, t, { moon: { x: 860, y: 610, r: 100 }, pan: 650 }, c => {
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: t > 4.5 ? 3 : 1, mood: t > 4.5 ? 'wide' : 'sparkle', look: [1, 1], pull: bump(t, 5.0, 0.6) })
       // Cancer: beams… then realises
       const cm = t < 4.35 ? 'sparkle' : t < 5.2 ? 'wide' : 'happy'
@@ -338,7 +338,7 @@ async function build(stage) {
   }
   function goodbye(t) {
     const walk = ease.inQuad(prog(t, 35.6, 38.2))
-    drawLane(x, t, { time: 'dusk', pan: 520, lampsAt: null, lights: 0 }, c => {
+    drawLane(x, t, { moon: { x: 860, y: 610, r: 100 }, time: 'dusk', pan: 520, lampsAt: null, lights: 0 }, c => {
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: 3, mood: t > 36.6 ? 'wide' : 'sparkle', look: [1, 1], pull: bump(t, 37.0, 0.5) + bump(t, 38.2, 0.5) })
       drawSign(c, 'taurus', LANE.cafeDoor.x - 130, standY(160), 160, t, { mood: 'happy', look: [1, 0], hops: TAU_HOPS, seed: 8 })
       const k = t > 36.4 ? 1 : 0
@@ -495,7 +495,7 @@ async function build(stage) {
   }
   function tag(t) {
     const walk = ease.inOutQuad(prog(t, 108.0, 109.2))
-    drawLane(x, t, { time: 'dusk', pan: 720, lights: 0, moon: { x: 230, y: 250, r: 60 } }, c => {
+    drawLane(x, t, { time: 'dusk', pan: 720, lights: 0, moon: { x: 860, y: 610, r: 100 } }, c => {
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 10, 110, t, { tears: 1, mood: 'sleepy', look: [1, 1] })
       const sit = t > 109.2
       const lx = sit ? LANE.bench.seats[0] - 20 : lerp(820, 1100, walk), sx = sit ? LANE.bench.seats[1] + 20 : lerp(940, 1280, walk)
