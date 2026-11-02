@@ -53,6 +53,8 @@ export default function Site() {
   const [name, setName] = useState('')
   const [birthDate, setBirthDate] = useState('')
   const [email, setEmail] = useState('')
+  const [adult, setAdult] = useState(false)
+  const [agreed, setAgreed] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const picked = useMemo(() => parseCity(voteText), [voteText])
@@ -69,7 +71,7 @@ export default function Site() {
   }, [])
   const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(birthDate) && birthDate >= minDate && birthDate <= maxDate
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
-  const ready = !!vote && !!name.trim() && dateOk && emailOk
+  const ready = !!vote && !!name.trim() && dateOk && emailOk && adult && agreed
 
   // back from Stripe on ?paid=1; the vote was remembered on the way out, if this tab still has it
   const [paid] = useState(() => {
@@ -259,12 +261,23 @@ export default function Site() {
               value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" autoComplete="email" required />
           </label>
 
+          <div className="consents">
+            <label className="check">
+              <input id="adult" type="checkbox" checked={adult} onChange={(e) => setAdult(e.target.checked)} required />
+              <span>I’m 18 or older</span>
+            </label>
+            <label className="check">
+              <input id="agree" type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} required />
+              <span>I agree to the <a href="/terms" target="_blank" rel="noopener">Terms</a> and <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+            </label>
+          </div>
+
           <button className="chrome-cta" type="submit" aria-disabled={!ready || !checkoutReady || sending}
             aria-describedby={error ? 'pay-hint pay-error' : 'pay-hint'}>
             {sending ? 'Saving your seat…' : 'Join the beta · $15'} <span className="spark" aria-hidden>✦</span>
           </button>
           {error && <p className="note" id="pay-error" role="alert">{error}</p>}
-          <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field to join'}</span>
+          <span className="fine checkout" id="pay-hint">{!checkoutReady ? 'Checkout opens soon' : ready ? 'Secure checkout with Stripe' : 'Fill in every field and tick both boxes'}</span>
 
           <ul className="gets">
             <li>First access for your city</li>

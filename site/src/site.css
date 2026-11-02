@@ -480,3 +480,18 @@ html { scroll-padding-top: 0; }
 @media (prefers-reduced-motion: reduce) { .ob.vote-next::after, .ob-twinkle i { animation: none; } .ob-twinkle i { opacity: .7; } }
 .field.has-vote input { border-color: #ddd0ff; box-shadow: 0 0 0 3px rgba(221,208,255,0.18), 0 0 20px rgba(221,208,255,0.2); }
 .vote-ok { margin: -4px 0 16px; font-size: 14px; color: #ddd0ff; }
+
+/* the two confirmations before paying: pearl boxes, not the browser's grey */
+.consents { display: grid; gap: 4px; margin: 4px 0 12px; }
+.check { display: flex; align-items: center; gap: 12px; min-height: 40px; font-size: 14px; line-height: 1.4; color: var(--label-2); cursor: pointer; }
+.check a { color: var(--label-1); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(221,208,255,0.5); }
+.check input {
+  appearance: none; -webkit-appearance: none; flex-shrink: 0; width: 22px; height: 22px; margin: 0; border-radius: 7px; cursor: pointer;
+  background: rgba(11,6,32,0.55); border: 1px solid rgba(221,208,255,0.55); transition: background-color .15s ease, border-color .15s ease;
+}
+.check input:checked {
+  border-color: #f8edff;
+  background-position: center; background-repeat: no-repeat; background-size: 16px, 100% 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='%233a2c4e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>"), var(--chrome);
+}
+.check input:focus-visible { outline: 2px solid #ddd0ff; outline-offset: 2px; }
