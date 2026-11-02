@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, MotionConfig, motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import RevealStyles from '@app/components/reveal/RevealStyles'
@@ -13,6 +13,12 @@ import { checkout, checkoutReady } from './votes'
  * set it from the leader in useVotes() (votes.ts) instead.
  */
 const NEXT_CITY: City = { slug: 'new-york-ny', name: 'New York City', state: 'NY' }
+
+/** where the pixel stars twinkle over block 3: [left %, top %, delay s, size px] */
+const TWINKLES: [number, number, number, number][] = [
+  [8, 12, 0, 15], [84, 10, 0.7, 12], [64, 34, 1.4, 15], [92, 56, 0.3, 9], [76, 82, 1.9, 15], [44, 88, 1.1, 9],
+  [18, 64, 2.3, 12], [52, 6, 2.6, 9], [32, 40, 0.9, 9], [70, 60, 2.0, 12], [94, 30, 1.6, 9], [6, 88, 2.8, 12],
+]
 
 /** the questions, closed until tapped */
 const FAQ: [string, string][] = [
@@ -108,12 +114,10 @@ export default function Site() {
     return () => { io.disconnect(); cancelAnimationFrame(raf); window.removeEventListener('scroll', onScroll) }
   }, [])
 
-  const toBallot = () => {
-    const b = document.getElementById('ballot')
-    if (!b) return
-    const r = b.getBoundingClientRect()
-    // desktop keeps the ballot beside the board; only scroll when it's off screen
-    if (r.top < 0 || r.bottom > window.innerHeight) b.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })
+  /** the Vote button: to the beta form, ready to type a city */
+  const toVote = () => {
+    document.getElementById('ballot')?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' })
+    window.setTimeout(() => voteRef.current?.focus({ preventScroll: true }), 600)
   }
 
   /** the Join links: scroll to the beta card in the page itself (a bare #hash can misfire in an embed) */
@@ -123,12 +127,6 @@ export default function Site() {
     window.setTimeout(() => voteRef.current?.focus({ preventScroll: true }), 600)
   }
 
-  /** a row in the list: that's your vote (stable, so the list doesn't re-render as you type) */
-  const pickVote = useCallback((c: City) => {
-    setVoteText(label(c))
-    toBallot()
-    if (!nameRef.current?.value) window.setTimeout(() => nameRef.current?.focus({ preventScroll: true }), 450)
-  }, [])
 
   const pay = async () => {
     // a ref, so a second tap in the same frame can't save twice
@@ -209,16 +207,16 @@ export default function Site() {
             <span className="ob-tag">Locked in next</span>
           </li>
           <li>
-            {/* block 3: the leader until you vote, then your vote, with a pop */}
-            <motion.button type="button" key={vote?.slug ?? 'leader'} className={`ob vote-next${vote ? ' voted' : ''}`}
-              onClick={() => pickVote(vote ?? NEXT_CITY)} aria-live="polite"
-              initial={vote ? { scale: 0.92 } : false} animate={{ scale: [0.92, 1.05, 1] }} transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}>
+            {/* block 3: twinkling and glowing, the leader until you vote, then your vote */}
+            <div className={`ob vote-next${vote ? ' voted' : ''}`} aria-live="polite">
+              <span className="ob-twinkle" aria-hidden>
+                {TWINKLES.map(([x, y, d, sz], i) => <i key={i} style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${d}s`, width: sz, height: sz }} />)}
+              </span>
               <span className="ob-n" aria-hidden>3</span>
-              {vote && <motion.span className="ob-plus" initial={{ opacity: 0, y: 8, scale: 0.6 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ delay: 0.15, type: 'spring', stiffness: 420, damping: 14 }}>+1 ✦</motion.span>}
               <span className="ob-city">{(vote ?? NEXT_CITY).name}</span>
-              <span className="ob-tag">{vote ? 'Your vote · counted when you join' : 'Leading the vote'}</span>
-              {!vote && <span className="ob-cta">Vote for this city →</span>}
-            </motion.button>
+              <span className="ob-tag">{vote ? 'Your vote' : 'Leading the vote'}</span>
+              <button type="button" className="ob-cta" onClick={toVote}>Vote</button>
+            </div>
           </li>
         </ol>
 
