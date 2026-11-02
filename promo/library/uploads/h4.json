@@ -275,9 +275,41 @@
   "poster": "/_blob/2ae5668e64384e0a42f2b027e6bb5e23",
   "video": "/_blob/101fa45f4b8fc213c292254b4f3ee581"
  },
+ "st4confession": {
+  "poster": "/_blob/1545fa53d1e375de5029587f88060a6a",
+  "video": "/_blob/2a834374c7af85981ece8c5ee9c6ea65"
+ },
+ "st4dealbreakers": {
+  "poster": "/_blob/a357152b4104851091024da2624e34f2",
+  "video": "/_blob/eecdb21e59ff18be4c1d82aa2803c793"
+ },
  "st4fifth": {
   "poster": "/_blob/40c34a367655ade403152eb038f5af6c",
   "video": "/_blob/e3562e92d6fe66f1cf09a190753d635b"
+ },
+ "st4firstdate": {
+  "poster": "/_blob/3dec50269a188ea49c3ccf3c2c425a48",
+  "video": "/_blob/11d420b0334473dfec407e684ed2dc6a"
+ },
+ "st4galveston": {
+  "poster": "/_blob/d359e071f327b285703d55468b315a86",
+  "video": "/_blob/c23763724466605e51204f16c6e04269"
+ },
+ "st4ghosted": {
+  "poster": "/_blob/5b8ab57e85363f8ed1f0658f29cb802b",
+  "video": "/_blob/74b6a45341298df0cce5a2c1db7a6c8b"
+ },
+ "st4jacket": {
+  "poster": "/_blob/07995476f66aad07561cdb93f5d70bd3",
+  "video": "/_blob/6a2aa35a816f9d9eb0b9fb8d29b20f12"
+ },
+ "st4leomirror": {
+  "poster": "/_blob/b6cb9e5623dbcb89562d3c0cb9ec170e",
+  "video": "/_blob/ccdbb9f801df7c17a75972c7c830f877"
+ },
+ "st4loop": {
+  "poster": "/_blob/6ff28d9487c4b7a379c93e6f8d66e7e0",
+  "video": "/_blob/a0820ba49227e40e08858cf9165eb20e"
  },
  "sxorbit4": {
   "poster": "/_blob/dacc33eb93a618c7e5db6d470a1d6a90",
