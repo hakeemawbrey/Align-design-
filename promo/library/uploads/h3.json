@@ -79,6 +79,38 @@
   "poster": "/_blob/f828adfb1ed5c5819120a5b0c85cab55",
   "video": "/_blob/4304a6ad9945f00cd91dee347afd3983"
  },
+ "srelements": {
+  "poster": "/_blob/5caa527e21386f8a714c2925b474251d",
+  "video": "/_blob/a2996be3343ee8ae97cbd06e6e8246db"
+ },
+ "srhouses": {
+  "poster": "/_blob/9db708c02410b8ca3385140b36db54fe",
+  "video": "/_blob/54d5ecc0f67a2257da2a82fc2410543a"
+ },
+ "srhtxgameday": {
+  "poster": "/_blob/9c2b5b92c5cdc361f1a29f08e37a4ea8",
+  "video": "/_blob/36624101610c07f208bf022fc4cb3e5a"
+ },
+ "srhtxloops": {
+  "poster": "/_blob/b0adb6f014d2f5530f001c27c57b14df",
+  "video": "/_blob/a9f11c807eec1bd7d0a57957c87c8c5b"
+ },
+ "srhtxproblem": {
+  "poster": "/_blob/618ef1fcf420e0431238e87c520a389f",
+  "video": "/_blob/649563b3ff95a74c2d19add5c71c5eaf"
+ },
+ "srhtxsprawl": {
+  "poster": "/_blob/66bdcc856d9e7f6867686aaff2bb89b3",
+  "video": "/_blob/19828e34407093ff9d39a9adcc8cdd35"
+ },
+ "srhtxweather": {
+  "poster": "/_blob/f6163a968173e9d85f4f673ffefc5c48",
+  "video": "/_blob/a1fcfc7bc9a563efb9da2646959a667b"
+ },
+ "srl04deck": {
+  "poster": "/_blob/f5e86b0d22908ea65a026b35f85af3f2",
+  "video": "/_blob/17797013365b2733f5a87850ed220564"
+ },
  "sxcount1": {
   "poster": "/_blob/486fb483908021f9bcffbbc012b6e4e5",
   "video": "/_blob/03373d3886822599b73905f46a72e987"
