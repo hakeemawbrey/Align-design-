@@ -563,5 +563,3 @@ html { scroll-padding-top: 0; }
 .perk-grid li { background: rgba(255,255,255,0.04); border-color: rgba(221,208,255,0.18); }
 @media (prefers-reduced-motion: reduce) { .ballot.one::after { animation: none; } }
 
-/* the first perk is the headline one: it takes the full row */
-.perk-grid li:first-child { grid-column: 1 / -1; }
