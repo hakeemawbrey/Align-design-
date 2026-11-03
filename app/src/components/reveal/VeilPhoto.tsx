@@ -7,6 +7,8 @@ interface Props {
   /** start lifting the veil */
   lift: boolean
   height: number
+  /** CSS object-position for the photo */
+  position?: string
   /** fires once the photo is mostly visible (for the sparkle burst) */
   onPeak?: () => void
   onDone?: () => void
@@ -19,11 +21,13 @@ const LIFT_S = 1.25
  * The money shot: the aura veil dissolves upward (soft mask edge + a light
  * seam riding the edge) while the photo underneath pulls into focus.
  */
-export default function VeilPhoto({ photo, veil, lift, height, onPeak, onDone, children }: Props) {
+export default function VeilPhoto({ photo, veil, lift, height, position = '50% 38%', onPeak, onDone, children }: Props) {
   const p = useMotionValue(0)
 
   useEffect(() => {
     if (!lift) return
+    // reduced motion: the photo is simply there
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { p.set(1); onPeak?.(); onDone?.(); return }
     let peaked = false
     const unsub = p.on('change', (v) => {
       if (!peaked && v > 0.55) { peaked = true; onPeak?.() }
@@ -58,7 +62,7 @@ export default function VeilPhoto({ photo, veil, lift, height, onPeak, onDone, c
         alt=""
         draggable={false}
         style={{
-          position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 38%',
+          position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: position,
           filter: photoFilter, scale, willChange: 'filter, transform',
         }}
       />

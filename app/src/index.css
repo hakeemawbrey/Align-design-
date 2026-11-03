@@ -121,6 +121,8 @@ img { display: block; -webkit-user-drag: none; user-select: none; }
 @keyframes holo-hue { to { filter: hue-rotate(360deg); } }
 
 @keyframes foil-band { 0% { transform: translateX(-120%) } 100% { transform: translateX(260%) } }
+/* a strip two tiles wide sliding one tile: a seamless foil loop by transform alone */
+@keyframes foil-slide { from { transform: translateX(-50%) } to { transform: translateX(0) } }
 @keyframes foil-sweep { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
 @keyframes twinkle { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
 @keyframes float-y { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
