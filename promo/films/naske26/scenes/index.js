@@ -1,10 +1,10 @@
-// naske26 · Ask the Stars, Volume 2, ep 26 · "How do I make a night in feel special?" (20 s, lofi · F)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske26 · Ask the Stars, Volume 2, ep 26 · "How do I make a night in feel special?" (18 s, lofi · F)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "How do I make a night in feel *special?*"  ♉ Taurus in an apron mid-stir of a steaming pot of cocoa;
 //         a candle flickers on beside it.
 //   3.0   "light one candle. cook one thing together."  The partner pops in with a second spoon; they stir together.
 //   5.9   "phones go in a basket by the door."  Two phones drop into a basket: CLUNK. CLUNK.
-//   8.75  card cut → 8.8 "deal a few talk cards from tonight's deck."  Three talk cards fan out on the table.
+//   8.8   "deal a few talk cards from tonight's deck."  Three talk cards fan out on the table.
 //   12.1  "Slow night. | *Full* heart."
 import { makeAsk, R, box, drawBits, mug, bubble, sparkles, hearts, shadow, inSprite, starFrame, label, talkCard, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, MONO } from '../../naske19/scenes/askkit2.js'
 
