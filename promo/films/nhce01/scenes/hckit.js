@@ -1,14 +1,14 @@
 // HOT TAKE, COLD TAKE (winter edition): the shared look of the 24 star_advice trial reels nhce01–nhce24
 // (promo/films/next30/b44.md). nhce02–24 import this file from nhce01; nothing here touches a shared module.
 //
-// The format (16 s, story 0–11.6, then the shared end card):
+// The format (14 s, story 0–11.6, then the short 2.4 s end card; no card-back cut):
 //   0.00–2.40  hook (frame 0 is the thumbnail): the winter moment as a bold top caption, the screen split down the
 //              middle: the left half on fire (embers, warm glow, a HOT TAKE tag), the right half frozen (snow, frost, a
 //              COLD TAKE tag). The hot sign is mid-hop on the left, the cold sign shivers on the right, a pixel
 //              thermometer stands on the seam. Pisces sniffles into a tissue at the bottom.
 //   2.40–5.30  HOT TAKE: white-flash jump cut, the fire takes the frame, the thermometer shoots up and rattles. Header
 //              "Hot take:", the take on a sticker, the hot sign acts it out with a prop and a bubble line.
-//   5.30–8.20  COLD TAKE: the one card cut (flip), the frost takes the frame, the thermometer drops. Same layout.
+//   5.30–8.20  COLD TAKE: an icy white-flash jump cut, the frost takes the frame, the thermometer drops. Same layout.
 //   8.20–11.6  WARM TAKE: the two halves melt into one amber frame, the thermometer glides to the middle and settles on
 //              JUST RIGHT, both signs calm down, THE STARS say the last line. Pisces: happy-tear fountains.
 //
@@ -21,8 +21,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -38,8 +38,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline (same in all 24 films)
-export const DURATION = 16
-export const STORY_END = DURATION - ENDCARD_LEN          // 11.6
+export const DURATION = 14
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 11.6 (the short 2.4 s end card)
 export const T = {
   hook: [0, 2.4], hot: [2.4, 5.3], cold: [5.3, 8.2], warm: [8.2, STORY_END],
   hookOut: [2.2, 2.4], cut: 5.3,
@@ -753,16 +753,17 @@ export function makeHC(cfg) {
         stickers.forEach(s => s.update(t))
         box1.update(t)
         bug.update(t, outK(t, T.bugOut))
-        const c = T.hot[0], fl = t >= c && t < c + 0.14 ? 1 - (t - c) / 0.14 : 0
+        const fl = Math.max(...[T.hot[0], T.cold[0]].map(c => t >= c && t < c + 0.14 ? 1 - (t - c) / 0.14 : 0))
+        flash.style.background = t >= T.cold[0] ? '#e6f6ff' : '#fff6ea'
         flash.style.opacity = String(0.6 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // one card-cut candidate: the swap into the cold take
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card-back cut (4 Nov change): the cold take arrives on its own frosty flash
+  const CUTS = []
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const sub = (list, a) => (list || []).map(c => [c[0], r3(c[1] + a), ...c.slice(2)])
@@ -776,7 +777,8 @@ export function makeHC(cfg) {
     ['riser', r3(T.hot[0] + 0.1), 0.6, 0.02], ['pop', r3(T.hot[0] + 0.4), 1174.66, 0.045, 0.1], ['tick', r3(T.hot[0] + 0.42), 0.04],
     ['pop', r3(T.hot[0] + 0.9), 1318.51, 0.035, -0.3], ['glitter', r3(T.hot[0] + 0.65), r3(T.hot[0] + 1.0)],
     ...sub(cfg.hot.cues, T.hot[0]),
-    // the cold take (under the card cut)
+    // the cold take (its own icy jump cut)
+    ['whoosh', r3(T.cold[0] - 0.1), 0.3, 0.04], ['tick', T.cold[0], 0.06],
     ['pop', r3(T.cold[0] + 0.12), 659.25, 0.04, 0], ['pop', r3(T.cold[0] + 0.2), 587.33, 0.03, 0],
     ['pluck', r3(T.cold[0] + 0.3), 2349.32, 0.02, 0.3, 0.6], ['pop', r3(T.cold[0] + 0.45), 880, 0.045, -0.1], ['tick', r3(T.cold[0] + 0.47), 0.04],
     ['bell', r3(T.cold[0] + 0.6), 2637.02, 0.02, 1.0, 0.3], ['pop', r3(T.cold[0] + 0.9), 739.99, 0.035, 0.3],
@@ -788,8 +790,7 @@ export function makeHC(cfg) {
     ['pluck', T.pisFount, 1567.98, 0.035, 0.4, 0.2], ['glitter', T.pisFount, r3(T.pisFount + 0.3)],
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }

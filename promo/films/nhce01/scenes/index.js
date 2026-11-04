@@ -1,10 +1,10 @@
-// nhce01: HOT TAKE, COLD TAKE, "First Snow Text" (16 s vertical star_advice trial reel, music: pop · C).
-// Story 0–11.6, then the shared end card. The format look lives in ./hckit.js (imported by nhce02–24).
+// nhce01: HOT TAKE, COLD TAKE, "First Snow Text" (14 s vertical star_advice trial reel, music: pop · C).
+// Story 0–11.6, then the short 2.4 s end card. The format look lives in ./hckit.js (imported by nhce02–24).
 //   0.0–2.4   hook: "Your crush texts: | *“it’s snowing!!”*"  Split screen: ♈ Aries mid-hop on the fire half,
 //             ♑ Capricorn shivering on the frost half, the thermometer on the seam, Pisces sniffling below.
 //   2.4–5.3   HOT TAKE (Aries): "Sprint over. Build a snowman. *Now.*"  A snowman builds itself ball by ball;
 //             Aries: "already outside!!"  The thermometer shoots up and rattles.
-//   5.3       card cut.
+//   5.3       icy white-flash jump cut (no card-back cut).
 //   5.3–8.2   COLD TAKE (Capricorn): "Reply Thursday. Stay *composed.*"  The phone shows "it’s snowing!!" unanswered,
 //             a draft types and stops; Capricorn: "will respond in due course."  The thermometer drops.
 //   8.2–11.6  WARM TAKE: the frost melts to amber, the thermometer settles on JUST RIGHT. THE STARS:
