@@ -81,57 +81,102 @@
   "caption": "Three dates, same spot, same bread. Taurus calls it a routine. The friends call it cute. Do you have an \"our place\" yet?"
  },
  "nt2e90": {
-  "video": "/_blob/7594bdff9a3cb695f04ad8de49ddcc6c",
-  "poster": "/_blob/fbc1722297523baa2549bcd04b0bcf81",
+  "video": "/_blob/1659fda9984230c1ab62e309316f3702",
+  "poster": "/_blob/82665a12b1fc13925e58d6cfff097280",
   "title": "Pisces at the Puppy Party",
-  "len": 20,
+  "len": 18,
   "series": "trends2",
   "episode": 90,
   "caption": "Pisces cried at a puppy's birthday and had receipts: the tiny hat, the singing, and being called \"my person.\" By the end, everyone was crying. Valid, right?"
  },
  "nt2e91": {
-  "video": "/_blob/dbc0a3df6b99c5825cdcbcf0d3487752",
-  "poster": "/_blob/a1b469c8b5c8c6f79401f3acd9721291",
+  "video": "/_blob/28546c987ebf7e5e050d57d3a0c56b09",
+  "poster": "/_blob/5377803d0f39e092ab0375299e8c3f69",
   "title": "They Remembered Her Name",
-  "len": 15,
+  "len": 13,
   "series": "trends2",
   "episode": 91,
   "caption": "Mentioned your sister once, three weeks ago. They asked about her new job by name. Taurus has never recovered. What's the smallest thing that won you over?"
  },
  "nt2e92": {
-  "video": "/_blob/7b98e8bba6e0ac737ba28f3b6e29682d",
-  "poster": "/_blob/318cb2e62e880c0d3dae28c170823a23",
+  "video": "/_blob/8993194e4f8480c685a0943c95c094d8",
+  "poster": "/_blob/3809b48a77e7b487d7ed7dd18ea0658f",
   "title": "Take Your Time",
-  "len": 15,
+  "len": 13,
   "series": "trends2",
   "episode": 92,
   "caption": "Libra holding two menus like a life decision, and the date just leans back: no rush. Some people are built different. Which sign needs this patience the most?"
  },
  "nt2e93": {
-  "video": "/_blob/77df22a9bebb8969f3658a2d2f187290",
-  "poster": "/_blob/3642c3bd5bd891b91999004b70ed2e6b",
+  "video": "/_blob/bfc35bf828d08a953d5110b1abaa6ad5",
+  "poster": "/_blob/63757c5c92c38445fba6e0cafe7faeea",
   "title": "Home Safe?",
-  "len": 15,
+  "len": 13,
   "series": "trends2",
   "episode": 93,
   "caption": "\"home safe?\" and then they actually wait up for the answer. Sagittarius pretends to be cool about it. Sagittarius is not cool about it. Who checks in on you?"
  },
  "nt2e94": {
-  "video": "/_blob/3e5513a0f5e128bc3422715debc00edc",
-  "poster": "/_blob/b15295d72e076e24924722cfda522228",
+  "video": "/_blob/87b4d82af73d5db7394a53fff28ad85e",
+  "poster": "/_blob/fc9362261b6bbfe4d547817b6579607e",
   "title": "Bragging Out Loud",
-  "len": 15,
+  "len": 13,
   "series": "trends2",
   "episode": 94,
   "caption": "When their friends say \"FINALLY\" because they've heard all about you already. Virgo, blushing in real time. Tag someone who brags about the people they love."
  },
  "nt2e95": {
-  "video": "/_blob/453f95bf24a15994641d0b0d165163e8",
-  "poster": "/_blob/b58a6288cbdbc0f24517dac01cd53997",
+  "video": "/_blob/224a27d61bae4da3cd93176868bac089",
+  "poster": "/_blob/90bf356502d474b0a31297a516c97ada",
   "title": "Excited About Your Thing",
-  "len": 15,
+  "len": 13,
   "series": "trends2",
   "episode": 95,
   "caption": "Aquarius shows off the rock collection and the date asks to see the sparkly one again. That's the whole review. What's your thing people should get excited about?"
+ },
+ "nt2e96": {
+  "video": "/_blob/774118aa48ba9f85da30f6a5ec586a2b",
+  "poster": "/_blob/08c031505bd68ad6c24bbb9e04522a70",
+  "title": "Choose Your Party Plus-One",
+  "len": 18,
+  "series": "trends2",
+  "episode": 96,
+  "caption": "Leo works the room, Virgo has a backup gift, and Pisces cries at the toast. The cursor knew what it wanted. Who's your pick for the holiday party?"
+ },
+ "nt2e97": {
+  "video": "/_blob/a335cd84da4bb85867f292c735b5cb7a",
+  "poster": "/_blob/55b7fcf6a4ce80c83a28c087bf951598",
+  "title": "Choose Your Road-Trip Co-Pilot",
+  "len": 18,
+  "series": "trends2",
+  "episode": 97,
+  "caption": "Sagittarius has a \"shortcut,\" Capricorn printed the route twice, and Cancer packed your snacks with labels. Pick your co-pilot. Comments are open."
+ },
+ "nt2e98": {
+  "video": "/_blob/33da98f4f996d41e7924ae86ca39bdbc",
+  "poster": "/_blob/e46b3944935565d6ac7d5cda1f4deb2d",
+  "title": "Choose Your First-Date Planner",
+  "len": 18,
+  "series": "trends2",
+  "episode": 98,
+  "caption": "Aries picked the place four minutes ago. Taurus booked the comfy booth. Scorpio found somewhere you can actually hear each other. Which planner are you?"
+ },
+ "nt2e99": {
+  "video": "/_blob/233328fa2727c5cb02da57cd1fb0fb90",
+  "poster": "/_blob/e08894b280a0515556d7015d46b596a5",
+  "title": "Choose Your Bad-Day Person",
+  "len": 18,
+  "series": "trends2",
+  "episode": 99,
+  "caption": "One fun fact from Aquarius, two desserts from Libra, and then a second player joins: you, showing up for them too. Who's your bad-day person?"
+ },
+ "nt2e100": {
+  "video": "/_blob/549d60a7134534853d9de2b9d4fa909e",
+  "poster": "/_blob/fbd76516d486bf1d8c80827ae2f581f4",
+  "title": "Choose Your Cuffing-Season Character",
+  "len": 18,
+  "series": "trends2",
+  "episode": 100,
+  "caption": "Gemini has two plans in one night, Capricorn has a five-year plan by date two, and the cursor picks the mirror. Who are you choosing this winter?"
  }
 }
