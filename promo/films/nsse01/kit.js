@@ -576,7 +576,7 @@ export function makeFilm(cfg) {
       [popText(root, cfg.hook, { top: 160, size: 92, accentSize: 124, at: -0.9, gap: 0.05, accentColor: GOLD, fit: true }), [B[1].S - 0.15, B[1].S + 0.05]],
       ...C.tips.map((tp, k) => [popText(root, tp.head, { top: 166, size: 88, accentSize: 120, at: B[k + 1].S + 0.05, gap: 0.08, accentColor: k === 2 ? '#ff8fa0' : GOLD, wobble: k === 2, fit: true }),
         k < 2 ? [B[k + 2].S - 0.15, B[k + 2].S + 0.05] : [fin.S - 0.15, fin.S + 0.05]]),
-      [popText(root, cfg.last, { top: 172, size: 104, accentSize: 150, at: fin.S + 0.05, gap: 0.12, late: 1, lateAt: fin.land, wobble: true, accentColor: GOLD, fit: true }), fin.out],
+      [popText(root, cfg.last, { top: 150, size: 104, accentSize: 150, at: fin.S + 0.05, gap: 0.12, late: 1, lateAt: fin.land, wobble: true, accentColor: GOLD, fit: true }), fin.out],
     ]
     const box = dialogueBox(root, { lines: LINES, y: 1430, open: LINES[0].t - 0.25, close: fin.S - 0.1, cps: CPS, size: 46, height: 280 })
     const bug = el('div', { position: 'absolute', left: '56px', top: '56px', font: `800 30px ${INTER}`, fontVariant: 'small-caps', letterSpacing: '0.16em',
