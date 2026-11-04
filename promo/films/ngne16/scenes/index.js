@@ -1,5 +1,5 @@
-// ngne16: STAR TALK GAME NIGHT, Ep 16, "Cancer vs Scorpio: Who, When, Why" (35 s vertical, same element: water, music: dreamy · E).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne16: STAR TALK GAME NIGHT, Ep 16, "Cancer vs Scorpio: Who, When, Why" (33 s vertical, same element: water, music: dreamy · E).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Cancer vs Scorpio. | The *feelings* round.' Cancer mid-sniff with a tissue; Scorpio leaning in.
 //   R1 'I can't sleep. ___': Scorpio 'why? since when? who? what happened?' / Cancer 'call me. I'll read you something boring.' → Cancer
 //   R2 'They ask before posting a photo of you': both GREEN → both
