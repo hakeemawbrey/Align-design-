@@ -1,5 +1,5 @@
-// nvse22: SIGN VS SIGN, "Who handles meeting their pet better?" ♋ Cancer vs ♐ Sagittarius (18 s trial reel, b46,
-// music: jazzy · Eb). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse22: SIGN VS SIGN, "Who handles meeting their pet better?" ♋ Cancer vs ♐ Sagittarius (16 s trial reel, b46,
+// music: jazzy · Eb). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a dog's tail wags between them.
 //   ROUND 1 ♋ "brings the cat a *tiny sweater.*" the cat, then the cat in a sweater. "I knitted it." → "she hates it. she loves it."
 //   ROUND 2 ♐ "is on the floor playing *fetch* in seconds." the ball flies, the dog bounces. "who’s a good boy!" → "I’m a good boy too!"
