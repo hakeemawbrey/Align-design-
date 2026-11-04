@@ -20,7 +20,7 @@ function sunriseWindow(x, t, cx, cy, w, h, warm = 1) {
   glow(x, cx, cy + h / 2, 400, warm, '255,200,140')
 }
 function bed(x) { box(x, 560, 1220, 480, 110, '#5a4a8a', { b: 8 }); box(x, 1000, 1080, 50, 250, '#4a3a78', { b: 8 }) }
-const DRAFTS = [['hey', 0.2, 1.4], ['about last night…', 1.6, 3.2], ['are we', 3.4, 9]]
+const DRAFTS = [['hey', -0.5, 1.4], ['about last night…', 1.6, 3.2], ['are we', 3.4, 9]]
 function draftPhone(x, t, cx, cy) {
   phone(x, cx, cy, { w: 300, h: 480, rot: -0.04 }, (c, w, h) => {
     R(c, '#1b1530', -w / 2 + 12, -h / 2 + 18, w - 24, 50); ink(c, `${'♌'}︎ Leo`, 0, -h / 2 + 44, { size: 26, col: BONE, font: INTER })
