@@ -9,31 +9,10 @@
 //              "…hello." The sun climbs, the frost melts, and Capricorn beams: "HI!!"
 //   11.35      the three earth signs together under a soft sky; Pisces: "aww."
 //   11.95      THE STARS: "Slow weather, *steady* love."
-import { makeWeather, skyGrad, sun, cloud, rain, frostFrame, umbrella, R, box, bubble, label, shadow, sparkles, hearts, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, PINK, INTER, T } from '../../nt2e71/scenes/weather.js'
+import { makeWeather, rainyWindow, blanket, skyGrad, sun, cloud, rain, frostFrame, umbrella, R, box, bubble, label, shadow, sparkles, hearts, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, PINK, INTER, T } from '../../nt2e71/scenes/weather.js'
 import { mug, couch } from '../../nt2e61/scenes/house.js'
 
 const G = 1240
-
-function rainyWindow(x, t, { x0 = 140, y0 = 380, w = 800, h = 700 } = {}) {
-  R(x, '#2a2a48', 0, 0, 1080, 1920)
-  box(x, x0, y0, w, h, '#3a4a70', { b: 22 })
-  const g = x.createLinearGradient(0, y0, 0, y0 + h); g.addColorStop(0, '#4a5a86'); g.addColorStop(1, '#6a7aa0'); x.fillStyle = g; x.fillRect(x0, y0, w, h)
-  x.save(); x.beginPath(); x.rect(x0, y0, w, h); x.clip()
-  rain(x, t, { n: 50, speed: 0.9, len: 26, slant: 0.05, area: [x0, y0, w, h] })
-  for (let i = 0; i < 14; i++) { const ph = (t * 0.15 + i * 0.27) % 1; R(x, 'rgba(220,235,255,0.55)', x0 + (i * 61) % w, y0 + ph * h, 10, 14) }
-  x.restore()
-  R(x, '#3a2a20', x0 + w / 2 - 10, y0, 20, h); R(x, '#3a2a20', x0, y0 + h / 2 - 10, w, 20)
-  R(x, INK, x0 - 40, y0 + h + 10, w + 80, 40); R(x, '#8a5a3a', x0 - 34, y0 + h + 14, w + 68, 30)
-  x.save(); x.globalCompositeOperation = 'lighter'; const lg = x.createRadialGradient(540, 1300, 40, 540, 1300, 700); lg.addColorStop(0, 'rgba(255,200,130,0.28)'); lg.addColorStop(1, 'rgba(255,200,130,0)'); x.fillStyle = lg; x.fillRect(0, 600, 1080, 1320); x.restore()
-  R(x, '#4a3428', 0, G, 1080, 1920 - G); R(x, INK, 0, G, 1080, 8)
-}
-function blanket(x, t, cx, cy, s = 1) {
-  x.save(); x.translate(cx, cy); x.scale(s, s)
-  x.fillStyle = INK; x.beginPath(); x.ellipse(0, 40, 200, 110, 0, Math.PI, 0); x.lineTo(200, 120); x.lineTo(-200, 120); x.closePath(); x.fill()
-  x.fillStyle = '#c85a6e'; x.beginPath(); x.ellipse(0, 46, 190, 102, 0, Math.PI, 0); x.lineTo(190, 112); x.lineTo(-190, 112); x.closePath(); x.fill()
-  for (let i = 0; i < 5; i++) R(x, '#ff8fb1', -170 + i * 76, 40, 30, 70)
-  x.restore()
-}
 
 const tells = [
   { caption: '*Taurus:* a slow, cozy drizzle.',

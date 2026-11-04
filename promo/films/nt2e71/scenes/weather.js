@@ -11,6 +11,7 @@ import { makeT2, R, box, label, shadow, drawBits, pop01, outK, prog, lerp, clamp
 export * from '../../nt2e61/scenes/t2kit.js'
 
 export const GROUND_Y = 1240
+const G = GROUND_Y
 
 export function skyGrad(x, [top, bot], { ground = '#3a6a4a', groundY = GROUND_Y, hills = true } = {}) {
   const g = x.createLinearGradient(0, 0, 0, groundY); g.addColorStop(0, top); g.addColorStop(1, bot)
@@ -133,6 +134,28 @@ export function umbrella(x, cx, cy, { col = '#ff5c7a', s = 1, rot = 0 } = {}) {
   x.fillStyle = INK; x.beginPath(); x.arc(0, 0, 160, Math.PI, 0); x.fill()
   x.fillStyle = col; x.beginPath(); x.arc(0, 0, 150, Math.PI, 0); x.fill()
   for (let i = 0; i < 4; i++) { x.fillStyle = i % 2 ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.12)'; x.beginPath(); x.moveTo(0, 0); x.arc(0, 0, 150, Math.PI + i * Math.PI / 4, Math.PI + (i + 1) * Math.PI / 4); x.fill() }
+  x.restore()
+}
+
+// a window on a rainy day (or night), a warm lamp glow inside, a floor
+export function rainyWindow(x, t, { x0 = 140, y0 = 380, w = 800, h = 700, night = false } = {}) {
+  R(x, '#2a2a48', 0, 0, 1080, 1920)
+  box(x, x0, y0, w, h, '#3a4a70', { b: 22 })
+  const g = x.createLinearGradient(0, y0, 0, y0 + h); g.addColorStop(0, night ? '#141a3e' : '#4a5a86'); g.addColorStop(1, night ? '#2a3466' : '#6a7aa0'); x.fillStyle = g; x.fillRect(x0, y0, w, h)
+  x.save(); x.beginPath(); x.rect(x0, y0, w, h); x.clip()
+  rain(x, t, { n: 50, speed: 0.9, len: 26, slant: 0.05, area: [x0, y0, w, h] })
+  for (let i = 0; i < 14; i++) { const ph = (t * 0.15 + i * 0.27) % 1; R(x, 'rgba(220,235,255,0.55)', x0 + (i * 61) % w, y0 + ph * h, 10, 14) }
+  x.restore()
+  R(x, '#3a2a20', x0 + w / 2 - 10, y0, 20, h); R(x, '#3a2a20', x0, y0 + h / 2 - 10, w, 20)
+  R(x, INK, x0 - 40, y0 + h + 10, w + 80, 40); R(x, '#8a5a3a', x0 - 34, y0 + h + 14, w + 68, 30)
+  x.save(); x.globalCompositeOperation = 'lighter'; const lg = x.createRadialGradient(540, 1300, 40, 540, 1300, 700); lg.addColorStop(0, 'rgba(255,200,130,0.28)'); lg.addColorStop(1, 'rgba(255,200,130,0)'); x.fillStyle = lg; x.fillRect(0, 600, 1080, 1320); x.restore()
+  R(x, '#4a3428', 0, G, 1080, 1920 - G); R(x, INK, 0, G, 1080, 8)
+}
+export function blanket(x, t, cx, cy, s = 1) {
+  x.save(); x.translate(cx, cy); x.scale(s, s)
+  x.fillStyle = INK; x.beginPath(); x.ellipse(0, 40, 200, 110, 0, Math.PI, 0); x.lineTo(200, 120); x.lineTo(-200, 120); x.closePath(); x.fill()
+  x.fillStyle = '#c85a6e'; x.beginPath(); x.ellipse(0, 46, 190, 102, 0, Math.PI, 0); x.lineTo(190, 112); x.lineTo(-190, 112); x.closePath(); x.fill()
+  for (let i = 0; i < 5; i++) R(x, '#ff8fb1', -170 + i * 76, 40, 30, 70)
   x.restore()
 }
 
