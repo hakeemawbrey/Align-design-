@@ -380,18 +380,17 @@ export function carInside(x, t, { top = 420, floor = 1300 } = {}) {
   box(x, 80, top + 440, 920, 70, '#3a3060', { b: 7 }); glow(x, 540, top + 470, 300, 0.2, '127,208,255')
 }
 /** a phone with a simple message thread. msgs: [{ at, side: 'L'|'R', text }] */
-export function phone(x, t, { cx = 540, top = 520, w = 520, h = 760, title = '', msgs = [], typing = null, alpha = 1, rot = 0 } = {}) {
+export function phone(x, t, { cx = 540, top = 520, w = 520, h = 760, title = '', msgs = [], typing = null, alpha = 1, rot = 0, fs = 28 } = {}) {
   x.save(); x.globalAlpha *= alpha; x.translate(cx, top + h / 2); x.rotate(rot); x.translate(-cx, -(top + h / 2))
   box(x, cx - w / 2, top, w, h, '#2a2148', { b: 8 }); R(x, '#120e26', cx - w / 2 + 16, top + 16, w - 32, h - 32)
   R(x, '#221a44', cx - w / 2 + 16, top + 16, w - 32, 70)
   ink(x, title, cx, top + 52, { size: 26, col: BONE })
   const shown = msgs.filter(m => t >= m.at)
   let y = top + h - 50 - (typing && t > typing[0] && t < typing[1] ? 70 : 0)
-  const fs = 28
   x.font = `700 ${fs}px ${INTER}`
   const wrap = (s, maxW) => { const out = []; let cur = ''; for (const wd of s.split(' ')) { const nx = cur ? cur + ' ' + wd : wd; if (x.measureText(nx).width > maxW && cur) { out.push(cur); cur = wd } else cur = nx } if (cur) out.push(cur); return out }
   for (let i = shown.length - 1; i >= 0; i--) {
-    const m = shown[i], L = wrap(m.text, w - 170), bh = L.length * 36 + 24
+    const m = shown[i], L = wrap(m.text, w - 170), lh = fs * 1.3, bh = L.length * lh + 24
     y -= bh
     if (y < top + 96) break
     const bw = Math.max(...L.map(s => x.measureText(s).width)) + 36
@@ -400,7 +399,7 @@ export function phone(x, t, { cx = 540, top = 520, w = 520, h = 760, title = '',
     x.save(); x.translate(bx + bw / 2, y + bh / 2); x.scale(k, k); x.translate(-(bx + bw / 2), -(y + bh / 2))
     box(x, bx, y, bw, bh, m.side === 'L' ? '#3b3170' : (m.col || '#ff8fb1'), { b: 4 })
     x.font = `700 ${fs}px ${INTER}`; x.textAlign = 'left'; x.textBaseline = 'middle'; x.fillStyle = m.side === 'L' ? BONE : INK
-    L.forEach((s, j) => x.fillText(s, bx + 18, y + 30 + j * 36))
+    L.forEach((s, j) => x.fillText(s, bx + 18, y + 12 + lh / 2 + j * lh))
     x.restore()
     y -= 14
   }
