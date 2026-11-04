@@ -2,7 +2,8 @@
 // Adapted from the Volume 1 kit (trwaittaurus/scenes/wait.js) for trial reels: FRAME 0 IS THE THUMBNAIL, so there is no
 // fade from black, and the hook headline, the "wait for it…" sticker, the bug, the bar and both stars are already on
 // screen at t = 0. All twelve episodes import this one file from nwfe01.
-// Extra cfg: noPis (the hero is Pisces: no background Pisces), heroTears(phase, t, T) → 0…3 tears on the hero.
+// Extra cfg: noPis (the hero is Pisces: no background Pisces), heroTears(phase, t, T) → 0…3 tears on the hero,
+// heroDX(t, T) → a horizontal offset for the hero (it can leave the frame and come back).
 //
 //   makeEpisode(cfg) → { DURATION, SCENES, CUES, T, music }      a 20 s film: story 0–15.6, then the shared end card.
 //
@@ -359,7 +360,7 @@ export function makeEpisode(cfg) {
       const hk = pop01(t, T.heroIn, 0.4, 2.1) * k
       if (hk > 0.01) {
         const md = { ...heroDefault(ph, t), ...(cfg.moods ? cfg.moods(ph, t, T) || {} : {}) }
-        const H = P.hero
+        const H = cfg.heroDX ? { ...P.hero, x: P.hero.x + cfg.heroDX(t, T) } : P.hero
         const opts = { color: HERO.color, glyph: HERO.glyph, mood: md.mood, look: md.look, hops: heroHops, pop: hk, seed: 3, glow: 1.1, squash: md.squash || 0 }
         drawStarChar(x, H.x, H.y, H.s, t, opts)
         const F = starFrame(H.x, H.y, H.s, t, opts)
