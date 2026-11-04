@@ -1,12 +1,57 @@
 {
  "ngie01": {
-  "video": "/_blob/369bb177406c5cea8358aa69a5fd7ffd",
-  "poster": "/_blob/f6a8a6c3eeeaf159a03cf4c9334db84e",
+  "video": "/_blob/df1ed9610bd34957cf16942a642f79e6",
+  "poster": "/_blob/536b1eeb24724f596687f7d19711a0c8",
   "title": "Aries as a winter gift",
-  "len": 16,
+  "len": 14,
   "series": "gifts",
   "episode": 1,
   "caption": "If your Aries were a winter gift, it would heat up instantly.\nHand warmers, plus a note: race you outside."
+ },
+ "ngie02": {
+  "video": "/_blob/12f57eb1c62da6897df1c86b0fc9a3cd",
+  "poster": "/_blob/a43eb1c4cf6245d7ecc662d1d218afc2",
+  "title": "Taurus as a winter gift",
+  "len": 14,
+  "series": "gifts",
+  "episode": 2,
+  "caption": "Imagine Taurus as a gift: the softest blanket you've ever touched.\nIt comes with warm bread and an invitation to stay a while."
+ },
+ "ngie03": {
+  "video": "/_blob/312d9b1fe53a28addc8e818d1481fefe",
+  "poster": "/_blob/91e9bae4a6517f85d568e994181363d0",
+  "title": "Gemini as a winter gift",
+  "len": 14,
+  "series": "gifts",
+  "episode": 3,
+  "caption": "A Gemini gift arrives half finished, and that's the charm.\nA puzzle book with notes in the margins, written just for you."
+ },
+ "ngie04": {
+  "video": "/_blob/281b2a5ee8c6d92fb2e691a57f89e861",
+  "poster": "/_blob/1c788743f0b74265f6613bc3afdace42",
+  "title": "Cancer as a winter gift",
+  "len": 14,
+  "series": "gifts",
+  "episode": 4,
+  "caption": "What would a Cancer wrap for you this winter?\nA photo album of your whole year, with a handwritten note on every page."
+ },
+ "ngie05": {
+  "video": "/_blob/958dfe51d21ae884a8fd2697e106cb17",
+  "poster": "/_blob/431ac711fa8c146a4130bf7ddfe548b7",
+  "title": "Leo as a winter gift",
+  "len": 14,
+  "series": "gifts",
+  "episode": 5,
+  "caption": "Leo as a gift: a gold scarf you can spot from across the street.\nAnd a matching one for you, so you shine together."
+ },
+ "ngie06": {
+  "video": "/_blob/92d29918c1dc37c1af907e2dda393dea",
+  "poster": "/_blob/267ab12ac5e31392d6eac4fcd0a11f19",
+  "title": "Virgo as a winter gift",
+  "len": 14,
+  "series": "gifts",
+  "episode": 6,
+  "caption": "Virgo's gift already has your birthday written in it.\nA planner and a coupon for one free errand. Practical can be very romantic."
  },
  "npye01": {
   "video": "/_blob/34fdbf3f37bc2cfeac924144b579acd3",
@@ -90,28 +135,28 @@
   "caption": "Late, snowy, and already telling the story of the bus ride.\nSagittarius wants a snow walk right now, and asks who wants in."
  },
  "npye10": {
-  "video": "/_blob/3efc1941f2e767652d3893d1204a041f",
-  "poster": "/_blob/33ca68022e622316717119a5fc5b14fe",
+  "video": "/_blob/373a0cc21e1d1c32b66c739451b57bc3",
+  "poster": "/_blob/28a99ca7dcdcc76b2cc9ccd41f0696d8",
   "title": "Capricorn at the holiday party",
-  "len": 16,
+  "len": 14,
   "series": "party",
   "episode": 10,
   "caption": "Capricorn planned to leave at 9:30.\nIt's the last one there, doing the dishes, because it wants to."
  },
  "npye11": {
-  "video": "/_blob/b2f0d75c5d752d7b49cfdc3c1b45d78d",
-  "poster": "/_blob/1239da3e5fe5a4d6e422541d030afa92",
+  "video": "/_blob/03c459dd6259a8b12f54ddbd61e2c8c6",
+  "poster": "/_blob/b477d42550ec5dbcacc3891a91c7b55e",
   "title": "Aquarius at the holiday party",
-  "len": 16,
+  "len": 14,
   "series": "party",
   "episode": 11,
   "caption": "Spent an hour at the party talking to the host's dog?\nAquarius gets it. Then it starts a snowflake table where every weird one is perfect."
  },
  "npye12": {
-  "video": "/_blob/9b0c56183a48424487c11db0a57dc12f",
-  "poster": "/_blob/ae9feb074e1299063790da177bd8f272",
+  "video": "/_blob/61d7e5ba0d4aabe9d8c9eada48966bb3",
+  "poster": "/_blob/8efa543eda7549a79eca2fd33b05b86e",
   "title": "Pisces at the holiday party",
-  "len": 16,
+  "len": 14,
   "series": "party",
   "episode": 12,
   "caption": "Cried in the group photo. Hugged the host goodbye for twenty minutes.\nPisces at a party, and honestly, the big feelings are welcome."
