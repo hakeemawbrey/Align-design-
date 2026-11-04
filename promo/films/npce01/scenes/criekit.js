@@ -367,3 +367,18 @@ export function makeCry(cfg) {
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }
+
+/** pixel confetti falling from a burst at t0 */
+export function confetti(x, t, t0, cx, cy, { n = 26, life = 2.2, cols = [GOLD, PINK, '#7fd0ff', '#9fe6b0', BONE] } = {}) {
+  const tt = t - t0
+  if (tt < 0 || tt > life) return
+  x.save(); x.globalAlpha = 1 - ease.inQuad(tt / life)
+  for (let i = 0; i < n; i++) {
+    const a = -Math.PI / 2 + ((i / n) - 0.5) * 2.4, v = 520 + 260 * ((i * 7) % 5) / 4
+    const px = cx + Math.cos(a) * v * tt * 0.9 + Math.sin(tt * 6 + i) * 14, py = cy + Math.sin(a) * v * tt + 620 * tt * tt
+    const sz = 10 + (i % 3) * 3
+    x.fillStyle = cols[i % cols.length]
+    x.save(); x.translate(px, py); x.rotate(tt * (4 + i % 5) + i); x.fillRect(-sz / 2, -sz / 4, sz, sz / 2); x.restore()
+  }
+  x.restore()
+}
