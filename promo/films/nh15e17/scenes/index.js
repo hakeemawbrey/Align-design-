@@ -1,4 +1,4 @@
-// nh15e17: HOME FOR THE HOLIDAYS, "The gift you forgot." (30 s vertical, Star Talk Season 15 ep 17, music: lofi · Am)
+// nh15e17: HOME FOR THE HOLIDAYS, "The gift you forgot." (28 s vertical, Star Talk Season 15 ep 17, music: lofi · Am)
 // Story 0–25.6, then the shared end card. The season's look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.0    hook "Everyone brought a gift. | *Except you.*"  Aquarius frozen, empty-handed, before a pile of wrapped
 //              boxes; Cancer (Aquarius's date) holds a perfect one. Grandma's floor lamp wobbles in the corner.
