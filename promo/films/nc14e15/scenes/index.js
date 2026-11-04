@@ -1,11 +1,10 @@
-// nc14e15: CUFFING SEASON, "“Are we cuffed or just cold?”" (35 s vertical, promo/films/next30/b02.md, music: lofi · Am)
-// Story 0–30.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e15: CUFFING SEASON, "“Are we cuffed or just cold?”" (33 s vertical, promo/films/next30/b02.md, music: lofi · Am)
+// Story 0–30.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–6.5    "“Are we cuffed… | or just *cold?*”"  Frame 0: ♐ Sag + ♒ Aquarius on a snowy park bench under one blanket,
 //              side-eyeing each other. Thought bubbles: "is this a winter thing?" / "is this a blanket thing?"
 //              SAG: "it's purely for *warmth.*"  AQUARIUS: "obviously. *science.*"
 //   6.5–14.2   "Excuse | after *excuse.*"  Layers pile on: a shared scarf, a second blanket, a third, until they're one lump
 //              with eyes. Pisces sobs out of a snow bush: "just ASK!!"  (the ghost peeks over the bush, 11.2)
-//  14.2        card cut.
 //  14.3–22.0   "There's a | *faster* way."  THE STARS: "there's a faster way to find out. *ask.*"  SAG: "so… is this just a
 //              *winter* thing?"  AQUARIUS: "i hoped it's an *every-weather* thing."
 //  22.2–30.1   The blankets fly off; they stay close anyway. Last line: "Weather changes. | *Ask anyway.*"
@@ -96,7 +95,6 @@ const EP = makeEp({
     { lines: L3, open: 14.4, close: 22.0 },
   ],
   ghost: { at: 11.2, x: 760, y: 1050, from: 'below', cell: 3 },
-  cuts: [6.5, { t: T.cut, kind: 'flip' }, 22.1],
   snow: 0.8, ground: 1180,
   scene,
   cues: [

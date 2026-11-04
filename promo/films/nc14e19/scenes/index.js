@@ -1,10 +1,9 @@
-// nc14e19: CUFFING SEASON, "The friend who's single and fine" (30 s vertical, promo/films/next30/b02.md, music: jazzy · D)
-// Story 0–25.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e19: CUFFING SEASON, "The friend who's single and fine" (28 s vertical, promo/films/next30/b02.md, music: jazzy · D)
+// Story 0–25.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–5.4    "Everyone's cuffed. | *Virgo* is thriving."  Frame 0: ♍ Virgo mid-stir at a soup pot in its warm kitchen; a
 //              book, a plant and a half-done puzzle on the table. Pisces presses its face to the frosty window, crying.
 //   5.4–12.4   "The friends | *intervene.*"  ♌ LEO slides in a blind mystery card: "a blind mystery card, *for you!!*"
 //              ♊ GEMINI: "i know *someone…*"  ♎ LIBRA: "you must be so *lonely.*"  (the ghost, 9.4)
-//  12.4        card cut.
 //  12.5–18.6   "Not waiting. | *Living.*"  VIRGO: "i'm not waiting out winter. i'm *in* it."  THE STARS: "a full life isn't
 //              a *gap* to fill."
 //  18.6–25.1   Soup night: everyone sits down with a bowl; Virgo pockets the card: "maybe in spring." Pisces cries into the
@@ -114,7 +113,6 @@ const EP = makeEp({
   ],
   images: ['mystery'],
   ghost: { at: 9.4, x: 460, y: 560, from: 'below', cell: 3 },
-  cuts: [5.4, { t: T.cut, kind: 'deal' }, 18.6],
   snow: 0, ground: false,
   scene,
   cues: [

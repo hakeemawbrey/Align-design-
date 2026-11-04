@@ -1,10 +1,9 @@
-// nc14e16: CUFFING SEASON, "The matching mittens" (30 s vertical, promo/films/next30/b02.md, music: pop · F)
-// Story 0–25.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e16: CUFFING SEASON, "The matching mittens" (28 s vertical, promo/films/next30/b02.md, music: pop · F)
+// Story 0–25.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–5.4    "Capricorn bought | *matching mittens.*"  Frame 0: ♑ Capricorn mid-pace on a snowy street, a gift box hidden
 //              behind its back.
 //   5.4–12.6   "Rehearsing on | a *snowman.*"  CAPRICORN (to the snowman): "please accept this *practical* gift." → "a winter
 //              *partnership* proposal."  The snowman's carrot nose droops off.  (the ghost peeks round the lamp post, 9.6)
-//  12.6        card cut.
 //  12.7–18.6   "Or just | say *why.*"  THE STARS: "or just say *why.*"  ♋ Cancer arrives. CAPRICORN: "your hands are always
 //              cold. i *noticed.*"  The lid pops: two green mittens.
 //  18.6–25.1   Cancer pulls out a matching green scarf it knitted for Capricorn. Both blush. Pisces sobs into its own
@@ -97,7 +96,6 @@ const EP = makeEp({
     { lines: L3, open: 12.8, close: 18.5 },
   ],
   ghost: { at: 9.6, x: 212, y: 870, from: 'left', cell: 3 },
-  cuts: [5.4, { t: T.cut, kind: 'flip' }, 18.6],
   snow: 0.85, ground: 1290,
   scene,
   cues: [

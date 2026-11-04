@@ -1,11 +1,10 @@
-// nc14e24: CUFFING SEASON finale, "Not cuffed. Chosen." (45 s vertical, promo/films/next30/b02.md, music: pop · D)
-// Story 0–40.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e24: CUFFING SEASON finale, "Not cuffed. Chosen." (43 s vertical, promo/films/next30/b02.md, music: pop · D)
+// Story 0–40.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–6.5    "Winter's here. | Who *stayed?*"  Frame 0: under string lights in the snow, ♈ Aries mid-hop beside ♓ Pisces
 //              (crying, obviously). THE STARS: "twelve signs. one *very* cold month." → "let's check in on *everyone.*"
 //   6.5–17.0   "Roll | *call.*"  The pairs pop in one by one, each with a tag: ♐+♒ DATE TWO → TEN, ♑+♋ MATCHING MITTENS,
 //              ♌+♎ STILL IN SYNC, ♏+♉ SINCE APRIL, ♍+♊ SLOW, ON PURPOSE; ♓+♈ IT'S SNOWING. SAG: "date *ten*, by the way."
 //              (the ghost, 12.6)
-//  17.0        card cut.
 //  17.1–25.8   "Not about | the *cold.*"  THE STARS: "cuffing is about the cold. this is about *you.*" → "swap the blanket for
 //              a *talk card.*"  Every pair swaps a talk card; the blankets drop.
 //  26.0        ★ LESSON UNLOCKED "Choose someone | *on purpose.*"  chip "+12 signs, 0 blankets needed"
@@ -105,7 +104,6 @@ const EP = makeEp({
   ],
   lesson: { at: T.lesson, out: T.lessonOut, text: 'Choose someone | *on purpose.*', chip: '+12 signs, 0 blankets needed', color: GOLD },
   ghost: { at: 12.6, x: 1000, y: 1060, from: 'below', cell: 3 },
-  cuts: [6.5, { t: T.cut, kind: 'flip' }, 30.9],
   snow: t => 1 - prog(t, T.stop, T.stop + 1.5), ground: 1290,
   scene,
   cues: [

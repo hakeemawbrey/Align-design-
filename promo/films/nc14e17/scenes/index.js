@@ -1,10 +1,9 @@
-// nc14e17: CUFFING SEASON, "Who texts first when it's freezing" (32 s vertical, promo/films/next30/b02.md, music: chiptune · B)
-// Story 0–27.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e17: CUFFING SEASON, "Who texts first when it's freezing" (30 s vertical, promo/films/next30/b02.md, music: chiptune · B)
+// Story 0–27.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–6.0    "It's freezing. | Who texts *first?*"  Frame 0: a split screen, ♏ Scorpio (left) and ♉ Taurus (right) under
 //              blankets, each glaring at a phone; a "9:02 PM" stamp. Drafts typed and deleted: "u up" / "hey".
 //   6.0–13.2   "Hour *two.*"  10:15 PM, 11:40 PM. SCORPIO: "if i text first, i *lose.*"  TAURUS: "if i text first, i'm
 //              *too much.*"  Pisces in the gap between the screens: "both of you, PLEASE!!"  (the ghost, 10.6)
-//  13.2        card cut.
 //  13.3–20.6   "Texting first is | *caring out loud.*"  THE STARS: "texting first isn't losing. it's *caring out loud.*" →
 //              "and someone's waiting to *hear it.*"  Both send at the same second (19.2): "are you warm?" / "you warm?"
 //  20.6–27.1   Both screens light up; both laugh; "now i am." Last line: "Freezing is a great | excuse to *go first.*"
@@ -89,7 +88,6 @@ const EP = makeEp({
     { lines: L3, open: 13.4, close: 20.4 },
   ],
   ghost: { at: 10.6, x: 548, y: 760, from: 'left', cell: 3 },
-  cuts: [6.0, { t: T.cut, kind: 'shuffle' }, 20.6],
   snow: 0, ground: false,
   scene,
   cues: [

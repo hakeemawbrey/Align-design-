@@ -2,13 +2,14 @@
 // Every episode imports this file from here (read-only for the others), so the twelve films look like one season.
 //
 //   makeEp(cfg) → { DURATION, SCENES, CUES }
-//     cfg.id, cfg.ep (episode number), cfg.duration (incl. the 4.4 s end card), cfg.key (the music key, for lessonCues)
+//     cfg.id, cfg.ep (episode number), cfg.duration (the slate length, see below), cfg.key (the music key, for lessonCues)
 //     cfg.heads:  [{ text, at, out: [a, b], top?, size?, accentSize?, accentColor?, late?, lateAt?, wobble? }]
 //                 (the first head's `at` is negative so the hook is fully on screen at frame 0)
 //     cfg.boxes:  [{ lines: [{ t, speaker, text, color? }], open?, close?, y? }]
 //     cfg.lesson: { at, out: [a, b], text, chip } (optional, 40–45 s films)
 //     cfg.ghost:  { at, x, y, from, cell? } (the season-wide easter egg, also written to lore.json)
-//     cfg.cuts:   card-cut candidates (cardfx plays the middle one)
+//     No Align card transition, and the short 2.4 s end card: cfg.duration is the slate length (incl. the old 4.4 s
+//     card); the story still ends at cfg.duration - 4.4 and the film runs 2.0 s shorter (DURATION = story end + 2.4).
 //     cfg.scene(x, t, K): the episode's picture on the main canvas.  K = { ok, SE, img(name) }
 //     cfg.snow:   flake amount 0–1 (number or f(t)), cfg.ground: snowy ground top y (or false for interiors)
 //     cfg.cues:   the episode's own sound cues (headlines, dialogue, lesson, cuts and end card are added here)
@@ -17,8 +18,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill, A } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../startalk.js'
 import { drawSeedConstellation, drawGhostCameo } from '../stlore.js'
 import { buildLesson, lessonCues, popText } from '../lesson.js'
@@ -447,8 +448,8 @@ function headCues(h) {
 }
 
 export function makeEp(cfg) {
-  const DURATION = cfg.duration
-  const SE = DURATION - ENDCARD_LEN
+  const SE = cfg.duration - ENDCARD_LEN
+  const DURATION = +(SE + ENDCARD_SHORT_LEN).toFixed(3)
   const OUT = [SE - 0.5, SE - 0.1]
   const heads = cfg.heads.map(h => ({ gap: 0.08, size: 96, accentSize: 132, top: 172, ...h }))
   const boxes = cfg.boxes || []
@@ -492,8 +493,7 @@ export function makeEp(cfg) {
       },
     }
   }
-  const CUTS = cfg.cuts || []
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: SE }), cardFrame({ start: 0, end: SE, corners: 'tr bl br', numeral: `EP ${cfg.ep}` }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: SE, short: true }), cardFrame({ start: 0, end: SE, corners: 'tr bl br', numeral: `EP ${cfg.ep}` })]
   const lines = boxes.flatMap(b => b.lines)
   const CUES = [
     ...heads.flatMap(headCues),
@@ -502,8 +502,7 @@ export function makeEp(cfg) {
     ...(cfg.ghost ? [['pop', r3(cfg.ghost.at + 0.1), 1567.98, 0.012, 0.5]] : []),
     ['whoosh', r3(OUT[0]), 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(SE),
+    ...endcardCues(SE, { short: true }),
   ].sort((a, b) => a[1] - b[1])
   return { DURATION, SCENES, CUES, SE, CPS }
 }

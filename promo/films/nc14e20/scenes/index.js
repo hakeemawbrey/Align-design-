@@ -1,11 +1,10 @@
-// nc14e20: CUFFING SEASON, "The cozy-night-in debate" (35 s vertical, promo/films/next30/b02.md, music: house · G)
-// Story 0–30.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e20: CUFFING SEASON, "The cozy-night-in debate" (33 s vertical, promo/films/next30/b02.md, music: house · G)
+// Story 0–30.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–6.4    "Night in or | night *out?*"  Frame 0: ♈ Aries in a hat and scarf, mid-bounce at the front door; ♓ Pisces
 //              already under three blankets on the couch. ARIES: "lights walk! *right now!*"  PISCES: "but the blanket is
 //              *so* warm…"
 //   6.4–13.6   "The *pitches.*"  Aries: string lights, a sled, a snowball… which lands on Aries. Pisces: soup, a blanket, a
 //              movie with a sad dog (already crying).  (the ghost, 9.0)
-//  13.6        card cut.
 //  13.7–21.0   "You don't need | a *winner.*"  THE STARS: "you don't need a winner. you need a *plan for both.*"
 //              ARIES: "lights first…"  PISCES: "then the *couch?*"
 //  21.0–30.1   Outside under the lights (Pisces cries at how pretty they are), then the couch, one blanket, two mugs.
@@ -116,7 +115,6 @@ const EP = makeEp({
     { lines: L3, open: 13.8, close: 20.9 },
   ],
   ghost: { at: 9.0, x: 640, y: 1120, from: 'below', cell: 3 },
-  cuts: [6.4, { t: T.cut, kind: 'flip' }, 21.0],
   snow: t => t > T.out && t < T.home ? 1 : 0, ground: false,
   scene,
   cues: [

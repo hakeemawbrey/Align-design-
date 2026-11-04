@@ -1,10 +1,9 @@
-// nc14e18: CUFFING SEASON, "The ex shows up with cocoa" (40 s vertical, promo/films/next30/b02.md, music: cinematic · Cm)
-// Story 0–35.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e18: CUFFING SEASON, "The ex shows up with cocoa" (38 s vertical, promo/films/next30/b02.md, music: cinematic · Cm)
+// Story 0–35.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–6.8    "Your ex. At your door. | With *cocoa.*"  Frame 0: ♎ Libra frozen in its warm doorway; ♊ Gemini on the step
 //              holding two steaming mugs. GEMINI: "hi! cocoa? for *old times?*"
 //   6.8–14.2   "The scales | *wobble.*"  A big pixel balance over Libra: THEN (a mug) vs NOW (a photo of ♌ Leo), tipping
 //              back and forth. LIBRA: "it does smell *really* good…"  GEMINI: "remember the *snow day?*"  (ghost, 11.4)
-//  14.2        card cut.
 //  14.3–21.8   "Nostalgia is cozy. | It isn't a *plan.*"  THE STARS: "nostalgia is cozy. it isn't a *plan.*"  LIBRA (kind,
 //              clear): "that's sweet. i'm *happy* where i am."  The scales settle on NOW. GEMINI: "fair. i had to try *once.*"
 //  22.0        ★ LESSON UNLOCKED "Be kind | *and* be clear."  chip "+2 cocoas (Gemini kept both)"
@@ -119,7 +118,6 @@ const EP = makeEp({
   ],
   lesson: { at: T.lesson, out: T.lessonOut, text: 'Be kind | *and* be clear.', chip: '+2 cocoas (Gemini kept both)', color: BC },
   ghost: { at: 11.4, x: 750, y: 1200, from: 'below', cell: 3 },
-  cuts: [6.8, { t: T.cut, kind: 'flip' }, 26.9],
   snow: 0.7, ground: 1300,
   scene,
   cues: [

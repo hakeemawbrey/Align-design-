@@ -1,10 +1,9 @@
-// nc14e22: CUFFING SEASON, "Taking it slow on purpose" (35 s vertical, promo/films/next30/b02.md, music: screwed · Fm)
-// Story 0–30.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e22: CUFFING SEASON, "Taking it slow on purpose" (33 s vertical, promo/films/next30/b02.md, music: screwed · Fm)
+// Story 0–30.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–6.0    "Everyone's sprinting. | *Virgo* is strolling."  Frame 0: a snowy park path; a pair on a sled zooms past in a
 //              streak while ♍ Virgo and ♊ Gemini stroll. GEMINI (fast): "so do we… *speed up?*"
 //   6.0–13.4   "Slow. | On *purpose.*"  VIRGO: "i like knowing you a little *more* each week."  A SLOW ZONE sign pops up. They
 //              stop for a snowflake, a dog ("a DOG!!"), a bench.  (the ghost, 11.8)
-//  13.4        card cut.
 //  13.5–20.6   "Slow can be | a *choice.*"  THE STARS: "slow can be a *choice*, not a doubt."  GEMINI (slower): "then… same
 //              time *next week?*"  VIRGO: "it's a *date.*"
 //  20.6–30.1   They walk on, slow and happy, while Pisces cries at a turtle-shaped snow lump. Last line: "Slow on purpose |
@@ -105,7 +104,6 @@ const EP = makeEp({
     { lines: L3, open: 13.6, close: 20.5 },
   ],
   ghost: { at: 11.8, x: 1014, y: 900, from: 'left', cell: 3 },
-  cuts: [6.0, { t: T.cut, kind: 'flip' }, 20.6],
   snow: 0.6, ground: 1290,
   scene,
   cues: [

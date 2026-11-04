@@ -1,11 +1,10 @@
-// nc14e14: CUFFING SEASON, "The double date" (40 s vertical, promo/films/next30/b02.md, music: funk · E)
-// Story 0–35.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e14: CUFFING SEASON, "The double date" (38 s vertical, promo/films/next30/b02.md, music: funk · E)
+// Story 0–35.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–7.2    "The double date. | *One* couple's been at this a while."  Frame 0: an outdoor ice rink at night; ♌ Leo
 //              mid-spin with ♎ Libra, ♐ Sag and ♒ Aquarius wobbling on the right. LEO: "and then we got cocoa—"
 //              LIBRA: "—with the *little marshmallows.*"  Sag + Aquarius bump: "sorry!" "sorry!" "SORRY!"
 //   7.2–14.4   "Date *two.*"  SAG: "are we… *behind?*"  Leo + Libra pull out matching mugs. AQUARIUS: "they have
 //              *matching mugs.*"  (the ghost peeks over the rink boards, 12.0)
-//  14.4        card cut.
 //  14.5–21.8   "Date two vs | date *two hundred.*"  THE STARS glide in. "they're on date *two hundred.*" → "you're on date
 //              *two.* that's the fun part."  LIBRA: "our date two? Leo fell in a *fountain.*"  LEO: "it was ICONIC."
 //  22.0        ★ LESSON UNLOCKED "Don't skate on | *someone else's* timeline."  chip "+1 wobble, fully allowed"
@@ -109,7 +108,6 @@ const EP = makeEp({
   ],
   lesson: { at: T.lesson, out: T.lessonOut, text: "Don't skate on | *someone else's* timeline.", chip: '+1 wobble, fully allowed', color: AC },
   ghost: { at: 12.0, x: 640, y: 930, from: 'below', cell: 3 },
-  cuts: [7.2, { t: T.cut, kind: 'deal' }, 26.9],
   snow: 0.7, ground: false,
   scene,
   cues: [

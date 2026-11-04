@@ -1,10 +1,9 @@
-// nc14e13: CUFFING SEASON, "Pisces cries at the first snow" (30 s vertical, promo/films/next30/b02.md, music: dreamy · Eb)
-// Story 0–25.6, then the shared end card. The season look lives in ../cuffkit.js (shared by nc14e13–nc14e24).
+// nc14e13: CUFFING SEASON, "Pisces cries at the first snow" (28 s vertical, promo/films/next30/b02.md, music: dreamy · Eb)
+// Story 0–25.6, then the short end card (no Align card transition). The season look lives in ../cuffkit.js (shared by nc14e13–nc14e24).
 //   0.0–6.0    "The first snow. | *Pisces* is not okay."  Frame 0: Pisces at a frosty window, mid-sob, a big flake stuck
 //              to the glass. PISCES: "every single one is *different!!*"  A snowman rolls up outside: "he has a *scarf!!*"
 //   6.0–13.6   "Then the | *real* feeling."  On the couch: Pisces types "it's snowing. thought of you" to ♈ Aries…
 //              deletes it. PISCES: "is 'thought of you' too *much?*"  (the ghost peeks round the window frame, 11.0)
-//  13.6        card cut.
 //  13.7–20.5   "“Thought of you” is | never *too much.*"  THE STARS float in at the window. Pisces retypes, sends (18.6).
 //              Reply: "come see it with me?"  Pisces fountains.
 //  20.6–25.1   Outside in the snow, Pisces and Aries in bobble hats, catching flakes. Last line: "The snow can't text them.
@@ -96,7 +95,6 @@ const EP = makeEp({
     { lines: LINES3, open: 13.9, close: 20.4 },
   ],
   ghost: { at: 11.0, x: 170, y: 760, from: 'left', cell: 3 },
-  cuts: [6.0, { t: T.cut, kind: 'flip' }, 20.6],
   snow: t => t < T.s4 - 0.05 ? 0 : 1,
   ground: false,
   scene,

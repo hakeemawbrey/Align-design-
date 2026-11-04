@@ -1,12 +1,11 @@
-// nc14e21: CUFFING SEASON, "Defining it before the holidays" (45 s vertical, promo/films/next30/b02.md, music: synthwave · F#m)
-// Story 0–40.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e21: CUFFING SEASON, "Defining it before the holidays" (43 s vertical, promo/films/next30/b02.md, music: synthwave · F#m)
+// Story 0–40.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–7.0    "The holidays are coming. | So is *the talk.*"  Frame 0: ♉ Taurus mid-pace under a wall calendar whose pages
 //              keep flipping; ♏ Scorpio mid-pose at a mirror. TAURUS: "family will ask *'who's that?'*" → "and i'll say…
 //              *a friend??*"
 //   7.0–15.0   "Scorpio | *rehearses.*"  Three openers at the mirror: intense ("we need to talk. *intensely.*"), casual ("so,
 //              like, whatever… are we a *thing?*"), a slideshow ("slide one: *us.*"). Pisces holds a tiny WHO'S THAT? card,
 //              crying.  (the ghost, 11.0)
-//  15.0        card cut.
 //  15.1–25.8   "One card. | *One* question."  THE STARS slide in a talk card: "What are we?"  THE STARS: "or skip the rehearsal.
 //              *ask together.*"  TAURUS: "i don't want to say 'a friend' at *dinner.*"  SCORPIO: "then say *mine.* if you
 //              want to."  TAURUS: "i *want* to."
@@ -128,7 +127,6 @@ const EP = makeEp({
   ],
   lesson: { at: T.lesson, out: T.lessonOut, text: 'Clarity is a *gift* | you can give early.', chip: '+1 answer ready for dinner', color: TC },
   ghost: { at: 11.0, x: 730, y: 960, from: 'right', cell: 3 },
-  cuts: [7.0, { t: T.cut, kind: 'flip' }, 30.9],
   snow: 0, ground: false,
   scene,
   cues: [

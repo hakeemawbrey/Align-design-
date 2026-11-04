@@ -1,10 +1,9 @@
-// nc14e23: CUFFING SEASON, "The one who was never seasonal" (35 s vertical, promo/films/next30/b02.md, music: lofi · Dm)
-// Story 0–30.6, then the shared end card. The season look lives in ../../nc14e13/cuffkit.js.
+// nc14e23: CUFFING SEASON, "The one who was never seasonal" (33 s vertical, promo/films/next30/b02.md, music: lofi · Dm)
+// Story 0–30.6, then the short end card (no Align card transition). The season look lives in ../../nc14e13/cuffkit.js.
 //   0.0–6.0    "Everyone cuffed for winter. | *Scorpio* was here in spring."  Frame 0: ♏ Scorpio in the snow holding out a
 //              pressed pink flower to ♉ Taurus. TAURUS: "a flower? in *this* weather?"  SCORPIO: "i pressed it. in *april.*"
 //   6.0–14.0   "Every | *season.*"  Three flashback snapshots pop up: SPRING (Scorpio gives Taurus the flower), SUMMER (they
 //              share the shade), AUTUMN (they rake the same leaf pile). TAURUS: "wait. you liked me in *april?*"  (ghost, 10.2)
-//  14.0        card cut.
 //  14.1–21.0   "Not a winter | *thing.*"  SCORPIO: "i like you in *every weather.*"  THE STARS: "the real ones don't need the
 //              cold to *show up.*"
 //  21.0–30.1   A flower, a sun, a leaf and a snowflake circle the two; Taurus tucks the flower into its hat. Pisces cries
@@ -98,7 +97,6 @@ const EP = makeEp({
     { lines: L3, open: 14.2, close: 20.9 },
   ],
   ghost: { at: 10.2, x: 865, y: 1290, from: 'below', cell: 3 },
-  cuts: [6.0, { t: T.cut, kind: 'deal' }, 21.0],
   snow: 0.85, ground: 1290,
   scene,
   cues: [
