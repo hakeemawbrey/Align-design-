@@ -1,5 +1,5 @@
-// nvse10: SIGN VS SIGN, "Who handles running late better?" ♍ Virgo vs ♐ Sagittarius (18 s trial reel, b46,
-// music: chiptune · B). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse10: SIGN VS SIGN, "Who handles running late better?" ♍ Virgo vs ♐ Sagittarius (16 s trial reel, b46,
+// music: chiptune · B). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a clock between them ticks past seven.
 //   ROUND 1 ♍ "texts ahead the *moment it knows.*" the phone: "running 5 late, so sorry!", then the ETA updates. "running 5 late, so sorry!" → "ETA updated. again."
 //   ROUND 2 ♐ "turns the detour into an *adventure.*" a bakery, a SHORTCUT? sign. "ooh, a bakery!" → "we found a shortcut! (we didn’t.)"
