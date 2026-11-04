@@ -524,6 +524,7 @@ export function globeFilm(cfg) {
       rows.forEach((r, i) => { const mw = x.measureText(r).width, sc = mw > w - 24 ? (w - 24) / mw : 1; x.save(); x.translate(0, -h / 2 + 11 + lh * (i + 0.5) + 1); x.scale(sc, 1); x.fillText(r, 0, 0); x.restore() })
       x.restore()
     }
+    K.sticker = sticker
     function gags(t) {
       if (t < T.gags[0] || t > T.gagOut[1]) return
       const o = outK(t, T.gagOut)
