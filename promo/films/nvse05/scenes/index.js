@@ -1,5 +1,5 @@
-// nvse05: SIGN VS SIGN, "Who buys a gift on a budget better?" ♐ Sagittarius vs ♑ Capricorn (18 s trial reel, b46,
-// music: jazzy · Bb). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse05: SIGN VS SIGN, "Who buys a gift on a budget better?" ♐ Sagittarius vs ♑ Capricorn (16 s trial reel, b46,
+// music: jazzy · Bb). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a small wallet between them, BUDGET: SMALL.
 //   ROUND 1 ♐ "plans a *day out* instead of a thing." a DAY TRIP ticket. "a trip! somewhere new!" → "the bus leaves at six."
 //   ROUND 2 ♑ "keeps a list of *things they mentioned.*" the list ticks, UNDER BUDGET. "column D: things they said." → "under budget. ahead of time."
