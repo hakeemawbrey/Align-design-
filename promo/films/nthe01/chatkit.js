@@ -13,7 +13,8 @@
 //
 //   makeThread(cfg) → { DURATION, STORY_END, SCENES, CUES, CUTS }
 //     cfg.id          film id
-//     cfg.duration    20 | 25 | 30 (includes the 4.4 s end card)
+//     cfg.duration    the slate length 20 | 25 | 30 (as if with the 4.4 s end card); the film itself ends on the short
+//                     2.4 s end card, so DURATION = cfg.duration − 2
 //     cfg.chat        the chat's name at t = 0;  cfg.renames: [[t, name], …]
 //     cfg.pins        [[t, { from, text }], …]  the PINNED banner (t ≤ 0 = already pinned at frame 0)
 //     cfg.heads       [{ at, text, size?, accent? }, …]  headline captions (at ≤ 0 = already in at frame 0)
@@ -21,7 +22,7 @@
 //     cfg.msgs        [msg, …] (see MESSAGES)   cfg.typing: [{ from | label, a, b }, …]  the "is typing…" row
 //     cfg.stage       [{ at, sign, mood?, look?, hops?: [t], prop?(x, t, P), two?: { sign, mood, look } }, …]
 //     cfg.cry         [[t, level 1–3], …]  Pisces' tears on the stage;  cfg.pisMood: [[t, mood], …]
-//     cfg.cut         the one card-cut candidate (cardfx plays it)
+//     cfg.cut         the turn's beat change (no card transition plays any more; kept for the notes and the music)
 //     cfg.punch       [t, …] extra zoom punches on the chat (a message with big: true punches by itself)
 //     cfg.extra(x, t, S)   optional canvas drawing on top of the stage (S = { sign, star, PANEL, … })
 //     cfg.cues        extra sound cues (absolute times)
@@ -41,8 +42,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack, SIGNS } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, signStar, STAR } from '../startalk.js'
 import { popText } from '../lesson.js'
 
@@ -255,8 +256,10 @@ function drawRuns(x, line, X, Y, col, acc) {
 
 // ═══════════════════════════════════════════════════════════════════════════ the episode
 export function makeThread(cfg) {
-  const DURATION = cfg.duration
-  const STORY_END = DURATION - ENDCARD_LEN
+  // cfg.duration is the slate length (with the old 4.4 s end card); the story keeps its timing and the film ends on the
+  // short 2.4 s end card, so every film is 2.0 s shorter than its slate length (NEXT30-BUILD.md, CHANGE 4 Nov).
+  const STORY_END = cfg.duration - ENDCARD_LEN
+  const DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(3)
   const OUT = [STORY_END - 0.42, STORY_END - 0.04]
   const PIS = signStar('pisces')
   const msgs = cfg.msgs.map((m, i) => ({ kind: 'text', ...m, i }))
@@ -595,8 +598,9 @@ export function makeThread(cfg) {
     return { update(t, out = 1) { b.style.display = out <= 0.01 ? 'none' : 'flex'; b.style.opacity = String(out) } }
   }
 
-  const CUTS = [{ t: cfg.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (CHANGE 4 Nov): cfg.cut stays only as the beat change the music's breakdown follows
+  const CUTS = []
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -628,7 +632,7 @@ export function makeThread(cfg) {
   let prev = null
   for (const s of stage) { if (s.at > 0 && (!prev || prev.sign !== s.sign)) CUES.push(['pop', r3(s.at), 523.25, 0.03, -0.4]); prev = s }
   for (const [a] of (cfg.cry || [])) if (a > 0) CUES.push(['pluck', r3(a), 1318.51, 0.02, 0.4, 0.5])
-  CUES.push(['whoosh', r3(OUT[0]), 0.3, 0.025], ...(cfg.cues || []), ...cardCutCues(CUTS), ...endcardCues(STORY_END))
+  CUES.push(['whoosh', r3(OUT[0]), 0.3, 0.025], ...(cfg.cues || []), ...endcardCues(STORY_END, { short: true }))
 
   return { DURATION, STORY_END, SCENES, CUES, CUTS }
 }
