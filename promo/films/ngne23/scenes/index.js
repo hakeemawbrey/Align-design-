@@ -1,5 +1,5 @@
-// ngne23: STAR TALK GAME NIGHT, Ep 23, "Virgo vs Pisces: The Spare Key" (35 s vertical, opposite signs, a rematch, music: lofi · E).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne23: STAR TALK GAME NIGHT, Ep 23, "Virgo vs Pisces: The Spare Key" (33 s vertical, opposite signs, a rematch, music: lofi · E).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Virgo vs Pisces. | Tissues *restocked.*' Pisces crying at its podium; Virgo with a clipboard (ep 11 was a tie).
 //   R1 'I locked myself out. ___': Pisces 'oh no!! I'm crying FOR you!!' / Virgo 'on my way with the spare. and a snack.' → Virgo
 //   R2 'They admit they're scared to say “I like you”' both GREEN → both
