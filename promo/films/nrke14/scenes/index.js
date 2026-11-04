@@ -1,4 +1,4 @@
-// nrke14: RANKING THE SIGNS, "Who dances first at the holiday party" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke14: RANKING THE SIGNS, "Who dances first at the holiday party" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // house · C). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who dances first / at the *holiday party?*" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Capricorn → #4 Gemini slam in.   6.3 card cut.   6.8 #3 Aries · 7.7 #2 Sagittarius
