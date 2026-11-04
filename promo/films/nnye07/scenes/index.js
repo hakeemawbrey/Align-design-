@@ -1,8 +1,8 @@
-// nnye07: NEW YEAR, SAME HEART · Libra: what I'm keeping (20 s vertical, star_advice, music: synthwave · Bb).
+// nnye07: NEW YEAR, SAME HEART · Libra: what I'm keeping (18 s vertical, star_advice, music: synthwave · Bb).
 // The format lives in ../../nnye01/scenes/yearkit.js (shared by nnye01–nnye12). Story 0–15.6, then the shared end card.
 //   0.0   hook: "*Libra,* / which box? / (You can choose.)"
 //   2.4   LEAVING: "“whatever you want”" · "keeping the peace, losing me" (Libra: "um. both?")
-//   6.6   card cut → KEEPING: "the charm", the gift box closes.
+//   6.6   → KEEPING: "the charm", the gift box closes.
 //   10.85 "New year. | Same *heart.*"  THE STARS: "Your want counts *too*."
 import { makeYear } from '../../nnye01/scenes/yearkit.js'
 
