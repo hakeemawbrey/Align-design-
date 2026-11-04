@@ -1,4 +1,4 @@
-// nh15e19: HOME FOR THE HOLIDAYS, "Cooking together." (30 s vertical, Star Talk Season 15 ep 19, music: dreamy · F)
+// nh15e19: HOME FOR THE HOLIDAYS, "Cooking together." (28 s vertical, Star Talk Season 15 ep 19, music: dreamy · F)
 // Story 0–25.6, then the shared end card. The season's look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.0    hook "Two cooks. *One* spoon."  Taurus and Cancer (Taurus's date) both gripping one wooden spoon over the pot.
 //   3.0–7.4    "Taurus | *tastes everything.*"  Taste, taste, taste. "needs more… everything."
