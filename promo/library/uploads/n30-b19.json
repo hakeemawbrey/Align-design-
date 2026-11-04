@@ -70,5 +70,41 @@
   "series": "mltease",
   "episode": 5,
   "caption": "Three offers of help. Three no's.\nWhy is yes, thank you so hard? Moonlight Lane, Ep 2."
+ },
+ "nmte06": {
+  "video": "/_blob/f1d85ae38c3ec9ccf3953ded698db48d",
+  "poster": "/_blob/dd25edcca98787b87a820025fc6bdb5e",
+  "title": "Shut out",
+  "len": 19,
+  "series": "mltease",
+  "episode": 6,
+  "caption": "When you keep turning down help, the people offering start to feel shut out.\nMoonlight Lane, Ep 2."
+ },
+ "nmte07": {
+  "video": "/_blob/986ecfc5f09d0088096b1e6a7d64fcaf",
+  "poster": "/_blob/18be5dd652f395633ddc0553f87bcaab",
+  "title": "Scarf or sign",
+  "len": 22,
+  "series": "mltease",
+  "episode": 7,
+  "caption": "They lent you their scarf. It's been four days.\nIs it a scarf, or a sign? Moonlight Lane, Ep 3."
+ },
+ "nmte08": {
+  "video": "/_blob/207bff741e5e3303078f746fe2823570",
+  "poster": "/_blob/b2c9ae7b6c119f5299fdb95e55bee5fb",
+  "title": "The nine-card speech",
+  "len": 18,
+  "series": "mltease",
+  "episode": 8,
+  "caption": "Wrote a nine-card speech to return a scarf?\nCancer did, then hid in a snowbank. Moonlight Lane, Ep 3."
+ },
+ "nmte09": {
+  "video": "/_blob/edd21033d3e437969b690a046cbcf93b",
+  "poster": "/_blob/8fad382862aa9099c72a5d863d165428",
+  "title": "One warm sentence",
+  "len": 22,
+  "series": "mltease",
+  "episode": 9,
+  "caption": "Hoping a gift will say what you can't?\nIt won't. One warm sentence will. Moonlight Lane, Ep 3."
  }
 }
