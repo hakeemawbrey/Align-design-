@@ -81,30 +81,84 @@
   "caption": "Their gift wrap looks like a snowball made of tape. Problem?\nNever. Lumpy paper, perfect thought inside."
  },
  "ndbe10": {
-  "video": "/_blob/d462ae917fd17f80f2067f7e7f955b1e",
-  "poster": "/_blob/7c1414f29b9197ee1e5e8398b9bb0dc6",
+  "video": "/_blob/79a48320e303e8d05eb6df59f518ff12",
+  "poster": "/_blob/cad14693be431a515e8cb49af9eb1f46",
   "title": "They go to bed at 9:30.",
-  "len": 15,
+  "len": 13,
   "series": "deal",
   "episode": 10,
   "caption": "They're asleep by 9:30 every night. Dealbreaker for a night owl?\nNot at all. Early sleepers make the best breakfast dates."
  },
  "ndbe11": {
-  "video": "/_blob/412e46ab8eba5a101557118344534028",
-  "poster": "/_blob/f61b24d6d77e61ca4a79342acd302589",
+  "video": "/_blob/1b1115b896e4a53bd52a4d79ee4524b8",
+  "poster": "/_blob/6cf8ff2d7261f4da1a21bd3f00dc5dd3",
   "title": "They read your phone over your shoulder.",
-  "len": 15,
+  "len": 13,
   "series": "deal",
   "episode": 11,
   "caption": "They read your messages over your shoulder. Harmless, or not okay?\nNot okay. Trust doesn't peek, and you're allowed your privacy."
  },
  "ndbe12": {
-  "video": "/_blob/b4d5424e87fc877c2e5993d513a1e2f2",
-  "poster": "/_blob/7d28bd9c2f3560d0d2b47a0c0dd1d369",
+  "video": "/_blob/cf49c3f60114f7f6b0fa239863c638af",
+  "poster": "/_blob/3b5288a2cc4429bdfa280bc61ecf2de6",
   "title": "They cried at the trailer.",
-  "len": 15,
+  "len": 13,
   "series": "deal",
   "episode": 12,
   "caption": "They cried at a movie trailer. Like, a lot. Too soft?\nSoft hearts are strong hearts. Bring tissues and keep them close."
+ },
+ "ndbe13": {
+  "video": "/_blob/396b5ab8077b632ded61a3181438ab69",
+  "poster": "/_blob/0075cb0398167811c308a574ff887945",
+  "title": "They wear the same sweater every date.",
+  "len": 13,
+  "series": "deal",
+  "episode": 13,
+  "caption": "Same cozy sweater on date one, two and three. Dealbreaker?\nCozy and consistent is a good sign. Maybe get a matching one."
+ },
+ "ndbe14": {
+  "video": "/_blob/ff14f6f741699557da5cbbdfa1deaa00",
+  "poster": "/_blob/97026e201244af2612a45b42fc9200a0",
+  "title": "They never ask one question about you.",
+  "len": 13,
+  "series": "deal",
+  "episode": 14,
+  "caption": "Two hours in and they haven't asked you a single question. Is that it?\nCuriosity is how care sounds. You deserve someone who asks."
+ },
+ "ndbe15": {
+  "video": "/_blob/53b1fbddee812f0bcb2694db95268c78",
+  "poster": "/_blob/bed4a7691ec52c3b887c7f4803e2f354",
+  "title": "They make fun of what you love.",
+  "len": 13,
+  "series": "deal",
+  "episode": 15,
+  "caption": "You show them the frog you knitted and they laugh at you. Now what?\nFind someone who asks why you love it instead."
+ },
+ "ndbe16": {
+  "video": "/_blob/4b561c13b77403efd721c6015df084d4",
+  "poster": "/_blob/d51725c7844027a3fe9a002f7a25acb0",
+  "title": "They show up ten minutes early.",
+  "len": 13,
+  "series": "deal",
+  "episode": 16,
+  "caption": "They're at your door early and you're still in a towel. Dealbreaker?\nEarly means excited. Especially if they brought soup."
+ },
+ "ndbe17": {
+  "video": "/_blob/3503147c6fea18f9746f596ab94ee2cd",
+  "poster": "/_blob/78a56c9bbe5f67d9b8279aaa58c77a12",
+  "title": "They sing loudly in the car.",
+  "len": 13,
+  "series": "deal",
+  "episode": 17,
+  "caption": "Your date belts every song in the car. Embarrassing or perfect?\nJoin in. Duets go further than side-eye."
+ },
+ "ndbe18": {
+  "video": "/_blob/cc357a567c6d4d78ab48cd2844c766a1",
+  "poster": "/_blob/9501b7eee148670d6dd10e3a3a87cf4c",
+  "title": "They pack a checklist for a day trip.",
+  "len": 13,
+  "series": "deal",
+  "episode": 18,
+  "caption": "They made a checklist for a one-day trip. Too much planning?\nNot when they packed the plasters. Let them pack, you bring snacks."
  }
 }
