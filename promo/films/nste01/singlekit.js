@@ -17,7 +17,7 @@
 //     cfg.bubbles: [{ t0, t1, x, y, text, col, size, tail }] canvas speech bubbles (drawn above the scenes)
 //     cfg.pis1 / cfg.pis3: Pisces' spot in scenes 1 and 3 ({ x, y, s, noTissues, look }); cfg.pisces = true when the
 //     hero IS Pisces (then the background Pisces is skipped and the hero cries itself).
-//     cfg.meter: { x, y } for the THRIVING meter (default 540, 1450).   cfg.cues: extra sound cues (absolute times).
+//     cfg.meter: { x, y } for the THRIVING meter (default 540, 1580).   cfg.cues: extra sound cues (absolute times).
 // Pure f(t); DOM / canvases only inside build().
 import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill, A } from '../../src/scenes/common.js'
@@ -534,7 +534,7 @@ export function makeSingle(cfg) {
           if (cfg[key]) cfg[key](x, t, { ...S0, u: t - a, t0: a, t1: b, k: 1 })
           if (key === 's2') starsBeat(t)
           bgPisces(x, t, P, a, b, tears)
-          if (key === 's3') drawMeter(x, t, (cfg.meter || {}).x || 540, (cfg.meter || {}).y || 1450)
+          if (key === 's3') drawMeter(x, t, (cfg.meter || {}).x || 540, (cfg.meter || {}).y || 1580)
           x.restore()
         }
         finale(t)
