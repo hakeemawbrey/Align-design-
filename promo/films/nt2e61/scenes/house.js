@@ -153,7 +153,7 @@ export function phoneMsg(x, cx, cy, lines, { rot = 0, s = 1, col = '#9fe6b0' } =
   x.save(); x.translate(cx, cy); x.rotate(rot); x.scale(s, s)
   box(x, -70, -125, 140, 250, '#2a2148', { b: 7 }); R(x, '#14102a', -58, -108, 116, 210)
   x.font = `700 22px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'
-  lines.forEach((l, i) => { x.font = `700 ${i === 0 ? 22 : 32}px ${MONO}`; x.fillStyle = i === 0 ? col : BONE; x.fillText(l, 0, -52 + i * 42) })
+  lines.forEach((l, i) => { let fs = i === 0 ? 22 : 32; x.font = `700 ${fs}px ${MONO}`; const mw = x.measureText(l).width; if (mw > 104) { fs = Math.floor(fs * 104 / mw); x.font = `700 ${fs}px ${MONO}` } x.fillStyle = i === 0 ? col : BONE; x.fillText(l, 0, -52 + i * 42) })
   x.restore()
 }
 /** a pixel thought/speech word in big Inter (sound-effect text) */
