@@ -170,7 +170,7 @@ export function drawSnowBank(x, t, { y0 = 1290, alpha = 1 } = {}) {
 
 // ─────────────────────────────────────────────── props shared across the series
 /** a wrapped gift box; open 0…1 lifts the lid off and away. Returns the box's top-centre (for whatever comes out). */
-export function giftBox(x, cx, cy, s, t, { color = '#e8344e', ribbon = GOLD, open = 0, wobble = 0, hi = null } = {}) {
+export function giftBox(x, cx, cy, s, t, { color = '#e8344e', ribbon = GOLD, open = 0, wobble = 0, hi = null, noLid = false } = {}) {
   const w = s, h = s * 0.78
   const wob = wobble * Math.sin(t * 22) * 0.06
   x.save(); x.translate(cx, cy); x.rotate(wob)
@@ -181,7 +181,7 @@ export function giftBox(x, cx, cy, s, t, { color = '#e8344e', ribbon = GOLD, ope
   // the lid
   const lp = ease.outCubic(clamp(open))
   const lx = cx + lp * w * 0.9, ly = cy - h / 2 - 14 - lp * s * 0.9, lr = wob + lp * 0.9
-  if (open < 1.2) {
+  if (!noLid && open < 1.2) {
     x.save(); x.translate(lx, ly); x.rotate(lr); x.globalAlpha *= 1 - clamp((open - 0.8) / 0.4)
     box(x, -w * 0.56, -s * 0.12, w * 1.12, s * 0.2, color, { b: 6, hi: 'rgba(255,255,255,0.3)' })
     R(x, ribbon, -w * 0.07, -s * 0.12, w * 0.14, s * 0.2)
