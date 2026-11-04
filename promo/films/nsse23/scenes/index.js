@@ -1,4 +1,4 @@
-// nsse23 — SIGN × SIGN, Vol. 2, ep 23: "Scorpio × Capricorn: who says it first." (30 s vertical, star_advice post)
+// nsse23 — SIGN × SIGN, Vol. 2, ep 23: "Scorpio × Capricorn: who says it first." (28 s vertical, star_advice post)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Scorpio × Capricorn: | *who says it first?*"  A: "I'll say it *when they say it.*"  B: "I'll say it *next quarter.*"
 //   TIP 1  "Capricorn, feelings | aren't a *deadline.*"  B: "no deadline. I just… *like you. a lot.*"

@@ -1,4 +1,4 @@
-// nsse13 · SIGN × SIGN, Volume 2: "Scorpio × Aquarius: the vault and the open door." (30 s vertical, star_advice · music: screwed · Fm)
+// nsse13 · SIGN × SIGN, Volume 2: "Scorpio × Aquarius: the vault and the open door." (28 s vertical, star_advice · music: screwed · Fm)
 // Engine + look: ../../nsse01/kit.js (shared by nsse01–16): cold open, TIP 1, TIP 2, TIP 3 ↻ (needle sweeps to ALIGN),
 // the last line, then the end card. Rows: promo/films/next30/b35.md. Every prop/line below is this episode's own.
 import { makeFilm } from '../../nsse01/kit.js'

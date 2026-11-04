@@ -1,4 +1,4 @@
-// nsse20 — SIGN × SIGN, Vol. 2, ep 20: "Sagittarius × Capricorn: the season handover." (30 s vertical, star_advice post)
+// nsse20 — SIGN × SIGN, Vol. 2, ep 20: "Sagittarius × Capricorn: the season handover." (28 s vertical, star_advice post)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Sagittarius × Capricorn: | *the handover.*"  A: "my season's over! here, *the keys!*"  B: "I'll need a *receipt* for these keys."
 //   TIP 1  "Sag, finish | *one* thing."  A: "I finished the photo album. *ALL of it.*"

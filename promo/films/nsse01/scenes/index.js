@@ -1,4 +1,4 @@
-// nsse01 · SIGN × SIGN, Volume 2, ep 1: "Leo × Capricorn: the spotlight and the schedule." (30 s vertical, star_advice)
+// nsse01 · SIGN × SIGN, Volume 2, ep 1: "Leo × Capricorn: the spotlight and the schedule." (28 s vertical, star_advice)
 // Engine + look: ../kit.js (shared by nsse01–16). Rows: promo/films/next30/b35.md.
 //   cold open  "Leo × Capricorn: | the *holiday party.*"  LEO arrives at 8:40; CAP leaves at 9:00. Needle slams to PUSH.
 //   TIP 1      "Capricorn, say it | *out loud.*"  checklist: thought it ✗ / said it ✓. "your coat is… excellent."

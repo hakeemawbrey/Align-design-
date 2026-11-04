@@ -1,4 +1,4 @@
-// nsse17 — SIGN × SIGN, Vol. 2, ep 17: "Taurus × Pisces: the blanket and the waterworks." (30 s vertical, star_advice post)
+// nsse17 — SIGN × SIGN, Vol. 2, ep 17: "Taurus × Pisces: the blanket and the waterworks." (28 s vertical, star_advice post)
 // Movie night. The shared look + timeline live in ./sskit.js (imported by nsse18–32).
 //   0.0–6.0   "Taurus × Pisces: | *movie night.*"  Taurus mid-hop on frame 0; fig. 1 Taurus (wants: a cozy night in), fig. 2 Pisces (wants: to feel everything), already sobbing; fig. 3
 //             is the tissue box. TAURUS: "snacks: ready. blanket: ready."  PISCES: "I'm crying. it's the opening titles."

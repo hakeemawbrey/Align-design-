@@ -16,13 +16,14 @@ import { clamp, lerp, prog, ease, rng, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, READING, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar } from '../startalk.js'
 import { popText } from '../lesson.js'
 
-export const DURATION = 30
-export const STORY_END = DURATION - ENDCARD_LEN       // 25.6
+// CHANGE (4 Nov): the story keeps its 25.6 s; the short end card (2.4 s) follows, so every film is 28 s. No card cut.
+export const STORY_END = 25.6
+export const DURATION = STORY_END + ENDCARD_SHORT_LEN   // 28
 export const INK = '#2b2550', PENCIL = '#4a4470', RED = '#c8344c', GOLD = '#f2c75c', BONE = '#efe6d6', PAPER = '#f6edd6'
 const SERIF = "'EB Garamond', Georgia, serif"
 const MONO = "'Space Mono', ui-monospace, monospace"
@@ -666,8 +667,8 @@ export function makeFilm(cfg) {
     }
   }
 
-  const CUTS = [T.cands[0], { t: T.cands[1], kind: 'flip' }, T.cands[2]]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', label: "TONIGHT'S DECK" }), cardCuts(CUTS)]
+  const CUTS = []   // no card cut (CHANGE, 4 Nov)
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', label: "TONIGHT'S DECK" })]
 
   // ── sound
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -707,9 +708,8 @@ export function makeFilm(cfg) {
     ['glitter', r3(fin.land), r3(fin.land + 0.6)], ['bell', r3(fin.land + 0.05), 2349.32, 0.025, 1.0, 0],
     ['whoosh', r3(fin.out[0]), 0.35, 0.03],
     ...talkCues(LINES, { cps: CPS }),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  const MUSIC = { ...cfg.music, sections: { drop: r3(LT[1].start), breakdown: [r3(B[3].S)], lift: [r3(fin.S)], outroAt: DURATION - 4.4 }, hits: [r3(B[1].stamp), r3(sweep.ring)] }
+  const MUSIC = { ...cfg.music, sections: { drop: r3(LT[1].start), breakdown: [r3(B[3].S)], lift: [r3(fin.S)], outroAt: STORY_END }, hits: [r3(B[1].stamp), r3(sweep.ring)] }
   return { DURATION, SCENES, CUES, MUSIC, T, B, LINES, S, CUTS }
 }

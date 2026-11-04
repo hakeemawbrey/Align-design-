@@ -1,4 +1,4 @@
-// nsse26 — SIGN × SIGN, Vol. 2, ep 26: "Gemini × Pisces: the subject change." (30 s vertical, star_advice post)
+// nsse26 — SIGN × SIGN, Vol. 2, ep 26: "Gemini × Pisces: the subject change." (28 s vertical, star_advice post)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Gemini × Pisces: | *anyway! so, unrelated—*"  A: "anyway! so, *unrelated—*"  B: "I was in the middle of *a feeling.*"
 //   TIP 1  "Gemini, stay | in the *feeling.*"  A: "wait. go back. *tell me more.*"

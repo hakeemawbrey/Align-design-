@@ -1,4 +1,4 @@
-// nsse19 — SIGN × SIGN, Vol. 2, ep 19: "Gemini × Libra: the invites and the yes-es." (30 s vertical, star_advice post)
+// nsse19 — SIGN × SIGN, Vol. 2, ep 19: "Gemini × Libra: the invites and the yes-es." (28 s vertical, star_advice post)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Gemini × Libra: | *four parties, one night.*"  A: "we're at *three parties* tonight!"  B: "four. I said yes to *Leo's* too."
 //   TIP 1  "Gemini, | *check in* with them."  A: "having fun? or should we *head out?*"

@@ -1,4 +1,4 @@
-// nsse11 · SIGN × SIGN, Volume 2: "Aquarius × Cancer: the theory and the feeling." (30 s vertical, star_advice · music: synthwave · Am)
+// nsse11 · SIGN × SIGN, Volume 2: "Aquarius × Cancer: the theory and the feeling." (28 s vertical, star_advice · music: synthwave · Am)
 // Engine + look: ../../nsse01/kit.js (shared by nsse01–16): cold open, TIP 1, TIP 2, TIP 3 ↻ (needle sweeps to ALIGN),
 // the last line, then the end card. Rows: promo/films/next30/b35.md. Every prop/line below is this episode's own.
 import { makeFilm } from '../../nsse01/kit.js'

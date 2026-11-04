@@ -1,4 +1,4 @@
-// nsse28 — SIGN × SIGN, Vol. 2, ep 28: "Capricorn × Aquarius: two midnights." (30 s vertical, star_advice post)
+// nsse28 — SIGN × SIGN, Vol. 2, ep 28: "Capricorn × Aquarius: two midnights." (28 s vertical, star_advice post)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Capricorn × Aquarius: | *midnight at 3 PM?*"  A: "midnight is *at midnight.*"  B: "midnight at 3 PM? it's midnight *somewhere!*"
 //   TIP 1  "Capricorn, try | *one* weird idea."  A: "fine. one 3 PM toast. *just one.*"

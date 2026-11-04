@@ -1,4 +1,4 @@
-// nsse24 — SIGN × SIGN, Vol. 2, ep 24: "Aries × Aquarius: the snowman and the snow-bot." (30 s vertical, star_advice post)
+// nsse24 — SIGN × SIGN, Vol. 2, ep 24: "Aries × Aquarius: the snowman and the snow-bot." (28 s vertical, star_advice post)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Aries × Aquarius: | *snowman, or snow-bot?*"  A: "snowman! *done!* next!"  B: "it needs *solar panels.*"
 //   TIP 1  "Aries, ask their | idea *first.*"  A: "ok. show me the blueprint. *slowly.*"
