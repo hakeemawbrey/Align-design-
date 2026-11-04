@@ -571,7 +571,7 @@ export function makeVersus(cfg) {
       namePlate(x, 275, 1210, cfg.a, 1); namePlate(x, 805, 1210, cfg.b, 1)
       if (cfg.hookDraw) cfg.hookDraw(x, t, S)
       vsBadge(x, t, 540, 940, 1)
-      if (!pisPlays) { tissues(x, 815, 1650, 76); pisces(x, t, { x: 935, y: 1610, s: 150 }, 1, 'wide', [-1, -1]) }
+      if (!pisPlays) { tissues(x, 815, 1650, 76); pisces(x, t, { x: 935, y: 1610, s: 150 }, 2, 'wide', [-1, -1]) }
     }
 
     function round(t, i) {
