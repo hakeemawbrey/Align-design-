@@ -1,5 +1,5 @@
-// nvse24: SIGN VS SIGN, "Who handles the countdown better?" ♍ Virgo vs ♏ Scorpio (18 s trial reel, b46,
-// music: cinematic · Dm). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse24: SIGN VS SIGN, "Who handles the countdown better?" ♍ Virgo vs ♏ Scorpio (16 s trial reel, b46,
+// music: cinematic · Dm). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 // (No year and no sky claims: just a clock near midnight.)
 //   hook: a clock near midnight between them, 11:59 PM.
 //   ROUND 1 ♍ "runs the countdown *to the second.*" the plan ticks, the clock jumps. "11:59:50. positions." → "who moved the clock??"
