@@ -1,4 +1,4 @@
-// nrke03: RANKING THE SIGNS, "Who cries at the movie" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke03: RANKING THE SIGNS, "Who cries at the movie" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // pop · C). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who cries / *at the movie?*" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Capricorn → #4 Taurus slam in.   6.3 card cut.   6.8 #3 Libra · 7.7 #2 Cancer
