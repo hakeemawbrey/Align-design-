@@ -1,5 +1,5 @@
-// nvse20: SIGN VS SIGN, "Who handles a change of plans better?" ♉ Taurus vs ♒ Aquarius (18 s trial reel, b46,
-// music: pop · F). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse20: SIGN VS SIGN, "Who handles a change of plans better?" ♉ Taurus vs ♒ Aquarius (16 s trial reel, b46,
+// music: pop · F). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a plan card flips over and over between them.
 //   ROUND 1 ♉ "had the night *mapped out.*" TONIGHT: pasta, then it's crossed out. "but… the pasta." → "ok. pasta tomorrow."
 //   ROUND 2 ♒ "loves *any* new plan, instantly." NEW PLAN?, confetti, then question marks. "new plan? I live for new plans." → "…what is the new plan?"
