@@ -1,10 +1,10 @@
-// naske30 · Ask the Stars, Volume 2, ep 30 · "My partner is messy. It drives me nuts." (20 s, chiptune · A)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske30 · Ask the Stars, Volume 2, ep 30 · "My partner is messy. It drives me nuts." (18 s, chiptune · A)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "My partner is *messy.* It drives me nuts."  ♍ Virgo mid-label of a stray sock with a label maker;
 //         the tape reads SOCK (WHY?).
 //   3.0   "pick the one thing that matters most."  A pile of mess; Virgo circles the dishes in red.
 //   5.9   "ask kindly: 'can we do dishes together?'"  Two stars at a sink, bubbles rising.
-//   8.75  card cut → 8.8 "let the rest be their way. it's their home too."  Virgo sets the label maker down by the sock
+//   8.8   "let the rest be their way. it's their home too."  Virgo sets the label maker down by the sock
 //         pile and smiles.
 //   12.1  "Pick *one* thing. | Let the rest go."
 import { makeAsk, R, box, drawBits, mug, bubble, sparkles, hearts, shadow, label, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, MONO, INTER } from '../../naske19/scenes/askkit2.js'
