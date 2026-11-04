@@ -1,4 +1,4 @@
-// nh15e20: HOME FOR THE HOLIDAYS, "The quiet walk after dinner." (35 s vertical, Star Talk Season 15 ep 20,
+// nh15e20: HOME FOR THE HOLIDAYS, "The quiet walk after dinner." (33 s vertical, Star Talk Season 15 ep 20,
 // music: cinematic · Eb). Story 0–30.6, then the shared end card. The look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.4    hook "The house is *loud.*"  A NOISE meter pinned at MAX over the dining room (Uncle's laugh, the toy drum,
 //              three conversations at once); Scorpio slides into its scarf.
