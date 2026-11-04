@@ -1,4 +1,13 @@
 {
+ "ngie01": {
+  "video": "/_blob/369bb177406c5cea8358aa69a5fd7ffd",
+  "poster": "/_blob/f6a8a6c3eeeaf159a03cf4c9334db84e",
+  "title": "Aries as a winter gift",
+  "len": 16,
+  "series": "gifts",
+  "episode": 1,
+  "caption": "If your Aries were a winter gift, it would heat up instantly.\nHand warmers, plus a note: race you outside."
+ },
  "npye01": {
   "video": "/_blob/b0af2e6c2192b510bb997d58e25b98a5",
   "poster": "/_blob/fcbd979055d75039b5e9c2eee7cf26de",
@@ -61,5 +70,50 @@
   "series": "party",
   "episode": 7,
   "caption": "Four outfit changes before leaving for one party.\nWorth it, because Libra arrives and introduces the two people who were meant to be friends."
+ },
+ "npye08": {
+  "video": "/_blob/a5a8de3506c30d8f880f20f732ee85af",
+  "poster": "/_blob/6c2755469e77a56088ea641d932f2b77",
+  "title": "Scorpio at the holiday party",
+  "len": 16,
+  "series": "party",
+  "episode": 8,
+  "caption": "Has a Scorpio ever skipped hello and asked what scares you?\nIt really listens to the answer. Maybe open with the weather, though."
+ },
+ "npye09": {
+  "video": "/_blob/589c011ec85bff901fcf2051df4e8741",
+  "poster": "/_blob/09fc163ccec2aadbf5bb27fad51b93f9",
+  "title": "Sagittarius at the holiday party",
+  "len": 16,
+  "series": "party",
+  "episode": 9,
+  "caption": "Late, snowy, and already telling the story of the bus ride.\nSagittarius wants a snow walk right now, and asks who wants in."
+ },
+ "npye10": {
+  "video": "/_blob/3efc1941f2e767652d3893d1204a041f",
+  "poster": "/_blob/33ca68022e622316717119a5fc5b14fe",
+  "title": "Capricorn at the holiday party",
+  "len": 16,
+  "series": "party",
+  "episode": 10,
+  "caption": "Capricorn planned to leave at 9:30.\nIt's the last one there, doing the dishes, because it wants to."
+ },
+ "npye11": {
+  "video": "/_blob/b2f0d75c5d752d7b49cfdc3c1b45d78d",
+  "poster": "/_blob/1239da3e5fe5a4d6e422541d030afa92",
+  "title": "Aquarius at the holiday party",
+  "len": 16,
+  "series": "party",
+  "episode": 11,
+  "caption": "Spent an hour at the party talking to the host's dog?\nAquarius gets it. Then it starts a snowflake table where every weird one is perfect."
+ },
+ "npye12": {
+  "video": "/_blob/9b0c56183a48424487c11db0a57dc12f",
+  "poster": "/_blob/ae9feb074e1299063790da177bd8f272",
+  "title": "Pisces at the holiday party",
+  "len": 16,
+  "series": "party",
+  "episode": 12,
+  "caption": "Cried in the group photo. Hugged the host goodbye for twenty minutes.\nPisces at a party, and honestly, the big feelings are welcome."
  }
 }
