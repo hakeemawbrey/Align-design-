@@ -403,9 +403,10 @@ function tableFront(x, t, o) {
   R(x, '#c94a5a', 70, top + 40, 940, 180); R(x, INK, 70, top + 40, 940, 6)
   for (let i = 0; i < 12; i++) R(x, '#b23e4e', 90 + i * 78, top + 60, 30, 160)
   if (o.dishes !== false) {
-    roast(x, 540, top - 10)
-    plate(x, 230, top + 14, 120, '#e8b25a'); plate(x, 850, top + 14, 120, '#7fbf5a')
-    candle(x, t, 380, top + 6); candle(x, t, 700, top + 6)
+    const rx = o.roastX ?? 540
+    roast(x, rx, top - 10)
+    for (const [px, c] of (o.plates || [[230, '#e8b25a'], [850, '#7fbf5a']])) plate(x, px, top + 14, 120, c)
+    for (const cx of (o.candles || [380, 700])) candle(x, t, cx, top + 6)
   }
 }
 function kitchenBack(x, t, o) {
