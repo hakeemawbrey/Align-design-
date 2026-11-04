@@ -1,5 +1,5 @@
-// nwfe05: WAIT FOR IT, "You said it once." (20 s vertical trial reel, Wait for It Vol. 2 ep 5, music: screwed · F#m)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe05: WAIT FOR IT, "You said it once." (18 s vertical trial reel, Wait for It Vol. 2 ep 5, music: screwed · F#m)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Capricorn is writing | *a list.*" + "wait for it…". ♑ Capricorn, mid-stroke, writes on a big clipboard;
 //             ♌ Leo waits on the right, nervous. Scribbled lines appear one by one.
 //   3.95–9.3  "This looks | *very serious…*"  Stickers: "item fourteen: *?*" · "it's *two pages* now" ·

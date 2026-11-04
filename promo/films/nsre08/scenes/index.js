@@ -1,4 +1,4 @@
-// nsre08: SILENT REVIEW, "Silent review: a coupon book." (20 s vertical trial reel, Silent Review Vol. 2 ep 8,
+// nsre08: SILENT REVIEW, "Silent review: a coupon book." (18 s vertical trial reel, Silent Review Vol. 2 ep 8,
 // music: jazzy · B). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♎ Libra, weigher of every detail, reviews a handmade coupon book from ♐ Sagittarius. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *a coupon book.*" Sag is mid-slide with a little stapled booklet.

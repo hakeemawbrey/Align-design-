@@ -34,8 +34,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -53,8 +53,8 @@ export const ramp = (t, a, b, v0, v1) => lerp(v0, v1, ease.inOutCubic(prog(t, a,
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline (same in all five films)
-export const DURATION = 20
-export const STORY_END = DURATION - ENDCARD_LEN          // 15.6
+export const DURATION = 18                               // story 15.6 + the short end card (2.4 s)
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN          // 15.6
 export const T = {
   black: [-1, -0.9], bug: -1, bar: -1,
   h0: -1, h0Out: [11.2, 11.4],
@@ -591,7 +591,7 @@ export function makeSilent(cfg) {
 
   // one card-cut candidate: under the jump into the third (twisted) reaction
   const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -627,8 +627,7 @@ export function makeSilent(cfg) {
     ['pop', T.giverUp + 0.05, 739.99, 0.035, -0.4], ['pop', T.pisIn + 0.05, 987.77, 0.03, 0.4],
     ['pluck', r3(T.total + 0.15), 1174.66, 0.035, 0.5, -0.4], ['pluck', r3(T.total + 0.27), 1567.98, 0.03, 0.5, -0.4],
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ].filter(c => c[1] >= 0)
   return { DURATION, SCENES, CUES, T, CUTS }
 }

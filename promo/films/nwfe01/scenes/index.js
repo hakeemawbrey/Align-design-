@@ -1,5 +1,5 @@
-// nwfe01: WAIT FOR IT, "Your side first." (20 s vertical trial reel, Wait for It Vol. 2 ep 1, music: screwed · Cm)
-// Story 0–15.6, then the shared end card. The format look and timing live in ./wait.js (the Vol. 2 kit, imported by all 12).
+// nwfe01: WAIT FOR IT, "Your side first." (18 s vertical trial reel, Wait for It Vol. 2 ep 1, music: screwed · Cm)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ./wait.js (the Vol. 2 kit, imported by all 12).
 //   0.0–3.8   "Virgo is scraping | *the windshield.*" + "wait for it…". ♍ Virgo, mid-scrape with a long snow brush, works
 //             at a frosted car windshield; ♉ Taurus shivers beside the car ("brrr"). Snow falls.
 //   3.95–9.3  "It's taking | *forever…*"  The cleared patch grows painfully slowly. Stickers: "one *tiny* square" ·

@@ -1,4 +1,4 @@
-// nsre12: SILENT REVIEW, "Silent review: a jar of twelve reasons." (20 s vertical trial reel, Silent Review Vol. 2
+// nsre12: SILENT REVIEW, "Silent review: a jar of twelve reasons." (18 s vertical trial reel, Silent Review Vol. 2
 // ep 12, music: jazzy · Ab). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♓ Pisces is the critic this time (so the background Pisces is off) and tries very hard to stay stoic while it reviews
 // a jar of twelve folded reasons from ♍ Virgo. Not one word is spoken.

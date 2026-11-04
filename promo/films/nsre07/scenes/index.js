@@ -1,4 +1,4 @@
-// nsre07: SILENT REVIEW, "Silent review: a framed photo." (20 s vertical trial reel, Silent Review Vol. 2 ep 7,
+// nsre07: SILENT REVIEW, "Silent review: a framed photo." (18 s vertical trial reel, Silent Review Vol. 2 ep 7,
 // music: jazzy · Bb). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♋ Cancer, keeper of memories, reviews a framed photo from ♏ Scorpio. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *a framed photo.*" Scorpio is mid-slide with a wooden frame.

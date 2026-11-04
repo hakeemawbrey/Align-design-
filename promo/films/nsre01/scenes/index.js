@@ -1,4 +1,4 @@
-// nsre01: SILENT REVIEW, "Silent review: a hand-knitted hat." (20 s vertical trial reel, Silent Review Vol. 2 ep 1,
+// nsre01: SILENT REVIEW, "Silent review: a hand-knitted hat." (18 s vertical trial reel, Silent Review Vol. 2 ep 1,
 // music: jazzy · C). Story 0–15.6, then the shared end card. The format look lives in ./silentkit.js (the Vol. 2 kit,
 // imported by all 12 episodes).
 // ♍ Virgo, the strictest critic in the house, reviews a lumpy hand-knitted hat from ♈ Aries. Not one word is spoken.

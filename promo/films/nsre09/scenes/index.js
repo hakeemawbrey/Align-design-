@@ -1,4 +1,4 @@
-// nsre09: SILENT REVIEW, "Silent review: a hand-drawn map." (20 s vertical trial reel, Silent Review Vol. 2 ep 9,
+// nsre09: SILENT REVIEW, "Silent review: a hand-drawn map." (18 s vertical trial reel, Silent Review Vol. 2 ep 9,
 // music: jazzy · Db). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♐ Sagittarius, the explorer, reviews a hand-drawn map of their favourite walk from ♑ Capricorn. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *a hand-drawn map.*" Capricorn is mid-slide with a rolled-open map.

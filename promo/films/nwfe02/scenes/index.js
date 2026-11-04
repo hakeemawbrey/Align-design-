@@ -1,5 +1,5 @@
-// nwfe02: WAIT FOR IT, "Built you in snow." (20 s vertical trial reel, Wait for It Vol. 2 ep 2, music: screwed · C#m)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe02: WAIT FOR IT, "Built you in snow." (18 s vertical trial reel, Wait for It Vol. 2 ep 2, music: screwed · C#m)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Aries is building | *a snowman.*" + "wait for it…". ♈ Aries, mid-pat, slaps snow onto a lumpy pile;
 //             ♎ Libra waits on the right. Snow falls. The pile grows a middle and a head.
 //   3.95–9.3  "This is | *not going well…*"  Stickers: "it's *leaning*" · "two arms… *now four?*" ·

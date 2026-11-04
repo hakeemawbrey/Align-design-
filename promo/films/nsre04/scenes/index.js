@@ -1,4 +1,4 @@
-// nsre04: SILENT REVIEW, "Silent review: a cookie of my face." (20 s vertical trial reel, Silent Review Vol. 2 ep 4,
+// nsre04: SILENT REVIEW, "Silent review: a cookie of my face." (18 s vertical trial reel, Silent Review Vol. 2 ep 4,
 // music: jazzy · F). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♌ Leo reviews a big iced cookie of its own face, baked by ♍ Virgo. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *a cookie of my face.*" Virgo is mid-slide with the cookie on a plate.

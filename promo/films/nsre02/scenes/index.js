@@ -1,4 +1,4 @@
-// nsre02: SILENT REVIEW, "Silent review: a homemade snow globe." (20 s vertical trial reel, Silent Review Vol. 2 ep 2,
+// nsre02: SILENT REVIEW, "Silent review: a homemade snow globe." (18 s vertical trial reel, Silent Review Vol. 2 ep 2,
 // music: jazzy · D). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♏ Scorpio, intense and unreadable, reviews a homemade snow globe from ♒ Aquarius. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *a homemade snow globe.*" Libra is mid-slide with the globe; ducks behind the desk.

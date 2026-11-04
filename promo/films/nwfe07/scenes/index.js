@@ -1,5 +1,5 @@
-// nwfe07: WAIT FOR IT, "Both. Side by side." (20 s vertical trial reel, Wait for It Vol. 2 ep 7, music: screwed · G#m)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe07: WAIT FOR IT, "Both. Side by side." (18 s vertical trial reel, Wait for It Vol. 2 ep 7, music: screwed · G#m)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Libra is choosing | *an ornament.*" + "wait for it…". ♎ Libra, mid-weigh, holds a pink ornament and a
 //             teal one like a pair of scales; ♑ Capricorn waits by a little tree.
 //   3.95–9.3  "This could | *take all night…*"  Stickers: "option one, *option two*" · "five minutes: *undecided*" ·

@@ -1,5 +1,5 @@
-// nwfe12: WAIT FOR IT, "Even the snow holds hands." (20 s vertical trial reel, Wait for It Vol. 2 ep 12, music: screwed · Fm)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe12: WAIT FOR IT, "Even the snow holds hands." (18 s vertical trial reel, Wait for It Vol. 2 ep 12, music: screwed · Fm)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 // Pisces is the hero here, so the background Pisces is off and the lead does the crying.
 //   0.0–3.8   "Pisces is lying | *in the snow.*" + "wait for it…". ♓ Pisces, mid-flop, lies on its back in a snowy
 //             patch, sniffling, wings of snow sweeping; ♎ Libra watches from the right. Beside Pisces is an older

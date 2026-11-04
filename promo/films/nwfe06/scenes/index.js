@@ -1,5 +1,5 @@
-// nwfe06: WAIT FOR IT, "Baked your sign." (20 s vertical trial reel, Wait for It Vol. 2 ep 6, music: screwed · Gm)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe06: WAIT FOR IT, "Baked your sign." (18 s vertical trial reel, Wait for It Vol. 2 ep 6, music: screwed · Gm)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Taurus is kneading | *some dough.*" + "wait for it…". ♉ Taurus, mid-knead, squashes a dough ball on a
 //             board; ♐ Sagittarius taps a foot on the right. A knead counter ticks up.
 //   3.95–9.3  "It's taking | *all evening…*"  Stickers: "knead *forty-one*" · "it's *rising*… slowly" ·

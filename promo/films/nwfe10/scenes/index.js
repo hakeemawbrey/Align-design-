@@ -1,5 +1,5 @@
-// nwfe10: WAIT FOR IT, "Practised listening." (20 s vertical trial reel, Wait for It Vol. 2 ep 10, music: screwed · Bm)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe10: WAIT FOR IT, "Practised listening." (18 s vertical trial reel, Wait for It Vol. 2 ep 10, music: screwed · Bm)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Leo is rehearsing | *a speech.*" + "wait for it…". ♌ Leo, mid-gesture, rehearses at a tall mirror (its
 //             reflection gestures back); ♏ Scorpio waits on the right. A rehearsal counter ticks up.
 //   3.95–9.3  "This will be | *a monologue…*"  Stickers: "rehearsal *twelve*" · "now with *hand gestures*" ·

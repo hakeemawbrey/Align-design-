@@ -1,5 +1,5 @@
-// nwfe03: WAIT FOR IT, "Found it." (20 s vertical trial reel, Wait for It Vol. 2 ep 3, music: screwed · Dm)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe03: WAIT FOR IT, "Found it." (18 s vertical trial reel, Wait for It Vol. 2 ep 3, music: screwed · Dm)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Cancer is wrapping | *a tiny present.*" + "wait for it…". ♋ Cancer, mid-pull of a long tape strip,
 //             works on a small box on the table; ♌ Leo waits on the right. Tape strips pile up.
 //   3.95–9.3  "That is | *a lot of tape…*"  Stickers: "layer four: *more tape*" · "the box is *getting smaller?*" ·

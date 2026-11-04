@@ -1,5 +1,5 @@
-// nwfe04: WAIT FOR IT, "Pre-warmed." (20 s vertical trial reel, Wait for It Vol. 2 ep 4, music: screwed · Em)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe04: WAIT FOR IT, "Pre-warmed." (18 s vertical trial reel, Wait for It Vol. 2 ep 4, music: screwed · Em)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Scorpio is holding | *your coat.*" + "wait for it…". ♏ Scorpio, mid-lift, holds ♈ Aries's coat up in
 //             front of a radiator and stares; Aries waits on the right, ready to go out into the snow.
 //   3.95–9.3  "It's just | *standing there…*"  Stickers: "staring at the *radiator*" · "five minutes: *no blinking*" ·

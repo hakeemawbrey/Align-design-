@@ -1,5 +1,5 @@
-// nwfe11: WAIT FOR IT, "Sent the true part." (20 s vertical trial reel, Wait for It Vol. 2 ep 11, music: screwed · Ebm)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe11: WAIT FOR IT, "Sent the true part." (18 s vertical trial reel, Wait for It Vol. 2 ep 11, music: screwed · Ebm)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Gemini is typing | *a reply.*" + "wait for it…". ♊ Gemini, mid-tap, types into a giant phone; the
 //             draft fills with lines. ♋ Cancer waits on the right for the reply.
 //   3.95–9.3  "It's writing | *a novel…*"  Stickers: "typing… *typing…*" · "deleted it. *typing again*" ·

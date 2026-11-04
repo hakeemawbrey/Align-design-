@@ -1,5 +1,5 @@
-// nwfe08: WAIT FOR IT, "Ran for you." (20 s vertical trial reel, Wait for It Vol. 2 ep 8, music: screwed · Am)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe08: WAIT FOR IT, "Ran for you." (18 s vertical trial reel, Wait for It Vol. 2 ep 8, music: screwed · Am)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Sagittarius is in | *the queue.*" + "wait for it…". ♐ Sag bounces in a snowy queue for the ice rink
 //             (rope posts, a sign); ♍ Virgo shivers beside it.
 //   3.95–9.3  "And then it | *just left…*"  Sag sprints off the left edge. Stickers: "Sag has *left the queue*" ·

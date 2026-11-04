@@ -1,4 +1,4 @@
-// nsre05: SILENT REVIEW, "Silent review: a pop-up card." (20 s vertical trial reel, Silent Review Vol. 2 ep 5,
+// nsre05: SILENT REVIEW, "Silent review: a pop-up card." (18 s vertical trial reel, Silent Review Vol. 2 ep 5,
 // music: jazzy · G). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♒ Aquarius, the inventor, reviews a handmade pop-up card from ♉ Taurus. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *a pop-up card.*" Taurus is mid-slide with a folded card (a star doodle on the front).

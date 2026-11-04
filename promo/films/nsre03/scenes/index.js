@@ -1,4 +1,4 @@
-// nsre03: SILENT REVIEW, "Silent review: a calendar for next year." (20 s vertical trial reel, Silent Review Vol. 2
+// nsre03: SILENT REVIEW, "Silent review: a calendar for next year." (18 s vertical trial reel, Silent Review Vol. 2
 // ep 3, music: jazzy · E). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♑ Capricorn, who lives by a schedule, reviews a handmade calendar from ♊ Gemini. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *a calendar for next year.*" Gemini is mid-slide with a spiral-bound calendar.

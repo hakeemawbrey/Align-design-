@@ -1,4 +1,4 @@
-// nsre06: SILENT REVIEW, "Silent review: fuzzy socks." (20 s vertical trial reel, Silent Review Vol. 2 ep 6,
+// nsre06: SILENT REVIEW, "Silent review: fuzzy socks." (18 s vertical trial reel, Silent Review Vol. 2 ep 6,
 // music: jazzy · A). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♉ Taurus, connoisseur of comfort, reviews a pair of fuzzy socks from ♋ Cancer. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *fuzzy socks.*" Cancer is mid-slide with the pair.

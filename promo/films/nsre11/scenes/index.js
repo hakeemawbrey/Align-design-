@@ -1,4 +1,4 @@
-// nsre11: SILENT REVIEW, "Silent review: star-shaped pancakes." (20 s vertical trial reel, Silent Review Vol. 2 ep 11,
+// nsre11: SILENT REVIEW, "Silent review: star-shaped pancakes." (18 s vertical trial reel, Silent Review Vol. 2 ep 11,
 // music: jazzy · Gb). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♈ Aries, who usually eats in four seconds, reviews a stack of star-shaped pancakes from ♌ Leo. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *star-shaped pancakes.*" Leo is mid-slide with the plate, steam rising.

@@ -1,5 +1,5 @@
-// nwfe09: WAIT FOR IT, "Found yours." (20 s vertical trial reel, Wait for It Vol. 2 ep 9, music: screwed · Bbm)
-// Story 0–15.6, then the shared end card. The format look and timing live in ../../nwfe01/scenes/wait.js.
+// nwfe09: WAIT FOR IT, "Found yours." (18 s vertical trial reel, Wait for It Vol. 2 ep 9, music: screwed · Bbm)
+// Story 0–15.6, then the short end card (2.4 s). No Align card transition (owner change, 4 Nov). The format look and timing live in ../../nwfe01/scenes/wait.js.
 //   0.0–3.8   "Aquarius is staring | *at the sky.*" + "wait for it…". ♒ Aquarius, mid-squint, at a telescope on a
 //             tripod; ♊ Gemini waits on the right.
 //   3.95–9.3  "It forgot | *the date…*"  Stickers: "twenty minutes: *still looking*" · "it's *muttering numbers*" ·

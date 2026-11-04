@@ -39,8 +39,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -55,8 +55,8 @@ export const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
 export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 1 : p >= 1 ? 0 : (1 + 0.18 * Math.sin(Math.PI * Math.min(1, p * 2.2))) * (1 - ease.inCubic(p)) }
 export const R = (x, c, x0, y0, w, h) => { x.fillStyle = c; x.fillRect(Math.round(x0), Math.round(y0), Math.round(w), Math.round(h)) }
 
-export const DURATION = 20
-export const STORY_END = DURATION - ENDCARD_LEN          // 15.6
+export const DURATION = 18                               // story 15.6 + the short end card (2.4 s)
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN          // 15.6
 const CPS = 30
 
 // ── the shared timeline
@@ -472,7 +472,7 @@ export function makeEpisode(cfg) {
 
   // ── the one card-cut candidate (cardfx plays it): BUILD → REVEAL
   const CUTS = [T.cut]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]
@@ -497,8 +497,7 @@ export function makeEpisode(cfg) {
     ...wordPops(T.last, 2, 0.08, 0, 0.028), ['pop', T.lastLand, 1046.5, 0.05, 0], ['bell', r3(T.lastLand + 0.03), 2093, 0.03, 1.4, 0], ['glitter', T.lastLand, r3(T.lastLand + 0.6)],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues ? cfg.cues(T) : []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ].filter(c => c[1] >= 0)
   const music = { style: 'screwed', key: cfg.key, seed: cfg.seed, sections: { drop: T.reveal, lift: [T.last], outroAt: STORY_END }, hits: [T.lastLand] }
   return { DURATION, SCENES, CUES, T, music }

@@ -1,4 +1,4 @@
-// nsre10: SILENT REVIEW, "Silent review: a night-sky puzzle." (20 s vertical trial reel, Silent Review Vol. 2 ep 10,
+// nsre10: SILENT REVIEW, "Silent review: a night-sky puzzle." (18 s vertical trial reel, Silent Review Vol. 2 ep 10,
 // music: jazzy · Eb). Story 0–15.6, then the shared end card. The format look lives in ../../nsre01/scenes/silentkit.js.
 // ♊ Gemini, easily distracted, reviews a homemade night-sky jigsaw from ♒ Aquarius. Not one word is spoken.
 //   0.0–2.1    hook: "Silent review: | *a night-sky puzzle.*" Aquarius is mid-slide with the almost-finished puzzle.
