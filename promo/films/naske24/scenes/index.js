@@ -1,10 +1,10 @@
-// naske24 · Ask the Stars, Volume 2, ep 24 · "How do I comfort someone who's sad?" (20 s, dreamy · Ab)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske24 · Ask the Stars, Volume 2, ep 24 · "How do I comfort someone who's sad?" (18 s, dreamy · Ab)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "How do I *comfort* someone who's sad?"  ♓ Pisces mid-tiptoe toward a partner sitting under a little
 //         grey cloud, holding out a tissue box, already teary.
 //   3.0   "sit with them. you don't need the perfect words."  Pisces sits down beside the partner. Quiet.
 //   5.9   "ask: 'want a hug, or some quiet?'"  Two pixel buttons: HUG · QUIET. HUG lights up; they hug.
-//   8.75  card cut → 8.8 "then bring a blanket and their favorite snack."  A blanket over both, a snack bowl; the
+//   8.8   "then bring a blanket and their favorite snack."  A blanket over both, a snack bowl; the
 //         cloud melts into sparkles.
 //   12.1  "Just *stay* close."  (finale: Pisces and the partner, both happy-crying)
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, tearsCells, tissues, label, drawStarChar, signStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, INTER, T } from '../../naske19/scenes/askkit2.js'
