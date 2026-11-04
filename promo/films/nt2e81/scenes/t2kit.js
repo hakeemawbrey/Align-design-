@@ -492,9 +492,9 @@ export function makeExplain(cfg) {
     box(x, -150, -110, 300, 210, ['#fff3a8', '#ffd1e3', '#c9f2d4'][i], { b: 5 })
     R(x, 'rgba(0,0,0,0.12)', -150, -110, 300, 14)
     label(x, `EXHIBIT ${'ABC'[i]}`, 0, -82, { size: 20, col: '#7a6e96', shadow: false })
-    icon(x, E.icon, 0, -18, 9)
+    icon(x, E.icon, 0, -26, 8)
     const lines = E.label
-    lines.forEach((L, j) => label(x, L, 0, 50 + j * 28 - (lines.length - 1) * 14, { size: 22, col: INK, shadow: false }))
+    lines.forEach((L, j) => label(x, L, 0, 58 + j * 27 - (lines.length - 1) * 13, { size: 22, col: INK, shadow: false }))
     x.restore()
   }
   function strings(x, t) {
@@ -532,8 +532,8 @@ export function makeExplain(cfg) {
         shadow(x, 160, 1240, 220)
         const F = sign(x, t, cfg.sign, { x: 160, y: 1090, s: 240, mood: hm, look: [1, -0.6], hops: jab, seed: 3, tears: isPis ? (t > T2 ? 3 : 2) : 0 })
         const wig = 12 * Math.sin(t * 9)
-        x.save(); x.strokeStyle = INK; x.lineWidth = 14; x.lineCap = 'round'; x.beginPath(); x.moveTo(F.ox + 90, F.cy - 20); x.lineTo(tgt[0] - 40 + wig, tgt[1] + 40); x.stroke()
-        x.strokeStyle = '#c99a5e'; x.lineWidth = 8; x.beginPath(); x.moveTo(F.ox + 90, F.cy - 20); x.lineTo(tgt[0] - 40 + wig, tgt[1] + 40); x.stroke(); R(x, RED, tgt[0] - 48 + wig, tgt[1] + 32, 16, 16); x.restore()
+        x.save(); x.strokeStyle = INK; x.lineWidth = 14; x.lineCap = 'round'; x.beginPath(); x.moveTo(F.ox + 90, F.cy - 20); x.lineTo(tgt[0] - 85 + wig, tgt[1] - 10); x.stroke()
+        x.strokeStyle = '#c99a5e'; x.lineWidth = 8; x.beginPath(); x.moveTo(F.ox + 90, F.cy - 20); x.lineTo(tgt[0] - 85 + wig, tgt[1] - 10); x.stroke(); R(x, RED, tgt[0] - 93 + wig, tgt[1] - 18, 16, 16); x.restore()
         // the couch with the two friends
         box(x, 430, 1210, 620, 120, '#7a4fb0', { b: 7, hi: '#9a6fd0' })
         box(x, 410, 1150, 50, 180, '#6a3fa0', { b: 6 }); box(x, 1020, 1150, 50, 180, '#6a3fa0', { b: 6 })
@@ -554,9 +554,9 @@ export function makeExplain(cfg) {
         if (cfg.twist.friendsCry) hearts(x, t, T2 + 1.3, 745, 1080, { n: 5 })
         // the twist: speech bubbles and an optional phone
         const tw = cfg.twist
-        if (tw.friendLine) bubble(x, t, tw.friendX ?? 690, tw.friendY ?? 980, T2 + 1.0, END + 0.2, tw.friendLine, { size: 34, tail: 0.2 })
+        if (tw.friendLine) bubble(x, t, tw.friendX ?? 690, tw.friendY ?? 1035, T2 + 1.0, END + 0.2, tw.friendLine, { size: 34, tail: 0.2 })
         if (tw.heroLine) bubble(x, t, tw.heroX ?? 300, 880, T2 + (tw.heroAt ?? 2.0), END + 0.2, tw.heroLine, { size: 34, tail: -0.5 })
-        if (tw.phone) chatPhone(x, t, 820, 720, tw.phone.map(m => ({ ...m, at: T2 + m.at })), { k: pop01(t, T2 + tw.phoneAt, 0.3, 2.2) * outK(t, [END + 0.1, END + 0.4]), rot: 0.08, w: 400, h: 380, name: tw.phoneName || '' })
+        if (tw.phone) chatPhone(x, t, 830, 640, tw.phone.map(m => ({ ...m, at: T2 + m.at })), { k: pop01(t, T2 + tw.phoneAt, 0.3, 2.2) * outK(t, [END + 0.1, END + 0.4]), rot: 0.08, w: 400, h: 210, name: tw.phoneName || '' })
         hearts(x, t, END + 0.1, 160, 900, { n: 4 })
       },
       update(t) { stickers.forEach(s => s.update(t)) },
