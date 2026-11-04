@@ -585,10 +585,11 @@ export function makeFlag(cfg) {
   const HC = signStar(cfg.sign).color
   const LINE = cfg.lineAt ?? 1.5, REACT = 3.3, FLAG = 4.1, END = 6.0
   function setup(root) {
-    const banner = buildBanner(root, { top: 1360, text: 'INSTANT *GREEN FLAG*', size: 84, accent: '#7cf0a8', at: FLAG + 0.25, out: [END - 0.2, END], bg: INK, border: GREEN, tilt: -3 })
+    const banner = buildBanner(root, { top: 1500, text: 'INSTANT *GREEN FLAG*', size: 84, accent: '#7cf0a8', at: FLAG + 0.25, out: [END - 0.2, END], bg: INK, border: GREEN, tilt: -3 })
     return {
       draw(x, t) {
-        R(x, '#1d1636', 0, 1180, 1080, 740); R(x, '#2a2150', 0, 1180, 1080, 10)
+        R(x, '#1d1636', 0, 1320, 1080, 600); R(x, '#2a2150', 0, 1320, 1080, 10)
+        x.save(); x.translate(0, 140)
         // the flag springs up behind them
         const fk = easeOutBack(prog(t, FLAG, FLAG + 0.5), 1.8)
         if (fk > 0.01) {
@@ -622,6 +623,7 @@ export function makeFlag(cfg) {
         const pk = pop01(t, cfg.pisAt ?? -1, 0.3, 2)
         tissues(x, 1000, 690, 56)
         sign(x, t, 'pisces', { x: 930, y: 640, s: 120, mood: 'sparkle', look: [-1, 0.6], tears: t < FLAG ? 2 : 3, seed: 6, pop: pk, hops: [FLAG + 0.2, FLAG + 0.6] })
+        x.restore()
       },
       update(t) { banner.update(t) },
     }
@@ -634,7 +636,7 @@ export function makeFlag(cfg) {
     ...(cfg.phone ? cfg.phone.map(m => ['pluck', r3(m.at), m.me ? 987.77 : 1318.51, 0.035, 0.4, m.me ? -0.2 : 0.2]) : []),
     ...(cfg.cues || []),
   ]
-  return makeFilm({ id: cfg.id, last: cfg.last, DURATION: 15, bug: ['INSTANT', 'GREEN FLAG'], hook: cfg.hook, hookSize: cfg.hookSize ?? 64, hookAccent: cfg.hookAccent ?? 94, accent: cfg.accent || '#7cf0a8',
+  return makeFilm({ id: cfg.id, last: cfg.last, DURATION: 15, bug: ['INSTANT', 'GREEN FLAG'], hook: cfg.hook, hookSize: cfg.hookSize ?? 76, hookAccent: cfg.hookAccent ?? 108, accent: cfg.accent || '#7cf0a8',
     hookOut: [END - 0.1, END + 0.15], starsAt: END + 0.05, lastAt: END + 0.35, boxClose: 10.15, cut: END, setup, cues, shakeAt: [FLAG + 0.25] })
 }
 
@@ -681,7 +683,7 @@ export function makeSelect(cfg) {
     })
     label(x, 'SPECIAL MOVE:', tx0, SY + 790, { size: 24, col: i === 2 ? PINK : GOLD, align: 'left', shadow: false })
     x.font = `700 34px ${INTER}`
-    const vis = clamp(prog(t, a + 0.7, a + 0.7 + P.move.length / 34))
+    const vis = clamp(prog(t, a + 0.6, a + 0.6 + P.move.length / 48))
     const L = wrap(x, P.move, 580)
     let left = Math.round(vis * P.move.length)
     L.forEach((s, j) => { const part = s.slice(0, Math.max(0, left)); left -= s.length + 1; x.fillStyle = BONE; x.fillText(part, tx0, SY + 840 + j * 44) })
@@ -727,6 +729,14 @@ export function makeSelect(cfg) {
         const onYou = you && t >= B[2][0] + 0.35
         cur(cx, cy, GOLD, 'P1', onYou ? 284 : 222, onYou ? 204 : 152)
         if (cfg.p2 && t >= B[2][0] + 0.1) { const f = ease.outCubic(prog(t, B[2][0] + 0.1, B[2][0] + 0.5)); cur(lerp(1100, YOU_POS[0], f) + 10, YOU_POS[1] + 10, PINK, 'P2', 300, 220) }
+        // the idle prompt under the grid until the first pick
+        const ik = outK(t, [B[0][0] + 0.15, B[0][0] + 0.35])
+        if (ik > 0.01) {
+          box(x, SX + 30, SY + 545, SW - 60, 380, '#120c28', { b: 6 })
+          label(x, 'PLAYER 1', 540, SY + 640, { size: 64, col: GOLD, alpha: ik })
+          label(x, Math.floor(t * 2.5) % 2 ? '▸ PICK A SIGN ◂' : '  PICK A SIGN  ', 540, SY + 730, { size: 40, col: BONE, alpha: ik })
+          for (let q = 0; q < 12; q++) drawPixelStar(x, SX + 120 + q * 65, SY + 840, 18, q % 2 ? 1 : 2, q % 3 ? GOLD : PINK)
+        }
         for (let i = 0; i < 3; i++) cardOf(x, t, i)
         sparkles(x, t, YOU_POS[0], YOU_POS[1], you ? B[2][0] + 0.4 : -9, 10, 160, 1, [PINK, GOLD, BONE])
         confetti(x, t, END + 0.05, 540, 1100, { n: 34 })
