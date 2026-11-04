@@ -1,5 +1,5 @@
-// nvse13: SIGN VS SIGN, "Who handles a snow day date better?" ♈ Aries vs ♋ Cancer (18 s trial reel, b46,
-// music: pop · D). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse13: SIGN VS SIGN, "Who handles a snow day date better?" ♈ Aries vs ♋ Cancer (16 s trial reel, b46,
+// music: pop · D). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: snow falls on both of them.
 //   ROUND 1 ♈ "races to build the *tallest snowman.*" the snowman grows past Aries. "go go go!" → "it’s taller than us!"
 //   ROUND 2 ♋ "brings *two thermoses* and spare mittens." the shivering date warms up. "your hands are cold. take these." → "cocoa or tea?"
