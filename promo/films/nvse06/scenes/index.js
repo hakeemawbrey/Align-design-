@@ -1,5 +1,5 @@
-// nvse06: SIGN VS SIGN, "Who says “I like you” first better?" ♒ Aquarius vs ♓ Pisces (18 s trial reel, b46,
-// music: dreamy · Eb). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse06: SIGN VS SIGN, "Who says “I like you” first better?" ♒ Aquarius vs ♓ Pisces (16 s trial reel, b46,
+// music: dreamy · Eb). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 // Pisces plays this one, so it cries on its own side (no corner Pisces).
 //   hook: a heart beats between them, both blushing.
 //   ROUND 1 ♒ "presents it like a *science fair.*" a HYPOTHESIS poster, then RESULTS. "hypothesis: I like you." → "results: still true."
