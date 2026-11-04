@@ -17,12 +17,11 @@
 //     last: 'One blanket. | *Two* tissues.' }                                      the last line (kept exactly)
 //   card lines: a string, or { t, strike, red, circle, size }.  `who` = whose line it is (the twist: either).
 //
-// Timeline (story 0–25.6, then the 4.4 s end card):
+// Timeline (story 0–25.6, then the 2.4 s short end card; 28 s in all, no Align card transition):
 //   0.00–6.00  cold open: notebook up, headline + both stars on frame 0 (A mid-hop). A's line, B's line, the needle
 //              slams to PUSH and thrashes, a synced squint (record scratch).
 //   6.00 / 10.70 / 15.40   TIP 1 / TIP 2 / TIP 3 ↻ (4.7 s each): stamp, headline, prop card pinned, one line, a reaction
 //              (the partner goes heart-eyed). TIP 3 slides the two stars together.
-//   10.65      the card cut (the middle of three candidates; cardfx plays exactly one).
 //   20.25–22.2 "Push. Pull. *Align.*": the needle sweeps and a red ring stamps ALIGN; the meter is gone by 22.25.
 //   22.3–25.5  the last line: the pair side by side, heart-eyed, a red fig. 4 circle. Out by 25.5.
 // Pisces cries in every film: fig. 3 in the page corner, or (when Pisces is in the pair) the specimen itself cries and
@@ -31,8 +30,8 @@ import { clamp, lerp, prog, ease, rng, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, READING, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -324,8 +323,9 @@ export function drawPropCard(ctx, t, { icon, lines = [], at, out = 1, seed = 1, 
 }
 
 // ─────────────────────────────────────────────── the episode
-export const DURATION = 30
-const STORY_END = DURATION - ENDCARD_LEN       // 25.6
+// the story runs 0–25.6, then the SHORT end card (2.4 s; the owner's change of 4 Nov): 28 s in all
+const STORY_END = 25.6
+export const DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(2)   // 28
 const pop01 = (t, t0, d = 0.32, s = 1.9) => easeOutBack(prog(t, t0, t0 + d), s)
 const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
 const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 1 : p >= 1 ? 0 : (1 + 0.18 * Math.sin(Math.PI * Math.min(1, p * 2.2))) * (1 - ease.inCubic(p)) }
@@ -433,7 +433,7 @@ export function makeFilm(cfg) {
     st.mood = 'heart'; return st
   }
 
-  const MUSIC = { style: cfg.music.style, key: cfg.music.key, seed: cfg.music.seed ?? (500 + ep), sections: { drop: T.b1, breakdown: [tp[2].s], lift: [T.swP], outroAt: DURATION - 4.4 }, hits: [T.swA] }
+  const MUSIC = { style: cfg.music.style, key: cfg.music.key, seed: cfg.music.seed ?? (500 + ep), sections: { drop: T.b1, breakdown: [tp[2].s], lift: [T.swP], outroAt: STORY_END }, hits: [T.swA] }
 
   async function build(stage) {
     try {
@@ -549,9 +549,8 @@ export function makeFilm(cfg) {
     }
   }
 
-  // card-cut candidates: cardfx keeps the middle one (10.65, between TIP 1 and TIP 2)
-  const CUTS = [5.95, { t: 10.65, kind: 'flip' }, 15.35]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (the owner's change of 4 Nov): the stamps and the TIP beats are the transitions
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pop / pluck / bell are re-keyed by the engine)
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]
@@ -587,8 +586,7 @@ export function makeFilm(cfg) {
     ...wordPops(T.h6 + 0.18, 3, 0.09, 0, 0.028), ['pluck', T.h6 + 0.2, 1318.51, 0.045, 0.8, 0], ['glitter', T.hug[1] + 0.1, T.hug[1] + 0.6],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...talkCues(ALL, { cps: CPS, pitch }),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, MUSIC }
 }

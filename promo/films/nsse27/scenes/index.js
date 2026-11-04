@@ -1,4 +1,4 @@
-// nsse27 — SIGN × SIGN, Vol. 2, ep 27: "Virgo × Libra: the gift-wrap summit." (28 s vertical, star_advice post)
+// nsse27 — SIGN × SIGN, Vol. 2, ep 27: "Virgo × Libra: the gift-wrap summit." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Virgo × Libra: | *the corners are crooked.*"  A: "the corners are *crooked.*"  B: "but the bow is *so pretty!*"
 //   TIP 1  "Virgo, praise | before you *polish.*"  A: "the bow is gorgeous. *corners later.*"

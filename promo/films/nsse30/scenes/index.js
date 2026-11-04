@@ -1,4 +1,4 @@
-// nsse30 — SIGN × SIGN, Vol. 2, ep 30: "Scorpio × Sagittarius: the haircut review." (28 s vertical, star_advice post)
+// nsse30 — SIGN × SIGN, Vol. 2, ep 30: "Scorpio × Sagittarius: the haircut review." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Scorpio × Sagittarius: | *“bold haircut.”*"  A: "new haircut? bold. *very bold.*"  B: "…*(adding that to the list.)*"
 //   TIP 1  "Sag, honest | *and* kind."  A: "bold, and it *really suits you.*"

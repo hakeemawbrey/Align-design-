@@ -1,4 +1,4 @@
-// nsse31 — SIGN × SIGN, Vol. 2, ep 31: "Aquarius × Virgo: Snow Tuesday." (28 s vertical, star_advice post)
+// nsse31 — SIGN × SIGN, Vol. 2, ep 31: "Aquarius × Virgo: Snow Tuesday." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Aquarius × Virgo: | *I invented a holiday.*"  A: "I invented a holiday: *Snow Tuesday!*"  B: "it has *twelve typos* and no rules."
 //   TIP 1  "Virgo, cheer | the *first draft.*"  B: "…it's charming. *the typo stays.*"

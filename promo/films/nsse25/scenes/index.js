@@ -1,4 +1,4 @@
-// nsse25 — SIGN × SIGN, Vol. 2, ep 25: "Taurus × Leo: two fixed signs, one couch." (28 s vertical, star_advice post)
+// nsse25 — SIGN × SIGN, Vol. 2, ep 25: "Taurus × Leo: two fixed signs, one couch." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Taurus × Leo: | *this is MY spot.*"  A: "this is *my spot.*"  B: "every spot is *my spot.*"
 //   TIP 1  "Leo, share | the *blanket.*"  B: "half the blanket. ok… *sixty-forty.*"

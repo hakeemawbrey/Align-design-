@@ -1,4 +1,4 @@
 // nsse23 score: screwed, Gm (arranged by the style engine in promo/scripts/teaser-sound.mjs).
-//   drop 2.6: B's first line · breakdown 15.4: TIP 3 ↻ · lift 20.3: the needle sweep · hit 21.2: ALIGN · outro under the end card.
+//   28 s (short end card) · drop 2.6: B's first line · breakdown 15.4: TIP 3 ↻ · lift 20.3: the needle sweep · hit 21.2: ALIGN · outro under the short end card.
 import { DURATION, CUES, MUSIC } from './scenes/index.js'
 export default { id: 'nsse23', duration: DURATION, music: MUSIC, cues: CUES }

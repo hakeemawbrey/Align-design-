@@ -1,4 +1,4 @@
-// nsse29 — SIGN × SIGN, Vol. 2, ep 29: "Aries × Gemini: the snow-day race." (28 s vertical, star_advice post)
+// nsse29 — SIGN × SIGN, Vol. 2, ep 29: "Aries × Gemini: the snow-day race." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Aries × Gemini: | *first one outside wins!*"  A: "first one *outside* wins!"  B: "wait, I'm texting *everyone we know.*"
 //   TIP 1  "Aries, *wait* | for them."  A: "…I'll hold the door. *tap. tap. tap.*"

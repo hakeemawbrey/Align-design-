@@ -1,4 +1,4 @@
-// nsse22 — SIGN × SIGN, Vol. 2, ep 22: "Libra × Pisces: the hike neither of them wanted." (28 s vertical, star_advice post)
+// nsse22 — SIGN × SIGN, Vol. 2, ep 22: "Libra × Pisces: the hike neither of them wanted." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Libra × Pisces: | *we both love hiking!*"  A: "I love hiking! *(my feet don't.)*"  B: "me too!! *(I want a nap.)*"
 //   TIP 1  "Pisces, be honest, | *gently.*"  A: "honestly? *my toes* are crying too."

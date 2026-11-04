@@ -1,4 +1,4 @@
-// nsse21 — SIGN × SIGN, Vol. 2, ep 21: "Cancer × Leo: the photo and the family." (28 s vertical, star_advice post)
+// nsse21 — SIGN × SIGN, Vol. 2, ep 21: "Cancer × Leo: the photo and the family." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Cancer × Leo: | *one more photo!*"  A: "can we get *grandma* in one?"  B: "one more! from my *good side!*"
 //   TIP 1  "Leo, share | the *frame.*"  B: "everybody in! grandma, *front row!*"

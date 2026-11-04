@@ -1,4 +1,4 @@
-// nsse18 — SIGN × SIGN, Vol. 2, ep 18: "Cancer × Scorpio: the shell and the vault." (28 s vertical, star_advice post)
+// nsse18 — SIGN × SIGN, Vol. 2, ep 18: "Cancer × Scorpio: the shell and the vault." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Cancer × Scorpio: | *two people saying “fine.”*"  A: "I'm fine. *(I'm not fine.)*"  B: "also fine. *(also not fine.)*"
 //   TIP 1  "Cancer, say | the *real* thing."  A: "honestly? I've felt *a bit lonely.*"

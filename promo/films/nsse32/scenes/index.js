@@ -1,4 +1,4 @@
-// nsse32 — SIGN × SIGN, Vol. 2, ep 32: "Aries × Leo: two fires, one tree." (28 s vertical, star_advice post)
+// nsse32 — SIGN × SIGN, Vol. 2, ep 32: "Aries × Leo: two fires, one tree." (28 s vertical, star_advice post; short end card, no card transition)
 // The shared look + timeline live in ../../nsse17/scenes/sskit.js (see its header for the timing).
 //   cold open  "Aries × Leo: | *who's on top of the tree?*"  A: "I'll hang the lights *first!*"  B: "and I'll be *the star on top!*"
 //   TIP 1  "Aries, let | Leo *shine.*"  A: "you're right. you *light up the room.*"
