@@ -1,4 +1,4 @@
-// nrke05: RANKING THE SIGNS, "Who remembers your coffee order" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke05: RANKING THE SIGNS, "Who remembers your coffee order" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // lofi · Dm). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who remembers / your *coffee order?*" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Sagittarius → #4 Scorpio slam in.   6.3 card cut.   6.8 #3 Taurus · 7.7 #2 Cancer
