@@ -106,5 +106,32 @@
   "series": "ask2",
   "episode": 12,
   "caption": "Feeling deeply is not too much. The right person will not ask you to feel less. If you need words: \"I'm okay, I'm just moved.\""
+ },
+ "naske13": {
+  "video": "/_blob/0e02f470ff41859291719e7edcc0cf0e",
+  "poster": "/_blob/52db0ea6bf3e1a95238773039e78668c",
+  "title": "I want to say \"I love you\" first.",
+  "len": 18,
+  "series": "ask2",
+  "episode": 13,
+  "caption": "If you feel it, it is okay to say it. Say it without needing it back right away, and let their answer come in its own time."
+ },
+ "naske14": {
+  "video": "/_blob/792a98e93bbace450df931495d0c53ec",
+  "poster": "/_blob/8f84558d417b8844b08da19c7e62c8fe",
+  "title": "They're always late and it bugs me.",
+  "len": 18,
+  "series": "ask2",
+  "episode": 14,
+  "caption": "Name the feeling, not the flaw. \"I feel forgotten when I wait\" lands softer than a label. Then pick a time that works for you both."
+ },
+ "naske15": {
+  "video": "/_blob/87de72c6ff2286591b5e2f1b71d1fa50",
+  "poster": "/_blob/3432276bd4e420bd6edf9ff267b17b66",
+  "title": "I keep changing my mind about them.",
+  "len": 18,
+  "series": "ask2",
+  "episode": 15,
+  "caption": "Mixed feelings are information, not failure. Write down what you like and what you are unsure about, then tell them gently where you are."
  }
 }
