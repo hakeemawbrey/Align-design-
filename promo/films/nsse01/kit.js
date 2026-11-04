@@ -503,7 +503,7 @@ export function schedule(cfg) {
 //        tips: [{ head, prop: { type, … }, lines: [...] } × 3 (the 3rd is the twist)], last, music: { style, key, seed },
 //        moods?: { a0, b0 } (frame-0 moods), cornerPisces? (auto) }
 export function makeFilm(cfg) {
-  const SA = signStar(cfg.a), SB = signStar(cfg.b), PIS = signStar('pisces')
+  const SA = { ...signStar(cfg.a), ...(cfg.colors?.a ? { color: cfg.colors.a } : {}) }, SB = { ...signStar(cfg.b), ...(cfg.colors?.b ? { color: cfg.colors.b } : {}) }, PIS = signStar('pisces')
   const NA = NAMES[cfg.a], NB = NAMES[cfg.b]
   const who = w => (w === 'a' ? { s: SA, n: NA } : { s: SB, n: NB })
   const tag = w => `${who(w).s.glyph}︎ ${who(w).n.toUpperCase()}`
