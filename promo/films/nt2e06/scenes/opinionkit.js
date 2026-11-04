@@ -33,7 +33,7 @@ export function makeOpinion(cfg) {
     if (ok <= 0) return
     crate(x)
     // the hero: mid-step onto the crate at frame 0
-    const o = { x: 540, y: 840, s: 260, mood: t < T.gasp ? 'sparkle' : t < T.stamp ? 'neutral' : 'happy', look: t < T.gasp ? [0, -0.2] : [0, 0.4], pop: ok,
+    const o = { x: 540, y: 840, s: 260, mood: cfg.heroMood && cfg.heroMood(t) ? cfg.heroMood(t) : t < T.gasp ? 'sparkle' : t < T.stamp ? 'neutral' : 'happy', look: t < T.gasp ? [0, -0.2] : [0, 0.4], pop: ok,
       hops: [-0.15, 0.55, T.stamp + 0.05, T.stamp + 0.6, ...(cfg.heroHops || [])] }
     HERO(x, t, o)
     if (cfg.prop) cfg.prop(x, t, o)
