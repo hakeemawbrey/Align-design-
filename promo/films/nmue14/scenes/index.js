@@ -1,4 +1,4 @@
-// nmue14: THE MAKE-UP TALK, "You vs. the problem" (30 s vertical, promo/films/next30/b32.md, music: funk · E).
+// nmue14: THE MAKE-UP TALK, "You vs. the problem" (28 s vertical, promo/films/next30/b32.md, music: funk · E).
 // ♉ Taurus × ♊ Gemini. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 //   0–6.6     THE FIGHT  "“This is *your* fault.” | “No, *yours!*”" Taurus and Gemini on opposite sides of a table, a giant
 //             holiday TO-DO list unrolling between them: "you booked the wrong train!" / "you SAID Thursday!" /

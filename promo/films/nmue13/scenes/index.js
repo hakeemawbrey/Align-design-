@@ -1,4 +1,4 @@
-// nmue13: THE MAKE-UP TALK, "Not at 1 AM" (30 s vertical, promo/films/next30/b32.md, music: jazzy · Bb).
+// nmue13: THE MAKE-UP TALK, "Not at 1 AM" (28 s vertical, promo/films/next30/b32.md, music: jazzy · Bb).
 // ♍ Virgo × ♐ Sagittarius. The format lives in ./makeupkit.js (shared by nmue13–nmue24).
 //   0–6.6     THE FIGHT  "“It’s *1 AM.* | Let’s finish this.”" Virgo mid-hop by a glowing bedside clock (1:07 AM); Sag
 //             yawning under a blanket: "we're finishing this NOW." / "my eyes are closing." / "so you DON'T care??"

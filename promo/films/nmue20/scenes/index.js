@@ -1,4 +1,4 @@
-// nmue20: THE MAKE-UP TALK, "Let it be a tie" (30 s vertical, promo/films/next30/b32.md, music: cinematic · Dm).
+// nmue20: THE MAKE-UP TALK, "Let it be a tie" (28 s vertical, promo/films/next30/b32.md, music: cinematic · Dm).
 // ♏ Scorpio × ♉ Taurus. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 //   0–6.6     THE FIGHT  "“Tinsel goes *on* | the tree. Obviously.”" Scorpio mid-toss of a tinsel clump, Taurus holding one
 //             strand like a rule: "throw it ON!" / "it goes strand by strand." / "this is a hill I'll stand on."

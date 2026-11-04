@@ -1,4 +1,4 @@
-// nmue24: THE MAKE-UP TALK, "Thank them for staying" (30 s vertical, promo/films/next30/b32.md, music: pop · F). The finale.
+// nmue24: THE MAKE-UP TALK, "Thank them for staying" (28 s vertical, promo/films/next30/b32.md, music: pop · F). The finale.
 // ♑ Capricorn × ♋ Cancer. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 // Chapter tabs: A TINY FIGHT · THE YEAR · THE TALK · MADE UP.
 //   0–6.6     "“Our best fight | *this year?*”" The last night of the year, a snowy rooftop. Capricorn and Cancer mid-hop:

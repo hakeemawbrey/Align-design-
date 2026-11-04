@@ -1,11 +1,11 @@
 // THE MAKE-UP TALK: the shared look of The Make-Up Talk episodes 13–24 (nmue13…nmue24, promo/films/next30/b32.md).
 // Every episode imports this file from promo/films/nmue13/scenes/makeupkit.js.
 //
-// The format (30 s, story 0–25.6, then the shared end card):
+// The format (28 s, story 0–25.6, then the short 2.4 s end card; no card transition, per the owner's 4 Nov change):
 //   0.00–6.60   THE FIGHT   frame 0 = the hook headline (already landed) + the two stars mid-fight (one mid-hop, the first
 //                           fight bubble up). Three fight bubbles volley; a red tension squiggle wiggles between them.
 //   6.60–12.80  UNDER IT    what the fight is really about: the episode's own set piece (cfg.under.draw).
-//   12.80       the card cut (cardfx keeps the middle candidate).
+//   12.80       a white flash + whoosh into THE TALK (no card cut).
 //   12.80–21.60 THE TALK    THE STARS name the skill in the dialogue box, a TRY SAYING card shows the words, the partner answers.
 //   21.60–25.50 MADE UP     the repair gesture (cfg.made.draw), the last line as the closing headline, Pisces fountains.
 // A chapter tab + a 4-segment progress bar sit under the bug. Pisces cries in every chapter (happy tears at the end).
@@ -25,8 +25,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill, A as ASSETS } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -42,8 +42,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar, ASSETS }
 
 // ── the fixed timeline (same in every episode)
-export const DURATION = 30
-export const STORY_END = DURATION - ENDCARD_LEN          // 25.6
+export const DURATION = 28
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 25.6 (the short 2.4 s end card, owner's 4 Nov change)
 export const T = {
   bug: -1, bar: -1,
   secs: [[0, 6.6], [6.6, 12.8], [12.8, 21.6], [21.6, 25.5]],
@@ -488,17 +488,16 @@ export function makeMakeUp(cfg) {
         script.update(t)
         box1.update(t)
         bug.update(t, outK(t, T.bugOut))
-        // white flash on the hard cut into UNDER IT and into MADE UP (the card cut handles THE TALK)
-        const fl = Math.max(0, ...[T.secs[1][0], T.secs[3][0]].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
+        // white flash on each chapter cut
+        const fl = Math.max(0, ...[T.secs[1][0], T.secs[2][0], T.secs[3][0]].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
         flash.style.opacity = String(0.5 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // card-cut candidates (cardfx keeps the middle one: 12.8, into THE TALK)
-  const CUTS = [T.secs[1][0], { t: T.cut, kind: 'flip' }, T.secs[3][0]]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card transition (owner's 4 Nov change): the chapters cut with the film's own white flash + whoosh
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -528,8 +527,8 @@ export function makeMakeUp(cfg) {
     ['pluck', r3(T.secs[3][0] + 1.6), 1174.66, 0.035, 0.5, -0.2], ['pluck', r3(T.secs[3][0] + 1.72), 1567.98, 0.03, 0.5, 0.2],
     ...rel(cfg.made.cues, T.secs[3][0]),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ['whoosh', r3(T.secs[2][0] - 0.1), 0.3, 0.04], ['tick', T.secs[2][0], 0.06],
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS }
+  return { DURATION, SCENES, CUES, T }
 }

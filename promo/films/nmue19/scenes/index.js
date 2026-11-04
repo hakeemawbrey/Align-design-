@@ -1,4 +1,4 @@
-// nmue19: THE MAKE-UP TALK, "Go first with your part" (30 s vertical, promo/films/next30/b32.md, music: chiptune · G).
+// nmue19: THE MAKE-UP TALK, "Go first with your part" (28 s vertical, promo/films/next30/b32.md, music: chiptune · G).
 // ♑ Capricorn × ♈ Aries. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 //   0–6.6     THE FIGHT  "“*You* apologize first.” | “No, *you* do.”" Capricorn and Aries mid-glare in a staring contest over
 //             a burnt pie, a wall clock ticking: "I'm not going first." / "neither am I." / "I can stare ALL night."

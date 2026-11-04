@@ -1,4 +1,4 @@
-// nmue21: THE MAKE-UP TALK, "The morning-after check-in" (30 s vertical, promo/films/next30/b32.md, music: house · F).
+// nmue21: THE MAKE-UP TALK, "The morning-after check-in" (28 s vertical, promo/films/next30/b32.md, music: house · F).
 // ♋ Cancer × ♌ Leo. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 // Chapter tabs: THE MORNING AFTER · UNDER IT · THE TALK · MADE UP (last night's talk is already done).
 //   0–6.6     "“So… *are we good?*”" Sunrise. Cancer mid-type on a phone; Leo asleep, its phone face up on the nightstand.

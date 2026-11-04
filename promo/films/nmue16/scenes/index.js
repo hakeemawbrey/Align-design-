@@ -1,4 +1,4 @@
-// nmue16: THE MAKE-UP TALK, "Hold first, fix later" (30 s vertical, promo/films/next30/b32.md, music: pop · D).
+// nmue16: THE MAKE-UP TALK, "Hold first, fix later" (28 s vertical, promo/films/next30/b32.md, music: pop · D).
 // ♌ Leo × ♑ Capricorn. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 //   0–6.6     THE FIGHT  "“I don’t need a | *spreadsheet!*”" Leo mid-sniffle after a rough day; Capricorn mid-hop holding up a
 //             laptop full of solutions: "here's a 5-step plan." / "I don't need a spreadsheet!" / "I'm HELPING!"

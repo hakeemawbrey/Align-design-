@@ -1,4 +1,4 @@
-// nmue22: THE MAKE-UP TALK, "Guess kind, then ask" (30 s vertical, promo/films/next30/b32.md, music: jazzy · C).
+// nmue22: THE MAKE-UP TALK, "Guess kind, then ask" (28 s vertical, promo/films/next30/b32.md, music: jazzy · C).
 // ♐ Sagittarius × ♒ Aquarius. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 // Chapter tabs: THE SPIRAL · UNDER IT · THE TALK · MADE UP (the fight starts in Sag's head).
 //   0–6.6     "“Where *are* they??”" Sag mid-pace by an unlit light display (7:20 PM, "no new messages"); three worst-case

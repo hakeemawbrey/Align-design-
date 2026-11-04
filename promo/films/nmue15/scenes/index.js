@@ -1,4 +1,4 @@
-// nmue15: THE MAKE-UP TALK, "Keep the point, drop the edge" (30 s vertical, promo/films/next30/b32.md, music: lofi · Eb).
+// nmue15: THE MAKE-UP TALK, "Keep the point, drop the edge" (28 s vertical, promo/films/next30/b32.md, music: lofi · Eb).
 // ♈ Aries × ♋ Cancer. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 //   0–6.6     THE FIGHT  "“I was *right!*” | (I was also yelling.)" Aries mid-stomp behind a megaphone; Cancer hides behind a
 //             cushion: "YOU FORGOT MY MOM'S DINNER!" / "you don't have to SHOUT." / "I'M NOT SHOUTING!"

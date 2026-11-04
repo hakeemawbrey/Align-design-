@@ -1,4 +1,4 @@
-// nmue23: THE MAKE-UP TALK, "Let it rest" (30 s vertical, promo/films/next30/b32.md, music: dreamy · Db).
+// nmue23: THE MAKE-UP TALK, "Let it rest" (28 s vertical, promo/films/next30/b32.md, music: dreamy · Db).
 // ♍ Virgo × ♎ Libra. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 // Chapter tabs: THE OLD JOKE · UNDER IT · THE TALK · MADE UP. A mended heart (gold seams, the eps 1–12 repair motif)
 // floats between them.

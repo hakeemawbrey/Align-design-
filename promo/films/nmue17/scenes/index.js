@@ -1,4 +1,4 @@
-// nmue17: THE MAKE-UP TALK, "Not in front of everyone" (30 s vertical, promo/films/next30/b32.md, music: dreamy · Ab).
+// nmue17: THE MAKE-UP TALK, "Not in front of everyone" (28 s vertical, promo/films/next30/b32.md, music: dreamy · Ab).
 // ♏ Scorpio × ♎ Libra. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 //   0–6.6     THE FIGHT  "“Funny, you’re *never* | this fun at home.”" Scorpio mid-quip at a holiday party, Libra frozen with a
 //             cocoa; SCRATCH, the guests turn to look: "it's true though!" / "…wow. okay." / "what? it's a JOKE."

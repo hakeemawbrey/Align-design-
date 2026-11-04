@@ -1,4 +1,4 @@
-// nmue18: THE MAKE-UP TALK, "Your partner, not a jury" (30 s vertical, promo/films/next30/b32.md, music: synthwave · F#m).
+// nmue18: THE MAKE-UP TALK, "Your partner, not a jury" (28 s vertical, promo/films/next30/b32.md, music: synthwave · F#m).
 // ♊ Gemini × ♒ Aquarius. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
 //   0–6.6     THE FIGHT  "“Let’s ask the | *group chat.*”" Gemini mid-hop, phone up, screenshotting the fight (a white SNAP
 //             flash); Aquarius gasps: "you're being unreasonable." / "no, YOU are!" / "fine. the GROUP decides."
