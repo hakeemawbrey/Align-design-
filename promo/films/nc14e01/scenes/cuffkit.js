@@ -2,12 +2,12 @@
 // Lives in nc14e01's folder; the other episodes import it from here. Read-only for every other film.
 //
 //   makeCuff(cfg) → { DURATION, STORY_END, SCENES, CUES, CUTS }
-//     cfg.id, cfg.duration (incl. the 4.4 s end card), cfg.ep (1…24: the bug's thermometer drops a notch per episode)
+//     cfg.id, cfg.duration (the slate length incl. a 4.4 s end card; the film runs 2.0 s shorter with the 2.4 s one), cfg.ep (1…24: the bug's thermometer drops a notch per episode)
 //     cfg.heads   [{ text, at, out: [a, b], top?, size?, accentSize?, accent?, late?, lateAt?, wobble?, gap? }]
 //                 popText headlines (Inter 800 + one *italic* accent). The hook uses at < 0 so it is fully in at t = 0.
 //     cfg.boxes   [{ lines: [{ t, speaker, text, color? }], open?, close?, y? }]  RPG dialogue boxes (startalk.js)
 //     cfg.lesson  optional { at, out, text, chip, accentColor }  (lesson.js LESSON UNLOCKED)
-//     cfg.cuts    card-cut candidates for cardfx (it plays the middle one)
+//     cfg.cuts    (unused since 4 Nov: no card transition plays)
 //     cfg.draw(x, t, K)   the scene, a pure f(t). K = helpers below (star, stars, pisces, …)
 //     cfg.over(x, t, K)   optional: drawn on a canvas above the headlines/boxes (stickers, stamps)
 //     cfg.snow    0…1 snow amount (default 1) or a function of t
@@ -20,8 +20,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill, A } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar, STAR } from '../../startalk.js'
 import { popText, buildLesson, lessonCues } from '../../lesson.js'
 import { drawGhostCameo } from '../../stlore.js'
@@ -358,8 +358,10 @@ function buildBug(root, ep) {
 
 // ═══════════════════════════════════════════════════════════════════════════ the episode
 export function makeCuff(cfg) {
-  const DURATION = cfg.duration
-  const STORY_END = DURATION - ENDCARD_LEN
+  // cfg.duration is the slate length with the old 4.4 s end card; the short end card (2.4 s) makes every film 2.0 s
+  // shorter with the story unchanged (NEXT30-BUILD.md, CHANGE 4 Nov). No Align card transition plays.
+  const DURATION = cfg.duration - 2
+  const STORY_END = DURATION - ENDCARD_SHORT_LEN
   const PIS = signStar('pisces')
   const OUT = [STORY_END - 0.5, STORY_END - 0.1]
   const boxes = cfg.boxes || []
@@ -423,7 +425,7 @@ export function makeCuff(cfg) {
   }
 
   const CUTS = cfg.cuts || []
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), ...(CUTS.length ? [cardCuts(CUTS)] : [])]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -440,8 +442,7 @@ export function makeCuff(cfg) {
     ...(cfg.shakes || []).flatMap(c => [['boom', r3(c), 0.25], ['tom', r3(c), 90, { gain: 0.25, decay: 0.3 }]]),
     ...(cfg.cues || []),
     ['whoosh', r3(OUT[0]), 0.35, 0.03],
-    ...(CUTS.length ? cardCutCues(CUTS) : []),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ].filter(c => c[1] >= 0 && c[1] < DURATION)
   return { DURATION, STORY_END, SCENES, CUES, CUTS, OUT }
 }
