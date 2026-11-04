@@ -1,4 +1,4 @@
-// nh15e21: HOME FOR THE HOLIDAYS, "The call to a friend who stayed in town." (30 s vertical, Star Talk Season 15 ep 21,
+// nh15e21: HOME FOR THE HOLIDAYS, "The call to a friend who stayed in town." (28 s vertical, Star Talk Season 15 ep 21,
 // music: lofi · Cm). Story 0–25.6, then the shared end card. The look lives in ../../nh15e13/scenes/holikit.js.
 // A split screen (a generic video call, no real app chrome): top, Virgo on the family's snowy porch; bottom, Aquarius at
 // home in the city with a very small tree.
