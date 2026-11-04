@@ -1,68 +1,97 @@
-// naske24 · Ask the Stars, Volume 2, ep 24 · "I cry at everything. Is that a lot?" (20 s, dreamy · Ab)
+// naske24 · Ask the Stars, Volume 2, ep 24 · "How do I comfort someone who's sad?" (20 s, dreamy · Ab)
 // The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
-//   0.0   DM: "I cry at *everything.* Is that a lot?"  ♓ Pisces mid-sob at one snowflake landing on its point,
-//         a tissue raised.
-//   3.0   "feeling deeply isn't too much. it's you."  More tiny triggers drift by (a holiday card, a lost mitten):
-//         the sniffles become streams.
-//   5.9   "the right person brings tissues, not jokes."  A partner star walks in carrying a tissue box.
-//   8.75  card cut → 8.8 "and tells you when they cry too."  The partner sniffles too; both happy-cry together.
-//   12.1  "Big feelings. | *Right* person."  (finale: Pisces and the partner, both crying happy tears)
-import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, tearsCells, tissues, label, drawStarChar, signStar, pop01, popOut, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, SNOW, T } from '../../naske19/scenes/askkit2.js'
+//   0.0   DM: "How do I *comfort* someone who's sad?"  ♓ Pisces mid-tiptoe toward a partner sitting under a little
+//         grey cloud, holding out a tissue box, already teary.
+//   3.0   "sit with them. you don't need the perfect words."  Pisces sits down beside the partner. Quiet.
+//   5.9   "ask: 'want a hug, or some quiet?'"  Two pixel buttons: HUG · QUIET. HUG lights up; they hug.
+//   8.75  card cut → 8.8 "then bring a blanket and their favorite snack."  A blanket over both, a snack bowl; the
+//         cloud melts into sparkles.
+//   12.1  "Just *stay* close."  (finale: Pisces and the partner, both happy-crying)
+import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, tearsCells, tissues, label, drawStarChar, signStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, INTER, T } from '../../naske19/scenes/askkit2.js'
 
-const FLAKE = ['..W.W..', 'W..W..W', '.W.W.W.', 'WWWWWWW', '.W.W.W.', 'W..W..W', '..W.W..']
-const CARD = ['RRRRRRRR', 'RBBBBBBR', 'RBBHHBBR', 'RBHHHHBR', 'RBBHHBBR', 'RBBBBBBR', 'RRRRRRRR']
-const MITT = ['.MMM..', 'MMMM.M', 'MMMMMM', 'MMMMMM', 'WWWWW.', 'WWWWW.']
 const PART = signStar('virgo')
+const BOWL = ['.YOYOYOY.', 'YOYOYOYOY', 'BBBBBBBBB', '.BBBBBBB.', '..BBBBB..']
 
-function tissue(x, cx, cy, s, t) { x.save(); x.translate(cx, cy); x.rotate(0.25 + Math.sin(t * 7) * 0.12); R(x, INK, -s / 2 - 4, -s / 2 - 4, s + 8, s * 1.2 + 8); R(x, '#ffffff', -s / 2, -s / 2, s, s * 1.2); R(x, '#dfe9f7', -s / 2, s * 0.5, s, s * 0.2); x.restore() }
+function cloud(x, t, cx, cy, a, k = 1.45) {
+  if (a <= 0) return
+  x.save(); x.globalAlpha *= a; x.translate(cx, cy + Math.sin(t * 1.6) * 6); x.scale(k, k)
+  const P = [[-70, 0, 70], [0, -30, 80], [70, 0, 70], [0, 20, 90]]
+  for (const [dx, dy, r] of P) { R(x, INK, dx - r / 2 - 6, dy - r / 3 - 6, r + 12, r * 0.66 + 12) }
+  for (const [dx, dy, r] of P) { R(x, '#8a8fa8', dx - r / 2, dy - r / 3, r, r * 0.66) }
+  R(x, '#a8adc4', -60, -40, 90, 14)
+  // a few slow grey flakes falling from it
+  for (let i = 0; i < 4; i++) { const ph = (t * 0.7 + i / 4) % 1; x.globalAlpha = a * (1 - ph); x.fillStyle = '#b8bdd4'; x.fillRect(-60 + i * 40, 50 + ph * 120, 8, 8) }
+  x.restore()
+}
+function sadPartner(x, t, o, mood = 'neutral', tears = 1) {
+  drawStarChar(x, o.x, o.y, o.s, t, { color: PART.color, glyph: o.s >= 150 ? PART.glyph : null, mood, look: o.look || [0, 0.8], seed: 9, glow: 0.7, pop: o.pop ?? 1, hops: o.hops, squash: o.squash || 0 })
+  if (tears) inSprite(x, starFrame(o.x, o.y, o.s, t, { pop: o.pop ?? 1, hops: o.hops, seed: 9, squash: o.squash || 0 }), () => tearsCells(x, t, tears))
+}
+function button(x, cx, cy, text, on, col) {
+  const w = 230, h = 100
+  R(x, INK, cx - w / 2 - 6, cy - h / 2 - 6 + 10, w + 12, h + 12)
+  R(x, on ? col : '#4a4466', cx - w / 2, cy - h / 2 + (on ? 8 : 0), w, h)
+  x.font = `800 46px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = on ? INK : BONE; x.fillText(text, cx, cy + (on ? 10 : 2))
+}
 
 function scene(x, t, S) {
   const { k, out } = S
-  const HX = k >= 2 ? 400 : 540
-  if (k <= 1) {
-    const o = { x: HX, y: 1000, s: 310, mood: 'squint', look: [0, -1], hops: [0.6, 1.6, ...S.hops(0)], squash: 0.04 * Math.sin(t * 16) }
-    shadow(x, HX, 1180, 260)
-    const F = S.pisces(x, t, o, k === 0 ? 2 : 3, 'squint', [0, -1])
-    tissue(x, HX + 170, F.cy + 10, 56, t)
-    // the snowflake on its top point
-    const fy = F.cy - F.S * 0.48 - 26
-    drawBits(x, FLAKE, { W: SNOW }, HX, fy + (k === 0 ? Math.max(0, 1 - t * 2) * -120 : 0), 8)
-    if (k === 1) {
-      // triggers drifting across
-      const items = [[CARD, { R: '#e8414f', B: BONE, H: '#ff5c8a' }, 0.0, 760], [MITT, { M: '#4fb3ff', W: BONE }, 0.7, 640]]
-      items.forEach(([bm, cols, d, yy], i) => {
-        const p = prog(t, S.b[1] + 0.2 + d, S.b[1] + 2.6 + d)
-        if (p <= 0 || p >= 1) return
-        drawBits(x, bm, cols, lerp(i ? -100 : 1180, i ? 1180 : -100, p), yy + Math.sin(p * 9) * 20, 11, { rot: Math.sin(t * 2 + i) * 0.2 })
-      })
-      label(x, 'a card!', 900, 680, { size: 30, alpha: clamp((t - S.b[1] - 0.3) * 3) * outK(t, [S.b[1] + 1.4, S.b[1] + 1.6]) })
-      label(x, 'one mitten. alone.', 260, 560, { size: 30, alpha: clamp((t - S.b[1] - 1.2) * 3) * outK(t, [S.b[1] + 2.6, S.b[2]]) })
-    }
+  const PX = 700
+  if (k === 0) {
+    shadow(x, PX, 1180, 220); cloud(x, t, PX, 780, 1)
+    sadPartner(x, t, { x: PX, y: 1040, s: 240, squash: 0.08 }, 'neutral', 1)
+    const hx = lerp(190, 330, ease.inOutQuad(prog(t, -0.6, 2.8)))
+    shadow(x, hx, 1180, 220)
+    const F = S.pisces(x, t, { x: hx, y: 1030, s: 250, hops: [0.15, 0.75, 1.35, 1.95, 2.55] }, 2, 'wide', [1, 0])
+    tissues(x, hx + 150, F.cy + 10, 110)
+    return
+  }
+  if (k === 1) {
+    shadow(x, PX, 1180, 220); cloud(x, t, PX, 780, 1)
+    sadPartner(x, t, { x: PX, y: 1040, s: 240, squash: 0.08, look: [-0.6, 0.6] }, 'neutral', 1)
+    const sit = ease.outCubic(prog(t, S.b[1] + 0.1, S.b[1] + 0.6))
+    shadow(x, 430, 1180, 220)
+    S.pisces(x, t, { x: 430, y: lerp(1030, 1060, sit), s: 240, hops: S.hops(0), squash: 0.08 * sit }, 2, 'neutral', [1, 0.4])
+    tissues(x, 565, 1150, 90)
+    label(x, '(quiet)', 560, 640, { size: 34, col: '#c9b8f0', alpha: clamp((t - S.b[1] - 1.2) * 2) })
     return
   }
   if (k === 2) {
-    const o = { x: HX, y: 1000, s: 290, mood: t > S.b[2] + 1.4 ? 'sparkle' : 'squint', look: [1, -0.3], hops: S.hops(1) }
-    shadow(x, HX, 1180, 240)
-    S.pisces(x, t, o, 2, o.mood, o.look)
-    const wx = lerp(1250, 760, ease.outCubic(prog(t, S.b[2] + 0.2, S.b[2] + 1.2)))
-    const walk = t < S.b[2] + 1.2 ? Math.abs(Math.sin(t * 12)) * 0.08 : 0
-    shadow(x, wx, 1180, 220)
-    drawStarChar(x, wx, 1010, 260, t, { color: PART.color, glyph: PART.glyph, mood: 'happy', look: [-1, 0], seed: 9, glow: 1, squash: walk })
-    tissues(x, wx - 140, 1040, 120)
-    hearts(x, t, S.b[2] + 1.4, 580, 860, { n: 4, cell: 6, spread: 160 })
+    const u = t - S.b[2]
+    const hug = u > 1.3
+    shadow(x, PX, 1180, 220); cloud(x, t, PX, 780, 1 - 0.4 * prog(u, 1.3, 2.4))
+    if (!hug) {
+      button(x, 380, 620, 'HUG', u > 0.9 && Math.floor(u * 8) % 2 === 0 ? true : u > 1.1, '#ff8fb1')
+      button(x, 700, 620, 'QUIET', false, '#9fd8ff')
+      sadPartner(x, t, { x: PX, y: 1040, s: 240, look: [-0.8, -0.6] }, 'neutral', 1)
+      S.pisces(x, t, { x: 430, y: 1060, s: 240, hops: S.hops(1), squash: 0.06 }, 2, 'neutral', [1, -0.2])
+    } else {
+      // the hug: both lean in, hearts
+      const lean = ease.outCubic(prog(u, 1.3, 1.6))
+      sadPartner(x, t, { x: lerp(PX, 610, lean), y: 1040, s: 240, look: [-1, 0], hops: [S.b[2] + 1.35] }, 'happy', 1)
+      S.pisces(x, t, { x: lerp(430, 470, lean), y: 1050, s: 240, hops: [S.b[2] + 1.35] }, 3, 'happy', [1, 0])
+      hearts(x, t, S.b[2] + 1.5, 540, 860, { n: 5, cell: 7, spread: 160 })
+      label(x, 'HUG ✓', 540, 640, { size: 46, col: '#ff8fb1' })
+    }
     return
   }
-  // beat 3: both crying, happily
+  // beat 3: a blanket over both, a snack bowl, the cloud melting into sparkles
   const kk = pop01(t, S.b[3] - 0.05, 0.4, 2) * out
-  shadow(x, 380, 1180, 230 * kk); shadow(x, 720, 1180, 230 * kk)
-  S.pisces(x, t, { x: 380, y: 1010, s: 270, pop: kk, hops: S.hops(2) }, 3, 'sparkle', [1, -0.3])
-  const po = { x: 720, y: 1010, s: 270, pop: kk, hops: [S.b[3] + 0.8, S.b[3] + 2.0] }
-  drawStarChar(x, po.x, po.y, po.s, t, { color: PART.color, glyph: PART.glyph, mood: 'sparkle', look: [-1, -0.3], seed: 9, glow: 1, pop: kk, hops: po.hops })
-  const F = starFrame(po.x, po.y, po.s, t, { pop: kk, hops: po.hops, seed: 9 })
-  if (t > S.b[3] + 0.6) inSprite(x, F, () => tearsCells(x, t, t > S.b[3] + 1.6 ? 2 : 1))
-  tissues(x, 550, 1150, 100 * kk)
-  bubble(x, t, 720, 760, S.b[3] + 0.7, 12.2, "ok i'm crying too", { size: 38, col: '#d9f4e2' })
-  hearts(x, t, S.b[3] + 1.5, 550, 860, { n: 6, cell: 7, spread: 220 })
+  const melt = prog(t, S.b[3] + 0.9, S.b[3] + 1.8)
+  cloud(x, t, 540, 740, 1 - melt, 1.45 * (1 - 0.4 * melt))
+  sparkles(x, t, 540, 740, S.b[3] + 1.5, 14, 200, 1, [GOLD, BONE, '#9fd8ff'])
+  S.pisces(x, t, { x: 420, y: 1020, s: 230, pop: kk, hops: S.hops(2) }, 2, 'sparkle', [1, 0])
+  sadPartner(x, t, { x: 660, y: 1020, s: 230, pop: kk, look: [-1, 0], hops: [S.b[3] + 1.9] }, melt > 0.6 ? 'happy' : 'neutral', melt > 0.6 ? 0 : 1)
+  const bk = pop01(t, S.b[3] + 0.3, 0.4, 1.8) * kk
+  if (bk > 0.01) {
+    x.save(); x.translate(540, 1110); x.scale(bk, bk)
+    box(x, -300, -50, 600, 120, '#c0587a', { b: 7, hi: '#d97a98' })
+    for (let i = 0; i < 6; i++) R(x, '#f2c75c', -280 + i * 100, -40, 40, 100)
+    x.restore()
+  }
+  const sk = pop01(t, S.b[3] + 0.6, 0.3, 2.4) * kk
+  if (sk > 0.01) drawBits(x, BOWL, { Y: '#ffd34d', O: '#ff9a4a', B: '#7fd0ff' }, 540, 1060, 12 * sk)
+  hearts(x, t, S.b[3] + 2.0, 540, 880, { n: 4, cell: 6, spread: 200 })
 }
 
 function finale(x, t, S) {
@@ -70,9 +99,7 @@ function finale(x, t, S) {
   if (hk > 0.01) { shadow(x, 330, 1420, 260 * hk); S.pisces(x, t, { x: 330, y: 1220, s: 330, pop: hk, hops: S.FIN_HOPS, tips: true }, t > T.lastLand ? 3 : 2, 'sparkle', [0.6, -0.3]) }
   if (pk > 0.01) {
     shadow(x, 770, 1420, 240 * pk)
-    const o = { x: 770, y: 1240, s: 280, pop: pk, hops: [T.pisIn + 0.3, T.lastLand + 0.1] }
-    drawStarChar(x, o.x, o.y, o.s, t, { color: PART.color, glyph: PART.glyph, mood: 'sparkle', look: [-0.6, -0.3], seed: 9, glow: 1, pop: pk, hops: o.hops })
-    inSprite(x, starFrame(o.x, o.y, o.s, t, { pop: pk, hops: o.hops, seed: 9 }), () => tearsCells(x, t, 2))
+    sadPartner(x, t, { x: 770, y: 1240, s: 280, pop: pk, look: [-0.6, -0.3], hops: [T.pisIn + 0.3, T.lastLand + 0.1] }, 'sparkle', 2)
     tissues(x, 550, 1400, 100 * pk)
   }
   hearts(x, t, T.lastLand + 0.1, 550, 1080, { n: 6, cell: 7, spread: 260 })
@@ -80,16 +107,16 @@ function finale(x, t, S) {
 
 const EP = makeAsk({
   sign: 'pisces', name: 'PISCES', partner: 'virgo', pis: false,
-  question: 'I cry at *everything.* | Is that a lot?',
-  lines: ["feeling deeply isn't too much. it's you.", 'the right person brings tissues, not jokes.', 'and tells you when they cry too.'],
+  question: "How do I *comfort* | someone who's sad?", qSize: 82,
+  lines: ["sit with them. you don't need perfect words.", "ask: 'want a hug, or some quiet?'", 'then bring a blanket and their favorite snack.'],
   chip: '♓ MUTABLE WATER · JUPITER (TRAD.) · NEPTUNE (MODERN)',
-  last: 'Big feelings. | *Right* person.', lastLate: 2,
+  last: 'Just *stay* close.', lastLate: 2,
   scene, finale,
   cues: [
-    ['pop', 0.25, 1567.98, 0.02, 0], ['pluck', 0.6, 523.25, 0.02, 0.3, 0], ['pluck', 1.6, 493.88, 0.02, 0.3, 0],
-    ['whoosh', 3.3, 0.4, 0.02], ['pop', 3.5, 1046.5, 0.03, 0.5], ['pop', 4.3, 880, 0.03, -0.5],
-    ['tick', 6.3, 0.03], ['tick', 6.55, 0.03], ['tick', 6.8, 0.03], ['tick', 7.05, 0.03], ['pop', 7.3, 1174.66, 0.04, 0.3],
-    ['pluck', 9.5, 1318.51, 0.03, 0.5, 0.3], ['glitter', 10.3, 10.8],
+    ['tick', 0.15, 0.025], ['tick', 0.75, 0.025], ['tick', 1.35, 0.025], ['tick', 1.95, 0.025], ['tick', 2.55, 0.025],
+    ['whoosh', 3.2, 0.2, 0.02], ['tom', 3.6, 110, { gain: 0.12, decay: 0.2 }],
+    ['pop', 6.8, 880, 0.03, -0.3], ['pop', 7.0, 1046.5, 0.04, -0.3], ['glitter', 7.2, 7.6], ['pluck', 7.25, 1318.51, 0.04, 0.6, 0],
+    ['whoosh', 9.1, 0.3, 0.03], ['pop', 9.45, 987.77, 0.035, 0], ['glitter', 10.3, 10.9],
   ],
 })
 export const DURATION = EP.DURATION, SCENES = EP.SCENES, CUES = EP.CUES
