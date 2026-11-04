@@ -1,110 +1,109 @@
-// nmue16: THE MAKE-UP TALK, "Ask, don't accuse" (30 s vertical, promo/films/next30/b32.md, music: pop · D).
+// nmue16: THE MAKE-UP TALK, "Hold first, fix later" (30 s vertical, promo/films/next30/b32.md, music: pop · D).
 // ♌ Leo × ♑ Capricorn. The format lives in ../../nmue13/scenes/makeupkit.js (shared by nmue13–nmue24).
-//   0–6.6     THE FIGHT  "“You *never* notice | anything!”" Leo mid-twirl in a new striped sweater; Capricorn behind a laptop:
-//             "you NEVER notice anything!" / "that's not fair." / "NEVER!!"
-//   6.6–12.8  UNDER IT   "What *“never”* | really means:" the words go into a pixel translator machine; it whirrs, shakes and
-//             prints the real message: "I wanted you to see me."
-//   12.8–21.6 THE TALK   "Ask. | Don’t *accuse.*" THE STARS: swap "you never" for "I'd love it if". TRY SAYING "I'd love it if
-//             you told me when you like something." Capricorn: "I noticed. I didn't say it. it looks great."
-//   21.6–25.5 MADE UP    the laptop shut, Capricorn says it again ("the stripes? perfect."), Leo glows and twirls.
-//             "Say the wish, | not the *never*."
-import { makeMakeUp, R, box, ink, label, glow, sparkles, bubble, inSprite, starFrame, pop01, prog, lerp, clamp, ease, easeOutBack, INK, BONE, GOLD, PINK, MONO, INTER } from '../../nmue13/scenes/makeupkit.js'
+//   0–6.6     THE FIGHT  "“I don’t need a | *spreadsheet!*”" Leo mid-sniffle after a rough day; Capricorn mid-hop holding up a
+//             laptop full of solutions: "here's a 5-step plan." / "I don't need a spreadsheet!" / "I'm HELPING!"
+//   6.6–12.8  UNDER IT   "Wanted: *a hug.* | Got: a toolbox." Capricorn hands over a wrench, a chart, a clipboard; Leo's
+//             thought bubble only holds a blanket.
+//   12.8–21.6 THE TALK   "Help, | or *a hug?*" TRY SAYING "Do you want help, or a hug?" Leo: "a hug. then maybe step two."
+//   21.6–25.5 MADE UP    the laptop shuts, a blanket wraps them both, Capricorn just holds on. "Hold first. | *Fix* later."
+import { makeMakeUp, R, box, ink, label, glow, sparkles, inSprite, starFrame, tearsCells, pop01, prog, lerp, clamp, ease, easeOutBack, INK, BONE, GOLD, PINK, MONO, INTER } from '../../nmue13/scenes/makeupkit.js'
 
-const SWEATER = ['#7fd0ff', '#efe6d6']
-function sweater(x, F) {
-  inSprite(x, F, () => {
-    x.fillStyle = INK; x.fillRect(9.5, 25.5, 17, 6)
-    for (let j = 0; j < 3; j++) { x.fillStyle = SWEATER[j % 2]; x.fillRect(10, 26 + j * 1.7, 16, 1.7) }
-  })
-}
 function laptop(x, cx, by, open = 1, k = 1) {
   if (k <= 0.01) return
   x.save(); x.translate(cx, by); x.scale(k, k)
   box(x, -130, -20, 260, 24, '#9aa6c8', { b: 6 })
-  if (open > 0) { const h = 170 * open; box(x, -120, -20 - h, 240, h, '#2a2148', { b: 6 }); R(x, '#5a8ad8', -106, -8 - h, 212, h - 24); for (let i = 0; i < 4; i++) R(x, 'rgba(255,255,255,0.5)', -90, -h + 10 + i * 30, 120 + (i * 37) % 60, 8) }
+  if (open > 0) {
+    const h = 170 * open
+    box(x, -120, -20 - h, 240, h, '#2a2148', { b: 6 }); R(x, '#5fd38a', -106, -8 - h, 212, h - 24)
+    ink(x, 'PLAN', 0, -h + 18, { size: 26, font: MONO, weight: 700, col: INK })
+    for (let i = 0; i < 4; i++) { R(x, INK, -90, -h + 46 + i * 26, 14, 14); R(x, 'rgba(27,18,54,0.6)', -66, -h + 50 + i * 26, 110 + (i * 37) % 50, 7) }
+  }
   x.restore()
 }
-function machine(x, t, u) {
-  const run = u > 1.2 && u < 2.9
-  const sh = run ? 6 * Math.sin(t * 60) : 0
-  x.save(); x.translate(540 + sh, 900)
-  box(x, -260, -230, 520, 400, '#6b4fa8', { b: 9, hi: 'rgba(255,255,255,0.12)' })
-  box(x, -200, -300, 140, 80, '#4a3680', { b: 7 })          // input chute
-  R(x, INK, -190, -232, 120, 10)
-  // gears
-  for (const [gx, gy, r, d] of [[60, -100, 60, 1], [170, -20, 40, -1.5]]) {
-    x.save(); x.translate(gx, gy); x.rotate((run ? t * 6 : 0.3) * d)
-    for (let i = 0; i < 8; i++) { x.save(); x.rotate(i * Math.PI / 4); R(x, INK, -10, -r - 14, 20, 24); R(x, GOLD, -6, -r - 10, 12, 18); x.restore() }
-    x.fillStyle = INK; x.beginPath(); x.arc(0, 0, r + 4, 0, Math.PI * 2); x.fill(); x.fillStyle = GOLD; x.beginPath(); x.arc(0, 0, r, 0, Math.PI * 2); x.fill(); R(x, INK, -8, -8, 16, 16)
-    x.restore()
-  }
-  // dial + lights
-  for (let i = 0; i < 4; i++) R(x, run && Math.floor(t * 8 + i) % 2 ? '#9fe6b0' : '#2a1f55', -220 + i * 46, 60, 30, 30)
-  ink(x, 'TRANSLATOR', -130, 128, { size: 30, font: MONO, weight: 700, col: BONE })
-  R(x, INK, -170, 170, 340, 16)     // output slot
+const TOOLS = {
+  wrench: ['..GG.', '.G..G', '..GGG', '.GG..', 'GG...', 'G....'],
+  chart: ['WWWWWW', 'W....W', 'W.R..W', 'W.RB.W', 'WGRBGW', 'WWWWWW'],
+  clip: ['.BBBB.', 'WWWWWW', 'W.KK.W', 'W....W', 'W.KK.W', 'WWWWWW'],
+}
+const TCOL = { G: '#9aa6c8', W: BONE, R: '#ff5c6b', B: '#7fd0ff', K: INK }
+function tool(x, name, cx, cy, s, rot = 0) {
+  const bm = TOOLS[name], w = bm[0].length, h = bm.length
+  x.save(); x.translate(cx, cy); x.rotate(rot)
+  for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const c = bm[j][i]; if (c === '.') continue; x.fillStyle = INK; x.fillRect((i - w / 2) * s - 3, (j - h / 2) * s - 3, s + 6, s + 6) }
+  for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const c = bm[j][i]; if (c === '.') continue; x.fillStyle = TCOL[c]; x.fillRect((i - w / 2) * s, (j - h / 2) * s, s + 0.5, s + 0.5) }
+  x.restore()
+}
+function blanket(x, cx, cy, w, h, k = 1) {
+  if (k <= 0.01) return
+  x.save(); x.translate(cx, cy); x.scale(k, k)
+  box(x, -w / 2, -h / 2, w, h, '#ff9a6b', { b: 8 })
+  for (let i = 0; i < 6; i++) R(x, '#ffc29a', -w / 2 + 20 + i * (w - 40) / 6, -h / 2, 16, h)
+  R(x, 'rgba(255,255,255,0.18)', -w / 2, -h / 2, w, 14)
   x.restore()
 }
 
 const EP = makeMakeUp({
   id: 'nmue16', a: 'leo', b: 'capricorn',
-  hook: '“You *never* notice | anything!”', hookColor: '#ffb347',
+  hook: '“I don’t need a | *spreadsheet!*”', hookColor: '#5fd38a',
   fight: {
-    lines: [['a', 'you NEVER notice anything!'], ['b', "that's not fair."], ['a', 'NEVER!!']],
-    bubbleAt: [[360, 860], [760, 750], [280, 640]],
-    moods: { a: 'squint', b: 'wide' },
+    lines: [['b', "here's a 5-step plan."], ['a', "I don't need a spreadsheet!"], ['b', "I'm HELPING!"]],
+    bubbleAt: [[760, 780], [340, 860], [760, 640]],
+    moods: { a: 'wide', b: 'happy' },
+    noSquiggle: true,
     front(x, t) {
-      sweater(x, starFrame(285, 1130, 280, t, { hops: [-0.12, -0.3, 0.1, 3.9, 4.3], seed: 3 }))
-      laptop(x, 795, 1420, 1, 0.75)
-      sparkles(x, t, 285, 1100, -0.2, 8, 190, 1, [GOLD, BONE, '#7fd0ff'])
-      label(x, 'NEW SWEATER', 285, 1340, { size: 26, col: '#7fd0ff' })
+      const F = starFrame(285, 1130, 280, t, { hops: [-0.12, 1.85, 2.25], seed: 3 })
+      inSprite(x, F, () => tearsCells(x, t, 2))
+      laptop(x, 795, 1000 - 8 * Math.abs(Math.sin(t * 4)), 1, 0.8)
+      label(x, 'ROUGH DAY', 285, 1360, { size: 28, col: '#ffb347' })
     },
-    cues: [['glitter', 0.0, 0.3], ['tick', 1.1, 0.03], ['tick', 1.25, 0.03], ['tick', 1.4, 0.03]],
+    cues: [['pop', 0.4, 1174.66, 0.02, 0.3], ['pop', 0.6, 1318.51, 0.02, 0.3]],
   },
   under: {
-    head: 'What *“never”* | really means:', color: '#ffb347',
+    head: 'Wanted: *a hug.* | Got: a toolbox.', color: '#ff9a6b',
     draw(x, t, S) {
-      const { u, drawA } = S
-      machine(x, t, u)
-      // the card going in
-      const inK = ease.inCubic(prog(u, 0.4, 1.2))
-      if (inK < 1) {
-        x.save(); x.translate(lerp(250, 410, inK), lerp(500, 640, inK)); x.rotate(lerp(-0.2, 0, inK)); x.scale(1 - 0.5 * inK, 1 - 0.5 * inK)
-        box(x, -170, -50, 340, 100, BONE, { b: 6 }); ink(x, 'YOU NEVER…', 0, 2, { size: 46, col: '#c0392b' })
+      const { u, drawA, drawB } = S
+      drawA(x, t, { x: 300, y: 1200, s: 240, mood: u > 2.6 ? 'squint' : 'wide', look: [1, 0.2], hops: [S.t0 + 3.4] })
+      inSprite(x, starFrame(300, 1200, 240, t, { hops: [S.t0 + 3.4], seed: 3 }), () => tearsCells(x, t, 1))
+      drawB(x, t, { x: 820, y: 1200, s: 230, mood: 'happy', look: [-1, 0], hops: [S.t0 + 0.4, S.t0 + 1.2, S.t0 + 2.0] })
+      ;['wrench', 'chart', 'clip'].forEach((n, i) => {
+        const at = 0.4 + i * 0.8, p = ease.outCubic(prog(u, at, at + 0.45))
+        if (p <= 0) return
+        tool(x, n, lerp(780, 420 + i * 120, p), lerp(1050, 1420 - i * 10, p) - Math.sin(Math.PI * p) * 200, 24, (1 - p) * 3 + i * 0.2)
+      })
+      // Leo's thought bubble: just a blanket
+      const tk = easeOutBack(prog(u, 2.9, 3.3), 2.2)
+      if (tk > 0.01) {
+        x.save(); x.translate(330, 760); x.scale(tk, tk)
+        for (const [dx, dy, r] of [[-80, 0, 110], [40, -30, 130], [130, 20, 100]]) { x.fillStyle = INK; x.beginPath(); x.arc(dx, dy, r + 7, 0, Math.PI * 2); x.fill() }
+        for (const [dx, dy, r] of [[-80, 0, 110], [40, -30, 130], [130, 20, 100]]) { x.fillStyle = '#fff1e6'; x.beginPath(); x.arc(dx, dy, r, 0, Math.PI * 2); x.fill() }
+        x.fillStyle = INK; x.beginPath(); x.arc(-60, 150, 22, 0, Math.PI * 2); x.fill(); x.beginPath(); x.arc(-30, 200, 14, 0, Math.PI * 2); x.fill()
+        blanket(x, 30, -10, 220, 120)
+        ink(x, 'just this.', 30, 90, { size: 30, col: INK, font: MONO, weight: 700 })
         x.restore()
       }
-      // the print-out
-      const out = ease.outCubic(prog(u, 2.9, 3.5))
-      if (out > 0) {
-        x.save(); x.translate(540, 1070 + out * 170); x.rotate(0.02 * Math.sin(t * 2))
-        box(x, -300, -60 * out, 600, 130 * out + 10, '#fff8e6', { b: 6 })
-        if (out > 0.6) ink(x, 'I wanted you to see me.', 0, 10, { size: 42, col: INK, alpha: clamp(prog(out, 0.6, 1)) })
-        x.restore()
-        sparkles(x, t, 540, 1260, S.t0 + 3.4, 10, 300, 2, [GOLD, BONE, PINK])
-      }
-      drawA(x, t, { x: 170, y: 1460, s: 170, pop: pop01(t, S.t0 + 0.2, 0.3, 2), mood: u > 3.5 ? 'sparkle' : 'neutral', look: [1, -0.7], hops: [S.t0 + 3.6] })
-      sweater(x, starFrame(170, 1460, 170, t, { hops: [S.t0 + 3.6], seed: 3 }))
     },
-    cues: [['whoosh', 0.4, 0.8, 0.03], ['tick', 1.2, 0.06], ...Array.from({ length: 12 }, (_, i) => ['tick', +(1.3 + i * 0.13).toFixed(2), 0.025]), ['riser', 1.3, 2.9, 0.025], ['pop', 2.95, 880, 0.04, 0], ['bell', 3.45, 1760, 0.035, 1.0, 0], ['glitter', 3.4, 3.8]],
+    pis: { x: 960, y: 1660, s: 120 },
+    cues: [['whoosh', 0.4, 0.4, 0.03], ['tick', 0.85, 0.06], ['whoosh', 1.2, 0.4, 0.03], ['tick', 1.65, 0.06], ['whoosh', 2.0, 0.4, 0.03], ['tick', 2.45, 0.06], ['pop', 2.95, 739.99, 0.04, -0.3], ['pluck', 3.1, 1174.66, 0.035, 0.8, -0.3]],
   },
   talk: {
-    head: 'Ask. | Don’t *accuse.*', color: '#ffb347',
-    stars: 'swap "you never" for "I\'d *love it* if."',
-    script: 'I’d *love it* if you told me when you like something.',
-    reply: ['b', "I noticed. I didn't say it. *it looks great.*"],
+    head: 'Help, | or *a hug?*', color: '#ff9a6b',
+    stars: "when they're hurting, comfort comes before *solutions.*",
+    script: 'Do you want *help,* or *a hug?*',
+    reply: ['a', 'a hug. *then maybe step two.*'],
   },
   made: {
-    draw(x, t, S) { x.save(); x.globalAlpha = S.ok; laptop(x, 900, 1300, 0, 0.8); x.restore(); glow(x, 410, 1060, 320, S.ok * clamp(prog(t, S.t0 + 0.8, S.t0 + 1.4)), '255,200,120') },
+    draw(x, t, S) { laptop(x, 920, 1420, 0, 0.7 * S.ok); glow(x, 540, 1060, 380, S.ok, '255,170,120') },
     front(x, t, S) {
-      sweater(x, starFrame(410, 1060, 270 * S.ok, t, { hops: [S.t0 + 0.1, S.t0 + 1.6, S.t0 + 2.6], seed: 3 }))
-      bubble(x, t, 720, 820, S.t0 + 0.6, S.t1, 'the stripes? perfect.', { size: 34, tail: -0.2 })
-      sparkles(x, t, 410, 1040, S.t0 + 1.0, 10, 200, 1, [GOLD, BONE, '#7fd0ff'])
+      blanket(x, 540, 1240 + 30 * (1 - ease.outBack(prog(t, S.t0 + 0.5, S.t0 + 0.9))), 560, 150, pop01(t, S.t0 + 0.5, 0.35, 2) * S.ok)
+      sparkles(x, t, 540, 1160, S.t0 + 0.7, 10, 260, 1, ['#ff9a6b', GOLD, BONE])
+      label(x, 'step two: later', 780, 1450, { size: 34, col: BONE, alpha: S.ok * clamp(prog(t, S.t0 + 1.5, S.t0 + 1.8)) })
     },
-    cues: [['pop', 0.6, 987.77, 0.04, 0.3], ['glitter', 1.0, 1.4], ['bell', 1.05, 2349.32, 0.02, 0.8, -0.2]],
+    cues: [['whoosh', 0.5, 0.4, 0.035], ['pop', 0.85, 739.99, 0.04, 0], ['glitter', 0.7, 1.1], ['tick', 0.1, 0.05]],
   },
-  last: 'Say the wish, | not the *never*.', lastColor: '#ffb347',
+  last: 'Hold first. | *Fix* later.', lastColor: '#ff9a6b',
 })
 
 export const DURATION = EP.DURATION
 export const SCENES = EP.SCENES
 export const CUES = EP.CUES
-void [INTER, easeOutBack]
+void [PINK, INTER]
