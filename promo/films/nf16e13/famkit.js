@@ -494,7 +494,7 @@ function streetBack(x, t, o) {
 function deskBack(x, t, o) {
   wall(x, o.wall || 'olive'); floorWood(x)
   windowSnow(x, t, 780, 660, 280, 300)
-  lamp(x, t, 200, 1100, 200)
+  if (o.lamp !== false) lamp(x, t, 200, 1100, 200)
   frameOnWall(x, 460, 600, 140, 110, '#ffd0de')
 }
 function deskFront(x, t) {
