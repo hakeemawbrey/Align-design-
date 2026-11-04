@@ -11,7 +11,7 @@
 import { createRequire } from 'node:module'
 import { spawn, execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { existsSync, readdirSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, mkdirSync, writeFileSync, renameSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -26,6 +26,7 @@ const flag = (n) => args.includes(n)
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d }
 const stills = flag('--stills')
 const profile = flag('--profile')
+const remix = flag('--remix') // new audio onto the existing video, no frames redrawn
 const jobs = Number(opt('--jobs', 2))
 const outDir = path.resolve(opt('--out', path.join(REPO, 'reels/out/affirm')))
 const picks = args.filter((a, i) => !a.startsWith('--') && !['--jobs', '--out'].includes(args[i - 1]))
@@ -151,8 +152,8 @@ function mixAudio(script, tl, wav) {
     ...chains,
     `${tl.scenes.map((_, i) => `[v${i}]`).join('')}amix=inputs=${n}:normalize=0,highpass=f=80,equalizer=f=3200:t=q:w=1.2:g=2,acompressor=threshold=0.12:ratio=2.5:attack=8:release=160,aecho=0.85:0.55:42|88:0.09|0.05,volume=1.5,apad=whole_dur=${tl.duration.toFixed(3)}[vox]`,
     '[vox]asplit=2[va][vb]',
-    '[0:a]volume=0.9[bed]',
-    '[bed][va]sidechaincompress=threshold=0.03:ratio=4:attack=40:release=700[bd]',
+    '[0:a]volume=1.0[bed]',
+    '[bed][va]sidechaincompress=threshold=0.04:ratio=2.5:attack=60:release=900[bd]',
     `[bd][vb]amix=inputs=2:normalize=0,atrim=0:${tl.duration.toFixed(3)},loudnorm=I=-14:TP=-1.5:LRA=11,aresample=44100[out]`,
   ].join(';')
   execFileSync('ffmpeg', ['-v', 'error', '-y', ...ins, '-filter_complex', filter, '-map', '[out]', '-ac', '2', wav])
@@ -182,6 +183,18 @@ async function renderOne(browser, file) {
   const wav = path.join(outDir, `${script.id}.wav`)
   mixAudio(script, tl, wav)
   const mp4 = path.join(outDir, `${script.id}.mp4`)
+  if (remix && existsSync(mp4)) {
+    const tmp = mp4.replace(/\.mp4$/, '.remix.mp4')
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', mp4, '-i', wav, '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
+      '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', tmp])
+    renameSync(tmp, mp4)
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', mp4, '-vf', 'scale=720:-2', '-c:v', 'libx264', '-preset', 'slow',
+      '-crf', '24', '-maxrate', '2.5M', '-bufsize', '5M', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k',
+      '-movflags', '+faststart', path.join(outDir, `${script.id}.web.mp4`)])
+    await page.close()
+    console.log(`${script.id}: new audio → ${path.relative(REPO, mp4)}`)
+    return
+  }
   const frames = Math.ceil(tl.duration * FPS)
   const ff = spawn('ffmpeg', ['-v', 'error', '-y',
     '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-', '-i', wav,

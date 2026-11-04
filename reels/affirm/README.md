@@ -17,7 +17,7 @@ Kokoro model, and the music is synthesised. For the page that posts these
 | `scripts/*.json` | one script per reel |
 | `engine.js` | the drawings, captions and pill, rendered in a browser canvas |
 | `voice.py` | speaks each scene with Kokoro and reports when every word is said |
-| `bed.py` | an original music bed: pad chords, air, a shimmer per scene, a bell for the pill |
+| `bed.py` | an original, warm music bed: soft piano broken chords in a major key (I–V–vi–IV and friends), pad and bass, a music-box note per chord, a harp run per scene, a two-note ding for the pill |
 | `render.mjs` | script → voice → frames (Playwright Chromium) → MP4 with ffmpeg |
 | `glyphs.json` | zodiac and planet symbols as paths (from DejaVu Sans, free licence) |
 | `profile/` | profile picture options for the page |
@@ -39,6 +39,7 @@ node reels/affirm/render.mjs --stills        # contact sheets + covers, ~15 s a 
 node reels/affirm/render.mjs                 # every reel → reels/out/affirm/<id>.mp4
 node reels/affirm/render.mjs venus           # by id
 node reels/affirm/render.mjs --profile       # profile pictures → reels/affirm/profile/
+node reels/affirm/render.mjs --remix         # new music/voice mix onto the existing video (fast)
 ```
 
 Each reel gives you:

@@ -1,8 +1,11 @@
-"""An original, quiet music bed for an affirmation reel: warm pad chords that
-breathe slowly, a soft air layer, a shimmer as each drawing starts, and one
-bell when the comment pill appears.
+"""An original, warm music bed for an affirmation reel: soft piano broken
+chords in a major key, a gentle pad and bass under them, a music-box note on
+each chord change, a little harp run as each drawing begins, and a two-note
+"ding" when the comment pill appears. Everything sits in one key on a
+familiar progression (I–V–vi–IV and friends), so it reads as calm and
+hopeful, never tense.
 
-    python3 bed.py <seconds> <out.wav> <seed> <scene starts,comma,separated> [bell time]
+    python3 bed.py <seconds> <out.wav> <seed> <scene starts,comma,separated> [ding time]
 """
 import sys
 import wave
@@ -10,15 +13,79 @@ import wave
 import numpy as np
 
 SR = 44100
-# Lydian-ish, open voicings: dreamy without being sad. Semitones above A2.
-PROGS = [
-    [[3, 10, 14, 19, 26], [-2, 5, 12, 17, 21], [0, 7, 14, 16, 23], [-4, 3, 10, 15, 22]],
-    [[0, 7, 11, 16, 23], [5, 12, 16, 19, 26], [-3, 4, 11, 16, 19], [2, 9, 14, 18, 25]],
-]
+BPM = 70
+BEAT = 60 / BPM
+BAR = BEAT * 4
+CHORD = BAR * 2  # each chord lasts two bars
+
+SCALE = [0, 2, 4, 5, 7, 9, 11]  # major
+# Scale degrees (0 = I). All diatonic, all major-key staples.
+PROGS = [[0, 4, 5, 3], [5, 3, 0, 4], [0, 5, 3, 4], [3, 0, 4, 5]]
+KEYS = [48, 50, 53, 51, 55]  # C, D, F, Eb, G (MIDI of the tonic, octave 3)
+TARGET_RMS = 0.03  # keeps the bed well under the voice (about -30 LUFS)
 
 
-def hz(semi):
-    return 110.0 * 2 ** (semi / 12)
+def hz(m):
+    return 440.0 * 2 ** ((m - 69) / 12)
+
+
+def triad(tonic, degree):
+    """MIDI notes of the chord on a scale degree, root first: root, 3rd, 5th, 9th."""
+    # roots above the 4th drop an octave, so every chord sits near the tonic
+    base = tonic - 12 if SCALE[degree % 7] > 6 else tonic
+
+    def pitch(d):
+        return base + SCALE[d % 7] + 12 * (d // 7)
+    return [pitch(degree), pitch(degree + 2), pitch(degree + 4), pitch(degree + 8)]
+
+
+def piano(m, dur, vel, rng):
+    """A soft felt-piano tone: few harmonics, fast attack, gentle decay."""
+    f = hz(m)
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    decay = 0.9 + (m - 48) * 0.035  # higher notes fade sooner
+    out = np.zeros(n)
+    for h, a in ((1, 1.0), (2, 0.42), (3, 0.16), (4, 0.07), (5, 0.03)):
+        fh = f * h * np.sqrt(1 + 0.00025 * h * h)
+        out += a * np.sin(2 * np.pi * fh * t + rng.random() * 0.3) * np.exp(-t * decay * (1 + 0.55 * (h - 1)))
+    att = np.clip(t / 0.006, 0, 1)
+    rel = np.clip((dur - t) / 0.25, 0, 1)
+    return out * att * rel * vel
+
+
+def musicbox(m, dur, vel):
+    f = hz(m)
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    v = np.sin(2 * np.pi * f * t) + 0.18 * np.sin(2 * np.pi * f * 4.0 * t) * np.exp(-t * 6)
+    return v * np.exp(-t * 1.6) * np.clip(t / 0.003, 0, 1) * vel
+
+
+def add(buf, sig, at, pan=0.5):
+    a = int(at * SR)
+    if a >= buf.shape[1] or a < 0:
+        return
+    sig = sig[: buf.shape[1] - a]
+    buf[0, a:a + len(sig)] += sig * np.sqrt(1 - pan)
+    buf[1, a:a + len(sig)] += sig * np.sqrt(pan)
+
+
+def reverb(x, rng, seconds=2.6, wet=0.28):
+    """Convolution with soft, decaying noise: a warm room, not a cave."""
+    ln = int(seconds * SR)
+    t = np.arange(ln) / SR
+    out = np.empty_like(x)
+    nfft = 1 << int(np.ceil(np.log2(x.shape[1] + ln)))
+    freqs = np.fft.rfftfreq(ln, 1 / SR)
+    for ch in range(2):
+        ir = rng.standard_normal(ln) * np.exp(-t * 3.2 / seconds * 2.3)
+        # darken the tail so it never hisses
+        ir = np.fft.irfft(np.fft.rfft(ir) / (1 + (freqs / 3500) ** 2), ln)
+        ir /= np.sqrt(np.sum(ir ** 2)) + 1e-9
+        y = np.fft.irfft(np.fft.rfft(x[ch], nfft) * np.fft.rfft(ir, nfft), nfft)[: x.shape[1]]
+        out[ch] = x[ch] * (1 - wet) + y * wet * 1.6
+    return out
 
 
 def main():
@@ -26,84 +93,66 @@ def main():
     out = sys.argv[2]
     seed = int(sys.argv[3])
     starts = [float(x) for x in sys.argv[4].split(',') if x]
-    bell = float(sys.argv[5]) if len(sys.argv) > 5 else None
+    ding = float(sys.argv[5]) if len(sys.argv) > 5 else None
     rng = np.random.default_rng(seed)
-    prog = PROGS[seed % len(PROGS)]
-    root = [0, 2, -2, 5][seed % 4]
+    tonic = KEYS[seed % len(KEYS)]
+    prog = PROGS[(seed // 7) % len(PROGS)]
     n = int(seconds * SR)
+    buf = np.zeros((2, n))
     t = np.arange(n) / SR
-    L = np.zeros(n)
-    R = np.zeros(n)
 
-    # Pad: one chord every 8 s, long overlapping swells.
-    chord = 8.0
-    for ci in range(int(seconds / chord) + 2):
-        start = ci * chord - 2.0
-        a = int(max(start, 0) * SR)
-        b = int(min(start + chord + 4.0, seconds) * SR)
-        if b <= a:
-            continue
-        tt = t[a:b] - start
-        env = (np.clip(tt / 3.0, 0, 1) * np.clip((chord + 4.0 - tt) / 3.5, 0, 1)) ** 1.6
-        for k, semi in enumerate(prog[ci % len(prog)]):
-            f = hz(root + semi)
-            for det, pan in ((-0.06, 0.2), (0.05, 0.8), (0.0, 0.5)):
-                ff = f * 2 ** (det / 12)
-                ph = rng.random() * 6.28
-                vib = 1 + 0.0015 * np.sin(2 * np.pi * (0.2 + 0.1 * k) * tt)
-                v = sum(np.sin(2 * np.pi * ff * h * tt * vib + ph * h) / h ** 2.2 for h in (1, 2, 3))
-                v *= env * (0.034 if k else 0.045)
-                L[a:b] += v * (1 - pan)
-                R[a:b] += v * pan
+    def chord_at(time):
+        return triad(tonic, prog[int(max(time, 0) / CHORD) % len(prog)])
 
-    # Air: low-passed noise that breathes.
-    noise = rng.standard_normal((2, n))
-    freqs = np.fft.rfftfreq(n, 1 / SR)
-    shape = 1 / (1 + (freqs / 900) ** 2) * (freqs > 60)
-    for ch in range(2):
-        y = np.fft.irfft(np.fft.rfft(noise[ch]) * shape, n)
-        noise[ch] = y / (np.abs(y).max() + 1e-9)
-    breath = 0.55 + 0.45 * np.sin(2 * np.pi * t / 11.0)
-    L += noise[0] * 0.022 * breath
-    R += noise[1] * 0.022 * (1.1 - breath * 0.5)
+    for ci in range(int(seconds / CHORD) + 1):
+        c0 = ci * CHORD
+        r, third, fifth, ninth = triad(tonic, prog[ci % len(prog)])
+        # pad: the triad an octave up, slow swell, a hair of chorus
+        ln = CHORD + 2.5
+        pt = np.arange(int(ln * SR)) / SR
+        env = np.clip(pt / 1.6, 0, 1) * np.clip((ln - pt) / 2.2, 0, 1)
+        for k, m in enumerate((r + 12, third + 12, fifth + 12)):
+            for cents, pan in ((-3, 0.3), (3, 0.7)):
+                f = hz(m) * 2 ** (cents / 1200)
+                v = (np.sin(2 * np.pi * f * pt) + 0.25 * np.sin(4 * np.pi * f * pt)) * env * 0.05
+                add(buf, v, c0, pan)
+        # bass: the root, low and round
+        bt = np.arange(int((CHORD + 0.5) * SR)) / SR
+        benv = np.clip(bt / 0.35, 0, 1) * np.clip((CHORD + 0.5 - bt) / 0.8, 0, 1)
+        bm = r - 12 if r - 12 >= 40 else r  # no lower than E2: warm on headphones, not a rumble
+        add(buf, (np.sin(2 * np.pi * hz(bm) * bt) + 0.2 * np.sin(4 * np.pi * hz(bm) * bt)) * benv * 0.07, c0, 0.5)
+        # piano: a slow broken chord, one note a beat, over two bars
+        pattern = [r, fifth, r + 12, third + 12, fifth + 12, third + 12, ninth, fifth]
+        for i, m in enumerate(pattern):
+            at = c0 + i * BEAT + rng.normal(0, 0.008)
+            vel = (0.5 if i % 4 == 0 else 0.34) * (0.9 + 0.2 * rng.random())
+            add(buf, piano(m, 3.2, vel, rng), at, 0.35 + 0.3 * rng.random())
+        # music box: one high chord tone as the chord changes, with an echo
+        top = (third if ci % 2 else fifth) + 36
+        for e, (dl, g) in enumerate(((0, 0.11), (BEAT * 1.5, 0.05), (BEAT * 3, 0.025))):
+            add(buf, musicbox(top, 2.5, g), c0 + 0.02 + dl, 0.25 if e % 2 else 0.75)
 
-    # Shimmer: a soft run of high partials as each drawing begins.
-    scale = [0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24]
-    for si, at in enumerate(starts):
-        for j in range(5):
-            semi = root + 36 + scale[(si * 2 + j * 2) % len(scale)]
-            on = at + 0.08 + j * 0.11
-            a = int(on * SR)
-            if a >= n:
-                continue
-            ln = min(n - a, int(2.6 * SR))
-            tt = np.arange(ln) / SR
-            env = np.exp(-tt * 2.2) * np.clip(tt / 0.01, 0, 1)
-            v = (np.sin(2 * np.pi * hz(semi) * tt) + 0.25 * np.sin(2 * np.pi * hz(semi) * 2.01 * tt)) * env * 0.012
-            pan = 0.2 + 0.6 * ((j + si) % 5) / 4
-            L[a:a + ln] += v * (1 - pan)
-            R[a:a + ln] += v * pan
+    # a soft harp run up the chord as each drawing begins
+    for at in starts[1:]:
+        r, third, fifth, _ = chord_at(at)
+        for j, m in enumerate((r + 24, third + 24, fifth + 24, r + 36)):
+            add(buf, piano(m, 1.8, 0.16, rng), at + 0.05 + j * 0.075, 0.3 + 0.13 * j)
 
-    # Bell for the pill.
-    if bell is not None:
-        a = int(bell * SR)
-        ln = min(n - a, int(4 * SR))
-        if ln > 0:
-            tt = np.arange(ln) / SR
-            f = hz(root + 31)
-            v = sum(np.sin(2 * np.pi * f * m * tt) * np.exp(-tt * d) * g
-                    for m, d, g in ((1, 1.4, 1), (2.76, 2.6, 0.35), (5.4, 4.0, 0.15)))
-            v *= np.clip(tt / 0.004, 0, 1) * 0.05
-            L[a:a + ln] += v
-            R[a:a + ln] += v
+    # the pill: a two-note ding, root then fifth
+    if ding is not None:
+        r, _, fifth, _ = chord_at(ding)
+        add(buf, musicbox(r + 36, 3.0, 0.2), ding, 0.45)
+        add(buf, musicbox(fifth + 36, 3.0, 0.2), ding + 0.16, 0.55)
 
-    # Fade in and out, then write.
-    fade = np.clip(t / 1.2, 0, 1) * np.clip((seconds - t) / 1.5, 0, 1)
-    L *= fade
-    R *= fade
-    peak = max(np.abs(L).max(), np.abs(R).max(), 1e-9)
-    gain = min(1.0, 0.5 / peak)
-    data = (np.stack([L, R], 1) * gain * 32767).astype(np.int16)
+    buf = reverb(buf, rng)
+    fade = np.clip(t / 1.0, 0, 1) * np.clip((seconds - t) / 1.6, 0, 1)
+    buf *= fade
+    rms = np.sqrt(np.mean(buf ** 2)) + 1e-9
+    buf *= TARGET_RMS / rms
+    peak = np.abs(buf).max()
+    if peak > 0.95:
+        buf *= 0.95 / peak
+    data = (buf.T * 32767).astype(np.int16)
     with wave.open(out, 'wb') as w:
         w.setnchannels(2)
         w.setsampwidth(2)
