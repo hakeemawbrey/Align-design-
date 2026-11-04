@@ -306,10 +306,11 @@ function askedStrip(parent, { question, accent, at, out }) {
   }
 }
 /** the real-astrology note: a small pill. text rows separated by '|' */
-function noteChip(parent, { text, color, top = 1330, at, size = 29 }) {
+function noteChip(parent, { text, color, top = 1330, at, size }) {
+  size = size || Math.min(29, Math.floor(850 / (text.replace('|', '').length * 0.66)))
   const root = el('div', { position: 'absolute', left: '0', width: '1080px', top: top + 'px', display: 'none', justifyContent: 'center' }, parent)
   const pill = el('div', { padding: '13px 30px 12px', borderRadius: '999px', background: 'rgba(16,10,38,0.92)', border: `3px solid ${color}`, boxShadow: `0 0 26px ${color}55, 0 8px 30px rgba(4,2,14,0.7)`,
-    font: `700 ${size}px ${MONO}`, letterSpacing: '0.05em', color: BONE, textAlign: 'center', lineHeight: 1.3, transformOrigin: '50% 50%', maxWidth: '900px' }, root,
+    font: `700 ${size}px ${MONO}`, letterSpacing: '0.05em', color: BONE, textAlign: 'center', lineHeight: 1.3, transformOrigin: '50% 50%', maxWidth: '960px', whiteSpace: text.includes('|') ? 'normal' : 'nowrap' }, root,
     text.split('|').join('<br>').replace(/^(\S+)/, `<span style="font-family:${GLYPH};font-size:1.25em;color:${color};margin-right:0.3em;vertical-align:-0.06em">$1\uFE0E</span>`))
   return {
     update(t, out = 1) {
