@@ -1,4 +1,4 @@
-// nh15e22: HOME FOR THE HOLIDAYS, "Leaving early, kindly." (30 s vertical, Star Talk Season 15 ep 22, music: jazzy · Eb)
+// nh15e22: HOME FOR THE HOLIDAYS, "Leaving early, kindly." (28 s vertical, Star Talk Season 15 ep 22, music: jazzy · Eb)
 // Story 0–25.6, then the shared end card. The look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.0    hook "How to leave | before *dessert.*"  Capricorn frozen in the hallway, one arm in its coat; the wall
 //              clock says 8:58; Libra's family's party roars in the next room.
