@@ -20,6 +20,8 @@ Repo: hakeemawbrey/align-design-, branch **claude/align-promo-video**. 47 other 
    then queue them again as `<f> v2` (`flock /tmp/claude-0/queue.lock sh -c 'echo "<f> v2" >> /tmp/claude-0/queue.txt'`).
    Upload the new web mp4 + poster and **overwrite** that film's entry in your uploads file (new video/poster/len).
    Never delete the old page assets. Do the new films first if you like, but every film must end up in the new style.
+5. Also grep your films and kit for hard-coded end-card timings (e.g. `outroAt: DURATION - 4.4`, music outros, Pisces/last-line
+   timings written as `DURATION - 4.4`) and change them to `- ENDCARD_SHORT_LEN` (2.4).
 
 ## 0. Setup
 ```bash
