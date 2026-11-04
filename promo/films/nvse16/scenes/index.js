@@ -1,5 +1,5 @@
-// nvse16: SIGN VS SIGN, "Who keeps a surprise better?" ♌ Leo vs ♐ Sagittarius (18 s trial reel, b46, music: house · A).
-// Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse16: SIGN VS SIGN, "Who keeps a surprise better?" ♌ Leo vs ♐ Sagittarius (16 s trial reel, b46, music: house · A).
+// Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a half-hidden gift between them: "shh!"
 //   ROUND 1 ♌ "drops *hints* all week." the week's hints tick down a list. "no reason. just… friday." → "wear something nice. no reason."
 //   ROUND 2 ♐ "blurts it out on *day one.*" to the birthday star's face. "we’re NOT throwing you a party." → "…oh no."
