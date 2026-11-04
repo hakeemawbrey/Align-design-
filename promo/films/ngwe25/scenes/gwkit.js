@@ -16,6 +16,7 @@
 //     pisces(t) → { x, y, s, tears, mood, look, hops, pop } | null   the corner Pisces (default: bottom right)
 //     tissues?: false to hide the tissue box, snow?: { n, speed }, cues
 //   }
+//   Lengths: a 25 s slate film runs 23 s and a 20 s one 18 s (short 2.4 s end card, no card-back cut; 4 Nov change).
 //   T (default timeline): 25 s → open 2.8, l1 3.0, l2 7.4, l3 11.8, close 15.3, cut 15.45, last 15.5, lateAt 16.0, out [20.15, 20.5]
 //                         20 s → open 2.8, l1 3.0, l2 6.6, l3 9.0,  close 10.55, cut 10.68, last 10.75, lateAt 11.2, out [15.15, 15.5]
 //   K = { R, box, drawBits, sparkles, burst, bubble, star(opts), lantern, pop01, popOut, outK, shadow, … }
@@ -24,8 +25,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 import { drawGuide, noteChip, guideHook, factChip, guideCues, loadGuideFonts, guideSign, drawBits, drawBurst, sparkles, wordPops,
@@ -379,7 +380,8 @@ export function timeline(duration) {
 
 // ─────────────────────────────────────────────── the film
 export function winterGuide(S) {
-  const DURATION = S.duration, STORY_END = DURATION - ENDCARD_LEN
+  // S.duration is the slate length (with the old 4.4 s end card); the story is kept and the short 2.4 s card follows it
+  const STORY_END = S.duration - ENDCARD_LEN, DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(2)
   const T = { ...timeline(DURATION), ...(S.T || {}) }
   const GS = guideSign(S.sign)
   const COL = S.color || GS.color, ACC = S.accent || lighten(COL)
@@ -458,8 +460,7 @@ export function winterGuide(S) {
     }
   }
 
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END })]
   const nW = S.last.split(' ').filter(w => w !== '|').length - (S.lastLate ?? 1)
   const CUES = [
     ...guideCues(0.02),
@@ -472,8 +473,8 @@ export function winterGuide(S) {
     ...guideCues(T.lateAt + 0.5, { gain: 0.02 }),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(S.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ['whoosh', T.cut, 0.3, 0.025],
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, STORY_END, T, LINES, COL, ACC, GS }
 }
