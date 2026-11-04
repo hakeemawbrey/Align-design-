@@ -1,5 +1,5 @@
-// ngne21: STAR TALK GAME NIGHT, Ep 21, "Leo vs Aquarius: Same Story Twice" (35 s vertical, opposite signs, a rematch, music: pop · B).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne21: STAR TALK GAME NIGHT, Ep 21, "Leo vs Aquarius: Same Story Twice" (33 s vertical, opposite signs, a rematch, music: pop · B).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Leo vs Aquarius. | The spotlight *rematch.*' Leo posing, Aquarius with a wrench (ep 9 went to Aquarius).
 //   R1 'I'm nervous to meet your friends. ___' both kind → both · R2 'They cheer for your tiny wins' both GREEN → both
 //   R3 'Your date tells the same story twice': Leo 'tell a better one. about me.' / Aquarius 'laugh again. it's still good.' → Aquarius. Final Aquarius 3–2.
