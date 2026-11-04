@@ -1,13 +1,13 @@
 // nml2e06 — MOONLIGHT LANE, Ep 6: "The Gift That Says Too Much" (120 s vertical, Winter on the Lane; jazzy · F).
 // Batch b20 (promo/films/next30/b20.md). Kit: mlpilot/scenes/mlkit.js (read-only) + ./winter.js. Story 0–115.6, then the
 // shared end card.
-//   0.0–1.6    HOOK (frame 0 = thumbnail)  "The gift swap rule: | keep it *small.*" ♒ Aquarius mid-wrap of a huge lumpy
+//   0.0–2.6    HOOK (frame 0 = thumbnail)  "The gift swap rule: | keep it *small.*" ♋ Cancer mid-wrap of a huge lumpy
 //              present, tape flying, snow in the window.
-//   1.6–3.4    ◀◀ PREVIOUSLY ON Moonlight Lane… (first snow · snowed in · still "just friends")
-//   3.4–6.9    COLD OPEN  "Aquarius' gift: | *not small.*" "it's not too much. it's a *normal* amount."
+//   2.6–5.0    COLD OPEN  "Cancer's gift: | *not small.*" "it's not too much. it's a *normal* amount."
+//   5.0–7.0    ◀◀ PREVIOUSLY ON Moonlight Lane… (walking home · "walking home with you" · nobody said it)
 //   7.0–10.0   TITLE CARD  Ep 6 · The Gift That Says Too Much.
-//  10.0–24.0   ACT 1  The café. ♉ Taurus' lane gift swap: names from a jar. Aquarius draws… ♐ Sagittarius.
-//  24.0–40.0   Aquarius' apartment: the map of every spot on the lane they've talked in a year, heart pins popping.
+//  10.0–24.0   ACT 1  The café. ♉ Taurus' lane gift swap: names from a jar. Cancer draws… ♐ Sagittarius.
+//  24.0–40.0   Cancer's apartment: the map of every spot on the lane they've talked in a year, heart pins popping.
 //              ♎ Libra drops by: "that's not a gift. that's a *love letter.*" "it's a *map!* maps are *neutral!*"
 //  40.0        card cut.
 //  40.0–52.0   ACT 2  The snowy lane. Plan B: a joke mug taped on top. ♊ Gemini: "just say it's a *treasure* map."
@@ -41,16 +41,16 @@ import { snowGround, snowfall, drawWinter, drawGift, drawMap, drawTalkCard } fro
 export const DURATION = 120
 const STORY_END = DURATION - ENDCARD_LEN       // 115.6
 const S = id => signStar(id)
-const AQ = `${S('aquarius').glyph}︎ AQUARIUS`, SG = `${S('sagittarius').glyph}︎ SAGITTARIUS`, TA = `${S('taurus').glyph}︎ TAURUS`
+const AQ = `${S('cancer').glyph}︎ CANCER`, SG = `${S('sagittarius').glyph}︎ SAGITTARIUS`, TA = `${S('taurus').glyph}︎ TAURUS`
 const LI = `${S('libra').glyph}︎ LIBRA`, GE = `${S('gemini').glyph}︎ GEMINI`
 const AQ_C = '#8fe6ff', SG_C = '#d6b0ff', TA_C = '#ffd98a', LI_C = '#ffb0f0', GE_C = '#ffe27a'
 // the season's looks
-const AQW = { scarf: '#ff8fb1', hat: '#ff6b8a', seed: 21 }, SGW = { scarf: '#ffb347', seed: 22 }
+const AQW = { scarf: '#ffcf6e', hat: '#ff6b8a', seed: 21 }, SGW = { scarf: '#4a8ff0', seed: 22 }
 
 // ── the timeline
 const T = {
-  prev: [1.6, 3.4], title: 7.0,
-  tape: [0.0, 0.55, 1.1, 3.9, 4.6], roll: 5.9,
+  prev: [5.0, 7.0], title: 7.0,
+  tape: [0.0, 0.55, 1.1, 2.9, 3.5], roll: 4.2,
   jar: 11.0, draw: 15.2, slip: 15.6, sagWave: 19.4,
   apt: 24.0, pins: [25.0, 26.3, 27.6, 28.9, 30.2], libIn: [30.6, 31.1], libOut: [38.9, 39.5],
   lane: 40.0, mugOn: 41.0, gemIn: [42.0, 42.5], gemOut: [50.6, 51.1], walk: [40.2, 51.8],
@@ -65,7 +65,7 @@ const LESSON = { at: T.lesson, out: T.lessonOut, text: 'Meaningful isn’t | a *
 
 // ── the dialogue
 const CPS = 28
-const L0 = [{ t: 3.6, speaker: AQ, color: AQ_C, text: 'it’s not too much. it’s a *normal* amount.' }]
+const L0 = [{ t: 2.75, speaker: AQ, color: AQ_C, text: 'it’s not too much. it’s a *normal* amount.' }]
 const L1 = [
   { t: 10.6, speaker: TA, color: TA_C, text: 'lane gift swap! one name each. keep it *small.*' },
   { t: 16.3, speaker: AQ, color: AQ_C, text: 'small. right. *totally.*' },
@@ -82,7 +82,7 @@ const L3 = [
   { t: 48.0, speaker: GE, color: GE_C, text: '…*you’ll* think of something.' },
 ]
 const L4 = [
-  { t: 55.5, speaker: SG, color: SG_C, text: 'Aquarius… you *made* this?' },
+  { t: 55.5, speaker: SG, color: SG_C, text: 'Cancer… you *made* this?' },
   { t: 58.1, speaker: AQ, color: AQ_C, text: 'it’s a joke! haha… *maps!*' },
   { t: 60.8, speaker: SG, color: SG_C, text: 'oh. right. a *joke.*' },
 ]
@@ -92,7 +92,7 @@ const L5 = [
   { t: 98.2, speaker: SG, color: SG_C, text: 'best gift I’ve *ever* got.' },
   { t: 100.5, speaker: SG, color: SG_C, text: 'you missed one spot. *here.*' },
 ]
-const BOXES = [[L0, 3.45, 6.8], [L1, 10.4, 23.6], [L2, 31.1, 39.6], [L3, 42.5, 50.9], [L4, 55.3, 63.6], [L5, 92.4, 103.6]]
+const BOXES = [[L0, 2.6, 4.95], [L1, 10.4, 23.6], [L2, 31.1, 39.6], [L3, 42.5, 50.9], [L4, 55.3, 63.6], [L5, 92.4, 103.6]]
 const ALL_LINES = BOXES.flatMap(b => b[0])
 
 // THE STARS ADVISE
@@ -104,7 +104,7 @@ const ADVISE = {
     { at: T.cards[2], icon: 'chat', head: 'Say what it means, *small.*', body: '“I made it because this year with you mattered to me.”' },
   ],
   lines: [
-    { t: 71.05, text: 'Aquarius, this one’s *yours.*' },
+    { t: 71.05, text: 'Cancer, this one’s *yours.*' },
     { t: 73.95, text: 'you made something real. that’s *brave.*' },
     { t: 77.5, text: '“just a joke” makes them feel *silly.*' },
     { t: 80.4, text: 'they liked it. let them *keep* liking it.' },
@@ -115,10 +115,10 @@ const ADVISE = {
 
 // ── captions
 const CAPS = [
-  { text: 'The gift swap rule: | keep it *small.*', kicker: 'FRIDAY · 6:40 PM', at: -1.2, out: [1.45, 1.6], size: 84 },
-  { text: 'Aquarius’ gift: | *not small.*', at: 3.5, out: [6.7, 6.9], late: 1, lateAt: 4.1 },
+  { text: 'The gift swap rule: | keep it *small.*', kicker: 'FRIDAY · 6:40 PM', at: -1.2, out: [2.4, 2.6], size: 84 },
+  { text: 'Cancer’s gift: | *not small.*', at: 2.6, out: [4.8, 4.95], late: 1, lateAt: 3.1 },
   { text: 'One name | *each.*', kicker: 'THE CAFÉ · GIFT SWAP', at: 10.3, out: [15.0, 15.2], late: 1, lateAt: 10.9 },
-  { text: 'Aquarius drew… | *Sagittarius.*', at: T.slip, out: [23.6, 23.85], late: 1, lateAt: 16.2 },
+  { text: 'Cancer drew… | *Sagittarius.*', at: T.slip, out: [23.6, 23.85], late: 1, lateAt: 16.2 },
   { text: 'One year. | *Every* spot.', kicker: 'THREE NIGHTS LATER', at: 24.15, out: [30.4, 30.6], late: 1, lateAt: 24.8 },
   { text: 'Plan B: | *hide the feelings.*', at: 40.3, out: [51.6, 51.85], late: 1, lateAt: 41.0 },
   { text: 'The *swap.*', kicker: 'SATURDAY · 7:00 PM', at: 52.15, out: [55.0, 55.15], late: 1, lateAt: 52.6 },
@@ -129,8 +129,8 @@ const CAPS = [
   { text: '*Mean* it.', at: 112.5, out: [115.05, 115.4], size: 110, late: 1, lateAt: 112.5, top: 300 },
 ]
 
-// the map's pins (the bench is the one Aquarius missed)
-const PINS = [[0.36, 0.42, 'CAFÉ'], [0.6, 0.3, 'ROOF'], [0.84, 0.58, 'STALL'], [0.3, 0.8, 'BUS STOP'], [0.68, 0.82, 'CORNER']]
+// the map's pins (the bench is the one Cancer missed)
+const PINS = [[0.36, 0.42, 'CAFÉ'], [0.6, 0.3, 'ROOF'], [0.84, 0.58, 'MARKET'], [0.3, 0.8, 'SNOW-STAR'], [0.68, 0.82, 'WALK HOME']]
 const BENCH_PIN = { x: 0.14, y: 0.6, label: 'HERE' }
 
 // hops
@@ -150,9 +150,9 @@ async function build(stage) {
   const lesson = buildLesson(root, { ...LESSON, accentColor: ML_GOLD, dim: 0.6 })
   const next = buildNextTime(root, { at: T.next, out: T.nextOut, teaser: 'Sag goes home for dinner. With a *plus one.*' })
   const prev = buildPreviously(root, { at: T.prev[0], len: T.prev[1] - T.prev[0], stills: [
-    { caption: 'The first snow', scene: c => stillLane(c, 'bench') },
-    { caption: 'Snowed in. Together.', scene: c => stillCafe(c) },
-    { caption: 'Still “just friends”…', scene: c => stillLane(c, 'apart'), crop: [700, 760, 640, 760] },
+    { caption: 'Walking home, every night', scene: c => stillLane(c, 'bench') },
+    { caption: '“Walking home with you.”', scene: c => stillCafe(c) },
+    { caption: 'Still nobody said it…', scene: c => stillLane(c, 'apart'), crop: [700, 760, 640, 760] },
   ] })
   const title = buildTitle(root, { ep: 6, title: 'The Gift That Says Too Much', at: T.title, len: 3 })
   const bug = showBug(root, 6, { at: 0 })
@@ -166,10 +166,10 @@ async function build(stage) {
       const B = LANE.bench
       if (mode === 'bench') {
         drawWinter(w, 'sagittarius', B.seats[0], standY(200, B.seatY), 200, 10, { ...SGW, mood: 'happy', look: [1, 0] })
-        drawWinter(w, 'aquarius', B.seats[1] + 40, standY(200, B.seatY), 200, 10, { ...AQW, mood: 'sparkle', look: [-1, 0] })
+        drawWinter(w, 'cancer', B.seats[1] + 40, standY(200, B.seatY), 200, 10, { ...AQW, mood: 'sparkle', look: [-1, 0] })
       } else {
         drawWinter(w, 'sagittarius', B.seats[0] - 20, standY(200, B.seatY), 200, 10, { ...SGW, mood: 'neutral', look: [-1, 1] })
-        drawWinter(w, 'aquarius', B.seats[1] + 60, standY(200, B.seatY), 200, 10, { ...AQW, mood: 'neutral', look: [1, 1], blush: 0.9 })
+        drawWinter(w, 'cancer', B.seats[1] + 60, standY(200, B.seatY), 200, 10, { ...AQW, mood: 'neutral', look: [1, 1], blush: 0.9 })
       }
     })
     snowfall(c, 10, { n: 70 })
@@ -178,7 +178,7 @@ async function build(stage) {
     drawCafe(c, 10, { view: 'late' })
     c.save(); c.beginPath(); c.rect(CAFE.window.x, CAFE.window.y, CAFE.window.w, CAFE.window.h); c.clip(); snowfall(c, 10, { n: 60, big: 0.8 }); c.restore()
     drawWinter(c, 'sagittarius', CAFE.seats[0].x, standY(210, CAFE.seats[0].y), 210, 10, { ...SGW, mood: 'happy' })
-    drawWinter(c, 'aquarius', CAFE.seats[1].x, standY(210, CAFE.seats[1].y), 210, 10, { ...AQW, mood: 'happy' })
+    drawWinter(c, 'cancer', CAFE.seats[1].x, standY(210, CAFE.seats[1].y), 210, 10, { ...AQW, mood: 'happy' })
     drawCafeTable(c, 10, { cups: 2, pastry: 'bun' })
   }
 
@@ -197,20 +197,20 @@ async function build(stage) {
     windowSnow(t, APT.window, 46)
     const mapNights = t >= T.apt
     if (!mapNights) {
-      // the huge lumpy present on the rug; Aquarius wrapping it
+      // the huge lumpy present on the rug; Cancer wrapping it
       const bob = 4 * Math.sin(t * 9)
       const roll = ease.inCubic(prog(t, T.roll, T.roll + 0.8))
       drawGift(x, 640 + roll * 600, 1250 - bob * 0.2, 360, 300, t, { col: '#3a8fd8', ribbon: ML_GOLD, lumpy: 1, rot: -0.04 + roll * 1.2 })
       let am = 'squint', al = [1, 0]
       if (t > 3.5 && t < 6.2) { am = 'happy'; al = undefined }
       if (t > T.roll) { am = 'wide'; al = [1, 0] }
-      drawWinter(x, 'aquarius', 290, standY(270, 1440), 270, t, { ...AQW, hat: null, mood: am, look: al, hops: AQ_HOPS, squash: 0.05 * Math.sin(t * 10) })
+      drawWinter(x, 'cancer', 290, standY(270, 1440), 270, t, { ...AQW, hat: null, mood: am, look: al, hops: AQ_HOPS, squash: 0.05 * Math.sin(t * 10) })
       for (const tt of T.tape) tapeStrip(t, tt, 420, 1150)
       // the gift tag
       drawBubble(x, 760, 1020, 'TO: ♐︎ SAG', { size: 30, col: '#fff1c8', k: outK(t, [T.roll, T.roll + 0.2]), tail: null })
       return
     }
-    // the map on the wall, the pins popping one by one; Aquarius at the desk-couch with a pen
+    // the map on the wall, the pins popping one by one; Cancer at the desk-couch with a pen
     const mk = pop01(t, T.apt + 0.1, 0.4, 1.6)
     const pins = PINS.filter((_, i) => t > T.pins[i])
     drawMap(x, 330, 640, 460, t, { k: mk, rot: -0.03, pins, label: 'OUR LANE' })
@@ -219,7 +219,7 @@ async function build(stage) {
     if (t > T.libIn[1]) { am = 'wide'; al = [1, 0] }
     if (t > 34.5) { am = 'squint'; al = [1, 0] }
     if (t > 37.1) { am = 'neutral'; al = [-1, -1]; }
-    drawWinter(x, 'aquarius', APT.couch.seats[0], standY(230, APT.couch.seatY), 230, t, { ...AQW, hat: null, mood: am, look: al, hops: AQ_HOPS, blush: t > 37.2 ? 0.9 : undefined })
+    drawWinter(x, 'cancer', APT.couch.seats[0], standY(230, APT.couch.seatY), 230, t, { ...AQW, hat: null, mood: am, look: al, hops: AQ_HOPS, blush: t > 37.2 ? 0.9 : undefined })
     if (t > T.libIn[0]) {
       const p = ease.outBack(prog(t, ...T.libIn)), o = ease.inCubic(prog(t, ...T.libOut))
       drawWinter(x, 'libra', lerp(1250, 800, p) + o * 500, standY(220, 1440), 220, t, { scarf: '#c9a6ff', mood: t > 37 ? 'wink' : 'sparkle', look: [-1, -1], hops: LI_HOPS, seed: 10 })
@@ -237,7 +237,7 @@ async function build(stage) {
     if (t > 16.2) { am = 'happy'; al = undefined }
     if (t > 19.6) { am = 'wide'; al = [1, 0] }
     if (t > 22.2) { am = 'happy'; al = [1, 0] }
-    drawWinter(x, 'aquarius', S0.x, standY(220, S0.y), 220, t, { ...AQW, mood: am, look: al, hops: AQ_HOPS, blush: t > T.slip + 0.5 ? 0.9 : undefined })
+    drawWinter(x, 'cancer', S0.x, standY(220, S0.y), 220, t, { ...AQW, mood: am, look: al, hops: AQ_HOPS, blush: t > T.slip + 0.5 ? 0.9 : undefined })
     drawWinter(x, 'sagittarius', S1.x, standY(220, S1.y), 220, t, { ...SGW, mood: t > 19.5 ? 'sparkle' : 'happy', look: [-1, 0], hops: SG_HOPS })
     drawCafeTable(x, t, { cups: 2, pastry: 'croissant' })
     // the jar of names
@@ -274,7 +274,7 @@ async function build(stage) {
       if (t > 45.2 && t < 47.8) { am = 'squint'; al = [1, 0] }
       if (t > 47.9) { am = 'eyeroll'; al = undefined }
       if (t > 50.4) { am = 'neutral'; al = [1, 0] }
-      drawWinter(c, 'aquarius', ax, standY(220), 220, t, { ...AQW, mood: am, look: al, hops: [...steps, ...AQ_HOPS] })
+      drawWinter(c, 'cancer', ax, standY(220), 220, t, { ...AQW, mood: am, look: al, hops: [...steps, ...AQ_HOPS] })
       // the package (with Plan B on top: a joke mug)
       drawGift(c, ax + 150, 1236, 170, 140, t, { col: '#3a8fd8', ribbon: ML_GOLD, rot: 0.05 * Math.sin(t * 4) })
       const mk = pop01(t, T.mugOn, 0.3, 2.2)
@@ -305,7 +305,7 @@ async function build(stage) {
     if (t > T.panic) { am = 'happy'; al = undefined; asq = 0.05 * Math.sin(t * 22) }
     if (t > 60.6) { am = 'wide'; al = [1, 1] }
     if (t > 62.0) { am = 'neutral'; al = [0, 1]; asq = 0.08 }
-    drawWinter(x, 'aquarius', S0.x, standY(220, S0.y), 220, t, { ...AQW, mood: am, look: al, hops: AQ_HOPS, squash: asq })
+    drawWinter(x, 'cancer', S0.x, standY(220, S0.y), 220, t, { ...AQW, mood: am, look: al, hops: AQ_HOPS, squash: asq })
     let sm = 'sparkle', sl = [-1, 1]
     if (t > T.mug) { sm = 'happy'; sl = undefined }
     if (t > T.mapOut) { sm = 'wide'; sl = [0, 1] }
@@ -329,15 +329,15 @@ async function build(stage) {
       const B = LANE.bench
       drawPisces(c, LANE.pisces.x, LANE.pisces.y + 8, 104, t, { tears: 3, look: [1, 1], pull: bump(t, 66.2, 0.6) + bump(t, 98.5, 0.5) })
       if (!act3) {
-        drawWinter(c, 'aquarius', B.seats[0], standY(220, B.seatY), 220, t, { ...AQW, mood: t > 67 ? 'squint' : 'neutral', look: [0, 1], hops: AQ_HOPS, squash: 0.1 })
+        drawWinter(c, 'cancer', B.seats[0], standY(220, B.seatY), 220, t, { ...AQW, mood: t > 67 ? 'squint' : 'neutral', look: [0, 1], hops: AQ_HOPS, squash: 0.1 })
       } else {
-        // Sag already on the bench with the map; Aquarius walks in and sits
+        // Sag already on the bench with the map; Cancer walks in and sits
         const p = ease.inOutQuad(prog(t, ...T.sit))
         let am = 'neutral', al = [1, 0]
         if (t > 95.2) { am = 'happy'; al = undefined }
         if (t > T.best) { am = 'heart'; al = [1, 0] }
         if (t > T.pin + 0.4) { am = 'sparkle'; al = [1, 1] }
-        drawWinter(c, 'aquarius', lerp(820, B.seats[0] - 10, p), standY(220, lerp(LANE.feet, B.seatY, p)), 220, t, { ...AQW, mood: am, look: al, hops: [90.6, 91.0, ...AQ_HOPS], blush: t > 95 ? 0.9 : undefined })
+        drawWinter(c, 'cancer', lerp(820, B.seats[0] - 10, p), standY(220, lerp(LANE.feet, B.seatY, p)), 220, t, { ...AQW, mood: am, look: al, hops: [90.6, 91.0, ...AQ_HOPS], blush: t > 95 ? 0.9 : undefined })
         let sm = 'neutral', sl = [0, 1]
         if (t > T.sit[1]) { sm = 'sparkle'; sl = [-1, 0] }
         if (t > T.best - 0.3) { sm = 'happy'; sl = undefined }
