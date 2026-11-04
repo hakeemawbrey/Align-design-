@@ -3,7 +3,7 @@
 //   3.0   ♓ YOUR STAR: "your word for the new year: ground."  A beam from the lantern writes G-R-O-U-N-D in the frost.
 //   6.2   "feet in the snow. heart still dreaming."  The cloud thins; Pisces drifts down and lands softly in the snow
 //         (two little footprints). The window clears; the word lights up.
-//  10.68  card flip · "Dream with | your feet down."  Pisces on the ground, still starry-eyed, happy tears.
+//  10.68  "Dream with | your feet down."  Pisces on the ground, still starry-eyed, happy tears.
 import { winterGuide, frostWindow, prog, ease, lerp, clamp, INK, R, SNOW_SH, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const WIN = { x: 480, y: 720, w: 600, h: 380 }

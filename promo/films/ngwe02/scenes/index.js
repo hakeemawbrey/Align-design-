@@ -1,10 +1,10 @@
-// ngwe02 · Your Star Guide: Winter · ♉ Taurus · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe02 · Your Star Guide: Winter · ♉ Taurus · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Taurus*, you love | like a *blanket*."  The ♉ guide, big, lantern lit, snow falling.
 //   2.9–7.4    The lantern lights a little pixel couch in the snow. Taurus is a blanket burrito with a mug (sip… steam).
 //              The lavender star shivers on the right. YOUR STAR: "you love in blankets, soup and slow sundays."
 //   7.45–11.1  YOUR STAR: "invite them in. the couch has room."  Taurus spots them, scoots over (scoot, scoot), the blanket
 //              opens like a wing, the lavender star hops in; a second mug pops into its hands.
-//   11.15      card flip · "Make *room* | on the couch."  Two mugs, one steam heart. Pisces (right) sobs into its hat.
+//   11.15      "Make *room* | on the couch."  Two mugs, one steam heart. Pisces (right) sobs into its hat.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

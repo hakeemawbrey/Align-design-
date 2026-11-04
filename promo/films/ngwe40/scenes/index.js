@@ -3,7 +3,7 @@
 //   3.0   ♑ YOUR STAR: "your word for the new year: rest."  A beam from the lantern writes R-E-S-T in the frost.
 //   6.2   "rest isn't the reward. it's the fuel."  Cap sets the tower down and leans on it, eyes closing. The top
 //         list reads only "REST ✓". The frost clears; the word lights up.
-//  10.68  card flip · "Rest is part | of the plan."  Cap dozing against the stack, content. Pisces: happy fountains.
+//  10.68  "Rest is part | of the plan."  Cap dozing against the stack, content. Pisces: happy fountains.
 import { winterGuide, frostWindow, prog, ease, lerp, clamp, INK, MONO, R, box, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const WIN = { x: 540, y: 720, w: 600, h: 380 }

@@ -1,4 +1,4 @@
-// ngwe24 · Your Star Guide: Winter · ♓ Pisces · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe24 · Your Star Guide: Winter · ♓ Pisces · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Pisces,* what do | *you* want?"  The ♓ guide, big, lantern lit, snow falling.
 //   2.9–7.1    Gifts drop onto a wobbling tower in Pisces' arms, one after another. One flies off to a little cat in the
 //              snow ("for the cat!", mrrp). YOUR STAR: "gifts for everyone. even the neighbour's cat."
@@ -6,7 +6,7 @@
 //              YOUR STAR: "and you forgot to ask for anything."
 //   10.85–14.5 YOUR STAR: "make your own list this year. we'll wait."  Pisces sets the tower down and writes: "a hug."
 //              The mint star hops over and hugs it. Pisces fountains.
-//   14.55      card flip · "Your *wishes* | count too."  Two stars hugging in the snow.
+//   14.55      "Your *wishes* | count too."  Two stars hugging in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const MINT = '#9fe6b0'

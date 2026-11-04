@@ -3,7 +3,7 @@
 //   3.0   ♎ YOUR STAR: "three parties. one night. three yeses."  A calendar square for Saturday thunks in: sticker, sticker, sticker.
 //   7.4   "your calendar square is full. so are you."  More stickers, the square overflows; Libra goes dizzy, the juggle wobbles.
 //  11.8   "a no to them can be a yes to you."  Libra catches ONE invitation; the other two float up and turn into snowflakes.
-//  15.45  card flip · "One plan | is plenty."  Libra hugs the one invite, calm. Pisces: happy fountains.
+//  15.45  "One plan | is plenty."  Libra hugs the one invite, calm. Pisces: happy fountains.
 import { winterGuide, drawStarChar, prog, ease, lerp, clamp, INK, MONO, INTER, GOLD, BONE, R, box, heartsUp, SNOW } from '../../ngwe25/scenes/gwkit.js'
 
 const INV = [{ col: '#ff7eb6', name: 'GALA' }, { col: '#7fe3ff', name: 'POTLUCK' }, { col: '#ffd34d', name: 'GAME NIGHT' }]

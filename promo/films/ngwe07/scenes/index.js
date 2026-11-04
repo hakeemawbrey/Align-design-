@@ -1,10 +1,10 @@
-// ngwe07 · Your Star Guide: Winter · ♎ Libra · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe07 · Your Star Guide: Winter · ♎ Libra · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Libra,* you love | in *matching* mittens."  The ♎ guide, big, lantern lit, snow falling.
 //   2.9–7.4    Libra and the lavender star in matching pink mittens ("matching!") at a snowy signpost: PARK ← / → LAKE.
 //              Libra sways left, right, left (hmm…). YOUR STAR: "you'd plan the prettiest winter walk."
 //   7.45–11.1  YOUR STAR: "let them pick the path this time."  Libra turns: "you pick?" The lavender star points: PARK
 //              lights up. Libra beams; they set off together, footprints in the snow.
-//   11.15      card flip · "Let them | *choose* the path."  A heart over the pair. Pisces sobs by the lake sign.
+//   11.15      "Let them | *choose* the path."  A heart over the pair. Pisces sobs by the lake sign.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

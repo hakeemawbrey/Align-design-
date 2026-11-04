@@ -1,4 +1,4 @@
-// ngwe22 · Your Star Guide: Winter · ♑ Capricorn · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe22 · Your Star Guide: Winter · ♑ Capricorn · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Capricorn,* it's a | *holiday.*"  The ♑ guide, big, lantern lit, snow falling.
 //   2.9–7.1    Capricorn types at a laptop on a snow block ("just one email."); envelopes fly out of the screen and
 //              swirl up into the snowfall. YOUR STAR: "\"just one email.\" it's the holidays."
@@ -6,7 +6,7 @@
 //              YOUR STAR: "the laptop can close for a day."
 //   10.85–14.5 YOUR STAR: "they miss you. not your inbox."  Capricorn looks over, shuts the laptop (THUNK), hops to the
 //              board and rolls: the dice tumble… 6! Both cheer.
-//   14.55      card flip · "Close the laptop. | *Open* the game."  Pisces sobs in the snow.
+//   14.55      "Close the laptop. | *Open* the game."  Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

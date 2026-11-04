@@ -1,10 +1,10 @@
-// ngwe11 · Your Star Guide: Winter · ♒ Aquarius · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe11 · Your Star Guide: Winter · ♒ Aquarius · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Aquarius,* you love | in *big ideas.*"  The ♒ guide, big, lantern lit, snow falling.
 //   2.9–7.4    Aquarius builds a snow robot, piece by piece (base, body, a boxy head, an antenna, a sign: HI), then
 //              hides behind it. YOUR STAR: "you'd build a snow robot just to say hi."
 //   7.45–11.1  The robot waves its sign (beep boop). The lavender star giggles (hehe) and peeks round the back.
 //              YOUR STAR: "they'd love a plain hello, too."  Aquarius steps out and waves: "hi."
-//   11.15      card flip · "Sometimes | *hello* is enough."  Two waving stars, a heart; the robot keeps waving. Pisces sobs.
+//   11.15      "Sometimes | *hello* is enough."  Two waving stars, a heart; the robot keeps waving. Pisces sobs.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

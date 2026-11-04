@@ -5,7 +5,7 @@
 //         on the step.
 //   7.4   "clear path. warm cocoa. zero sleep."  6:01: the door opens; the date (♍) in a nightcap sees it all. Hearts.
 //  11.8   "they see it. now let them help you, too."  The date grabs a second shovel; Cap, surprised, then grinning.
-//  15.45  card flip · "Let them | help you, too."  Two shovels, one path. Pisces: happy fountains.
+//  15.45  "Let them | help you, too."  Two shovels, one path. Pisces: happy fountains.
 import { winterGuide, drawStarChar, signStar, mug, prog, ease, lerp, clamp, INK, MONO, R, box, SNOW, SNOW_SH, WOOD, WOOD_D, heartsUp, shadow } from '../../ngwe25/scenes/gwkit.js'
 
 const DATE = signStar('virgo')

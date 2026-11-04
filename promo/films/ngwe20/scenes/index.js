@@ -1,4 +1,4 @@
-// ngwe20 · Your Star Guide: Winter · ♏ Scorpio · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe20 · Your Star Guide: Winter · ♏ Scorpio · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Scorpio,* it's | *just* a gift."  The ♏ guide, big, lantern lit, snow falling.
 //   2.9–7.1    An opened gift box in the snow: a plain mug with a tag ("to: S"). Scorpio leans in with a magnifying glass,
 //              question marks swirling. YOUR STAR: "you're reading the gift tag like a clue."
@@ -6,7 +6,7 @@
 //              YOUR STAR: "it's a mug, love. not a hidden message."
 //   10.85–14.5 YOUR STAR: "if you wonder, ask. don't decode."  Scorpio puts the glass down: "why a mug?"  "your hands get
 //              cold." Scorpio melts (heart eyes), fills it, sips (steam).
-//   14.55      card flip · "Sometimes it's | *just* *a* *mug.*"  Pisces sobs in the snow.
+//   14.55      "Sometimes it's | *just* *a* *mug.*"  Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

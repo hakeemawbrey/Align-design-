@@ -1,10 +1,10 @@
-// ngwe03 · Your Star Guide: Winter · ♊ Gemini · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe03 · Your Star Guide: Winter · ♊ Gemini · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Gemini,* snowed in | means *more texts.*"  The ♊ guide, big, lantern lit, snow falling.
 //   2.9–7.4    A phone floats up between Gemini (left) and the lavender star (right). Gemini's bubbles pop in, faster and
 //              faster, until they pile over the top. YOUR STAR: "snowed in? you'd text them a whole novel."
 //   7.45–11.1  The bubbles turn to snow and slide off into a drift. YOUR STAR: "send one. then call. let them hear you laugh."
 //              Gemini taps CALL; the screen rings; the lavender star's phone goes RING!, it answers.
-//   11.15      card flip · "Trade the thread | for a *voice*."  Sound rings pulse between them; both laugh (HA!). Pisces sobs.
+//   11.15      "Trade the thread | for a *voice*."  Sound rings pulse between them; both laugh (HA!). Pisces sobs.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const MSGS = ['hiii', 'snow!!', 'u up?', 'ok wait', 'look out', 'ur window', 'SO MUCH', 'snow lol', 'also', 'hi again', 'one more', 'ok last']

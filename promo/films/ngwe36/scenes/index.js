@@ -3,7 +3,7 @@
 //   3.0   ♐ YOUR STAR: "your word for the new year: slow."  Sag zips past the frosted window and the lantern scrawls S-L-O-W.
 //   5.9   "slow walks. slow mornings."   8.0  "slow 'i like you.'"  Sag finally stops skidding and sits down in the
 //         snow (THUMP). The frost clears; the word lights up.
-//  10.68  card flip · "Slow is a | direction too."  Sag sits still, eyes closed, happy. Pisces: happy fountains.
+//  10.68  "Slow is a | direction too."  Sag sits still, eyes closed, happy. Pisces: happy fountains.
 import { winterGuide, frostWindow, prog, ease, lerp, clamp, INK, R, SNOW, ICE, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const WIN = { x: 540, y: 720, w: 600, h: 380 }

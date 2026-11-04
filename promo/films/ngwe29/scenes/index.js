@@ -5,7 +5,7 @@
 //         (the scarf sprouts ear flaps).
 //  11.8   "so say the big one too."  Scorpio holds the finished scarf up: a little heart knitted in at the end. The date (♉)
 //         pops in and gasps.
-//  15.45  card flip · "Say it before | the snow melts."  The date wears the scarf; Scorpio blushes. Pisces: happy fountains.
+//  15.45  "Say it before | the snow melts."  The date wears the scarf; Scorpio blushes. Pisces: happy fountains.
 import { winterGuide, scarf, drawStarChar, signStar, prog, ease, lerp, clamp, INK, GOLD, R, box, heart, heartsUp, shadow } from '../../ngwe25/scenes/gwkit.js'
 
 const DATE = signStar('taurus'), TEAL = '#2fbfb0'

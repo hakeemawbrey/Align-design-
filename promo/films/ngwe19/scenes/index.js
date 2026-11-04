@@ -1,4 +1,4 @@
-// ngwe19 · Your Star Guide: Winter · ♎ Libra · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe19 · Your Star Guide: Winter · ♎ Libra · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Libra,* one night, | *two* dinners."  The ♎ guide, big, lantern lit, snow falling.
 //   2.9–7.1    Two front doors in the snow, both lit, both "7 PM": YOUR FOLKS and THEIR FOLKS. Libra stretches between
 //              them like taffy while a pair of scales tips back and forth over its head.
@@ -6,7 +6,7 @@
 //   7.15–10.8  Libra goes dizzy (little stars). YOUR STAR: "pleasing everyone pleases no one."
 //   10.85–14.5 YOUR STAR: "pick one, say it kindly, plan the other."  Libra snaps back, walks to one door, and sends a heart
 //              letter to the other: "NEXT WEEK?"  The other door answers with a heart. The scales settle level.
-//   14.55      card flip · "Kind *and* clear."  Pisces sobs in the snow.
+//   14.55      "Kind *and* clear."  Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

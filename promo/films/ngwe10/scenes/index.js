@@ -1,10 +1,10 @@
-// ngwe10 · Your Star Guide: Winter · ♑ Capricorn · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe10 · Your Star Guide: Winter · ♑ Capricorn · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Capricorn,* you love | by *showing up.*"  The ♑ guide, big, lantern lit, snow falling.
 //   2.9–7.4    Dawn. A deep drift blocks the way to a little front door. Capricorn shovels a clean path, chunk by chunk
 //              (shff, shff), right up to the step. YOUR STAR: "you shovel their path before they wake up."
 //   7.45–11.1  Capricorn tiptoes away (tiptoe…). YOUR STAR: "then knock. let them say thank you."  The guide clears its
 //              throat (ahem.); Capricorn turns back and knocks (KNOCK KNOCK); the door opens on warm light, "thank you!"
-//   11.15      card flip · "Stay for the | *thank you.*"  A hug in the doorway, a heart. Pisces sobs in the snow.
+//   11.15      "Stay for the | *thank you.*"  A hug in the doorway, a heart. Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

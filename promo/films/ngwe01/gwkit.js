@@ -14,7 +14,7 @@
 //   export const DURATION = F.DURATION, SCENES = F.SCENES, CUES = F.CUES, LINES_EXPORT = F.LINES_EXPORT
 //
 // T (all seconds): hookOut, rise, scene (stage lights up), open, l[0..n-1] (line starts), chip, close (box shuts + card
-//   flip), h2 (last line in), h2Land, out [a, b] (everything pops out), end (= STORY_END).
+//   beat), h2 (last line in), h2Land, out [a, b] (everything pops out), end (= STORY_END).
 // K: the stage + helpers. ACT_Y (actor centre y), GROUND (snow line y), SM (actor size), ME { color, glyph, name },
 //   THEM (lavender), mini(x, t, {…drawStarChar opts, x, y, size}), appear(t, t0) (pop in × pop out), drawBits, burst,
 //   sparkles, pop01, popOut, outK, label(x, text, cx, cy, size, color, a), heart(x, cx, cy, cell, a), BM (bitmaps) +
@@ -23,8 +23,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../sky.js'
 import { SKY_H, GRAIN_H } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { popText } from '../lesson.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar } from '../startalk.js'
 import { guideSign, guideSpeaker, drawGuide, noteChip, guideHook, factChip, guideCues, loadGuideFonts, GOLD, BONE, INK, INTER,
@@ -175,8 +175,10 @@ export const K = { ACT_Y, GROUND, SM, THEM, SNOW, ICE, GOLD, BONE, INK, BM, COL,
 
 export function guideFilm(spec) {
   const { sign, note = 1, of = 4, len, hook, lines, chip, last, late = 1, gag, pisces = true, hookSize = 104, lastSize = 112, music } = spec
-  const DURATION = len
-  const STORY_END = DURATION - ENDCARD_LEN
+  // `len` is the slate length (story + the old 4.4 s card). Since 4 Nov the story is unchanged and the film ends on the
+  // SHORT end card (2.4 s), so the real length is len - 2.
+  const STORY_END = len - ENDCARD_LEN
+  const DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(2)
   const S = guideSign(sign), ME = { color: S.color, glyph: S.glyph, name: S.name }
   const SPEAK = guideSpeaker(S.glyph)
   const gap = lines.length >= 3 ? 3.7 : 4.0
@@ -280,8 +282,7 @@ export function guideFilm(spec) {
     }
   }
 
-  const CUTS = [{ t: +(T.close + 0.05).toFixed(2), kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
   const nWords = last.split(' ').filter(w => w !== '|').length
   const CUES = [
     ...guideCues(0.02, { gain: 0.03 }), ...guideCues(T.lift, { gain: 0.025 }), ['pluck', T.wink[0], 1318.51, 0.03, 0.5, 0.2],
@@ -295,8 +296,7 @@ export function guideFilm(spec) {
     ...guideCues(T.glint, { gain: 0.02 }),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(G_.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ].sort((a, b) => a[1] - b[1])
   return { DURATION, SCENES, CUES, T, LINES_EXPORT: { lines: LINES, cps: CPS, get close() { return T.close } }, music }
 }

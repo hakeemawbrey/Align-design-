@@ -4,7 +4,7 @@
 //   3.0   ♑ YOUR STAR: "you mention a goal once and move on."  A flashback bubble: "someday i'll bake bread. anyway."
 //   5.4   The notebook flips open: "YOUR PLANS (I LISTENED)": bake bread · see the mountains · rest more (underlined twice).
 //   6.6   "the gift is proof someone heard you."  Cap melts.
-//  10.68  card flip · "They listened. | That's love."  Cap hugs the notebook. Pisces: happy fountains.
+//  10.68  "They listened. | That's love."  Cap hugs the notebook. Pisces: happy fountains.
 import { winterGuide, paperNote, prog, ease, lerp, clamp, INK, MONO, R, box, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const T0 = { land: 0.0, flash: 4.0, open: 5.4, melt: 8.2 }

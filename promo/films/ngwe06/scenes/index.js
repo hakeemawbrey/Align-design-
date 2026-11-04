@@ -1,10 +1,10 @@
-// ngwe06 · Your Star Guide: Winter · ♍ Virgo · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe06 · Your Star Guide: Winter · ♍ Virgo · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Virgo*'s winter love | has a *checklist.*"  The ♍ guide, big, lantern lit, snow falling.
 //   2.9–7.4    A clipboard floats between Virgo (pencil) and the lavender star. Tick: a red scarf appears on them. Tick:
 //              mittens. Tick: a backup scarf (very bundled). YOUR STAR: "scarf, gloves, a backup scarf. for them."
 //   7.45–11.1  YOUR STAR: "the list is love. say the words too."  Virgo writes a fourth line, "tell them", ticks it, and a
 //              speech bubble with a heart floats over to the lavender star.
-//   11.15      card flip · "Pack the scarf. | *Say* the thing."  The bundled star beams. Pisces sobs in the snow.
+//   11.15      "Pack the scarf. | *Say* the thing."  The bundled star beams. Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const ITEMS = ['scarf', 'gloves', 'backup scarf', 'tell them']

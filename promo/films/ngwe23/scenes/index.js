@@ -1,11 +1,11 @@
-// ngwe23 · Your Star Guide: Winter · ♒ Aquarius · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe23 · Your Star Guide: Winter · ♒ Aquarius · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Aquarius,* big | *family* dinner."  The ♒ guide, big, lantern lit, snow falling.
 //   2.9–7.1    A long snowy table full of chatter (speech bubbles popping). At the far end, Aquarius sits inside its own
 //              little snow-globe dome, quiet. YOUR STAR: "you go quiet at big family dinners."
 //   7.15–10.8  Aquarius's eyes follow every story round the table. YOUR STAR: "you're not weird. you're just watching."
 //   10.85–14.5 YOUR STAR: "find one person. ask one question."  Aquarius taps the glass (tap, tap): POP, the dome is gone. It
 //              slides up next to the grandparent star (little glasses): "how did you two meet?" Both crack up (HA!).
-//   14.55      card flip · "One question | *opens* the room."  Pisces sobs in the snow.
+//   14.55      "One question | *opens* the room."  Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const GRAN = '#e8c9a0', MINT = '#9fe6b0'

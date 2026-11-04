@@ -3,7 +3,7 @@
 //   3.0   ♐ YOUR STAR: "you don't want more stuff."  The box pops open: no stuff. A folded paper flies out and unfolds:
 //         a hand-drawn map, a dotted path through snowy trees, "OUR NEXT WALK. YOU PICK THE TURNS."
 //   6.6   "you want a door that opens somewhere new."  Sag's eyes go starry; the path draws itself to a little heart.
-//  10.68  card flip · "A map beats | a box."  Sag holds the map up like a trophy; the empty box tumbles off. Pisces: fountains.
+//  10.68  "A map beats | a box."  Sag holds the map up like a trophy; the empty box tumbles off. Pisces: fountains.
 import { winterGuide, giftBox, prog, ease, lerp, clamp, INK, MONO, R, box, heart, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const T0 = { open: 4.6, fly: [4.7, 5.4], unfold: [5.4, 6.0], path: [6.2, 8.6] }

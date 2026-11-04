@@ -1,4 +1,4 @@
-// ngwe18 · Your Star Guide: Winter · ♍ Virgo · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe18 · Your Star Guide: Winter · ♍ Virgo · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Virgo,* put the | *ruler* down."  The ♍ guide, big, lantern lit, snow falling.
 //   2.9–7.1    11:58 PM. A little decorated tree in the snow, its star tipped to one side. Virgo holds a long ruler up to
 //              it, squinting ("2° OFF"). YOUR STAR: "you're fixing the tree at midnight."
@@ -6,7 +6,7 @@
 //              YOUR STAR: "that crooked star? they hung it."
 //   10.85–14.5 YOUR STAR: "leave it. the crooked part is the love."  Virgo looks at them, tips the star back, and drops the
 //              ruler in the snow. The star sparkles; both beam.
-//   14.55      card flip · "Leave the star | *crooked.*"  Pisces sobs in the snow.
+//   14.55      "Leave the star | *crooked.*"  Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

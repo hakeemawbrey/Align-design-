@@ -3,7 +3,7 @@
 //   3.0   ♎ YOUR STAR: "you choose for everyone, all year long."  Libra's bubbles: "pasta?" "tacos?" "you pick!" "no, YOU pick!"
 //   5.6   The lid flies off; a note rises out: "I PICKED THE PLACE. JUST SHOW UP."
 //   6.6   "the gift? someone else deciding, with love."  Libra melts (a big squash and heart eyes).
-//  10.68  card flip · "Let someone | pick for you."  Libra holds the note, totally relaxed. Pisces: happy fountains.
+//  10.68  "Let someone | pick for you."  Libra holds the note, totally relaxed. Pisces: happy fountains.
 import { winterGuide, giftBox, paperNote, prog, ease, lerp, clamp, INK, PINK, GOLD, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const T0 = { b: [3.6, 4.3, 5.0], open: 5.6, rise: [5.7, 6.4], melt: 8.1 }

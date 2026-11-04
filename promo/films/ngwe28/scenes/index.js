@@ -3,7 +3,7 @@
 //   3.0   ♎ YOUR STAR: "your word for the new year: ask."  The lantern's warm tip writes A-S-K into the frost.
 //   5.9   "ask for the table you want."   8.0  "ask for the time you need."  Libra wipes the rest of the frost away:
 //         the night is clear behind the word, and the moon winks.
-//  10.68  card flip · "Ask. Then let | them answer."  The word glows in the clear window. Pisces: happy fountains.
+//  10.68  "Ask. Then let | them answer."  The word glows in the clear window. Pisces: happy fountains.
 import { winterGuide, frostWindow, prog, ease, lerp, clamp, heartsUp, R, BONE } from '../../ngwe25/scenes/gwkit.js'
 
 const WIN = { x: 540, y: 720, w: 600, h: 380 }

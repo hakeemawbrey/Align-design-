@@ -1,10 +1,10 @@
-// ngwe08 · Your Star Guide: Winter · ♏ Scorpio · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe08 · Your Star Guide: Winter · ♏ Scorpio · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Scorpio,* you love | by *candlelight.*"  The ♏ guide, big, lantern lit, snow falling.
 //   2.9–7.4    A candle lights in the snow between Scorpio (bundled in FIVE scarves, up to the eyes) and the lavender
 //              star. Scorpio gives a long, mysterious side-eye. YOUR STAR: "long nights suit you. deep talk, low light."
 //   7.45–11.1  YOUR STAR: "let them past the first layer. slowly."  One, two, three: a scarf at a time comes off Scorpio
 //              and wraps round the lavender star. They lean in over the candle.
-//   11.15      card flip · "One *layer* | at a time."  A heart rises from the flame. Pisces sobs in the snow.
+//   11.15      "One *layer* | at a time."  A heart rises from the flame. Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const BANDS = ['#7a2a4a', '#3a2f63', '#c42a3f', '#2a7a4b', '#d9694f']

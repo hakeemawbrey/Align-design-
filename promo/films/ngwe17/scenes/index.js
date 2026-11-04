@@ -1,11 +1,11 @@
-// ngwe17 · Your Star Guide: Winter · ♌ Leo · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe17 · Your Star Guide: Winter · ♌ Leo · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Leo,* about the | *holiday photo…*"  The ♌ guide, big, lantern lit, snow falling.
 //   2.9–7.1    A camera on a tripod in the snow. FLASH: TAKE 4. FLASH: TAKE 11. Leo strikes a new pose every time; the
 //              lavender star smiles politely. YOUR STAR: "take nineteen. still not the one."
 //   7.15–10.8  FLASH: TAKE 19. The lavender star yawns. YOUR STAR: "they just wanted to be in it with you."
 //   10.85–14.5 YOUR STAR: "keep the blurry one. it's the real one."  Leo catches the yawn, they both crack up, the camera
 //              goes off mid-laugh (FLASH); the print slides out, blurry, two stars laughing, and lands in a gold frame.
-//   14.55      card flip · "Frame the | *blurry* one."  Pisces sobs in the snow.
+//   14.55      "Frame the | *blurry* one."  Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

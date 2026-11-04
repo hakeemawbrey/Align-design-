@@ -1,10 +1,10 @@
-// ngwe09 · Your Star Guide: Winter · ♐ Sagittarius · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe09 · Your Star Guide: Winter · ♐ Sagittarius · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Sagittarius,* you | love on the *move.*"  The ♐ guide, big, lantern lit, snow falling.
 //   2.9–7.4    Sag bounces in the snow under a huge stuffed backpack ("PACKED: 0:04"). The lavender star is curled in a
 //              cozy armchair with a mug. YOUR STAR: "a snow trip? you packed in four seconds."
 //   7.45–11.1  YOUR STAR: "ask if they want the trip or the sofa."  Sag looks over, drops the bag (THUNK), flops down by
 //              the chair; a map unfolds over them both and a sticky note slaps on: "NEXT WEEKEND".
-//   11.15      card flip · "The trip can wait | a *weekend.*"  Both cozy, one mug each. Pisces sobs in the snow.
+//   11.15      "The trip can wait | a *weekend.*"  Both cozy, one mug each. Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const PACK = ['..GGGG..', '.GggggG.', 'GGGGGGGG', 'GgYYYYgG', 'GgYggYgG', 'GGGGGGGG', 'GgggggggG'.slice(0, 8), 'GGGGGGGG', '.B....B.']

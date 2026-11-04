@@ -3,7 +3,7 @@
 //   3.0   ♏ YOUR STAR: "your word for the new year: soften."  The lantern's warmth writes S-O-F-T-E-N into the window frost.
 //   6.2   "not weaker. warmer."  The ice drips, cracks and slides off; Scorpio shakes itself loose with a little glow.
 //         The window clears and the word lights up. The drips pool into a little heart.
-//  10.68  card flip · "Soft is still | strong."  Scorpio, warm and upright. Pisces: happy fountains.
+//  10.68  "Soft is still | strong."  Scorpio, warm and upright. Pisces: happy fountains.
 import { winterGuide, frostWindow, prog, ease, lerp, clamp, INK, R, ICE, heart, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const WIN = { x: 540, y: 720, w: 640, h: 360 }

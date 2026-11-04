@@ -4,7 +4,7 @@
 //   3.0   ♐ YOUR STAR: "you told the host the soup was 'a choice.'"  The whole table freezes: frost, icicles on every star.
 //   7.4   "honest is great. honest and gentle is better."  Sag tries again: "it's... warm!"  (a tiny thaw)
 //  11.8   "the truth lands softer with a thank you."  Sag: "thank you for cooking for us." The room thaws; the host beams.
-//  15.45  card flip · "Honest and | gentle."  Everyone at the table, warm again. Pisces: happy fountains.
+//  15.45  "Honest and | gentle."  Everyone at the table, warm again. Pisces: happy fountains.
 import { winterGuide, drawStarChar, signStar, prog, ease, lerp, clamp, INK, R, box, WOOD, WOOD_D, heartsUp, shadow } from '../../ngwe25/scenes/gwkit.js'
 
 const HOST = signStar('cancer'), GUEST = signStar('taurus')

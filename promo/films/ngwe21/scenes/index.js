@@ -1,4 +1,4 @@
-// ngwe21 · Your Star Guide: Winter · ♐ Sagittarius · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe21 · Your Star Guide: Winter · ♐ Sagittarius · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Sagittarius,* | *before* you go…"  The ♐ guide, big, lantern lit, snow falling.
 //   2.9–7.1    Sag hops up onto a packed suitcase at the edge of a snowy road, waving (bye!). Over the mint star, a calendar
 //              page: 19, with a sticky note: "sag leaves TOMORROW?!" It goes wide-eyed.
@@ -6,7 +6,7 @@
 //   7.15–10.8  Sag stops mid-wave and turns round. YOUR STAR: "they care where you'll be. tell them early."
 //   10.85–14.5 YOUR STAR: "share the dates. send a postcard."  Sag walks back, hands over a card (20 → 27); the dates light up
 //              on the calendar. Sag heads off waving, and a postcard flutters in from the road. Heart.
-//   14.55      card flip · "Tell them | *before* you go."  Pisces sobs in the snow.
+//   14.55      "Tell them | *before* you go."  Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const MINT = '#9fe6b0'

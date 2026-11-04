@@ -3,7 +3,7 @@
 //   3.0   ♒ YOUR STAR: "you love things nobody else would think of."  Aquarius shakes it: the snow swirls, and inside
 //         stands a tiny hand-painted Aquarius. It waves back.
 //   6.6   "so the best gift is one made just for you."  Aquarius melts.
-//  10.68  card flip · "Make it weird. | Make it mine."  Aquarius cradling the globe, the tiny one still waving. Pisces: fountains.
+//  10.68  "Make it weird. | Make it mine."  Aquarius cradling the globe, the tiny one still waving. Pisces: fountains.
 import { winterGuide, drawStarChar, signStar, prog, ease, lerp, clamp, INK, MONO, R, box, SNOW, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const AQ = signStar('aquarius')

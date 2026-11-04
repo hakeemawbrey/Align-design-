@@ -4,7 +4,7 @@
 //   7.4   "and your date is by the snacks. alone."  The room dims to one warm spot: the date (♎) by the snack table,
 //         holding two cocoas.
 //  11.8   "check back in with the one you came with."  Aquarius crosses the room and takes a cocoa. The date lights up.
-//  15.45  card flip · "Find your | person first."  The two of them, cocoas up. Pisces (in the crowd): happy fountains.
+//  15.45  "Find your | person first."  The two of them, cocoas up. Pisces (in the crowd): happy fountains.
 import { winterGuide, drawStarChar, signStar, mug, stringLights, prog, ease, lerp, clamp, INK, R, box, WOOD, WOOD_D, heartsUp, shadow } from '../../ngwe25/scenes/gwkit.js'
 
 const DATE = signStar('libra')

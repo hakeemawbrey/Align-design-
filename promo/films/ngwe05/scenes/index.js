@@ -1,10 +1,10 @@
-// ngwe05 · Your Star Guide: Winter · ♌ Leo · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe05 · Your Star Guide: Winter · ♌ Leo · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Leo,* you love | like a *fireplace.*"  The ♌ guide, big, lantern lit, snow falling.
 //   2.9–7.4    A pixel fireplace crackles in the snow; Leo sits on the warm cushion beside it, glowing, posing. The
 //              lavender star shivers out in the cold. YOUR STAR: "you light up every cold room you walk into."
 //   7.45–11.1  YOUR STAR: "save the warmest seat for them."  Leo hops up and pats the cushion (pat, pat); the lavender
 //              star hops on; Leo sits beside it and both glow.
-//   11.15      card flip · "Glow *with* them."  Two stars glowing by the fire. Pisces sobs in the snow.
+//   11.15      "Glow *with* them."  Two stars glowing by the fire. Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

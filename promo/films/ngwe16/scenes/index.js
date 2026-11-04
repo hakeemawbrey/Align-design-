@@ -1,4 +1,4 @@
-// ngwe16 · Your Star Guide: Winter · ♋ Cancer · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe16 · Your Star Guide: Winter · ♋ Cancer · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Cancer,* the dinner | can *wait.*"  The ♋ guide, big, lantern lit, snow falling.
 //   2.9–7.1    A long snowy table: a mint star and the lavender star are seated. Cancer rushes in and out with plates,
 //              then gravy. Its own plate, at its own empty chair, slowly freezes over (cold.). YOUR STAR: "you host it all,
@@ -6,7 +6,7 @@
 //   7.15–10.8  Cancer keeps rushing (gravy, more gravy). YOUR STAR: "they came for you, not the gravy."
 //   10.85–14.5 YOUR STAR: "sit down. pass the plate. be a guest."  The lavender star stands and pulls out Cancer's chair.
 //              Cancer stops, sits; the mint star slides a warm bowl down the table. Everyone cheers (YAY!).
-//   14.55      card flip · "Sit at your | *own* table."  Pisces sobs in the snow.
+//   14.55      "Sit at your | *own* table."  Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

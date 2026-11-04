@@ -3,7 +3,7 @@
 //   3.0   ♏ YOUR STAR: "you don't want shiny. you want trust."  The bow sparkles SHINY!; Scorpio rolls its eyes.
 //   5.4   The bow flops off. Underneath: a tiny tin. It opens: one gingerbread key, a ♏ in icing.
 //   6.6   "a small sign that says: you're in."  Scorpio melts.
-//  10.68  card flip · "You're in. | That's the gift."  Scorpio holds the key up to the light. Pisces: happy fountains.
+//  10.68  "You're in. | That's the gift."  Scorpio holds the key up to the light. Pisces: happy fountains.
 import { winterGuide, drawBits, prog, ease, lerp, clamp, INK, GOLD, PINK, R, box, heartsUp, shadow } from '../../ngwe25/scenes/gwkit.js'
 
 const T0 = { shiny: 4.4, flop: 5.4, tin: 5.9, open: 6.2, melt: 8.4 }

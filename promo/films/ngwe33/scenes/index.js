@@ -3,7 +3,7 @@
 //   3.0   ♐ YOUR STAR: "you love in winter by making them laugh."  The date (♌) arrives; the carrot nose drops: plop. "HA!"
 //   7.4   "the snowman. the voices. the bit."  Sag does the snowman's voice: "hi, i'm you." "HA HA HA!"
 //  11.8   "then let it get real for a second."  The snow slows. Sag sits next to the date: "...i really like you."
-//  15.45  card flip · "Jokes first, | then the real talk."  The two of them close, the snowman watching. Pisces: happy fountains.
+//  15.45  "Jokes first, | then the real talk."  The two of them close, the snowman watching. Pisces: happy fountains.
 import { winterGuide, drawStarChar, signStar, prog, ease, lerp, clamp, INK, R, box, SNOW, SNOW_SH, heartsUp, shadow } from '../../ngwe25/scenes/gwkit.js'
 
 const DATE = signStar('leo')

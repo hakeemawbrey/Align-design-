@@ -4,7 +4,7 @@
 //   3.0   ♓ YOUR STAR: "you love in winter in full daydream."  Inside the cloud: cocoa for two… ice skating… a snowman for two.
 //   7.4   "cocoa, skating, a future. from one glance."  Pisces' happy tears stream.
 //  11.8   "the real one is even better. go say hi."  POP: the cloud bursts. Pisces turns: "hi :)"  The stranger looks up: "hi!"
-//  15.45  card flip · "Say hi to | the real one."  The two of them on the bench, smiling. Pisces: happy fountains.
+//  15.45  "Say hi to | the real one."  The two of them on the bench, smiling. Pisces: happy fountains.
 import { winterGuide, drawStarChar, signStar, mug, prog, ease, lerp, clamp, INK, MONO, R, box, BONE, SNOW, ICE, heart, heartsUp, shadow } from '../../ngwe25/scenes/gwkit.js'
 
 const PIS = signStar('pisces'), TAU = signStar('taurus')

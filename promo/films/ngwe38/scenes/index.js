@@ -3,7 +3,7 @@
 //   3.0   ♑ YOUR STAR: "you brought your laptop to the party."  The INBOX counter ticks up and up behind the dancing.
 //   7.4   "the work will keep. this night won't."  Leo (♌) dances over: "dance?"  Cap glances… back at the screen.
 //  11.8   "close it. you're allowed to be here."  CLICK. Cap shuts the laptop and hops into the dance.
-//  15.45  card flip · "The inbox can | wait."  Cap dancing in its party hat, the laptop closed on the table. Pisces: happy fountains.
+//  15.45  "The inbox can | wait."  Cap dancing in its party hat, the laptop closed on the table. Pisces: happy fountains.
 import { winterGuide, drawStarChar, signStar, stringLights, prog, ease, lerp, clamp, INK, MONO, INTER, R, box, WOOD, WOOD_D, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const LEO = signStar('leo'), GEM = signStar('gemini')

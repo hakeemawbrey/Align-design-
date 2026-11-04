@@ -4,7 +4,7 @@
 //         PISCES · SENT 9 HEARTS?? (Pisces, in the corner, sniffles harder.)
 //   7.4   "the list is getting long, love."  The page unrolls into a scroll that runs off the bottom of the frame.
 //  11.8   "tell them you missed them. then close the book."  SHUT. The scroll snaps back, the pages flutter off as snow.
-//  15.45  card flip · "Close the ledger."  Scorpio, lighter, sends a bubble: "missed you!" Pisces: happy fountains.
+//  15.45  "Close the ledger."  Scorpio, lighter, sends a bubble: "missed you!" Pisces: happy fountains.
 import { winterGuide, prog, ease, lerp, clamp, INK, MONO, INTER, GOLD, BONE, R, box, SNOW, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const T0 = { e: [-1, 5.0, 6.3], unroll: [8.6, 10.6], shut: 13.2, msg: 16.4 }

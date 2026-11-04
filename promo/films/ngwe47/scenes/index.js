@@ -3,7 +3,7 @@
 //   3.0   ♓ YOUR STAR: "you don't need anything expensive."  The seal pops; a letter rises: "you make winter softer. /
 //         i notice how you care. / thank you for being you."  Signed with two little fish.
 //   6.6   "a few honest words, in their handwriting."  Pisces cries, happily (fountains).
-//  10.68  card flip · "Write it | down for me."  Pisces hugging the letter. Happy tears.
+//  10.68  "Write it | down for me."  Pisces hugging the letter. Happy tears.
 import { winterGuide, paperNote, prog, ease, lerp, clamp, INK, R, box, heart, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const T0 = { seal: 4.2, rise: [4.5, 5.2], cry: 7.6 }

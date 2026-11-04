@@ -1,4 +1,4 @@
-// ngwe15 · Your Star Guide: Winter · ♊ Gemini · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe15 · Your Star Guide: Winter · ♊ Gemini · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Gemini,* it's | party *season.*"  The ♊ guide, big, lantern lit, snow falling.
 //   2.9–7.1    Three party doors in the snow, each with a wreath. Gemini zips in and out of all three in a blur (zip!
 //              zip!). YOUR STAR: "three parties in one night. you're a blur."
@@ -6,7 +6,7 @@
 //              foot, then yawning. YOUR STAR: "they've held your coat since eight."
 //   10.85–14.5 YOUR STAR: "pick one. stay till the last song."  Gemini screeches to a stop, sees them, takes the coat, and
 //              the two of them dance (music notes).
-//   14.55      card flip · "Stay where | *they* are."  Still dancing. Pisces sobs in the snow.
+//   14.55      "Stay where | *they* are."  Still dancing. Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const DOORS = [{ x: 175, c: '#c42a3f' }, { x: 355, c: '#2a7a4b' }, { x: 535, c: '#3a6fd8' }]

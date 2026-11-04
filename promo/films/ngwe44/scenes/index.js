@@ -3,7 +3,7 @@
 //   3.0   ♒ YOUR STAR: "your word for the new year: warm."  A beam from the lantern writes W-A-R-M in the frost.
 //   6.2   "you're cool. you can be warm too."  The frosty shell cracks away in sparkles; a striped scarf drops round
 //         Aquarius' neck. The window clears; the word lights up.
-//  10.68  card flip · "Cool mind, | warm heart."  Aquarius in its scarf, cheeks pink. Pisces: happy fountains.
+//  10.68  "Cool mind, | warm heart."  Aquarius in its scarf, cheeks pink. Pisces: happy fountains.
 import { winterGuide, frostWindow, prog, ease, lerp, clamp, INK, R, box, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const WIN = { x: 540, y: 720, w: 600, h: 380 }

@@ -4,7 +4,7 @@
 //   3.0   ♒ YOUR STAR: "you love in winter on long starry walks."  Dots in the sky join up into a shape. "and THAT one…"
 //   7.4   "big ideas. big sky. very cold hands."  "brrr."  Aquarius keeps going: "…and that's why stars twinkle!"
 //  11.8   "hold the mitten, not just the conversation."  Aquarius looks over, notices, and takes the mitten. The shivering stops.
-//  15.45  card flip · "Hold the | mitten, too."  The two of them tip in mitten, under the joined-up dots. Pisces: happy fountains.
+//  15.45  "Hold the | mitten, too."  The two of them tip in mitten, under the joined-up dots. Pisces: happy fountains.
 import { winterGuide, drawStarChar, signStar, prog, ease, lerp, clamp, INK, R, box, BONE, GOLD, heart, heartsUp, shadow } from '../../ngwe25/scenes/gwkit.js'
 
 const DATE = signStar('gemini')

@@ -1,4 +1,4 @@
-// ngwe13 · Your Star Guide: Winter · ♈ Aries · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe13 · Your Star Guide: Winter · ♈ Aries · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Aries,* about your | *holiday* plans…"  The ♈ guide, big, lantern lit, snow falling.
 //   2.9–7.1    Three party invitations flutter in; Aries stamps each one YES! ×2 (KA-CHUNK). Over the lavender star, its
 //              calendar fills: FRI · PARTY, SAT · PARTY, SUN · PARTY. It goes wide-eyed (sweat drop).
@@ -6,7 +6,7 @@
 //   7.15–10.8  Aries freezes mid-stamp, looks at the calendar, looks at them. YOUR STAR: "their calendar isn't yours to fill."
 //   10.85–14.5 YOUR STAR: "ask first. then say yes together."  The calendar clears; Aries fans the invitations out to them
 //              ("you pick?"); the lavender star taps one: it glows and the calendar gets ONE party, in both colours.
-//   14.55      card flip · "Ask, *then* RSVP."  Both hop. Pisces sobs in the snow.
+//   14.55      "Ask, *then* RSVP."  Both hop. Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const DAYS = ['FRI', 'SAT', 'SUN']

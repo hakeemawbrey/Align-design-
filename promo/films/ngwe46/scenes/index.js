@@ -4,7 +4,7 @@
 //   7.4   "their stress. their worries. now yours?"  The tower sways; Pisces staggers.
 //  11.8   "you can care without carrying it all."  Three stars pop in and Pisces hands each scarf back, one by one,
 //         a little lighter each time.
-//  15.45  card flip · "Hand some | of it back."  Pisces with just its own scarf, standing tall. Happy tears.
+//  15.45  "Hand some | of it back."  Pisces with just its own scarf, standing tall. Happy tears.
 import { winterGuide, drawStarChar, signStar, prog, ease, lerp, clamp, INK, R, box, heartsUp } from '../../ngwe25/scenes/gwkit.js'
 
 const SC = [['#e8344e', 'aries'], ['#2fc79a', 'capricorn'], ['#f2cf4a', 'gemini'], ['#38c4ec', 'aquarius'], ['#f39a3a', 'leo']]

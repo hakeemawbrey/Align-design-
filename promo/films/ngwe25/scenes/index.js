@@ -6,7 +6,7 @@
 //         paint swatch held up to the snow says "SNOW (MATCHES)".
 //  11.8   "but they came for *you*, not the décor."  The hook pops, the lights slip down crooked. Libra gasps. The date
 //         (♋) pops in and doesn't look at the lights at all, only at Libra. Hearts.
-//  15.45  card flip · "*You* are the | cozy part."  The two of them on the sill, mugs up, lights crooked. Pisces: fountains.
+//  15.45  "*You* are the | cozy part."  The two of them on the sill, mugs up, lights crooked. Pisces: fountains.
 import { winterGuide, frostWindow, stringLights, mug, drawStarChar, signStar, prog, ease, lerp, clamp, PINK, BONE, GOLD, INK, MONO, R, box, heartsUp, shadow } from './gwkit.js'
 
 const LIB = signStar('libra'), DATE = signStar('cancer'), PINKS = ['#e163d6', '#f59be9', '#ff7eb6', '#ffd0f6']

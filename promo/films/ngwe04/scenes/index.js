@@ -1,10 +1,10 @@
-// ngwe04 · Your Star Guide: Winter · ♋ Cancer · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe04 · Your Star Guide: Winter · ♋ Cancer · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Cancer,* your love | comes in a *mug.*"  The ♋ guide, big, lantern lit, snow falling.
 //   2.9–7.4    Cancer hurries in with a tray of three cocoas and hands them out: one to the lavender star, one to a mint
 //              star, one all the way to Pisces (who sobs harder). YOUR STAR: "cocoa, extra blanket, socks you knitted."
 //   7.45–11.1  The tray is empty; Cancer shivers (brr). YOUR STAR: "this time, let them bring you the mug."  The lavender
 //              star walks over with a fourth mug, for Cancer.
-//   11.15      card flip · "Let someone | warm *you* back."  Cancer holds the mug; the steam curls into a heart.
+//   11.15      "Let someone | warm *you* back."  Cancer holds the mug; the steam curls into a heart.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

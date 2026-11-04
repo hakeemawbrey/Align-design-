@@ -1,4 +1,4 @@
-// ngwe14 · Your Star Guide: Winter · ♉ Taurus · note 2 / 4 (your holiday blind spot) · 25 s (story 0–20.6, then the end card)
+// ngwe14 · Your Star Guide: Winter · ♉ Taurus · note 2 / 4 (your holiday blind spot) · 23 s (story 0–20.6, then the short end card)
 //   0.00–2.85  "*Taurus,* it's | *tradition* time."  The ♉ guide, big, lantern lit, snow falling.
 //   2.9–7.1    A long snowy table. Taurus in its own chair ("TAURUS'S CHAIR") with the same roast; a little sign flips
 //              the years over its head (same plate every time). YOUR STAR: "same dinner, same chair, every single year."
@@ -6,7 +6,7 @@
 //              closer and side-eyes. YOUR STAR: "they've got traditions too, you know."
 //   10.85–14.5 YOUR STAR: "try one of theirs. just one bite."  One bun hops over; nom. Taurus's eyes go sparkly; it holds
 //              out its plate: "seconds?"
-//   14.55      card flip · "Add *their* | tradition."  Both plates full of both. Pisces sobs in the snow.
+//   14.55      "Add *their* | tradition."  Both plates full of both. Pisces sobs in the snow.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const YEARS = ['2023', '2024', '2025', '2026']

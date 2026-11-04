@@ -1,10 +1,10 @@
-// ngwe12 · Your Star Guide: Winter · ♓ Pisces · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe12 · Your Star Guide: Winter · ♓ Pisces · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Pisces,* you love | like *first snow.*"  The ♓ guide, big, lantern lit, snow falling.
 //   2.9–7.4    One big snowflake drifts down and lands on Pisces' tip. Pisces stares… and fountains happy tears
 //              ("it's so PRETTY"). YOUR STAR: "first snowflake and you're in tears. again."
 //   7.45–11.1  YOUR STAR: "that soft heart is the gift. bring it."  The lavender star hops over with a tissue (honk).
 //              Then both look up: flakes land on both of them, and now the lavender star is crying too.
-//   11.15      card flip · "Feel it all. | *Out loud.*"  Two stars in the snow, both happily sobbing.
+//   11.15      "Feel it all. | *Out loud.*"  Two stars in the snow, both happily sobbing.
 import { guideFilm } from '../../ngwe01/gwkit.js'
 
 const F = guideFilm({

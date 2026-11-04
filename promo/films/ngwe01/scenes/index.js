@@ -1,10 +1,10 @@
-// ngwe01 · Your Star Guide: Winter · ♈ Aries · note 1 / 4 (how you love in winter) · 22 s (story 0–17.6, then the end card)
+// ngwe01 · Your Star Guide: Winter · ♈ Aries · note 1 / 4 (how you love in winter) · 20 s (story 0–17.6, then the short end card)
 //   0.00–2.85  "*Aries* in winter: | first one *outside*."  The ♈ guide, big, lantern lit, snow falling.
 //   2.9–5.8    The guide lifts; its lantern lights a snowy hill. Aries ZOOMS past on a sled (WHOOSH!), then SKRRTs back.
 //              The lavender star shivers on the left. YOUR STAR: "first snow and you're already out there."
 //   7.45–10.3  YOUR STAR: "warm their hands before you race the hill."  Aries hops off, holds out red mittens, they fly
 //              onto the lavender star's tips; a heart. Both hop onto the sled.
-//   11.15      card flip · "Race the hill | *together*."  The sled glides off left with both aboard; Pisces (right) sobs.
+//   11.15      "Race the hill | *together*."  The sled glides off left with both aboard; Pisces (right) sobs.
 import { guideFilm } from '../gwkit.js'
 
 const SLED = ['Y..........', 'Y.CCCCCCCCC', '.YcccccccccY', '..R..R..R..', 'RRRRRRRRRRR.']
