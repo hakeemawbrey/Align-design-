@@ -314,7 +314,7 @@ function buildStamp(root, verdict) {
 }
 // the dealbreaker chip (a real app feature): "ADDED TO MY DEALBREAKERS"
 function buildChip(root) {
-  const wrap = el('div', { position: 'absolute', left: '0', top: '560px', width: '1080px', display: 'none', justifyContent: 'center', pointerEvents: 'none' }, root)
+  const wrap = el('div', { position: 'absolute', left: '0', top: '445px', width: '1080px', display: 'none', justifyContent: 'center', pointerEvents: 'none' }, root)
   const c = el('div', { display: 'flex', alignItems: 'center', gap: '14px', padding: '14px 28px', background: BONE, border: `5px solid ${INK}`, borderRadius: '40px', boxShadow: '8px 8px 0 rgba(6,4,18,0.7)', font: `800 32px ${INTER}`, letterSpacing: '0.06em', color: INK, whiteSpace: 'nowrap' }, wrap,
     `<span style="display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ff3b55;color:#fff;font:800 26px ${INTER}">✓</span>ADDED TO MY DEALBREAKERS`)
   return {
@@ -367,7 +367,7 @@ function drawVote(x, t, verdict) {
     const isChosen = (i === 0) === chosenL
     let s = k * (settled ? (isChosen ? 1 + 0.12 * Math.exp(-(t - T.stamp) * 5) : 1 - ease.inCubic(prog(t, T.stamp, T.stamp + 0.35))) : 1)
     const dy = settled && !isChosen ? 300 * ease.inCubic(prog(t, T.stamp, T.stamp + 0.4)) : 0
-    const alpha = settled ? (isChosen ? outK(t, [T.stamp + 0.25, T.stamp + 0.5]) : 1) : 1
+    const alpha = settled ? (isChosen ? outK(t, [T.stamp + 0.04, T.stamp + 0.22]) : 1) : 1
     if (s <= 0.01 || alpha <= 0.01) return
     const ang = needleAngle(t, verdict), lit = (i === 0 ? ang < -0.25 : ang > 0.25) ? 1 : 0
     x.save(); x.globalAlpha *= alpha; x.translate(cx, BTN.y + dy); x.scale(s, s); x.rotate(settled && !isChosen ? 0.4 * prog(t, T.stamp, T.stamp + 0.4) * (i ? 1 : -1) : 0)
