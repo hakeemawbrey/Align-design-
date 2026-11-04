@@ -1,10 +1,10 @@
-// naske35 · Ask the Stars, Volume 2, ep 35 · "Can we skip the usual holiday stuff?" (20 s, chiptune · E)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske35 · Ask the Stars, Volume 2, ep 35 · "Can we skip the usual holiday stuff?" (18 s, chiptune · E)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "Can we *skip* the usual holiday stuff?"  ♒ Aquarius mid-build of an upside-down snowman (the big ball on
 //         top) wearing a satellite-dish hat.
 //   3.0   "yes. make a tradition that's yours."  A little wooden sign is stuck in the snowman: OURS.
 //   5.9   "pancakes at midnight. a walk in the snow."  A pancake stack and a clock striking 12:00.
-//   8.75  card cut → 8.8 "tell family early, kindly. then enjoy it."  A sent message: "love you! see you in january"
+//   8.8   "tell family early, kindly. then enjoy it."  A sent message: "love you! see you in january"
 //   12.1  "Make a *new* | tradition."
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, snowBank, label, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, SNOW, INTER, MONO } from '../../naske19/scenes/askkit2.js'
 
