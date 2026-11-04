@@ -360,3 +360,67 @@ export function seasonEpisode(spec) {
     recapTop: spec.recapTop, lastSize: spec.lastSize,
   })
 }
+
+// ═══════════════════════════════════════════ the house board (episodes 28–30)
+//   houseEpisode(spec): a chart wheel on the left of the board (12 equal houses counted from the rising sign at 9 o'clock,
+//   going down and round, as in a chart drawing), the horizon, the house numbers, this house shaded in yellow; chalk
+//   words on the right. spec = { id, house, teacher, student (sign ids), key, duration, q, lines, items, last, lastWho,
+//   words: [{ text, mark, i }] (right column, i = row 0…5), opposite?: n (a second, blue house at mark 'opp'),
+//   ic?: true (the IC label at mark 'house'), teacherOpts?, studentOpts? }
+//   marks: 'wheel' (the wheel draws on), 'rise' (the horizon + RISING label), 'house' (the shading), 'opp'.
+export function houseEpisode(spec) {
+  const S = signStar(spec.teacher), ST = signStar(spec.student)
+  const teacher = { tag: TAGNAME(spec.teacher), color: S.color, glyph: S.glyph, pitch: 440, pointer: true, ...(spec.teacherOpts || {}) }
+  const student = { tag: TAGNAME(spec.student), color: ST.color, glyph: ST.glyph, pitch: 760, ...(spec.studentOpts || {}) }
+  const ord = n => n === 1 ? '1ST' : n === 2 ? '2ND' : n === 3 ? '3RD' : `${n}TH`
+  return makeEpisode({
+    id: spec.id, duration: spec.duration, key: spec.key,
+    q: spec.q, qAccent: spec.qAccent || S.color,
+    teacher, student, teacherId: spec.teacher, studentId: spec.student,
+    boardTitle: `YOUR ${ord(spec.house)} HOUSE`,
+    lines: spec.lines, items: spec.items, last: spec.last, lastWho: spec.lastWho || 'teacher',
+    moods: spec.moods || defaultMoods(spec.lines),
+    chalk: (M) => spec.words.map(w => ({ text: w.text, at: r3(M[w.mark] + 0.4 + (w.d || 0)), u: 0.76, v: 0.2 + w.i * 0.13, size: w.size || 30, align: 'center', cps: 24 })),
+    board(x, t, B, M, T) {
+      const W = B.x1 - B.x0, H = B.y1 - B.y0
+      const cx = B.x0 + 0.26 * W, cy = B.y0 + 0.57 * H, r1 = 190, r0 = 66
+      const P = (deg, r) => [cx + r * Math.cos(deg * Math.PI / 180), cy - r * Math.sin(deg * Math.PI / 180)]
+      const aW = M.wheel ?? T.boardAt + 0.6
+      // house shading (math angles: house n spans 180 + 30(n − 1) … 180 + 30n)
+      const wedge = (n, col, at) => {
+        const k = clamp(prog(t, at, at + 0.5)); if (k <= 0) return
+        const a0 = 180 + 30 * (n - 1), a1 = a0 + 30 * k
+        x.save(); x.globalAlpha *= 0.32 + 0.08 * Math.sin(t * 4)
+        x.fillStyle = col; x.beginPath()
+        for (let a = a0; a <= a1 + 0.01; a += 2) x.lineTo(...P(a, r1 - 4))
+        for (let a = a1; a >= a0 - 0.01; a -= 2) x.lineTo(...P(a, r0 + 4))
+        x.closePath(); x.fill(); x.restore()
+      }
+      if (M.house !== undefined) wedge(spec.house, EX.chalkYellow, M.house)
+      if (spec.opposite && M.opp !== undefined) wedge(spec.opposite, EX.chalkBlue, M.opp)
+      chalkCircle(x, t, { x: cx, y: cy, r: r1, at: aW, dur: 0.6, width: 5 })
+      chalkCircle(x, t, { x: cx, y: cy, r: r0, at: aW + 0.3, dur: 0.4, width: 4, color: 'rgba(244,241,232,0.7)' })
+      for (let i = 0; i < 12; i++) {
+        const a = 180 + 30 * i
+        if (i % 6 === 0) continue
+        chalkLine(x, t, { pts: [P(a, r0), P(a, r1)], at: aW + 0.5 + i * 0.04, dur: 0.15, width: 3, color: 'rgba(244,241,232,0.5)' })
+      }
+      // the horizon (rising on the left) and the house numbers, counted from it
+      const aR = M.rise ?? aW + 0.8
+      chalkLine(x, t, { pts: [P(180, r1 + 34), P(0, r1 + 34)], at: aR, dur: 0.5, width: 6, color: EX.chalkPink })
+      chalkText(x, t, { text: 'RISING', x: P(180, r1)[0] - 4, y: cy - 22, at: aR + 0.3, size: 20, color: EX.chalkPink, align: 'center', cps: 30 })
+      for (let n = 1; n <= 12; n++) {
+        const [hx, hy] = P(180 + 30 * (n - 1) + 15, (r0 + r1) / 2 + 4)
+        const hot = n === spec.house && M.house !== undefined && t >= M.house
+        chalkText(x, t, { text: hot ? `*${n}*` : String(n), x: hx, y: hy, at: aR + 0.5 + (n - 1) * 0.12, size: hot ? 34 : 24, align: 'center', cps: 30, alpha: hot ? 1 : 0.8 })
+      }
+      if (spec.ic && M.house !== undefined) chalkText(x, t, { text: '*IC*', x: cx, y: cy + r1 + 22, at: M.house + 0.3, size: 24, align: 'center', cps: 20 })
+      if (spec.extra) spec.extra(x, t, B, M, T, { cx, cy, r1, r0, P })
+    },
+    cues: T => [
+      ...(T.M.house !== undefined ? [['pop', r3(T.M.house + 0.1), 1046.5, 0.04, -0.3], ['pluck', r3(T.M.house + 0.15), 1318.51, 0.035, 0.6, -0.3]] : []),
+      ...(T.M.opp !== undefined ? [['pop', r3(T.M.opp + 0.1), 880, 0.04, -0.3]] : []),
+      ...(spec.cues ? spec.cues(T) : []),
+    ],
+  })
+}
