@@ -42,7 +42,7 @@ const nm = (id, n) => `${S(id).glyph}︎ ${n}`
 const CA = nm('cancer', 'CANCER'), SG = nm('sagittarius', 'SAGITTARIUS'), CP = nm('capricorn', 'CAPRICORN'), GE = nm('gemini', 'GEMINI')
 const LI = nm('libra', 'LIBRA'), SC = nm('scorpio', 'SCORPIO')
 const COL = { [CA]: '#8fe6ff', [SG]: '#d6b0ff', [CP]: '#7ff0c8', [GE]: '#ffe27a', [LI]: '#ffb0f0', [SC]: '#ff9fb4' }
-const CAW = { scarf: '#ffcf6e', hat: '#ff6b8a', seed: 21 }, SGW = { scarf: '#4a8ff0', seed: 22 }
+const CAW = { scarf: '#ff8fb1', hat: '#ff8fb1', seed: 21 }, SGW = { scarf: '#ffd36e', seed: 22 }
 const CARD = 'What’s something you haven’t said this year?'
 
 const T = {
@@ -187,8 +187,8 @@ async function build(stage) {
         drawWinter(c, 'cancer', wide ? 1460 : 1300 + g * 300, wide ? standY(150, 900) : standY(220), wide ? 150 : 220, t, { ...CAW, mood: wide ? 'heart' : t > 18.0 ? 'wide' : 'neutral', look: wide ? [1, 0] : [-1, 0], hops: [...hops(CA), ...cheer], blush: t > 18.0 ? 0.9 : undefined, alpha: wide ? 1 : 1 - g })
       }
       if (wide) {
-        drawWinter(c, 'libra', 1720, standY(210), 210, t, { scarf: '#c9a6ff', mood: 'heart', hops: cheer.map(v => v + 0.2), seed: 10 })
-        drawWinter(c, 'scorpio', 1900, standY(210), 210, t, { scarf: '#ffd36e', mood: 'happy', hops: cheer.map(v => v + 0.25), seed: 11 })
+        drawWinter(c, 'libra', 1720, standY(210), 210, t, { scarf: '#c9a6ff', hat: '#7dffb0', mood: 'heart', hops: cheer.map(v => v + 0.2), seed: 10 })
+        drawWinter(c, 'scorpio', 1900, standY(210), 210, t, { scarf: '#fff1c8', mood: 'happy', hops: cheer.map(v => v + 0.25), seed: 11 })
       }
     })
     snowfall(x, t, { n: 90, speed: wide ? 0.8 : 1 })
@@ -243,8 +243,8 @@ async function build(stage) {
     drawLane(x, t, { time: 'night', pan: 1080, lit: winK(t), lights: 1 }, c => {
       snowGround(c, t)
       drawStringBulbs(c, t, 1100, 2160, 760, 120, { k: 1, n: 20, seed: 7 })
-      drawWinter(c, 'scorpio', 1720, standY(240), 240, t, { scarf: '#ffd36e', mood: t > T.yes ? 'heart' : 'sparkle', look: [1, 0], hops: hops(SC), seed: 11, blush: 0.9 })
-      drawWinter(c, 'libra', 1980, standY(240), 240, t, { scarf: '#c9a6ff', mood: t > T.yes ? 'heart' : 'neutral', look: [-1, 0], hops: [...hops(LI), T.yes + 0.4, T.yes + 0.8], seed: 10 })
+      drawWinter(c, 'scorpio', 1720, standY(240), 240, t, { scarf: '#fff1c8', mood: t > T.yes ? 'heart' : 'sparkle', look: [1, 0], hops: hops(SC), seed: 11, blush: 0.9 })
+      drawWinter(c, 'libra', 1980, standY(240), 240, t, { scarf: '#c9a6ff', hat: '#7dffb0', mood: t > T.yes ? 'heart' : 'neutral', look: [-1, 0], hops: [...hops(LI), T.yes + 0.4, T.yes + 0.8], seed: 10 })
     })
     snowfall(x, t, { n: 60, seed: 7 })
     if (t > T.yes) sparkles(x, t, 760, 1100, T.yes + 0.1, 14, 220, 21, [PINK, '#ffb3d9', ML_GOLD])

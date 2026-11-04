@@ -39,7 +39,7 @@ const S = id => signStar(id)
 const CA = `${S('cancer').glyph}︎ CANCER`, SG = `${S('sagittarius').glyph}︎ SAGITTARIUS`, LE = `${S('leo').glyph}︎ LEO`, GE = `${S('gemini').glyph}︎ GEMINI`
 const LI = `${S('libra').glyph}︎ LIBRA`, SC = `${S('scorpio').glyph}︎ SCORPIO`
 const CA_C = '#8fe6ff', SG_C = '#d6b0ff', LE_C = '#ffbe73', GE_C = '#ffe27a', LI_C = '#ffb0f0', SC_C = '#ff9fb4'
-const CAW = { scarf: '#ffcf6e', hat: '#ff6b8a', seed: 21 }, SGW = { scarf: '#4a8ff0', seed: 22 }
+const CAW = { scarf: '#ff8fb1', hat: '#ff8fb1', seed: 21 }, SGW = { scarf: '#ffd36e', seed: 22 }
 
 const T = {
   prev: [5.0, 7.0], title: 7.0,
@@ -153,7 +153,7 @@ async function build(stage) {
 
   function stillDinner(c) {
     drawCafe(c, 10, { view: 'night' })
-    ;[[170, '#c9a6ff', '#ff8fb1', 'sagittarius'], [380, '#9a6a48', '#5a6a8a', 'sagittarius'], [640, '#4a8ff0', null, 'sagittarius'], [900, '#ffcf6e', '#ff6b8a', 'cancer']].forEach(([sx, sc, h, sg], i) => drawWinter(c, sg, sx, standY(260, 1250), 260, 10, { scarf: sc, hat: h, mood: 'happy', seed: 30 + i }))
+    ;[[170, '#c9a6ff', '#ff8fb1', 'sagittarius'], [380, '#9a6a48', '#5a6a8a', 'sagittarius'], [640, '#ffd36e', null, 'sagittarius'], [900, '#ff8fb1', '#ff8fb1', 'cancer']].forEach(([sx, sc, h, sg], i) => drawWinter(c, sg, sx, standY(260, 1250), 260, 10, { scarf: sc, hat: h, mood: 'happy', seed: 30 + i }))
     drawLongTable(c, 10, { y: 1185 })
   }
   function stillOut(c, heart) {
@@ -290,8 +290,8 @@ async function build(stage) {
     const p = ease.inOutQuad(prog(t, ...T.steps)), n = Math.min(40, Math.round(p * 40))
     drawLane(x, t, { time: 'night', pan: 1080 }, c => {
       snowGround(c, t)
-      drawWinter(c, 'scorpio', lerp(1500, 1820, p), standY(230), 230, t, { scarf: '#ffd36e', mood: t > 110.2 ? 'heart' : 'happy', look: [1, 0], hops: steps(T.steps[0], T.steps[1], 0.25), seed: 11 })
-      drawWinter(c, 'libra', lerp(1720, 2020, p), standY(230), 230, t, { scarf: '#c9a6ff', mood: t > 110.4 ? 'heart' : 'sparkle', look: [-1, 0], hops: steps(T.steps[0] + 0.1, T.steps[1], 0.25), seed: 10 })
+      drawWinter(c, 'scorpio', lerp(1500, 1820, p), standY(230), 230, t, { scarf: '#fff1c8', mood: t > 110.2 ? 'heart' : 'happy', look: [1, 0], hops: steps(T.steps[0], T.steps[1], 0.25), seed: 11 })
+      drawWinter(c, 'libra', lerp(1720, 2020, p), standY(230), 230, t, { scarf: '#c9a6ff', hat: '#7dffb0', mood: t > 110.4 ? 'heart' : 'sparkle', look: [-1, 0], hops: steps(T.steps[0] + 0.1, T.steps[1], 0.25), seed: 10 })
     })
     snowfall(x, t, { n: 60, seed: 7 })
     drawBubble(x, 300, 1000, `STEPS: ${n}`, { size: 34, col: ML_GOLD, k: pop01(t, 108.3, 0.25, 2) * outK(t, [111.25, 111.45]), tail: null })

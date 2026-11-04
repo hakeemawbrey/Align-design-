@@ -41,7 +41,7 @@ const nm = (id, n) => `${S(id).glyph}︎ ${n}`
 const CA = nm('cancer', 'CANCER'), SG = nm('sagittarius', 'SAGITTARIUS'), TA = nm('taurus', 'TAURUS'), VI = nm('virgo', 'VIRGO'), AR = nm('aries', 'ARIES')
 const CP = nm('capricorn', 'CAPRICORN'), LE = nm('leo', 'LEO'), PI = nm('pisces', 'PISCES'), LI = nm('libra', 'LIBRA'), SC = nm('scorpio', 'SCORPIO')
 const COL = { [CA]: '#8fe6ff', [SG]: '#d6b0ff', [TA]: '#ffd98a', [VI]: '#ff9fc4', [AR]: '#ff9a7a', [CP]: '#7ff0c8', [LE]: '#ffbe73', [PI]: '#b8b2ff', [LI]: '#ffb0f0', [SC]: '#ff9fb4' }
-const CAW = { scarf: '#ffcf6e', hat: '#ff6b8a', seed: 21 }, SGW = { scarf: '#4a8ff0', seed: 22 }
+const CAW = { scarf: '#ff8fb1', hat: '#ff8fb1', seed: 21 }, SGW = { scarf: '#ffd36e', seed: 22 }
 const CARD = 'What’s something you haven’t said this year?'
 
 const T = {
@@ -242,8 +242,8 @@ async function build(stage) {
 
   function tag(t) {               // Libra × Scorpio at the cleared table
     drawCafe(x, t, { view: 'late', lights: 0.7, chairsUp: 1 })
-    drawWinter(x, 'libra', 360, standY(260, 1190), 260, t, { scarf: '#c9a6ff', mood: t > T.bag ? 'heart' : 'sparkle', look: [1, 0], seed: 10, hops: [T.bag] })
-    drawWinter(x, 'scorpio', 720, standY(260, 1190), 260, t, { scarf: '#ffd36e', mood: t > 109.6 ? 'heart' : 'neutral', look: [-1, 0], seed: 11, hops: hops(SC), blush: 0.9 })
+    drawWinter(x, 'libra', 360, standY(260, 1190), 260, t, { scarf: '#c9a6ff', hat: '#7dffb0', mood: t > T.bag ? 'heart' : 'sparkle', look: [1, 0], seed: 10, hops: [T.bag] })
+    drawWinter(x, 'scorpio', 720, standY(260, 1190), 260, t, { scarf: '#fff1c8', mood: t > 109.6 ? 'heart' : 'neutral', look: [-1, 0], seed: 11, hops: hops(SC), blush: 0.9 })
     drawLongTable(x, t, { y: 1185, x0: 120, x1: 960, dishes: false, candles: true })
     drawTalkCard(x, 540, 1150, 120, t, { text: CARD, rot: -0.1, size: 30 })
     // the bag Libra kept (a little paper pastry bag)

@@ -41,8 +41,8 @@ const S = id => signStar(id)
 const CA = `${S('cancer').glyph}︎ CANCER`, SG = `${S('sagittarius').glyph}︎ SAGITTARIUS`, MO = `${S('sagittarius').glyph}︎ MOM`, DA = `${S('sagittarius').glyph}︎ DAD`
 const LI = `${S('libra').glyph}︎ LIBRA`, SC = `${S('scorpio').glyph}︎ SCORPIO`
 const CA_C = '#8fe6ff', SG_C = '#d6b0ff', MO_C = '#ffb0d6', DA_C = '#c8b8ff', LI_C = '#ffb0f0', SC_C = '#ff9fb4'
-const CAW = { scarf: '#ffcf6e', hat: '#ff6b8a', seed: 21 }, SGW = { scarf: '#4a8ff0', seed: 22 }
-const MOW = { scarf: '#c9a6ff', hat: '#ff8fb1', seed: 31 }, DAW = { scarf: '#9a6a48', hat: '#5a6a8a', seed: 32 }
+const CAW = { scarf: '#ff8fb1', hat: '#ff8fb1', seed: 21 }, SGW = { scarf: '#ffd36e', seed: 22 }
+const MOW = { scarf: '#c9a6ff', hat: '#ff9a3a', seed: 31 }, DAW = { scarf: '#9a6a48', hat: '#5a6a8a', seed: 32 }
 
 // ── the timeline
 const T = {
@@ -289,8 +289,8 @@ async function build(stage) {
     drawLane(x, t, { time: 'night', pan: 1080 }, c => {
       snowGround(c, t)
       const tilt = Math.sin((t - T.tilt[0]) * 7) * 0.22 * (inR(t, ...T.tilt) ? 1 : 0)
-      drawWinter(c, 'libra', 1720, standY(230), 230, t, { scarf: '#c9a6ff', mood: t > T.both + 0.3 ? 'happy' : 'squint', look: [1, 0], hops: LI_HOPS, seed: 10, rot: tilt })
-      drawWinter(c, 'scorpio', 2000, standY(230), 230, t, { scarf: '#ffd36e', mood: t > T.both ? 'happy' : 'neutral', look: [-1, 0], hops: SC_HOPS, seed: 11 })
+      drawWinter(c, 'libra', 1720, standY(230), 230, t, { scarf: '#c9a6ff', hat: '#7dffb0', mood: t > T.both + 0.3 ? 'happy' : 'squint', look: [1, 0], hops: LI_HOPS, seed: 10, rot: tilt })
+      drawWinter(c, 'scorpio', 2000, standY(230), 230, t, { scarf: '#fff1c8', mood: t > T.both ? 'happy' : 'neutral', look: [-1, 0], hops: SC_HOPS, seed: 11 })
     })
     snowfall(x, t, { n: 60, seed: 7 })
     const k1 = pop01(t, 109.0, 0.2, 2) * outK(t, [T.both, T.both + 0.2]), k2 = pop01(t, 109.5, 0.2, 2) * outK(t, [T.both, T.both + 0.2])

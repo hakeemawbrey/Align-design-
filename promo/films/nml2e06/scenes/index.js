@@ -45,7 +45,7 @@ const AQ = `${S('cancer').glyph}︎ CANCER`, SG = `${S('sagittarius').glyph}︎ 
 const LI = `${S('libra').glyph}︎ LIBRA`, GE = `${S('gemini').glyph}︎ GEMINI`
 const AQ_C = '#8fe6ff', SG_C = '#d6b0ff', TA_C = '#ffd98a', LI_C = '#ffb0f0', GE_C = '#ffe27a'
 // the season's looks
-const AQW = { scarf: '#ffcf6e', hat: '#ff6b8a', seed: 21 }, SGW = { scarf: '#4a8ff0', seed: 22 }
+const AQW = { scarf: '#ff8fb1', hat: '#ff8fb1', seed: 21 }, SGW = { scarf: '#ffd36e', seed: 22 }
 
 // ── the timeline
 const T = {
@@ -222,7 +222,7 @@ async function build(stage) {
     drawWinter(x, 'cancer', APT.couch.seats[0], standY(230, APT.couch.seatY), 230, t, { ...AQW, hat: null, mood: am, look: al, hops: AQ_HOPS, blush: t > 37.2 ? 0.9 : undefined })
     if (t > T.libIn[0]) {
       const p = ease.outBack(prog(t, ...T.libIn)), o = ease.inCubic(prog(t, ...T.libOut))
-      drawWinter(x, 'libra', lerp(1250, 800, p) + o * 500, standY(220, 1440), 220, t, { scarf: '#c9a6ff', mood: t > 37 ? 'wink' : 'sparkle', look: [-1, -1], hops: LI_HOPS, seed: 10 })
+      drawWinter(x, 'libra', lerp(1250, 800, p) + o * 500, standY(220, 1440), 220, t, { scarf: '#c9a6ff', hat: '#7dffb0', mood: t > 37 ? 'wink' : 'sparkle', look: [-1, -1], hops: LI_HOPS, seed: 10 })
     }
   }
 
@@ -363,8 +363,8 @@ async function build(stage) {
     drawLane(x, t, { time: 'night', pan: 1080 }, c => {
       snowGround(c, t)
       const g1 = ease.outBack(prog(t, T.give1, T.give1 + 0.4)), g2 = ease.outBack(prog(t, T.give2, T.give2 + 0.4))
-      drawWinter(c, 'libra', 1700, standY(230), 230, t, { scarf: '#c9a6ff', mood: t > T.give1 + 0.3 ? 'heart' : 'sparkle', look: [1, 0], hops: LI_HOPS, seed: 10 })
-      drawWinter(c, 'scorpio', 2000, standY(230), 230, t, { scarf: '#ffd36e', mood: t > T.give2 + 0.3 ? 'heart' : 'happy', look: [-1, 0], hops: [T.give1, T.laugh], seed: 11, blush: t > T.give2 ? 0.9 : undefined })
+      drawWinter(c, 'libra', 1700, standY(230), 230, t, { scarf: '#c9a6ff', hat: '#7dffb0', mood: t > T.give1 + 0.3 ? 'heart' : 'sparkle', look: [1, 0], hops: LI_HOPS, seed: 10 })
+      drawWinter(c, 'scorpio', 2000, standY(230), 230, t, { scarf: '#fff1c8', mood: t > T.give2 + 0.3 ? 'heart' : 'happy', look: [-1, 0], hops: [T.give1, T.laugh], seed: 11, blush: t > T.give2 ? 0.9 : undefined })
       // Scorpio → Libra: a pastry shaped like a flower (a bun with five crust petals)
       if (t > T.give1 - 0.1) {
         const fx = lerp(1900, 1790, g1), fy = 1170
