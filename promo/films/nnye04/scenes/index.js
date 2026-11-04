@@ -1,8 +1,8 @@
-// nnye04: NEW YEAR, SAME HEART · Cancer: what I'm keeping (20 s vertical, star_advice, music: dreamy · F).
+// nnye04: NEW YEAR, SAME HEART · Cancer: what I'm keeping (18 s vertical, star_advice, music: dreamy · F).
 // The format lives in ../../nnye01/scenes/yearkit.js (shared by nnye01–nnye12). Story 0–15.6, then the shared end card.
 //   0.0   hook: "*Cancer,* / it’s your turn / to be looked after."
 //   2.4   LEAVING: "caring for everyone but me" · "guessing what they feel" (Cancer: "is everyone ok?")
-//   6.6   card cut → KEEPING: "the open door", the gift box closes.
+//   6.6   → KEEPING: "the open door", the gift box closes.
 //   10.85 "New year. | Same *heart.*"  THE STARS: "Pour *yourself* a bowl too."
 import { makeYear } from '../../nnye01/scenes/yearkit.js'
 
