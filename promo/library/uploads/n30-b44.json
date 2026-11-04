@@ -1,56 +1,83 @@
 {
  "nhce01": {
-  "video": "/_blob/30d23ca120fd1b0ed346f3d4f3223722",
-  "poster": "/_blob/34abf6e8d7817d492058e2522203fe19",
+  "video": "/_blob/203818c4257169eaf727ab54a8774fcb",
+  "poster": "/_blob/05be14b8c795ca540e995e82516310c6",
   "title": "First Snow Text",
-  "len": 16,
+  "len": 14,
   "series": "hotcold",
   "episode": 1,
   "caption": "Your crush texts \"it's snowing!!\" and you freeze. Reply now or play it cool?\nNeither. Send a snow photo back. Being happy to hear from them is allowed."
  },
  "nhce02": {
-  "video": "/_blob/a7d8d8892efb9b51d697be22143cb7bc",
-  "poster": "/_blob/e01398d7e640390f76c3500ef2e3e5af",
+  "video": "/_blob/ba61f22cacc03252e997d7e6bdbd6937",
+  "poster": "/_blob/03c8c95f62ac179e475b694260454c3d",
   "title": "The Borrowed Scarf",
-  "len": 16,
+  "len": 14,
   "series": "hotcold",
   "episode": 2,
   "caption": "They lent you their scarf. Is it a promise or just a scarf?\nYou won't know by guessing. Ask what it means."
  },
  "nhce03": {
-  "video": "/_blob/7812c49b0eecf3571094a4b35f680c97",
-  "poster": "/_blob/40a4be96be2d720ced8a973a2febd0da",
+  "video": "/_blob/a085fa9a4aec2d75d9f98f5ee69b9080",
+  "poster": "/_blob/4ba592ebed3d6abaaa04ab3d9ac81613",
   "title": "The Plus-One",
-  "len": 16,
+  "len": 14,
   "series": "hotcold",
   "episode": 3,
   "caption": "The party invite says \"plus one?\" Who do you bring?\nNot someone to impress the room. Bring someone who'd actually enjoy the night."
  },
  "nhce04": {
-  "video": "/_blob/bcdc20d9a20909c444ffe3427b4c3ab4",
-  "poster": "/_blob/3af01a875fa636305b4521a8ea74578b",
+  "video": "/_blob/8d4f7b0ad78b7df7b3622043bbddce11",
+  "poster": "/_blob/786b1f4ce760b4d2811caf0866d7db21",
   "title": "Single in Cuffing Season",
-  "len": 16,
+  "len": 14,
   "series": "hotcold",
   "episode": 4,
   "caption": "Cuffing season started and you're single. Panic-date or hide till spring?\nNeither. Cozy counts with your friends, too."
  },
  "nhce05": {
-  "video": "/_blob/3b005eb225f2a1876bc58c25a18ea432",
-  "poster": "/_blob/4a48697e6b8929593dbc5540d09b1f38",
+  "video": "/_blob/71c4d222827ad9b6d080b3b858b0c7b3",
+  "poster": "/_blob/747dcbf0e61e66d3f075fdbaadefcbd3",
   "title": "The Three-Week Gift",
-  "len": 16,
+  "len": 14,
   "series": "hotcold",
   "episode": 5,
   "caption": "Three weeks in and the holidays are here. What's the gift?\nNot a whole tree, not nothing. Something small and sweet says plenty."
  },
  "nhce06": {
-  "video": "/_blob/a59b1cf897acea27bc259d17c0b08028",
-  "poster": "/_blob/49173e7337bc99735a8714d8de7ff35e",
+  "video": "/_blob/2636d1f49a485e1b0fbb822400b5f6df",
+  "poster": "/_blob/84325e73f563ef32eb7a3b1cfc58f52f",
   "title": "Two Weeks Apart",
-  "len": 16,
+  "len": 14,
   "series": "hotcold",
   "episode": 6,
   "caption": "They're going home for two weeks. Tag along or go silent?\nPick a call time you both like, then go enjoy your own people."
+ },
+ "nhce07": {
+  "video": "/_blob/1c67032c23857d77d847f198f298ad61",
+  "poster": "/_blob/306375f387daef1db03b1921da041132",
+  "title": "Too Cold to Go Out",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 7,
+  "caption": "Too cold to go out tonight, and you had plans.\nDon't brave it in no coat, and don't cancel with \"lol\". Call and stay in together."
+ },
+ "nhce08": {
+  "video": "/_blob/e30f4a2dbe829d78393eba9718fb9094",
+  "poster": "/_blob/618a19a7d9b5d9ad18b60551f5ead715",
+  "title": "The Winter Playlist",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 8,
+  "caption": "They made you a winter playlist. How do you answer that?\nNot with nine hours of your own, and not with \"nice\". Tell them the song you replayed."
+ },
+ "nhce09": {
+  "video": "/_blob/887b1e5a3568667d33e62851f01b24a1",
+  "poster": "/_blob/b607f9a28ea3247ca5301031232d85e0",
+  "title": "Drew Your Crush",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 9,
+  "caption": "Gift exchange, and you drew your crush.\nSkip the big spend and the mystery pen. Get the thing they mentioned once. It shows you listened."
  }
 }
