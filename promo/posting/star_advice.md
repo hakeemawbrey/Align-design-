@@ -7,144 +7,141 @@ there are no hashtags.
 - **Posts** go to followers. **Trial reels** are shown first to people who don't follow yet, so their captions open
   with a hook that works for a stranger.
 - Every video is unique: nothing here ever appears on star_talk, and nothing repeats.
-- Days 1–6 have one extra trial reel (11 that day, the first at 7:40 AM) so all 756 films fit in 25 days.
-- **Moonlight Lane** (the 2-minute episodes) runs one episode a day, days 1–10, in the 5:45 PM post slot.
-- **Times** are a suggested spread in your local time: posts every 90 minutes from 8:45 AM, trial reels every
-  90 minutes from 9:10 AM. That keeps them off star_talk's times (8:00, 9:30, …).
+- Days 2–7 have one extra trial reel (11 that day, the first at 7:40 AM) so all 756 films fit in 25 days.
+- **Moonlight Lane** (the 2-minute episodes) runs one episode a day, days 1–10: tonight at 10:37 PM, then in the
+  5:45 PM post slot.
+- **Day 1 is tonight, Wed 4 Nov, from 8:37 PM:** posts every 20 minutes until 11:37 PM, trial reels every 20 minutes
+  from 8:44 PM until 11:44 PM.
+- **Days 2–25 (Thu 5 Nov – Sat 28 Nov):** posts every 90 minutes from 8:45 AM, trial reels every 90 minutes from
+  9:10 AM. That keeps them off star_talk's times (8:00, 9:30, …). Times are in your local time.
 - **Files:** each title links to its video in Google Drive; the path under it shows where it sits in the `Star Talk` folder.
 
 
-## Day 1
+## Day 1 · Wed 4 Nov
 
-**7:40 AM · Trial reel** — [Venus moved to Houston, too.](https://drive.google.com/file/d/181u3NhwNe7IUEFmkr0bQ-8igVF9eAc2u/view) (20 s)  
-`Star Talk/03 Seasons 4–6/Season 4/Venus moved to Houston, too. (st4venus1).mp4`
-
-Do you know your Venus sign?
-Venus rules Taurus and Libra, but everyone has one, and it shows how you love. Start with one good question.
-
-**8:45 AM · Post** — [Air signs, gather round.](https://drive.google.com/file/d/1CwpT3jL4S0EAiU6OfffAtEqINTFmKL3u/view) (30 s)  
+**8:37 PM · Post** — [Air signs, gather round.](https://drive.google.com/file/d/1CwpT3jL4S0EAiU6OfffAtEqINTFmKL3u/view) (30 s)  
 `Star Talk/01 Shows/Your Star Guide/Air signs, gather round. (guideair).mp4`
 
 Air signs, your gift is words. But closeness doesn't always need them. Sometimes the most loving thing is to stop talking and just sit next to someone.
 
-**9:10 AM · Trial reel** — [Aries and Libra's anniversary.](https://drive.google.com/file/d/1F9kUyusqswiK3BKgjjy79SUg_EzZO_6I/view) (20 s)  
+**8:44 PM · Trial reel** — [Aries and Libra's anniversary.](https://drive.google.com/file/d/1F9kUyusqswiK3BKgjjy79SUg_EzZO_6I/view) (20 s)  
 `Star Talk/03 Seasons 4–6/Season 4/Aries and Libra's anniversary. (st4anniversary).mp4`
 
 One of you plans in five minutes, the other brings five options?
 Aries and Libra prove fast and fair can share one anniversary.
 
-**10:15 AM · Post** — [What's an aspect in astrology?](https://drive.google.com/file/d/1Djx7xoddHB6ijGMYjcxSEWA3avGxqUL1/view) (45 s)  
+**8:57 PM · Post** — [What's an aspect in astrology?](https://drive.google.com/file/d/1Djx7xoddHB6ijGMYjcxSEWA3avGxqUL1/view) (45 s)  
 `Star Talk/Season 13/What's an aspect in astrology- (st13aspects).mp4`
 
 Lines all over your chart can feel like a puzzle. Astrologers read aspects as conversations between planets: some easy, some tense, most a bit of both.
 Just like the people you love.
 
-**10:40 AM · Trial reel** — [An Aquarius at 3 AM, headphones on.](https://drive.google.com/file/d/1US2j1eFqIERoJCT3RU7k21wvV5apSiEP/view) (32 s)  
+**9:04 PM · Trial reel** — [An Aquarius at 3 AM, headphones on.](https://drive.google.com/file/d/1US2j1eFqIERoJCT3RU7k21wvV5apSiEP/view) (32 s)  
 `Star Talk/04 Seasons 7–9/Season 9/An Aquarius at 3 AM, headphones on. (st9aqua3am).mp4`
 
 Ever put headphones on at 3 AM just to turn the world down?
 Aquarius isn't pulling away. It just needs someone who'll be quiet on the line with it.
 
-**11:45 AM · Post** — [Abducted.](https://drive.google.com/file/d/1K8froLTIgsqLQxDp-DDkYCV7qln7FRUZ/view) (45 s)  
+**9:17 PM · Post** — [Abducted.](https://drive.google.com/file/d/1K8froLTIgsqLQxDp-DDkYCV7qln7FRUZ/view) (45 s)  
 `Star Talk/02 Seasons 1–3/Season 1 & specials/Abducted. (stabducted).mp4`
 
 Mixed signals confuse even a lab full of aliens. If you like them, say it plainly: clear is kind, to them and to you. Save this for the next time you type "whatever :)".
 
-**12:10 PM · Trial reel** — [Scorpios aren't jealous. They're all in.](https://drive.google.com/file/d/15Q5jX1HJPG8wtgZSmtgttf_2m6tkARTr/view) (20 s)  
+**9:24 PM · Trial reel** — [Scorpios aren't jealous. They're all in.](https://drive.google.com/file/d/15Q5jX1HJPG8wtgZSmtgttf_2m6tkARTr/view) (20 s)  
 `Star Talk/05 Seasons 10–12/Season 12/Scorpios aren't jealous. They're all in. (st12allin).mp4`
 
 Is it jealousy, or are you just all in?
 Scorpio learns the real move: put the phone down and trust.
 
-**1:15 PM · Post** — [Mars is running through the airport.](https://drive.google.com/file/d/1WnFmBnvg3UmLYCEjMhFv9E_AD4REzg6P/view) (45 s)  
+**9:37 PM · Post** — [Mars is running through the airport.](https://drive.google.com/file/d/1WnFmBnvg3UmLYCEjMhFv9E_AD4REzg6P/view) (45 s)  
 `Star Talk/04 Seasons 7–9/Season 8/Mars is running through the airport. (st8airport).mp4`
 
 Some goodbyes are tender, not bitter. Venus hears Mars out kindly, hugs him as a friend, and still chooses herself.
 You can honor what you had and keep walking toward your own morning sky.
 
-**1:40 PM · Trial reel** — [Dear Aries: Houston traffic.](https://drive.google.com/file/d/1_iztfhKHq0pTJG6GYX--2SWnUPdawAzI/view) (15 s)  
+**9:44 PM · Trial reel** — [Dear Aries: Houston traffic.](https://drive.google.com/file/d/1_iztfhKHq0pTJG6GYX--2SWnUPdawAzI/view) (15 s)  
 `Star Talk/03 Seasons 4–6/Season 4/Dear Aries- Houston traffic. (st4aries).mp4`
 
 Aries, stuck in traffic, already panicking about being late?
 Send the "running late" text. Patience is a love language too.
 
-**2:45 PM · Post** — [That's archaeology.](https://drive.google.com/file/d/1CmBjeqrGo4kCzfC1_64liOqRo_oV12ej/view) (45 s)  
+**9:57 PM · Post** — [That's archaeology.](https://drive.google.com/file/d/1CmBjeqrGo4kCzfC1_64liOqRo_oV12ej/view) (45 s)  
 `Star Talk/02 Seasons 1–3/Season 3/That's archaeology. (starchaeology).mp4`
 
 A like on a years-old photo can feel like a sign. It isn't a plan. Attention is easy; intention shows up with a day and a time. You deserve more than crumbs.
 
-**3:10 PM · Trial reel** — [Aries dating: 2016 vs 2026](https://drive.google.com/file/d/1WW2OrRuffEwQJrPgHONvGIM10A0ZPZZF/view) (20 s)  
+**10:04 PM · Trial reel** — [Aries dating: 2016 vs 2026](https://drive.google.com/file/d/1WW2OrRuffEwQJrPgHONvGIM10A0ZPZZF/view) (20 s)  
 `Star Talk/09 Then vs Now/Signs dating, 2016 vs 2026/Aries dating- 2016 vs 2026 (yraries).mp4`
 
 Aries in 2016 said I love you on date one. In a food court.
 Aries in 2026 asks first. Same fire, better timing.
 
-**4:15 PM · Post** — [The Auntie Council](https://drive.google.com/file/d/151NEBnMQ0gfaubOJvVdaca1ty30awqP4/view) (60 s)  
+**10:17 PM · Post** — [The Auntie Council](https://drive.google.com/file/d/151NEBnMQ0gfaubOJvVdaca1ty30awqP4/view) (60 s)  
 `Star Talk/02 Seasons 1–3/Season 2/The Auntie Council (staunties).mp4`
 
 The aunties came with a whole list, but the part that matters is simpler: a little push is normal, and laughing at the same things counts for a lot.
 Nobody is perfect for you. Look for who is worth the work.
 
-**4:40 PM · Trial reel** — [POV: an Aquarius has a new theory before coffee.](https://drive.google.com/file/d/1UO5QC6q4CeNUVB2fT6i-QDFeKaEh6qd2/view) (22 s)  
+**10:24 PM · Trial reel** — [POV: an Aquarius has a new theory before coffee.](https://drive.google.com/file/d/1UO5QC6q4CeNUVB2fT6i-QDFeKaEh6qd2/view) (22 s)  
 `Star Talk/04 Seasons 7–9/Season 9/POV- an Aquarius has a new theory before coffee. (st9aquaam).mp4`
 
 Is cereal soup? An Aquarius has a whiteboard on it before coffee.
 Your weird is not too much. It's the good part.
 
-**5:45 PM · Post** — [Ep 1: The Blind Card](https://drive.google.com/file/d/1E9UwsZ_d0S72Fg6JJIBWmasmrW1_n6_7/view) (120 s)  
+**10:37 PM · Post** — [Ep 1: The Blind Card](https://drive.google.com/file/d/1E9UwsZ_d0S72Fg6JJIBWmasmrW1_n6_7/view) (120 s)  
 `Star Talk/Moonlight Lane/Ep 01 - Ep 1- The Blind Card (mlpilot).mp4`
 
 Moonlight Lane, Ep 1: Capricorn agrees to a blind card date, with a hard stop at 8:30. Will the agenda win? Being busy can be a way to stay safe. Make room for something good.
 
-**6:10 PM · Trial reel** — [Dear Atlanta.](https://drive.google.com/file/d/1S9JHrBofUb45BlQYj1ACwjiQdWSnMJZp/view) (15 s)  
+**10:44 PM · Trial reel** — [Dear Atlanta.](https://drive.google.com/file/d/1S9JHrBofUb45BlQYj1ACwjiQdWSnMJZp/view) (15 s)  
 `Star Talk/03 Seasons 4–6/Season 4/Dear Atlanta. (st4atlanta).mp4`
 
 Cancer, still peeking from behind the trees?
 The right one is out there looking for you too. Step into the light.
 
-**7:15 PM · Post** — [Am I too weird to date?](https://drive.google.com/file/d/1RVNn6U5tO4__hrx77I6dZ7WcDy5ntg_8/view) (20 s)  
+**10:57 PM · Post** — [Am I too weird to date?](https://drive.google.com/file/d/1RVNn6U5tO4__hrx77I6dZ7WcDy5ntg_8/view) (20 s)  
 `Star Talk/01 Shows/Ask the Stars/Am I too weird to date- (askaquarius).mp4`
 
 Worried you're too much of yourself to date? The right person likes your weird, rocks with faces and all.
 Lead with who you really are. It helps the right ones find you.
 
-**7:40 PM · Trial reel** — [Wanting alone time isn't a red flag.](https://drive.google.com/file/d/1tp-9QshWbm-HIvqdoI2MPvAhpC9Iu3yh/view) (15 s)  
+**11:04 PM · Trial reel** — [Wanting alone time isn't a red flag.](https://drive.google.com/file/d/1tp-9QshWbm-HIvqdoI2MPvAhpC9Iu3yh/view) (15 s)  
 `Star Talk/05 Seasons 10–12/Season 12/Wanting alone time isn't a red flag. (st12alonetime).mp4`
 
 Need a night alone and feel guilty about it?
 Space refills you. Just say when you'll be back.
 
-**8:45 PM · Post** — [one ear on. i’m listening. promise.](https://drive.google.com/file/d/1_sm0Y7PS-_o8j2r1-ZqT8hX8geN-Mxkd/view) (45 s)  
+**11:17 PM · Post** — [one ear on. i’m listening. promise.](https://drive.google.com/file/d/1_sm0Y7PS-_o8j2r1-ZqT8hX8geN-Mxkd/view) (45 s)  
 `Star Talk/03 Seasons 4–6/Season 6/one ear on. i’m listening. promise. (st6aquarius).mp4`
 
 Aquarius isn't cold, it's buffering. Needing a little space when things get loud is okay. The real closeness is letting your person in anyway, one ear at a time.
 
-**9:10 PM · Trial reel** — [The Auntie Council reviews Houston.](https://drive.google.com/file/d/1oNNBPN4vqj0KGyCl6BrI7XfbB2FooNKE/view) (25 s)  
+**11:24 PM · Trial reel** — [The Auntie Council reviews Houston.](https://drive.google.com/file/d/1oNNBPN4vqj0KGyCl6BrI7XfbB2FooNKE/view) (25 s)  
 `Star Talk/03 Seasons 4–6/Season 4/The Auntie Council reviews Houston. (st4aunties1).mp4`
 
 What would your aunties say about your love life?
 The Auntie Council says love is mostly showing up, and Houston passed.
 
-**10:15 PM · Post** — [Aquarius: the blind spot](https://drive.google.com/file/d/1BGQ5Sb_hAEm-so_foqnJ6osCmcIc2MMZ/view) (20 s)  
+**11:37 PM · Post** — [Aquarius: the blind spot](https://drive.google.com/file/d/1BGQ5Sb_hAEm-so_foqnJ6osCmcIc2MMZ/view) (20 s)  
 `Star Talk/01 Shows/Your Star Guide/Aquarius- the blind spot (guideaquarius1).mp4`
 
 Aquarius, going quiet when feelings get big is a way of protecting yourself. Try saying "I need a minute," then really come back.
 Space is healthy when the other person knows you'll return.
 
-**10:40 PM · Trial reel** — [The earth signs plan a date.](https://drive.google.com/file/d/1D-vFgYbdqdX4m3NExlf1dFZDMJUz6k2Z/view) (25 s)  
+**11:44 PM · Trial reel** — [The earth signs plan a date.](https://drive.google.com/file/d/1D-vFgYbdqdX4m3NExlf1dFZDMJUz6k2Z/view) (25 s)  
 `Star Talk/02 Seasons 1–3/Season 1 & specials/The earth signs plan a date. (stearth).mp4`
 
 Planning a first date like it's a quarterly review?
 The earth signs learn to plan a little less and feel a little more.
 
 
-## Day 2
+## Day 2 · Thu 5 Nov
 
-**7:40 AM · Trial reel** — [6:32 PM — date night, organised.](https://drive.google.com/file/d/1liz1h_N85LuBSAa8Mfu4_CyIRLlvlwZQ/view) (30 s)  
-`Star Talk/04 Seasons 7–9/Season 9/6-32 PM — date night, organised. (st9virgolove).mp4`
+**7:40 AM · Trial reel** — [Venus moved to Houston, too.](https://drive.google.com/file/d/181u3NhwNe7IUEFmkr0bQ-8igVF9eAc2u/view) (20 s)  
+`Star Talk/03 Seasons 4–6/Season 4/Venus moved to Houston, too. (st4venus1).mp4`
 
-Is your love language quietly fixing their whole calendar?
-Let them clear an evening for you too. Care goes both ways.
+Do you know your Venus sign?
+Venus rules Taurus and Libra, but everyone has one, and it shows how you love. Start with one good question.
 
 **8:45 AM · Post** — [What's an attachment style?](https://drive.google.com/file/d/1RSlI8LJ79HQZgCkUXphZGm9-sA517qrr/view) (60 s)  
 `Star Talk/Season 13/What's an attachment style- (st13attachment).mp4`
@@ -262,13 +259,13 @@ Ever wanted a new connection to be ready right now?
 Brisket can't be rushed. Neither can trust. Low and slow.
 
 
-## Day 3
+## Day 3 · Fri 6 Nov
 
-**7:40 AM · Trial reel** — [When Venus goes retrograde.](https://drive.google.com/file/d/1ujq6FfZZH0K36G8RNZm2W_VXng2Rf95v/view) (20 s)  
-`Star Talk/03 Seasons 4–6/Season 4/When Venus goes retrograde. (st4venusretro).mp4`
+**7:40 AM · Trial reel** — [6:32 PM — date night, organised.](https://drive.google.com/file/d/1liz1h_N85LuBSAa8Mfu4_CyIRLlvlwZQ/view) (30 s)  
+`Star Talk/04 Seasons 7–9/Season 9/6-32 PM — date night, organised. (st9virgolove).mp4`
 
-Suddenly thinking about every ex at once?
-Venus retrograde makes old flames look brighter. That is nostalgia, not a sign.
+Is your love language quietly fixing their whole calendar?
+Let them clear an evening for you too. Care goes both ways.
 
 **8:45 AM · Post** — [Dating an Air Sign.](https://drive.google.com/file/d/1t1qv4TntCarBBlmXJ4ojngPyh3MBEVG2/view) (30 s)  
 `Star Talk/01 Shows/First-Date Field Guide/Dating an Air Sign. (sxfieldair).mp4`
@@ -386,13 +383,13 @@ Waiting for love to look perfect?
 Date twenty for Virgo and Pisces: a broken mug, two cats, one couch. Not perfect. Theirs.
 
 
-## Day 4
+## Day 4 · Sat 7 Nov
 
-**7:40 AM · Trial reel** — [Virgos aren't picky. They have standards.](https://drive.google.com/file/d/1PiOniTVcdSNMdV8H1PFUuV-bzeRR9vBf/view) (15 s)  
-`Star Talk/05 Seasons 10–12/Season 12/Virgos aren't picky. They have standards. (st12virgo).mp4`
+**7:40 AM · Trial reel** — [When Venus goes retrograde.](https://drive.google.com/file/d/1ujq6FfZZH0K36G8RNZm2W_VXng2Rf95v/view) (20 s)  
+`Star Talk/03 Seasons 4–6/Season 4/When Venus goes retrograde. (st4venusretro).mp4`
 
-Ever re-folded someone else's laundry because it was wrong?
-Standards are good. So is letting the small things go. High standards, soft hands.
+Suddenly thinking about every ex at once?
+Venus retrograde makes old flames look brighter. That is nostalgia, not a sign.
 
 **8:45 AM · Post** — [What's a composite chart?](https://drive.google.com/file/d/13A4bmRuEBUpvexDfdxAc-zhPEHY_oFGV/view) (45 s)  
 `Star Talk/Season 13/What's a composite chart- (st13composite).mp4`
@@ -510,13 +507,13 @@ Do your texts start with a long wind-up?
 In a windy city, the stars say lead with the important part first.
 
 
-## Day 5
+## Day 5 · Sun 8 Nov
 
-**7:40 AM · Trial reel** — [their going to love it](https://drive.google.com/file/d/1WdLAt91m1ypQ2_nyeeoWX9A7T5ajD-0K/view) (25 s)  
-`Star Talk/04 Seasons 7–9/Season 9/their going to love it (st9virgowork).mp4`
+**7:40 AM · Trial reel** — [Virgos aren't picky. They have standards.](https://drive.google.com/file/d/1PiOniTVcdSNMdV8H1PFUuV-bzeRR9vBf/view) (15 s)  
+`Star Talk/05 Seasons 10–12/Season 12/Virgos aren't picky. They have standards. (st12virgo).mp4`
 
-Ever spotted a typo in an email from years ago?
-This Virgo skips the reply-all, fixes it quietly and says "nice work." Help, don't audit.
+Ever re-folded someone else's laundry because it was wrong?
+Standards are good. So is letting the small things go. High standards, soft hands.
 
 **8:45 AM · Post** — [The Ex Files.](https://drive.google.com/file/d/1C0a2KYoSX-uVuIHd4CR0C2igA84ofqz4/view) (45 s)  
 `Star Talk/02 Seasons 1–3/Season 3/The Ex Files. (stexfiles).mp4`
@@ -634,13 +631,13 @@ Texting good morning to everyone and forgetting breakfast?
 Cancer sends twelve check-ins before 8 AM, then remembers one more person: itself.
 
 
-## Day 6
+## Day 6 · Mon 9 Nov
 
-**7:40 AM · Trial reel** — [Texas first. Then where?](https://drive.google.com/file/d/15uH9Z4dPt-qaGC4RgjQ1k707kpxRGCxf/view) (20 s)  
-`Star Talk/03 Seasons 4–6/Season 4/Texas first. Then where- (st4wherenext).mp4`
+**7:40 AM · Trial reel** — [their going to love it](https://drive.google.com/file/d/1WdLAt91m1ypQ2_nyeeoWX9A7T5ajD-0K/view) (25 s)  
+`Star Talk/04 Seasons 7–9/Season 9/their going to love it (st9virgowork).mp4`
 
-Texas first. Then where should the stars go?
-Houston started it, and every city is in the running. Tell us where to light up next.
+Ever spotted a typo in an email from years ago?
+This Virgo skips the reply-all, fixes it quietly and says "nice work." Help, don't audit.
 
 **8:45 AM · Post** — [Cancer: the blind spot](https://drive.google.com/file/d/1DPBKA9DrvfaSyVFlJkGNz9DFOgOaeVrJ/view) (20 s)  
 `Star Talk/01 Shows/Your Star Guide/Cancer- the blind spot (guidecancer1).mp4`
@@ -758,7 +755,13 @@ Feel like your relationship keeps going in circles?
 Gemini and Sagittarius finally take the exit, and head somewhere that's theirs.
 
 
-## Day 7
+## Day 7 · Tue 10 Nov
+
+**7:40 AM · Trial reel** — [Texas first. Then where?](https://drive.google.com/file/d/15uH9Z4dPt-qaGC4RgjQ1k707kpxRGCxf/view) (20 s)  
+`Star Talk/03 Seasons 4–6/Season 4/Texas first. Then where- (st4wherenext).mp4`
+
+Texas first. Then where should the stars go?
+Houston started it, and every city is in the running. Tell us where to light up next.
 
 **8:45 AM · Post** — [Cancer](https://drive.google.com/file/d/1DNeCSLhKHgor7fSEJVowjJ_7DeMmWLWf/view) (45 s)  
 `Star Talk/03 Seasons 4–6/Season 6/Cancer (st6cancer).mp4`
@@ -876,7 +879,7 @@ Still checking your ex's profile at 2 AM?
 One more scroll is the opposite of closure. Mute it, and open your life back up.
 
 
-## Day 8
+## Day 8 · Wed 11 Nov
 
 **8:45 AM · Post** — [Venus vs. Mars. All rise.](https://drive.google.com/file/d/11unGOgPE0ABmjZin5XV_HChi4cb7ec31/view) (40 s)  
 `Star Talk/04 Seasons 7–9/Season 8/Venus vs. Mars. All rise. (st8court).mp4`
@@ -994,7 +997,7 @@ Would you plan date night down to the minute?
 Capricorn makes a spreadsheet, Cancer adds one surprise row. Schedule the fun, then leave room for it.
 
 
-## Day 9
+## Day 9 · Thu 12 Nov
 
 **8:45 AM · Post** — [you’re two minutes late. …kidding. mostly.](https://drive.google.com/file/d/13mAKfIDeCxxvb60VP2ZMK29HPi2Pm8WU/view) (60 s)  
 `Star Talk/03 Seasons 4–6/Season 6/you’re two minutes late. …kidding. mostly. (st6capricorn).mp4`
@@ -1112,7 +1115,7 @@ Remember baking "together" through a screen?
 Now it's flour everywhere and one lumpy heart loaf. Still lumpy, still theirs.
 
 
-## Day 10
+## Day 10 · Fri 13 Nov
 
 **8:45 AM · Post** — [Where does jealousy come from?](https://drive.google.com/file/d/1CzUWZMgbb4KDD2yeHfELzpKIHmpiUvnb/view) (45 s)  
 `Star Talk/Season 13/Where does jealousy come from- (st13jealousy).mp4`
@@ -1230,7 +1233,7 @@ Know your Moon sign, not just your Sun?
 Your Sun is who you show, your Moon is what you need. Date someone who meets both.
 
 
-## Day 11
+## Day 11 · Sat 14 Nov
 
 **8:45 AM · Post** — [hi! hi. we're— i'm— hi.](https://drive.google.com/file/d/1ScgRLRDmVeIhmjaiv4pUdvm4-BZJqVhz/view) (30 s)  
 `Star Talk/03 Seasons 4–6/Season 6/hi! hi. we're— i'm— hi. (st6gemini).mp4`
@@ -1348,7 +1351,7 @@ Lying awake wondering if people like you or just the show?
 Leo's friends are up at 3 AM too, proving it. You're loved offstage.
 
 
-## Day 12
+## Day 12 · Sun 15 Nov
 
 **8:45 AM · Post** — [Who wants to text an ex?](https://drive.google.com/file/d/1-YxhO_1_MMuDzjT7jrFNYhVXUVvZd8Uz/view) (35 s)  
 `Star Talk/04 Seasons 7–9/Season 8/Who wants to text an ex- (st8gameshow).mp4`
@@ -1466,7 +1469,7 @@ Rehearsing what to say to your crush, and it's all about you?
 Leo's mirror has better advice: lead with a question about them.
 
 
-## Day 13
+## Day 13 · Mon 16 Nov
 
 **8:45 AM · Post** — [Leo: the blind spot](https://drive.google.com/file/d/1f5IG9bmLGRV3cqJyXZ3s1MAqS10YrlEe/view) (20 s)  
 `Star Talk/01 Shows/Your Star Guide/Leo- the blind spot (guideleo1).mp4`
@@ -1584,7 +1587,7 @@ When was the last time you saw a sky full of stars?
 With nothing to hide behind, the stars say: be someone your date can see clearly.
 
 
-## Day 14
+## Day 14 · Tue 17 Nov
 
 **8:45 AM · Post** — [The Great Starzini.](https://drive.google.com/file/d/1xLSfqOthSAdjmhqNDv3RnFL40S53YPeJ/view) (45 s)  
 `Star Talk/02 Seasons 1–3/Season 1 & specials/The Great Starzini. (stmagic).mp4`
@@ -1702,7 +1705,7 @@ Feel like everyone you meet is just passing through?
 Be the one who says what you're looking for. Something real is allowed.
 
 
-## Day 15
+## Day 15 · Wed 18 Nov
 
 **8:45 AM · Post** — [Libra’s ex is at the door.](https://drive.google.com/file/d/1-_ZtyECphy2oV1MRn0JZdTEdN0b3ZS_R/view) (30 s)  
 `Star Talk/04 Seasons 7–9/Season 8/Libra’s ex is at the door. (st8knock).mp4`
@@ -1820,7 +1823,7 @@ Moving in together and only one shelf?
 Cancer and Capricorn make room for the shell and the calendar. Home is a schedule and a feeling.
 
 
-## Day 16
+## Day 16 · Thu 19 Nov
 
 **8:45 AM · Post** — [We Need to Talk.](https://drive.google.com/file/d/1swtyV7uiLjpRlWm5i0bjk-0Ure55_f2V/view) (45 s)  
 `Star Talk/01 Shows/Orbit/We Need to Talk. (sxorbit4).mp4`
@@ -1938,7 +1941,7 @@ Is your dating pace fast lunch dates or slow drives across town?
 Fast or slow doesn't matter. Find a pace you can share.
 
 
-## Day 17
+## Day 17 · Fri 20 Nov
 
 **8:45 AM · Post** — [sorry, i was somewhere else. …okay. here.](https://drive.google.com/file/d/1eyRgMER1l-JfRH3AzuTzKzi2Ff8J8Kwy/view) (75 s)  
 `Star Talk/03 Seasons 4–6/Season 6/sorry, i was somewhere else. …okay. here. (st6pisces).mp4`
@@ -2056,7 +2059,7 @@ Ever cried a little at work and felt embarrassed?
 Pisces shares a playlist and the whole call feels it. It's okay to feel, even at work.
 
 
-## Day 18
+## Day 18 · Sat 21 Nov
 
 **8:45 AM · Post** — [Pisces: try this week](https://drive.google.com/file/d/1QYR5p1s9u7J0j0xiewpQPwdFGECZRZDq/view) (20 s)  
 `Star Talk/01 Shows/Your Star Guide/Pisces- try this week (guidepisces3).mp4`
@@ -2174,7 +2177,7 @@ Were your old profile pics all mountains and no you?
 Sagittarius still plans the trip, but now asks where you want to go. Adventure for two.
 
 
-## Day 19
+## Day 19 · Sun 22 Nov
 
 **8:45 AM · Post** — [Sagittarius: what you need](https://drive.google.com/file/d/1y3LFG4H1LHpQ9esX0jT3IDpT7AG-OYZ5/view) (15 s)  
 `Star Talk/01 Shows/Your Star Guide/Sagittarius- what you need (guidesag2).mp4`
@@ -2292,7 +2295,7 @@ A clear no is a kindness, to them and to the person you're with.
 Pick one, then take the first small step. Big ideas, small steps.
 
 
-## Day 20
+## Day 20 · Mon 23 Nov
 
 **8:45 AM · Post** — [Too Much, Too Soon.](https://drive.google.com/file/d/1Ch7lYJoeuM-53Op_UuAJnOE90btLG3Ob/view) (45 s)  
 `Star Talk/02 Seasons 1–3/Season 3/Too Much, Too Soon. (stoversharing).mp4`
@@ -2410,7 +2413,7 @@ Soft launch or hard launch?
 Post when you're both ready. Privacy isn't secrecy. Your love, your timeline.
 
 
-## Day 21
+## Day 21 · Tue 24 Nov
 
 **8:45 AM · Post** — [What's a talk card?](https://drive.google.com/file/d/1oNCsdGqDv0SKxYjRPWxeFCu4I7t5rYQZ/view) (45 s)  
 `Star Talk/01 Shows/Explain It to Mom/What's a talk card- (sxmomtalk).mp4`
@@ -2528,7 +2531,7 @@ Who pays on the first date?
 There's no rule, just respect. Ask, then split or treat.
 
 
-## Day 22
+## Day 22 · Wed 25 Nov
 
 **8:45 AM · Post** — [Day 3: We matched answers.](https://drive.google.com/file/d/15hUvYmzJzjBJfFsg0qcaH6jC7I0scyYf/view) (45 s)  
 `Star Talk/01 Shows/Beta Diaries/Day 3- We matched answers. (sxdiary3).mp4`
@@ -2646,7 +2649,7 @@ Need fourteen steps and three snoozes to start your day?
 Taurus takes its time with every one. Slow mornings are self-respect.
 
 
-## Day 23
+## Day 23 · Thu 26 Nov
 
 **8:45 AM · Post** — [What's a good first date?](https://drive.google.com/file/d/1gnAHciHfzBs9L1kZWSl5cMSg7fJxdwjm/view) (20 s)  
 `Star Talk/01 Shows/Ask the Stars/What's a good first date- (asktaurus).mp4`
@@ -2764,7 +2767,7 @@ Planning a big surprise for someone who hates the spotlight?
 Leo learns to read the room. Surprise them their way.
 
 
-## Day 24
+## Day 24 · Fri 27 Nov
 
 **8:45 AM · Post** — [Virgo: the blind spot](https://drive.google.com/file/d/1-5xSI6J8SBG1jUA21qFHSx_4k57mYhjK/view) (20 s)  
 `Star Talk/01 Shows/Your Star Guide/Virgo- the blind spot (guidevirgo1).mp4`
@@ -2882,7 +2885,7 @@ Virgo is counting the city votes, every single one twice.
 There's no winner yet and more are coming. Which city do you want next?
 
 
-## Day 25
+## Day 25 · Sat 28 Nov
 
 **8:45 AM · Post** — [sorry, one sec. just fixing the lighting. okay.](https://drive.google.com/file/d/11QK3m4EJvxN4aVEwsuEHlVkKZ7sKmQ-c/view) (90 s)  
 `Star Talk/03 Seasons 4–6/Season 6/sorry, one sec. just fixing the lighting. okay. (st6virgo).mp4`

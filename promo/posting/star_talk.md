@@ -4,65 +4,66 @@ The entertainment account: Remix, Trends, the comedy shows and the lighter seaso
 **10 posts a day for 25 days (250 posts).** Captions are written; there are no hashtags.
 
 - Every video is unique: nothing here ever appears on star_advice, and nothing repeats.
-- **Times** are a suggested spread in your local time, every 90 minutes from 8:00 AM. star_advice posts
-  45 minutes after each of these, so the two accounts never post at the same minute.
+- **Day 1 is tonight, Wed 4 Nov, from 8:30 PM:** posts every 20 minutes until 11:30 PM.
+- **Days 2–25 (Thu 5 Nov – Sat 28 Nov):** every 90 minutes from 8:00 AM. star_advice posts a little after each of
+  these, so the two accounts never post at the same minute. Times are in your local time.
 - **Files:** each title links to its video in Google Drive; the path under it shows where it sits in the `Star Talk` folder.
 
 
-## Day 1
+## Day 1 · Wed 4 Nov
 
-**8:00 AM · Post** — [Blind by design](https://drive.google.com/file/d/1fRzlFOxdqBJwM2MLIQ1YhvsYnEC0whde/view) (20 s)  
+**8:30 PM · Post** — [Blind by design](https://drive.google.com/file/d/1fRzlFOxdqBJwM2MLIQ1YhvsYnEC0whde/view) (20 s)  
 `Star Talk/Star Talk Remix/Blind by design (sr01blind).mp4`
 
 A sleep mask, three flying cards, two direct hits to the face. The third one landed, though. Who else dates with their eyes closed and hopes for the best?
 
-**9:30 AM · Post** — [the point](https://drive.google.com/file/d/1PVcLIb_z19ECXJMxC67l_mvgNWUR8PYz/view) (45 s)  
+**8:50 PM · Post** — [the point](https://drive.google.com/file/d/1PVcLIb_z19ECXJMxC67l_mvgNWUR8PYz/view) (45 s)  
 `Star Talk/04 Seasons 7–9/Season 7/the point (st7archer).mp4`
 
 Sagittarius with the bow drawn, Scorpio with the tail up, and it turns out both are doing it for the exact same reason. The sky has had them aimed at each other for ages. Who are you in a standoff with?
 
-**11:00 AM · Post** — [Aquarius invented a weird thing.](https://drive.google.com/file/d/1SsmgIInm7gqSioIC9wpVmfFu3XImH34Z/view) (60 s)  
+**9:10 PM · Post** — [Aquarius invented a weird thing.](https://drive.google.com/file/d/1SsmgIInm7gqSioIC9wpVmfFu3XImH34Z/view) (60 s)  
 `Star Talk/05 Seasons 10–12/Season 10/Aquarius invented a weird thing. (st10aquarius).mp4`
 
 Baby Aquarius took apart the crib mobile at age one and never looked back. The machine soaked the judge, then saved the garden. Who was the class inventor in your school?
 
-**12:30 PM · Post** — [The stars aligned](https://drive.google.com/file/d/1qeU-lGdhkmILEDIVRqra1OO4pdMzUZq1/view) (20 s)  
+**9:30 PM · Post** — [The stars aligned](https://drive.google.com/file/d/1qeU-lGdhkmILEDIVRqra1OO4pdMzUZq1/view) (20 s)  
 `Star Talk/Star Talk Remix/The stars aligned (sr02aligned).mp4`
 
 Seven stars, one simple instruction, and they still lined up sideways. Violet slept through half of it. Who's the violet in your friend group?
 
-**2:00 PM · Post** — [Aquarius visited the planet that rolls.](https://drive.google.com/file/d/1962axJNSGRodneN3An7wxT17HybI2S_6/view) (60 s)  
+**9:50 PM · Post** — [Aquarius visited the planet that rolls.](https://drive.google.com/file/d/1962axJNSGRodneN3An7wxT17HybI2S_6/view) (60 s)  
 `Star Talk/05 Seasons 10–12/Season 11/Aquarius visited the planet that rolls. (st11aquarius).mp4`
 
 Aquarius launched sideways, found a planet that also rolls on its side, and briefly turned comms off. Leo kept calling anyway. Tag the friend who always brings you home.
 
-**3:30 PM · Post** — [The air signs draft a text.](https://drive.google.com/file/d/1cHKCwx6lMm2sK00qDWmJxupZg6ct4OOW/view) (25 s)  
+**10:10 PM · Post** — [The air signs draft a text.](https://drive.google.com/file/d/1cHKCwx6lMm2sK00qDWmJxupZg6ct4OOW/view) (25 s)  
 `Star Talk/02 Seasons 1–3/Season 1 & specials/The air signs draft a text. (stair).mp4`
 
 Gemini wants a joke, Libra wants it deleted, Aquarius wants to send a cat meme, and somehow it became a 412-word essay. Which air sign is drafting your texts?
 
-**5:00 PM · Post** — [Tonight's moon](https://drive.google.com/file/d/1yAi63JeSDGOUUJAzZUukTdZN69E48bin/view) (20 s)  
+**10:30 PM · Post** — [Tonight's moon](https://drive.google.com/file/d/1yAi63JeSDGOUUJAzZUukTdZN69E48bin/view) (20 s)  
 `Star Talk/Star Talk Remix/Tonight's moon (sr03moon).mp4`
 
 The moon left sticky notes. One of them stopped a very honest text about chewing just in time. What would your moon's note say tonight?
 
-**6:30 PM · Post** — [Tell me you're a Leo without telling me](https://drive.google.com/file/d/1qeWIdZdaVZ3WouuTi35wCeJOpKC9PHN2/view) (20 s)  
+**10:50 PM · Post** — [Tell me you're a Leo without telling me](https://drive.google.com/file/d/1qeWIdZdaVZ3WouuTi35wCeJOpKC9PHN2/view) (20 s)  
 `Star Talk/08 Trends/Tell Me Without Telling Me/Tell me you're a Leo without telling me (trtellleo).mp4`
 
 A ring light for an audio-only call, a round of applause for a crooked parking job, and then they hand the whole spotlight to their date. Leo, we see you. Tag the Leo who hypes you up.
 
-**8:00 PM · Post** — [You were born a card](https://drive.google.com/file/d/1OsZM3LZgEwpJxRaozZguDq28UwixRlVs/view) (20 s)  
+**11:10 PM · Post** — [You were born a card](https://drive.google.com/file/d/1OsZM3LZgEwpJxRaozZguDq28UwixRlVs/view) (20 s)  
 `Star Talk/Star Talk Remix/You were born a card (sr04chartcard).mp4`
 
 Your sign card, polished like a rare collectible. Mint condition, never been swiped. Taurus is very proud of the foil. What is your big three?
 
-**9:30 PM · Post** — [Gemini at 2 AM starting three new hobbies for us](https://drive.google.com/file/d/1FpURFLUezcWwozrRleGlasJfcVSCmdkD/view) (15 s)  
+**11:30 PM · Post** — [Gemini at 2 AM starting three new hobbies for us](https://drive.google.com/file/d/1FpURFLUezcWwozrRleGlasJfcVSCmdkD/view) (15 s)  
 `Star Talk/08 Trends/Nobody-/Gemini at 2 AM starting three new hobbies for us (trnobodygemini).mp4`
 
 2 AM, partner asleep, and Gemini has already started the ukulele, the sourdough and a bike built for two. The twist: Libra wakes up ready to join. Who's your 2 AM idea person?
 
 
-## Day 2
+## Day 2 · Thu 5 Nov
 
 **8:00 AM · Post** — [Expectation: a perfect picnic](https://drive.google.com/file/d/1h3q-Il1-eMkQsOMUEepTgUdd4HLaTqbW/view) (20 s)  
 `Star Talk/08 Trends/Expectation vs Reality/Expectation- a perfect picnic (trexpectpicnic).mp4`
@@ -115,7 +116,7 @@ Virgo tried to cheat on a finger and the stars saw it. Re-read a text forty time
 Three straws, the middle spot in the group selfie, and now they're matchmaking for you. Third wheeling has never been this cozy. Send this to the couple who always saves you a seat.
 
 
-## Day 3
+## Day 3 · Fri 6 Nov
 
 **8:00 AM · Post** — [Houston, the stars are dealing](https://drive.google.com/file/d/1p6B9yjH-QKQAvzEpaqeOwDuJYm5gYBF3/view) (20 s)  
 `Star Talk/Star Talk Remix/Houston, the stars are dealing (sr08houston).mp4`
@@ -168,7 +169,7 @@ Two stars walk into a date with their charts, and Virgo arrives with a protracto
 Sag pitches Virgo's label maker to a very skeptical front row: the keys have a home, the snacks are alphabetized. Then Virgo prints one more label, for Sag. Who would you let label you?
 
 
-## Day 4
+## Day 4 · Sat 7 Nov
 
 **8:00 AM · Post** — [Silent review: a handwritten love note](https://drive.google.com/file/d/1dHQNFWwZIPr60ZKBkMi5jV4v02DJIl7X/view) (20 s)  
 `Star Talk/08 Trends/Silent Review/Silent review- a handwritten love note (trsilentletter).mp4`
@@ -221,7 +222,7 @@ Aries launched on two, flew to the equinox, and found out the start line moved t
 Card seven said TALKS TO PIGEONS, and Capricorn nearly skipped it. Six months later they have a pigeon, and the pigeon has a spreadsheet. Ever almost skipped someone great?
 
 
-## Day 5
+## Day 5 · Sun 8 Nov
 
 **8:00 AM · Post** — [Remember butterflies?](https://drive.google.com/file/d/107FS1chDGjX3t63SlgUR78ZnKvu_-cLq/view) (30 s)  
 `Star Talk/Star Talk Remix/Remember butterflies- (srbutterflies).mp4`
@@ -274,7 +275,7 @@ EaDo's star paints three murals before lunch and hides the sketchbook under its 
 Tonight's forecast: cozy, steady and serious, with reading glasses that refuse to come off. Every Friday is already circled through next month. Happy Capricorn season. Who's your Friday?
 
 
-## Day 6
+## Day 6 · Mon 9 Nov
 
 **8:00 AM · Post** — [Dallas: big expectations](https://drive.google.com/file/d/1NkuRv42GEgMCCWEFeoVPHFcDKw-8X5K6/view) (20 s)  
 `Star Talk/Star Talk Remix/Dallas- big expectations (srcitydallas).mp4`
@@ -327,7 +328,7 @@ Labels the snacks. Edits one text nine times. Already wrote down your allergies 
 2 PM Leo: I'm a catch, and the mirror agrees. 2 AM Leo: replaying an accidental 'you too!' and rating its own laugh 4 out of 10. Pisces, sobbing, says yes. What does 2 AM tell you?
 
 
-## Day 7
+## Day 7 · Tue 10 Nov
 
 **8:00 AM · Post** — [New Orleans reads your cards](https://drive.google.com/file/d/1wZw6YyDhNKBwit6OHYV2a8fHpeeZ6PLv/view) (30 s)  
 `Star Talk/Star Talk Remix/New Orleans reads your cards (srcityneworleans).mp4`
@@ -380,7 +381,7 @@ Three months: a borrowed scarf, a list of baby names, hearts everywhere. Then on
 Taurus thinks about it at breakfast, at lunch and at 3 AM: a date once said 'want half?' and cut the sandwich diagonally. Who does that? What's your Roman Empire?
 
 
-## Day 8
+## Day 8 · Wed 11 Nov
 
 **8:00 AM · Post** — [Hopeless romantic edition](https://drive.google.com/file/d/1dLavD1wwK09NDp4p5CZIz3GhSOLOQ3zZ/view) (30 s)  
 `Star Talk/08 Trends/Put a Finger Down/Hopeless romantic edition (trfingerromantic).mp4`
@@ -433,7 +434,7 @@ A day in the life of the moon on date night: clock in, hover (sorry, orbit), dim
 The soup of the day, read like opening night. A movie-trailer voice for the breadsticks. And now the next table has turned their chairs around for the dessert sequel. What's your date's best bit?
 
 
-## Day 9
+## Day 9 · Thu 12 Nov
 
 **8:00 AM · Post** — [The 4 elements in 15 seconds](https://drive.google.com/file/d/1tzvnUVmlcSsMuLaUSVcVHORZi5izzh_0/view) (20 s)  
 `Star Talk/Star Talk Remix/The 4 elements in 15 seconds (srelements).mp4`
@@ -486,7 +487,7 @@ Sagittarius made Scorpio a playlist. Scorpio reviewed it in total silence: one e
 Day 41 of hey. Good u. Good. The gold star fell asleep, a spider moved into the chat, and the stars officially declared it a screensaver. What's the longest you've been stuck on hey?
 
 
-## Day 10
+## Day 10 · Fri 13 Nov
 
 **8:00 AM · Post** — [How do you know it's love?](https://drive.google.com/file/d/18IAEcqt_maSO1sIJ4GXIIQ2f_gc3YEHr/view) (20 s)  
 `Star Talk/08 Trends/Wrong Answers Only/How do you know it's love- (trwronglove).mp4`
@@ -539,7 +540,7 @@ Aries slams the seesaw down, Libra is stuck in the air. Same seesaw, different s
 Brunch three: no kids? Brunch seven: moving cities? Brunch twelve: oh, you're not looking for anything serious? The waiter star would like a word about day one questions. What do you ask up front?
 
 
-## Day 11
+## Day 11 · Sat 14 Nov
 
 **8:00 AM · Post** — [2.](https://drive.google.com/file/d/1B8FZF5nHNwB5GXM5BBnxsB3ZXEpUsrw0/view) (20 s)  
 `Star Talk/01 Shows/Countdown/2. (sxcount2).mp4`
@@ -592,7 +593,7 @@ Leo flew to Regulus, the lion's heart star, for a dance-off and got dizzy trying
 Libra melted into a puddle at the car door, then sat through a whole date with someone who replied 'k.' The Sun apologized for the first part. Not the second. What's your summer dealbreaker?
 
 
-## Day 12
+## Day 12 · Sun 15 Nov
 
 **8:00 AM · Post** — [CAST AS THE VILLAIN?](https://drive.google.com/file/d/1CYWPdB-rP22Go0KIRgvCO475jwKaF6m4/view) (60 s)  
 `Star Talk/04 Seasons 7–9/Season 7/CAST AS THE VILLAIN- (st7heracles).mp4`
@@ -645,7 +646,7 @@ Nobody: Capricorn planning date night with 9:00 to 9:05 scheduled as spontaneous
 They planned a night of shooting stars and got clouds, more clouds, and one cloud that looked suspiciously like Sag. So they talked until sunrise instead. Best plan that ever fell apart?
 
 
-## Day 13
+## Day 13 · Mon 16 Nov
 
 **8:00 AM · Post** — [Inside the Loop.](https://drive.google.com/file/d/1jJhvveRadRs4io4NZlC_6_9ZmNB1m_RY/view) (30 s)  
 `Star Talk/Star Talk Remix/Inside the Loop. (srhtxloops).mp4`
@@ -698,7 +699,7 @@ POV: your date asks your moon sign. Sun, sure. Rising, probably. Moon, total bla
 Mission Control detected heavy swiping, a thumb at escape velocity and one very dizzy star. One slam on ABORT later, there's a new flight plan. Houston, are you swiping in circles too?
 
 
-## Day 14
+## Day 14 · Tue 17 Nov
 
 **8:00 AM · Post** — [Pisces' tissue box: busy from 7 AM](https://drive.google.com/file/d/1slmleHkAkGhf9x5Cu-uA3sspmyznsTca/view) (30 s)  
 `Star Talk/08 Trends/A Day in the Life of…/Pisces' tissue box- busy from 7 AM (trdaytissues).mp4`
@@ -751,7 +752,7 @@ Waiting for a text back: Aries ran a 5K in four minutes, Gemini drafted fourteen
 Capricorn walked in with snacks, got all four names right on the first try, and finished the pigeon-in-a-tiny-hat joke before anyone else could. The couch has spoken. How did your date do with your friends?
 
 
-## Day 15
+## Day 15 · Wed 18 Nov
 
 **8:00 AM · Post** — [You can barely see the stars.](https://drive.google.com/file/d/15CmZfU-F-qoh6Gh94SK4SwNXDHgyjgco/view) (45 s)  
 `Star Talk/Star Talk Remix/You can barely see the stars. (srhtxstars).mp4`
@@ -804,7 +805,7 @@ Dear Aries: you showed up to the date in boxing gloves, shadow-boxing nobody. Yo
 Sunny, pouring, sunny again, and the weather star spun until it got dizzy. Today's forecast: yes. That's not weather, that's a situationship. Which sign sends the most mixed signals?
 
 
-## Day 16
+## Day 16 · Thu 19 Nov
 
 **8:00 AM · Post** — [Pisces sailed to the windiest planet.](https://drive.google.com/file/d/1YI7cp6E30VuT6xxX-Eb9JLoG_frI6JF5/view) (60 s)  
 `Star Talk/05 Seasons 10–12/Season 11/Pisces sailed to the windiest planet. (st11pisces).mp4`
@@ -857,7 +858,7 @@ Aries rode the card carousel like a fairground horse yelling NEXT until the star
 Taurus, not a morning star, gets a 7:02 AM voice note. Eyebrow up at 'good morning, sleepy.' By 'can't wait to see you' the replay count is at nine. Timing, three stars. What's your favorite good-morning?
 
 
-## Day 17
+## Day 17 · Fri 20 Nov
 
 **8:00 AM · Post** — [Zodiac](https://drive.google.com/file/d/1eF3viv2uvHiH8dEKphJZgEhzXcXt05Nb/view) (20 s)  
 `Star Talk/Star Talk Remix/Zodiac (srl05zodiac).mp4`
@@ -910,7 +911,7 @@ Matchmaker friend starter pack: a clipboard, two names in a heart, a fake 'oh wo
 Sag hit light speed, yelled WOO, and flew straight past six people before the stars slammed the brakes. Pisces just wanted to know if we're there yet. Who's your fastest-moving friend?
 
 
-## Day 18
+## Day 18 · Sat 21 Nov
 
 **8:00 AM · Post** — [Started: a terrible pun, total silence](https://drive.google.com/file/d/1eCoqXVcAPVF8BwqZWUUKI6NFSbwrBhLN/view) (20 s)  
 `Star Talk/08 Trends/How It Started vs How It's Going/Started- a terrible pun, total silence (trstartedpun).mp4`
@@ -963,7 +964,7 @@ The stars took the phone away mid-scroll, read the birthday (and the birth time,
 Sag flew all the way to the center of the galaxy, saw the most incredible view there is, and had nobody in the passenger seat but a buckled-in backpack. So it turned around. Who do you tell everything to?
 
 
-## Day 19
+## Day 19 · Sun 22 Nov
 
 **8:00 AM · Post** — [a group chat, two editors](https://drive.google.com/file/d/1nFmS5ftIvE-hLEuPjiwkVUFKssV7nvqL/view) (30 s)  
 `Star Talk/04 Seasons 7–9/Season 7/a group chat, two editors (st7ruler).mp4`
@@ -1016,7 +1017,7 @@ Virgo showed up twenty minutes early to look chill. So did Gemini. They both hid
 Six opposite pairs on one seesaw, a referee star in the middle, and then Pisces lands so hard the referee gets launched out of frame. Flip a Taurus, get a Scorpio. Who's your opposite sign?
 
 
-## Day 20
+## Day 20 · Mon 23 Nov
 
 **8:00 AM · Post** — [Aquarius building a weird machine](https://drive.google.com/file/d/18WpHUtzT-lBZaWAl_Jd1q6Jjy72LgsGR/view) (20 s)  
 `Star Talk/08 Trends/Wait For It/Aquarius building a weird machine (trwaitaqua).mp4`
@@ -1069,7 +1070,7 @@ Baby Scorpio hid in a dust cloud with one pink sock sticking out. Taurus brought
 A shooting star screeched to a stop, gave you one wish, and was on a schedule. 'Make them gorgeous' got stamped FACE LAST. Second try: someone who gets me. What's your wish?
 
 
-## Day 21
+## Day 21 · Tue 24 Nov
 
 **8:00 AM · Post** — [3.](https://drive.google.com/file/d/104PqsO92m5m6nqZs3yb5SzBKVAqOR8Ah/view) (20 s)  
 `Star Talk/01 Shows/Countdown/3. (sxcount3).mp4`
@@ -1122,7 +1123,7 @@ Five blankets minimum. The usual, every time (extra fries counts as trying somet
 Hidden scores. Paid boosts. Scorpio smelled a rat and jumped on the ranking machine until it shattered into stars. No faces, no scores, just stars. What would you smash first?
 
 
-## Day 22
+## Day 22 · Wed 25 Nov
 
 **8:00 AM · Post** — [Silent review: a surprise picnic for two](https://drive.google.com/file/d/1b6mIdyRUpKQV6jhAtFmftb32UWRrhEuv/view) (20 s)  
 `Star Talk/08 Trends/Silent Review/Silent review- a surprise picnic for two (trsilentpicnic).mp4`
@@ -1175,7 +1176,7 @@ Baby Taurus had one food: peas, forever. Banana, broccoli and a tiny cake all go
 Aries guessed the ending during the trailer, Gemini whispered the whole time, Scorpio watched your face during the twist, and Sag woke up for the credits. Which sign are you at the movies?
 
 
-## Day 23
+## Day 23 · Thu 26 Nov
 
 **8:00 AM · Post** — [Charging their phone without asking](https://drive.google.com/file/d/17aZXDFe_GW78JVb20ytBNMxv5hxRiStT/view) (20 s)  
 `Star Talk/08 Trends/Little Things/Charging their phone without asking (trlittlecharge).mp4`
@@ -1228,7 +1229,7 @@ Homebody in love starter pack: a load-bearing blanket, tea always, a party hat f
 Taurus on the subway, swiping the same three profiles on a loop. NEXT STOP: SAME FACES. But he's familiar. The conductor star would like a word. Which sign gets stuck in a loop?
 
 
-## Day 24
+## Day 24 · Fri 27 Nov
 
 **8:00 AM · Post** — [Started: one shared song](https://drive.google.com/file/d/1MrXRmzGHJQXLHeOp-8dVvn7G3poz8Bsw/view) (20 s)  
 `Star Talk/08 Trends/How It Started vs How It's Going/Started- one shared song (trstartedplaylist).mp4`
@@ -1281,7 +1282,7 @@ Someone put a paywall on the sky. One coin, one tiny twinkle. Second coin, small
 Leo has a speech. A spotlight, three throat clears, and a growing stack of index cards. Sag braces for impact. Tonight's topic? Sag. Obviously. Who would give a speech about you?
 
 
-## Day 25
+## Day 25 · Sat 28 Nov
 
 **8:00 AM · Post** — [Rating the playlist they made me](https://drive.google.com/file/d/1hXuHgD_9eve06j_SBuK8MGbtX9XYsK6Z/view) (30 s)  
 `Star Talk/08 Trends/Rating My Date, Honestly/Rating the playlist they made me (trratemix).mp4`
