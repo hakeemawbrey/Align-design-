@@ -1,4 +1,76 @@
 {
+ "ncape01": {
+  "video": "/_blob/1d6e807ac64878e86be1fffc688e3964",
+  "poster": "/_blob/206b11b6efdebda6496045d741659e03",
+  "title": "The Handover",
+  "len": 28,
+  "series": "captk",
+  "episode": 1,
+  "caption": "Sag tossed over the keys. Capricorn changed the password, posted a calendar and tucked Sag into bed. Longest night of the year, earliest bedtime. Welcome to Cap season."
+ },
+ "ncape02": {
+  "video": "/_blob/9339bbc600d40e6bac34d4f89d437b2a",
+  "poster": "/_blob/417ce90591d48281d997a04615882dce",
+  "title": "Cap Plans Date Two",
+  "len": 23,
+  "series": "captk",
+  "episode": 2,
+  "caption": "Capricorn planned date two to the minute: 6:04 compliment, 6:07 laugh. Then crossed it all out for one better line. What's your ideal second date?"
+ },
+ "ncape03": {
+  "video": "/_blob/0c82173fed1023c86281809cc704c344",
+  "poster": "/_blob/8a6a5483e9779fca726d48d24df4951c",
+  "title": "Cap Doesn't Cry",
+  "len": 23,
+  "series": "captk",
+  "episode": 3,
+  "caption": "Capricorn does not cry at movies. Capricorn does, it turns out, shed one tear over a small handmade card. Allergies, obviously. Who's your secret softie?"
+ },
+ "ncape04": {
+  "video": "/_blob/c99c0452290556092504d94630b907f1",
+  "poster": "/_blob/de6a4601f47b003424fba4ad1ba9f4bc",
+  "title": "The Seating Chart",
+  "len": 23,
+  "series": "captk",
+  "episode": 4,
+  "caption": "Capricorn brought a color-coded seating chart and a ruler. Then gave its own seat to the new grandma without a second thought. Tag the planner who always makes room."
+ },
+ "ncape05": {
+  "video": "/_blob/ec563f9706332c93c2a95c28c0672ea8",
+  "poster": "/_blob/3c3c9aff8cfbbb7bfa2d997796e92093",
+  "title": "Cap Wraps a Gift",
+  "len": 18,
+  "series": "captk",
+  "episode": 5,
+  "caption": "Capricorn: forty minutes, perfect corners, a level. Sagittarius: three seconds, one ball of tape. Only one of them hid a letter inside. Which wrapper are you?"
+ },
+ "ncape06": {
+  "video": "/_blob/fc1b0c43ecefcf3d2f635c325c4d8695",
+  "poster": "/_blob/dc805049b8141d6dabdbb27d65d711cf",
+  "title": "Cap Says One Yes",
+  "len": 23,
+  "series": "captk",
+  "episode": 6,
+  "caption": "Four party invites. Capricorn picks one, shows up on time with a gift and actually listens. Are you a one-party or an every-party person?"
+ },
+ "ncape07": {
+  "video": "/_blob/693d3e0c4bc3efdfde64045069c7f7fa",
+  "poster": "/_blob/2bb4c864f56f5fe2d740231d69bd0f1d",
+  "title": "Cap's Snow Day",
+  "len": 23,
+  "series": "captk",
+  "episode": 7,
+  "caption": "Capricorn's plans got snowed in, so it drew a blueprint for a snowman. The lumpy one still made the photo. Best day you never planned?"
+ },
+ "ncape08": {
+  "video": "/_blob/e146fdf83ee8ba3107d4f571bd922ae7",
+  "poster": "/_blob/464d5935aafc59e416e71dc3ccb49ec9",
+  "title": "Cap's Year in Love",
+  "len": 28,
+  "series": "captk",
+  "episode": 8,
+  "caption": "Capricorn's year in love, in slides. Say how I feel: done, once. Rest: working on it. Then Sag showed up with a review of its own. What's your goal for next year?"
+ },
  "nsage01": {
   "video": "/_blob/ffd6aee2561fc4ab9c6afa8f80961e81",
   "poster": "/_blob/ff7bf1eecbd2a32027447dd6b86a532e",
@@ -79,5 +151,32 @@
   "series": "sagtk",
   "episode": 9,
   "caption": "Never hand Sag the mic. Every toast starts like a roast and ends with someone tearing up into their cocoa. Who would you toast first?"
+ },
+ "nsage10": {
+  "video": "/_blob/4c2266d59767baf735f8876014d49f2e",
+  "poster": "/_blob/26daf437c599f6203c81dd7d480e6498",
+  "title": "Sag's Mystery Match",
+  "len": 23,
+  "series": "sagtk",
+  "episode": 10,
+  "caption": "The blind mystery card said homebody. Sag said adventure. A blanket fort with the whole night sky on the ceiling said both. Staying in or going out tonight?"
+ },
+ "nsage11": {
+  "video": "/_blob/1f7ff80193ec7f07cc3dd16a1aa5ae37",
+  "poster": "/_blob/660e28e5ca13c5d985176333a8ac2f40",
+  "title": "Ask Sag Anything",
+  "len": 23,
+  "series": "sagtk",
+  "episode": 11,
+  "caption": "Ask Sag anything and the answer is probably yes. Text first? Yes. Bring snacks? Obviously. Cry on a first date? Sag's bringing tissues. What would you ask?"
+ },
+ "nsage12": {
+  "video": "/_blob/d0ca21bccffd055affc966b0515f1f11",
+  "poster": "/_blob/3de9d1b665e9a45d3b106ae07c22daa8",
+  "title": "The Scrapbook",
+  "len": 18,
+  "series": "sagtk",
+  "episode": 12,
+  "caption": "A whole month of Sag in one scrapbook: the packing list, the toast, the party of forty. And someone with a planner is peeking at the next page. Favorite Sag moment?"
  }
 }
