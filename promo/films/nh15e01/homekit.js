@@ -7,22 +7,22 @@
 //   · the sets, drawn in pixel blocks: the snowy house front (door that opens, wreath, roof lights, lit windows),
 //     the living room (window with snow, tree with blinking lights, garland, fireplace, sofa), the dining table
 //   · falling snow, the family name tags, props (pie, mug, gift, stocking, tissue box, plates), Pisces' tears
-//   · headlines (popText), dialogue boxes, the optional LESSON UNLOCKED, the one card cut, the end card
+//   · headlines (popText), dialogue boxes, the optional LESSON UNLOCKED, the short end card (no card cut since 4 Nov)
 //   · the hand-off: everything fades back to the plain sky H by STORY_END (endcard.js contract)
 // What an episode gives makeHome(cfg):
 //   id, duration, hero (sign id), date (sign id)
 //   heads:  [{ text, at, out: [a, b], accent?, top?, size?, accentSize?, late?, lateAt?, wobble? }]   (at < 0 = on at frame 0)
 //   lines:  [{ t, speaker, text, color? }]       boxes: [{ from, to, open?, close?, y? }] (indexes into lines)
 //   draw(x, t, K)   paints the scene on the main canvas (sets, cast, props); K = kit helpers (see `kit` below)
-//   lesson? { at, out, text, chip }       cuts: card-cut candidates (cardfx keeps the middle one)
+//   lesson? { at, out, text, chip }       cuts: unused since 4 Nov (no card transition); duration: slate length, film = −2 s
 //   flashes: [t…] white jump-cut flashes   shakes: [t…] little camera bumps   cues: extra sound cues
 // Pure f(t); DOM and canvases are only made inside build(). Nothing touches `document` at module top level.
 import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../startalk.js'
 import { popText, buildLesson, lessonCues } from '../lesson.js'
 
@@ -446,7 +446,9 @@ function buildBug(root) {
 
 // ═══════════════════════════════════════════════════════════════════════════ the episode
 export function makeHome(cfg) {
-  const DURATION = cfg.duration, STORY_END = DURATION - ENDCARD_LEN
+  // cfg.duration is the slate length with the old 4.4 s end card; since 4 Nov every film plays the SHORT end card (2.4 s)
+  // and no card-back cut, so the story keeps its timing and the film runs 2.0 s shorter.
+  const DURATION = +(cfg.duration - 2).toFixed(2), STORY_END = DURATION - ENDCARD_SHORT_LEN
   const OUT = [STORY_END - 0.55, STORY_END - 0.08]          // everything leaves; the plain sky remains for the end card
   const CPS = cfg.cps || 30
   const HERO = sign(cfg.hero), DATE = sign(cfg.date), PIS = sign('pisces')
@@ -516,8 +518,8 @@ export function makeHome(cfg) {
     }
   }
 
-  const CUTS = cfg.cuts || []
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 }), ...(CUTS.length ? [cardCuts(CUTS)] : [])]
+  const CUTS = cfg.cuts || []      // kept for reference only: no card transition plays (4 Nov change)
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 })]
   const wordPops = (t0, n, gap, b0 = 0, gain = 0.024) => Array.from({ length: n }, (_, i) => ['pop', r3(t0 + i * gap), NOTE[(b0 + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
   const CUES = [
     // sleigh-bell sparkle on the cold open
@@ -529,8 +531,7 @@ export function makeHome(cfg) {
     ...(cfg.lesson ? lessonCues(cfg.lesson.at, { text: cfg.lesson.text, chip: cfg.lesson.chip }) : []),
     ...(cfg.cues || []),
     ['whoosh', OUT[0], 0.35, 0.03],
-    ...(CUTS.length ? cardCutCues(CUTS) : []),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ].sort((a, b) => a[1] - b[1])
   return { DURATION, STORY_END, SCENES, CUES, CUTS, OUT, kit }
 }
