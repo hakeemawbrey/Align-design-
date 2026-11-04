@@ -21,8 +21,9 @@
 //   cfg.pis = { hook, trap, move, try }   background Pisces spots { x, y, s } (null = none), cfg.pisInCouple = true to skip
 //   cfg.heart = { hook: {x,y,cell}, try: {x,y,cell} }   heart spots
 //   cfg.cues                         extra sound cues (absolute times)
+//   cfg.images = { key: 'card-talk-5.png' }   promo/assets images, loaded at build, handed to the beats as S.img[key]
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
-import { fill } from '../../../src/scenes/common.js'
+import { fill, A as ASSETS } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
 import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
@@ -355,6 +356,9 @@ export function makeEpisode(cfg) {
     try {
       await Promise.all(["800 112px Inter", "800 50px Inter", "800 34px Inter", "800 28px Inter", "700 30px Inter", "italic 500 150px 'EB Garamond'", "italic 600 40px 'EB Garamond'", "700 52px 'Space Mono'", "700 32px 'Space Mono'", "700 26px 'Space Mono'"].map(f => document.fonts.load(f)))
     } catch (_) { /* fonts optional */ }
+    // optional images (cfg.images = { key: 'file.png' } from promo/assets), handed to the beats as S.img[key]
+    const IMG = {}
+    await Promise.all(Object.entries(cfg.images || {}).map(([k, f]) => new Promise(res => { const i = new Image(); i.onload = () => { IMG[k] = i; res() }; i.onerror = () => res(); i.src = ASSETS + f })))
     const root = fill(stage, { background: '#05040c' })
     const cv = layerCanvas(root), x = cv.getContext('2d')
     const hd = cfg.heads
@@ -370,7 +374,7 @@ export function makeEpisode(cfg) {
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const flash = el('div', { position: 'absolute', inset: 0, background: '#fff6ea', opacity: 0, pointerEvents: 'none' }, root)
 
-    const beatS = (t, a, b, extra = {}) => ({ u: t - a, t0: a, t1: b, A, B, stars, pisces, couple, x, tx, POS, AS, BS, ...extra })
+    const beatS = (t, a, b, extra = {}) => ({ u: t - a, t0: a, t1: b, A, B, stars, pisces, couple, x, tx, POS, AS, BS, img: IMG, ...extra })
 
     function bgPisces(t, key, a, b, tears, mood) {
       if (pisInCouple) return
