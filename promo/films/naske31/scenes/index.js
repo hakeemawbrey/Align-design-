@@ -1,10 +1,10 @@
-// naske31 · Ask the Stars, Volume 2, ep 31 · "My friend is dating someone I don't like." (20 s, pop · F)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske31 · Ask the Stars, Volume 2, ep 31 · "My friend is dating someone I don't like." (18 s, pop · F)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "My friend is dating someone I *don't* like."  ♎ Libra mid-gasp at an instant photo of its friend and
 //         the new date, eyes wide.
 //   3.0   "if it's a real worry, say it once. kindly."  One speech bubble: "i'm a bit worried. that's all."
 //   5.9   "'i want you happy. i'm here either way.'"  A heart rings the photo.
-//   8.75  card cut → 8.8 "then zip it. friend, not judge."  A pixel zipper zips across Libra's mouth; the friend hugs it.
+//   8.8   "then zip it. friend, not judge."  A pixel zipper zips across Libra's mouth; the friend hugs it.
 //   12.1  "Be their friend, | *not* their judge."
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, label, drawStarChar, signStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, HEART } from '../../naske19/scenes/askkit2.js'
 
