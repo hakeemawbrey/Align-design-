@@ -1,4 +1,4 @@
-// nrke07: RANKING THE SIGNS, "Who sends the good-morning text" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke07: RANKING THE SIGNS, "Who sends the good-morning text" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // pop · D). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who sends the / *good-morning* text?" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Sagittarius → #4 Aries slam in.   6.3 card cut.   6.8 #3 Leo · 7.7 #2 Capricorn
