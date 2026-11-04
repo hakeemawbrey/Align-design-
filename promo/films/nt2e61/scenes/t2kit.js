@@ -214,8 +214,9 @@ export function shadesCells(ctx, up = 0) {
 }
 
 // ── the format bug: Inter 800 small caps, letter-spaced, top-left 56 px
-function buildBug(root, at, [main, dim = '']) {
-  const b = el('div', { position: 'absolute', left: '56px', top: '56px', height: '44px', display: 'none', alignItems: 'center', gap: '14px', transformOrigin: '0% 50%', pointerEvents: 'none' }, root)
+function buildBug(root, at, [main, dim = ''], plate = false) {
+  const b = el('div', { position: 'absolute', left: plate ? '42px' : '56px', top: plate ? '48px' : '56px', height: '44px', display: 'none', alignItems: 'center', gap: '14px', transformOrigin: '0% 50%', pointerEvents: 'none',
+    ...(plate ? { background: 'rgba(16,9,38,0.72)', padding: '4px 16px', borderRadius: '10px' } : {}) }, root)
   el('div', { width: '18px', height: '18px', background: BUG_PINK, boxShadow: `0 0 0 4px ${INK}, 0 0 16px rgba(255,126,182,0.7)` }, b)
   const nb = s => s.replace(/ /g, '&nbsp;')
   el('div', { font: `800 28px ${INTER}`, letterSpacing: '0.2em', color: BUG_PINK, textShadow: '0 2px 12px rgba(6,4,18,0.9)', whiteSpace: 'nowrap', fontVariant: 'small-caps' }, b,
@@ -349,7 +350,7 @@ export function makeT2(cfg) {
     const top = layerCanvas(root), tx = top.getContext('2d')
     const extra = cfg.dom ? cfg.dom(root, { ...api, T }) : null
     const box1 = dialogueBox(root, { lines: LINES, y: 1420, open: T.last - 0.22, close: T.boxClose, cps: CPS })
-    const bug = buildBug(root, T.bug, cfg.bug)
+    const bug = buildBug(root, T.bug, cfg.bug, cfg.bugPlate)
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const flash = el('div', { position: 'absolute', inset: 0, background: '#fff6ea', opacity: 0, pointerEvents: 'none' }, root)
 
