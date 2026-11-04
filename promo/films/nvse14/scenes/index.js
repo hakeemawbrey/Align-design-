@@ -1,5 +1,5 @@
-// nvse14: SIGN VS SIGN, "Who handles cooking together better?" ♉ Taurus vs ♍ Virgo (18 s trial reel, b46,
-// music: funk · F). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse14: SIGN VS SIGN, "Who handles cooking together better?" ♉ Taurus vs ♍ Virgo (16 s trial reel, b46,
+// music: funk · F). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: one pot between them, steaming.
 //   ROUND 1 ♉ "tastes *every single step.*" a spoon to the pot, then a block of butter. "for quality." → "more butter. trust me."
 //   ROUND 2 ♍ "labels *every spice* mid-recipe." a row of labelled jars, 2 g. "two grams. TWO." → "oh. we’re having fun?"
