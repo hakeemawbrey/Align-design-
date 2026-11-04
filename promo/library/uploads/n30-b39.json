@@ -108,30 +108,111 @@
   "caption": "Some signs finish holiday shopping in July.\nRanked, earliest to last-minute. The best gifts say I listened."
  },
  "nrke13": {
-  "video": "/_blob/94dd8f2fb18376bc0cbca4427d78218c",
-  "poster": "/_blob/7802d5a6c805ee558d1596a856dac055",
+  "video": "/_blob/ecabb54932d406972368bfb447d4f42e",
+  "poster": "/_blob/7c5c57e022acdea4516229b962d9dae1",
   "title": "Who hogs the blanket",
-  "len": 18,
+  "len": 16,
   "series": "rank",
   "episode": 13,
   "caption": "Who steals the blanket every single night?\nAll twelve signs, ranked. Cold? Say so, then share."
  },
  "nrke14": {
-  "video": "/_blob/2b99e14e3e91a1b2c6454b8d8b5cfb2d",
-  "poster": "/_blob/c92e95d95b705d85050aca458af163ca",
+  "video": "/_blob/4603bad2e44ffc6abe71d72b8877ebd3",
+  "poster": "/_blob/ed5c337f111b66f48bdb087232e4783d",
   "title": "Who dances first at the holiday party",
-  "len": 18,
+  "len": 16,
   "series": "rank",
   "episode": 14,
   "caption": "Who's first on the dance floor at the holiday party?\nRanked. Dance when you're ready, nobody's grading."
  },
  "nrke15": {
-  "video": "/_blob/16481cedfdd7faeb717830c22cf1a9d7",
-  "poster": "/_blob/83a62c1621264822aa1ba14a228732c1",
+  "video": "/_blob/a214c42ffc197c518e4b2fd418fc1c92",
+  "poster": "/_blob/ec79e2c566b27c0a55aa4bda3ff97dce",
   "title": "Who gets cold first",
-  "len": 18,
+  "len": 16,
   "series": "rank",
   "episode": 15,
   "caption": "Which sign is already wearing your hoodie?\nRanked by who gets cold first. Lend it, and maybe get it back."
+ },
+ "nrke16": {
+  "video": "/_blob/a375b6d9b744c1e8ad2972af2e6e5f55",
+  "poster": "/_blob/a0751365843aa646c526e1b89d3c115e",
+  "title": "Who's best at meeting the family",
+  "len": 16,
+  "series": "rank",
+  "episode": 16,
+  "caption": "Meeting the family soon? See which signs charm every aunt.\nRanked. Just be you, that's who they're meeting."
+ },
+ "nrke17": {
+  "video": "/_blob/3b45325aaed02c1777ec52089174490e",
+  "poster": "/_blob/799408b625292efb8c6d5cc387c316e5",
+  "title": "Who gives the best compliments",
+  "len": 16,
+  "series": "rank",
+  "episode": 17,
+  "caption": "Which sign notices your new haircut first?\nTwelve signs, ranked by compliments. If you think something nice, say it."
+ },
+ "nrke18": {
+  "video": "/_blob/4e5fc3c7dee36352a8feab6b191f065d",
+  "poster": "/_blob/b8c5825b527c1e1fb328a19040bdf7c1",
+  "title": "Who takes the cutest couple photos",
+  "len": 16,
+  "series": "rank",
+  "episode": 18,
+  "caption": "Who takes three hundred couple photos to post one?\nThe signs, ranked. The best photo is the one where you're laughing."
+ },
+ "nrke19": {
+  "video": "/_blob/012bbdc3ab8cf5e80fc81c40fcf2fa03",
+  "poster": "/_blob/372fa2855932fdd6512b142669cda08f",
+  "title": "Who saves you the last bite",
+  "len": 16,
+  "series": "rank",
+  "episode": 19,
+  "caption": "Which sign saves you the last bite?\nRanked from wrapped-it-for-you to already ate it. A tiny love letter, really."
+ },
+ "nrke20": {
+  "video": "/_blob/824b1db09eeee7da453be4e2cad979cc",
+  "poster": "/_blob/2ca64c264317a6ed633da2aba6c490db",
+  "title": "Who's the best listener",
+  "len": 16,
+  "series": "rank",
+  "episode": 20,
+  "caption": "Who actually listens, and who is already planning a trip?\nAll twelve, ranked. Listening isn't fixing, it's staying."
+ },
+ "nrke21": {
+  "video": "/_blob/dd522f30ce2720e63cc57c6b792b5fc6",
+  "poster": "/_blob/a4b9eb9c7b567752969dd1f05189fd65",
+  "title": "Who sends the most voice notes",
+  "len": 16,
+  "series": "rank",
+  "episode": 21,
+  "caption": "Twelve-minute voice notes or four-second whispers?\nThe signs, ranked. Long or short, hearing their voice is the good part."
+ },
+ "nrke22": {
+  "video": "/_blob/95484c171a811cb0cb82bb90abb5c00d",
+  "poster": "/_blob/5a426ec9521bf28737a283b510d1b48b",
+  "title": "Who remembers the anniversary",
+  "len": 16,
+  "series": "rank",
+  "episode": 22,
+  "caption": "Which sign remembers your anniversary down to the hour?\nRanked. Forgot? Own it, then plan something sweet."
+ },
+ "nrke23": {
+  "video": "/_blob/9aa059bbeca38ee4ad3fe61270a9b545",
+  "poster": "/_blob/a39cb62c22afbde39a2d0e4402dfcbb8",
+  "title": "Who gets the most excited for snow",
+  "len": 16,
+  "series": "rank",
+  "episode": 23,
+  "caption": "Who's outside before the first snowflake lands?\nAll twelve signs, ranked by snow joy. Find someone that excited to see you."
+ },
+ "nrke24": {
+  "video": "/_blob/ef6e2a6c7733f7dc64cbe478ef281f2f",
+  "poster": "/_blob/d23459b39e4a25b97b3bc61a47fe8f78",
+  "title": "Who loves the hardest",
+  "len": 16,
+  "series": "rank",
+  "episode": 24,
+  "caption": "We tried to rank who loves the hardest. It didn't go to plan.\nEvery sign loves hard, just differently."
  }
 }
