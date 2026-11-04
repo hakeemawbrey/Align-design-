@@ -1,6 +1,6 @@
-// nml2e10 — MOONLIGHT LANE, Ep 10: "Lights on the Lane" (finale, 120 s vertical, Winter on the Lane; pop · C).
+// nml2e10 — MOONLIGHT LANE, Ep 10: "Lights on the Lane" (finale, 118 s vertical, Winter on the Lane; pop · C).
 // Batch b20 (promo/films/next30/b20.md). The pair: ♋ Cancer × ♐ Sagittarius (b19's setup). Kit: mlpilot/scenes/mlkit.js
-// (read-only) + ../../nml2e06/scenes/winter.js. Story 0–115.6, then the shared end card.
+// (read-only) + ../../nml2e06/scenes/winter.js. Story 0–115.6, then the short end card (no card transition).
 //   0.0–5.0    HOOK + COLD OPEN  "Christmas Eve. | The lights *won't* come on." (DEC 24 · 5:40 PM) ♑ Capricorn mid-
 //              countdown with a clipboard under the dark string of lights across the lane. "lights on at 6:00. *every*
 //              year. so…?"
@@ -9,7 +9,6 @@
 //  10.0–24.0   ACT 1  The big string is dead. Someone has to go up on the roof. "we'll go!" "*we'll* go." (at once)
 //  24.0–40.0   The roof terrace, alone for the first time since the back step. "so are we… a—" "no labels! totally
 //              *cool!*" "…totally. *so* cool."
-//  40.0        card cut.
 //  40.0–52.0   ACT 2  Fixing it, badly; the bulbs flicker with their nerves; ♊ Gemini's help from below. Sag's fun fact.
 //  52.0–70.0   6:00 PM: the countdown, still dark. "…we'll try *next* year." The two of them, deflated on the roof,
 //              the two loose cord ends between them. ♓ Pisces sobs.
@@ -23,8 +22,8 @@ import { clamp, lerp, prog, ease } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops, signStar } from '../../startalk.js'
 import { buildLesson, lessonCues } from '../../lesson.js'
 import {
@@ -35,8 +34,8 @@ import {
 } from '../../mlpilot/scenes/mlkit.js'
 import { snowGround, snowfall, drawWinter, drawTalkCard, drawLongTable, drawStringBulbs } from '../../nml2e06/scenes/winter.js'
 
-export const DURATION = 120
-const STORY_END = DURATION - ENDCARD_LEN       // 115.6
+export const DURATION = 118
+const STORY_END = DURATION - ENDCARD_SHORT_LEN // 115.6 (the short end card)
 const S = id => signStar(id)
 const nm = (id, n) => `${S(id).glyph}︎ ${n}`
 const CA = nm('cancer', 'CANCER'), SG = nm('sagittarius', 'SAGITTARIUS'), CP = nm('capricorn', 'CAPRICORN'), GE = nm('gemini', 'GEMINI')
@@ -278,8 +277,7 @@ async function build(stage) {
   }
 }
 
-const CUTS = [24.0, 40.0, 52.4]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
 // ═══════════════════════════════════════ sound ═══════════════════════════════════════
 const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]
@@ -302,7 +300,6 @@ export const CUES = [
   ...captionCues(CAPS[8]), ['pop', T.yes, 1318.51, 0.045, 0], ['glitter', r3(T.yes + 0.1), r3(T.yes + 0.8)],
   ...nextTimeCues(T.next), ...popCues(CAPS[9]),
   ...talkCues(ALL_LINES, { cps: CPS, pitch: { [CA]: 932, [SG]: 698.46, [CP]: 740, [GE]: 1174.66, [LI]: 1046.5, [SC]: 659.25 } }),
-  ...cardCutCues(CUTS),
-  ...endcardCues(STORY_END),
+  ...endcardCues(STORY_END, { short: true }),
 ]
 export const CHECK = Object.fromEntries([...BOXES.map(([l, , c], i) => ['box' + i, [l, c]]), ['advise', [ADVISE.lines, ADVISE.out[0]]], ['lesson', LESSON]])

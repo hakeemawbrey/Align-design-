@@ -1,4 +1,4 @@
-// nml2e06 — MOONLIGHT LANE, Ep 6: "The Gift That Says Too Much" (120 s vertical, Winter on the Lane; jazzy · F).
+// nml2e06 — MOONLIGHT LANE, Ep 6: "The Gift That Says Too Much" (118 s vertical, Winter on the Lane; jazzy · F).
 // Batch b20 (promo/films/next30/b20.md). Kit: mlpilot/scenes/mlkit.js (read-only) + ./winter.js. Story 0–115.6, then the
 // shared end card.
 //   0.0–2.6    HOOK (frame 0 = thumbnail)  "The gift swap rule: | keep it *small.*" ♋ Cancer mid-wrap of a huge lumpy
@@ -9,7 +9,6 @@
 //  10.0–24.0   ACT 1  The café. ♉ Taurus' lane gift swap: names from a jar. Cancer draws… ♐ Sagittarius.
 //  24.0–40.0   Cancer's apartment: the map of every spot on the lane they've talked in a year, heart pins popping.
 //              ♎ Libra drops by: "that's not a gift. that's a *love letter.*" "it's a *map!* maps are *neutral!*"
-//  40.0        card cut.
 //  40.0–52.0   ACT 2  The snowy lane. Plan B: a joke mug taped on top. ♊ Gemini: "just say it's a *treasure* map."
 //  52.0–64.0   The swap. Sag unwraps the mug (ha!), then the map, and goes quiet. "you *made* this?" / "it's a joke!
 //              haha… *maps!*" / "oh. right. a *joke.*" ♓ Pisces sobs at the back table.
@@ -26,8 +25,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops, signStar } from '../../startalk.js'
 import { buildLesson, lessonCues } from '../../lesson.js'
 import {
@@ -38,8 +37,8 @@ import {
 } from '../../mlpilot/scenes/mlkit.js'
 import { snowGround, snowfall, drawWinter, drawGift, drawMap, drawTalkCard } from './winter.js'
 
-export const DURATION = 120
-const STORY_END = DURATION - ENDCARD_LEN       // 115.6
+export const DURATION = 118
+const STORY_END = DURATION - ENDCARD_SHORT_LEN // 115.6 (the short end card)
 const S = id => signStar(id)
 const AQ = `${S('cancer').glyph}︎ CANCER`, SG = `${S('sagittarius').glyph}︎ SAGITTARIUS`, TA = `${S('taurus').glyph}︎ TAURUS`
 const LI = `${S('libra').glyph}︎ LIBRA`, GE = `${S('gemini').glyph}︎ GEMINI`
@@ -413,9 +412,7 @@ async function build(stage) {
   }
 }
 
-// card-cut candidates (cardfx plays the middle one: 40.0, the apartment → the snowy lane)
-const CUTS = [24.0, 40.0, 52.0]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
 // ═══════════════════════════════════════ sound ═══════════════════════════════════════
 const NOTE = [698.46, 783.99, 880, 1046.5, 1174.66, 1396.91, 1567.98]
@@ -455,7 +452,6 @@ export const CUES = [
   ...captionCues(CAPS[10]), ['whoosh', T.give1, 0.3, 0.03], ['pop', r3(T.give1 + 0.3), 1046.5, 0.035, 0.2], ['whoosh', T.give2, 0.3, 0.03], ['pop', r3(T.give2 + 0.3), 1174.66, 0.035, -0.2], ['bell', T.laugh, 1760, 0.03, 1.2, 0], ['glitter', T.laugh, r3(T.laugh + 0.6)],
   ...nextTimeCues(T.next), ...popCues(CAPS[11]),
   ...talkCues(ALL_LINES, { cps: CPS, pitch: { [AQ]: 932, [SG]: 698.46, [TA]: 587.33, [LI]: 1046.5, [GE]: 1174.66 } }),
-  ...cardCutCues(CUTS),
-  ...endcardCues(STORY_END),
+  ...endcardCues(STORY_END, { short: true }),
 ]
 export const CHECK = Object.fromEntries([...BOXES.map(([l, , c], i) => ['box' + i, [l, c]]), ['advise', [ADVISE.lines, ADVISE.out[0]]], ['lesson', LESSON]])

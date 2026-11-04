@@ -1,6 +1,6 @@
-// nml2e07 — MOONLIGHT LANE, Ep 7: "Dinner with the Parents" (120 s vertical, Winter on the Lane; funk · G).
+// nml2e07 — MOONLIGHT LANE, Ep 7: "Dinner with the Parents" (118 s vertical, Winter on the Lane; funk · G).
 // Batch b20 (promo/films/next30/b20.md). The pair: ♋ Cancer × ♐ Sagittarius (b19's setup). Kit: mlpilot/scenes/mlkit.js
-// (read-only) + ../../nml2e06/scenes/winter.js. Story 0–115.6, then the shared end card.
+// (read-only) + ../../nml2e06/scenes/winter.js. Story 0–115.6, then the short end card (no card transition).
 //   0.0–5.0    HOOK + COLD OPEN  "Bring a friend | to meet the *parents.*" (SUNDAY · 5:55 PM) Sag mid-panic at the café
 //              door with a rules list (1. WE ARE FRIENDS · 2. SEE RULE 1). "rule one: we're just *friends.* ok?"
 //   5.0–7.0    ◀◀ PREVIOUSLY ON (the map · "this year mattered to me" · the gold heart)
@@ -9,7 +9,6 @@
 //              *friend.*" "the friend you talk about *every* call?"
 //  24.0–40.0   The long table. Over-correcting: a chair-sized gap, "pass the bread… *friend.*" "thanks, *pal.* buddy.
 //              acquaintance." "so! how did you two *meet?*"
-//  40.0        card cut.
 //  40.0–52.0   ACT 2  The story, in sync, every detail the same. "you finish each other's *sentences!*"
 //  52.0–70.0   Mom's Push / Pull / Align reading. Sag snaps: "we are NOT together, ok?" Cancer: "…yeah. just friends."
 //              Silent soup. ♓ Pisces sobs at the back table.
@@ -23,8 +22,8 @@ import { lerp, prog, ease } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops, signStar } from '../../startalk.js'
 import { buildLesson, lessonCues } from '../../lesson.js'
 import {
@@ -35,8 +34,8 @@ import {
 } from '../../mlpilot/scenes/mlkit.js'
 import { snowGround, snowfall, drawWinter, drawMap, drawLongTable } from '../../nml2e06/scenes/winter.js'
 
-export const DURATION = 120
-const STORY_END = DURATION - ENDCARD_LEN       // 115.6
+export const DURATION = 118
+const STORY_END = DURATION - ENDCARD_SHORT_LEN // 115.6 (the short end card)
 const S = id => signStar(id)
 const CA = `${S('cancer').glyph}︎ CANCER`, SG = `${S('sagittarius').glyph}︎ SAGITTARIUS`, MO = `${S('sagittarius').glyph}︎ MOM`, DA = `${S('sagittarius').glyph}︎ DAD`
 const LI = `${S('libra').glyph}︎ LIBRA`, SC = `${S('scorpio').glyph}︎ SCORPIO`
@@ -326,9 +325,7 @@ async function build(stage) {
   }
 }
 
-// card-cut candidates (cardfx plays the middle one: 40.0, the question → the story)
-const CUTS = [24.0, 40.0, 52.0]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
 // ═══════════════════════════════════════ sound ═══════════════════════════════════════
 const NOTE = [783.99, 880, 987.77, 1174.66, 1318.51, 1567.98, 1760]
@@ -351,7 +348,6 @@ export const CUES = [
   ...captionCues(CAPS[8]), ['pop', 109.0, 880, 0.035, -0.2], ['pop', 109.5, 987.77, 0.035, 0.2], ['pop', T.both, 1174.66, 0.045, 0], ['glitter', r3(T.both + 0.4), r3(T.both + 1.0)],
   ...nextTimeCues(T.next), ...popCues(CAPS[9]),
   ...talkCues(ALL_LINES, { cps: CPS, pitch: { [CA]: 932, [SG]: 698.46, [MO]: 1046.5, [DA]: 523.25, [LI]: 1046.5, [SC]: 659.25 } }),
-  ...cardCutCues(CUTS),
-  ...endcardCues(STORY_END),
+  ...endcardCues(STORY_END, { short: true }),
 ]
 export const CHECK = Object.fromEntries([...BOXES.map(([l, , c], i) => ['box' + i, [l, c]]), ['advise', [ADVISE.lines, ADVISE.out[0]]], ['lesson', LESSON]])

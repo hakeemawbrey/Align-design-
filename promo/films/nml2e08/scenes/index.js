@@ -1,13 +1,12 @@
-// nml2e08 — MOONLIGHT LANE, Ep 8: "The Long Way Home" (120 s vertical, Winter on the Lane; dreamy · Ab).
+// nml2e08 — MOONLIGHT LANE, Ep 8: "The Long Way Home" (118 s vertical, Winter on the Lane; dreamy · Ab).
 // Batch b20 (promo/films/next30/b20.md). The pair: ♋ Cancer × ♐ Sagittarius (b19's setup). Kit: mlpilot/scenes/mlkit.js
-// (read-only) + ../../nml2e06/scenes/winter.js. Story 0–115.6, then the shared end card.
+// (read-only) + ../../nml2e06/scenes/winter.js. Story 0–115.6, then the short end card (no card transition).
 //   0.0–5.0    HOOK + COLD OPEN  "Shortcut, | or the *long way?*" (THURSDAY · 9:40 PM) Sag and Cancer mid-step at a snowy
 //              signpost: SHORTCUT → / ← LONG WAY. "long way. obviously. it's *snowing.*"
 //   5.0–7.0    ◀◀ PREVIOUSLY ON (dinner with the parents · "favourite person" · outside, just them)
 //   7.0–10.0   TITLE CARD  Ep 8 · The Long Way Home.
 //  10.0–24.0   ACT 1  The map route, on purpose: the snow-star, the market. Sag's fun fact (snow makes the lane quieter).
 //  24.0–40.0   "Cancer decides: | *tonight.*" Try one: "Sag, can I tell you some—" ♌ Leo, carolling: "LA LA LAAA!"
-//  40.0        card cut.
 //  40.0–52.0   ACT 2  Try two: ♊ Gemini and ♉ Taurus' snowman loses its head. Try three: ♓ Pisces sobs at the window.
 //              "…so. snow. *cold.*"
 //  52.0–70.0   Sag reads it wrong: "you seem tired. shortcut?" The shortcut: very short. "night!" / "night." Cancer alone.
@@ -21,8 +20,8 @@ import { clamp, lerp, prog, ease } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops, signStar } from '../../startalk.js'
 import { buildLesson, lessonCues } from '../../lesson.js'
 import {
@@ -33,8 +32,8 @@ import {
 } from '../../mlpilot/scenes/mlkit.js'
 import { snowGround, snowfall, drawWinter, drawMap, drawLongTable, drawSnowman } from '../../nml2e06/scenes/winter.js'
 
-export const DURATION = 120
-const STORY_END = DURATION - ENDCARD_LEN       // 115.6
+export const DURATION = 118
+const STORY_END = DURATION - ENDCARD_SHORT_LEN // 115.6 (the short end card)
 const S = id => signStar(id)
 const CA = `${S('cancer').glyph}︎ CANCER`, SG = `${S('sagittarius').glyph}︎ SAGITTARIUS`, LE = `${S('leo').glyph}︎ LEO`, GE = `${S('gemini').glyph}︎ GEMINI`
 const LI = `${S('libra').glyph}︎ LIBRA`, SC = `${S('scorpio').glyph}︎ SCORPIO`
@@ -324,8 +323,7 @@ async function build(stage) {
   }
 }
 
-const CUTS = [24.0, 40.0, 64.0]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
 // ═══════════════════════════════════════ sound ═══════════════════════════════════════
 const NOTE = [830.61, 932.33, 1046.5, 1108.73, 1244.51, 1396.91, 1567.98]
@@ -349,7 +347,6 @@ export const CUES = [
   ...captionCues(CAPS[10]), ...steps(T.steps[0], T.steps[1], 0.25).map(s => ['tick', s, 0.015]), ['bell', 110.4, 1567.98, 0.03, 1.2, 0], ['glitter', 110.4, 111.0],
   ...nextTimeCues(T.next), ...popCues(CAPS[11]),
   ...talkCues(ALL_LINES, { cps: CPS, pitch: { [CA]: 932, [SG]: 698.46, [LE]: 880, [GE]: 1174.66, [LI]: 1046.5, [SC]: 659.25 } }),
-  ...cardCutCues(CUTS),
-  ...endcardCues(STORY_END),
+  ...endcardCues(STORY_END, { short: true }),
 ]
 export const CHECK = Object.fromEntries([...BOXES.map(([l, , c], i) => ['box' + i, [l, c]]), ['advise', [ADVISE.lines, ADVISE.out[0]]], ['lesson', LESSON]])

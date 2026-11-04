@@ -1,6 +1,6 @@
-// nml2e09 — MOONLIGHT LANE, Ep 9: "What We Didn't Say" (120 s vertical, Winter on the Lane; cinematic · Dm).
+// nml2e09 — MOONLIGHT LANE, Ep 9: "What We Didn't Say" (118 s vertical, Winter on the Lane; cinematic · Dm).
 // Batch b20 (promo/films/next30/b20.md). The pair: ♋ Cancer × ♐ Sagittarius (b19's setup). Kit: mlpilot/scenes/mlkit.js
-// (read-only) + ../../nml2e06/scenes/winter.js. Story 0–115.6, then the shared end card.
+// (read-only) + ../../nml2e06/scenes/winter.js. Story 0–115.6, then the short end card (no card transition).
 //   0.0–5.0    HOOK + COLD OPEN  "One table. | *Nobody* says it." (SATURDAY · 7:30 PM) ♉ Taurus mid-slam of a huge soup
 //              pot on the long table. "dinner rule: answer the card. *honestly.*"
 //   5.0–7.0    ◀◀ PREVIOUSLY ON (the shortcut · the knock · "on purpose")
@@ -8,7 +8,6 @@
 //  10.0–24.0   ACT 1  The lane's winter dinner. The talk card: "What's something you haven't said this year?"
 //  24.0–40.0   The truths go round: ♍ Virgo "the matching sweaters *itch.*" ♈ Aries "…mine *too!*" ♑ Capricorn "I want
 //              a day *off.*" ♌ Leo "I'm… *shy* sometimes." ♓ Pisces, sobbing: "I'm *fine.*"
-//  40.0        card cut.
 //  40.0–52.0   ACT 2  Cancer's turn: "I… like… *soup.*" Sag's turn: "same. soup. *big* soup fan." The table knows.
 //  52.0–70.0   Sag leaves "to get more *bread.*" Leo's bad advice: "let them come back to *you.*" The empty chair.
 //  70.0–90.0   ★ THE STARS ADVISE: Say it to them, not the room · Say it without a demand · Go after them, gently.
@@ -22,8 +21,8 @@ import { lerp, prog, ease } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops, signStar } from '../../startalk.js'
 import { buildLesson, lessonCues } from '../../lesson.js'
 import {
@@ -34,8 +33,8 @@ import {
 } from '../../mlpilot/scenes/mlkit.js'
 import { snowGround, snowfall, drawWinter, drawTalkCard, drawLongTable } from '../../nml2e06/scenes/winter.js'
 
-export const DURATION = 120
-const STORY_END = DURATION - ENDCARD_LEN       // 115.6
+export const DURATION = 118
+const STORY_END = DURATION - ENDCARD_SHORT_LEN // 115.6 (the short end card)
 const S = id => signStar(id)
 const nm = (id, n) => `${S(id).glyph}︎ ${n}`
 const CA = nm('cancer', 'CANCER'), SG = nm('sagittarius', 'SAGITTARIUS'), TA = nm('taurus', 'TAURUS'), VI = nm('virgo', 'VIRGO'), AR = nm('aries', 'ARIES')
@@ -277,8 +276,7 @@ async function build(stage) {
   }
 }
 
-const CUTS = [24.0, 40.0, 52.0]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
 // ═══════════════════════════════════════ sound ═══════════════════════════════════════
 const NOTE = [587.33, 659.25, 698.46, 880, 987.77, 1174.66, 1318.51]
@@ -300,7 +298,6 @@ export const CUES = [
   ...captionCues(CAPS[8]), ['pop', T.bag, 1174.66, 0.04, 0], ['glitter', r3(T.bag + 0.2), r3(T.bag + 0.8)],
   ...nextTimeCues(T.next), ...popCues(CAPS[9]),
   ...talkCues(ALL_LINES, { cps: CPS, pitch: { [CA]: 932, [SG]: 698.46, [TA]: 587.33, [VI]: 1108.73, [AR]: 880, [CP]: 740, [LE]: 830.61, [PI]: 1244.51, [LI]: 1046.5, [SC]: 659.25 } }),
-  ...cardCutCues(CUTS),
-  ...endcardCues(STORY_END),
+  ...endcardCues(STORY_END, { short: true }),
 ]
 export const CHECK = Object.fromEntries([...BOXES.map(([l, , c], i) => ['box' + i, [l, c]]), ['advise', [ADVISE.lines, ADVISE.out[0]]], ['lesson', LESSON]])
