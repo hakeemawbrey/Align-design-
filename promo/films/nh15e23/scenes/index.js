@@ -1,4 +1,4 @@
-// nh15e23: HOME FOR THE HOLIDAYS, "The drive home debrief." (35 s vertical, Star Talk Season 15 ep 23,
+// nh15e23: HOME FOR THE HOLIDAYS, "The drive home debrief." (33 s vertical, Star Talk Season 15 ep 23,
 // music: synthwave · F#m). Story 0–30.6, then the shared end card. The look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.4    hook "The *drive home* debrief."  Night road through the windshield; Leo at the wheel, eyes wide; Sagittarius
 //              (Leo's date) mid-laugh in the passenger seat; Pisces in the back with the leftovers.
