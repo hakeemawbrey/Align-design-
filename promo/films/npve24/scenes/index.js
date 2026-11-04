@@ -1,5 +1,5 @@
-// npve24 · POV: You're Dating a ___ · ep 24 · "POV: you're dating a Pisces. The gift." (17 s vertical, dreamy · Gb)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve24 · POV: You're Dating a ___ · ep 24 · "POV: you're dating a Pisces. The gift." (15 s vertical, dreamy · Gb)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♓ PISCES by the tree, sobbing while it wraps a present, tape stuck everywhere.
 //   2.3–6.0   (1) still crying, it pushes the present to you. PISCES: "I'm FINE. *open it.*"
 //             Sticker: "it cried at the *wrapping paper*".
@@ -41,7 +41,7 @@ function frame(x, t, cx, cy, k) {
 }
 
 const EP = makePOV({
-  id: 'npve24', duration: 17, set: 'party',
+  id: 'npve24', duration: 15, set: 'party',
   caption: 'you’re dating a *Pisces.* The gift.',
   lines: LINES,
   boxes: [{ from: 0, to: 2, open: 2.9, close: 9.8 }],

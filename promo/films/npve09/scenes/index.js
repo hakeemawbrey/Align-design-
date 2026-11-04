@@ -1,5 +1,5 @@
-// npve09 · POV: You're Dating a ___ · ep 9 · "POV: you're dating a Sagittarius." (20 s vertical, chiptune · B)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve09 · POV: You're Dating a ___ · ep 9 · "POV: you're dating a Sagittarius." (18 s vertical, chiptune · B)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♐ SAG on the snowy street, grinning, holding up its phone: a photo of you in a very tall hat.
 //   2.3–5.6   (1) SAG: "honestly? that hat is a *choice.*"  Sticker: "no filter. *at all.*"
 //   5.6–9.0   (2) the next photo: its home cooking (grey lumps). SAG: "honestly? it's bad. *takeout?*"
@@ -56,7 +56,7 @@ function bag(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve09', duration: 20, set: 'street',
+  id: 'npve09', duration: 18, set: 'street',
   caption: 'you’re dating a *Sagittarius.*',
   lines: LINES,
   boxes: [{ from: 0, to: 3, open: 2.2, close: 12.75 }],

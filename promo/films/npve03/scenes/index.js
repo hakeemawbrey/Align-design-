@@ -1,5 +1,5 @@
-// npve03 · POV: You're Dating a ___ · ep 3 · "POV: you're dating a Gemini." (20 s vertical, funk · G)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve03 · POV: You're Dating a ___ · ep 3 · "POV: you're dating a Gemini." (18 s vertical, funk · G)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.4   hook: ♊ GEMINI on the sofa mid-story, two speech bubbles going at once ("so THEN—" / "wait, also—").
 //   2.4–5.7   (1) three stories start (the bus, the cousin's cat, the dream)… each one cut off: "anyway—".
 //             Sticker: "three stories. *zero* endings."
@@ -35,7 +35,7 @@ function tag(x, t, i) {
 }
 
 const EP = makePOV({
-  id: 'npve03', duration: 20, set: 'sofa',
+  id: 'npve03', duration: 18, set: 'sofa',
   caption: 'you’re dating a *Gemini.*',
   lines: LINES,
   boxes: [{ from: 0, to: 3, open: 2.3, close: 12.75 }],

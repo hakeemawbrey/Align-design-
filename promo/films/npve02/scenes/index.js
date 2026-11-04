@@ -1,5 +1,5 @@
-// npve02 · POV: You're Dating a ___ · ep 2 · "POV: you're dating a Taurus." (20 s vertical, lofi · F)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve02 · POV: You're Dating a ___ · ep 2 · "POV: you're dating a Taurus." (18 s vertical, lofi · F)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♉ TAURUS in the snowy café, both arms (points) wrapped round a slice of cake, eyes shut, blissful.
 //             A talk card lies on the table: "What's your comfort meal?"
 //   2.3–5.6   (1) TAURUS: "the usual. it's *perfect.*"  Sticker: "same order since *forever*".
@@ -34,7 +34,7 @@ function cake(x, t, cx, by, s = 1) {
 const plateX = t => lerp(540, 200, ease.inOutQuad(prog(t, ...T.slide)))
 
 const EP = makePOV({
-  id: 'npve02', duration: 20, set: 'cafe',
+  id: 'npve02', duration: 18, set: 'cafe',
   caption: 'you’re dating a *Taurus.*',
   images: { talk: 'card-talk-5.png' },
   lines: LINES,

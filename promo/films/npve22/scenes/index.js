@@ -1,5 +1,5 @@
-// npve22 · POV: You're Dating a ___ · ep 22 · "POV: you're dating a Capricorn. The card." (17 s vertical, pop · G)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve22 · POV: You're Dating a ___ · ep 22 · "POV: you're dating a Capricorn. The card." (15 s vertical, pop · G)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♑ CAPRICORN in the kitchen, proudly holding out an ice scraper with a big bow on it.
 //   2.3–6.0   (1) CAPRICORN: "for your windshield. *very* useful."  Sticker: "the most *practical* gift".
 //   6.2       card cut.
@@ -46,7 +46,7 @@ function card(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve22', duration: 17, set: 'kitchen',
+  id: 'npve22', duration: 15, set: 'kitchen',
   caption: 'you’re dating a *Capricorn.* The card.',
   captionSize: 46,
   lines: LINES,

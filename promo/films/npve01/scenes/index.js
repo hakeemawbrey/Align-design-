@@ -1,5 +1,5 @@
-// npve01 · POV: You're Dating a ___ · ep 1 · "POV: you're dating an Aries." (20 s vertical, pop · E)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ./datekit.js (shared by npve01–24).
+// npve01 · POV: You're Dating a ___ · ep 1 · "POV: you're dating an Aries." (18 s vertical, pop · E)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ./datekit.js (shared by npve01–24).
 //   0.0–2.3   hook: ♈ ARIES on the snowy street, beanie on, jogging on the spot, staring into the lens. Caption on at frame 0.
 //   2.3–5.6   (1) YOU: "maybe a walk later?"  Aries is GONE (speed lines), then back: "WALKING! let's go!"
 //             Sticker: "you said *maybe*".
@@ -69,7 +69,7 @@ function crossing(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve01', duration: 20, set: 'street',
+  id: 'npve01', duration: 18, set: 'street',
   caption: 'you’re dating an *Aries.*',
   lines: LINES,
   boxes: [{ from: 0, to: 4, open: 2.15, close: 12.75 }],

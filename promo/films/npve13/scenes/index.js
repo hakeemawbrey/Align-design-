@@ -1,5 +1,5 @@
-// npve13 · POV: You're Dating a ___ · ep 13 · "POV: you're dating an Aries. Snow day." (17 s vertical, pop · D)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve13 · POV: You're Dating a ___ · ep 13 · "POV: you're dating an Aries. Snow day." (15 s vertical, pop · D)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♈ ARIES in fresh snow, shoving a giant snowball across the frame, fast (snow spraying).
 //   2.3–6.0   (1) a whole snowman in four seconds flat: ball, ball, head, twig arms, a timer stuck at 0:04.
 //             ARIES: "DONE! new *record!*"  Sticker: "a snowman *speedrun*".
@@ -34,7 +34,7 @@ function face(x, cx, cy, s, nose = 1) {
 function twig(x, cx, cy, d, s) { x.save(); x.strokeStyle = INK; x.lineWidth = 14 * s; x.lineCap = 'round'; x.beginPath(); x.moveTo(cx, cy); x.lineTo(cx + d * 110 * s, cy - 60 * s); x.moveTo(cx + d * 70 * s, cy - 38 * s); x.lineTo(cx + d * 90 * s, cy - 80 * s); x.stroke(); x.strokeStyle = '#7a4a2f'; x.lineWidth = 7 * s; x.stroke(); x.restore() }
 
 const EP = makePOV({
-  id: 'npve13', duration: 17, set: 'street',
+  id: 'npve13', duration: 15, set: 'street',
   caption: 'you’re dating an *Aries.* Snow day.',
   lines: LINES,
   boxes: [{ from: 0, to: 2, open: 4.6, close: 9.8 }],

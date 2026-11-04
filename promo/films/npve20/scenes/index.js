@@ -1,5 +1,5 @@
-// npve20 · POV: You're Dating a ___ · ep 20 · "POV: you're dating a Scorpio. The gift." (17 s vertical, screwed · Fm)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve20 · POV: You're Dating a ___ · ep 20 · "POV: you're dating a Scorpio. The gift." (15 s vertical, screwed · Fm)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♏ SCORPIO on the sofa, holding out a wrapped gift, staring. Very serious.
 //   2.3–6.0   (1) the lid pops: the frog mug you pointed at in a shop window once, months ago.
 //             SCORPIO: "you saw it in *March.*"  Sticker: "you mentioned it *once*".
@@ -37,7 +37,7 @@ function gift(x, t, cx, by) {
 }
 
 const EP = makePOV({
-  id: 'npve20', duration: 17, set: 'sofa',
+  id: 'npve20', duration: 15, set: 'sofa',
   caption: 'you’re dating a *Scorpio.* The gift.',
   lines: LINES,
   boxes: [{ from: 0, to: 2, open: 3.4, close: 9.8 }],

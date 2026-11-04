@@ -1,5 +1,5 @@
-// npve07 · POV: You're Dating a ___ · ep 7 · "POV: you're dating a Libra." (20 s vertical, cinematic · Eb)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve07 · POV: You're Dating a ___ · ep 7 · "POV: you're dating a Libra." (18 s vertical, cinematic · Eb)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♎ LIBRA and you, mid "you pick!" / "no, YOU pick!", two bubbles ping-ponging over the menu.
 //   2.3–5.6   (1) LIBRA: "okay. we *both* pick. on three?"  Nobody picks. Sticker: "*nobody* has picked".
 //   5.6–9.0   (2) the dessert arrives. Libra lays a ruler across it and splits it exactly down the middle.
@@ -47,7 +47,7 @@ function ruler(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve07', duration: 20, set: 'cafe',
+  id: 'npve07', duration: 18, set: 'cafe',
   caption: 'you’re dating a *Libra.*',
   lines: LINES,
   boxes: [{ from: 0, to: 3, open: 2.2, close: 12.75 }],

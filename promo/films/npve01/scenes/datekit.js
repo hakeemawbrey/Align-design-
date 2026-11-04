@@ -7,6 +7,7 @@
 // bug "POV: YOU'RE DATING A ___" top-left (56 px, Inter 800 small caps); the Star Talk dialogue box; a big last line;
 // the shared end card and one cardfx cut.
 //
+// Owner change (4 Nov): no card-back transition (cfg.cuts is ignored) and the short 2.4 s end card.
 //   makePOV(cfg) → { DURATION, SE, SCENES, CUES }
 //     cfg = { id, duration, set: 'cafe' | 'sofa' | 'street' | 'kitchen' | 'market' | 'party' | 'door' | (x, t) => void,
 //             caption, lines, boxes: [{ from, to, open, close, y }], stickers: [{ at, out, text, x, y, rot, size,
@@ -20,8 +21,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill, A } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'   // no card-back cut (owner change, 4 Nov): the quiet border only
 import { drawStarChar, dialogueBox, talkCues, signStar } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -378,7 +379,7 @@ function progressBar(x, t, SE, k) {
 // ═══════════════════════════════════════ the episode engine
 export function makePOV(cfg) {
   const DURATION = cfg.duration ?? 20
-  const SE = DURATION - ENDCARD_LEN
+  const SE = DURATION - ENDCARD_SHORT_LEN     // the short (2.4 s) end card
   const CPS = 28
   const OUT = [SE - 0.45, SE - 0.05]
   const CAP_AT = cfg.captionAt ?? -1          // already on screen at frame 0
@@ -426,8 +427,7 @@ export function makePOV(cfg) {
     }
   }
 
-  const CUTS = cfg.cuts
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: SE }), cardFrame({ start: 0, end: SE, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: SE, short: true }), cardFrame({ start: 0, end: SE, corners: 'tr bl br' })]
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]
   const wordPops = (t0, n, gap, base = 0, gain = 0.026) => Array.from({ length: n }, (_, i) => ['pop', r3(t0 + i * gap), NOTE[(base + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
   const CUES = [
@@ -439,8 +439,7 @@ export function makePOV(cfg) {
     ...(last ? [...wordPops(last.at, 3, 0.09, 2), ['pop', r3(last.at + 0.37), 1174.66, 0.05, 0], ['bell', r3(last.at + 0.4), 1567.98, 0.028, 1.2, 0], ['glitter', r3(last.at + 0.35), r3(last.at + 0.9)]] : []),
     ['whoosh', r3(OUT[0]), 0.35, 0.025],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(SE),
+    ...endcardCues(SE, { short: true }),
   ]
   return { DURATION, SE, SCENES, CUES, CPS }
 }

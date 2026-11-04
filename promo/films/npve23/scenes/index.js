@@ -1,5 +1,5 @@
-// npve23 · POV: You're Dating a ___ · ep 23 · "POV: you're dating an Aquarius. New Year's." (17 s vertical, synthwave · C#m)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve23 · POV: You're Dating a ___ · ep 23 · "POV: you're dating an Aquarius. New Year's." (15 s vertical, synthwave · C#m)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♒ AQUARIUS on the sofa, blowing a party horn at you. The clock says 7:00 PM. "HAPPY NEW YEAR!"
 //   2.3–6.0   (1) AQUARIUS: "it's midnight *somewhere.*"  A cheer every hour: 8:00, 9:00, 10:00… horn, confetti, cocoa.
 //             Sticker: "a new year *every hour*".
@@ -41,7 +41,7 @@ function confetti(x, t, t0, cx, cy) {
 }
 
 const EP = makePOV({
-  id: 'npve23', duration: 17, set: 'sofa',
+  id: 'npve23', duration: 15, set: 'sofa',
   caption: 'you’re dating an *Aquarius.* New Year’s.',
   captionSize: 44,
   lines: LINES,

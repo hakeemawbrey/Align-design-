@@ -1,5 +1,5 @@
-// npve14 · POV: You're Dating a ___ · ep 14 · "POV: you're dating a Taurus. Holiday market." (17 s vertical, jazzy · C)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve14 · POV: You're Dating a ___ · ep 14 · "POV: you're dating a Taurus. Holiday market." (15 s vertical, jazzy · C)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♉ TAURUS at a snowy holiday-market stall, eyes shut, savouring a sample. Sticker: "sample *one*".
 //   2.3–6.0   (1) it works down the whole tray, slowly, rating each one (8/10 · 9/10 · 10/10, again).
 //             YOU: "ooh, the *ginger* one's nice."  Sticker: "every. single. *sample.*"
@@ -37,7 +37,7 @@ function giftBox(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve14', duration: 17, set: 'market',
+  id: 'npve14', duration: 15, set: 'market',
   caption: 'you’re dating a *Taurus.* Holiday market.',
   captionSize: 42,
   lines: LINES,

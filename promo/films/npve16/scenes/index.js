@@ -1,5 +1,5 @@
-// npve16 · POV: You're Dating a ___ · ep 16 · "POV: you're dating a Cancer. The ornament." (17 s vertical, dreamy · Eb)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve16 · POV: You're Dating a ___ · ep 16 · "POV: you're dating a Cancer. The ornament." (15 s vertical, dreamy · Eb)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♋ CANCER by its family's tree, holding out a small handmade ornament with a little you painted on it.
 //   2.3–6.0   (1) it's a bit lopsided. CANCER: "I made it. it's a little *lopsided.*"  Sticker: "*handmade.* slightly wonky."
 //   6.2       card cut.
@@ -31,7 +31,7 @@ export function ornament(x, t, cx, cy, s = 1, sway = 0) {
 }
 
 const EP = makePOV({
-  id: 'npve16', duration: 17, set: 'party',
+  id: 'npve16', duration: 15, set: 'party',
   caption: 'you’re dating a *Cancer.* The ornament.',
   captionSize: 44,
   lines: LINES,

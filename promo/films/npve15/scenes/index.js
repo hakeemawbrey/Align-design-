@@ -1,5 +1,5 @@
-// npve15 · POV: You're Dating a ___ · ep 15 · "POV: you're dating a Gemini. The holiday party." (17 s vertical, funk · F)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve15 · POV: You're Dating a ___ · ep 15 · "POV: you're dating a Gemini. The holiday party." (15 s vertical, funk · F)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♊ GEMINI mid-wave at a crowded holiday party, already introducing you ("THIS IS MY PERSON!").
 //   2.3–6.0   (1) it introduces you to everyone: Leo, Libra, Virgo… a bubble for each, rapid-fire.
 //             GEMINI: "you know everyone now. *you're welcome.*"  Sticker: "you met *everyone*. in four seconds."
@@ -20,7 +20,7 @@ const HOPS = [0.1, 0.5, ...T.intro.slice(1), ...talkHops(LINES, GN), T.last + 0.
 const GUESTS = [['leo', 760, 980], ['libra', 920, 1040], ['virgo', 640, 1060]]
 
 const EP = makePOV({
-  id: 'npve15', duration: 17,
+  id: 'npve15', duration: 15,
   set: (x, t) => drawSet(x, t, t < T.cut ? 'party' : 'door'),
   caption: 'you’re dating a *Gemini.* The holiday party.',
   captionSize: 42,

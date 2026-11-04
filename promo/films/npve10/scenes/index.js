@@ -1,5 +1,5 @@
-// npve10 · POV: You're Dating a ___ · ep 10 · "POV: you're dating a Capricorn." (20 s vertical, lofi · Am)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve10 · POV: You're Dating a ___ · ep 10 · "POV: you're dating a Capricorn." (18 s vertical, lofi · Am)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♑ CAPRICORN on your doorstep in the snow, two coffees, checking the time. A timestamp: 6:45 PM.
 //   2.3–5.6   (1) CAPRICORN: "the date's at 7. *I'm early.*"  Sticker: "it brought *your* coffee order".
 //   5.6–9.0   (2) it unrolls a long paper plan: "THE PLANT: A 5-YEAR PLAN" (for the houseplant you bought together).
@@ -47,7 +47,7 @@ function scroll(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve10', duration: 20, set: 'door',
+  id: 'npve10', duration: 18, set: 'door',
   caption: 'you’re dating a *Capricorn.*',
   lines: LINES,
   boxes: [{ from: 0, to: 3, open: 2.2, close: 12.75 }],

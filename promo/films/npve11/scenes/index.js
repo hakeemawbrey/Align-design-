@@ -1,5 +1,5 @@
-// npve11 · POV: You're Dating a ___ · ep 11 · "POV: you're dating an Aquarius." (20 s vertical, house · G)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve11 · POV: You're Dating a ___ · ep 11 · "POV: you're dating an Aquarius." (18 s vertical, house · G)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♒ AQUARIUS at a snowy bus stop, holding out a homemade gadget (gears, a crank, a spout).
 //   2.3–5.6   (1) AQUARIUS: "date idea: we each bring *one weird fact.*"  Its fact pops up: a group of flamingos
 //             is called a flamboyance (true). Sticker: "first date: *fact swap*".
@@ -41,7 +41,7 @@ function gadget(x, t, cx, cy) {
 }
 
 const EP = makePOV({
-  id: 'npve11', duration: 20, set: 'street',
+  id: 'npve11', duration: 18, set: 'street',
   caption: 'you’re dating an *Aquarius.*',
   lines: LINES,
   boxes: [{ from: 0, to: 3, open: 2.2, close: 12.75 }],

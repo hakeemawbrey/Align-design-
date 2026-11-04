@@ -1,5 +1,5 @@
-// npve04 · POV: You're Dating a ___ · ep 4 · "POV: you're dating a Cancer." (20 s vertical, dreamy · Db)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve04 · POV: You're Dating a ___ · ep 4 · "POV: you're dating a Cancer." (18 s vertical, dreamy · Db)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♋ CANCER in your open front door, snow behind, holding a striped spare scarf out to you.
 //   2.3–5.6   (1) CANCER: "it's *cold.* take my spare."  Sticker: "it brought a *spare* scarf".
 //   5.6–9.0   (2) a paper bag pops up: FOR THE ROAD. CANCER: "snacks. in case you get *peckish.*"
@@ -42,7 +42,7 @@ function bag(x, t, cx, cy, k) {
 }
 
 const EP = makePOV({
-  id: 'npve04', duration: 20, set: 'door',
+  id: 'npve04', duration: 18, set: 'door',
   caption: 'you’re dating a *Cancer.*',
   lines: LINES,
   boxes: [{ from: 0, to: 4, open: 2.2, close: 12.75 }],

@@ -1,5 +1,5 @@
-// npve08 · POV: You're Dating a ___ · ep 8 · "POV: you're dating a Scorpio." (20 s vertical, screwed · Ebm)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve08 · POV: You're Dating a ___ · ep 8 · "POV: you're dating a Scorpio." (18 s vertical, screwed · Ebm)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♏ SCORPIO across a candlelit table, staring straight into the lens. Unblinking.
 //   2.3–5.6   (1) the eye contact goes on… and on. You blink (the screen blinks). SCORPIO: "you blinked *first.*"
 //             Sticker: "it has not *blinked* once".
@@ -41,7 +41,7 @@ function menu(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve08', duration: 20, set: 'cafe',
+  id: 'npve08', duration: 18, set: 'cafe',
   caption: 'you’re dating a *Scorpio.*',
   images: { talk: 'card-talk-1.png' },
   lines: LINES,

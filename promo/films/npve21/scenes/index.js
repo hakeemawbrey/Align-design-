@@ -1,5 +1,5 @@
-// npve21 · POV: You're Dating a ___ · ep 21 · "POV: you're dating a Sagittarius. 10 PM." (17 s vertical, chiptune · E)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve21 · POV: You're Dating a ___ · ep 21 · "POV: you're dating a Sagittarius. 10 PM." (15 s vertical, chiptune · E)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♐ SAG at your door at 10 PM, snow behind, holding up a sled. Timestamp: 10:02 PM.
 //   2.3–6.0   (1) it flips a talk card at you: "Planned date or spontaneous date?" SAG: "spontaneous. *obviously.*"
 //             Sticker: "it's a *school night*".
@@ -34,7 +34,7 @@ function hill(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve21', duration: 17,
+  id: 'npve21', duration: 15,
   set: (x, t) => t < T.cut ? drawSet(x, t, 'door') : hill(x, t),
   caption: 'you’re dating a *Sagittarius.* 10 PM.',
   captionSize: 44,

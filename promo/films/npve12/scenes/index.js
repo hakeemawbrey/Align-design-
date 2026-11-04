@@ -1,5 +1,5 @@
-// npve12 · POV: You're Dating a ___ · ep 12 · "POV: you're dating a Pisces." (20 s vertical, dreamy · Ab)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve12 · POV: You're Dating a ___ · ep 12 · "POV: you're dating a Pisces." (18 s vertical, dreamy · Ab)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♓ PISCES on the sofa, already crying happy tears. Sticker: "you said *hi.*"
 //   2.3–5.6   (1) movie night: the TV glow flickers on its face; it sobs. PISCES: "it's just the *trailer.*"
 //             Sticker: "it's the *trailer*".
@@ -39,7 +39,7 @@ function tissues(x, t, cx, cy, k) {
 }
 
 const EP = makePOV({
-  id: 'npve12', duration: 20, set: 'sofa',
+  id: 'npve12', duration: 18, set: 'sofa',
   caption: 'you’re dating a *Pisces.*',
   lines: LINES,
   boxes: [{ from: 0, to: 3, open: 2.4, close: 12.75 }],

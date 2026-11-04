@@ -1,5 +1,5 @@
-// npve05 · POV: You're Dating a ___ · ep 5 · "POV: you're dating a Leo." (20 s vertical, house · A)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve05 · POV: You're Dating a ___ · ep 5 · "POV: you're dating a Leo." (18 s vertical, house · A)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♌ LEO at the party mirror, posing at its reflection… then it spins round to the lens.
 //   2.3–5.6   (1) LEO: "wait. you look *amazing.*"  Sticker: "it stopped posing to *say that*".
 //   5.6–9.0   (2) you laugh ("haha") and it points: "your laugh? *amazing.*"  Sticker: "compliment number *two*".
@@ -36,7 +36,7 @@ function mirror(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve05', duration: 20, set: 'party',
+  id: 'npve05', duration: 18, set: 'party',
   caption: 'you’re dating a *Leo.*',
   lines: LINES,
   boxes: [{ from: 0, to: 3, open: 2.2, close: 12.75 }],

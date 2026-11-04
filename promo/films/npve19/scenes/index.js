@@ -1,5 +1,5 @@
-// npve19 · POV: You're Dating a ___ · ep 19 · "POV: you're dating a Libra. Hosting." (17 s vertical, cinematic · F)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve19 · POV: You're Dating a ___ · ep 19 · "POV: you're dating a Libra. Hosting." (15 s vertical, cinematic · F)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♎ LIBRA across a busy holiday party, tray in hand, flashing you a pixel thumbs-up: "you good?"
 //   2.3–6.0   (1) it hosts the whole room (snacks, coats, introductions) and checks on you across it, again and again.
 //             LIBRA: "everyone has a drink? *great.* you good?"  Sticker: "hosting *everyone*. checking on *you*."
@@ -28,7 +28,7 @@ function armchair(x, cx, by) {
 }
 
 const EP = makePOV({
-  id: 'npve19', duration: 17, set: 'party',
+  id: 'npve19', duration: 15, set: 'party',
   caption: 'you’re dating a *Libra.* Hosting.',
   lines: LINES,
   boxes: [{ from: 0, to: 2, open: 2.2, close: 9.8 }],

@@ -1,5 +1,5 @@
-// npve06 · POV: You're Dating a ___ · ep 6 · "POV: you're dating a Virgo." (20 s vertical, jazzy · Bb)
-// Story 0–15.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve06 · POV: You're Dating a ___ · ep 6 · "POV: you're dating a Virgo." (18 s vertical, jazzy · Bb)
+// Story 0–15.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♍ VIRGO across the café table, lint-rolling your coat sleeve (your arm on the table), fuzz flying.
 //   2.3–5.6   (1) VIRGO: "hold still. *one* more fuzz."  Sticker: "date night *lint check*".
 //   5.6–9.0   (2) a bowl slides over with a little flag: NO ONIONS. VIRGO: "your usual. minus the *onions.*"
@@ -56,7 +56,7 @@ function napkin(x, t) {
 }
 
 const EP = makePOV({
-  id: 'npve06', duration: 20, set: 'cafe',
+  id: 'npve06', duration: 18, set: 'cafe',
   caption: 'you’re dating a *Virgo.*',
   lines: LINES,
   boxes: [{ from: 0, to: 3, open: 2.2, close: 12.75 }],

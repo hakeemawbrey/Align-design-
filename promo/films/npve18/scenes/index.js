@@ -1,5 +1,5 @@
-// npve18 · POV: You're Dating a ___ · ep 18 · "POV: you're dating a Virgo. Gift wrap." (17 s vertical, lofi · Dm)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve18 · POV: You're Dating a ___ · ep 18 · "POV: you're dating a Virgo. Gift wrap." (15 s vertical, lofi · Dm)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♍ VIRGO at the kitchen counter, creasing a gift-wrap corner with a ruler. Perfect.
 //   2.3–6.0   (1) its present: crisp corners, a symmetrical bow. Yours slides in beside it: a lumpy blob of tape.
 //             VIRGO: "those corners are *crisp.*"  Sticker: "yours is… *a shape*".
@@ -35,7 +35,7 @@ function lumpy(x, t, cx, by, s = 1) {
 }
 
 const EP = makePOV({
-  id: 'npve18', duration: 17, set: 'kitchen',
+  id: 'npve18', duration: 15, set: 'kitchen',
   caption: 'you’re dating a *Virgo.* Gift wrap.',
   lines: LINES,
   boxes: [{ from: 0, to: 2, open: 2.2, close: 9.8 }],

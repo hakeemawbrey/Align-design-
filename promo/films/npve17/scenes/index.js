@@ -1,5 +1,5 @@
-// npve17 · POV: You're Dating a ___ · ep 17 · "POV: you're dating a Leo. The lights." (17 s vertical, house · B)
-// Story 0–12.6, then the shared end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
+// npve17 · POV: You're Dating a ___ · ep 17 · "POV: you're dating a Leo. The lights." (15 s vertical, house · B)
+// Story 0–12.6, then the short end card. Rows: promo/films/next30/b43.md. Look: ../../npve01/scenes/datekit.js.
 //   0.0–2.3   hook: ♌ LEO on a snowy front path, one hand on a giant switch, grinning into the lens. The house is dark.
 //   2.3–6.0   (1) it flips it: the whole house blazes with lights, far too bright. LEO: "too much? *never.*"
 //             Sticker: "*slightly* visible from space".
@@ -55,7 +55,7 @@ function lever(x, t, cx, cy) {
 }
 
 const EP = makePOV({
-  id: 'npve17', duration: 17, set: 'street',
+  id: 'npve17', duration: 15, set: 'street',
   caption: 'you’re dating a *Leo.* The lights.',
   lines: LINES,
   boxes: [{ from: 0, to: 2, open: 2.8, close: 9.8 }],
