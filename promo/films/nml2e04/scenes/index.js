@@ -24,8 +24,8 @@ import { clamp, lerp, prog, ease } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops, signStar } from '../../startalk.js'
 import { buildLesson, lessonCues } from '../../lesson.js'
 import {
@@ -36,8 +36,8 @@ import {
 } from '../../mlpilot/scenes/mlkit.js'
 import { snowfall, laneSnow, windowSnow, worn, actor, key, drawScarfProp, drawSnowbank } from '../../nml2e01/scenes/winter.js'
 
-export const DURATION = 120
-const STORY_END = DURATION - ENDCARD_LEN
+export const DURATION = 118
+const STORY_END = DURATION - ENDCARD_SHORT_LEN
 const lab = (s, n) => `${signStar(s).glyph}︎ ${n}`
 const LI = lab('libra', 'LIBRA'), SC = lab('scorpio', 'SCORPIO'), LS = lab('leo', 'LEO'), GE = lab('gemini', 'GEMINI')
 const LIB_C = '#ffb3ec', SCO_C = '#ff8fa8', LEO_C = '#ffbe73', GEM_C = '#ffe27a'
@@ -370,8 +370,7 @@ async function build(stage) {
   }
 }
 
-const CUTS = [31.0, 40.0, 58.0]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
 const NOTE = [932.33, 1046.5, 1174.66, 1244.51, 1396.91, 1567.98, 1760]   // Bb major
 export const CUES = [
@@ -392,7 +391,6 @@ export const CUES = [
   ...captionCues(CAPS[11]), ['riser', T.streak[0], T.streak[1], 0.02], ['bell', T.streak[1], 2093, 0.03, 1.6, 0], ['glitter', T.look, r3(T.look + 0.6)], ['pop', T.away, 523.25, 0.03, 0],
   ...nextTimeCues(T.next), ...popCues(CAPS[12]),
   ...talkCues(ALL_LINES, { cps: CPS, pitch: { [LI]: 987.77, [SC]: 587.33, [LS]: 932, [GE]: 1046.5 } }),
-  ...cardCutCues(CUTS),
-  ...endcardCues(STORY_END),
+  ...endcardCues(STORY_END, { short: true }),
 ].filter(c => c[1] >= 0)
 export const CHECK = Object.fromEntries([...BOXES.map(([l, , c], i) => ['box' + i, [l, c]]), ['advise', [ADVISE.lines, ADVISE.out[0]]], ['lesson', LESSON]])

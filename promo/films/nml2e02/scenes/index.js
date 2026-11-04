@@ -22,8 +22,8 @@ import { clamp, lerp, prog, ease } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops, signStar } from '../../startalk.js'
 import { buildLesson, lessonCues } from '../../lesson.js'
 import {
@@ -34,8 +34,8 @@ import {
 } from '../../mlpilot/scenes/mlkit.js'
 import { snowfall, laneSnow, windowSnow, worn, actor, key, drawSnowStar, drawTalkCard, drawMarket, drawLantern } from '../../nml2e01/scenes/winter.js'
 
-export const DURATION = 120
-const STORY_END = DURATION - ENDCARD_LEN
+export const DURATION = 118
+const STORY_END = DURATION - ENDCARD_SHORT_LEN
 const SS = signStar
 const lab = (s, n) => `${SS(s).glyph}︎ ${n}`
 const CS = lab('cancer', 'CANCER'), GS = lab('sagittarius', 'SAGITTARIUS'), GE = lab('gemini', 'GEMINI')
@@ -327,8 +327,7 @@ async function build(stage) {
   }
 }
 
-const CUTS = [31.0, 40.0, 62.0]
-export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+export const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
 const NOTE = [698.46, 783.99, 880, 932.33, 1046.5, 1174.66, 1318.51]      // F major
 export const CUES = [
@@ -351,7 +350,6 @@ export const CUES = [
   ...captionCues(CAPS[9]), ['pop', T.shiver, 440, 0.03, -0.2], ['whoosh', T.wrap[0], 0.3, 0.03], ['bell', T.wrap[1], 1760, 0.03, 1.2, 0], ['glitter', T.wrap[1], r3(T.wrap[1] + 0.6)],
   ...nextTimeCues(T.next), ...popCues(CAPS[10]),
   ...talkCues(ALL_LINES, { cps: CPS, pitch: { [CS]: 880, [GS]: 659.25, [GE]: 1046.5 } }),
-  ...cardCutCues(CUTS),
-  ...endcardCues(STORY_END),
+  ...endcardCues(STORY_END, { short: true }),
 ].filter(c => c[1] >= 0)
 export const CHECK = Object.fromEntries([...BOXES.map(([l, , c], i) => ['box' + i, [l, c]]), ['advise', [ADVISE.lines, ADVISE.out[0]]], ['lesson', LESSON]])
