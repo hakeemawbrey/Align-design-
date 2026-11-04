@@ -1,8 +1,8 @@
-// nffe16: FRIENDS FIRST ep 16, "When your friend says 'I'm fine'" (25 s vertical, star_advice, music: cinematic · Em).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe16: FRIENDS FIRST ep 16, "When your friend says 'I'm fine'" (23 s vertical, star_advice, music: cinematic · Em).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.0    "They said *'I'm fine.'* | Three times."  A snowy park bench: Scorpio, arms-crossed squash, mid-hop; Cancer
 //              beside them. "you okay?" "fine." "sure?" "fine." "FINE."  Cancer wonders: "do I push? do I go?"
-//   7.0        card cut.  THE STARS: "don't push. don't *vanish*, either." → "respect it, and leave the door *open*."
+//   7.0        hard cut.  THE STARS: "don't push. don't *vanish*, either." → "respect it, and leave the door *open*."
 //   13.6       the bench. CANCER: "okay. I'm here if fine changes."  Scorpio uncrosses, just a little.
 //   16.2       3 DAYS LATER, the phone: SCORPIO "fine changed. can we talk?" · CANCER "always. calling you now ♡"
 //   17.6       Last line: "The door *stays open.*"

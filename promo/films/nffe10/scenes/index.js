@@ -1,9 +1,9 @@
-// nffe10: FRIENDS FIRST ep 10, "When a friend is in a new relationship" (25 s vertical, star_advice, music: jazzy · Bb).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe10: FRIENDS FIRST ep 10, "When a friend is in a new relationship" (23 s vertical, star_advice, music: jazzy · Bb).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.0    "Your friend *fell in love* | and vanished."  Friends' night at the long table: Gemini (mid-hop), Taurus and
 //              Cancer, and one empty chair with a LIBRA name card. Labels tick over it: WEEK 2… WEEK 3… WEEK 4.
 //              GEMINI: "ugh. they've totally *changed*."  Pisces sniffles at the end of the table.
-//   7.0        card cut.  THE STARS: "'you've changed' pushes them *away*." → "'we miss you' invites them *back*."
+//   7.0        hard cut.  THE STARS: "'you've changed' pushes them *away*." → "'we miss you' invites them *back*."
 //   13.6       the table. CHECK-IN: "we miss you! *bring them sometime?*"  Libra hops into the empty chair with a plate
 //              of cookies; everyone cheers.
 //   17.2       Last line: "Miss them *out loud.*"

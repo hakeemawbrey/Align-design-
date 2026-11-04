@@ -1,9 +1,9 @@
-// nffe01: FRIENDS FIRST ep 1, "The friend who went quiet" (25 s vertical, star_advice, music: lofi · Am).
-// Story 0–20.6, then the shared end card. The format look lives in ./friendskit.js (shared by nffe01–nffe24).
+// nffe01: FRIENDS FIRST ep 1, "The friend who went quiet" (23 s vertical, star_advice, music: lofi · Am).
+// Story 0–20.6, then the short shared end card (2.4 s). The format look lives in ./friendskit.js (shared by nffe01–nffe24).
 //   0.0–7.0    "Your friend's gone | *quiet.*"  Cancer on the couch, mid-hop, phone in hand. The group chat pops up:
 //              Capricorn's last message ("busy week, talk soon!") sits above a "3 WEEKS LATER" divider. Cancer types
 //              "are you mad at me??", strikes it out. CANCER: "did I do something wrong?"  Pisces sniffles on the rug.
-//   7.0        card cut.  THE STARS (big, in the open sky): "quiet isn't always about *you*, sweetie." →
+//   7.0        hard cut.  THE STARS (big, in the open sky): "quiet isn't always about *you*, sweetie." →
 //              "send a check-in with *no homework* attached."
 //   13.6       Capricorn's bedroom: under a blanket, phone glowing. The CHECK-IN card: "thinking of you. *no need to
 //              reply.*"  The phone pings; Capricorn smiles, hearts float up. Pisces at the window, fountaining.

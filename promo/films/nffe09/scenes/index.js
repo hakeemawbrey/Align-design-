@@ -1,9 +1,9 @@
-// nffe09: FRIENDS FIRST ep 9, "Good news, shared" (25 s vertical, star_advice, music: pop · G).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe09: FRIENDS FIRST ep 9, "Good news, shared" (23 s vertical, star_advice, music: pop · G).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.2    "Good news, but your | friend is *struggling.*"  The couch: Leo, mid-hop, hides a JOB OFFER letter behind
 //              their back; Capricorn slumps beside them with a mug. LEO: "I got the job. but they're *struggling*."
 //              Pisces sniffles on the rug.
-//   7.2        card cut.  THE STARS: "friends can hold *both*." → "share it. let them choose to *celebrate*."
+//   7.2        hard cut.  THE STARS: "friends can hold *both*." → "share it. let them choose to *celebrate*."
 //   13.6       the couch: Leo shows the letter. Capricorn's eyes go wide… and Capricorn throws the confetti first:
 //              "THAT'S AMAZING. tell me everything!"  Both hop; Pisces fountains.
 //   17.2       Last line: "Your joy is *welcome* here."

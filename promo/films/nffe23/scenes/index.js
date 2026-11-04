@@ -1,8 +1,8 @@
-// nffe23: FRIENDS FIRST ep 23, "After the holidays" (20 s vertical, star_advice, music: synthwave · Am).
-// Story 0–15.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe23: FRIENDS FIRST ep 23, "After the holidays" (18 s vertical, star_advice, music: synthwave · Am).
+// Story 0–15.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–5.0    "The holidays are over. | *Check in anyway.*"  Taurus alone in a quiet room, mid-hop, winding up a string
 //              of fairy lights into a DECOR box; the bulbs blink out one by one. Pisces sniffles on the couch arm.
-//   5.0        card cut.  THE STARS: "the quiet days after are hard *too*."
+//   5.0        hard cut.  THE STARS: "the quiet days after are hard *too*."
 //   9.8        CHECK-IN: "how are you doing *now that it's quiet?*"  Taurus's phone buzzes: "so glad you asked."  Hearts.
 //   12.4       Last line: "Check in *after*, too."
 import { makeFriends, stars, bubble, box, R, INK, label, glow, phoneSmall, hearts, sparkles, clamp, prog } from '../../nffe01/scenes/friendskit.js'

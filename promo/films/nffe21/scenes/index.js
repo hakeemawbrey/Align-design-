@@ -1,8 +1,8 @@
-// nffe21: FRIENDS FIRST ep 21, "Quiet company" (25 s vertical, star_advice, music: lofi · Dm).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe21: FRIENDS FIRST ep 21, "Quiet company" (23 s vertical, star_advice, music: lofi · Dm).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.0    "Your friend doesn't | want to *talk.*"  Capricorn at a half-done jigsaw on the low table, mid-hop, eyes down.
 //              Taurus tiptoes in and hovers: "say something? say SOMETHING?!"  Pisces sniffles by the lamp.
-//   7.0        card cut.  THE STARS: "you don't need the right *words*." → "presence is a whole *sentence*."
+//   7.0        hard cut.  THE STARS: "you don't need the right *words*." → "presence is a whole *sentence*."
 //   13.6       Taurus sits and quietly finds an edge piece. The clock slides 8:00 → 9:00 PM; the puzzle fills piece by
 //              piece. CAPRICORN: "thanks for staying."  Hearts.
 //   17.2       Last line: "Just *be there.*"

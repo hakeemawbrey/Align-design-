@@ -1,9 +1,9 @@
-// nffe02: FRIENDS FIRST ep 2, "Check-in, not a quiz" (20 s vertical, star_advice, music: chiptune · C).
-// Story 0–15.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe02: FRIENDS FIRST ep 2, "Check-in, not a quiz" (18 s vertical, star_advice, music: chiptune · C).
+// Story 0–15.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–5.2    "A check-in, | not a *quiz.*"  The café. Gemini, mid-hop, fires question bubbles at Capricorn: "are you
 //              ok?" "why?" "since when?" "is it work?" "is it me?" "do you need a PLAN?"  Capricorn shrinks behind
 //              the mug: "…um."  Pisces sniffles by the chalkboard.
-//   5.2        card cut.  THE STARS: "one soft question. then let the *quiet* work."
+//   5.2        hard cut.  THE STARS: "one soft question. then let the *quiet* work."
 //   10.0       the café again, calm. GEMINI: "how are you, really?" … a beat of quiet … CAPRICORN: "honestly? tired.
 //              can I tell you about it?"  Gemini nods; hearts.
 //   12.6       Last line: "Ask once. *Hear everything.*"

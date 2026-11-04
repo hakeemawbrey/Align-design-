@@ -1,9 +1,9 @@
-// nffe04: FRIENDS FIRST ep 4, "The plan you can say no to" (20 s vertical, star_advice, music: jazzy · F).
-// Story 0–15.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe04: FRIENDS FIRST ep 4, "The plan you can say no to" (18 s vertical, star_advice, music: jazzy · F).
+// Story 0–15.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–5.0    "An invite with | an *easy out.*"  The kitchen table: Cancer, mid-hop, pen in hand, writes an invitation
 //              card for Capricorn: "MOVIE NIGHT, FRIDAY · pyjamas welcome · leave whenever · 'no' is totally fine ♡".
 //              Pisces sniffles at the counter.
-//   5.0        card cut.  THE STARS: "make yes *easy*. make no *easier*."
+//   5.0        hard cut.  THE STARS: "make yes *easy*. make no *easier*."
 //   9.8        Friday, the couch: CAPRICORN (bubble): "maybe for one movie?" → the screen's glow reads "MOVIE 2 OF 2";
 //              Capricorn is still there, in pyjamas, laughing, popcorn everywhere.
 //   12.4       Last line: "Make *no* easy."

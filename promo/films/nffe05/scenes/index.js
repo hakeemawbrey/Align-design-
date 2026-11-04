@@ -1,9 +1,9 @@
-// nffe05: FRIENDS FIRST ep 5, "The cancelled-plans friend" (25 s vertical, star_advice, music: funk · E).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe05: FRIENDS FIRST ep 5, "The cancelled-plans friend" (23 s vertical, star_advice, music: funk · E).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.2    "They cancelled. | *Again.*"  The café, a table for two: Leo, mid-hop, an empty chair, a cooling mug.
 //              The phone: GEMINI "rain check!!" · "next week for sure!!" · "so sorry, can't tonight!!"  LEO: "that's three
 //              times. I'm keeping *score*." A paper scorecard (CANCELLED: III)… Leo crumples it. Pisces sniffles.
-//   7.2        card cut.  THE STARS: "skip the scorecard. say how it *felt*, once." → "then ask what's *going on* with them."
+//   7.2        hard cut.  THE STARS: "skip the scorecard. say how it *felt*, once." → "then ask what's *going on* with them."
 //   13.9       the café, the phone: LEO "I miss you. is everything okay?" · typing… · GEMINI "honestly? I'm overbooked.
 //              lunch sunday? just us."  Leo lights up; hearts.
 //   17.6       Last line: "Say it *once*, kindly."

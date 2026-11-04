@@ -1,9 +1,9 @@
-// nffe17: FRIENDS FIRST ep 17, "Let your friends help" (25 s vertical, star_advice, music: house · A).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe17: FRIENDS FIRST ep 17, "Let your friends help" (23 s vertical, star_advice, music: house · A).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.2    "You *never* ask | for help."  Capricorn, mid-hop, wrestling a wobbly bookshelf alone, the instructions on
 //              the floor. The shelf sways… and folds flat with a soft THUMP (a dust puff, nobody hurt).
 //              CAPRICORN: "totally under *control*."  Pisces peeks from behind the lamp.
-//   7.2        card cut.  THE STARS: "letting friends help is a gift to *them*, too." → "one word works: *help?*"
+//   7.2        hard cut.  THE STARS: "letting friends help is a gift to *them*, too." → "one word works: *help?*"
 //   13.7       Capricorn sends "…help?" and the friends pop in from every side: Taurus, Leo, Virgo, Gemini. The shelf
 //              stands, books and all; everyone hops.
 //   17.2       Last line: "Say yes to *help.*"

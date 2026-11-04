@@ -1,8 +1,8 @@
-// nffe20: FRIENDS FIRST ep 20, "Thank your friend" (20 s vertical, star_advice, music: jazzy · Ab).
-// Story 0–15.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe20: FRIENDS FIRST ep 20, "Thank your friend" (18 s vertical, star_advice, music: jazzy · Ab).
+// Story 0–15.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–5.0    "When did you last | *thank* a friend?"  Cancer at the kitchen table, mid-hop, writing a note that writes
 //              on: "Dear Taurus, thank you for every Tuesday call this year. You kept me going." Pisces sniffles.
-//   5.0        card cut.  THE STARS: "be specific. name the *thing* they did."
+//   5.0        hard cut.  THE STARS: "be specific. name the *thing* they did."
 //   9.8        the couch: Taurus reads the note… "I didn't think you noticed."  Taurus cries; Pisces, right beside,
 //              cries harder. Cancer hugs in. Hearts.
 //   12.4       Last line: "Thank them *for the thing.*"

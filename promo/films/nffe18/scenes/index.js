@@ -1,9 +1,9 @@
-// nffe18: FRIENDS FIRST ep 18, "The weekly check-in" (20 s vertical, star_advice, music: chiptune · E).
-// Story 0–15.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe18: FRIENDS FIRST ep 18, "The weekly check-in" (18 s vertical, star_advice, music: chiptune · E).
+// Story 0–15.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–5.0    "Our group chat has | *one rule.*"  Cancer on the couch, mid-hop, phone up. The pinned message: ROSE +
 //              THORN SUNDAY, one good thing and one hard thing. TAURUS "rose: the soup worked. thorn: still sniffly" ·
 //              LEO "rose: NEW JOB. thorn: nervous!!" · VIRGO "rose: labels. thorn: out of labels"
-//   5.0        card cut.  THE STARS: "a small ritual makes honesty *normal*."
+//   5.0        hard cut.  THE STARS: "a small ritual makes honesty *normal*."
 //   9.8        Capricorn's turn: "rose: you all. thorn: this month's been heavy."  The replies pour in: "here for you ♡",
 //              "soup incoming", "walk tomorrow?", "♡♡♡". Capricorn smiles.
 //   12.4       Last line: "One rose, *one thorn.*"

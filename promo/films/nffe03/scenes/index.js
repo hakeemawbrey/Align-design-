@@ -1,9 +1,9 @@
-// nffe03: FRIENDS FIRST ep 3, "December is hard for some friends" (25 s vertical, star_advice, music: dreamy · Db).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe03: FRIENDS FIRST ep 3, "December is hard for some friends" (23 s vertical, star_advice, music: dreamy · Db).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.4    "Not every friend | *loves* December."  Cancer's living room: Cancer hops around a little pixel
 //              tree hanging ornaments; Taurus stands apart holding one ornament, quiet. TAURUS: "first December without
 //              my grandma."  Everyone goes still. Pisces, by the tree, sniffles.
-//   7.4        card cut.  THE STARS: "you don't have to *fix* it." → "make room for the party *and* the quiet."
+//   7.4        hard cut.  THE STARS: "you don't have to *fix* it." → "make room for the party *and* the quiet."
 //   13.8       the room again, softer. CHECK-IN: "want company, or want quiet? *both are okay.*"  Taurus hangs the
 //              ornament; the friends lean in close; hearts.
 //   17.2       Last line: "Room for *both.*"

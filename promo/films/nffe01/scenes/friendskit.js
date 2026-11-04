@@ -1,10 +1,10 @@
 // FRIENDS FIRST: the shared look of the 24 Friends First films nffe01–nffe24 (promo/films/next30/b34.md). Lives in
 // nffe01's folder; the other 23 episodes import it from here ('../../nffe01/scenes/friendskit.js').
 //
-// The format (20 / 25 / 30 s, the last 4.4 s is the shared end card):
+// The format (cfg.dur 20 / 25 / 30 → films of 18 / 23 / 28 s; the last 2.4 s is the short shared end card):
 //   frame 0     the hook caption is already up (bold top caption, one *italic* accent) over a set, with a character
 //               mid-hop. Shot A: the situation.
-//   card cut    one card transition into shot B: THE STARS' advice (dialogue box).
+//   cut         a hard cut (white blink) into shot B: THE STARS' advice (dialogue box). No card transition.
 //   shot C      the friend does the kind thing: the CHECK-IN card (the words to send) and the last line.
 // The bug "FRIENDS FIRST" sits top-left (Inter 800 small caps, letter-spaced, 56 px in). ♓ Pisces cries somewhere in
 // every film (happy tears count): the kit draws Pisces per shot unless the shot says `pis: false`.
@@ -17,15 +17,15 @@
 //                S = { u (time in shot), t0, t1, star, pisces, i }
 //     cfg.lines: [{ t, speaker, text, color }]   cfg.boxes: [{ from, to, open, close, y }] (default: one box)
 //     cfg.check: { at, out, text, label }    the CHECK-IN card (talk-card look), text with one *accent*
-//     cfg.last: { at, text, color }           cfg.cut: card-cut time (also where shot B starts, usually)
+//     cfg.last: { at, text, color }           cfg.cut: where shot B starts (kept for reference; no card cut plays)
 //     cfg.cues: extra sound cues             cfg.overlay(x, t) optional top-layer painter (phones etc.)
 // Everything draws as a pure function of t; DOM / canvases are only made inside build().
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -551,8 +551,9 @@ function buildCheck(root, { at, out, text, label: lab = 'CHECK-IN', top = 470, a
 
 // ═══════════════════════════════════════════════════════════════════════════ the episode
 export function makeFriends(cfg) {
-  const DURATION = cfg.dur
-  const STORY_END = DURATION - ENDCARD_LEN
+  // the story runs to cfg.dur − 4.4 exactly as written; the short end card (2.4 s) makes the film 2.0 s shorter
+  const DURATION = cfg.dur - 2
+  const STORY_END = DURATION - ENDCARD_SHORT_LEN
   const CPS = cfg.cps ?? 30
   const LINES = cfg.lines || []
   const BOXES = (cfg.boxes || [{ from: 0, to: LINES.length }]).map(b => ({ ...b, open: b.open ?? LINES[b.from].t - 0.22 }))
@@ -610,17 +611,16 @@ export function makeFriends(cfg) {
         for (const b of boxes) b.update(t)
         last.update(t, outK(t, LAST_OUT))
         bug.update(t, outK(t, [STORY_END - 0.3, STORY_END]))
-        // white blink on the hard cuts (not the card cut)
+        // white blink on every hard cut (no card transition)
         let fl = 0
-        for (const s of SHOTS) if (s.at > 0 && Math.abs(s.at - (cfg.cut ?? -9)) > 0.05 && t >= s.at && t < s.at + 0.12) fl = 1 - (t - s.at) / 0.12
+        for (const s of SHOTS) if (s.at > 0 && t >= s.at && t < s.at + 0.12) fl = 1 - (t - s.at) / 0.12
         flash.style.opacity = String(0.45 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  const CUTS = [{ t: cfg.cut, kind: cfg.cutKind || 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -629,15 +629,14 @@ export function makeFriends(cfg) {
   const lastWords = cfg.last.text.split(/\s+/).length
   const CUES = [
     ['pop', 0.04, 1174.66, 0.04, 0], ['pluck', 0.06, 1567.98, 0.025, 0.4, 0.2],
-    ...SHOTS.filter(s => s.at > 0 && Math.abs(s.at - cfg.cut) > 0.05).flatMap(s => [['whoosh', r3(s.at - 0.07), 0.26, 0.03], ['tick', r3(s.at), 0.04]]),
+    ...SHOTS.filter(s => s.at > 0).flatMap(s => [['whoosh', r3(s.at - 0.07), 0.26, 0.03], ['tick', r3(s.at), 0.04]]),
     ['whoosh', r3(cfg.hook.out - 0.2), 0.25, 0.02],
     ...BOXES.map(b => ['pop', r3(b.open), 739.99, 0.03, 0]),
     ...(LINES.length ? talkCues(LINES, { cps: CPS, pitch: PITCH }) : []),
     ...(cfg.check ? [['whoosh', r3(cfg.check.at - 0.05), 0.4, 0.035], ['pluck', r3(cfg.check.at + 0.3), 1318.51, 0.035, 0.6, 0], ['bell', r3(cfg.check.at + 0.34), 1760, 0.02, 1.0, 0.2], ['whoosh', r3(cfg.check.out[0]), 0.3, 0.02]] : []),
     ...wordPops(cfg.last.at, Math.max(1, lastWords - 1), 0.08, 2), ['pop', r3(cfg.last.at + 0.4), 1174.66, 0.05, 0], ['bell', r3(cfg.last.at + 0.42), 1567.98, 0.025, 1.2, 0], ['glitter', r3(cfg.last.at + 0.4), r3(cfg.last.at + 0.8)],
     ...(cfg.cues || []).map(c => c.map((v, j) => (j === 1 || (c[0] === 'glitter' && j === 2) || (c[0] === 'riser' && j === 2)) && typeof v === 'number' ? r3(v) : v)),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
 
   // readability check (node only): each line ≥ 1.5 s on screen after it finishes typing
@@ -647,5 +646,5 @@ export function makeFriends(cfg) {
     tm.forEach((m, n) => { const nxt = n + 1 < ls.length ? ls[n + 1].t : b.close; if (nxt - m.done < 1.5) warn.push(`${cfg.id}: line "${ls[n].text}" only ${(nxt - m.done).toFixed(2)} s after typing`) })
     ls.forEach(l => { if (l.text.replace(/\*/g, '').length > 70) warn.push(`${cfg.id}: line over 70 chars: ${l.text}`) })
   })
-  return { DURATION, STORY_END, SCENES, CUES, LINES, BOXES, CUTS, warn }
+  return { DURATION, STORY_END, SCENES, CUES, LINES, BOXES, warn }
 }

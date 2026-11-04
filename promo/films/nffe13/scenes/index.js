@@ -1,8 +1,8 @@
-// nffe13: FRIENDS FIRST ep 13, "Far away for the holidays" (25 s vertical, star_advice, music: dreamy · Eb).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe13: FRIENDS FIRST ep 13, "Far away for the holidays" (23 s vertical, star_advice, music: dreamy · Eb).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.0    "Your friend can't | come *home* this year."  Aquarius in a small room in the new city, mid-hop, next to a
 //              tiny pixel tree with one ornament. AQUARIUS: "it's fine. it's just one *December*."  Pisces sniffles.
-//   7.0        card cut.  Cancer's kitchen: Cancer, Taurus and Leo each write a note and stuff one envelope; THE STARS
+//   7.0        hard cut.  Cancer's kitchen: Cancer, Taurus and Leo each write a note and stuff one envelope; THE STARS
 //              watch through the window: "send something they can *hold*." → "a note from each of you. by *hand*."
 //   13.6       Aquarius's room: the envelope arrives, opens, and the notes fan out, every friend's handwriting:
 //              "miss your laugh" · "save me a snowball" · "you're a call away" · "(this one is just tears) ♡".

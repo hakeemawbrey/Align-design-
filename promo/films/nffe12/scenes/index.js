@@ -1,9 +1,9 @@
-// nffe12: FRIENDS FIRST ep 12, "Boundaries with friends" (30 s vertical, star_advice, music: cinematic · Dm).
-// Story 0–25.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe12: FRIENDS FIRST ep 12, "Boundaries with friends" (28 s vertical, star_advice, music: cinematic · Dm).
+// Story 0–25.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–8.6    "It's 1 AM. They want | to *vent.* Again."  Cancer in bed, mid-jolt, the phone buzzing on the nightstand
 //              (GEMINI, calling). The clock: 1:04 AM. Cancer answers: "okay so you will NOT believe…"  A tally of
 //              nights stacks up: MON · TUE · WED · THU. CANCER: "I love them. but I'm running on *empty*."
-//   8.6        card cut.  THE STARS: "a boundary is care for *both* of you." → "say the no *and* the next yes."
+//   8.6        hard cut.  THE STARS: "a boundary is care for *both* of you." → "say the no *and* the next yes."
 //   15.8       the next evening, the phone: CANCER "I love you, and I can't talk tonight. lunch tomorrow?" · GEMINI
 //              "deal. thank you for telling me ♡"
 //   20.5       lunch at the café: both rested, laughing, mugs up. Last line: "*Tomorrow* is still love."

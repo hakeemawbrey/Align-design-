@@ -1,8 +1,8 @@
-// nffe11: FRIENDS FIRST ep 11, "The tiny check-in" (20 s vertical, star_advice, music: chiptune · A).
-// Story 0–15.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe11: FRIENDS FIRST ep 11, "The tiny check-in" (18 s vertical, star_advice, music: chiptune · A).
+// Story 0–15.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–5.0    "No energy to | *text back?*"  Capricorn under a blanket, mid-hop, phone up: 14 UNREAD in the group. Capricorn
 //              types a long apology paragraph… strikes it out. Pisces sniffles on the rug.
-//   5.0        card cut.  THE STARS: "small check-ins *count*. send the tiny one."
+//   5.0        hard cut.  THE STARS: "small check-ins *count*. send the tiny one."
 //   9.8        the phone: Capricorn sends a ten-second voice note: "alive. tired. love you."  The group answers with
 //              hearts: GEMINI "♡♡♡" · TAURUS "love you too" · CANCER "proud of you ♡".
 //   12.4       Last line: "Small counts. *Always.*"

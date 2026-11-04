@@ -1,9 +1,9 @@
-// nffe22: FRIENDS FIRST ep 22, "Talk cards at friends' night" (25 s vertical, star_advice, music: pop · F).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe22: FRIENDS FIRST ep 22, "Talk cards at friends' night" (23 s vertical, star_advice, music: pop · F).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–6.6    "One question changed | *friends' night.*"  The long table, phones in a basket, Gemini mid-hop. A talk card
 //              flips: "What made you proud this year?"  GEMINI: "surviving my group chat."  LEO: "my hair, honestly."
 //              Everyone laughs. Pisces sniffles at the end of the table.
-//   6.6        card cut.  THE STARS: "one real question makes room for a *real* answer."
+//   6.6        hard cut.  THE STARS: "one real question makes room for a *real* answer."
 //   10.8       the table. CAPRICORN: "honestly? letting you all help me."  A beat of quiet… then everyone cheers;
 //              LEO: "PROUD OF YOU!!"  Confetti, hearts, Pisces fountains.
 //   17.0       Last line: "Ask what *matters.*"

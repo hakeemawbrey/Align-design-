@@ -1,8 +1,8 @@
-// nffe08: FRIENDS FIRST ep 8, "Show up with soup" (20 s vertical, star_advice, music: pop · D).
-// Story 0–15.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe08: FRIENDS FIRST ep 8, "Show up with soup" (18 s vertical, star_advice, music: pop · D).
+// Story 0–15.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–5.0    "Your friend | is *sick.*"  Taurus in bed under three blankets beside a tissue mountain, mid-sneeze
 //              (ACHOO!). Pisces cries in sympathy at the bedside.
-//   5.0        card cut.  The snowy street: Virgo marches up to Taurus's door with a pot of soup. THE STARS (in the
+//   5.0        hard cut.  The snowy street: Virgo marches up to Taurus's door with a pot of soup. THE STARS (in the
 //              sky): "care they don't have to *host*."
 //   9.8        CHECK-IN: "soup's at your door. *no need to chat.*"  Virgo sets the pot on the step, waves, and goes. The door
 //              opens a crack: Taurus, still in the blanket, finds the steaming pot. Hearts.

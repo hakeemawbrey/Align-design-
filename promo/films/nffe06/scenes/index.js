@@ -1,9 +1,9 @@
-// nffe06: FRIENDS FIRST ep 6, "Long-distance friends" (30 s vertical, star_advice, music: synthwave · F#m).
-// Story 0–25.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe06: FRIENDS FIRST ep 6, "Long-distance friends" (28 s vertical, star_advice, music: synthwave · F#m).
+// Story 0–25.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–8.6    "Your best friend | *moved away.*"  Split screen. Right: Aquarius in a new city, mid-hop, unpacking boxes.
 //              Left: Taurus alone on a cushion with a phone. Each half has its own clock. Taurus calls; Aquarius is
 //              buried in boxes: MISSED CALL. Aquarius calls back; Taurus is asleep: MISSED CALL. Pisces sniffles.
-//   8.6        card cut.  THE STARS: "a ritual beats a *perfect* plan." → "pick one time. keep it *small*. keep it."
+//   8.6        hard cut.  THE STARS: "a ritual beats a *perfect* plan." → "pick one time. keep it *small*. keep it."
 //   16.0       split again. CHECK-IN: "sunday call? same time, *every week.*"  Sunday: both on the call, matching mugs,
 //              laughing; hearts float across the divider.
 //   20.4       Last line: "Same time. *Every Sunday.*"

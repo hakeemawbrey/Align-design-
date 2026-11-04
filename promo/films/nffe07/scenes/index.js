@@ -1,9 +1,9 @@
-// nffe07: FRIENDS FIRST ep 7, "Who checks on the checker?" (25 s vertical, star_advice, music: lofi · Bm).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe07: FRIENDS FIRST ep 7, "Who checks on the checker?" (23 s vertical, star_advice, music: lofi · Bm).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.0    "The friend who | *always* listens."  The couch: Cancer, mid-nod, a phone at each ear. Bubbles pile in
 //              from everyone: "can I vent real quick?" "do you think they like me?" "and THEN my boss…"  Cancer: "mm-hm."
 //              CANCER: "of course! I'm here. *always.*"  …and slowly droops. Pisces sniffles by the lamp.
-//   7.0        card cut.  THE STARS: "the listener needs a *listener* too." → "ask them how *they* are. then wait."
+//   7.0        hard cut.  THE STARS: "the listener needs a *listener* too." → "ask them how *they* are. then wait."
 //   13.6       the couch. Virgo sits down with two mugs: "your turn. how are YOU?"  Cancer blinks… tears up: "…honestly?
 //              kind of tired."  Virgo leans in; hearts.
 //   17.2       Last line: "Check on the *checker.*"

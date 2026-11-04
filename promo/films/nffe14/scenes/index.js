@@ -1,8 +1,8 @@
-// nffe14: FRIENDS FIRST ep 14, "The hard date on the calendar" (20 s vertical, star_advice, music: lofi · Cm).
-// Story 0–15.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe14: FRIENDS FIRST ep 14, "The hard date on the calendar" (18 s vertical, star_advice, music: lofi · Cm).
+// Story 0–15.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–5.0    "Some days are | *heavy* every year."  Taurus at the kitchen calendar, mid-hop, circling one date in red,
 //              a little sticky note: "CAP ♡". Thought: "this week was so hard for Cap last year."  Pisces sniffles.
-//   5.0        card cut.  THE STARS: "remembering is a *gift*. say you remember."
+//   5.0        hard cut.  THE STARS: "remembering is a *gift*. say you remember."
 //   9.8        Capricorn on the couch. CHECK-IN: "thinking of you today. *here if you want.*"  Capricorn reads it twice
 //              and holds the phone to their heart; a happy tear; hearts.
 //   12.4       Last line: "You *remembered.*"

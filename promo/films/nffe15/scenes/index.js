@@ -1,8 +1,8 @@
-// nffe15: FRIENDS FIRST ep 15, "The new friend in the group" (25 s vertical, star_advice, music: funk · G).
-// Story 0–20.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe15: FRIENDS FIRST ep 15, "The new friend in the group" (23 s vertical, star_advice, music: funk · G).
+// Story 0–20.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–7.0    "The group has a | *new friend.*"  The café: Gemini, Leo and Cancer crack up at the table ("THE GOOSE!!"),
 //              mid-hop; Sagittarius, new, stands at the edge with a polite smile. SAGITTARIUS: "haha… what goose?"
-//   7.0        card cut.  THE STARS: "inside jokes are a closed *door*." → "explain the joke. let them *in*."
+//   7.0        hard cut.  THE STARS: "inside jokes are a closed *door*." → "explain the joke. let them *in*."
 //   13.6       the café: GEMINI "okay, so. the goose story." A pixel goose appears in a thought bubble… Sagittarius laughs
 //              hardest of all ("HONK!"). Everyone at one table; Pisces fountains.
 //   17.2       Last line: "Let them *in on it.*"

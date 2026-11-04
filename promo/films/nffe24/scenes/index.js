@@ -1,10 +1,10 @@
-// nffe24: FRIENDS FIRST ep 24 (finale), "The year's last friends' night" (30 s vertical, star_advice, music: cinematic · C).
-// Story 0–25.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe24: FRIENDS FIRST ep 24 (finale), "The year's last friends' night" (28 s vertical, star_advice, music: cinematic · C).
+// Story 0–25.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–8.6    "The whole group, | *together.*"  Cancer's living room, everyone in: Taurus, Capricorn and Cancer on the
 //              couch; Leo (mid-hop, popping confetti again), Libra with the cookie plate, Sagittarius with the SAG ♡ card,
 //              Gemini; Aquarius on the laptop call (ON CALL). The rebuilt bookshelf stands by the window. Pisces, on
 //              the couch arm, already fountaining.
-//   8.6        card cut.  THE STARS: "friendship is a hundred small *check-ins*." → "and every one of them *counted*."
+//   8.6        hard cut.  THE STARS: "friendship is a hundred small *check-ins*." → "and every one of them *counted*."
 //   15.8       Capricorn stands up, phone raised, and reads out the message from ep 1, now theirs: "no reply needed."
 //              … "I just love you all."  Everyone replies anyway, all at once: LOVE YOU!! · ♡♡♡ · REPLYING ANYWAY ·
 //              SAME!!  Confetti, hearts.

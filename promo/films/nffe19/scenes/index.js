@@ -1,9 +1,9 @@
-// nffe19: FRIENDS FIRST ep 19, "The friend who's alone this year" (30 s vertical, star_advice, music: dreamy · F).
-// Story 0–25.6, then the shared end card. Look: ../../nffe01/scenes/friendskit.js.
+// nffe19: FRIENDS FIRST ep 19, "The friend who's alone this year" (28 s vertical, star_advice, music: dreamy · F).
+// Story 0–25.6, then the short shared end card (2.4 s). Look: ../../nffe01/scenes/friendskit.js.
 //   0.0–8.6    "Your friend is spending | the holidays *alone.*"  A snowy park bench: Sagittarius, alone, mid-hop, phone
 //              out. Cancer arrives: "what are you doing for the holidays?" SAG (too fast): "oh I'm FINE with it! totally!"
 //              CANCER: "well… come by sometime?" SAG: "maybe!"  Pisces sniffles by the lamp post.
-//   8.6        card cut.  THE STARS: "a vague invite is easy to *refuse*." → "be specific: a day, a time, a *seat*."
+//   8.6        hard cut.  THE STARS: "a vague invite is easy to *refuse*." → "be specific: a day, a time, a *seat*."
 //   15.8       the phone: CANCER "dinner on the 26th, 6 PM. we saved you a seat." · SAG "…really? I'd love that."
 //   19.5       the long table: a name card reads SAG. Sagittarius sits with everyone; hearts.
 //   21.0       Last line: "There's a *seat* for you."
