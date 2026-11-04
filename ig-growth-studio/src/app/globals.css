@@ -119,3 +119,12 @@ button.link { border: 0; background: none; padding: 0; color: var(--accent); fon
   .cal-day { min-height: 64px; }
   .cal-post .cal-user, .cal-post .cal-time { display: none; }
 }
+
+/* dashboard overview */
+.avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; background: var(--border); flex: none; display: inline-block; }
+.spark.mini { height: 28px; width: 100px; display: block; }
+
+/* account chooser */
+.choose { display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.choice { display: flex; gap: 8px; align-items: center; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
+.choice input { width: auto; }

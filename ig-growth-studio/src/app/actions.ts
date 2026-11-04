@@ -4,7 +4,9 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import {
+  addFromPendingLogin,
   addNiche,
+  clearPendingLogin,
   deleteDraft,
   getAccount,
   getDb,
@@ -126,4 +128,15 @@ export async function disconnect() {
   removeAllAccounts(getDb());
   revalidatePath("/", "layout");
   redirect("/settings");
+}
+
+export async function addChosenAccounts(form: FormData) {
+  const added = addFromPendingLogin(getDb(), form.getAll("igUserId").map(String));
+  revalidatePath("/", "layout");
+  redirect(added.length ? `/settings?connected=${encodeURIComponent(added.join(","))}` : "/settings");
+}
+
+export async function skipPendingAccounts() {
+  clearPendingLogin(getDb());
+  revalidatePath("/settings");
 }

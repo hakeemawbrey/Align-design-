@@ -60,3 +60,43 @@ describe("loginUrl", () => {
     delete process.env.META_LOGIN_CONFIG_ID;
   });
 });
+
+describe("linkedInstagramAccounts", () => {
+  it("combines Page-linked and business-portfolio accounts, follows paging and skips duplicates", async () => {
+    const { client } = fakeGraph({
+      "GET me/accounts": (url) =>
+        url.searchParams.get("after") === "P2"
+          ? { data: [{ id: "pg2", name: "Bevbabes", instagram_business_account: { id: "2", username: "bev" } }] }
+          : {
+              data: [
+                { id: "pg1", name: "Come Align", instagram_business_account: { id: "1", username: "comealign" } },
+                { id: "pg3", name: "No IG" },
+              ],
+              paging: { cursors: { after: "P2" }, next: "https://graph.facebook.com/next" },
+            },
+      "GET me/businesses": () => ({ data: [{ id: "B1", name: "Shopify Business Manager" }, { id: "B2", name: "Broken" }] }),
+      "GET B1/owned_instagram_assets": () => ({
+        data: [
+          { id: "a1", ig_user_id: "3", ig_username: "highasakitebook" },
+          { id: "a2", ig_user_id: "1", ig_username: "comealign" },
+        ],
+      }),
+      "GET B1/client_instagram_assets": () => ({ data: [] }),
+      "GET B2/owned_instagram_assets": () => graphError(200, "No permission"),
+      "GET B2/client_instagram_assets": () => graphError(200, "No permission"),
+    });
+    expect(await client.linkedInstagramAccounts()).toEqual([
+      { igUserId: "2", username: "bev", pageName: "Bevbabes" },
+      { igUserId: "1", username: "comealign", pageName: "Come Align" },
+      { igUserId: "3", username: "highasakitebook", pageName: "Shopify Business Manager (business portfolio)" },
+    ]);
+  });
+
+  it("still returns Page-linked accounts when business portfolios cannot be read", async () => {
+    const { client } = fakeGraph({
+      "GET me/accounts": () => ({ data: [{ id: "pg1", name: "P", instagram_business_account: { id: "1", username: "a" } }] }),
+      "GET me/businesses": () => graphError(10, "Missing business_management"),
+    });
+    expect((await client.linkedInstagramAccounts()).map((a) => a.username)).toEqual(["a"]);
+  });
+});

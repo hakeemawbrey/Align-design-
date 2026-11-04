@@ -1,7 +1,8 @@
-import { disconnect, removeAccountAction, selectAccount } from "@/app/actions";
+import { addChosenAccounts, disconnect, removeAccountAction, selectAccount, skipPendingAccounts } from "@/app/actions";
+import { ChooseAccounts } from "@/components/ChooseAccounts";
 import { LocalTime } from "@/components/LocalTime";
 import { config } from "@/lib/config";
-import { getAccount, getDb, listAccounts } from "@/lib/db";
+import { getAccount, getDb, getPendingLogin, listAccounts } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -10,10 +11,11 @@ export default async function SettingsPage({
 }: {
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
-  const { error, connected } = await searchParams;
+  const { error, connected, refreshed } = await searchParams;
   const db = getDb();
   const accounts = listAccounts(db);
   const active = getAccount(db);
+  const pending = getPendingLogin(db);
   const appReady = Boolean(config.appId && config.appSecret);
   const soon = (iso: string | null) => iso !== null && new Date(iso).getTime() - Date.now() < 7 * 86_400_000;
 
@@ -31,6 +33,31 @@ export default async function SettingsPage({
         </p>
       )}
 
+      {refreshed && Number(refreshed) > 0 && !pending && (
+        <p className="ok">
+          Renewed access for {refreshed} connected account{refreshed === "1" ? "" : "s"}. No new accounts found.
+        </p>
+      )}
+
+      {pending && (
+        <>
+          <h2>Choose accounts to add</h2>
+          <div className="card stack">
+            <p style={{ margin: 0 }}>
+              Facebook gave access to {pending.accounts.length} account{pending.accounts.length === 1 ? "" : "s"} you
+              haven&apos;t added yet. Tick the ones you want.
+              {refreshed && Number(refreshed) > 0 && ` Access was renewed for the ${refreshed} you already have.`}
+            </p>
+            <ChooseAccounts
+              accounts={pending.accounts}
+              defaultChecked={accounts.length === 0}
+              addAction={addChosenAccounts}
+              skipAction={skipPendingAccounts}
+            />
+          </div>
+        </>
+      )}
+
       <h2>Instagram accounts</h2>
       <div className="card stack">
         {accounts.length > 0 ? (
@@ -39,7 +66,7 @@ export default async function SettingsPage({
               <thead>
                 <tr>
                   <th>Account</th>
-                  <th>Facebook Page</th>
+                  <th>Linked via</th>
                   <th>Access expires</th>
                   <th />
                 </tr>
@@ -93,8 +120,8 @@ export default async function SettingsPage({
         <p className="muted small" style={{ margin: 0 }}>
           To add accounts, click below. On Facebook, choose <strong>Edit settings</strong> and tick every Page and
           Instagram account you want, or <strong>Log into another account</strong> to add accounts from a different
-          Facebook login. Accounts you already added stay connected. Each Instagram account must be Business or Creator
-          and linked to a Facebook Page.
+          Facebook login. You then choose which new accounts to add; accounts you already added stay connected. Each Instagram account must be Business or Creator,
+          and either linked to a Facebook Page you manage or added to one of your business portfolios.
         </p>
         <div className="row">
           <a className="button primary" href="/api/auth/meta/start" aria-disabled={!appReady}>

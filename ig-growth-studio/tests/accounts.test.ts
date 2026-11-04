@@ -4,13 +4,16 @@ import os from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
+  addFromPendingLogin,
   getAccount,
+  getPendingLogin,
   listAccounts,
   listNiche,
   listPosts,
   listSnapshots,
   openDb,
   removeAccount,
+  savePendingLogin,
   setActiveAccount,
   upsertAccounts,
 } from "../src/lib/db";
@@ -85,5 +88,38 @@ describe("migration from the single-account database", () => {
     const again = openDb(file);
     expect(listAccounts(again)).toHaveLength(2);
     again.close();
+  });
+});
+
+describe("choosing accounts after login", () => {
+  const found = [
+    { igUserId: "7", username: "star_talk.md", pageName: "Zodiac (business portfolio)" },
+    { igUserId: "8", username: "highasakitebook", pageName: "Shopify (business portfolio)" },
+  ];
+
+  it("adds only the ticked accounts with the new token, then clears the list", () => {
+    const db = openDb(":memory:");
+    upsertAccounts(db, [acct("1", "comealign")]);
+    savePendingLogin(db, { token: "NEW", expiresAt: null, accounts: found });
+    expect(addFromPendingLogin(db, ["8"])).toEqual(["highasakitebook"]);
+    expect(listAccounts(db).map((a) => a.username)).toEqual(["comealign", "highasakitebook"]);
+    expect(getAccount(db, "8")!.token).toBe("NEW");
+    expect(getAccount(db)!.username).toBe("comealign"); // selection unchanged
+    expect(getPendingLogin(db)).toBeNull();
+    expect(addFromPendingLogin(db, ["7"])).toEqual([]); // nothing left to add
+  });
+
+  it("selects the first added account when none were connected", () => {
+    const db = openDb(":memory:");
+    savePendingLogin(db, { token: "T", expiresAt: null, accounts: found });
+    addFromPendingLogin(db, ["7", "8"]);
+    expect(getAccount(db)!.username).toBe("star_talk.md");
+  });
+
+  it("expires after 30 minutes", () => {
+    const db = openDb(":memory:");
+    savePendingLogin(db, { token: "T", expiresAt: null, accounts: found });
+    expect(getPendingLogin(db, new Date(Date.now() + 31 * 60_000))).toBeNull();
+    expect(getPendingLogin(db)).toBeNull();
   });
 });

@@ -422,3 +422,45 @@ export function listDrafts(db: DB, igUserId: string): Map<string, string> {
 export function deleteDraft(db: DB, commentId: string) {
   db.prepare("DELETE FROM reply_drafts WHERE comment_id = ?").run(commentId);
 }
+
+// ---- accounts found at login, waiting for the owner to choose ----
+
+export interface PendingLogin {
+  token: string;
+  expiresAt: string | null;
+  accounts: { igUserId: string; username: string; pageName: string }[];
+  createdAt: string;
+}
+
+const PENDING_TTL_MS = 30 * 60_000;
+
+export function savePendingLogin(db: DB, p: Omit<PendingLogin, "createdAt">) {
+  setSetting(db, "pending_login", JSON.stringify({ ...p, createdAt: new Date().toISOString() }));
+}
+
+export function getPendingLogin(db: DB, now = new Date()): PendingLogin | null {
+  const raw = getSetting(db, "pending_login");
+  if (!raw) return null;
+  const p = JSON.parse(raw) as PendingLogin;
+  if (now.getTime() - new Date(p.createdAt).getTime() > PENDING_TTL_MS) {
+    setSetting(db, "pending_login", null);
+    return null;
+  }
+  return p;
+}
+
+/** Adds the chosen accounts from the pending login, then forgets the rest. Returns the usernames added. */
+export function addFromPendingLogin(db: DB, igUserIds: string[]): string[] {
+  const p = getPendingLogin(db);
+  setSetting(db, "pending_login", null);
+  if (!p) return [];
+  const chosen = p.accounts.filter((a) => igUserIds.includes(a.igUserId));
+  const hadAny = listAccounts(db).length > 0;
+  upsertAccounts(db, chosen.map((a) => ({ ...a, token: p.token, tokenExpiresAt: p.expiresAt })));
+  if (!hadAny && chosen[0]) setActiveAccount(db, chosen[0].igUserId);
+  return chosen.map((a) => a.username);
+}
+
+export function clearPendingLogin(db: DB) {
+  setSetting(db, "pending_login", null);
+}

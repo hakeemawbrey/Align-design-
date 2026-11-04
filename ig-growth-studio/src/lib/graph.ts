@@ -89,18 +89,66 @@ export class GraphClient {
     });
   }
 
-  /** Facebook Pages the user manages, with any linked Instagram professional account. */
-  async linkedInstagramAccounts() {
-    const res = await this.request<{
-      data: { id: string; name: string; instagram_business_account?: { id: string; username?: string } }[];
-    }>("GET", "me/accounts", { fields: "id,name,instagram_business_account{id,username}", limit: 100 });
-    return res.data
-      .filter((p) => p.instagram_business_account)
-      .map((p) => ({
-        pageName: p.name,
-        igUserId: p.instagram_business_account!.id,
-        username: p.instagram_business_account!.username ?? "",
-      }));
+  /** Every page of a list endpoint, following the `after` cursor. */
+  async all<T>(path: string, params: Params = {}, maxPages = 20): Promise<T[]> {
+    const out: T[] = [];
+    let after: string | undefined;
+    for (let i = 0; i < maxPages; i++) {
+      const res = await this.request<{ data: T[]; paging?: { cursors?: { after?: string }; next?: string } }>("GET", path, {
+        ...params,
+        after,
+      });
+      out.push(...res.data);
+      after = res.paging?.next ? res.paging.cursors?.after : undefined;
+      if (!after) break;
+    }
+    return out;
+  }
+
+  /**
+   * Instagram professional accounts this login can manage:
+   * 1. accounts linked to a Facebook Page the user manages, and
+   * 2. accounts held in the user's business portfolios (these need not be linked to a Page).
+   */
+  async linkedInstagramAccounts(): Promise<LinkedAccount[]> {
+    const found = new Map<string, LinkedAccount>();
+    const pages = await this.all<{ id: string; name: string; instagram_business_account?: { id: string; username?: string } }>(
+      "me/accounts",
+      { fields: "id,name,instagram_business_account{id,username}", limit: 100 },
+    );
+    for (const p of pages) {
+      const ig = p.instagram_business_account;
+      if (ig) found.set(ig.id, { igUserId: ig.id, username: ig.username ?? "", pageName: p.name });
+    }
+
+    // Business portfolios: a failure here (no business_management, no access) must not block login.
+    const businesses = await this.all<{ id: string; name: string }>("me/businesses", { fields: "id,name", limit: 100 }).catch(
+      () => [],
+    );
+    await Promise.all(
+      businesses.flatMap((b) =>
+        ["owned_instagram_assets", "client_instagram_assets"].map((edge) =>
+          this.all<{ ig_user_id?: string; ig_username?: string }>(`${b.id}/${edge}`, {
+            fields: "ig_user_id,ig_username",
+            limit: 100,
+          }).then(
+            (assets) => {
+              for (const a of assets) {
+                if (a.ig_user_id && !found.has(a.ig_user_id)) {
+                  found.set(a.ig_user_id, {
+                    igUserId: a.ig_user_id,
+                    username: a.ig_username ?? "",
+                    pageName: `${b.name.trim()} (business portfolio)`,
+                  });
+                }
+              }
+            },
+            () => undefined,
+          ),
+        ),
+      ),
+    );
+    return [...found.values()].sort((a, b) => a.username.localeCompare(b.username));
   }
 
   // ---------- account ----------
@@ -253,6 +301,13 @@ export interface Media {
   timestamp: string;
   like_count?: number;
   comments_count?: number;
+}
+
+export interface LinkedAccount {
+  igUserId: string;
+  username: string;
+  /** The Facebook Page it is linked to, or "<portfolio> (business portfolio)". */
+  pageName: string;
 }
 
 export interface Comment {

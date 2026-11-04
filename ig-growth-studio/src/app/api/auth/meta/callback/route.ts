@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { config } from "@/lib/config";
-import { getAccount, getDb, setActiveAccount, upsertAccounts } from "@/lib/db";
+import { getDb, listAccounts, savePendingLogin, upsertAccounts } from "@/lib/db";
 import { GraphClient } from "@/lib/graph";
 
 export async function GET(req: NextRequest) {
@@ -30,20 +30,23 @@ export async function GET(req: NextRequest) {
       return back(
         "error=" +
           encodeURIComponent(
-            "No Instagram professional account found. Switch the account to Business or Creator and link it to a Facebook Page you manage.",
+            "No Instagram professional account found. Switch the account to Business or Creator, then link it to a Facebook Page you manage or add it to your business portfolio.",
           ),
       );
     }
     const db = getDb();
     const expiresAt = long.expires_in ? new Date(Date.now() + long.expires_in * 1000).toISOString() : null;
-    // Adds new accounts and refreshes tokens for ones already connected; other accounts stay as they are.
-    const hadActive = getAccount(db) !== null;
+    // Accounts already connected just get the fresh token. New ones wait on Settings for the owner to pick.
+    const known = new Set(listAccounts(db).map((a) => a.igUserId));
+    const refreshed = linked.filter((a) => known.has(a.igUserId));
+    const found = linked.filter((a) => !known.has(a.igUserId));
     upsertAccounts(
       db,
-      linked.map((a) => ({ ...a, token: long.access_token, tokenExpiresAt: expiresAt })),
+      refreshed.map((a) => ({ ...a, token: long.access_token, tokenExpiresAt: expiresAt })),
     );
-    if (!hadActive) setActiveAccount(db, linked[0].igUserId);
-    return back(`connected=${encodeURIComponent(linked.map((a) => a.username).join(","))}`);
+    if (found.length === 0) return back(`refreshed=${refreshed.length}`);
+    savePendingLogin(db, { token: long.access_token, expiresAt, accounts: found });
+    return back(`choose=1&refreshed=${refreshed.length}`);
   } catch (err) {
     return back(`error=${encodeURIComponent(err instanceof Error ? err.message : "Login failed")}`);
   }
