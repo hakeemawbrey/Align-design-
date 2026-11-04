@@ -1,10 +1,10 @@
-// naske21 · Ask the Stars, Volume 2, ep 21 · "It's too cold to go on dates." (20 s, house · G)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske21 · Ask the Stars, Volume 2, ep 21 · "It's too cold to go on dates." (18 s, house · G)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "It's too *cold* to go on dates."  ♐ Sag in a giant puffer and a backpack, mid-hop through the snow,
 //         a map flapping in its hand.
 //   3.0   "cold is just a plan with a scarf on."  A scarf whips round its neck.
 //   5.9   "a winter market. a sunrise walk with cocoa."  String lights swing in; two cocoas pop up.
-//   8.75  card cut → 8.8 "or a night in, mapping trips you want."  A big map with dotted heart routes; Sag + partner.
+//   8.8   "or a night in, mapping trips you want."  A big map with dotted heart routes; Sag + partner.
 //   12.1  "Bundle up. | Say *yes.*"
 import { makeAsk, R, box, drawBits, mug, bubble, sparkles, hearts, shadow, inSprite, starFrame, scarfCells, hatCells, snowBank, label, drawPixelStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, PINK } from '../../naske19/scenes/askkit2.js'
 
