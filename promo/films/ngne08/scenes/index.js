@@ -1,5 +1,5 @@
-// ngne08: STAR TALK GAME NIGHT, Ep 8, "Taurus vs Virgo: Snack Diplomacy" (35 s vertical, earth signs,
-// music: lofi · Ab). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne08: STAR TALK GAME NIGHT, Ep 8, "Taurus vs Virgo: Snack Diplomacy" (33 s vertical, earth signs,
+// music: lofi · Ab). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "Round one hasn't started. | Taurus is *eating.*"
 //   Taurus mid-bite of a sandwich. R1 Virgo, R2 Taurus, R3 Virgo (holds back from cleaning). Final Virgo 2–1.
 //   Rounds: at the store! want anything? ___ · They offer you the first bite. · Your date's apartment is a mess.

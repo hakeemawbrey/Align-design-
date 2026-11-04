@@ -1,5 +1,5 @@
-// ngne10: STAR TALK GAME NIGHT, Ep 10, "Taurus vs Capricorn: No Rush" (35 s vertical, earth signs,
-// music: funk · Gm). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne10: STAR TALK GAME NIGHT, Ep 10, "Taurus vs Capricorn: No Rush" (33 s vertical, earth signs,
+// music: funk · Gm). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "The *slowest* round | in Game Night history."
 //   THE STARS tap a wristwatch; Taurus and Capricorn sip tea, buzzers untouched. R1 Capricorn, R2 Taurus, R3 Capricorn. Final Capricorn 2–1.
 //   Rounds: can we talk about where this is going? ___ · They bring a five-year plan to date two. · Your date wants takeout, not the fancy dinner.

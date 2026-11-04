@@ -1,7 +1,7 @@
 // STAR TALK GAME NIGHT: the shared set, timeline and sound of the game show (promo/films/next30/b07.md, NEXT30-BUILD.md).
 // Lives in ngne01's folder; every episode (ngne01–ngne24) imports it: import { makeGame } from '../../ngne01/gamekit.js'
 //
-// The format (33 s, story 0–30.6, then the short 2.4 s end card; no card cut, CHANGE 4 Nov):
+// The format (33 s, story 0–30.6, then the short 2.4 s end card; no card-back cut):
 //   0.00–3.00   hook: the 2-line hook caption is already up at frame 0; both contestants stand at their podiums,
 //               one mid-action (cfg.A/B.intro). The GAME NIGHT marquee glows; THE STARS (host, gold, pixel mic) pop in and
 //               welcome everyone in the dialogue box. Pisces sits front row in the audience with a tissue box.
@@ -11,7 +11,6 @@
 //               4.3 the kindness point (+1 KIND, ding, audience claps, the score ticks up).
 //   24.6        drum roll.  25.2 FINALE: "Kindest heart: | *<sign>.*" (or both), confetti, the winner's spotlight, the
 //               prize: a face-down card flies in and flips to a talk card (card first, face last). THE STARS' last line.
-//   No Align card cut (CHANGE 4 Nov): the rounds change on the show's own beat transitions.
 //
 //   makeGame(cfg) → { DURATION, SCENES, CUES, T }
 //     cfg.id
@@ -45,8 +44,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline
-export const DURATION = 33                               // story 30.6 + the short (2.4 s) end card (CHANGE 4 Nov)
-export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 30.6
+export const DURATION = 33
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 30.6 (the short 2.4 s end card)
 const RL = 7.4, R0 = 3.0
 export const T = {
   hostIn: 0.35, welcome: 0.25, welcomeClose: 2.95, h0Out: [2.8, 3.0],
@@ -664,17 +663,16 @@ export function makeGame(cfg) {
         HF.update(t, outK(t, T.out))
         boxes.forEach(b => b.update(t))
         bug.update(t, outK(t, T.bugOut))
-        // a white flash on the hard round cuts (not the card cut at round 2) and on the finale
-        const fl = Math.max(0, ...[rounds[0].a, rounds[2].a, T.fin].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
+        // a white flash on every round cut and on the finale
+        const fl = Math.max(0, ...[rounds[0].a, rounds[1].a, rounds[2].a, T.fin].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
         flash.style.opacity = String(0.5 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // card-cut candidates: the three round starts (cardfx plays the middle one, round 2)
-  const CUTS = rounds.map((r, i) => (i === 1 ? { t: r3(r.a - 0.05), kind: 'flip' } : r3(r.a - 0.05)))
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]   // no card cut (CHANGE 4 Nov)
+  // no card-back cut (owner's change, 4 Nov): every round change is the film's own white flash + whoosh
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -687,7 +685,7 @@ export function makeGame(cfg) {
     ['pop', 0.02, 880, 0.03, 0], ...introBuzz('A'), ...introBuzz('B'),
     ['pop', r3(hostIn + 0.05), 987.77, 0.045, 0], ['pop', r3(hostIn + 0.12), 1318.51, 0.03, 0], ['glitter', r3(hostIn), r3(hostIn + 0.3)],
     ...rounds.flatMap(r => [
-      ...(r.i !== 1 ? [['whoosh', r3(r.a - 0.08), 0.3, 0.035], ['tick', r3(r.a), 0.05]] : []),
+      ['whoosh', r3(r.a - 0.08), 0.3, 0.035], ['tick', r3(r.a), 0.05],
       ...wordPops(r.a + T.U.head, 4, 0.07, r.i * 2),
       ['whoosh', r3(r.a + T.U.card), 0.4, 0.04], ['tick', r3(r.a + T.U.card + 0.4), 0.05],
       ...buzzSnd(r.buzz, r.first === 'A' ? -0.4 : 0.4),
@@ -712,5 +710,5 @@ export function makeGame(cfg) {
     const segs = [[L0, cfg.welcomeClose ?? T.welcomeClose], ...rounds.map((r, i) => [LR[i], r.b - 0.12]), [LF, T.boxClose]]
     return segs.map(([ls, close]) => { const tm = lineTimes(ls, { cps: CPS }); return { text: ls[0].text, len: ls[0].text.replace(/\*/g, '').length, hold: +(close - tm[0].done).toFixed(2) } })
   }
-  return { DURATION, SCENES, CUES, T, CUTS, CHECK, WIN, finalA, finalB }
+  return { DURATION, SCENES, CUES, T, CHECK, WIN, finalA, finalB }
 }

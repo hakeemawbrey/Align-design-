@@ -1,5 +1,5 @@
-// ngne12: STAR TALK GAME NIGHT, Ep 12, "Aries vs Sagittarius: Before the Host" (35 s vertical, fire signs,
-// music: house · E). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne12: STAR TALK GAME NIGHT, Ep 12, "Aries vs Sagittarius: Before the Host" (33 s vertical, fire signs,
+// music: house · E). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "Both buzzed. | The host isn't *here* yet."
 //   Both slam buzzers before the host arrives; the host's mic stand is empty, THE STARS dash in late. R1 Sag, R2 Sag, R3 Aries. Final Sag 2–1.
 //   Rounds: hey, I'm free this weekend ___ · They need a day to think before answering. · Your date walks slower than you.

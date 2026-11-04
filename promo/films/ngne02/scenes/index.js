@@ -1,5 +1,5 @@
-// ngne02: STAR TALK GAME NIGHT, Ep 2, "Leo vs Sagittarius: Zero Inside Voices" (35 s vertical, fire signs,
-// music: pop · G). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne02: STAR TALK GAME NIGHT, Ep 2, "Leo vs Sagittarius: Zero Inside Voices" (33 s vertical, fire signs,
+// music: pop · G). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "Two fire signs. | *Zero* inside voices."
 //   Leo poses, Sag already buzzing. R1 Leo, R2 Sag, R3 Sag. Final Sag 2–1; Leo leads the applause (CLAP! CLAP!).
 //   Rounds: your friend just got dumped. you text: ___ · They say 'I don't know' when they don't know. · Your date's joke totally flops.

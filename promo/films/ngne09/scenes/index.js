@@ -1,5 +1,5 @@
-// ngne09: STAR TALK GAME NIGHT, Ep 9, "Leo vs Aquarius: Center Stage" (35 s vertical, opposite signs,
-// music: synthwave · F#m). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne09: STAR TALK GAME NIGHT, Ep 9, "Leo vs Aquarius: Center Stage" (33 s vertical, opposite signs,
+// music: synthwave · F#m). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "Leo wants the spotlight. | Aquarius *built* a new one."
 //   Aquarius tinkers with a homemade spotlight while Leo poses. R1 Leo, R2 Aquarius, R3 Aquarius. Final Aquarius 2–1; Leo bows and applauds.
 //   Rounds: I had the worst day ___ · They have a hobby you don't understand. · Your date's friends are a little weird.

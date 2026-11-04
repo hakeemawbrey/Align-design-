@@ -1,5 +1,5 @@
-// ngne04: STAR TALK GAME NIGHT, Ep 4, "Virgo vs Capricorn: Clipboards Out" (35 s vertical, earth signs,
-// music: lofi · F). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne04: STAR TALK GAME NIGHT, Ep 4, "Virgo vs Capricorn: Clipboards Out" (33 s vertical, earth signs,
+// music: lofi · F). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "Two earth signs. | One *clipboard* each."
 //   Both scribbling on clipboards. R1 both, R2 Virgo, R3 Virgo. Final Virgo 3–1; Capricorn hands Virgo a gold star sticker.
 //   Rounds: it's our 1-month! I made you ___ · They're 10 minutes late but texted ahead. · They forgot your coffee order.

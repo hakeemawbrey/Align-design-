@@ -1,5 +1,5 @@
-// ngne07: STAR TALK GAME NIGHT, Ep 7, "Cancer vs Capricorn: Soup or Steps" (35 s vertical, opposite signs,
-// music: dreamy · Eb). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne07: STAR TALK GAME NIGHT, Ep 7, "Cancer vs Capricorn: Soup or Steps" (33 s vertical, opposite signs,
+// music: dreamy · Eb). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "One brought *soup.* | One brought a planner."
 //   Cancer carrying soup, Capricorn with a planner. R1 Cancer, R2 Capricorn, R3 Capricorn (blushes). Final Capricorn 2–1.
 //   Rounds: rough day? ___ · They say 'I need a quiet night alone.' · Your date cancels because work ran late.

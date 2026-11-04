@@ -1,5 +1,5 @@
-// ngne05: STAR TALK GAME NIGHT, Ep 5, "Gemini vs Sagittarius: Yes or Yes" (35 s vertical, opposite signs,
-// music: chiptune · D). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne05: STAR TALK GAME NIGHT, Ep 5, "Gemini vs Sagittarius: Yes or Yes" (33 s vertical, opposite signs,
+// music: chiptune · D). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "The buzzer *can't* | keep up with these two."
 //   Both talking over each other. R1 Gemini, R2 both, R3 Gemini. Final Gemini 3–1; Sag asks for a rematch.
 //   Rounds: hey! random, but ___ · They put their phone away at dinner. · Your date says they're a homebody.

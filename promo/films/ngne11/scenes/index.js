@@ -1,5 +1,5 @@
-// ngne11: STAR TALK GAME NIGHT, Ep 11, "Virgo vs Pisces: Tissues Provided" (35 s vertical, opposite signs,
-// music: dreamy · Db). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne11: STAR TALK GAME NIGHT, Ep 11, "Virgo vs Pisces: Tissues Provided" (33 s vertical, opposite signs,
+// music: dreamy · Db). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "Pisces is crying. | The game *hasn’t started.*"
 //   Pisces mid-sob at its podium; Virgo already holds out a tissue. R1 Pisces, R2 both, R3 Virgo. Final 2–2; Virgo sheds one tear. Cancer cheers in the front row.
 //   Rounds: I bombed my presentation today. ___ · They cry at a movie on the first date. · Your date spills sauce on their shirt.

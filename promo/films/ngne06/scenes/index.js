@@ -1,5 +1,5 @@
-// ngne06: STAR TALK GAME NIGHT, Ep 6, "Aries vs Leo: The Main Event" (35 s vertical, fire signs,
-// music: house · C). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne06: STAR TALK GAME NIGHT, Ep 6, "Aries vs Leo: The Main Event" (33 s vertical, fire signs,
+// music: house · C). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "Aries *and* Leo. | Somebody get a bigger stage."
 //   Leo bows under its own spotlight, Aries hammering the buzzer. R1 Leo, R2 Aries (changes its mind), R3 both. Final 2–2.
 //   Rounds: congrats on the new job! ___ · They admit they were wrong, mid-argument. · Your date gets more compliments at the party.

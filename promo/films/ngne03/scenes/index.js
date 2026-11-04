@@ -1,5 +1,5 @@
-// ngne03: STAR TALK GAME NIGHT, Ep 3, "Taurus vs Scorpio: The Staring Round" (35 s vertical, opposite signs,
-// music: jazzy · Bb). Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
+// ngne03: STAR TALK GAME NIGHT, Ep 3, "Taurus vs Scorpio: The Staring Round" (33 s vertical, opposite signs,
+// music: jazzy · Bb). Story 0–30.6, then the short end card. The set, timeline and sound live in ../../ngne01/gamekit.js.
 //   0.0    hook "Taurus vs Scorpio. | The *staring* round."
 //   Both glare, nobody buzzes; Taurus finally buzzes late. R1 Scorpio, R2 Taurus, R3 Scorpio. Final Scorpio 2–1.
 //   Rounds: I can't make dinner tonight, ___ · They ask what your middle name is. · They tell you a secret on date three.
