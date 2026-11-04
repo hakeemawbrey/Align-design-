@@ -1,10 +1,10 @@
-// naske20 · Ask the Stars, Volume 2, ep 20 · "They got me a gift I really don't like." (20 s, screwed · Fm)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske20 · Ask the Stars, Volume 2, ep 20 · "They got me a gift I really don't like." (18 s, screwed · Fm)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "They got me a gift I *really* don't like."  ♏ Scorpio mid-unwrap, holding up a lumpy green sweater with a
 //         crooked reindeer; wrapping-paper scraps still flying; Scorpio's eyes wide.
 //   3.0   "say thank you for the thought. and mean it."  A gift tag flips up: "made it myself!"  Scorpio melts (heart eyes).
 //   5.9   "you don't have to love the reindeer."  The reindeer winks.
-//   8.75  card cut → 8.8 "if they ask later, be honest. gently."  Scorpio wears it for one photo: viewfinder, CLICK.
+//   8.8   "if they ask later, be honest. gently."  Scorpio wears it for one photo: viewfinder, CLICK.
 //   12.1  "Thank the *thought.* | Keep it kind."
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, label, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, INTER } from '../../naske19/scenes/askkit2.js'
 
