@@ -1,0 +1,8 @@
+{
+  "options": [
+    { "id": "stardust", "art": "mark", "opts": { "r": 230 }, "zoom": 1.05, "cy": 800 },
+    { "id": "couple", "art": "figures", "opts": { "pose": "meet" }, "zoom": 1.32, "cy": 880 },
+    { "id": "venus", "art": "venus", "opts": {}, "zoom": 1.18, "cy": 830 },
+    { "id": "card", "art": "card", "opts": { "veiled": true }, "zoom": 1.2, "cy": 810 }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "02-just-passing",
+  "title": "You're just passing them",
+  "cover": "You're just *passing* them",
+  "keyword": "PASSING",
+  "caption": "for when someone from your past comes back around",
+  "hashtags": [
+    "retrograde",
+    "astrology",
+    "nocontact",
+    "affirmations",
+    "lettinggo"
+  ],
+  "scenes": [
+    {
+      "art": "loop",
+      "header": "RETROGRADE · APPARENT MOTION",
+      "lines": [
+        "When a planet goes *retrograde,*",
+        "it looks like it's moving *backwards.*"
+      ],
+      "labels": [
+        {
+          "on": "loop",
+          "at": 1,
+          "text": "APPARENT PATH"
+        }
+      ]
+    },
+    {
+      "art": "retro",
+      "header": "TWO ORBITS · TWO SPEEDS",
+      "opts": {
+        "sightAt": 1,
+        "pathAt": 2
+      },
+      "lines": [
+        "It never is.",
+        "It's just two orbits *passing* each other",
+        "at different speeds.",
+        "So when someone from your past",
+        "comes back around,",
+        "they're not *returning* to you.",
+        "You're just *passing* them."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "THEM · OUTER ORBIT"
+        },
+        {
+          "on": "earth",
+          "at": 6,
+          "text": "YOU · STILL MOVING"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "header": "RELEASE · DON'T HAUNT",
+      "pause": 0.5,
+      "opts": {
+        "pose": "pass"
+      },
+      "lines": [
+        "You don't have to stop.",
+        "You don't have to *look back.*",
+        "Say it with me.",
+        "I am *moving forward,*",
+        "even when it looks like I'm not.",
+        "What passed me was *meant to.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "FOR THE NEXT TIME THEY TEXT",
+      "opts": {
+        "face": "Passing",
+        "sub": "THE RETROGRADE KIT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say to yourself",
+        "the next time they text."
+      ]
+    }
+  ]
+}

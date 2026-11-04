@@ -1,0 +1,103 @@
+{
+  "id": "01-the-other-half",
+  "title": "The other half of your sky",
+  "cover": "The *other half* of your sky",
+  "keyword": "SEVEN",
+  "caption": "the person you're looking for isn't someone you have to become",
+  "hashtags": [
+    "7thhouse",
+    "birthchart",
+    "astrology",
+    "affirmations",
+    "zodiaclove"
+  ],
+  "scenes": [
+    {
+      "art": "wheel",
+      "header": "YOUR BIRTH CHART · 12 HOUSES",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 2,
+        "axis": true,
+        "axisAt": 4
+      },
+      "lines": [
+        "There's a house in your birth chart",
+        "that isn't about *you* at all.",
+        "Astrologers call it the *seventh house.*",
+        "The house of *partners.*",
+        "And it sits *directly opposite*",
+        "the sign that was *rising*",
+        "the minute you were born."
+      ],
+      "labels": [
+        {
+          "on": "h7",
+          "at": 2,
+          "text": "7TH HOUSE · PARTNERS"
+        },
+        {
+          "on": "dsc",
+          "at": 4,
+          "text": "DESCENDANT · WHO YOU MEET"
+        },
+        {
+          "on": "asc",
+          "at": 5,
+          "text": "RISING · HOW YOU ARRIVE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "header": "RISING · DESCENDANT",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "lines": [
+        "So the person you're looking for",
+        "isn't someone you have to *become.*",
+        "They're the *other half*",
+        "of a sky you already have."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 2,
+          "text": "180° · EXACTLY OPPOSITE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "header": "SAY IT WITH ME",
+      "pause": 0.55,
+      "opts": {
+        "pose": "meet"
+      },
+      "lines": [
+        "Say it with me.",
+        "I don't have to *shrink* to be found.",
+        "What's meant for me",
+        "is already *facing me.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE OTHER HALF OF YOUR SKY",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "and what it says you need in love."
+      ]
+    }
+  ]
+}

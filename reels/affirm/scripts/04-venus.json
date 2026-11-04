@@ -1,0 +1,105 @@
+{
+  "id": "04-venus",
+  "title": "Venus runs your heart",
+  "cover": "*Venus* runs your heart",
+  "keyword": "VENUS",
+  "caption": "your sun sign is who you are. your venus sign is how you need to be loved",
+  "hashtags": [
+    "venussign",
+    "astrology",
+    "zodiac",
+    "affirmations",
+    "lovelanguage"
+  ],
+  "scenes": [
+    {
+      "art": "venus",
+      "header": "VENUS RUNS YOUR HEART",
+      "lines": [
+        "Your *sun sign* is who you are.",
+        "But your *Venus sign*",
+        "is how you need to be *loved.*"
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 1,
+          "text": "VENUS · PLANET OF LOVE"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "header": "WHERE WAS VENUS WHEN YOU WERE BORN",
+      "opts": {
+        "planet": "♀",
+        "planetSign": 1,
+        "planetAt": 0
+      },
+      "lines": [
+        "Most people never look theirs up.",
+        "So they spend years being loved",
+        "in a language they *don't speak.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "VENUS · IN YOUR CHART"
+        }
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "THE GLYPH · A HAND MIRROR",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "lines": [
+        "Venus isn't asking you to *change.*",
+        "Her symbol is said to be a *hand mirror.*",
+        "She's asking you to *notice*",
+        "what makes you feel *safe.*"
+      ],
+      "labels": [
+        {
+          "on": "handle",
+          "at": 1,
+          "text": "♀ · THE MIRROR"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "opts": {
+        "pose": "meet"
+      },
+      "lines": [
+        "So say it with me.",
+        "My needs are *not* too much.",
+        "I deserve to be loved",
+        "in *my* language."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "VENUS · 12 SIGNS · 12 LANGUAGES",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours says",
+        "you need to *feel loved.*"
+      ]
+    }
+  ]
+}

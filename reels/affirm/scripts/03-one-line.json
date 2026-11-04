@@ -1,0 +1,103 @@
+{
+  "id": "03-one-line",
+  "title": "Nothing aligns alone",
+  "cover": "Nothing aligns *alone*",
+  "keyword": "MUTUAL",
+  "caption": "if you're the only one moving, that isn't alignment",
+  "hashtags": [
+    "eclipse",
+    "astrology",
+    "relationships",
+    "affirmations",
+    "selfworth"
+  ],
+  "scenes": [
+    {
+      "art": "eclipse",
+      "header": "TOTAL SOLAR ECLIPSE",
+      "lines": [
+        "An eclipse can't happen *alone.*",
+        "It needs the sun, the moon and the earth",
+        "to fall into *one line,*",
+        "at the *same time.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "THE MOON · 1 OF 3"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "header": "SUN · MOON · EARTH",
+      "opts": {
+        "offline": true
+      },
+      "lines": [
+        "If even one of them is out of line,",
+        "*nothing happens.*",
+        "No matter how bright the sun is."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "OUT OF LINE · NO ECLIPSE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "header": "ONE-SIDED · AN ORBIT",
+      "opts": {
+        "pose": "orbit"
+      },
+      "lines": [
+        "Love works the same way.",
+        "If you're the only one *moving,*",
+        "that isn't *alignment.*",
+        "That's *orbiting.*"
+      ]
+    },
+    {
+      "art": "syzygy",
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "opts": {
+        "offline": true,
+        "alignAt": 1
+      },
+      "lines": [
+        "Say it with me.",
+        "I only *align* with people",
+        "who move *toward me* too.",
+        "I was never meant to *orbit* anyone."
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 2,
+          "text": "SYZYGY · ONE LINE"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "IT HAS TO BE MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation",
+        "for when you're the only one trying."
+      ]
+    }
+  ]
+}
