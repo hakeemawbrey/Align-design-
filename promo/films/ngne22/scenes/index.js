@@ -1,5 +1,5 @@
-// ngne22: STAR TALK GAME NIGHT, Ep 22, "Gemini vs Aquarius: Silence Is Allowed" (35 s vertical, same element: air, music: funk · Bb).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne22: STAR TALK GAME NIGHT, Ep 22, "Gemini vs Aquarius: Silence Is Allowed" (33 s vertical, same element: air, music: funk · Bb).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Gemini vs Aquarius. | *Focus*, please.' Gemini mid-buzz; Aquarius tinkering, already off topic.
 //   R1 'I got you something small. ___' both kind → both · R2 'They laugh at your weird jokes' both GREEN → both
 //   R3 'Your date is quiet tonight': Gemini 'fun facts. all of them.' / Aquarius 'ask if they're okay. then just sit.' → Aquarius. Final Aquarius 3–2.
