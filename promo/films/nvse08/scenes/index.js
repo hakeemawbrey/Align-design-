@@ -1,5 +1,5 @@
-// nvse08: SIGN VS SIGN, "Who handles a party where they know nobody?" ♉ Taurus vs ♌ Leo (18 s trial reel, b46,
-// music: house · G). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse08: SIGN VS SIGN, "Who handles a party where they know nobody?" ♉ Taurus vs ♌ Leo (16 s trial reel, b46,
+// music: house · G). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a row of strangers with question marks between them.
 //   ROUND 1 ♉ "finds the *snack table* and one friend." the dip, a stranger who likes it too. "you like the dip too?" → "we’re friends now."
 //   ROUND 2 ♌ "is *hosting* the room in ten minutes." the crowd gathers, a spotlight. "everyone! gather round!" → "wait, whose party is this?"
