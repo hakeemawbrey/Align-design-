@@ -1,23 +1,22 @@
-// ngne14: STAR TALK GAME NIGHT, Ep 14 "Virgo Says It's Fine (Twice)" (36 s vertical, promo/films/next30/b08.md,
-// music: jazzy · F). The show lives in ../../ngne13/gamekit.js (shared by ngne13–ngne24).
-//   0.0 hook: Taurus mid-bite of a cookie, Virgo straightening things with a pen.
-//   R1 'sorry I'm late, traffic': Taurus 'no stress. I ordered us snacks.' vs Virgo 'it's fine. 14 minutes. it's fine.' (Taurus)
-//   R2 'They remember your order' both GREEN · R3 'Your date apologizes' both kind → Taurus 3, Virgo 2
-import { makeGame } from '../../ngne13/gamekit.js'
+// ngne14: STAR TALK GAME NIGHT, Ep 14, "Gemini vs Libra: Two Replies" (35 s vertical, same element: air, music: pop · F).
+// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+//   0.0 hook 'Gemini vs Libra. | Who picks *one* answer?' Gemini mid-buzz; Libra weighing it up.
+//   R1 '“can we talk later?” you: ___': Gemini 'sure! wait. talk about WHAT??' / Libra 'of course. I'm free after six.' → Libra
+//   R2 'They remember a tiny thing you said': Gemini GREEN… RED? GREEN, final / Libra GREEN → both
+//   R3 'friend can't choose between two dates': Gemini 'ask what they want, then listen' / Libra's list of lists → Gemini. Final 2–2, a tie.
+import { makeGame } from '../../ngne01/gamekit.js'
 
 const EP = makeGame({
-  ...{"id": "ngne14", "ep": 14, "a": "taurus", "b": "virgo", "accent": "#7fcf6a", "hookMood": {"a": "happy", "b": "neutral"}, "hookProps": {"a": "cookie", "b": "pen"}},
-  hook: "Two earth signs. | Zero *rushing.*",
-  intro: "earth night. *no* rushing.",
+  ...{"id": "ngne14", "A": {"sign": "gemini", "intro": {"mood": "wide", "look": [0.4, 0.5], "buzz": true}}, "B": {"sign": "libra", "intro": {"mood": "neutral", "look": [-0.6, 0]}}, "hook": "Gemini vs Libra. | Who picks *one* answer?", "accent": "#ffe27a", "welcome": "air night. one answer *each.*"},
   rounds: [
-    {"prompt": "sorry I'm late, traffic.", "buzz": "a", "a": {"text": "“no stress. I ordered us snacks.”"}, "b": {"text": "“it’s fine. 14 minutes. it’s fine.”", "mood": "squint"}, "win": "a", "line": "Virgo, “it’s fine” twice is not *fine.*"},
-    {"prompt": "They remember your order without asking.", "buzz": "b", "a": {"flag": "green", "text": "that’s basically a love letter."}, "b": {"flag": "green", "text": "and they got it exactly right."}, "win": "ab", "line": "two greens. Taurus is *emotional.*"},
-    {"prompt": "Your date apologizes for a small mistake.", "buzz": "a", "a": {"text": "Say thanks for saying sorry. Let it go."}, "b": {"text": "Thank them. No notes. (So hard.)"}, "win": "ab", "line": "Virgo held back the notes. *growth.*"},
+    {"prompt": "“can we talk later?” you: ___", "first": "A", "a": {"text": "sure! wait. talk about WHAT??", "mood": "wide", "lose": "happy"}, "b": {"text": "of course. I'm free after six."}, "point": "B", "host": "Gemini, that was *two* texts."},
+    {"prompt": "They remember a tiny thing you said weeks ago.", "first": "A", "a": {"text": "GREEN!", "flag": "G", "then": {"at": 1.0, "text": "RED? no. GREEN. final.", "flag": "G"}}, "b": {"text": "GREEN. that's feeling heard.", "flag": "G"}, "point": "both", "host": "two greens. Gemini picked *one!*"},
+    {"prompt": "Your friend can't choose between two dates.", "first": "B", "a": {"text": "ask what they really want. then listen."}, "b": {"text": "make a pros and cons list. and a list of lists.", "mood": "wide", "lose": "happy"}, "point": "A", "host": "Libra, the list has a *list.*"},
   ],
-  final: "And the kindest | is… *Taurus!*",
-  last: "Kindness doesn't need *notes.*",
+  ...{"last": "One answer is *plenty.*", "talk": "card-talk-4.png"},
 })
 
 export const DURATION = EP.DURATION
 export const SCENES = EP.SCENES
 export const CUES = EP.CUES
+export const CHECK = EP.CHECK
