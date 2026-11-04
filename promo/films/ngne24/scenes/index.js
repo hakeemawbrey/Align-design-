@@ -1,5 +1,5 @@
-// ngne24: STAR TALK GAME NIGHT, Ep 24, "Cancer vs Pisces: Finale" (35 s vertical, same element: water, music: dreamy · Ab).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne24: STAR TALK GAME NIGHT, Ep 24, "Cancer vs Pisces: Finale" (33 s vertical, same element: water, music: dreamy · Ab).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Finale night. | *Everyone* is crying.' Cancer and Pisces both mid-sob at their podiums with tissues.
 //   R1 'thank you for tonight. ___' both kind · R2 'They tell you how they feel' both GREEN
 //   R3 'Your opponent is crying': Cancer 'hand them a tissue. then hug.' / Pisces 'hug them. we both win.' → both. Final 3–3, a tie: everyone wins.
