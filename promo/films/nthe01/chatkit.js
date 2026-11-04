@@ -632,3 +632,30 @@ export function makeThread(cfg) {
 
   return { DURATION, STORY_END, SCENES, CUES, CUTS }
 }
+
+/** a screenshot of a 1:1 text thread, for { kind: 'image', draw: shot([...]) }.
+ *  lines: [{ side: 'R' | 'L', text, at }] (at = absolute pop time; omitted → m.at + 0.3 + 0.5·i); title: the header */
+export function shot(lines, { title = 'my person', size = 30, col = '#4f8df0' } = {}) {
+  return (x, t, w, h, m) => {
+    R(x, '#120c2a', 0, 0, w, h)
+    R(x, '#1f1747', 0, 0, w, 44)
+    x.font = `700 22px ${MONO}`; x.fillStyle = LAV; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(title, w / 2, 23)
+    x.textAlign = 'left'; x.textBaseline = 'alphabetic'
+    let y = 60
+    lines.forEach((ln, i) => {
+      const at = ln.at ?? m.at + 0.3 + 0.5 * i
+      const k = pop01(t, at, 0.22, 2.2)
+      x.font = `600 ${size}px ${INTER}`
+      const ww = wrapRuns(x, ln.text, w * 0.78 - 32, `600 ${size}px ${INTER}`)
+      const bw = ww.width + 32, bh = ww.lines.length * size * 1.25 + 20
+      if (k > 0.01) {
+        const bx = ln.side === 'R' ? w - 14 - bw : 14
+        x.save(); x.translate(bx + (ln.side === 'R' ? bw : 0), y + bh); x.scale(k, k); x.translate(ln.side === 'R' ? -bw : 0, -bh)
+        panel(x, 0, 0, bw, bh, ln.side === 'R' ? col : '#3b3466', 8)
+        ww.lines.forEach((l, q) => drawRuns(x, l, 16, 10 + (q + 0.82) * size * 1.25, BONE, GOLD))
+        x.restore()
+      }
+      y += bh + 12
+    })
+  }
+}
