@@ -160,5 +160,59 @@
   "series": "hotcold",
   "episode": 18,
   "caption": "New Year's Eve and no plans yet. Rooftop, band and boat, or asleep by ten?\nAsk what they'd love, then plan that."
+ },
+ "nhce19": {
+  "video": "/_blob/77fc86d6fa5d6d7eab57a747c4028652",
+  "poster": "/_blob/84219a5d0c0b504097204fdf4bc59382",
+  "title": "Winter Blues",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 19,
+  "caption": "Winter blues hit. Text everyone, or tell no one?\nTell one person you trust how you really feel. That's enough to start."
+ },
+ "nhce20": {
+  "video": "/_blob/52aeed99ddeaed6fb33bde9c88052e11",
+  "poster": "/_blob/6645bedb64d1137f628f634af93c136f",
+  "title": "The Holiday Market",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 20,
+  "caption": "A cute stranger at the holiday market. What now?\nNo buying the whole stall, no staring at candles. Say hi and compliment the hat."
+ },
+ "nhce21": {
+  "video": "/_blob/7dfbaf81473df546f911fd0b3aacd2bd",
+  "poster": "/_blob/1eab6a3eef165526a1b47a2d63f92e51",
+  "title": "The Holiday Card",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 21,
+  "caption": "The holiday card: both your names on it, or not yet?\nDon't decide alone. Ask first, because being a \"together\" is a choice you make together."
+ },
+ "nhce22": {
+  "video": "/_blob/2e72c5617eac0e943e9dc8fd00f1bab1",
+  "poster": "/_blob/38fbdd0171394231298f35a9c8245e31",
+  "title": "The Longest Night",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 22,
+  "caption": "The longest night of the year. Confess everything or go stargaze alone?\nA long night is good for a long talk. Pull a talk card and take turns."
+ },
+ "nhce23": {
+  "video": "/_blob/ffe2765c40cda010c385c3b30dcc0ee1",
+  "poster": "/_blob/6ec61783270b0b881d54b26ad1e878bb",
+  "title": "Crush in Town",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 23,
+  "caption": "Your crush is in town for the holidays.\nDon't plan their whole trip, and don't just wait. Text \"free for cocoa?\" and keep it simple."
+ },
+ "nhce24": {
+  "video": "/_blob/ea2ce0332ee1706a5a4cd8604d0b5252",
+  "poster": "/_blob/6c6c80895ce005386adcb431e9dc0ca5",
+  "title": "They Planned Everything",
+  "len": 14,
+  "series": "hotcold",
+  "episode": 24,
+  "caption": "They planned the whole winter date. How do you thank them?\nNot by out-planning them. Tell them what you loved about it."
  }
 }
