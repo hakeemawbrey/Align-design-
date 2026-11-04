@@ -1,5 +1,5 @@
-// nvse04: SIGN VS SIGN, "Who handles a cancelled date better?" ♎ Libra vs ♏ Scorpio (18 s trial reel, b46,
-// music: lofi · Dm). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse04: SIGN VS SIGN, "Who handles a cancelled date better?" ♎ Libra vs ♏ Scorpio (16 s trial reel, b46,
+// music: lofi · Dm). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a message pops between them: "so sorry, I'm sick :("
 //   ROUND 1 ♎ "can’t pick the *right reply.*" drafts pile up around the phone. "is ‘feel better’ too short?" → "is ‘feel better!!!’ too long?"
 //   ROUND 2 ♏ "answers once and *means it.*" the reply sends, a calendar card: FRIDAY, rain check. "rest. I’ll be here." → "rain check friday?"
