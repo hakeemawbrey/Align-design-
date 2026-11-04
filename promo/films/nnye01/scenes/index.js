@@ -1,8 +1,8 @@
-// nnye01: NEW YEAR, SAME HEART · Aries: what I'm keeping (20 s vertical, star_advice, music: pop · C).
+// nnye01: NEW YEAR, SAME HEART · Aries: what I'm keeping (18 s vertical, star_advice, music: pop · C).
 // The format lives in ./yearkit.js (shared by nnye01–nnye12). Story 0–15.6, then the shared end card.
 //   0.0   hook: "*Aries*, | before you sprint | into next year…" ♈ mid-hop, leaning forward like a sprinter.
 //   2.4   LEAVING: "rushing the yes" · "winning every argument" (♈: "fine. FINE.")
-//   6.6   card cut → KEEPING: "the courage to go first" (♈ hugs it), the gift box closes.
+//   6.6   → KEEPING: "the courage to go first" (♈ hugs it), the gift box closes.
 //   10.85 "New year. | Same *heart.*"  THE STARS: "Still first in line. *Softer* now."  Pisces fountains on the box.
 import { makeYear } from './yearkit.js'
 

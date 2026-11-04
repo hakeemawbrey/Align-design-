@@ -1,13 +1,13 @@
 // NEW YEAR, SAME HEART: the shared look of the twelve star_advice films nnye01–nnye12 (one per sign, 20 s each,
 // promo/films/next30/b37.md). Every episode imports this kit from nnye01; nothing here touches another film's folder.
 //
-// The format (20 s, story 0–15.6, then the shared end card):
+// The format (18 s, story 0–15.6, then the shared end card):
 //   0.00–2.40   hook (frame 0 is the thumbnail): the episode's hook caption is already up, the sign star is mid-hop
 //               over two boxes: a cardboard box marked LEAVING and a gift box marked KEEPING. A pixel heart sits
 //               between them and never moves (the "same heart"). Snow falls. Pisces sniffles in the corner.
 //   2.40–6.60   "What I'm | *leaving.*"  Two luggage tags pop up, are read, and drop into LEAVING. The box slides
 //               off frame (the hero waves it off).
-//   6.60        the one card cut.
+//   6.60        (no card transition: the owner's 4 Nov change).
 //   6.60–10.80  "What I'm | *keeping.*"  One tag pops up, the hero hugs it, it drops into the gift box, the lid
 //               closes, the box glows.
 //   10.80–15.50 "New year. | Same *heart.*"  The heart pulses big; THE STARS pop in and say the last line; Pisces
@@ -20,8 +20,8 @@
 //     cfg.heroIsPisces (Pisces is the hero: no corner Pisces, the hero cries instead).
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { fill } from '../../../src/scenes/common.js'
 import { popText } from '../../lesson.js'
@@ -30,8 +30,8 @@ import {
   R, box, drawBits, HEART, sparkles, hearts, bubble, label, shadow, starFrame, inSprite, tearsCells, buildBug, snow, tag,
 } from './pix.js'
 
-export const DURATION = 20
-export const STORY_END = DURATION - ENDCARD_LEN          // 15.6
+export const DURATION = 18
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN          // 15.6
 export const T = {
   h0: -0.9, h0Out: [2.25, 2.45],
   h1: 2.45, h1Out: [6.35, 6.55],
@@ -282,7 +282,7 @@ export function makeYear(cfg) {
   }
 
   const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const wordPops = (t0, n, gap, b0 = 0, gain = 0.024) => Array.from({ length: n }, (_, i) => ['pop', r3(t0 + i * gap), NOTE[(b0 + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
@@ -304,8 +304,7 @@ export function makeYear(cfg) {
     ...quips.flatMap(q => [['pop', q.t, 1318.51, 0.035, 0.3], ['pop', r3(q.t + 0.06), 1760, 0.02, 0.3]]),
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }
