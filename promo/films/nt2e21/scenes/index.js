@@ -1,10 +1,10 @@
-// nt2e21 · THE BARE MINIMUM · "Cancer Frames a Text" (20 s vertical, Trends Vol. 2 ep 21, music: funk · E).
+// nt2e21 · THE BARE MINIMUM · "Cancer Frames a Text" (18 s vertical, Trends Vol. 2 ep 21, music: funk · E).
 // The format lives in ./barekit.js (shared by nt2e21–nt2e25) on ./trendkit.js (shared by the whole batch).
 //   0.0   hook: "They did the *bare minimum.* | (I'm a Cancer.)" ♋ mid-swoon, hugging a framed phone.
 //   2.1   1 "they texted back *the same day.*"  ♑ hops the floor-level bar: "hey! how was your day?"
 //         Cancer: "i'm framing this." (a gold frame pops up around the text)
 //   4.85  2 "they said *'get home safe.'*"  Cancer writes it in a diary, hearts on every line: "they CARE."
-//   7.6   card cut. 3 "then THE STARS *raised the bar.*"  THE STARS lift the bar to head height; Capricorn runs, clears
+//   7.6   flash cut. 3 "then THE STARS *raised the bar.*"  THE STARS lift the bar to head height; Capricorn runs, clears
 //         it: "how did the talk with your mom go?"  Cancer, quiet: "you… remembered?"
 //   11.45 stamp "NEW *STANDARD.*"  12.0 THE STARS: "Don't frame the *floor.*"  Pisces: NEW BAR!, fountaining.
 import { makeBare } from './barekit.js'

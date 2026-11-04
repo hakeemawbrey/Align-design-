@@ -1,10 +1,10 @@
-// nt2e23 · THE BARE MINIMUM · "Libra Gets Asked" (20 s vertical, Trends Vol. 2 ep 23, music: funk · G).
+// nt2e23 · THE BARE MINIMUM · "Libra Gets Asked" (18 s vertical, Trends Vol. 2 ep 23, music: funk · G).
 // The format lives in ../../nt2e21/scenes/barekit.js (eps 21–25) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "They did the *bare minimum.* | (I'm a Libra.)" ♎ mid-twirl under bunting.
 //   2.1   1 "they asked *where* I wanted to eat."  ♊ hops the floor-level bar: "where do you want to eat?"
 //         Libra throws a parade: bunting drops, confetti: "they ASKED me!!"
 //   4.85  2 "they let me pick *the song.*"  A tiny star choir sings behind Libra: "a choir for this!"
-//   7.6   card cut. 3 "then THE STARS *raised the bar.*"  Gemini clears the high bar: "booked the place you mentioned
+//   7.6   flash cut. 3 "then THE STARS *raised the bar.*"  Gemini clears the high bar: "booked the place you mentioned
 //         in july." Libra, quiet: "you were listening?"
 //   11.45 stamp "NEW *STANDARD.*"  12.0 THE STARS: "Being heard is the *starting line.*"  Pisces: HEARD!, fountaining.
 import { makeBare } from '../../nt2e21/scenes/barekit.js'

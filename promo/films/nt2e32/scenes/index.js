@@ -1,9 +1,9 @@
-// nt2e32 · WHAT THEY SAID vs WHAT THEY MEANT · "Scorpio Says Fine" (20 s vertical, Trends Vol. 2 ep 32, music: lofi · Bm).
+// nt2e32 · WHAT THEY SAID vs WHAT THEY MEANT · "Scorpio Says Fine" (18 s vertical, Trends Vol. 2 ep 32, music: lofi · Bm).
 // The format lives in ../../nt2e31/scenes/saidkit.js (eps 31–35) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "What a Scorpio *says* | vs what they *mean.*" ♏ in sunglasses, mid-sip.
 //   2.1   SAID "I'm fine." (shades) / MEANT "I've thought about it for *nine hours.*" (a THINKING clock: 9 hrs)
 //   5.1   SAID "interesting." (shades) / MEANT "I'm *obsessed* with this detail about you." (a notebook of hearts)
-//   8.1   card cut. SAID = MEANT "I want to know where *we're going.*" → ✓ SAME
+//   8.1   flash cut. SAID = MEANT "I want to know where *we're going.*" → ✓ SAME
 //   11.4  Scorpio + ♉ Taurus.  12.0 THE STARS: "Mystery is fun. *Clarity* is kinder."  Pisces: CLEAR!, fountaining.
 import { makeSaid } from '../../nt2e31/scenes/saidkit.js'
 import { mugProp, paperProp, bookProp, starFrame, inSprite, shadesCells, prog } from '../../nt2e21/scenes/trendkit.js'

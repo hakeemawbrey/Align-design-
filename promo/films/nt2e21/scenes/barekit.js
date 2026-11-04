@@ -4,7 +4,7 @@
 // head height; the date runs, clears it with something genuinely thoughtful, and the sign goes quiet. A stamp slams
 // "NEW *STANDARD.*", THE STARS say the last line and Pisces holds up a card, fountaining.
 //
-// 20 s · story 0–15.6 · then the shared end card.
+// 18 s (slate 20 s) · story 0–15.6 · then the 2.4 s short end card. No card-back cut: the old cut time is a white flash.
 //   0.00–2.10  hook (on screen at t = 0): "They did the *bare minimum.* | (I'm a <Sign>.)" + the sign mid-celebration.
 //   2.10–4.85  beat 1 · 4.85–7.60 beat 2 · 7.60–11.40 beat 3 (card cut at 7.6) · 11.45 stamp · 12.0 last line.
 //
@@ -18,7 +18,7 @@ import {
   talkHops, NAMES, article, GOLD, BONE, INK, PINK, RED, INTER, CPS,
 } from './trendkit.js'
 
-export const DURATION = 20
+export const DURATION = 20   // the slate length; the film itself is 2.0 s shorter (short end card, CHANGE 4 Nov, see trendkit.js makeFilm)
 const STORY_END = DURATION - 4.4
 export const T = {
   hookOut: [1.95, 2.1],

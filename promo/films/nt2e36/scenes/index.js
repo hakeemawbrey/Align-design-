@@ -1,9 +1,9 @@
-// nt2e36 · NATURE DOCUMENTARY NARRATOR · "The Taurus Nests" (25 s vertical, Trends Vol. 2 ep 36, music: cinematic · Cm).
+// nt2e36 · NATURE DOCUMENTARY NARRATOR · "The Taurus Nests" (23 s vertical, Trends Vol. 2 ep 36, music: cinematic · Cm).
 // The format lives in ./natkit.js (eps 36–40) on ../../nt2e21/scenes/trendkit.js (the batch core).
 //   0.0   hook: "In the cold months, | the *Taurus* nests." ♉ dragging a blanket. Lower third: THE TAURUS · Taurus cozius.
 //   2.4   I · THE NEST  "It gathers soft things. *Many* soft things."  Blankets and pillows pile up, one by one.
 //   7.4   II · THE HOARD  "Approach the snacks *slowly.*"  Taurus curls around a cookie pile, one eye open.
-//   12.4  card cut. III · RARELY SEEN  "Rarely seen: it *shares* the warm blanket."  ♍ Virgo shivers; the Taurus pulls
+//   12.4  flash cut. III · RARELY SEEN  "Rarely seen: it *shares* the warm blanket."  ♍ Virgo shivers; the Taurus pulls
 //         the top blanket over its mate.
 //   17.0  together in the nest; THE STARS peek from the left bush.  17.3 THE NARRATOR: "A warm nest is *shared.*"
 //   Pisces watches through binoculars from the right bush, crying.

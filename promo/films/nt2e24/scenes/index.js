@@ -1,10 +1,10 @@
-// nt2e24 · THE BARE MINIMUM · "Virgo Grades a Text" (20 s vertical, Trends Vol. 2 ep 24, music: funk · A).
+// nt2e24 · THE BARE MINIMUM · "Virgo Grades a Text" (18 s vertical, Trends Vol. 2 ep 24, music: funk · A).
 // The format lives in ../../nt2e21/scenes/barekit.js (eps 21–25) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "They did the *bare minimum.* | (I'm a Virgo.)" ♍ mid-slap of a gold star sticker.
 //   2.1   1 "they used *a period.*"  ♉ hops the floor-level bar: "see you at 7."  Virgo awards a giant gold star:
 //         "punctuation!!"
 //   4.85  2 "they were *on time.* (ish)"  ♉: "here! (7:02)"  Virgo holds up a report card: A+. "A+ effort!"
-//   7.6   card cut. 3 "then THE STARS *raised the bar.*"  Taurus clears the high bar: "i made the plan. you just show
+//   7.6   flash cut. 3 "then THE STARS *raised the bar.*"  Taurus clears the high bar: "i made the plan. you just show
 //         up."  Virgo drops the clipboard: "a… plan?"
 //   11.45 stamp "NEW *STANDARD.*"  12.0 THE STARS: "Let someone *else* hold the clipboard."  Pisces: A++, fountaining.
 import { makeBare } from '../../nt2e21/scenes/barekit.js'

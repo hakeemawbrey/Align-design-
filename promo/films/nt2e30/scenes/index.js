@@ -1,6 +1,6 @@
-// nt2e30 · PETTY OR VALID · "Sagittarius Posts a Quote" (20 s vertical, Trends Vol. 2 ep 30, music: chiptune · E).
+// nt2e30 · PETTY OR VALID · "Sagittarius Posts a Quote" (18 s vertical, Trends Vol. 2 ep 30, music: chiptune · E).
 // The format lives in ../../nt2e26/scenes/pettykit.js (eps 26–30) on ../../nt2e21/scenes/trendkit.js (the batch core).
-// Hook "Petty or *valid?* | Sagittarius edition."; three confessions, the needle judges; round 3 (card cut 8.1) wobbles to
+// Hook "Petty or *valid?* | Sagittarius edition."; three confessions, the needle judges; round 3 (flash cut 8.1, no card-back) wobbles to
 // VALID + "so say it."; the sign says it to its person; THE STARS: the last line; Pisces fountains.
 //   #1 "I posted a vague quote about *freedom* after we bickered." → PETTY · #2 "I need a night *alone* sometimes." → VALID
 //   #3 "I’m hurt they laughed at my *big plan.*" → VALID, so say it.  Sag to ♊: "my big plan matters to me. can we talk?"

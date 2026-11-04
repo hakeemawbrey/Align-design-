@@ -1,6 +1,6 @@
-// nt2e28 · PETTY OR VALID · "Scorpio's Dramatic Exit" (20 s vertical, Trends Vol. 2 ep 28, music: chiptune · C).
+// nt2e28 · PETTY OR VALID · "Scorpio's Dramatic Exit" (18 s vertical, Trends Vol. 2 ep 28, music: chiptune · C).
 // The format lives in ../../nt2e26/scenes/pettykit.js (eps 26–30) on ../../nt2e21/scenes/trendkit.js (the batch core).
-// Hook "Petty or *valid?* | Scorpio edition."; three confessions, the needle judges; round 3 (card cut 8.1) wobbles to
+// Hook "Petty or *valid?* | Scorpio edition."; three confessions, the needle judges; round 3 (flash cut 8.1, no card-back) wobbles to
 // VALID + "so say it."; the sign says it to its person; THE STARS: the last line; Pisces fountains.
 //   #1 "I remember *exactly* what they wore on date one." → VALID · #2 "I made a *dramatic exit*… to the kitchen." → PETTY
 //   #3 "I want to know where this is *going.*" → VALID, so say it.  Scorpio to ♋: "so… where is this going? i’d like to know."

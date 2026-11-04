@@ -1,10 +1,10 @@
-// nt2e22 · THE BARE MINIMUM · "Leo Gets a Thumbs-Up" (20 s vertical, Trends Vol. 2 ep 22, music: funk · F).
+// nt2e22 · THE BARE MINIMUM · "Leo Gets a Thumbs-Up" (18 s vertical, Trends Vol. 2 ep 22, music: funk · F).
 // The format lives in ../../nt2e21/scenes/barekit.js (eps 21–25) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "They did the *bare minimum.* | (I'm a Leo.)" ♌ mid-bow, hugging a trophy.
 //   2.1   1 "they *liked* my photo."  ♈ hops the floor-level bar: "liked your photo!"  Leo, under a spotlight, trophy
 //         raised: "i’d like to thank…"
 //   4.85  2 "they said *‘nice jacket.’*"  A crowd of tiny stars cheers, roses land at Leo's feet: "you’re too kind!!"
-//   7.6   card cut. 3 "then THE STARS *raised the bar.*"  Aries clears the high bar: "saved you a seat. front row."
+//   7.6   flash cut. 3 "then THE STARS *raised the bar.*"  Aries clears the high bar: "saved you a seat. front row."
 //         Leo, quiet: "…at my recital?"
 //   11.45 stamp "NEW *STANDARD.*"  12.0 THE STARS: "Showing up is the *real* applause."  Pisces: ENCORE!, fountaining.
 import { makeBare } from '../../nt2e21/scenes/barekit.js'

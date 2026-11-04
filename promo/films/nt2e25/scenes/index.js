@@ -1,11 +1,11 @@
-// nt2e25 · THE BARE MINIMUM · "Aquarius Gets a Good Morning" (20 s vertical, Trends Vol. 2 ep 25, music: funk · Bb).
+// nt2e25 · THE BARE MINIMUM · "Aquarius Gets a Good Morning" (18 s vertical, Trends Vol. 2 ep 25, music: funk · Bb).
 // The format lives in ../../nt2e21/scenes/barekit.js (eps 21–25) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "They did the *bare minimum.* | (I'm an Aquarius.)" ♒ mid-leap beside its whiteboard.
 //   2.1   1 "they said *good morning.*"  ♐ hops the floor-level bar: "good morning!"  A statue rises, plaque
 //         GOOD MORNING: "commissioning a statue."
 //   4.85  2 "they *didn't* cancel."  ♐: "still on for tonight!"  The whiteboard: THEORY #1: LOVE??  "this changes
 //         everything."
-//   7.6   card cut. 3 "then THE STARS *raised the bar.*"  Sagittarius clears the high bar: "tell me your theory. i've
+//   7.6   flash cut. 3 "then THE STARS *raised the bar.*"  Sagittarius clears the high bar: "tell me your theory. i've
 //         got all night."  Aquarius, quiet: "all… night?"
 //   11.45 stamp "NEW *STANDARD.*"  12.0 THE STARS: "Curiosity is the *raised* bar."  Pisces: THEORY #2!, fountaining.
 import { makeBare } from '../../nt2e21/scenes/barekit.js'

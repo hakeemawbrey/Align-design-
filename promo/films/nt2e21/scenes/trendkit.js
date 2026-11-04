@@ -13,8 +13,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -27,7 +27,7 @@ export const r3 = v => +v.toFixed(3)
 export const pop01 = (t, t0, d = 0.32, s = 1.9) => easeOutBack(prog(t, t0, t0 + d), s)
 export const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
 export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 1 : p >= 1 ? 0 : (1 + 0.18 * Math.sin(Math.PI * Math.min(1, p * 2.2))) * (1 - ease.inCubic(p)) }
-export { clamp, lerp, prog, ease, el, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar, talkHops, popText, ENDCARD_LEN }
+export { clamp, lerp, prog, ease, el, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar, talkHops, popText, ENDCARD_LEN, ENDCARD_SHORT_LEN }
 export const R = (x, col, X, Y, w, h) => { x.fillStyle = col; x.fillRect(Math.round(X), Math.round(Y), Math.round(w), Math.round(h)) }
 export const NAMES = { aries: 'Aries', taurus: 'Taurus', gemini: 'Gemini', cancer: 'Cancer', leo: 'Leo', virgo: 'Virgo', libra: 'Libra', scorpio: 'Scorpio', sagittarius: 'Sagittarius', capricorn: 'Capricorn', aquarius: 'Aquarius', pisces: 'Pisces' }
 export const article = id => (/^[aeiou]/i.test(NAMES[id]) ? 'an' : 'a')
@@ -508,7 +508,9 @@ export function shout(x, t, text, cx, cy, t0, { size = 72, col = GOLD, rot = -0.
 const CPS = 30
 export { CPS }
 export function makeFilm(cfg) {
-  const DURATION = cfg.duration, STORY_END = DURATION - ENDCARD_LEN
+  // cfg.duration is the slate length (story + the old 4.4 s card); the film now ends on the 2.4 s short end card
+  // (CHANGE 4 Nov), so it runs 2.0 s shorter. No card-back cut plays: the old cut times get a white flash instead.
+  const STORY_END = cfg.duration - ENDCARD_LEN, DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(3)
   const CUTS = cfg.cuts || []
   const lines = cfg.lines || []
   async function build(stage) {
@@ -526,7 +528,7 @@ export function makeFilm(cfg) {
     const bug = buildBug(root, { ...cfg.bug })
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const flash = el('div', { position: 'absolute', inset: 0, background: '#fff6ea', opacity: 0, pointerEvents: 'none' }, root)
-    const flashes = cfg.flashes || []
+    const flashes = [...(cfg.flashes || []), ...CUTS.map(c => c.t)]
     return {
       start: 0, end: STORY_END + 0.01, root,
       update(t) {
@@ -548,15 +550,14 @@ export function makeFilm(cfg) {
       },
     }
   }
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 })]
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const CUES = [
     ...(cfg.cues || []),
-    ...(cfg.flashes || []).flatMap(c => [['whoosh', r3(c - 0.08), 0.28, 0.035], ['tick', c, 0.05]]),
+    ...[...(cfg.flashes || []), ...CUTS.map(c => c.t)].flatMap(c => [['whoosh', r3(c - 0.08), 0.28, 0.035], ['tick', c, 0.05]]),
     ...(lines.length ? talkCues(lines, { cps: CPS, pitch: cfg.pitch || {} }) : []),
     ['whoosh', r3(STORY_END - 0.5), 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   void NOTE
   return { DURATION, SCENES, CUES, STORY_END, CUTS }

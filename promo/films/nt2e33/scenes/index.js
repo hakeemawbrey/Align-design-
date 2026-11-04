@@ -1,10 +1,10 @@
-// nt2e33 · WHAT THEY SAID vs WHAT THEY MEANT · "Pisces Is Not Crying" (20 s vertical, Trends Vol. 2 ep 33, music: lofi · Cm).
+// nt2e33 · WHAT THEY SAID vs WHAT THEY MEANT · "Pisces Is Not Crying" (18 s vertical, Trends Vol. 2 ep 33, music: lofi · Cm).
 // The format lives in ../../nt2e31/scenes/saidkit.js (eps 31–35) on ../../nt2e21/scenes/trendkit.js.
 // Pisces leads this one, so the background Pisces sits out: the hero cries in every shot instead.
 //   0.0   hook: "What a Pisces *says* | vs what they *mean.*" ♓ dabbing its eyes with a tissue.
 //   2.1   SAID "I'm not crying." (tears anyway) / MEANT "I am. It's a *nice song.*" (fountains, music notes)
 //   5.1   SAID "I'm okay with whatever." / MEANT "I've imagined our *whole winter.*" (blanket, two mugs)
-//   8.1   card cut. SAID = MEANT "I need a minute, *then a hug.*" → ✓ SAME
+//   8.1   flash cut. SAID = MEANT "I need a minute, *then a hug.*" → ✓ SAME
 //   11.4  Pisces + ♋ Cancer, happy tears.  12.0 THE STARS: "Soft hearts can *speak up.*"
 import { makeSaid } from '../../nt2e31/scenes/saidkit.js'
 import { starFrame, inSprite, tearsCells, tissues, label, blanketProp, mugProp, GOLD, INTER } from '../../nt2e21/scenes/trendkit.js'

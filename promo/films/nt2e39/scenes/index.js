@@ -1,9 +1,9 @@
-// nt2e39 · NATURE DOCUMENTARY NARRATOR · "The Sagittarius Roams" (25 s vertical, Trends Vol. 2 ep 39, music: cinematic · Fm).
+// nt2e39 · NATURE DOCUMENTARY NARRATOR · "The Sagittarius Roams" (23 s vertical, Trends Vol. 2 ep 39, music: cinematic · Fm).
 // The format lives in ../../nt2e36/scenes/natkit.js (eps 36–40) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "The wild *Sagittarius* | cannot sit still." ♐ mid-pace, backpack on. THE SAGITTARIUS · Sagittarius wanderlustus.
 //   2.4   I · THE PACING  "It paces the den at *dawn.*"  Back and forth, back and forth; the sky warms a little.
 //   7.4   II · THE BOLT  "A new idea appears. It *bolts.*"  A paper map flutters past; Sag chases it out of frame.
-//   12.4  card cut. III · RARELY SEEN  "Rarely seen: it comes back *for someone.*"  Sag runs back in with a second
+//   12.4  flash cut. III · RARELY SEEN  "Rarely seen: it comes back *for someone.*"  Sag runs back in with a second
 //         backpack and hands it to ♌ Leo.
 //   17.0  together, both backpacks on.  17.3 THE NARRATOR: "Some adventures need a *plus-one.*"  Pisces cries in the hide.
 import { makeNat } from '../../nt2e36/scenes/natkit.js'

@@ -1,9 +1,9 @@
-// nt2e26 · PETTY OR VALID · "Taurus and the Last Dumpling" (20 s vertical, Trends Vol. 2 ep 26, music: chiptune · A).
+// nt2e26 · PETTY OR VALID · "Taurus and the Last Dumpling" (18 s vertical, Trends Vol. 2 ep 26, music: chiptune · A).
 // The format lives in ./pettykit.js (eps 26–30) on ../../nt2e21/scenes/trendkit.js (the batch core).
 //   0.0   hook: "Petty or *valid?* | Taurus edition." ♉ mid-hug of a takeout box, the needle twitching.
 //   2.1   #1 "I didn't share my fries. They said *‘I’m not hungry.’*"  Taurus guards the fries → VALID.
 //   5.1   #2 "I gave them *the slow stare* for taking the last dumpling."  The last dumpling floats away → PETTY (hehe).
-//   8.1   card cut. #3 "I’m sad they forgot our *cozy night* and I didn’t say so."  Taurus under a blanket with a mug;
+//   8.1   flash cut. #3 "I’m sad they forgot our *cozy night* and I didn’t say so."  Taurus under a blanket with a mug;
 //         the needle wobbles… VALID + "so say it."
 //   11.4  Taurus to ♍ Virgo: "hey, i missed our cozy night."  Virgo melts.
 //   12.15 THE STARS: "Say it with *words*, not fries."  Pisces: VALID!, fountaining.

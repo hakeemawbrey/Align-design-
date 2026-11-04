@@ -1,6 +1,6 @@
-// nt2e27 · PETTY OR VALID · "Gemini Renames a Contact" (20 s vertical, Trends Vol. 2 ep 27, music: chiptune · B).
+// nt2e27 · PETTY OR VALID · "Gemini Renames a Contact" (18 s vertical, Trends Vol. 2 ep 27, music: chiptune · B).
 // The format lives in ../../nt2e26/scenes/pettykit.js (eps 26–30) on ../../nt2e21/scenes/trendkit.js (the batch core).
-// Hook "Petty or *valid?* | Gemini edition."; three confessions, the needle judges; round 3 (card cut 8.1) wobbles to
+// Hook "Petty or *valid?* | Gemini edition."; three confessions, the needle judges; round 3 (flash cut 8.1, no card-back) wobbles to
 // VALID + "so say it."; the sign says it to its person; THE STARS: the last line; Pisces fountains.
 //   #1 "I renamed them in my phone to *‘Mr. Late.’*" → PETTY · #2 "I’m annoyed they *talked over* my story twice." → VALID
 //   #3 "I wish they’d ask about *my* day." → VALID, so say it.  Gemini to ♐: "can you ask about my day sometimes?"

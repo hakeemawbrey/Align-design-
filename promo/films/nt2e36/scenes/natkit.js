@@ -4,7 +4,7 @@
 // THE NARRATOR). Three observed behaviours with chapter tags ("I · THE NEST"); the third (under the one card cut) is
 // the rare, tender one (a blinking RARE FOOTAGE chip). Pisces watches from the hide with binoculars and cries.
 //
-// 25 s · story 0–20.6 · then the shared end card.
+// 23 s (slate 25 s) · story 0–20.6 · then the 2.4 s short end card. No card-back cut: the old cut time is a white flash.
 //   0.00–2.40  hook (on screen at t = 0): the hook caption + the sign mid-behaviour + the lower third.
 //   2.40–7.40  chapter I · 7.40–12.40 chapter II · 12.40–17.00 chapter III (card cut 12.4) · 17.0 finale · 17.3 last line.
 //
@@ -17,7 +17,7 @@ import {
   popOut, prog, lerp, clamp, ease, r3, el, NAMES, GOLD, BONE, INK, PINK, INTER, SERIF, MONO, CPS,
 } from '../../nt2e21/scenes/trendkit.js'
 
-export const DURATION = 25
+export const DURATION = 25   // the slate length; the film itself is 2.0 s shorter (short end card, CHANGE 4 Nov, see trendkit.js makeFilm)
 const STORY_END = DURATION - 4.4
 export const T = {
   hookOut: [2.25, 2.4],

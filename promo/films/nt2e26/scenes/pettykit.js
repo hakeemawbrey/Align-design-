@@ -4,7 +4,7 @@
 // the one card cut): the needle wobbles, lands on VALID, and a second tag adds "so say it." Then the sign turns to its
 // person and says it; THE STARS say the last line; Pisces holds up a card, fountaining.
 //
-// 20 s · story 0–15.6 · then the shared end card.
+// 18 s (slate 20 s) · story 0–15.6 · then the 2.4 s short end card. No card-back cut: the old cut time is a white flash.
 //   0.00–2.10  hook (on screen at t = 0): "Petty or *valid?* | <Sign> edition." + the sign mid-action, needle twitching.
 //   2.10–5.10  round 1 · 5.10–8.10 round 2 · 8.10–11.40 round 3 (card cut at 8.1) · 11.4 finale · 12.0 last line.
 //
@@ -18,7 +18,7 @@ import {
   INTER, SERIF, CPS,
 } from '../../nt2e21/scenes/trendkit.js'
 
-export const DURATION = 20
+export const DURATION = 20   // the slate length; the film itself is 2.0 s shorter (short end card, CHANGE 4 Nov, see trendkit.js makeFilm)
 export const T = {
   hookOut: [1.95, 2.1],
   rounds: [[2.1, 5.1], [5.1, 8.1], [8.1, 11.4]],

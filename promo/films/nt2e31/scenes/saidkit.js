@@ -5,7 +5,7 @@
 // same thing and a "✓ SAME" stamp lands across the seam. Finale: the sign and its person, THE STARS' last line,
 // Pisces with a card, fountaining (Pisces sniffles in the top panel's corner all through).
 //
-// 20 s · story 0–15.6 · then the shared end card.
+// 18 s (slate 20 s) · story 0–15.6 · then the 2.4 s short end card. No card-back cut: the old cut time is a white flash.
 //   0.00–2.10  hook (on screen at t = 0): "What <a sign> *says* | vs what they *mean.*" + the sign mid-action.
 //   2.10–5.10  pair 1 · 5.10–8.10 pair 2 · 8.10–11.40 pair 3 (card cut 8.1) · 11.4 finale · 12.0 last line.
 //
@@ -19,7 +19,7 @@ import {
   INTER, MONO, CPS,
 } from '../../nt2e21/scenes/trendkit.js'
 
-export const DURATION = 20
+export const DURATION = 20   // the slate length; the film itself is 2.0 s shorter (short end card, CHANGE 4 Nov, see trendkit.js makeFilm)
 export const T = {
   hookOut: [1.95, 2.1],
   pairs: [[2.1, 5.1], [5.1, 8.1], [8.1, 11.4]],

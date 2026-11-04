@@ -1,6 +1,6 @@
-// nt2e29 · PETTY OR VALID · "Capricorn Sends Minutes" (20 s vertical, Trends Vol. 2 ep 29, music: chiptune · D).
+// nt2e29 · PETTY OR VALID · "Capricorn Sends Minutes" (18 s vertical, Trends Vol. 2 ep 29, music: chiptune · D).
 // The format lives in ../../nt2e26/scenes/pettykit.js (eps 26–30) on ../../nt2e21/scenes/trendkit.js (the batch core).
-// Hook "Petty or *valid?* | Capricorn edition."; three confessions, the needle judges; round 3 (card cut 8.1) wobbles to
+// Hook "Petty or *valid?* | Capricorn edition."; three confessions, the needle judges; round 3 (flash cut 8.1, no card-back) wobbles to
 // VALID + "so say it."; the sign says it to its person; THE STARS: the last line; Pisces fountains.
 //   #1 "I put our date in my calendar *in pen.*" → VALID · #2 "I sent *meeting notes* after our little argument." → PETTY
 //   #3 "I want them to *plan* something for once." → VALID, so say it.  Capricorn to ♉: "could you plan our next date? i’d love that."

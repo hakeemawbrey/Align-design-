@@ -1,9 +1,9 @@
-// nt2e31 · WHAT THEY SAID vs WHAT THEY MEANT · "Aries Is Not Cold" (20 s vertical, Trends Vol. 2 ep 31, music: lofi · Am).
+// nt2e31 · WHAT THEY SAID vs WHAT THEY MEANT · "Aries Is Not Cold" (18 s vertical, Trends Vol. 2 ep 31, music: lofi · Am).
 // The format lives in ./saidkit.js (eps 31–35) on ../../nt2e21/scenes/trendkit.js (the batch core).
 //   0.0   hook: "What an Aries *says* | vs what they *mean.*" ♈ shivering, arms crossed, snow drifting.
 //   2.1   SAID "I'm not even cold." (shivering) / MEANT "please offer me *your jacket.*" (dreaming of a jacket)
 //   5.1   SAID "I'll text you whenever." / MEANT "I'll text you in *four minutes.*" (phone, thumb hovering)
-//   8.1   card cut. SAID = MEANT "I like you. *A lot.*" → ✓ SAME
+//   8.1   flash cut. SAID = MEANT "I like you. *A lot.*" → ✓ SAME
 //   11.4  Aries + ♎ Libra.  12.0 THE STARS: "Say the meant part *first.*"  Pisces: SAID IT!, fountaining.
 import { makeSaid } from './saidkit.js'
 import { jacketProp, phoneProp, label, BONE, INTER } from '../../nt2e21/scenes/trendkit.js'

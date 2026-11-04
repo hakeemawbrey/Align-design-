@@ -1,9 +1,9 @@
-// nt2e35 · WHAT THEY SAID vs WHAT THEY MEANT · "Aquarius Is Not a Romance Person" (20 s vertical, Trends Vol. 2 ep 35,
+// nt2e35 · WHAT THEY SAID vs WHAT THEY MEANT · "Aquarius Is Not a Romance Person" (18 s vertical, Trends Vol. 2 ep 35,
 // music: lofi · Em). The format lives in ../../nt2e31/scenes/saidkit.js (eps 31–35) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "What an Aquarius *says* | vs what they *mean.*" ♒ mid-shrug.
 //   2.1   SAID "I'm not really a romance person." / MEANT "I drew you a *star map* by hand." (it draws itself)
 //   5.1   SAID "cool." / MEANT "best night of my *whole year.*" (MY YEAR, a gold star on one night)
-//   8.1   card cut. SAID = MEANT "I *missed* you today." → ✓ SAME
+//   8.1   flash cut. SAID = MEANT "I *missed* you today." → ✓ SAME
 //   11.4  Aquarius + ♊ Gemini.  12.0 THE STARS: "Let the *warm* part show."  Pisces: WARM!, fountaining.
 import { makeSaid } from '../../nt2e31/scenes/saidkit.js'
 import { starMapProp, paperProp, goldStarSticker, label, prog, BONE, INTER } from '../../nt2e21/scenes/trendkit.js'

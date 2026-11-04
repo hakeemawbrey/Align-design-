@@ -1,9 +1,9 @@
-// nt2e37 · NATURE DOCUMENTARY NARRATOR · "The Gemini in the Wild" (25 s vertical, Trends Vol. 2 ep 37, music: cinematic · Dm).
+// nt2e37 · NATURE DOCUMENTARY NARRATOR · "The Gemini in the Wild" (23 s vertical, Trends Vol. 2 ep 37, music: cinematic · Dm).
 // The format lives in ../../nt2e36/scenes/natkit.js (eps 36–40) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "Observe the *Gemini*, | mid-conversation." ♊ mid-chatter, three speech bubbles. THE GEMINI · Gemini chattericus.
 //   2.4   I · TALKS ALOFT  "It keeps three talks aloft *at once.*"  Three bubbles orbit it like juggling balls.
 //   7.4   II · THE CALL  "Its mating call: *‘wait, what?’*"  "wait, WHAT?" ×3, bigger each time.
-//   12.4  card cut. III · RARELY SEEN  "Rarely seen: it lands, and *listens.*"  The bubbles drop; it sits still while
+//   12.4  flash cut. III · RARELY SEEN  "Rarely seen: it lands, and *listens.*"  The bubbles drop; it sits still while
 //         ♐ Sagittarius talks: "…and that’s my big dream."
 //   17.0  together.  17.3 THE NARRATOR: "Even the quickest wings *land.*"  Pisces cries in the hide.
 import { makeNat } from '../../nt2e36/scenes/natkit.js'

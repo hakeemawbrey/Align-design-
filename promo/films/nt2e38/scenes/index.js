@@ -1,9 +1,9 @@
-// nt2e38 · NATURE DOCUMENTARY NARRATOR · "The Cancer Hosts" (25 s vertical, Trends Vol. 2 ep 38, music: cinematic · Ebm).
+// nt2e38 · NATURE DOCUMENTARY NARRATOR · "The Cancer Hosts" (23 s vertical, Trends Vol. 2 ep 38, music: cinematic · Ebm).
 // The format lives in ../../nt2e36/scenes/natkit.js (eps 36–40) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "Behold the *Cancer*, | in its shell." ♋ fluffing a pillow fort. THE CANCER · Cancer hospitalis.
 //   2.4   I · THE SHELL  "It builds a shell of *pillows.*"  Pillows stack up around it.
 //   7.4   II · THE FEAST  "It feeds every visitor. *Every* visitor."  Cookies fly to three tiny visitors; the stacks grow.
-//   12.4  card cut. III · RARELY SEEN  "Rarely seen: it *lets* someone feed it."  ♏ Scorpio offers a cookie; Cancer takes it.
+//   12.4  flash cut. III · RARELY SEEN  "Rarely seen: it *lets* someone feed it."  ♏ Scorpio offers a cookie; Cancer takes it.
 //   17.0  together.  17.3 THE NARRATOR: "Hosts deserve *hosting*, too."  Pisces cries in the hide.
 import { makeNat } from '../../nt2e36/scenes/natkit.js'
 import { pillowProp, cookieProp, crowd, prog, ease, lerp, clamp } from '../../nt2e21/scenes/trendkit.js'

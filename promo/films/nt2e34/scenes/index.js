@@ -1,9 +1,9 @@
-// nt2e34 · WHAT THEY SAID vs WHAT THEY MEANT · "Capricorn Is Just Busy" (20 s vertical, Trends Vol. 2 ep 34, music: lofi · Dm).
+// nt2e34 · WHAT THEY SAID vs WHAT THEY MEANT · "Capricorn Is Just Busy" (18 s vertical, Trends Vol. 2 ep 34, music: lofi · Dm).
 // The format lives in ../../nt2e31/scenes/saidkit.js (eps 31–35) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "What a Capricorn *says* | vs what they *mean.*" ♑ peeking over a stack of folders.
 //   2.1   SAID "I'm just busy this week." (folders) / MEANT "I *cleared Friday* for you." (FRIDAY: FREE)
 //   5.1   SAID "let's be practical." / MEANT "I already *named* our plant." (a plant tagged SPROUT)
-//   8.1   card cut. SAID = MEANT "*You* matter to me." → ✓ SAME
+//   8.1   flash cut. SAID = MEANT "*You* matter to me." → ✓ SAME
 //   11.4  Capricorn + ♍ Virgo.  12.0 THE STARS: "Your heart isn't *off the clock.*"  Pisces: MATTERS!, fountaining.
 import { makeSaid } from '../../nt2e31/scenes/saidkit.js'
 import { folderStack, paperProp, plantProp } from '../../nt2e21/scenes/trendkit.js'

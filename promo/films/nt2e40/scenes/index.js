@@ -1,9 +1,9 @@
-// nt2e40 · NATURE DOCUMENTARY NARRATOR · "The Libra Decides" (25 s vertical, Trends Vol. 2 ep 40, music: cinematic · Gm).
+// nt2e40 · NATURE DOCUMENTARY NARRATOR · "The Libra Decides" (23 s vertical, Trends Vol. 2 ep 40, music: cinematic · Gm).
 // The format lives in ../../nt2e36/scenes/natkit.js (eps 36–40) on ../../nt2e21/scenes/trendkit.js.
 //   0.0   hook: "Few creatures deliberate | like the *Libra.*" ♎ glancing between two menus. THE LIBRA · Libra ponderosa.
 //   2.4   I · THE WEIGHING  "It weighs two menus. For *forty minutes.*"  The menus bob like scales; a timer runs.
 //   7.4   II · THE POLL  "It polls the *entire* herd."  A crowd of little stars votes A / B, evenly split.
-//   12.4  card cut. III · RARELY SEEN  "Asked what *it* wants, it chooses. Instantly."  ♒ Aquarius: "what do you want?"
+//   12.4  flash cut. III · RARELY SEEN  "Asked what *it* wants, it chooses. Instantly."  ♒ Aquarius: "what do you want?"
 //         Libra, at once: "this one!"
 //   17.0  together.  17.3 THE NARRATOR: "Your own vote *counts.*"  Pisces cries in the hide.
 import { makeNat } from '../../nt2e36/scenes/natkit.js'
