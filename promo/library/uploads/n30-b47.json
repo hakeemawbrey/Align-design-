@@ -1,12 +1,111 @@
 {
  "nsre01": {
-  "video": "/_blob/85886502ca3139eb46896f419998adaf",
-  "poster": "/_blob/d575e31643d194c39ce5af42b7e5013d",
+  "video": "/_blob/181a9232bd4620b2b6a16638e051a03a",
+  "poster": "/_blob/91be5d0e3a73661e08723797583ba51c",
   "title": "A hand-knitted hat",
-  "len": 20,
+  "len": 18,
   "series": "silent2",
   "episode": 1,
   "caption": "A lumpy hand-knitted hat, reviewed without a single word.\nDropped stitches, zero complaints. Made by them wins."
+ },
+ "nsre02": {
+  "video": "/_blob/dddb1438a6cf62d4afb51897b05dae3b",
+  "poster": "/_blob/e55a8d5e68315cdf1400a6899c77d92c",
+  "title": "A homemade snow globe",
+  "len": 18,
+  "series": "silent2",
+  "episode": 2,
+  "caption": "Scorpio reviews a homemade snow globe, silently.\nOne shake, two tiny stars inside, and no composure left."
+ },
+ "nsre03": {
+  "video": "/_blob/85d525a793eac85e6e5bd0d7330a09d3",
+  "poster": "/_blob/8ef9743e40a16d1a933a305e034ed1a5",
+  "title": "A calendar for next year",
+  "len": 18,
+  "series": "silent2",
+  "episode": 3,
+  "caption": "Give a Capricorn a calendar and watch the face.\nThe last page said: whatever you want, I'm in."
+ },
+ "nsre04": {
+  "video": "/_blob/2a45ee6592887f743d275ae5de1edef4",
+  "poster": "/_blob/e011c9552572e0e5d5de6b5f5fa44c89",
+  "title": "A cookie of my face",
+  "len": 18,
+  "series": "silent2",
+  "episode": 4,
+  "caption": "What happens when you bake a Leo a cookie of its own face?\nToo iconic to eat. Obviously."
+ },
+ "nsre05": {
+  "video": "/_blob/81fe2c58cf0164493be82b81519e85bc",
+  "poster": "/_blob/30ee31f3381697ef23612a0c11cff449",
+  "title": "A pop-up card",
+  "len": 18,
+  "series": "silent2",
+  "episode": 5,
+  "caption": "Aquarius reviews a handmade pop-up card. No talking allowed.\nThe engineering impressed. The message inside won."
+ },
+ "nsre06": {
+  "video": "/_blob/549d7be8ab1656df27217de7c9cb2b85",
+  "poster": "/_blob/7d747083fb9470dfe388d7fa63e7d147",
+  "title": "Fuzzy socks",
+  "len": 18,
+  "series": "silent2",
+  "episode": 6,
+  "caption": "Silently reviewing fuzzy socks, Taurus edition.\nLittle bulls on the toes. That's knowing someone."
+ },
+ "nsre07": {
+  "video": "/_blob/afb202c3a25cff9f554d919296434b30",
+  "poster": "/_blob/664b80b346d57cd0ce4fc37c27cc5be3",
+  "title": "A framed photo",
+  "len": 18,
+  "series": "silent2",
+  "episode": 7,
+  "caption": "Cancer reviews a framed photo of your first snow day.\nThen it turned the frame over."
+ },
+ "nsre08": {
+  "video": "/_blob/f6636163132da0e247a665ccbbafa23b",
+  "poster": "/_blob/746670ac9bcd3631828f7561434acd76",
+  "title": "A coupon book",
+  "len": 18,
+  "series": "silent2",
+  "episode": 8,
+  "caption": "A handmade coupon book, reviewed by a Libra with no words.\nThe last coupon: unlimited listening. No expiry."
+ },
+ "nsre09": {
+  "video": "/_blob/1dad2afa4e8c91eee6cc16030ce472d8",
+  "poster": "/_blob/6d95e6cf45f4369e5cab77386a178124",
+  "title": "A hand-drawn map",
+  "len": 18,
+  "series": "silent2",
+  "episode": 9,
+  "caption": "Sagittarius gets a hand-drawn map of its favourite walk.\nThe X marks where it made someone laugh."
+ },
+ "nsre10": {
+  "video": "/_blob/4258aa52ad6df0a4a192e2781399eb29",
+  "poster": "/_blob/747dfed52cd72ddc3eae1cad95de4f36",
+  "title": "A night-sky puzzle",
+  "len": 18,
+  "series": "silent2",
+  "episode": 10,
+  "caption": "A homemade night-sky puzzle with one piece missing.\nThe last piece had a little heart on it."
+ },
+ "nsre11": {
+  "video": "/_blob/4c96f17f7412318815aa423acd1845d5",
+  "poster": "/_blob/44943797243a4a41687dfa36e33df8cc",
+  "title": "Star-shaped pancakes",
+  "len": 18,
+  "series": "silent2",
+  "episode": 11,
+  "caption": "Can an Aries review breakfast without eating it first?\nThe syrup said proud of you. Fork down."
+ },
+ "nsre12": {
+  "video": "/_blob/e5b2604d5db6a5335444febab62b7acd",
+  "poster": "/_blob/8248dbd77114f8b37c8e3d9fca0b1744",
+  "title": "A jar of twelve reasons",
+  "len": 18,
+  "series": "silent2",
+  "episode": 12,
+  "caption": "Pisces tries to review a jar of twelve reasons without crying.\nIt made it to reason one. Twelve out of ten."
  },
  "nwfe01": {
   "video": "/_blob/af990623ab124e0eb383571e92f4729c",
@@ -97,5 +196,23 @@
   "series": "wait2",
   "episode": 10,
   "caption": "Is your Leo rehearsing a speech in the mirror again?\nThe whole speech was one question, and then it listened."
+ },
+ "nwfe11": {
+  "video": "/_blob/1ac5b0a34f42280029487149157f08b6",
+  "poster": "/_blob/1da65cfe0618b2ca81d78c5117de00b4",
+  "title": "The true part",
+  "len": 18,
+  "series": "wait2",
+  "episode": 11,
+  "caption": "Typing, deleting, typing again. Four screens long.\nThe best reply is usually the shortest true one."
+ },
+ "nwfe12": {
+  "video": "/_blob/052444e08c2c3be45ffcfe7bf2815687",
+  "poster": "/_blob/9608a1047ea2fb49de12604039e803be",
+  "title": "In snow, holding hands",
+  "len": 18,
+  "series": "wait2",
+  "episode": 12,
+  "caption": "Why is Pisces lying in the snow, crying?\nTwo snow angels, holding hands. Happy tears count."
  }
 }
