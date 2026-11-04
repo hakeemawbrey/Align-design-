@@ -1,7 +1,7 @@
 // STAR TALK GAME NIGHT: the shared set, timeline and sound of the game show (promo/films/next30/b07.md, NEXT30-BUILD.md).
 // Lives in ngne01's folder; every episode (ngne01–ngne24) imports it: import { makeGame } from '../../ngne01/gamekit.js'
 //
-// The format (35 s, story 0–30.6, then the shared end card):
+// The format (33 s, story 0–30.6, then the short 2.4 s end card; no card cut, CHANGE 4 Nov):
 //   0.00–3.00   hook: the 2-line hook caption is already up at frame 0; both contestants stand at their podiums,
 //               one mid-action (cfg.A/B.intro). The GAME NIGHT marquee glows; THE STARS (host, gold, pixel mic) pop in and
 //               welcome everyone in the dialogue box. Pisces sits front row in the audience with a tissue box.
@@ -11,7 +11,7 @@
 //               4.3 the kindness point (+1 KIND, ding, audience claps, the score ticks up).
 //   24.6        drum roll.  25.2 FINALE: "Kindest heart: | *<sign>.*" (or both), confetti, the winner's spotlight, the
 //               prize: a face-down card flies in and flips to a talk card (card first, face last). THE STARS' last line.
-//   The one card cut is the middle candidate: the start of round 2.
+//   No Align card cut (CHANGE 4 Nov): the rounds change on the show's own beat transitions.
 //
 //   makeGame(cfg) → { DURATION, SCENES, CUES, T }
 //     cfg.id
@@ -27,8 +27,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill, A as ASSETS } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack, SIGNS } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar, STAR } from '../startalk.js'
 import { popText } from '../lesson.js'
 
@@ -45,8 +45,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline
-export const DURATION = 35
-export const STORY_END = DURATION - ENDCARD_LEN          // 30.6
+export const DURATION = 33                               // story 30.6 + the short (2.4 s) end card (CHANGE 4 Nov)
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 30.6
 const RL = 7.4, R0 = 3.0
 export const T = {
   hostIn: 0.35, welcome: 0.25, welcomeClose: 2.95, h0Out: [2.8, 3.0],
@@ -674,7 +674,7 @@ export function makeGame(cfg) {
 
   // card-cut candidates: the three round starts (cardfx plays the middle one, round 2)
   const CUTS = rounds.map((r, i) => (i === 1 ? { t: r3(r.a - 0.05), kind: 'flip' } : r3(r.a - 0.05)))
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]   // no card cut (CHANGE 4 Nov)
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -704,8 +704,7 @@ export function makeGame(cfg) {
     ...wordPops(T.finHead, 2, 0.08, 3), ['pop', r3(T.finHead + 0.35), 1174.66, 0.045, 0], ['pop', r3(T.finHead + 0.45), 1567.98, 0.04, 0],
     ['whoosh', T.prize[0], 0.4, 0.04], ['whoosh', r3(T.flip[0]), 0.2, 0.03], ['pluck', T.flip[1], 1318.51, 0.045, 0.6, 0], ['glitter', T.flip[1], r3(T.flip[1] + 0.4)],
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
 
   // a readability check (node): every dialogue line holds ≥ 1.5 s after it finishes typing
