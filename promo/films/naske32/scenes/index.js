@@ -1,9 +1,9 @@
-// naske32 · Ask the Stars, Volume 2, ep 32 · "Do I have to tell them about my past?" (20 s, cinematic · Em)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske32 · Ask the Stars, Volume 2, ep 32 · "Do I have to tell them about my past?" (18 s, cinematic · Em)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "Do I have to tell them about my *past?*"  ♏ Scorpio mid-clutch of a locked diary, the lock rattling.
 //   3.0   "you don't owe your whole story on date three."  The diary stays shut. A calm tag: "that's okay."
 //   5.9   "share it when there's trust. at your pace."  The lock clicks open; one page glows.
-//   8.75  card cut → 8.8 "and when they share theirs, hold it gently."  The partner holds its own diary; both glow.
+//   8.8   "and when they share theirs, hold it gently."  The partner holds its own diary; both glow.
 //   12.1  "Your story, | *your* pace."
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, label, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED } from '../../naske19/scenes/askkit2.js'
 
