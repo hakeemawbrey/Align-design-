@@ -2450,107 +2450,107 @@ Someone built a snowman outside your window holding a sign with your name on it.
 
 Being first isn't the problem, Aries. Rushing past people is. Leave the need to win every argument, keep the courage to go first, and let it be a little softer this year.
 
-**9:10 AM · Trial reel** — [Sagittarius's trips: then vs now](https://drive.google.com/file/d/1dC3t39yzJIdOrVH9F2ZzgCgBC6g97K15/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/09 - Sagittarius's trips- then vs now (nhqe09).mp4`
+**9:10 AM · Trial reel** — [Moonlight Lane teaser: one rule](https://drive.google.com/file/d/15pUbDY1nfF09CmKhVDjsI6aL7HVG2YNZ/view) (18 s) · *Moonlight Lane S2 teasers*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Moonlight Lane S2 teasers/Teaser 25 - Moonlight Lane teaser- one rule (nmte25).mp4`
 
-A note on the door that just says BRB, or a map, a return date and postcards for everyone. Adventures land better with a heads-up.
+One dinner rule: answer the talk card honestly.
+Cancer is already panicking.
 
 **10:15 AM · Post** — [The friend who's alone this year](https://drive.google.com/file/d/1QXDNlMoAFQ0kIPQ_xp1nfiypNRVoiJKk/view) (28 s) · *Friends First*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/19 - The friend who's alone this year (nffe19).mp4`
 
 "Come by sometime" is easy to turn down. A day, a time and a seat with their name on it is much harder to refuse. Be specific with the friend spending the holidays alone.
 
-**10:40 AM · Trial reel** — [Who takes the cutest couple photos](https://drive.google.com/file/d/1wM42phZQ7QgWhOkgQk6MiaBt81kR8iPM/view) (16 s) · *Ranking the Signs*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/18 - Who takes the cutest couple photos (nrke18).mp4`
+**10:40 AM · Trial reel** — [Sagittarius's trips: then vs now](https://drive.google.com/file/d/1dC3t39yzJIdOrVH9F2ZzgCgBC6g97K15/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/09 - Sagittarius's trips- then vs now (nhqe09).mp4`
 
-Who takes three hundred couple photos to post one?
-The signs, ranked. The best photo is the one where you're laughing.
+A note on the door that just says BRB, or a map, a return date and postcards for everyone. Adventures land better with a heads-up.
 
 **11:45 AM · Post** — [Taurus: what I'm keeping](https://drive.google.com/file/d/1_m-XBOZwSBSya7RKjgBd1dAS2vyjj8se/view) (18 s) · *New Year, Same Heart*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/02 - Taurus- what I'm keeping (nnye02).mp4`
 
 Some things get heavy because we carry them too long. Set down the old grudges, keep the loyalty that shows up, and let something new grow in the same steady ground.
 
-**12:10 PM · Trial reel** — [They pack a checklist for a day trip.](https://drive.google.com/file/d/1nQrkhk8NXUi1hhPAZLuet2gim_Dlct6_/view) (13 s) · *Dealbreaker or Not?*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/18 - They pack a checklist for a day trip. (ndbe18).mp4`
+**12:10 PM · Trial reel** — [Who takes the cutest couple photos](https://drive.google.com/file/d/1wM42phZQ7QgWhOkgQk6MiaBt81kR8iPM/view) (16 s) · *Ranking the Signs*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/18 - Who takes the cutest couple photos (nrke18).mp4`
 
-They made a checklist for a one-day trip. Too much planning?
-Not when they packed the plasters. Let them pack, you bring snacks.
+Who takes three hundred couple photos to post one?
+The signs, ranked. The best photo is the one where you're laughing.
 
 **1:15 PM · Post** — [Capricorn: the holiday blind spot](https://drive.google.com/file/d/1MScPaA2B3EaiWJzvj059sDxY02G0k8c3/view) (23 s) · *Your Star Guide: Winter*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/38 - Capricorn- the holiday blind spot (ngwe38).mp4`
 
 Bringing work to the party is very Capricorn. The emails will still be there tomorrow, and this night won't come back. You're allowed to just be here.
 
-**1:40 PM · Trial reel** — [Virgo, when their place is a little messy](https://drive.google.com/file/d/1qTP1aJBP-cQiIHu8qRYASRBdUSRfQYk1/view) (10 s) · *One-Line Advice for Your Sign*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/18 - Virgo, when their place is a little messy (nole18).mp4`
+**1:40 PM · Trial reel** — [They pack a checklist for a day trip.](https://drive.google.com/file/d/1nQrkhk8NXUi1hhPAZLuet2gim_Dlct6_/view) (13 s) · *Dealbreaker or Not?*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/18 - They pack a checklist for a day trip. (ndbe18).mp4`
 
-Virgo, there is a sock on the couch and your eye is twitching.
-Put the duster down. Notice the person, not the socks.
+They made a checklist for a one-day trip. Too much planning?
+Not when they packed the plasters. Let them pack, you bring snacks.
 
 **2:45 PM · Post** — [What does Leo season feel like?](https://drive.google.com/file/d/1L4rdmr461xJYUIYjo8yGpXOZ_s2wDSiY/view) (43 s) · *Star Talk Explains, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/24 - What does Leo season feel like- (nx2e24).mp4`
 
 Leo season is warmth, play and being seen. The best way to glow is to make someone else feel seen: a specific compliment beats a big speech every time.
 
-**3:10 PM · Trial reel** — [POV: you're dating a Virgo. Gift wrap.](https://drive.google.com/file/d/18P-AiYUiIlHSZxZsVDwpi1F1d0C6EI8c/view) (15 s) · *POV: You're Dating a ___*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/18 - POV- you're dating a Virgo. Gift wrap. (npve18).mp4`
+**3:10 PM · Trial reel** — [Virgo, when their place is a little messy](https://drive.google.com/file/d/1qTP1aJBP-cQiIHu8qRYASRBdUSRfQYk1/view) (10 s) · *One-Line Advice for Your Sign*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/18 - Virgo, when their place is a little messy (nole18).mp4`
 
-A Virgo wraps gifts with perfect corners. Yours came out lumpy, so they put it on the shelf like a piece of art.
+Virgo, there is a sock on the couch and your eye is twitching.
+Put the duster down. Notice the person, not the socks.
 
 **4:15 PM · Post** — [Quiet Isn't Unhappy](https://drive.google.com/file/d/1RRUEem25Axss7ZyE55Tf7-OGJ5aUBxKN/view) (38 s) · *Season 16: Meet the Family*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/15 - Quiet Isn't Unhappy (nf16e15).mp4`
 
 If your partner goes quiet at your family's table, try not to guess what it means. Ask them in private and offer a break. Some people enjoy the room by listening.
 
-**4:40 PM · Trial reel** — [New Year’s Eve Plans](https://drive.google.com/file/d/1Bomb_b27hU8_NQvZwksvrzGImDR2HgrI/view) (14 s) · *Hot Take, Cold Take*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/18 - New Year’s Eve Plans (nhce18).mp4`
+**4:40 PM · Trial reel** — [POV: you're dating a Virgo. Gift wrap.](https://drive.google.com/file/d/18P-AiYUiIlHSZxZsVDwpi1F1d0C6EI8c/view) (15 s) · *POV: You're Dating a ___*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/18 - POV- you're dating a Virgo. Gift wrap. (npve18).mp4`
 
-New Year's Eve and no plans yet. Rooftop, band and boat, or asleep by ten?
-Ask what they'd love, then plan that.
+A Virgo wraps gifts with perfect corners. Yours came out lumpy, so they put it on the shelf like a piece of art.
 
 **5:45 PM · Post** — [Gemini: what I'm keeping](https://drive.google.com/file/d/1N2PWF8Rn87vS6AAcVdrSzvMqP79nAODF/view) (18 s) · *New Year, Same Heart*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/03 - Gemini- what I'm keeping (nnye03).mp4`
 
 All those drafts you never sent were trying to say something. Keep your curiosity, and this year point it at the conversation you usually change the subject on.
 
-**6:10 PM · Trial reel** — [Virgo plans a gift-wrapping shift](https://drive.google.com/file/d/1rIYm3fAgIveQ1_3miC4aoq39Bp_RuBZl/view) (16 s) · *Rate My Date Idea*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/18 - Virgo plans a gift-wrapping shift (nrde18).mp4`
+**6:10 PM · Trial reel** — [New Year’s Eve Plans](https://drive.google.com/file/d/1Bomb_b27hU8_NQvZwksvrzGImDR2HgrI/view) (14 s) · *Hot Take, Cold Take*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/18 - New Year’s Eve Plans (nhce18).mp4`
 
-Wrapping gifts for a toy drive as a date. Yes?
-Virgo's corners were perfect. Their date's were lumpy and made with love.
+New Year's Eve and no plans yet. Rooftop, band and boat, or asleep by ten?
+Ask what they'd love, then plan that.
 
 **7:15 PM · Post** — [I forgot their birthday.](https://drive.google.com/file/d/1iCqWeh-8-3h1FCXWNIYcfoO4abH6BW2B/view) (18 s) · *Ask the Stars, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/29 - I forgot their birthday. (naske29).mp4`
 
 Forgot their birthday? Own it quickly and sincerely, skip the long excuse and make a real plan to make it up. Then put the date in your calendar today, on repeat.
 
-**7:40 PM · Trial reel** — [Who handles the sweater party better?](https://drive.google.com/file/d/18mUiqafuNZGUJWId_aE7AiLC9cn4vkoA/view) (16 s) · *Sign vs Sign*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/18 - Who handles the sweater party better- (nvse18).mp4`
+**7:40 PM · Trial reel** — [Virgo plans a gift-wrapping shift](https://drive.google.com/file/d/1rIYm3fAgIveQ1_3miC4aoq39Bp_RuBZl/view) (16 s) · *Rate My Date Idea*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/18 - Virgo plans a gift-wrapping shift (nrde18).mp4`
 
-Sweater party: tasteful grey with one stripe, or a sweater that lights up and beeps?
-Wear whatever makes you grin.
+Wrapping gifts for a toy drive as a date. Yes?
+Virgo's corners were perfect. Their date's were lumpy and made with love.
 
 **8:45 PM · Post** — [Working the holiday](https://drive.google.com/file/d/1DqqeMJs-E0HYUXc7BnraV5Et5GBUm1u9/view) (28 s) · *Holiday Survival Guide*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/18 - Working the holiday (nhse18).mp4`
 
 When one of you works the holiday, the day itself can feel lonely. Pick your own date, keep one small ritual, and save a plate instead of a guilt trip.
 
-**9:10 PM · Trial reel** — [Capricorn on the 24th: then vs now](https://drive.google.com/file/d/1j8YQef1Z8GdkBc_kIut52HKJb89nQVZW/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/10 - Capricorn on the 24th- then vs now (nhqe10).mp4`
+**9:10 PM · Trial reel** — [Who handles the sweater party better?](https://drive.google.com/file/d/18mUiqafuNZGUJWId_aE7AiLC9cn4vkoA/view) (16 s) · *Sign vs Sign*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/18 - Who handles the sweater party better- (nvse18).mp4`
 
-One more email at the holiday table, or the laptop shut and a double six on the board. Out of office means out of office.
+Sweater party: tasteful grey with one stripe, or a sweater that lights up and beeps?
+Wear whatever makes you grin.
 
 **10:15 PM · Post** — [Gemini × Pisces: the subject change.](https://drive.google.com/file/d/10LAeg_QfB-ZBG_ebQHmD7v1XvEY-VS8i/view) (28 s) · *Sign × Sign, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/26 - Gemini × Pisces- the subject change. (nsse26).mp4`
 
 Changing the subject can feel like helping, but sometimes they just need you to stay. Stay with the feeling first, then let the laugh come.
 
-**10:40 PM · Trial reel** — [Who saves you the last bite](https://drive.google.com/file/d/1AAr2rDK5lomDmW0zxPCksXHEcQ9Jsom4/view) (16 s) · *Ranking the Signs*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/19 - Who saves you the last bite (nrke19).mp4`
+**10:40 PM · Trial reel** — [Capricorn on the 24th: then vs now](https://drive.google.com/file/d/1j8YQef1Z8GdkBc_kIut52HKJb89nQVZW/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/10 - Capricorn on the 24th- then vs now (nhqe10).mp4`
 
-Which sign saves you the last bite?
-Ranked from wrapped-it-for-you to already ate it. A tiny love letter, really.
+One more email at the holiday table, or the laptop shut and a double six on the board. Out of office means out of office.
 
 ## Day 49 · Tue 22 Dec
 
@@ -2559,454 +2559,457 @@ Ranked from wrapped-it-for-you to already ate it. A tiny love letter, really.
 
 Capricorn mentions a goal once and moves on. The gift that gets them? Proof someone was listening. Write down what they said they wanted.
 
-**9:10 AM · Trial reel** — [They keep score of who texted first.](https://drive.google.com/file/d/158VxEc_j0Xxmh0HsV2vTybqb9FIS3kJY/view) (13 s) · *Dealbreaker or Not?*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/19 - They keep score of who texted first. (ndbe19).mp4`
+**9:10 AM · Trial reel** — [Moonlight Lane teaser: the truths](https://drive.google.com/file/d/1mKMJpPGIaAbZu9Eg7cp3JLJJJn4Xu-7F/view) (18 s) · *Moonlight Lane S2 teasers*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Moonlight Lane S2 teasers/Teaser 26 - Moonlight Lane teaser- the truths (nmte26).mp4`
 
-They're keeping a tally of who texted first. Fair, or a problem?
-Love isn't a scoreboard. If you miss them, just text.
+When the whole table finally tells the truth.
+The matching sweaters itch. Pisces is "fine."
 
 **10:15 AM · Post** — [The Baby Photos](https://drive.google.com/file/d/17N5J4aSpl_TxV8kFK9Rt70cPFfhfW_PD/view) (33 s) · *Season 16: Meet the Family*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/16 - The Baby Photos (nf16e16).mp4`
 
 The baby photos came out. Laugh along, it's how families say they love you. One kind "okay, last one" is fine, and partners, be sweet about it. Who has the most embarrassing album?
 
-**10:40 AM · Trial reel** — [Libra, choosing the holiday gift](https://drive.google.com/file/d/1W7ZhDTbDOU4wXZE4i5kdG40I7EiL3mhe/view) (10 s) · *One-Line Advice for Your Sign*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/19 - Libra, choosing the holiday gift (nole19).mp4`
+**10:40 AM · Trial reel** — [Who saves you the last bite](https://drive.google.com/file/d/1AAr2rDK5lomDmW0zxPCksXHEcQ9Jsom4/view) (16 s) · *Ranking the Signs*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/19 - Who saves you the last bite (nrke19).mp4`
 
-Libra, still weighing three gifts for them?
-Pick the one that made you smile first. That's usually the one.
+Which sign saves you the last bite?
+Ranked from wrapped-it-for-you to already ate it. A tiny love letter, really.
 
 **11:45 AM · Post** — [Cancer: what I'm keeping](https://drive.google.com/file/d/16w1WWzRYzc7oFH8JOe8aEnEg-OC-XC9W/view) (18 s) · *New Year, Same Heart*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/04 - Cancer- what I'm keeping (nnye04).mp4`
 
 You take care of everyone so well that you forget to count yourself. Keep the open door, stop guessing what people feel, and save some of that warmth for you.
 
-**12:10 PM · Trial reel** — [POV: you're dating a Libra. Hosting.](https://drive.google.com/file/d/1V-PO1TnG2xCYDLogtSzIrxqUImLLHWby/view) (15 s) · *POV: You're Dating a ___*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/19 - POV- you're dating a Libra. Hosting. (npve19).mp4`
+**12:10 PM · Trial reel** — [They keep score of who texted first.](https://drive.google.com/file/d/158VxEc_j0Xxmh0HsV2vTybqb9FIS3kJY/view) (13 s) · *Dealbreaker or Not?*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/19 - They keep score of who texted first. (ndbe19).mp4`
 
-A Libra can host a whole party and still check on you across the room. Then they quietly save you the best seat.
+They're keeping a tally of who texted first. Fair, or a problem?
+Love isn't a scoreboard. If you miss them, just text.
 
 **1:15 PM · Post** — [Let it be a tie](https://drive.google.com/file/d/1JaeFXPrGuNQ9NA8lX-j126IjThqcNAWF/view) (28 s) · *The Make-Up Talk*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/20 - Let it be a tie (nmue20).mp4`
 
 Not every disagreement needs a winner. If it's about the tinsel, let it be a tie and enjoy the half-and-half tree. Save your energy for what really matters to you both.
 
-**1:40 PM · Trial reel** — [Winter Blues](https://drive.google.com/file/d/1K8PRL806BuEs1miUA3KbD1CanvEIvGIJ/view) (14 s) · *Hot Take, Cold Take*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/19 - Winter Blues (nhce19).mp4`
+**1:40 PM · Trial reel** — [Libra, choosing the holiday gift](https://drive.google.com/file/d/1W7ZhDTbDOU4wXZE4i5kdG40I7EiL3mhe/view) (10 s) · *One-Line Advice for Your Sign*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/19 - Libra, choosing the holiday gift (nole19).mp4`
 
-Winter blues hit. Text everyone, or tell no one?
-Tell one person you trust how you really feel. That's enough to start.
+Libra, still weighing three gifts for them?
+Pick the one that made you smile first. That's usually the one.
 
 **2:45 PM · Post** — [The Invite](https://drive.google.com/file/d/1jSt5JIXNY9WFyx5w19Wiosj-dhXV-EL-/view) (23 s) · *Single and Thriving*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/20 - The Invite (nste20).mp4`
 
 Invited to someone's family dinner and worried you'd be in the way? They asked because they want you there. Letting people in is allowed.
 
-**3:10 PM · Trial reel** — [Libra plans a party exit](https://drive.google.com/file/d/11RWICv4zz2mZMJMR3mW00oxO-4T8GgD4/view) (16 s) · *Rate My Date Idea*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/19 - Libra plans a party exit (nrde19).mp4`
+**3:10 PM · Trial reel** — [POV: you're dating a Libra. Hosting.](https://drive.google.com/file/d/1V-PO1TnG2xCYDLogtSzIrxqUImLLHWby/view) (15 s) · *POV: You're Dating a ___*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/19 - POV- you're dating a Libra. Hosting. (npve19).mp4`
 
-Go to the party, then sneak out at nine for pie?
-Libra charmed the room, then picked a quiet booth with their date.
+A Libra can host a whole party and still check on you across the room. Then they quietly save you the best seat.
 
 **4:15 PM · Post** — [Thank your friend](https://drive.google.com/file/d/1JIbAwv7lDZHeQi7tanpBryk-7SiZ8f2r/view) (18 s) · *Friends First*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/20 - Thank your friend (nffe20).mp4`
 
 "Thanks for everything" is sweet. "Thank you for every Tuesday call this year" lands differently. Name the specific thing your friend did, then let them cry about it.
 
-**4:40 PM · Trial reel** — [Who handles a small disagreement better?](https://drive.google.com/file/d/1UQ9kCW8WzFC_0UBqZ-EkHdU-_C5MQwT2/view) (16 s) · *Sign vs Sign*  
+**4:40 PM · Trial reel** — [Winter Blues](https://drive.google.com/file/d/1K8PRL806BuEs1miUA3KbD1CanvEIvGIJ/view) (14 s) · *Hot Take, Cold Take*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/19 - Winter Blues (nhce19).mp4`
+
+Winter blues hit. Text everyone, or tell no one?
+Tell one person you trust how you really feel. That's enough to start.
+
+**5:45 PM · Post** — [Ep 9: What We Didn't Say](https://drive.google.com/file/d/1B8i8rSqwwCYOh7TV8eLOTfXKAdj_-4Au/view) (118 s) · *Moonlight Lane, Season 2: Winter on the Lane*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Moonlight Lane, Season 2- Winter on the Lane/Ep 09 - Ep 9- What We Didn't Say (nml2e09).mp4`
+
+Moonlight Lane, Ep 9: One table, one talk card, and everyone tells the truth except the two who need to most.
+Big things deserve a quiet moment. Say it to them, not the room.
+
+**6:10 PM · Trial reel** — [Libra plans a party exit](https://drive.google.com/file/d/11RWICv4zz2mZMJMR3mW00oxO-4T8GgD4/view) (16 s) · *Rate My Date Idea*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/19 - Libra plans a party exit (nrde19).mp4`
+
+Go to the party, then sneak out at nine for pie?
+Libra charmed the room, then picked a quiet booth with their date.
+
+**7:15 PM · Post** — [What does Virgo season feel like?](https://drive.google.com/file/d/1UAfZoUx7VnQEVqjWU37yI0sPWSfJad3e/view) (43 s) · *Star Talk Explains, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/25 - What does Virgo season feel like- (nx2e25).mp4`
+
+Virgo season is details, helping and good routines, and our Pisces student learned that noticing is a kind of hug. Nobody needs to be perfect. Noticing the little things is enough.
+
+**7:40 PM · Trial reel** — [Who handles a small disagreement better?](https://drive.google.com/file/d/1UQ9kCW8WzFC_0UBqZ-EkHdU-_C5MQwT2/view) (16 s) · *Sign vs Sign*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/19 - Who handles a small disagreement better- (nvse19).mp4`
 
 Small disagreement. Fix it this second, or agree with every side, even the lamp's?
 Pause, breathe, then come back and talk.
 
-**5:45 PM · Post** — [What does Virgo season feel like?](https://drive.google.com/file/d/1UAfZoUx7VnQEVqjWU37yI0sPWSfJad3e/view) (43 s) · *Star Talk Explains, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/25 - What does Virgo season feel like- (nx2e25).mp4`
-
-Virgo season is details, helping and good routines, and our Pisces student learned that noticing is a kind of hug. Nobody needs to be perfect. Noticing the little things is enough.
-
-**6:10 PM · Trial reel** — [Aquarius traditions: then vs now](https://drive.google.com/file/d/1WjzoG2zchPDSDy8dN_TUzmk8stj8S1Wd/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/11 - Aquarius traditions- then vs now (nhqe11).mp4`
-
-Celebrating your made-up holiday alone, or getting everyone into party hats for it. Weird traditions need witnesses.
-
-**7:15 PM · Post** — [My partner is messy. It drives me nuts.](https://drive.google.com/file/d/1e_p2cVidycWmN_y_RpEsrFD3L0g0m-PE/view) (18 s) · *Ask the Stars, Volume 2*  
+**8:45 PM · Post** — [My partner is messy. It drives me nuts.](https://drive.google.com/file/d/1e_p2cVidycWmN_y_RpEsrFD3L0g0m-PE/view) (18 s) · *Ask the Stars, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/30 - My partner is messy. It drives me nuts. (naske30).mp4`
 
 Living with a messier partner can test anyone's patience. Pick the one thing that matters most, ask kindly to tackle it together, and let the rest be theirs. It's their home too.
 
-**7:40 PM · Trial reel** — [Capricorn writes next year's goals](https://drive.google.com/file/d/1jribw2kqxjucfP6Vd6pB0mtOqOF2spO5/view) (16 s) · *3 AM in Winter*  
+**9:10 PM · Trial reel** — [Aquarius traditions: then vs now](https://drive.google.com/file/d/1WjzoG2zchPDSDy8dN_TUzmk8stj8S1Wd/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/11 - Aquarius traditions- then vs now (nhqe11).mp4`
+
+Celebrating your made-up holiday alone, or getting everyone into party hats for it. Weird traditions need witnesses.
+
+**10:15 PM · Post** — [Capricorn: one word for the new year](https://drive.google.com/file/d/1Ymv16CoLl9q8pL3mFsgYlCpkcw5NgaSB/view) (18 s) · *Your Star Guide: Winter*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/40 - Capricorn- one word for the new year (ngwe40).mp4`
+
+Capricorn, your word for next year is rest. Not as a reward when everything's done, but as part of the plan. Rest is what keeps you going.
+
+**10:40 PM · Trial reel** — [Capricorn writes next year's goals](https://drive.google.com/file/d/1jribw2kqxjucfP6Vd6pB0mtOqOF2spO5/view) (16 s) · *3 AM in Winter*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/3 AM in Winter/10 - Capricorn writes next year's goals (n3ae10).mp4`
 
 Writing next year's goals and the people end up last?
 Move them to the top of the list.
 
-**8:45 PM · Post** — [Capricorn: one word for the new year](https://drive.google.com/file/d/1Ymv16CoLl9q8pL3mFsgYlCpkcw5NgaSB/view) (18 s) · *Your Star Guide: Winter*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/40 - Capricorn- one word for the new year (ngwe40).mp4`
+## Day 50 · Wed 23 Dec
 
-Capricorn, your word for next year is rest. Not as a reward when everything's done, but as part of the plan. Rest is what keeps you going.
-
-**9:10 PM · Trial reel** — [Winter starter pack: Capricorn](https://drive.google.com/file/d/1bmCKWZhZI6ezoGucEPdpY-r78X7KAsRp/view) (13 s) · *Winter Starter Pack*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Winter Starter Pack/10 - Winter starter pack- Capricorn (nwpe10).mp4`
-
-Capricorn's winter: a planner, sensible boots, a 6 AM alarm on Sunday.
-Secretly, they love the neighbours' lights.
-
-**10:15 PM · Post** — [The gift you didn't see coming](https://drive.google.com/file/d/1oCc7VU01LZrr7VviKzC3IHudJwlJimXP/view) (28 s) · *Holiday Survival Guide*  
+**8:45 AM · Post** — [The gift you didn't see coming](https://drive.google.com/file/d/1oCc7VU01LZrr7VviKzC3IHudJwlJimXP/view) (28 s) · *Holiday Survival Guide*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/19 - The gift you didn't see coming (nhse19).mp4`
 
 Getting a gift when you have nothing to give back can set off a quiet panic. A real thank you is enough. If you want to give later, let it come from the heart, not the pressure.
 
-**10:40 PM · Trial reel** — [Practised listening](https://drive.google.com/file/d/1HgDt17OJD_8H3NfKezhUy51EL8yjfQJv/view) (18 s) · *Wait for It, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Wait for It, Volume 2/10 - Practised listening (nwfe10).mp4`
+**9:10 AM · Trial reel** — [Moonlight Lane teaser: "I like soup"](https://drive.google.com/file/d/1apex2U3jtSl_mILQTjyfKBCrtnjkqDMj/view) (19 s) · *Moonlight Lane S2 teasers*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Moonlight Lane S2 teasers/Teaser 27 - Moonlight Lane teaser- -I like soup- (nmte27).mp4`
 
-Is your Leo rehearsing a speech in the mirror again?
-The whole speech was one question, and then it listened.
-
-## Day 50 · Wed 23 Dec
-
-**8:45 AM · Post** — [Offer to Help](https://drive.google.com/file/d/1ZzygNnzReKsgC5R7KSs9h-eVqW0wSRSX/view) (28 s) · *Season 16: Meet the Family*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/17 - Offer to Help (nf16e17).mp4`
-
-Want to help at your partner's family dinner? Offer once, warmly. If they say no, believe them, then find a small job like the dishes. Help the way they like help.
-
-**9:10 AM · Trial reel** — [A night-sky puzzle](https://drive.google.com/file/d/1eocyBYiY0S3sh13-mFNfVXA1yjy_mpOi/view) (18 s) · *Silent Review, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Silent Review, Volume 2/10 - A night-sky puzzle (nsre10).mp4`
-
-A homemade night-sky puzzle with one piece missing.
-The last piece had a little heart on it.
+Your turn to say the real thing, and you say "I like soup."
+Sagittarius: also soup.
 
 **10:15 AM · Post** — [Virgo × Libra: the gift-wrap summit.](https://drive.google.com/file/d/1apSIlztySfAXyNJI4hmB0hKoEldUz56J/view) (28 s) · *Sign × Sign, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/27 - Virgo × Libra- the gift-wrap summit. (nsse27).mp4`
 
 Details matter to one of you, the pretty bow matters to the other. Praise first, say what you really like, and let the wrapping be imperfect.
 
-**10:40 AM · Trial reel** — [Pisces cries about saying no](https://drive.google.com/file/d/1O-dECe-0-tEvtXq9pPgSWV8lAeQ-WmXU/view) (12 s) · *Pisces Cries About…*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Pisces Cries About…/10 - Pisces cries about saying no (npce10).mp4`
+**10:40 AM · Trial reel** — [Winter starter pack: Capricorn](https://drive.google.com/file/d/1bmCKWZhZI6ezoGucEPdpY-r78X7KAsRp/view) (13 s) · *Winter Starter Pack*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Winter Starter Pack/10 - Winter starter pack- Capricorn (nwpe10).mp4`
 
-You said no to the party and braced for it. They said "totally, rest up." Relief tears count. A kind no is still a kind word.
+Capricorn's winter: a planner, sensible boots, a 6 AM alarm on Sunday.
+Secretly, they love the neighbours' lights.
 
-**11:45 AM · Post** — [Leo: what I'm keeping](https://drive.google.com/file/d/11ls3_wxoOMsR4PKnxD1bHPWlrDgJ-1us/view) (18 s) · *New Year, Same Heart*  
+**11:45 AM · Post** — [Offer to Help](https://drive.google.com/file/d/1ZzygNnzReKsgC5R7KSs9h-eVqW0wSRSX/view) (28 s) · *Season 16: Meet the Family*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/17 - Offer to Help (nf16e17).mp4`
+
+Want to help at your partner's family dinner? Offer once, warmly. If they say no, believe them, then find a small job like the dishes. Help the way they like help.
+
+**12:10 PM · Trial reel** — [Moonlight Lane teaser: the lights](https://drive.google.com/file/d/1ZmKOcpD6QOwAXTy3TF6WqtavY9v5hycf/view) (18 s) · *Moonlight Lane S2 teasers*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Moonlight Lane S2 teasers/Teaser 28 - Moonlight Lane teaser- the lights (nmte28).mp4`
+
+Christmas Eve, and the lights won't come on.
+Two volunteers. Suspiciously quick.
+
+**1:15 PM · Post** — [Leo: what I'm keeping](https://drive.google.com/file/d/11ls3_wxoOMsR4PKnxD1bHPWlrDgJ-1us/view) (18 s) · *New Year, Same Heart*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/05 - Leo- what I'm keeping (nnye05).mp4`
 
 You don't need applause to be worth loving, and you don't have to look fine all the time. Keep the big warm heart, and give it real rest between the bright moments.
 
-**12:10 PM · Trial reel** — [Pisces at the holiday movie: then vs now](https://drive.google.com/file/d/1-lutA1JRjpoHAYSCXh-5pZNfWtMWjXWy/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/12 - Pisces at the holiday movie- then vs now (nhqe12).mp4`
+**1:40 PM · Trial reel** — [Practised listening](https://drive.google.com/file/d/1HgDt17OJD_8H3NfKezhUy51EL8yjfQJv/view) (18 s) · *Wait for It, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Wait for It, Volume 2/10 - Practised listening (nwfe10).mp4`
 
-Crying at the holiday movie alone with one tissue left, or next to a friend holding the box. Cry with company this year.
+Is your Leo rehearsing a speech in the mirror again?
+The whole speech was one question, and then it listened.
 
-**1:15 PM · Post** — [Aquarius: how you love in winter](https://drive.google.com/file/d/1nSc7q2IMKVt42oeEQ9EdlujNUq6wuy-T/view) (23 s) · *Your Star Guide: Winter*  
+**2:45 PM · Post** — [Aquarius: how you love in winter](https://drive.google.com/file/d/1nSc7q2IMKVt42oeEQ9EdlujNUq6wuy-T/view) (23 s) · *Your Star Guide: Winter*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/41 - Aquarius- how you love in winter (ngwe41).mp4`
 
 Aquarius loves on long walks, talking about the stars and big ideas. Somewhere in there, notice the cold hand next to you. Hold it, not just the conversation.
 
-**1:40 PM · Trial reel** — [Who's the best listener](https://drive.google.com/file/d/1tf66zmdw-R4AHyd6xZKJp84sw8ZsXMHL/view) (16 s) · *Ranking the Signs*  
+**3:10 PM · Trial reel** — [A night-sky puzzle](https://drive.google.com/file/d/1eocyBYiY0S3sh13-mFNfVXA1yjy_mpOi/view) (18 s) · *Silent Review, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Silent Review, Volume 2/10 - A night-sky puzzle (nsre10).mp4`
+
+A homemade night-sky puzzle with one piece missing.
+The last piece had a little heart on it.
+
+**4:15 PM · Post** — [My friend is dating someone I don't like.](https://drive.google.com/file/d/1VatCYrab3LNQRSh0fuM9dedaEOV6070m/view) (18 s) · *Ask the Stars, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/31 - My friend is dating someone I don't like. (naske31).mp4`
+
+Not loving who your friend is dating is tricky. If it's a real worry, say it once and kindly, tell them you're there either way, and then trust them to choose for themselves.
+
+**4:40 PM · Trial reel** — [Pisces cries about saying no](https://drive.google.com/file/d/1O-dECe-0-tEvtXq9pPgSWV8lAeQ-WmXU/view) (12 s) · *Pisces Cries About…*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Pisces Cries About…/10 - Pisces cries about saying no (npce10).mp4`
+
+You said no to the party and braced for it. They said "totally, rest up." Relief tears count. A kind no is still a kind word.
+
+**5:45 PM · Post** — [What does Libra season feel like?](https://drive.google.com/file/d/1IgiRZ0r9rnBnLJIme7aq8bnurlqrPvpZ/view) (43 s) · *Star Talk Explains, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/26 - What does Libra season feel like- (nx2e26).mp4`
+
+Libra season opens at the September equinox, when day and night are close to equal. Fair in love isn't 50/50 every single day. It's taking turns, and trusting the other person will take theirs.
+
+**6:10 PM · Trial reel** — [Pisces at the holiday movie: then vs now](https://drive.google.com/file/d/1-lutA1JRjpoHAYSCXh-5pZNfWtMWjXWy/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/12 - Pisces at the holiday movie- then vs now (nhqe12).mp4`
+
+Crying at the holiday movie alone with one tissue left, or next to a friend holding the box. Cry with company this year.
+
+**7:15 PM · Post** — [The morning-after check-in](https://drive.google.com/file/d/1TQQqGuBidHPGibRS1fCRwpx1f-K5so5X/view) (28 s) · *The Make-Up Talk*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/21 - The morning-after check-in (nmue21).mp4`
+
+The talk is over, but you're not sure you're okay yet? A check-in the next day isn't needy, it's care. A simple "are we good?" can settle the whole morning.
+
+**7:40 PM · Trial reel** — [Who's the best listener](https://drive.google.com/file/d/1tf66zmdw-R4AHyd6xZKJp84sw8ZsXMHL/view) (16 s) · *Ranking the Signs*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/20 - Who's the best listener (nrke20).mp4`
 
 Who actually listens, and who is already planning a trip?
 All twelve, ranked. Listening isn't fixing, it's staying.
 
-**2:45 PM · Post** — [My friend is dating someone I don't like.](https://drive.google.com/file/d/1VatCYrab3LNQRSh0fuM9dedaEOV6070m/view) (18 s) · *Ask the Stars, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/31 - My friend is dating someone I don't like. (naske31).mp4`
+**8:45 PM · Post** — [The Midnight Hug](https://drive.google.com/file/d/11LKCvw__JBGlxomIpjyDIwOUAcmrRtsd/view) (23 s) · *Single and Thriving*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/21 - The Midnight Hug (nste21).mp4`
 
-Not loving who your friend is dating is tricky. If it's a real worry, say it once and kindly, tell them you're there either way, and then trust them to choose for themselves.
+Worried about having no one to hug at midnight? Midnight hugs come in friend sizes. Make a plan with the people you love and hug whoever shows up.
 
-**3:10 PM · Trial reel** — [They want your whole backstory.](https://drive.google.com/file/d/1emY2D_-9cb-rfzkRtynpD8nWwVwAdK46/view) (13 s) · *Dealbreaker or Not?*  
+**9:10 PM · Trial reel** — [They want your whole backstory.](https://drive.google.com/file/d/1emY2D_-9cb-rfzkRtynpD8nWwVwAdK46/view) (13 s) · *Dealbreaker or Not?*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/20 - They want your whole backstory. (ndbe20).mp4`
 
 First pet, best day, biggest fear: they want your whole story. Too intense?
 Curious is a compliment. Share at your own pace.
 
-**4:15 PM · Post** — [What does Libra season feel like?](https://drive.google.com/file/d/1IgiRZ0r9rnBnLJIme7aq8bnurlqrPvpZ/view) (43 s) · *Star Talk Explains, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/26 - What does Libra season feel like- (nx2e26).mp4`
+**10:15 PM · Post** — [Quiet company](https://drive.google.com/file/d/1nop4d-gVSh6NDDuhq15kLdyJ0QrlzC3K/view) (23 s) · *Friends First*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/21 - Quiet company (nffe21).mp4`
 
-Libra season opens at the September equinox, when day and night are close to equal. Fair in love isn't 50/50 every single day. It's taking turns, and trusting the other person will take theirs.
+When a friend doesn't want to talk, you don't need the perfect words. Sit with them, find an edge piece, stay for the hour. Being there is a whole sentence.
 
-**4:40 PM · Trial reel** — [Scorpio, trying not to laugh](https://drive.google.com/file/d/1NVMOFaqQgI38SuadM2sV-aNZkx4XSqxn/view) (10 s) · *One-Line Advice for Your Sign*  
+**10:40 PM · Trial reel** — [Scorpio, trying not to laugh](https://drive.google.com/file/d/1NVMOFaqQgI38SuadM2sV-aNZkx4XSqxn/view) (10 s) · *One-Line Advice for Your Sign*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/20 - Scorpio, trying not to laugh (nole20).mp4`
 
 Scorpio, holding a straight face through their joke again?
 Let them see you laugh. It's the best review they'll get.
 
-**5:45 PM · Post** — [The morning-after check-in](https://drive.google.com/file/d/1TQQqGuBidHPGibRS1fCRwpx1f-K5so5X/view) (28 s) · *The Make-Up Talk*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/21 - The morning-after check-in (nmue21).mp4`
+## Day 51 · Thu 24 Dec
 
-The talk is over, but you're not sure you're okay yet? A check-in the next day isn't needy, it's care. A simple "are we good?" can settle the whole morning.
-
-**6:10 PM · Trial reel** — [POV: you're dating a Scorpio. The gift.](https://drive.google.com/file/d/16GgI7QUilBO3FU35U1jKX1laevZFdjy1/view) (15 s) · *POV: You're Dating a ___*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/20 - POV- you're dating a Scorpio. The gift. (npve20).mp4`
-
-Mention something to a Scorpio once in March and it shows up wrapped in December. Don't call it sweet. It's nothing, apparently.
-
-**7:15 PM · Post** — [The Midnight Hug](https://drive.google.com/file/d/11LKCvw__JBGlxomIpjyDIwOUAcmrRtsd/view) (23 s) · *Single and Thriving*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/21 - The Midnight Hug (nste21).mp4`
-
-Worried about having no one to hug at midnight? Midnight hugs come in friend sizes. Make a plan with the people you love and hug whoever shows up.
-
-**7:40 PM · Trial reel** — [The Holiday Market](https://drive.google.com/file/d/17gnQ7M4G8lmky58rntppQ9ecnB3ya5e8/view) (14 s) · *Hot Take, Cold Take*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/20 - The Holiday Market (nhce20).mp4`
-
-A cute stranger at the holiday market. What now?
-No buying the whole stall, no staring at candles. Say hi and compliment the hat.
-
-**8:45 PM · Post** — [Quiet company](https://drive.google.com/file/d/1nop4d-gVSh6NDDuhq15kLdyJ0QrlzC3K/view) (23 s) · *Friends First*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/21 - Quiet company (nffe21).mp4`
-
-When a friend doesn't want to talk, you don't need the perfect words. Sit with them, find an edge piece, stay for the hour. Being there is a whole sentence.
-
-**9:10 PM · Trial reel** — [Scorpio plans a ghost-story walk](https://drive.google.com/file/d/1BQHcEE3H7UDsPrWp9ddMXwPYMA-Gt7xv/view) (16 s) · *Rate My Date Idea*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/20 - Scorpio plans a ghost-story walk (nrde20).mp4`
-
-A ghost-story walk with a Scorpio. Who screams first?
-A cat knocked a bin lid. Scorpio jumped highest, and they laughed it off.
-
-**10:15 PM · Post** — [Not in the Guest Room](https://drive.google.com/file/d/1n8EzhJ3243xnklsgl8A0j3mUx-hN8n0X/view) (38 s) · *Season 16: Meet the Family*  
+**8:45 AM · Post** — [Not in the Guest Room](https://drive.google.com/file/d/1n8EzhJ3243xnklsgl8A0j3mUx-hN8n0X/view) (38 s) · *Season 16: Meet the Family*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/18 - Not in the Guest Room (nf16e18).mp4`
 
 Tension during a holiday stay is normal. Skip the whisper-fight in the guest room: name it, take a walk together, and talk it through outside the house.
 
-**10:40 PM · Trial reel** — [Who handles a change of plans better?](https://drive.google.com/file/d/1drFOTr03VulDC1YdIlaDM26DK38lkSGw/view) (16 s) · *Sign vs Sign*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/20 - Who handles a change of plans better- (nvse20).mp4`
+**9:10 AM · Trial reel** — [Moonlight Lane teaser: no labels](https://drive.google.com/file/d/1JfXYLpr4ZsNEvB0VmzH5fhnTl9HUuSvA/view) (18 s) · *Moonlight Lane S2 teasers*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Moonlight Lane S2 teasers/Teaser 29 - Moonlight Lane teaser- no labels (nmte29).mp4`
 
-The plan was pasta. Now the plan is changing. Is that you?
-Feeling thrown is fine. Say so, then roll with it.
+Alone on a roof with the person you just confessed to.
+"No labels! Totally cool!" It is not cool.
 
-## Day 51 · Thu 24 Dec
-
-**8:45 AM · Post** — [Virgo: what I'm keeping](https://drive.google.com/file/d/1F81pSIQMaNpxV7xCd6yfOzqPEIEIel_D/view) (18 s) · *New Year, Same Heart*  
+**10:15 AM · Post** — [Virgo: what I'm keeping](https://drive.google.com/file/d/1F81pSIQMaNpxV7xCd6yfOzqPEIEIel_D/view) (18 s) · *New Year, Same Heart*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/06 - Virgo- what I'm keeping (nnye06).mp4`
 
 Noticing the little things is a gift, until it turns into fixing people or replaying every word at night. Keep the noticing. Turn some of it toward yourself.
 
-**9:10 AM · Trial reel** — [The lights walk: then vs now](https://drive.google.com/file/d/1nY_rOHNRo1LSsfofy-uJftcv4JCHWyHq/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/13 - The lights walk- then vs now (nhqe13).mp4`
+**10:40 AM · Trial reel** — [POV: you're dating a Scorpio. The gift.](https://drive.google.com/file/d/16GgI7QUilBO3FU35U1jKX1laevZFdjy1/view) (15 s) · *POV: You're Dating a ___*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/20 - POV- you're dating a Scorpio. The gift. (npve20).mp4`
 
-Four streets of holiday lights in nine minutes, stopwatch out. Or a slow walk that stops at every house. Slow walks count as dates.
+Mention something to a Scorpio once in March and it shows up wrapped in December. Don't call it sweet. It's nothing, apparently.
 
-**10:15 AM · Post** — [When the day goes sideways](https://drive.google.com/file/d/1zhSisSPT2CX-IPRWsfpQVum1N-nacUzI/view) (28 s) · *Holiday Survival Guide*  
+**11:45 AM · Post** — [When the day goes sideways](https://drive.google.com/file/d/1zhSisSPT2CX-IPRWsfpQVum1N-nacUzI/view) (28 s) · *Holiday Survival Guide*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/20 - When the day goes sideways (nhse20).mp4`
 
 When the big day goes sideways, it's easy to feel like you ruined it. Laugh first, lower the bar to simply being together, and name one thing that went right.
 
-**10:40 AM · Trial reel** — [Who sends the most voice notes](https://drive.google.com/file/d/1b57SkLrqcLzyekXCK_l6VmmjFVD57kqx/view) (16 s) · *Ranking the Signs*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/21 - Who sends the most voice notes (nrke21).mp4`
+**12:10 PM · Trial reel** — [The Holiday Market](https://drive.google.com/file/d/17gnQ7M4G8lmky58rntppQ9ecnB3ya5e8/view) (14 s) · *Hot Take, Cold Take*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/20 - The Holiday Market (nhce20).mp4`
 
-Twelve-minute voice notes or four-second whispers?
-The signs, ranked. Long or short, hearing their voice is the good part.
-
-**11:45 AM · Post** — [Aquarius: the holiday blind spot](https://drive.google.com/file/d/1THr23vcooNIlJYhAp4ho3e7iN_QhRuH2/view) (23 s) · *Your Star Guide: Winter*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/42 - Aquarius- the holiday blind spot (ngwe42).mp4`
-
-Aquarius can say hi to every person at the party and forget who they arrived with. Being social is a gift. Check in with your person first.
-
-**12:10 PM · Trial reel** — [They laugh really loud.](https://drive.google.com/file/d/14nCZBYxhl0wbnARuzWapFoPbGSx2_dfJ/view) (13 s) · *Dealbreaker or Not?*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/21 - They laugh really loud. (ndbe21).mp4`
-
-Their laugh turns heads in a quiet café. Dealbreaker?
-A big laugh is a big welcome. Give it a minute and you'll join in.
+A cute stranger at the holiday market. What now?
+No buying the whole stall, no staring at candles. Say hi and compliment the hat.
 
 **1:15 PM · Post** — [Capricorn × Aquarius: two midnights.](https://drive.google.com/file/d/1cqG-6xVCmRwz4v2E8_QAJ0rF2csGimfZ/view) (28 s) · *Sign × Sign, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/28 - Capricorn × Aquarius- two midnights. (nsse28).mp4`
 
 New tradition or the classic countdown? You don't have to pick one. Try their idea once and keep yours too. How are you two spending midnight?
 
-**1:40 PM · Trial reel** — [Sagittarius, when you were a little too honest](https://drive.google.com/file/d/1FrHZR_-rhKuwkazpr_QtK8TBpscp-Ve9/view) (11 s) · *One-Line Advice for Your Sign*  
+**1:40 PM · Trial reel** — [Scorpio plans a ghost-story walk](https://drive.google.com/file/d/1BQHcEE3H7UDsPrWp9ddMXwPYMA-Gt7xv/view) (16 s) · *Rate My Date Idea*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/20 - Scorpio plans a ghost-story walk (nrde20).mp4`
+
+A ghost-story walk with a Scorpio. Who screams first?
+A cat knocked a bin lid. Scorpio jumped highest, and they laughed it off.
+
+**2:45 PM · Post** — [Aquarius: the holiday blind spot](https://drive.google.com/file/d/1THr23vcooNIlJYhAp4ho3e7iN_QhRuH2/view) (23 s) · *Your Star Guide: Winter*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/42 - Aquarius- the holiday blind spot (ngwe42).mp4`
+
+Aquarius can say hi to every person at the party and forget who they arrived with. Being social is a gift. Check in with your person first.
+
+**3:10 PM · Trial reel** — [Who handles a change of plans better?](https://drive.google.com/file/d/1drFOTr03VulDC1YdIlaDM26DK38lkSGw/view) (16 s) · *Sign vs Sign*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/20 - Who handles a change of plans better- (nvse20).mp4`
+
+The plan was pasta. Now the plan is changing. Is that you?
+Feeling thrown is fine. Say so, then roll with it.
+
+**4:15 PM · Post** — [Do I have to tell them about my past?](https://drive.google.com/file/d/14_YewznCYE6PosZ-0yM53VWHohE2_-SE/view) (18 s) · *Ask the Stars, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/32 - Do I have to tell them about my past- (naske32).mp4`
+
+You don't owe anyone your whole story early on. Share your past when the trust is there and at your own pace, and when they open up in return, hold what they tell you gently.
+
+**4:40 PM · Trial reel** — [The lights walk: then vs now](https://drive.google.com/file/d/1nY_rOHNRo1LSsfofy-uJftcv4JCHWyHq/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/13 - The lights walk- then vs now (nhqe13).mp4`
+
+Four streets of holiday lights in nine minutes, stopwatch out. Or a slow walk that stops at every house. Slow walks count as dates.
+
+**5:45 PM · Post** — [Ep 10: Lights on the Lane](https://drive.google.com/file/d/122Vku4YXLgpvrQSgFOBkGcQ5ta2b5Qrc/view) (118 s) · *Moonlight Lane, Season 2: Winter on the Lane*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Moonlight Lane, Season 2- Winter on the Lane/Ep 10 - Ep 10- Lights on the Lane (nml2e10).mp4`
+
+Moonlight Lane, Ep 10: Christmas Eve, the lights won't come on, and two people on a roof are trying very hard to be cool.
+The finale. Cool is easy. Clear is kind.
+
+**6:10 PM · Trial reel** — [Who sends the most voice notes](https://drive.google.com/file/d/1b57SkLrqcLzyekXCK_l6VmmjFVD57kqx/view) (16 s) · *Ranking the Signs*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/21 - Who sends the most voice notes (nrke21).mp4`
+
+Twelve-minute voice notes or four-second whispers?
+The signs, ranked. Long or short, hearing their voice is the good part.
+
+**7:15 PM · Post** — [Back Them Up](https://drive.google.com/file/d/1AIwR1aeqlBK4VwjYXjKwlgxX62YTovPY/view) (33 s) · *Season 16: Meet the Family*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/19 - Back Them Up (nf16e19).mp4`
+
+If a relative teases your partner, back them up in the moment, with a calm voice and no scene. Then check in with them later. Tag someone who always has your back.
+
+**7:40 PM · Trial reel** — [They laugh really loud.](https://drive.google.com/file/d/14nCZBYxhl0wbnARuzWapFoPbGSx2_dfJ/view) (13 s) · *Dealbreaker or Not?*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/21 - They laugh really loud. (ndbe21).mp4`
+
+Their laugh turns heads in a quiet café. Dealbreaker?
+A big laugh is a big welcome. Give it a minute and you'll join in.
+
+**8:45 PM · Post** — [Libra: what I'm keeping](https://drive.google.com/file/d/1IgZwaZHsBATA8EAf4Hp7I5zuaKxnalCb/view) (18 s) · *New Year, Same Heart*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/07 - Libra- what I'm keeping (nnye07).mp4`
+
+Keeping the peace shouldn't cost you yourself. This year, when someone asks what you want, try answering. Your charm stays, and your wants get a seat at the table too.
+
+**9:10 PM · Trial reel** — [Sagittarius, when you were a little too honest](https://drive.google.com/file/d/1FrHZR_-rhKuwkazpr_QtK8TBpscp-Ve9/view) (11 s) · *One-Line Advice for Your Sign*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/21 - Sagittarius, when you were a little too honest (nole21).mp4`
 
 Sagittarius, you told them their sweater is "a lot."
 Honest is good. Honest and gentle is better.
 
-**2:45 PM · Post** — [Do I have to tell them about my past?](https://drive.google.com/file/d/14_YewznCYE6PosZ-0yM53VWHohE2_-SE/view) (18 s) · *Ask the Stars, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/32 - Do I have to tell them about my past- (naske32).mp4`
+**10:15 PM · Post** — [What does Scorpio season feel like?](https://drive.google.com/file/d/1ZboYx_eIao_L3T-2KMXU9KcyXe7MIEoB/view) (43 s) · *Star Talk Explains, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/27 - What does Scorpio season feel like- (nx2e27).mp4`
 
-You don't owe anyone your whole story early on. Share your past when the trust is there and at your own pace, and when they open up in return, hold what they tell you gently.
+Scorpio season is depth, loyalty and starting over. If you want closeness fast, this one's for you: trust is earned slowly, and keeping something private isn't the same as keeping secrets.
 
-**3:10 PM · Trial reel** — [POV: you're dating a Sagittarius. 10 PM.](https://drive.google.com/file/d/1eNPUs7tfarNTTFf-_IKbE66IYFyCGhPk/view) (15 s) · *POV: You're Dating a ___*  
+**10:40 PM · Trial reel** — [POV: you're dating a Sagittarius. 10 PM.](https://drive.google.com/file/d/1eNPUs7tfarNTTFf-_IKbE66IYFyCGhPk/view) (15 s) · *POV: You're Dating a ___*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/21 - POV- you're dating a Sagittarius. 10 PM. (npve21).mp4`
 
 Your Sagittarius turns up at 10 PM with a sled. The best part ends up being the quiet bit, lying in the snow under the stars.
 
-**4:15 PM · Post** — [Back Them Up](https://drive.google.com/file/d/1AIwR1aeqlBK4VwjYXjKwlgxX62YTovPY/view) (33 s) · *Season 16: Meet the Family*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/19 - Back Them Up (nf16e19).mp4`
+## Day 52 · Fri 25 Dec
 
-If a relative teases your partner, back them up in the moment, with a calm voice and no scene. Then check in with them later. Tag someone who always has your back.
+**8:45 AM · Post** — [Aquarius: the gift that means the most](https://drive.google.com/file/d/1odiYuT2wQBaDLWu_3AH-gnNRCHWHDyTe/view) (18 s) · *Your Star Guide: Winter*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/43 - Aquarius- the gift that means the most (ngwe43).mp4`
 
-**4:40 PM · Trial reel** — [The Holiday Card](https://drive.google.com/file/d/1vcq-LxkyQG5OcdYOQwM1_yilpe8HPYBh/view) (14 s) · *Hot Take, Cold Take*  
+Aquarius loves what no one else would think of. Something handmade, a little odd, made just for them, means more than anything off a shelf.
+
+**9:10 AM · Trial reel** — [Moonlight Lane teaser: still dark](https://drive.google.com/file/d/1x6b9ZMD3wKIasVRN4Odko1nfL3snmCfJ/view) (19 s) · *Moonlight Lane S2 teasers*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Moonlight Lane S2 teasers/Teaser 30 - Moonlight Lane teaser- still dark (nmte30).mp4`
+
+6:00 PM, the countdown hits zero, and the lane stays dark.
+Sometimes the fix is one clear sentence.
+
+**10:15 AM · Post** — [The day-after slump](https://drive.google.com/file/d/1fUUdcnykxmWaqnnXXWtqYvtKQn7IPqCu/view) (28 s) · *Holiday Survival Guide*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/21 - The day-after slump (nhse21).mp4`
+
+The quiet after the holidays can hit harder than you expect. Give yourself one slow day, get outside for a few minutes, and put one small, nice plan on the calendar.
+
+**10:40 AM · Trial reel** — [The Holiday Card](https://drive.google.com/file/d/1vcq-LxkyQG5OcdYOQwM1_yilpe8HPYBh/view) (14 s) · *Hot Take, Cold Take*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/21 - The Holiday Card (nhce21).mp4`
 
 The holiday card: both your names on it, or not yet?
 Don't decide alone. Ask first, because being a "together" is a choice you make together.
 
-**5:45 PM · Post** — [Libra: what I'm keeping](https://drive.google.com/file/d/1IgZwaZHsBATA8EAf4Hp7I5zuaKxnalCb/view) (18 s) · *New Year, Same Heart*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/07 - Libra- what I'm keeping (nnye07).mp4`
+**11:45 AM · Post** — [Aries × Gemini: the snow-day race.](https://drive.google.com/file/d/1eCWMcw1C07Tnd7xoAYSER4jZ2Bd12pcW/view) (28 s) · *Sign × Sign, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/29 - Aries × Gemini- the snow-day race. (nsse29).mp4`
 
-Keeping the peace shouldn't cost you yourself. This year, when someone asks what you want, try answering. Your charm stays, and your wants get a seat at the table too.
+One of you races ahead, one stops to text everyone. Wait at the door, put the phone down, and walk out into the snow together.
 
-**6:10 PM · Trial reel** — [Sagittarius plans sledding with no hills](https://drive.google.com/file/d/12IOKspB7AGrU-MhMq8RSNS69G-IGGaio/view) (16 s) · *Rate My Date Idea*  
+**12:10 PM · Trial reel** — [Sagittarius plans sledding with no hills](https://drive.google.com/file/d/12IOKspB7AGrU-MhMq8RSNS69G-IGGaio/view) (16 s) · *Rate My Date Idea*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/21 - Sagittarius plans sledding with no hills (nrde21).mp4`
 
 Sledding in a city with no hills. Still worth it?
 They slid about two feet, tipped over and laughed till they cried.
 
-**7:15 PM · Post** — [What does Scorpio season feel like?](https://drive.google.com/file/d/1ZboYx_eIao_L3T-2KMXU9KcyXe7MIEoB/view) (43 s) · *Star Talk Explains, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/27 - What does Scorpio season feel like- (nx2e27).mp4`
+**1:15 PM · Post** — [Guess kind, then ask](https://drive.google.com/file/d/10ILzFaKC89vXsnUg7qLYxMNvgPrBql4D/view) (28 s) · *The Make-Up Talk*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/22 - Guess kind, then ask (nmue22).mp4`
 
-Scorpio season is depth, loyalty and starting over. If you want closeness fast, this one's for you: trust is earned slowly, and keeping something private isn't the same as keeping secrets.
+When someone's late, the mind writes the worst story first. Try guessing the kind reason, then ask what happened. Sometimes it's just a long line and a dead phone.
 
-**7:40 PM · Trial reel** — [Who packs for a holiday trip better?](https://drive.google.com/file/d/1E6KW5FMXnfzrpX0VVJAvGFTTSRr13rlB/view) (16 s) · *Sign vs Sign*  
+**1:40 PM · Trial reel** — [Who packs for a holiday trip better?](https://drive.google.com/file/d/1E6KW5FMXnfzrpX0VVJAvGFTTSRr13rlB/view) (16 s) · *Sign vs Sign*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/21 - Who packs for a holiday trip better- (nvse21).mp4`
 
 Holiday trip: packed in five minutes with no socks, or a week early with seven pairs?
 Pack light and share the socks.
 
-**8:45 PM · Post** — [Aquarius: the gift that means the most](https://drive.google.com/file/d/1odiYuT2wQBaDLWu_3AH-gnNRCHWHDyTe/view) (18 s) · *Your Star Guide: Winter*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/43 - Aquarius- the gift that means the most (ngwe43).mp4`
+**2:45 PM · Post** — [The Year You Built](https://drive.google.com/file/d/1qnMnu8oI5kK3aN59CCyKeP141aKMgWGZ/view) (23 s) · *Single and Thriving*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/22 - The Year You Built (nste22).mp4`
 
-Aquarius loves what no one else would think of. Something handmade, a little odd, made just for them, means more than anything off a shelf.
+Think nothing happened this year because you stayed single? Look again. New skills, new friends, small brave moments. You built a lot.
 
-**9:10 PM · Trial reel** — [The drive home: then vs now](https://drive.google.com/file/d/1NxivsRVbE9vhG272sBduohJw95xpSBvC/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+**3:10 PM · Trial reel** — [The drive home: then vs now](https://drive.google.com/file/d/1NxivsRVbE9vhG272sBduohJw95xpSBvC/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/14 - The drive home- then vs now (nhqe14).mp4`
 
 Two people, one map, "LEFT!" "RIGHT!" Or: you drive, I do snacks. Take turns on the way home this year.
 
-**10:15 PM · Post** — [The day-after slump](https://drive.google.com/file/d/1fUUdcnykxmWaqnnXXWtqYvtKQn7IPqCu/view) (28 s) · *Holiday Survival Guide*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/21 - The day-after slump (nhse21).mp4`
+**4:15 PM · Post** — [Talk cards at friends' night](https://drive.google.com/file/d/1perbbV6RbMxyRxYj72FE6UUk8o9hnDZe/view) (23 s) · *Friends First*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/22 - Talk cards at friends' night (nffe22).mp4`
 
-The quiet after the holidays can hit harder than you expect. Give yourself one slow day, get outside for a few minutes, and put one small, nice plan on the calendar.
+One real question can turn a night of jokes into a night that matters. Ask what made your friends proud this year, then give the honest answer the room it deserves.
 
-**10:40 PM · Trial reel** — [Aquarius wants to share the winter sky](https://drive.google.com/file/d/1Pl1PDYTjujmsBZKgJKoUgxfxfrZJY4Qf/view) (16 s) · *3 AM in Winter*  
+**4:40 PM · Trial reel** — [Aquarius wants to share the winter sky](https://drive.google.com/file/d/1Pl1PDYTjujmsBZKgJKoUgxfxfrZJY4Qf/view) (16 s) · *3 AM in Winter*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/3 AM in Winter/11 - Aquarius wants to share the winter sky (n3ae11).mp4`
 
 Clear winter sky, and one name comes to mind first.
 That name counts. Tell them tomorrow.
 
-## Day 52 · Fri 25 Dec
+**5:45 PM · Post** — [Homesick at Their Table](https://drive.google.com/file/d/1pWIXqCsdjpu6iwQMzuTNTRTa5SeZz93S/view) (38 s) · *Season 16: Meet the Family*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/20 - Homesick at Their Table (nf16e20).mp4`
 
-**8:45 AM · Post** — [Aries × Gemini: the snow-day race.](https://drive.google.com/file/d/1eCWMcw1C07Tnd7xoAYSER4jZ2Bd12pcW/view) (28 s) · *Sign × Sign, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/29 - Aries × Gemini- the snow-day race. (nsse29).mp4`
+Your first holiday away from your own family can feel bittersweet, even at a warm table. It's okay to miss home out loud. Make a little room for both.
 
-One of you races ahead, one stops to text everyone. Wait at the door, put the phone down, and walk out into the snow together.
-
-**9:10 AM · Trial reel** — [Winter starter pack: Aquarius](https://drive.google.com/file/d/1ZPDSOya1t09bSVq8UOOnl1PngFHcsKk6/view) (13 s) · *Winter Starter Pack*  
+**6:10 PM · Trial reel** — [Winter starter pack: Aquarius](https://drive.google.com/file/d/1ZPDSOya1t09bSVq8UOOnl1PngFHcsKk6/view) (13 s) · *Winter Starter Pack*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Winter Starter Pack/11 - Winter starter pack- Aquarius (nwpe11).mp4`
 
 Aquarius in winter: a snowflake under a magnifier and a strange new hobby.
 And a handwritten note when you least expect it.
 
-**10:15 AM · Post** — [Guess kind, then ask](https://drive.google.com/file/d/10ILzFaKC89vXsnUg7qLYxMNvgPrBql4D/view) (28 s) · *The Make-Up Talk*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/22 - Guess kind, then ask (nmue22).mp4`
+**7:15 PM · Post** — [Scorpio: what I'm keeping](https://drive.google.com/file/d/19w7iFTK08pU0uWLKC8PRXU0IgYlRrIwo/view) (18 s) · *New Year, Same Heart*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/08 - Scorpio- what I'm keeping (nnye08).mp4`
 
-When someone's late, the mind writes the worst story first. Try guessing the kind reason, then ask what happened. Sometimes it's just a long line and a dead phone.
+Loyalty doesn't need to be tested to be real. Let the walls come down a little, keep the all-in devotion, and say your trust out loud instead of hiding it.
 
-**10:40 AM · Trial reel** — [The true part](https://drive.google.com/file/d/1SDc5M6egLcRHLJl2CskP74BGNdb70i-o/view) (18 s) · *Wait for It, Volume 2*  
+**7:40 PM · Trial reel** — [The true part](https://drive.google.com/file/d/1SDc5M6egLcRHLJl2CskP74BGNdb70i-o/view) (18 s) · *Wait for It, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Wait for It, Volume 2/11 - The true part (nwfe11).mp4`
 
 Typing, deleting, typing again. Four screens long.
 The best reply is usually the shortest true one.
 
-**11:45 AM · Post** — [The Year You Built](https://drive.google.com/file/d/1qnMnu8oI5kK3aN59CCyKeP141aKMgWGZ/view) (23 s) · *Single and Thriving*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/22 - The Year You Built (nste22).mp4`
+**8:45 PM · Post** — [They want to settle down. I want to travel.](https://drive.google.com/file/d/1EVgpidKvc2MTvAgJFk3fkFi8xVE-6Nm2/view) (18 s) · *Ask the Stars, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/33 - They want to settle down. I want to travel. (naske33).mp4`
 
-Think nothing happened this year because you stayed single? Look again. New skills, new friends, small brave moments. You built a lot.
+Wanting adventure while your partner wants roots doesn't mean you're mismatched. Say both wishes out loud, then plan a trip together with a home base to come back to.
 
-**12:10 PM · Trial reel** — [Star-shaped pancakes](https://drive.google.com/file/d/1rW2rSDr3aofD6UcIwdiilR8W7ipoi_BD/view) (18 s) · *Silent Review, Volume 2*  
+**9:10 PM · Trial reel** — [Star-shaped pancakes](https://drive.google.com/file/d/1rW2rSDr3aofD6UcIwdiilR8W7ipoi_BD/view) (18 s) · *Silent Review, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Silent Review, Volume 2/11 - Star-shaped pancakes (nsre11).mp4`
 
 Can an Aries review breakfast without eating it first?
 The syrup said proud of you. Fork down.
 
-**1:15 PM · Post** — [Talk cards at friends' night](https://drive.google.com/file/d/1perbbV6RbMxyRxYj72FE6UUk8o9hnDZe/view) (23 s) · *Friends First*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/22 - Talk cards at friends' night (nffe22).mp4`
+**10:15 PM · Post** — [Aquarius: one word for the new year](https://drive.google.com/file/d/1DaXbzf17vZdkU7UIlPBryZxLlpeZQkQJ/view) (18 s) · *Your Star Guide: Winter*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/44 - Aquarius- one word for the new year (ngwe44).mp4`
 
-One real question can turn a night of jokes into a night that matters. Ask what made your friends proud this year, then give the honest answer the room it deserves.
+Aquarius, your word for next year is warm. Keep the cool, clear mind. Let people see the warm heart under it too.
 
-**1:40 PM · Trial reel** — [Pisces cries about a talk card](https://drive.google.com/file/d/1yVMQuf9G1l4kgapb996P5tYm3ZZBoK5j/view) (12 s) · *Pisces Cries About…*  
+**10:40 PM · Trial reel** — [Pisces cries about a talk card](https://drive.google.com/file/d/1yVMQuf9G1l4kgapb996P5tYm3ZZBoK5j/view) (12 s) · *Pisces Cries About…*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Pisces Cries About…/11 - Pisces cries about a talk card (npce11).mp4`
 
 One talk card: what small thing makes you feel loved? Then they remembered your oat milk. Answer softly, listen longer.
 
-**2:45 PM · Post** — [Homesick at Their Table](https://drive.google.com/file/d/1pWIXqCsdjpu6iwQMzuTNTRTa5SeZz93S/view) (38 s) · *Season 16: Meet the Family*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/20 - Homesick at Their Table (nf16e20).mp4`
+## Day 53 · Sat 26 Dec
 
-Your first holiday away from your own family can feel bittersweet, even at a warm table. It's okay to miss home out loud. Make a little room for both.
+**8:45 AM · Post** — [What's your 3rd house?](https://drive.google.com/file/d/1v4dDiDsDq5ICXbkKnmsIohTGOW_SRR_i/view) (48 s) · *Star Talk Explains, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/28 - What's your 3rd house- (nx2e28).mp4`
 
-**3:10 PM · Trial reel** — [Who remembers the anniversary](https://drive.google.com/file/d/1n-yJanDq10CcPc0gyIJDjRYbOBx1cw_4/view) (16 s) · *Ranking the Signs*  
+Your 3rd house, in astrology: siblings, neighbours, everyday talk and short trips. Love doesn't only live in big moments. A text to your sibling or a wave next door counts too.
+
+**9:10 AM · Trial reel** — [Who remembers the anniversary](https://drive.google.com/file/d/1n-yJanDq10CcPc0gyIJDjRYbOBx1cw_4/view) (16 s) · *Ranking the Signs*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/22 - Who remembers the anniversary (nrke22).mp4`
 
 Which sign remembers your anniversary down to the hour?
 Ranked. Forgot? Own it, then plan something sweet.
 
-**4:15 PM · Post** — [Scorpio: what I'm keeping](https://drive.google.com/file/d/19w7iFTK08pU0uWLKC8PRXU0IgYlRrIwo/view) (18 s) · *New Year, Same Heart*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/08 - Scorpio- what I'm keeping (nnye08).mp4`
-
-Loyalty doesn't need to be tested to be real. Let the walls come down a little, keep the all-in devotion, and say your trust out loud instead of hiding it.
-
-**4:40 PM · Trial reel** — [They cancel plans every time.](https://drive.google.com/file/d/1T7laTherMroGWgluXji4cfwyqx8htQdn/view) (13 s) · *Dealbreaker or Not?*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/22 - They cancel plans every time. (ndbe22).mp4`
-
-They've cancelled the last four plans. Still worth the skates?
-Showing up matters. A kind no beats another last-minute sorry.
-
-**5:45 PM · Post** — [They want to settle down. I want to travel.](https://drive.google.com/file/d/1EVgpidKvc2MTvAgJFk3fkFi8xVE-6Nm2/view) (18 s) · *Ask the Stars, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/33 - They want to settle down. I want to travel. (naske33).mp4`
-
-Wanting adventure while your partner wants roots doesn't mean you're mismatched. Say both wishes out loud, then plan a trip together with a home base to come back to.
-
-**6:10 PM · Trial reel** — [Capricorn, when they gave you a gift](https://drive.google.com/file/d/1TS1QZ408Tvt_k7WJqwDzQ0Sdn5TVnbOo/view) (10 s) · *One-Line Advice for Your Sign*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/22 - Capricorn, when they gave you a gift (nole22).mp4`
-
-Capricorn, they gave you a gift and you're already doing the math.
-It isn't a bill. "Thank you" is enough.
-
-**7:15 PM · Post** — [Aquarius: one word for the new year](https://drive.google.com/file/d/1DaXbzf17vZdkU7UIlPBryZxLlpeZQkQJ/view) (18 s) · *Your Star Guide: Winter*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/44 - Aquarius- one word for the new year (ngwe44).mp4`
-
-Aquarius, your word for next year is warm. Keep the cool, clear mind. Let people see the warm heart under it too.
-
-**7:40 PM · Trial reel** — [POV: you're dating a Capricorn. The card.](https://drive.google.com/file/d/1xU3qxo61cWPLg_h4CnE7c876UPtanUPs/view) (15 s) · *POV: You're Dating a ___*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/22 - POV- you're dating a Capricorn. The card. (npve22).mp4`
-
-A Capricorn gives you the most practical gift ever made. The card that came with it took six drafts.
-
-**8:45 PM · Post** — [What's your 3rd house?](https://drive.google.com/file/d/1v4dDiDsDq5ICXbkKnmsIohTGOW_SRR_i/view) (48 s) · *Star Talk Explains, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/28 - What's your 3rd house- (nx2e28).mp4`
-
-Your 3rd house, in astrology: siblings, neighbours, everyday talk and short trips. Love doesn't only live in big moments. A text to your sibling or a wave next door counts too.
-
-**9:10 PM · Trial reel** — [The Longest Night](https://drive.google.com/file/d/1zbtKsGfSi35CBeXg-bdN-2mUIvWq7AGE/view) (14 s) · *Hot Take, Cold Take*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/22 - The Longest Night (nhce22).mp4`
-
-The longest night of the year. Confess everything or go stargaze alone?
-A long night is good for a long talk. Pull a talk card and take turns.
-
-**10:15 PM · Post** — [The New Year's plan](https://drive.google.com/file/d/1C4QuRE0QDcYJ7Q9bid_m26je3eyofV6S/view) (28 s) · *Holiday Survival Guide*  
+**10:15 AM · Post** — [The New Year's plan](https://drive.google.com/file/d/1C4QuRE0QDcYJ7Q9bid_m26je3eyofV6S/view) (28 s) · *Holiday Survival Guide*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/22 - The New Year's plan (nhse22).mp4`
 
 Wanting a big night when your person wants pajamas isn't a problem to win. Say what you really want, find the overlap, and build a plan you both actually like.
-
-**10:40 PM · Trial reel** — [Capricorn plans a goals whiteboard](https://drive.google.com/file/d/1Dk21IRPJtxxuxSrbQ7qo5X61fHLAcGJr/view) (16 s) · *Rate My Date Idea*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/22 - Capricorn plans a goals whiteboard (nrde22).mp4`
-
-A date where you plan your goals on a whiteboard?
-Their date added "dance in the kitchen" and Capricorn circled it twice.
-
-## Day 53 · Sat 26 Dec
-
-**8:45 AM · Post** — [The Family Photo](https://drive.google.com/file/d/1DPUxidaYTH8puuJCBwNv44tKCcchNnqD/view) (28 s) · *Season 16: Meet the Family*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/21 - The Family Photo (nf16e21).mp4`
-
-Not sure if you belong in their family photo? Just ask. "In or out?" is a kind question, and either answer is fine. Send this to someone meeting the family this year.
-
-**9:10 AM · Trial reel** — [Who handles meeting their pet better?](https://drive.google.com/file/d/1_g5M_tVXAugj_TRFelhgENtK1TxEAEjY/view) (16 s) · *Sign vs Sign*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/22 - Who handles meeting their pet better- (nvse22).mp4`
-
-Meeting their pet for the first time: a hand-knitted sweater, or straight to fetch?
-Kindness to what they love says a lot.
-
-**10:15 AM · Post** — [Sagittarius: what I'm keeping](https://drive.google.com/file/d/15jgazUUcSbcCICLLw3abow9Qdis9LFrN/view) (18 s) · *New Year, Same Heart*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/09 - Sagittarius- what I'm keeping (nnye09).mp4`
-
-A joke is a great way to start a hard conversation and a hard way to finish one. Keep the honesty, drop the maybe-plans, and say the real thing first.
 
 **10:40 AM · Trial reel** — [Meeting the friends: then vs now](https://drive.google.com/file/d/19tSYR6bQO9dJS9EiziGmm61gezhA3upo/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/15 - Meeting the friends- then vs now (nhqe15).mp4`
@@ -3018,257 +3021,302 @@ Hiding your date behind the coat rack, or saying "this is Libra" and watching yo
 
 Blunt words can sting even when they're meant kindly. Be honest and gentle, say when something hurts instead of storing it, and trade one compliment a day.
 
-**12:10 PM · Trial reel** — [Who gets the most excited for snow](https://drive.google.com/file/d/1I6TGjxjGOCyGma2N9Jh7LE7_YAWmHopm/view) (16 s) · *Ranking the Signs*  
+**12:10 PM · Trial reel** — [They cancel plans every time.](https://drive.google.com/file/d/1T7laTherMroGWgluXji4cfwyqx8htQdn/view) (13 s) · *Dealbreaker or Not?*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/22 - They cancel plans every time. (ndbe22).mp4`
+
+They've cancelled the last four plans. Still worth the skates?
+Showing up matters. A kind no beats another last-minute sorry.
+
+**1:15 PM · Post** — [The Family Photo](https://drive.google.com/file/d/1DPUxidaYTH8puuJCBwNv44tKCcchNnqD/view) (28 s) · *Season 16: Meet the Family*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/21 - The Family Photo (nf16e21).mp4`
+
+Not sure if you belong in their family photo? Just ask. "In or out?" is a kind question, and either answer is fine. Send this to someone meeting the family this year.
+
+**1:40 PM · Trial reel** — [Capricorn, when they gave you a gift](https://drive.google.com/file/d/1TS1QZ408Tvt_k7WJqwDzQ0Sdn5TVnbOo/view) (10 s) · *One-Line Advice for Your Sign*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/22 - Capricorn, when they gave you a gift (nole22).mp4`
+
+Capricorn, they gave you a gift and you're already doing the math.
+It isn't a bill. "Thank you" is enough.
+
+**2:45 PM · Post** — [Sagittarius: what I'm keeping](https://drive.google.com/file/d/15jgazUUcSbcCICLLw3abow9Qdis9LFrN/view) (18 s) · *New Year, Same Heart*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/09 - Sagittarius- what I'm keeping (nnye09).mp4`
+
+A joke is a great way to start a hard conversation and a hard way to finish one. Keep the honesty, drop the maybe-plans, and say the real thing first.
+
+**3:10 PM · Trial reel** — [POV: you're dating a Capricorn. The card.](https://drive.google.com/file/d/1xU3qxo61cWPLg_h4CnE7c876UPtanUPs/view) (15 s) · *POV: You're Dating a ___*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/22 - POV- you're dating a Capricorn. The card. (npve22).mp4`
+
+A Capricorn gives you the most practical gift ever made. The card that came with it took six drafts.
+
+**4:15 PM · Post** — [Pisces: how you love in winter](https://drive.google.com/file/d/1y9QzFddHu-6vP5qBSRbuC3J6b-qooVIs/view) (23 s) · *Your Star Guide: Winter*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/45 - Pisces- how you love in winter (ngwe45).mp4`
+
+Pisces, one glance and you've planned a whole winter together. Daydreams are lovely, but the real person in front of you is even better. Go say hi.
+
+**4:40 PM · Trial reel** — [The Longest Night](https://drive.google.com/file/d/1zbtKsGfSi35CBeXg-bdN-2mUIvWq7AGE/view) (14 s) · *Hot Take, Cold Take*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/22 - The Longest Night (nhce22).mp4`
+
+The longest night of the year. Confess everything or go stargaze alone?
+A long night is good for a long talk. Pull a talk card and take turns.
+
+**5:45 PM · Post** — [Should I wait for them to change?](https://drive.google.com/file/d/19OhgFKM70D_6vt6gUMqWlBCHvaQ8WE_n/view) (18 s) · *Ask the Stars, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/34 - Should I wait for them to change- (naske34).mp4`
+
+Hoping someone will change? Give it time, but not forever. Watch what they do more than what they promise, and remember that your time matters too.
+
+**6:10 PM · Trial reel** — [Capricorn plans a goals whiteboard](https://drive.google.com/file/d/1Dk21IRPJtxxuxSrbQ7qo5X61fHLAcGJr/view) (16 s) · *Rate My Date Idea*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/22 - Capricorn plans a goals whiteboard (nrde22).mp4`
+
+A date where you plan your goals on a whiteboard?
+Their date added "dance in the kitchen" and Capricorn circled it twice.
+
+**7:15 PM · Post** — [Let it rest](https://drive.google.com/file/d/1FLM9lkSsiwRcLe_LExmDnT83FJywC9vv/view) (28 s) · *The Make-Up Talk*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/23 - Let it rest (nmue23).mp4`
+
+Once a hurt has been talked through and forgiven, try not to bring it back as a joke. Let mended things rest, and make some new inside jokes instead.
+
+**7:40 PM · Trial reel** — [Who handles meeting their pet better?](https://drive.google.com/file/d/1_g5M_tVXAugj_TRFelhgENtK1TxEAEjY/view) (16 s) · *Sign vs Sign*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/22 - Who handles meeting their pet better- (nvse22).mp4`
+
+Meeting their pet for the first time: a hand-knitted sweater, or straight to fetch?
+Kindness to what they love says a lot.
+
+**8:45 PM · Post** — [Curious Again](https://drive.google.com/file/d/1Y_5DFXpvC8ZpiTz455-hdq1PgP0-erCm/view) (23 s) · *Single and Thriving*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/23 - Curious Again (nste23).mp4`
+
+Happy on your own and starting to feel curious? That's a good sign. Ready feels like curious, not lonely. Go slow and let the conversation come first.
+
+**9:10 PM · Trial reel** — [Ice skating: then vs now](https://drive.google.com/file/d/1NKyWemanhKddW9bXxPvjXjnmFabfjINO/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/16 - Ice skating- then vs now (nhqe16).mp4`
+
+Wobbling across the ice insisting you're a natural, or asking "teach me?" and holding hands. Saying teach me is flirting.
+
+**10:15 PM · Post** — [After the holidays](https://drive.google.com/file/d/1XWLK7aR481x_gCEtLfF78QHEUEjSf3HP/view) (18 s) · *Friends First*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/23 - After the holidays (nffe23).mp4`
+
+The quiet days after the holidays can be harder than the holidays themselves. Check in after too: how are you doing now that it's quiet? Someone will be glad you asked.
+
+**10:40 PM · Trial reel** — [Who gets the most excited for snow](https://drive.google.com/file/d/1I6TGjxjGOCyGma2N9Jh7LE7_YAWmHopm/view) (16 s) · *Ranking the Signs*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/23 - Who gets the most excited for snow (nrke23).mp4`
 
 Who's outside before the first snowflake lands?
 All twelve signs, ranked by snow joy. Find someone that excited to see you.
 
-**1:15 PM · Post** — [Pisces: how you love in winter](https://drive.google.com/file/d/1y9QzFddHu-6vP5qBSRbuC3J6b-qooVIs/view) (23 s) · *Your Star Guide: Winter*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/45 - Pisces- how you love in winter (ngwe45).mp4`
+## Day 54 · Sun 27 Dec
 
-Pisces, one glance and you've planned a whole winter together. Daydreams are lovely, but the real person in front of you is even better. Go say hi.
+**8:45 AM · Post** — [The Drive Home](https://drive.google.com/file/d/18byV760kdk-5HbdTK4YIxeaDrqwLKoDa/view) (38 s) · *Season 16: Meet the Family*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/22 - The Drive Home (nf16e22).mp4`
 
-**1:40 PM · Trial reel** — [Ice skating: then vs now](https://drive.google.com/file/d/1NKyWemanhKddW9bXxPvjXjnmFabfjINO/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/16 - Ice skating- then vs now (nhqe16).mp4`
+On the drive home from their family's, start with three things you genuinely liked. Then share one honest thing, gently. Their family, their call.
 
-Wobbling across the ice insisting you're a natural, or asking "teach me?" and holding hands. Saying teach me is flirting.
-
-**2:45 PM · Post** — [Should I wait for them to change?](https://drive.google.com/file/d/19OhgFKM70D_6vt6gUMqWlBCHvaQ8WE_n/view) (18 s) · *Ask the Stars, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/34 - Should I wait for them to change- (naske34).mp4`
-
-Hoping someone will change? Give it time, but not forever. Watch what they do more than what they promise, and remember that your time matters too.
-
-**3:10 PM · Trial reel** — [They brought a documentary to movie night.](https://drive.google.com/file/d/1H8teMJH00Y54x7CduyeuHTEyFskj_wKU/view) (13 s) · *Dealbreaker or Not?*  
+**9:10 AM · Trial reel** — [They brought a documentary to movie night.](https://drive.google.com/file/d/1H8teMJH00Y54x7CduyeuHTEyFskj_wKU/view) (13 s) · *Dealbreaker or Not?*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/23 - They brought a documentary to movie night. (ndbe23).mp4`
 
 Movie night, and they brought a documentary about moss. Dealbreaker?
 Weird is a gift. Watch theirs, then they watch yours.
 
-**4:15 PM · Post** — [Let it rest](https://drive.google.com/file/d/1FLM9lkSsiwRcLe_LExmDnT83FJywC9vv/view) (28 s) · *The Make-Up Talk*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/23 - Let it rest (nmue23).mp4`
+**10:15 AM · Post** — [Capricorn: what I'm keeping](https://drive.google.com/file/d/1dZ1xRlXf6V6pej0tmvB2tLlklIhqxZdE/view) (18 s) · *New Year, Same Heart*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/10 - Capricorn- what I'm keeping (nnye10).mp4`
 
-Once a hurt has been talked through and forgiven, try not to bring it back as a joke. Let mended things rest, and make some new inside jokes instead.
+Feelings don't fit neatly on a schedule, and they don't need to. Keep the steady promises you're known for, and make room for dinner, and for the heart, without a deadline.
 
-**4:40 PM · Trial reel** — [Aquarius, when they remember your fun fact](https://drive.google.com/file/d/1OpKhws1FbPEneLCDX1xU-uKRUSTlEClR/view) (10 s) · *One-Line Advice for Your Sign*  
+**10:40 AM · Trial reel** — [Aquarius, when they remember your fun fact](https://drive.google.com/file/d/1OpKhws1FbPEneLCDX1xU-uKRUSTlEClR/view) (10 s) · *One-Line Advice for Your Sign*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/23 - Aquarius, when they remember your fun fact (nole23).mp4`
 
 Aquarius, they remembered your octopus fact. Three hearts.
 Someone was listening. Let that feel good.
 
-**5:45 PM · Post** — [Curious Again](https://drive.google.com/file/d/1Y_5DFXpvC8ZpiTz455-hdq1PgP0-erCm/view) (23 s) · *Single and Thriving*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/23 - Curious Again (nste23).mp4`
+**11:45 AM · Post** — [Pisces: the holiday blind spot](https://drive.google.com/file/d/1ckB0sHBE4MYPiemmUSg3Xr8hwIL_CZLQ/view) (23 s) · *Your Star Guide: Winter*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/46 - Pisces- the holiday blind spot (ngwe46).mp4`
 
-Happy on your own and starting to feel curious? That's a good sign. Ready feels like curious, not lonely. Go slow and let the conversation come first.
+Pisces feels everyone's feelings at the holidays and carries them all. You can care deeply without holding it all yourself. Hand some of it back.
 
-**6:10 PM · Trial reel** — [POV: you're dating an Aquarius. New Year's.](https://drive.google.com/file/d/1H3eXiDL2iIjj2yEZdkHC722kHv_tJ2df/view) (15 s) · *POV: You're Dating a ___*  
+**12:10 PM · Trial reel** — [POV: you're dating an Aquarius. New Year's.](https://drive.google.com/file/d/1H3eXiDL2iIjj2yEZdkHC722kHv_tJ2df/view) (15 s) · *POV: You're Dating a ___*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/23 - POV- you're dating an Aquarius. New Year's. (npve23).mp4`
 
 An Aquarius celebrates midnight every hour from 7 PM. By your actual midnight they're asleep on your shoulder.
 
-**7:15 PM · Post** — [After the holidays](https://drive.google.com/file/d/1XWLK7aR481x_gCEtLfF78QHEUEjSf3HP/view) (18 s) · *Friends First*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/23 - After the holidays (nffe23).mp4`
+**1:15 PM · Post** — [What's your 4th house?](https://drive.google.com/file/d/15SjSFzmua3Z3quGiucXHmb1QJfcPE3-D/view) (48 s) · *Star Talk Explains, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/29 - What's your 4th house- (nx2e29).mp4`
 
-The quiet days after the holidays can be harder than the holidays themselves. Check in after too: how are you doing now that it's quiet? Someone will be glad you asked.
+In astrology, the 4th house sits at the very bottom of your chart: home, family and roots. Family can be the one you're born into and the one you build. This month, hold your boundaries kindly.
 
-**7:40 PM · Trial reel** — [Crush in Town](https://drive.google.com/file/d/16yjQe2UKlXgG73WGsTY3y-kQRU2MTTGU/view) (14 s) · *Hot Take, Cold Take*  
+**1:40 PM · Trial reel** — [Crush in Town](https://drive.google.com/file/d/16yjQe2UKlXgG73WGsTY3y-kQRU2MTTGU/view) (14 s) · *Hot Take, Cold Take*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/23 - Crush in Town (nhce23).mp4`
 
 Your crush is in town for the holidays.
 Don't plan their whole trip, and don't just wait. Text "free for cocoa?" and keep it simple.
 
-**8:45 PM · Post** — [The Drive Home](https://drive.google.com/file/d/18byV760kdk-5HbdTK4YIxeaDrqwLKoDa/view) (38 s) · *Season 16: Meet the Family*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/22 - The Drive Home (nf16e22).mp4`
+**2:45 PM · Post** — [The year-end check-in](https://drive.google.com/file/d/1oXreaLzgzIpz0Y1ZuuSMNU33PXHTga2m/view) (28 s) · *Holiday Survival Guide*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/23 - The year-end check-in (nhse23).mp4`
 
-On the drive home from their family's, start with three things you genuinely liked. Then share one honest thing, gently. Their family, their call.
+Before the year ends, try three questions together: your favourite moment, what was hard, and what you want more of. Listen to the hard one gently. Save this for a cozy night in.
 
-**9:10 PM · Trial reel** — [Aquarius plans a time capsule](https://drive.google.com/file/d/15xOKUPJjFGE_P3f1wzrCARQnf24qaKvM/view) (16 s) · *Rate My Date Idea*  
+**3:10 PM · Trial reel** — [Aquarius plans a time capsule](https://drive.google.com/file/d/15xOKUPJjFGE_P3f1wzrCARQnf24qaKvM/view) (16 s) · *Rate My Date Idea*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/23 - Aquarius plans a time capsule (nrde23).mp4`
 
 Make a time capsule together and open it next winter.
 A spoon, a ticket, a duck and two notes for future you.
 
-**10:15 PM · Post** — [Capricorn: what I'm keeping](https://drive.google.com/file/d/1dZ1xRlXf6V6pej0tmvB2tLlklIhqxZdE/view) (18 s) · *New Year, Same Heart*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/10 - Capricorn- what I'm keeping (nnye10).mp4`
+**4:15 PM · Post** — [Aquarius × Virgo: Snow Tuesday.](https://drive.google.com/file/d/1YnAPzUg4Y6EbOD7mDCtRvNqLTVe3CaCz/view) (28 s) · *Sign × Sign, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/31 - Aquarius × Virgo- Snow Tuesday. (nsse31).mp4`
 
-Feelings don't fit neatly on a schedule, and they don't need to. Keep the steady promises you're known for, and make room for dinner, and for the heart, without a deadline.
+A big new idea can meet a lot of edits. Cheer the first draft, take the one good note, and build the thing together. What's your made-up holiday?
 
-**10:40 PM · Trial reel** — [Who handles the holiday photo better?](https://drive.google.com/file/d/1mnFexn9QwF8dmp3ODiWAQpG6ysXlEtun/view) (16 s) · *Sign vs Sign*  
+**4:40 PM · Trial reel** — [Who handles the holiday photo better?](https://drive.google.com/file/d/1mnFexn9QwF8dmp3ODiWAQpG6ysXlEtun/view) (16 s) · *Sign vs Sign*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/23 - Who handles the holiday photo better- (nvse23).mp4`
 
 Holiday photos: twelve more for your good side, or crying at how cute it came out?
 Get in the picture. You'll be glad later.
 
-## Day 54 · Sun 27 Dec
+**5:45 PM · Post** — [Can we skip the usual holiday stuff?](https://drive.google.com/file/d/1zx13_Gq_Nk07TUmeH6GZodg94BdiGPeN/view) (18 s) · *Ask the Stars, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/35 - Can we skip the usual holiday stuff- (naske35).mp4`
 
-**8:45 AM · Post** — [Pisces: the holiday blind spot](https://drive.google.com/file/d/1ckB0sHBE4MYPiemmUSg3Xr8hwIL_CZLQ/view) (23 s) · *Your Star Guide: Winter*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/46 - Pisces- the holiday blind spot (ngwe46).mp4`
+Skipping the usual holiday plans is allowed. Make a tradition that feels like yours, like pancakes at midnight or a walk in the snow, and let family know early and kindly.
 
-Pisces feels everyone's feelings at the holidays and carries them all. You can care deeply without holding it all yourself. Hand some of it back.
-
-**9:10 AM · Trial reel** — [New Year’s plans: then vs now](https://drive.google.com/file/d/1R5uwLHZITgfrzVx8y8jbSKhtU4gE68n9/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+**6:10 PM · Trial reel** — [New Year’s plans: then vs now](https://drive.google.com/file/d/1R5uwLHZITgfrzVx8y8jbSKhtU4gE68n9/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/17 - New Year’s plans- then vs now (nhqe17).mp4`
 
 Waiting by a silent phone on the 31st, or asking first: "be my New Year's plan?" Asking first is brave. And cute.
 
-**10:15 AM · Post** — [What's your 4th house?](https://drive.google.com/file/d/15SjSFzmua3Z3quGiucXHmb1QJfcPE3-D/view) (48 s) · *Star Talk Explains, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/29 - What's your 4th house- (nx2e29).mp4`
+**7:15 PM · Post** — [The Thank-You Text](https://drive.google.com/file/d/1oGZ1J7Hp2miepa2ofcMgGjoKvtzw13sn/view) (28 s) · *Season 16: Meet the Family*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/23 - The Thank-You Text (nf16e23).mp4`
 
-In astrology, the 4th house sits at the very bottom of your chart: home, family and roots. Family can be the one you're born into and the one you build. This month, hold your boundaries kindly.
+After a visit, thank their parents within a day. Use their name and mention one real moment. Small, specific thanks are the ones people keep.
 
-**10:40 AM · Trial reel** — [Pisces gets a 3 AM text from a friend](https://drive.google.com/file/d/1VOkoQupyofxZXFQzjUuhdo0XCU_teX1E/view) (16 s) · *3 AM in Winter*  
+**7:40 PM · Trial reel** — [Pisces gets a 3 AM text from a friend](https://drive.google.com/file/d/1VOkoQupyofxZXFQzjUuhdo0XCU_teX1E/view) (16 s) · *3 AM in Winter*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/3 AM in Winter/12 - Pisces gets a 3 AM text from a friend (n3ae12).mp4`
 
 Awake at 3 AM, and it turns out a friend is too.
 Long nights are easier together. Check on your people.
 
-**11:45 AM · Post** — [The year-end check-in](https://drive.google.com/file/d/1oXreaLzgzIpz0Y1ZuuSMNU33PXHTga2m/view) (28 s) · *Holiday Survival Guide*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/23 - The year-end check-in (nhse23).mp4`
+**8:45 PM · Post** — [Aquarius: what I'm keeping](https://drive.google.com/file/d/1rbu8xqzCMf0tGtTAFx1aWL3d6JGJ47R7/view) (18 s) · *New Year, Same Heart*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/11 - Aquarius- what I'm keeping (nnye11).mp4`
 
-Before the year ends, try three questions together: your favourite moment, what was hard, and what you want more of. Listen to the hard one gently. Save this for a cozy night in.
+Going quiet when someone gets close can look like not caring, even when you care a lot. Keep your wonderful ideas, and let the right people in a little closer this year.
 
-**12:10 PM · Trial reel** — [Winter starter pack: Pisces](https://drive.google.com/file/d/1C7QX843QO98HW-ETTpky56bAo6AcE5QN/view) (13 s) · *Winter Starter Pack*  
+**9:10 PM · Trial reel** — [Winter starter pack: Pisces](https://drive.google.com/file/d/1C7QX843QO98HW-ETTpky56bAo6AcE5QN/view) (13 s) · *Winter Starter Pack*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Winter Starter Pack/12 - Winter starter pack- Pisces (nwpe12).mp4`
 
 Pisces in winter: a window seat, soft tissues, one song on repeat.
 The rare item: happy tears because someone remembered.
 
-**1:15 PM · Post** — [Aquarius × Virgo: Snow Tuesday.](https://drive.google.com/file/d/1YnAPzUg4Y6EbOD7mDCtRvNqLTVe3CaCz/view) (28 s) · *Sign × Sign, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/31 - Aquarius × Virgo- Snow Tuesday. (nsse31).mp4`
+**10:15 PM · Post** — [Pisces: the gift that means the most](https://drive.google.com/file/d/1fY_S0etf31KYonlDl96QemCAWUednlzx/view) (18 s) · *Your Star Guide: Winter*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/47 - Pisces- the gift that means the most (ngwe47).mp4`
 
-A big new idea can meet a lot of edits. Cheer the first draft, take the one good note, and build the thing together. What's your made-up holiday?
+Pisces doesn't need anything expensive. A few honest lines in someone's own handwriting will be kept for years. If you love a Pisces, write it down.
 
-**1:40 PM · Trial reel** — [In snow, holding hands](https://drive.google.com/file/d/1BLhYf13oE_1x_XDZtE2bgfabW4clpBVc/view) (18 s) · *Wait for It, Volume 2*  
+**10:40 PM · Trial reel** — [In snow, holding hands](https://drive.google.com/file/d/1BLhYf13oE_1x_XDZtE2bgfabW4clpBVc/view) (18 s) · *Wait for It, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Wait for It, Volume 2/12 - In snow, holding hands (nwfe12).mp4`
 
 Why is Pisces lying in the snow, crying?
 Two snow angels, holding hands. Happy tears count.
 
-**2:45 PM · Post** — [Can we skip the usual holiday stuff?](https://drive.google.com/file/d/1zx13_Gq_Nk07TUmeH6GZodg94BdiGPeN/view) (18 s) · *Ask the Stars, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/35 - Can we skip the usual holiday stuff- (naske35).mp4`
+## Day 55 · Mon 28 Dec
 
-Skipping the usual holiday plans is allowed. Make a tradition that feels like yours, like pancakes at midnight or a walk in the snow, and let family know early and kindly.
+**8:45 AM · Post** — [Thank them for staying](https://drive.google.com/file/d/18DN4t-MSTJHA0QY29fFk_xPrkXfmDPij/view) (28 s) · *The Make-Up Talk*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/24 - Thank them for staying (nmue24).mp4`
 
-**3:10 PM · Trial reel** — [A jar of twelve reasons](https://drive.google.com/file/d/1_fTMQuBJ0z1tFPCMg50kGb-kZQTr3psL/view) (18 s) · *Silent Review, Volume 2*  
+Before the year ends, tell your person what they did right when things got hard. Staying kind in a fight deserves a thank you. Who are you thanking tonight?
+
+**9:10 AM · Trial reel** — [A jar of twelve reasons](https://drive.google.com/file/d/1_fTMQuBJ0z1tFPCMg50kGb-kZQTr3psL/view) (18 s) · *Silent Review, Volume 2*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Silent Review, Volume 2/12 - A jar of twelve reasons (nsre12).mp4`
 
 Pisces tries to review a jar of twelve reasons without crying.
 It made it to reason one. Twelve out of ten.
 
-**4:15 PM · Post** — [The Thank-You Text](https://drive.google.com/file/d/1oGZ1J7Hp2miepa2ofcMgGjoKvtzw13sn/view) (28 s) · *Season 16: Meet the Family*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/23 - The Thank-You Text (nf16e23).mp4`
+**10:15 AM · Post** — [The Thriving Party](https://drive.google.com/file/d/1XY-1r1Z9KkSCGcSevjf32Y3TkDj0on8i/view) (23 s) · *Single and Thriving*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/24 - The Thriving Party (nste24).mp4`
 
-After a visit, thank their parents within a day. Use their name and mention one real moment. Small, specific thanks are the ones people keep.
+Single isn't a waiting room. It's a life, and it's worth celebrating out loud. Tag the friends who'd be first through the door at your thriving party.
 
-**4:40 PM · Trial reel** — [Pisces cries about you](https://drive.google.com/file/d/1uTDcmTZayYs2fjoFeARfirPvMk9MBfb2/view) (12 s) · *Pisces Cries About…*  
+**10:40 AM · Trial reel** — [Pisces cries about you](https://drive.google.com/file/d/1uTDcmTZayYs2fjoFeARfirPvMk9MBfb2/view) (12 s) · *Pisces Cries About…*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Pisces Cries About…/12 - Pisces cries about you (npce12).mp4`
 
 Yes, you. You texted back, said sorry first and stayed kind this year. Pisces noticed. Feeling it all is its own courage.
 
-**5:45 PM · Post** — [Aquarius: what I'm keeping](https://drive.google.com/file/d/1rbu8xqzCMf0tGtTAFx1aWL3d6JGJ47R7/view) (18 s) · *New Year, Same Heart*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/11 - Aquarius- what I'm keeping (nnye11).mp4`
+**11:45 AM · Post** — [The year's last friends' night](https://drive.google.com/file/d/1L3KndUyjFooG1gmnom2cBrGLsd5IPVDL/view) (28 s) · *Friends First*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/24 - The year's last friends' night (nffe24).mp4`
 
-Going quiet when someone gets close can look like not caring, even when you care a lot. Keep your wonderful ideas, and let the right people in a little closer this year.
+A year of small check-ins adds up to this: the whole group in one room, and one more on the call. Thank you for being someone's friend first. Who are you sending this to?
 
-**6:10 PM · Trial reel** — [Who loves the hardest](https://drive.google.com/file/d/1SXmyXi9nG3HJdGvmx8DsBSUMh6NHRDR7/view) (16 s) · *Ranking the Signs*  
+**12:10 PM · Trial reel** — [Who loves the hardest](https://drive.google.com/file/d/1SXmyXi9nG3HJdGvmx8DsBSUMh6NHRDR7/view) (16 s) · *Ranking the Signs*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Ranking the Signs/24 - Who loves the hardest (nrke24).mp4`
 
 We tried to rank who loves the hardest. It didn't go to plan.
 Every sign loves hard, just differently.
 
-**7:15 PM · Post** — [Pisces: the gift that means the most](https://drive.google.com/file/d/1fY_S0etf31KYonlDl96QemCAWUednlzx/view) (18 s) · *Your Star Guide: Winter*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/47 - Pisces- the gift that means the most (ngwe47).mp4`
+**1:15 PM · Post** — [What's your 11th house?](https://drive.google.com/file/d/17Ehlkx2gDp1TdS_dcwLUjfmdKWGRgG4N/view) (53 s) · *Star Talk Explains, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/30 - What's your 11th house- (nx2e30).mp4`
 
-Pisces doesn't need anything expensive. A few honest lines in someone's own handwriting will be kept for years. If you love a Pisces, write it down.
+Astrologers read the 11th house as friends, community, and hopes and wishes. Friends are a love story too, so tell them. If you have a wish for the new year, say it out loud to a friend, then ask for theirs.
 
-**7:40 PM · Trial reel** — [They already bought matching mittens.](https://drive.google.com/file/d/1ONUzhiedr5GHcMHUGVbZqwjg41r2W98K/view) (13 s) · *Dealbreaker or Not?*  
+**1:40 PM · Trial reel** — [They already bought matching mittens.](https://drive.google.com/file/d/1ONUzhiedr5GHcMHUGVbZqwjg41r2W98K/view) (13 s) · *Dealbreaker or Not?*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Dealbreaker or Not-/24 - They already bought matching mittens. (ndbe24).mp4`
 
 They already bought you matching mittens. Too soon?
 Warm hands, warm heart. Put them on.
 
-**8:45 PM · Post** — [Thank them for staying](https://drive.google.com/file/d/18DN4t-MSTJHA0QY29fFk_xPrkXfmDPij/view) (28 s) · *The Make-Up Talk*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/The Make-Up Talk/24 - Thank them for staying (nmue24).mp4`
+**2:45 PM · Post** — [You made it](https://drive.google.com/file/d/1ezqaMGFtEmAnLYdLadl9G2ZcM_pqwphw/view) (28 s) · *Holiday Survival Guide*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/24 - You made it (nhse24).mp4`
 
-Before the year ends, tell your person what they did right when things got hard. Staying kind in a fight deserves a thank you. Who are you thanking tonight?
+If the holidays left you tired, you're not doing it wrong. You held boundaries, asked for help, and were gentle with yourself. Rest is allowed, and you made it.
 
-**9:10 PM · Trial reel** — [Pisces, when your holiday card is three pages](https://drive.google.com/file/d/1G6VrVeTh7YJUOulwgWt9rAVbiim3EZEB/view) (12 s) · *One-Line Advice for Your Sign*  
+**3:10 PM · Trial reel** — [Pisces, when your holiday card is three pages](https://drive.google.com/file/d/1G6VrVeTh7YJUOulwgWt9rAVbiim3EZEB/view) (12 s) · *One-Line Advice for Your Sign*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/One-Line Advice for Your Sign/24 - Pisces, when your holiday card is three pages (nole24).mp4`
 
 Pisces, is your holiday card on page four yet?
 Big feelings are a gift. Send it.
 
-**10:15 PM · Post** — [The Thriving Party](https://drive.google.com/file/d/1XY-1r1Z9KkSCGcSevjf32Y3TkDj0on8i/view) (23 s) · *Single and Thriving*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Single and Thriving/24 - The Thriving Party (nste24).mp4`
+**4:15 PM · Post** — [Aries × Leo: two fires, one tree.](https://drive.google.com/file/d/1DBxhIU-UOB4x3flfodaKwYBF2lRwXgk7/view) (28 s) · *Sign × Sign, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/32 - Aries × Leo- two fires, one tree. (nsse32).mp4`
 
-Single isn't a waiting room. It's a life, and it's worth celebrating out loud. Tag the friends who'd be first through the door at your thriving party.
+Two people who both love to go first. Let them shine, cheer their wins, and make room for both of you at the top.
 
-**10:40 PM · Trial reel** — [POV: you're dating a Pisces. The gift.](https://drive.google.com/file/d/1tbIpIjKO6nHlLtTh_OwCCwpn-rte19ok/view) (15 s) · *POV: You're Dating a ___*  
+**4:40 PM · Trial reel** — [POV: you're dating a Pisces. The gift.](https://drive.google.com/file/d/1tbIpIjKO6nHlLtTh_OwCCwpn-rte19ok/view) (15 s) · *POV: You're Dating a ___*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/24 - POV- you're dating a Pisces. The gift. (npve24).mp4`
 
 A Pisces cries wrapping your gift and cries handing it over. Then you open it, and now you're both crying.
 
-## Day 55 · Mon 28 Dec
+**5:45 PM · Post** — [How do I know it's real this time?](https://drive.google.com/file/d/1PBGV4nuv35nc8jUu1kcRwTkecXvnMoHl/view) (18 s) · *Ask the Stars, Volume 2*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/36 - How do I know it's real this time- (naske36).mp4`
 
-**8:45 AM · Post** — [The year's last friends' night](https://drive.google.com/file/d/1L3KndUyjFooG1gmnom2cBrGLsd5IPVDL/view) (28 s) · *Friends First*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Friends First/24 - The year's last friends' night (nffe24).mp4`
+Real love often feels calmer than the movies. It shows up on ordinary days, and you get to feel like yourself around them. If that sounds familiar, hold on to it gently.
 
-A year of small check-ins adds up to this: the whole group in one room, and one more on the call. Thank you for being someone's friend first. Who are you sending this to?
-
-**9:10 AM · Trial reel** — [They Planned Everything](https://drive.google.com/file/d/1WvN9k3P8MlfDHS_uBbCvEW2-I8gbalV_/view) (14 s) · *Hot Take, Cold Take*  
+**6:10 PM · Trial reel** — [They Planned Everything](https://drive.google.com/file/d/1WvN9k3P8MlfDHS_uBbCvEW2-I8gbalV_/view) (14 s) · *Hot Take, Cold Take*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Hot Take, Cold Take/24 - They Planned Everything (nhce24).mp4`
 
 They planned the whole winter date. How do you thank them?
 Not by out-planning them. Tell them what you loved about it.
 
-**10:15 AM · Post** — [What's your 11th house?](https://drive.google.com/file/d/17Ehlkx2gDp1TdS_dcwLUjfmdKWGRgG4N/view) (53 s) · *Star Talk Explains, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Star Talk Explains, Volume 2/30 - What's your 11th house- (nx2e30).mp4`
+**7:15 PM · Post** — [Our Own Tradition](https://drive.google.com/file/d/1M3wbowUQmW1jlryAa4L-uT5nYWTJEDhX/view) (43 s) · *Season 16: Meet the Family*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/24 - Our Own Tradition (nf16e24).mp4`
 
-Astrologers read the 11th house as friends, community, and hopes and wishes. Friends are a love story too, so tell them. If you have a wish for the new year, say it out loud to a friend, then ask for theirs.
+After all the visits, ask what the two of you want to keep. Keep what felt like home, gently let go of what didn't, and start one tradition that's just yours. What would yours be?
 
-**10:40 AM · Trial reel** — [Pisces plans letters out loud](https://drive.google.com/file/d/1vZ2aa4F_DTmWdDgl4hXdvQ1JvToLn9N5/view) (16 s) · *Rate My Date Idea*  
+**7:40 PM · Trial reel** — [Pisces plans letters out loud](https://drive.google.com/file/d/1vZ2aa4F_DTmWdDgl4hXdvQ1JvToLn9N5/view) (16 s) · *Rate My Date Idea*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Rate My Date Idea/24 - Pisces plans letters out loud (nrde24).mp4`
 
 Write each other letters, then read them out loud.
 Pisces wrote nine pages. Their date wrote two lines. Both cried.
 
-**11:45 AM · Post** — [You made it](https://drive.google.com/file/d/1ezqaMGFtEmAnLYdLadl9G2ZcM_pqwphw/view) (28 s) · *Holiday Survival Guide*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holiday Survival Guide/24 - You made it (nhse24).mp4`
+**8:45 PM · Post** — [Pisces: what I'm keeping](https://drive.google.com/file/d/1b_figuLEpfeNyVrk5kiHO-FaShalugYS/view) (18 s) · *New Year, Same Heart*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/12 - Pisces- what I'm keeping (nnye12).mp4`
 
-If the holidays left you tired, you're not doing it wrong. You held boundaries, asked for help, and were gentle with yourself. Rest is allowed, and you made it.
+Loving someone's potential is not the same as loving who they are right now. Keep your soft heart, stop apologising for your feelings, and carry them a little braver.
 
-**12:10 PM · Trial reel** — [Who handles the countdown better?](https://drive.google.com/file/d/1Vgk8PCsHKptZsV5j-0ZPtyVignVRYx3h/view) (16 s) · *Sign vs Sign*  
+**9:10 PM · Trial reel** — [Who handles the countdown better?](https://drive.google.com/file/d/1Vgk8PCsHKptZsV5j-0ZPtyVignVRYx3h/view) (16 s) · *Sign vs Sign*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign vs Sign/24 - Who handles the countdown better- (nvse24).mp4`
 
 The countdown to midnight: run it to the second, or make a quiet wish together?
 Whatever the clock says, be with your people.
 
-**1:15 PM · Post** — [Aries × Leo: two fires, one tree.](https://drive.google.com/file/d/1DBxhIU-UOB4x3flfodaKwYBF2lRwXgk7/view) (28 s) · *Sign × Sign, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Sign × Sign, Volume 2/32 - Aries × Leo- two fires, one tree. (nsse32).mp4`
-
-Two people who both love to go first. Let them shine, cheer their wins, and make room for both of you at the top.
-
-**1:40 PM · Trial reel** — [Holiday leftovers: then vs now](https://drive.google.com/file/d/1qTPzjtbocGyXOGvNHNNrZAtOcimxFNWq/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/18 - Holiday leftovers- then vs now (nhqe18).mp4`
-
-Guarding the leftovers behind a breadstick fence, or packing a box labelled "for you." Love sometimes looks like leftovers.
-
-**2:45 PM · Post** — [How do I know it's real this time?](https://drive.google.com/file/d/1PBGV4nuv35nc8jUu1kcRwTkecXvnMoHl/view) (18 s) · *Ask the Stars, Volume 2*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Ask the Stars, Volume 2/36 - How do I know it's real this time- (naske36).mp4`
-
-Real love often feels calmer than the movies. It shows up on ordinary days, and you get to feel like yourself around them. If that sounds familiar, hold on to it gently.
-
-**4:15 PM · Post** — [Our Own Tradition](https://drive.google.com/file/d/1M3wbowUQmW1jlryAa4L-uT5nYWTJEDhX/view) (43 s) · *Season 16: Meet the Family*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/Season 16- Meet the Family/24 - Our Own Tradition (nf16e24).mp4`
-
-After all the visits, ask what the two of you want to keep. Keep what felt like home, gently let go of what didn't, and start one tradition that's just yours. What would yours be?
-
-**5:45 PM · Post** — [Pisces: what I'm keeping](https://drive.google.com/file/d/1b_figuLEpfeNyVrk5kiHO-FaShalugYS/view) (18 s) · *New Year, Same Heart*  
-`Star Talk/Next 30 days - 29 Nov to 28 Dec/New Year, Same Heart/12 - Pisces- what I'm keeping (nnye12).mp4`
-
-Loving someone's potential is not the same as loving who they are right now. Keep your soft heart, stop apologising for your feelings, and carry them a little braver.
-
-**7:15 PM · Post** — [Pisces: one word for the new year](https://drive.google.com/file/d/1DMpqbBUHJ2rTfRf6de4qNcvQrTkLMOlG/view) (18 s) · *Your Star Guide: Winter*  
+**10:15 PM · Post** — [Pisces: one word for the new year](https://drive.google.com/file/d/1DMpqbBUHJ2rTfRf6de4qNcvQrTkLMOlG/view) (18 s) · *Your Star Guide: Winter*  
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Your Star Guide- Winter/48 - Pisces- one word for the new year (ngwe48).mp4`
 
 Pisces, your word for next year is ground. Keep dreaming, just with your feet in the snow. A dream with roots is one you can actually live.
+
+**10:40 PM · Trial reel** — [Holiday leftovers: then vs now](https://drive.google.com/file/d/1qTPzjtbocGyXOGvNHNNrZAtOcimxFNWq/view) (13 s) · *Holidays Then vs Now (quick cuts)*  
+`Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/18 - Holiday leftovers- then vs now (nhqe18).mp4`
+
+Guarding the leftovers behind a breadstick fence, or packing a box labelled "for you." Love sometimes looks like leftovers.
