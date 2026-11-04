@@ -1,4 +1,4 @@
-// nsge25 · Remix: Snow Globe Cities · "Montreal: look down" (30 s vertical, music: chiptune · G) · story 0–25.6, then
+// nsge25 · Remix: Snow Globe Cities · "Montreal: look down" (28 s vertical, music: chiptune · G) · story 0–25.6, then the short 2.4 s end card (no card cut; CHANGE 4 Nov); was
 // the shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Montreal, in a | snow *globe.*"  The mountain over the city, church spires and snow. ♈ Aries mid-sprint with a
 //              WHERE ARE YOU? sign: "if love won't come to me, I'll sprint."

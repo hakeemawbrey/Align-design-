@@ -1,4 +1,4 @@
-// nsge20 · Remix: Snow Globe Cities · "Prague: on the dot" (30 s vertical, music: funk · Gm) · story 0–25.6, then the
+// nsge20 · Remix: Snow Globe Cities · "Prague: on the dot" (28 s vertical, music: funk · Gm) · story 0–25.6, then the short 2.4 s end card (no card cut; CHANGE 4 Nov); was the
 // shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Prague, in a | snow *globe.*"  Red roofs, twin spires, and the old astronomical clock tower. ♍ Virgo with a
 //              clipboard (ON TIME), pen raised: "date starts when the clock strikes." THE STARS: "fun fact: this clock has

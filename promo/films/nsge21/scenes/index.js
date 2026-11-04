@@ -1,4 +1,4 @@
-// nsge21 · Remix: Snow Globe Cities · "Kyoto: the perfect garden" (30 s vertical, music: pop · E) · story 0–25.6, then
+// nsge21 · Remix: Snow Globe Cities · "Kyoto: the perfect garden" (28 s vertical, music: pop · E) · story 0–25.6, then the short 2.4 s end card (no card cut; CHANGE 4 Nov); was
 // the shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Kyoto, in a | snow *globe.*"  A snowy temple roof with curved eaves, a stone lantern, a raked garden.
 //              ♎ Libra mid-rake, every line perfect: "everything's perfect." → "…so why am I alone?"

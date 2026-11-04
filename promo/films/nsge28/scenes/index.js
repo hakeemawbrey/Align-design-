@@ -1,4 +1,4 @@
-// nsge28 · Remix: Snow Globe Cities · "Helsinki: when the snow settles" (30 s vertical, music: cinematic · Cm) · story
+// nsge28 · Remix: Snow Globe Cities · "Helsinki: when the snow settles" (28 s vertical, music: cinematic · Cm) · story
 // 0–25.6, then the shared end card. The finale. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Helsinki, in a | snow *globe.*"  The white domed cathedral on its steps over the harbour. ♉ Taurus sits on
 //              the steps as snow swirls; ♏ Scorpio across the square. "I'll make a move when the snow settles."

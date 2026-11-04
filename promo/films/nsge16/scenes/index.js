@@ -1,4 +1,4 @@
-// nsge16 · Remix: Snow Globe Cities · "Quebec City: maple on snow" (30 s vertical, music: jazzy · Bb) · story 0–25.6, then
+// nsge16 · Remix: Snow Globe Cities · "Quebec City: maple on snow" (28 s vertical, music: jazzy · Bb) · story 0–25.6, then the short 2.4 s end card (no card cut; CHANGE 4 Nov); was
 // the shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Quebec City, in a | snow *globe.*"  Stone walls, steep green roofs, the river. ♉ Taurus mid-pour of hot maple
 //              syrup onto a trough of snow (a real Quebec treat: pour it on snow, roll it on a stick), making a heart for

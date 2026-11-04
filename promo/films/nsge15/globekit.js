@@ -30,8 +30,8 @@ import { clamp, lerp, prog, ease, el, rng, hexToRgb } from '../../src/lib.js'
 import { fill, A } from '../../src/scenes/common.js'
 import { drawGrain, drawPixelStar, layerCanvas } from '../sky.js'
 import { GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, STAR, signStar } from '../startalk.js'
 import { popText } from '../lesson.js'
 
@@ -320,8 +320,8 @@ const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
 export const wordPops = (t0, n, gap, base = 0, gain = 0.026) => Array.from({ length: n }, (_, i) => ['pop', +(t0 + i * gap).toFixed(3), NOTE[(base + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
 
 export function globeFilm(spec) {
-  const DURATION = spec.duration || 30
-  const STORY_END = DURATION - ENDCARD_LEN
+  const DURATION = spec.duration || 28              // story 25.6 + the 2.4 s short end card (CHANGE 4 Nov)
+  const STORY_END = DURATION - ENDCARD_SHORT_LEN
   const LEAD = signStar(spec.lead), PART = spec.partner ? signStar(spec.partner) : null
   const tag = { lead: `${LEAD.glyph}︎ ${spec.lead.toUpperCase()}`, partner: PART ? `${PART.glyph}︎ ${spec.partner.toUpperCase()}` : '', stars: 'THE STARS' }
   const tagCol = { lead: mixHex(LEAD.color, '#ffffff', 0.35), partner: PART ? mixHex(PART.color, '#ffffff', 0.35) : BONE, stars: GOLD }
@@ -399,18 +399,18 @@ export function globeFilm(spec) {
   }
 
   const CUTS = spec.cuts
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END }), cardCuts(CUTS)]
+  // no Align card transition (CHANGE 4 Nov): spec.cuts is kept only as a record of the beat changes
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END })]
   const CUES = [
     ...shakes.filter(s => s > 0).flatMap(s => [['whoosh', s, 0.5, 0.045], ['glitter', s + 0.05, s + 0.6], ['tick', s, 0.04], ['tick', s + 0.12, 0.03]]),
     ['glitter', 0.02, 0.7],
     ...spec.heads.filter(h => h.at > 0).flatMap((h, i) => [...wordPops(h.at, 3, 0.08, i, 0.022), ['pop', h.lateAt ?? h.at + 0.35, 1174.66, 0.04, 0]]),
     ...talkCues(allLines, { cps: CPS }),
     ...(spec.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   const m = spec.music
-  const MUSIC = { style: m.style, key: m.key, seed: m.seed, sections: { drop: m.drop, breakdown: m.breakdown || [], lift: m.lift || [], outroAt: DURATION - ENDCARD_LEN }, hits: m.hits || [] }
+  const MUSIC = { style: m.style, key: m.key, seed: m.seed, sections: { drop: m.drop, breakdown: m.breakdown || [], lift: m.lift || [], outroAt: STORY_END }, hits: m.hits || [] }
   return { DURATION, STORY_END, SCENES, CUES, MUSIC, tag }
 }
 

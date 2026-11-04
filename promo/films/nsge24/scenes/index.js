@@ -1,4 +1,4 @@
-// nsge24 · Remix: Snow Globe Cities · "Denver: the top" (30 s vertical, music: screwed · Fm) · story 0–25.6, then the
+// nsge24 · Remix: Snow Globe Cities · "Denver: the top" (28 s vertical, music: screwed · Fm) · story 0–25.6, then the short 2.4 s end card (no card cut; CHANGE 4 Nov); was the
 // shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Denver, in a | snow *globe.*"  A small skyline at the foot of a big snowy peak (THE MILE HIGH CITY chip:
 //              Denver's nickname, it sits about a mile up). ♑ Capricorn mid-climb with a flag in their teeth: "I'll date

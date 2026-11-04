@@ -1,4 +1,4 @@
-// nsge19 · Remix: Snow Globe Cities · "Vienna: the grand entrance" (30 s vertical, music: cinematic · D) · story 0–25.6,
+// nsge19 · Remix: Snow Globe Cities · "Vienna: the grand entrance" (28 s vertical, music: cinematic · D) · story 0–25.6,
 // then the shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Vienna, in a | snow *globe.*"  The tall cathedral spire with its zig-zag tiled roof, a palace front, and a
 //              grand staircase in the snow with a spotlight. ♌ Leo, crowned, mid-twirl at the top: "one waltz and they'll

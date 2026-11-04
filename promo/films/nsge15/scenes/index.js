@@ -1,4 +1,4 @@
-// nsge15 · Remix: Snow Globe Cities · "Reykjavik: reading the sky" (30 s vertical, music: dreamy · F) · story 0–25.6,
+// nsge15 · Remix: Snow Globe Cities · "Reykjavik: reading the sky" (28 s vertical, music: dreamy · F) · story 0–25.6,
 // then the shared end card. Look: ../globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Reykjavik, in a | snow *globe.*"  The globe mid-shake: low coloured houses, the stepped church tower, the
 //              mountain across the bay, green aurora ribbons. ♒ Aquarius stares up; ♎ Libra (the crush) across the square.

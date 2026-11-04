@@ -1,4 +1,4 @@
-// nsge22 · Remix: Snow Globe Cities · "Minneapolis: the skyway" (30 s vertical, music: synthwave · C#m) · story 0–25.6,
+// nsge22 · Remix: Snow Globe Cities · "Minneapolis: the skyway" (28 s vertical, music: synthwave · C#m) · story 0–25.6,
 // then the shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Minneapolis, in a | snow *globe.*"  Two towers joined by a glass skyway (the skyways really link downtown
 //              buildings). ♏ Scorpio in sunglasses peers down from it: "I don't do outside." ♋ Cancer walks by below:

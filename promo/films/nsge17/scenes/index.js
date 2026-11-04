@@ -1,4 +1,4 @@
-// nsge17 · Remix: Snow Globe Cities · "Edinburgh: Old Town, New Town" (30 s vertical, music: chiptune · Eb) · story 0–25.6,
+// nsge17 · Remix: Snow Globe Cities · "Edinburgh: Old Town, New Town" (28 s vertical, music: chiptune · Eb) · story 0–25.6,
 // then the shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Edinburgh, in a | snow *globe.*"  Left of the glass: the castle on its rock and tall crooked old houses. Right:
 //              a tidy grid of terraces (Edinburgh really has an Old Town and a New Town). ♊ Gemini hops to the left:

@@ -1,4 +1,4 @@
-// nsge26 · Remix: Snow Globe Cities · "Anchorage: the crier" (30 s vertical, music: dreamy · Db) · story 0–25.6, then the
+// nsge26 · Remix: Snow Globe Cities · "Anchorage: the crier" (28 s vertical, music: dreamy · Db) · story 0–25.6, then the short 2.4 s end card (no card cut; CHANGE 4 Nov); was the
 // shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 // Pisces is the lead this time, crying INSIDE the globe (no second Pisces at the glass).
 //   0.00–5.2   "Anchorage, in a | snow *globe.*"  Mountains over a low city; the sun is already setting (winter sunsets

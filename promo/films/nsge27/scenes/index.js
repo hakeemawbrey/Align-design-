@@ -1,4 +1,4 @@
-// nsge27 · Remix: Snow Globe Cities · "Ottawa: your pace" (30 s vertical, music: pop · C) · story 0–25.6, then the shared
+// nsge27 · Remix: Snow Globe Cities · "Ottawa: your pace" (28 s vertical, music: pop · C) · story 0–25.6, then the short 2.4 s end card (no card cut; CHANGE 4 Nov); was the shared
 // end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Ottawa, in a | snow *globe.*"  A tall clock tower with a green copper roof on the hill, and the canal frozen
 //              into a skateway (it really is, every winter it's cold enough). ♊ Gemini zooms past on skates, mid-sentence:

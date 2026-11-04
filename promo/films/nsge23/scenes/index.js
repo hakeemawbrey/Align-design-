@@ -1,4 +1,4 @@
-// nsge23 · Remix: Snow Globe Cities · "Sapporo: built together" (30 s vertical, music: house · A) · story 0–25.6, then
+// nsge23 · Remix: Snow Globe Cities · "Sapporo: built together" (28 s vertical, music: house · A) · story 0–25.6, then the short 2.4 s end card (no card cut; CHANGE 4 Nov); was
 // the shared end card. Look: ../nsge15/globekit.js. Rows: promo/films/next30/b17.md.
 //   0.00–5.2   "Sapporo, in a | snow *globe.*"  Mountains, city blocks, a lattice tower, and a row of snow sculptures (the
 //              city is known for them). ♐ Sagittarius mid-chisel on a snow mountain: "my person has to love adventure."
