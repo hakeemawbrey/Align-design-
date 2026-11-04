@@ -35,7 +35,7 @@ const EP = {
     { t: -2, kind: 'photo', who: 'sag', h: 280, pic: mountains },
     { t: 0.8, kind: 'triple', who: 'gemini', parts: [['Sag: (a pin)', 'the mountains?'], ['Sag: (a pin)', 'a snowy cabin?'], ['Aquarius: anyone up?', 'are you MOVING']] },
     { t: 2.2, kind: 'msg', who: 'scorpio', text: "who's it for." },
-    { t: 3.3, kind: 'msg', who: 'sag', text: 'a surprise trip. for my person.' },
+    { t: 3.3, kind: 'msg', who: 'sag', text: 'a surprise trip for my person. no planes, no early mornings.' },
     { t: 4.1, kind: 'voice', who: 'pisces', dur: '0:03', sob: true, play: [4.3, 5.8], react: { t: 4.8, mark: 'tear', n: 4 } },
     { t: 5.3, kind: 'msg', who: 'aries', text: 'BOOK IT' },
     { t: 6.55, kind: 'msg', who: 'sag', text: 'do I just… book it?' },

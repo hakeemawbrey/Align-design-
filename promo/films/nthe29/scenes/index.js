@@ -1,8 +1,8 @@
-// nthe29: THE THREAD, episode 29, "The long voice note" (20 s vertical, promo/films/next30/b06.md, music: dreamy · Db)
+// nthe29: THE THREAD, episode 29, "Forwarded" (20 s vertical, promo/films/next30/b06.md, music: dreamy · Db)
 // Story 0–15.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
-//   0.00  "Pisces sent a | 3-minute voice note."  ♓ Pisces mid-sob, phone to mouth (the poster, centre stage).
-//   0.6   ♈ "bracing" · ♏ plays it: "everyone stay calm." Crying… translated: THEIR DATE WROTE THEM A CARD.
-//   4.6   the card (photo) · ♊ triple · Pisces: "is it too much if I tell them I cried?"
+//   0.00  "Pisces forwarded | their date's voice note."  ♓ Pisces mid-sob, phone to mouth (the poster, centre stage).
+//   0.6   ♈ "bracing" · ♏ plays it: "everyone stay calm." It's a song: their date made one up about Pisces' name.
+//   4.6   the lyrics (photo) · ♊ triple · Pisces: "is it too much if I tell them I cried?"
 //   9.5   card cut → ♍ "no. tell them what it meant." (gold)
 //  11.0   Pisces sends them a 1-second voice note: "thank you" (sob).  "Happy tears, *sent*."
 import { threadFilm, drawProp } from '../../nthe17/scenes/threadkit.js'
@@ -19,8 +19,8 @@ function card(x, X, Y, w, h, t) {
 const EP = {
   duration: 20,
   heads: [
-    { text: 'Pisces sent a | *3-minute* voice note.', at: -0.9, out: [3.3, 3.55], size: 88 },
-    { text: 'It’s *good news.*', at: 3.6, out: [7.1, 7.35], size: 100 },
+    { text: 'Pisces *forwarded* | their date’s voice note.', at: -0.9, out: [3.3, 3.55], size: 84 },
+    { text: 'It’s *a song.*', at: 3.6, out: [7.1, 7.35], size: 100 },
     { text: '‘Is it too much | if I *tell them?*’', at: 7.4, out: [9.6, 9.85], size: 84 },
     { text: 'Tell them what it *meant.*', at: 9.9, out: [12.0, 12.25], size: 88 },
     { text: 'Happy tears, *sent.*', at: 12.3, out: [15.1, 15.45], size: 104, late: 1, lateAt: 12.6 },
@@ -30,13 +30,14 @@ const EP = {
     { t: -8, kind: 'msg', who: 'taurus', text: "I'll bring two desserts" },
     { t: -7, kind: 'msg', who: 'virgo', text: "noted on the sheet" },
     { t: -6, kind: 'msg', who: 'cancer', text: "who's bringing dessert?" },
-    { t: -4.5, kind: 'msg', who: 'pisces', text: 'guys' },
-    { t: -3, kind: 'voice', who: 'pisces', dur: '3:02', sob: true, play: [1.9, 4.6] },
+    { t: -4.5, kind: 'sys', who: 'pisces', text: 'PISCES forwarded a voice note (0:41)' },
+    { t: -3, kind: 'voice', who: 'pisces', dur: '0:41', play: [1.9, 4.6] },
+    { t: -2, kind: 'msg', who: 'pisces', text: 'from my date. I cannot listen to it again. someone else play it' },
     { t: 0.6, kind: 'msg', who: 'aries', text: 'bracing' },
     { t: 1.3, kind: 'msg', who: 'scorpio', text: 'playing it. everyone stay calm.' },
-    { t: 3.6, kind: 'sys', who: 'pisces', gold: true, text: 'translated: THEIR DATE WROTE THEM A CARD' },
-    { t: 4.6, kind: 'photo', who: 'pisces', h: 220, w: 520, pic: card, caption: 'they wrote me a card' },
-    { t: 5.9, kind: 'triple', who: 'gemini', parts: [['Pisces: (3:02)', 'aww'], ['Pisces: they wrote me a card', 'AWW'], ['Scorpio: everyone stay calm', 'I am not calm']] },
+    { t: 3.6, kind: 'sys', who: 'pisces', gold: true, text: 'it is a SONG. about Pisces. made up.' },
+    { t: 4.6, kind: 'photo', who: 'pisces', h: 220, w: 520, pic: card, caption: 'the lyrics: "Pisces, nice is"' },
+    { t: 5.9, kind: 'triple', who: 'gemini', parts: [['Pisces: (0:41)', 'aww'], ['Pisces: the lyrics', 'nice is??'], ['Scorpio: everyone stay calm', 'I am not calm']] },
     { t: 7.4, kind: 'msg', who: 'pisces', text: 'is it too much if I tell them I cried?' },
     { t: 9.65, kind: 'msg', who: 'virgo', hl: true, text: 'no. tell them what it meant.' },
     { t: 11.0, kind: 'sys', who: 'pisces', gold: true, text: "PISCES sent them: 'thank you' (0:01, sobbing)", react: null },

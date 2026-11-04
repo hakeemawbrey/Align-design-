@@ -1,6 +1,6 @@
 // nthe23: THE THREAD, episode 23, "Pinned (again)" (20 s vertical, promo/films/next30/b06.md, music: house · A)
 // Story 0–15.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
-//   0.00  "Leo pinned their own message. | Again."  PINNED: "my date said I'm FUNNY". ♌ Leo mid-pose, a pin glinting.
+//   0.00  "Leo pinned a compliment. | Their own."  PINNED: "my date said I'm FUNNY". ♌ Leo mid-pose, a pin glinting.
 //   0.7   ♏ "we know. you pinned it." · ♉ "third pin this week" · ♓ voice note (laugh-crying)
 //   3.4   Leo: one joke got nothing (it was about soup). ♊ "tell us the joke / yes / no wait, I want soup"
 //   7.2   card cut → ♍ "one joke isn't the date. ask what makes them laugh." (gold)
@@ -10,7 +10,7 @@ import { threadFilm } from '../../nthe17/scenes/threadkit.js'
 const EP = {
   duration: 20,
   heads: [
-    { text: 'Leo pinned their own message. | *Again.*', at: -0.9, out: [3.0, 3.25], size: 76 },
+    { text: 'Leo pinned a compliment. | *Their own.*', at: -0.9, out: [3.0, 3.25], size: 84 },
     { text: '‘One joke got *nothing.*’', at: 3.3, out: [6.9, 7.15], size: 88 },
     { text: 'Ask what makes | *them* laugh.', at: 7.3, out: [11.0, 11.25], size: 90 },
     { text: 'Pinned: *their* joke.', at: 11.4, out: [15.1, 15.45], size: 100, late: 2, lateAt: 11.7 },

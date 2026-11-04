@@ -244,7 +244,7 @@ function makeThread(x, EP) {
     x.lineWidth = 3; x.strokeStyle = hexA(GOLD, 0.7); x.stroke()
     RING.forEach((c, i) => { const a = -Math.PI / 2 + i * TAU / 12 + t * 0.4; x.fillStyle = c; x.fillRect(Math.round(ax + Math.cos(a) * 26 - 3.5), Math.round(ay + Math.sin(a) * 26 - 3.5), 7, 7) })
     drawPixelStar(x, ax, ay, 20, 1, GOLD, '#fffbe8')
-    x.font = `800 42px ${INTER}`; x.fillStyle = BONE; x.fillText(EP.title || 'the group chat', hx + 176, hy + 58)
+    x.font = `800 42px ${INTER}`; x.fillStyle = BONE; x.fillText(EP.title || 'say it out loud', hx + 176, hy + 58)
     x.font = `700 22px ${MONO}`; x.fillStyle = hexA(BONE, 0.6); x.fillText(EP.subtitle || '12 stars · 1 chat', hx + 178, hy + 94)
   }
 

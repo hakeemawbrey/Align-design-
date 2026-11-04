@@ -3,10 +3,10 @@
 //   0.00  "Cancer: ‘dietary needs. go.’"  ♋ Cancer mid-stir at a big pot (the year-end dinner).
 //   0.6   ♉ "yes" · ♈ "spicy. very spicy." · ♒ "something no one has ever tried" · ♍ a spreadsheet · ♊ triple ·
 //         ♓ voice note, sobbing (chopping onions).
-//   7.0   Cancer: my partner keeps offering to help and I keep saying no.
-//  10.7   card cut → ♍ "let them help. being cared for is part of hosting." (gold)
-//  12.6   "but what if they stir it wrong" · ♑ "there is no wrong stir. agenda item: relax."
-//  14.9   Cancer hands them a spoon; they're humming.  "Let them *stir*."
+//   7.0   Cancer wants to surprise their partner with the partner's family recipe. What if it's not like theirs?
+//  10.7   card cut → ♍ "ask them to teach you. cooking it together is the gift." (gold)
+//  12.6   "but the surprise" · ♑ "agenda item: the surprise is that you asked."
+//  14.9   The partner teaches; Cancer hands them a spoon; they're humming.  "Let them *stir*."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
 
 function sheet(x, X, Y, w, h, t) {
@@ -25,8 +25,8 @@ const EP = {
   heads: [
     { text: 'Cancer: *‘dietary needs. go.’*', at: -0.9, out: [3.4, 3.65], size: 84 },
     { text: 'The chat: *very specific.*', at: 3.7, out: [7.0, 7.25], size: 88 },
-    { text: '‘They keep offering | to *help.*’', at: 7.3, out: [10.6, 10.85], size: 88 },
-    { text: 'Let them *help.*', at: 10.9, out: [14.6, 14.85], size: 100 },
+    { text: '‘What if it’s not | like *theirs?*’', at: 7.3, out: [10.6, 10.85], size: 88 },
+    { text: 'Let them *teach.*', at: 10.9, out: [14.6, 14.85], size: 100 },
     { text: 'One spoon. *Handed over.*', at: 14.9, out: [16.9, 17.15], size: 88, accent: '#9fe6b0' },
     { text: 'Let them *stir.*', at: 17.2, out: [20.15, 20.45], size: 110, late: 1, lateAt: 17.5 },
   ],
@@ -42,11 +42,11 @@ const EP = {
     { t: 3.2, kind: 'photo', who: 'virgo', h: 180, w: 520, pic: sheet, caption: 'dietary needs (FINAL)' },
     { t: 4.6, kind: 'triple', who: 'gemini', parts: [['Taurus: yes', 'same'], ['Aries: spicy. very spicy.', 'not spicy'], ['Aquarius: something new', 'surprise me']] },
     { t: 5.8, kind: 'voice', who: 'pisces', dur: '0:05', sob: true, play: [6.0, 7.6], react: { t: 6.4, mark: 'tear', n: 3 } },
-    { t: 7.3, kind: 'msg', who: 'cancer', text: 'also my partner keeps offering to help and I keep saying no' },
-    { t: 10.9, kind: 'msg', who: 'virgo', hl: true, text: 'let them help. being cared for is part of hosting.' },
-    { t: 12.6, kind: 'msg', who: 'cancer', text: 'but what if they stir it wrong' },
-    { t: 13.5, kind: 'msg', who: 'cap', text: 'there is no wrong stir. agenda item: relax.' },
-    { t: 14.9, kind: 'msg', who: 'cancer', text: "handed them a spoon. they're humming. it's nice.", react: { t: 15.4, mark: 'heart', n: 12 } },
+    { t: 7.3, kind: 'msg', who: 'cancer', text: "also: making my partner's family recipe as a surprise. what if it's not like theirs?" },
+    { t: 10.9, kind: 'msg', who: 'virgo', hl: true, text: 'ask them to teach you. cooking it together is the gift.' },
+    { t: 12.6, kind: 'msg', who: 'cancer', text: 'but the surprise' },
+    { t: 13.5, kind: 'msg', who: 'cap', text: 'agenda item: the surprise is that you asked.' },
+    { t: 14.9, kind: 'msg', who: 'cancer', text: "they're teaching me. they have the spoon. they're humming.", react: { t: 15.4, mark: 'heart', n: 12 } },
     { t: 16.3, kind: 'voice', who: 'pisces', dur: '0:02', sob: true, play: [16.5, 17.8] },
   ],
   typing: [{ who: 'virgo', a: 8.6, b: 10.85 }, { who: 'cancer', a: 14.0, b: 14.85 }],

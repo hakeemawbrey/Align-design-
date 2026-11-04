@@ -1,7 +1,7 @@
 // nthe24: THE THREAD, episode 24, "The coat room" (30 s vertical, promo/films/next30/b06.md, music: synthwave · F#m)
 // Story 0–25.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Libra's texting | from the coat room."  ♎ Libra peeking out from behind a rail of coats, phone up.
-//         The plus one (from episode 17) is talking to Libra's coworkers. Libra is nervous.
+//         It's Libra's own party; their date (from episode 17) is talking to Libra's work friends. Libra is nervous.
 //   1.0   ♈ "go stand next to them" · ♏ "are they having fun? look." · Libra peeks: a photo of the party, the plus one
 //         laughing. ♓ voice note from home, sobbing. ♊ triple. Libra: "what if they're fine without me?"
 //  12.2   card cut → ♍ "go back out. bring them some water, check in with a smile." (gold)
@@ -29,17 +29,17 @@ const EP = {
     { text: 'Saved *a seat.*', at: 21.3, out: [25.15, 25.45], size: 110, late: 2, lateAt: 21.6 },
   ],
   items: [
-    { t: -7, kind: 'msg', who: 'cancer', text: 'Libra, party update please' },
-    { t: -6, kind: 'msg', who: 'leo', text: 'tell them I said hi. they know me.' },
-    { t: -5, kind: 'msg', who: 'aqua', text: "how's the party??" },
+    { t: -7, kind: 'msg', who: 'cancer', text: 'has anyone seen the host?' },
+    { t: -6, kind: 'msg', who: 'leo', text: "I'm at the snack table. it's great" },
+    { t: -5, kind: 'msg', who: 'aqua', text: 'Libra where did you go' },
     { t: -3, kind: 'msg', who: 'libra', text: 'hiding in the coat room. hi' },
-    { t: -1.5, kind: 'msg', who: 'libra', text: "they're talking to my coworkers. I'm nervous." },
+    { t: -1.5, kind: 'msg', who: 'libra', text: "my date is talking to my work friends. I'm nervous." },
     { t: 1.0, kind: 'msg', who: 'aries', text: 'go stand next to them' },
     { t: 2.2, kind: 'msg', who: 'scorpio', text: 'are they having fun? look.' },
     { t: 3.4, kind: 'msg', who: 'libra', text: 'peeking…' },
     { t: 4.6, kind: 'photo', who: 'libra', h: 250, pic: party, caption: "they're laughing??" },
     { t: 6.4, kind: 'voice', who: 'pisces', dur: '0:05', sob: true, play: [6.65, 8.4], react: { t: 7.0, mark: 'tear', n: 3 } },
-    { t: 7.8, kind: 'triple', who: 'gemini', parts: [['Libra: peeking…', 'what do you see'], ["Aquarius: how's the party??", 'great, apparently'], ["Libra: I'm nervous", "you're in a coat room"]] },
+    { t: 7.8, kind: 'triple', who: 'gemini', parts: [['Libra: peeking…', 'what do you see'], ['Aquarius: Libra where did you go', 'the COAT ROOM'], ["Libra: I'm nervous", "you're in a coat room"]] },
     { t: 9.2, kind: 'msg', who: 'libra', text: "what if they're fine without me?" },
     { t: 12.45, kind: 'msg', who: 'virgo', hl: true, text: 'go back out. bring them some water, check in with a smile.' },
     { t: 14.4, kind: 'msg', who: 'libra', text: 'going.' },
