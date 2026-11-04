@@ -8,16 +8,17 @@
 //   makeFlag(cfg)    19 INSTANT GREEN FLAG · 15 s: "When they…", one small kind act, heart eyes, a giant green flag.
 //   makeSelect(cfg)  20 CHOOSE YOUR SIGN · 20 s: a retro character-select grid, three hovered picks with stat cards,
 //                    the third twisted, SELECTED!
+// (cut = the beat's white-flash jump cut; the Align card transition was removed on 4 Nov.)
 // Every film: the format name is the bug (top-left, Inter 800 small caps, 56 px), the hook caption and a character
 // mid-action are on screen at t = 0 (no fade from black), Pisces cries somewhere, THE STARS pop in at the top and say
-// the last line, one card cut (cardfx), the shared end card (endcard.js, default CTA). Everything is a pure f(t);
+// the last line, the shared short end card (endcard.js, default CTA, 2.4 s). Everything is a pure f(t);
 // DOM and canvases are only made inside build().
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -320,7 +321,9 @@ export function buildBanner(root, { top, text, col = BONE, accent = GREEN, size 
 // cfg: { id, DURATION, bug: [main, dim], hook, hookTop, hookSize, hookAccent, accent, hookOut: [a, b],
 //        starsAt, last, lastAt, boxClose, cut, setup(root) → { draw(x, t), top(tx, t), update(t) }, cues: [] }
 export function makeFilm(cfg) {
-  const DURATION = cfg.DURATION, STORY_END = DURATION - ENDCARD_LEN
+  // owner change (4 Nov): no Align card transition, the 2.4 s short end card. cfg.DURATION is the slate length with the
+  // old 4.4 s card; the story keeps its timing and the film is 2.0 s shorter.
+  const STORY_END = cfg.DURATION - 4.4, DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(2)
   const OUT = [STORY_END - 0.5, STORY_END - 0.08]
   const SPEAK = 'THE STARS'
   const LINES = [{ t: cfg.lastAt, speaker: SPEAK, text: cfg.last }]
@@ -364,22 +367,21 @@ export function makeFilm(cfg) {
         if (scene.update) scene.update(t)
         box1.update(t)
         bug.update(t, outK(t, OUT))
-        const fl = Math.max(0, ...(cfg.flashes || []).map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
+        const fl = Math.max(0, ...[...(cfg.flashes || []), cfg.cut].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
         flash.style.opacity = String(0.5 * fl)
         fade.style.opacity = String(0.85 * ease.inQuad(prog(t, OUT[0] + 0.1, OUT[1])))
         drawGrain(gx, t)
       },
     }
   }
-  const CUTS = [{ t: cfg.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
   const CUES = [
     ...(cfg.cues || []),
     ['pop', r3(cfg.starsAt + 0.05), 739.99, 0.04, 0], ['glitter', r3(cfg.starsAt + 0.05), r3(cfg.starsAt + 0.45)],
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', r3(OUT[0]), 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ['whoosh', r3(cfg.cut - 0.08), 0.28, 0.03], ['tick', r3(cfg.cut), 0.05],
+    ...endcardCues(STORY_END, { short: true }),
   ].sort((a, b) => a[1] - b[1])
   return { DURATION, SCENES, CUES, STORY_END }
 }

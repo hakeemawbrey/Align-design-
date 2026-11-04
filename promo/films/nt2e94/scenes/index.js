@@ -1,7 +1,7 @@
-// nt2e94: INSTANT GREEN FLAG, "Bragging Out Loud" (15 s vertical, Star Talk Trends Vol. 2, music: dreamy · Gb).
-// Story 0–10.6, then the shared end card. The format look and timeline live in ../../nt2e81/scenes/t2kit.js (makeFlag):
+// nt2e94: INSTANT GREEN FLAG, "Bragging Out Loud" (13 s vertical, Star Talk Trends Vol. 2, music: dreamy · Gb).
+// Story 0–10.6, then the short shared end card (2.4 s). The format look and timeline live in ../../nt2e81/scenes/t2kit.js (makeFlag):
 //   0.0 hook: "When they…" with both stars mid-moment · 1.5 the kind thing · 3.3 heart eyes · 4.1 the green flag
-//   springs up + INSTANT GREEN FLAG banner · 6.0 card cut, THE STARS · 6.35 the last line. Pisces happy-cries in the back.
+//   springs up + INSTANT GREEN FLAG banner · 6.0 jump cut, THE STARS · 6.35 the last line. Pisces happy-cries in the back.
 import * as K from '../../nt2e81/scenes/t2kit.js'
 
 const { makeFlag } = K

@@ -1,6 +1,6 @@
-// nt2e82: CORPORATE SPEAK FOR DATING, "Virgo Runs the Sync" (20 s vertical, Star Talk Trends Vol. 2, music: house · A).
-// Story 0–15.6, then the shared end card. The format look and timeline live in ../../nt2e81/scenes/t2kit.js (makeCorp):
-//   0.0 hook + title slide · 2.4 slide 1 + TRANSLATION · 5.4 slide 2 · 8.4 card cut, slide 3 (the twist) ·
+// nt2e82: CORPORATE SPEAK FOR DATING, "Virgo Runs the Sync" (18 s vertical, Star Talk Trends Vol. 2, music: house · A).
+// Story 0–15.6, then the short shared end card (2.4 s). The format look and timeline live in ../../nt2e81/scenes/t2kit.js (makeCorp):
+//   0.0 hook + title slide · 2.4 slide 1 + TRANSLATION · 5.4 slide 2 · 8.4 jump cut, slide 3 (the twist) ·
 //   11.6 ANY QUESTIONS? + the date's heart sign · 12.05 THE STARS' last line. Pisces cries in the audience throughout.
 import { makeCorp } from '../../nt2e81/scenes/t2kit.js'
 

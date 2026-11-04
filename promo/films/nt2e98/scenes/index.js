@@ -1,6 +1,6 @@
-// nt2e98: CHOOSE YOUR SIGN, "Choose Your First-Date Planner" (20 s vertical, Star Talk Trends Vol. 2, music: chiptune · C#).
-// Story 0–15.6, then the shared end card. The format look and timeline live in ../../nt2e81/scenes/t2kit.js (makeSelect):
-//   0.0 hook: the cursor roaming the grid · 2.2 pick 1 + stat card · 5.4 pick 2 · 8.6 card cut, pick 3 (the twist) ·
+// nt2e98: CHOOSE YOUR SIGN, "Choose Your First-Date Planner" (18 s vertical, Star Talk Trends Vol. 2, music: chiptune · C#).
+// Story 0–15.6, then the short shared end card (2.4 s). The format look and timeline live in ../../nt2e81/scenes/t2kit.js (makeSelect):
+//   0.0 hook: the cursor roaming the grid · 2.2 pick 1 + stat card · 5.4 pick 2 · 8.6 jump cut, pick 3 (the twist) ·
 //   11.8 SELECTED! + confetti · 11.9 THE STARS · 12.25 the last line. Pisces's tile cries the whole time.
 import * as K from '../../nt2e81/scenes/t2kit.js'
 
