@@ -440,8 +440,8 @@ export function giftBox(x, t, cx, base, w, h, col, rib, { lidDy = 0, lidDx = 0, 
 
 // ═════════════════════════════════════════════════════════════ the episode
 const SERIES = {
-  party: { bug: ['YOUR SIGN', 'AT THE HOLIDAY PARTY'], head: n => `*${n}* at the | holiday party:`, set: (x, t) => drawRoom(x, t) },
-  gifts: { bug: ['THE SIGNS', 'AS WINTER GIFTS'], head: n => `If *${n}* were a | winter gift:`, set: (x, t) => drawSnowNight(x, t) },
+  party: { bug: ['YOUR SIGN', 'AT THE HOLIDAY PARTY'], head: n => `*${n}* at the | holiday party:`, set: (x, t, c) => drawRoom(x, t, c.room || {}) },
+  gifts: { bug: ['THE SIGNS', 'AS WINTER GIFTS'], head: n => `If *${n}* were a | winter gift:`, set: (x, t, c) => drawSnowNight(x, t, c.night || {}) },
 }
 
 export function makeEp(cfg) {
@@ -517,7 +517,7 @@ export function makeEp(cfg) {
     return {
       start: 0, end: STORY_END + 0.01, root,
       update(t) {
-        SER.set(x, t)
+        SER.set(x, t, cfg)
         // the hook
         if (t < T.beats[0][0]) cfg.hook(x, t, { ...helpers, u: t })
         // the two beats: jump cuts with a zoom punch
