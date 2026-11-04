@@ -1,4 +1,4 @@
-// nh15e15: HOME FOR THE HOLIDAYS, "The kids' table." (30 s vertical, Star Talk Season 15 ep 15, music: chiptune · G)
+// nh15e15: HOME FOR THE HOLIDAYS, "The kids' table." (28 s vertical, Star Talk Season 15 ep 15, music: chiptune · G)
 // Story 0–25.6, then the shared end card. The season's look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.2    hook "Seated at the *kids' table.*"  Sagittarius, far too big for a tiny chair, takes a crayon from the
 //              little cousin.
