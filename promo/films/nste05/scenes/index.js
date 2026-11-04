@@ -1,8 +1,8 @@
-// nste05: SINGLE AND THRIVING, Ep 5 "Lights Walk, No Plus-One" (25 s vertical, Next 30 b33, music: pop · E).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste05: SINGLE AND THRIVING, Ep 5 "Lights Walk, No Plus-One" (23 s vertical, Next 30 b33, music: pop · E).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Lights walk. | *No* plus-one." Leo under a glowing arch of lights on a snowy street, phone up, while
 //              two couples pose for each other: "one more! cute!"  Leo: "who takes MY picture?"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "go for the *lights*, not the photo." / "and if you want one, just *ask.*"
+//   6.8        beat cut → THE STARS: "go for the *lights*, not the photo." / "and if you want one, just *ask.*"
 //   13.6       Leo asks Sagittarius (also walking solo): "could you take one?" FLASH. Sag: "sure! then me?" They swap
 //              phones and laugh. Meter fills.
 //   17.4       "Leo: *thriving.*" under the arch. Last line: "Bring yourself. *Glow* anyway."

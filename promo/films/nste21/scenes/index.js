@@ -1,8 +1,8 @@
-// nste21: SINGLE AND THRIVING, Ep 21 "The Midnight Hug" (25 s vertical, Next 30 b33, music: synthwave · Bm).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste21: SINGLE AND THRIVING, Ep 21 "The Midnight Hug" (23 s vertical, Next 30 b33, music: synthwave · Bm).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Countdown's coming. | *No* midnight hug?" Sagittarius at the window in a party hat, the wall clock
 //              creeping towards twelve: "the countdown's soon…" → "who do I hug at twelve?"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "midnight hugs come in *friend* sizes." / "make the plan with the people you *love.*"
+//   6.8        beat cut → THE STARS: "midnight hugs come in *friend* sizes." / "make the plan with the people you *love.*"
 //   13.6       the friends in party hats (Aries, Leo, Gemini) count down with Sag: 3… 2… 1… GROUP HUG, confetti.
 //              Meter fills.
 //   17.4       "Sagittarius: *thriving.*" Last line: "Hug the people who *showed up.*"

@@ -1,8 +1,8 @@
-// nste02: SINGLE AND THRIVING, Ep 2 "Decorating for One" (25 s vertical, Next 30 b33, music: lofi · F).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste02: SINGLE AND THRIVING, Ep 2 "Decorating for One" (23 s vertical, Next 30 b33, music: lofi · F).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Why decorate if | *nobody* sees it?" Taurus slumped on the couch, hugging an unopened box of
 //              LIGHTS in a bare room. "it's just me this year…" → thinks: "why bother?"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "somebody sees it: *you.*" / "make it cozy for the one who *lives* here."
+//   6.8        beat cut → THE STARS: "somebody sees it: *you.*" / "make it cozy for the one who *lives* here."
 //              A tag pops by Taurus: "FOR: the one | who lives here".
 //   13.6       Taurus strings the lights; they blink on one by one, a little tree glows. "ooh." → "cozy. for ME."
 //   17.4       "Taurus: *thriving.*" under its own lights. Last line: "Decorate for who *lives* here."

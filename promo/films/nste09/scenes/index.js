@@ -1,8 +1,8 @@
-// nste09: SINGLE AND THRIVING, Ep 9 "Nobody Could Come" (25 s vertical, Next 30 b33, music: funk · A).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste09: SINGLE AND THRIVING, Ep 9 "Nobody Could Come" (23 s vertical, Next 30 b33, music: funk · A).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Everyone bailed. | *Go anyway?*" Sagittarius at the door with a backpack half on while the group
 //              chat buzzes: "can't, sorry!" "next time!!" "so busy this week".  Sag: "…I'll just stay home."
-//   6.8        card cut → THE STARS: "you're *good* company too." / "go see it. *share* it after."
+//   6.8        beat cut → THE STARS: "you're *good* company too." / "go see it. *share* it after."
 //   13.6       a cabin window full of snowy pines and stars; Sag with cocoa snaps the view: "look at THIS." The chat:
 //              "WOW" "ok next time I'm COMING". Hearts. Meter fills.
 //   17.4       "Sagittarius: *thriving.*" Last line: "Go. *Send* the view."

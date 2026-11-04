@@ -1,8 +1,8 @@
-// nste07: SINGLE AND THRIVING, Ep 7 "Nobody to Ask" (25 s vertical, Next 30 b33, music: dreamy · F).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste07: SINGLE AND THRIVING, Ep 7 "Nobody to Ask" (23 s vertical, Next 30 b33, music: dreamy · F).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Red or gold? | *Nobody* to ask." Libra in front of a bare tree, holding a red ornament and a gold
 //              one up in turn, weighing them like scales: "red or gold??" → "red. no. gold? no…"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "you don't need a *second vote.*" / "what do *you* like? start there."
+//   6.8        beat cut → THE STARS: "you don't need a *second vote.*" / "what do *you* like? start there."
 //   13.6       Libra hangs BOTH, then a dozen more, the tree lights up, Libra steps back proud: "both. obviously." →
 //              "it's so ME."  Meter fills.
 //   17.4       "Libra: *thriving.*" Last line: "Your taste was *always* enough."

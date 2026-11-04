@@ -1,8 +1,8 @@
-// nste19: SINGLE AND THRIVING, Ep 19 "Know Your Yes" (25 s vertical, Next 30 b33, music: pop · C).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste19: SINGLE AND THRIVING, Ep 19 "Know Your Yes" (23 s vertical, Next 30 b33, music: pop · C).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "What do I want? | *No idea.*" Libra at a desk chewing a pen over a blank page titled WHAT I WANT:
 //              "um…" → "…someone nice?"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "single time is *great* for knowing you." / "write your *dealbreakers.* and your
+//   6.8        beat cut → THE STARS: "single time is *great* for knowing you." / "write your *dealbreakers.* and your
 //              yeses."
 //   13.6       the page fills with ticks: kind to everyone · texts back · laughs at my jokes; two DEALBREAKER cards stack
 //              beside it (rude to strangers · never curious). Libra: "oh. I DO know."  Meter fills.

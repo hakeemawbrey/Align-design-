@@ -1,8 +1,8 @@
-// nste20: SINGLE AND THRIVING, Ep 20 "The Invite" (25 s vertical, Next 30 b33, music: cinematic · Fm).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste20: SINGLE AND THRIVING, Ep 20 "The Invite" (23 s vertical, Next 30 b33, music: cinematic · Fm).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Invited to their family dinner. | *Almost* said no." Scorpio at home turning over Cancer's handwritten
 //              invite ("come to ours! ♡ Cancer"): "they invited… me?" → "I'd just be in the way…"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "they asked because they *want* you." / "letting people in is *allowed.*"
+//   6.8        beat cut → THE STARS: "they asked because they *want* you." / "letting people in is *allowed.*"
 //   13.6       Cancer's table, candles and a pie; a place card "♏ SCORPIO". Scorpio pops in, everyone cheers:
 //              "you made it!!" → Scorpio: "…I'm really glad I came."  Meter fills.
 //   17.4       "Scorpio: *thriving.*" Last line: "Let them *set* a place for you."

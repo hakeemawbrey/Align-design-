@@ -1,8 +1,8 @@
-// nste16: SINGLE AND THRIVING, Ep 16 "Everyone Paired Off" (25 s vertical, Next 30 b33, music: lofi · Bb).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste16: SINGLE AND THRIVING, Ep 16 "Everyone Paired Off" (23 s vertical, Next 30 b33, music: lofi · Bb).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "My friends all | *paired up.*" End of the party: two couples stroll out the glowing door arm in
 //              arm ("bye!! see you!"), Cancer left by the coat rack: "guess I'll head home…"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "your friends still *want* you around." / "say what you miss. *out loud.*"
+//   6.8        beat cut → THE STARS: "your friends still *want* you around." / "say what you miss. *out loud.*"
 //   13.6       Cancer texts the group: "friend breakfast saturday?" → "YES" "I'll bring muffins" "me too!!" Hearts.
 //              Meter fills.
 //   17.4       "Cancer: *thriving.*" Last line: "Ask for the *plan* you want."

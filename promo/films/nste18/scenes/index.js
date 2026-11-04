@@ -1,8 +1,8 @@
-// nste18: SINGLE AND THRIVING, Ep 18 "The Set-Up" (25 s vertical, Next 30 b33, music: jazzy · Eb).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste18: SINGLE AND THRIVING, Ep 18 "The Set-Up" (23 s vertical, Next 30 b33, music: jazzy · Eb).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "“I know someone | *perfect* for you!”" At the café table, Libra thrusts a phone across with a
 //              mystery profile photo: "they're PERFECT for you!!"  Virgo, mid-sip: "oh. um. hm."  Pisces sniffles.
-//   6.8        card cut → THE STARS: "not ready? you can say *not yet.*" / "thank them. be *clear.* stay kind."
+//   6.8        beat cut → THE STARS: "not ready? you can say *not yet.*" / "thank them. be *clear.* stay kind."
 //   13.6       Virgo: "thank you! not right now." → "I'll tell you when."  Libra: "deal!!" and a hug across the
 //              table. Hearts. Meter fills.
 //   17.4       "Virgo: *thriving.*" Last line: "*Not yet* is a kind answer."

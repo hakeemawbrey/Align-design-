@@ -1,8 +1,8 @@
-// nste14: SINGLE AND THRIVING, Ep 14 "A Gift for Me" (25 s vertical, Next 30 b33, music: jazzy · Ab).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste14: SINGLE AND THRIVING, Ep 14 "A Gift for Me" (23 s vertical, Next 30 b33, music: jazzy · Ab).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Wrapping a gift… | *for me.*" Taurus at a snowy market stall, holding up a soft striped scarf against
 //              itself: "it's for a friend." → thinks "(it's me.)"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "you're allowed to *treat* you too." / "small, kind, *in budget.* wrap it."
+//   6.8        beat cut → THE STARS: "you're allowed to *treat* you too." / "small, kind, *in budget.* wrap it."
 //   13.6       at home: the scarf goes in a box, the bow grows HUGE ("the BIGGEST bow."), Taurus opens it and puts the
 //              scarf on: "for me? I love it."  Meter fills.
 //   17.4       "Taurus: *thriving.*" in the scarf. Last line: "Yes, you get a *bow* too."

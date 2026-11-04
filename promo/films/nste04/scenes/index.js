@@ -1,9 +1,9 @@
-// nste04: SINGLE AND THRIVING, Ep 4 "Soup for Everyone" (25 s vertical, Next 30 b33, music: dreamy · Eb).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste04: SINGLE AND THRIVING, Ep 4 "Soup for Everyone" (23 s vertical, Next 30 b33, music: dreamy · Eb).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–3.4    hook "Made soup for *everyone.* | Ate crackers." Cancer in the snowy hallway setting a soup tub on the third
 //              doormat (two already delivered): "soup for you! and you!"
 //   3.4–6.8    jump cut home: Cancer alone at the table, one cracker. "I'm fine! crackers count."  Pisces sniffles.
-//   6.8        card cut → THE STARS: "you look after *everyone.*" / "who's looking after *you* tonight?"  A to-do note:
+//   6.8        beat cut → THE STARS: "you look after *everyone.*" / "who's looking after *you* tonight?"  A to-do note:
 //              "1. feed everyone ✓ | 2. feed ME".
 //   13.6       Cancer sets a real bowl, a napkin, a spoon; sits; first spoonful; "a bowl. for me." → "mmm. warm."
 //   17.4       "Cancer: *thriving.*" Last line: "Put *yourself* on the list."

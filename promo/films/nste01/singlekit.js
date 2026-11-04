@@ -1,10 +1,10 @@
 // SINGLE AND THRIVING: the shared format kit for nste01–nste24 (Next 30, batch b33, star_advice posts, 25 s).
-// Every episode imports this file from nste01 (other films never edit it). Rows: promo/films/next30/b33.md.
+// Every episode imports this file from nste01 (other films never edit it). Rows: promo/films/next30/b33.md. 23 s each.
 //
-// The format (25 s = story 0–20.6, then the shared end card):
+// The format (23 s = story 0–20.6, then the short 2.4 s end card; no Align card transition, per the 4 Nov change):
 //   0.0–6.8    THE MOMENT: the hook caption is already up at frame 0 over the sign mid-action in a December
 //              single-life moment; two bubbles carry the feeling. Pisces sniffles in the background with tissues.
-//   6.8        the card cut (flip) → 6.8–13.6 THE STARS: a top caption, THE STARS pop in, two dialogue lines of advice,
+//   6.8        a white-flash beat cut → 6.8–13.6 THE STARS: a top caption, THE STARS pop in, two dialogue lines of advice,
 //              the sign listening, a small visual metaphor (cfg.s2).
 //   13.6–17.4  THE THRIVE: the sign tries the healthy thing (cfg.s3); the THRIVING meter fills (full at 16.5).
 //   17.4–20.6  "<Sign>: *thriving.*", the sign glowing, THE STARS say the last line, Pisces fountains happy tears.
@@ -23,8 +23,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill, A } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../startalk.js'
 import { popText } from '../lesson.js'
 
@@ -40,8 +40,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar, A }
 
 // ── the fixed timeline (same in all 24 films)
-export const DURATION = 25
-export const STORY_END = DURATION - ENDCARD_LEN          // 20.6
+export const DURATION = 23
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 20.6
 export const T = {
   bug: 0.25,
   h0Out: [6.55, 6.75],
@@ -548,17 +548,16 @@ export function makeSingle(cfg) {
         H3.update(t, outK(t, T.out))
         box1.update(t); box2.update(t)
         bug.update(t, outK(t, T.bugOut))
-        // white flash on the hard cuts (the card cut has its own)
-        const fl = Math.max(0, ...[T.s3[0], T.fin[0]].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
+        // white flash on the hard cuts
+        const fl = Math.max(0, ...[T.cut, T.s3[0], T.fin[0]].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
         flash.style.opacity = String(0.5 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // one card-cut candidate: under the swap into THE STARS' advice
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (4 Nov change): the beat cuts are the kit's own white flashes
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -569,6 +568,7 @@ export function makeSingle(cfg) {
     ...BUBBLES.flatMap((B, i) => [['pop', r3(B.t0), NOTE[(i * 2 + 1) % 7], 0.04, B.x < 540 ? -0.25 : 0.25], ['tick', r3(B.t0 + 0.02), 0.03]]),
     ['pluck', 1.0, 2349.32, 0.012, 0.3, 0.6], ['pluck', 3.6, 2349.32, 0.012, 0.3, 0.6],
     ...wordPops(T.h1, Math.min(8, nw(cfg.h1)), 0.08, 1),
+    ['whoosh', r3(T.cut - 0.12), 0.3, 0.035], ['tick', T.cut, 0.05],
     ['pop', T.starsIn + 0.05, 739.99, 0.04, 0], ['bell', r3(T.starsIn + 0.1), 1760, 0.025, 1.0, 0], ['glitter', T.starsIn, r3(T.starsIn + 0.4)],
     ...talkCues(LINES1, { cps: CPS }),
     ['whoosh', r3(T.s3[0] - 0.1), 0.3, 0.035], ['tick', T.s3[0], 0.05],
@@ -583,8 +583,7 @@ export function makeSingle(cfg) {
     ...talkCues(LINES2, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []).map(c => [c[0], r3(c[1]), ...c.slice(2)]),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS }
+  return { DURATION, SCENES, CUES, T }
 }

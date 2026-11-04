@@ -1,8 +1,8 @@
-// nste03: SINGLE AND THRIVING, Ep 3 "The Couples Photo" (25 s vertical, Next 30 b33, music: pop · D).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste03: SINGLE AND THRIVING, Ep 3 "The Couples Photo" (23 s vertical, Next 30 b33, music: pop · D).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Everyone in the photo | *is a pair.*" Gemini behind a camera on a tripod, framing two cosy couples
 //              (Libra + Cancer, Leo + Virgo) under the party lights. "say cheese!" → Gemini: "I'll just… take it?"
-//   6.8        card cut → THE STARS: "you're not the *extra* in this picture." / "you're one of the *people* in it."
+//   6.8        beat cut → THE STARS: "you're not the *extra* in this picture." / "you're one of the *people* in it."
 //   13.6       the self-timer blinks 3, 2, 1; Gemini dashes in, the couples scoot apart and make room in the middle; FLASH,
 //              and the print slides out with everybody on it. Meter fills.
 //   17.4       "Gemini: *thriving.*" holding the print. Last line: "You were never the *spare.*"

@@ -1,9 +1,9 @@
-// nste01: SINGLE AND THRIVING, Ep 1 "The Question at the Party" (25 s vertical, Next 30 b33, music: jazzy · Bb).
-// Format kit: ../singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste01: SINGLE AND THRIVING, Ep 1 "The Question at the Party" (23 s vertical, Next 30 b33, music: jazzy · Bb).
+// Format kit: ../singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "“So… *seeing anyone?*”" over the holiday party: Aries mid-sip of cocoa under the string lights,
 //              Taurus leaning in: "it's been a year! anyone special?"  Aries chokes a little: "uh… it's… complicated?"
 //              Pisces sniffles by the tissues.
-//   6.8        card cut → THE STARS: "“not right now, and I'm *happy*” is enough." / "then ask them *something* back."
+//   6.8        beat cut → THE STARS: "“not right now, and I'm *happy*” is enough." / "then ask them *something* back."
 //              An answer card pops up next to Aries: "not right now, | and I'm happy."
 //   13.6       Aries: "nope! and I love my year. you?"  Taurus lights up: "I learned SOURDOUGH!!" (hearts). Meter fills.
 //   17.4       "Aries: *thriving.*"  Last line: "No footnotes *required.*"

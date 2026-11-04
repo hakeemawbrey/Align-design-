@@ -1,8 +1,8 @@
-// nste23: SINGLE AND THRIVING, Ep 23 "Curious Again" (25 s vertical, Next 30 b33, music: dreamy · G).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste23: SINGLE AND THRIVING, Ep 23 "Curious Again" (23 s vertical, Next 30 b33, music: dreamy · G).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Thriving solo… | *and curious?*" Aquarius in its cosy room, tiptoeing up to a face-down blind mystery
 //              card on the side table: "life's good solo…" → "maybe I'm… ready-ish?"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "ready feels like *curious*, not lonely." / "go slow. the *card* comes first."
+//   6.8        beat cut → THE STARS: "ready feels like *curious*, not lonely." / "go slow. the *card* comes first."
 //   13.6       Aquarius flips the blind mystery card over: a talk card question. Sparkles, a smile: "ooh. good question."
 //              Meter fills.
 //   17.4       "Aquarius: *thriving.*" Last line: "Curious is a *great* place to start."

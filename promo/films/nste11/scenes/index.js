@@ -1,8 +1,8 @@
-// nste11: SINGLE AND THRIVING, Ep 11 "The Friend Dinner" (25 s vertical, Next 30 b33, music: chiptune · C).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste11: SINGLE AND THRIVING, Ep 11 "The Friend Dinner" (23 s vertical, Next 30 b33, music: chiptune · C).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "No date. | *Twelve* plates." Aquarius setting a long table while its homemade plate-passing gadget
 //              slides plates down the line: "who needs a date?" → "I made a SEATING CHART."  Pisces sniffles.
-//   6.8        card cut → THE STARS: "friendship is a *real* kind of love." / "and this table is *full* of it."
+//   6.8        beat cut → THE STARS: "friendship is a *real* kind of love." / "and this table is *full* of it."
 //   13.6       the friends pop in around the table (Leo, Cancer, Gemini, Taurus), mugs up, a talk card in the middle:
 //              "we brought pie!!" → Aquarius: "my favourite people."  Meter fills.
 //   17.4       "Aquarius: *thriving.*" Last line: "Love has more than *one* shape."

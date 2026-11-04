@@ -1,8 +1,8 @@
-// nste06: SINGLE AND THRIVING, Ep 6 "The Day Off Plan" (25 s vertical, Next 30 b33, music: lofi · Am).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste06: SINGLE AND THRIVING, Ep 6 "The Day Off Plan" (23 s vertical, Next 30 b33, music: lofi · Am).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Day off. | Made a *37-step* plan." Virgo unrolling a schedule scroll that hits the floor and keeps
 //              going (7:00 wake · 7:05 stretch · 7:12 journal…). "step 12: relax. efficiently." → "rest: 2:15 to 2:20."
-//   6.8        card cut → THE STARS: "rest isn't a task to *finish.*" / "pick one nice thing. let the rest *wander.*"
+//   6.8        beat cut → THE STARS: "rest isn't a task to *finish.*" / "pick one nice thing. let the rest *wander.*"
 //   13.6       the scroll rolls itself up into one small card: "warm socks + a book". Virgo on the couch, socks on,
 //              book open: "just… one thing?" → "socks. book. bliss."  Meter fills.
 //   17.4       "Virgo: *thriving.*" Last line: "Rest counts. *Unchecked.*"

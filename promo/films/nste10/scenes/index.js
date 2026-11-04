@@ -1,8 +1,8 @@
-// nste10: SINGLE AND THRIVING, Ep 10 "You Can Cover, Right?" (25 s vertical, Next 30 b33, music: lofi · Cm).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste10: SINGLE AND THRIVING, Ep 10 "You Can Cover, Right?" (23 s vertical, Next 30 b33, music: lofi · Cm).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "“You're single, so | *you* can cover?”" Capricorn at its desk under a December wall calendar already
 //              plastered with COVER notes; Aries leans over the divider: "no plans, right?"  Capricorn: "…sure. always."
-//   6.8        card cut → THE STARS: "single doesn't mean your time is *spare.*" / "your plans count. even *solo* ones."
+//   6.8        beat cut → THE STARS: "single doesn't mean your time is *spare.*" / "your plans count. even *solo* ones."
 //   13.6       Capricorn: "I have plans that day. I can do the 23rd."  One COVER note flies off, a MINE ♡ note slaps on.
 //              Aries: "totally fair! thanks!"  Meter fills.
 //   17.4       "Capricorn: *thriving.*" Last line: "Your day off is *yours.*"

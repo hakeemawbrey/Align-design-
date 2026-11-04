@@ -1,8 +1,8 @@
-// nste13: SINGLE AND THRIVING, Ep 13 "Skating Solo" (25 s vertical, Next 30 b33, music: pop · G).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste13: SINGLE AND THRIVING, Ep 13 "Skating Solo" (23 s vertical, Next 30 b33, music: pop · G).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "First time skating. | *Nobody* to grab." Aries wobbling at the edge of an outdoor rink under string
 //              lights while couples glide past hand in hand: "whoa whoa whoa" → "who do I hold onto??"
-//   6.8        card cut → THE STARS: "hold the *rail.* that's what it's for." / "fall, laugh, try *again.*"
+//   6.8        beat cut → THE STARS: "hold the *rail.* that's what it's for." / "fall, laugh, try *again.*"
 //   13.6       Aries grips the rail, lets go, plops down ("oop!"), laughs, gets up ("haha. again!") and glides a whole
 //              lap, sparkles trailing. Meter fills.
 //   17.4       "Aries: *thriving.*" Last line: "You can be your own *steady.*"

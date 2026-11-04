@@ -1,8 +1,8 @@
-// nste22: SINGLE AND THRIVING, Ep 22 "The Year You Built" (25 s vertical, Next 30 b33, music: cinematic · Eb).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste22: SINGLE AND THRIVING, Ep 22 "The Year You Built" (23 s vertical, Next 30 b33, music: cinematic · Eb).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Single all year. | *Nothing* happened?" Capricorn flipping back through a big wall calendar, every
 //              page looking blank to it: "no dates. no one." → "nothing happened this year…"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "look *again.* look at the year." / "new skills. new friends. *you.*"
+//   6.8        beat cut → THE STARS: "look *again.* look at the year." / "new skills. new friends. *you.*"
 //   13.6       the pages flip again, and each one has something on it now: learned to bake · new friend · said no
 //              (kindly) · slept in · finished the book. Capricorn: "…wait. that's a lot."  Meter fills.
 //   17.4       "Capricorn: *thriving.*" Last line: "Look what you built *this* year."

@@ -1,8 +1,8 @@
-// nste08: SINGLE AND THRIVING, Ep 8 "Just for the Holidays" (25 s vertical, Next 30 b33, music: cinematic · Dm).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste08: SINGLE AND THRIVING, Ep 8 "Just for the Holidays" (23 s vertical, Next 30 b33, music: cinematic · Dm).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "“Just for the | *holidays?*”" Scorpio on the couch, squinting at a text: "we could be a thing…" then
 //              "just till january?"  Scorpio thinks: "…tempting."  Pisces sniffles.
-//   6.8        card cut → THE STARS: "lonely isn't a *reason* to say yes." / "say what you *actually* want. kindly."
+//   6.8        beat cut → THE STARS: "lonely isn't a *reason* to say yes." / "say what you *actually* want. kindly."
 //   13.6       Scorpio types the reply: "I want real, not seasonal. take care!" → "fair! happy holidays."
 //              Scorpio sits up taller: "that felt good."  Meter fills.
 //   17.4       "Scorpio: *thriving.*" Last line: "Wait for *real*, not *warm.*"

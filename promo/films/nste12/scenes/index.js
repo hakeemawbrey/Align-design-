@@ -1,10 +1,10 @@
-// nste12: SINGLE AND THRIVING, Ep 12 "Movie Night for One" (25 s vertical, Next 30 b33, music: dreamy · Db).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste12: SINGLE AND THRIVING, Ep 12 "Movie Night for One" (23 s vertical, Next 30 b33, music: dreamy · Db).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 // The hero IS Pisces here (cfg.pisces), so Pisces cries front and centre the whole time.
 //   0.0–6.8    hook "Crying at the movie. | *Alone.* Loving it." Pisces wrapped in a blanket on the couch, popcorn
 //              bucket, the TV glowing (a little pixel dog runs home on screen), tears streaming: "they FOUND the DOG."
 //              → "(sob) ten out of ten."
-//   6.8        card cut → THE STARS: "feeling it all on your own? *still* counts." / "your own company can be *cozy.*"
+//   6.8        beat cut → THE STARS: "feeling it all on your own? *still* counts." / "your own company can be *cozy.*"
 //   13.6       Pisces pauses the movie (II), refills the popcorn, presses play on movie two: "intermission!" →
 //              "movie two. let's GO."  Meter fills.
 //   17.4       "Pisces: *thriving.*" (still crying, happily). Last line: "Cry at it. *Love* it."

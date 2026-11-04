@@ -1,8 +1,8 @@
-// nste17: SINGLE AND THRIVING, Ep 17 "No Dance Partner" (25 s vertical, Next 30 b33, music: house · A).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste17: SINGLE AND THRIVING, Ep 17 "No Dance Partner" (23 s vertical, Next 30 b33, music: house · A).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Slow song. | *No* partner." The holiday party's glowing dance floor, two couples swaying slowly;
 //              Leo at the edge with a mug: "everyone has someone…" → "I'll just… hold my mug."  Pisces sniffles.
-//   6.8        card cut → THE STARS: "the dance floor takes *singles.*" / "dance with your *friends.* or the beat."
+//   6.8        beat cut → THE STARS: "the dance floor takes *singles.*" / "dance with your *friends.* or the beat."
 //   13.6       Leo sets the mug down and dances; Gemini and Sagittarius bounce in and it becomes a dance circle:
 //              "okay, okay!" → "DANCE CIRCLE!!"  Meter fills.
 //   17.4       "Leo: *thriving.*" Last line: "Dance like the song is *yours.*"

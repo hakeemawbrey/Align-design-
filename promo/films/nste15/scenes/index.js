@@ -1,9 +1,9 @@
-// nste15: SINGLE AND THRIVING, Ep 15 "Nine Hellos" (25 s vertical, Next 30 b33, music: synthwave · F#m).
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste15: SINGLE AND THRIVING, Ep 15 "Nine Hellos" (23 s vertical, Next 30 b33, music: synthwave · F#m).
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 //   0.0–6.8    hook "Texted *nine* people. | Still lonely." Gemini with a phone in each hand, "hey!" bubbles flying out in
 //              every direction ("hey!" "hey!!" "heyyy"), replies trickling back as thumbs. Then: "why do I still feel
 //              alone?"  Pisces sniffles.
-//   6.8        card cut → THE STARS: "lots of *hellos.* not much *talking.*" / "call *one* friend. really catch up."
+//   6.8        beat cut → THE STARS: "lots of *hellos.* not much *talking.*" / "call *one* friend. really catch up."
 //   13.6       one phone, one call: Libra's face on screen, the call timer racing from 0:01 to 1:02:14. Gemini laughing:
 //              "wait, tell me EVERYTHING." → Libra: "it's been an HOUR?!"  Meter fills.
 //   17.4       "Gemini: *thriving.*" Last line: "One real call beats *ten* hellos."

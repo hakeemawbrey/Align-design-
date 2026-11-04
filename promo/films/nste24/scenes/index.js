@@ -1,9 +1,9 @@
-// nste24: SINGLE AND THRIVING, Ep 24 "The Thriving Party" (25 s vertical, Next 30 b33, music: pop · F). Series finale.
-// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the shared end card). Rows: promo/films/next30/b33.md.
+// nste24: SINGLE AND THRIVING, Ep 24 "The Thriving Party" (23 s vertical, Next 30 b33, music: pop · F). Series finale.
+// Format kit: ../../nste01/singlekit.js (story 0–20.6, then the short end card). Rows: promo/films/next30/b33.md.
 // The hero IS Pisces (cfg.pisces): it cries (happily) the whole way through.
 //   0.0–6.8    hook "A party for everyone | *thriving.*" Pisces on tiptoe hanging a THRIVING PARTY banner, already in happy
 //              tears: "everyone's COMING!!" → "(happy sobbing)"
-//   6.8        card cut → THE STARS: "single isn't a *waiting room.*" / "it's a *life.* live it out loud."
+//   6.8        beat cut → THE STARS: "single isn't a *waiting room.*" / "it's a *life.* live it out loud."
 //   13.6       the batch's signs pile in one after another (Aries, Taurus, Gemini, Cancer, Leo, Virgo…), everybody
 //              dances, confetti: "WE'RE THRIVING!!"  Meter fills.
 //   17.4       "Pisces: *thriving.*" under the banner. Last line: "Not waiting. *Living.*"
