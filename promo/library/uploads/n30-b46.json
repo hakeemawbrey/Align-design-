@@ -1,63 +1,72 @@
 {
+ "nvse01": {
+  "video": "/_blob/561edca7309d16f4264eb8b7d27670aa",
+  "poster": "/_blob/93ac3e836b6a8efd6fe9c9181b698eb0",
+  "title": "Who handles a late date better?",
+  "len": 16,
+  "series": "versus",
+  "episode": 1,
+  "caption": "Your date says they're running 10 minutes late. Do you pace or order a pastry?\nTen minutes is just pastry time."
+ },
  "nvse02": {
-  "video": "/_blob/72584ba2f1a165c236a5a84e0016c371",
-  "poster": "/_blob/f7273c9bed89d5dfc9415d239149b66b",
+  "video": "/_blob/8486255669c0283c07fc2e7a3f8c4041",
+  "poster": "/_blob/c98b7b70f69a002d3ef97bc9aa079f11",
   "title": "Who handles meeting the friends better?",
-  "len": 18,
+  "len": 16,
   "series": "versus",
   "episode": 2,
   "caption": "Meeting their friends for the first time? One sign learns every name, one brings cookies.\nCurious beats perfect, every time."
  },
  "nvse03": {
-  "video": "/_blob/42b8ff2bb4bbf0fc536dbf3e81beda97",
-  "poster": "/_blob/306570d6c5df3fe73565ae1a0eede59f",
+  "video": "/_blob/2323e8ef3e772f6614809a8e9285c938",
+  "poster": "/_blob/5c511a5b4f05b330e7027ab22abf9d78",
   "title": "Who plans a first date better?",
-  "len": 18,
+  "len": 16,
   "series": "versus",
   "episode": 3,
   "caption": "Spotlight and a banner, or plan A, B and a laminated C?\nThe best first date has their favourite thing on it."
  },
  "nvse04": {
-  "video": "/_blob/8b29375db54c56bdc798ceeaa9061078",
-  "poster": "/_blob/ff8c5abded021f9d9c92bbafb65e1efd",
+  "video": "/_blob/51721b812e20b413f9f8f4025f0911e0",
+  "poster": "/_blob/5137644d527e065eb624d5bf08151f06",
   "title": "Who handles a cancelled date better?",
-  "len": 18,
+  "len": 16,
   "series": "versus",
   "episode": 4,
   "caption": "They cancel because they're sick. How long do you stare at the reply box?\nKeep it simple: rest up, I'll be here."
  },
  "nvse05": {
-  "video": "/_blob/47fb8c270be4944219c71b0299adcaf0",
-  "poster": "/_blob/e568d387a46f7d5c64bb629800829bd7",
+  "video": "/_blob/2c0db866d764881b70dfa94125f5764c",
+  "poster": "/_blob/42b80edf9836548ce3e56cd43a2fb06a",
   "title": "Who buys a gift on a budget better?",
-  "len": 18,
+  "len": 16,
   "series": "versus",
   "episode": 5,
   "caption": "Tiny budget, big feelings. A day trip or a list of things they mentioned?\nThe best gifts prove you were listening."
  },
  "nvse06": {
-  "video": "/_blob/6f029633a24342b7041b31f93779d447",
-  "poster": "/_blob/a233b522f56f83b723d317013cd9d132",
+  "video": "/_blob/46cb96d8e304cc57f1a52deb3b093685",
+  "poster": "/_blob/6fd0d6fe78643e253321c14331f047a8",
   "title": "Who says “I like you” first better?",
-  "len": 18,
+  "len": 16,
   "series": "versus",
   "episode": 6,
   "caption": "Would you say it with a science-fair poster or a nine-page poem?\nHowever it comes out, saying it is the brave part."
  },
  "nvse07": {
-  "video": "/_blob/1cddfa3078accdf06afd32df12eeb1f4",
-  "poster": "/_blob/f74cd863c06d654ac10d38c044665792",
+  "video": "/_blob/99e578ba75c9246d942865f7a569120d",
+  "poster": "/_blob/1faa8084a83ec85629675fbe1036969c",
   "title": "Who handles an awkward pause better?",
-  "len": 18,
+  "len": 16,
   "series": "versus",
   "episode": 7,
   "caption": "The conversation goes quiet on a date. Staring contest or twenty questions?\nA little quiet can be comfortable too."
  },
  "nvse08": {
-  "video": "/_blob/c30f05c932d126e7b5c9db9a63bda0ee",
-  "poster": "/_blob/995f6bc667c60b5a1fc3a1506d384104",
+  "video": "/_blob/7f6c51a07e6fb311cf8540cbe7bcca50",
+  "poster": "/_blob/158d4cdf9ed5d53ba83c85aecbe49ea4",
   "title": "Who handles a party where they know nobody?",
-  "len": 18,
+  "len": 16,
   "series": "versus",
   "episode": 8,
   "caption": "Walking into a party where you know no one: snack table or take over the room?\nYou only need one friendly face to start."
