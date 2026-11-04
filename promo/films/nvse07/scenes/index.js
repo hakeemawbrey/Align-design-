@@ -1,5 +1,5 @@
-// nvse07: SIGN VS SIGN, "Who handles an awkward pause better?" ♈ Aries vs ♊ Gemini (18 s trial reel, b46,
-// music: synthwave · F#m). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse07: SIGN VS SIGN, "Who handles an awkward pause better?" ♈ Aries vs ♊ Gemini (16 s trial reel, b46,
+// music: synthwave · F#m). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: ". . ." floats between them, a cricket chirps.
 //   ROUND 1 ♈ "turns it into a *staring contest.*" across a café table; the date blinks. "first to blink pays!" → "…you blinked."
 //   ROUND 2 ♊ "fills it with a *question storm.*" question marks orbit, the date's eyes spin. "first pet? fave soup? why is the sky—" → "sorry. one at a time."
