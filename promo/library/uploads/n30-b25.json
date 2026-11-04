@@ -1,0 +1,56 @@
+{
+ "naske01": {
+  "video": "/_blob/1ba7155afe263edb42246beb221f52df",
+  "poster": "/_blob/4e5e8ef77ce4fc0560e81d5a61af132d",
+  "title": "How do I slow down when I really like someone?",
+  "len": 20,
+  "series": "ask2",
+  "episode": 1,
+  "caption": "Liking someone fast is not a problem. Let the plans grow one date at a time, and ask what pace feels good to them too."
+ },
+ "naske02": {
+  "video": "/_blob/a2b08f56a7a710f59654a22d708d2021",
+  "poster": "/_blob/cb00ac9fc013eb0b1947cc4e68360f30",
+  "title": "They love new things. I love my routine.",
+  "len": 20,
+  "series": "ask2",
+  "episode": 2,
+  "caption": "Your routine is allowed to be your comfort. Try a trade: one old favorite, one new thing. Small yeses count."
+ },
+ "naske03": {
+  "video": "/_blob/58e53ff76c21630deb12cd339c899f54",
+  "poster": "/_blob/d0ce40fdab3550eeb8332a75140e9eac",
+  "title": "I lose interest after the first few dates.",
+  "len": 20,
+  "series": "ask2",
+  "episode": 3,
+  "caption": "The first spark always changes shape. Sometimes bored just means not curious yet, so bring a deeper question to date four."
+ },
+ "naske04": {
+  "video": "/_blob/4d0cd31c8be47f9b762efd3d42330851",
+  "poster": "/_blob/1959bc7bb726fa7331979d096d8c836d",
+  "title": "How do I let them take care of me?",
+  "len": 20,
+  "series": "ask2",
+  "episode": 4,
+  "caption": "If you are always the one tucking everyone in, let some of that care come back. When they offer, try just saying thank you."
+ },
+ "naske05": {
+  "video": "/_blob/c80dc325eecdea2a3ecf6a23d73632f7",
+  "poster": "/_blob/58bd87a96decbdd48a317f9a8b8b43e5",
+  "title": "What if they don't like my friends?",
+  "len": 20,
+  "series": "ask2",
+  "episode": 5,
+  "caption": "First hangouts are awkward for everyone. Ask what felt off and listen first. You do not have to choose; let your worlds blend slowly."
+ },
+ "naske06": {
+  "video": "/_blob/b9e71edcb7b0b8de335449c783d8ffc9",
+  "poster": "/_blob/ea2ac2b7164ccd8ac8307622fc0cc13f",
+  "title": "I keep trying to fix their problems.",
+  "len": 20,
+  "series": "ask2",
+  "episode": 6,
+  "caption": "Sometimes they want a listener, not a fix. Ask whether they want advice or a hug, and follow their lead either way."
+ }
+}
