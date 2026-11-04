@@ -15,7 +15,7 @@ function aquaPos(t) {
   if (t < T0.hi[0]) return { x: 520, y: 1160 }
   if (t < T0.cross[0]) {
     const stops = [[520, 1160], [330, 1190], [450, 1200], [600, 1160]]
-    let i = 0; for (let k = 0; k < 3; k++) if (t > T0.hi[k]) i = k + 1
+    let i = 1; for (let k = 0; k < 3; k++) if (t >= T0.hi[k]) i = k + 1
     const pv = stops[i - 1], nx = stops[i], p = ease.inOutCubic(prog(t, T0.hi[i - 1] - 0.3, T0.hi[i - 1]))
     return { x: lerp(pv[0], nx[0], p), y: lerp(pv[1], nx[1], p) }
   }
