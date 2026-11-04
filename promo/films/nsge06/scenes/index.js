@@ -1,4 +1,4 @@
-// nsge06: REMIX: SNOW GLOBE CITIES, Pittsburgh, "Pittsburgh: which bridge?" (30 s vertical, music: jazzy · G)
+// nsge06: REMIX: SNOW GLOBE CITIES, Pittsburgh, "Pittsburgh: which bridge?" (28 s vertical, music: jazzy · G)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "Which bridge | do I take?"  Libra spins between golden bridges over the frozen river; an incline car on the hill.
 //   6.4–12.7 "Three rivers. | So many bridges."  bridge one, cute · bridge two, also cute · the incline, going up, undecided.

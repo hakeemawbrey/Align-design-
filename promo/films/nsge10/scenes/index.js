@@ -1,4 +1,4 @@
-// nsge10: REMIX: SNOW GLOBE CITIES, Ottawa, "Ottawa: skating to work" (30 s vertical, music: pop · Bb)
+// nsge10: REMIX: SNOW GLOBE CITIES, Ottawa, "Ottawa: skating to work" (28 s vertical, music: pop · Bb)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "I skate | to my meetings."  Capricorn glides along the frozen canal with a briefcase; Parliament Hill behind.
 //   6.4–12.7 "Same canal. | Same cutie."  8:00 skate to work · 12:00 skate to lunch · 5:00 skate past them, again (twist).

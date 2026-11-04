@@ -1,4 +1,4 @@
-// nsge04: REMIX: SNOW GLOBE CITIES, Denver, "Denver: love at the summit" (30 s vertical, music: synthwave · A)
+// nsge04: REMIX: SNOW GLOBE CITIES, Denver, "Denver: love at the summit" (28 s vertical, music: synthwave · A)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "Love is up there. | On a summit."  Sagittarius on skis in front of the Rockies, the Mile High City below.
 //   6.4–12.7 "Snow. Sun. | Snow again."  Monday snow · Tuesday sunny, jacket off · Wednesday snow (emotionally too).

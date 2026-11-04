@@ -1,4 +1,4 @@
-// nsge14: REMIX: SNOW GLOBE CITIES, Salt Lake City, "Salt Lake City: across the widest street" (30 s vertical, music: funk · A)
+// nsge14: REMIX: SNOW GLOBE CITIES, Salt Lake City, "Salt Lake City: across the widest street" (28 s vertical, music: funk · A)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "“HI!!” | “WHAT?”"  Gemini and Sagittarius wave and shout across a very wide street; the mountains behind.
 //   6.4–12.7 "Wave. Wave. | Semaphore."  wave one, polite · wave two, urgent · wave three, flag signals (twist).

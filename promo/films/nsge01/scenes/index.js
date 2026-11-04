@@ -1,10 +1,10 @@
-// nsge01: REMIX: SNOW GLOBE CITIES, Minneapolis, "Minneapolis: never going outside" (30 s vertical, music: dreamy · D)
+// nsge01: REMIX: SNOW GLOBE CITIES, Minneapolis, "Minneapolis: never going outside" (28 s vertical, music: dreamy · D)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../globekit.js (shared by nsge01–nsge14).
 //   0–6.4    "I can cross downtown | and never go outside." Virgo hops through downtown with a colour-coded map; glass
 //            skyways link the towers. VIRGO: "skyways! I never have to touch snow." THE STARS: "or touch grass. or meet anyone."
 //   6.4–12.7 "Every route, | planned."  skyway map, colour-coded · hotdish, pre-labeled · a backup map for the map (twist).
 //            VIRGO: "a backup is responsible, actually."
-//   12.9     card cut.
+//   12.9     a small globe shake into the turn (no card cut).
 //   13–20    "Some things aren't | on the map."  A Sagittarius waves from an ice house on the frozen lake.
 //            THE STARS: "the good stuff isn't always on your map." SAG: "come out! I brought two mittens."
 //   20.2–25.6 the globe shakes, the snow swirls, they meet on the ice, talk card "Planned date or spontaneous date?",

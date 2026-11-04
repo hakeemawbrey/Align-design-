@@ -1,4 +1,4 @@
-// nsge09: REMIX: SNOW GLOBE CITIES, Milwaukee, "Milwaukee: the frozen photo shoot" (30 s vertical, music: house · Fm)
+// nsge09: REMIX: SNOW GLOBE CITIES, Milwaukee, "Milwaukee: the frozen photo shoot" (28 s vertical, music: house · Fm)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "Get my good side. | And the lake."  Leo poses on the frozen lakefront, camera flashes.
 //   6.4–12.7 "Pose. Pose. | Frozen."  photo one, iconic · photo two, iconic · photo three, smile froze (twist).

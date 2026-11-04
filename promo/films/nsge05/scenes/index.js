@@ -1,4 +1,4 @@
-// nsge05: REMIX: SNOW GLOBE CITIES, Philadelphia, "Philadelphia: mixed signals, twisted" (30 s vertical, music: chiptune · C)
+// nsge05: REMIX: SNOW GLOBE CITIES, Philadelphia, "Philadelphia: mixed signals, twisted" (28 s vertical, music: chiptune · C)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "Is this a date | or a jawn?"  Gemini twirls a soft pretzel in front of the row homes.
 //   6.4–12.7 "Mixed signals, | twisted."  the pretzel, twisted · the bell, cracked · my texts, both (twist).

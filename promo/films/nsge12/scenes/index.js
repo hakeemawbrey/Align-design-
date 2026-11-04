@@ -1,4 +1,4 @@
-// nsge12: REMIX: SNOW GLOBE CITIES, Winnipeg, "Winnipeg: tears that sparkle" (30 s vertical, music: screwed · Eb)
+// nsge12: REMIX: SNOW GLOBE CITIES, Winnipeg, "Winnipeg: tears that sparkle" (28 s vertical, music: screwed · Eb)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "I cried and it | turned to glitter."  Pisces inside the globe on the frozen river trail, tears freezing into sparkles.
 //            (This time a Cancer is the one pressed to the glass outside, crying too.)

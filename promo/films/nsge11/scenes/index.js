@@ -1,4 +1,4 @@
-// nsge11: REMIX: SNOW GLOBE CITIES, Calgary, "Calgary: the chinook crush" (30 s vertical, music: synthwave · E)
+// nsge11: REMIX: SNOW GLOBE CITIES, Calgary, "Calgary: the chinook crush" (28 s vertical, music: synthwave · E)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "It was freezing. | Now it's warm?"  Aquarius tosses off a scarf under the chinook arch over the Rockies.
 //   6.4–12.7 "Freeze. Melt. | Feelings?"  morning, freezing · noon, chinook · Aquarius, feelings?! (twist).

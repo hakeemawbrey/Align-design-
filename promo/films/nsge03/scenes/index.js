@@ -1,4 +1,4 @@
-// nsge03: REMIX: SNOW GLOBE CITIES, Boston, "Boston: the parking-spot chair" (30 s vertical, music: funk · Eb)
+// nsge03: REMIX: SNOW GLOBE CITIES, Boston, "Boston: the parking-spot chair" (28 s vertical, music: funk · Eb)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "I shoveled it. | So it's mine."  Aries mid-shovel in front of the brownstones, a lawn chair saving the
 //            shoveled spot. ARIES: "the chair says MINE." THE STARS: "chairs work on parking. only parking."

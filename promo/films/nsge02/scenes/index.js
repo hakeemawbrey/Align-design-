@@ -1,4 +1,4 @@
-// nsge02: REMIX: SNOW GLOBE CITIES, Montreal, "Montreal: the underground crush" (30 s vertical, music: lofi · F)
+// nsge02: REMIX: SNOW GLOBE CITIES, Montreal, "Montreal: the underground crush" (28 s vertical, music: lofi · F)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "Montreal has a whole | city underground."  A cutaway under the snow: Cancer scuttles through a warm, lit
 //            tunnel below the city; Mount Royal's lit cross on the hill. CANCER / THE STARS (shell joke).

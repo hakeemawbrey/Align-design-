@@ -1,4 +1,4 @@
-// nsge08: REMIX: SNOW GLOBE CITIES, Vancouver, "Vancouver: the snow globe that rains" (30 s vertical, music: pop · Cm)
+// nsge08: REMIX: SNOW GLOBE CITIES, Vancouver, "Vancouver: the snow globe that rains" (28 s vertical, music: pop · Cm)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "I shook it. | It rained."  Rain (not snow) falls in the globe; Taurus under an umbrella; snow only on the mountains.
 //   6.4–12.7 "Rain. Rain. | Mountain snow."  Monday rain · Tuesday rain · the mountains, snowing, smugly (twist).

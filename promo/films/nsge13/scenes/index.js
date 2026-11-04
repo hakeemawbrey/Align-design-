@@ -1,4 +1,4 @@
-// nsge13: REMIX: SNOW GLOBE CITIES, Quebec City, "Quebec City: two walls, one gate" (30 s vertical, music: cinematic · Gm)
+// nsge13: REMIX: SNOW GLOBE CITIES, Quebec City, "Quebec City: two walls, one gate" (28 s vertical, music: cinematic · Gm)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "A walled city? | I love it here."  Cancer and Capricorn each behind a stretch of the old stone walls; steep roofs.
 //   6.4–12.7 "Walls. Walls. | Taffy?"  the city, walls · Cancer, shell · maple taffy on snow, irresistible (twist).

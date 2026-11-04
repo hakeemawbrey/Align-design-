@@ -20,8 +20,8 @@ import { clamp, lerp, prog, ease, el, rng } from '../../src/lib.js'
 import { fill, A } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../startalk.js'
 import { popText } from '../lesson.js'
 
@@ -32,8 +32,9 @@ export const pop01 = (t, t0, d = 0.32, s = 1.9) => easeOutBack(prog(t, t0, t0 + 
 export const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
 export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 1 : p >= 1 ? 0 : (1 + 0.18 * Math.sin(Math.PI * Math.min(1, p * 2.2))) * (1 - ease.inCubic(p)) }
 
-export const DURATION = 30
-export const STORY_END = DURATION - ENDCARD_LEN       // 25.6
+// CHANGE (4 Nov): the short 2.4 s end card and no Align card cut; the story keeps its timing, the film is 28 s
+export const STORY_END = 25.6
+export const DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(2)   // 28
 // the globe: glass centre + radius, base under it
 export const GL = { cx: 540, cy: 890, r: 360, groundY: 1072, baseTop: 1222, baseBot: 1360 }
 
@@ -43,7 +44,7 @@ export const T = {
   box1: { open: 0.7, close: 6.25 }, l0: 0.95, l1: 3.55,
   h1: 6.42, h1Out: [12.45, 12.65], gags: [6.95, 8.15, 9.35], gagOut: [12.3, 12.62],
   box2: { open: 9.75, close: 12.7 }, l2: 9.95,
-  cut: 12.9,
+  cut: 12.9,            // the beat change into the turn: a small globe shake (no card cut)
   h2: 13.02, h2Out: [19.85, 20.05], partnerIn: 13.3,
   box3: { open: 13.45, close: 19.95 }, l3: 13.65, l4: 16.55,
   h3: 20.15, h3Land: 20.8, shake: 20.25, together: 20.6, tie: [21.25, 21.7], fountain: 21.6,
@@ -402,7 +403,7 @@ export function globeFilm(cfg) {
     nar: { x: 112, y: 1150, s: 118 }, pis: { x: 972, y: 1150, s: 118 }, pisTurn: { x: 965, y: 600, s: 112 },
     ...(cfg.pos || {}),
   }
-  const shakes = [T.shake, ...(cfg.shakes || [])]
+  const shakes = [T.cut - 0.05, T.shake, ...(cfg.shakes || [])]
   const tie = cfg.tie || null
 
   async function build(stage) {
@@ -645,9 +646,7 @@ export function globeFilm(cfg) {
     }
   }
 
-  // card-cut candidates (cardfx keeps the middle one: 12.9, between the gags and the turn)
-  const CUTS = [6.35, { t: T.cut, kind: 'flip' }, 20.1]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -676,8 +675,9 @@ export function globeFilm(cfg) {
     ['glitter', T.fountain, T.fountain + 0.5],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    // the small shake into the turn
+    ['whoosh', T.cut - 0.1, 0.4, 0.035], ...Array.from({ length: 4 }, (_, i) => ['tick', +(T.cut + i * 0.13).toFixed(3), 0.024 - i * 0.003]), ['glitter', T.cut, T.cut + 0.6],
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T }
 }
@@ -685,5 +685,5 @@ export function globeFilm(cfg) {
 /** the cues.js object for an episode */
 export function globeCues(id, cfg, CUES) {
   const m = cfg.music
-  return { id, duration: DURATION, music: { style: m.style, key: m.key, seed: m.seed, sections: { drop: 0.9, breakdown: [12.7], lift: [13.0], outroAt: DURATION - 4.4 }, hits: [T.gags[2], T.shake] }, cues: CUES }
+  return { id, duration: DURATION, music: { style: m.style, key: m.key, seed: m.seed, sections: { drop: 0.9, breakdown: [12.7], lift: [13.0], outroAt: STORY_END }, hits: [T.gags[2], T.shake] }, cues: CUES }
 }

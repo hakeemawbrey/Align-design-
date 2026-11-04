@@ -1,4 +1,4 @@
-// nsge07: REMIX: SNOW GLOBE CITIES, Anchorage, "Anchorage: the long-night stare" (30 s vertical, music: cinematic · Dm)
+// nsge07: REMIX: SNOW GLOBE CITIES, Anchorage, "Anchorage: the long-night stare" (28 s vertical, music: cinematic · Dm)
 // Rows: promo/films/next30/b16.md. Look + timeline: ../../nsge01/globekit.js.
 //   0–6.4    "Long nights. | Longer stares."  Scorpio squints into the dark under the mountains as a moose wanders by.
 //   6.4–12.7 "Dark before | dinner."  the night, long · the moose, unbothered · my stare, longer (twist).
