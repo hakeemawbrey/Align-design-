@@ -1,4 +1,4 @@
-// nrke20: RANKING THE SIGNS, "Who's the best listener" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke20: RANKING THE SIGNS, "Who's the best listener" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // lofi · Gm). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who's the / best *listener?*" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Aries → #4 Virgo slam in.   6.3 card cut.   6.8 #3 Pisces · 7.7 #2 Cancer
