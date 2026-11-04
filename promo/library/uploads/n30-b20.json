@@ -26,6 +26,24 @@
   "episode": 8,
   "caption": "Moonlight Lane, Ep 8: Three tries, three interruptions and one very short shortcut.\nNervous usually means it matters. If you don't want the walk to end, ask for one more block."
  },
+ "nml2e09": {
+  "video": "/_blob/2acaea64e7d249c28e92c9a252e3c500",
+  "poster": "/_blob/2fa033296d0c1d0fa8dc3475394fe207",
+  "title": "Ep 9: What We Didn't Say",
+  "len": 118,
+  "series": "ml2",
+  "episode": 9,
+  "caption": "Moonlight Lane, Ep 9: One table, one talk card, and everyone tells the truth except the two who need to most.\nBig things deserve a quiet moment. Say it to them, not the room."
+ },
+ "nml2e10": {
+  "video": "/_blob/3565c6a986ee66fa0fc4d184bf260cc3",
+  "poster": "/_blob/73009b8bc07b18f1cea6bf6f90a12353",
+  "title": "Ep 10: Lights on the Lane",
+  "len": 118,
+  "series": "ml2",
+  "episode": 10,
+  "caption": "Moonlight Lane, Ep 10: Christmas Eve, the lights won't come on, and two people on a roof are trying very hard to be cool.\nThe finale. Cool is easy. Clear is kind."
+ },
  "nmte16": {
   "video": "/_blob/dceab360e1b740fad4a7be0b519db4cb",
   "poster": "/_blob/fdc033c58c078b5e487b681fab10fe4e",
@@ -106,5 +124,59 @@
   "series": "mltease",
   "episode": 24,
   "caption": "You almost said it, then said \"snow. cold.\" instead.\nWho else has taken the shortcut?"
+ },
+ "nmte25": {
+  "video": "/_blob/ee0be582a1beb13a1916e0a806017228",
+  "poster": "/_blob/02de8b2f0cd5c8c7a289b5a6f3fbdb70",
+  "title": "Moonlight Lane teaser: one rule",
+  "len": 18,
+  "series": "mltease",
+  "episode": 25,
+  "caption": "One dinner rule: answer the talk card honestly.\nCancer is already panicking."
+ },
+ "nmte26": {
+  "video": "/_blob/bbabb263976f9d97ad043ccf26ad5bd1",
+  "poster": "/_blob/d641852adc0e57e336eb53fa9ea219ec",
+  "title": "Moonlight Lane teaser: the truths",
+  "len": 18,
+  "series": "mltease",
+  "episode": 26,
+  "caption": "When the whole table finally tells the truth.\nThe matching sweaters itch. Pisces is \"fine.\""
+ },
+ "nmte27": {
+  "video": "/_blob/05715af86cd21227a8a249d77b3c8834",
+  "poster": "/_blob/23150b7eac52f260f94ff5645bdb88c3",
+  "title": "Moonlight Lane teaser: \"I like soup\"",
+  "len": 19,
+  "series": "mltease",
+  "episode": 27,
+  "caption": "Your turn to say the real thing, and you say \"I like soup.\"\nSagittarius: also soup."
+ },
+ "nmte28": {
+  "video": "/_blob/68519066e32d0f6a98338a5e7d416423",
+  "poster": "/_blob/65ebe53533a5d09e80e510c574dbebde",
+  "title": "Moonlight Lane teaser: the lights",
+  "len": 18,
+  "series": "mltease",
+  "episode": 28,
+  "caption": "Christmas Eve, and the lights won't come on.\nTwo volunteers. Suspiciously quick."
+ },
+ "nmte29": {
+  "video": "/_blob/1dc22ba2474ff5036917def5aa894562",
+  "poster": "/_blob/14207c674f37868496f3588ef29d23b0",
+  "title": "Moonlight Lane teaser: no labels",
+  "len": 18,
+  "series": "mltease",
+  "episode": 29,
+  "caption": "Alone on a roof with the person you just confessed to.\n\"No labels! Totally cool!\" It is not cool."
+ },
+ "nmte30": {
+  "video": "/_blob/b4aa6787512feeb0ddb6926f8572e20a",
+  "poster": "/_blob/cdf948ae022b05ffc7eea54d01e796ca",
+  "title": "Moonlight Lane teaser: still dark",
+  "len": 19,
+  "series": "mltease",
+  "episode": 30,
+  "caption": "6:00 PM, the countdown hits zero, and the lane stays dark.\nSometimes the fix is one clear sentence."
  }
 }
