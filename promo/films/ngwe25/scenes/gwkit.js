@@ -302,15 +302,16 @@ export function frostWindow(x, K, t, cx, cy, w, h, { word = '', write = 0, wipe 
     if (wipe > 0) { fx.globalCompositeOperation = 'destination-out'; fx.fillStyle = `rgba(0,0,0,${clamp(wipe)})`; fx.fillRect(0, 0, w, h); fx.globalCompositeOperation = 'source-over' }
     x.drawImage(f, cx - w / 2, cy - h / 2)
   }
-  // the word glows once it's written (behind glass: a warm outline)
-  if (word && glow > 0) {
-    x.save(); x.globalAlpha *= clamp(glow); x.font = `800 ${wordSize}px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'
-    x.shadowColor = GOLD; x.shadowBlur = 40; x.strokeStyle = 'rgba(255,226,140,0.9)'; x.lineWidth = 4
-    x.strokeText(word, cx, cy - h / 2 + h * 0.55); x.restore()
-  }
   // mullions
   R(x, INK, cx - 8, cy - h / 2, 16, h); R(x, frame, cx - 4, cy - h / 2, 8, h)
   R(x, INK, cx - w / 2, cy - 8, w, 16); R(x, frame, cx - w / 2, cy - 4, w, 8)
+  // the word glows once the frost is gone: warm gold light in the clear glass
+  if (word && glow > 0) {
+    x.save(); x.globalAlpha *= clamp(glow); x.font = `800 ${wordSize}px ${INTER}`; x.textAlign = 'center'; x.textBaseline = 'middle'
+    x.shadowColor = GOLD; x.shadowBlur = 50; x.fillStyle = '#ffe9a8'
+    x.fillText(word, cx, cy - h / 2 + h * 0.55); x.shadowBlur = 0; x.lineWidth = 6; x.strokeStyle = INK; x.strokeText(word, cx, cy - h / 2 + h * 0.55)
+    x.fillText(word, cx, cy - h / 2 + h * 0.55); x.restore()
+  }
   // sill with snow
   box(x, cx - w / 2 - 40, cy + h / 2 + 22, w + 80, 26, frame, { b: 6, hi: '#b07a52' })
   R(x, SNOW, cx - w / 2 - 34, cy + h / 2 + 10, w + 68, 14); R(x, '#ffffff', cx - w / 2 - 30, cy + h / 2 + 10, w + 60, 4)
