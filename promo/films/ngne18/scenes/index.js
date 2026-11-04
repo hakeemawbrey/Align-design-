@@ -1,5 +1,5 @@
-// ngne18: STAR TALK GAME NIGHT, Ep 18, "Libra vs Aquarius: A Theory of Missing" (35 s vertical, same element: air, music: synthwave · Bm).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne18: STAR TALK GAME NIGHT, Ep 18, "Libra vs Aquarius: A Theory of Missing" (33 s vertical, same element: air, music: synthwave · Bm).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Libra vs Aquarius. | Big *feelings*, bigger ideas.' Aquarius tinkering with a wrench.
 //   R1 '“I miss you.” you: ___': Aquarius 'missing is just distance with feelings.' / Libra 'miss you too. call tonight?' → Libra
 //   R2 'They give you space when you ask' both GREEN → both
