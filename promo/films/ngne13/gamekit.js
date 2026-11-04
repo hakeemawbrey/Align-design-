@@ -260,6 +260,21 @@ function mic(x, cx, cy, s, rot) {
   x.restore()
 }
 
+
+// ── small hand props for the hook (cfg.hookProps = { a: 'cookie', b: 'pen' }); held on the inner side of the sprite
+const PROPS = {
+  cookie: [['.CCCC.', 'CCDCCC', 'CCCCDC', 'CDCCCC', '.CCCC.'], { C: '#d9a066', D: '#5a3418' }],
+  pen: [['......K', '.....YK', '....YY.', '...YY..', '..YY...', '.PY....', 'PP.....'], { K: INK, Y: GOLD, P: PINK }],
+  planner: [['BBBBBBB', 'BWWWWWB', 'BWRWRWB', 'BWWWWWB', 'BWRWWWB', 'BBBBBBB'], { B: '#5a7fd8', W: BONE, R: RED }],
+  laptop: [['.GGGGGGG.', '.GSSSSSG.', '.GSSSSSG.', '.GGGGGGG.', 'GGGGGGGGG'], { G: '#8c86a8', S: '#7fd0ff' }],
+  bulb: [['.YYY.', 'YYWYY', 'YYYYY', '.YYY.', '.GGG.', '.GGG.'], { Y: '#fff1a8', W: '#ffffff', G: '#8c86a8' }],
+  tissue: [['.WW.', 'WWWW', 'WWWW', '.WW.'], { W: '#ffffff' }],
+  mirror: [['.MMM.', 'MSSSM', 'MSWSM', 'MSSSM', '.MMM.', '..M..', '..M..'], { M: GOLD, S: '#9fd8f6', W: '#ffffff' }],
+  cards: [['AAA.BBB', 'AAA.BBB', 'AAA.BBB', 'AAA.BBB'], { A: BONE, B: LAV }],
+  pizza: [['YYYYYYY', '.YRYYR.', '..YYY..', '...Y...'], { Y: '#ffcf5a', R: RED }],
+}
+export function drawProp(x, name, cx, cy, cell, rot = 0) { const p = PROPS[name]; if (p) drawBits(x, p[0], p[1], cx, cy, cell, { rot }) }
+
 // ── the show bug: "STAR TALK GAME NIGHT · EP n" in Inter 800 small caps, letter-spaced, top-left 56 px
 function buildBug(root, ep) {
   const b = el('div', { position: 'absolute', left: '56px', top: '56px', height: '44px', display: 'flex', alignItems: 'center', gap: '14px', transformOrigin: '0% 50%', pointerEvents: 'none' }, root)
@@ -650,6 +665,11 @@ export function makeGame(cfg) {
         for (const rr of [...rounds, ...(cfg.hookBuzz ? [{ buzz: cfg.hookBuzz, hook: true }] : [])]) {
           const bt = rr.hook ? -1 : at(rr, 'buzz'), k = (rr.hook ? 1 : pop01(t, bt, 0.2, 3)) * outK(t, rr.hook ? [0.7, 0.9] : [bt + 0.55, bt + 0.75])
           if (k > 0.01) { const P = POD[rr.buzz]; label(x, 'BZZT!', P.x + (rr.buzz === 'a' ? 110 : -110), 1080, { size: 46 * k, col: '#ff6b7f', font: INTER, weight: 800, rot: rr.buzz === 'a' ? -0.12 : 0.12 }) }
+        }
+        if (cfg.hookProps) for (const sd of ['a', 'b']) {
+          const nm = cfg.hookProps[sd], F = sd === 'a' ? FA : FB
+          const k = outK(t, [3.2, 3.45])
+          if (nm && k > 0.01) drawProp(x, nm, F.ox + (sd === 'a' ? 1 : -1) * F.S * 0.5, F.oy - F.base - F.S * 0.05 + 4 * Math.sin(t * 6), 9 * k, (sd === 'a' ? 0.15 : -0.15))
         }
         if (cfg.props) cfg.props(x, t, { FA, FB, rounds, at, U, T, POD, winner })
         if (r) { card(x, t, 'a', r); card(x, t, 'b', r) }
