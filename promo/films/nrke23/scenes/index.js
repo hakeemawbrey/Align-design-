@@ -1,4 +1,4 @@
-// nrke23: RANKING THE SIGNS, "Who gets the most excited for snow" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke23: RANKING THE SIGNS, "Who gets the most excited for snow" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // dreamy · C). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who gets the most / excited for *snow?*" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Scorpio → #4 Gemini slam in.   6.3 card cut.   6.8 #3 Aries · 7.7 #2 Pisces
