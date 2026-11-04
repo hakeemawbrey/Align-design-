@@ -1,19 +1,19 @@
 // 24 DAYS OF GREEN FLAGS: the shared look of ngfe01–ngfe24 (promo/films/next30/b09.md). Every episode imports this file
 // from ngfe01 (shared modules stay read-only; this kit belongs to the series).
 //
-// The format (18 s, story 0–13.6, then the shared end card):
+// The format (16 s, story 0–13.6, then the short end card):
 //   0.00–2.35  THE CALENDAR. Frame 0 is the thumbnail: the hook headline is up, a pixel advent calendar of 24 doors
 //              (numbers shuffled like a real one) fills the frame, the doors before today are open with a tiny green
 //              flag inside, today's door glows, the hero star is mid-hop at it, Pisces sniffles in the corner.
 //              Push-in on today's door (1.3–2.35), the door swings open (1.75–2.3), a warm light burst (2.3).
 //   2.35–8.8   BEHIND THE DOOR. The episode's tiny scene (cfg.scene), the caption sticker "<flag>" with a green
 //              numbered badge, Pisces crying somewhere in the back (cfg.pis, or the scene draws its own).
-//   8.8        the one card cut (flip).
+//   8.8        a hard cut with a white flash (no card transition).
 //   8.85–13.5  PLANTED. A green pennant drops between the pair and plants (9.35); THE STARS say the last line;
 //              the 24-flag strip along the bottom fills to today.
 // Everything draws as a pure function of t; DOM / canvases are only made inside build().
 //
-//   makeDoor(cfg) → { DURATION, SCENES, CUES, T, CUTS }
+//   makeDoor(cfg) → { DURATION, SCENES, CUES, T }
 //     cfg.day (1–24), cfg.hero / cfg.mate (sign ids), cfg.hook ('line | *accent*'), cfg.flag (sticker text with
 //     one *accent*), cfg.last (THE STARS' last line), cfg.scene(x, t, S), cfg.cues (relative to the scene start),
 //     cfg.pis ({ x, y, s, look } | false), cfg.payoff(x, t, S) extra props in the payoff, cfg.payPair (false = the
@@ -22,8 +22,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -40,8 +40,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline (same in all 24 films)
-export const DURATION = 18
-export const STORY_END = DURATION - ENDCARD_LEN          // 13.6
+export const DURATION = 16
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 13.6
 export const T = {
   bug: -1, h0: -1, h0Out: [1.2, 1.45],
   zoom: [1.3, 2.35], door: [1.75, 2.3], burst: 2.3, calOut: 2.35,
@@ -556,16 +556,15 @@ export function makeDoor(cfg) {
         sticker.update(t)
         box1.update(t)
         bug.update(t, outK(t, T.bugOut))
-        const fl = t >= T.burst && t < T.burst + 0.25 ? 1 - (t - T.burst) / 0.25 : 0
+        const fl = Math.max(t >= T.burst && t < T.burst + 0.25 ? 1 - (t - T.burst) / 0.25 : 0, t >= T.cut && t < T.cut + 0.2 ? 0.7 * (1 - (t - T.cut) / 0.2) : 0)
         flash.style.opacity = String(0.8 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // one card-cut candidate: between the scene and the payoff
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card transition (owner, 4 Nov): the scene → payoff cut is the film's own white flash
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -590,13 +589,13 @@ export function makeDoor(cfg) {
     ...talkCues(LINES, { cps: CPS }),
     ['pop', T.strip, 1318.51, 0.045, 0], ['pop', r3(T.strip + 0.08), 1760, 0.035, 0], ['glitter', T.strip, r3(T.strip + 0.3)],
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ['whoosh', r3(T.cut - 0.08), 0.3, 0.035], ['tick', T.cut, 0.05],
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS }
+  return { DURATION, SCENES, CUES, T }
 }
 
 /** the cues.js config for an episode */
 export function musicConfig(id, style, key, seed, { breakdown = 5.6 } = {}) {
-  return { id, duration: DURATION, music: { style, key, seed, sections: { drop: T.burst, breakdown: [breakdown], lift: [T.cut], outroAt: DURATION - 4.4 }, hits: [T.plant] } }
+  return { id, duration: DURATION, music: { style, key, seed, sections: { drop: T.burst, breakdown: [breakdown], lift: [T.cut], outroAt: STORY_END }, hits: [T.plant] } }
 }
