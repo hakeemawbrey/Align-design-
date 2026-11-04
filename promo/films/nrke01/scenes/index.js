@@ -1,4 +1,4 @@
-// nrke01: RANKING THE SIGNS, "Who texts back first" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke01: RANKING THE SIGNS, "Who texts back first" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // chiptune · A). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who texts back / *first?*" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Taurus → #4 Cancer slam in.   6.3 card cut.   6.8 #3 Leo · 7.7 #2 Gemini

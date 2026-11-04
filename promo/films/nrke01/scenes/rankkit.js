@@ -1,12 +1,12 @@
 // RANKING THE SIGNS: the shared look of the 24 star_advice trial reels nrke01–nrke24 (promo/films/next30/b39.md).
 // Each episode folder holds only its data (question, the twelve ranks, last line) and imports this kit.
 //
-// The format (18 s: story 0–13.6, then the shared 4.4 s end card):
+// The format (16 s: story 0–13.6, then the shared 2.4 s short end card):
 //   0.00        thumbnail: the question is already up as the bold top caption, the empty leaderboard (twelve "???"
 //               slots, #1 at the top) below it, THE STARS mid-scribble on a clipboard (left), Pisces sniffling into a
 //               tissue (right). Bug "RANKING THE SIGNS", top-left.
 //   1.80–5.64   ranks #12 → #4 slam onto the board one every 0.48 s; each sign hops up at the bottom as its row lands.
-//   6.30        the one card cut (flip).
+//   6.30        (was the card cut; removed 4 Nov) the board breathes between #4 and the top three.
 //   6.80 / 7.70 #3 (bronze) and #2 (silver): bigger reveals.
 //   8.50–9.30   drumroll: the #1 slot shakes; THE STARS look up; Pisces holds its breath.
 //   9.30        #1 slams in gold: crown, confetti, the sign takes centre stage. Pisces fountains.
@@ -22,8 +22,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -37,8 +37,8 @@ const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
 const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 1 : p >= 1 ? 0 : (1 + 0.18 * Math.sin(Math.PI * Math.min(1, p * 2.2))) * (1 - ease.inCubic(p)) }
 
 // ── the fixed timeline (same in all 24 films)
-export const DURATION = 18
-export const STORY_END = DURATION - ENDCARD_LEN          // 13.6
+export const DURATION = 16
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 13.6
 const LAND = {}
 for (let r = 12; r >= 4; r--) LAND[r] = r3(1.8 + (12 - r) * 0.48)
 LAND[3] = 6.8; LAND[2] = 7.7; LAND[1] = 9.3
@@ -341,9 +341,9 @@ export function makeRank(cfg) {
     }
   }
 
-  // one card-cut candidate: between the rapid fill (#4) and the top three
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card-back cut (owner's change, 4 Nov); the quiet card frame stays
+  const CUTS = []
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -367,8 +367,7 @@ export function makeRank(cfg) {
     ...(cfg.allOne ? Array.from({ length: 11 }, (_, i) => ['pop', r3(T.allOne + i * 0.07), NOTE[i % 7] * 2, 0.025, (i % 2 ? 0.25 : -0.25)]) : []),
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }
