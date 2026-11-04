@@ -1,7 +1,7 @@
-// nfde06: THE FIRST THREE DATES · Date 3 with an Earth sign: saying what you want (30 s vertical, star_advice, music: cinematic · Dm).
+// nfde06: THE FIRST THREE DATES · Date 3 with an Earth sign: saying what you want (28 s vertical, star_advice, music: cinematic · Dm).
 // The format lives in nfde01/scenes/datekit.js (shared by nfde01–nfde12). Story 0–25.6, then the shared end card.
 //   0.0   hook: "Date 3 with an Earth sign." Capricorn at the kitchen with YOU.
-//   3.1   SKIP: “let’s see where it *goes.*” → the red SKIP stamp.   11.0 card cut.
+//   3.1   SKIP: “let’s see where it *goes.*” → the red SKIP stamp.   11.0 → TRY.
 //   11.1  TRY: say the pace you *want.* Capricorn: "good. me too. same time next week?"
 //   19.3  the tip note (deal). THE STARS: "Say the plan *out loud*."
 import { makeDates } from '../../nfde01/scenes/datekit.js'
