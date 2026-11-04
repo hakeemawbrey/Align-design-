@@ -26,6 +26,24 @@
   "episode": 3,
   "caption": "Moonlight Lane, Ep 3: day four of keeping the borrowed scarf, and Cancer has a nine-card speech ready. A gift can't say what you mean. One warm, simple line can."
  },
+ "nml2e04": {
+  "video": "/_blob/b08db69f527cebab6d82bb61cf9a4ae7",
+  "poster": "/_blob/d6b4d73cb223d8374fef7904b27802d1",
+  "title": "Two Invitations, One Night",
+  "len": 118,
+  "series": "ml2",
+  "episode": 4,
+  "caption": "Moonlight Lane, Ep 4: Libra says yes to a party and a midnight bake on the same night. Splitting yourself in half means nobody gets you. Choose, then tell the other person kindly and early."
+ },
+ "nml2e05": {
+  "video": "/_blob/4747ff15e58dcafff3c07d8058e8ae53",
+  "poster": "/_blob/ba3e7546da58e7c5c559a2b3f82711f9",
+  "title": "Snowed In",
+  "len": 118,
+  "series": "ml2",
+  "episode": 5,
+  "caption": "Moonlight Lane, Ep 5: the whole lane is snowed in at the café, a talk card goes round, and Sagittarius answers with a fun fact. When a moment gets real, try staying in it instead of joking your way out."
+ },
  "nmte01": {
   "video": "/_blob/296f4b131dd31abe15f32569063d1aab",
   "poster": "/_blob/56a07ae7a0f80a9163f2498c3b36e9a9",
@@ -106,5 +124,59 @@
   "series": "mltease",
   "episode": 9,
   "caption": "Hoping a gift will say what you can't?\nIt won't. One warm sentence will. Moonlight Lane, Ep 3."
+ },
+ "nmte10": {
+  "video": "/_blob/16f44351ea0d543dcac57eec2ed89813",
+  "poster": "/_blob/4b6aecf131d192c18326b6b4c2768c69",
+  "title": "Yes to both",
+  "len": 18,
+  "series": "mltease",
+  "episode": 10,
+  "caption": "Two invitations for the same Saturday. You said yes to both.\nLibra, this one's for you. Moonlight Lane, Ep 4."
+ },
+ "nmte11": {
+  "video": "/_blob/34789ffab797ae76c56ddb4ff43d25b0",
+  "poster": "/_blob/e288d78cd17594dc72d385f193fb41f7",
+  "title": "Party, bakery, party",
+  "len": 22,
+  "series": "mltease",
+  "episode": 11,
+  "caption": "Party, bakery, party, bakery.\nHalf of you in two places is all of you in neither. Moonlight Lane, Ep 4."
+ },
+ "nmte12": {
+  "video": "/_blob/9a58acc3061f89aaf14233637930172a",
+  "poster": "/_blob/24573d21d3d666cd4110690b86c65625",
+  "title": "I just wanted you here",
+  "len": 19,
+  "series": "mltease",
+  "episode": 12,
+  "caption": "'I just wanted you here.'\nThe cost of saying yes to everything. Moonlight Lane, Ep 4."
+ },
+ "nmte13": {
+  "video": "/_blob/38148f3a3e3cbff823ddb37c260ebc02",
+  "poster": "/_blob/b48dabb52552bc85efea9309fd8c18e7",
+  "title": "One blanket left",
+  "len": 22,
+  "series": "mltease",
+  "episode": 13,
+  "caption": "Snowed in at the café with the whole street, and one blanket left for you two.\nMoonlight Lane, Ep 5."
+ },
+ "nmte14": {
+  "video": "/_blob/c27bb12d5b54a39f001986fc1ff5da87",
+  "poster": "/_blob/51b3d18034ab871f0fbed3ad7ca2f3b5",
+  "title": "Joking it off",
+  "len": 21,
+  "series": "mltease",
+  "episode": 14,
+  "caption": "Do you crack a joke whenever a moment gets real?\nSagittarius does. Moonlight Lane, Ep 5."
+ },
+ "nmte15": {
+  "video": "/_blob/8b70dd848c2d2575adf68269038d4711",
+  "poster": "/_blob/a003d176a8bb3e0f246690156f12964b",
+  "title": "A fact when it gets real",
+  "len": 18,
+  "series": "mltease",
+  "episode": 15,
+  "caption": "'You always do a fact when it gets real.'\nWhy deflecting keeps people out. Moonlight Lane, Ep 5."
  }
 }
