@@ -61,6 +61,16 @@ export function makeMC(cfg) {
   const STARS_HOPS = [T.starsIn + 0.3, ...talkHops(LINES, SPEAK, { cps: CPS })]
   const hero = (x, t, o = {}) => drawStarChar(x, o.x, o.y, o.s, t, { color: HERO.color, glyph: o.s >= 150 ? HERO.glyph : null, seed: 3, glow: 1.1, ...o })
   const date = (x, t, o = {}) => drawStarChar(x, o.x, o.y, o.s, t, { color: DATE.color, glyph: o.s >= 150 ? DATE.glyph : null, seed: 7, glow: 1, ...o })
+  // the audience in the cinema seat: Pisces (or, when Pisces is the hero, cfg.audience) with happy tears
+  const AUD = cfg.audience ? signStar(cfg.audience) : null
+  const audience = (x, t, P, tears, mood, look) => {
+    if (!AUD) return pisces(x, t, P, tears, mood, look)
+    const opts = { color: AUD.color, mood, look, seed: 6, glow: 0.8, pop: P.pop ?? 1, hops: P.hops, tips: false }
+    drawStarChar(x, P.x, P.y, P.s, t, opts)
+    const F = B.starFrame(P.x, P.y, P.s, t, opts)
+    if (tears) B.inSprite(x, F, () => B.tearsCells(x, t, tears))
+    return F
+  }
   const phaseOf = t => t < T.movie[0] ? 'hook' : t < T.real[0] ? 'movie' : t < T.pay[0] ? 'real' : 'pay'
 
   async function build(stage) {
@@ -106,7 +116,7 @@ export function makeMC(cfg) {
           const k = pop01(t, T.movie[0] + 0.3, 0.3, 2) * outK(t, [T.pay[0] - 0.15, T.pay[0]])
           const py = S.phase === 'movie' ? 1600 : 1640
           cinemaSeat(x, t, 920, py + 30, 150, k)
-          const F = pisces(x, S.tm, { x: 920, y: py, s: 120 * k, hops: [T.real[0] + 0.05] }, S.phase === 'movie' ? 2 : 1, S.phase === 'movie' ? 'sparkle' : 'wide', [-1, -0.7])
+          const F = audience(x, S.tm, { x: 920, y: py, s: 120 * k, hops: [T.real[0] + 0.05] }, S.phase === 'movie' ? 2 : 1, S.phase === 'movie' ? 'sparkle' : 'wide', [-1, -0.7])
           if (k > 0.5) popcorn(x, t, 920 - 92, F.cy + 26, 110)
         }
         // payoff: THE STARS and Pisces (fountains)
@@ -115,7 +125,7 @@ export function makeMC(cfg) {
           const sk = pop01(t, T.starsIn, 0.38, 2.1) * ok
           if (sk > 0.01) drawStarChar(x, 170, 1290, 150, t, { color: STAR.sky, mood: t > T.last + 1.4 ? 'happy' : 'neutral', look: [1, -0.3], hops: STARS_HOPS, pop: sk, seed: 2, glow: 1.05 })
           const pk = pop01(t, T.pisIn, 0.36, 2.2) * ok
-          if (pk > 0.01) { B.tissues(x, 1000, 1330, 70 * pk); pisces(x, t, { x: 910, y: 1290, s: 150, pop: pk, hops: [T.pisIn + 0.3, T.payLine + 0.5] }, 3, 'sparkle', [-1, -1]) }
+          if (pk > 0.01) { B.tissues(x, 1000, 1330, 70 * pk); audience(x, t, { x: 910, y: 1290, s: 150, pop: pk, hops: [T.pisIn + 0.3, T.payLine + 0.5] }, 3, 'sparkle', [-1, -1]) }
         }
         // movie grade: warm wash, vignette, letterbox bars
         const bk = t < T.movie[0] ? 0 : t < T.cut ? ease.outCubic(prog(t, ...T.bars)) : 1 - ease.inCubic(prog(t, T.cut, T.cut + 0.2))
