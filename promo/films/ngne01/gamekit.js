@@ -394,7 +394,8 @@ function drawPromptCard(x, t, i, text, t0, t1) {
   if (i === 2) { x.font = `800 60px ${INTER}`; x.fillStyle = PINK; x.textAlign = 'center'; x.fillText('?', w / 2 - 70, -h / 2 + 46) }
   // prompt text
   x.font = `800 52px ${INTER}`
-  const lines = wrapLines(x, text, 830)
+  let lines = wrapLines(x, text, 830)
+  if (lines.length > 2) { x.font = `800 44px ${INTER}`; lines = wrapLines(x, text, 840) }
   x.fillStyle = INK; x.textAlign = 'center'; x.textBaseline = 'middle'
   const top = 36 - (lines.length - 1) * 30
   lines.forEach((l, j) => x.fillText(l, 0, top + j * 60))
