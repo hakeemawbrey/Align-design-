@@ -6,9 +6,28 @@ Meta's official **Instagram API with Facebook Login** (Graph API v26.0).
 | Page | What it does |
 | --- | --- |
 | **Dashboard** | Followers, following and post counts; a daily follower history; reach, views, likes, comments, saves, shares and engagement rate for your 12 most recent posts. |
-| **Schedule** | Queue image posts and Reels for a date and time. A worker publishes them, waits for Reels to finish processing, retries on rate limits and records errors. |
-| **Engage** | Comments on your posts that still need a reply (reply inline), plus recent posts from accounts in your niche with a one-click Like. |
-| **Settings** | Connect, switch or disconnect the Instagram account; check configuration. |
+| **Schedule** | Queue image posts, Reels and **Trial Reels** for any connected account. See the queue on a **calendar** or as a list. A worker publishes each post to its account, waits for Reels to finish processing, retries on rate limits and records errors. |
+| **Engage** | Comments on your posts that still need a reply (reply inline, or send a reply Claude drafted), plus recent posts from accounts in your niche with a one-click Like. |
+| **Settings** | Add, select or remove Instagram accounts; check configuration. |
+
+### Several accounts
+
+Connect as many Instagram accounts as you manage. **Settings → Add or refresh accounts** keeps the accounts you
+already have; on Facebook choose *Edit settings* to tick more Pages, or log into another Facebook account. The
+header dropdown picks which account the Dashboard and Engage pages show. Posts, likes (and the daily cap), niche
+lists, follower history and drafts are kept per account.
+
+### Trial Reels
+
+When scheduling a Reel, choose a Trial Reel to show it to non-followers first. Pick whether you share it with
+followers yourself in the Instagram app, or let Instagram share it automatically if it performs well.
+
+### Claude automation
+
+Set `AGENT_API_KEY` in `.env` and Claude (in Claude Code, or a recurring scheduled task) can plan content, queue
+posts and Trial Reels, read stats and comments, and draft comment replies through `/api/agent`. It cannot like,
+follow, DM, send replies or publish immediately. See [CLAUDE.md](CLAUDE.md); `npm run agent` calls the API with the
+key from `.env`.
 
 ## What it deliberately does not do
 

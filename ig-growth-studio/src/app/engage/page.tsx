@@ -3,8 +3,9 @@ import { ConnectPrompt } from "@/components/ConnectPrompt";
 import { LikeButton } from "@/components/LikeButton";
 import { ReplyForm } from "@/components/ReplyForm";
 import { config } from "@/lib/config";
-import { getAccount, getDb, listNiche } from "@/lib/db";
+import { getAccount, getDb, listDrafts, listNiche } from "@/lib/db";
 import { GraphClient, type Comment, type Media } from "@/lib/graph";
+import { unansweredComments } from "@/lib/insights";
 import { likedIds, likesToday } from "@/lib/likes";
 
 export const dynamic = "force-dynamic";
@@ -23,8 +24,9 @@ export default async function EngagePage() {
     );
   }
   const client = new GraphClient({ token: account.token });
-  const niche = listNiche(db);
-  const liked = likedIds(db);
+  const niche = listNiche(db, account.igUserId);
+  const liked = likedIds(db, account.igUserId);
+  const drafts = listDrafts(db, account.igUserId);
 
   // Recent posts from niche accounts (Business Discovery only works for Business/Creator accounts).
   const discovered = await Promise.all(
@@ -46,24 +48,19 @@ export default async function EngagePage() {
   let unanswered: { media: Media; comment: Comment }[] = [];
   let commentsError: string | null = null;
   try {
-    const mine = (await client.recentMedia(account.igUserId, 8)).data;
-    const lists = await Promise.all(mine.map((m) => client.comments(m.id).then((c) => ({ m, c: c.data }))));
-    unanswered = lists.flatMap(({ m, c }) =>
-      c
-        .filter((cm) => cm.username !== account.username)
-        .filter((cm) => !cm.replies?.data.some((r) => r.username === account.username))
-        .map((cm) => ({ media: m, comment: cm })),
-    );
+    unanswered = await unansweredComments(account, client);
   } catch (err) {
     commentsError = err instanceof Error ? err.message : "Could not load comments";
   }
 
   return (
     <>
-      <h1>Engage</h1>
+      <h1>
+        Engage <span className="muted">@{account.username}</span>
+      </h1>
       <p className="muted small">
-        Every like and reply here is one click by you. Likes are capped at {config.dailyLikeCap} a day (
-        {likesToday(db)} used today) and spaced a few seconds apart. Thoughtful replies grow an account faster than
+        Every like and reply here is one click by you. Likes are capped at {config.dailyLikeCap} a day per account (
+        {likesToday(db, account.igUserId)} used today) and spaced a few seconds apart. Thoughtful replies grow an account faster than
         likes.
       </p>
 
@@ -80,7 +77,7 @@ export default async function EngagePage() {
               </a>
             </div>
             <div>{comment.text}</div>
-            <ReplyForm commentId={comment.id} />
+            <ReplyForm commentId={comment.id} account={account.igUserId} draft={drafts.get(comment.id)} />
           </div>
         ))}
       </div>
@@ -125,7 +122,7 @@ export default async function EngagePage() {
             </div>
             <div className="small clamp">{p.caption}</div>
             <div className="row">
-              <LikeButton mediaId={p.id} initiallyLiked={liked.has(p.id)} />
+              <LikeButton mediaId={p.id} account={account.igUserId} initiallyLiked={liked.has(p.id)} />
               <a className="button" href={p.permalink} target="_blank" rel="noreferrer">
                 Comment
               </a>

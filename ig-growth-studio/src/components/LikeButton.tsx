@@ -2,7 +2,16 @@
 
 import { useState } from "react";
 
-export function LikeButton({ mediaId, initiallyLiked }: { mediaId: string; initiallyLiked: boolean }) {
+export function LikeButton({
+  mediaId,
+  account,
+  initiallyLiked,
+}: {
+  mediaId: string;
+  /** IG user ID of the account that likes, so a switch in another tab cannot change it. */
+  account: string;
+  initiallyLiked: boolean;
+}) {
   const [liked, setLiked] = useState(initiallyLiked);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
@@ -14,7 +23,7 @@ export function LikeButton({ mediaId, initiallyLiked }: { mediaId: string; initi
       const res = await fetch("/api/like", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ action: liked ? "unlike" : "like", mediaId }),
+        body: JSON.stringify({ action: liked ? "unlike" : "like", mediaId, account }),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Request failed");

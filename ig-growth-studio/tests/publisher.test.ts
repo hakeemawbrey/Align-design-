@@ -1,18 +1,18 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { type DB, createPost, getPost, openDb, saveAccount } from "../src/lib/db";
+import { type DB, createPost, getPost, openDb, removeAccount, upsertAccounts } from "../src/lib/db";
 import { PROCESSING_TIMEOUT_MS, publishDuePosts } from "../src/lib/publisher";
-import { fakeGraph, graphError } from "./helpers";
+import { fakeGraph, fakeGraphFetch, graphError } from "./helpers";
 
 const NOW = new Date("2026-11-01T12:00:00Z");
 let db: DB;
 
 beforeEach(() => {
   db = openDb(":memory:");
-  saveAccount(db, { igUserId: "17841", username: "me", token: "TOKEN", tokenExpiresAt: null });
+  upsertAccounts(db, [{ igUserId: "17841", username: "me", pageName: "Me", token: "TOKEN", tokenExpiresAt: null }]);
 });
 
 function schedule(type: "IMAGE" | "REELS", at = new Date(NOW.getTime() - 1000)) {
-  return createPost(db, { type, mediaUrl: "https://cdn.example.com/a.jpg", caption: "hi #test", shareToFeed: true, scheduledAt: at });
+  return createPost(db, { igUserId: "17841", type, mediaUrl: "https://cdn.example.com/a.jpg", caption: "hi #test", shareToFeed: true, scheduledAt: at });
 }
 
 describe("publishDuePosts", () => {
@@ -110,11 +110,89 @@ describe("publishDuePosts", () => {
     expect(getPost(db, id)!.error).toBe("Invalid image_url");
   });
 
-  it("does nothing without a connected account", async () => {
-    saveAccount(db, null);
-    schedule("IMAGE");
+  it("fails a post whose account is no longer connected, without calling Instagram", async () => {
+    const id = schedule("IMAGE");
+    db.prepare("DELETE FROM accounts").run();
     const { client, calls } = fakeGraph({});
-    await publishDuePosts(db, { now: NOW, client });
+    const res = await publishDuePosts(db, { now: NOW, client });
+    expect(res.failed).toEqual([id]);
+    expect(getPost(db, id)!.error).toMatch(/no longer connected/);
     expect(calls).toHaveLength(0);
+  });
+
+  it("removing an account cancels its queued posts", () => {
+    const id = schedule("IMAGE", new Date(NOW.getTime() + 60_000));
+    removeAccount(db, "17841");
+    expect(getPost(db, id)!.status).toBe("cancelled");
+  });
+
+  it("creates Trial Reels with trial_params and without share_to_feed", async () => {
+    const id = createPost(db, {
+      igUserId: "17841",
+      type: "REELS",
+      mediaUrl: "https://cdn.example.com/a.mp4",
+      caption: "trial",
+      shareToFeed: true,
+      trial: "SS_PERFORMANCE",
+      scheduledAt: new Date(NOW.getTime() - 1000),
+    });
+    const { client, calls } = fakeGraph({
+      "POST 17841/media": () => ({ id: "C9" }),
+      "GET C9": () => ({ status_code: "FINISHED" }),
+      "POST 17841/media_publish": () => ({ id: "M9" }),
+      "GET M9": () => ({ id: "M9" }),
+    });
+    const res = await publishDuePosts(db, { now: NOW, client });
+    expect(res.published).toEqual([id]);
+    expect(JSON.parse(calls[0].params.trial_params)).toEqual({ graduation_strategy: "SS_PERFORMANCE" });
+    expect(calls[0].params).not.toHaveProperty("share_to_feed");
+    expect(calls[0].params.media_type).toBe("REELS");
+  });
+
+  it("ignores trial settings on image posts", () => {
+    const id = createPost(db, {
+      igUserId: "17841",
+      type: "IMAGE",
+      mediaUrl: "https://cdn.example.com/a.jpg",
+      caption: "",
+      shareToFeed: true,
+      trial: "MANUAL",
+      scheduledAt: NOW,
+    });
+    expect(getPost(db, id)!.trial_strategy).toBeNull();
+  });
+});
+
+describe("several accounts", () => {
+  it("publishes each post to its own account with that account's token", async () => {
+    upsertAccounts(db, [{ igUserId: "999", username: "other", pageName: "Other", token: "TOKEN2", tokenExpiresAt: null }]);
+    const a = schedule("IMAGE");
+    const b = createPost(db, {
+      igUserId: "999",
+      type: "IMAGE",
+      mediaUrl: "https://cdn.example.com/b.jpg",
+      caption: "b",
+      shareToFeed: true,
+      scheduledAt: new Date(NOW.getTime() - 500),
+    });
+    const routes = (prefix: string) => ({
+      [`POST ${prefix}/media`]: () => ({ id: `C${prefix}` }),
+      [`GET C${prefix}`]: () => ({ status_code: "FINISHED" }),
+      [`POST ${prefix}/media_publish`]: () => ({ id: `M${prefix}` }),
+      [`GET M${prefix}`]: () => ({ id: `M${prefix}` }),
+    });
+    // No client override: the publisher builds one client per account token, so stub global fetch.
+    const { fetchImpl, calls } = fakeGraphFetch({ ...routes("17841"), ...routes("999") });
+    const realFetch = globalThis.fetch;
+    globalThis.fetch = fetchImpl;
+    try {
+      const res = await publishDuePosts(db, { now: NOW });
+      expect(res.published.sort()).toEqual([a, b].sort());
+    } finally {
+      globalThis.fetch = realFetch;
+    }
+    const tokenFor = (path: string) => calls.find((c) => c.path === path)?.params.access_token;
+    expect(tokenFor("17841/media")).toBe("TOKEN");
+    expect(tokenFor("999/media")).toBe("TOKEN2");
   });
 });

@@ -7,6 +7,7 @@ import { likeOne, likesToday, unlikeOne } from "@/lib/likes";
 
 const Body = z.object({
   action: z.enum(["like", "unlike"]),
+  account: z.string().optional(),
   mediaId: z.string().regex(/^\d+$/).optional(),
   commentId: z.string().regex(/^\d+$/).optional(),
 });
@@ -17,7 +18,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Send exactly one of mediaId or commentId" }, { status: 400 });
   }
   const db = getDb();
-  const account = getAccount(db);
+  const account = getAccount(db, parsed.data.account);
   if (!account) return NextResponse.json({ error: "Connect an Instagram account first" }, { status: 400 });
 
   const client = new GraphClient({ token: account.token });
@@ -28,7 +29,7 @@ export async function POST(req: NextRequest) {
     } else {
       await unlikeOne(db, client, account.igUserId, target);
     }
-    return NextResponse.json({ ok: true, likesToday: likesToday(db), cap: config.dailyLikeCap });
+    return NextResponse.json({ ok: true, likesToday: likesToday(db, account.igUserId), cap: config.dailyLikeCap });
   } catch (err) {
     // Graph failures are upstream errors; anything else is our own cap or pacing check.
     const status = err instanceof GraphError ? 502 : 429;

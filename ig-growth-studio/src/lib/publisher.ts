@@ -22,11 +22,18 @@ export async function publishDuePosts(
 ): Promise<RunResult> {
   const now = opts.now ?? new Date();
   const result: RunResult = { published: [], failed: [], pending: [], retried: [] };
-  const account = getAccount(db);
-  if (!account) return result;
-  const client = opts.client ?? new GraphClient({ token: account.token });
+  const clients = new Map<string, GraphClient>();
 
   for (const post of duePosts(db, now)) {
+    // Each post publishes to the account it was scheduled for, with that account's token.
+    const account = getAccount(db, post.ig_user_id);
+    if (!account || !post.ig_user_id) {
+      updatePost(db, post.id, { status: "failed", error: "This post's Instagram account is no longer connected" });
+      result.failed.push(post.id);
+      continue;
+    }
+    let client = opts.client ?? clients.get(account.token);
+    if (!client) clients.set(account.token, (client = new GraphClient({ token: account.token })));
     try {
       const outcome = await advance(db, client, account.igUserId, post, now);
       result[outcome].push(post.id);
@@ -72,7 +79,13 @@ async function advance(
 
     const container =
       post.type === "REELS"
-        ? await client.createReelContainer(igUserId, post.media_url, post.caption, post.share_to_feed === 1)
+        ? await client.createReelContainer(
+            igUserId,
+            post.media_url,
+            post.caption,
+            post.share_to_feed === 1,
+            post.trial_strategy,
+          )
         : await client.createImageContainer(igUserId, post.media_url, post.caption);
     containerId = container.id;
     updatePost(db, post.id, { container_id: containerId });

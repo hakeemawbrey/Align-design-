@@ -1,8 +1,8 @@
 /**
- * Publishes due posts every minute and records a daily follower snapshot.
+ * Publishes due posts for every connected account each minute and records a daily follower snapshot per account.
  * Run alongside the web app: `npm run worker`.
  */
-import { getAccount, getDb, saveSnapshot } from "../src/lib/db";
+import { getDb, listAccounts, saveSnapshot } from "../src/lib/db";
 import { GraphClient } from "../src/lib/graph";
 import { publishDuePosts } from "../src/lib/publisher";
 
@@ -16,10 +16,17 @@ async function tick() {
   if (changed > 0) console.log(new Date().toISOString(), JSON.stringify(result));
 
   const day = new Date().toISOString().slice(0, 10);
-  const account = getAccount(db);
-  if (account && day !== lastSnapshotDay) {
-    const p = await new GraphClient({ token: account.token }).profile(account.igUserId);
-    if (p.followers_count !== undefined) saveSnapshot(db, day, p.followers_count, p.follows_count ?? null, p.media_count ?? null);
+  if (day !== lastSnapshotDay) {
+    for (const account of listAccounts(db)) {
+      try {
+        const p = await new GraphClient({ token: account.token }).profile(account.igUserId);
+        if (p.followers_count !== undefined) {
+          saveSnapshot(db, account.igUserId, day, p.followers_count, p.follows_count ?? null, p.media_count ?? null);
+        }
+      } catch (err) {
+        console.error(new Date().toISOString(), `snapshot @${account.username}:`, err instanceof Error ? err.message : err);
+      }
+    }
     lastSnapshotDay = day;
   }
 }

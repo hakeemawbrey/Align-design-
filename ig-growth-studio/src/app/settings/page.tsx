@@ -1,7 +1,7 @@
-import { disconnect, selectAccount } from "@/app/actions";
+import { disconnect, removeAccountAction, selectAccount } from "@/app/actions";
 import { LocalTime } from "@/components/LocalTime";
 import { config } from "@/lib/config";
-import { getAccount, getDb, getSetting } from "@/lib/db";
+import { getAccount, getDb, listAccounts } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -12,15 +12,10 @@ export default async function SettingsPage({
 }) {
   const { error, connected } = await searchParams;
   const db = getDb();
-  const account = getAccount(db);
-  const linked = JSON.parse(getSetting(db, "linked_accounts") ?? "[]") as {
-    igUserId: string;
-    username: string;
-    pageName: string;
-  }[];
+  const accounts = listAccounts(db);
+  const active = getAccount(db);
   const appReady = Boolean(config.appId && config.appSecret);
-  const expiresSoon =
-    account?.tokenExpiresAt && new Date(account.tokenExpiresAt).getTime() - Date.now() < 7 * 86_400_000;
+  const soon = (iso: string | null) => iso !== null && new Date(iso).getTime() - Date.now() < 7 * 86_400_000;
 
   return (
     <>
@@ -30,55 +25,108 @@ export default async function SettingsPage({
       ) : (
         error && <p className="error">{error}</p>
       )}
-      {connected && <p className="ok">Instagram account connected.</p>}
+      {connected && (
+        <p className="ok">
+          Connected: {connected.split(",").filter(Boolean).map((u) => `@${u}`).join(", ") || "Instagram account"}.
+        </p>
+      )}
 
-      <h2>Instagram account</h2>
+      <h2>Instagram accounts</h2>
       <div className="card stack">
-        {account ? (
-          <>
-            <div>
-              Connected as <strong>@{account.username}</strong>
-              {account.tokenExpiresAt && (
-                <span className={`small ${expiresSoon ? "error" : "muted"}`}>
-                  {" "}
-                  · access expires <LocalTime iso={account.tokenExpiresAt} />
-                  {expiresSoon && ". Reconnect to renew it."}
-                </span>
-              )}
-            </div>
-            {linked.length > 1 && (
-              <form action={selectAccount} className="row">
-                <select name="igUserId" defaultValue={account.igUserId} style={{ width: "auto" }}>
-                  {linked.map((a) => (
-                    <option key={a.igUserId} value={a.igUserId}>
-                      @{a.username} ({a.pageName})
-                    </option>
-                  ))}
-                </select>
-                <button type="submit">Switch account</button>
-              </form>
-            )}
-            <div className="row">
-              <a className="button" href="/api/auth/meta/start">
-                Reconnect
-              </a>
-              <form action={disconnect}>
-                <button type="submit">Disconnect</button>
-              </form>
-            </div>
-          </>
+        {accounts.length > 0 ? (
+          <div className="scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Account</th>
+                  <th>Facebook Page</th>
+                  <th>Access expires</th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                {accounts.map((a) => (
+                  <tr key={a.igUserId}>
+                    <td>
+                      <a href={`https://www.instagram.com/${a.username}/`} target="_blank" rel="noreferrer">
+                        @{a.username}
+                      </a>
+                      {a.igUserId === active?.igUserId && (
+                        <>
+                          {" "}
+                          <span className="badge published">Selected</span>
+                        </>
+                      )}
+                    </td>
+                    <td className="muted">{a.pageName || "—"}</td>
+                    <td className={soon(a.tokenExpiresAt) ? "error small" : "muted small"}>
+                      {a.tokenExpiresAt ? <LocalTime iso={a.tokenExpiresAt} /> : "—"}
+                      {soon(a.tokenExpiresAt) && " · reconnect to renew"}
+                    </td>
+                    <td>
+                      <div className="row" style={{ justifyContent: "flex-end", flexWrap: "nowrap" }}>
+                        {a.igUserId !== active?.igUserId && (
+                          <form action={selectAccount}>
+                            <input type="hidden" name="igUserId" value={a.igUserId} />
+                            <button type="submit">Select</button>
+                          </form>
+                        )}
+                        <form action={removeAccountAction}>
+                          <input type="hidden" name="igUserId" value={a.igUserId} />
+                          <button type="submit" title="Removes the account and cancels its queued posts">
+                            Remove
+                          </button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         ) : (
+          <p style={{ margin: 0 }}>
+            Sign in with the Facebook account that manages the Facebook Page linked to your Instagram Business or
+            Creator account.
+          </p>
+        )}
+        <p className="muted small" style={{ margin: 0 }}>
+          To add accounts, click below. On Facebook, choose <strong>Edit settings</strong> and tick every Page and
+          Instagram account you want, or <strong>Log into another account</strong> to add accounts from a different
+          Facebook login. Accounts you already added stay connected. Each Instagram account must be Business or Creator
+          and linked to a Facebook Page.
+        </p>
+        <div className="row">
+          <a className="button primary" href="/api/auth/meta/start" aria-disabled={!appReady}>
+            {accounts.length ? "Add or refresh accounts" : "Connect with Facebook"}
+          </a>
+          {accounts.length > 0 && (
+            <form action={disconnect}>
+              <button type="submit">Remove all</button>
+            </form>
+          )}
+        </div>
+      </div>
+
+      <h2>Claude automation</h2>
+      <div className="card stack">
+        {config.agentApiKey ? (
           <>
             <p style={{ margin: 0 }}>
-              Sign in with the Facebook account that manages the Facebook Page linked to your Instagram Business or
-              Creator account.
+              <span className="ok">On.</span> Claude can queue posts and Trial Reels for any account, read stats and
+              comments, and save draft replies for you to send from Engage. It cannot like, follow, DM, send replies or
+              publish immediately.
             </p>
-            <div>
-              <a className={`button primary`} href="/api/auth/meta/start" aria-disabled={!appReady}>
-                Connect with Facebook
-              </a>
-            </div>
+            <p className="muted small" style={{ margin: 0 }}>
+              In Claude Code, open the <code>ig-growth-studio</code> folder and ask, for example: &ldquo;Plan next week
+              for @comealign and queue three Trial Reels from these links&rdquo;. Claude uses <code>npm run agent</code>,
+              which reads the key from <code>.env</code>. Instructions are in <code>CLAUDE.md</code>.
+            </p>
           </>
+        ) : (
+          <p style={{ margin: 0 }}>
+            Off. Set <code>AGENT_API_KEY</code> in <code>.env</code> and restart to let Claude plan and queue posts.
+          </p>
         )}
       </div>
 
@@ -89,8 +137,9 @@ export default async function SettingsPage({
             <Row label="Meta app ID / secret" ok={appReady} value={appReady ? "Set" : "Missing"} />
             <Row label="Graph API version" ok value={config.graphVersion} />
             <Row label="OAuth redirect URI" ok value={config.redirectUri} />
-            <Row label="Daily like cap" ok value={String(config.dailyLikeCap)} />
+            <Row label="Daily like cap (per account)" ok value={String(config.dailyLikeCap)} />
             <Row label="Cron secret" ok={Boolean(config.cronSecret)} value={config.cronSecret ? "Set" : "Not set (/api/cron disabled)"} />
+            <Row label="Claude API key" ok={Boolean(config.agentApiKey)} value={config.agentApiKey ? "Set" : "Not set (/api/agent disabled)"} />
           </tbody>
         </table>
       </div>

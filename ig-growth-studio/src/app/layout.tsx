@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cookies } from "next/headers";
-import { getAccount, getDb } from "@/lib/db";
+import { AccountSwitcher } from "@/components/AccountSwitcher";
+import { getAccount, getDb, listAccounts } from "@/lib/db";
 import { SESSION_COOKIE } from "@/lib/session";
 import "./globals.css";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const signedIn = (await cookies()).has(SESSION_COOKIE);
   const account = signedIn ? getAccount(getDb()) : null;
+  const accounts = signedIn ? listAccounts(getDb()).map(({ igUserId, username }) => ({ igUserId, username })) : [];
   return (
     <html lang="en">
       <body>
@@ -25,7 +27,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <Link href="/engage">Engage</Link>
               <Link href="/settings">Settings</Link>
             </nav>
-            <span className="muted small">{account ? `@${account.username}` : "Not connected"}</span>
+            {account && accounts.length > 1 ? (
+              <AccountSwitcher accounts={accounts} active={account.igUserId} />
+            ) : (
+              <span className="muted small">{account ? `@${account.username}` : "Not connected"}</span>
+            )}
             <form action="/api/logout" method="post">
               <button type="submit">Sign out</button>
             </form>

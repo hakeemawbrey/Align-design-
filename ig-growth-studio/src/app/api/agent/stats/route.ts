@@ -1,0 +1,41 @@
+import { type NextRequest, NextResponse } from "next/server";
+import { agentAuth, graphFailure, resolveAccount } from "@/lib/agent";
+import { getDb, listSnapshots } from "@/lib/db";
+import { accountStats } from "@/lib/insights";
+
+export const dynamic = "force-dynamic";
+
+export async function GET(req: NextRequest) {
+  const denied = agentAuth(req);
+  if (denied) return denied;
+  const db = getDb();
+  const account = resolveAccount(db, req.nextUrl.searchParams.get("account"));
+  if (account instanceof NextResponse) return account;
+  try {
+    const { profile, posts, avgRate } = await accountStats(account);
+    return NextResponse.json({
+      account: account.username,
+      followers: profile.followers_count ?? null,
+      following: profile.follows_count ?? null,
+      posts: profile.media_count ?? null,
+      avgEngagementPerReach: avgRate,
+      followerHistory: listSnapshots(db, account.igUserId),
+      recentPosts: posts.map((p) => ({
+        id: p.media.id,
+        type: p.media.media_product_type ?? p.media.media_type,
+        postedAt: p.media.timestamp,
+        permalink: p.media.permalink,
+        caption: p.media.caption ?? "",
+        likes: p.media.like_count ?? 0,
+        comments: p.media.comments_count ?? 0,
+        reach: p.reach,
+        views: p.values.views ?? null,
+        saves: p.values.saved ?? null,
+        shares: p.values.shares ?? null,
+        engagementPerReach: p.rate,
+      })),
+    });
+  } catch (err) {
+    return graphFailure(err);
+  }
+}

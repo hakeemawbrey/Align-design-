@@ -1,7 +1,7 @@
 import { ConnectPrompt } from "@/components/ConnectPrompt";
 import { Sparkline } from "@/components/Sparkline";
 import { getAccount, getDb, listSnapshots, saveSnapshot } from "@/lib/db";
-import { GraphClient, type Media } from "@/lib/graph";
+import { type PostStats, type Profile, accountStats } from "@/lib/insights";
 
 export const dynamic = "force-dynamic";
 
@@ -19,18 +19,16 @@ export default async function Dashboard() {
     );
   }
 
-  const client = new GraphClient({ token: account.token });
-  let profile: Awaited<ReturnType<GraphClient["profile"]>> | null = null;
-  let media: Media[] = [];
+  let profile: Profile | null = null;
+  let posts: PostStats[] = [];
+  let avgRate: number | null = null;
   let error: string | null = null;
   try {
-    [profile, media] = await Promise.all([
-      client.profile(account.igUserId),
-      client.recentMedia(account.igUserId, 12).then((r) => r.data),
-    ]);
+    ({ profile, posts, avgRate } = await accountStats(account));
     if (profile.followers_count !== undefined) {
       saveSnapshot(
         db,
+        account.igUserId,
         new Date().toISOString().slice(0, 10),
         profile.followers_count,
         profile.follows_count ?? null,
@@ -41,33 +39,17 @@ export default async function Dashboard() {
     error = err instanceof Error ? err.message : "Could not load account";
   }
 
-  const insights = await Promise.all(
-    media.map((m) =>
-      client.mediaInsights(m.id).then(
-        (v) => ({ ok: true as const, v }),
-        (e: Error) => ({ ok: false as const, error: e.message }),
-      ),
-    ),
-  );
-
-  const snapshots = listSnapshots(db);
+  const snapshots = listSnapshots(db, account.igUserId);
   const first = snapshots[0];
   const last = snapshots[snapshots.length - 1];
   const growth = first && last && snapshots.length > 1 ? last.followers - first.followers : null;
-
-  const rows = media.map((m, i) => {
-    const ins = insights[i];
-    const v = ins.ok ? ins.v : {};
-    const reach = v.reach ?? 0;
-    const interactions = v.total_interactions ?? (m.like_count ?? 0) + (m.comments_count ?? 0) + (v.saved ?? 0) + (v.shares ?? 0);
-    return { m, v, reach, interactions, rate: reach > 0 ? interactions / reach : null, error: ins.ok ? null : ins.error };
-  });
-  const rated = rows.filter((r) => r.rate !== null);
-  const avgRate = rated.length ? rated.reduce((s, r) => s + (r.rate ?? 0), 0) / rated.length : null;
+  const rows = posts.map((p) => ({ m: p.media, v: p.values, reach: p.reach, rate: p.rate, error: p.error }));
 
   return (
     <>
-      <h1>Dashboard</h1>
+      <h1>
+        Dashboard <span className="muted">@{account.username}</span>
+      </h1>
       {error && <p className="error">{error}</p>}
       {profile && (
         <div className="stats">

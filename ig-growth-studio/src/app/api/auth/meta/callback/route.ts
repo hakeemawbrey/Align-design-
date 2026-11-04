@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { config } from "@/lib/config";
-import { getDb, saveAccount, setSetting } from "@/lib/db";
+import { getAccount, getDb, setActiveAccount, upsertAccounts } from "@/lib/db";
 import { GraphClient } from "@/lib/graph";
 
 export async function GET(req: NextRequest) {
@@ -36,11 +36,14 @@ export async function GET(req: NextRequest) {
     }
     const db = getDb();
     const expiresAt = long.expires_in ? new Date(Date.now() + long.expires_in * 1000).toISOString() : null;
-    setSetting(db, "user_token", JSON.stringify({ token: long.access_token, expiresAt }));
-    setSetting(db, "linked_accounts", JSON.stringify(linked));
-    const first = linked[0];
-    saveAccount(db, { igUserId: first.igUserId, username: first.username, token: long.access_token, tokenExpiresAt: expiresAt });
-    return back("connected=1");
+    // Adds new accounts and refreshes tokens for ones already connected; other accounts stay as they are.
+    const hadActive = getAccount(db) !== null;
+    upsertAccounts(
+      db,
+      linked.map((a) => ({ ...a, token: long.access_token, tokenExpiresAt: expiresAt })),
+    );
+    if (!hadActive) setActiveAccount(db, linked[0].igUserId);
+    return back(`connected=${encodeURIComponent(linked.map((a) => a.username).join(","))}`);
   } catch (err) {
     return back(`error=${encodeURIComponent(err instanceof Error ? err.message : "Login failed")}`);
   }

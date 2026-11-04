@@ -9,7 +9,8 @@
     "start": "next start",
     "worker": "tsx scripts/worker.ts",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "agent": "tsx scripts/agent.ts"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",

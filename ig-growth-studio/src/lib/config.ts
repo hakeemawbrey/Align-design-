@@ -21,6 +21,10 @@ export const config = {
   get cronSecret() {
     return process.env.CRON_SECRET ?? "";
   },
+  /** Bearer key for /api/agent (Claude automation). Empty disables the API. */
+  get agentApiKey() {
+    return process.env.AGENT_API_KEY ?? "";
+  },
   get dailyLikeCap() {
     const n = Number(process.env.DAILY_LIKE_CAP);
     return Number.isFinite(n) && n >= 0 ? Math.floor(n) : 30;

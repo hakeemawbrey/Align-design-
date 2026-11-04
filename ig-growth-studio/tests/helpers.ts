@@ -2,8 +2,11 @@ import { vi } from "vitest";
 import { GraphClient } from "../src/lib/graph";
 
 /** A fetch stub that answers by "METHOD path" and records every call. */
-export function fakeGraph(routes: Record<string, (url: URL, body: URLSearchParams | null) => unknown>) {
-  const calls: { method: string; path: string; params: Record<string, string> }[] = [];
+type Route = (url: URL, body: URLSearchParams | null) => unknown;
+type Call = { method: string; path: string; params: Record<string, string> };
+
+/** A fetch stub that answers by "METHOD path" and records every call into `calls`. */
+export function fakeGraphFetch(routes: Record<string, Route>, calls: Call[] = []) {
   const fetchImpl = vi.fn(async (input: URL | RequestInfo, init?: RequestInit) => {
     const url = new URL(String(input));
     const method = init?.method ?? "GET";
@@ -16,8 +19,14 @@ export function fakeGraph(routes: Record<string, (url: URL, body: URLSearchParam
     const out = handler(url, body);
     if (out instanceof Response) return out;
     return new Response(JSON.stringify(out), { status: 200 });
-  });
-  const client = new GraphClient({ token: "TOKEN", version: "v26.0", fetchImpl: fetchImpl as unknown as typeof fetch });
+  }) as unknown as typeof fetch;
+  return { fetchImpl, calls };
+}
+
+/** A GraphClient (token "TOKEN") backed by fakeGraphFetch. */
+export function fakeGraph(routes: Record<string, Route>) {
+  const { fetchImpl, calls } = fakeGraphFetch(routes);
+  const client = new GraphClient({ token: "TOKEN", version: "v26.0", fetchImpl });
   return { client, calls };
 }
 

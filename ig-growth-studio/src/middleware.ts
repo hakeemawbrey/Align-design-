@@ -1,7 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { SESSION_COOKIE, verifySession } from "@/lib/session";
 
-const PUBLIC_PATHS = ["/login", "/api/login", "/api/cron"];
+// /api/cron and /api/agent check their own bearer keys instead of the session cookie.
+const PUBLIC_PATHS = ["/login", "/api/login", "/api/cron", "/api/agent"];
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;

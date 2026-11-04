@@ -5,52 +5,47 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import {
   addNiche,
-  createPost,
+  deleteDraft,
   getAccount,
   getDb,
   getPost,
-  getSetting,
+  removeAccount,
+  removeAllAccounts,
   removeNiche,
-  saveAccount,
-  setSetting,
+  setActiveAccount,
   updatePost,
 } from "@/lib/db";
 import { GraphClient } from "@/lib/graph";
+import { PostFields, queuePost } from "@/lib/posts";
 import { localToUtc } from "@/lib/time";
 
-const PostInput = z.object({
-  type: z.enum(["IMAGE", "REELS"]),
-  mediaUrl: z.url({ protocol: /^https$/, message: "Media URL must be a public https:// link" }),
-  caption: z.string().max(2200, "Captions are limited to 2,200 characters"),
-  shareToFeed: z.boolean(),
+const When = z.object({
   // Local time from <input type="datetime-local"> plus the browser's offset in minutes.
   scheduledAt: z.string().min(1, "Pick a date and time"),
   tzOffset: z.coerce.number().int(),
 });
 
 export async function schedulePost(_: unknown, form: FormData): Promise<{ error?: string; ok?: boolean }> {
-  const parsed = PostInput.safeParse({
-    type: form.get("type"),
+  const type = form.get("type");
+  const trial = form.get("trial");
+  const fields = PostFields.safeParse({
+    type,
     mediaUrl: form.get("mediaUrl"),
     caption: String(form.get("caption") ?? ""),
     shareToFeed: form.get("shareToFeed") === "on",
-    scheduledAt: form.get("scheduledAt"),
-    tzOffset: form.get("tzOffset") ?? 0,
+    trial: type === "REELS" && (trial === "MANUAL" || trial === "SS_PERFORMANCE") ? trial : null,
   });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Invalid input" };
+  if (!fields.success) return { error: fields.error.issues[0]?.message ?? "Invalid input" };
+  const when = When.safeParse({ scheduledAt: form.get("scheduledAt"), tzOffset: form.get("tzOffset") ?? 0 });
+  if (!when.success) return { error: when.error.issues[0]?.message ?? "Invalid date" };
+  const at = localToUtc(when.data.scheduledAt, when.data.tzOffset);
+  if (!at) return { error: "Invalid date" };
 
-  const when = localToUtc(parsed.data.scheduledAt, parsed.data.tzOffset);
-  if (!when) return { error: "Invalid date" };
-  const hashtags = (parsed.data.caption.match(/#\w+/g) ?? []).length;
-  if (hashtags > 30) return { error: "Instagram allows at most 30 hashtags per post" };
-
-  createPost(getDb(), {
-    type: parsed.data.type,
-    mediaUrl: parsed.data.mediaUrl,
-    caption: parsed.data.caption,
-    shareToFeed: parsed.data.shareToFeed,
-    scheduledAt: when,
-  });
+  const db = getDb();
+  const account = getAccount(db, String(form.get("account") ?? "") || null);
+  if (!account) return { error: "Connect an Instagram account first" };
+  const res = queuePost(db, account, fields.data, at, "you");
+  if ("error" in res) return { error: res.error };
   revalidatePath("/schedule");
   return { ok: true };
 }
@@ -67,7 +62,7 @@ export async function retryPost(form: FormData) {
   const db = getDb();
   const id = Number(form.get("id"));
   const post = getPost(db, id);
-  if (post && (post.status === "failed" || post.status === "cancelled")) {
+  if (post && (post.status === "failed" || post.status === "cancelled") && getAccount(db, post.ig_user_id)) {
     updatePost(db, id, {
       status: "scheduled",
       container_id: null,
@@ -84,12 +79,14 @@ export async function addNicheAccount(form: FormData) {
     .trim()
     .replace(/^@/, "")
     .toLowerCase();
-  if (/^[a-z0-9._]{1,30}$/.test(username)) addNiche(getDb(), username);
+  const account = getAccount(getDb());
+  if (account && /^[a-z0-9._]{1,30}$/.test(username)) addNiche(getDb(), account.igUserId, username);
   revalidatePath("/engage");
 }
 
 export async function removeNicheAccount(form: FormData) {
-  removeNiche(getDb(), String(form.get("username") ?? ""));
+  const account = getAccount(getDb());
+  if (account) removeNiche(getDb(), account.igUserId, String(form.get("username") ?? ""));
   revalidatePath("/engage");
 }
 
@@ -97,34 +94,36 @@ export async function replyToComment(_: unknown, form: FormData): Promise<{ erro
   const commentId = String(form.get("commentId") ?? "");
   const message = String(form.get("message") ?? "").trim();
   if (!/^\d+$/.test(commentId) || !message) return { error: "Write a reply first" };
-  const account = getAccount(getDb());
+  const db = getDb();
+  const account = getAccount(db, String(form.get("account") ?? "") || null);
   if (!account) return { error: "Connect an Instagram account first" };
   try {
     await new GraphClient({ token: account.token }).reply(commentId, message);
   } catch (err) {
     return { error: err instanceof Error ? err.message : "Reply failed" };
   }
+  deleteDraft(db, commentId);
   revalidatePath("/engage");
   return { ok: true };
 }
 
+export async function discardDraft(form: FormData) {
+  deleteDraft(getDb(), String(form.get("commentId") ?? ""));
+  revalidatePath("/engage");
+}
+
 export async function selectAccount(form: FormData) {
-  const db = getDb();
-  const igUserId = String(form.get("igUserId") ?? "");
-  const linked = JSON.parse(getSetting(db, "linked_accounts") ?? "[]") as { igUserId: string; username: string }[];
-  const user = JSON.parse(getSetting(db, "user_token") ?? "null") as { token: string; expiresAt: string | null } | null;
-  const pick = linked.find((a) => a.igUserId === igUserId);
-  if (pick && user) {
-    saveAccount(db, { igUserId: pick.igUserId, username: pick.username, token: user.token, tokenExpiresAt: user.expiresAt });
-  }
+  setActiveAccount(getDb(), String(form.get("igUserId") ?? ""));
+  revalidatePath("/", "layout");
+}
+
+export async function removeAccountAction(form: FormData) {
+  removeAccount(getDb(), String(form.get("igUserId") ?? ""));
   revalidatePath("/", "layout");
 }
 
 export async function disconnect() {
-  const db = getDb();
-  saveAccount(db, null);
-  setSetting(db, "user_token", null);
-  setSetting(db, "linked_accounts", null);
+  removeAllAccounts(getDb());
   revalidatePath("/", "layout");
   redirect("/settings");
 }

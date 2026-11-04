@@ -133,12 +133,24 @@ export class GraphClient {
     return this.request<{ id: string }>("POST", `${igUserId}/media`, { image_url: imageUrl, caption });
   }
 
-  createReelContainer(igUserId: string, videoUrl: string, caption: string, shareToFeed: boolean) {
+  /**
+   * Reel container. With `trial`, it becomes a Trial Reel: shown to non-followers first, then shared
+   * with followers by hand (MANUAL) or automatically if it performs well (SS_PERFORMANCE).
+   */
+  createReelContainer(
+    igUserId: string,
+    videoUrl: string,
+    caption: string,
+    shareToFeed: boolean,
+    trial?: "MANUAL" | "SS_PERFORMANCE" | null,
+  ) {
     return this.request<{ id: string }>("POST", `${igUserId}/media`, {
       media_type: "REELS",
       video_url: videoUrl,
       caption,
-      share_to_feed: shareToFeed,
+      ...(trial
+        ? { trial_params: JSON.stringify({ graduation_strategy: trial }) }
+        : { share_to_feed: shareToFeed }),
     });
   }
 

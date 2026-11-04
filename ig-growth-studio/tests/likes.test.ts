@@ -19,7 +19,7 @@ describe("likeOne", () => {
     const { client, calls } = graph();
     await likeOne(db, client, "17841", { mediaId: "111" }, { cap: 5, now: new Date("2026-11-01T10:00:00Z") });
     expect(calls[0]).toMatchObject({ method: "POST", path: "17841/likes", params: { media_id: "111" } });
-    expect(likedIds(db).has("111")).toBe(true);
+    expect(likedIds(db, "17841").has("111")).toBe(true);
   });
 
   it("skips posts already liked", async () => {
@@ -47,11 +47,25 @@ describe("likeOne", () => {
     await likeOne(db, client, "17841", { mediaId: "1" }, { cap: 2, now: t });
     await unlikeOne(db, client, "17841", { mediaId: "1" });
     await likeOne(db, client, "17841", { mediaId: "2" }, { cap: 2, now: step() });
-    expect(likesToday(db, t)).toBe(2);
+    expect(likesToday(db, "17841", t)).toBe(2);
     await expect(likeOne(db, client, "17841", { mediaId: "3" }, { cap: 2, now: step() })).rejects.toBeInstanceOf(
       LikeCapReached,
     );
     await likeOne(db, client, "17841", { mediaId: "3" }, { cap: 2, now: new Date("2026-11-02T00:00:05Z") });
+  });
+
+  it("counts the cap and spacing separately for each account", async () => {
+    const { client } = fakeGraph({
+      "POST 17841/likes": () => ({ success: true }),
+      "POST 555/likes": () => ({ success: true }),
+    });
+    const t = new Date("2026-11-01T10:00:00Z");
+    await likeOne(db, client, "17841", { mediaId: "1" }, { cap: 1, now: t });
+    // Same moment, same post, other account: allowed.
+    await likeOne(db, client, "555", { mediaId: "1" }, { cap: 1, now: t });
+    expect(likesToday(db, "17841", t)).toBe(1);
+    expect(likesToday(db, "555", t)).toBe(1);
+    expect(likedIds(db, "555").has("1")).toBe(true);
   });
 
   it("requires exactly one target", async () => {
