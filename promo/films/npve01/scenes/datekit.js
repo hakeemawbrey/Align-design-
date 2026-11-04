@@ -179,11 +179,11 @@ function holes(x, col, rects, area = [-140, -140, 1360, 2200]) {
   for (const [a, b, c, d] of rects) x.rect(a, b, c, d)
   x.fillStyle = col; x.fill('evenodd'); x.restore()
 }
-function frame(x, X, Y, W, H, col = '#4a2f2a', b = 18) {
+function frame(x, X, Y, W, H, col = '#4a2f2a', b = 18, mull = true) {
   R(x, INK, X - b - 6, Y - b - 6, W + 2 * b + 12, b + 6); R(x, INK, X - b - 6, Y + H, W + 2 * b + 12, b + 6)
   R(x, INK, X - b - 6, Y - b, b + 6, H + 2 * b); R(x, INK, X + W, Y - b, b + 6, H + 2 * b)
   R(x, col, X - b, Y - b, W + 2 * b, b); R(x, col, X - b, Y + H, W + 2 * b, b); R(x, col, X - b, Y, b, H); R(x, col, X + W, Y, b, H)
-  R(x, col, X + W / 2 - b / 2, Y, b, H)                    // mullion
+  if (mull) R(x, col, X + W / 2 - b / 2, Y, b, H)          // mullion
   R(x, 'rgba(255,255,255,0.18)', X - b, Y - b, W + 2 * b, 4)
 }
 /** a sagging string of warm bulbs from (x0,y0) to (x1,y1) */
@@ -255,7 +255,7 @@ export function drawSet(x, t, kind = 'cafe', { snowN = 46 } = {}) {
     snow(x, t, -140, -140, 1360, 2200, { n: snowN, seed: 3 })
     skyline(x, t, 1060); ground(x, t, 1060)
     holes(x, '#3a2346', [[180, 220, 720, 1180]])
-    frame(x, 180, 220, 720, 1180, '#e9dccb', 26)
+    frame(x, 180, 220, 720, 1180, '#e9dccb', 26, false)
     R(x, '#2a1a36', -140, 1400, 1360, 700); R(x, '#5a3a4e', -140, 1400, 1360, 18)
     lamp(x, 1010, 420, 0)
     return
