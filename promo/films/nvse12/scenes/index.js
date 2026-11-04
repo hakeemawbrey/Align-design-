@@ -1,5 +1,5 @@
-// nvse12: SIGN VS SIGN, "Who writes a holiday card better?" ♑ Capricorn vs ♓ Pisces (18 s trial reel, b46,
-// music: lofi · Em). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse12: SIGN VS SIGN, "Who writes a holiday card better?" ♑ Capricorn vs ♓ Pisces (16 s trial reel, b46,
+// music: lofi · Em). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 // Pisces plays this one, so it cries on its own side (no corner Pisces).
 //   hook: both mid-hop, pens up, a blank card between them.
 //   ROUND 1 ♑ "writes a *formal letter.*" Season’s greetings. Regards. Crumpled drafts pile up: DRAFT 12. "draft twelve." → "too warm? too cold?"
