@@ -1,7 +1,7 @@
-// nfde01: THE FIRST THREE DATES · Date 1 with a Fire sign: what to ask (30 s vertical, star_advice, music: funk · E).
+// nfde01: THE FIRST THREE DATES · Date 1 with a Fire sign: what to ask (28 s vertical, star_advice, music: funk · E).
 // The format lives in nfde01/scenes/datekit.js (shared by nfde01–nfde12). Story 0–25.6, then the shared end card.
 //   0.0   hook: "Date 1 with a Fire sign." Aries at the market with YOU.
-//   3.1   SKIP: the job *interview.* → the red SKIP stamp.   11.0 card cut.
+//   3.1   SKIP: the job *interview.* → the red SKIP stamp.   11.0 → TRY.
 //   11.1  TRY: ask what *excites* them. Aries: "OK SO. I’m learning to surf AND—"
 //   19.3  the tip note (talk). THE STARS: "Ask what *lights* them up."
 import { makeDates } from './datekit.js'

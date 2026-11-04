@@ -1,13 +1,13 @@
 // THE FIRST THREE DATES: the shared look of the twelve star_advice films nfde01–nfde12 (30 s each, three dates × four
 // elements, promo/films/next30/b37.md). Every episode imports this kit from nfde01; nothing here touches another folder.
 //
-// The format (30 s, story 0–25.6, then the shared end card):
+// The format (28 s, story 0–25.6, then the shared end card):
 //   0.00–3.00   hook (frame 0 is the thumbnail): "Date *N* with a | *<Element>* sign." is already up, a part sticker
 //               under it (WHAT TO ASK · READING IT · SAYING WHAT YOU WANT), the date star mid-action at the spot and
 //               YOU (a lavender star) beside it. Three heart pips under the bug: the episode's date is lit.
 //   3.00–11.00  SKIP: "*Skip:* <the move>." YOU try it (speech bubble), the date reacts (yawn / eyeroll / shrink),
 //               a red SKIP ✕ stamp slams over it.
-//   11.00       the one card cut.
+//   11.00       (no card transition: the owner's 4 Nov change).
 //   11.00–19.20 TRY: "*Try:* <the move>." YOU try the good move, the date lights up and answers, a green ✓ pops.
 //               THE STARS explain in two lines (dialogue box).
 //   19.20–25.50 TIP: a pinned note with the tip and a light app tie-in chip; THE STARS say the last line.
@@ -20,8 +20,8 @@
 //     cfg.hookMood, cfg.hookProp(x, t, F) optional, cfg.dateIsPisces.
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, ELEMENT_COLOR, READING } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { fill, A } from '../../../src/scenes/common.js'
 import { popText } from '../../lesson.js'
@@ -30,8 +30,8 @@ import {
   R, box, drawBits, HEART, sparkles, hearts, label, shadow, starFrame, inSprite, tearsCells, buildBug,
 } from '../../nnye01/scenes/pix.js'
 
-export const DURATION = 30
-export const STORY_END = DURATION - ENDCARD_LEN          // 25.6
+export const DURATION = 28
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN          // 25.6
 export const T = {
   h0: -0.9, h0Out: [2.85, 3.05],
   hS: 3.1, hSOut: [10.7, 10.9], youSay: 3.7, react: 5.9, xStamp: 8.4,
@@ -357,7 +357,7 @@ export function makeDates(cfg) {
   }
 
   const CUTS = [8.0, { t: T.cut, kind: 'flip' }, 19.2]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const wordPops = (t0, n, gap, b0 = 0, gain = 0.024) => Array.from({ length: n }, (_, i) => ['pop', r3(t0 + i * gap), NOTE[(b0 + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
@@ -376,8 +376,7 @@ export function makeDates(cfg) {
     ['pop', T.chip, 1174.66, 0.045, 0.4], ['pop', r3(T.chip + 0.07), 1567.98, 0.03, 0.4], ['glitter', T.chip, r3(T.chip + 0.35)],
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }
