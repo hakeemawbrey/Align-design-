@@ -1,10 +1,10 @@
-// naske23 · Ask the Stars, Volume 2, ep 23 · "Their friends don't get me." (20 s, synthwave · Bm)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske23 · Ask the Stars, Volume 2, ep 23 · "Their friends don't get me." (18 s, synthwave · Bm)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "Their friends don't *get* me."  ♒ Aquarius mid-wave at a party in a HELLO sticker with a doodled
 //         planet; a row of guest stars chat among themselves, turned away.
 //   3.0   "you don't have to win the whole room."  The crowd dims to one guest.
 //   5.9   "find one friend. ask about their thing."  That guest lights up: "I KNIT SCARVES!"  Aquarius: sparkle eyes.
-//   8.75  card cut → 8.8 "let your partner bridge the rest."  The partner steps in between; a sparkle bridge joins them.
+//   8.8   "let your partner bridge the rest."  The partner steps in between; a sparkle bridge joins them.
 //   12.1  "Win them over | *one* at a time."
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, label, drawStarChar, signStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, INTER, MONO, drawPixelStar } from '../../naske19/scenes/askkit2.js'
 
