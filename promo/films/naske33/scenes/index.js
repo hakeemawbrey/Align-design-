@@ -1,10 +1,10 @@
-// naske33 · Ask the Stars, Volume 2, ep 33 · "They want to settle down. I want to travel." (20 s, house · A)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske33 · Ask the Stars, Volume 2, ep 33 · "They want to settle down. I want to travel." (18 s, house · A)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "They want to settle down. I want to *travel.*"  ♐ Sag mid-sprint with a backpack (speed lines), while
 //         its partner holds up a tiny house.
 //   3.0   "you can want both. say both out loud."  Two signs light up: ADVENTURE · HOME.
 //   5.9   "plan one trip together, then a home base."  A dotted map route that ends at a little house.
-//   8.75  card cut → 8.8 "a good partner is a home you can travel with."  Both walking: a suitcase, a house-lantern.
+//   8.8   "a good partner is a home you can travel with."  Both walking: a suitcase, a house-lantern.
 //   12.1  "Home can *travel.*"
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, hatCells, snowBank, label, drawPixelStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, INTER } from '../../naske19/scenes/askkit2.js'
 
