@@ -1,10 +1,10 @@
-// naske29 · Ask the Stars, Volume 2, ep 29 · "I forgot their birthday." (20 s, jazzy · Bb)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske29 · Ask the Stars, Volume 2, ep 29 · "I forgot their birthday." (18 s, jazzy · Bb)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "I forgot their *birthday.*"  ♌ Leo mid-gasp at a wall calendar with yesterday circled in red; a party
 //         hat slides off its point.
 //   3.0   "own it fast: 'i forgot. i'm really sorry.'"  One big honest bubble: I FORGOT. I'M SORRY.
 //   5.9   "no big excuse. a real plan to make it up."  Leo bakes a lopsided cake; the candles light one by one.
-//   8.75  card cut → 8.8 "then put it in your calendar. today."  A calendar page with a gold star: REPEATS EVERY YEAR.
+//   8.8   "then put it in your calendar. today."  A calendar page with a gold star: REPEATS EVERY YEAR.
 //   12.1  "Own it. | Then *make it up.*"
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, label, drawPixelStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, PINK, INTER, MONO } from '../../naske19/scenes/askkit2.js'
 
