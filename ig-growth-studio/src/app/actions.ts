@@ -43,29 +43,29 @@ export async function schedulePost(_: unknown, form: FormData): Promise<{ error?
   const at = localToUtc(when.data.scheduledAt, when.data.tzOffset);
   if (!at) return { error: "Invalid date" };
 
-  const db = getDb();
-  const account = getAccount(db, String(form.get("account") ?? "") || null);
+  const db = await getDb();
+  const account = await getAccount(db, String(form.get("account") ?? "") || null);
   if (!account) return { error: "Connect an Instagram account first" };
-  const res = queuePost(db, account, fields.data, at, "you");
+  const res = await queuePost(db, account, fields.data, at, "you");
   if ("error" in res) return { error: res.error };
   revalidatePath("/schedule");
   return { ok: true };
 }
 
 export async function cancelPost(form: FormData) {
-  const db = getDb();
+  const db = await getDb();
   const id = Number(form.get("id"));
-  const post = getPost(db, id);
-  if (post && post.status === "scheduled") updatePost(db, id, { status: "cancelled" });
+  const post = await getPost(db, id);
+  if (post && post.status === "scheduled") await updatePost(db, id, { status: "cancelled" });
   revalidatePath("/schedule");
 }
 
 export async function retryPost(form: FormData) {
-  const db = getDb();
+  const db = await getDb();
   const id = Number(form.get("id"));
-  const post = getPost(db, id);
-  if (post && (post.status === "failed" || post.status === "cancelled") && getAccount(db, post.ig_user_id)) {
-    updatePost(db, id, {
+  const post = await getPost(db, id);
+  if (post && (post.status === "failed" || post.status === "cancelled") && await getAccount(db, post.ig_user_id)) {
+    await updatePost(db, id, {
       status: "scheduled",
       container_id: null,
       error: null,
@@ -81,14 +81,14 @@ export async function addNicheAccount(form: FormData) {
     .trim()
     .replace(/^@/, "")
     .toLowerCase();
-  const account = getAccount(getDb());
-  if (account && /^[a-z0-9._]{1,30}$/.test(username)) addNiche(getDb(), account.igUserId, username);
+  const account = await getAccount(await getDb());
+  if (account && /^[a-z0-9._]{1,30}$/.test(username)) await addNiche(await getDb(), account.igUserId, username);
   revalidatePath("/engage");
 }
 
 export async function removeNicheAccount(form: FormData) {
-  const account = getAccount(getDb());
-  if (account) removeNiche(getDb(), account.igUserId, String(form.get("username") ?? ""));
+  const account = await getAccount(await getDb());
+  if (account) await removeNiche(await getDb(), account.igUserId, String(form.get("username") ?? ""));
   revalidatePath("/engage");
 }
 
@@ -96,47 +96,47 @@ export async function replyToComment(_: unknown, form: FormData): Promise<{ erro
   const commentId = String(form.get("commentId") ?? "");
   const message = String(form.get("message") ?? "").trim();
   if (!/^\d+$/.test(commentId) || !message) return { error: "Write a reply first" };
-  const db = getDb();
-  const account = getAccount(db, String(form.get("account") ?? "") || null);
+  const db = await getDb();
+  const account = await getAccount(db, String(form.get("account") ?? "") || null);
   if (!account) return { error: "Connect an Instagram account first" };
   try {
     await new GraphClient({ token: account.token }).reply(commentId, message);
   } catch (err) {
     return { error: err instanceof Error ? err.message : "Reply failed" };
   }
-  deleteDraft(db, commentId);
+  await deleteDraft(db, commentId);
   revalidatePath("/engage");
   return { ok: true };
 }
 
 export async function discardDraft(form: FormData) {
-  deleteDraft(getDb(), String(form.get("commentId") ?? ""));
+  await deleteDraft(await getDb(), String(form.get("commentId") ?? ""));
   revalidatePath("/engage");
 }
 
 export async function selectAccount(form: FormData) {
-  setActiveAccount(getDb(), String(form.get("igUserId") ?? ""));
+  await setActiveAccount(await getDb(), String(form.get("igUserId") ?? ""));
   revalidatePath("/", "layout");
 }
 
 export async function removeAccountAction(form: FormData) {
-  removeAccount(getDb(), String(form.get("igUserId") ?? ""));
+  await removeAccount(await getDb(), String(form.get("igUserId") ?? ""));
   revalidatePath("/", "layout");
 }
 
 export async function disconnect() {
-  removeAllAccounts(getDb());
+  await removeAllAccounts(await getDb());
   revalidatePath("/", "layout");
   redirect("/settings");
 }
 
 export async function addChosenAccounts(form: FormData) {
-  const added = addFromPendingLogin(getDb(), form.getAll("igUserId").map(String));
+  const added = await addFromPendingLogin(await getDb(), form.getAll("igUserId").map(String));
   revalidatePath("/", "layout");
   redirect(added.length ? `/settings?connected=${encodeURIComponent(added.join(","))}` : "/settings");
 }
 
 export async function skipPendingAccounts() {
-  clearPendingLogin(getDb());
+  await clearPendingLogin(await getDb());
   revalidatePath("/settings");
 }

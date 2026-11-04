@@ -8,11 +8,11 @@ export const dynamic = "force-dynamic";
 export async function GET(req: NextRequest) {
   const denied = agentAuth(req);
   if (denied) return denied;
-  const db = getDb();
-  const account = resolveAccount(db, req.nextUrl.searchParams.get("account"));
+  const db = await getDb();
+  const account = await resolveAccount(db, req.nextUrl.searchParams.get("account"));
   if (account instanceof NextResponse) return account;
   try {
-    const drafts = listDrafts(db, account.igUserId);
+    const drafts = await listDrafts(db, account.igUserId);
     const list = await unansweredComments(account);
     return NextResponse.json({
       account: account.username,

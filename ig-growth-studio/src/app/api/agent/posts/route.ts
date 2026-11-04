@@ -20,17 +20,17 @@ const Body = PostFields.extend({
 export async function GET(req: NextRequest) {
   const denied = agentAuth(req);
   if (denied) return denied;
-  const db = getDb();
+  const db = await getDb();
   const q = req.nextUrl.searchParams;
   let igUserId: string | undefined;
   if (q.get("account")) {
-    const account = resolveAccount(db, q.get("account"));
+    const account = await resolveAccount(db, q.get("account"));
     if (account instanceof NextResponse) return account;
     igUserId = account.igUserId;
   }
   const date = (v: string | null) => (v && !Number.isNaN(Date.parse(v)) ? new Date(v) : undefined);
-  const accounts = new Map(listAccounts(db).map((a) => [a.igUserId, a]));
-  const posts = listPosts(db, { igUserId, from: date(q.get("from")), to: date(q.get("to")) });
+  const accounts = new Map((await listAccounts(db)).map((a) => [a.igUserId, a]));
+  const posts = await listPosts(db, { igUserId, from: date(q.get("from")), to: date(q.get("to")) });
   return NextResponse.json({ posts: posts.map((p) => publicPost(p, accounts)) });
 }
 
@@ -42,15 +42,15 @@ export async function POST(req: NextRequest) {
     const issue = parsed.error.issues[0];
     return NextResponse.json({ error: `${issue?.path.join(".") || "body"}: ${issue?.message ?? "invalid"}` }, { status: 400 });
   }
-  const db = getDb();
-  const account = resolveAccount(db, parsed.data.account);
+  const db = await getDb();
+  const account = await resolveAccount(db, parsed.data.account);
   if (account instanceof NextResponse) return account;
   const when = new Date(parsed.data.scheduledAt);
   if (when.getTime() < Date.now() + MIN_LEAD_MS) {
     return NextResponse.json({ error: "scheduledAt must be at least 2 minutes in the future" }, { status: 400 });
   }
-  const res = queuePost(db, account, parsed.data, when, "claude");
+  const res = await queuePost(db, account, parsed.data, when, "claude");
   if ("error" in res) return NextResponse.json(res, { status: 400 });
-  const post = listPosts(db, { igUserId: account.igUserId }).find((p) => p.id === res.id)!;
+  const post = (await listPosts(db, { igUserId: account.igUserId })).find((p) => p.id === res.id)!;
   return NextResponse.json({ post: publicPost(post, new Map([[account.igUserId, account]])) }, { status: 201 });
 }

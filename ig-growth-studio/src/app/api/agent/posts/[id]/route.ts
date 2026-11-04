@@ -7,13 +7,13 @@ export const dynamic = "force-dynamic";
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const denied = agentAuth(req);
   if (denied) return denied;
-  const db = getDb();
+  const db = await getDb();
   const id = Number((await params).id);
-  const post = Number.isInteger(id) ? getPost(db, id) : undefined;
+  const post = Number.isInteger(id) ? await getPost(db, id) : undefined;
   if (!post) return NextResponse.json({ error: "No such post" }, { status: 404 });
   if (post.status !== "scheduled") {
     return NextResponse.json({ error: `Only scheduled posts can be cancelled (this one is ${post.status})` }, { status: 409 });
   }
-  updatePost(db, id, { status: "cancelled" });
+  await updatePost(db, id, { status: "cancelled" });
   return NextResponse.json({ ok: true });
 }

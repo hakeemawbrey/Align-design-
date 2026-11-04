@@ -34,18 +34,18 @@ export async function GET(req: NextRequest) {
           ),
       );
     }
-    const db = getDb();
+    const db = await getDb();
     const expiresAt = long.expires_in ? new Date(Date.now() + long.expires_in * 1000).toISOString() : null;
     // Accounts already connected just get the fresh token. New ones wait on Settings for the owner to pick.
-    const known = new Set(listAccounts(db).map((a) => a.igUserId));
+    const known = new Set((await listAccounts(db)).map((a) => a.igUserId));
     const refreshed = linked.filter((a) => known.has(a.igUserId));
     const found = linked.filter((a) => !known.has(a.igUserId));
-    upsertAccounts(
+    await upsertAccounts(
       db,
       refreshed.map((a) => ({ ...a, token: long.access_token, tokenExpiresAt: expiresAt })),
     );
     if (found.length === 0) return back(`refreshed=${refreshed.length}`);
-    savePendingLogin(db, { token: long.access_token, expiresAt, accounts: found });
+    await savePendingLogin(db, { token: long.access_token, expiresAt, accounts: found });
     return back(`choose=1&refreshed=${refreshed.length}`);
   } catch (err) {
     return back(`error=${encodeURIComponent(err instanceof Error ? err.message : "Login failed")}`);

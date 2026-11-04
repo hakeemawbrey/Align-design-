@@ -13,8 +13,8 @@ export const dynamic = "force-dynamic";
 const MAX_FEED_AGE_DAYS = 14;
 
 export default async function EngagePage() {
-  const db = getDb();
-  const account = getAccount(db);
+  const db = await getDb();
+  const account = await getAccount(db);
   if (!account) {
     return (
       <>
@@ -24,9 +24,9 @@ export default async function EngagePage() {
     );
   }
   const client = new GraphClient({ token: account.token });
-  const niche = listNiche(db, account.igUserId);
-  const liked = likedIds(db, account.igUserId);
-  const drafts = listDrafts(db, account.igUserId);
+  const niche = await listNiche(db, account.igUserId);
+  const liked = await likedIds(db, account.igUserId);
+  const drafts = await listDrafts(db, account.igUserId);
 
   // Recent posts from niche accounts (Business Discovery only works for Business/Creator accounts).
   const discovered = await Promise.all(
@@ -60,7 +60,7 @@ export default async function EngagePage() {
       </h1>
       <p className="muted small">
         Every like and reply here is one click by you. Likes are capped at {config.dailyLikeCap} a day per account (
-        {likesToday(db, account.igUserId)} used today) and spaced a few seconds apart. Thoughtful replies grow an account faster than
+        {await likesToday(db, account.igUserId)} used today) and spaced a few seconds apart. Thoughtful replies grow an account faster than
         likes.
       </p>
 

@@ -1,9 +1,13 @@
-import Database from "better-sqlite3";
+import { type Client, type InStatement, createClient } from "@libsql/client";
 import fs from "node:fs";
 import path from "node:path";
 import { config } from "./config";
 
-export type DB = Database.Database;
+/**
+ * libSQL client: a local SQLite file in development (DATABASE_PATH), or a hosted Turso database in the
+ * cloud (TURSO_DATABASE_URL + TURSO_AUTH_TOKEN). Every query is async.
+ */
+export type DB = Client;
 
 export type PostStatus = "scheduled" | "processing" | "published" | "failed" | "cancelled";
 export type PostType = "IMAGE" | "REELS";
@@ -37,6 +41,21 @@ export interface Account {
   pageName: string;
   token: string;
   tokenExpiresAt: string | null;
+}
+
+type Arg = string | number | bigint | null;
+
+async function all<T>(db: DB, sql: string, args: Arg[] = []): Promise<T[]> {
+  const rs = await db.execute({ sql, args });
+  return rs.rows.map((r) => Object.fromEntries(rs.columns.map((c, i) => [c, r[i]]))) as T[];
+}
+
+async function one<T>(db: DB, sql: string, args: Arg[] = []): Promise<T | undefined> {
+  return (await all<T>(db, sql, args))[0];
+}
+
+function run(db: DB, sql: string, args: Arg[] = []) {
+  return db.execute({ sql, args });
 }
 
 /** Original single-account schema. Migrations below bring it up to date. */
@@ -83,130 +102,160 @@ CREATE TABLE IF NOT EXISTS follower_snapshots (
 const NOW_SQL = "(strftime('%Y-%m-%dT%H:%M:%fZ','now'))";
 
 /** v1: several Instagram accounts. Every post, like, niche list and snapshot belongs to one account. */
-function migrateToMultiAccount(db: DB) {
-  db.exec(`
-    CREATE TABLE accounts (
+async function migrateToMultiAccount(db: DB): Promise<InStatement[]> {
+  // Carry over the single connected account and the Pages it could see.
+  const legacy = await getSetting(db, "account");
+  const linked = JSON.parse((await getSetting(db, "linked_accounts")) ?? "[]") as {
+    igUserId: string;
+    username: string;
+    pageName?: string;
+  }[];
+  const user = JSON.parse((await getSetting(db, "user_token")) ?? "null") as { token: string; expiresAt: string | null } | null;
+  const active = legacy
+    ? (JSON.parse(legacy) as { igUserId: string; username: string; token: string; tokenExpiresAt: string | null })
+    : null;
+  const owner = active?.igUserId ?? "";
+
+  const s: InStatement[] = [
+    `CREATE TABLE accounts (
       ig_user_id TEXT PRIMARY KEY,
       username TEXT NOT NULL,
       page_name TEXT NOT NULL DEFAULT '',
       token TEXT NOT NULL,
       token_expires_at TEXT,
       added_at TEXT NOT NULL DEFAULT ${NOW_SQL}
-    );
-    CREATE TABLE reply_drafts (
+    )`,
+    `CREATE TABLE reply_drafts (
       comment_id TEXT PRIMARY KEY,
       ig_user_id TEXT NOT NULL,
       text TEXT NOT NULL,
       created_at TEXT NOT NULL DEFAULT ${NOW_SQL}
-    );
-  `);
-
-  // Carry over the single connected account and the Pages it could see.
-  const legacy = getSetting(db, "account");
-  const linked = JSON.parse(getSetting(db, "linked_accounts") ?? "[]") as {
-    igUserId: string;
-    username: string;
-    pageName?: string;
-  }[];
-  const user = JSON.parse(getSetting(db, "user_token") ?? "null") as { token: string; expiresAt: string | null } | null;
-  const active = legacy ? (JSON.parse(legacy) as { igUserId: string; username: string; token: string; tokenExpiresAt: string | null }) : null;
-  const insert = db.prepare(
-    "INSERT OR REPLACE INTO accounts (ig_user_id, username, page_name, token, token_expires_at) VALUES (?, ?, ?, ?, ?)",
-  );
-  if (user) for (const a of linked) insert.run(a.igUserId, a.username, a.pageName ?? "", user.token, user.expiresAt);
+    )`,
+  ];
+  const insert = "INSERT OR REPLACE INTO accounts (ig_user_id, username, page_name, token, token_expires_at) VALUES (?, ?, ?, ?, ?)";
+  if (user) for (const a of linked) s.push({ sql: insert, args: [a.igUserId, a.username, a.pageName ?? "", user.token, user.expiresAt] });
   if (active && !linked.some((a) => a.igUserId === active.igUserId)) {
-    insert.run(active.igUserId, active.username, "", active.token, active.tokenExpiresAt);
+    s.push({ sql: insert, args: [active.igUserId, active.username, "", active.token, active.tokenExpiresAt] });
   }
-  const owner = active?.igUserId ?? "";
-  if (active) setSetting(db, "active_account", active.igUserId);
-  for (const k of ["account", "linked_accounts", "user_token"]) setSetting(db, k, null);
-
-  db.exec(`
-    ALTER TABLE posts ADD COLUMN ig_user_id TEXT NOT NULL DEFAULT '';
-    ALTER TABLE posts ADD COLUMN trial_strategy TEXT CHECK (trial_strategy IN ('MANUAL','SS_PERFORMANCE'));
-    ALTER TABLE posts ADD COLUMN source TEXT NOT NULL DEFAULT 'you';
-    CREATE INDEX posts_account ON posts (ig_user_id, scheduled_at);
-
-    ALTER TABLE niche_accounts RENAME TO niche_v0;
-    CREATE TABLE niche_accounts (
+  if (active) s.push({ sql: "INSERT OR REPLACE INTO settings (key, value) VALUES ('active_account', ?)", args: [active.igUserId] });
+  s.push("DELETE FROM settings WHERE key IN ('account', 'linked_accounts', 'user_token')");
+  s.push(
+    "ALTER TABLE posts ADD COLUMN ig_user_id TEXT NOT NULL DEFAULT ''",
+    "ALTER TABLE posts ADD COLUMN trial_strategy TEXT CHECK (trial_strategy IN ('MANUAL','SS_PERFORMANCE'))",
+    "ALTER TABLE posts ADD COLUMN source TEXT NOT NULL DEFAULT 'you'",
+    "CREATE INDEX posts_account ON posts (ig_user_id, scheduled_at)",
+    "ALTER TABLE niche_accounts RENAME TO niche_v0",
+    `CREATE TABLE niche_accounts (
       ig_user_id TEXT NOT NULL,
       username TEXT NOT NULL,
       added_at TEXT NOT NULL DEFAULT ${NOW_SQL},
       PRIMARY KEY (ig_user_id, username)
-    );
-    ALTER TABLE likes RENAME TO likes_v0;
-    CREATE TABLE likes (
+    )`,
+    "ALTER TABLE likes RENAME TO likes_v0",
+    `CREATE TABLE likes (
       ig_user_id TEXT NOT NULL,
       target_id TEXT NOT NULL,
       target_type TEXT NOT NULL CHECK (target_type IN ('media','comment')),
       liked_at TEXT NOT NULL,
       unliked_at TEXT,
       PRIMARY KEY (ig_user_id, target_id)
-    );
-    ALTER TABLE follower_snapshots RENAME TO snapshots_v0;
-    CREATE TABLE follower_snapshots (
+    )`,
+    "ALTER TABLE follower_snapshots RENAME TO snapshots_v0",
+    `CREATE TABLE follower_snapshots (
       ig_user_id TEXT NOT NULL,
       day TEXT NOT NULL,
       followers INTEGER NOT NULL,
       follows INTEGER,
       media_count INTEGER,
       PRIMARY KEY (ig_user_id, day)
-    );
-  `);
-  db.prepare("UPDATE posts SET ig_user_id = ? WHERE ig_user_id = ''").run(owner);
-  db.prepare("INSERT INTO niche_accounts (ig_user_id, username, added_at) SELECT ?, username, added_at FROM niche_v0").run(owner);
-  db.prepare(
-    "INSERT INTO likes (ig_user_id, target_id, target_type, liked_at, unliked_at) SELECT ?, target_id, target_type, liked_at, unliked_at FROM likes_v0",
-  ).run(owner);
-  db.prepare(
-    "INSERT INTO follower_snapshots (ig_user_id, day, followers, follows, media_count) SELECT ?, day, followers, follows, media_count FROM snapshots_v0",
-  ).run(owner);
-  db.exec("DROP TABLE niche_v0; DROP TABLE likes_v0; DROP TABLE snapshots_v0;");
+    )`,
+    { sql: "UPDATE posts SET ig_user_id = ? WHERE ig_user_id = ''", args: [owner] },
+    { sql: "INSERT INTO niche_accounts (ig_user_id, username, added_at) SELECT ?, username, added_at FROM niche_v0", args: [owner] },
+    {
+      sql: "INSERT INTO likes (ig_user_id, target_id, target_type, liked_at, unliked_at) SELECT ?, target_id, target_type, liked_at, unliked_at FROM likes_v0",
+      args: [owner],
+    },
+    {
+      sql: "INSERT INTO follower_snapshots (ig_user_id, day, followers, follows, media_count) SELECT ?, day, followers, follows, media_count FROM snapshots_v0",
+      args: [owner],
+    },
+    "DROP TABLE niche_v0",
+    "DROP TABLE likes_v0",
+    "DROP TABLE snapshots_v0",
+  );
+  return s;
 }
 
-const MIGRATIONS: ((db: DB) => void)[] = [migrateToMultiAccount];
+/** Each migration returns statements that run in one transaction together with the version bump. */
+const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [migrateToMultiAccount];
 
-function migrate(db: DB) {
-  const version = db.pragma("user_version", { simple: true }) as number;
-  for (let v = version; v < MIGRATIONS.length; v++) {
-    db.transaction(() => {
-      MIGRATIONS[v](db);
-      db.pragma(`user_version = ${v + 1}`);
-    })();
+/** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
+export async function schemaVersion(db: DB): Promise<number> {
+  const v = await getSetting(db, "schema_version");
+  if (v !== null) return Number(v);
+  try {
+    const row = await one<{ user_version: number }>(db, "PRAGMA user_version");
+    return Number(row?.user_version ?? 0);
+  } catch {
+    return 0;
   }
 }
 
-export function openDb(file: string = config.databasePath): DB {
-  if (file !== ":memory:") fs.mkdirSync(path.dirname(path.resolve(file)), { recursive: true });
-  const db = new Database(file);
-  db.pragma("journal_mode = WAL");
-  db.pragma("busy_timeout = 5000");
-  db.exec(BASE_SCHEMA);
-  migrate(db);
+async function migrate(db: DB) {
+  for (let v = await schemaVersion(db); v < MIGRATIONS.length; v++) {
+    const statements = await MIGRATIONS[v](db);
+    statements.push({ sql: "INSERT OR REPLACE INTO settings (key, value) VALUES ('schema_version', ?)", args: [String(v + 1)] });
+    try {
+      await db.batch(statements, "write");
+    } catch (err) {
+      // Another instance may have migrated at the same moment; that is fine if the version moved on.
+      if ((await schemaVersion(db)) > v) continue;
+      throw err;
+    }
+  }
+  // Older local files track the version in PRAGMA user_version only; record it in settings too.
+  if ((await getSetting(db, "schema_version")) === null) await setSetting(db, "schema_version", String(MIGRATIONS.length));
+}
+
+/** Opens a database and brings its schema up to date. `url`: "file:…", ":memory:" or "libsql://…". */
+export async function openDb(url: string = config.databaseUrl, authToken: string | undefined = config.databaseAuthToken): Promise<DB> {
+  if (url.startsWith("file:")) fs.mkdirSync(path.dirname(url.slice("file:".length)), { recursive: true });
+  const db = createClient({ url, authToken: authToken || undefined });
+  if (url.startsWith("file:")) {
+    await db.execute("PRAGMA journal_mode = WAL").catch(() => undefined);
+    await db.execute("PRAGMA busy_timeout = 5000").catch(() => undefined);
+  }
+  await db.executeMultiple(BASE_SCHEMA);
+  await migrate(db);
   return db;
 }
 
-let shared: DB | undefined;
-/** Process-wide connection used by the web app and the worker. */
-export function getDb(): DB {
-  if (!shared) shared = openDb();
+let shared: Promise<DB> | undefined;
+/** Process-wide connection used by the web app, cron and worker. */
+export function getDb(): Promise<DB> {
+  if (!shared) {
+    shared = openDb().catch((err) => {
+      shared = undefined;
+      throw err;
+    });
+  }
   return shared;
 }
 
 // ---- settings ----
 
-export function getSetting(db: DB, key: string): string | null {
-  const row = db.prepare("SELECT value FROM settings WHERE key = ?").get(key) as { value: string } | undefined;
+export async function getSetting(db: DB, key: string): Promise<string | null> {
+  const row = await one<{ value: string }>(db, "SELECT value FROM settings WHERE key = ?", [key]);
   return row?.value ?? null;
 }
 
-export function setSetting(db: DB, key: string, value: string | null) {
-  if (value === null) db.prepare("DELETE FROM settings WHERE key = ?").run(key);
+export async function setSetting(db: DB, key: string, value: string | null) {
+  if (value === null) await run(db, "DELETE FROM settings WHERE key = ?", [key]);
   else
-    db.prepare("INSERT INTO settings (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").run(
+    await run(db, "INSERT INTO settings (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", [
       key,
       value,
-    );
+    ]);
 }
 
 // ---- accounts ----
@@ -227,61 +276,64 @@ const toAccount = (r: AccountRow): Account => ({
   tokenExpiresAt: r.token_expires_at,
 });
 
-export function listAccounts(db: DB): Account[] {
-  return (db.prepare("SELECT * FROM accounts ORDER BY added_at, rowid").all() as AccountRow[]).map(toAccount);
+export async function listAccounts(db: DB): Promise<Account[]> {
+  return (await all<AccountRow>(db, "SELECT * FROM accounts ORDER BY added_at, rowid")).map(toAccount);
 }
 
 /**
  * One account by Instagram user ID or username (with or without "@").
  * Without a key, returns the active account (the one the pages show), or the first one.
  */
-export function getAccount(db: DB, key?: string | null): Account | null {
+export async function getAccount(db: DB, key?: string | null): Promise<Account | null> {
   if (key) {
     const k = key.replace(/^@/, "");
-    const row = db.prepare("SELECT * FROM accounts WHERE ig_user_id = ? OR lower(username) = lower(?)").get(k, k) as
-      | AccountRow
-      | undefined;
+    const row = await one<AccountRow>(db, "SELECT * FROM accounts WHERE ig_user_id = ? OR lower(username) = lower(?)", [k, k]);
     return row ? toAccount(row) : null;
   }
-  const active = getSetting(db, "active_account");
+  const active = await getSetting(db, "active_account");
   if (active) {
-    const a = getAccount(db, active);
+    const a = await getAccount(db, active);
     if (a) return a;
   }
-  const first = db.prepare("SELECT * FROM accounts ORDER BY added_at, rowid LIMIT 1").get() as AccountRow | undefined;
+  const first = await one<AccountRow>(db, "SELECT * FROM accounts ORDER BY added_at, rowid LIMIT 1");
   return first ? toAccount(first) : null;
 }
 
+const UPSERT_ACCOUNT = `INSERT INTO accounts (ig_user_id, username, page_name, token, token_expires_at) VALUES (?, ?, ?, ?, ?)
+  ON CONFLICT(ig_user_id) DO UPDATE SET username = excluded.username, page_name = excluded.page_name,
+    token = excluded.token, token_expires_at = excluded.token_expires_at`;
+
 /** Adds or refreshes accounts (from one Facebook login) without touching the others. */
-export function upsertAccounts(db: DB, accounts: Account[]) {
-  const stmt = db.prepare(
-    `INSERT INTO accounts (ig_user_id, username, page_name, token, token_expires_at) VALUES (?, ?, ?, ?, ?)
-     ON CONFLICT(ig_user_id) DO UPDATE SET username = excluded.username, page_name = excluded.page_name,
-       token = excluded.token, token_expires_at = excluded.token_expires_at`,
+export async function upsertAccounts(db: DB, accounts: Account[]) {
+  if (accounts.length === 0) return;
+  await db.batch(
+    accounts.map((a) => ({ sql: UPSERT_ACCOUNT, args: [a.igUserId, a.username, a.pageName, a.token, a.tokenExpiresAt] })),
+    "write",
   );
-  db.transaction(() => {
-    for (const a of accounts) stmt.run(a.igUserId, a.username, a.pageName, a.token, a.tokenExpiresAt);
-  })();
 }
 
-export function setActiveAccount(db: DB, igUserId: string) {
-  if (getAccount(db, igUserId)) setSetting(db, "active_account", igUserId);
+export async function setActiveAccount(db: DB, igUserId: string) {
+  if (await getAccount(db, igUserId)) await setSetting(db, "active_account", igUserId);
 }
 
 /** Removes an account and cancels its queued posts. History (published posts, snapshots) is kept. */
-export function removeAccount(db: DB, igUserId: string) {
-  db.transaction(() => {
-    db.prepare("DELETE FROM accounts WHERE ig_user_id = ?").run(igUserId);
-    db.prepare(
-      "UPDATE posts SET status = 'cancelled', error = 'Account removed', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE ig_user_id = ? AND status = 'scheduled'",
-    ).run(igUserId);
-    db.prepare("DELETE FROM reply_drafts WHERE ig_user_id = ?").run(igUserId);
-    if (getSetting(db, "active_account") === igUserId) setSetting(db, "active_account", null);
-  })();
+export async function removeAccount(db: DB, igUserId: string) {
+  await db.batch(
+    [
+      { sql: "DELETE FROM accounts WHERE ig_user_id = ?", args: [igUserId] },
+      {
+        sql: `UPDATE posts SET status = 'cancelled', error = 'Account removed', updated_at = ${NOW_SQL} WHERE ig_user_id = ? AND status = 'scheduled'`,
+        args: [igUserId],
+      },
+      { sql: "DELETE FROM reply_drafts WHERE ig_user_id = ?", args: [igUserId] },
+      { sql: "DELETE FROM settings WHERE key = 'active_account' AND value = ?", args: [igUserId] },
+    ],
+    "write",
+  );
 }
 
-export function removeAllAccounts(db: DB) {
-  for (const a of listAccounts(db)) removeAccount(db, a.igUserId);
+export async function removeAllAccounts(db: DB) {
+  for (const a of await listAccounts(db)) await removeAccount(db, a.igUserId);
 }
 
 // ---- posts ----
@@ -297,13 +349,12 @@ export interface NewPost {
   source?: PostSource;
 }
 
-export function createPost(db: DB, p: NewPost): number {
-  const res = db
-    .prepare(
-      `INSERT INTO posts (ig_user_id, type, media_url, caption, share_to_feed, trial_strategy, source, scheduled_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-    )
-    .run(
+export async function createPost(db: DB, p: NewPost): Promise<number> {
+  const res = await run(
+    db,
+    `INSERT INTO posts (ig_user_id, type, media_url, caption, share_to_feed, trial_strategy, source, scheduled_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
       p.igUserId,
       p.type,
       p.mediaUrl,
@@ -312,11 +363,12 @@ export function createPost(db: DB, p: NewPost): number {
       p.type === "REELS" ? (p.trial ?? null) : null,
       p.source ?? "you",
       p.scheduledAt.toISOString(),
-    );
+    ],
+  );
   return Number(res.lastInsertRowid);
 }
 
-export function listPosts(db: DB, filter: { igUserId?: string; from?: Date; to?: Date } = {}): PostRow[] {
+export async function listPosts(db: DB, filter: { igUserId?: string; from?: Date; to?: Date } = {}): Promise<PostRow[]> {
   const where: string[] = [];
   const args: string[] = [];
   if (filter.igUserId) {
@@ -332,55 +384,60 @@ export function listPosts(db: DB, filter: { igUserId?: string; from?: Date; to?:
     args.push(filter.to.toISOString());
   }
   const sql = `SELECT * FROM posts ${where.length ? `WHERE ${where.join(" AND ")}` : ""} ORDER BY scheduled_at DESC`;
-  return db.prepare(sql).all(...args) as PostRow[];
+  return all<PostRow>(db, sql, args);
 }
 
-export function getPost(db: DB, id: number): PostRow | undefined {
-  return db.prepare("SELECT * FROM posts WHERE id = ?").get(id) as PostRow | undefined;
+export async function getPost(db: DB, id: number): Promise<PostRow | undefined> {
+  return one<PostRow>(db, "SELECT * FROM posts WHERE id = ?", [id]);
 }
 
 /** Posts that are due now, plus Reels whose container is still processing (all accounts). */
-export function duePosts(db: DB, now: Date): PostRow[] {
-  return db
-    .prepare(
-      `SELECT * FROM posts
-       WHERE (status = 'scheduled' AND scheduled_at <= ?) OR status = 'processing'
-       ORDER BY scheduled_at ASC`,
-    )
-    .all(now.toISOString()) as PostRow[];
+export async function duePosts(db: DB, now: Date): Promise<PostRow[]> {
+  return all<PostRow>(
+    db,
+    `SELECT * FROM posts
+     WHERE (status = 'scheduled' AND scheduled_at <= ?) OR status = 'processing'
+     ORDER BY scheduled_at ASC`,
+    [now.toISOString()],
+  );
 }
 
-export function updatePost(db: DB, id: number, fields: Partial<Omit<PostRow, "id" | "created_at">>) {
-  const keys = Object.keys(fields) as (keyof typeof fields)[];
-  if (keys.length === 0) return;
-  const sets = keys.map((k) => `${k} = @${k}`).join(", ");
-  db.prepare(`UPDATE posts SET ${sets}, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = @id`).run({
-    ...fields,
-    id,
-  });
+/** Marks a scheduled post as processing. Returns false if another runner claimed it first. */
+export async function claimPost(db: DB, id: number, now: Date): Promise<boolean> {
+  const res = await run(
+    db,
+    "UPDATE posts SET status = 'processing', attempts = attempts + 1, error = NULL, updated_at = ? WHERE id = ? AND status = 'scheduled'",
+    [now.toISOString(), id],
+  );
+  return res.rowsAffected === 1;
+}
+
+export async function updatePost(db: DB, id: number, fields: Partial<Omit<PostRow, "id" | "created_at">>) {
+  const entries = Object.entries(fields).filter(([, v]) => v !== undefined) as [string, Arg][];
+  if (entries.length === 0) return;
+  const sets = entries.map(([k]) => `${k} = ?`).join(", ");
+  await run(db, `UPDATE posts SET ${sets}, updated_at = ${NOW_SQL} WHERE id = ?`, [...entries.map(([, v]) => v), id]);
 }
 
 // ---- niche accounts ----
 
-export function listNiche(db: DB, igUserId: string): string[] {
+export async function listNiche(db: DB, igUserId: string): Promise<string[]> {
   return (
-    db.prepare("SELECT username FROM niche_accounts WHERE ig_user_id = ? ORDER BY username").all(igUserId) as {
-      username: string;
-    }[]
+    await all<{ username: string }>(db, "SELECT username FROM niche_accounts WHERE ig_user_id = ? ORDER BY username", [igUserId])
   ).map((r) => r.username);
 }
 
-export function addNiche(db: DB, igUserId: string, username: string) {
-  db.prepare("INSERT OR IGNORE INTO niche_accounts (ig_user_id, username) VALUES (?, ?)").run(igUserId, username);
+export async function addNiche(db: DB, igUserId: string, username: string) {
+  await run(db, "INSERT OR IGNORE INTO niche_accounts (ig_user_id, username) VALUES (?, ?)", [igUserId, username]);
 }
 
-export function removeNiche(db: DB, igUserId: string, username: string) {
-  db.prepare("DELETE FROM niche_accounts WHERE ig_user_id = ? AND username = ?").run(igUserId, username);
+export async function removeNiche(db: DB, igUserId: string, username: string) {
+  await run(db, "DELETE FROM niche_accounts WHERE ig_user_id = ? AND username = ?", [igUserId, username]);
 }
 
 // ---- follower snapshots ----
 
-export function saveSnapshot(
+export async function saveSnapshot(
   db: DB,
   igUserId: string,
   day: string,
@@ -388,39 +445,85 @@ export function saveSnapshot(
   follows: number | null,
   mediaCount: number | null,
 ) {
-  db.prepare(
+  await run(
+    db,
     `INSERT INTO follower_snapshots (ig_user_id, day, followers, follows, media_count) VALUES (?, ?, ?, ?, ?)
      ON CONFLICT(ig_user_id, day) DO UPDATE SET followers = excluded.followers, follows = excluded.follows, media_count = excluded.media_count`,
-  ).run(igUserId, day, followers, follows, mediaCount);
+    [igUserId, day, followers, follows, mediaCount],
+  );
 }
 
-export function listSnapshots(db: DB, igUserId: string, limit = 90): { day: string; followers: number }[] {
+export async function listSnapshots(db: DB, igUserId: string, limit = 90): Promise<{ day: string; followers: number }[]> {
   return (
-    db
-      .prepare("SELECT day, followers FROM follower_snapshots WHERE ig_user_id = ? ORDER BY day DESC LIMIT ?")
-      .all(igUserId, limit) as { day: string; followers: number }[]
+    await all<{ day: string; followers: number }>(
+      db,
+      "SELECT day, followers FROM follower_snapshots WHERE ig_user_id = ? ORDER BY day DESC LIMIT ?",
+      [igUserId, limit],
+    )
   ).reverse();
+}
+
+export async function hasSnapshot(db: DB, igUserId: string, day: string): Promise<boolean> {
+  return (await one(db, "SELECT 1 AS x FROM follower_snapshots WHERE ig_user_id = ? AND day = ?", [igUserId, day])) !== undefined;
+}
+
+// ---- likes ----
+
+function startOfUtcDay(now: Date) {
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())).toISOString();
+}
+
+export async function countLikesSince(db: DB, igUserId: string, now: Date): Promise<number> {
+  const row = await one<{ n: number }>(db, "SELECT COUNT(*) AS n FROM likes WHERE ig_user_id = ? AND liked_at >= ?", [
+    igUserId,
+    startOfUtcDay(now),
+  ]);
+  return Number(row?.n ?? 0);
+}
+
+export async function activeLikeIds(db: DB, igUserId: string): Promise<Set<string>> {
+  const rows = await all<{ target_id: string }>(db, "SELECT target_id FROM likes WHERE ig_user_id = ? AND unliked_at IS NULL", [igUserId]);
+  return new Set(rows.map((r) => r.target_id));
+}
+
+export async function lastLikeTime(db: DB, igUserId: string): Promise<Date | null> {
+  const row = await one<{ t: string | null }>(db, "SELECT MAX(liked_at) AS t FROM likes WHERE ig_user_id = ?", [igUserId]);
+  return row?.t ? new Date(row.t) : null;
+}
+
+export async function recordLike(db: DB, igUserId: string, targetId: string, type: "media" | "comment", at: Date) {
+  await run(db, "INSERT OR REPLACE INTO likes (ig_user_id, target_id, target_type, liked_at, unliked_at) VALUES (?, ?, ?, ?, NULL)", [
+    igUserId,
+    targetId,
+    type,
+    at.toISOString(),
+  ]);
+}
+
+export async function recordUnlike(db: DB, igUserId: string, targetId: string, at: Date) {
+  await run(db, "UPDATE likes SET unliked_at = ? WHERE ig_user_id = ? AND target_id = ?", [at.toISOString(), igUserId, targetId]);
 }
 
 // ---- reply drafts (written by Claude, sent by you) ----
 
-export function saveDraft(db: DB, d: { commentId: string; igUserId: string; text: string }) {
-  db.prepare(
+export async function saveDraft(db: DB, d: { commentId: string; igUserId: string; text: string }) {
+  await run(
+    db,
     `INSERT INTO reply_drafts (comment_id, ig_user_id, text) VALUES (?, ?, ?)
      ON CONFLICT(comment_id) DO UPDATE SET text = excluded.text, ig_user_id = excluded.ig_user_id, created_at = ${NOW_SQL}`,
-  ).run(d.commentId, d.igUserId, d.text);
+    [d.commentId, d.igUserId, d.text],
+  );
 }
 
-export function listDrafts(db: DB, igUserId: string): Map<string, string> {
-  const rows = db.prepare("SELECT comment_id, text FROM reply_drafts WHERE ig_user_id = ?").all(igUserId) as {
-    comment_id: string;
-    text: string;
-  }[];
+export async function listDrafts(db: DB, igUserId: string): Promise<Map<string, string>> {
+  const rows = await all<{ comment_id: string; text: string }>(db, "SELECT comment_id, text FROM reply_drafts WHERE ig_user_id = ?", [
+    igUserId,
+  ]);
   return new Map(rows.map((r) => [r.comment_id, r.text]));
 }
 
-export function deleteDraft(db: DB, commentId: string) {
-  db.prepare("DELETE FROM reply_drafts WHERE comment_id = ?").run(commentId);
+export async function deleteDraft(db: DB, commentId: string) {
+  await run(db, "DELETE FROM reply_drafts WHERE comment_id = ?", [commentId]);
 }
 
 // ---- accounts found at login, waiting for the owner to choose ----
@@ -434,33 +537,33 @@ export interface PendingLogin {
 
 const PENDING_TTL_MS = 30 * 60_000;
 
-export function savePendingLogin(db: DB, p: Omit<PendingLogin, "createdAt">) {
-  setSetting(db, "pending_login", JSON.stringify({ ...p, createdAt: new Date().toISOString() }));
+export async function savePendingLogin(db: DB, p: Omit<PendingLogin, "createdAt">) {
+  await setSetting(db, "pending_login", JSON.stringify({ ...p, createdAt: new Date().toISOString() }));
 }
 
-export function getPendingLogin(db: DB, now = new Date()): PendingLogin | null {
-  const raw = getSetting(db, "pending_login");
+export async function getPendingLogin(db: DB, now = new Date()): Promise<PendingLogin | null> {
+  const raw = await getSetting(db, "pending_login");
   if (!raw) return null;
   const p = JSON.parse(raw) as PendingLogin;
   if (now.getTime() - new Date(p.createdAt).getTime() > PENDING_TTL_MS) {
-    setSetting(db, "pending_login", null);
+    await setSetting(db, "pending_login", null);
     return null;
   }
   return p;
 }
 
 /** Adds the chosen accounts from the pending login, then forgets the rest. Returns the usernames added. */
-export function addFromPendingLogin(db: DB, igUserIds: string[]): string[] {
-  const p = getPendingLogin(db);
-  setSetting(db, "pending_login", null);
+export async function addFromPendingLogin(db: DB, igUserIds: string[]): Promise<string[]> {
+  const p = await getPendingLogin(db);
+  await setSetting(db, "pending_login", null);
   if (!p) return [];
   const chosen = p.accounts.filter((a) => igUserIds.includes(a.igUserId));
-  const hadAny = listAccounts(db).length > 0;
-  upsertAccounts(db, chosen.map((a) => ({ ...a, token: p.token, tokenExpiresAt: p.expiresAt })));
-  if (!hadAny && chosen[0]) setActiveAccount(db, chosen[0].igUserId);
+  const hadAny = (await listAccounts(db)).length > 0;
+  await upsertAccounts(db, chosen.map((a) => ({ ...a, token: p.token, tokenExpiresAt: p.expiresAt })));
+  if (!hadAny && chosen[0]) await setActiveAccount(db, chosen[0].igUserId);
   return chosen.map((a) => a.username);
 }
 
-export function clearPendingLogin(db: DB) {
-  setSetting(db, "pending_login", null);
+export async function clearPendingLogin(db: DB) {
+  await setSetting(db, "pending_login", null);
 }

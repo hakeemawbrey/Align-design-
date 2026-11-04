@@ -1,3 +1,5 @@
+import path from "node:path";
+
 export const config = {
   get appId() {
     return process.env.META_APP_ID ?? "";
@@ -31,6 +33,16 @@ export const config = {
   },
   get databasePath() {
     return process.env.DATABASE_PATH || "./data/studio.db";
+  },
+  /** Turso/libSQL URL in the cloud; a local SQLite file otherwise. */
+  get databaseUrl() {
+    const remote = process.env.TURSO_DATABASE_URL || process.env.DATABASE_URL;
+    if (remote) return remote;
+    const p = this.databasePath;
+    return p === ":memory:" ? ":memory:" : `file:${path.resolve(p)}`;
+  },
+  get databaseAuthToken() {
+    return process.env.TURSO_AUTH_TOKEN || process.env.DATABASE_AUTH_TOKEN || undefined;
   },
   get redirectUri() {
     return `${this.appUrl}/api/auth/meta/callback`;

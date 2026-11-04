@@ -1,0 +1,8 @@
+# Never upload secrets or the local database (it holds access tokens).
+.env
+.env.*
+!.env.example
+data/
+.next/
+node_modules/
+.vercel/

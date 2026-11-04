@@ -18,13 +18,13 @@ export default async function SchedulePage({
   const q = await searchParams;
   const view = q.view === "list" ? "list" : "calendar";
   const date = q.date && /^\d{4}-\d{2}-\d{2}$/.test(q.date) ? q.date : undefined;
-  const db = getDb();
-  const active = getAccount(db);
-  const accounts = listAccounts(db);
+  const db = await getDb();
+  const active = await getAccount(db);
+  const accounts = await listAccounts(db);
   const byId = new Map(accounts.map((a) => [a.igUserId, a]));
   // "all" shows every account; otherwise one account (default: the selected one when there is only one).
-  const filter = q.account === "all" || (!q.account && accounts.length > 1) ? null : getAccount(db, q.account ?? null);
-  const posts = listPosts(db, { igUserId: filter?.igUserId });
+  const filter = q.account === "all" || (!q.account && accounts.length > 1) ? null : await getAccount(db, q.account ?? null);
+  const posts = await listPosts(db, { igUserId: filter?.igUserId });
   const name = (id: string) => byId.get(id)?.username ?? "removed account";
 
   let quota: string | null = null;

@@ -6,18 +6,18 @@ import { fakeGraph, fakeGraphFetch, graphError } from "./helpers";
 const NOW = new Date("2026-11-01T12:00:00Z");
 let db: DB;
 
-beforeEach(() => {
-  db = openDb(":memory:");
-  upsertAccounts(db, [{ igUserId: "17841", username: "me", pageName: "Me", token: "TOKEN", tokenExpiresAt: null }]);
+beforeEach(async () => {
+  db = await openDb(":memory:");
+  await upsertAccounts(db, [{ igUserId: "17841", username: "me", pageName: "Me", token: "TOKEN", tokenExpiresAt: null }]);
 });
 
-function schedule(type: "IMAGE" | "REELS", at = new Date(NOW.getTime() - 1000)) {
-  return createPost(db, { igUserId: "17841", type, mediaUrl: "https://cdn.example.com/a.jpg", caption: "hi #test", shareToFeed: true, scheduledAt: at });
+async function schedule(type: "IMAGE" | "REELS", at = new Date(NOW.getTime() - 1000)) {
+  return await createPost(db, { igUserId: "17841", type, mediaUrl: "https://cdn.example.com/a.jpg", caption: "hi #test", shareToFeed: true, scheduledAt: at });
 }
 
 describe("publishDuePosts", () => {
   it("publishes a due image post end to end", async () => {
-    const id = schedule("IMAGE");
+    const id = await schedule("IMAGE");
     const { client, calls } = fakeGraph({
       "POST 17841/media": () => ({ id: "C1" }),
       "GET C1": () => ({ status_code: "FINISHED" }),
@@ -26,7 +26,7 @@ describe("publishDuePosts", () => {
     });
     const res = await publishDuePosts(db, { now: NOW, client });
     expect(res.published).toEqual([id]);
-    const post = getPost(db, id)!;
+    const post = (await getPost(db, id))!;
     expect(post.status).toBe("published");
     expect(post.ig_media_id).toBe("M1");
     expect(post.permalink).toBe("https://instagram.com/p/x");
@@ -35,15 +35,15 @@ describe("publishDuePosts", () => {
   });
 
   it("leaves future posts alone", async () => {
-    const id = schedule("IMAGE", new Date(NOW.getTime() + 60_000));
+    const id = await schedule("IMAGE", new Date(NOW.getTime() + 60_000));
     const { client, calls } = fakeGraph({});
     await publishDuePosts(db, { now: NOW, client });
     expect(calls).toHaveLength(0);
-    expect(getPost(db, id)!.status).toBe("scheduled");
+    expect((await getPost(db, id))!.status).toBe("scheduled");
   });
 
   it("waits for a Reel to finish processing, then publishes it", async () => {
-    const id = schedule("REELS");
+    const id = await schedule("REELS");
     let status = "IN_PROGRESS";
     const { client, calls } = fakeGraph({
       "POST 17841/media": () => ({ id: "C2" }),
@@ -53,7 +53,7 @@ describe("publishDuePosts", () => {
     });
     let res = await publishDuePosts(db, { now: NOW, client });
     expect(res.pending).toEqual([id]);
-    expect(getPost(db, id)!.status).toBe("processing");
+    expect((await getPost(db, id))!.status).toBe("processing");
     expect(calls[0].params).toMatchObject({ media_type: "REELS", video_url: "https://cdn.example.com/a.jpg", share_to_feed: "true" });
 
     status = "FINISHED";
@@ -64,7 +64,7 @@ describe("publishDuePosts", () => {
   });
 
   it("fails a Reel stuck processing past the timeout", async () => {
-    const id = schedule("REELS");
+    const id = await schedule("REELS");
     const { client } = fakeGraph({
       "POST 17841/media": () => ({ id: "C3" }),
       "GET C3": () => ({ status_code: "IN_PROGRESS" }),
@@ -72,62 +72,62 @@ describe("publishDuePosts", () => {
     await publishDuePosts(db, { now: NOW, client });
     const res = await publishDuePosts(db, { now: new Date(NOW.getTime() + PROCESSING_TIMEOUT_MS + 5000), client });
     expect(res.failed).toEqual([id]);
-    expect(getPost(db, id)!.error).toMatch(/30 minutes/);
+    expect((await getPost(db, id))!.error).toMatch(/30 minutes/);
   });
 
   it("marks container errors as failed", async () => {
-    const id = schedule("IMAGE");
+    const id = await schedule("IMAGE");
     const { client } = fakeGraph({
       "POST 17841/media": () => ({ id: "C4" }),
       "GET C4": () => ({ status_code: "ERROR", status: "Unsupported format" }),
     });
     const res = await publishDuePosts(db, { now: NOW, client });
     expect(res.failed).toEqual([id]);
-    expect(getPost(db, id)!.error).toContain("Unsupported format");
+    expect((await getPost(db, id))!.error).toContain("Unsupported format");
   });
 
   it("retries transient errors later, then gives up", async () => {
-    const id = schedule("IMAGE");
+    const id = await schedule("IMAGE");
     const { client } = fakeGraph({ "POST 17841/media": () => graphError(4, "Application request limit reached") });
     let t = NOW;
     for (let i = 0; i < 2; i++) {
       const res = await publishDuePosts(db, { now: t, client });
       expect(res.retried).toEqual([id]);
-      const p = getPost(db, id)!;
+      const p = (await getPost(db, id))!;
       expect(p.status).toBe("scheduled");
       t = new Date(new Date(p.scheduled_at).getTime() + 1000);
     }
     const res = await publishDuePosts(db, { now: t, client });
     expect(res.failed).toEqual([id]);
-    expect(getPost(db, id)!.attempts).toBe(3);
+    expect((await getPost(db, id))!.attempts).toBe(3);
   });
 
   it("fails immediately on permanent errors", async () => {
-    const id = schedule("IMAGE");
+    const id = await schedule("IMAGE");
     const { client } = fakeGraph({ "POST 17841/media": () => graphError(100, "Invalid image_url") });
     const res = await publishDuePosts(db, { now: NOW, client });
     expect(res.failed).toEqual([id]);
-    expect(getPost(db, id)!.error).toBe("Invalid image_url");
+    expect((await getPost(db, id))!.error).toBe("Invalid image_url");
   });
 
   it("fails a post whose account is no longer connected, without calling Instagram", async () => {
-    const id = schedule("IMAGE");
-    db.prepare("DELETE FROM accounts").run();
+    const id = await schedule("IMAGE");
+    await db.execute("DELETE FROM accounts");
     const { client, calls } = fakeGraph({});
     const res = await publishDuePosts(db, { now: NOW, client });
     expect(res.failed).toEqual([id]);
-    expect(getPost(db, id)!.error).toMatch(/no longer connected/);
+    expect((await getPost(db, id))!.error).toMatch(/no longer connected/);
     expect(calls).toHaveLength(0);
   });
 
-  it("removing an account cancels its queued posts", () => {
-    const id = schedule("IMAGE", new Date(NOW.getTime() + 60_000));
-    removeAccount(db, "17841");
-    expect(getPost(db, id)!.status).toBe("cancelled");
+  it("removing an account cancels its queued posts", async () => {
+    const id = await schedule("IMAGE", new Date(NOW.getTime() + 60_000));
+    await removeAccount(db, "17841");
+    expect((await getPost(db, id))!.status).toBe("cancelled");
   });
 
   it("creates Trial Reels with trial_params and without share_to_feed", async () => {
-    const id = createPost(db, {
+    const id = await createPost(db, {
       igUserId: "17841",
       type: "REELS",
       mediaUrl: "https://cdn.example.com/a.mp4",
@@ -149,8 +149,8 @@ describe("publishDuePosts", () => {
     expect(calls[0].params.media_type).toBe("REELS");
   });
 
-  it("ignores trial settings on image posts", () => {
-    const id = createPost(db, {
+  it("ignores trial settings on image posts", async () => {
+    const id = await createPost(db, {
       igUserId: "17841",
       type: "IMAGE",
       mediaUrl: "https://cdn.example.com/a.jpg",
@@ -159,15 +159,15 @@ describe("publishDuePosts", () => {
       trial: "MANUAL",
       scheduledAt: NOW,
     });
-    expect(getPost(db, id)!.trial_strategy).toBeNull();
+    expect((await getPost(db, id))!.trial_strategy).toBeNull();
   });
 });
 
 describe("several accounts", () => {
   it("publishes each post to its own account with that account's token", async () => {
-    upsertAccounts(db, [{ igUserId: "999", username: "other", pageName: "Other", token: "TOKEN2", tokenExpiresAt: null }]);
-    const a = schedule("IMAGE");
-    const b = createPost(db, {
+    await upsertAccounts(db, [{ igUserId: "999", username: "other", pageName: "Other", token: "TOKEN2", tokenExpiresAt: null }]);
+    const a = await schedule("IMAGE");
+    const b = await createPost(db, {
       igUserId: "999",
       type: "IMAGE",
       mediaUrl: "https://cdn.example.com/b.jpg",
@@ -194,5 +194,26 @@ describe("several accounts", () => {
     const tokenFor = (path: string) => calls.find((c) => c.path === path)?.params.access_token;
     expect(tokenFor("17841/media")).toBe("TOKEN");
     expect(tokenFor("999/media")).toBe("TOKEN2");
+  });
+});
+
+describe("catching up after downtime", () => {
+  it("starts at most one new post per account per run", async () => {
+    const a = await schedule("IMAGE", new Date(NOW.getTime() - 3 * 60_000));
+    const b = await schedule("IMAGE", new Date(NOW.getTime() - 2 * 60_000));
+    let n = 0;
+    const { client } = fakeGraph({
+      "POST 17841/media": () => ({ id: `C${++n}` }),
+      "GET C1": () => ({ status_code: "FINISHED" }),
+      "GET C2": () => ({ status_code: "FINISHED" }),
+      "POST 17841/media_publish": () => ({ id: `M${n}` }),
+      "GET M1": () => ({ id: "M1" }),
+      "GET M2": () => ({ id: "M2" }),
+    });
+    let res = await publishDuePosts(db, { now: NOW, client });
+    expect(res.published).toEqual([a]);
+    expect((await getPost(db, b))!.status).toBe("scheduled");
+    res = await publishDuePosts(db, { now: new Date(NOW.getTime() + 60_000), client });
+    expect(res.published).toEqual([b]);
   });
 });

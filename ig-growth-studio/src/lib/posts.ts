@@ -19,17 +19,17 @@ export function countHashtags(caption: string) {
 }
 
 /** Validates and queues one post for one account. Returns the new post ID or an error message. */
-export function queuePost(
+export async function queuePost(
   db: DB,
   account: Account,
   fields: PostFields,
   scheduledAt: Date,
   source: PostSource,
-): { id: number } | { error: string } {
+): Promise<{ id: number } | { error: string }> {
   if (Number.isNaN(scheduledAt.getTime())) return { error: "Invalid date" };
   if (countHashtags(fields.caption) > MAX_HASHTAGS) return { error: "Instagram allows at most 30 hashtags per post" };
   if (fields.trial && fields.type !== "REELS") return { error: "Only Reels can be Trial Reels" };
-  const id = createPost(db, {
+  const id = await createPost(db, {
     igUserId: account.igUserId,
     type: fields.type,
     // Google Drive share links are turned into direct downloads Instagram can fetch.

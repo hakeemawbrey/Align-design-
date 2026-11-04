@@ -17,9 +17,9 @@ export async function POST(req: NextRequest) {
   if (denied) return denied;
   const parsed = Body.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0]?.message ?? "Invalid body" }, { status: 400 });
-  const db = getDb();
-  const account = resolveAccount(db, parsed.data.account);
+  const db = await getDb();
+  const account = await resolveAccount(db, parsed.data.account);
   if (account instanceof NextResponse) return account;
-  saveDraft(db, { commentId: parsed.data.commentId, igUserId: account.igUserId, text: parsed.data.text });
+  await saveDraft(db, { commentId: parsed.data.commentId, igUserId: account.igUserId, text: parsed.data.text });
   return NextResponse.json({ ok: true }, { status: 201 });
 }

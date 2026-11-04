@@ -8,8 +8,8 @@ export const dynamic = "force-dynamic";
 export async function GET(req: NextRequest) {
   const denied = agentAuth(req);
   if (denied) return denied;
-  const db = getDb();
-  const account = resolveAccount(db, req.nextUrl.searchParams.get("account"));
+  const db = await getDb();
+  const account = await resolveAccount(db, req.nextUrl.searchParams.get("account"));
   if (account instanceof NextResponse) return account;
   try {
     const { profile, posts, avgRate } = await accountStats(account);
@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
       following: profile.follows_count ?? null,
       posts: profile.media_count ?? null,
       avgEngagementPerReach: avgRate,
-      followerHistory: listSnapshots(db, account.igUserId),
+      followerHistory: await listSnapshots(db, account.igUserId),
       recentPosts: posts.map((p) => ({
         id: p.media.id,
         type: p.media.media_product_type ?? p.media.media_type,

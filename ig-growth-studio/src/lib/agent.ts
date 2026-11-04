@@ -19,8 +19,8 @@ export function agentAuth(req: NextRequest): NextResponse | null {
 }
 
 /** `?account=` / body.account: username, @username or Instagram user ID. Defaults to the active account. */
-export function resolveAccount(db: DB, key: string | null | undefined): Account | NextResponse {
-  const account = getAccount(db, key || null);
+export async function resolveAccount(db: DB, key: string | null | undefined): Promise<Account | NextResponse> {
+  const account = await getAccount(db, key || null);
   if (account) return account;
   return NextResponse.json(
     { error: key ? `No connected account "${key}". GET /api/agent/accounts lists them.` : "No Instagram account connected" },

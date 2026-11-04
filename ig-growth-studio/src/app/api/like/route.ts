@@ -17,8 +17,8 @@ export async function POST(req: NextRequest) {
   if (!parsed.success || !!parsed.data.mediaId === !!parsed.data.commentId) {
     return NextResponse.json({ error: "Send exactly one of mediaId or commentId" }, { status: 400 });
   }
-  const db = getDb();
-  const account = getAccount(db, parsed.data.account);
+  const db = await getDb();
+  const account = await getAccount(db, parsed.data.account);
   if (!account) return NextResponse.json({ error: "Connect an Instagram account first" }, { status: 400 });
 
   const client = new GraphClient({ token: account.token });
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     } else {
       await unlikeOne(db, client, account.igUserId, target);
     }
-    return NextResponse.json({ ok: true, likesToday: likesToday(db, account.igUserId), cap: config.dailyLikeCap });
+    return NextResponse.json({ ok: true, likesToday: await likesToday(db, account.igUserId), cap: config.dailyLikeCap });
   } catch (err) {
     // Graph failures are upstream errors; anything else is our own cap or pacing check.
     const status = err instanceof GraphError ? 502 : 429;

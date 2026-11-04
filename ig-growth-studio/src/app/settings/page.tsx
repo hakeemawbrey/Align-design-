@@ -12,10 +12,10 @@ export default async function SettingsPage({
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
   const { error, connected, refreshed } = await searchParams;
-  const db = getDb();
-  const accounts = listAccounts(db);
-  const active = getAccount(db);
-  const pending = getPendingLogin(db);
+  const db = await getDb();
+  const accounts = await listAccounts(db);
+  const active = await getAccount(db);
+  const pending = await getPendingLogin(db);
   const appReady = Boolean(config.appId && config.appSecret);
   const soon = (iso: string | null) => iso !== null && new Date(iso).getTime() - Date.now() < 7 * 86_400_000;
 

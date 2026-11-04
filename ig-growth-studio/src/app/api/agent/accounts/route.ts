@@ -7,10 +7,10 @@ export const dynamic = "force-dynamic";
 export async function GET(req: NextRequest) {
   const denied = agentAuth(req);
   if (denied) return denied;
-  const db = getDb();
-  const active = getAccount(db)?.igUserId;
+  const db = await getDb();
+  const active = (await getAccount(db))?.igUserId;
   return NextResponse.json({
-    accounts: listAccounts(db).map((a) => ({
+    accounts: (await listAccounts(db)).map((a) => ({
       igUserId: a.igUserId,
       username: a.username,
       page: a.pageName,

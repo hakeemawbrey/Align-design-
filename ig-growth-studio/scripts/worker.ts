@@ -1,39 +1,17 @@
 /**
- * Publishes due posts for every connected account each minute and records a daily follower snapshot per account.
- * Run alongside the web app: `npm run worker`.
+ * Local runner: publishes due posts for every connected account each minute and records a daily follower
+ * snapshot per account. In the cloud, Vercel Cron calls /api/cron instead; never run both against one database.
  */
-import { getDb, listAccounts, saveSnapshot } from "../src/lib/db";
-import { GraphClient } from "../src/lib/graph";
-import { publishDuePosts } from "../src/lib/publisher";
+import { getDb } from "../src/lib/db";
+import { runScheduledWork } from "../src/lib/jobs";
 
 const INTERVAL_MS = 60_000;
-let lastSnapshotDay = "";
-
-async function tick() {
-  const db = getDb();
-  const result = await publishDuePosts(db);
-  const changed = result.published.length + result.failed.length + result.retried.length;
-  if (changed > 0) console.log(new Date().toISOString(), JSON.stringify(result));
-
-  const day = new Date().toISOString().slice(0, 10);
-  if (day !== lastSnapshotDay) {
-    for (const account of listAccounts(db)) {
-      try {
-        const p = await new GraphClient({ token: account.token }).profile(account.igUserId);
-        if (p.followers_count !== undefined) {
-          saveSnapshot(db, account.igUserId, day, p.followers_count, p.follows_count ?? null, p.media_count ?? null);
-        }
-      } catch (err) {
-        console.error(new Date().toISOString(), `snapshot @${account.username}:`, err instanceof Error ? err.message : err);
-      }
-    }
-    lastSnapshotDay = day;
-  }
-}
 
 async function loop() {
   try {
-    await tick();
+    const result = await runScheduledWork(await getDb());
+    const changed = result.published.length + result.failed.length + result.retried.length + result.snapshots.length;
+    if (changed > 0) console.log(new Date().toISOString(), JSON.stringify(result));
   } catch (err) {
     console.error(new Date().toISOString(), "worker error:", err instanceof Error ? err.message : err);
   }

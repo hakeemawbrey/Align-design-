@@ -7,6 +7,6 @@ export const dynamic = "force-dynamic";
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ commentId: string }> }) {
   const denied = agentAuth(req);
   if (denied) return denied;
-  deleteDraft(getDb(), (await params).commentId);
+  await deleteDraft(await getDb(), (await params).commentId);
   return NextResponse.json({ ok: true });
 }

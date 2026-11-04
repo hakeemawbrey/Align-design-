@@ -12,9 +12,9 @@ const pct = (r: number | null) => (r === null ? "—" : `${(r * 100).toFixed(1)}
 const signed = (n: number | null) => (n === null ? "—" : `${n >= 0 ? "+" : ""}${fmt.format(n)}`);
 const today = () => new Date().toISOString().slice(0, 10);
 
-function record(db: DB, account: Account, profile: Profile) {
+async function record(db: DB, account: Account, profile: Profile) {
   if (profile.followers_count === undefined) return;
-  saveSnapshot(db, account.igUserId, today(), profile.followers_count, profile.follows_count ?? null, profile.media_count ?? null);
+  await saveSnapshot(db, account.igUserId, today(), profile.followers_count, profile.follows_count ?? null, profile.media_count ?? null);
 }
 
 /** Follower change over the last `days` days (or since the first snapshot, if newer). */
@@ -31,8 +31,8 @@ export default async function Dashboard({
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
   const q = await searchParams;
-  const db = getDb();
-  const accounts = listAccounts(db);
+  const db = await getDb();
+  const accounts = await listAccounts(db);
   if (accounts.length === 0) {
     return (
       <>
@@ -43,7 +43,7 @@ export default async function Dashboard({
   }
   // More than one account: the overview is the default; ?account=<username> shows one account in detail.
   const one =
-    accounts.length === 1 ? accounts[0] : q.account && q.account !== "all" ? getAccount(db, q.account) : null;
+    accounts.length === 1 ? accounts[0] : q.account && q.account !== "all" ? await getAccount(db, q.account) : null;
 
   return (
     <>
@@ -68,23 +68,24 @@ export default async function Dashboard({
 const OVERVIEW_POSTS = 6;
 
 async function Overview({ accounts }: { accounts: Account[] }) {
-  const db = getDb();
+  const db = await getDb();
   const now = new Date();
   const results = await Promise.all(
     accounts.map((a) =>
       accountStats(a, undefined, OVERVIEW_POSTS).then(
-        (s) => {
-          record(db, a, s.profile);
+        async (s) => {
+          await record(db, a, s.profile);
           return { ok: true as const, ...s };
         },
         (e: Error) => ({ ok: false as const, error: e.message }),
       ),
     ),
   );
-  const queued = listPosts(db).filter((p) => p.status === "scheduled" || p.status === "processing");
+  const queued = (await listPosts(db)).filter((p) => p.status === "scheduled" || p.status === "processing");
+  const history = await Promise.all(accounts.map((a) => listSnapshots(db, a.igUserId, 30)));
   const rows = accounts.map((a, i) => {
     const r = results[i];
-    const snapshots = listSnapshots(db, a.igUserId, 30);
+    const snapshots = history[i];
     const mine = queued.filter((p) => p.ig_user_id === a.igUserId);
     const next = mine.filter((p) => new Date(p.scheduled_at) >= now).sort((x, y) => x.scheduled_at.localeCompare(y.scheduled_at))[0];
     return {
@@ -191,7 +192,7 @@ async function Overview({ accounts }: { accounts: Account[] }) {
 }
 
 async function AccountDetail({ account }: { account: Account }) {
-  const db = getDb();
+  const db = await getDb();
 
   let profile: Profile | null = null;
   let posts: PostStats[] = [];
@@ -199,12 +200,12 @@ async function AccountDetail({ account }: { account: Account }) {
   let error: string | null = null;
   try {
     ({ profile, posts, avgRate } = await accountStats(account));
-    record(db, account, profile);
+    await record(db, account, profile);
   } catch (err) {
     error = err instanceof Error ? err.message : "Could not load account";
   }
 
-  const snapshots = listSnapshots(db, account.igUserId);
+  const snapshots = await listSnapshots(db, account.igUserId);
   const first = snapshots[0];
   const last = snapshots[snapshots.length - 1];
   const growth = first && last && snapshots.length > 1 ? last.followers - first.followers : null;

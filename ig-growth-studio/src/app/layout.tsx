@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const signedIn = (await cookies()).has(SESSION_COOKIE);
-  const account = signedIn ? getAccount(getDb()) : null;
-  const accounts = signedIn ? listAccounts(getDb()).map(({ igUserId, username }) => ({ igUserId, username })) : [];
+  const account = signedIn ? await getAccount(await getDb()) : null;
+  const accounts = signedIn ? (await listAccounts(await getDb())).map(({ igUserId, username }) => ({ igUserId, username })) : [];
   return (
     <html lang="en">
       <body>
