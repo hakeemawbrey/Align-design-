@@ -94,7 +94,7 @@ export function nightStars(x, t, n = 60) {
 
 /** a window frame with frost creeping in from the edges; melt 0…1 clears it */
 export function frostFrame(x, t, { melt = 0, x0 = 120, y0 = 360, w = 840, h = 820, hearts = 0 } = {}) {
-  box(x, x0, y0, w, h, 'rgba(0,0,0,0)', { b: 26 })
+  R(x, INK, x0 - 34, y0 - 34, w + 68, 12); R(x, INK, x0 - 34, y0 + h + 22, w + 68, 12); R(x, INK, x0 - 34, y0 - 34, 12, h + 68); R(x, INK, x0 + w + 22, y0 - 34, 12, h + 68)
   R(x, '#8a5a3a', x0 - 26, y0 - 26, w + 52, 26); R(x, '#8a5a3a', x0 - 26, y0 + h, w + 52, 26); R(x, '#8a5a3a', x0 - 26, y0, 26, h); R(x, '#8a5a3a', x0 + w, y0, 26, h)
   R(x, '#8a5a3a', x0 + w / 2 - 10, y0, 20, h); R(x, '#8a5a3a', x0, y0 + h / 2 - 10, w, 20)
   const k = 1 - melt
