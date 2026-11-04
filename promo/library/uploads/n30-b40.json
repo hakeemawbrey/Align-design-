@@ -106,5 +106,113 @@
   "series": "am3",
   "episode": 12,
   "caption": "Awake at 3 AM, and it turns out a friend is too.\nLong nights are easier together. Check on your people."
+ },
+ "nwpe01": {
+  "video": "/_blob/f05b53677629b7c6070656b8f0f3cdf4",
+  "poster": "/_blob/36b6cce7d7ea40c1a83d5df3acf605bc",
+  "title": "Winter starter pack: Aries",
+  "len": 13,
+  "series": "starter",
+  "episode": 1,
+  "caption": "Aries in winter: shorts in the snow, snowball already thrown.\nThe rare item? Letting someone else win for once."
+ },
+ "nwpe02": {
+  "video": "/_blob/36206fca9512342ed79c1fb2e987c560",
+  "poster": "/_blob/b4a3f39e6875750c5ec05e958ed32fa0",
+  "title": "Winter starter pack: Taurus",
+  "len": 13,
+  "series": "starter",
+  "episode": 2,
+  "caption": "Taurus in winter means the heaviest blanket and soup since noon.\nThe sweetest part: they save you the warm spot."
+ },
+ "nwpe03": {
+  "video": "/_blob/784c6c8f7a67d67cbc141c2a7fa7d15f",
+  "poster": "/_blob/556679b4c3335ea0166f69f7b55e9e8f",
+  "title": "Winter starter pack: Gemini",
+  "len": 13,
+  "series": "starter",
+  "episode": 3,
+  "caption": "Gemini's winter: three hats, two plans, one very busy group chat.\nBut when they listen, they remember every word."
+ },
+ "nwpe04": {
+  "video": "/_blob/1d8d87daceb4281e25b7d5e04c189f54",
+  "poster": "/_blob/ebe9861061c9cebb9838021faa4677fe",
+  "title": "Winter starter pack: Cancer",
+  "len": 13,
+  "series": "starter",
+  "episode": 4,
+  "caption": "Every Cancer owns a cookie tin and a mug for every friend.\nAnd a spare scarf for whoever forgot theirs."
+ },
+ "nwpe05": {
+  "video": "/_blob/c3328942aad3a307c0c7e8949d55f6d9",
+  "poster": "/_blob/3c303cfc0dee3ad7629fbf274f05e192",
+  "title": "Winter starter pack: Leo",
+  "len": 13,
+  "series": "starter",
+  "episode": 5,
+  "caption": "Leo's coat is an event and the holiday photo took 40 tries.\nBest part? They make room in the frame for the shy one."
+ },
+ "nwpe06": {
+  "video": "/_blob/1457bbee4f960ee739c35efe95adca59",
+  "poster": "/_blob/e356797137d848a734417c970e2eebe2",
+  "title": "Winter starter pack: Virgo",
+  "len": 13,
+  "series": "starter",
+  "episode": 6,
+  "caption": "Virgo's gift list has tabs and the wrapping is perfect.\nThey also noticed your gloves were thin, and fixed it."
+ },
+ "nwpe07": {
+  "video": "/_blob/cdaac6af3fbc6ebca71241598e1fd985",
+  "poster": "/_blob/a022957b22f8601cf9310ce6ef7d010a",
+  "title": "Winter starter pack: Libra",
+  "len": 13,
+  "series": "starter",
+  "episode": 7,
+  "caption": "Libra's hat matches the scarf and the mug matches the throw.\nThe rare item: Libra picking the plan out loud."
+ },
+ "nwpe08": {
+  "video": "/_blob/2deac1ecdf89fdef1af13ef18cddeb2c",
+  "poster": "/_blob/67aaa79ec96781083b46c343f62ca87b",
+  "title": "Winter starter pack: Scorpio",
+  "len": 13,
+  "series": "starter",
+  "episode": 8,
+  "caption": "Scorpio in winter: black coat, a candle lit at 4 PM, one deep question.\nBeing let into the inner circle is the real gift."
+ },
+ "nwpe09": {
+  "video": "/_blob/ab7a89fa3febddd31187678189015d5d",
+  "poster": "/_blob/68cc5e1557e7a11d8e4cd61a17e119c9",
+  "title": "Winter starter pack: Sagittarius",
+  "len": 13,
+  "series": "starter",
+  "episode": 9,
+  "caption": "Sag's winter: a sled by the door and maps on every wall.\nThe rare item: staying in, because you asked."
+ },
+ "nwpe10": {
+  "video": "/_blob/b273c91f5e64d331ac7099a525342cd0",
+  "poster": "/_blob/79c4c5f12b2f7674532ba212a1d3346a",
+  "title": "Winter starter pack: Capricorn",
+  "len": 13,
+  "series": "starter",
+  "episode": 10,
+  "caption": "Capricorn's winter: a planner, sensible boots, a 6 AM alarm on Sunday.\nSecretly, they love the neighbours' lights."
+ },
+ "nwpe11": {
+  "video": "/_blob/f9582e23443c991a59ed796f2b6be047",
+  "poster": "/_blob/f65e6f92162f67ef11f4dd37417caf39",
+  "title": "Winter starter pack: Aquarius",
+  "len": 13,
+  "series": "starter",
+  "episode": 11,
+  "caption": "Aquarius in winter: a snowflake under a magnifier and a strange new hobby.\nAnd a handwritten note when you least expect it."
+ },
+ "nwpe12": {
+  "video": "/_blob/50c8eb6c6c3355ee3f34b5325c30330d",
+  "poster": "/_blob/df79088954db32ab091ec914a91e7cf4",
+  "title": "Winter starter pack: Pisces",
+  "len": 13,
+  "series": "starter",
+  "episode": 12,
+  "caption": "Pisces in winter: a window seat, soft tissues, one song on repeat.\nThe rare item: happy tears because someone remembered."
  }
 }
