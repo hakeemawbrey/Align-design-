@@ -1,4 +1,4 @@
-// nx2e20 (45 s vertical, "Star Talk Explains, Volume 2", ep 20) · story 0–40.6, then the default end card.
+// nx2e20 (43 s vertical, "Star Talk Explains, Volume 2", ep 20) · story 0–40.6, then the short end card.
 //   ❓ "What does *Aries* season feel like?"  Teacher: ARIES. Student: LIBRA. Pisces cries (at the back desk).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Aries slot (✓ about 20 mar – 19 apr; day and night nearly equal), then
 //   ELEMENT · MODE · RULER (✦ fire, cardinal, mars), then the feel (✦ fresh starts, courage, going first), then the ♥ tip.
@@ -7,7 +7,7 @@
 import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e20', sign: 'aries', student: 'libra', key: 'A', duration: 45,
+  id: 'nx2e20', sign: 'aries', student: 'libra', key: 'A', duration: 43,
   dates: "ABOUT 20 MAR – 19 APR", note: "DAY AND NIGHT NEARLY EQUAL",
   element: "FIRE", mode: "CARDINAL", ruler: "MARS",
   feel: ["FRESH STARTS", "COURAGE", "GOING FIRST"],

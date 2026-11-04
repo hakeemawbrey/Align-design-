@@ -1,4 +1,4 @@
-// nx2e19 (45 s vertical, "Star Talk Explains, Volume 2", ep 19) · story 0–40.6, then the default end card.
+// nx2e19 (43 s vertical, "Star Talk Explains, Volume 2", ep 19) · story 0–40.6, then the short end card.
 //   ❓ "What does *Pisces* season feel like?"  Teacher: PISCES. Student: VIRGO. Pisces cries (as the teacher).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Pisces slot (✓ about 19 feb – 20 mar; ends at the march equinox), then
 //   ELEMENT · MODE · RULER (✦ water, mutable, jupiter + neptune), then the feel (✦ empathy, imagination, dreams), then the ♥ tip.
@@ -8,7 +8,7 @@ import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 import { drawClipboard } from '../../nx2e16/scenes/props.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e19', sign: 'pisces', student: 'virgo', key: 'Db', duration: 45,
+  id: 'nx2e19', sign: 'pisces', student: 'virgo', key: 'Db', duration: 43,
   dates: "ABOUT 19 FEB – 20 MAR", note: "ENDS AT THE MARCH EQUINOX",
   element: "WATER", mode: "MUTABLE", ruler: "JUPITER|+ NEPTUNE",
   feel: ["EMPATHY", "IMAGINATION", "DREAMS"],

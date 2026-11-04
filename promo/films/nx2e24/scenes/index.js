@@ -1,4 +1,4 @@
-// nx2e24 (45 s vertical, "Star Talk Explains, Volume 2", ep 24) · story 0–40.6, then the default end card.
+// nx2e24 (43 s vertical, "Star Talk Explains, Volume 2", ep 24) · story 0–40.6, then the short end card.
 //   ❓ "What does *Leo* season feel like?"  Teacher: LEO. Student: AQUARIUS. Pisces cries (at the back desk).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Leo slot (✓ about 23 jul – 22 aug; brightest star: regulus), then
 //   ELEMENT · MODE · RULER (✦ fire, fixed, the sun), then the feel (✦ warmth, play, being seen), then the ♥ tip.
@@ -8,7 +8,7 @@ import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 import { drawCrown } from '../../nx2e16/scenes/props.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e24', sign: 'leo', student: 'aquarius', key: 'D', duration: 45,
+  id: 'nx2e24', sign: 'leo', student: 'aquarius', key: 'D', duration: 43,
   dates: "ABOUT 23 JUL – 22 AUG", note: "BRIGHTEST STAR: REGULUS",
   element: "FIRE", mode: "FIXED", ruler: "THE SUN",
   feel: ["WARMTH", "PLAY", "BEING SEEN"],

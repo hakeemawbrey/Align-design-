@@ -1,4 +1,4 @@
-// nx2e17 (45 s vertical, "Star Talk Explains, Volume 2", ep 17) · story 0–40.6, then the default end card.
+// nx2e17 (43 s vertical, "Star Talk Explains, Volume 2", ep 17) · story 0–40.6, then the short end card.
 //   ❓ "What does *Capricorn* season feel like?"  Teacher: CAPRICORN. Student: LEO. Pisces cries (at the back desk).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Capricorn slot (✓ about 21 dec – 19 jan; starts at the december solstice), then
 //   ELEMENT · MODE · RULER (✦ earth, cardinal, saturn), then the feel (✦ plans, patience, the climb), then the ♥ tip.
@@ -9,7 +9,7 @@ import { drawWhistle, whistleCue, drawCrown } from '../../nx2e16/scenes/props.js
 import { clamp } from '../../../src/lib.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e17', sign: 'capricorn', student: 'leo', key: 'Gm', duration: 45,
+  id: 'nx2e17', sign: 'capricorn', student: 'leo', key: 'Gm', duration: 43,
   dates: "ABOUT 21 DEC – 19 JAN", note: "STARTS AT THE DECEMBER SOLSTICE",
   element: "EARTH", mode: "CARDINAL", ruler: "SATURN",
   feel: ["PLANS", "PATIENCE", "THE CLIMB"],

@@ -1,4 +1,4 @@
-// nx2e22 (45 s vertical, "Star Talk Explains, Volume 2", ep 22) · story 0–40.6, then the default end card.
+// nx2e22 (43 s vertical, "Star Talk Explains, Volume 2", ep 22) · story 0–40.6, then the short end card.
 //   ❓ "What does *Gemini* season feel like?"  Teacher: GEMINI. Student: CAPRICORN. Pisces cries (at the back desk).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Gemini slot (✓ about 21 may – 20 jun; brightest: castor + pollux), then
 //   ELEMENT · MODE · RULER (✦ air, mutable, mercury), then the feel (✦ curiosity, conversation, new ideas), then the ♥ tip.
@@ -8,7 +8,7 @@ import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 import { drawWhistle } from '../../nx2e16/scenes/props.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e22', sign: 'gemini', student: 'capricorn', key: 'C', duration: 45,
+  id: 'nx2e22', sign: 'gemini', student: 'capricorn', key: 'C', duration: 43,
   dates: "ABOUT 21 MAY – 20 JUN", note: "BRIGHTEST: CASTOR + POLLUX",
   element: "AIR", mode: "MUTABLE", ruler: "MERCURY",
   feel: ["CURIOSITY", "CONVERSATION", "NEW IDEAS"],

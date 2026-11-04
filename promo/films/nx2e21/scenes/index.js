@@ -1,4 +1,4 @@
-// nx2e21 (45 s vertical, "Star Talk Explains, Volume 2", ep 21) · story 0–40.6, then the default end card.
+// nx2e21 (43 s vertical, "Star Talk Explains, Volume 2", ep 21) · story 0–40.6, then the short end card.
 //   ❓ "What does *Taurus* season feel like?"  Teacher: TAURUS. Student: GEMINI. Pisces cries (at the back desk).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Taurus slot (✓ about 20 apr – 20 may), then
 //   ELEMENT · MODE · RULER (✦ earth, fixed, venus), then the feel (✦ comfort, the senses, steadiness), then the ♥ tip.
@@ -7,7 +7,7 @@
 import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e21', sign: 'taurus', student: 'gemini', key: 'Eb', duration: 45,
+  id: 'nx2e21', sign: 'taurus', student: 'gemini', key: 'Eb', duration: 43,
   dates: "ABOUT 20 APR – 20 MAY", note: null,
   element: "EARTH", mode: "FIXED", ruler: "VENUS",
   feel: ["COMFORT", "THE SENSES", "STEADINESS"],

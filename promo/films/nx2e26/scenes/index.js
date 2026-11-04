@@ -1,4 +1,4 @@
-// nx2e26 (45 s vertical, "Star Talk Explains, Volume 2", ep 26) · story 0–40.6, then the default end card.
+// nx2e26 (43 s vertical, "Star Talk Explains, Volume 2", ep 26) · story 0–40.6, then the short end card.
 //   ❓ "What does *Libra* season feel like?"  Teacher: LIBRA. Student: ARIES. Pisces cries (at the back desk).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Libra slot (✓ about 23 sep – 22 oct; day and night nearly equal), then
 //   ELEMENT · MODE · RULER (✦ air, cardinal, venus), then the feel (✦ balance, fairness, partnership), then the ♥ tip.
@@ -7,7 +7,7 @@
 import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e26', sign: 'libra', student: 'aries', key: 'F', duration: 45,
+  id: 'nx2e26', sign: 'libra', student: 'aries', key: 'F', duration: 43,
   dates: "ABOUT 23 SEP – 22 OCT", note: "DAY AND NIGHT NEARLY EQUAL",
   element: "AIR", mode: "CARDINAL", ruler: "VENUS",
   feel: ["BALANCE", "FAIRNESS", "PARTNERSHIP"],

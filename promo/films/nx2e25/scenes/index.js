@@ -1,4 +1,4 @@
-// nx2e25 (45 s vertical, "Star Talk Explains, Volume 2", ep 25) · story 0–40.6, then the default end card.
+// nx2e25 (43 s vertical, "Star Talk Explains, Volume 2", ep 25) · story 0–40.6, then the short end card.
 //   ❓ "What does *Virgo* season feel like?"  Teacher: VIRGO. Student: PISCES. Pisces cries (as the student).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Virgo slot (✓ about 23 aug – 22 sep; brightest star: spica), then
 //   ELEMENT · MODE · RULER (✦ earth, mutable, mercury), then the feel (✦ details, helping, good routines), then the ♥ tip.
@@ -8,7 +8,7 @@ import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 import { drawClipboard } from '../../nx2e16/scenes/props.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e25', sign: 'virgo', student: 'pisces', key: 'G', duration: 45,
+  id: 'nx2e25', sign: 'virgo', student: 'pisces', key: 'G', duration: 43,
   dates: "ABOUT 23 AUG – 22 SEP", note: "BRIGHTEST STAR: SPICA",
   element: "EARTH", mode: "MUTABLE", ruler: "MERCURY",
   feel: ["DETAILS", "HELPING", "GOOD ROUTINES"],

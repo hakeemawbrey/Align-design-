@@ -1,4 +1,4 @@
-// nx2e23 (45 s vertical, "Star Talk Explains, Volume 2", ep 23) · story 0–40.6, then the default end card.
+// nx2e23 (43 s vertical, "Star Talk Explains, Volume 2", ep 23) · story 0–40.6, then the short end card.
 //   ❓ "What does *Cancer* season feel like?"  Teacher: CANCER. Student: SAGITTARIUS. Pisces cries (at the back desk).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Cancer slot (✓ about 21 jun – 22 jul; starts at the june solstice), then
 //   ELEMENT · MODE · RULER (✦ water, cardinal, the moon), then the feel (✦ home, care, feelings), then the ♥ tip.
@@ -7,7 +7,7 @@
 import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e23', sign: 'cancer', student: 'sagittarius', key: 'Bb', duration: 45,
+  id: 'nx2e23', sign: 'cancer', student: 'sagittarius', key: 'Bb', duration: 43,
   dates: "ABOUT 21 JUN – 22 JUL", note: "STARTS AT THE JUNE SOLSTICE",
   element: "WATER", mode: "CARDINAL", ruler: "THE MOON",
   feel: ["HOME", "CARE", "FEELINGS"],

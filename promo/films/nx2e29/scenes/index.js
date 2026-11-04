@@ -1,4 +1,4 @@
-// nx2e29 (50 s vertical, "Star Talk Explains, Volume 2", ep 29) · story 0–45.6, then the default end card.
+// nx2e29 (48 s vertical, "Star Talk Explains, Volume 2", ep 29) · story 0–45.6, then the short end card.
 //   ❓ "What's your *4th house*?"  Teacher: ♋ CANCER (pointer). Student: ♑ CAPRICORN. Pisces cries at the back desk.
 //   THE HOUSE BOARD (x2kit): ✦ 12 houses from the rising sign; in many house systems the 4th starts at the IC, the bottom
 //   of the chart (shaded yellow, "IC" under the wheel); HOME · FAMILY · ROOTS · PRIVATE YOU; the 10th, opposite, shades blue
@@ -8,7 +8,7 @@
 import { houseEpisode } from '../../nx2e16/scenes/x2kit.js'
 
 const EP = houseEpisode({
-  id: 'nx2e29', house: 4, opposite: 10, ic: true, teacher: 'cancer', student: 'capricorn', key: 'Eb', duration: 50,
+  id: 'nx2e29', house: 4, opposite: 10, ic: true, teacher: 'cancer', student: 'capricorn', key: 'Eb', duration: 48,
   q: 'What’s your | *4th house*?',
   lines: [
     ['student', '4th house. is that… *a corner office?*'],

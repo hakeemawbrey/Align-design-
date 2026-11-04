@@ -2,10 +2,10 @@
 // A copy of the Volume 1 classkit (promo/films/st13modes/scenes/classkit.js), changed for Next 30:
 //   · the series bug "STAR TALK EXPLAINS" top-left (Inter 800 small caps, letter-spaced); the question badge reads
 //     "TODAY'S QUESTION"; no season numbers anywhere (the card frame has no numeral and leaves the top-left corner free);
-//   · exactly one card cut (cardfx), at the question → board change;
+//   · no card cut (the 4 Nov change); the short 2.4 s end card (films are 2 s shorter than the slate);
 //   · Pisces cries in every film: as the teacher or the student (tears on the sprite), or else from a little desk at the
 //     back of the class, between the two (cfg.pisces = false turns the extra desk off);
-//   · the default end card CTA;
+//   · the default end card CTA, short form;
 //   · chalk labels may fade out (`out: [a, b]`), and `seasonEpisode(spec)` builds the season board used by 16–27.
 //
 //   makeEpisode(cfg) → { DURATION, SCENES, CUES, T }      (cfg as in classkit, plus `teacherId` / `studentId` sign ids)
@@ -19,8 +19,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawGrain, layerCanvas } from '../../sky.js'
 import { GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardFrame, cardCuts, cardCutCues } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 import { loadExplainFonts, questionCard, drawClassroom, chalkboard, chalkText, chalkLine, chalkCircle, factTag, lightbulb, drawPointer, gotIt, questionCues, chalkCues, tagCues, bulbCues, gotItCues, EX } from '../../stexplain.js'
@@ -59,7 +59,7 @@ function buildBug(root) {
 
 /** the schedule (pure; shared by picture and sound) */
 export function schedule(cfg) {
-  const D = cfg.duration, STORY_END = D - ENDCARD_LEN
+  const D = cfg.duration, STORY_END = D - ENDCARD_SHORT_LEN
   const T = { STORY_END, qOut: [2.75, 3.05], boardAt: 2.85 }
   T.last = r3(STORY_END - 1.9)
   T.recap = r3(STORY_END - (cfg.items.length >= 3 ? 4.8 : 4.3))
@@ -129,7 +129,6 @@ export function makeEpisode(cfg) {
   }
   const CHALK_LABELS = cfg.chalk ? cfg.chalk(T.M, T) : []
   const teacherTaps = LINES.filter(L => L.who === 'teacher').map(L => L.t)
-  const CUTS = [{ t: r3(T.cut), kind: 'flip' }]
 
   async function build(stage) {
     await loadExplainFonts()
@@ -252,7 +251,7 @@ export function makeEpisode(cfg) {
     }
   }
 
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]
   const pitch = { [cfg.teacher.tag]: cfg.teacher.pitch || 440, [cfg.student.tag]: cfg.student.pitch || 700, ...(cfg.pitches || {}) }
@@ -269,9 +268,8 @@ export function makeEpisode(cfg) {
     ...Array.from({ length: 4 }, (_, i) => ['pop', r3(T.last + 0.12 + i * 0.08), NOTE[(i + 2) % NOTE.length], 0.03, i % 2 ? 0.15 : -0.15]),
     ['pluck', r3(T.last + 0.5), 1046.5, 0.04, 0.6, 0],
     ['whoosh', r3(T.out[0]), 0.35, 0.025],
-    ...cardCutCues(CUTS),
     ...(cfg.cues ? cfg.cues(T) : []),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ].sort((a, b) => a[1] - b[1])
   return { DURATION: cfg.duration, SCENES, CUES, T }
 }
@@ -303,7 +301,7 @@ export function seasonEpisode(spec) {
   const student = { tag: TAGNAME(sid), color: ST.color, glyph: ST.glyph, pitch: spec.studentPitch || 760, ...(spec.studentOpts || {}) }
   const cell = u => (u + 0.5) / 12
   return makeEpisode({
-    id: spec.id, duration: spec.duration || 45, key: spec.key,
+    id: spec.id, duration: spec.duration || 43, key: spec.key,
     q: `What does *${spec.qName || (id[0].toUpperCase() + id.slice(1))}* | season feel like?`, qAccent: spec.qAccent || S.color,
     teacher, student, teacherId: id, studentId: sid,
     boardTitle: `${NAME(id)} SEASON`,

@@ -1,4 +1,4 @@
-// nx2e30 (55 s vertical, "Star Talk Explains, Volume 2", ep 30, the volume's last) · story 0–50.6, then the end card.
+// nx2e30 (53 s vertical, "Star Talk Explains, Volume 2", ep 30, the volume's last) · story 0–50.6, then the short end card.
 //   ❓ "What's your *11th house*?"  Teacher: ♒ AQUARIUS (pointer). Student: ♌ LEO in its crown. Pisces cries at the back desk.
 //   THE HOUSE BOARD (x2kit): ✦ 12 houses from the rising sign; the 11th sits high, just before the 12th (shaded yellow);
 //   FRIENDS · GROUPS · COMMUNITY · HOPES + WISHES · AQUARIUS. ♥ friends are a love story too; a new-year wish is better
@@ -8,7 +8,7 @@ import { houseEpisode } from '../../nx2e16/scenes/x2kit.js'
 import { drawCrown } from '../../nx2e16/scenes/props.js'
 
 const EP = houseEpisode({
-  id: 'nx2e30', house: 11, teacher: 'aquarius', student: 'leo', key: 'G', duration: 55,
+  id: 'nx2e30', house: 11, teacher: 'aquarius', student: 'leo', key: 'G', duration: 53,
   q: 'What’s your | *11th house*?',
   studentOpts: { prop: (x, r) => drawCrown(x, r.x, r.top + 4, Math.max(4, Math.round(r.size / 40))) },
   lines: [

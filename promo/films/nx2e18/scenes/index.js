@@ -1,4 +1,4 @@
-// nx2e18 (45 s vertical, "Star Talk Explains, Volume 2", ep 18) · story 0–40.6, then the default end card.
+// nx2e18 (43 s vertical, "Star Talk Explains, Volume 2", ep 18) · story 0–40.6, then the short end card.
 //   ❓ "What does *Aquarius* season feel like?"  Teacher: AQUARIUS. Student: CANCER. Pisces cries (at the back desk).
 //   THE SEASON BOARD (x2kit): the Sun slides into the Aquarius slot (✓ about 20 jan – 18 feb), then
 //   ELEMENT · MODE · RULER (✦ air (!), fixed, saturn + uranus), then the feel (✦ friendship, ideas, your own way), then the ♥ tip.
@@ -7,7 +7,7 @@
 import { seasonEpisode } from '../../nx2e16/scenes/x2kit.js'
 
 const EP = seasonEpisode({
-  id: 'nx2e18', sign: 'aquarius', student: 'cancer', key: 'F#m', duration: 45,
+  id: 'nx2e18', sign: 'aquarius', student: 'cancer', key: 'F#m', duration: 43,
   dates: "ABOUT 20 JAN – 18 FEB", note: null,
   element: "AIR (!)", mode: "FIXED", ruler: "SATURN|+ URANUS",
   feel: ["FRIENDSHIP", "IDEAS", "YOUR OWN WAY"],
