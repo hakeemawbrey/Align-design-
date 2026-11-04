@@ -303,6 +303,23 @@ export function tearsCells(ctx, t, k) {
     ctx.fillStyle = '#8fe3ff'; ctx.fillRect(d < 0 ? 10 : 20, 23.2, 6, 0.9)
   }
 }
+/** chunky canvas-space tear drops (readable at phone size) from a sprite frame's eyes; k 1…3 */
+export function bigTears(x, t, F, k, alpha = 1) {
+  if (k <= 0 || alpha <= 0.05) return
+  const n = k >= 3 ? 4 : k >= 2 ? 3 : 1, px = Math.max(6, Math.round(F.cell * 1.6))
+  x.save(); x.globalAlpha *= alpha
+  for (const [u, d] of [[11, -1], [25, 1]]) {
+    const e = spritePt(F, u, 21)
+    for (let q = 0; q < n; q++) {
+      const ph = ((t * (0.8 + k * 0.35) + q / n + (d > 0 ? 0.37 : 0)) % 1 + 1) % 1
+      const sx = e.x + d * (k >= 3 ? 70 : 14) * ph, sy = e.y + (k >= 3 ? -30 * ph + 160 * ph * ph : 90 * ph * ph)
+      x.fillStyle = '#1b1236'; x.fillRect(Math.round(sx - 2), Math.round(sy - 2), px + 4, px * 1.4 + 4)
+      x.fillStyle = '#8fe3ff'; x.fillRect(Math.round(sx), Math.round(sy), px, px * 1.4)
+      x.fillStyle = '#ffffff'; x.fillRect(Math.round(sx), Math.round(sy), px / 2, px / 2)
+    }
+  }
+  x.restore()
+}
 /** any star with optional tears; returns the frame */
 export function crier(x, t, P, opts, tears = 0) {
   drawStarChar(x, P.x, P.y, P.size, t, opts)
@@ -352,7 +369,7 @@ export function askFilm(S) {
   for (const text of S.lines) {
     const [lt] = lineTimes([{ t: at, speaker: SPEAK, text }], { cps: CPS })
     T.l.push(at); T.done.push(lt.done)
-    at = lt.done + 1.85
+    at = lt.done + 1.7
   }
   T.chip = 3.4
   T.dmOut = [T.l[1] - 0.4, T.l[1] - 0.12]
@@ -369,7 +386,7 @@ export function askFilm(S) {
 
   const LINES = S.lines.map((text, i) => ({ t: T.l[i], speaker: SPEAK, text, color: i === 1 ? (S.color2 || COL) : COL }))
   const HOPS = [...talkHops(LINES, SPEAK, { cps: CPS }), T.h2Land]
-  const PC = S.pisces === false ? null : { x: 128, y: 1215, size: 180, ...(S.pisces || {}) }
+  const PC = S.pisces === false ? null : { x: 132, y: 1150, size: 210, ...(S.pisces || {}) }
   const tearsOf = S.tears || ((t) => (t < T.l[2] ? 1 : t < T.h2Land ? 2 : 3))
 
   async function build(stage) {
@@ -394,6 +411,7 @@ export function askFilm(S) {
       const H = { ...P, ok, st, opts, T }
       if (S.back) S.back(x, t, T, H)
       H.F = crier(x, t, P, opts, S.pisces === false ? tearsOf(t, T) : 0)
+      if (S.pisces === false) bigTears(x, t, H.F, tearsOf(t, T), ok)
       if (S.front) S.front(x, t, T, H)
       return H
     }
@@ -404,7 +422,8 @@ export function askFilm(S) {
       const tl = tearsOf(t, T)
       const mood = t < T.h2Land ? 'sparkle' : 'happy'
       const hop = t >= T.h2Land ? [T.h2Land, T.h2Land + 0.65, T.h2Land + 1.3] : [T.chip + 0.3]
-      crier(x, t, PC, { color: PIS.color, glyph: PIS.glyph, mood, look: [1, -1], seed: 9, glow: 0.8, pop: k, hops: hop }, tl)
+      const PF = crier(x, t, PC, { color: PIS.color, glyph: PIS.glyph, mood, look: [1, -1], seed: 9, glow: 0.8, pop: k, hops: hop }, tl)
+      bigTears(x, t, PF, tl, k)
       // a tissue in its tip from the sniffles
       if (t > 1.0) drawBits(x, ['WWW', 'WWW', '.W.'], { W: '#ffffff' }, PC.x + PC.size * 0.42, PC.y + PC.size * 0.05 + Math.sin(t * 3) * 4, 7 * k, { rot: 0.3 })
     }

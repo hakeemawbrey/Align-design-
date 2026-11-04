@@ -37,7 +37,7 @@ const F = askFilm({
   lines: ["liking someone fast isn't a problem.", 'just let plans grow one date at a time.', 'ask what pace feels good to them too.'],
   chip: '♈ CARDINAL FIRE · RULED BY MARS',
   last: 'Fast heart. | *Slow* steps.', late: 2,
-  pisces: { x: 975, y: 1215, size: 170 },
+  pisces: { x: 965, y: 1150, size: 190 },
   state(t, T) {
     const dx = aX(t, T) - 540, dy = -30
     if (t < BRAKE) return { dx, dy, mood: 'wide', look: [1, 0], blink: false, squash: -0.06, bob: 0, hops: false }
