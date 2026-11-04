@@ -15,9 +15,9 @@
 //   25.20–25.64 the rest of the hand sinks away · 25.80–26.20 "Play it to Juniper" button breathes gold
 //   25.60–26.35 hold · 26.35–26.80 phone + caption drift down and fade (f8's line starts typing 26.68)
 import { clamp, lerp, prog, ease, tw, rng, el, C } from '../../../src/lib.js'
-import { W, H, A, SERIF, MONO, fill, img } from '../../../src/scenes/common.js'
+import { W, H, VERT, A, SERIF, MONO, fill, img } from '../../../src/scenes/common.js'
 import { drawMoon } from '../../../src/scenes/fx-moon.js'
-import { drawSky, skyCam, drawGrain } from './f3-chart.js'
+import { drawSky, skyCam, drawGrain, MOON_HOME } from './f3-chart.js'
 
 const T0 = 24.0, T1 = 26.8
 const T_GLIDE = 24.15, T_GLIDE_END = 24.6, T_SCR = 24.55, T_SCR_END = 24.85
@@ -35,8 +35,8 @@ function dimPlate() {
   DIM = document.createElement('canvas'); DIM.width = W; DIM.height = H
   const x = DIM.getContext('2d')
   x.fillStyle = 'rgba(11,6,32,0.34)'; x.fillRect(0, 0, W, H)
-  x.save(); x.translate(W / 2, H / 2); x.scale(1, 0.6)
-  const g = x.createRadialGradient(0, 0, 0, 0, 0, 1000)
+  x.save(); x.translate(W / 2, H / 2); x.scale(1, VERT ? 1.5 : 0.6)
+  const g = x.createRadialGradient(0, 0, 0, 0, 0, VERT ? 760 : 1000)
   g.addColorStop(0, 'rgba(11,6,32,0.5)'); g.addColorStop(0.55, 'rgba(11,6,32,0.32)'); g.addColorStop(1, 'rgba(11,6,32,0)')
   x.fillStyle = g; x.fillRect(-1100, -1100, 2200, 2200); x.restore()
   return DIM
@@ -52,7 +52,7 @@ export function paintSky(bx, t, { moonAlpha = 1, moonGlow = 3 } = {}) {
   const { zoom, dx, dy } = skyCam(t)
   const driftX = dx + pan[0], driftY = dy + pan[1]
   // same placement as drawSky's moon after its 7.5 move (1716, 122, r52·zoom, phase .14) — f3–f6 moon spot
-  drawMoon(bx, 1716 + driftX * 1.3, 122 + driftY * 1.3, 52 * zoom, 0.14, { alpha: moonAlpha, glow: moonGlow, earthshine: 1, darkAlpha: 0.62 })
+  drawMoon(bx, MOON_HOME.x + driftX * 1.3, MOON_HOME.y + driftY * 1.3, 52 * zoom, 0.14, { alpha: moonAlpha, glow: moonGlow, earthshine: 1, darkAlpha: 0.62 })
   bx.setTransform(1, 0, 0, 1, 0, 0)
 }
 /** shared grain look (≥0.5, overlay) */

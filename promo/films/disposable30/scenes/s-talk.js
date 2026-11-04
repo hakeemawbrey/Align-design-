@@ -10,31 +10,34 @@
 // Same sky spine as f5→f8 (f7's paintSky): its clock runs 24.0 → 26.6 across the scene, so it joins f5's last frame
 // (local 24.0) and f8's first (26.6) with no jump.
 import { clamp, lerp, prog, ease, tw, el, C } from '../../../src/lib.js'
-import { W, H, A, SERIF, SANS, MONO, fill, img } from '../../../src/scenes/common.js'
+import { W, H, VERT, A, SERIF, SANS, MONO, fill, img } from '../../../src/scenes/common.js'
 import { drawGrain } from './f3-chart.js'
 import { paintSky, grainCanvas } from './f7-talk.js'
 
 const T0 = 19.55, T1 = 26.85, SKY0 = 24.0, SKY1 = 26.6
 const EXIT = { a: 26.0, b: 26.5 }
-const CW = 732, CH = 1170, S = 760 / 1050                   // talk card png; body 1050 tall → 760 on screen
+const CW = 732, CH = 1170, S = (VERT ? 600 : 760) / 1050    // talk card png; body 1050 tall → 760 on screen (600 in 9:16)
 const JU = { bg: 'rgba(120,96,210,0.34)', bd: 'rgba(201,166,255,0.55)', name: 'JUNIPER' }
 const MA = { bg: 'rgba(242,199,92,0.16)', bd: 'rgba(242,199,92,0.6)', name: 'MARCUS' }
 
 // beat A: card left, thread right · beat B: card right, thread left
-const A_ = { card: { src: 'card-talk-1.png', x: 520, y: 590, rz: -3, from: [1500, 1400, 14], land: 19.75, dur: 0.5 },
-  label: 'MARCUS PLAYED THE FOOL', col: { x0: 930, x1: 1800 }, labelAt: 20.15, out: 22.6, cap: ['Skip the small talk.', 19.9, 22.5],
+// 9:16 (VERT): caption on top, the played card centred, the thread under it (both beats)
+const A_ = { card: VERT ? { src: 'card-talk-1.png', x: 540, y: 680, rz: -3, from: [1300, 1500, 14], land: 19.75, dur: 0.5, dir: -1 }
+    : { src: 'card-talk-1.png', x: 520, y: 590, rz: -3, from: [1500, 1400, 14], land: 19.75, dur: 0.5 },
+  label: 'MARCUS PLAYED THE FOOL', col: VERT ? { x0: 60, x1: 1020 } : { x0: 930, x1: 1800 }, labelAt: 20.15, out: 22.6, cap: ['Skip the small talk.', 19.9, 22.5],
   msgs: [{ who: JU, text: 'Pineapple on pizza. I will die on it.', type: 20.4, at: 20.75 },
          { who: MA, text: 'Bold. Mine: cereal is soup.', at: 21.35 },
          { who: JU, text: 'Okay. You’re fun.', type: 21.8, at: 22.05 }] }
-const B_ = { card: { src: 'card-talk-2.png', x: 1400, y: 590, rz: 3, from: [400, -500, -14], land: 23.1, dur: 0.5 },
-  label: 'JUNIPER PLAYED THE SUN', col: { x0: 120, x1: 990 }, labelAt: 23.3, out: EXIT.a, cap: ['Get a real answer.', 23.1, 25.85],
+const B_ = { card: VERT ? { src: 'card-talk-2.png', x: 540, y: 680, rz: 3, from: [-260, -300, -14], land: 23.1, dur: 0.5, dir: 1 }
+    : { src: 'card-talk-2.png', x: 1400, y: 590, rz: 3, from: [400, -500, -14], land: 23.1, dur: 0.5 },
+  label: 'JUNIPER PLAYED THE SUN', col: VERT ? { x0: 60, x1: 1020 } : { x0: 120, x1: 990 }, labelAt: 23.3, out: EXIT.a, cap: ['Get a real answer.', 23.1, 25.85],
   msgs: [{ who: MA, text: 'Night owl. Always.', at: 23.55 },
          { who: JU, text: 'Same. 2am diner?', type: 24.05, at: 24.35 },
          { who: MA, text: 'It’s a date. ✦', at: 24.95, gold: true }] }
-const ROW0 = 330, ROW_H = 158
+const ROW0 = VERT ? 1100 : 330, ROW_H = VERT ? 135 : 158
 
 function caption(root, text) {
-  const box = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '58px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: '100px',
+  const box = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (VERT ? 214 : 58) + 'px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: (VERT ? 92 : 100) + 'px',
     lineHeight: 1, color: C.bone, whiteSpace: 'nowrap', opacity: 0, textShadow: '0 0 30px rgba(11,6,32,0.9), 0 2px 12px rgba(11,6,32,0.8)' }, root, text)
   return box
 }
@@ -76,7 +79,7 @@ export default function build(stage) {
   const bgC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px' }, root)
   bgC.width = W; bgC.height = H
   const bx = bgC.getContext('2d')
-  const eb = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '22px', textAlign: 'center', textIndent: '0.3em', fontFamily: MONO, fontSize: '26px', letterSpacing: '0.3em',
+  const eb = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (VERT ? 172 : 22) + 'px', textAlign: 'center', textIndent: '0.3em', fontFamily: MONO, fontSize: '26px', letterSpacing: '0.3em',
     color: C.bone, opacity: 0, textShadow: '0 0 12px rgba(11,6,32,0.9)' }, root, 'THE TALK DECK')
   const beats = [beat(root, A_), beat(root, B_)]
   const gx = grainCanvas(root, 0.55)
@@ -96,7 +99,7 @@ export default function build(stage) {
         b.g.style.display = on ? 'block' : 'none'
         if (!on) { b.cap.style.opacity = '0'; continue }
         const land = tw(t, [[c.land - 0.04, 0], [c.land + 0.06, 1, ease.outQuad], [c.land + 0.8, 0.3, ease.inOutQuad]])
-        const dir = c.x < 960 ? -1 : 1
+        const dir = c.dir ?? (c.x < 960 ? -1 : 1)
         const x = lerp(c.from[0], c.x, e2) + dir * 500 * out, y = lerp(c.from[1], c.y, e) - 10 * land
         const rz = lerp(c.from[2], c.rz, e2)
         b.holder.style.transform = `translate(${(x - c.x).toFixed(2)}px, ${(y - c.y).toFixed(2)}px) rotate(${rz.toFixed(3)}deg) scale(${(1 + 0.04 * land).toFixed(4)})`

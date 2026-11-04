@@ -16,7 +16,7 @@
 //   28.05–29.50 lockup reads clean (slow breathe) · 28.60 one soft chakra pulse up the column · 28.75 the moon brightens
 //   fade to black 29.50 → 30.00 (a black plate reaches 1.0 exactly at 30.0)
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, mix, C } from '../../../src/lib.js'
-import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
+import { W, H, VERT, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { buildStarSprite, drawGrain } from './f3-chart.js'
 import { paintSky, grainCanvas, skyPan, skyZoom } from './f7-talk.js'
 
@@ -46,8 +46,9 @@ function drawPixelStar(ctx, cx, cy, px, kind, color, centre, a) {
 }
 
 // ── layout (1920×1080): line rises to y≈250; lockup block beneath, centred on the frame
-const LINE_Y0 = H / 2, LINE_Y1 = 250, LINE_FS = 104, LINE_S1 = 0.93   // ≥96px after the rise
-const MARK = 250, MARK_CY = 492, WORD_TOP = 632, WORD_FS = 118, SUB_TOP = 806, SUB_FS = 30
+//    9:16 (VERT): the same block, centred on the tall frame (line rises to y≈650)
+const LINE_Y0 = H / 2, LINE_Y1 = VERT ? 650 : 250, LINE_FS = VERT ? 96 : 104, LINE_S1 = 0.93   // ≥96px after the rise
+const MARK = 250, MARK_CY = VERT ? 900 : 492, WORD_TOP = VERT ? 1040 : 632, WORD_FS = 118, SUB_TOP = VERT ? 1214 : 806, SUB_FS = 30
 const MOON = { x: 1590, y: 214, r: 58 }
 
 export default function build(stage) {
@@ -58,8 +59,8 @@ export default function build(stage) {
   const spriteS = buildStarSprite(true)
   // indigo pocket behind the type/lockup column (bone holds ≥ 7:1)
   const pocket = canvas(W, H), pk = pocket.getContext('2d')
-  pk.save(); pk.translate(W / 2, H / 2); pk.scale(1, 0.62)
-  const pg = pk.createRadialGradient(0, 0, 0, 0, 0, 820)
+  pk.save(); pk.translate(W / 2, VERT ? 930 : H / 2); pk.scale(1, VERT ? 1.2 : 0.62)
+  const pg = pk.createRadialGradient(0, 0, 0, 0, 0, VERT ? 640 : 820)
   pg.addColorStop(0, 'rgba(11,6,32,0.62)'); pg.addColorStop(0.6, 'rgba(11,6,32,0.42)'); pg.addColorStop(1, 'rgba(11,6,32,0)')
   pk.fillStyle = pg; pk.fillRect(-1000, -1000, 2000, 2000); pk.restore()
 
@@ -71,8 +72,8 @@ export default function build(stage) {
   const PIX = []
   while (PIX.length < 26) {
     const x = pr() * W, y = pr() * H
-    if (x > 520 && x < 1400 && y > 150 && y < 870) continue
-    if (x > 1580 && y < 260) continue                         // clear of the moon
+    if (VERT ? (x > 70 && x < 1010 && y > 520 && y < 1330) : (x > 520 && x < 1400 && y > 150 && y < 870)) continue
+    if (VERT ? (x > 820 && y < 260) : (x > 1580 && y < 260)) continue   // clear of the moon
     PIX.push({ x, y, px: pr() < 0.3 ? 4 : 3, col: PIXC[Math.floor(pr() * PIXC.length)], ph: pr() * 6.28, sp: 2 + pr() * 3, kind: Math.floor(pr() * 4), t0: T0 + pr() * 0.9 })
   }
 
@@ -137,7 +138,7 @@ export default function build(stage) {
         const p = prog(t, T_STAR, T_STAR + 0.42)
         if (p > 0 && p < 1) {
           const e = ease.inOutQuad(p)
-          const x0 = 180, y0 = 96, x1 = 980, y1 = 300
+          const x0 = VERT ? 120 : 180, y0 = VERT ? 220 : 96, x1 = VERT ? 860 : 980, y1 = VERT ? 430 : 300
           const hx = lerp(x0, x1, e), hy = lerp(y0, y1, e)
           const tl = 340 * Math.sin(Math.PI * Math.min(1, p * 1.3))
           const ang = Math.atan2(y1 - y0, x1 - x0)

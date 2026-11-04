@@ -19,11 +19,15 @@
 //   plateDim(t)                    → the f3→f4 nebula dim (1 → DIM_MIN, gentle, 10.4–11.6)
 //   skyPan(cx, cy)                 → the parallax pan f3 applies for a card centred at (cx, cy) (f4 continues it)
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, C, PIXEL_PALETTE, TypeLine } from '../../../src/lib.js'
-import { W, H, A, SERIF, MONO, SANS, fill, img } from '../../../src/scenes/common.js'
+import { W, H, VERT, A, SERIF, MONO, SANS, fill, img } from '../../../src/scenes/common.js'
 import { drawMoon } from '../../../src/scenes/fx-moon.js'
 import * as F2 from './f2-flip.js'
 
 export const F3 = { start: 6.5, end: 10.8 }
+// 9:16 (VERT): the 2304×1296 plate is zoomed so it covers 1080×1920 with drift to spare; the crescent's home is top-right
+export const VZ = VERT ? 1.6 : 1
+export const MOON_HOME = VERT ? { x: 950, y: 120 } : { x: 1716, y: 122 }
+const CY0 = VERT ? 700 : 470
 export const GRAIN_OPACITY = 0.5
 /** grain-canvas opacity for a plate dimmed to `dim` — keeps the grain reading the same as on the full plate */
 export const grainOpacity = (dim = 1) => Math.min(0.8, GRAIN_OPACITY / Math.sqrt(Math.max(0.05, dim)))
@@ -42,12 +46,20 @@ function f2End() {
   return { cx: e.cx, cy: e.cy, h: e.bodyH || e.bodyW * PNG.bh / PNG.bw }
 }
 /** f4 picks Juniper up here: body height 220 centred at (960, 430), flat, at t = 10.75 */
-export const HANDOFF = { t: 10.75, cx: 960, cy: 430, bodyH: 220 }
+export const HANDOFF = VERT ? { t: 10.75, cx: 540, cy: 700, bodyH: 220 } : { t: 10.75, cx: 960, cy: 430, bodyH: 220 }
 const SHRINK = { a: 10.15, b: HANDOFF.t }
 // camera keys: [t, cx, cy, bodyH(screen px), yawDeg]  (whole card in frame: body ≤ 905px tall, top ≥ 90px)
 let CAM = null
 function camKeys() {
   const e = f2End()
+  if (VERT) return [                       // 9:16: the card fills the upper frame, copy stacked under it
+    [6.5, e.cx, e.cy, e.h, 0],
+    [6.62, e.cx, e.cy, e.h * 1.008, 0],
+    [7.5, 540, 700, 960, 4],
+    [8.9, 540, 696, 976, 3],
+    [9.4, 540, 706, 990, 1.2],
+    [SHRINK.a, 540, 704, 994, 0.8],
+  ]
   return [
     [6.5, e.cx, e.cy, e.h, 0],
     [6.62, e.cx, e.cy, e.h * 1.008, 0],
@@ -75,13 +87,13 @@ function camAt(t) {
   return CAM[CAM.length - 1].slice(1)
 }
 /** the sky parallax pan for a card centred at (cx, cy) */
-export const skyPan = (cx, cy) => [(cx - 960) * -0.04, (cy - 470) * -0.03]
+export const skyPan = (cx, cy) => [(cx - W / 2) * -0.04, (cy - CY0) * -0.03]
 /** Juniper's full card pose in f3 (body centre, body height, yaw/pitch deg, bob px) — f4 matches it frame-exactly */
 export function cardPose(t) {
   const [cx, cy, h, yaw] = camAt(t)
   // pitch + bob ease in from f2's static pose (no jump at 6.5) and settle to zero during the shrink
   const calm = ease.inOutQuad(prog(t, 6.5, 7.1)) * (1 - ease.inOutCubic(prog(t, SHRINK.a, SHRINK.b)))
-  const pitch = (Math.sin(t * 0.9) * 1.2 + (cy - 470) * -0.004) * calm
+  const pitch = (Math.sin(t * 0.9) * 1.2 + (cy - CY0) * -0.004) * calm
   const bob = Math.sin(t * 1.3) * 3 * calm
   return { cx, cy, h, yaw, pitch, bob }
 }
@@ -257,7 +269,7 @@ export function getSky() {
   const rb = rng(404), bright = []
   while (bright.length < 30) {           // same field as f2's sky (seamless cut)
     const x = rb() * W, y = rb() * H
-    if (x > 620 && x < 1300) continue
+    if (VERT ? (x > 230 && x < 850 && y > 250 && y < 1550) : (x > 620 && x < 1300)) continue
     bright.push({ x, y, size: 26 + Math.pow(rb(), 2.5) * 110, spike: bright.length < 7, seed: 500 + bright.length, sp: 1.6 + rb() * 3, depth: rb() })
   }
   const vig = canvas(W, H), vx = vig.getContext('2d')
@@ -283,7 +295,7 @@ export function drawSky(bx, t, { pan = [0, 0], moon = 1, dim = 1 } = {}) {
   const S = getSky()
   const { zoom, dx: dX, dy: dY } = skyCam(t)
   const driftX = dX + pan[0], driftY = dY + pan[1]
-  const layer = (im, s, ox, oy) => { const w = BGW * s, h = BGH * s; bx.drawImage(im, W / 2 - w / 2 + ox, H / 2 - h / 2 + oy, w, h) }
+  const layer = (im, s, ox, oy) => { const w = BGW * s * VZ, h = BGH * s * VZ; bx.drawImage(im, W / 2 - w / 2 + ox, H / 2 - h / 2 + oy, w, h) }
   const flick = 1 + (noise1(t * 14, 3) - 0.5) * 0.05
   bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
   bx.fillStyle = C.void; bx.fillRect(0, 0, W, H)
@@ -308,7 +320,7 @@ export function drawSky(bx, t, { pan = [0, 0], moon = 1, dim = 1 } = {}) {
     // the waxing crescent rides upper-right, as in S1 (a touch fuller: the story has moved on)
     // starts on f2's moon (1575, 262, r64·cam, phase .09); the camera move carries it up-right, clear of the copy
     const mv = ease.inOutCubic(prog(t, 6.62, 7.5))
-    const mx = lerp(1575, 1716, mv), my = lerp(262, 122, mv), mr = lerp(64, 52, mv) * zoom
+    const mx = VERT ? lerp(900, MOON_HOME.x, mv) : lerp(1575, 1716, mv), my = VERT ? lerp(190, MOON_HOME.y, mv) : lerp(262, 122, mv), mr = lerp(64, 52, mv) * zoom
     drawMoon(bx, mx + driftX * 1.3, my + driftY * 1.3, mr, lerp(0.09, 0.14, prog(t, 6.5, 15.2)),
       { alpha: moon, glow: 3, earthshine: 1, darkAlpha: 0.62 })
   }
@@ -404,11 +416,12 @@ export default function build(stage) {
 
   // ── right column copy (card's right edge sits at x≈990; the copy column starts at 1080)
   const COLX = 1080
-  const pocket = el('div', { position: 'absolute', left: (COLX - 160) + 'px', top: '200px', width: '1000px', height: '600px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(11,6,32,0.6), rgba(11,6,32,0.28) 60%, rgba(11,6,32,0) 100%)', opacity: 0 }, root)
-  const eyebrow = el('div', { position: 'absolute', left: COLX + 'px', top: '318px', fontFamily: MONO, fontSize: '28px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.94)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', whiteSpace: 'nowrap', opacity: 0 }, root, '✦&nbsp;&nbsp;BLIND BY DESIGN')
+  const pocket = el('div', { position: 'absolute', left: (VERT ? 40 : COLX - 160) + 'px', top: (VERT ? 1150 : 200) + 'px', width: '1000px', height: (VERT ? 560 : 600) + 'px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(11,6,32,0.6), rgba(11,6,32,0.28) 60%, rgba(11,6,32,0) 100%)', opacity: 0 }, root)
+  const eyebrow = el('div', { position: 'absolute', left: (VERT ? 0 : COLX) + 'px', top: (VERT ? 1262 : 318) + 'px', ...(VERT ? { width: W + 'px', textAlign: 'center' } : {}), fontFamily: MONO, fontSize: '28px', letterSpacing: '0.28em', color: 'rgba(239,230,214,0.94)', textShadow: '0 1px 12px rgba(11,6,32,0.8)', whiteSpace: 'nowrap', opacity: 0 }, root, '✦&nbsp;&nbsp;BLIND BY DESIGN')
   const stmtStyle = { left: (COLX - 6) + 'px', fontFamily: SERIF, fontStyle: 'italic', fontSize: '136px', lineHeight: '1', letterSpacing: '-0.01em', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), -0.6px 0 0 rgba(232,98,138,0.3), 0.6px 0 0 rgba(140,170,255,0.25)' }
-  const chart = new TypeLine(root, 'Fall for the card.', { ...stmtStyle, fontSize: '120px', top: '386px' }, { perChar: 0.035, fade: 0.32, accent: [C.rub, C.gold, C.violet] })
-  const face = new TypeLine(root, 'Face last.', { ...stmtStyle, fontSize: '120px', top: '540px' }, { perChar: 0.04, fade: 0.34, accent: [C.violet, C.plum, C.rub] })
+  if (VERT) Object.assign(stmtStyle, { left: '0px', width: W + 'px', textAlign: 'center' })   // 9:16: centred under the card
+  const chart = new TypeLine(root, 'Fall for the card.', { ...stmtStyle, fontSize: '120px', top: (VERT ? 1318 : 386) + 'px' }, { perChar: 0.035, fade: 0.32, accent: [C.rub, C.gold, C.violet] })
+  const face = new TypeLine(root, 'Face last.', { ...stmtStyle, fontSize: '120px', top: (VERT ? 1456 : 540) + 'px' }, { perChar: 0.04, fade: 0.34, accent: [C.violet, C.plum, C.rub] })
 
   // grain on top of everything in the scene (shared look: overlay @ 0.5)
   const grainC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', opacity: GRAIN_OPACITY, pointerEvents: 'none' }, root)
