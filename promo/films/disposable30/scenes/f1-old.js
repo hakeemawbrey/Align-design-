@@ -5,13 +5,14 @@
 // dead centre at 4.0 — f2 takes that card over from 4.0 (same pose function, same backdrop + grain stack).
 // Everything is a pure function of t. Shared bits (backdrop, face card, last-card pose, grain) are exported for f2.
 import { clamp, lerp, prog, ease, rng, noise1, el } from '../../../src/lib.js'
-import { W, H, IMG, SANS, SERIF, MONO, fill, img } from '../../../src/scenes/common.js'
+import { W, H, VERT, IMG, SANS, SERIF, MONO, fill, img } from '../../../src/scenes/common.js'
 
 // ── geometry shared with f2 / f3 (agreed: Align card body 520 wide centred at 960,470 at 6.5s)
 export const CARD_W = 520, CARD_H = 830          // card body (both faces) — card-profile-3 body aspect 1254:2002
-export const FEED_S = 440 / 520                  // feed cards are drawn at 440 px wide
-export const FEED_X = 700, FEED_Y = 482         // the feed stack (left of centre; copy block sits to the right)
-export const SLAM_X = 960, SLAM_Y = 466           // the last card slams dead centre
+// 9:16 (VERT): hook on top, a bigger feed card centred, the judge-timer under it
+export const FEED_S = (VERT ? 500 : 440) / 520    // feed cards are drawn at 440 px wide (500 in 9:16)
+export const FEED_X = VERT ? 540 : 700, FEED_Y = VERT ? 960 : 482   // the feed stack (left of centre; copy block sits to the right)
+export const SLAM_X = VERT ? 540 : 960, SLAM_Y = VERT ? 944 : 466   // the last card slams dead centre
 export const SLAM = 4.0                           // the last card stops dead here
 const FLY_IN = 3.74                               // the last card enters from the right
 export const LAST_FACE = 'juniper'                // juniper.jpg — the face that gets flipped (and revealed in f6)
@@ -202,15 +203,16 @@ export default function build(stage) {
 
   // copy: ONE centred stacked block to the right of the feed — "We made people" / "disposable." (the hook, frame one)
   const T = { fontFamily: SERIF, fontStyle: 'italic', fontSize: '116px', color: BONE, lineHeight: 1.12, textShadow: '0 2px 30px rgba(5,6,10,0.9), 0 0 2px rgba(5,6,10,0.6)' }
-  const block = el('div', { position: 'absolute', left: '990px', width: '840px', top: (FEED_Y - 112) + 'px', textAlign: 'center', zIndex: '3000' }, root)
+  const block = el('div', VERT ? { position: 'absolute', left: 0, width: W + 'px', top: '250px', textAlign: 'center', zIndex: '3000' }
+    : { position: 'absolute', left: '990px', width: '840px', top: (FEED_Y - 112) + 'px', textAlign: 'center', zIndex: '3000' }, root)
   const line1 = words(block, 'We made people', { ...T, position: 'relative', display: 'block' }, 0.0, 0.08)
   const line2 = words(block, 'disposable.', { ...T, position: 'relative', display: 'block' }, 0.5, 0.1)
   // the hero judge-timer under the feed card (ticks down 0.4 → 0.0 per face) + the face counter to its right
-  const timer = el('div', { position: 'absolute', left: (FEED_X - 360) + 'px', width: '720px', top: '858px', textAlign: 'center', fontFamily: MONO, fontSize: '64px',
+  const timer = el('div', { position: 'absolute', left: (FEED_X - 360) + 'px', width: '720px', top: (VERT ? 1405 : 858) + 'px', textAlign: 'center', fontFamily: MONO, fontSize: '64px',
     letterSpacing: '0.04em', color: 'rgba(239,230,214,0.9)', zIndex: '3000', whiteSpace: 'pre', textShadow: '0 2px 18px rgba(5,6,10,0.9)' }, root)
   const tNum = el('span', { color: BONE, fontWeight: 700 }, null)
   timer.append('JUDGED IN ', tNum)
-  const tCount = el('div', { position: 'absolute', left: '1090px', top: '876px', fontFamily: MONO, fontSize: '40px', letterSpacing: '0.12em', color: 'rgba(239,230,214,0.62)',
+  const tCount = el('div', { position: 'absolute', ...(VERT ? { left: 0, width: W + 'px', textAlign: 'center', top: '1495px' } : { left: '1090px', top: '876px' }), fontFamily: MONO, fontSize: '40px', letterSpacing: '0.12em', color: 'rgba(239,230,214,0.62)',
     zIndex: '3000', whiteSpace: 'pre', textShadow: '0 2px 18px rgba(5,6,10,0.9)' }, root)
   const grain = grainLayer(root, GRAIN_TOP)                       // light grain over everything (faces stay readable)
   grain.el.style.zIndex = '4000'

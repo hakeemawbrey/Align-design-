@@ -4,7 +4,7 @@
 // It takes over f3's card frame-exactly (f3.cardPose at TAKE, same card art, same f3 sky) under a 0.2 s crossfade, and
 // hands to f5 (the two cards meet) under f5's own 0.2 s fade-in. Row recipe copied from promo/films/pattern/scenes/b/read.js.
 import { lerp, prog, ease, tw, el, mix, C } from '../../../src/lib.js'
-import { W, H, SERIF, MONO, fill } from '../../../src/scenes/common.js'
+import { W, H, VERT, SERIF, MONO, fill } from '../../../src/scenes/common.js'
 import { cardPose, drawSky, skyPan, plateDim, drawGrain, grainOpacity } from './f3-chart.js'
 import { loadArt, drawCard, cardSpace, glint, pocketCanvas, ART } from './pkit.js'
 
@@ -21,7 +21,8 @@ const ROW_X = [214, 1326]
 const ROW_COL = ['232,98,138', '127,216,160', '242,199,92']
 const ROWS_CY = (ROWS[0][0] + ROWS[2][1]) / 2 - BCY, ROWS_CX = (ROW_X[0] + ROW_X[1]) / 2 - BCX
 const bodyH = PA.b[3] - PA.b[1]
-const P2 = (() => { const h = 1560, s = h / bodyH; return { x: 960 - ROWS_CX * s, y: 410 - ROWS_CY * s, h } })()
+const P2 = VERT ? (() => { const h = 1600, s = h / bodyH; return { x: 540 - ROWS_CX * s, y: 700 - ROWS_CY * s, h } })()   // 9:16: rows ≈ 890 px wide, words under them
+  : (() => { const h = 1560, s = h / bodyH; return { x: 960 - ROWS_CX * s, y: 410 - ROWS_CY * s, h } })()
 
 export default async function build(stage) {
   const root = fill(stage, { background: C.void })
@@ -29,14 +30,14 @@ export default async function build(stage) {
   bgC.width = W; bgC.height = H
   const bx = bgC.getContext('2d')
   await loadArt()
-  const pocket = pocketCanvas(960, 820, 860, 210, 0.8)
+  const pocket = VERT ? pocketCanvas(540, 1090, 560, 210, 0.8) : pocketCanvas(960, 820, 860, 210, 0.8)
   const gC = el('canvas', { position: 'absolute', left: 0, top: 0, width: W + 'px', height: H + 'px', mixBlendMode: 'overlay', pointerEvents: 'none' }, root)
   gC.width = W; gC.height = H
   const gx = gC.getContext('2d')
 
-  const eb = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '688px', textAlign: 'center', textIndent: '0.32em', fontFamily: MONO, fontSize: '34px',
+  const eb = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (VERT ? 994 : 688) + 'px', textAlign: 'center', textIndent: '0.32em', fontFamily: MONO, fontSize: '34px',
     letterSpacing: '0.32em', color: C.bone, opacity: 0, whiteSpace: 'pre', textShadow: '0 0 14px rgba(11,6,32,0.9)' }, root, 'HOW YOU TWO ACTUALLY FIT')
-  const wordsBox = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '748px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: '128px',
+  const wordsBox = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (VERT ? 1054 : 748) + 'px', textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: (VERT ? 108 : 128) + 'px',
     lineHeight: '1', whiteSpace: 'pre', color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.9), 0 0 12px rgba(11,6,32,0.6)' }, root)
   const wordChars = WORDS.map(w => { const sp = el('span', { display: 'inline-block', margin: '0 0.2em' }, wordsBox); return [...w].map(ch => el('span', { opacity: 0 }, sp, ch)) })
   const band = (y0, y1, pad = 0) => { bx.beginPath(); bx.roundRect(ROW_X[0] - BCX - pad, y0 - BCY, ROW_X[1] - ROW_X[0] + 2 * pad, y1 - y0, 26) }

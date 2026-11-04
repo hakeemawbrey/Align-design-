@@ -3,6 +3,7 @@
 // Align. (p1-rows) → Marcus's card meets hers, the stars align → BOTH blind cards flip, "It's mutual." → they talk in
 // cards, shown as a real thread (s-talk) → "No one is disposable." + lockup. f1–f3, f5, f8 are copies of
 // promo/film2/scenes (f4, f6, f7 cut); f3 is cut at 9.95, f5 runs 1.25× fast from 12.45.
+// 9:16: every scene also has a vertical layout (VERT in common.js) — `node promo/scripts/render.mjs --film=disposable30 --vertical`.
 import f1, { cues as c1 } from './f1-old.js'
 import f2, { cues as c2 } from './f2-flip.js'
 import f3, { cues as c3 } from './f3-chart.js'

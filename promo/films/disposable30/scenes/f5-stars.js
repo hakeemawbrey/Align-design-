@@ -22,11 +22,12 @@
 // Sky camera: skyCam (f3) until 15.2, then skyPanF5 loops once (constant speed, never stops) and lands on f7's
 // skyPan/skyZoom at 24.0 exactly — f6 paints the same sky, so f5→f6→f7 drift is one continuous move.
 import { clamp, lerp, prog, ease, tw, rng, noise1, el, C } from '../../../src/lib.js'
-import { W, H, A, SERIF, MONO, fill, img } from '../../../src/scenes/common.js'
-import { getSky, drawSky, drawGrain, skyCam, skyPan, HANDOFF, GRAIN_OPACITY } from './f3-chart.js'
+import { W, H, VERT, A, SERIF, MONO, fill, img } from '../../../src/scenes/common.js'
+import { getSky, drawSky, drawGrain, skyCam, skyPan, HANDOFF, GRAIN_OPACITY, MOON_HOME } from './f3-chart.js'
 import { drawMoon } from '../../../src/scenes/fx-moon.js'
 
-export const CC = { x: 960, y: 440 }                // column centre / moon centre / Juniper's final card centre
+// 9:16 (VERT): the two cards stay side by side (≈390 px each) either side of the column; captions sit under them
+export const CC = VERT ? { x: 540, y: 800 } : { x: 960, y: 440 }   // column centre / moon centre / Juniper's final card centre
 export const LOCK = 18.45
 const STAR_IN = 17.08
 const GLIDE = 17.68
@@ -34,7 +35,8 @@ const STAR_LOCK = Array.from({ length: 7 }, (_, i) => 18.09 + i * 0.055)
 export const CHAKRA_HEX = ['#ff2d3a', '#ff7a2e', '#ffd23f', '#5fdc54', '#2fd0e6', '#4a72ff', '#b45cff']
 const CHAKRA = CHAKRA_HEX.map((h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)))
 const COL_Y = (i) => CC.y + 264 - i * 88
-const ANCHOR = [[300, 650], [1590, 250], [500, 170], [1430, 720], [230, 330], [1700, 560], [1260, 110]]
+const ANCHOR = VERT ? [[150, 1250], [950, 380], [200, 340], [930, 1280], [90, 820], [1010, 860], [760, 200]]
+  : [[300, 650], [1590, 250], [500, 170], [1430, 720], [230, 330], [1700, 560], [1260, 110]]
 const ENTER_ORDER = [3, 0, 5, 2, 6, 1, 4]
 const SQ = 0.62
 
@@ -42,12 +44,13 @@ const SQ = 0.62
 // card-profile-3.png 1496×2238 (Juniper, veiled) opaque body x 120..1373, y 114..2115
 export const MYS = { w: 1496, h: 2238 }
 export const M_END = 0.33                             // Juniper's card scale at the hand-off (= first film's S3)
-const M5 = 0.30                                       // both cards while they sit side by side
+const M5 = VERT ? 0.31 : 0.30                        // both cards while they sit side by side
 // card-profile-marcus.png 1560×2345 (Marcus, 29 · Taurus — his mystery card, captured from the app's Your card sheet
 // with a stand-in profile, same design as Juniper's) opaque body x 120..1440, y 119..2227 → drawn at the same body height as Juniper's
 const SGN = { w: 1560, h: 2345 }
 const S5 = 2002 * M5 / 2108
-const L_X = 610, R_X = 1300, CARD_Y = 440
+const L_X = VERT ? 278 : 610, R_X = VERT ? 802 : 1300, CARD_Y = CC.y
+const JUL_IN = VERT ? [960, CARD_Y + 40] : [1540, 480], YOU_IN = VERT ? [120, CARD_Y + 50] : [380, 490]   // where they drift in from
 const CARD_IN = { a: 15.0, b: 15.95 }
 const MOVE = { a: 99, b: 99.5 }                       // (film 2's your-card exit is off: both cards stay and FLIP)
 // ── BOTH FLIP (disposable30): after the lock both blind cards turn over to the revealed cards; "It's mutual."
@@ -60,7 +63,7 @@ export function julPose(t) {
   const mv = ease.inOutCubic(prog(t, MOVE.a, MOVE.b))
   const bobA = 1 - mv
   const bob = Math.sin((t - 15) * 2.1 + 1.3) * 6 * e * bobA
-  let x = lerp(1540, R_X, e), y = lerp(480, CARD_Y, e) + bob
+  let x = lerp(JUL_IN[0], R_X, e), y = lerp(JUL_IN[1], CARD_Y, e) + bob
   let s = lerp(0.22, M5, e), ry = lerp(-24, -9, e), rz = lerp(5, 1.2, e)
   x = lerp(x, CC.x, mv); y = lerp(y, CC.y, mv); s = lerp(s, M_END, mv); ry = lerp(ry, 0, mv); rz = lerp(rz, 0, mv)
   s *= 1 + APPROACH(t)
@@ -74,7 +77,7 @@ export function youPose(t) {
   const out = ease.inCubic(prog(t, MOVE.a - 0.02, MOVE.b - 0.05))
   const bob = Math.sin((t - 15) * 2.0) * 6 * e
   return {
-    x: lerp(lerp(380, L_X, e), -260, out), y: lerp(490, CARD_Y, e) + bob + 40 * out,
+    x: lerp(lerp(YOU_IN[0], L_X, e), -260, out), y: lerp(YOU_IN[1], CARD_Y, e) + bob + 40 * out,
     s: lerp(0.22, M5, e) * (S5 / M5) * lerp(1, 0.86, out), ry: lerp(24, 9, e) + 20 * out, rz: lerp(-5, -1.2, e) - 6 * out, op: 1 - ease.inQuad(prog(t, MOVE.a + 0.15, MOVE.b)),
   }
 }
@@ -104,8 +107,8 @@ function dimPlate() {
   DIMP = document.createElement('canvas'); DIMP.width = W; DIMP.height = H
   const x = DIMP.getContext('2d')
   x.fillStyle = 'rgba(11,6,32,0.34)'; x.fillRect(0, 0, W, H)
-  x.save(); x.translate(W / 2, H / 2); x.scale(1, 0.6)
-  const g = x.createRadialGradient(0, 0, 0, 0, 0, 1000)
+  x.save(); x.translate(W / 2, VERT ? CC.y : H / 2); x.scale(1, VERT ? 1.3 : 0.6)
+  const g = x.createRadialGradient(0, 0, 0, 0, 0, VERT ? 760 : 1000)
   g.addColorStop(0, 'rgba(11,6,32,0.5)'); g.addColorStop(0.55, 'rgba(11,6,32,0.32)'); g.addColorStop(1, 'rgba(11,6,32,0)')
   x.fillStyle = g; x.fillRect(-1100, -1100, 2200, 2200); x.restore()
   return DIMP
@@ -120,7 +123,7 @@ export function paintSkyF5(bx, t, { moon = 0, dimK = 1, crescent = 0 } = {}) {
   if (dimK > 0.001) { bx.globalAlpha = clamp(dimK); bx.drawImage(dimPlate(), 0, 0); bx.globalAlpha = 1 }
   if (crescent > 0.001) {
     const { zoom, dx, dy } = skyCam(t)
-    zt(); drawMoon(bx, 1716 + (dx + pan[0]) * 1.3, 122 + (dy + pan[1]) * 1.3, 52 * zoom, 0.14, { alpha: crescent, glow: 3, earthshine: 1, darkAlpha: 0.62 })
+    zt(); drawMoon(bx, MOON_HOME.x + (dx + pan[0]) * 1.3, MOON_HOME.y + (dy + pan[1]) * 1.3, 52 * zoom, 0.14, { alpha: crescent, glow: 3, earthshine: 1, darkAlpha: 0.62 })
     bx.setTransform(1, 0, 0, 1, 0, 0)
   }
 }
@@ -294,7 +297,7 @@ export function drawOneMoon(bx, x, y, R, p, { alpha = 1, glow = 3 } = {}) {
 /** the crescent's home on screen at t (drawSky's / f7 paintSky's spot under f5's sky camera) */
 export function homeMoon(t) {
   const { zoom, dx, dy } = skyCam(t), pan = skyPanF5(t), z = skyZoomF5(t)
-  const x = 1716 + (dx + pan[0]) * 1.3, y = 122 + (dy + pan[1]) * 1.3
+  const x = MOON_HOME.x + (dx + pan[0]) * 1.3, y = MOON_HOME.y + (dy + pan[1]) * 1.3
   return { x: W / 2 + (x - W / 2) * z, y: H / 2 + (y - H / 2) * z, r: 52 * zoom * z }
 }
 let VIG = null
@@ -372,7 +375,7 @@ const AMB = (() => {
   const r = rng(3131), out = []
   while (out.length < 22) {
     const x = r() * W, y = r() * H
-    if (x > 330 && x < 1590 && y < 1000) continue        // keep the cards / column / captions clear
+    if (VERT ? (x > 60 && x < 1020 && y > 280 && y < 1560) : (x > 330 && x < 1590 && y < 1000)) continue        // keep the cards / column / captions clear
     out.push({ x, y, px: r() < 0.4 ? 4 : 3, kind: Math.floor(r() * 3), col: [BONE, BONE, GOLD, VIOLET, ROSE][Math.floor(r() * 5)], w: 1.5 + r() * 2.5, ph: r() * 6.28, fo: r() * 5, fp: 2.5 + r() * 3 })
   }
   return out
@@ -452,7 +455,8 @@ export default function build(stage) {
   const jul = mysteryCard(shakeBox)
   const JR = 1254 / 1433                              // card-reveal.png body 1433 wide → her mystery body width
   const julRev = img(jul.holder, A + 'card-reveal.png', { left: -780 * JR + 'px', top: -1370 * JR + 'px', width: 1560 * JR + 'px', height: 2740 * JR + 'px', clipPath: `inset(${122 * JR}px ${64 * JR}px ${117 * JR}px ${63 * JR}px round ${100 * JR}px)`, display: 'none' })
-  const mutBox = el('div', { position: 'absolute', zIndex: '2', left: '50%', bottom: '58px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
+  const CAP_B = VERT ? 470 : 0                        // 9:16: captions lifted under the cards, clear of the reel UI
+  const mutBox = el('div', { position: 'absolute', zIndex: '2', left: '50%', bottom: (58 + CAP_B) + 'px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const mutEb = el('div', { fontFamily: MONO, fontSize: '28px', letterSpacing: '0.3em', textIndent: '0.3em', color: BONE, textShadow: '0 1px 12px rgba(11,6,32,0.85)', marginBottom: '14px', opacity: 0 }, mutBox, '✦&nbsp;&nbsp;YOU BOTH ALIGNED&nbsp;&nbsp;✦')
   const mutLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '112px', lineHeight: 1, color: C.bone, opacity: 0,
     textShadow: '0 0 40px rgba(255,236,200,0.4), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, mutBox, 'It’s mutual.')
@@ -473,11 +477,12 @@ export default function build(stage) {
   const bigFlash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0,
     background: `radial-gradient(55% 75% at 50% ${CC.y / H * 100}%, rgba(255,253,248,1) 0%, rgba(255,246,232,0.62) 34%, rgba(240,226,255,0.25) 100%)` }, body)
   // captions
-  const scrim = el('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: '400px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.08) 20%, rgba(11,6,32,0.28) 40%, rgba(11,6,32,0.52) 60%, rgba(11,6,32,0.72) 80%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, capLayer)
-  const capBox = el('div', { position: 'absolute', left: '50%', bottom: '70px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
+  const scrim = el('div', VERT ? { position: 'absolute', left: 0, right: 0, bottom: '300px', height: '620px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.45) 35%, rgba(11,6,32,0.6) 60%, rgba(11,6,32,0) 100%)', opacity: 0 }
+    : { position: 'absolute', left: 0, right: 0, bottom: 0, height: '400px', background: 'linear-gradient(180deg, rgba(11,6,32,0) 0%, rgba(11,6,32,0.08) 20%, rgba(11,6,32,0.28) 40%, rgba(11,6,32,0.52) 60%, rgba(11,6,32,0.72) 80%, rgba(11,6,32,0.8) 100%)', opacity: 0 }, capLayer)
+  const capBox = el('div', { position: 'absolute', left: '50%', bottom: (70 + CAP_B) + 'px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const eyebrow = el('div', { fontFamily: MONO, fontSize: '26px', letterSpacing: '0.28em', textIndent: '0.28em', color: BONE, textShadow: '0 1px 12px rgba(11,6,32,0.8)', marginBottom: '12px', textTransform: 'uppercase', opacity: 0 }, capBox, '✦&nbsp;&nbsp;Marcus&nbsp;&nbsp;×&nbsp;&nbsp;Juniper&nbsp;&nbsp;✦')
   const capLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '80px', lineHeight: 1.05, color: C.bone, textShadow: '0 2px 30px rgba(11,6,32,0.85), 0 1px 3px rgba(11,6,32,0.7)', opacity: 0 }, capBox, 'Two cards meet.')
-  const lockBox = el('div', { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
+  const lockBox = el('div', { position: 'absolute', left: '50%', bottom: (64 + CAP_B) + 'px', transform: 'translateX(-50%)', textAlign: 'center', whiteSpace: 'nowrap' }, capLayer)
   const lockLine = el('div', { fontFamily: SERIF, fontStyle: 'italic', fontSize: '116px', lineHeight: 1, color: C.bone, opacity: 0,
     textShadow: '0 0 40px rgba(255,236,200,0.45), 0 2px 34px rgba(11,6,32,0.9), 0 1px 3px rgba(11,6,32,0.7)' }, lockBox, 'The stars aligned.')
   const grain = grainCanvas(body, 0.55)
@@ -599,7 +604,7 @@ export default function build(stage) {
       if (cg > 0.01) {
         const g = bx.createLinearGradient(CC.x - 50, 0, CC.x + 50, 0)
         g.addColorStop(0, 'rgba(255,240,214,0)'); g.addColorStop(0.5, `rgba(255,236,200,${(0.35 * cg).toFixed(3)})`); g.addColorStop(1, 'rgba(255,240,214,0)')
-        bx.fillStyle = g; bx.fillRect(CC.x - 50, 260, 100, 380)
+        bx.fillStyle = g; bx.fillRect(CC.x - 50, CC.y - 180, 100, 380)
       }
       bx.globalCompositeOperation = 'source-over'
 

@@ -6,12 +6,13 @@
 // out from the card's EDGE LINE as a feathered radial wipe (~0.35s, ~120px feather, no ring), a white-violet flash
 // (≤0.6) and a pixel-star burst on the exact edge-on frame. The card settles to F2_END (above) for f3.
 import { clamp, lerp, prog, ease, rng, noise1, el, C, PIXEL_PALETTE } from '../../../src/lib.js'
-import { W, H, A, SERIF, fill, img } from '../../../src/scenes/common.js'
+import { W, H, VERT, A, SERIF, fill, img } from '../../../src/scenes/common.js'
 import { drawMoon } from '../../../src/scenes/fx-moon.js'
 import { CARD_W, CARD_H, SLAM, LAST_FACE, GRAIN_BACK, GRAIN_TOP, coldBackdrop, makeFaceCard, lastCardPose, grainLayer, blurDefs } from './f1-old.js'
 
 const START = 4.0, END = 6.7
-export const F2_END = { cx: 960, cy: 460, bodyW: 420, bodyH: 420 * CARD_H / CARD_W }   // = 420 × 670.4 (card-profile body aspect)
+export const F2_END = VERT ? { cx: 540, cy: 760, bodyW: 540, bodyH: 540 * CARD_H / CARD_W }   // 9:16: centred, caption under it
+  : { cx: 960, cy: 460, bodyW: 420, bodyH: 420 * CARD_H / CARD_W }   // = 420 × 670.4 (card-profile body aspect)
 export const END_X = F2_END.cx, END_Y = F2_END.cy, END_W = F2_END.bodyW, END_S = F2_END.bodyW / CARD_W
 const WIPE = 0.35, FEATHER = 120                                   // nebula bloom: radial wipe from the edge line
 const WIND = 4.5, WIND_STOP = 4.6, FLIP0 = 4.68, FLIP1 = 5.22, SETTLE = 5.55   // wind-up stops dead at 4.6, a beat, then the turn
@@ -25,6 +26,7 @@ const BONE = '#efe6d6'
 
 // ─────────────────────────────── nebula (copied from s1-imagine.js buildNebula, 16:9 branch only)
 const BGW = 2304, BGH = 1296, NEB_RES = 2, BAND_A = -0.42
+const VZ = VERT ? 1.6 : 1                                          // 9:16: the plate covers the tall frame (= f3's VZ)
 function hash2(x, y, seed) {
   let h = Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ Math.imul(seed, 982451653)
   h = Math.imul(h ^ (h >>> 13), 1274126177)
@@ -162,7 +164,7 @@ const AMBIENT = (() => {
   const r = rng(777), out = []
   while (out.length < 34) {
     const x = 40 + r() * (W - 80), y = 30 + r() * (H - 60)
-    if (x > 680 && x < 1240) continue
+    if (VERT ? (x > 230 && x < 850 && y > 280 && y < 1500) : (x > 680 && x < 1240)) continue
     out.push({ x, y, px: 3 + Math.floor(r() * 2), kind: r() < 0.25 ? 0 : (r() < 0.6 ? 1 : 2), col: STAR_PAL[Math.floor(r() * 5)], t0: EDGE0 + 0.12 + r() * 0.7, sp: 1.5 + r() * 3, seed: out.length * 7 + 3 })
   }
   return out
@@ -185,7 +187,7 @@ export default function build(stage) {
   const rb = rng(404), bright = []
   while (bright.length < 30) {
     const x = rb() * W, y = rb() * H
-    if (x > 620 && x < 1300) continue
+    if (VERT ? (x > 230 && x < 850 && y > 250 && y < 1550) : (x > 620 && x < 1300)) continue
     bright.push({ x, y, size: 26 + Math.pow(rb(), 2.5) * 110, spike: bright.length < 7, seed: 500 + bright.length, sp: 1.6 + rb() * 3, depth: rb() })
   }
   const vig = canvas(W, H), vx = vig.getContext('2d')
@@ -196,8 +198,8 @@ export default function build(stage) {
   const maskC = canvas(W / 2, H / 2), mx = maskC.getContext('2d')
   // behind-card halo + caption pocket (keeps bone type ≥ 4.5:1 over the nebula)
   const pocket = canvas(W, H), pk = pocket.getContext('2d')
-  pk.save(); pk.translate(W / 2, 962); pk.scale(1, 0.16)
-  const pg = pk.createRadialGradient(0, 0, 0, 0, 0, 760)
+  pk.save(); pk.translate(W / 2, VERT ? 1372 : 962); pk.scale(1, VERT ? 0.34 : 0.16)
+  const pg = pk.createRadialGradient(0, 0, 0, 0, 0, VERT ? 600 : 760)
   pg.addColorStop(0, 'rgba(11,6,32,0.68)'); pg.addColorStop(0.7, 'rgba(11,6,32,0.3)'); pg.addColorStop(1, 'rgba(11,6,32,0)')
   pk.fillStyle = pg; pk.fillRect(-1000, -1000, 2000, 2000); pk.restore()
 
@@ -230,9 +232,13 @@ export default function build(stage) {
   bBody.style.filter = 'url(#f2mb1)'
 
   // caption
-  const capBox = el('div', { position: 'absolute', left: 0, width: W + 'px', top: '900px', textAlign: 'center', whiteSpace: 'nowrap',
+  const capBox = el('div', { position: 'absolute', left: 0, width: W + 'px', top: (VERT ? 1262 : 900) + 'px', textAlign: 'center', whiteSpace: 'nowrap',
     fontFamily: SERIF, fontStyle: 'italic', fontSize: '112px', lineHeight: 1, color: BONE, textShadow: '0 2px 30px rgba(5,4,16,0.9), 0 0 2px rgba(5,4,16,0.6)' }, root)
-  const capWords = 'What if we flipped it?'.split(' ').map((w, i) => ({ t: 4.14 + i * 0.075, e: el('span', { display: 'inline-block', margin: '0 0.12em', opacity: 0 }, capBox, w) }))
+  const capWords = 'What if we flipped it?'.split(' ').map((w, i) => {
+    const e = el('span', { display: 'inline-block', margin: '0 0.12em', opacity: 0 }, capBox, w)
+    if (VERT && i === 2) el('br', {}, capBox)                           // 9:16: "What if we" / "flipped it?"
+    return { t: 4.14 + i * 0.075, e }
+  })
 
   const flash = el('div', { position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'screen', opacity: 0,
     background: 'radial-gradient(60% 75% at 50% 44%, rgba(255,246,236,0.95) 0%, rgba(201,166,255,0.6) 40%, rgba(120,70,220,0.15) 75%, rgba(0,0,0,0) 100%)' }, root)
@@ -377,7 +383,7 @@ export default function build(stage) {
     const k = prog(t, EDGE0, END + 0.6)
     const cam = lerp(1.07, 1.0, ease.outCubic(prog(t, EDGE0, EDGE0 + 1.2))) * lerp(1, 1.02, k)
     const dX = lerp(10, -14, k), dY = lerp(-6, 6, k)
-    const layer = (im, sc, dx, dy) => { const w = BGW * sc, h = BGH * sc; bx.drawImage(im, W / 2 - w / 2 + dx, H / 2 - h / 2 + dy, w, h) }
+    const layer = (im, sc, dx, dy) => { const w = BGW * sc * VZ, h = BGH * sc * VZ; bx.drawImage(im, W / 2 - w / 2 + dx, H / 2 - h / 2 + dy, w, h) }
     bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
     bx.fillStyle = C.void; bx.fillRect(0, 0, W, H)
     const flick = 1 + (noise1(t * 14, 3) - 0.5) * 0.06
@@ -396,7 +402,7 @@ export default function build(stage) {
     }
     bx.globalCompositeOperation = 'source-over'; bx.globalAlpha = 1
     const mk = ease.outCubic(prog(t, EDGE0, END))
-    drawMoon(bx, 1575 + dX * 1.3, lerp(300, 262, mk) + dY * 1.3, 64 * cam, 0.09, { alpha: ease.inOutQuad(prog(t, EDGE0 + 0.15, EDGE0 + 0.9)), glow: 3.4, earthshine: 1, darkAlpha: 0.62 })
+    drawMoon(bx, (VERT ? 900 : 1575) + dX * 1.3, (VERT ? lerp(230, 190, mk) : lerp(300, 262, mk)) + dY * 1.3, 64 * cam, 0.09, { alpha: ease.inOutQuad(prog(t, EDGE0 + 0.15, EDGE0 + 0.9)), glow: 3.4, earthshine: 1, darkAlpha: 0.62 })
     bx.drawImage(pocket, 0, 0)
     bx.drawImage(vig, 0, 0)
   }
