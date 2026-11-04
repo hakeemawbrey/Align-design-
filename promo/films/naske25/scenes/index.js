@@ -1,10 +1,10 @@
-// naske25 · Ask the Stars, Volume 2, ep 25 · "They said 'I love you' and I froze." (20 s, funk · E)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske25 · Ask the Stars, Volume 2, ep 25 · "They said 'I love you' and I froze." (18 s, funk · E)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "They said 'I love you' and I *froze.*"  ♈ Aries frozen solid in a pixel ice block, eyes wide; an
 //         "i love you" heart bubble hangs in the air beside the partner.
 //   3.0   "freezing is allowed. it's december."  The ice cracks, shatters; Aries pops out, shivering.
 //   5.9   "say it true: 'i really like you. i need time.'"  The heart bubble stays, unbroken; the partner nods.
-//   8.75  card cut → 8.8 "they asked for the truth, not a reflex."  Two stars, matching mittens.
+//   8.8   "they asked for the truth, not a reflex."  Two stars, matching mittens.
 //   12.1  "Honest beats *rushed.*"
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, label, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, ICE, HEART } from '../../naske19/scenes/askkit2.js'
 
