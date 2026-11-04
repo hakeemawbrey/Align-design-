@@ -1,4 +1,4 @@
-// nrke04: RANKING THE SIGNS, "Who says “I love you” first" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke04: RANKING THE SIGNS, "Who says “I love you” first" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // dreamy · F). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who says / *“I love you”* first?" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Capricorn → #4 Sagittarius slam in.   6.3 card cut.   6.8 #3 Pisces · 7.7 #2 Aries
