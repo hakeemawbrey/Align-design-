@@ -1,8 +1,8 @@
-// nnye02: NEW YEAR, SAME HEART · Taurus: what I'm keeping (20 s vertical, star_advice, music: lofi · D).
+// nnye02: NEW YEAR, SAME HEART · Taurus: what I'm keeping (18 s vertical, star_advice, music: lofi · D).
 // The format lives in ../../nnye01/scenes/yearkit.js (shared by nnye01–nnye12). Story 0–15.6, then the shared end card.
 //   0.0   hook: "*Taurus,* / you can’t take / everything with you."
 //   2.4   LEAVING: "holding grudges like heirlooms" · "the same order, every date" (Taurus: "do I HAVE to?")
-//   6.6   card cut → KEEPING: "loyalty that shows up", the gift box closes.
+//   6.6   → KEEPING: "loyalty that shows up", the gift box closes.
 //   10.85 "New year. | Same *heart.*"  THE STARS: "Same roots. *New* soil."
 import { makeYear } from '../../nnye01/scenes/yearkit.js'
 
