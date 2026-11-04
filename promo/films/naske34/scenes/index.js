@@ -1,9 +1,9 @@
-// naske34 · Ask the Stars, Volume 2, ep 34 · "Should I wait for them to change?" (20 s, lofi · Dm)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske34 · Ask the Stars, Volume 2, ep 34 · "Should I wait for them to change?" (18 s, lofi · Dm)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "Should I wait for them to *change?*"  ♑ Capricorn mid-turn of an hourglass that runs with snow, not sand.
 //   3.0   "give it time. not forever."  The hourglass runs; the top bulb empties.
 //   5.9   "watch what they do, not what they promise."  A big I'LL CHANGE bubble floats beside an empty footprint path.
-//   8.75  card cut → 8.8 "your time matters too. count it."  A clock with Capricorn's glyph on its face, ticking.
+//   8.8   "your time matters too. count it."  A clock with Capricorn's glyph on its face, ticking.
 //   12.1  "Wait with your | *eyes* open."
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, label, signStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, SNOW, GLYPH } from '../../naske19/scenes/askkit2.js'
 
