@@ -1,5 +1,5 @@
-// nvse15: SIGN VS SIGN, "Who picks the movie better?" ♊ Gemini vs ♎ Libra (18 s trial reel, b46, music: jazzy · C).
-// Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js. (Generic movies only: no titles.)
+// nvse15: SIGN VS SIGN, "Who picks the movie better?" ♊ Gemini vs ♎ Libra (16 s trial reel, b46, music: jazzy · C).
+// Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js. (Generic movies only: no titles.)
 //   hook: a remote spins in the air between them.
 //   ROUND 1 ♊ "plays *every trailer* at once." the screen splits into four flashing trailers. "this one! no, THIS one!" → "what if we watch all of them?"
 //   ROUND 2 ♎ "makes *pros and cons* for each." the list grows, an hour passes. "an hour later…" → "still on column B."
