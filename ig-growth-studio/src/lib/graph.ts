@@ -7,6 +7,8 @@ export class GraphError extends Error {
     readonly status: number,
     readonly code?: number,
     readonly subcode?: number,
+    /** Meta's own hint that retrying may succeed. */
+    readonly isTransient?: boolean,
   ) {
     super(message);
     this.name = "GraphError";
@@ -64,7 +66,13 @@ export class GraphClient {
     }
     if (!res.ok || json?.error) {
       const e = json?.error ?? {};
-      throw new GraphError(e.error_user_msg || e.message || `HTTP ${res.status}`, res.status, e.code, e.error_subcode);
+      throw new GraphError(
+        e.error_user_msg || e.message || `HTTP ${res.status}`,
+        res.status,
+        e.code,
+        e.error_subcode,
+        e.is_transient === true,
+      );
     }
     return json as T;
   }

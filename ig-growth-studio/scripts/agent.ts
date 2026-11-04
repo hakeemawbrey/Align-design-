@@ -28,7 +28,7 @@ async function main() {
     console.error("AGENT_API_KEY is not set in .env");
     process.exit(2);
   }
-  const base = (process.env.APP_URL || "http://localhost:3000").replace(/\/$/, "");
+  const base = (process.env.STUDIO_URL || process.env.APP_URL || "http://localhost:3000").replace(/\/$/, "");
   const url = `${base}/api/agent${route.startsWith("/") || route === "" ? route : `/${route}`}`;
   const body = rawBody?.startsWith("@") ? fs.readFileSync(rawBody.slice(1), "utf8") : rawBody;
   let res: Response;

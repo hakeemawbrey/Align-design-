@@ -1,4 +1,4 @@
-import { type DB, hasSnapshot, listAccounts, saveSnapshot } from "./db";
+import { type DB, hasSnapshot, listAccounts, saveSnapshot, setSetting } from "./db";
 import { GraphClient } from "./graph";
 import { type RunResult, publishDuePosts } from "./publisher";
 
@@ -6,7 +6,13 @@ import { type RunResult, publishDuePosts } from "./publisher";
  * Everything that runs on a schedule: publish due posts for every account, and save one follower
  * snapshot per account per day. Called every minute by the local worker or by Vercel Cron (/api/cron).
  */
-export async function runScheduledWork(db: DB, now = new Date()): Promise<RunResult & { snapshots: string[] }> {
+export async function runScheduledWork(
+  db: DB,
+  now = new Date(),
+  source = "worker",
+): Promise<RunResult & { snapshots: string[] }> {
+  // Shown on Settings, so it is easy to see that the scheduler is alive.
+  await setSetting(db, "last_run", JSON.stringify({ at: now.toISOString(), source }));
   const result = await publishDuePosts(db, { now });
   const day = now.toISOString().slice(0, 10);
   const snapshots: string[] = [];

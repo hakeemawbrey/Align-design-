@@ -125,3 +125,22 @@ describe("choosing accounts after login", () => {
     expect(await getPendingLogin(db)).toBeNull();
   });
 });
+
+describe("moving data to the cloud", () => {
+  it("exports a database and imports it into an empty one, refusing a non-empty target", async () => {
+    const { exportDump, importDump } = await import("../src/lib/dump");
+    const src = await openDb(":memory:");
+    await upsertAccounts(src, [acct("1", "comealign")]);
+    await setActiveAccount(src, "1");
+    const dump = await exportDump(src);
+    const dst = await openDb(":memory:");
+    expect((await importDump(dst, dump, { dryRun: true })).ok).toBe(true);
+    expect(await listAccounts(dst)).toHaveLength(0);
+    const res = await importDump(dst, dump);
+    expect(res.ok).toBe(true);
+    expect((await getAccount(dst))!.username).toBe("comealign");
+    expect((await importDump(dst, dump)).ok).toBe(false);
+    expect((await importDump(dst, dump, { replace: true })).ok).toBe(true);
+    expect(await listAccounts(dst)).toHaveLength(1);
+  });
+});

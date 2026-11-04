@@ -32,7 +32,7 @@ async function main() {
   if (!file) throw new Error("Usage: npm run import -- <plan.csv> [--shift-days=N] [--trial=MANUAL|SS_PERFORMANCE] [--commit]");
   if (trial !== "MANUAL" && trial !== "SS_PERFORMANCE") throw new Error("--trial must be MANUAL or SS_PERFORMANCE");
   loadEnv(path.join(__dirname, "..", ".env"));
-  const base = `${(process.env.APP_URL || "http://localhost:3000").replace(/\/$/, "")}/api/agent`;
+  const base = `${(process.env.STUDIO_URL || process.env.APP_URL || "http://localhost:3000").replace(/\/$/, "")}/api/agent`;
   const headers = { authorization: `Bearer ${process.env.AGENT_API_KEY ?? ""}`, "content-type": "application/json" };
   const api = async (method: string, route: string, body?: unknown) => {
     const res = await fetch(base + route, { method, headers, body: body ? JSON.stringify(body) : undefined });

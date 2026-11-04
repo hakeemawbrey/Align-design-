@@ -100,3 +100,17 @@ describe("linkedInstagramAccounts", () => {
     expect((await client.linkedInstagramAccounts()).map((a) => a.username)).toEqual(["a"]);
   });
 });
+
+describe("hasCronKey", () => {
+  it("accepts the key with copy-paste noise and rejects anything else", async () => {
+    const { hasCronKey } = await import("../src/lib/cronAuth");
+    expect(hasCronKey("abc123", "Bearer abc123", null)).toBe(true);
+    expect(hasCronKey("abc123", " Bearer  abc123\n", null)).toBe(true);
+    expect(hasCronKey("abc123", "Bearer Bearer abc123", null)).toBe(true);
+    expect(hasCronKey("abc123", '"Bearer abc123"', null)).toBe(true);
+    expect(hasCronKey("abc123", null, "abc123")).toBe(true);
+    expect(hasCronKey("abc123", "Bearer abc12", null)).toBe(false);
+    expect(hasCronKey("abc123", null, null)).toBe(false);
+    expect(hasCronKey("", "Bearer ", null)).toBe(false);
+  });
+});

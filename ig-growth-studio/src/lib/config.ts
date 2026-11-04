@@ -38,6 +38,8 @@ export const config = {
   get databaseUrl() {
     const remote = process.env.TURSO_DATABASE_URL || process.env.DATABASE_URL;
     if (remote) return remote;
+    // On Vercel the file system is temporary: a local file would silently lose data between deployments.
+    if (process.env.VERCEL) throw new Error("No cloud database configured: set TURSO_DATABASE_URL and TURSO_AUTH_TOKEN.");
     const p = this.databasePath;
     return p === ":memory:" ? ":memory:" : `file:${path.resolve(p)}`;
   },

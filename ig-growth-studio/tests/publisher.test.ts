@@ -107,7 +107,7 @@ describe("publishDuePosts", () => {
     const { client } = fakeGraph({ "POST 17841/media": () => graphError(100, "Invalid image_url") });
     const res = await publishDuePosts(db, { now: NOW, client });
     expect(res.failed).toEqual([id]);
-    expect((await getPost(db, id))!.error).toBe("Invalid image_url");
+    expect((await getPost(db, id))!.error).toBe("Invalid image_url [HTTP 400, code 100]");
   });
 
   it("fails a post whose account is no longer connected, without calling Instagram", async () => {
@@ -215,5 +215,24 @@ describe("catching up after downtime", () => {
     expect((await getPost(db, b))!.status).toBe("scheduled");
     res = await publishDuePosts(db, { now: new Date(NOW.getTime() + 60_000), client });
     expect(res.published).toEqual([b]);
+  });
+});
+
+describe("transient Instagram errors", () => {
+  it("retries a 500 'internal server error' at publish time instead of failing", async () => {
+    const id = await schedule("IMAGE");
+    const { client } = fakeGraph({
+      "POST 17841/media": () => ({ id: "C7" }),
+      "GET C7": () => ({ status_code: "FINISHED" }),
+      "POST 17841/media_publish": () =>
+        new Response(JSON.stringify({ error: { message: "An internal server error occurred. Please try again later.", code: -2 } }), {
+          status: 500,
+        }),
+    });
+    const res = await publishDuePosts(db, { now: NOW, client });
+    expect(res.retried).toEqual([id]);
+    const p = (await getPost(db, id))!;
+    expect(p.status).toBe("scheduled");
+    expect(p.error).toMatch(/^Retrying: An internal server error/);
   });
 });

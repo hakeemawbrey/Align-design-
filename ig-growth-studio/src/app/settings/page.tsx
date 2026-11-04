@@ -2,7 +2,7 @@ import { addChosenAccounts, disconnect, removeAccountAction, selectAccount, skip
 import { ChooseAccounts } from "@/components/ChooseAccounts";
 import { LocalTime } from "@/components/LocalTime";
 import { config } from "@/lib/config";
-import { getAccount, getDb, getPendingLogin, listAccounts } from "@/lib/db";
+import { getAccount, getDb, getPendingLogin, getSetting, listAccounts } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +16,8 @@ export default async function SettingsPage({
   const accounts = await listAccounts(db);
   const active = await getAccount(db);
   const pending = await getPendingLogin(db);
+  const lastRun = JSON.parse((await getSetting(db, "last_run")) ?? "null") as { at: string; source: string } | null;
+  const lastRunAgoMin = lastRun ? Math.round((Date.now() - new Date(lastRun.at).getTime()) / 60_000) : null;
   const appReady = Boolean(config.appId && config.appSecret);
   const soon = (iso: string | null) => iso !== null && new Date(iso).getTime() - Date.now() < 7 * 86_400_000;
 
@@ -162,6 +164,15 @@ export default async function SettingsPage({
         <table>
           <tbody>
             <Row label="Meta app ID / secret" ok={appReady} value={appReady ? "Set" : "Missing"} />
+            <Row
+              label="Publisher last ran"
+              ok={lastRunAgoMin !== null && lastRunAgoMin <= 10}
+              value={
+                lastRun
+                  ? `${lastRunAgoMin === 0 ? "under a minute" : `${lastRunAgoMin} min`} ago (${lastRun.source === "cron" ? "cloud scheduler" : "local worker"})`
+                  : "Never. Posts will not publish until the scheduler runs."
+              }
+            />
             <Row label="Graph API version" ok value={config.graphVersion} />
             <Row label="OAuth redirect URI" ok value={config.redirectUri} />
             <Row label="Daily like cap (per account)" ok value={String(config.dailyLikeCap)} />

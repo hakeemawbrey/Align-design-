@@ -11,6 +11,14 @@ export const MAX_NEW_PER_ACCOUNT_PER_RUN = 1;
 /** Graph error codes worth retrying: unknown/temporary/rate-limit. */
 const TRANSIENT_CODES = new Set([1, 2, 4, 17, 32, 341, 613]);
 
+/** Worth retrying: Meta marks it transient, a rate-limit/temporary code, or a 5xx ("internal server error"). */
+export function isTransient(err: unknown): boolean {
+  if (!(err instanceof GraphError)) return false;
+  if (err.isTransient) return true;
+  if (err.code !== undefined && TRANSIENT_CODES.has(err.code)) return true;
+  return err.status >= 500;
+}
+
 export interface RunResult {
   published: number[];
   failed: number[];
@@ -48,8 +56,13 @@ export async function publishDuePosts(
       const outcome = await advance(db, client, account.igUserId, post, now);
       result[outcome].push(post.id);
     } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      const transient = err instanceof GraphError && err.code !== undefined && TRANSIENT_CODES.has(err.code);
+      const base = err instanceof Error ? err.message : String(err);
+      // Keep Meta's codes with the message so failures can be diagnosed from the queue.
+      const msg =
+        err instanceof GraphError
+          ? `${base} [HTTP ${err.status}${err.code !== undefined ? `, code ${err.code}` : ""}${err.subcode ? `/${err.subcode}` : ""}]`
+          : base;
+      const transient = isTransient(err);
       const attempts = post.attempts + (post.status === "scheduled" ? 1 : 0);
       if (transient && attempts < MAX_ATTEMPTS) {
         await updatePost(db, post.id, {

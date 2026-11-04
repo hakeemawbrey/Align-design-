@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "agent": "tsx scripts/agent.ts",
-    "import": "tsx scripts/import-schedule.ts"
+    "import": "tsx scripts/import-schedule.ts",
+    "copy-to-cloud": "tsx scripts/copy-to-cloud.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",
