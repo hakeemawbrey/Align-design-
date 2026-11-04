@@ -16,15 +16,15 @@ import { el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 import * as B from '../../nt2e41/scenes/b13base.js'
 const { R, box, shadow, sparkles, confetti, pisces, tissues, buildBug, drawBar, pop01, outK, popOut, clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, r3, GOLD, BONE, PINK, INK, RED, INTER, SERIF } = B
 
-export const DURATION = 25
-export const STORY_END = DURATION - ENDCARD_LEN          // 20.6
+export const DURATION = 23
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN          // 20.6
 export const T = {
   bug: 0.3, h0Out: [15.85, 16.05],
   ex: [[2.3, 7.0], [7.0, 11.7], [11.7, 16.0]],
@@ -154,7 +154,7 @@ export function makeExcuse(cfg) {
   }
 
   const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
   const CUES = [
     ['pop', T.bug + 0.06, 880, 0.03, -0.4],
     ...(cfg.hookCues || []),
@@ -172,8 +172,7 @@ export function makeExcuse(cfg) {
     ...(cfg.finCues || []).map(c => [c[0], r3(c[1] + T.fin[0]), ...c.slice(2)]),
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }

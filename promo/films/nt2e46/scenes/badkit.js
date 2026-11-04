@@ -16,15 +16,15 @@ import { el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { dialogueBox, talkCues, talkHops } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 import * as B from '../../nt2e41/scenes/b13base.js'
 const { R, box, shadow, sparkles, pisces, buildBug, buildSticker, buildStamp, drawStampTool, drawBar, pop01, outK, popOut, clamp, lerp, prog, ease, drawStarChar, signStar, STAR, r3, GOLD, BONE, PINK, INK, RED, INTER, MONO } = B
 
-export const DURATION = 20
-export const STORY_END = DURATION - ENDCARD_LEN
+export const DURATION = 18
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN
 export const T = {
   bug: 0.3, h0Out: [10.85, 11.05],
   steps: [[2.1, 4.85], [4.85, 7.6], [7.6, 10.95]],
@@ -186,7 +186,7 @@ export function makeBad(cfg) {
   }
 
   const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5]
   const squeak = (a, n) => Array.from({ length: n }, (_, i) => ['chip', r3(a + 0.15 + i * 0.22), NOTE[(i * 2) % NOTE.length] * 2, 0.08, { wave: 'square', duty: 0.125, slide: 8, gain: 0.012, decay: 0.05, sustain: 0.2, bus: 'fx' }])
   const CUES = [
@@ -206,8 +206,7 @@ export function makeBad(cfg) {
     ['pop', T.score, 1318.51, 0.045, 0.4], ['pop', r3(T.score + 0.08), 1760, 0.035, 0.4], ['glitter', T.score, r3(T.score + 0.3)],
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }
