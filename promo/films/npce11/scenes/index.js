@@ -1,9 +1,9 @@
-// npce11: PISCES CRIES ABOUT… "a talk card." (14 s vertical trial reel, promo/films/next30/b48.md, music: funk · A).
+// npce11: PISCES CRIES ABOUT… "a talk card." (12 s vertical trial reel, promo/films/next30/b48.md, music: funk · A).
 // Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: a talk card on the café table, "What small thing makes you feel loved?"; Pisces already sniffling.
 //   1.1       Pisces: "when people remember… little things."  2.3 Virgo: "you take oat milk."
 //   2.75      sticker "it was *one question.*"  4.2 fountains.
-//   5.6       card cut. THE STARS: "Answer softly. Listen longer."
+//   5.6       flash cut. THE STARS: "Answer softly. Listen longer."
 import { makeCry, box, R, ink, shadow, glow, bubble, mug, sparkles, hearts, pop01, prog, ease, INK, BONE, GOLD, PINK, SERIF, MONO } from '../../npce01/scenes/criekit.js'
 
 function talkCard(x, cx, cy, sc, rot) {

@@ -1,4 +1,4 @@
-// nhqe02: HOLIDAYS THEN VS NOW, "Taurus's holiday dinner." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe02: HOLIDAYS THEN VS NOW, "Taurus's holiday dinner." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: funk · Bb). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   midnight (12:04 AM): Taurus eats alone in the fridge light. Sticker "dinner for *one*, by the fridge."
 //   NOW    Taurus stirs a big pot; Cancer and Libra at the table, plates out. Sticker "a *full* table."

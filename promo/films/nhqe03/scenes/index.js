@@ -1,4 +1,4 @@
-// nhqe03: HOLIDAYS THEN VS NOW, "Gemini's holiday texts." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe03: HOLIDAYS THEN VS NOW, "Gemini's holiday texts." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: chiptune · C). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   a phone with twelve chats, unread dots everywhere, three typing at once; Gemini spinning. Sticker "*twelve* half-chats."
 //   NOW    one call, the timer at 1:12:40 and counting; Gemini laughing on the couch. Sticker "one *long* call."

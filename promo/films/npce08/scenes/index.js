@@ -1,9 +1,9 @@
-// npce08: PISCES CRIES ABOUT… "a new leaf." (14 s vertical trial reel, promo/films/next30/b48.md,
+// npce08: PISCES CRIES ABOUT… "a new leaf." (12 s vertical trial reel, promo/films/next30/b48.md,
 // music: synthwave · F#m). Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: Pisces nose to nose with a small houseplant on the windowsill, snow outside, watering can in hand.
 //   1.1–2.2   a tiny new leaf unrolls at the top.  2.75 sticker "in *December.*"
 //   3.5       Pisces holds up a sign: "1 NEW LEAF".  4.3 fountains.
-//   5.6       card cut. THE STARS: "Growth is quiet. Notice it anyway."
+//   5.6       flash cut. THE STARS: "Growth is quiet. Notice it anyway."
 import { makeCry, box, R, ink, shadow, glow, snow, sparkles, pop01, prog, lerp, ease, INK, BONE, GOLD, PINK, MONO } from '../../npce01/scenes/criekit.js'
 
 const LEAF = '#5fbf6a', LEAF_D = '#3b8a48', NEW = '#a8f07a'

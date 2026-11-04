@@ -2,11 +2,11 @@
 // (promo/films/next30/b48.md). Lives in nhqe01; the other films import it from here. Drawing helpers come from the
 // Pisces Cries kit (../../npce01/scenes/criekit.js).
 //
-// The format (15 s, story 0–10.6, then the shared end card):
+// The format (13 s, story 0–10.6, then the short 2.4 s end card; no card-back cut):
 //   0.00–2.30   hook (frame 0 = thumbnail): the caption "<who> <what>: | then vs now" over a split screen — THEN on top
 //               (desaturated, warm, scanlines, a THEN tag), NOW below (clean, a NOW tag), both scenes mid-action.
 //   2.30–5.00   THEN full screen (white flash + zoom punch), sticker "then: …".
-//   5.00        the one card cut (flip).
+//   5.00        a white flash + zoom punch into NOW (no card transition).
 //   5.00–7.70   NOW full screen, sticker "now: …".
 //   7.70–10.60  NOW keeps playing; THE STARS pop in bottom-right and say the last line (box 7.85 → 10.2).
 // Pisces cries in every film: a small Pisces in the corner sniffles through THEN and happy-cries through NOW
@@ -22,15 +22,15 @@ import { el, clamp, lerp, prog, ease } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 import { pop01, outK, popOut, starFrame, inSprite, tearsCells, sparkles, r3, R, box, INK, BONE, GOLD, PINK, INTER, SERIF, MONO, TEAR } from '../../npce01/scenes/criekit.js'
 export * from '../../npce01/scenes/criekit.js'
 
-export const DURATION = 15
-export const STORY_END = DURATION - ENDCARD_LEN          // 10.6
+export const DURATION = 13
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN         // 10.6
 export const T = {
   h0: -2, h0Out: [2.1, 2.3],
   then: [2.3, 5.0], now: [5.0, 10.6], cut: 5.0,
@@ -155,7 +155,7 @@ export function makeHQ(cfg) {
         s1.update(t); s2.update(t)
         box1.update(t)
         bug.update(t, outK(t, T.bugOut))
-        const fl = t >= T.then[0] && t < T.then[0] + 0.12 ? 1 - (t - T.then[0]) / 0.12 : 0
+        const fl = Math.max(...[T.then[0], T.cut].map(c => t >= c && t < c + 0.14 ? 1 - (t - c) / 0.14 : 0))
         flash.style.opacity = String(0.55 * fl)
         drawGrain(gx, t)
       },
@@ -163,7 +163,7 @@ export function makeHQ(cfg) {
   }
 
   const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'bl br', fadeIn: 0 }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'bl br', fadeIn: 0 })]
   const CUES = [
     ['pluck', 0.05, 1174.66, 0.03, 0, 0.4],
     ['whoosh', r3(T.then[0] - 0.08), 0.28, 0.04], ['tick', T.then[0], 0.06], ['boom', T.then[0], 0.18],
@@ -173,8 +173,8 @@ export function makeHQ(cfg) {
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ['whoosh', r3(T.cut - 0.1), 0.3, 0.035], ['tick', T.cut, 0.06],
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }

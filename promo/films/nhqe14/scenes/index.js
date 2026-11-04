@@ -1,4 +1,4 @@
-// nhqe14: HOLIDAYS THEN VS NOW, "The drive home." (15 s vertical trial reel, promo/films/next30/b48.md, music: funk · D).
+// nhqe14: HOLIDAYS THEN VS NOW, "The drive home." (13 s vertical trial reel, promo/films/next30/b48.md, music: funk · D).
 // Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   Gemini and Sagittarius in the car, a paper map between them: "LEFT!" "RIGHT!" "LEFT!!"  Sticker "two *directions.* one car."
 //   NOW    Gemini drives, Sag holds the snack bag: "you drive, I do snacks."  Sticker "*taking turns.*"

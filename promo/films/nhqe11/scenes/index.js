@@ -1,4 +1,4 @@
-// nhqe11: HOLIDAYS THEN VS NOW, "Aquarius traditions." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe11: HOLIDAYS THEN VS NOW, "Aquarius traditions." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: chiptune · F#). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   a HAPPY TOASTER DAY banner, one toaster, Aquarius alone in a party hat: "happy toaster day… to me."  Sticker "a party of *one.*"
 //   NOW    the same banner, the whole crew in party hats; the toast pops and so does the confetti. Sticker "everyone *came.*"

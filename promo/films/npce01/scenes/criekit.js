@@ -1,12 +1,12 @@
 // PISCES CRIES ABOUT…: the shared look of the twelve star_advice trial reels npce01–npce12 (promo/films/next30/b48.md).
 // Lives in npce01; the other eleven films import it from here (read-only for them).
 //
-// The format (14 s, story 0–9.6, then the shared end card):
+// The format (12 s, story 0–9.6, then the short 2.4 s end card; no card-back cut):
 //   0.00–2.60   hook (frame 0 = thumbnail): the top caption "Pisces cries about… | *<topic>.*" is already up, the bug
 //               "PISCES CRIES ABOUT…" top-left, the TISSUES counter top-right, Pisces mid-sniffle next to the thing.
 //   2.60–5.60   it escalates: a caption sticker slaps on (2.75), tears go sniffle → streams → fountains (cfg.peak),
 //               the tissue counter keeps climbing.
-//   5.60        the one card cut (flip).
+//   5.60        a white flash cut (the film's own beat; no card transition).
 //   5.60–9.60   THE STARS pop in and say the last line next to a happy-crying Pisces (box 5.85 → 9.2).
 //
 //   makeCry(cfg) → { DURATION, SCENES, CUES, T }
@@ -21,8 +21,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -37,8 +37,8 @@ export const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
 export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 1 : p >= 1 ? 0 : (1 + 0.18 * Math.sin(Math.PI * Math.min(1, p * 2.2))) * (1 - ease.inCubic(p)) }
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
-export const DURATION = 14
-export const STORY_END = DURATION - ENDCARD_LEN          // 9.6
+export const DURATION = 12
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN         // 9.6
 export const T = {
   bug: -1, h0: -2, h0Out: [2.45, 2.65],
   sticker: 2.75, stickerOut: [5.4, 5.6],
@@ -343,7 +343,7 @@ export function makeCry(cfg) {
         sticker.update(t)
         box1.update(t)
         bug.update(t, outK(t, T.bugOut))
-        const fl = t >= T.sticker && t < T.sticker + 0.12 ? 1 - (t - T.sticker) / 0.12 : 0
+        const fl = Math.max(...[T.sticker, T.cut].map(c => t >= c && t < c + 0.14 ? 1 - (t - c) / 0.14 : 0))
         flash.style.opacity = String(0.45 * fl)
         drawGrain(gx, t)
       },
@@ -351,7 +351,7 @@ export function makeCry(cfg) {
   }
 
   const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'bl br', fadeIn: 0 }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'bl br', fadeIn: 0 })]
 
   const CUES = [
     ['pluck', 0.05, 1174.66, 0.03, 0, 0.4],
@@ -362,8 +362,8 @@ export function makeCry(cfg) {
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ['whoosh', r3(T.cut - 0.1), 0.3, 0.035], ['tick', T.cut, 0.06],
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }

@@ -1,9 +1,9 @@
-// npce07: PISCES CRIES ABOUT… "last December." (14 s vertical trial reel, promo/films/next30/b48.md,
+// npce07: PISCES CRIES ABOUT… "last December." (12 s vertical trial reel, promo/films/next30/b48.md,
 // music: cinematic · Dm). Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: Pisces holds up an instant photo from last year: a small, grey Pisces alone, hood up.
 //   1.4       the photo's caption writes on: "last dec."   2.75 sticker "look how far *we* came."
 //   2.9–3.7   friends pop up behind today's Pisces (Cancer, Leo, Virgo).  4.4 fountains.
-//   5.6       card cut. THE STARS: "Be proud of who carried you here: you."
+//   5.6       flash cut. THE STARS: "Be proud of who carried you here: you."
 import { makeCry, box, R, ink, shadow, glow, sparkles, hearts, pop01, prog, lerp, ease, drawStarChar, signStar, INK, BONE, GOLD, PINK, SERIF } from '../../npce01/scenes/criekit.js'
 
 const PIS = signStar('pisces')

@@ -1,4 +1,4 @@
-// nhqe05: HOLIDAYS THEN VS NOW, "Leo at the party." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe05: HOLIDAYS THEN VS NOW, "Leo at the party." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: house · E). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   Leo bursts through the door in a cape, under its own spotlight: "I HAVE ARRIVED."  Sticker "the *entrance.*"
 //   NOW    Leo spots a shy guest by the wall and waves them into the circle; the light gets wide. Sticker "the *invite.*"

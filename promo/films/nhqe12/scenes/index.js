@@ -1,4 +1,4 @@
-// nhqe12: HOLIDAYS THEN VS NOW, "Pisces at the holiday movie." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe12: HOLIDAYS THEN VS NOW, "Pisces at the holiday movie." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: dreamy · Db). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   Pisces alone in the TV glow, crying at a snowy movie, one tissue left in the box. Sticker "*one* tissue left."
 //   NOW    Pisces and Cancer on the couch, Cancer holding the tissue box, both crying, both fine. Sticker "two criers, *one* box."

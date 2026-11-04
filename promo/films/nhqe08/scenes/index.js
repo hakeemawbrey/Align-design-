@@ -1,4 +1,4 @@
-// nhqe08: HOLIDAYS THEN VS NOW, "Scorpio at dinner." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe08: HOLIDAYS THEN VS NOW, "Scorpio at dinner." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: cinematic · Cm). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   a vault marked FEELINGS with a giant padlock; Scorpio guards it at the table: "fine. pass the salt." Sticker "feelings: *locked.*"
 //   NOW    the vault door swings open, hearts float out; Scorpio: "I really missed you." Cancer and Taurus melt. Sticker "one *honest* sentence."

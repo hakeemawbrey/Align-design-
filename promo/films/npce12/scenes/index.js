@@ -1,9 +1,9 @@
-// npce12: PISCES CRIES ABOUT… "you." (14 s vertical trial reel, promo/films/next30/b48.md, music: cinematic · C).
+// npce12: PISCES CRIES ABOUT… "you." (12 s vertical trial reel, promo/films/next30/b48.md, music: cinematic · C).
 // The finale of the set. Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: Pisces looks straight into the lens, tissue in hand, wobbling.
 //   1.0       a big pointer pops: "← YOU" at the viewer.  1.9 / 2.5 / 3.1 three little cards: "you texted back",
 //             "you said sorry first", "you stayed kind".  2.75 sticker "yes, *you.* watching this."  4.2 fountains.
-//   5.6       card cut. THE STARS: "Feeling it all is its own courage."
+//   5.6       flash cut. THE STARS: "Feeling it all is its own courage."
 import { makeCry, box, R, ink, shadow, glow, sparkles, hearts, pop01, prog, ease, INK, BONE, GOLD, PINK, SERIF, MONO, TEAR } from '../../npce01/scenes/criekit.js'
 
 const NOTES = [['you texted back', 260, 470, -0.08, 1.9], ['you said sorry first', 760, 600, 0.07, 2.5], ['you stayed kind', 300, 760, 0.05, 3.1]]

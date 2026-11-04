@@ -1,4 +1,4 @@
-// nhqe06: HOLIDAYS THEN VS NOW, "Virgo wrapping gifts." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe06: HOLIDAYS THEN VS NOW, "Virgo wrapping gifts." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: lofi · F). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   3:00 AM: Virgo alone, measuring ribbon with a ruler over one perfect box. Sticker "a *ruler.* at 3 AM."
 //   NOW    Gemini and Sagittarius help; three gifts with gloriously crooked bows; everyone laughs. Sticker "crooked bows. *great* night."

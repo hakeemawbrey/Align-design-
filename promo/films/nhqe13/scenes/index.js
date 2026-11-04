@@ -1,4 +1,4 @@
-// nhqe13: HOLIDAYS THEN VS NOW, "The lights walk." (15 s vertical trial reel, promo/films/next30/b48.md, music: lofi · Gm).
+// nhqe13: HOLIDAYS THEN VS NOW, "The lights walk." (13 s vertical trial reel, promo/films/next30/b48.md, music: lofi · Gm).
 // Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   a street of lit-up houses whizzing past; Capricorn speed-walks with a stopwatch, Cancer trails behind:
 //          "4 streets in 9 minutes!"  Sticker "a *speedrun.*"

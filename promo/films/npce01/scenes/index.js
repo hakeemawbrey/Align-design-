@@ -1,10 +1,10 @@
-// npce01: PISCES CRIES ABOUT… "a note in their coat." (14 s vertical trial reel, promo/films/next30/b48.md,
+// npce01: PISCES CRIES ABOUT… "a note in their coat." (12 s vertical trial reel, promo/films/next30/b48.md,
 // music: dreamy · F). Story 0–9.6, then the shared end card. The format lives in ./criekit.js (npce01–npce12).
 //   0.0–1.6   hook: "Pisces cries about… *a note in their coat.*"  A winter coat hangs on a hook; a folded note is
 //             half out of its pocket and Pisces stares at it, sniffling. The note floats up and unfolds.
 //   1.6–3.9   the note: "thought of you today." in pen. Sticker (2.75): "and it’s *in pen.*"
 //   3.9–5.6   the note flips: a tiny doodle of Pisces on the back. Fountains (4.5).
-//   5.6       card cut.  THE STARS: "Small words on paper carry big love."
+//   5.6       flash cut.  THE STARS: "Small words on paper carry big love."
 import { makeCry, box, R, ink, shadow, glow, drawBits, sparkles, pop01, prog, lerp, ease, clamp, INK, BONE, GOLD, PINK, SERIF, PIS_COL } from './criekit.js'
 
 const COAT = '#b5523b'

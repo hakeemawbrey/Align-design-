@@ -1,9 +1,9 @@
-// npce10: PISCES CRIES ABOUT… "saying no." (14 s vertical trial reel, promo/films/next30/b48.md, music: house · G).
+// npce10: PISCES CRIES ABOUT… "saying no." (12 s vertical trial reel, promo/films/next30/b48.md, music: house · G).
 // Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: Pisces in a blanket on the couch; the phone: "party tonight?" → "can’t tonight, have fun!" (sent).
 //   0.0–1.7   Pisces braces (wide eyes, trembling); typing dots…
 //   1.75      the reply: "totally! rest up"   2.75 sticker "relief tears are *still* tears."  4.2 fountains, cocoa.
-//   5.6       card cut. THE STARS: "A kind no is still a kind word."
+//   5.6       flash cut. THE STARS: "A kind no is still a kind word."
 import { makeCry, box, R, shadow, glow, phone, chat, dots, blanket, mug, sparkles, pop01, prog, ease, INK, BONE, GOLD, PINK, MONO } from '../../npce01/scenes/criekit.js'
 
 function couch(x) {

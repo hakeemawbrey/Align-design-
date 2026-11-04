@@ -1,9 +1,9 @@
-// npce03: PISCES CRIES ABOUT… "a dog in a sweater." (14 s vertical trial reel, promo/films/next30/b48.md,
+// npce03: PISCES CRIES ABOUT… "a dog in a sweater." (12 s vertical trial reel, promo/films/next30/b48.md,
 // music: chiptune · D). Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: a pixel dog in a striped sweater trots in from the right; Pisces watches, already welling up.
 //   1.3       the dog stops and wags.  2.75 sticker "it has a *pocket.*" (the little pocket gets a POCKET tag).
 //   3.8       the dog trots over and sits right next to Pisces.  4.4 fountains.
-//   5.6       card cut. THE STARS: "Delight is allowed to be this big."
+//   5.6       flash cut. THE STARS: "Delight is allowed to be this big."
 import { makeCry, box, R, shadow, glow, label, sparkles, hearts, pop01, prog, lerp, ease, INK, BONE, GOLD, PINK } from '../../npce01/scenes/criekit.js'
 
 const FUR = '#c98a4b', FUR_D = '#8a5a2e', SW = '#d8434e'

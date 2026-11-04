@@ -1,4 +1,4 @@
-// nhqe09: HOLIDAYS THEN VS NOW, "Sagittarius's trips." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe09: HOLIDAYS THEN VS NOW, "Sagittarius's trips." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: synthwave · Am). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   a door with a sticky note "BRB"; Sag dashes off with a backpack; Gemini and Leo: "brb… where??"  Sticker "gone. the note says *BRB.*"
 //   NOW    Sag shows the friends a map with the route: "back on the 3rd. postcards for all."  Sticker "plans *shared.*"

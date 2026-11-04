@@ -1,4 +1,4 @@
-// nhqe15: HOLIDAYS THEN VS NOW, "Meeting the friends." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe15: HOLIDAYS THEN VS NOW, "Meeting the friends." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: house · Bb). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   Libra peeks out from behind a coat rack; Aries blocks the view. Friends: "who’s that?"  Aries: "nobody!"  Sticker "“*nobody!*”"
 //   NOW    Aries brings Libra forward with a flourish; Taurus and Virgo cheer and shuffle over: "come sit!"  Sticker "“this is *Libra.*”"

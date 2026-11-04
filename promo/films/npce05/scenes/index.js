@@ -1,9 +1,9 @@
-// npce05: PISCES CRIES ABOUT… "a blind card." (14 s vertical trial reel, promo/films/next30/b48.md, music: pop · E).
+// npce05: PISCES CRIES ABOUT… "a blind card." (12 s vertical trial reel, promo/films/next30/b48.md, music: pop · E).
 // Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: Pisces holds up tonight's blind mystery card, face down (a "?" back), sniffling already.
 //   1.3–1.7   the card flips: no face, just words: "cries at weddings." … "and bakeries." (2.2)
 //   2.75      sticker "they cry at *bakeries* too."  4.4 fountains; the card gets a little heart stamp.
-//   5.6       card cut. THE STARS: "Card first. Face last. Tissues always."
+//   5.6       flash cut. THE STARS: "Card first. Face last. Tissues always."
 import { makeCry, box, R, ink, shadow, glow, drawBits, sparkles, pop01, prog, lerp, ease, INK, BONE, GOLD, PINK, SERIF, MONO, HEART } from '../../npce01/scenes/criekit.js'
 
 function card(x, t, cx, cy, sc, rot, flip, { line2 = 1, stamp = 0 } = {}) {

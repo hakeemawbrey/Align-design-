@@ -1,4 +1,4 @@
-// nhqe10: HOLIDAYS THEN VS NOW, "Capricorn on the 24th." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe10: HOLIDAYS THEN VS NOW, "Capricorn on the 24th." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: pop · A). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   the holiday table; Capricorn types on a laptop, NEW EMAIL pings: "one sec. one email."  Sticker "*one* more email."
 //   NOW    the laptop is shut (an OUT OF OFFICE sticky note on the lid); a board game, dice tumbling, everyone laughing. Sticker "game night, *for real.*"

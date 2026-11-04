@@ -1,4 +1,4 @@
-// nhqe17: HOLIDAYS THEN VS NOW, "New Year’s plans." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe17: HOLIDAYS THEN VS NOW, "New Year’s plans." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: synthwave · C#m). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   DEC 31 on the wall; Scorpio stares at a silent phone: "…they’ll ask. right?"  Crickets. Sticker "*waiting* to be asked."
 //   NOW    Scorpio asks Leo: "be my New Year’s plan?"  Leo lights up: "YES!!"  Sticker "*asking* first."

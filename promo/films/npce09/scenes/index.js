@@ -1,9 +1,9 @@
-// npce09: PISCES CRIES ABOUT… "a snowman." (14 s vertical trial reel, promo/films/next30/b48.md, music: dreamy · Eb).
+// npce09: PISCES CRIES ABOUT… "a snowman." (12 s vertical trial reel, promo/films/next30/b48.md, music: dreamy · Eb).
 // Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: Pisces at the window; outside a snowman holds a sign "HI PISCES".
 //   1.4       Cancer pops up from behind the snowman and waves.  2.75 sticker "it’s wearing *my* colour." (the scarf)
 //   4.3       fountains; Cancer blows a heart.
-//   5.6       card cut. THE STARS: "Let people show up for you."
+//   5.6       flash cut. THE STARS: "Let people show up for you."
 import { makeCry, box, R, ink, shadow, glow, snow, sparkles, hearts, pop01, prog, ease, PIS_COL, INK, BONE, GOLD, PINK, MONO } from '../../npce01/scenes/criekit.js'
 
 function snowman(x, t, cx, base, { scarfK = 0 } = {}) {

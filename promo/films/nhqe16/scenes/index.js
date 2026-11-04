@@ -1,4 +1,4 @@
-// nhqe16: HOLIDAYS THEN VS NOW, "Ice skating." (15 s vertical trial reel, promo/films/next30/b48.md, music: jazzy · F).
+// nhqe16: HOLIDAYS THEN VS NOW, "Ice skating." (13 s vertical trial reel, promo/films/next30/b48.md, music: jazzy · F).
 // Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   Virgo wobbles wildly on the ice: "I’m a natural."  Pisces watches, sniffling with worry. Sticker "“I’m a *natural.*”"
 //   NOW    Virgo: "teach me?"  Pisces takes its hand and they glide in a slow circle, Pisces happy-crying. Sticker "“*teach me?*”"

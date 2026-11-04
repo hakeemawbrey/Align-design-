@@ -1,9 +1,9 @@
-// npce06: PISCES CRIES ABOUT… "the last cookie." (14 s vertical trial reel, promo/films/next30/b48.md, music: lofi · C).
+// npce06: PISCES CRIES ABOUT… "the last cookie." (12 s vertical trial reel, promo/films/next30/b48.md, music: lofi · C).
 // Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: one cookie left on a plate between Pisces and Taurus; Pisces mid-gasp.
 //   0.8–1.6   Taurus slides the plate over to Pisces; a little tent card pops up: "saved it for you" (1.7).
 //   2.75      sticker "*Taurus* shared food."  4.3 fountains; Taurus beams.
-//   5.6       card cut. THE STARS: "Being thought of is the whole gift."
+//   5.6       flash cut. THE STARS: "Being thought of is the whole gift."
 import { makeCry, box, R, ink, shadow, glow, sparkles, hearts, pop01, prog, lerp, ease, INK, BONE, GOLD, PINK, SERIF } from '../../npce01/scenes/criekit.js'
 
 function cookie(x, cx, cy, r = 54) {

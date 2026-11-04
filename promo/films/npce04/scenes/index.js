@@ -1,9 +1,9 @@
-// npce04: PISCES CRIES ABOUT… "“take your time.”" (14 s vertical trial reel, promo/films/next30/b48.md,
+// npce04: PISCES CRIES ABOUT… "“take your time.”" (12 s vertical trial reel, promo/films/next30/b48.md,
 // music: jazzy · Bb). Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: a big phone; "how was your week?" from them; Pisces is typing a long reply… and deleting it.
 //   0.0–2.5   type, delete, type again (the draft box), sniffle.
 //   2.55      their reply lands: "no rush." → 2.95 "take your time."  Sticker (2.75) "they meant it *kindly.*"  4.3 fountains.
-//   5.6       card cut. THE STARS: "Patience is a love language too."
+//   5.6       flash cut. THE STARS: "Patience is a love language too."
 import { makeCry, box, R, shadow, glow, phone, chat, dots, sparkles, pop01, prog, ease, INK, BONE, GOLD, PINK, INTER, MONO } from '../../npce01/scenes/criekit.js'
 
 const D1 = 'ok so funny story, my week was', D2 = 'honestly? it was a lot and i'

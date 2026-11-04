@@ -1,4 +1,4 @@
-// nhqe01: HOLIDAYS THEN VS NOW, "Aries in December." (15 s vertical trial reel, promo/films/next30/b48.md, music: pop · D).
+// nhqe01: HOLIDAYS THEN VS NOW, "Aries in December." (13 s vertical trial reel, promo/films/next30/b48.md, music: pop · D).
 // Story 0–10.6, then the shared end card. The format lives in ./hqkit.js (nhqe01–nhqe18).
 //   0.0    hook: "*Aries* in December: | then vs now" over the split screen.
 //   THEN   a December calendar crossed out every night; Aries sprints in place, "next party!!". Sticker "*seven* parties a night."

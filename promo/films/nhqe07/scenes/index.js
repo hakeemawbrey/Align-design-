@@ -1,4 +1,4 @@
-// nhqe07: HOLIDAYS THEN VS NOW, "Libra's holiday plans." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe07: HOLIDAYS THEN VS NOW, "Libra's holiday plans." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: jazzy · Eb). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   "where should we go?"  Libra shrugs: "whatever you want!" ×3, the friends stare. Sticker "“whatever *you* want!”"
 //   NOW    Libra holds up a picture of a snowy cabin: "I’d love the cabin."  The friends: "YES." Sticker "said what *I* want."

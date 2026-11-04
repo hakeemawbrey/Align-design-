@@ -1,9 +1,9 @@
-// npce02: PISCES CRIES ABOUT… "the lights coming on." (14 s vertical trial reel, promo/films/next30/b48.md,
+// npce02: PISCES CRIES ABOUT… "the lights coming on." (12 s vertical trial reel, promo/films/next30/b48.md,
 // music: lofi · Ab). Story 0–9.6, then the shared end card. The format lives in ../../npce01/scenes/criekit.js.
 //   0.0       hook: a dark winter street, snow falling; Pisces with cocoa, the first house's lights already on.
 //   0.0–4.0   the strings of lights flick on house by house (0.0, 0.9, 1.8, 2.7); sticker (2.75) "every *single* house."
 //   4.0       the last window lights up and a Libra neighbour waves from it.  4.4 fountains.
-//   5.6       card cut. THE STARS: "Let the little beautiful things land."
+//   5.6       flash cut. THE STARS: "Let the little beautiful things land."
 import { makeCry, box, R, shadow, glow, snow, mug, sparkles, pop01, prog, ease, INK, BONE, GOLD, PINK } from '../../npce01/scenes/criekit.js'
 
 const BULBS = ['#ff5c6a', '#ffd25c', '#6fe0a0', '#7fbfff', '#ff8fd0']

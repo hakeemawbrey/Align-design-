@@ -1,4 +1,4 @@
-// nhqe04: HOLIDAYS THEN VS NOW, "Cancer homesick." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe04: HOLIDAYS THEN VS NOW, "Cancer homesick." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: dreamy · G). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   Cancer hides behind a giant sweater sleeve, lip wobbling: "I’m fine!!"  Sticker "*totally* fine."
 //   NOW    Cancer: "I miss home."  Taurus and Leo squeeze in for a group hug. Sticker "said it *out loud.*"

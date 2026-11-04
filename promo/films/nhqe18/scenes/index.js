@@ -1,4 +1,4 @@
-// nhqe18: HOLIDAYS THEN VS NOW, "Holiday leftovers." (15 s vertical trial reel, promo/films/next30/b48.md,
+// nhqe18: HOLIDAYS THEN VS NOW, "Holiday leftovers." (13 s vertical trial reel, promo/films/next30/b48.md,
 // music: cinematic · Eb). Story 0–10.6, then the shared end card. The format lives in ../../nhqe01/scenes/hqkit.js.
 //   THEN   Taurus guards a container of leftovers behind a little breadstick fence: "mine."  Aquarius peeks, hopeful.
 //          Sticker "guarding the *leftovers.*"
