@@ -1,9 +1,8 @@
-// ncape08: CAPRICORN SEASON TAKEOVER, ep 8, "Cap's Year in Love" (30 s vertical, music: pop · E). promo/films/next30/b10.md.
-// Story 0–25.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// ncape08: CAPRICORN SEASON TAKEOVER, ep 8, "Cap's Year in Love" (28 s vertical, music: pop · E). promo/films/next30/b10.md.
+// Story 0–25.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Cap's *year-end review:* | love edition."  Frame 0: Cap mid-click, pointer up, the title slide.
 //   2.6–8.6    "Goal *one.*"  GOAL: say how I feel. → STATUS: done (once). ✓
 //   8.6–14.6   "Goal *two.*"  GOAL: rest. → STATUS: working on it (a progress bar that inches, then stalls). Cap yawns.
-//  14.6        card cut.
 //  14.6–21.0   "Then: a *guest* | speaker."  Sag bursts back in: "you were great, Cap."  CAP: "…noted. thank you."  Cap
 //              actually smiles. Pisces fountains.
 //  21.0–25.6   CAP: "Next year's goal: *more* of you."

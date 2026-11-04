@@ -1,9 +1,8 @@
-// nsage10: SAG SEASON TAKEOVER, ep 10, "Sag's Mystery Match" (25 s vertical, music: synthwave · F#m). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage10: SAG SEASON TAKEOVER, ep 10, "Sag's Mystery Match" (23 s vertical, music: synthwave · F#m). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Sag flipped a | *blind mystery card.*"  Frame 0: Sag mid-flip of a glowing face-down card.
 //   2.6–7.1    "The match: | a *homebody.*"  Cancer pops out in slippers. CANCER: "I like staying in."  Sag freezes.
 //   7.1–11.6   "The *standoff.*"  CANCER: "I like cozy."  SAG: "…I like adventure."  A tumbleweed rolls by.
-//  11.6        card cut.
 //  11.6–16.1   "The *adventure:*"  A blanket fort with the night sky projected on its ceiling. Sag is amazed.
 //  16.1–20.6   SAG: "Turns out *home* is a trip."  Pisces fountains.
 import { makeTakeover, R, box, floor, shadow, glow, sparkles, hearts, cardImg, drawPixelStar, prog, lerp, clamp, ease, pop01, INK, BONE, GOLD } from '../../nsage01/scenes/takekit.js'

@@ -1,10 +1,9 @@
-// nsage05: SAG SEASON TAKEOVER, ep 5, "Sag Says It First" (25 s vertical, music: funk · G). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage05: SAG SEASON TAKEOVER, ep 5, "Sag Says It First" (23 s vertical, music: funk · G). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Sag at the café: | *'I like you.'*"  Frame 0: Sag mid-blurt at the café counter; Aquarius frozen
 //              holding a tray; Virgo the barista behind the counter.
 //   2.6–7.1    "The whole café | *freezes.*"  Virgo drops the milk; everyone goes wide-eyed. VIRGO: "…oh no. oh YES."
 //   7.1–11.6   "And then:"  AQUARIUS: "…I like you too."  Hearts.
-//  11.6        card cut.
 //  11.6–16.1   "One *small* | detail."  The tray: three muffins. AQUARIUS: "also you ordered three muffins."  SAG: "I panicked."
 //  16.1–20.6   SAG: "Say it *first.* Order fewer muffins."  Pisces fountains.
 import { makeTakeover, R, box, floor, shadow, glow, sparkles, hearts, drawBits, mug, prog, lerp, clamp, ease, pop01, INK, BONE, GOLD } from '../../nsage01/scenes/takekit.js'

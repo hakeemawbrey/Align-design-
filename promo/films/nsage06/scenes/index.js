@@ -1,9 +1,8 @@
-// nsage06: SAG SEASON TAKEOVER, ep 6, "Sag Texts Back" (20 s vertical, music: chiptune · B). promo/films/next30/b10.md.
-// Story 0–15.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage06: SAG SEASON TAKEOVER, ep 6, "Sag Texts Back" (18 s vertical, music: chiptune · B). promo/films/next30/b10.md.
+// Story 0–15.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.3    hook "Sag answers a text | in *two seconds.*"  Frame 0: Sag mid-dive onto a buzzing phone.
 //   2.3–5.1    "Scorpio sends | *one* careful text."  The thread: one long, careful message. Scorpio waits, biting its lip.
 //   5.1–8.0    "Sag's reply:"  "yes!!"  …  SCORPIO: "…to which part?"
-//   8.0        card cut.
 //   8.0–11.2   "*All* of it."  "all of it. thursday?"  Scorpio melts; Pisces cries at the screen.
 //  11.2–15.6   THE STARS: "Clear and *quick* is romantic."
 import { makeTakeover, R, box, floor, shadow, sparkles, hearts, phone, prog, lerp, clamp, ease, pop01, INK, GOLD } from '../../nsage01/scenes/takekit.js'

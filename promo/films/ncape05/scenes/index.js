@@ -1,9 +1,8 @@
-// ncape05: CAPRICORN SEASON TAKEOVER, ep 5, "Cap Wraps a Gift" (20 s vertical, music: chiptune · C). promo/films/next30/b10.md.
-// Story 0–15.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// ncape05: CAPRICORN SEASON TAKEOVER, ep 5, "Cap Wraps a Gift" (18 s vertical, music: chiptune · C). promo/films/next30/b10.md.
+// Story 0–15.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.3    hook "Cap wrapping | one *gift.*"  Frame 0: Cap mid-measure, a ruler against the paper.
 //   2.3–5.2    "Perfect *corners.*"  A flawless box, a level on top (bubble dead centre), the clock: 40 MIN.
 //   5.2–8.1    "Sag's *method:*"  Sag wraps one in three seconds: a ball of tape. 3 SEC.
-//   8.1        card cut.
 //   8.1–11.2   "And *inside* Cap's:"  A handwritten letter, a little tear-smudged. Pisces cries.
 //  11.2–15.6   CAP: "Neat corners. *Messy* feelings."
 import { makeTakeover, R, box, ink, note, floor, shadow, glow, sparkles, hearts, table, prog, lerp, clamp, ease, pop01, INK, BONE, GOLD, RED } from '../../nsage01/scenes/takekit.js'

@@ -1,9 +1,8 @@
-// ncape06: CAPRICORN SEASON TAKEOVER, ep 6, "Cap Says One Yes" (25 s vertical, music: funk · Bm). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// ncape06: CAPRICORN SEASON TAKEOVER, ep 6, "Cap Says One Yes" (23 s vertical, music: funk · Bm). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Cap got invited to | *four* parties."  Frame 0: Cap mid-juggle of four invitations.
 //   2.6–7.1    "Gemini's *advice:*"  GEMINI (zipping in circles): "come to all of them!"
 //   7.1–11.6   "Cap's *answer:*"  CAP: "I can do one, and be fully there."  Three invites go into a neat stack; one stays.
-//  11.6        card cut.
 //  11.6–16.1   "*One* party."  Cap arrives at 7:00 on the dot, gift in hand, phone in its bag, listening to Leo.
 //              LEO: "you actually came!!"  Pisces cries at the effort.
 //  16.1–20.6   CAP: "One yes. *All* of me."

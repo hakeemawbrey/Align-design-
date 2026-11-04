@@ -1,9 +1,8 @@
-// nsage11: SAG SEASON TAKEOVER, ep 11, "Ask Sag Anything" (25 s vertical, music: pop · Bb). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage11: SAG SEASON TAKEOVER, ep 11, "Ask Sag Anything" (23 s vertical, music: pop · Bb). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Ask Sag anything. | (Sag *will* answer.)"  Frame 0: Sag at an advice desk, already mid-answer.
 //   2.6–6.0    GEMINI: "should I text first?"  SAG: "yes."
 //   6.0–9.4    LIBRA: "should I pick the place?"  SAG: "yes."
-//   9.4        card cut.
 //   9.4–12.8   TAURUS: "can I bring snacks?"  SAG: "obviously."
 //  12.8–16.1   PISCES: "is it okay to cry on a first date?"  …a pause…  SAG: "yes. I'll bring tissues."
 //  16.1–20.6   SAG: "Most answers are *yes.* Ask anyway."  Pisces fountains.

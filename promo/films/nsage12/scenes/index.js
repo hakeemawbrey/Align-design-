@@ -1,9 +1,8 @@
-// nsage12: SAG SEASON TAKEOVER, ep 12, "The Scrapbook" (20 s vertical, music: dreamy · Ab). promo/films/next30/b10.md.
-// Story 0–15.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage12: SAG SEASON TAKEOVER, ep 12, "The Scrapbook" (18 s vertical, music: dreamy · Ab). promo/films/next30/b10.md.
+// Story 0–15.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.3    hook "Sag made a | *scrapbook* of the month."  Frame 0: Sag mid-slam of a giant scrapbook onto the table.
 //   2.3–5.2    "Page one: | the *packing list.*"  The backpack doodle, a talk card taped in, a ticket stub (callback, ep 2).
 //   5.2–8.1    "Page two: | the *toast.*"  Mug doodles, the party lights, "ROAST NOBODY" (callbacks, eps 8–9).
-//   8.1        card cut.
 //   8.1–11.2   "Next page: | *who's this?*"  The page turns… Capricorn peeks in from the edge with a planner (a tease).
 //              Pisces cries onto the page and smudges it.
 //  11.2–15.6   SAG: "Keep the *ticket stubs.* All of them."

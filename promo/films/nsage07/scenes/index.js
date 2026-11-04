@@ -1,9 +1,8 @@
-// nsage07: SAG SEASON TAKEOVER, ep 7, "Sag on the Couch" (25 s vertical, music: dreamy · Eb). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage07: SAG SEASON TAKEOVER, ep 7, "Sag on the Couch" (23 s vertical, music: dreamy · Eb). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Sag trying to sit | *still* for one movie."  Frame 0: Sag on the couch next to Taurus, mid-bounce.
 //   2.6–7.2    "Sag's *brain:*"  Thought clouds pop up: a mountain, a ferris wheel, a hot-air balloon.
 //   7.2–11.6   "Taurus *pauses* it."  TAURUS: "where are you right now?"  SAG: "…somewhere far. sorry."
-//  11.6        card cut.
 //  11.6–16.1   "Right *here.*"  TAURUS: "take me next time."  SAG: "deal. right now I'm here."  The clouds pop; Sag
 //              scoots over and snuggles in under the blanket.
 //  16.1–20.6   THE STARS: "Be *here* first. Then go far."  Pisces fountains.

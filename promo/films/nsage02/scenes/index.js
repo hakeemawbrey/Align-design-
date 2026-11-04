@@ -1,9 +1,8 @@
-// nsage02: SAG SEASON TAKEOVER, ep 2, "The Packing List" (20 s vertical, music: chiptune · E). promo/films/next30/b10.md.
-// Story 0–15.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage02: SAG SEASON TAKEOVER, ep 2, "The Packing List" (18 s vertical, music: chiptune · E). promo/films/next30/b10.md.
+// Story 0–15.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.3    hook "Sag packing for a | *first date.*"  Frame 0: Sag mid-shove, cramming a giant backpack.
 //   2.3–5.1    "A *passport.*"  A passport flips into the pack. SAG: "just in case."
 //   5.1–7.9    "A whole *tent.*"  A tent pops up out of the pack. PISCES: "it's so hopeful."
-//   7.9        card cut.
 //   7.9–11.2   "The one thing | it *needs.*"  Sag tips it all out and holds up one talk card. SAG: "the only thing I
 //              actually need."
 //  11.2–15.6   THE STARS: "Bring *questions*, not luggage."  Pisces fountains.

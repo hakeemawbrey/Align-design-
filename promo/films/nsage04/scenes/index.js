@@ -1,10 +1,9 @@
-// nsage04: SAG SEASON TAKEOVER, ep 4, "Sag's Itinerary" (30 s vertical, music: cinematic · Dm). promo/films/next30/b10.md.
-// Story 0–25.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage04: SAG SEASON TAKEOVER, ep 4, "Sag's Itinerary" (28 s vertical, music: cinematic · Dm). promo/films/next30/b10.md.
+// Story 0–25.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Sag planned our | *whole weekend.*"  Frame 0: Sag mid-reach, handing Libra a TINY note.
 //   2.6–8.1    "The *itinerary:*"  The note, up close: "DAY 1: wake up." "DAY 2: figure it out."  Libra's little scale
 //              tips over. LIBRA: "that's… it?"
 //   8.1–13.6   "Libra *asks.*"  LIBRA: "do you not want to plan with me?"  Sag's smile drops.
-//  13.6        card cut.
 //  13.6–21.0   "Sag, *honestly:*"  SAG: "I don't plan because I'm scared it won't go right."  LIBRA: "then let's figure it
 //              out together."  They flip the note and write one plan on the back.
 //  21.0–25.6   THE STARS: "Unplanned is fine. *Unsaid* isn't."  Pisces fountains.

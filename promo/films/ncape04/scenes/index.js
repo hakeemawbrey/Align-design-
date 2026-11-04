@@ -1,9 +1,8 @@
-// ncape04: CAPRICORN SEASON TAKEOVER, ep 4, "The Seating Chart" (25 s vertical, music: jazzy · Eb). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// ncape04: CAPRICORN SEASON TAKEOVER, ep 4, "The Seating Chart" (23 s vertical, music: jazzy · Eb). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Cap brought a | *seating chart.*"  Frame 0: Cap mid-unfurl of a colour-coded chart over the holiday table.
 //   2.6–7.1    "Placed with | a *ruler.*"  Name cards go down at perfectly measured spacing.
 //   7.1–11.6   "Gemini *swaps* two."  Gemini swaps two cards; Cap swaps them back without looking up.
-//  11.6        card cut.
 //  11.6–16.1   "Then: one | *extra* guest."  The new partner's grandma arrives; there's no seat. GRANDMA: "oh, don't
 //              fuss, dear!"  CAP: "please. take mine."  Cap gives up its chair and stands, smiling.
 //  16.1–20.6   THE STARS: "Planning is how Cap says *welcome.*"

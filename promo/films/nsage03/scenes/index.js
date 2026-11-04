@@ -1,9 +1,8 @@
-// nsage03: SAG SEASON TAKEOVER, ep 3, "Honest to a Fault" (25 s vertical, music: lofi · Am). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage03: SAG SEASON TAKEOVER, ep 3, "Honest to a Fault" (23 s vertical, music: lofi · Am). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Sag, *be honest:* | how do I look?"  Frame 0: Leo mid-spin in a giant sparkly jacket; Sag watching.
 //   2.6–7.6    "Sag is *always* | honest."  SAG: "the jacket is… a lot."  Record scratch. LEO: "A LOT??"
 //   7.6–11.8   "Pisces *can't* | watch."  Pisces peeks through its fingers, crying. PISCES: "I can't watch. I'm watching."
-//  11.8        card cut.
 //  11.8–16.1   "Honest *and* kind."  SAG: "and you look SO happy in it. wear it."  Leo glows; the jacket sparkles more.
 //  16.1–20.6   Sag and Leo side by side. SAG: "Truth, with a *hug* attached."  Pisces fountains.
 import { makeTakeover, R, floor, shadow, glow, sparkles, hearts, drawPixelStar, prog, lerp, clamp, ease, pop01, INK, BONE, GOLD } from '../../nsage01/scenes/takekit.js'

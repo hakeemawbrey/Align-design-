@@ -1,11 +1,10 @@
-// ncape01: CAPRICORN SEASON TAKEOVER, ep 1, "The Handover" (30 s vertical, music: cinematic · Cm). promo/films/next30/b10.md.
-// Story 0–25.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// ncape01: CAPRICORN SEASON TAKEOVER, ep 1, "The Handover" (28 s vertical, music: cinematic · Cm). promo/films/next30/b10.md.
+// Story 0–25.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Sag hands Cap | the *keys.*"  Frame 0: the huge account keyring mid-air, tossed by Sag; Cap catches it
 //              without looking up from its planner.
 //   2.6–8.6    "The *password.*"  SAG: "the password is 'adventure'."  CAP: "it's now in a vault."  A vault door thunks shut.
 //   8.6–14.6   "Capricorn season | starts at the *solstice.*"  Two chips: ASTROLOGY SAYS Capricorn season begins at the
 //              December solstice · SKY FACT the longest night of the year, north of the equator.
-//  14.6        card cut.
 //  14.6–21.0   "Cap's *first* post:"  A tidy calendar. Sag yawns; Cap tucks Sag in with a blanket. Pisces cries at the
 //              goodbye. SAG: "night, Cap. they're all yours."
 //  21.0–25.6   CAP: "Longest night. *Earliest* bedtime."

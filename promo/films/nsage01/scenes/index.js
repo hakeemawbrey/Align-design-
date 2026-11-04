@@ -1,11 +1,10 @@
-// nsage01: SAG SEASON TAKEOVER, ep 1, "Sag Has the Password" (25 s vertical, music: pop · D). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. The series look lives in ./takekit.js (shared by all 20 Takeover films).
+// nsage01: SAG SEASON TAKEOVER, ep 1, "Sag Has the Password" (23 s vertical, music: pop · D). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. The series look lives in ./takekit.js (shared by all 20 Takeover films).
 //   0.0–2.6    hook "Sag season. | *Sag* has the password."  Frame 0: Sag mid-leap through a glowing door, backpack on,
 //              the huge account keyring jangling in the air.
 //   2.6–7.6    "Rule one: every date | is an *adventure.*"  A whiteboard: DINNER gets crossed out → NIGHT HIKE, SNOW MINI
 //              GOLF. TAURUS (hugging a menu): "can the adventure have breadsticks?"  SAG: "obviously."
 //   7.6–12.1   "Rule two: *no* | small talk."  A café table. SAG: "what's your biggest dream?"  VIRGO: "…we just sat down."
-//  12.1        card cut.
 //  12.1–16.1   "Rule three: | *everybody* comes."  A tiny car pulls up and the whole cast piles in; Pisces happy-cries in
 //              the back seat.
 //  16.1–20.6   Sag twirls the keyring. SAG: "Buckle up. It's *my* month."  Pisces fountains.

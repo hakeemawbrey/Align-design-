@@ -1,11 +1,10 @@
-// nsage09: SAG SEASON TAKEOVER, ep 9, "The Honest Toast" (25 s vertical, music: jazzy · F). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage09: SAG SEASON TAKEOVER, ep 9, "The Honest Toast" (23 s vertical, music: jazzy · F). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Never hand Sag | the *microphone.*"  Frame 0: Sag mid-grab of the mic, a mug of cocoa raised.
 //   2.6–7.6    "Toast one: | *Aries.*"  SAG: "Aries, you are SO loud."  Gasps.  SAG: "…and you showed up for every
 //              one of us."  Aries tears up.
 //   7.6–12.1   "Toast two: | *Virgo.*"  SAG: "Virgo, you corrected my toast."  …  "honestly? you wrote half of it."
 //              Virgo blushes.
-//  12.1        card cut.
 //  12.1–16.1   "*Everybody,* | mugs up."  Every mug goes up; Pisces fountains front and centre.
 //  16.1–20.6   SAG: "Roast *nobody.* Toast everybody."
 import { makeTakeover, R, box, floor, shadow, glow, sparkles, hearts, confetti, mug, prog, lerp, clamp, ease, pop01, INK, BONE, GOLD, RED } from '../../nsage01/scenes/takekit.js'

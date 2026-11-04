@@ -1,10 +1,9 @@
-// nsage08: SAG SEASON TAKEOVER, ep 8, "Sag Throws a Party" (30 s vertical, music: house · A). promo/films/next30/b10.md.
-// Story 0–25.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// nsage08: SAG SEASON TAKEOVER, ep 8, "Sag Throws a Party" (28 s vertical, music: house · A). promo/films/next30/b10.md.
+// Story 0–25.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Sag is hosting | the *holiday party.*"  Frame 0: Sag mid-throw, a stack of BRING ANYONE invites flying.
 //   2.6–8.6    "The door *keeps* | opening."  Star after star walks in; the little room fills up.
 //              VIRGO: "how many people did you invite?"  SAG: "yes."
 //   8.6–14.6   "The *icebreaker:*"  Everyone pulls a talk card ("Morning person or night owl?"); the room gets loud and warm.
-//  14.6        card cut.
 //  14.6–21.0   "Who *really* made | this party?"  Cancer in the kitchen doorway with a tray of cookies, feeding everyone.
 //              SAG: "this party is only good because of you."  Cancer tears up; so does Pisces.
 //  21.0–25.6   THE STARS: "Big parties run on *quiet* hosts."

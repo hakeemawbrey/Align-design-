@@ -1,9 +1,8 @@
-// ncape02: CAPRICORN SEASON TAKEOVER, ep 2, "Cap Plans Date Two" (25 s vertical, music: lofi · Gm). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// ncape02: CAPRICORN SEASON TAKEOVER, ep 2, "Cap Plans Date Two" (23 s vertical, music: lofi · Gm). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Cap's plan for | *date number two.*"  Frame 0: Cap mid-unroll of a scroll that keeps rolling off-frame.
 //   2.6–7.2    "Minute *by* minute."  6:00 arrive · 6:04 compliment · 6:07 laugh · 6:09 laugh again · 6:15 talk card.
 //   7.2–11.6   "Gemini *reviews* it."  GEMINI: "…that's a lot of plan."  Cap blinks.
-//  11.6        card cut.
 //  11.6–16.1   "The *edit.*"  Cap crosses it all out and writes one line: "ask what they'd like to do."  Gemini lights up.
 //  16.1–20.6   THE STARS: "The best plan has *their* idea in it."
 import { makeTakeover, R, box, ink, floor, shadow, glow, sparkles, hearts, prog, lerp, clamp, ease, pop01, INK, BONE, GOLD, RED } from '../../nsage01/scenes/takekit.js'

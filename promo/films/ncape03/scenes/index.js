@@ -1,9 +1,8 @@
-// ncape03: CAPRICORN SEASON TAKEOVER, ep 3, "Cap Doesn't Cry" (25 s vertical, music: dreamy · Db). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// ncape03: CAPRICORN SEASON TAKEOVER, ep 3, "Cap Doesn't Cry" (23 s vertical, music: dreamy · Db). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Capricorn does *not* | cry at movies."  Frame 0: Cap stone-faced on the couch next to a sobbing Pisces.
 //   2.6–7.1    "The sad *part.*"  Pisces fountains; Cap, eyes front, slides the tissue box over without looking.
 //   7.1–11.6   "Then: a *gift.*"  Taurus hands Cap a small handmade card: "a year of us".
-//  11.6        card cut.
 //  11.6–16.1   "One *single* tear."  One pixel tear rolls down Cap's cheek. CAP: "…allergies."  Pisces gasps.
 //  16.1–20.6   THE STARS: "Even *mountains* melt a little."
 import { makeTakeover, R, box, ink, couch, floor, shadow, glow, sparkles, hearts, tissues, drawBits, HEART, prog, lerp, clamp, ease, pop01, INK, BONE, GOLD } from '../../nsage01/scenes/takekit.js'

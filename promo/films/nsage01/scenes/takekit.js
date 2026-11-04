@@ -1,11 +1,11 @@
 // TAKEOVER: the shared look of Sag Season Takeover (nsage01–nsage12) and Capricorn Season Takeover (ncape01–ncape08),
 // promo/films/next30/b10.md. Every episode imports this file from here (read-only for everyone else).
 //
-// The format (20, 25 or 30 s; story = DURATION − 4.4, then the shared end card):
+// The format (story = slate length − 4.4 s, then the SHORT 2.4 s end card, so 18, 23 or 28 s):
 //   hook      frame 0 is the thumbnail: the hook headline is already up and the host star is mid-action at t = 0.
 //   beats     2–4 jump-cut beats, each with an Inter 800 headline (one italic accent), pixel props, speech bubbles
 //             (with the speaker's name tag) and Pisces somewhere in the back with tissues, crying a little more each beat.
-//             One card cut (cardfx keeps the middle candidate of the beat boundaries).
+//             No Align card transition: every beat boundary is a white-flash jump cut.
 //   finale    the host (and THE STARS when they speak) + Pisces in happy-tear fountains; the last line types in the
 //             RPG dialogue box and holds.
 //   chrome    the series bug top-left ("SAG SEASON TAKEOVER", Inter 800 small caps, letter-spaced, host colour), a REC
@@ -26,8 +26,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill, A } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -360,7 +360,8 @@ function drawRec(x, t, out) {
 export function makeTakeover(cfg) {
   const H = HOSTS[cfg.host], HOST = signStar(H.id), PIS = signStar('pisces')
   const HC = cfg.bugCol || H.accent
-  const DURATION = cfg.duration, STORY_END = DURATION - ENDCARD_LEN
+  // cfg.duration is the slate length (4.4 s end card); the story is unchanged and the short 2.4 s end card follows it
+  const STORY_END = cfg.duration - ENDCARD_LEN, DURATION = r3(STORY_END + ENDCARD_SHORT_LEN)
   const CPS = 30
   const hookDur = cfg.hook.dur ?? 2.6
   // the beat timeline
@@ -502,11 +503,9 @@ export function makeTakeover(cfg) {
     }
   }
 
-  // card cut: the beat boundaries are the candidates, cardfx keeps the middle one
-  const cands = [...beats.slice(1).map(b => b.t0), FIN]
-  const CUT_T = cfg.cut ?? cands[Math.floor((cands.length - 1) / 2)]
-  const CUTS = [{ t: CUT_T, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'bl br' }), cardCuts(CUTS)]
+  // no Align card transition (owner's change, 4 Nov): every beat boundary is the film's own jump cut
+  const CUT_T = -1
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -527,10 +526,9 @@ export function makeTakeover(cfg) {
     ...(cfg.finaleCues || []).map(c => [c[0], r3(c[1] + FIN), ...c.slice(2)]),
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS, STORY_END }
+  return { DURATION, SCENES, CUES, T, STORY_END }
 }
 
 // ── shared props used by several episodes

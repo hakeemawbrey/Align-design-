@@ -1,9 +1,8 @@
-// ncape07: CAPRICORN SEASON TAKEOVER, ep 7, "Cap's Snow Day" (25 s vertical, music: screwed · Fm). promo/films/next30/b10.md.
-// Story 0–20.6, then the shared end card. Shared look: ../../nsage01/scenes/takekit.js.
+// ncape07: CAPRICORN SEASON TAKEOVER, ep 7, "Cap's Snow Day" (23 s vertical, music: screwed · Fm). promo/films/next30/b10.md.
+// Story 0–20.6, then the short (2.4 s) end card. Shared look: ../../nsage01/scenes/takekit.js.
 //   0.0–2.6    hook "Cap's plans got | *snowed in.*"  Frame 0: Cap mid-stare out a frosty window, planner in hand.
 //   2.6–7.1    "Nothing *to do.*"  Cap paces; every page of the planner says MOVED.
 //   7.1–11.6   "Then: a *snowman?*"  AQUARIUS: "let's build a snowman."  Cap unrolls a blueprint.
-//  11.6        card cut.
 //  11.6–16.1   "The *results.*"  Cap's snowman: perfect. Aquarius's: lumpy and grinning. The photo: Cap keeps the lumpy
 //              one. Pisces cries at the snowman.
 //  16.1–20.6   CAP: "Best day I *didn't* plan."
