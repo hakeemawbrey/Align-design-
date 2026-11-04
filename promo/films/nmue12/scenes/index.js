@@ -1,10 +1,10 @@
-// nmue12: THE MAKE-UP TALK, Ep 12 "Plan the next one calm." (30 s vertical, promo/films/next30/b31.md, music: cinematic · D)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue12: THE MAKE-UP TALK, Ep 12 "Plan the next one calm." (28 s vertical, promo/films/next30/b31.md, music: cinematic · D)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "How do *you* like | to make up?"  ♏ Scorpio and ♌ Leo, calm now, share a blanket on the rug, mid-hop;
 //              the cracked heart from the last fight still floats between them.
 //   3.0–9.6    "Last time: | *two styles.*"  A sepia flashback (LAST TIME): Scorpio goes quiet (a zipped mouth, "…"),
 //              Leo goes loud ("TALK TO ME!!"); question marks pop over both. Neither knew the other's way.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Plan it on | a *calm* day."  THE STARS: "ask it on a *calm* day." → "pick a pause word. agree how you
 //              *come back.*"  A card writes itself: OUR MAKE-UP PLAN · pause word: pineapple · 20 minutes · then a walk.
 //   17.2–22.4  "Practice *run.*"  LEO: "pineapple?"  SCORPIO: "*pineapple.* 20 minutes."  They step apart… and come

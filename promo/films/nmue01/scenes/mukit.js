@@ -1,11 +1,11 @@
 // THE MAKE-UP TALK: the shared show kit for nmue01–nmue12 (promo/films/next30/b31.md). The other episodes import it
 // from here (promo/films/nmue01/scenes/mukit.js). Pure f(t): DOM / canvases are only made inside build().
 //
-// The spine (30 s, story 0–25.6, then the shared 4.4 s end card):
+// The spine (28 s, story 0–25.6, then the shared short 2.4 s end card):
 //   0.00–3.00   HOOK   the hook headline is already up at frame 0 (the thumbnail); the couple, just after the fight, is
 //                      mid-hop; a CRACKED pixel heart floats between them. The bug "THE MAKE-UP TALK" sits top-left.
 //   3.00–9.60   TRAP   what we tend to do (the gag). Headline 2.
-//   9.60        the one card cut (flip).
+//   9.60        a hard cut into the move (no card transition).
 //   9.70–17.20  MOVE   THE STARS' advice in the box (two lines) with a demo. Headline 3.
 //   17.20–22.40 TRY    the couple tries it (one or two lines in the box); the heart MENDS with gold seams at T.mend.
 //   22.40–25.50 LAST   the last line; the mended heart glows; everything pops out by 25.5.
@@ -26,8 +26,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill, A as ASSETS } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -43,8 +43,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline (same in all twelve films)
-export const DURATION = 30
-export const STORY_END = DURATION - ENDCARD_LEN          // 25.6
+export const DURATION = 28                                // the story (25.6) + the short end card (2.4)
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 25.6
 export const T = {
   bug: -1, hookOut: [2.82, 3.0],
   trap: [3.0, 9.6], h1: 3.08, h1Out: [9.35, 9.55],
@@ -450,16 +450,15 @@ export function makeEpisode(cfg) {
         dbox.update(t)
         bug.update(t, outK(t, T.bugOut))
         // a soft white flash on the hard cuts (not the card cut)
-        const fl = Math.max(0, ...[T.trap[0], T.try[0]].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
+        const fl = Math.max(0, ...[T.trap[0], T.cut, T.try[0]].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
         flash.style.opacity = String(0.45 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // card-cut candidates (cardfx keeps the middle one: 9.6, between the trap and the move)
-  const CUTS = [T.trap[0], { t: T.cut, kind: 'flip' }, T.try[0]]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card transition (owner change, 4 Nov): the beats cut on their own whooshes; the short end card closes the film
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -484,8 +483,7 @@ export function makeEpisode(cfg) {
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS, LINES }
+  return { DURATION, SCENES, CUES, T, LINES }
 }

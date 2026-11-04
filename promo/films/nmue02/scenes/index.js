@@ -1,10 +1,10 @@
-// nmue02: THE MAKE-UP TALK, Ep 2 "Curious first." (30 s vertical, promo/films/next30/b31.md, music: jazzy · Bb)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue02: THE MAKE-UP TALK, Ep 2 "Curious first." (28 s vertical, promo/films/next30/b31.md, music: jazzy · Bb)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "Round two? Or | *round one* of listening?"  ♉ Taurus and ♏ Scorpio, mid-hop, each hugging a fat
 //              "MY SIDE" folder; the cracked heart floats between them.
 //   3.0–9.6    "Two lawyers. | *Zero* listeners."  "first of all…" "well, ACTUALLY…" "see page 40!" The folders get
 //              thicker and thicker; loose pages fly.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Ask *first.*"  THE STARS: "start with a *question*, not a case." → "'what was that like for *you?*'"
 //              Both folders drop; a big pixel "?" card pops between them.
 //   17.2–22.4  "Then | *listen.*"  SCORPIO: "what was that like for *you?*"  TAURUS: "honestly? I felt *left out.*"

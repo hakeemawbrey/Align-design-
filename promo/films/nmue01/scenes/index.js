@@ -1,10 +1,10 @@
-// nmue01: THE MAKE-UP TALK, Ep 1 "Name the pause." (30 s vertical, promo/films/next30/b31.md, music: lofi · Dm)
-// The show's spine lives in ./mukit.js (shared by nmue01–nmue12). Story 0–25.6, then the shared end card.
+// nmue01: THE MAKE-UP TALK, Ep 1 "Name the pause." (28 s vertical, promo/films/next30/b31.md, music: lofi · Dm)
+// The show's spine lives in ./mukit.js (shared by nmue01–nmue12). Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "We're *fighting.* | Now what?"  ♈ Aries and ♋ Cancer glare from either side of a cracked heart; a pixel
 //              kettle on a stool between them is already whistling.
 //   3.0–9.6    "Full volume… | or *full shell.*"  Aries keeps going in caps (bubbles pile up: "AND ANOTHER THING"),
 //              Cancer pulls into its shell ("…"). The kettle rattles and boils over: FWEEEE.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Too hot? | *Say so.*"  THE STARS: "too hot to talk? *say so.*" → "'I need twenty minutes. I'm coming
 //              *back.*'"  A timer card swings in: 20:00 · BACK SOON. The kettle comes off the heat.
 //   17.2–22.4  "Cool off. | *Apart.*"  Aries does push-ups in one corner, Cancer sips tea in the other; the timer races

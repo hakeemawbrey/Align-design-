@@ -1,10 +1,10 @@
-// nmue08: THE MAKE-UP TALK, Ep 8 "The sorry is a start." (30 s vertical, promo/films/next30/b31.md, music: house · A)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue08: THE MAKE-UP TALK, Ep 8 "The sorry is a start." (28 s vertical, promo/films/next30/b31.md, music: house · A)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "Sorry… | *again?*"  ♉ Taurus bursts in late, mid-hop; ♐ Sagittarius sits by a cold dinner, the
 //              clock says 8:40.
 //   3.0–9.6    "Same sorry. | *Every* week."  Sagittarius flips a board: sticky notes pop on one by one, all
 //              "sorry!!" (MON · THU · SAT · TUE …). Taurus: "sorry!!" again; Sagittarius: deadpan.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Sorry *plus* a plan."  THE STARS: "a sorry says *I see it.*" → "a change says *I mean it.*"  One
 //              sticky note flips into a plan: "running late? → text by 6."
 //   17.2–22.4  "Next *Thursday*…"  A phone buzzes at 5:58 PM: "running 15 late, sorry! still on?"  SAGITTARIUS:

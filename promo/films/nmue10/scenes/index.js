@@ -1,10 +1,10 @@
-// nmue10: THE MAKE-UP TALK, Ep 10 "Move it off the screen." (30 s vertical, promo/films/next30/b31.md, music: synthwave · Cm)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue10: THE MAKE-UP TALK, Ep 10 "Move it off the screen." (28 s vertical, promo/films/next30/b31.md, music: synthwave · Cm)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "We're fighting *by text* | at 11 PM."  ♊ Gemini and ♎ Libra, each glowing behind a big phone, thumbs
 //              going; the clock reads 11:04 PM.
 //   3.0–9.6    "'ok.' | (*Spiraling.*)"  Gemini's "ok." lands on Libra's screen and, in Libra's head, grows big, red
 //              and spiky. Libra sends "fine."; a "seen 11:09" stares back; the typing dots start… and stop.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Tone doesn't | *type.*"  THE STARS: "tone doesn't travel well in *text.*" → "send: 'can we talk
 //              tomorrow, *in person?*'"  The two phones slide together and fold into a park bench.
 //   17.2–22.4  "Next day. | *Same bench.*"  LIBRA: "your 'ok.' *scared* me."  GEMINI: "it meant *OK!*"  Both crack up.

@@ -1,10 +1,10 @@
-// nmue04: THE MAKE-UP TALK, Ep 4 "Say it back." (30 s vertical, promo/films/next30/b31.md, music: dreamy · Ab)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue04: THE MAKE-UP TALK, Ep 4 "Say it back." (28 s vertical, promo/films/next30/b31.md, music: dreamy · Ab)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "Are you even | *listening?*"  ♎ Libra mid-sentence; ♑ Capricorn nods along while a thought bubble
 //              drafts "COUNTERPOINTS: 1. 2. 3."
 //   3.0–9.6    "Nodding… while | *loading a reply.*"  Libra: "and I just felt—"; Capricorn's thought bubble shows a
 //              loading bar; at 100% it fires early: "WELL, technically—" and Libra's "—rushed." gets squashed.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Say it *back.*"  THE STARS: "before you answer, say it *back.*" → "'so you felt rushed when I *planned
 //              it all?*'"  A pixel hand mirror shows "I felt rushed." and its reflection.
 //   17.2–22.4  "Then *check.*"  CAPRICORN: "so you felt rushed when I *planned it all?*"  LIBRA: "YES. *that.*"

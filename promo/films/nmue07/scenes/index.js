@@ -1,12 +1,12 @@
-// nmue07: THE MAKE-UP TALK, Ep 7 "Let the sorry land." (30 s vertical, promo/films/next30/b31.md, music: cinematic · Fm)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue07: THE MAKE-UP TALK, Ep 7 "Let the sorry land." (28 s vertical, promo/films/next30/b31.md, music: cinematic · Fm)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 // Pisces is half of the couple this week, so it cries in the scene itself.
 //   0.0–3.0    "They said sorry. | Now *your* move."  ♒ Aquarius holds out a folded apology letter; ♓ Pisces, already
 //              teary, stares at it.
 //   3.0–9.6    "'It's fine.' | (It was *not* fine.)"  PISCES: "it's fine!" while a little sign pops up over its head:
 //              NOT FINE. Then: "…say it again?" Aquarius re-apologises; the letters stack up in its arms (SORRY ·
 //              SORRY 2 · SORRY (FINAL) · SORRY (FINAL FINAL)).
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Let it *land.*"  THE STARS: "'it's fine' when it isn't keeps the *crack.*" → "try: 'thank you. I
 //              *needed* that.'"  One letter floats down, slow and gentle, into a little tray: RECEIVED.
 //   17.2–22.4  "Receive it | *kindly.*"  PISCES: "thank you. I *needed* that."  AQUARIUS: "*phew.* I meant every

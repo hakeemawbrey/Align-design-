@@ -1,9 +1,9 @@
-// nmue03: THE MAKE-UP TALK, Ep 3 "Retire 'always'." (30 s vertical, promo/films/next30/b31.md, music: funk · E)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue03: THE MAKE-UP TALK, Ep 3 "Retire 'always'." (28 s vertical, promo/films/next30/b31.md, music: funk · E)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "You *ALWAYS*… | You *NEVER*…"  ♌ Leo and ♍ Virgo slap big ALWAYS / NEVER stickers onto each other.
 //   3.0–9.6    "One fight becomes | *every* fight."  The stickers keep coming (ALWAYS, NEVER, EVERY TIME, LITERALLY
 //              ALWAYS) until both stars are papered over; only their eyes peek out.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Name | *the moment.*"  THE STARS: "'always' turns one night into a *trial.*" → "name the moment: 'at
 //              dinner, I felt *ignored.*'"  The giant ALWAYS sticker peels off and folds into a small, specific note.
 //   17.2–22.4  "Be *specific.*"  VIRGO: "last night, on your phone, I felt *small.*"  LEO: "oh. that's *fair.*"

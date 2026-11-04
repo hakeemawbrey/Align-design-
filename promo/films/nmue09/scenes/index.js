@@ -1,11 +1,11 @@
-// nmue09: THE MAKE-UP TALK, Ep 9 "What's under it." (30 s vertical, promo/films/next30/b31.md, music: lofi · F#m)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue09: THE MAKE-UP TALK, Ep 9 "What's under it." (28 s vertical, promo/films/next30/b31.md, music: lofi · F#m)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 // Pisces is half of the couple this week, so it cries in the scene itself.
 //   0.0–3.0    "This is about | *the dishes*… right?"  ♍ Virgo and ♓ Pisces either side of a sink with a wobbling
 //              tower of plates.
 //   3.0–9.6    "Round and round | *the plate.*"  "you left a FORK." "it was SOAKING." "for three days?" "soaking takes
 //              time!"  The top plate spins; circle arrows go round and round.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Look *under* it."  THE STARS: "small fights often sit on a *bigger* feeling." → "ask: 'what's this
 //              *really* about?'"  The plate tower lifts: underneath, a note: "I feel like I do it all alone."
 //   17.2–22.4  "Say the | *real* thing."  VIRGO: "I feel like I do it all *alone.*"  PISCES: "I didn't see that.

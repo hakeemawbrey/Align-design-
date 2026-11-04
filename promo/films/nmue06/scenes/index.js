@@ -1,9 +1,9 @@
-// nmue06: THE MAKE-UP TALK, Ep 6 "Swap 'or' for 'and'." (30 s vertical, promo/films/next30/b31.md, music: pop · C)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue06: THE MAKE-UP TALK, Ep 6 "Swap 'or' for 'and'." (28 s vertical, promo/films/next30/b31.md, music: pop · C)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "Your family | *or* mine?"  ♊ Gemini and ♐ Sagittarius each grab one side of a December calendar.
 //   3.0–9.6    "A tug of war | *nobody* wins."  The calendar stretches between them under a giant pixel OR; it rips in
 //              two and both tumble back onto the rug.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Trade *or* | for *and.*"  THE STARS: "'or' makes it a contest someone *loses.*" → "ask: 'how do we do
 //              *both*, kindly?'"  The big OR flips over like a sign: AND.
 //   17.2–22.4  "Plan it | *together.*"  The calendar, whole again, on one table between them. GEMINI: "Eve at yours,

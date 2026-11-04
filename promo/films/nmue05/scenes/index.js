@@ -1,11 +1,11 @@
-// nmue05: THE MAKE-UP TALK, Ep 5 "One fight at a time." (30 s vertical, promo/films/next30/b31.md, music: chiptune · G)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue05: THE MAKE-UP TALK, Ep 5 "One fight at a time." (28 s vertical, promo/films/next30/b31.md, music: chiptune · G)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "We were fighting | about *the lights*…"  ♑ Capricorn and ♓ Pisces tug at a hopelessly tangled string
 //              of holiday lights.
 //   3.0–9.6    "…then came | *the archive.*"  Capricorn wheels in a filing cabinet, OLD FIGHTS: "while we're here… the
 //              2019 folder." The drawers fly open (2019 · 2021 · THAT TRIP), old pages flutter. PISCES: "that's
 //              still OPEN?!"
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "One fight. | *Tonight's.*"  THE STARS: "bringing the archive makes it *unfixable.*" → "stick to
 //              *tonight's* thing."  The drawers slam shut; one folder stays out: LIGHTS.
 //   17.2–22.4  "Untangle | *one thing.*"  CAPRICORN: "ok. just the lights. *together?*"  PISCES: "together. *happy*

@@ -1,9 +1,9 @@
-// nmue11: THE MAKE-UP TALK, Ep 11 "Laugh with, not at." (30 s vertical, promo/films/next30/b31.md, music: screwed · Ebm)
-// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared end card.
+// nmue11: THE MAKE-UP TALK, Ep 11 "Laugh with, not at." (28 s vertical, promo/films/next30/b31.md, music: screwed · Ebm)
+// The show's spine lives in ../../nmue01/scenes/mukit.js. Story 0–25.6, then the shared short end card.
 //   0.0–3.0    "Can we laugh | *yet?*"  ♐ Sagittarius, in a red clown nose, mid-hop; ♋ Cancer is still hurt.
 //   3.0–9.6    "Too *soon.*"  SAGITTARIUS: "knock knock!" … crickets. The "HA HA" letters tumble off the top and clatter
 //              on the floor. "ok ok, another one!"  Cancer turns away.
-//   9.6        card cut.
+//   9.6        hard cut into the move (no card transition).
 //   9.7–17.2   "Heard *first.* | Then funny."  THE STARS: "humor helps *after* you're heard." → "talk first. then the
 //              *inside joke.*"  Two steps pop up: TALK, then LAUGH; a tiny star hops up them in order.
 //   17.2–22.4  "Talk. | Then *laugh.*"  SAGITTARIUS (nose off): "I joked because I felt *awkward.* sorry."  CANCER:
