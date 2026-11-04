@@ -61,5 +61,77 @@
   "series": "rank",
   "episode": 7,
   "caption": "Does your sign send the good-morning text, or the good-afternoon one?\nRanked. Saying it back is a small yes."
+ },
+ "nrke08": {
+  "video": "/_blob/a066192e9748316bd20b415716ae7a76",
+  "poster": "/_blob/5288aa50d7a70f46cfcd386cef221866",
+  "title": "Who apologizes first",
+  "len": 18,
+  "series": "rank",
+  "episode": 8,
+  "caption": "Who says sorry first after an argument?\nTwelve signs, ranked. Going first isn't losing."
+ },
+ "nrke09": {
+  "video": "/_blob/e05ba15eae8c9bf4e5807e02c0e6a333",
+  "poster": "/_blob/75819d7c43465654cb7a60a17167213f",
+  "title": "Who gives the best hugs",
+  "len": 18,
+  "series": "rank",
+  "episode": 9,
+  "caption": "Which sign gives the hug that feels like home?\nWe ranked all twelve. The best hugs start with a yes."
+ },
+ "nrke10": {
+  "video": "/_blob/61cbf38d83ffcd247e764fa0698cc055",
+  "poster": "/_blob/bd9c5526a90e8c433a300099585a8c30",
+  "title": "Who overthinks the text",
+  "len": 18,
+  "series": "rank",
+  "episode": 10,
+  "caption": "Who rewrites \"hi\" for an hour before sending it?\nThe signs, ranked by overthinking. When in doubt, just ask them."
+ },
+ "nrke11": {
+  "video": "/_blob/535aa6860c2658de9d13adba6dbc15e7",
+  "poster": "/_blob/7a5e3a2b4966b02548eff4ce946366e4",
+  "title": "Who falls the fastest",
+  "len": 18,
+  "series": "rank",
+  "episode": 11,
+  "caption": "Which sign falls the fastest? One of them fell at hello.\nRanked from instant to slow and steady. Your pace is the right pace."
+ },
+ "nrke12": {
+  "video": "/_blob/f83285ddaf66dcb6b65ff0bb167a307c",
+  "poster": "/_blob/e8db6a29503397fef6fd981e6ac1dcf2",
+  "title": "Who buys holiday gifts earliest",
+  "len": 18,
+  "series": "rank",
+  "episode": 12,
+  "caption": "Some signs finish holiday shopping in July.\nRanked, earliest to last-minute. The best gifts say I listened."
+ },
+ "nrke13": {
+  "video": "/_blob/94dd8f2fb18376bc0cbca4427d78218c",
+  "poster": "/_blob/7802d5a6c805ee558d1596a856dac055",
+  "title": "Who hogs the blanket",
+  "len": 18,
+  "series": "rank",
+  "episode": 13,
+  "caption": "Who steals the blanket every single night?\nAll twelve signs, ranked. Cold? Say so, then share."
+ },
+ "nrke14": {
+  "video": "/_blob/2b99e14e3e91a1b2c6454b8d8b5cfb2d",
+  "poster": "/_blob/c92e95d95b705d85050aca458af163ca",
+  "title": "Who dances first at the holiday party",
+  "len": 18,
+  "series": "rank",
+  "episode": 14,
+  "caption": "Who's first on the dance floor at the holiday party?\nRanked. Dance when you're ready, nobody's grading."
+ },
+ "nrke15": {
+  "video": "/_blob/16481cedfdd7faeb717830c22cf1a9d7",
+  "poster": "/_blob/83a62c1621264822aa1ba14a228732c1",
+  "title": "Who gets cold first",
+  "len": 18,
+  "series": "rank",
+  "episode": 15,
+  "caption": "Which sign is already wearing your hoodie?\nRanked by who gets cold first. Lend it, and maybe get it back."
  }
 }
