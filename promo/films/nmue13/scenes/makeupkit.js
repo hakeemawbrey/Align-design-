@@ -17,7 +17,8 @@
 //     cfg.under              { head, color?, draw(x,t,S), cues?: [] }          S.u = t − 6.6
 //     cfg.talk               { head, color?, stars, script, reply: [who, text], draw?(x,t,S) behind the pair }
 //     cfg.made               { draw?(x,t,S) behind, front?(x,t,S), cues?: [], pair?: false to draw the pair yourself }
-//     cfg.last               the last line headline ('Sorry is a *verb*.')
+//     cfg.last               the last line headline ('Morning you | is *kinder*.')
+//     cfg.chapters           optional chapter-tab names (default THE FIGHT · UNDER IT · THE TALK · MADE UP)
 //   Section cue times in cfg.*.cues are relative to the section start.
 // Everything draws as a pure function of t; DOM / canvases are only made inside build().
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
@@ -264,7 +265,7 @@ export function scarfCells(ctx, col, t, flap = 1) {
 const CHAPTERS = ['THE FIGHT', 'UNDER IT', 'THE TALK', 'MADE UP']
 const CH_COL = ['#ff7a6b', '#c9a6ff', '#f2c75c', '#ff8fb1']
 const BUG_ICON = ['.HH.HH.', 'HHHHHHH', 'HPPPPPH', 'HPPPPPH', '.HHHHH.', '..HHH..', '...H...']
-function buildBug(root) {
+function buildBug(root, chapters = CHAPTERS) {
   // identical to the episodes 1–12 bug (promo/films/nmue01/scenes/mukit.js): a pixel heart with a plaster, rose gold
   const b = el('div', { position: 'absolute', left: '56px', top: '52px', height: '44px', display: 'flex', alignItems: 'center', gap: '14px', transformOrigin: '0% 50%', pointerEvents: 'none' }, root)
   const ic = el('canvas', { width: '44px', height: '44px', imageRendering: 'pixelated' }, b)
@@ -282,7 +283,7 @@ function buildBug(root) {
       tab.style.display = 'flex'
       const k = i === 0 ? 1 : easeOutBack(prog(t, T.secs[i][0], T.secs[i][0] + 0.3), 2.4)
       tab.style.background = CH_COL[i]
-      tab.innerHTML = `<span style="font-weight:700;opacity:.7">${i + 1}/4</span>&nbsp;${CHAPTERS[i]}`
+      tab.innerHTML = `<span style="font-weight:700;opacity:.7">${i + 1}/4</span>&nbsp;${chapters[i]}`
       tab.style.opacity = String(clamp(out))
       tab.style.transform = `scale(${(0.6 + 0.4 * k).toFixed(4)}) rotate(${i % 2 ? 1.5 : -1.5}deg)`
       tab.style.transformOrigin = '100% 50%'
@@ -372,7 +373,7 @@ export function makeMakeUp(cfg) {
     const script = buildScript(root, { text: cfg.talk.script, deep: cfg.talk.deep || '#b8325a' })
     const top = layerCanvas(root), tx = top.getContext('2d')
     const box1 = dialogueBox(root, { lines: LINES, y: 1420, open: T.boxOpen, close: T.boxClose, cps: CPS })
-    const bug = buildBug(root)
+    const bug = buildBug(root, cfg.chapters || CHAPTERS)
     const grainC = layerCanvas(root, { mixBlendMode: 'overlay', opacity: String(GRAIN_H), pointerEvents: 'none' }), gx = grainC.getContext('2d')
     const flash = el('div', { position: 'absolute', inset: 0, background: '#fff6ea', opacity: 0, pointerEvents: 'none' }, root)
 
