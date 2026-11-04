@@ -1,13 +1,12 @@
 // SIGN VS SIGN (who handles it better?): the shared look of the 24 star_advice trial reels nvse01–nvse24
 // (promo/films/next30/b46.md). Lives in nvse01; the other 23 episodes import it from here.
 //
-// The format (18 s, story 0–13.6, then the shared end card with the default CTA):
+// The format (16 s, story 0–13.6, then the short 2.4 s end card with the default CTA):
 //   0.00–2.60   hook (frame 0 is the thumbnail): the question is already up ("Who handles | *X* better?"), the frame
 //               is split down the middle with a pulsing VS badge, both signs mid-hop with name plates.
 //   2.60–6.00   ROUND 1: jump cut to sign A on its own set: its name up top, a caption sticker, two speech bubbles, a
 //               prop, and a beat on the switch (SW s into the round: mood change + an effect).
-//   6.00        the one card cut (flip).
-//   6.00–9.40   ROUND 2: sign B, same shape.
+//   6.00–9.40   ROUND 2: sign B, same shape (a hard jump cut with a flash; no card transition).
 //   9.40–13.55  THE VERDICT: back to the split, the verdict slams in up top, crowns (winner, both, or a twist),
 //               THE STARS say the last line in the dialogue box.
 // Pisces sits in the corner with a tissue box and cries in every film; when Pisces plays, it cries on its own side.
@@ -26,8 +25,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -46,8 +45,8 @@ const NAMES = { aries: 'Aries', taurus: 'Taurus', gemini: 'Gemini', cancer: 'Can
 export const nameOf = id => NAMES[id]
 
 // ── the fixed timeline (same in all 24 films)
-export const DURATION = 18
-export const STORY_END = DURATION - ENDCARD_LEN          // 13.6
+export const DURATION = 16
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 13.6 (short 2.4 s end card)
 export const SW = 1.75                                     // the switch beat inside a round
 export const T = {
   h0: -1.3, h0Out: [2.4, 2.6], bugAt: -1,
@@ -667,16 +666,15 @@ export function makeVersus(cfg) {
         VT.update(t, outK(t, T.out))
         box1.update(t)
         bug.update(t, outK(t, T.bugOut))
-        const fl = Math.max(0, ...[T.rounds[0][0], T.verdict].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
+        const fl = Math.max(0, ...[T.rounds[0][0], T.rounds[1][0], T.verdict].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
         flash.style.opacity = String(0.55 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // one card-cut candidate: between the two rounds
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card transition (owner's change, 4 Nov): round 2 opens on a hard jump cut with a flash
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -686,7 +684,7 @@ export function makeVersus(cfg) {
     ...cfg.rounds.flatMap((rd, i) => {
       const a = T.rounds[i][0], st = a + 0.3
       return [
-        ...(i === 0 ? [['whoosh', r3(a - 0.08), 0.28, 0.035], ['tick', a, 0.05]] : []),
+        ['whoosh', r3(a - 0.08), 0.28, 0.035], ['tick', a, 0.05],
         ['pop', r3(a + 0.08), 739.99, 0.035, 0], ['pop', r3(a + 0.16), 987.77, 0.03, 0],
         ['pop', r3(st), 1174.66, 0.045, 0.1], ['pop', r3(st + 0.07), 1567.98, 0.03, -0.1], ['tick', r3(st + 0.02), 0.04],
         ['pop', r3(a + 0.52), NOTE[(i * 2) % 7], 0.04, -0.25], ['pop', r3(a + SW + 0.07), NOTE[(i * 2 + 3) % 7], 0.04, 0.25],
@@ -702,8 +700,7 @@ export function makeVersus(cfg) {
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS }
+  return { DURATION, SCENES, CUES, T }
 }

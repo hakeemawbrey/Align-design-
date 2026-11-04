@@ -1,5 +1,5 @@
-// nvse01: SIGN VS SIGN, "Who handles a late date better?" ♈ Aries vs ♉ Taurus (18 s vertical trial reel,
-// promo/films/next30/b46.md, music: chiptune · A). Story 0–13.6, then the shared end card. The format lives in ./versuskit.js.
+// nvse01: SIGN VS SIGN, "Who handles a late date better?" ♈ Aries vs ♉ Taurus (16 s vertical trial reel,
+// promo/films/next30/b46.md, music: chiptune · A). Story 0–13.6, then the short end card. The format lives in ./versuskit.js.
 //   0.0–2.6    hook: "Who handles | a *late date* better?" split screen, VS badge; a message pops between them:
 //              "running 10 min late!"
 //   2.6–6.0    ROUND 1 ♈ ARIES "paces the *whole sidewalk.*" on a snowy street: laps left and right, a LAP counter.
