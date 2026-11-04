@@ -1,4 +1,4 @@
-// nrke10: RANKING THE SIGNS, "Who overthinks the text" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke10: RANKING THE SIGNS, "Who overthinks the text" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // lofi · Em). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who *overthinks* / the text?" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Sagittarius → #4 Cancer slam in.   6.3 card cut.   6.8 #3 Pisces · 7.7 #2 Scorpio
