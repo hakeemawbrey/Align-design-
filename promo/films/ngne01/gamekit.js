@@ -316,7 +316,8 @@ function drawPodium(x, t, cx, sign, score, { buzz = -9, lit = 0, k = 1 } = {}) {
   x.save()
   box(x, X, top, w, h, '#2e2358', { b: 7, hi: '#41347a' })
   R(x, s.color, X, top + 34, w, 46); R(x, 'rgba(255,255,255,0.18)', X, top + 34, w, 8)
-  x.font = `700 32px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'
+  const nm = s.name.toUpperCase(), nf = nm.length > 9 ? 25 : nm.length > 7 ? 29 : 32
+  x.font = `700 ${nf}px ${MONO}`; x.textAlign = 'center'; x.textBaseline = 'middle'
   x.fillStyle = INK; x.fillText(s.name.toUpperCase(), cx + 2, top + 59)
   x.fillStyle = BONE; x.fillText(s.name.toUpperCase(), cx, top + 57)
   // score box
@@ -420,7 +421,7 @@ export function makeGame(cfg) {
   const finHead = WIN === 'both' ? 'Kindest hearts: | *both of them.*' : `Kindest heart: | *${WIN === 'A' ? NA : NB}.*`
 
   // dialogue: welcome, three verdicts, the last line
-  const L0 = [{ t: T.welcome, speaker: SPEAK, text: cfg.welcome }]
+  const L0 = [{ t: cfg.welcomeAt ?? T.welcome, speaker: SPEAK, text: cfg.welcome }]
   const LR = rounds.map(r => [{ t: r.host, speaker: SPEAK, text: r.hostText }])
   const LF = [{ t: T.last, speaker: SPEAK, text: cfg.last }]
   const ALL_LINES = [...L0, ...LR.flat(), ...LF]
@@ -455,7 +456,7 @@ export function makeGame(cfg) {
     const HF = popText(root, finHead, { top: 132, size: 84, accentSize: 120, at: T.finHead, gap: 0.08, late: 2, lateAt: T.finHead + 0.35, wobble: true, accentColor: GOLD, fit: true })
     const top = layerCanvas(root), tx = top.getContext('2d')
     const boxes = [
-      dialogueBox(root, { lines: L0, y: 1412, open: T.welcome - 0.2, close: T.welcomeClose, cps: CPS }),
+      dialogueBox(root, { lines: L0, y: 1412, open: L0[0].t - 0.2, close: cfg.welcomeClose ?? T.welcomeClose, cps: CPS }),
       ...rounds.map((r, i) => dialogueBox(root, { lines: LR[i], y: 1412, open: r.host - 0.2, close: r.b - 0.12, cps: CPS })),
       dialogueBox(root, { lines: LF, y: 1412, open: T.last - 0.2, close: T.boxClose, cps: CPS }),
     ]
@@ -623,7 +624,7 @@ export function makeGame(cfg) {
             if (t > r.buzz && t < r.buzz + 0.6) label(x, 'BZZT!', cx + (r.first === 'A' ? 92 : -92), POD.top - 70 - 60 * prog(t, r.buzz, r.buzz + 0.6), { size: 40, col: '#ff8f9f', font: INTER, weight: 800, alpha: 1 - prog(t, r.buzz + 0.3, r.buzz + 0.6), rot: r.first === 'A' ? -0.15 : 0.15 })
             const sk = pop01(t, r.buzz + 0.15, 0.3, 2.6) * outK(t, [r.b - 0.25, r.b])
             if (sk > 0.01 && t > r.buzz) {
-              x.save(); x.translate(cx, 1364); x.rotate(r.first === 'A' ? -0.04 : 0.04); x.scale(sk, sk)
+              x.save(); x.translate(cx, 1352); x.rotate(r.first === 'A' ? -0.04 : 0.04); x.scale(sk, sk)
               x.font = `700 28px ${MONO}`; const w = x.measureText('SPEED: 0 PTS').width + 28
               box(x, -w / 2, -20, w, 40, '#ffd23a', { b: 4 }); x.fillStyle = INK; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('SPEED: 0 PTS', 0, 1)
               x.restore()
@@ -708,7 +709,7 @@ export function makeGame(cfg) {
 
   // a readability check (node): every dialogue line holds ≥ 1.5 s after it finishes typing
   const CHECK = () => {
-    const segs = [[L0, T.welcomeClose], ...rounds.map((r, i) => [LR[i], r.b - 0.12]), [LF, T.boxClose]]
+    const segs = [[L0, cfg.welcomeClose ?? T.welcomeClose], ...rounds.map((r, i) => [LR[i], r.b - 0.12]), [LF, T.boxClose]]
     return segs.map(([ls, close]) => { const tm = lineTimes(ls, { cps: CPS }); return { text: ls[0].text, len: ls[0].text.replace(/\*/g, '').length, hold: +(close - tm[0].done).toFixed(2) } })
   }
   return { DURATION, SCENES, CUES, T, CUTS, CHECK, WIN, finalA, finalB }
