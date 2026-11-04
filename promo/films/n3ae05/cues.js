@@ -1,0 +1,4 @@
+// n3ae05 score: lofi, C#m (arranged by the style engine in promo/scripts/teaser-sound.mjs).
+//   drop 1.5: the first thought · breakdown 5.7: the 3 AM spiral · lift 7.5: THE STARS in the window · outro under the end card.
+import { DURATION, CUES, MUSIC } from './scenes/index.js'
+export default { id: 'n3ae05', duration: DURATION, music: { style: 'lofi', key: 'C#m', seed: 4005, sections: MUSIC }, cues: CUES }
