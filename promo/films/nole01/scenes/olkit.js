@@ -336,6 +336,8 @@ export function makeOneLine(cfg) {
         label(x, 'THE STARS', 230, 1470, { size: 24, col: GOLD, alpha: clamp(sk) })
       }
       if (cfg.after) cfg.after(x, t, S)
+      const nk = pop01(t, T.heroIn + 0.2, 0.3, 2) * ok
+      if (nk > 0.01 && cfg.tagX !== null) label(x, `${HERO.glyph}\uFE0E ${cfg.name.toUpperCase()}`, cfg.tagX ?? 640, cfg.tagY ?? 1385, { size: 24, col: HERO.color, alpha: clamp(nk) })
       else {
         const hk = pop01(t, T.heroIn, 0.38, 2.1) * ok
         shadow(x, 640, 1330, 220 * hk)
