@@ -1,7 +1,7 @@
 // HOME FOR THE HOLIDAYS: the shared look of Star Talk Season 15, episodes 13–24 (nh15e13 … nh15e24, rows in
 // promo/films/next30/b04.md). This file lives in nh15e13 and the other eleven episodes import it from here.
 //
-// The format (30–45 s vertical, story 0 … DURATION − 4.4, then the shared end card):
+// The format (28–43 s vertical: the story runs 0 … slate length − 4.4, then the short 2.4 s end card):
 //   t = 0     the hook caption is already in (frame 0 is the thumbnail) and the cast is mid-action in the house.
 //   shots     jump cuts (white blink + zoom punch), one Inter 800 headline with an italic accent per beat.
 //   end       THE STARS' advice in the dialogue box, an optional LESSON UNLOCKED, then the last line (popText).
@@ -18,8 +18,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { buildLesson, lessonCues, popText } from '../../lesson.js'
 
@@ -450,7 +450,8 @@ function buildBug(root) {
 
 // ═══════════════════════════════════════════════════════════════════════════ the episode
 export function makeEp(cfg) {
-  const DURATION = cfg.duration, STORY_END = DURATION - ENDCARD_LEN
+  // the story keeps its slate timing (cfg.duration − 4.4); the short end card makes the film 2.0 s shorter
+  const STORY_END = cfg.duration - ENDCARD_LEN, DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(2)
   const L = cfg.last
   const SHOTS = cfg.shots, LINES = cfg.lines || [], HEADS = cfg.heads || [], PUNCH = cfg.punch || []
   const shotAt = t => { let s = SHOTS[0]; for (const sh of SHOTS) if (t >= sh.at) s = sh; return s }
@@ -508,7 +509,8 @@ export function makeEp(cfg) {
     }
   }
   const CUTS = cfg.cuts
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0, label: 'TONIGHT’S DECK' }), cardCuts(CUTS)]
+  // no Align card transition (owner's change, 4 Nov): only the quiet cardFrame border stays
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0, label: 'TONIGHT’S DECK' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -525,8 +527,7 @@ export function makeEp(cfg) {
     ...(cfg.lesson ? lessonCues(cfg.lesson.at, { text: cfg.lesson.text, chip: cfg.lesson.chip }) : []),
     ...wordPops(L.at, 3, 0.08, 2), ['pop', r3(L.at + 0.4), 1174.66, 0.05, 0], ['bell', r3(L.at + 0.42), 1567.98, 0.025, 1.2, 0],
     ...(cfg.cues || []).map(c => [c[0], r3(c[1]), ...c.slice(2)]),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, STORY_END, CUTS }
 }

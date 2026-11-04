@@ -1,4 +1,4 @@
-// nh15e13: HOME FOR THE HOLIDAYS, "The seating chart." (30 s vertical, Star Talk Season 15 ep 13, music: jazzy · Bb)
+// nh15e13: HOME FOR THE HOLIDAYS, "The seating chart." (28 s vertical, Star Talk Season 15 ep 13, music: jazzy · Bb)
 // Story 0–25.6, then the shared end card. The season's look lives in ./holikit.js (imported by nh15e14 … nh15e24).
 //   0.0–3.0    hook "Who sits *where?*"  Libra mid-hop at a corkboard seating chart, Taurus's place card in hand,
 //              Taurus (the date) beside it, nervous.
