@@ -469,7 +469,7 @@ function makeThread(x, EP) {
 export const STAGE_Y = 1700
 /** a stage star: { who, x, y, s, mood, look, hops, tears, phone, pop, alpha } */
 export function stageStar(x, t, o) {
-  const c = o.who === 'stars' ? { color: '#f7cf68', seed: 2 } : C(o.who)
+  const c = o.color ? { color: o.color, glyph: null, seed: o.seed || 40 } : o.who === 'stars' ? { color: '#f7cf68', seed: 2 } : C(o.who)
   const opts = { color: c.color, glyph: o.glyph === false ? null : c.glyph, mood: o.mood || 'neutral', look: o.look, seed: c.seed, glow: o.glow ?? 1, pop: o.pop ?? 1, alpha: o.alpha ?? 1, hops: o.hops, squash: o.squash || 0 }
   drawStarChar(x, o.x, o.y, o.s, t, opts)
   const F = starFrame(o.x, o.y, o.s, t, opts)
