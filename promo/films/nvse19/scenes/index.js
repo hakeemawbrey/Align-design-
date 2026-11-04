@@ -1,5 +1,5 @@
-// nvse19: SIGN VS SIGN, "Who handles a small disagreement better?" ♈ Aries vs ♎ Libra (18 s trial reel, b46,
-// music: lofi · Bm). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse19: SIGN VS SIGN, "Who handles a small disagreement better?" ♈ Aries vs ♎ Libra (16 s trial reel, b46,
+// music: lofi · Bm). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a "!" and a "?" bounce between them.
 //   ROUND 1 ♈ "wants it solved *right now.*" a timer ticks beside the partner. "let’s fix it. now. go." → "why is this taking three minutes?"
 //   ROUND 2 ♎ "agrees with *every side,* even the lamp’s." looks left, right, at the lamp. "you’re right. I’m right." → "the lamp makes a fair point."
