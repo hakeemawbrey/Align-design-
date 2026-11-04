@@ -1,112 +1,128 @@
 {
- "nsge15": {
-  "title": "Reykjavik: reading the sky",
-  "len": 30,
-  "series": "snow",
-  "episode": 15,
-  "caption": "Aquarius tried to decode the northern lights for proof of a crush. The lights said sock. A simple question said a lot more. Who in your group chat reads the signs instead of asking?",
-  "video": "/_blob/a063c1f5e2f00e5b87c2123b95f02d4b",
-  "poster": "/_blob/2b27a0e4b97bd672ec462b63fb74ce0d"
- },
- "nsge16": {
-  "title": "Quebec City: maple on snow",
-  "len": 30,
-  "series": "snow",
-  "episode": 16,
-  "caption": "Heart one ran. Heart two was a potato. Heart three just needed a minute. Taurus waiting near warm syrup is the most romantic thing on this page. What would you wait for?",
-  "video": "/_blob/9882fa10f032036ef663add19be07127",
-  "poster": "/_blob/b9b59bd0e67e4c9cc9092619a32508b4"
- },
- "nsge17": {
-  "title": "Edinburgh: Old Town, New Town",
-  "len": 30,
-  "series": "snow",
-  "episode": 17,
-  "caption": "Old Town Gemini wants candlelight, New Town Gemini wants a plan, and Middle Gemini wants a snack. Turns out the right one likes the whole committee. Which one of you shows up first?",
-  "video": "/_blob/92db5c92125f3d58b61af0e4dcb31e3e",
-  "poster": "/_blob/875ee23095d33936bcc6140885f8e9f1"
- },
- "nsge18": {
-  "title": "Copenhagen: the coziest flat",
-  "len": 30,
-  "series": "snow",
-  "episode": 18,
-  "caption": "Cancer built the coziest flat in the city: candles, blanket, cocoa. Missing piece: walking out the door. Tag the friend whose place is perfect and who never leaves it.",
-  "video": "/_blob/f1665ffb776b663d15c3666c6668c9d5",
-  "poster": "/_blob/e9347467ab0df525a276db00b7b1ec85"
- },
- "nsge19": {
-  "title": "Vienna: the grand entrance",
-  "len": 30,
-  "series": "snow",
-  "episode": 19,
-  "caption": "Entrance one: flawless. Entrance two: sparkles. Entrance three: the stairs won. The one worth keeping clapped for all three. Be honest, how many entrances have you rehearsed?",
-  "video": "/_blob/9aa578bd644f2466c68b6d6c62b7ce5e",
-  "poster": "/_blob/2f1f169ea98065201d9a10b22a40ac88"
- },
- "nsge20": {
-  "title": "Prague: on the dot",
-  "len": 30,
-  "series": "snow",
-  "episode": 20,
-  "caption": "Virgo brought a clipboard to an astronomical clock and judged the little figures' spacing. The date ran late with two cocoas. The checklist got edited. Fair trade?",
-  "video": "/_blob/0a579e8ed258ea70d9b5791119121647",
-  "poster": "/_blob/39511085f189bda74d2633e8d828dd2a"
- },
- "nsge21": {
-  "title": "Kyoto: the perfect garden",
-  "len": 30,
-  "series": "snow",
-  "episode": 21,
-  "caption": "Every line in Libra's garden was perfect, and so was the silence. Then came the footprints. Sometimes the person who messes up your pattern is the one who helps draw the next one."
- },
- "nsge22": {
-  "title": "Minneapolis: the skyway",
-  "len": 30,
-  "series": "snow",
-  "episode": 22,
-  "caption": "Scorpio watched the same crush from the skyway every day and ducked every time. The crush noticed. Of course the crush noticed. What's the longest you've admired someone from a skyway?"
- },
- "nsge23": {
-  "title": "Sapporo: built together",
-  "len": 30,
-  "series": "snow",
-  "episode": 23,
-  "caption": "Sag sculpted a mountain, a ship and a rocket for their future adventures. The rocket sagged. Then Virgo showed up with a bucket and it turned into the best trip yet. Sag, would you stay for this?"
- },
- "nsge24": {
-  "title": "Denver: the top",
-  "len": 30,
-  "series": "snow",
-  "episode": 24,
-  "caption": "Capricorn's plan: promotion, savings, peak, then love. The view from the top was great and very windy. The cocoa was at the bottom the whole time. Which Capricorn needs to see this?"
- },
- "nsge25": {
-  "title": "Montreal: look down",
-  "len": 30,
-  "series": "snow",
-  "episode": 25,
-  "caption": "Aries ran three laps of the city looking for love, then took the stairs down and found someone reading on a warm bench. Sometimes the fastest move is sitting down. Who's your sprinter friend?"
- },
- "nsge26": {
-  "title": "Anchorage: the crier",
-  "len": 30,
-  "series": "snow",
-  "episode": 26,
-  "caption": "Pisces cried at the sunset, a moose and one snowflake, in that order. Then Scorpio showed up with a tissue and started crying too. That's the whole love story. Who cries with you?"
- },
- "nsge27": {
-  "title": "Ottawa: your pace",
-  "len": 30,
-  "series": "snow",
-  "episode": 27,
-  "caption": "Gemini lapped Taurus three times on the frozen canal without stopping talking once. Then they slowed down and listened. Are you the zoomer or the steady skater?"
- },
- "nsge28": {
-  "title": "Helsinki: when the snow settles",
-  "len": 30,
-  "series": "snow",
-  "episode": 28,
-  "caption": "Taurus waited for the snow to settle before saying hi. The stars kept shaking the globe. That's the season finale and the point: there's never a perfectly still moment. Who are you waiting to say hi to?"
- }
+  "nsge15": {
+    "title": "Reykjavik: reading the sky",
+    "len": 28,
+    "series": "snow",
+    "episode": 15,
+    "caption": "Aquarius tried to decode the northern lights for proof of a crush. The lights said sock. A simple question said a lot more. Who in your group chat reads the signs instead of asking?",
+    "video": "/_blob/a4288a359000d13b39f216a5c53579cf",
+    "poster": "/_blob/5111ffd5d994f0f47e10b7ba1436252c"
+  },
+  "nsge16": {
+    "title": "Quebec City: maple on snow",
+    "len": 28,
+    "series": "snow",
+    "episode": 16,
+    "caption": "Heart one ran. Heart two was a potato. Heart three just needed a minute. Taurus waiting near warm syrup is the most romantic thing on this page. What would you wait for?",
+    "video": "/_blob/ac823f26e13b1d9f09e2a11a16de6ece",
+    "poster": "/_blob/b90fb84ae6d4b780d66883335db2dae6"
+  },
+  "nsge17": {
+    "title": "Edinburgh: Old Town, New Town",
+    "len": 28,
+    "series": "snow",
+    "episode": 17,
+    "caption": "Old Town Gemini wants candlelight, New Town Gemini wants a plan, and Middle Gemini wants a snack. Turns out the right one likes the whole committee. Which one of you shows up first?",
+    "video": "/_blob/625094c5cedb08fc787743efd66a0efc",
+    "poster": "/_blob/f37a9901869a6f2974b0f99b1728de1c"
+  },
+  "nsge18": {
+    "title": "Copenhagen: the coziest flat",
+    "len": 28,
+    "series": "snow",
+    "episode": 18,
+    "caption": "Cancer built the coziest flat in the city: candles, blanket, cocoa. Missing piece: walking out the door. Tag the friend whose place is perfect and who never leaves it.",
+    "video": "/_blob/382841aa7b3349ae3fbae9c9a6ee14ea",
+    "poster": "/_blob/6356b2adb5da998e675c2b046d0fc501"
+  },
+  "nsge19": {
+    "title": "Vienna: the grand entrance",
+    "len": 28,
+    "series": "snow",
+    "episode": 19,
+    "caption": "Entrance one: flawless. Entrance two: sparkles. Entrance three: the stairs won. The one worth keeping clapped for all three. Be honest, how many entrances have you rehearsed?",
+    "video": "/_blob/7b2ecc645a777e232f05506684d7de89",
+    "poster": "/_blob/238eb4042b25abff6d67fbe8ba596a55"
+  },
+  "nsge20": {
+    "title": "Prague: on the dot",
+    "len": 28,
+    "series": "snow",
+    "episode": 20,
+    "caption": "Virgo brought a clipboard to an astronomical clock and judged the little figures' spacing. The date ran late with two cocoas. The checklist got edited. Fair trade?",
+    "video": "/_blob/369912d1672c02dbb7ee5c85edc9e986",
+    "poster": "/_blob/8e83b949d509c454a63cb8bd3a183dbd"
+  },
+  "nsge21": {
+    "title": "Kyoto: the perfect garden",
+    "len": 28,
+    "series": "snow",
+    "episode": 21,
+    "caption": "Every line in Libra's garden was perfect, and so was the silence. Then came the footprints. Sometimes the person who messes up your pattern is the one who helps draw the next one.",
+    "video": "/_blob/15d19affcf67b5d130035430d67bca14",
+    "poster": "/_blob/9793adc0603cda6f11ae421fc34a5a51"
+  },
+  "nsge22": {
+    "title": "Minneapolis: the skyway",
+    "len": 28,
+    "series": "snow",
+    "episode": 22,
+    "caption": "Scorpio watched the same crush from the skyway every day and ducked every time. The crush noticed. Of course the crush noticed. What's the longest you've admired someone from a skyway?",
+    "video": "/_blob/117a899c6e52514c78318e8958954ee2",
+    "poster": "/_blob/b67b116a0c3812377d6a25ef3668f86c"
+  },
+  "nsge23": {
+    "title": "Sapporo: built together",
+    "len": 28,
+    "series": "snow",
+    "episode": 23,
+    "caption": "Sag sculpted a mountain, a ship and a rocket for their future adventures. The rocket sagged. Then Virgo showed up with a bucket and it turned into the best trip yet. Sag, would you stay for this?",
+    "video": "/_blob/5e1496694dbde044cc2ceb6df3ee31c0",
+    "poster": "/_blob/6b9421bf59d799f97341cab879c0ee9f"
+  },
+  "nsge24": {
+    "title": "Denver: the top",
+    "len": 28,
+    "series": "snow",
+    "episode": 24,
+    "caption": "Capricorn's plan: promotion, savings, peak, then love. The view from the top was great and very windy. The cocoa was at the bottom the whole time. Which Capricorn needs to see this?",
+    "video": "/_blob/a74ddae795742a158ea5482349194fd6",
+    "poster": "/_blob/a56e0786d3e37954354b457ef0c931de"
+  },
+  "nsge25": {
+    "title": "Montreal: look down",
+    "len": 28,
+    "series": "snow",
+    "episode": 25,
+    "caption": "Aries ran three laps of the city looking for love, then took the stairs down and found someone reading on a warm bench. Sometimes the fastest move is sitting down. Who's your sprinter friend?",
+    "video": "/_blob/04a8d0a6acbddf5ebf779109a03065a0",
+    "poster": "/_blob/4dc92ff6a6f09d9fd31a22fad9d59d41"
+  },
+  "nsge26": {
+    "title": "Anchorage: the crier",
+    "len": 28,
+    "series": "snow",
+    "episode": 26,
+    "caption": "Pisces cried at the sunset, a moose and one snowflake, in that order. Then Scorpio showed up with a tissue and started crying too. That's the whole love story. Who cries with you?",
+    "video": "/_blob/017b94ffb6a9c6669dea8c312adc0e3c",
+    "poster": "/_blob/ad3215fe66e85983cbfb9143172a50c5"
+  },
+  "nsge27": {
+    "title": "Ottawa: your pace",
+    "len": 28,
+    "series": "snow",
+    "episode": 27,
+    "caption": "Gemini lapped Taurus three times on the frozen canal without stopping talking once. Then they slowed down and listened. Are you the zoomer or the steady skater?",
+    "video": "/_blob/e3f55319b4a8a20bad0c9137a0847d5e",
+    "poster": "/_blob/9ae35b677746e8accca0d0fa74311df6"
+  },
+  "nsge28": {
+    "title": "Helsinki: when the snow settles",
+    "len": 28,
+    "series": "snow",
+    "episode": 28,
+    "caption": "Taurus waited for the snow to settle before saying hi. The stars kept shaking the globe. That's the season finale and the point: there's never a perfectly still moment. Who are you waiting to say hi to?",
+    "video": "/_blob/0f8fbfc65e8f318f107d812343a08ebd",
+    "poster": "/_blob/0ce814a3c012ea4ed5d22f565ecd90dd"
+  }
 }
