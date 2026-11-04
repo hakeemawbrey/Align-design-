@@ -1,5 +1,5 @@
-// ngne14: STAR TALK GAME NIGHT, Ep 14, "Gemini vs Libra: Two Replies" (35 s vertical, same element: air, music: pop · F).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne14: STAR TALK GAME NIGHT, Ep 14, "Gemini vs Libra: Two Replies" (33 s vertical, same element: air, music: pop · F).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Gemini vs Libra. | Who picks *one* answer?' Gemini mid-buzz; Libra weighing it up.
 //   R1 '“can we talk later?” you: ___': Gemini 'sure! wait. talk about WHAT??' / Libra 'of course. I'm free after six.' → Libra
 //   R2 'They remember a tiny thing you said': Gemini GREEN… RED? GREEN, final / Libra GREEN → both
