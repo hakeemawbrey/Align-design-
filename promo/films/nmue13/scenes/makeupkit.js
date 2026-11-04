@@ -33,7 +33,7 @@ export const GOLD = '#f2c75c', BONE = '#efe6d6', PINK = '#ff8fb1', INK = '#1b123
 export const INTER = "Inter, 'Helvetica Neue', Arial, sans-serif"
 export const SERIF = "'EB Garamond', Georgia, serif"
 export const MONO = "'Space Mono', ui-monospace, monospace"
-export const BUG_COL = '#ff9a8a'
+export const BUG_COL = '#ffb39a'
 export const r3 = v => +v.toFixed(3)
 export const pop01 = (t, t0, d = 0.32, s = 1.9) => easeOutBack(prog(t, t0, t0 + d), s)
 export const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
@@ -263,10 +263,15 @@ export function scarfCells(ctx, col, t, flap = 1) {
 // ── the bug: "THE MAKE-UP TALK" in Inter 800 small caps, letter-spaced, top-left 56 px; a chapter tab under it
 const CHAPTERS = ['THE FIGHT', 'UNDER IT', 'THE TALK', 'MADE UP']
 const CH_COL = ['#ff7a6b', '#c9a6ff', '#f2c75c', '#ff8fb1']
+const BUG_ICON = ['.HH.HH.', 'HHHHHHH', 'HPPPPPH', 'HPPPPPH', '.HHHHH.', '..HHH..', '...H...']
 function buildBug(root) {
+  // identical to the episodes 1–12 bug (promo/films/nmue01/scenes/mukit.js): a pixel heart with a plaster, rose gold
   const b = el('div', { position: 'absolute', left: '56px', top: '52px', height: '44px', display: 'flex', alignItems: 'center', gap: '14px', transformOrigin: '0% 50%', pointerEvents: 'none' }, root)
-  el('div', { width: '18px', height: '18px', background: BUG_COL, boxShadow: `0 0 0 4px ${INK}, 0 0 16px rgba(255,154,138,0.7)`, transform: 'rotate(45deg)' }, b)
-  el('div', { font: `800 30px ${INTER}`, letterSpacing: '0.2em', color: BUG_COL, textShadow: '0 2px 12px rgba(6,4,18,0.9)', whiteSpace: 'nowrap', fontVariant: 'small-caps' }, b, 'THE&nbsp;MAKE-UP<span style="color:rgba(255,255,255,0.62)">&nbsp;TALK</span>')
+  const ic = el('canvas', { width: '44px', height: '44px', imageRendering: 'pixelated' }, b)
+  ic.width = 44; ic.height = 44
+  drawBits(ic.getContext('2d'), BUG_ICON, { H: '#f04a6e', P: '#f6d6b8' }, 22, 22, 4.6)
+  el('div', { font: `800 28px ${INTER}`, letterSpacing: '0.2em', color: BUG_COL, textShadow: '0 2px 12px rgba(6,4,18,0.9)', whiteSpace: 'nowrap', fontVariant: 'small-caps' }, b,
+    'THE&nbsp;<span style="color:#ffd9c9">MAKE-UP</span>&nbsp;TALK')
   const tab = el('div', { position: 'absolute', right: '56px', top: '54px', height: '40px', padding: '0 16px', display: 'flex', alignItems: 'center', gap: '10px', border: `4px solid ${INK}`, borderRadius: '8px',
     font: `700 22px ${MONO}`, letterSpacing: '0.12em', color: INK, pointerEvents: 'none', boxShadow: '6px 6px 0 rgba(6,4,18,0.6)' }, root)
   return {
