@@ -17,6 +17,7 @@
 //     cfg.hook: the situation headline ('They turn every walk | into a *race.*'), cfg.accent: its accent colour
 //     cfg.verdict: 'not' | 'deal', cfg.last: THE STARS' last line (≤ 50 characters)
 //     cfg.scene(x, t, S), cfg.finale(x, t, S), cfg.sceneCues / cfg.finaleCues: [[name, u, ...]] (times relative)
+//     cfg.castHasPisces: the date is Pisces (no second Pisces in the vote / finale)
 //     cfg.heroIsPisces: the sign is Pisces (no second Pisces in the vote / finale; the sign cries instead)
 //     cfg.pis: Pisces' spot in the situation ({ x, y, s, look, hide }), cfg.voteMood: the sign's mood in the vote
 // Everything draws as a pure function of t; DOM / canvases are only made inside build().
@@ -467,7 +468,7 @@ export function makeDeal(cfg) {
       }
       drawVote(x, t, cfg.verdict)
       // Pisces chewing a tissue
-      const pk = cfg.heroIsPisces ? 0 : pop01(t, T.vote + 0.25, 0.3, 2) * outK(t, [T.stamp, T.stamp + 0.3])
+      const pk = (cfg.heroIsPisces || cfg.castHasPisces) ? 0 : pop01(t, T.vote + 0.25, 0.3, 2) * outK(t, [T.stamp, T.stamp + 0.3])
       if (pk > 0.01) {
         tissues(x, 800, 1320, 70 * Math.min(1, pk))
         const F = pisces(x, t, { x: 920, y: 1240, s: 150, pop: pk, hops: [T.vote + 0.6, T.vote + 1.2, T.vote + 1.6, T.vote + 1.9] }, 2, 'wide', [-1, -1])
@@ -496,7 +497,7 @@ export function makeDeal(cfg) {
       const sk = pop01(t, T.starsIn, 0.38, 2.1) * ok
       if (sk > 0.01) drawStarChar(x, 160, 1280, 150, t, { color: STAR.sky, mood: t > T.last + 1.6 ? 'happy' : 'neutral', look: [1, -0.3], hops: STARS_HOPS, pop: sk, seed: 2, glow: 1.05 })
       // Pisces: happy tears on a NOT, proud tears on a DEALBREAKER (holding up a little sign)
-      const pk = cfg.heroIsPisces ? 0 : pop01(t, T.pisIn, 0.36, 2.2) * ok
+      const pk = (cfg.heroIsPisces || cfg.castHasPisces) ? 0 : pop01(t, T.pisIn, 0.36, 2.2) * ok
       if (pk > 0.01) {
         const F = pisces(x, t, { x: 925, y: 1280, s: 150, pop: pk, hops: [T.pisIn + 0.3, T.last + 0.9, T.last + 1.6] }, t > T.last + 0.6 ? 3 : 2, deal ? 'wide' : 'sparkle', [-1, -1])
         const ck = pop01(t, T.last + 0.6, 0.3, 2.6) * ok
