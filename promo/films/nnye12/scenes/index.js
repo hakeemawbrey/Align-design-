@@ -1,8 +1,8 @@
-// nnye12: NEW YEAR, SAME HEART · Pisces: what I'm keeping (20 s vertical, star_advice, music: dreamy · Ab).
+// nnye12: NEW YEAR, SAME HEART · Pisces: what I'm keeping (18 s vertical, star_advice, music: dreamy · Ab).
 // The format lives in ../../nnye01/scenes/yearkit.js (shared by nnye01–nnye12). Story 0–15.6, then the shared end card.
 //   0.0   hook: "*Pisces,* / it’s ok, / you can cry."
 //   2.4   LEAVING: "loving someone’s potential" · "saying sorry for my feelings" (Pisces: "*sniff* goodbye!")
-//   6.6   card cut → KEEPING: "the soft heart", the gift box closes.
+//   6.6   → KEEPING: "the soft heart", the gift box closes.
 //   10.85 "New year. | Same *heart.*"  THE STARS: "Same heart. *Braver* now."
 import { makeYear } from '../../nnye01/scenes/yearkit.js'
 
