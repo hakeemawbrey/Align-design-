@@ -1,15 +1,13 @@
-# star_advice — 30-day posting plan
+# star_advice — 25-day posting plan
 
 The advice account: Ask the Stars, Your Star Guide, Star Talk Explains, Moonlight Lane, and the seasons with a lesson.
-**10 posts a day plus 10 trial reels a day for 30 days (300 posts + 300 trial reels).** Captions are written;
+**10 posts a day plus 10 trial reels a day for 25 days (250 posts + 256 trial reels).** Captions are written;
 there are no hashtags.
 
 - **Posts** go to followers. **Trial reels** are shown first to people who don't follow yet, so their captions open
   with a hook that works for a stranger.
-- **Days 1–25 (and the first 6 trial reels on day 26):** 506 videos that never appear on star_talk.
-- **Days 26–30:** 94 reposts of videos star_talk ran on its days 1–10, at least 20 days later, with new captions.
-  (50 posts from star_talk days 1–5, then 44 trial reels from star_talk days 6–10.) If you have numbers by day 25,
-  swap in star_talk's best performers.
+- Every video is unique: nothing here ever appears on star_talk, and nothing repeats.
+- Days 1–6 have one extra trial reel (11 that day, the first at 7:40 AM) so all 756 films fit in 25 days.
 - **Moonlight Lane** (the 2-minute episodes) runs one episode a day, days 1–10, in the 5:45 PM post slot.
 - **Times** are a suggested spread in your local time: posts every 90 minutes from 8:45 AM, trial reels every
   90 minutes from 9:10 AM. That keeps them off star_talk's times (8:00, 9:30, …).
@@ -17,6 +15,12 @@ there are no hashtags.
 
 
 ## Day 1
+
+**7:40 AM · Trial reel** — Venus moved to Houston, too. (20 s)  
+`Star Talk/03 Seasons 4–6/Season 4/Venus moved to Houston, too. (st4venus1).mp4`
+
+Do you know your Venus sign?
+Venus rules Taurus and Libra, but everyone has one, and it shows how you love. Start with one good question.
 
 **8:45 AM · Post** — Air signs, gather round. (30 s)  
 `Star Talk/01 Shows/Your Star Guide/Air signs, gather round. (guideair).mp4`
@@ -136,6 +140,12 @@ The earth signs learn to plan a little less and feel a little more.
 
 ## Day 2
 
+**7:40 AM · Trial reel** — 6:32 PM — date night, organised. (30 s)  
+`Star Talk/04 Seasons 7–9/Season 9/6-32 PM — date night, organised. (st9virgolove).mp4`
+
+Is your love language quietly fixing their whole calendar?
+Let them clear an evening for you too. Care goes both ways.
+
 **8:45 AM · Post** — What's an attachment style? (60 s)  
 `Star Talk/Season 13/What's an attachment style- (st13attachment).mp4`
 
@@ -253,6 +263,12 @@ Brisket can't be rushed. Neither can trust. Low and slow.
 
 
 ## Day 3
+
+**7:40 AM · Trial reel** — When Venus goes retrograde. (20 s)  
+`Star Talk/03 Seasons 4–6/Season 4/When Venus goes retrograde. (st4venusretro).mp4`
+
+Suddenly thinking about every ex at once?
+Venus retrograde makes old flames look brighter. That is nostalgia, not a sign.
 
 **8:45 AM · Post** — Dating an Air Sign. (30 s)  
 `Star Talk/01 Shows/First-Date Field Guide/Dating an Air Sign. (sxfieldair).mp4`
@@ -372,6 +388,12 @@ Date twenty for Virgo and Pisces: a broken mug, two cats, one couch. Not perfect
 
 ## Day 4
 
+**7:40 AM · Trial reel** — Virgos aren't picky. They have standards. (15 s)  
+`Star Talk/05 Seasons 10–12/Season 12/Virgos aren't picky. They have standards. (st12virgo).mp4`
+
+Ever re-folded someone else's laundry because it was wrong?
+Standards are good. So is letting the small things go. High standards, soft hands.
+
 **8:45 AM · Post** — What's a composite chart? (45 s)  
 `Star Talk/Season 13/What's a composite chart- (st13composite).mp4`
 
@@ -490,6 +512,12 @@ In a windy city, the stars say lead with the important part first.
 
 ## Day 5
 
+**7:40 AM · Trial reel** — their going to love it (25 s)  
+`Star Talk/04 Seasons 7–9/Season 9/their going to love it (st9virgowork).mp4`
+
+Ever spotted a typo in an email from years ago?
+This Virgo skips the reply-all, fixes it quietly and says "nice work." Help, don't audit.
+
 **8:45 AM · Post** — The Ex Files. (45 s)  
 `Star Talk/02 Seasons 1–3/Season 3/The Ex Files. (stexfiles).mp4`
 
@@ -607,6 +635,12 @@ Cancer sends twelve check-ins before 8 AM, then remembers one more person: itsel
 
 
 ## Day 6
+
+**7:40 AM · Trial reel** — Texas first. Then where? (20 s)  
+`Star Talk/03 Seasons 4–6/Season 4/Texas first. Then where- (st4wherenext).mp4`
+
+Texas first. Then where should the stars go?
+Houston started it, and every city is in the running. Tell us where to light up next.
 
 **8:45 AM · Post** — Cancer: the blind spot (20 s)  
 `Star Talk/01 Shows/Your Star Guide/Cancer- the blind spot (guidecancer1).mp4`
@@ -2966,568 +3000,3 @@ Twelve slices, one shared sky.
 
 Do you know your partner's Venus sign?
 Charts help, but asking "how do you like to be loved?" helps more.
-
-
-## Day 26
-
-**8:45 AM · Post · repost (ran on star_talk day 1)** — Blind by design (20 s)  
-`Star Talk/Star Talk Remix/Blind by design (sr01blind).mp4`
-
-Leading with the card instead of the face can feel scary. It also lets the person show up before the looks do. Give someone a real chance this week.
-
-**9:10 AM · Trial reel** — Venus moved to Houston, too. (20 s)  
-`Star Talk/03 Seasons 4–6/Season 4/Venus moved to Houston, too. (st4venus1).mp4`
-
-Do you know your Venus sign?
-Venus rules Taurus and Libra, but everyone has one, and it shows how you love. Start with one good question.
-
-**10:15 AM · Post · repost (ran on star_talk day 1)** — the point (45 s)  
-`Star Talk/04 Seasons 7–9/Season 7/the point (st7archer).mp4`
-
-Sometimes the guard we keep up is just fear of being hit first. Sag and Scorpio realize they're both tired of aiming. Lowering the bow and talking is braver than it looks.
-
-**10:40 AM · Trial reel** — 6:32 PM — date night, organised. (30 s)  
-`Star Talk/04 Seasons 7–9/Season 9/6-32 PM — date night, organised. (st9virgolove).mp4`
-
-Is your love language quietly fixing their whole calendar?
-Let them clear an evening for you too. Care goes both ways.
-
-**11:45 AM · Post · repost (ran on star_talk day 1)** — Aquarius invented a weird thing. (60 s)  
-`Star Talk/05 Seasons 10–12/Season 10/Aquarius invented a weird thing. (st10aquarius).mp4`
-
-Being laughed at for how your mind works stings. Little Aquarius kept building anyway, and the weird idea is what helped everyone. Your different is not a flaw.
-
-**12:10 PM · Trial reel** — When Venus goes retrograde. (20 s)  
-`Star Talk/03 Seasons 4–6/Season 4/When Venus goes retrograde. (st4venusretro).mp4`
-
-Suddenly thinking about every ex at once?
-Venus retrograde makes old flames look brighter. That is nostalgia, not a sign.
-
-**1:15 PM · Post · repost (ran on star_talk day 1)** — The stars aligned (20 s)  
-`Star Talk/Star Talk Remix/The stars aligned (sr02aligned).mp4`
-
-Forcing things into place rarely works; even the stars needed the right order and a little patience. When it's right, it lines up without the shoving. Save this for the days you feel like you're pushing too hard.
-
-**1:40 PM · Trial reel** — Virgos aren't picky. They have standards. (15 s)  
-`Star Talk/05 Seasons 10–12/Season 12/Virgos aren't picky. They have standards. (st12virgo).mp4`
-
-Ever re-folded someone else's laundry because it was wrong?
-Standards are good. So is letting the small things go. High standards, soft hands.
-
-**2:45 PM · Post · repost (ran on star_talk day 1)** — Aquarius visited the planet that rolls. (60 s)  
-`Star Talk/05 Seasons 10–12/Season 11/Aquarius visited the planet that rolls. (st11aquarius).mp4`
-
-Feeling like you only fit somewhere far away is lonely. Different still belongs in the system, and the people who miss you are worth answering. Let someone call you home.
-
-**3:10 PM · Trial reel** — their going to love it (25 s)  
-`Star Talk/04 Seasons 7–9/Season 9/their going to love it (st9virgowork).mp4`
-
-Ever spotted a typo in an email from years ago?
-This Virgo skips the reply-all, fixes it quietly and says "nice work." Help, don't audit.
-
-**4:15 PM · Post · repost (ran on star_talk day 1)** — The air signs draft a text. (25 s)  
-`Star Talk/02 Seasons 1–3/Season 1 & specials/The air signs draft a text. (stair).mp4`
-
-Overthinking a text usually means we care. You don't need perfect words, just true ones: 'had fun. again?' did the whole job. Say what you mean, plainly.
-
-**4:40 PM · Trial reel** — Texas first. Then where? (20 s)  
-`Star Talk/03 Seasons 4–6/Season 4/Texas first. Then where- (st4wherenext).mp4`
-
-Texas first. Then where should the stars go?
-Houston started it, and every city is in the running. Tell us where to light up next.
-
-**5:45 PM · Post · repost (ran on star_talk day 1)** — Tonight's moon (20 s)  
-`Star Talk/Star Talk Remix/Tonight's moon (sr03moon).mp4`
-
-Honesty and kindness are not opposites. Say the true thing, and say it softly enough that it can land. Save this for the next hard text.
-
-**6:10 PM · Trial reel · repost (ran on star_talk day 6)** — Dallas: big expectations (20 s)  
-`Star Talk/Star Talk Remix/Dallas- big expectations (srcitydallas).mp4`
-
-Is your dating list longer than a highway?
-Skip the checklist and look at the fit. The right person might not tick a single box.
-
-**7:15 PM · Post · repost (ran on star_talk day 1)** — Tell me you're a Leo without telling me (20 s)  
-`Star Talk/08 Trends/Tell Me Without Telling Me/Tell me you're a Leo without telling me (trtellleo).mp4`
-
-Confidence looks best when it makes room for someone else to shine. Leo hands the spotlight to their date and the date lights right up. Be the person who cheers loudest for the one across the table.
-
-**7:40 PM · Trial reel · repost (ran on star_talk day 6)** — Baby Cancer won't let go of the blanket. (60 s)  
-`Star Talk/05 Seasons 10–12/Season 10/Baby Cancer won't let go of the blanket. (st10cancer).mp4`
-
-Were you the kid who couldn't let go of the blanket?
-Baby Cancer learns brave can be soft, and shares the shell with someone who needs it.
-
-**8:45 PM · Post · repost (ran on star_talk day 1)** — You were born a card (20 s)  
-`Star Talk/Star Talk Remix/You were born a card (sr04chartcard).mp4`
-
-You were someone worth knowing long before anyone noticed. Your sun, moon and rising make a whole person, not a profile to skim. Treat your own card with care.
-
-**9:10 PM · Trial reel · repost (ran on star_talk day 6)** — season starters (60 s)  
-`Star Talk/04 Seasons 7–9/Season 7/season starters (st7cardinals).mp4`
-
-Great at starting, tired by the middle?
-The four cardinal signs feel that too. Pick one thing and stay for the middle part.
-
-**10:15 PM · Post · repost (ran on star_talk day 1)** — Gemini at 2 AM starting three new hobbies for us (15 s)  
-`Star Talk/08 Trends/Nobody-/Gemini at 2 AM starting three new hobbies for us (trnobodygemini).mp4`
-
-Being loved for your enthusiasm, not in spite of it, feels like Libra sitting up and asking which hobby comes first. The right person doesn't dim your spark; they join in.
-
-**10:40 PM · Trial reel · repost (ran on star_talk day 6)** — LA: everyone's photo is perfect. (20 s)  
-`Star Talk/Star Talk Remix/LA- everyone's photo is perfect. (srcityla).mp4`
-
-Ever matched with a photo so filtered you couldn't tell who it was?
-Meet the person, not the preset. Fall for the chart, not the lighting.
-
-
-## Day 27
-
-**8:45 AM · Post · repost (ran on star_talk day 2)** — Expectation: a perfect picnic (20 s)  
-`Star Talk/08 Trends/Expectation vs Reality/Expectation- a perfect picnic (trexpectpicnic).mp4`
-
-When the plan falls apart, laughing together can be the best part. The perfect picnic was never the point; the person next to you was. Let the day be imperfect.
-
-**9:10 AM · Trial reel · repost (ran on star_talk day 6)** — Cancer is lost in the Beehive. (60 s)  
-`Star Talk/05 Seasons 10–12/Season 11/Cancer is lost in the Beehive. (st11cancer).mp4`
-
-Ever felt lost even when everything looks warm and bright?
-Home is often one steady light someone leaves on for you. Follow that one.
-
-**10:15 AM · Post · repost (ran on star_talk day 2)** — Talk in cards (20 s)  
-`Star Talk/Star Talk Remix/Talk in cards (sr05talkcards).mp4`
-
-Answering the same question honestly, without checking the other answer first, is how you learn who someone really is. Two different answers can still leave you both laughing. Try it on your next date.
-
-**10:40 AM · Trial reel · repost (ran on star_talk day 6)** — Miami: 'just visiting' (20 s)  
-`Star Talk/Star Talk Remix/Miami- 'just visiting' (srcitymiami).mp4`
-
-Keep falling for people who are only passing through?
-Say your dealbreakers up front, and look for someone who stays.
-
-**11:45 AM · Post · repost (ran on star_talk day 2)** — Libra can't pick an outfit; holds up two identical shirts (30 s)  
-`Star Talk/08 Trends/Get Ready with Me/Libra can't pick an outfit; holds up two identical shirts (trgrwmlibra).mp4`
-
-Wanting everything just right before a date is a lot of pressure. The right person wants you to show up as yourself. Wear what feels like you.
-
-**12:10 PM · Trial reel · repost (ran on star_talk day 6)** — Dear Cancer… (15 s)  
-`Star Talk/02 Seasons 1–3/Season 1 & specials/Dear Cancer… (starcancer).mp4`
-
-Cancer, do you hide in your shell until you're totally sure?
-Letting someone in a little early is brave. Soft is strong.
-
-**1:15 PM · Post · repost (ran on star_talk day 2)** — First date nerves pack (20 s)  
-`Star Talk/08 Trends/Starter Pack/First date nerves pack (trpacknerves).mp4`
-
-If you're nervous before a first date, there's a good chance they are too. That shared jitter can become the thing you laugh about together. Be gentle with yourself, and with them.
-
-**1:40 PM · Trial reel · repost (ran on star_talk day 6)** — Nashville heartbreak (20 s)  
-`Star Talk/Star Talk Remix/Nashville heartbreak (srcitynashville).mp4`
-
-Stuck singing the same heartbreak song on repeat?
-Write a different one. Your love song can start with someone whose chart fits yours.
-
-**2:45 PM · Post · repost (ran on star_talk day 2)** — A new deck every night (20 s)  
-`Star Talk/Star Talk Remix/A new deck every night (sr06newdeck).mp4`
-
-Endless options can make it hard to really see anyone. A small hand, looked at closely, gives each person a fair chance. Slow down and actually read the cards you have.
-
-**3:10 PM · Trial reel · repost (ran on star_talk day 6)** — Tell me you're a Virgo without telling me (20 s)  
-`Star Talk/08 Trends/Tell Me Without Telling Me/Tell me you're a Virgo without telling me (trtellvirgo).mp4`
-
-Does your love look like remembering every tiny detail?
-That's real affection, even if it's organized. Notice who keeps notes on what you like.
-
-**4:15 PM · Post · repost (ran on star_talk day 2)** — Started: an awkward hi… hi… hi collision (20 s)  
-`Star Talk/08 Trends/How It Started vs How It's Going/Started- an awkward hi… hi… hi collision (trstartedhi).mp4`
-
-The awkward start doesn't have to be fixed or forgotten. Sometimes it becomes the sweetest part of your story. Let the clumsy moments in; they're often where closeness begins.
-
-**4:40 PM · Trial reel · repost (ran on star_talk day 6)** — My confidence (20 s)  
-`Star Talk/08 Trends/Me at 2 PM vs me at 2 AM/My confidence (tr2amconfidence).mp4`
-
-Is 2 AM you a lot harder on yourself than 2 PM you?
-2 AM lies. You're still a catch in the morning.
-
-**5:45 PM · Post · repost (ran on star_talk day 2)** — Libra thinks about one compliment on their shoes, daily (20 s)  
-`Star Talk/08 Trends/My Roman Empire/Libra thinks about one compliment on their shoes, daily (trromecompliment).mp4`
-
-A small, sincere compliment can stay with someone for years. Noticing the little things is a quiet kind of care. Tell someone what you like about them today.
-
-**6:10 PM · Trial reel · repost (ran on star_talk day 7)** — New Orleans reads your cards (30 s)  
-`Star Talk/Star Talk Remix/New Orleans reads your cards (srcityneworleans).mp4`
-
-Waiting for a sign that love is coming?
-Ask better questions and meet the person before the photo. The real answers come from talking.
-
-**7:15 PM · Post · repost (ran on star_talk day 2)** — What color is your aura? (20 s)  
-`Star Talk/Star Talk Remix/What color is your aura- (sr07aura).mp4`
-
-Your bio is a sketch; the real you has more color than a few lines can hold. The people worth meeting will want to see all of it. What color would yours be today?
-
-**7:40 PM · Trial reel · repost (ran on star_talk day 7)** — Cancer saving every voice note in a little labeled shell box (15 s)  
-`Star Talk/08 Trends/Nobody-/Cancer saving every voice note in a little labeled shell box (trnobodycancer).mp4`
-
-Do you keep every voice note from someone you like?
-Cancer calls it an archive. Treasuring the little things is its own love language.
-
-**8:45 PM · Post · repost (ran on star_talk day 2)** — Overthinker edition (30 s)  
-`Star Talk/08 Trends/Put a Finger Down/Overthinker edition (trfingeroverthink).mp4`
-
-An anxious brain can turn one 'ok.' into a whole story. Most of the time a nice text is just a nice text. Take one slow breath before you decode the next one.
-
-**9:10 PM · Trial reel · repost (ran on star_talk day 7)** — Expectation: candlelit homemade dinner (20 s)  
-`Star Talk/08 Trends/Expectation vs Reality/Expectation- candlelit homemade dinner (trexpectcook).mp4`
-
-Did your fancy dinner plan fall apart?
-Sharing one spoon and laughing might be the better date. The mess is part of the memory.
-
-**10:15 PM · Post · repost (ran on star_talk day 2)** — POV (20 s)  
-`Star Talk/08 Trends/POV/POV (trpovthirdwheel).mp4`
-
-Good couples make their friends feel wanted, not in the way. Being included is its own kind of love. Hold on to the people who always pull up a third chair for you.
-
-**10:40 PM · Trial reel · repost (ran on star_talk day 7)** — Millions of people in New York… (30 s)  
-`Star Talk/Star Talk Remix/Millions of people in New York… (srcitynyc).mp4`
-
-Millions of people nearby, so why does it feel like the same five every time?
-A new hand every night, and someone actually new.
-
-
-## Day 28
-
-**8:45 AM · Post · repost (ran on star_talk day 3)** — Houston, the stars are dealing (20 s)  
-`Star Talk/Star Talk Remix/Houston, the stars are dealing (sr08houston).mp4`
-
-Showing up late keeps happening, and that is human. Say a real arrival time and the people waiting will trust you more. Small honesty builds big trust.
-
-**9:10 AM · Trial reel · repost (ran on star_talk day 7)** — Aries is ready in four seconds (30 s)  
-`Star Talk/08 Trends/Get Ready with Me/Aries is ready in four seconds (trgrwmaries).mp4`
-
-Ready two hours early and pacing?
-That kind of excitement is sweet. Your date might be pacing too, so tell them.
-
-**10:15 AM · Post · repost (ran on star_talk day 3)** — A blind mystery card's day (30 s)  
-`Star Talk/08 Trends/A Day in the Life of…/A blind mystery card's day (trdaycard).mp4`
-
-Almost getting skipped can sting, but the right person takes a second look. Being liked for who you are, before a photo ever enters the picture, feels different. Give people the second look you would want.
-
-**10:40 AM · Trial reel · repost (ran on star_talk day 7)** — Just got into astrology pack (20 s)  
-`Star Talk/08 Trends/Starter Pack/Just got into astrology pack (trpackastro).mp4`
-
-Just got into astrology and now everything is a placement?
-The best part is asking someone a question nobody has ever asked them.
-
-**11:45 AM · Post · repost (ran on star_talk day 3)** — Spark · Rub · Align (20 s)  
-`Star Talk/Star Talk Remix/Spark · Rub · Align (sr09sparkrubalign).mp4`
-
-Spark is fun and friction is normal. Two people can push and pull and still find the same direction when both are willing. Friction is not the end of the story.
-
-**12:10 PM · Trial reel · repost (ran on star_talk day 7)** — Seattle: you never see the stars (30 s)  
-`Star Talk/Star Talk Remix/Seattle- you never see the stars (srcityseattle).mp4`
-
-Can't see the stars where you live?
-They're still up there, cloudy night or not. Your chart is too, waiting to be read.
-
-**1:15 PM · Post · repost (ran on star_talk day 3)** — They clap when the plane lands (20 s)  
-`Star Talk/08 Trends/Cute, Not an Ick/They clap when the plane lands (trickclap).mp4`
-
-The quirks we'd usually judge can turn sweet when they belong to someone we like. Joy is contagious if you let it be. Notice the little things you're secretly glad they do.
-
-**1:40 PM · Trial reel · repost (ran on star_talk day 7)** — Started: a blind mystery card both almost skipped (20 s)  
-`Star Talk/08 Trends/How It Started vs How It's Going/Started- a blind mystery card both almost skipped (trstartedcard).mp4`
-
-Ever almost said no to someone who turned out to be your person?
-Two thumbs, one inch from skip. Card first, face last.
-
-**2:45 PM · Post · repost (ran on star_talk day 3)** — Taurus slowly making a sandwich… gives away the bigger half (20 s)  
-`Star Talk/08 Trends/Wait For It/Taurus slowly making a sandwich… gives away the bigger half (trwaittaurus).mp4`
-
-Love is often slow and practical: the extra layer, the bigger half, the quiet giving. Notice the people who keep the better piece for you. Thank one of them today.
-
-**3:10 PM · Trial reel · repost (ran on star_talk day 7)** — Three months in. (20 s)  
-`Star Talk/Star Talk Remix/Three months in. (srdealbreakers).mp4`
-
-Three months in, and then the dealbreaker?
-Saying what matters on day one protects your heart. It's not too much; it's honest.
-
-**4:15 PM · Post · repost (ran on star_talk day 3)** — Put your faith in the stars (20 s)  
-`Star Talk/Star Talk Remix/Put your faith in the stars (sr10faith).mp4`
-
-Some things you can hand off, like reading the sky and sweating the details. The courage to show up is still yours, and that's a good thing. You bring the brave part; trust it.
-
-**4:40 PM · Trial reel · repost (ran on star_talk day 7)** — Taurus thinks about the sandwich their date shared on date one (20 s)  
-`Star Talk/08 Trends/My Roman Empire/Taurus thinks about the sandwich their date shared on date one (trromesandwich).mp4`
-
-Still thinking about one tiny thing your date did ages ago?
-Taurus built a marble monument to a shared sandwich. Small moments stay.
-
-**5:45 PM · Post · repost (ran on star_talk day 3)** — The signs as wedding guests (45 s)  
-`Star Talk/08 Trends/The Signs As…/The signs as wedding guests (trsignswedding).mp4`
-
-Twelve very different guests, and every one of them came. Showing up for the people you love is the gift, however you show up. RSVP yes to someone this week.
-
-**6:10 PM · Trial reel · repost (ran on star_talk day 8)** — Hopeless romantic edition (30 s)  
-`Star Talk/08 Trends/Put a Finger Down/Hopeless romantic edition (trfingerromantic).mp4`
-
-Planned the wedding after one coffee?
-Dreaming big is lovely. Then get to know the real person in front of you.
-
-**7:15 PM · Post · repost (ran on star_talk day 3)** — Rating the first date: the hello, the laugh, the goodbye (30 s)  
-`Star Talk/08 Trends/Rating My Date, Honestly/Rating the first date- the hello, the laugh, the goodbye (trratefirst).mp4`
-
-The best first dates aren't flawless; they're the ones where you get to be yourself, snort-laugh included. And sometimes they ask first. Let a good night just be good.
-
-**7:40 PM · Trial reel · repost (ran on star_talk day 8)** — We've made people disposable (60 s)  
-`Star Talk/Star Talk Remix/We've made people disposable (srdisposable).mp4`
-
-Ever felt like someone swiped past the whole person you are?
-Nobody is disposable, including you. You deserve to be chosen with care.
-
-**8:45 PM · Post · repost (ran on star_talk day 3)** — Two charts walk into a date (60 s)  
-`Star Talk/Star Talk Remix/Two charts walk into a date (sralignment).mp4`
-
-Some friction between two people is normal, not a red flag. Easy parts, clicking parts and push-back parts can all live in one good match. Don't fear the push.
-
-**9:10 PM · Trial reel · repost (ran on star_talk day 8)** — Capricorn is visiting its boss. (60 s)  
-`Star Talk/05 Seasons 10–12/Season 11/Capricorn is visiting its boss. (st11capricorn).mp4`
-
-Feel guilty every time you rest?
-Even Saturn, the strictest planet, takes a day off. Rest is part of the job.
-
-**10:15 PM · Post · repost (ran on star_talk day 3)** — Hear me out: Virgo's label maker (20 s)  
-`Star Talk/08 Trends/Hear Me Out/Hear me out- Virgo's label maker (trhearlabel).mp4`
-
-Being cared for in practical ways is still being cared for. Someone who quietly makes room for you in their life is saying a lot. Notice the small, steady kinds of love.
-
-**10:40 PM · Trial reel · repost (ran on star_talk day 8)** — southern claw (45 s)  
-`Star Talk/04 Seasons 7–9/Season 7/southern claw (st7claws).mp4`
-
-Grown apart from someone who used to feel like part of you?
-Libra and Scorpio find out you can be close without being one.
-
-
-## Day 29
-
-**8:45 AM · Post · repost (ran on star_talk day 4)** — Silent review: a handwritten love note (20 s)  
-`Star Talk/08 Trends/Silent Review/Silent review- a handwritten love note (trsilentletter).mp4`
-
-A few honest handwritten words can reach someone who hides their feelings well. Say the small, true thing, like that you love their laugh. Put it in writing this week.
-
-**9:10 AM · Trial reel · repost (ran on star_talk day 8)** — Capricorn was born forty. (60 s)  
-`Star Talk/05 Seasons 10–12/Season 10/Capricorn was born forty. (st10capricorn).mp4`
-
-Was your childhood one big to-do list?
-Little Capricorn learned that play is practice too. Add some fun to the schedule.
-
-**10:15 AM · Post · repost (ran on star_talk day 4)** — Astrology in 60 seconds (60 s)  
-`Star Talk/Star Talk Remix/Astrology in 60 seconds (srastro101).mp4`
-
-You're more than one sign, and more than one mood. Your Sun, Moon and Rising each tell part of the story. Be patient with every part of you.
-
-**10:40 AM · Trial reel · repost (ran on star_talk day 8)** — Astrology for dummies (60 s)  
-`Star Talk/Star Talk Remix/Astrology for dummies (srdummies).mp4`
-
-New to astrology and worried your questions sound silly?
-There's no dumb question here. Try it on and keep what fits.
-
-**11:45 AM · Post · repost (ran on star_talk day 4)** — Describe the perfect first date (20 s)  
-`Star Talk/08 Trends/Wrong Answers Only/Describe the perfect first date (trwrongdate).mp4`
-
-The perfect first date isn't about the plan. One candle, one table, and real attention on the person across from you is plenty. Make them the point.
-
-**12:10 PM · Trial reel · repost (ran on star_talk day 8)** — POV: your crush says my sign? (20 s)  
-`Star Talk/08 Trends/POV/POV- your crush says my sign- (trpovguess).mp4`
-
-Has a crush ever made you guess their sign?
-Sometimes they just like watching you try. Being playful is a good sign.
-
-**1:15 PM · Post · repost (ran on star_talk day 4)** — Text me when you get home (20 s)  
-`Star Talk/08 Trends/Little Things/Text me when you get home (trlittlehome).mp4`
-
-Asking someone to tell you they got home is a small, real way to say you matter to me. Care doesn't have to be loud. Save this for whoever always checks on you.
-
-**1:40 PM · Trial reel · repost (ran on star_talk day 8)** — 8 billion people. (30 s)  
-`Star Talk/Star Talk Remix/8 billion people. (sreightbillion).mp4`
-
-Ever feel lonely in a city full of people?
-You're not the only one looking up, and you're not arriving alone.
-
-**2:45 PM · Post · repost (ran on star_talk day 4)** — Everyone sounds the same. (20 s)  
-`Star Talk/Star Talk Remix/Everyone sounds the same. (srbios).mp4`
-
-When every profile reads the same, it's easy to feel unseen. Your sun, moon and rising say there's more to you than a stock phrase. Write something only you would say.
-
-**3:10 PM · Trial reel · repost (ran on star_talk day 8)** — The moon on date night (30 s)  
-`Star Talk/08 Trends/A Day in the Life of…/The moon on date night (trdaymoon).mp4`
-
-Ever had a date where the whole night felt lit just for you?
-Sometimes the best part is someone saying 'and you.' Notice those moments.
-
-**4:15 PM · Post · repost (ran on star_talk day 4)** — a campfire, the last night of the season (90 s)  
-`Star Talk/04 Seasons 7–9/Season 7/a campfire, the last night of the season (st7campfire).mp4`
-
-Saying one true thing out loud is how a circle becomes a family. Everyone gets a seat, even the one who's been hovering at the tree line. Pull up a log for someone today.
-
-**4:40 PM · Trial reel · repost (ran on star_talk day 8)** — They read the menu out loud, with voices (20 s)  
-`Star Talk/08 Trends/Cute, Not an Ick/They read the menu out loud, with voices (trickmenu).mp4`
-
-Would a date reading the menu out loud, in voices, make you cringe or swoon?
-With the right person, you'll be asking for an encore.
-
-**5:45 PM · Post · repost (ran on star_talk day 4)** — Baby Aries skipped crawling. (60 s)  
-`Star Talk/05 Seasons 10–12/Season 10/Baby Aries skipped crawling. (st10aries).mp4`
-
-Winning alone can feel strangely empty. Little Aries learned that waiting for someone makes the finish line worth it. First is fun; together is better.
-
-**6:10 PM · Trial reel · repost (ran on star_talk day 9)** — The 4 elements in 15 seconds (20 s)  
-`Star Talk/Star Talk Remix/The 4 elements in 15 seconds (srelements).mp4`
-
-Fire, earth, air or water: which one feels like you?
-Truth is, your chart has all four. You're more than one element.
-
-**7:15 PM · Post · repost (ran on star_talk day 4)** — The most honest thing about you (20 s)  
-`Star Talk/Star Talk Remix/The most honest thing about you (srbirthtime).mp4`
-
-We all polish ourselves a little to be liked. But the truest things about you don't need editing. Let someone meet the real you, not the touched-up version.
-
-**7:40 PM · Trial reel · repost (ran on star_talk day 9)** — My friend dared me to answer the talk card honestly (45 s)  
-`Star Talk/08 Trends/Storytime/My friend dared me to answer the talk card honestly (trstorydare).mp4`
-
-Do you hide your real hobbies on a first date?
-Scorpio confessed to knitting tiny plant hats, and it worked. Honesty is attractive.
-
-**8:45 PM · Post · repost (ran on star_talk day 4)** — Aries is racing to the equinox. (60 s)  
-`Star Talk/05 Seasons 10–12/Season 11/Aries is racing to the equinox. (st11aries).mp4`
-
-Sometimes the goal you were rushing toward moves. That's not failure, just a new direction. Aries slowed down for Pisces and the trip home got better. Keep going, together.
-
-**9:10 PM · Trial reel · repost (ran on star_talk day 9)** — Capricorn's packed calendar… one block reads free time with you (20 s)  
-`Star Talk/08 Trends/Wait For It/Capricorn's packed calendar… one block reads free time with you (trwaitcap).mp4`
-
-Dating someone whose calendar is always full?
-Watch what they protect. Being booked first, before the rest, says a lot.
-
-**10:15 PM · Post · repost (ran on star_talk day 4)** — We matched on the blind card I almost skipped (45 s)  
-`Star Talk/08 Trends/Storytime/We matched on the blind card I almost skipped (trstoryskip).mp4`
-
-First impressions can be loud about the wrong detail. One more look gave Capricorn the whole story. Be open enough to look again before you decide.
-
-**10:40 PM · Trial reel · repost (ran on star_talk day 9)** — Flip it (30 s)  
-`Star Talk/Star Talk Remix/Flip it (srflipit).mp4`
-
-How long do you give someone before you decide?
-More than 0.3 seconds, hopefully. Card first, face last, a real look for everyone.
-
-
-## Day 30
-
-**8:45 AM · Post · repost (ran on star_talk day 5)** — Remember butterflies? (30 s)  
-`Star Talk/Star Talk Remix/Remember butterflies- (srbutterflies).mp4`
-
-Dating can start to feel numb when it all moves too fast. Not knowing everything yet is the best part. Let yourself be curious again.
-
-**9:10 AM · Trial reel · repost (ran on star_talk day 9)** — The signs as roommates (45 s)  
-`Star Talk/08 Trends/The Signs As…/The signs as roommates (trsignsroomies).mp4`
-
-What makes living together actually work?
-Soup when someone sneezes, sticky notes, clean dishes. Little kindnesses add up.
-
-**10:15 AM · Post · repost (ran on star_talk day 5)** — My plan to play it cool (20 s)  
-`Star Talk/08 Trends/Me at 2 PM vs me at 2 AM/My plan to play it cool (tr2amcalm).mp4`
-
-Playing it cool often just means two people hiding that they care. One honest text can end the whole game. It's okay to let them know you're interested.
-
-**10:40 AM · Trial reel · repost (ran on star_talk day 9)** — Rating the first meal they cooked (30 s)  
-`Star Talk/08 Trends/Rating My Date, Honestly/Rating the first meal they cooked (trratecooked).mp4`
-
-Has someone ever cooked for you and gotten it a little wrong?
-The crunchy pasta stops mattering. The effort is what you remember.
-
-**11:45 AM · Post · repost (ran on star_talk day 5)** — Atlanta: a city in a forest (30 s)  
-`Star Talk/Star Talk Remix/Atlanta- a city in a forest (srcityatlanta).mp4`
-
-Looking for the one among so many can be exhausting. Look past the surface to who someone actually is, words first. The one who replies is a good place to start.
-
-**12:10 PM · Trial reel · repost (ran on star_talk day 9)** — Seen. 3 days ago. (30 s)  
-`Star Talk/Star Talk Remix/Seen. 3 days ago. (srghosted).mp4`
-
-Left on seen for three days?
-You're not disposable, and neither is anyone else. Say what ends it early and choose people with care.
-
-**1:15 PM · Post · repost (ran on star_talk day 5)** — Dear Aquarius… (16 s)  
-`Star Talk/02 Seasons 1–3/Season 1 & specials/Dear Aquarius… (staraqua).mp4`
-
-Being independent is a strength, and letting someone close doesn't take it away. You stay you, just with company. Let the right ones in.
-
-**1:40 PM · Trial reel · repost (ran on star_talk day 9)** — Hear me out: someone who says I'll walk you to your car (20 s)  
-`Star Talk/08 Trends/Hear Me Out/Hear me out- someone who says I'll walk you to your car (trhearwalk).mp4`
-
-Does someone walking you to your car make you swoon?
-They walked Cancer all the way to the bus stop. Small care counts for a lot.
-
-**2:45 PM · Post · repost (ran on star_talk day 5)** — Austin: everyone's 'in a band' (20 s)  
-`Star Talk/Star Talk Remix/Austin- everyone's 'in a band' (srcityaustin).mp4`
-
-Vague answers like 'we'll see' can leave you guessing for months. It's okay to know what you want and say it early. Dealbreakers first, then the fun.
-
-**3:10 PM · Trial reel · repost (ran on star_talk day 9)** — Silent review: a playlist made for them (20 s)  
-`Star Talk/08 Trends/Silent Review/Silent review- a playlist made for them (trsilentplaylist).mp4`
-
-Has someone ever made you something only they could make?
-The personal details are what land. Track three is always the one.
-
-**4:15 PM · Post · repost (ran on star_talk day 5)** — 1. (20 s)  
-`Star Talk/01 Shows/Countdown/1. (sxcount1).mp4`
-
-Sometimes the hardest part of joining in is letting yourself be included. Even Scorpio took both hands in the end. Tomorrow, show up just as you are.
-
-**4:40 PM · Trial reel · repost (ran on star_talk day 9)** — Stuck on 'hey'. (20 s)  
-`Star Talk/Star Talk Remix/Stuck on 'hey'. (srhey).mp4`
-
-Stuck in a chat that never gets past 'hey'?
-Ask one real question, like their comfort meal, and skip to the good part.
-
-**5:45 PM · Post · repost (ran on star_talk day 5)** — Split it, or I've got this? (30 s)  
-`Star Talk/01 Shows/Two Stars Disagree/Split it, or I've got this- (sxdebatebill).mp4`
-
-Who pays can quietly get awkward. Both ways can be kind, as long as you talk about it before the bill arrives. Whoever's paying, just ask.
-
-**6:10 PM · Trial reel · repost (ran on star_talk day 10)** — How do you know it's love? (20 s)  
-`Star Talk/08 Trends/Wrong Answers Only/How do you know it's love- (trwronglove).mp4`
-
-How do you know it's love?
-It usually isn't dramatic. Sharing a blanket on a bench, doing nothing, and it feels easy.
-
-**7:15 PM · Post · repost (ran on star_talk day 5)** — Chicago winter (20 s)  
-`Star Talk/Star Talk Remix/Chicago winter (srcitychicago).mp4`
-
-Loneliness can make anyone settle for whatever is nearby. Wait for someone who actually fits, not just someone who's there when it's cold. You deserve warmth that stays.
-
-**7:40 PM · Trial reel · repost (ran on star_talk day 10)** — The 12 houses, explained (30 s)  
-`Star Talk/Star Talk Remix/The 12 houses, explained (srhouses).mp4`
-
-Ever wondered what the 12 houses in your chart actually are?
-Think of it as a building, and your birth time is the key.
-
-**8:45 PM · Post · repost (ran on star_talk day 5)** — EaDo. (30 s)  
-`Star Talk/01 Shows/Neighborhood Stars/EaDo. (sxhoodeado).mp4`
-
-Showing only the finished version of yourself can feel safer. But closeness grows in the unfinished parts. Let someone see the draft.
-
-**9:10 PM · Trial reel · repost (ran on star_talk day 10)** — Saving the last bite (20 s)  
-`Star Talk/08 Trends/Little Things/Saving the last bite (trlittlebite).mp4`
-
-Ever saved the last bite for someone?
-Small sacrifices like that are love in action. Notice who saves theirs for you.
-
-**10:15 PM · Post · repost (ran on star_talk day 5)** — Capricorn Season. (30 s)  
-`Star Talk/01 Shows/Seasonal Sky/Capricorn Season. (sxseasoncap).mp4`
-
-Big gestures are lovely, but showing up every single week is what builds trust. Small and steady beats big and once. Consistency really is cute.
-
-**10:40 PM · Trial reel · repost (ran on star_talk day 10)** — Dear Capricorn… (16 s)  
-`Star Talk/02 Seasons 1–3/Season 1 & specials/Dear Capricorn… (starcap).mp4`
-
-Is your calendar so full there's no room left for love?
-Log off and show up. Capricorn learns the stars don't send calendar invites.
