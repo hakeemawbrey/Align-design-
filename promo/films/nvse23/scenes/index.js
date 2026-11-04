@@ -1,5 +1,5 @@
-// nvse23: SIGN VS SIGN, "Who handles the holiday photo better?" ♌ Leo vs ♓ Pisces (18 s trial reel, b46,
-// music: dreamy · F). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse23: SIGN VS SIGN, "Who handles the holiday photo better?" ♌ Leo vs ♓ Pisces (16 s trial reel, b46,
+// music: dreamy · F). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 // Pisces plays this one, so it cries on its own side (no corner Pisces).
 //   hook: a camera flashes between them.
 //   ROUND 1 ♌ "finds *the light* in any room." flash after flash, the shot counter climbs. "one more! my left side!" → "ok, twelve more."
