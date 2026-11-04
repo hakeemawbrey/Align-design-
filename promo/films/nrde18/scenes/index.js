@@ -55,7 +55,7 @@ const EP = makeDate({
       card(x, 440, 880, 340, 70, 'MADE WITH LOVE', { size: 32, col: '#ffd6e4', ink: RED, k: pop01(t, S.t0 + 1.0, 0.3, 2.6) * (1 - go), rot: -0.06 })
       shadow(x, 150, 1180, 140); shadow(x, 620, 1180, 0)
       hero(x, t, { x: 150, y: 1030, s: 160, mood: u < 0.7 ? 'squint' : 'happy', look: [1, 0.2], hops: [S.t0 + 0.7, S.t0 + 0.95, S.t0 + 1.2] })
-      date(x, t, { x: 560, y: 820, s: 140, mood: u < 1.0 ? 'neutral' : 'heart', look: [-1, 0.6], hops: [S.t0 + 1.05] })
+      date(x, t, { x: 720, y: 870, s: 140, mood: u < 1.0 ? 'neutral' : 'heart', look: [-1, 0.6], hops: [S.t0 + 1.05] })
       bubble(x, t, 190, 800, S.t0 + 0.75, S.t0 + 1.9, 'ha! I love them.', { size: 32 })
       hearts(x, t, S.t0 + 2.6, 860, 900, { n: 5 })
     }, cues: [['pop', 0.72, 987.77, 0.035, -0.3], ['pop', 1.02, 1318.51, 0.05, 0], ['pop', 1.82, 880, 0.04, 0.3], ['whoosh', 2.0, 0.5, 0.035], ['tick', 2.55, 0.05], ['pluck', 2.6, 1567.98, 0.035, 0.3, 0.3]] },
