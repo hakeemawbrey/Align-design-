@@ -284,7 +284,7 @@ export function street(x, t, { groundY = 1240, lamps = [160, 920], houses = true
       R(x, '#eceaf8', hx - 6, hy - 14, hw + 12, 16)
     }
   }
-  R(x, INK, 0, groundY - 6, 1080, 10); R(x, '#d9d6ec', 0, groundY, 1080, 1920 - groundY); R(x, '#c4c0de', 0, groundY + 60, 1080, 1920 - groundY)
+  R(x, INK, 0, groundY - 6, 1080, 10); R(x, '#8f89b8', 0, groundY, 1080, 1920 - groundY); R(x, '#7a74a6', 0, groundY + 50, 1080, 1920 - groundY); R(x, '#6a6496', 0, groundY + 150, 1080, 1920 - groundY)
   for (const lx of lamps) {
     R(x, INK, lx - 9, groundY - 420, 18, 420); R(x, '#4a4270', lx - 4, groundY - 416, 8, 412)
     box(x, lx - 30, groundY - 470, 60, 56, '#ffe7a6', { b: 7 })
