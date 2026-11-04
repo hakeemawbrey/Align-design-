@@ -52,5 +52,32 @@
   "series": "ask2",
   "episode": 6,
   "caption": "Sometimes they want a listener, not a fix. Ask whether they want advice or a hug, and follow their lead either way."
+ },
+ "naske07": {
+  "video": "/_blob/136b1e9685173ae395a85f4678de4d4f",
+  "poster": "/_blob/42a35fce84c5da9b0f33b0e0532f5eae",
+  "title": "I say yes to every party. I'm exhausted.",
+  "len": 20,
+  "series": "ask2",
+  "episode": 7,
+  "caption": "A kind no is still kind: \"I can't this time, but I'd love to soon.\" Rest makes you better company. Save this for the busy weeks."
+ },
+ "naske08": {
+  "video": "/_blob/cbefb12da7ce64056a9b72bc4c8de184",
+  "poster": "/_blob/3d13cc9e3502fb5b03a65b0dd7e4c0e3",
+  "title": "I hold grudges. How do I let go?",
+  "len": 20,
+  "series": "ask2",
+  "episode": 8,
+  "caption": "Holding on can feel safe, and it is also heavy. Say what hurt, once, out loud. Then see if you are ready to set it down."
+ },
+ "naske09": {
+  "video": "/_blob/90e4adc09049fef25445c853c7159dc2",
+  "poster": "/_blob/79df11f89d70574344e3c0596935b8b8",
+  "title": "I said something too honest. Now what?",
+  "len": 20,
+  "series": "ask2",
+  "episode": 9,
+  "caption": "Honesty matters, and so does how it lands. Go back, say \"that came out wrong, sorry,\" then say what you meant, more gently."
  }
 }
