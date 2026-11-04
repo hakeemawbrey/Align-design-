@@ -1,11 +1,11 @@
-// naske10 · Ask the Stars, Volume 2, ep 10 · "How do I relax on a date?" (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske10 · Ask the Stars, Volume 2, ep 10 · "How do I relax on a date?" (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♑ Capricorn, glasses-squint, reading a date agenda: 7:00 ARRIVE · 7:04 SMALL TALK · 7:09 LAUGH…
 //   2.5   CAPRICORN: "you don't need a plan for every minute."  chip ♑ CARDINAL EARTH · RULED BY SATURN
 //         the agenda keeps unrolling, down past its feet into the snow.
 //   ~5.6  "pick one thing to do. let the rest happen."  It crumples the whole scroll into a ball (SCRUNCH) and tosses it.
 //   ~8.4  "the best part is usually unplanned."  A big snowflake drifts down and lands on its tip. Pure delight.
-//   card cut → "Plan less. | *Notice* more."  Pisces (left) cries happily.
+//   box closes → "Plan less. | *Notice* more."  Pisces (left) cries happily.
 import { askFilm, drawBits, drawBurst, sparkles, floatHeart, lerp, prog, ease, clamp, pop01, INK, MONO, FLAKE } from '../../naske01/askkit.js'
 
 const ITEMS = ['7:00 ARRIVE', '7:04 SMALL TALK', '7:09 LAUGH (1x)', '7:12 ORDER', '7:15 COMPLIMENT', '7:21 DEEP TALK', '7:30 DESSERT?', '7:31 DECIDE', '7:40 WALK', '7:55 SAY GOODNIGHT']

@@ -1,10 +1,10 @@
-// naske07 · Ask the Stars, Volume 2, ep 7 · "I say yes to every party. I'm exhausted." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske07 · Ask the Stars, Volume 2, ep 7 · "I say yes to every party. I'm exhausted." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♎ Libra under a big gold scale, the left pan piled with party invitations, tipping hard.
 //   2.5   LIBRA: "a kind no is still kind."  chip ♎ CARDINAL AIR · RULED BY VENUS. More invites flutter onto the pile.
 //   ~4.6  "'i can't this time, but i'd love to soon.'"  One invite floats back off the pile with a little heart.
 //   ~7.4  "rest makes you better company."  A fat pillow drops onto the right pan: BOOF. The scale levels out.
-//   card cut → "*Rest* is | a yes, too."  Libra yawns happily. Pisces (left) cries happily.
+//   box closes → "*Rest* is | a yes, too."  Libra yawns happily. Pisces (left) cries happily.
 import { askFilm, drawBits, drawBurst, floatHeart, lerp, prog, ease, clamp, pop01, INK, GOLD } from '../../naske01/askkit.js'
 
 const ENV = ['WWWWWWWW', 'WPWWWWPW', 'WWPWWPWW', 'WWWPPWWW', 'WWWWWWWW']

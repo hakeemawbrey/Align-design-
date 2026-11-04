@@ -1,11 +1,11 @@
-// naske02 · Ask the Stars, Volume 2, ep 2 · "They love new things. I love my routine." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske02 · Ask the Stars, Volume 2, ep 2 · "They love new things. I love my routine." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♉ Taurus sinks into its armchair, eyes shut in bliss, the same mug as always (steam curling).
 //   2.5   TAURUS: "routines are cozy. new can be cozy too."  chip ♉ FIXED EARTH · RULED BY VENUS
 //   ~5.6  "trade: one old favorite, one new thing."  A side table slides in with a mystery plate of dumplings. Side-eye.
 //   ~7.3  one cautious bite… heart eyes ("!").
 //   ~8.8  "say yes to small. you can still go home."  Mug in one tip, dumpling in the other.
-//   card cut → "Keep the *comfort*. | Add one surprise."  Pisces (left) cries happily.
+//   box closes → "Keep the *comfort*. | Add one surprise."  Pisces (left) cries happily.
 import { askFilm, drawBits, drawBurst, floatHeart, sparkles, lerp, prog, ease, pop01, spritePt, MUG, MUG_C } from '../../naske01/askkit.js'
 
 const CHAIR = [

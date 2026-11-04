@@ -1,10 +1,10 @@
-// naske03 · Ask the Stars, Volume 2, ep 3 · "I lose interest after the first few dates." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske03 · Ask the Stars, Volume 2, ep 3 · "I lose interest after the first few dates." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♊ Gemini juggling three snowballs over its head, tongue-out focus (squint).
 //   2.5   GEMINI: "the first spark always changes shape."  chip ♊ MUTABLE AIR · RULED BY MERCURY
 //   ~5.5  "on date four, ask a deeper question."  Two snowballs thud into the snow; it catches the last one.
 //   ~8.4  "bored can just mean not curious yet."  It peers at the one it kept: the snowball starts to sparkle.
-//   card cut → "Stay *curious* | past date three."  + TONIGHT'S DECK tie-in. Pisces (left) cries happily.
+//   box closes → "Stay *curious* | past date three."  + TONIGHT'S DECK tie-in. Pisces (left) cries happily.
 import { askFilm, drawSnowball, drawBurst, sparkles, drawPixelStar, lerp, prog, ease, clamp, GOLD } from '../../naske01/askkit.js'
 
 const R = 56

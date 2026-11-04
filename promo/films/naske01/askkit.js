@@ -21,8 +21,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar } from '../startalk.js'
 
 export const W = 1080
@@ -359,7 +359,7 @@ const CPS = 30
 const STAR_NAME = { aries: 'ARIES', taurus: 'TAURUS', gemini: 'GEMINI', cancer: 'CANCER', leo: 'LEO', virgo: 'VIRGO', libra: 'LIBRA', scorpio: 'SCORPIO', sagittarius: 'SAGITTARIUS', capricorn: 'CAPRICORN', aquarius: 'AQUARIUS', pisces: 'PISCES' }
 
 export function askFilm(S) {
-  const DURATION = 20, STORY_END = DURATION - ENDCARD_LEN       // 15.6
+  const DURATION = 18, STORY_END = DURATION - ENDCARD_SHORT_LEN       // 15.6 (short end card, no card cut: 4 Nov change)
   const SG = signStar(S.sign), COL = S.color || SG.color, PIS = signStar('pisces')
   const SPEAK = `${SG.glyph}︎ ${STAR_NAME[S.sign]} STAR`
   const HERO = { x: 540, y: 1000, size: 360, ...(S.hero || {}) }
@@ -450,8 +450,7 @@ export function askFilm(S) {
     }
   }
 
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 }), cardCuts(CUTS)]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 })]
   const r3 = v => +v.toFixed(3)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const CUES = [
@@ -467,12 +466,11 @@ export function askFilm(S) {
     ['pop', r3(T.h2Land), 1318.51, 0.05, 0], ['pluck', r3(T.h2Land), 1174.66, 0.05, 0.7, 0], ['bell', r3(T.h2Land + 0.3), 1760, 0.022, 1.0, 0],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(S.cues ? S.cues(T) : []).map(c => c.map((v, i) => (i === 1 && typeof v === 'number' ? r3(v) : v))),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, LINES, DROP: T.l[0] }
 }
 
 export function askCues(id, F, { style, key, seed }) {
-  return { id, duration: F.DURATION, music: { style, key, seed, sections: { drop: F.DROP, outroAt: F.DURATION - 4.4 } }, cues: F.CUES }
+  return { id, duration: F.DURATION, music: { style, key, seed, sections: { drop: F.DROP, outroAt: F.DURATION - ENDCARD_SHORT_LEN } }, cues: F.CUES }
 }

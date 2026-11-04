@@ -1,11 +1,11 @@
-// naske05 · Ask the Stars, Volume 2, ep 5 · "What if they don't like my friends?" (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske05 · Ask the Stars, Volume 2, ep 5 · "What if they don't like my friends?" (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♌ Leo beaming, holding a gold group-photo frame up over its head (its crew inside, waving).
 //   2.5   LEO: "first hangouts are awkward. give it time."  chip ♌ FIXED FIRE · RULED BY THE SUN
 //   ~3.6  a "?" pops over the new pink star standing apart at the edge of the photo. Leo deflates.
 //   ~5.6  "ask what felt off, and listen first."  Leo listens (looking down, small).
 //   ~8.4  "you don't have to choose. blend slowly."  The pink star scoots in between the crew; everyone hops.
-//   card cut → "Your people | *and* your person."  Pisces (left) cries happily.
+//   box closes → "Your people | *and* your person."  Pisces (left) cries happily.
 import { askFilm, crier, drawPixelStar, floatHeart, sparkles, lerp, prog, ease, clamp, pop01, INK, GOLD, PINK, signStar } from '../../naske01/askkit.js'
 
 const FR = { x: 540, y: 690, w: 500, h: 290 }

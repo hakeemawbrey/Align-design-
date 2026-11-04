@@ -1,12 +1,12 @@
-// naske09 · Ask the Stars, Volume 2, ep 9 · "I said something too honest. Now what?" (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske09 · Ask the Stars, Volume 2, ep 9 · "I said something too honest. Now what?" (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♐ Sagittarius, mouth-wide, a big speech bubble bursting out of it: "YOUR SCARF IS… A LOT."
 //         Beside it a pink star in an enormous striped scarf, stunned.
 //   1.0   Sag grabs the bubble and tries to stuff it back in: it squishes… and BOINGs back out.
 //   2.5   SAG: "honest is good. how you say it matters too."  chip ♐ MUTABLE FIRE · RULED BY JUPITER
 //   ~5.6  "go back: 'that came out wrong. sorry.'"  The bubble pops; Sag holds up a little SORRY sign with a heart.
 //   ~8.4  "then say what you meant, softer."  A soft new bubble: "it's so bold. it really suits you." The pink star blushes.
-//   card cut → "Honest, | *and* gentle."  The pink star twirls its scarf. Pisces (left) cries happily.
+//   box closes → "Honest, | *and* gentle."  The pink star twirls its scarf. Pisces (left) cries happily.
 import { askFilm, crier, drawBubble, drawSign, drawBits, drawBurst, floatHeart, spritePt, lerp, prog, ease, clamp, pop01, INK, PINK, HEART, HEART_C } from '../../naske01/askkit.js'
 
 const FRD = { x: 820, y: 1060, size: 240 }

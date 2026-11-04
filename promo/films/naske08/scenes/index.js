@@ -1,10 +1,10 @@
-// naske08 · Ask the Stars, Volume 2, ep 8 · "I hold grudges. How do I let go?" (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske08 · Ask the Stars, Volume 2, ep 8 · "I hold grudges. How do I let go?" (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♏ Scorpio straining to hug a giant snowball tagged "THAT ONE TIME", trembling.
 //   2.5   SCORPIO: "holding on feels safe. it's also heavy."  chip ♏ FIXED WATER · MARS (TRAD.) & PLUTO (MODERN)
 //   ~5.3  "say what hurt, once, out loud."  A small bubble: "that hurt me." The snowball shrinks a little.
 //   ~8.0  "then see if you're ready to set it down."  It sets the snowball down: it shrinks to a pebble, a sprout pops.
-//   card cut → "Say it once. | Then *set it down*."  Scorpio, lighter, does a little hop. Pisces (left) cries happily.
+//   box closes → "Say it once. | Then *set it down*."  Scorpio, lighter, does a little hop. Pisces (left) cries happily.
 import { askFilm, drawSnowball, drawSign, drawBubble, drawBits, sparkles, floatHeart, lerp, prog, ease, clamp, pop01, INK } from '../../naske01/askkit.js'
 
 const SPROUT = ['.L.L.', 'LLLLL', '..S..', '..S..']

@@ -1,11 +1,11 @@
-// naske15 · Ask the Stars, Volume 2, ep 15 · "I keep changing my mind about them." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske15 · Ask the Stars, Volume 2, ep 15 · "I keep changing my mind about them." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♊ Gemini mid-pluck at a big pixel flower, a petal flying off: "YES"… "NO"… "YES"…
 //   2.5   GEMINI: "mixed feelings are info, not a failure."  chip ♊ THE TWINS · MUTABLE AIR
 //         every petal it plucks grows straight back. POP. POP.
 //   ~5.6  "write what you like and what you don't."  It gives up on the flower and holds up a two-column note.
 //   ~8.6  "then tell them, gently, where you are."  The note gets a heart in the corner; Gemini nods.
-//   card cut → "Unsure is okay. | *Say* it."  Pisces (left) cries happily.
+//   box closes → "Unsure is okay. | *Say* it."  Pisces (left) cries happily.
 import { askFilm, drawBits, drawSign, floatHeart, sparkles, lerp, prog, ease, clamp, pop01, INK, MONO } from '../../naske01/askkit.js'
 
 const FL = { x: 790, y: 830 }

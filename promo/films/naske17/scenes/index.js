@@ -1,12 +1,12 @@
-// naske17 · Ask the Stars, Volume 2, ep 17 · "They're shy. I'm… not." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske17 · Ask the Stars, Volume 2, ep 17 · "They're shy. I'm… not." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♌ Leo blasting "HELLO!!" through a pixel megaphone, sound rings flying; across the snow a small
 //         star ducks behind a snowman.
 //   2.5   LEO: "shy isn't uninterested. it's a pace."  chip ♌ THE LION · RULED BY THE SUN
 //   ~3.7  Leo lowers the megaphone and sets it down in the snow.
 //   ~5.4  "ask, then wait a beat longer than usual."  Leo waits… then a tiny bubble: "hi."
 //   ~8.4  "quiet plans help. a walk beats a party."  The shy star peeks out, then steps out and waves.
-//   card cut → "Turn it *down*. | Tune in."  Pisces (left) cries happily.
+//   box closes → "Turn it *down*. | Tune in."  Pisces (left) cries happily.
 import { askFilm, crier, drawBits, drawBubble, floatHeart, sparkles, spritePt, lerp, prog, ease, clamp, pop01, INK, LAV } from '../../naske01/askkit.js'
 
 const MEGA = ['......RR', '....RRRR', 'HHRRRRRR', 'HHRRRRRR', '....RRRR', '......RR']

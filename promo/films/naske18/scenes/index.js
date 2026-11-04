@@ -1,10 +1,10 @@
-// naske18 · Ask the Stars, Volume 2, ep 18 · "I can't stop noticing their flaws." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske18 · Ask the Stars, Volume 2, ep 18 · "I can't stop noticing their flaws." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♍ Virgo, pen raised, ticking a clipboard list that keeps growing: SOCKS: MISMATCHED…
 //   2.5   VIRGO: "noticing is your gift. judging is a choice."  chip ♍ THE MAIDEN · MUTABLE EARTH
 //   ~5.6  "write down three things you love, too."  The clipboard flips over: THINGS I LOVE. Lines write on.
 //   ~8.6  "nobody's perfect. that's the good part."  The last line gets a heart: LAUGHS AT MY JOKES.
-//   card cut → "Look for the *good*, | on purpose."  + CARD FIRST. FACE LAST. Pisces (left) cries happily.
+//   box closes → "Look for the *good*, | on purpose."  + CARD FIRST. FACE LAST. Pisces (left) cries happily.
 import { askFilm, drawSign, drawBits, sparkles, floatHeart, spritePt, lerp, prog, ease, clamp, pop01, INK, HEART, HEART_C } from '../../naske01/askkit.js'
 
 const CB = { x: 760, y: 830 }

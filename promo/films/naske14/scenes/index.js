@@ -1,11 +1,11 @@
-// naske14 · Ask the Stars, Volume 2, ep 14 · "They're always late and it bugs me." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske14 · Ask the Stars, Volume 2, ep 14 · "They're always late and it bugs me." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♉ Taurus waiting under a big pixel clock, a cocoa in each tip, snow already piling on its head;
 //         the clock's hands whizz round.
 //   2.5   TAURUS: "say how it feels, not what they are."  chip ♉ THE BULL · RULED BY VENUS
 //   ~5.4  "'i feel forgotten when i wait' is softer."  The snow pile grows taller. The cocoa steam stops.
 //   ~8.2  "then pick a time that works for both."  The clock settles; the snow pile slides off, PLOMP. A smile.
-//   card cut → "Name the *feeling*, | not the flaw."  Pisces (left) cries happily.
+//   box closes → "Name the *feeling*, | not the flaw."  Pisces (left) cries happily.
 import { askFilm, drawBits, drawBurst, floatHeart, spritePt, lerp, prog, ease, clamp, MUG, MUG_C, INK, GOLD } from '../../naske01/askkit.js'
 
 const CL = { x: 780, y: 690, r: 120 }

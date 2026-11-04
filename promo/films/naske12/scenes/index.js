@@ -1,12 +1,12 @@
-// naske12 · Ask the Stars, Volume 2, ep 12 · "I cry at everything. Is that too much?" (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js. Pisces is the hero (no cameo).
+// naske12 · Ask the Stars, Volume 2, ep 12 · "I cry at everything. Is that too much?" (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js. Pisces is the hero (no cameo).
 //   0.00  frame 0: the DM; ♓ Pisces, sparkly-eyed, happy-crying at a snowflake that just landed on its tip, tissue box
 //         in hand, a little tower of used tissues already beside it.
 //   2.5   PISCES: "feeling deeply isn't too much."  chip ♓ MUTABLE WATER · JUPITER (TRAD.) & NEPTUNE (MODERN)
 //         the tissue tower keeps growing, one tissue per beat.
 //   ~5.3  "the right person won't ask you to feel less."
 //   ~8.0  "try: 'i'm okay. i'm just moved.'"  A friend star leans in with a fresh tissue… and starts crying too.
-//   card cut → "Soft is | a *strength*."  Both of them, happy fountains.
+//   box closes → "Soft is | a *strength*."  Both of them, happy fountains.
 import { askFilm, crier, bigTears, drawBits, floatHeart, spritePt, lerp, prog, ease, clamp, pop01, INK, FLAKE, signStar } from '../../naske01/askkit.js'
 
 const BOX = ['...WW...', '..WWWW..', 'BBBBBBBB', 'BPBBBBPB', 'BBBBBBBB', 'BBBBBBBB']

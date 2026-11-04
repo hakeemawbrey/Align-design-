@@ -1,11 +1,11 @@
-// naske06 · Ask the Stars, Volume 2, ep 6 · "I keep trying to fix their problems." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske06 · Ask the Stars, Volume 2, ep 6 · "I keep trying to fix their problems." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♍ Virgo, wrench raised high, its red toolbox open beside it, tools already flying out.
 //   2.5   VIRGO: "sometimes they want a listener, not a fix."  chip ♍ MUTABLE EARTH · RULED BY MERCURY
 //         tape, a manual ("FIX IT"), a second wrench pile up in the snow.
 //   ~5.6  "ask: 'do you want advice, or a hug?'"  The lid slams shut (THUNK). Two little cards float up: ADVICE? · A HUG?
 //   ~8.4  "both answers are okay. follow their lead."  The wrench is gone; it holds out a warm mug instead.
-//   card cut → "Ask first. | *Then* help."  + TALK CARDS tie-in. Pisces (left) cries happily.
+//   box closes → "Ask first. | *Then* help."  + TALK CARDS tie-in. Pisces (left) cries happily.
 import { askFilm, drawBits, drawBurst, drawSign, floatHeart, spritePt, lerp, prog, ease, clamp, pop01, MUG, MUG_C, INK } from '../../naske01/askkit.js'
 
 const WRENCH = ['G.G', 'GGG', '.G.', '.G.', '.G.', '.G.', '.G.', 'GGG', 'G.G']

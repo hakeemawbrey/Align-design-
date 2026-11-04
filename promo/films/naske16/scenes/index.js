@@ -1,10 +1,10 @@
-// naske16 · Ask the Stars, Volume 2, ep 16 · "They're away for the holidays. I miss them." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske16 · Ask the Stars, Volume 2, ep 16 · "They're away for the holidays. I miss them." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♋ Cancer at a frosty window, its tip mid-stroke drawing a heart in the frost.
 //   2.5   CANCER: "missing someone means it matters."  chip ♋ THE CRAB · RULED BY THE MOON
 //   ~5.5  "plan one call you both look forward to."  A little phone lights up in its tip: CALL AT 8 ♥ (ring ring).
 //   ~8.4  "and lean on the people who are here."  Two friend stars pop in beside it with a steaming mug.
-//   card cut → "Miss them. | *Live* anyway."  Pisces (left) cries happily.
+//   box closes → "Miss them. | *Live* anyway."  Pisces (left) cries happily.
 import { askFilm, crier, drawBits, drawBurst, floatHeart, spritePt, lerp, prog, ease, clamp, pop01, INK, MONO, MUG, MUG_C, HEART, HEART_C, signStar } from '../../naske01/askkit.js'
 
 const WN = { x: 760, y: 800, w: 380, h: 400 }

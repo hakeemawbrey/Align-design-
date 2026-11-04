@@ -1,11 +1,11 @@
-// naske13 · Ask the Stars, Volume 2, ep 13 · 'I want to say "I love you" first.' (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske13 · Ask the Stars, Volume 2, ep 13 · 'I want to say "I love you" first.' (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♈ Aries, cheeks puffed, mid-exhale: a wobbly frosty breath cloud drifting up.
 //   2.5   ARIES: "if you feel it, it's okay to say it."  chip ♈ THE RAM · FIRST SIGN OF THE ZODIAC
 //         more practice puffs: a lump, a squiggle, a lopsided almost-heart.
 //   ~5.4  "say it without needing it back right away."
 //   ~8.2  "their answer can come in its own time."  One slow breath: a perfect frosty heart floats up and away.
-//   card cut → "Say it *brave*. | Let it land."  Pisces (left) cries happily.
+//   box closes → "Say it *brave*. | Let it land."  Pisces (left) cries happily.
 import { askFilm, drawBits, sparkles, floatHeart, lerp, prog, ease, clamp, INK } from '../../naske01/askkit.js'
 
 const SHAPES = [

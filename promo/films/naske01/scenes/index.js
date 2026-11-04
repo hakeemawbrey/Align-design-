@@ -1,11 +1,11 @@
-// naske01 · Ask the Stars, Volume 2, ep 1 · "How do I slow down when I really like someone?" (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../askkit.js (shared by every naske film).
+// naske01 · Ask the Stars, Volume 2, ep 1 · "How do I slow down when I really like someone?" (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../askkit.js (shared by every naske film).
 //   0.00  frame 0: the DM question; ♈ Aries rockets across the snow on a sled, wide-eyed, speed lines and spray.
 //   1.25  it yanks the brake: "SKRRT!", a snow spray, a skid to a stop.
 //   2.5   ARIES: "liking someone fast isn't a problem."  chip ♈ CARDINAL FIRE · RULED BY MARS
 //   ~5.6  "just let plans grow one date at a time."  (it nudges the sled forward one tiny scoot per beat)
 //   ~8.8  "ask what pace feels good to them too."  a second sled glides in, slowly, with a pink star waving
-//   card cut → "Fast heart. | *Slow* steps."  The two sleds drift together, side by side. Pisces (right) cries happily.
+//   box closes → "Fast heart. | *Slow* steps."  The two sleds drift together, side by side. Pisces (right) cries happily.
 import { askFilm, drawBits, drawBurst, crier, lerp, prog, ease, clamp, pop01, INK, PINK } from '../askkit.js'
 
 const SLED = [

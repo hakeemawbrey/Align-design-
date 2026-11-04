@@ -1,12 +1,12 @@
-// naske11 · Ask the Stars, Volume 2, ep 11 · "I'm bad at saying how I feel." (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske11 · Ask the Stars, Volume 2, ep 11 · "I'm bad at saying how I feel." (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♒ Aquarius tightening a bolt on a little robot that holds up a sign: "I LIKE YOU".
 //   2.5   AQUARIUS: "you don't need perfect words."  chip ♒ FIXED AIR · SATURN (TRAD.) & URANUS (MODERN)
 //   ~3.6  the robot fizzles: "bzzt", sparks, a puff of steam; the sign droops; the robot slumps. Aquarius shrugs.
 //   ~5.3  "'i like spending time with you' works."
 //   ~8.0  "say it once. it gets easier after."  Aquarius says it itself, in a small bubble: "i like you." A pink star
 //         peeks in from the right, blushing.
-//   card cut → "Plain words. | *Real* feelings."  Pisces (left) cries happily.
+//   box closes → "Plain words. | *Real* feelings."  Pisces (left) cries happily.
 import { askFilm, crier, drawBits, drawBurst, drawSign, drawBubble, floatHeart, lerp, prog, ease, clamp, pop01, INK, PINK } from '../../naske01/askkit.js'
 
 const BOT = [

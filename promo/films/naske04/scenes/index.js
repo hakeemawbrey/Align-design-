@@ -1,12 +1,12 @@
-// naske04 · Ask the Stars, Volume 2, ep 4 · "How do I let them take care of me?" (20 s, star_advice post)
-// Story 0–15.6, then the shared end card. The look lives in ../../naske01/askkit.js.
+// naske04 · Ask the Stars, Volume 2, ep 4 · "How do I let them take care of me?" (18 s, star_advice post)
+// Story 0–15.6, then the short end card (2.4 s). The look lives in ../../naske01/askkit.js.
 //   0.00  frame 0: the DM; ♋ Cancer mid-toss, flinging a plaid blanket over the last of three little stars in a row
 //         (♓ Pisces, already tucked in, sniffles happily at the end of the row).
 //   2.5   CANCER: "you care for everyone. let it come back."  chip ♋ CARDINAL WATER · RULED BY THE MOON
 //   ~3.9  it reaches for its own blanket: the stack is empty. "BRRR." A shiver, frost on its tips.
 //   ~5.6  "when they offer, try just 'thank you.'"  A blanket drops onto Cancer from above. A heart pops.
 //   ~8.4  "receiving is part of loving too."  All four, tucked in, rocking together.
-//   card cut → "Let *them* | hold the blanket."  Pisces cries happily.
+//   box closes → "Let *them* | hold the blanket."  Pisces cries happily.
 import { askFilm, crier, drawBurst, floatHeart, lerp, prog, ease, clamp, pop01, INK, signStar } from '../../naske01/askkit.js'
 
 const PLAIDS = [['#c8283c', '#f2c75c'], ['#3f7cf0', '#efe6d6'], ['#2fc79a', '#f5eedf'], ['#e9b24a', '#7a3b2e']]
