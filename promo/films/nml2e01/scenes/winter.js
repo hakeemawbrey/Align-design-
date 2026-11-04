@@ -88,8 +88,11 @@ function ledge(ctx, x0, x1, y, d, seed = 1) {
 }
 export function drawSnowbank(ctx, x, y, w, h, seed = 4) {
   const r = rng(seed)
+  const bumps = Array.from({ length: 7 }, () => { const bw = w * (0.22 + r() * 0.2); return [x + r() * (w - bw), bw, h * (0.35 + r() * 0.65)] })
+  R(ctx, x - 5, y - h * 0.6 - 5, w + 10, h * 0.6 + 5, W_DEEP)
+  for (const [bx, bw, bh] of bumps) R(ctx, bx - 5, y - bh - 5, bw + 10, bh + 5, W_DEEP)
   R(ctx, x, y - h * 0.6, w, h * 0.6, W_SNOW)
-  for (let i = 0; i < 7; i++) { const bw = w * (0.22 + r() * 0.2), bx = x + r() * (w - bw), bh = h * (0.35 + r() * 0.65); R(ctx, bx, y - bh, bw, bh, W_SNOW) }
+  for (const [bx, bw, bh] of bumps) { R(ctx, bx, y - bh, bw, bh, W_SNOW); R(ctx, bx + bw * 0.6, y - bh + 6, bw * 0.4 - 4, bh - 12, '#e4eafc') }
   R(ctx, x, y - 6, w, 6, W_SHADE)
   for (let i = 0; i < 5; i++) R(ctx, x + r() * w * 0.9, y - h * 0.4 * r() - 10, 14, 6, '#ffffff')
 }
