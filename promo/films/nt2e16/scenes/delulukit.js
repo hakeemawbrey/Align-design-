@@ -75,7 +75,7 @@ export function makeDelulu(cfg) {
     if (asking) {
       const ck = pop01(t, T.crushIn, 0.35, 2.2) * ok
       shadow(x, 760, 1300, 200 * ck)
-      CRUSH(x, t, { x: 760, y: 1160, s: 200, pop: ck, mood: t < T.answer ? 'neutral' : (cfg.crushMood || 'happy'), look: [-1, 0], hops: [T.answer, T.slam + 0.2], blush: t >= T.answer && cfg.crushMood !== 'happy-friend' ? 0.9 : undefined })
+      CRUSH(x, t, { x: 760, y: 1160, s: 200, pop: ck, mood: t < T.answer ? 'neutral' : 'happy', look: [-1, 0], hops: [T.answer, T.slam + 0.2], blush: t >= T.answer && cfg.crushMood !== 'happy-friend' ? 0.9 : undefined })
       bubble(x, t, 380, 1010, T.ask, T.answer, cfg.ask, { size: 32 })
       bubble(x, t, 700, 1010, T.answer, T.out[0], cfg.answer, { size: 30, col: '#c9f2d4' })
       if (t >= T.slam) { hearts(x, t, T.slam + 0.1, 540, 1080, { n: 8 }); confetti(x, t, T.slam + 0.05, 840, 700, { cols: [GREEN, BONE, GOLD, '#7fd0ff'] }) }
