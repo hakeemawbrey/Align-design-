@@ -9,57 +9,93 @@
   "caption": "A lumpy hand-knitted hat, reviewed without a single word.\nDropped stitches, zero complaints. Made by them wins."
  },
  "nwfe01": {
-  "video": "/_blob/83e675f1ae3458e0b43545867a2bfe3f",
-  "poster": "/_blob/513a7ced1427c9e5852ed6a552b83155",
+  "video": "/_blob/af990623ab124e0eb383571e92f4729c",
+  "poster": "/_blob/269fedb13f37252ab860b453cc8244bb",
   "title": "Your side first",
-  "len": 20,
+  "len": 18,
   "series": "wait2",
   "episode": 1,
   "caption": "Ever watched someone scrape a windshield very, very slowly?\nIt was clearing your side first."
  },
  "nwfe02": {
-  "video": "/_blob/99089241f549de7a05c1bd082239268d",
-  "poster": "/_blob/4a4d457871a1908928bebf88cc78eecd",
+  "video": "/_blob/7c39537c5e4cadc773a1b14e08dd2465",
+  "poster": "/_blob/3b4de52922d2dc1f256307aeb45b1a7d",
   "title": "Built you in snow",
-  "len": 20,
+  "len": 18,
   "series": "wait2",
   "episode": 2,
   "caption": "When your Aries builds the worst snowman you've ever seen.\nTurns out it was a portrait. Of you."
  },
+ "nwfe03": {
+  "video": "/_blob/3e91efd875e9652f7f3e7d4f1a86cd03",
+  "poster": "/_blob/7ba7601cdceb630a7159834e627158a4",
+  "title": "Found it",
+  "len": 18,
+  "series": "wait2",
+  "episode": 3,
+  "caption": "Why is there so much tape on one tiny present?\nBecause they kept looking for the thing you lost."
+ },
  "nwfe04": {
-  "video": "/_blob/dda36027c48083eb9e5874031f043d94",
-  "poster": "/_blob/f6ff47ddc2713d89f3e5e7a007ccf053",
+  "video": "/_blob/2cda150fe682157d1b06dc6697a4840a",
+  "poster": "/_blob/a5dafd92922f83c082d2811b5bc0e49f",
   "title": "Pre-warmed",
-  "len": 20,
+  "len": 18,
   "series": "wait2",
   "episode": 4,
   "caption": "Your coat is being held hostage by the radiator.\nSome people say I love you with a warm coat."
  },
  "nwfe05": {
-  "video": "/_blob/5bd08b5603829b6c79d3af5ee7179b9a",
-  "poster": "/_blob/321b956e81596f5c7e34ff35a2f81fdb",
+  "video": "/_blob/9179d82e8efe7c4df6a71497f93f4a53",
+  "poster": "/_blob/bb092e6e484d2e16ac952223186bec24",
   "title": "You said it once",
-  "len": 20,
+  "len": 18,
   "series": "wait2",
   "episode": 5,
   "caption": "Why does your Capricorn keep writing in that notebook?\nEvery little thing you mentioned once. Remembered."
  },
  "nwfe06": {
-  "video": "/_blob/1c68243af851de066df86f96e32ccf01",
-  "poster": "/_blob/b47b94f20a958172b0bec4ca9e14b74e",
+  "video": "/_blob/ae9e05d46d7de2e2b74b8d013d0c37cc",
+  "poster": "/_blob/ff6f091565d41c9a9484b75c10bfb4fa",
   "title": "Baked your sign",
-  "len": 20,
+  "len": 18,
   "series": "wait2",
   "episode": 6,
   "caption": "Waiting all evening while someone kneads the same dough?\nWorth it when the bread comes out shaped like your sign."
  },
  "nwfe07": {
-  "video": "/_blob/7e214f34d3ec3ab120ae4b6d287add47",
-  "poster": "/_blob/533f2ea845c45b6370811caf1a2061b9",
+  "video": "/_blob/ee99a6f0684bba080de12ef02322a283",
+  "poster": "/_blob/8b6e6f8decd3593b219e6df57aefde27",
   "title": "Both, side by side",
-  "len": 20,
+  "len": 18,
   "series": "wait2",
   "episode": 7,
   "caption": "Libra cannot pick an ornament. Classic.\nSometimes the answer is both, on the same branch."
+ },
+ "nwfe08": {
+  "video": "/_blob/c73ce2e3015ef3f75e1f51a6a25187e2",
+  "poster": "/_blob/2ab738cbedd5fbf700cc70d6329cf4ad",
+  "title": "Ran for you",
+  "len": 18,
+  "series": "wait2",
+  "episode": 8,
+  "caption": "Your date just ran off and left you in the snowy queue.\nIt came back with two hot cocoas."
+ },
+ "nwfe09": {
+  "video": "/_blob/50890a36fc2bc50205ed1bcc321bcede",
+  "poster": "/_blob/3e8693b8c6fa8a61519626ac31133a19",
+  "title": "Found yours",
+  "len": 18,
+  "series": "wait2",
+  "episode": 9,
+  "caption": "Dating someone who stares at the stars instead of you?\nThey were finding your stars. Castor and Pollux, the Twins."
+ },
+ "nwfe10": {
+  "video": "/_blob/3da7b037ffd6c3bc5b87396430c13f96",
+  "poster": "/_blob/a5f9cc61f283d6ebf0c3237426ebd78d",
+  "title": "Practised listening",
+  "len": 18,
+  "series": "wait2",
+  "episode": 10,
+  "caption": "Is your Leo rehearsing a speech in the mirror again?\nThe whole speech was one question, and then it listened."
  }
 }
