@@ -1,8 +1,8 @@
-// nwpe07 · WINTER STARTER PACK 7: "Winter starter pack: Libra" (15 s vertical, star_advice trial reel, jazzy F#).
+// nwpe07 · WINTER STARTER PACK 7: "Winter starter pack: Libra" (13 s vertical, star_advice trial reel, jazzy F#).
 // Rows: promo/films/next30/b40.md. The format engine is ../../nwpe01/wpkit.js (shared by nwpe01–nwpe12).
 //   0      "Winter starter pack: | *Libra*" over the frosted grid; the sign shivering bottom-left, mid-hop.
 //   items: a matching hat and scarf · a mug that matches the throw · a snow-day playlist
-//   5.60   the twist: finally picking the plan (with aries).  6.71 card cut → "the ice rink. I *pick* the ice rink."
+//   5.60   the twist: finally picking the plan (with aries).  6.71 beat change → "the ice rink. I *pick* the ice rink."
 //   last line: "Your vote *counts*."  ♓ Pisces cries at the bottom all film.
 import { makeWP } from '../../nwpe01/wpkit.js'
 

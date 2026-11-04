@@ -1,8 +1,8 @@
-// n3ae10 · 3 AM IN WINTER 10: "Capricorn writes next year's goals" (18 s vertical, star_advice trial reel, lofi F#m).
+// n3ae10 · 3 AM IN WINTER 10: "Capricorn writes next year's goals" (16 s vertical, star_advice trial reel, lofi F#m).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. Goals. | *Capricorn* is planning."  Capricorn writes in a planner; after the cut goal 3 moves to the top with a little heart.
 //   1.5 / 3.6 / 5.7   thoughts: goal 1: the promotion · goal 2: save more · goal 3: …call them back *more*
-//   7.5    card cut. THE STARS in the window: "Put the people on the list *first*."
+//   7.5    beat change. THE STARS in the window: "Put the people on the list *first*."
 //   ~10.4  last line: "People go *first*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK, lerp, ease, prog } from '../../n3ae01/amkit.js'
 

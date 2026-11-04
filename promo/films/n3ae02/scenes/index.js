@@ -1,8 +1,8 @@
-// n3ae02 · 3 AM IN WINTER 2: "Taurus, 3 AM toast, too comfy to date?" (18 s vertical, star_advice trial reel, lofi Bbm).
+// n3ae02 · 3 AM IN WINTER 2: "Taurus, 3 AM toast, too comfy to date?" (16 s vertical, star_advice trial reel, lofi Bbm).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. Toast. | *Taurus* is thinking."  Taurus on the bed edge with a slice of toast (bites vanish as it thinks), a blanket round its shoulders.
 //   1.5 / 3.6 / 5.7   thoughts: toast at 3 AM: *perfect* · my life: also perfect · am I *too comfy* to date?
-//   7.5    card cut. THE STARS in the window: "Cozy alone is a lovely place to *choose* from."
+//   7.5    beat change. THE STARS in the window: "Cozy alone is a lovely place to *choose* from."
 //   ~10.4  last line: "Choose from *cozy*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK } from '../../n3ae01/amkit.js'
 

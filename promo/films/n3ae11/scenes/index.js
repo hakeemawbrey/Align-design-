@@ -1,8 +1,8 @@
-// n3ae11 · 3 AM IN WINTER 11: "Aquarius wants to share the winter sky" (18 s vertical, star_advice trial reel, lofi Gm).
+// n3ae11 · 3 AM IN WINTER 11: "Aquarius wants to share the winter sky" (16 s vertical, star_advice trial reel, lofi Gm).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. Clear sky. | *Aquarius* is stargazing."  Aquarius beside a little telescope on a tripod pointed at the window; a name-shaped sparkle at the spiral.
 //   1.5 / 3.6 / 5.7   thoughts: the stars are SO *clear* · I want to *show* someone · …who did I think of *first*?
-//   7.5    card cut. THE STARS in the window: "That first name you thought of? Tell *them* tomorrow."
+//   7.5    beat change. THE STARS in the window: "That first name you thought of? Tell *them* tomorrow."
 //   ~10.4  last line: "The first name *counts*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK } from '../../n3ae01/amkit.js'
 

@@ -1,14 +1,14 @@
 // amkit: the 3 AM IN WINTER engine (Next 30 · star_advice trial reels, promo/films/next30/b40.md).
 // Lives in the first film's folder; n3ae02–n3ae12 import it from here ('../../n3ae01/amkit.js').
 //
-// The format (18 s, story 0–13.6, then the shared end card, default CTA):
+// The format (16 s, story 0–13.6, then the short 2.4 s end card, default CTA; no Align card transition):
 //   0          frame 0 is the thumbnail: the hook caption is already up ("3 AM. First snow. | *Aries* is up."), the
 //              "3 AM IN WINTER" bug top-left, a dark winter bedroom, the frosted window with snow falling, and the sign
 //              mid-action. A digital clock on the nightstand reads 3:00. Across the street one other window is lit:
 //              ♓ Pisces is awake too, crying (cfg.across swaps who is over there).
 //   1.5 / 3.6 / 5.7   three thought bubbles pop over the sign (the third is the 3 AM spiral, accent pink); the clock
 //              ticks on with each one.
-//   7.5        the one card cut. THE STARS glow in the window and say one kind line in the box (8.1).
+//   7.5        the beat change (no card transition). THE STARS glow in the window and say one kind line in the box (8.1).
 //   ~10.4      the caption pops out and the last line pops in at the top; it holds to 13.55.
 //
 //   makeAM(cfg) → { DURATION, SCENES, CUES, T, MUSIC }
@@ -31,8 +31,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar, STAR } from '../startalk.js'
 import { popText } from '../lesson.js'
 
@@ -208,7 +208,7 @@ const BUB = { y: 1052 }
 const CPS = 30
 
 export function schedule(cfg) {
-  const D = 18, STORY_END = D - ENDCARD_LEN
+  const D = 16, STORY_END = D - ENDCARD_SHORT_LEN   // the short end card (2.4 s); no Align card transition
   const T = { D, STORY_END, th: [1.5, 3.6, 5.7], cut: 7.5, starsIn: 7.62 }
   T.thOut = [r3(T.cut - 0.3), r3(T.cut - 0.06)]
   T.lines = [{ t: 8.1, speaker: 'THE STARS', text: cfg.line }]
@@ -448,9 +448,8 @@ export function makeAM(cfg) {
     }
   }
 
-  // one card-cut candidate (a short film): the cut into THE STARS
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (owner change, 4 Nov): T.cut is the film's own beat change
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [440, 493.88, 523.25, 587.33, 659.25, 783.99, 880]
   const wordPops = (t0, n, gap, base = 0, gain = 0.024) => Array.from({ length: n }, (_, i) => ['pop', r3(t0 + i * gap), NOTE[(base + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
@@ -467,9 +466,8 @@ export function makeAM(cfg) {
     ...wordPops(T.last, 4, 0.1, 2, 0.03), ['pluck', r3(T.last + 0.45), 1318.51, 0.045, 0.6, 0], ['glitter', r3(T.last + 0.05), r3(T.last + 0.6)],
     ['whoosh', T.out[0], 0.35, 0.025],
     ...(cfg.cues ? cfg.cues(T) : []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  const MUSIC = { drop: T.th[0], breakdown: [T.th[2]], lift: [T.cut], outroAt: T.D - ENDCARD_LEN }
+  const MUSIC = { drop: T.th[0], breakdown: [T.th[2]], lift: [T.cut], outroAt: T.D - ENDCARD_SHORT_LEN }
   return { DURATION: T.D, SCENES, CUES, T, MUSIC }
 }

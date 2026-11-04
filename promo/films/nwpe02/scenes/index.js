@@ -1,8 +1,8 @@
-// nwpe02 · WINTER STARTER PACK 2: "Winter starter pack: Taurus" (15 s vertical, star_advice trial reel, jazzy Db).
+// nwpe02 · WINTER STARTER PACK 2: "Winter starter pack: Taurus" (13 s vertical, star_advice trial reel, jazzy Db).
 // Rows: promo/films/next30/b40.md. The format engine is ../../nwpe01/wpkit.js (shared by nwpe01–nwpe12).
 //   0      "Winter starter pack: | *Taurus*" over the frosted grid; the sign shivering bottom-left, mid-hop.
 //   items: the heaviest blanket · soup since noon · fuzzy socks ×2
-//   5.60   the twist: saving the warm spot for you (with virgo).  6.71 card cut → "you saved me the *warm* spot?"
+//   5.60   the twist: saving the warm spot for you (with virgo).  6.71 beat change → "you saved me the *warm* spot?"
 //   last line: "The warm spot is *yours*."  ♓ Pisces cries at the bottom all film.
 import { makeWP } from '../../nwpe01/wpkit.js'
 

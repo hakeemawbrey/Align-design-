@@ -1,8 +1,8 @@
-// n3ae12 · 3 AM IN WINTER 12: "Pisces gets a 3 AM text from a friend" (18 s vertical, star_advice trial reel, lofi G#m).
+// n3ae12 · 3 AM IN WINTER 12: "Pisces gets a 3 AM text from a friend" (16 s vertical, star_advice trial reel, lofi G#m).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. Snowing. | *Pisces* can't sleep."  Pisces at the window, a little teary; the phone buzzes; Cancer waves from the lit window across the street; Pisces happy-sobs.
 //   1.5 / 3.6 / 5.7   thoughts: long night… · *bzz* 'you up too?' · …they're up *too*.
-//   7.5    card cut. THE STARS in the window: "Long nights are easier *together*. Check on your people."
+//   7.5    beat change. THE STARS in the window: "Long nights are easier *together*. Check on your people."
 //   ~10.4  last line: "Easier *together*."  ♓ Pisces cries all film (its own episode: Cancer is across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK } from '../../n3ae01/amkit.js'
 

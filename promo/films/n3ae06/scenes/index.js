@@ -1,8 +1,8 @@
-// n3ae06 · 3 AM IN WINTER 6: "Virgo's 3 AM pros and cons" (18 s vertical, star_advice trial reel, lofi Dm).
+// n3ae06 · 3 AM IN WINTER 6: "Virgo's 3 AM pros and cons" (16 s vertical, star_advice trial reel, lofi Dm).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. A list. | *Virgo* is deciding."  Virgo with a notepad: two ticks under PRO, then one line under CON.
 //   1.5 / 3.6 / 5.7   thoughts: pro: they're *kind* · pro: they laugh at my jokes · con: …*I'm scared.*
-//   7.5    card cut. THE STARS in the window: "Scared isn't a con. It means it *matters*."
+//   7.5    beat change. THE STARS in the window: "Scared isn't a con. It means it *matters*."
 //   ~10.4  last line: "Scared means it *matters*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK } from '../../n3ae01/amkit.js'
 

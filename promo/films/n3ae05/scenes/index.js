@@ -1,8 +1,8 @@
-// n3ae05 · 3 AM IN WINTER 5: "Leo rehearses the party entrance" (18 s vertical, star_advice trial reel, lofi C#m).
+// n3ae05 · 3 AM IN WINTER 5: "Leo rehearses the party entrance" (16 s vertical, star_advice trial reel, lofi C#m).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "Party tomorrow. | *Leo* is rehearsing."  Leo posing at a tall mirror; pose sparkles on each practised move, then it deflates at the third thought.
 //   1.5 / 3.6 / 5.7   thoughts: outfit: *picked* · entrance: *practised* · what if they don't *notice*?
-//   7.5    card cut. THE STARS in the window: "Skip the entrance. Walk over and say *hi*."
+//   7.5    beat change. THE STARS in the window: "Skip the entrance. Walk over and say *hi*."
 //   ~10.4  last line: "Less entrance, more *hi*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK } from '../../n3ae01/amkit.js'
 

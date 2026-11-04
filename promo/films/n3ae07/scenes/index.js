@@ -1,8 +1,8 @@
-// n3ae07 · 3 AM IN WINTER 7: "Libra moves the couch for a date night in" (18 s vertical, star_advice trial reel, lofi Ebm).
+// n3ae07 · 3 AM IN WINTER 7: "Libra moves the couch for a date night in" (16 s vertical, star_advice trial reel, lofi Ebm).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "Date night tomorrow. | *Libra* is redecorating."  A little couch slides left and right with each thought; fourteen candles pop up along the floor.
 //   1.5 / 3.6 / 5.7   thoughts: couch *here*? · no… *there*. · candles: 1, 2, 3… *14*.
-//   7.5    card cut. THE STARS in the window: "They're coming to see *you*, not the couch."
+//   7.5    beat change. THE STARS in the window: "They're coming to see *you*, not the couch."
 //   ~10.4  last line: "They're coming for *you*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK, lerp, ease, prog } from '../../n3ae01/amkit.js'
 

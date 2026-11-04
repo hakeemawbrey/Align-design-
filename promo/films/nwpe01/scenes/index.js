@@ -1,9 +1,9 @@
-// nwpe01 · WINTER STARTER PACK 1: "Winter starter pack: Aries" (15 s vertical, star_advice trial reel, jazzy C).
+// nwpe01 · WINTER STARTER PACK 1: "Winter starter pack: Aries" (13 s vertical, star_advice trial reel, jazzy C).
 // Rows: promo/films/next30/b40.md. The format engine is ../wpkit.js (shared by nwpe01–nwpe12).
 //   0      "Winter starter pack: | *Aries*" over the frosted grid; ♈ Aries shivering bottom-left, mid-hop.
 //   1.16   shorts in the snow · 2.54 a snowball, already thrown · 3.93 cocoa, gulped (ow)
 //   5.04   "and the *rare* item…"  5.60 the twist: racing to the first snow… and letting them win (♎ Libra).
-//   6.71   card cut → ♎ LIBRA: "you let me *win*?"  last line: "Let them *win* one."  ♓ Pisces cries all film.
+//   6.71   beat change → ♎ LIBRA: "you let me *win*?"  last line: "Let them *win* one."  ♓ Pisces cries all film.
 import { makeWP } from '../wpkit.js'
 
 const WP = makeWP({

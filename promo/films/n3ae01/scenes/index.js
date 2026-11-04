@@ -1,8 +1,8 @@
-// n3ae01 · 3 AM IN WINTER 1: "Aries, first snow, 3 AM idea" (18 s vertical, star_advice trial reel, lofi Am).
+// n3ae01 · 3 AM IN WINTER 1: "Aries, first snow, 3 AM idea" (16 s vertical, star_advice trial reel, lofi Am).
 // Rows: promo/films/next30/b40.md. The format engine is ../amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. First snow. | *Aries* is up."  ♈ Aries hops at the frosted window, nose to the glass.
 //   1.5    "SNOW!!"   3.6 "text them: *snowman*, now?" (the phone comes out)   5.7 "…it's *3 AM.*" (Aries freezes)
-//   7.5    card cut. THE STARS in the window: "Invite them for *tomorrow*. The snow will wait for you."
+//   7.5    beat change. THE STARS in the window: "Invite them for *tomorrow*. The snow will wait for you."
 //   ~10.4  last line: "Snow *keeps*."  ♓ Pisces across the street, crying at the snow the whole time.
 import { makeAM, R, INK, pop01, outK, clamp, prog } from '../amkit.js'
 

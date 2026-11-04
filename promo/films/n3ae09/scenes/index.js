@@ -1,8 +1,8 @@
-// n3ae09 · 3 AM IN WINTER 9: "Sag plans a second date across three mountains" (18 s vertical, star_advice trial reel, lofi Fm).
+// n3ae09 · 3 AM IN WINTER 9: "Sag plans a second date across three mountains" (16 s vertical, star_advice trial reel, lofi Fm).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. A map. | *Sag* has a date idea."  Sag holds up a big map; a cabin, a lake and a mountain pin pop on, joined by a dotted route.
 //   1.5 / 3.6 / 5.7   thoughts: second date idea: · a cabin! a lake! a *mountain*! · …for a *second* date?
-//   7.5    card cut. THE STARS in the window: "Big plans can wait. Start with a *walk* in the snow."
+//   7.5    beat change. THE STARS in the window: "Big plans can wait. Start with a *walk* in the snow."
 //   ~10.4  last line: "Start with a *walk*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK, lerp } from '../../n3ae01/amkit.js'
 

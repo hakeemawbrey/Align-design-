@@ -1,8 +1,8 @@
-// n3ae08 · 3 AM IN WINTER 8: "Scorpio writes it on the frosty window" (18 s vertical, star_advice trial reel, lofi Em).
+// n3ae08 · 3 AM IN WINTER 8: "Scorpio writes it on the frosty window" (16 s vertical, star_advice trial reel, lofi Em).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. Frost. | *Scorpio* has a feeling."  Scorpio writes "I LIKE Y" in the window frost, wipes it at "no.", then draws a small heart.
 //   1.5 / 3.6 / 5.7   thoughts: say it. · *no.* · …say it?
-//   7.5    card cut. THE STARS in the window: "Wait for daylight. Then say it *simply*, out loud."
+//   7.5    beat change. THE STARS in the window: "Wait for daylight. Then say it *simply*, out loud."
 //   ~10.4  last line: "Say it *plainly*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK, clamp, prog } from '../../n3ae01/amkit.js'
 

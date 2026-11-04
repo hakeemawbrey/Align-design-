@@ -1,8 +1,8 @@
-// nwpe04 · WINTER STARTER PACK 4: "Winter starter pack: Cancer" (15 s vertical, star_advice trial reel, jazzy Eb).
+// nwpe04 · WINTER STARTER PACK 4: "Winter starter pack: Cancer" (13 s vertical, star_advice trial reel, jazzy Eb).
 // Rows: promo/films/next30/b40.md. The format engine is ../../nwpe01/wpkit.js (shared by nwpe01–nwpe12).
 //   0      "Winter starter pack: | *Cancer*" over the frosted grid; the sign shivering bottom-left, mid-hop.
 //   items: a cookie tin of feelings · a candle that smells like home · a mug for every friend
-//   5.60   the twist: a spare scarf, just in case (with capricorn).  6.71 card cut → "you brought a *spare*?"
+//   5.60   the twist: a spare scarf, just in case (with capricorn).  6.71 beat change → "you brought a *spare*?"
 //   last line: "*Always* a spare."  ♓ Pisces cries at the bottom all film.
 import { makeWP } from '../../nwpe01/wpkit.js'
 

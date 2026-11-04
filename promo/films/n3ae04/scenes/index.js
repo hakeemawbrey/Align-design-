@@ -1,8 +1,8 @@
-// n3ae04 · 3 AM IN WINTER 4: "Cancer knits a scarf after two dates" (18 s vertical, star_advice trial reel, lofi Cm).
+// n3ae04 · 3 AM IN WINTER 4: "Cancer knits a scarf after two dates" (16 s vertical, star_advice trial reel, lofi Cm).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "3 AM. Row 40. | *Cancer* is knitting."  Cancer with two needles and a striped scarf that keeps growing down to the floor.
 //   1.5 / 3.6 / 5.7   thoughts: almost done… · it's for *them* · we've had *two* dates.
-//   7.5    card cut. THE STARS in the window: "A scarf is *warmth*, not a promise. Give it lightly."
+//   7.5    beat change. THE STARS in the window: "A scarf is *warmth*, not a promise. Give it lightly."
 //   ~10.4  last line: "It's a scarf, not a *vow*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK } from '../../n3ae01/amkit.js'
 

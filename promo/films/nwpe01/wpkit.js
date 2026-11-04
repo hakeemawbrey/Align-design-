@@ -2,7 +2,7 @@
 // Adapted from the Trends STARTER PACK engine (trpack*/scenes/packkit.js, copied, not shared): one pack per sign, winter
 // only, 15 s. Lives in the first film's folder; nwpe02–nwpe12 import it from here ('../../nwpe01/wpkit.js').
 //
-// The format (15 s, story 0–10.6, then the shared end card, default CTA):
+// The format (13 s, story 0–10.6, then the short 2.4 s end card, default CTA; no Align card transition):
 //   0          frame 0 is the thumbnail: the caption ("Winter starter pack: | *Aries*") is already up over a frosted
 //              2×2 grid of empty slots (slot 4 a pulsing "?"), the sign is mid-hop bottom-left, shivering, THE STARS
 //              and ♓ Pisces peek over the box (Pisces cries the whole time). Snow falls over everything.
@@ -10,7 +10,7 @@
 //              THE STARS: "every <sign> winter comes with *this*." (2.7)
 //   5.04       the breakdown: the "?" rattles. THE STARS: "and the *rare* item…"
 //   5.60       the twist slaps in with a gold border and a heart: the sign and someone else, one small loving thing.
-//   6.71       the one card cut → the payoff: the twist sticker fills the frame, the someone says one line, then the
+//   6.71       the beat change → the payoff: the twist sticker fills the frame, the someone says one line, then the
 //              last line pops at the top and holds to the end card.
 //
 //   makeWP(cfg) → { DURATION, SCENES, CUES, T, MUSIC }
@@ -21,8 +21,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar, STAR } from '../startalk.js'
 import { popText } from '../lesson.js'
 
@@ -310,7 +310,7 @@ const CPS = 30
 
 /** the schedule (pure; shared by picture and sound) */
 export function schedule(cfg) {
-  const D = 15, STORY_END = D - ENDCARD_LEN
+  const D = 13, STORY_END = D - ENDCARD_SHORT_LEN   // the short end card (2.4 s); no Align card transition
   const T = { D, STORY_END, cap: -1, bug: -1, slots: -1, items: [BEAT(1), BEAT(3.5), BEAT(6)], brk: BEAT(8), twist: BEAT(9), cut: BEAT(11) }
   T.capOut = [r3(T.cut - 0.25), r3(T.cut - 0.04)]
   T.out = [r3(STORY_END - 0.4), r3(STORY_END - 0.05)]
@@ -499,9 +499,8 @@ export function makePack(cfg) {
     }
   }
 
-  // one card-cut candidate (a short film): the cut into the payoff
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (owner change, 4 Nov): T.cut is the film's own beat change
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [659.25, 739.99, 830.61, 987.77, 1108.73, 1318.51, 1479.98]
   const wordPops = (t0, n, gap, base = 0, gain = 0.024) => Array.from({ length: n }, (_, i) => ['pop', r3(t0 + i * gap), NOTE[(base + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
@@ -526,9 +525,8 @@ export function makePack(cfg) {
     ...wordPops(T.last, 4, 0.1, 2, 0.03), ['pluck', r3(T.last + 0.45), 1318.51, 0.045, 0.6, 0], ['glitter', r3(T.last + 0.05), r3(T.last + 0.6)],
     ['whoosh', T.out[0], 0.35, 0.025],
     ...(cfg.cues ? cfg.cues(T) : []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ].filter(c => c[1] >= 0)
-  const MUSIC = { drop: T.items[0], breakdown: [T.brk], lift: [T.twist], outroAt: T.D - ENDCARD_LEN }
+  const MUSIC = { drop: T.items[0], breakdown: [T.brk], lift: [T.twist], outroAt: T.D - ENDCARD_SHORT_LEN }
   return { DURATION: T.D, SCENES, CUES, T, MUSIC }
 }

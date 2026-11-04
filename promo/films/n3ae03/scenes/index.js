@@ -1,8 +1,8 @@
-// n3ae03 · 3 AM IN WINTER 3: "Gemini counts snowflakes, not sheep" (18 s vertical, star_advice trial reel, lofi Bm).
+// n3ae03 · 3 AM IN WINTER 3: "Gemini counts snowflakes, not sheep" (16 s vertical, star_advice trial reel, lofi Bm).
 // Rows: promo/films/next30/b40.md. The format engine is ../../n3ae01/amkit.js (shared by n3ae01–n3ae12).
 //   0      "Can't sleep. | *Gemini* counts snowflakes."  Gemini at the window counting; a FLAKES counter by the window climbs 1 → 2 → 48.
 //   1.5 / 3.6 / 5.7   thoughts: flake 1: do they like *snow*? · flake 2: cats or dogs? · flake 48: their *middle name*?
-//   7.5    card cut. THE STARS in the window: "Save them for coffee. Ask *one* at a time."
+//   7.5    beat change. THE STARS in the window: "Save them for coffee. Ask *one* at a time."
 //   ~10.4  last line: "One question *at a time*."  ♓ Pisces cries all film (in the lit window across the street).
 import { makeAM, R, INK, MONO, INTER, pop01, outK } from '../../n3ae01/amkit.js'
 
