@@ -1,38 +1,83 @@
 {
  "nsge01": {
-  "video": "/_blob/56e3b63f18907ca4cee8ade4646bdcbd",
-  "poster": "/_blob/8d96380115ee35689fd739ac397cdc93",
+  "video": "/_blob/fc5e49f6ae6dfab25e6a62e83085428e",
+  "poster": "/_blob/04ff3c5ae8229abc561a4dad1e45f5e5",
   "title": "Minneapolis: never going outside",
-  "len": 30,
+  "len": 28,
   "series": "snow",
   "episode": 1,
   "caption": "Virgo found a way to cross a whole city without touching snow, and somehow also without meeting a single person. Which sign in your life packs the backup map?"
  },
  "nsge02": {
-  "video": "/_blob/b6c40df3e99f6f0a616c4b5db25c2543",
-  "poster": "/_blob/54426c6d765691a3b7e55e007b852df2",
+  "video": "/_blob/3f5fbf328b955ae65d15acd74be2f0cf",
+  "poster": "/_blob/54f41c1be1f35177e85468e916bbe973",
   "title": "Montreal: the underground crush",
-  "len": 30,
+  "len": 28,
   "series": "snow",
   "episode": 2,
   "caption": "Cancer heard 'underground city' and moved in emotionally. It took one Bonjour-hi to bring them back up. Who's the friend you have to coax out of the tunnel?"
  },
  "nsge03": {
-  "video": "/_blob/843c687047d1a57177023349998d6ebb",
-  "poster": "/_blob/9baacfed5f87982921ce806b407f17a1",
+  "video": "/_blob/e1d57a48201581ff9d533597435e73a1",
+  "poster": "/_blob/08295feacca6a7b4d97e78b76ede722d",
   "title": "Boston: the parking-spot chair",
-  "len": 30,
+  "len": 28,
   "series": "snow",
   "episode": 3,
   "caption": "Aries thinks a lawn chair can reserve anything, including a skate date with someone they haven't met. Spoiler: you just ask. What's the pettiest thing you've ever saved a spot for?"
  },
  "nsge04": {
-  "video": "/_blob/f9c335ffe4bbe8ca3903916d1a79e7e8",
-  "poster": "/_blob/510153cc8fecda1269360263e924bb82",
+  "video": "/_blob/0e328e827b230102e9bf677e1d37193d",
+  "poster": "/_blob/94f34ad50b7c9edefdb74625111a3109",
   "title": "Denver: love at the summit",
-  "len": 30,
+  "len": 28,
   "series": "snow",
   "episode": 4,
   "caption": "Sagittarius went looking for love on a mountaintop while the cozy one was waiting in town with cocoa. Tag the friend who always needs a summit."
+ },
+ "nsge05": {
+  "video": "/_blob/a3619a74c6ab0f3f9623ddfd659267af",
+  "poster": "/_blob/a8fbcf70f177acf548e93ee79d759509",
+  "title": "Philadelphia: mixed signals, twisted",
+  "len": 28,
+  "series": "snow",
+  "episode": 5,
+  "caption": "Gemini's texts come with more twists than a soft pretzel. The fix was a plain sentence and a day of the week. Which sign texts in riddles?"
+ },
+ "nsge06": {
+  "video": "/_blob/f067a3e73d8d29476f203165c92bde96",
+  "poster": "/_blob/5bd4a4d5ff5bcaba462cce8a57f0d32f",
+  "title": "Pittsburgh: which bridge?",
+  "len": 28,
+  "series": "snow",
+  "episode": 6,
+  "caption": "Libra can't pick a bridge in the city of bridges. The trick: take the one with someone kind (and a pierogi) on the other side. Which sign needs the longest to decide?"
+ },
+ "nsge07": {
+  "video": "/_blob/9e9570c99cc830b08a33792322abf901",
+  "poster": "/_blob/31fdfdda58f4c48bc1f19bd5cadc4eb7",
+  "title": "Anchorage: the long-night stare",
+  "len": 28,
+  "series": "snow",
+  "episode": 7,
+  "caption": "Scorpio treats the long winter nights like a staring contest, and the moose is winning. Turns out being seen beats being mysterious. Who's the most intense sign in your group?"
+ },
+ "nsge08": {
+  "video": "/_blob/aa3d9b8f1b932be705ab6e80c87cf36c",
+  "poster": "/_blob/1b519f65cee164df3306ef6f310c2bbc",
+  "title": "Vancouver: the snow globe that rains",
+  "len": 28,
+  "series": "snow",
+  "episode": 8,
+  "caption": "Taurus shook the snow globe and got rain, which feels very on brand for this city. Half an umbrella later, soup counts as a date. Who's your rainy-day sign?"
+ },
+ "nsge09": {
+  "video": "/_blob/caa12fc6cc7e333b8763f24e3357ec92",
+  "poster": "/_blob/c625ae6603d03f1e7803ecdd479c7eab",
+  "title": "Milwaukee: the frozen photo shoot",
+  "len": 28,
+  "series": "snow",
+  "episode": 9,
+  "caption": "Leo posed on the frozen lake so long the smile froze in place. The one worth meeting asked what Leo actually likes. Which sign has a good side they defend?"
  }
 }
