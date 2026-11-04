@@ -8,8 +8,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -181,7 +181,7 @@ export function shadesCells(ctx, up = 0) {
 
 
 export const GREEN = '#7be3a0', SKYBLUE = '#7fd0ff', CPS = 30
-export { el, fill, drawSky, drawGrain, layerCanvas, SKY_H, GRAIN_H, ENDCARD_LEN, buildEndcard, endcardCues, cardCuts, cardCutCues, cardFrame, dialogueBox, talkCues, talkHops, popText }
+export { el, fill, drawSky, drawGrain, layerCanvas, SKY_H, GRAIN_H, ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues, cardFrame, dialogueBox, talkCues, talkHops, popText }
 
 /** a sign star drawer: star(x, t, { x, y, s, mood, look, hops, pop, ... }) */
 export function starOf(sign, seed = 3, glow = 1) {
@@ -344,7 +344,9 @@ export function checkMark(x, t, cx, cy, t0, { s = 1, ok = true, rot = -0.12, out
 //   cfg.cuts [{ t, kind }] (card cut candidates) · cfg.draw(x, t) under the top layer · cfg.top(tx, t) over the DOM text
 //   cfg.dom(root) → [{ update(t) }] (DOM layers between the canvases) · cfg.cues [] · cfg.skyZoom (start zoom)
 export function makeFilm(cfg) {
-  const DURATION = cfg.duration, STORY_END = DURATION - ENDCARD_LEN
+  // CHANGE (4 Nov, NEXT30-BUILD.md): the short 2.4 s end card and no card transition. cfg.duration is the slate
+  // length (story + the old 4.4 s card); the film is 2.0 s shorter, with the story timings unchanged.
+  const DURATION = cfg.duration - (ENDCARD_LEN - ENDCARD_SHORT_LEN), STORY_END = DURATION - ENDCARD_SHORT_LEN
   const OUT = cfg.out || [STORY_END - 0.5, STORY_END - 0.1]
   async function build(stage) {
     try {
@@ -384,9 +386,9 @@ export function makeFilm(cfg) {
       },
     }
   }
-  const CUTS = cfg.cuts || []
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), ...(CUTS.length ? [cardCuts(CUTS)] : [])]
-  const CUES = [...(cfg.cues || []), ...(cfg.lines ? talkCues(cfg.lines, { cps: CPS }) : []), ...(CUTS.length ? cardCutCues(CUTS) : []), ...endcardCues(STORY_END)]
+  // cfg.cuts (the old card-cut candidates) are ignored: no Align card transition plays
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
+  const CUES = [...(cfg.cues || []), ...(cfg.lines ? talkCues(cfg.lines, { cps: CPS }) : []), ...endcardCues(STORY_END, { short: true })]
   return { DURATION, STORY_END, SCENES, CUES }
 }
 /** word-pop sounds for a headline popping word by word */
