@@ -1,5 +1,5 @@
-// nvse17: SIGN VS SIGN, "Who handles a sad movie better?" ♏ Scorpio vs ♓ Pisces (18 s trial reel, b46,
-// music: cinematic · Cm). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse17: SIGN VS SIGN, "Who handles a sad movie better?" ♏ Scorpio vs ♓ Pisces (16 s trial reel, b46,
+// music: cinematic · Cm). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 // Pisces plays this one, so it cries on its own side (no corner Pisces). Generic movie only: no titles.
 //   hook: a screen glows blue between them.
 //   ROUND 1 ♏ "doesn’t cry. *(cries.)*" on the couch, then one single tear. "I’m fine. it’s dusty." → "…ok, one tear."
