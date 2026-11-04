@@ -1,9 +1,9 @@
-// nthe25: THE THREAD, episode 25, "Gift reveals" (25 s vertical, promo/films/next30/b06.md, music: funk · Bb)
-// Story 0–20.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe25: THE THREAD, episode 25, "Gift reveals" (23 s vertical, promo/films/next30/b06.md, music: funk · Bb)
+// Story 0–20.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Gift exchange: | the reveals."  ♒ Aquarius mid-unwrap, paper flying. ♉ posts socks from ♊.
 //   0.8   ♊ "do you like them / they are warm / there is a second pair" · ♉ wears both pairs at once.
 //   3.4   ♒ posts a lamp shaped like ♌. ♓ voice note, sobbing (the socks). ♌ "you're welcome".
-//   7.3   "‘How do I *react?*’"  card cut 10.7 → ♍ "thank them for the thought. the thought is real." (gold)
+//   7.3   "‘How do I *react?*’"  ♍ "thank them for the thought. the thought is real." (gold)
 //  12.6   ♌ "the thought was me." ♒ thanks them for real; "ok it's growing on me". ♌ pins the lamp.
 //  17.2   "Thank *the thought*."
 import { threadFilm, drawProp } from '../../nthe17/scenes/threadkit.js'
@@ -22,7 +22,7 @@ function lamp(x, X, Y, w, h, t) {
   x.fillStyle = '#1b1236'; x.fillRect(X + w / 2 - 34, Y + h / 2 - 70, 14, 18); x.fillRect(X + w / 2 + 20, Y + h / 2 - 70, 14, 18)
 }
 const EP = {
-  duration: 25,
+  duration: 23,
   heads: [
     { text: 'Gift exchange: | *the reveals.*', at: -0.9, out: [3.4, 3.65], size: 92 },
     { text: 'Socks. *Many* socks.', at: 3.7, out: [6.9, 7.15], size: 96 },

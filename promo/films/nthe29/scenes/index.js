@@ -1,9 +1,9 @@
-// nthe29: THE THREAD, episode 29, "Forwarded" (20 s vertical, promo/films/next30/b06.md, music: dreamy · Db)
-// Story 0–15.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe29: THE THREAD, episode 29, "Forwarded" (18 s vertical, promo/films/next30/b06.md, music: dreamy · Db)
+// Story 0–15.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Pisces forwarded | their date's voice note."  ♓ Pisces mid-sob, phone to mouth (the poster, centre stage).
 //   0.6   ♈ "bracing" · ♏ plays it: "everyone stay calm." It's a song: their date made one up about Pisces' name.
 //   4.6   the lyrics (photo) · ♊ triple · Pisces: "is it too much if I tell them I cried?"
-//   9.5   card cut → ♍ "no. tell them what it meant." (gold)
+//   9.5   ♍ "no. tell them what it meant." (gold)
 //  11.0   Pisces sends them a 1-second voice note: "thank you" (sob).  "Happy tears, *sent*."
 import { threadFilm, drawProp } from '../../nthe17/scenes/threadkit.js'
 
@@ -17,7 +17,7 @@ function card(x, X, Y, w, h, t) {
   drawProp(x, 'heart', X + w / 2 + 110, Y + h / 2 + 50, 5)
 }
 const EP = {
-  duration: 20,
+  duration: 18,
   heads: [
     { text: 'Pisces *forwarded* | their date’s voice note.', at: -0.9, out: [3.3, 3.55], size: 84 },
     { text: 'It’s *a song.*', at: 3.6, out: [7.1, 7.35], size: 100 },

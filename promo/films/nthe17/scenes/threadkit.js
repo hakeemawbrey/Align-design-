@@ -4,7 +4,7 @@
 // at module top level (the sound build imports the films' scenes/index.js in node).
 //
 //   threadFilm(EP) → { DURATION, SCENES, CUES }     one episode from data:
-//     EP.duration           total length (includes the 4.4 s end card)
+//     EP.duration           total length (includes the 2.4 s short end card; no card-cut transition)
 //     EP.heads              [{ text, at, out: [a, b], size?, accent?, late?, top? }]  big popText captions (top of frame);
 //                           the hook is heads[0] (at < 0 so it is fully on screen at frame 0)
 //     EP.items              the thread, in time order (see drawItem):
@@ -19,15 +19,15 @@
 //     EP.typing             [{ who, a, b }]  "♍ Virgo is typing…" above the input bar
 //     EP.pins               [{ t, who, text }]  the pinned bar under the header (latest wins)
 //     EP.stage(x, t, K)     draws the little stage under the chat (K = kit helpers); default: the poster + Pisces
-//     EP.cuts               card-cut candidates (cardfx keeps the middle one)
+//     EP.cuts               (unused since the 4 Nov change: no card-cut transition)
 //     EP.cues               extra sound cues
 //     EP.out                [a, b] when the chat + stage pop out (before the end card)
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, drawPixelStar, layerCanvas } from '../../sky.js'
 import { SKY_H, GRAIN_H, SIGNS, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -494,7 +494,7 @@ function stageFloor(x, t, k) {
 
 // ── the film
 export function threadFilm(EP) {
-  const DURATION = EP.duration, STORY_END = DURATION - ENDCARD_LEN
+  const DURATION = EP.duration, STORY_END = DURATION - ENDCARD_SHORT_LEN
   const OUT = EP.out || [STORY_END - 0.5, STORY_END - 0.1]
   async function build(stage) {
     try {
@@ -530,8 +530,8 @@ export function threadFilm(EP) {
       },
     }
   }
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(EP.cuts)]
-  const CUES = [...threadCues(EP), ...cardCutCues(EP.cuts), ...endcardCues(STORY_END)].sort((a, b) => a[1] - b[1])
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
+  const CUES = [...threadCues(EP), ...endcardCues(STORY_END, { short: true })].sort((a, b) => a[1] - b[1])
   return { DURATION, SCENES, CUES, STORY_END }
 }
 
@@ -549,7 +549,7 @@ export function threadCues(EP) {
   for (const h of EP.heads) {
     if (h.at >= 0) out.push(...wordPops(h.at, nWords(h.text) - (h.late || 0), h.gap ?? 0.07, 0, 0.024))
     if (h.late && (h.lateAt ?? h.at + 0.3) >= 0) out.push(['pop', h.lateAt ?? h.at + 0.3, 1174.66, 0.045, 0], ['pop', (h.lateAt ?? h.at + 0.3) + 0.1, 1567.98, 0.035, 0])
-    if (h.out && h.out[0] < EP.duration - ENDCARD_LEN - 0.5) out.push(['whoosh', h.out[0], 0.3, 0.02])
+    if (h.out && h.out[0] < EP.duration - ENDCARD_SHORT_LEN - 0.5) out.push(['whoosh', h.out[0], 0.3, 0.02])
   }
   EP.items.forEach((it, i) => {
     if (it.t < 0) return
@@ -565,6 +565,6 @@ export function threadCues(EP) {
   })
   for (const p of EP.pins || []) if (p.t >= 0) out.push(['tick', p.t, 0.05], ['pluck', p.t + 0.02, 1318.51, 0.035, 0.4, -0.3])
   for (const ty of EP.typing || []) for (let s = ty.a; s < ty.b - 0.1; s += 0.14) out.push(['tick', +s.toFixed(3), 0.012])
-  out.push(['whoosh', (EP.out || [EP.duration - ENDCARD_LEN - 0.5])[0], 0.35, 0.03])
+  out.push(['whoosh', (EP.out || [EP.duration - ENDCARD_SHORT_LEN - 0.5])[0], 0.35, 0.03])
   return [...out, ...(EP.cues || [])]
 }

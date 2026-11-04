@@ -1,9 +1,9 @@
-// nthe27: THE THREAD, episode 27, "Sixty photos" (25 s vertical, promo/films/next30/b06.md, music: lofi · Eb)
-// Story 0–20.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe27: THE THREAD, episode 27, "Sixty photos" (23 s vertical, promo/films/next30/b06.md, music: lofi · Eb)
+// Story 0–20.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Sag's back. With photos."  ♐ Sag mid-wave, snow on the backpack. Photo 1 of 60: the mountains (ep 19's pin).
 //   0.8   ♋ "WELCOME BACK" · photo: their person, happy-crying · ♓ voice note, sobbing · ♊ triple.
 //   6.2   Sag: already planning the next one. "they said they're tired?"  ♈ "next trip: tomorrow"
-//  10.7   card cut → ♍ "a quiet night is also a trip. ask what they need." (gold)
+//  10.7   ♍ "a quiet night is also a trip. ask what they need." (gold)
 //  12.6   "asked. blanket, soup, one film." → "booked. destination: the couch."  "Staying in is *a destination*."
 import { threadFilm, drawProp } from '../../nthe17/scenes/threadkit.js'
 import { drawStarChar } from '../../startalk.js'
@@ -21,7 +21,7 @@ function cry(x, X, Y, w, h, t) {
   drawStarChar(x, X + w / 2, Y + h * 0.55, 170, t, { color: '#ffb38a', mood: 'happy', seed: 52, glow: 0.5 })
 }
 const EP = {
-  duration: 25,
+  duration: 23,
   heads: [
     { text: 'Sag’s back. *With photos.*', at: -0.9, out: [3.4, 3.65], size: 92 },
     { text: 'The surprise: *worked.*', at: 3.7, out: [7.3, 7.55], size: 92 },

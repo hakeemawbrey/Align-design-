@@ -1,10 +1,10 @@
-// nthe30: THE THREAD, episode 30, "Dietary needs" (25 s vertical, promo/films/next30/b06.md, music: jazzy · D)
-// Story 0–20.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe30: THE THREAD, episode 30, "Dietary needs" (23 s vertical, promo/films/next30/b06.md, music: jazzy · D)
+// Story 0–20.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Cancer: ‘dietary needs. go.’"  ♋ Cancer mid-stir at a big pot (the year-end dinner).
 //   0.6   ♉ "yes" · ♈ "spicy. very spicy." · ♒ "something no one has ever tried" · ♍ a spreadsheet · ♊ triple ·
 //         ♓ voice note, sobbing (chopping onions).
 //   7.0   Cancer wants to surprise their partner with the partner's family recipe. What if it's not like theirs?
-//  10.7   card cut → ♍ "ask them to teach you. cooking it together is the gift." (gold)
+//  10.7   ♍ "ask them to teach you. cooking it together is the gift." (gold)
 //  12.6   "but the surprise" · ♑ "agenda item: the surprise is that you asked."
 //  14.9   The partner teaches; Cancer hands them a spoon; they're humming.  "Let them *stir*."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
@@ -21,7 +21,7 @@ function sheet(x, X, Y, w, h, t) {
   for (let j = 1; j < 4; j++) { x.beginPath(); x.moveTo(X, Y + 34 * j + 10); x.lineTo(X + w, Y + 34 * j + 10); x.stroke() }
 }
 const EP = {
-  duration: 25,
+  duration: 23,
   heads: [
     { text: 'Cancer: *‘dietary needs. go.’*', at: -0.9, out: [3.4, 3.65], size: 84 },
     { text: 'The chat: *very specific.*', at: 3.7, out: [7.0, 7.25], size: 88 },

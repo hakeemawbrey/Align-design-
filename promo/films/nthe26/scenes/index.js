@@ -1,9 +1,9 @@
-// nthe26: THE THREAD, episode 26, "New season, new me" (25 s vertical, promo/films/next30/b06.md, music: cinematic · Cm)
-// Story 0–20.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js. (No dates on screen.)
+// nthe26: THE THREAD, episode 26, "New season, new me" (23 s vertical, promo/films/next30/b06.md, music: cinematic · Cm)
+// Story 0–20.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js. (No dates on screen.)
 //   0.00  "Capricorn: | ‘sharing feelings now.’"  It's Capricorn season. ♑ Capricorn mid-type, stiff as a board.
 //   0.8   ♏ "who is this" · ♊ "WHAT / are you ok / screenshotting" · ♓ voice note, sobbing ("they're growing").
 //   4.6   feeling 1: meeting their partner's friends this week. Nervous. Capricorn's prep doc: a résumé.
-//  10.7   card cut → ♍ "bring a question, not a résumé. ask about the things they love." (gold)
+//  10.7   ♍ "bring a question, not a résumé. ask about the things they love." (gold)
 //  12.6   "noted. deleting the résumé." → "asked about their dog. three new friends."  "Questions, *not* a résumé."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
 
@@ -16,7 +16,7 @@ function resume(x, X, Y, w, h, t) {
   for (let r = 0; r < 7; r++) { x.fillStyle = r % 3 === 0 ? '#5a5f78' : '#b8bdcc'; x.fillRect(px + 16, py + 50 + r * 18, r % 3 === 0 ? 120 : 200, 7) }
 }
 const EP = {
-  duration: 25,
+  duration: 23,
   heads: [
     { text: 'Capricorn: | *‘sharing feelings now.’*', at: -0.9, out: [3.4, 3.65], size: 88 },
     { text: 'The chat: *stunned.*', at: 3.7, out: [6.9, 7.15], size: 96 },

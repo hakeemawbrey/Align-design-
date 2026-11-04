@@ -1,10 +1,10 @@
-// nthe24: THE THREAD, episode 24, "The coat room" (30 s vertical, promo/films/next30/b06.md, music: synthwave · F#m)
-// Story 0–25.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe24: THE THREAD, episode 24, "The coat room" (28 s vertical, promo/films/next30/b06.md, music: synthwave · F#m)
+// Story 0–25.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Libra's texting | from the coat room."  ♎ Libra peeking out from behind a rail of coats, phone up.
 //         It's Libra's own party; their date (from episode 17) is talking to Libra's work friends. Libra is nervous.
 //   1.0   ♈ "go stand next to them" · ♏ "are they having fun? look." · Libra peeks: a photo of the party, the plus one
 //         laughing. ♓ voice note from home, sobbing. ♊ triple. Libra: "what if they're fine without me?"
-//  12.2   card cut → ♍ "go back out. bring them some water, check in with a smile." (gold)
+//  12.2   ♍ "go back out. bring them some water, check in with a smile." (gold)
 //  14.4   Libra goes (steps out from the coats). ♑ "status update please."
 //  17.4   "they saved me a seat. next to them. with my name on a napkin."  "Saved *a seat*."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
@@ -19,7 +19,7 @@ function party(x, X, Y, w, h, t) {
   drawStarChar(x, X + w * 0.8, Y + h * 0.64, 110, t, { color: '#c9a6ff', mood: 'wink', seed: 43, glow: 0.5 })
 }
 const EP = {
-  duration: 30,
+  duration: 28,
   heads: [
     { text: 'Libra’s texting | from *the coat room.*', at: -0.9, out: [3.8, 4.05], size: 88 },
     { text: 'The plus one is *mingling.*', at: 4.1, out: [8.3, 8.55], size: 86 },

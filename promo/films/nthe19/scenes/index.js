@@ -1,9 +1,9 @@
-// nthe19: THE THREAD, episode 19, "No context" (20 s vertical, promo/films/next30/b06.md, music: funk · E)
-// Story 0–15.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe19: THE THREAD, episode 19, "No context" (18 s vertical, promo/films/next30/b06.md, music: funk · E)
+// Story 0–15.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Sag sent a pin. | No context."  A map pin to a snowy mountain town. ♐ Sag mid-jump, backpack on.
 //   0.8   ♊ guesses three places in one bubble · ♏ "who's it for." · Sag: a surprise trip for their person.
 //   4.1   ♓ voice note 0:03, sobbing. ♈ "BOOK IT".  "‘Do I just… book it?’"
-//   8.9   card cut → 9.0 ♍ "surprise them with the place, not the dates. ask them to keep a weekend free." (gold)
+//   8.9   9.0 ♍ "surprise them with the place, not the dates. ask them to keep a weekend free." (gold)
 //  10.9   Sag texts them: "free! what for??"  "Keep the *weekend* free."
 import { threadFilm, drawBits, drawProp } from '../../nthe17/scenes/threadkit.js'
 
@@ -20,7 +20,7 @@ function mountains(x, X, Y, w, h, t) {
   drawProp(x, 'pin', X + w * 0.56, Y + h * 0.5 - b, 7)
 }
 const EP = {
-  duration: 20,
+  duration: 18,
   heads: [
     { text: 'Sag sent a pin. | *No context.*', at: -0.9, out: [3.0, 3.25], size: 92 },
     { text: 'The chat: *guessing.*', at: 3.3, out: [6.3, 6.55], size: 92 },

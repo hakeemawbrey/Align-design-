@@ -1,14 +1,14 @@
-// nthe28: THE THREAD, episode 28, "Three threads" (20 s vertical, promo/films/next30/b06.md, music: chiptune · G)
-// Story 0–15.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe28: THE THREAD, episode 28, "Three threads" (18 s vertical, promo/films/next30/b06.md, music: chiptune · G)
+// Story 0–15.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Three threads. One Gemini."  Three questions at once (♉ cookies, ♌ party photos, ♏ "should I tell them I
 //         like them?"). ♊ Gemini mid-type with two phones.
 //   3.4   Gemini answers all three in ONE bubble: chocolate chip / yes / tell them. ♏ "wait. was that for me?"
-//   7.25  card cut → ♍ "Gemini's right. somehow. tell them kindly. no deadline." (gold)
+//   7.25  ♍ "Gemini's right. somehow. tell them kindly. no deadline." (gold)
 //   9.2   ♏ "told them. they like me too." · "GEMINI is taking full credit".  "*Accidentally* wise."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
 
 const EP = {
-  duration: 20,
+  duration: 18,
   heads: [
     { text: 'Three threads. | *One* Gemini.', at: -0.9, out: [3.2, 3.45], size: 96 },
     { text: 'One bubble. *Three* answers.', at: 3.5, out: [7.0, 7.25], size: 86 },

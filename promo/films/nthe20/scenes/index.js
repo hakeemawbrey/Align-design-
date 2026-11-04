@@ -1,15 +1,15 @@
-// nthe20: THE THREAD, episode 20, "Any other business" (25 s vertical, promo/films/next30/b06.md, music: jazzy · F)
-// Story 0–20.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe20: THE THREAD, episode 20, "Any other business" (23 s vertical, promo/films/next30/b06.md, music: jazzy · F)
+// Story 0–20.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Capricorn added an agenda to the group chat."  ♑ Capricorn mid-hop, clipboard up. AGENDA: party budget ·
 //         gift exchange rules · feelings (5 min).
 //   0.9   ♈ "no budget. vibes." (tick) · ♒ "mystery gifts, no rules" (tick) · ♎ "item 3??"
 //   4.4   Capricorn: their partner said "I love you" first. Capricorn replied "noted." ♓ voice note, sobbing. ♊ triple.
-//  10.9   card cut → ♍ "tell them what 'noted' meant. it's fixable." (gold)
+//  10.9   ♍ "tell them what 'noted' meant. it's fixable." (gold)
 //  14.9   "said it back. minuted." item 3 ticks. ♌ pins it (not their own, for once).  "Item three: *said it*."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
 
 const EP = {
-  duration: 25,
+  duration: 23,
   heads: [
     { text: 'Capricorn added an *agenda* | to the group chat.', at: -0.9, out: [3.5, 3.75], size: 76 },
     { text: 'Item three: *feelings.*', at: 3.8, out: [7.4, 7.65], size: 90 },

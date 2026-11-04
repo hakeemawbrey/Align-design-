@@ -1,16 +1,16 @@
-// nthe31: THE THREAD, episode 31, "Best moment" (30 s vertical, promo/films/next30/b06.md, music: dreamy · E)
-// Story 0–25.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe31: THE THREAD, episode 31, "Best moment" (28 s vertical, promo/films/next30/b06.md, music: dreamy · E)
+// Story 0–25.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Leo wants everyone's | best moment of the year."  ♌ Leo mid-pin (pinned their own question).
 //   0.8   callbacks: ♉ grandma's garden tour (18) · ♑ said it (20) · ♎ a saved seat (24) · ♐ they cried, good cry (27) ·
 //         ♏ they like me too (28) · ♊ "same / same / SAME (for you)" · ♓ voice note 0:58, sobbing.
 //   9.9   ♈ "mine was a bad year for love honestly."  ♋ "oh Aries"
-//  13.7   card cut → ♍ "you learned what you want. that counts. that's a good year." (gold)
+//  13.7   ♍ "you learned what you want. that counts. that's a good year." (gold)
 //  15.8   Aries: "…I did learn I want someone who laughs at my jokes." ♌ pins THAT.
 //  18.7   ♒ "mine was this chat."  "*Learning* counts."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
 
 const EP = {
-  duration: 30,
+  duration: 28,
   heads: [
     { text: 'Leo wants everyone’s | *best moment* of the year.', at: -0.9, out: [3.7, 3.95], size: 76 },
     { text: 'The *callbacks.*', at: 4.0, out: [9.6, 9.85], size: 104 },

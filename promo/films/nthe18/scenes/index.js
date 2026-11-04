@@ -1,9 +1,9 @@
-// nthe18: THE THREAD, episode 18, "Family on video" (25 s vertical, promo/films/next30/b06.md, music: lofi · Bb)
-// Story 0–20.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe18: THE THREAD, episode 18, "Family on video" (23 s vertical, promo/films/next30/b06.md, music: lofi · Bb)
+// Story 0–20.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Taurus has to meet the family. | On video."  ♉ Taurus mid-hop, phone up. The call is in ten minutes.
 //   0.8   ♈ "just be loud", ♑ an AGENDA (smile · compliment the food · ask one question), ♌ pins its own tip,
 //         ♓ voice note 0:05 sobbing, ♏ "the grandma decides."
-//   7.9   "‘What if they don't like me?’"  card cut 10.6 → ♍ "they're nervous too. ask about THEM." (gold)
+//   7.9   "‘What if they don't like me?’"  ♍ "they're nervous too. ask about THEM." (gold)
 //  12.2   the call starts (a little video window on the stage: a grandma star and her plants). ♊ triple reply.
 //  14.6   "grandma showed me every plant in her garden. we're best friends." The agenda ticks itself off.
 //  16.9   "Grandma *approved*."
@@ -12,7 +12,7 @@ import { drawStarChar } from '../../startalk.js'
 
 const PLANT = [['..L.L..', '.LLLLL.', 'LL.L.LL', '..LLL..', '...L...', 'PPPPPPP', '.PPPPP.', '.PPPPP.'], { L: '#5fd38a', P: '#c9783a' }]
 const EP = {
-  duration: 25,
+  duration: 23,
   heads: [
     { text: 'Taurus has to meet the family. | *On video.*', at: -0.9, out: [3.6, 3.85], size: 76 },
     { text: 'The chat: *preparing.*', at: 3.9, out: [7.6, 7.85], size: 92 },

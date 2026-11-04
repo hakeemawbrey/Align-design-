@@ -1,15 +1,15 @@
-// nthe21: THE THREAD, episode 21, "Wrong chat" (20 s vertical, promo/films/next30/b06.md, music: chiptune · C)
-// Story 0–15.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe21: THE THREAD, episode 21, "Wrong chat" (18 s vertical, promo/films/next30/b06.md, music: chiptune · C)
+// Story 0–15.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Aries posted the secret | in the group chat."  "WHO HAS VIRGO. I HAVE VIRGO. WHAT DO I GET VIRGO"
 //         ♈ Aries frozen mid-send, a gift box beside them.
 //   0.9   ♍ "I didn't see that." · ♌ pins it · ♊ "delete it / don't delete it / too late" · ♓ voice note, sobbing.
-//   6.85  card cut → ♋ "what's something you noticed about them?" (gold)
+//   6.85  ♋ "what's something you noticed about them?" (gold)
 //   8.4   Aries: "…their favourite mug is chipped."  (a chipped mug pops up on the stage)  ♍ is typing… and stops,
 //         then hearts it.  The mug gets wrapped.  "Noticed. *Wrapped*."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
 
 const EP = {
-  duration: 20,
+  duration: 18,
   heads: [
     { text: 'Aries posted the secret | *in the group chat.*', at: -0.9, out: [3.1, 3.35], size: 80 },
     { text: 'Virgo: *‘I didn’t see that.’*', at: 3.4, out: [6.6, 6.85], size: 80 },

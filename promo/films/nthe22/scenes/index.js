@@ -1,15 +1,15 @@
-// nthe22: THE THREAD, episode 22, "The poll" (25 s vertical, promo/films/next30/b06.md, music: pop · G)
-// Story 0–20.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe22: THE THREAD, episode 22, "The poll" (23 s vertical, promo/films/next30/b06.md, music: pop · G)
+// Story 0–20.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Cancer made a poll."  The year-end dinner poll (four nights). ♋ Cancer mid-hop with a ladle and a big pot.
 //   0.6   every vote lands on a different night; ♊ votes three times; ♑ "Thursday. agenda to follow."
 //   4.6   ♐ is away Friday (the surprise trip). ♓ voice note, sobbing at "everyone together".
-//   7.6   "‘Should I *cancel?*’"  card cut 10.1 → ♍ "pick the night most can do. save Sag a seat on video." (gold)
+//   7.6   "‘Should I *cancel?*’"  ♍ "pick the night most can do. save Sag a seat on video." (gold)
 //  11.8   ♐ "I'll be there. on a screen. in my best sweater." The rest move to Friday; the poll closes.
 //  16.4   "Dinner is *the people*."
 import { threadFilm } from '../../nthe17/scenes/threadkit.js'
 
 const EP = {
-  duration: 25,
+  duration: 23,
   heads: [
     { text: 'Cancer made a *poll.*', at: -0.9, out: [3.6, 3.85], size: 100 },
     { text: 'Everyone voted. | *Differently.*', at: 3.9, out: [7.4, 7.65], size: 88 },

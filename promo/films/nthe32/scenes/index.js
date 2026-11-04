@@ -1,10 +1,10 @@
-// nthe32: THE THREAD, episode 32 (finale), "Why so quiet?" (30 s vertical, promo/films/next30/b06.md, music: pop · C)
-// Story 0–25.6, then the shared end card. The look lives in ../../nthe17/scenes/threadkit.js.
+// nthe32: THE THREAD, episode 32 (finale), "Why so quiet?" (28 s vertical, promo/films/next30/b06.md, music: pop · C)
+// Story 0–25.6, then the short end card (2.4 s; no card-cut transition). The look lives in ../../nthe17/scenes/threadkit.js.
 //   0.00  "Why is the group chat | so quiet?"  ♓ Pisces alone with the phone, sniffling. The last messages: dinner at 7,
 //         ♐ "home!! on my way", ♍ "on my way". Then nothing. 10:16 PM. Pisces voice note: "why is it so quiet"
 //   6.7   ♋ posts ONE photo: all twelve at the year-end dinner table (Sag home). "sorry Pisces, we're all here! (you're
 //         next to me)" · ♓ "oh. hi."  The stage reveals the table: Pisces was sitting at it the whole time.
-//  10.9   "the bread burnt. I'm sorry."  11 stars are typing…  card cut 13.7 → ♍ "we came for you, not the bread." (gold)
+//  10.9   "the bread burnt. I'm sorry."  11 stars are typing…  ♍ "we came for you, not the bread." (gold)
 //  15.2   ♉ "also burnt bread is great" · ♌ pins the bread.
 //  18.7   ♑'s last agenda: "1. be here" (ticked).  "Group chat, *in person*."
 import { threadFilm, drawProp } from '../../nthe17/scenes/threadkit.js'
@@ -19,7 +19,7 @@ function table(x, X, Y, w, h, t) {
   drawProp(x, 'bread', X + w / 2, Y + h - 66, 5)
 }
 const EP = {
-  duration: 30,
+  duration: 28,
   heads: [
     { text: 'Why is the group chat | *so quiet?*', at: -0.9, out: [4.0, 4.25], size: 88 },
     { text: '*Hours* of nothing.', at: 4.3, out: [6.5, 6.75], size: 100 },

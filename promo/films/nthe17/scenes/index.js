@@ -1,17 +1,17 @@
-// nthe17: THE THREAD, episode 17, "Plus one?" (25 s vertical, promo/films/next30/b06.md, music: pop · D)
-// Story 0–20.6, then the shared end card. The look lives in ./threadkit.js (shared by nthe17–nthe32).
+// nthe17: THE THREAD, episode 17, "Plus one?" (23 s vertical, promo/films/next30/b06.md, music: pop · D)
+// Story 0–20.6, then the short end card (2.4 s; no card-cut transition). The look lives in ./threadkit.js (shared by nthe17–nthe32).
 //   0.00   "Libra: ‘hypothetically… | plus one?’"  Libra's own party: 12 yes, the crush included (as a guest). Libra
 //          asks if the host can have a plus one. ♎ Libra mid-hop on the stage, phone up, the little RSVP card (MAYBE) behind.
 //   0.9    ♊ Gemini answers three messages in one bubble (WHO / yes / what are THEY wearing). ♌ Leo: "they can come if
 //          they compliment my outfit" and pins it, itself. ♏ "name." ♓ voice note, 0:04, sobbing.
 //   5.6    "‘Is it too *soon?*’"  Libra: they RSVP'd as a guest. ♈ "just bring them!!"  ♍ Virgo is typing…
-//   9.4    card cut.  9.6 ♍ "ask if they want to come as your date. then let them pick." (gold)  "Let them *pick.*"
+//   9.4    9.6 ♍ "ask if they want to come as your date. then let them pick." (gold)  "Let them *pick.*"
 //  11.4    Libra: "asking…" → "THEY PICKED DATE" (11 hearts) → the host card flips: YES +1. ♓ voice note 0:09 (happy sobbing).
 //  16.6    "Ask. *Then* RSVP."  Everything pops out by 20.5.
 import { threadFilm } from './threadkit.js'
 
 const EP = {
-  duration: 25,
+  duration: 23,
   heads: [
     { text: 'Libra: ‘hypothetically… | *plus one?’*', at: -0.9, out: [3.45, 3.7], size: 82 },
     { text: 'The chat: *unhelpful.*', at: 3.75, out: [5.35, 5.6], size: 88 },
