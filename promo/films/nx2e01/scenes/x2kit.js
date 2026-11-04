@@ -2,9 +2,10 @@
 // Lives in the first episode's folder (promo/films/nx2e01/scenes/); every other Volume 2 episode imports it from here:
 //   import { makeEpisode, ... } from '../../nx2e01/scenes/x2kit.js'
 // It is the season-13 explainkit (promo/films/st13*/scenes/explainkit.js) with the Volume 2 house rules built in:
-//   · the shared end card with its DEFAULT CTA; cardFrame without a season numeral (top-left corner left free);
+//   · the SHORT shared end card (2.4 s, default CTA; CHANGE 4 Nov); cardFrame without a season numeral (top-left free);
+//     cfg.duration is the slate length: the story ends at cfg.duration − 4.4 and DURATION = cfg.duration − 2.0;
 //   · the series bug "STAR TALK EXPLAINS" top-left (Inter 800, letter-spaced), from the moment the question card leaves;
-//   · exactly one card cut (cardCuts / cardCutCues; candidates = the board's page turns, cardfx keeps the middle one);
+//   · NO card-back transition (CHANGE 4 Nov): the board's own page turns are the beat changes;
 //   · PISCES CRIES in every episode: a small Pisces classmate peeks up between the two stars and cries happy tears when
 //     the student gets it (tears 1 at the lightbulb, 2 at THE SHORT VERSION, 3 on the last line). If Pisces is the
 //     teacher or the student, its own sprite cries instead (cfg.classmate = false hides the classmate either way).
@@ -28,8 +29,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawGrain, layerCanvas } from '../../sky.js'
 import { GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardFrame, cardCuts, cardCutCues } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 import { loadExplainFonts, questionCard, drawClassroom, chalkboard, chalkText, factTag, lightbulb, drawPointer, gotIt, gotItTimes, questionCues, chalkCues, tagCues, bulbCues, gotItCues } from '../../stexplain.js'
@@ -175,9 +176,6 @@ export function makeEpisode(cfg) {
   const LINES = T.lines
   const CM = cfg.classmate === false || isPisces(cfg.teacher) || isPisces(cfg.student) ? null : { x: 540, y: 1250, size: 168, ...(cfg.classmate || {}) }
   T.cm = r3(LINES[0].t + 0.6)
-  // one card cut: the candidates are the board's page turns (cardfx keeps the middle one)
-  const CUTS = T.beats.slice(1).map(b => r3(b.at - 0.02))
-  T.cuts = CUTS
   const tagT = cfg.teacher.tag, tagS = cfg.student.tag
   const HOPS = {
     teacher: [T.walk[1] - 0.05, ...talkHops(LINES, tagT, { cps: CPS }), ...(cfg.lastWho === 'teacher' ? [T.last + 0.05, T.last + 0.5] : [])],
@@ -320,7 +318,7 @@ export function makeEpisode(cfg) {
     }
   }
 
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), ...(CUTS.length ? [cardCuts(CUTS)] : [])]
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]
   const pitch = { [tagT]: cfg.teacher.pitch || 440, [tagS]: cfg.student.pitch || 700 }
@@ -338,10 +336,9 @@ export function makeEpisode(cfg) {
     ['whoosh', r3(T.out[0]), 0.35, 0.025],
     ...(cfg.cues ? cfg.cues(T) : []),
     ...(CM ? [['pop', T.cm + 0.05, 1174.66, 0.025, 0.1], ['bell', r3(T.bulb + 0.2), 1567.98, 0.02, 1.2, 0]] : []),
-    ...(CUTS.length ? cardCutCues(CUTS) : []),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION: cfg.duration, SCENES, CUES, T }
+  return { DURATION: r3(STORY_END + ENDCARD_SHORT_LEN), SCENES, CUES, T }
 }
 
 /** text length check (the brief's limits), for a dev guard: box lines ≤ 46, recap items ≤ 34 */
