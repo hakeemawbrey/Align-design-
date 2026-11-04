@@ -1,9 +1,9 @@
-// ngie09: THE SIGNS AS WINTER GIFTS, "Sagittarius as a winter gift" (16 s vertical trial reel, music: pop · Bb).
+// ngie09: THE SIGNS AS WINTER GIFTS, "Sagittarius as a winter gift" (14 s vertical trial reel, music: pop · Bb).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Sagittarius* were a | winter gift:" — Sag mid-tug on the ribbon of a purple box: "you're
 //             gonna love where this goes."
 //   2.4–5.2   1 "a snow globe of a city you've *never* seen." A glass globe of tiny rooftops, snow swirling.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: *two* train tickets." Two tickets fan out: ADMIT ONE · ADMIT ONE. "you + me."
 //   8.0–11.6  THE STARS: "Don't just tell the story. *Invite* them."
 import { makeEp, R, box, bubble, card, shadow, snowfall, giftHook, giftReveal, hookCuesGift, revealCues, prog, ease, INK, BONE, GOLD, PINK } from '../../npye01/scenes/kit.js'

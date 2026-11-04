@@ -1,9 +1,9 @@
-// ngie03: THE SIGNS AS WINTER GIFTS, "Gemini as a winter gift" (16 s vertical trial reel, music: chiptune · G).
+// ngie03: THE SIGNS AS WINTER GIFTS, "Gemini as a winter gift" (14 s vertical trial reel, music: chiptune · G).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Gemini* were a | winter gift:" — Gemini mid-tug on the ribbon of a yellow box: "okay so,
 //             funny story about this gift…"
 //   2.4–5.2   1 "a puzzle book, *half* filled in." The book rises; half the grid is done in pencil.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: notes in the margins *for you.*" The book opens: "you'd LOVE this one" with a heart;
 //             "ask me about #7!"
 //   8.0–11.6  THE STARS: "The best gifts start a *conversation.*"

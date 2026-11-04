@@ -1,9 +1,9 @@
-// ngie08: THE SIGNS AS WINTER GIFTS, "Scorpio as a winter gift" (16 s vertical trial reel, music: cinematic · Cm).
+// ngie08: THE SIGNS AS WINTER GIFTS, "Scorpio as a winter gift" (14 s vertical trial reel, music: cinematic · Cm).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Scorpio* were a | winter gift:" — Scorpio mid-tug on the ribbon of a deep red box, eyes
 //             narrowed: "open it. slowly."
 //   2.4–5.2   1 "a journal with a tiny *lock.*" A dark red journal rises, a gold lock on the strap.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: the key. and *one secret.*" The key on a ribbon, and a folded note: "I really, really
 //             like you."
 //   8.0–11.6  THE STARS: "Trust is the gift. Open it *slowly.*"

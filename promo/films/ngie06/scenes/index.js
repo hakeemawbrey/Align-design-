@@ -1,9 +1,9 @@
-// ngie06: THE SIGNS AS WINTER GIFTS, "Virgo as a winter gift" (16 s vertical trial reel, music: jazzy · C).
+// ngie06: THE SIGNS AS WINTER GIFTS, "Virgo as a winter gift" (14 s vertical trial reel, music: jazzy · C).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Virgo* were a | winter gift:" — Virgo mid-tug on the ribbon of a sage box, folding the
 //             ribbon neatly as it goes: "save the ribbon!"
 //   2.4–5.2   1 "a planner with your birthday *already in it.*" The planner rises; one date circled with a heart.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: a coupon for *one free errand.*" A tear-off coupon: ONE FREE ERRAND, "no expiry."
 //   8.0–11.6  THE STARS: "Practical love is still *romantic.*"
 import { makeEp, R, box, bubble, card, shadow, drawBits, HEART, giftHook, giftReveal, hookCuesGift, revealCues, prog, ease, INK, BONE, INTER, SERIF } from '../../npye01/scenes/kit.js'

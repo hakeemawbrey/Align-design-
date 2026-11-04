@@ -1,9 +1,9 @@
-// npye02: YOUR SIGN AT THE HOLIDAY PARTY, "Taurus at the holiday party" (16 s vertical trial reel, music: jazzy · Bb).
+// npye02: YOUR SIGN AT THE HOLIDAY PARTY, "Taurus at the holiday party" (14 s vertical trial reel, music: jazzy · Bb).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Taurus* at the | holiday party:" — Taurus is mid-bite of a cookie at the snack table at frame 0.
 //   2.4–5.2   1 "finds the *snack table.* stays there." A plate piled into a wobbling tower: "this dip is a whole
 //             personality."
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "saves the last cookie… for *you.*" The table's empty; a late guest: "aw, all gone?" Taurus brings out
 //             a plate from behind its back: one cookie. Hearts.
 //   8.0–11.6  THE STARS: "Love sounds like *'I saved you a plate.'*" Taurus and the guest share the cookie.

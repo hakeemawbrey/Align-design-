@@ -1,8 +1,8 @@
-// npye11: YOUR SIGN AT THE HOLIDAY PARTY, "Aquarius at the holiday party" (16 s vertical trial reel, music: chiptune · E).
+// npye11: YOUR SIGN AT THE HOLIDAY PARTY, "Aquarius at the holiday party" (14 s vertical trial reel, music: chiptune · E).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Aquarius* at the | holiday party:" — Aquarius mid-hop next to the host's dog; both in party hats.
 //   2.4–5.2   1 "talks to the *host's dog* for an hour." Side by side on the floor: "he gets me." The tail wags.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "starts a *paper snowflake* table." Flakes pop onto the table, every one a different pattern.
 //             A guest: "mine came out weird!" Aquarius: "PERFECT."
 //   8.0–11.6  THE STARS: "Your weird is someone's *favourite* thing."

@@ -1,10 +1,10 @@
-// npye01: YOUR SIGN AT THE HOLIDAY PARTY, "Aries at the holiday party" (16 s vertical trial reel, music: house · F).
+// npye01: YOUR SIGN AT THE HOLIDAY PARTY, "Aries at the holiday party" (14 s vertical trial reel, music: house · F).
 // Story 0–11.6, then the shared end card. The format look lives in ./kit.js (shared by npye01–12 and ngie01–12).
 //   0.0–2.4   hook "*Aries* at the | holiday party:" — Aries is mid-leap through the doorway at frame 0, hat flying;
 //             lands, the hat drops back on: "I'm here!!"
 //   2.4–5.2   1 "arrives *first.* sets up the chairs." The clock says 6:58, the sign says PARTY AT 8. Aries hops in
 //             under a stack of folding chairs: "where do these go?!"
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "starts the *dance floor* so nobody goes first." Aries dances alone on the lit tiles; two shy guests
 //             watch… then hop in.
 //   8.0–11.6  THE STARS: "Say hi first. Then *listen* just as hard." Aries waves, a guest beside it, Pisces fountains.

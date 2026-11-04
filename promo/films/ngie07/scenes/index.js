@@ -1,10 +1,10 @@
-// ngie07: THE SIGNS AS WINTER GIFTS, "Libra as a winter gift" (16 s vertical trial reel, music: dreamy · Db).
+// ngie07: THE SIGNS AS WINTER GIFTS, "Libra as a winter gift" (14 s vertical trial reel, music: dreamy · Db).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Libra* were a | winter gift:" — Libra mid-tug on the ribbon of a pink box: "wait. is the bow
 //             centred?"
 //   2.4–5.2   1 "wrapping so pretty you *can't* open it." The box stays shut; extra bows bloom on it; everyone
 //             just admires it.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "inside: a card that says *'you pick.'*" The lid finally lifts: a card, "you pick. (date night.)"
 //   8.0–11.6  THE STARS: "Choosing *together* is the romantic part."
 import { makeEp, bubble, shadow, sparkles, note, giftBox, drawBits, BOX, giftHook, hookCuesGift, prog, ease, INK, BONE, GOLD, PINK } from '../../npye01/scenes/kit.js'

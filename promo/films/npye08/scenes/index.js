@@ -1,9 +1,9 @@
-// npye08: YOUR SIGN AT THE HOLIDAY PARTY, "Scorpio at the holiday party" (16 s vertical trial reel, music: synthwave · F#m).
+// npye08: YOUR SIGN AT THE HOLIDAY PARTY, "Scorpio at the holiday party" (14 s vertical trial reel, music: synthwave · F#m).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Scorpio* at the | holiday party:" — the room is dimmed; Scorpio mid-glance from the corner, a
 //             slit of light across its eyes.
 //   2.4–5.2   1 "skips small talk: *'what scares you?'*" A guest sweats: "…um, geese?"
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "and actually *listens* to the answer." The goose story; Scorpio nods along: "tell me more."
 //             The guest melts.
 //   8.0–11.6  THE STARS: "Deep is lovely. Start with the *weather.*"

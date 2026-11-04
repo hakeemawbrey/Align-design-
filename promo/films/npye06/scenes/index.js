@@ -1,8 +1,8 @@
-// npye06: YOUR SIGN AT THE HOLIDAY PARTY, "Virgo at the holiday party" (16 s vertical trial reel, music: chiptune · C).
+// npye06: YOUR SIGN AT THE HOLIDAY PARTY, "Virgo at the holiday party" (14 s vertical trial reel, music: chiptune · C).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Virgo* at the | holiday party:" — Virgo mid-nudge of a crooked garland, a little level in hand.
 //   2.4–5.2   1 "straightens the *garland.* twice." Level. A guest bumps it. Level again: "okay, NOW it’s festive."
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "makes sure *everyone* has a ride home." A RIDES HOME clipboard ticks: ARIES, LEO, LIBRA. Guests in
 //             scarves wave goodbye.
 //   8.0–11.6  THE STARS: "Care is a *ride home,* not a lecture."

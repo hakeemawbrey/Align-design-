@@ -1,9 +1,9 @@
-// ngie01: THE SIGNS AS WINTER GIFTS, "Aries as a winter gift" (16 s vertical trial reel, music: pop · E).
+// ngie01: THE SIGNS AS WINTER GIFTS, "Aries as a winter gift" (14 s vertical trial reel, music: pop · E).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Aries* were a | winter gift:" — Aries mid-tug on the ribbon of a red box at frame 0: "open it!
 //             open it!" The bow pops loose.
 //   2.4–5.2   1 "hand warmers that heat up *instantly.*" Lid off: two warmers rise, glowing, heat waves.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: a note, *'race you outside.'*" The note; Aries already bouncing in the snow.
 //   8.0–11.6  THE STARS: "Let their *excitement* be a gift too."
 import { makeEp, R, box, bubble, shadow, sparkles, note, giftHook, giftReveal, hookCuesGift, revealCues, prog, ease, INK, BONE, GOLD } from '../../npye01/scenes/kit.js'

@@ -1,8 +1,8 @@
-// ngie02: THE SIGNS AS WINTER GIFTS, "Taurus as a winter gift" (16 s vertical trial reel, music: lofi · F).
+// ngie02: THE SIGNS AS WINTER GIFTS, "Taurus as a winter gift" (14 s vertical trial reel, music: lofi · F).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Taurus* were a | winter gift:" — Taurus mid-tug on the ribbon of a green box: "gently. it's soft."
 //   2.4–5.2   1 "the *softest* blanket you've ever touched." A folded quilt rises; Taurus nuzzles it.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: bread, *still warm.*" A loaf, steaming, on a little board.
 //   8.0–11.6  THE STARS: "Comfort counts. So does *staying* a while."
 import { makeEp, R, box, bubble, shadow, sparkles, giftHook, giftReveal, hookCuesGift, revealCues, prog, ease, INK, BONE, GOLD, PINK } from '../../npye01/scenes/kit.js'

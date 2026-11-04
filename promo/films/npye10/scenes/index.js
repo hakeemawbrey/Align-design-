@@ -1,8 +1,8 @@
-// npye10: YOUR SIGN AT THE HOLIDAY PARTY, "Capricorn at the holiday party" (16 s vertical trial reel, music: lofi · Ab).
+// npye10: YOUR SIGN AT THE HOLIDAY PARTY, "Capricorn at the holiday party" (14 s vertical trial reel, music: lofi · Ab).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Capricorn* at the | holiday party:" — Capricorn mid-glance at the clock (9:25), coat over its arm.
 //   2.4–5.2   1 "planned to leave at *9:30.*" The clock hands spin past it to 11:50: "okay, ONE more goodbye."
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "is the last one there, *doing the dishes.*" Lights low, a sink of bubbles. The host: "you don't have
 //             to!" Capricorn: "I want to."
 //   8.0–11.6  THE STARS: "Staying to help says what words *can't.*"

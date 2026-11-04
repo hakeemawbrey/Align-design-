@@ -2,11 +2,11 @@
 //   YOUR SIGN AT THE HOLIDAY PARTY (npye01–npye12) and THE SIGNS AS WINTER GIFTS (ngie01–ngie12).
 // Every episode imports this file from promo/films/npye01/scenes/kit.js.
 //
-// The format (16 s: story 0–11.6, then the shared end card):
+// The format (14 s: story 0–11.6, then the shared 2.4 s short end card):
 //   0.00–2.40   hook. Frame 0 is the thumbnail: the bug, the progress bar and the headline ("*Aries* at the | holiday
 //               party:" / "If *Aries* were a | winter gift:") are already up, and the sign star is mid-action.
 //   2.40–5.20   beat 1, a jump cut (white flash + zoom punch) and numbered caption sticker 1.
-//   5.20–8.00   beat 2, the turn, under the one card cut (5.2), caption sticker 2 (pink badge).
+//   5.20–8.00   beat 2, the turn (a hard cut at 5.2), caption sticker 2 (pink badge).
 //   8.00–11.55  finale: THE STARS pop in and give the advice (the last line); Pisces cries happy tears.
 // Pisces cries in the background of every beat (in the Pisces episodes Pisces is the hero and cries throughout).
 //
@@ -23,8 +23,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -40,8 +40,9 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline (same in all 24 films)
-export const DURATION = 16
-export const STORY_END = DURATION - ENDCARD_LEN          // 11.6
+// the short end card (4 Nov change): 14 s = story 0–11.6 + the 2.4 s end card; no card-back transition
+export const STORY_END = 11.6
+export const DURATION = STORY_END + ENDCARD_SHORT_LEN    // 14
 export const T = {
   beats: [[2.4, 5.2], [5.2, 8.0]], cut: 5.2, fin: 8.0,
   starsIn: 8.12, pisIn: 8.22, last: 8.3, boxClose: 11.15,
@@ -601,17 +602,16 @@ export function makeEp(cfg) {
         stickers.forEach(s => s.update(t))
         box1.update(t)
         bug.update(t, outK(t, [T.out[0] + 0.05, T.out[1]]))
-        // white flash on the hard cuts (not the card cut)
-        const fl = Math.max(0, ...[T.beats[0][0], T.fin].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
+        // white flash on the hard cuts (hook → beat 1, beat 1 → beat 2, → finale)
+        const fl = Math.max(0, ...[T.beats[0][0], T.cut, T.fin].map(c => (t >= c && t < c + 0.12) ? 1 - (t - c) / 0.12 : 0))
         flash.style.opacity = String(0.5 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // one card-cut candidate: under the swap into the turn
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  const CUTS = []   // no card-back transition (4 Nov change); beat 2 still opens on the kit's own cut at T.cut
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const CUES = [
@@ -621,7 +621,7 @@ export function makeEp(cfg) {
     ...cfg.beats.flatMap((b, i) => {
       const a = T.beats[i][0], st = a + 0.3
       return [
-        ...(i === 0 ? [['whoosh', r3(a - 0.08), 0.28, 0.035], ['tick', a, 0.05]] : []),
+        ['whoosh', r3(a - 0.08), 0.28, 0.035], ['tick', a, 0.05],
         ['pop', r3(st), 1174.66, 0.045, 0.1], ['pop', r3(st + 0.07), 1567.98, 0.03, -0.1], ['tick', r3(st + 0.02), 0.04],
         ...(b.cues || []).map(c => [c[0], r3(c[1] + a), ...c.slice(2)]),
       ]
@@ -630,8 +630,7 @@ export function makeEp(cfg) {
     ['pop', r3(T.starsIn + 0.05), 739.99, 0.035, -0.4], ['pop', r3(T.pisIn + 0.05), 987.77, 0.03, 0.4],
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }

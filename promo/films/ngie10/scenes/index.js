@@ -1,9 +1,9 @@
-// ngie10: THE SIGNS AS WINTER GIFTS, "Capricorn as a winter gift" (16 s vertical trial reel, music: jazzy · Eb).
+// ngie10: THE SIGNS AS WINTER GIFTS, "Capricorn as a winter gift" (14 s vertical trial reel, music: jazzy · Eb).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Capricorn* were a | winter gift:" — Capricorn mid-tug on the ribbon of a charcoal box: "it's
 //             an investment."
 //   2.4–5.2   1 "a wool coat that'll last *ten winters.*" A sturdy coat rises on a hanger, buttons gleaming.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: a ten-year plan. *you're in it.*" A scroll unrolls: YEAR 1: you · YEAR 5: still you ·
 //             YEAR 10: you (in the coat).
 //   8.0–11.6  THE STARS: "Steady love is the kind that *lasts.*"

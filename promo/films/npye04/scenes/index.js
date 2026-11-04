@@ -1,8 +1,8 @@
-// npye04: YOUR SIGN AT THE HOLIDAY PARTY, "Cancer at the holiday party" (16 s vertical trial reel, music: lofi · Eb).
+// npye04: YOUR SIGN AT THE HOLIDAY PARTY, "Cancer at the holiday party" (14 s vertical trial reel, music: lofi · Eb).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Cancer* at the | holiday party:" — Cancer mid-step with a steaming cookie tin at frame 0.
 //   2.4–5.2   1 "brought *homemade* cookies. and a backup tin." A second tin appears: "in case someone's hungry later."
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "finds the guest standing *alone.*" A quiet guest by the window; Cancer crosses the room with a
 //             cookie. The guest lights up.
 //   8.0–11.6  THE STARS: "Look for the quiet one. Make *room.*" The two side by side, sharing the tin.

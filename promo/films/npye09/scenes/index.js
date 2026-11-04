@@ -1,10 +1,10 @@
-// npye09: YOUR SIGN AT THE HOLIDAY PARTY, "Sagittarius at the holiday party" (16 s vertical trial reel, music: house · G).
+// npye09: YOUR SIGN AT THE HOLIDAY PARTY, "Sagittarius at the holiday party" (14 s vertical trial reel, music: house · G).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Sagittarius* at the | holiday party:" — Sag mid-skid through the door at frame 0, snow on its
 //             backpack: "sorry! long story!"
 //   2.4–5.2   1 "arrives *late,* with a story." The clock says 9:40; guests gather: "you will NOT believe this bus
 //             ride."
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "invites everyone on a *snow walk.* right now." A sign: SNOW WALK? WHO'S IN? Scarves pop on, one by
 //             one, and one guest happily stays by the fire.
 //   8.0–11.6  THE STARS: "Make the plan. Ask who *wants* in."

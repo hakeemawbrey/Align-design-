@@ -1,9 +1,9 @@
-// ngie11: THE SIGNS AS WINTER GIFTS, "Aquarius as a winter gift" (16 s vertical trial reel, music: synthwave · Gm).
+// ngie11: THE SIGNS AS WINTER GIFTS, "Aquarius as a winter gift" (14 s vertical trial reel, music: synthwave · Gm).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Aquarius* were a | winter gift:" — Aquarius mid-tug on the ribbon of a teal box, which beeps:
 //             "don't worry, it's supposed to beep."
 //   2.4–5.2   1 "a homemade *gadget* nobody can explain." A box of dials, an antenna and blinking lights rises.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "it keeps your cocoa warm *forever.*" A mug lands on top; the meter reads WARM, then WARMER, then
 //             "∞"; steam never stops.
 //   8.0–11.6  THE STARS: "Weird and thoughtful is the *best* combo."

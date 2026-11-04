@@ -1,9 +1,9 @@
-// npye05: YOUR SIGN AT THE HOLIDAY PARTY, "Leo at the holiday party" (16 s vertical trial reel, music: funk · Am).
+// npye05: YOUR SIGN AT THE HOLIDAY PARTY, "Leo at the holiday party" (14 s vertical trial reel, music: funk · Am).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Leo* at the | holiday party:" — Leo mid-hop onto a little stage at frame 0, mic in hand.
 //   2.4–5.2   1 "gives a speech *nobody scheduled.*" Spotlight. "I’d like to thank… me!" The front row eye-rolls,
 //             lovingly.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "then hands the mic to the *shy* friend." Capricorn, in the light: "um… hi, everyone?" Leo leads
 //             the cheering. Confetti.
 //   8.0–11.6  THE STARS: "Share the spotlight. It gets *warmer.*" Both on the stage.

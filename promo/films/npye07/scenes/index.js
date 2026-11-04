@@ -1,9 +1,9 @@
-// npye07: YOUR SIGN AT THE HOLIDAY PARTY, "Libra at the holiday party" (16 s vertical trial reel, music: jazzy · Db).
+// npye07: YOUR SIGN AT THE HOLIDAY PARTY, "Libra at the holiday party" (14 s vertical trial reel, music: jazzy · Db).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Libra* at the | holiday party:" — Libra mid-twirl at the mirror, a sweater in each hand.
 //   2.4–5.2   1 "changes *outfits* before leaving. four times." Scarf + hat swap four times (1/4 … 4/4):
 //             "the first one. obviously."
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "introduces two people who'd *get along.*" Libra nudges Scorpio and Aquarius together:
 //             "you BOTH love terrible puns!" They laugh.
 //   8.0–11.6  THE STARS: "Make the introduction, then *step back.*" Libra steps aside; the two keep talking.

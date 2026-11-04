@@ -1,8 +1,8 @@
-// ngie05: THE SIGNS AS WINTER GIFTS, "Leo as a winter gift" (16 s vertical trial reel, music: funk · Bm).
+// ngie05: THE SIGNS AS WINTER GIFTS, "Leo as a winter gift" (14 s vertical trial reel, music: funk · Bm).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Leo* were a | winter gift:" — Leo mid-tug on the ribbon of a gold box: "drumroll, please!"
 //   2.4–5.2   1 "a scarf you can see from *across the street.*" A long gold scarf rises, glittering.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: a matching one *for you.*" Leo and Pisces, side by side in matching gold scarves.
 //   8.0–11.6  THE STARS: "Hype them up. Then *let* them hype you."
 import { makeEp, R, bubble, shadow, sparkles, scarfCells, giftHook, giftReveal, hookCuesGift, revealCues, prog, ease, INK, BONE, GOLD } from '../../npye01/scenes/kit.js'

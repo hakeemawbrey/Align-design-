@@ -1,8 +1,8 @@
-// npye03: YOUR SIGN AT THE HOLIDAY PARTY, "Gemini at the holiday party" (16 s vertical trial reel, music: pop · D).
+// npye03: YOUR SIGN AT THE HOLIDAY PARTY, "Gemini at the holiday party" (14 s vertical trial reel, music: pop · D).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "*Gemini* at the | holiday party:" — Gemini mid-wave, two speech bubbles already up: "hiii!" "omg HI!"
 //   2.4–5.2   1 "in *four conversations* at once." Four guests round Gemini; bubbles from every side.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "remembers *everyone's* name after." A notepad fills: ARIES (hiking!), LIBRA (new job!),
 //             CAPRICORN (the dog!). "how did the new job go?!" Libra melts.
 //   8.0–11.6  THE STARS: "Curious is cute. Ask the *follow-up.*"

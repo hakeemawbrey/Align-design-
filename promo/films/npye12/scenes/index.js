@@ -1,10 +1,10 @@
-// npye12: YOUR SIGN AT THE HOLIDAY PARTY, "Pisces at the holiday party" (16 s vertical trial reel, music: dreamy · Gb).
+// npye12: YOUR SIGN AT THE HOLIDAY PARTY, "Pisces at the holiday party" (14 s vertical trial reel, music: dreamy · Gb).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 // Pisces is the hero, so Pisces is the one crying all the way through (the running gag, front and centre).
 //   0.0–2.4   hook "*Pisces* at the | holiday party:" — Pisces mid-sniffle under the string lights, a tissue box out:
 //             "the lights are just SO pretty."
 //   2.4–5.2   1 "cries in the *group photo.*" A camera on a tripod, three, two, one, FLASH: fountains.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "hugs the host goodbye for *twenty minutes.*" The clock hands spin. Cancer: "…we're still hugging."
 //   8.0–11.6  THE STARS: "Bring your big *feelings.* They're invited."
 import { makeEp, R, box, bubble, shadow, sparkles, hearts, tissues, tearsCells, clock, label, prog, lerp, ease, INK, BONE, GOLD, PINK, MINT } from '../../npye01/scenes/kit.js'

@@ -1,9 +1,9 @@
-// ngie04: THE SIGNS AS WINTER GIFTS, "Cancer as a winter gift" (16 s vertical trial reel, music: dreamy · Ab).
+// ngie04: THE SIGNS AS WINTER GIFTS, "Cancer as a winter gift" (14 s vertical trial reel, music: dreamy · Ab).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 //   0.0–2.4   hook "If *Cancer* were a | winter gift:" — Cancer mid-tug on the ribbon of a silver box: "careful, it's
 //             precious."
 //   2.4–5.2   1 "a photo album of *your* whole year." The album rises, photo corners peeking out.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "comes with: a *handwritten* note per page." The album opens: little photos, little notes
 //             ("the day you laughed so hard", "first snow!").
 //   8.0–11.6  THE STARS: "Remembering together is a *gift.*"

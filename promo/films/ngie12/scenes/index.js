@@ -1,10 +1,10 @@
-// ngie12: THE SIGNS AS WINTER GIFTS, "Pisces as a winter gift" (16 s vertical trial reel, music: dreamy · E).
+// ngie12: THE SIGNS AS WINTER GIFTS, "Pisces as a winter gift" (14 s vertical trial reel, music: dreamy · E).
 // Story 0–11.6, then the shared end card. The format look lives in ../../npye01/scenes/kit.js.
 // Pisces is the hero and cries the whole way through; the recipient is Cancer.
 //   0.0–2.4   hook "If *Pisces* were a | winter gift:" — Pisces mid-tug (and mid-sob) on the ribbon of a sea-blue box:
 //             "I'm not crying, YOU'RE crying."
 //   2.4–5.2   1 "a jar of notes for every *cold day.*" A glass jar of folded paper notes rises, glowing.
-//   5.2       card cut.
+//   5.2       hard cut (white flash).
 //   5.2–8.0   2 "Pisces cried *writing* every one." Flashback: Pisces at a desk, a pile of notes, a pile of tissues.
 //   8.0–11.6  THE STARS: "Soft hearts make the *warmest* gifts."
 import { makeEp, R, box, bubble, shadow, tissues, tearsCells, giftHook, giftReveal, hookCuesGift, revealCues, prog, ease, INK, BONE, GOLD, PINK } from '../../npye01/scenes/kit.js'
