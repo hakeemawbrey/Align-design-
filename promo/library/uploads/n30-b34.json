@@ -1,56 +1,74 @@
 {
  "nffe01": {
-  "video": "/_blob/024e9adfd88e8fc5e910c953f0d48f6e",
-  "poster": "/_blob/142a112a348e80d1751397c678497dce",
+  "video": "/_blob/6a494579dabe061ad2c8ea03d95e1dee",
+  "poster": "/_blob/13d91338395c7e4de1df1c56f3448064",
   "title": "The friend who went quiet",
-  "len": 25,
+  "len": 23,
   "series": "friends",
   "episode": 1,
   "caption": "When a friend goes quiet, it is easy to assume it is about you. Often it isn't. Send a check-in with no homework attached: thinking of you, no need to reply."
  },
  "nffe02": {
-  "video": "/_blob/912f8c6113af30303969100a78e8a04b",
-  "poster": "/_blob/dc79304ce6c454d4fefca7e90d1d3fe9",
+  "video": "/_blob/041f2cddabb5f7c75e473e72c19d0306",
+  "poster": "/_blob/070c6df65fac4bf8fa782f281d99eff6",
   "title": "Check-in, not a quiz",
-  "len": 20,
+  "len": 18,
   "series": "friends",
   "episode": 2,
   "caption": "Six questions in a row can feel like a test, even when they come from love. Ask one soft question, then let the quiet do some of the work. Save this for the next time you're worried about a friend."
  },
  "nffe03": {
-  "video": "/_blob/56a82db5a6c73c4c68097f732894fe81",
-  "poster": "/_blob/5cc9b4dbf52a843a522c92ff06b6c6ee",
+  "video": "/_blob/639fec7176b75ceca572ece761962e9a",
+  "poster": "/_blob/72352d1e85a55d010b4be87d38aa5ec2",
   "title": "December is hard for some friends",
-  "len": 25,
+  "len": 23,
   "series": "friends",
   "episode": 3,
   "caption": "Not everyone loves this month, especially in a year when someone is missing. You don't have to fix it. Ask if they want company or quiet, and make room for both."
  },
  "nffe04": {
-  "video": "/_blob/718ff672e68c204b30ea2d2feb6fbbaa",
-  "poster": "/_blob/bd9cfc486477503d8fa4afe001626c13",
+  "video": "/_blob/f4003e94355adda9e8004674ba829695",
+  "poster": "/_blob/b51bdf0ab1c213df9f055a19a4aed8e3",
   "title": "The plan you can say no to",
-  "len": 20,
+  "len": 18,
   "series": "friends",
   "episode": 4,
   "caption": "The kindest invites come with an easy way out. Pyjamas welcome, leave whenever, no is totally fine. When saying no is easy, saying yes gets a little easier too."
  },
  "nffe05": {
-  "video": "/_blob/6541fc32a67a32e1baea3d0a35f639cf",
-  "poster": "/_blob/69579fe052359d76499ac2129b715076",
+  "video": "/_blob/23c3f59e24b77c23b41ed898e74edd1c",
+  "poster": "/_blob/a25dd708b57d724eb785b2bcb9c614c7",
   "title": "The cancelled-plans friend",
-  "len": 25,
+  "len": 23,
   "series": "friends",
   "episode": 5,
   "caption": "Third cancellation and the scorecard is already drafted. Skip it. Say how it felt once, kindly, then ask what's going on with them. Sometimes the answer is just: I'm overbooked."
  },
  "nffe06": {
-  "video": "/_blob/bf25ac87247bdea89b44edcd3e182140",
-  "poster": "/_blob/9681e4fe74f265489964b82cbca4162f",
+  "video": "/_blob/389154c1d0d1d4f9caa1d33822f493db",
+  "poster": "/_blob/2550faccef5ab3725285360bcf13ee9a",
   "title": "Long-distance friends",
-  "len": 30,
+  "len": 28,
   "series": "friends",
   "episode": 6,
   "caption": "Different cities, different clocks, a lot of missed calls. A small ritual beats a perfect plan: one time, every week, kept. Who would you set a standing call with?"
+ },
+ "nffe07": {
+  "video": "/_blob/51bf68eaac4c83dddd411c4e39004658",
+  "poster": "/_blob/f32292b17c29a0b62c95cf906a5e2e41",
+  "title": "Who checks on the checker?",
+  "len": 23,
+  "series": "friends",
+  "episode": 7,
+  "caption": "The friend who always listens rarely gets asked how they are. Turn the question around tonight, and then actually wait for the answer. Tag the friend who holds everyone up."
+ },
+ "nffe08": {
+  "video": "/_blob/38a071bf2db499e017faffc3267ce368",
+  "poster": "/_blob/4a6d150afb950ff571a21838f5e14dbc",
+  "title": "Show up with soup",
+  "len": 18,
+  "series": "friends",
+  "episode": 8,
+  "caption": "When a friend is sick, the best care asks nothing back. Leave the soup at the door, send one line, and let them rest without having to host you."
  }
 }
