@@ -1,5 +1,5 @@
-// nvse09: SIGN VS SIGN, "Who handles their partner's bad day better?" ♋ Cancer vs ♎ Libra (18 s trial reel, b46,
-// music: dreamy · Ab). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse09: SIGN VS SIGN, "Who handles their partner's bad day better?" ♋ Cancer vs ♎ Libra (16 s trial reel, b46,
+// music: dreamy · Ab). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: a slumped partner star under a little rain cloud between them.
 //   ROUND 1 ♋ "builds a *blanket fort* in five minutes." the partner peeks out, cocoa. "get in. there’s cocoa." → "nobody leaves till you smile."
 //   ROUND 2 ♎ "asks *one question* first." two cards, ADVICE and HUG; HUG wins, the cloud clears. "advice or a hug?" → "hug. got it."
