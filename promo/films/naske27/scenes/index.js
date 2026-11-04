@@ -1,9 +1,9 @@
-// naske27 · Ask the Stars, Volume 2, ep 27 · "We text all day but say nothing." (20 s, pop · D)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske27 · Ask the Stars, Volume 2, ep 27 · "We text all day but say nothing." (18 s, pop · D)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "We text all day but say *nothing.*"  ♊ Gemini mid-juggle of message bubbles: "lol" "same" "haha" "ya".
 //   3.0   "swap one text for a real phone call."  The bubbles pop; a big phone rings: CALLING…
 //   5.9   "then ask: 'what's been on your mind?'"  A talk card flips over with the question.
-//   8.75  card cut → 8.8 "small talk is the door. walk through it."  A door swings open on warm light; they step in.
+//   8.8   "small talk is the door. walk through it."  A door swings open on warm light; they step in.
 //   12.1  "Ask the one | that *matters.*"
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, label, talkCard, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, INTER, MONO } from '../../naske19/scenes/askkit2.js'
 
