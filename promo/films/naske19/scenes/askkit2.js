@@ -1,13 +1,12 @@
 // askkit2 — the shared look of Ask the Stars, Volume 2 (naske19 … naske36, promo/films/next30/b26.md). Every episode
 // imports this file from naske19/scenes, so all eighteen read as one format. Read-only for the other films.
 //
-// The format (20 s, story 0–15.6, then the shared end card with the default CTA):
+// The format (18 s: story 0–15.6, then the SHORT shared end card, 2.4 s, default CTA):
 //   0.00–2.70   hook: the viewer's anonymous DM (the question) buzzes at the top; the answering sign's star is already
 //               mid-action in its winter gag below it. Light pixel snow falls all film. Bug "ASK THE STARS" top-left.
 //   2.70        the DM tucks away into a small "ASKED" strip at the top (so the question stays readable).
 //   3.00–12.0   the sign's star answers in three box lines (3.0, 5.9, 8.8), each with its own visual beat (cfg.scene).
 //               One real-astrology chip under the scene. Pisces sniffles in the background with a tissue box.
-//   8.75        the one card-cut candidate (cardfx picks it; it hides the swap into beat 3).
 //   12.1–15.5   the last line pops in big; the sign's star beams and Pisces happy-cries beside it.
 // Pisces cries in every episode (in the Pisces episodes, the hero does).
 //
@@ -24,8 +23,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -42,8 +41,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline (same in all eighteen films)
-export const DURATION = 20
-export const STORY_END = DURATION - ENDCARD_LEN          // 15.6
+export const STORY_END = 20 - ENDCARD_LEN                // 15.6 (the story is unchanged)
+export const DURATION = STORY_END + ENDCARD_SHORT_LEN     // 18.0: the short end card (owner's change, 4 Nov)
 export const T = {
   bug: 0, dmOut: [2.5, 2.8], asked: 2.75,
   open: 2.82, l: [3.0, 5.9, 8.8], chip: 3.55, close: 12.0,
@@ -413,9 +412,9 @@ export function makeAsk(cfg) {
     }
   }
 
-  // one card-cut candidate: under the swap into beat 3
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (owner's change, 4 Nov): the beats change on their own; the quiet border stays
+  const CUTS = []
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const nW = cfg.last.split(' ').filter(w => w !== '|').length, late = cfg.lastLate ?? 1
@@ -435,8 +434,7 @@ export function makeAsk(cfg) {
     ['glitter', r3(T.lastLand + 0.02), r3(T.lastLand + 0.5)], ['pop', r3(T.pisIn + 0.05), 987.77, 0.03, 0.4],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T, CUTS }
 }

@@ -1,11 +1,11 @@
-// naske19 · Ask the Stars, Volume 2, ep 19 · "How do we disagree without a fight?" (20 s, dreamy · Eb)
-// The format lives in ./askkit2.js (shared by naske19–naske36). Story 0–15.6, then the shared end card.
+// naske19 · Ask the Stars, Volume 2, ep 19 · "How do we disagree without a fight?" (18 s, dreamy · Eb)
+// The format lives in ./askkit2.js (shared by naske19–naske36). Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "How do we *disagree* without a fight?"  ♎ Libra's scales see-saw wildly: a snowball on one pan,
 //         a steaming cocoa on the other. Libra wobbles along with them.
 //   3.0   "start with what you both agree on."  The pans level out, sparkle.
 //   5.9   "try 'i see it differently', not 'you're wrong'"  A red YOU'RE WRONG bubble is struck out and swapped
 //         for I SEE IT DIFFERENTLY.
-//   8.75  card cut → 8.8 "you can disagree and still hold hands."  Libra and its partner share one long scarf.
+//   8.8   "you can disagree and still hold hands."  Libra and its partner share one long scarf.
 //   12.1  "Same *team.* | Different view."  Libra beams; Pisces happy-cries.
 import { makeAsk, R, box, drawBits, mug, bubble, sparkles, hearts, shadow, inSprite, starFrame, scarfCells, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, SNOW, MONO, INTER } from './askkit2.js'
 
