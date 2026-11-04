@@ -1,8 +1,8 @@
-// nole22: ONE-LINE ADVICE FOR YOUR SIGN, "Capricorn, when they gave you a gift." (12 s vertical, star_advice trial,
+// nole22: ONE-LINE ADVICE FOR YOUR SIGN, "Capricorn, when they gave you a gift." (10 s vertical, star_advice trial,
 // music: cinematic · Gm). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Capricorn*, when they | gave you a *gift.*"  Capricorn holds a wrapped gift in one point and taps a
 //             calculator with the other. At 1.4 a receipt starts printing: GIFT ♡ · RETURN GIFT: $?? · TOTAL: ???.
-//   3.6       card flip.   3.6–7.6  THE STARS: "A gift isn't | a *bill.*"  The calculator drops; Capricorn hugs the gift:
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "A gift isn't | a *bill.*"  The calculator drops; Capricorn hugs the gift:
 //             "thank you."  The date glows.  Pisces cries.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, drawStarChar, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function gift(x, cx, cy, s = 1) { x.save(); x.translate(cx, cy); x.scale(s, s); box(x, -60, -50, 120, 100, '#3fb6f0', { b: 6 }); R(x, GOLD, -9, -50, 18, 100); R(x, GOLD, -60, -9, 120, 18); drawBits(x, ['GG.GG', '.GGG.'], { G: GOLD }, 0, -64, 9); x.restore() }

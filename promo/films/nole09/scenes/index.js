@@ -1,8 +1,8 @@
-// nole09: ONE-LINE ADVICE FOR YOUR SIGN, "Sagittarius, booking a trip on date two." (12 s vertical, star_advice trial,
+// nole09: ONE-LINE ADVICE FOR YOUR SIGN, "Sagittarius, booking a trip on date two." (10 s vertical, star_advice trial,
 // music: house · F). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Sagittarius*, booking | a trip on *date two.*"  Sag sits on an overstuffed suitcase, zipping, a ticket
 //             waving in the air. At 1.8 the suitcase pops open and clothes fly. The date blinks: "we met tuesday."
-//   3.6       card flip.   3.6–7.6  THE STARS: "Take the trip. | *Later.*"  Sag pins the ticket to a board marked
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Take the trip. | *Later.*"  Sag pins the ticket to a board marked
 //             SOMEDAY ♡.  Pisces cries at "someday".
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 const CLOTH = [['#e8344e', -1.9], ['#7fd0ff', -1.4], ['#f2c75c', -0.9], ['#9fe6b0', -0.5], ['#ff8fb1', -2.3]]

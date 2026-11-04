@@ -5,14 +5,14 @@
 //   0 … CUT      THE MOMENT. Frame 0 is the thumbnail: the hook caption ("*Aries*, when the date | gets *moved.*") is
 //                fully on screen and the sign's star is mid-action in a little winter scene (cfg.sit). One small turn
 //                in the middle (the sign does the relatable thing).
-//   CUT          one card flip (the only card cut).
+//   CUT          a white blink + whoosh into THE LINE (no Align card transition).
 //   CUT … END    THE LINE. Eyebrow "★ ONE LINE FOR YOU, ARIES" (Space Mono, gold), then THE STARS' one line pops in big
 //                (Inter 800 + one EB Garamond italic accent, it is the film's last line). THE STARS (gold star) sits
 //                bottom-left, the sign's star reacts (cfg.after), and Pisces cries happy tears bottom-right into a
 //                tissue (when the sign is Pisces, the sign's own star does the crying).
 //   The bug "ONE-LINE ADVICE · FOR YOUR SIGN" sits top-left 56 px from the edges the whole story.
 //
-//   makeOneLine(cfg) → { DURATION, SCENES, CUES, T }
+//   makeOneLine(cfg) → { DURATION, SCENES, CUES, T }   (DURATION = cfg.len − 2: the short 2.4 s end card, no card cut)
 //     cfg.id, cfg.sign ('aries'…), cfg.name ('Aries'), cfg.len (12 | 13 | 14), cfg.hook (hook text, '|' = line break,
 //     '*word*' = accent), cfg.line (THE STARS' one line), cfg.accent (accent colour, default the sign's colour),
 //     cfg.date (a sign id for the other star, default 'libra'),
@@ -26,8 +26,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 import { hookPOV, hookPOVCues, phoneScreen, phoneCues, speechBubble, speechCues, DAY_FONTS } from '../../st9day.js'
@@ -284,9 +284,11 @@ function buildEyebrow(root, { text, col, at, out }) {
 
 // ═══════════════════════════════════════════════════════════════════════════ the episode
 export function makeOneLine(cfg) {
-  const DURATION = cfg.len || 12
-  const STORY_END = r3(DURATION - ENDCARD_LEN)
-  const CUT = cfg.cut || { 12: 3.6, 13: 4.1, 14: 4.6 }[DURATION] || 3.6
+  // cfg.len is the slate length (with the old 4.4 s card); the story is unchanged and the film ends on the 2.4 s card
+  const SLATE = cfg.len || 12
+  const STORY_END = r3(SLATE - ENDCARD_LEN)
+  const DURATION = r3(STORY_END + ENDCARD_SHORT_LEN)
+  const CUT = cfg.cut || { 12: 3.6, 13: 4.1, 14: 4.6 }[SLATE] || 3.6
   const T = {
     cut: CUT, hookOut: [CUT - 0.22, CUT - 0.02],
     eyebrow: r3(CUT + 0.3), line: r3(CUT + 0.5), starsIn: r3(CUT + 0.15), heroIn: r3(CUT + 0.25), pisIn: r3(CUT + 0.55),
@@ -373,15 +375,15 @@ export function makeOneLine(cfg) {
         line.update(t, outK(t, T.out))
         bug.update(t, outK(t, T.bugOut))
         const fl = t >= T.land && t < T.land + 0.12 ? 1 - (t - T.land) / 0.12 : 0
-        flash.style.opacity = String(0.22 * fl)
+        const fc = t >= CUT && t < CUT + 0.16 ? 1 - (t - CUT) / 0.16 : 0      // the beat change into THE LINE: a white blink
+        flash.style.opacity = String(Math.max(0.22 * fl, 0.7 * fc))
         drawGrain(gx, t)
       },
     }
   }
 
-  // one card-cut candidate: the flip into THE LINE
-  const CUTS = [{ t: CUT, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 }), cardCuts(CUTS)]
+  // no card transition (owner change, 4 Nov): the cut into THE LINE is the kit's own white blink + whoosh
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 })]
 
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const CUES = [
@@ -393,8 +395,8 @@ export function makeOneLine(cfg) {
     ...(isPis ? [] : [['pop', T.pisIn, 987.77, 0.03, 0.4], ['pluck', r3(T.land + 0.1), 2349.32, 0.015, 0.4, 0.5]]),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ['whoosh', r3(CUT - 0.12), 0.28, 0.04], ['tick', CUT, 0.06], ['pop', r3(CUT + 0.02), 1567.98, 0.035, 0],
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS, STORY_END }
+  return { DURATION, SCENES, CUES, T, STORY_END }
 }

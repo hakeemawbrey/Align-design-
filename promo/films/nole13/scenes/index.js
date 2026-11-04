@@ -1,8 +1,8 @@
-// nole13: ONE-LINE ADVICE FOR YOUR SIGN, "Aries, when they're slow to share." (12 s vertical, star_advice trial,
+// nole13: ONE-LINE ADVICE FOR YOUR SIGN, "Aries, when they're slow to share." (10 s vertical, star_advice trial,
 // music: funk · E). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Aries*, when they're | *slow* to share."  Aries bounces beside a big stopwatch, racing it; the date holds
 //             a little closed door. Aries knocks (1.5, 1.9): KNOCK KNOCK. The door stays shut.
-//   3.6       card flip.   3.6–7.6  THE STARS: "Some hearts open | *slowly.*"  Aries sits down, calm; the little door
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Some hearts open | *slowly.*"  Aries sits down, calm; the little door
 //             creaks open on a heart.  Pisces cries.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function stopwatch(x, t, cx, cy, s = 1) {

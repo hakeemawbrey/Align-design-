@@ -1,8 +1,8 @@
-// nole20: ONE-LINE ADVICE FOR YOUR SIGN, "Scorpio, trying not to laugh." (12 s vertical, star_advice trial,
+// nole20: ONE-LINE ADVICE FOR YOUR SIGN, "Scorpio, trying not to laugh." (10 s vertical, star_advice trial,
 // music: synthwave · Am). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Scorpio*, trying | not to *laugh.*"  Scorpio in dark shades holds a perfectly straight face while the date
 //             tells a joke ("…so the penguin says—"). It trembles; at 1.9 a "*snrk*" escapes and the shades slip.
-//   3.6       card flip.   3.6–7.6  THE STARS: "Let them *see* | you laugh."  Scorpio laughs out loud (HA HA HA),
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Let them *see* | you laugh."  Scorpio laughs out loud (HA HA HA),
 //             shades up on its head; the date glows: "you LAUGHED!"  Pisces cries laughing.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, drawStarChar, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function sit(x, t, S) {

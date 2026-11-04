@@ -1,8 +1,8 @@
-// nole11: ONE-LINE ADVICE FOR YOUR SIGN, "Aquarius, when they say 'I missed you'." (12 s vertical, star_advice trial,
+// nole11: ONE-LINE ADVICE FOR YOUR SIGN, "Aquarius, when they say 'I missed you'." (10 s vertical, star_advice trial,
 // music: dreamy · Ab). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Aquarius*, when they say | 'I *missed* you.'"  Aquarius frozen over a phone ("i missed you"), a
 //             buffering ring spinning over its head and a loading bar crawling to 99%.
-//   3.6       card flip.   3.6–7.6  THE STARS: "Say it back. | You *did.*"  Aquarius types "i missed you too" and goes
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Say it back. | You *did.*"  Aquarius types "i missed you too" and goes
 //             heart-eyed.  Pisces fountains.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function ring(x, t, cx, cy) {

@@ -1,8 +1,8 @@
-// nole05: ONE-LINE ADVICE FOR YOUR SIGN, "Leo, when they didn't notice the haircut." (12 s vertical, star_advice
+// nole05: ONE-LINE ADVICE FOR YOUR SIGN, "Leo, when they didn't notice the haircut." (10 s vertical, star_advice
 // trial, music: funk · G). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Leo*, when they didn't | notice the *haircut.*"  Leo mid-hair-flip (a golden swoosh + sparkles), the date
 //             reading a menu. At 1.8 a bigger flip under a spotlight … the date: "hm?"
-//   3.6       card flip.   3.6–7.6  THE STARS: "Hints are quiet. | *Say* it."  Leo: "i got a haircut!"  The date:
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Hints are quiet. | *Say* it."  Leo: "i got a haircut!"  The date:
 //             "IT LOOKS GREAT!"  Pisces cries ("it does!!").
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function swoosh(x, t, cx, cy, t0, big) {

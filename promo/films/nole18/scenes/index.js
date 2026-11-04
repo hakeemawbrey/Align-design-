@@ -1,9 +1,9 @@
-// nole18: ONE-LINE ADVICE FOR YOUR SIGN, "Virgo, when their place is a little messy." (12 s vertical, star_advice
+// nole18: ONE-LINE ADVICE FOR YOUR SIGN, "Virgo, when their place is a little messy." (10 s vertical, star_advice
 // trial, music: lofi · D). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Virgo*, when their place | is a little… *messy.*"  Virgo perches on the edge of a couch, a sock on the
 //             cushion beside it. The date: "make yourself at home!" (0.6). Virgo's eye twitches (1.4, 1.9); a duster
 //             appears in its hand (2.4).
-//   3.6       card flip.   3.6–7.6  THE STARS: "Notice the *person*, | not the socks."  The duster goes down; Virgo
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Notice the *person*, | not the socks."  The duster goes down; Virgo
 //             laughs at the date's story ("…and the goat ate my hat!"). The sock stays.  Pisces cries.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 const SOCK = ['.SS', '.SS', '.SS', 'SSS', 'SS.']

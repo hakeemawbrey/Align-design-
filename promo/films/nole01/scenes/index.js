@@ -1,8 +1,8 @@
-// nole01: ONE-LINE ADVICE FOR YOUR SIGN, "Aries, when the date gets moved." (12 s vertical, star_advice trial,
+// nole01: ONE-LINE ADVICE FOR YOUR SIGN, "Aries, when the date gets moved." (10 s vertical, star_advice trial,
 // music: pop · C). Story 0–7.6, then the shared end card. The format lives in ./olkit.js (shared by nole01–nole24).
 //   0.0–3.6   "*Aries*, when the date | gets *moved.*"  Aries mid-hop beside a buzzing phone: "so sorry!! can we do
 //             thursday instead?"  Aries drafts "fine." (squints) … then deletes it letter by letter.
-//   3.6       card flip.
+//   3.6       white blink (no card cut).
 //   3.6–7.6   ★ ONE LINE FOR YOU, ARIES → THE STARS: "A new day isn't | a *no.*"  Aries relaxes and pins THU ♥ on a
 //             tiny calendar; Pisces cries happy tears into a tissue.
 import { makeOneLine, miniPhone, box, R, label, shadow, sparkles, hearts, prog, clamp, pop01, outK, INK, BONE, GOLD, RED, INTER, MONO, r3 } from './olkit.js'

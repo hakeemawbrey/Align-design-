@@ -1,8 +1,8 @@
-// nole17: ONE-LINE ADVICE FOR YOUR SIGN, "Leo, when they plan the date." (12 s vertical, star_advice trial,
+// nole17: ONE-LINE ADVICE FOR YOUR SIGN, "Leo, when they plan the date." (10 s vertical, star_advice trial,
 // music: pop · A). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Leo*, when *they* | plan the date."  Leo scribbles all over a clipboard (the date's plan) while the date
 //             holds up a MY TURN sign. At 2.0 the date sighs ("…can I?").
-//   3.6       card flip.   3.6–7.6  THE STARS: "Let them *lead* | tonight."  The date has the clipboard; Leo follows,
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Let them *lead* | tonight."  The date has the clipboard; Leo follows,
 //             wide-eyed and delighted: "ooh, where are we going?!"  Pisces cries.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function clipboard(x, t, cx, cy, rot, scribble) {

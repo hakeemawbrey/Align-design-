@@ -1,9 +1,9 @@
-// nole19: ONE-LINE ADVICE FOR YOUR SIGN, "Libra, choosing the holiday gift." (12 s vertical, star_advice trial,
+// nole19: ONE-LINE ADVICE FOR YOUR SIGN, "Libra, choosing the holiday gift." (10 s vertical, star_advice trial,
 // music: house · Bb). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Libra*, choosing their | holiday *gift.*"  Libra stands under a big balance: a wrapped box on one pan,
 //             a little snow globe on the other, tipping back and forth. At 1.8 a third gift (a mug) drops onto the left
 //             pan and the beam wobbles wildly; Libra goes wide-eyed.
-//   3.6       card flip.   3.6–7.6  THE STARS: "Pick the one that | made you *smile.*"  Libra holds up the snow globe:
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Pick the one that | made you *smile.*"  Libra holds up the snow globe:
 //             "this one!"  Pisces cries at the snow globe.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, drawStarChar, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function globe(x, t, cx, cy, s = 1) {

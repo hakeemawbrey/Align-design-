@@ -1,8 +1,8 @@
-// nole21: ONE-LINE ADVICE FOR YOUR SIGN, "Sagittarius, when you were a little too honest." (13 s vertical,
+// nole21: ONE-LINE ADVICE FOR YOUR SIGN, "Sagittarius, when you were a little too honest." (11 s vertical,
 // star_advice trial, music: funk · C). Story 0–8.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–4.1   "*Sagittarius*, when you were | a little *too* honest."  Sag mid-sentence: "your sweater is… a LOT."
 //             The date (in a very busy holiday sweater) looks down at it (1.6) and wilts (2.2).
-//   4.1       card flip.   4.1–8.6  THE STARS: "Honest *and* gentle. | Both."  Sag: "a lot of FUN. i like it on you."
+//   4.1       white blink (no card cut).   4.1–8.6  THE STARS: "Honest *and* gentle. | Both."  Sag: "a lot of FUN. i like it on you."
 //             The date beams.  Pisces cries.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, drawStarChar, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function sweater(x, F) {

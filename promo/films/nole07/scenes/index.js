@@ -1,8 +1,8 @@
-// nole07: ONE-LINE ADVICE FOR YOUR SIGN, "Libra, when you said 'no worries'." (12 s vertical, star_advice trial,
+// nole07: ONE-LINE ADVICE FOR YOUR SIGN, "Libra, when you said 'no worries'." (10 s vertical, star_advice trial,
 // music: pop · D). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Libra*, when you said | 'no *worries!*'"  Libra smiles very hard at a phone: "sorry I forgot to call
 //             back" → "no worries!!"  Grey worry clouds stack up behind it (0.6, 1.3, 2.0); the third drizzles on Libra.
-//   3.6       card flip.   3.6–7.6  THE STARS: "Worries are allowed | *out loud.*"  Libra sends "actually, it bugged me
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Worries are allowed | *out loud.*"  Libra sends "actually, it bugged me
 //             a little."  Reply: "thank you for telling me ♡".  Pisces cries.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function worry(x, t, cx, cy, t0, rain) {

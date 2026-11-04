@@ -1,8 +1,8 @@
-// nole24: ONE-LINE ADVICE FOR YOUR SIGN, "Pisces, when your holiday card is three pages." (14 s vertical, star_advice
+// nole24: ONE-LINE ADVICE FOR YOUR SIGN, "Pisces, when your holiday card is three pages." (12 s vertical, star_advice
 // trial, music: dreamy · Db). Story 0–9.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–4.6   "*Pisces*, when your | holiday card is | *three pages.*"  Pisces writes, crying, on a card whose paper
 //             unrolls off the desk to the floor; page tags pop: P. 2 (1.3), P. 3 (2.4); a fourth sheet slides in (3.4).
-//   4.6       card flip.   4.6–9.6  THE STARS: "Big feelings? | *Send* them."  Pisces seals the envelope with a heart;
+//   4.6       white blink (no card cut).   4.6–9.6  THE STARS: "Big feelings? | *Send* them."  Pisces seals the envelope with a heart;
 //             the date reads it and cries too.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, drawStarChar, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function sit(x, t, S) {

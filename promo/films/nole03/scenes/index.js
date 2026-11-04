@@ -1,8 +1,8 @@
-// nole03: ONE-LINE ADVICE FOR YOUR SIGN, "Gemini, when you're both mid-story." (13 s vertical, star_advice trial,
+// nole03: ONE-LINE ADVICE FOR YOUR SIGN, "Gemini, when you're both mid-story." (11 s vertical, star_advice trial,
 // music: chiptune · A). Story 0–8.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–4.1   "*Gemini*, when you're both | *mid-story.*"  Gemini and its date talk at once; their bubbles collide in the
 //             middle. Gemini's keeps growing ("and THEN—", "wait, AND—"), the date's shrinks ("so my sister—", "so…").
-//   4.1       card flip.   4.1–8.6  THE STARS: "Let them *finish* | the story."  Gemini leans in, the date finishes
+//   4.1       white blink (no card cut).   4.1–8.6  THE STARS: "Let them *finish* | the story."  Gemini leans in, the date finishes
 //             ("…and she said YES!"), Gemini: "NO WAY!"  Pisces cries at the plot twist.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function sit(x, t, S) {

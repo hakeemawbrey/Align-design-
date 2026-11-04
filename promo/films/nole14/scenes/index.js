@@ -1,8 +1,8 @@
-// nole14: ONE-LINE ADVICE FOR YOUR SIGN, "Taurus, when they ask for a bite." (12 s vertical, star_advice trial,
+// nole14: ONE-LINE ADVICE FOR YOUR SIGN, "Taurus, when they ask for a bite." (10 s vertical, star_advice trial,
 // music: jazzy · G). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Taurus*, when they ask | for a *bite.*"  Taurus hugs a plate of holiday cake; the date's fork inches in
 //             ("one bite?"). At 1.8 Taurus swings the plate away, squinting.
-//   3.6       card flip.   3.6–7.6  THE STARS: "Share the bite. | *Keep* the plate."  Taurus hands over one forkful,
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Share the bite. | *Keep* the plate."  Taurus hands over one forkful,
 //             keeps the plate; both beam.  Pisces cries at the sharing.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 const CAKE = ['......WW', '....WWRW', '..WWBBBB', 'WWBBBBBB', 'CCCCCCCC', 'BBBBBBBB', 'CCCCCCCC']

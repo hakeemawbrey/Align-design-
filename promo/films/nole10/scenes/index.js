@@ -1,8 +1,8 @@
-// nole10: ONE-LINE ADVICE FOR YOUR SIGN, "Capricorn, when they ask how your day was." (13 s vertical, star_advice
+// nole10: ONE-LINE ADVICE FOR YOUR SIGN, "Capricorn, when they ask how your day was." (11 s vertical, star_advice
 // trial, music: cinematic · Dm). Story 0–8.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–4.1   "*Capricorn*, when they ask | how your *day* was."  Capricorn presents a bar chart on an easel (MY DAY:
 //             EMAILS · MEETINGS · LUNCH?). At 2.0 the slide flips: "Q4 OUTLOOK" with a rising line. The date nods… slowly.
-//   4.1       card flip.   4.1–8.6  THE STARS: "Tell them how | it *felt.*"  The easel shows one big heart; Capricorn:
+//   4.1       white blink (no card cut).   4.1–8.6  THE STARS: "Tell them how | it *felt.*"  The easel shows one big heart; Capricorn:
 //             "tired. but good. you?"  Pisces cries.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function easel(x, t, cx, cy, slide, k = 1) {

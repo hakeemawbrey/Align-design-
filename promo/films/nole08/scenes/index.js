@@ -1,8 +1,8 @@
-// nole08: ONE-LINE ADVICE FOR YOUR SIGN, "Scorpio, when they say 'I'm fine'." (12 s vertical, star_advice trial,
+// nole08: ONE-LINE ADVICE FOR YOUR SIGN, "Scorpio, when they say 'I'm fine'." (10 s vertical, star_advice trial,
 // music: synthwave · Cm). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Scorpio*, when they say | 'I'm *fine.*'"  Scorpio squints at a phone: "i'm fine". Thought bubbles
 //             pile up: "fine?" (0.7), "FINE??" (1.4), "fine…" (2.1).
-//   3.6       card flip.   3.6–7.6  THE STARS: "Ask *once*. Then | believe them."  Scorpio sends "want to talk about
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Ask *once*. Then | believe them."  Scorpio sends "want to talk about
 //             it? no pressure."  Reply: "later? thank you ♡".  Scorpio nods.  Pisces sniffles.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function sit(x, t, S) {

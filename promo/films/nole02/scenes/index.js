@@ -1,8 +1,8 @@
-// nole02: ONE-LINE ADVICE FOR YOUR SIGN, "Taurus, when they pick a new restaurant." (12 s vertical, star_advice trial,
+// nole02: ONE-LINE ADVICE FOR YOUR SIGN, "Taurus, when they pick a new restaurant." (10 s vertical, star_advice trial,
 // music: lofi · F). Story 0–7.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–3.6   "*Taurus*, when they pick | a *new* restaurant."  Taurus at a café table clutching a menu of "???" dishes;
 //             a thought cloud of its usual bowl. At 1.7 the cloud drifts off; Taurus goes wide-eyed.
-//   3.6       card flip.   3.6–7.6  THE STARS: "Your usual will | *still* be there."  The usual bowl waves back from a
+//   3.6       white blink (no card cut).   3.6–7.6  THE STARS: "Your usual will | *still* be there."  The usual bowl waves back from a
 //             little cloud: "see you friday ♡".  Pisces cries into a tissue.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 const BOWL = ['..SSS...', '.S...S..', 'NNNNNNNN', 'BBBBBBBB', '.BBBBBB.', '..BBBB..']

@@ -1,8 +1,8 @@
-// nole16: ONE-LINE ADVICE FOR YOUR SIGN, "Cancer, when they forgot the one-month." (13 s vertical, star_advice trial,
+// nole16: ONE-LINE ADVICE FOR YOUR SIGN, "Cancer, when they forgot the one-month." (11 s vertical, star_advice trial,
 // music: dreamy · F). Story 0–8.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–4.1   "*Cancer*, when they forgot | your *one-month.*"  Cancer holds a tiny cake with a "1" candle; the flame
 //             flickers, the wax drips, sad little notes drift up. The date bounces in (2.2): "hey! what's up?"
-//   4.1       card flip.   4.1–8.6  THE STARS: "Tell them it | *mattered.* Kindly."  Cancer: "it mattered to me."
+//   4.1       white blink (no card cut).   4.1–8.6  THE STARS: "Tell them it | *mattered.* Kindly."  Cancer: "it mattered to me."
 //             The date: "I'm sorry. tell me about it?"  They share the cake.  Pisces cries.
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 function cake(x, t, cx, cy, k = 1, lit = 1) {

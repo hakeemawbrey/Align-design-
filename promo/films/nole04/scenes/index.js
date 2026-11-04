@@ -1,8 +1,8 @@
-// nole04: ONE-LINE ADVICE FOR YOUR SIGN, "Cancer, on date three (already named the dog)." (13 s vertical, star_advice
+// nole04: ONE-LINE ADVICE FOR YOUR SIGN, "Cancer, on date three (already named the dog)." (11 s vertical, star_advice
 // trial, music: dreamy · E). Story 0–8.6, then the shared end card. Format: ../../nole01/scenes/olkit.js.
 //   0.0–4.1   "*Cancer*, it's date three | and you've named | the *dog.*"  Cancer hugs a thought cloud: a snowy
 //             little house with a wreath and a dog ("BISCUIT"). At 1.8 a second dog pops in. The date waves: "hello?"
-//   4.1       card flip.   4.1–8.6  THE STARS: "Enjoy the date | you're *on.*"  Cancer turns and waves back at the
+//   4.1       white blink (no card cut).   4.1–8.6  THE STARS: "Enjoy the date | you're *on.*"  Cancer turns and waves back at the
 //             real date, hearts.  Pisces sobs (it was a very good dog).
 import { makeOneLine, miniPhone, cloud, table, bubble, box, R, label, shadow, sparkles, hearts, snow, drawBits, HEART, starFrame, inSprite, tearsCells, shadesCells, scarfCells, tissues, prog, clamp, lerp, ease, pop01, outK, INK, BONE, GOLD, RED, PINK, LAV, SKYB, MINT, INTER, MONO, SERIF, r3 } from '../../nole01/scenes/olkit.js'
 const HOUSE = ['....RR....', '...RRRR...', '..RRRRRR..', '.RRRRRRRR.', 'WWWWWWWWWW', 'WYYWWWWDDW', 'WYYWWWWDDW', 'WWWWWWWWDW']
