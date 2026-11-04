@@ -267,11 +267,11 @@ export const PROPS = {
   },
   // a sketched phone with bubbles: msgs [{ side: 'L'|'R', text, at, del }]  (del: the draft is struck + deleted)
   phone(ctx, t, p, k, at) {
-    const w = 420, h = 470, x0 = PC.x - w / 2, y0 = PC.y - h / 2
+    const w = 420, h = 420, x0 = PC.x - w / 2 + 20, y0 = PC.y - h / 2 + 30
     ctx.save(); ctx.fillStyle = INK; ctx.fillRect(x0 - 14, y0 - 14, w + 28, h + 28); ctx.fillStyle = '#fbf6e8'; ctx.fillRect(x0, y0, w, h)
-    ctx.fillStyle = INK; ctx.fillRect(PC.x - 50, y0 - 6, 100, 10); ctx.restore()
+    ctx.fillStyle = INK; ctx.fillRect(x0 + w / 2 - 50, y0 - 6, 100, 10); ctx.restore()
     ctx.fillStyle = rgba(INK, 0.1); ctx.fillRect(x0, y0, w, 58)
-    hand(ctx, p.title, PC.x, y0 + 30, { size: 32, weight: 700, maxW: w - 30 })
+    hand(ctx, p.title, x0 + w / 2, y0 + 30, { size: 32, weight: 700, maxW: w - 30 })
     let y = y0 + 84
     ctx.save(); ctx.beginPath(); ctx.rect(x0, y0 + 58, w, h - 58); ctx.clip()
     for (const m of p.msgs) {
