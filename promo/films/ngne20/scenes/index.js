@@ -1,5 +1,5 @@
-// ngne20: STAR TALK GAME NIGHT, Ep 20, "Scorpio vs Pisces: The Bigger Half" (35 s vertical, same element: water, music: jazzy · Eb).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne20: STAR TALK GAME NIGHT, Ep 20, "Scorpio vs Pisces: The Bigger Half" (33 s vertical, same element: water, music: jazzy · Eb).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'One last slice. | *Two* soft hearts.' Pisces crying at its podium; Scorpio holding out a tissue.
 //   R1 'I got the apartment!! ___' both kind → both · R2 'They text “home safe”' both GREEN → both
 //   R3 'You both want the last slice': Scorpio 'split it. they get the bigger half.' / Pisces 'give it away. cry about it later.' → Scorpio. Final Scorpio 3–2.
