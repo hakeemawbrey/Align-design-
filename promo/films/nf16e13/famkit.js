@@ -1,12 +1,12 @@
 // famkit.js: the shared look of "Season 16: Meet the Family", episodes 13–24 (nf16e13…nf16e24, batch b22, see
 // promo/films/next30/b22.md). nf16e13 owns this file; nf16e14–nf16e24 import it read-only from ../../nf16e13/famkit.js.
 //
-// The format (30–45 s, story = DURATION − 4.4, then the shared end card):
+// The format (28–43 s, story = DURATION − 2.4, then the short 2.4 s end card):
 //   beats[0]   the hook: the headline is already in at frame 0 and the cast is mid-action inside a lit "room" diorama
 //              (porch, living room, table, kitchen, guest room, car, street, desk) floating on the night sky.
 //   beats[…]   the situation in 1–3 quick scene beats (a white flash + zoom punch on each hard cut).
 //   notes      THE STARS' NOTES: a bone note card with three numbered tips (Inter 800 + one EB Garamond italic accent),
-//              the cast acting under it. The one card cut (cardfx flip) plays into it.
+//              the cast acting under it. (No card-back cut: the card drops in on its own whoosh.)
 //   lesson     optional ★ LESSON UNLOCKED (lesson.js), for the 45 s films.
 //   payoff     the callback, and THE STARS say the last line. Pisces cries in every film (always happy tears).
 // Bug: "MEET THE FAMILY" in Inter 800 small caps, letter-spaced, warm amber, top-left 56 px.
@@ -22,8 +22,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../startalk.js'
 import { popText, buildLesson, lessonCues } from '../lesson.js'
 
@@ -575,7 +575,7 @@ export function makeFamily(cfg) {
   let acc0 = 0
   const B = cfg.beats.map((b, i) => { const t0 = r3(acc0); acc0 += b.len; return { ...b, i, t0, t1: r3(acc0), kind: b.kind || 'scene' } })
   const STORY_END = r3(acc0)
-  const DURATION = r3(STORY_END + ENDCARD_LEN)
+  const DURATION = r3(STORY_END + ENDCARD_SHORT_LEN)
   const NB = B.find(b => b.kind === 'notes')
   const CUT = NB ? NB.t0 : null
   const CAST = cfg.cast
@@ -710,8 +710,8 @@ export function makeFamily(cfg) {
     }
   }
 
-  const CUTS = CUT != null ? [{ t: CUT, kind: 'flip' }] : []
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card-back cut (owner's change, 4 Nov): the notes card drops in on its own whoosh; short 2.4 s end card
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -730,8 +730,7 @@ export function makeFamily(cfg) {
     ...(B.find(b => b.kind === 'lesson') ? (() => { const LB = B.find(b => b.kind === 'lesson'); return lessonCues(LB.t0 + 0.1, { text: LB.text, chip: LB.chip, key: cfg.key }) })() : []),
     ...talkCues(ALL_LINES, { cps: CPS }),
     ['whoosh', r3(STORY_END - 0.42), 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, STORY_END, SCENES, CUES, B, CUT }
 }
