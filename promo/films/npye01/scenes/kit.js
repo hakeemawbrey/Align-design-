@@ -474,7 +474,7 @@ export function giftReveal(x, t, S, drawGift, { line = null, lineAt = 1.2, heroM
   const lf = ease.outCubic(prog(u, 0, 0.45))
   shadow(x, BOX.cx, BOX.base, BOX.w * 1.1)
   // the lid lands on the snow to the right
-  giftBox(x, t, BOX.cx, BOX.base, BOX.w, BOX.h, col, rib, { open: true, bow: 0, lidDx: lerp(0, 300, lf), lidDy: lerp(0, -260, Math.sin(Math.PI * lf)) + lerp(0, 240, lf), lidRot: lerp(0, 0.5, lf) })
+  giftBox(x, t, BOX.cx, BOX.base, BOX.w, BOX.h, col, rib, { open: true, bow: 0, lidDx: lerp(0, 620, lf), lidDy: lerp(0, -820, lf), lidRot: lerp(0, 1.4, lf) })
   const k = easeOutBack(prog(u, 0.15, 0.7), 1.8)
   if (k > 0.01) drawGift(x, t, BOX.cx, lerp(BOX.base - BOX.h + 40, 770, k), k)
   sparkles(x, t, BOX.cx, 780, S.t0 + 0.6, 12, 220, 1, [GOLD, BONE, rib])
@@ -541,7 +541,12 @@ export function makeEp(cfg) {
       if (ok <= 0) return
       const S = { ...helpers, ok, u: t - T.fin, t0: T.fin, HOPS: FIN_HOPS }
       if (cfg.finale) cfg.finale(x, t, S)
-      else {
+      else if (cfg.finGift) {
+        shadow(x, 400, 1110, 230 * ok)
+        const o = { x: 400, y: 900, s: 260, pop: ok, mood: 'sparkle', look: [1, 0], hops: FIN_HOPS }
+        hero(x, t, o)
+        if (ok > 0.05) cfg.finGift(x, t, 730, 930, 0.55 * ok)
+      } else {
         shadow(x, 540, 1110, 240 * ok)
         const o = { x: 540, y: 900, s: 290, pop: ok, mood: 'sparkle', look: [0, 0], hops: FIN_HOPS }
         hero(x, t, o); heroHat(x, t, o)
