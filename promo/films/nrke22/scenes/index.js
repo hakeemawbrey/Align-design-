@@ -1,4 +1,4 @@
-// nrke22: RANKING THE SIGNS, "Who remembers the anniversary" (18 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
+// nrke22: RANKING THE SIGNS, "Who remembers the anniversary" (16 s vertical star_advice trial reel, promo/films/next30/b39.md, music:
 // cinematic · Dm). Story 0–13.6, then the shared end card. The format lives in ../../nrke01/scenes/rankkit.js.
 //   0.0        hook: "Who remembers / the *anniversary?*" over the empty board; THE STARS scribble, Pisces sniffles.
 //   1.8–5.64   #12 Sagittarius → #4 Virgo slam in.   6.3 card cut.   6.8 #3 Scorpio · 7.7 #2 Cancer
