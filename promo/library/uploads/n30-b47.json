@@ -1,0 +1,65 @@
+{
+ "nsre01": {
+  "video": "/_blob/85886502ca3139eb46896f419998adaf",
+  "poster": "/_blob/d575e31643d194c39ce5af42b7e5013d",
+  "title": "A hand-knitted hat",
+  "len": 20,
+  "series": "silent2",
+  "episode": 1,
+  "caption": "A lumpy hand-knitted hat, reviewed without a single word.\nDropped stitches, zero complaints. Made by them wins."
+ },
+ "nwfe01": {
+  "video": "/_blob/83e675f1ae3458e0b43545867a2bfe3f",
+  "poster": "/_blob/513a7ced1427c9e5852ed6a552b83155",
+  "title": "Your side first",
+  "len": 20,
+  "series": "wait2",
+  "episode": 1,
+  "caption": "Ever watched someone scrape a windshield very, very slowly?\nIt was clearing your side first."
+ },
+ "nwfe02": {
+  "video": "/_blob/99089241f549de7a05c1bd082239268d",
+  "poster": "/_blob/4a4d457871a1908928bebf88cc78eecd",
+  "title": "Built you in snow",
+  "len": 20,
+  "series": "wait2",
+  "episode": 2,
+  "caption": "When your Aries builds the worst snowman you've ever seen.\nTurns out it was a portrait. Of you."
+ },
+ "nwfe04": {
+  "video": "/_blob/dda36027c48083eb9e5874031f043d94",
+  "poster": "/_blob/f6ff47ddc2713d89f3e5e7a007ccf053",
+  "title": "Pre-warmed",
+  "len": 20,
+  "series": "wait2",
+  "episode": 4,
+  "caption": "Your coat is being held hostage by the radiator.\nSome people say I love you with a warm coat."
+ },
+ "nwfe05": {
+  "video": "/_blob/5bd08b5603829b6c79d3af5ee7179b9a",
+  "poster": "/_blob/321b956e81596f5c7e34ff35a2f81fdb",
+  "title": "You said it once",
+  "len": 20,
+  "series": "wait2",
+  "episode": 5,
+  "caption": "Why does your Capricorn keep writing in that notebook?\nEvery little thing you mentioned once. Remembered."
+ },
+ "nwfe06": {
+  "video": "/_blob/1c68243af851de066df86f96e32ccf01",
+  "poster": "/_blob/b47b94f20a958172b0bec4ca9e14b74e",
+  "title": "Baked your sign",
+  "len": 20,
+  "series": "wait2",
+  "episode": 6,
+  "caption": "Waiting all evening while someone kneads the same dough?\nWorth it when the bread comes out shaped like your sign."
+ },
+ "nwfe07": {
+  "video": "/_blob/7e214f34d3ec3ab120ae4b6d287add47",
+  "poster": "/_blob/533f2ea845c45b6370811caf1a2061b9",
+  "title": "Both, side by side",
+  "len": 20,
+  "series": "wait2",
+  "episode": 7,
+  "caption": "Libra cannot pick an ornament. Classic.\nSometimes the answer is both, on the same branch."
+ }
+}
