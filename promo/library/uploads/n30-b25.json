@@ -133,5 +133,32 @@
   "series": "ask2",
   "episode": 15,
   "caption": "Mixed feelings are information, not failure. Write down what you like and what you are unsure about, then tell them gently where you are."
+ },
+ "naske16": {
+  "video": "/_blob/949fa2198b96d76b8de527964fbd9d12",
+  "poster": "/_blob/5d79083ea810370ddc5fb98ccf9c71c8",
+  "title": "They're away for the holidays. I miss them.",
+  "len": 18,
+  "series": "ask2",
+  "episode": 16,
+  "caption": "Missing someone means it matters. Plan one call you both look forward to, and lean on the people who are right here with you."
+ },
+ "naske17": {
+  "video": "/_blob/8e9f8129760dd7e2329b22c0168052e2",
+  "poster": "/_blob/a6caea66658ad7f1053ba638760032d6",
+  "title": "They're shy. I'm... not.",
+  "len": 18,
+  "series": "ask2",
+  "episode": 17,
+  "caption": "Shy is not uninterested; it is a pace. Ask, then wait a beat longer than usual. A quiet walk can say more than a loud party."
+ },
+ "naske18": {
+  "video": "/_blob/856e2705b1102bd9c3bdc1da00bd0096",
+  "poster": "/_blob/5c7d206b898ac22ef78f0238a29716f1",
+  "title": "I can't stop noticing their flaws.",
+  "len": 18,
+  "series": "ask2",
+  "episode": 18,
+  "caption": "Noticing is a gift; judging is a choice. Write down three things you love about them too. Nobody is perfect, and that is the good part."
  }
 }
