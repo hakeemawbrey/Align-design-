@@ -99,7 +99,7 @@ If the workers exit (the 7200 s linger runs out while you're still building), st
 
 **Moonlight Lane teasers (`ml2` batches only):** for each of your 5 episodes, cut 3 teasers of 15–25 s from the
 1080p send mp4 (a hook moment, a turn, the question before THE STARS' advice; never the ending) and add the episode's
-last 4.4 s end card. Name them `nmte<NN>` in episode order (batch 1: 01–15, batch 2: 16–30), make the web copy and
+last 2.4 s (short) end card. Name them `nmte<NN>` in episode order (batch 1: 01–15, batch 2: 16–30), make the web copy and
 poster the same way the worker does (`/tmp/claude-0/webenc.sh` shows the ffmpeg settings), and treat them as films
 for the upload step.
 
