@@ -303,7 +303,7 @@ export function makeCry(cfg) {
     } catch (_) { /* fonts optional */ }
     const root = fill(stage, { background: '#05040c' })
     const cv = layerCanvas(root), x = cv.getContext('2d')
-    const H0 = popText(root, `Pisces cries about… | *${cfg.topic}.*`, { top: 160, size: 76, accentSize: 104, at: T.h0, gap: 0.05, accentColor: cfg.accent || TEAR, fit: true })
+    const H0 = popText(root, `Pisces cries about… | *${cfg.topic}${/[”?!.]$/.test(cfg.topic) ? '' : '.'}*`, { top: 160, size: 76, accentSize: 104, at: T.h0, gap: 0.05, accentColor: cfg.accent || TEAR, fit: true })
     const sticker = buildSticker(root, { text: cfg.sticker, deep: cfg.deep || '#2a7fb0', at: T.sticker, out: T.stickerOut, tilt: cfg.tilt ?? -1.8 })
     const top = layerCanvas(root), tx = top.getContext('2d')
     const box1 = dialogueBox(root, { lines: LINES, y: 1420, open: T.last - 0.22, close: T.boxClose, cps: CPS })
