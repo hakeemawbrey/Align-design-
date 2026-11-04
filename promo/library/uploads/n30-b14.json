@@ -1,56 +1,92 @@
 {
  "nt2e61": {
-  "video": "/_blob/622be9130fcade7d9a7e118a7bf85939",
-  "poster": "/_blob/221fde3c39e1e0ff733583fd022e1c4b",
+  "video": "/_blob/513344365add8aab91363ac61a5394ca",
+  "poster": "/_blob/79c9b0c7a80fae75700b785d2c8cdc1c",
   "title": "In This House: Cancer's rules",
-  "len": 20,
+  "len": 18,
   "series": "trends2",
   "episode": 61,
   "caption": "Cancer will send you home with five tubs of soup and then text \"home safe\" from the mailbox. Twelve steps. Which rule does your house have?"
  },
  "nt2e62": {
-  "video": "/_blob/963161315ba33ace7cc978807b8ec1ea",
-  "poster": "/_blob/e6c541be168f26895ce0f2e3e4af0067",
+  "video": "/_blob/f8adc9c55a216c1f9c7209ef1d2eaaba",
+  "poster": "/_blob/17787aed7cc2014aca25b6ba714280dd",
   "title": "In This House: an Aries and Virgo home",
-  "len": 20,
+  "len": 18,
   "series": "trends2",
   "episode": 62,
   "caption": "Aries wins every race to the door, then holds it open anyway. Virgo labels the chaos. And every fight starts with snacks. Who in your house runs the label maker?"
  },
  "nt2e63": {
-  "video": "/_blob/2d754f215f8d1f2806aa4e2b1cb3d854",
-  "poster": "/_blob/3093e5b24df74f37a547334912689286",
+  "video": "/_blob/e8e1966125ec6cf964c4c245154396b9",
+  "poster": "/_blob/8fe1097011dbe16bd6a9ffb1cef4c06b",
   "title": "In This House: Aquarius rules",
-  "len": 20,
+  "len": 18,
   "series": "trends2",
   "episode": 63,
   "caption": "The robot arm hands you the remote, Thursday is rock collection night, and \"I love you\" no longer comes in binary. What's the weirdest rule you'd keep?"
  },
  "nt2e64": {
-  "video": "/_blob/a815136a82eaab9fa0c84698448681b6",
-  "poster": "/_blob/e98565f0f9159bae6ad29ac7f3b1b154",
+  "video": "/_blob/d483ee4c1aa766662a27cda425ace6e0",
+  "poster": "/_blob/0460daff30a905f880588e8c6ee82a89",
   "title": "In This House: Capricorn's calendar",
-  "len": 20,
+  "len": 18,
   "series": "trends2",
   "episode": 64,
   "caption": "Every square of the week is planned except one, circled twice: NOTHING. Capricorn in striped socks, resting on purpose. Tag the friend who needs that square."
  },
  "nt2e65": {
-  "video": "/_blob/621cd88727c8488e87259ef8c36bfd4f",
-  "poster": "/_blob/e337891f3d2b67140e6444fbfe39f14f",
+  "video": "/_blob/88dde81d35f6ca7e1ffbf6438e73d201",
+  "poster": "/_blob/312d0c779995c594eb246207736fa469",
   "title": "In This House: Libra says no",
-  "len": 20,
+  "len": 18,
   "series": "trends2",
   "episode": 65,
   "caption": "Teal or plum? They talked it out. The chipped mug is the favourite. And a fourth weekend plan got a kind, clear \"not this time.\" Proud of you, Libra."
  },
  "nt2e66": {
-  "video": "/_blob/4c8e284d23dc8d325cca896e23a0ac0e",
-  "poster": "/_blob/f2f6c538d07e592db496583e49adb495",
+  "video": "/_blob/efc53432b172e0e54b714746f858f402",
+  "poster": "/_blob/13df4367546c8a3262bb25d85e164328",
   "title": "Plot Twist: the late date",
-  "len": 20,
+  "len": 18,
   "series": "trends2",
   "episode": 66,
   "caption": "Twenty minutes late, three drafts deleted, one map with three pins. Meanwhile they were outside the door practising hello. Which sign rehearses their entrance?"
+ },
+ "nt2e67": {
+  "video": "/_blob/ac8c39c6ee3c0ea4f75f68428a72892f",
+  "poster": "/_blob/68bea71614b661c18b54724e728bb332",
+  "title": "Plot Twist: the hummed tune",
+  "len": 18,
+  "series": "trends2",
+  "episode": 67,
+  "caption": "You hum one tune on date one, they go quiet, then it's \"busy!\" for three days. Turns out they were learning to play it. One note wrong, every bit of heart."
+ },
+ "nt2e68": {
+  "video": "/_blob/df28e9b8932aca861408e153c55a1d4d",
+  "poster": "/_blob/3902b09c70de60602ae3ec6e39f3fb22",
+  "title": "Plot Twist: Friday got cancelled",
+  "len": 18,
+  "series": "trends2",
+  "episode": 68,
+  "caption": "\"can't do friday, sorry\" and Cancer's spiral reaches the soup by Tuesday. Then the next text: Saturday, blanket fort, no alarms. Be honest, how fast do you spiral?"
+ },
+ "nt2e69": {
+  "video": "/_blob/2ef75c14b5da79c66df99fd7acd1dce2",
+  "poster": "/_blob/9becd557cdf0604dc476fdd5df5a38ed",
+  "title": "Plot Twist: still typing",
+  "len": 18,
+  "series": "trends2",
+  "episode": 69,
+  "caption": "The dots go on, off, on, and Aries has pictured a twelve-part essay. The message: can I call you instead? Some people just want to hear your voice."
+ },
+ "nt2e70": {
+  "video": "/_blob/87a1978e011bb27976a0e4957ead6d99",
+  "poster": "/_blob/28f88db36d34978888562c7a418b3bbe",
+  "title": "Plot Twist: \"we need to talk\"",
+  "len": 18,
+  "series": "trends2",
+  "episode": 70,
+  "caption": "Libra rehearsed every bad ending in the mirror and walked to the bench like a movie. It was a talk card: what made you smile this week? Answer in the comments."
  }
 }
