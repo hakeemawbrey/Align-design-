@@ -1,5 +1,5 @@
-// nvse18: SIGN VS SIGN, "Who handles the sweater party better?" ♑ Capricorn vs ♒ Aquarius (18 s trial reel, b46,
-// music: chiptune · G). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse18: SIGN VS SIGN, "Who handles the sweater party better?" ♑ Capricorn vs ♒ Aquarius (16 s trial reel, b46,
+// music: chiptune · G). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: two sweaters float between them, a grey one and a loud one.
 //   ROUND 1 ♑ "wears a *tasteful* grey sweater." one stripe; then it switches to the reindeer one. "it’s festive. it has a stripe." → "…fine. the reindeer one."
 //   ROUND 2 ♒ "knitted one that *lights up and beeps.*" blinking lights, a tune, then a clock. "it plays a little tune!" → "it also tells the time."
