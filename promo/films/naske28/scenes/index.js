@@ -1,10 +1,10 @@
-// naske28 · Ask the Stars, Volume 2, ep 28 · "I'm spending the holidays alone." (20 s, dreamy · C)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske28 · Ask the Stars, Volume 2, ep 28 · "I'm spending the holidays alone." (18 s, dreamy · C)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "I'm spending the holidays *alone.*"  ♋ Cancer mid-set of a little table for one, lowering a paper crown
 //         onto its own head; snow falls past the window.
 //   3.0   "alone can still be warm. plan it."  The table fills: a plate of its favourite, a candle.
 //   5.9   "cook your favorite. call someone you love."  A phone with a heart rings: "SIS". Cancer answers, beaming.
-//   8.75  card cut → 8.8 "and if an invite comes, yes is allowed."  An envelope slides in: "you're invited!"
+//   8.8   "and if an invite comes, yes is allowed."  An envelope slides in: "you're invited!"
 //   12.1  "Be your own | *warm* place."
 import { makeAsk, R, box, drawBits, mug, bubble, sparkles, hearts, shadow, inSprite, starFrame, label, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, SNOW, MONO, INTER } from '../../naske19/scenes/askkit2.js'
 
