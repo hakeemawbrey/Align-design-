@@ -79,5 +79,95 @@
   "series": "oneline",
   "episode": 9,
   "caption": "Sagittarius, the suitcase is packed and you met them on Tuesday.\nKeep the ticket for someday. Enjoy date three first."
+ },
+ "nole10": {
+  "video": "/_blob/da8b5629918e8b1fe0bebea84f3fa8ad",
+  "poster": "/_blob/ecd6c83d7b0bee6dbce07ccb9afd1e71",
+  "title": "Capricorn, when they ask how your day was",
+  "len": 13,
+  "series": "oneline",
+  "episode": 10,
+  "caption": "Capricorn, they asked about your day and you gave a full report.\nSkip the chart. Tell them how it felt."
+ },
+ "nole11": {
+  "video": "/_blob/8aec62c7b41edf5dcadf133489717ad0",
+  "poster": "/_blob/7816e020969aca7109edca3e2b5e46ad",
+  "title": "Aquarius, when they say \"I missed you\"",
+  "len": 12,
+  "series": "oneline",
+  "episode": 11,
+  "caption": "Aquarius, still buffering after they said \"I missed you\"?\nYou missed them too. Say it back."
+ },
+ "nole12": {
+  "video": "/_blob/864ad3b20d703d623738e2d7ff67d4b7",
+  "poster": "/_blob/12a18ff42b85cccc804ea02996862aeb",
+  "title": "Pisces, when the first snow is too pretty",
+  "len": 13,
+  "series": "oneline",
+  "episode": 12,
+  "caption": "Pisces, crying at the first snow before they even text?\nThen they ask you to come see it. Cry a little, then go."
+ },
+ "nole13": {
+  "video": "/_blob/b7b14829939cb6a47d88009059a7ae70",
+  "poster": "/_blob/0406a8d2413890f2d0fd9030d0c40907",
+  "title": "Aries, when they're slow to share",
+  "len": 12,
+  "series": "oneline",
+  "episode": 13,
+  "caption": "Aries, they take a while to open up and you brought a stopwatch.\nSit down, stay kind. Some hearts open slowly."
+ },
+ "nole14": {
+  "video": "/_blob/5c6773b0e9fbaf75819f4b3c5d383ab6",
+  "poster": "/_blob/be673064163f0fe851b1392659d1a926",
+  "title": "Taurus, when they ask for a bite",
+  "len": 12,
+  "series": "oneline",
+  "episode": 14,
+  "caption": "Taurus, they asked for one bite of your cake.\nShare the bite. You can keep the plate."
+ },
+ "nole15": {
+  "video": "/_blob/287516369e14aef7c18b666a1dd5e933",
+  "poster": "/_blob/35ebdffb77d3d2f35424e0f644508049",
+  "title": "Gemini, texting four chats at once",
+  "len": 12,
+  "series": "oneline",
+  "episode": 15,
+  "caption": "Gemini, four chats are buzzing and your date just said \"hi?\"\nPut the phones down for an hour. One chat at a time."
+ },
+ "nole16": {
+  "video": "/_blob/43f7dd88dcab500ed848881d37d8b86d",
+  "poster": "/_blob/3567fde78e172480dd754b2b4110bf1f",
+  "title": "Cancer, when they forgot the one-month",
+  "len": 13,
+  "series": "oneline",
+  "episode": 16,
+  "caption": "Cancer, they forgot your one-month and the little candle is melting.\nTell them it mattered to you. Kindly, so they can show up."
+ },
+ "nole17": {
+  "video": "/_blob/a9ad11e0d6b2f559fbe6bdd3d38c49c6",
+  "poster": "/_blob/0407edf609ecedd2a0e521a4fce775be",
+  "title": "Leo, when they plan the date",
+  "len": 12,
+  "series": "oneline",
+  "episode": 17,
+  "caption": "Leo, it's their turn to plan and you're still holding the clipboard.\nHand it over. Being surprised is fun too."
+ },
+ "nole18": {
+  "video": "/_blob/00a36b0569aa7f6a4ea08e83b8fa9788",
+  "poster": "/_blob/82a69e90f8fb8dd9801d913faa4a0f79",
+  "title": "Virgo, when their place is a little messy",
+  "len": 12,
+  "series": "oneline",
+  "episode": 18,
+  "caption": "Virgo, there is a sock on the couch and your eye is twitching.\nPut the duster down. Notice the person, not the socks."
+ },
+ "nole19": {
+  "video": "/_blob/e32514d1a5588485d1222a1d9be0e4f8",
+  "poster": "/_blob/ea935dfd9cddadbbfbf0f19daf6f2587",
+  "title": "Libra, choosing the holiday gift",
+  "len": 12,
+  "series": "oneline",
+  "episode": 19,
+  "caption": "Libra, still weighing three gifts for them?\nPick the one that made you smile first. That's usually the one."
  }
 }
