@@ -1,4 +1,4 @@
-// nh15e18: HOME FOR THE HOLIDAYS, "The game that got too competitive." (40 s vertical, Star Talk Season 15 ep 18,
+// nh15e18: HOME FOR THE HOLIDAYS, "The game that got too competitive." (38 s vertical, Star Talk Season 15 ep 18,
 // music: house · A). Story 0–35.6, then the shared end card. The season's look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.2    hook "It was *just* a board game."  Capricorn stands on its chair, a game tile held high over the board.
 //   3.2–7.6    "Round 1: | *friendly.*"  Dice roll, "nice move!", everyone smiles. Pisces cries happy tears.
