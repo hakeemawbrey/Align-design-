@@ -1,5 +1,5 @@
-// nvse02: SIGN VS SIGN, "Who handles meeting the friends better?" ♊ Gemini vs ♋ Cancer (18 s trial reel, b46,
-// music: pop · C). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse02: SIGN VS SIGN, "Who handles meeting the friends better?" ♊ Gemini vs ♋ Cancer (16 s trial reel, b46,
+// music: pop · C). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: three friend stars peek in between the two: "hi!!"
 //   ROUND 1 ♊ "learns *everyone’s name* in a minute." name tags fly round the room. "wait, you ALSO knit??" → "group photo!"
 //   ROUND 2 ♋ "brings *homemade cookies.*" the tin opens, cookies fly to the friends. "I made extra." → "…do they like me?"
