@@ -236,3 +236,23 @@ describe("transient Instagram errors", () => {
     expect(p.error).toMatch(/^Retrying: An internal server error/);
   });
 });
+
+describe("editQueuedPost", () => {
+  it("edits scheduled posts, requeues failed ones, and leaves posts being published alone", async () => {
+    const { editQueuedPost, updatePost } = await import("../src/lib/db");
+    const later = new Date(NOW.getTime() + 3_600_000);
+    const id = await schedule("IMAGE", later);
+    expect(await editQueuedPost(db, id, { caption: "longer caption" }, NOW)).toBe(true);
+    expect((await getPost(db, id))!.caption).toBe("longer caption");
+
+    await updatePost(db, id, { status: "failed", error: "fetch failed", attempts: 1 });
+    expect(await editQueuedPost(db, id, { caption: "x" }, NOW)).toBe(false); // caption alone does not requeue
+    expect(await editQueuedPost(db, id, { scheduledAt: later }, NOW)).toBe(true);
+    const requeued = (await getPost(db, id))!;
+    expect(requeued).toMatchObject({ status: "scheduled", error: null, attempts: 0, scheduled_at: later.toISOString() });
+
+    await updatePost(db, id, { status: "processing" });
+    expect(await editQueuedPost(db, id, { caption: "y", scheduledAt: later }, NOW)).toBe(false);
+    expect((await getPost(db, id))!.caption).toBe("longer caption");
+  });
+});

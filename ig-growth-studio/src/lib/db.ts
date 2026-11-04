@@ -412,6 +412,28 @@ export async function claimPost(db: DB, id: number, now: Date): Promise<boolean>
   return res.rowsAffected === 1;
 }
 
+/**
+ * Edits a post that has not started publishing. A failed or cancelled post goes back in the queue when given a time.
+ * The status check is part of the UPDATE, so it cannot race the publisher claiming the post.
+ */
+export async function editQueuedPost(db: DB, id: number, fields: { caption?: string; scheduledAt?: Date }, now: Date) {
+  const sets: string[] = [];
+  const args: Arg[] = [];
+  if (fields.caption !== undefined) sets.push("caption = ?"), args.push(fields.caption);
+  if (fields.scheduledAt) {
+    sets.push("scheduled_at = ?", "status = 'scheduled'", "container_id = NULL", "error = NULL", "attempts = 0");
+    args.push(fields.scheduledAt.toISOString());
+  }
+  if (sets.length === 0) return false;
+  const statuses = fields.scheduledAt ? "('scheduled', 'failed', 'cancelled')" : "('scheduled')";
+  const res = await run(db, `UPDATE posts SET ${sets.join(", ")}, updated_at = ? WHERE id = ? AND status IN ${statuses}`, [
+    ...args,
+    now.toISOString(),
+    id,
+  ]);
+  return res.rowsAffected === 1;
+}
+
 export async function updatePost(db: DB, id: number, fields: Partial<Omit<PostRow, "id" | "created_at">>) {
   const entries = Object.entries(fields).filter(([, v]) => v !== undefined) as [string, Arg][];
   if (entries.length === 0) return;
