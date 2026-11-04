@@ -81,30 +81,84 @@
   "caption": "Sagittarius, you can pack for a snow trip in four seconds. Before you go, ask whether they want the adventure or the sofa. A good trip can wait a weekend."
  },
  "ngwe10": {
-  "video": "/_blob/0e8168b00ad572b74cbcbfeebb693187",
-  "poster": "/_blob/ad815f80a236a946d4d3b5c24aa9809f",
+  "video": "/_blob/fddf3715832ea7f1e3925a9f4dd71b46",
+  "poster": "/_blob/ee287aa428320731c5d2e80b6260e84b",
   "title": "How Capricorn loves in winter",
-  "len": 22,
+  "len": 20,
   "series": "gw",
   "episode": 10,
   "caption": "Capricorn, you show love by shoveling their path before they're even awake. Don't slip away afterwards. Knock, and let them say thank you."
  },
  "ngwe11": {
-  "video": "/_blob/3f69cf55dff9fd89759f8e7121627573",
-  "poster": "/_blob/4f8bf60bc24adee15de2c39305ea19eb",
+  "video": "/_blob/1f80ea9457fc6c4f748605e32d98e3de",
+  "poster": "/_blob/944b39e20ece06013bba69684aacf427",
   "title": "How Aquarius loves in winter",
-  "len": 22,
+  "len": 20,
   "series": "gw",
   "episode": 11,
   "caption": "Aquarius, a snow robot that says hi is a very you way to flirt. Big gestures are fun, but sometimes all they want is a simple hello from you."
  },
  "ngwe12": {
-  "video": "/_blob/a053a6b12ddfeabf5cc4d798f8bfc5bc",
-  "poster": "/_blob/fd141a52ecc11b4284c028d80df6ec7b",
+  "video": "/_blob/f4f2cf1245692bc090f05cca2a533ac4",
+  "poster": "/_blob/a18154d9c8ffc24e2d3bf7816176ac62",
   "title": "How Pisces loves in winter",
-  "len": 22,
+  "len": 20,
   "series": "gw",
   "episode": 12,
   "caption": "Pisces, crying at the first snowflake isn't too much. It's how you love. Bring that soft heart into winter and feel it all, out loud."
+ },
+ "ngwe13": {
+  "video": "/_blob/66f532d6e70f26c75e1653e605063685",
+  "poster": "/_blob/d90807eb0eb4eb280617573d354661c2",
+  "title": "Aries' holiday blind spot",
+  "len": 23,
+  "series": "gw",
+  "episode": 13,
+  "caption": "Aries, saying yes to every party for both of you comes from a good place. Their calendar is theirs, though. Ask first, then RSVP together."
+ },
+ "ngwe14": {
+  "video": "/_blob/251b7eebbe37828fcaea3abe4491132e",
+  "poster": "/_blob/ed0e0b76600002a786f14cbfd1800222",
+  "title": "Taurus' holiday blind spot",
+  "len": 23,
+  "series": "gw",
+  "episode": 14,
+  "caption": "Taurus, your traditions are part of who you are. Theirs are too. This year, try one bite of their holiday and see what it adds to yours."
+ },
+ "ngwe15": {
+  "video": "/_blob/98d44addc91d6f972c7ef354bae43805",
+  "poster": "/_blob/ebcdf8e42e2b796c3554ec84d9a33a30",
+  "title": "Gemini's holiday blind spot",
+  "len": 23,
+  "series": "gw",
+  "episode": 15,
+  "caption": "Three parties in one night is a lot of fun and not much time together. Gemini, pick one, stay till the last song, and stay where they are."
+ },
+ "ngwe16": {
+  "video": "/_blob/c8a88258e6598e313d5472fbbb51431f",
+  "poster": "/_blob/cc5cf7d28ecdf25c58147347d6d39f6b",
+  "title": "Cancer's holiday blind spot",
+  "len": 23,
+  "series": "gw",
+  "episode": 16,
+  "caption": "Cancer, you host it all and eat last, and usually cold. The people at your table came to see you. Sit down, pass the plate and let yourself be a guest."
+ },
+ "ngwe17": {
+  "video": "/_blob/a8ff95f972cec8a3b361c82a5f9155bd",
+  "poster": "/_blob/64163a4785f979ef0147f464f9ca43fc",
+  "title": "Leo's holiday blind spot",
+  "len": 23,
+  "series": "gw",
+  "episode": 17,
+  "caption": "Leo, the perfect holiday photo can take a while. They just wanted to be in it with you. Keep the blurry one where you're both laughing. That's the real one."
+ },
+ "ngwe18": {
+  "video": "/_blob/090dcd2baf7f59bd041ac20742b197d2",
+  "poster": "/_blob/2733b2e1f31a9e471e2f45c9cd898570",
+  "title": "Virgo's holiday blind spot",
+  "len": 23,
+  "series": "gw",
+  "episode": 18,
+  "caption": "Virgo, fixing the tree at midnight is very you. That crooked star might be the one they hung, though. Leave it. Some things are perfect because they're crooked."
  }
 }
