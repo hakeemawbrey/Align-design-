@@ -1,12 +1,12 @@
-// nhse15: HOLIDAY SURVIVAL GUIDE No. 15, "The gift that missed" (30 s vertical, star_advice post, music: pop · E).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse15: HOLIDAY SURVIVAL GUIDE No. 15, "The gift that missed" (28 s vertical, star_advice post, music: pop · E).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "They got you a | *duck lamp.*" Frame 0: ♍ Virgo mid-lift, a giant yellow duck-shaped lamp rising
 //              out of a gift box; ♐ Sag beaming ("I saw it and thought of YOU!"); Virgo's smile holds… a little too
 //              long. ♓ Pisces by the tree, crying because the duck is beautiful. SITUATION: "a gift you don't love."
 //   5.4–9.4    1 "Thank the thought *first.*" Virgo hugs Sag: "you thought of me. thank you." Hearts.
 //   9.4–13.4   2 "Find the part you *do* love." Click: the duck lights up, the room goes warm gold; Virgo, under it with a
 //              book: "…it IS cozy."
-//   13.4–17.4  3 "Honest later. *Kind* always." (card cut) A week on, on the couch. Sag: "be honest. the duck?" Virgo:
+//   13.4–17.4  3 "Honest later. *Kind* always." A week on, on the couch. Sag: "be honest. the duck?" Virgo:
 //              "love the light. the beak, still deciding." They both crack up.
 //   17.4–25.6  THE STARS: "the gift was a guess. the *love* wasn't." The duck glows on the shelf; Virgo reads under it,
 //              Sag dozes beside; Pisces happy-cries. endHead "The duck *stays.* | For now."  Last: "Thank the *thought.*"

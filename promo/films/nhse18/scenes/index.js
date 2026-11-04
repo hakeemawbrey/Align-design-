@@ -1,12 +1,12 @@
-// nhse18: HOLIDAY SURVIVAL GUIDE No. 18, "Working the holiday" (30 s vertical, star_advice post, music: cinematic · Cm).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse18: HOLIDAY SURVIVAL GUIDE No. 18, "Working the holiday" (28 s vertical, star_advice post, music: cinematic · Cm).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "Working on the | *holiday.*" Frame 0: a split set. WORK: ♒ Aquarius at a night desk under a clock at
 //              11:00, a NIGHT SHIFT sign, typing. HOME: ♓ Pisces at the table, crying over a plate under foil.
 //              SITUATION: "one of you works the big day."
 //   5.4–9.4    1 "Pick your *own* holiday date." A calendar: the big day gets a gentle X, a heart lands on the 28th.
 //   9.4–13.4   2 "Keep one tiny ritual." Pisces tucks a note into the work bag; at 11 PM Aquarius finds it: "proud of
 //              you ♡". Hearts.
-//   13.4–17.4  3 "Save a plate, not a *guilt trip.*" (card cut) Pisces' thought "you missed EVERYTHING" gets crossed
+//   13.4–17.4  3 "Save a plate, not a *guilt trip.*" Pisces' thought "you missed EVERYTHING" gets crossed
 //              out; the plate gets a sticky note: "FOR YOU ♡ · 2 MIN".
 //   17.4–25.6  THE STARS: "love doesn't check the *calendar.*" The 28th at home: both at the little table with the
 //              saved plate, string lights on; Pisces happy-cries. endHead "The 28th. | *Our* holiday."

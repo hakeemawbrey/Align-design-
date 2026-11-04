@@ -1,5 +1,5 @@
-// nhse14: HOLIDAY SURVIVAL GUIDE No. 14, "Two families, one day" (30 s vertical, star_advice post, music: jazzy · Bb).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse14: HOLIDAY SURVIVAL GUIDE No. 14, "Two families, one day" (28 s vertical, star_advice post, music: jazzy · Bb).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "Two families. | *One* holiday." Frame 0: two front doors side by side in the snow. ♉ Taurus is being
 //              waved toward the left door, ♋ Cancer toward the right; both phones buzz (MUM / MUM); the doors call
 //              "dinner at 2!" and "dinner at 2!!". ♓ Pisces on the step between them, crying.
@@ -8,7 +8,7 @@
 //              titled OUR PLAN; they nod at the same time.
 //   9.4–13.4   2 "Leave a buffer. No one gets the *rushed* half." A timeline: LUNCH ♉ 12–3 · BUFFER (a walk) · DINNER ♋
 //              5–8; the pair strolls along it with a cocoa.
-//   13.4–17.4  3 "Trade years: here now, there *next time.*" (card cut) Two cards: THIS YEAR / NEXT YEAR; they swap
+//   13.4–17.4  3 "Trade years: here now, there *next time.*" Two cards: THIS YEAR / NEXT YEAR; they swap
 //              places with a hop and a high five.
 //   17.4–25.6  THE STARS: "you're a *team* first. then a guest." The doors again: the pair walks up to the left door
 //              together, dish in hand; the right door has a note "SEE YOU AT 5 ♡". Pisces happy-cries on the step.

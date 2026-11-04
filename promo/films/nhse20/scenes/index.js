@@ -1,12 +1,12 @@
-// nhse20: HOLIDAY SURVIVAL GUIDE No. 20, "When the day goes sideways" (30 s vertical, star_advice post, music: jazzy · Eb).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse20: HOLIDAY SURVIVAL GUIDE No. 20, "When the day goes sideways" (28 s vertical, star_advice post, music: jazzy · Eb).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "The pie | *collapsed.*" Frame 0: the kitchen; ♋ Cancer frozen mid-presentation, holding a pie dish
 //              whose pie has slumped flat; DING-DONG at the door (guests!). ♓ Pisces by the counter, crying at the pie.
 //              SITUATION: "the big day isn't going to plan."
 //   5.4–9.4    1 "Laugh first. It's a *story* now." ♉ Taurus and ♌ Leo arrive, look, and everyone cracks up; the pie gets
 //              a little gold frame: "THE GREAT PIE, THIS YEAR".
 //   9.4–13.4   2 "Lower the bar to *together.*" A flag pops into the pie: PIE CRUMBLE. Five spoons dive in.
-//   13.4–17.4  3 "Name one thing that went *right.*" (card cut) Taurus: "the company." Leo: "my outfit." Cancer: "you all
+//   13.4–17.4  3 "Name one thing that went *right.*" Taurus: "the company." Leo: "my outfit." Cancer: "you all
 //              came." Pisces fountains.
 //   17.4–25.6  THE STARS: "perfect was a plan. *together* is the point." Everyone round the table sharing the crumble,
 //              spoons up; Pisces happy-cries. endHead "Pie crumble. | *Instant* classic."

@@ -1,12 +1,12 @@
-// nhse22: HOLIDAY SURVIVAL GUIDE No. 22, "The New Year's plan" (30 s vertical, star_advice post, music: house · F).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse22: HOLIDAY SURVIVAL GUIDE No. 22, "The New Year's plan" (28 s vertical, star_advice post, music: house · F).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "Big party or | *pajamas?*" Frame 0: a split set. PARTY: ♈ Aries in a party hat mid-blow on a
 //              noisemaker, a disco ball glinting. COZY: ♉ Taurus in pajamas under a blanket, tea steaming. ♓ Pisces in
 //              the middle on the line, crying, one half of its face lit by each side. SITUATION: "two ideas of a good
 //              night."
 //   5.4–9.4    1 "Say what you *actually* want." Aries: "I want to see everyone." Taurus: "I want cozy, with you."
 //   9.4–13.4   2 "Find the *overlap.*" Two circles slide together: FRIENDS + COZY → the middle: "friends early, cozy late".
-//   13.4–17.4  3 "Both can be true: early party, *cozy midnight.*" (card cut) A clock spins 8 PM → 11:30; Aries keeps its
+//   13.4–17.4  3 "Both can be true: early party, *cozy midnight.*" A clock spins 8 PM → 11:30; Aries keeps its
 //              party hat on with pajamas.
 //   17.4–25.6  THE STARS: "*both* of you should like the plan." Midnight on the couch: both in pajamas, one party hat
 //              each, a little 3 · 2 · 1 and a gentle shower of sparkles; Pisces happy-cries at the countdown.

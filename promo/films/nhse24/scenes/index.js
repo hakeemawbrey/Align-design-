@@ -1,11 +1,11 @@
-// nhse24: HOLIDAY SURVIVAL GUIDE No. 24, "You made it" (finale; 30 s vertical, star_advice post, music: cinematic · D).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse24: HOLIDAY SURVIVAL GUIDE No. 24, "You made it" (finale; 28 s vertical, star_advice post, music: cinematic · D).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "You survived the | *holidays.*" Frame 0: a heap of wrapping paper with signs poking out, dazed
 //              (♌ Leo, ♊ Gemini, ♍ Virgo, ♉ Taurus, ♋ Cancer); ♈ Aries on top waving a tiny white flag; ♓ Pisces on the
 //              summit, crying. SITUATION: "the holidays are over. phew."
 //   5.4–17.4   THE GUIDE, as badges. 1 "You held a boundary. *Kindly.*" ♉ Taurus gets a KIND NO badge.
 //              2 "You asked for help." ♋ Cancer gets an ASKED FOR HELP badge (a spoon on it).
-//              3 "You were gentle with *yourself.*" (card cut) ♓ Pisces gets a GENTLE WITH ME badge and the happiest tears.
+//              3 "You were gentle with *yourself.*" ♓ Pisces gets a GENTLE WITH ME badge and the happiest tears.
 //   17.4–25.6  THE STARS: "last tip: rest is *allowed.*" The heap again, but everyone's lounging in it now, each with a
 //              badge; Aries' flag has turned into a little banner: WE MADE IT. endHead "All of us. | *Still* here."
 //              Last line: "You made it. | *Gently.*"

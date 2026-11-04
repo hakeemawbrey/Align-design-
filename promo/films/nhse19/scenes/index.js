@@ -1,5 +1,5 @@
-// nhse19: HOLIDAY SURVIVAL GUIDE No. 19, "The gift you didn't see coming" (30 s vertical, star_advice post, music:
-// chiptune · A). The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse19: HOLIDAY SURVIVAL GUIDE No. 19, "The gift you didn't see coming" (28 s vertical, star_advice post, music:
+// chiptune · A). The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "They got you a gift. | *You* got them nothing." Frame 0: ♊ Gemini holding out a wrapped box with a
 //              big bow; ♎ Libra frozen mid-reach, eyes wide, its other "hand" (an empty speech bubble "…") behind it.
 //              ♓ Pisces on the armchair, crying at the bow. SITUATION: "a gift, and nothing to give back."
@@ -7,7 +7,7 @@
 //              stamps on it. Libra: "thank you. truly." Gemini beams.
 //   9.4–13.4   2 "Don't panic-buy a *candle.*" Libra mid-dash for the door, past a shelf of LAST-MINUTE
 //              candles (unlit); a red X; Libra stops and sits back down.
-//   13.4–17.4  3 "Give back later, from the *heart.*" (card cut) JANUARY: Libra hands over a handwritten card: "pancakes
+//   13.4–17.4  3 "Give back later, from the *heart.*" JANUARY: Libra hands over a handwritten card: "pancakes
 //              + a long walk? my treat." Gemini's heart eyes; Pisces fountains.
 //   17.4–25.6  THE STARS: "you owe a *thank you,* not a gift." The couch again: Libra wearing the gift (a striped
 //              scarf), relaxed, leaning on Gemini; Pisces happy-cries. endHead "No receipt. | *Just* a hug."

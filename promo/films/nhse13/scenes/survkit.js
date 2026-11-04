@@ -1,12 +1,11 @@
 // HOLIDAY SURVIVAL GUIDE kit for episodes 13–24 (promo/films/next30/b30.md). nhse14–24 import it from here, so the
 // twelve films look like one show. Everything draws as a pure function of t; DOM and canvases are only made in build().
 //
-// The format (30 s = 25.6 s story + the shared 4.4 s end card):
+// The format (28 s = 25.6 s story + the shared 2.4 s short end card; no Align card transition):
 //   0.0–5.4    SITUATION: the hook headline is already up at frame 0, a yellow SITUATION tape under it, the set (a framed
 //              diorama) with the sign(s) mid-action, and a caption sticker naming the situation.
 //   5.4–17.4   THE GUIDE: a cream survival-manual page slides up with three steps (4 s each). Each step pops its row,
 //              plays its vignette above the page and gets a red tick at +3.0 s. Headline: cfg.guide.
-//              Card-cut candidates 9.4 / 13.4 / 17.4 (cardfx plays the middle one, 13.4).
 //   17.4–25.6  THE STARS: they pop in bottom-left with one line in the dialogue box; the set comes back resolved
 //              (cfg.set with S.end = true); headline cfg.endHead, then the last line at 21.4.
 // Pisces cries in every film: the kit's Pisces peeks over the manual during the guide; each episode's set adds its own.
@@ -20,8 +19,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill, A } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -35,8 +34,8 @@ export const r3 = v => +v.toFixed(3)
 export const pop01 = (t, t0, d = 0.32, s = 1.9) => easeOutBack(prog(t, t0, t0 + d), s)
 export const outK = (t, [a, b]) => 1 - ease.inQuad(prog(t, a, b))
 
-export const DURATION = 30
-export const STORY_END = DURATION - ENDCARD_LEN          // 25.6
+export const STORY_END = 25.6
+export const DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(2)   // 28 (the 2.4 s short end card)
 export const T = {
   sitEnd: 5.4, steps: [5.4, 9.4, 13.4], tick: 3.0, guideEnd: 17.4,
   manIn: [5.4, 5.78], manOut: [17.05, 17.4],
@@ -448,7 +447,6 @@ export function makeSurvival(cfg) {
   const no = cfg.no, ACC = cfg.accent ?? GOLD
   const LINES = [{ t: T.line, speaker: STARS, text: cfg.line }]
   const STAR_HOPS = [T.starsIn + 0.3, ...talkHops(LINES, STARS, { cps: CPS }), T.last + 0.05]
-  const CUTS = [9.4, { t: T.steps[2], kind: 'flip' }, T.guideEnd]
 
   async function build(stage) {
     try {
@@ -543,10 +541,9 @@ export function makeSurvival(cfg) {
     ...wordPops(T.last, Math.max(1, wc(cfg.last) - 1), 0.08, 1), ['pop', r3(T.lastLate), 1174.66, 0.05, 0], ['bell', r3(T.lastLate + 0.02), 1567.98, 0.026, 1.2, 0],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ].sort((a, b) => a[1] - b[1])
 
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 }), cardCuts(CUTS)]
-  return { DURATION, SCENES, CUES, T, CUTS }
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br', fadeIn: 0 })]
+  return { DURATION, SCENES, CUES, T }
 }

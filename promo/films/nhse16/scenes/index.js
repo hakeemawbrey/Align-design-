@@ -1,11 +1,11 @@
-// nhse16: HOLIDAY SURVIVAL GUIDE No. 16, "The quiet one" (30 s vertical, star_advice post, music: dreamy · Ab).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse16: HOLIDAY SURVIVAL GUIDE No. 16, "The quiet one" (28 s vertical, star_advice post, music: dreamy · Ab).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "Your friend went | *quiet.*" Frame 0: ♈ Aries on a beanbag mid-scroll through a buzzing group chat
 //              (party plans, gift lists, a dog photo); ♏ Scorpio's last bubble sits at the top: "4 DAYS AGO".
 //              ♓ Pisces on the rug, crying at a cookie video. SITUATION: "december is hard for them."
 //   5.4–9.4    1 "Notice who's gone *quiet.*" The chat scrolls; a magnifier stops on SCORPIO · last message 4 days ago.
 //   9.4–13.4   2 "Send a no-pressure text." A one-to-one chat: "no need to reply. thinking of you ♡" → SENT.
-//   13.4–17.4  3 "Offer something *specific.*" (card cut) "walk on thursday? I'll bring cocoa." Typing… "yes. thank you."
+//   13.4–17.4  3 "Offer something *specific.*" "walk on thursday? I'll bring cocoa." Typing… "yes. thank you."
 //   17.4–25.6  THE STARS: "some people find december *heavy.*" A snowy path: Aries and Scorpio walking with two cocoas,
 //              Scorpio smiling a little; Pisces on a bench, happy-crying. endHead "Thursday. | *Two* cocoas."
 //              Last line: "Check on the | *quiet* ones."

@@ -1,5 +1,5 @@
-// nhse23: HOLIDAY SURVIVAL GUIDE No. 23, "The year-end check-in" (30 s vertical, star_advice post, music: lofi · Em).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse23: HOLIDAY SURVIVAL GUIDE No. 23, "The year-end check-in" (28 s vertical, star_advice post, music: lofi · Em).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "Three questions | *before* the new year." Frame 0: ♍ Virgo and ♓ Pisces on the couch, two cocoas,
 //              Virgo mid-click of a pen over a notebook titled OUR YEAR; Pisces already misty. SITUATION: "looking back,
 //              together."
@@ -7,7 +7,7 @@
 //              bursts into happy tears.
 //   9.4–13.4   2 "Ask: what was *hard?*" Virgo goes quiet, a little grey cloud overhead; Pisces scoots over and holds on;
 //              the cloud thins to a sliver of sun.
-//   13.4–17.4  3 "Ask: what do you want *more* of?" (card cut) Virgo: "slow mornings." Pisces: "walks. and you."
+//   13.4–17.4  3 "Ask: what do you want *more* of?" Virgo: "slow mornings." Pisces: "walks. and you."
 //   17.4–25.6  THE STARS: "listen to answer two *gently.*" The notebook: MORE OF: slow mornings · walks · us. A talk card
 //              slides onto the page for the next check-in ("What does a perfect lazy Sunday look like for you?").
 //              Pisces happy-cries. endHead "Three answers. | *One* us."  Last line: "Look *back* | together."

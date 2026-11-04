@@ -1,11 +1,11 @@
-// nhse21: HOLIDAY SURVIVAL GUIDE No. 21, "The day-after slump" (30 s vertical, star_advice post, music: dreamy · Db).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse21: HOLIDAY SURVIVAL GUIDE No. 21, "The day-after slump" (28 s vertical, star_advice post, music: dreamy · Db).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "The holidays are over. | *Now what?*" Frame 0: ♐ Sag melted flat into the couch among drifts of
 //              wrapping paper and empty boxes; the tree's lights blink, one by one, off. ♓ Pisces in a wrapping-paper
 //              pile, crying at a bow. SITUATION: "the quiet after the big days."
 //   5.4–9.4    1 "Let it be quiet for a *day.*" Sag under a blanket with cocoa; a permission slip: REST DAY ✓.
 //   9.4–13.4   2 "Get outside for ten minutes." A snowy walk; a 10-minute timer ticks; frosty breath puffs; Sag perks up.
-//   13.4–17.4  3 "Plan one small, *nice* thing." (card cut) A sticky note lands on the calendar: "SAT · pancakes with
+//   13.4–17.4  3 "Plan one small, *nice* thing." A sticky note lands on the calendar: "SAT · pancakes with
 //              Leo". The phone buzzes back: ♌ "YES!!" Sag sparkles.
 //   17.4–25.6  THE STARS: "the glow fades. the *people* don't." Saturday: Sag and ♌ Leo at a table with a tall
 //              pancake stack; Pisces happy-cries. endHead "Saturday. | *Pancakes.*"  Last line: "Plan one | *small* thing."

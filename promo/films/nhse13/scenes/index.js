@@ -1,5 +1,5 @@
-// nhse13: HOLIDAY SURVIVAL GUIDE No. 13, "The long drive home" (30 s vertical, star_advice post, music: lofi · Dm).
-// The show look lives in ./survkit.js (nhse14–24 import it from here). Story 0–25.6, then the shared end card.
+// nhse13: HOLIDAY SURVIVAL GUIDE No. 13, "The long drive home" (28 s vertical, star_advice post, music: lofi · Dm).
+// The show look lives in ./survkit.js (nhse14–24 import it from here). Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "Six hours. | *One* car." Frame 0: the car seen head-on in sunset traffic; ♑ Capricorn grips the wheel,
 //              ♊ Gemini mid-sentence ("and ANOTHER thing—"), ♓ Pisces in the back seat crying at the sunset. The arrival
 //              sign ticks the wrong way: 6 H 12 MIN → 6 H 14 MIN. SITUATION: "holiday traffic, two moods."
@@ -8,7 +8,7 @@
 //              and a tidy box of apple slices (Capricorn nods once).
 //   9.4–13.4   2 "Take turns picking the sound." Two tapes, GEMINI MIX and CALM DRIVE; a TURN arrow flips between them and
 //              each sign bops to its own.
-//   13.4–17.4  3 "Stuck in a jam? Pull a *talk card.*" (card cut 13.4) Brake lights everywhere; a talk card flips up in
+//   13.4–17.4  3 "Stuck in a jam? Pull a *talk card.*" Brake lights everywhere; a talk card flips up in
 //              the windshield ("What's a hill you will die on?"); Gemini: "pineapple on pizza." Capricorn: "labelled
 //              spice jars." Both crack up.
 //   17.4–25.6  THE STARS: "the road is long. make the car *kind*." The car again, at night: Gemini drives now, Capricorn

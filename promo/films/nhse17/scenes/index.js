@@ -1,5 +1,5 @@
-// nhse17: HOLIDAY SURVIVAL GUIDE No. 17, "Their family's tradition" (30 s vertical, star_advice post, music: funk · G).
-// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared end card.
+// nhse17: HOLIDAY SURVIVAL GUIDE No. 17, "Their family's tradition" (28 s vertical, star_advice post, music: funk · G).
+// The show look lives in ../../nhse13/scenes/survkit.js. Story 0–25.6, then the shared 2.4 s short end card.
 //   0.0–5.4    hook "Their family has a | *tradition.*" Frame 0: the front door swings open; ♌ Leo on the step, mid-wave; inside, ♎ Libra (the partner), ♋ Cancer, ♉ Taurus (the grandparent, little glasses)
 //              and ♓ Pisces all wear matching red pompom hats. Pisces is already crying. SITUATION: "their family does it
 //              differently."
@@ -7,7 +7,7 @@
 //              Leo: "ooh. what's the story?"
 //   9.4–13.4   2 "Ask how it *started.*" Taurus holds up an old photo: one tiny hat on one tiny star in the snow.
 //              "I knitted one for a cold kid. then everyone wanted one." Pisces fountains.
-//   13.4–17.4  3 "Join in at *your* level." (card cut) Leo puts on the hat… and its sunglasses. Everyone cheers.
+//   13.4–17.4  3 "Join in at *your* level." Leo puts on the hat… and its sunglasses. Everyone cheers.
 //   17.4–25.6  THE STARS: "odd traditions usually hide *sweet* stories." The family photo: everyone in hats, Leo in
 //              hat + shades in the middle, the flash pops; Pisces happy-cries. endHead "Hat on. | *Heart* in."
 //              Last line: "Every tradition | has a *story.*"
