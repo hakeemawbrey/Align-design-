@@ -1,12 +1,11 @@
-// nf16e04: MEET THE FAMILY, Ep 4, "Their family does it differently." (35 s vertical, star_advice, music: funk · E).
-// Story 0–30.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e04: MEET THE FAMILY, Ep 4, "Their family does it differently." (33 s vertical, star_advice, music: funk · E).
+// Story 0–30.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.2    DEAR STARS: "“Wait, you open | gifts *at midnight?*”" — a Gemini, at their partner's family's. ♊ Gemini
 //              mid-gasp, a gift in hand, the clock striking twelve.
 //   3.2–10.4   "My family: | *everyone at once.*"  Gemini's table: four relatives, four bubbles, all talking over each other;
 //              Gemini thriving. GEMINI: "at my house we all talk at *once.*"
 //  10.4–17.6   "Their family: | *one at a time.*"  The same table, quiet: one bubble, a nod, a clock tick. ♑ CAPRICORN:
 //              "we take turns. and gifts wait for *morning.*" GEMINI: "you wait until *MORNING??*"
-//  17.6        card cut.
 //  17.6–30.6   "Ask about | the *why.*"  THE STARS: "different isn't wrong. it's just *new.*" → "ask about the *why.* you'll
 //              learn them." A talk card lands ("What does a perfect lazy Sunday look like for you?"). Pisces fountains.
 //              THE STARS: "Different traditions. Same table."

@@ -1,7 +1,7 @@
 // MEET THE FAMILY: the shared look of the star_advice series "Season 16: Meet the Family" (promo/films/next30/b21.md).
 // Lives in nf16e01; every other episode imports it from here ('../../nf16e01/scenes/familykit.js'). Read-only for them.
 //
-// The format (30–45 s, story 0 … D − 4.4, then the shared end card):
+// The format (28–43 s: story 0 … D − 4.4 as written, then the short 2.4 s end card; no card-cut transition):
 //   hook      a bone "DEAR STARS," question sticker (the question in Inter 800 + one *italic* accent, signed "— a Libra…")
 //             is already on screen at t = 0, with the asking sign star mid-hop below it (frame 0 is the thumbnail).
 //   beats     2–4 situation beats on a holiday set (the front door in the snow, the dining table, the living room, the
@@ -28,8 +28,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill, A as ASSETS } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_LEN, ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { buildLesson, lessonCues, popText } from '../../lesson.js'
 
@@ -540,7 +540,8 @@ function buildQuestion(root, q, askerCol) {
 
 // ═══════════════════════════════════════════════════════════════════════════ the episode
 export function makeFamily(cfg) {
-  const DURATION = cfg.D, STORY_END = DURATION - ENDCARD_LEN
+  // cfg.D is the slate length (story + the old 4.4 s card); the story keeps its times and the short 2.4 s card follows
+  const STORY_END = cfg.D - ENDCARD_LEN, DURATION = +(STORY_END + ENDCARD_SHORT_LEN).toFixed(3)
   const AS = signStar(cfg.asker), PA = cfg.partner ? signStar(cfg.partner) : null, PIS = signStar('pisces')
   const ATAG = K.tag(cfg.asker), PTAG = cfg.partner ? K.tag(cfg.partner) : null
   const ALL = cfg.boxes.flatMap(b => b.lines)
@@ -666,8 +667,8 @@ export function makeFamily(cfg) {
     }
   }
 
-  const CUTS = cfg.cuts
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (owner, 4 Nov): cfg.cuts is ignored
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const wordPops = (t0, n, gap, b0 = 0, gain = 0.024) => Array.from({ length: n }, (_, i) => ['pop', r3(t0 + i * gap), NOTE[(b0 + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
@@ -684,8 +685,7 @@ export function makeFamily(cfg) {
     ...(cfg.tie ? [['whoosh', cfg.tie.at, 0.4, 0.04], ['pluck', r3(cfg.tie.at + 0.4), 1318.51, 0.04, 0.6, 0.2], ['glitter', r3(cfg.tie.at + 0.35), r3(cfg.tie.at + 0.8)]] : []),
     ...(cfg.cues || []),
     ['whoosh', r3(OUT[0]), 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, STORY_END, OUT, CPS, AS, PA }
 }

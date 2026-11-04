@@ -1,12 +1,11 @@
-// nf16e06: MEET THE FAMILY, Ep 6, "The first five minutes at the door." (35 s vertical, star_advice, music: lofi · Am).
-// Story 0–30.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e06: MEET THE FAMILY, Ep 6, "The first five minutes at the door." (33 s vertical, star_advice, music: lofi · Am).
+// Story 0–30.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.2    DEAR STARS: "“What do I say | when the *door opens?*”" — an Aquarius, on the doorstep. ♒ Aquarius mid-hop on
 //              the snowy step, rehearsing from a cue card.
 //   3.2–10.6   "The door | *opens.*"  Their partner's parents fill the doorway. Aquarius freezes; the cue cards flip: TALK
 //              ABOUT… WEATHER? · SNOW IS… COLD? · HELLO. I AM A STAR. AQUARIUS: "so. snow. it's… *cold?*"
 //  10.6–18.6   "One real | *question.*"  The cue cards fly off. THE STARS: "drop the cards. ask *one* real question." →
 //              "then listen like it *matters.* it does."
-//  18.6        card cut.
 //  18.6–30.6   "Then *listen.*"  AQUARIUS: "how did you two *meet?*" The parents light up: "it was a snowy night…", "the bus
 //              was late…", "she laughed at my hat!" Pisces sobs happily in the hallway. THE STARS: "One good question opens
 //              the whole door."

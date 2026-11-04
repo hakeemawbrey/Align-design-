@@ -1,11 +1,10 @@
-// nf16e07: MEET THE FAMILY, Ep 7, "Don't leave them alone at the party." (30 s vertical, star_advice, music: chiptune · G).
-// Story 0–25.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e07: MEET THE FAMILY, Ep 7, "Don't leave them alone at the party." (28 s vertical, star_advice, music: chiptune · G).
+// Story 0–25.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.0    DEAR STARS: "“Where did | you *go?*”" — a Virgo, on the couch. ♍ Virgo wedged between two cousins, mid-wave
 //              for help.
 //   3.0–10.4   "One hour. | *Seventeen* questions."  The cousins fire questions (do you ski? · pie or cake? · fave pine
 //              needle?), a counter ticks Q 17; far off in the kitchen doorway ♌ Leo laughs with the aunties.
 //              VIRGO: "I have answered *seventeen* questions."
-//  10.4        card cut.
 //  10.4–17.0   "A glance. A squeeze. | *“You good?”*"  THE STARS: "you brought them. *stay* with them." → "a glance, a squeeze,
 //              a *'you good?'*"  Leo zips back with two plates.
 //  17.0–25.6   "Side *by side.*"  LEO: "brought you pie. *you good?*" VIRGO: "*now* I am." Pisces fountains by the pine.

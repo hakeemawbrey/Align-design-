@@ -1,5 +1,5 @@
-// nf16e08: MEET THE FAMILY, Ep 8, "Give them a heads-up, not a warning." (40 s vertical, star_advice, music: jazzy · F).
-// Story 0–35.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e08: MEET THE FAMILY, Ep 8, "Give them a heads-up, not a warning." (38 s vertical, star_advice, music: jazzy · F).
+// Story 0–35.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 // Pisces is the partner here, so Pisces cries in every beat as itself (overwhelmed, then happy).
 //   0.0–3.2    DEAR STARS: "“My family can be | *a lot.*”" — a Capricorn, three days out. ♑ Capricorn mid-hop with a
 //              clipboard titled BRIEFING.
@@ -7,7 +7,6 @@
 //              (welling up): "how many sections *are* there?"
 //  11.0–19.8   "Prepare. | *Don't* apologize."  The pages flutter away. THE STARS: "a heads-up helps. a *manual* doesn't."
 //              → "say what to expect, kindly. no *sorry* for your people."
-//  19.8        card cut.
 //  19.8–26.2   "Three honest | *lines.*"  One cue card writes on: MY UNCLE LOVES A DEBATE · MOM WILL FEED YOU TWICE · I'LL BE
 //              RIGHT THERE. CAPRICORN: "my uncle loves a debate. my mom will feed you *twice.*" PISCES: "and you'll be
 //              *right* there?"

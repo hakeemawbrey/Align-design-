@@ -1,5 +1,5 @@
-// nf16e03: MEET THE FAMILY, Ep 3, "A kind no is still a no." (40 s vertical, star_advice, music: pop · D).
-// Story 0–35.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e03: MEET THE FAMILY, Ep 3, "A kind no is still a no." (38 s vertical, star_advice, music: pop · D).
+// Story 0–35.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.2    DEAR STARS: "“They want us | there *all week.*”" — an Aries, phone buzzing. ♈ Aries mid-hop, the phone
 //              buzzing with MOM: "come for the WHOLE week!!"
 //   3.2–10.8   "Seven days. | *Seven plans.*"  The calendar fills, one plan a day. ARIES: "ok. I'm just gonna text *NO.*"
@@ -7,7 +7,6 @@
 //  10.8–19.8   "Yes first. | *Then* the limit."  THE STARS: "wait. what *can* you say yes to?" → "start there. then say the
 //              *limit.*" The NO. shrinks away and the rewrite types on: "we can't do the whole week. we'd love Saturday,
 //              and we're bringing pie."
-//  19.8        card cut.
 //  19.8–26.2   "And then…"  typing… MOM: "Saturday it is. bring the pie!!" + a heart. Pisces fountains.
 //              THE STARS: "a clear no, said warmly, still *lands.*"
 //  26.2        ★ LESSON UNLOCKED: "Warm first. | *Clear* always."  +1 PIE CREDIT

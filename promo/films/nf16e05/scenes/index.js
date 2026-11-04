@@ -1,12 +1,11 @@
-// nf16e05: MEET THE FAMILY, Ep 5, "The question you're not ready for." (40 s vertical, star_advice, music: cinematic · Dm).
-// Story 0–35.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e05: MEET THE FAMILY, Ep 5, "The question you're not ready for." (38 s vertical, star_advice, music: cinematic · Dm).
+// Story 0–35.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.2    DEAR STARS: "“So when’s the | *wedding?*”" — a Sagittarius, mid-bite. ♐ Sag frozen at the dinner table, a
 //              spoonful of pie halfway up; the relatives lean in.
 //   3.2–10.6   "The whole table | *leans in.*"  Freeze-frame: the four relatives slide closer, Sag sweats. SAG: "ok so, the
 //              thing about *timelines* is—" A speech timer ticks MIN 1… MIN 20.
 //  10.6–19.8   "Warm *and* vague." THE STARS: "breathe. you can be *warm* and vague." → "try: we're really happy. you'll be
 //              the *first* to know."
-//  19.8        card cut.
 //  19.8–26.2   "Said kindly. | *Done.*"  SAG: "we're really happy. you'll be the *first* to know!" The table: "aww!"; ♒ Aquarius
 //              squeezes Sag's hand (hearts); the Pisces cousin fountains.
 //  26.2        ★ LESSON UNLOCKED: "You don’t owe | anyone a *timeline.*"  +1 COMPOSURE

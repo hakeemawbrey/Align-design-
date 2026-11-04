@@ -1,5 +1,5 @@
-// nf16e02: MEET THE FAMILY, Ep 2, "You're meeting their whole family." (35 s vertical, star_advice, music: dreamy · Eb).
-// Story 0–30.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e02: MEET THE FAMILY, Ep 2, "You're meeting their whole family." (33 s vertical, star_advice, music: dreamy · Eb).
+// Story 0–30.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.2    DEAR STARS: "“I’m meeting | their *whole family.*”" — a Cancer, packing tonight. ♋ Cancer mid-hop,
 //              juggling name flash cards. Pisces sniffles (bottom right).
 //   3.2–10.6   "Twelve names. | *One* brain."  The flash cards flutter everywhere. THE STARS: "you don't have to *impress*
@@ -7,7 +7,6 @@
 //  10.6–20.4   "Ask for the | *cheat sheet.*"  CANCER: "who should I know before I walk in?" ♌ LEO: "three things. I've got
 //              you." A cue card writes on: MOM: LOVES HER GARDEN · SKIP: WORK TALK · JOKE: THE TINY TURKEY. LEO: "and I'll
 //              be *right* next to you."
-//  20.4        card cut.
 //  20.4–30.6   "Kind. Curious. | *You.*"  The front door opens on a warm hallway; Pisces waves from the window, fountaining.
 //              THE STARS: "they're curious about *you* too." → "You’re not auditioning. You’re visiting."
 import { makeFamily, K, box, ink, sparkles, hearts, shadow, cueCard, frontDoor, snow, livingRoom, drawBits,

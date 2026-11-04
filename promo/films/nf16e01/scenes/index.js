@@ -1,5 +1,5 @@
-// nf16e01: MEET THE FAMILY, Ep 1, "Do I bring them home this year?" (40 s vertical, star_advice, music: jazzy · Bb).
-// Story 0–35.6, then the shared end card. The series look lives in ./familykit.js (shared by nf16e01–nf16e12).
+// nf16e01: MEET THE FAMILY, Ep 1, "Do I bring them home this year?" (38 s vertical, star_advice, music: jazzy · Bb).
+// Story 0–35.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ./familykit.js (shared by nf16e01–nf16e12).
 //   0.0–3.4    DEAR STARS: "“Do I bring them | home *this year?*”" — a Libra, two weeks out. ♎ Libra mid-hop, an
 //              invitation flipping YES / NOT YET in its hand. Pisces sniffles at the invitation (bottom right).
 //   3.4–11.0   "Pros. Cons. | *Vibes.*"  Libra under a giant balance that won't settle (PROS / CONS, then a third sign
@@ -7,7 +7,6 @@
 //              holiday too. ask them."
 //  11.0–19.6   "Just *ask.*"  The couch, the pine. LIBRA: "would you want to come home with me?" ♉ Taurus goes heart-eyed:
 //              "I'd *love* to. can we leave by nine?" LIBRA: "deal. *nine* it is." Pisces fountains behind the tree.
-//  19.6        card cut.
 //  19.6–26.0   "One plan, | *two* names on it."  A December calendar: GO 4 PM and HOME BY 9 stickers, a heart.
 //              THE STARS: "plan it *together:* when you go, when you leave." → "then nobody's guessing at the *door.*"
 //  26.2        ★ LESSON UNLOCKED: "Invite them | *in on* the plan."  +1 TEAMWORK

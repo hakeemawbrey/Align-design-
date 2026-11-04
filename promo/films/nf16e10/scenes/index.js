@@ -1,10 +1,9 @@
-// nf16e10: MEET THE FAMILY, Ep 10, "What do I bring to their parents?" (30 s vertical, star_advice, music: pop · F).
-// Story 0–25.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e10: MEET THE FAMILY, Ep 10, "What do I bring to their parents?" (28 s vertical, star_advice, music: pop · F).
+// Story 0–25.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.0    DEAR STARS: "“What do I bring | their *parents?*”" — a Virgo, on attempt seven. ♍ Virgo mid-hop under a
 //              wobbling tower of gift options.
 //   3.0–9.6    "The gift | *pile.*"  More drops on: a vase, a BREAD MAKER box, a framed GIFT PLAN v7. VIRGO: "I made a
 //              *ranking.* there are twelve finalists."
-//   9.6        card cut.
 //   9.6–16.0   "Ask what | they *love.*"  THE STARS: "skip the pile. ask what they *love.*" ♋ CANCER: "mom always talks
 //              about that *mint tea.*" The pile slides away; one small tea tin glows.
 //  16.0–25.6   "Small. | *Thoughtful.*"  The door opens; MOM: "you *remembered!*" Hearts; Pisces fountains in the hallway.

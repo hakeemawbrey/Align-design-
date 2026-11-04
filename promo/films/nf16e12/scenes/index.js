@@ -1,12 +1,11 @@
-// nf16e12: MEET THE FAMILY, Ep 12, "They're not ready to meet my family." (35 s vertical, star_advice, music: lofi · Em).
-// Story 0–30.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e12: MEET THE FAMILY, Ep 12, "They're not ready to meet my family." (33 s vertical, star_advice, music: lofi · Em).
+// Story 0–30.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.2    DEAR STARS: "“They’re not ready | to *meet my family.*”" — a Scorpio, staring at a text. ♏ Scorpio mid-hop, the
 //              phone: "come meet my family this weekend?" · "can we wait a bit?"
 //   3.2–10.6   "The *spiral.*"  Question marks swirl; thought bubbles: "they don't like me?" · "is this a no??" · "do I
 //              return the scarf???" SCORPIO: "not ready means *no*, right?"
 //  10.6–19.0   "Wait | *isn't* never."  The swirl slows. THE STARS: "they said *wait.* they didn't say never." → "get
 //              *curious,* not hurt."
-//  19.0        card cut.
 //  19.0–30.6   "Start | *small.*"  SCORPIO: "what would make it *easier?*" ♌ LEO: "maybe just your sister first? *coffee?*"
 //              Coffee for three: Scorpio, Leo and the sister, three mugs, hearts. Pisces fountains.
 //              THE STARS: "Not yet is an answer. Ask what would help."

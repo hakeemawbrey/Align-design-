@@ -1,5 +1,5 @@
-// nf16e09: MEET THE FAMILY, Ep 9, "Two families, one holiday." (40 s vertical, star_advice, music: dreamy · Ab).
-// Story 0–35.6, then the shared end card. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e09: MEET THE FAMILY, Ep 9, "Two families, one holiday." (38 s vertical, star_advice, music: dreamy · Ab).
+// Story 0–35.6, then the short 2.4 s end card (no card-cut transition). The series look lives in ../../nf16e01/scenes/familykit.js.
 // Pisces asks this time, so Pisces cries as the lead (overwhelmed, then happy).
 //   0.0–3.2    DEAR STARS: "“Both our families | want *the same day.*”" — a Pisces, holding two invitations. ♓ Pisces mid-sob,
 //              an invitation in each hand: OURS · SATURDAY and THEIRS · SATURDAY.
@@ -7,7 +7,6 @@
 //              land in a heap. ♈ ARIES: "my dad already made a *seating chart.*" PISCES: "so we just… *split* in half?"
 //  11.0–19.8   "Decide | *together.*"  THE STARS: "this isn't you vs. them. it's *you two.*" → "put every option on the *table.*"
 //              Three option cards pop up: SPLIT THE DAY · SWAP YEARS · HOST BOTH.
-//  19.8        card cut.
 //  19.8–26.2   "Pick one. | *Same* team."  ARIES: "lunch at yours, dinner at *mine?*" PISCES: "and next year we *swap.*"
 //              SPLIT THE DAY and SWAP YEARS get a gold check.
 //  26.2        ★ LESSON UNLOCKED: "Choose *together.* | Tell *together.*"  +1 SAME TEAM

@@ -1,5 +1,5 @@
-// nf16e11: MEET THE FAMILY, Ep 11, "When the family takes a while to warm up." (45 s vertical, star_advice, music: cinematic · Cm).
-// Story 0–40.6, then the shared end card. Aries asks (it was brought home); Taurus is the partner whose family it is. The series look lives in ../../nf16e01/scenes/familykit.js.
+// nf16e11: MEET THE FAMILY, Ep 11, "When the family takes a while to warm up." (43 s vertical, star_advice, music: cinematic · Cm).
+// Story 0–40.6, then the short 2.4 s end card (no card-cut transition). Aries asks (it was brought home); Taurus is the partner whose family it is. The series look lives in ../../nf16e01/scenes/familykit.js.
 //   0.0–3.2    DEAR STARS: "“Their family was | *so quiet* with me.”" — an Aries, after dinner. ♈ Aries mid-hop beside ♉
 //              Taurus at a frosty dinner table.
 //   3.2–11.4   "A very | *quiet* dinner."  Frost creeps over the cloth. Aries tries three jokes, louder each time: "so… nice
@@ -7,7 +7,6 @@
 //              *warmer* than this."
 //  11.4–20.4   "Give it | *time.*"  THE STARS: "new people take a while. that's not a *verdict.*" → "but don't let them earn it
 //              *alone.*" Taurus scoots closer to Aries.
-//  20.4        card cut.
 //  20.4–30.0   "Bring them | *in.*"  TAURUS: "grandpa, Aries makes the *best* pie crust." GRANDPA: "really? what's the trick?"
 //              The frost melts. THE STARS: "anything bigger? talk to family *privately.*"
 //  30.0        ★ LESSON UNLOCKED: "Warming up takes | *more than one* dinner."  +1 PATIENCE
