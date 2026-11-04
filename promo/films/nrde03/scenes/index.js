@@ -1,8 +1,8 @@
-// nrde03: RATE MY DATE IDEA, "Gemini plans a bookshop swap" (18 s vertical trial reel, music: jazzy · F).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde03: RATE MY DATE IDEA, "Gemini plans a bookshop swap" (16 s vertical trial reel, music: jazzy · F).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Pick a book *for each other.*”  ♊ Gemini bounces in front of a bookshelf, arms full of books.
 //   2.6–5.8   THE PLAN "one book? I picked *nine.*"  Gemini's stack for the ♒ Aquarius date grows, wobbling; BOOKS: 9.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their pick: *one tiny book.*"  The date holds out one small book; Gemini reads the
 //             cover ("for people who talk a lot and mean it"), goes quiet, then heart-eyed.
 //   9.32      THE STARS RATE IT 10/10 *they get you*.  Pisces: 11/10.   9.8 THE STARS: "Choose one. *Mean* it."

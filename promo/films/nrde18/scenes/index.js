@@ -1,9 +1,9 @@
-// nrde18: RATE MY DATE IDEA, "Virgo plans a gift-wrapping shift" (18 s vertical trial reel, music: chiptune · C).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde18: RATE MY DATE IDEA, "Virgo plans a gift-wrapping shift" (16 s vertical trial reel, music: chiptune · C).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Date idea: we wrap gifts for the *toy drive.*”  ♍ Virgo lines up a box with a ruler, perfectly.
 //   2.6–5.8   THE PLAN "perfect corners. *one* per minute."  Virgo's single, flawless gift; a timer ticks; the ♈ Aries
 //             date's pile of lumpy wraps grows beside it: 1, 2, 3, 4, 5…
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their wraps are *lumpy.* and fast."  Virgo looks at the lumpy pile… laughs, and sticks a label on
 //             it: MADE WITH LOVE. The whole lumpy pile goes into the toy-drive bin.
 //   9.32      THE STARS RATE IT 10/10 *kind*.  Pisces: 11/10.   9.8 THE STARS: "Doing good *together* counts as a date."

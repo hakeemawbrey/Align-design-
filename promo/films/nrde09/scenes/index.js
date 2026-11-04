@@ -1,9 +1,9 @@
-// nrde09: RATE MY DATE IDEA, "Sagittarius plans a pottery class" (18 s vertical trial reel, music: synthwave · F#m).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde09: RATE MY DATE IDEA, "Sagittarius plans a pottery class" (16 s vertical trial reel, music: synthwave · F#m).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “A pottery class. *Zero* experience.”  ♐ Sagittarius at a spinning wheel, clay wobbling wildly.
 //   2.6–5.8   THE PLAN "go *fast.* how hard can it be?"  The wheel whirs; Sag's clay lump flies off and SPLATs on the
 //             wall; the ♈ Aries date's lump wobbles too.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "two very *lopsided* mugs."  Two wonky mugs on the table; they swap them and hold them up, delighted.
 //   9.32      THE STARS RATE IT 9/10 *wobbly*.  Pisces: 10/10.   9.8 THE STARS: "Make something *badly*, together."
 import { makeDate, R, box, bubble, shadow, hearts, card, table, floor, pop01, prog, lerp, ease, INK, BONE, GOLD, PINK } from '../../nrde01/scenes/datekit.js'

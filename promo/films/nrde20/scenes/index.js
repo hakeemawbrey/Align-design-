@@ -1,9 +1,9 @@
-// nrde20: RATE MY DATE IDEA, "Scorpio plans a ghost-story walk" (18 s vertical trial reel, music: cinematic · Em).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde20: RATE MY DATE IDEA, "Scorpio plans a ghost-story walk" (16 s vertical trial reel, music: cinematic · Em).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “A ghost-story *history walk.*”  ♏ Scorpio holds up a lantern on an old cobbled street, eyebrows low.
 //   2.6–5.8   THE PLAN "Scorpio tells the *spooky* part."  Lantern under the chin, Scorpio whispers the tale; the ♌ Leo
 //             date grips the lantern pole, wide-eyed.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "a cat. a bin lid. *CLANG.*"  A little cat bumps a bin lid; Scorpio jumps higher than the date;
 //             both burst out laughing; the cat strolls off.
 //   9.32      THE STARS RATE IT 8/10 *both screamed*.  Pisces: 10/10.   9.8 THE STARS: "It's okay to be the *scared* one."

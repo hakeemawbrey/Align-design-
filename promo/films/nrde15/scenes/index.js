@@ -1,9 +1,9 @@
-// nrde15: RATE MY DATE IDEA, "Gemini plans a night market" (18 s vertical trial reel, music: house · E).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde15: RATE MY DATE IDEA, "Gemini plans a night market" (16 s vertical trial reel, music: house · E).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Night market. We try *everything.*”  ♊ Gemini juggles skewers and dumplings under string lights.
 //   2.6–5.8   THE PLAN "eight snacks. *nonstop* talking."  Gemini zips between stalls, arms piling up; speech bubbles
 //             stack up faster than the ♎ Libra date can answer.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "one bench. *one* dumpling."  They sit on a bench; Gemini splits one dumpling in two; the bubbles
 //             slow down to one each; heart eyes.
 //   9.32      THE STARS RATE IT 8/10 *one bite at a time*.  Pisces: 10/10.   9.8 THE STARS: "Slow down for the *good* part."

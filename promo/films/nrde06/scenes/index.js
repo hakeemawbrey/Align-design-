@@ -1,9 +1,9 @@
-// nrde06: RATE MY DATE IDEA, "Virgo plans a spontaneous day" (18 s vertical trial reel, music: chiptune · A).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde06: RATE MY DATE IDEA, "Virgo plans a spontaneous day" (16 s vertical trial reel, music: chiptune · A).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “A *spontaneous* day. Itinerary attached.”  ♍ Virgo unrolls a long paper itinerary.
 //   2.6–5.8   THE PLAN "9:00 fun. 9:15 *more* fun."  The scroll keeps unrolling down past the floor, line
 //             after timed line; the ♉ Taurus date reads along, eyes widening.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date spots a *cosy café.*"  The date points at a glowing café window that isn't on the list;
 //             Virgo looks, crosses out the rest of the scroll with one big red line, and smiles.
 //   9.32      THE STARS RATE IT 8/10 *room to wiggle*.  Pisces: 10/10.   9.8 THE STARS: "Plan the start. Let the *rest* happen."

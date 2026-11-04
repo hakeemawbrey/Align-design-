@@ -1,9 +1,9 @@
-// nrde23: RATE MY DATE IDEA, "Aquarius plans a time capsule" (18 s vertical trial reel, music: synthwave · Gm).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde23: RATE MY DATE IDEA, "Aquarius plans a time capsule" (16 s vertical trial reel, music: synthwave · Gm).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “A time capsule. Open it *next winter.*”  ♒ Aquarius drops odd things into a shiny tin.
 //   2.6–5.8   THE PLAN "a spoon. a ticket. *A duck.*"  Three things arc into the tin, one by one; the ♊
 //             Gemini date: "…why the duck?"  Aquarius: "future us will know."
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "two notes: *for us, next year.*"  Each writes a folded note; both notes drop in; they press the lid
 //             on together: SEALED.
 //   9.32      THE STARS RATE IT 9/10 *future us*.  Pisces: 10/10.   9.8 THE STARS: "Write it down. *Keep* the promise."

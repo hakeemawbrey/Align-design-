@@ -1,9 +1,9 @@
-// nrde22: RATE MY DATE IDEA, "Capricorn plans a goals whiteboard" (18 s vertical trial reel, music: lofi · B).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde22: RATE MY DATE IDEA, "Capricorn plans a goals whiteboard" (16 s vertical trial reel, music: lofi · B).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “New year date: our goals. On a *whiteboard.*”  ♑ Capricorn uncaps a marker at a big whiteboard.
 //   2.6–5.8   THE PLAN "columns. arrows. *boxes.*"  The board fills: SAVE · LEARN · RUN, arrows, neat boxes; the ♎
 //             Libra date tilts its head.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date adds *kitchen dancing.*"  The date writes "dance in the kitchen" and "nap more";
 //             Capricorn looks… and circles both in gold, twice.
 //   9.32      THE STARS RATE IT 9/10 *soft goals count*.  Pisces: 10/10.   9.8 THE STARS: "Put *joy* on the list too."

@@ -1,8 +1,8 @@
-// nrde14: RATE MY DATE IDEA, "Taurus plans a cheese tasting" (18 s vertical trial reel, music: jazzy · Eb).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde14: RATE MY DATE IDEA, "Taurus plans a cheese tasting" (16 s vertical trial reel, music: jazzy · Eb).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “A tasting. *Twelve* cheeses.”  ♉ Taurus presents a wooden board of cheeses, little flags in each.
 //   2.6–5.8   THE PLAN "twelve cheeses. *twelve* little flags."  The board fills, flag by flag; Taurus is in heaven.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date *can't* do dairy."  The ♋ Cancer date winces: "oh no… I can't do dairy."  Taurus:
 //             "I know! you told me." and slides out a second board: fruit, crackers, olives — just for them.
 //   9.32      THE STARS RATE IT 10/10 *you asked first*.  Pisces: 11/10.   9.8 THE STARS: "Ask what they *love* before you plan."

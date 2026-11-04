@@ -1,8 +1,8 @@
-// nrde11: RATE MY DATE IDEA, "Aquarius plans a thrift-shop challenge" (18 s vertical trial reel, music: pop · D).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde11: RATE MY DATE IDEA, "Aquarius plans a thrift-shop challenge" (16 s vertical trial reel, music: pop · D).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Thrift challenge. We dress *each other.*”  ♒ Aquarius holds up a sparkly cape in front of a clothes rack.
 //   2.6–5.8   THE PLAN "a cape. a feather hat. *one* moon boot."  Three finds pop up from the rack, one by one.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date wears it *all.* proudly."  The ♑ Capricorn date steps out in cape + feather hat + one boot,
 //             strikes a pose; then holds up a giant sequin bow tie for Aquarius. Both: heart eyes.
 //   9.32      THE STARS RATE IT 10/10 *iconic*.  Pisces: 11/10.   9.8 THE STARS: "Weird together is the *best* weird."

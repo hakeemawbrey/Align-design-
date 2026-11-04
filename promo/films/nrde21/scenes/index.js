@@ -1,9 +1,9 @@
-// nrde21: RATE MY DATE IDEA, "Sagittarius plans sledding with no hills" (18 s vertical trial reel, music: screwed · Am).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde21: RATE MY DATE IDEA, "Sagittarius plans sledding with no hills" (16 s vertical trial reel, music: screwed · Am).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Sledding. In a city with *no hills.*”  ♐ Sagittarius sits in a laundry basket on top of a tiny bump.
 //   2.6–5.8   THE PLAN "behold: *the mountain.*"  Sag presents the "mountain" (a grassy bump, a flag on top); the ♉
 //             Taurus date climbs in behind. A dramatic countdown: 3… 2… 1…
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "they slide about *two feet.*"  The basket scoots, stops, tips over; both roll out laughing till they cry.
 //   9.32      THE STARS RATE IT 10/10 *for the laugh (slope: 6/10)*.  Pisces: 11/10.   9.8 THE STARS: "Go anyway. Laugh *anyway*."
 import { makeDate, R, box, bubble, shadow, hearts, card, starFrame, inSprite, tearsCells, pop01, prog, lerp, ease, INK, BONE, GOLD, PINK } from '../../nrde01/scenes/datekit.js'

@@ -1,8 +1,8 @@
-// nrde01: RATE MY DATE IDEA, "Aries plans ice skating at 7 AM" (18 s vertical trial reel, music: pop · E).
-// Story 0–13.6, then the shared end card. The format lives in ./datekit.js (shared by nrde01–nrde24).
+// nrde01: RATE MY DATE IDEA, "Aries plans ice skating at 7 AM" (16 s vertical trial reel, music: pop · E).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ./datekit.js (shared by nrde01–nrde24).
 //   0.0–2.6   hook: "Rate my *date idea:*" + “Ice skating. *7 AM.* Be ready.”  ♈ Aries on skates, mid-spin, speed lines.
 //   2.6–5.8   THE PLAN "Laps. *Fast* laps."  Aries zooms round the rink; the ♎ Libra date clings to the rail.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date is *holding the wall.*"  Aries skids to a stop (ice spray), holds out a hand; the two glide
 //             slowly, side by side, a heart between them.
 //   9.32      THE STARS RATE IT 8/10 *once you slowed down*.  Pisces: 10/10, fountaining.

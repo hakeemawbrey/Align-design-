@@ -1,8 +1,8 @@
-// nrde08: RATE MY DATE IDEA, "Scorpio's midnight telescope date" (18 s vertical trial reel, music: cinematic · Dm).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde08: RATE MY DATE IDEA, "Scorpio's midnight telescope date" (16 s vertical trial reel, music: cinematic · Dm).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Midnight. A telescope. Very *quiet.*”  ♏ Scorpio squints into a telescope on a dark hill.
 //   2.6–5.8   THE PLAN "whispering. *intensely.*"  Scorpio whispers "shh… look."; the ♋ Cancer date leans in, nervous.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "it's just the Moon. *their favourite.*"  The eyepiece view: the Moon, craters and all. Scorpio's eyes
 //             go soft: "I come here when I miss people."  The date: heart eyes.
 //   9.32      THE STARS RATE IT 10/10 *let them in*.  Pisces: 11/10.   9.8 THE STARS: "Show them a place you *love*."

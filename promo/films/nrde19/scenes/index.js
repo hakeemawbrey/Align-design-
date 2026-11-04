@@ -1,9 +1,9 @@
-// nrde19: RATE MY DATE IDEA, "Libra plans a party exit" (18 s vertical trial reel, music: pop · Ab).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde19: RATE MY DATE IDEA, "Libra plans a party exit" (16 s vertical trial reel, music: pop · Ab).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “The party. But we leave at *nine* for pie.”  ♎ Libra mid-twirl at a holiday party, lights swinging.
 //   2.6–5.8   THE PLAN "Libra charms *the whole room.*"  Libra hops from guest to guest (little party stars), hearts
 //             everywhere; the ♒ Aquarius date watches the clock on the wall.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "9:00. *The great escape.*"  The clock strikes 9:00; Libra waves goodbye; the two slip into a quiet
 //             booth with two slices of pie and one candle.
 //   9.32      THE STARS RATE IT 10/10 *best exit*.  Pisces: 11/10.   9.8 THE STARS: "The best part of the party is *after*."

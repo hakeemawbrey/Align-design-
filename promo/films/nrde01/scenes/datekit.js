@@ -1,11 +1,11 @@
 // RATE MY DATE IDEA: the shared look of the 24 Star Talk trial reels nrde01–nrde24 (promo/films/next30/b45.md).
 // This file lives in nrde01 and the other 23 films import it from here (nobody else edits it).
 //
-// The format (18 s, story 0–13.6, then the shared end card):
+// The format (16 s, story 0–13.6, then the short 2.4 s end card; no card transition — owner's change, 4 Nov):
 //   0.00–2.60   hook: frame 0 already shows the bug, the bold top caption "Rate my *date idea:*", the pitch sticker (the
 //               idea in quotes) and the pitching sign star mid-hop beside its prop, so a stranger gets it in one second.
 //   2.60–5.80   THE PLAN: sticker 1 + scene A (a jump cut with a zoom punch).
-//   5.80        the one card cut, into BUT…: sticker 2 + scene B (the snag or the twist).
+//   5.80        a jump cut (flash + zoom punch) into BUT…: sticker 2 + scene B (the snag or the twist).
 //   9.00–13.55  THE STARS' rating stamp slams "8/10 · *word*"; THE STARS say the last line; Pisces (who gives every
 //               idea 10/10) fountains happy tears. Pisces sniffles in the back of both beats.
 //
@@ -21,8 +21,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -193,8 +193,8 @@ export function shadesCells(ctx, up = 0) {
 
 
 // ── the fixed timeline (same in all 24 films)
-export const DURATION = 18
-export const STORY_END = DURATION - ENDCARD_LEN          // 13.6
+export const STORY_END = 13.6
+export const DURATION = STORY_END + ENDCARD_SHORT_LEN     // 16 (the short end card, owner's change 4 Nov)
 export const T = {
   h0Out: [8.85, 9.05],
   beats: [[2.6, 5.8], [5.8, 9.0]],
@@ -465,7 +465,7 @@ export function makeDate(cfg) {
         cfg.beats.forEach((b, i) => {
           const a = T.beats[i][0], e = i === 1 ? T.stamp : T.beats[i][1]
           if (t < a || t >= e) return
-          const punch = i === 1 ? 1 : 1 + 0.07 * (1 - ease.outCubic(prog(t, a, a + 0.28)))
+          const punch = 1 + 0.07 * (1 - ease.outCubic(prog(t, a, a + 0.28)))
           x.save(); x.translate(540, 900); x.scale(punch, punch); x.translate(-540, -900)
           b.draw(x, t, { u: t - a, t0: a, t1: e, hero, date, HERO, DATE, i, pisces })
           x.restore()
@@ -492,16 +492,17 @@ export function makeDate(cfg) {
         box1.update(t)
         bug.update(t, outK(t, T.bugOut))
         const c0 = T.beats[0][0]
-        const fl = Math.max(t >= c0 && t < c0 + 0.12 ? 1 - (t - c0) / 0.12 : 0, t >= T.stamp && t < T.stamp + 0.1 ? 0.6 * (1 - (t - T.stamp) / 0.1) : 0)
+        const c1 = T.beats[1][0]
+        const fl = Math.max(t >= c0 && t < c0 + 0.12 ? 1 - (t - c0) / 0.12 : 0, t >= c1 && t < c1 + 0.12 ? 1 - (t - c1) / 0.12 : 0, t >= T.stamp && t < T.stamp + 0.1 ? 0.6 * (1 - (t - T.stamp) / 0.1) : 0)
         flash.style.opacity = String(0.55 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  // one card-cut candidate: into BUT…
-  const CUTS = [{ t: T.cut, kind: cfg.cutKind || 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END - 2.2, label: 'TONIGHT’S DECK', corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card transition (owner's change 4 Nov): BUT… is a plain jump cut with a flash, like THE PLAN
+  const CUTS = []
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END - 2.2, label: 'TONIGHT’S DECK', corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -511,7 +512,7 @@ export function makeDate(cfg) {
     ...cfg.beats.flatMap((b, i) => {
       const a = T.beats[i][0], st = a + (i ? 0.55 : 0.3)
       return [
-        ...(i === 0 ? [['whoosh', r3(a - 0.08), 0.28, 0.035], ['tick', a, 0.05]] : []),
+        ['whoosh', r3(a - 0.08), 0.28, 0.035], ['tick', a, 0.05],
         ['pop', r3(st), 1174.66, 0.045, 0.1], ['pop', r3(st + 0.07), 1567.98, 0.03, -0.1], ['tick', r3(st + 0.02), 0.04],
         ['pluck', r3(a + 0.3), 2349.32, 0.012, 0.3, 0.6],
         ...(b.cues || []).map(c => [c[0], r3(c[1] + a), ...c.slice(2)]),
@@ -523,8 +524,7 @@ export function makeDate(cfg) {
     ['pop', T.score, 1318.51, 0.045, 0.4], ['pop', r3(T.score + 0.08), 1760, 0.035, 0.4], ['glitter', T.score, r3(T.score + 0.3)],
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   void NOTE
   return { DURATION, SCENES, CUES, T, CUTS }

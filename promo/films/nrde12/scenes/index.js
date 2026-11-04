@@ -1,10 +1,10 @@
-// nrde12: RATE MY DATE IDEA, "Pisces plans an aquarium night" (18 s vertical trial reel, music: dreamy · E).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde12: RATE MY DATE IDEA, "Pisces plans an aquarium night" (16 s vertical trial reel, music: dreamy · E).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 // (Pisces is the pitcher here, so the crying is front and centre instead of in the background.)
 //   0.0–2.6   hook: “The aquarium. At *night.*”  ♓ Pisces pressed to a glowing blue tank, already teary.
 //   2.6–5.8   THE PLAN "look at the *jellyfish.*"  Jellyfish drift and glow; Pisces sniffles harder; the ♏ Scorpio
 //             date plays it cool.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date cries *too.*"  The jellyfish pulse; the Scorpio date's eyes well up; one tissue pops out
 //             of the box: they share it. Both fountain.
 //   9.32      THE STARS RATE IT 10/10 *both cried*.   9.8 THE STARS: "Find someone who *feels* it too."

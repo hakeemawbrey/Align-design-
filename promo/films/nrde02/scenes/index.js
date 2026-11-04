@@ -1,8 +1,8 @@
-// nrde02: RATE MY DATE IDEA, "Taurus plans a soup crawl" (18 s vertical trial reel, music: lofi · Db).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde02: RATE MY DATE IDEA, "Taurus plans a soup crawl" (16 s vertical trial reel, music: lofi · Db).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “A *soup crawl.* Four soups. One night.”  ♉ Taurus stirs a huge steaming pot with a ladle.
 //   2.6–5.8   THE PLAN "Four bowls. *Zero* regrets."  Four bowls slide in, one by one; Taurus beams, SOUP 1/4 → 4/4.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date is *full* after two."  The ♍ Virgo date leans back, stuffed; Taurus just smiles and
 //             pours soups three and four into jars with lids: "for later!"
 //   9.32      THE STARS RATE IT 9/10 *hearty*.  Pisces: 10/10.   9.8 THE STARS: "Let your date set the *pace*."

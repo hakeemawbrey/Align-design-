@@ -1,9 +1,9 @@
-// nrde10: RATE MY DATE IDEA, "Capricorn plans a sunrise hike" (18 s vertical trial reel, music: screwed · Cm).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde10: RATE MY DATE IDEA, "Capricorn plans a sunrise hike" (16 s vertical trial reel, music: screwed · Cm).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Sunrise hike. *5 AM.* Snacks by the hour.”  ♑ Capricorn in a headlamp, checking a big wristwatch.
 //   2.6–5.8   THE PLAN "on schedule. *every* step."  A dark trail; Capricorn marches with a clipboard ticking off times;
 //             the ♊ Gemini date yawns behind.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "the sun comes up. *the watch goes away.*"  The sky glows orange, the sun lifts over the hills;
 //             Capricorn tucks the watch away and sits; the date leans on its shoulder.
 //   9.32      THE STARS RATE IT 9/10 *worth the alarm*.  Pisces: 10/10.   9.8 THE STARS: "Stop timing it. *Watch* it."

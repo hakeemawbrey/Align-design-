@@ -1,9 +1,9 @@
-// nrde24: RATE MY DATE IDEA, "Pisces plans letters out loud" (18 s vertical trial reel, music: dreamy · C).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde24: RATE MY DATE IDEA, "Pisces plans letters out loud" (16 s vertical trial reel, music: dreamy · C).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 // (Pisces is the pitcher here, so the crying is front and centre instead of in the background.)
 //   0.0–2.6   hook: “We write letters. Then read them *out loud.*”  ♓ Pisces at a desk, a long letter trailing off it, sniffling.
 //   2.6–5.8   THE PLAN "Pisces' letter: *nine pages.* soggy."  The pages pile up, PAGE 1… PAGE 9, tear drops on each.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date's letter: *two lines.*"  The ♉ Taurus date unfolds one small card and reads:
 //             "you make ordinary days feel warm. I'm glad it's you."  Pisces fountains; so does the date.
 //   9.32      THE STARS RATE IT 10/10 *soggy paper*.   9.8 THE STARS: "Say the soft thing *out loud*."

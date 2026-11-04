@@ -1,8 +1,8 @@
-// nrde13: RATE MY DATE IDEA, "Aries plans a ranked snowball fight" (18 s vertical trial reel, music: funk · A).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde13: RATE MY DATE IDEA, "Aries plans a ranked snowball fight" (16 s vertical trial reel, music: funk · A).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Snowball fight. *Ranked.*”  ♈ Aries pops up behind a snow wall next to a little scoreboard.
 //   2.6–5.8   THE PLAN "Aries keeps *score.* loudly."  Aries lobs snowballs; the scoreboard flips ARIES 1… 9, DATE 0.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "one snowball. *Right* on Aries."  The ♐ Sagittarius date's snowball lands POOF on Aries; Aries
 //             bursts out laughing, the scoreboard topples, and they flop into snow angels side by side.
 //   9.32      THE STARS RATE IT 8/10 *forgot the score*.  Pisces: 10/10.   9.8 THE STARS: "You don't win a date. You *share* it."

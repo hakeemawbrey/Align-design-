@@ -1,8 +1,8 @@
-// nrde05: RATE MY DATE IDEA, "Leo judges a gingerbread contest" (18 s vertical trial reel, music: funk · G).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde05: RATE MY DATE IDEA, "Leo judges a gingerbread contest" (16 s vertical trial reel, music: funk · G).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Gingerbread contest. *I'm* the judge.”  ♌ Leo in a tall chef hat beside a gingerbread castle.
 //   2.6–5.8   THE PLAN "Leo's entry: a *castle.* with a moat."  The castle gets towers, icing snow and a moat; Leo poses.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date's house is *lopsided.*"  The ♐ Sagittarius date's little house leans; Leo looks… then lifts
 //             the tiny crown off its own castle and sets it on the date's house: "WINNER."
 //   9.32      THE STARS RATE IT 9/10 *fair judge*.  Pisces: 10/10.   9.8 THE STARS: "Give them the *crown* for once."

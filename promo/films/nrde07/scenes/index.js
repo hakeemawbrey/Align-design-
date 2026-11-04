@@ -1,8 +1,8 @@
-// nrde07: RATE MY DATE IDEA, "Libra plans a candle-scent date" (18 s vertical trial reel, music: house · Bb).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde07: RATE MY DATE IDEA, "Libra plans a candle-scent date" (16 s vertical trial reel, music: house · Bb).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “We pick the scent *of us.*”  ♎ Libra sniffs a candle, a shelf of candles glowing behind.
 //   2.6–5.8   THE PLAN "sniff. think. sniff. *think.*"  Libra sniffs candle after candle; each one gets a "maybe" tag.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date picks one in *one second.*"  The ♌ Leo date grabs PINE + COCOA instantly; Libra sniffs it…
 //             eyes go soft: "…perfect."
 //   9.32      THE STARS RATE IT 9/10 *smells like us*.  Pisces: 10/10.   9.8 THE STARS: "Let them pick. *Enjoy* it."

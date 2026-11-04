@@ -1,9 +1,9 @@
-// nrde16: RATE MY DATE IDEA, "Cancer plans cookies with Mom" (18 s vertical trial reel, music: lofi · Gb).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde16: RATE MY DATE IDEA, "Cancer plans cookies with Mom" (16 s vertical trial reel, music: lofi · Gb).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “Date three: cookies *with my mom.*”  ♋ Cancer in an apron, proudly holding up a tray of cookies.
 //   2.6–5.8   THE PLAN "Mom's here. *Surprise!*"  Mom (a bone star in a flowery apron) waves from the kitchen door; the
 //             ♍ Virgo date freezes mid-step: wide eyes.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "Cancer checks in *first.*"  Cancer: "too soon? we can just go." The date breathes: "…okay. I'm in."
 //             Mom holds up the date's wonky cookie like a trophy.
 //   9.32      THE STARS RATE IT 7/10 *ask first next time*.  Pisces: 10/10.   9.8 THE STARS: "Meet the family when you're *both* ready."

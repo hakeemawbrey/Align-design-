@@ -1,8 +1,8 @@
-// nrde17: RATE MY DATE IDEA, "Leo plans a gala at home" (18 s vertical trial reel, music: synthwave · Bbm).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde17: RATE MY DATE IDEA, "Leo plans a gala at home" (16 s vertical trial reel, music: synthwave · Bbm).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “A winter gala. *At home.* Dress code: sparkle.”  ♌ Leo in a sparkly cape on a tiny red carpet.
 //   2.6–5.8   THE PLAN "red carpet. velvet rope. *VIP* sign."  The living-room gala sets up, piece by piece.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "their date shows up in *pyjamas.*"  The ♑ Capricorn date arrives in striped pyjamas; Leo pauses…
 //             swaps the cape for matching pyjamas; slow dance under one string of lights.
 //   9.32      THE STARS RATE IT 9/10 *flexible glamour*.  Pisces: 10/10.   9.8 THE STARS: "Match their *mood*, not your plan."

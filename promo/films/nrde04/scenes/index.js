@@ -1,8 +1,8 @@
-// nrde04: RATE MY DATE IDEA, "Cancer builds a pillow fort" (18 s vertical trial reel, music: dreamy · Ab).
-// Story 0–13.6, then the shared end card. The format lives in ../../nrde01/scenes/datekit.js.
+// nrde04: RATE MY DATE IDEA, "Cancer builds a pillow fort" (16 s vertical trial reel, music: dreamy · Ab).
+// Story 0–13.6, then the short 2.4 s end card. The format lives in ../../nrde01/scenes/datekit.js.
 //   0.0–2.6   hook: “A pillow fort. Two mugs. One *long* talk.”  ♋ Cancer drags a giant striped blanket across the floor.
 //   2.6–5.8   THE PLAN "first a fort. then a *tunnel.* then a *tower.*"  The fort grows: walls, a tunnel, a tower, a flag.
-//   5.8       card cut.
+//   5.8       jump cut (flash + zoom punch; no card transition).
 //   5.8–9.3   BUT… "the fort *falls in.*"  The blanket sags and drops on Cancer and the ♏ Scorpio date; two heads pop out,
 //             laughing; the two mugs, held high, didn't spill a drop.
 //   9.32      THE STARS RATE IT 9/10 *structurally unsound*.  Pisces: 10/10.   9.8 THE STARS: "The fort falls. The *talk* stays."
