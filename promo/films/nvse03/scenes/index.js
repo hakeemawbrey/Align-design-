@@ -1,5 +1,5 @@
-// nvse03: SIGN VS SIGN, "Who plans a first date better?" ♌ Leo vs ♍ Virgo (18 s trial reel, b46, music: funk · E).
-// Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse03: SIGN VS SIGN, "Who plans a first date better?" ♌ Leo vs ♍ Virgo (16 s trial reel, b46, music: funk · E).
+// Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: each holds a plan card (Leo's says SURPRISE, Virgo's says PLAN A/B/C).
 //   ROUND 1 ♌ "plans a *surprise* with a spotlight." a banner, spotlights, confetti. "too much?" → "it’s never too much."
 //   ROUND 2 ♍ "makes a *backup plan* for the backup." the checklist ticks, then gets laminated. "plan C: indoor picnic." → "I laminated it."
