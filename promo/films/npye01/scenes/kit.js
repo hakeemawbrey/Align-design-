@@ -414,7 +414,7 @@ export function drawSnowNight(x, t, { tree = true } = {}) {
   R(x, INK, 0, 1146, 1080, 8)
   R(x, '#e6eef9', 0, 1154, 1080, 766)
   for (let i = 0; i < 18; i++) R(x, '#cfdcef', (i * 173) % 1080, 1190 + (i * 61) % 600, 70, 8)
-  if (tree) pine(x, t, 150, 1160, 560)
+  if (tree) pine(x, t, 110, 1160, 440)
   snowfall(x, t, 0, 0, 1080, 1920, { n: 70, size: 7, speed: 80, alpha: 0.8 })
 }
 /** a wrapped gift box: bottom centre (cx, base), lid offset/rotation, ribbon state 0…1 (1 = bow tied) */
@@ -436,6 +436,56 @@ export function giftBox(x, t, cx, base, w, h, col, rib, { lidDy = 0, lidDx = 0, 
   }
   x.restore()
   x.restore()
+}
+
+// GIFTS helpers: the hook (the hero tugs the ribbon), the reveal (lid off, the gift rises), a handwritten note
+export const BOX = { cx: 640, base: 1130, w: 320, h: 230 }
+/** the hook: the hero mid-tug on the ribbon at frame 0; the bow pops loose at 1.7 */
+export function giftHook(x, t, S, { line = null, lineAt = 0.9 } = {}) {
+  const { hero, cfg } = S
+  const col = cfg.boxCol, rib = cfg.ribbon || BONE
+  const popT = 1.7, loose = t > popT
+  const tug = loose ? 0 : 0.5 + 0.5 * Math.sin(t * 7)
+  const bowY = BOX.base - BOX.h - 10 - 76
+  shadow(x, BOX.cx, BOX.base, BOX.w * 1.1)
+  giftBox(x, t, BOX.cx, BOX.base, BOX.w, BOX.h, col, rib, { bow: loose ? 0 : 1, shake: loose && t < popT + 0.3 ? 6 : 0 })
+  const hx = 300 - tug * 18
+  // the ribbon end, from the bow to the hero
+  if (!loose) {
+    x.save(); x.lineCap = 'square'
+    x.strokeStyle = INK; x.lineWidth = 22; x.beginPath(); x.moveTo(BOX.cx - 40, bowY); x.quadraticCurveTo(470, bowY + 40 + tug * 20, hx + 90, 930); x.stroke()
+    x.strokeStyle = rib; x.lineWidth = 12; x.beginPath(); x.moveTo(BOX.cx - 40, bowY); x.quadraticCurveTo(470, bowY + 40 + tug * 20, hx + 90, 930); x.stroke()
+    x.restore()
+  } else {
+    // the loose ribbon flutters down
+    const p = clamp((t - popT) / 0.7)
+    x.save(); x.globalAlpha = 1 - p * 0.6; x.strokeStyle = rib; x.lineWidth = 12; x.beginPath(); x.moveTo(hx + 90, 940); x.quadraticCurveTo(hx + 150, 1000 + p * 60, hx + 200, 1100); x.stroke(); x.restore()
+  }
+  shadow(x, hx, 1125, 230)
+  hero(x, t, { x: hx, y: 960, s: 250, mood: loose ? 'wide' : 'squint', look: [1, 0], squash: loose ? 0 : -0.06 * tug, hops: [-0.2, popT + 0.02] })
+  sparkles(x, t, BOX.cx, bowY, popT, 10, 140, 1, [GOLD, BONE, rib])
+  if (line) bubble(x, t, 460, 650, lineAt, 2.35, line, { size: 36 })
+}
+export const hookCuesGift = [['tick', 0.0, 0.04], ['tick', 0.45, 0.04], ['tick', 0.9, 0.04], ['tick', 1.35, 0.04], ['pop', 1.7, 1318.51, 0.045, 0], ['glitter', 1.7, 2.1], ['pop', 0.9, 880, 0.03, 0]]
+/** beat 1: the lid flies off and the gift rises out of the box; drawGift(x, t, cx, cy, k) */
+export function giftReveal(x, t, S, drawGift, { line = null, lineAt = 1.2, heroMood = 'sparkle' } = {}) {
+  const { u, hero, cfg } = S
+  const col = cfg.boxCol, rib = cfg.ribbon || BONE
+  const lf = ease.outCubic(prog(u, 0, 0.45))
+  shadow(x, BOX.cx, BOX.base, BOX.w * 1.1)
+  // the lid lands on the snow to the right
+  giftBox(x, t, BOX.cx, BOX.base, BOX.w, BOX.h, col, rib, { open: true, bow: 0, lidDx: lerp(0, 300, lf), lidDy: lerp(0, -260, Math.sin(Math.PI * lf)) + lerp(0, 240, lf), lidRot: lerp(0, 0.5, lf) })
+  const k = easeOutBack(prog(u, 0.15, 0.7), 1.8)
+  if (k > 0.01) drawGift(x, t, BOX.cx, lerp(BOX.base - BOX.h + 40, 770, k), k)
+  sparkles(x, t, BOX.cx, 780, S.t0 + 0.6, 12, 220, 1, [GOLD, BONE, rib])
+  shadow(x, 270, 1125, 210)
+  hero(x, t, { x: 270, y: 970, s: 220, mood: u > 0.6 ? heroMood : 'wide', look: [1, -0.5], hops: [S.t0 + 0.6, S.t0 + 1.5] })
+  if (line) bubble(x, t, 420, 600, S.t0 + lineAt, S.t1, line, { size: 34 })
+}
+export const revealCues = [['whoosh', 0.0, 0.35, 0.03], ['pop', 0.15, 987.77, 0.03, 0], ['pop', 0.62, 1567.98, 0.045, 0], ['glitter', 0.6, 1.1]]
+/** a handwritten note card (EB Garamond italic) */
+export function note(x, cx, cy, lines, { k = 1, rot = -0.04, size = 46, w = 520, h = null, col = '#fffaf0' } = {}) {
+  card(x, cx, cy, w, h || (lines.length * size * 1.25 + 70), lines, { col, size, rot, k, font: SERIF, weight: 'italic 500', gap: 1.25 })
 }
 
 // ═════════════════════════════════════════════════════════════ the episode
