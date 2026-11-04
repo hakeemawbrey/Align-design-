@@ -1,5 +1,5 @@
-// ngne19: STAR TALK GAME NIGHT, Ep 19, "Cancer vs Capricorn: Soup, Again" (35 s vertical, opposite signs, a rematch, music: lofi · Bb).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne19: STAR TALK GAME NIGHT, Ep 19, "Cancer vs Capricorn: Soup, Again" (33 s vertical, opposite signs, a rematch, music: lofi · Bb).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Soup vs planner. | *Rematch.*' Cancer holding soup, Capricorn a planner (ep 7 went to Capricorn).
 //   R1 'I'm really proud of you. ___': both kind (Capricorn says a feeling) → both
 //   R2 'They make time for you in a busy week' both GREEN → both
