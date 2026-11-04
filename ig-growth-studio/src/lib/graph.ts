@@ -258,6 +258,8 @@ export function loginUrl(state: string, scopes: string[]) {
   u.searchParams.set("redirect_uri", config.redirectUri);
   u.searchParams.set("state", state);
   u.searchParams.set("response_type", "code");
-  u.searchParams.set("scope", scopes.join(","));
+  // Facebook Login for Business apps request permissions through a saved configuration.
+  if (config.loginConfigId) u.searchParams.set("config_id", config.loginConfigId);
+  else u.searchParams.set("scope", scopes.join(","));
   return u.toString();
 }

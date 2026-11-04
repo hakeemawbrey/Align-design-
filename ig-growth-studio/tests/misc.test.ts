@@ -47,3 +47,16 @@ describe("GraphClient", () => {
     expect(await client.mediaInsights("1")).toEqual({ reach: 40, shares: 3 });
   });
 });
+
+describe("loginUrl", () => {
+  it("uses config_id when META_LOGIN_CONFIG_ID is set, scope otherwise", async () => {
+    const { loginUrl } = await import("../src/lib/graph");
+    delete process.env.META_LOGIN_CONFIG_ID;
+    expect(new URL(loginUrl("s", ["a", "b"])).searchParams.get("scope")).toBe("a,b");
+    process.env.META_LOGIN_CONFIG_ID = "123";
+    const u = new URL(loginUrl("s", ["a"]));
+    expect(u.searchParams.get("config_id")).toBe("123");
+    expect(u.searchParams.has("scope")).toBe(false);
+    delete process.env.META_LOGIN_CONFIG_ID;
+  });
+});

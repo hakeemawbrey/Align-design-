@@ -11,6 +11,10 @@ export const config = {
   get appUrl() {
     return (process.env.APP_URL || "http://localhost:3000").replace(/\/$/, "");
   },
+  /** Facebook Login for Business configuration ID. When set, it replaces the scope list. */
+  get loginConfigId() {
+    return process.env.META_LOGIN_CONFIG_ID ?? "";
+  },
   get appPassword() {
     return process.env.APP_PASSWORD ?? "";
   },

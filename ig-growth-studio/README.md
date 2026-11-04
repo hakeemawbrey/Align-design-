@@ -43,6 +43,8 @@ npm run worker         # in a second terminal: publishes scheduled posts every m
 ```
 
 1. In the Meta app, add `${APP_URL}/api/auth/meta/callback` as a valid OAuth redirect URI.
+   If the app uses **Facebook Login for Business**, create a configuration (user access token,
+   with the permissions below) and put its ID in `META_LOGIN_CONFIG_ID`.
 2. Open the app, sign in with `APP_PASSWORD`, then go to **Settings → Connect with Facebook**.
 3. Facebook issues a long-lived token (about 60 days). Settings shows when it expires; click
    **Reconnect** before then.
