@@ -256,3 +256,26 @@ describe("editQueuedPost", () => {
     expect((await getPost(db, id))!.caption).toBe("longer caption");
   });
 });
+
+describe("Reel covers", () => {
+  it("sends the chosen frame as thumb_offset, and nothing when unset", async () => {
+    const { createPost: create } = await import("../src/lib/db");
+    const at = new Date(NOW.getTime() - 1000);
+    const withCover = await create(db, { igUserId: "17841", type: "REELS", mediaUrl: "https://cdn.example.com/a.mp4", caption: "", shareToFeed: true, scheduledAt: at, coverOffsetMs: 4500 });
+    const routes = {
+      "POST 17841/media": () => ({ id: "C1" }),
+      "GET C1": () => ({ status_code: "FINISHED" }),
+      "POST 17841/media_publish": () => ({ id: "M1" }),
+      "GET M1": () => ({ id: "M1", permalink: "https://instagram.com/reel/x" }),
+    };
+    const first = fakeGraph(routes);
+    await publishDuePosts(db, { now: NOW, client: first.client });
+    expect(first.calls[0].params.thumb_offset).toBe("4500");
+    expect((await getPost(db, withCover))!.status).toBe("published");
+
+    await create(db, { igUserId: "17841", type: "REELS", mediaUrl: "https://cdn.example.com/b.mp4", caption: "", shareToFeed: true, scheduledAt: at });
+    const second = fakeGraph(routes);
+    await publishDuePosts(db, { now: NOW, client: second.client });
+    expect(second.calls[0].params).not.toHaveProperty("thumb_offset");
+  });
+});

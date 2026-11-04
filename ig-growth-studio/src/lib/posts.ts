@@ -11,6 +11,8 @@ export const PostFields = z.object({
   caption: z.string().max(MAX_CAPTION, "Captions are limited to 2,200 characters"),
   shareToFeed: z.boolean(),
   trial: z.enum(["MANUAL", "SS_PERFORMANCE"]).nullable(),
+  /** Reels: cover frame, in ms from the start of the video. */
+  coverOffsetMs: z.number().int().min(0).max(15 * 60_000).nullable().optional(),
 });
 export type PostFields = z.infer<typeof PostFields>;
 
@@ -37,6 +39,7 @@ export async function queuePost(
     caption: fields.caption,
     shareToFeed: fields.shareToFeed,
     trial: fields.trial,
+    coverOffsetMs: fields.coverOffsetMs ?? null,
     scheduledAt,
     source,
   });
@@ -55,6 +58,7 @@ export function publicPost(p: PostRow, accounts: Map<string, Account>) {
     account: accounts.get(p.ig_user_id)?.username ?? null,
     type: p.type,
     trial: p.trial_strategy,
+    coverOffsetMs: p.cover_offset_ms,
     mediaUrl: p.media_url,
     caption: p.caption,
     shareToFeed: p.share_to_feed === 1,

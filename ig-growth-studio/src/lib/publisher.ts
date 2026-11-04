@@ -103,6 +103,7 @@ async function advance(
             post.caption,
             post.share_to_feed === 1,
             post.trial_strategy,
+            post.cover_offset_ms,
           )
         : await client.createImageContainer(igUserId, post.media_url, post.caption);
     containerId = container.id;

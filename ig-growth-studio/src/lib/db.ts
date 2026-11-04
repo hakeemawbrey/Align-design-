@@ -23,6 +23,8 @@ export interface PostRow {
   caption: string;
   share_to_feed: number;
   trial_strategy: TrialStrategy | null;
+  /** Reels: the frame (ms into the video) Instagram uses as the cover. Null = Instagram's default. */
+  cover_offset_ms: number | null;
   source: PostSource;
   scheduled_at: string; // ISO UTC
   status: PostStatus;
@@ -187,7 +189,10 @@ async function migrateToMultiAccount(db: DB): Promise<InStatement[]> {
 }
 
 /** Each migration returns statements that run in one transaction together with the version bump. */
-const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [migrateToMultiAccount];
+const MIGRATIONS: ((db: DB) => Promise<InStatement[]>)[] = [
+  migrateToMultiAccount,
+  async () => ["ALTER TABLE posts ADD COLUMN cover_offset_ms INTEGER"],
+];
 
 /** Schema version: kept in settings (works on Turso), falling back to PRAGMA user_version for older local files. */
 export async function schemaVersion(db: DB): Promise<number> {
@@ -346,14 +351,15 @@ export interface NewPost {
   shareToFeed: boolean;
   scheduledAt: Date;
   trial?: TrialStrategy | null;
+  coverOffsetMs?: number | null;
   source?: PostSource;
 }
 
 export async function createPost(db: DB, p: NewPost): Promise<number> {
   const res = await run(
     db,
-    `INSERT INTO posts (ig_user_id, type, media_url, caption, share_to_feed, trial_strategy, source, scheduled_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT INTO posts (ig_user_id, type, media_url, caption, share_to_feed, trial_strategy, cover_offset_ms, source, scheduled_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       p.igUserId,
       p.type,
@@ -361,6 +367,7 @@ export async function createPost(db: DB, p: NewPost): Promise<number> {
       p.caption,
       p.shareToFeed ? 1 : 0,
       p.type === "REELS" ? (p.trial ?? null) : null,
+      p.type === "REELS" ? (p.coverOffsetMs ?? null) : null,
       p.source ?? "you",
       p.scheduledAt.toISOString(),
     ],
@@ -416,10 +423,11 @@ export async function claimPost(db: DB, id: number, now: Date): Promise<boolean>
  * Edits a post that has not started publishing. A failed or cancelled post goes back in the queue when given a time.
  * The status check is part of the UPDATE, so it cannot race the publisher claiming the post.
  */
-export async function editQueuedPost(db: DB, id: number, fields: { caption?: string; scheduledAt?: Date }, now: Date) {
+export async function editQueuedPost(db: DB, id: number, fields: { caption?: string; scheduledAt?: Date; coverOffsetMs?: number | null }, now: Date) {
   const sets: string[] = [];
   const args: Arg[] = [];
   if (fields.caption !== undefined) sets.push("caption = ?"), args.push(fields.caption);
+  if (fields.coverOffsetMs !== undefined) sets.push("cover_offset_ms = CASE WHEN type = 'REELS' THEN ? END"), args.push(fields.coverOffsetMs);
   if (fields.scheduledAt) {
     sets.push("scheduled_at = ?", "status = 'scheduled'", "container_id = NULL", "error = NULL", "attempts = 0");
     args.push(fields.scheduledAt.toISOString());

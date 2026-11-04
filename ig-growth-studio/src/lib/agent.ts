@@ -45,9 +45,11 @@ export const AGENT_DOCS = {
     "POST /api/agent/posts":
       "Queue a post. JSON: { account?, type: 'IMAGE'|'REELS', mediaUrl: public https URL (JPEG or MP4), caption?, " +
       "scheduledAt: ISO time with offset (e.g. 2026-11-05T18:00:00-06:00, at least 2 minutes ahead), shareToFeed?: boolean, " +
-      "trial?: 'MANUAL'|'SS_PERFORMANCE' (Reels only: a Trial Reel shown to non-followers first) }.",
+      "trial?: 'MANUAL'|'SS_PERFORMANCE' (Reels only: a Trial Reel shown to non-followers first), " +
+      "coverOffsetMs?: number (Reels only: cover frame in ms from the start) }.",
     "PATCH /api/agent/posts/{id}":
-      "Change a queued post. JSON: { caption?, scheduledAt? }. Sending scheduledAt also puts a failed or cancelled post back in the queue.",
+      "Change a queued post. JSON: { caption?, scheduledAt?, coverOffsetMs? }. coverOffsetMs (Reels): the video frame, in ms, used as the cover; " +
+      "null for Instagram's default. Sending scheduledAt also puts a failed or cancelled post back in the queue.",
     "DELETE /api/agent/posts/{id}": "Cancel a post that has not started publishing.",
     "GET /api/agent/stats?account=": "Followers, following, post count and reach/engagement for the 12 most recent posts.",
     "GET /api/agent/comments?account=": "Comments the account has not replied to, with any saved draft.",

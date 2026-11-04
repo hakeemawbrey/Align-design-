@@ -11,9 +11,12 @@ const MIN_LEAD_MS = 2 * 60_000;
 const Patch = z
   .object({
     caption: PostFields.shape.caption.optional(),
+    coverOffsetMs: PostFields.shape.coverOffsetMs,
     scheduledAt: z.iso.datetime({ offset: true, message: "scheduledAt must be ISO 8601 with a time zone" }).optional(),
   })
-  .refine((b) => b.caption !== undefined || b.scheduledAt !== undefined, { message: "Send caption and/or scheduledAt" });
+  .refine((b) => b.caption !== undefined || b.scheduledAt !== undefined || b.coverOffsetMs !== undefined, {
+    message: "Send caption, scheduledAt and/or coverOffsetMs",
+  });
 
 async function load(req: NextRequest, params: Promise<{ id: string }>) {
   const denied = agentAuth(req);
@@ -35,7 +38,10 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     const issue = parsed.error.issues[0];
     return NextResponse.json({ error: `${issue?.path.join(".") || "body"}: ${issue?.message ?? "invalid"}` }, { status: 400 });
   }
-  const { caption, scheduledAt } = parsed.data;
+  const { caption, scheduledAt, coverOffsetMs } = parsed.data;
+  if (coverOffsetMs != null && post.type !== "REELS") {
+    return NextResponse.json({ error: "Only Reels have a cover frame" }, { status: 400 });
+  }
   if (caption !== undefined && countHashtags(caption) > MAX_HASHTAGS) {
     return NextResponse.json({ error: "Instagram allows at most 30 hashtags per post" }, { status: 400 });
   }
@@ -46,7 +52,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
   if (when && !(await getAccount(db, post.ig_user_id))) {
     return NextResponse.json({ error: "This post's account is no longer connected" }, { status: 409 });
   }
-  if (!(await editQueuedPost(db, id, { caption, scheduledAt: when }, new Date()))) {
+  if (!(await editQueuedPost(db, id, { caption, scheduledAt: when, coverOffsetMs }, new Date()))) {
     const allowed = when ? "scheduled, failed or cancelled" : "scheduled";
     return NextResponse.json({ error: `Only ${allowed} posts can be changed (this one is ${post.status})` }, { status: 409 });
   }

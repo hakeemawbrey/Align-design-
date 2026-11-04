@@ -199,11 +199,14 @@ export class GraphClient {
     caption: string,
     shareToFeed: boolean,
     trial?: "MANUAL" | "SS_PERFORMANCE" | null,
+    coverOffsetMs?: number | null,
   ) {
     return this.request<{ id: string }>("POST", `${igUserId}/media`, {
       media_type: "REELS",
       video_url: videoUrl,
       caption,
+      // thumb_offset: the video frame (in ms) Instagram uses as the Reel's cover.
+      ...(coverOffsetMs != null ? { thumb_offset: Math.round(coverOffsetMs) } : {}),
       ...(trial
         ? { trial_params: JSON.stringify({ graduation_strategy: trial }) }
         : { share_to_feed: shareToFeed }),
