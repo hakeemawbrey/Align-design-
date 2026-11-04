@@ -10,7 +10,8 @@
     "worker": "tsx scripts/worker.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "agent": "tsx scripts/agent.ts"
+    "agent": "tsx scripts/agent.ts",
+    "import": "tsx scripts/import-schedule.ts"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",

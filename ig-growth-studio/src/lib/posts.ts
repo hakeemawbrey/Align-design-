@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { type Account, type DB, type PostRow, type PostSource, createPost } from "./db";
+import { toDirectMediaUrl } from "./plan";
 
 export const MAX_CAPTION = 2200;
 export const MAX_HASHTAGS = 30;
@@ -31,7 +32,8 @@ export function queuePost(
   const id = createPost(db, {
     igUserId: account.igUserId,
     type: fields.type,
-    mediaUrl: fields.mediaUrl,
+    // Google Drive share links are turned into direct downloads Instagram can fetch.
+    mediaUrl: toDirectMediaUrl(fields.mediaUrl) ?? fields.mediaUrl,
     caption: fields.caption,
     shareToFeed: fields.shareToFeed,
     trial: fields.trial,
