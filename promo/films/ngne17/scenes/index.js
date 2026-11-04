@@ -1,5 +1,5 @@
-// ngne17: STAR TALK GAME NIGHT, Ep 17, "Gemini vs Sagittarius: Nice Save" (35 s vertical, opposite signs, a rematch, music: house · A).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne17: STAR TALK GAME NIGHT, Ep 17, "Gemini vs Sagittarius: Nice Save" (33 s vertical, opposite signs, a rematch, music: house · A).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Gemini vs Sagittarius. | Round *two.*' Sag already buzzing (ep 5 went to Gemini).
 //   R1 'my plans just got canceled. ___': both kind → both
 //   R2 'They tell you the truth, even when awkward': Gemini 'RED. lie to me, it's cozier.' …kidding, GREEN / Sag 'GREEN. honest, but gently.' → Sag
