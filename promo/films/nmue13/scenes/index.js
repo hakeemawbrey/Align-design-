@@ -1,140 +1,111 @@
-// nmue13: THE MAKE-UP TALK, "Sorry, then show it" (30 s vertical, promo/films/next30/b32.md, music: jazzy · Bb).
+// nmue13: THE MAKE-UP TALK, "Not at 1 AM" (30 s vertical, promo/films/next30/b32.md, music: jazzy · Bb).
 // ♍ Virgo × ♐ Sagittarius. The format lives in ./makeupkit.js (shared by nmue13–nmue24).
-//   0–6.6     THE FIGHT  "“You said sorry | *last time* too.”" Virgo taps a wristwatch (TAP TAP), Sag bursts in through the
-//             door late, scarf flying: "you're late. again." / "I SAID sorry!" / "you said it Tuesday too."
-//   6.6–12.8  UNDER IT   "Every sorry. | *No change.*" A wall of sticky notes fills up, one SORRY per late night, every one
-//             sincere; the FOLLOW-THROUGH meter under them stays empty. Sag, sheepish.
-//   12.8–21.6 THE TALK   "A sorry is | a *promise.*" THE STARS: make it one you can keep. TRY SAYING "I'm sorry. I'll text you
-//             when I leave. Every time." Sag: "small and keepable. deal."
-//   21.6–25.5 MADE UP    the next night: the phone pings "leaving now!", Sag arrives EARLY (7:52 PM) with two cocoas.
-//             "Sorry is a *verb*."
-import { makeMakeUp, R, box, bubble, label, ink, glow, phone, inSprite, starFrame, scarfCells, sparkles, drawBits, pop01, outK, prog, lerp, clamp, ease, easeOutBack, INK, BONE, GOLD, PINK, MINT, INTER, MONO } from './makeupkit.js'
+//   0–6.6     THE FIGHT  "“It’s *1 AM.* | Let’s finish this.”" Virgo mid-hop by a glowing bedside clock (1:07 AM); Sag
+//             yawning under a blanket: "we're finishing this NOW." / "my eyes are closing." / "so you DON'T care??"
+//   6.6–12.8  UNDER IT   "Low battery. | *Short fuse.*" Two battery bars drain to red over their heads; every word comes out
+//             bent and grumpy ("whatever." / "FINE." / "ok WOW").
+//   12.8–21.6 THE TALK   "Pick a *time.* | Then keep it." TRY SAYING "I care. Can we talk at breakfast?"
+//             Virgo: "breakfast. you're making the eggs."
+//   21.6–25.5 MADE UP    9:00 AM: toast pops, the batteries are full, they talk at the table. "Morning you is *kinder*."
+import { makeMakeUp, R, box, ink, label, glow, sparkles, inSprite, starFrame, pop01, prog, lerp, clamp, ease, INK, BONE, GOLD, MINT, MONO, INTER } from './makeupkit.js'
 
-const SAG = '#b06cf0', SCARF = '#ff7a6b'
-
-function door(x, cx, by, open) {
-  box(x, cx - 110, by - 380, 220, 380, '#2a1f45', { b: 8 })
-  const w = 200 * (1 - 0.75 * open)
-  box(x, cx - 100, by - 370, w, 360, '#8a5a3a', { b: 6, hi: 'rgba(255,255,255,0.12)' })
-  R(x, GOLD, cx - 100 + w - 30, by - 200, 14, 14)
-  if (open > 0) glow(x, cx + 40, by - 190, 220, open, '255,220,160')
-}
-function watch(x, cx, cy, k, t) {
-  if (k <= 0.01) return
-  x.save(); x.translate(cx, cy); x.scale(k, k); x.rotate(-0.15 + 0.06 * Math.sin(t * 14))
-  R(x, INK, -16, -64, 32, 128); R(x, '#5a5470', -10, -60, 20, 120)
-  box(x, -40, -40, 80, 80, BONE, { b: 7 })
-  R(x, INK, -3, -28, 6, 30); R(x, INK, -3, -3, 26, 6)
-  x.restore()
-}
-// a sticky note
-function note(x, cx, cy, text, sub, k, rot, col = '#ffe27a') {
-  if (k <= 0.01) return
-  x.save(); x.translate(cx, cy); x.rotate(rot); x.scale(k, k)
-  R(x, 'rgba(6,4,18,0.45)', -74, -66, 160, 150)
-  box(x, -80, -74, 160, 150, col, { b: 5 })
-  R(x, 'rgba(0,0,0,0.08)', -80, -74, 160, 26)
-  ink(x, text, 0, 4, { size: 30, font: INTER, weight: 800, col: '#7a2b2b' })
-  ink(x, sub, 0, 46, { size: 20, font: MONO, weight: 700, col: 'rgba(27,18,54,0.6)' })
-  x.restore()
-}
-const NOTES = [['sorry!', 'MON'], ['so sorry', 'TUE'], ['SORRY', 'WED'], ['my bad!', 'THU'], ['sorry :(', 'FRI'], ['sorry!!', 'SAT'],
-  ['sooo sorry', 'SUN'], ['sorry!', 'MON'], ['ugh sorry', 'TUE'], ['SORRY!!', 'WED'], ['sorry x', 'THU'], ['sorry…', 'FRI']]
-function cocoa(x, cx, cy, t, k = 1) {
+function clock(x, cx, cy, text, { k = 1, col = '#ff5c6b', w = 230 } = {}) {
   if (k <= 0.01) return
   x.save(); x.translate(cx, cy); x.scale(k, k)
-  box(x, -34, -40, 68, 72, '#ff8fb1', { b: 6, hi: '#ffc2d6' }); box(x, 34, -24, 18, 34, '#ff8fb1', { b: 5 })
-  R(x, '#6b3a22', -28, -40, 56, 10)
-  for (let i = 0; i < 2; i++) { const p = ((t * 0.9 + i * 0.5) % 1); x.globalAlpha = 0.7 * (1 - p); R(x, '#f4eefc', -12 + i * 16 + 6 * Math.sin(t * 4 + i), -60 - p * 50, 10, 16) }
+  glow(x, 0, 0, 220, 0.9, col === '#ff5c6b' ? '255,92,107' : '159,230,176')
+  box(x, -w / 2, -55, w, 110, '#1b1530', { b: 7 })
+  ink(x, text, 0, 4, { size: 54, font: MONO, weight: 700, col })
+  x.restore()
+}
+function bed(x) {
+  box(x, 600, 1200, 460, 120, '#5a4a8a', { b: 8 })
+  box(x, 990, 1060, 60, 260, '#4a3a78', { b: 8 })
+  box(x, 600, 1320, 30, 60, '#4a3a78', { b: 6 })
+}
+function blanket(x, F) {
+  inSprite(x, F, () => { x.fillStyle = INK; x.fillRect(3, 24.5, 30, 11); x.fillStyle = '#7fa8e8'; x.fillRect(3.5, 25, 29, 10); x.fillStyle = '#a9c6f2'; for (let i = 0; i < 5; i++) x.fillRect(5 + i * 6, 25, 3, 10) })
+}
+function battery(x, cx, cy, f, k = 1) {
+  if (k <= 0.01) return
+  x.save(); x.translate(cx, cy); x.scale(k, k)
+  box(x, -86, -40, 172, 80, BONE, { b: 5 }); R(x, '#1b1530', -80, -34, 160, 68); box(x, 86, -14, 12, 28, BONE, { b: 4 })
+  const col = f > 0.5 ? MINT : f > 0.2 ? '#ffb347' : '#ff4f5e'
+  const n = Math.max(0, Math.round(f * 5))
+  for (let i = 0; i < n; i++) R(x, col, -70 + i * 29, -24, 23, 48)
+  x.restore()
+}
+// a grumpy word that comes out bent
+function grump(x, t, cx, cy, t0, text, rot) {
+  const k = pop01(t, t0, 0.25, 2.6)
+  if (k <= 0.01) return
+  label(x, text, cx, cy - 10 * Math.min(1, t - t0), { size: 46 * k, col: '#ff7a6b', font: INTER, weight: 800, rot: rot + 0.05 * Math.sin((t - t0) * 9) })
+}
+function toast(x, cx, cy, t, t0, k) {
+  if (k <= 0.01) return
+  x.save(); x.translate(cx, cy); x.scale(k, k)
+  const up = ease.outBack(prog(t, t0, t0 + 0.3)) * 70 - ease.inQuad(prog(t, t0 + 0.3, t0 + 0.7)) * 30
+  for (const dx of [-28, 28]) { box(x, dx - 22, -60 - up, 44, 60, '#d8a25a', { b: 5 }); R(x, '#f0c98a', dx - 16, -54 - up, 32, 48) }
+  box(x, -80, -40, 160, 90, '#c9d2ea', { b: 7, hi: '#e6ebf7' }); R(x, INK, -60, -40, 46, 8); R(x, INK, 14, -40, 46, 8)
   x.restore()
 }
 
 const EP = makeMakeUp({
   id: 'nmue13', a: 'virgo', b: 'sagittarius',
-  hook: '“You said sorry | *last time* too.”', hookColor: '#ff8a7a',
+  hook: '“It’s *1 AM.* | Let’s finish this.”', hookColor: '#ff6b7a',
   fight: {
-    lines: [['a', "you're late. again."], ['b', 'I SAID sorry!'], ['a', 'you said it Tuesday too.']],
-    bubbleAt: [[300, 850], [770, 735], [380, 625]],
-    draw(x, t) {
-      door(x, 860, 1300, clamp(1 - prog(t, 0.6, 1.2)) * 0.9 + 0.1)
-    },
+    lines: [['a', "we're finishing this NOW."], ['b', 'my eyes are closing.'], ['a', "so you DON'T care??"]],
+    bubbleAt: [[330, 860], [790, 860], [330, 640]],
+    posA: { x: 260, y: 1130, s: 270 }, posB: { x: 800, y: 1140, s: 250 },
+    moods: { a: 'squint', b: t => (t % 2.6) < 0.9 ? 'sleepy' : 'neutral' },
+    noSquiggle: true, noSteam: true,
+    draw(x) { R(x, 'rgba(6,4,22,0.45)', 0, 0, 1080, 1920); bed(x) },
     front(x, t) {
-      // Virgo's wristwatch: TAP TAP
-      watch(x, 105, 1040, 1, t)
-      const tap = (t * 2.2) % 1
-      if (t < 5.5) label(x, 'TAP TAP', 105, 950 - 8 * tap, { size: 26, col: GOLD, alpha: 1 - tap * 0.5 })
-      // Sag's scarf, flying
-      const F = starFrame(795, 1130, 280, t, { hops: [1.85, 2.25], seed: 7 })
-      inSprite(x, F, () => scarfCells(x, SCARF, t, 2))
+      blanket(x, starFrame(800, 1140, 250, t, { seed: 7 }))
+      clock(x, 540, 1400, '1:07 AM')
+      label(x, 'z', 900 + 10 * Math.sin(t * 2), 980 - (t * 40) % 80, { size: 40, col: '#a9c6f2', alpha: 0.7 })
     },
-    cues: [['tick', 0.3, 0.05], ['tick', 0.75, 0.05], ['tick', 1.2, 0.05], ['whoosh', 0.6, 0.35, 0.04], ['tick', 0.62, 0.06]],
+    cues: [['tick', 0.5, 0.03], ['tick', 1.5, 0.03], ['tick', 2.5, 0.03], ['tick', 3.5, 0.03], ['tick', 4.5, 0.03], ['tick', 5.5, 0.03]],
   },
   under: {
-    head: 'Every sorry. | *No change.*', color: '#ffd23a',
+    head: 'Low battery. | *Short fuse.*', color: '#ffb347',
     draw(x, t, S) {
-      const { u, drawB } = S
-      // the cork board
-      box(x, 110, 470, 860, 600, '#b8875a', { b: 10, hi: 'rgba(255,255,255,0.08)' })
-      for (let i = 0; i < 40; i++) R(x, 'rgba(90,50,20,0.35)', 130 + (i * 197) % 820, 490 + (i * 113) % 560, 8, 6)
-      NOTES.forEach(([tx, d], i) => {
-        const cx = 210 + (i % 4) * 220, cy = 570 + Math.floor(i / 4) * 180
-        const at = S.t0 + 0.25 + i * 0.2
-        note(x, cx, cy, tx, d, easeOutBack(prog(t, at, at + 0.22), 2.4), (((i * 7) % 5) - 2) * 0.05, i % 3 === 2 ? '#ffc2d6' : '#ffe27a')
-      })
-      // the FOLLOW-THROUGH meter: empty
-      const mk = pop01(t, S.t0 + 3.0, 0.3, 2)
-      if (mk > 0.01) {
-        x.save(); x.translate(540, 1140); x.scale(mk, mk)
-        box(x, -330, -34, 660, 68, '#2a1f55', { b: 7 })
-        ink(x, 'FOLLOW-THROUGH', -310, 0, { size: 28, font: MONO, weight: 700, col: BONE, align: 'left' })
-        const blink = Math.floor(t * 3) % 2
-        ink(x, '0 / 12', 300, 0, { size: 30, font: MONO, weight: 700, col: blink ? '#ff7a6b' : BONE, align: 'right' })
-        x.restore()
-      }
-      // Sag, sheepish, peeking up at the wall
-      drawB(x, t, { x: 540, y: 1340, s: 220, pop: pop01(t, S.t0 + 0.1, 0.3, 2), mood: u < 3.2 ? 'wide' : 'neutral', look: [0, -1], hops: [S.t0 + 3.05] })
-      void GOLD
+      const { u, drawA, drawB } = S
+      R(x, 'rgba(6,4,22,0.45)', 0, 0, 1080, 1920)
+      const f = lerp(0.6, 0.12, ease.inOutQuad(prog(u, 0.4, 2.6)))
+      drawA(x, t, { x: 280, y: 1200, s: 240, mood: u > 2.6 ? 'squint' : 'neutral', look: [1, 0], hops: [S.t0 + 3.0, S.t0 + 4.4] })
+      drawB(x, t, { x: 800, y: 1200, s: 240, mood: u > 2.6 ? 'eyeroll' : 'sleepy', look: [-1, 0], hops: [S.t0 + 3.7] })
+      battery(x, 280, 920, f, pop01(t, S.t0 + 0.2, 0.3, 2)); battery(x, 800, 920, f * 0.8, pop01(t, S.t0 + 0.3, 0.3, 2))
+      if (f < 0.25 && Math.floor(t * 3) % 2) { label(x, 'LOW', 280, 850, { size: 28, col: '#ff4f5e' }); label(x, 'LOW', 800, 850, { size: 28, col: '#ff4f5e' }) }
+      grump(x, t, 330, 620, S.t0 + 3.0, 'whatever.', -0.12)
+      grump(x, t, 760, 700, S.t0 + 3.7, 'FINE.', 0.14)
+      grump(x, t, 380, 760, S.t0 + 4.4, 'ok WOW.', 0.08)
     },
-    cues: Array.from({ length: 12 }, (_, i) => ['pop', +(0.25 + i * 0.2).toFixed(2), [587.33, 659.25, 739.99, 880][i % 4], 0.03, (i % 4 - 1.5) * 0.3]).concat([['pop', 3.0, 440, 0.05, 0], ['tick', 3.3, 0.04], ['tick', 3.63, 0.04], ['tick', 3.96, 0.04]]),
+    cues: [['riser', 0.4, 2.6, 0.02], ['pluck', 2.7, 220, 0.04, 0.6, 0], ['pop', 3.0, 440, 0.045, -0.3], ['pop', 3.7, 392, 0.045, 0.3], ['pop', 4.4, 349.23, 0.045, -0.2]],
   },
   talk: {
-    head: 'A sorry is | a *promise.*',
-    stars: 'a sorry is a promise. make it one you can *keep*.',
-    script: "I'm sorry. I'll *text you* when I leave. Every time.",
-    reply: ['b', 'small and keepable. *deal.*'],
+    head: 'Pick a *time.* | Then keep it.', color: '#9fe6b0',
+    stars: 'tired talks go in circles. pick a *time*, then keep it.',
+    script: 'I care. Can we talk *at breakfast?*',
+    reply: ['a', "breakfast. *you're making the eggs.*"],
   },
   made: {
-    front(x, t, S) {
-      const { u, ok } = S
-      // the phone ping above Sag
-      const pk = pop01(t, S.t0 + 0.25, 0.3, 2.4) * ok
-      if (pk > 0.01) phone(x, 880, 880, { w: 150, h: 250, rot: 0.12, alpha: clamp(pk) }, (c, w) => {
-        c.save(); c.scale(pk, pk)
-        R(c, '#5fd38a', -w / 2 + 22, -60, w - 44, 56); ink(c, 'leaving', 0, -44, { size: 20, col: INK }); ink(c, 'now!', 0, -20, { size: 20, col: INK })
-        ink(c, '7:40 PM', 0, 40, { size: 18, font: MONO, col: BONE })
-        c.restore()
-      })
-      sparkles(x, t, 880, 840, S.t0 + 0.3, 8, 110, 1, [MINT, BONE, GOLD])
-      // cocoas
-      cocoa(x, 560, 1290, t, pop01(t, S.t0 + 0.9, 0.3, 2.4) * ok)
-      cocoa(x, 790, 1280, t, pop01(t, S.t0 + 1.0, 0.3, 2.4) * ok)
-      const sk = pop01(t, S.t0 + 1.4, 0.3, 2.6) * ok
-      if (sk > 0.01) {
-        x.save(); x.translate(540, 1420); x.rotate(-0.04); x.scale(sk, sk)
-        box(x, -220, -38, 440, 76, '#9fe6b0', { b: 7 })
-        ink(x, '7:52 PM · EARLY', 0, 2, { size: 34, font: MONO, weight: 700 })
-        x.restore()
-      }
-      const F = starFrame(670, 1060, 270 * ok, t, { hops: [S.t0 + 0.2, S.t0 + 1.8, S.t0 + 2.8], seed: 7 })
-      if (ok > 0.5) inSprite(x, F, () => scarfCells(x, SCARF, t, 0.5))
-      void u; void lerp
+    draw(x, t, S) {
+      glow(x, 540, 700, 700, S.ok, '255,226,160')
+      box(x, 150, 1230, 780, 40, '#a07850', { b: 7, hi: '#c09868' }); R(x, INK, 200, 1270, 20, 160); R(x, INK, 860, 1270, 20, 160)
     },
-    cues: [['pop', 0.25, 1318.51, 0.05, 0.4], ['pop', 0.33, 1760, 0.035, 0.4], ['glitter', 0.3, 0.6], ['pop', 0.9, 880, 0.035, 0.2], ['pop', 1.0, 987.77, 0.035, 0.3], ['pop', 1.4, 1174.66, 0.045, 0], ['bell', 1.45, 2349.32, 0.02, 0.8, 0]],
+    front(x, t, S) {
+      clock(x, 540, 640, '9:00 AM', { k: pop01(t, S.t0 + 0.1, 0.3, 2.4) * S.ok, col: MINT })
+      toast(x, 860, 1215, t, S.t0 + 0.6, S.ok)
+      sparkles(x, t, 860, 1120, S.t0 + 0.65, 8, 120, 1, [GOLD, BONE, '#f0c98a'])
+      const bk = pop01(t, S.t0 + 1.2, 0.3, 2.4) * S.ok
+      battery(x, 300, 880, 1, bk); battery(x, 780, 880, 1, bk)
+    },
+    cues: [['pop', 0.1, 1318.51, 0.04, 0], ['pop', 0.6, 880, 0.05, 0], ['pop', 0.66, 1174.66, 0.04, 0], ['bell', 1.2, 1760, 0.03, 1.0, -0.3], ['bell', 1.28, 2349.32, 0.025, 1.0, 0.3]],
   },
-  last: 'Sorry is a *verb*.', lastColor: '#ffd23a',
+  last: 'Morning you | is *kinder*.', lastColor: '#9fe6b0',
 })
 
 export const DURATION = EP.DURATION
 export const SCENES = EP.SCENES
 export const CUES = EP.CUES
-void [bubble, drawBits, outK, ease, BONE, PINK, SAG]
+void [clamp, BONE]
