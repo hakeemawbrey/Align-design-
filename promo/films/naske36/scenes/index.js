@@ -1,10 +1,10 @@
-// naske36 · Ask the Stars, Volume 2, ep 36 · "How do I know it's real this time?" (20 s, dreamy · Db)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske36 · Ask the Stars, Volume 2, ep 36 · "How do I know it's real this time?" (18 s, dreamy · Db)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "How do I know it's *real* this time?"  ♓ Pisces mid-lift of a pair of rose-tinted glasses off its face,
 //         already teary; everything has a pink wash.
 //   3.0   "real feels calm, not just exciting."  The glasses come off; the pink wash fades and the night stays warm.
 //   5.9   "they show up on the boring days too."  A week of plain days: MON… SUN; a little star lands on each.
-//   8.75  card cut → 8.8 "and you feel like yourself around them."  Pisces and the partner on a bench in the snow,
+//   8.8   "and you feel like yourself around them."  Pisces and the partner on a bench in the snow,
 //         happy tears.
 //   12.1  "Real feels *calm.*"  (finale: Pisces and the partner, both happy-crying)
 import { makeAsk, R, box, drawBits, bubble, sparkles, hearts, shadow, inSprite, starFrame, tearsCells, tissues, snowBank, label, drawStarChar, drawPixelStar, signStar, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, INTER, MONO, T } from '../../naske19/scenes/askkit2.js'
