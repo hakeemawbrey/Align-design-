@@ -21,7 +21,7 @@
 // 104.0–108.0  ★ LESSON UNLOCKED "Meaningful isn't | a *mistake.*" +1 HONEST GIFT
 // 108.0–111.6  LANE TAG  ♏ Scorpio gives Libra a pastry shaped like a flower; Libra gives Scorpio a flower shaped
 //              like a pastry.
-// 111.6–115.6  NEXT TIME "Sag goes home for dinner. With a *plus one.*" · last line "*Mean* it."
+// 111.6–115.6  NEXT TIME "Sag’s parents come to dinner. Plus one: *Cancer.*" · last line "*Mean* it."
 import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas } from '../../sky.js'
@@ -148,7 +148,7 @@ async function build(stage) {
   const boxes = BOXES.map(([lines, open, close]) => dialogueBox(root, { lines, y: 1480, width: 960, height: 250, open, close, cps: CPS }))
   const advise = buildAdvise(root, ADVISE)
   const lesson = buildLesson(root, { ...LESSON, accentColor: ML_GOLD, dim: 0.6 })
-  const next = buildNextTime(root, { at: T.next, out: T.nextOut, teaser: 'Sag goes home for dinner. With a *plus one.*' })
+  const next = buildNextTime(root, { at: T.next, out: T.nextOut, teaser: 'Sag’s parents come to dinner. Plus one: *Cancer.*' })
   const prev = buildPreviously(root, { at: T.prev[0], len: T.prev[1] - T.prev[0], stills: [
     { caption: 'Walking home, every night', scene: c => stillLane(c, 'bench') },
     { caption: '“Walking home with you.”', scene: c => stillCafe(c) },
