@@ -1,0 +1,1094 @@
+{
+ "series": [
+  {
+   "key": "c14",
+   "name": "Season 14: Cuffing Season",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "nc14",
+   "count": 24,
+   "length": "30-45 s",
+   "page": 11,
+   "splits": [
+    12,
+    12
+   ]
+  },
+  {
+   "key": "h15",
+   "name": "Season 15: Home for the Holidays",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "nh15",
+   "count": 24,
+   "length": "30-45 s",
+   "page": 11,
+   "splits": [
+    12,
+    12
+   ]
+  },
+  {
+   "key": "thread",
+   "name": "The Thread",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "nth",
+   "count": 32,
+   "length": "20-30 s",
+   "page": 12,
+   "splits": [
+    16,
+    16
+   ]
+  },
+  {
+   "key": "game",
+   "name": "Star Talk Game Night",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "ngn",
+   "count": 24,
+   "length": "30-40 s",
+   "page": 12,
+   "splits": [
+    12,
+    12
+   ]
+  },
+  {
+   "key": "green",
+   "name": "24 Days of Green Flags",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "ngf",
+   "count": 24,
+   "length": "15-20 s",
+   "page": 13,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "sagtk",
+   "name": "Sag Season Takeover",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "nsag",
+   "count": 12,
+   "length": "20-30 s",
+   "page": 13,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "captk",
+   "name": "Capricorn Season Takeover",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "ncap",
+   "count": 8,
+   "length": "20-30 s",
+   "page": 13,
+   "splits": [
+    8
+   ]
+  },
+  {
+   "key": "trends2",
+   "name": "Trends, Volume 2",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "nt2",
+   "count": 100,
+   "length": "15-30 s",
+   "page": 14,
+   "splits": [
+    20,
+    20,
+    20,
+    20,
+    20
+   ]
+  },
+  {
+   "key": "snow",
+   "name": "Remix: Snow Globe Cities",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "nsg",
+   "count": 28,
+   "length": "30 s",
+   "page": 15,
+   "splits": [
+    14,
+    14
+   ]
+  },
+  {
+   "key": "hol",
+   "name": "Then vs Now: Holidays 2016 vs 2026",
+   "account": "star_talk",
+   "kind": "post",
+   "prefix": "nhv",
+   "count": 24,
+   "length": "20 s",
+   "page": 15,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "ml2",
+   "name": "Moonlight Lane, Season 2: Winter on the Lane",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nml2",
+   "count": 10,
+   "length": "2 min",
+   "page": 16,
+   "splits": [
+    5,
+    5
+   ]
+  },
+  {
+   "key": "f16",
+   "name": "Season 16: Meet the Family",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nf16",
+   "count": 24,
+   "length": "30-45 s",
+   "page": 16,
+   "splits": [
+    12,
+    12
+   ]
+  },
+  {
+   "key": "gw",
+   "name": "Your Star Guide: Winter",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "ngw",
+   "count": 48,
+   "length": "20-30 s",
+   "page": 17,
+   "splits": [
+    24,
+    24
+   ]
+  },
+  {
+   "key": "ask2",
+   "name": "Ask the Stars, Volume 2",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nask",
+   "count": 36,
+   "length": "20 s",
+   "page": 17,
+   "splits": [
+    18,
+    18
+   ]
+  },
+  {
+   "key": "x2",
+   "name": "Star Talk Explains, Volume 2",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nx2",
+   "count": 30,
+   "length": "45-60 s",
+   "page": 18,
+   "splits": [
+    15,
+    15
+   ]
+  },
+  {
+   "key": "surv",
+   "name": "Holiday Survival Guide",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nhs",
+   "count": 24,
+   "length": "30 s",
+   "page": 18,
+   "splits": [
+    12,
+    12
+   ]
+  },
+  {
+   "key": "makeup",
+   "name": "The Make-Up Talk",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nmu",
+   "count": 24,
+   "length": "30 s",
+   "page": 18,
+   "splits": [
+    12,
+    12
+   ]
+  },
+  {
+   "key": "single",
+   "name": "Single and Thriving",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nst",
+   "count": 24,
+   "length": "20-30 s",
+   "page": 19,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "friends",
+   "name": "Friends First",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nff",
+   "count": 24,
+   "length": "20-30 s",
+   "page": 19,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "sxs2",
+   "name": "Sign × Sign, Volume 2",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nss",
+   "count": 32,
+   "length": "30 s",
+   "page": 19,
+   "splits": [
+    16,
+    16
+   ]
+  },
+  {
+   "key": "newyear",
+   "name": "New Year, Same Heart",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nny",
+   "count": 12,
+   "length": "20 s",
+   "page": 19,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "three",
+   "name": "The First Three Dates",
+   "account": "star_advice",
+   "kind": "post",
+   "prefix": "nfd",
+   "count": 12,
+   "length": "30 s",
+   "page": 19,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "party",
+   "name": "Your Sign at the Holiday Party",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "npy",
+   "count": 12,
+   "length": "10-20 s",
+   "page": 20,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "gifts",
+   "name": "The Signs as Winter Gifts",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "ngi",
+   "count": 12,
+   "length": "10-20 s",
+   "page": 20,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "rank",
+   "name": "Ranking the Signs",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nrk",
+   "count": 24,
+   "length": "15-20 s",
+   "page": 20,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "am3",
+   "name": "3 AM in Winter",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "n3a",
+   "count": 12,
+   "length": "15-20 s",
+   "page": 20,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "deal",
+   "name": "Dealbreaker or Not?",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "ndb",
+   "count": 24,
+   "length": "10-20 s",
+   "page": 20,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "oneline",
+   "name": "One-Line Advice for Your Sign",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nol",
+   "count": 24,
+   "length": "10-15 s",
+   "page": 21,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "pov",
+   "name": "POV: You're Dating a ___",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "npv",
+   "count": 24,
+   "length": "15-20 s",
+   "page": 21,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "hotcold",
+   "name": "Hot Take, Cold Take",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nhc",
+   "count": 24,
+   "length": "10-20 s",
+   "page": 21,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "ratedate",
+   "name": "Rate My Date Idea",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nrd",
+   "count": 24,
+   "length": "15-20 s",
+   "page": 21,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "starter",
+   "name": "Winter Starter Pack",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nwp",
+   "count": 12,
+   "length": "10-15 s",
+   "page": 22,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "versus",
+   "name": "Sign vs Sign",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nvs",
+   "count": 24,
+   "length": "15-20 s",
+   "page": 22,
+   "splits": [
+    24
+   ]
+  },
+  {
+   "key": "wait2",
+   "name": "Wait for It, Volume 2",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nwf",
+   "count": 12,
+   "length": "15-20 s",
+   "page": 22,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "silent2",
+   "name": "Silent Review, Volume 2",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nsr",
+   "count": 12,
+   "length": "15-20 s",
+   "page": 22,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "pcries",
+   "name": "Pisces Cries About…",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "npc",
+   "count": 12,
+   "length": "10-15 s",
+   "page": 22,
+   "splits": [
+    12
+   ]
+  },
+  {
+   "key": "mltease",
+   "name": "Moonlight Lane S2 teasers",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nmt",
+   "count": 30,
+   "length": "15-25 s",
+   "page": 22,
+   "splits": [
+    15,
+    15
+   ]
+  },
+  {
+   "key": "holq",
+   "name": "Holidays Then vs Now (quick cuts)",
+   "account": "star_advice",
+   "kind": "trial",
+   "prefix": "nhq",
+   "count": 18,
+   "length": "10-15 s",
+   "page": 22,
+   "splits": [
+    18
+   ]
+  }
+ ],
+ "batches": [
+  {
+   "id": "b01",
+   "parts": [
+    {
+     "series": "c14",
+     "first": 1,
+     "last": 12,
+     "batch": "b01"
+    }
+   ]
+  },
+  {
+   "id": "b02",
+   "parts": [
+    {
+     "series": "c14",
+     "first": 13,
+     "last": 24,
+     "batch": "b02"
+    }
+   ]
+  },
+  {
+   "id": "b03",
+   "parts": [
+    {
+     "series": "h15",
+     "first": 1,
+     "last": 12,
+     "batch": "b03"
+    }
+   ]
+  },
+  {
+   "id": "b04",
+   "parts": [
+    {
+     "series": "h15",
+     "first": 13,
+     "last": 24,
+     "batch": "b04"
+    }
+   ]
+  },
+  {
+   "id": "b05",
+   "parts": [
+    {
+     "series": "thread",
+     "first": 1,
+     "last": 16,
+     "batch": "b05"
+    }
+   ]
+  },
+  {
+   "id": "b06",
+   "parts": [
+    {
+     "series": "thread",
+     "first": 17,
+     "last": 32,
+     "batch": "b06"
+    }
+   ]
+  },
+  {
+   "id": "b07",
+   "parts": [
+    {
+     "series": "game",
+     "first": 1,
+     "last": 12,
+     "batch": "b07"
+    }
+   ]
+  },
+  {
+   "id": "b08",
+   "parts": [
+    {
+     "series": "game",
+     "first": 13,
+     "last": 24,
+     "batch": "b08"
+    }
+   ]
+  },
+  {
+   "id": "b09",
+   "parts": [
+    {
+     "series": "green",
+     "first": 1,
+     "last": 24,
+     "batch": "b09"
+    }
+   ]
+  },
+  {
+   "id": "b10",
+   "parts": [
+    {
+     "series": "sagtk",
+     "first": 1,
+     "last": 12,
+     "batch": "b10"
+    },
+    {
+     "series": "captk",
+     "first": 1,
+     "last": 8,
+     "batch": "b10"
+    }
+   ]
+  },
+  {
+   "id": "b11",
+   "parts": [
+    {
+     "series": "trends2",
+     "first": 1,
+     "last": 20,
+     "batch": "b11"
+    }
+   ]
+  },
+  {
+   "id": "b12",
+   "parts": [
+    {
+     "series": "trends2",
+     "first": 21,
+     "last": 40,
+     "batch": "b12"
+    }
+   ]
+  },
+  {
+   "id": "b13",
+   "parts": [
+    {
+     "series": "trends2",
+     "first": 41,
+     "last": 60,
+     "batch": "b13"
+    }
+   ]
+  },
+  {
+   "id": "b14",
+   "parts": [
+    {
+     "series": "trends2",
+     "first": 61,
+     "last": 80,
+     "batch": "b14"
+    }
+   ]
+  },
+  {
+   "id": "b15",
+   "parts": [
+    {
+     "series": "trends2",
+     "first": 81,
+     "last": 100,
+     "batch": "b15"
+    }
+   ]
+  },
+  {
+   "id": "b16",
+   "parts": [
+    {
+     "series": "snow",
+     "first": 1,
+     "last": 14,
+     "batch": "b16"
+    }
+   ]
+  },
+  {
+   "id": "b17",
+   "parts": [
+    {
+     "series": "snow",
+     "first": 15,
+     "last": 28,
+     "batch": "b17"
+    }
+   ]
+  },
+  {
+   "id": "b18",
+   "parts": [
+    {
+     "series": "hol",
+     "first": 1,
+     "last": 24,
+     "batch": "b18"
+    }
+   ]
+  },
+  {
+   "id": "b19",
+   "parts": [
+    {
+     "series": "ml2",
+     "first": 1,
+     "last": 5,
+     "batch": "b19"
+    },
+    {
+     "series": "mltease",
+     "first": 1,
+     "last": 15,
+     "batch": "b19"
+    }
+   ]
+  },
+  {
+   "id": "b20",
+   "parts": [
+    {
+     "series": "ml2",
+     "first": 6,
+     "last": 10,
+     "batch": "b20"
+    },
+    {
+     "series": "mltease",
+     "first": 16,
+     "last": 30,
+     "batch": "b20"
+    }
+   ]
+  },
+  {
+   "id": "b21",
+   "parts": [
+    {
+     "series": "f16",
+     "first": 1,
+     "last": 12,
+     "batch": "b21"
+    }
+   ]
+  },
+  {
+   "id": "b22",
+   "parts": [
+    {
+     "series": "f16",
+     "first": 13,
+     "last": 24,
+     "batch": "b22"
+    }
+   ]
+  },
+  {
+   "id": "b23",
+   "parts": [
+    {
+     "series": "gw",
+     "first": 1,
+     "last": 24,
+     "batch": "b23"
+    }
+   ]
+  },
+  {
+   "id": "b24",
+   "parts": [
+    {
+     "series": "gw",
+     "first": 25,
+     "last": 48,
+     "batch": "b24"
+    }
+   ]
+  },
+  {
+   "id": "b25",
+   "parts": [
+    {
+     "series": "ask2",
+     "first": 1,
+     "last": 18,
+     "batch": "b25"
+    }
+   ]
+  },
+  {
+   "id": "b26",
+   "parts": [
+    {
+     "series": "ask2",
+     "first": 19,
+     "last": 36,
+     "batch": "b26"
+    }
+   ]
+  },
+  {
+   "id": "b27",
+   "parts": [
+    {
+     "series": "x2",
+     "first": 1,
+     "last": 15,
+     "batch": "b27"
+    }
+   ]
+  },
+  {
+   "id": "b28",
+   "parts": [
+    {
+     "series": "x2",
+     "first": 16,
+     "last": 30,
+     "batch": "b28"
+    }
+   ]
+  },
+  {
+   "id": "b29",
+   "parts": [
+    {
+     "series": "surv",
+     "first": 1,
+     "last": 12,
+     "batch": "b29"
+    }
+   ]
+  },
+  {
+   "id": "b30",
+   "parts": [
+    {
+     "series": "surv",
+     "first": 13,
+     "last": 24,
+     "batch": "b30"
+    }
+   ]
+  },
+  {
+   "id": "b31",
+   "parts": [
+    {
+     "series": "makeup",
+     "first": 1,
+     "last": 12,
+     "batch": "b31"
+    }
+   ]
+  },
+  {
+   "id": "b32",
+   "parts": [
+    {
+     "series": "makeup",
+     "first": 13,
+     "last": 24,
+     "batch": "b32"
+    }
+   ]
+  },
+  {
+   "id": "b33",
+   "parts": [
+    {
+     "series": "single",
+     "first": 1,
+     "last": 24,
+     "batch": "b33"
+    }
+   ]
+  },
+  {
+   "id": "b34",
+   "parts": [
+    {
+     "series": "friends",
+     "first": 1,
+     "last": 24,
+     "batch": "b34"
+    }
+   ]
+  },
+  {
+   "id": "b35",
+   "parts": [
+    {
+     "series": "sxs2",
+     "first": 1,
+     "last": 16,
+     "batch": "b35"
+    }
+   ]
+  },
+  {
+   "id": "b36",
+   "parts": [
+    {
+     "series": "sxs2",
+     "first": 17,
+     "last": 32,
+     "batch": "b36"
+    }
+   ]
+  },
+  {
+   "id": "b37",
+   "parts": [
+    {
+     "series": "newyear",
+     "first": 1,
+     "last": 12,
+     "batch": "b37"
+    },
+    {
+     "series": "three",
+     "first": 1,
+     "last": 12,
+     "batch": "b37"
+    }
+   ]
+  },
+  {
+   "id": "b38",
+   "parts": [
+    {
+     "series": "party",
+     "first": 1,
+     "last": 12,
+     "batch": "b38"
+    },
+    {
+     "series": "gifts",
+     "first": 1,
+     "last": 12,
+     "batch": "b38"
+    }
+   ]
+  },
+  {
+   "id": "b39",
+   "parts": [
+    {
+     "series": "rank",
+     "first": 1,
+     "last": 24,
+     "batch": "b39"
+    }
+   ]
+  },
+  {
+   "id": "b40",
+   "parts": [
+    {
+     "series": "am3",
+     "first": 1,
+     "last": 12,
+     "batch": "b40"
+    },
+    {
+     "series": "starter",
+     "first": 1,
+     "last": 12,
+     "batch": "b40"
+    }
+   ]
+  },
+  {
+   "id": "b41",
+   "parts": [
+    {
+     "series": "deal",
+     "first": 1,
+     "last": 24,
+     "batch": "b41"
+    }
+   ]
+  },
+  {
+   "id": "b42",
+   "parts": [
+    {
+     "series": "oneline",
+     "first": 1,
+     "last": 24,
+     "batch": "b42"
+    }
+   ]
+  },
+  {
+   "id": "b43",
+   "parts": [
+    {
+     "series": "pov",
+     "first": 1,
+     "last": 24,
+     "batch": "b43"
+    }
+   ]
+  },
+  {
+   "id": "b44",
+   "parts": [
+    {
+     "series": "hotcold",
+     "first": 1,
+     "last": 24,
+     "batch": "b44"
+    }
+   ]
+  },
+  {
+   "id": "b45",
+   "parts": [
+    {
+     "series": "ratedate",
+     "first": 1,
+     "last": 24,
+     "batch": "b45"
+    }
+   ]
+  },
+  {
+   "id": "b46",
+   "parts": [
+    {
+     "series": "versus",
+     "first": 1,
+     "last": 24,
+     "batch": "b46"
+    }
+   ]
+  },
+  {
+   "id": "b47",
+   "parts": [
+    {
+     "series": "wait2",
+     "first": 1,
+     "last": 12,
+     "batch": "b47"
+    },
+    {
+     "series": "silent2",
+     "first": 1,
+     "last": 12,
+     "batch": "b47"
+    }
+   ]
+  },
+  {
+   "id": "b48",
+   "parts": [
+    {
+     "series": "pcries",
+     "first": 1,
+     "last": 12,
+     "batch": "b48"
+    },
+    {
+     "series": "holq",
+     "first": 1,
+     "last": 18,
+     "batch": "b48"
+    }
+   ]
+  }
+ ]
+}

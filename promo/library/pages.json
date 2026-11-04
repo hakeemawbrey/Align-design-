@@ -3,6 +3,7 @@
   "n": 1,
   "slug": "shows",
   "title": "Star Talk Shows",
+  "h1": "Star Talk <em>shows</em>",
   "sections": [
    {
     "key": "shows",
@@ -26,6 +27,7 @@
   "n": 2,
   "slug": "s1-3",
   "title": "Star Talk Seasons 1–3",
+  "h1": "Seasons <em>1–3</em>",
   "sections": [
    {
     "key": "specials",
@@ -49,6 +51,7 @@
   "n": 3,
   "slug": "s4-6",
   "title": "Star Talk Seasons 4–6",
+  "h1": "Seasons <em>4–6</em>",
   "sections": [
    {
     "key": "s4",
@@ -72,6 +75,7 @@
   "n": 4,
   "slug": "s7-9",
   "title": "Star Talk Seasons 7–9",
+  "h1": "Seasons <em>7–9</em>",
   "sections": [
    {
     "key": "s7",
@@ -95,6 +99,7 @@
   "n": 5,
   "slug": "s10-12",
   "title": "Star Talk Seasons 10–12",
+  "h1": "Seasons <em>10–12</em>",
   "sections": [
    {
     "key": "s10",
@@ -118,6 +123,7 @@
   "n": 6,
   "slug": "s13",
   "title": "Star Talk Season 13",
+  "h1": "Season <em>13</em>",
   "sections": [
    {
     "key": "s13",
@@ -131,6 +137,7 @@
   "n": 7,
   "slug": "remix",
   "title": "Star Talk Remix",
+  "h1": "Star Talk <em>remix</em>",
   "sections": [
    {
     "key": "remix",
@@ -144,6 +151,7 @@
   "n": 8,
   "slug": "trends",
   "title": "Star Talk Trends",
+  "h1": "Star Talk <em>trends</em>",
   "sections": [
    {
     "key": "ttellmewithou",
@@ -249,6 +257,35 @@
   "url": "https://claude.ai/artifact/YBmX7eEisoz96hDjvyucoT"
  },
  {
+  "n": 9,
+  "slug": "thennow",
+  "title": "Star Talk Then vs Now",
+  "h1": "Then <em>vs</em> now",
+  "sections": [
+   {
+    "key": "ysigns16",
+    "name": "Signs dating, 2016 vs 2026",
+    "sub": null
+   },
+   {
+    "key": "ydating16",
+    "name": "Dating moments, 2016 vs 2026",
+    "sub": null
+   },
+   {
+    "key": "yolder",
+    "name": "2006 and 2010 vs 2026",
+    "sub": null
+   },
+   {
+    "key": "y2020",
+    "name": "2020 and 2016 vs 2026",
+    "sub": null
+   }
+  ],
+  "url": "https://claude.ai/artifact/G1vpVY9Nkno8t86qkUwW23"
+ },
+ {
   "n": 10,
   "slug": "moonlight",
   "title": "Star Talk: Moonlight Lane",
@@ -261,5 +298,303 @@
    }
   ],
   "url": "https://claude.ai/artifact/21GPZ77mecozvQ1o8SJ13q"
+ },
+ {
+  "n": 11,
+  "slug": "n11",
+  "title": "Star Talk: Seasons 14–15",
+  "h1": "Seasons <em>14–15</em>",
+  "sections": [
+   {
+    "key": "c14",
+    "name": "Season 14: Cuffing Season",
+    "sub": "24 videos · 30-45 s · star talk"
+   },
+   {
+    "key": "h15",
+    "name": "Season 15: Home for the Holidays",
+    "sub": "24 videos · 30-45 s · star talk"
+   }
+  ],
+  "url": "https://claude.ai/artifact/HkNgisG972PaBKYgDTFY4F"
+ },
+ {
+  "n": 12,
+  "slug": "n12",
+  "title": "Star Talk: The Thread & Game Night",
+  "h1": "The Thread &amp; <em>Game Night</em>",
+  "sections": [
+   {
+    "key": "thread",
+    "name": "The Thread",
+    "sub": "32 videos · 20-30 s · star talk"
+   },
+   {
+    "key": "game",
+    "name": "Star Talk Game Night",
+    "sub": "24 videos · 30-40 s · star talk"
+   }
+  ],
+  "url": "https://claude.ai/artifact/QCMgYrfkRcs6gPHWnwaVYn"
+ },
+ {
+  "n": 13,
+  "slug": "n13",
+  "title": "Star Talk: Green Flags & Takeovers",
+  "h1": "Green Flags &amp; <em>Takeovers</em>",
+  "sections": [
+   {
+    "key": "green",
+    "name": "24 Days of Green Flags",
+    "sub": "24 videos · 15-20 s · star talk"
+   },
+   {
+    "key": "sagtk",
+    "name": "Sag Season Takeover",
+    "sub": "12 videos · 20-30 s · star talk"
+   },
+   {
+    "key": "captk",
+    "name": "Capricorn Season Takeover",
+    "sub": "8 videos · 20-30 s · star talk"
+   }
+  ],
+  "url": "https://claude.ai/artifact/RrPVFimwwjuH3rH1Q5acRP"
+ },
+ {
+  "n": 14,
+  "slug": "n14",
+  "title": "Star Talk: Trends Vol. 2",
+  "h1": "Trends <em>Vol. 2</em>",
+  "sections": [
+   {
+    "key": "trends2",
+    "name": "Trends, Volume 2",
+    "sub": "100 videos · 15-30 s · star talk"
+   }
+  ],
+  "url": "https://claude.ai/artifact/G14dGfnzpthq2fRyby9yws"
+ },
+ {
+  "n": 15,
+  "slug": "n15",
+  "title": "Star Talk: Snow Globes & Holidays",
+  "h1": "Snow Globes &amp; <em>Holidays</em>",
+  "sections": [
+   {
+    "key": "snow",
+    "name": "Remix: Snow Globe Cities",
+    "sub": "28 videos · 30 s · star talk"
+   },
+   {
+    "key": "hol",
+    "name": "Then vs Now: Holidays 2016 vs 2026",
+    "sub": "24 videos · 20 s · star talk"
+   }
+  ],
+  "url": "https://claude.ai/artifact/G1R2ECC2QJnsEAHRZCkm8U"
+ },
+ {
+  "n": 16,
+  "slug": "n16",
+  "title": "Star Talk: Moonlight Lane S2 & Season 16",
+  "h1": "Moonlight Lane S2 &amp; <em>Season 16</em>",
+  "sections": [
+   {
+    "key": "ml2",
+    "name": "Moonlight Lane, Season 2: Winter on the Lane",
+    "sub": "10 videos · 2 min · star advice"
+   },
+   {
+    "key": "f16",
+    "name": "Season 16: Meet the Family",
+    "sub": "24 videos · 30-45 s · star advice"
+   }
+  ],
+  "url": "https://claude.ai/artifact/WXHqty7Cr4p832dMLPRzrM"
+ },
+ {
+  "n": 17,
+  "slug": "n17",
+  "title": "Star Talk: Winter Guides & Ask",
+  "h1": "Winter Guides &amp; <em>Ask</em>",
+  "sections": [
+   {
+    "key": "gw",
+    "name": "Your Star Guide: Winter",
+    "sub": "48 videos · 20-30 s · star advice"
+   },
+   {
+    "key": "ask2",
+    "name": "Ask the Stars, Volume 2",
+    "sub": "36 videos · 20 s · star advice"
+   }
+  ],
+  "url": "https://claude.ai/artifact/SVHc6wetJYt79jVLQcuLJh"
+ },
+ {
+  "n": 18,
+  "slug": "n18",
+  "title": "Star Talk: Explains & Survival",
+  "h1": "Explains &amp; <em>Survival</em>",
+  "sections": [
+   {
+    "key": "x2",
+    "name": "Star Talk Explains, Volume 2",
+    "sub": "30 videos · 45-60 s · star advice"
+   },
+   {
+    "key": "surv",
+    "name": "Holiday Survival Guide",
+    "sub": "24 videos · 30 s · star advice"
+   },
+   {
+    "key": "makeup",
+    "name": "The Make-Up Talk",
+    "sub": "24 videos · 30 s · star advice"
+   }
+  ],
+  "url": "https://claude.ai/artifact/L3UcNxJzNujcatYVdFspHG"
+ },
+ {
+  "n": 19,
+  "slug": "n19",
+  "title": "Star Talk: Singles, Friends & Pairs",
+  "h1": "Singles, Friends &amp; <em>Pairs</em>",
+  "sections": [
+   {
+    "key": "single",
+    "name": "Single and Thriving",
+    "sub": "24 videos · 20-30 s · star advice"
+   },
+   {
+    "key": "friends",
+    "name": "Friends First",
+    "sub": "24 videos · 20-30 s · star advice"
+   },
+   {
+    "key": "sxs2",
+    "name": "Sign × Sign, Volume 2",
+    "sub": "32 videos · 30 s · star advice"
+   },
+   {
+    "key": "newyear",
+    "name": "New Year, Same Heart",
+    "sub": "12 videos · 20 s · star advice"
+   },
+   {
+    "key": "three",
+    "name": "The First Three Dates",
+    "sub": "12 videos · 30 s · star advice"
+   }
+  ],
+  "url": "https://claude.ai/artifact/G2piWDyJ4wUZ1cwkeimmGg"
+ },
+ {
+  "n": 20,
+  "slug": "n20",
+  "title": "Star Talk: Trial Reels 1",
+  "h1": "Trial reels <em>1</em>",
+  "sections": [
+   {
+    "key": "party",
+    "name": "Your Sign at the Holiday Party",
+    "sub": "12 videos · 10-20 s · star advice trial reels"
+   },
+   {
+    "key": "gifts",
+    "name": "The Signs as Winter Gifts",
+    "sub": "12 videos · 10-20 s · star advice trial reels"
+   },
+   {
+    "key": "rank",
+    "name": "Ranking the Signs",
+    "sub": "24 videos · 15-20 s · star advice trial reels"
+   },
+   {
+    "key": "am3",
+    "name": "3 AM in Winter",
+    "sub": "12 videos · 15-20 s · star advice trial reels"
+   },
+   {
+    "key": "deal",
+    "name": "Dealbreaker or Not?",
+    "sub": "24 videos · 10-20 s · star advice trial reels"
+   }
+  ],
+  "url": "https://claude.ai/artifact/TDNecE6a7z43wJ2BX32CRL"
+ },
+ {
+  "n": 21,
+  "slug": "n21",
+  "title": "Star Talk: Trial Reels 2",
+  "h1": "Trial reels <em>2</em>",
+  "sections": [
+   {
+    "key": "oneline",
+    "name": "One-Line Advice for Your Sign",
+    "sub": "24 videos · 10-15 s · star advice trial reels"
+   },
+   {
+    "key": "pov",
+    "name": "POV: You're Dating a ___",
+    "sub": "24 videos · 15-20 s · star advice trial reels"
+   },
+   {
+    "key": "hotcold",
+    "name": "Hot Take, Cold Take",
+    "sub": "24 videos · 10-20 s · star advice trial reels"
+   },
+   {
+    "key": "ratedate",
+    "name": "Rate My Date Idea",
+    "sub": "24 videos · 15-20 s · star advice trial reels"
+   }
+  ],
+  "url": "https://claude.ai/artifact/QL7W8Wi5x4EHwoRrP6ucdi"
+ },
+ {
+  "n": 22,
+  "slug": "n22",
+  "title": "Star Talk: Trial Reels 3",
+  "h1": "Trial reels <em>3</em>",
+  "sections": [
+   {
+    "key": "starter",
+    "name": "Winter Starter Pack",
+    "sub": "12 videos · 10-15 s · star advice trial reels"
+   },
+   {
+    "key": "versus",
+    "name": "Sign vs Sign",
+    "sub": "24 videos · 15-20 s · star advice trial reels"
+   },
+   {
+    "key": "wait2",
+    "name": "Wait for It, Volume 2",
+    "sub": "12 videos · 15-20 s · star advice trial reels"
+   },
+   {
+    "key": "silent2",
+    "name": "Silent Review, Volume 2",
+    "sub": "12 videos · 15-20 s · star advice trial reels"
+   },
+   {
+    "key": "pcries",
+    "name": "Pisces Cries About…",
+    "sub": "12 videos · 10-15 s · star advice trial reels"
+   },
+   {
+    "key": "mltease",
+    "name": "Moonlight Lane S2 teasers",
+    "sub": "30 videos · 15-25 s · star advice trial reels"
+   },
+   {
+    "key": "holq",
+    "name": "Holidays Then vs Now (quick cuts)",
+    "sub": "18 videos · 10-15 s · star advice trial reels"
+   }
+  ],
+  "url": "https://claude.ai/artifact/L35PdoeNahnqbfD1BZU3mh"
  }
 ]
