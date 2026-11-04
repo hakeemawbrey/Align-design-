@@ -252,7 +252,7 @@ export function drawProp(x, t, kind, hx, hy, k = 1, { rot = 0 } = {}) {
   } else if (kind === 'watch') {
     R(x, INK, -30, -10, 60, 20); box(x, -20, -20, 40, 40, BONE, { b: 5 }); R(x, INK, -2, -14, 4, 16); R(x, INK, -2, -2, 12, 4)
   } else if (kind === 'sticker') {
-    drawPixelStar(x, 0, 0, 60, 2, GOLD)
+    drawBits(x, ['...G...', '..GGG..', 'GGGWGGG', '.GGGGG.', '.GG.GG.', 'GG...GG'], { G: GOLD, W: '#fff6d0' }, 0, 0, 9)
   }
   x.restore()
 }
