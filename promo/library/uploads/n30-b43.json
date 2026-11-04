@@ -72,39 +72,84 @@
   "caption": "That Scorpio stare across the table? Deep questions, zero small talk, and secretly just as nervous as you."
  },
  "npve09": {
-  "video": "/_blob/c612c4ebb7003a8074134964d450bd0a",
-  "poster": "/_blob/1e67363ba0f117eb10736a58485bd3a0",
+  "video": "/_blob/f1e549935fd829f43cfe0da0976c9952",
+  "poster": "/_blob/d11c288fbb8bf72eaccac8fec8bd0df3",
   "title": "POV: you're dating a Sagittarius.",
-  "len": 20,
+  "len": 18,
   "series": "pov",
   "episode": 9,
   "caption": "Ask a Sagittarius and you get the honest answer. About your hat, their cooking, and how much they like you."
  },
  "npve10": {
-  "video": "/_blob/3f3da17e8cedc6b7d84ef580c9370f6c",
-  "poster": "/_blob/ed9f6e5d9c3aada8e15c3aefed2620bd",
+  "video": "/_blob/8d39621610bd189b2a26479c4a76e805",
+  "poster": "/_blob/230de2ba1ec63a1fd58cf5c65a90cab7",
   "title": "POV: you're dating a Capricorn.",
-  "len": 20,
+  "len": 18,
   "series": "pov",
   "episode": 10,
   "caption": "Your Capricorn arrives early with your coffee and a five-year plan for the houseplant. Year five? Still you."
  },
  "npve11": {
-  "video": "/_blob/acb0fe595edb2556921679f4f49dc91e",
-  "poster": "/_blob/2e0d416847c13e7e4f6c6796ea4a9552",
+  "video": "/_blob/a7ebd185d571ed75fbc3ff406ab6a637",
+  "poster": "/_blob/3a5fcb26cb8abb95d11b146c1bc276a1",
   "title": "POV: you're dating an Aquarius.",
-  "len": 20,
+  "len": 18,
   "series": "pov",
   "episode": 11,
   "caption": "An Aquarius won't buy you a gift. They'll build one that pours cocoa very slowly. Weird and sweet is the point."
  },
  "npve12": {
-  "video": "/_blob/a619cb65f2d5fe8b3fd072bf7f62dbb8",
-  "poster": "/_blob/ce71c8fa9f0aa7521c0aab290c61b2e5",
+  "video": "/_blob/42a2821af9cc66d820b06da17235821d",
+  "poster": "/_blob/67e97f60b7cd0c9db7f02bb8890dbf1e",
   "title": "POV: you're dating a Pisces.",
-  "len": 20,
+  "len": 18,
   "series": "pov",
   "episode": 12,
   "caption": "Dating a Pisces: tears at the trailer, tears over one shared fry, and the tissues ready when you cry too."
+ },
+ "npve13": {
+  "video": "/_blob/eddd0a6229c263f215e23f66180a4e85",
+  "poster": "/_blob/5ef90ea8c2c4ede1fbf108c9041a2c19",
+  "title": "POV: you're dating an Aries. Snow day.",
+  "len": 15,
+  "series": "pov",
+  "episode": 13,
+  "caption": "An Aries builds a snowman in four seconds. Then builds a little one for you and waits while you add the nose."
+ },
+ "npve14": {
+  "video": "/_blob/7299b8686eb5469ea95c0e05ed134e5d",
+  "poster": "/_blob/39c1dc7b36593ed7e4b06c01a99872a4",
+  "title": "POV: you're dating a Taurus. Holiday market.",
+  "len": 15,
+  "series": "pov",
+  "episode": 14,
+  "caption": "Take a Taurus to a holiday market and they'll taste every sample. Mention the one you liked and they buy the box."
+ },
+ "npve15": {
+  "video": "/_blob/3489e56874c201879b42102e230e83a6",
+  "poster": "/_blob/4764649b44b00a524be033eb0c76c1ab",
+  "title": "POV: you're dating a Gemini. The holiday party.",
+  "len": 15,
+  "series": "pov",
+  "episode": 15,
+  "caption": "Your Gemini knows everyone at the party. Their favourite conversation of the night is still the quiet one with you."
+ },
+ "npve16": {
+  "video": "/_blob/b962ac754bf781fbc0ee5088569d6155",
+  "poster": "/_blob/30b6797658dd603337231956bd3b6688",
+  "title": "POV: you're dating a Cancer. The ornament.",
+  "len": 15,
+  "series": "pov",
+  "episode": 16,
+  "caption": "A Cancer hands you a slightly lopsided ornament they made. Then shows you its twin, already hanging on their family's tree."
+ },
+ "npve17": {
+  "video": "/_blob/bf00c1c7c714637a69aaf963225ab8b0",
+  "poster": "/_blob/59ce90a045278fc2d5790563f170bddb",
+  "title": "POV: you're dating a Leo. The lights.",
+  "len": 15,
+  "series": "pov",
+  "episode": 17,
+  "caption": "Date a Leo in December and the house lights get very bright. Then they rearrange to spell one word: YOU."
  }
 }
