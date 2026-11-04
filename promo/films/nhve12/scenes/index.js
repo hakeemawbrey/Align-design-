@@ -1,4 +1,4 @@
-// nhve12: THEN vs NOW: HOLIDAYS, "Pisces' holidays in 2016 / 2026" (20 s, b18 #12, music: dreamy · F)
+// nhve12: THEN vs NOW: HOLIDAYS, "Pisces' holidays in 2016 / 2026" (18 s, b18 #12, music: dreamy · F)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·20·2016"): ♓ Pisces writes a holiday card at t = 0, sniffling, the PAGES
 //             counter racing to 10. It seals the card… and files it in a drawer full of unsent cards: "…next year."

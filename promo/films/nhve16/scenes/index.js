@@ -1,4 +1,4 @@
-// nhve16: THEN vs NOW: HOLIDAYS, "Before the break in 2016 / 2026" (20 s, b18 #16, music: jazzy · Bb)
+// nhve16: THEN vs NOW: HOLIDAYS, "Before the break in 2016 / 2026" (18 s, b18 #16, music: jazzy · Bb)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·19·2016"): a train platform. ♍ Virgo waves from the train window, ♐ Sag waves
 //             from the platform at t = 0; the doors close, the train goes, nothing said. The calendar flips DAY 1 →

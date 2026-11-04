@@ -1,4 +1,4 @@
-// nhve24: THEN vs NOW: HOLIDAYS, "The holiday wish in 2016 / 2026" (20 s, b18 #24, the finale, music: pop · Bb)
+// nhve24: THEN vs NOW: HOLIDAYS, "The holiday wish in 2016 / 2026" (18 s, b18 #24, the finale, music: pop · Bb)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·24·2016"): ♓ Pisces at the window at t = 0, tears already going, wishing on
 //             the brightest star: "I wish… for someone to spend this with." Behind it, a table set for one ("TABLE

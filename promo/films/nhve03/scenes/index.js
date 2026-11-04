@@ -1,4 +1,4 @@
-// nhve03: THEN vs NOW: HOLIDAYS, "Gemini's holidays in 2016 / 2026" (20 s, b18 #3, music: pop · D)
+// nhve03: THEN vs NOW: HOLIDAYS, "Gemini's holidays in 2016 / 2026" (18 s, b18 #3, music: pop · D)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·17·2016"): ♊ Gemini bursts through a party door at t = 0, coat half on.
 //             Three parties in one night, a door-wipe between each: "hi!! bye!!" at each, the PARTIES counter

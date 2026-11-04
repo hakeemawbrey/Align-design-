@@ -1,4 +1,4 @@
-// nhve20: THEN vs NOW: HOLIDAYS, "The countdown in 2016 / 2026" (20 s, b18 #20, music: chiptune · D)
+// nhve20: THEN vs NOW: HOLIDAYS, "The countdown in 2016 / 2026" (18 s, b18 #20, music: chiptune · D)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·31·2016"): ♌ Leo alone at the window at t = 0, the clock at 11:59:50. It
 //             counts down, refreshing a chat with no reply. Next door everyone cheers "HAPPY NEW YEAR!!" (confetti);

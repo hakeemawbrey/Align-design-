@@ -1,4 +1,4 @@
-// nhve05: THEN vs NOW: HOLIDAYS, "Leo's holidays in 2016 / 2026" (20 s, b18 #5, music: chiptune · G)
+// nhve05: THEN vs NOW: HOLIDAYS, "Leo's holidays in 2016 / 2026" (18 s, b18 #5, music: chiptune · G)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·10·2016"): ♌ Leo on a ladder flings up the last string of lights at t = 0.
 //             The house blazes "LEO" in bulbs; the whole street squints from its windows ("it's so… bright");

@@ -1,4 +1,4 @@
-// nhve21: THEN vs NOW: HOLIDAYS, "The holiday sweater in 2016 / 2026" (20 s, b18 #21, music: jazzy · Eb)
+// nhve21: THEN vs NOW: HOLIDAYS, "The holiday sweater in 2016 / 2026" (18 s, b18 #21, music: jazzy · Eb)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·17·2016"): ♈ Aries tugs a matching sweater down over ♑ Capricorn at t = 0,
 //             Capricorn's arms stuck. Two identical sweaters, a timer photo; Capricorn: "itchy." Flash: Aries beams,

@@ -1,4 +1,4 @@
-// nhve02: THEN vs NOW: HOLIDAYS, "Taurus' holidays in 2016 / 2026" (20 s, b18 #2, music: dreamy · Eb)
+// nhve02: THEN vs NOW: HOLIDAYS, "Taurus' holidays in 2016 / 2026" (18 s, b18 #2, music: dreamy · Eb)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·19·2016"): ♉ Taurus is hugging the holiday cookie plate at t = 0, crumbs
 //             flying. ♎ Libra reaches in: "can I have o—" Taurus: "MINE." A blanket goes over Taurus and the plate;

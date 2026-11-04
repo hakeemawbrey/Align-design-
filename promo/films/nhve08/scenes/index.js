@@ -1,4 +1,4 @@
-// nhve08: THEN vs NOW: HOLIDAYS, "Scorpio's holidays in 2016 / 2026" (20 s, b18 #8, music: pop · E)
+// nhve08: THEN vs NOW: HOLIDAYS, "Scorpio's holidays in 2016 / 2026" (18 s, b18 #8, music: pop · E)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·16·2016"): ♏ Scorpio squints at a red-string board at t = 0. The secret gift
 //             swap starts; Scorpio points, deadpan, and names every secret giver ("you. you. and you."); the room:

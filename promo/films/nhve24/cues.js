@@ -1,3 +1,3 @@
 // nhve24 score: pop, Bb · drop 6.71: the card cut into 2026 · lift 12.78: the payoff · hit 13.93: "Wished alone. *Now* together." lands.
 import { DURATION, CUES } from './scenes/index.js'
-export default { id: 'nhve24', duration: DURATION, music: { style: 'pop', key: 'Bb', seed: 1824, sections: { drop: 6.71, lift: [12.78], outroAt: DURATION - 4.4 }, hits: [13.93] }, cues: CUES }
+export default { id: 'nhve24', duration: DURATION, music: { style: 'pop', key: 'Bb', seed: 1824, sections: { drop: 6.71, lift: [12.78], outroAt: DURATION - 2.4 }, hits: [13.93] }, cues: CUES }

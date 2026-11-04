@@ -1,4 +1,4 @@
-// nhve18: THEN vs NOW: HOLIDAYS, "The holiday party dance in 2016 / 2026" (20 s, b18 #18, music: pop · A)
+// nhve18: THEN vs NOW: HOLIDAYS, "The holiday party dance in 2016 / 2026" (18 s, b18 #18, music: pop · A)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·16·2016"): ♎ Libra pressed flat against the party wall at t = 0, a mug of
 //             cocoa held up like a shield. It slides away from the dance floor, dances alone by the coat pile, and

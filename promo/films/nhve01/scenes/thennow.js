@@ -4,9 +4,9 @@
 //   · the bug reads "THEN vs NOW: HOLIDAYS";
 //   · frame 0 is the thumbnail: no fade from black, the caption, the bug and the THEN panel are already in at t = 0;
 //   · light pixel snow drifts over the night sky behind the panels.
-// The format (20 s, story 0–15.6, then the shared end card):
+// The format (18 s, story 0–15.6, then the 2.4 s short end card):
 //   0–6.71    THEN: the "old phone video" grade (soft, saturated, warm, vignetted, grainy, jittery, date stamp).
-//   6.71      the one card cut (cardfx, the only candidate); the year sticker flips to 2026 at 6.98.
+//   6.71      the switch to NOW (the panel's own pop, no card cut); the year sticker flips to 2026 at 6.98.
 //   6.71–12.8 NOW: clean and crisp. 12.8–15.6 payoff: THEN polaroid, one THE STARS line, the last line.
 //   makeThenNow(cfg) → { DURATION, SCENES, CUES, T }; cfg = { id, thing, then, stamp, accent, A: {draw}, B: {draw},
 //   lines: [{ t, speaker, text }], last, cues?(T) }. Pure f(t); nothing touches `document` at module top level.
@@ -14,8 +14,8 @@ import { clamp, lerp, prog, ease, el, rng } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -33,8 +33,8 @@ export const R = (x, c, x0, y0, w, h) => { x.fillStyle = c; x.fillRect(Math.roun
 export const PIS = signStar('pisces')
 export { drawStarChar, signStar, STAR, talkHops, easeOutBack, drawPixelStar, clamp, lerp, prog, ease }
 
-export const DURATION = 20
-export const STORY_END = DURATION - ENDCARD_LEN          // 15.6
+export const DURATION = 18                               // 15.6 story + the 2.4 s short end card (CHANGE 4 Nov)
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 15.6
 export const SW = 900, SH = 1060                           // the scene canvas (the video panel)
 const CPS = 30
 
@@ -418,9 +418,8 @@ export function makeThenNow(cfg) {
     }
   }
 
-  // one candidate cut: the switch from THEN to NOW
-  const CUTS = [T.cut]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no card-back cut (CHANGE 4 Nov): the switch from THEN to NOW is the panel's own pop + a whoosh
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66]
   const wordPops = (t0, n, gap, base = 0, gain = 0.026) => Array.from({ length: n }, (_, i) => ['pop', r3(t0 + i * gap), NOTE[(base + i) % NOTE.length], gain, (i % 2 ? 0.15 : -0.15)])
@@ -436,8 +435,8 @@ export function makeThenNow(cfg) {
     ['bell', r3(T.lastLand + 0.05), 2093, 0.03, 1.2, 0], ['glitter', T.lastLand, r3(T.lastLand + 0.5)],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues ? cfg.cues(T) : []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ['whoosh', r3(T.cut - 0.12), 0.35, 0.045], ['tick', T.cut, 0.06],
+    ...endcardCues(STORY_END, { short: true }),
   ]
   return { DURATION, SCENES, CUES, T }
 }

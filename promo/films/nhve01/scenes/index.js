@@ -1,4 +1,4 @@
-// nhve01: THEN vs NOW: HOLIDAYS, "Aries' holidays in 2016 / 2026" (20 s, b18 #1, music: jazzy · C)
+// nhve01: THEN vs NOW: HOLIDAYS, "Aries' holidays in 2016 / 2026" (18 s, b18 #1, music: jazzy · C)
 // The look lives in ./thennow.js and the holiday props in ./holkit.js (both shared by nhve01–nhve24).
 //   0–6.71    2016, 5:02 AM, the living room (old-phone grade, "12·25·2016"): ♈ Aries is mid-rip at t = 0, a
 //             wrapping-paper storm, the OPENED counter racing up. ♑ Capricorn shuffles in, sleepy, holding a mug:

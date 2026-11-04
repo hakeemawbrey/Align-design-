@@ -1,4 +1,4 @@
-// nhve09: THEN vs NOW: HOLIDAYS, "Sagittarius' holidays in 2016 / 2026" (20 s, b18 #9, music: lofi · C)
+// nhve09: THEN vs NOW: HOLIDAYS, "Sagittarius' holidays in 2016 / 2026" (18 s, b18 #9, music: lofi · C)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·24·2016"): ♐ Sag is mid-leap off a snowy hilltop at t = 0, backpack flapping.
 //             A selfie (flash). Cut to the family table: an empty chair with a "SAG" place card, the family looking

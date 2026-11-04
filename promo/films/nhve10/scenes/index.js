@@ -1,4 +1,4 @@
-// nhve10: THEN vs NOW: HOLIDAYS, "Capricorn's holidays in 2016 / 2026" (20 s, b18 #10, music: chiptune · A)
+// nhve10: THEN vs NOW: HOLIDAYS, "Capricorn's holidays in 2016 / 2026" (18 s, b18 #10, music: chiptune · A)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·18·2016"): ♑ Capricorn types at a laptop in the corner of the holiday party,
 //             party hat on sideways, at t = 0. "Cap! dance!" — "after this email." The clock jumps; "after THIS

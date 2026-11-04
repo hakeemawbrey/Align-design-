@@ -1,4 +1,4 @@
-// nhve13: THEN vs NOW: HOLIDAYS, "The party invite in 2016 / 2026" (20 s, b18 #13, music: pop · G)
+// nhve13: THEN vs NOW: HOLIDAYS, "The party invite in 2016 / 2026" (18 s, b18 #13, music: pop · G)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·09·2016"), split screen: ♉ Taurus (left) and ♎ Libra (right) both stare
 //             at "u going to the party?" at t = 0. "maybe" … "maybe". Both stay home on two couches, the party's

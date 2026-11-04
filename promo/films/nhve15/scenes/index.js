@@ -1,4 +1,4 @@
-// nhve15: THEN vs NOW: HOLIDAYS, "The holiday photo in 2016 / 2026" (20 s, b18 #15, music: chiptune · C)
+// nhve15: THEN vs NOW: HOLIDAYS, "The holiday photo in 2016 / 2026" (18 s, b18 #15, music: chiptune · C)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·26·2016"): the group photo flashes at t = 0. ♎ Libra stands at one end, the
 //             crush ♑ Capricorn three stars away at the other, half out of the viewfinder. Snap 1: cropped out.

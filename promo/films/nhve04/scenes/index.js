@@ -1,4 +1,4 @@
-// nhve04: THEN vs NOW: HOLIDAYS, "Cancer's holidays in 2016 / 2026" (20 s, b18 #4, music: lofi · Bb)
+// nhve04: THEN vs NOW: HOLIDAYS, "Cancer's holidays in 2016 / 2026" (18 s, b18 #4, music: lofi · Bb)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·24·2016"): ♋ Cancer juggles three steaming pots at t = 0 under a
 //             "GUESTS: 20" sign. Plates fly out to a packed table ("so good!!"); Cancer: "how are… you all?" —

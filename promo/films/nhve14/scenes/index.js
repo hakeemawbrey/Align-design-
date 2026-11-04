@@ -1,4 +1,4 @@
-// nhve14: THEN vs NOW: HOLIDAYS, "The holiday gift in 2016 / 2026" (20 s, b18 #14, music: lofi · Eb)
+// nhve14: THEN vs NOW: HOLIDAYS, "The holiday gift in 2016 / 2026" (18 s, b18 #14, music: lofi · Eb)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·23·2016"): ♊ Gemini drags a teddy bear three times its size through the
 //             snow at t = 0 ("1 MONTH IN"). ♏ Scorpio opens the door; the bear jams in the doorway: "it… doesn't fit."

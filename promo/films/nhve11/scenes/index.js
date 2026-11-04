@@ -1,4 +1,4 @@
-// nhve11: THEN vs NOW: HOLIDAYS, "Aquarius' holidays in 2016 / 2026" (20 s, b18 #11, music: jazzy · D)
+// nhve11: THEN vs NOW: HOLIDAYS, "Aquarius' holidays in 2016 / 2026" (18 s, b18 #11, music: jazzy · D)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·22·2016"): ♒ Aquarius hangs one ornament on a cactus at t = 0, very proud,
 //             under an "ANTI-HOLIDAY PARTY" banner. Guests: "…is that a cactus?" Aquarius: "trees are mainstream."

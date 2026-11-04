@@ -1,4 +1,4 @@
-// nhve19: THEN vs NOW: HOLIDAYS, "The holiday text in 2016 / 2026" (20 s, b18 #19, music: lofi · F)
+// nhve19: THEN vs NOW: HOLIDAYS, "The holiday text in 2016 / 2026" (18 s, b18 #19, music: lofi · F)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·25·2016"): a thumb hits SEND TO ALL at t = 0; 200 names whoosh out of
 //             ♌ Leo's phone, "happy holidays!!" to everyone. Across town ♍ Virgo's phone buzzes: the same message,

@@ -1,4 +1,4 @@
-// nhve22: THEN vs NOW: HOLIDAYS, "Holiday plans in 2016 / 2026" (title: Whose family?) (20 s, b18 #22, music: dreamy · G)
+// nhve22: THEN vs NOW: HOLIDAYS, "Holiday plans in 2016 / 2026" (title: Whose family?) (18 s, b18 #22, music: dreamy · G)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·25·2016"): ♉ Taurus and ♏ Scorpio are tugged in two directions by two family
 //             tables at t = 0 (a scarf in each family's grip). They sprint to dinner one (LATE), then dinner two (LATE

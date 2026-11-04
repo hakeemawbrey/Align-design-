@@ -1,4 +1,4 @@
-// nhve17: THEN vs NOW: HOLIDAYS, "Meeting the family in 2016 / 2026" (20 s, b18 #17, music: dreamy · D)
+// nhve17: THEN vs NOW: HOLIDAYS, "Meeting the family in 2016 / 2026" (18 s, b18 #17, music: dreamy · D)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·24·2016"): ♍ Virgo on the doorstep drops a fan of index cards at t = 0. The
 //             door opens on the family; Virgo, scrambling: "I… like your… door." It reads a card: "…compliment the

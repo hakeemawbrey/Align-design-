@@ -1,4 +1,4 @@
-// nhve07: THEN vs NOW: HOLIDAYS, "Libra's holidays in 2016 / 2026" (20 s, b18 #7, music: dreamy · Ab)
+// nhve07: THEN vs NOW: HOLIDAYS, "Libra's holidays in 2016 / 2026" (18 s, b18 #7, music: dreamy · Ab)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·21·2016"): ♎ Libra at a shop shelf, six gifts in its arms, wobbling at t = 0.
 //             "this one? or THIS one?" It buys all six. At ♒ Aquarius' door: "do you… like any?" Aquarius, under the

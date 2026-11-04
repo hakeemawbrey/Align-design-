@@ -1,4 +1,4 @@
-// nhve23: THEN vs NOW: HOLIDAYS, "The snow day in 2016 / 2026" (20 s, b18 #23, music: lofi · Ab)
+// nhve23: THEN vs NOW: HOLIDAYS, "The snow day in 2016 / 2026" (18 s, b18 #23, music: lofi · Ab)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·12·2016"): ♒ Aquarius' face pressed to a frosty window at t = 0, snow
 //             pouring. A text from ♊ Gemini: "snow day!! come out?" Aquarius: "it's too cold" … "cute snow".

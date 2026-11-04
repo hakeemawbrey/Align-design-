@@ -1,4 +1,4 @@
-// nhve06: THEN vs NOW: HOLIDAYS, "Virgo's holidays in 2016 / 2026" (20 s, b18 #6, music: jazzy · F)
+// nhve06: THEN vs NOW: HOLIDAYS, "Virgo's holidays in 2016 / 2026" (18 s, b18 #6, music: jazzy · F)
 // Look and props: ../../nhve01/scenes/thennow.js + holkit.js.
 //   0–6.71    2016 (old-phone grade, "12·23·2016"): ♍ Virgo scrubs a plate at the sink at t = 0, bubbles everywhere,
 //             while the holiday party happens behind it. ♈ Aries: "come dance!" Virgo: "one sec!" The stack grows;
