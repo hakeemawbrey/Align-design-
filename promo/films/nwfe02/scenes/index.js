@@ -118,8 +118,9 @@ const EP = makeEpisode({
     snowBank(x, t, T, 935)
     snowfall(x, t, { n: 30, seed: 5, alpha: 0.55 * clamp(popOut(t, T.out)), y1: 1300, speed: 0.8 })
   },
-  mid(x, t, T, ctx) { pile(x, t, T); patting(x, t, T, ctx) },
-  front(x, t, T) {
+  mid(x, t, T) { pile(x, t, T) },
+  front(x, t, T, ctx) {
+    patting(x, t, T, ctx)
     snowfall(x, t, { n: 22, seed: 11, alpha: 0.8 * clamp(popOut(t, T.out)), speed: 1.2 })
     const lk = pop01(t, T.reveal + 0.5, 0.3, 2.4) * outK(t, T.out)
     if (lk > 0.01) plate(x, 'SNOW LIBRA', SX, GROUND + 40, { size: 26, bg: GOLD, alpha: clamp(lk), scale: 0.8 + 0.2 * clamp(lk) })

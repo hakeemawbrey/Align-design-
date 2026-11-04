@@ -121,8 +121,9 @@ const EP = makeEpisode({
     return null
   },
   back(x, t, T) { snowfall(x, t, { n: 26, seed: 7, alpha: 0.5 * clamp(popOut(t, T.out)), y1: 940, speed: 0.6 }) },
-  mid(x, t, T, ctx) { table(x, t, T); present(x, t, T); pulling(x, t, T, ctx) },
-  front(x, t, T) {
+  mid(x, t, T) { table(x, t, T); present(x, t, T) },
+  front(x, t, T, ctx) {
+    pulling(x, t, T, ctx)
     glove(x, t, T)
     sparkles(x, t, BX, TABLE - 120, T.reveal + 0.05, 12, 160, 3, [GOLD, '#5aa8e0', BONE])
   },
