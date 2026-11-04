@@ -1,5 +1,5 @@
-// ngne15: STAR TALK GAME NIGHT, Ep 15, "Taurus vs Scorpio: Staring, Round Two" (35 s vertical, opposite signs, a rematch, music: lofi · Dm).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne15: STAR TALK GAME NIGHT, Ep 15, "Taurus vs Scorpio: Staring, Round Two" (33 s vertical, opposite signs, a rematch, music: lofi · Dm).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Taurus vs Scorpio. | The staring *rematch.*' Both locked in a squint across the stage (ep 3 went to Scorpio).
 //   R1 'I'm so nervous about tomorrow. ___': both kind → both
 //   R2 'They ask to take things slower': both GREEN → both
