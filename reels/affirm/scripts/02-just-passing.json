@@ -61,11 +61,14 @@
       "header": "RELEASE · DON'T HAUNT",
       "pause": 0.5,
       "opts": {
-        "pose": "pass"
+        "pose": "pass",
+        "forwardAt": 5
       },
       "lines": [
-        "You don't have to stop.",
-        "You don't have to *look back.*",
+        "On the *Align* app,",
+        "when you release someone,",
+        "they leave your deck.",
+        "Let them leave your *head* too.",
         "Say it with me.",
         "I am *moving forward,*",
         "even when it looks like I'm not.",

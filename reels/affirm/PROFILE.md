@@ -7,6 +7,20 @@ runs the same funnel as the creator page that inspired the format
 delivers what the reel promised plus a link to the app. Here the app is
 Align, and what gets delivered is a reading from your chart.
 
+## Where Align shows up in the reels
+
+Lightly, so the page reads as a page and not an ad:
+
+- the Align wordmark, small and quiet, at the top of every frame
+- one spoken line per reel that ties its idea to how the app works:
+  - **01:** "It's why on the Align app, you see someone's sky before you see their face."
+  - **02:** "On the Align app, when you release someone, they leave your deck. Let them leave your head too."
+  - **03:** "That's why on the Align app, nothing happens until you both align."
+  - **04:** "It's why the Align app reads your Venus before it shows you anyone."
+- the veiled Align card at the end, and "Align" lit gold in the captions
+- the caption: "your full chart is free on align, link in bio"
+- every DM reply ends with the Align link
+
 ## Handle and name
 
 | | Pick | Backups |

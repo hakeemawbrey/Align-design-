@@ -567,7 +567,7 @@ ARTS.figures = (s, o, n) => {
       const x = 860 + i * 40
       s.stroke([[x, gy - 250], [x + 22, gy - 225], [x, gy - 200]], { color: COL.gold, second: null, w: 3, step: 0.12 })
     }
-    s.at(S(3))
+    s.at(S(o.forwardAt ?? 3))
     s.stroke(bez([140, gy + 40], [400, gy + 90], [700, gy + 90], [960, gy + 40]), { color: COL.gold, second: null, w: 2, dash: [2, 9] })
     s.text('FORWARD', 960, gy + 70, { font: '700 20px "Space Mono"', color: COL.gold, spacing: 5, align: 'right' })
     s.anchors.you = { p: A.top, t: [1010, 420], align: 'right' }
@@ -1128,7 +1128,7 @@ function drawCaptions(g, t) {
         g.shadowColor = active ? 'rgba(255,236,200,0.95)' : 'rgba(242,199,92,0.45)'
         g.shadowBlur = active ? 30 : 16
       }
-      const dim = [125, 111, 148], lit = /^[A-Z]{3,}[.,]?$/.test(w.w) ? [242, 199, 92] : [239, 230, 214]
+      const dim = [125, 111, 148], lit = /^([A-Z]{3,}|Align)[.,]?$/.test(w.w) ? [242, 199, 92] : [239, 230, 214]
       const c = dim.map((v, j) => Math.round(lerp(v, lit[j], spoken)))
       g.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${lerp(0.62, 1, spoken)})`
       g.fillText(w.w, w.x, w.y + lift)
@@ -1276,6 +1276,20 @@ function drawHeader(g, sc, t, y = 250) {
   g.restore()
 }
 
+// Align's wordmark as the app sets it on the splash: serif italic, bone, a soft glow.
+function drawWordmark(g, y, a = 0.6) {
+  g.save()
+  g.globalAlpha = a
+  g.font = 'italic 500 46px "EB Garamond"'
+  g.textAlign = 'center'
+  g.textBaseline = 'middle'
+  g.shadowColor = 'rgba(239,230,214,0.35)'
+  g.shadowBlur = 18
+  g.fillStyle = COL.ink
+  g.fillText('Align', CX, y)
+  g.restore()
+}
+
 function paint(t, { cover = false } = {}) {
   ctx.drawImage(bg, 0, 0)
   // twinkles
@@ -1303,6 +1317,7 @@ function paint(t, { cover = false } = {}) {
   ctx.drawImage(glowLayer, 0, 0, W, H)
   ctx.restore()
   ctx.drawImage(artLayer, 0, 0)
+  drawWordmark(ctx, cover ? 262 : 184)
   if (cover) {
     drawHeader(ctx, { ...SC[0], end: 1e9 }, 99, 318)
   } else {

@@ -110,3 +110,11 @@ warm, astrology reads but never decides, no exclamation marks, no
 house really is opposite the rising sign, retrograde really is an
 illusion from two orbits passing, and an eclipse really needs all three in
 line. End every reel with a keyword whose DM reply exists in PROFILE.md.
+
+**Align in every reel, lightly.** The wordmark sits small at the top of every
+frame, and each script says the name once, in a line that ties the reel's idea
+to something the app really does (cards stay veiled until you match, a release
+leaves your deck, a match only happens when it's mutual, Venus is read before
+the first deal). Say **"the Align app"**, not just "Align": spoken, "Align"
+sounds exactly like "a line", and "on Align" gets heard as "on a line".
+"Align" lights gold in the captions when it's said.
