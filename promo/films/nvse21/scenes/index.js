@@ -1,5 +1,5 @@
-// nvse21: SIGN VS SIGN, "Who packs for a holiday trip better?" ♊ Gemini vs ♑ Capricorn (18 s trial reel, b46,
-// music: funk · G). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse21: SIGN VS SIGN, "Who packs for a holiday trip better?" ♊ Gemini vs ♑ Capricorn (16 s trial reel, b46,
+// music: funk · G). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: two suitcases between them, one bulging.
 //   ROUND 1 ♊ "packs in *five minutes* flat." a countdown, things fly into the case; then: socks? "packed!" → "…are socks important?"
 //   ROUND 2 ♑ "packed *a week early.*" the list ticks itself, PACKED 7 DAYS AGO. "socks: seven pairs." → "want some?"
