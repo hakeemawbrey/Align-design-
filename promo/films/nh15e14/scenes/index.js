@@ -1,4 +1,4 @@
-// nh15e14: HOME FOR THE HOLIDAYS, "“So what do you do?”" (30 s vertical, Star Talk Season 15 ep 14, music: funk · E)
+// nh15e14: HOME FOR THE HOLIDAYS, "“So what do you do?”" (28 s vertical, Star Talk Season 15 ep 14, music: funk · E)
 // Story 0–25.6, then the shared end card. The season's look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.2    hook "“So… what do you *do?*”"  UNCLE leans right over the pie at Virgo (Gemini's date).
 //   3.2–8.0    "The *résumé* answer."  A pixel slide deck pops up over the table: TITLE, QUARTERLY GOALS, a bar chart,
