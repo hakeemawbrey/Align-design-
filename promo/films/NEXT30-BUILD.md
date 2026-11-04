@@ -7,6 +7,20 @@ so **you don't touch Drive and you don't publish pages**.
 
 Repo: hakeemawbrey/align-design-, branch **claude/align-promo-video**. 47 other sessions push to the same branch.
 
+## ⚠ CHANGE (4 Nov, from the owner): no card transition, short end card — applies to EVERY film in this batch
+1. **No Align card transition.** Remove `cardCuts(CUTS)` from SCENES and `...cardCutCues(CUTS)` from CUES (keep the
+   film's own beat transitions and sounds; `cardFrame`, the quiet border, may stay). Nothing else should play a card-back cut.
+2. **Short end card (2.4 s instead of 4.4 s).** Import `ENDCARD_SHORT_LEN` from endcard.js and use it wherever you used
+   `ENDCARD_LEN`; call `buildEndcard(stage, { start: STORY_END, short: true })` and
+   `...endcardCues(STORY_END, { short: true })`. Same "come Align" card, faster bloom, fades to black at 2.4 s.
+3. **Lengths:** keep each story exactly as written; the film gets **2.0 s shorter** (a 30 s slate film is now 28 s,
+   a 22 s one 20 s). Record the real length in `len`. If your series uses a kit (most do), make the change once in the kit.
+4. **Films you already built, rendered or uploaded:** retrofit them the same way (kit edit + `len` − 2), one stills
+   check (`--stills=<STORY_END-0.2>,<STORY_END+0.6>,<STORY_END+1.6>,<DURATION-0.05>`) and teaser-sound per film, commit,
+   then queue them again as `<f> v2` (`flock /tmp/claude-0/queue.lock sh -c 'echo "<f> v2" >> /tmp/claude-0/queue.txt'`).
+   Upload the new web mp4 + poster and **overwrite** that film's entry in your uploads file (new video/poster/len).
+   Never delete the old page assets. Do the new films first if you like, but every film must end up in the new style.
+
 ## 0. Setup
 ```bash
 git fetch origin claude/align-promo-video && git checkout claude/align-promo-video && git pull
@@ -53,7 +67,7 @@ style + key, hook at t = 0, beats, last line). Commit and push that file before 
 - No disaster or flood jokes, no weapons, no explosions, nothing sexual, no drinking jokes.
 - Advice is warm and healthy: honesty, boundaries, kindness. Never controlling, testing, tracking or jealousy games.
   The joke is on the situation, never on a sign.
-- Lengths include the 4.4 s end card (endcard.js, default CTA). Frame 0 is the thumbnail: hook caption and a
+- Lengths include the **2.4 s short** end card (endcard.js `short: true`, default CTA; see the CHANGE section). Frame 0 is the thumbnail: hook caption and a
   character mid-action at t = 0.
 - **Trial reels** are shown to people who don't follow yet: the first second must make sense on its own.
 

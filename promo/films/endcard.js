@@ -37,6 +37,26 @@ import { SKY_H, GRAIN_H, easeOutBack } from './wheel.js'
 const D2R = Math.PI / 180
 
 export const ENDCARD_LEN = 4.4
+// SHORT end card (2.4 s): the same card, time-warped: the bloom plays ~2x fast, "come Align" lands at 1.40, holds to
+// 2.00, fades to black by 2.40. Use buildEndcard(stage, { start, short: true }) + endcardCues(start, { short: true }).
+export const ENDCARD_SHORT_LEN = 2.4
+const SHORT_KNOTS = [[0, 0], [1.4, 2.92], [2.0, 3.7], [2.4, 4.4]]   // [short time, full-card time]
+function shortWarp(u) {
+  if (u <= 0) return u
+  for (let i = 1; i < SHORT_KNOTS.length; i++) {
+    const [u0, a0] = SHORT_KNOTS[i - 1], [u1, a1] = SHORT_KNOTS[i]
+    if (u <= u1) return a0 + (a1 - a0) * (u - u0) / (u1 - u0)
+  }
+  return ENDCARD_LEN + (u - ENDCARD_SHORT_LEN)
+}
+function shortUnwarp(a) {   // full-card time → short time (for the cues)
+  if (a <= 0) return a
+  for (let i = 1; i < SHORT_KNOTS.length; i++) {
+    const [u0, a0] = SHORT_KNOTS[i - 1], [u1, a1] = SHORT_KNOTS[i]
+    if (a <= a1) return u0 + (u1 - u0) * (a - a0) / (a1 - a0)
+  }
+  return ENDCARD_SHORT_LEN + (a - ENDCARD_LEN)
+}
 
 const BONE = '#efe6d6', GOLD = '#f2c75c', PINK = '#ff8fb1', LAV = '#d9cdf0', VIOLET = '#9a7be0'
 const INTER = "Inter, 'Helvetica Neue', Arial, sans-serif"
@@ -81,7 +101,7 @@ function drawBurst(x, parts, px, py, t, t0, dur = 0.75) {
   x.restore()
 }
 
-export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA' }) {   // cta: the quiet line under the phrase (e.g. 'JOIN THE WAITLIST', 'VOTE FOR YOUR CITY')
+export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA', short = false }) {   // cta: the quiet line under the phrase (e.g. 'JOIN THE WAITLIST', 'VOTE FOR YOUR CITY')
   const S = start, T = k => S + k, END = S + ENDCARD_LEN
   try {
     await Promise.all([`800 ${COME_FS0}px Inter`, `italic 400 ${WORD_FS}px 'EB Garamond'`, `700 ${BETA_FS}px 'Space Mono'`].map(f => document.fonts.load(f)))
@@ -283,24 +303,26 @@ export async function buildEndcard(stage, { start, cta = 'JOIN THE HOUSTON BETA'
   }
 
   return {
-    start: S, end: END + 0.01, root,
-    update(t) {
+    start: S, end: S + (short ? ENDCARD_SHORT_LEN : ENDCARD_LEN) + 0.01, root,
+    update(rt) {
+      const t = short ? S + shortWarp(rt - S) : rt   // card time (warped when short); the sky and grain run on real time
       drawFlip(t)
-      drawSky(bx, t, SKY_H)
+      drawSky(bx, rt, SKY_H)
       mx.clearRect(0, 0, W, H)
       drawMark(t)
       drawType(t)
       drawBeta(t)
       fx.clearRect(0, 0, W, H)
       drawBurst(fx, SPARKS, MARK_CX, MARK_CY, t, T(R.swell), 0.9)
-      drawGrain(gx, t)
-      black.style.opacity = String(t >= END - 0.035 ? 1 : ease.inOutQuad(prog(t, T(R.out), END)))
+      drawGrain(gx, rt)
+      const realEnd = S + (short ? ENDCARD_SHORT_LEN : ENDCARD_LEN)
+      black.style.opacity = String(rt >= realEnd - 0.035 ? 1 : ease.inOutQuad(prog(t, T(R.out), END)))
     },
   }
 }
 
-export function endcardCues(start) {
-  const T = k => start + k
+export function endcardCues(start, { short = false } = {}) {
+  const T = k => start + (short ? shortUnwarp(k) : k)
   const PET = [587.33, 659.25, 739.99, 880, 987.77, 1174.66]          // one soft rising chime per petal
   return [
     ['pop', T(R.come), 659.25, 0.06, 0],
