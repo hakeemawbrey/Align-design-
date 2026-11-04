@@ -1,56 +1,83 @@
 {
  "nsage01": {
-  "video": "/_blob/51fcb4b74feb3ef132756013e6068e5f",
-  "poster": "/_blob/e19fe9f4f28b657ab2f6dd6daab0a4c7",
+  "video": "/_blob/ffd6aee2561fc4ab9c6afa8f80961e81",
+  "poster": "/_blob/ff7bf1eecbd2a32027447dd6b86a532e",
   "title": "Sag Has the Password",
-  "len": 25,
+  "len": 23,
   "series": "sagtk",
   "episode": 1,
   "caption": "Sag got the password and immediately banned small talk. Dinner is now a night hike. Breadsticks are allowed. Which rule would you break first?"
  },
  "nsage02": {
-  "video": "/_blob/5e94358e79904242a590a5df8e147e12",
-  "poster": "/_blob/c0b2265f07dcd73b739626645293d37f",
+  "video": "/_blob/df169b78d36f4738362411829007741b",
+  "poster": "/_blob/b638355b3af4069d1bf0d4e50a09ec39",
   "title": "The Packing List",
-  "len": 20,
+  "len": 18,
   "series": "sagtk",
   "episode": 2,
   "caption": "Packed a passport and a whole tent for a first date, then realized all you really need is one good question. Who in your life overpacks for feelings?"
  },
  "nsage03": {
-  "video": "/_blob/d0d8fd6eebd60573c55ff1a9f2423e66",
-  "poster": "/_blob/c601d9412338661d2a5ada07c7d61ddd",
+  "video": "/_blob/12f761a6592da0b32a7ac57b7d1f90e1",
+  "poster": "/_blob/5f5ebd4cc448d43073bad858207af8af",
   "title": "Honest to a Fault",
-  "len": 25,
+  "len": 23,
   "series": "sagtk",
   "episode": 3,
   "caption": "Sagittarius will tell you the jacket is a lot. Sagittarius will also tell you to wear it, because you look that happy in it. Tag your honest-but-sweet friend."
  },
  "nsage04": {
-  "video": "/_blob/413eb1c9581a8626b052d6af7a426b01",
-  "poster": "/_blob/7602709ff086b865b42cca645f112590",
+  "video": "/_blob/7656e7302ad75e5238b70ca9a7ca0b86",
+  "poster": "/_blob/614321bb78ecab8692e78333a835052c",
   "title": "Sag's Itinerary",
-  "len": 30,
+  "len": 28,
   "series": "sagtk",
   "episode": 4,
   "caption": "Day 1: wake up. Day 2: figure it out. Turns out the real plan was saying the scary thing out loud. Planner or winger, which one are you?"
  },
  "nsage05": {
-  "video": "/_blob/39a35b633087eb458296107ae946492e",
-  "poster": "/_blob/45887ee5b3d4a32a4d3edb562b5c4dd7",
+  "video": "/_blob/0064f90ddf71049a9d8883e8645600b0",
+  "poster": "/_blob/613babeb5cda9c899bc10586fb1e96aa",
   "title": "Sag Says It First",
-  "len": 25,
+  "len": 23,
   "series": "sagtk",
   "episode": 5,
   "caption": "Said 'I like you' at the café counter. It worked. Also, three muffins. Have you ever panic-ordered after a big confession?"
  },
  "nsage06": {
-  "video": "/_blob/f3d29fdf6a652a0633527b48929cb3c2",
-  "poster": "/_blob/86893742701f5687d9c36a78ec5839c2",
+  "video": "/_blob/06f9dd68e47e6e20ea1d0e90c16d897c",
+  "poster": "/_blob/96612de7636eb19e0ec063743ef26833",
   "title": "Sag Texts Back",
-  "len": 20,
+  "len": 18,
   "series": "sagtk",
   "episode": 6,
   "caption": "One careful paragraph from Scorpio. One 'yes!!' from Sag, two seconds later. Thursday is booked. Are you a fast replier or a careful drafter?"
+ },
+ "nsage07": {
+  "video": "/_blob/5b6519c29ef2eade5228b7b218e54cc8",
+  "poster": "/_blob/221836898b5e4b2b8e46496036287b5e",
+  "title": "Sag on the Couch",
+  "len": 23,
+  "series": "sagtk",
+  "episode": 7,
+  "caption": "Sag on movie night: body on the couch, brain on a mountain, a ferris wheel and a hot-air balloon. Then one question brought it home. Who's your 'where are you right now?' person?"
+ },
+ "nsage08": {
+  "video": "/_blob/a0f8111fcb73869a51840b32a86d9d81",
+  "poster": "/_blob/0c6cfa6180cc4edc8ea4613743b5c74b",
+  "title": "Sag Throws a Party",
+  "len": 28,
+  "series": "sagtk",
+  "episode": 8,
+  "caption": "Sag invited everyone. Cancer quietly fed all of them. Every great party has a kitchen hero, so who's yours?"
+ },
+ "nsage09": {
+  "video": "/_blob/f4aaf7fdc88b6d4f8c2229f4dc417f2e",
+  "poster": "/_blob/bc8a33dac8226fa217a2d43bbd9ee895",
+  "title": "The Honest Toast",
+  "len": 23,
+  "series": "sagtk",
+  "episode": 9,
+  "caption": "Never hand Sag the mic. Every toast starts like a roast and ends with someone tearing up into their cocoa. Who would you toast first?"
  }
 }
