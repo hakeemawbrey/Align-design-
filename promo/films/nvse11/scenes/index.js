@@ -1,5 +1,5 @@
-// nvse11: SIGN VS SIGN, "Who handles a surprise video call better?" ♏ Scorpio vs ♒ Aquarius (18 s trial reel, b46,
-// music: synthwave · Am). Story 0–13.6, then the shared end card. Format: ../../nvse01/scenes/versuskit.js.
+// nvse11: SIGN VS SIGN, "Who handles a surprise video call better?" ♏ Scorpio vs ♒ Aquarius (16 s trial reel, b46,
+// music: synthwave · Am). Story 0–13.6, then the short end card. Format: ../../nvse01/scenes/versuskit.js.
 //   hook: INCOMING CALL, a phone buzzing between them.
 //   ROUND 1 ♏ "answers *from the dark.*" a call frame, only its eyes show; then a tiny lamp clicks on. "hi." → "the lights? they’re… ambient."
 //   ROUND 2 ♒ "answers *mid-experiment.*" goggles on, a flask bubbling over. "hi! one sec, it’s bubbling." → "wanna see?"
