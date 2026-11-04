@@ -1,5 +1,5 @@
-// ngne13: STAR TALK GAME NIGHT, Ep 13, "Aries vs Libra: Tie Breaker" (35 s vertical, opposite signs, a rematch, music: funk · A).
-// Story 0–30.6, then the shared end card. The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
+// ngne13: STAR TALK GAME NIGHT, Ep 13, "Aries vs Libra: Tie Breaker" (33 s vertical, opposite signs, a rematch, music: funk · A).
+// Story 0–30.6, then the short end card (no card cut). The set, timeline and sound live in ../../ngne01/gamekit.js (promo/films/next30/b07.md, b08.md).
 //   0.0 hook 'Aries vs Libra. | The *rematch.*' Aries already hammering its buzzer; Libra deciding where to look.
 //   R1 'can't wait to see you ___': Libra buzzes FIRST this time, 'this Friday. you pick the place.' / Aries 'in 5 min. I'm already in the car.' → Libra
 //   R2 'They tell you when something bugs them.': Aries GREEN / Libra RED… then GREEN 'honest is kind.' → both
