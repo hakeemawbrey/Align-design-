@@ -1,9 +1,9 @@
-// naske22 · Ask the Stars, Volume 2, ep 22 · "When do we talk about the future?" (20 s, cinematic · Dm)
-// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the shared end card.
+// naske22 · Ask the Stars, Volume 2, ep 22 · "When do we talk about the future?" (18 s, cinematic · Dm)
+// The format lives in ../../naske19/scenes/askkit2.js. Story 0–15.6, then the short shared end card (2.4 s).
 //   0.0   DM: "When do we talk about *the future?*"  ♑ Capricorn mid-flip through a towering FIVE-YEAR PLAN, pages flying.
 //   3.0   "not on date one. not never, either."  The plan slams shut; one sticky note is left: "date 1: have fun".
 //   5.9   "after a few months, ask what they want."  A wall calendar flips its months; a heart lands on the page.
-//   8.75  card cut → 8.8 "a calm night. not the holiday dinner table."  A long, full dinner table swaps for a sofa,
+//   8.8   "a calm night. not the holiday dinner table."  A long, full dinner table swaps for a sofa,
 //         two mugs and the two of them.
 //   12.1  "Big questions, | *calm* nights."
 import { makeAsk, R, box, drawBits, mug, bubble, sparkles, hearts, shadow, label, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, INTER, MONO, HEART } from '../../naske19/scenes/askkit2.js'
