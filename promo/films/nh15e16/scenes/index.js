@@ -1,4 +1,4 @@
-// nh15e16: HOME FOR THE HOLIDAYS, "The photo." (30 s vertical, Star Talk Season 15 ep 16, music: pop · D)
+// nh15e16: HOME FOR THE HOLIDAYS, "The photo." (28 s vertical, Star Talk Season 15 ep 16, music: pop · D)
 // Story 0–25.6, then the shared end card. The season's look lives in ../../nh15e13/scenes/holikit.js.
 //   0.0–3.0    hook "Everyone *squeeze in!*"  AUNTIE at the camera on its tripod; the family lines up by the tree, Leo
 //              front and centre mid-pose; Scorpio (Leo's date) hovering at the edge.
