@@ -1,10 +1,10 @@
-// nhse12: HOLIDAY SURVIVAL GUIDE No. 12, "Matching Sweaters." (30 s vertical, Next 30 · b29, music: pop · Ab)
+// nhse12: HOLIDAY SURVIVAL GUIDE No. 12, "Matching Sweaters." (28 s vertical, Next 30 · b29, music: pop · Ab)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "They bought | *matching sweaters.*"  ♌ Leo holds up two giant identical sweaters; ♍ Virgo freezes
 //              mid-sip. Pisces sniffles (it's moved already).
 //   6.6–13.9   "Photo plan: | pose, *pose,* pose."  Leo's storyboard pops up frame by frame; Virgo's polite smile starts
 //              to twitch. ♌: "twelve poses. minimum. it'll be iconic!"
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Meet in | the *middle.*"  THE STARS: "say what you're *comfy* with." / "then meet in the *middle*."
 //              ♍: "I love the idea. not the sweater." Leo pulls out a backup: matching socks. Feet up, one photo, flash.
 //   21.6–25.6  "Packed: | *one cozy photo.*"  THE STARS: "Matching socks. Nobody has to know."

@@ -1,10 +1,10 @@
-// nhse07: HOLIDAY SURVIVAL GUIDE No. 7, "Guests in Ten Minutes." (30 s vertical, Next 30 · b29, music: funk · Bb)
+// nhse07: HOLIDAY SURVIVAL GUIDE No. 7, "Guests in Ten Minutes." (28 s vertical, Next 30 · b29, music: funk · Bb)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "Guests arrive | in *ten minutes.*"  ♍ Virgo sprints across the kitchen with a tray, a 14-item checklist
 //              trailing behind it; the wall clock ticks. Pisces sniffles by the fridge.
 //   6.6–13.9   "Ding-dong. | *Already?*"  The doorbell rings early; Virgo folds napkin swans at top speed and one
 //              swan honks. ♍: "nobody look at the swans yet!"
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Let them | *help.*"  THE STARS: "let them *help*. people love a job." / "a shared kitchen *is* the
 //              party." ♎ Libra peels potatoes, ♌ Leo sets the plates, Virgo finally sits; the checklist gets one big tick.
 //   21.6–25.6  "Packed: | *a spare apron.*"  THE STARS: "A messy kitchen means people came."

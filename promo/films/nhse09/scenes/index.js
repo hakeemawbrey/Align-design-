@@ -1,10 +1,10 @@
-// nhse09: HOLIDAY SURVIVAL GUIDE No. 9, "Two Time Zones." (30 s vertical, Next 30 · b29, music: dreamy · Gb)
+// nhse09: HOLIDAY SURVIVAL GUIDE No. 9, "Two Time Zones." (28 s vertical, Next 30 · b29, music: dreamy · Gb)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "Two time zones. | *One* holiday."  A split-screen video call: ♒ Aquarius waves in bright morning light
 //              (8:00 AM), ♌ Leo yawns in the dark (11:00 PM). Pisces sniffles in the night half.
 //   6.6–13.9   "Gift ships | *three days late.*"  Aquarius mails a parcel; it inches along a dotted line between the two
 //              screens, its tag says ARRIVES: 3 DAYS AFTER. ♒: "it's the thought that… arrives later."
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Same dessert. | *Same minute.*"  THE STARS: "pick *one* thing you share." / "same dessert, same minute.
 //              *that's a date.*" A countdown 3-2-1, and both lift a forkful of the same pie at once. Crumbs, hearts.
 //   21.6–25.6  "Packed: | *a recipe card.*"  THE STARS: "Different clocks. Same pie."

@@ -1,10 +1,10 @@
-// nhse11: HOLIDAY SURVIVAL GUIDE No. 11, "Cried at a Mitten." (30 s vertical, Next 30 · b29, music: cinematic · Ebm)
+// nhse11: HOLIDAY SURVIVAL GUIDE No. 11, "Cried at a Mitten." (28 s vertical, Next 30 · b29, music: cinematic · Ebm)
 // The series look lives in ../../nhse01/survkit.js. This time Pisces is the hero (so the crying is the whole plot).
 //   0.0–6.6    "Cried at a | *mitten.*"  ♓ Pisces holds up one tiny knitted mitten, tears already streaming, by the tree.
 //   6.6–13.9   "Then a cookie. | *Then* a sweater."  Every little thing is a memory: an ornament, a cookie, a sweater
 //              each pop up, the tissue box empties, a second box slides in, then a third drops from above.
 //              ♓: "it's fine. it's a GOOD cry."
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Big season. | *Big feelings.*"  THE STARS: "big season, *big feelings*. normal." / "water, a walk,
 //              and one person *who gets it*." A glass of water, a walk in the snow, then a call: ♋ Cancer holds up the
 //              other mitten. Both laugh through the tears.

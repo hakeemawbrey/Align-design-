@@ -1,10 +1,10 @@
-// nhse06: HOLIDAY SURVIVAL GUIDE No. 6, "It's a Gift Swap, Not a Final." (30 s vertical, Next 30 · b29, music: chiptune · B)
+// nhse06: HOLIDAY SURVIVAL GUIDE No. 6, "It's a Gift Swap, Not a Final." (28 s vertical, Next 30 · b29, music: chiptune · B)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "It's a *gift swap,* | not a final."  ♈ Aries in a sprinter's crouch (sweatband on) in front of the
 //              gift pile; the guests sit in a polite circle. Pisces sniffles.
 //   6.6–13.9   "Swap. | *Swap.* SWAP."  Aries draws plays on a whiteboard, grabs the candle, loses the candle to
 //              ♉ Taurus, grabs again… the room goes quiet (crickets). ♈: "nobody touch the candle. I have a plan."
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Play to | *laugh.*"  THE STARS: "play to *laugh*, not to win." / "the fun is the chaos. *let it go.*"
 //              Aries opens the last gift: novelty socks. It wears them on its hands. The whole room laughs with it.
 //   21.6–25.6  "Packed: | *novelty socks.*"  THE STARS: "Lost the candle. Won the room."

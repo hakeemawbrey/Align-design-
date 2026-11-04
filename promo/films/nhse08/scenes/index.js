@@ -1,10 +1,10 @@
-// nhse08: HOLIDAY SURVIVAL GUIDE No. 8, "Delayed. Again." (30 s vertical, Next 30 · b29, music: lofi · Dm)
+// nhse08: HOLIDAY SURVIVAL GUIDE No. 8, "Delayed. Again." (28 s vertical, Next 30 · b29, music: lofi · Dm)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "Delayed. | *Again.*"  ♎ Libra sits on its suitcase on a snowy station platform while the departures
 //              board flaps over to DELAYED. Pisces sniffles on the bench.
 //   6.6–13.9   "Sorry. | *So* sorry."  Libra texts home "so sorry!!" again and again; the board flips again and Libra
 //              apologises to the board. ♎: "sorry, board. not your fault either."
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "One update. | Then *rest.*"  THE STARS: "a delay isn't your *fault*." / "send one update. then *rest*."
 //              One calm text: "running late, saving you a hug". Home answers with a heart; Libra snacks and naps.
 //   21.6–25.6  "Packed: | *a travel pillow.*"  THE STARS: "Running late still counts as coming home."

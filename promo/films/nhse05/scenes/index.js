@@ -1,10 +1,10 @@
-// nhse05: HOLIDAY SURVIVAL GUIDE No. 5, "Out of Office." (30 s vertical, Next 30 · b29, music: house · A)
+// nhse05: HOLIDAY SURVIVAL GUIDE No. 5, "Out of Office." (28 s vertical, Next 30 · b29, music: house · A)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "*Out of office.* | Still in the office."  ♑ Capricorn types on a laptop at the holiday table while
 //              the family eats around it; its paper crown slowly slips. Pisces sniffles at the end of the table.
 //   6.6–13.9   "Ping. | *Ping.* Ping."  Notification badges pop, Capricorn ducks to type under the table, and the
 //              potatoes get passed the long way round the laptop. ♑: "just one quick reply. or nine."
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Set it. | *Believe* it."  THE STARS: "set the auto-reply. then *believe* it." / "work will be there.
 //              *so will they.*" AUTO-REPLY: ON, the lid clicks shut, the crown goes on straight, the pie arrives.
 //   21.6–25.6  "Packed: | *an auto-reply.*"  THE STARS: "The inbox can wait. The pie can't."

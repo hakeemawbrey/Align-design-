@@ -1,10 +1,10 @@
-// nhse04: HOLIDAY SURVIVAL GUIDE No. 4, "Social Battery: 2%." (30 s vertical, Next 30 · b29, music: lofi · Am)
+// nhse04: HOLIDAY SURVIVAL GUIDE No. 4, "Social Battery: 2%." (28 s vertical, Next 30 · b29, music: lofi · Am)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "Social battery: | *2%.*"  ♋ Cancer holds a big smile in the middle of a loud party, a battery
 //              blinking red above its head. Music notes bounce everywhere. Pisces sniffles.
 //   6.6–13.9   "Louder. | *Even* louder."  The speakers thump, the battery hits 1%, Cancer sinks into the coat pile
 //              until only its eyes peek out. ♋: "I live in the coat pile now."
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Ten *quiet* | minutes."  THE STARS: "you're allowed a *quiet ten minutes*." / "say where you're going.
 //              then *go*." Cancer tells a friend "grabbing some air, back in ten!" and sits on the porch step in the snow
 //              while the battery charges to 100%.

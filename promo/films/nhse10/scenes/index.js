@@ -1,10 +1,10 @@
-// nhse10: HOLIDAY SURVIVAL GUIDE No. 10, "Plans Cancelled." (30 s vertical, Next 30 · b29, music: jazzy · F)
+// nhse10: HOLIDAY SURVIVAL GUIDE No. 10, "Plans Cancelled." (28 s vertical, Next 30 · b29, music: jazzy · F)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "Plans *cancelled.* | Now what?"  ♏ Scorpio, in a party hat and bow tie, stares at a phone: "so sorry,
 //              can't make it tonight". Pisces sniffles.
 //   6.6–13.9   "Totally *fine.* | Totally."  Scorpio sits down in the outfit, the party horn droops (pffft), then on
 //              go the sunglasses, indoors. ♏: "I'm fine. this is my fine face."
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Then a | *tiny* new plan."  THE STARS: "you're allowed to be *disappointed*." / "then make a *tiny*
 //              new plan." Pajamas, cocoa, a jigsaw puzzle on the rug, and a text: "rain check? I'd love that".
 //   21.6–25.6  "Packed: | *one puzzle piece.*"  THE STARS: "Plan B, but make it cozy."

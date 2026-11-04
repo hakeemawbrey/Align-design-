@@ -1,11 +1,11 @@
 // HOLIDAY SURVIVAL GUIDE: the shared look of the Next-30 series nhse01–nhse24 (promo/films/next30/b29.md).
 // Lives in nhse01's folder; every other episode imports it from '../../nhse01/survkit.js'. Read-only for other films.
 //
-// The format (30 s, story 0–25.6, then the shared 4.4 s end card):
+// The format (28 s, story 0–25.6, then the shared short 2.4 s end card; no Align card transition):
 //   0.00–6.60   ACT 0 · the problem. The hook headline is fully on screen at frame 0 (the thumbnail) and the hero is
 //               mid-action. Pisces sniffles in the background with a tissue box.
 //   6.60–13.90  ACT 1 · it escalates (hard cut: white flash + zoom punch). Optional character line in a dialogue box.
-//   13.90       the one card cut (cardfx flip).
+//   13.90       a hard cut (flash + whoosh) into the tip.
 //   13.90–21.60 ACT 2 · THE STARS give the tip: two dialogue lines (14.55, 17.55); the episode shows the fix.
 //   21.60–25.60 ACT 3 · the payoff: the SURVIVAL KIT tin pops open, the episode's item drops in with a label; the hero
 //               and Pisces (happy tears) cheer; THE STARS say the last line (22.45, box shuts 25.5).
@@ -25,8 +25,8 @@ import { clamp, lerp, prog, ease, el } from '../../src/lib.js'
 import { fill } from '../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../endcard.js'
+import { cardFrame } from '../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, lineTimes, signStar, STAR } from '../startalk.js'
 import { popText } from '../lesson.js'
 
@@ -44,8 +44,8 @@ export const win = (t, a, b, r = 0.2) => Math.min(clamp((t - a) / r), clamp((b -
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline (same in every episode)
-export const DURATION = 30
-export const STORY_END = DURATION - ENDCARD_LEN          // 25.6
+export const DURATION = 28
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 25.6 (short 2.4 s end card)
 export const T = {
   bug: -1,
   acts: [[0, 6.6], [6.6, 13.9], [13.9, 21.6], [21.6, STORY_END]],
@@ -568,15 +568,15 @@ export function makeSurv(cfg) {
         if (box1) box1.update(t)
         box2.update(t); box3.update(t)
         bug.update(t, outK(t, T.bugOut))
-        const fl = Math.max(0, ...[T.acts[1][0], T.acts[3][0]].map(c => (t >= c && t < c + 0.14) ? 1 - (t - c) / 0.14 : 0))
+        const fl = Math.max(0, ...[T.acts[1][0], T.acts[2][0], T.acts[3][0]].map(c => (t >= c && t < c + 0.14) ? 1 - (t - c) / 0.14 : 0))
         flash.style.opacity = String(0.55 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  const CUTS = [{ t: T.cut, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (owner, 4 Nov): the act changes use the series' own flash + whoosh
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -586,6 +586,7 @@ export function makeSurv(cfg) {
     ['pop', 0.05, 987.77, 0.03, 0], ['glitter', 0.02, 0.4],
     ...[1, 2, 3].flatMap(i => wordPops(T.heads[i], Math.min(7, nWords(cfg.heads[i])), 0.09, i)),
     ['whoosh', r3(T.acts[1][0] - 0.08), 0.28, 0.035], ['tick', T.acts[1][0], 0.05],
+    ['whoosh', r3(T.acts[2][0] - 0.08), 0.3, 0.035], ['tick', T.acts[2][0], 0.05],
     ['pop', r3(T.starsIn + 0.05), 739.99, 0.035, -0.4],
     ...talkCues(L2, { cps: CPS }), ...talkCues(L3, { cps: CPS }), ...(L1 ? talkCues(L1, { cps: CPS }) : []),
     // the payoff: tin pops, lid creaks open, item drops, tag
@@ -595,8 +596,7 @@ export function makeSurv(cfg) {
     ['pop', T.tag, 1318.51, 0.045, 0.2], ['pop', r3(T.tag + 0.08), 1567.98, 0.03, 0.2],
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []).flatMap((cs, i) => (cs || []).map(c => [c[0], r3(c[1] + T.acts[i][0]), ...c.slice(2)])),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS }
+  return { DURATION, SCENES, CUES, T }
 }

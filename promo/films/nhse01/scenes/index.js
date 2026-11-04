@@ -1,10 +1,10 @@
-// nhse01: HOLIDAY SURVIVAL GUIDE No. 1, "Nine Invites." (30 s vertical, Next 30 · b29, music: pop · E)
+// nhse01: HOLIDAY SURVIVAL GUIDE No. 1, "Nine Invites." (28 s vertical, Next 30 · b29, music: pop · E)
 // The series look lives in ../survkit.js (shared by every episode).
 //   0.0–6.6    "*Nine* invites. | One of you."  ♊ Gemini juggles RSVP envelopes in a cosy room; more invites keep
 //              flying in from the edges until the counter reads 9. Pisces sniffles by the window.
 //   6.6–13.9   "Three parties. | *One* night."  The December calendar fills square by square (PARTY, BRUNCH, SWAP…),
 //              then Gemini sprints between three front doors, each lap slower. ♊: "if I run, I can make all three!"
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Pick the ones | you'd *miss.*"  THE STARS: "you don't owe every party a *yes*." / "pick the ones you'd
 //              *miss*." Gemini rings three squares, crosses the rest with warm paper-plane texts, stamps one: REST.
 //   21.6–25.6  "Packed: | *one blank square.*"  The kit gets a calendar page with one empty square.

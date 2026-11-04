@@ -1,10 +1,10 @@
-// nhse02: HOLIDAY SURVIVAL GUIDE No. 2, "Small Budget, Big Heart." (30 s vertical, Next 30 · b29, music: jazzy · Eb)
+// nhse02: HOLIDAY SURVIVAL GUIDE No. 2, "Small Budget, Big Heart." (28 s vertical, Next 30 · b29, music: jazzy · Eb)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "Big heart. | *Small* budget."  ♉ Taurus holds up a shopping receipt that keeps unrolling to the floor;
 //              the piggy bank on the side table starts to sweat. Pisces sniffles.
 //   6.6–13.9   "Bigger box. | *Same* feeling."  Taurus pushes a gift box that grows taller than the frame; the piggy
 //              bank sighs out one last coin. ♉: "if it's bigger, they'll know I care!"
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "Give the | *noticing.*"  THE STARS: "the gift is the *noticing*." / "what did they *love* this year?"
 //              Taurus remembers (a thought bubble: pancakes!) and makes a coupon: ONE PANCAKE BREAKFAST, MADE BY ME.
 //              ♋ Cancer opens it and melts into hearts.

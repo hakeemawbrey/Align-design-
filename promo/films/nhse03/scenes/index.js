@@ -1,10 +1,10 @@
-// nhse03: HOLIDAY SURVIVAL GUIDE No. 3, "Plus-One Short." (30 s vertical, Next 30 · b29, music: funk · G)
+// nhse03: HOLIDAY SURVIVAL GUIDE No. 3, "Plus-One Short." (28 s vertical, Next 30 · b29, music: funk · G)
 // The series look lives in ../../nhse01/survkit.js.
 //   0.0–6.6    "Everyone came | *in pairs.*"  ♐ Sagittarius stands in the party doorway holding a cocoa while couples
 //              sway two by two, little hearts between them. Pisces sniffles by the tree.
 //   6.6–13.9   "Look busy. | *Very* busy."  At the snack table Sag refolds the same napkin over and over (FOLDS: 14).
 //              ♐: "I'm just… really into napkins."
-//   13.9       card cut.
+//   13.9       hard cut into the tip.
 //   13.9–21.6  "You're a | *whole* one."  THE STARS: "you're not a plus-one *short*." / "you're a *whole* one. go say hi."
 //              Sag says hi: the best talker in the room, the host's dog, a cocoa refill. Three ticks.
 //   21.6–25.6  "Packed: | *one name sticker.*"  THE STARS: "Came solo. Left with three new friends."
