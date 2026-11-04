@@ -202,9 +202,9 @@ function wornPartyHat(ctx, t) {
   ctx.fillStyle = ICE; ctx.fillRect(17 + Math.sin(t * 8) * 0.4, -7, 2, 2)
 }
 function wornBlanket(ctx, t, col = '#7b6cc4') {
-  ctx.fillStyle = INK; ctx.fillRect(3, 16.5, 30, 20); ctx.fillStyle = col; ctx.fillRect(4, 17.5, 28, 18)
-  ctx.fillStyle = '#9d90e0'; for (let i = 0; i < 4; i++) ctx.fillRect(5 + i * 7, 19 + (i % 2) * 6, 3, 3)
-  ctx.fillStyle = INK; ctx.fillRect(4, 22 + Math.sin(t * 2) * 0.3, 28, 0.8)
+  ctx.fillStyle = INK; ctx.fillRect(3, 23.5, 30, 13); ctx.fillStyle = col; ctx.fillRect(4, 24.5, 28, 11)
+  ctx.fillStyle = '#9d90e0'; for (let i = 0; i < 4; i++) ctx.fillRect(5 + i * 7, 26 + (i % 2) * 4, 3, 3)
+  ctx.fillStyle = INK; ctx.fillRect(4, 29 + Math.sin(t * 2) * 0.3, 28, 0.8)
 }
 function wornSkates(ctx, t) {
   for (const fx of [8, 22]) {
@@ -260,10 +260,10 @@ function snowman(x, t, cx, cy, k, P) {
   }
   x.restore()
 }
-function scarfFolded(x, t, cx, cy, k) {
+function scarfFolded(x, t, cx, cy, k, P = {}) {
   x.save(); x.translate(cx, cy); x.scale(k, k)
   for (let i = 0; i < 4; i++) { box(x, -110, 60 - i * 46, 220, 36, i % 2 ? BONE : '#e8344e', { b: 5 }); R(x, i % 2 ? '#e8344e' : BONE, -110, 60 - i * 46 + 14, 220, 8) }
-  box(x, 40, -150, 110, 54, '#9fe6b0', { b: 5 }); x.font = `800 30px ${INTER}`; x.fillStyle = INK; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('✓ 1 HR', 95, -122)
+  box(x, 40, -150, 110, 54, '#9fe6b0', { b: 5 }); x.font = `800 30px ${INTER}`; x.fillStyle = INK; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(P.tag || '✓ 1 HR', 95, -122)
   x.restore()
 }
 function snacks(x, t, cx, cy, k) {
@@ -344,14 +344,14 @@ function frame(x, t, cx, cy, k, P) {
 }
 function clipboard(x, t, cx, cy, k, P) {
   const lines = P.text || []
-  x.save(); x.translate(cx, cy); x.rotate(P.rot ?? 0.06); x.scale(k, k)
+  x.save(); x.translate(cx, cy); x.rotate(P.rot ?? 0.06); x.scale(k * 1.3, k * 1.3)
   box(x, -150, -200, 300, 400, '#a07850', { b: 7 })
   R(x, '#fffdf4', -128, -170, 256, 350)
   box(x, -50, -216, 100, 34, '#cfd8e6', { b: 5 })
   x.textBaseline = 'middle'; x.textAlign = 'left'
   lines.forEach((ln, i) => {
     if (P.u !== undefined && P.u < 0.25 + i * 0.22) return
-    x.font = `700 ${P.size || 22}px ${MONO}`; x.fillStyle = INK; x.fillText(ln, -114, -140 + i * 40)
+    x.font = `700 ${P.size || 24}px ${MONO}`; x.fillStyle = INK; x.fillText(ln, -114, -140 + i * 40)
   })
   if (P.laminated) { x.fillStyle = 'rgba(255,255,255,0.18)'; x.fillRect(-128, -170, 256, 350); R(x, 'rgba(255,255,255,0.6)', -110, -160, 18, 120) }
   x.restore()
