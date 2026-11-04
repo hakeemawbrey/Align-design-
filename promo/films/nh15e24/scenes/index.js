@@ -1,4 +1,4 @@
-// nh15e24: HOME FOR THE HOLIDAYS, "Where we're going next year." (45 s vertical, finale, Star Talk Season 15 ep 24,
+// nh15e24: HOME FOR THE HOLIDAYS, "Where we're going next year." (43 s vertical, finale, Star Talk Season 15 ep 24,
 // music: cinematic · D). Story 0–40.6, then the shared end card. The look lives in ../../nh15e13/scenes/holikit.js.
 // The couples are the season's (episodes 1–12): Aries & Libra, Taurus & Sagittarius, Gemini & Aquarius, Cancer & Scorpio…
 //   0.0–3.4    hook "Next year: | *whose* family?"  Aries mid-hop at a big wall calendar with two little houses pinned
