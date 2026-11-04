@@ -1,11 +1,10 @@
-// nt2e73: IF THE SIGNS WERE WEATHER, "If the Air Signs Were Weather" (20 s vertical, Star Talk Trends Vol. 2 ep 73,
-// promo/films/next30/b14.md; music: dreamy · F#). Story 0–15.6, then the shared end card. Format: ../../nt2e71/scenes/weather.js.
+// nt2e73: IF THE SIGNS WERE WEATHER, "If the Air Signs Were Weather" (18 s vertical, Star Talk Trends Vol. 2 ep 73,
+// promo/films/next30/b14.md; music: dreamy · F#). Story 0–15.6, then the shared short end card. Format: ../../nt2e71/scenes/weather.js.
 //   0.0–2.1    hook (frame 0): "If the *air* signs were weather…"  Gemini under a sky split down the middle: sun | cloud.
 //   2.1–4.85   1 "*Gemini:* partly sunny, partly cloudy, fully chatty."  The split sky flips sides as Gemini talks:
 //              "and another thing—" "oh! also—"
 //   4.85–7.6   2 "*Libra:* the perfect breeze."  Wind chimes, a kite at rest, a scarf fluttering just so; Libra: "not too
 //              much. not too little."
-//   7.6        card cut.
 //   7.6–10.95  3 (the twist) "*Aquarius:* a cloud shaped like a question mark."  A cloud drifts in and curls into "?";
 //              everyone below stares up; Aquarius: "great question, right?"
 //   11.35      the three air signs together; Pisces: "aww."

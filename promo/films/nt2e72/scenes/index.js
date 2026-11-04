@@ -1,10 +1,9 @@
-// nt2e72: IF THE SIGNS WERE WEATHER, "If the Earth Signs Were Weather" (20 s vertical, Star Talk Trends Vol. 2 ep 72,
-// promo/films/next30/b14.md; music: dreamy · E). Story 0–15.6, then the shared end card. Format: ../../nt2e71/scenes/weather.js.
+// nt2e72: IF THE SIGNS WERE WEATHER, "If the Earth Signs Were Weather" (18 s vertical, Star Talk Trends Vol. 2 ep 72,
+// promo/films/next30/b14.md; music: dreamy · E). Story 0–15.6, then the shared short end card. Format: ../../nt2e71/scenes/weather.js.
 //   0.0–2.1    hook (frame 0): "If the *earth* signs were weather…"  Taurus wrapped in a blanket by a rainy window.
 //   2.1–4.85   1 "*Taurus:* a slow, cozy drizzle."  Soft rain on the glass, a mug steaming; Taurus sinks deeper: "perfect."
 //   4.85–7.6   2 "*Virgo:* clear skies, as planned."  A spotless blue sky; Virgo ticks the forecast… and still holds an
 //              umbrella over Libra: "just in case."
-//   7.6        card cut.
 //   7.6–10.95  3 (the twist) "*Capricorn:* frost that melts by noon."  A frosted window; Capricorn behind it, stiff:
 //              "…hello." The sun climbs, the frost melts, and Capricorn beams: "HI!!"
 //   11.35      the three earth signs together under a soft sky; Pisces: "aww."

@@ -1,11 +1,10 @@
-// nt2e80: LITTLE TREAT, "Little Treat: Pisces, shared" (20 s vertical, Star Talk Trends Vol. 2 ep 80,
-// promo/films/next30/b14.md; music: chiptune · G). Story 0–15.6, then the shared end card. Format: ../../nt2e76/scenes/treat.js.
+// nt2e80: LITTLE TREAT, "Little Treat: Pisces, shared" (18 s vertical, Star Talk Trends Vol. 2 ep 80,
+// promo/films/next30/b14.md; music: chiptune · G). Story 0–15.6, then the shared short end card. Format: ../../nt2e76/scenes/treat.js.
 // Pisces is the hero here, so it does its crying front and centre (no background Pisces this time).
 //   0.0–2.1    hook (frame 0): "Little treat for | *every soft win.*"  Pisces, eyes shining, a tissue in one hand and a
 //              cupcake in the other.
 //   2.1–4.85   WIN 1 "cried only *once* at the movie."  The tear counter on the seat: TEARS: 1. → a cupcake.
 //   4.85–7.6   WIN 2 "said *no* to a plan I didn't want."  The phone: "4 a.m. hike??"  Pisces: "no thank you!" → a tea.
-//   7.6        card cut.
 //   7.6–10.95  WIN 3 (the twist) "cried happy tears on date one… *they did too.*"  Pisces and Cancer, both fountaining:
 //              "you too??" → one pie, two spoons.
 //   11.35      the stamp "TREAT *EARNED.*"  Both still crying, happily.

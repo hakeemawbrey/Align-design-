@@ -1,10 +1,9 @@
-// nt2e74: IF THE SIGNS WERE WEATHER, "If the Water Signs Were Weather" (20 s vertical, Star Talk Trends Vol. 2 ep 74,
-// promo/films/next30/b14.md; music: dreamy · G). Story 0–15.6, then the shared end card. Format: ../../nt2e71/scenes/weather.js.
+// nt2e74: IF THE SIGNS WERE WEATHER, "If the Water Signs Were Weather" (18 s vertical, Star Talk Trends Vol. 2 ep 74,
+// promo/films/next30/b14.md; music: dreamy · G). Story 0–15.6, then the shared short end card. Format: ../../nt2e71/scenes/weather.js.
 //   0.0–2.1    hook (frame 0): "If the *water* signs were weather…"  Cancer at a night window in the rain, cocoa in hand.
 //   2.1–4.85   1 "*Cancer:* the rainy night you stay in."  Rain on the glass, a blanket, two mugs; Cancer: "stay?"
 //   4.85–7.6   2 "*Scorpio:* fog. Mysterious… then it lifts."  Only two eyes in the fog; it lifts and there's Scorpio,
 //              heart wide open, holding a hand-drawn heart: "okay. all of it."
-//   7.6        card cut.
 //   7.6–10.95  3 (the twist) "*Pisces:* a sun shower. Crying and glowing at once."  Sun and rain together; a rainbow;
 //              Pisces fountains happy tears and glows.
 //   11.35      the three water signs together; a tiny Pisces in the corner, still crying: "aww."

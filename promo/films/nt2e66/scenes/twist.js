@@ -153,8 +153,7 @@ export function makeTwist(cfg) {
   return makeT2({
     bug: ['PLOT', 'TWIST'],
     stamp: null, score: 'aww.',
-    cut: 4.8,
-    flashes: [T.tells[0][0]],
+    flashes: [T.tells[0][0], T.tells[1][0]],
     hookOut: t => (t < SLAM - 0.05 ? 1 : 0),
     hookSize: 74, hookAccent: 104,
     ...cfg,

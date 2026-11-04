@@ -1,8 +1,7 @@
-// nt2e69: PLOT TWIST, "Plot Twist: still typing" (20 s vertical, Star Talk Trends Vol. 2 ep 69, promo/films/next30/b14.md;
-// music: cinematic · Fm). Story 0–15.6, then the shared end card. Format: ../../nt2e66/scenes/twist.js.
+// nt2e69: PLOT TWIST, "Plot Twist: still typing" (18 s vertical, Star Talk Trends Vol. 2 ep 69, promo/films/next30/b14.md;
+// music: cinematic · Fm). Story 0–15.6, then the shared short end card. Format: ../../nt2e66/scenes/twist.js.
 //   0.0–2.1    hook (frame 0, cold blue): "They’ve been typing for *ages.*"  Aries tapping a foot over a phone, the dots going.
 //   2.1–4.85   BEAT 1 "the dots: on. off. *on.*"  The typing dots blink in and out; Aries hops each time.
-//   4.8        card cut.
 //   4.85–7.6   BEAT 2 "you picture an *essay.*"  Aries paces a groove into the rug; the thought cloud: "PART 1 OF 12".
 //   7.6        PLOT TWIST slam.
 //   8.75–11.35 BEAT 3 (warm) "they wanted to hear your *voice.*"  The text: "can i call you instead? i want to hear how

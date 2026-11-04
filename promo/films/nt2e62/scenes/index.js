@@ -1,10 +1,9 @@
-// nt2e62: IN THIS HOUSE WE…, "In This House: an Aries and Virgo home" (20 s vertical, Star Talk Trends Vol. 2 ep 62,
-// promo/films/next30/b14.md; music: jazzy · G). Story 0–15.6, then the shared end card. Format: ../../nt2e61/scenes/house.js.
+// nt2e62: IN THIS HOUSE WE…, "In This House: an Aries and Virgo home" (18 s vertical, Star Talk Trends Vol. 2 ep 62,
+// promo/films/next30/b14.md; music: jazzy · G). Story 0–15.6, then the shared short end card. Format: ../../nt2e61/scenes/house.js.
 //   0.0–2.1    hook (frame 0): the sampler "In this house *we…*"; Aries mid-sprint (speed lines), Virgo with a label maker.
 //   2.1–4.85   RULE 1 "*race* to the door… then hold it open."  Aries wins the dash (WIN!), then bows and holds the
 //              door for Virgo: "after you."
 //   4.85–7.6   RULE 2 "label the *chaos* drawer."  Aries flings odds and ends in; Virgo prints the label: CHAOS, SORTED.
-//   7.6        card cut.
 //   7.6–10.95  RULE 3 (the twist) "fight *fair*: snacks first, then a talk card."  Both sulk on the couch; a snack bowl
 //              lands between them; munch, munch; a talk card flips up: "What do you need from me right now?" Both melt.
 //   11.35      the stamp "HOUSE *RULES.*"  Pisces holds up a 10/10, fountaining (it cried at the talk card).

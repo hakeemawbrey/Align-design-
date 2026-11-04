@@ -1,9 +1,8 @@
-// nt2e67: PLOT TWIST, "Plot Twist: the hummed tune" (20 s vertical, Star Talk Trends Vol. 2 ep 67, promo/films/next30/b14.md;
-// music: cinematic · Dm). Story 0–15.6, then the shared end card. Format: ../../nt2e66/scenes/twist.js.
+// nt2e67: PLOT TWIST, "Plot Twist: the hummed tune" (18 s vertical, Star Talk Trends Vol. 2 ep 67, promo/films/next30/b14.md;
+// music: cinematic · Dm). Story 0–15.6, then the shared short end card. Format: ../../nt2e66/scenes/twist.js.
 //   0.0–2.1    hook (frame 0, cold blue): "You hummed a tune on date one. | They went *quiet.*"  Taurus hums over a cup
 //              (notes drifting); Cancer beside it, perfectly still.
 //   2.1–4.85   BEAT 1 "they stared. *for a while.*"  Cancer frozen, eyes wide; a lonely "…"
-//   4.8        card cut.
 //   4.85–7.6   BEAT 2 "three days of *short* replies."  "busy!" · "busy!!" · "so busy!!!"  Taurus: "was it the humming?"
 //   7.6        PLOT TWIST slam.
 //   8.75–11.35 BEAT 3 (warm) "they were learning *your* tune."  Cancer at a tiny keyboard plays it back, one note

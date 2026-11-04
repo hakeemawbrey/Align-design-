@@ -1,9 +1,8 @@
-// nt2e63: IN THIS HOUSE WE…, "In This House: Aquarius rules" (20 s vertical, Star Talk Trends Vol. 2 ep 63,
-// promo/films/next30/b14.md; music: jazzy · A). Story 0–15.6, then the shared end card. Format: ../../nt2e61/scenes/house.js.
+// nt2e63: IN THIS HOUSE WE…, "In This House: Aquarius rules" (18 s vertical, Star Talk Trends Vol. 2 ep 63,
+// promo/films/next30/b14.md; music: jazzy · A). Story 0–15.6, then the shared short end card. Format: ../../nt2e61/scenes/house.js.
 //   0.0–2.1    hook (frame 0): the sampler "In this house *we…*"; Aquarius on a ladder, screwing a robot arm to the wall.
 //   2.1–4.85   RULE 1 "every chore gets a *gadget.*"  The arm whirs out and hands Sagittarius the remote. BEEP.
 //   4.85–7.6   RULE 2 "Thursday is *weird hobby* night."  Capricorn shows a rock collection; Aquarius and Sag go wild.
-//   7.6        card cut.
 //   7.6–10.95  RULE 3 (the twist) "we say “I love you” out *loud.*"  Aquarius hands over a note in binary; Sag: "…?";
 //              Aquarius drops the note and just says it: "I love you." Sag melts.
 //   11.35      the stamp "HOUSE *RULES.*"  Pisces holds up a 10/10, fountaining.

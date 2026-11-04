@@ -1,10 +1,9 @@
-// nt2e65: IN THIS HOUSE WE…, "In This House: Libra says no" (20 s vertical, Star Talk Trends Vol. 2 ep 65,
-// promo/films/next30/b14.md; music: jazzy · C). Story 0–15.6, then the shared end card. Format: ../../nt2e61/scenes/house.js.
+// nt2e65: IN THIS HOUSE WE…, "In This House: Libra says no" (18 s vertical, Star Talk Trends Vol. 2 ep 65,
+// promo/films/next30/b14.md; music: jazzy · C). Story 0–15.6, then the shared short end card. Format: ../../nt2e61/scenes/house.js.
 //   0.0–2.1    hook (frame 0): the sampler "In this house *we…*"; Libra holds two mugs up to the light, deciding.
 //   2.1–4.85   RULE 1 "two opinions, *one* decision."  Libra's paint swatch says TEAL, Scorpio's says PLUM; they talk it
 //              out and the swatches merge: TEAL-ISH PLUM. A handshake: "deal."
 //   4.85–7.6   RULE 2 "our mugs match… *nearly.*"  Two mugs on a shelf; one is chipped. Libra hugs that one: "the favourite."
-//   7.6        card cut.
 //   7.6–10.95  RULE 3 (the twist) "we say *no*: nicely, but we say it."  A phone: "4th weekend plan??" Libra sweats…
 //              then, calm: "not this time. next month?" Scorpio beams.
 //   11.35      the stamp "HOUSE *RULES.*"  Pisces holds up a 10/10, fountaining.

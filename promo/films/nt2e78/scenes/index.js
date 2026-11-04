@@ -1,10 +1,9 @@
-// nt2e78: LITTLE TREAT, "Little Treat: Capricorn logged off" (20 s vertical, Star Talk Trends Vol. 2 ep 78,
-// promo/films/next30/b14.md; music: chiptune · E). Story 0–15.6, then the shared end card. Format: ../../nt2e76/scenes/treat.js.
+// nt2e78: LITTLE TREAT, "Little Treat: Capricorn logged off" (18 s vertical, Star Talk Trends Vol. 2 ep 78,
+// promo/films/next30/b14.md; music: chiptune · E). Story 0–15.6, then the shared short end card. Format: ../../nt2e76/scenes/treat.js.
 //   0.0–2.1    hook (frame 0): "Little treat for | *logging off.*"  Capricorn snapping a laptop shut, the clock at 6:00 PM.
 //   2.1–4.85   WIN 1 "left work *on time* for a date."  6:00 PM on the dot; out the door at a sprint. → a pretzel.
 //   4.85–7.6   WIN 2 "phone face *down* at dinner."  A buzz… Capricorn flips the phone over and looks at Virgo instead.
 //              → a cocoa.
-//   7.6        card cut.
 //   7.6–10.95  WIN 3 (the twist) "let someone else *plan.*"  Virgo: "I planned tonight. even the treat." Capricorn, no
 //              clipboard, just smiling. → a donut, from Virgo.
 //   11.35      the stamp "TREAT *EARNED.*"  Pisces holds up a 10/10, fountaining.

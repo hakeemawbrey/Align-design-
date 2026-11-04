@@ -1,8 +1,7 @@
-// nt2e68: PLOT TWIST, "Plot Twist: Friday got cancelled" (20 s vertical, Star Talk Trends Vol. 2 ep 68,
-// promo/films/next30/b14.md; music: cinematic · Em). Story 0–15.6, then the shared end card. Format: ../../nt2e66/scenes/twist.js.
+// nt2e68: PLOT TWIST, "Plot Twist: Friday got cancelled" (18 s vertical, Star Talk Trends Vol. 2 ep 68,
+// promo/films/next30/b14.md; music: cinematic · Em). Story 0–15.6, then the shared short end card. Format: ../../nt2e66/scenes/twist.js.
 //   0.0–2.1    hook (frame 0, cold blue): "They *cancelled* Friday."  Cancer frozen over a phone; FRIDAY circled on the wall.
 //   2.1–4.85   BEAT 1 "“can’t do friday, sorry.” *That’s it.*"  The text lands; Cancer deflates into a puddle of star.
-//   4.8        card cut.
 //   4.85–7.6   BEAT 2 "the spiral: *every* reason, worst first."  Three thought clouds: "is it me?" "was it the soup?"
 //              "they found a cooler sign??"
 //   7.6        PLOT TWIST slam.

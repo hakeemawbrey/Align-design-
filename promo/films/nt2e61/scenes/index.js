@@ -1,10 +1,9 @@
-// nt2e61: IN THIS HOUSE WE…, "In This House: Cancer's rules" (20 s vertical, Star Talk Trends Vol. 2 ep 61,
-// promo/films/next30/b14.md; music: jazzy · F). Story 0–15.6, then the shared end card. The format: ./house.js on ./t2kit.js.
+// nt2e61: IN THIS HOUSE WE…, "In This House: Cancer's rules" (18 s vertical, Star Talk Trends Vol. 2 ep 61,
+// promo/films/next30/b14.md; music: jazzy · F). Story 0–15.6, then the shared short end card. The format: ./house.js on ./t2kit.js.
 //   0.0–2.1    hook (frame 0): the sampler "In this house *we…*"; Cancer is mid-stitch on an embroidery hoop.
 //   2.1–4.85   RULE 1 "send *leftovers* home with everyone."  Cancer stacks tubs into a guest's arms: one, two… five.
 //              Gemini, buckling: "I live next door."
 //   4.85–7.6   RULE 2 "name the *houseplants*."  GREG, AUNTIE and LIL BEAN get their tags; Cancer: "night, Greg."
-//   7.6        card cut.
 //   7.6–10.95  RULE 3 (the twist) "text 'home safe'… from the *mailbox*."  Cancer walks the twelve steps to the mailbox
 //              and texts "home safe." Taurus, inside at the window, holds up a phone: "you can SEE me."
 //   11.35      the stamp "HOUSE *RULES.*"  Pisces holds up a 10/10, fountaining.

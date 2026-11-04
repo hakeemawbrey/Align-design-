@@ -1,9 +1,8 @@
-// nt2e70: PLOT TWIST, "Plot Twist: “we need to talk”" (20 s vertical, Star Talk Trends Vol. 2 ep 70,
-// promo/films/next30/b14.md; music: cinematic · Gm). Story 0–15.6, then the shared end card. Format: ../../nt2e66/scenes/twist.js.
+// nt2e70: PLOT TWIST, "Plot Twist: “we need to talk”" (18 s vertical, Star Talk Trends Vol. 2 ep 70,
+// promo/films/next30/b14.md; music: cinematic · Gm). Story 0–15.6, then the shared short end card. Format: ../../nt2e66/scenes/twist.js.
 //   0.0–2.1    hook (frame 0, cold blue): "*We need to talk.*"  Libra frozen mid-sip, the text on the phone.
 //   2.1–4.85   BEAT 1 "you rehearse *every* bad ending."  Libra at the mirror; the reflection mouths "it's not you…"
 //              and "I need space…"
-//   4.8        card cut.
 //   4.85–7.6   BEAT 2 "the walk to the bench. *Slow motion.*"  Leaves drift; Libra creeps towards Scorpio on a park bench.
 //   7.6        PLOT TWIST slam.
 //   8.75–11.35 BEAT 3 (warm) "it was a *talk card.*"  Scorpio holds up a talk card: "What made you smile this week?"

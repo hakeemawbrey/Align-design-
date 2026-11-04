@@ -1,9 +1,8 @@
-// nt2e64: IN THIS HOUSE WE…, "In This House: Capricorn's calendar" (20 s vertical, Star Talk Trends Vol. 2 ep 64,
-// promo/films/next30/b14.md; music: jazzy · Bb). Story 0–15.6, then the shared end card. Format: ../../nt2e61/scenes/house.js.
+// nt2e64: IN THIS HOUSE WE…, "In This House: Capricorn's calendar" (18 s vertical, Star Talk Trends Vol. 2 ep 64,
+// promo/films/next30/b14.md; music: jazzy · Bb). Story 0–15.6, then the shared short end card. Format: ../../nt2e61/scenes/house.js.
 //   0.0–2.1    hook (frame 0): the sampler "In this house *we…*"; Capricorn pins up a wall calendar, a pen in its mouth.
 //   2.1–4.85   RULE 1 "Sunday is *planning* day."  The week fills with colour blocks, tick tick tick; Leo dozes off.
 //   4.85–7.6   RULE 2 "the chore chart gives *gold stars.*"  Stars land on Leo's row… and Capricorn awards itself one.
-//   7.6        card cut.
 //   7.6–10.95  RULE 3 (the twist) "one night a week with *no plans.*"  Friday says NOTHING, circled twice. Capricorn
 //              on the couch in striped socks, snoozing; Leo tucks a blanket over it: "look at you, resting."
 //   11.35      the stamp "HOUSE *RULES.*"  Pisces holds up a 10/10, fountaining.

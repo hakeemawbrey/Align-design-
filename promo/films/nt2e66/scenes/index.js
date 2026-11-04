@@ -1,8 +1,7 @@
-// nt2e66: PLOT TWIST, "Plot Twist: the late date" (20 s vertical, Star Talk Trends Vol. 2 ep 66, promo/films/next30/b14.md;
-// music: cinematic · Cm). Story 0–15.6, then the shared end card. Format: ./twist.js on ../../nt2e61/scenes/t2kit.js.
+// nt2e66: PLOT TWIST, "Plot Twist: the late date" (18 s vertical, Star Talk Trends Vol. 2 ep 66, promo/films/next30/b14.md;
+// music: cinematic · Cm). Story 0–15.6, then the shared short end card. Format: ./twist.js on ../../nt2e61/scenes/t2kit.js.
 //   0.0–2.1    hook (frame 0, cold blue): "They’re *20 minutes* late."  Virgo at a café table, tapping, the clock at 7:20.
 //   2.1–4.85   BEAT 1 "draft a calm text. *delete it.*"  "no worries! take your time :)" is typed… and deleted.
-//   4.8        card cut.
 //   4.85–7.6   BEAT 2 "did I say the *wrong* café?"  A map; three pins drop; Virgo's thought cloud: "the OTHER corner??"
 //   7.6        PLOT TWIST slam.
 //   8.75–11.35 BEAT 3 (warm) "they were outside, *rehearsing* hello."  Through the window: Gemini pacing, practising

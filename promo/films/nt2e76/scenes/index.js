@@ -1,10 +1,9 @@
-// nt2e76: LITTLE TREAT, "Little Treat: Aries listened" (20 s vertical, Star Talk Trends Vol. 2 ep 76,
-// promo/films/next30/b14.md; music: chiptune · C). Story 0–15.6, then the shared end card. Format: ./treat.js.
+// nt2e76: LITTLE TREAT, "Little Treat: Aries listened" (18 s vertical, Star Talk Trends Vol. 2 ep 76,
+// promo/films/next30/b14.md; music: chiptune · C). Story 0–15.6, then the shared short end card. Format: ./treat.js.
 //   0.0–2.1    hook (frame 0): "Little treat for *every* dating win."  Aries mid-bite of a cookie, crumbs flying.
 //   2.1–4.85   WIN 1 "*listened* without interrupting."  Libra tells a long story; Aries vibrates, mouth zipped… and
 //              lets it finish. → a cocoa.
 //   4.85–7.6   WIN 2 "let them pick the *place.*"  Libra: "the noodle place?" Aries: "YES. love that." → a cookie.
-//   7.6        card cut.
 //   7.6–10.95  WIN 3 (the twist) "said “I like you” *first.*"  Aries blurts it (it always does). Libra pulls out a
 //              cupcake: "I got you one too." → the treat comes from the date.
 //   11.35      the stamp "TREAT *EARNED.*"  Pisces holds up a 10/10, fountaining.

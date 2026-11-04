@@ -1,10 +1,9 @@
-// nt2e79: LITTLE TREAT, "Little Treat: Gemini focused" (20 s vertical, Star Talk Trends Vol. 2 ep 79,
-// promo/films/next30/b14.md; music: chiptune · F). Story 0–15.6, then the shared end card. Format: ../../nt2e76/scenes/treat.js.
+// nt2e79: LITTLE TREAT, "Little Treat: Gemini focused" (18 s vertical, Star Talk Trends Vol. 2 ep 79,
+// promo/films/next30/b14.md; music: chiptune · F). Story 0–15.6, then the shared short end card. Format: ../../nt2e76/scenes/treat.js.
 //   0.0–2.1    hook (frame 0): "Little treat for | *paying attention.*"  Gemini juggling five chat bubbles.
 //   2.1–4.85   WIN 1 "kept *one* conversation going (not five)."  Four bubbles drop away; Gemini turns to Sagittarius.
 //              → a donut.
 //   4.85–7.6   WIN 2 "remembered their *dog's* name."  A little pixel dog trots in; Gemini: "BISCUIT!" → a lollipop.
-//   7.6        card cut.
 //   7.6–10.95  WIN 3 (the twist) "asked a talk card question and heard the *whole* answer."  The card: "What's something
 //              that made you brave?" Sag talks… and talks; Gemini nods the whole way. → a sundae.
 //   11.35      the stamp "TREAT *EARNED.*"  Pisces holds up a 10/10, fountaining.

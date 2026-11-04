@@ -1,10 +1,9 @@
-// nt2e71: IF THE SIGNS WERE WEATHER, "If the Fire Signs Were Weather" (20 s vertical, Star Talk Trends Vol. 2 ep 71,
-// promo/films/next30/b14.md; music: dreamy · D). Story 0–15.6, then the shared end card. Format: ./weather.js.
+// nt2e71: IF THE SIGNS WERE WEATHER, "If the Fire Signs Were Weather" (18 s vertical, Star Talk Trends Vol. 2 ep 71,
+// promo/films/next30/b14.md; music: dreamy · D). Story 0–15.6, then the shared short end card. Format: ./weather.js.
 //   0.0–2.1    hook (frame 0): "If the *fire* signs were weather…"  Aries bursts through a grey sky, clouds parting.
 //   2.1–4.85   1 "*Aries:* a sudden sunny day in winter."  Snow on the ground, the sun pops; three bundled-up stars fling
 //              their scarves off at once: "wait, it's WARM?"
 //   4.85–7.6   2 "*Leo:* golden hour, all day long."  A low gold sun, long shadows, everyone glowing; Leo takes a bow.
-//   7.6        card cut.
 //   7.6–10.95  3 (the twist) "*Sagittarius:* a tailwind, taking your kite somewhere new."  Sag *is* the breeze: it
 //              whooshes past and the kite (and its flyer) sail off: "where to?" "anywhere!"
 //   11.35      the three fire signs together in the sunshine; Pisces, in sunglasses and happy tears: "aww."

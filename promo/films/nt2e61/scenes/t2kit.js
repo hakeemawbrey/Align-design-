@@ -3,9 +3,9 @@
 // (PLOT TWIST), nt2e71/scenes/weather.js (IF THE SIGNS WERE WEATHER) and nt2e76/scenes/treat.js (LITTLE TREAT).
 // Adapted from the Vol. 1 tell kit (promo/films/trtellleo/scenes/tellkit.js), with a live frame 0.
 //
-// The film (20 s; story 0–15.6, then the shared end card):
+// The film (18 s; story 0–15.6, then the shared short end card, 2.4 s):
 //   0.00–2.10   hook: the bold top caption is already up at t = 0 and the hero is mid-action (frame 0 = thumbnail).
-//   2.10–10.95  three beats (rule of three, the third twisted), each a jump cut with a caption sticker. One card cut.
+//   2.10–10.95  three beats (rule of three, the third twisted), each a jump cut (white flash) with a caption sticker.
 //   10.95–15.5  the optional stamp slams; THE STARS say the last line; Pisces is moved (happy-tear fountains).
 //   Pisces cries somewhere in the background of every beat (the running gag).
 //
@@ -26,8 +26,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 export { el, popText, drawSky, layerCanvas, SKY_H }
@@ -45,8 +45,8 @@ export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, dra
 
 // ── the fixed timeline (same in all twenty films). Frame 0 is the thumbnail: the hook caption and the hero are already
 //    on screen at t = 0 (no fade from black); the hero is mid-action from the first frame.
-export const DURATION = 20
-export const STORY_END = DURATION - ENDCARD_LEN          // 15.6
+export const STORY_END = 15.6
+export const DURATION = STORY_END + ENDCARD_SHORT_LEN     // 18.0 (the short end card)
 export const T = {
   bug: -1, bar: -1,
   h0: -1.6, h0Out: [10.85, 11.05],
@@ -322,7 +322,7 @@ export function makeT2(cfg) {
   const HERO_FIN_HOPS = [T.stamp + 0.04, T.stamp + 0.5, T.last + 1.6]
   const PIS_DEF = { x: 940, y: 1650, s: 130 }
   const CUT = cfg.cut ?? T.cut
-  const FLASHES = cfg.flashes || [T.tells[0][0], T.tells[1][0]]
+  const FLASHES = cfg.flashes || [T.tells[0][0], T.tells[1][0], T.tells[2][0]]
 
   const hero = (x, t, o = {}) => drawStarChar(x, o.x, o.y, o.s, t, { color: HERO.color, glyph: o.s >= 150 ? HERO.glyph : null, seed: 3, glow: 1.1, ...o })
   const date = (x, t, o = {}) => drawStarChar(x, o.x, o.y, o.s, t, { color: DATE.color, glyph: o.s >= 150 ? DATE.glyph : null, seed: 7, glow: 1, ...o })
@@ -436,8 +436,9 @@ export function makeT2(cfg) {
     }
   }
 
-  const CUTS = [{ t: CUT, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (owner's change, 4 Nov): the beats change on their own hard cuts and flashes
+  const CUTS = []
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
   const CUES = [
@@ -459,8 +460,7 @@ export function makeT2(cfg) {
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
     ...(cfg.cues || []),
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
   void NOTE
   return { DURATION, SCENES, CUES, T, CUTS }

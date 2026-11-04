@@ -1,11 +1,10 @@
-// nt2e75: IF THE SIGNS WERE WEATHER, "If the Signs Were Winter Weather" (20 s vertical, Star Talk Trends Vol. 2 ep 75,
-// promo/films/next30/b14.md; music: dreamy · A). Story 0–15.6, then the shared end card. Format: ../../nt2e71/scenes/weather.js.
+// nt2e75: IF THE SIGNS WERE WEATHER, "If the Signs Were Winter Weather" (18 s vertical, Star Talk Trends Vol. 2 ep 75,
+// promo/films/next30/b14.md; music: dreamy · A). Story 0–15.6, then the shared short end card. Format: ../../nt2e71/scenes/weather.js.
 // No dates on screen (no solstice or season-change claims).
 //   0.0–2.1    hook (frame 0): "If the signs were *winter* weather…"  Sagittarius mid-sprint into the first flakes.
 //   2.1–4.85   1 "*Sagittarius:* the first snow."  A front door bursts open and everyone tumbles outside: "SNOW!!"
 //   4.85–7.6   2 "*Capricorn:* a crisp, clear night. Every star out."  Capricorn in a scarf, looking up at a sky full of
 //              stars: "worth the cold."
-//   7.6        card cut.
 //   7.6–10.95  3 (the twist) "*Cancer:* frost on the window you draw hearts in."  Frost creeps in; Cancer draws a heart…
 //              and someone on the other side draws one back.
 //   11.35      the three of them in the snow; Pisces, crying at the snowflakes: "aww."

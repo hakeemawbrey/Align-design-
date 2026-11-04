@@ -1,11 +1,10 @@
-// nt2e77: LITTLE TREAT, "Little Treat: Cancer went out" (20 s vertical, Star Talk Trends Vol. 2 ep 77,
-// promo/films/next30/b14.md; music: chiptune · D). Story 0–15.6, then the shared end card. Format: ../../nt2e76/scenes/treat.js.
+// nt2e77: LITTLE TREAT, "Little Treat: Cancer went out" (18 s vertical, Star Talk Trends Vol. 2 ep 77,
+// promo/films/next30/b14.md; music: chiptune · D). Story 0–15.6, then the shared short end card. Format: ../../nt2e76/scenes/treat.js.
 //   0.0–2.1    hook (frame 0): "Little treat for | *leaving the house.*"  Cancer in a coat at the open door, one foot out;
 //              the soup pot behind it steams goodbye.
 //   2.1–4.85   WIN 1 "went *out* instead of staying in."  Out into the night; Leo waiting: "you came!" → a warm bun.
 //   4.85–7.6   WIN 2 "didn't cry at the *movie.*"  Two seats, a glowing screen; Cancer holds it together ("I'm fine.") while
 //              Pisces, in the next seat, cries for both of them. → a gold-star sticker.
-//   7.6        card cut.
 //   7.6–10.95  WIN 3 (the twist) "said what I *need,* out loud."  "I need us to text when plans change." Leo: "deal.
 //              thank you for telling me." → a whole cake.
 //   11.35      the stamp "TREAT *EARNED.*"  Pisces holds up a 10/10, fountaining.
