@@ -10,6 +10,7 @@
 //   snowTint             flake colour (default near-white)
 //   shakes: [t…]         globe shakes (each one wobbles the globe and swirls the snow; put one just before 0 so frame 0 is mid-shake)
 //   settle               false = the snow never settles (the finale)
+//   snowAlpha(t)         optional 0–1 multiplier on the falling snow (e.g. an indoor scene)
 //   skyline(x, t, K)     the city, drawn inside the glass behind the snow ground
 //   back / front (x, t, K)    props inside the glass, behind / in front of the cast
 //   over(x, t, K)        anything outside the glass (cards, chips), drawn on top of the globe
@@ -252,7 +253,7 @@ export function swirlAt(t, shakes, settle = true) {
 function drawSnow(x, t, shakes, settle, tint) {
   const { cx, cy, R } = G
   const E = swirlAt(t, shakes, settle), sm = ease.inOutQuad(E)
-  const top = cy - R, span = G.ground - top + 30
+  const top = cy - R, span = G.ground - top + 30, A0 = x.globalAlpha
   for (let i = 0; i < FLAKES.length; i++) {
     const f = FLAKES[i]
     const fy = top + ((f.v * span + t * 48 * f.sp) % span), fx = cx - R + f.u * 2 * R + 10 * Math.sin(t * 0.9 + f.ph)
@@ -262,10 +263,10 @@ function drawSnow(x, t, shakes, settle, tint) {
     const dx = px - cx, dy = py - cy
     if (dx * dx + dy * dy > (R - 8) * (R - 8) || py > G.ground + 40) continue
     const c = f.sz === 3 ? 7 : f.sz === 2 ? 5 : 3.5
-    x.fillStyle = tint; x.globalAlpha = f.sz === 1 ? 0.7 : 0.95
+    x.fillStyle = tint; x.globalAlpha = A0 * (f.sz === 1 ? 0.7 : 0.95)
     x.fillRect(Math.round(px - c / 2), Math.round(py - c / 2), c, c)
   }
-  x.globalAlpha = 1
+  x.globalAlpha = A0
 }
 /** a wobble angle (radians) from the shakes */
 export function wobbleAt(t, shakes) {
@@ -378,7 +379,7 @@ export function globeFilm(spec) {
         if (spec.back) spec.back(x, t, K)
         for (const c of (spec.cast ? spec.cast(t, K) : [])) if (c) drawChar(x, t, c)
         if (spec.front) spec.front(x, t, K)
-        drawSnow(x, t, shakes, settle, spec.snowTint || SNOW)
+        { const sa = spec.snowAlpha ? spec.snowAlpha(t) : 1; if (sa > 0) { x.save(); x.globalAlpha = sa; drawSnow(x, t, shakes, settle, spec.snowTint || SNOW); x.restore() } }
         x.restore()
         drawGlass(x, t)
         x.restore()
