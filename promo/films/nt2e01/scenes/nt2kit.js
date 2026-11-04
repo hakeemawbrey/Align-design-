@@ -362,9 +362,9 @@ export function makeFilm(cfg) {
     return {
       start: 0, end: STORY_END + 0.01, root,
       update(t) {
-        const z0 = cfg.skyZoom ?? 1.4
+        const z0 = cfg.skyZoom ?? SKY_H.zoom
         const ss = ease.inOutCubic(prog(t, 0, 2.5))
-        drawSky(x, t, t < 2.5 ? { ...SKY_H, zoom: lerp(z0, SKY_H.zoom, ss), dy: lerp(-24, 0, ss) } : SKY_H)
+        drawSky(x, t, t < 2.5 ? { ...SKY_H, zoom: lerp(z0, SKY_H.zoom, ss), dy: 0 } : SKY_H)
         let shake = 0
         for (const s of cfg.shakes || []) { const d = t - s; if (d > 0 && d < 0.45) shake += 16 * Math.exp(-d * 9) * Math.sin(d * 60) }
         x.save(); x.translate(0, shake)
