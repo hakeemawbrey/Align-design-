@@ -534,7 +534,7 @@ export function makeSingle(cfg) {
           if (cfg[key]) cfg[key](x, t, { ...S0, u: t - a, t0: a, t1: b, k: 1 })
           if (key === 's2') starsBeat(t)
           bgPisces(x, t, P, a, b, tears)
-          if (key === 's3') drawMeter(x, t, (cfg.meter || {}).x || 540, (cfg.meter || {}).y || 1580)
+          if (key === 's3') drawMeter(x, t, (cfg.meter || {}).x || 490, (cfg.meter || {}).y || 1580)
           x.restore()
         }
         finale(t)
