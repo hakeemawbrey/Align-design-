@@ -79,5 +79,32 @@
   "series": "surv",
   "episode": 21,
   "caption": "The quiet after the holidays can hit harder than you expect. Give yourself one slow day, get outside for a few minutes, and put one small, nice plan on the calendar."
+ },
+ "nhse22": {
+  "video": "/_blob/71a134479c04eb993aaa4b9318a29ff1",
+  "poster": "/_blob/27535c24b84b42a7416c4d108cc6f026",
+  "title": "The New Year's plan",
+  "len": 28,
+  "series": "surv",
+  "episode": 22,
+  "caption": "Wanting a big night when your person wants pajamas isn't a problem to win. Say what you really want, find the overlap, and build a plan you both actually like."
+ },
+ "nhse23": {
+  "video": "/_blob/fb061e3fdc957a68805d9330e4f1cf9a",
+  "poster": "/_blob/a82e4608c88e57bc03d5b6eba7de2b0c",
+  "title": "The year-end check-in",
+  "len": 28,
+  "series": "surv",
+  "episode": 23,
+  "caption": "Before the year ends, try three questions together: your favourite moment, what was hard, and what you want more of. Listen to the hard one gently. Save this for a cozy night in."
+ },
+ "nhse24": {
+  "video": "/_blob/72d70184cf5e822123029b66bf9784c8",
+  "poster": "/_blob/0518d6fd8b4828643feabaa8bbd69529",
+  "title": "You made it",
+  "len": 28,
+  "series": "surv",
+  "episode": 24,
+  "caption": "If the holidays left you tired, you're not doing it wrong. You held boundaries, asked for help, and were gentle with yourself. Rest is allowed, and you made it."
  }
 }
