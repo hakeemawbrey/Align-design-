@@ -1,8 +1,8 @@
-// ndbe01: DEALBREAKER OR NOT? E1, "They turn every walk | into a *race.*" (15 s vertical trial reel, music: pop · C).
+// ndbe01: DEALBREAKER OR NOT? E1, "They turn every walk | into a *race.*" (13 s vertical trial reel, music: pop · C).
 // Story 0–10.6, then the shared end card. The format lives in ./dealkit.js (the other 23 episodes import it from here).
 //   0.0–3.9   frame 0: ♈ Aries mid-sprint down a snowy path, scarf flying, a finish line ahead. ♎ Libra strolls behind
 //             with two cocoas. 1.75: Aries snaps the ribbon: "WON!" + confetti. 2.45: Libra: "…we were going for a walk."
-//   3.9       card cut → the vote. 6.1 THE STARS stamp: NOT A DEALBREAKER.
+//   3.9       flash → the vote. 6.1 THE STARS stamp: NOT A DEALBREAKER.
 //   finale    side by side, slow: Libra hands Aries a cocoa; Aries matches Libra's pace (tiny steps); hearts.
 //             THE STARS: "Race to the corner. *Stroll* the rest."
 import { makeDeal, R, box, bubble, label, shadow, sparkles, confetti, hearts, snowfall, snowGround, starFrame, inSprite, scarfCells, pop01, outK, prog, lerp, clamp, ease, INK, BONE, GOLD, RED, T } from './dealkit.js'

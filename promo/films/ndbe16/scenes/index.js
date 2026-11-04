@@ -1,4 +1,4 @@
-// ndbe16: DEALBREAKER OR NOT? E16, "They show up | *ten minutes* early." (15 s vertical trial reel, music: chiptune · B).
+// ndbe16: DEALBREAKER OR NOT? E16, "They show up | *ten minutes* early." (13 s vertical trial reel, music: chiptune · B).
 //   0.0–3.9   frame 0: ♈ Aries mid-bounce on a doorstep, a pot of soup in hand, the porch clock at 6:50. 1.3 the door
 //             opens: ♓ Pisces in a towel turban, one sock on: "it's 6:50?!" 2.2 Aries: "I brought soup!" 2.9 Pisces
 //             tears up (happy).

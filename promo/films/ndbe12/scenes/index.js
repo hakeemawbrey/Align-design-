@@ -1,4 +1,4 @@
-// ndbe12: DEALBREAKER OR NOT? E12, "They cried at | the *trailer.*" (15 s vertical trial reel, music: dreamy · Db).
+// ndbe12: DEALBREAKER OR NOT? E12, "They cried at | the *trailer.*" (13 s vertical trial reel, music: dreamy · Db).
 //   0.0–3.9   frame 0: a dark cinema; ♓ Pisces mid-sob in a red seat, popcorn flying, the screen glowing. On screen:
 //             two pixel ducks waddle toward each other and reunite (1.4, a heart pops). Pisces fountains. 2.2 ♍ Virgo
 //             hands over a tissue, deadpan… 3.0 Virgo sniffles too.

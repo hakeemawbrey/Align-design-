@@ -1,4 +1,4 @@
-// ndbe14: DEALBREAKER OR NOT? E14, "They never ask | *one* question about you." (15 s vertical trial reel, cinematic · Em).
+// ndbe14: DEALBREAKER OR NOT? E14, "They never ask | *one* question about you." (13 s vertical trial reel, cinematic · Em).
 //   0.0–3.9   frame 0: a café table; ♊ Gemini mid-nod, the grey date (no sign) mid-paragraph. The date's bubbles stack:
 //             "and THEN I…" · "anyway, MY week…" · "so I told my boss…". Gemini's "and me? I—" pops at 1.1, 1.9, 2.7 and
 //             gets squashed each time. 3.2 Gemini's cocoa has gone cold (a sad little ice cube).

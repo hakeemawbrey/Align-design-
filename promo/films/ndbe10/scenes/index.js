@@ -1,4 +1,4 @@
-// ndbe10: DEALBREAKER OR NOT? E10, "They go to bed | at *9:30.*" (15 s vertical trial reel, music: lofi · Ab).
+// ndbe10: DEALBREAKER OR NOT? E10, "They go to bed | at *9:30.*" (13 s vertical trial reel, music: lofi · Ab).
 //   0.0–3.9   frame 0: ♑ Capricorn mid-yawn in a nightcap, the wall clock at 9:30 (YAWN). 0.9 ♌ Leo bursts in, all party
 //             sparkle: "party?!" (clock 9:31). 1.8 Capricorn's lamp clicks off; zzz. 2.6 SUNRISE: Capricorn at Leo's door
 //             with two coffees: "breakfast?" — Leo, bleary, melts (3.3).

@@ -1,4 +1,4 @@
-// ndbe21: DEALBREAKER OR NOT? E21, "They laugh | *really* loud." (15 s vertical trial reel, music: pop · F).
+// ndbe21: DEALBREAKER OR NOT? E21, "They laugh | *really* loud." (13 s vertical trial reel, music: pop · F).
 //   0.0–3.9   frame 0: a hushed little café; ♐ Sagittarius mid-cackle, giant HA HA HA letters bursting out, cups
 //             rattling on the table. 1.2 two other customers turn around. 1.8 ♍ Virgo shrinks in its seat ("shh…")…
 //             2.7 Virgo starts laughing at Sag laughing; 3.2 the customers smile too.

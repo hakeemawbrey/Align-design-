@@ -1,4 +1,4 @@
-// ndbe23: DEALBREAKER OR NOT? E23, "They brought a | *documentary* to movie night." (15 s vertical trial reel, synthwave · F#m).
+// ndbe23: DEALBREAKER OR NOT? E23, "They brought a | *documentary* to movie night." (13 s vertical trial reel, synthwave · F#m).
 //   0.0–3.9   frame 0: ♒ Aquarius mid-reveal on the couch, holding up a case: "MOSS: A STORY". 0.9 ♉ Taurus: "…moss?"
 //             1.8 the TV fills with glowing green moss. 2.3 caption "3 MINUTES LATER". 2.7 Taurus leaning in, gripped:
 //             "the MOSS!!"

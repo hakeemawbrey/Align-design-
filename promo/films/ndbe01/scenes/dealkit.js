@@ -1,10 +1,10 @@
 // DEALBREAKER OR NOT?: the shared look of the 24 star_advice trial reels ndbe01–ndbe24 (promo/films/next30/b41.md).
 // This file lives in ndbe01 and every other episode imports it from here (read-only for them).
 //
-// The format (15 s, story 0–10.6, then the shared end card):
+// The format (13 s, story 0–10.6, then the 2.4 s short end card; no Align card transition):
 //   0.00–3.90   THE SITUATION. Frame 0 is the thumbnail: the bug, the situation headline already landed at the top, and
 //               the sign mid-action with its prop. cfg.scene(x, t, S) draws it (S.u = t).
-//   3.90        the one card cut (flip).
+//   3.90        a white flash + zoom punch into the vote (no card cut).
 //   3.90–6.10   THE VOTE. "Dealbreaker… | or *not?*", a red DEALBREAKER button and a green NOT button, a needle swinging
 //               between them over a ticking clock, the sign thinking, Pisces chewing a tissue.
 //   6.10        THE STARS' stamp slams the verdict on the frame ("NOT A | DEALBREAKER." green / "DEALBREAKER." red).
@@ -25,8 +25,8 @@ import { clamp, lerp, prog, ease, el } from '../../../src/lib.js'
 import { fill } from '../../../src/scenes/common.js'
 import { drawSky, drawGrain, layerCanvas, drawPixelStar } from '../../sky.js'
 import { SKY_H, GRAIN_H, easeOutBack } from '../../wheel.js'
-import { ENDCARD_LEN, buildEndcard, endcardCues } from '../../endcard.js'
-import { cardCuts, cardCutCues, cardFrame } from '../../cardfx.js'
+import { ENDCARD_SHORT_LEN, buildEndcard, endcardCues } from '../../endcard.js'
+import { cardFrame } from '../../cardfx.js'
 import { drawStarChar, dialogueBox, talkCues, talkHops, signStar, STAR } from '../../startalk.js'
 import { popText } from '../../lesson.js'
 
@@ -43,8 +43,8 @@ export const popOut = (t, [a, b]) => { const p = prog(t, a, b); return p <= 0 ? 
 export { clamp, lerp, prog, ease, easeOutBack, drawStarChar, signStar, STAR, drawPixelStar }
 
 // ── the fixed timeline (same in all 24 films)
-export const DURATION = 15
-export const STORY_END = DURATION - ENDCARD_LEN          // 10.6
+export const DURATION = 13
+export const STORY_END = DURATION - ENDCARD_SHORT_LEN    // 10.6 (then the 2.4 s short end card)
 export const T = {
   bug: -1, h0: -1.2, h0Out: [3.72, 3.9],
   vote: 3.9, h1: 4.0, h1Out: [5.95, 6.08], btnIn: 4.15, needle: [4.35, 6.0],
@@ -535,15 +535,15 @@ export function makeDeal(cfg) {
         if (chip) chip.update(t)
         box1.update(t)
         bug.update(t, outK(t, T.bugOut))
-        const fl = t >= T.stamp && t < T.stamp + 0.1 ? 0.6 * (1 - (t - T.stamp) / 0.1) : 0
+        const fl = Math.max(t >= T.vote && t < T.vote + 0.12 ? 1 - (t - T.vote) / 0.12 : 0, t >= T.stamp && t < T.stamp + 0.1 ? 0.6 * (1 - (t - T.stamp) / 0.1) : 0)
         flash.style.opacity = String(0.55 * fl)
         drawGrain(gx, t)
       },
     }
   }
 
-  const CUTS = [{ t: T.vote, kind: 'flip' }]
-  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' }), cardCuts(CUTS)]
+  // no Align card transition (owner change, 4 Nov): the vote arrives on a white flash + zoom punch instead
+  const SCENES = [build, (stage) => buildEndcard(stage, { start: STORY_END, short: true }), cardFrame({ start: 0, end: STORY_END, corners: 'tr bl br' })]
 
   // ── sound (pitched SFX are shifted into the film's key by the engine)
   const NOTE = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51]
@@ -555,7 +555,7 @@ export function makeDeal(cfg) {
     ['pop', 0.02, 1174.66, 0.035, 0], ['glitter', 0.02, 0.3],
     ...(cfg.sceneCues || []).map(c => [c[0], r3(c[1]), ...c.slice(2)]),
     // the vote
-    ['whoosh', r3(T.vote - 0.08), 0.3, 0.035], ...wordPops(T.h1, 3, 0.12, 2),
+    ['whoosh', r3(T.vote - 0.08), 0.3, 0.035], ['tick', T.vote, 0.06], ...wordPops(T.h1, 3, 0.12, 2),
     ['pop', T.btnIn, 659.25, 0.045, -0.4], ['pop', r3(T.btnIn + 0.1), 987.77, 0.045, 0.4],
     ...ticks.map((tt, i) => ['tick', tt, 0.05 + 0.002 * i]),
     ['riser', T.needle[0], T.needle[1], 0.02],
@@ -569,13 +569,12 @@ export function makeDeal(cfg) {
     ...(cfg.finaleCues || []).map(c => [c[0], r3(c[1] + T.stamp), ...c.slice(2)]),
     ...talkCues(LINES, { cps: CPS }),
     ['whoosh', T.out[0], 0.35, 0.03],
-    ...cardCutCues(CUTS),
-    ...endcardCues(STORY_END),
+    ...endcardCues(STORY_END, { short: true }),
   ]
-  return { DURATION, SCENES, CUES, T, CUTS }
+  return { DURATION, SCENES, CUES, T }
 }
 
 /** the score block for cues.js: drop under the situation's beat, breakdown at the vote, lift + hit at the stamp */
 export function dealMusic({ style, key, seed, drop = 1.9 }) {
-  return { style, key, seed, sections: { drop, breakdown: [T.vote], lift: [T.stamp], outroAt: DURATION - ENDCARD_LEN }, hits: [T.stamp] }
+  return { style, key, seed, sections: { drop, breakdown: [T.vote], lift: [T.stamp], outroAt: DURATION - ENDCARD_SHORT_LEN }, hits: [T.stamp] }
 }

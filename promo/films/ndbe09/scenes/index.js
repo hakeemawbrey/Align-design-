@@ -1,4 +1,4 @@
-// ndbe09: DEALBREAKER OR NOT? E9, "They wrap gifts | *terribly.*" (15 s vertical trial reel, music: pop · D).
+// ndbe09: DEALBREAKER OR NOT? E9, "They wrap gifts | *terribly.*" (13 s vertical trial reel, music: pop · D).
 //   0.0–3.9   frame 0: ♐ Sagittarius mid-wrap, tape stuck to one point, paper flapping. Tape strips fly (RIP!), the parcel
 //             grows lumpier. 1.8 it lands on ♋ Cancer's lap: a lumpy ball of paper and tape. 2.4 Cancer unwraps: a
 //             hand-drawn star map ("our first night out"). 3.0 Cancer melts (heart eyes).

@@ -1,4 +1,4 @@
-// ndbe07: DEALBREAKER OR NOT? E7, "They can't pick | a *restaurant.*" (15 s vertical trial reel, music: jazzy · Bb).
+// ndbe07: DEALBREAKER OR NOT? E7, "They can't pick | a *restaurant.*" (13 s vertical trial reel, music: jazzy · Bb).
 //   0.0–3.9   frame 0: ♎ Libra mid-spin between two glowing menus (NOODLES? TACOS?). 0.8 a third (SOUP?), 1.4 a fourth
 //             (PIZZA?), 1.9 a fifth (DUMPLINGS?). ♈ Aries' stomach growls (GRRR) at 1.6. 2.5 Aries holds up two
 //             fingers: "pick from two." → the extra menus vanish.

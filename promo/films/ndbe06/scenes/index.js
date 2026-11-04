@@ -1,4 +1,4 @@
-// ndbe06: DEALBREAKER OR NOT? E6, "They laughed | when you said *no.*" (15 s vertical trial reel, music: screwed · Fm).
+// ndbe06: DEALBREAKER OR NOT? E6, "They laughed | when you said *no.*" (13 s vertical trial reel, music: screwed · Fm).
 //   0.0–3.9   frame 0: a party under string lights, music notes in the air. ♍ Virgo mid-step back, its "no thanks!"
 //             bubble already up. 0.8 the grey date (no sign): "come ON, one more song!" 1.6 the date laughs (HA HA HA).
 //             Virgo's bubble stays put. 2.5 the lights dim, the music notes stop: the room goes quiet.

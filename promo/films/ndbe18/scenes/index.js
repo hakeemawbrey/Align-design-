@@ -1,4 +1,4 @@
-// ndbe18: DEALBREAKER OR NOT? E18, "They pack a *checklist* | for a day trip." (15 s vertical trial reel, music: lofi · C).
+// ndbe18: DEALBREAKER OR NOT? E18, "They pack a *checklist* | for a day trip." (13 s vertical trial reel, music: lofi · C).
 //   0.0–3.9   frame 0: ♍ Virgo mid-tick on a long clipboard list, a backpack open. Items fly in with ticks: MITTENS ✓
 //             (0.5), SNACKS ✓ (1.0), PLASTERS ✓ (1.5). 2.1 ♐ Sagittarius bounds in with empty hands: "ready!" 2.9 Sag
 //             trips on a snow lump: "ow!" — 3.3 Virgo already holding out a plaster.

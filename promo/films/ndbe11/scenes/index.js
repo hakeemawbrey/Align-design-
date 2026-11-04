@@ -1,4 +1,4 @@
-// ndbe11: DEALBREAKER OR NOT? E11, "They read your phone | over your *shoulder.*" (15 s vertical trial reel, screwed · Ebm).
+// ndbe11: DEALBREAKER OR NOT? E11, "They read your phone | over your *shoulder.*" (13 s vertical trial reel, screwed · Ebm).
 //   0.0–3.9   frame 0: ♒ Aquarius mid-text on a park bench under a streetlight; the grey date (no sign) leaning in behind,
 //             eyes on the screen. 1.4 the date: "who's THAT?" 2.3 Aquarius turns the phone face down; 2.7 "hey. that's
 //             mine." — the date shrinks back.

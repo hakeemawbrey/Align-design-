@@ -1,4 +1,4 @@
-// ndbe13: DEALBREAKER OR NOT? E13, "They wear the | *same sweater* every date." (15 s vertical trial reel, funk · G).
+// ndbe13: DEALBREAKER OR NOT? E13, "They wear the | *same sweater* every date." (13 s vertical trial reel, funk · G).
 //   0.0–3.9   frame 0: ♉ Taurus mid-twirl in a cosy striped sweater, a "DATE 1" stamp (café). 0.8 "DATE 2" (the park,
 //             same sweater), 1.6 "DATE 3" (the snow, same sweater). 2.4 ♒ Aquarius arrives… in a matching sweater.
 //             3.0 Taurus: heart eyes.

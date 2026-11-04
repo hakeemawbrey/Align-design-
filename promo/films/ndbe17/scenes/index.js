@@ -1,4 +1,4 @@
-// ndbe17: DEALBREAKER OR NOT? E17, "They sing *loudly* | in the car." (15 s vertical trial reel, music: house · A).
+// ndbe17: DEALBREAKER OR NOT? E17, "They sing *loudly* | in the car." (13 s vertical trial reel, music: house · A).
 //   0.0–3.9   frame 0: a little car on a night road, ♌ Leo mid-belt behind the wheel, notes flying, the car bouncing to
 //             the beat. ♑ Capricorn in the passenger seat, staring ahead… 2.0 one tiny note slips out of Capricorn.
 //             2.7 full duet: both singing, notes everywhere.

@@ -1,4 +1,4 @@
-// ndbe05: DEALBREAKER OR NOT? E5, "They photograph | *every* dessert." (15 s vertical trial reel, music: funk · E).
+// ndbe05: DEALBREAKER OR NOT? E5, "They photograph | *every* dessert." (13 s vertical trial reel, music: funk · E).
 //   0.0–3.9   frame 0: ♌ Leo mid-snap over a layer cake, phone up, FLASH popping. Flash at 0.6 (new angle, low), 1.2
 //             (overhead, on tiptoe), 1.8. ♐ Sagittarius' fork hovers… 2.2: "…can I eat it now?" 2.9 Leo slides Sag the
 //             first slice.

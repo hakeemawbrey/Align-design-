@@ -1,4 +1,4 @@
-// ndbe22: DEALBREAKER OR NOT? E22, "They cancel plans | *every* time." (15 s vertical trial reel, music: screwed · Dm).
+// ndbe22: DEALBREAKER OR NOT? E22, "They cancel plans | *every* time." (13 s vertical trial reel, music: screwed · Dm).
 //   0.0–3.9   frame 0: an outdoor ice rink under string lights; ♑ Capricorn mid-wave by the rail, two pairs of skates in
 //             hand. 0.8 its phone buzzes: "can't tonight, sorry!!" (the grey date). 1.6 a calendar pops up: three dates
 //             already crossed out, a fourth X lands. 2.6 Capricorn hangs the second pair of skates on a hook.

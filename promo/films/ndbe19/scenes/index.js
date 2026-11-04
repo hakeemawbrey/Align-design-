@@ -1,4 +1,4 @@
-// ndbe19: DEALBREAKER OR NOT? E19, "They keep score of | *who texted first.*" (15 s vertical trial reel, cinematic · Bbm).
+// ndbe19: DEALBREAKER OR NOT? E19, "They keep score of | *who texted first.*" (13 s vertical trial reel, cinematic · Bbm).
 //   0.0–3.9   frame 0: ♎ Libra mid-type on its phone, a heart text ready; behind it the grey date (no sign) at a tally
 //             board: "WHO TEXTED FIRST · ME 4 · YOU 3". 1.5 the date: "your turn to text first." (taps the board). 2.4
 //             Libra's heart text deletes itself letter by letter; Libra's phone droops.

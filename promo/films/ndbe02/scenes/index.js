@@ -1,4 +1,4 @@
-// ndbe02: DEALBREAKER OR NOT? E2, "Your date is *rude* | to the server." (15 s vertical trial reel, music: cinematic · Dm).
+// ndbe02: DEALBREAKER OR NOT? E2, "Your date is *rude* | to the server." (13 s vertical trial reel, music: cinematic · Dm).
 // Story 0–10.6, then the shared end card (format: ../../ndbe01/scenes/dealkit.js).
 //   0.0–3.9   frame 0: ♉ Taurus mid-bite at a candlelit table; the grey date (no sign) snapping its fingers: SNAP! SNAP!
 //             0.7 the server star hurries in with a plate, it wobbles. 1.6 the date: "ugh. hurry UP." 2.4 Taurus's fork

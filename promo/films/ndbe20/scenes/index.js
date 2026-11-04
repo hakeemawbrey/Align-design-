@@ -1,4 +1,4 @@
-// ndbe20: DEALBREAKER OR NOT? E20, "They want your | *whole* backstory." (15 s vertical trial reel, music: jazzy · Eb).
+// ndbe20: DEALBREAKER OR NOT? E20, "They want your | *whole* backstory." (13 s vertical trial reel, music: jazzy · Eb).
 //   0.0–3.9   frame 0: ♏ Scorpio mid-lean across a café table, chin on fist, a little notebook out; a question already
 //             floating: "first pet?" More float up: "best day ever?" · "biggest fear?" · "comfort snack?". ♊ Gemini lights
 //             up and answers every one (1.0 "a hamster named Toast!", 1.9 "this one, maybe?", 2.8 "geese.").

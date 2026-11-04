@@ -1,4 +1,4 @@
-// ndbe08: DEALBREAKER OR NOT? E8, "They lied about | something *small.*" (15 s vertical trial reel, music: cinematic · Cm).
+// ndbe08: DEALBREAKER OR NOT? E8, "They lied about | something *small.*" (13 s vertical trial reel, music: cinematic · Cm).
 //   0.0–3.9   frame 0: ♏ Scorpio mid-squint at a little potted plant on a shelf. 0.6 the grey date (no sign): "I water it
 //             every day!" 1.6 a price tag flips out of the pot and swings: PLASTIC. 2.3 Scorpio's eyebrow climbs (one
 //             pixel brow, up up up); the date sweats.

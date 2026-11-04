@@ -1,4 +1,4 @@
-// ndbe15: DEALBREAKER OR NOT? E15, "They make fun of | what *you* love." (15 s vertical trial reel, music: screwed · Gm).
+// ndbe15: DEALBREAKER OR NOT? E15, "They make fun of | what *you* love." (13 s vertical trial reel, music: screwed · Gm).
 //   0.0–3.9   frame 0: ♋ Cancer mid-hug of a tiny knitted frog it made, beaming, knitting needles in a basket.
 //             1.0 the grey date (no sign): "you KNIT?? that's so lame." 1.6 HA HA HA. 2.4 the frog droops; Cancer's
 //             smile fades.

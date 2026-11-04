@@ -1,4 +1,4 @@
-// ndbe03: DEALBREAKER OR NOT? E3, "They talk through | the *whole* movie." (15 s vertical trial reel, music: chiptune · A).
+// ndbe03: DEALBREAKER OR NOT? E3, "They talk through | the *whole* movie." (13 s vertical trial reel, music: chiptune · A).
 //   0.0–3.9   frame 0: ♊ Gemini mid-sentence on the couch, the TV glowing, a bubble already up: "wait who's that".
 //             Bubbles pile over the screen: "ok theory:" · "is that the SAME guy??" · "I'd never go in there".
 //             2.7 ♉ Taurus presses pause (❚❚); 3.0 both laugh.

@@ -1,4 +1,4 @@
-// ndbe24: DEALBREAKER OR NOT? E24, "They already bought | *matching mittens.*" (15 s vertical trial reel, dreamy · F).
+// ndbe24: DEALBREAKER OR NOT? E24, "They already bought | *matching mittens.*" (13 s vertical trial reel, dreamy · F).
 //   0.0–3.9   frame 0: snow falling; ♓ Pisces mid-reveal, holding up two pairs of mittens (pink, and red with a little ♈
 //             stitch), already teary. ♈ Aries freezes (1.0, "…already?"). 1.8 Aries pulls on a mitten. 2.6 Aries takes
 //             Pisces' hand. 3.0 Pisces happy-sobs (fountains).

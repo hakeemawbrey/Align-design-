@@ -1,4 +1,4 @@
-// ndbe04: DEALBREAKER OR NOT? E4, "They kept the *receipt* | from date one." (15 s vertical trial reel, music: dreamy · Eb).
+// ndbe04: DEALBREAKER OR NOT? E4, "They kept the *receipt* | from date one." (13 s vertical trial reel, music: dreamy · Eb).
 //   0.0–3.9   frame 0: ♋ Cancer mid-reveal, lifting the lid of a little keepsake box. Out float: a ticket stub (0.6),
 //             a pressed leaf (1.1), and the receipt, unrolling long (1.7). 2.4 ♏ Scorpio: "you kept the RECEIPT?" →
 //             2.9 heart eyes.
