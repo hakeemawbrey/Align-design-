@@ -1,0 +1,38 @@
+{
+ "ndbe01": {
+  "video": "/_blob/47c1a803b738b5d1e4c556c04a162ff6",
+  "poster": "/_blob/c55831c5534a35291dec2532ceabc10f",
+  "title": "They turn every walk into a race.",
+  "len": 15,
+  "series": "deal",
+  "episode": 1,
+  "caption": "Your date turns a winter stroll into a sprint. Dealbreaker or not?\nNot even close. Race to the corner, then slow down together."
+ },
+ "ndbe02": {
+  "video": "/_blob/473bfeae489b890bc78f4eb6fa2214c5",
+  "poster": "/_blob/0f71477d8872b053ca0fc66df5e3bc7b",
+  "title": "Your date is rude to the server.",
+  "len": 15,
+  "series": "deal",
+  "episode": 2,
+  "caption": "Your date snaps at the server. Cute dinner, or a warning?\nHow someone treats the person bringing the food tells you a lot."
+ },
+ "ndbe03": {
+  "video": "/_blob/a11202bece3b0b70bafa8daaa9eae277",
+  "poster": "/_blob/014eed387bcab5f9c97c95ef7b7437de",
+  "title": "They talk through the whole movie.",
+  "len": 15,
+  "series": "deal",
+  "episode": 3,
+  "caption": "They narrate every scene of the movie. Annoying or adorable?\nPause it, swap theories, then press play. That counts as a date."
+ },
+ "ndbe04": {
+  "video": "/_blob/b941004b445140de23075d1a6c91915b",
+  "poster": "/_blob/122d398072a44d4b4fb06c0777c41da9",
+  "title": "They kept the receipt from date one.",
+  "len": 15,
+  "series": "deal",
+  "episode": 4,
+  "caption": "They saved the receipt from your very first date. Too much?\nKeeping little things means they were paying attention."
+ }
+}
