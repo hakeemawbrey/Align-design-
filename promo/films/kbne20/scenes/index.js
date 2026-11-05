@@ -49,7 +49,7 @@ const LINES = [
   { t: 78.0, speaker: S, text: 'and we have something to *say* about that.' },
   { t: 81.6, speaker: PI, color: '#8fd0ff', text: 'you GUYS. (sob) *you guys.*' },
 ]
-const story = t => { let k = -1; for (let i = 0; i < STORIES.length; i++) if (t >= STORIES[i][0] - 0.3) k = i; return k }
+const story = t => { let k = 0; for (let i = 0; i < STORIES.length; i++) if (t >= STORIES[i][0] - 0.3) k = i; return k }
 const shot = t => t < 6.0 ? 'desk0' : t < T.ch5 ? 'story' : t < T.newsroom ? 'deskTop' : t < T.deskF ? 'newsroom' : 'deskF'
 const SEASON = i => i < 3 ? ['#3a6a4a', '#2a4a3a'] : i < 6 ? ['#6a5a2a', '#4a3a1a'] : i < 9 ? ['#6a3a2a', '#3a2418'] : ['#2a3a6a', '#1a2448']
 const BM = {
