@@ -1,0 +1,91 @@
+{
+  "id": "342-pair-scorpio-sagittarius",
+  "title": "Scorpio and Sagittarius",
+  "cover": "Scorpio and Sagittarius, *truth*",
+  "keyword": "MATCH",
+  "caption": "scorpio keeps your secrets. sagittarius tells everyone everything. thirty degrees of honesty",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "scorpio",
+    "sagittarius",
+    "zodiaccompatibility",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · SCORPIO",
+      "lines": [
+        "Sagittarius says the *quiet* part out loud.",
+        "Scorpio was saving it for later.",
+        "Both of you love the *truth.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "scorpio",
+          "sagittarius"
+        ],
+        "pairAt": 1
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "Scorpio and Sagittarius are *neighbors.*",
+        "Thirty degrees, a semi-sextile.",
+        "Fixed water, mutable fire."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "fire"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Scorpio gives Sagittarius *depth.*",
+        "Sagittarius gives Scorpio *hope.*",
+        "The friction: Scorpio holds on, Sagittarius *roams.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Honesty is how we stay *close.*",
+        "I can hold on *loosely.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "266-mars-taurus",
+  "title": "Mars in Taurus",
+  "cover": "Mars in Taurus: the *slow burn*",
+  "keyword": "MARS",
+  "caption": "mars in taurus wants slowly, and then wants for years. it never pushes. it stays",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "marsintaurus",
+    "taurus",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "MARS IN TAURUS",
+      "lines": [
+        "Slowly. That's how you *want.*",
+        "And then you want for *years.*",
+        "Mars in Taurus is the *slow burn* of the zodiac."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth"
+      },
+      "header": "TAURUS · FIXED EARTH",
+      "lines": [
+        "Taurus is fixed earth.",
+        "You chase with patience, not pressure:",
+        "dinner, then dinner again, then a key.",
+        "In a fight you go *quiet* and *immovable.*",
+        "You need someone who doesn't push, just *stays.*"
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "EARTH · FIXED"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Nobody gets to rush my heart.",
+        "My stubbornness is *loyalty* in disguise.",
+        "When I choose, I choose *for good.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "484-love-overthinking",
+  "title": "Overthinking",
+  "cover": "Your mind runs *laps*",
+  "keyword": "CHART",
+  "caption": "mercury laps the sun every eighty-eight days. no wonder your thoughts lap themselves",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "overthinking",
+    "mercury",
+    "astrology",
+    "affirmations",
+    "mercuryretrograde"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "lilac"
+      },
+      "header": "MERCURY · THE MIND",
+      "lines": [
+        "The planet of your mind is the *fastest* one.",
+        "Mercury circles the sun in eighty-eight days.",
+        "No wonder your thoughts *lap* themselves."
+      ]
+    },
+    {
+      "art": "loop",
+      "header": "RETROGRADE · THE REPLAY",
+      "lines": [
+        "A few times a year, it even looks",
+        "like it's going *backwards,*",
+        "replaying the same stretch of sky.",
+        "That's what overthinking feels like.",
+        "The same text, read a *hundred* times."
+      ],
+      "labels": [
+        {
+          "on": "loop",
+          "at": 2,
+          "text": "THE SAME STRETCH, AGAIN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to solve love *tonight.*",
+        "My thoughts can loop. I don't have to *follow.*",
+        "What's meant for me won't be a *riddle.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

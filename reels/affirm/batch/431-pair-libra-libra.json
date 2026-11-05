@@ -1,0 +1,92 @@
+{
+  "id": "431-pair-libra-libra",
+  "title": "Libra and Libra",
+  "cover": "Libra and Libra, *so lovely*",
+  "keyword": "MATCH",
+  "caption": "two libras will spend twenty minutes deciding where to eat and enjoy every minute of it",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "libra",
+    "libracompatibility",
+    "airsigns",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "AFTER YOU · NO, AFTER YOU",
+      "lines": [
+        "After you. No, *after you.*",
+        "Two Libras at the door,",
+        "holding it open *forever.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "libra",
+          "libra"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Zero degrees apart, a *conjunction.*",
+        "Cardinal air, twice over.",
+        "Venus rules you both,",
+        "so beauty comes *easy.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "You give each other *gentleness.*",
+        "The friction: nobody wants to say",
+        "the *hard* thing first."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Honest is *kinder* than polite.",
+        "I can disagree and still be *loved.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

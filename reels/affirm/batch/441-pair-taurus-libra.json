@@ -1,0 +1,100 @@
+{
+  "id": "441-pair-taurus-libra",
+  "title": "Taurus and Libra",
+  "cover": "Taurus + Libra · *quincunx*",
+  "keyword": "MATCH",
+  "caption": "both ruled by venus, loving in completely different dialects",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurus",
+    "libra",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "BOTH RULED BY VENUS",
+      "lines": [
+        "Same ruling planet, *different* love.",
+        "Both are ruled by *Venus.*",
+        "Taurus loves through the senses.",
+        "Libra loves through *beauty* and ideas."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "VENUS · RULES BOTH"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "libra"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "But five signs apart is a *quincunx:*",
+        "fixed earth and cardinal air,",
+        "sharing nothing but the *planet.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Taurus gives Libra *steadiness.*",
+        "Libra gives Taurus *grace* and a social life.",
+        "The friction: Libra weighs, Taurus waits."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can love you *differently*",
+        "and love you just as *much.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "475-pair-leo-leo",
+  "title": "Leo and Leo",
+  "cover": "Leo and Leo, *two suns*",
+  "keyword": "MATCH",
+  "caption": "two leos in love is a lot of warmth in one room. take turns being the sunrise",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "leo",
+    "leocompatibility",
+    "firesigns",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "RULED BY THE SUN",
+      "lines": [
+        "A sky can hold *two suns.*",
+        "It just needs a little more *room.*",
+        "That's two Leos in love."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "THE SUN · LEO'S RULER"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "leo"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Same sign is a *conjunction,*",
+        "zero degrees apart.",
+        "Same fire, same fixed heart,",
+        "same need to be *seen.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "You give each other *loyalty* and praise.",
+        "The friction is the *spotlight.*",
+        "Two people waiting for applause",
+        "can forget to *clap.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can shine *and* make room.",
+        "Your light doesn't *dim* mine."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

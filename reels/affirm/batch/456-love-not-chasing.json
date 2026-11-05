@@ -1,0 +1,75 @@
+{
+  "id": "456-love-not-chasing",
+  "title": "Not chasing",
+  "cover": "The sun doesn't *chase*",
+  "keyword": "MUTUAL",
+  "caption": "the sun has never once gone after a planet. it keeps burning, and they stay",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "nochasing",
+    "selfworth",
+    "astrology",
+    "affirmations",
+    "dating"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "THE SUN · EIGHT PLANETS",
+      "lines": [
+        "The sun has never chased a single *planet.*",
+        "It just keeps *burning,*",
+        "and eight of them stay in orbit."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "NOT CHASING · STILL LIT",
+      "lines": [
+        "Not chasing isn't playing *cold.*",
+        "It's staying lit where you are,",
+        "and letting the ones who want your warmth",
+        "come *closer* on their own."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't run after *anyone.*",
+        "The right people find their way to my *light.*",
+        "I stay warm. I stay *here.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "296-element-fire-water",
+  "title": "Fire and water",
+  "cover": "*Fire* and water in love",
+  "keyword": "MATCH",
+  "caption": "fire and water make steam. intense, a little hard to see through, never lukewarm",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "firesigns",
+    "watersigns",
+    "compatibility",
+    "elements",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "water"
+      },
+      "header": "FIRE · WATER",
+      "lines": [
+        "Fire and water make *steam.*",
+        "Hot, hard to see through,",
+        "and never, ever *lukewarm.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "SPEAK FIRST · FEEL FIRST",
+      "lines": [
+        "Fire *speaks* first and feels later.",
+        "Water *feels* first and speaks later.",
+        "So fire can seem careless,",
+        "and water can seem distant,",
+        "when you're both just protecting your *heart.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *gentle* with your fire,",
+        "and *brave* with your feelings."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,371 @@
+[
+  {
+    "key": "unsaid-aries",
+    "title": "How an Aries says I love you",
+    "cover": "How an *Aries* says I love you",
+    "caption": "an aries won't make a speech about it. they'll just be on their feet the second someone's rude to you",
+    "hashtags": ["aries", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · THE UNSAID",
+        "lines": ["Watch what an Aries does", "when someone's *rude* to you.", "They're on their feet before you blink."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS",
+        "lines": ["Aries is ruled by *Mars,*", "so love comes out as *action.*", "They text first. They pick you first.", "They drive across town at midnight", "because you sounded *off.*"],
+        "labels": [{ "on": "planet", "at": 1, "text": "♂ MARS · ACTION" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can hear love that doesn't *talk.*", "Their actions are *loud* enough."]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-taurus",
+    "title": "How a Taurus says I love you",
+    "cover": "How a *Taurus* says I love you",
+    "caption": "if a taurus saved you the last bite, that was a declaration. don't let anyone tell you otherwise",
+    "hashtags": ["taurus", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · THE UNSAID",
+        "lines": ["When a Taurus feeds you, pay *attention.*", "They don't share food with just anyone.", "That's not a snack.", "That's a *declaration.*"]
+      },
+      {
+        "art": "venus",
+        "opts": {},
+        "header": "RULED BY VENUS",
+        "lines": ["Taurus is ruled by *Venus,*", "so love lives in the *senses.*", "The last bite, saved for you.", "The blanket, already warm.", "Your coffee order, memorized."],
+        "labels": [{ "on": "glass", "at": 0, "text": "♀ VENUS · THE SENSES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I let myself be *looked after.*", "Being cared for slowly", "is still being *loved.*"]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-gemini",
+    "title": "How a Gemini says I love you",
+    "cover": "How a *Gemini* says I love you",
+    "caption": "the meme at two in the morning was the love letter. a gemini just never stops talking to you",
+    "hashtags": ["gemini", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "GEMINI · THE UNSAID",
+        "lines": ["That meme at two in the morning?", "From a Gemini, that's a love *letter.*", "Mercury rules them, the planet of *messages.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "☿ MERCURY · MESSAGES" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI · HOW THEY SAY IT",
+        "lines": ["They send you the song, the link,", "the thing they saw and thought of *you.*", "You hear the news from them *first.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "THE THREAD",
+        "lines": ["They don't say it.", "They just never stop *talking* to you.", "And that's the whole point."],
+        "labels": [{ "on": "thread", "at": 1, "text": "A THREAD THAT NEVER ENDS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Being *thought of* is being loved.", "I'll keep the thread *open.*"]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-cancer",
+    "title": "How a Cancer says I love you",
+    "cover": "How a *Cancer* says I love you",
+    "caption": "text me when you get home. that's it. that's a cancer saying i love you",
+    "hashtags": ["cancer", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 0 },
+        "header": "CANCER · THE UNSAID",
+        "lines": ["Text me when you get *home.*", "That's a Cancer saying I love you.", "Every single time,", "even if you live next *door.*"],
+        "labels": [{ "on": "thread", "at": 0, "text": "TEXT ME WHEN YOU'RE HOME" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "mint" },
+        "header": "RULED BY THE MOON",
+        "lines": ["Ruled by the Moon, they love by *keeping.*", "Keeping your photo.", "Keeping the soup warm.", "Keeping a hoodie that smells like *you.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "☽ THE MOON · THEIR RULER" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Care is a language I *speak.*", "I notice when I'm *held,*", "even without the words."]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-leo",
+    "title": "How a Leo says I love you",
+    "cover": "How a *Leo* says I love you",
+    "caption": "notice how a leo introduces you. that wasn't a name, that was a whole little speech",
+    "hashtags": ["leo", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · THE UNSAID",
+        "lines": ["Notice how a Leo *introduces* you.", "Not just a name.", "A whole little *speech.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "RULED BY THE SUN",
+        "lines": ["Ruled by the Sun, they *shine* on you.", "They brag about your job.", "They post you, plan the birthday,", "and light up when you *walk in.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "YOU, IN THEIR LIGHT",
+        "lines": ["To a Leo, love means *pride.*", "You're the one they can't stop showing."],
+        "labels": [{ "on": "you", "at": 1, "text": "☉ · ALL EYES ON YOU" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I let myself be *celebrated.*", "I'm someone *worth* showing off."]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-virgo",
+    "title": "How a Virgo says I love you",
+    "cover": "How a *Virgo* says I love you",
+    "caption": "a virgo will never write you a poem. check your bag for the snack they packed instead",
+    "hashtags": ["virgo", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · THE UNSAID",
+        "lines": ["A Virgo will never write you a *poem.*", "They'll fix the wobbly table.", "Back up your phone.", "Pack a snack for the flight you *forgot.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Mercury rules Virgo,", "and here it turns *thinking* into care.", "They notice what you need", "before you've noticed you *need* it."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE POEM",
+        "lines": ["So read it right.", "That reminder, that steady table,", "that was the *poem.*"]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-libra",
+    "title": "How a Libra says I love you",
+    "cover": "How a *Libra* says I love you",
+    "caption": "flowers for no reason, a playlist for the drive. a libra makes your life prettier and calls it nothing",
+    "hashtags": ["libra", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · THE UNSAID",
+        "lines": ["A Libra in love makes your life *prettier.*", "Flowers for no reason.", "A playlist for the *drive.*", "The table set like it's an occasion."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "planet": "♀", "planetSign": "libra", "planetAt": 0 },
+        "header": "RULED BY VENUS",
+        "lines": ["Venus rules them,", "so love comes out as *beauty*", "and as balance.", "They'll meet you halfway,", "and quietly walk a little *further.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "♀ VENUS · AT HOME IN LIBRA" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve a *gentle* love.", "I notice the small beauty,", "and I give some *back.*"]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-scorpio",
+    "title": "How a Scorpio says I love you",
+    "cover": "How a *Scorpio* says I love you",
+    "caption": "if a scorpio told you a secret, you're in. they don't hand those out",
+    "hashtags": ["scorpio", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "eclipse",
+        "header": "SCORPIO · THE UNSAID",
+        "lines": ["If a Scorpio told you a secret, you're *in.*", "They don't hand those out.", "Not to friends. Not to *family.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "lilac" },
+        "header": "MARS · PLUTO",
+        "lines": ["Mars and Pluto rule them,", "so they love with their *whole* weight.", "They remember your worst day", "and never use it *against* you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Trust is a *gift* I can give.", "Being let *in* is love."]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-sagittarius",
+    "title": "How a Sagittarius says I love you",
+    "cover": "How *Sagittarius* says I love you",
+    "caption": "come with me. to the market, the mountain, the airport. that's sagittarius for i love you",
+    "hashtags": ["sagittarius", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · THE UNSAID",
+        "lines": ["Come with me.", "That's Sagittarius for I love you.", "To the market, the mountain, the *airport.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER",
+        "lines": ["Ruled by Jupiter, the giant planet,", "they love by making your world *bigger.*", "They teach you the card game.", "They tell you the *truth,* even the hard part,", "because you're worth it."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "An open door is still a *promise.*", "I can love someone who *roams.*"]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-capricorn",
+    "title": "How a Capricorn says I love you",
+    "cover": "How a *Capricorn* says I love you",
+    "caption": "a capricorn has no free time and they gave you some. that's the whole sentence",
+    "hashtags": ["capricorn", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "CAPRICORN · THE UNSAID",
+        "lines": ["A Capricorn has no free time,", "and they gave you *some.*", "That's the whole sentence."],
+        "labels": [{ "on": "planet", "at": 0, "text": "♄ SATURN · THEIR RULER" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · HOW THEY SAY IT",
+        "lines": ["Saturn rules them, the planet of *time,*", "so time is what they give.", "A standing date. A plan for *next* year.", "Your name on their calendar, in pen."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need it loud.", "I need it *kept.*", "Being chosen on purpose", "is a love I *trust.*"]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-aquarius",
+    "title": "How an Aquarius says I love you",
+    "cover": "How an *Aquarius* says I love you",
+    "caption": "an aquarius won't say it. they'll show you the weird part they hide from everyone else",
+    "hashtags": ["aquarius", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · THE UNSAID",
+        "lines": ["An Aquarius won't say it.", "They'll show you the *weird* part.", "The theory. The old hobby.", "The thing they hide from *everyone.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 0 },
+        "header": "SPACE IS A GIFT",
+        "lines": ["They give you room, and trust you *with* it.", "They bring you into their friends.", "They remember your *ideas,*", "not just your birthday."],
+        "labels": [{ "on": "thread", "at": 0, "text": "ROOM TO BREATHE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My *odd* heart is easy to love.", "Space is not distance.", "It's *trust.*"]
+      }
+    ]
+  },
+  {
+    "key": "unsaid-pisces",
+    "title": "How a Pisces says I love you",
+    "cover": "How a *Pisces* says I love you",
+    "caption": "a pisces made you a playlist. listen twice. every song is something they couldn't say",
+    "hashtags": ["pisces", "lovelanguage", "zodiaclove", "venus", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · THE UNSAID",
+        "lines": ["A Pisces made you a *playlist.*", "Listen to it twice.", "Every song is a sentence they couldn't *say.*"]
+      },
+      {
+        "art": "venus",
+        "opts": {},
+        "header": "VENUS · EXALTED IN PISCES",
+        "lines": ["Venus is *exalted* in Pisces,", "love at its most generous.", "So they know you're sad", "before you've said a *word,*", "and they just *stay.*"],
+        "labels": [{ "on": "glass", "at": 0, "text": "♀ VENUS · EXALTED" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can hear love in the *quiet.*", "My heart knows its own *language.*"]
+      }
+    ]
+  }
+]

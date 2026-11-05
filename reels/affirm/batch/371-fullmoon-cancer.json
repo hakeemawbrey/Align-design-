@@ -1,0 +1,89 @@
+{
+  "id": "371-fullmoon-cancer",
+  "title": "Full moon in Cancer",
+  "cover": "Full moon in *Cancer*",
+  "keyword": "MOON",
+  "caption": "cancer is ruled by the moon, so a full moon in cancer is the moon at home. every feeling comes up at once",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "fullmoon",
+    "fullmoonincancer",
+    "cancer",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "gold"
+      },
+      "header": "FULL MOON IN CANCER",
+      "lines": [
+        "A full moon in Cancer is the moon at *home.*",
+        "Cancer is ruled by the *Moon,*",
+        "so every feeling comes up at once."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☽ · RULER OF CANCER"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "capricorn",
+          "cancer"
+        ],
+        "pairAt": 0
+      },
+      "header": "CAPRICORN SUN · CANCER MOON",
+      "lines": [
+        "It only happens in *Capricorn* season,",
+        "when the sun says be strong",
+        "and the moon says be *held.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release caring for people",
+        "more than I let them care for *me.*",
+        "I can be someone's home",
+        "and still need *one.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

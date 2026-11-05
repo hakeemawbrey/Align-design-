@@ -1,0 +1,105 @@
+{
+  "id": "181-ruler-capricorn",
+  "title": "Capricorn is ruled by Saturn",
+  "cover": "Capricorn, ruled by *Saturn*",
+  "keyword": "CHART",
+  "caption": "saturn takes almost thirty years to go round once. you were always going to love slowly",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "capricorn",
+    "saturn",
+    "planetaryruler",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "ruler",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "CAPRICORN · RULED BY SATURN",
+      "lines": [
+        "Your ruler takes almost thirty years",
+        "to circle the Sun *once.*",
+        "Saturn, the planet of *time.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "♄ SATURN · COMMITMENT"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · CARDINAL EARTH",
+      "lines": [
+        "So you don't fall. You *build.*",
+        "Brick by brick, promise by promise.",
+        "You'd rather be *sure*",
+        "than be swept off your feet."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "WORTH THE WAIT",
+      "lines": [
+        "People call you slow to open.",
+        "But what you open, you *keep.*",
+        "Ten years in, you're still there."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "♄ · THE LONG GAME"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My love is *built* to last.",
+        "And I can *rest* inside it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "082-unsaid-taurus",
+  "title": "How a Taurus says I love you",
+  "cover": "How a *Taurus* says I love you",
+  "keyword": "VENUS",
+  "caption": "if a taurus saved you the last bite, that was a declaration. don't let anyone tell you otherwise",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "taurus",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · THE UNSAID",
+      "lines": [
+        "When a Taurus feeds you, pay *attention.*",
+        "They don't share food with just anyone.",
+        "That's not a snack.",
+        "That's a *declaration.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {},
+      "header": "RULED BY VENUS",
+      "lines": [
+        "Taurus is ruled by *Venus,*",
+        "so love lives in the *senses.*",
+        "The last bite, saved for you.",
+        "The blanket, already warm.",
+        "Your coffee order, memorized."
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 0,
+          "text": "♀ VENUS · THE SENSES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I let myself be *looked after.*",
+        "Being cared for slowly",
+        "is still being *loved.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

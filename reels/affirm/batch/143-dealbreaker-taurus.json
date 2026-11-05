@@ -1,0 +1,96 @@
+{
+  "id": "143-dealbreaker-taurus",
+  "title": "The Taurus dealbreaker",
+  "cover": "Taurus won't settle for *flaky*",
+  "keyword": "MATCH",
+  "caption": "a taurus doesn't need fireworks. they need you to show up thursday, and the thursday after",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurus",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "consistency"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "dealbreaker",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · FIXED EARTH",
+      "lines": [
+        "A Taurus doesn't need *fireworks.*",
+        "They need you to show up on Thursday,",
+        "and the Thursday *after* that."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "THE DEALBREAKER · THE FLAKE",
+      "lines": [
+        "Their dealbreaker is the *flake.*",
+        "Plans that move. Words that bend.",
+        "Warmth that comes and goes",
+        "like the *weather.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "mint"
+      },
+      "header": "RULED BY VENUS",
+      "lines": [
+        "Ruled by *Venus,* you love slow things.",
+        "A garden. A long meal.",
+        "A hand that *stays.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "VENUS · TAURUS'S RULER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to want *steady.*",
+        "Consistency isn't boring.",
+        "It's how I know it's *real.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

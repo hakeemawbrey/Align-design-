@@ -1,0 +1,86 @@
+{
+  "id": "271-dealbreaker-virgo",
+  "title": "The Virgo dealbreaker",
+  "cover": "What a *Virgo* won't settle for",
+  "keyword": "MATCH",
+  "caption": "a virgo notices everything, including the call you said you'd make",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgo",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "earthsign"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · MUTABLE EARTH",
+      "lines": [
+        "A Virgo notices *everything,*",
+        "including the call you said you'd make.",
+        "Their dealbreaker isn't a *flaw.*",
+        "It's a promise left *undone.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 6,
+        "highlightAt": 0
+      },
+      "header": "THE SIXTH HOUSE · DAILY LIFE",
+      "lines": [
+        "Virgo belongs to the *sixth house,*",
+        "the house of the everyday.",
+        "So love lives in *small* things:",
+        "the remembered order, the fixed shelf,",
+        "the *follow-through.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "6TH HOUSE · ROUTINES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Wanting *effort* isn't being picky.",
+        "I deserve someone",
+        "who does what they *say.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

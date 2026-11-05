@@ -1,0 +1,84 @@
+{
+  "id": "270-fear-gemini",
+  "title": "What a Gemini quietly fears",
+  "cover": "Gemini, who asks *you*",
+  "keyword": "MUTUAL",
+  "caption": "for the gemini who asks everyone everything and gets asked nothing back",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "gemini",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "MERCURY · THE MESSENGER",
+      "lines": [
+        "Gemini, you ask a hundred *questions.*",
+        "About their day, their dog, their *dreams.*",
+        "*Mercury* made you fluent in other people."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "THE QUIET FEAR · ONE-SIDED",
+      "lines": [
+        "And the fear underneath it all",
+        "is that nobody will ask *you* one back.",
+        "That you'll be fascinating to everyone",
+        "and *known* by no one."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "ONE WAY ONLY"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve someone *curious* about me.",
+        "My story is worth *asking* for."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

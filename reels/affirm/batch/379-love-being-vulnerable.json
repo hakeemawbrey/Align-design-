@@ -1,0 +1,78 @@
+{
+  "id": "379-love-being-vulnerable",
+  "title": "Being vulnerable",
+  "cover": "No *dark* side",
+  "keyword": "MUTUAL",
+  "caption": "there's no dark side of the moon. just a side we haven't seen",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "vulnerability",
+    "moon",
+    "astrology",
+    "affirmations",
+    "love"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE FAR SIDE · NOT DARK",
+      "lines": [
+        "There's no dark side of the *moon.*",
+        "The far side gets just as much *sunlight.*",
+        "We just never see it,",
+        "because the moon only shows us one face."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE SIDE YOU DON'T SHOW",
+      "lines": [
+        "Everyone has a side they *keep* turned away.",
+        "It isn't your *dark* side.",
+        "It's just the part nobody's seen yet.",
+        "Being vulnerable is letting *someone* look."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "The parts of me I *hide* are not dark.",
+        "I let the right person see all of me.",
+        "I'm *brave* enough to be seen."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "092-partner-taurus",
+  "title": "Taurus as a partner",
+  "cover": "A *Taurus* partner is a place",
+  "keyword": "MATCH",
+  "caption": "a taurus partner is a place, not just a person. warm sheets, a full fridge, the same kind voice",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurus",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "earthsign"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "partner",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · FIXED EARTH",
+      "lines": [
+        "A Taurus partner is a *place,*",
+        "not just a person.",
+        "Warm sheets. A full fridge.",
+        "The same *kind* voice every night."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth"
+      },
+      "header": "EARTH · STEADY GROUND",
+      "lines": [
+        "As an earth sign ruled by *Venus,*",
+        "they love with their *hands.*",
+        "Back rubs. Fixed taps.",
+        "Your favorite meal,",
+        "made without being *asked.*"
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "EARTH · THE STEADY SIGNS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am *steady,* and that's a gift.",
+        "My loyalty isn't slow.",
+        "It's built to *last.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

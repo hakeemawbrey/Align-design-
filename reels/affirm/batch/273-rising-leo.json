@@ -1,0 +1,110 @@
+{
+  "id": "273-rising-leo",
+  "title": "Leo rising",
+  "cover": "Leo rising falls for a *friend*",
+  "keyword": "SEVEN",
+  "caption": "leo rising lights up the room. your aquarius seventh house falls for the one who isn't dazzled",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "leorising",
+    "aquarius",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "rising",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO RISING · FIXED FIRE",
+      "lines": [
+        "Rooms get *warmer* when you walk in.",
+        "Leo rising, the sun on your face.",
+        "Everyone expects the *show.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 0,
+        "axis": true,
+        "axisAt": 1,
+        "rising": "leo"
+      },
+      "header": "YOUR SEVENTH HOUSE · AQUARIUS",
+      "lines": [
+        "But your seventh house, the one of *partners,*",
+        "sits opposite, in *Aquarius.*"
+      ],
+      "labels": [
+        {
+          "on": "h7",
+          "at": 0,
+          "text": "7TH HOUSE · PARTNERS"
+        },
+        {
+          "on": "dsc",
+          "at": 1,
+          "text": "DESCENDANT · 180° AWAY"
+        }
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "air"
+      },
+      "header": "FIRE · AIR",
+      "lines": [
+        "Cool air across from your *fire.*",
+        "So the one who gets you",
+        "isn't the one *clapping.*",
+        "It's the friend who's not impressed",
+        "and likes you *anyway.*"
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "FIRE NEEDS AIR"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *perform*",
+        "to be loved.",
+        "The *real* me is enough of a show."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

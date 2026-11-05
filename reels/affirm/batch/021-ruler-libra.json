@@ -1,0 +1,91 @@
+{
+  "id": "021-ruler-libra",
+  "title": "Libra is ruled by Venus",
+  "cover": "Libra, ruled by *Venus*",
+  "keyword": "CHART",
+  "caption": "you make people feel beautiful, libra. turn the mirror round once in a while",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "libra",
+    "venus",
+    "planetaryruler",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "ruler",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "LIBRA · RULED BY VENUS",
+      "lines": [
+        "Libra, the brightest planet in the sky is *yours.*",
+        "Venus, planet of love and beauty.",
+        "In Libra, she rules the space between *two* people."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♀ VENUS · AIR SIDE"
+        }
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 0
+      },
+      "header": "THE MIRROR",
+      "lines": [
+        "So you love like a *mirror.*",
+        "You see who someone could be",
+        "and *reflect* it back to them.",
+        "You make people feel beautiful."
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 0,
+          "text": "♀ · THE HAND MIRROR"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "YOUR HALF OF THE PAIR",
+      "lines": [
+        "Just turn the mirror *round* sometimes.",
+        "There are two people in every pair you make.",
+        "One of them is *you.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "101-sky-new-moon",
+  "title": "The new moon",
+  "cover": "Worth the *extra* days",
+  "keyword": "MOON",
+  "caption": "the moon needs two extra days to catch the sun, because the sun keeps moving. worth the wait",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "newmoon",
+    "moon",
+    "astrology",
+    "affirmations",
+    "newbeginnings"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · A CONJUNCTION",
+      "lines": [
+        "The moon circles us in twenty-seven days,",
+        "but needs two more to catch the *sun.*",
+        "Because the sun keeps *moving* too."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "ABOUT 29½ DAYS · SUN TO SUN"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 1
+      },
+      "header": "THE MEETING · EVERY MONTH",
+      "lines": [
+        "When it finally does,",
+        "that's the new moon.",
+        "Sun and moon in the same sign,",
+        "starting the month *together.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want someone who keeps *growing,*",
+        "and still comes to *meet* me.",
+        "I'm worth the extra days."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "007-love-waiting-for-a-text",
+  "title": "Waiting for a text",
+  "cover": "Light doesn't take *days*",
+  "keyword": "MUTUAL",
+  "caption": "sunlight crosses ninety-three million miles in eight minutes. a reply can cross a room",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "texting",
+    "dating",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "SUNLIGHT · EIGHT MINUTES",
+      "lines": [
+        "Sunlight takes about eight minutes to reach you.",
+        "It crosses ninety-three million *miles,*",
+        "and it still finds you, every *morning.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "EIGHT MINUTES TO YOU"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "STILL WAITING",
+      "lines": [
+        "So if you've been staring at your phone",
+        "for a reply that's taking *days,*",
+        "it isn't the *distance.*",
+        "People who want to reach you find a way."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't wait by the phone for *proof.*",
+        "I deserve someone who *replies*",
+        "like they're glad I wrote."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

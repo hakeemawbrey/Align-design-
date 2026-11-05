@@ -1,0 +1,359 @@
+[
+  {
+    "key": "firstdate-aries",
+    "title": "First date with an Aries",
+    "cover": "Don't take an Aries to *dinner*",
+    "caption": "don't take an aries to dinner. take them somewhere they can win",
+    "hashtags": ["aries", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · CARDINAL FIRE",
+        "lines": ["Don't take an Aries to *dinner.*", "Take them somewhere they can *win.*", "Mini golf. A climbing wall.", "A race to the end of the pier."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS",
+        "lines": ["Ruled by *Mars,* they're drawn to", "*energy* more than polish.", "And what really wins them?", "Saying you had fun, *out loud,*", "before the night is over."],
+        "labels": [{ "on": "planet", "at": 0, "text": "MARS · ENERGY AND NERVE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want someone who's *all in.*", "No games. No guessing.", "Just a *yes* I can feel."]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-taurus",
+    "title": "First date with a Taurus",
+    "cover": "How to win a *Taurus*",
+    "caption": "pick the place with the good bread. arrive on time. don't rush dessert",
+    "hashtags": ["taurus", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "mint" },
+        "header": "RULED BY VENUS",
+        "lines": ["Winning a Taurus is *simple,*", "and almost impossible to *fake.*", "They're ruled by *Venus,*", "and they fall in love through the *senses.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "VENUS · THE SENSES" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · FIXED EARTH",
+        "lines": ["So pick the place with the *good bread.*", "Arrive on time. Don't rush dessert.", "Let the night take as long", "as it *wants* to."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm worth a *slow* evening.", "The right one isn't checking the time.", "They're ordering *dessert.*"]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-gemini",
+    "title": "First date with a Gemini",
+    "cover": "A Gemini date needs *two* stops",
+    "caption": "a gemini first date should have at least two locations and one running joke",
+    "hashtags": ["gemini", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI · MUTABLE AIR",
+        "lines": ["A first date with a Gemini", "needs at least *two* locations.", "Coffee that turns into a walk.", "A walk that turns into a *bookshop.*"],
+        "labels": [{ "on": "sign", "at": 1, "text": "THE TWINS" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Ruled by *Mercury,* they're won by *talk.*", "Real questions. Weird tangents.", "A joke from the first ten minutes", "that comes *back* at the end."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I fall for the one", "who keeps me *talking*", "until they stack the *chairs.*"]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-cancer",
+    "title": "First date with a Cancer",
+    "cover": "How a *Cancer* falls for you",
+    "caption": "to win a cancer, remember one small thing they said. their sister's name. how they take their tea",
+    "hashtags": ["cancer", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": ["Here's how you win a Cancer:", "*remember* one small thing they said.", "Their sister's name. The song.", "How they take their *tea.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 4, "highlightAt": 0 },
+        "header": "THE FOURTH HOUSE · HOME",
+        "lines": ["Cancer is the sign of the *fourth house,*", "the house of home and family.", "So the best date won't *impress* them.", "It'll feel like somewhere they could *stay.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "4TH HOUSE · HOME" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need to be *dazzled.*", "I need to feel *safe*", "enough to laugh."]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-leo",
+    "title": "First date with a Leo",
+    "cover": "Dress up for a *Leo*",
+    "caption": "dress up for a leo first date. then give them one specific compliment and mean it",
+    "hashtags": ["leo", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · FIXED FIRE",
+        "lines": ["Dress up for a Leo first date.", "They will *notice.*", "But what really wins a Leo", "is a *specific* compliment.", "Not just cute. The way they tell a *story.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 5, "highlightAt": 0 },
+        "header": "THE FIFTH HOUSE · ROMANCE",
+        "lines": ["Leo is the sign of the *fifth house,*", "romance, play, and *joy.*", "So make it fun. Make it a little *grand.*", "And laugh at their jokes. *Really* laugh."],
+        "labels": [{ "on": "house", "at": 0, "text": "5TH HOUSE · ROMANCE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to want to be *adored.*", "The right one lights up", "when I *walk in.*"]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-virgo",
+    "title": "First date with a Virgo",
+    "cover": "What wins a *Virgo* on date one",
+    "caption": "nothing charms a virgo like a plan, and a follow-up text the next day",
+    "hashtags": ["virgo", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": ["Nothing charms a Virgo like a *plan.*", "The table booked. The route checked.", "The thing they mentioned once,", "*quietly* remembered."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Ruled by *Mercury,* they're listening", "to how you *think,* not just what you say.", "And the text you send the next day?", "That's the part they *keep.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "MERCURY · THE MIND" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Being *thoughtful* is attractive.", "I want someone", "who *notices,* like I do."]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-libra",
+    "title": "First date with a Libra",
+    "cover": "Take a Libra somewhere *beautiful*",
+    "caption": "a libra feels romance through the room first. then through how evenly you talk",
+    "hashtags": ["libra", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "RULED BY VENUS",
+        "lines": ["Take a Libra somewhere *beautiful.*", "Candles. A view. A playlist you chose.", "Ruled by *Venus,* they feel romance", "through the *room* first."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · CARDINAL AIR",
+        "lines": ["Then keep the conversation *even.*", "Ask as much as you share.", "A Libra falls for the person", "who makes the table feel *balanced.*"],
+        "labels": [{ "on": "sign", "at": 0, "text": "THE SCALES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm worth the *effort* of beauty.", "And I can like someone", "without it being *perfect.*"]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-scorpio",
+    "title": "First date with a Scorpio",
+    "cover": "No small talk with a *Scorpio*",
+    "caption": "skip the small talk with a scorpio. they can smell a script",
+    "hashtags": ["scorpio", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": ["Skip the small talk with a Scorpio.", "They can smell a *script.*", "Ask the question you're almost", "too *nervous* to ask."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "lilac" },
+        "header": "MARS · MODERN PLUTO",
+        "lines": ["Ruled by *Mars* and modern *Pluto,*", "they're drawn to *intensity.*", "Steady eye contact. A real answer.", "A little *mystery* left for later."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "WHAT WINS THEM",
+        "lines": ["Don't try to be *impressive.*", "Be honest, and a little *brave.*", "To a Scorpio,", "that's the whole *seduction.*"]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-sagittarius",
+    "title": "First date with a Sagittarius",
+    "cover": "Get *lost* with a Sagittarius",
+    "caption": "the best sagittarius first date starts with a wrong turn. go somewhere neither of you has been",
+    "hashtags": ["sagittarius", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": ["The best Sagittarius first date", "starts with a *wrong turn.*", "Somewhere neither of you has been.", "A food truck across town.", "A detour that becomes the *story.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 9, "highlightAt": 0 },
+        "header": "THE NINTH HOUSE · ADVENTURE",
+        "lines": ["Sagittarius is the sign of the *ninth house,*", "travel, big ideas, and belief.", "So talk about the trip you'd take,", "the thing you'd *never* say at work."],
+        "labels": [{ "on": "house", "at": 0, "text": "9TH HOUSE · TRAVEL" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want love that *laughs.*", "The right one feels like", "the start of an *adventure.*"]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-capricorn",
+    "title": "First date with a Capricorn",
+    "cover": "Be *early* for a Capricorn",
+    "caption": "be early for a capricorn. they read it as a kind of promise",
+    "hashtags": ["capricorn", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "RULED BY SATURN",
+        "lines": ["Be *early* for a Capricorn.", "Ruled by *Saturn,* the planet of time,", "they read you being on time", "as a kind of *promise.*"],
+        "labels": [{ "on": "planet", "at": 1, "text": "SATURN · THE PLANET OF TIME" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · CARDINAL EARTH",
+        "lines": ["Pick a classic place.", "Ask about their *goals,* and listen.", "Then go looking for their *dry* humor.", "It's in there, under the *blazer.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to take love *seriously.*", "The right one isn't scared off.", "They're *relieved.*"]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-aquarius",
+    "title": "First date with an Aquarius",
+    "cover": "Take an Aquarius to the *stars*",
+    "caption": "an aquarius first date belongs somewhere a little strange. a planetarium. a night market",
+    "hashtags": ["aquarius", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": ["An Aquarius first date belongs", "somewhere a little *strange.*", "A planetarium. A night market.", "Something they'll *think* about tomorrow."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac" },
+        "header": "SATURN · MODERN URANUS",
+        "lines": ["Ruled by *Saturn* and modern *Uranus,*", "they're drawn to the *original.*", "So tell them your strangest opinion.", "Ask theirs. Then *really* listen."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I fall for *minds* first.", "I want a best friend", "who also has a *crush* on me."]
+      }
+    ]
+  },
+  {
+    "key": "firstdate-pisces",
+    "title": "First date with a Pisces",
+    "cover": "Win a *Pisces* by the water",
+    "caption": "a pier at dusk, rain on a window, live music in a tiny room. that's a pisces first date",
+    "hashtags": ["pisces", "firstdate", "datingtips", "zodiaclove", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["Want a Pisces to fall for you?", "Find some *water.*", "A pier at dusk. Rain on a window.", "Live music in a *tiny* room.", "Somewhere the world goes *soft.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "lilac" },
+        "header": "JUPITER · MODERN NEPTUNE",
+        "lines": ["Ruled by *Jupiter* and modern *Neptune,*", "they're won by *imagination.*", "Ask what they dream about.", "Then don't laugh. *Lean in.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "JUPITER · TRADITIONAL RULER" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My dreamy heart is *safe* here.", "I want someone", "who *believes* in the magic too."]
+      }
+    ]
+  }
+]

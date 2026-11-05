@@ -1,0 +1,79 @@
+{
+  "id": "314-misses-pisces",
+  "title": "When a Pisces misses you",
+  "cover": "You're in a *Pisces* dream",
+  "keyword": "VENUS",
+  "caption": "when a pisces misses you, you show up in their dreams, and in every song on the radio",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "pisces",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "When a Pisces misses you,",
+        "you start showing up in their *dreams.*",
+        "And in every song on the radio,",
+        "even the ones that *aren't* sad."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "lilac"
+      },
+      "header": "JUPITER · MODERN NEPTUNE",
+      "lines": [
+        "Ruled by *Jupiter* and modern *Neptune,*",
+        "they write the message *ten* times",
+        "and send none of them.",
+        "The longing goes into their *art.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *drown* to love.",
+        "I can miss someone",
+        "and still come up for *air.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

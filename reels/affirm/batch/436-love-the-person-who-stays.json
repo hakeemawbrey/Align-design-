@@ -1,0 +1,75 @@
+{
+  "id": "436-love-the-person-who-stays",
+  "title": "The person who stays",
+  "cover": "The star that *stays*",
+  "keyword": "MUTUAL",
+  "caption": "the north star isn't the brightest. it's the one that doesn't move",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "northstar",
+    "relationships",
+    "astrology",
+    "affirmations",
+    "love"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "POLARIS · THE NORTH STAR",
+      "lines": [
+        "The North Star isn't the *brightest* star.",
+        "Dozens of stars outshine it.",
+        "It's famous for one thing:",
+        "it *stays.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "header": "THE SKY TURNS AROUND IT",
+      "lines": [
+        "The whole sky turns around it all night,",
+        "and it barely *moves.*",
+        "Sailors steered home by it for centuries.",
+        "The person who stays won't always be",
+        "the *brightest* thing in the room."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I choose people who *stay.*",
+        "I can be the one who stays, *too.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

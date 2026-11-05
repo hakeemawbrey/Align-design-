@@ -1,0 +1,102 @@
+{
+  "id": "429-pair-gemini-virgo",
+  "title": "Gemini and Virgo",
+  "cover": "Gemini + Virgo · *square*",
+  "keyword": "MATCH",
+  "caption": "mercury rules both of you and you're still talking past each other",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "gemini",
+    "virgo",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "BOTH RULED BY MERCURY",
+      "lines": [
+        "Mercury rules them *both,*",
+        "and they still talk past each other.",
+        "Gemini thinks out loud.",
+        "Virgo thinks in *lists.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MERCURY · THE MESSENGER"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "virgo"
+        ],
+        "pairAt": 0
+      },
+      "header": "GEMINI · VIRGO · SQUARE",
+      "lines": [
+        "Ninety degrees between them: a *square.*",
+        "Both mutable, so both keep *adjusting.*",
+        "Air and earth, idea and detail."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "earth"
+      },
+      "header": "WORK WORTH DOING",
+      "lines": [
+        "Gemini teaches Virgo to *play.*",
+        "Virgo teaches Gemini to *finish.*",
+        "The friction: nerves.",
+        "Two busy minds can spiral."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *fix* this tonight.",
+        "I can just be *here.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

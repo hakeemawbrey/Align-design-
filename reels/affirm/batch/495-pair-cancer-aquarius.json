@@ -1,0 +1,91 @@
+{
+  "id": "495-pair-cancer-aquarius",
+  "title": "Cancer and Aquarius",
+  "cover": "Cancer and Aquarius, *adjusting*",
+  "keyword": "MATCH",
+  "caption": "cancer wants to come home to you. aquarius wants to come home and still feel free. both can be true",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "cancer",
+    "aquarius",
+    "quincunx",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "CLOSE · FREE",
+      "lines": [
+        "One of you wants to be *closer.*",
+        "The other wants room to *breathe.*",
+        "That's Cancer and Aquarius."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "They sit a *quincunx* apart.",
+        "Water and air. Cardinal and fixed.",
+        "No shared element, no shared *mode.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Cancer gives Aquarius a *place* to land.",
+        "Aquarius gives Cancer *perspective.*",
+        "The friction: space read as *distance.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Your freedom isn't you *leaving.*",
+        "My need isn't me *holding on.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

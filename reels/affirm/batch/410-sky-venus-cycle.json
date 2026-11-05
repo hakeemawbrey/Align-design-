@@ -1,0 +1,83 @@
+{
+  "id": "410-sky-venus-cycle",
+  "title": "The eight-year Venus cycle",
+  "cover": "*Venus* draws a flower",
+  "keyword": "PASSING",
+  "caption": "every eight years venus traces five petals around us, then starts over. love rhymes",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "venuscycle",
+    "venus",
+    "astrology",
+    "affirmations",
+    "patterns"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "loop",
+      "header": "EIGHT YEARS · FIVE PETALS",
+      "lines": [
+        "Every eight years, *Venus* draws a flower.",
+        "Five times, it passes between us and the sun,",
+        "and those five meetings make *petals.*"
+      ],
+      "labels": [
+        {
+          "on": "loop",
+          "at": 2,
+          "text": "ONE MEETING · ONE PETAL"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "THE SAME SKY · EIGHT YEARS ON",
+      "lines": [
+        "Then it starts over, almost *exactly.*",
+        "Every eight years on your birthday,",
+        "Venus sits near where it was",
+        "the day you were born.",
+        "So love *rhymes.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can let the pattern *repeat*",
+        "and still write a new *ending.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

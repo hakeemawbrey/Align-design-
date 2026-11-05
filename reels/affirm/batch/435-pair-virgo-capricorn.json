@@ -1,0 +1,89 @@
+{
+  "id": "435-pair-virgo-capricorn",
+  "title": "Virgo and Capricorn",
+  "cover": "Virgo and Capricorn, *bedrock*",
+  "keyword": "MATCH",
+  "caption": "virgo and capricorn show love with a shared calendar and they both find it romantic",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgo",
+    "capricorn",
+    "earthsigns",
+    "trine",
+    "zodiaccompatibility"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth"
+      },
+      "header": "EARTH · EARTH",
+      "lines": [
+        "Love you could set your *watch* by.",
+        "That's Virgo and Capricorn."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "virgo",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "TRINE · 120°",
+      "lines": [
+        "Two earth signs, a *trine* apart,",
+        "the angle of *ease.*",
+        "Virgo adapts. Capricorn *leads.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Virgo gives Capricorn the *small* kindnesses.",
+        "Capricorn gives Virgo a future to *trust.*",
+        "The risk is all work, no *play.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Our love is *built,* not found.",
+        "And I'm allowed to *enjoy* it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "168-situationship-gemini",
+  "title": "Gemini in a situationship",
+  "cover": "Gemini, you deserve *words*",
+  "keyword": "MUTUAL",
+  "caption": "the texting is amazing, the banter is unreal, and nobody has said what this is. gemini, you deserve words",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "gemini",
+    "situationship",
+    "mixedsignals",
+    "astrology",
+    "dating"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · MUTABLE AIR",
+      "lines": [
+        "Gemini, the texting is *amazing.*",
+        "The banter, the voice notes at midnight.",
+        "That's why it's so hard to see",
+        "that nothing's actually been *said.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Ruled by *Mercury,* you love in words.",
+        "So you deserve some.",
+        "Not hints. Not *vibes.*",
+        "A real sentence about what this is."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MERCURY · WORDS · TALK"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 2
+      },
+      "header": "CLEAR IS KIND",
+      "lines": [
+        "You deserve to know where you *stand.*",
+        "Clear is kind.",
+        "And you're allowed to ask for *clear.*"
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 2,
+          "text": "IN LINE · BOTH SAYING IT"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

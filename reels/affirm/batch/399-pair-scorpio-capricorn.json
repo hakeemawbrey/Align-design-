@@ -1,0 +1,92 @@
+{
+  "id": "399-pair-scorpio-capricorn",
+  "title": "Scorpio and Capricorn",
+  "cover": "Scorpio and Capricorn, *power*",
+  "keyword": "MATCH",
+  "caption": "scorpio and capricorn both trust slowly. once they do, it's a fortress",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "scorpio",
+    "capricorn",
+    "sextile",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "SLOW TRUST",
+      "lines": [
+        "Nobody trusts slower than these two.",
+        "Scorpio and Capricorn, *testing* the ice.",
+        "Once they do, it's a *fortress.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "scorpio",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "Sixty degrees, an *easy* sextile.",
+        "Water and earth, the *fertile* pair.",
+        "Fixed loyalty, cardinal drive."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "earth"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Scorpio gives Capricorn *feeling.*",
+        "Capricorn gives Scorpio *safety.*",
+        "The friction: two people guarding the gate.",
+        "Take turns *opening* it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Once I *trust* you,",
+        "I can let my guard *down.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -52,6 +52,35 @@ Each reel gives you:
 The voice is cached per script, so re-rendering after an art change doesn't
 re-synthesise it.
 
+## The batch: hundreds of reels from the content bank
+
+`bank/*.json` holds reel *bodies* written to the brief in [BANK.md](BANK.md):
+Venus, Mars, Moon and Mercury signs, rising signs, all 78 sign pairs, houses,
+elements, moon phases, sky events, relationship affirmations and more.
+`generate.mjs` gives each body an ending and a voice, and writes
+`batch/<id>.json` plus `batch/manifest.csv`:
+
+```bash
+node reels/affirm/generate.mjs --check     # validate every bank file
+node reels/affirm/generate.mjs             # write batch/ (500 scripts) + manifest
+node reels/affirm/render.mjs --dir reels/affirm/batch --jobs 4 --lean --skip-existing
+```
+
+- **Endings, mixed:** 40% comment for a DM (the body's keyword), 25% "Align with
+  the right person", 20% "join the beta", 15% "vote your city".
+- **Voices, rotated:** ten Kokoro voices (eight women, two men; US and UK), about
+  fifty reels each, so you can see which one holds viewers. `manifest.csv` records
+  each reel's family, ending, keyword and voice.
+- `--lean` keeps only the mp4, cover and caption; `--skip-existing` resumes a
+  stopped run. A reel takes about 2.5 CPU-minutes, so 500 is an overnight job.
+
+**On a Mac, one command** installs everything and renders the batch to
+`~/Desktop/Align Reels` (safe to re-run; it picks up where it stopped):
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/hakeemawbrey/align-design-/HEAD/reels/affirm/mac/render-batch.sh)"
+```
+
 ## Script contract
 
 ```json

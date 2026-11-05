@@ -1,0 +1,88 @@
+{
+  "id": "451-pair-virgo-pisces",
+  "title": "Virgo and Pisces",
+  "cover": "Virgo and Pisces, *the other half*",
+  "keyword": "MATCH",
+  "caption": "virgo is the helper, pisces is the healer. across the wheel, they're each other's rest",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "virgo",
+    "pisces",
+    "opposites",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "virgo",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "OPPOSITION · 180°",
+      "lines": [
+        "The helper and the healer sit *opposite.*",
+        "Earth and water, both mutable,",
+        "both here to *serve.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "water"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Virgo gives Pisces solid *ground.*",
+        "Pisces gives Virgo *permission* to let go."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "The work: Virgo can *over-fix,*",
+        "Pisces can *drift* away to avoid it.",
+        "Meet in the *middle* of the wheel."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *fix* you",
+        "to love you *well.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

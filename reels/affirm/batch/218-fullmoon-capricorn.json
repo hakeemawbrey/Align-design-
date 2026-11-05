@@ -1,0 +1,82 @@
+{
+  "id": "218-fullmoon-capricorn",
+  "title": "Full moon in Capricorn",
+  "cover": "Full moon in *Capricorn*",
+  "keyword": "MOON",
+  "caption": "a capricorn full moon asks who's holding you. not who you're holding up. who's holding you",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "fullmoon",
+    "fullmoonincapricorn",
+    "capricorn",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "FULL MOON IN CAPRICORN",
+      "lines": [
+        "A Capricorn full moon asks who's *holding* you.",
+        "Not who you're holding up.",
+        "Who's holding *you.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "CANCER SUN · CAPRICORN MOON",
+      "lines": [
+        "The sun is opposite, in *Cancer,*",
+        "soft and close to home.",
+        "The moon is in the sign of *structure.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 5
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release being the *strong* one",
+        "all of the time.",
+        "Love is not a weight I carry alone.",
+        "I can be held",
+        "without losing my *footing.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

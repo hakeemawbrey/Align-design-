@@ -1,0 +1,95 @@
+{
+  "id": "074-mars-aquarius",
+  "title": "Mars in Aquarius",
+  "cover": "Mars in Aquarius *thinks* first",
+  "keyword": "MARS",
+  "caption": "mars in aquarius will argue for a stranger all night, then go quiet about its own hurt. feelings count too",
+  "cta": "comment MARS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "marsinaquarius",
+    "aquarius",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "MARS IN AQUARIUS",
+      "lines": [
+        "Injustice can keep you up all *night.*",
+        "Your own hurt, though, goes *quiet.*",
+        "That's Mars in Aquarius."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "Aquarius is fixed air,",
+        "so your desire lives in your *mind.*",
+        "You chase the person who surprises you,",
+        "and in a fight you reach for logic",
+        "when what you really feel is *hurt.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "AQUARIUS · THE WATER BEARER"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♂",
+        "planetSign": "aquarius",
+        "planetAt": 0,
+        "highlight": 11,
+        "highlightAt": 2
+      },
+      "header": "THE ELEVENTH HOUSE",
+      "lines": [
+        "Your feelings count,",
+        "even the *illogical* ones.",
+        "The right person will be your *friend* first,",
+        "and let you be free and close at once."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 2,
+          "text": "11TH HOUSE · FRIENDS"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MARS",
+      "opts": {
+        "face": "Mars",
+        "sub": "HOW YOU LOVE OUT LOUD",
+        "glyph": "♂",
+        "revealAt": 1
+      },
+      "pill": "YOUR MARS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MARS*",
+        "and I'll send you what yours wants,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

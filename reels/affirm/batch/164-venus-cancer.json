@@ -1,0 +1,89 @@
+{
+  "id": "164-venus-cancer",
+  "title": "Venus in Cancer",
+  "cover": "Venus in Cancer wants *home*",
+  "keyword": "VENUS",
+  "caption": "venus in cancer knows how everyone takes their tea. it would love for someone to know theirs",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "venusincancer",
+    "cancer",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "VENUS IN CANCER",
+      "lines": [
+        "Who remembers how *you* take your tea?",
+        "You know everyone else's by heart.",
+        "That's the quiet question of Venus in *Cancer.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♀",
+        "planetSign": "cancer",
+        "planetAt": 0,
+        "highlight": 4,
+        "highlightAt": 1
+      },
+      "header": "CANCER · THE FOURTH HOUSE",
+      "lines": [
+        "Cancer is ruled by the Moon",
+        "and belongs to the fourth house, *home.*",
+        "So you love like a shell around someone,",
+        "and you need one around *you,* too."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 1,
+          "text": "4TH HOUSE · HOME"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to be *cared for*",
+        "the way I care for everyone else.",
+        "My softness is a *home,*",
+        "and I get to choose who stays."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

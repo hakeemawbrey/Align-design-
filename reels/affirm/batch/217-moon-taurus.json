@@ -1,0 +1,86 @@
+{
+  "id": "217-moon-taurus",
+  "title": "Moon in Taurus",
+  "cover": "Moon in Taurus needs *comfort*",
+  "keyword": "MOON",
+  "caption": "moon in taurus feels safest on a sunday with nowhere to be. same blanket, same person, same soup",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "moonintaurus",
+    "taurus",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "MOON IN TAURUS",
+      "lines": [
+        "A Sunday with *nowhere* to be.",
+        "That's your favorite feeling.",
+        "Same blanket. Same person. Same *soup.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE MOON · EXALTED IN TAURUS",
+      "lines": [
+        "The Moon is *exalted* in Taurus,",
+        "the sign where it rests easiest.",
+        "So you feel safe through your *senses:*",
+        "a hand on your back, a full fridge,",
+        "a plan that doesn't change last minute."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☽ · EXALTED IN TAURUS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Needing *stability* isn't boring.",
+        "I'm allowed to want what lasts.",
+        "My calm is worth *protecting.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

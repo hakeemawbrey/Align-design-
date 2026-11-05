@@ -1,0 +1,91 @@
+{
+  "id": "433-pair-gemini-sagittarius",
+  "title": "Gemini and Sagittarius",
+  "cover": "Gemini + Sagittarius · *opposites*",
+  "keyword": "MATCH",
+  "caption": "facts and meaning, straight across the wheel. somebody has to say stay",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "gemini",
+    "sagittarius",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "sagittarius"
+        ],
+        "pairAt": 1
+      },
+      "header": "GEMINI · SAGITTARIUS · 180°",
+      "lines": [
+        "Facts on one side, *meaning* on the other.",
+        "Gemini and Sagittarius sit exactly opposite,",
+        "a hundred and eighty degrees."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "fire"
+      },
+      "header": "AIR · FIRE · BOTH MUTABLE",
+      "lines": [
+        "An *opposition* of air and fire,",
+        "both mutable, both restless.",
+        "Gemini gives Sagittarius the *details.*",
+        "Sagittarius gives Gemini the *big picture.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION · COMMITMENT",
+      "lines": [
+        "The friction: you both keep the door *open.*",
+        "Somebody has to say *stay.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My freedom is *sweeter*",
+        "with someone to tell it to."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

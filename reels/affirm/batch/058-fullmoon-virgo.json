@@ -1,0 +1,80 @@
+{
+  "id": "058-fullmoon-virgo",
+  "title": "Full moon in Virgo",
+  "cover": "Full moon in *Virgo*",
+  "keyword": "MOON",
+  "caption": "the full moon in virgo hands you a checklist of everything you've been fixing, in you and in them",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "fullmoon",
+    "fullmooninvirgo",
+    "virgo",
+    "astrology",
+    "perfectionism"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "FULL MOON IN VIRGO",
+      "lines": [
+        "The full moon in Virgo hands you a *checklist.*",
+        "Everything you've been *fixing,*",
+        "in yourself and in them."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "pisces",
+          "virgo"
+        ],
+        "pairAt": 0
+      },
+      "header": "PISCES SUN · VIRGO MOON",
+      "lines": [
+        "Across the sky, the sun is in *Pisces,*",
+        "asking you to soften,",
+        "while the moon wants it all in *order.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 5
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release the need to be *perfect*",
+        "before I can be loved.",
+        "Love isn't a project I have to *finish.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

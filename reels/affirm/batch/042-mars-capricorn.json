@@ -1,0 +1,104 @@
+{
+  "id": "042-mars-capricorn",
+  "title": "Mars in Capricorn",
+  "cover": "Mars in Capricorn *climbs*",
+  "keyword": "MARS",
+  "caption": "mars in capricorn wants people the way it climbs mountains. slowly, on purpose, all the way up",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "marsincapricorn",
+    "capricorn",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "MARS IN CAPRICORN",
+      "lines": [
+        "You want people the way you climb *mountains:*",
+        "slowly, on purpose, all the way up."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "THE SEA-GOAT"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS · EXALTED IN CAPRICORN",
+      "lines": [
+        "Mars is *exalted* in Capricorn,",
+        "the sign where its fire learns *patience.*",
+        "Your wanting is slow, and built to *last.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♂ · EXALTED"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "CAPRICORN · RULED BY SATURN",
+      "lines": [
+        "In a fight you go calm and practical,",
+        "which can look cold, but it's *care.*",
+        "You need someone who knows the difference."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My feelings are not a *problem* to solve.",
+        "I can let someone see me soft.",
+        "Patience is my kind of *passion.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

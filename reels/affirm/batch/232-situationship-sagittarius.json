@@ -1,0 +1,85 @@
+{
+  "id": "232-situationship-sagittarius",
+  "title": "Sagittarius in a situationship",
+  "cover": "Sagittarius, free *and* chosen",
+  "keyword": "MUTUAL",
+  "caption": "no labels sounded like freedom, sagittarius. something that never grows is just a holding pattern",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "sagittarius",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "Sagittarius, *no labels* sounded like freedom.",
+        "No pressure. No plans.",
+        "Just wherever the night goes."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER",
+      "lines": [
+        "But *Jupiter* rules you, the planet of growth.",
+        "And something that never grows",
+        "isn't freedom. It's a *holding* pattern.",
+        "You can be free *and* chosen."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "JUPITER · GROWTH"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve an *adventure* with someone,",
+        "not someone I'm always guessing about.",
+        "Honest is my *language.* I can ask for it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

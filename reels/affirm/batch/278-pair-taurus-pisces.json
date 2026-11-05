@@ -1,0 +1,90 @@
+{
+  "id": "278-pair-taurus-pisces",
+  "title": "Taurus and Pisces",
+  "cover": "Taurus + Pisces · *sextile*",
+  "keyword": "MATCH",
+  "caption": "pisces dreams the house, taurus builds it, and somebody answers plainly",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "taurus",
+    "pisces",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "pisces"
+        ],
+        "pairAt": 2
+      },
+      "header": "TAURUS · PISCES · SEXTILE",
+      "lines": [
+        "Pisces dreams it. Taurus *builds* it.",
+        "Two signs apart, sixty degrees:",
+        "a gentle *sextile.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "water"
+      },
+      "header": "FIXED EARTH · MUTABLE WATER",
+      "lines": [
+        "Fixed earth and mutable water.",
+        "Taurus gives Pisces solid *ground.*",
+        "Pisces gives Taurus *wonder*",
+        "and a softer way to see."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "THE FRICTION · THE FOG",
+      "lines": [
+        "The friction: Pisces drifts,",
+        "and Taurus wants a *straight* answer.",
+        "Give it, even when it's *hard.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My dreams deserve *ground.*",
+        "My ground deserves a little *magic.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

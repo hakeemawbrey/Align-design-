@@ -1,0 +1,78 @@
+{
+  "id": "264-situationship-scorpio",
+  "title": "Scorpio in a situationship",
+  "cover": "Scorpio, you don't do *halfway*",
+  "keyword": "MUTUAL",
+  "caption": "scorpio can feel what's not being said. you're not paranoid, you're perceptive",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "scorpio",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · FIXED WATER",
+      "lines": [
+        "Scorpio, you don't do *halfway.*",
+        "You love all the way down.",
+        "So something only *half* there",
+        "keeps you up at night."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "ALL · OR NOTHING",
+      "lines": [
+        "You can feel what's not being said.",
+        "You're not paranoid. You're *perceptive.*",
+        "And you deserve someone",
+        "with nothing to *hide.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve the *whole* truth.",
+        "I don't have to live on pieces.",
+        "My depth deserves a *match.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

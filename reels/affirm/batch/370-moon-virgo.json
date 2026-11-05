@@ -1,0 +1,96 @@
+{
+  "id": "370-moon-virgo",
+  "title": "Moon in Virgo",
+  "cover": "Moon in Virgo needs *order*",
+  "keyword": "MOON",
+  "caption": "moon in virgo cleans the kitchen when its heart is a mess. order on the outside, room on the inside",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mooninvirgo",
+    "virgo",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "MOON IN VIRGO",
+      "lines": [
+        "When your heart is a mess,",
+        "you clean the *kitchen.*",
+        "Order on the outside",
+        "makes room on the *inside.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 1,
+          "text": "VIRGO · MUTABLE EARTH"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☽",
+        "planetSign": "virgo",
+        "planetAt": 0,
+        "highlight": 6,
+        "highlightAt": 1
+      },
+      "header": "VIRGO · THE SIXTH HOUSE",
+      "lines": [
+        "Virgo belongs to the sixth house,",
+        "the house of routines and care.",
+        "So you feel safe in the small things:",
+        "a plan, a made bed, the usual *goodnight.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 1,
+          "text": "6TH HOUSE · ROUTINES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *rest* before it's perfect.",
+        "I can be loved *in progress.*",
+        "My attention is a way of *loving.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "155-pair-virgo-scorpio",
+  "title": "Virgo and Scorpio",
+  "cover": "Virgo and Scorpio, *quietly deep*",
+  "keyword": "MATCH",
+  "caption": "scorpio hides the feeling. virgo finds it anyway, and folds it like laundry. that's love",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgo",
+    "scorpio",
+    "sextile",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · VIRGO",
+      "lines": [
+        "Scorpio hides the *feeling.*",
+        "Virgo finds it anyway,",
+        "and handles it with *care.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "virgo",
+          "scorpio"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "They sit a *sextile* apart.",
+        "Earth and water, the elements that *grow.*",
+        "Mutable Virgo bends. Fixed Scorpio *holds.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "water"
+      },
+      "header": "WHAT EACH BRINGS",
+      "lines": [
+        "Virgo gives Scorpio a steady *routine.*",
+        "Scorpio gives Virgo *permission* to feel.",
+        "The friction: analysis can feel like *probing.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can let someone all the way *in.*",
+        "Being *known* is safe here."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

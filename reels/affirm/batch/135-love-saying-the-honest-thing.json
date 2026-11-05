@@ -1,0 +1,83 @@
+{
+  "id": "135-love-saying-the-honest-thing",
+  "title": "Saying the honest thing",
+  "cover": "Say it in *full* light",
+  "keyword": "MUTUAL",
+  "caption": "the full moon is just the moon facing the sun straight on. that's all honesty is",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "honesty",
+    "fullmoon",
+    "astrology",
+    "affirmations",
+    "communication"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON · FACING THE SUN",
+      "lines": [
+        "A full moon hides *nothing.*",
+        "It's the moon facing the sun straight on,",
+        "every crater *showing.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "OPPOSITE THE SUN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE HONEST THING",
+      "lines": [
+        "That's what saying the honest thing feels like.",
+        "*Exposed.* Like everyone can see the craters.",
+        "But it's the only night",
+        "the moon gets seen *whole.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I say what I *mean,* gently.",
+        "The right person can hold my *truth.*",
+        "I'd rather be seen than stay *hidden.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

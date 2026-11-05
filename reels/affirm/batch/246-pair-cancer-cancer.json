@@ -1,0 +1,91 @@
+{
+  "id": "246-pair-cancer-cancer",
+  "title": "Cancer and Cancer",
+  "cover": "Cancer + Cancer · *conjunction*",
+  "keyword": "MATCH",
+  "caption": "double cancer: the kettle is always on and everyone's waiting to be asked",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "cancer",
+    "cancercompatibility",
+    "zodiaccompatibility",
+    "astrology",
+    "synastry"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · CANCER",
+      "lines": [
+        "Double Cancer means the *kettle* is always on.",
+        "You build a home before you make plans."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "cancer"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "One sign, twice: a *conjunction.*",
+        "Cardinal water, ruled by the *Moon.*",
+        "You feel each other's tides."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "THE FRICTION · TWO TIDES",
+      "lines": [
+        "You give each other *belonging,*",
+        "the kind that tastes like home cooking.",
+        "The friction: two moods at once,",
+        "and both waiting to be *asked.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'll ask how you *are.*",
+        "I'll tell you how I *am.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

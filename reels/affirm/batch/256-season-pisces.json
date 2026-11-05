@@ -1,0 +1,82 @@
+{
+  "id": "256-season-pisces",
+  "title": "Pisces season in love",
+  "cover": "*Pisces* season: let it go",
+  "keyword": "CHART",
+  "caption": "the last sign before the zodiac starts again. forgive, cry at the film, go in with empty hands",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "piscesseason",
+    "pisces",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☉",
+        "planetSign": "pisces",
+        "planetAt": 1
+      },
+      "header": "PISCES SEASON · FEB 19 – MAR 20",
+      "lines": [
+        "The twelfth sign is the *softest* one.",
+        "Pisces, the last stop",
+        "before the zodiac starts *again.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☉ THE SUN · IN PISCES"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "So this month asks everyone to *forgive.*",
+        "Not to forget. To forgive,",
+        "and let the old year go out with the *tide.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "LET IT GO OUT",
+      "lines": [
+        "Close what needs closing, *gently.*",
+        "Write the letter you won't send.",
+        "Then walk into the new year",
+        "with *empty* hands, ready to hold something."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

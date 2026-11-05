@@ -1,0 +1,85 @@
+{
+  "id": "340-moon-pisces",
+  "title": "Moon in Pisces",
+  "cover": "Moon in Pisces needs *quiet*",
+  "keyword": "MOON",
+  "caption": "moon in pisces walks into a room and feels everyone in it. sometimes it has to go dark to refill",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mooninpisces",
+    "pisces",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "MOON IN PISCES",
+      "lines": [
+        "You walk into a room",
+        "and *feel* everyone in it.",
+        "The Moon in Pisces has very *thin walls.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "THE NEW MOON · REST",
+      "lines": [
+        "So, like the new moon,",
+        "sometimes you go *dark* to refill.",
+        "Music, a bath, a long nap, no questions.",
+        "You feel safe with someone gentle",
+        "who doesn't take your quiet *personally.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "NEW MOON · DARK"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can feel deeply without *drowning.*",
+        "Not every feeling in the room is *mine.*",
+        "I'm allowed to rest in soft places."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

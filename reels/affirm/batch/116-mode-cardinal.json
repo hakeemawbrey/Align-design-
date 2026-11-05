@@ -1,0 +1,86 @@
+{
+  "id": "116-mode-cardinal",
+  "title": "Cardinal signs in love",
+  "cover": "*Cardinal* signs in love",
+  "keyword": "MATCH",
+  "caption": "aries, cancer, libra, capricorn. cardinal signs start every season, and most of their love stories",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "cardinalsigns",
+    "modalities",
+    "aries",
+    "capricorn",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "libra"
+        ],
+        "pairAt": 2
+      },
+      "header": "CARDINAL · THE STARTERS",
+      "lines": [
+        "Every season starts with a *cardinal* sign.",
+        "Aries, Cancer, Libra and Capricorn",
+        "each begin on an *equinox* or a solstice."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 2,
+          "text": "ARIES · LIBRA · EQUINOXES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FIRST MOVE",
+      "lines": [
+        "So in love, they make the *first move.*",
+        "They text first, plan first,",
+        "say how they feel first.",
+        "It isn't impatience.",
+        "It's how they *start* things."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to go *first.*",
+        "And I'm allowed to be *chosen* back,",
+        "without doing all the work."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

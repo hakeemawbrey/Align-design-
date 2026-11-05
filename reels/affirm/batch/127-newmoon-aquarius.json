@@ -1,0 +1,79 @@
+{
+  "id": "127-newmoon-aquarius",
+  "title": "New moon in Aquarius",
+  "cover": "New moon in *Aquarius*",
+  "keyword": "MOON",
+  "caption": "aquarius carries water but it's an air sign. invite someone who likes your strange parts on purpose",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "newmoon",
+    "newmooninaquarius",
+    "aquarius",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · THE WATER BEARER",
+      "lines": [
+        "Aquarius carries water,",
+        "but it's an *air* sign.",
+        "It pours what it has",
+        "out for *everyone.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · AQUARIUS",
+      "lines": [
+        "With the sun and moon in Aquarius,",
+        "invite love that starts as *friendship*",
+        "and stays that way.",
+        "Someone who likes your *strange* parts",
+        "on purpose."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to be *ordinary* to be loved.",
+        "My space and my heart",
+        "can live in the same *house.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

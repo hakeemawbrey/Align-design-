@@ -1,0 +1,85 @@
+{
+  "id": "345-morning-leo",
+  "title": "Good morning, Leo",
+  "cover": "Good morning, *Leo*",
+  "keyword": "CHART",
+  "caption": "good morning leo. your ruler just came up over the horizon, so let today start warm",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "leo",
+    "goodmorning",
+    "morningaffirmations",
+    "astrology",
+    "selflove"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "GOOD MORNING · LEO",
+      "lines": [
+        "Good morning, Leo. Your ruler just *rose.*",
+        "The *Sun* came up for everyone,",
+        "but it rules your sign."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "THE SUN · RULER OF LEO"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "So let today start *warm.*",
+        "No performing. No proving.",
+        "Just you, with the light on."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *earn* attention.",
+        "I deserve to be adored",
+        "on my quiet days too.",
+        "My heart is *generous,* and so is love."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

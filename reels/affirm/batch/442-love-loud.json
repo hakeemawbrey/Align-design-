@@ -1,0 +1,83 @@
+{
+  "id": "442-love-loud",
+  "title": "Loud love",
+  "cover": "Love that casts a *shadow*",
+  "keyword": "CHART",
+  "caption": "venus can get bright enough to cast a shadow. some love is meant to be seen",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "loudlove",
+    "venus",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS · AT ITS BRIGHTEST",
+      "lines": [
+        "Venus can shine so *brightly*",
+        "it casts a *shadow* on earth.",
+        "On a dark night, far from city lights,",
+        "you can see your own shadow by it."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "VENUS · CASTS SHADOWS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "LOUD LOVE",
+      "lines": [
+        "Some love is meant to be *seen.*",
+        "It posts you. It introduces you.",
+        "It says your name in *rooms*",
+        "you're not in."
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to be a *secret.*",
+        "I love out loud,",
+        "and I'm loved out loud *back.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

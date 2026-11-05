@@ -1,0 +1,87 @@
+{
+  "id": "009-element-earth-water",
+  "title": "Earth and water",
+  "cover": "*Earth* and water in love",
+  "keyword": "MATCH",
+  "caption": "water gives earth something to grow. earth gives water a place to rest. a classic for a reason",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "earthsigns",
+    "watersigns",
+    "compatibility",
+    "elements",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "water"
+      },
+      "header": "EARTH · WATER",
+      "lines": [
+        "Water gives earth something to *grow.*",
+        "Earth gives water a place to *rest.*",
+        "It's a classic match for a reason."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "cancer"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE OR OPPOSITE",
+      "lines": [
+        "They sit a *sextile* or opposition apart,",
+        "and both need to feel *safe* first.",
+        "Earth makes feelings feel solid.",
+        "Water makes routine feel *tender.*"
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 0,
+          "text": "TAURUS · CANCER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want a love that's *steady*",
+        "and still deep enough to *swim* in."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

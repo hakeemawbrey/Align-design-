@@ -1,0 +1,77 @@
+{
+  "id": "176-dear-virgo",
+  "title": "Dear Virgo",
+  "cover": "Dear Virgo, you *noticed*",
+  "keyword": "CHART",
+  "caption": "for the virgo who had the tissues out before anyone started crying",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "virgo",
+    "loveletter",
+    "zodiaclove",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "dear",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "DEAR VIRGO · MUTABLE EARTH",
+      "lines": [
+        "Dear Virgo, you noticed they were cold",
+        "before they *knew* it themselves.",
+        "That's how you love. In *details.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "*Mercury* gave you a mind that fixes things.",
+        "You show up with the answer",
+        "before anyone *asks.*",
+        "Put this one down, though:",
+        "the belief that you have to be *useful*",
+        "to be kept."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm loved for who I am,",
+        "not for what I *fix.*",
+        "I'm allowed to just be *here.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

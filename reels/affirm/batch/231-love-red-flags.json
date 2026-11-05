@@ -1,0 +1,86 @@
+{
+  "id": "231-love-red-flags",
+  "title": "Red flags you explained away",
+  "cover": "Red from a *distance*",
+  "keyword": "PASSING",
+  "caption": "mars is red because its dust is rusting, and you can tell from your backyard",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "redflags",
+    "mars",
+    "astrology",
+    "affirmations",
+    "dating"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS · THE RED PLANET",
+      "lines": [
+        "You can see Mars is red from your *backyard.*",
+        "No telescope. Millions of miles away.",
+        "Its dust is full of *rust.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "IRON OXIDE · RUST"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "YOU SAW IT EARLY",
+      "lines": [
+        "Some things are red from a *distance.*",
+        "You saw it early. You explained it.",
+        "That wasn't you being *foolish.*",
+        "That was you *hoping.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "When I see *red,* I believe it.",
+        "I don't need to get *closer* to check.",
+        "My hope is safe with *me.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "275-selflove-scorpio",
+  "title": "Self-love for a Scorpio",
+  "cover": "Scorpio, heal in *private*",
+  "keyword": "CHART",
+  "caption": "you don't owe anyone the process. only the person who walks out of it",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "scorpio",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · THE DEEP",
+      "lines": [
+        "Scorpio, you're allowed to heal in *private.*",
+        "You don't owe anyone the *process.*",
+        "Only the person who walks out of it."
+      ]
+    },
+    {
+      "art": "eclipse",
+      "header": "GO DARK · COME BACK",
+      "lines": [
+        "So go dark if you need to.",
+        "Phone off. Feel the *whole* thing.",
+        "*Pluto,* your modern ruler,",
+        "rules the endings that make room",
+        "for who you're *becoming.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "THE NEW MOON",
+      "lines": [
+        "The moon goes dark every month,",
+        "and nobody calls it *broken.*",
+        "Neither are you.",
+        "You're just *between* phases."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "NEW MOON · NOT BROKEN"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

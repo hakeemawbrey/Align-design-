@@ -1,0 +1,88 @@
+{
+  "id": "114-unsaid-libra",
+  "title": "How a Libra says I love you",
+  "cover": "How a *Libra* says I love you",
+  "keyword": "VENUS",
+  "caption": "flowers for no reason, a playlist for the drive. a libra makes your life prettier and calls it nothing",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "libra",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · THE UNSAID",
+      "lines": [
+        "A Libra in love makes your life *prettier.*",
+        "Flowers for no reason.",
+        "A playlist for the *drive.*",
+        "The table set like it's an occasion."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♀",
+        "planetSign": "libra",
+        "planetAt": 0
+      },
+      "header": "RULED BY VENUS",
+      "lines": [
+        "Venus rules them,",
+        "so love comes out as *beauty*",
+        "and as balance.",
+        "They'll meet you halfway,",
+        "and quietly walk a little *further.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♀ VENUS · AT HOME IN LIBRA"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve a *gentle* love.",
+        "I notice the small beauty,",
+        "and I give some *back.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "105-element-water-water",
+  "title": "Water and water",
+  "cover": "*Water* and water in love",
+  "keyword": "MATCH",
+  "caption": "two water signs feel everything together. beautiful, as long as someone remembers the shore",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "watersigns",
+    "compatibility",
+    "elements",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "water"
+      },
+      "header": "WATER · WATER",
+      "lines": [
+        "Some couples talk it out.",
+        "Two water signs just *know.*",
+        "No words needed, no translation."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "CANCER · PISCES · A TRINE",
+      "lines": [
+        "Different water signs sit a *trine* apart,",
+        "so you understand without *explaining.*",
+        "It's rare, and it's tender.",
+        "The only risk is two moods",
+        "becoming one big *wave.*"
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 0,
+          "text": "SAME ELEMENT · EASY ANGLE"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "BE EACH OTHER'S SHORE",
+      "lines": [
+        "So take turns being the *shore.*",
+        "One of you feels it.",
+        "The other *holds* it.",
+        "And then you switch."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

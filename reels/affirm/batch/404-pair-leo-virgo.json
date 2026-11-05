@@ -1,0 +1,91 @@
+{
+  "id": "404-pair-leo-virgo",
+  "title": "Leo and Virgo",
+  "cover": "Leo and Virgo, *next door*",
+  "keyword": "MATCH",
+  "caption": "leo wants to be adored. virgo shows adoration by fixing your calendar. it counts",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "leo",
+    "virgo",
+    "zodiaccompatibility",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · THE NEXT SIGN",
+      "lines": [
+        "Virgo loves you by *noticing* things.",
+        "The loose button. The skipped lunch.",
+        "Leo, that's a *love letter.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "virgo"
+        ],
+        "pairAt": 1
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "Leo and Virgo are *neighbors,*",
+        "thirty degrees apart, a semi-sextile.",
+        "Fixed fire and mutable earth."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "earth"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Leo gives Virgo *permission* to play.",
+        "Virgo gives Leo care in the *details.*",
+        "Watch for critique that sounds like *rejection.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *adored* quietly.",
+        "Being noticed is being *loved.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

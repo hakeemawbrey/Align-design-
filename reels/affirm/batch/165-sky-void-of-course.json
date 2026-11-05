@@ -1,0 +1,86 @@
+{
+  "id": "165-sky-void-of-course",
+  "title": "The void-of-course moon",
+  "cover": "The moon, *between* signs",
+  "keyword": "MOON",
+  "caption": "when the moon has made its last aspect and hasn't changed sign yet. don't send the big text",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "voidofcourse",
+    "moon",
+    "astrology",
+    "patience",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☽",
+        "planetSign": "gemini",
+        "planetAt": 0
+      },
+      "header": "VOID OF COURSE · THE MOON",
+      "lines": [
+        "Some hours, the moon is *between* things.",
+        "It's made its last major aspect in one sign",
+        "and hasn't stepped into the next.",
+        "They call that gap *void* of course."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "THE MOON · BETWEEN SIGNS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "MINUTES · OR OVER A DAY",
+      "lines": [
+        "It can last minutes, or over a *day.*",
+        "Old advice says don't *start* things then.",
+        "Don't send the big text.",
+        "Don't decide what the silence means."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 2
+      },
+      "header": "A PAUSE · NOT AN ANSWER",
+      "lines": [
+        "Some silences aren't an *answer.*",
+        "Sometimes it's just the moon,",
+        "between *signs.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

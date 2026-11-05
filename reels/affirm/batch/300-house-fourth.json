@@ -1,0 +1,87 @@
+{
+  "id": "300-house-fourth",
+  "title": "The fourth house",
+  "cover": "The *fourth house* in love",
+  "keyword": "CHART",
+  "caption": "the fourth house sits at the very bottom of your chart. it's where you first learned what love feels like",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "fourthhouse",
+    "birthchart",
+    "cancer",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "houses",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 4,
+        "highlightAt": 2
+      },
+      "header": "THE FOURTH HOUSE · ROOTS",
+      "lines": [
+        "The very bottom of your birth chart",
+        "is where you learned what love *feels* like.",
+        "It's the *fourth house:*",
+        "home, family, roots."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 2,
+          "text": "4TH HOUSE · HOME"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "CANCER'S HOUSE · THE MOON",
+      "lines": [
+        "It belongs to *Cancer,*",
+        "ruled by the Moon,",
+        "so it holds whatever feels like *safety,*",
+        "even the habits you didn't *choose.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can keep the *warmth* I was given",
+        "and put down the rest.",
+        "Home is something I get to *build.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "328-planet-jupiter",
+  "title": "Jupiter in love",
+  "cover": "*Jupiter* in love",
+  "keyword": "CHART",
+  "caption": "jupiter spends about a year in each sign and makes everything it touches bigger. love included",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "jupiter",
+    "birthchart",
+    "sagittarius",
+    "astrology",
+    "abundance"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "planets",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "JUPITER · PLANET OF GROWTH",
+      "lines": [
+        "The largest planet in our solar system",
+        "rules *growth,* luck and generosity.",
+        "That's Jupiter, the ruler of *Sagittarius.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♃ · THE LARGEST PLANET"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♃",
+        "planetSign": "sagittarius",
+        "planetAt": 0
+      },
+      "header": "ABOUT A YEAR IN EACH SIGN",
+      "lines": [
+        "It spends about a *year* in each sign,",
+        "and whatever it touches gets *bigger.*",
+        "In love, it shows where you're generous,",
+        "and where you get *lucky.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "ROOM TO GROW",
+      "lines": [
+        "So here's the Jupiter test:",
+        "the right love gives you *more.*",
+        "More laughter, more courage,",
+        "more room to be *you.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

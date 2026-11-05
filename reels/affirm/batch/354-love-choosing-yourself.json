@@ -1,0 +1,85 @@
+{
+  "id": "354-love-choosing-yourself",
+  "title": "Choosing yourself",
+  "cover": "Pluto kept its *heart*",
+  "keyword": "CHART",
+  "caption": "pluto got demoted in two thousand six. turns out it had a heart on it the whole time",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "chooseyourself",
+    "pluto",
+    "astrology",
+    "affirmations",
+    "selflove"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "PLUTO · 2006",
+      "lines": [
+        "In two thousand six, Pluto lost its *title.*",
+        "Overnight, it wasn't a planet anymore.",
+        "Pluto didn't change one *bit.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "A HEART, THE WHOLE TIME",
+      "lines": [
+        "Nine years later, a spacecraft flew past it",
+        "and found a *heart* on its surface,",
+        "about a thousand miles wide.",
+        "Someone else's label never changed what you *are.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 1,
+        "highlightAt": 1
+      },
+      "header": "FIRST HOUSE · SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be left off someone's list",
+        "and still be *whole.*",
+        "I choose myself, *heart* and all."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 3,
+          "text": "FIRST HOUSE · SELF"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

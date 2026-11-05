@@ -1,0 +1,82 @@
+{
+  "id": "289-heal-aquarius",
+  "title": "Aquarius, after a breakup",
+  "cover": "Aquarius, *feel* it up close",
+  "keyword": "PASSING",
+  "caption": "aquarius after a breakup: we can stay friends, i'm totally fine. you're allowed to feel it",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aquarius",
+    "breakup",
+    "healing",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "Aquarius, you've decided to be *fine* about it.",
+        "You'll stay friends. You'll be mature.",
+        "Air can watch a feeling",
+        "from a very safe *distance.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "DISTANCE · NOT DETACHMENT",
+      "lines": [
+        "But you're allowed to *feel* it up close.",
+        "Missing them doesn't make you less free.",
+        "It just means you were really *there.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "STILL CONNECTED · STILL FREE"
+        }
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "AIR · ROOM TO BREATHE",
+      "lines": [
+        "Being free was never about not *caring.*",
+        "It's about caring,",
+        "and choosing where you go *next.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "471-pair-leo-libra",
+  "title": "Leo and Libra",
+  "cover": "Leo and Libra, *golden hour*",
+  "keyword": "MATCH",
+  "caption": "leo brings the warmth, libra brings the beauty. date night planning is a group project",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "leo",
+    "libra",
+    "sextile",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "libra"
+        ],
+        "pairAt": 1
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "The Sun and Venus get along *easily.*",
+        "Leo and Libra sit a sextile apart,",
+        "sixty degrees of *open door.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "air"
+      },
+      "header": "FIRE · AIR",
+      "lines": [
+        "Fixed fire, cardinal air.",
+        "Air feeds fire. Libra *fans* the flame.",
+        "Leo gives Libra *courage* to choose.",
+        "Libra gives Leo grace and *perspective.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE WORK",
+      "lines": [
+        "Watch the *performance.*",
+        "Leo can need applause, Libra approval.",
+        "Let the *real* you show up."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to be *perfect*",
+        "to be *chosen.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

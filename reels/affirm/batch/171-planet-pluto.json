@@ -1,0 +1,76 @@
+{
+  "id": "171-planet-pluto",
+  "title": "Pluto in love",
+  "cover": "*Pluto* in love",
+  "keyword": "CHART",
+  "caption": "astronomers demoted pluto. astrology never did. it still rules the love that changes you",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "pluto",
+    "scorpio",
+    "birthchart",
+    "astrology",
+    "transformation"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "planets",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "eclipse",
+      "header": "PLUTO · DEPTH AND REBIRTH",
+      "lines": [
+        "Astronomers *demoted* Pluto.",
+        "Astrology never did.",
+        "It's tiny, far away and *slow,*",
+        "and it rules what changes you for good."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "MODERN RULER OF SCORPIO",
+      "lines": [
+        "It's the modern ruler of *Scorpio:*",
+        "depth, power, rebirth.",
+        "In love, it's the bond",
+        "that makes you a different *person.*",
+        "All or nothing, never casual."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can love *deeply*",
+        "without losing myself.",
+        "I come back from every ending *new.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

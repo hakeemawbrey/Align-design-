@@ -1,0 +1,90 @@
+{
+  "id": "088-love-wrong-time",
+  "title": "Right person, wrong time",
+  "cover": "Most new moons *miss*",
+  "keyword": "PASSING",
+  "caption": "the moon passes the sun every month. it only lines up for an eclipse a few times a year",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "rightpersonwrongtime",
+    "timing",
+    "eclipse",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true
+      },
+      "header": "WHY MOST NEW MOONS MISS",
+      "lines": [
+        "Every month, the moon passes the sun.",
+        "But its path is tilted, just slightly,",
+        "so most months it slips *past*",
+        "a little high or a little *low.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "TILTED ORBIT · A NEAR MISS"
+        }
+      ]
+    },
+    {
+      "art": "eclipse",
+      "header": "RIGHT PERSON · WRONG TIME",
+      "lines": [
+        "The right person at the wrong time",
+        "is a new moon that *missed.*",
+        "Not a failure.",
+        "Just *timing.*",
+        "The sky lines up when it lines up."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "SAME SKY · DIFFERENT TIME"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *force* the timing.",
+        "What's meant for me",
+        "will meet me *in line.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

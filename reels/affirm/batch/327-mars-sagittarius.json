@@ -1,0 +1,91 @@
+{
+  "id": "327-mars-sagittarius",
+  "title": "Mars in Sagittarius",
+  "cover": "Mars in Sagittarius: *no filter*",
+  "keyword": "MARS",
+  "caption": "mars in sagittarius says the true thing first and the kind version an hour later. working on it",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "marsinsagittarius",
+    "sagittarius",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "MARS IN SAGITTARIUS",
+      "lines": [
+        "You say the *true* thing first,",
+        "and the kind version an hour later.",
+        "Mars in Sagittarius shoots *straight.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "THE ARCHER"
+        }
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "You chase what makes you feel alive:",
+        "a last-minute flight, a dare, a laugh.",
+        "Freedom isn't a phase for you. It's *oxygen.*",
+        "You need someone who'd explore, not control."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "FIRE · MUTABLE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *honest* and *gentle* at once.",
+        "Wanting room doesn't mean I want *out.*",
+        "I'm looking for a fellow *adventurer.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

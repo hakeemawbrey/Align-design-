@@ -1,0 +1,93 @@
+{
+  "id": "182-pair-aries-capricorn",
+  "title": "Aries and Capricorn",
+  "cover": "Aries + Capricorn · *square*",
+  "keyword": "MATCH",
+  "caption": "two bosses, one relationship. divide the territory and nobody can stop you",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aries",
+    "capricorn",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "ARIES · CAPRICORN",
+      "lines": [
+        "Two bosses, one *relationship.*",
+        "Aries leads by instinct.",
+        "Capricorn leads by the *plan.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "Three signs apart, they form a *square,*",
+        "ninety degrees of pressure.",
+        "Both cardinal, so both want the wheel."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "earth"
+      },
+      "header": "FIRE · EARTH · WORK WORTH DOING",
+      "lines": [
+        "Fire and earth, though,",
+        "give each other what's *missing.*",
+        "Aries brings Capricorn *play.*",
+        "Capricorn brings Aries *staying power.*",
+        "Divide the territory and you're unstoppable."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need to *control* this",
+        "to feel *secure* in it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "070-firstdate-pisces",
+  "title": "First date with a Pisces",
+  "cover": "Win a *Pisces* by the water",
+  "keyword": "MATCH",
+  "caption": "a pier at dusk, rain on a window, live music in a tiny room. that's a pisces first date",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "pisces",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "firstdate",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "Want a Pisces to fall for you?",
+        "Find some *water.*",
+        "A pier at dusk. Rain on a window.",
+        "Live music in a *tiny* room.",
+        "Somewhere the world goes *soft.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "lilac"
+      },
+      "header": "JUPITER · MODERN NEPTUNE",
+      "lines": [
+        "Ruled by *Jupiter* and modern *Neptune,*",
+        "they're won by *imagination.*",
+        "Ask what they dream about.",
+        "Then don't laugh. *Lean in.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "JUPITER · TRADITIONAL RULER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My dreamy heart is *safe* here.",
+        "I want someone",
+        "who *believes* in the magic too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

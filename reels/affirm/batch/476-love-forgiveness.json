@@ -1,0 +1,79 @@
+{
+  "id": "476-love-forgiveness",
+  "title": "Forgiveness",
+  "cover": "Let the *weather* in",
+  "keyword": "CHART",
+  "caption": "the moon keeps every crater. the earth has rain and wind, so its marks soften",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "forgiveness",
+    "moon",
+    "astrology",
+    "affirmations",
+    "healing"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE MOON · NO WEATHER",
+      "lines": [
+        "The moon never forgets a *hit.*",
+        "Its craters last for billions of years,",
+        "with no wind or rain to *soften* them."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "FORGIVENESS · WEATHER",
+      "lines": [
+        "The earth gets hit too.",
+        "But rain, wind and time wear its *marks* down.",
+        "That's what *forgiveness* can be.",
+        "Not saying it didn't hit you.",
+        "Just letting weather move through,",
+        "so it stops being the *only* thing you see."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can forgive and still *remember.*",
+        "I let time soften what *hurt* me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

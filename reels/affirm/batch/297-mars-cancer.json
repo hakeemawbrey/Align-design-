@@ -1,0 +1,92 @@
+{
+  "id": "297-mars-cancer",
+  "title": "Mars in Cancer",
+  "cover": "Mars in Cancer *protects*",
+  "keyword": "MARS",
+  "caption": "mars in cancer would go to war for the people it loves, and can barely ask for a hug",
+  "cta": "comment MARS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "marsincancer",
+    "cancer",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "MARS IN CANCER",
+      "lines": [
+        "For the people you love, you'd go to *war.*",
+        "For yourself, you can barely ask for a *hug.*",
+        "That's Mars in Cancer."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "CANCER · CARDINAL WATER"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "CANCER · RULED BY THE MOON",
+      "lines": [
+        "Cancer is ruled by the Moon,",
+        "so your drive rises and falls like a *tide.*",
+        "You chase sideways, like the crab,",
+        "and when you're hurt, you go into your *shell.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☽ · THE MOON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can say *I'm hurt*",
+        "instead of saying nothing.",
+        "Wanting to feel safe first is not *weakness.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MARS",
+      "opts": {
+        "face": "Mars",
+        "sub": "HOW YOU LOVE OUT LOUD",
+        "glyph": "♂",
+        "revealAt": 1
+      },
+      "pill": "YOUR MARS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MARS*",
+        "and I'll send you what yours wants,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

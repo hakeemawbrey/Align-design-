@@ -1,0 +1,74 @@
+{
+  "id": "254-morning-sagittarius",
+  "title": "Good morning, Sagittarius",
+  "cover": "Good morning, *Sagittarius*",
+  "keyword": "CHART",
+  "caption": "sagittarius wakes up believing in something. aim it at love today",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "sagittarius",
+    "goodmorning",
+    "morningaffirmations",
+    "jupiter",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "GOOD MORNING · SAGITTARIUS",
+      "lines": [
+        "Good morning, Sagittarius. New day, new *horizon.*",
+        "Ruled by *Jupiter,* the planet of luck,",
+        "you wake up believing in something."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "THE ARCHER · AIM HIGH",
+      "lines": [
+        "So aim that hope at *love* today.",
+        "Not at someone. At the *feeling.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Love doesn't have to be a *cage.*",
+        "I can be free and still be held.",
+        "The right person wants to *explore*",
+        "right beside me."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

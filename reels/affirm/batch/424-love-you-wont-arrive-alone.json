@@ -1,0 +1,85 @@
+{
+  "id": "424-love-you-wont-arrive-alone",
+  "title": "You won't arrive alone",
+  "cover": "You won't arrive *alone*",
+  "keyword": "MUTUAL",
+  "caption": "a lot of what looks like one star is two. you just can't tell from here",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "binarystars",
+    "love",
+    "astrology",
+    "affirmations",
+    "hope"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "BINARY STARS",
+      "lines": [
+        "A lot of what looks like one *star*",
+        "is actually two, circling each other.",
+        "From this far away, you can't *tell.*"
+      ],
+      "labels": [
+        {
+          "on": "orbit",
+          "at": 1,
+          "text": "TWO STARS · ONE POINT"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "BORN TOGETHER",
+      "lines": [
+        "Most stars are born in *groups,*",
+        "from the same cloud. Even the sun",
+        "probably had *siblings.*",
+        "You won't arrive alone, *either.*",
+        "The people who'll love you",
+        "are already out there, *moving.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm not as alone as I *look* from here.",
+        "Someone out there is looking *up* too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

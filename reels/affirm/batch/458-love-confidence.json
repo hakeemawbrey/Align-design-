@@ -1,0 +1,86 @@
+{
+  "id": "458-love-confidence",
+  "title": "Made of stars",
+  "cover": "You're made of *star stuff*",
+  "keyword": "CHART",
+  "caption": "the iron in your blood was made inside a star. you don't have to borrow your shine",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "confidence",
+    "selfworth",
+    "stars",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "FORGED IN STARS",
+      "lines": [
+        "The iron in your blood",
+        "was made inside a *star,*",
+        "billions of years before you.",
+        "So was the calcium in your *bones.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "IRON · MADE IN STARS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "CONFIDENCE",
+      "lines": [
+        "You don't have to *borrow* a shine.",
+        "You were built from one.",
+        "Confidence isn't being louder.",
+        "It's remembering what you're *made* of."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't shrink to make room.",
+        "I'm allowed to *take up* space.",
+        "I was made from *starlight.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

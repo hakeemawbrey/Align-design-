@@ -1,0 +1,77 @@
+{
+  "id": "001-hear-libra",
+  "title": "What a Libra needs to hear",
+  "cover": "Libra, you're already *whole*",
+  "keyword": "CHART",
+  "caption": "a reminder for the libra who thinks love is the missing half",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "libra",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "hear",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · CARDINAL AIR",
+      "lines": [
+        "You are not *half* of anything, Libra.",
+        "You're the sign of *partnership,*",
+        "so people assume you're waiting",
+        "for someone to complete you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "TWO WHOLE PEOPLE",
+      "lines": [
+        "You were *whole* before they arrived,",
+        "and you'll be whole if they *leave.*",
+        "Love is something you *share,*",
+        "not something you're missing."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am *whole* on my own.",
+        "Love adds to me.",
+        "It doesn't *finish* me."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

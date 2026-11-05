@@ -1,0 +1,77 @@
+{
+  "id": "200-situationship-pisces",
+  "title": "Pisces in a situationship",
+  "cover": "Pisces, it can be *real*",
+  "keyword": "MUTUAL",
+  "caption": "pisces fills every gap in their texts with a story where it works out",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "pisces",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "Pisces, you're filling the silence with *dreams.*",
+        "Every gap in their texts",
+        "becomes a story where it works out."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "NEPTUNE · SOFT FOCUS",
+      "lines": [
+        "*Neptune,* your modern ruler,",
+        "softens every edge into something lovely.",
+        "But love you have to *imagine*",
+        "isn't love you get to hold."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve love that's *real,* not someday.",
+        "I don't have to dream it for both of us.",
+        "Mine can be *mutual.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

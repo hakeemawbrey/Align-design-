@@ -1,0 +1,80 @@
+{
+  "id": "179-selflove-sagittarius",
+  "title": "Self-love for a Sagittarius",
+  "cover": "Sagittarius, go *alone* once",
+  "keyword": "CHART",
+  "caption": "somewhere around the second day alone, you meet yourself",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "sagittarius",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · THE ARCHER",
+      "lines": [
+        "Sagittarius, take the trip *alone* once.",
+        "*Jupiter* made you for the open road,",
+        "but you always bring a *crowd.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 4
+      },
+      "header": "THE ROAD · JUST YOU",
+      "lines": [
+        "No one to entertain.",
+        "Eat where you want. Get *lost.*",
+        "Talk to the stranger, or don't.",
+        "Somewhere around the second day,",
+        "you'll *meet* yourself."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My freedom starts with *me.*",
+        "I can come home to myself",
+        "from *anywhere.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

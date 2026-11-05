@@ -1,0 +1,88 @@
+{
+  "id": "148-mode-mutable-mutable",
+  "title": "Mutable and mutable",
+  "cover": "*Mutable* and mutable",
+  "keyword": "MATCH",
+  "caption": "two mutable signs in love. endless yes. somebody still has to pick the restaurant",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mutablesigns",
+    "compatibility",
+    "modalities",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "MUTABLE · MUTABLE",
+      "lines": [
+        "Two mutable signs will say *yes*",
+        "to almost anything.",
+        "New plans, new cities,",
+        "a whole new version of *yourselves.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "WHERE SEASONS CHANGE",
+      "lines": [
+        "You both live where seasons *change,*",
+        "so change never scares you.",
+        "It's an easy, kind love.",
+        "The only risk is *drifting,*",
+        "both waiting for the other to decide."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 0,
+          "text": "GEMINI · PISCES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SOMEONE HAS TO CHOOSE",
+      "lines": [
+        "So choose *out loud.*",
+        "Choosing is a way of loving.",
+        "Sometimes the most romantic words",
+        "are *this,* here, you."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

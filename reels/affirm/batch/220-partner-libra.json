@@ -1,0 +1,87 @@
+{
+  "id": "220-partner-libra",
+  "title": "Libra as a partner",
+  "cover": "Libra, the sign of *partners*",
+  "keyword": "MATCH",
+  "caption": "libra is the natural sign of the seventh house. love isn't a side quest for them, it's the main road",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "libra",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "7thhouse"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "partner",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1
+      },
+      "header": "THE SEVENTH HOUSE · PARTNERS",
+      "lines": [
+        "Libra is the natural sign",
+        "of the *seventh house,*",
+        "the house of *partners.*",
+        "Love isn't a side quest for them.",
+        "It's the *main* road."
+      ],
+      "labels": [
+        {
+          "on": "h7",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · CARDINAL AIR",
+      "lines": [
+        "A Libra partner brings *fairness.*",
+        "They see both sides of a fight.",
+        "They plan the date night,",
+        "and make ordinary days feel *pretty.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I make love feel *gentle.*",
+        "And my own needs",
+        "belong on the *scale* too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

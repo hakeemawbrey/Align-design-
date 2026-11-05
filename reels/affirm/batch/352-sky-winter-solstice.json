@@ -1,0 +1,87 @@
+{
+  "id": "352-sky-winter-solstice",
+  "title": "The winter solstice",
+  "cover": "Love for the *long* nights",
+  "keyword": "MOON",
+  "caption": "a stone passage in ireland, older than the pyramids, fills with light at winter solstice sunrise",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "wintersolstice",
+    "solstice",
+    "capricorn",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "lilac"
+      },
+      "header": "WINTER SOLSTICE · NEWGRANGE",
+      "lines": [
+        "In Ireland, there's a stone passage",
+        "older than the *pyramids.*",
+        "Around winter solstice sunrise,",
+        "light reaches all the way *in.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "SUNRISE · THE LONGEST NIGHT"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · RULED BY SATURN",
+      "lines": [
+        "It's the longest night of the year,",
+        "and the sun enters *Capricorn,*",
+        "the sign of what *lasts.*",
+        "From here, the light comes back,",
+        "a little more each day."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I *stay* for the long nights.",
+        "I want love that's still there",
+        "when the light comes *back.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

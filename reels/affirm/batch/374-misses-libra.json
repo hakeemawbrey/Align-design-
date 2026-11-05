@@ -1,0 +1,85 @@
+{
+  "id": "374-misses-libra",
+  "title": "When a Libra misses you",
+  "cover": "A *Libra* playlist is a letter",
+  "keyword": "VENUS",
+  "caption": "got a playlist from a libra? that's a love letter with better transitions",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "libra",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · CARDINAL AIR",
+      "lines": [
+        "Got a playlist from a Libra?",
+        "That's a *love letter.*",
+        "They'll pretend it's just for them,",
+        "then send it to you at *midnight.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "MISSING · THE WE",
+      "lines": [
+        "Ruled by *Venus,* they miss the *we.*",
+        "The second coffee. The shared joke.",
+        "The other half of every *plan.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "THE THREAD · STILL THERE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can miss someone",
+        "and still feel *whole.*",
+        "I'm a full sky on my *own.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

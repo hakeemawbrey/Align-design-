@@ -1,0 +1,88 @@
+{
+  "id": "201-element-air-air",
+  "title": "Air and air",
+  "cover": "*Air* and air in love",
+  "keyword": "MATCH",
+  "caption": "two air signs can talk until sunrise. the trick is saying the feeling, not describing it",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "airsigns",
+    "compatibility",
+    "elements",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "air"
+      },
+      "header": "AIR · AIR",
+      "lines": [
+        "Two air signs can talk until *sunrise*",
+        "and still have more to say.",
+        "Ideas, jokes, the *perfect* playlist."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "libra"
+        ],
+        "pairAt": 0
+      },
+      "header": "GEMINI · LIBRA · A TRINE",
+      "lines": [
+        "Different air signs sit a *trine* apart,",
+        "so the conversation flows.",
+        "The risk is talking *about* feelings",
+        "instead of having them."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 0,
+          "text": "SAME ELEMENT · EASY ANGLE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can say the *scary* thing,",
+        "not just the clever one.",
+        "I'd rather be *known* than impressive."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

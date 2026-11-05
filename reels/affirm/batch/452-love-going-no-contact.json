@@ -1,0 +1,91 @@
+{
+  "id": "452-love-going-no-contact",
+  "title": "Going no contact",
+  "cover": "Even Mars gets *no contact*",
+  "keyword": "PASSING",
+  "caption": "every two years mars slips behind the sun and mission teams stop messaging it. on purpose",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "nocontact",
+    "mars",
+    "astrology",
+    "affirmations",
+    "lettinggo"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS · BEHIND THE SUN",
+      "lines": [
+        "Every two years or so, Mars slips behind the *sun.*",
+        "And the teams who run its rovers",
+        "stop sending them *messages.*",
+        "On *purpose.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "SOLAR CONJUNCTION"
+        }
+      ]
+    },
+    {
+      "art": "retro",
+      "opts": {
+        "sightAt": 0
+      },
+      "header": "THE SUN IN THE WAY",
+      "lines": [
+        "Anything sent past the sun gets *scrambled,*",
+        "so they wait it out.",
+        "Going no contact is that.",
+        "Not cruel. Just knowing which messages",
+        "can't get through *right* now."
+      ],
+      "labels": [
+        {
+          "on": "path",
+          "at": 0,
+          "text": "SIGNAL SCRAMBLED"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't owe the past a *reply.*",
+        "My silence is *care,* not cruelty.",
+        "I'm protecting my *peace.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

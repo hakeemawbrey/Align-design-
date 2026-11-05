@@ -1,0 +1,89 @@
+{
+  "id": "077-house-tenth",
+  "title": "The tenth house",
+  "cover": "The *tenth house* in love",
+  "keyword": "CHART",
+  "caption": "the tenth house is your ambition. the right person is proud of it, not threatened by it",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "tenthhouse",
+    "birthchart",
+    "capricorn",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "houses",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 10,
+        "highlightAt": 3
+      },
+      "header": "THE TENTH HOUSE · CAREER",
+      "lines": [
+        "The top of your birth chart",
+        "isn't about love at all.",
+        "Or so it *seems.*",
+        "The *tenth house* is career and reputation,",
+        "what you're known for."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 3,
+          "text": "10TH HOUSE · CAREER"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "CAPRICORN'S HOUSE · SATURN",
+      "lines": [
+        "It's *Capricorn's* house, ruled by Saturn,",
+        "and it asks a quiet love question:",
+        "is this person *proud* of where you're going,",
+        "or threatened by it?"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to choose",
+        "between my *dreams* and my love.",
+        "I deserve someone who *cheers.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+[
+  {
+    "key": "hear-aries",
+    "title": "What an Aries needs to hear",
+    "cover": "Aries, the chase isn't the *prize*",
+    "caption": "if they make you chase, they're not the prize. they're just the race",
+    "hashtags": ["aries", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "♂", "planetSign": "aries", "planetAt": 1 },
+        "header": "MARS · AT HOME IN ARIES",
+        "lines": ["Aries, the chase was never the *prize.*", "*Mars* rules you, so the hunt feels like love.", "The racing heart, the *maybe,* the wait."],
+        "labels": [{ "on": "planet", "at": 1, "text": "MARS · RULER OF ARIES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 3 },
+        "header": "EASY ISN'T BORING",
+        "lines": ["But someone who makes you *run*", "is just making you tired.", "The one who texts back fast", "isn't too easy.", "They're *sure.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need a chase to feel *alive.*", "Easy love can still *burn.*"]
+      }
+    ]
+  },
+  {
+    "key": "hear-taurus",
+    "title": "What a Taurus needs to hear",
+    "cover": "Taurus, take your *time*",
+    "caption": "for the taurus being told to hurry up. you don't have to",
+    "hashtags": ["taurus", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · THE BULL",
+        "lines": ["Taurus, anyone who *rushes* you isn't for you.", "You were built to love like *roots.*", "Slow, deep, still there in *winter.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "RULED BY VENUS · RITUALS",
+        "lines": ["*Venus* rules you, so you love in *rituals.*", "The same dinner spot. The same side of the bed.", "That isn't *boring.*", "That's how you know it's real."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "WORTH THE WAIT",
+        "lines": ["Anyone worth it", "will *match* your pace,", "not tap their foot at it.", "Real things grow *slowly.*", "So do you."]
+      }
+    ]
+  },
+  {
+    "key": "hear-gemini",
+    "title": "What a Gemini needs to hear",
+    "cover": "Gemini, you're not *shallow*",
+    "caption": "you're not flaky. you just haven't met someone you can't finish reading",
+    "hashtags": ["gemini", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Gemini, getting bored doesn't make you *shallow.*", "*Mercury* gave you a mind that's always moving.", "You love by *learning* someone."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "MUTABLE AIR",
+        "lines": ["So when there's nothing left to learn,", "you drift. That's not a flaw.", "It's a *sign.*", "The right person keeps you *curious*", "for years, not weeks."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm not *flaky.* I'm curious.", "I'm allowed to wait for someone", "I'll never finish *reading.*"]
+      }
+    ]
+  },
+  {
+    "key": "hear-cancer",
+    "title": "What a Cancer needs to hear",
+    "cover": "Cancer, soft isn't a *flaw*",
+    "caption": "for every cancer who's been told they're too sensitive",
+    "hashtags": ["cancer", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · THE CRAB",
+        "lines": ["Cancer, your softness was never the *problem.*", "The people who called you *too sensitive*", "just didn't know what to do with depth."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "RULED BY THE MOON",
+        "lines": ["You're ruled by the *Moon.*", "Of course you feel things *deeply.*", "That isn't too much.", "It's how you *love.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My feelings are not a *burden.*", "The right person won't ask me", "to feel things *smaller.*"]
+      }
+    ]
+  },
+  {
+    "key": "hear-leo",
+    "title": "What a Leo needs to hear",
+    "cover": "Leo, it isn't *vanity*",
+    "caption": "flowers for no reason is a perfectly reasonable request",
+    "hashtags": ["leo", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "RULED BY THE SUN",
+        "lines": ["Wanting to be adored isn't *vanity,* Leo.", "You're ruled by the *Sun.*", "Things that give that much light", "need a little *back.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 5, "highlightAt": 0 },
+        "header": "THE FIFTH HOUSE · ROMANCE",
+        "lines": ["Yours is the *fifth house,*", "romance, play, the grand gesture.", "So no, you're not too much", "for wanting flowers for no *reason.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "5TH HOUSE · ROMANCE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to want to be *adored.*", "The right person will *love*", "showing me off."]
+      }
+    ]
+  },
+  {
+    "key": "hear-virgo",
+    "title": "What a Virgo needs to hear",
+    "cover": "Virgo, nobody's *grading* you",
+    "caption": "nobody is grading you. put the red pen down",
+    "hashtags": ["virgo", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": ["Virgo, love isn't a test you can *fail.*", "You can stop checking your answers.", "Nobody is *grading* you."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY · DETAILS",
+        "lines": ["*Mercury* rules you, so you check everything twice,", "even the way you're *loved.*", "But the right person", "doesn't want a *flawless* you.", "They want the one who burns the toast."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My mistakes don't *end* love.", "I'm allowed to be loved", "in the middle of my *mess.*"]
+      }
+    ]
+  },
+  {
+    "key": "hear-libra",
+    "title": "What a Libra needs to hear",
+    "cover": "Libra, you're already *whole*",
+    "caption": "a reminder for the libra who thinks love is the missing half",
+    "hashtags": ["libra", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · CARDINAL AIR",
+        "lines": ["You are not *half* of anything, Libra.", "You're the sign of *partnership,*", "so people assume you're waiting", "for someone to complete you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "TWO WHOLE PEOPLE",
+        "lines": ["You were *whole* before they arrived,", "and you'll be whole if they *leave.*", "Love is something you *share,*", "not something you're missing."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 7, "highlightAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am *whole* on my own.", "Love adds to me.", "It doesn't *finish* me."]
+      }
+    ]
+  },
+  {
+    "key": "hear-scorpio",
+    "title": "What a Scorpio needs to hear",
+    "cover": "Scorpio, the *deep end*",
+    "caption": "for the scorpio who keeps getting told they're too intense",
+    "hashtags": ["scorpio", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": ["Scorpio, the right person wants the *deep end.*", "You've been told you're *intense,*", "like it's a warning label."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 8, "highlightAt": 0 },
+        "header": "THE EIGHTH HOUSE · INTIMACY",
+        "lines": ["You're the sign of the *eighth house,*", "intimacy, and everything shared.", "Of course small talk leaves you *hungry.*", "You're not too much.", "You're just not built for the *shallows.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "8TH HOUSE · INTIMACY" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE DEEP END",
+        "lines": ["The right person won't ask you", "to be *lighter.*", "They'll take a breath", "and come *down* with you."]
+      }
+    ]
+  },
+  {
+    "key": "hear-sagittarius",
+    "title": "What a Sagittarius needs to hear",
+    "cover": "Sagittarius, love isn't a *fence*",
+    "caption": "the right person doesn't take your horizon. they bring a map",
+    "hashtags": ["sagittarius", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER · EXPANSION",
+        "lines": ["Sagittarius, commitment won't *shrink* your world.", "You're ruled by *Jupiter,* the planet of more.", "More road. More sky. More *truth.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 9, "highlightAt": 0 },
+        "header": "THE NINTH HOUSE · TRAVEL",
+        "lines": ["So you think love means", "trading the horizon for a *fence.*", "But the right person isn't a fence.", "They're the one holding the *map*", "and asking where next."],
+        "labels": [{ "on": "house", "at": 0, "text": "9TH HOUSE · TRAVEL · BELIEF" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *free* and be chosen.", "Love is the trip,", "not the *end* of it."]
+      }
+    ]
+  },
+  {
+    "key": "hear-capricorn",
+    "title": "What a Capricorn needs to hear",
+    "cover": "Capricorn, love isn't a *detour*",
+    "caption": "for the capricorn who keeps putting love after the next goal",
+    "hashtags": ["capricorn", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "RULED BY SATURN · THE LONG GAME",
+        "lines": ["Capricorn, love is not a *distraction.*", "*Saturn* taught you the work comes first,", "the feelings later,", "and the *rest* never."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 10, "highlightAt": 0 },
+        "header": "THE TENTH HOUSE · CAREER",
+        "lines": ["You rule the *tenth house,*", "career and reputation,", "so love gets scheduled after the goal.", "But the right person won't *compete.*", "They'll be the reason the view from the top", "feels like *something.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "10TH HOUSE · CAREER" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Love is part of what I'm *building.*", "I can climb and still be *held.*"]
+      }
+    ]
+  },
+  {
+    "key": "hear-aquarius",
+    "title": "What an Aquarius needs to hear",
+    "cover": "Aquarius, you can *need* someone",
+    "caption": "being close to someone is the most rebellious thing you'll ever do",
+    "hashtags": ["aquarius", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": ["Aquarius, needing someone won't make you *ordinary.*", "You've spent your life being the *different* one,", "so attachment feels like *losing* yourself."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "mint", "ring": true },
+        "header": "SATURN · AND MODERN URANUS",
+        "lines": ["*Saturn* rules you, and *Uranus* too,", "the planet of the unexpected.", "So here's the unexpected part:", "letting someone *close*", "is the most rebellious thing you'll do."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can need someone", "and stay *completely* me.", "Closeness isn't a *cage.*"]
+      }
+    ]
+  },
+  {
+    "key": "hear-pisces",
+    "title": "What a Pisces needs to hear",
+    "cover": "Pisces, real beats the *daydream*",
+    "caption": "for the pisces who's lived whole love stories on the bus home",
+    "hashtags": ["pisces", "zodiaclove", "astrology", "affirmations", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["Pisces, the real thing can beat the *daydream.*", "You've lived whole love stories", "in your head, on the bus, before *sleep.*"]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "THE DAYDREAM · THE NIGHT",
+        "lines": ["*Neptune,* your modern ruler,", "is the planet of *dreams.*", "So real life can feel small.", "But someone real who stays", "beats a perfect one", "who only *exists* at night."]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *imagine* love.", "I'm allowed to *live* it."]
+      }
+    ]
+  }
+]

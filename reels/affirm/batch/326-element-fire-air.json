@@ -1,0 +1,88 @@
+{
+  "id": "326-element-fire-air",
+  "title": "Fire and air",
+  "cover": "*Fire* and air in love",
+  "keyword": "MATCH",
+  "caption": "fire can't burn without air. some matches really are just chemistry",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "firesigns",
+    "airsigns",
+    "compatibility",
+    "elements",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "air"
+      },
+      "header": "FIRE · AIR",
+      "lines": [
+        "Fire can't burn without *air.*",
+        "That's why fire and air signs",
+        "are such a classic *match.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "gemini"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE OR OPPOSITE",
+      "lines": [
+        "On the wheel, they sit a *sextile*",
+        "or an opposition apart.",
+        "Air brings the ideas,",
+        "fire makes them *happen.*",
+        "Every talk turns into a plan,",
+        "every plan into an *adventure.*",
+        "Just remember to land sometimes."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 0,
+          "text": "ARIES · GEMINI"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want someone who *feeds* my fire,",
+        "not someone who *fears* it."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

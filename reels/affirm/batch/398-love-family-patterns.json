@@ -1,0 +1,95 @@
+{
+  "id": "398-love-family-patterns",
+  "title": "Old light",
+  "cover": "Some of your love is *old light*",
+  "keyword": "CHART",
+  "caption": "some of how you love is older than you. you still get to choose what shines next",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "familypatterns",
+    "healing",
+    "starlight",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "STARLIGHT · SENT LONG AGO",
+      "lines": [
+        "Some of the starlight you see tonight",
+        "left its star *before you were born.*",
+        "You're seeing the *past,*",
+        "still arriving."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "LIGHT · STILL TRAVELLING"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 4,
+        "highlightAt": 1
+      },
+      "header": "FOURTH HOUSE · HOME AND FAMILY",
+      "lines": [
+        "Some of how you love is old light too.",
+        "Your fourth house holds home,",
+        "and the patterns you were *handed.*",
+        "You can see where they came from",
+        "and still *choose* what shines next."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 1,
+          "text": "FOURTH HOUSE · FAMILY"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I honour where I *came from.*",
+        "I am not *bound* to repeat it.",
+        "The love I give now is *mine.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

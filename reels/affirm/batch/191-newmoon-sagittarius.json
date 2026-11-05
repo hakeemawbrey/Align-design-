@@ -1,0 +1,84 @@
+{
+  "id": "191-newmoon-sagittarius",
+  "title": "New moon in Sagittarius",
+  "cover": "New moon in *Sagittarius*",
+  "keyword": "MOON",
+  "caption": "the archer's arrow points at the center of the galaxy. invite love that makes your world bigger",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "newmoon",
+    "newmooninsagittarius",
+    "sagittarius",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · THE ARCHER",
+      "lines": [
+        "The center of our *galaxy*",
+        "sits in Sagittarius.",
+        "The archer's arrow points right at it."
+      ],
+      "labels": [
+        {
+          "on": "stars",
+          "at": 2,
+          "text": "THE GALACTIC CENTER"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · SAGITTARIUS",
+      "lines": [
+        "It's ruled by *Jupiter,* the planet of more.",
+        "So with the sun and moon both here,",
+        "invite love that makes your world *bigger,*",
+        "not smaller."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *free* and be loved.",
+        "I want someone who'd rather see",
+        "the whole world *with* me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

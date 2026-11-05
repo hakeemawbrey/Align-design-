@@ -1,0 +1,83 @@
+{
+  "id": "221-misses-gemini",
+  "title": "When a Gemini misses you",
+  "cover": "A *Gemini* misses you in texts",
+  "keyword": "VENUS",
+  "caption": "eleven texts from a gemini all mean one thing. i miss talking to you",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "gemini",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "texting"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "If a Gemini misses you,",
+        "your *phone* finds out first.",
+        "Ruled by *Mercury,* planet of messages,",
+        "they miss people in *text.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "MERCURY · MESSAGES"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · MUTABLE AIR",
+      "lines": [
+        "A meme at midnight. A voice note.",
+        "A link with zero context.",
+        "Eleven texts that all *really* mean",
+        "I miss *talking* to you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My *attention* is my affection.",
+        "If I keep sending you things,",
+        "I'm keeping you *close.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

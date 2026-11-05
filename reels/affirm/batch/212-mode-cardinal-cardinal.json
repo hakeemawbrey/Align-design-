@@ -1,0 +1,89 @@
+{
+  "id": "212-mode-cardinal-cardinal",
+  "title": "Cardinal and cardinal",
+  "cover": "*Cardinal* and cardinal",
+  "keyword": "MATCH",
+  "caption": "two cardinal signs in love. two leaders, one steering wheel, and a lot of momentum",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "cardinalsigns",
+    "compatibility",
+    "modalities",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "cancer"
+        ],
+        "pairAt": 3
+      },
+      "header": "CARDINAL · CARDINAL",
+      "lines": [
+        "Two cardinal signs in love",
+        "means two hands on the *steering wheel.*",
+        "Unless you share a sign,",
+        "you sit *square* or opposite in the sky,",
+        "friction that gets things moving."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 3,
+          "text": "ARIES · CANCER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TAKE TURNS",
+      "lines": [
+        "You both start things fast.",
+        "The trick is *finishing* together:",
+        "taking turns leading,",
+        "and saying out loud whose turn it *is.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *win*",
+        "to be in charge of my life.",
+        "We can lead *together.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "386-element-water",
+  "title": "Water signs in love",
+  "cover": "*Water signs* in love",
+  "keyword": "MATCH",
+  "caption": "cancer, scorpio, pisces. water signs feel the mood of a room before anyone speaks",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "watersigns",
+    "cancer",
+    "scorpio",
+    "pisces",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "WATER · CANCER SCORPIO PISCES",
+      "lines": [
+        "Water signs know how you feel",
+        "before you've said a *word.*",
+        "Cancer, Scorpio and *Pisces*",
+        "love through feeling, deep and quiet."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 2,
+          "text": "CANCER · SCORPIO · PISCES"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "LIKE THE TIDE",
+      "lines": [
+        "Like the tide, their love comes in *waves,*",
+        "and every wave needs a *shore:*",
+        "someone steady enough",
+        "to let them feel it all."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My feelings are not *too* much.",
+        "I deserve a love",
+        "that's safe enough to be *soft* in."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

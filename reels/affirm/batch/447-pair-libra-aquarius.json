@@ -1,0 +1,91 @@
+{
+  "id": "447-pair-libra-aquarius",
+  "title": "Libra and Aquarius",
+  "cover": "Libra and Aquarius, *easy air*",
+  "keyword": "MATCH",
+  "caption": "libra and aquarius can talk until sunrise and still not run out of things to say",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "libra",
+    "aquarius",
+    "airsigns",
+    "trine",
+    "zodiaccompatibility"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "AIR · AIR",
+      "lines": [
+        "The conversation that never *ends.*",
+        "That's Libra and Aquarius at sunrise."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "libra",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "TRINE · 120°",
+      "lines": [
+        "Two air signs, a *trine* apart,",
+        "the most *natural* angle there is.",
+        "Cardinal Libra *starts* the talk.",
+        "Fixed Aquarius keeps it going."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Libra gives Aquarius *warmth* in the details.",
+        "Aquarius gives Libra *freedom* from approval.",
+        "The risk: all head, too little *heart.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *feel* it, not just say it.",
+        "Friendship is where our love *lives.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

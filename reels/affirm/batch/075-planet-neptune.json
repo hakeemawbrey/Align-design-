@@ -1,0 +1,74 @@
+{
+  "id": "075-planet-neptune",
+  "title": "Neptune in love",
+  "cover": "*Neptune* in love",
+  "keyword": "CHART",
+  "caption": "neptune was found with math before anyone saw it. that's also how we fall for people",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "neptune",
+    "pisces",
+    "birthchart",
+    "astrology",
+    "romance"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "planets",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "retro",
+      "header": "NEPTUNE · FOUND ON PAPER",
+      "lines": [
+        "Neptune was found on *paper*",
+        "before anyone saw it in the sky.",
+        "Someone did the math",
+        "and *imagined* it first."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "MODERN RULER OF PISCES",
+      "lines": [
+        "That's Neptune in love:",
+        "falling for who you *imagined*",
+        "before you see who's really there.",
+        "It rules dreams, romance and *fog.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can dream *and* see clearly.",
+        "I want a love that's real in *daylight.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "310-moon-aries",
+  "title": "Moon in Aries",
+  "cover": "Moon in Aries feels it *fast*",
+  "keyword": "MOON",
+  "caption": "moon in aries feels everything like a struck match. bright, hot, gone in a minute, no grudges",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mooninaries",
+    "aries",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "MOON IN ARIES",
+      "lines": [
+        "Your feelings arrive like a *struck match:*",
+        "bright, hot, and gone in a minute.",
+        "That's the Moon in Aries."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "☽ · THE MOON · YOUR NEEDS"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · CARDINAL FIRE",
+      "lines": [
+        "So when you're upset, you need to *move.*",
+        "A walk. A run. A loud playlist.",
+        "You feel safe with someone who lets you *flare*",
+        "and doesn't hold it against you an hour later."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My feelings are allowed to be *big* and brief.",
+        "I'm safe with people who don't *flinch.*",
+        "I don't have to calm down to be *loved.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

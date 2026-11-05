@@ -1,0 +1,83 @@
+{
+  "id": "265-element-fire",
+  "title": "Fire signs in love",
+  "cover": "*Fire signs* in love",
+  "keyword": "MATCH",
+  "caption": "aries, leo, sagittarius. fire signs don't love quietly, and they were never meant to",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "firesigns",
+    "aries",
+    "leo",
+    "sagittarius",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire"
+      },
+      "header": "FIRE · ARIES LEO SAGITTARIUS",
+      "lines": [
+        "Fire signs don't fall in love.",
+        "They *catch* it.",
+        "Aries, Leo and *Sagittarius*",
+        "love loud, fast and warm."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 2,
+          "text": "ARIES · LEO · SAGITTARIUS"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "FIRE NEEDS AIR",
+      "lines": [
+        "Fire needs *air* to keep burning,",
+        "so fire signs need room to move",
+        "and someone who's *excited* back.",
+        "If someone calls you too much,",
+        "they just brought too little *air.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My warmth is a *gift,*",
+        "not a warning.",
+        "I want someone who burns *bright* with me."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

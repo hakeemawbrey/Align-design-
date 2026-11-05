@@ -1,0 +1,84 @@
+{
+  "id": "454-love-heartbreak-recovery",
+  "title": "Healing, slowly",
+  "cover": "Healing is *slow* on purpose",
+  "keyword": "PASSING",
+  "caption": "the moon drifts a little farther from us every year. too slow to feel. healing works like that",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "heartbreak",
+    "healing",
+    "movingon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "header": "THE MOON · DRIFTING AWAY",
+      "lines": [
+        "Slowly, the moon is drifting *away.*",
+        "About four *centimetres* farther",
+        "from the earth every year.",
+        "Too slow to *feel.*",
+        "But it's always moving."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "FOUR CENTIMETRES A YEAR"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 6
+      },
+      "header": "HEARTBREAK · RECOVERY",
+      "lines": [
+        "Healing moves the same way.",
+        "You won't feel it day to day.",
+        "Then one night you'll notice",
+        "it doesn't pull your *tides*",
+        "the way it used to."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm healing, even when I can't *feel* it.",
+        "Every day puts a little more *space*",
+        "between me and the hurt."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

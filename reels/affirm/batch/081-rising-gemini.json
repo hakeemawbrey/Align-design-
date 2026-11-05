@@ -1,0 +1,112 @@
+{
+  "id": "081-rising-gemini",
+  "title": "Gemini rising",
+  "cover": "Gemini rising wants the *why*",
+  "keyword": "SEVEN",
+  "caption": "you can talk to anyone. you only fall for the one who turns the talk into somewhere to go",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "geminirising",
+    "sagittarius",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "GEMINI RISING · MUTABLE AIR",
+      "lines": [
+        "You can talk to *anyone* for an hour.",
+        "Gemini rising makes you easy to meet.",
+        "Quick, funny, *curious,*",
+        "ten threads going at once."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "GEMINI RISING · TALK"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 0,
+        "axis": true,
+        "axisAt": 1,
+        "rising": "gemini"
+      },
+      "header": "THE SEVENTH HOUSE · SAGITTARIUS",
+      "lines": [
+        "Your seventh house, opposite your rising,",
+        "falls in *Sagittarius.*",
+        "The sign of the long road",
+        "and the *big* question."
+      ],
+      "labels": [
+        {
+          "on": "h7",
+          "at": 0,
+          "text": "7TH HOUSE · PARTNERS"
+        },
+        {
+          "on": "dsc",
+          "at": 1,
+          "text": "DESCENDANT · 180°"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · WHAT PULLS YOU",
+      "lines": [
+        "So small talk never *holds* you.",
+        "The one who keeps you asks *why,*",
+        "and turns a chat into a *trip.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Clever isn't *enough* for me.",
+        "I want a love that *goes* somewhere."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

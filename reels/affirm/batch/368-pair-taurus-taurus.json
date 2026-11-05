@@ -1,0 +1,93 @@
+{
+  "id": "368-pair-taurus-taurus",
+  "title": "Taurus and Taurus",
+  "cover": "Taurus + Taurus · *conjunction*",
+  "keyword": "MATCH",
+  "caption": "nobody's in a hurry. that's the point, and also the problem",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurus",
+    "tauruscompatibility",
+    "zodiaccompatibility",
+    "astrology",
+    "synastry"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · TAURUS",
+      "lines": [
+        "Nobody's in a hurry when Taurus loves *Taurus.*",
+        "You don't fall. You *settle in,*",
+        "like a favorite chair."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "taurus"
+        ],
+        "pairAt": 1
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Zero degrees between you:",
+        "a *conjunction.*",
+        "Both fixed earth, both ruled by *Venus.*",
+        "Loyalty, comfort, good food, slow mornings."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "earth"
+      },
+      "header": "EARTH · EARTH · THE FRICTION",
+      "lines": [
+        "You give each other *steadiness*",
+        "nobody else could promise.",
+        "The friction: two fixed signs",
+        "can mistake *stuck* for steady."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can stay *steady*",
+        "and still let us *change.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

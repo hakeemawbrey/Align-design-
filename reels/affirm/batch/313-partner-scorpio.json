@@ -1,0 +1,79 @@
+{
+  "id": "313-partner-scorpio",
+  "title": "Scorpio as a partner",
+  "cover": "A *Scorpio* keeps your secrets",
+  "keyword": "MATCH",
+  "caption": "tell a scorpio partner your secret and it's buried with them",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "scorpio",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "loyalty"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "partner",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · FIXED WATER",
+      "lines": [
+        "Tell a Scorpio partner your *secret,*",
+        "and it's buried with them.",
+        "They bring a loyalty so *deep*",
+        "it feels like a vow."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "lilac"
+      },
+      "header": "MARS · MODERN PLUTO",
+      "lines": [
+        "Ruled by *Mars* and modern *Pluto,*",
+        "they love *all the way down.*",
+        "They want the real you,",
+        "even the parts you hide from *everyone.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't love *halfway.*",
+        "When I'm in, I'm *all in,*",
+        "and I choose people who are too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

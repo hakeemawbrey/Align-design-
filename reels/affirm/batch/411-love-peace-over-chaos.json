@@ -1,0 +1,86 @@
+{
+  "id": "411-love-peace-over-chaos",
+  "title": "Peace over chaos",
+  "cover": "A storm isn't *depth*",
+  "keyword": "CHART",
+  "caption": "jupiter's great red spot has been spinning for a century and a half. still just spinning",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "peace",
+    "jupiter",
+    "astrology",
+    "affirmations",
+    "healthylove"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "JUPITER · THE GREAT RED SPOT",
+      "lines": [
+        "Jupiter has a storm wider than the *earth.*",
+        "People have watched it spin",
+        "for more than a century and a *half.*",
+        "Huge, wild, and still just *spinning.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "GREAT RED SPOT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "CHAOS · NOT CHEMISTRY",
+      "lines": [
+        "Chaos can feel like *depth.*",
+        "All that spinning feels like *passion.*",
+        "But love that's right for you",
+        "feels more like a clear *night*",
+        "than a storm you have to survive."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I choose *peace* over chaos.",
+        "Calm love is still *real* love."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

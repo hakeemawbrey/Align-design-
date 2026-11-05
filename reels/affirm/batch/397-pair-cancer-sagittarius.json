@@ -1,0 +1,89 @@
+{
+  "id": "397-pair-cancer-sagittarius",
+  "title": "Cancer and Sagittarius",
+  "cover": "Cancer + Sagittarius · *quincunx*",
+  "keyword": "MATCH",
+  "caption": "a candle in the window and a passport by the door",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "cancer",
+    "sagittarius",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "CANCER · SAGITTARIUS",
+      "lines": [
+        "Cancer keeps a candle in the *window.*",
+        "Sagittarius keeps a *passport* by the door."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "sagittarius"
+        ],
+        "pairAt": 1
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "Cancer and Sagittarius sit five signs apart,",
+        "a *quincunx:* cardinal water, mutable fire.",
+        "No common ground, so you *make* some."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "fire"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Sagittarius gives Cancer *optimism.*",
+        "Cancer gives Sagittarius *roots* worth returning to.",
+        "The friction: feelings versus freedom.",
+        "Both are *real.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Home can come *with* me.",
+        "I can wander and still *belong.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

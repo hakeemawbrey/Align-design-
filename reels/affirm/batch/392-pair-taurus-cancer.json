@@ -1,0 +1,94 @@
+{
+  "id": "392-pair-taurus-cancer",
+  "title": "Taurus and Cancer",
+  "cover": "Taurus + Cancer · *sextile*",
+  "keyword": "MATCH",
+  "caption": "venus and the moon. the coziest sextile on the wheel, as long as somebody knocks",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurus",
+    "cancer",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "cancer"
+        ],
+        "pairAt": 2
+      },
+      "header": "TAURUS · CANCER · SEXTILE",
+      "lines": [
+        "Venus and the Moon make a *good home.*",
+        "Taurus and Cancer sit two signs apart,",
+        "sixty degrees: a *sextile.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "water"
+      },
+      "header": "FIXED EARTH · CARDINAL WATER",
+      "lines": [
+        "Fixed earth meets cardinal water.",
+        "Earth holds it. Water softens it.",
+        "Taurus gives Cancer *security.*",
+        "Cancer gives Taurus *tenderness.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "THE FRICTION · THE SHELL",
+      "lines": [
+        "The friction is retreat.",
+        "Cancer goes into its shell,",
+        "Taurus goes *quiet,*",
+        "and nobody knocks.",
+        "Be the one who *knocks.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to need *comfort.*",
+        "I'm allowed to *ask* for it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

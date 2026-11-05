@@ -1,0 +1,93 @@
+{
+  "id": "393-love-sunday-lonely",
+  "title": "Sunday, still moving",
+  "cover": "Even on Sunday, you're *moving*",
+  "keyword": "CHART",
+  "caption": "sunday is named after the sun, and even on the slowest one you're flying around it",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "sundayblues",
+    "loneliness",
+    "selflove",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "love-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "THE SUN'S DAY",
+      "lines": [
+        "Sunday is named after the *sun.*",
+        "And even on the slowest one,",
+        "you're flying around it",
+        "at about thirty *kilometres* a second."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "THIRTY KM EVERY SECOND"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "SUNDAY LONELINESS",
+      "lines": [
+        "Sunday loneliness feels like *stillness.*",
+        "Like everyone's paired off but you.",
+        "But you're not stuck.",
+        "You're mid-orbit, and *moving.*"
+      ],
+      "labels": [
+        {
+          "on": "you",
+          "at": 3,
+          "text": "YOU · MID-ORBIT"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "A quiet day is not a *lonely* life.",
+        "I'm still moving toward *love,*",
+        "even on slow days."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "428-love-timing",
+  "title": "Timing",
+  "cover": "Not wrong, just *not lined up*",
+  "keyword": "CHART",
+  "caption": "there's a new moon every month. an eclipse only a few times a year. timing is everything",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "timing",
+    "eclipse",
+    "astrology",
+    "affirmations",
+    "love"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true
+      },
+      "header": "NEW MOON · JUST OFF THE LINE",
+      "lines": [
+        "A new moon happens every *month.*",
+        "So why isn't there an eclipse every month?",
+        "Because the moon's path is *tilted,* just a little.",
+        "Most months, it slips just *above* or below."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 3,
+          "text": "TILTED · ABOUT FIVE DEGREES"
+        }
+      ]
+    },
+    {
+      "art": "eclipse",
+      "header": "A FEW TIMES A YEAR",
+      "lines": [
+        "Only a few times a year, it lines up *exactly.*",
+        "And that's an *eclipse.*",
+        "If love hasn't lined up yet,",
+        "it doesn't mean something's *wrong* with you.",
+        "Sometimes the paths just aren't there yet."
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My timing is not a *verdict* on me.",
+        "I trust the *slow* math of the sky."
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 2,
+          "text": "IN LINE"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

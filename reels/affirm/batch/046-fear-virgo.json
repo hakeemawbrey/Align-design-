@@ -1,0 +1,77 @@
+{
+  "id": "046-fear-virgo",
+  "title": "What a Virgo quietly fears",
+  "cover": "Virgo, who *notices* you",
+  "keyword": "MUTUAL",
+  "caption": "you know how they take their coffee. do they know yours",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgo",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · THE MAIDEN",
+      "lines": [
+        "Virgo, you know how they take their *coffee.*",
+        "Their worries, their mother's *birthday,*",
+        "the song that makes them cry."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "THE QUIET FEAR · UNNOTICED",
+      "lines": [
+        "Here's what you'd never say:",
+        "you're not sure anyone *notices* you back.",
+        "That you'll spend your life",
+        "remembering the details",
+        "of someone who forgets *yours.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve someone who *notices* me.",
+        "Being seen is not *too much* to ask."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

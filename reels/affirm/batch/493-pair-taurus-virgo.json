@@ -1,0 +1,91 @@
+{
+  "id": "493-pair-taurus-virgo",
+  "title": "Taurus and Virgo",
+  "cover": "Taurus + Virgo · *trine*",
+  "keyword": "MATCH",
+  "caption": "flirting via shared grocery list is a valid love language",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "taurus",
+    "virgo",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "earth"
+      },
+      "header": "TAURUS · VIRGO · EARTH",
+      "lines": [
+        "Taurus and Virgo flirt with a *grocery list,*",
+        "and somehow it's *romantic.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "virgo"
+        ],
+        "pairAt": 1
+      },
+      "header": "TRINE · 120°",
+      "lines": [
+        "Four signs apart, both earth:",
+        "a *trine,* a hundred and twenty degrees",
+        "of pure *ease.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "FIXED · MUTABLE",
+      "lines": [
+        "Fixed Taurus gives Virgo *calm.*",
+        "Mutable Virgo gives Taurus *care*",
+        "in a hundred small details.",
+        "The friction: Virgo worries,",
+        "Taurus won't *budge.*",
+        "Say what you need plainly."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to be *perfect*",
+        "to be worth *keeping.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

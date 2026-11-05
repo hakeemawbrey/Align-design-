@@ -1,0 +1,80 @@
+{
+  "id": "016-dear-leo",
+  "title": "Dear Leo",
+  "cover": "Dear Leo, put the *pride* down",
+  "keyword": "CHART",
+  "caption": "for the leo who would rather glow in silence than say i miss you first",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "leo",
+    "loveletter",
+    "zodiaclove",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "dear",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "DEAR LEO · RULED BY THE SUN",
+      "lines": [
+        "Dear Leo, you'd give anyone your *spotlight.*",
+        "That's the *Sun* in you.",
+        "Warm on everything it touches."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "FIXED FIRE · THE LION",
+      "lines": [
+        "You make the people you love",
+        "feel like the *main character.*",
+        "But here's the thing to put down:",
+        "your *pride.*",
+        "Waiting to be missed",
+        "instead of saying you *miss* them."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My heart is *bigger* than my pride.",
+        "I can say it *first*",
+        "and still be a lion."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

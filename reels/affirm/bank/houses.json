@@ -1,0 +1,368 @@
+[
+  {
+    "key": "house-first",
+    "title": "The first house",
+    "cover": "Your *first house* in love",
+    "caption": "the first house is how you walk into a room. people meet it long before they meet your heart",
+    "hashtags": ["firsthouse", "risingsign", "birthchart", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 1, "highlightAt": 2, "axis": true, "axisAt": 2 },
+        "header": "THE FIRST HOUSE · THE SELF",
+        "lines": ["People meet your *first house*", "long before they meet your *heart.*", "It starts at the sign that was *rising*", "the minute you were born,", "and it's the house of the *self.*"],
+        "labels": [
+          { "on": "house", "at": 2, "text": "1ST HOUSE · THE SELF" },
+          { "on": "asc", "at": 3, "text": "ASCENDANT · EASTERN HORIZON" }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "HOW YOU ARRIVE",
+        "lines": ["It's how you walk into a room,", "the first thing people *fall* for.", "But a first impression is a door,", "not the whole *house.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to take up *space.*", "I want someone who stays", "for what's *behind* the door."]
+      }
+    ]
+  },
+  {
+    "key": "house-second",
+    "title": "The second house",
+    "cover": "The *second house* in love",
+    "caption": "the second house holds money, but it's really about what you think you're worth",
+    "hashtags": ["secondhouse", "birthchart", "taurus", "astrology", "selfworth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 2, "highlightAt": 2 },
+        "header": "THE SECOND HOUSE · VALUES",
+        "lines": ["The money house in your chart", "is secretly about *love.*", "Your *second house* holds what you value,", "and what you believe you're *worth.*"],
+        "labels": [{ "on": "house", "at": 2, "text": "2ND HOUSE · VALUES" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS' HOUSE · RULED BY VENUS",
+        "lines": ["In the natural zodiac, it's *Taurus'* house,", "ruled by *Venus.*", "So watch how someone treats", "the things you treasure.", "It's how they'll treat *you.*"]
+      },
+      {
+        "art": "venus",
+        "opts": { "mirror": true, "mirrorAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *earn* love.", "My worth was in my sky", "before anyone *saw* it."]
+      }
+    ]
+  },
+  {
+    "key": "house-third",
+    "title": "The third house",
+    "cover": "The *third house* in love",
+    "caption": "the third house rules everyday talk. turns out the little texts were never little",
+    "hashtags": ["thirdhouse", "birthchart", "gemini", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 0 },
+        "header": "THE THIRD HOUSE · TALK",
+        "lines": ["A good morning text on a Tuesday", "can matter more than *roses.*", "That's your *third house* talking."],
+        "labels": [{ "on": "thread", "at": 0, "text": "EVERYDAY TALK" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 3, "highlightAt": 0 },
+        "header": "GEMINI'S HOUSE · MERCURY",
+        "lines": ["It's the house of everyday *conversation,*", "siblings, neighbors and short trips.", "It belongs to *Gemini,*", "ruled by Mercury, the messenger.", "So love here sounds like *attention.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "3RD HOUSE · TALK" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want to be *heard,*", "not just answered.", "I know the little talks are love *too.*"]
+      }
+    ]
+  },
+  {
+    "key": "house-fourth",
+    "title": "The fourth house",
+    "cover": "The *fourth house* in love",
+    "caption": "the fourth house sits at the very bottom of your chart. it's where you first learned what love feels like",
+    "hashtags": ["fourthhouse", "birthchart", "cancer", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 4, "highlightAt": 2 },
+        "header": "THE FOURTH HOUSE · ROOTS",
+        "lines": ["The very bottom of your birth chart", "is where you learned what love *feels* like.", "It's the *fourth house:*", "home, family, roots."],
+        "labels": [{ "on": "house", "at": 2, "text": "4TH HOUSE · HOME" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "CANCER'S HOUSE · THE MOON",
+        "lines": ["It belongs to *Cancer,*", "ruled by the Moon,", "so it holds whatever feels like *safety,*", "even the habits you didn't *choose.*"]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can keep the *warmth* I was given", "and put down the rest.", "Home is something I get to *build.*"]
+      }
+    ]
+  },
+  {
+    "key": "house-fifth",
+    "title": "The fifth house",
+    "cover": "The *fifth house* in love",
+    "caption": "butterflies don't live in the seventh house. they live in the fifth, with crushes and first dates",
+    "hashtags": ["fifthhouse", "birthchart", "leo", "astrology", "romance"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 5, "highlightAt": 1 },
+        "header": "THE FIFTH HOUSE · ROMANCE",
+        "lines": ["Butterflies don't live in the *seventh* house.", "They live in the *fifth.*", "The house of crushes, play,", "first dates and flirting."],
+        "labels": [{ "on": "house", "at": 1, "text": "5TH HOUSE · ROMANCE" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "LEO'S HOUSE · THE SUN",
+        "lines": ["It's *Leo's* house, ruled by the Sun,", "so love here feels like *sunlight:*", "being seen, being chosen,", "laughing until you lose track of time."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to have *fun* in love.", "I don't have to be *serious*", "to be taken seriously."]
+      }
+    ]
+  },
+  {
+    "key": "house-sixth",
+    "title": "The sixth house",
+    "cover": "The *sixth house* in love",
+    "caption": "the sixth house is routines. love is the coffee made the way you like it, without asking",
+    "hashtags": ["sixthhouse", "birthchart", "virgo", "astrology", "lovelanguage"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 6, "highlightAt": 2 },
+        "header": "THE SIXTH HOUSE · ROUTINES",
+        "lines": ["The least romantic house in your chart", "might be the most *loving* one.", "The *sixth house:*", "routines, health, the daily work."],
+        "labels": [{ "on": "house", "at": 2, "text": "6TH HOUSE · ROUTINES" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO'S HOUSE · DAILY CARE",
+        "lines": ["It's *Virgo's* house,", "and Virgo knows love is a *verb.*", "It's the coffee made how you like it,", "the ride to the doctor,", "the text that says drink some *water.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE ORDINARY DAYS",
+        "lines": ["Grand gestures are easy to *fake.*", "Routines aren't.", "So watch who *shows up*", "on the most ordinary day."]
+      }
+    ]
+  },
+  {
+    "key": "house-seventh",
+    "title": "The seventh house",
+    "cover": "The *seventh house* in love",
+    "caption": "the sign that was setting when you were born says a lot about who you fall for",
+    "hashtags": ["7thhouse", "descendant", "birthchart", "astrology", "zodiaclove"],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 7, "highlightAt": 3, "axis": true, "axisAt": 0 },
+        "header": "THE SEVENTH HOUSE · PARTNERS",
+        "lines": ["The sign setting in the *west*", "the minute you were born", "says a lot about who you *fall* for.", "It opens your *seventh house,*", "the house of partners."],
+        "labels": [
+          { "on": "dsc", "at": 0, "text": "DESCENDANT · THE WEST" },
+          { "on": "house", "at": 3, "text": "7TH HOUSE · PARTNERS" }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "WHAT YOU'RE DRAWN TO",
+        "lines": ["It often holds the traits", "you don't lead with *yourself.*", "So you meet them in someone else", "and feel strangely complete.", "But a good partner doesn't fill a *gap.*", "They wake up a part of *you.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm already *whole.*", "Love just shows me *more* of me."]
+      }
+    ]
+  },
+  {
+    "key": "house-eighth",
+    "title": "The eighth house",
+    "cover": "The *eighth house* in love",
+    "caption": "the eighth house is the room you only let a few people into",
+    "hashtags": ["eighthhouse", "birthchart", "scorpio", "astrology", "intimacy"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 8, "highlightAt": 0 },
+        "header": "THE EIGHTH HOUSE · INTIMACY",
+        "lines": ["Your eighth house is the room", "you only let a *few* people into.", "Intimacy, trust, what you *share:*", "money, bodies, secrets."],
+        "labels": [{ "on": "house", "at": 0, "text": "8TH HOUSE · INTIMACY" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO'S HOUSE · DEPTH",
+        "lines": ["It's *Scorpio's* house,", "so nothing here stays on the surface.", "Real closeness *changes* you.", "That's why letting someone in", "can feel like *falling.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can let someone in *slowly.*", "Trust is something I *give,*", "not something I owe."]
+      }
+    ]
+  },
+  {
+    "key": "house-ninth",
+    "title": "The ninth house",
+    "cover": "The *ninth house* in love",
+    "caption": "the ninth house is the faraway. the person who makes your whole world bigger",
+    "hashtags": ["ninthhouse", "birthchart", "sagittarius", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "THE NINTH HOUSE · THE FARAWAY",
+        "lines": ["Some love doesn't just hold you.", "It makes your whole world *bigger.*", "That's *ninth house* love."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 9, "highlightAt": 0 },
+        "header": "SAGITTARIUS' HOUSE · JUPITER",
+        "lines": ["The ninth house is travel and *belief:*", "long trips, big questions,", "the person from somewhere else", "who changes how you see *everything.*", "It belongs to *Sagittarius,*", "ruled by Jupiter, planet of growth."],
+        "labels": [{ "on": "house", "at": 0, "text": "9TH HOUSE · BELIEF" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want a love that *teaches* me,", "not one that makes me *smaller.*"]
+      }
+    ]
+  },
+  {
+    "key": "house-tenth",
+    "title": "The tenth house",
+    "cover": "The *tenth house* in love",
+    "caption": "the tenth house is your ambition. the right person is proud of it, not threatened by it",
+    "hashtags": ["tenthhouse", "birthchart", "capricorn", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 10, "highlightAt": 3 },
+        "header": "THE TENTH HOUSE · CAREER",
+        "lines": ["The top of your birth chart", "isn't about love at all.", "Or so it *seems.*", "The *tenth house* is career and reputation,", "what you're known for."],
+        "labels": [{ "on": "house", "at": 3, "text": "10TH HOUSE · CAREER" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "CAPRICORN'S HOUSE · SATURN",
+        "lines": ["It's *Capricorn's* house, ruled by Saturn,", "and it asks a quiet love question:", "is this person *proud* of where you're going,", "or threatened by it?"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to choose", "between my *dreams* and my love.", "I deserve someone who *cheers.*"]
+      }
+    ]
+  },
+  {
+    "key": "house-eleventh",
+    "title": "The eleventh house",
+    "cover": "The *eleventh house* in love",
+    "caption": "the eleventh house is friends and hopes. some of the best love stories start there",
+    "hashtags": ["eleventhhouse", "birthchart", "aquarius", "astrology", "friendship"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE ELEVENTH HOUSE · FRIENDS",
+        "lines": ["Some of the best love stories", "start in the house of *friends.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 11, "highlightAt": 0 },
+        "header": "AQUARIUS' HOUSE · HOPES",
+        "lines": ["That's your *eleventh house:*", "friends, community, and your hopes.", "It belongs to *Aquarius,*", "the sign that wants a partner", "who is also a *friend.*", "Someone who knows your wishes", "and wants them to come *true.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "11TH HOUSE · FRIENDS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want to be *liked*", "as much as I'm loved.", "My hopes are safe with the *right* person."]
+      }
+    ]
+  },
+  {
+    "key": "house-twelfth",
+    "title": "The twelfth house",
+    "cover": "The *twelfth house* in love",
+    "caption": "the twelfth house is the part of you that only comes out when you feel completely safe",
+    "hashtags": ["twelfthhouse", "birthchart", "pisces", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 12, "highlightAt": 2, "axis": true, "axisAt": 1 },
+        "header": "THE TWELFTH HOUSE · THE HIDDEN",
+        "lines": ["The last house in your chart", "is the sky that rose just *before* you did.", "The *twelfth house:*", "what's hidden, what's quiet, where you rest."],
+        "labels": [{ "on": "house", "at": 2, "text": "12TH HOUSE · THE HIDDEN" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES' HOUSE · THE QUIET",
+        "lines": ["It's *Pisces'* house,", "the part of you that only comes out", "when you feel completely *safe.*", "Secret crushes. Quiet hurts.", "The *softness* you don't show strangers."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to show everything at once.", "My quiet parts are *worth* the wait."]
+      }
+    ]
+  }
+]

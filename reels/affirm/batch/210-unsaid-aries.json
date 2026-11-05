@@ -1,0 +1,82 @@
+{
+  "id": "210-unsaid-aries",
+  "title": "How an Aries says I love you",
+  "cover": "How an *Aries* says I love you",
+  "keyword": "VENUS",
+  "caption": "an aries won't make a speech about it. they'll just be on their feet the second someone's rude to you",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "aries",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · THE UNSAID",
+      "lines": [
+        "Watch what an Aries does",
+        "when someone's *rude* to you.",
+        "They're on their feet before you blink."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "RULED BY MARS",
+      "lines": [
+        "Aries is ruled by *Mars,*",
+        "so love comes out as *action.*",
+        "They text first. They pick you first.",
+        "They drive across town at midnight",
+        "because you sounded *off.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♂ MARS · ACTION"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can hear love that doesn't *talk.*",
+        "Their actions are *loud* enough."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "120-love-flirting",
+  "title": "Flirt a little",
+  "cover": "Let it *sparkle*",
+  "keyword": "CHART",
+  "caption": "every august the earth runs through old comet dust and the sky flirts back",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "flirting",
+    "dating",
+    "meteorshower",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "header": "METEOR SHOWER · AUGUST",
+      "lines": [
+        "Once a year, the earth flies",
+        "through the dust of an old comet.",
+        "Each grain burns up as a *shooting star.*"
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 1,
+          "text": "COMET DUST · OUR PATH"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 5,
+        "highlightAt": 0
+      },
+      "header": "FIFTH HOUSE · PLAY",
+      "lines": [
+        "Your fifth house is romance and *play.*",
+        "Flirting is that kind of *sparkle.*",
+        "It doesn't have to mean forever.",
+        "It just has to feel like *fun.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "FIFTH HOUSE · ROMANCE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to be *playful.*",
+        "I let myself enjoy the spark",
+        "without *rushing* where it goes."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

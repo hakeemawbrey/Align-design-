@@ -1,0 +1,84 @@
+{
+  "id": "403-love-fight-kind",
+  "title": "Opposite, not enemies",
+  "cover": "Opposite, not *enemies*",
+  "keyword": "MUTUAL",
+  "caption": "a full moon is the sun and moon on opposite sides. and it's the brightest night of the month",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "fullmoon",
+    "relationships",
+    "communication",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "love-2",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON · OPPOSITION",
+      "lines": [
+        "A full moon needs *opposites.*",
+        "The sun and moon have to sit",
+        "on either side of the earth.",
+        "And that's when the moon is *brightest.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "SUN · EARTH · MOON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "CONFLICT · WITHOUT CRUELTY",
+      "lines": [
+        "Being on opposite sides",
+        "doesn't have to dim either of you.",
+        "Fight to *understand,*",
+        "not to win.",
+        "Say the hard thing,",
+        "and *never* the cruel one."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can disagree and still be *kind.*",
+        "We are on the *same* side,",
+        "even when we see it differently."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

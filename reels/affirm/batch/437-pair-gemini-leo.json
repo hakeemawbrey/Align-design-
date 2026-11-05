@@ -1,0 +1,92 @@
+{
+  "id": "437-pair-gemini-leo",
+  "title": "Gemini and Leo",
+  "cover": "Gemini + Leo · *sextile*",
+  "keyword": "MATCH",
+  "caption": "leo is the headline, gemini writes the jokes. a very good party",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "gemini",
+    "leo",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "GEMINI · LEO",
+      "lines": [
+        "Leo is the *headline.*",
+        "Gemini writes the *jokes.*",
+        "Together, it's a very good party."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "leo"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "Sixty degrees apart, a *sextile:*",
+        "friends who flirt,",
+        "and flirts who stay friends.",
+        "Air feeds fire. Fire warms air."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "fire"
+      },
+      "header": "MUTABLE · FIXED",
+      "lines": [
+        "Gemini gives Leo *fresh air*",
+        "and a sharper mind.",
+        "Leo gives Gemini *loyalty* and a center.",
+        "The friction: fixed Leo needs *devotion,*",
+        "mutable Gemini needs *variety.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *playful*",
+        "and still be *serious* about us."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

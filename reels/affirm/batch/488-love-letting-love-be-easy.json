@@ -1,0 +1,85 @@
+{
+  "id": "488-love-letting-love-be-easy",
+  "title": "Letting love be easy",
+  "cover": "Love can be *easy*",
+  "keyword": "MUTUAL",
+  "caption": "nothing in orbit is trying to stay up. it's falling the right way",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "easylove",
+    "healthylove",
+    "astrology",
+    "affirmations",
+    "peace"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "retro",
+      "opts": {
+        "pathAt": 2
+      },
+      "header": "AN ORBIT · FREE FALL",
+      "lines": [
+        "Nothing in orbit is *trying* to stay up.",
+        "A planet is just falling toward the sun,",
+        "moving fast enough to keep *missing.*",
+        "No engine. Just the right *path.*"
+      ],
+      "labels": [
+        {
+          "on": "path",
+          "at": 3,
+          "text": "FREE FALL · NO FUEL"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE RIGHT PATH",
+      "lines": [
+        "Love isn't always effortless.",
+        "But when it's right, you don't *fight*",
+        "just to keep it in the *sky.*",
+        "Easy isn't *boring.*",
+        "Easy is two people on the same path."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to have love that's *easy.*",
+        "I stop mistaking a *struggle* for proof."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

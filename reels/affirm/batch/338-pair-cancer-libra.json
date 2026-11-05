@@ -1,0 +1,91 @@
+{
+  "id": "338-pair-cancer-libra",
+  "title": "Cancer and Libra",
+  "cover": "Cancer + Libra · *square*",
+  "keyword": "MATCH",
+  "caption": "both of you avoiding the fight is the fight",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "cancer",
+    "libra",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "CANCER · LIBRA",
+      "lines": [
+        "You both avoid the *fight.*",
+        "That's the fight."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "libra"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90° · BOTH CARDINAL",
+      "lines": [
+        "Cancer and Libra form a *square,*",
+        "three signs and ninety degrees apart.",
+        "Both cardinal, both quietly in charge."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "air"
+      },
+      "header": "WATER · AIR · WORK WORTH DOING",
+      "lines": [
+        "Water feels it. Air *thinks* it through.",
+        "Cancer gives Libra a *home.*",
+        "Libra gives Cancer *perspective.*",
+        "The friction: keeping the peace",
+        "instead of telling the *truth.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "CANCER · LIBRA · THE TRUTH",
+      "lines": [
+        "A kind truth beats a polite *silence.*",
+        "I can say it *gently,* and still say it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

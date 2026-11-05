@@ -1,0 +1,90 @@
+{
+  "id": "123-pair-leo-pisces",
+  "title": "Leo and Pisces",
+  "cover": "Leo and Pisces, *a love story*",
+  "keyword": "MATCH",
+  "caption": "leo wants the grand gesture. pisces already wrote the poem about it",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "leo",
+    "pisces",
+    "quincunx",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "Pisces will write you the *poem.*",
+        "Leo will read it out loud, *proudly.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "Leo and Pisces sit a *quincunx* apart.",
+        "Fire and water, fixed and mutable.",
+        "Nothing shared, so they learn *everything.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "water"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Leo gives Pisces *confidence* to be seen.",
+        "Pisces gives Leo *tenderness* offstage.",
+        "Watch for Pisces going quiet to keep peace."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My heart can be *big* and gentle.",
+        "I'm allowed to take up *space.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

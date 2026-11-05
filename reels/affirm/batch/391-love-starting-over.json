@@ -1,0 +1,85 @@
+{
+  "id": "391-love-starting-over",
+  "title": "Starting over",
+  "cover": "Every moon starts *dark*",
+  "keyword": "PASSING",
+  "caption": "the moon goes completely dark every month and nobody calls it a failure",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "startingover",
+    "newmoon",
+    "astrology",
+    "affirmations",
+    "movingon"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · PHASE ONE",
+      "lines": [
+        "Every month, the moon goes completely *dark.*",
+        "And no one thinks the moon has *failed.*",
+        "It's called the *new* moon.",
+        "It's literally phase one."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "NEW MOON"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "WAXING · FROM NOTHING",
+      "lines": [
+        "Starting over in love works the same way.",
+        "It feels like losing *everything* you built.",
+        "It's really the sky making room",
+        "for the next *light.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm not starting from *nothing.*",
+        "I'm starting from *new.*",
+        "My next light is already on its way."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

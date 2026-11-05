@@ -1,0 +1,75 @@
+{
+  "id": "072-situationship-aquarius",
+  "title": "Aquarius in a situationship",
+  "cover": "Aquarius, make it *mutual*",
+  "keyword": "MUTUAL",
+  "caption": "aquarius doesn't need it to look normal. different is fine. it just has to be mutual",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "aquarius",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "Aquarius, you don't need it to look *normal.*",
+        "You're fine with *different.*",
+        "But different still has to be mutual."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "FRIENDS · OR SOMETHING",
+      "lines": [
+        "Being friends first is your *thing.*",
+        "But a friend on some nights",
+        "and more on others",
+        "isn't a new kind of love.",
+        "It's just *unclear.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *free* and still be sure.",
+        "I deserve someone on my *side,*",
+        "in every version of us."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

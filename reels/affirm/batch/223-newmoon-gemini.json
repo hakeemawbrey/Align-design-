@@ -1,0 +1,84 @@
+{
+  "id": "223-newmoon-gemini",
+  "title": "New moon in Gemini",
+  "cover": "New moon in *Gemini*",
+  "keyword": "MOON",
+  "caption": "gemini's brightest stars are named for twins who refused to be apart. invite someone you can actually talk to",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "newmoon",
+    "newmooningemini",
+    "gemini",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "newmoon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · THE TWINS",
+      "lines": [
+        "Gemini's brightest stars are named for *twins.*",
+        "In the old story, one gave up half of forever",
+        "so they'd never be *apart.*"
+      ],
+      "labels": [
+        {
+          "on": "stars",
+          "at": 0,
+          "text": "CASTOR · POLLUX"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · GEMINI",
+      "lines": [
+        "When the sun and moon meet here,",
+        "invite the person you can *talk* to.",
+        "Whose texts feel like an open *door,*",
+        "not a riddle."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want to be *understood,*",
+        "not decoded.",
+        "I deserve a conversation that *stays.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

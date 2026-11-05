@@ -1,0 +1,84 @@
+{
+  "id": "192-season-leo",
+  "title": "Leo season in love",
+  "cover": "*Leo* season: be seen",
+  "keyword": "CHART",
+  "caption": "the sun is home for a month. sing the bad karaoke. say i love you where people can hear",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "leoseason",
+    "leo",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO SEASON · JUL 23 – AUG 22",
+      "lines": [
+        "For one month a year, the Sun is *home.*",
+        "It rules Leo, and while it's there,",
+        "it's at its *strongest.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☉ THE SUN · IN ITS OWN SIGN"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "So this month, love wants to be *seen.*",
+        "Big gestures. Bad karaoke.",
+        "Saying I love you in *public.*",
+        "Being proud of who you're with."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be loud about my *love.*",
+        "Joy is never *too* much."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

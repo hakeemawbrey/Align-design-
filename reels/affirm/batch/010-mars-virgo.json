@@ -1,0 +1,84 @@
+{
+  "id": "010-mars-virgo",
+  "title": "Mars in Virgo",
+  "cover": "Mars in Virgo fights with a *plan*",
+  "keyword": "MARS",
+  "caption": "mars in virgo has a draft of this fight, rehearsed in the shower. twice. it just wants the real fix",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "marsinvirgo",
+    "virgo",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "MARS IN VIRGO",
+      "lines": [
+        "Somewhere there's a *draft* of this fight,",
+        "rehearsed in the *shower.* Twice.",
+        "Mars in Virgo fights with a plan."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS · MUTABLE EARTH",
+      "lines": [
+        "Virgo is ruled by Mercury,",
+        "so your drive is precise and practical.",
+        "You want someone through effort,",
+        "booking the table, learning their order.",
+        "And in a fight, you want the *real* problem,",
+        "not a speech. An actual fix."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "♂ · MARS · HOW YOU WANT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *right* and still be *kind.*",
+        "Not everything I love needs *fixing.*",
+        "Including *me.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

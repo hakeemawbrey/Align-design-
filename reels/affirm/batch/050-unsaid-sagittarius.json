@@ -1,0 +1,79 @@
+{
+  "id": "050-unsaid-sagittarius",
+  "title": "How a Sagittarius says I love you",
+  "cover": "How *Sagittarius* says I love you",
+  "keyword": "VENUS",
+  "caption": "come with me. to the market, the mountain, the airport. that's sagittarius for i love you",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "sagittarius",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · THE UNSAID",
+      "lines": [
+        "Come with me.",
+        "That's Sagittarius for I love you.",
+        "To the market, the mountain, the *airport.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER",
+      "lines": [
+        "Ruled by Jupiter, the giant planet,",
+        "they love by making your world *bigger.*",
+        "They teach you the card game.",
+        "They tell you the *truth,* even the hard part,",
+        "because you're worth it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "An open door is still a *promise.*",
+        "I can love someone who *roams.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

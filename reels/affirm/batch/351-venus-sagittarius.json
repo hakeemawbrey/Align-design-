@@ -1,0 +1,90 @@
+{
+  "id": "351-venus-sagittarius",
+  "title": "Venus in Sagittarius",
+  "cover": "Venus in Sagittarius needs *room*",
+  "keyword": "VENUS",
+  "caption": "venus in sagittarius falls in love in airports and on long drives. the right one books the second ticket",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "venusinsagittarius",
+    "sagittarius",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "VENUS IN SAGITTARIUS",
+      "lines": [
+        "Long drives. Airports. A debate at *midnight.*",
+        "That's where you fall in love.",
+        "Venus in Sagittarius needs room."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "SAGITTARIUS · THE ARCHER"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER",
+      "lines": [
+        "Sagittarius is ruled by Jupiter,",
+        "the planet of *more:* more sky, more truth.",
+        "So a cage, even a sweet one, feels like *goodbye.*",
+        "You need a love that comes *with* you."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♃ · JUPITER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WHAT YOU DESERVE",
+      "lines": [
+        "So stop apologizing for needing *room.*",
+        "The right person won't hold you back.",
+        "They'll book the *second* ticket."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

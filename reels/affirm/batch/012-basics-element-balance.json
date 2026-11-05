@@ -1,0 +1,86 @@
+{
+  "id": "012-basics-element-balance",
+  "title": "Element balance",
+  "cover": "Your *missing* element",
+  "keyword": "CHART",
+  "caption": "count your planets by element. the one you're missing is often the one you fall for",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "elements",
+    "birthchart",
+    "astrology",
+    "compatibility",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "water"
+      },
+      "header": "FIRE · EARTH · AIR · WATER",
+      "lines": [
+        "Count your planets by *element.*",
+        "Fire, earth, air, water.",
+        "Most charts lean hard on one or two."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 1,
+          "text": "FOUR ELEMENTS · ONE CHART"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "THE MISSING ELEMENT",
+      "lines": [
+        "The one you're *missing*",
+        "is often the one you fall for.",
+        "Airy charts fall for steady earth.",
+        "Watery ones fall for fire's *nerve.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need someone to *complete* me.",
+        "I can learn what they *carry*",
+        "and make room for it in me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

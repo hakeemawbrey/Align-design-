@@ -1,0 +1,75 @@
+{
+  "id": "193-hear-taurus",
+  "title": "What a Taurus needs to hear",
+  "cover": "Taurus, take your *time*",
+  "keyword": "CHART",
+  "caption": "for the taurus being told to hurry up. you don't have to",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "taurus",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "hear",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · THE BULL",
+      "lines": [
+        "Taurus, anyone who *rushes* you isn't for you.",
+        "You were built to love like *roots.*",
+        "Slow, deep, still there in *winter.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "RULED BY VENUS · RITUALS",
+      "lines": [
+        "*Venus* rules you, so you love in *rituals.*",
+        "The same dinner spot. The same side of the bed.",
+        "That isn't *boring.*",
+        "That's how you know it's real."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WORTH THE WAIT",
+      "lines": [
+        "Anyone worth it",
+        "will *match* your pace,",
+        "not tap their foot at it.",
+        "Real things grow *slowly.*",
+        "So do you."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

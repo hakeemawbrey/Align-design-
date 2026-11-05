@@ -1,0 +1,80 @@
+{
+  "id": "174-fear-taurus",
+  "title": "What a Taurus quietly fears",
+  "cover": "Taurus, a home on *sand*",
+  "keyword": "MUTUAL",
+  "caption": "for the taurus who loves in years and is scared of someone who leaves in weeks",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "taurus",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · FIXED EARTH",
+      "lines": [
+        "Taurus, it isn't change you're scared of.",
+        "It's building a home on *sand.*",
+        "You don't love in weeks.",
+        "You love in *years.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "THE QUIET FEAR",
+      "lines": [
+        "So the fear is quiet, but heavy:",
+        "that you'll pour years into someone",
+        "and one day they'll just *walk.*",
+        "And you'll be left holding the *keys.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I only build with someone",
+        "who's *building* too.",
+        "My roots deserve *steady* ground."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

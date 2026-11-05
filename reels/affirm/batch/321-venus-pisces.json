@@ -1,0 +1,93 @@
+{
+  "id": "321-venus-pisces",
+  "title": "Venus in Pisces",
+  "cover": "Venus in Pisces loves *wide open*",
+  "keyword": "VENUS",
+  "caption": "venus in pisces has loved people for who they could be. it deserves someone who already is",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "venusinpisces",
+    "pisces",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS IN PISCES · EXALTED",
+      "lines": [
+        "Venus is *exalted* in Pisces,",
+        "the sign where she's at her best,",
+        "where love has *no edges* at all."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♀ · EXALTED IN PISCES"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · TWO FISH, ONE CORD",
+      "lines": [
+        "You've loved people for who they *could* be.",
+        "You feel their day before they say a word,",
+        "and you love by *merging.*",
+        "So you need someone gentle with that,",
+        "who meets your softness with *care.*"
+      ],
+      "labels": [
+        {
+          "on": "stars",
+          "at": 0,
+          "text": "PISCES · MUTABLE WATER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can love *without* disappearing.",
+        "I don't have to rescue anyone",
+        "to deserve being *held.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

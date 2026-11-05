@@ -1,0 +1,76 @@
+{
+  "id": "189-misses-taurus",
+  "title": "When a Taurus misses you",
+  "cover": "A *Taurus* who misses you",
+  "keyword": "VENUS",
+  "caption": "a taurus who misses you sleeps in your sweater and orders your usual by accident",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurus",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · FIXED EARTH",
+      "lines": [
+        "A Taurus who misses you",
+        "sleeps in your *sweater.*",
+        "They order your usual by accident,",
+        "then eat it *anyway.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "RULED BY VENUS",
+      "lines": [
+        "Ruled by *Venus,* they miss you",
+        "through the *senses.*",
+        "Your smell on a pillow.",
+        "The *weight* of your hand.",
+        "The quiet of a Sunday without you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My love is *loyal,* not slow.",
+        "When I miss someone,",
+        "I keep their place *warm.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

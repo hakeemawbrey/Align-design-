@@ -1,0 +1,87 @@
+{
+  "id": "084-mode-fixed-mutable",
+  "title": "Fixed and mutable",
+  "cover": "*Fixed* and mutable",
+  "keyword": "MATCH",
+  "caption": "a fixed sign and a mutable sign. the anchor and the tide, and they need each other",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "fixedsigns",
+    "mutablesigns",
+    "compatibility",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FIXED · MUTABLE",
+      "lines": [
+        "One of you is the *anchor.*",
+        "The other is the *tide.*",
+        "A fixed sign loving a mutable one."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "virgo"
+        ],
+        "pairAt": 2
+      },
+      "header": "THE MIDDLE AND THE TURN",
+      "lines": [
+        "Fixed signs hold the middle of a season.",
+        "Mutable signs *carry* it into the next.",
+        "So fixed gives mutable a *home,*",
+        "and mutable teaches fixed to bend."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 2,
+          "text": "TAURUS · VIRGO"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be someone's *steady*",
+        "without asking them to stand still.",
+        "And I can change without *leaving.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "211-selflove-aquarius",
+  "title": "Self-love for an Aquarius",
+  "cover": "Aquarius, *feel* it first",
+  "keyword": "CHART",
+  "caption": "for the aquarius who explains every feeling instead of having it",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aquarius",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "AQUARIUS · AN AIR SIGN",
+      "lines": [
+        "Aquarius, you can't *think* your way home.",
+        "You're the water bearer,",
+        "but you're an *air* sign.",
+        "You live up in your head."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 2,
+          "text": "AIR · NOT WATER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "COME DOWN · FEEL IT",
+      "lines": [
+        "So come down for a minute.",
+        "Hand on your chest. *Breathe.*",
+        "Name one feeling",
+        "without explaining *why.*",
+        "Let it be *messy.* Let it be yours."
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *solve* my feelings.",
+        "I'm allowed to just *feel* them."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

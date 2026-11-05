@@ -1,0 +1,106 @@
+{
+  "id": "053-ruler-sagittarius",
+  "title": "Sagittarius is ruled by Jupiter",
+  "cover": "Sagittarius, ruled by a *giant*",
+  "keyword": "CHART",
+  "caption": "every other planet could fit inside jupiter. no wonder small love never fits you",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "sagittarius",
+    "jupiter",
+    "planetaryruler",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "ruler",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "SAGITTARIUS · RULED BY JUPITER",
+      "lines": [
+        "Every other planet could fit inside your ruler.",
+        "Jupiter, the giant.",
+        "The planet of luck, faith and *more.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♃ JUPITER · EXPANSION"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "So you love *big.*",
+        "Big plans, big laughs, big honesty.",
+        "You'd book the flight tonight",
+        "if they said *yes.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "ROOM TO GROW",
+      "lines": [
+        "But Jupiter needs *room.*",
+        "Love that shrinks you",
+        "won't hold you long,",
+        "and that isn't a *flaw.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "♃ · SPACE TO EXPAND"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be free and *faithful.*",
+        "The right love feels like *more* sky,",
+        "not less."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

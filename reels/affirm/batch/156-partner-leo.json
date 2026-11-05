@@ -1,0 +1,86 @@
+{
+  "id": "156-partner-leo",
+  "title": "Leo as a partner",
+  "cover": "A *Leo* will brag about you",
+  "keyword": "MATCH",
+  "caption": "a leo will brag about you to total strangers, and never forget to celebrate you",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "leo",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "firesign"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "partner",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "A Leo will brag about you",
+        "to total *strangers.*",
+        "With them, you're the *main character,*",
+        "and they never forget to *celebrate.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "RULED BY THE SUN",
+      "lines": [
+        "Ruled by the *Sun,* they're generous",
+        "in a way that *warms* the room.",
+        "And as a fixed sign, they're *loyal*",
+        "long after the honeymoon."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "THE SUN · WARMTH"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My love is *big* on purpose.",
+        "I make the people I love",
+        "feel like *sunlight.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

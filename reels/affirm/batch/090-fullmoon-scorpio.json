@@ -1,0 +1,81 @@
+{
+  "id": "090-fullmoon-scorpio",
+  "title": "Full moon in Scorpio",
+  "cover": "Full moon in *Scorpio*",
+  "keyword": "MOON",
+  "caption": "a full moon in scorpio brings up the grudge, the jealousy, the test. release the grudge, keep the depth",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "fullmoon",
+    "fullmooninscorpio",
+    "scorpio",
+    "astrology",
+    "lettinggo"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "FULL MOON IN SCORPIO",
+      "lines": [
+        "A full moon in Scorpio brings up what you *buried.*",
+        "The grudge. The jealousy.",
+        "The test you set to see if they'd *stay.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "scorpio"
+        ],
+        "pairAt": 0
+      },
+      "header": "TAURUS SUN · SCORPIO MOON",
+      "lines": [
+        "The sun is in *Taurus,* across the wheel,",
+        "asking for calm,",
+        "while the moon wants the *whole truth.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "RELEASE · KEEP THE DEPTH",
+      "lines": [
+        "So let it surface.",
+        "You don't have to *test* love",
+        "to trust it.",
+        "Release the grudge. Keep the *depth.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

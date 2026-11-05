@@ -1,0 +1,85 @@
+{
+  "id": "151-phases-last-quarter",
+  "title": "The last quarter moon",
+  "cover": "Keep what's *real*",
+  "keyword": "MOON",
+  "caption": "the last quarter moon rises around midnight and hangs in the morning sky. the phase for sorting",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "lastquartermoon",
+    "moonphases",
+    "astrology",
+    "lettinggo",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "phases",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 6
+      },
+      "header": "LAST QUARTER",
+      "lines": [
+        "The last quarter moon rises around *midnight*",
+        "and is still up after *breakfast.*",
+        "It's the moon in a blue morning sky."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "RISES NEAR MIDNIGHT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "HALF LIT · THE OTHER HALF",
+      "lines": [
+        "It's half lit again, the *other* half.",
+        "The light it's losing,",
+        "it's losing on *purpose.*",
+        "In love, this is the sorting.",
+        "What stays, and what you've *outgrown.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I *keep* what's real.",
+        "I let the rest go *quietly.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

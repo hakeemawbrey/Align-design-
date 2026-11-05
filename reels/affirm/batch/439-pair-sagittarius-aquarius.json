@@ -1,0 +1,88 @@
+{
+  "id": "439-pair-sagittarius-aquarius",
+  "title": "Sagittarius and Aquarius",
+  "cover": "Sagittarius and Aquarius, *free*",
+  "keyword": "MATCH",
+  "caption": "sagittarius and aquarius are best friends who happen to be in love. no cage required",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "sagittarius",
+    "aquarius",
+    "sextile",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "NO CAGE",
+      "lines": [
+        "You don't need a *cage*",
+        "to keep someone who *wants* to stay.",
+        "Sagittarius and Aquarius already know."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "sagittarius",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "A *sextile,* sixty degrees.",
+        "Mutable fire meets fixed air.",
+        "Every idea becomes a *plan* to go."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Sagittarius gives Aquarius *warmth.*",
+        "Aquarius gives Sagittarius *vision.*",
+        "The friction: so much *freedom*",
+        "nobody says they're staying."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "NO CAGE NEEDED",
+      "lines": [
+        "The freest love there is",
+        "is the one that *keeps choosing.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

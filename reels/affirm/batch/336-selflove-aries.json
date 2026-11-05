@@ -1,0 +1,87 @@
+{
+  "id": "336-selflove-aries",
+  "title": "Self-love for an Aries",
+  "cover": "Aries, *rest* isn't losing",
+  "keyword": "CHART",
+  "caption": "self-love for an aries is sweat first, then rest without guilt",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aries",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 1,
+        "highlightAt": 1
+      },
+      "header": "THE FIRST HOUSE · THE SELF",
+      "lines": [
+        "Aries, you don't come home by sitting *still.*",
+        "The first sign, the *first house,*",
+        "the house of the self."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 1,
+          "text": "1ST HOUSE · THE SELF"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "RULED BY MARS · MOVE FIRST",
+      "lines": [
+        "*Mars* gives you fire that needs somewhere to go.",
+        "So run it out. Dance it out.",
+        "Hit the *pillow* if you have to.",
+        "Then the hard part:",
+        "let yourself *rest*",
+        "without calling it losing."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm on my *own* side.",
+        "Rest is not *giving up.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "417-pair-aries-pisces",
+  "title": "Aries and Pisces",
+  "cover": "Aries + Pisces · *semi-sextile*",
+  "keyword": "MATCH",
+  "caption": "the last sign and the first one, side by side. loud meets soft",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aries",
+    "pisces",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "pisces"
+        ],
+        "pairAt": 2
+      },
+      "header": "ARIES · PISCES · SEMI-SEXTILE",
+      "lines": [
+        "The last sign falls for the *first.*",
+        "Pisces ends the zodiac, Aries starts it again.",
+        "Thirty degrees apart: a *semi-sextile.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "water"
+      },
+      "header": "CARDINAL FIRE · MUTABLE WATER",
+      "lines": [
+        "Fire and water, cardinal and mutable.",
+        "Pisces gives Aries *tenderness*",
+        "it didn't know it needed.",
+        "Aries gives Pisces a *spine* for the dream."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION · VOLUME",
+      "lines": [
+        "The friction is volume.",
+        "Aries speaks loud.",
+        "Pisces feels *everything* at full blast."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE FIRST · THE LAST",
+      "lines": [
+        "The wheel ends and starts *again*",
+        "right where you two meet.",
+        "My softness is its own *courage.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

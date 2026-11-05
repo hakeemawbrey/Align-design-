@@ -1,0 +1,77 @@
+{
+  "id": "239-dealbreaker-leo",
+  "title": "The Leo dealbreaker",
+  "cover": "A Leo won't be your *secret*",
+  "keyword": "MATCH",
+  "caption": "a leo will not be anyone's secret. they want the person who claps the loudest",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "leo",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "firesign"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "RULED BY THE SUN",
+      "lines": [
+        "A Leo will not be anyone's *secret.*",
+        "You're ruled by the *Sun,*",
+        "and the sun doesn't do",
+        "hidden, half-lit, or *later.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "So say it up front:",
+        "you want someone *proud* of you.",
+        "Who posts the photo.",
+        "Who brags about you to their friends.",
+        "Who claps the *loudest.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't dim to *fit.*",
+        "The right love is glad",
+        "to stand in my *light.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

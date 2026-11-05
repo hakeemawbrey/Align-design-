@@ -1,0 +1,110 @@
+{
+  "id": "268-basics-big-three",
+  "title": "The big three",
+  "cover": "Your *big three*",
+  "keyword": "CHART",
+  "caption": "your sun sign is a third of the story. your moon and your rising are the rest",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "bigthree",
+    "birthchart",
+    "astrology",
+    "affirmations",
+    "zodiac"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "THE BIG THREE · THE SUN",
+      "lines": [
+        "Your sun sign is only a *third* of you.",
+        "It's who you are at your *core.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "SUN · WHO YOU ARE"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE BIG THREE · THE MOON",
+      "lines": [
+        "Your *moon* sign is what you need",
+        "to feel safe."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MOON · WHAT YOU NEED"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "axis": true,
+        "axisAt": 0
+      },
+      "header": "THE BIG THREE · RISING",
+      "lines": [
+        "Your *rising* is the sign that was coming up",
+        "in the east the minute you were born.",
+        "It's how you *arrive.*"
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 0,
+          "text": "RISING · EASTERN HORIZON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want to be loved in all *three.*",
+        "Not just the part",
+        "that shows up *first.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "309-love-pulling-away",
+  "title": "The sun doesn't leave",
+  "cover": "The sun never *leaves*",
+  "keyword": "MUTUAL",
+  "caption": "the sun doesn't set. the earth turns away from it. notice when you're the one turning",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "pullingaway",
+    "relationships",
+    "selfawareness",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "SUNSET · THE EARTH TURNS",
+      "lines": [
+        "The sun never actually *sets.*",
+        "It stays exactly where it is.",
+        "We're the ones *turning* away.",
+        "Night isn't the sun leaving you."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "THE SUN · STILL THERE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "WHEN YOU PULL AWAY",
+      "lines": [
+        "When love gets close",
+        "and you go *quiet,*",
+        "it can feel like it's leaving.",
+        "Sometimes it's just you, turning.",
+        "And you can turn *back.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I notice when I'm *turning* away.",
+        "I can say I need space",
+        "and still come *back.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

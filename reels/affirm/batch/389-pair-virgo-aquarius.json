@@ -1,0 +1,90 @@
+{
+  "id": "389-pair-virgo-aquarius",
+  "title": "Virgo and Aquarius",
+  "cover": "Virgo and Aquarius, *a puzzle*",
+  "keyword": "MATCH",
+  "caption": "aquarius wants to rewrite the rules. virgo wants them followed properly. closer than they think",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "virgo",
+    "aquarius",
+    "quincunx",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · VIRGO",
+      "lines": [
+        "Aquarius wants to *rewrite* the rules.",
+        "Virgo wants them followed *properly.*",
+        "Both are trying to help."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "virgo",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "They sit a *quincunx* apart.",
+        "Earth and air, mutable and fixed.",
+        "Different wiring, the same big *heart.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Virgo gives Aquarius *daily* devotion.",
+        "Aquarius gives Virgo room to be *odd.*",
+        "The friction: routine against *rebellion.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE ADJUSTMENT",
+      "lines": [
+        "A quincunx asks you to *adjust.*",
+        "Love that adjusts is love that *lasts.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

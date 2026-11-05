@@ -1,0 +1,83 @@
+{
+  "id": "102-firstdate-taurus",
+  "title": "First date with a Taurus",
+  "cover": "How to win a *Taurus*",
+  "keyword": "MATCH",
+  "caption": "pick the place with the good bread. arrive on time. don't rush dessert",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "taurus",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "firstdate",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "mint"
+      },
+      "header": "RULED BY VENUS",
+      "lines": [
+        "Winning a Taurus is *simple,*",
+        "and almost impossible to *fake.*",
+        "They're ruled by *Venus,*",
+        "and they fall in love through the *senses.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "VENUS · THE SENSES"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · FIXED EARTH",
+      "lines": [
+        "So pick the place with the *good bread.*",
+        "Arrive on time. Don't rush dessert.",
+        "Let the night take as long",
+        "as it *wants* to."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm worth a *slow* evening.",
+        "The right one isn't checking the time.",
+        "They're ordering *dessert.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

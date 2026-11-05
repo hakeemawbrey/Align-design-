@@ -1,0 +1,86 @@
+{
+  "id": "183-phases-waxing-gibbous",
+  "title": "The waxing gibbous moon",
+  "cover": "Almost is still *real*",
+  "keyword": "MOON",
+  "caption": "gibbous means humped. more than half, not quite full. the hardest part of love to wait through",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "waxinggibbous",
+    "moonphases",
+    "astrology",
+    "patience",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "phases",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 3
+      },
+      "header": "WAXING GIBBOUS",
+      "lines": [
+        "*Gibbous* comes from the Latin for hump.",
+        "More than half,",
+        "not quite full.",
+        "Swollen with *almost.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "MORE THAN HALF · GROWING"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "ALMOST · NOT YET",
+      "lines": [
+        "It's the hardest part of love to *wait* through.",
+        "You can see where it's going.",
+        "You can't make it get there *faster.*",
+        "So you tend it."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4,
+        "litAt": 0
+      },
+      "header": "NEARLY FULL",
+      "lines": [
+        "It will be full.",
+        "Not because you *pushed* it.",
+        "Because that's what it was already *doing.*",
+        "Almost is still real."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

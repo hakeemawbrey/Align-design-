@@ -1,0 +1,87 @@
+{
+  "id": "229-sky-supermoon",
+  "title": "The supermoon",
+  "cover": "Same moon, just *closer*",
+  "keyword": "MOON",
+  "caption": "a supermoon isn't a bigger moon. it's the same one, just closer. that's what the right people do",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "supermoon",
+    "fullmoon",
+    "moon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "SUPERMOON · PERIGEE",
+      "lines": [
+        "A supermoon isn't a bigger *moon.*",
+        "It's the same moon, just *closer.*",
+        "Its orbit is an oval,",
+        "and sometimes it's full at the near end."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "PERIGEE · CLOSEST POINT"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "mint"
+      },
+      "header": "UP CLOSE · BRIGHTER",
+      "lines": [
+        "It can look fourteen percent *wider*",
+        "and almost a third brighter",
+        "than a full moon at its farthest.",
+        "Nothing about it changed.",
+        "Only the *distance.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I let the right people come *close.*",
+        "Up close, I'm still *me,*",
+        "just brighter."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

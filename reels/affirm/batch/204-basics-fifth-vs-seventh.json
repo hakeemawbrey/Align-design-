@@ -1,0 +1,87 @@
+{
+  "id": "204-basics-fifth-vs-seventh",
+  "title": "Fifth house vs seventh",
+  "cover": "Butterflies vs *staying*",
+  "keyword": "CHART",
+  "caption": "your chart has two love houses. the fifth is the crush. the seventh is who stays",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "5thhouse",
+    "7thhouse",
+    "birthchart",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 5,
+        "highlightAt": 2
+      },
+      "header": "THE FIFTH HOUSE · ROMANCE",
+      "lines": [
+        "Your chart has two love *houses,*",
+        "and they want different things.",
+        "The fifth is *romance.*",
+        "Flirting, dates, butterflies, play."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 2,
+          "text": "5TH HOUSE · ROMANCE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "THE SEVENTH HOUSE · PARTNERS",
+      "lines": [
+        "The seventh is *partnership.*",
+        "Showing up, choosing, staying.",
+        "It sits right across from your first house,",
+        "you, face to face with someone."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want the *butterflies*",
+        "and the person who stays after.",
+        "I don't have to *choose.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

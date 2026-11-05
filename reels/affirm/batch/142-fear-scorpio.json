@@ -1,0 +1,83 @@
+{
+  "id": "142-fear-scorpio",
+  "title": "What a Scorpio quietly fears",
+  "cover": "Scorpio, afraid of being *fooled*",
+  "keyword": "MUTUAL",
+  "caption": "for the scorpio who gave all of it and got half",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "scorpio",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · THE SCORPION",
+      "lines": [
+        "Scorpio, you're not afraid of being *hurt.*",
+        "You're afraid of being *fooled.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 4
+      },
+      "header": "THE QUIET FEAR · ALL IN",
+      "lines": [
+        "You give your loyalty *whole,*",
+        "no hedging, no backup plan.",
+        "So what scares you, quietly,",
+        "is handing someone everything",
+        "and finding out they were only *half* there."
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I give all of me",
+        "to people who give all of *them.*",
+        "I'm allowed to want *all* of it back."
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 2,
+          "text": "ONE LINE · BOTH WAYS"
+        }
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

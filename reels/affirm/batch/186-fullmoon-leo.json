@@ -1,0 +1,80 @@
+{
+  "id": "186-fullmoon-leo",
+  "title": "Full moon in Leo",
+  "cover": "Full moon in *Leo*",
+  "keyword": "MOON",
+  "caption": "a full moon in leo wants to be seen. release performing for love, the right person sees you offstage",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "fullmoon",
+    "fullmooninleo",
+    "leo",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON IN LEO",
+      "lines": [
+        "A full moon in Leo wants to be *seen.*",
+        "Every feeling asks for a *spotlight,*",
+        "even the ones you've been hiding."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aquarius",
+          "leo"
+        ],
+        "pairAt": 1
+      },
+      "header": "AQUARIUS SUN · LEO MOON",
+      "lines": [
+        "The sun sits opposite, in *Aquarius,*",
+        "the sign of cool distance.",
+        "The moon is in the sign of the *heart.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release *performing* for love.",
+        "I don't need applause to be adored.",
+        "The right person sees me *offstage* too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

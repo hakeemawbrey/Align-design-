@@ -1,0 +1,83 @@
+{
+  "id": "337-ruler-cancer",
+  "title": "Cancer is ruled by the Moon",
+  "cover": "Cancer, ruled by the *Moon*",
+  "keyword": "CHART",
+  "caption": "your love has tides, cancer. some nights the shell, some nights the hug. both are honest",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "cancer",
+    "moon",
+    "planetaryruler",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "ruler",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4,
+        "litAt": 2
+      },
+      "header": "CANCER · RULED BY THE MOON",
+      "lines": [
+        "Only one sign is ruled by the *Moon.*",
+        "And it's yours.",
+        "She changes shape every night",
+        "and still comes *back.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "☽ THE MOON · YOUR RULER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · CARDINAL WATER",
+      "lines": [
+        "So your love has *tides.*",
+        "Some nights you want to be *held.*",
+        "Some nights you want your shell.",
+        "Both are you. Both are *honest.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My moods are not a *mess.*",
+        "They're a moon, in phases.",
+        "I deserve someone who learns my *sky.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

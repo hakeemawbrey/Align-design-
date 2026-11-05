@@ -1,0 +1,96 @@
+{
+  "id": "128-season-capricorn",
+  "title": "Capricorn season in love",
+  "cover": "*Capricorn* season: no maybes",
+  "keyword": "CHART",
+  "caption": "the year ends in capricorn season and so do the maybes. who actually showed up?",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "capricornseason",
+    "capricorn",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "CAPRICORN · DEC 22 – JAN 19",
+      "lines": [
+        "The year ends in *Capricorn* season,",
+        "and so do the *maybes.*",
+        "It's ruled by Saturn,",
+        "the planet of time and promises."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "♄ SATURN · TIME"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☉",
+        "planetSign": "capricorn",
+        "planetAt": 0
+      },
+      "header": "THE SUN IN CAPRICORN",
+      "lines": [
+        "With the Sun in the sign of *building,*",
+        "love gets serious.",
+        "Who actually showed up this *year?*",
+        "What are you two *making?*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☉ THE SUN · IN CAPRICORN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want love I can *count* on.",
+        "I can ask where this is *going*",
+        "and expect a real answer."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

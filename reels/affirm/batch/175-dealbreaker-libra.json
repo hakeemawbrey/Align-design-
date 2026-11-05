@@ -1,0 +1,93 @@
+{
+  "id": "175-dealbreaker-libra",
+  "title": "The Libra dealbreaker",
+  "cover": "The *Libra* dealbreaker",
+  "keyword": "MATCH",
+  "caption": "a libra is watching how you treat the waiter, and whether you'll ever meet them halfway",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "libra",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "airsign"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · CARDINAL AIR",
+      "lines": [
+        "A Libra is quietly watching",
+        "how you treat the *waiter.*",
+        "Ruled by *Venus,* grace isn't a bonus.",
+        "It's the *entry fee.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "THE SCALES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "THE DEALBREAKER · IMBALANCE",
+      "lines": [
+        "But the real dealbreaker is *imbalance.*",
+        "Being the only one who plans,",
+        "who softens, who apologizes,",
+        "who *bends,*",
+        "while the other one just *drifts.*"
+      ],
+      "labels": [
+        {
+          "on": "orbit",
+          "at": 1,
+          "text": "ONE-SIDED · AN ORBIT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Keeping the peace",
+        "doesn't mean keeping *quiet.*",
+        "I want love that meets me *halfway.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

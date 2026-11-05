@@ -1,0 +1,86 @@
+{
+  "id": "333-dear-aquarius",
+  "title": "Dear Aquarius",
+  "cover": "Dear Aquarius, *name* it",
+  "keyword": "CHART",
+  "caption": "for the aquarius who's been 'just friends' with someone for three years",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aquarius",
+    "loveletter",
+    "zodiaclove",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "dear",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "DEAR AQUARIUS · FIXED AIR",
+      "lines": [
+        "Dear Aquarius, you were someone's best friend",
+        "long before you were their *person.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 11,
+        "highlightAt": 0
+      },
+      "header": "THE ELEVENTH HOUSE · FRIENDS",
+      "lines": [
+        "You love people *exactly* as they are,",
+        "strange edges and all.",
+        "But the pattern to put down",
+        "is refusing to *name* it.",
+        "Calling it a friend thing for years."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "11TH HOUSE · FRIENDS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *name* what I feel.",
+        "Giving it a word",
+        "is how I let it *stay.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

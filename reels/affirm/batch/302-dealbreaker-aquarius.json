@@ -1,0 +1,86 @@
+{
+  "id": "302-dealbreaker-aquarius",
+  "title": "The Aquarius dealbreaker",
+  "cover": "Don't ask Aquarius to be *normal*",
+  "keyword": "MATCH",
+  "caption": "the quickest way to lose an aquarius is to ask them to be more normal",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aquarius",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "airsign"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "The quickest way to lose an Aquarius?",
+        "Ask them to be more *normal.*",
+        "Tone down the ideas. The friends.",
+        "The strange, *beautiful* parts."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 11,
+        "highlightAt": 0
+      },
+      "header": "THE ELEVENTH HOUSE · FRIENDS",
+      "lines": [
+        "Aquarius belongs to the *eleventh house,*",
+        "friends, causes, and hopes.",
+        "So someone jealous of your people",
+        "is a *dealbreaker,* not a phase."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "11TH HOUSE · FRIENDS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't shrink my *weird.*",
+        "The right love thinks",
+        "my *mind* is the best part."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

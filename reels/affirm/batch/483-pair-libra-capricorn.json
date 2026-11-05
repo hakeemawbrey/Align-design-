@@ -1,0 +1,92 @@
+{
+  "id": "483-pair-libra-capricorn",
+  "title": "Libra and Capricorn",
+  "cover": "Libra and Capricorn, *built well*",
+  "keyword": "MATCH",
+  "caption": "saturn is exalted in libra. capricorn's planet feels strongest in libra's sign. that's not nothing",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "libra",
+    "capricorn",
+    "square",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "gold",
+        "ring": true
+      },
+      "header": "SATURN · EXALTED IN LIBRA",
+      "lines": [
+        "Capricorn's planet is *strongest* in Libra.",
+        "Saturn is exalted there.",
+        "Remember that when it gets hard."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "libra",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "Libra and Capricorn sit a *square* apart.",
+        "Air and earth, both cardinal,",
+        "both wanting to *steer.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "earth"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Libra gives Capricorn *softness* and ease.",
+        "Capricorn gives Libra something *solid.*",
+        "The work: harmony versus *ambition.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WORK WORTH DOING",
+      "lines": [
+        "Some love is easy.",
+        "This kind is *built,*",
+        "and built things *last.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "079-dealbreaker-gemini",
+  "title": "The Gemini dealbreaker",
+  "cover": "The *Gemini* dealbreaker",
+  "keyword": "MATCH",
+  "caption": "the fastest way to lose a gemini is to stop being curious about them",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "gemini",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "communication"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Want to lose a Gemini?",
+        "Stop *asking* them things.",
+        "Ruled by *Mercury,* the messenger,",
+        "they fall in love *mid-conversation.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "MERCURY · THE MESSENGER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · MUTABLE AIR",
+      "lines": [
+        "So the dealbreaker is a *closed door.*",
+        "Someone who stops being curious,",
+        "who calls your questions *too much,*",
+        "who goes quiet instead of talking."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My curiosity is not a *flaw.*",
+        "I want someone who stays",
+        "*interested* in me, for years."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

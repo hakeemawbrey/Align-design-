@@ -1,0 +1,78 @@
+{
+  "id": "020-mode-fixed",
+  "title": "Fixed signs in love",
+  "cover": "*Fixed* signs in love",
+  "keyword": "MATCH",
+  "caption": "taurus, leo, scorpio, aquarius. fixed signs take forever to choose, and then they don't stop",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "fixedsigns",
+    "modalities",
+    "taurus",
+    "scorpio",
+    "astrology"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "FIXED · THE MIDDLE OF A SEASON",
+      "lines": [
+        "Fixed signs take ages to *choose* you.",
+        "Then they don't stop.",
+        "Taurus, Leo, Scorpio and Aquarius",
+        "sit in the middle of each *season,*",
+        "when the weather holds."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "LOYAL ON PURPOSE",
+      "lines": [
+        "So their love is *loyal* and steady,",
+        "and yes, a little stubborn.",
+        "Change can feel like *losing* something.",
+        "But staying is a choice they make",
+        "every single *day.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My loyalty is a *gift.*",
+        "I can stay *and* still grow."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

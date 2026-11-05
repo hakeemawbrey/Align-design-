@@ -1,0 +1,79 @@
+{
+  "id": "026-fullmoon-pisces",
+  "title": "Full moon in Pisces",
+  "cover": "Full moon in *Pisces*",
+  "keyword": "MOON",
+  "caption": "the pisces full moon rises like a tide, and every dream you had about them washes up at once",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "fullmoon",
+    "fullmooninpisces",
+    "pisces",
+    "astrology",
+    "lettinggo"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "FULL MOON IN PISCES",
+      "lines": [
+        "The Pisces full moon rises like a *tide.*",
+        "Every dream you had about them",
+        "washes up at once,",
+        "*beautiful* and not quite real."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "VIRGO SUN · PISCES MOON",
+      "lines": [
+        "Across from it, the sun is in *Virgo,*",
+        "seeing the facts,",
+        "while the moon still sees the *fantasy.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release the *fantasy.*",
+        "I keep the tenderness.",
+        "I don't have to save anyone",
+        "to be *worth* loving."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

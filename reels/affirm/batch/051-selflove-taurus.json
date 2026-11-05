@@ -1,0 +1,86 @@
+{
+  "id": "051-selflove-taurus",
+  "title": "Self-love for a Taurus",
+  "cover": "Taurus, start with the *body*",
+  "keyword": "CHART",
+  "caption": "clean sheets, warm bread, one song on repeat. that's the whole plan",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "taurus",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · EARTH · VENUS",
+      "lines": [
+        "Self-love for a Taurus starts in the *body.*",
+        "Not a plan. Not a list.",
+        "Your *senses* first."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 2,
+        "highlightAt": 0
+      },
+      "header": "THE SECOND HOUSE · VALUES",
+      "lines": [
+        "Your house is the *second,*",
+        "what you value, what you keep.",
+        "So keep something for *you.*",
+        "Clean sheets. Bread still warm.",
+        "One song on repeat with the windows open."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "2ND HOUSE · WHAT YOU VALUE"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve the *softness* I give.",
+        "My comfort is not a *luxury.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

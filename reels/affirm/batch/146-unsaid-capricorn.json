@@ -1,0 +1,87 @@
+{
+  "id": "146-unsaid-capricorn",
+  "title": "How a Capricorn says I love you",
+  "cover": "How a *Capricorn* says I love you",
+  "keyword": "VENUS",
+  "caption": "a capricorn has no free time and they gave you some. that's the whole sentence",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "capricorn",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "CAPRICORN · THE UNSAID",
+      "lines": [
+        "A Capricorn has no free time,",
+        "and they gave you *some.*",
+        "That's the whole sentence."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♄ SATURN · THEIR RULER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · HOW THEY SAY IT",
+      "lines": [
+        "Saturn rules them, the planet of *time,*",
+        "so time is what they give.",
+        "A standing date. A plan for *next* year.",
+        "Your name on their calendar, in pen."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need it loud.",
+        "I need it *kept.*",
+        "Being chosen on purpose",
+        "is a love I *trust.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "491-pair-leo-scorpio",
+  "title": "Leo and Scorpio",
+  "cover": "Leo and Scorpio, *magnetic*",
+  "keyword": "MATCH",
+  "caption": "leo and scorpio don't do lukewarm. that's the gift and the homework",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "leo",
+    "scorpio",
+    "square",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · FIXED WATER",
+      "lines": [
+        "Leo and Scorpio both refuse to *blink first.*",
+        "That's what two fixed signs do."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "scorpio"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "They sit a *square* apart.",
+        "Ninety degrees. Fire meets water.",
+        "Tension, yes. Also *traction.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "water"
+      },
+      "header": "WHAT EACH BRINGS",
+      "lines": [
+        "Leo gives Scorpio *warmth* in the open.",
+        "Scorpio gives Leo *depth* behind the door.",
+        "The friction is pride against *privacy.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WORK WORTH DOING",
+      "lines": [
+        "A square isn't a *warning.*",
+        "It's two strong hearts",
+        "learning to *bend* toward each other."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

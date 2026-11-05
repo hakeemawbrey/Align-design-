@@ -1,0 +1,94 @@
+{
+  "id": "402-pair-aries-cancer",
+  "title": "Aries and Cancer",
+  "cover": "Aries + Cancer · *square*",
+  "keyword": "MATCH",
+  "caption": "one charges, one guards the home. a square is pressure, and pressure builds things",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "cancer",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "ARIES · CANCER",
+      "lines": [
+        "One of you charges *forward.*",
+        "The other one guards the *home.*",
+        "Both of you call it love."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "cancer"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "Aries and Cancer form a *square,*",
+        "ninety degrees, three signs apart.",
+        "Both cardinal: both want to lead.",
+        "Fire and water: *steam.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "water"
+      },
+      "header": "FIRE · WATER · WORK WORTH DOING",
+      "lines": [
+        "Aries gives Cancer *courage.*",
+        "Cancer gives Aries a *soft place* to land.",
+        "The friction is tone.",
+        "Say it gentler than you feel it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My feelings are not an *obstacle.*",
+        "Our *tension* is something we can build with."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

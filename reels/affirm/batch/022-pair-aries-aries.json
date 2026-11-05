@@ -1,0 +1,96 @@
+{
+  "id": "022-pair-aries-aries",
+  "title": "Aries and Aries",
+  "cover": "Aries + Aries · *conjunction*",
+  "keyword": "MATCH",
+  "caption": "two aries is a race with no finish line. take turns going first",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "ariescompatibility",
+    "zodiaccompatibility",
+    "astrology",
+    "synastry"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "aries"
+        ],
+        "pairAt": 3
+      },
+      "header": "ARIES · ARIES · CONJUNCTION",
+      "lines": [
+        "Two Aries in love is a *race*",
+        "with no finish line.",
+        "Same sign, zero degrees apart:",
+        "a *conjunction.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "fire"
+      },
+      "header": "FIRE · FIRE · CARDINAL",
+      "lines": [
+        "Fire meets fire, cardinal meets cardinal.",
+        "You both *start* things.",
+        "You give each other nerve,",
+        "speed, and someone who keeps up."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "RULED BY MARS · TWICE",
+      "lines": [
+        "The friction is *who leads.*",
+        "Two Mars-ruled hearts",
+        "can turn a disagreement into a duel.",
+        "Take turns going *first.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to win",
+        "to be *loved.*",
+        "We're *faster* side by side."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

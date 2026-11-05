@@ -1,0 +1,82 @@
+{
+  "id": "329-basics-synastry",
+  "title": "Synastry",
+  "cover": "Two charts, *overlapped*",
+  "keyword": "CHART",
+  "caption": "lay two birth charts on top of each other and the lines between them have names",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "synastry",
+    "compatibility",
+    "birthchart",
+    "astrology",
+    "relationships"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "libra"
+        ],
+        "pairAt": 1
+      },
+      "header": "SYNASTRY · TWO CHARTS",
+      "lines": [
+        "Lay two birth charts on top of each other,",
+        "and the lines between them have *names.*",
+        "That's called *synastry.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 0
+      },
+      "header": "TRINES FLOW · SQUARES PUSH",
+      "lines": [
+        "A trine between you feels *easy.*",
+        "A square feels like *friction.*",
+        "Most couples have both.",
+        "Squares are where you *grow.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Friction doesn't mean we're *wrong.*",
+        "I want love that's easy,",
+        "and love that helps me *grow.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

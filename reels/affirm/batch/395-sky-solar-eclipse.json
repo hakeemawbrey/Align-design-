@@ -1,0 +1,82 @@
+{
+  "id": "395-sky-solar-eclipse",
+  "title": "The solar eclipse",
+  "cover": "What shows in the *dark*",
+  "keyword": "MOON",
+  "caption": "a total eclipse reaches any one spot about once in four centuries. some light only shows when the glare goes",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "solareclipse",
+    "eclipse",
+    "newmoon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "eclipse",
+      "header": "TOTAL SOLAR ECLIPSE · RARE",
+      "lines": [
+        "Somewhere on earth, there's a total eclipse",
+        "about every year and a *half.*",
+        "But in any one spot,",
+        "it's roughly once every four *centuries.*"
+      ],
+      "labels": [
+        {
+          "on": "sun",
+          "at": 3,
+          "text": "ONE SPOT · ABOUT 375 YEARS"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "ONLY AT A NEW MOON",
+      "lines": [
+        "It only happens at a new moon.",
+        "And only when the sun is hidden",
+        "can you see its *crown,*",
+        "the corona."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WHEN THE GLARE GOES",
+      "lines": [
+        "Some love is like that.",
+        "You miss it while you're *staring*",
+        "at something brighter.",
+        "Then the glare goes,",
+        "and there it *is.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "385-love-learning-to-receive",
+  "title": "Learning to receive love",
+  "cover": "Let the light *land*",
+  "keyword": "CHART",
+  "caption": "the moon doesn't make light. it's just very good at letting it land",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "receivinglove",
+    "moon",
+    "astrology",
+    "affirmations",
+    "selflove"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "MOONLIGHT · SUNLIGHT, RETURNED",
+      "lines": [
+        "Moonlight is just sunlight, *received.*",
+        "The moon makes no light of its own.",
+        "It just lets the sun's light *land.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "RECEIVING · NOT WEAKNESS",
+      "lines": [
+        "And it lights up the whole *night* with it.",
+        "If being given love makes you *flinch,*",
+        "if you rush to pay it back,",
+        "remember the moon.",
+        "*Receiving* is how it shines."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I let love *land.*",
+        "I don't have to earn every kind *thing.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

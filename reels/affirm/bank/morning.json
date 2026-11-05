@@ -1,0 +1,357 @@
+[
+  {
+    "key": "morning-aries",
+    "title": "Good morning, Aries",
+    "cover": "Good morning, *Aries*",
+    "caption": "aries wakes up ready to go. give your heart its first word before the day gets loud",
+    "hashtags": ["aries", "goodmorning", "morningaffirmations", "astrology", "selflove"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "GOOD MORNING · ARIES",
+        "lines": ["Good morning, Aries. Mornings are *yours.*", "You're the *first* sign of the zodiac,", "the one that opens the astrological year."],
+        "labels": [{ "on": "sign", "at": 1, "text": "FIRST SIGN · THE EQUINOX" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS",
+        "lines": ["Ruled by *Mars,* you wake up ready.", "So before the day gets loud,", "give your heart its *first word.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I lead with an *open* heart.", "I don't have to chase love", "to deserve it.", "Today I let myself be *chosen* too."]
+      }
+    ]
+  },
+  {
+    "key": "morning-taurus",
+    "title": "Good morning, Taurus",
+    "cover": "Good morning, *Taurus*",
+    "caption": "taurus, you were never meant to rush anything. not your coffee, not your day, not love",
+    "hashtags": ["taurus", "goodmorning", "morningaffirmations", "venus", "astrology"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "GOOD MORNING · TAURUS",
+        "lines": ["Good morning, Taurus. One more minute in bed.", "You're fixed earth, ruled by *Venus.*", "You were never meant to *rush.*", "Not your coffee, not your day,", "and not love either."]
+      },
+      {
+        "art": "venus",
+        "header": "VENUS · THE MORNING STAR",
+        "lines": ["Some mornings, *Venus* rises before the sun.", "They call her the *morning star.*", "Quiet, steady, there before you ask."],
+        "labels": [{ "on": "glass", "at": 1, "text": "♀ · THE MORNING STAR" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Love can find me *slowly.*", "I deserve something steady,", "something I don't have to *brace* for.", "My peace is worth protecting."]
+      }
+    ]
+  },
+  {
+    "key": "morning-gemini",
+    "title": "Good morning, Gemini",
+    "cover": "Good morning, *Gemini*",
+    "caption": "gemini, your mind had twelve tabs open before breakfast. pick one thought for love today",
+    "hashtags": ["gemini", "goodmorning", "morningaffirmations", "mercury", "astrology"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "GOOD MORNING · GEMINI",
+        "lines": ["Good morning, Gemini. Mind already *racing?*", "Ruled by *Mercury,* you think in tabs.", "Twelve of them open before breakfast."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI · THE TWINS",
+        "lines": ["So pick *one* thought for love today,", "and let the others wait."]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 4 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *decode* anyone today.", "The right person is easy to *read.*", "I say what I mean,", "and I'm met with the *same.*"],
+        "labels": [{ "on": "line", "at": 4, "text": "MET · IN ONE LINE" }]
+      }
+    ]
+  },
+  {
+    "key": "morning-cancer",
+    "title": "Good morning, Cancer",
+    "cover": "Good morning, *Cancer*",
+    "caption": "cancer wakes up already feeling what everyone else needs. pour the first cup for yourself",
+    "hashtags": ["cancer", "goodmorning", "morningaffirmations", "astrology", "selflove"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "GOOD MORNING · CANCER",
+        "lines": ["Good morning, Cancer. Start with *you* today.", "Ruled by the *Moon,* you wake up", "already feeling what everyone else needs."],
+        "labels": [{ "on": "planet", "at": 1, "text": "THE MOON · YOUR RULER" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": ["Before you take care of anyone,", "pour the first cup for *yourself.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve the softness I *give.*", "Love can feel like *home*", "without me building it alone.", "I am safe to feel all of it."]
+      }
+    ]
+  },
+  {
+    "key": "morning-leo",
+    "title": "Good morning, Leo",
+    "cover": "Good morning, *Leo*",
+    "caption": "good morning leo. your ruler just came up over the horizon, so let today start warm",
+    "hashtags": ["leo", "goodmorning", "morningaffirmations", "astrology", "selflove"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "GOOD MORNING · LEO",
+        "lines": ["Good morning, Leo. Your ruler just *rose.*", "The *Sun* came up for everyone,", "but it rules your sign."],
+        "labels": [{ "on": "planet", "at": 2, "text": "THE SUN · RULER OF LEO" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · FIXED FIRE",
+        "lines": ["So let today start *warm.*", "No performing. No proving.", "Just you, with the light on."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *earn* attention.", "I deserve to be adored", "on my quiet days too.", "My heart is *generous,* and so is love."]
+      }
+    ]
+  },
+  {
+    "key": "morning-virgo",
+    "title": "Good morning, Virgo",
+    "cover": "Good morning, *Virgo*",
+    "caption": "virgo, put down the list. love isn't on the to-do list today",
+    "hashtags": ["virgo", "goodmorning", "morningaffirmations", "astrology", "selflove"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 6, "highlightAt": 1 },
+        "header": "GOOD MORNING · VIRGO",
+        "lines": ["Good morning, Virgo. Put down the *list.*", "Your sign is linked to the *sixth house,*", "the house of routines and daily care."],
+        "labels": [{ "on": "house", "at": 1, "text": "6TH HOUSE · DAILY LIFE" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": ["You take care of *everything.*", "Today, love isn't on the to-do list."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am *lovable* before I'm finished.", "I don't have to be perfect", "to be chosen.", "I let someone take care of *me.*"]
+      }
+    ]
+  },
+  {
+    "key": "morning-libra",
+    "title": "Good morning, Libra",
+    "cover": "Good morning, *Libra*",
+    "caption": "libra, you spend all day balancing everyone. start the scales with you",
+    "hashtags": ["libra", "goodmorning", "morningaffirmations", "venus", "astrology"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "venus",
+        "opts": { "mirror": true, "mirrorAt": 1 },
+        "header": "GOOD MORNING · LIBRA",
+        "lines": ["Good morning, Libra. Look in the *mirror* first.", "Your ruler is *Venus,*", "and her symbol is said to be a hand mirror."],
+        "labels": [{ "on": "handle", "at": 2, "text": "VENUS · RULER OF LIBRA" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · THE SCALES",
+        "lines": ["You spend all day *balancing* everyone.", "Start the scales with you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My needs are part of the *balance.*", "I can choose myself without guilt.", "The right love meets me *halfway,*", "and I don't have to ask twice."]
+      }
+    ]
+  },
+  {
+    "key": "morning-scorpio",
+    "title": "Good morning, Scorpio",
+    "cover": "Good morning, *Scorpio*",
+    "caption": "good morning scorpio. unclench your jaw. your depth is a gift, not a warning",
+    "hashtags": ["scorpio", "goodmorning", "morningaffirmations", "astrology", "selflove"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "GOOD MORNING · SCORPIO",
+        "lines": ["Good morning, Scorpio. Unclench your *jaw.*", "You slept with one eye open again.", "Fixed water holds *everything* in."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "lilac" },
+        "header": "MARS · MODERN RULER PLUTO",
+        "lines": ["Ruled by *Mars* and *Pluto,*", "you feel everything at full strength.", "That isn't too much. It's *rare.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am safe to let someone *in.*", "My depth is a gift,", "not a warning.", "I trust the love that *stays.*"]
+      }
+    ]
+  },
+  {
+    "key": "morning-sagittarius",
+    "title": "Good morning, Sagittarius",
+    "cover": "Good morning, *Sagittarius*",
+    "caption": "sagittarius wakes up believing in something. aim it at love today",
+    "hashtags": ["sagittarius", "goodmorning", "morningaffirmations", "jupiter", "astrology"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "GOOD MORNING · SAGITTARIUS",
+        "lines": ["Good morning, Sagittarius. New day, new *horizon.*", "Ruled by *Jupiter,* the planet of luck,", "you wake up believing in something."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "THE ARCHER · AIM HIGH",
+        "lines": ["So aim that hope at *love* today.", "Not at someone. At the *feeling.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Love doesn't have to be a *cage.*", "I can be free and still be held.", "The right person wants to *explore*", "right beside me."]
+      }
+    ]
+  },
+  {
+    "key": "morning-capricorn",
+    "title": "Good morning, Capricorn",
+    "cover": "Good morning, *Capricorn*",
+    "caption": "capricorn is already up and already working. love isn't another goal to hit by noon",
+    "hashtags": ["capricorn", "goodmorning", "morningaffirmations", "saturn", "astrology"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "GOOD MORNING · CAPRICORN",
+        "lines": ["Good morning, Capricorn. Up early *again?*", "Ruled by *Saturn,* you treat every day", "like a step up the mountain."],
+        "labels": [{ "on": "sign", "at": 2, "text": "THE SEA-GOAT · CLIMBING" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "gold", "ring": true },
+        "header": "SATURN · TIME · STRUCTURE",
+        "lines": ["But love isn't another *goal.*", "You don't have to earn it by noon."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am loved for who I am,", "not for what I *carry.*", "Rest is not something I have to earn.", "Love can be *easy* for me too."]
+      }
+    ]
+  },
+  {
+    "key": "morning-aquarius",
+    "title": "Good morning, Aquarius",
+    "cover": "Good morning, *Aquarius*",
+    "caption": "good morning aquarius. stay a little weird today. the right person likes you unedited",
+    "hashtags": ["aquarius", "goodmorning", "morningaffirmations", "astrology", "selflove"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "GOOD MORNING · AQUARIUS",
+        "lines": ["Good morning, Aquarius. Stay a little *weird* today.", "You're fixed air, always a step ahead,", "already living in next year."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "AIR · ROOM TO BREATHE",
+        "lines": ["You need *space.* That's allowed.", "Just leave a little room for closeness."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "The right person likes me *unedited.*", "I can let someone *close*", "and still be my own.", "My freedom and my heart can share a home."]
+      }
+    ]
+  },
+  {
+    "key": "morning-pisces",
+    "title": "Good morning, Pisces",
+    "cover": "Good morning, *Pisces*",
+    "caption": "good morning pisces. still half in a dream? bring the softness, just give it edges",
+    "hashtags": ["pisces", "goodmorning", "morningaffirmations", "astrology", "selflove"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "GOOD MORNING · PISCES",
+        "lines": ["Good morning, Pisces. Still half in a *dream?*", "Your sign is tied to *Neptune,*", "so waking up always takes a minute."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["Bring the softness with you.", "Just let it have *edges* today."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be soft and still say *no.*", "I deserve love I can *touch,*", "not just love I imagine.", "My heart is safe with *me.*"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,356 @@
+[
+  {
+    "key": "phases-new",
+    "title": "The new moon phase",
+    "cover": "Begin in the *dark*",
+    "caption": "the new moon is up there all day. you just can't see it yet. same with what you want",
+    "hashtags": ["newmoon", "moonphases", "astrology", "affirmations", "newbeginnings"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "PHASE ONE OF EIGHT · NEW",
+        "lines": [
+          "The new moon is up there all *day.*",
+          "It rises with the sun.",
+          "You just can't *see* it."
+        ],
+        "labels": [{ "on": "moon", "at": 1, "text": "RISES WITH THE SUN" }]
+      },
+      {
+        "art": "syzygy",
+        "header": "SUN · MOON · EARTH",
+        "lines": [
+          "It sits between us and the sun,",
+          "its bright side turned *away.*",
+          "In love, this is the *before.*",
+          "The wish you haven't said out loud."
+        ],
+        "labels": [{ "on": "moon", "at": 0, "text": "BETWEEN US AND THE SUN" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "What I want is *real*",
+          "before anyone can see it.",
+          "I'm allowed to *begin* in the dark."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "phases-waxing-crescent",
+    "title": "The waxing crescent",
+    "cover": "In the new moon's *arms*",
+    "caption": "look at the dark part of a crescent moon. it's glowing. early love is like that",
+    "hashtags": ["waxingcrescent", "moonphases", "astrology", "affirmations", "newlove"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 1 },
+        "header": "WAXING CRESCENT",
+        "lines": [
+          "The dark part of a crescent moon is *glowing.*",
+          "Faintly, if you look.",
+          "That's sunlight, bounced off the *earth.*"
+        ],
+        "labels": [{ "on": "moon", "at": 1, "text": "EARTHSHINE" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "THE OLD MOON · IN ITS ARMS",
+        "lines": [
+          "They call it the old moon",
+          "in the new moon's *arms.*",
+          "Early love is like that.",
+          "Only a sliver shows,",
+          "but the rest is already *there.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I let new things be *small.*",
+          "I don't rush a sliver",
+          "into a *full* moon."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "phases-first-quarter",
+    "title": "The first quarter moon",
+    "cover": "The quarter moon is *half*",
+    "caption": "the quarter moon is the month's first square. a hard moment isn't an ending",
+    "hashtags": ["firstquartermoon", "moonphases", "astrology", "affirmations", "relationships"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 2 },
+        "header": "FIRST QUARTER",
+        "lines": [
+          "It's called a *quarter* moon,",
+          "but you can see *half* of it.",
+          "It's a quarter of the way",
+          "around its orbit."
+        ],
+        "labels": [{ "on": "moon", "at": 2, "text": "ONE QUARTER · ONE WEEK IN" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aries", "cancer"], "pairAt": 1 },
+        "header": "MOON · SUN · NINETY DEGREES",
+        "lines": [
+          "Here the moon is ninety degrees from the sun.",
+          "That angle is called a *square.*",
+          "It's the month's first real *push.*",
+          "In love, it's the first hard choice."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can disagree and still *stay.*",
+          "Friction is how I *grow,*",
+          "not how I leave."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "phases-waxing-gibbous",
+    "title": "The waxing gibbous moon",
+    "cover": "Almost is still *real*",
+    "caption": "gibbous means humped. more than half, not quite full. the hardest part of love to wait through",
+    "hashtags": ["waxinggibbous", "moonphases", "astrology", "patience", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 3 },
+        "header": "WAXING GIBBOUS",
+        "lines": [
+          "*Gibbous* comes from the Latin for hump.",
+          "More than half,",
+          "not quite full.",
+          "Swollen with *almost.*"
+        ],
+        "labels": [{ "on": "moon", "at": 1, "text": "MORE THAN HALF · GROWING" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "ALMOST · NOT YET",
+        "lines": [
+          "It's the hardest part of love to *wait* through.",
+          "You can see where it's going.",
+          "You can't make it get there *faster.*",
+          "So you tend it."
+        ]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 4, "litAt": 0 },
+        "header": "NEARLY FULL",
+        "lines": [
+          "It will be full.",
+          "Not because you *pushed* it.",
+          "Because that's what it was already *doing.*",
+          "Almost is still real."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "phases-full",
+    "title": "The full moon phase",
+    "cover": "The *whole* face, turned to you",
+    "caption": "the full moon rises as the sun sets and stays up all night. love that lets itself be seen",
+    "hashtags": ["fullmoon", "moonphases", "astrology", "affirmations", "beingseen"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FULL MOON · OPPOSITE THE SUN",
+        "lines": [
+          "A full moon rises as the sun *sets,*",
+          "and sets as the sun rises.",
+          "It's up the whole *night.*"
+        ],
+        "labels": [{ "on": "moon", "at": 0, "text": "180° FROM THE SUN" }]
+      },
+      {
+        "art": "syzygy",
+        "header": "THE WHOLE FACE · TOWARD YOU",
+        "lines": [
+          "Every bit of its light faces *us.*",
+          "In love, this is being fully *seen.*",
+          "The tender parts, and the true ones."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be *seen* all the way.",
+          "I don't hide the parts of me",
+          "that *glow.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "phases-waning-gibbous",
+    "title": "The waning gibbous moon",
+    "cover": "The *thank you* moon",
+    "caption": "after full, the moon rises about fifty minutes later each night. the phase for saying thank you",
+    "hashtags": ["waninggibbous", "moonphases", "astrology", "gratitude", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 5 },
+        "header": "WANING GIBBOUS",
+        "lines": [
+          "Each night after full, the moon rises",
+          "about *fifty minutes* later.",
+          "Still bright,",
+          "just a little more *patient.*"
+        ],
+        "labels": [{ "on": "moon", "at": 1, "text": "LATER EACH NIGHT" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "gold" },
+        "header": "THE DISSEMINATING MOON",
+        "lines": [
+          "Some call it the *disseminating* moon,",
+          "the phase for *sharing* what you learned.",
+          "In love, it's the thank you.",
+          "Telling them what they *taught* you."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I say the *grateful* thing out loud.",
+          "I let the people I love",
+          "know what they *gave* me."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "phases-last-quarter",
+    "title": "The last quarter moon",
+    "cover": "Keep what's *real*",
+    "caption": "the last quarter moon rises around midnight and hangs in the morning sky. the phase for sorting",
+    "hashtags": ["lastquartermoon", "moonphases", "astrology", "lettinggo", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 6 },
+        "header": "LAST QUARTER",
+        "lines": [
+          "The last quarter moon rises around *midnight*",
+          "and is still up after *breakfast.*",
+          "It's the moon in a blue morning sky."
+        ],
+        "labels": [{ "on": "moon", "at": 0, "text": "RISES NEAR MIDNIGHT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "HALF LIT · THE OTHER HALF",
+        "lines": [
+          "It's half lit again, the *other* half.",
+          "The light it's losing,",
+          "it's losing on *purpose.*",
+          "In love, this is the sorting.",
+          "What stays, and what you've *outgrown.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I *keep* what's real.",
+          "I let the rest go *quietly.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "phases-waning-crescent",
+    "title": "The waning crescent",
+    "cover": "Rest is not *empty*",
+    "caption": "the last thin moon only shows before dawn. they call it balsamic. rest before you begin again",
+    "hashtags": ["waningcrescent", "balsamicmoon", "moonphases", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 7 },
+        "header": "WANING CRESCENT",
+        "lines": [
+          "The last thin moon only shows before *dawn.*",
+          "You have to be up early, or up late,",
+          "to *catch* it."
+        ],
+        "labels": [{ "on": "moon", "at": 0, "text": "EAST · BEFORE SUNRISE" }]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true },
+        "header": "THE BALSAMIC MOON",
+        "lines": [
+          "It's called the *balsamic* moon,",
+          "from balsam, a thing that *heals.*",
+          "In love, this is the rest between.",
+          "Not over.",
+          "Not yet begun."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to *rest*",
+          "before I begin again.",
+          "My quiet is not *empty.*"
+        ]
+      }
+    ]
+  }
+]

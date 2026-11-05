@@ -1,0 +1,79 @@
+{
+  "id": "157-misses-virgo",
+  "title": "When a Virgo misses you",
+  "cover": "A *Virgo* misses you quietly",
+  "keyword": "VENUS",
+  "caption": "is a virgo's apartment spotless lately? they might be missing you. the text is on draft six",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgo",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · MUTABLE EARTH",
+      "lines": [
+        "Is a Virgo's apartment *spotless* lately?",
+        "They might be missing *you.*",
+        "They clean the closet. Then the inbox.",
+        "Anything to keep their *hands* busy."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Ruled by *Mercury,* they draft the text",
+        "*six* times before they send it.",
+        "And when it comes, it's practical:",
+        "how's your knee, *really?*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *edit* my heart.",
+        "My care is enough,",
+        "even in a *first draft.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

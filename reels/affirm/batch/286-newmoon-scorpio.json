@@ -1,0 +1,84 @@
+{
+  "id": "286-newmoon-scorpio",
+  "title": "New moon in Scorpio",
+  "cover": "New moon in *Scorpio*",
+  "keyword": "MOON",
+  "caption": "scorpio's heart is a red star named rival of mars. invite the love that wants the real you, underneath",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "newmoon",
+    "newmooninscorpio",
+    "scorpio",
+    "astrology",
+    "intimacy"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · ANTARES",
+      "lines": [
+        "The heart of Scorpio is a *red* star.",
+        "Its name, Antares, means rival of *Mars.*"
+      ],
+      "labels": [
+        {
+          "on": "stars",
+          "at": 0,
+          "text": "ANTARES · THE HEART"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · SCORPIO",
+      "lines": [
+        "When the moon goes dark beside the sun",
+        "in the sign of what's *hidden,*",
+        "invite the love that wants to *know* you.",
+        "Not the highlight reel.",
+        "The real thing, underneath."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can let someone all the way *in.*",
+        "My depth isn't *too much.*",
+        "It's a door, for the right one."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

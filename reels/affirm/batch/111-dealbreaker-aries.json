@@ -1,0 +1,91 @@
+{
+  "id": "111-dealbreaker-aries",
+  "title": "The Aries dealbreaker",
+  "cover": "The *Aries* dealbreaker",
+  "keyword": "MATCH",
+  "caption": "an aries would rather hear no today than maybe for a month",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "aries",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · CARDINAL FIRE",
+      "lines": [
+        "An Aries can forgive almost anything",
+        "except being someone's *maybe.*",
+        "The slow reply. The vague plan.",
+        "The someday that never gets a *date.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "ARIES · THE FIRST SIGN"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "RULED BY MARS",
+      "lines": [
+        "You're ruled by *Mars,*",
+        "so you'd rather hear *no* today",
+        "than maybe for a month.",
+        "Saying that on a first date",
+        "isn't too much. It's *kind.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MARS · THE PLANET OF DRIVE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't wait to be *chosen.*",
+        "I say what I want, early,",
+        "and the right one says it *back.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

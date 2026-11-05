@@ -1,0 +1,77 @@
+{
+  "id": "031-newmoon-capricorn",
+  "title": "New moon in Capricorn",
+  "cover": "New moon in *Capricorn*",
+  "keyword": "MOON",
+  "caption": "half goat, half fish: it climbs and it goes deep. invite the love that keeps its word",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "newmoon",
+    "newmoonincapricorn",
+    "capricorn",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · THE SEA-GOAT",
+      "lines": [
+        "Capricorn is half goat, half *fish.*",
+        "It can climb the mountain",
+        "and still go *deep.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · CAPRICORN",
+      "lines": [
+        "It's ruled by *Saturn,* the planet of time.",
+        "So with the sun and moon in Capricorn,",
+        "invite the love that keeps its *word.*",
+        "The kind you can build a life on."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want someone who *stays.*",
+        "I'm worth the long way up",
+        "and the deep way *down.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

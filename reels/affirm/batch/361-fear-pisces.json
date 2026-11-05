@@ -1,0 +1,74 @@
+{
+  "id": "361-fear-pisces",
+  "title": "What a Pisces quietly fears",
+  "cover": "Pisces, you love a little *more*",
+  "keyword": "MUTUAL",
+  "caption": "for the pisces pouring an ocean into someone holding out a cup",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "pisces",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · WATER",
+      "lines": [
+        "Pisces, you always love a little *more.*",
+        "More patience, more chances,",
+        "more of yourself than anyone *asked* for."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "THE QUIET FEAR · UNEVEN TIDES",
+      "lines": [
+        "Somewhere under all that is a fear",
+        "it will *always* be like this.",
+        "You, pouring the whole sea,",
+        "and them, holding out a *cup.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve love as *deep* as mine.",
+        "I don't have to *drown*",
+        "to be enough."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

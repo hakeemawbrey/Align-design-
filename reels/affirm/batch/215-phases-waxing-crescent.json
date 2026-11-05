@@ -1,0 +1,86 @@
+{
+  "id": "215-phases-waxing-crescent",
+  "title": "The waxing crescent",
+  "cover": "In the new moon's *arms*",
+  "keyword": "MOON",
+  "caption": "look at the dark part of a crescent moon. it's glowing. early love is like that",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "waxingcrescent",
+    "moonphases",
+    "astrology",
+    "affirmations",
+    "newlove"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "phases",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "WAXING CRESCENT",
+      "lines": [
+        "The dark part of a crescent moon is *glowing.*",
+        "Faintly, if you look.",
+        "That's sunlight, bounced off the *earth.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "EARTHSHINE"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE OLD MOON · IN ITS ARMS",
+      "lines": [
+        "They call it the old moon",
+        "in the new moon's *arms.*",
+        "Early love is like that.",
+        "Only a sliver shows,",
+        "but the rest is already *there.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I let new things be *small.*",
+        "I don't rush a sliver",
+        "into a *full* moon."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

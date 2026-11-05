@@ -1,0 +1,94 @@
+{
+  "id": "163-mercury-gemini",
+  "title": "Mercury in Gemini",
+  "cover": "Mercury in Gemini: *forty tabs*",
+  "keyword": "CHART",
+  "caption": "mercury in gemini has forty tabs open and wants to discuss all of them. a good reply is a love language",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "mercuryingemini",
+    "gemini",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "mercury",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "MERCURY IN GEMINI · AT HOME",
+      "lines": [
+        "You have *forty tabs* open in your head,",
+        "and you'd like to talk about *all* of them.",
+        "Mercury rules Gemini, so it's home here."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "☿ · AT HOME IN GEMINI"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "GEMINI · THE TWINS",
+      "lines": [
+        "Two voices, one conversation.",
+        "In love you need *banter,*",
+        "a reply that keeps the thread going,",
+        "and someone fine with you changing the *subject*",
+        "three times in one sentence."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 2,
+          "text": "THE THREAD · KEEP IT GOING"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My curiosity is how I *love.*",
+        "I want someone who never stops asking.",
+        "I want a mind that *plays* with mine."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

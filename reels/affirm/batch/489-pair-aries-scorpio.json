@@ -1,0 +1,101 @@
+{
+  "id": "489-pair-aries-scorpio",
+  "title": "Aries and Scorpio",
+  "cover": "Aries + Scorpio · *quincunx*",
+  "keyword": "MATCH",
+  "caption": "both ruled by mars, fighting in completely different rooms",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "scorpio",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "ARIES · SCORPIO · RULED BY MARS",
+      "lines": [
+        "Both of these signs answer to *Mars.*",
+        "Aries fights in the open.",
+        "Scorpio fights in *silence.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MARS · TRADITIONAL RULER"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "scorpio"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "Five signs apart, they form a *quincunx.*",
+        "Cardinal fire, fixed water:",
+        "nothing shared but the *intensity.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "water"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Aries gives Scorpio *honesty* that clears the air.",
+        "Scorpio gives Aries *depth*",
+        "and loyalty that doesn't flinch.",
+        "The friction: pride, on both sides."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *intense*",
+        "and still be *safe* to love."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

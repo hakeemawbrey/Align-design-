@@ -1,0 +1,85 @@
+{
+  "id": "316-newmoon-taurus",
+  "title": "New moon in Taurus",
+  "cover": "New moon in *Taurus*",
+  "keyword": "MOON",
+  "caption": "the moon is at its strongest in taurus. invite the love that texts when it said it would",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "newmoon",
+    "newmoonintaurus",
+    "taurus",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "mint"
+      },
+      "header": "THE MOON · EXALTED IN TAURUS",
+      "lines": [
+        "The moon is at its *strongest* in Taurus.",
+        "Old astrology calls it *exalted.*",
+        "So a new moon here, with the sun beside it,",
+        "plants something meant to *stay.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "EXALTED · AT ITS STRONGEST"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · TAURUS",
+      "lines": [
+        "Taurus is ruled by *Venus*",
+        "and moves at the speed of trust.",
+        "This month, invite the *steady* kind.",
+        "The text that comes when it said it would."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need *fireworks* to feel loved.",
+        "I want love I can *lean on.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

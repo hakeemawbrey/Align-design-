@@ -1,0 +1,84 @@
+{
+  "id": "373-partner-aquarius",
+  "title": "Aquarius as a partner",
+  "cover": "An *Aquarius* won't change you",
+  "keyword": "MATCH",
+  "caption": "an aquarius partner will never ask you to be less yourself. they want your weirdest ideas out loud",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aquarius",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "airsign"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "partner",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "Here's what an Aquarius partner *won't* do:",
+        "ask you to be *less* yourself.",
+        "They don't want a copy.",
+        "They want your *weirdest* ideas, out loud."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "AIR · ROOM TO BREATHE",
+      "lines": [
+        "As an air sign, they bring *space.*",
+        "Room to grow. Friends you keep.",
+        "And as a fixed sign,",
+        "a loyalty that *doesn't* drift."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "AIR · THE THINKING SIGNS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I love people *as they are.*",
+        "With me, nobody",
+        "has to *perform.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

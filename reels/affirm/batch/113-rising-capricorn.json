@@ -1,0 +1,106 @@
+{
+  "id": "113-rising-capricorn",
+  "title": "Capricorn rising",
+  "cover": "Capricorn rising needs *warmth*",
+  "keyword": "SEVEN",
+  "caption": "capricorn rising was a grown-up at nine. your cancer seventh house wants someone who lets you be small",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "capricornrising",
+    "cancer",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN RISING · EARTH",
+      "lines": [
+        "You seemed grown-up at *nine.*",
+        "Capricorn rising: composed, *capable,*",
+        "the one everyone asks to handle it."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1,
+        "axis": true,
+        "axisAt": 0,
+        "rising": "capricorn"
+      },
+      "header": "YOUR SEVENTH HOUSE · CANCER",
+      "lines": [
+        "Flip the chart around,",
+        "and your seventh house is *Cancer.*",
+        "The sign of home.",
+        "The *soft* inside of the shell."
+      ],
+      "labels": [
+        {
+          "on": "dsc",
+          "at": 0,
+          "text": "DESCENDANT · OPPOSITE YOU"
+        },
+        {
+          "on": "h7",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "CANCER · RULED BY THE MOON",
+      "lines": [
+        "So the one you fall for",
+        "remembers how you take your *tea,*",
+        "asks if you've *eaten,*",
+        "and lets you be small sometimes."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to earn *rest.*",
+        "Someone can take care of me,",
+        "and I can *let* them."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

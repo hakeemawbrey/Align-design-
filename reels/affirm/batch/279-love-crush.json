@@ -1,0 +1,90 @@
+{
+  "id": "279-love-crush",
+  "title": "It was a shooting star",
+  "cover": "It was a *shooting star*",
+  "keyword": "PASSING",
+  "caption": "most shooting stars are smaller than a grain of sand. they burn that bright because they fall so fast",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "crush",
+    "movingon",
+    "shootingstar",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "loop",
+      "header": "SHOOTING STAR · A GRAIN",
+      "lines": [
+        "A shooting star is usually *smaller*",
+        "than a grain of sand.",
+        "It blazes that bright",
+        "because it's falling so *fast.*"
+      ],
+      "labels": [
+        {
+          "on": "loop",
+          "at": 1,
+          "text": "METEOR · DUST-SIZED"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "HEALING FROM A CRUSH",
+      "lines": [
+        "A crush can be like that.",
+        "*Real* light,",
+        "mostly made of how fast you *fell.*",
+        "It's okay to let it burn out."
+      ],
+      "labels": [
+        {
+          "on": "you",
+          "at": 3,
+          "text": "YOU · STILL HERE"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 7
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "That spark was *real,*",
+        "and so is letting it *go.*",
+        "I fall for the ones who *catch* me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

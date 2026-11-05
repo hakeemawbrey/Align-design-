@@ -1,0 +1,96 @@
+{
+  "id": "056-love-languages",
+  "title": "Read their light",
+  "cover": "Learn to read their *light*",
+  "keyword": "CHART",
+  "caption": "we know what stars are made of without touching one. people leave patterns in their love too",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "lovelanguages",
+    "relationships",
+    "stars",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "STARLIGHT · A FINGERPRINT",
+      "lines": [
+        "We know what stars are made of",
+        "without ever *touching* one.",
+        "Every element leaves its own pattern",
+        "in their *light.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "SPECTRUM · ELEMENT LINES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 4
+      },
+      "header": "LOVE LANGUAGES",
+      "lines": [
+        "People are the same.",
+        "One says love with *words,*",
+        "one with time, one with *touch,*",
+        "one with the dishes done.",
+        "Learn to read their light,",
+        "and teach them yours."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 4,
+          "text": "LOVE · IN THEIR LANGUAGE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I notice how *you* say it.",
+        "I tell you how *I* hear it.",
+        "Our love can speak *both* ways."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

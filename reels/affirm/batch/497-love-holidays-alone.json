@@ -1,0 +1,90 @@
+{
+  "id": "497-love-holidays-alone",
+  "title": "Closest to the sun",
+  "cover": "Nearer the *light* than it feels",
+  "keyword": "CHART",
+  "caption": "in early january the earth is the closest it gets to the sun all year. even when it's freezing out",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "holidays",
+    "aloneontheholidays",
+    "selflove",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "PERIHELION · EARLY JANUARY",
+      "lines": [
+        "Here's a secret about *January.*",
+        "The earth is the closest it gets",
+        "to the sun all year,",
+        "even when it's *freezing* where you are."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "PERIHELION · CLOSEST"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "HOLIDAYS ALONE",
+      "lines": [
+        "Cold doesn't mean far from the *light.*",
+        "A quiet holiday",
+        "isn't proof you're *unloved.*",
+        "It's just a different kind of season."
+      ],
+      "labels": [
+        {
+          "on": "you",
+          "at": 1,
+          "text": "YOU · NEAR THE LIGHT"
+        }
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I make this season *mine.*",
+        "I am closer to love than it *feels.*",
+        "I'm good company for *myself.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

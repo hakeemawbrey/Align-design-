@@ -1,0 +1,86 @@
+{
+  "id": "227-mercury-pisces",
+  "title": "Mercury in Pisces",
+  "cover": "Mercury in Pisces sends *songs*",
+  "keyword": "CHART",
+  "caption": "mercury in pisces has sent a song instead of saying how it feels. more than once. listen to the song",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "mercuryinpisces",
+    "pisces",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "MERCURY IN PISCES",
+      "lines": [
+        "Instead of saying how you feel,",
+        "you've sent someone a *song.*",
+        "Mercury in Pisces speaks in *feelings,* not facts."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "MERCURY · THE MESSENGER",
+      "lines": [
+        "Mercury is the planet of words,",
+        "and in Pisces, words go a little *misty.*",
+        "You know things before you can explain them.",
+        "So you need someone patient with your silences,",
+        "who hears the *song* and gets the message."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☿ · MERCURY · THE MIND"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to be *literal* to be understood.",
+        "My quiet is still *talking.*",
+        "I deserve someone fluent in *me.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "274-unsaid-scorpio",
+  "title": "How a Scorpio says I love you",
+  "cover": "How a *Scorpio* says I love you",
+  "keyword": "VENUS",
+  "caption": "if a scorpio told you a secret, you're in. they don't hand those out",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "scorpio",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "eclipse",
+      "header": "SCORPIO · THE UNSAID",
+      "lines": [
+        "If a Scorpio told you a secret, you're *in.*",
+        "They don't hand those out.",
+        "Not to friends. Not to *family.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "lilac"
+      },
+      "header": "MARS · PLUTO",
+      "lines": [
+        "Mars and Pluto rule them,",
+        "so they love with their *whole* weight.",
+        "They remember your worst day",
+        "and never use it *against* you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Trust is a *gift* I can give.",
+        "Being let *in* is love."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

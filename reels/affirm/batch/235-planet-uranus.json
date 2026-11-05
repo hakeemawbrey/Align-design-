@@ -1,0 +1,91 @@
+{
+  "id": "235-planet-uranus",
+  "title": "Uranus in love",
+  "cover": "*Uranus* in love",
+  "keyword": "CHART",
+  "caption": "uranus spins on its side. it's the planet of the person you never saw coming",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "uranus",
+    "aquarius",
+    "birthchart",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "planets",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "URANUS · THE UNEXPECTED",
+      "lines": [
+        "One planet spins on its *side.*",
+        "Uranus, the planet of surprises.",
+        "It's the modern ruler of *Aquarius,*",
+        "and it never does things the usual way."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "AQUARIUS · MODERN RULER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "THE ONE YOU DIDN'T SEE COMING",
+      "lines": [
+        "In love, Uranus is the *lightning:*",
+        "the person you'd never have picked,",
+        "the plan that falls apart",
+        "into something *better.*"
+      ],
+      "labels": [
+        {
+          "on": "orbit",
+          "at": 0,
+          "text": "SUDDEN · ELECTRIC"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My love doesn't have to look *normal.*",
+        "It has to feel like *mine.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

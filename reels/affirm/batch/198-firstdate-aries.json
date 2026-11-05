@@ -1,0 +1,87 @@
+{
+  "id": "198-firstdate-aries",
+  "title": "First date with an Aries",
+  "cover": "Don't take an Aries to *dinner*",
+  "keyword": "MATCH",
+  "caption": "don't take an aries to dinner. take them somewhere they can win",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "firstdate",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · CARDINAL FIRE",
+      "lines": [
+        "Don't take an Aries to *dinner.*",
+        "Take them somewhere they can *win.*",
+        "Mini golf. A climbing wall.",
+        "A race to the end of the pier."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "RULED BY MARS",
+      "lines": [
+        "Ruled by *Mars,* they're drawn to",
+        "*energy* more than polish.",
+        "And what really wins them?",
+        "Saying you had fun, *out loud,*",
+        "before the night is over."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MARS · ENERGY AND NERVE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want someone who's *all in.*",
+        "No games. No guessing.",
+        "Just a *yes* I can feel."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

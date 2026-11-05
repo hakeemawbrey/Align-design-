@@ -1,0 +1,91 @@
+{
+  "id": "005-sky-mars-retrograde",
+  "title": "Mars retrograde",
+  "cover": "Stop *chasing* for a while",
+  "keyword": "PASSING",
+  "caption": "mars is brightest right when it's retrograde. a good time to stop chasing and let it come to you",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "marsretrograde",
+    "retrograde",
+    "mars",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "retro",
+      "opts": {
+        "sightAt": 1,
+        "pathAt": 2
+      },
+      "header": "EARTH OVERTAKES MARS",
+      "lines": [
+        "Mars looks *brightest*",
+        "right when it's moving backwards.",
+        "Every two years or so, we pass it,",
+        "and it's at its *closest* to us."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "MARS · OUTER ORBIT"
+        },
+        {
+          "on": "earth",
+          "at": 2,
+          "text": "EARTH · INSIDE TRACK"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS · DESIRE · PURSUIT",
+      "lines": [
+        "Mars is how you *want,*",
+        "how you chase, how you fight.",
+        "For about ten weeks, it turns inward.",
+        "So let the chase *rest.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't chase what I'd have to *drag.*",
+        "My wanting can rest",
+        "and still be *mine.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

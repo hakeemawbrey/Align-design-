@@ -1,0 +1,79 @@
+{
+  "id": "080-dear-capricorn",
+  "title": "Dear Capricorn",
+  "cover": "Dear Capricorn, you're *enough*",
+  "keyword": "CHART",
+  "caption": "for the capricorn who shows up every tuesday and still thinks love has to be earned",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "capricorn",
+    "loveletter",
+    "zodiaclove",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "dear",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "DEAR CAPRICORN · SATURN",
+      "lines": [
+        "Dear Capricorn, you love like a *builder.*",
+        "Brick by brick. Year by year."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CARDINAL EARTH · THE SEA-GOAT",
+      "lines": [
+        "You're the one who shows up",
+        "on the boring *Tuesdays,* not just the big days.",
+        "The habit I'd ask you to put down",
+        "is treating love like a *job*",
+        "you have to earn your place in."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am more than what I *build.*",
+        "I can be loved",
+        "on the days I do *nothing.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

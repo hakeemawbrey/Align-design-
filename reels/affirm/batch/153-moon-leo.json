@@ -1,0 +1,76 @@
+{
+  "id": "153-moon-leo",
+  "title": "Moon in Leo",
+  "cover": "Moon in Leo needs to be *seen*",
+  "keyword": "MOON",
+  "caption": "moon in leo can light up a whole room and still go home wondering if anyone saw it. you were seen",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "mooninleo",
+    "leo",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "moon",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "MOON IN LEO",
+      "lines": [
+        "You can light up a whole *room*",
+        "and still go home wondering",
+        "if anyone really saw *you.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · RULED BY THE SUN",
+      "lines": [
+        "Leo is ruled by the Sun,",
+        "and with the Moon here, you feel safe",
+        "when someone's *warmth* is aimed at you.",
+        "Not flattery. *Attention.*",
+        "Being someone's first call, on purpose."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *perform* to be loved.",
+        "I'm allowed to want a *spotlight* of one.",
+        "I can rest and still be *seen.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

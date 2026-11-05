@@ -1,0 +1,85 @@
+{
+  "id": "468-love-consistency",
+  "title": "Consistency over intensity",
+  "cover": "Steady beats *spectacular*",
+  "keyword": "MUTUAL",
+  "caption": "a shooting star is a speck of dust having a moment. the sun just shows up",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "consistency",
+    "relationships",
+    "astrology",
+    "affirmations",
+    "greenflags"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "A SHOOTING STAR",
+      "lines": [
+        "Most shooting stars are a speck of *dust.*",
+        "One bright second, and it's gone.",
+        "It feels like magic because it's *brief.*"
+      ],
+      "labels": [
+        {
+          "on": "orbit",
+          "at": 0,
+          "text": "A SPECK OF DUST"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "THE SUN · EVERY MORNING",
+      "lines": [
+        "The sun is never that *dramatic.*",
+        "It just comes up again tomorrow,",
+        "and the morning after that.",
+        "That's the light that keeps you *warm.*",
+        "Choose the steady one over the *flash.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't confuse intensity with *love.*",
+        "I want someone who shows up *again.*",
+        "Steady feels like *home* to me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

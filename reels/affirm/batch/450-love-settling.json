@@ -1,0 +1,82 @@
+{
+  "id": "450-love-settling",
+  "title": "Don't settle",
+  "cover": "Remember your *real* sky",
+  "keyword": "MUTUAL",
+  "caption": "city lights hide almost every star. settling does the same thing to what you want",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "dontsettle",
+    "standards",
+    "selfworth",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "A MOONLESS NIGHT · DARK SKY",
+      "lines": [
+        "Far from any city, on a moonless night,",
+        "you can see *thousands* of stars.",
+        "Under city lights,",
+        "maybe a few *dozen.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "NEW MOON · DARKEST SKY"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "SETTLING · CITY LIGHTS",
+      "lines": [
+        "The stars didn't leave.",
+        "The glow just *drowned* them out.",
+        "Settling is like that.",
+        "Bright enough, comfortable enough,",
+        "until you forget what you *wanted.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I remember what my sky *looks* like.",
+        "Enough is not the same as *right.*",
+        "I'm willing to wait for the *stars.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

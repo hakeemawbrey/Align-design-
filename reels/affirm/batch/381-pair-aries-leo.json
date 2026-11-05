@@ -1,0 +1,95 @@
+{
+  "id": "381-pair-aries-leo",
+  "title": "Aries and Leo",
+  "cover": "Aries + Leo · *trine*",
+  "keyword": "MATCH",
+  "caption": "aries lights it, leo keeps it lit. just remember to clap for each other",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aries",
+    "leo",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "fire"
+      },
+      "header": "ARIES · LEO · FIRE · FIRE",
+      "lines": [
+        "Someone has to light the *match.*",
+        "Someone has to *keep* it burning.",
+        "Aries and Leo, both fire, split the job."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "leo"
+        ],
+        "pairAt": 1
+      },
+      "header": "TRINE · 120°",
+      "lines": [
+        "Four signs apart, a hundred and twenty degrees:",
+        "a *trine,* the aspect of flow.",
+        "Cardinal Aries gives Leo *momentum.*",
+        "Fixed Leo gives Aries *loyalty.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "THE FRICTION · THE SPOTLIGHT",
+      "lines": [
+        "The friction is the *spotlight.*",
+        "Two proud hearts can forget to clap",
+        "for each other.",
+        "Make a habit of *cheering.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Your shine doesn't *dim* mine.",
+        "I love *loudly,*",
+        "and I let myself be loved loudly back."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

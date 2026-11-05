@@ -1,0 +1,76 @@
+{
+  "id": "094-morning-pisces",
+  "title": "Good morning, Pisces",
+  "cover": "Good morning, *Pisces*",
+  "keyword": "CHART",
+  "caption": "good morning pisces. still half in a dream? bring the softness, just give it edges",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "pisces",
+    "goodmorning",
+    "morningaffirmations",
+    "astrology",
+    "selflove"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "GOOD MORNING · PISCES",
+      "lines": [
+        "Good morning, Pisces. Still half in a *dream?*",
+        "Your sign is tied to *Neptune,*",
+        "so waking up always takes a minute."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "Bring the softness with you.",
+        "Just let it have *edges* today."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be soft and still say *no.*",
+        "I deserve love I can *touch,*",
+        "not just love I imagine.",
+        "My heart is safe with *me.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

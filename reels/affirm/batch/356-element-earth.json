@@ -1,0 +1,84 @@
+{
+  "id": "356-element-earth",
+  "title": "Earth signs in love",
+  "cover": "*Earth signs* in love",
+  "keyword": "MATCH",
+  "caption": "taurus, virgo, capricorn. earth signs say i love you with their hands",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "earthsigns",
+    "taurus",
+    "virgo",
+    "capricorn",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth"
+      },
+      "header": "EARTH · TAURUS VIRGO CAPRICORN",
+      "lines": [
+        "Earth signs rarely say it first.",
+        "They *show* it.",
+        "Taurus, Virgo and *Capricorn*",
+        "love with their hands and their *time.*"
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 2,
+          "text": "TAURUS · VIRGO · CAPRICORN"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "SLOW TO TRUST · SLOW TO LEAVE",
+      "lines": [
+        "The meal made, the shelf fixed,",
+        "the car warmed up before you *leave.*",
+        "Earth is slow to *trust,*",
+        "and even slower to go."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need fireworks.",
+        "I need someone who *stays,*",
+        "and I'm allowed to take my *time.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "124-partner-gemini",
+  "title": "Gemini as a partner",
+  "cover": "Dating a *Gemini* is never dull",
+  "keyword": "MATCH",
+  "caption": "dating a gemini is like dating a whole group chat. the joker, the thinker, the late-night texter",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "gemini",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "airsign"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "partner",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · MUTABLE AIR",
+      "lines": [
+        "Date a Gemini, and you'll *never*",
+        "run out of things to say.",
+        "The sign of the *twins*",
+        "brings a whole *crowd* to love:",
+        "the joker, the thinker, the late-night texter."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "THE TWINS"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Ruled by *Mercury,* they keep love *moving.*",
+        "New jokes. New places.",
+        "New questions about *you,*",
+        "years in."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I bring *lightness* to love.",
+        "With me, even the hard talks",
+        "end in *laughing.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

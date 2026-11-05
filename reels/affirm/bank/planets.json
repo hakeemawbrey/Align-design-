@@ -1,0 +1,357 @@
+[
+  {
+    "key": "planet-sun",
+    "title": "The Sun in love",
+    "cover": "The *Sun* in love",
+    "caption": "your sun sign is where you shine. the right person won't ask you to dim it",
+    "hashtags": ["sunsign", "sun", "leo", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "THE SUN · YOUR CORE",
+        "lines": ["Everyone knows their *sun sign,*", "because the Sun spends about a month", "in each sign of the zodiac.", "It's the easiest one to *find.*"],
+        "labels": [{ "on": "planet", "at": 1, "text": "☉ · ABOUT A MONTH A SIGN" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "RULER OF LEO",
+        "lines": ["It's your core,", "what lights you up,", "and in love, what you need", "to be *seen* for.", "The Sun rules Leo,", "the sign of the *spotlight.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *dim* myself", "to be easy to love.", "I want someone who loves my *light.*"]
+      }
+    ]
+  },
+  {
+    "key": "planet-moon",
+    "title": "The Moon in love",
+    "cover": "The *Moon* in love",
+    "caption": "born a day later, you might have a different moon sign. that's how personal it is",
+    "hashtags": ["moonsign", "moon", "cancer", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "THE MOON · YOUR NEEDS",
+        "lines": ["Born a day later,", "you might have a different *moon sign.*", "The Moon changes sign", "every two and a half days,", "so yours is *personal.*"],
+        "labels": [{ "on": "planet", "at": 3, "text": "☽ · NEW SIGN EVERY 2.5 DAYS" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 1 },
+        "header": "WHAT FEELS SAFE",
+        "lines": ["It's not how you love.", "It's what makes you feel *safe*", "enough to love at all.", "The Moon rules Cancer,", "the sign of *home.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My needs are not a *burden.*", "I deserve to feel *safe*", "with the person I love."]
+      }
+    ]
+  },
+  {
+    "key": "planet-mercury",
+    "title": "Mercury in love",
+    "cover": "*Mercury* in love",
+    "caption": "mercury never strays far from the sun, so it's in your sun sign or right next door",
+    "hashtags": ["mercury", "mercurysign", "gemini", "virgo", "astrology"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "MERCURY · NEVER FAR FROM THE SUN",
+        "lines": ["Mercury never strays far from the Sun.", "So your Mercury is in your *sun sign,*", "or one of the signs right *beside* it."],
+        "labels": [{ "on": "planet", "at": 0, "text": "☿ · THE MESSENGER" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "planet": "☿", "planetSign": "gemini", "planetAt": 2 },
+        "header": "THE PLANET OF TALK",
+        "lines": ["It's the planet of *talk:*", "how you text, argue and *apologize.*", "Mercury rules Gemini and Virgo.", "In love, it's the language", "your mind needs to be *spoken* in."],
+        "labels": [{ "on": "planet", "at": 2, "text": "RULER OF GEMINI · VIRGO" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve to be *talked* to,", "not talked around."]
+      }
+    ]
+  },
+  {
+    "key": "planet-venus",
+    "title": "Venus in love",
+    "cover": "*Venus* in love",
+    "caption": "the brightest planet in our sky is the one we named for love. of course it is",
+    "hashtags": ["venus", "venussign", "taurus", "libra", "astrology"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "VENUS · THE BRIGHTEST PLANET",
+        "lines": ["The brightest planet in our sky", "is the one we named for *love.*", "Venus rules Taurus and Libra,", "*pleasure* and partnership."],
+        "labels": [{ "on": "planet", "at": 1, "text": "♀ · PLANET OF LOVE" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "planet": "♀", "planetSign": "taurus", "planetAt": 0 },
+        "header": "NEVER FAR FROM YOUR SUN",
+        "lines": ["Your Venus sign shows what you find *beautiful,*", "and how you need to be *loved* back.", "It's never more than two signs", "away from your Sun."],
+        "labels": [{ "on": "planet", "at": 0, "text": "♀ · YOUR VENUS SIGN" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to *want* things.", "I can ask to be loved", "in my *own* way."]
+      }
+    ]
+  },
+  {
+    "key": "planet-mars",
+    "title": "Mars in love",
+    "cover": "*Mars* in love",
+    "caption": "venus is what you're drawn to. mars is how you go after it, and how you fight for it",
+    "hashtags": ["mars", "marssign", "aries", "astrology", "affirmations"],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "MARS · THE CHASE",
+        "lines": ["Venus is what you're *drawn* to.", "Mars is how you *go after* it.", "One is attraction. One is action."],
+        "labels": [{ "on": "planet", "at": 1, "text": "♂ · DESIRE AND DRIVE" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "RULER OF ARIES",
+        "lines": ["Mars rules *Aries,*", "the part of you that wants,", "chases, flirts and *fights.*", "It shows how you get angry,", "and what you need to make *up.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My wanting is not *wrong.*", "I can fight fair", "and still go after what I *love.*"]
+      }
+    ]
+  },
+  {
+    "key": "planet-jupiter",
+    "title": "Jupiter in love",
+    "cover": "*Jupiter* in love",
+    "caption": "jupiter spends about a year in each sign and makes everything it touches bigger. love included",
+    "hashtags": ["jupiter", "birthchart", "sagittarius", "astrology", "abundance"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "JUPITER · PLANET OF GROWTH",
+        "lines": ["The largest planet in our solar system", "rules *growth,* luck and generosity.", "That's Jupiter, the ruler of *Sagittarius.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "♃ · THE LARGEST PLANET" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "planet": "♃", "planetSign": "sagittarius", "planetAt": 0 },
+        "header": "ABOUT A YEAR IN EACH SIGN",
+        "lines": ["It spends about a *year* in each sign,", "and whatever it touches gets *bigger.*", "In love, it shows where you're generous,", "and where you get *lucky.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "ROOM TO GROW",
+        "lines": ["So here's the Jupiter test:", "the right love gives you *more.*", "More laughter, more courage,", "more room to be *you.*"]
+      }
+    ]
+  },
+  {
+    "key": "planet-saturn",
+    "title": "Saturn in love",
+    "cover": "*Saturn* in love",
+    "caption": "saturn takes about twenty nine years to circle back. it knows a thing or two about the long game",
+    "hashtags": ["saturn", "saturnreturn", "capricorn", "astrology", "commitment"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "SATURN · TIME AND COMMITMENT",
+        "lines": ["Saturn takes about *twenty-nine* years", "to come back to where it was", "the day you were born.", "That's your *Saturn return.*"],
+        "labels": [{ "on": "planet", "at": 3, "text": "♄ · ABOUT 29 YEARS" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "RULER OF CAPRICORN",
+        "lines": ["Saturn rules *Capricorn,*", "time, and the things that only grow *slowly.*", "In love, it's the planet of *staying:*", "showing up for years, not moments."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE LONG GAME",
+        "lines": ["Fast love is exciting.", "Saturn love is *quiet:*", "still there in ten years,", "still *choosing* you."]
+      }
+    ]
+  },
+  {
+    "key": "planet-uranus",
+    "title": "Uranus in love",
+    "cover": "*Uranus* in love",
+    "caption": "uranus spins on its side. it's the planet of the person you never saw coming",
+    "hashtags": ["uranus", "aquarius", "birthchart", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "URANUS · THE UNEXPECTED",
+        "lines": ["One planet spins on its *side.*", "Uranus, the planet of surprises.", "It's the modern ruler of *Aquarius,*", "and it never does things the usual way."],
+        "labels": [{ "on": "sign", "at": 2, "text": "AQUARIUS · MODERN RULER" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "THE ONE YOU DIDN'T SEE COMING",
+        "lines": ["In love, Uranus is the *lightning:*", "the person you'd never have picked,", "the plan that falls apart", "into something *better.*"],
+        "labels": [{ "on": "orbit", "at": 0, "text": "SUDDEN · ELECTRIC" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My love doesn't have to look *normal.*", "It has to feel like *mine.*"]
+      }
+    ]
+  },
+  {
+    "key": "planet-neptune",
+    "title": "Neptune in love",
+    "cover": "*Neptune* in love",
+    "caption": "neptune was found with math before anyone saw it. that's also how we fall for people",
+    "hashtags": ["neptune", "pisces", "birthchart", "astrology", "romance"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "retro",
+        "header": "NEPTUNE · FOUND ON PAPER",
+        "lines": ["Neptune was found on *paper*", "before anyone saw it in the sky.", "Someone did the math", "and *imagined* it first."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "MODERN RULER OF PISCES",
+        "lines": ["That's Neptune in love:", "falling for who you *imagined*", "before you see who's really there.", "It rules dreams, romance and *fog.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can dream *and* see clearly.", "I want a love that's real in *daylight.*"]
+      }
+    ]
+  },
+  {
+    "key": "planet-pluto",
+    "title": "Pluto in love",
+    "cover": "*Pluto* in love",
+    "caption": "astronomers demoted pluto. astrology never did. it still rules the love that changes you",
+    "hashtags": ["pluto", "scorpio", "birthchart", "astrology", "transformation"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "eclipse",
+        "header": "PLUTO · DEPTH AND REBIRTH",
+        "lines": ["Astronomers *demoted* Pluto.", "Astrology never did.", "It's tiny, far away and *slow,*", "and it rules what changes you for good."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "MODERN RULER OF SCORPIO",
+        "lines": ["It's the modern ruler of *Scorpio:*", "depth, power, rebirth.", "In love, it's the bond", "that makes you a different *person.*", "All or nothing, never casual."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can love *deeply*", "without losing myself.", "I come back from every ending *new.*"]
+      }
+    ]
+  },
+  {
+    "key": "planet-chiron",
+    "title": "Chiron in love",
+    "cover": "*Chiron* in love",
+    "caption": "chiron is the wounded healer. the place you hurt most is where you're gentlest with others",
+    "hashtags": ["chiron", "woundedhealer", "birthchart", "astrology", "healing"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "header": "CHIRON · THE WOUNDED HEALER",
+        "lines": ["Chiron is named for a *healer*", "who could cure everyone but *himself.*", "In your chart, it marks", "the spot that's still tender."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "WHERE YOU'RE GENTLEST",
+        "lines": ["In love, it's the thing you *flinch* at", "when someone gets close.", "But it's also where you're *gentlest*", "with everyone else."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My soft spot isn't a *flaw.*", "It's how I know", "how to love someone *carefully.*"]
+      }
+    ]
+  },
+  {
+    "key": "planet-north-node",
+    "title": "The North Node in love",
+    "cover": "The *North Node* in love",
+    "caption": "the north node isn't a planet. it's the direction your heart is still learning to go",
+    "hashtags": ["northnode", "lunarnodes", "birthchart", "astrology", "growth"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 3 },
+        "header": "THE NODES · WHERE PATHS CROSS",
+        "lines": ["The North Node isn't a *planet.*", "It's where the Moon's path", "*crosses* the Sun's.", "Eclipses only happen near the nodes."],
+        "labels": [{ "on": "line", "at": 3, "text": "THE NODES · ECLIPSE POINTS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass" },
+        "header": "SOUTH NODE · NORTH NODE",
+        "lines": ["Its opposite, the *South Node,*", "is what feels familiar.", "The North Node is where you're *growing.*", "In love, that's often the person", "who doesn't feel like *home* yet."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can choose what *grows* me", "over what's familiar."]
+      }
+    ]
+  }
+]

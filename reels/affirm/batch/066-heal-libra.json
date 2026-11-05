@@ -1,0 +1,93 @@
+{
+  "id": "066-heal-libra",
+  "title": "Libra, after a breakup",
+  "cover": "Libra, peace isn't a *compromise*",
+  "keyword": "PASSING",
+  "caption": "libra wants a breakup to be fair, both sides heard, nobody the villain. sometimes it just ends",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "libra",
+    "breakup",
+    "healing",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · THE SCALES",
+      "lines": [
+        "Libra, you want it to end *fairly.*",
+        "Both sides heard. Nobody the villain.",
+        "Your sign is the *scales,*",
+        "and right now they won't settle."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 0
+      },
+      "header": "SEVENTH HOUSE · PARTNERS",
+      "lines": [
+        "You're the sign of *partnership,*",
+        "so being alone can feel *wrong.*",
+        "It isn't.",
+        "Your relationship with you stays."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need their *agreement*",
+        "to know what was true.",
+        "My peace is not a *compromise.*"
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 3,
+          "text": "VENUS · YOUR RULER"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

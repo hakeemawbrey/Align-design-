@@ -1,0 +1,86 @@
+{
+  "id": "028-partner-aries",
+  "title": "Aries as a partner",
+  "cover": "An *Aries* in your corner",
+  "keyword": "MATCH",
+  "caption": "with an aries you never fight alone. first in your corner, first to say sorry",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "firesign"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "partner",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · CARDINAL FIRE",
+      "lines": [
+        "With an Aries, you never fight *alone.*",
+        "They're the first one in your corner,",
+        "the first to *defend* you,",
+        "and the first to say *sorry,* too."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "RULED BY MARS",
+      "lines": [
+        "Ruled by *Mars,* they bring *momentum.*",
+        "Plans actually happen.",
+        "Arguments end *fast,*",
+        "and nobody sulks for a *week.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MARS · ACTION"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I bring *courage* to love.",
+        "I go first,",
+        "so the people I love feel *brave.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

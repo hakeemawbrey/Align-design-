@@ -1,0 +1,90 @@
+{
+  "id": "462-love-unrequited",
+  "title": "Every pull is returned",
+  "cover": "Real pull goes *both* ways",
+  "keyword": "MUTUAL",
+  "caption": "in physics, every pull gets pulled back. if yours never was, it wasn't an orbit",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "unrequitedlove",
+    "lettinggo",
+    "selfworth",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "header": "GRAVITY · ALWAYS MUTUAL",
+      "lines": [
+        "Gravity never goes *one way.*",
+        "The earth pulls on the moon,",
+        "and the moon pulls the earth *back,*",
+        "just as hard."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "EQUAL · AND OPPOSITE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "WHEN THEY DON'T LOVE YOU BACK",
+      "lines": [
+        "So if you've been pulling",
+        "and nothing ever pulls back,",
+        "that isn't weak *gravity.*",
+        "It's just not an *orbit.*"
+      ],
+      "labels": [
+        {
+          "on": "orbit",
+          "at": 3,
+          "text": "ONE-SIDED · NOT AN ORBIT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My love isn't *wasted.*",
+        "It comes back to *me.*",
+        "I save my pull for someone",
+        "who pulls *back.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "307-ruler-scorpio",
+  "title": "Scorpio is ruled by Mars and Pluto",
+  "cover": "Scorpio, ruled by *Mars* and Pluto",
+  "keyword": "CHART",
+  "caption": "two rulers, both deep. you don't love halfway, scorpio, and you were never meant to",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "scorpio",
+    "mars",
+    "pluto",
+    "planetaryruler",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "ruler",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "lilac"
+      },
+      "header": "SCORPIO · MARS AND PLUTO",
+      "lines": [
+        "Your sign has two rulers,",
+        "and both of them go *deep.*",
+        "Mars, the old ruler, is *desire.*",
+        "Pluto, the new one, is *change.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "♂ MARS · TRADITIONAL RULER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · FIXED WATER",
+      "lines": [
+        "So you don't love *halfway.*",
+        "You want the whole person,",
+        "the locked drawer, the real story.",
+        "And once you're in, you're *in.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My depth is not a *danger.*",
+        "I can trust slowly",
+        "and still love *all* the way."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

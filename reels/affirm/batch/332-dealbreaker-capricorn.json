@@ -1,0 +1,86 @@
+{
+  "id": "332-dealbreaker-capricorn",
+  "title": "The Capricorn dealbreaker",
+  "cover": "Capricorn's time is a *gift*",
+  "keyword": "MATCH",
+  "caption": "a capricorn doesn't need you finished. they need you going somewhere on purpose",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "capricorn",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "saturn"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "RULED BY SATURN",
+      "lines": [
+        "A Capricorn gives you the rarest thing:",
+        "their *time.*",
+        "Ruled by *Saturn,* the planet of time,",
+        "they don't spend it *lightly.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "SATURN · TIME AND WORK"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · CARDINAL EARTH",
+      "lines": [
+        "So the dealbreaker is someone",
+        "who isn't *serious* about anything.",
+        "Not rich. Not finished.",
+        "Just *going* somewhere, on purpose."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "DEALBREAKERS UP FRONT",
+      "lines": [
+        "It isn't cold to say it early.",
+        "You're building something that lasts.",
+        "You want someone who shows up with *tools,*",
+        "not someone who just admires the *view.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

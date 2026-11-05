@@ -1,0 +1,84 @@
+{
+  "id": "196-venus-capricorn",
+  "title": "Venus in Capricorn",
+  "cover": "Venus in Capricorn *builds* it",
+  "keyword": "VENUS",
+  "caption": "venus in capricorn doesn't say i love you early. it says it when it can keep it",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "venusincapricorn",
+    "capricorn",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "VENUS IN CAPRICORN",
+      "lines": [
+        "You don't say I love you *early.*",
+        "You say it when you can *keep* it.",
+        "Venus in Capricorn loves like a *builder.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "CAPRICORN · RULED BY SATURN",
+      "lines": [
+        "Capricorn is ruled by Saturn,",
+        "the planet of *time.*",
+        "So you trust what lasts, not what *sparkles.*",
+        "You need someone who shows up",
+        "long after it stops being new."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♄ · SATURN · TIME"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "SLOW IS STILL ROMANCE",
+      "lines": [
+        "So no, you're not *cold.*",
+        "You just don't hand out promises",
+        "you can't keep.",
+        "And that's the most romantic thing there is."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

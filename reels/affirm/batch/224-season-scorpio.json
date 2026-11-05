@@ -1,0 +1,81 @@
+{
+  "id": "224-season-scorpio",
+  "title": "Scorpio season in love",
+  "cover": "*Scorpio* season: go deeper",
+  "keyword": "CHART",
+  "caption": "no one wants small talk this month. say the true thing and watch who leans in",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "scorpioseason",
+    "scorpio",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO SEASON · OCT 23 – NOV 21",
+      "lines": [
+        "This is the month no one wants small *talk.*",
+        "The Sun is in *Scorpio,*",
+        "the sign of what's under the surface."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "lilac"
+      },
+      "header": "MARS AND PLUTO",
+      "lines": [
+        "Ruled by Mars and *Pluto,*",
+        "Scorpio wants the real thing.",
+        "So the sky asks everyone:",
+        "what have you been not *saying?*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♂ MARS · DESIRE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE TRUE THING",
+      "lines": [
+        "Say the *true* thing this month.",
+        "Let someone see the deep end.",
+        "The ones worth keeping",
+        "will lean *closer.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

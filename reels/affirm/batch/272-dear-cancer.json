@@ -1,0 +1,84 @@
+{
+  "id": "272-dear-cancer",
+  "title": "Dear Cancer",
+  "cover": "Dear Cancer, you *remember*",
+  "keyword": "CHART",
+  "caption": "for the cancer who remembers the song, the jacket, and exactly what they said",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "cancer",
+    "loveletter",
+    "zodiaclove",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "dear",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "DEAR CANCER · RULED BY THE MOON",
+      "lines": [
+        "Dear Cancer, you remember *everything.*",
+        "The song, the jacket, how they said your name.",
+        "That's the *Moon* in you."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "THE MOON · CANCER'S RULER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CARDINAL WATER · THE CRAB",
+      "lines": [
+        "You make people feel *held,*",
+        "like they finally got to come home.",
+        "But the habit to set down",
+        "is hiding in your *shell*",
+        "and hoping they'll guess what's wrong."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *ask* for what I need.",
+        "I deserve the care I *give.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

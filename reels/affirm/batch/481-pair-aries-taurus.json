@@ -1,0 +1,95 @@
+{
+  "id": "481-pair-aries-taurus",
+  "title": "Aries and Taurus",
+  "cover": "Aries + Taurus · *semi-sextile*",
+  "keyword": "MATCH",
+  "caption": "mars and venus, thirty degrees apart. one wants it now, one wants it right",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aries",
+    "taurus",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "taurus"
+        ],
+        "pairAt": 2
+      },
+      "header": "ARIES · TAURUS · SEMI-SEXTILE",
+      "lines": [
+        "Mars and Venus live *next door.*",
+        "Aries and Taurus sit side by side,",
+        "thirty degrees apart.",
+        "A *semi-sextile:* close, but different."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "earth"
+      },
+      "header": "CARDINAL FIRE · FIXED EARTH",
+      "lines": [
+        "Aries is cardinal fire:",
+        "the *spark,* the first move.",
+        "Taurus is fixed earth:",
+        "the *ground* you both stand on."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION · PACE",
+      "lines": [
+        "The friction is *pace.*",
+        "Aries wants it now.",
+        "Taurus wants it right.",
+        "Neither of you is wrong."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My pace is not a *problem.*",
+        "I can move fast",
+        "and still build something *slow.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

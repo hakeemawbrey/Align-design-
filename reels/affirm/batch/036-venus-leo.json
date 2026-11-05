@@ -1,0 +1,86 @@
+{
+  "id": "036-venus-leo",
+  "title": "Venus in Leo",
+  "cover": "Venus in Leo wants to be *adored*",
+  "keyword": "VENUS",
+  "caption": "venus in leo doesn't want to be liked. it wants to be someone's favorite, out loud",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "venusinleo",
+    "leo",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "VENUS IN LEO",
+      "lines": [
+        "Being *liked* was never the goal.",
+        "You want to be *adored.*",
+        "And honestly, that isn't vanity."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · RULED BY THE SUN",
+      "lines": [
+        "Leo is ruled by the Sun,",
+        "and you love the way the sun does:",
+        "warm, generous, impossible to miss.",
+        "So you need a love that *shines back,*",
+        "not one that dims you to feel bigger."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☉ · THE SUN · LEO'S RULER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve to be someone's *favorite,*",
+        "said out loud, in front of people.",
+        "I will never shrink to be *loved.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "172-basics-chart-ruler",
+  "title": "Your chart ruler",
+  "cover": "Your chart has a *driver*",
+  "keyword": "CHART",
+  "caption": "the planet that rules your rising sign steers your whole chart. find yours",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "chartruler",
+    "risingsign",
+    "birthchart",
+    "astrology",
+    "zodiac"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "axis": true,
+        "axisAt": 1
+      },
+      "header": "YOUR CHART RULER",
+      "lines": [
+        "Your chart has a *driver.*",
+        "It's the planet that rules your *rising.*",
+        "Leo rising? It's the sun.",
+        "Gemini rising? *Mercury.*"
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 1,
+          "text": "RISING SIGN · ITS RULER"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "TAURUS · LIBRA RISING · VENUS",
+      "lines": [
+        "Taurus or Libra rising?",
+        "Your ruler is *Venus.*",
+        "So wherever Venus sits,",
+        "your whole chart keeps steering",
+        "back toward *love.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "FIND YOUR DRIVER",
+      "lines": [
+        "Find the planet that rules your rising.",
+        "Wherever it sits in your chart",
+        "is where your heart keeps *heading.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

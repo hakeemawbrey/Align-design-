@@ -1,0 +1,84 @@
+{
+  "id": "388-love-quiet-love",
+  "title": "The quiet kind",
+  "cover": "The *quiet* kind of love",
+  "keyword": "CHART",
+  "caption": "the sun's corona is there every day. you only see it when the loud part is covered",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "quietlove",
+    "softlove",
+    "eclipse",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "eclipse",
+      "header": "THE CORONA",
+      "lines": [
+        "You've probably never seen the sun's *corona.*",
+        "It's a soft glow around the sun,",
+        "there every single day.",
+        "You only see it in an *eclipse,*",
+        "when the bright part is covered."
+      ],
+      "labels": [
+        {
+          "on": "sun",
+          "at": 1,
+          "text": "THE CORONA"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE QUIET KIND OF LOVE",
+      "lines": [
+        "Some love is like that.",
+        "No *fireworks.*",
+        "Just a warm glow",
+        "that's been there all along,",
+        "waiting for the noise to *settle.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need *noise* to feel loved.",
+        "I notice the love that *stays.*",
+        "Quiet love is still *love.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

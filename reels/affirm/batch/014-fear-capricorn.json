@@ -1,0 +1,79 @@
+{
+  "id": "014-fear-capricorn",
+  "title": "What a Capricorn quietly fears",
+  "cover": "Capricorn, *both* of you build",
+  "keyword": "MUTUAL",
+  "caption": "for the capricorn who thinks love falls apart the second they stop carrying it",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "capricorn",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "CAPRICORN · RULED BY SATURN",
+      "lines": [
+        "Capricorn, you're good at almost *everything.*",
+        "*Saturn* made sure of that.",
+        "So here's what you'd never admit:",
+        "you're scared of *failing* at love."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "THE QUIET FEAR · CARRYING IT",
+      "lines": [
+        "Because love is the one thing",
+        "you can't fix by working *harder.*",
+        "So when it wobbles,",
+        "you carry it like it's *all* on you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "TWO PAIRS OF HANDS",
+      "lines": [
+        "But love was never a *solo* climb.",
+        "You can't carry it alone,",
+        "and you were never *meant* to.",
+        "It only works when you *both* build."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

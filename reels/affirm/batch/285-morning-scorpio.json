@@ -1,0 +1,78 @@
+{
+  "id": "285-morning-scorpio",
+  "title": "Good morning, Scorpio",
+  "cover": "Good morning, *Scorpio*",
+  "keyword": "CHART",
+  "caption": "good morning scorpio. unclench your jaw. your depth is a gift, not a warning",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "scorpio",
+    "goodmorning",
+    "morningaffirmations",
+    "astrology",
+    "selflove"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "GOOD MORNING · SCORPIO",
+      "lines": [
+        "Good morning, Scorpio. Unclench your *jaw.*",
+        "You slept with one eye open again.",
+        "Fixed water holds *everything* in."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "lilac"
+      },
+      "header": "MARS · MODERN RULER PLUTO",
+      "lines": [
+        "Ruled by *Mars* and *Pluto,*",
+        "you feel everything at full strength.",
+        "That isn't too much. It's *rare.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am safe to let someone *in.*",
+        "My depth is a gift,",
+        "not a warning.",
+        "I trust the love that *stays.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

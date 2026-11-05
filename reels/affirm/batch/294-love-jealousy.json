@@ -1,0 +1,84 @@
+{
+  "id": "294-love-jealousy",
+  "title": "Jealousy",
+  "cover": "Love with no room to *breathe*",
+  "keyword": "CHART",
+  "caption": "venus is hotter than mercury. not because it's closer, because the heat can't get out",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "jealousy",
+    "venus",
+    "astrology",
+    "affirmations",
+    "relationships"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "lilac"
+      },
+      "header": "THE HOTTEST PLANET",
+      "lines": [
+        "You'd think the hottest planet is *Mercury.*",
+        "It's the closest to the sun.",
+        "It isn't. The hottest is *Venus,*",
+        "the planet of love."
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "VENUS · HEAT WITH NOWHERE TO GO",
+      "lines": [
+        "Its thick air *traps* the heat in,",
+        "with nowhere for it to go.",
+        "Jealousy works the *same* way.",
+        "A feeling with no way out",
+        "just keeps *burning.*",
+        "Let it out as words, not as *watching.*"
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 0,
+          "text": "HOTTER THAN MERCURY"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can feel jealous and still be *kind.*",
+        "I say what I'm afraid of, out *loud.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

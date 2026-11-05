@@ -1,0 +1,96 @@
+{
+  "id": "086-pair-aries-virgo",
+  "title": "Aries and Virgo",
+  "cover": "Aries + Virgo · *quincunx*",
+  "keyword": "MATCH",
+  "caption": "nothing in common on paper. a quincunx means you adjust, not that you give up",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "virgo",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "virgo"
+        ],
+        "pairAt": 1
+      },
+      "header": "ARIES · VIRGO · QUINCUNX",
+      "lines": [
+        "On paper, Aries and Virgo share *nothing.*",
+        "Five signs apart, a hundred and fifty degrees.",
+        "A *quincunx:* no shared element,",
+        "no shared mode."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "earth"
+      },
+      "header": "FIRE · EARTH · ADJUSTMENT",
+      "lines": [
+        "Cardinal fire, mutable earth,",
+        "so it asks for constant *adjusting.*",
+        "Aries gives Virgo *permission* to start",
+        "before it's perfect.",
+        "Virgo gives Aries a *plan.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "THE FRICTION · THE NOTES",
+      "lines": [
+        "The friction: Virgo's notes",
+        "can sound like criticism to Aries.",
+        "Lead with what's *working.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "We don't have to *match*",
+        "to *fit.*",
+        "I can adjust without *shrinking.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

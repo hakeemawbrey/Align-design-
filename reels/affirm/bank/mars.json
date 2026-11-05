@@ -1,0 +1,823 @@
+[
+  {
+    "key": "mars-aries",
+    "title": "Mars in Aries",
+    "cover": "Mars in Aries goes *first*",
+    "caption": "mars in aries has never once played hard to get. it fights loud, forgives fast, and means it",
+    "hashtags": [
+      "marsinaries",
+      "aries",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♂",
+          "tone": "rose"
+        },
+        "header": "MARS IN ARIES · AT HOME",
+        "lines": [
+          "You've *never* once played hard to get.",
+          "Mars rules Aries, so here it's home,",
+          "and it moves *first.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "♂ · MARS · AT HOME"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aries"
+        },
+        "header": "HOW YOU FIGHT",
+        "lines": [
+          "When you're angry, it's *loud* and it's *over.*",
+          "Ten minutes later you're fine,",
+          "and confused why they aren't.",
+          "You need someone who can say it *straight back.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "ARIES · CARDINAL FIRE"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My directness is a kind of *honesty.*",
+          "I can go first and wait for an answer.",
+          "Wanting someone out loud is *brave.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-taurus",
+    "title": "Mars in Taurus",
+    "cover": "Mars in Taurus: the *slow burn*",
+    "caption": "mars in taurus wants slowly, and then wants for years. it never pushes. it stays",
+    "hashtags": [
+      "marsintaurus",
+      "taurus",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "taurus"
+        },
+        "header": "MARS IN TAURUS",
+        "lines": [
+          "Slowly. That's how you *want.*",
+          "And then you want for *years.*",
+          "Mars in Taurus is the *slow burn* of the zodiac."
+        ]
+      },
+      {
+        "art": "elements",
+        "opts": {
+          "element": "earth"
+        },
+        "header": "TAURUS · FIXED EARTH",
+        "lines": [
+          "Taurus is fixed earth.",
+          "You chase with patience, not pressure:",
+          "dinner, then dinner again, then a key.",
+          "In a fight you go *quiet* and *immovable.*",
+          "You need someone who doesn't push, just *stays.*"
+        ],
+        "labels": [
+          {
+            "on": "element",
+            "at": 0,
+            "text": "EARTH · FIXED"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "Nobody gets to rush my heart.",
+          "My stubbornness is *loyalty* in disguise.",
+          "When I choose, I choose *for good.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-gemini",
+    "title": "Mars in Gemini",
+    "cover": "Mars in Gemini flirts in *words*",
+    "caption": "mars in gemini flirts in paragraphs and fights in footnotes. silence is the one thing it can't take",
+    "hashtags": [
+      "marsingemini",
+      "gemini",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 2
+        },
+        "header": "MARS IN GEMINI",
+        "lines": [
+          "You flirt in *paragraphs*",
+          "and fight in *footnotes.*",
+          "Mars in Gemini chases with words."
+        ],
+        "labels": [
+          {
+            "on": "thread",
+            "at": 2,
+            "text": "A THREAD · NOT A WALL"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "gemini"
+        },
+        "header": "GEMINI · RULED BY MERCURY",
+        "lines": [
+          "Gemini is ruled by Mercury,",
+          "so desire starts in your *head.*",
+          "In a fight you'll talk it to pieces,",
+          "and you need someone who talks back,",
+          "not someone who goes *silent* for days."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I fight to *understand,* not to win.",
+          "My words can be gentle and still be true.",
+          "I want someone who stays in the *conversation.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-cancer",
+    "title": "Mars in Cancer",
+    "cover": "Mars in Cancer *protects*",
+    "caption": "mars in cancer would go to war for the people it loves, and can barely ask for a hug",
+    "hashtags": [
+      "marsincancer",
+      "cancer",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "cancer"
+        },
+        "header": "MARS IN CANCER",
+        "lines": [
+          "For the people you love, you'd go to *war.*",
+          "For yourself, you can barely ask for a *hug.*",
+          "That's Mars in Cancer."
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 2,
+            "text": "CANCER · CARDINAL WATER"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☽",
+          "tone": "lilac"
+        },
+        "header": "CANCER · RULED BY THE MOON",
+        "lines": [
+          "Cancer is ruled by the Moon,",
+          "so your drive rises and falls like a *tide.*",
+          "You chase sideways, like the crab,",
+          "and when you're hurt, you go into your *shell.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☽ · THE MOON"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can say *I'm hurt*",
+          "instead of saying nothing.",
+          "Wanting to feel safe first is not *weakness.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-leo",
+    "title": "Mars in Leo",
+    "cover": "Mars in Leo wants *out loud*",
+    "caption": "when mars in leo wants you, everyone knows. flowers at work, a toast at dinner, the whole heart",
+    "hashtags": [
+      "marsinleo",
+      "leo",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♂",
+          "tone": "rose"
+        },
+        "header": "MARS IN LEO",
+        "lines": [
+          "When you want someone, *everyone* knows.",
+          "Flowers at work. A toast at dinner.",
+          "Mars in Leo chases with its whole heart."
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "leo"
+        },
+        "header": "LEO · FIXED FIRE",
+        "lines": [
+          "Leo is fixed fire, ruled by the Sun.",
+          "You burn steady and *proud.*",
+          "So in a fight, it's rarely the thing itself.",
+          "It's whether you still feel *respected.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "LEO · THE LION"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My pride is how I *protect* my heart.",
+          "I can lower my voice and *keep* my crown.",
+          "I want someone who's proud to be *mine.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-virgo",
+    "title": "Mars in Virgo",
+    "cover": "Mars in Virgo fights with a *plan*",
+    "caption": "mars in virgo has a draft of this fight, rehearsed in the shower. twice. it just wants the real fix",
+    "hashtags": [
+      "marsinvirgo",
+      "virgo",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "virgo"
+        },
+        "header": "MARS IN VIRGO",
+        "lines": [
+          "Somewhere there's a *draft* of this fight,",
+          "rehearsed in the *shower.* Twice.",
+          "Mars in Virgo fights with a plan."
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♂",
+          "tone": "rose"
+        },
+        "header": "MARS · MUTABLE EARTH",
+        "lines": [
+          "Virgo is ruled by Mercury,",
+          "so your drive is precise and practical.",
+          "You want someone through effort,",
+          "booking the table, learning their order.",
+          "And in a fight, you want the *real* problem,",
+          "not a speech. An actual fix."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 2,
+            "text": "♂ · MARS · HOW YOU WANT"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be *right* and still be *kind.*",
+          "Not everything I love needs *fixing.*",
+          "Including *me.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-libra",
+    "title": "Mars in Libra",
+    "cover": "Mars in Libra fights *fair*",
+    "caption": "mars in libra cares more about peace than winning. that isn't weakness. it fights for what's fair",
+    "hashtags": [
+      "marsinlibra",
+      "libra",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "libra"
+        },
+        "header": "MARS IN LIBRA",
+        "lines": [
+          "Peace matters more to you than *winning.*",
+          "But Mars in Libra isn't weak.",
+          "It fights for what's *fair.*"
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "pair": [
+            "aries",
+            "libra"
+          ],
+          "pairAt": 0,
+          "planet": "♂",
+          "planetSign": "libra",
+          "planetAt": 2
+        },
+        "header": "MARS · OPPOSITE ITS HOME",
+        "lines": [
+          "Libra sits opposite Aries,",
+          "the sign Mars rules,",
+          "so your drive points toward *another person.*",
+          "You chase with charm, never pressure,",
+          "and you need a partner who fights *fair,* too."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 2,
+            "text": "♂ · MARS IN LIBRA"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "Keeping the peace can't cost me *my voice.*",
+          "I'm allowed to want things out loud.",
+          "Fair includes being fair to *me.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-scorpio",
+    "title": "Mars in Scorpio",
+    "cover": "Mars in Scorpio *decides*",
+    "caption": "mars in scorpio doesn't chase. it decides, then waits like the tide. just don't make it guess",
+    "hashtags": [
+      "marsinscorpio",
+      "scorpio",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♂",
+          "tone": "rose"
+        },
+        "header": "MARS IN SCORPIO",
+        "lines": [
+          "Before *Pluto* was ever found,",
+          "Scorpio was ruled by *Mars.*",
+          "So yours is at home, and it runs deep."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "♂ · SCORPIO'S OLD RULER"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "scorpio"
+        },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": [
+          "You don't chase. You *decide,*",
+          "and then you're patient as the tide.",
+          "In a fight you go quiet,",
+          "and you remember *everything.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "SCORPIO · THE SCORPION"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "WHAT YOU DESERVE",
+        "lines": [
+          "So hear this, Scorpio.",
+          "You don't need someone to *match* your intensity.",
+          "Just someone who says it now,",
+          "and never makes you *guess.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-sagittarius",
+    "title": "Mars in Sagittarius",
+    "cover": "Mars in Sagittarius: *no filter*",
+    "caption": "mars in sagittarius says the true thing first and the kind version an hour later. working on it",
+    "hashtags": [
+      "marsinsagittarius",
+      "sagittarius",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "sagittarius"
+        },
+        "header": "MARS IN SAGITTARIUS",
+        "lines": [
+          "You say the *true* thing first,",
+          "and the kind version an hour later.",
+          "Mars in Sagittarius shoots *straight.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 2,
+            "text": "THE ARCHER"
+          }
+        ]
+      },
+      {
+        "art": "elements",
+        "opts": {
+          "element": "fire"
+        },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": [
+          "You chase what makes you feel alive:",
+          "a last-minute flight, a dare, a laugh.",
+          "Freedom isn't a phase for you. It's *oxygen.*",
+          "You need someone who'd explore, not control."
+        ],
+        "labels": [
+          {
+            "on": "element",
+            "at": 0,
+            "text": "FIRE · MUTABLE"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be *honest* and *gentle* at once.",
+          "Wanting room doesn't mean I want *out.*",
+          "I'm looking for a fellow *adventurer.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-capricorn",
+    "title": "Mars in Capricorn",
+    "cover": "Mars in Capricorn *climbs*",
+    "caption": "mars in capricorn wants people the way it climbs mountains. slowly, on purpose, all the way up",
+    "hashtags": [
+      "marsincapricorn",
+      "capricorn",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "capricorn"
+        },
+        "header": "MARS IN CAPRICORN",
+        "lines": [
+          "You want people the way you climb *mountains:*",
+          "slowly, on purpose, all the way up."
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "THE SEA-GOAT"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♂",
+          "tone": "rose"
+        },
+        "header": "MARS · EXALTED IN CAPRICORN",
+        "lines": [
+          "Mars is *exalted* in Capricorn,",
+          "the sign where its fire learns *patience.*",
+          "Your wanting is slow, and built to *last.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "♂ · EXALTED"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♄",
+          "tone": "lilac",
+          "ring": true
+        },
+        "header": "CAPRICORN · RULED BY SATURN",
+        "lines": [
+          "In a fight you go calm and practical,",
+          "which can look cold, but it's *care.*",
+          "You need someone who knows the difference."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My feelings are not a *problem* to solve.",
+          "I can let someone see me soft.",
+          "Patience is my kind of *passion.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-aquarius",
+    "title": "Mars in Aquarius",
+    "cover": "Mars in Aquarius *thinks* first",
+    "caption": "mars in aquarius will argue for a stranger all night, then go quiet about its own hurt. feelings count too",
+    "hashtags": [
+      "marsinaquarius",
+      "aquarius",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "orbit"
+        },
+        "header": "MARS IN AQUARIUS",
+        "lines": [
+          "Injustice can keep you up all *night.*",
+          "Your own hurt, though, goes *quiet.*",
+          "That's Mars in Aquarius."
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aquarius"
+        },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": [
+          "Aquarius is fixed air,",
+          "so your desire lives in your *mind.*",
+          "You chase the person who surprises you,",
+          "and in a fight you reach for logic",
+          "when what you really feel is *hurt.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "AQUARIUS · THE WATER BEARER"
+          }
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "♂",
+          "planetSign": "aquarius",
+          "planetAt": 0,
+          "highlight": 11,
+          "highlightAt": 2
+        },
+        "header": "THE ELEVENTH HOUSE",
+        "lines": [
+          "Your feelings count,",
+          "even the *illogical* ones.",
+          "The right person will be your *friend* first,",
+          "and let you be free and close at once."
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 2,
+            "text": "11TH HOUSE · FRIENDS"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mars-pisces",
+    "title": "Mars in Pisces",
+    "cover": "Mars in Pisces is *gentle*",
+    "caption": "mars in pisces has said sorry for fights it didn't start. its gentleness has a spine",
+    "hashtags": [
+      "marsinpisces",
+      "pisces",
+      "marssign",
+      "astrology",
+      "zodiaclove"
+    ],
+    "keyword": "MARS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "pisces"
+        },
+        "header": "MARS IN PISCES",
+        "lines": [
+          "You've said sorry for fights you didn't *start.*",
+          "Mars in Pisces would rather soften",
+          "than ever win by *hurting* someone."
+        ]
+      },
+      {
+        "art": "elements",
+        "opts": {
+          "element": "water"
+        },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": [
+          "Pisces is mutable water,",
+          "so your drive moves like a current,",
+          "around things, never straight *through.*",
+          "You chase with imagination:",
+          "a playlist, a letter, a whole daydream."
+        ],
+        "labels": [
+          {
+            "on": "element",
+            "at": 0,
+            "text": "WATER · MUTABLE"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My gentleness has a *spine.*",
+          "I can stay *kind* and still say no.",
+          "My needs belong in the room *too.*"
+        ]
+      }
+    ]
+  }
+]

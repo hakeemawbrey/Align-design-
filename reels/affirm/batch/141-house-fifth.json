@@ -1,0 +1,87 @@
+{
+  "id": "141-house-fifth",
+  "title": "The fifth house",
+  "cover": "The *fifth house* in love",
+  "keyword": "CHART",
+  "caption": "butterflies don't live in the seventh house. they live in the fifth, with crushes and first dates",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "fifthhouse",
+    "birthchart",
+    "leo",
+    "astrology",
+    "romance"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "houses",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 5,
+        "highlightAt": 1
+      },
+      "header": "THE FIFTH HOUSE · ROMANCE",
+      "lines": [
+        "Butterflies don't live in the *seventh* house.",
+        "They live in the *fifth.*",
+        "The house of crushes, play,",
+        "first dates and flirting."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 1,
+          "text": "5TH HOUSE · ROMANCE"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO'S HOUSE · THE SUN",
+      "lines": [
+        "It's *Leo's* house, ruled by the Sun,",
+        "so love here feels like *sunlight:*",
+        "being seen, being chosen,",
+        "laughing until you lose track of time."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to have *fun* in love.",
+        "I don't have to be *serious*",
+        "to be taken seriously."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

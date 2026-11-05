@@ -1,0 +1,85 @@
+{
+  "id": "062-morning-aries",
+  "title": "Good morning, Aries",
+  "cover": "Good morning, *Aries*",
+  "keyword": "CHART",
+  "caption": "aries wakes up ready to go. give your heart its first word before the day gets loud",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aries",
+    "goodmorning",
+    "morningaffirmations",
+    "astrology",
+    "selflove"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "GOOD MORNING · ARIES",
+      "lines": [
+        "Good morning, Aries. Mornings are *yours.*",
+        "You're the *first* sign of the zodiac,",
+        "the one that opens the astrological year."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 1,
+          "text": "FIRST SIGN · THE EQUINOX"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "RULED BY MARS",
+      "lines": [
+        "Ruled by *Mars,* you wake up ready.",
+        "So before the day gets loud,",
+        "give your heart its *first word.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I lead with an *open* heart.",
+        "I don't have to chase love",
+        "to deserve it.",
+        "Today I let myself be *chosen* too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "415-sky-mercury-retrograde",
+  "title": "Mercury retrograde",
+  "cover": "*Mercury* is lapping you",
+  "keyword": "PASSING",
+  "caption": "mercury isn't going backwards, it's lapping us on the inside track. read it twice before you reply",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "mercuryretrograde",
+    "retrograde",
+    "astrology",
+    "affirmations",
+    "exes"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "loop",
+      "header": "MERCURY · RETROGRADE",
+      "lines": [
+        "About three times a year, for three weeks,",
+        "*Mercury* seems to slide backwards.",
+        "It's the fastest planet there is.",
+        "It's just lapping us on the *inside.*"
+      ],
+      "labels": [
+        {
+          "on": "loop",
+          "at": 1,
+          "text": "APPARENT BACKWARD PATH"
+        }
+      ]
+    },
+    {
+      "art": "retro",
+      "opts": {
+        "sightAt": 0,
+        "pathAt": 2
+      },
+      "header": "THE MESSENGER · LOOKING BACK",
+      "lines": [
+        "Mercury rules *messages,*",
+        "so this is when old ones resurface.",
+        "The ex. The draft. The thing you meant.",
+        "Read it twice before you *answer.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't owe every message a *reply.*",
+        "I can look back",
+        "without *going* back."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

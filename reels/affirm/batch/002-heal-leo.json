@@ -1,0 +1,86 @@
+{
+  "id": "002-heal-leo",
+  "title": "Leo, after a breakup",
+  "cover": "Leo, even the lion *rests*",
+  "keyword": "PASSING",
+  "caption": "leo after a breakup posts the photo and laughs the loudest. you don't have to perform this",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "leo",
+    "breakup",
+    "healing",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "RULED BY THE SUN",
+      "lines": [
+        "Leo, you gave them your *whole sun.*",
+        "Warmth like that doesn't switch off",
+        "just because someone walked away."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "THE SUN · YOUR RULER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "So your pride wants to look *fine.*",
+        "Post the photo. Laugh the loudest.",
+        "But even the lion *rests.*",
+        "You don't have to perform your healing."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My light was never *theirs* to take.",
+        "I can shine *quietly* for a while.",
+        "I'm still warm. I'm still me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

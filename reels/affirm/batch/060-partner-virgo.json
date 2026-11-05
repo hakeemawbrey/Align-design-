@@ -1,0 +1,78 @@
+{
+  "id": "060-partner-virgo",
+  "title": "Virgo as a partner",
+  "cover": "The *Virgo* kind of devotion",
+  "keyword": "MATCH",
+  "caption": "a virgo partner says i love you with an umbrella in your bag and your keys where you'll find them",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "virgo",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "earthsign"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "partner",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · MUTABLE EARTH",
+      "lines": [
+        "A Virgo partner says *I love you*",
+        "with an umbrella in your bag",
+        "and your keys where you'll *find* them."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Ruled by *Mercury,* they listen",
+        "for what you need and haven't said,",
+        "then quietly *handle* it.",
+        "The appointment. The shelf. The *check-in.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My care is my *love language.*",
+        "I don't have to be perfect",
+        "to be *worth* loving."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

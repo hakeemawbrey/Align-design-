@@ -1,0 +1,84 @@
+{
+  "id": "295-situationship-aries",
+  "title": "Aries in a situationship",
+  "cover": "Aries, you deserve a *yes*",
+  "keyword": "MUTUAL",
+  "caption": "aries makes every move in a situationship and still gets a maybe. you deserve a yes",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · CARDINAL FIRE",
+      "lines": [
+        "Aries, you were never built for *maybe.*",
+        "You'd rather hear no",
+        "than wait another week for *almost.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "ALWAYS THE ONE WHO MOVES",
+      "lines": [
+        "So you make every move.",
+        "You plan, you text first, you push.",
+        "You're the spark *and* the fuel.",
+        "And it still stays *undefined.*"
+      ],
+      "labels": [
+        {
+          "on": "orbit",
+          "at": 1,
+          "text": "ONE SIDE · ALL THE MOTION"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve someone who *chooses* back,",
+        "just as fast and just as sure.",
+        "My courage deserves a *yes.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

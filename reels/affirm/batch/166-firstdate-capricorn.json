@@ -1,0 +1,86 @@
+{
+  "id": "166-firstdate-capricorn",
+  "title": "First date with a Capricorn",
+  "cover": "Be *early* for a Capricorn",
+  "keyword": "MATCH",
+  "caption": "be early for a capricorn. they read it as a kind of promise",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "capricorn",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "firstdate",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "RULED BY SATURN",
+      "lines": [
+        "Be *early* for a Capricorn.",
+        "Ruled by *Saturn,* the planet of time,",
+        "they read you being on time",
+        "as a kind of *promise.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "SATURN · THE PLANET OF TIME"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · CARDINAL EARTH",
+      "lines": [
+        "Pick a classic place.",
+        "Ask about their *goals,* and listen.",
+        "Then go looking for their *dry* humor.",
+        "It's in there, under the *blazer.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to take love *seriously.*",
+        "The right one isn't scared off.",
+        "They're *relieved.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

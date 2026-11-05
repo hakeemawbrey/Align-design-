@@ -1,0 +1,88 @@
+{
+  "id": "267-planet-moon",
+  "title": "The Moon in love",
+  "cover": "The *Moon* in love",
+  "keyword": "MOON",
+  "caption": "born a day later, you might have a different moon sign. that's how personal it is",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "moonsign",
+    "moon",
+    "cancer",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "planets",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE MOON · YOUR NEEDS",
+      "lines": [
+        "Born a day later,",
+        "you might have a different *moon sign.*",
+        "The Moon changes sign",
+        "every two and a half days,",
+        "so yours is *personal.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "☽ · NEW SIGN EVERY 2.5 DAYS"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "WHAT FEELS SAFE",
+      "lines": [
+        "It's not how you love.",
+        "It's what makes you feel *safe*",
+        "enough to love at all.",
+        "The Moon rules Cancer,",
+        "the sign of *home.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My needs are not a *burden.*",
+        "I deserve to feel *safe*",
+        "with the person I love."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

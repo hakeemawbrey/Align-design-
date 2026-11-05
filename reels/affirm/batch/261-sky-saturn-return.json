@@ -1,0 +1,89 @@
+{
+  "id": "261-sky-saturn-return",
+  "title": "Your Saturn return",
+  "cover": "Your *Saturn* return",
+  "keyword": "PASSING",
+  "caption": "saturn takes almost thirty years to circle the sun. around twenty-nine it checks what you built, and who with",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "saturnreturn",
+    "saturn",
+    "astrology",
+    "affirmations",
+    "relationships"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "gold",
+        "ring": true
+      },
+      "header": "SATURN · ONE ORBIT",
+      "lines": [
+        "Saturn takes almost thirty years",
+        "to go once around the *sun.*",
+        "So somewhere near twenty-nine,",
+        "it's back where it was the day you were born."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "ONE ORBIT · ABOUT 29 YEARS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "THE SATURN RETURN",
+      "lines": [
+        "It's called your Saturn *return.*",
+        "Saturn tests what you've built,",
+        "including who you love.",
+        "What can't hold the weight *falls.*",
+        "What's left is *real.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm not losing time.",
+        "I'm building something that *lasts,*",
+        "and choosing who *belongs* in it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "089-moon-cancer",
+  "title": "Moon in Cancer",
+  "cover": "Moon in Cancer is *home*",
+  "keyword": "MOON",
+  "caption": "the moon rules exactly one sign. if yours is in cancer, of course you kept every birthday card",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "moonincancer",
+    "cancer",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "MOON IN CANCER · AT HOME",
+      "lines": [
+        "The Moon rules just *one* sign,",
+        "and it's *yours.*",
+        "So of course you kept every *birthday card.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☽ · RULER OF CANCER"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "CANCER · CARDINAL WATER",
+      "lines": [
+        "You feel everything in *phases,*",
+        "full one week, quiet the next.",
+        "And safe, for you, is someone who stays",
+        "through all of them."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "FULL MOON · LIT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *need* a home in someone.",
+        "My memory is a kind of *love.*",
+        "I deserve to be tended, too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

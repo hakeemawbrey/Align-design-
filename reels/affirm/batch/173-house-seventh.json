@@ -1,0 +1,96 @@
+{
+  "id": "173-house-seventh",
+  "title": "The seventh house",
+  "cover": "The *seventh house* in love",
+  "keyword": "SEVEN",
+  "caption": "the sign that was setting when you were born says a lot about who you fall for",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "7thhouse",
+    "descendant",
+    "birthchart",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "houses",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 3,
+        "axis": true,
+        "axisAt": 0
+      },
+      "header": "THE SEVENTH HOUSE · PARTNERS",
+      "lines": [
+        "The sign setting in the *west*",
+        "the minute you were born",
+        "says a lot about who you *fall* for.",
+        "It opens your *seventh house,*",
+        "the house of partners."
+      ],
+      "labels": [
+        {
+          "on": "dsc",
+          "at": 0,
+          "text": "DESCENDANT · THE WEST"
+        },
+        {
+          "on": "house",
+          "at": 3,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "WHAT YOU'RE DRAWN TO",
+      "lines": [
+        "It often holds the traits",
+        "you don't lead with *yourself.*",
+        "So you meet them in someone else",
+        "and feel strangely complete.",
+        "But a good partner doesn't fill a *gap.*",
+        "They wake up a part of *you.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm already *whole.*",
+        "Love just shows me *more* of me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "121-moon-aquarius",
+  "title": "Moon in Aquarius",
+  "cover": "Moon in Aquarius needs *space*",
+  "keyword": "MOON",
+  "caption": "moon in aquarius processes feelings like a scientist, from a little distance. that isn't cold. it's steady",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mooninaquarius",
+    "aquarius",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "MOON IN AQUARIUS",
+      "lines": [
+        "You process feelings like a *scientist,*",
+        "from a little distance, taking notes.",
+        "That isn't cold. It's how you stay *steady.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 2,
+          "text": "A LITTLE DISTANCE"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · THE WATER BEARER",
+      "lines": [
+        "Aquarius is the water bearer,",
+        "an air sign carrying water for everyone.",
+        "So you feel safe being *useful* and *free,*",
+        "with someone who never asks you",
+        "to be *ordinary.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 1,
+          "text": "AQUARIUS · FIXED AIR"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to need *space* and *closeness.*",
+        "My kind of different is *lovable.*",
+        "I'm safe where I can be *myself.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

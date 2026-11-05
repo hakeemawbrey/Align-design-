@@ -1,0 +1,101 @@
+{
+  "id": "349-heal-aries",
+  "title": "Aries, after a breakup",
+  "cover": "Aries, you don't have to *win*",
+  "keyword": "PASSING",
+  "caption": "aries heals like it's a race. it isn't, and nobody has to lose",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "breakup",
+    "healing",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · CARDINAL FIRE",
+      "lines": [
+        "Aries, you want to *heal* fast.",
+        "Like it's a race you can win.",
+        "Ruled by *Mars,* you'd rather fight",
+        "than sit still with a feeling."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "ARIES · RULED BY MARS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "AFTER · NOT AGAINST",
+      "lines": [
+        "But this isn't a *battle.*",
+        "Nobody has to lose.",
+        "You can walk *forward*",
+        "without proving anything to anyone."
+      ],
+      "labels": [
+        {
+          "on": "you",
+          "at": 2,
+          "text": "YOU · NO RACE"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to win this.",
+        "I can be *brave* and still be soft.",
+        "My fire is still *mine.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "MARS · STILL BURNING"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

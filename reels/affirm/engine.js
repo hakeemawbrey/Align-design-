@@ -453,8 +453,11 @@ ARTS.wheel = (s, o, n) => {
   }
   // the twelve signs, natural wheel (Aries on the ascendant)
   const signs = '♈♉♊♋♌♍♎♏♐♑♒♓'
+  // `rising` turns the ring so that sign sits on the ascendant (house one)
+  const turn = o.rising ? signIndex(o.rising) : 0
+  const slot = (i) => (i - turn + 12) % 12
   for (let i = 0; i < 12; i++) {
-    const a = Math.PI - ((i + 0.5) * Math.PI) / 6
+    const a = Math.PI - ((slot(i) + 0.5) * Math.PI) / 6
     s.glyph(signs[i], CX + ((R0 + R1) / 2) * Math.cos(a), cy + ((R0 + R1) / 2) * Math.sin(a), 38, { color: COL.gold, step: 0.06 })
   }
   s.dots(sphereDots(CX, cy, R3, 8.5), { color: COL.lilac, step: 0.2 })
@@ -481,7 +484,8 @@ ARTS.wheel = (s, o, n) => {
       g.restore()
     }, { dur: 0.6 })
     const am = mid(h)
-    s.anchors.h7 = { p: [CX + (R1 - 30) * Math.cos(am), cy + (R1 - 30) * Math.sin(am)], t: [1010, cy - 470], align: 'right' }
+    const hp = [CX + (R1 - 30) * Math.cos(am), cy + (R1 - 30) * Math.sin(am)]
+    s.anchors.house = s.anchors.h7 = sideLabel(hp, cy)
   }
   if (o.axis) {
     s.at(S(o.axisAt ?? 2))
@@ -496,7 +500,7 @@ ARTS.wheel = (s, o, n) => {
   s.anchors.dsc = { p: [CX + R0 + 40, cy], t: [1010, cy + 445], align: 'right' }
   s.anchors.asc = { p: [CX - R0 - 40, cy], t: [70, cy - 455], align: 'left' }
   if (o.planet) {
-    const si = o.planetSign ?? 1
+    const si = slot(signIndex(o.planetSign ?? 1))
     const a = Math.PI - ((si + 0.5) * Math.PI) / 6
     const px = CX + (R2 + 64) * Math.cos(a), py = cy + (R2 + 64) * Math.sin(a)
     s.at(S(o.planetAt ?? 1), 1.2)
@@ -515,8 +519,200 @@ ARTS.wheel = (s, o, n) => {
       }
       g.globalAlpha = 1
     }, { dur: 0.6 })
-    s.anchors.planet = { p: [px - 30, py + 30], t: [70, cy + 445], align: 'left' }
+    s.anchors.planet = sideLabel([px, py], cy)
   }
+  if (o.pair) {
+    // two signs and the true aspect between them
+    const [ia, ib] = o.pair.map(signIndex)
+    const d = Math.min(Math.abs(ia - ib), 12 - Math.abs(ia - ib))
+    const names = ['0° · CONJUNCTION', '30° · SEMI-SEXTILE', '60° · SEXTILE', '90° · SQUARE', '120° · TRINE', '150° · QUINCUNX', '180° · OPPOSITION']
+    const pos = (i, r) => { const a = Math.PI - ((slot(i) + 0.5) * Math.PI) / 6; return [CX + r * Math.cos(a), cy + r * Math.sin(a)] }
+    s.at(S(o.pairAt ?? 1), 0.6)
+    for (const i of d === 0 ? [ia] : [ia, ib]) {
+      const [gx, gy] = pos(i, (R0 + R1) / 2)
+      s.circle(gx, gy, 34, { color: COL.rose, second: COL.ink, w: 2.6 })
+    }
+    let anchorP
+    if (d === 0) {
+      const [gx, gy] = pos(ia, (R0 + R1) / 2)
+      s.circle(gx, gy, 46, { color: COL.gold, second: null, w: 2, dash: [3, 7] })
+      anchorP = [gx, gy]
+    } else {
+      const A = pos(ia, R1 - 12), B = pos(ib, R1 - 12)
+      s.line(A[0], A[1], B[0], B[1], { color: COL.rose, second: COL.ink, w: 3 })
+      for (const P of [A, B]) s.push({ kind: 'dot', x: P[0], y: P[1], r: 9, color: COL.gold, dur: 0.3 }, { step: 0.05 })
+      anchorP = [(A[0] + B[0]) / 2, (A[1] + B[1]) / 2]
+      if (Math.hypot(anchorP[0] - CX, anchorP[1] - cy) < 80) anchorP = [anchorP[0] + 40, anchorP[1] - 60]
+    }
+    s.anchors.pair = sideLabel(anchorP, cy)
+    s.label(names[d], s.anchors.pair, { stage: S(o.pairAt ?? 1), delay: 1.4 })
+  }
+}
+
+// A label for a point on a centred drawing: put it on the near side, above or below.
+function sideLabel(p, cy) {
+  const right = p[0] >= CX
+  const up = p[1] < cy
+  return { p, t: [right ? 1010 : 70, up ? cy - 460 : cy + 440], align: right ? 'right' : 'left' }
+}
+const SIGN_IDS = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
+const SIGN_GLYPHS = '♈♉♊♋♌♍♎♏♐♑♒♓'
+const signIndex = (v) => (typeof v === 'number' ? v : Math.max(0, SIGN_IDS.indexOf(v)))
+const ELEMENT_OF = (i) => ['fire', 'earth', 'air', 'water'][i % 4]
+const ELEMENT_COL = { fire: '#e8628a', earth: '#f2c75c', air: '#7fd8b0', water: '#c9b6f8' }
+// Star figures for each sign (from the app's onboarding), in a 100 × 70 box.
+const chain = (n, from = 0) => Array.from({ length: n - 1 }, (_, i) => [from + i, from + i + 1])
+const CONSTELLATIONS = {
+  aries: { pts: [[5, 45], [42, 22], [68, 26], [88, 42]], lines: chain(4) },
+  taurus: { pts: [[33, 0], [69, 0], [27, 25], [71, 25], [21, 48], [77, 48], [15, 70], [84, 70]], lines: [[0, 2], [2, 4], [4, 6], [1, 3], [3, 5], [5, 7], [2, 3]] },
+  gemini: { pts: [[28, 0], [26, 24], [22, 48], [18, 70], [66, 0], [68, 24], [71, 48], [74, 70]], lines: [...chain(4), ...chain(4, 4), [0, 4], [2, 6]] },
+  cancer: { pts: [[50, 0], [48, 30], [16, 66], [82, 60], [58, 50]], lines: [[0, 1], [1, 2], [1, 4], [4, 3]] },
+  leo: { pts: [[78, 14], [66, 0], [50, 6], [50, 24], [60, 34], [54, 48], [22, 52], [4, 68], [26, 36]], lines: [...chain(6), [5, 6], [6, 7], [6, 8], [8, 3]] },
+  virgo: { pts: [[0, 8], [20, 20], [40, 14], [55, 30], [72, 24], [88, 44], [60, 56], [42, 70]], lines: [...chain(6), [3, 6], [6, 7]] },
+  libra: { pts: [[50, 0], [18, 28], [82, 28], [24, 62], [76, 58]], lines: [[0, 1], [0, 2], [1, 2], [1, 3], [2, 4]] },
+  scorpio: { pts: [[2, 6], [12, 0], [18, 16], [32, 26], [46, 36], [54, 50], [64, 62], [80, 68], [94, 56]], lines: [[0, 2], [1, 2], ...chain(7, 2)] },
+  sagittarius: { pts: [[10, 36], [28, 22], [46, 28], [44, 50], [22, 54], [62, 14], [80, 6], [66, 40], [90, 60]], lines: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [2, 5], [5, 6], [2, 7], [7, 8]] },
+  capricorn: { pts: [[0, 10], [30, 34], [56, 60], [80, 44], [96, 10], [50, 18]], lines: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0]] },
+  aquarius: { pts: [[0, 34], [16, 22], [32, 34], [48, 22], [64, 34], [80, 18], [96, 28]], lines: chain(7) },
+  pisces: { pts: [[0, 12], [22, 32], [46, 64], [70, 42], [90, 22], [98, 8], [84, 6]], lines: [...chain(5), [4, 5], [5, 6], [6, 4]] },
+}
+
+// A planet: a big halftone sphere with its glyph, maybe a ring.
+ARTS.planet = (s, o) => {
+  const tones = { rose: COL.rose, lilac: COL.lilac2, mint: COL.mint, gold: COL.gold }
+  const dflt = { '♀': 'rose', '♂': 'rose', '☽': 'lilac', '☿': 'mint', '☉': 'gold', '♃': 'gold', '♄': 'lilac' }
+  const col = tones[o.tone] ?? tones[dflt[o.glyph]] ?? COL.gold
+  const R = 220, cy = CY - 40
+  const rot = -0.28, rx = R * 1.75, ry = R * 0.36
+  s.at(0)
+  if (o.ring) s.stroke(ellPts(CX, cy, rx, ry, rot, Math.PI, TAU), { color: COL.gold, second: null, w: 3, dash: [3, 9] })
+  s.fn((g, k) => {
+    g.save()
+    g.globalAlpha *= k
+    g.fillStyle = COL.canvas
+    g.beginPath()
+    g.arc(CX, cy, R, 0, TAU)
+    g.fill()
+    g.restore()
+  }, { dur: 0.3, step: 0 })
+  s.dots(sphereDots(CX, cy, R, 10, { light: [-0.55, -0.55] }), { color: col, dur: 1.1 })
+  s.circle(CX, cy, R, { w: 3 })
+  s.glyph(o.glyph ?? '✦', CX, cy, 250, { color: COL.ink, glow: true, dur: 0.7 })
+  if (o.ring) s.stroke(ellPts(CX, cy, rx, ry, rot, 0, Math.PI), { color: COL.gold, second: COL.ink, w: 3 })
+  s.fn((g, k, t) => {
+    // small moons on slow orbits
+    for (let i = 0; i < 3; i++) {
+      const a = t * (0.3 + i * 0.13) + i * 2.2
+      const rr = R + 70 + i * 40
+      g.fillStyle = rgba([COL.gold, COL.mint, COL.lilac2][i], 0.85 * k)
+      g.beginPath()
+      g.arc(CX + rr * Math.cos(a), cy + rr * Math.sin(a) * 0.85, 7 + i * 2, 0, TAU)
+      g.fill()
+    }
+  }, { dur: 0.6 })
+  s.anchors.planet = { p: [CX + R * 0.7, cy - R * 0.72], t: [1010, cy - R - 120], align: 'right' }
+}
+
+// A sign: its constellation drawing itself star by star, and its glyph in a medallion.
+ARTS.sign = (s, o) => {
+  const i = signIndex(o.sign ?? 'aries')
+  const c = CONSTELLATIONS[SIGN_IDS[i]]
+  const col = ELEMENT_COL[ELEMENT_OF(i)]
+  const sc = 7.4, ox = CX - 50 * sc, oy = 360
+  const P = c.pts.map(([x, y]) => [ox + x * sc, oy + y * sc])
+  const r = s.r
+  s.at(0)
+  for (let k = 0; k < 26; k++) s.push({ kind: 'dot', x: 120 + r() * 840, y: 330 + r() * 600, r: 1.6 + r() * 1.8, color: rgba(COL.ink, 0.5), dur: 0.3 }, { step: 0.015 })
+  for (const [a, b] of c.lines) s.line(P[a][0], P[a][1], P[b][0], P[b][1], { color: rgba(COL.ink, 0.7), second: null, w: 1.8, dash: [3, 8], step: 0.16 })
+  s.at(0, 0.2)
+  for (const p of P) {
+    s.push({ kind: 'dot', x: p[0], y: p[1], r: 13, color: rgba(col, 0.35), dur: 0.4 }, { step: 0 })
+    s.glyph('✦', p[0], p[1], 40, { color: COL.ink, glow: true, step: 0.14 })
+  }
+  // the medallion
+  const my = 1085, mr = 108
+  s.dots(sphereDots(CX, my, mr - 6, 9, { light: [-0.5, -0.6], lo: 0.2 }), { color: col, dur: 0.8 })
+  s.circle(CX, my, mr, { w: 3 })
+  s.circle(CX, my, mr + 16, { w: 1.5, second: null, dash: [2, 7], color: COL.gold })
+  s.glyph(SIGN_GLYPHS[i], CX, my, 120, { color: COL.ink, glow: true })
+  s.text(SIGN_IDS[i].toUpperCase(), CX, my + mr + 48, { font: '700 22px "Space Mono"', color: COL.gold, spacing: 8 })
+  s.anchors.sign = { p: [CX + mr * 0.75, my - mr * 0.7], t: [1010, my + 170], align: 'right' }
+  s.anchors.stars = sideLabel(P[0], 600)
+}
+
+// Moon phases: one big moon in the phase, and all eight on an arc below.
+function moonLit(f) {
+  // is a point (x, y) on the unit disc lit at phase fraction f (0 new, .5 full)?
+  const k = Math.cos(TAU * f)
+  return (x, y) => {
+    const w = Math.sqrt(Math.max(0, 1 - y * y))
+    return f <= 0.5 ? x > k * w : x < -k * w
+  }
+}
+ARTS.phases = (s, o, n) => {
+  const S = (i) => Math.min(i, n - 1)
+  const lit = Math.max(0, Math.min(7, o.lit ?? 4))
+  const draw = (cx, cy, R, f, pitch, dur, color) => {
+    const isLit = moonLit(f)
+    s.fn((g, k) => {
+      g.save()
+      g.globalAlpha *= k
+      g.fillStyle = '#0d0724'
+      g.beginPath()
+      g.arc(cx, cy, R, 0, TAU)
+      g.fill()
+      g.restore()
+    }, { dur: 0.3, step: 0 })
+    s.dots(halftone((x, y) => Math.hypot(x - cx, y - cy) < R - 2 && isLit((x - cx) / R, (y - cy) / R), [cx - R, cy - R, cx + R, cy + R], pitch,
+      (x, y) => 0.55 + 0.45 * clamp(1 - Math.hypot(x - cx + R * 0.3, y - cy + R * 0.3) / (R * 1.6)), (x, y) => (x - cx + R) / (2 * R)), { color, dur })
+    s.circle(cx, cy, R, { w: R > 100 ? 2.8 : 1.8, second: R > 100 ? COL.gold : null })
+  }
+  s.at(0)
+  const row = Array.from({ length: 8 }, (_, i) => [150 + i * (780 / 7), 1150 - 52 * Math.sin((Math.PI * i) / 7)])
+  row.forEach(([x, y], i) => draw(x, y, 36, i / 8, 6.5, 0.4, rgba(COL.ink, 0.9)))
+  s.at(S(o.litAt ?? 0), 0.6)
+  draw(CX, 690, 230, lit / 8, 11, 1.1, COL.lilac2)
+  const [lx, ly] = row[lit]
+  s.circle(lx, ly, 50, { color: COL.gold, second: null, w: 2.4 })
+  s.line(lx, ly - 52, CX + (lx - CX) * 0.25, 690 + 236, { color: COL.gold, second: null, w: 1.4, dash: [2, 8] })
+  s.anchors.moon = { p: [CX + 165, 690 - 165], t: [1010, 340], align: 'right' }
+}
+
+// The four elements as their old triangle symbols; one (or two) lit.
+ARTS.elements = (s, o) => {
+  const pos = { fire: [CX, 520], air: [870, 820], water: [CX, 1120], earth: [210, 820] }
+  const on = [o.element, o.second].filter(Boolean)
+  const tri = (cx, cy, size, up) => {
+    const h = size * 0.866, d = up ? -1 : 1
+    return [[cx, cy + d * h * 0.62], [cx - size / 2, cy - d * h * 0.38], [cx + size / 2, cy - d * h * 0.38], [cx, cy + d * h * 0.62]]
+  }
+  s.at(0)
+  // the cross between them
+  s.stroke([pos.fire, pos.water], { color: rgba(COL.ink, 0.25), second: null, w: 1.4, dash: [2, 10] })
+  s.stroke([pos.earth, pos.air], { color: rgba(COL.ink, 0.25), second: null, w: 1.4, dash: [2, 10] })
+  for (const [el, [x, y]] of Object.entries(pos)) {
+    const hot = on.includes(el)
+    const size = hot ? 230 : 150
+    const up = el === 'fire' || el === 'air'
+    const t = tri(x, y, size, up)
+    if (hot) {
+      s.dots(halftone((px, py) => inPoly(px, py, t), [x - size, y - size, x + size, y + size], 10,
+        (px, py) => 0.45 + 0.55 * clamp(1 - Math.hypot(px - x, py - y) / size), (px, py) => (py - y + size) / (2 * size)), { color: ELEMENT_COL[el], dur: 0.9 })
+    }
+    s.stroke(t, { color: hot ? COL.ink : rgba(COL.ink, 0.45), second: hot ? COL.gold : null, w: hot ? 3.2 : 2 })
+    if (el === 'air' || el === 'earth') {
+      // the bar across air and earth
+      const by = y + (up ? 1 : -1) * size * 0.08
+      s.line(x - size * 0.42, by, x + size * 0.42, by, { color: hot ? COL.ink : rgba(COL.ink, 0.45), second: null, w: hot ? 3 : 2 })
+    }
+    s.text(el.toUpperCase(), x, y + (up ? 1 : 1) * size * 0.55 + 34, { font: `700 ${hot ? 24 : 20}px "Space Mono"`, color: hot ? ELEMENT_COL[el] : rgba(COL.ink, 0.5), spacing: 6 })
+  }
+  if (on.length === 2 && on[0] !== on[1]) {
+    s.at(0, 1.6)
+    s.stroke([pos[on[0]], pos[on[1]]], { color: COL.gold, second: COL.ink, w: 3 })
+  }
+  const [ax, ay] = pos[on[0] ?? 'fire']
+  s.anchors.element = sideLabel([ax, ay], 820)
 }
 
 ARTS.figures = (s, o, n) => {

@@ -1,0 +1,113 @@
+{
+  "id": "334-rising-aries",
+  "title": "Aries rising",
+  "cover": "Aries rising wants an *equal*",
+  "keyword": "SEVEN",
+  "caption": "you walk in first. your libra seventh house is quietly hoping someone meets you halfway",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "ariesrising",
+    "7thhouse",
+    "descendant",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES RISING · HOW YOU ARRIVE",
+      "lines": [
+        "You walk into every room *first.*",
+        "That's your Aries rising.",
+        "Quick, bold, already halfway in.",
+        "People assume you need *no one.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 1,
+          "text": "ARIES · CARDINAL FIRE"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1,
+        "axis": true,
+        "axisAt": 2,
+        "rising": "aries"
+      },
+      "header": "YOUR SEVENTH HOUSE · LIBRA",
+      "lines": [
+        "But look across your chart.",
+        "Your seventh house, the house of *partners,*",
+        "sits in *Libra.*"
+      ],
+      "labels": [
+        {
+          "on": "h7",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        },
+        {
+          "on": "dsc",
+          "at": 2,
+          "text": "DESCENDANT · LIBRA"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · WHAT YOU'RE DRAWN TO",
+      "lines": [
+        "So you're drawn to the one",
+        "who *slows* you down",
+        "and asks what you think.",
+        "Not to tame you. To *meet* you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can lead and still be *met.*",
+        "Love isn't a race I win.",
+        "It's a door we *both* walk through."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "480-love-release-dont-haunt",
+  "title": "Release, don't haunt",
+  "cover": "Release, don't *haunt*",
+  "keyword": "PASSING",
+  "caption": "the waning moon gives its light back one night at a time and never looks over its shoulder",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "lettinggo",
+    "waningmoon",
+    "astrology",
+    "affirmations",
+    "nocontact"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 6
+      },
+      "header": "WANING · LETTING GO",
+      "lines": [
+        "A waning moon lets go a little *every* night.",
+        "It doesn't cling to the light it *had.*",
+        "It gets quieter, until it's *new.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "LAST QUARTER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "RELEASE · DON'T HAUNT",
+      "lines": [
+        "When you let someone go,",
+        "let them go *all* the way.",
+        "Don't hover at the edge of their sky,",
+        "checking their stories from the *dark.*",
+        "A ghost can't start *over.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release what's gone, *completely.*",
+        "I don't haunt the people I let go.",
+        "My energy comes *home* to me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "177-rising-aquarius",
+  "title": "Aquarius rising",
+  "cover": "Aquarius rising falls for *fire*",
+  "keyword": "SEVEN",
+  "caption": "aquarius rising is everyone's friend. your leo seventh house wants someone who makes a fuss about you",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aquariusrising",
+    "leo",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS RISING · FIXED AIR",
+      "lines": [
+        "You're everyone's friend and no one's *project.*",
+        "Aquarius rising: *cool,* kind,",
+        "a little bit from somewhere else."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 0,
+        "axis": true,
+        "axisAt": 1,
+        "rising": "aquarius"
+      },
+      "header": "YOUR SEVENTH HOUSE · LEO",
+      "lines": [
+        "Then there's your seventh house,",
+        "sitting opposite you, in *Leo.*",
+        "All fire, all *heart.*"
+      ],
+      "labels": [
+        {
+          "on": "h7",
+          "at": 0,
+          "text": "7TH HOUSE · PARTNERS"
+        },
+        {
+          "on": "dsc",
+          "at": 1,
+          "text": "DESCENDANT · 180° AWAY"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · RULED BY THE SUN",
+      "lines": [
+        "So it's the *warm* ones who get you.",
+        "The one who says it *out loud,*",
+        "makes a fuss on your birthday,",
+        "and means every word."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☉ THE SUN · WARMTH"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to be *adored.*",
+        "Being different doesn't mean",
+        "I have to be *alone.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

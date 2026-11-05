@@ -1,0 +1,86 @@
+{
+  "id": "131-mercury-aries",
+  "title": "Mercury in Aries",
+  "cover": "Mercury in Aries: just *say it*",
+  "keyword": "CHART",
+  "caption": "mercury in aries reads in straight lines. hints go right past it. say it plainly and it'll say it back",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mercuryinaries",
+    "aries",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "MERCURY IN ARIES",
+      "lines": [
+        "Hints go *straight past* you.",
+        "Not because you don't care.",
+        "Mercury in Aries just reads in *straight lines.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☿ · MERCURY · THE MIND"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · RULED BY MARS",
+      "lines": [
+        "Aries is ruled by Mars,",
+        "so your words come out first and fast.",
+        "In love you need it said *plainly:*",
+        "I like you. I'm upset. I'm in.",
+        "Guessing games feel like *losing.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve someone who *says it.*",
+        "My bluntness is a form of *trust.*",
+        "I can speak fast and still listen well."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

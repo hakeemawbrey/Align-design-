@@ -1,0 +1,90 @@
+{
+  "id": "487-pair-pisces-pisces",
+  "title": "Pisces and Pisces",
+  "cover": "Two Pisces, *one ocean*",
+  "keyword": "MATCH",
+  "caption": "two pisces in love can spend a whole sunday inside one feeling. pick a shore together",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "pisces",
+    "piscescompatibility",
+    "watersigns",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "MUTABLE WATER · TWICE",
+      "lines": [
+        "Two fish, one *ocean.*",
+        "Pisces and Pisces swim in the *same* feeling.",
+        "Nobody has to explain the *tears.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "pisces",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "A conjunction, the closest angle there is.",
+        "Same Neptune dreams, same *mutable* drift."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "You give each other *endless* compassion.",
+        "The friction: two people *escaping*",
+        "into the same daydream.",
+        "Someone has to *steer.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *feel* everything",
+        "and still *choose* the shore."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

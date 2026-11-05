@@ -1,0 +1,89 @@
+{
+  "id": "041-element-fire-fire",
+  "title": "Fire and fire",
+  "cover": "*Fire* and fire in love",
+  "keyword": "MATCH",
+  "caption": "two fire signs together. never boring, never quiet, and someone has to tend the flame",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "firesigns",
+    "compatibility",
+    "elements",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "fire"
+      },
+      "header": "FIRE · FIRE",
+      "lines": [
+        "Two fire signs in love",
+        "is a bonfire nobody's *watching.*",
+        "Same element, so you *get* each other:",
+        "the speed, the pride, the big feelings."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "leo"
+        ],
+        "pairAt": 0
+      },
+      "header": "ARIES · LEO · A TRINE",
+      "lines": [
+        "Different fire signs sit a *trine* apart,",
+        "one of the easiest angles in the sky.",
+        "The only risk is two flames",
+        "both waiting to be *tended.*"
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 0,
+          "text": "SAME ELEMENT · EASY ANGLE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be the *spotlight*",
+        "and the one who holds it.",
+        "We can take turns *shining.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

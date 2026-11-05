@@ -1,0 +1,92 @@
+{
+  "id": "357-mars-aries",
+  "title": "Mars in Aries",
+  "cover": "Mars in Aries goes *first*",
+  "keyword": "MARS",
+  "caption": "mars in aries has never once played hard to get. it fights loud, forgives fast, and means it",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "marsinaries",
+    "aries",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS IN ARIES · AT HOME",
+      "lines": [
+        "You've *never* once played hard to get.",
+        "Mars rules Aries, so here it's home,",
+        "and it moves *first.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♂ · MARS · AT HOME"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "HOW YOU FIGHT",
+      "lines": [
+        "When you're angry, it's *loud* and it's *over.*",
+        "Ten minutes later you're fine,",
+        "and confused why they aren't.",
+        "You need someone who can say it *straight back.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "ARIES · CARDINAL FIRE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My directness is a kind of *honesty.*",
+        "I can go first and wait for an answer.",
+        "Wanting someone out loud is *brave.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

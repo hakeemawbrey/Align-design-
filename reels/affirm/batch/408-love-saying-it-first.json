@@ -1,0 +1,95 @@
+{
+  "id": "408-love-saying-it-first",
+  "title": "Saying it first",
+  "cover": "Say it *first*",
+  "keyword": "MUTUAL",
+  "caption": "light can take tens of thousands of years to leave the sun's core, then eight minutes to reach you",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "iloveyou",
+    "relationships",
+    "vulnerability",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "SUNLIGHT · CORE TO SKY",
+      "lines": [
+        "Light made in the sun's *core*",
+        "can take tens of thousands of years",
+        "to fight its way to the surface.",
+        "Then it reaches you",
+        "in about eight *minutes.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "EIGHT MINUTES · TO EARTH"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "SAYING I LOVE YOU FIRST",
+      "lines": [
+        "Saying I love you first is like that.",
+        "It takes forever *inside* you,",
+        "then a second to say.",
+        "Let it *arrive.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 2,
+          "text": "THREE WORDS · ARRIVING"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My love is *brave* enough to go first.",
+        "Their answer doesn't change",
+        "what I *feel.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

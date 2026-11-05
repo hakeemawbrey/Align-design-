@@ -1,0 +1,93 @@
+{
+  "id": "477-pair-cancer-leo",
+  "title": "Cancer and Leo",
+  "cover": "Cancer + Leo · *semi-sextile*",
+  "keyword": "MATCH",
+  "caption": "the moon and the sun live next door. one wants to be held, one wants to be seen",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "cancer",
+    "leo",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "CANCER · LEO",
+      "lines": [
+        "Cancer wants to be *held.*",
+        "Leo wants to be *seen.*",
+        "Both want to be *chosen.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "leo"
+        ],
+        "pairAt": 1
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "Next-door signs, thirty degrees apart:",
+        "a *semi-sextile.*",
+        "The Moon rules Cancer. The *Sun* rules Leo."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "fire"
+      },
+      "header": "CARDINAL WATER · FIXED FIRE",
+      "lines": [
+        "Cardinal water, fixed fire.",
+        "Leo gives Cancer the *confidence*",
+        "to be seen.",
+        "Cancer gives Leo *care*",
+        "under all that shine.",
+        "The friction: who gets the *attention.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE SUN · THE MOON",
+      "lines": [
+        "One rules the day, one rules the *night.*",
+        "I don't have to *compete* to glow."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

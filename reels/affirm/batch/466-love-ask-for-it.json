@@ -1,0 +1,93 @@
+{
+  "id": "466-love-ask-for-it",
+  "title": "Ask for what you need",
+  "cover": "Say what you *need*",
+  "keyword": "MUTUAL",
+  "caption": "the moon never pretends to be full. you don't have to either",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "communication",
+    "relationships",
+    "moonphases",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "WAXING CRESCENT",
+      "lines": [
+        "You'll never catch the moon *pretending.*",
+        "Some nights it's a sliver,",
+        "and it shows up as a sliver anyway."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "WAXING CRESCENT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "ASKING · OUT LOUD",
+      "lines": [
+        "Nobody can meet a need",
+        "you're hiding behind *fine.*",
+        "Asking isn't too much.",
+        "It's showing your real *phase,*",
+        "so the right person knows how to *love* it."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 2,
+          "text": "SAID OUT LOUD"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My needs are not a *burden.*",
+        "I ask clearly, and I ask *kindly.*",
+        "The right person is *glad* I asked."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

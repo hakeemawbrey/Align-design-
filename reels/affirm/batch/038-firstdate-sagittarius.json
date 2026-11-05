@@ -1,0 +1,87 @@
+{
+  "id": "038-firstdate-sagittarius",
+  "title": "First date with a Sagittarius",
+  "cover": "Get *lost* with a Sagittarius",
+  "keyword": "MATCH",
+  "caption": "the best sagittarius first date starts with a wrong turn. go somewhere neither of you has been",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "sagittarius",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "firstdate",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "The best Sagittarius first date",
+        "starts with a *wrong turn.*",
+        "Somewhere neither of you has been.",
+        "A food truck across town.",
+        "A detour that becomes the *story.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 9,
+        "highlightAt": 0
+      },
+      "header": "THE NINTH HOUSE · ADVENTURE",
+      "lines": [
+        "Sagittarius is the sign of the *ninth house,*",
+        "travel, big ideas, and belief.",
+        "So talk about the trip you'd take,",
+        "the thing you'd *never* say at work."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "9TH HOUSE · TRAVEL"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want love that *laughs.*",
+        "The right one feels like",
+        "the start of an *adventure.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

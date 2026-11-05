@@ -1,0 +1,78 @@
+{
+  "id": "019-selflove-gemini",
+  "title": "Self-love for a Gemini",
+  "cover": "Gemini, text *yourself* back",
+  "keyword": "CHART",
+  "caption": "gemini, answer your own messages for once",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "gemini",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "GEMINI · RULED BY MERCURY",
+      "lines": [
+        "Gemini, the one person you never text back is *you.*",
+        "*Mercury* makes you everyone's messenger,",
+        "but your own messages go *unread.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "THE TWINS · TWO VOICES",
+      "lines": [
+        "So come home by *writing* it down.",
+        "The thought you had in the shower.",
+        "The thing you almost *said.*",
+        "Read it back like a letter",
+        "from someone who *loves* you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm *worth* listening to.",
+        "Even by me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

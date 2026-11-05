@@ -1,0 +1,87 @@
+{
+  "id": "199-love-being-chosen",
+  "title": "Being chosen",
+  "cover": "Be someone's *only* moon",
+  "keyword": "MUTUAL",
+  "caption": "saturn collects moons. earth keeps one, close enough to move the sea",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "beingchosen",
+    "moon",
+    "astrology",
+    "affirmations",
+    "love"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "gold",
+        "ring": true
+      },
+      "header": "SATURN · OVER 200 MOONS",
+      "lines": [
+        "Saturn has more than two hundred *moons.*",
+        "Most of them are tiny.",
+        "Earth has *one.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "ONE MOON · HELD CLOSE",
+      "lines": [
+        "And it holds that one close enough",
+        "to move every *ocean* on the planet.",
+        "You weren't made to be one of *hundreds.*",
+        "You were made to be *chosen,*",
+        "clearly, and on purpose."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "ONE MOON · EVERY TIDE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am nobody's *backup* option.",
+        "I want to be someone's *one,*",
+        "and to know it without asking."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

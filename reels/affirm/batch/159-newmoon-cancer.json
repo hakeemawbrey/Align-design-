@@ -1,0 +1,85 @@
+{
+  "id": "159-newmoon-cancer",
+  "title": "New moon in Cancer",
+  "cover": "New moon in *Cancer*",
+  "keyword": "MOON",
+  "caption": "once a year the moon goes dark in its own sign. invite someone who takes care of the caretaker",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "newmoon",
+    "newmoonincancer",
+    "cancer",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · CANCER",
+      "lines": [
+        "Once a year, the moon goes dark",
+        "in the one sign it *rules.*",
+        "Sun and moon together in Cancer,",
+        "the moon's own *home.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "THE MOON · IN ITS OWN SIGN"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CARDINAL · WATER · THE CRAB",
+      "lines": [
+        "A crab carries its home with it.",
+        "Cancer can make anywhere feel *safe.*",
+        "This month, invite someone",
+        "who lets *you* be the one held."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to earn being *cared for.*",
+        "I can let someone in",
+        "and still feel at *home.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

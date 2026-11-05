@@ -1,0 +1,88 @@
+{
+  "id": "330-house-twelfth",
+  "title": "The twelfth house",
+  "cover": "The *twelfth house* in love",
+  "keyword": "CHART",
+  "caption": "the twelfth house is the part of you that only comes out when you feel completely safe",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "twelfthhouse",
+    "birthchart",
+    "pisces",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "houses",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 12,
+        "highlightAt": 2,
+        "axis": true,
+        "axisAt": 1
+      },
+      "header": "THE TWELFTH HOUSE · THE HIDDEN",
+      "lines": [
+        "The last house in your chart",
+        "is the sky that rose just *before* you did.",
+        "The *twelfth house:*",
+        "what's hidden, what's quiet, where you rest."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 2,
+          "text": "12TH HOUSE · THE HIDDEN"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES' HOUSE · THE QUIET",
+      "lines": [
+        "It's *Pisces'* house,",
+        "the part of you that only comes out",
+        "when you feel completely *safe.*",
+        "Secret crushes. Quiet hurts.",
+        "The *softness* you don't show strangers."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to show everything at once.",
+        "My quiet parts are *worth* the wait."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

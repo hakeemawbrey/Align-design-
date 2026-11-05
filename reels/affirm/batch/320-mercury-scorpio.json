@@ -1,0 +1,84 @@
+{
+  "id": "320-mercury-scorpio",
+  "title": "Mercury in Scorpio",
+  "cover": "Mercury in Scorpio *hears* it",
+  "keyword": "CHART",
+  "caption": "mercury in scorpio hears what you don't say louder than what you do. it was never too intense",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mercuryinscorpio",
+    "scorpio",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "MERCURY IN SCORPIO",
+      "lines": [
+        "What people *don't* say",
+        "is the loudest thing in the room to you.",
+        "Mercury in Scorpio reads between *every* line."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · THE DEEP END",
+      "lines": [
+        "So small talk feels like a *locked door.*",
+        "You want the real conversation,",
+        "the one at three in the morning.",
+        "In love you need *honesty,* all of it.",
+        "Half-truths hurt you more than *hard* ones."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "SCORPIO · FIXED WATER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WHAT YOU DESERVE",
+      "lines": [
+        "And here's the thing.",
+        "You were never *too intense.*",
+        "You just wanted someone to tell you the *truth.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

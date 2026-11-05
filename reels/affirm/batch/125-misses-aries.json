@@ -1,0 +1,86 @@
+{
+  "id": "125-misses-aries",
+  "title": "When an Aries misses you",
+  "cover": "When an *Aries* misses you",
+  "keyword": "VENUS",
+  "caption": "when an aries misses you, you get a call, not a like. a plan for tonight, not someday",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aries",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · CARDINAL FIRE",
+      "lines": [
+        "You'll never have to wonder",
+        "if an Aries *misses* you.",
+        "You'll get a call, not a like.",
+        "A plan for *tonight,* not someday."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "RULED BY MARS",
+      "lines": [
+        "Ruled by *Mars,* they turn longing",
+        "into *motion.*",
+        "They'll drive across town",
+        "just to be *near* you for an hour."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "MARS · DESIRE IN MOTION"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to miss people *out loud.*",
+        "When I want someone,",
+        "they *know.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "339-love-apologize-well",
+  "title": "A good apology",
+  "cover": "A good *apology* corrects course",
+  "keyword": "MUTUAL",
+  "caption": "even the flights to the moon drifted off course and made small corrections. say sorry like that",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "apology",
+    "relationships",
+    "communication",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true
+      },
+      "header": "OFF COURSE · BY A LITTLE",
+      "lines": [
+        "Even the flights to the moon",
+        "drifted a little *off course.*",
+        "So the crews made small *corrections*",
+        "on the way."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "SLIGHTLY OFF COURSE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "NAME IT · FIX IT",
+      "lines": [
+        "A good apology works the same way.",
+        "No *speech,* no defence.",
+        "Just: here's where I drifted,",
+        "and here's how I'll *correct* it."
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *wrong* and still be good.",
+        "I say sorry without *shrinking.*",
+        "Then I change the *course.*"
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 2,
+          "text": "BACK IN LINE"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

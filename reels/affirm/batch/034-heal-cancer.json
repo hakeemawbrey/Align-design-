@@ -1,0 +1,92 @@
+{
+  "id": "034-heal-cancer",
+  "title": "Cancer, after a breakup",
+  "cover": "Cancer, the moon *comes back*",
+  "keyword": "PASSING",
+  "caption": "cancer keeps every memory after a breakup. you can hold them without living in them",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "cancer",
+    "breakup",
+    "healing",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 7
+      },
+      "header": "RULED BY THE MOON",
+      "lines": [
+        "Cancer, you keep *every* memory.",
+        "The songs, the jokes, the way they laughed.",
+        "Ruled by the *Moon,* you feel in phases.",
+        "Tonight might be a *dark* one."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 3,
+          "text": "WANING CRESCENT"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · CARDINAL WATER",
+      "lines": [
+        "But the moon always comes *back.*",
+        "And so do you.",
+        "Your shell isn't for *hiding* forever.",
+        "It's for healing in private."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can hold the memory",
+        "without living *inside* it.",
+        "I am still my own *home.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 3,
+          "text": "WAXING · COMING BACK"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

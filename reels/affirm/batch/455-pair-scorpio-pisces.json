@@ -1,0 +1,89 @@
+{
+  "id": "455-pair-scorpio-pisces",
+  "title": "Scorpio and Pisces",
+  "cover": "Scorpio and Pisces, *the deep end*",
+  "keyword": "MATCH",
+  "caption": "scorpio and pisces skip the small talk and go straight to the deep end",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "scorpio",
+    "pisces",
+    "watersigns",
+    "trine",
+    "zodiaccompatibility"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "WATER · WATER",
+      "lines": [
+        "Skip the small talk.",
+        "Scorpio and Pisces start at the *deep end.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "scorpio",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "TRINE · 120°",
+      "lines": [
+        "Two water signs, a *trine* apart.",
+        "A hundred and twenty degrees of *knowing.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Scorpio gives Pisces *protection.*",
+        "Pisces gives Scorpio *forgiveness.*",
+        "Fixed holds tight. Mutable lets go.",
+        "The risk is *losing* yourselves in each other."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can love you *deeply*",
+        "and keep my own *shoreline.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

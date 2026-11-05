@@ -1,0 +1,99 @@
+{
+  "id": "160-season-gemini",
+  "title": "Gemini season in love",
+  "cover": "*Gemini* season: say it",
+  "keyword": "CHART",
+  "caption": "your phone's about to get busy. gemini season wants you to flirt like it's a conversation",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "geminiseason",
+    "gemini",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI SEASON · MAY 21 – JUN 20",
+      "lines": [
+        "Your phone is about to get *busier.*",
+        "The Sun is in *Gemini,*",
+        "and everyone wants to talk."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "lilac"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Gemini is ruled by *Mercury,*",
+        "planet of words and messages.",
+        "So this month asks one thing of love:",
+        "say it in *words.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "ASK A BETTER QUESTION",
+      "lines": [
+        "Ask what they're reading.",
+        "Ask what they *meant.*",
+        "Flirt like it's a conversation,",
+        "because it *is.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "☿ · WORDS BOTH WAYS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Curious is a *good* look on me.",
+        "Love can be *light*",
+        "and still mean everything."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

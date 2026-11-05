@@ -1,0 +1,82 @@
+{
+  "id": "188-partner-cancer",
+  "title": "Cancer as a partner",
+  "cover": "A *Cancer* knows before you do",
+  "keyword": "MATCH",
+  "caption": "a cancer partner knows you're sad before you do, and keeps your first date ticket forever",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "cancer",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "watersign"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "partner",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "RULED BY THE MOON",
+      "lines": [
+        "A Cancer partner knows you're sad",
+        "*before* you do.",
+        "Ruled by the *Moon,* they read moods",
+        "the way the *tide* reads the moon."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "THE MOON · CANCER'S RULER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · CARDINAL WATER",
+      "lines": [
+        "They bring *soup* when you're sick.",
+        "They remember your mom's birthday.",
+        "They keep the ticket from your first date",
+        "in a drawer, *forever.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I make people feel *at home.*",
+        "And I deserve someone",
+        "who takes care of me *back.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

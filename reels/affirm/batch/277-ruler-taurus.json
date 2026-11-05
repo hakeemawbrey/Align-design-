@@ -1,0 +1,83 @@
+{
+  "id": "277-ruler-taurus",
+  "title": "Taurus is ruled by Venus",
+  "cover": "Taurus got Venus's *senses*",
+  "keyword": "CHART",
+  "caption": "libra got venus's manners. taurus got the warm bread, the clean sheets and the long stay",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurus",
+    "venus",
+    "planetaryruler",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "ruler",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "venus",
+      "opts": {},
+      "header": "TAURUS · RULED BY VENUS",
+      "lines": [
+        "Venus rules two signs.",
+        "Libra got her *manners.*",
+        "You got her *senses.*"
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 0,
+          "text": "♀ VENUS · TAURUS AND LIBRA"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · FIXED EARTH",
+      "lines": [
+        "So you love like a slow Sunday.",
+        "Warm bread, clean sheets,",
+        "a hand on the small of your *back.*",
+        "You don't rush love.",
+        "Once you choose, you *stay.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Wanting *comfort* isn't lazy.",
+        "Love that feels good",
+        "is not love I have to *earn.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

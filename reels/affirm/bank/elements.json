@@ -1,0 +1,415 @@
+[
+  {
+    "key": "element-fire",
+    "title": "Fire signs in love",
+    "cover": "*Fire signs* in love",
+    "caption": "aries, leo, sagittarius. fire signs don't love quietly, and they were never meant to",
+    "hashtags": ["firesigns", "aries", "leo", "sagittarius", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "fire" },
+        "header": "FIRE · ARIES LEO SAGITTARIUS",
+        "lines": ["Fire signs don't fall in love.", "They *catch* it.", "Aries, Leo and *Sagittarius*", "love loud, fast and warm."],
+        "labels": [{ "on": "element", "at": 2, "text": "ARIES · LEO · SAGITTARIUS" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "FIRE NEEDS AIR",
+        "lines": ["Fire needs *air* to keep burning,", "so fire signs need room to move", "and someone who's *excited* back.", "If someone calls you too much,", "they just brought too little *air.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My warmth is a *gift,*", "not a warning.", "I want someone who burns *bright* with me."]
+      }
+    ]
+  },
+  {
+    "key": "element-earth",
+    "title": "Earth signs in love",
+    "cover": "*Earth signs* in love",
+    "caption": "taurus, virgo, capricorn. earth signs say i love you with their hands",
+    "hashtags": ["earthsigns", "taurus", "virgo", "capricorn", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "earth" },
+        "header": "EARTH · TAURUS VIRGO CAPRICORN",
+        "lines": ["Earth signs rarely say it first.", "They *show* it.", "Taurus, Virgo and *Capricorn*", "love with their hands and their *time.*"],
+        "labels": [{ "on": "element", "at": 2, "text": "TAURUS · VIRGO · CAPRICORN" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "SLOW TO TRUST · SLOW TO LEAVE",
+        "lines": ["The meal made, the shelf fixed,", "the car warmed up before you *leave.*", "Earth is slow to *trust,*", "and even slower to go."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need fireworks.", "I need someone who *stays,*", "and I'm allowed to take my *time.*"]
+      }
+    ]
+  },
+  {
+    "key": "element-air",
+    "title": "Air signs in love",
+    "cover": "*Air signs* in love",
+    "caption": "gemini, libra, aquarius. for an air sign, the first kiss is a conversation",
+    "hashtags": ["airsigns", "gemini", "libra", "aquarius", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "AIR · GEMINI LIBRA AQUARIUS",
+        "lines": ["For an air sign, the first kiss", "is a *conversation.*", "Gemini, Libra and *Aquarius*", "fall for minds before faces."],
+        "labels": [{ "on": "element", "at": 2, "text": "GEMINI · LIBRA · AQUARIUS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "ROOM TO BREATHE",
+        "lines": ["And air needs *space* to move.", "Asking for room isn't pulling away.", "It's how they *come back*", "with something new to tell you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want to be *understood,*", "not just wanted.", "My freedom and my love can share a *home.*"]
+      }
+    ]
+  },
+  {
+    "key": "element-water",
+    "title": "Water signs in love",
+    "cover": "*Water signs* in love",
+    "caption": "cancer, scorpio, pisces. water signs feel the mood of a room before anyone speaks",
+    "hashtags": ["watersigns", "cancer", "scorpio", "pisces", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "water" },
+        "header": "WATER · CANCER SCORPIO PISCES",
+        "lines": ["Water signs know how you feel", "before you've said a *word.*", "Cancer, Scorpio and *Pisces*", "love through feeling, deep and quiet."],
+        "labels": [{ "on": "element", "at": 2, "text": "CANCER · SCORPIO · PISCES" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "LIKE THE TIDE",
+        "lines": ["Like the tide, their love comes in *waves,*", "and every wave needs a *shore:*", "someone steady enough", "to let them feel it all."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My feelings are not *too* much.", "I deserve a love", "that's safe enough to be *soft* in."]
+      }
+    ]
+  },
+  {
+    "key": "element-fire-fire",
+    "title": "Fire and fire",
+    "cover": "*Fire* and fire in love",
+    "caption": "two fire signs together. never boring, never quiet, and someone has to tend the flame",
+    "hashtags": ["firesigns", "compatibility", "elements", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "fire" },
+        "header": "FIRE · FIRE",
+        "lines": ["Two fire signs in love", "is a bonfire nobody's *watching.*", "Same element, so you *get* each other:", "the speed, the pride, the big feelings."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aries", "leo"], "pairAt": 0 },
+        "header": "ARIES · LEO · A TRINE",
+        "lines": ["Different fire signs sit a *trine* apart,", "one of the easiest angles in the sky.", "The only risk is two flames", "both waiting to be *tended.*"],
+        "labels": [{ "on": "pair", "at": 0, "text": "SAME ELEMENT · EASY ANGLE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be the *spotlight*", "and the one who holds it.", "We can take turns *shining.*"]
+      }
+    ]
+  },
+  {
+    "key": "element-fire-earth",
+    "title": "Fire and earth",
+    "cover": "*Fire* and earth in love",
+    "caption": "fire wants it now. earth wants it sure. together you get a hearth, a fire with walls",
+    "hashtags": ["firesigns", "earthsigns", "compatibility", "elements", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "earth" },
+        "header": "FIRE · EARTH",
+        "lines": ["Fire wants it *now.*", "Earth wants it *sure.*", "Put them together and you get a *hearth:*", "a fire with walls around it."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "TWO DIFFERENT CLOCKS",
+        "lines": ["Fire brings the spark", "that gets earth out of the *house.*", "Earth brings the patience", "that turns a spark into a *home.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE HEARTH",
+        "lines": ["Fire learns that slow isn't *cold.*", "Earth learns that fast isn't *careless.*", "And the fire you build together", "keeps you warm for years."]
+      }
+    ]
+  },
+  {
+    "key": "element-fire-air",
+    "title": "Fire and air",
+    "cover": "*Fire* and air in love",
+    "caption": "fire can't burn without air. some matches really are just chemistry",
+    "hashtags": ["firesigns", "airsigns", "compatibility", "elements", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "air" },
+        "header": "FIRE · AIR",
+        "lines": ["Fire can't burn without *air.*", "That's why fire and air signs", "are such a classic *match.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aries", "gemini"], "pairAt": 0 },
+        "header": "SEXTILE OR OPPOSITE",
+        "lines": ["On the wheel, they sit a *sextile*", "or an opposition apart.", "Air brings the ideas,", "fire makes them *happen.*", "Every talk turns into a plan,", "every plan into an *adventure.*", "Just remember to land sometimes."],
+        "labels": [{ "on": "pair", "at": 0, "text": "ARIES · GEMINI" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want someone who *feeds* my fire,", "not someone who *fears* it."]
+      }
+    ]
+  },
+  {
+    "key": "element-fire-water",
+    "title": "Fire and water",
+    "cover": "*Fire* and water in love",
+    "caption": "fire and water make steam. intense, a little hard to see through, never lukewarm",
+    "hashtags": ["firesigns", "watersigns", "compatibility", "elements", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "water" },
+        "header": "FIRE · WATER",
+        "lines": ["Fire and water make *steam.*", "Hot, hard to see through,", "and never, ever *lukewarm.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "SPEAK FIRST · FEEL FIRST",
+        "lines": ["Fire *speaks* first and feels later.", "Water *feels* first and speaks later.", "So fire can seem careless,", "and water can seem distant,", "when you're both just protecting your *heart.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *gentle* with your fire,", "and *brave* with your feelings."]
+      }
+    ]
+  },
+  {
+    "key": "element-earth-earth",
+    "title": "Earth and earth",
+    "cover": "*Earth* and earth in love",
+    "caption": "two earth signs build the kind of love you can lean on. just don't forget to play",
+    "hashtags": ["earthsigns", "compatibility", "elements", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "earth" },
+        "header": "EARTH · EARTH",
+        "lines": ["Two earth signs don't rush love.", "They *build* it,", "one shared routine at a time."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["taurus", "capricorn"], "pairAt": 0 },
+        "header": "TAURUS · CAPRICORN · A TRINE",
+        "lines": ["Different earth signs sit a *trine* apart,", "so the trust comes easy,", "and the savings account comes *easier.*", "The only danger is getting so *steady*", "you forget to be silly."],
+        "labels": [{ "on": "pair", "at": 0, "text": "SAME ELEMENT · EASY ANGLE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Our love can be *safe*", "and still surprise me.", "I'm allowed to *play.*"]
+      }
+    ]
+  },
+  {
+    "key": "element-earth-air",
+    "title": "Earth and air",
+    "cover": "*Earth* and air in love",
+    "caption": "air has the idea. earth knows how to make it real. on paper it's a mismatch. in practice it works",
+    "hashtags": ["earthsigns", "airsigns", "compatibility", "elements", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "air" },
+        "header": "EARTH · AIR",
+        "lines": ["Air has a hundred *ideas.*", "Earth asks which one we're *doing.*", "On paper, it looks like a mismatch."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "CLOUDS AND GROUND",
+        "lines": ["But air keeps earth from getting *stuck,*", "and earth keeps air from drifting off.", "One of you dreams it up.", "The other gives it a *shape.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "DREAM IT · BUILD IT",
+        "lines": ["Love doesn't need you to *think* alike.", "It needs you to *build* together,", "one wild idea at a time."]
+      }
+    ]
+  },
+  {
+    "key": "element-earth-water",
+    "title": "Earth and water",
+    "cover": "*Earth* and water in love",
+    "caption": "water gives earth something to grow. earth gives water a place to rest. a classic for a reason",
+    "hashtags": ["earthsigns", "watersigns", "compatibility", "elements", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "water" },
+        "header": "EARTH · WATER",
+        "lines": ["Water gives earth something to *grow.*", "Earth gives water a place to *rest.*", "It's a classic match for a reason."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["taurus", "cancer"], "pairAt": 0 },
+        "header": "SEXTILE OR OPPOSITE",
+        "lines": ["They sit a *sextile* or opposition apart,", "and both need to feel *safe* first.", "Earth makes feelings feel solid.", "Water makes routine feel *tender.*"],
+        "labels": [{ "on": "pair", "at": 0, "text": "TAURUS · CANCER" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want a love that's *steady*", "and still deep enough to *swim* in."]
+      }
+    ]
+  },
+  {
+    "key": "element-air-air",
+    "title": "Air and air",
+    "cover": "*Air* and air in love",
+    "caption": "two air signs can talk until sunrise. the trick is saying the feeling, not describing it",
+    "hashtags": ["airsigns", "compatibility", "elements", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "air", "second": "air" },
+        "header": "AIR · AIR",
+        "lines": ["Two air signs can talk until *sunrise*", "and still have more to say.", "Ideas, jokes, the *perfect* playlist."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["gemini", "libra"], "pairAt": 0 },
+        "header": "GEMINI · LIBRA · A TRINE",
+        "lines": ["Different air signs sit a *trine* apart,", "so the conversation flows.", "The risk is talking *about* feelings", "instead of having them."],
+        "labels": [{ "on": "pair", "at": 0, "text": "SAME ELEMENT · EASY ANGLE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can say the *scary* thing,", "not just the clever one.", "I'd rather be *known* than impressive."]
+      }
+    ]
+  },
+  {
+    "key": "element-air-water",
+    "title": "Air and water",
+    "cover": "*Air* and water in love",
+    "caption": "air thinks about the feeling. water is the feeling. the magic is meeting in the middle",
+    "hashtags": ["airsigns", "watersigns", "compatibility", "elements", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "air", "second": "water" },
+        "header": "AIR · WATER",
+        "lines": ["Air *thinks* about the feeling.", "Water *is* the feeling.", "Different instincts, same wish:", "to be understood."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "HEAD AND HEART",
+        "lines": ["So air can seem cool to water,", "and water can seem *stormy* to air.", "But air brings perspective,", "and water brings *depth.*", "Together, you hear the whole heart."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can explain *less*", "and listen more.", "My mind and my heart can *both* be heard."]
+      }
+    ]
+  },
+  {
+    "key": "element-water-water",
+    "title": "Water and water",
+    "cover": "*Water* and water in love",
+    "caption": "two water signs feel everything together. beautiful, as long as someone remembers the shore",
+    "hashtags": ["watersigns", "compatibility", "elements", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "water", "second": "water" },
+        "header": "WATER · WATER",
+        "lines": ["Some couples talk it out.", "Two water signs just *know.*", "No words needed, no translation."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["cancer", "pisces"], "pairAt": 0 },
+        "header": "CANCER · PISCES · A TRINE",
+        "lines": ["Different water signs sit a *trine* apart,", "so you understand without *explaining.*", "It's rare, and it's tender.", "The only risk is two moods", "becoming one big *wave.*"],
+        "labels": [{ "on": "pair", "at": 0, "text": "SAME ELEMENT · EASY ANGLE" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "BE EACH OTHER'S SHORE",
+        "lines": ["So take turns being the *shore.*", "One of you feels it.", "The other *holds* it.", "And then you switch."]
+      }
+    ]
+  }
+]

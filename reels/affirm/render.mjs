@@ -11,7 +11,7 @@
 import { createRequire } from 'node:module'
 import { spawn, execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { existsSync, readdirSync, readFileSync, mkdirSync, writeFileSync, renameSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, mkdirSync, writeFileSync, renameSync, rmSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -29,7 +29,10 @@ const profile = flag('--profile')
 const remix = flag('--remix') // new audio onto the existing video, no frames redrawn
 const jobs = Number(opt('--jobs', 2))
 const outDir = path.resolve(opt('--out', path.join(REPO, 'reels/out/affirm')))
-const picks = args.filter((a, i) => !a.startsWith('--') && !['--jobs', '--out'].includes(args[i - 1]))
+const scriptsDir = path.resolve(opt('--dir', path.join(HERE, 'scripts')))
+const skipExisting = flag('--skip-existing') // resume a batch: reels already rendered are skipped
+const lean = flag('--lean') // keep only the mp4, cover and caption (for big batches)
+const picks = args.filter((a, i) => !a.startsWith('--') && !['--jobs', '--out', '--dir'].includes(args[i - 1]))
 
 // Seconds: art draws a beat before the voice starts, scenes breathe between.
 const LEAD_FIRST = 0.35
@@ -162,7 +165,8 @@ function mixAudio(script, tl, wav) {
 // A variant names its base reel and brings its own ending: the base's last
 // scene is swapped for the variant's `end` scenes.
 function loadScript(file) {
-  const s = JSON.parse(readFileSync(path.join(HERE, 'scripts', file), 'utf8'))
+  const where = existsSync(path.join(scriptsDir, file)) ? scriptsDir : path.join(HERE, 'scripts')
+  const s = JSON.parse(readFileSync(path.join(where, file), 'utf8'))
   if (!s.extends) return s
   const base = loadScript(`${s.extends}.json`)
   const { end, extends: _, ...own } = s
@@ -171,6 +175,7 @@ function loadScript(file) {
 
 async function renderOne(browser, file) {
   const script = loadScript(file)
+  if (skipExisting && !stills && existsSync(path.join(outDir, `${script.id}.mp4`))) return
   const voice = speak(script)
   const tl = timeline(script, voice)
   const page = await openEngine(browser, script, tl)
@@ -206,10 +211,13 @@ async function renderOne(browser, file) {
     return
   }
   const frames = Math.ceil(tl.duration * FPS)
+  // write to a .part file and rename at the end, so an interrupted batch never
+  // leaves a half-written reel that --skip-existing would trust
+  const part = mp4.replace(/\.mp4$/, '.part.mp4')
   const ff = spawn('ffmpeg', ['-v', 'error', '-y',
     '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-', '-i', wav,
     '-c:v', 'libx264', '-preset', 'medium', '-crf', '19', '-maxrate', '8M', '-bufsize', '16M',
-    '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', mp4,
+    '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', part,
   ], { stdio: ['pipe', 'inherit', 'inherit'] })
   const done = new Promise((res, rej) => ff.on('close', (c) => (c ? rej(new Error(`ffmpeg ${c}`)) : res())))
   ff.stdin.on('error', (e) => console.error(`[${script.id}] ffmpeg stopped reading frames: ${e.message}`))
@@ -220,9 +228,15 @@ async function renderOne(browser, file) {
   }
   ff.stdin.end()
   await done
-  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', mp4, '-vf', 'scale=720:-2', '-c:v', 'libx264', '-preset', 'slow',
-    '-crf', '24', '-maxrate', '2.5M', '-bufsize', '5M', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k',
-    '-movflags', '+faststart', path.join(outDir, `${script.id}.web.mp4`)])
+  renameSync(part, mp4)
+  if (lean) {
+    for (const f of [wav, wav.replace(/\.wav$/, '.bed.wav')]) rmSync(f, { force: true })
+    rmSync(voice.dir, { recursive: true, force: true })
+  } else {
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', mp4, '-vf', 'scale=720:-2', '-c:v', 'libx264', '-preset', 'slow',
+      '-crf', '24', '-maxrate', '2.5M', '-bufsize', '5M', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k',
+      '-movflags', '+faststart', path.join(outDir, `${script.id}.web.mp4`)])
+  }
   // what to paste when posting
   writeFileSync(path.join(outDir, `${script.id}.caption.txt`), `${script.caption}\n\n${script.cta ?? `comment ${script.keyword} and i'll send it to you ✦\nyour full chart is free on align, link in bio`}\n\n${script.hashtags.map((h) => `#${h}`).join(' ')}\n`)
   await page.close()
@@ -262,7 +276,7 @@ const browser = await launch()
 if (profile) {
   await renderProfile(browser)
 } else {
-  let files = readdirSync(path.join(HERE, 'scripts')).filter((f) => f.endsWith('.json')).sort()
+  let files = readdirSync(scriptsDir).filter((f) => f.endsWith('.json')).sort()
   if (picks.length) files = files.filter((f) => picks.some((p) => f.includes(p)))
   const queue = [...files]
   await Promise.all(Array.from({ length: Math.min(jobs, queue.length) }, async () => {

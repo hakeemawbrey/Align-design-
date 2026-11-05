@@ -1,0 +1,104 @@
+{
+  "id": "049-rising-scorpio",
+  "title": "Scorpio rising",
+  "cover": "Scorpio rising craves *calm*",
+  "keyword": "SEVEN",
+  "caption": "people tell scorpio rising everything. your taurus seventh house just wants someone with nothing to hide",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "scorpiorising",
+    "taurus",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO RISING · FIXED WATER",
+      "lines": [
+        "People tell you things they've told *no one.*",
+        "Scorpio rising: that *look,*",
+        "the guard you never quite drop."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1,
+        "axis": true,
+        "axisAt": 0,
+        "rising": "scorpio"
+      },
+      "header": "YOUR SEVENTH HOUSE · TAURUS",
+      "lines": [
+        "But opposite your rising,",
+        "your seventh house is in *Taurus.*",
+        "Slow, warm, and *unbothered.*"
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 0,
+          "text": "RISING · THE GUARD"
+        },
+        {
+          "on": "h7",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · WHAT CALMS YOU",
+      "lines": [
+        "So the one you trust isn't a *puzzle.*",
+        "It's someone *simple* in the best way.",
+        "Same time, same table,",
+        "nothing to decode."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Calm isn't *boring.*",
+        "It's what *safe* feels like.",
+        "I can let my guard rest."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "311-fullmoon-libra",
+  "title": "Full moon in Libra",
+  "cover": "Full moon in *Libra*",
+  "keyword": "MOON",
+  "caption": "a full moon in libra tips the scales and shows you who's been doing the balancing. usually it's you",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "fullmoon",
+    "fullmooninlibra",
+    "libra",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON IN LIBRA",
+      "lines": [
+        "Under a full moon in Libra, the scales *tip.*",
+        "You see who's been doing the *balancing.*",
+        "Usually, it's you."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "ARIES SUN · LIBRA MOON",
+      "lines": [
+        "This one comes in *Aries* season,",
+        "the sun in the sign of the self,",
+        "the moon in the sign of *us.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "LIBRA · RULED BY VENUS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release keeping the peace *alone.*",
+        "I am half of the *balance,*",
+        "not all of it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

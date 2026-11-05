@@ -1,0 +1,84 @@
+{
+  "id": "301-fear-cancer",
+  "title": "What a Cancer quietly fears",
+  "cover": "Cancer, who holds *you*",
+  "keyword": "MUTUAL",
+  "caption": "who takes care of the cancer who takes care of everyone",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "cancer",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · RULED BY THE MOON",
+      "lines": [
+        "Cancer, you hold *everyone.*",
+        "The friend at midnight, the partner's bad week,",
+        "the family that calls *you* first."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 7
+      },
+      "header": "THE QUIET FEAR · RUNNING LOW",
+      "lines": [
+        "So here's the fear inside your *shell:*",
+        "that if you ever stopped *giving,*",
+        "nobody would come looking.",
+        "That you're loved for the *care,*",
+        "not for you."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "WANING · RUNNING LOW"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve to be *held*",
+        "by the people I hold.",
+        "Care goes *both* ways."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,819 @@
+[
+  {
+    "key": "venus-aries",
+    "title": "Venus in Aries",
+    "cover": "Venus in Aries loves *fast*",
+    "caption": "venus in aries doesn't do slow burns. it knows in five minutes and hates pretending otherwise",
+    "hashtags": [
+      "venusinaries",
+      "aries",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♀",
+          "tone": "rose"
+        },
+        "header": "VENUS IN ARIES",
+        "lines": [
+          "You knew in the first *five minutes,*",
+          "and you hate pretending you didn't.",
+          "That's Venus in Aries."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 2,
+            "text": "♀ · VENUS · HOW YOU LOVE"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aries"
+        },
+        "header": "ARIES · RULED BY MARS",
+        "lines": [
+          "Venus sits in the sign Mars rules,",
+          "so love, for you, is a *pursuit.*",
+          "Mixed signals don't feel mysterious.",
+          "They feel like a *no.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "ARIES · CARDINAL FIRE"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want to be *chosen* on purpose,",
+          "not kept around just in case.",
+          "My excitement is not *too much.*",
+          "It's how I know it's *real.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-taurus",
+    "title": "Venus in Taurus",
+    "cover": "Venus in Taurus wants *steady*",
+    "caption": "venus in taurus is not impressed by fireworks. it is impressed by the same warm text every night",
+    "hashtags": [
+      "venusintaurus",
+      "taurus",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "taurus"
+        },
+        "header": "VENUS IN TAURUS",
+        "lines": [
+          "Grand gestures don't really move you.",
+          "*Consistency* does.",
+          "The same warm text, the same booth,",
+          "the hand already reaching for yours."
+        ]
+      },
+      {
+        "art": "venus",
+        "header": "VENUS RULES TAURUS",
+        "lines": [
+          "Venus rules Taurus,",
+          "so here she's *home,* and in no hurry.",
+          "You need love you can touch,",
+          "taste, and count on.",
+          "Slow isn't boring to you. Slow is *safe.*"
+        ],
+        "labels": [
+          {
+            "on": "glass",
+            "at": 0,
+            "text": "♀ · AT HOME IN TAURUS"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to want *steady.*",
+          "The right person won't find me *slow.*",
+          "They'll find me *worth staying* for."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-gemini",
+    "title": "Venus in Gemini",
+    "cover": "Venus in Gemini needs *banter*",
+    "caption": "venus in gemini falls in love mid-conversation. bore them and they're already gone",
+    "hashtags": [
+      "venusingemini",
+      "gemini",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "♀",
+          "planetSign": "gemini",
+          "planetAt": 1
+        },
+        "header": "VENUS IN GEMINI",
+        "lines": [
+          "The way to your heart is a *good question.*",
+          "Then another. Then a voice note at midnight",
+          "about something you said last week."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "♀ · VENUS IN GEMINI"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "gemini"
+        },
+        "header": "GEMINI · RULED BY MERCURY",
+        "lines": [
+          "Gemini is ruled by Mercury,",
+          "the planet of talk.",
+          "So you fall in love *out loud,*",
+          "through banter and tangents and jokes.",
+          "Boredom isn't small to you. It's *distance.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "GEMINI · MUTABLE AIR"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want someone who stays *curious*",
+          "about me, long after the first date.",
+          "My mind is part of my *heart.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-cancer",
+    "title": "Venus in Cancer",
+    "cover": "Venus in Cancer wants *home*",
+    "caption": "venus in cancer knows how everyone takes their tea. it would love for someone to know theirs",
+    "hashtags": [
+      "venusincancer",
+      "cancer",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "cancer"
+        },
+        "header": "VENUS IN CANCER",
+        "lines": [
+          "Who remembers how *you* take your tea?",
+          "You know everyone else's by heart.",
+          "That's the quiet question of Venus in *Cancer.*"
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "♀",
+          "planetSign": "cancer",
+          "planetAt": 0,
+          "highlight": 4,
+          "highlightAt": 1
+        },
+        "header": "CANCER · THE FOURTH HOUSE",
+        "lines": [
+          "Cancer is ruled by the Moon",
+          "and belongs to the fourth house, *home.*",
+          "So you love like a shell around someone,",
+          "and you need one around *you,* too."
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 1,
+            "text": "4TH HOUSE · HOME"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to be *cared for*",
+          "the way I care for everyone else.",
+          "My softness is a *home,*",
+          "and I get to choose who stays."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-leo",
+    "title": "Venus in Leo",
+    "cover": "Venus in Leo wants to be *adored*",
+    "caption": "venus in leo doesn't want to be liked. it wants to be someone's favorite, out loud",
+    "hashtags": [
+      "venusinleo",
+      "leo",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "leo"
+        },
+        "header": "VENUS IN LEO",
+        "lines": [
+          "Being *liked* was never the goal.",
+          "You want to be *adored.*",
+          "And honestly, that isn't vanity."
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☉",
+          "tone": "gold"
+        },
+        "header": "LEO · RULED BY THE SUN",
+        "lines": [
+          "Leo is ruled by the Sun,",
+          "and you love the way the sun does:",
+          "warm, generous, impossible to miss.",
+          "So you need a love that *shines back,*",
+          "not one that dims you to feel bigger."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☉ · THE SUN · LEO'S RULER"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I deserve to be someone's *favorite,*",
+          "said out loud, in front of people.",
+          "I will never shrink to be *loved.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-virgo",
+    "title": "Venus in Virgo",
+    "cover": "Venus in Virgo loves in *details*",
+    "caption": "venus in virgo fixed the shelf before it ever said i love you. it meant the same thing",
+    "hashtags": [
+      "venusinvirgo",
+      "virgo",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "virgo"
+        },
+        "header": "VENUS IN VIRGO",
+        "lines": [
+          "You fixed their *shelf*",
+          "before you ever said I love you.",
+          "With Venus in Virgo,",
+          "love is a *verb* before it's a word."
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 2,
+            "text": "VIRGO · MUTABLE EARTH"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♀",
+          "tone": "rose"
+        },
+        "header": "VENUS · IN THE DETAILS",
+        "lines": [
+          "So you need someone who *notices.*",
+          "The refilled water glass.",
+          "The way you remembered their big day.",
+          "And who lets you rest without *earning* it."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to be *perfect*",
+          "to be worth loving.",
+          "I get to be *helped,* too."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-libra",
+    "title": "Venus in Libra",
+    "cover": "Venus in Libra keeps it *even*",
+    "caption": "venus in libra knows who texted last, who picked dinner, who said sorry first. it just wants it even",
+    "hashtags": [
+      "venusinlibra",
+      "libra",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "libra"
+        },
+        "header": "VENUS IN LIBRA",
+        "lines": [
+          "You notice the second the scales *tip.*",
+          "Who texted last. Who picked dinner.",
+          "Who said sorry *first.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "LIBRA · THE SCALES"
+          }
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "♀",
+          "planetSign": "libra",
+          "planetAt": 0,
+          "highlight": 7,
+          "highlightAt": 1
+        },
+        "header": "VENUS RULES LIBRA",
+        "lines": [
+          "Venus rules Libra, so she's home here,",
+          "in the seventh sign, the sign of partners.",
+          "You don't want someone to complete you.",
+          "You want someone to *meet* you halfway."
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 1,
+            "text": "7TH HOUSE · PARTNERS"
+          }
+        ]
+      },
+      {
+        "art": "venus",
+        "opts": {
+          "mirror": true,
+          "mirrorAt": 1
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want a love that's *even,*",
+          "where keeping the peace isn't *my* job alone.",
+          "I can ask for what's *fair.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-scorpio",
+    "title": "Venus in Scorpio",
+    "cover": "Venus in Scorpio goes *deep*",
+    "caption": "venus in scorpio would trade a hundred easy conversations for one real one. it doesn't do halfway",
+    "hashtags": [
+      "venusinscorpio",
+      "scorpio",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "scorpio"
+        },
+        "header": "VENUS IN SCORPIO",
+        "lines": [
+          "You'd rather have one *real* conversation",
+          "than a hundred easy ones.",
+          "Venus in Scorpio doesn't do *halfway.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 2,
+            "text": "SCORPIO · FIXED WATER"
+          }
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "♀",
+          "planetSign": "scorpio",
+          "planetAt": 1,
+          "highlight": 8,
+          "highlightAt": 0
+        },
+        "header": "SCORPIO · THE EIGHTH HOUSE",
+        "lines": [
+          "Scorpio belongs to the eighth house:",
+          "intimacy, trust, what two people share.",
+          "So you love all the way *down,*",
+          "and you need someone who won't flinch",
+          "when they finally see it."
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 0,
+            "text": "8TH HOUSE · INTIMACY"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My depth is an *invitation,* not a warning.",
+          "I'm allowed to trust *slowly,*",
+          "and to love *completely* once I do."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-sagittarius",
+    "title": "Venus in Sagittarius",
+    "cover": "Venus in Sagittarius needs *room*",
+    "caption": "venus in sagittarius falls in love in airports and on long drives. the right one books the second ticket",
+    "hashtags": [
+      "venusinsagittarius",
+      "sagittarius",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "sagittarius"
+        },
+        "header": "VENUS IN SAGITTARIUS",
+        "lines": [
+          "Long drives. Airports. A debate at *midnight.*",
+          "That's where you fall in love.",
+          "Venus in Sagittarius needs room."
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 2,
+            "text": "SAGITTARIUS · THE ARCHER"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♃",
+          "tone": "gold"
+        },
+        "header": "RULED BY JUPITER",
+        "lines": [
+          "Sagittarius is ruled by Jupiter,",
+          "the planet of *more:* more sky, more truth.",
+          "So a cage, even a sweet one, feels like *goodbye.*",
+          "You need a love that comes *with* you."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "♃ · JUPITER"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "WHAT YOU DESERVE",
+        "lines": [
+          "So stop apologizing for needing *room.*",
+          "The right person won't hold you back.",
+          "They'll book the *second* ticket."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-capricorn",
+    "title": "Venus in Capricorn",
+    "cover": "Venus in Capricorn *builds* it",
+    "caption": "venus in capricorn doesn't say i love you early. it says it when it can keep it",
+    "hashtags": [
+      "venusincapricorn",
+      "capricorn",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 2
+        },
+        "header": "VENUS IN CAPRICORN",
+        "lines": [
+          "You don't say I love you *early.*",
+          "You say it when you can *keep* it.",
+          "Venus in Capricorn loves like a *builder.*"
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♄",
+          "tone": "lilac",
+          "ring": true
+        },
+        "header": "CAPRICORN · RULED BY SATURN",
+        "lines": [
+          "Capricorn is ruled by Saturn,",
+          "the planet of *time.*",
+          "So you trust what lasts, not what *sparkles.*",
+          "You need someone who shows up",
+          "long after it stops being new."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "♄ · SATURN · TIME"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "capricorn"
+        },
+        "header": "SLOW IS STILL ROMANCE",
+        "lines": [
+          "So no, you're not *cold.*",
+          "You just don't hand out promises",
+          "you can't keep.",
+          "And that's the most romantic thing there is."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-aquarius",
+    "title": "Venus in Aquarius",
+    "cover": "Venus in Aquarius: *friends* first",
+    "caption": "venus in aquarius fell for someone in a group chat. friends first, then slowly, everything",
+    "hashtags": [
+      "venusinaquarius",
+      "aquarius",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "♀",
+          "planetSign": "aquarius",
+          "planetAt": 0,
+          "highlight": 11,
+          "highlightAt": 2
+        },
+        "header": "VENUS IN AQUARIUS",
+        "lines": [
+          "Your best love story started in a *group chat.*",
+          "Friends first. Then, slowly, *everything.*",
+          "Aquarius belongs to the eleventh house,",
+          "the house of friends and hopes."
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 2,
+            "text": "11TH HOUSE · FRIENDS"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aquarius"
+        },
+        "header": "AQUARIUS · RULED BY URANUS",
+        "lines": [
+          "Its modern ruler is Uranus,",
+          "the planet of the *unexpected.*",
+          "So you need a partner who is also your *person,*",
+          "who can give you room without feeling left."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be *close* and still be *me.*",
+          "Needing space doesn't mean I care *less.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "venus-pisces",
+    "title": "Venus in Pisces",
+    "cover": "Venus in Pisces loves *wide open*",
+    "caption": "venus in pisces has loved people for who they could be. it deserves someone who already is",
+    "hashtags": [
+      "venusinpisces",
+      "pisces",
+      "venussign",
+      "astrology",
+      "lovelanguage"
+    ],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♀",
+          "tone": "rose"
+        },
+        "header": "VENUS IN PISCES · EXALTED",
+        "lines": [
+          "Venus is *exalted* in Pisces,",
+          "the sign where she's at her best,",
+          "where love has *no edges* at all."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "♀ · EXALTED IN PISCES"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "pisces"
+        },
+        "header": "PISCES · TWO FISH, ONE CORD",
+        "lines": [
+          "You've loved people for who they *could* be.",
+          "You feel their day before they say a word,",
+          "and you love by *merging.*",
+          "So you need someone gentle with that,",
+          "who meets your softness with *care.*"
+        ],
+        "labels": [
+          {
+            "on": "stars",
+            "at": 0,
+            "text": "PISCES · MUTABLE WATER"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can love *without* disappearing.",
+          "I don't have to rescue anyone",
+          "to deserve being *held.*"
+        ]
+      }
+    ]
+  }
+]

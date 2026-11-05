@@ -1,0 +1,95 @@
+{
+  "id": "469-pair-aries-libra",
+  "title": "Aries and Libra",
+  "cover": "Aries + Libra · *opposition*",
+  "keyword": "MATCH",
+  "caption": "me and we, straight across the wheel. opposites attract, then they negotiate",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aries",
+    "libra",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "libra"
+        ],
+        "pairAt": 1
+      },
+      "header": "ARIES · LIBRA · OPPOSITION",
+      "lines": [
+        "Aries is *me.* Libra is *we.*",
+        "They sit exactly *across* the wheel,",
+        "one hundred and eighty degrees:",
+        "an opposition."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "air"
+      },
+      "header": "FIRE · AIR · BOTH CARDINAL",
+      "lines": [
+        "Fire and air, both cardinal.",
+        "Aries teaches Libra to *want* out loud.",
+        "Libra teaches Aries to *ask*",
+        "what the other person wants."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION · THE PULL",
+      "lines": [
+        "Opposites attract, then they *pull.*",
+        "The friction is *balance:*",
+        "decisive versus diplomatic,",
+        "both of you secretly leading."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can keep *myself*",
+        "and still make room for *us.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

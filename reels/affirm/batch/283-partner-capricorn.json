@@ -1,0 +1,82 @@
+{
+  "id": "283-partner-capricorn",
+  "title": "Capricorn as a partner",
+  "cover": "A *Capricorn* builds with you",
+  "keyword": "MATCH",
+  "caption": "a capricorn doesn't just date you. they start building with you",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "capricorn",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "commitment"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "partner",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · CARDINAL EARTH",
+      "lines": [
+        "A Capricorn doesn't just *date* you.",
+        "They start *building* with you.",
+        "The savings plan. The five-year plan.",
+        "The shelf with your name on it."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "RULED BY SATURN",
+      "lines": [
+        "Ruled by *Saturn,* they're slow to promise,",
+        "and almost *never* break one.",
+        "Their love gets *better* with time,",
+        "the way good things do."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "SATURN · COMMITMENT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WHAT THEY BRING",
+      "lines": [
+        "It won't always be flashy.",
+        "It's a *future,*",
+        "and they mean every *brick* of it."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

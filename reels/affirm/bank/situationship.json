@@ -1,0 +1,356 @@
+[
+  {
+    "key": "situationship-aries",
+    "title": "Aries in a situationship",
+    "cover": "Aries, you deserve a *yes*",
+    "caption": "aries makes every move in a situationship and still gets a maybe. you deserve a yes",
+    "hashtags": ["aries", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · CARDINAL FIRE",
+        "lines": ["Aries, you were never built for *maybe.*", "You'd rather hear no", "than wait another week for *almost.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "ALWAYS THE ONE WHO MOVES",
+        "lines": ["So you make every move.", "You plan, you text first, you push.", "You're the spark *and* the fuel.", "And it still stays *undefined.*"],
+        "labels": [{ "on": "orbit", "at": 1, "text": "ONE SIDE · ALL THE MOTION" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve someone who *chooses* back,", "just as fast and just as sure.", "My courage deserves a *yes.*"]
+      }
+    ]
+  },
+  {
+    "key": "situationship-taurus",
+    "title": "Taurus in a situationship",
+    "cover": "Taurus, *almost* isn't home",
+    "caption": "taurus can get comfortable in almost anything. comfortable isn't the same as steady",
+    "hashtags": ["taurus", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "TAURUS · RULED BY VENUS",
+        "lines": ["Taurus, you can make *almost* feel like home.", "Ruled by *Venus,* you get comfortable,", "and once you're comfortable, you stay."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "WARM · THEN QUIET",
+        "lines": ["But warm on a Friday", "and quiet by Tuesday", "isn't *steady.* It's just familiar.", "You know the difference."],
+        "labels": [{ "on": "thread", "at": 1, "text": "ON · OFF · ON" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve love I can *count on.*", "Same person, every day of the week.", "Steady is not too much to *ask.*"]
+      }
+    ]
+  },
+  {
+    "key": "situationship-gemini",
+    "title": "Gemini in a situationship",
+    "cover": "Gemini, you deserve *words*",
+    "caption": "the texting is amazing, the banter is unreal, and nobody has said what this is. gemini, you deserve words",
+    "hashtags": ["gemini", "situationship", "mixedsignals", "astrology", "dating"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI · MUTABLE AIR",
+        "lines": ["Gemini, the texting is *amazing.*", "The banter, the voice notes at midnight.", "That's why it's so hard to see", "that nothing's actually been *said.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Ruled by *Mercury,* you love in words.", "So you deserve some.", "Not hints. Not *vibes.*", "A real sentence about what this is."],
+        "labels": [{ "on": "planet", "at": 0, "text": "MERCURY · WORDS · TALK" }]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 2 },
+        "header": "CLEAR IS KIND",
+        "lines": ["You deserve to know where you *stand.*", "Clear is kind.", "And you're allowed to ask for *clear.*"],
+        "labels": [{ "on": "line", "at": 2, "text": "IN LINE · BOTH SAYING IT" }]
+      }
+    ]
+  },
+  {
+    "key": "situationship-cancer",
+    "title": "Cancer in a situationship",
+    "cover": "Cancer, you deserve a *home*",
+    "caption": "cancer in a situationship: already remembering their mom's birthday, still not sure what you are",
+    "hashtags": ["cancer", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": ["Cancer, you're loving them like a *partner.*", "Soup when they're sick. Their mom's birthday.", "But you're still not *sure* what you are."]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 2 },
+        "header": "RULED BY THE MOON",
+        "lines": ["Ruled by the *Moon,* you need a home,", "not a door that's only *sometimes* open.", "Half lit is not the same as full."],
+        "labels": [{ "on": "moon", "at": 2, "text": "HALF LIT · HALF THERE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve the care I *give.*", "I don't have to earn a *title*", "by taking care of someone."]
+      }
+    ]
+  },
+  {
+    "key": "situationship-leo",
+    "title": "Leo in a situationship",
+    "cover": "Leo, you are not a *secret*",
+    "caption": "leo in a situationship: not posted, not introduced, just there when it's easy. you were made to be seen",
+    "hashtags": ["leo", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "LEO · RULED BY THE SUN",
+        "lines": ["Leo, you were never meant to be *kept quiet.*", "Ruled by the *Sun,* you love out loud.", "So being someone's secret", "dims something in you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "OFF THE RECORD",
+        "lines": ["Not posted. Not introduced.", "Just there when it's *easy.*", "You keep shining anyway,", "but you deserve to be *seen.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am not a *secret.*", "I deserve someone proud to say my *name.*", "Out loud, in daylight."]
+      }
+    ]
+  },
+  {
+    "key": "situationship-virgo",
+    "title": "Virgo in a situationship",
+    "cover": "Virgo, stop *decoding* them",
+    "caption": "virgo in a situationship: low maintenance on purpose, reading every text for what it really means",
+    "hashtags": ["virgo", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": ["Virgo, you've made yourself *easy to keep.*", "No demands. No questions. Always helpful.", "So it never feels like *too much.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Ruled by *Mercury,* you read every text twice,", "looking for what it *really* means.", "But you shouldn't need to decode", "someone who wants you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve to be *wanted,* not just useful.", "My needs are not a burden.", "The right person shows up *on purpose.*"]
+      }
+    ]
+  },
+  {
+    "key": "situationship-libra",
+    "title": "Libra in a situationship",
+    "cover": "Libra, ask *what are we*",
+    "caption": "libra won't ask what are we because it might tip the scales. asking is not drama",
+    "hashtags": ["libra", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · THE SCALES",
+        "lines": ["Libra, you won't ask *what are we*", "because you don't want to tip the scales.", "Keeping the peace feels safer", "than asking for *more.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 7, "highlightAt": 0 },
+        "header": "SEVENTH HOUSE · PARTNERS",
+        "lines": ["But you're the sign of *partnership.*", "Not half of one.", "A real partner wants the scales *even.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "7TH HOUSE · LIBRA'S HOUSE" }]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Asking for clarity is *not* drama.", "I deserve love that meets me", "*halfway,* every time."],
+        "labels": [{ "on": "line", "at": 3, "text": "ONE LINE · BOTH MOVING" }]
+      }
+    ]
+  },
+  {
+    "key": "situationship-scorpio",
+    "title": "Scorpio in a situationship",
+    "cover": "Scorpio, you don't do *halfway*",
+    "caption": "scorpio can feel what's not being said. you're not paranoid, you're perceptive",
+    "hashtags": ["scorpio", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": ["Scorpio, you don't do *halfway.*", "You love all the way down.", "So something only *half* there", "keeps you up at night."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "ALL · OR NOTHING",
+        "lines": ["You can feel what's not being said.", "You're not paranoid. You're *perceptive.*", "And you deserve someone", "with nothing to *hide.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve the *whole* truth.", "I don't have to live on pieces.", "My depth deserves a *match.*"]
+      }
+    ]
+  },
+  {
+    "key": "situationship-sagittarius",
+    "title": "Sagittarius in a situationship",
+    "cover": "Sagittarius, free *and* chosen",
+    "caption": "no labels sounded like freedom, sagittarius. something that never grows is just a holding pattern",
+    "hashtags": ["sagittarius", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": ["Sagittarius, *no labels* sounded like freedom.", "No pressure. No plans.", "Just wherever the night goes."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER",
+        "lines": ["But *Jupiter* rules you, the planet of growth.", "And something that never grows", "isn't freedom. It's a *holding* pattern.", "You can be free *and* chosen."],
+        "labels": [{ "on": "planet", "at": 0, "text": "JUPITER · GROWTH" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve an *adventure* with someone,", "not someone I'm always guessing about.", "Honest is my *language.* I can ask for it."]
+      }
+    ]
+  },
+  {
+    "key": "situationship-capricorn",
+    "title": "Capricorn in a situationship",
+    "cover": "Capricorn, you're worth *plans*",
+    "caption": "capricorn has a five year plan and no idea if they're seeing them this weekend",
+    "hashtags": ["capricorn", "situationship", "dating", "astrology", "saturn"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "gold", "ring": true },
+        "header": "CAPRICORN · RULED BY SATURN",
+        "lines": ["Capricorn, you plan *five years* ahead.", "But you don't know", "if you're seeing them this weekend.", "Ruled by *Saturn,* you take love seriously."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CARDINAL EARTH · THE BUILDER",
+        "lines": ["You build things to *last.*", "Careers, friendships, homes.", "Your heart works the same way.", "You can't build on ground", "that keeps *moving.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "INTENTIONS · NOT AVAILABILITY",
+        "lines": ["You deserve someone with *intentions,*", "not just availability.", "Patience isn't the same as *waiting around.*", "You're worth making *plans* for."]
+      }
+    ]
+  },
+  {
+    "key": "situationship-aquarius",
+    "title": "Aquarius in a situationship",
+    "cover": "Aquarius, make it *mutual*",
+    "caption": "aquarius doesn't need it to look normal. different is fine. it just has to be mutual",
+    "hashtags": ["aquarius", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": ["Aquarius, you don't need it to look *normal.*", "You're fine with *different.*", "But different still has to be mutual."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "FRIENDS · OR SOMETHING",
+        "lines": ["Being friends first is your *thing.*", "But a friend on some nights", "and more on others", "isn't a new kind of love.", "It's just *unclear.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *free* and still be sure.", "I deserve someone on my *side,*", "in every version of us."]
+      }
+    ]
+  },
+  {
+    "key": "situationship-pisces",
+    "title": "Pisces in a situationship",
+    "cover": "Pisces, it can be *real*",
+    "caption": "pisces fills every gap in their texts with a story where it works out",
+    "hashtags": ["pisces", "situationship", "dating", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["Pisces, you're filling the silence with *dreams.*", "Every gap in their texts", "becomes a story where it works out."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "NEPTUNE · SOFT FOCUS",
+        "lines": ["*Neptune,* your modern ruler,", "softens every edge into something lovely.", "But love you have to *imagine*", "isn't love you get to hold."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve love that's *real,* not someday.", "I don't have to dream it for both of us.", "Mine can be *mutual.*"]
+      }
+    ]
+  }
+]

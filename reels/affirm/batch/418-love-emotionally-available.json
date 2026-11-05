@@ -1,0 +1,93 @@
+{
+  "id": "418-love-emotionally-available",
+  "title": "Near isn't available",
+  "cover": "Close isn't the same as *open*",
+  "keyword": "MUTUAL",
+  "caption": "at new moon the moon is right there. its bright side is just turned away",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "emotionalavailability",
+    "relationships",
+    "newmoon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · TURNED AWAY",
+      "lines": [
+        "At new moon, the moon is right there,",
+        "between us and the sun.",
+        "We just can't *see* it,",
+        "because its lit side faces *away.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "NEW MOON · LIT SIDE AWAY"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "PRESENT · NOT AVAILABLE",
+      "lines": [
+        "Some people are *near* you",
+        "and still turned away.",
+        "Close isn't the same as *open.*",
+        "You deserve someone whose light",
+        "faces *your* way."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4,
+        "litAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I look for *open,* not just near.",
+        "I'm allowed to want the *whole* moon.",
+        "I show up lit, and I ask the same."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "FULL · FACING YOU"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

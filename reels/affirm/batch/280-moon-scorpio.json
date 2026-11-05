@@ -1,0 +1,85 @@
+{
+  "id": "280-moon-scorpio",
+  "title": "Moon in Scorpio",
+  "cover": "Moon in Scorpio needs *truth*",
+  "keyword": "MOON",
+  "caption": "moon in scorpio hears it when a voice changes by half a note. safe, for it, is the truth told kindly",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "mooninscorpio",
+    "scorpio",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "MOON IN SCORPIO",
+      "lines": [
+        "You notice when someone's voice *changes.*",
+        "Half a note. You still catch it.",
+        "The Moon in Scorpio feels in *full depth.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "FIXED WATER · STILL AND DEEP",
+      "lines": [
+        "Scorpio is fixed water,",
+        "deep, and *still* on top.",
+        "So safe, for you, isn't sweet words.",
+        "It's *truth,* told even when it's hard,",
+        "by a person who's the same in private."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "WATER · FIXED"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can let someone in slowly.",
+        "My trust is a *gift,* not a debt.",
+        "I'm safe with people who stay *honest.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "358-planet-mars",
+  "title": "Mars in love",
+  "cover": "*Mars* in love",
+  "keyword": "MARS",
+  "caption": "venus is what you're drawn to. mars is how you go after it, and how you fight for it",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "mars",
+    "marssign",
+    "aries",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "planets",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS · THE CHASE",
+      "lines": [
+        "Venus is what you're *drawn* to.",
+        "Mars is how you *go after* it.",
+        "One is attraction. One is action."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♂ · DESIRE AND DRIVE"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "RULER OF ARIES",
+      "lines": [
+        "Mars rules *Aries,*",
+        "the part of you that wants,",
+        "chases, flirts and *fights.*",
+        "It shows how you get angry,",
+        "and what you need to make *up.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My wanting is not *wrong.*",
+        "I can fight fair",
+        "and still go after what I *love.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

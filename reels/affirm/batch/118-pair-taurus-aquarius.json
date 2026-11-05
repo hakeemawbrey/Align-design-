@@ -1,0 +1,90 @@
+{
+  "id": "118-pair-taurus-aquarius",
+  "title": "Taurus and Aquarius",
+  "cover": "Taurus + Aquarius · *square*",
+  "keyword": "MATCH",
+  "caption": "what lasts versus what's next. a square, and very much worth the work",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "taurus",
+    "aquarius",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "TAURUS · AQUARIUS",
+      "lines": [
+        "Tradition, meet the *future.*",
+        "Taurus loves what lasts.",
+        "Aquarius loves what's *next.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "Three signs apart, a *square:*",
+        "fixed earth and fixed air,",
+        "two stubborn signs, two *directions.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "air"
+      },
+      "header": "EARTH · AIR · WORK WORTH DOING",
+      "lines": [
+        "Taurus pulls Aquarius out of its *head.*",
+        "Aquarius pulls Taurus out of the *routine.*",
+        "The friction: neither one bends first."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Being *different* isn't being wrong.",
+        "I can change my mind",
+        "and keep my *heart.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "366-selflove-cancer",
+  "title": "Self-love for a Cancer",
+  "cover": "Cancer, your moods are *tides*",
+  "keyword": "CHART",
+  "caption": "the moon isn't full every night either",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "cancer",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "RULED BY THE MOON · PHASES",
+      "lines": [
+        "Cancer, your moods are tides, not *flaws.*",
+        "Even the *Moon,* your ruler,",
+        "isn't full every night."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "EIGHT PHASES · ONE MOON"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 4,
+        "highlightAt": 0
+      },
+      "header": "THE FOURTH HOUSE · HOME",
+      "lines": [
+        "So come home the way you'd *mother* someone.",
+        "Soup. A blanket. The phone face *down.*",
+        "Your favorite old film again.",
+        "Let yourself be the one",
+        "who gets taken care of."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "4TH HOUSE · HOME"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *soft* with myself.",
+        "Every phase of me is *home.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

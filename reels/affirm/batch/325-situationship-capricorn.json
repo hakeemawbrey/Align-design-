@@ -1,0 +1,77 @@
+{
+  "id": "325-situationship-capricorn",
+  "title": "Capricorn in a situationship",
+  "cover": "Capricorn, you're worth *plans*",
+  "keyword": "MUTUAL",
+  "caption": "capricorn has a five year plan and no idea if they're seeing them this weekend",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "capricorn",
+    "situationship",
+    "dating",
+    "astrology",
+    "saturn"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "gold",
+        "ring": true
+      },
+      "header": "CAPRICORN · RULED BY SATURN",
+      "lines": [
+        "Capricorn, you plan *five years* ahead.",
+        "But you don't know",
+        "if you're seeing them this weekend.",
+        "Ruled by *Saturn,* you take love seriously."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CARDINAL EARTH · THE BUILDER",
+      "lines": [
+        "You build things to *last.*",
+        "Careers, friendships, homes.",
+        "Your heart works the same way.",
+        "You can't build on ground",
+        "that keeps *moving.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "INTENTIONS · NOT AVAILABILITY",
+      "lines": [
+        "You deserve someone with *intentions,*",
+        "not just availability.",
+        "Patience isn't the same as *waiting around.*",
+        "You're worth making *plans* for."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

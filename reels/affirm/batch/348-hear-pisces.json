@@ -1,0 +1,79 @@
+{
+  "id": "348-hear-pisces",
+  "title": "What a Pisces needs to hear",
+  "cover": "Pisces, real beats the *daydream*",
+  "keyword": "CHART",
+  "caption": "for the pisces who's lived whole love stories on the bus home",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "pisces",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "hear",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "Pisces, the real thing can beat the *daydream.*",
+        "You've lived whole love stories",
+        "in your head, on the bus, before *sleep.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "THE DAYDREAM · THE NIGHT",
+      "lines": [
+        "*Neptune,* your modern ruler,",
+        "is the planet of *dreams.*",
+        "So real life can feel small.",
+        "But someone real who stays",
+        "beats a perfect one",
+        "who only *exists* at night."
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *imagine* love.",
+        "I'm allowed to *live* it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

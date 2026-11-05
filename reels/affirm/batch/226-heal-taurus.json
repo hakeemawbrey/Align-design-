@@ -1,0 +1,94 @@
+{
+  "id": "226-heal-taurus",
+  "title": "Taurus, after a breakup",
+  "cover": "Taurus, slow is how you *heal*",
+  "keyword": "PASSING",
+  "caption": "taurus doesn't let go fast. fixed earth was built to stay, and that's not a flaw",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "taurus",
+    "breakup",
+    "healing",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS · FIXED EARTH",
+      "lines": [
+        "Taurus, you don't let go *quickly.*",
+        "You were built to *stay.*",
+        "Fixed earth holds on",
+        "long after the season changes."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "FIXED EARTH · STEADY"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "RULED BY VENUS",
+      "lines": [
+        "Ruled by *Venus,* you loved with your hands,",
+        "your routines, your Sunday mornings.",
+        "So the quiet feels *loud* now.",
+        "Go slow. Slow is how you heal."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "VENUS · PLANET OF LOVE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *miss* them and still move on.",
+        "My loyalty belongs to *me* now.",
+        "Even fixed ground can *grow* again."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

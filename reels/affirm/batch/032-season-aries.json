@@ -1,0 +1,100 @@
+{
+  "id": "032-season-aries",
+  "title": "Aries season in love",
+  "cover": "*Aries* season: go first",
+  "keyword": "CHART",
+  "caption": "the zodiac's new year starts now. send the text, ask the question, go first",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "ariesseason",
+    "aries",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☉",
+        "planetSign": "aries",
+        "planetAt": 1
+      },
+      "header": "ARIES SEASON · MAR 21 – APR 19",
+      "lines": [
+        "The zodiac's new year isn't in *January.*",
+        "It starts when the Sun enters *Aries,*",
+        "the very first sign."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☉ THE SUN · IN ARIES"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "RULED BY MARS",
+      "lines": [
+        "And Aries is ruled by *Mars.*",
+        "So for a month, the sky asks everyone",
+        "the same two things.",
+        "What do you *want?*",
+        "And will you go *first?*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "THE FIRST MOVE",
+      "lines": [
+        "Send the text.",
+        "Ask the question.",
+        "Say the *brave* thing plainly."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *begin* again, any time.",
+        "My courage is a kind of *love.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

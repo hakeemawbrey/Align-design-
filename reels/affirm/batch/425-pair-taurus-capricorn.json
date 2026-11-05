@@ -1,0 +1,91 @@
+{
+  "id": "425-pair-taurus-capricorn",
+  "title": "Taurus and Capricorn",
+  "cover": "Taurus + Capricorn · *trine*",
+  "keyword": "MATCH",
+  "caption": "built like a house, not a firework. schedule the tenderness too",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "taurus",
+    "capricorn",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "TAURUS · CAPRICORN",
+      "lines": [
+        "Built like a *house,* not a firework.",
+        "That's Taurus and Capricorn."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "capricorn"
+        ],
+        "pairAt": 1
+      },
+      "header": "TRINE · 120° · EARTH",
+      "lines": [
+        "Earth and earth, four signs apart:",
+        "a *trine,* the easiest flow on the wheel.",
+        "You build at the *same* speed."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "earth"
+      },
+      "header": "CARDINAL · FIXED",
+      "lines": [
+        "Cardinal Capricorn sets the *goal.*",
+        "Fixed Taurus makes sure you enjoy it.",
+        "The friction: all work, no *softness.*",
+        "Schedule the tenderness too."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "BUILT TO LAST",
+      "lines": [
+        "Slow is not *cold.*",
+        "Quiet is not *distant.*",
+        "I trust what we're *building.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

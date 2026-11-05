@@ -1,0 +1,87 @@
+{
+  "id": "180-mode-cardinal-mutable",
+  "title": "Cardinal and mutable",
+  "cover": "*Cardinal* and mutable",
+  "keyword": "MATCH",
+  "caption": "a cardinal sign and a mutable sign. one picks the destination, the other finds the way",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "cardinalsigns",
+    "mutablesigns",
+    "compatibility",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "CARDINAL · MUTABLE",
+      "lines": [
+        "One of you picks the *destination.*",
+        "The other finds the *way.*",
+        "That's a cardinal sign",
+        "in love with a mutable one."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "libra",
+          "sagittarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "OPEN AND CLOSE",
+      "lines": [
+        "Cardinal signs open the seasons.",
+        "Mutable signs *close* them,",
+        "turning one into the next.",
+        "So together, you hold both *ends:*",
+        "the bold start and the soft landing."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 0,
+          "text": "LIBRA · SAGITTARIUS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can lead without *pushing,*",
+        "and follow without losing *myself.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

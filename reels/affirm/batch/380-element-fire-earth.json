@@ -1,0 +1,77 @@
+{
+  "id": "380-element-fire-earth",
+  "title": "Fire and earth",
+  "cover": "*Fire* and earth in love",
+  "keyword": "MATCH",
+  "caption": "fire wants it now. earth wants it sure. together you get a hearth, a fire with walls",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "firesigns",
+    "earthsigns",
+    "compatibility",
+    "elements",
+    "astrology"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "earth"
+      },
+      "header": "FIRE · EARTH",
+      "lines": [
+        "Fire wants it *now.*",
+        "Earth wants it *sure.*",
+        "Put them together and you get a *hearth:*",
+        "a fire with walls around it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TWO DIFFERENT CLOCKS",
+      "lines": [
+        "Fire brings the spark",
+        "that gets earth out of the *house.*",
+        "Earth brings the patience",
+        "that turns a spark into a *home.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE HEARTH",
+      "lines": [
+        "Fire learns that slow isn't *cold.*",
+        "Earth learns that fast isn't *careless.*",
+        "And the fire you build together",
+        "keeps you warm for years."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "238-fear-sagittarius",
+  "title": "What a Sagittarius quietly fears",
+  "cover": "Sagittarius, not a *phase*",
+  "keyword": "MUTUAL",
+  "caption": "for the sagittarius who's always been somebody's best summer",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "sagittarius",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "Every Sagittarius has been someone's *best summer.*",
+        "The fun one. The *road trip.*",
+        "The story they tell at parties."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "THE QUIET FEAR · A CHAPTER",
+      "lines": [
+        "*Jupiter* made you big, bright, easy to love,",
+        "and you're scared that's all they see.",
+        "That you'll be someone's *phase*",
+        "and never their whole *life.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm not a *chapter.*",
+        "I deserve someone who wants",
+        "the *whole* story with me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

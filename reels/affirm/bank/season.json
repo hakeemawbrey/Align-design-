@@ -1,0 +1,382 @@
+[
+  {
+    "key": "season-aries",
+    "title": "Aries season in love",
+    "cover": "*Aries* season: go first",
+    "caption": "the zodiac's new year starts now. send the text, ask the question, go first",
+    "hashtags": ["ariesseason", "aries", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "☉", "planetSign": "aries", "planetAt": 1 },
+        "header": "ARIES SEASON · MAR 21 – APR 19",
+        "lines": ["The zodiac's new year isn't in *January.*", "It starts when the Sun enters *Aries,*", "the very first sign."],
+        "labels": [{ "on": "planet", "at": 1, "text": "☉ THE SUN · IN ARIES" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS",
+        "lines": ["And Aries is ruled by *Mars.*", "So for a month, the sky asks everyone", "the same two things.", "What do you *want?*", "And will you go *first?*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "THE FIRST MOVE",
+        "lines": ["Send the text.", "Ask the question.", "Say the *brave* thing plainly."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can *begin* again, any time.", "My courage is a kind of *love.*"]
+      }
+    ]
+  },
+  {
+    "key": "season-taurus",
+    "title": "Taurus season in love",
+    "cover": "*Taurus* season: slow down",
+    "caption": "for a month the sky wants long dinners, warm hands and nobody checking their phone",
+    "hashtags": ["taurusseason", "taurus", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS SEASON · APR 20 – MAY 20",
+        "lines": ["Everyone you love is about to slow *down.*", "The Sun is in *Taurus,*", "the sign of the senses."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "mint" },
+        "header": "RULED BY VENUS",
+        "lines": ["Taurus is ruled by *Venus,*", "so love this month is less about words", "and more about *being* there.", "Long dinners. Warm hands. Staying in."],
+        "labels": [{ "on": "planet", "at": 0, "text": "♀ VENUS · THE SENSES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need *fireworks.*", "I want something steady", "that feels good every single *day.*"]
+      }
+    ]
+  },
+  {
+    "key": "season-gemini",
+    "title": "Gemini season in love",
+    "cover": "*Gemini* season: say it",
+    "caption": "your phone's about to get busy. gemini season wants you to flirt like it's a conversation",
+    "hashtags": ["geminiseason", "gemini", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI SEASON · MAY 21 – JUN 20",
+        "lines": ["Your phone is about to get *busier.*", "The Sun is in *Gemini,*", "and everyone wants to talk."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "lilac" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Gemini is ruled by *Mercury,*", "planet of words and messages.", "So this month asks one thing of love:", "say it in *words.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "ASK A BETTER QUESTION",
+        "lines": ["Ask what they're reading.", "Ask what they *meant.*", "Flirt like it's a conversation,", "because it *is.*"],
+        "labels": [{ "on": "thread", "at": 1, "text": "☿ · WORDS BOTH WAYS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Curious is a *good* look on me.", "Love can be *light*", "and still mean everything."]
+      }
+    ]
+  },
+  {
+    "key": "season-cancer",
+    "title": "Cancer season in love",
+    "cover": "*Cancer* season: let them in",
+    "caption": "cancer season starts on the solstice and suddenly everyone wants to go home. let someone in",
+    "hashtags": ["cancerseason", "cancer", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "☉", "planetSign": "cancer", "planetAt": 1 },
+        "header": "CANCER SEASON · JUN 21 – JUL 22",
+        "lines": ["Cancer season opens on the *solstice.*", "The Sun moves into the sign of *home,*", "and everyone starts looking for theirs."],
+        "labels": [{ "on": "planet", "at": 1, "text": "☉ THE SUN · IN CANCER" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "RULED BY THE MOON",
+        "lines": ["Cancer is ruled by the *Moon.*", "So feelings sit closer to the surface.", "Old songs hit harder.", "Someone from before might *call.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can let someone *in.*", "My soft side is safe with me,", "and I choose who *else* gets it."]
+      }
+    ]
+  },
+  {
+    "key": "season-leo",
+    "title": "Leo season in love",
+    "cover": "*Leo* season: be seen",
+    "caption": "the sun is home for a month. sing the bad karaoke. say i love you where people can hear",
+    "hashtags": ["leoseason", "leo", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "LEO SEASON · JUL 23 – AUG 22",
+        "lines": ["For one month a year, the Sun is *home.*", "It rules Leo, and while it's there,", "it's at its *strongest.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "☉ THE SUN · IN ITS OWN SIGN" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · FIXED FIRE",
+        "lines": ["So this month, love wants to be *seen.*", "Big gestures. Bad karaoke.", "Saying I love you in *public.*", "Being proud of who you're with."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be loud about my *love.*", "Joy is never *too* much."]
+      }
+    ]
+  },
+  {
+    "key": "season-virgo",
+    "title": "Virgo season in love",
+    "cover": "*Virgo* season: small things",
+    "caption": "this is the month love does the dishes. notice who makes the coffee",
+    "hashtags": ["virgoseason", "virgo", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO SEASON · AUG 23 – SEP 22",
+        "lines": ["This is the month love does the *dishes.*", "The Sun moves into *Virgo,*", "the sign of care in small things."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "planet": "☉", "planetSign": "virgo", "planetAt": 0, "highlight": 6, "highlightAt": 1 },
+        "header": "VIRGO · THE SIXTH SIGN",
+        "lines": ["Virgo is the *sixth* sign,", "tied to the house of daily life.", "So this month, love lives in the *routine.*", "The coffee made. The ride offered."],
+        "labels": [{ "on": "planet", "at": 0, "text": "☉ THE SUN · IN VIRGO" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Small things are *big* things.", "I notice how I'm loved,", "and it doesn't need to be *perfect.*"]
+      }
+    ]
+  },
+  {
+    "key": "season-libra",
+    "title": "Libra season in love",
+    "cover": "*Libra* season: is it fair",
+    "caption": "libra season starts when day and night are equal. good month to check if your love is too",
+    "hashtags": ["libraseason", "libra", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "☉", "planetSign": "libra", "planetAt": 1, "highlight": 7, "highlightAt": 2 },
+        "header": "LIBRA SEASON · SEP 23 – OCT 22",
+        "lines": ["Libra season begins when day and night are *equal.*", "The Sun enters the seventh sign,", "the sign of *partners.*"],
+        "labels": [
+          { "on": "planet", "at": 1, "text": "☉ THE SUN · IN LIBRA" },
+          { "on": "h7", "at": 2, "text": "7TH HOUSE · PARTNERS" }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "RULED BY VENUS",
+        "lines": ["And Libra is ruled by *Venus.*", "So love asks one question.", "Is this *fair?*", "Am I giving as much as I *get?*", "Am I getting as much as I give?"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Love should *balance.*", "I meet people halfway,", "and I let them meet *me.*"]
+      }
+    ]
+  },
+  {
+    "key": "season-scorpio",
+    "title": "Scorpio season in love",
+    "cover": "*Scorpio* season: go deeper",
+    "caption": "no one wants small talk this month. say the true thing and watch who leans in",
+    "hashtags": ["scorpioseason", "scorpio", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO SEASON · OCT 23 – NOV 21",
+        "lines": ["This is the month no one wants small *talk.*", "The Sun is in *Scorpio,*", "the sign of what's under the surface."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "lilac" },
+        "header": "MARS AND PLUTO",
+        "lines": ["Ruled by Mars and *Pluto,*", "Scorpio wants the real thing.", "So the sky asks everyone:", "what have you been not *saying?*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "♂ MARS · DESIRE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE TRUE THING",
+        "lines": ["Say the *true* thing this month.", "Let someone see the deep end.", "The ones worth keeping", "will lean *closer.*"]
+      }
+    ]
+  },
+  {
+    "key": "season-sagittarius",
+    "title": "Sagittarius season in love",
+    "cover": "*Sagittarius* season: say yes",
+    "caption": "book the trip, tell the truth kindly, and let love have a little more sky this month",
+    "hashtags": ["sagittariusseason", "sagittarius", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "☉", "planetSign": "sagittarius", "planetAt": 1 },
+        "header": "SAGITTARIUS · NOV 22 – DEC 21",
+        "lines": ["Say *yes* now. Plan later.", "The Sun is in *Sagittarius,*", "the archer, aiming far."],
+        "labels": [{ "on": "planet", "at": 1, "text": "☉ THE SUN · IN SAGITTARIUS" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER",
+        "lines": ["It's ruled by *Jupiter,*", "the planet that turns everything *up.*", "Hope gets bigger.", "Honesty gets *bigger* too."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": ["So this month asks for *freedom*", "inside your love, not away from it.", "A trip together. A new idea.", "A truth said *kindly.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Love can be an *adventure.*", "I'll be honest, and I'll be *kind.*"]
+      }
+    ]
+  },
+  {
+    "key": "season-capricorn",
+    "title": "Capricorn season in love",
+    "cover": "*Capricorn* season: no maybes",
+    "caption": "the year ends in capricorn season and so do the maybes. who actually showed up?",
+    "hashtags": ["capricornseason", "capricorn", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "CAPRICORN · DEC 22 – JAN 19",
+        "lines": ["The year ends in *Capricorn* season,", "and so do the *maybes.*", "It's ruled by Saturn,", "the planet of time and promises."],
+        "labels": [{ "on": "planet", "at": 2, "text": "♄ SATURN · TIME" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "planet": "☉", "planetSign": "capricorn", "planetAt": 0 },
+        "header": "THE SUN IN CAPRICORN",
+        "lines": ["With the Sun in the sign of *building,*", "love gets serious.", "Who actually showed up this *year?*", "What are you two *making?*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "☉ THE SUN · IN CAPRICORN" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want love I can *count* on.", "I can ask where this is *going*", "and expect a real answer."]
+      }
+    ]
+  },
+  {
+    "key": "season-aquarius",
+    "title": "Aquarius season in love",
+    "cover": "*Aquarius* season: friends first",
+    "caption": "this month the best love looks a lot like friendship. room to be odd, and still come back",
+    "hashtags": ["aquariusseason", "aquarius", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · JAN 20 – FEB 18",
+        "lines": ["This month, the best love looks like *friendship.*", "The Sun is in *Aquarius,*", "the water bearer,", "pouring something new for everyone."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "AN AIR SIGN",
+        "lines": ["It's an air sign, so love needs *room.*", "Room to think. Room to be *odd.*", "Room to have a life of your own", "and still come *back.*"],
+        "labels": [{ "on": "element", "at": 0, "text": "AIR · THE MIND" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My partner can be my *friend.*", "My freedom and my love", "can live in the same *house.*"]
+      }
+    ]
+  },
+  {
+    "key": "season-pisces",
+    "title": "Pisces season in love",
+    "cover": "*Pisces* season: let it go",
+    "caption": "the last sign before the zodiac starts again. forgive, cry at the film, go in with empty hands",
+    "hashtags": ["piscesseason", "pisces", "zodiacseason", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "☉", "planetSign": "pisces", "planetAt": 1 },
+        "header": "PISCES SEASON · FEB 19 – MAR 20",
+        "lines": ["The twelfth sign is the *softest* one.", "Pisces, the last stop", "before the zodiac starts *again.*"],
+        "labels": [{ "on": "planet", "at": 1, "text": "☉ THE SUN · IN PISCES" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["So this month asks everyone to *forgive.*", "Not to forget. To forgive,", "and let the old year go out with the *tide.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "LET IT GO OUT",
+        "lines": ["Close what needs closing, *gently.*", "Write the letter you won't send.", "Then walk into the new year", "with *empty* hands, ready to hold something."]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1050 @@
+[
+  {
+    "key": "rising-aries",
+    "title": "Aries rising",
+    "cover": "Aries rising wants an *equal*",
+    "caption": "you walk in first. your libra seventh house is quietly hoping someone meets you halfway",
+    "hashtags": [
+      "ariesrising",
+      "7thhouse",
+      "descendant",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aries"
+        },
+        "header": "ARIES RISING · HOW YOU ARRIVE",
+        "lines": [
+          "You walk into every room *first.*",
+          "That's your Aries rising.",
+          "Quick, bold, already halfway in.",
+          "People assume you need *no one.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 1,
+            "text": "ARIES · CARDINAL FIRE"
+          }
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 1,
+          "axis": true,
+          "axisAt": 2,
+          "rising": "aries"
+        },
+        "header": "YOUR SEVENTH HOUSE · LIBRA",
+        "lines": [
+          "But look across your chart.",
+          "Your seventh house, the house of *partners,*",
+          "sits in *Libra.*"
+        ],
+        "labels": [
+          {
+            "on": "h7",
+            "at": 1,
+            "text": "7TH HOUSE · PARTNERS"
+          },
+          {
+            "on": "dsc",
+            "at": 2,
+            "text": "DESCENDANT · LIBRA"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "libra"
+        },
+        "header": "LIBRA · WHAT YOU'RE DRAWN TO",
+        "lines": [
+          "So you're drawn to the one",
+          "who *slows* you down",
+          "and asks what you think.",
+          "Not to tame you. To *meet* you."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can lead and still be *met.*",
+          "Love isn't a race I win.",
+          "It's a door we *both* walk through."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-taurus",
+    "title": "Taurus rising",
+    "cover": "Taurus rising craves *depth*",
+    "caption": "taurus rising makes everyone calm. your scorpio seventh house wants someone who isn't fooled by it",
+    "hashtags": [
+      "taurusrising",
+      "scorpio",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "taurus"
+        },
+        "header": "TAURUS RISING · FIXED EARTH",
+        "lines": [
+          "People relax the second you *arrive.*",
+          "Taurus rising does that.",
+          "Soft voice, steady hands,",
+          "a calm they can *lean* on."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 1,
+          "axis": true,
+          "axisAt": 0,
+          "rising": "taurus"
+        },
+        "header": "YOUR SEVENTH HOUSE · SCORPIO",
+        "lines": [
+          "But directly *opposite* your rising,",
+          "your seventh house is in *Scorpio.*",
+          "And Scorpio doesn't do *calm.*",
+          "It does *depth.*"
+        ],
+        "labels": [
+          {
+            "on": "dsc",
+            "at": 0,
+            "text": "DESCENDANT · OPPOSITE YOU"
+          },
+          {
+            "on": "h7",
+            "at": 1,
+            "text": "7TH HOUSE · PARTNERS"
+          }
+        ]
+      },
+      {
+        "art": "elements",
+        "opts": {
+          "element": "earth",
+          "second": "water"
+        },
+        "header": "EARTH · WATER",
+        "lines": [
+          "So you fall for intensity.",
+          "Someone who looks *straight* past",
+          "the easy version of you",
+          "and asks for the whole *truth.*"
+        ],
+        "labels": [
+          {
+            "on": "element",
+            "at": 0,
+            "text": "SCORPIO · FIXED WATER"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be safe and still be *seen.*",
+          "Someone can know all of me",
+          "and *stay.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-gemini",
+    "title": "Gemini rising",
+    "cover": "Gemini rising wants the *why*",
+    "caption": "you can talk to anyone. you only fall for the one who turns the talk into somewhere to go",
+    "hashtags": [
+      "geminirising",
+      "sagittarius",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 1
+        },
+        "header": "GEMINI RISING · MUTABLE AIR",
+        "lines": [
+          "You can talk to *anyone* for an hour.",
+          "Gemini rising makes you easy to meet.",
+          "Quick, funny, *curious,*",
+          "ten threads going at once."
+        ],
+        "labels": [
+          {
+            "on": "thread",
+            "at": 1,
+            "text": "GEMINI RISING · TALK"
+          }
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 0,
+          "axis": true,
+          "axisAt": 1,
+          "rising": "gemini"
+        },
+        "header": "THE SEVENTH HOUSE · SAGITTARIUS",
+        "lines": [
+          "Your seventh house, opposite your rising,",
+          "falls in *Sagittarius.*",
+          "The sign of the long road",
+          "and the *big* question."
+        ],
+        "labels": [
+          {
+            "on": "h7",
+            "at": 0,
+            "text": "7TH HOUSE · PARTNERS"
+          },
+          {
+            "on": "dsc",
+            "at": 1,
+            "text": "DESCENDANT · 180°"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "sagittarius"
+        },
+        "header": "SAGITTARIUS · WHAT PULLS YOU",
+        "lines": [
+          "So small talk never *holds* you.",
+          "The one who keeps you asks *why,*",
+          "and turns a chat into a *trip.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "Clever isn't *enough* for me.",
+          "I want a love that *goes* somewhere."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-cancer",
+    "title": "Cancer rising",
+    "cover": "Cancer rising needs *steady*",
+    "caption": "you look after the whole room. your capricorn seventh house wants someone who looks after you",
+    "hashtags": [
+      "cancerrising",
+      "capricorn",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "cancer"
+        },
+        "header": "CANCER RISING · CARDINAL WATER",
+        "lines": [
+          "You notice who's cold before *they* do.",
+          "That's Cancer rising.",
+          "Soft eyes, a careful shell,",
+          "a blanket for everyone *but* you."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 1,
+          "axis": true,
+          "axisAt": 0,
+          "rising": "cancer"
+        },
+        "header": "YOUR SEVENTH HOUSE · CAPRICORN",
+        "lines": [
+          "Directly across the sky from that,",
+          "your seventh house is *Capricorn.*",
+          "Steady, patient, built to *last.*"
+        ],
+        "labels": [
+          {
+            "on": "asc",
+            "at": 0,
+            "text": "RISING · YOUR SHELL"
+          },
+          {
+            "on": "h7",
+            "at": 1,
+            "text": "7TH HOUSE · PARTNERS"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♄",
+          "tone": "lilac",
+          "ring": true
+        },
+        "header": "CAPRICORN · RULED BY SATURN",
+        "lines": [
+          "Ruled by Saturn, the planet of *time.*",
+          "So the one who wins you",
+          "isn't the loudest in the room.",
+          "It's the one who *shows up,*",
+          "and *stays.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be held, not just *holding.*",
+          "Some days, I get to *lean.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-leo",
+    "title": "Leo rising",
+    "cover": "Leo rising falls for a *friend*",
+    "caption": "leo rising lights up the room. your aquarius seventh house falls for the one who isn't dazzled",
+    "hashtags": [
+      "leorising",
+      "aquarius",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "leo"
+        },
+        "header": "LEO RISING · FIXED FIRE",
+        "lines": [
+          "Rooms get *warmer* when you walk in.",
+          "Leo rising, the sun on your face.",
+          "Everyone expects the *show.*"
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 0,
+          "axis": true,
+          "axisAt": 1,
+          "rising": "leo"
+        },
+        "header": "YOUR SEVENTH HOUSE · AQUARIUS",
+        "lines": [
+          "But your seventh house, the one of *partners,*",
+          "sits opposite, in *Aquarius.*"
+        ],
+        "labels": [
+          {
+            "on": "h7",
+            "at": 0,
+            "text": "7TH HOUSE · PARTNERS"
+          },
+          {
+            "on": "dsc",
+            "at": 1,
+            "text": "DESCENDANT · 180° AWAY"
+          }
+        ]
+      },
+      {
+        "art": "elements",
+        "opts": {
+          "element": "fire",
+          "second": "air"
+        },
+        "header": "FIRE · AIR",
+        "lines": [
+          "Cool air across from your *fire.*",
+          "So the one who gets you",
+          "isn't the one *clapping.*",
+          "It's the friend who's not impressed",
+          "and likes you *anyway.*"
+        ],
+        "labels": [
+          {
+            "on": "element",
+            "at": 0,
+            "text": "FIRE NEEDS AIR"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to *perform*",
+          "to be loved.",
+          "The *real* me is enough of a show."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-virgo",
+    "title": "Virgo rising",
+    "cover": "Virgo rising needs *softness*",
+    "caption": "you look like you have it handled. your pisces seventh house wants someone who doesn't need you to",
+    "hashtags": [
+      "virgorising",
+      "pisces",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 2,
+          "axis": true,
+          "axisAt": 3,
+          "rising": "virgo"
+        },
+        "header": "VIRGO RISING · THE OTHER SIDE",
+        "lines": [
+          "You look like you have it *handled.*",
+          "Virgo rising: neat, quick, precise.",
+          "But your seventh house,",
+          "straight across the chart, is *Pisces.*"
+        ],
+        "labels": [
+          {
+            "on": "asc",
+            "at": 1,
+            "text": "RISING · HOW YOU ARRIVE"
+          },
+          {
+            "on": "h7",
+            "at": 2,
+            "text": "7TH HOUSE · PARTNERS"
+          },
+          {
+            "on": "dsc",
+            "at": 3,
+            "text": "DESCENDANT · OPPOSITE YOU"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "pisces"
+        },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": [
+          "The sign of the *soft* edge,",
+          "the dream, the second chance.",
+          "So you're drawn to gentleness.",
+          "Someone who doesn't need you *perfect*",
+          "to need you."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can put the *list* down.",
+          "I'm loved in my *mess* too,",
+          "not just after I fix it."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-libra",
+    "title": "Libra rising",
+    "cover": "Libra rising likes it *direct*",
+    "caption": "libra rising keeps the peace. your aries seventh house falls for the one who just says it",
+    "hashtags": [
+      "librarising",
+      "aries",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "libra"
+        },
+        "header": "LIBRA RISING · CARDINAL AIR",
+        "lines": [
+          "Everyone likes you within a *minute.*",
+          "Libra rising: *grace* on arrival,",
+          "always the one keeping the peace."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 0,
+          "axis": true,
+          "axisAt": 1,
+          "rising": "libra"
+        },
+        "header": "YOUR SEVENTH HOUSE · ARIES",
+        "lines": [
+          "Across your chart, in the house of *partners,*",
+          "sits *Aries.*",
+          "The sign that just says it."
+        ],
+        "labels": [
+          {
+            "on": "h7",
+            "at": 0,
+            "text": "7TH HOUSE · PARTNERS"
+          },
+          {
+            "on": "dsc",
+            "at": 1,
+            "text": "DESCENDANT · OPPOSITE YOU"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 1
+        },
+        "header": "WHAT YOU'RE DRAWN TO",
+        "lines": [
+          "So you melt for the *direct* ones.",
+          "The one who asks you out first,",
+          "who'd rather fight *fair*",
+          "than smile and drift away."
+        ],
+        "labels": [
+          {
+            "on": "thread",
+            "at": 1,
+            "text": "180° · LIBRA TO ARIES"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to *want* things.",
+          "Out loud, and first.",
+          "Peace that costs me isn't *peace.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-scorpio",
+    "title": "Scorpio rising",
+    "cover": "Scorpio rising craves *calm*",
+    "caption": "people tell scorpio rising everything. your taurus seventh house just wants someone with nothing to hide",
+    "hashtags": [
+      "scorpiorising",
+      "taurus",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "scorpio"
+        },
+        "header": "SCORPIO RISING · FIXED WATER",
+        "lines": [
+          "People tell you things they've told *no one.*",
+          "Scorpio rising: that *look,*",
+          "the guard you never quite drop."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 1,
+          "axis": true,
+          "axisAt": 0,
+          "rising": "scorpio"
+        },
+        "header": "YOUR SEVENTH HOUSE · TAURUS",
+        "lines": [
+          "But opposite your rising,",
+          "your seventh house is in *Taurus.*",
+          "Slow, warm, and *unbothered.*"
+        ],
+        "labels": [
+          {
+            "on": "asc",
+            "at": 0,
+            "text": "RISING · THE GUARD"
+          },
+          {
+            "on": "h7",
+            "at": 1,
+            "text": "7TH HOUSE · PARTNERS"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "taurus"
+        },
+        "header": "TAURUS · WHAT CALMS YOU",
+        "lines": [
+          "So the one you trust isn't a *puzzle.*",
+          "It's someone *simple* in the best way.",
+          "Same time, same table,",
+          "nothing to decode."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "Calm isn't *boring.*",
+          "It's what *safe* feels like.",
+          "I can let my guard rest."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-sagittarius",
+    "title": "Sagittarius rising",
+    "cover": "Sagittarius rising wants *wit*",
+    "caption": "one foot out the door, always. your gemini seventh house is who you turn around for",
+    "hashtags": [
+      "sagittariusrising",
+      "gemini",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "sagittarius"
+        },
+        "header": "SAGITTARIUS RISING · FIRE",
+        "lines": [
+          "You arrive like the trip already *started.*",
+          "Sagittarius rising: bright, blunt, *restless,*",
+          "one foot out the door."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 1,
+          "axis": true,
+          "axisAt": 0,
+          "rising": "sagittarius"
+        },
+        "header": "YOUR SEVENTH HOUSE · GEMINI",
+        "lines": [
+          "The door you keep coming back through",
+          "is your seventh house, in *Gemini.*",
+          "Right across the sky from you."
+        ],
+        "labels": [
+          {
+            "on": "dsc",
+            "at": 0,
+            "text": "DESCENDANT · THE WAY BACK"
+          },
+          {
+            "on": "h7",
+            "at": 1,
+            "text": "7TH HOUSE · PARTNERS"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "mint"
+        },
+        "header": "GEMINI · RULED BY MERCURY",
+        "lines": [
+          "So you stay for the *curious* one.",
+          "The one with a question back,",
+          "a joke at midnight,",
+          "a reason to stay *in* tonight."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "☿ MERCURY · THE TALKER"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "COMPANY FOR THE ROAD",
+        "lines": [
+          "You don't need someone to *slow* you down.",
+          "You need someone who wants to come *along.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-capricorn",
+    "title": "Capricorn rising",
+    "cover": "Capricorn rising needs *warmth*",
+    "caption": "capricorn rising was a grown-up at nine. your cancer seventh house wants someone who lets you be small",
+    "hashtags": [
+      "capricornrising",
+      "cancer",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "capricorn"
+        },
+        "header": "CAPRICORN RISING · EARTH",
+        "lines": [
+          "You seemed grown-up at *nine.*",
+          "Capricorn rising: composed, *capable,*",
+          "the one everyone asks to handle it."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 1,
+          "axis": true,
+          "axisAt": 0,
+          "rising": "capricorn"
+        },
+        "header": "YOUR SEVENTH HOUSE · CANCER",
+        "lines": [
+          "Flip the chart around,",
+          "and your seventh house is *Cancer.*",
+          "The sign of home.",
+          "The *soft* inside of the shell."
+        ],
+        "labels": [
+          {
+            "on": "dsc",
+            "at": 0,
+            "text": "DESCENDANT · OPPOSITE YOU"
+          },
+          {
+            "on": "h7",
+            "at": 1,
+            "text": "7TH HOUSE · PARTNERS"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☽",
+          "tone": "lilac"
+        },
+        "header": "CANCER · RULED BY THE MOON",
+        "lines": [
+          "So the one you fall for",
+          "remembers how you take your *tea,*",
+          "asks if you've *eaten,*",
+          "and lets you be small sometimes."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to earn *rest.*",
+          "Someone can take care of me,",
+          "and I can *let* them."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-aquarius",
+    "title": "Aquarius rising",
+    "cover": "Aquarius rising falls for *fire*",
+    "caption": "aquarius rising is everyone's friend. your leo seventh house wants someone who makes a fuss about you",
+    "hashtags": [
+      "aquariusrising",
+      "leo",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aquarius"
+        },
+        "header": "AQUARIUS RISING · FIXED AIR",
+        "lines": [
+          "You're everyone's friend and no one's *project.*",
+          "Aquarius rising: *cool,* kind,",
+          "a little bit from somewhere else."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 0,
+          "axis": true,
+          "axisAt": 1,
+          "rising": "aquarius"
+        },
+        "header": "YOUR SEVENTH HOUSE · LEO",
+        "lines": [
+          "Then there's your seventh house,",
+          "sitting opposite you, in *Leo.*",
+          "All fire, all *heart.*"
+        ],
+        "labels": [
+          {
+            "on": "h7",
+            "at": 0,
+            "text": "7TH HOUSE · PARTNERS"
+          },
+          {
+            "on": "dsc",
+            "at": 1,
+            "text": "DESCENDANT · 180° AWAY"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☉",
+          "tone": "gold"
+        },
+        "header": "LEO · RULED BY THE SUN",
+        "lines": [
+          "So it's the *warm* ones who get you.",
+          "The one who says it *out loud,*",
+          "makes a fuss on your birthday,",
+          "and means every word."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☉ THE SUN · WARMTH"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "orbit"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to be *adored.*",
+          "Being different doesn't mean",
+          "I have to be *alone.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "rising-pisces",
+    "title": "Pisces rising",
+    "cover": "Pisces rising needs an *anchor*",
+    "caption": "you feel the whole room. your virgo seventh house falls for whoever remembers the train time",
+    "hashtags": [
+      "piscesrising",
+      "virgo",
+      "7thhouse",
+      "risingsign",
+      "astrology"
+    ],
+    "keyword": "SEVEN",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "pisces"
+        },
+        "header": "PISCES RISING · MUTABLE WATER",
+        "lines": [
+          "You walk in and *feel* the whole room.",
+          "Pisces rising: soft focus, wide eyes,",
+          "a mood you picked up at the door."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "highlight": 7,
+          "highlightAt": 1,
+          "axis": true,
+          "axisAt": 0,
+          "rising": "pisces"
+        },
+        "header": "YOUR SEVENTH HOUSE · VIRGO",
+        "lines": [
+          "Opposite that, your seventh house",
+          "is in *Virgo,* the sign of care",
+          "you can actually *see.*"
+        ],
+        "labels": [
+          {
+            "on": "dsc",
+            "at": 0,
+            "text": "DESCENDANT · OPPOSITE YOU"
+          },
+          {
+            "on": "h7",
+            "at": 1,
+            "text": "7TH HOUSE · PARTNERS"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "virgo"
+        },
+        "header": "VIRGO · LOVE IN THE DETAILS",
+        "lines": [
+          "So you fall for the one who *notices.*",
+          "Who fixes the latch,",
+          "remembers the train time,",
+          "and shows love in *small* repairs."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SOMEONE STEADY",
+        "lines": [
+          "You were made to *drift.*",
+          "Let someone *steady* keep the porch light on."
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "id": "209-rising-sagittarius",
+  "title": "Sagittarius rising",
+  "cover": "Sagittarius rising wants *wit*",
+  "keyword": "SEVEN",
+  "caption": "one foot out the door, always. your gemini seventh house is who you turn around for",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "sagittariusrising",
+    "gemini",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS RISING · FIRE",
+      "lines": [
+        "You arrive like the trip already *started.*",
+        "Sagittarius rising: bright, blunt, *restless,*",
+        "one foot out the door."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1,
+        "axis": true,
+        "axisAt": 0,
+        "rising": "sagittarius"
+      },
+      "header": "YOUR SEVENTH HOUSE · GEMINI",
+      "lines": [
+        "The door you keep coming back through",
+        "is your seventh house, in *Gemini.*",
+        "Right across the sky from you."
+      ],
+      "labels": [
+        {
+          "on": "dsc",
+          "at": 0,
+          "text": "DESCENDANT · THE WAY BACK"
+        },
+        {
+          "on": "h7",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "GEMINI · RULED BY MERCURY",
+      "lines": [
+        "So you stay for the *curious* one.",
+        "The one with a question back,",
+        "a joke at midnight,",
+        "a reason to stay *in* tonight."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☿ MERCURY · THE TALKER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "COMPANY FOR THE ROAD",
+      "lines": [
+        "You don't need someone to *slow* you down.",
+        "You need someone who wants to come *along.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

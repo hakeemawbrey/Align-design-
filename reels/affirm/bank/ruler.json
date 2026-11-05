@@ -1,0 +1,858 @@
+[
+  {
+    "key": "ruler-aries",
+    "title": "Aries is ruled by Mars",
+    "cover": "Aries, ruled by *Mars*",
+    "caption": "mars doesn't wait to be asked. neither do you, and that was never a flaw",
+    "hashtags": [
+      "aries",
+      "mars",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♂",
+          "tone": "rose"
+        },
+        "header": "ARIES · RULED BY MARS",
+        "lines": [
+          "Aries is ruled by the planet of *war.*",
+          "But Mars isn't really about fighting.",
+          "It's about *wanting* something",
+          "enough to move."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "♂ MARS · DRIVE AND DESIRE"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aries"
+        },
+        "header": "ARIES · CARDINAL FIRE",
+        "lines": [
+          "So when you love, you *go.*",
+          "You text first. You plan the date.",
+          "You'd stand between them and anything.",
+          "Waiting feels like *wasting* it."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My heat is not too *much.*",
+          "I can want out loud",
+          "and still be *gentle.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-taurus",
+    "title": "Taurus is ruled by Venus",
+    "cover": "Taurus got Venus's *senses*",
+    "caption": "libra got venus's manners. taurus got the warm bread, the clean sheets and the long stay",
+    "hashtags": [
+      "taurus",
+      "venus",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "venus",
+        "opts": {},
+        "header": "TAURUS · RULED BY VENUS",
+        "lines": [
+          "Venus rules two signs.",
+          "Libra got her *manners.*",
+          "You got her *senses.*"
+        ],
+        "labels": [
+          {
+            "on": "glass",
+            "at": 0,
+            "text": "♀ VENUS · TAURUS AND LIBRA"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "taurus"
+        },
+        "header": "TAURUS · FIXED EARTH",
+        "lines": [
+          "So you love like a slow Sunday.",
+          "Warm bread, clean sheets,",
+          "a hand on the small of your *back.*",
+          "You don't rush love.",
+          "Once you choose, you *stay.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "Wanting *comfort* isn't lazy.",
+          "Love that feels good",
+          "is not love I have to *earn.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-gemini",
+    "title": "Gemini is ruled by Mercury",
+    "cover": "Gemini, ruled by the *messenger*",
+    "caption": "for a gemini, a voice note can count as a kiss. blame mercury",
+    "hashtags": [
+      "gemini",
+      "mercury",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "lilac"
+        },
+        "header": "GEMINI · RULED BY MERCURY",
+        "lines": [
+          "Gemini, your ruler is the *messenger.*",
+          "Mercury, the fastest planet,",
+          "the god of words and roads."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "☿ MERCURY · THE MIND"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "gemini"
+        },
+        "header": "GEMINI · MUTABLE AIR",
+        "lines": [
+          "So for you, *talk* is touch.",
+          "A voice note can feel like a *kiss.*",
+          "You fall for the mind first,",
+          "then the person around it."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 0
+        },
+        "header": "WHEN IT GOES QUIET",
+        "lines": [
+          "And when the talk goes quiet,",
+          "you go quiet too.",
+          "Silence feels like a *door* closing."
+        ],
+        "labels": [
+          {
+            "on": "thread",
+            "at": 0,
+            "text": "☿ · THE LINE BETWEEN YOU"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My mind is a way I *love.*",
+          "I want someone who *answers.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-cancer",
+    "title": "Cancer is ruled by the Moon",
+    "cover": "Cancer, ruled by the *Moon*",
+    "caption": "your love has tides, cancer. some nights the shell, some nights the hug. both are honest",
+    "hashtags": [
+      "cancer",
+      "moon",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": {
+          "lit": 4,
+          "litAt": 2
+        },
+        "header": "CANCER · RULED BY THE MOON",
+        "lines": [
+          "Only one sign is ruled by the *Moon.*",
+          "And it's yours.",
+          "She changes shape every night",
+          "and still comes *back.*"
+        ],
+        "labels": [
+          {
+            "on": "moon",
+            "at": 2,
+            "text": "☽ THE MOON · YOUR RULER"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "cancer"
+        },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": [
+          "So your love has *tides.*",
+          "Some nights you want to be *held.*",
+          "Some nights you want your shell.",
+          "Both are you. Both are *honest.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My moods are not a *mess.*",
+          "They're a moon, in phases.",
+          "I deserve someone who learns my *sky.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-leo",
+    "title": "Leo is ruled by the Sun",
+    "cover": "Leo, ruled by a *star*",
+    "caption": "the sun doesn't dim so the planets feel bigger. neither should you, leo",
+    "hashtags": [
+      "leo",
+      "sun",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☉",
+          "tone": "gold"
+        },
+        "header": "LEO · RULED BY THE SUN",
+        "lines": [
+          "You're the only sign ruled by a *star.*",
+          "Leo, your ruler is the Sun,",
+          "the center everything else *circles.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "☉ THE SUN · THE HEART"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "leo"
+        },
+        "header": "LEO · FIXED FIRE",
+        "lines": [
+          "So you love like *daylight.*",
+          "Warm on everyone you face,",
+          "generous, loyal, a little dramatic,",
+          "and you need to *feel* it back."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "orbit"
+        },
+        "header": "DON'T DIM",
+        "lines": [
+          "The Sun doesn't *dim*",
+          "so the others can feel bigger.",
+          "Don't you either."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "Wanting to be *seen* is human.",
+          "I want a love",
+          "that's proud to stand in my *light.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-virgo",
+    "title": "Virgo is ruled by Mercury",
+    "cover": "Virgo, ruled by *Mercury*",
+    "caption": "same planet as gemini. in virgo, mercury stops texting about it and books the dentist for you",
+    "hashtags": [
+      "virgo",
+      "mercury",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "☿",
+          "planetSign": "virgo",
+          "planetAt": 2
+        },
+        "header": "VIRGO · RULED BY MERCURY",
+        "lines": [
+          "Same ruler as Gemini.",
+          "Completely different *love.*",
+          "Mercury is the planet of the *mind,*",
+          "and in Virgo, the mind gets to work."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 2,
+            "text": "☿ MERCURY · AT HOME IN VIRGO"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "virgo"
+        },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": [
+          "So you love in *details.*",
+          "You notice the cough, buy the tea,",
+          "remember the dentist on Thursday.",
+          "You *solve* things for people you love."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My care *counts* as love.",
+          "And I can let it come back",
+          "without earning it *first.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-libra",
+    "title": "Libra is ruled by Venus",
+    "cover": "Libra, ruled by *Venus*",
+    "caption": "you make people feel beautiful, libra. turn the mirror round once in a while",
+    "hashtags": [
+      "libra",
+      "venus",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♀",
+          "tone": "rose"
+        },
+        "header": "LIBRA · RULED BY VENUS",
+        "lines": [
+          "Libra, the brightest planet in the sky is *yours.*",
+          "Venus, planet of love and beauty.",
+          "In Libra, she rules the space between *two* people."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "♀ VENUS · AIR SIDE"
+          }
+        ]
+      },
+      {
+        "art": "venus",
+        "opts": {
+          "mirror": true,
+          "mirrorAt": 0
+        },
+        "header": "THE MIRROR",
+        "lines": [
+          "So you love like a *mirror.*",
+          "You see who someone could be",
+          "and *reflect* it back to them.",
+          "You make people feel beautiful."
+        ],
+        "labels": [
+          {
+            "on": "glass",
+            "at": 0,
+            "text": "♀ · THE HAND MIRROR"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "libra"
+        },
+        "header": "YOUR HALF OF THE PAIR",
+        "lines": [
+          "Just turn the mirror *round* sometimes.",
+          "There are two people in every pair you make.",
+          "One of them is *you.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-scorpio",
+    "title": "Scorpio is ruled by Mars and Pluto",
+    "cover": "Scorpio, ruled by *Mars* and Pluto",
+    "caption": "two rulers, both deep. you don't love halfway, scorpio, and you were never meant to",
+    "hashtags": [
+      "scorpio",
+      "mars",
+      "pluto",
+      "planetaryruler",
+      "astrology"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♂",
+          "tone": "lilac"
+        },
+        "header": "SCORPIO · MARS AND PLUTO",
+        "lines": [
+          "Your sign has two rulers,",
+          "and both of them go *deep.*",
+          "Mars, the old ruler, is *desire.*",
+          "Pluto, the new one, is *change.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 2,
+            "text": "♂ MARS · TRADITIONAL RULER"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "scorpio"
+        },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": [
+          "So you don't love *halfway.*",
+          "You want the whole person,",
+          "the locked drawer, the real story.",
+          "And once you're in, you're *in.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My depth is not a *danger.*",
+          "I can trust slowly",
+          "and still love *all* the way."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-sagittarius",
+    "title": "Sagittarius is ruled by Jupiter",
+    "cover": "Sagittarius, ruled by a *giant*",
+    "caption": "every other planet could fit inside jupiter. no wonder small love never fits you",
+    "hashtags": [
+      "sagittarius",
+      "jupiter",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♃",
+          "tone": "gold"
+        },
+        "header": "SAGITTARIUS · RULED BY JUPITER",
+        "lines": [
+          "Every other planet could fit inside your ruler.",
+          "Jupiter, the giant.",
+          "The planet of luck, faith and *more.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "♃ JUPITER · EXPANSION"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "sagittarius"
+        },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": [
+          "So you love *big.*",
+          "Big plans, big laughs, big honesty.",
+          "You'd book the flight tonight",
+          "if they said *yes.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 1
+        },
+        "header": "ROOM TO GROW",
+        "lines": [
+          "But Jupiter needs *room.*",
+          "Love that shrinks you",
+          "won't hold you long,",
+          "and that isn't a *flaw.*"
+        ],
+        "labels": [
+          {
+            "on": "thread",
+            "at": 1,
+            "text": "♃ · SPACE TO EXPAND"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be free and *faithful.*",
+          "The right love feels like *more* sky,",
+          "not less."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-capricorn",
+    "title": "Capricorn is ruled by Saturn",
+    "cover": "Capricorn, ruled by *Saturn*",
+    "caption": "saturn takes almost thirty years to go round once. you were always going to love slowly",
+    "hashtags": [
+      "capricorn",
+      "saturn",
+      "planetaryruler",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♄",
+          "tone": "lilac",
+          "ring": true
+        },
+        "header": "CAPRICORN · RULED BY SATURN",
+        "lines": [
+          "Your ruler takes almost thirty years",
+          "to circle the Sun *once.*",
+          "Saturn, the planet of *time.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 2,
+            "text": "♄ SATURN · COMMITMENT"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "capricorn"
+        },
+        "header": "CAPRICORN · CARDINAL EARTH",
+        "lines": [
+          "So you don't fall. You *build.*",
+          "Brick by brick, promise by promise.",
+          "You'd rather be *sure*",
+          "than be swept off your feet."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 1
+        },
+        "header": "WORTH THE WAIT",
+        "lines": [
+          "People call you slow to open.",
+          "But what you open, you *keep.*",
+          "Ten years in, you're still there."
+        ],
+        "labels": [
+          {
+            "on": "thread",
+            "at": 1,
+            "text": "♄ · THE LONG GAME"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My love is *built* to last.",
+          "And I can *rest* inside it."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-aquarius",
+    "title": "Aquarius is ruled by Saturn and Uranus",
+    "cover": "Aquarius: Saturn and *Uranus*",
+    "caption": "saturn's loyalty, uranus's lightning. you love for years and still won't fit in a cage",
+    "hashtags": [
+      "aquarius",
+      "saturn",
+      "uranus",
+      "planetaryruler",
+      "astrology"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♄",
+          "tone": "mint",
+          "ring": true
+        },
+        "header": "AQUARIUS · SATURN AND URANUS",
+        "lines": [
+          "Before Uranus was found, you belonged to *Saturn.*",
+          "So you got both.",
+          "Saturn's loyalty, Uranus's *lightning.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "♄ SATURN · TRADITIONAL RULER"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aquarius"
+        },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": [
+          "You love like a *principle.*",
+          "Steady, odd, completely your own.",
+          "You'll show up for years,",
+          "but never in a *cage.*"
+        ]
+      },
+      {
+        "art": "elements",
+        "opts": {
+          "element": "air"
+        },
+        "header": "FRIENDS FIRST",
+        "lines": [
+          "You need a *friend* inside the romance.",
+          "Space to think.",
+          "Someone who *gets* your mind."
+        ],
+        "labels": [
+          {
+            "on": "element",
+            "at": 1,
+            "text": "AIR · ROOM TO THINK"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be close and still be *free.*",
+          "My kind of love is *real* love."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ruler-pisces",
+    "title": "Pisces is ruled by Jupiter and Neptune",
+    "cover": "Pisces, ruled by the *sea*",
+    "caption": "jupiter and neptune both rule you. of course you love without edges, pisces",
+    "hashtags": [
+      "pisces",
+      "jupiter",
+      "neptune",
+      "planetaryruler",
+      "astrology"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♃",
+          "tone": "lilac"
+        },
+        "header": "PISCES · JUPITER AND NEPTUNE",
+        "lines": [
+          "Your old ruler is the *largest* planet.",
+          "Your new one is named for the *sea.*",
+          "Jupiter and Neptune.",
+          "No wonder you love without *edges.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "♃ JUPITER · OLD RULER"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "pisces"
+        },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": [
+          "You forgive before they *ask.*",
+          "You feel what they feel",
+          "like weather passing *through* you."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My softness is a *strength.*",
+          "I can love without *drowning,*",
+          "and still come back to *shore.*"
+        ]
+      }
+    ]
+  }
+]

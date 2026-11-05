@@ -1,0 +1,82 @@
+{
+  "id": "377-season-taurus",
+  "title": "Taurus season in love",
+  "cover": "*Taurus* season: slow down",
+  "keyword": "CHART",
+  "caption": "for a month the sky wants long dinners, warm hands and nobody checking their phone",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "taurusseason",
+    "taurus",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS SEASON · APR 20 – MAY 20",
+      "lines": [
+        "Everyone you love is about to slow *down.*",
+        "The Sun is in *Taurus,*",
+        "the sign of the senses."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "mint"
+      },
+      "header": "RULED BY VENUS",
+      "lines": [
+        "Taurus is ruled by *Venus,*",
+        "so love this month is less about words",
+        "and more about *being* there.",
+        "Long dinners. Warm hands. Staying in."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♀ VENUS · THE SENSES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need *fireworks.*",
+        "I want something steady",
+        "that feels good every single *day.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

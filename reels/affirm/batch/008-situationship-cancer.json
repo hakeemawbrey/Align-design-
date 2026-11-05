@@ -1,0 +1,82 @@
+{
+  "id": "008-situationship-cancer",
+  "title": "Cancer in a situationship",
+  "cover": "Cancer, you deserve a *home*",
+  "keyword": "MUTUAL",
+  "caption": "cancer in a situationship: already remembering their mom's birthday, still not sure what you are",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "cancer",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · CARDINAL WATER",
+      "lines": [
+        "Cancer, you're loving them like a *partner.*",
+        "Soup when they're sick. Their mom's birthday.",
+        "But you're still not *sure* what you are."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 2
+      },
+      "header": "RULED BY THE MOON",
+      "lines": [
+        "Ruled by the *Moon,* you need a home,",
+        "not a door that's only *sometimes* open.",
+        "Half lit is not the same as full."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "HALF LIT · HALF THERE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve the care I *give.*",
+        "I don't have to earn a *title*",
+        "by taking care of someone."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "249-moon-libra",
+  "title": "Moon in Libra",
+  "cover": "Moon in Libra needs *peace*",
+  "keyword": "MOON",
+  "caption": "moon in libra can't sleep if things are weird between you. it just wants both of you heard",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "mooninlibra",
+    "libra",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "MOON IN LIBRA",
+      "lines": [
+        "You can't sleep if things are *weird*",
+        "between you and someone you love.",
+        "The Moon in Libra needs the scales *level.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "LIBRA · RULED BY VENUS",
+      "lines": [
+        "Libra is ruled by Venus,",
+        "so peace and beauty *calm* you.",
+        "A soft voice. A pretty room.",
+        "A fight that ends with both of you *heard.*"
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 0,
+          "text": "♀ · RULER OF LIBRA"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My peace matters, and so does *my truth.*",
+        "I can disagree and still be loved.",
+        "Harmony includes *me.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

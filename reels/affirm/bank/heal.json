@@ -1,0 +1,366 @@
+[
+  {
+    "key": "heal-aries",
+    "title": "Aries, after a breakup",
+    "cover": "Aries, you don't have to *win*",
+    "caption": "aries heals like it's a race. it isn't, and nobody has to lose",
+    "hashtags": ["aries", "breakup", "healing", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · CARDINAL FIRE",
+        "lines": ["Aries, you want to *heal* fast.", "Like it's a race you can win.", "Ruled by *Mars,* you'd rather fight", "than sit still with a feeling."],
+        "labels": [{ "on": "sign", "at": 2, "text": "ARIES · RULED BY MARS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "AFTER · NOT AGAINST",
+        "lines": ["But this isn't a *battle.*", "Nobody has to lose.", "You can walk *forward*", "without proving anything to anyone."],
+        "labels": [{ "on": "you", "at": 2, "text": "YOU · NO RACE" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to win this.", "I can be *brave* and still be soft.", "My fire is still *mine.*"],
+        "labels": [{ "on": "planet", "at": 3, "text": "MARS · STILL BURNING" }]
+      }
+    ]
+  },
+  {
+    "key": "heal-taurus",
+    "title": "Taurus, after a breakup",
+    "cover": "Taurus, slow is how you *heal*",
+    "caption": "taurus doesn't let go fast. fixed earth was built to stay, and that's not a flaw",
+    "hashtags": ["taurus", "breakup", "healing", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · FIXED EARTH",
+        "lines": ["Taurus, you don't let go *quickly.*", "You were built to *stay.*", "Fixed earth holds on", "long after the season changes."],
+        "labels": [{ "on": "sign", "at": 2, "text": "FIXED EARTH · STEADY" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "RULED BY VENUS",
+        "lines": ["Ruled by *Venus,* you loved with your hands,", "your routines, your Sunday mornings.", "So the quiet feels *loud* now.", "Go slow. Slow is how you heal."],
+        "labels": [{ "on": "planet", "at": 0, "text": "VENUS · PLANET OF LOVE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can *miss* them and still move on.", "My loyalty belongs to *me* now.", "Even fixed ground can *grow* again."]
+      }
+    ]
+  },
+  {
+    "key": "heal-gemini",
+    "title": "Gemini, after a breakup",
+    "cover": "Gemini, stop *rereading* it",
+    "caption": "gemini after a breakup: reading the last text again like it'll say something new this time",
+    "hashtags": ["gemini", "breakup", "mercuryretrograde", "healing", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Gemini, stop rereading the *last text.*", "Ruled by *Mercury,* your mind replays it", "in every version but the real one."],
+        "labels": [{ "on": "planet", "at": 1, "text": "MERCURY · THE MESSENGER" }]
+      },
+      {
+        "art": "loop",
+        "header": "MERCURY · RETROGRADE",
+        "lines": ["Mercury goes *retrograde*", "about three times a year.", "It only looks like it's moving *backwards.*", "So if you miss them some days,", "you're not going backwards *either.*"],
+        "labels": [{ "on": "loop", "at": 2, "text": "APPARENT MOTION ONLY" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need the *last word*", "to have closure.", "My mind can *rest* now."]
+      }
+    ]
+  },
+  {
+    "key": "heal-cancer",
+    "title": "Cancer, after a breakup",
+    "cover": "Cancer, the moon *comes back*",
+    "caption": "cancer keeps every memory after a breakup. you can hold them without living in them",
+    "hashtags": ["cancer", "breakup", "healing", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 7 },
+        "header": "RULED BY THE MOON",
+        "lines": ["Cancer, you keep *every* memory.", "The songs, the jokes, the way they laughed.", "Ruled by the *Moon,* you feel in phases.", "Tonight might be a *dark* one."],
+        "labels": [{ "on": "moon", "at": 3, "text": "WANING CRESCENT" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": ["But the moon always comes *back.*", "And so do you.", "Your shell isn't for *hiding* forever.", "It's for healing in private."]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can hold the memory", "without living *inside* it.", "I am still my own *home.*"],
+        "labels": [{ "on": "moon", "at": 3, "text": "WAXING · COMING BACK" }]
+      }
+    ]
+  },
+  {
+    "key": "heal-leo",
+    "title": "Leo, after a breakup",
+    "cover": "Leo, even the lion *rests*",
+    "caption": "leo after a breakup posts the photo and laughs the loudest. you don't have to perform this",
+    "hashtags": ["leo", "breakup", "healing", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "RULED BY THE SUN",
+        "lines": ["Leo, you gave them your *whole sun.*", "Warmth like that doesn't switch off", "just because someone walked away."],
+        "labels": [{ "on": "planet", "at": 0, "text": "THE SUN · YOUR RULER" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · FIXED FIRE",
+        "lines": ["So your pride wants to look *fine.*", "Post the photo. Laugh the loudest.", "But even the lion *rests.*", "You don't have to perform your healing."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My light was never *theirs* to take.", "I can shine *quietly* for a while.", "I'm still warm. I'm still me."]
+      }
+    ]
+  },
+  {
+    "key": "heal-virgo",
+    "title": "Virgo, after a breakup",
+    "cover": "Virgo, it wasn't a *mistake*",
+    "caption": "virgo after a breakup makes a list of everything they could've done better. put the list down",
+    "hashtags": ["virgo", "breakup", "healing", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": ["Virgo, you're already making a *list*", "of everything you could've done better.", "Ruled by *Mercury,* you study to feel safe."],
+        "labels": [{ "on": "sign", "at": 2, "text": "VIRGO · RULED BY MERCURY" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 6, "highlightAt": 1 },
+        "header": "SIXTH HOUSE · DAILY CARE",
+        "lines": ["But a breakup isn't a *mistake*", "you can fix with a better routine.", "Some things end", "because they were *finished.*"],
+        "labels": [{ "on": "house", "at": 1, "text": "6TH HOUSE · ROUTINES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I did my best with what I knew.", "I don't have to *earn* my rest.", "I'm allowed to be *unfinished* too."]
+      }
+    ]
+  },
+  {
+    "key": "heal-libra",
+    "title": "Libra, after a breakup",
+    "cover": "Libra, peace isn't a *compromise*",
+    "caption": "libra wants a breakup to be fair, both sides heard, nobody the villain. sometimes it just ends",
+    "hashtags": ["libra", "breakup", "healing", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · THE SCALES",
+        "lines": ["Libra, you want it to end *fairly.*", "Both sides heard. Nobody the villain.", "Your sign is the *scales,*", "and right now they won't settle."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 7, "highlightAt": 0 },
+        "header": "SEVENTH HOUSE · PARTNERS",
+        "lines": ["You're the sign of *partnership,*", "so being alone can feel *wrong.*", "It isn't.", "Your relationship with you stays."],
+        "labels": [{ "on": "house", "at": 0, "text": "7TH HOUSE · PARTNERS" }]
+      },
+      {
+        "art": "venus",
+        "opts": { "mirror": true, "mirrorAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need their *agreement*", "to know what was true.", "My peace is not a *compromise.*"],
+        "labels": [{ "on": "glass", "at": 3, "text": "VENUS · YOUR RULER" }]
+      }
+    ]
+  },
+  {
+    "key": "heal-scorpio",
+    "title": "Scorpio, after a breakup",
+    "cover": "Scorpio, you go *through* it",
+    "caption": "scorpio doesn't get over people. it goes all the way through them, and comes out new",
+    "hashtags": ["scorpio", "breakup", "healing", "pluto", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": ["Scorpio, you don't *get over* people.", "You go through them, all the way down.", "Fixed water runs *deep,*", "and it remembers everything."]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "THE DARK BEFORE THE NEW",
+        "lines": ["But you were made for *endings.*", "Your sign is tied to *Pluto,*", "the planet of letting old things die", "so something truer can grow."],
+        "labels": [{ "on": "moon", "at": 0, "text": "NEW MOON · ALL DARK" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need to *watch* them anymore.", "What ended in me", "is becoming something *new.*"]
+      }
+    ]
+  },
+  {
+    "key": "heal-sagittarius",
+    "title": "Sagittarius, after a breakup",
+    "cover": "Sagittarius, put down the *map*",
+    "caption": "sagittarius after a breakup is already looking at flights. go anywhere, just take yourself with you",
+    "hashtags": ["sagittarius", "breakup", "healing", "astrology", "movingon"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": ["Sagittarius, you've already looked at *flights.*", "That's how fire heals:", "keep moving and call it *freedom.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER",
+        "lines": ["Ruled by *Jupiter,* you always find the lesson.", "But you don't have to be *fine* yet.", "You can go anywhere you like.", "Just don't leave *yourself* behind."],
+        "labels": [{ "on": "planet", "at": 0, "text": "JUPITER · GROWTH · LUCK" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 1 },
+        "header": "FORWARD · NOT AWAY",
+        "lines": ["Feel it first, *then* go.", "Moving on isn't running away.", "Not every ending needs a lesson.", "Some just need *time.*"]
+      }
+    ]
+  },
+  {
+    "key": "heal-capricorn",
+    "title": "Capricorn, after a breakup",
+    "cover": "Capricorn, you're not *behind*",
+    "caption": "capricorn treats a breakup like a project with a deadline. healing doesn't run on your schedule",
+    "hashtags": ["capricorn", "breakup", "healing", "saturn", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "gold", "ring": true },
+        "header": "RULED BY SATURN",
+        "lines": ["Capricorn, you're treating this like a *project.*", "Ruled by *Saturn,* you build things to last,", "so an ending feels like failing."],
+        "labels": [{ "on": "planet", "at": 1, "text": "SATURN · TIME · STRUCTURE" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · CARDINAL EARTH",
+        "lines": ["It isn't failing.", "Saturn is the planet of *time,*", "and time is on your side here.", "You don't have to fix this *overnight.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am not *behind.*", "What I built in me stays built.", "I'm allowed to rest on the *climb.*"]
+      }
+    ]
+  },
+  {
+    "key": "heal-aquarius",
+    "title": "Aquarius, after a breakup",
+    "cover": "Aquarius, *feel* it up close",
+    "caption": "aquarius after a breakup: we can stay friends, i'm totally fine. you're allowed to feel it",
+    "hashtags": ["aquarius", "breakup", "healing", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": ["Aquarius, you've decided to be *fine* about it.", "You'll stay friends. You'll be mature.", "Air can watch a feeling", "from a very safe *distance.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "DISTANCE · NOT DETACHMENT",
+        "lines": ["But you're allowed to *feel* it up close.", "Missing them doesn't make you less free.", "It just means you were really *there.*"],
+        "labels": [{ "on": "thread", "at": 1, "text": "STILL CONNECTED · STILL FREE" }]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "AIR · ROOM TO BREATHE",
+        "lines": ["Being free was never about not *caring.*", "It's about caring,", "and choosing where you go *next.*"]
+      }
+    ]
+  },
+  {
+    "key": "heal-pisces",
+    "title": "Pisces, after a breakup",
+    "cover": "Pisces, swim toward *you*",
+    "caption": "pisces after a breakup still loves who they could have been. let the dream go, keep the softness",
+    "hashtags": ["pisces", "breakup", "healing", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · TWO FISH",
+        "lines": ["Pisces, you miss who they *could* have been.", "Your sign is two fish", "swimming in *opposite* directions.", "One toward them. One toward you."],
+        "labels": [{ "on": "stars", "at": 1, "text": "TWO FISH · ONE CORD" }]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["Your modern ruler is *Neptune,*", "the planet of dreams and soft focus.", "It's why you saw the best in them.", "That was never a *flaw.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can let the *dream* go", "and keep my *softness.*", "I swim toward me now."]
+      }
+    ]
+  }
+]

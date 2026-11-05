@@ -1,0 +1,94 @@
+{
+  "id": "203-planet-mercury",
+  "title": "Mercury in love",
+  "cover": "*Mercury* in love",
+  "keyword": "CHART",
+  "caption": "mercury never strays far from the sun, so it's in your sun sign or right next door",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "mercury",
+    "mercurysign",
+    "gemini",
+    "virgo",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "planets",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "MERCURY · NEVER FAR FROM THE SUN",
+      "lines": [
+        "Mercury never strays far from the Sun.",
+        "So your Mercury is in your *sun sign,*",
+        "or one of the signs right *beside* it."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☿ · THE MESSENGER"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☿",
+        "planetSign": "gemini",
+        "planetAt": 2
+      },
+      "header": "THE PLANET OF TALK",
+      "lines": [
+        "It's the planet of *talk:*",
+        "how you text, argue and *apologize.*",
+        "Mercury rules Gemini and Virgo.",
+        "In love, it's the language",
+        "your mind needs to be *spoken* in."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "RULER OF GEMINI · VIRGO"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve to be *talked* to,",
+        "not talked around."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

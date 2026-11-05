@@ -1,0 +1,79 @@
+{
+  "id": "063-newmoon-libra",
+  "title": "New moon in Libra",
+  "cover": "New moon in *Libra*",
+  "keyword": "MOON",
+  "caption": "libra is the only sign that's an object, not a creature. invite love that weighs the same on both sides",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "newmoon",
+    "newmooninlibra",
+    "libra",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "newmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · THE SCALES",
+      "lines": [
+        "Libra is the only sign drawn as an *object.*",
+        "The other eleven are alive.",
+        "Just a pair of *scales,*",
+        "waiting for both sides to match."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · LIBRA",
+      "lines": [
+        "When the sun and moon meet in Libra,",
+        "the sign of *partners,*",
+        "invite love that's even.",
+        "Where you're not the only one",
+        "who *remembers* to ask."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I give, and I *receive.*",
+        "I deserve love that weighs the same",
+        "from *both* sides."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

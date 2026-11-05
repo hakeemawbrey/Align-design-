@@ -1,0 +1,93 @@
+{
+  "id": "004-venus-aries",
+  "title": "Venus in Aries",
+  "cover": "Venus in Aries loves *fast*",
+  "keyword": "VENUS",
+  "caption": "venus in aries doesn't do slow burns. it knows in five minutes and hates pretending otherwise",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "venusinaries",
+    "aries",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS IN ARIES",
+      "lines": [
+        "You knew in the first *five minutes,*",
+        "and you hate pretending you didn't.",
+        "That's Venus in Aries."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "♀ · VENUS · HOW YOU LOVE"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · RULED BY MARS",
+      "lines": [
+        "Venus sits in the sign Mars rules,",
+        "so love, for you, is a *pursuit.*",
+        "Mixed signals don't feel mysterious.",
+        "They feel like a *no.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "ARIES · CARDINAL FIRE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want to be *chosen* on purpose,",
+        "not kept around just in case.",
+        "My excitement is not *too much.*",
+        "It's how I know it's *real.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "184-love-long-distance",
+  "title": "Long distance",
+  "cover": "Distance doesn't stop the *tide*",
+  "keyword": "MUTUAL",
+  "caption": "the moon moves every ocean on earth from almost four hundred thousand kilometres away",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "longdistance",
+    "longdistancerelationship",
+    "moon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE MOON · THE TIDES",
+      "lines": [
+        "Nearly four hundred thousand kilometres.",
+        "That's how far the moon is,",
+        "and it still moves *every ocean*",
+        "on earth, every single day."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "THE MOON · TIDAL PULL"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "LONG DISTANCE · SAME PULL",
+      "lines": [
+        "Distance isn't the opposite of *love.*",
+        "The right pull reaches across it.",
+        "You can't touch a tide,",
+        "but you can *feel* it rise."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "THE PULL · ACROSS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Our love is *real* from here.",
+        "Miles don't *measure* how much I care.",
+        "We are *pulling* toward each other."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

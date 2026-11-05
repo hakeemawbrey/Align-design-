@@ -1,0 +1,87 @@
+{
+  "id": "108-basics-birth-time",
+  "title": "Why your birth time matters",
+  "cover": "Down to the *minute*",
+  "keyword": "CHART",
+  "caption": "your rising sign changes about every two hours. twins born minutes apart can have different ones",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "birthtime",
+    "risingsign",
+    "birthchart",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "axis": true,
+        "axisAt": 0
+      },
+      "header": "BIRTH TIME · THE RISING",
+      "lines": [
+        "Your rising sign changes about every two hours.",
+        "Four minutes moves it a whole *degree.*",
+        "Your houses turn with it."
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 0,
+          "text": "ABOUT TWO HOURS · ONE SIGN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "TWINS · DIFFERENT RISINGS",
+      "lines": [
+        "Twins born minutes apart",
+        "can have different *risings.*",
+        "Your houses, your seventh, your type",
+        "all hang on the *clock.*",
+        "That's how exact a sky is."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm specific, down to the *minute.*",
+        "And I deserve love",
+        "that's specific *too.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

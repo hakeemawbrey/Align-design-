@@ -1,0 +1,108 @@
+{
+  "id": "145-rising-cancer",
+  "title": "Cancer rising",
+  "cover": "Cancer rising needs *steady*",
+  "keyword": "SEVEN",
+  "caption": "you look after the whole room. your capricorn seventh house wants someone who looks after you",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "cancerrising",
+    "capricorn",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER RISING · CARDINAL WATER",
+      "lines": [
+        "You notice who's cold before *they* do.",
+        "That's Cancer rising.",
+        "Soft eyes, a careful shell,",
+        "a blanket for everyone *but* you."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1,
+        "axis": true,
+        "axisAt": 0,
+        "rising": "cancer"
+      },
+      "header": "YOUR SEVENTH HOUSE · CAPRICORN",
+      "lines": [
+        "Directly across the sky from that,",
+        "your seventh house is *Capricorn.*",
+        "Steady, patient, built to *last.*"
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 0,
+          "text": "RISING · YOUR SHELL"
+        },
+        {
+          "on": "h7",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "CAPRICORN · RULED BY SATURN",
+      "lines": [
+        "Ruled by Saturn, the planet of *time.*",
+        "So the one who wins you",
+        "isn't the loudest in the room.",
+        "It's the one who *shows up,*",
+        "and *stays.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be held, not just *holding.*",
+        "Some days, I get to *lean.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

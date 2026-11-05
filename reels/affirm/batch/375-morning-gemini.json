@@ -1,0 +1,85 @@
+{
+  "id": "375-morning-gemini",
+  "title": "Good morning, Gemini",
+  "cover": "Good morning, *Gemini*",
+  "keyword": "CHART",
+  "caption": "gemini, your mind had twelve tabs open before breakfast. pick one thought for love today",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "gemini",
+    "goodmorning",
+    "morningaffirmations",
+    "mercury",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "GOOD MORNING · GEMINI",
+      "lines": [
+        "Good morning, Gemini. Mind already *racing?*",
+        "Ruled by *Mercury,* you think in tabs.",
+        "Twelve of them open before breakfast."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · THE TWINS",
+      "lines": [
+        "So pick *one* thought for love today,",
+        "and let the others wait."
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 4
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *decode* anyone today.",
+        "The right person is easy to *read.*",
+        "I say what I mean,",
+        "and I'm met with the *same.*"
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 4,
+          "text": "MET · IN ONE LINE"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

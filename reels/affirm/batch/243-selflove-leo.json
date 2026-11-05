@@ -1,0 +1,76 @@
+{
+  "id": "243-selflove-leo",
+  "title": "Self-love for a Leo",
+  "cover": "Leo, shine for *you*",
+  "keyword": "CHART",
+  "caption": "sing in the car. paint badly. nobody has to see it",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "leo",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "selflove",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · THE SUN",
+      "lines": [
+        "Leo, the sun doesn't check who's *watching.*",
+        "It rises over empty fields",
+        "and never calls it *wasted.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "So make something just for *you.*",
+        "Sing in the car. Paint badly.",
+        "Dance in the kitchen.",
+        "Wear the thing for no one.",
+        "Your light was never a *performance.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I shine for *me* first.",
+        "Being seen by me is *enough.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

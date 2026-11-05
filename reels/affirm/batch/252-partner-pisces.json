@@ -1,0 +1,78 @@
+{
+  "id": "252-partner-pisces",
+  "title": "Pisces as a partner",
+  "cover": "A *Pisces* loves the future you",
+  "keyword": "MATCH",
+  "caption": "a pisces partner loves the version of you that you can't see yet, and holds it until you grow into it",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "pisces",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "watersign"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "partner",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "A Pisces partner loves the version of you",
+        "you can't *see* yet.",
+        "They hold it for you,",
+        "*softly,* until you grow into it."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "lilac"
+      },
+      "header": "JUPITER · MODERN NEPTUNE",
+      "lines": [
+        "Ruled by *Jupiter* and modern *Neptune,*",
+        "they bring *romance* to ordinary days.",
+        "A song that's yours. A note in your coat.",
+        "Compassion with *no* conditions."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My tenderness is *strength.*",
+        "I give my heart freely,",
+        "and I keep a *piece* for me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

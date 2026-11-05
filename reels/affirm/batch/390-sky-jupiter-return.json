@@ -1,0 +1,89 @@
+{
+  "id": "390-sky-jupiter-return",
+  "title": "Your Jupiter return",
+  "cover": "Your *Jupiter* return",
+  "keyword": "PASSING",
+  "caption": "every twelve years jupiter comes back to your birth spot. it isn't luck, it's growth",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "jupiterreturn",
+    "jupiter",
+    "astrology",
+    "affirmations",
+    "growth"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "JUPITER · TWELVE YEARS",
+      "lines": [
+        "Jupiter is so big",
+        "every other planet could fit *inside* it.",
+        "It spends about a year in each sign,",
+        "so every twelve years, it comes back",
+        "to your birth *spot.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "ONE ORBIT · ABOUT 12 YEARS"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♃",
+        "planetSign": "sagittarius",
+        "planetAt": 0
+      },
+      "header": "YOUR JUPITER RETURN",
+      "lines": [
+        "Twelve, twenty-four, thirty-six.",
+        "It can feel like *luck,*",
+        "but it's really *growth.*",
+        "Love that fit you before",
+        "starts to feel *small.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *outgrow* things.",
+        "I make room for love",
+        "as big as I've *become.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

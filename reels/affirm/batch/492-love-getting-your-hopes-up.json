@@ -1,0 +1,74 @@
+{
+  "id": "492-love-getting-your-hopes-up",
+  "title": "Getting your hopes up",
+  "cover": "Let it rise to its *real* size",
+  "keyword": "CHART",
+  "caption": "the moon looks huge on the horizon. it isn't any bigger. your brain just gets excited",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "hope",
+    "moon",
+    "astrology",
+    "affirmations",
+    "dating"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "THE MOON ILLUSION",
+      "lines": [
+        "You know how the moon looks *huge* on the horizon?",
+        "It isn't any bigger.",
+        "It's the same moon, the same size.",
+        "Your brain is doing that, not the *sky.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "HIGH IN THE SKY · TRUE SIZE",
+      "lines": [
+        "Hope does that to the first few *messages.*",
+        "Getting your hopes up isn't *foolish.*",
+        "Just let things *rise,*",
+        "and show their real size as they climb."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can hope and still see *clearly.*",
+        "I let people show me who they *are.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

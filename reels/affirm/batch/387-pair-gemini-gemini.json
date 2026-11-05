@@ -1,0 +1,92 @@
+{
+  "id": "387-pair-gemini-gemini",
+  "title": "Gemini and Gemini",
+  "cover": "Gemini + Gemini · *conjunction*",
+  "keyword": "MATCH",
+  "caption": "four people in one relationship and every single one of them is talking",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "gemini",
+    "geminicompatibility",
+    "zodiaccompatibility",
+    "astrology",
+    "synastry"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · GEMINI",
+      "lines": [
+        "Gemini plus Gemini is *four* people talking,",
+        "and all of them are *fascinating.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "gemini"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Same sign, a *conjunction,*",
+        "zero degrees apart.",
+        "Mutable air, ruled by *Mercury* twice."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "air"
+      },
+      "header": "AIR · AIR · THE FRICTION",
+      "lines": [
+        "You never *bore* each other,",
+        "and you always get the joke.",
+        "The friction: so much talking",
+        "that nobody says the *real* thing."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *light*",
+        "and still say what's *heavy.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

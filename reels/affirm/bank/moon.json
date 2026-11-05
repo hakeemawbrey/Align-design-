@@ -1,0 +1,780 @@
+[
+  {
+    "key": "moon-aries",
+    "title": "Moon in Aries",
+    "cover": "Moon in Aries feels it *fast*",
+    "caption": "moon in aries feels everything like a struck match. bright, hot, gone in a minute, no grudges",
+    "hashtags": [
+      "mooninaries",
+      "aries",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☽",
+          "tone": "lilac"
+        },
+        "header": "MOON IN ARIES",
+        "lines": [
+          "Your feelings arrive like a *struck match:*",
+          "bright, hot, and gone in a minute.",
+          "That's the Moon in Aries."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 2,
+            "text": "☽ · THE MOON · YOUR NEEDS"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aries"
+        },
+        "header": "ARIES · CARDINAL FIRE",
+        "lines": [
+          "So when you're upset, you need to *move.*",
+          "A walk. A run. A loud playlist.",
+          "You feel safe with someone who lets you *flare*",
+          "and doesn't hold it against you an hour later."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My feelings are allowed to be *big* and brief.",
+          "I'm safe with people who don't *flinch.*",
+          "I don't have to calm down to be *loved.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-taurus",
+    "title": "Moon in Taurus",
+    "cover": "Moon in Taurus needs *comfort*",
+    "caption": "moon in taurus feels safest on a sunday with nowhere to be. same blanket, same person, same soup",
+    "hashtags": [
+      "moonintaurus",
+      "taurus",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "taurus"
+        },
+        "header": "MOON IN TAURUS",
+        "lines": [
+          "A Sunday with *nowhere* to be.",
+          "That's your favorite feeling.",
+          "Same blanket. Same person. Same *soup.*"
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☽",
+          "tone": "lilac"
+        },
+        "header": "THE MOON · EXALTED IN TAURUS",
+        "lines": [
+          "The Moon is *exalted* in Taurus,",
+          "the sign where it rests easiest.",
+          "So you feel safe through your *senses:*",
+          "a hand on your back, a full fridge,",
+          "a plan that doesn't change last minute."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☽ · EXALTED IN TAURUS"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "Needing *stability* isn't boring.",
+          "I'm allowed to want what lasts.",
+          "My calm is worth *protecting.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-gemini",
+    "title": "Moon in Gemini",
+    "cover": "Moon in Gemini needs to *talk*",
+    "caption": "moon in gemini doesn't know how it feels until it says it out loud. sometimes to three different friends",
+    "hashtags": [
+      "mooningemini",
+      "gemini",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "gemini"
+        },
+        "header": "MOON IN GEMINI",
+        "lines": [
+          "You don't know how you feel",
+          "until you've *said it* out loud.",
+          "Sometimes to three different friends."
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "☽",
+          "planetSign": "gemini",
+          "planetAt": 2,
+          "highlight": 3,
+          "highlightAt": 0
+        },
+        "header": "GEMINI · THE THIRD HOUSE",
+        "lines": [
+          "Gemini is the sign of the third house:",
+          "talk, texts, and the people nearby.",
+          "So with the Moon here, safe has a *sound:*",
+          "a late call, a voice that *answers,*",
+          "someone who lets you think out loud."
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 0,
+            "text": "3RD HOUSE · TALK"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm not *too much* to talk to.",
+          "My busy mind deserves a *patient* ear.",
+          "I feel safe when I'm *heard.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-cancer",
+    "title": "Moon in Cancer",
+    "cover": "Moon in Cancer is *home*",
+    "caption": "the moon rules exactly one sign. if yours is in cancer, of course you kept every birthday card",
+    "hashtags": [
+      "moonincancer",
+      "cancer",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☽",
+          "tone": "lilac"
+        },
+        "header": "MOON IN CANCER · AT HOME",
+        "lines": [
+          "The Moon rules just *one* sign,",
+          "and it's *yours.*",
+          "So of course you kept every *birthday card.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☽ · RULER OF CANCER"
+          }
+        ]
+      },
+      {
+        "art": "phases",
+        "opts": {
+          "lit": 4
+        },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": [
+          "You feel everything in *phases,*",
+          "full one week, quiet the next.",
+          "And safe, for you, is someone who stays",
+          "through all of them."
+        ],
+        "labels": [
+          {
+            "on": "moon",
+            "at": 1,
+            "text": "FULL MOON · LIT"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to *need* a home in someone.",
+          "My memory is a kind of *love.*",
+          "I deserve to be tended, too."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-leo",
+    "title": "Moon in Leo",
+    "cover": "Moon in Leo needs to be *seen*",
+    "caption": "moon in leo can light up a whole room and still go home wondering if anyone saw it. you were seen",
+    "hashtags": [
+      "mooninleo",
+      "leo",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "leo"
+        },
+        "header": "MOON IN LEO",
+        "lines": [
+          "You can light up a whole *room*",
+          "and still go home wondering",
+          "if anyone really saw *you.*"
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☉",
+          "tone": "gold"
+        },
+        "header": "LEO · RULED BY THE SUN",
+        "lines": [
+          "Leo is ruled by the Sun,",
+          "and with the Moon here, you feel safe",
+          "when someone's *warmth* is aimed at you.",
+          "Not flattery. *Attention.*",
+          "Being someone's first call, on purpose."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to *perform* to be loved.",
+          "I'm allowed to want a *spotlight* of one.",
+          "I can rest and still be *seen.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-virgo",
+    "title": "Moon in Virgo",
+    "cover": "Moon in Virgo needs *order*",
+    "caption": "moon in virgo cleans the kitchen when its heart is a mess. order on the outside, room on the inside",
+    "hashtags": [
+      "mooninvirgo",
+      "virgo",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "virgo"
+        },
+        "header": "MOON IN VIRGO",
+        "lines": [
+          "When your heart is a mess,",
+          "you clean the *kitchen.*",
+          "Order on the outside",
+          "makes room on the *inside.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 1,
+            "text": "VIRGO · MUTABLE EARTH"
+          }
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "☽",
+          "planetSign": "virgo",
+          "planetAt": 0,
+          "highlight": 6,
+          "highlightAt": 1
+        },
+        "header": "VIRGO · THE SIXTH HOUSE",
+        "lines": [
+          "Virgo belongs to the sixth house,",
+          "the house of routines and care.",
+          "So you feel safe in the small things:",
+          "a plan, a made bed, the usual *goodnight.*"
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 1,
+            "text": "6TH HOUSE · ROUTINES"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to *rest* before it's perfect.",
+          "I can be loved *in progress.*",
+          "My attention is a way of *loving.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-libra",
+    "title": "Moon in Libra",
+    "cover": "Moon in Libra needs *peace*",
+    "caption": "moon in libra can't sleep if things are weird between you. it just wants both of you heard",
+    "hashtags": [
+      "mooninlibra",
+      "libra",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "libra"
+        },
+        "header": "MOON IN LIBRA",
+        "lines": [
+          "You can't sleep if things are *weird*",
+          "between you and someone you love.",
+          "The Moon in Libra needs the scales *level.*"
+        ]
+      },
+      {
+        "art": "venus",
+        "header": "LIBRA · RULED BY VENUS",
+        "lines": [
+          "Libra is ruled by Venus,",
+          "so peace and beauty *calm* you.",
+          "A soft voice. A pretty room.",
+          "A fight that ends with both of you *heard.*"
+        ],
+        "labels": [
+          {
+            "on": "glass",
+            "at": 0,
+            "text": "♀ · RULER OF LIBRA"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My peace matters, and so does *my truth.*",
+          "I can disagree and still be loved.",
+          "Harmony includes *me.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-scorpio",
+    "title": "Moon in Scorpio",
+    "cover": "Moon in Scorpio needs *truth*",
+    "caption": "moon in scorpio hears it when a voice changes by half a note. safe, for it, is the truth told kindly",
+    "hashtags": [
+      "mooninscorpio",
+      "scorpio",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "scorpio"
+        },
+        "header": "MOON IN SCORPIO",
+        "lines": [
+          "You notice when someone's voice *changes.*",
+          "Half a note. You still catch it.",
+          "The Moon in Scorpio feels in *full depth.*"
+        ]
+      },
+      {
+        "art": "elements",
+        "opts": {
+          "element": "water"
+        },
+        "header": "FIXED WATER · STILL AND DEEP",
+        "lines": [
+          "Scorpio is fixed water,",
+          "deep, and *still* on top.",
+          "So safe, for you, isn't sweet words.",
+          "It's *truth,* told even when it's hard,",
+          "by a person who's the same in private."
+        ],
+        "labels": [
+          {
+            "on": "element",
+            "at": 0,
+            "text": "WATER · FIXED"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can let someone in slowly.",
+          "My trust is a *gift,* not a debt.",
+          "I'm safe with people who stay *honest.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-sagittarius",
+    "title": "Moon in Sagittarius",
+    "cover": "Moon in Sagittarius needs *sky*",
+    "caption": "moon in sagittarius finds comfort in a window seat. anywhere, as long as it's moving",
+    "hashtags": [
+      "mooninsagittarius",
+      "sagittarius",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☽",
+          "tone": "lilac"
+        },
+        "header": "MOON IN SAGITTARIUS",
+        "lines": [
+          "Your idea of comfort is a *window seat.*",
+          "Anywhere. As long as it's moving.",
+          "The Moon in Sagittarius feels safest under *sky.*"
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "sagittarius"
+        },
+        "header": "SAGITTARIUS · RULED BY JUPITER",
+        "lines": [
+          "Sagittarius is ruled by Jupiter,",
+          "planet of hope and the long view.",
+          "So you need room to wander and *wonder,*",
+          "and someone who laughs when plans fall apart.",
+          "Even a kind fence can feel *small.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "SAGITTARIUS · MUTABLE FIRE"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "THE RIGHT ONE",
+        "lines": [
+          "Your restlessness isn't running away.",
+          "It's *curiosity.*",
+          "And the right love won't shrink your world.",
+          "It will make it *wider.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-capricorn",
+    "title": "Moon in Capricorn",
+    "cover": "Moon in Capricorn: *put it down*",
+    "caption": "moon in capricorn was the responsible one long before anyone asked. you can let someone hold the heavy end",
+    "hashtags": [
+      "moonincapricorn",
+      "capricorn",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "capricorn"
+        },
+        "header": "MOON IN CAPRICORN",
+        "lines": [
+          "You were the *responsible one*",
+          "long before anyone asked you to be.",
+          "That's the Moon in Capricorn."
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "♄",
+          "tone": "lilac",
+          "ring": true
+        },
+        "header": "CAPRICORN · RULED BY SATURN",
+        "lines": [
+          "Capricorn is ruled by Saturn,",
+          "the planet of structure and time.",
+          "So safe looks like *reliable:*",
+          "plans that happen, promises kept,",
+          "someone you never have to *chase.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "♄ · SATURN · STRUCTURE"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "YOU CAN PUT IT DOWN",
+        "lines": [
+          "You've been strong for *so long.*",
+          "So here's your permission.",
+          "You don't have to carry it *all.*",
+          "Let someone hold the *heavy* end."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-aquarius",
+    "title": "Moon in Aquarius",
+    "cover": "Moon in Aquarius needs *space*",
+    "caption": "moon in aquarius processes feelings like a scientist, from a little distance. that isn't cold. it's steady",
+    "hashtags": [
+      "mooninaquarius",
+      "aquarius",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 2
+        },
+        "header": "MOON IN AQUARIUS",
+        "lines": [
+          "You process feelings like a *scientist,*",
+          "from a little distance, taking notes.",
+          "That isn't cold. It's how you stay *steady.*"
+        ],
+        "labels": [
+          {
+            "on": "thread",
+            "at": 2,
+            "text": "A LITTLE DISTANCE"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aquarius"
+        },
+        "header": "AQUARIUS · THE WATER BEARER",
+        "lines": [
+          "Aquarius is the water bearer,",
+          "an air sign carrying water for everyone.",
+          "So you feel safe being *useful* and *free,*",
+          "with someone who never asks you",
+          "to be *ordinary.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 1,
+            "text": "AQUARIUS · FIXED AIR"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to need *space* and *closeness.*",
+          "My kind of different is *lovable.*",
+          "I'm safe where I can be *myself.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "moon-pisces",
+    "title": "Moon in Pisces",
+    "cover": "Moon in Pisces needs *quiet*",
+    "caption": "moon in pisces walks into a room and feels everyone in it. sometimes it has to go dark to refill",
+    "hashtags": [
+      "mooninpisces",
+      "pisces",
+      "moonsign",
+      "astrology",
+      "affirmations"
+    ],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "pisces"
+        },
+        "header": "MOON IN PISCES",
+        "lines": [
+          "You walk into a room",
+          "and *feel* everyone in it.",
+          "The Moon in Pisces has very *thin walls.*"
+        ]
+      },
+      {
+        "art": "phases",
+        "opts": {
+          "lit": 0
+        },
+        "header": "THE NEW MOON · REST",
+        "lines": [
+          "So, like the new moon,",
+          "sometimes you go *dark* to refill.",
+          "Music, a bath, a long nap, no questions.",
+          "You feel safe with someone gentle",
+          "who doesn't take your quiet *personally.*"
+        ],
+        "labels": [
+          {
+            "on": "moon",
+            "at": 0,
+            "text": "NEW MOON · DARK"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can feel deeply without *drowning.*",
+          "Not every feeling in the room is *mine.*",
+          "I'm allowed to rest in soft places."
+        ]
+      }
+    ]
+  }
+]

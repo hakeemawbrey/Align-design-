@@ -1,0 +1,76 @@
+{
+  "id": "122-fullmoon-sagittarius",
+  "title": "Full moon in Sagittarius",
+  "cover": "Full moon in *Sagittarius*",
+  "keyword": "MOON",
+  "caption": "the sagittarius full moon shows you every escape plan you kept just in case love got close",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "fullmoon",
+    "fullmooninsagittarius",
+    "sagittarius",
+    "astrology",
+    "commitment"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON IN SAGITTARIUS",
+      "lines": [
+        "The Sagittarius full moon shows you your *exits.*",
+        "Every escape plan you've kept",
+        "just in case love got close."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "GEMINI SUN · SAGITTARIUS MOON",
+      "lines": [
+        "It happens when the sun is in *Gemini,*",
+        "keeping every option open,",
+        "and the moon wants something to *believe* in."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release *running* as a way to stay safe.",
+        "Staying can be an adventure too.",
+        "I can be free *with* someone."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

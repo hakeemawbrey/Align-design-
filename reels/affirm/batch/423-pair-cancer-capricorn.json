@@ -1,0 +1,98 @@
+{
+  "id": "423-pair-cancer-capricorn",
+  "title": "Cancer and Capricorn",
+  "cover": "Cancer and Capricorn, *opposite*",
+  "keyword": "MATCH",
+  "caption": "cancer makes it a home. capricorn makes sure it's still standing in ten years",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "cancer",
+    "capricorn",
+    "opposites",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "capricorn"
+        ],
+        "pairAt": 1
+      },
+      "header": "OPPOSITION · 180°",
+      "lines": [
+        "The Moon and Saturn rule *opposite* signs.",
+        "Cancer and Capricorn, face to face,",
+        "straight across the *wheel.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "earth"
+      },
+      "header": "WATER · EARTH · CARDINAL",
+      "lines": [
+        "Water and earth. Both cardinal, both *lead.*",
+        "Cancer brings the *feeling* of home.",
+        "Capricorn brings the roof that holds it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "The work is how love gets *shown.*",
+        "Cancer needs it said. Capricorn *stays.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "SAID · SHOWN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My softness and your *steadiness*",
+        "are building the *same* house."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

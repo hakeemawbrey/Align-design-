@@ -1,0 +1,82 @@
+{
+  "id": "434-love-the-listener",
+  "title": "Earthshine",
+  "cover": "Who lights *your* dark side",
+  "keyword": "MUTUAL",
+  "caption": "on a crescent moon the dark part glows. that's light bounced off earth. you deserve some back",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "goodfriend",
+    "friendship",
+    "earthshine",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "EARTHSHINE",
+      "lines": [
+        "Next crescent moon, look at the *dark* part.",
+        "It glows, just faintly.",
+        "That's sunlight bounced off the *earth*",
+        "lighting up the moon's night."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "EARTHSHINE · FROM US"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRIEND WHO LISTENS",
+      "lines": [
+        "You're the earthshine for everyone.",
+        "You light up their dark parts",
+        "without being asked.",
+        "Who's lighting *yours?*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *need* a listener too.",
+        "My dark side deserves *light.*",
+        "I let the people I hold, hold *me.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

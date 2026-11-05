@@ -1,0 +1,79 @@
+{
+  "id": "052-mode-mutable",
+  "title": "Mutable signs in love",
+  "cover": "*Mutable* signs in love",
+  "keyword": "MATCH",
+  "caption": "gemini, virgo, sagittarius, pisces. mutable signs can meet anyone. the trick is staying you",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "mutablesigns",
+    "modalities",
+    "gemini",
+    "pisces",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "MUTABLE · THE END OF A SEASON",
+      "lines": [
+        "Mutable signs live where seasons *change.*",
+        "Gemini, Virgo, Sagittarius and Pisces",
+        "close each season",
+        "and carry it into the *next.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "SHAPE WITHOUT SHRINKING",
+      "lines": [
+        "So in love, they *adapt.*",
+        "They change plans for you, gladly.",
+        "They can meet anyone where they are.",
+        "The only risk is bending so much",
+        "you forget your own *shape.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be flexible",
+        "without disappearing.",
+        "My shape is worth *keeping.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

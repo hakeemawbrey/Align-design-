@@ -1,0 +1,88 @@
+{
+  "id": "119-phases-new",
+  "title": "The new moon phase",
+  "cover": "Begin in the *dark*",
+  "keyword": "MOON",
+  "caption": "the new moon is up there all day. you just can't see it yet. same with what you want",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "newmoon",
+    "moonphases",
+    "astrology",
+    "affirmations",
+    "newbeginnings"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "phases",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "PHASE ONE OF EIGHT · NEW",
+      "lines": [
+        "The new moon is up there all *day.*",
+        "It rises with the sun.",
+        "You just can't *see* it."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "RISES WITH THE SUN"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "header": "SUN · MOON · EARTH",
+      "lines": [
+        "It sits between us and the sun,",
+        "its bright side turned *away.*",
+        "In love, this is the *before.*",
+        "The wish you haven't said out loud."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "BETWEEN US AND THE SUN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "What I want is *real*",
+        "before anyone can see it.",
+        "I'm allowed to *begin* in the dark."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

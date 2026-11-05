@@ -1,0 +1,87 @@
+{
+  "id": "470-love-potential",
+  "title": "Falling for potential",
+  "cover": "Love who they are *now*",
+  "keyword": "MUTUAL",
+  "caption": "the moon looks bigger on the horizon. it isn't. neither is who they might become",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "relationships",
+    "datingadvice",
+    "moon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "gold"
+      },
+      "header": "THE MOON ILLUSION",
+      "lines": [
+        "The moon looks *huge* on the horizon.",
+        "It isn't.",
+        "Measure it, and it's no bigger",
+        "than when it's high above you.",
+        "It's a trick of the *eye.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "SAME SIZE · ALL NIGHT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "POTENTIAL · ON THE HORIZON",
+      "lines": [
+        "Potential works the same way.",
+        "Who they *could* be looks enormous",
+        "out there, on the horizon.",
+        "Love the size they *are* tonight."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I love people as they *are,*",
+        "not as they might *become.*",
+        "I'm a partner, not a *rescue plan.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

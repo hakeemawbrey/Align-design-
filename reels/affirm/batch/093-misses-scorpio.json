@@ -1,0 +1,79 @@
+{
+  "id": "093-misses-scorpio",
+  "title": "When a Scorpio misses you",
+  "cover": "A *Scorpio* watches in silence",
+  "keyword": "VENUS",
+  "caption": "a scorpio who misses you watches every story and never reacts. then one night, one message",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "scorpio",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "misses",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · FIXED WATER",
+      "lines": [
+        "Every story you post,",
+        "a Scorpio who misses you *watches.*",
+        "They just *never* react.",
+        "Not once. In total *silence.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "ORBITING · IN SILENCE",
+      "lines": [
+        "It isn't cold. It's *control.*",
+        "Their feelings run so deep",
+        "they won't let them out",
+        "until they know it's *safe.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "lilac"
+      },
+      "header": "MARS · MODERN PLUTO",
+      "lines": [
+        "Ruled by *Mars* and modern *Pluto,*",
+        "they hold it, and hold it,",
+        "then one night, one message.",
+        "No small talk. Just the *truth.*",
+        "And it pulls like a *tide.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

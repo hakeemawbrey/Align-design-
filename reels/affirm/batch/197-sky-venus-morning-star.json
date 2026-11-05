@@ -1,0 +1,86 @@
+{
+  "id": "197-sky-venus-morning-star",
+  "title": "Venus as the morning star",
+  "cover": "The *morning* star",
+  "keyword": "MOON",
+  "caption": "the brightest star before sunrise isn't a star. it's venus, back after its reset",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "morningstar",
+    "venus",
+    "astrology",
+    "affirmations",
+    "newlove"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS · THE MORNING STAR",
+      "lines": [
+        "The brightest star before *sunrise*",
+        "isn't a star at all.",
+        "It's *Venus,* rising in the east,",
+        "just ahead of the sun."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "PHOSPHORUS · LIGHT-BRINGER"
+        }
+      ]
+    },
+    {
+      "art": "retro",
+      "opts": {
+        "sightAt": 1
+      },
+      "header": "AFTER THE CONJUNCTION",
+      "lines": [
+        "It shows up there after Venus",
+        "slips between us and the *sun,*",
+        "halfway through its retrograde.",
+        "The Greeks called it *light-bringer.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My heart can come back *brighter*",
+        "after a reset.",
+        "I *rise* before I'm sure."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

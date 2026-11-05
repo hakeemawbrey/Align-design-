@@ -1,0 +1,93 @@
+{
+  "id": "443-pair-capricorn-pisces",
+  "title": "Capricorn and Pisces",
+  "cover": "Capricorn and Pisces, *harbor*",
+  "keyword": "MATCH",
+  "caption": "capricorn is the harbor and pisces is the sea. sixty degrees of exactly what each one needed",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "capricorn",
+    "pisces",
+    "sextile",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "water"
+      },
+      "header": "EARTH · WATER",
+      "lines": [
+        "Every sea needs a *harbor.*",
+        "Every harbor needs the *sea.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "capricorn",
+          "pisces"
+        ],
+        "pairAt": 1
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "That's Capricorn and Pisces,",
+        "earth and water, a *sextile* apart.",
+        "Cardinal steadiness, mutable *flow.*",
+        "An easy angle, a quiet yes."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Capricorn gives Pisces *safety* to dream.",
+        "Pisces gives Capricorn *softness* to rest.",
+        "The friction: logic can feel like *coldness,*",
+        "and dreams can look like *drifting.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *held*",
+        "without being *hemmed in.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

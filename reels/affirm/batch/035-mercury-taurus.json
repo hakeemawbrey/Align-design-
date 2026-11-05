@@ -1,0 +1,86 @@
+{
+  "id": "035-mercury-taurus",
+  "title": "Mercury in Taurus",
+  "cover": "Mercury in Taurus: *tone* first",
+  "keyword": "CHART",
+  "caption": "mercury in taurus hears the tone before the words. a calm voice settles it. a rushed one doesn't",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "mercuryintaurus",
+    "taurus",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "MERCURY IN TAURUS",
+      "lines": [
+        "It's not *what* they said.",
+        "It's the *tone* they said it in.",
+        "Mercury in Taurus hears the voice first."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "TAURUS · THE THROAT",
+      "lines": [
+        "Taurus is said to rule the *throat,*",
+        "so a calm, low voice can settle you.",
+        "You think things through slowly and fully.",
+        "Rushing you for an answer feels like pressure.",
+        "Give you a day, and you'll give them the *truth.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☿ · MERCURY · YOUR VOICE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I answer best when I'm not *rushed.*",
+        "Gentle words reach me faster.",
+        "What I say slowly, I *mean.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

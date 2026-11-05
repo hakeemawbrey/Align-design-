@@ -1,0 +1,84 @@
+{
+  "id": "152-love-after-cheating",
+  "title": "After the crater",
+  "cover": "You were built to *heal*",
+  "keyword": "PASSING",
+  "caption": "the moon keeps every crater. the earth has weather. you're more earth than moon",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "healing",
+    "rebuildingtrust",
+    "movingon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE MOON · EVERY CRATER",
+      "lines": [
+        "The moon keeps its *craters*",
+        "for billions of years.",
+        "With no air and no rain,",
+        "nothing smooths them over."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "NO WEATHER · NO EROSION"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "header": "EARTH · WEATHER HEALS",
+      "lines": [
+        "The earth gets hit too.",
+        "But it has *weather.*",
+        "Rain and time soften its craters",
+        "into hills and *lakes.*",
+        "You're more earth than moon."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "What happened is not my *worth.*",
+        "It left a mark, not a *verdict.*",
+        "I heal, and I can *trust* again."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

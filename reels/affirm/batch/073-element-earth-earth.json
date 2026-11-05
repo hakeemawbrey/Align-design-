@@ -1,0 +1,87 @@
+{
+  "id": "073-element-earth-earth",
+  "title": "Earth and earth",
+  "cover": "*Earth* and earth in love",
+  "keyword": "MATCH",
+  "caption": "two earth signs build the kind of love you can lean on. just don't forget to play",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "earthsigns",
+    "compatibility",
+    "elements",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "elements",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "earth"
+      },
+      "header": "EARTH · EARTH",
+      "lines": [
+        "Two earth signs don't rush love.",
+        "They *build* it,",
+        "one shared routine at a time."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "TAURUS · CAPRICORN · A TRINE",
+      "lines": [
+        "Different earth signs sit a *trine* apart,",
+        "so the trust comes easy,",
+        "and the savings account comes *easier.*",
+        "The only danger is getting so *steady*",
+        "you forget to be silly."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 0,
+          "text": "SAME ELEMENT · EASY ANGLE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Our love can be *safe*",
+        "and still surprise me.",
+        "I'm allowed to *play.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "202-mars-pisces",
+  "title": "Mars in Pisces",
+  "cover": "Mars in Pisces is *gentle*",
+  "keyword": "MARS",
+  "caption": "mars in pisces has said sorry for fights it didn't start. its gentleness has a spine",
+  "cta": "comment MARS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "marsinpisces",
+    "pisces",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "MARS IN PISCES",
+      "lines": [
+        "You've said sorry for fights you didn't *start.*",
+        "Mars in Pisces would rather soften",
+        "than ever win by *hurting* someone."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "Pisces is mutable water,",
+        "so your drive moves like a current,",
+        "around things, never straight *through.*",
+        "You chase with imagination:",
+        "a playlist, a letter, a whole daydream."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "WATER · MUTABLE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My gentleness has a *spine.*",
+        "I can stay *kind* and still say no.",
+        "My needs belong in the room *too.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MARS",
+      "opts": {
+        "face": "Mars",
+        "sub": "HOW YOU LOVE OUT LOUD",
+        "glyph": "♂",
+        "revealAt": 1
+      },
+      "pill": "YOUR MARS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MARS*",
+        "and I'll send you what yours wants,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

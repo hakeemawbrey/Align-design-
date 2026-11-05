@@ -1,0 +1,88 @@
+{
+  "id": "236-basics-descendant",
+  "title": "The descendant",
+  "cover": "The sign that was *setting*",
+  "keyword": "CHART",
+  "caption": "when you were born one sign was rising and another was setting. the setting one is who you fall for",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "descendant",
+    "7thhouse",
+    "birthchart",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "axis": true,
+        "axisAt": 1
+      },
+      "header": "THE DESCENDANT · WEST",
+      "lines": [
+        "When you were born, one sign was rising",
+        "and another was *setting.*",
+        "The setting one is your *descendant.*"
+      ],
+      "labels": [
+        {
+          "on": "dsc",
+          "at": 2,
+          "text": "DESCENDANT · WEST HORIZON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "WHAT YOU'RE DRAWN TO",
+      "lines": [
+        "It's where your seventh house begins,",
+        "the house of *partners.*",
+        "It often describes who you fall for.",
+        "Sometimes it's a part of you",
+        "you haven't *claimed* yet."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "What I'm drawn to",
+        "can teach me about *me.*",
+        "I can love it in someone",
+        "and *grow* it in myself."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "162-heal-pisces",
+  "title": "Pisces, after a breakup",
+  "cover": "Pisces, swim toward *you*",
+  "keyword": "PASSING",
+  "caption": "pisces after a breakup still loves who they could have been. let the dream go, keep the softness",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "pisces",
+    "breakup",
+    "healing",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · TWO FISH",
+      "lines": [
+        "Pisces, you miss who they *could* have been.",
+        "Your sign is two fish",
+        "swimming in *opposite* directions.",
+        "One toward them. One toward you."
+      ],
+      "labels": [
+        {
+          "on": "stars",
+          "at": 1,
+          "text": "TWO FISH · ONE CORD"
+        }
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "Your modern ruler is *Neptune,*",
+        "the planet of dreams and soft focus.",
+        "It's why you saw the best in them.",
+        "That was never a *flaw.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can let the *dream* go",
+        "and keep my *softness.*",
+        "I swim toward me now."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

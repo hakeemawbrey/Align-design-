@@ -1,0 +1,86 @@
+{
+  "id": "178-unsaid-aquarius",
+  "title": "How an Aquarius says I love you",
+  "cover": "How an *Aquarius* says I love you",
+  "keyword": "VENUS",
+  "caption": "an aquarius won't say it. they'll show you the weird part they hide from everyone else",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aquarius",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · THE UNSAID",
+      "lines": [
+        "An Aquarius won't say it.",
+        "They'll show you the *weird* part.",
+        "The theory. The old hobby.",
+        "The thing they hide from *everyone.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 0
+      },
+      "header": "SPACE IS A GIFT",
+      "lines": [
+        "They give you room, and trust you *with* it.",
+        "They bring you into their friends.",
+        "They remember your *ideas,*",
+        "not just your birthday."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 0,
+          "text": "ROOM TO BREATHE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My *odd* heart is easy to love.",
+        "Space is not distance.",
+        "It's *trust.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

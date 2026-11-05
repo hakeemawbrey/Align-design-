@@ -1,0 +1,897 @@
+[
+  {
+    "key": "sky-mercury-retrograde",
+    "title": "Mercury retrograde",
+    "cover": "*Mercury* is lapping you",
+    "caption": "mercury isn't going backwards, it's lapping us on the inside track. read it twice before you reply",
+    "hashtags": ["mercuryretrograde", "retrograde", "astrology", "affirmations", "exes"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "loop",
+        "header": "MERCURY · RETROGRADE",
+        "lines": [
+          "About three times a year, for three weeks,",
+          "*Mercury* seems to slide backwards.",
+          "It's the fastest planet there is.",
+          "It's just lapping us on the *inside.*"
+        ],
+        "labels": [{ "on": "loop", "at": 1, "text": "APPARENT BACKWARD PATH" }]
+      },
+      {
+        "art": "retro",
+        "opts": { "sightAt": 0, "pathAt": 2 },
+        "header": "THE MESSENGER · LOOKING BACK",
+        "lines": [
+          "Mercury rules *messages,*",
+          "so this is when old ones resurface.",
+          "The ex. The draft. The thing you meant.",
+          "Read it twice before you *answer.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't owe every message a *reply.*",
+          "I can look back",
+          "without *going* back."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-venus-retrograde",
+    "title": "Venus retrograde",
+    "cover": "When *Venus* turns around",
+    "caption": "venus spends less time retrograde than any other planet. when it does, old flames come back to the window",
+    "hashtags": ["venusretrograde", "retrograde", "venus", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "VENUS · RETROGRADE",
+        "lines": [
+          "No planet spends less time *retrograde.*",
+          "About every year and a half,",
+          "*Venus* seems to turn around",
+          "for about forty days."
+        ],
+        "labels": [{ "on": "planet", "at": 3, "text": "RETROGRADE · ABOUT 40 DAYS" }]
+      },
+      {
+        "art": "loop",
+        "header": "BACKWARDS · ON PURPOSE",
+        "lines": [
+          "So when it does, love gets *reviewed.*",
+          "Old flames drift back to the window.",
+          "Not always to stay.",
+          "To show you what you *value* now."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can feel the *pull*",
+          "and still choose forward.",
+          "My heart is allowed to *update.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-mars-retrograde",
+    "title": "Mars retrograde",
+    "cover": "Stop *chasing* for a while",
+    "caption": "mars is brightest right when it's retrograde. a good time to stop chasing and let it come to you",
+    "hashtags": ["marsretrograde", "retrograde", "mars", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "retro",
+        "opts": { "sightAt": 1, "pathAt": 2 },
+        "header": "EARTH OVERTAKES MARS",
+        "lines": [
+          "Mars looks *brightest*",
+          "right when it's moving backwards.",
+          "Every two years or so, we pass it,",
+          "and it's at its *closest* to us."
+        ],
+        "labels": [
+          { "on": "planet", "at": 2, "text": "MARS · OUTER ORBIT" },
+          { "on": "earth", "at": 2, "text": "EARTH · INSIDE TRACK" }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "MARS · DESIRE · PURSUIT",
+        "lines": [
+          "Mars is how you *want,*",
+          "how you chase, how you fight.",
+          "For about ten weeks, it turns inward.",
+          "So let the chase *rest.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't chase what I'd have to *drag.*",
+          "My wanting can rest",
+          "and still be *mine.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-saturn-return",
+    "title": "Your Saturn return",
+    "cover": "Your *Saturn* return",
+    "caption": "saturn takes almost thirty years to circle the sun. around twenty-nine it checks what you built, and who with",
+    "hashtags": ["saturnreturn", "saturn", "astrology", "affirmations", "relationships"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "gold", "ring": true },
+        "header": "SATURN · ONE ORBIT",
+        "lines": [
+          "Saturn takes almost thirty years",
+          "to go once around the *sun.*",
+          "So somewhere near twenty-nine,",
+          "it's back where it was the day you were born."
+        ],
+        "labels": [{ "on": "planet", "at": 1, "text": "ONE ORBIT · ABOUT 29 YEARS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "THE SATURN RETURN",
+        "lines": [
+          "It's called your Saturn *return.*",
+          "Saturn tests what you've built,",
+          "including who you love.",
+          "What can't hold the weight *falls.*",
+          "What's left is *real.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm not losing time.",
+          "I'm building something that *lasts,*",
+          "and choosing who *belongs* in it."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-jupiter-return",
+    "title": "Your Jupiter return",
+    "cover": "Your *Jupiter* return",
+    "caption": "every twelve years jupiter comes back to your birth spot. it isn't luck, it's growth",
+    "hashtags": ["jupiterreturn", "jupiter", "astrology", "affirmations", "growth"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "JUPITER · TWELVE YEARS",
+        "lines": [
+          "Jupiter is so big",
+          "every other planet could fit *inside* it.",
+          "It spends about a year in each sign,",
+          "so every twelve years, it comes back",
+          "to your birth *spot.*"
+        ],
+        "labels": [{ "on": "planet", "at": 3, "text": "ONE ORBIT · ABOUT 12 YEARS" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "planet": "♃", "planetSign": "sagittarius", "planetAt": 0 },
+        "header": "YOUR JUPITER RETURN",
+        "lines": [
+          "Twelve, twenty-four, thirty-six.",
+          "It can feel like *luck,*",
+          "but it's really *growth.*",
+          "Love that fit you before",
+          "starts to feel *small.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to *outgrow* things.",
+          "I make room for love",
+          "as big as I've *become.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-eclipse-season",
+    "title": "Eclipse season",
+    "cover": "It's *eclipse* season",
+    "caption": "the moon's orbit is tilted, so most months it misses. twice a year it doesn't",
+    "hashtags": ["eclipseseason", "eclipse", "astrology", "affirmations", "change"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "syzygy",
+        "opts": { "offline": true },
+        "header": "THE MOON'S TILTED ORBIT",
+        "lines": [
+          "Most months, the moon *misses.*",
+          "Its orbit is tilted about five degrees,",
+          "so it slips past the sun, above or below."
+        ],
+        "labels": [{ "on": "moon", "at": 1, "text": "TILTED · ABOUT 5°" }]
+      },
+      {
+        "art": "eclipse",
+        "header": "TWICE A YEAR · ABOUT FIVE WEEKS",
+        "lines": [
+          "But about every six months, it lines *up.*",
+          "Eclipses usually come in pairs,",
+          "two weeks *apart.*",
+          "Things that stalled for years",
+          "can turn in a *fortnight.*"
+        ]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to *force* the turn.",
+          "What's meant to line up",
+          "will line up *on time.*"
+        ],
+        "labels": [{ "on": "line", "at": 2, "text": "ONE LINE · AN ECLIPSE" }]
+      }
+    ]
+  },
+  {
+    "key": "sky-solar-eclipse",
+    "title": "The solar eclipse",
+    "cover": "What shows in the *dark*",
+    "caption": "a total eclipse reaches any one spot about once in four centuries. some light only shows when the glare goes",
+    "hashtags": ["solareclipse", "eclipse", "newmoon", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "eclipse",
+        "header": "TOTAL SOLAR ECLIPSE · RARE",
+        "lines": [
+          "Somewhere on earth, there's a total eclipse",
+          "about every year and a *half.*",
+          "But in any one spot,",
+          "it's roughly once every four *centuries.*"
+        ],
+        "labels": [{ "on": "sun", "at": 3, "text": "ONE SPOT · ABOUT 375 YEARS" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "ONLY AT A NEW MOON",
+        "lines": [
+          "It only happens at a new moon.",
+          "And only when the sun is hidden",
+          "can you see its *crown,*",
+          "the corona."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "WHEN THE GLARE GOES",
+        "lines": [
+          "Some love is like that.",
+          "You miss it while you're *staring*",
+          "at something brighter.",
+          "Then the glare goes,",
+          "and there it *is.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-lunar-eclipse",
+    "title": "The lunar eclipse",
+    "cover": "The *shadow* shows the shape",
+    "caption": "the greeks knew the earth was round from its shadow on the moon. watch how someone loves in the dark parts",
+    "hashtags": ["lunareclipse", "bloodmoon", "fullmoon", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "LUNAR ECLIPSE · A FULL MOON",
+        "lines": [
+          "Over two thousand years ago,",
+          "the Greeks knew the earth was *round*",
+          "from its shadow on the moon.",
+          "The edge was always *curved.*"
+        ],
+        "labels": [{ "on": "moon", "at": 2, "text": "EARTH'S SHADOW · CURVED" }]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 1 },
+        "header": "SUN · EARTH · MOON",
+        "lines": [
+          "It only happens at a *full* moon,",
+          "when the earth slips right between.",
+          "A shadow tells you a *shape.*",
+          "So does how someone loves you",
+          "in the *hard* parts."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I notice who stays *kind*",
+          "in the dark parts.",
+          "Even in shadow, I *glow.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-full-moon",
+    "title": "The full moon",
+    "cover": "Want versus *need*",
+    "caption": "every full moon puts the sun and moon in opposite signs. want and need, both at full volume",
+    "hashtags": ["fullmoon", "moon", "astrology", "affirmations", "relationships"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["taurus", "scorpio"], "pairAt": 1 },
+        "header": "FULL MOON · AN OPPOSITION",
+        "lines": [
+          "Every full moon is a *tug-of-war.*",
+          "The sun and moon sit in opposite signs,",
+          "like Taurus and Scorpio,",
+          "facing each other across the sky."
+        ]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "THE SUN · THE MOON",
+        "lines": [
+          "The sun is what you *want.*",
+          "The moon is what you *need.*",
+          "Once a month, they face off,",
+          "and you feel both at full volume."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to choose",
+          "between what I *want* and what I *need.*",
+          "I can hold both."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-new-moon",
+    "title": "The new moon",
+    "cover": "Worth the *extra* days",
+    "caption": "the moon needs two extra days to catch the sun, because the sun keeps moving. worth the wait",
+    "hashtags": ["newmoon", "moon", "astrology", "affirmations", "newbeginnings"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · A CONJUNCTION",
+        "lines": [
+          "The moon circles us in twenty-seven days,",
+          "but needs two more to catch the *sun.*",
+          "Because the sun keeps *moving* too."
+        ],
+        "labels": [{ "on": "moon", "at": 1, "text": "ABOUT 29½ DAYS · SUN TO SUN" }]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 1 },
+        "header": "THE MEETING · EVERY MONTH",
+        "lines": [
+          "When it finally does,",
+          "that's the new moon.",
+          "Sun and moon in the same sign,",
+          "starting the month *together.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want someone who keeps *growing,*",
+          "and still comes to *meet* me.",
+          "I'm worth the extra days."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-void-of-course",
+    "title": "The void-of-course moon",
+    "cover": "The moon, *between* signs",
+    "caption": "when the moon has made its last aspect and hasn't changed sign yet. don't send the big text",
+    "hashtags": ["voidofcourse", "moon", "astrology", "patience", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "☽", "planetSign": "gemini", "planetAt": 0 },
+        "header": "VOID OF COURSE · THE MOON",
+        "lines": [
+          "Some hours, the moon is *between* things.",
+          "It's made its last major aspect in one sign",
+          "and hasn't stepped into the next.",
+          "They call that gap *void* of course."
+        ],
+        "labels": [{ "on": "planet", "at": 0, "text": "THE MOON · BETWEEN SIGNS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "MINUTES · OR OVER A DAY",
+        "lines": [
+          "It can last minutes, or over a *day.*",
+          "Old advice says don't *start* things then.",
+          "Don't send the big text.",
+          "Don't decide what the silence means."
+        ]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 2 },
+        "header": "A PAUSE · NOT AN ANSWER",
+        "lines": [
+          "Some silences aren't an *answer.*",
+          "Sometimes it's just the moon,",
+          "between *signs.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-spring-equinox",
+    "title": "The spring equinox",
+    "cover": "The zodiac starts with a *day*",
+    "caption": "zero degrees aries isn't a star, it's the equinox. the zodiac starts on a day",
+    "hashtags": ["springequinox", "equinox", "aries", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 1, "highlightAt": 4 },
+        "header": "THE EQUINOX · ZERO ARIES",
+        "lines": [
+          "The zodiac doesn't start with the *stars.*",
+          "It starts with a *day.*",
+          "The spring equinox,",
+          "when day and night are almost even.",
+          "That moment is zero degrees Aries."
+        ],
+        "labels": [{ "on": "house", "at": 4, "text": "0° ARIES · DAY ONE" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · THE FIRST SIGN",
+        "lines": [
+          "From here, the days grow *longer*",
+          "than the nights.",
+          "Aries is where the light starts *winning.*",
+          "In love, it's the year's clean slate."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I get to start *again.*",
+          "The light is coming back,",
+          "and so am *I.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-autumn-equinox",
+    "title": "The autumn equinox",
+    "cover": "Love that's *even*",
+    "caption": "the sign of partners begins on the one day the sky is fair. day and night, even",
+    "hashtags": ["autumnequinox", "equinox", "libra", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "THE EQUINOX · ZERO LIBRA",
+        "lines": [
+          "The sign of *partners* begins",
+          "on the day the sky is *fair.*",
+          "At the autumn equinox,",
+          "day and night are almost equal,",
+          "and the sun steps into Libra."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "DAY · NIGHT · EVEN",
+        "lines": [
+          "So it's a good season to check the *scales.*",
+          "Who calls first?",
+          "Who remembers?",
+          "Who stays when it gets dark *earlier?*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I deserve love that's *even.*",
+          "I get back the light I *give.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-summer-solstice",
+    "title": "The summer solstice",
+    "cover": "The sun *stands still*",
+    "caption": "solstice means the sun stands still. on the longest day, the sun walks into the moon's own sign",
+    "hashtags": ["summersolstice", "solstice", "cancer", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "SOLSTICE · THE SUN STANDS STILL",
+        "lines": [
+          "Solstice means the sun *stands still.*",
+          "For a few days, sunrise stops moving north,",
+          "then slowly *turns* back."
+        ],
+        "labels": [{ "on": "planet", "at": 1, "text": "THE LONGEST DAY" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · RULED BY THE MOON",
+        "lines": [
+          "On the longest day, the sun enters *Cancer,*",
+          "the sign the moon rules.",
+          "At the peak of the light,",
+          "the sky turns toward *home.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can shine",
+          "and still want to be *held.*",
+          "Home is allowed to be what I *want.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-winter-solstice",
+    "title": "The winter solstice",
+    "cover": "Love for the *long* nights",
+    "caption": "a stone passage in ireland, older than the pyramids, fills with light at winter solstice sunrise",
+    "hashtags": ["wintersolstice", "solstice", "capricorn", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "lilac" },
+        "header": "WINTER SOLSTICE · NEWGRANGE",
+        "lines": [
+          "In Ireland, there's a stone passage",
+          "older than the *pyramids.*",
+          "Around winter solstice sunrise,",
+          "light reaches all the way *in.*"
+        ],
+        "labels": [{ "on": "planet", "at": 2, "text": "SUNRISE · THE LONGEST NIGHT" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · RULED BY SATURN",
+        "lines": [
+          "It's the longest night of the year,",
+          "and the sun enters *Capricorn,*",
+          "the sign of what *lasts.*",
+          "From here, the light comes back,",
+          "a little more each day."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I *stay* for the long nights.",
+          "I want love that's still there",
+          "when the light comes *back.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-venus-morning-star",
+    "title": "Venus as the morning star",
+    "cover": "The *morning* star",
+    "caption": "the brightest star before sunrise isn't a star. it's venus, back after its reset",
+    "hashtags": ["morningstar", "venus", "astrology", "affirmations", "newlove"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "VENUS · THE MORNING STAR",
+        "lines": [
+          "The brightest star before *sunrise*",
+          "isn't a star at all.",
+          "It's *Venus,* rising in the east,",
+          "just ahead of the sun."
+        ],
+        "labels": [{ "on": "planet", "at": 2, "text": "PHOSPHORUS · LIGHT-BRINGER" }]
+      },
+      {
+        "art": "retro",
+        "opts": { "sightAt": 1 },
+        "header": "AFTER THE CONJUNCTION",
+        "lines": [
+          "It shows up there after Venus",
+          "slips between us and the *sun,*",
+          "halfway through its retrograde.",
+          "The Greeks called it *light-bringer.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My heart can come back *brighter*",
+          "after a reset.",
+          "I *rise* before I'm sure."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-venus-evening-star",
+    "title": "Venus as the evening star",
+    "cover": "The *first* star you wish on",
+    "caption": "the first star you wish on at dusk is often venus. bright enough to cast a shadow",
+    "hashtags": ["eveningstar", "venus", "astrology", "affirmations", "wishes"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "lilac" },
+        "header": "VENUS · THE EVENING STAR",
+        "lines": [
+          "The first star you wish on at dusk",
+          "is often *Venus.*",
+          "After the sun and moon,",
+          "it's the brightest thing in the *sky.*"
+        ],
+        "labels": [{ "on": "planet", "at": 1, "text": "HESPERUS · EVENING STAR" }]
+      },
+      {
+        "art": "venus",
+        "header": "BRIGHT ENOUGH · FOR SHADOWS",
+        "lines": [
+          "On a dark enough night,",
+          "it can even cast a *shadow.*",
+          "But you'll never see it at midnight.",
+          "It never strays far from the *sun.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "STAY CLOSE TO WHAT WARMS YOU",
+        "lines": [
+          "The brightest love works like that.",
+          "It doesn't wander off into the *dark.*",
+          "It stays close to what *warms* it."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-venus-cycle",
+    "title": "The eight-year Venus cycle",
+    "cover": "*Venus* draws a flower",
+    "caption": "every eight years venus traces five petals around us, then starts over. love rhymes",
+    "hashtags": ["venuscycle", "venus", "astrology", "affirmations", "patterns"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "loop",
+        "header": "EIGHT YEARS · FIVE PETALS",
+        "lines": [
+          "Every eight years, *Venus* draws a flower.",
+          "Five times, it passes between us and the sun,",
+          "and those five meetings make *petals.*"
+        ],
+        "labels": [{ "on": "loop", "at": 2, "text": "ONE MEETING · ONE PETAL" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "THE SAME SKY · EIGHT YEARS ON",
+        "lines": [
+          "Then it starts over, almost *exactly.*",
+          "Every eight years on your birthday,",
+          "Venus sits near where it was",
+          "the day you were born.",
+          "So love *rhymes.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can let the pattern *repeat*",
+          "and still write a new *ending.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-supermoon",
+    "title": "The supermoon",
+    "cover": "Same moon, just *closer*",
+    "caption": "a supermoon isn't a bigger moon. it's the same one, just closer. that's what the right people do",
+    "hashtags": ["supermoon", "fullmoon", "moon", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "SUPERMOON · PERIGEE",
+        "lines": [
+          "A supermoon isn't a bigger *moon.*",
+          "It's the same moon, just *closer.*",
+          "Its orbit is an oval,",
+          "and sometimes it's full at the near end."
+        ],
+        "labels": [{ "on": "moon", "at": 1, "text": "PERIGEE · CLOSEST POINT" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "mint" },
+        "header": "UP CLOSE · BRIGHTER",
+        "lines": [
+          "It can look fourteen percent *wider*",
+          "and almost a third brighter",
+          "than a full moon at its farthest.",
+          "Nothing about it changed.",
+          "Only the *distance.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I let the right people come *close.*",
+          "Up close, I'm still *me,*",
+          "just brighter."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "sky-moon-signs",
+    "title": "The moon changes sign",
+    "cover": "Feelings are *weather*",
+    "caption": "the moon changes sign every two and a half days. a feeling is weather, not a verdict",
+    "hashtags": ["moonsign", "moon", "astrology", "affirmations", "feelings"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "☽", "planetSign": "cancer", "planetAt": 1 },
+        "header": "THE MOON · ALL TWELVE SIGNS",
+        "lines": [
+          "The moon moves its own width every *hour.*",
+          "Every two and a half days,",
+          "it walks into a new *sign.*",
+          "All twelve, in about four weeks."
+        ],
+        "labels": [{ "on": "planet", "at": 1, "text": "ABOUT 2.5 DAYS PER SIGN" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "MOODS · NOT VERDICTS",
+        "lines": [
+          "Your feelings move like that too.",
+          "Tuesday's heavy heart",
+          "can be *lighter* by Thursday.",
+          "A feeling is *weather,* not a verdict."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "WAIT FOR THE NEXT SIGN",
+        "lines": [
+          "Before you send the last text,",
+          "wait two and a half days.",
+          "Don't decide forever",
+          "from one *moon.*"
+        ]
+      }
+    ]
+  }
+]

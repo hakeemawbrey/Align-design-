@@ -1,0 +1,76 @@
+{
+  "id": "006-firstdate-scorpio",
+  "title": "First date with a Scorpio",
+  "cover": "No small talk with a *Scorpio*",
+  "keyword": "MATCH",
+  "caption": "skip the small talk with a scorpio. they can smell a script",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "scorpio",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "firstdate",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · FIXED WATER",
+      "lines": [
+        "Skip the small talk with a Scorpio.",
+        "They can smell a *script.*",
+        "Ask the question you're almost",
+        "too *nervous* to ask."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "lilac"
+      },
+      "header": "MARS · MODERN PLUTO",
+      "lines": [
+        "Ruled by *Mars* and modern *Pluto,*",
+        "they're drawn to *intensity.*",
+        "Steady eye contact. A real answer.",
+        "A little *mystery* left for later."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "WHAT WINS THEM",
+      "lines": [
+        "Don't try to be *impressive.*",
+        "Be honest, and a little *brave.*",
+        "To a Scorpio,",
+        "that's the whole *seduction.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

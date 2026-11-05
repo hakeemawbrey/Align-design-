@@ -1,0 +1,368 @@
+[
+  {
+    "key": "dealbreaker-aries",
+    "title": "The Aries dealbreaker",
+    "cover": "The *Aries* dealbreaker",
+    "caption": "an aries would rather hear no today than maybe for a month",
+    "hashtags": ["aries", "dealbreakers", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · CARDINAL FIRE",
+        "lines": ["An Aries can forgive almost anything", "except being someone's *maybe.*", "The slow reply. The vague plan.", "The someday that never gets a *date.*"],
+        "labels": [{ "on": "sign", "at": 0, "text": "ARIES · THE FIRST SIGN" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS",
+        "lines": ["You're ruled by *Mars,*", "so you'd rather hear *no* today", "than maybe for a month.", "Saying that on a first date", "isn't too much. It's *kind.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "MARS · THE PLANET OF DRIVE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't wait to be *chosen.*", "I say what I want, early,", "and the right one says it *back.*"]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-taurus",
+    "title": "The Taurus dealbreaker",
+    "cover": "Taurus won't settle for *flaky*",
+    "caption": "a taurus doesn't need fireworks. they need you to show up thursday, and the thursday after",
+    "hashtags": ["taurus", "dealbreakers", "zodiaclove", "astrology", "consistency"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · FIXED EARTH",
+        "lines": ["A Taurus doesn't need *fireworks.*", "They need you to show up on Thursday,", "and the Thursday *after* that."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass" },
+        "header": "THE DEALBREAKER · THE FLAKE",
+        "lines": ["Their dealbreaker is the *flake.*", "Plans that move. Words that bend.", "Warmth that comes and goes", "like the *weather.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "mint" },
+        "header": "RULED BY VENUS",
+        "lines": ["Ruled by *Venus,* you love slow things.", "A garden. A long meal.", "A hand that *stays.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "VENUS · TAURUS'S RULER" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to want *steady.*", "Consistency isn't boring.", "It's how I know it's *real.*"]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-gemini",
+    "title": "The Gemini dealbreaker",
+    "cover": "The *Gemini* dealbreaker",
+    "caption": "the fastest way to lose a gemini is to stop being curious about them",
+    "hashtags": ["gemini", "dealbreakers", "zodiaclove", "astrology", "communication"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Want to lose a Gemini?", "Stop *asking* them things.", "Ruled by *Mercury,* the messenger,", "they fall in love *mid-conversation.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "MERCURY · THE MESSENGER" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI · MUTABLE AIR",
+        "lines": ["So the dealbreaker is a *closed door.*", "Someone who stops being curious,", "who calls your questions *too much,*", "who goes quiet instead of talking."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My curiosity is not a *flaw.*", "I want someone who stays", "*interested* in me, for years."]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-cancer",
+    "title": "The Cancer dealbreaker",
+    "cover": "Cancer's *one* dealbreaker",
+    "caption": "a cancer will give you a key to everything. just don't treat it like a hotel",
+    "hashtags": ["cancer", "dealbreakers", "zodiaclove", "astrology", "watersign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": ["A Cancer will hand you a *key*", "to their whole inner life.", "Their dealbreaker is someone", "who treats it like a *hotel.*"]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "RULED BY THE MOON",
+        "lines": ["You're ruled by the *Moon,*", "so your feelings come in *tides.*", "Anyone who calls that *dramatic*", "has already told you enough."],
+        "labels": [{ "on": "moon", "at": 1, "text": "FULL MOON · HIGH TIDE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My softness is not a *weakness.*", "I only open my door", "to people who wipe their *feet.*"]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-leo",
+    "title": "The Leo dealbreaker",
+    "cover": "A Leo won't be your *secret*",
+    "caption": "a leo will not be anyone's secret. they want the person who claps the loudest",
+    "hashtags": ["leo", "dealbreakers", "zodiaclove", "astrology", "firesign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "RULED BY THE SUN",
+        "lines": ["A Leo will not be anyone's *secret.*", "You're ruled by the *Sun,*", "and the sun doesn't do", "hidden, half-lit, or *later.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · FIXED FIRE",
+        "lines": ["So say it up front:", "you want someone *proud* of you.", "Who posts the photo.", "Who brags about you to their friends.", "Who claps the *loudest.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't dim to *fit.*", "The right love is glad", "to stand in my *light.*"]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-virgo",
+    "title": "The Virgo dealbreaker",
+    "cover": "What a *Virgo* won't settle for",
+    "caption": "a virgo notices everything, including the call you said you'd make",
+    "hashtags": ["virgo", "dealbreakers", "zodiaclove", "astrology", "earthsign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": ["A Virgo notices *everything,*", "including the call you said you'd make.", "Their dealbreaker isn't a *flaw.*", "It's a promise left *undone.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 6, "highlightAt": 0 },
+        "header": "THE SIXTH HOUSE · DAILY LIFE",
+        "lines": ["Virgo belongs to the *sixth house,*", "the house of the everyday.", "So love lives in *small* things:", "the remembered order, the fixed shelf,", "the *follow-through.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "6TH HOUSE · ROUTINES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Wanting *effort* isn't being picky.", "I deserve someone", "who does what they *say.*"]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-libra",
+    "title": "The Libra dealbreaker",
+    "cover": "The *Libra* dealbreaker",
+    "caption": "a libra is watching how you treat the waiter, and whether you'll ever meet them halfway",
+    "hashtags": ["libra", "dealbreakers", "zodiaclove", "astrology", "airsign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · CARDINAL AIR",
+        "lines": ["A Libra is quietly watching", "how you treat the *waiter.*", "Ruled by *Venus,* grace isn't a bonus.", "It's the *entry fee.*"],
+        "labels": [{ "on": "sign", "at": 0, "text": "THE SCALES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "THE DEALBREAKER · IMBALANCE",
+        "lines": ["But the real dealbreaker is *imbalance.*", "Being the only one who plans,", "who softens, who apologizes,", "who *bends,*", "while the other one just *drifts.*"],
+        "labels": [{ "on": "orbit", "at": 1, "text": "ONE-SIDED · AN ORBIT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Keeping the peace", "doesn't mean keeping *quiet.*", "I want love that meets me *halfway.*"]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-scorpio",
+    "title": "The Scorpio dealbreaker",
+    "cover": "Scorpio can take any *truth*",
+    "caption": "a scorpio can handle the messy past, the hard feeling, the ugly truth. not a lie",
+    "hashtags": ["scorpio", "dealbreakers", "zodiaclove", "astrology", "honesty"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": ["A Scorpio can handle any *truth.*", "The messy past. The hard feeling.", "The thing you're scared to say.", "What they can't hold is a *lie.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 8, "highlightAt": 0 },
+        "header": "THE EIGHTH HOUSE · INTIMACY",
+        "lines": ["Scorpio belongs to the *eighth house,*", "the house of intimacy and trust.", "To you, closeness without honesty", "is just a *performance.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "8TH HOUSE · INTIMACY" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "DEALBREAKERS UP FRONT",
+        "lines": ["So say it on the first date.", "You'd take the *ugly* truth", "over a *pretty* secret,", "every single *time.*"],
+        "labels": [{ "on": "thread", "at": 1, "text": "TRUST · THE ONLY THREAD" }]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-sagittarius",
+    "title": "The Sagittarius dealbreaker",
+    "cover": "Sagittarius won't take a *cage*",
+    "caption": "never hand a sagittarius a cage, even a pretty one",
+    "hashtags": ["sagittarius", "dealbreakers", "zodiaclove", "astrology", "freedom"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": ["Never hand a Sagittarius a *cage,*", "even a pretty one.", "Jealousy. Curfews. A guilt trip", "for every plane ticket they book."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER",
+        "lines": ["You're ruled by *Jupiter,*", "the planet of *more.*", "More road, more truth, more sky.", "A love that shrinks your world", "isn't one you can *keep.*"],
+        "labels": [{ "on": "planet", "at": 1, "text": "JUPITER · EXPANSION" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *free* and loyal.", "The right one doesn't hold me back.", "They pack a *bag.*"]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-capricorn",
+    "title": "The Capricorn dealbreaker",
+    "cover": "Capricorn's time is a *gift*",
+    "caption": "a capricorn doesn't need you finished. they need you going somewhere on purpose",
+    "hashtags": ["capricorn", "dealbreakers", "zodiaclove", "astrology", "saturn"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "RULED BY SATURN",
+        "lines": ["A Capricorn gives you the rarest thing:", "their *time.*", "Ruled by *Saturn,* the planet of time,", "they don't spend it *lightly.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "SATURN · TIME AND WORK" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · CARDINAL EARTH",
+        "lines": ["So the dealbreaker is someone", "who isn't *serious* about anything.", "Not rich. Not finished.", "Just *going* somewhere, on purpose."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "DEALBREAKERS UP FRONT",
+        "lines": ["It isn't cold to say it early.", "You're building something that lasts.", "You want someone who shows up with *tools,*", "not someone who just admires the *view.*"]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-aquarius",
+    "title": "The Aquarius dealbreaker",
+    "cover": "Don't ask Aquarius to be *normal*",
+    "caption": "the quickest way to lose an aquarius is to ask them to be more normal",
+    "hashtags": ["aquarius", "dealbreakers", "zodiaclove", "astrology", "airsign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": ["The quickest way to lose an Aquarius?", "Ask them to be more *normal.*", "Tone down the ideas. The friends.", "The strange, *beautiful* parts."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 11, "highlightAt": 0 },
+        "header": "THE ELEVENTH HOUSE · FRIENDS",
+        "lines": ["Aquarius belongs to the *eleventh house,*", "friends, causes, and hopes.", "So someone jealous of your people", "is a *dealbreaker,* not a phase."],
+        "labels": [{ "on": "house", "at": 0, "text": "11TH HOUSE · FRIENDS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't shrink my *weird.*", "The right love thinks", "my *mind* is the best part."]
+      }
+    ]
+  },
+  {
+    "key": "dealbreaker-pisces",
+    "title": "The Pisces dealbreaker",
+    "cover": "Why *Pisces* needs a dealbreaker",
+    "caption": "a pisces forgives you before you apologize. which is exactly why they need a dealbreaker",
+    "hashtags": ["pisces", "dealbreakers", "zodiaclove", "astrology", "boundaries"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["A Pisces forgives you", "*before* you even apologize.", "Ruled by modern *Neptune,*", "they see the *best* in everyone.", "Which is exactly why", "a Pisces needs a *dealbreaker.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water" },
+        "header": "WATER · TAKES ANY SHAPE",
+        "lines": ["Water takes the *shape*", "of whatever holds it.", "So if you're a Pisces, decide early:", "no one who treats your *kindness*", "like a *loophole.*"],
+        "labels": [{ "on": "element", "at": 0, "text": "WATER · THE FEELING SIGNS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My big heart has a *door.*", "I'm allowed to close it", "on anyone who won't *knock.*"]
+      }
+    ]
+  }
+]

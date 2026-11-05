@@ -1,0 +1,87 @@
+{
+  "id": "474-love-soft",
+  "title": "Soft love",
+  "cover": "Soft love is still *sunlight*",
+  "keyword": "CHART",
+  "caption": "moonlight is just sunlight, softened enough to look at",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "softlove",
+    "gentlelove",
+    "moon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "MOONLIGHT · REFLECTED SUN",
+      "lines": [
+        "Moonlight is *sunlight.*",
+        "It bounces off the moon",
+        "and reaches you hundreds of thousands",
+        "of times *softer.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "REFLECTED SUNLIGHT"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "SAME LIGHT · SOFTER",
+      "lines": [
+        "You can't look straight at the sun.",
+        "You can look at the moon for *hours.*",
+        "Same light.",
+        "Soft love isn't *less* love.",
+        "It's love you can *stay* in."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Gentle is not *weak.*",
+        "I can love *softly*",
+        "and still love *all the way.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

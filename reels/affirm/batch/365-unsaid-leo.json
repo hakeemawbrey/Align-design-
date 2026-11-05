@@ -1,0 +1,95 @@
+{
+  "id": "365-unsaid-leo",
+  "title": "How a Leo says I love you",
+  "cover": "How a *Leo* says I love you",
+  "keyword": "VENUS",
+  "caption": "notice how a leo introduces you. that wasn't a name, that was a whole little speech",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "leo",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · THE UNSAID",
+      "lines": [
+        "Notice how a Leo *introduces* you.",
+        "Not just a name.",
+        "A whole little *speech.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "RULED BY THE SUN",
+      "lines": [
+        "Ruled by the Sun, they *shine* on you.",
+        "They brag about your job.",
+        "They post you, plan the birthday,",
+        "and light up when you *walk in.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "YOU, IN THEIR LIGHT",
+      "lines": [
+        "To a Leo, love means *pride.*",
+        "You're the one they can't stop showing."
+      ],
+      "labels": [
+        {
+          "on": "you",
+          "at": 1,
+          "text": "☉ · ALL EYES ON YOU"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I let myself be *celebrated.*",
+        "I'm someone *worth* showing off."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

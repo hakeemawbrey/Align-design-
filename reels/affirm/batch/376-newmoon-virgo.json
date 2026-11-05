@@ -1,0 +1,84 @@
+{
+  "id": "376-newmoon-virgo",
+  "title": "New moon in Virgo",
+  "cover": "New moon in *Virgo*",
+  "keyword": "MOON",
+  "caption": "virgo's brightest star is named for an ear of wheat. invite love that shows up in the small stuff",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "newmoon",
+    "newmooninvirgo",
+    "virgo",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · THE MAIDEN",
+      "lines": [
+        "Virgo's brightest star is called *Spica.*",
+        "It means an ear of *wheat,*",
+        "the harvest, held in one hand."
+      ],
+      "labels": [
+        {
+          "on": "stars",
+          "at": 0,
+          "text": "SPICA · EAR OF WHEAT"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · VIRGO",
+      "lines": [
+        "With the sun and moon both in Virgo,",
+        "it's a month for *small* beginnings.",
+        "Invite love that shows up in details.",
+        "Coffee, made the way you like it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I let myself be *helped.*",
+        "I don't have to be perfect",
+        "to be *chosen.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

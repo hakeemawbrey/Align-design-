@@ -1,0 +1,352 @@
+[
+  {
+    "key": "misses-aries",
+    "title": "When an Aries misses you",
+    "cover": "When an *Aries* misses you",
+    "caption": "when an aries misses you, you get a call, not a like. a plan for tonight, not someday",
+    "hashtags": ["aries", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · CARDINAL FIRE",
+        "lines": ["You'll never have to wonder", "if an Aries *misses* you.", "You'll get a call, not a like.", "A plan for *tonight,* not someday."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS",
+        "lines": ["Ruled by *Mars,* they turn longing", "into *motion.*", "They'll drive across town", "just to be *near* you for an hour."],
+        "labels": [{ "on": "planet", "at": 1, "text": "MARS · DESIRE IN MOTION" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to miss people *out loud.*", "When I want someone,", "they *know.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-taurus",
+    "title": "When a Taurus misses you",
+    "cover": "A *Taurus* who misses you",
+    "caption": "a taurus who misses you sleeps in your sweater and orders your usual by accident",
+    "hashtags": ["taurus", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · FIXED EARTH",
+        "lines": ["A Taurus who misses you", "sleeps in your *sweater.*", "They order your usual by accident,", "then eat it *anyway.*"]
+      },
+      {
+        "art": "venus",
+        "header": "RULED BY VENUS",
+        "lines": ["Ruled by *Venus,* they miss you", "through the *senses.*", "Your smell on a pillow.", "The *weight* of your hand.", "The quiet of a Sunday without you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My love is *loyal,* not slow.", "When I miss someone,", "I keep their place *warm.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-gemini",
+    "title": "When a Gemini misses you",
+    "cover": "A *Gemini* misses you in texts",
+    "caption": "eleven texts from a gemini all mean one thing. i miss talking to you",
+    "hashtags": ["gemini", "zodiaclove", "missingyou", "astrology", "texting"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["If a Gemini misses you,", "your *phone* finds out first.", "Ruled by *Mercury,* planet of messages,", "they miss people in *text.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "MERCURY · MESSAGES" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI · MUTABLE AIR",
+        "lines": ["A meme at midnight. A voice note.", "A link with zero context.", "Eleven texts that all *really* mean", "I miss *talking* to you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My *attention* is my affection.", "If I keep sending you things,", "I'm keeping you *close.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-cancer",
+    "title": "When a Cancer misses you",
+    "cover": "How a *Cancer* says I miss you",
+    "caption": "have you eaten? did you get home okay? that's a cancer saying i miss you",
+    "hashtags": ["cancer", "zodiaclove", "missingyou", "astrology", "moon"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": ["A Cancer misses you in *questions.*", "Have you eaten? Did you get home?", "Are you sleeping okay?", "It sounds small. It's their whole *heart.*"]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 7 },
+        "header": "RULED BY THE MOON",
+        "lines": ["Ruled by the *Moon,* they live in memory.", "They scroll back through old photos,", "and replay your *laugh* at night."],
+        "labels": [{ "on": "moon", "at": 0, "text": "THE MOON · MEMORY AND MOOD" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I miss people *gently.*", "And I'm allowed to say it", "*before* they say it first."]
+      }
+    ]
+  },
+  {
+    "key": "misses-leo",
+    "title": "When a Leo misses you",
+    "cover": "That *Leo* selfie was for you",
+    "caption": "that perfect selfie a leo posted at golden hour? it was for you",
+    "hashtags": ["leo", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · FIXED FIRE",
+        "lines": ["That perfect selfie a Leo just posted?", "It was for *you.*", "Best angle. Golden hour.", "Posted *right* when you'd be online."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "RULED BY THE SUN",
+        "lines": ["Ruled by the *Sun,* they want to be *seen*", "by the one person they're thinking of.", "It isn't vanity.", "It's a *flare,* sent up for you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My *pride* can step aside.", "I can just say", "*I miss you* first."]
+      }
+    ]
+  },
+  {
+    "key": "misses-virgo",
+    "title": "When a Virgo misses you",
+    "cover": "A *Virgo* misses you quietly",
+    "caption": "is a virgo's apartment spotless lately? they might be missing you. the text is on draft six",
+    "hashtags": ["virgo", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": ["Is a Virgo's apartment *spotless* lately?", "They might be missing *you.*", "They clean the closet. Then the inbox.", "Anything to keep their *hands* busy."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Ruled by *Mercury,* they draft the text", "*six* times before they send it.", "And when it comes, it's practical:", "how's your knee, *really?*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *edit* my heart.", "My care is enough,", "even in a *first draft.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-libra",
+    "title": "When a Libra misses you",
+    "cover": "A *Libra* playlist is a letter",
+    "caption": "got a playlist from a libra? that's a love letter with better transitions",
+    "hashtags": ["libra", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · CARDINAL AIR",
+        "lines": ["Got a playlist from a Libra?", "That's a *love letter.*", "They'll pretend it's just for them,", "then send it to you at *midnight.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "MISSING · THE WE",
+        "lines": ["Ruled by *Venus,* they miss the *we.*", "The second coffee. The shared joke.", "The other half of every *plan.*"],
+        "labels": [{ "on": "thread", "at": 1, "text": "THE THREAD · STILL THERE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can miss someone", "and still feel *whole.*", "I'm a full sky on my *own.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-scorpio",
+    "title": "When a Scorpio misses you",
+    "cover": "A *Scorpio* watches in silence",
+    "caption": "a scorpio who misses you watches every story and never reacts. then one night, one message",
+    "hashtags": ["scorpio", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": ["Every story you post,", "a Scorpio who misses you *watches.*", "They just *never* react.", "Not once. In total *silence.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "ORBITING · IN SILENCE",
+        "lines": ["It isn't cold. It's *control.*", "Their feelings run so deep", "they won't let them out", "until they know it's *safe.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "lilac" },
+        "header": "MARS · MODERN PLUTO",
+        "lines": ["Ruled by *Mars* and modern *Pluto,*", "they hold it, and hold it,", "then one night, one message.", "No small talk. Just the *truth.*", "And it pulls like a *tide.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-sagittarius",
+    "title": "When a Sagittarius misses you",
+    "cover": "A *Sagittarius* sent a sunset",
+    "caption": "if a sagittarius sends you a sunset from somewhere far, they miss you",
+    "hashtags": ["sagittarius", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": ["If a Sagittarius sends you a *sunset,*", "they miss you.", "A mountain. A market. A strange road,", "with *you'd love this* underneath."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER",
+        "lines": ["Ruled by *Jupiter,* they miss in *plans.*", "Next thing you know,", "they're looking at flights", "to wherever *you* are."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My freedom and my *longing*", "can live in the same heart.", "I always come *back.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-capricorn",
+    "title": "When a Capricorn misses you",
+    "cover": "A *Capricorn* misses you in ink",
+    "caption": "when a capricorn misses you, they work later. then dinner friday shows up on the calendar",
+    "hashtags": ["capricorn", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "RULED BY SATURN",
+        "lines": ["When a Capricorn misses you,", "they work *later.*", "Ruled by *Saturn,* they turn feelings", "into something they can *do.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · CARDINAL EARTH",
+        "lines": ["Then one day, it's on the calendar.", "A visit. A booking. *Dinner, Friday.*", "That's a Capricorn saying", "*I miss you,* in ink."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to *feel* first", "and fix it later.", "Missing someone isn't *weakness.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-aquarius",
+    "title": "When an Aquarius misses you",
+    "cover": "An *Aquarius* won't say it",
+    "caption": "an aquarius rarely says i miss you. they send you a documentary at two in the morning",
+    "hashtags": ["aquarius", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": ["An Aquarius rarely says *I miss you.*", "They send you a *documentary*", "at two in the morning,", "with one word: *thoughts?*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac" },
+        "header": "SATURN · MODERN URANUS",
+        "lines": ["Ruled by *Saturn* and modern *Uranus,*", "they miss your *mind* most.", "The arguments about aliens.", "The way you *get* their strange ideas."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My distance isn't *indifference.*", "I'm allowed to want someone", "and still be *free.*"]
+      }
+    ]
+  },
+  {
+    "key": "misses-pisces",
+    "title": "When a Pisces misses you",
+    "cover": "You're in a *Pisces* dream",
+    "caption": "when a pisces misses you, you show up in their dreams, and in every song on the radio",
+    "hashtags": ["pisces", "zodiaclove", "missingyou", "astrology", "venus"],
+    "keyword": "VENUS",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["When a Pisces misses you,", "you start showing up in their *dreams.*", "And in every song on the radio,", "even the ones that *aren't* sad."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "lilac" },
+        "header": "JUPITER · MODERN NEPTUNE",
+        "lines": ["Ruled by *Jupiter* and modern *Neptune,*", "they write the message *ten* times", "and send none of them.", "The longing goes into their *art.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *drown* to love.", "I can miss someone", "and still come up for *air.*"]
+      }
+    ]
+  }
+]

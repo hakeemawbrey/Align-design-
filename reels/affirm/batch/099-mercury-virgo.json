@@ -1,0 +1,86 @@
+{
+  "id": "099-mercury-virgo",
+  "title": "Mercury in Virgo",
+  "cover": "Mercury in Virgo: *did you eat?*",
+  "keyword": "CHART",
+  "caption": "mercury in virgo says i love you as did you eat. it needs words that are specific, not someday",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "mercuryinvirgo",
+    "virgo",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "MERCURY IN VIRGO · EXALTED",
+      "lines": [
+        "Mercury is at its *sharpest* in Virgo.",
+        "It rules this sign and is exalted here.",
+        "So your I love you",
+        "sometimes sounds like, did you *eat?*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☿ · HOME AND EXALTED"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · MUTABLE EARTH",
+      "lines": [
+        "And you need words that are *specific.*",
+        "Not *we should* someday. A day. A time.",
+        "Vague feels like careless to you.",
+        "Follow-through is your favorite *sentence.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My attention to detail is *devotion.*",
+        "I deserve to be spoken to clearly.",
+        "I can take a compliment without *fixing* it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

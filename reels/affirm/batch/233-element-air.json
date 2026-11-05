@@ -1,0 +1,85 @@
+{
+  "id": "233-element-air",
+  "title": "Air signs in love",
+  "cover": "*Air signs* in love",
+  "keyword": "MATCH",
+  "caption": "gemini, libra, aquarius. for an air sign, the first kiss is a conversation",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "airsigns",
+    "gemini",
+    "libra",
+    "aquarius",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "elements",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "AIR · GEMINI LIBRA AQUARIUS",
+      "lines": [
+        "For an air sign, the first kiss",
+        "is a *conversation.*",
+        "Gemini, Libra and *Aquarius*",
+        "fall for minds before faces."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 2,
+          "text": "GEMINI · LIBRA · AQUARIUS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "ROOM TO BREATHE",
+      "lines": [
+        "And air needs *space* to move.",
+        "Asking for room isn't pulling away.",
+        "It's how they *come back*",
+        "with something new to tell you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want to be *understood,*",
+        "not just wanted.",
+        "My freedom and my love can share a *home.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

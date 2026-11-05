@@ -1,0 +1,87 @@
+{
+  "id": "499-love-worth-the-wait",
+  "title": "Worth the wait",
+  "cover": "You are worth the *wait*",
+  "keyword": "CHART",
+  "caption": "venus spins so slowly one turn takes longer than its year. it's still the brightest planet up there",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "worththewait",
+    "patience",
+    "venus",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS · A SLOW SPIN",
+      "lines": [
+        "Venus spins so *slowly*",
+        "that one turn takes longer",
+        "than its whole *year.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "ONE SPIN · OVER A YEAR"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "BEING WORTH THE WAIT",
+      "lines": [
+        "And it's still the *brightest* planet",
+        "in the night sky.",
+        "Slow isn't the same as *less.*",
+        "Some things take their time",
+        "and are worth every *minute.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't rush to be *chosen.*",
+        "I'm worth the *wait,*",
+        "and so is the love I'm waiting for."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

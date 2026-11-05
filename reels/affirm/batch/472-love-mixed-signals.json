@@ -1,0 +1,86 @@
+{
+  "id": "472-love-mixed-signals",
+  "title": "Mixed signals",
+  "cover": "Planets don't *twinkle*",
+  "keyword": "MUTUAL",
+  "caption": "stars flicker through rough air. planets shine steady. look for the steady ones",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mixedsignals",
+    "dating",
+    "astrology",
+    "affirmations",
+    "greenflags"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "STARS TWINKLE · PLANETS DON'T",
+      "lines": [
+        "A twinkle is just *turbulence.*",
+        "Starlight gets shaken by rough air",
+        "on its way down to *you.*",
+        "Planets mostly don't twinkle. They shine *steady.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "PLANET · STEADY LIGHT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "MIXED SIGNALS",
+      "lines": [
+        "If someone's light keeps *flickering,*",
+        "warm one day, gone the next,",
+        "you don't have to *decode* it.",
+        "Mixed signals are a *signal.*",
+        "They mean someone isn't sure."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't squint to see someone's *interest.*",
+        "I want love that shines *steady.*",
+        "Clear is *kind,* and I deserve clear."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "033-hear-capricorn",
+  "title": "What a Capricorn needs to hear",
+  "cover": "Capricorn, love isn't a *detour*",
+  "keyword": "CHART",
+  "caption": "for the capricorn who keeps putting love after the next goal",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "capricorn",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "hear",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "RULED BY SATURN · THE LONG GAME",
+      "lines": [
+        "Capricorn, love is not a *distraction.*",
+        "*Saturn* taught you the work comes first,",
+        "the feelings later,",
+        "and the *rest* never."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 10,
+        "highlightAt": 0
+      },
+      "header": "THE TENTH HOUSE · CAREER",
+      "lines": [
+        "You rule the *tenth house,*",
+        "career and reputation,",
+        "so love gets scheduled after the goal.",
+        "But the right person won't *compete.*",
+        "They'll be the reason the view from the top",
+        "feels like *something.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "10TH HOUSE · CAREER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Love is part of what I'm *building.*",
+        "I can climb and still be *held.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

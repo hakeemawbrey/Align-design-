@@ -1,0 +1,89 @@
+{
+  "id": "282-pair-leo-aquarius",
+  "title": "Leo and Aquarius",
+  "cover": "Leo and Aquarius, *mirror*",
+  "keyword": "MATCH",
+  "caption": "leo is the heart, aquarius is the crowd. across the wheel, each is the other's missing half",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "leo",
+    "aquarius",
+    "opposites",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE HEART · THE CROWD",
+      "lines": [
+        "Leo loves *one person* like a whole crowd.",
+        "Aquarius loves the crowd like one person."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "OPPOSITION · 180°",
+      "lines": [
+        "They sit *opposite* on the wheel.",
+        "Both fixed, so both *stubborn.*",
+        "Fire and air, so the spark is real."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "air"
+      },
+      "header": "WHAT EACH TEACHES",
+      "lines": [
+        "Leo teaches Aquarius to be *adored.*",
+        "Aquarius teaches Leo it's not *personal.*",
+        "Watch for distance read as *coldness.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE OTHER HALF",
+      "lines": [
+        "Opposites don't *cancel* each other out.",
+        "They finish the *circle.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

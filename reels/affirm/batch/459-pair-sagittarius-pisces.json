@@ -1,0 +1,93 @@
+{
+  "id": "459-pair-sagittarius-pisces",
+  "title": "Sagittarius and Pisces",
+  "cover": "Sagittarius and Pisces, *Jupiter*",
+  "keyword": "MATCH",
+  "caption": "sagittarius and pisces share a ruling planet and still square each other. family can be like that",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "sagittarius",
+    "pisces",
+    "square",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "lilac"
+      },
+      "header": "BOTH RULED BY JUPITER",
+      "lines": [
+        "Same ruling planet, totally *different* love.",
+        "Jupiter rules Sagittarius *and* Pisces."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "sagittarius",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "Yet they sit a *square* apart.",
+        "Fire and water. Both mutable,",
+        "both *chasing* something bigger."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "water"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Sagittarius gives Pisces *faith* in tomorrow.",
+        "Pisces gives Sagittarius *compassion.*",
+        "The work: bluntness can *bruise* softness.",
+        "Say the true thing *gently.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "We're looking at the *same* horizon.",
+        "My honesty can be *tender.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "284-misses-aquarius",
+  "title": "When an Aquarius misses you",
+  "cover": "An *Aquarius* won't say it",
+  "keyword": "VENUS",
+  "caption": "an aquarius rarely says i miss you. they send you a documentary at two in the morning",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "aquarius",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "An Aquarius rarely says *I miss you.*",
+        "They send you a *documentary*",
+        "at two in the morning,",
+        "with one word: *thoughts?*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac"
+      },
+      "header": "SATURN · MODERN URANUS",
+      "lines": [
+        "Ruled by *Saturn* and modern *Uranus,*",
+        "they miss your *mind* most.",
+        "The arguments about aliens.",
+        "The way you *get* their strange ideas."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My distance isn't *indifference.*",
+        "I'm allowed to want someone",
+        "and still be *free.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

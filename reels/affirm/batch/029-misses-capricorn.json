@@ -1,0 +1,80 @@
+{
+  "id": "029-misses-capricorn",
+  "title": "When a Capricorn misses you",
+  "cover": "A *Capricorn* misses you in ink",
+  "keyword": "VENUS",
+  "caption": "when a capricorn misses you, they work later. then dinner friday shows up on the calendar",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "capricorn",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "RULED BY SATURN",
+      "lines": [
+        "When a Capricorn misses you,",
+        "they work *later.*",
+        "Ruled by *Saturn,* they turn feelings",
+        "into something they can *do.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · CARDINAL EARTH",
+      "lines": [
+        "Then one day, it's on the calendar.",
+        "A visit. A booking. *Dinner, Friday.*",
+        "That's a Capricorn saying",
+        "*I miss you,* in ink."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *feel* first",
+        "and fix it later.",
+        "Missing someone isn't *weakness.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

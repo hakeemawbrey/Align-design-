@@ -1,0 +1,83 @@
+{
+  "id": "347-season-aquarius",
+  "title": "Aquarius season in love",
+  "cover": "*Aquarius* season: friends first",
+  "keyword": "CHART",
+  "caption": "this month the best love looks a lot like friendship. room to be odd, and still come back",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "aquariusseason",
+    "aquarius",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · JAN 20 – FEB 18",
+      "lines": [
+        "This month, the best love looks like *friendship.*",
+        "The Sun is in *Aquarius,*",
+        "the water bearer,",
+        "pouring something new for everyone."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "AN AIR SIGN",
+      "lines": [
+        "It's an air sign, so love needs *room.*",
+        "Room to think. Room to be *odd.*",
+        "Room to have a life of your own",
+        "and still come *back.*"
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "AIR · THE MIND"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My partner can be my *friend.*",
+        "My freedom and my love",
+        "can live in the same *house.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

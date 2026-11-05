@@ -1,0 +1,85 @@
+{
+  "id": "343-partner-sagittarius",
+  "title": "Sagittarius as a partner",
+  "cover": "A *Sagittarius* makes life bigger",
+  "keyword": "MATCH",
+  "caption": "love a sagittarius and your passport gets busy. they make your whole world bigger",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "sagittarius",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "adventure"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "partner",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER",
+      "lines": [
+        "Love a Sagittarius,",
+        "and your *passport* gets busy.",
+        "Ruled by *Jupiter,* planet of growth,",
+        "they make your world *bigger.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "JUPITER · GROWTH"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "They bring the *laugh* in a bad week,",
+        "the honest answer when you ask,",
+        "and a stubborn faith that tomorrow",
+        "is going to be *good.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I bring the *horizon.*",
+        "Loving me means",
+        "we both get to *grow.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

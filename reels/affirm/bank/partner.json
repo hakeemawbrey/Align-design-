@@ -1,0 +1,358 @@
+[
+  {
+    "key": "partner-aries",
+    "title": "Aries as a partner",
+    "cover": "An *Aries* in your corner",
+    "caption": "with an aries you never fight alone. first in your corner, first to say sorry",
+    "hashtags": ["aries", "zodiaclove", "relationships", "astrology", "firesign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · CARDINAL FIRE",
+        "lines": ["With an Aries, you never fight *alone.*", "They're the first one in your corner,", "the first to *defend* you,", "and the first to say *sorry,* too."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS",
+        "lines": ["Ruled by *Mars,* they bring *momentum.*", "Plans actually happen.", "Arguments end *fast,*", "and nobody sulks for a *week.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "MARS · ACTION" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I bring *courage* to love.", "I go first,", "so the people I love feel *brave.*"]
+      }
+    ]
+  },
+  {
+    "key": "partner-taurus",
+    "title": "Taurus as a partner",
+    "cover": "A *Taurus* partner is a place",
+    "caption": "a taurus partner is a place, not just a person. warm sheets, a full fridge, the same kind voice",
+    "hashtags": ["taurus", "zodiaclove", "relationships", "astrology", "earthsign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · FIXED EARTH",
+        "lines": ["A Taurus partner is a *place,*", "not just a person.", "Warm sheets. A full fridge.", "The same *kind* voice every night."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "earth" },
+        "header": "EARTH · STEADY GROUND",
+        "lines": ["As an earth sign ruled by *Venus,*", "they love with their *hands.*", "Back rubs. Fixed taps.", "Your favorite meal,", "made without being *asked.*"],
+        "labels": [{ "on": "element", "at": 0, "text": "EARTH · THE STEADY SIGNS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am *steady,* and that's a gift.", "My loyalty isn't slow.", "It's built to *last.*"]
+      }
+    ]
+  },
+  {
+    "key": "partner-gemini",
+    "title": "Gemini as a partner",
+    "cover": "Dating a *Gemini* is never dull",
+    "caption": "dating a gemini is like dating a whole group chat. the joker, the thinker, the late-night texter",
+    "hashtags": ["gemini", "zodiaclove", "relationships", "astrology", "airsign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI · MUTABLE AIR",
+        "lines": ["Date a Gemini, and you'll *never*", "run out of things to say.", "The sign of the *twins*", "brings a whole *crowd* to love:", "the joker, the thinker, the late-night texter."],
+        "labels": [{ "on": "sign", "at": 2, "text": "THE TWINS" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Ruled by *Mercury,* they keep love *moving.*", "New jokes. New places.", "New questions about *you,*", "years in."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I bring *lightness* to love.", "With me, even the hard talks", "end in *laughing.*"]
+      }
+    ]
+  },
+  {
+    "key": "partner-cancer",
+    "title": "Cancer as a partner",
+    "cover": "A *Cancer* knows before you do",
+    "caption": "a cancer partner knows you're sad before you do, and keeps your first date ticket forever",
+    "hashtags": ["cancer", "zodiaclove", "relationships", "astrology", "watersign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "RULED BY THE MOON",
+        "lines": ["A Cancer partner knows you're sad", "*before* you do.", "Ruled by the *Moon,* they read moods", "the way the *tide* reads the moon."],
+        "labels": [{ "on": "moon", "at": 2, "text": "THE MOON · CANCER'S RULER" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · CARDINAL WATER",
+        "lines": ["They bring *soup* when you're sick.", "They remember your mom's birthday.", "They keep the ticket from your first date", "in a drawer, *forever.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I make people feel *at home.*", "And I deserve someone", "who takes care of me *back.*"]
+      }
+    ]
+  },
+  {
+    "key": "partner-leo",
+    "title": "Leo as a partner",
+    "cover": "A *Leo* will brag about you",
+    "caption": "a leo will brag about you to total strangers, and never forget to celebrate you",
+    "hashtags": ["leo", "zodiaclove", "relationships", "astrology", "firesign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · FIXED FIRE",
+        "lines": ["A Leo will brag about you", "to total *strangers.*", "With them, you're the *main character,*", "and they never forget to *celebrate.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "RULED BY THE SUN",
+        "lines": ["Ruled by the *Sun,* they're generous", "in a way that *warms* the room.", "And as a fixed sign, they're *loyal*", "long after the honeymoon."],
+        "labels": [{ "on": "planet", "at": 0, "text": "THE SUN · WARMTH" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My love is *big* on purpose.", "I make the people I love", "feel like *sunlight.*"]
+      }
+    ]
+  },
+  {
+    "key": "partner-virgo",
+    "title": "Virgo as a partner",
+    "cover": "The *Virgo* kind of devotion",
+    "caption": "a virgo partner says i love you with an umbrella in your bag and your keys where you'll find them",
+    "hashtags": ["virgo", "zodiaclove", "relationships", "astrology", "earthsign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": ["A Virgo partner says *I love you*", "with an umbrella in your bag", "and your keys where you'll *find* them."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["Ruled by *Mercury,* they listen", "for what you need and haven't said,", "then quietly *handle* it.", "The appointment. The shelf. The *check-in.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My care is my *love language.*", "I don't have to be perfect", "to be *worth* loving."]
+      }
+    ]
+  },
+  {
+    "key": "partner-libra",
+    "title": "Libra as a partner",
+    "cover": "Libra, the sign of *partners*",
+    "caption": "libra is the natural sign of the seventh house. love isn't a side quest for them, it's the main road",
+    "hashtags": ["libra", "zodiaclove", "relationships", "astrology", "7thhouse"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 7, "highlightAt": 1 },
+        "header": "THE SEVENTH HOUSE · PARTNERS",
+        "lines": ["Libra is the natural sign", "of the *seventh house,*", "the house of *partners.*", "Love isn't a side quest for them.", "It's the *main* road."],
+        "labels": [{ "on": "h7", "at": 1, "text": "7TH HOUSE · PARTNERS" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · CARDINAL AIR",
+        "lines": ["A Libra partner brings *fairness.*", "They see both sides of a fight.", "They plan the date night,", "and make ordinary days feel *pretty.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I make love feel *gentle.*", "And my own needs", "belong on the *scale* too."]
+      }
+    ]
+  },
+  {
+    "key": "partner-scorpio",
+    "title": "Scorpio as a partner",
+    "cover": "A *Scorpio* keeps your secrets",
+    "caption": "tell a scorpio partner your secret and it's buried with them",
+    "hashtags": ["scorpio", "zodiaclove", "relationships", "astrology", "loyalty"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": ["Tell a Scorpio partner your *secret,*", "and it's buried with them.", "They bring a loyalty so *deep*", "it feels like a vow."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "lilac" },
+        "header": "MARS · MODERN PLUTO",
+        "lines": ["Ruled by *Mars* and modern *Pluto,*", "they love *all the way down.*", "They want the real you,", "even the parts you hide from *everyone.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't love *halfway.*", "When I'm in, I'm *all in,*", "and I choose people who are too."]
+      }
+    ]
+  },
+  {
+    "key": "partner-sagittarius",
+    "title": "Sagittarius as a partner",
+    "cover": "A *Sagittarius* makes life bigger",
+    "caption": "love a sagittarius and your passport gets busy. they make your whole world bigger",
+    "hashtags": ["sagittarius", "zodiaclove", "relationships", "astrology", "adventure"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER",
+        "lines": ["Love a Sagittarius,", "and your *passport* gets busy.", "Ruled by *Jupiter,* planet of growth,", "they make your world *bigger.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "JUPITER · GROWTH" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": ["They bring the *laugh* in a bad week,", "the honest answer when you ask,", "and a stubborn faith that tomorrow", "is going to be *good.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I bring the *horizon.*", "Loving me means", "we both get to *grow.*"]
+      }
+    ]
+  },
+  {
+    "key": "partner-capricorn",
+    "title": "Capricorn as a partner",
+    "cover": "A *Capricorn* builds with you",
+    "caption": "a capricorn doesn't just date you. they start building with you",
+    "hashtags": ["capricorn", "zodiaclove", "relationships", "astrology", "commitment"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · CARDINAL EARTH",
+        "lines": ["A Capricorn doesn't just *date* you.", "They start *building* with you.", "The savings plan. The five-year plan.", "The shelf with your name on it."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "RULED BY SATURN",
+        "lines": ["Ruled by *Saturn,* they're slow to promise,", "and almost *never* break one.", "Their love gets *better* with time,", "the way good things do."],
+        "labels": [{ "on": "planet", "at": 0, "text": "SATURN · COMMITMENT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "WHAT THEY BRING",
+        "lines": ["It won't always be flashy.", "It's a *future,*", "and they mean every *brick* of it."]
+      }
+    ]
+  },
+  {
+    "key": "partner-aquarius",
+    "title": "Aquarius as a partner",
+    "cover": "An *Aquarius* won't change you",
+    "caption": "an aquarius partner will never ask you to be less yourself. they want your weirdest ideas out loud",
+    "hashtags": ["aquarius", "zodiaclove", "relationships", "astrology", "airsign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · FIXED AIR",
+        "lines": ["Here's what an Aquarius partner *won't* do:", "ask you to be *less* yourself.", "They don't want a copy.", "They want your *weirdest* ideas, out loud."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "AIR · ROOM TO BREATHE",
+        "lines": ["As an air sign, they bring *space.*", "Room to grow. Friends you keep.", "And as a fixed sign,", "a loyalty that *doesn't* drift."],
+        "labels": [{ "on": "element", "at": 0, "text": "AIR · THE THINKING SIGNS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I love people *as they are.*", "With me, nobody", "has to *perform.*"]
+      }
+    ]
+  },
+  {
+    "key": "partner-pisces",
+    "title": "Pisces as a partner",
+    "cover": "A *Pisces* loves the future you",
+    "caption": "a pisces partner loves the version of you that you can't see yet, and holds it until you grow into it",
+    "hashtags": ["pisces", "zodiaclove", "relationships", "astrology", "watersign"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["A Pisces partner loves the version of you", "you can't *see* yet.", "They hold it for you,", "*softly,* until you grow into it."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "lilac" },
+        "header": "JUPITER · MODERN NEPTUNE",
+        "lines": ["Ruled by *Jupiter* and modern *Neptune,*", "they bring *romance* to ordinary days.", "A song that's yours. A note in your coat.", "Compassion with *no* conditions."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My tenderness is *strength.*", "I give my heart freely,", "and I keep a *piece* for me."]
+      }
+    ]
+  }
+]

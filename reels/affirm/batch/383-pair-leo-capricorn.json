@@ -1,0 +1,93 @@
+{
+  "id": "383-pair-leo-capricorn",
+  "title": "Leo and Capricorn",
+  "cover": "Leo and Capricorn, *the long game*",
+  "keyword": "MATCH",
+  "caption": "leo wants to be celebrated now. capricorn is already planning the celebration for year five",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "leo",
+    "capricorn",
+    "quincunx",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "gold",
+        "ring": true
+      },
+      "header": "THE SUN · SATURN",
+      "lines": [
+        "The Sun wants to shine *today.*",
+        "Saturn wants it to *last.*",
+        "That's Leo and Capricorn."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "They sit a *quincunx* apart.",
+        "Fire and earth, fixed and cardinal,",
+        "sharing nothing, so they *adjust.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "earth"
+      },
+      "header": "THE TRADE",
+      "lines": [
+        "Leo gives Capricorn *permission* to enjoy it.",
+        "Capricorn gives Leo a *foundation.*",
+        "The friction is warmth versus *work.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My steadiness is a kind of *romance.*",
+        "I can celebrate *and* build."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

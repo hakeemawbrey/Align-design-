@@ -1,0 +1,104 @@
+{
+  "id": "149-ruler-aquarius",
+  "title": "Aquarius is ruled by Saturn and Uranus",
+  "cover": "Aquarius: Saturn and *Uranus*",
+  "keyword": "CHART",
+  "caption": "saturn's loyalty, uranus's lightning. you love for years and still won't fit in a cage",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aquarius",
+    "saturn",
+    "uranus",
+    "planetaryruler",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "ruler",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "mint",
+        "ring": true
+      },
+      "header": "AQUARIUS · SATURN AND URANUS",
+      "lines": [
+        "Before Uranus was found, you belonged to *Saturn.*",
+        "So you got both.",
+        "Saturn's loyalty, Uranus's *lightning.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♄ SATURN · TRADITIONAL RULER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "You love like a *principle.*",
+        "Steady, odd, completely your own.",
+        "You'll show up for years,",
+        "but never in a *cage.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "FRIENDS FIRST",
+      "lines": [
+        "You need a *friend* inside the romance.",
+        "Space to think.",
+        "Someone who *gets* your mind."
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 1,
+          "text": "AIR · ROOM TO THINK"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be close and still be *free.*",
+        "My kind of love is *real* love."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

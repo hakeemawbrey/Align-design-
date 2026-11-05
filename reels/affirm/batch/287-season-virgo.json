@@ -1,0 +1,88 @@
+{
+  "id": "287-season-virgo",
+  "title": "Virgo season in love",
+  "cover": "*Virgo* season: small things",
+  "keyword": "CHART",
+  "caption": "this is the month love does the dishes. notice who makes the coffee",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "virgoseason",
+    "virgo",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO SEASON · AUG 23 – SEP 22",
+      "lines": [
+        "This is the month love does the *dishes.*",
+        "The Sun moves into *Virgo,*",
+        "the sign of care in small things."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☉",
+        "planetSign": "virgo",
+        "planetAt": 0,
+        "highlight": 6,
+        "highlightAt": 1
+      },
+      "header": "VIRGO · THE SIXTH SIGN",
+      "lines": [
+        "Virgo is the *sixth* sign,",
+        "tied to the house of daily life.",
+        "So this month, love lives in the *routine.*",
+        "The coffee made. The ride offered."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☉ THE SUN · IN VIRGO"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Small things are *big* things.",
+        "I notice how I'm loved,",
+        "and it doesn't need to be *perfect.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

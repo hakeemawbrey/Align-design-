@@ -1,0 +1,75 @@
+{
+  "id": "306-selflove-capricorn",
+  "title": "Self-love for a Capricorn",
+  "cover": "Capricorn, come home *early*",
+  "keyword": "CHART",
+  "caption": "the mountain isn't going anywhere. come home early tonight",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "capricorn",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · THE SEA-GOAT",
+      "lines": [
+        "Capricorn, the mountain will be there *tomorrow.*",
+        "You've been climbing since you were *young,*",
+        "like you were born already late."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "SATURN · KEEPER OF TIME",
+      "lines": [
+        "*Saturn* rules time,",
+        "and you've spent most of yours *working.*",
+        "So stop at the ledge today.",
+        "Look how far you've *come.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 7
+      },
+      "header": "COME HOME EARLY",
+      "lines": [
+        "Rest isn't a reward",
+        "you get at the top.",
+        "It's how you *make* it there.",
+        "Come home *early* tonight."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

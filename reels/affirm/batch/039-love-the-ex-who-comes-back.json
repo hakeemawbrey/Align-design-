@@ -1,0 +1,78 @@
+{
+  "id": "039-love-the-ex-who-comes-back",
+  "title": "The ex who comes back",
+  "cover": "Same orbit, new *glow*",
+  "keyword": "PASSING",
+  "caption": "a comet comes back glowing because the sun is heating it, not because its orbit changed",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "exes",
+    "comet",
+    "astrology",
+    "affirmations",
+    "nocontact"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "retro",
+      "header": "A COMET · A LONG ORBIT",
+      "lines": [
+        "A comet swings back toward the sun,",
+        "*blazing,* with a tail across the sky.",
+        "Then it leaves again for *years.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "THE COMET · LONG ORBIT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "SAME ORBIT · NEW GLOW",
+      "lines": [
+        "That glow isn't change.",
+        "It's ice turning to *gas* in the heat.",
+        "So when an ex comes back shining,",
+        "ask if the *orbit* changed,",
+        "or just the light."
+      ]
+    },
+    {
+      "art": "loop",
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't mistake a *return* for a change.",
+        "I don't rearrange my sky for a *visit.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

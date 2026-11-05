@@ -1,0 +1,87 @@
+{
+  "id": "413-love-being-seen",
+  "title": "The far side",
+  "cover": "Your far side isn't *dark*",
+  "keyword": "CHART",
+  "caption": "the far side of the moon isn't dark. it gets just as much sun. we just never saw it",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "vulnerability",
+    "beingseen",
+    "moon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE FAR SIDE OF THE MOON",
+      "lines": [
+        "Nobody saw the far side of the moon",
+        "until nineteen fifty-nine.",
+        "And it isn't *dark.*",
+        "It gets just as much *sun*",
+        "as the side we see."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "FAR SIDE · FULLY LIT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "LETTING YOURSELF BE SEEN",
+      "lines": [
+        "The parts of you nobody's seen",
+        "aren't dark either.",
+        "They're just turned away.",
+        "Let someone *worth it*",
+        "come around to the other side."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I let the right people *see* me.",
+        "All of me is *worth* the light."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

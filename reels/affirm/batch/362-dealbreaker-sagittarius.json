@@ -1,0 +1,84 @@
+{
+  "id": "362-dealbreaker-sagittarius",
+  "title": "The Sagittarius dealbreaker",
+  "cover": "Sagittarius won't take a *cage*",
+  "keyword": "MATCH",
+  "caption": "never hand a sagittarius a cage, even a pretty one",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "sagittarius",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "freedom"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "Never hand a Sagittarius a *cage,*",
+        "even a pretty one.",
+        "Jealousy. Curfews. A guilt trip",
+        "for every plane ticket they book."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER",
+      "lines": [
+        "You're ruled by *Jupiter,*",
+        "the planet of *more.*",
+        "More road, more truth, more sky.",
+        "A love that shrinks your world",
+        "isn't one you can *keep.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "JUPITER · EXPANSION"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *free* and loyal.",
+        "The right one doesn't hold me back.",
+        "They pack a *bag.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

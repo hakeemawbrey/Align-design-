@@ -1,0 +1,80 @@
+{
+  "id": "078-fear-leo",
+  "title": "What a Leo quietly fears",
+  "cover": "Leo, loved in the *dark*",
+  "keyword": "MUTUAL",
+  "caption": "for the leo who's scared they're only loved on the bright days",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "leo",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · RULED BY THE SUN",
+      "lines": [
+        "Leo, you're afraid they love the *light,* not you.",
+        "The fun one, the *loud* one,",
+        "the one who walks in and warms the room."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "THE QUIET FEAR · DIM DAYS",
+      "lines": [
+        "So on the days you're tired,",
+        "or sad, or just *quiet,*",
+        "you wonder if they'll still *stay.*"
+      ]
+    },
+    {
+      "art": "eclipse",
+      "header": "STILL THE SUN",
+      "lines": [
+        "But even in an *eclipse,*",
+        "the sun is still the sun.",
+        "You deserve someone who stays",
+        "for the *dark* part too."
+      ],
+      "labels": [
+        {
+          "on": "sun",
+          "at": 1,
+          "text": "ECLIPSE · STILL THE SUN"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

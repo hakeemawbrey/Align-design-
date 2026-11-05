@@ -1,0 +1,89 @@
+{
+  "id": "498-love-read-the-sky-first",
+  "title": "Read the sky before the face",
+  "cover": "Read the *sky* first",
+  "keyword": "CHART",
+  "caption": "people crossed the pacific by reading the stars. a face is just the surface",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "birthchart",
+    "astrology",
+    "affirmations",
+    "dating",
+    "stars"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "WAYFINDING · BY THE STARS",
+      "lines": [
+        "People once crossed the Pacific in *canoes,*",
+        "steering by where the stars *rose* and set.",
+        "No maps. Just the sky, read *closely.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "axis": true,
+        "axisAt": 2
+      },
+      "header": "READ THE SKY · THEN THE FACE",
+      "lines": [
+        "A face is only the *surface.*",
+        "It shows you what someone looks like.",
+        "Their sky says how they *love,*",
+        "how they fight, how they stay."
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 2,
+          "text": "RISING"
+        },
+        {
+          "on": "dsc",
+          "at": 3,
+          "text": "DESCENDANT · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I look *deeper* than a face.",
+        "I want someone whose sky *fits* mine."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

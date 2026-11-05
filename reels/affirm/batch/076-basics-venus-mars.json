@@ -1,0 +1,104 @@
+{
+  "id": "076-basics-venus-mars",
+  "title": "Venus and Mars together",
+  "cover": "*Venus* and Mars, together",
+  "keyword": "CHART",
+  "caption": "everyone has a venus and a mars. one is what you find beautiful, one is how you go after it",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "venusandmars",
+    "venus",
+    "mars",
+    "birthchart",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS · HOW YOU LOVE",
+      "lines": [
+        "Everyone has a Venus and a *Mars.*",
+        "Venus is what you find *beautiful,*",
+        "and how you like to be loved."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "VENUS · ATTRACTION"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "gold"
+      },
+      "header": "MARS · HOW YOU WANT",
+      "lines": [
+        "Mars is how you *go after* it.",
+        "Your nerve, your chase, your fire."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MARS · DESIRE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "VENUS · MARS · TOGETHER",
+      "lines": [
+        "When they sit in different signs,",
+        "you can be drawn to one thing",
+        "and *chase* another."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *soft* and still go after it.",
+        "What I want and how I love",
+        "can *agree.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

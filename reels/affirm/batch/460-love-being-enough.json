@@ -1,0 +1,89 @@
+{
+  "id": "460-love-being-enough",
+  "title": "Being enough",
+  "cover": "Exactly *enough*",
+  "keyword": "CHART",
+  "caption": "the moon is four hundred times smaller than the sun and still covers it perfectly",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "beingenough",
+    "eclipse",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "eclipse",
+      "header": "ECLIPSE · A PERFECT FIT",
+      "lines": [
+        "From here, the moon and sun look the same *size.*",
+        "The moon is four hundred times *smaller,*",
+        "but about four hundred times *closer.*",
+        "So in a total eclipse, it fits just right."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 3,
+          "text": "A PERFECT FIT"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 1
+      },
+      "header": "RIGHT WHERE IT IS",
+      "lines": [
+        "Not by being *bigger.*",
+        "By being *exactly* where it is.",
+        "You don't have to grow to be enough.",
+        "You already *fit.*"
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 1,
+          "text": "IN LINE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am enough at my real *size.*",
+        "I don't have to be more to be *chosen.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "405-sky-venus-evening-star",
+  "title": "Venus as the evening star",
+  "cover": "The *first* star you wish on",
+  "keyword": "MOON",
+  "caption": "the first star you wish on at dusk is often venus. bright enough to cast a shadow",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "eveningstar",
+    "venus",
+    "astrology",
+    "affirmations",
+    "wishes"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "lilac"
+      },
+      "header": "VENUS · THE EVENING STAR",
+      "lines": [
+        "The first star you wish on at dusk",
+        "is often *Venus.*",
+        "After the sun and moon,",
+        "it's the brightest thing in the *sky.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "HESPERUS · EVENING STAR"
+        }
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "BRIGHT ENOUGH · FOR SHADOWS",
+      "lines": [
+        "On a dark enough night,",
+        "it can even cast a *shadow.*",
+        "But you'll never see it at midnight.",
+        "It never strays far from the *sun.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "STAY CLOSE TO WHAT WARMS YOU",
+      "lines": [
+        "The brightest love works like that.",
+        "It doesn't wander off into the *dark.*",
+        "It stays close to what *warms* it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

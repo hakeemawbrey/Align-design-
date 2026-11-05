@@ -1,0 +1,88 @@
+{
+  "id": "133-sky-moon-signs",
+  "title": "The moon changes sign",
+  "cover": "Feelings are *weather*",
+  "keyword": "MOON",
+  "caption": "the moon changes sign every two and a half days. a feeling is weather, not a verdict",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "moonsign",
+    "moon",
+    "astrology",
+    "affirmations",
+    "feelings"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "sky",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☽",
+        "planetSign": "cancer",
+        "planetAt": 1
+      },
+      "header": "THE MOON · ALL TWELVE SIGNS",
+      "lines": [
+        "The moon moves its own width every *hour.*",
+        "Every two and a half days,",
+        "it walks into a new *sign.*",
+        "All twelve, in about four weeks."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "ABOUT 2.5 DAYS PER SIGN"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "MOODS · NOT VERDICTS",
+      "lines": [
+        "Your feelings move like that too.",
+        "Tuesday's heavy heart",
+        "can be *lighter* by Thursday.",
+        "A feeling is *weather,* not a verdict."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "WAIT FOR THE NEXT SIGN",
+      "lines": [
+        "Before you send the last text,",
+        "wait two and a half days.",
+        "Don't decide forever",
+        "from one *moon.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

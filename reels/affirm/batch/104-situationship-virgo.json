@@ -1,0 +1,77 @@
+{
+  "id": "104-situationship-virgo",
+  "title": "Virgo in a situationship",
+  "cover": "Virgo, stop *decoding* them",
+  "keyword": "MUTUAL",
+  "caption": "virgo in a situationship: low maintenance on purpose, reading every text for what it really means",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgo",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · MUTABLE EARTH",
+      "lines": [
+        "Virgo, you've made yourself *easy to keep.*",
+        "No demands. No questions. Always helpful.",
+        "So it never feels like *too much.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Ruled by *Mercury,* you read every text twice,",
+        "looking for what it *really* means.",
+        "But you shouldn't need to decode",
+        "someone who wants you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve to be *wanted,* not just useful.",
+        "My needs are not a burden.",
+        "The right person shows up *on purpose.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

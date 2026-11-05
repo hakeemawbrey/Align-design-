@@ -1,0 +1,85 @@
+{
+  "id": "047-dealbreaker-cancer",
+  "title": "The Cancer dealbreaker",
+  "cover": "Cancer's *one* dealbreaker",
+  "keyword": "MATCH",
+  "caption": "a cancer will give you a key to everything. just don't treat it like a hotel",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "cancer",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "watersign"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · CARDINAL WATER",
+      "lines": [
+        "A Cancer will hand you a *key*",
+        "to their whole inner life.",
+        "Their dealbreaker is someone",
+        "who treats it like a *hotel.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "RULED BY THE MOON",
+      "lines": [
+        "You're ruled by the *Moon,*",
+        "so your feelings come in *tides.*",
+        "Anyone who calls that *dramatic*",
+        "has already told you enough."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "FULL MOON · HIGH TIDE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My softness is not a *weakness.*",
+        "I only open my door",
+        "to people who wipe their *feet.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

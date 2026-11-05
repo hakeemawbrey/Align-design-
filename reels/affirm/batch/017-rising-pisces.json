@@ -1,0 +1,101 @@
+{
+  "id": "017-rising-pisces",
+  "title": "Pisces rising",
+  "cover": "Pisces rising needs an *anchor*",
+  "keyword": "SEVEN",
+  "caption": "you feel the whole room. your virgo seventh house falls for whoever remembers the train time",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "piscesrising",
+    "virgo",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES RISING · MUTABLE WATER",
+      "lines": [
+        "You walk in and *feel* the whole room.",
+        "Pisces rising: soft focus, wide eyes,",
+        "a mood you picked up at the door."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1,
+        "axis": true,
+        "axisAt": 0,
+        "rising": "pisces"
+      },
+      "header": "YOUR SEVENTH HOUSE · VIRGO",
+      "lines": [
+        "Opposite that, your seventh house",
+        "is in *Virgo,* the sign of care",
+        "you can actually *see.*"
+      ],
+      "labels": [
+        {
+          "on": "dsc",
+          "at": 0,
+          "text": "DESCENDANT · OPPOSITE YOU"
+        },
+        {
+          "on": "h7",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · LOVE IN THE DETAILS",
+      "lines": [
+        "So you fall for the one who *notices.*",
+        "Who fixes the latch,",
+        "remembers the train time,",
+        "and shows love in *small* repairs."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SOMEONE STEADY",
+      "lines": [
+        "You were made to *drift.*",
+        "Let someone *steady* keep the porch light on."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

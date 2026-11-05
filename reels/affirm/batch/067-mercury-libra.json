@@ -1,0 +1,83 @@
+{
+  "id": "067-mercury-libra",
+  "title": "Mercury in Libra",
+  "cover": "Mercury in Libra says it *softly*",
+  "keyword": "CHART",
+  "caption": "mercury in libra rewrote one text eleven times so it would land softly. kind, but make it clear",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "mercuryinlibra",
+    "libra",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "MERCURY IN LIBRA",
+      "lines": [
+        "You've rewritten one text *eleven times*",
+        "so it would land *softly.*",
+        "That's Mercury in Libra."
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 2
+      },
+      "header": "LIBRA · RULED BY VENUS",
+      "lines": [
+        "Libra is ruled by Venus,",
+        "so even your words want to be *beautiful.*",
+        "You see both sides before you speak,",
+        "and you need the same courtesy back:",
+        "a calm voice, a fair hearing, no *ambush.*"
+      ],
+      "labels": [
+        {
+          "on": "handle",
+          "at": 2,
+          "text": "♀ · BOTH SIDES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *kind* and still be clear.",
+        "My opinion counts, even when it's mine alone.",
+        "I deserve a love that *speaks gently.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

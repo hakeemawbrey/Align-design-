@@ -1,0 +1,92 @@
+{
+  "id": "419-pair-virgo-libra",
+  "title": "Virgo and Libra",
+  "cover": "Virgo and Libra, *refined*",
+  "keyword": "MATCH",
+  "caption": "virgo fixes it, libra makes it beautiful. together they'd redesign the whole restaurant",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "virgo",
+    "libra",
+    "zodiaccompatibility",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "MERCURY · VENUS",
+      "lines": [
+        "Mercury thinks it through. Venus makes it *lovely.*",
+        "Virgo and Libra, side by side."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "virgo",
+          "libra"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "They're neighbors, a *semi-sextile.*",
+        "Earth and air, mutable and cardinal.",
+        "Close enough to *learn* each other."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Virgo gives Libra *honest* feedback.",
+        "Libra gives Virgo a *softer* way to say it.",
+        "The friction: Virgo critiques, Libra avoids."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can tell the *truth* gently.",
+        "Peace doesn't mean *staying quiet.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

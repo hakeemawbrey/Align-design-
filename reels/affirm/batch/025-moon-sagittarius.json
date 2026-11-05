@@ -1,0 +1,85 @@
+{
+  "id": "025-moon-sagittarius",
+  "title": "Moon in Sagittarius",
+  "cover": "Moon in Sagittarius needs *sky*",
+  "keyword": "MOON",
+  "caption": "moon in sagittarius finds comfort in a window seat. anywhere, as long as it's moving",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mooninsagittarius",
+    "sagittarius",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "MOON IN SAGITTARIUS",
+      "lines": [
+        "Your idea of comfort is a *window seat.*",
+        "Anywhere. As long as it's moving.",
+        "The Moon in Sagittarius feels safest under *sky.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · RULED BY JUPITER",
+      "lines": [
+        "Sagittarius is ruled by Jupiter,",
+        "planet of hope and the long view.",
+        "So you need room to wander and *wonder,*",
+        "and someone who laughs when plans fall apart.",
+        "Even a kind fence can feel *small.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "SAGITTARIUS · MUTABLE FIRE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE RIGHT ONE",
+      "lines": [
+        "Your restlessness isn't running away.",
+        "It's *curiosity.*",
+        "And the right love won't shrink your world.",
+        "It will make it *wider.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

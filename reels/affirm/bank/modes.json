@@ -1,0 +1,269 @@
+[
+  {
+    "key": "mode-cardinal",
+    "title": "Cardinal signs in love",
+    "cover": "*Cardinal* signs in love",
+    "caption": "aries, cancer, libra, capricorn. cardinal signs start every season, and most of their love stories",
+    "hashtags": ["cardinalsigns", "modalities", "aries", "capricorn", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aries", "libra"], "pairAt": 2 },
+        "header": "CARDINAL · THE STARTERS",
+        "lines": ["Every season starts with a *cardinal* sign.", "Aries, Cancer, Libra and Capricorn", "each begin on an *equinox* or a solstice."],
+        "labels": [{ "on": "pair", "at": 2, "text": "ARIES · LIBRA · EQUINOXES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FIRST MOVE",
+        "lines": ["So in love, they make the *first move.*", "They text first, plan first,", "say how they feel first.", "It isn't impatience.", "It's how they *start* things."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to go *first.*", "And I'm allowed to be *chosen* back,", "without doing all the work."]
+      }
+    ]
+  },
+  {
+    "key": "mode-fixed",
+    "title": "Fixed signs in love",
+    "cover": "*Fixed* signs in love",
+    "caption": "taurus, leo, scorpio, aquarius. fixed signs take forever to choose, and then they don't stop",
+    "hashtags": ["fixedsigns", "modalities", "taurus", "scorpio", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "FIXED · THE MIDDLE OF A SEASON",
+        "lines": ["Fixed signs take ages to *choose* you.", "Then they don't stop.", "Taurus, Leo, Scorpio and Aquarius", "sit in the middle of each *season,*", "when the weather holds."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "LOYAL ON PURPOSE",
+        "lines": ["So their love is *loyal* and steady,", "and yes, a little stubborn.", "Change can feel like *losing* something.", "But staying is a choice they make", "every single *day.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My loyalty is a *gift.*", "I can stay *and* still grow."]
+      }
+    ]
+  },
+  {
+    "key": "mode-mutable",
+    "title": "Mutable signs in love",
+    "cover": "*Mutable* signs in love",
+    "caption": "gemini, virgo, sagittarius, pisces. mutable signs can meet anyone. the trick is staying you",
+    "hashtags": ["mutablesigns", "modalities", "gemini", "pisces", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "MUTABLE · THE END OF A SEASON",
+        "lines": ["Mutable signs live where seasons *change.*", "Gemini, Virgo, Sagittarius and Pisces", "close each season", "and carry it into the *next.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "SHAPE WITHOUT SHRINKING",
+        "lines": ["So in love, they *adapt.*", "They change plans for you, gladly.", "They can meet anyone where they are.", "The only risk is bending so much", "you forget your own *shape.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be flexible", "without disappearing.", "My shape is worth *keeping.*"]
+      }
+    ]
+  },
+  {
+    "key": "mode-cardinal-cardinal",
+    "title": "Cardinal and cardinal",
+    "cover": "*Cardinal* and cardinal",
+    "caption": "two cardinal signs in love. two leaders, one steering wheel, and a lot of momentum",
+    "hashtags": ["cardinalsigns", "compatibility", "modalities", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aries", "cancer"], "pairAt": 3 },
+        "header": "CARDINAL · CARDINAL",
+        "lines": ["Two cardinal signs in love", "means two hands on the *steering wheel.*", "Unless you share a sign,", "you sit *square* or opposite in the sky,", "friction that gets things moving."],
+        "labels": [{ "on": "pair", "at": 3, "text": "ARIES · CANCER" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "TAKE TURNS",
+        "lines": ["You both start things fast.", "The trick is *finishing* together:", "taking turns leading,", "and saying out loud whose turn it *is.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *win*", "to be in charge of my life.", "We can lead *together.*"]
+      }
+    ]
+  },
+  {
+    "key": "mode-cardinal-fixed",
+    "title": "Cardinal and fixed",
+    "cover": "*Cardinal* and fixed",
+    "caption": "a cardinal sign and a fixed sign. one starts it, one makes it last",
+    "hashtags": ["cardinalsigns", "fixedsigns", "compatibility", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aries", "taurus"], "pairAt": 2 },
+        "header": "CARDINAL · FIXED",
+        "lines": ["Every season has a *starter*", "and a keeper.", "Aries opens it, Taurus *holds* it.", "That's cardinal and fixed."],
+        "labels": [{ "on": "pair", "at": 2, "text": "OPEN · HOLD" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE SPARK AND THE KEEPER",
+        "lines": ["In love, one brings the *spark,*", "the other makes it last.", "Cardinal can feel slowed down.", "Fixed can feel *rushed.*", "Both are just protecting what they love."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Our pace can be *different*", "and our love can be the *same.*"]
+      }
+    ]
+  },
+  {
+    "key": "mode-cardinal-mutable",
+    "title": "Cardinal and mutable",
+    "cover": "*Cardinal* and mutable",
+    "caption": "a cardinal sign and a mutable sign. one picks the destination, the other finds the way",
+    "hashtags": ["cardinalsigns", "mutablesigns", "compatibility", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "CARDINAL · MUTABLE",
+        "lines": ["One of you picks the *destination.*", "The other finds the *way.*", "That's a cardinal sign", "in love with a mutable one."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["libra", "sagittarius"], "pairAt": 0 },
+        "header": "OPEN AND CLOSE",
+        "lines": ["Cardinal signs open the seasons.", "Mutable signs *close* them,", "turning one into the next.", "So together, you hold both *ends:*", "the bold start and the soft landing."],
+        "labels": [{ "on": "pair", "at": 0, "text": "LIBRA · SAGITTARIUS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can lead without *pushing,*", "and follow without losing *myself.*"]
+      }
+    ]
+  },
+  {
+    "key": "mode-fixed-fixed",
+    "title": "Fixed and fixed",
+    "cover": "*Fixed* and fixed",
+    "caption": "two fixed signs in love. nobody's leaving. nobody's apologizing first either",
+    "hashtags": ["fixedsigns", "compatibility", "modalities", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "scorpio"], "pairAt": 3 },
+        "header": "FIXED · FIXED",
+        "lines": ["Two fixed signs in love:", "nobody's *leaving.*", "Nobody's moving, either.", "Different fixed signs sit square", "or *opposite* in the sky."],
+        "labels": [{ "on": "pair", "at": 3, "text": "LEO · SCORPIO" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE STANDOFF",
+        "lines": ["That's the gift and the *test.*", "The love doesn't budge.", "Neither does the *pride.*", "You'll stay through the hard seasons,", "but you can also dig in", "over who *apologizes* first."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Bending isn't *losing.*", "I can stand firm", "and still reach for *you.*"]
+      }
+    ]
+  },
+  {
+    "key": "mode-fixed-mutable",
+    "title": "Fixed and mutable",
+    "cover": "*Fixed* and mutable",
+    "caption": "a fixed sign and a mutable sign. the anchor and the tide, and they need each other",
+    "hashtags": ["fixedsigns", "mutablesigns", "compatibility", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FIXED · MUTABLE",
+        "lines": ["One of you is the *anchor.*", "The other is the *tide.*", "A fixed sign loving a mutable one."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["taurus", "virgo"], "pairAt": 2 },
+        "header": "THE MIDDLE AND THE TURN",
+        "lines": ["Fixed signs hold the middle of a season.", "Mutable signs *carry* it into the next.", "So fixed gives mutable a *home,*", "and mutable teaches fixed to bend."],
+        "labels": [{ "on": "pair", "at": 2, "text": "TAURUS · VIRGO" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be someone's *steady*", "without asking them to stand still.", "And I can change without *leaving.*"]
+      }
+    ]
+  },
+  {
+    "key": "mode-mutable-mutable",
+    "title": "Mutable and mutable",
+    "cover": "*Mutable* and mutable",
+    "caption": "two mutable signs in love. endless yes. somebody still has to pick the restaurant",
+    "hashtags": ["mutablesigns", "compatibility", "modalities", "astrology", "zodiaclove"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "MUTABLE · MUTABLE",
+        "lines": ["Two mutable signs will say *yes*", "to almost anything.", "New plans, new cities,", "a whole new version of *yourselves.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["gemini", "pisces"], "pairAt": 0 },
+        "header": "WHERE SEASONS CHANGE",
+        "lines": ["You both live where seasons *change,*", "so change never scares you.", "It's an easy, kind love.", "The only risk is *drifting,*", "both waiting for the other to decide."],
+        "labels": [{ "on": "pair", "at": 0, "text": "GEMINI · PISCES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SOMEONE HAS TO CHOOSE",
+        "lines": ["So choose *out loud.*", "Choosing is a way of loving.", "Sometimes the most romantic words", "are *this,* here, you."]
+      }
+    ]
+  }
+]

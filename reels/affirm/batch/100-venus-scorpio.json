@@ -1,0 +1,96 @@
+{
+  "id": "100-venus-scorpio",
+  "title": "Venus in Scorpio",
+  "cover": "Venus in Scorpio goes *deep*",
+  "keyword": "VENUS",
+  "caption": "venus in scorpio would trade a hundred easy conversations for one real one. it doesn't do halfway",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "venusinscorpio",
+    "scorpio",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "VENUS IN SCORPIO",
+      "lines": [
+        "You'd rather have one *real* conversation",
+        "than a hundred easy ones.",
+        "Venus in Scorpio doesn't do *halfway.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "SCORPIO · FIXED WATER"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♀",
+        "planetSign": "scorpio",
+        "planetAt": 1,
+        "highlight": 8,
+        "highlightAt": 0
+      },
+      "header": "SCORPIO · THE EIGHTH HOUSE",
+      "lines": [
+        "Scorpio belongs to the eighth house:",
+        "intimacy, trust, what two people share.",
+        "So you love all the way *down,*",
+        "and you need someone who won't flinch",
+        "when they finally see it."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "8TH HOUSE · INTIMACY"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My depth is an *invitation,* not a warning.",
+        "I'm allowed to trust *slowly,*",
+        "and to love *completely* once I do."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

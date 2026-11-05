@@ -1,0 +1,88 @@
+{
+  "id": "298-planet-sun",
+  "title": "The Sun in love",
+  "cover": "The *Sun* in love",
+  "keyword": "CHART",
+  "caption": "your sun sign is where you shine. the right person won't ask you to dim it",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "sunsign",
+    "sun",
+    "leo",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "planets",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "THE SUN · YOUR CORE",
+      "lines": [
+        "Everyone knows their *sun sign,*",
+        "because the Sun spends about a month",
+        "in each sign of the zodiac.",
+        "It's the easiest one to *find.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☉ · ABOUT A MONTH A SIGN"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "RULER OF LEO",
+      "lines": [
+        "It's your core,",
+        "what lights you up,",
+        "and in love, what you need",
+        "to be *seen* for.",
+        "The Sun rules Leo,",
+        "the sign of the *spotlight.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *dim* myself",
+        "to be easy to love.",
+        "I want someone who loves my *light.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

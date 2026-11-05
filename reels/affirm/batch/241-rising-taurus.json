@@ -1,0 +1,114 @@
+{
+  "id": "241-rising-taurus",
+  "title": "Taurus rising",
+  "cover": "Taurus rising craves *depth*",
+  "keyword": "SEVEN",
+  "caption": "taurus rising makes everyone calm. your scorpio seventh house wants someone who isn't fooled by it",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurusrising",
+    "scorpio",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS RISING · FIXED EARTH",
+      "lines": [
+        "People relax the second you *arrive.*",
+        "Taurus rising does that.",
+        "Soft voice, steady hands,",
+        "a calm they can *lean* on."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 1,
+        "axis": true,
+        "axisAt": 0,
+        "rising": "taurus"
+      },
+      "header": "YOUR SEVENTH HOUSE · SCORPIO",
+      "lines": [
+        "But directly *opposite* your rising,",
+        "your seventh house is in *Scorpio.*",
+        "And Scorpio doesn't do *calm.*",
+        "It does *depth.*"
+      ],
+      "labels": [
+        {
+          "on": "dsc",
+          "at": 0,
+          "text": "DESCENDANT · OPPOSITE YOU"
+        },
+        {
+          "on": "h7",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "water"
+      },
+      "header": "EARTH · WATER",
+      "lines": [
+        "So you fall for intensity.",
+        "Someone who looks *straight* past",
+        "the easy version of you",
+        "and asks for the whole *truth.*"
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "SCORPIO · FIXED WATER"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be safe and still be *seen.*",
+        "Someone can know all of me",
+        "and *stay.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

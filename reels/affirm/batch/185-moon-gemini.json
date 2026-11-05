@@ -1,0 +1,89 @@
+{
+  "id": "185-moon-gemini",
+  "title": "Moon in Gemini",
+  "cover": "Moon in Gemini needs to *talk*",
+  "keyword": "MOON",
+  "caption": "moon in gemini doesn't know how it feels until it says it out loud. sometimes to three different friends",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mooningemini",
+    "gemini",
+    "moonsign",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "moon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "MOON IN GEMINI",
+      "lines": [
+        "You don't know how you feel",
+        "until you've *said it* out loud.",
+        "Sometimes to three different friends."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☽",
+        "planetSign": "gemini",
+        "planetAt": 2,
+        "highlight": 3,
+        "highlightAt": 0
+      },
+      "header": "GEMINI · THE THIRD HOUSE",
+      "lines": [
+        "Gemini is the sign of the third house:",
+        "talk, texts, and the people nearby.",
+        "So with the Moon here, safe has a *sound:*",
+        "a late call, a voice that *answers,*",
+        "someone who lets you think out loud."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "3RD HOUSE · TALK"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm not *too much* to talk to.",
+        "My busy mind deserves a *patient* ear.",
+        "I feel safe when I'm *heard.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

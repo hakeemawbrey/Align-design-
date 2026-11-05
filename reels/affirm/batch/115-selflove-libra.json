@@ -1,0 +1,84 @@
+{
+  "id": "115-selflove-libra",
+  "title": "Self-love for a Libra",
+  "cover": "Libra, take *yourself* out",
+  "keyword": "CHART",
+  "caption": "the perfect date, planned by a libra, for a libra",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "libra",
+    "selflove",
+    "zodiac",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "selflove",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "venus",
+      "header": "RULED BY VENUS · BEAUTY",
+      "lines": [
+        "Libra, plan the perfect date. Then go *alone.*",
+        "*Venus* gave you an eye for beauty,",
+        "but you mostly spend it on *other* people."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "axis": true,
+        "axisAt": 0
+      },
+      "header": "LIBRA · ARIES · THE AXIS",
+      "lines": [
+        "Your opposite sign is *Aries,*",
+        "the sign of the self.",
+        "So borrow a little of its *nerve.*",
+        "Pick the table you like.",
+        "Order without asking anyone.",
+        "Notice what you choose",
+        "when nobody's there to *please.*"
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 1,
+          "text": "ARIES · THE SELF"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm *good* company for myself.",
+        "I can choose what pleases *me.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

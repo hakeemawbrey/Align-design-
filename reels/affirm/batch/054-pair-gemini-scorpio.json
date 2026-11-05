@@ -1,0 +1,89 @@
+{
+  "id": "054-pair-gemini-scorpio",
+  "title": "Gemini and Scorpio",
+  "cover": "Gemini + Scorpio · *quincunx*",
+  "keyword": "MATCH",
+  "caption": "a curious mind and a locked diary. trust takes the time it takes",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "gemini",
+    "scorpio",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "GEMINI · SCORPIO",
+      "lines": [
+        "A curious mind and a *locked* diary.",
+        "Gemini wants to know everything.",
+        "Scorpio tells you almost *nothing.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "scorpio"
+        ],
+        "pairAt": 1
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "A hundred and fifty degrees apart:",
+        "a *quincunx.*",
+        "Mutable air and fixed water",
+        "share no element and no mode."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "water"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Scorpio gives Gemini *depth.*",
+        "Gemini gives Scorpio *lightness,*",
+        "a reason to laugh at the dark.",
+        "The friction: trust, and how fast it builds."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "GEMINI · SCORPIO · TRUST",
+      "lines": [
+        "Curious and *careful* can love each other.",
+        "I'm allowed to take my *time* trusting."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

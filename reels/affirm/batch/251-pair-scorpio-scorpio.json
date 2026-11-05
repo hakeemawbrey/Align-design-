@@ -1,0 +1,89 @@
+{
+  "id": "251-pair-scorpio-scorpio",
+  "title": "Scorpio and Scorpio",
+  "cover": "Scorpio and Scorpio, *all in*",
+  "keyword": "MATCH",
+  "caption": "two scorpios don't date. they investigate each other, slowly, and then they stay",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "scorpio",
+    "scorpiocompatibility",
+    "watersigns",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · SCORPIO",
+      "lines": [
+        "When a Scorpio meets a Scorpio,",
+        "nobody flirts. They *investigate.*",
+        "Slowly. Then they *stay.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "scorpio",
+          "scorpio"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Same sign, *zero* degrees apart.",
+        "Fixed water, twice.",
+        "Same *all-or-nothing* heart."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "You give each other *total* loyalty.",
+        "The friction: two people who never",
+        "show their *cards.*",
+        "Someone has to go *first.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *trust* before I'm certain.",
+        "Being seen is not *weakness.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

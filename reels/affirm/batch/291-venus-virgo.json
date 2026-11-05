@@ -1,0 +1,86 @@
+{
+  "id": "291-venus-virgo",
+  "title": "Venus in Virgo",
+  "cover": "Venus in Virgo loves in *details*",
+  "keyword": "VENUS",
+  "caption": "venus in virgo fixed the shelf before it ever said i love you. it meant the same thing",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "venusinvirgo",
+    "virgo",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VENUS IN VIRGO",
+      "lines": [
+        "You fixed their *shelf*",
+        "before you ever said I love you.",
+        "With Venus in Virgo,",
+        "love is a *verb* before it's a word."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "VIRGO · MUTABLE EARTH"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS · IN THE DETAILS",
+      "lines": [
+        "So you need someone who *notices.*",
+        "The refilled water glass.",
+        "The way you remembered their big day.",
+        "And who lets you rest without *earning* it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to be *perfect*",
+        "to be worth loving.",
+        "I get to be *helped,* too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "262-firstdate-leo",
+  "title": "First date with a Leo",
+  "cover": "Dress up for a *Leo*",
+  "keyword": "MATCH",
+  "caption": "dress up for a leo first date. then give them one specific compliment and mean it",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "leo",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "firstdate",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "Dress up for a Leo first date.",
+        "They will *notice.*",
+        "But what really wins a Leo",
+        "is a *specific* compliment.",
+        "Not just cute. The way they tell a *story.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 5,
+        "highlightAt": 0
+      },
+      "header": "THE FIFTH HOUSE · ROMANCE",
+      "lines": [
+        "Leo is the sign of the *fifth house,*",
+        "romance, play, and *joy.*",
+        "So make it fun. Make it a little *grand.*",
+        "And laugh at their jokes. *Really* laugh."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "5TH HOUSE · ROMANCE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to want to be *adored.*",
+        "The right one lights up",
+        "when I *walk in.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

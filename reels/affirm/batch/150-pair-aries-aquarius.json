@@ -1,0 +1,90 @@
+{
+  "id": "150-pair-aries-aquarius",
+  "title": "Aries and Aquarius",
+  "cover": "Aries + Aquarius · *sextile*",
+  "keyword": "MATCH",
+  "caption": "the rebel and the revolution. best friends who happen to be in love",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "aries",
+    "aquarius",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "ARIES · AQUARIUS",
+      "lines": [
+        "The rebel meets the *revolution.*",
+        "Aries pushes against the rules.",
+        "Aquarius *rewrites* them."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "Two signs apart, they form a *sextile,*",
+        "sixty degrees of friendship first.",
+        "Fire and air: each makes the other *brighter.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "air"
+      },
+      "header": "CARDINAL · FIXED",
+      "lines": [
+        "Aries gives Aquarius *heat*",
+        "when it gets lost in its head.",
+        "Aquarius gives Aries *space* to be itself.",
+        "The friction: cardinal pushes, fixed digs in."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be your *best friend*",
+        "and your *favorite* person."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

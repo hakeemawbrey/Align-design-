@@ -1,0 +1,92 @@
+{
+  "id": "106-mars-libra",
+  "title": "Mars in Libra",
+  "cover": "Mars in Libra fights *fair*",
+  "keyword": "MARS",
+  "caption": "mars in libra cares more about peace than winning. that isn't weakness. it fights for what's fair",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "marsinlibra",
+    "libra",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "MARS IN LIBRA",
+      "lines": [
+        "Peace matters more to you than *winning.*",
+        "But Mars in Libra isn't weak.",
+        "It fights for what's *fair.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "libra"
+        ],
+        "pairAt": 0,
+        "planet": "♂",
+        "planetSign": "libra",
+        "planetAt": 2
+      },
+      "header": "MARS · OPPOSITE ITS HOME",
+      "lines": [
+        "Libra sits opposite Aries,",
+        "the sign Mars rules,",
+        "so your drive points toward *another person.*",
+        "You chase with charm, never pressure,",
+        "and you need a partner who fights *fair,* too."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "♂ · MARS IN LIBRA"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Keeping the peace can't cost me *my voice.*",
+        "I'm allowed to want things out loud.",
+        "Fair includes being fair to *me.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "318-hear-aries",
+  "title": "What an Aries needs to hear",
+  "cover": "Aries, the chase isn't the *prize*",
+  "keyword": "CHART",
+  "caption": "if they make you chase, they're not the prize. they're just the race",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aries",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "hear",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♂",
+        "planetSign": "aries",
+        "planetAt": 1
+      },
+      "header": "MARS · AT HOME IN ARIES",
+      "lines": [
+        "Aries, the chase was never the *prize.*",
+        "*Mars* rules you, so the hunt feels like love.",
+        "The racing heart, the *maybe,* the wait."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "MARS · RULER OF ARIES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 3
+      },
+      "header": "EASY ISN'T BORING",
+      "lines": [
+        "But someone who makes you *run*",
+        "is just making you tired.",
+        "The one who texts back fast",
+        "isn't too easy.",
+        "They're *sure.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need a chase to feel *alive.*",
+        "Easy love can still *burn.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

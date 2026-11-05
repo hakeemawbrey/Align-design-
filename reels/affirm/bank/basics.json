@@ -1,0 +1,560 @@
+[
+  {
+    "key": "basics-big-three",
+    "title": "The big three",
+    "cover": "Your *big three*",
+    "caption": "your sun sign is a third of the story. your moon and your rising are the rest",
+    "hashtags": ["bigthree", "birthchart", "astrology", "affirmations", "zodiac"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "THE BIG THREE · THE SUN",
+        "lines": [
+          "Your sun sign is only a *third* of you.",
+          "It's who you are at your *core.*"
+        ],
+        "labels": [{ "on": "planet", "at": 0, "text": "SUN · WHO YOU ARE" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "THE BIG THREE · THE MOON",
+        "lines": [
+          "Your *moon* sign is what you need",
+          "to feel safe."
+        ],
+        "labels": [{ "on": "planet", "at": 0, "text": "MOON · WHAT YOU NEED" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "axis": true, "axisAt": 0 },
+        "header": "THE BIG THREE · RISING",
+        "lines": [
+          "Your *rising* is the sign that was coming up",
+          "in the east the minute you were born.",
+          "It's how you *arrive.*"
+        ],
+        "labels": [{ "on": "asc", "at": 0, "text": "RISING · EASTERN HORIZON" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want to be loved in all *three.*",
+          "Not just the part",
+          "that shows up *first.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-sun-moon-rising",
+    "title": "Sun vs moon vs rising",
+    "cover": "Who they *meet* first",
+    "caption": "they fall for your rising, get to know your sun, and come home to your moon",
+    "hashtags": ["sunmoonrising", "bigthree", "birthchart", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "axis": true, "axisAt": 0 },
+        "header": "FIRST · YOUR RISING",
+        "lines": [
+          "Someone falls for your *rising* first.",
+          "It's the face you lead with,",
+          "the first-date you."
+        ],
+        "labels": [{ "on": "asc", "at": 1, "text": "RISING · FIRST IMPRESSION" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "THEN · YOUR SUN",
+        "lines": [
+          "Then they meet your *sun,*",
+          "the you that shows up",
+          "once you stop being *nervous.*"
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "mint" },
+        "header": "LAST · YOUR MOON",
+        "lines": [
+          "If they stay, they meet your *moon.*",
+          "Tired, soft, and *real.*",
+          "That's the one that needs loving most."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want someone who stays",
+          "past the first *impression.*",
+          "My moon deserves to be *met.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-descendant",
+    "title": "The descendant",
+    "cover": "The sign that was *setting*",
+    "caption": "when you were born one sign was rising and another was setting. the setting one is who you fall for",
+    "hashtags": ["descendant", "7thhouse", "birthchart", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "axis": true, "axisAt": 1 },
+        "header": "THE DESCENDANT · WEST",
+        "lines": [
+          "When you were born, one sign was rising",
+          "and another was *setting.*",
+          "The setting one is your *descendant.*"
+        ],
+        "labels": [{ "on": "dsc", "at": 2, "text": "DESCENDANT · WEST HORIZON" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "WHAT YOU'RE DRAWN TO",
+        "lines": [
+          "It's where your seventh house begins,",
+          "the house of *partners.*",
+          "It often describes who you fall for.",
+          "Sometimes it's a part of you",
+          "you haven't *claimed* yet."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "What I'm drawn to",
+          "can teach me about *me.*",
+          "I can love it in someone",
+          "and *grow* it in myself."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-synastry",
+    "title": "Synastry",
+    "cover": "Two charts, *overlapped*",
+    "caption": "lay two birth charts on top of each other and the lines between them have names",
+    "hashtags": ["synastry", "compatibility", "birthchart", "astrology", "relationships"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["cancer", "libra"], "pairAt": 1 },
+        "header": "SYNASTRY · TWO CHARTS",
+        "lines": [
+          "Lay two birth charts on top of each other,",
+          "and the lines between them have *names.*",
+          "That's called *synastry.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 0 },
+        "header": "TRINES FLOW · SQUARES PUSH",
+        "lines": [
+          "A trine between you feels *easy.*",
+          "A square feels like *friction.*",
+          "Most couples have both.",
+          "Squares are where you *grow.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "Friction doesn't mean we're *wrong.*",
+          "I want love that's easy,",
+          "and love that helps me *grow.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-composite",
+    "title": "Composite charts",
+    "cover": "Your love has its own *chart*",
+    "caption": "a composite chart is the halfway point of every planet between you. the relationship gets its own sky",
+    "hashtags": ["compositechart", "synastry", "birthchart", "astrology", "relationships"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "planet": "☉", "planetSign": "taurus", "planetAt": 3 },
+        "header": "COMPOSITE · THE MIDPOINTS",
+        "lines": [
+          "Your relationship has its own *chart.*",
+          "Take each planet in yours and theirs,",
+          "find the point *halfway* between,",
+          "and that's the composite."
+        ],
+        "labels": [{ "on": "planet", "at": 3, "text": "COMPOSITE SUN · MIDPOINT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "YOU · THEM · THE THIRD THING",
+        "lines": [
+          "If your sun is in Aries",
+          "and theirs is in Gemini,",
+          "the two of you share a *Taurus* sun.",
+          "Love is a *third* thing you make."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "We're more than *two* people.",
+          "I care for what we're *building,*",
+          "not just what I want."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-fifth-vs-seventh",
+    "title": "Fifth house vs seventh",
+    "cover": "Butterflies vs *staying*",
+    "caption": "your chart has two love houses. the fifth is the crush. the seventh is who stays",
+    "hashtags": ["5thhouse", "7thhouse", "birthchart", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 5, "highlightAt": 2 },
+        "header": "THE FIFTH HOUSE · ROMANCE",
+        "lines": [
+          "Your chart has two love *houses,*",
+          "and they want different things.",
+          "The fifth is *romance.*",
+          "Flirting, dates, butterflies, play."
+        ],
+        "labels": [{ "on": "house", "at": 2, "text": "5TH HOUSE · ROMANCE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "THE SEVENTH HOUSE · PARTNERS",
+        "lines": [
+          "The seventh is *partnership.*",
+          "Showing up, choosing, staying.",
+          "It sits right across from your first house,",
+          "you, face to face with someone."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want the *butterflies*",
+          "and the person who stays after.",
+          "I don't have to *choose.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-birth-time",
+    "title": "Why your birth time matters",
+    "cover": "Down to the *minute*",
+    "caption": "your rising sign changes about every two hours. twins born minutes apart can have different ones",
+    "hashtags": ["birthtime", "risingsign", "birthchart", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "axis": true, "axisAt": 0 },
+        "header": "BIRTH TIME · THE RISING",
+        "lines": [
+          "Your rising sign changes about every two hours.",
+          "Four minutes moves it a whole *degree.*",
+          "Your houses turn with it."
+        ],
+        "labels": [{ "on": "asc", "at": 0, "text": "ABOUT TWO HOURS · ONE SIGN" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "TWINS · DIFFERENT RISINGS",
+        "lines": [
+          "Twins born minutes apart",
+          "can have different *risings.*",
+          "Your houses, your seventh, your type",
+          "all hang on the *clock.*",
+          "That's how exact a sky is."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm specific, down to the *minute.*",
+          "And I deserve love",
+          "that's specific *too.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-venus-mars",
+    "title": "Venus and Mars together",
+    "cover": "*Venus* and Mars, together",
+    "caption": "everyone has a venus and a mars. one is what you find beautiful, one is how you go after it",
+    "hashtags": ["venusandmars", "venus", "mars", "birthchart", "astrology"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "VENUS · HOW YOU LOVE",
+        "lines": [
+          "Everyone has a Venus and a *Mars.*",
+          "Venus is what you find *beautiful,*",
+          "and how you like to be loved."
+        ],
+        "labels": [{ "on": "planet", "at": 1, "text": "VENUS · ATTRACTION" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "gold" },
+        "header": "MARS · HOW YOU WANT",
+        "lines": [
+          "Mars is how you *go after* it.",
+          "Your nerve, your chase, your fire."
+        ],
+        "labels": [{ "on": "planet", "at": 0, "text": "MARS · DESIRE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "VENUS · MARS · TOGETHER",
+        "lines": [
+          "When they sit in different signs,",
+          "you can be drawn to one thing",
+          "and *chase* another."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be *soft* and still go after it.",
+          "What I want and how I love",
+          "can *agree.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-element-balance",
+    "title": "Element balance",
+    "cover": "Your *missing* element",
+    "caption": "count your planets by element. the one you're missing is often the one you fall for",
+    "hashtags": ["elements", "birthchart", "astrology", "compatibility", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "water" },
+        "header": "FIRE · EARTH · AIR · WATER",
+        "lines": [
+          "Count your planets by *element.*",
+          "Fire, earth, air, water.",
+          "Most charts lean hard on one or two."
+        ],
+        "labels": [{ "on": "element", "at": 1, "text": "FOUR ELEMENTS · ONE CHART" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "THE MISSING ELEMENT",
+        "lines": [
+          "The one you're *missing*",
+          "is often the one you fall for.",
+          "Airy charts fall for steady earth.",
+          "Watery ones fall for fire's *nerve.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't need someone to *complete* me.",
+          "I can learn what they *carry*",
+          "and make room for it in me."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-birth-chart",
+    "title": "What a birth chart is",
+    "cover": "A map, not a *verdict*",
+    "caption": "a birth chart is the sky from the exact place and minute you were born. it reads you, it doesn't decide you",
+    "hashtags": ["birthchart", "natalchart", "astrology", "affirmations", "zodiac"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 1, "highlightAt": 4 },
+        "header": "YOUR BIRTH CHART · A MAP",
+        "lines": [
+          "A birth chart is a *snapshot* of the sky",
+          "from the exact place and minute",
+          "you were born.",
+          "Every planet, in one of twelve signs",
+          "and one of twelve *houses.*"
+        ],
+        "labels": [{ "on": "house", "at": 4, "text": "ONE OF TWELVE HOUSES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "A MAP · NOT A VERDICT",
+        "lines": [
+          "It doesn't say who you'll *marry.*",
+          "It says how you love,",
+          "what you need, and where you get *stuck.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My chart *reads* me.",
+          "It doesn't *decide* me.",
+          "I'm the one who chooses."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-chart-ruler",
+    "title": "Your chart ruler",
+    "cover": "Your chart has a *driver*",
+    "caption": "the planet that rules your rising sign steers your whole chart. find yours",
+    "hashtags": ["chartruler", "risingsign", "birthchart", "astrology", "zodiac"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "axis": true, "axisAt": 1 },
+        "header": "YOUR CHART RULER",
+        "lines": [
+          "Your chart has a *driver.*",
+          "It's the planet that rules your *rising.*",
+          "Leo rising? It's the sun.",
+          "Gemini rising? *Mercury.*"
+        ],
+        "labels": [{ "on": "asc", "at": 1, "text": "RISING SIGN · ITS RULER" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "TAURUS · LIBRA RISING · VENUS",
+        "lines": [
+          "Taurus or Libra rising?",
+          "Your ruler is *Venus.*",
+          "So wherever Venus sits,",
+          "your whole chart keeps steering",
+          "back toward *love.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "FIND YOUR DRIVER",
+        "lines": [
+          "Find the planet that rules your rising.",
+          "Wherever it sits in your chart",
+          "is where your heart keeps *heading.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "basics-lunar-nodes",
+    "title": "The lunar nodes",
+    "cover": "*Familiar* isn't always home",
+    "caption": "the south node is the type you keep going back to. the north node is the one that scares you a little",
+    "hashtags": ["lunarnodes", "northnode", "birthchart", "astrology", "relationships"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["cancer", "capricorn"], "pairAt": 3 },
+        "header": "THE LUNAR NODES",
+        "lines": [
+          "Your chart has two points that aren't *planets.*",
+          "They're where the moon's path",
+          "crosses the *sun's.*",
+          "Always exactly opposite."
+        ]
+      },
+      {
+        "art": "eclipse",
+        "header": "WHERE ECLIPSES HAPPEN",
+        "lines": [
+          "Every eclipse happens near them.",
+          "They slide backwards through the zodiac,",
+          "one full lap every eighteen and a half years."
+        ],
+        "labels": [{ "on": "moon", "at": 0, "text": "NEAR A NODE · AN ECLIPSE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SOUTH NODE · NORTH NODE",
+        "lines": [
+          "The south node is what's *familiar,*",
+          "the type you keep going back to.",
+          "The north is where you're *growing.*",
+          "Familiar isn't always *home.*"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "id": "400-sky-full-moon",
+  "title": "The full moon",
+  "cover": "Want versus *need*",
+  "keyword": "MOON",
+  "caption": "every full moon puts the sun and moon in opposite signs. want and need, both at full volume",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "fullmoon",
+    "moon",
+    "astrology",
+    "affirmations",
+    "relationships"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "scorpio"
+        ],
+        "pairAt": 1
+      },
+      "header": "FULL MOON · AN OPPOSITION",
+      "lines": [
+        "Every full moon is a *tug-of-war.*",
+        "The sun and moon sit in opposite signs,",
+        "like Taurus and Scorpio,",
+        "facing each other across the sky."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "THE SUN · THE MOON",
+      "lines": [
+        "The sun is what you *want.*",
+        "The moon is what you *need.*",
+        "Once a month, they face off,",
+        "and you feel both at full volume."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to choose",
+        "between what I *want* and what I *need.*",
+        "I can hold both."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

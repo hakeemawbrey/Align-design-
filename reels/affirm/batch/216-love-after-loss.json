@@ -1,0 +1,84 @@
+{
+  "id": "216-love-after-loss",
+  "title": "Still lit",
+  "cover": "Even in shadow, you're *lit*",
+  "keyword": "CHART",
+  "caption": "in a lunar eclipse the moon doesn't go dark. it glows red with every sunrise and sunset on earth",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "grief",
+    "lovingagain",
+    "lunareclipse",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "TOTAL LUNAR ECLIPSE",
+      "lines": [
+        "The moon doesn't go dark in an *eclipse.*",
+        "When it slips into the earth's shadow,",
+        "it glows *red,*",
+        "lit by every sunrise and sunset on earth",
+        "at once."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "LIT BY EARTH'S SUNSETS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "LOVING AFTER LOSS",
+      "lines": [
+        "Grief can feel like that shadow.",
+        "And still, light finds its way to you.",
+        "Loving again doesn't *erase* what you had.",
+        "Your heart can hold *both.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I carry what I lost with *love.*",
+        "I'm allowed to love *again.*",
+        "Both can be true."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "288-hear-virgo",
+  "title": "What a Virgo needs to hear",
+  "cover": "Virgo, nobody's *grading* you",
+  "keyword": "CHART",
+  "caption": "nobody is grading you. put the red pen down",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "virgo",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "hear",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · MUTABLE EARTH",
+      "lines": [
+        "Virgo, love isn't a test you can *fail.*",
+        "You can stop checking your answers.",
+        "Nobody is *grading* you."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY · DETAILS",
+      "lines": [
+        "*Mercury* rules you, so you check everything twice,",
+        "even the way you're *loved.*",
+        "But the right person",
+        "doesn't want a *flawless* you.",
+        "They want the one who burns the toast."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My mistakes don't *end* love.",
+        "I'm allowed to be loved",
+        "in the middle of my *mess.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

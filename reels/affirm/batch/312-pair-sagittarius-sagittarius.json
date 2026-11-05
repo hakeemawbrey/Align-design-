@@ -1,0 +1,90 @@
+{
+  "id": "312-pair-sagittarius-sagittarius",
+  "title": "Sagittarius and Sagittarius",
+  "cover": "Two Sagittarians, *no map*",
+  "keyword": "MATCH",
+  "caption": "two sagittarians in love will book the flight before they book the second date",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "sagittarius",
+    "sagittariuscompatibility",
+    "firesigns",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TWO ARCHERS",
+      "lines": [
+        "The flight gets booked before the *second date.*",
+        "That's two Sagittarians in love."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "sagittarius",
+          "sagittarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Same sign, a conjunction. *Double* Jupiter.",
+        "Mutable fire, twice the *restlessness.*",
+        "So much laughter. So little *planning.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "You give each other *freedom* without asking.",
+        "The friction: nobody stays to *unpack.*",
+        "Adventure is easy. *Staying* is the trip."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can wander *with* you.",
+        "Home can be a *person.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

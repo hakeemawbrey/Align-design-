@@ -1,0 +1,79 @@
+{
+  "id": "061-misses-leo",
+  "title": "When a Leo misses you",
+  "cover": "That *Leo* selfie was for you",
+  "keyword": "VENUS",
+  "caption": "that perfect selfie a leo posted at golden hour? it was for you",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "leo",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "That perfect selfie a Leo just posted?",
+        "It was for *you.*",
+        "Best angle. Golden hour.",
+        "Posted *right* when you'd be online."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "RULED BY THE SUN",
+      "lines": [
+        "Ruled by the *Sun,* they want to be *seen*",
+        "by the one person they're thinking of.",
+        "It isn't vanity.",
+        "It's a *flare,* sent up for you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My *pride* can step aside.",
+        "I can just say",
+        "*I miss you* first."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

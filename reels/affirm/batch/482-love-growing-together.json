@@ -1,0 +1,82 @@
+{
+  "id": "482-love-growing-together",
+  "title": "Changing each other",
+  "cover": "Change each other *gently*",
+  "keyword": "MUTUAL",
+  "caption": "the earth and moon have been shaping each other for billions of years",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "growingtogether",
+    "longtermrelationship",
+    "moon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "header": "EARTH AND MOON · TIDES",
+      "lines": [
+        "The moon is making your days *longer.*",
+        "Its pull slows the earth's spin,",
+        "a tiny bit every century.",
+        "And the earth turned the moon",
+        "to *face* it, for good."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 3,
+          "text": "TIDALLY LOCKED · ONE FACE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "GROWING TOGETHER",
+      "lines": [
+        "Billions of years, *shaping* each other.",
+        "Growing together isn't staying the same.",
+        "It's letting someone *change* you,",
+        "slowly, kindly, and changing them *back.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "We don't have to stay who we were.",
+        "We grow *toward* each other,",
+        "not *away.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "448-love-dealbreakers-up-front",
+  "title": "Dealbreakers up front",
+  "cover": "Clear edges keep the *rings*",
+  "keyword": "CHART",
+  "caption": "saturn's rings stay sharp because tiny moons guard the edges. say your dealbreakers early",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "dealbreakers",
+    "saturn",
+    "astrology",
+    "affirmations",
+    "dating"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "gold",
+        "ring": true
+      },
+      "header": "SATURN · SHEPHERD MOONS",
+      "lines": [
+        "Look closely at Saturn's *rings.*",
+        "Some of their edges are razor-sharp,",
+        "held in place by tiny moons",
+        "called *shepherd* moons."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "SHEPHERD MOON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "SAY IT EARLY",
+      "lines": [
+        "Dealbreakers work like that.",
+        "Saying what you won't accept, up *front,*",
+        "isn't cold or *picky.*",
+        "It's what keeps something beautiful",
+        "from *scattering* later."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I name my *dealbreakers* early.",
+        "The right person won't *flinch.*",
+        "Clear edges keep my love in *shape.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

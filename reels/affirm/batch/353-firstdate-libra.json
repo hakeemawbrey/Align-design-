@@ -1,0 +1,85 @@
+{
+  "id": "353-firstdate-libra",
+  "title": "First date with a Libra",
+  "cover": "Take a Libra somewhere *beautiful*",
+  "keyword": "MATCH",
+  "caption": "a libra feels romance through the room first. then through how evenly you talk",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "libra",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "firstdate",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "RULED BY VENUS",
+      "lines": [
+        "Take a Libra somewhere *beautiful.*",
+        "Candles. A view. A playlist you chose.",
+        "Ruled by *Venus,* they feel romance",
+        "through the *room* first."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · CARDINAL AIR",
+      "lines": [
+        "Then keep the conversation *even.*",
+        "Ask as much as you share.",
+        "A Libra falls for the person",
+        "who makes the table feel *balanced.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "THE SCALES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm worth the *effort* of beauty.",
+        "And I can like someone",
+        "without it being *perfect.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "308-pair-taurus-sagittarius",
+  "title": "Taurus and Sagittarius",
+  "cover": "Taurus + Sagittarius · *quincunx*",
+  "keyword": "MATCH",
+  "caption": "a garden and a suitcase. roots can love wings, it just takes adjusting",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "taurus",
+    "sagittarius",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TAURUS · SAGITTARIUS",
+      "lines": [
+        "Roots fall in love with *wings.*",
+        "Taurus plants a garden.",
+        "Sagittarius packs a *suitcase.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "sagittarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "Taurus and Sagittarius form a *quincunx,*",
+        "five signs apart, a hundred and fifty degrees.",
+        "Fixed earth, mutable fire.",
+        "Nothing in common but *appetite.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "fire"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Sagittarius gives Taurus the *world.*",
+        "Taurus gives Sagittarius a *home* to come back to.",
+        "The friction: freedom versus routine."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can have *roots*",
+        "and still grow *wings.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

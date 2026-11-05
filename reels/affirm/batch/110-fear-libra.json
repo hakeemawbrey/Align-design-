@@ -1,0 +1,84 @@
+{
+  "id": "110-fear-libra",
+  "title": "What a Libra quietly fears",
+  "cover": "Libra, you can't hold it *alone*",
+  "keyword": "MUTUAL",
+  "caption": "for the libra who's tired of being the only one keeping it level",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "libra",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · THE SCALES",
+      "lines": [
+        "Libra, you're tired of holding the *scales* alone.",
+        "You smooth every fight, plan every *date,*",
+        "and say sorry first, even when it wasn't you."
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true
+      },
+      "header": "THE QUIET FEAR · OFF BALANCE",
+      "lines": [
+        "What you don't say out loud",
+        "is that if you *stopped,*",
+        "it would all fall *apart.*",
+        "That you're the only thing",
+        "keeping it in line."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "OUT OF LINE"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "A real love holds the *other* side.",
+        "I am not the only one",
+        "keeping us *level.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

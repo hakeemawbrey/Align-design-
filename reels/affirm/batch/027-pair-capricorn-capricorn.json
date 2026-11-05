@@ -1,0 +1,90 @@
+{
+  "id": "027-pair-capricorn-capricorn",
+  "title": "Capricorn and Capricorn",
+  "cover": "Two Capricorns, *one empire*",
+  "keyword": "MATCH",
+  "caption": "two capricorns in love have a five-year plan by the third date. schedule the joy too",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "capricorn",
+    "capricorncompatibility",
+    "earthsigns",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "CAPRICORN · CARDINAL EARTH",
+      "lines": [
+        "By the third date, two Capricorns",
+        "already have a *five-year plan.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "capricorn",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Same sign, *no distance* at all.",
+        "Double Saturn. Double *patience.*",
+        "Cardinal earth, both *climbing.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "What you give each other: *respect.*",
+        "No one has to apologize for ambition.",
+        "The friction: work becomes the *whole* relationship."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *rest* beside you.",
+        "Our love isn't another *job.*",
+        "It's the *reason* for the work."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

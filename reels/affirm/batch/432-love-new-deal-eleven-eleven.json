@@ -1,0 +1,81 @@
+{
+  "id": "432-love-new-deal-eleven-eleven",
+  "title": "A new deal at eleven eleven",
+  "cover": "A new deal at *11:11*",
+  "keyword": "CHART",
+  "caption": "the sky at eleven eleven tonight has never existed before. neither has your next chance",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "1111",
+    "astrology",
+    "affirmations",
+    "newbeginnings",
+    "love"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "header": "11:11 · A SKY NEVER SEEN",
+      "lines": [
+        "At eleven eleven tonight, the sky will be",
+        "in a shape it has never been in *before.*",
+        "Since last night, the moon alone has moved",
+        "about *thirteen* degrees."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 2
+      },
+      "header": "EVERY NIGHT · A NEW DEAL",
+      "lines": [
+        "Every night, the sky gets *dealt* again.",
+        "Whatever hand you got in love *yesterday,*",
+        "it isn't the only one *coming.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "THE MOON · MOVING ON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My yesterday doesn't decide *tonight.*",
+        "I'm ready for a new *hand.*",
+        "I make my wish, and I keep my *eyes* open."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

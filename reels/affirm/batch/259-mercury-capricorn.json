@@ -1,0 +1,86 @@
+{
+  "id": "259-mercury-capricorn",
+  "title": "Mercury in Capricorn",
+  "cover": "Mercury in Capricorn *means it*",
+  "keyword": "CHART",
+  "caption": "mercury in capricorn doesn't say much, but it has never said a word it didn't mean. dry humor included",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "mercuryincapricorn",
+    "capricorn",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "MERCURY IN CAPRICORN",
+      "lines": [
+        "You don't say much.",
+        "But you've never said a word you didn't *mean.*",
+        "Mercury in Capricorn talks like it's in *writing.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☿",
+        "planetSign": "capricorn",
+        "planetAt": 2,
+        "highlight": 10,
+        "highlightAt": 0
+      },
+      "header": "CAPRICORN · THE TENTH HOUSE",
+      "lines": [
+        "Capricorn belongs to the tenth house:",
+        "reputation, and what you build.",
+        "So you need words with *weight* behind them,",
+        "a plan, a promise, a follow-through.",
+        "Pretty words with no plan feel like *noise.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "10TH HOUSE · REPUTATION"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My dry humor is a *love language.*",
+        "I can say *I feel* before I'll fix it.",
+        "My word is worth *waiting* for."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

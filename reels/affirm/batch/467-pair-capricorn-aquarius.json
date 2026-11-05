@@ -1,0 +1,95 @@
+{
+  "id": "467-pair-capricorn-aquarius",
+  "title": "Capricorn and Aquarius",
+  "cover": "Capricorn and Aquarius, *Saturn*",
+  "keyword": "MATCH",
+  "caption": "capricorn and aquarius share saturn. one builds the tower, the other redesigns it",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "capricorn",
+    "aquarius",
+    "saturn",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac",
+        "ring": true
+      },
+      "header": "BOTH RULED BY SATURN",
+      "lines": [
+        "Capricorn builds the *tower.*",
+        "Aquarius redesigns it.",
+        "Saturn rules them both, *traditionally.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "capricorn",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "Neighbors on the wheel, thirty degrees.",
+        "Earth and air, cardinal and fixed.",
+        "Same ruler, *different* dialects."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Capricorn gives Aquarius *roots.*",
+        "Aquarius gives Capricorn a *future* worth building.",
+        "The friction: tradition versus *change.*",
+        "Both can be a little *guarded.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "We can keep *what works*",
+        "and change *what doesn't.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

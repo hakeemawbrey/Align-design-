@@ -1,0 +1,355 @@
+[
+  {
+    "key": "selflove-aries",
+    "title": "Self-love for an Aries",
+    "cover": "Aries, *rest* isn't losing",
+    "caption": "self-love for an aries is sweat first, then rest without guilt",
+    "hashtags": ["aries", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "highlight": 1, "highlightAt": 1 },
+        "header": "THE FIRST HOUSE · THE SELF",
+        "lines": ["Aries, you don't come home by sitting *still.*", "The first sign, the *first house,*", "the house of the self."],
+        "labels": [{ "on": "house", "at": 1, "text": "1ST HOUSE · THE SELF" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS · MOVE FIRST",
+        "lines": ["*Mars* gives you fire that needs somewhere to go.", "So run it out. Dance it out.", "Hit the *pillow* if you have to.", "Then the hard part:", "let yourself *rest*", "without calling it losing."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm on my *own* side.", "Rest is not *giving up.*"]
+      }
+    ]
+  },
+  {
+    "key": "selflove-taurus",
+    "title": "Self-love for a Taurus",
+    "cover": "Taurus, start with the *body*",
+    "caption": "clean sheets, warm bread, one song on repeat. that's the whole plan",
+    "hashtags": ["taurus", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · EARTH · VENUS",
+        "lines": ["Self-love for a Taurus starts in the *body.*", "Not a plan. Not a list.", "Your *senses* first."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 2, "highlightAt": 0 },
+        "header": "THE SECOND HOUSE · VALUES",
+        "lines": ["Your house is the *second,*", "what you value, what you keep.", "So keep something for *you.*", "Clean sheets. Bread still warm.", "One song on repeat with the windows open."],
+        "labels": [{ "on": "house", "at": 0, "text": "2ND HOUSE · WHAT YOU VALUE" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve the *softness* I give.", "My comfort is not a *luxury.*"]
+      }
+    ]
+  },
+  {
+    "key": "selflove-gemini",
+    "title": "Self-love for a Gemini",
+    "cover": "Gemini, text *yourself* back",
+    "caption": "gemini, answer your own messages for once",
+    "hashtags": ["gemini", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "GEMINI · RULED BY MERCURY",
+        "lines": ["Gemini, the one person you never text back is *you.*", "*Mercury* makes you everyone's messenger,", "but your own messages go *unread.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "THE TWINS · TWO VOICES",
+        "lines": ["So come home by *writing* it down.", "The thought you had in the shower.", "The thing you almost *said.*", "Read it back like a letter", "from someone who *loves* you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm *worth* listening to.", "Even by me."]
+      }
+    ]
+  },
+  {
+    "key": "selflove-cancer",
+    "title": "Self-love for a Cancer",
+    "cover": "Cancer, your moods are *tides*",
+    "caption": "the moon isn't full every night either",
+    "hashtags": ["cancer", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 1 },
+        "header": "RULED BY THE MOON · PHASES",
+        "lines": ["Cancer, your moods are tides, not *flaws.*", "Even the *Moon,* your ruler,", "isn't full every night."],
+        "labels": [{ "on": "moon", "at": 1, "text": "EIGHT PHASES · ONE MOON" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 4, "highlightAt": 0 },
+        "header": "THE FOURTH HOUSE · HOME",
+        "lines": ["So come home the way you'd *mother* someone.", "Soup. A blanket. The phone face *down.*", "Your favorite old film again.", "Let yourself be the one", "who gets taken care of."],
+        "labels": [{ "on": "house", "at": 0, "text": "4TH HOUSE · HOME" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *soft* with myself.", "Every phase of me is *home.*"]
+      }
+    ]
+  },
+  {
+    "key": "selflove-leo",
+    "title": "Self-love for a Leo",
+    "cover": "Leo, shine for *you*",
+    "caption": "sing in the car. paint badly. nobody has to see it",
+    "hashtags": ["leo", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "LEO · THE SUN",
+        "lines": ["Leo, the sun doesn't check who's *watching.*", "It rises over empty fields", "and never calls it *wasted.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "LEO · FIXED FIRE",
+        "lines": ["So make something just for *you.*", "Sing in the car. Paint badly.", "Dance in the kitchen.", "Wear the thing for no one.", "Your light was never a *performance.*"]
+      },
+      {
+        "art": "venus",
+        "opts": { "mirror": true, "mirrorAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I shine for *me* first.", "Being seen by me is *enough.*"]
+      }
+    ]
+  },
+  {
+    "key": "selflove-virgo",
+    "title": "Self-love for a Virgo",
+    "cover": "Virgo, talk to *yourself* kindly",
+    "caption": "for the virgo whose inner voice could use a much softer tone",
+    "hashtags": ["virgo", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · A SOFTER VOICE",
+        "lines": ["Virgo, you'd never talk to a friend like *that.*", "The list of what you did *wrong* today,", "the voice that's never quite *satisfied.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 6, "highlightAt": 0 },
+        "header": "THE SIXTH HOUSE · DAILY CARE",
+        "lines": ["Your sixth house rules the *daily* things.", "So start there.", "Water. A walk. Bed on time.", "Not to *fix* yourself.", "Just because you're *worth* the care."],
+        "labels": [{ "on": "house", "at": 0, "text": "6TH HOUSE · ROUTINES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I speak to myself like someone I *love.*", "I'm not a project. I'm a *person.*"]
+      }
+    ]
+  },
+  {
+    "key": "selflove-libra",
+    "title": "Self-love for a Libra",
+    "cover": "Libra, take *yourself* out",
+    "caption": "the perfect date, planned by a libra, for a libra",
+    "hashtags": ["libra", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "venus",
+        "header": "RULED BY VENUS · BEAUTY",
+        "lines": ["Libra, plan the perfect date. Then go *alone.*", "*Venus* gave you an eye for beauty,", "but you mostly spend it on *other* people."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "axis": true, "axisAt": 0 },
+        "header": "LIBRA · ARIES · THE AXIS",
+        "lines": ["Your opposite sign is *Aries,*", "the sign of the self.", "So borrow a little of its *nerve.*", "Pick the table you like.", "Order without asking anyone.", "Notice what you choose", "when nobody's there to *please.*"],
+        "labels": [{ "on": "asc", "at": 1, "text": "ARIES · THE SELF" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm *good* company for myself.", "I can choose what pleases *me.*"]
+      }
+    ]
+  },
+  {
+    "key": "selflove-scorpio",
+    "title": "Self-love for a Scorpio",
+    "cover": "Scorpio, heal in *private*",
+    "caption": "you don't owe anyone the process. only the person who walks out of it",
+    "hashtags": ["scorpio", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · THE DEEP",
+        "lines": ["Scorpio, you're allowed to heal in *private.*", "You don't owe anyone the *process.*", "Only the person who walks out of it."]
+      },
+      {
+        "art": "eclipse",
+        "header": "GO DARK · COME BACK",
+        "lines": ["So go dark if you need to.", "Phone off. Feel the *whole* thing.", "*Pluto,* your modern ruler,", "rules the endings that make room", "for who you're *becoming.*"]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "THE NEW MOON",
+        "lines": ["The moon goes dark every month,", "and nobody calls it *broken.*", "Neither are you.", "You're just *between* phases."],
+        "labels": [{ "on": "moon", "at": 0, "text": "NEW MOON · NOT BROKEN" }]
+      }
+    ]
+  },
+  {
+    "key": "selflove-sagittarius",
+    "title": "Self-love for a Sagittarius",
+    "cover": "Sagittarius, go *alone* once",
+    "caption": "somewhere around the second day alone, you meet yourself",
+    "hashtags": ["sagittarius", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · THE ARCHER",
+        "lines": ["Sagittarius, take the trip *alone* once.", "*Jupiter* made you for the open road,", "but you always bring a *crowd.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 4 },
+        "header": "THE ROAD · JUST YOU",
+        "lines": ["No one to entertain.", "Eat where you want. Get *lost.*", "Talk to the stranger, or don't.", "Somewhere around the second day,", "you'll *meet* yourself."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My freedom starts with *me.*", "I can come home to myself", "from *anywhere.*"]
+      }
+    ]
+  },
+  {
+    "key": "selflove-capricorn",
+    "title": "Self-love for a Capricorn",
+    "cover": "Capricorn, come home *early*",
+    "caption": "the mountain isn't going anywhere. come home early tonight",
+    "hashtags": ["capricorn", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · THE SEA-GOAT",
+        "lines": ["Capricorn, the mountain will be there *tomorrow.*", "You've been climbing since you were *young,*", "like you were born already late."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "SATURN · KEEPER OF TIME",
+        "lines": ["*Saturn* rules time,", "and you've spent most of yours *working.*", "So stop at the ledge today.", "Look how far you've *come.*"]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 7 },
+        "header": "COME HOME EARLY",
+        "lines": ["Rest isn't a reward", "you get at the top.", "It's how you *make* it there.", "Come home *early* tonight."]
+      }
+    ]
+  },
+  {
+    "key": "selflove-aquarius",
+    "title": "Self-love for an Aquarius",
+    "cover": "Aquarius, *feel* it first",
+    "caption": "for the aquarius who explains every feeling instead of having it",
+    "hashtags": ["aquarius", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "AQUARIUS · AN AIR SIGN",
+        "lines": ["Aquarius, you can't *think* your way home.", "You're the water bearer,", "but you're an *air* sign.", "You live up in your head."],
+        "labels": [{ "on": "element", "at": 2, "text": "AIR · NOT WATER" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "COME DOWN · FEEL IT",
+        "lines": ["So come down for a minute.", "Hand on your chest. *Breathe.*", "Name one feeling", "without explaining *why.*", "Let it be *messy.* Let it be yours."]
+      },
+      {
+        "art": "venus",
+        "opts": { "mirror": true, "mirrorAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *solve* my feelings.", "I'm allowed to just *feel* them."]
+      }
+    ]
+  },
+  {
+    "key": "selflove-pisces",
+    "title": "Self-love for a Pisces",
+    "cover": "Pisces, it isn't all *yours*",
+    "caption": "for the pisces who soaks up every feeling in the room",
+    "hashtags": ["pisces", "selflove", "zodiac", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · THE TWELFTH SIGN",
+        "lines": ["Pisces, not every feeling you carry is *yours.*", "You walk into a room", "and *soak up* everyone in it."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 12, "highlightAt": 0 },
+        "header": "THE TWELFTH HOUSE · REST",
+        "lines": ["The *twelfth house* is yours,", "the house of rest and the hidden.", "So hide a little. On *purpose.*", "A bath, a nap, the ocean if you can,", "until the water inside you *settles.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "12TH HOUSE · REST" }]
+      },
+      {
+        "art": "venus",
+        "opts": { "mirror": true, "mirrorAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can feel for others", "without carrying them *home.*", "My own heart comes *first.*"]
+      }
+    ]
+  }
+]

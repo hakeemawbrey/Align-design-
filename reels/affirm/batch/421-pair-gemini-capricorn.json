@@ -1,0 +1,90 @@
+{
+  "id": "421-pair-gemini-capricorn",
+  "title": "Gemini and Capricorn",
+  "cover": "Gemini + Capricorn · *quincunx*",
+  "keyword": "MATCH",
+  "caption": "one plans the decade, one plans tonight. you'd be surprised how well that works",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "gemini",
+    "capricorn",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "GEMINI · CAPRICORN",
+      "lines": [
+        "Capricorn plans for the next *ten years.*",
+        "Gemini plans for *tonight.*",
+        "Somehow, you need each other."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "Five signs apart, a *quincunx:*",
+        "mutable air and cardinal earth,",
+        "nothing shared, everything to *learn.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "earth"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Gemini makes Capricorn *laugh,*",
+        "which is rarer than it should be.",
+        "Capricorn gives Gemini *structure.*",
+        "The friction: play versus duty."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can take us *seriously*",
+        "and still let us *play.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

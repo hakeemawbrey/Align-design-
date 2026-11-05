@@ -1,0 +1,87 @@
+{
+  "id": "205-house-eighth",
+  "title": "The eighth house",
+  "cover": "The *eighth house* in love",
+  "keyword": "CHART",
+  "caption": "the eighth house is the room you only let a few people into",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "eighthhouse",
+    "birthchart",
+    "scorpio",
+    "astrology",
+    "intimacy"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "houses",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 8,
+        "highlightAt": 0
+      },
+      "header": "THE EIGHTH HOUSE · INTIMACY",
+      "lines": [
+        "Your eighth house is the room",
+        "you only let a *few* people into.",
+        "Intimacy, trust, what you *share:*",
+        "money, bodies, secrets."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "8TH HOUSE · INTIMACY"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO'S HOUSE · DEPTH",
+      "lines": [
+        "It's *Scorpio's* house,",
+        "so nothing here stays on the surface.",
+        "Real closeness *changes* you.",
+        "That's why letting someone in",
+        "can feel like *falling.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can let someone in *slowly.*",
+        "Trust is something I *give,*",
+        "not something I owe."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

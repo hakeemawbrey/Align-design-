@@ -1,0 +1,88 @@
+{
+  "id": "132-venus-aquarius",
+  "title": "Venus in Aquarius",
+  "cover": "Venus in Aquarius: *friends* first",
+  "keyword": "VENUS",
+  "caption": "venus in aquarius fell for someone in a group chat. friends first, then slowly, everything",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "venusinaquarius",
+    "aquarius",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♀",
+        "planetSign": "aquarius",
+        "planetAt": 0,
+        "highlight": 11,
+        "highlightAt": 2
+      },
+      "header": "VENUS IN AQUARIUS",
+      "lines": [
+        "Your best love story started in a *group chat.*",
+        "Friends first. Then, slowly, *everything.*",
+        "Aquarius belongs to the eleventh house,",
+        "the house of friends and hopes."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 2,
+          "text": "11TH HOUSE · FRIENDS"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · RULED BY URANUS",
+      "lines": [
+        "Its modern ruler is Uranus,",
+        "the planet of the *unexpected.*",
+        "So you need a partner who is also your *person,*",
+        "who can give you room without feeling left."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *close* and still be *me.*",
+        "Needing space doesn't mean I care *less.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

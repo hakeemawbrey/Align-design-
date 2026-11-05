@@ -1,0 +1,1363 @@
+[
+  {
+    "key": "pair-cancer-capricorn",
+    "title": "Cancer and Capricorn",
+    "cover": "Cancer and Capricorn, *opposite*",
+    "caption": "cancer makes it a home. capricorn makes sure it's still standing in ten years",
+    "hashtags": ["cancer", "capricorn", "opposites", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["cancer", "capricorn"], "pairAt": 1 },
+        "header": "OPPOSITION · 180°",
+        "lines": ["The Moon and Saturn rule *opposite* signs.", "Cancer and Capricorn, face to face,", "straight across the *wheel.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water", "second": "earth" },
+        "header": "WATER · EARTH · CARDINAL",
+        "lines": ["Water and earth. Both cardinal, both *lead.*", "Cancer brings the *feeling* of home.", "Capricorn brings the roof that holds it."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FRICTION",
+        "lines": ["The work is how love gets *shown.*", "Cancer needs it said. Capricorn *stays.*"],
+        "labels": [{ "on": "thread", "at": 1, "text": "SAID · SHOWN" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My softness and your *steadiness*", "are building the *same* house."]
+      }
+    ]
+  },
+  {
+    "key": "pair-cancer-aquarius",
+    "title": "Cancer and Aquarius",
+    "cover": "Cancer and Aquarius, *adjusting*",
+    "caption": "cancer wants to come home to you. aquarius wants to come home and still feel free. both can be true",
+    "hashtags": ["cancer", "aquarius", "quincunx", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "CLOSE · FREE",
+        "lines": ["One of you wants to be *closer.*", "The other wants room to *breathe.*", "That's Cancer and Aquarius."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["cancer", "aquarius"], "pairAt": 0 },
+        "header": "QUINCUNX · 150°",
+        "lines": ["They sit a *quincunx* apart.", "Water and air. Cardinal and fixed.", "No shared element, no shared *mode.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water", "second": "air" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Cancer gives Aquarius a *place* to land.", "Aquarius gives Cancer *perspective.*", "The friction: space read as *distance.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Your freedom isn't you *leaving.*", "My need isn't me *holding on.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-cancer-pisces",
+    "title": "Cancer and Pisces",
+    "cover": "Cancer and Pisces, *flowing*",
+    "caption": "cancer and pisces can talk without talking. the trick is still saying it out loud",
+    "hashtags": ["cancer", "pisces", "watersigns", "trine", "zodiaccompatibility"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "water" },
+        "header": "WATER · WATER",
+        "lines": ["Cancer and Pisces cry at the *same* movies.", "They feel the room", "before anyone says a *word.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["cancer", "pisces"], "pairAt": 0 },
+        "header": "TRINE · 120°",
+        "lines": ["They sit a *trine* apart,", "the easiest angle on the wheel.", "Cardinal Cancer gives love a *shape.*", "Mutable Pisces gives it *grace.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FRICTION",
+        "lines": ["The risk is drifting into *moods*", "and assuming the other just knows.", "Say the *simple* thing anyway."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *understood*", "and still use my *words.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-leo-leo",
+    "title": "Leo and Leo",
+    "cover": "Leo and Leo, *two suns*",
+    "caption": "two leos in love is a lot of warmth in one room. take turns being the sunrise",
+    "hashtags": ["leo", "leocompatibility", "firesigns", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "RULED BY THE SUN",
+        "lines": ["A sky can hold *two suns.*", "It just needs a little more *room.*", "That's two Leos in love."],
+        "labels": [{ "on": "planet", "at": 0, "text": "THE SUN · LEO'S RULER" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "leo"], "pairAt": 0 },
+        "header": "CONJUNCTION · 0°",
+        "lines": ["Same sign is a *conjunction,*", "zero degrees apart.", "Same fire, same fixed heart,", "same need to be *seen.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FRICTION",
+        "lines": ["You give each other *loyalty* and praise.", "The friction is the *spotlight.*", "Two people waiting for applause", "can forget to *clap.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can shine *and* make room.", "Your light doesn't *dim* mine."]
+      }
+    ]
+  },
+  {
+    "key": "pair-leo-virgo",
+    "title": "Leo and Virgo",
+    "cover": "Leo and Virgo, *next door*",
+    "caption": "leo wants to be adored. virgo shows adoration by fixing your calendar. it counts",
+    "hashtags": ["leo", "virgo", "zodiaccompatibility", "astrology", "affirmations"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · THE NEXT SIGN",
+        "lines": ["Virgo loves you by *noticing* things.", "The loose button. The skipped lunch.", "Leo, that's a *love letter.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "virgo"], "pairAt": 1 },
+        "header": "SEMI-SEXTILE · 30°",
+        "lines": ["Leo and Virgo are *neighbors,*", "thirty degrees apart, a semi-sextile.", "Fixed fire and mutable earth."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "earth" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Leo gives Virgo *permission* to play.", "Virgo gives Leo care in the *details.*", "Watch for critique that sounds like *rejection.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *adored* quietly.", "Being noticed is being *loved.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-leo-libra",
+    "title": "Leo and Libra",
+    "cover": "Leo and Libra, *golden hour*",
+    "caption": "leo brings the warmth, libra brings the beauty. date night planning is a group project",
+    "hashtags": ["leo", "libra", "sextile", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "libra"], "pairAt": 1 },
+        "header": "SEXTILE · 60°",
+        "lines": ["The Sun and Venus get along *easily.*", "Leo and Libra sit a sextile apart,", "sixty degrees of *open door.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "air" },
+        "header": "FIRE · AIR",
+        "lines": ["Fixed fire, cardinal air.", "Air feeds fire. Libra *fans* the flame.", "Leo gives Libra *courage* to choose.", "Libra gives Leo grace and *perspective.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE WORK",
+        "lines": ["Watch the *performance.*", "Leo can need applause, Libra approval.", "Let the *real* you show up."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to be *perfect*", "to be *chosen.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-leo-scorpio",
+    "title": "Leo and Scorpio",
+    "cover": "Leo and Scorpio, *magnetic*",
+    "caption": "leo and scorpio don't do lukewarm. that's the gift and the homework",
+    "hashtags": ["leo", "scorpio", "square", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · FIXED WATER",
+        "lines": ["Leo and Scorpio both refuse to *blink first.*", "That's what two fixed signs do."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "scorpio"], "pairAt": 0 },
+        "header": "SQUARE · 90°",
+        "lines": ["They sit a *square* apart.", "Ninety degrees. Fire meets water.", "Tension, yes. Also *traction.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "water" },
+        "header": "WHAT EACH BRINGS",
+        "lines": ["Leo gives Scorpio *warmth* in the open.", "Scorpio gives Leo *depth* behind the door.", "The friction is pride against *privacy.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "WORK WORTH DOING",
+        "lines": ["A square isn't a *warning.*", "It's two strong hearts", "learning to *bend* toward each other."]
+      }
+    ]
+  },
+  {
+    "key": "pair-leo-sagittarius",
+    "title": "Leo and Sagittarius",
+    "cover": "Leo and Sagittarius, *wildfire*",
+    "caption": "leo and sagittarius will turn a grocery run into a road trip. let them",
+    "hashtags": ["leo", "sagittarius", "firesigns", "trine", "zodiaccompatibility"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · LEO",
+        "lines": ["Some couples plan the trip.", "Leo and Sagittarius *become* the trip."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "sagittarius"], "pairAt": 0 },
+        "header": "TRINE · 120°",
+        "lines": ["Two fire signs, a *trine* apart.", "A hundred and twenty degrees of *ease.*", "The Sun and Jupiter, both generous."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire" },
+        "header": "THE EXCHANGE",
+        "lines": ["Leo gives Sagittarius *devotion.*", "Sagittarius gives Leo *adventure.*", "Fixed wants to stay. Mutable wants to *roam.*"],
+        "labels": [{ "on": "element", "at": 2, "text": "FIXED FIRE · MUTABLE FIRE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *free* and still come home.", "My loyalty can have a *passport.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-leo-capricorn",
+    "title": "Leo and Capricorn",
+    "cover": "Leo and Capricorn, *the long game*",
+    "caption": "leo wants to be celebrated now. capricorn is already planning the celebration for year five",
+    "hashtags": ["leo", "capricorn", "quincunx", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "gold", "ring": true },
+        "header": "THE SUN · SATURN",
+        "lines": ["The Sun wants to shine *today.*", "Saturn wants it to *last.*", "That's Leo and Capricorn."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "capricorn"], "pairAt": 0 },
+        "header": "QUINCUNX · 150°",
+        "lines": ["They sit a *quincunx* apart.", "Fire and earth, fixed and cardinal,", "sharing nothing, so they *adjust.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "earth" },
+        "header": "THE TRADE",
+        "lines": ["Leo gives Capricorn *permission* to enjoy it.", "Capricorn gives Leo a *foundation.*", "The friction is warmth versus *work.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My steadiness is a kind of *romance.*", "I can celebrate *and* build."]
+      }
+    ]
+  },
+  {
+    "key": "pair-leo-aquarius",
+    "title": "Leo and Aquarius",
+    "cover": "Leo and Aquarius, *mirror*",
+    "caption": "leo is the heart, aquarius is the crowd. across the wheel, each is the other's missing half",
+    "hashtags": ["leo", "aquarius", "opposites", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE HEART · THE CROWD",
+        "lines": ["Leo loves *one person* like a whole crowd.", "Aquarius loves the crowd like one person."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "aquarius"], "pairAt": 0 },
+        "header": "OPPOSITION · 180°",
+        "lines": ["They sit *opposite* on the wheel.", "Both fixed, so both *stubborn.*", "Fire and air, so the spark is real."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "air" },
+        "header": "WHAT EACH TEACHES",
+        "lines": ["Leo teaches Aquarius to be *adored.*", "Aquarius teaches Leo it's not *personal.*", "Watch for distance read as *coldness.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE OTHER HALF",
+        "lines": ["Opposites don't *cancel* each other out.", "They finish the *circle.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-leo-pisces",
+    "title": "Leo and Pisces",
+    "cover": "Leo and Pisces, *a love story*",
+    "caption": "leo wants the grand gesture. pisces already wrote the poem about it",
+    "hashtags": ["leo", "pisces", "quincunx", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · MUTABLE WATER",
+        "lines": ["Pisces will write you the *poem.*", "Leo will read it out loud, *proudly.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "pisces"], "pairAt": 0 },
+        "header": "QUINCUNX · 150°",
+        "lines": ["Leo and Pisces sit a *quincunx* apart.", "Fire and water, fixed and mutable.", "Nothing shared, so they learn *everything.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "water" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Leo gives Pisces *confidence* to be seen.", "Pisces gives Leo *tenderness* offstage.", "Watch for Pisces going quiet to keep peace."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My heart can be *big* and gentle.", "I'm allowed to take up *space.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-virgo-virgo",
+    "title": "Virgo and Virgo",
+    "cover": "Virgo and Virgo, *a full list*",
+    "caption": "two virgos in love will color-code the grocery list. don't forget to put rest on it",
+    "hashtags": ["virgo", "virgocompatibility", "earthsigns", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "TWO VIRGOS",
+        "lines": ["Picture the cleanest kitchen in the *zodiac.*", "Two Virgos live there,", "in love with every *detail.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["virgo", "virgo"], "pairAt": 0 },
+        "header": "CONJUNCTION · 0°",
+        "lines": ["Same sign, a *conjunction.*", "Mutable earth, ruled by *Mercury,*", "with the same quiet standards."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "THE FRICTION",
+        "lines": ["Each one *gets* the other's mind.", "Nobody has to explain the details.", "The friction: two inner critics", "turning *outward* on a bad day."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *earn* rest.", "We're not projects. We're *partners.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-virgo-libra",
+    "title": "Virgo and Libra",
+    "cover": "Virgo and Libra, *refined*",
+    "caption": "virgo fixes it, libra makes it beautiful. together they'd redesign the whole restaurant",
+    "hashtags": ["virgo", "libra", "zodiaccompatibility", "astrology", "affirmations"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "MERCURY · VENUS",
+        "lines": ["Mercury thinks it through. Venus makes it *lovely.*", "Virgo and Libra, side by side."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["virgo", "libra"], "pairAt": 0 },
+        "header": "SEMI-SEXTILE · 30°",
+        "lines": ["They're neighbors, a *semi-sextile.*", "Earth and air, mutable and cardinal.", "Close enough to *learn* each other."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "air" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Virgo gives Libra *honest* feedback.", "Libra gives Virgo a *softer* way to say it.", "The friction: Virgo critiques, Libra avoids."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can tell the *truth* gently.", "Peace doesn't mean *staying quiet.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-virgo-scorpio",
+    "title": "Virgo and Scorpio",
+    "cover": "Virgo and Scorpio, *quietly deep*",
+    "caption": "scorpio hides the feeling. virgo finds it anyway, and folds it like laundry. that's love",
+    "hashtags": ["virgo", "scorpio", "sextile", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · VIRGO",
+        "lines": ["Scorpio hides the *feeling.*", "Virgo finds it anyway,", "and handles it with *care.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["virgo", "scorpio"], "pairAt": 0 },
+        "header": "SEXTILE · 60°",
+        "lines": ["They sit a *sextile* apart.", "Earth and water, the elements that *grow.*", "Mutable Virgo bends. Fixed Scorpio *holds.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "water" },
+        "header": "WHAT EACH BRINGS",
+        "lines": ["Virgo gives Scorpio a steady *routine.*", "Scorpio gives Virgo *permission* to feel.", "The friction: analysis can feel like *probing.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can let someone all the way *in.*", "Being *known* is safe here."]
+      }
+    ]
+  },
+  {
+    "key": "pair-virgo-sagittarius",
+    "title": "Virgo and Sagittarius",
+    "cover": "Virgo and Sagittarius, *learning*",
+    "caption": "virgo packs the first-aid kit. sagittarius already left. the funniest square in the zodiac",
+    "hashtags": ["virgo", "sagittarius", "square", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE PLAN · THE LEAP",
+        "lines": ["Virgo packed the *first-aid kit.*", "Sagittarius is already out the door."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["virgo", "sagittarius"], "pairAt": 0 },
+        "header": "SQUARE · 90°",
+        "lines": ["Earth and fire, a *square* apart.", "Both mutable, both restless,", "in very *different* directions."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "fire" },
+        "header": "GIVE AND TAKE",
+        "lines": ["Virgo gives Sagittarius a *plan* that holds.", "Sagittarius gives Virgo the *bigger picture.*", "The work: details versus *faith.*", "Both are right. Take turns."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Our tension is *teaching* us.", "I can plan *and* leap."]
+      }
+    ]
+  },
+  {
+    "key": "pair-virgo-capricorn",
+    "title": "Virgo and Capricorn",
+    "cover": "Virgo and Capricorn, *bedrock*",
+    "caption": "virgo and capricorn show love with a shared calendar and they both find it romantic",
+    "hashtags": ["virgo", "capricorn", "earthsigns", "trine", "zodiaccompatibility"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "earth" },
+        "header": "EARTH · EARTH",
+        "lines": ["Love you could set your *watch* by.", "That's Virgo and Capricorn."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["virgo", "capricorn"], "pairAt": 0 },
+        "header": "TRINE · 120°",
+        "lines": ["Two earth signs, a *trine* apart,", "the angle of *ease.*", "Virgo adapts. Capricorn *leads.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Virgo gives Capricorn the *small* kindnesses.", "Capricorn gives Virgo a future to *trust.*", "The risk is all work, no *play.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Our love is *built,* not found.", "And I'm allowed to *enjoy* it."]
+      }
+    ]
+  },
+  {
+    "key": "pair-virgo-aquarius",
+    "title": "Virgo and Aquarius",
+    "cover": "Virgo and Aquarius, *a puzzle*",
+    "caption": "aquarius wants to rewrite the rules. virgo wants them followed properly. closer than they think",
+    "hashtags": ["virgo", "aquarius", "quincunx", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · VIRGO",
+        "lines": ["Aquarius wants to *rewrite* the rules.", "Virgo wants them followed *properly.*", "Both are trying to help."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["virgo", "aquarius"], "pairAt": 0 },
+        "header": "QUINCUNX · 150°",
+        "lines": ["They sit a *quincunx* apart.", "Earth and air, mutable and fixed.", "Different wiring, the same big *heart.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "air" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Virgo gives Aquarius *daily* devotion.", "Aquarius gives Virgo room to be *odd.*", "The friction: routine against *rebellion.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE ADJUSTMENT",
+        "lines": ["A quincunx asks you to *adjust.*", "Love that adjusts is love that *lasts.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-virgo-pisces",
+    "title": "Virgo and Pisces",
+    "cover": "Virgo and Pisces, *the other half*",
+    "caption": "virgo is the helper, pisces is the healer. across the wheel, they're each other's rest",
+    "hashtags": ["virgo", "pisces", "opposites", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["virgo", "pisces"], "pairAt": 0 },
+        "header": "OPPOSITION · 180°",
+        "lines": ["The helper and the healer sit *opposite.*", "Earth and water, both mutable,", "both here to *serve.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "water" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Virgo gives Pisces solid *ground.*", "Pisces gives Virgo *permission* to let go."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FRICTION",
+        "lines": ["The work: Virgo can *over-fix,*", "Pisces can *drift* away to avoid it.", "Meet in the *middle* of the wheel."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *fix* you", "to love you *well.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-libra-libra",
+    "title": "Libra and Libra",
+    "cover": "Libra and Libra, *so lovely*",
+    "caption": "two libras will spend twenty minutes deciding where to eat and enjoy every minute of it",
+    "hashtags": ["libra", "libracompatibility", "airsigns", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "AFTER YOU · NO, AFTER YOU",
+        "lines": ["After you. No, *after you.*", "Two Libras at the door,", "holding it open *forever.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["libra", "libra"], "pairAt": 0 },
+        "header": "CONJUNCTION · 0°",
+        "lines": ["Zero degrees apart, a *conjunction.*", "Cardinal air, twice over.", "Venus rules you both,", "so beauty comes *easy.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "THE FRICTION",
+        "lines": ["You give each other *gentleness.*", "The friction: nobody wants to say", "the *hard* thing first."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Honest is *kinder* than polite.", "I can disagree and still be *loved.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-libra-scorpio",
+    "title": "Libra and Scorpio",
+    "cover": "Libra and Scorpio, *velvet*",
+    "caption": "libra keeps it light. scorpio wants the truth under the light. thirty degrees of education",
+    "hashtags": ["libra", "scorpio", "zodiaccompatibility", "astrology", "affirmations"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "VENUS · MARS",
+        "lines": ["Venus rules Libra. Mars rules *Scorpio.*", "The oldest *pairing* in the sky,", "sitting side by side."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["libra", "scorpio"], "pairAt": 0 },
+        "header": "SEMI-SEXTILE · 30°",
+        "lines": ["A *semi-sextile,* thirty degrees.", "Air and water, cardinal and fixed.", "Neighbors who see the world *differently.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air", "second": "water" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Libra gives Scorpio *lightness.*", "Scorpio gives Libra *depth.*", "The friction: charm versus *intensity.*", "Say what you actually mean."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can go *deeper*", "without losing my *balance.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-libra-sagittarius",
+    "title": "Libra and Sagittarius",
+    "cover": "Libra and Sagittarius, *lucky*",
+    "caption": "venus and jupiter are the sky's two lucky planets, and these two signs know it",
+    "hashtags": ["libra", "sagittarius", "sextile", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "VENUS · JUPITER",
+        "lines": ["Venus and Jupiter are the sky's *lucky* planets.", "One rules Libra. One rules *Sagittarius.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["libra", "sagittarius"], "pairAt": 0 },
+        "header": "SEXTILE · 60°",
+        "lines": ["Sixty degrees apart, a *sextile.*", "Cardinal air, mutable fire.", "Talk turns into *adventure.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air", "second": "fire" },
+        "header": "THE EXCHANGE",
+        "lines": ["Libra gives Sagittarius *grace.*", "Sagittarius gives Libra *nerve.*", "The friction: Libra weighs, Sagittarius *blurts.*", "Tact and truth can share a table."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *honest* and kind.", "Our luck is something we *make.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-libra-capricorn",
+    "title": "Libra and Capricorn",
+    "cover": "Libra and Capricorn, *built well*",
+    "caption": "saturn is exalted in libra. capricorn's planet feels strongest in libra's sign. that's not nothing",
+    "hashtags": ["libra", "capricorn", "square", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "gold", "ring": true },
+        "header": "SATURN · EXALTED IN LIBRA",
+        "lines": ["Capricorn's planet is *strongest* in Libra.", "Saturn is exalted there.", "Remember that when it gets hard."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["libra", "capricorn"], "pairAt": 0 },
+        "header": "SQUARE · 90°",
+        "lines": ["Libra and Capricorn sit a *square* apart.", "Air and earth, both cardinal,", "both wanting to *steer.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air", "second": "earth" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Libra gives Capricorn *softness* and ease.", "Capricorn gives Libra something *solid.*", "The work: harmony versus *ambition.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "WORK WORTH DOING",
+        "lines": ["Some love is easy.", "This kind is *built,*", "and built things *last.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-libra-aquarius",
+    "title": "Libra and Aquarius",
+    "cover": "Libra and Aquarius, *easy air*",
+    "caption": "libra and aquarius can talk until sunrise and still not run out of things to say",
+    "hashtags": ["libra", "aquarius", "airsigns", "trine", "zodiaccompatibility"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "AIR · AIR",
+        "lines": ["The conversation that never *ends.*", "That's Libra and Aquarius at sunrise."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["libra", "aquarius"], "pairAt": 0 },
+        "header": "TRINE · 120°",
+        "lines": ["Two air signs, a *trine* apart,", "the most *natural* angle there is.", "Cardinal Libra *starts* the talk.", "Fixed Aquarius keeps it going."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Libra gives Aquarius *warmth* in the details.", "Aquarius gives Libra *freedom* from approval.", "The risk: all head, too little *heart.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can *feel* it, not just say it.", "Friendship is where our love *lives.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-libra-pisces",
+    "title": "Libra and Pisces",
+    "cover": "Libra and Pisces, *romantics*",
+    "caption": "libra's planet is exalted in pisces. the most romantic quincunx in the sky",
+    "hashtags": ["libra", "pisces", "quincunx", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "lilac" },
+        "header": "VENUS · EXALTED IN PISCES",
+        "lines": ["Libra's ruler, Venus, is *exalted* in Pisces.", "These two speak *romance* fluently."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["libra", "pisces"], "pairAt": 0 },
+        "header": "QUINCUNX · 150°",
+        "lines": ["Still, they sit a *quincunx* apart.", "Air and water, cardinal and mutable.", "Nothing shared, so love *adjusts.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air", "second": "water" },
+        "header": "WHAT EACH BRINGS",
+        "lines": ["Libra gives Pisces *clarity.*", "Pisces gives Libra *depth* of feeling.", "The friction: both avoid the *hard* talk."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Our love can be a *dream*", "with its feet on the *ground.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-scorpio-scorpio",
+    "title": "Scorpio and Scorpio",
+    "cover": "Scorpio and Scorpio, *all in*",
+    "caption": "two scorpios don't date. they investigate each other, slowly, and then they stay",
+    "hashtags": ["scorpio", "scorpiocompatibility", "watersigns", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · SCORPIO",
+        "lines": ["When a Scorpio meets a Scorpio,", "nobody flirts. They *investigate.*", "Slowly. Then they *stay.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["scorpio", "scorpio"], "pairAt": 0 },
+        "header": "CONJUNCTION · 0°",
+        "lines": ["Same sign, *zero* degrees apart.", "Fixed water, twice.", "Same *all-or-nothing* heart."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FRICTION",
+        "lines": ["You give each other *total* loyalty.", "The friction: two people who never", "show their *cards.*", "Someone has to go *first.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can *trust* before I'm certain.", "Being seen is not *weakness.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-scorpio-sagittarius",
+    "title": "Scorpio and Sagittarius",
+    "cover": "Scorpio and Sagittarius, *truth*",
+    "caption": "scorpio keeps your secrets. sagittarius tells everyone everything. thirty degrees of honesty",
+    "hashtags": ["scorpio", "sagittarius", "zodiaccompatibility", "astrology", "affirmations"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · SCORPIO",
+        "lines": ["Sagittarius says the *quiet* part out loud.", "Scorpio was saving it for later.", "Both of you love the *truth.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["scorpio", "sagittarius"], "pairAt": 1 },
+        "header": "SEMI-SEXTILE · 30°",
+        "lines": ["Scorpio and Sagittarius are *neighbors.*", "Thirty degrees, a semi-sextile.", "Fixed water, mutable fire."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water", "second": "fire" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Scorpio gives Sagittarius *depth.*", "Sagittarius gives Scorpio *hope.*", "The friction: Scorpio holds on, Sagittarius *roams.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Honesty is how we stay *close.*", "I can hold on *loosely.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-scorpio-capricorn",
+    "title": "Scorpio and Capricorn",
+    "cover": "Scorpio and Capricorn, *power*",
+    "caption": "scorpio and capricorn both trust slowly. once they do, it's a fortress",
+    "hashtags": ["scorpio", "capricorn", "sextile", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "SLOW TRUST",
+        "lines": ["Nobody trusts slower than these two.", "Scorpio and Capricorn, *testing* the ice.", "Once they do, it's a *fortress.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["scorpio", "capricorn"], "pairAt": 0 },
+        "header": "SEXTILE · 60°",
+        "lines": ["Sixty degrees, an *easy* sextile.", "Water and earth, the *fertile* pair.", "Fixed loyalty, cardinal drive."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water", "second": "earth" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Scorpio gives Capricorn *feeling.*", "Capricorn gives Scorpio *safety.*", "The friction: two people guarding the gate.", "Take turns *opening* it."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Once I *trust* you,", "I can let my guard *down.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-scorpio-aquarius",
+    "title": "Scorpio and Aquarius",
+    "cover": "Scorpio and Aquarius, *electric*",
+    "caption": "scorpio wants all of you. aquarius wants all of you and their freedom. the square is the lesson",
+    "hashtags": ["scorpio", "aquarius", "square", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "wheel",
+        "opts": { "pair": ["scorpio", "aquarius"], "pairAt": 1 },
+        "header": "SQUARE · 90°",
+        "lines": ["Ninety degrees between two *fixed* signs.", "Scorpio and Aquarius, a *square.*", "Neither one is built to bend,", "and that's also why they *last.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water", "second": "air" },
+        "header": "WATER · AIR",
+        "lines": ["Scorpio is water, feeling *underneath.*", "Aquarius is air, thinking it *through.*", "Both are fiercely *loyal.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "WHAT EACH TEACHES",
+        "lines": ["Scorpio teaches Aquarius *intimacy.*", "Aquarius teaches Scorpio *trust* in space.", "The work is closeness without *control.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "WORK WORTH DOING",
+        "lines": ["Two fixed hearts can *hold* anything,", "including each other."]
+      }
+    ]
+  },
+  {
+    "key": "pair-scorpio-pisces",
+    "title": "Scorpio and Pisces",
+    "cover": "Scorpio and Pisces, *the deep end*",
+    "caption": "scorpio and pisces skip the small talk and go straight to the deep end",
+    "hashtags": ["scorpio", "pisces", "watersigns", "trine", "zodiaccompatibility"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "water" },
+        "header": "WATER · WATER",
+        "lines": ["Skip the small talk.", "Scorpio and Pisces start at the *deep end.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["scorpio", "pisces"], "pairAt": 0 },
+        "header": "TRINE · 120°",
+        "lines": ["Two water signs, a *trine* apart.", "A hundred and twenty degrees of *knowing.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Scorpio gives Pisces *protection.*", "Pisces gives Scorpio *forgiveness.*", "Fixed holds tight. Mutable lets go.", "The risk is *losing* yourselves in each other."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can love you *deeply*", "and keep my own *shoreline.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-sagittarius-sagittarius",
+    "title": "Sagittarius and Sagittarius",
+    "cover": "Two Sagittarians, *no map*",
+    "caption": "two sagittarians in love will book the flight before they book the second date",
+    "hashtags": ["sagittarius", "sagittariuscompatibility", "firesigns", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "TWO ARCHERS",
+        "lines": ["The flight gets booked before the *second date.*", "That's two Sagittarians in love."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["sagittarius", "sagittarius"], "pairAt": 0 },
+        "header": "CONJUNCTION · 0°",
+        "lines": ["Same sign, a conjunction. *Double* Jupiter.", "Mutable fire, twice the *restlessness.*", "So much laughter. So little *planning.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "THE FRICTION",
+        "lines": ["You give each other *freedom* without asking.", "The friction: nobody stays to *unpack.*", "Adventure is easy. *Staying* is the trip."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can wander *with* you.", "Home can be a *person.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-sagittarius-capricorn",
+    "title": "Sagittarius and Capricorn",
+    "cover": "*Jupiter* meets Saturn",
+    "caption": "sagittarius dreams it, capricorn schedules it. jupiter and saturn, side by side",
+    "hashtags": ["sagittarius", "capricorn", "zodiaccompatibility", "astrology", "affirmations"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "JUPITER · SATURN",
+        "lines": ["Jupiter says *yes.* Saturn says *when.*", "Sagittarius and Capricorn, side by side.", "Big dreams, meet the *calendar.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["sagittarius", "capricorn"], "pairAt": 0 },
+        "header": "SEMI-SEXTILE · 30°",
+        "lines": ["Thirty degrees apart, a *semi-sextile.*", "Fire and earth. Mutable and cardinal."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "earth" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Sagittarius gives Capricorn *hope.*", "Capricorn gives Sagittarius a *plan.*", "The friction: freedom versus *duty.*", "Both can grow up and *lighten* up."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My dreams deserve a *ladder.*", "My plans deserve some *sky.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-sagittarius-aquarius",
+    "title": "Sagittarius and Aquarius",
+    "cover": "Sagittarius and Aquarius, *free*",
+    "caption": "sagittarius and aquarius are best friends who happen to be in love. no cage required",
+    "hashtags": ["sagittarius", "aquarius", "sextile", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "NO CAGE",
+        "lines": ["You don't need a *cage*", "to keep someone who *wants* to stay.", "Sagittarius and Aquarius already know."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["sagittarius", "aquarius"], "pairAt": 0 },
+        "header": "SEXTILE · 60°",
+        "lines": ["A *sextile,* sixty degrees.", "Mutable fire meets fixed air.", "Every idea becomes a *plan* to go."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "air" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Sagittarius gives Aquarius *warmth.*", "Aquarius gives Sagittarius *vision.*", "The friction: so much *freedom*", "nobody says they're staying."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "NO CAGE NEEDED",
+        "lines": ["The freest love there is", "is the one that *keeps choosing.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-sagittarius-pisces",
+    "title": "Sagittarius and Pisces",
+    "cover": "Sagittarius and Pisces, *Jupiter*",
+    "caption": "sagittarius and pisces share a ruling planet and still square each other. family can be like that",
+    "hashtags": ["sagittarius", "pisces", "square", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "lilac" },
+        "header": "BOTH RULED BY JUPITER",
+        "lines": ["Same ruling planet, totally *different* love.", "Jupiter rules Sagittarius *and* Pisces."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["sagittarius", "pisces"], "pairAt": 0 },
+        "header": "SQUARE · 90°",
+        "lines": ["Yet they sit a *square* apart.", "Fire and water. Both mutable,", "both *chasing* something bigger."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "fire", "second": "water" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Sagittarius gives Pisces *faith* in tomorrow.", "Pisces gives Sagittarius *compassion.*", "The work: bluntness can *bruise* softness.", "Say the true thing *gently.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "We're looking at the *same* horizon.", "My honesty can be *tender.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-capricorn-capricorn",
+    "title": "Capricorn and Capricorn",
+    "cover": "Two Capricorns, *one empire*",
+    "caption": "two capricorns in love have a five-year plan by the third date. schedule the joy too",
+    "hashtags": ["capricorn", "capricorncompatibility", "earthsigns", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · CARDINAL EARTH",
+        "lines": ["By the third date, two Capricorns", "already have a *five-year plan.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["capricorn", "capricorn"], "pairAt": 0 },
+        "header": "CONJUNCTION · 0°",
+        "lines": ["Same sign, *no distance* at all.", "Double Saturn. Double *patience.*", "Cardinal earth, both *climbing.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FRICTION",
+        "lines": ["What you give each other: *respect.*", "No one has to apologize for ambition.", "The friction: work becomes the *whole* relationship."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can *rest* beside you.", "Our love isn't another *job.*", "It's the *reason* for the work."]
+      }
+    ]
+  },
+  {
+    "key": "pair-capricorn-aquarius",
+    "title": "Capricorn and Aquarius",
+    "cover": "Capricorn and Aquarius, *Saturn*",
+    "caption": "capricorn and aquarius share saturn. one builds the tower, the other redesigns it",
+    "hashtags": ["capricorn", "aquarius", "saturn", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "BOTH RULED BY SATURN",
+        "lines": ["Capricorn builds the *tower.*", "Aquarius redesigns it.", "Saturn rules them both, *traditionally.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["capricorn", "aquarius"], "pairAt": 0 },
+        "header": "SEMI-SEXTILE · 30°",
+        "lines": ["Neighbors on the wheel, thirty degrees.", "Earth and air, cardinal and fixed.", "Same ruler, *different* dialects."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "air" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Capricorn gives Aquarius *roots.*", "Aquarius gives Capricorn a *future* worth building.", "The friction: tradition versus *change.*", "Both can be a little *guarded.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "We can keep *what works*", "and change *what doesn't.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-capricorn-pisces",
+    "title": "Capricorn and Pisces",
+    "cover": "Capricorn and Pisces, *harbor*",
+    "caption": "capricorn is the harbor and pisces is the sea. sixty degrees of exactly what each one needed",
+    "hashtags": ["capricorn", "pisces", "sextile", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "earth", "second": "water" },
+        "header": "EARTH · WATER",
+        "lines": ["Every sea needs a *harbor.*", "Every harbor needs the *sea.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["capricorn", "pisces"], "pairAt": 1 },
+        "header": "SEXTILE · 60°",
+        "lines": ["That's Capricorn and Pisces,", "earth and water, a *sextile* apart.", "Cardinal steadiness, mutable *flow.*", "An easy angle, a quiet yes."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Capricorn gives Pisces *safety* to dream.", "Pisces gives Capricorn *softness* to rest.", "The friction: logic can feel like *coldness,*", "and dreams can look like *drifting.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *held*", "without being *hemmed in.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-aquarius-aquarius",
+    "title": "Aquarius and Aquarius",
+    "cover": "Two Aquarians, *one frequency*",
+    "caption": "two aquarians in love are best friends with a shared group chat and a lot of opinions",
+    "hashtags": ["aquarius", "aquariuscompatibility", "airsigns", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "TWO AQUARIANS",
+        "lines": ["Aquarians fall in love *sideways.*", "Friends first. Then suddenly, *everything.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aquarius", "aquarius"], "pairAt": 0 },
+        "header": "CONJUNCTION · 0°",
+        "lines": ["Two of them? A *conjunction,* zero degrees.", "Same fixed air, same Uranus *spark.*", "Ideas at midnight. *Inside jokes* for years."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "THE FRICTION",
+        "lines": ["You give each other *space* without guilt.", "The friction: two people so independent", "nobody says the word *need.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Needing you doesn't make me *less* free.", "I can say it *first.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-aquarius-pisces",
+    "title": "Aquarius and Pisces",
+    "cover": "Aquarius and Pisces, *dreamers*",
+    "caption": "aquarius dreams about the future of the world. pisces dreams about the person next to them",
+    "hashtags": ["aquarius", "pisces", "zodiaccompatibility", "astrology", "affirmations"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · AQUARIUS",
+        "lines": ["Aquarius dreams for the *whole world.*", "Pisces dreams for the person *beside* them."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aquarius", "pisces"], "pairAt": 1 },
+        "header": "SEMI-SEXTILE · 30°",
+        "lines": ["The last two signs, side by side.", "A *semi-sextile.* Air and water.", "Fixed and mutable."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air", "second": "water" },
+        "header": "WHAT EACH GIVES",
+        "lines": ["Aquarius gives Pisces a *clear head.*", "Pisces gives Aquarius a *soft* place.", "The friction: detachment meets *devotion.*", "Both believe in something *bigger.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "THE LAST TWO SIGNS",
+        "lines": ["The future and the *feeling*", "were always meant to be *neighbors.*"]
+      }
+    ]
+  },
+  {
+    "key": "pair-pisces-pisces",
+    "title": "Pisces and Pisces",
+    "cover": "Two Pisces, *one ocean*",
+    "caption": "two pisces in love can spend a whole sunday inside one feeling. pick a shore together",
+    "hashtags": ["pisces", "piscescompatibility", "watersigns", "zodiaccompatibility", "astrology"],
+    "keyword": "MATCH",
+    "scenes": [
+      {
+        "art": "elements",
+        "opts": { "element": "water" },
+        "header": "MUTABLE WATER · TWICE",
+        "lines": ["Two fish, one *ocean.*", "Pisces and Pisces swim in the *same* feeling.", "Nobody has to explain the *tears.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["pisces", "pisces"], "pairAt": 0 },
+        "header": "CONJUNCTION · 0°",
+        "lines": ["A conjunction, the closest angle there is.", "Same Neptune dreams, same *mutable* drift."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FRICTION",
+        "lines": ["You give each other *endless* compassion.", "The friction: two people *escaping*", "into the same daydream.", "Someone has to *steer.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can *feel* everything", "and still *choose* the shore."]
+      }
+    ]
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "id": "015-dealbreaker-pisces",
+  "title": "The Pisces dealbreaker",
+  "cover": "Why *Pisces* needs a dealbreaker",
+  "keyword": "MATCH",
+  "caption": "a pisces forgives you before you apologize. which is exactly why they need a dealbreaker",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "pisces",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "boundaries"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "A Pisces forgives you",
+        "*before* you even apologize.",
+        "Ruled by modern *Neptune,*",
+        "they see the *best* in everyone.",
+        "Which is exactly why",
+        "a Pisces needs a *dealbreaker.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "WATER · TAKES ANY SHAPE",
+      "lines": [
+        "Water takes the *shape*",
+        "of whatever holds it.",
+        "So if you're a Pisces, decide early:",
+        "no one who treats your *kindness*",
+        "like a *loophole.*"
+      ],
+      "labels": [
+        {
+          "on": "element",
+          "at": 0,
+          "text": "WATER · THE FEELING SIGNS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My big heart has a *door.*",
+        "I'm allowed to close it",
+        "on anyone who won't *knock.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

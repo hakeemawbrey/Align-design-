@@ -1,0 +1,90 @@
+{
+  "id": "463-pair-sagittarius-capricorn",
+  "title": "Sagittarius and Capricorn",
+  "cover": "*Jupiter* meets Saturn",
+  "keyword": "MATCH",
+  "caption": "sagittarius dreams it, capricorn schedules it. jupiter and saturn, side by side",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "sagittarius",
+    "capricorn",
+    "zodiaccompatibility",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-2",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "JUPITER · SATURN",
+      "lines": [
+        "Jupiter says *yes.* Saturn says *when.*",
+        "Sagittarius and Capricorn, side by side.",
+        "Big dreams, meet the *calendar.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "sagittarius",
+          "capricorn"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "Thirty degrees apart, a *semi-sextile.*",
+        "Fire and earth. Mutable and cardinal."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "earth"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Sagittarius gives Capricorn *hope.*",
+        "Capricorn gives Sagittarius a *plan.*",
+        "The friction: freedom versus *duty.*",
+        "Both can grow up and *lighten* up."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My dreams deserve a *ladder.*",
+        "My plans deserve some *sky.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

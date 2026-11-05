@@ -1,0 +1,112 @@
+{
+  "id": "304-rising-libra",
+  "title": "Libra rising",
+  "cover": "Libra rising likes it *direct*",
+  "keyword": "SEVEN",
+  "caption": "libra rising keeps the peace. your aries seventh house falls for the one who just says it",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "librarising",
+    "aries",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA RISING · CARDINAL AIR",
+      "lines": [
+        "Everyone likes you within a *minute.*",
+        "Libra rising: *grace* on arrival,",
+        "always the one keeping the peace."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 0,
+        "axis": true,
+        "axisAt": 1,
+        "rising": "libra"
+      },
+      "header": "YOUR SEVENTH HOUSE · ARIES",
+      "lines": [
+        "Across your chart, in the house of *partners,*",
+        "sits *Aries.*",
+        "The sign that just says it."
+      ],
+      "labels": [
+        {
+          "on": "h7",
+          "at": 0,
+          "text": "7TH HOUSE · PARTNERS"
+        },
+        {
+          "on": "dsc",
+          "at": 1,
+          "text": "DESCENDANT · OPPOSITE YOU"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "WHAT YOU'RE DRAWN TO",
+      "lines": [
+        "So you melt for the *direct* ones.",
+        "The one who asks you out first,",
+        "who'd rather fight *fair*",
+        "than smile and drift away."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "180° · LIBRA TO ARIES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *want* things.",
+        "Out loud, and first.",
+        "Peace that costs me isn't *peace.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

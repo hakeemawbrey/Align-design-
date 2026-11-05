@@ -1,0 +1,90 @@
+{
+  "id": "219-pair-aquarius-aquarius",
+  "title": "Aquarius and Aquarius",
+  "cover": "Two Aquarians, *one frequency*",
+  "keyword": "MATCH",
+  "caption": "two aquarians in love are best friends with a shared group chat and a lot of opinions",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aquarius",
+    "aquariuscompatibility",
+    "airsigns",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TWO AQUARIANS",
+      "lines": [
+        "Aquarians fall in love *sideways.*",
+        "Friends first. Then suddenly, *everything.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aquarius",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Two of them? A *conjunction,* zero degrees.",
+        "Same fixed air, same Uranus *spark.*",
+        "Ideas at midnight. *Inside jokes* for years."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "You give each other *space* without guilt.",
+        "The friction: two people so independent",
+        "nobody says the word *need.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Needing you doesn't make me *less* free.",
+        "I can say it *first.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

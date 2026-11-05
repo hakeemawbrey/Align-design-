@@ -1,0 +1,87 @@
+{
+  "id": "378-sky-lunar-eclipse",
+  "title": "The lunar eclipse",
+  "cover": "The *shadow* shows the shape",
+  "keyword": "MOON",
+  "caption": "the greeks knew the earth was round from its shadow on the moon. watch how someone loves in the dark parts",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "lunareclipse",
+    "bloodmoon",
+    "fullmoon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "LUNAR ECLIPSE · A FULL MOON",
+      "lines": [
+        "Over two thousand years ago,",
+        "the Greeks knew the earth was *round*",
+        "from its shadow on the moon.",
+        "The edge was always *curved.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "EARTH'S SHADOW · CURVED"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 1
+      },
+      "header": "SUN · EARTH · MOON",
+      "lines": [
+        "It only happens at a *full* moon,",
+        "when the earth slips right between.",
+        "A shadow tells you a *shape.*",
+        "So does how someone loves you",
+        "in the *hard* parts."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I notice who stays *kind*",
+        "in the dark parts.",
+        "Even in shadow, I *glow.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

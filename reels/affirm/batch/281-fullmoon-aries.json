@@ -1,0 +1,87 @@
+{
+  "id": "281-fullmoon-aries",
+  "title": "Full moon in Aries",
+  "cover": "Full moon in *Aries*",
+  "keyword": "MOON",
+  "caption": "the full moon in aries comes in libra season. whatever you swallowed to stay nice comes up",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "fullmoon",
+    "fullmooninaries",
+    "aries",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON IN ARIES",
+      "lines": [
+        "A full moon in Aries rises in *Libra* season.",
+        "The sun is in the sign of keeping the peace.",
+        "The moon is in the sign of *saying it.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "FULL · OPPOSITE THE SUN"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "libra",
+          "aries"
+        ],
+        "pairAt": 0
+      },
+      "header": "LIBRA SUN · ARIES MOON",
+      "lines": [
+        "Opposite signs, both lit at once.",
+        "So whatever you swallowed to stay *nice*",
+        "comes up tonight."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release the *anger* I kept polite.",
+        "I can be honest and still be kind.",
+        "My needs are allowed to be *loud.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

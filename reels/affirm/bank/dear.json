@@ -1,0 +1,354 @@
+[
+  {
+    "key": "dear-aries",
+    "title": "Dear Aries",
+    "cover": "Dear Aries, you go *first*",
+    "caption": "a letter for the aries who always texts first and then wonders why nobody races back",
+    "hashtags": ["aries", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "DEAR ARIES · THE FIRST SIGN",
+        "lines": ["Dear Aries, you always go *first.*", "First to text, first to say it,", "first to walk into the *fire.*"],
+        "labels": [{ "on": "sign", "at": 0, "text": "ARIES · FIRST OF TWELVE" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "RULED BY MARS · CARDINAL FIRE",
+        "lines": ["That's *Mars* in you, and it's a gift.", "You make people feel *chosen* out loud.", "But here's what I'd put down:", "the race to see if they'll *keep up.*", "Love isn't a race you *win.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can go first", "and still let love *meet me* halfway.", "I don't have to *win* to be wanted."]
+      }
+    ]
+  },
+  {
+    "key": "dear-taurus",
+    "title": "Dear Taurus",
+    "cover": "Dear Taurus, you're *bedrock*",
+    "caption": "for the taurus still living in a house the love already moved out of",
+    "hashtags": ["taurus", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "DEAR TAURUS · FIXED EARTH",
+        "lines": ["Dear Taurus, you love like *bedrock.*", "Slow to start, impossible to move,", "still there when everyone else has *gone.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "RULED BY VENUS",
+        "lines": ["*Venus* gave you a rare gift:", "making love feel like *home* with the lights on.", "The one thing I'd set down", "is staying in a house that's *empty*", "just because you know the way."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My loyalty is a *gift,*", "not a sentence.", "I can leave what's already *left* me."]
+      }
+    ]
+  },
+  {
+    "key": "dear-gemini",
+    "title": "Dear Gemini",
+    "cover": "Dear Gemini, *both* of you",
+    "caption": "for the gemini who makes a joke right before the real thing",
+    "hashtags": ["gemini", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "DEAR GEMINI · THE TWINS",
+        "lines": ["Dear Gemini, I know there are *two* of you.", "One who wants to be *known,*", "and one already halfway out the door."],
+        "labels": [{ "on": "stars", "at": 1, "text": "CASTOR · POLLUX" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY · MUTABLE AIR",
+        "lines": ["*Mercury* made you the best conversation", "anyone's had at two in the morning.", "That's your gift. You make love *curious.*", "What I'd ask you to put down", "is the joke you make *instead*", "of the real thing."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can stay when it gets *quiet.*", "Both halves of me are *worth* knowing."]
+      }
+    ]
+  },
+  {
+    "key": "dear-cancer",
+    "title": "Dear Cancer",
+    "cover": "Dear Cancer, you *remember*",
+    "caption": "for the cancer who remembers the song, the jacket, and exactly what they said",
+    "hashtags": ["cancer", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "DEAR CANCER · RULED BY THE MOON",
+        "lines": ["Dear Cancer, you remember *everything.*", "The song, the jacket, how they said your name.", "That's the *Moon* in you."],
+        "labels": [{ "on": "moon", "at": 2, "text": "THE MOON · CANCER'S RULER" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CARDINAL WATER · THE CRAB",
+        "lines": ["You make people feel *held,*", "like they finally got to come home.", "But the habit to set down", "is hiding in your *shell*", "and hoping they'll guess what's wrong."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can *ask* for what I need.", "I deserve the care I *give.*"]
+      }
+    ]
+  },
+  {
+    "key": "dear-leo",
+    "title": "Dear Leo",
+    "cover": "Dear Leo, put the *pride* down",
+    "caption": "for the leo who would rather glow in silence than say i miss you first",
+    "hashtags": ["leo", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "DEAR LEO · RULED BY THE SUN",
+        "lines": ["Dear Leo, you'd give anyone your *spotlight.*", "That's the *Sun* in you.", "Warm on everything it touches."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "FIXED FIRE · THE LION",
+        "lines": ["You make the people you love", "feel like the *main character.*", "But here's the thing to put down:", "your *pride.*", "Waiting to be missed", "instead of saying you *miss* them."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My heart is *bigger* than my pride.", "I can say it *first*", "and still be a lion."]
+      }
+    ]
+  },
+  {
+    "key": "dear-virgo",
+    "title": "Dear Virgo",
+    "cover": "Dear Virgo, you *noticed*",
+    "caption": "for the virgo who had the tissues out before anyone started crying",
+    "hashtags": ["virgo", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "DEAR VIRGO · MUTABLE EARTH",
+        "lines": ["Dear Virgo, you noticed they were cold", "before they *knew* it themselves.", "That's how you love. In *details.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "RULED BY MERCURY",
+        "lines": ["*Mercury* gave you a mind that fixes things.", "You show up with the answer", "before anyone *asks.*", "Put this one down, though:", "the belief that you have to be *useful*", "to be kept."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm loved for who I am,", "not for what I *fix.*", "I'm allowed to just be *here.*"]
+      }
+    ]
+  },
+  {
+    "key": "dear-libra",
+    "title": "Dear Libra",
+    "cover": "Dear Libra, just *choose*",
+    "caption": "for the libra still weighing a decision from last spring",
+    "hashtags": ["libra", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "DEAR LIBRA · THE SCALES",
+        "lines": ["Dear Libra, you make love look *easy.*", "The flowers, the timing, the fairness.", "Everyone feels *chosen* around you."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 7, "highlightAt": 1 },
+        "header": "THE SEVENTH HOUSE · PARTNERS",
+        "lines": ["You're the natural ruler", "of the *seventh house,* the house of partners.", "The pattern I'd lay down", "is weighing every option", "until the moment has *passed.*"],
+        "labels": [{ "on": "house", "at": 1, "text": "7TH HOUSE · PARTNERS" }]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can trust my own *choice.*", "Not everyone has to agree", "for it to be *right.*"]
+      }
+    ]
+  },
+  {
+    "key": "dear-scorpio",
+    "title": "Dear Scorpio",
+    "cover": "Dear Scorpio, drop the *test*",
+    "caption": "for the scorpio who sets little traps just to see who stays",
+    "hashtags": ["scorpio", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "DEAR SCORPIO · FIXED WATER",
+        "lines": ["Dear Scorpio, you don't do *halfway.*", "When you're in, you're in to the *bone.*"],
+        "labels": [{ "on": "stars", "at": 1, "text": "ANTARES · THE HEART" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "MARS · AND MODERN PLUTO",
+        "lines": ["Ruled by *Mars,* and in modern charts *Pluto,*", "you were made for depth.", "Your loyalty doesn't *flinch.*", "The one thing to put down", "is the *test.*", "The little traps to see if they'll stay."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can let someone *in*", "without checking every door.", "My trust is mine to *give.*"]
+      }
+    ]
+  },
+  {
+    "key": "dear-sagittarius",
+    "title": "Dear Sagittarius",
+    "cover": "Dear Sagittarius, *stay*",
+    "caption": "for the sagittarius who calls it freedom when it's really a running start",
+    "hashtags": ["sagittarius", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "DEAR SAGITTARIUS · THE ARCHER",
+        "lines": ["Dear Sagittarius, you'd cross an ocean for love,", "then panic when it asks you to *stay.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "RULED BY JUPITER · MUTABLE FIRE",
+        "lines": ["*Jupiter* made you big-hearted and *honest.*", "You turn love into an adventure.", "But here's what I'd set down:", "calling it freedom", "when it's really *running.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "STAY · ONE MORE WEEK",
+        "lines": ["Running feels like freedom for a mile.", "Then it's just *distance.*", "Stay one week longer than feels *easy.*", "That's where the real adventure starts."]
+      }
+    ]
+  },
+  {
+    "key": "dear-capricorn",
+    "title": "Dear Capricorn",
+    "cover": "Dear Capricorn, you're *enough*",
+    "caption": "for the capricorn who shows up every tuesday and still thinks love has to be earned",
+    "hashtags": ["capricorn", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "DEAR CAPRICORN · SATURN",
+        "lines": ["Dear Capricorn, you love like a *builder.*", "Brick by brick. Year by year."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CARDINAL EARTH · THE SEA-GOAT",
+        "lines": ["You're the one who shows up", "on the boring *Tuesdays,* not just the big days.", "The habit I'd ask you to put down", "is treating love like a *job*", "you have to earn your place in."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am more than what I *build.*", "I can be loved", "on the days I do *nothing.*"]
+      }
+    ]
+  },
+  {
+    "key": "dear-aquarius",
+    "title": "Dear Aquarius",
+    "cover": "Dear Aquarius, *name* it",
+    "caption": "for the aquarius who's been 'just friends' with someone for three years",
+    "hashtags": ["aquarius", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "DEAR AQUARIUS · FIXED AIR",
+        "lines": ["Dear Aquarius, you were someone's best friend", "long before you were their *person.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 11, "highlightAt": 0 },
+        "header": "THE ELEVENTH HOUSE · FRIENDS",
+        "lines": ["You love people *exactly* as they are,", "strange edges and all.", "But the pattern to put down", "is refusing to *name* it.", "Calling it a friend thing for years."],
+        "labels": [{ "on": "house", "at": 0, "text": "11TH HOUSE · FRIENDS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can *name* what I feel.", "Giving it a word", "is how I let it *stay.*"]
+      }
+    ]
+  },
+  {
+    "key": "dear-pisces",
+    "title": "Dear Pisces",
+    "cover": "Dear Pisces, keep your *shore*",
+    "caption": "for the pisces who fell in love with who they could be",
+    "hashtags": ["pisces", "loveletter", "zodiaclove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "DEAR PISCES · THE TWO FISH",
+        "lines": ["Dear Pisces, you fall for who they *could* be.", "You see the best in people", "long before they've earned it."]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "lilac" },
+        "header": "JUPITER · AND MODERN NEPTUNE",
+        "lines": ["*Jupiter* gave you a heart with no edges.", "You love without *conditions.*", "What I'd lay down is the habit", "of sinking in someone else's tide", "to keep them *afloat.*"]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "water" },
+        "header": "THE WHOLE OCEAN · YOUR SHORE",
+        "lines": ["You don't have to rescue anyone", "to deserve being *loved.*", "Keep the compassion.", "Save a little of it for you.", "You can love the whole *ocean*", "and still keep your own *shore.*"]
+      }
+    ]
+  }
+]

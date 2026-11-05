@@ -1,0 +1,83 @@
+{
+  "id": "195-mercury-aquarius",
+  "title": "Mercury in Aquarius",
+  "cover": "Mercury in Aquarius *thinks ahead*",
+  "keyword": "CHART",
+  "caption": "mercury in aquarius fell for someone over an opinion nobody else in the room had. stay strange",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "mercuryinaquarius",
+    "aquarius",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "MERCURY IN AQUARIUS",
+      "lines": [
+        "You fell for someone because of an *opinion*",
+        "nobody else in the room had.",
+        "Mercury in Aquarius loves an *original* mind."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · THE FUTURE",
+      "lines": [
+        "You think a few years ahead,",
+        "so you need room to say the *strange* thing,",
+        "and to be talked to like a best friend:",
+        "honest, curious, and never *clingy.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "AQUARIUS · FIXED AIR"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "THE RIGHT ONE",
+      "lines": [
+        "The right person won't *correct* your weirdness.",
+        "They'll ask you to say *more.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

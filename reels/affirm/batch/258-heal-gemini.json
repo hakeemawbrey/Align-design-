@@ -1,0 +1,90 @@
+{
+  "id": "258-heal-gemini",
+  "title": "Gemini, after a breakup",
+  "cover": "Gemini, stop *rereading* it",
+  "keyword": "PASSING",
+  "caption": "gemini after a breakup: reading the last text again like it'll say something new this time",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "gemini",
+    "breakup",
+    "mercuryretrograde",
+    "healing",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Gemini, stop rereading the *last text.*",
+        "Ruled by *Mercury,* your mind replays it",
+        "in every version but the real one."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "MERCURY · THE MESSENGER"
+        }
+      ]
+    },
+    {
+      "art": "loop",
+      "header": "MERCURY · RETROGRADE",
+      "lines": [
+        "Mercury goes *retrograde*",
+        "about three times a year.",
+        "It only looks like it's moving *backwards.*",
+        "So if you miss them some days,",
+        "you're not going backwards *either.*"
+      ],
+      "labels": [
+        {
+          "on": "loop",
+          "at": 2,
+          "text": "APPARENT MOTION ONLY"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need the *last word*",
+        "to have closure.",
+        "My mind can *rest* now."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

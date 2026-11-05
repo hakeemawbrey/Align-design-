@@ -1,0 +1,94 @@
+{
+  "id": "109-house-first",
+  "title": "The first house",
+  "cover": "Your *first house* in love",
+  "keyword": "CHART",
+  "caption": "the first house is how you walk into a room. people meet it long before they meet your heart",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "firsthouse",
+    "risingsign",
+    "birthchart",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "houses",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 1,
+        "highlightAt": 2,
+        "axis": true,
+        "axisAt": 2
+      },
+      "header": "THE FIRST HOUSE · THE SELF",
+      "lines": [
+        "People meet your *first house*",
+        "long before they meet your *heart.*",
+        "It starts at the sign that was *rising*",
+        "the minute you were born,",
+        "and it's the house of the *self.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 2,
+          "text": "1ST HOUSE · THE SELF"
+        },
+        {
+          "on": "asc",
+          "at": 3,
+          "text": "ASCENDANT · EASTERN HORIZON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "HOW YOU ARRIVE",
+      "lines": [
+        "It's how you walk into a room,",
+        "the first thing people *fall* for.",
+        "But a first impression is a door,",
+        "not the whole *house.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to take up *space.*",
+        "I want someone who stays",
+        "for what's *behind* the door."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

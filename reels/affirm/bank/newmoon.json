@@ -1,0 +1,536 @@
+[
+  {
+    "key": "newmoon-aries",
+    "title": "New moon in Aries",
+    "cover": "New moon in *Aries*",
+    "caption": "the first new moon of the zodiac year. invite the one who's glad to go first",
+    "hashtags": ["newmoon", "newmooninaries", "aries", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · ARIES",
+        "lines": [
+          "The zodiac year's first new moon",
+          "always falls in *Aries.*",
+          "The sun and moon sit side by side,",
+          "dark, in the sign that goes *first.*"
+        ],
+        "labels": [{ "on": "moon", "at": 2, "text": "SUN + MOON · 0° APART" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · RULED BY MARS",
+        "lines": [
+          "Aries is ruled by *Mars.*",
+          "It doesn't wait to be asked.",
+          "So this month, invite love",
+          "that's *glad* to see you,",
+          "and say what you want out loud."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I'm allowed to *go first.*",
+          "I invite someone *brave* enough",
+          "to want me back."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-taurus",
+    "title": "New moon in Taurus",
+    "cover": "New moon in *Taurus*",
+    "caption": "the moon is at its strongest in taurus. invite the love that texts when it said it would",
+    "hashtags": ["newmoon", "newmoonintaurus", "taurus", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "mint" },
+        "header": "THE MOON · EXALTED IN TAURUS",
+        "lines": [
+          "The moon is at its *strongest* in Taurus.",
+          "Old astrology calls it *exalted.*",
+          "So a new moon here, with the sun beside it,",
+          "plants something meant to *stay.*"
+        ],
+        "labels": [{ "on": "planet", "at": 1, "text": "EXALTED · AT ITS STRONGEST" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · TAURUS",
+        "lines": [
+          "Taurus is ruled by *Venus*",
+          "and moves at the speed of trust.",
+          "This month, invite the *steady* kind.",
+          "The text that comes when it said it would."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't need *fireworks* to feel loved.",
+          "I want love I can *lean on.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-gemini",
+    "title": "New moon in Gemini",
+    "cover": "New moon in *Gemini*",
+    "caption": "gemini's brightest stars are named for twins who refused to be apart. invite someone you can actually talk to",
+    "hashtags": ["newmoon", "newmooningemini", "gemini", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "GEMINI · THE TWINS",
+        "lines": [
+          "Gemini's brightest stars are named for *twins.*",
+          "In the old story, one gave up half of forever",
+          "so they'd never be *apart.*"
+        ],
+        "labels": [{ "on": "stars", "at": 0, "text": "CASTOR · POLLUX" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · GEMINI",
+        "lines": [
+          "When the sun and moon meet here,",
+          "invite the person you can *talk* to.",
+          "Whose texts feel like an open *door,*",
+          "not a riddle."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want to be *understood,*",
+          "not decoded.",
+          "I deserve a conversation that *stays.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-cancer",
+    "title": "New moon in Cancer",
+    "cover": "New moon in *Cancer*",
+    "caption": "once a year the moon goes dark in its own sign. invite someone who takes care of the caretaker",
+    "hashtags": ["newmoon", "newmoonincancer", "cancer", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · CANCER",
+        "lines": [
+          "Once a year, the moon goes dark",
+          "in the one sign it *rules.*",
+          "Sun and moon together in Cancer,",
+          "the moon's own *home.*"
+        ],
+        "labels": [{ "on": "moon", "at": 1, "text": "THE MOON · IN ITS OWN SIGN" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CARDINAL · WATER · THE CRAB",
+        "lines": [
+          "A crab carries its home with it.",
+          "Cancer can make anywhere feel *safe.*",
+          "This month, invite someone",
+          "who lets *you* be the one held."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to earn being *cared for.*",
+          "I can let someone in",
+          "and still feel at *home.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-leo",
+    "title": "New moon in Leo",
+    "cover": "New moon in *Leo*",
+    "caption": "a new moon in the sun's own sign. invite someone who looks at you the way the moon faces the sun",
+    "hashtags": ["newmoon", "newmooninleo", "leo", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "LEO · RULED BY THE SUN",
+        "lines": [
+          "Leo is the one sign the *sun* rules.",
+          "So once a year, the moon goes dark",
+          "right beside it, in the sun's *own* sign."
+        ],
+        "labels": [{ "on": "planet", "at": 0, "text": "THE SUN · RULER OF LEO" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · LEO",
+        "lines": [
+          "A new moon isn't empty.",
+          "Its whole lit face is turned to the *sun,*",
+          "away from us.",
+          "This month, invite someone",
+          "who looks at you like *that.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I am allowed to be *adored.*",
+          "I want love that's *proud* of me,",
+          "out loud."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-virgo",
+    "title": "New moon in Virgo",
+    "cover": "New moon in *Virgo*",
+    "caption": "virgo's brightest star is named for an ear of wheat. invite love that shows up in the small stuff",
+    "hashtags": ["newmoon", "newmooninvirgo", "virgo", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · THE MAIDEN",
+        "lines": [
+          "Virgo's brightest star is called *Spica.*",
+          "It means an ear of *wheat,*",
+          "the harvest, held in one hand."
+        ],
+        "labels": [{ "on": "stars", "at": 0, "text": "SPICA · EAR OF WHEAT" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · VIRGO",
+        "lines": [
+          "With the sun and moon both in Virgo,",
+          "it's a month for *small* beginnings.",
+          "Invite love that shows up in details.",
+          "Coffee, made the way you like it."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I let myself be *helped.*",
+          "I don't have to be perfect",
+          "to be *chosen.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-libra",
+    "title": "New moon in Libra",
+    "cover": "New moon in *Libra*",
+    "caption": "libra is the only sign that's an object, not a creature. invite love that weighs the same on both sides",
+    "hashtags": ["newmoon", "newmooninlibra", "libra", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · THE SCALES",
+        "lines": [
+          "Libra is the only sign drawn as an *object.*",
+          "The other eleven are alive.",
+          "Just a pair of *scales,*",
+          "waiting for both sides to match."
+        ]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · LIBRA",
+        "lines": [
+          "When the sun and moon meet in Libra,",
+          "the sign of *partners,*",
+          "invite love that's even.",
+          "Where you're not the only one",
+          "who *remembers* to ask."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I give, and I *receive.*",
+          "I deserve love that weighs the same",
+          "from *both* sides."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-scorpio",
+    "title": "New moon in Scorpio",
+    "cover": "New moon in *Scorpio*",
+    "caption": "scorpio's heart is a red star named rival of mars. invite the love that wants the real you, underneath",
+    "hashtags": ["newmoon", "newmooninscorpio", "scorpio", "astrology", "intimacy"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · ANTARES",
+        "lines": [
+          "The heart of Scorpio is a *red* star.",
+          "Its name, Antares, means rival of *Mars.*"
+        ],
+        "labels": [{ "on": "stars", "at": 0, "text": "ANTARES · THE HEART" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · SCORPIO",
+        "lines": [
+          "When the moon goes dark beside the sun",
+          "in the sign of what's *hidden,*",
+          "invite the love that wants to *know* you.",
+          "Not the highlight reel.",
+          "The real thing, underneath."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can let someone all the way *in.*",
+          "My depth isn't *too much.*",
+          "It's a door, for the right one."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-sagittarius",
+    "title": "New moon in Sagittarius",
+    "cover": "New moon in *Sagittarius*",
+    "caption": "the archer's arrow points at the center of the galaxy. invite love that makes your world bigger",
+    "hashtags": ["newmoon", "newmooninsagittarius", "sagittarius", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · THE ARCHER",
+        "lines": [
+          "The center of our *galaxy*",
+          "sits in Sagittarius.",
+          "The archer's arrow points right at it."
+        ],
+        "labels": [{ "on": "stars", "at": 2, "text": "THE GALACTIC CENTER" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · SAGITTARIUS",
+        "lines": [
+          "It's ruled by *Jupiter,* the planet of more.",
+          "So with the sun and moon both here,",
+          "invite love that makes your world *bigger,*",
+          "not smaller."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be *free* and be loved.",
+          "I want someone who'd rather see",
+          "the whole world *with* me."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-capricorn",
+    "title": "New moon in Capricorn",
+    "cover": "New moon in *Capricorn*",
+    "caption": "half goat, half fish: it climbs and it goes deep. invite the love that keeps its word",
+    "hashtags": ["newmoon", "newmoonincapricorn", "capricorn", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "CAPRICORN · THE SEA-GOAT",
+        "lines": [
+          "Capricorn is half goat, half *fish.*",
+          "It can climb the mountain",
+          "and still go *deep.*"
+        ]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · CAPRICORN",
+        "lines": [
+          "It's ruled by *Saturn,* the planet of time.",
+          "So with the sun and moon in Capricorn,",
+          "invite the love that keeps its *word.*",
+          "The kind you can build a life on."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I want someone who *stays.*",
+          "I'm worth the long way up",
+          "and the deep way *down.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-aquarius",
+    "title": "New moon in Aquarius",
+    "cover": "New moon in *Aquarius*",
+    "caption": "aquarius carries water but it's an air sign. invite someone who likes your strange parts on purpose",
+    "hashtags": ["newmoon", "newmooninaquarius", "aquarius", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · THE WATER BEARER",
+        "lines": [
+          "Aquarius carries water,",
+          "but it's an *air* sign.",
+          "It pours what it has",
+          "out for *everyone.*"
+        ]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · AQUARIUS",
+        "lines": [
+          "With the sun and moon in Aquarius,",
+          "invite love that starts as *friendship*",
+          "and stays that way.",
+          "Someone who likes your *strange* parts",
+          "on purpose."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to be *ordinary* to be loved.",
+          "My space and my heart",
+          "can live in the same *house.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "newmoon-pisces",
+    "title": "New moon in Pisces",
+    "cover": "New moon in *Pisces*",
+    "caption": "two fish tied by one cord, swimming opposite ways. invite tenderness that doesn't drown you",
+    "hashtags": ["newmoon", "newmooninpisces", "pisces", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · TWO FISH",
+        "lines": [
+          "Pisces is two fish, tied by one *cord,*",
+          "swimming in opposite directions.",
+          "Close enough to *feel* each other,",
+          "free enough to swim."
+        ],
+        "labels": [{ "on": "stars", "at": 0, "text": "ALRESCHA · THE CORD" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · PISCES",
+        "lines": [
+          "It's the last new moon of the zodiac year,",
+          "sun and moon in the *last* sign.",
+          "Invite tenderness that doesn't *drown* you.",
+          "Soft, with edges."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be *soft* and still be held.",
+          "I can love with my whole heart",
+          "and keep *myself.*"
+        ]
+      }
+    ]
+  }
+]

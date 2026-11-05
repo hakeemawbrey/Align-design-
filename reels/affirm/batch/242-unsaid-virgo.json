@@ -1,0 +1,77 @@
+{
+  "id": "242-unsaid-virgo",
+  "title": "How a Virgo says I love you",
+  "cover": "How a *Virgo* says I love you",
+  "keyword": "VENUS",
+  "caption": "a virgo will never write you a poem. check your bag for the snack they packed instead",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgo",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · THE UNSAID",
+      "lines": [
+        "A Virgo will never write you a *poem.*",
+        "They'll fix the wobbly table.",
+        "Back up your phone.",
+        "Pack a snack for the flight you *forgot.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Mercury rules Virgo,",
+        "and here it turns *thinking* into care.",
+        "They notice what you need",
+        "before you've noticed you *need* it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE POEM",
+      "lines": [
+        "So read it right.",
+        "That reminder, that steady table,",
+        "that was the *poem.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "299-basics-sun-moon-rising",
+  "title": "Sun vs moon vs rising",
+  "cover": "Who they *meet* first",
+  "keyword": "CHART",
+  "caption": "they fall for your rising, get to know your sun, and come home to your moon",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "sunmoonrising",
+    "bigthree",
+    "birthchart",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "axis": true,
+        "axisAt": 0
+      },
+      "header": "FIRST · YOUR RISING",
+      "lines": [
+        "Someone falls for your *rising* first.",
+        "It's the face you lead with,",
+        "the first-date you."
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 1,
+          "text": "RISING · FIRST IMPRESSION"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "THEN · YOUR SUN",
+      "lines": [
+        "Then they meet your *sun,*",
+        "the you that shows up",
+        "once you stop being *nervous.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "mint"
+      },
+      "header": "LAST · YOUR MOON",
+      "lines": [
+        "If they stay, they meet your *moon.*",
+        "Tired, soft, and *real.*",
+        "That's the one that needs loving most."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want someone who stays",
+        "past the first *impression.*",
+        "My moon deserves to be *met.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

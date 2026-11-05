@@ -1,0 +1,86 @@
+{
+  "id": "247-phases-waning-gibbous",
+  "title": "The waning gibbous moon",
+  "cover": "The *thank you* moon",
+  "keyword": "MOON",
+  "caption": "after full, the moon rises about fifty minutes later each night. the phase for saying thank you",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "waninggibbous",
+    "moonphases",
+    "astrology",
+    "gratitude",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "phases",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 5
+      },
+      "header": "WANING GIBBOUS",
+      "lines": [
+        "Each night after full, the moon rises",
+        "about *fifty minutes* later.",
+        "Still bright,",
+        "just a little more *patient.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "LATER EACH NIGHT"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "gold"
+      },
+      "header": "THE DISSEMINATING MOON",
+      "lines": [
+        "Some call it the *disseminating* moon,",
+        "the phase for *sharing* what you learned.",
+        "In love, it's the thank you.",
+        "Telling them what they *taught* you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I say the *grateful* thing out loud.",
+        "I let the people I love",
+        "know what they *gave* me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

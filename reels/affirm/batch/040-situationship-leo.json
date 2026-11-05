@@ -1,0 +1,79 @@
+{
+  "id": "040-situationship-leo",
+  "title": "Leo in a situationship",
+  "cover": "Leo, you are not a *secret*",
+  "keyword": "MUTUAL",
+  "caption": "leo in a situationship: not posted, not introduced, just there when it's easy. you were made to be seen",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "leo",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · RULED BY THE SUN",
+      "lines": [
+        "Leo, you were never meant to be *kept quiet.*",
+        "Ruled by the *Sun,* you love out loud.",
+        "So being someone's secret",
+        "dims something in you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "OFF THE RECORD",
+      "lines": [
+        "Not posted. Not introduced.",
+        "Just there when it's *easy.*",
+        "You keep shining anyway,",
+        "but you deserve to be *seen.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am not a *secret.*",
+        "I deserve someone proud to say my *name.*",
+        "Out loud, in daylight."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

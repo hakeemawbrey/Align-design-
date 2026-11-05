@@ -1,0 +1,95 @@
+{
+  "id": "011-planet-venus",
+  "title": "Venus in love",
+  "cover": "*Venus* in love",
+  "keyword": "VENUS",
+  "caption": "the brightest planet in our sky is the one we named for love. of course it is",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "venus",
+    "venussign",
+    "taurus",
+    "libra",
+    "astrology"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "planets",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS · THE BRIGHTEST PLANET",
+      "lines": [
+        "The brightest planet in our sky",
+        "is the one we named for *love.*",
+        "Venus rules Taurus and Libra,",
+        "*pleasure* and partnership."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♀ · PLANET OF LOVE"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♀",
+        "planetSign": "taurus",
+        "planetAt": 0
+      },
+      "header": "NEVER FAR FROM YOUR SUN",
+      "lines": [
+        "Your Venus sign shows what you find *beautiful,*",
+        "and how you need to be *loved* back.",
+        "It's never more than two signs",
+        "away from your Sun."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "♀ · YOUR VENUS SIGN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *want* things.",
+        "I can ask to be loved",
+        "in my *own* way."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

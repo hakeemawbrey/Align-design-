@@ -1,0 +1,96 @@
+{
+  "id": "317-season-sagittarius",
+  "title": "Sagittarius season in love",
+  "cover": "*Sagittarius* season: say yes",
+  "keyword": "CHART",
+  "caption": "book the trip, tell the truth kindly, and let love have a little more sky this month",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "sagittariusseason",
+    "sagittarius",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☉",
+        "planetSign": "sagittarius",
+        "planetAt": 1
+      },
+      "header": "SAGITTARIUS · NOV 22 – DEC 21",
+      "lines": [
+        "Say *yes* now. Plan later.",
+        "The Sun is in *Sagittarius,*",
+        "the archer, aiming far."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☉ THE SUN · IN SAGITTARIUS"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER",
+      "lines": [
+        "It's ruled by *Jupiter,*",
+        "the planet that turns everything *up.*",
+        "Hope gets bigger.",
+        "Honesty gets *bigger* too."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "So this month asks for *freedom*",
+        "inside your love, not away from it.",
+        "A trip together. A new idea.",
+        "A truth said *kindly.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Love can be an *adventure.*",
+        "I'll be honest, and I'll be *kind.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

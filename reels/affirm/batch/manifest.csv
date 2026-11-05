@@ -1,0 +1,501 @@
+id,family,title,ending,keyword,voice,words,caption
+001-hear-libra,hear,What a Libra needs to hear,city,,af_heart,79,a reminder for the libra who thinks love is the missing half
+002-heal-leo,heal,"Leo, after a breakup",right,,af_bella,84,leo after a breakup posts the photo and laughs the loudest. you don't have to perform this
+003-mercury-cancer,mercury,Mercury in Cancer,city,,af_nicole,92,mercury in cancer still remembers the exact words from a fight four years ago. start the hard talks soft
+004-venus-aries,venus,Venus in Aries,comment,VENUS,af_aoede,84,venus in aries doesn't do slow burns. it knows in five minutes and hates pretending otherwise
+005-sky-mars-retrograde,sky,Mars retrograde,comment,PASSING,af_kore,83,mars is brightest right when it's retrograde. a good time to stop chasing and let it come to you
+006-firstdate-scorpio,firstdate,First date with a Scorpio,city,,af_sarah,78,skip the small talk with a scorpio. they can smell a script
+007-love-waiting-for-a-text,love-1,Waiting for a text,beta,,bf_emma,86,sunlight crosses ninety-three million miles in eight minutes. a reply can cross a room
+008-situationship-cancer,situationship,Cancer in a situationship,comment,MUTUAL,bf_isabella,82,"cancer in a situationship: already remembering their mom's birthday, still not sure what you are"
+009-element-earth-water,elements,Earth and water,comment,MATCH,am_michael,76,water gives earth something to grow. earth gives water a place to rest. a classic for a reason
+010-mars-virgo,mars,Mars in Virgo,city,,bm_george,94,"mars in virgo has a draft of this fight, rehearsed in the shower. twice. it just wants the real fix"
+011-planet-venus,planets,Venus in love,comment,VENUS,af_heart,80,the brightest planet in our sky is the one we named for love. of course it is
+012-basics-element-balance,basics,Element balance,right,,af_bella,81,count your planets by element. the one you're missing is often the one you fall for
+013-house-third,houses,The third house,city,,af_nicole,80,the third house rules everyday talk. turns out the little texts were never little
+014-fear-capricorn,fear,What a Capricorn quietly fears,right,,af_aoede,87,for the capricorn who thinks love falls apart the second they stop carrying it
+015-dealbreaker-pisces,dealbreaker,The Pisces dealbreaker,right,,af_kore,88,a pisces forgives you before you apologize. which is exactly why they need a dealbreaker
+016-dear-leo,dear,Dear Leo,beta,,af_sarah,84,for the leo who would rather glow in silence than say i miss you first
+017-rising-pisces,rising,Pisces rising,comment,SEVEN,bf_emma,88,you feel the whole room. your virgo seventh house falls for whoever remembers the train time
+018-unsaid-pisces,unsaid,How a Pisces says I love you,comment,VENUS,bf_isabella,73,a pisces made you a playlist. listen twice. every song is something they couldn't say
+019-selflove-gemini,selflove,Self-love for a Gemini,right,,am_michael,79,"gemini, answer your own messages for once"
+020-mode-fixed,modes,Fixed signs in love,comment,MATCH,bm_george,85,"taurus, leo, scorpio, aquarius. fixed signs take forever to choose, and then they don't stop"
+021-ruler-libra,ruler,Libra is ruled by Venus,beta,,af_heart,84,"you make people feel beautiful, libra. turn the mirror round once in a while"
+022-pair-aries-aries,pairs-1,Aries and Aries,right,,af_bella,92,two aries is a race with no finish line. take turns going first
+023-phases-waning-crescent,phases,The waning crescent,right,,af_nicole,77,the last thin moon only shows before dawn. they call it balsamic. rest before you begin again
+024-love-single-by-choice,love-2,Single on purpose,right,,af_aoede,85,"our sun has no partner star, and it still holds a whole solar system together"
+025-moon-sagittarius,moon,Moon in Sagittarius,comment,MOON,af_kore,94,"moon in sagittarius finds comfort in a window seat. anywhere, as long as it's moving"
+026-fullmoon-pisces,fullmoon,Full moon in Pisces,comment,MOON,af_sarah,80,"the pisces full moon rises like a tide, and every dream you had about them washes up at once"
+027-pair-capricorn-capricorn,pairs-2,Capricorn and Capricorn,comment,MATCH,bf_emma,80,two capricorns in love have a five-year plan by the third date. schedule the joy too
+028-partner-aries,partner,Aries as a partner,right,,bf_isabella,80,"with an aries you never fight alone. first in your corner, first to say sorry"
+029-misses-capricorn,misses,When a Capricorn misses you,right,,am_michael,76,"when a capricorn misses you, they work later. then dinner friday shows up on the calendar"
+030-morning-virgo,morning,"Good morning, Virgo",comment,CHART,bm_george,74,"virgo, put down the list. love isn't on the to-do list today"
+031-newmoon-capricorn,newmoon,New moon in Capricorn,comment,MOON,af_heart,83,"half goat, half fish: it climbs and it goes deep. invite the love that keeps its word"
+032-season-aries,season,Aries season in love,right,,af_bella,91,"the zodiac's new year starts now. send the text, ask the question, go first"
+033-hear-capricorn,hear,What a Capricorn needs to hear,city,,af_nicole,88,for the capricorn who keeps putting love after the next goal
+034-heal-cancer,heal,"Cancer, after a breakup",beta,,af_aoede,84,cancer keeps every memory after a breakup. you can hold them without living in them
+035-mercury-taurus,mercury,Mercury in Taurus,right,,af_kore,99,mercury in taurus hears the tone before the words. a calm voice settles it. a rushed one doesn't
+036-venus-leo,venus,Venus in Leo,comment,VENUS,af_sarah,89,"venus in leo doesn't want to be liked. it wants to be someone's favorite, out loud"
+037-sky-spring-equinox,sky,The spring equinox,comment,MOON,bf_emma,86,"zero degrees aries isn't a star, it's the equinox. the zodiac starts on a day"
+038-firstdate-sagittarius,firstdate,First date with a Sagittarius,beta,,bf_isabella,89,the best sagittarius first date starts with a wrong turn. go somewhere neither of you has been
+039-love-the-ex-who-comes-back,love-1,The ex who comes back,right,,am_michael,84,"a comet comes back glowing because the sun is heating it, not because its orbit changed"
+040-situationship-leo,situationship,Leo in a situationship,beta,,bm_george,81,"leo in a situationship: not posted, not introduced, just there when it's easy. you were made to be seen"
+041-element-fire-fire,elements,Fire and fire,comment,MATCH,af_heart,85,"two fire signs together. never boring, never quiet, and someone has to tend the flame"
+042-mars-capricorn,mars,Mars in Capricorn,beta,,af_bella,99,"mars in capricorn wants people the way it climbs mountains. slowly, on purpose, all the way up"
+043-planet-north-node,planets,The North Node in love,right,,af_nicole,77,the north node isn't a planet. it's the direction your heart is still learning to go
+044-basics-composite,basics,Composite charts,beta,,af_aoede,84,a composite chart is the halfway point of every planet between you. the relationship gets its own sky
+045-house-second,houses,The second house,comment,CHART,af_kore,81,"the second house holds money, but it's really about what you think you're worth"
+046-fear-virgo,fear,What a Virgo quietly fears,comment,MUTUAL,af_sarah,77,you know how they take their coffee. do they know yours
+047-dealbreaker-cancer,dealbreaker,The Cancer dealbreaker,right,,bf_emma,81,a cancer will give you a key to everything. just don't treat it like a hotel
+048-dear-pisces,dear,Dear Pisces,comment,CHART,bf_isabella,95,for the pisces who fell in love with who they could be
+049-rising-scorpio,rising,Scorpio rising,comment,SEVEN,am_michael,87,people tell scorpio rising everything. your taurus seventh house just wants someone with nothing to hide
+050-unsaid-sagittarius,unsaid,How a Sagittarius says I love you,beta,,bm_george,82,"come with me. to the market, the mountain, the airport. that's sagittarius for i love you"
+051-selflove-taurus,selflove,Self-love for a Taurus,beta,,af_heart,80,"clean sheets, warm bread, one song on repeat. that's the whole plan"
+052-mode-mutable,modes,Mutable signs in love,beta,,af_bella,83,"gemini, virgo, sagittarius, pisces. mutable signs can meet anyone. the trick is staying you"
+053-ruler-sagittarius,ruler,Sagittarius is ruled by Jupiter,comment,CHART,af_nicole,87,every other planet could fit inside jupiter. no wonder small love never fits you
+054-pair-gemini-scorpio,pairs-1,Gemini and Scorpio,city,,af_aoede,90,a curious mind and a locked diary. trust takes the time it takes
+055-phases-full,phases,The full moon phase,right,,af_kore,78,the full moon rises as the sun sets and stays up all night. love that lets itself be seen
+056-love-languages,love-2,Read their light,comment,CHART,af_sarah,86,we know what stars are made of without touching one. people leave patterns in their love too
+057-moon-capricorn,moon,Moon in Capricorn,city,,bf_emma,84,moon in capricorn was the responsible one long before anyone asked. you can let someone hold the heavy end
+058-fullmoon-virgo,fullmoon,Full moon in Virgo,comment,MOON,bf_isabella,79,"the full moon in virgo hands you a checklist of everything you've been fixing, in you and in them"
+059-pair-scorpio-aquarius,pairs-2,Scorpio and Aquarius,beta,,am_michael,80,scorpio wants all of you. aquarius wants all of you and their freedom. the square is the lesson
+060-partner-virgo,partner,Virgo as a partner,right,,bm_george,78,a virgo partner says i love you with an umbrella in your bag and your keys where you'll find them
+061-misses-leo,misses,When a Leo misses you,comment,VENUS,af_heart,78,that perfect selfie a leo posted at golden hour? it was for you
+062-morning-aries,morning,"Good morning, Aries",beta,,af_bella,83,aries wakes up ready to go. give your heart its first word before the day gets loud
+063-newmoon-libra,newmoon,New moon in Libra,comment,MOON,af_nicole,87,"libra is the only sign that's an object, not a creature. invite love that weighs the same on both sides"
+064-season-cancer,season,Cancer season in love,comment,CHART,af_aoede,79,cancer season starts on the solstice and suddenly everyone wants to go home. let someone in
+065-hear-sagittarius,hear,What a Sagittarius needs to hear,right,,af_kore,85,the right person doesn't take your horizon. they bring a map
+066-heal-libra,heal,"Libra, after a breakup",comment,PASSING,af_sarah,79,"libra wants a breakup to be fair, both sides heard, nobody the villain. sometimes it just ends"
+067-mercury-libra,mercury,Mercury in Libra,city,,bf_emma,94,"mercury in libra rewrote one text eleven times so it would land softly. kind, but make it clear"
+068-venus-taurus,venus,Venus in Taurus,comment,VENUS,bf_isabella,86,venus in taurus is not impressed by fireworks. it is impressed by the same warm text every night
+069-sky-autumn-equinox,sky,The autumn equinox,beta,,am_michael,80,"the sign of partners begins on the one day the sky is fair. day and night, even"
+070-firstdate-pisces,firstdate,First date with a Pisces,right,,bm_george,86,"a pier at dusk, rain on a window, live music in a tiny room. that's a pisces first date"
+071-love-closure,love-1,The closure you give yourself,right,,af_heart,94,you can stop waiting for the message. the light already sent everything it had
+072-situationship-aquarius,situationship,Aquarius in a situationship,city,,af_bella,84,aquarius doesn't need it to look normal. different is fine. it just has to be mutual
+073-element-earth-earth,elements,Earth and earth,city,,af_nicole,79,two earth signs build the kind of love you can lean on. just don't forget to play
+074-mars-aquarius,mars,Mars in Aquarius,comment,MARS,af_aoede,88,"mars in aquarius will argue for a stranger all night, then go quiet about its own hurt. feelings count too"
+075-planet-neptune,planets,Neptune in love,comment,CHART,af_kore,73,neptune was found with math before anyone saw it. that's also how we fall for people
+076-basics-venus-mars,basics,Venus and Mars together,right,,af_sarah,88,"everyone has a venus and a mars. one is what you find beautiful, one is how you go after it"
+077-house-tenth,houses,The tenth house,comment,CHART,bf_emma,85,"the tenth house is your ambition. the right person is proud of it, not threatened by it"
+078-fear-leo,fear,What a Leo quietly fears,comment,MUTUAL,bf_isabella,77,for the leo who's scared they're only loved on the bright days
+079-dealbreaker-gemini,dealbreaker,The Gemini dealbreaker,beta,,am_michael,78,the fastest way to lose a gemini is to stop being curious about them
+080-dear-capricorn,dear,Dear Capricorn,beta,,bm_george,86,for the capricorn who shows up every tuesday and still thinks love has to be earned
+081-rising-gemini,rising,Gemini rising,comment,SEVEN,af_heart,93,you can talk to anyone. you only fall for the one who turns the talk into somewhere to go
+082-unsaid-taurus,unsaid,How a Taurus says I love you,city,,af_bella,81,"if a taurus saved you the last bite, that was a declaration. don't let anyone tell you otherwise"
+083-selflove-virgo,selflove,Self-love for a Virgo,beta,,af_nicole,83,for the virgo whose inner voice could use a much softer tone
+084-mode-fixed-mutable,modes,Fixed and mutable,comment,MATCH,af_aoede,81,"a fixed sign and a mutable sign. the anchor and the tide, and they need each other"
+085-ruler-aries,ruler,Aries is ruled by Mars,comment,CHART,af_kore,78,"mars doesn't wait to be asked. neither do you, and that was never a flaw"
+086-pair-aries-virgo,pairs-1,Aries and Virgo,right,,af_sarah,93,"nothing in common on paper. a quincunx means you adjust, not that you give up"
+087-phases-first-quarter,phases,The first quarter moon,right,,bf_emma,85,the quarter moon is the month's first square. a hard moment isn't an ending
+088-love-wrong-time,love-2,"Right person, wrong time",comment,PASSING,bf_isabella,90,the moon passes the sun every month. it only lines up for an eclipse a few times a year
+089-moon-cancer,moon,Moon in Cancer,comment,MOON,am_michael,82,"the moon rules exactly one sign. if yours is in cancer, of course you kept every birthday card"
+090-fullmoon-scorpio,fullmoon,Full moon in Scorpio,comment,MOON,bm_george,77,"a full moon in scorpio brings up the grudge, the jealousy, the test. release the grudge, keep the depth"
+091-pair-leo-sagittarius,pairs-2,Leo and Sagittarius,city,,af_heart,81,leo and sagittarius will turn a grocery run into a road trip. let them
+092-partner-taurus,partner,Taurus as a partner,comment,MATCH,af_bella,78,"a taurus partner is a place, not just a person. warm sheets, a full fridge, the same kind voice"
+093-misses-scorpio,misses,When a Scorpio misses you,beta,,af_nicole,85,"a scorpio who misses you watches every story and never reacts. then one night, one message"
+094-morning-pisces,morning,"Good morning, Pisces",beta,,af_aoede,77,"good morning pisces. still half in a dream? bring the softness, just give it edges"
+095-newmoon-aries,newmoon,New moon in Aries,right,,af_kore,88,the first new moon of the zodiac year. invite the one who's glad to go first
+096-season-libra,season,Libra season in love,right,,af_sarah,84,libra season starts when day and night are equal. good month to check if your love is too
+097-hear-gemini,hear,What a Gemini needs to hear,beta,,bf_emma,82,you're not flaky. you just haven't met someone you can't finish reading
+098-heal-capricorn,heal,"Capricorn, after a breakup",comment,PASSING,bf_isabella,83,capricorn treats a breakup like a project with a deadline. healing doesn't run on your schedule
+099-mercury-virgo,mercury,Mercury in Virgo,right,,am_michael,94,"mercury in virgo says i love you as did you eat. it needs words that are specific, not someday"
+100-venus-scorpio,venus,Venus in Scorpio,right,,bm_george,90,venus in scorpio would trade a hundred easy conversations for one real one. it doesn't do halfway
+101-sky-new-moon,sky,The new moon,beta,,af_heart,78,"the moon needs two extra days to catch the sun, because the sun keeps moving. worth the wait"
+102-firstdate-taurus,firstdate,First date with a Taurus,city,,af_bella,82,pick the place with the good bread. arrive on time. don't rush dessert
+103-love-trusting-again,love-1,Trusting again,beta,,af_nicole,88,"venus disappears into the sun's glare, then comes back as the morning star"
+104-situationship-virgo,situationship,Virgo in a situationship,comment,MUTUAL,af_aoede,84,"virgo in a situationship: low maintenance on purpose, reading every text for what it really means"
+105-element-water-water,elements,Water and water,right,,af_kore,77,"two water signs feel everything together. beautiful, as long as someone remembers the shore"
+106-mars-libra,mars,Mars in Libra,right,,af_sarah,91,mars in libra cares more about peace than winning. that isn't weakness. it fights for what's fair
+107-planet-saturn,planets,Saturn in love,comment,CHART,bf_emma,75,saturn takes about twenty nine years to circle back. it knows a thing or two about the long game
+108-basics-birth-time,basics,Why your birth time matters,beta,,bf_isabella,80,your rising sign changes about every two hours. twins born minutes apart can have different ones
+109-house-first,houses,The first house,right,,am_michael,92,the first house is how you walk into a room. people meet it long before they meet your heart
+110-fear-libra,fear,What a Libra quietly fears,comment,MUTUAL,bm_george,84,for the libra who's tired of being the only one keeping it level
+111-dealbreaker-aries,dealbreaker,The Aries dealbreaker,city,,af_heart,89,an aries would rather hear no today than maybe for a month
+112-dear-aries,dear,Dear Aries,comment,CHART,af_bella,91,a letter for the aries who always texts first and then wonders why nobody races back
+113-rising-capricorn,rising,Capricorn rising,comment,SEVEN,af_nicole,94,capricorn rising was a grown-up at nine. your cancer seventh house wants someone who lets you be small
+114-unsaid-libra,unsaid,How a Libra says I love you,comment,VENUS,af_aoede,79,"flowers for no reason, a playlist for the drive. a libra makes your life prettier and calls it nothing"
+115-selflove-libra,selflove,Self-love for a Libra,beta,,af_kore,89,"the perfect date, planned by a libra, for a libra"
+116-mode-cardinal,modes,Cardinal signs in love,city,,af_sarah,84,"aries, cancer, libra, capricorn. cardinal signs start every season, and most of their love stories"
+117-ruler-pisces,ruler,Pisces is ruled by Jupiter and Neptune,comment,CHART,bf_emma,73,"jupiter and neptune both rule you. of course you love without edges, pisces"
+118-pair-taurus-aquarius,pairs-1,Taurus and Aquarius,city,,bf_isabella,82,"what lasts versus what's next. a square, and very much worth the work"
+119-phases-new,phases,The new moon phase,comment,MOON,am_michael,81,the new moon is up there all day. you just can't see it yet. same with what you want
+120-love-flirting,love-2,Flirt a little,comment,CHART,bm_george,81,every august the earth runs through old comet dust and the sky flirts back
+121-moon-aquarius,moon,Moon in Aquarius,comment,MOON,af_heart,90,"moon in aquarius processes feelings like a scientist, from a little distance. that isn't cold. it's steady"
+122-fullmoon-sagittarius,fullmoon,Full moon in Sagittarius,right,,af_bella,82,the sagittarius full moon shows you every escape plan you kept just in case love got close
+123-pair-leo-pisces,pairs-2,Leo and Pisces,comment,MATCH,af_nicole,84,leo wants the grand gesture. pisces already wrote the poem about it
+124-partner-gemini,partner,Gemini as a partner,right,,af_aoede,83,"dating a gemini is like dating a whole group chat. the joker, the thinker, the late-night texter"
+125-misses-aries,misses,When an Aries misses you,beta,,af_kore,78,"when an aries misses you, you get a call, not a like. a plan for tonight, not someday"
+126-morning-capricorn,morning,"Good morning, Capricorn",right,,af_sarah,79,capricorn is already up and already working. love isn't another goal to hit by noon
+127-newmoon-aquarius,newmoon,New moon in Aquarius,comment,MOON,bf_emma,82,aquarius carries water but it's an air sign. invite someone who likes your strange parts on purpose
+128-season-capricorn,season,Capricorn season in love,comment,CHART,bf_isabella,80,the year ends in capricorn season and so do the maybes. who actually showed up?
+129-hear-leo,hear,What a Leo needs to hear,comment,CHART,am_michael,77,flowers for no reason is a perfectly reasonable request
+130-heal-scorpio,heal,"Scorpio, after a breakup",city,,bm_george,82,"scorpio doesn't get over people. it goes all the way through them, and comes out new"
+131-mercury-aries,mercury,Mercury in Aries,comment,CHART,af_heart,89,mercury in aries reads in straight lines. hints go right past it. say it plainly and it'll say it back
+132-venus-aquarius,venus,Venus in Aquarius,right,,af_bella,88,"venus in aquarius fell for someone in a group chat. friends first, then slowly, everything"
+133-sky-moon-signs,sky,The moon changes sign,beta,,af_nicole,82,"the moon changes sign every two and a half days. a feeling is weather, not a verdict"
+134-firstdate-gemini,firstdate,First date with a Gemini,city,,af_aoede,83,a gemini first date should have at least two locations and one running joke
+135-love-saying-the-honest-thing,love-1,Saying the honest thing,comment,MUTUAL,af_kore,80,the full moon is just the moon facing the sun straight on. that's all honesty is
+136-situationship-taurus,situationship,Taurus in a situationship,city,,af_sarah,80,taurus can get comfortable in almost anything. comfortable isn't the same as steady
+137-element-earth-air,elements,Earth and air,beta,,bf_emma,81,air has the idea. earth knows how to make it real. on paper it's a mismatch. in practice it works
+138-mars-scorpio,mars,Mars in Scorpio,right,,bf_isabella,81,"mars in scorpio doesn't chase. it decides, then waits like the tide. just don't make it guess"
+139-planet-chiron,planets,Chiron in love,comment,CHART,am_michael,76,chiron is the wounded healer. the place you hurt most is where you're gentlest with others
+140-basics-birth-chart,basics,What a birth chart is,comment,CHART,bm_george,80,"a birth chart is the sky from the exact place and minute you were born. it reads you, it doesn't decide you"
+141-house-fifth,houses,The fifth house,right,,af_heart,82,"butterflies don't live in the seventh house. they live in the fifth, with crushes and first dates"
+142-fear-scorpio,fear,What a Scorpio quietly fears,city,,af_bella,80,for the scorpio who gave all of it and got half
+143-dealbreaker-taurus,dealbreaker,The Taurus dealbreaker,comment,MATCH,af_nicole,86,"a taurus doesn't need fireworks. they need you to show up thursday, and the thursday after"
+144-dear-taurus,dear,Dear Taurus,comment,CHART,af_aoede,86,for the taurus still living in a house the love already moved out of
+145-rising-cancer,rising,Cancer rising,right,,af_kore,98,you look after the whole room. your capricorn seventh house wants someone who looks after you
+146-unsaid-capricorn,unsaid,How a Capricorn says I love you,right,,af_sarah,82,a capricorn has no free time and they gave you some. that's the whole sentence
+147-selflove-pisces,selflove,Self-love for a Pisces,comment,CHART,bf_emma,84,for the pisces who soaks up every feeling in the room
+148-mode-mutable-mutable,modes,Mutable and mutable,comment,MATCH,bf_isabella,81,two mutable signs in love. endless yes. somebody still has to pick the restaurant
+149-ruler-aquarius,ruler,Aquarius is ruled by Saturn and Uranus,comment,CHART,am_michael,84,"saturn's loyalty, uranus's lightning. you love for years and still won't fit in a cage"
+150-pair-aries-aquarius,pairs-1,Aries and Aquarius,city,,bm_george,89,the rebel and the revolution. best friends who happen to be in love
+151-phases-last-quarter,phases,The last quarter moon,beta,,af_heart,79,the last quarter moon rises around midnight and hangs in the morning sky. the phase for sorting
+152-love-after-cheating,love-2,After the crater,beta,,af_bella,85,the moon keeps every crater. the earth has weather. you're more earth than moon
+153-moon-leo,moon,Moon in Leo,city,,af_nicole,91,moon in leo can light up a whole room and still go home wondering if anyone saw it. you were seen
+154-fullmoon-gemini,fullmoon,Full moon in Gemini,comment,MOON,af_aoede,79,"a gemini full moon lights up every word, the ones you said and the ones you keep rehearsing"
+155-pair-virgo-scorpio,pairs-2,Virgo and Scorpio,comment,MATCH,af_kore,82,"scorpio hides the feeling. virgo finds it anyway, and folds it like laundry. that's love"
+156-partner-leo,partner,Leo as a partner,right,,af_sarah,82,"a leo will brag about you to total strangers, and never forget to celebrate you"
+157-misses-virgo,misses,When a Virgo misses you,comment,VENUS,bf_emma,81,is a virgo's apartment spotless lately? they might be missing you. the text is on draft six
+158-morning-aquarius,morning,"Good morning, Aquarius",right,,bf_isabella,78,good morning aquarius. stay a little weird today. the right person likes you unedited
+159-newmoon-cancer,newmoon,New moon in Cancer,comment,MOON,am_michael,86,once a year the moon goes dark in its own sign. invite someone who takes care of the caretaker
+160-season-gemini,season,Gemini season in love,beta,,bm_george,92,your phone's about to get busy. gemini season wants you to flirt like it's a conversation
+161-hear-cancer,hear,What a Cancer needs to hear,comment,CHART,af_heart,75,for every cancer who's been told they're too sensitive
+162-heal-pisces,heal,"Pisces, after a breakup",comment,PASSING,af_bella,84,"pisces after a breakup still loves who they could have been. let the dream go, keep the softness"
+163-mercury-gemini,mercury,Mercury in Gemini,beta,,af_nicole,95,mercury in gemini has forty tabs open and wants to discuss all of them. a good reply is a love language
+164-venus-cancer,venus,Venus in Cancer,comment,VENUS,af_aoede,92,venus in cancer knows how everyone takes their tea. it would love for someone to know theirs
+165-sky-void-of-course,sky,The void-of-course moon,right,,af_kore,82,when the moon has made its last aspect and hasn't changed sign yet. don't send the big text
+166-firstdate-capricorn,firstdate,First date with a Capricorn,comment,MATCH,af_sarah,79,be early for a capricorn. they read it as a kind of promise
+167-love-first-choice,love-1,Being someone's first choice,comment,MUTUAL,bf_emma,95,venus shows up before the stars do. being someone's first choice should look like that
+168-situationship-gemini,situationship,Gemini in a situationship,beta,,bf_isabella,80,"the texting is amazing, the banter is unreal, and nobody has said what this is. gemini, you deserve words"
+169-element-air-water,elements,Air and water,right,,am_michael,81,air thinks about the feeling. water is the feeling. the magic is meeting in the middle
+170-mars-leo,mars,Mars in Leo,comment,MARS,bm_george,92,"when mars in leo wants you, everyone knows. flowers at work, a toast at dinner, the whole heart"
+171-planet-pluto,planets,Pluto in love,comment,CHART,af_heart,77,astronomers demoted pluto. astrology never did. it still rules the love that changes you
+172-basics-chart-ruler,basics,Your chart ruler,city,,af_bella,76,the planet that rules your rising sign steers your whole chart. find yours
+173-house-seventh,houses,The seventh house,beta,,af_nicole,95,the sign that was setting when you were born says a lot about who you fall for
+174-fear-taurus,fear,What a Taurus quietly fears,beta,,af_aoede,81,for the taurus who loves in years and is scared of someone who leaves in weeks
+175-dealbreaker-libra,dealbreaker,The Libra dealbreaker,right,,af_kore,81,"a libra is watching how you treat the waiter, and whether you'll ever meet them halfway"
+176-dear-virgo,dear,Dear Virgo,city,,af_sarah,89,for the virgo who had the tissues out before anyone started crying
+177-rising-aquarius,rising,Aquarius rising,comment,SEVEN,bf_emma,89,aquarius rising is everyone's friend. your leo seventh house wants someone who makes a fuss about you
+178-unsaid-aquarius,unsaid,How an Aquarius says I love you,comment,VENUS,bf_isabella,76,an aquarius won't say it. they'll show you the weird part they hide from everyone else
+179-selflove-sagittarius,selflove,Self-love for a Sagittarius,comment,CHART,am_michael,74,"somewhere around the second day alone, you meet yourself"
+180-mode-cardinal-mutable,modes,Cardinal and mutable,city,,bm_george,79,"a cardinal sign and a mutable sign. one picks the destination, the other finds the way"
+181-ruler-capricorn,ruler,Capricorn is ruled by Saturn,comment,CHART,af_heart,86,saturn takes almost thirty years to go round once. you were always going to love slowly
+182-pair-aries-capricorn,pairs-1,Aries and Capricorn,comment,MATCH,af_bella,85,"two bosses, one relationship. divide the territory and nobody can stop you"
+183-phases-waxing-gibbous,phases,The waxing gibbous moon,beta,,af_nicole,77,"gibbous means humped. more than half, not quite full. the hardest part of love to wait through"
+184-love-long-distance,love-2,Long distance,beta,,af_aoede,85,the moon moves every ocean on earth from almost four hundred thousand kilometres away
+185-moon-gemini,moon,Moon in Gemini,comment,MOON,af_kore,95,moon in gemini doesn't know how it feels until it says it out loud. sometimes to three different friends
+186-fullmoon-leo,fullmoon,Full moon in Leo,beta,,af_sarah,79,"a full moon in leo wants to be seen. release performing for love, the right person sees you offstage"
+187-pair-virgo-virgo,pairs-2,Virgo and Virgo,comment,MATCH,bf_emma,83,two virgos in love will color-code the grocery list. don't forget to put rest on it
+188-partner-cancer,partner,Cancer as a partner,city,,bf_isabella,83,"a cancer partner knows you're sad before you do, and keeps your first date ticket forever"
+189-misses-taurus,misses,When a Taurus misses you,comment,VENUS,am_michael,78,a taurus who misses you sleeps in your sweater and orders your usual by accident
+190-morning-libra,morning,"Good morning, Libra",right,,bm_george,79,"libra, you spend all day balancing everyone. start the scales with you"
+191-newmoon-sagittarius,newmoon,New moon in Sagittarius,beta,,af_heart,77,the archer's arrow points at the center of the galaxy. invite love that makes your world bigger
+192-season-leo,season,Leo season in love,beta,,af_bella,75,the sun is home for a month. sing the bad karaoke. say i love you where people can hear
+193-hear-taurus,hear,What a Taurus needs to hear,city,,af_nicole,85,for the taurus being told to hurry up. you don't have to
+194-heal-sagittarius,heal,"Sagittarius, after a breakup",beta,,af_aoede,80,"sagittarius after a breakup is already looking at flights. go anywhere, just take yourself with you"
+195-mercury-aquarius,mercury,Mercury in Aquarius,right,,af_kore,80,mercury in aquarius fell for someone over an opinion nobody else in the room had. stay strange
+196-venus-capricorn,venus,Venus in Capricorn,city,,af_sarah,90,venus in capricorn doesn't say i love you early. it says it when it can keep it
+197-sky-venus-morning-star,sky,Venus as the morning star,comment,MOON,bf_emma,77,"the brightest star before sunrise isn't a star. it's venus, back after its reset"
+198-firstdate-aries,firstdate,First date with an Aries,right,,bf_isabella,87,don't take an aries to dinner. take them somewhere they can win
+199-love-being-chosen,love-1,Being chosen,comment,MUTUAL,am_michael,83,"saturn collects moons. earth keeps one, close enough to move the sea"
+200-situationship-pisces,situationship,Pisces in a situationship,beta,,bm_george,83,pisces fills every gap in their texts with a story where it works out
+201-element-air-air,elements,Air and air,comment,MATCH,af_heart,75,"two air signs can talk until sunrise. the trick is saying the feeling, not describing it"
+202-mars-pisces,mars,Mars in Pisces,comment,MARS,af_bella,85,mars in pisces has said sorry for fights it didn't start. its gentleness has a spine
+203-planet-mercury,planets,Mercury in love,beta,,af_nicole,81,"mercury never strays far from the sun, so it's in your sun sign or right next door"
+204-basics-fifth-vs-seventh,basics,Fifth house vs seventh,beta,,af_aoede,78,your chart has two love houses. the fifth is the crush. the seventh is who stays
+205-house-eighth,houses,The eighth house,right,,af_kore,79,the eighth house is the room you only let a few people into
+206-fear-aquarius,fear,What an Aquarius quietly fears,beta,,af_sarah,79,"for the aquarius who keeps everyone at friend distance, just in case"
+207-dealbreaker-scorpio,dealbreaker,The Scorpio dealbreaker,right,,bf_emma,81,"a scorpio can handle the messy past, the hard feeling, the ugly truth. not a lie"
+208-dear-scorpio,dear,Dear Scorpio,comment,CHART,bf_isabella,81,for the scorpio who sets little traps just to see who stays
+209-rising-sagittarius,rising,Sagittarius rising,comment,SEVEN,am_michael,90,"one foot out the door, always. your gemini seventh house is who you turn around for"
+210-unsaid-aries,unsaid,How an Aries says I love you,city,,bm_george,78,an aries won't make a speech about it. they'll just be on their feet the second someone's rude to you
+211-selflove-aquarius,selflove,Self-love for an Aquarius,right,,af_heart,81,for the aquarius who explains every feeling instead of having it
+212-mode-cardinal-cardinal,modes,Cardinal and cardinal,comment,MATCH,af_bella,86,"two cardinal signs in love. two leaders, one steering wheel, and a lot of momentum"
+213-ruler-virgo,ruler,Virgo is ruled by Mercury,comment,CHART,af_nicole,80,"same planet as gemini. in virgo, mercury stops texting about it and books the dentist for you"
+214-pair-aries-sagittarius,pairs-1,Aries and Sagittarius,city,,af_aoede,84,"booked the flight, didn't check the weather, had the best time anyway"
+215-phases-waxing-crescent,phases,The waxing crescent,right,,af_kore,81,look at the dark part of a crescent moon. it's glowing. early love is like that
+216-love-after-loss,love-2,Still lit,city,,af_sarah,91,in a lunar eclipse the moon doesn't go dark. it glows red with every sunrise and sunset on earth
+217-moon-taurus,moon,Moon in Taurus,beta,,bf_emma,87,"moon in taurus feels safest on a sunday with nowhere to be. same blanket, same person, same soup"
+218-fullmoon-capricorn,fullmoon,Full moon in Capricorn,beta,,bf_isabella,81,a capricorn full moon asks who's holding you. not who you're holding up. who's holding you
+219-pair-aquarius-aquarius,pairs-2,Aquarius and Aquarius,beta,,am_michael,79,two aquarians in love are best friends with a shared group chat and a lot of opinions
+220-partner-libra,partner,Libra as a partner,beta,,bm_george,82,"libra is the natural sign of the seventh house. love isn't a side quest for them, it's the main road"
+221-misses-gemini,misses,When a Gemini misses you,city,,af_heart,80,eleven texts from a gemini all mean one thing. i miss talking to you
+222-morning-taurus,morning,"Good morning, Taurus",comment,CHART,af_bella,88,"taurus, you were never meant to rush anything. not your coffee, not your day, not love"
+223-newmoon-gemini,newmoon,New moon in Gemini,beta,,af_nicole,78,gemini's brightest stars are named for twins who refused to be apart. invite someone you can actually talk to
+224-season-scorpio,season,Scorpio season in love,city,,af_aoede,78,no one wants small talk this month. say the true thing and watch who leans in
+225-hear-aquarius,hear,What an Aquarius needs to hear,beta,,af_kore,79,being close to someone is the most rebellious thing you'll ever do
+226-heal-taurus,heal,"Taurus, after a breakup",right,,af_sarah,87,"taurus doesn't let go fast. fixed earth was built to stay, and that's not a flaw"
+227-mercury-pisces,mercury,Mercury in Pisces,beta,,bf_emma,97,mercury in pisces has sent a song instead of saying how it feels. more than once. listen to the song
+228-venus-gemini,venus,Venus in Gemini,beta,,bf_isabella,94,venus in gemini falls in love mid-conversation. bore them and they're already gone
+229-sky-supermoon,sky,The supermoon,right,,am_michael,85,"a supermoon isn't a bigger moon. it's the same one, just closer. that's what the right people do"
+230-firstdate-aquarius,firstdate,First date with an Aquarius,city,,bm_george,79,an aquarius first date belongs somewhere a little strange. a planetarium. a night market
+231-love-red-flags,love-1,Red flags you explained away,beta,,af_heart,86,"mars is red because its dust is rusting, and you can tell from your backyard"
+232-situationship-sagittarius,situationship,Sagittarius in a situationship,right,,af_bella,82,"no labels sounded like freedom, sagittarius. something that never grows is just a holding pattern"
+233-element-air,elements,Air signs in love,comment,MATCH,af_nicole,78,"gemini, libra, aquarius. for an air sign, the first kiss is a conversation"
+234-mars-gemini,mars,Mars in Gemini,right,,af_aoede,93,mars in gemini flirts in paragraphs and fights in footnotes. silence is the one thing it can't take
+235-planet-uranus,planets,Uranus in love,right,,af_kore,79,uranus spins on its side. it's the planet of the person you never saw coming
+236-basics-descendant,basics,The descendant,comment,CHART,af_sarah,83,when you were born one sign was rising and another was setting. the setting one is who you fall for
+237-house-eleventh,houses,The eleventh house,beta,,bf_emma,85,the eleventh house is friends and hopes. some of the best love stories start there
+238-fear-sagittarius,fear,What a Sagittarius quietly fears,comment,MUTUAL,bf_isabella,77,for the sagittarius who's always been somebody's best summer
+239-dealbreaker-leo,dealbreaker,The Leo dealbreaker,city,,am_michael,83,a leo will not be anyone's secret. they want the person who claps the loudest
+240-dear-libra,dear,Dear Libra,comment,CHART,bm_george,78,for the libra still weighing a decision from last spring
+241-rising-taurus,rising,Taurus rising,comment,SEVEN,af_heart,95,taurus rising makes everyone calm. your scorpio seventh house wants someone who isn't fooled by it
+242-unsaid-virgo,unsaid,How a Virgo says I love you,comment,VENUS,af_bella,73,a virgo will never write you a poem. check your bag for the snack they packed instead
+243-selflove-leo,selflove,Self-love for a Leo,city,,af_nicole,77,sing in the car. paint badly. nobody has to see it
+244-mode-fixed-fixed,modes,Fixed and fixed,right,,af_aoede,84,two fixed signs in love. nobody's leaving. nobody's apologizing first either
+245-ruler-gemini,ruler,Gemini is ruled by Mercury,city,,af_kore,90,"for a gemini, a voice note can count as a kiss. blame mercury"
+246-pair-cancer-cancer,pairs-1,Cancer and Cancer,right,,af_sarah,88,double cancer: the kettle is always on and everyone's waiting to be asked
+247-phases-waning-gibbous,phases,The waning gibbous moon,right,,bf_emma,81,"after full, the moon rises about fifty minutes later each night. the phase for saying thank you"
+248-love-misunderstood,love-2,Blue sunsets,comment,CHART,bf_isabella,75,"from far away, mars looks red. stand on it at sunset and the sky turns blue"
+249-moon-libra,moon,Moon in Libra,right,,am_michael,84,moon in libra can't sleep if things are weird between you. it just wants both of you heard
+250-fullmoon-taurus,fullmoon,Full moon in Taurus,right,,bm_george,96,"the moon is exalted in taurus, so this full moon doesn't shake you. it shows you what you're holding"
+251-pair-scorpio-scorpio,pairs-2,Scorpio and Scorpio,city,,af_heart,77,"two scorpios don't date. they investigate each other, slowly, and then they stay"
+252-partner-pisces,partner,Pisces as a partner,comment,MATCH,af_bella,83,"a pisces partner loves the version of you that you can't see yet, and holds it until you grow into it"
+253-misses-cancer,misses,When a Cancer misses you,city,,af_nicole,80,have you eaten? did you get home okay? that's a cancer saying i miss you
+254-morning-sagittarius,morning,"Good morning, Sagittarius",city,,af_aoede,78,sagittarius wakes up believing in something. aim it at love today
+255-newmoon-leo,newmoon,New moon in Leo,comment,MOON,af_kore,87,a new moon in the sun's own sign. invite someone who looks at you the way the moon faces the sun
+256-season-pisces,season,Pisces season in love,city,,af_sarah,79,"the last sign before the zodiac starts again. forgive, cry at the film, go in with empty hands"
+257-hear-scorpio,hear,What a Scorpio needs to hear,comment,CHART,bf_emma,79,for the scorpio who keeps getting told they're too intense
+258-heal-gemini,heal,"Gemini, after a breakup",comment,PASSING,bf_isabella,82,gemini after a breakup: reading the last text again like it'll say something new this time
+259-mercury-capricorn,mercury,Mercury in Capricorn,city,,am_michael,97,"mercury in capricorn doesn't say much, but it has never said a word it didn't mean. dry humor included"
+260-venus-libra,venus,Venus in Libra,right,,bm_george,88,"venus in libra knows who texted last, who picked dinner, who said sorry first. it just wants it even"
+261-sky-saturn-return,sky,Your Saturn return,beta,,af_heart,86,"saturn takes almost thirty years to circle the sun. around twenty-nine it checks what you built, and who with"
+262-firstdate-leo,firstdate,First date with a Leo,beta,,af_bella,93,dress up for a leo first date. then give them one specific compliment and mean it
+263-love-boundaries,love-1,Boundaries,comment,CHART,af_nicole,76,earth's magnetic field turns the solar wind away. what gets through becomes the northern lights
+264-situationship-scorpio,situationship,Scorpio in a situationship,comment,MUTUAL,af_aoede,77,"scorpio can feel what's not being said. you're not paranoid, you're perceptive"
+265-element-fire,elements,Fire signs in love,city,,af_kore,85,"aries, leo, sagittarius. fire signs don't love quietly, and they were never meant to"
+266-mars-taurus,mars,Mars in Taurus,right,,af_sarah,94,"mars in taurus wants slowly, and then wants for years. it never pushes. it stays"
+267-planet-moon,planets,The Moon in love,right,,bf_emma,86,"born a day later, you might have a different moon sign. that's how personal it is"
+268-basics-big-three,basics,The big three,beta,,bf_isabella,85,your sun sign is a third of the story. your moon and your rising are the rest
+269-house-sixth,houses,The sixth house,comment,CHART,am_michael,83,"the sixth house is routines. love is the coffee made the way you like it, without asking"
+270-fear-gemini,fear,What a Gemini quietly fears,comment,MUTUAL,bm_george,76,for the gemini who asks everyone everything and gets asked nothing back
+271-dealbreaker-virgo,dealbreaker,The Virgo dealbreaker,comment,MATCH,af_heart,78,"a virgo notices everything, including the call you said you'd make"
+272-dear-cancer,dear,Dear Cancer,right,,af_bella,83,"for the cancer who remembers the song, the jacket, and exactly what they said"
+273-rising-leo,rising,Leo rising,city,,af_nicole,93,leo rising lights up the room. your aquarius seventh house falls for the one who isn't dazzled
+274-unsaid-scorpio,unsaid,How a Scorpio says I love you,right,,af_aoede,75,"if a scorpio told you a secret, you're in. they don't hand those out"
+275-selflove-scorpio,selflove,Self-love for a Scorpio,beta,,af_kore,83,you don't owe anyone the process. only the person who walks out of it
+276-mode-cardinal-fixed,modes,Cardinal and fixed,right,,af_sarah,77,"a cardinal sign and a fixed sign. one starts it, one makes it last"
+277-ruler-taurus,ruler,Taurus is ruled by Venus,comment,CHART,bf_emma,73,"libra got venus's manners. taurus got the warm bread, the clean sheets and the long stay"
+278-pair-taurus-pisces,pairs-1,Taurus and Pisces,city,,bf_isabella,81,"pisces dreams the house, taurus builds it, and somebody answers plainly"
+279-love-crush,love-2,It was a shooting star,right,,am_michael,80,most shooting stars are smaller than a grain of sand. they burn that bright because they fall so fast
+280-moon-scorpio,moon,Moon in Scorpio,beta,,bm_george,93,"moon in scorpio hears it when a voice changes by half a note. safe, for it, is the truth told kindly"
+281-fullmoon-aries,fullmoon,Full moon in Aries,right,,af_heart,87,the full moon in aries comes in libra season. whatever you swallowed to stay nice comes up
+282-pair-leo-aquarius,pairs-2,Leo and Aquarius,right,,af_bella,78,"leo is the heart, aquarius is the crowd. across the wheel, each is the other's missing half"
+283-partner-capricorn,partner,Capricorn as a partner,city,,af_nicole,79,a capricorn doesn't just date you. they start building with you
+284-misses-aquarius,misses,When an Aquarius misses you,city,,af_aoede,77,an aquarius rarely says i miss you. they send you a documentary at two in the morning
+285-morning-scorpio,morning,"Good morning, Scorpio",beta,,af_kore,76,"good morning scorpio. unclench your jaw. your depth is a gift, not a warning"
+286-newmoon-scorpio,newmoon,New moon in Scorpio,comment,MOON,af_sarah,86,"scorpio's heart is a red star named rival of mars. invite the love that wants the real you, underneath"
+287-season-virgo,season,Virgo season in love,right,,bf_emma,82,this is the month love does the dishes. notice who makes the coffee
+288-hear-virgo,hear,What a Virgo needs to hear,city,,bf_isabella,85,nobody is grading you. put the red pen down
+289-heal-aquarius,heal,"Aquarius, after a breakup",comment,PASSING,am_michael,79,"aquarius after a breakup: we can stay friends, i'm totally fine. you're allowed to feel it"
+290-mercury-sagittarius,mercury,Mercury in Sagittarius,comment,CHART,bm_george,91,"mercury in sagittarius would rather talk about the meaning of life than what's for dinner. honestly, same"
+291-venus-virgo,venus,Venus in Virgo,comment,VENUS,af_heart,82,venus in virgo fixed the shelf before it ever said i love you. it meant the same thing
+292-sky-eclipse-season,sky,Eclipse season,comment,MOON,af_bella,85,"the moon's orbit is tilted, so most months it misses. twice a year it doesn't"
+293-firstdate-virgo,firstdate,First date with a Virgo,right,,af_nicole,80,"nothing charms a virgo like a plan, and a follow-up text the next day"
+294-love-jealousy,love-1,Jealousy,right,,af_aoede,94,"venus is hotter than mercury. not because it's closer, because the heat can't get out"
+295-situationship-aries,situationship,Aries in a situationship,right,,af_kore,79,aries makes every move in a situationship and still gets a maybe. you deserve a yes
+296-element-fire-water,elements,Fire and water,comment,MATCH,af_sarah,74,"fire and water make steam. intense, a little hard to see through, never lukewarm"
+297-mars-cancer,mars,Mars in Cancer,comment,MARS,bf_emma,87,"mars in cancer would go to war for the people it loves, and can barely ask for a hug"
+298-planet-sun,planets,The Sun in love,beta,,bf_isabella,89,your sun sign is where you shine. the right person won't ask you to dim it
+299-basics-sun-moon-rising,basics,Sun vs moon vs rising,beta,,am_michael,83,"they fall for your rising, get to know your sun, and come home to your moon"
+300-house-fourth,houses,The fourth house,right,,bm_george,83,the fourth house sits at the very bottom of your chart. it's where you first learned what love feels like
+301-fear-cancer,fear,What a Cancer quietly fears,comment,MUTUAL,af_heart,77,who takes care of the cancer who takes care of everyone
+302-dealbreaker-aquarius,dealbreaker,The Aquarius dealbreaker,right,,af_bella,82,the quickest way to lose an aquarius is to ask them to be more normal
+303-dear-sagittarius,dear,Dear Sagittarius,comment,CHART,af_nicole,79,for the sagittarius who calls it freedom when it's really a running start
+304-rising-libra,rising,Libra rising,comment,SEVEN,af_aoede,90,libra rising keeps the peace. your aries seventh house falls for the one who just says it
+305-unsaid-cancer,unsaid,How a Cancer says I love you,comment,VENUS,af_kore,77,text me when you get home. that's it. that's a cancer saying i love you
+306-selflove-capricorn,selflove,Self-love for a Capricorn,city,,af_sarah,77,the mountain isn't going anywhere. come home early tonight
+307-ruler-scorpio,ruler,Scorpio is ruled by Mars and Pluto,right,,bf_emma,81,"two rulers, both deep. you don't love halfway, scorpio, and you were never meant to"
+308-pair-taurus-sagittarius,pairs-1,Taurus and Sagittarius,beta,,bf_isabella,86,"a garden and a suitcase. roots can love wings, it just takes adjusting"
+309-love-pulling-away,love-2,The sun doesn't leave,right,,am_michael,81,the sun doesn't set. the earth turns away from it. notice when you're the one turning
+310-moon-aries,moon,Moon in Aries,comment,MOON,bm_george,98,"moon in aries feels everything like a struck match. bright, hot, gone in a minute, no grudges"
+311-fullmoon-libra,fullmoon,Full moon in Libra,beta,,af_heart,75,a full moon in libra tips the scales and shows you who's been doing the balancing. usually it's you
+312-pair-sagittarius-sagittarius,pairs-2,Sagittarius and Sagittarius,beta,,af_bella,80,two sagittarians in love will book the flight before they book the second date
+313-partner-scorpio,partner,Scorpio as a partner,right,,af_nicole,84,tell a scorpio partner your secret and it's buried with them
+314-misses-pisces,misses,When a Pisces misses you,comment,VENUS,af_aoede,83,"when a pisces misses you, you show up in their dreams, and in every song on the radio"
+315-morning-cancer,morning,"Good morning, Cancer",city,,af_kore,77,cancer wakes up already feeling what everyone else needs. pour the first cup for yourself
+316-newmoon-taurus,newmoon,New moon in Taurus,right,,af_sarah,90,the moon is at its strongest in taurus. invite the love that texts when it said it would
+317-season-sagittarius,season,Sagittarius season in love,city,,bf_emma,87,"book the trip, tell the truth kindly, and let love have a little more sky this month"
+318-hear-aries,hear,What an Aries needs to hear,right,,bf_isabella,78,"if they make you chase, they're not the prize. they're just the race"
+319-heal-virgo,heal,"Virgo, after a breakup",right,,am_michael,81,virgo after a breakup makes a list of everything they could've done better. put the list down
+320-mercury-scorpio,mercury,Mercury in Scorpio,comment,CHART,bm_george,87,mercury in scorpio hears what you don't say louder than what you do. it was never too intense
+321-venus-pisces,venus,Venus in Pisces,comment,VENUS,af_heart,87,venus in pisces has loved people for who they could be. it deserves someone who already is
+322-sky-venus-retrograde,sky,Venus retrograde,right,,af_bella,80,"venus spends less time retrograde than any other planet. when it does, old flames come back to the window"
+323-firstdate-cancer,firstdate,First date with a Cancer,beta,,af_nicole,83,"to win a cancer, remember one small thing they said. their sister's name. how they take their tea"
+324-love-ghosted,love-1,Being ghosted,beta,,af_aoede,83,space is silent because nothing's there to carry the sound. you don't have to decode it
+325-situationship-capricorn,situationship,Capricorn in a situationship,city,,af_kore,82,capricorn has a five year plan and no idea if they're seeing them this weekend
+326-element-fire-air,elements,Fire and air,city,,af_sarah,84,fire can't burn without air. some matches really are just chemistry
+327-mars-sagittarius,mars,Mars in Sagittarius,right,,bf_emma,87,mars in sagittarius says the true thing first and the kind version an hour later. working on it
+328-planet-jupiter,planets,Jupiter in love,comment,CHART,bf_isabella,78,jupiter spends about a year in each sign and makes everything it touches bigger. love included
+329-basics-synastry,basics,Synastry,comment,CHART,am_michael,73,lay two birth charts on top of each other and the lines between them have names
+330-house-twelfth,houses,The twelfth house,right,,bm_george,88,the twelfth house is the part of you that only comes out when you feel completely safe
+331-fear-aries,fear,What an Aries quietly fears,beta,,af_heart,81,for the aries who would rather lose than be someone's maybe
+332-dealbreaker-capricorn,dealbreaker,The Capricorn dealbreaker,right,,af_bella,84,a capricorn doesn't need you finished. they need you going somewhere on purpose
+333-dear-aquarius,dear,Dear Aquarius,right,,af_nicole,78,for the aquarius who's been 'just friends' with someone for three years
+334-rising-aries,rising,Aries rising,beta,,af_aoede,99,you walk in first. your libra seventh house is quietly hoping someone meets you halfway
+335-unsaid-gemini,unsaid,How a Gemini says I love you,comment,VENUS,af_kore,88,the meme at two in the morning was the love letter. a gemini just never stops talking to you
+336-selflove-aries,selflove,Self-love for an Aries,beta,,af_sarah,84,"self-love for an aries is sweat first, then rest without guilt"
+337-ruler-cancer,ruler,Cancer is ruled by the Moon,city,,bf_emma,83,"your love has tides, cancer. some nights the shell, some nights the hug. both are honest"
+338-pair-cancer-libra,pairs-1,Cancer and Libra,right,,bf_isabella,85,both of you avoiding the fight is the fight
+339-love-apologize-well,love-2,A good apology,comment,MUTUAL,am_michael,79,even the flights to the moon drifted off course and made small corrections. say sorry like that
+340-moon-pisces,moon,Moon in Pisces,comment,MOON,bm_george,91,moon in pisces walks into a room and feels everyone in it. sometimes it has to go dark to refill
+341-fullmoon-aquarius,fullmoon,Full moon in Aquarius,beta,,af_heart,77,"a full moon in aquarius shines on the distance. the cool replies, the i'm fine, the walls"
+342-pair-scorpio-sagittarius,pairs-2,Scorpio and Sagittarius,comment,MATCH,af_bella,77,scorpio keeps your secrets. sagittarius tells everyone everything. thirty degrees of honesty
+343-partner-sagittarius,partner,Sagittarius as a partner,comment,MATCH,af_nicole,75,love a sagittarius and your passport gets busy. they make your whole world bigger
+344-misses-sagittarius,misses,When a Sagittarius misses you,beta,,af_aoede,78,"if a sagittarius sends you a sunset from somewhere far, they miss you"
+345-morning-leo,morning,"Good morning, Leo",right,,af_kore,77,"good morning leo. your ruler just came up over the horizon, so let today start warm"
+346-newmoon-pisces,newmoon,New moon in Pisces,comment,MOON,af_sarah,86,"two fish tied by one cord, swimming opposite ways. invite tenderness that doesn't drown you"
+347-season-aquarius,season,Aquarius season in love,city,,bf_emma,86,"this month the best love looks a lot like friendship. room to be odd, and still come back"
+348-hear-pisces,hear,What a Pisces needs to hear,right,,bf_isabella,82,for the pisces who's lived whole love stories on the bus home
+349-heal-aries,heal,"Aries, after a breakup",right,,am_michael,83,"aries heals like it's a race. it isn't, and nobody has to lose"
+350-mercury-leo,mercury,Mercury in Leo,comment,CHART,bm_george,86,"mercury in leo tells every story like it ends in applause. praise it in public, give notes in private"
+351-venus-sagittarius,venus,Venus in Sagittarius,comment,VENUS,af_heart,81,venus in sagittarius falls in love in airports and on long drives. the right one books the second ticket
+352-sky-winter-solstice,sky,The winter solstice,comment,MOON,af_bella,86,"a stone passage in ireland, older than the pyramids, fills with light at winter solstice sunrise"
+353-firstdate-libra,firstdate,First date with a Libra,comment,MATCH,af_nicole,79,a libra feels romance through the room first. then through how evenly you talk
+354-love-choosing-yourself,love-1,Choosing yourself,beta,,af_aoede,85,pluto got demoted in two thousand six. turns out it had a heart on it the whole time
+355-situationship-libra,situationship,Libra in a situationship,beta,,af_kore,77,libra won't ask what are we because it might tip the scales. asking is not drama
+356-element-earth,elements,Earth signs in love,comment,MATCH,af_sarah,78,"taurus, virgo, capricorn. earth signs say i love you with their hands"
+357-mars-aries,mars,Mars in Aries,beta,,bf_emma,88,"mars in aries has never once played hard to get. it fights loud, forgives fast, and means it"
+358-planet-mars,planets,Mars in love,beta,,bf_isabella,83,"venus is what you're drawn to. mars is how you go after it, and how you fight for it"
+359-basics-lunar-nodes,basics,The lunar nodes,comment,CHART,am_michael,76,the south node is the type you keep going back to. the north node is the one that scares you a little
+360-house-ninth,houses,The ninth house,beta,,bm_george,82,the ninth house is the faraway. the person who makes your whole world bigger
+361-fear-pisces,fear,What a Pisces quietly fears,beta,,af_heart,79,for the pisces pouring an ocean into someone holding out a cup
+362-dealbreaker-sagittarius,dealbreaker,The Sagittarius dealbreaker,city,,af_bella,84,"never hand a sagittarius a cage, even a pretty one"
+363-dear-gemini,dear,Dear Gemini,right,,af_nicole,94,for the gemini who makes a joke right before the real thing
+364-rising-virgo,rising,Virgo rising,comment,SEVEN,af_aoede,84,you look like you have it handled. your pisces seventh house wants someone who doesn't need you to
+365-unsaid-leo,unsaid,How a Leo says I love you,beta,,af_kore,83,"notice how a leo introduces you. that wasn't a name, that was a whole little speech"
+366-selflove-cancer,selflove,Self-love for a Cancer,right,,af_sarah,78,the moon isn't full every night either
+367-ruler-leo,ruler,Leo is ruled by the Sun,right,,bf_emma,92,"the sun doesn't dim so the planets feel bigger. neither should you, leo"
+368-pair-taurus-taurus,pairs-1,Taurus and Taurus,comment,MATCH,bf_isabella,84,"nobody's in a hurry. that's the point, and also the problem"
+369-love-almost,love-2,The almost relationship,beta,,am_michael,79,the almost relationship wasn't a waste. it was a gravity assist
+370-moon-virgo,moon,Moon in Virgo,comment,MOON,bm_george,88,"moon in virgo cleans the kitchen when its heart is a mess. order on the outside, room on the inside"
+371-fullmoon-cancer,fullmoon,Full moon in Cancer,right,,af_heart,85,"cancer is ruled by the moon, so a full moon in cancer is the moon at home. every feeling comes up at once"
+372-pair-virgo-sagittarius,pairs-2,Virgo and Sagittarius,beta,,af_bella,79,virgo packs the first-aid kit. sagittarius already left. the funniest square in the zodiac
+373-partner-aquarius,partner,Aquarius as a partner,comment,MATCH,af_nicole,79,an aquarius partner will never ask you to be less yourself. they want your weirdest ideas out loud
+374-misses-libra,misses,When a Libra misses you,comment,VENUS,af_aoede,75,got a playlist from a libra? that's a love letter with better transitions
+375-morning-gemini,morning,"Good morning, Gemini",beta,,af_kore,77,"gemini, your mind had twelve tabs open before breakfast. pick one thought for love today"
+376-newmoon-virgo,newmoon,New moon in Virgo,beta,,af_sarah,82,virgo's brightest star is named for an ear of wheat. invite love that shows up in the small stuff
+377-season-taurus,season,Taurus season in love,city,,bf_emma,77,"for a month the sky wants long dinners, warm hands and nobody checking their phone"
+378-sky-lunar-eclipse,sky,The lunar eclipse,comment,MOON,bf_isabella,87,the greeks knew the earth was round from its shadow on the moon. watch how someone loves in the dark parts
+379-love-being-vulnerable,love-1,Being vulnerable,comment,MUTUAL,am_michael,97,there's no dark side of the moon. just a side we haven't seen
+380-element-fire-earth,elements,Fire and earth,comment,MATCH,bm_george,82,"fire wants it now. earth wants it sure. together you get a hearth, a fire with walls"
+381-pair-aries-leo,pairs-1,Aries and Leo,beta,,af_heart,101,"aries lights it, leo keeps it lit. just remember to clap for each other"
+382-love-intimacy,love-2,Room in the closeness,comment,CHART,af_bella,75,"when two galaxies merge, their stars almost never touch. that's what good closeness looks like"
+383-pair-leo-capricorn,pairs-2,Leo and Capricorn,comment,MATCH,af_nicole,80,leo wants to be celebrated now. capricorn is already planning the celebration for year five
+384-sky-summer-solstice,sky,The summer solstice,comment,MOON,af_aoede,80,"solstice means the sun stands still. on the longest day, the sun walks into the moon's own sign"
+385-love-learning-to-receive,love-1,Learning to receive love,comment,CHART,af_kore,81,the moon doesn't make light. it's just very good at letting it land
+386-element-water,elements,Water signs in love,comment,MATCH,af_sarah,80,"cancer, scorpio, pisces. water signs feel the mood of a room before anyone speaks"
+387-pair-gemini-gemini,pairs-1,Gemini and Gemini,right,,bf_emma,76,four people in one relationship and every single one of them is talking
+388-love-quiet-love,love-2,The quiet kind,beta,,bf_isabella,93,the sun's corona is there every day. you only see it when the loud part is covered
+389-pair-virgo-aquarius,pairs-2,Virgo and Aquarius,right,,am_michael,78,aquarius wants to rewrite the rules. virgo wants them followed properly. closer than they think
+390-sky-jupiter-return,sky,Your Jupiter return,comment,PASSING,bm_george,87,"every twelve years jupiter comes back to your birth spot. it isn't luck, it's growth"
+391-love-starting-over,love-1,Starting over,comment,PASSING,af_heart,87,the moon goes completely dark every month and nobody calls it a failure
+392-pair-taurus-cancer,pairs-1,Taurus and Cancer,comment,MATCH,af_bella,88,"venus and the moon. the coziest sextile on the wheel, as long as somebody knocks"
+393-love-sunday-lonely,love-2,"Sunday, still moving",beta,,af_nicole,80,"sunday is named after the sun, and even on the slowest one you're flying around it"
+394-pair-libra-pisces,pairs-2,Libra and Pisces,right,,af_aoede,79,libra's planet is exalted in pisces. the most romantic quincunx in the sky
+395-sky-solar-eclipse,sky,The solar eclipse,right,,af_kore,84,a total eclipse reaches any one spot about once in four centuries. some light only shows when the glare goes
+396-love-mutual-effort,love-1,Mutual effort,comment,MUTUAL,af_sarah,93,"if you're the only one moving, it's not an orbit. it's a chase"
+397-pair-cancer-sagittarius,pairs-1,Cancer and Sagittarius,city,,bf_emma,85,a candle in the window and a passport by the door
+398-love-family-patterns,love-2,Old light,comment,CHART,bf_isabella,91,some of how you love is older than you. you still get to choose what shines next
+399-pair-scorpio-capricorn,pairs-2,Scorpio and Capricorn,comment,MATCH,am_michael,81,"scorpio and capricorn both trust slowly. once they do, it's a fortress"
+400-sky-full-moon,sky,The full moon,city,,bm_george,87,"every full moon puts the sun and moon in opposite signs. want and need, both at full volume"
+401-love-patience,love-1,Patience,comment,CHART,af_heart,84,jupiter takes twelve years to go around once. it gets to every part of your chart eventually
+402-pair-aries-cancer,pairs-1,Aries and Cancer,right,,af_bella,95,"one charges, one guards the home. a square is pressure, and pressure builds things"
+403-love-fight-kind,love-2,"Opposite, not enemies",city,,af_nicole,91,a full moon is the sun and moon on opposite sides. and it's the brightest night of the month
+404-pair-leo-virgo,pairs-2,Leo and Virgo,comment,MATCH,af_aoede,81,leo wants to be adored. virgo shows adoration by fixing your calendar. it counts
+405-sky-venus-evening-star,sky,Venus as the evening star,right,,af_kore,86,the first star you wish on at dusk is often venus. bright enough to cast a shadow
+406-love-first-date-nerves,love-1,First date nerves,city,,af_sarah,94,the solid ground under you rises a little when the moon goes over. nerves are just a tide
+407-pair-gemini-aquarius,pairs-1,Gemini and Aquarius,city,,bf_emma,81,"best friends first, then quietly everything else"
+408-love-saying-it-first,love-2,Saying it first,right,,bf_isabella,84,"light can take tens of thousands of years to leave the sun's core, then eight minutes to reach you"
+409-pair-cancer-pisces,pairs-2,Cancer and Pisces,comment,MATCH,am_michael,84,cancer and pisces can talk without talking. the trick is still saying it out loud
+410-sky-venus-cycle,sky,The eight-year Venus cycle,beta,,bm_george,81,"every eight years venus traces five petals around us, then starts over. love rhymes"
+411-love-peace-over-chaos,love-1,Peace over chaos,right,,af_heart,87,jupiter's great red spot has been spinning for a century and a half. still just spinning
+412-pair-gemini-libra,pairs-1,Gemini and Libra,right,,af_bella,82,a first date that lasts nine hours and ends with a plan for the next one
+413-love-being-seen,love-2,The far side,right,,af_nicole,82,the far side of the moon isn't dark. it gets just as much sun. we just never saw it
+414-pair-aquarius-pisces,pairs-2,Aquarius and Pisces,comment,MATCH,af_aoede,76,aquarius dreams about the future of the world. pisces dreams about the person next to them
+415-sky-mercury-retrograde,sky,Mercury retrograde,right,,af_kore,85,"mercury isn't going backwards, it's lapping us on the inside track. read it twice before you reply"
+416-love-slow-love,love-1,Slow love,comment,CHART,af_sarah,89,the full moon takes two weeks and nobody calls it slow
+417-pair-aries-pisces,pairs-1,Aries and Pisces,comment,MATCH,bf_emma,88,"the last sign and the first one, side by side. loud meets soft"
+418-love-emotionally-available,love-2,Near isn't available,comment,MUTUAL,bf_isabella,89,at new moon the moon is right there. its bright side is just turned away
+419-pair-virgo-libra,pairs-2,Virgo and Libra,right,,am_michael,80,"virgo fixes it, libra makes it beautiful. together they'd redesign the whole restaurant"
+420-love-when-it-ends-anyway,love-1,When it ends anyway,right,,bm_george,92,"in a lunar eclipse the moon doesn't go black. it turns red, lit by every sunset on earth"
+421-pair-gemini-capricorn,pairs-1,Gemini and Capricorn,city,,af_heart,82,"one plans the decade, one plans tonight. you'd be surprised how well that works"
+422-love-standards-not-walls,love-2,"Standards, not walls",right,,af_bella,89,earth doesn't wall out the sun. it turns away what would hurt and lets the light in
+423-pair-cancer-capricorn,pairs-2,Cancer and Capricorn,right,,af_nicole,81,cancer makes it a home. capricorn makes sure it's still standing in ten years
+424-love-you-wont-arrive-alone,love-1,You won't arrive alone,comment,MUTUAL,af_aoede,87,a lot of what looks like one star is two. you just can't tell from here
+425-pair-taurus-capricorn,pairs-1,Taurus and Capricorn,right,,af_kore,83,"built like a house, not a firework. schedule the tenderness too"
+426-love-date-yourself,love-2,Romance yourself,comment,CHART,af_sarah,76,the planet of love carries a mirror. take the hint
+427-pair-libra-scorpio,pairs-2,Libra and Scorpio,beta,,bf_emma,79,libra keeps it light. scorpio wants the truth under the light. thirty degrees of education
+428-love-timing,love-1,Timing,right,,bf_isabella,101,there's a new moon every month. an eclipse only a few times a year. timing is everything
+429-pair-gemini-virgo,pairs-1,Gemini and Virgo,right,,am_michael,88,mercury rules both of you and you're still talking past each other
+430-love-friends-first,love-2,Friends first,city,,bm_george,79,"most stars aren't born alone. they start out side by side, in the same cloud"
+431-pair-libra-libra,pairs-2,Libra and Libra,right,,af_heart,79,two libras will spend twenty minutes deciding where to eat and enjoy every minute of it
+432-love-new-deal-eleven-eleven,love-1,A new deal at eleven eleven,right,,af_bella,90,the sky at eleven eleven tonight has never existed before. neither has your next chance
+433-pair-gemini-sagittarius,pairs-1,Gemini and Sagittarius,comment,MATCH,af_nicole,82,"facts and meaning, straight across the wheel. somebody has to say stay"
+434-love-the-listener,love-2,Earthshine,city,,af_aoede,81,on a crescent moon the dark part glows. that's light bounced off earth. you deserve some back
+435-pair-virgo-capricorn,pairs-2,Virgo and Capricorn,comment,MATCH,af_kore,76,virgo and capricorn show love with a shared calendar and they both find it romantic
+436-love-the-person-who-stays,love-1,The person who stays,beta,,af_sarah,85,the north star isn't the brightest. it's the one that doesn't move
+437-pair-gemini-leo,pairs-1,Gemini and Leo,city,,bf_emma,90,"leo is the headline, gemini writes the jokes. a very good party"
+438-love-scared-of-love,love-2,Closer to the warmth,comment,CHART,bf_isabella,84,"the closer a comet gets to the sun, the brighter it shines. even though it's changing"
+439-pair-sagittarius-aquarius,pairs-2,Sagittarius and Aquarius,city,,am_michael,78,sagittarius and aquarius are best friends who happen to be in love. no cage required
+440-love-missing-someone,love-1,Missing someone,comment,PASSING,bm_george,92,the moon drifts about four centimeters further every year and still moves the tides
+441-pair-taurus-libra,pairs-1,Taurus and Libra,comment,MATCH,af_heart,86,"both ruled by venus, loving in completely different dialects"
+442-love-loud,love-2,Loud love,beta,,af_bella,87,venus can get bright enough to cast a shadow. some love is meant to be seen
+443-pair-capricorn-pisces,pairs-2,Capricorn and Pisces,beta,,af_nicole,85,capricorn is the harbor and pisces is the sea. sixty degrees of exactly what each one needed
+444-love-feeling-like-too-much,love-1,Feeling like too much,comment,CHART,af_aoede,81,a million earths would fit inside the sun. nobody asks it to shrink
+445-pair-taurus-leo,pairs-1,Taurus and Leo,right,,af_kore,97,"two fixed signs. neither is moving first, so make not-leaving the promise"
+446-love-best-friend,love-2,A shared centre,comment,MUTUAL,af_sarah,76,binary stars don't circle each other. they both circle a point between them
+447-pair-libra-aquarius,pairs-2,Libra and Aquarius,right,,bf_emma,88,libra and aquarius can talk until sunrise and still not run out of things to say
+448-love-dealbreakers-up-front,love-1,Dealbreakers up front,comment,CHART,bf_isabella,78,saturn's rings stay sharp because tiny moons guard the edges. say your dealbreakers early
+449-pair-gemini-pisces,pairs-1,Gemini and Pisces,comment,MATCH,am_michael,77,"two shapeshifters in love. make one plan, then actually keep it"
+450-love-settling,love-2,Don't settle,comment,MUTUAL,bm_george,85,city lights hide almost every star. settling does the same thing to what you want
+451-pair-virgo-pisces,pairs-2,Virgo and Pisces,city,,af_heart,78,"virgo is the helper, pisces is the healer. across the wheel, they're each other's rest"
+452-love-going-no-contact,love-1,Going no contact,city,,af_bella,89,every two years mars slips behind the sun and mission teams stop messaging it. on purpose
+453-pair-cancer-scorpio,pairs-1,Cancer and Scorpio,comment,MATCH,af_nicole,81,water knows water. say it out loud anyway
+454-love-heartbreak-recovery,love-2,"Healing, slowly",comment,PASSING,af_aoede,91,the moon drifts a little farther from us every year. too slow to feel. healing works like that
+455-pair-scorpio-pisces,pairs-2,Scorpio and Pisces,comment,MATCH,af_kore,76,scorpio and pisces skip the small talk and go straight to the deep end
+456-love-not-chasing,love-1,Not chasing,city,,af_sarah,84,"the sun has never once gone after a planet. it keeps burning, and they stay"
+457-pair-cancer-virgo,pairs-1,Cancer and Virgo,beta,,bf_emma,82,"cancer brings the soup, virgo brings the vitamins"
+458-love-confidence,love-2,Made of stars,comment,CHART,bf_isabella,79,the iron in your blood was made inside a star. you don't have to borrow your shine
+459-pair-sagittarius-pisces,pairs-2,Sagittarius and Pisces,right,,am_michael,79,sagittarius and pisces share a ruling planet and still square each other. family can be like that
+460-love-being-enough,love-1,Being enough,comment,CHART,bm_george,87,the moon is four hundred times smaller than the sun and still covers it perfectly
+461-pair-aries-gemini,pairs-1,Aries and Gemini,city,,af_heart,92,"aries brings the spark, gemini brings the conversation. someone still has to stay for the middle"
+462-love-unrequited,love-2,Every pull is returned,comment,MUTUAL,af_bella,77,"in physics, every pull gets pulled back. if yours never was, it wasn't an orbit"
+463-pair-sagittarius-capricorn,pairs-2,Sagittarius and Capricorn,city,,af_nicole,80,"sagittarius dreams it, capricorn schedules it. jupiter and saturn, side by side"
+464-love-comparing-yourself,love-1,Comparing yourself,right,,af_aoede,85,on venus the sun rises in the west. still the brightest planet in our sky
+465-pair-gemini-cancer,pairs-1,Gemini and Cancer,comment,MATCH,af_kore,84,"gemini talks about feelings, cancer has them. same message, different channel"
+466-love-ask-for-it,love-2,Ask for what you need,right,,af_sarah,88,the moon never pretends to be full. you don't have to either
+467-pair-capricorn-aquarius,pairs-2,Capricorn and Aquarius,right,,bf_emma,80,"capricorn and aquarius share saturn. one builds the tower, the other redesigns it"
+468-love-consistency,love-1,Consistency over intensity,comment,MUTUAL,bf_isabella,90,a shooting star is a speck of dust having a moment. the sun just shows up
+469-pair-aries-libra,pairs-1,Aries and Libra,beta,,am_michael,87,"me and we, straight across the wheel. opposites attract, then they negotiate"
+470-love-potential,love-2,Falling for potential,beta,,bm_george,88,the moon looks bigger on the horizon. it isn't. neither is who they might become
+471-pair-leo-libra,pairs-2,Leo and Libra,comment,MATCH,af_heart,85,"leo brings the warmth, libra brings the beauty. date night planning is a group project"
+472-love-mixed-signals,love-1,Mixed signals,comment,MUTUAL,af_bella,90,stars flicker through rough air. planets shine steady. look for the steady ones
+473-pair-taurus-scorpio,pairs-1,Taurus and Scorpio,right,,af_nicole,86,"one wants to keep you, one wants to know you. hold on with open hands"
+474-love-soft,love-2,Soft love,right,,af_aoede,78,"moonlight is just sunlight, softened enough to look at"
+475-pair-leo-leo,pairs-2,Leo and Leo,comment,MATCH,af_kore,87,two leos in love is a lot of warmth in one room. take turns being the sunrise
+476-love-forgiveness,love-1,Forgiveness,beta,,af_sarah,93,"the moon keeps every crater. the earth has rain and wind, so its marks soften"
+477-pair-cancer-leo,pairs-1,Cancer and Leo,beta,,bf_emma,88,"the moon and the sun live next door. one wants to be held, one wants to be seen"
+478-love-fear-they-leave,love-2,"Always falling, never gone",right,,bf_isabella,89,the moon is always falling toward us and always missing. that's all an orbit is
+479-pair-libra-sagittarius,pairs-2,Libra and Sagittarius,beta,,am_michael,79,"venus and jupiter are the sky's two lucky planets, and these two signs know it"
+480-love-release-dont-haunt,love-1,"Release, don't haunt",comment,PASSING,bm_george,93,the waning moon gives its light back one night at a time and never looks over its shoulder
+481-pair-aries-taurus,pairs-1,Aries and Taurus,comment,MATCH,af_heart,91,"mars and venus, thirty degrees apart. one wants it now, one wants it right"
+482-love-growing-together,love-2,Changing each other,comment,MUTUAL,af_bella,86,the earth and moon have been shaping each other for billions of years
+483-pair-libra-capricorn,pairs-2,Libra and Capricorn,comment,MATCH,af_nicole,75,saturn is exalted in libra. capricorn's planet feels strongest in libra's sign. that's not nothing
+484-love-overthinking,love-1,Overthinking,comment,CHART,af_aoede,94,mercury laps the sun every eighty-eight days. no wonder your thoughts lap themselves
+485-pair-taurus-gemini,pairs-1,Taurus and Gemini,comment,MATCH,af_kore,84,"one orders the usual, one wants a new place every week. both of you can be home"
+486-love-people-pleasing,love-2,Shaped from the inside,comment,MUTUAL,af_sarah,83,planets are round because their own gravity shapes them. you're allowed to be shaped by yours
+487-pair-pisces-pisces,pairs-2,Pisces and Pisces,comment,MATCH,bf_emma,78,two pisces in love can spend a whole sunday inside one feeling. pick a shore together
+488-love-letting-love-be-easy,love-1,Letting love be easy,beta,,bf_isabella,91,nothing in orbit is trying to stay up. it's falling the right way
+489-pair-aries-scorpio,pairs-1,Aries and Scorpio,right,,am_michael,87,"both ruled by mars, fighting in completely different rooms"
+490-love-feels-like-home,love-2,Your north star,right,,bm_george,87,the north star isn't the brightest star in the sky. it's just the one that doesn't move
+491-pair-leo-scorpio,pairs-2,Leo and Scorpio,beta,,af_heart,80,leo and scorpio don't do lukewarm. that's the gift and the homework
+492-love-getting-your-hopes-up,love-1,Getting your hopes up,city,,af_bella,91,the moon looks huge on the horizon. it isn't any bigger. your brain just gets excited
+493-pair-taurus-virgo,pairs-1,Taurus and Virgo,city,,af_nicole,85,flirting via shared grocery list is a valid love language
+494-love-feeling-safe,love-2,Steady light,comment,MUTUAL,af_aoede,74,stars twinkle. planets mostly hold steady. that's the kind of love that feels safe
+495-pair-cancer-aquarius,pairs-2,Cancer and Aquarius,comment,MATCH,af_kore,81,cancer wants to come home to you. aquarius wants to come home and still feel free. both can be true
+496-love-green-flags,love-1,Green flags,comment,MUTUAL,af_sarah,81,the green flash is real. you just have to be watching a calm horizon
+497-love-holidays-alone,love-2,Closest to the sun,comment,CHART,bf_emma,81,in early january the earth is the closest it gets to the sun all year. even when it's freezing out
+498-love-read-the-sky-first,love-1,Read the sky before the face,comment,CHART,bf_isabella,78,people crossed the pacific by reading the stars. a face is just the surface
+499-love-worth-the-wait,love-2,Worth the wait,beta,,am_michael,79,venus spins so slowly one turn takes longer than its year. it's still the brightest planet up there
+500-love-loving-yourself-first,love-1,Loving yourself first,comment,CHART,bm_george,82,"nobody lights a star. it pulls itself together first, then it shines"

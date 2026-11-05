@@ -1,0 +1,79 @@
+{
+  "id": "324-love-ghosted",
+  "title": "Being ghosted",
+  "cover": "Silence is an *answer*",
+  "keyword": "PASSING",
+  "caption": "space is silent because nothing's there to carry the sound. you don't have to decode it",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "ghosted",
+    "dating",
+    "astrology",
+    "affirmations",
+    "movingon"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "A VACUUM · NO SOUND",
+      "lines": [
+        "Space is completely *silent.*",
+        "Sound needs air to travel through,",
+        "and out there, there's *nothing* to carry it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "GHOSTED · NOT A PUZZLE",
+      "lines": [
+        "So when someone goes quiet on you,",
+        "the silence isn't a *code* to crack.",
+        "It's just empty space",
+        "where a *reply* should have been.",
+        "That's an *answer* too."
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't chase people into the *dark.*",
+        "Their silence is not my *worth.*",
+        "I deserve someone who *answers.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

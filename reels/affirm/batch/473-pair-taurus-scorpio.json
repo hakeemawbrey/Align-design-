@@ -1,0 +1,96 @@
+{
+  "id": "473-pair-taurus-scorpio",
+  "title": "Taurus and Scorpio",
+  "cover": "Taurus + Scorpio · *opposition*",
+  "keyword": "MATCH",
+  "caption": "one wants to keep you, one wants to know you. hold on with open hands",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "taurus",
+    "scorpio",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TAURUS · SCORPIO",
+      "lines": [
+        "Taurus wants to *keep* you.",
+        "Scorpio wants to *know* you.",
+        "Together, that's devotion."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "scorpio"
+        ],
+        "pairAt": 0
+      },
+      "header": "OPPOSITION · 180°",
+      "lines": [
+        "Draw a line through the *center* of the wheel:",
+        "one hundred and eighty degrees,",
+        "an *opposition.*",
+        "Both fixed. Earth and water."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "water"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Taurus gives Scorpio *safety*",
+        "to finally unclench.",
+        "Scorpio gives Taurus *depth*",
+        "it didn't know it had.",
+        "The friction is possessiveness.",
+        "Hold on with open *hands.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can love *deeply*",
+        "without holding *too tight.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

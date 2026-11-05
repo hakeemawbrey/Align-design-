@@ -1,0 +1,90 @@
+{
+  "id": "214-pair-aries-sagittarius",
+  "title": "Aries and Sagittarius",
+  "cover": "Aries + Sagittarius · *trine*",
+  "keyword": "MATCH",
+  "caption": "booked the flight, didn't check the weather, had the best time anyway",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "aries",
+    "sagittarius",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "ARIES · SAGITTARIUS",
+      "lines": [
+        "Aries and Sagittarius *book* the flight",
+        "before checking the weather."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "sagittarius"
+        ],
+        "pairAt": 1
+      },
+      "header": "TRINE · 120°",
+      "lines": [
+        "Four signs apart, both fire:",
+        "a *trine,* a hundred and twenty degrees.",
+        "Cardinal Aries picks the *direction.*",
+        "Mutable Sagittarius makes it an *adventure.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "fire",
+        "second": "fire"
+      },
+      "header": "FIRE · FIRE · THE FRICTION",
+      "lines": [
+        "You give each other *freedom*",
+        "and a laugh in every argument.",
+        "The friction is bluntness.",
+        "Honest is good. *Kind* is better."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to choose",
+        "between *freedom* and *us.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

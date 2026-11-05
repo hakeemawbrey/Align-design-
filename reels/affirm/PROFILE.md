@@ -130,6 +130,66 @@ DM ends on the same line, so the page always points back to the app.
 >
 > Don't know your Venus? Align reads it from your birthday, free: [link]
 
+### MARS · how you want
+
+> Your Mars sign is how you want, chase and love out loud ✦
+>
+> Mars in Aries: you go first. You need someone who can keep up
+> Mars in Taurus: slow, steady desire. You need patience and touch
+> Mars in Gemini: you flirt with words. You need wit
+> Mars in Cancer: you protect what you love. You need safety before heat
+> Mars in Leo: the grand gesture. You need to be admired
+> Mars in Virgo: you show it through effort. You need the details noticed
+> Mars in Libra: you lead with charm. You need it fair
+> Mars in Scorpio: all or nothing. You need total trust
+> Mars in Sagittarius: you chase adventure. You need room to roam
+> Mars in Capricorn: you pursue with intent. You need someone serious
+> Mars in Aquarius: you want a meeting of minds. You need space to be you
+> Mars in Pisces: you romance. You need gentleness
+>
+> Don't know your Mars? The Align app reads it from your birthday, free: [link]
+
+### MOON · what makes you feel safe
+
+> Your Moon sign is what makes you feel safe ✦
+>
+> Moon in Aries: honesty, and making up fast
+> Moon in Taurus: consistency, comfort, routine
+> Moon in Gemini: being able to talk it all through
+> Moon in Cancer: closeness, home, being remembered
+> Moon in Leo: warmth, and being shown you matter
+> Moon in Virgo: practical care, someone who helps
+> Moon in Libra: peace, fairness, no harshness
+> Moon in Scorpio: loyalty and depth, no secrets
+> Moon in Sagittarius: room to breathe, and laughter
+> Moon in Capricorn: reliability, plans that hold
+> Moon in Aquarius: being accepted exactly as you are
+> Moon in Pisces: gentleness, someone who feels it with you
+>
+> Your Moon needs your birth time to be exact. The Align app reads it free: [link]
+
+### MATCH · how two charts fit
+
+> How two charts fit ✦
+>
+> Same element understands you without trying (fire + fire, water + water…)
+> Fire + air feed each other. Earth + water grow each other
+> Fire + water and earth + air take translating, and teach the most
+> Opposite signs complete the circle; squares make you grow
+> Don't stop at the sun signs: compare moons (comfort) and Venus (how you love)
+>
+> The Align app reads both charts for you, before you ever see a face: [link]
+
+### CHART · your full chart
+
+> Here's what your chart says about love ✦
+>
+> Sun: who you are. Moon: what makes you feel safe
+> Rising: how you arrive. Opposite it, your 7th house: who you're drawn to
+> Venus: how you need to be loved. Mars: how you want
+>
+> Get yours read free from your birthday and birth time on the Align app: [link]
+
 ## Two kinds of ending
 
 Every reel exists twice: once ending on **"Comment WORD"** (a DM with a

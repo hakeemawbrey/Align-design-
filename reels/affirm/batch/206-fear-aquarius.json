@@ -1,0 +1,77 @@
+{
+  "id": "206-fear-aquarius",
+  "title": "What an Aquarius quietly fears",
+  "cover": "Aquarius, not too *strange*",
+  "keyword": "MUTUAL",
+  "caption": "for the aquarius who keeps everyone at friend distance, just in case",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aquarius",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · THE WATER BEARER",
+      "lines": [
+        "Aquarius, people love your weird from *far away.*",
+        "The odd ideas at the party,",
+        "the *different* way you see things."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "THE QUIET FEAR · UP CLOSE",
+      "lines": [
+        "But you're quietly afraid",
+        "that up close, it's too *much,*",
+        "and they'll want someone *simpler.*",
+        "So you keep everyone at friend distance,",
+        "just in case."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "The right person won't *tolerate* my weird.",
+        "They'll *meet* me in it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

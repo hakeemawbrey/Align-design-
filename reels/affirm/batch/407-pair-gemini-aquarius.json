@@ -1,0 +1,89 @@
+{
+  "id": "407-pair-gemini-aquarius",
+  "title": "Gemini and Aquarius",
+  "cover": "Gemini + Aquarius · *trine*",
+  "keyword": "MATCH",
+  "caption": "best friends first, then quietly everything else",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "gemini",
+    "aquarius",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "GEMINI · AQUARIUS",
+      "lines": [
+        "Best friends *first.*",
+        "Then, very quietly, everything else."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "TRINE · 120° · AIR",
+      "lines": [
+        "Gemini and Aquarius form a *trine,*",
+        "four signs apart, both air.",
+        "Mutable meets fixed.",
+        "Your minds just *click.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Gemini gives Aquarius *play.*",
+        "Aquarius gives Gemini a *cause.*",
+        "The friction: living in your heads",
+        "and forgetting to *touch.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "GEMINI · AQUARIUS · THE HEART",
+      "lines": [
+        "Ideas are how you *flirt.*",
+        "Let the heart *catch up.*",
+        "I can think about love and still *feel* it."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

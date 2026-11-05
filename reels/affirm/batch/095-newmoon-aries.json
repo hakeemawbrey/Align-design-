@@ -1,0 +1,86 @@
+{
+  "id": "095-newmoon-aries",
+  "title": "New moon in Aries",
+  "cover": "New moon in *Aries*",
+  "keyword": "MOON",
+  "caption": "the first new moon of the zodiac year. invite the one who's glad to go first",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "newmoon",
+    "newmooninaries",
+    "aries",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · ARIES",
+      "lines": [
+        "The zodiac year's first new moon",
+        "always falls in *Aries.*",
+        "The sun and moon sit side by side,",
+        "dark, in the sign that goes *first.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "SUN + MOON · 0° APART"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · RULED BY MARS",
+      "lines": [
+        "Aries is ruled by *Mars.*",
+        "It doesn't wait to be asked.",
+        "So this month, invite love",
+        "that's *glad* to see you,",
+        "and say what you want out loud."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *go first.*",
+        "I invite someone *brave* enough",
+        "to want me back."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

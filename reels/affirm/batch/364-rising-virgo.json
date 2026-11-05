@@ -1,0 +1,99 @@
+{
+  "id": "364-rising-virgo",
+  "title": "Virgo rising",
+  "cover": "Virgo rising needs *softness*",
+  "keyword": "SEVEN",
+  "caption": "you look like you have it handled. your pisces seventh house wants someone who doesn't need you to",
+  "cta": "comment SEVEN and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgorising",
+    "pisces",
+    "7thhouse",
+    "risingsign",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "rising",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 2,
+        "axis": true,
+        "axisAt": 3,
+        "rising": "virgo"
+      },
+      "header": "VIRGO RISING · THE OTHER SIDE",
+      "lines": [
+        "You look like you have it *handled.*",
+        "Virgo rising: neat, quick, precise.",
+        "But your seventh house,",
+        "straight across the chart, is *Pisces.*"
+      ],
+      "labels": [
+        {
+          "on": "asc",
+          "at": 1,
+          "text": "RISING · HOW YOU ARRIVE"
+        },
+        {
+          "on": "h7",
+          "at": 2,
+          "text": "7TH HOUSE · PARTNERS"
+        },
+        {
+          "on": "dsc",
+          "at": 3,
+          "text": "DESCENDANT · OPPOSITE YOU"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · MUTABLE WATER",
+      "lines": [
+        "The sign of the *soft* edge,",
+        "the dream, the second chance.",
+        "So you're drawn to gentleness.",
+        "Someone who doesn't need you *perfect*",
+        "to need you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can put the *list* down.",
+        "I'm loved in my *mess* too,",
+        "not just after I fix it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · SEVEN",
+      "opts": {
+        "face": "Seven",
+        "sub": "THE HOUSE OF PARTNERS",
+        "revealAt": 1
+      },
+      "pill": "YOUR 7TH HOUSE IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *SEVEN*",
+        "and I'll send you your seventh house sign,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "369-love-almost",
+  "title": "The almost relationship",
+  "cover": "Some people are a *slingshot*",
+  "keyword": "PASSING",
+  "caption": "the almost relationship wasn't a waste. it was a gravity assist",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "almostrelationship",
+    "situationship",
+    "movingon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "loop",
+      "header": "GRAVITY ASSIST",
+      "lines": [
+        "Spacecraft steal *speed* from planets.",
+        "They swing in close,",
+        "curve around, and leave faster",
+        "on a whole new *path.*"
+      ],
+      "labels": [
+        {
+          "on": "loop",
+          "at": 1,
+          "text": "CLOSE PASS · NEW PATH"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "THE ALMOST · A CLOSE PASS",
+      "lines": [
+        "The almost relationship was that.",
+        "Close enough to *bend* you,",
+        "never meant to *keep* you.",
+        "It changed your direction.",
+        "That isn't nothing."
+      ],
+      "labels": [
+        {
+          "on": "you",
+          "at": 3,
+          "text": "YOU · NEW DIRECTION"
+        }
+      ]
+    },
+    {
+      "art": "retro",
+      "opts": {
+        "sightAt": 1,
+        "pathAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "It wasn't a waste.",
+        "It was a *turn.*",
+        "I'm going *farther* because of it,",
+        "not back to it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

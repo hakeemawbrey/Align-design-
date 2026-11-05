@@ -1,0 +1,81 @@
+{
+  "id": "225-hear-aquarius",
+  "title": "What an Aquarius needs to hear",
+  "cover": "Aquarius, you can *need* someone",
+  "keyword": "CHART",
+  "caption": "being close to someone is the most rebellious thing you'll ever do",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aquarius",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "hear",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "Aquarius, needing someone won't make you *ordinary.*",
+        "You've spent your life being the *different* one,",
+        "so attachment feels like *losing* yourself."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "mint",
+        "ring": true
+      },
+      "header": "SATURN · AND MODERN URANUS",
+      "lines": [
+        "*Saturn* rules you, and *Uranus* too,",
+        "the planet of the unexpected.",
+        "So here's the unexpected part:",
+        "letting someone *close*",
+        "is the most rebellious thing you'll do."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can need someone",
+        "and stay *completely* me.",
+        "Closeness isn't a *cage.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

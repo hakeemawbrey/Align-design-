@@ -1,0 +1,93 @@
+{
+  "id": "350-mercury-leo",
+  "title": "Mercury in Leo",
+  "cover": "Mercury in Leo tells it *big*",
+  "keyword": "CHART",
+  "caption": "mercury in leo tells every story like it ends in applause. praise it in public, give notes in private",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "mercuryinleo",
+    "leo",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "mercury",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "MERCURY IN LEO",
+      "lines": [
+        "Every story you tell",
+        "is built for *applause.*",
+        "Mercury in Leo talks from the heart."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "LEO · FIXED FIRE"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · THE HEART",
+      "lines": [
+        "Leo is ruled by the Sun",
+        "and said to rule the *heart.*",
+        "So you need words that are *warm* and *generous.*",
+        "Praise in public. Notes in *private.*",
+        "Being ignored mid-sentence stings for days."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "☉ · THE SUN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve to hear *you're amazing*",
+        "and I'm proud of you, often.",
+        "My big voice comes from a big *heart.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

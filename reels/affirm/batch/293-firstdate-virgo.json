@@ -1,0 +1,86 @@
+{
+  "id": "293-firstdate-virgo",
+  "title": "First date with a Virgo",
+  "cover": "What wins a *Virgo* on date one",
+  "keyword": "MATCH",
+  "caption": "nothing charms a virgo like a plan, and a follow-up text the next day",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "virgo",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "firstdate",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · MUTABLE EARTH",
+      "lines": [
+        "Nothing charms a Virgo like a *plan.*",
+        "The table booked. The route checked.",
+        "The thing they mentioned once,",
+        "*quietly* remembered."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Ruled by *Mercury,* they're listening",
+        "to how you *think,* not just what you say.",
+        "And the text you send the next day?",
+        "That's the part they *keep.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "MERCURY · THE MIND"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Being *thoughtful* is attractive.",
+        "I want someone",
+        "who *notices,* like I do."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

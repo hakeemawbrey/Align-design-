@@ -1,0 +1,88 @@
+{
+  "id": "044-basics-composite",
+  "title": "Composite charts",
+  "cover": "Your love has its own *chart*",
+  "keyword": "CHART",
+  "caption": "a composite chart is the halfway point of every planet between you. the relationship gets its own sky",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "compositechart",
+    "synastry",
+    "birthchart",
+    "astrology",
+    "relationships"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "basics",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☉",
+        "planetSign": "taurus",
+        "planetAt": 3
+      },
+      "header": "COMPOSITE · THE MIDPOINTS",
+      "lines": [
+        "Your relationship has its own *chart.*",
+        "Take each planet in yours and theirs,",
+        "find the point *halfway* between,",
+        "and that's the composite."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "COMPOSITE SUN · MIDPOINT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "YOU · THEM · THE THIRD THING",
+      "lines": [
+        "If your sun is in Aries",
+        "and theirs is in Gemini,",
+        "the two of you share a *Taurus* sun.",
+        "Love is a *third* thing you make."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "We're more than *two* people.",
+        "I care for what we're *building,*",
+        "not just what I want."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

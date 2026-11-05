@@ -1,0 +1,94 @@
+{
+  "id": "228-venus-gemini",
+  "title": "Venus in Gemini",
+  "cover": "Venus in Gemini needs *banter*",
+  "keyword": "VENUS",
+  "caption": "venus in gemini falls in love mid-conversation. bore them and they're already gone",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "venusingemini",
+    "gemini",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♀",
+        "planetSign": "gemini",
+        "planetAt": 1
+      },
+      "header": "VENUS IN GEMINI",
+      "lines": [
+        "The way to your heart is a *good question.*",
+        "Then another. Then a voice note at midnight",
+        "about something you said last week."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♀ · VENUS IN GEMINI"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · RULED BY MERCURY",
+      "lines": [
+        "Gemini is ruled by Mercury,",
+        "the planet of talk.",
+        "So you fall in love *out loud,*",
+        "through banter and tangents and jokes.",
+        "Boredom isn't small to you. It's *distance.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "GEMINI · MUTABLE AIR"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want someone who stays *curious*",
+        "about me, long after the first date.",
+        "My mind is part of my *heart.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

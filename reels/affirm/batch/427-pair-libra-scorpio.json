@@ -1,0 +1,94 @@
+{
+  "id": "427-pair-libra-scorpio",
+  "title": "Libra and Scorpio",
+  "cover": "Libra and Scorpio, *velvet*",
+  "keyword": "MATCH",
+  "caption": "libra keeps it light. scorpio wants the truth under the light. thirty degrees of education",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "libra",
+    "scorpio",
+    "zodiaccompatibility",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS · MARS",
+      "lines": [
+        "Venus rules Libra. Mars rules *Scorpio.*",
+        "The oldest *pairing* in the sky,",
+        "sitting side by side."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "libra",
+          "scorpio"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "A *semi-sextile,* thirty degrees.",
+        "Air and water, cardinal and fixed.",
+        "Neighbors who see the world *differently.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "water"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Libra gives Scorpio *lightness.*",
+        "Scorpio gives Libra *depth.*",
+        "The friction: charm versus *intensity.*",
+        "Say what you actually mean."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can go *deeper*",
+        "without losing my *balance.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "490-love-feels-like-home",
+  "title": "Your north star",
+  "cover": "The one that doesn't *move*",
+  "keyword": "CHART",
+  "caption": "the north star isn't the brightest star in the sky. it's just the one that doesn't move",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "home",
+    "northstar",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "lilac"
+      },
+      "header": "POLARIS · THE NORTH STAR",
+      "lines": [
+        "The North Star isn't the *brightest*",
+        "star in the sky.",
+        "Not even close.",
+        "It's just the one that doesn't *move.*",
+        "The whole sky turns around it."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "POLARIS · STAYS PUT"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 4,
+        "highlightAt": 0
+      },
+      "header": "FOURTH HOUSE · HOME",
+      "lines": [
+        "Home is like that.",
+        "Not the *loudest* person in the room.",
+        "The one you can always *find.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "FOURTH HOUSE · HOME"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want love I can *navigate* by.",
+        "I choose the person who feels like *home,*",
+        "not the one who feels like a *storm.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

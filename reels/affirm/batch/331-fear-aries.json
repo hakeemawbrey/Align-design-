@@ -1,0 +1,86 @@
+{
+  "id": "331-fear-aries",
+  "title": "What an Aries quietly fears",
+  "cover": "Aries, nobody's *backup*",
+  "keyword": "MUTUAL",
+  "caption": "for the aries who would rather lose than be someone's maybe",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "aries",
+    "zodiaclove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "fear",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · THE FIRST SIGN",
+      "lines": [
+        "Aries, you'd rather lose than be someone's *backup.*",
+        "You're the *first* sign of the zodiac.",
+        "Second place feels like a door closing."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "THE QUIET FEAR · SECOND PLACE",
+      "lines": [
+        "So the thing that scares you is this:",
+        "you'll go all in,",
+        "and they'll still be *deciding.*",
+        "You'll be their *maybe*",
+        "while they were your *yes.*"
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want someone who's *sure.*",
+        "If I'm a maybe,",
+        "I'm *already* gone."
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 1,
+          "text": "BOTH IN LINE"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

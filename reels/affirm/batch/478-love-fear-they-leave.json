@@ -1,0 +1,95 @@
+{
+  "id": "478-love-fear-they-leave",
+  "title": "Always falling, never gone",
+  "cover": "Love isn't held in *place*",
+  "keyword": "MUTUAL",
+  "caption": "the moon is always falling toward us and always missing. that's all an orbit is",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "overthinking",
+    "relationships",
+    "moon",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "AN ORBIT · ALWAYS FALLING",
+      "lines": [
+        "Right now, the moon is *falling* toward us.",
+        "It just moves sideways fast enough",
+        "to keep *missing.*",
+        "That's all an orbit is."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "FALLING · AND MISSING"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "WHEN YOU WORRY THEY'LL LEAVE",
+      "lines": [
+        "Nobody stays because you *held* on.",
+        "Gripping doesn't keep the moon.",
+        "The *pull* does.",
+        "If they love you, they're choosing",
+        "to come back around, again and again."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 2,
+          "text": "THE PULL · NOT A GRIP"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to hold on *tighter.*",
+        "Love that's *real* comes back around.",
+        "I am worth *staying* for."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

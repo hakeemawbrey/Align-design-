@@ -1,0 +1,91 @@
+{
+  "id": "416-love-slow-love",
+  "title": "Slow love",
+  "cover": "The moon takes its *time*",
+  "keyword": "CHART",
+  "caption": "the full moon takes two weeks and nobody calls it slow",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "slowlove",
+    "moonphases",
+    "astrology",
+    "affirmations",
+    "dating"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "WAXING · NIGHT BY NIGHT",
+      "lines": [
+        "The full moon takes about two weeks to *build.*",
+        "Dark to full, a sliver at a time,",
+        "and it doesn't skip a single night."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "WAXING CRESCENT"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL · NO SHORTCUTS",
+      "lines": [
+        "And no one looks up and calls it *slow.*",
+        "They call it *full.*",
+        "If love is building slowly with someone,",
+        "that isn't a lack of *spark.*",
+        "It's a light that's *staying.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "FULL MOON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to rush to be *sure.*",
+        "Slow is how I *build* things that last."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

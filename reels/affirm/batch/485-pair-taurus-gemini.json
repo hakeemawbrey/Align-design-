@@ -1,0 +1,89 @@
+{
+  "id": "485-pair-taurus-gemini",
+  "title": "Taurus and Gemini",
+  "cover": "Taurus + Gemini · *semi-sextile*",
+  "keyword": "MATCH",
+  "caption": "one orders the usual, one wants a new place every week. both of you can be home",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "taurus",
+    "gemini",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TAURUS · GEMINI",
+      "lines": [
+        "One of you orders the *usual.*",
+        "The other wants a new place every week."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "gemini"
+        ],
+        "pairAt": 1
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "Taurus and Gemini are *neighbors,*",
+        "thirty degrees apart: a semi-sextile.",
+        "Fixed earth next to mutable air."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "air"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Taurus gives Gemini a place to *land.*",
+        "Gemini gives Taurus a reason to *wander.*",
+        "The friction: routine versus restlessness."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "TAURUS · GEMINI · HOME",
+      "lines": [
+        "Home doesn't have to mean *still.*",
+        "Curious doesn't have to mean *gone.*",
+        "I can love the familiar and the *new.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

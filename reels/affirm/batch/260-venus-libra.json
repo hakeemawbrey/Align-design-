@@ -1,0 +1,96 @@
+{
+  "id": "260-venus-libra",
+  "title": "Venus in Libra",
+  "cover": "Venus in Libra keeps it *even*",
+  "keyword": "VENUS",
+  "caption": "venus in libra knows who texted last, who picked dinner, who said sorry first. it just wants it even",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "venusinlibra",
+    "libra",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "VENUS IN LIBRA",
+      "lines": [
+        "You notice the second the scales *tip.*",
+        "Who texted last. Who picked dinner.",
+        "Who said sorry *first.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "LIBRA · THE SCALES"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "♀",
+        "planetSign": "libra",
+        "planetAt": 0,
+        "highlight": 7,
+        "highlightAt": 1
+      },
+      "header": "VENUS RULES LIBRA",
+      "lines": [
+        "Venus rules Libra, so she's home here,",
+        "in the seventh sign, the sign of partners.",
+        "You don't want someone to complete you.",
+        "You want someone to *meet* you halfway."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 1,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want a love that's *even,*",
+        "where keeping the peace isn't *my* job alone.",
+        "I can ask for what's *fair.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "255-newmoon-leo",
+  "title": "New moon in Leo",
+  "cover": "New moon in *Leo*",
+  "keyword": "MOON",
+  "caption": "a new moon in the sun's own sign. invite someone who looks at you the way the moon faces the sun",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "newmoon",
+    "newmooninleo",
+    "leo",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "newmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · RULED BY THE SUN",
+      "lines": [
+        "Leo is the one sign the *sun* rules.",
+        "So once a year, the moon goes dark",
+        "right beside it, in the sun's *own* sign."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "THE SUN · RULER OF LEO"
+        }
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 0
+      },
+      "header": "NEW MOON · LEO",
+      "lines": [
+        "A new moon isn't empty.",
+        "Its whole lit face is turned to the *sun,*",
+        "away from us.",
+        "This month, invite someone",
+        "who looks at you like *that.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am allowed to be *adored.*",
+        "I want love that's *proud* of me,",
+        "out loud."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

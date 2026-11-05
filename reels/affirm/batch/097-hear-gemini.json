@@ -1,0 +1,80 @@
+{
+  "id": "097-hear-gemini",
+  "title": "What a Gemini needs to hear",
+  "cover": "Gemini, you're not *shallow*",
+  "keyword": "CHART",
+  "caption": "you're not flaky. you just haven't met someone you can't finish reading",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "gemini",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "hear",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "RULED BY MERCURY",
+      "lines": [
+        "Gemini, getting bored doesn't make you *shallow.*",
+        "*Mercury* gave you a mind that's always moving.",
+        "You love by *learning* someone."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "MUTABLE AIR",
+      "lines": [
+        "So when there's nothing left to learn,",
+        "you drift. That's not a flaw.",
+        "It's a *sign.*",
+        "The right person keeps you *curious*",
+        "for years, not weeks."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm not *flaky.* I'm curious.",
+        "I'm allowed to wait for someone",
+        "I'll never finish *reading.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

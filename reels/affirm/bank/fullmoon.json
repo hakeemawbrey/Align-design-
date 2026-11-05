@@ -1,0 +1,354 @@
+[
+  {
+    "key": "fullmoon-aries",
+    "title": "Full moon in Aries",
+    "cover": "Full moon in *Aries*",
+    "caption": "the full moon in aries comes in libra season. whatever you swallowed to stay nice comes up",
+    "hashtags": ["fullmoon", "fullmooninaries", "aries", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FULL MOON IN ARIES",
+        "lines": ["A full moon in Aries rises in *Libra* season.", "The sun is in the sign of keeping the peace.", "The moon is in the sign of *saying it.*"],
+        "labels": [{ "on": "moon", "at": 0, "text": "FULL · OPPOSITE THE SUN" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["libra", "aries"], "pairAt": 0 },
+        "header": "LIBRA SUN · ARIES MOON",
+        "lines": ["Opposite signs, both lit at once.", "So whatever you swallowed to stay *nice*", "comes up tonight."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release the *anger* I kept polite.", "I can be honest and still be kind.", "My needs are allowed to be *loud.*"]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-taurus",
+    "title": "Full moon in Taurus",
+    "cover": "Full moon in *Taurus*",
+    "caption": "the moon is exalted in taurus, so this full moon doesn't shake you. it shows you what you're holding",
+    "hashtags": ["fullmoon", "fullmoonintaurus", "taurus", "astrology", "lettinggo"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "FULL MOON IN TAURUS",
+        "lines": ["The full moon in Taurus is a *gentle* one.", "The moon is *exalted* in Taurus,", "the sign where she feels most at ease.", "So it doesn't shake you.", "It shows you what you're holding."],
+        "labels": [{ "on": "planet", "at": 1, "text": "☽ · EXALTED IN TAURUS" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["scorpio", "taurus"], "pairAt": 0 },
+        "header": "SCORPIO SUN · TAURUS MOON",
+        "lines": ["It rises in *Scorpio* season,", "the sun in the sign of letting go,", "asking what's still here", "only because it's *familiar.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release what's *comfortable*", "but no longer kind to me.", "I can let go *slowly,* and still let go."]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-gemini",
+    "title": "Full moon in Gemini",
+    "cover": "Full moon in *Gemini*",
+    "caption": "a gemini full moon lights up every word, the ones you said and the ones you keep rehearsing",
+    "hashtags": ["fullmoon", "fullmooningemini", "gemini", "astrology", "overthinking"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FULL MOON IN GEMINI",
+        "lines": ["A Gemini full moon lights up every *word.*", "The ones you said,", "and the ones you're still *rehearsing.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "SAGITTARIUS SUN · GEMINI MOON",
+        "lines": ["The sun is in *Sagittarius* now,", "wanting the big truth,", "while the moon wants to *talk* it out."]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 5 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release the *replay.*", "I don't have to understand them", "to be done with it.", "My mind is allowed to go *quiet.*"],
+        "labels": [{ "on": "moon", "at": 1, "text": "WANING GIBBOUS · RELEASE" }]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-cancer",
+    "title": "Full moon in Cancer",
+    "cover": "Full moon in *Cancer*",
+    "caption": "cancer is ruled by the moon, so a full moon in cancer is the moon at home. every feeling comes up at once",
+    "hashtags": ["fullmoon", "fullmoonincancer", "cancer", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "gold" },
+        "header": "FULL MOON IN CANCER",
+        "lines": ["A full moon in Cancer is the moon at *home.*", "Cancer is ruled by the *Moon,*", "so every feeling comes up at once."],
+        "labels": [{ "on": "planet", "at": 1, "text": "☽ · RULER OF CANCER" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["capricorn", "cancer"], "pairAt": 0 },
+        "header": "CAPRICORN SUN · CANCER MOON",
+        "lines": ["It only happens in *Capricorn* season,", "when the sun says be strong", "and the moon says be *held.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release caring for people", "more than I let them care for *me.*", "I can be someone's home", "and still need *one.*"]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-leo",
+    "title": "Full moon in Leo",
+    "cover": "Full moon in *Leo*",
+    "caption": "a full moon in leo wants to be seen. release performing for love, the right person sees you offstage",
+    "hashtags": ["fullmoon", "fullmooninleo", "leo", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FULL MOON IN LEO",
+        "lines": ["A full moon in Leo wants to be *seen.*", "Every feeling asks for a *spotlight,*", "even the ones you've been hiding."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["aquarius", "leo"], "pairAt": 1 },
+        "header": "AQUARIUS SUN · LEO MOON",
+        "lines": ["The sun sits opposite, in *Aquarius,*", "the sign of cool distance.", "The moon is in the sign of the *heart.*"]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "leo" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release *performing* for love.", "I don't need applause to be adored.", "The right person sees me *offstage* too."]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-virgo",
+    "title": "Full moon in Virgo",
+    "cover": "Full moon in *Virgo*",
+    "caption": "the full moon in virgo hands you a checklist of everything you've been fixing, in you and in them",
+    "hashtags": ["fullmoon", "fullmooninvirgo", "virgo", "astrology", "perfectionism"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "FULL MOON IN VIRGO",
+        "lines": ["The full moon in Virgo hands you a *checklist.*", "Everything you've been *fixing,*", "in yourself and in them."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["pisces", "virgo"], "pairAt": 0 },
+        "header": "PISCES SUN · VIRGO MOON",
+        "lines": ["Across the sky, the sun is in *Pisces,*", "asking you to soften,", "while the moon wants it all in *order.*"]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 5 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release the need to be *perfect*", "before I can be loved.", "Love isn't a project I have to *finish.*"]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-libra",
+    "title": "Full moon in Libra",
+    "cover": "Full moon in *Libra*",
+    "caption": "a full moon in libra tips the scales and shows you who's been doing the balancing. usually it's you",
+    "hashtags": ["fullmoon", "fullmooninlibra", "libra", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FULL MOON IN LIBRA",
+        "lines": ["Under a full moon in Libra, the scales *tip.*", "You see who's been doing the *balancing.*", "Usually, it's you."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "ARIES SUN · LIBRA MOON",
+        "lines": ["This one comes in *Aries* season,", "the sun in the sign of the self,", "the moon in the sign of *us.*"],
+        "labels": [{ "on": "sign", "at": 2, "text": "LIBRA · RULED BY VENUS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release keeping the peace *alone.*", "I am half of the *balance,*", "not all of it."]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-scorpio",
+    "title": "Full moon in Scorpio",
+    "cover": "Full moon in *Scorpio*",
+    "caption": "a full moon in scorpio brings up the grudge, the jealousy, the test. release the grudge, keep the depth",
+    "hashtags": ["fullmoon", "fullmooninscorpio", "scorpio", "astrology", "lettinggo"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "FULL MOON IN SCORPIO",
+        "lines": ["A full moon in Scorpio brings up what you *buried.*", "The grudge. The jealousy.", "The test you set to see if they'd *stay.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["taurus", "scorpio"], "pairAt": 0 },
+        "header": "TAURUS SUN · SCORPIO MOON",
+        "lines": ["The sun is in *Taurus,* across the wheel,", "asking for calm,", "while the moon wants the *whole truth.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "RELEASE · KEEP THE DEPTH",
+        "lines": ["So let it surface.", "You don't have to *test* love", "to trust it.", "Release the grudge. Keep the *depth.*"]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-sagittarius",
+    "title": "Full moon in Sagittarius",
+    "cover": "Full moon in *Sagittarius*",
+    "caption": "the sagittarius full moon shows you every escape plan you kept just in case love got close",
+    "hashtags": ["fullmoon", "fullmooninsagittarius", "sagittarius", "astrology", "commitment"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FULL MOON IN SAGITTARIUS",
+        "lines": ["The Sagittarius full moon shows you your *exits.*", "Every escape plan you've kept", "just in case love got close."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "GEMINI SUN · SAGITTARIUS MOON",
+        "lines": ["It happens when the sun is in *Gemini,*", "keeping every option open,", "and the moon wants something to *believe* in."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release *running* as a way to stay safe.", "Staying can be an adventure too.", "I can be free *with* someone."]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-capricorn",
+    "title": "Full moon in Capricorn",
+    "cover": "Full moon in *Capricorn*",
+    "caption": "a capricorn full moon asks who's holding you. not who you're holding up. who's holding you",
+    "hashtags": ["fullmoon", "fullmoonincapricorn", "capricorn", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "FULL MOON IN CAPRICORN",
+        "lines": ["A Capricorn full moon asks who's *holding* you.", "Not who you're holding up.", "Who's holding *you.*"]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["cancer", "capricorn"], "pairAt": 0 },
+        "header": "CANCER SUN · CAPRICORN MOON",
+        "lines": ["The sun is opposite, in *Cancer,*", "soft and close to home.", "The moon is in the sign of *structure.*"]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 5 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release being the *strong* one", "all of the time.", "Love is not a weight I carry alone.", "I can be held", "without losing my *footing.*"]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-aquarius",
+    "title": "Full moon in Aquarius",
+    "cover": "Full moon in *Aquarius*",
+    "caption": "a full moon in aquarius shines on the distance. the cool replies, the i'm fine, the walls",
+    "hashtags": ["fullmoon", "fullmooninaquarius", "aquarius", "astrology", "affirmations"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FULL MOON IN AQUARIUS",
+        "lines": ["A full moon in Aquarius shines on your *distance.*", "The cool replies. The *I'm fine.*", "The walls that look like independence."]
+      },
+      {
+        "art": "wheel",
+        "opts": { "pair": ["leo", "aquarius"], "pairAt": 0 },
+        "header": "LEO SUN · AQUARIUS MOON",
+        "lines": ["It lands in *Leo* season,", "when the sun is all heart", "and the moon would rather stay *cool.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "CLOSE · AND STILL FREE",
+        "lines": ["Release needing *no one.*", "Closeness was never a cage.", "You can let someone see you", "and still be completely your *own.*"],
+        "labels": [{ "on": "thread", "at": 1, "text": "A THREAD · NOT A CAGE" }]
+      }
+    ]
+  },
+  {
+    "key": "fullmoon-pisces",
+    "title": "Full moon in Pisces",
+    "cover": "Full moon in *Pisces*",
+    "caption": "the pisces full moon rises like a tide, and every dream you had about them washes up at once",
+    "hashtags": ["fullmoon", "fullmooninpisces", "pisces", "astrology", "lettinggo"],
+    "keyword": "MOON",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "FULL MOON IN PISCES",
+        "lines": ["The Pisces full moon rises like a *tide.*", "Every dream you had about them", "washes up at once,", "*beautiful* and not quite real."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "VIRGO SUN · PISCES MOON",
+        "lines": ["Across from it, the sun is in *Virgo,*", "seeing the facts,", "while the moon still sees the *fantasy.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I release the *fantasy.*", "I keep the tenderness.", "I don't have to save anyone", "to be *worth* loving."]
+      }
+    ]
+  }
+]

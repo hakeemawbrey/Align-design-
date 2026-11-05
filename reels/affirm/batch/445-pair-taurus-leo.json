@@ -1,0 +1,92 @@
+{
+  "id": "445-pair-taurus-leo",
+  "title": "Taurus and Leo",
+  "cover": "Taurus + Leo · *square*",
+  "keyword": "MATCH",
+  "caption": "two fixed signs. neither is moving first, so make not-leaving the promise",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "taurus",
+    "leo",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TAURUS · LEO",
+      "lines": [
+        "Neither of you is going to *move* first.",
+        "That's the whole story,",
+        "and also the whole *gift.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "taurus",
+          "leo"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90° · BOTH FIXED",
+      "lines": [
+        "Taurus and Leo form a *square,*",
+        "ninety degrees, both fixed signs.",
+        "Earth wants comfort. Fire wants *applause.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "fire"
+      },
+      "header": "WORK WORTH DOING",
+      "lines": [
+        "Taurus gives Leo *loyalty* that never wavers.",
+        "Leo gives Taurus *warmth* and a little drama.",
+        "The friction is stubbornness.",
+        "Pick the hill. Not every hill."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "TAURUS · LEO · STAYING",
+      "lines": [
+        "Two fixed signs don't leave *easily.*",
+        "Let that be the *promise,* not the standoff.",
+        "I can hold my ground and still *hold you.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

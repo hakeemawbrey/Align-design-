@@ -1,0 +1,92 @@
+{
+  "id": "250-fullmoon-taurus",
+  "title": "Full moon in Taurus",
+  "cover": "Full moon in *Taurus*",
+  "keyword": "MOON",
+  "caption": "the moon is exalted in taurus, so this full moon doesn't shake you. it shows you what you're holding",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "fullmoon",
+    "fullmoonintaurus",
+    "taurus",
+    "astrology",
+    "lettinggo"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "FULL MOON IN TAURUS",
+      "lines": [
+        "The full moon in Taurus is a *gentle* one.",
+        "The moon is *exalted* in Taurus,",
+        "the sign where she feels most at ease.",
+        "So it doesn't shake you.",
+        "It shows you what you're holding."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☽ · EXALTED IN TAURUS"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "scorpio",
+          "taurus"
+        ],
+        "pairAt": 0
+      },
+      "header": "SCORPIO SUN · TAURUS MOON",
+      "lines": [
+        "It rises in *Scorpio* season,",
+        "the sun in the sign of letting go,",
+        "asking what's still here",
+        "only because it's *familiar.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release what's *comfortable*",
+        "but no longer kind to me.",
+        "I can let go *slowly,* and still let go."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

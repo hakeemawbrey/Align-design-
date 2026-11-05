@@ -1,0 +1,76 @@
+{
+  "id": "158-morning-aquarius",
+  "title": "Good morning, Aquarius",
+  "cover": "Good morning, *Aquarius*",
+  "keyword": "CHART",
+  "caption": "good morning aquarius. stay a little weird today. the right person likes you unedited",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "aquarius",
+    "goodmorning",
+    "morningaffirmations",
+    "astrology",
+    "selflove"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "GOOD MORNING · AQUARIUS",
+      "lines": [
+        "Good morning, Aquarius. Stay a little *weird* today.",
+        "You're fixed air, always a step ahead,",
+        "already living in next year."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air"
+      },
+      "header": "AIR · ROOM TO BREATHE",
+      "lines": [
+        "You need *space.* That's allowed.",
+        "Just leave a little room for closeness."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "The right person likes me *unedited.*",
+        "I can let someone *close*",
+        "and still be my own.",
+        "My freedom and my heart can share a home."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

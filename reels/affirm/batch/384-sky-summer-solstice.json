@@ -1,0 +1,85 @@
+{
+  "id": "384-sky-summer-solstice",
+  "title": "The summer solstice",
+  "cover": "The sun *stands still*",
+  "keyword": "MOON",
+  "caption": "solstice means the sun stands still. on the longest day, the sun walks into the moon's own sign",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "summersolstice",
+    "solstice",
+    "cancer",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "SOLSTICE · THE SUN STANDS STILL",
+      "lines": [
+        "Solstice means the sun *stands still.*",
+        "For a few days, sunrise stops moving north,",
+        "then slowly *turns* back."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "THE LONGEST DAY"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · RULED BY THE MOON",
+      "lines": [
+        "On the longest day, the sun enters *Cancer,*",
+        "the sign the moon rules.",
+        "At the peak of the light,",
+        "the sky turns toward *home.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can shine",
+        "and still want to be *held.*",
+        "Home is allowed to be what I *want.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

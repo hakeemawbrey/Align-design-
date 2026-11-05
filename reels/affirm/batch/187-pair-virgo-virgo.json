@@ -1,0 +1,91 @@
+{
+  "id": "187-pair-virgo-virgo",
+  "title": "Virgo and Virgo",
+  "cover": "Virgo and Virgo, *a full list*",
+  "keyword": "MATCH",
+  "caption": "two virgos in love will color-code the grocery list. don't forget to put rest on it",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "virgo",
+    "virgocompatibility",
+    "earthsigns",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "TWO VIRGOS",
+      "lines": [
+        "Picture the cleanest kitchen in the *zodiac.*",
+        "Two Virgos live there,",
+        "in love with every *detail.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "virgo",
+          "virgo"
+        ],
+        "pairAt": 0
+      },
+      "header": "CONJUNCTION · 0°",
+      "lines": [
+        "Same sign, a *conjunction.*",
+        "Mutable earth, ruled by *Mercury,*",
+        "with the same quiet standards."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "Each one *gets* the other's mind.",
+        "Nobody has to explain the details.",
+        "The friction: two inner critics",
+        "turning *outward* on a bad day."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *earn* rest.",
+        "We're not projects. We're *partners.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

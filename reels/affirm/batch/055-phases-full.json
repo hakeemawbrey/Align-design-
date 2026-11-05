@@ -1,0 +1,80 @@
+{
+  "id": "055-phases-full",
+  "title": "The full moon phase",
+  "cover": "The *whole* face, turned to you",
+  "keyword": "MOON",
+  "caption": "the full moon rises as the sun sets and stays up all night. love that lets itself be seen",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "fullmoon",
+    "moonphases",
+    "astrology",
+    "affirmations",
+    "beingseen"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "phases",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON · OPPOSITE THE SUN",
+      "lines": [
+        "A full moon rises as the sun *sets,*",
+        "and sets as the sun rises.",
+        "It's up the whole *night.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "180° FROM THE SUN"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "header": "THE WHOLE FACE · TOWARD YOU",
+      "lines": [
+        "Every bit of its light faces *us.*",
+        "In love, this is being fully *seen.*",
+        "The tender parts, and the true ones."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *seen* all the way.",
+        "I don't hide the parts of me",
+        "that *glow.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

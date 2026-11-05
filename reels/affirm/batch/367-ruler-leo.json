@@ -1,0 +1,97 @@
+{
+  "id": "367-ruler-leo",
+  "title": "Leo is ruled by the Sun",
+  "cover": "Leo, ruled by a *star*",
+  "keyword": "CHART",
+  "caption": "the sun doesn't dim so the planets feel bigger. neither should you, leo",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "leo",
+    "sun",
+    "planetaryruler",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "ruler",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "LEO · RULED BY THE SUN",
+      "lines": [
+        "You're the only sign ruled by a *star.*",
+        "Leo, your ruler is the Sun,",
+        "the center everything else *circles.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☉ THE SUN · THE HEART"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "So you love like *daylight.*",
+        "Warm on everyone you face,",
+        "generous, loyal, a little dramatic,",
+        "and you need to *feel* it back."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "orbit"
+      },
+      "header": "DON'T DIM",
+      "lines": [
+        "The Sun doesn't *dim*",
+        "so the others can feel bigger.",
+        "Don't you either."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Wanting to be *seen* is human.",
+        "I want a love",
+        "that's proud to stand in my *light.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "253-misses-cancer",
+  "title": "When a Cancer misses you",
+  "cover": "How a *Cancer* says I miss you",
+  "keyword": "VENUS",
+  "caption": "have you eaten? did you get home okay? that's a cancer saying i miss you",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "cancer",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "moon"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "misses",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "CANCER · CARDINAL WATER",
+      "lines": [
+        "A Cancer misses you in *questions.*",
+        "Have you eaten? Did you get home?",
+        "Are you sleeping okay?",
+        "It sounds small. It's their whole *heart.*"
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 7
+      },
+      "header": "RULED BY THE MOON",
+      "lines": [
+        "Ruled by the *Moon,* they live in memory.",
+        "They scroll back through old photos,",
+        "and replay your *laugh* at night."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "THE MOON · MEMORY AND MOOD"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I miss people *gently.*",
+        "And I'm allowed to say it",
+        "*before* they say it first."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

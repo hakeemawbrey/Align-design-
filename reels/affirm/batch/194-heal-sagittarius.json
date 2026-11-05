@@ -1,0 +1,85 @@
+{
+  "id": "194-heal-sagittarius",
+  "title": "Sagittarius, after a breakup",
+  "cover": "Sagittarius, put down the *map*",
+  "keyword": "PASSING",
+  "caption": "sagittarius after a breakup is already looking at flights. go anywhere, just take yourself with you",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "sagittarius",
+    "breakup",
+    "healing",
+    "astrology",
+    "movingon"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "Sagittarius, you've already looked at *flights.*",
+        "That's how fire heals:",
+        "keep moving and call it *freedom.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER",
+      "lines": [
+        "Ruled by *Jupiter,* you always find the lesson.",
+        "But you don't have to be *fine* yet.",
+        "You can go anywhere you like.",
+        "Just don't leave *yourself* behind."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "JUPITER · GROWTH · LUCK"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 1
+      },
+      "header": "FORWARD · NOT AWAY",
+      "lines": [
+        "Feel it first, *then* go.",
+        "Moving on isn't running away.",
+        "Not every ending needs a lesson.",
+        "Some just need *time.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

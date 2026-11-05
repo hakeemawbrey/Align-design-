@@ -26,6 +26,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 VOICE_DIR = os.environ.get('ALIGN_VOICE_DIR', os.path.join(HERE, '.voice'))
 MODEL = os.path.join(VOICE_DIR, 'kokoro-timestamped.onnx')
 VOICES = os.path.join(VOICE_DIR, 'voices-v1.0.bin')
+TARGET_RMS = 0.11  # voiced level every reel's narration is brought to
 PUNCT = set(',.!?;:—–-…"“”()\'')
 
 
@@ -116,6 +117,7 @@ def main():
     voice = req.get('voice', 'af_heart')
     speed = float(req.get('speed', 0.92))
     res = []
+    clips = []
     for i, sc in enumerate(req['scenes']):
         audio, sr, timings = k.create_timed(
             sc['text'], voice, speed=speed, lang='en-us',
@@ -126,7 +128,7 @@ def main():
         audio[:f] *= np.linspace(0, 1, f)
         audio[-f:] *= np.linspace(1, 0, f)
         wav = f'scene-{i}.wav'
-        sf.write(os.path.join(out_dir, wav), audio, sr)
+        clips.append((wav, audio, sr))
         groups = word_groups(timings)
         words = sc['words']
         spans = [g[:2] for g in groups] if len(groups) == len(words) else align(groups, words, k)
@@ -135,6 +137,16 @@ def main():
                   file=sys.stderr)
             spans = spread(words, groups[0][0] if groups else 0.05, groups[-1][1] if groups else len(audio) / sr)
         res.append({'wav': wav, 'dur': len(audio) / sr, 'words': [[round(a, 3), round(b, 3)] for a, b in spans]})
+    # Voices come out at different loudness; bring every reel's voice to the
+    # same level so the music always sits the same distance underneath.
+    allv = np.concatenate([c[1] for c in clips])
+    voiced = allv[np.abs(allv) > 0.01]
+    gain = TARGET_RMS / (np.sqrt(np.mean(voiced ** 2)) + 1e-9) if len(voiced) else 1.0
+    peak = max(np.abs(c[1]).max() for c in clips) * gain
+    if peak > 0.97:
+        gain *= 0.97 / peak
+    for wav, audio, sr in clips:
+        sf.write(os.path.join(out_dir, wav), audio * gain, sr)
     json.dump({'scenes': res}, open(os.path.join(out_dir, 'voice.json'), 'w'))
 
 

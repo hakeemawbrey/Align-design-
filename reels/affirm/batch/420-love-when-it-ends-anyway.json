@@ -1,0 +1,83 @@
+{
+  "id": "420-love-when-it-ends-anyway",
+  "title": "When it ends anyway",
+  "cover": "You don't go *dark*",
+  "keyword": "PASSING",
+  "caption": "in a lunar eclipse the moon doesn't go black. it turns red, lit by every sunset on earth",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "breakup",
+    "lunareclipse",
+    "astrology",
+    "affirmations",
+    "healing"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "TOTAL LUNAR ECLIPSE",
+      "lines": [
+        "In a lunar eclipse, the moon doesn't go *black.*",
+        "It turns *red.*",
+        "That red is sunlight bending through our air,",
+        "every sunrise and sunset on *earth*",
+        "landing on it at once."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "IN EARTH'S SHADOW"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "header": "IN THE SHADOW · STILL LIT",
+      "lines": [
+        "When love ends anyway, after you *tried,*",
+        "you don't go dark either.",
+        "You just get lit in a way",
+        "you didn't *expect.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I gave it my *all,* and it still ended.",
+        "I'm still *lit.*",
+        "This isn't the end of my *light.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

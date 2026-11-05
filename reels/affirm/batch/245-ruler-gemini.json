@@ -1,0 +1,101 @@
+{
+  "id": "245-ruler-gemini",
+  "title": "Gemini is ruled by Mercury",
+  "cover": "Gemini, ruled by the *messenger*",
+  "keyword": "CHART",
+  "caption": "for a gemini, a voice note can count as a kiss. blame mercury",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "gemini",
+    "mercury",
+    "planetaryruler",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "ruler",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "lilac"
+      },
+      "header": "GEMINI · RULED BY MERCURY",
+      "lines": [
+        "Gemini, your ruler is the *messenger.*",
+        "Mercury, the fastest planet,",
+        "the god of words and roads."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☿ MERCURY · THE MIND"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · MUTABLE AIR",
+      "lines": [
+        "So for you, *talk* is touch.",
+        "A voice note can feel like a *kiss.*",
+        "You fall for the mind first,",
+        "then the person around it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 0
+      },
+      "header": "WHEN IT GOES QUIET",
+      "lines": [
+        "And when the talk goes quiet,",
+        "you go quiet too.",
+        "Silence feels like a *door* closing."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 0,
+          "text": "☿ · THE LINE BETWEEN YOU"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My mind is a way I *love.*",
+        "I want someone who *answers.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

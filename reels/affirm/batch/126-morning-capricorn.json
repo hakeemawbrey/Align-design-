@@ -1,0 +1,85 @@
+{
+  "id": "126-morning-capricorn",
+  "title": "Good morning, Capricorn",
+  "cover": "Good morning, *Capricorn*",
+  "keyword": "CHART",
+  "caption": "capricorn is already up and already working. love isn't another goal to hit by noon",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "capricorn",
+    "goodmorning",
+    "morningaffirmations",
+    "saturn",
+    "astrology"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "capricorn"
+      },
+      "header": "GOOD MORNING · CAPRICORN",
+      "lines": [
+        "Good morning, Capricorn. Up early *again?*",
+        "Ruled by *Saturn,* you treat every day",
+        "like a step up the mountain."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "THE SEA-GOAT · CLIMBING"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "gold",
+        "ring": true
+      },
+      "header": "SATURN · TIME · STRUCTURE",
+      "lines": [
+        "But love isn't another *goal.*",
+        "You don't have to earn it by noon."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I am loved for who I am,",
+        "not for what I *carry.*",
+        "Rest is not something I have to earn.",
+        "Love can be *easy* for me too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

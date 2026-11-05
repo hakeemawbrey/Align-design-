@@ -1,0 +1,87 @@
+{
+  "id": "341-fullmoon-aquarius",
+  "title": "Full moon in Aquarius",
+  "cover": "Full moon in *Aquarius*",
+  "keyword": "MOON",
+  "caption": "a full moon in aquarius shines on the distance. the cool replies, the i'm fine, the walls",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "fullmoon",
+    "fullmooninaquarius",
+    "aquarius",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON IN AQUARIUS",
+      "lines": [
+        "A full moon in Aquarius shines on your *distance.*",
+        "The cool replies. The *I'm fine.*",
+        "The walls that look like independence."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "aquarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "LEO SUN · AQUARIUS MOON",
+      "lines": [
+        "It lands in *Leo* season,",
+        "when the sun is all heart",
+        "and the moon would rather stay *cool.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "CLOSE · AND STILL FREE",
+      "lines": [
+        "Release needing *no one.*",
+        "Closeness was never a cage.",
+        "You can let someone see you",
+        "and still be completely your *own.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "A THREAD · NOT A CAGE"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

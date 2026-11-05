@@ -1,0 +1,93 @@
+{
+  "id": "207-dealbreaker-scorpio",
+  "title": "The Scorpio dealbreaker",
+  "cover": "Scorpio can take any *truth*",
+  "keyword": "MATCH",
+  "caption": "a scorpio can handle the messy past, the hard feeling, the ugly truth. not a lie",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "scorpio",
+    "dealbreakers",
+    "zodiaclove",
+    "astrology",
+    "honesty"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "dealbreaker",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · FIXED WATER",
+      "lines": [
+        "A Scorpio can handle any *truth.*",
+        "The messy past. The hard feeling.",
+        "The thing you're scared to say.",
+        "What they can't hold is a *lie.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 8,
+        "highlightAt": 0
+      },
+      "header": "THE EIGHTH HOUSE · INTIMACY",
+      "lines": [
+        "Scorpio belongs to the *eighth house,*",
+        "the house of intimacy and trust.",
+        "To you, closeness without honesty",
+        "is just a *performance.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "8TH HOUSE · INTIMACY"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "DEALBREAKERS UP FRONT",
+      "lines": [
+        "So say it on the first date.",
+        "You'd take the *ugly* truth",
+        "over a *pretty* secret,",
+        "every single *time.*"
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "TRUST · THE ONLY THREAD"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "023-phases-waning-crescent",
+  "title": "The waning crescent",
+  "cover": "Rest is not *empty*",
+  "keyword": "MOON",
+  "caption": "the last thin moon only shows before dawn. they call it balsamic. rest before you begin again",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "waningcrescent",
+    "balsamicmoon",
+    "moonphases",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "phases",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 7
+      },
+      "header": "WANING CRESCENT",
+      "lines": [
+        "The last thin moon only shows before *dawn.*",
+        "You have to be up early, or up late,",
+        "to *catch* it."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 0,
+          "text": "EAST · BEFORE SUNRISE"
+        }
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true
+      },
+      "header": "THE BALSAMIC MOON",
+      "lines": [
+        "It's called the *balsamic* moon,",
+        "from balsam, a thing that *heals.*",
+        "In love, this is the rest between.",
+        "Not over.",
+        "Not yet begun."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to *rest*",
+        "before I begin again.",
+        "My quiet is not *empty.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

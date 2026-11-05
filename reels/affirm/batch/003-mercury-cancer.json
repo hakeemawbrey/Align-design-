@@ -1,0 +1,89 @@
+{
+  "id": "003-mercury-cancer",
+  "title": "Mercury in Cancer",
+  "cover": "Mercury in Cancer *remembers*",
+  "keyword": "CHART",
+  "caption": "mercury in cancer still remembers the exact words from a fight four years ago. start the hard talks soft",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "mercuryincancer",
+    "cancer",
+    "mercurysign",
+    "astrology",
+    "communication"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "mercury",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "cancer"
+      },
+      "header": "MERCURY IN CANCER",
+      "lines": [
+        "You still remember the exact *words*",
+        "from a fight four years ago.",
+        "Mercury in Cancer keeps what's said."
+      ]
+    },
+    {
+      "art": "loop",
+      "header": "MERCURY · THE LOOP BACK",
+      "lines": [
+        "A few times a year, Mercury seems",
+        "to loop backwards across the sky.",
+        "You do the same with *conversations,*",
+        "circling back to check they were *kind.*"
+      ],
+      "labels": [
+        {
+          "on": "loop",
+          "at": 1,
+          "text": "☿ · RETROGRADE LOOP"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "HOW TO TALK TO YOU",
+      "lines": [
+        "So you need hard talks to start *soft,*",
+        "with *we're okay* said first."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My sensitivity is how I *listen.*",
+        "I deserve words that are *careful* with me."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

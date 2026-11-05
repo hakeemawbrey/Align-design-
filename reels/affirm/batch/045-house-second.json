@@ -1,0 +1,88 @@
+{
+  "id": "045-house-second",
+  "title": "The second house",
+  "cover": "The *second house* in love",
+  "keyword": "CHART",
+  "caption": "the second house holds money, but it's really about what you think you're worth",
+  "cta": "comment CHART and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "secondhouse",
+    "birthchart",
+    "taurus",
+    "astrology",
+    "selfworth"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "houses",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 2,
+        "highlightAt": 2
+      },
+      "header": "THE SECOND HOUSE · VALUES",
+      "lines": [
+        "The money house in your chart",
+        "is secretly about *love.*",
+        "Your *second house* holds what you value,",
+        "and what you believe you're *worth.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 2,
+          "text": "2ND HOUSE · VALUES"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "TAURUS' HOUSE · RULED BY VENUS",
+      "lines": [
+        "In the natural zodiac, it's *Taurus'* house,",
+        "ruled by *Venus.*",
+        "So watch how someone treats",
+        "the things you treasure.",
+        "It's how they'll treat *you.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *earn* love.",
+        "My worth was in my sky",
+        "before anyone *saw* it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · CHART",
+      "opts": {
+        "face": "Chart",
+        "sub": "YOUR SKY, READ",
+        "glyph": "☉",
+        "revealAt": 1
+      },
+      "pill": "YOUR CHART IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *CHART*",
+        "and I'll send you your full chart,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

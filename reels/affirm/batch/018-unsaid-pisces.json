@@ -1,0 +1,82 @@
+{
+  "id": "018-unsaid-pisces",
+  "title": "How a Pisces says I love you",
+  "cover": "How a *Pisces* says I love you",
+  "keyword": "VENUS",
+  "caption": "a pisces made you a playlist. listen twice. every song is something they couldn't say",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "pisces",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · THE UNSAID",
+      "lines": [
+        "A Pisces made you a *playlist.*",
+        "Listen to it twice.",
+        "Every song is a sentence they couldn't *say.*"
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {},
+      "header": "VENUS · EXALTED IN PISCES",
+      "lines": [
+        "Venus is *exalted* in Pisces,",
+        "love at its most generous.",
+        "So they know you're sad",
+        "before you've said a *word,*",
+        "and they just *stay.*"
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 0,
+          "text": "♀ VENUS · EXALTED"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can hear love in the *quiet.*",
+        "My heart knows its own *language.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

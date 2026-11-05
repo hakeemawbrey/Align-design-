@@ -1,0 +1,95 @@
+{
+  "id": "096-season-libra",
+  "title": "Libra season in love",
+  "cover": "*Libra* season: is it fair",
+  "keyword": "CHART",
+  "caption": "libra season starts when day and night are equal. good month to check if your love is too",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "libraseason",
+    "libra",
+    "zodiacseason",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "season",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "planet": "☉",
+        "planetSign": "libra",
+        "planetAt": 1,
+        "highlight": 7,
+        "highlightAt": 2
+      },
+      "header": "LIBRA SEASON · SEP 23 – OCT 22",
+      "lines": [
+        "Libra season begins when day and night are *equal.*",
+        "The Sun enters the seventh sign,",
+        "the sign of *partners.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "☉ THE SUN · IN LIBRA"
+        },
+        {
+          "on": "h7",
+          "at": 2,
+          "text": "7TH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "RULED BY VENUS",
+      "lines": [
+        "And Libra is ruled by *Venus.*",
+        "So love asks one question.",
+        "Is this *fair?*",
+        "Am I giving as much as I *get?*",
+        "Am I getting as much as I give?"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Love should *balance.*",
+        "I meet people halfway,",
+        "and I let them meet *me.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

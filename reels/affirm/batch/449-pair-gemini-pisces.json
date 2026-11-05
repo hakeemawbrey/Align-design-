@@ -1,0 +1,93 @@
+{
+  "id": "449-pair-gemini-pisces",
+  "title": "Gemini and Pisces",
+  "cover": "Gemini + Pisces · *square*",
+  "keyword": "MATCH",
+  "caption": "two shapeshifters in love. make one plan, then actually keep it",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "gemini",
+    "pisces",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "GEMINI · PISCES",
+      "lines": [
+        "Two *shapeshifters* in love.",
+        "Gemini changes its *mind.*",
+        "Pisces changes its *mood.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "Between them, a *square:*",
+        "ninety degrees, both mutable.",
+        "Air and water, thought and *feeling.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "water"
+      },
+      "header": "WORK WORTH DOING",
+      "lines": [
+        "Gemini gives Pisces *clarity.*",
+        "Pisces gives Gemini *imagination*",
+        "and a softer heart.",
+        "The friction: nobody holds the *shape.*",
+        "Make one plan. *Keep* it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Changing isn't *leaving.*",
+        "I can move and still *stay.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

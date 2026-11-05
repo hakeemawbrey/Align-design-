@@ -1,0 +1,93 @@
+{
+  "id": "446-love-best-friend",
+  "title": "A shared centre",
+  "cover": "Orbit a shared *centre*",
+  "keyword": "MUTUAL",
+  "caption": "binary stars don't circle each other. they both circle a point between them",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "bestfriend",
+    "partnership",
+    "binarystars",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "BINARY STARS",
+      "lines": [
+        "Binary stars don't orbit each *other.*",
+        "They both orbit a point *between* them,",
+        "a centre they share."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "SHARED CENTRE OF MASS"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 7,
+        "highlightAt": 0
+      },
+      "header": "SEVENTH HOUSE · PARTNERS",
+      "lines": [
+        "Your seventh house is partners.",
+        "Choose one who feels like a *best friend.*",
+        "Nobody circling anybody.",
+        "Two people turning around",
+        "a *life* they both care about."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 1,
+          "text": "SEVENTH HOUSE · PARTNERS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I choose a partner I'd *choose*",
+        "as a friend.",
+        "We build the *centre* together."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

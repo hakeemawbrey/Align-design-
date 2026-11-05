@@ -1,0 +1,80 @@
+{
+  "id": "169-element-air-water",
+  "title": "Air and water",
+  "cover": "*Air* and water in love",
+  "keyword": "MATCH",
+  "caption": "air thinks about the feeling. water is the feeling. the magic is meeting in the middle",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "airsigns",
+    "watersigns",
+    "compatibility",
+    "elements",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "water"
+      },
+      "header": "AIR · WATER",
+      "lines": [
+        "Air *thinks* about the feeling.",
+        "Water *is* the feeling.",
+        "Different instincts, same wish:",
+        "to be understood."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "HEAD AND HEART",
+      "lines": [
+        "So air can seem cool to water,",
+        "and water can seem *stormy* to air.",
+        "But air brings perspective,",
+        "and water brings *depth.*",
+        "Together, you hear the whole heart."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can explain *less*",
+        "and listen more.",
+        "My mind and my heart can *both* be heard."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

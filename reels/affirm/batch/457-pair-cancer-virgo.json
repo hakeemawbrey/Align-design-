@@ -1,0 +1,93 @@
+{
+  "id": "457-pair-cancer-virgo",
+  "title": "Cancer and Virgo",
+  "cover": "Cancer + Virgo · *sextile*",
+  "keyword": "MATCH",
+  "caption": "cancer brings the soup, virgo brings the vitamins",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "cancer",
+    "virgo",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "CANCER · VIRGO",
+      "lines": [
+        "This is what being *looked after* feels like.",
+        "Cancer brings the soup.",
+        "Virgo brings the *vitamins.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "virgo"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "A *sextile* links them,",
+        "sixty degrees, two signs apart.",
+        "Cardinal water, mutable earth."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "earth"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Cancer teaches Virgo it's safe to *feel.*",
+        "Virgo gives Cancer *steady* hands.",
+        "The friction: worry.",
+        "Two careful hearts can *overthink* it."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to be *cared for,*",
+        "not just to do the *caring.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

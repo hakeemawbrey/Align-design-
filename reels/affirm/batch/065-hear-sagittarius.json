@@ -1,0 +1,87 @@
+{
+  "id": "065-hear-sagittarius",
+  "title": "What a Sagittarius needs to hear",
+  "cover": "Sagittarius, love isn't a *fence*",
+  "keyword": "CHART",
+  "caption": "the right person doesn't take your horizon. they bring a map",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "sagittarius",
+    "zodiaclove",
+    "astrology",
+    "affirmations",
+    "selfworth"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "hear",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER · EXPANSION",
+      "lines": [
+        "Sagittarius, commitment won't *shrink* your world.",
+        "You're ruled by *Jupiter,* the planet of more.",
+        "More road. More sky. More *truth.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 9,
+        "highlightAt": 0
+      },
+      "header": "THE NINTH HOUSE · TRAVEL",
+      "lines": [
+        "So you think love means",
+        "trading the horizon for a *fence.*",
+        "But the right person isn't a fence.",
+        "They're the one holding the *map*",
+        "and asking where next."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 0,
+          "text": "9TH HOUSE · TRAVEL · BELIEF"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *free* and be chosen.",
+        "Love is the trip,",
+        "not the *end* of it."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

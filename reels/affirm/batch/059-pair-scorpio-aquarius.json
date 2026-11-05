@@ -1,0 +1,91 @@
+{
+  "id": "059-pair-scorpio-aquarius",
+  "title": "Scorpio and Aquarius",
+  "cover": "Scorpio and Aquarius, *electric*",
+  "keyword": "MATCH",
+  "caption": "scorpio wants all of you. aquarius wants all of you and their freedom. the square is the lesson",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "scorpio",
+    "aquarius",
+    "square",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "scorpio",
+          "aquarius"
+        ],
+        "pairAt": 1
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "Ninety degrees between two *fixed* signs.",
+        "Scorpio and Aquarius, a *square.*",
+        "Neither one is built to bend,",
+        "and that's also why they *last.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water",
+        "second": "air"
+      },
+      "header": "WATER · AIR",
+      "lines": [
+        "Scorpio is water, feeling *underneath.*",
+        "Aquarius is air, thinking it *through.*",
+        "Both are fiercely *loyal.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "WHAT EACH TEACHES",
+      "lines": [
+        "Scorpio teaches Aquarius *intimacy.*",
+        "Aquarius teaches Scorpio *trust* in space.",
+        "The work is closeness without *control.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WORK WORTH DOING",
+      "lines": [
+        "Two fixed hearts can *hold* anything,",
+        "including each other."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

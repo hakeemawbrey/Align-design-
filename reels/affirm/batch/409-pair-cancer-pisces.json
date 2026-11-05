@@ -1,0 +1,91 @@
+{
+  "id": "409-pair-cancer-pisces",
+  "title": "Cancer and Pisces",
+  "cover": "Cancer and Pisces, *flowing*",
+  "keyword": "MATCH",
+  "caption": "cancer and pisces can talk without talking. the trick is still saying it out loud",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "cancer",
+    "pisces",
+    "watersigns",
+    "trine",
+    "zodiaccompatibility"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "water"
+      },
+      "header": "WATER · WATER",
+      "lines": [
+        "Cancer and Pisces cry at the *same* movies.",
+        "They feel the room",
+        "before anyone says a *word.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "cancer",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "TRINE · 120°",
+      "lines": [
+        "They sit a *trine* apart,",
+        "the easiest angle on the wheel.",
+        "Cardinal Cancer gives love a *shape.*",
+        "Mutable Pisces gives it *grace.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE FRICTION",
+      "lines": [
+        "The risk is drifting into *moods*",
+        "and assuming the other just knows.",
+        "Say the *simple* thing anyway."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *understood*",
+        "and still use my *words.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

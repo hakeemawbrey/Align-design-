@@ -1,0 +1,103 @@
+{
+  "id": "335-unsaid-gemini",
+  "title": "How a Gemini says I love you",
+  "cover": "How a *Gemini* says I love you",
+  "keyword": "VENUS",
+  "caption": "the meme at two in the morning was the love letter. a gemini just never stops talking to you",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "gemini",
+    "lovelanguage",
+    "zodiaclove",
+    "venus",
+    "astrology"
+  ],
+  "voice": "af_kore",
+  "speed": 0.92,
+  "family": "unsaid",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☿",
+        "tone": "mint"
+      },
+      "header": "GEMINI · THE UNSAID",
+      "lines": [
+        "That meme at two in the morning?",
+        "From a Gemini, that's a love *letter.*",
+        "Mercury rules them, the planet of *messages.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 2,
+          "text": "☿ MERCURY · MESSAGES"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · HOW THEY SAY IT",
+      "lines": [
+        "They send you the song, the link,",
+        "the thing they saw and thought of *you.*",
+        "You hear the news from them *first.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "THE THREAD",
+      "lines": [
+        "They don't say it.",
+        "They just never stop *talking* to you.",
+        "And that's the whole point."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "A THREAD THAT NEVER ENDS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Being *thought of* is being loved.",
+        "I'll keep the thread *open.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

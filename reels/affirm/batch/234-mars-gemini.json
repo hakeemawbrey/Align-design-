@@ -1,0 +1,86 @@
+{
+  "id": "234-mars-gemini",
+  "title": "Mars in Gemini",
+  "cover": "Mars in Gemini flirts in *words*",
+  "keyword": "MARS",
+  "caption": "mars in gemini flirts in paragraphs and fights in footnotes. silence is the one thing it can't take",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "marsingemini",
+    "gemini",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 2
+      },
+      "header": "MARS IN GEMINI",
+      "lines": [
+        "You flirt in *paragraphs*",
+        "and fight in *footnotes.*",
+        "Mars in Gemini chases with words."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 2,
+          "text": "A THREAD · NOT A WALL"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "GEMINI · RULED BY MERCURY",
+      "lines": [
+        "Gemini is ruled by Mercury,",
+        "so desire starts in your *head.*",
+        "In a fight you'll talk it to pieces,",
+        "and you need someone who talks back,",
+        "not someone who goes *silent* for days."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I fight to *understand,* not to win.",
+        "My words can be gentle and still be true.",
+        "I want someone who stays in the *conversation.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

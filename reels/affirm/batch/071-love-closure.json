@@ -1,0 +1,87 @@
+{
+  "id": "071-love-closure",
+  "title": "The closure you give yourself",
+  "cover": "Give *yourself* the closure",
+  "keyword": "PASSING",
+  "caption": "you can stop waiting for the message. the light already sent everything it had",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "closure",
+    "movingon",
+    "astrology",
+    "affirmations",
+    "lettinggo"
+  ],
+  "voice": "af_heart",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "STARLIGHT · CENTURIES OLD",
+      "lines": [
+        "Starlight is always *old* news.",
+        "Some of what you see tonight",
+        "left its star *centuries* ago.",
+        "You're seeing what it *was,*",
+        "not what it is now."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "OLD LIGHT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "NO FINAL MESSAGE",
+      "lines": [
+        "So you can stop waiting for a final *answer*",
+        "from someone who already *left.*",
+        "Their light is all they were ever going to send.",
+        "*Closure* is something you can give yourself."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't need their *words* to move on.",
+        "I already know what *happened.*",
+        "I give myself the *ending.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "170-mars-leo",
+  "title": "Mars in Leo",
+  "cover": "Mars in Leo wants *out loud*",
+  "keyword": "MARS",
+  "caption": "when mars in leo wants you, everyone knows. flowers at work, a toast at dinner, the whole heart",
+  "cta": "comment MARS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "marsinleo",
+    "leo",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS IN LEO",
+      "lines": [
+        "When you want someone, *everyone* knows.",
+        "Flowers at work. A toast at dinner.",
+        "Mars in Leo chases with its whole heart."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "leo"
+      },
+      "header": "LEO · FIXED FIRE",
+      "lines": [
+        "Leo is fixed fire, ruled by the Sun.",
+        "You burn steady and *proud.*",
+        "So in a fight, it's rarely the thing itself.",
+        "It's whether you still feel *respected.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "LEO · THE LION"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My pride is how I *protect* my heart.",
+        "I can lower my voice and *keep* my crown.",
+        "I want someone who's proud to be *mine.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MARS",
+      "opts": {
+        "face": "Mars",
+        "sub": "HOW YOU LOVE OUT LOUD",
+        "glyph": "♂",
+        "revealAt": 1
+      },
+      "pill": "YOUR MARS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MARS*",
+        "and I'll send you what yours wants,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

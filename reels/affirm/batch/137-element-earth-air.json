@@ -1,0 +1,76 @@
+{
+  "id": "137-element-earth-air",
+  "title": "Earth and air",
+  "cover": "*Earth* and air in love",
+  "keyword": "MATCH",
+  "caption": "air has the idea. earth knows how to make it real. on paper it's a mismatch. in practice it works",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "earthsigns",
+    "airsigns",
+    "compatibility",
+    "elements",
+    "astrology"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "elements",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "air"
+      },
+      "header": "EARTH · AIR",
+      "lines": [
+        "Air has a hundred *ideas.*",
+        "Earth asks which one we're *doing.*",
+        "On paper, it looks like a mismatch."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "CLOUDS AND GROUND",
+      "lines": [
+        "But air keeps earth from getting *stuck,*",
+        "and earth keeps air from drifting off.",
+        "One of you dreams it up.",
+        "The other gives it a *shape.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "DREAM IT · BUILD IT",
+      "lines": [
+        "Love doesn't need you to *think* alike.",
+        "It needs you to *build* together,",
+        "one wild idea at a time."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Someone out there already speaks your *language.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

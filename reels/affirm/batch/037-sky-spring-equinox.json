@@ -1,0 +1,87 @@
+{
+  "id": "037-sky-spring-equinox",
+  "title": "The spring equinox",
+  "cover": "The zodiac starts with a *day*",
+  "keyword": "MOON",
+  "caption": "zero degrees aries isn't a star, it's the equinox. the zodiac starts on a day",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "springequinox",
+    "equinox",
+    "aries",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 1,
+        "highlightAt": 4
+      },
+      "header": "THE EQUINOX · ZERO ARIES",
+      "lines": [
+        "The zodiac doesn't start with the *stars.*",
+        "It starts with a *day.*",
+        "The spring equinox,",
+        "when day and night are almost even.",
+        "That moment is zero degrees Aries."
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 4,
+          "text": "0° ARIES · DAY ONE"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aries"
+      },
+      "header": "ARIES · THE FIRST SIGN",
+      "lines": [
+        "From here, the days grow *longer*",
+        "than the nights.",
+        "Aries is where the light starts *winning.*",
+        "In love, it's the year's clean slate."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I get to start *again.*",
+        "The light is coming back,",
+        "and so am *I.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

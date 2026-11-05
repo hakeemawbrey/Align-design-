@@ -1,0 +1,79 @@
+{
+  "id": "069-sky-autumn-equinox",
+  "title": "The autumn equinox",
+  "cover": "Love that's *even*",
+  "keyword": "MOON",
+  "caption": "the sign of partners begins on the one day the sky is fair. day and night, even",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "autumnequinox",
+    "equinox",
+    "libra",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "THE EQUINOX · ZERO LIBRA",
+      "lines": [
+        "The sign of *partners* begins",
+        "on the day the sky is *fair.*",
+        "At the autumn equinox,",
+        "day and night are almost equal,",
+        "and the sun steps into Libra."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "DAY · NIGHT · EVEN",
+      "lines": [
+        "So it's a good season to check the *scales.*",
+        "Who calls first?",
+        "Who remembers?",
+        "Who stays when it gets dark *earlier?*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve love that's *even.*",
+        "I get back the light I *give.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

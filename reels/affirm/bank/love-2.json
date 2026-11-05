@@ -1,0 +1,1242 @@
+[
+  {
+    "key": "love-single-by-choice",
+    "title": "Single on purpose",
+    "cover": "Single on *purpose*",
+    "caption": "our sun has no partner star, and it still holds a whole solar system together",
+    "hashtags": ["singlelife", "singleonpurpose", "selflove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "THE SUN · A SINGLE STAR",
+        "lines": ["Our sun has no *partner* star.", "Lots of stars come in pairs.", "Ours doesn't.", "It holds eight planets in orbit", "all on its *own.*"],
+        "labels": [{ "on": "planet", "at": 0, "text": "ONE STAR · NO COMPANION" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 1, "highlightAt": 0 },
+        "header": "FIRST HOUSE · THE SELF",
+        "lines": ["Being single on *purpose*", "isn't a gap in your life.", "It's a whole system,", "held together by *you.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "FIRST HOUSE · SELF" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I am not *half* of anything.", "My life is already a whole sky.", "I'm single on *purpose,*", "and I *like* my orbit."],
+        "labels": [{ "on": "you", "at": 4, "text": "YOUR OWN ORBIT" }]
+      }
+    ]
+  },
+  {
+    "key": "love-date-yourself",
+    "title": "Romance yourself",
+    "cover": "Romance *yourself* first",
+    "caption": "the planet of love carries a mirror. take the hint",
+    "hashtags": ["selflove", "dateyourself", "venus", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "venus",
+        "opts": { "mirror": true, "mirrorAt": 1 },
+        "header": "THE VENUS GLYPH",
+        "lines": ["The planet of love carries a *mirror.*", "Its symbol is said to be", "a goddess's *hand mirror.*"],
+        "labels": [{ "on": "glass", "at": 1, "text": "♀ · A HAND MIRROR" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "VENUS · PLANET OF LOVE",
+        "lines": ["Love doesn't start with someone *else.*", "It starts with how you look", "at *yourself.*", "Romance begins in that mirror."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I take myself on *dates.*", "I buy myself the flowers.", "I look at myself the way", "I'd look at someone I *love.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-family-patterns",
+    "title": "Old light",
+    "cover": "Some of your love is *old light*",
+    "caption": "some of how you love is older than you. you still get to choose what shines next",
+    "hashtags": ["familypatterns", "healing", "starlight", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "STARLIGHT · SENT LONG AGO",
+        "lines": ["Some of the starlight you see tonight", "left its star *before you were born.*", "You're seeing the *past,*", "still arriving."],
+        "labels": [{ "on": "planet", "at": 1, "text": "LIGHT · STILL TRAVELLING" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 4, "highlightAt": 1 },
+        "header": "FOURTH HOUSE · HOME AND FAMILY",
+        "lines": ["Some of how you love is old light too.", "Your fourth house holds home,", "and the patterns you were *handed.*", "You can see where they came from", "and still *choose* what shines next."],
+        "labels": [{ "on": "house", "at": 1, "text": "FOURTH HOUSE · FAMILY" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I honour where I *came from.*", "I am not *bound* to repeat it.", "The love I give now is *mine.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-ask-for-it",
+    "title": "Ask for what you need",
+    "cover": "Say what you *need*",
+    "caption": "the moon never pretends to be full. you don't have to either",
+    "hashtags": ["communication", "relationships", "moonphases", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 1 },
+        "header": "WAXING CRESCENT",
+        "lines": ["You'll never catch the moon *pretending.*", "Some nights it's a sliver,", "and it shows up as a sliver anyway."],
+        "labels": [{ "on": "moon", "at": 1, "text": "WAXING CRESCENT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "ASKING · OUT LOUD",
+        "lines": ["Nobody can meet a need", "you're hiding behind *fine.*", "Asking isn't too much.", "It's showing your real *phase,*", "so the right person knows how to *love* it."],
+        "labels": [{ "on": "thread", "at": 2, "text": "SAID OUT LOUD" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My needs are not a *burden.*", "I ask clearly, and I ask *kindly.*", "The right person is *glad* I asked."]
+      }
+    ]
+  },
+  {
+    "key": "love-languages",
+    "title": "Read their light",
+    "cover": "Learn to read their *light*",
+    "caption": "we know what stars are made of without touching one. people leave patterns in their love too",
+    "hashtags": ["lovelanguages", "relationships", "stars", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "STARLIGHT · A FINGERPRINT",
+        "lines": ["We know what stars are made of", "without ever *touching* one.", "Every element leaves its own pattern", "in their *light.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "SPECTRUM · ELEMENT LINES" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 4 },
+        "header": "LOVE LANGUAGES",
+        "lines": ["People are the same.", "One says love with *words,*", "one with time, one with *touch,*", "one with the dishes done.", "Learn to read their light,", "and teach them yours."],
+        "labels": [{ "on": "thread", "at": 4, "text": "LOVE · IN THEIR LANGUAGE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I notice how *you* say it.", "I tell you how *I* hear it.", "Our love can speak *both* ways."]
+      }
+    ]
+  },
+  {
+    "key": "love-apologize-well",
+    "title": "A good apology",
+    "cover": "A good *apology* corrects course",
+    "caption": "even the flights to the moon drifted off course and made small corrections. say sorry like that",
+    "hashtags": ["apology", "relationships", "communication", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "syzygy",
+        "opts": { "offline": true },
+        "header": "OFF COURSE · BY A LITTLE",
+        "lines": ["Even the flights to the moon", "drifted a little *off course.*", "So the crews made small *corrections*", "on the way."],
+        "labels": [{ "on": "moon", "at": 1, "text": "SLIGHTLY OFF COURSE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "NAME IT · FIX IT",
+        "lines": ["A good apology works the same way.", "No *speech,* no defence.", "Just: here's where I drifted,", "and here's how I'll *correct* it."]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be *wrong* and still be good.", "I say sorry without *shrinking.*", "Then I change the *course.*"],
+        "labels": [{ "on": "line", "at": 2, "text": "BACK IN LINE" }]
+      }
+    ]
+  },
+  {
+    "key": "love-fight-kind",
+    "title": "Opposite, not enemies",
+    "cover": "Opposite, not *enemies*",
+    "caption": "a full moon is the sun and moon on opposite sides. and it's the brightest night of the month",
+    "hashtags": ["fullmoon", "relationships", "communication", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "FULL MOON · OPPOSITION",
+        "lines": ["A full moon needs *opposites.*", "The sun and moon have to sit", "on either side of the earth.", "And that's when the moon is *brightest.*"],
+        "labels": [{ "on": "moon", "at": 1, "text": "SUN · EARTH · MOON" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "CONFLICT · WITHOUT CRUELTY",
+        "lines": ["Being on opposite sides", "doesn't have to dim either of you.", "Fight to *understand,*", "not to win.", "Say the hard thing,", "and *never* the cruel one."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can disagree and still be *kind.*", "We are on the *same* side,", "even when we see it differently."]
+      }
+    ]
+  },
+  {
+    "key": "love-long-distance",
+    "title": "Long distance",
+    "cover": "Distance doesn't stop the *tide*",
+    "caption": "the moon moves every ocean on earth from almost four hundred thousand kilometres away",
+    "hashtags": ["longdistance", "longdistancerelationship", "moon", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "THE MOON · THE TIDES",
+        "lines": ["Nearly four hundred thousand kilometres.", "That's how far the moon is,", "and it still moves *every ocean*", "on earth, every single day."],
+        "labels": [{ "on": "planet", "at": 2, "text": "THE MOON · TIDAL PULL" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "LONG DISTANCE · SAME PULL",
+        "lines": ["Distance isn't the opposite of *love.*", "The right pull reaches across it.", "You can't touch a tide,", "but you can *feel* it rise."],
+        "labels": [{ "on": "thread", "at": 1, "text": "THE PULL · ACROSS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Our love is *real* from here.", "Miles don't *measure* how much I care.", "We are *pulling* toward each other."]
+      }
+    ]
+  },
+  {
+    "key": "love-potential",
+    "title": "Falling for potential",
+    "cover": "Love who they are *now*",
+    "caption": "the moon looks bigger on the horizon. it isn't. neither is who they might become",
+    "hashtags": ["relationships", "datingadvice", "moon", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "gold" },
+        "header": "THE MOON ILLUSION",
+        "lines": ["The moon looks *huge* on the horizon.", "It isn't.", "Measure it, and it's no bigger", "than when it's high above you.", "It's a trick of the *eye.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "SAME SIZE · ALL NIGHT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "POTENTIAL · ON THE HORIZON",
+        "lines": ["Potential works the same way.", "Who they *could* be looks enormous", "out there, on the horizon.", "Love the size they *are* tonight."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I love people as they *are,*", "not as they might *become.*", "I'm a partner, not a *rescue plan.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-almost",
+    "title": "The almost relationship",
+    "cover": "Some people are a *slingshot*",
+    "caption": "the almost relationship wasn't a waste. it was a gravity assist",
+    "hashtags": ["almostrelationship", "situationship", "movingon", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "loop",
+        "header": "GRAVITY ASSIST",
+        "lines": ["Spacecraft steal *speed* from planets.", "They swing in close,", "curve around, and leave faster", "on a whole new *path.*"],
+        "labels": [{ "on": "loop", "at": 1, "text": "CLOSE PASS · NEW PATH" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "THE ALMOST · A CLOSE PASS",
+        "lines": ["The almost relationship was that.", "Close enough to *bend* you,", "never meant to *keep* you.", "It changed your direction.", "That isn't nothing."],
+        "labels": [{ "on": "you", "at": 3, "text": "YOU · NEW DIRECTION" }]
+      },
+      {
+        "art": "retro",
+        "opts": { "sightAt": 1, "pathAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "It wasn't a waste.", "It was a *turn.*", "I'm going *farther* because of it,", "not back to it."]
+      }
+    ]
+  },
+  {
+    "key": "love-emotionally-available",
+    "title": "Near isn't available",
+    "cover": "Close isn't the same as *open*",
+    "caption": "at new moon the moon is right there. its bright side is just turned away",
+    "hashtags": ["emotionalavailability", "relationships", "newmoon", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "NEW MOON · TURNED AWAY",
+        "lines": ["At new moon, the moon is right there,", "between us and the sun.", "We just can't *see* it,", "because its lit side faces *away.*"],
+        "labels": [{ "on": "moon", "at": 0, "text": "NEW MOON · LIT SIDE AWAY" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "PRESENT · NOT AVAILABLE",
+        "lines": ["Some people are *near* you", "and still turned away.", "Close isn't the same as *open.*", "You deserve someone whose light", "faces *your* way."]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 4, "litAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I look for *open,* not just near.", "I'm allowed to want the *whole* moon.", "I show up lit, and I ask the same."],
+        "labels": [{ "on": "moon", "at": 2, "text": "FULL · FACING YOU" }]
+      }
+    ]
+  },
+  {
+    "key": "love-people-pleasing",
+    "title": "Shaped from the inside",
+    "cover": "Shaped from the *inside*",
+    "caption": "planets are round because their own gravity shapes them. you're allowed to be shaped by yours",
+    "hashtags": ["peoplepleasing", "boundaries", "selfworth", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "WHY PLANETS ARE ROUND",
+        "lines": ["Planets are round for one reason.", "Their own *gravity*", "pulls everything toward their *centre.*", "Small rocks stay lumpy,", "shaped by whatever *hit* them."],
+        "labels": [{ "on": "planet", "at": 1, "text": "SELF-GRAVITY · ROUND" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "PEOPLE PLEASING",
+        "lines": ["People pleasing is being shaped", "by every outside *push.*", "You were big enough all along", "to be shaped by your own *centre.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My *no* is a full sentence.", "I can be kind without *disappearing.*", "I am shaped by what I *value.*"],
+        "labels": [{ "on": "you", "at": 3, "text": "YOUR OWN CENTRE" }]
+      }
+    ]
+  },
+  {
+    "key": "love-settling",
+    "title": "Don't settle",
+    "cover": "Remember your *real* sky",
+    "caption": "city lights hide almost every star. settling does the same thing to what you want",
+    "hashtags": ["dontsettle", "standards", "selfworth", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 0 },
+        "header": "A MOONLESS NIGHT · DARK SKY",
+        "lines": ["Far from any city, on a moonless night,", "you can see *thousands* of stars.", "Under city lights,", "maybe a few *dozen.*"],
+        "labels": [{ "on": "moon", "at": 0, "text": "NEW MOON · DARKEST SKY" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "SETTLING · CITY LIGHTS",
+        "lines": ["The stars didn't leave.", "The glow just *drowned* them out.", "Settling is like that.", "Bright enough, comfortable enough,", "until you forget what you *wanted.*"]
+      },
+      {
+        "art": "venus",
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I remember what my sky *looks* like.", "Enough is not the same as *right.*", "I'm willing to wait for the *stars.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-standards-not-walls",
+    "title": "Standards, not walls",
+    "cover": "Standards, not *walls*",
+    "caption": "earth doesn't wall out the sun. it turns away what would hurt and lets the light in",
+    "hashtags": ["boundaries", "standards", "selfworth", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "THE SOLAR WIND",
+        "lines": ["There's a wind blowing off the *sun.*", "It's made of charged particles,", "and over time it can strip", "a planet's air *away.*"],
+        "labels": [{ "on": "planet", "at": 1, "text": "SOLAR WIND · CHARGED" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "EARTH'S MAGNETIC FIELD",
+        "lines": ["Earth doesn't build a *wall.*", "Its magnetic field turns the wind aside", "and still lets the *sunlight* through.", "That's a standard.", "A wall keeps out the *warmth* too."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I keep out what *hurts* me,", "not what could *hold* me.", "My standards let the *light* in."]
+      }
+    ]
+  },
+  {
+    "key": "love-heartbreak-recovery",
+    "title": "Healing, slowly",
+    "cover": "Healing is *slow* on purpose",
+    "caption": "the moon drifts a little farther from us every year. too slow to feel. healing works like that",
+    "hashtags": ["heartbreak", "healing", "movingon", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "syzygy",
+        "header": "THE MOON · DRIFTING AWAY",
+        "lines": ["Slowly, the moon is drifting *away.*", "About four *centimetres* farther", "from the earth every year.", "Too slow to *feel.*", "But it's always moving."],
+        "labels": [{ "on": "moon", "at": 1, "text": "FOUR CENTIMETRES A YEAR" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 6 },
+        "header": "HEARTBREAK · RECOVERY",
+        "lines": ["Healing moves the same way.", "You won't feel it day to day.", "Then one night you'll notice", "it doesn't pull your *tides*", "the way it used to."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm healing, even when I can't *feel* it.", "Every day puts a little more *space*", "between me and the hurt."]
+      }
+    ]
+  },
+  {
+    "key": "love-misunderstood",
+    "title": "Blue sunsets",
+    "cover": "The red planet has *blue* sunsets",
+    "caption": "from far away, mars looks red. stand on it at sunset and the sky turns blue",
+    "hashtags": ["misunderstood", "selfworth", "mars", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♂", "tone": "rose" },
+        "header": "MARS · THE RED PLANET",
+        "lines": ["Mars is the *red* planet.", "But stand on it at sunset,", "and the sky turns *blue.*"],
+        "labels": [{ "on": "planet", "at": 2, "text": "MARTIAN SUNSET · BLUE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "SEEN FROM FAR AWAY",
+        "lines": ["From a distance,", "people decide what *colour* you are.", "The ones who come close", "get to see the rest.", "Being misunderstood isn't being *wrong.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to be *simple*", "to be worth *knowing.*", "The right people stay for the sunset."]
+      }
+    ]
+  },
+  {
+    "key": "love-intimacy",
+    "title": "Room in the closeness",
+    "cover": "Close enough, with *room*",
+    "caption": "when two galaxies merge, their stars almost never touch. that's what good closeness looks like",
+    "hashtags": ["intimacy", "relationships", "galaxy", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "lilac" },
+        "header": "WHEN GALAXIES MERGE",
+        "lines": ["When two galaxies *merge,*", "their stars almost never collide.", "There's that much *space*", "between them, even then."],
+        "labels": [{ "on": "planet", "at": 1, "text": "STARS · RARELY TOUCH" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 8, "highlightAt": 0 },
+        "header": "EIGHTH HOUSE · INTIMACY",
+        "lines": ["Your eighth house rules intimacy.", "Real closeness works like that *merger.*", "Two lives pour into each other,", "and nobody gets *crushed.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "EIGHTH HOUSE · INTIMACY" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can let someone all the way *in*", "and still have room to *breathe.*", "Closeness doesn't cost me *myself.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-feeling-safe",
+    "title": "Steady light",
+    "cover": "Safe love doesn't *flicker*",
+    "caption": "stars twinkle. planets mostly hold steady. that's the kind of love that feels safe",
+    "hashtags": ["safelove", "securelove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "STARS TWINKLE · PLANETS DON'T",
+        "lines": ["Stars *twinkle.* Planets mostly don't.", "They're close enough that their light", "holds *steady* through the air."],
+        "labels": [{ "on": "planet", "at": 1, "text": "PLANET · STEADY LIGHT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "FEELING SAFE IN LOVE",
+        "lines": ["Safe love is planet light.", "Not a spark you're always *guessing* at,", "but something that's there", "every time you look up."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *earn* my safety.", "Calm is not *boring.*", "It's how I know love is *real.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-soft",
+    "title": "Soft love",
+    "cover": "Soft love is still *sunlight*",
+    "caption": "moonlight is just sunlight, softened enough to look at",
+    "hashtags": ["softlove", "gentlelove", "moon", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "MOONLIGHT · REFLECTED SUN",
+        "lines": ["Moonlight is *sunlight.*", "It bounces off the moon", "and reaches you hundreds of thousands", "of times *softer.*"],
+        "labels": [{ "on": "moon", "at": 1, "text": "REFLECTED SUNLIGHT" }]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "SAME LIGHT · SOFTER",
+        "lines": ["You can't look straight at the sun.", "You can look at the moon for *hours.*", "Same light.", "Soft love isn't *less* love.", "It's love you can *stay* in."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "Gentle is not *weak.*", "I can love *softly*", "and still love *all the way.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-loud",
+    "title": "Loud love",
+    "cover": "Love that casts a *shadow*",
+    "caption": "venus can get bright enough to cast a shadow. some love is meant to be seen",
+    "hashtags": ["loudlove", "venus", "relationships", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "VENUS · AT ITS BRIGHTEST",
+        "lines": ["Venus can shine so *brightly*", "it casts a *shadow* on earth.", "On a dark night, far from city lights,", "you can see your own shadow by it."],
+        "labels": [{ "on": "planet", "at": 1, "text": "VENUS · CASTS SHADOWS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "LOUD LOVE",
+        "lines": ["Some love is meant to be *seen.*", "It posts you. It introduces you.", "It says your name in *rooms*", "you're not in."]
+      },
+      {
+        "art": "venus",
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to be a *secret.*", "I love out loud,", "and I'm loved out loud *back.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-friends-first",
+    "title": "Friends first",
+    "cover": "Born in the same *cloud*",
+    "caption": "most stars aren't born alone. they start out side by side, in the same cloud",
+    "hashtags": ["friendsfirst", "friendstolovers", "stars", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "mint" },
+        "header": "STAR CLUSTERS",
+        "lines": ["Most stars aren't born *alone.*", "They form in groups,", "from the same cloud of gas,", "side by side."],
+        "labels": [{ "on": "planet", "at": 1, "text": "BORN TOGETHER · A CLUSTER" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 11, "highlightAt": 0 },
+        "header": "ELEVENTH HOUSE · FRIENDS",
+        "lines": ["Your eleventh house is friendship.", "Some of the best love starts there,", "in the same cloud,", "long before anyone *calls* it love."],
+        "labels": [{ "on": "house", "at": 0, "text": "ELEVENTH HOUSE · FRIENDS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want someone who *likes* me,", "not just someone who *wants* me.", "The best love *starts* as friendship."]
+      }
+    ]
+  },
+  {
+    "key": "love-flirting",
+    "title": "Flirt a little",
+    "cover": "Let it *sparkle*",
+    "caption": "every august the earth runs through old comet dust and the sky flirts back",
+    "hashtags": ["flirting", "dating", "meteorshower", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "syzygy",
+        "header": "METEOR SHOWER · AUGUST",
+        "lines": ["Once a year, the earth flies", "through the dust of an old comet.", "Each grain burns up as a *shooting star.*"],
+        "labels": [{ "on": "line", "at": 1, "text": "COMET DUST · OUR PATH" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 5, "highlightAt": 0 },
+        "header": "FIFTH HOUSE · PLAY",
+        "lines": ["Your fifth house is romance and *play.*", "Flirting is that kind of *sparkle.*", "It doesn't have to mean forever.", "It just has to feel like *fun.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "FIFTH HOUSE · ROMANCE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to be *playful.*", "I let myself enjoy the spark", "without *rushing* where it goes."]
+      }
+    ]
+  },
+  {
+    "key": "love-confidence",
+    "title": "Made of stars",
+    "cover": "You're made of *star stuff*",
+    "caption": "the iron in your blood was made inside a star. you don't have to borrow your shine",
+    "hashtags": ["confidence", "selfworth", "stars", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "FORGED IN STARS",
+        "lines": ["The iron in your blood", "was made inside a *star,*", "billions of years before you.", "So was the calcium in your *bones.*"],
+        "labels": [{ "on": "planet", "at": 1, "text": "IRON · MADE IN STARS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "CONFIDENCE",
+        "lines": ["You don't have to *borrow* a shine.", "You were built from one.", "Confidence isn't being louder.", "It's remembering what you're *made* of."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't shrink to make room.", "I'm allowed to *take up* space.", "I was made from *starlight.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-after-cheating",
+    "title": "After the crater",
+    "cover": "You were built to *heal*",
+    "caption": "the moon keeps every crater. the earth has weather. you're more earth than moon",
+    "hashtags": ["healing", "rebuildingtrust", "movingon", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "THE MOON · EVERY CRATER",
+        "lines": ["The moon keeps its *craters*", "for billions of years.", "With no air and no rain,", "nothing smooths them over."],
+        "labels": [{ "on": "planet", "at": 2, "text": "NO WEATHER · NO EROSION" }]
+      },
+      {
+        "art": "syzygy",
+        "header": "EARTH · WEATHER HEALS",
+        "lines": ["The earth gets hit too.", "But it has *weather.*", "Rain and time soften its craters", "into hills and *lakes.*", "You're more earth than moon."]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "What happened is not my *worth.*", "It left a mark, not a *verdict.*", "I heal, and I can *trust* again."]
+      }
+    ]
+  },
+  {
+    "key": "love-fear-they-leave",
+    "title": "Always falling, never gone",
+    "cover": "Love isn't held in *place*",
+    "caption": "the moon is always falling toward us and always missing. that's all an orbit is",
+    "hashtags": ["overthinking", "relationships", "moon", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "AN ORBIT · ALWAYS FALLING",
+        "lines": ["Right now, the moon is *falling* toward us.", "It just moves sideways fast enough", "to keep *missing.*", "That's all an orbit is."],
+        "labels": [{ "on": "planet", "at": 1, "text": "FALLING · AND MISSING" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "WHEN YOU WORRY THEY'LL LEAVE",
+        "lines": ["Nobody stays because you *held* on.", "Gripping doesn't keep the moon.", "The *pull* does.", "If they love you, they're choosing", "to come back around, again and again."],
+        "labels": [{ "on": "thread", "at": 2, "text": "THE PULL · NOT A GRIP" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to hold on *tighter.*", "Love that's *real* comes back around.", "I am worth *staying* for."]
+      }
+    ]
+  },
+  {
+    "key": "love-pulling-away",
+    "title": "The sun doesn't leave",
+    "cover": "The sun never *leaves*",
+    "caption": "the sun doesn't set. the earth turns away from it. notice when you're the one turning",
+    "hashtags": ["pullingaway", "relationships", "selfawareness", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "SUNSET · THE EARTH TURNS",
+        "lines": ["The sun never actually *sets.*", "It stays exactly where it is.", "We're the ones *turning* away.", "Night isn't the sun leaving you."],
+        "labels": [{ "on": "planet", "at": 1, "text": "THE SUN · STILL THERE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "WHEN YOU PULL AWAY",
+        "lines": ["When love gets close", "and you go *quiet,*", "it can feel like it's leaving.", "Sometimes it's just you, turning.", "And you can turn *back.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I notice when I'm *turning* away.", "I can say I need space", "and still come *back.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-holidays-alone",
+    "title": "Closest to the sun",
+    "cover": "Nearer the *light* than it feels",
+    "caption": "in early january the earth is the closest it gets to the sun all year. even when it's freezing out",
+    "hashtags": ["holidays", "aloneontheholidays", "selflove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "PERIHELION · EARLY JANUARY",
+        "lines": ["Here's a secret about *January.*", "The earth is the closest it gets", "to the sun all year,", "even when it's *freezing* where you are."],
+        "labels": [{ "on": "planet", "at": 1, "text": "PERIHELION · CLOSEST" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "HOLIDAYS ALONE",
+        "lines": ["Cold doesn't mean far from the *light.*", "A quiet holiday", "isn't proof you're *unloved.*", "It's just a different kind of season."],
+        "labels": [{ "on": "you", "at": 1, "text": "YOU · NEAR THE LIGHT" }]
+      },
+      {
+        "art": "venus",
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I make this season *mine.*", "I am closer to love than it *feels.*", "I'm good company for *myself.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-sunday-lonely",
+    "title": "Sunday, still moving",
+    "cover": "Even on Sunday, you're *moving*",
+    "caption": "sunday is named after the sun, and even on the slowest one you're flying around it",
+    "hashtags": ["sundayblues", "loneliness", "selflove", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "THE SUN'S DAY",
+        "lines": ["Sunday is named after the *sun.*", "And even on the slowest one,", "you're flying around it", "at about thirty *kilometres* a second."],
+        "labels": [{ "on": "planet", "at": 3, "text": "THIRTY KM EVERY SECOND" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "SUNDAY LONELINESS",
+        "lines": ["Sunday loneliness feels like *stillness.*", "Like everyone's paired off but you.", "But you're not stuck.", "You're mid-orbit, and *moving.*"],
+        "labels": [{ "on": "you", "at": 3, "text": "YOU · MID-ORBIT" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "A quiet day is not a *lonely* life.", "I'm still moving toward *love,*", "even on slow days."]
+      }
+    ]
+  },
+  {
+    "key": "love-crush",
+    "title": "It was a shooting star",
+    "cover": "It was a *shooting star*",
+    "caption": "most shooting stars are smaller than a grain of sand. they burn that bright because they fall so fast",
+    "hashtags": ["crush", "movingon", "shootingstar", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "loop",
+        "header": "SHOOTING STAR · A GRAIN",
+        "lines": ["A shooting star is usually *smaller*", "than a grain of sand.", "It blazes that bright", "because it's falling so *fast.*"],
+        "labels": [{ "on": "loop", "at": 1, "text": "METEOR · DUST-SIZED" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "HEALING FROM A CRUSH",
+        "lines": ["A crush can be like that.", "*Real* light,", "mostly made of how fast you *fell.*", "It's okay to let it burn out."],
+        "labels": [{ "on": "you", "at": 3, "text": "YOU · STILL HERE" }]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 7 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "That spark was *real,*", "and so is letting it *go.*", "I fall for the ones who *catch* me."]
+      }
+    ]
+  },
+  {
+    "key": "love-unrequited",
+    "title": "Every pull is returned",
+    "cover": "Real pull goes *both* ways",
+    "caption": "in physics, every pull gets pulled back. if yours never was, it wasn't an orbit",
+    "hashtags": ["unrequitedlove", "lettinggo", "selfworth", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "syzygy",
+        "header": "GRAVITY · ALWAYS MUTUAL",
+        "lines": ["Gravity never goes *one way.*", "The earth pulls on the moon,", "and the moon pulls the earth *back,*", "just as hard."],
+        "labels": [{ "on": "moon", "at": 2, "text": "EQUAL · AND OPPOSITE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "WHEN THEY DON'T LOVE YOU BACK",
+        "lines": ["So if you've been pulling", "and nothing ever pulls back,", "that isn't weak *gravity.*", "It's just not an *orbit.*"],
+        "labels": [{ "on": "orbit", "at": 3, "text": "ONE-SIDED · NOT AN ORBIT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My love isn't *wasted.*", "It comes back to *me.*", "I save my pull for someone", "who pulls *back.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-the-listener",
+    "title": "Earthshine",
+    "cover": "Who lights *your* dark side",
+    "caption": "on a crescent moon the dark part glows. that's light bounced off earth. you deserve some back",
+    "hashtags": ["goodfriend", "friendship", "earthshine", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 1 },
+        "header": "EARTHSHINE",
+        "lines": ["Next crescent moon, look at the *dark* part.", "It glows, just faintly.", "That's sunlight bounced off the *earth*", "lighting up the moon's night."],
+        "labels": [{ "on": "moon", "at": 2, "text": "EARTHSHINE · FROM US" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE FRIEND WHO LISTENS",
+        "lines": ["You're the earthshine for everyone.", "You light up their dark parts", "without being asked.", "Who's lighting *yours?*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm allowed to *need* a listener too.", "My dark side deserves *light.*", "I let the people I hold, hold *me.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-saying-it-first",
+    "title": "Saying it first",
+    "cover": "Say it *first*",
+    "caption": "light can take tens of thousands of years to leave the sun's core, then eight minutes to reach you",
+    "hashtags": ["iloveyou", "relationships", "vulnerability", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "SUNLIGHT · CORE TO SKY",
+        "lines": ["Light made in the sun's *core*", "can take tens of thousands of years", "to fight its way to the surface.", "Then it reaches you", "in about eight *minutes.*"],
+        "labels": [{ "on": "planet", "at": 3, "text": "EIGHT MINUTES · TO EARTH" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "SAYING I LOVE YOU FIRST",
+        "lines": ["Saying I love you first is like that.", "It takes forever *inside* you,", "then a second to say.", "Let it *arrive.*"],
+        "labels": [{ "on": "thread", "at": 2, "text": "THREE WORDS · ARRIVING" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "My love is *brave* enough to go first.", "Their answer doesn't change", "what I *feel.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-best-friend",
+    "title": "A shared centre",
+    "cover": "Orbit a shared *centre*",
+    "caption": "binary stars don't circle each other. they both circle a point between them",
+    "hashtags": ["bestfriend", "partnership", "binarystars", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "BINARY STARS",
+        "lines": ["Binary stars don't orbit each *other.*", "They both orbit a point *between* them,", "a centre they share."],
+        "labels": [{ "on": "planet", "at": 1, "text": "SHARED CENTRE OF MASS" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 7, "highlightAt": 0 },
+        "header": "SEVENTH HOUSE · PARTNERS",
+        "lines": ["Your seventh house is partners.", "Choose one who feels like a *best friend.*", "Nobody circling anybody.", "Two people turning around", "a *life* they both care about."],
+        "labels": [{ "on": "house", "at": 1, "text": "SEVENTH HOUSE · PARTNERS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I choose a partner I'd *choose*", "as a friend.", "We build the *centre* together."]
+      }
+    ]
+  },
+  {
+    "key": "love-growing-together",
+    "title": "Changing each other",
+    "cover": "Change each other *gently*",
+    "caption": "the earth and moon have been shaping each other for billions of years",
+    "hashtags": ["growingtogether", "longtermrelationship", "moon", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "syzygy",
+        "header": "EARTH AND MOON · TIDES",
+        "lines": ["The moon is making your days *longer.*", "Its pull slows the earth's spin,", "a tiny bit every century.", "And the earth turned the moon", "to *face* it, for good."],
+        "labels": [{ "on": "moon", "at": 3, "text": "TIDALLY LOCKED · ONE FACE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "GROWING TOGETHER",
+        "lines": ["Billions of years, *shaping* each other.", "Growing together isn't staying the same.", "It's letting someone *change* you,", "slowly, kindly, and changing them *back.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "We don't have to stay who we were.", "We grow *toward* each other,", "not *away.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-quiet-love",
+    "title": "The quiet kind",
+    "cover": "The *quiet* kind of love",
+    "caption": "the sun's corona is there every day. you only see it when the loud part is covered",
+    "hashtags": ["quietlove", "softlove", "eclipse", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "eclipse",
+        "header": "THE CORONA",
+        "lines": ["You've probably never seen the sun's *corona.*", "It's a soft glow around the sun,", "there every single day.", "You only see it in an *eclipse,*", "when the bright part is covered."],
+        "labels": [{ "on": "sun", "at": 1, "text": "THE CORONA" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "THE QUIET KIND OF LOVE",
+        "lines": ["Some love is like that.", "No *fireworks.*", "Just a warm glow", "that's been there all along,", "waiting for the noise to *settle.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't need *noise* to feel loved.", "I notice the love that *stays.*", "Quiet love is still *love.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-feels-like-home",
+    "title": "Your north star",
+    "cover": "The one that doesn't *move*",
+    "caption": "the north star isn't the brightest star in the sky. it's just the one that doesn't move",
+    "hashtags": ["home", "northstar", "relationships", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "lilac" },
+        "header": "POLARIS · THE NORTH STAR",
+        "lines": ["The North Star isn't the *brightest*", "star in the sky.", "Not even close.", "It's just the one that doesn't *move.*", "The whole sky turns around it."],
+        "labels": [{ "on": "planet", "at": 3, "text": "POLARIS · STAYS PUT" }]
+      },
+      {
+        "art": "wheel",
+        "opts": { "highlight": 4, "highlightAt": 0 },
+        "header": "FOURTH HOUSE · HOME",
+        "lines": ["Home is like that.", "Not the *loudest* person in the room.", "The one you can always *find.*"],
+        "labels": [{ "on": "house", "at": 0, "text": "FOURTH HOUSE · HOME" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want love I can *navigate* by.", "I choose the person who feels like *home,*", "not the one who feels like a *storm.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-scared-of-love",
+    "title": "Closer to the warmth",
+    "cover": "Love is *supposed* to change you",
+    "caption": "the closer a comet gets to the sun, the brighter it shines. even though it's changing",
+    "hashtags": ["fearoflove", "vulnerability", "comet", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "A COMET · NEARING THE SUN",
+        "lines": ["A comet is mostly *ice* and dust.", "As it gets closer to the sun,", "it starts to change.", "It grows a tail", "and *shines* brighter than ever."],
+        "labels": [{ "on": "planet", "at": 3, "text": "THE TAIL · AWAY FROM SUN" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "WHEN LOVE SCARES YOU",
+        "lines": ["Love can feel like that.", "The closer you get to warmth,", "the more of you comes *loose.*", "That isn't falling apart.", "That's how you *shine.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I can be scared and still stay *open.*", "Being changed is not being *lost.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-wrong-time",
+    "title": "Right person, wrong time",
+    "cover": "Most new moons *miss*",
+    "caption": "the moon passes the sun every month. it only lines up for an eclipse a few times a year",
+    "hashtags": ["rightpersonwrongtime", "timing", "eclipse", "astrology", "affirmations"],
+    "keyword": "PASSING",
+    "scenes": [
+      {
+        "art": "syzygy",
+        "opts": { "offline": true },
+        "header": "WHY MOST NEW MOONS MISS",
+        "lines": ["Every month, the moon passes the sun.", "But its path is tilted, just slightly,", "so most months it slips *past*", "a little high or a little *low.*"],
+        "labels": [{ "on": "moon", "at": 2, "text": "TILTED ORBIT · A NEAR MISS" }]
+      },
+      {
+        "art": "eclipse",
+        "header": "RIGHT PERSON · WRONG TIME",
+        "lines": ["The right person at the wrong time", "is a new moon that *missed.*", "Not a failure.", "Just *timing.*", "The sky lines up when it lines up."],
+        "labels": [{ "on": "moon", "at": 1, "text": "SAME SKY · DIFFERENT TIME" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't have to *force* the timing.", "What's meant for me", "will meet me *in line.*"]
+      }
+    ]
+  },
+  {
+    "key": "love-after-loss",
+    "title": "Still lit",
+    "cover": "Even in shadow, you're *lit*",
+    "caption": "in a lunar eclipse the moon doesn't go dark. it glows red with every sunrise and sunset on earth",
+    "hashtags": ["grief", "lovingagain", "lunareclipse", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "phases",
+        "opts": { "lit": 4 },
+        "header": "TOTAL LUNAR ECLIPSE",
+        "lines": ["The moon doesn't go dark in an *eclipse.*", "When it slips into the earth's shadow,", "it glows *red,*", "lit by every sunrise and sunset on earth", "at once."],
+        "labels": [{ "on": "moon", "at": 2, "text": "LIT BY EARTH'S SUNSETS" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "LOVING AFTER LOSS",
+        "lines": ["Grief can feel like that shadow.", "And still, light finds its way to you.", "Loving again doesn't *erase* what you had.", "Your heart can hold *both.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I carry what I lost with *love.*", "I'm allowed to love *again.*", "Both can be true."]
+      }
+    ]
+  },
+  {
+    "key": "love-being-seen",
+    "title": "The far side",
+    "cover": "Your far side isn't *dark*",
+    "caption": "the far side of the moon isn't dark. it gets just as much sun. we just never saw it",
+    "hashtags": ["vulnerability", "beingseen", "moon", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☽", "tone": "lilac" },
+        "header": "THE FAR SIDE OF THE MOON",
+        "lines": ["Nobody saw the far side of the moon", "until nineteen fifty-nine.", "And it isn't *dark.*", "It gets just as much *sun*", "as the side we see."],
+        "labels": [{ "on": "planet", "at": 3, "text": "FAR SIDE · FULLY LIT" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "LETTING YOURSELF BE SEEN",
+        "lines": ["The parts of you nobody's seen", "aren't dark either.", "They're just turned away.", "Let someone *worth it*", "come around to the other side."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I let the right people *see* me.", "All of me is *worth* the light."]
+      }
+    ]
+  },
+  {
+    "key": "love-worth-the-wait",
+    "title": "Worth the wait",
+    "cover": "You are worth the *wait*",
+    "caption": "venus spins so slowly one turn takes longer than its year. it's still the brightest planet up there",
+    "hashtags": ["worththewait", "patience", "venus", "astrology", "affirmations"],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "VENUS · A SLOW SPIN",
+        "lines": ["Venus spins so *slowly*", "that one turn takes longer", "than its whole *year.*"],
+        "labels": [{ "on": "planet", "at": 1, "text": "ONE SPIN · OVER A YEAR" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart" },
+        "header": "BEING WORTH THE WAIT",
+        "lines": ["And it's still the *brightest* planet", "in the night sky.", "Slow isn't the same as *less.*", "Some things take their time", "and are worth every *minute.*"]
+      },
+      {
+        "art": "venus",
+        "opts": { "mirror": true, "mirrorAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I don't rush to be *chosen.*", "I'm worth the *wait,*", "and so is the love I'm waiting for."]
+      }
+    ]
+  }
+]

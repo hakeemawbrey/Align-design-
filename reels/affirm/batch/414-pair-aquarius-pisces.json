@@ -1,0 +1,89 @@
+{
+  "id": "414-pair-aquarius-pisces",
+  "title": "Aquarius and Pisces",
+  "cover": "Aquarius and Pisces, *dreamers*",
+  "keyword": "MATCH",
+  "caption": "aquarius dreams about the future of the world. pisces dreams about the person next to them",
+  "cta": "comment MATCH and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "aquarius",
+    "pisces",
+    "zodiaccompatibility",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "pisces"
+      },
+      "header": "PISCES · AQUARIUS",
+      "lines": [
+        "Aquarius dreams for the *whole world.*",
+        "Pisces dreams for the person *beside* them."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aquarius",
+          "pisces"
+        ],
+        "pairAt": 1
+      },
+      "header": "SEMI-SEXTILE · 30°",
+      "lines": [
+        "The last two signs, side by side.",
+        "A *semi-sextile.* Air and water.",
+        "Fixed and mutable."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "water"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Aquarius gives Pisces a *clear head.*",
+        "Pisces gives Aquarius a *soft* place.",
+        "The friction: detachment meets *devotion.*",
+        "Both believe in something *bigger.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "THE LAST TWO SIGNS",
+      "lines": [
+        "The future and the *feeling*",
+        "were always meant to be *neighbors.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MATCH",
+      "opts": {
+        "face": "Match",
+        "sub": "TWO CHARTS · ONE SKY",
+        "revealAt": 1
+      },
+      "pill": "YOUR MATCH READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MATCH*",
+        "and I'll send you how two charts fit,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

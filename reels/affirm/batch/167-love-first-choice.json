@@ -1,0 +1,81 @@
+{
+  "id": "167-love-first-choice",
+  "title": "Being someone's first choice",
+  "cover": "Be the *first* light",
+  "keyword": "MUTUAL",
+  "caption": "venus shows up before the stars do. being someone's first choice should look like that",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "firstchoice",
+    "venus",
+    "astrology",
+    "affirmations",
+    "love"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "venus",
+      "header": "VENUS · THE EVENING STAR",
+      "lines": [
+        "Before a single star comes out, there's *Venus.*",
+        "For months at a time, it's the evening *star,*",
+        "the first light you see after sunset."
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 2,
+          "text": "THE EVENING STAR"
+        }
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "FIRST · NOT EVENTUALLY",
+      "lines": [
+        "You never have to search the sky for it.",
+        "Being someone's first choice feels like that.",
+        "*Obvious.* Not something you have to guess at,",
+        "or wait until everyone else has *left.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I want to be someone's *first* light,",
+        "not the one they *settle* for.",
+        "I never have to *wonder* where I stand."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

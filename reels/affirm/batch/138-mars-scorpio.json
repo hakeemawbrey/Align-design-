@@ -1,0 +1,91 @@
+{
+  "id": "138-mars-scorpio",
+  "title": "Mars in Scorpio",
+  "cover": "Mars in Scorpio *decides*",
+  "keyword": "MARS",
+  "caption": "mars in scorpio doesn't chase. it decides, then waits like the tide. just don't make it guess",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "marsinscorpio",
+    "scorpio",
+    "marssign",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "mars",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♂",
+        "tone": "rose"
+      },
+      "header": "MARS IN SCORPIO",
+      "lines": [
+        "Before *Pluto* was ever found,",
+        "Scorpio was ruled by *Mars.*",
+        "So yours is at home, and it runs deep."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "♂ · SCORPIO'S OLD RULER"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "scorpio"
+      },
+      "header": "SCORPIO · FIXED WATER",
+      "lines": [
+        "You don't chase. You *decide,*",
+        "and then you're patient as the tide.",
+        "In a fight you go quiet,",
+        "and you remember *everything.*"
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 0,
+          "text": "SCORPIO · THE SCORPION"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "WHAT YOU DESERVE",
+      "lines": [
+        "So hear this, Scorpio.",
+        "You don't need someone to *match* your intensity.",
+        "Just someone who says it now,",
+        "and never makes you *guess.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

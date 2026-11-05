@@ -1,0 +1,93 @@
+{
+  "id": "319-heal-virgo",
+  "title": "Virgo, after a breakup",
+  "cover": "Virgo, it wasn't a *mistake*",
+  "keyword": "PASSING",
+  "caption": "virgo after a breakup makes a list of everything they could've done better. put the list down",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "virgo",
+    "breakup",
+    "healing",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "heal",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "virgo"
+      },
+      "header": "VIRGO · MUTABLE EARTH",
+      "lines": [
+        "Virgo, you're already making a *list*",
+        "of everything you could've done better.",
+        "Ruled by *Mercury,* you study to feel safe."
+      ],
+      "labels": [
+        {
+          "on": "sign",
+          "at": 2,
+          "text": "VIRGO · RULED BY MERCURY"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "highlight": 6,
+        "highlightAt": 1
+      },
+      "header": "SIXTH HOUSE · DAILY CARE",
+      "lines": [
+        "But a breakup isn't a *mistake*",
+        "you can fix with a better routine.",
+        "Some things end",
+        "because they were *finished.*"
+      ],
+      "labels": [
+        {
+          "on": "house",
+          "at": 1,
+          "text": "6TH HOUSE · ROUTINES"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I did my best with what I knew.",
+        "I don't have to *earn* my rest.",
+        "I'm allowed to be *unfinished* too."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

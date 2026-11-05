@@ -1,0 +1,76 @@
+{
+  "id": "406-love-first-date-nerves",
+  "title": "First date nerves",
+  "cover": "Even the ground *rises*",
+  "keyword": "CHART",
+  "caption": "the solid ground under you rises a little when the moon goes over. nerves are just a tide",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "firstdate",
+    "dating",
+    "astrology",
+    "affirmations",
+    "moon"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "EARTH TIDES · SOLID GROUND",
+      "lines": [
+        "The ground under your *feet* moves with the moon.",
+        "Not just the ocean. The actual rock",
+        "*lifts* a little, twice a day."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "FIRST DATE · A TIDE",
+      "lines": [
+        "The earth isn't *nervous.*",
+        "It's just feeling something close.",
+        "That flutter before a first date",
+        "isn't a warning. It's a *tide.*",
+        "It means you *care* how this goes."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My nerves just mean I'm *open.*",
+        "I don't have to be perfect to be *liked.*",
+        "I just have to show up as *me.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

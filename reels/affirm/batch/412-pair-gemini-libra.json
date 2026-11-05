@@ -1,0 +1,93 @@
+{
+  "id": "412-pair-gemini-libra",
+  "title": "Gemini and Libra",
+  "cover": "Gemini + Libra · *trine*",
+  "keyword": "MATCH",
+  "caption": "a first date that lasts nine hours and ends with a plan for the next one",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "gemini",
+    "libra",
+    "zodiaccompatibility",
+    "synastry",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "air"
+      },
+      "header": "GEMINI · LIBRA · AIR · AIR",
+      "lines": [
+        "The first date lasts *nine hours.*",
+        "That's Gemini and Libra.",
+        "Air meets air."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "gemini",
+          "libra"
+        ],
+        "pairAt": 0
+      },
+      "header": "TRINE · 120°",
+      "lines": [
+        "Four signs apart, they form a *trine,*",
+        "the aspect of things that just *flow.*",
+        "Mutable Gemini, cardinal Libra."
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "WHAT EACH GIVES",
+      "lines": [
+        "Libra gives Gemini *romance* and manners.",
+        "Gemini gives Libra *ideas* and nerve.",
+        "The friction: skipping the hard talk",
+        "to keep it *pretty.*"
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Peace isn't *peace*",
+        "if I'm hiding *half* of me."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

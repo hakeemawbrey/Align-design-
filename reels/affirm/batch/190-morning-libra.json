@@ -1,0 +1,84 @@
+{
+  "id": "190-morning-libra",
+  "title": "Good morning, Libra",
+  "cover": "Good morning, *Libra*",
+  "keyword": "CHART",
+  "caption": "libra, you spend all day balancing everyone. start the scales with you",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "libra",
+    "goodmorning",
+    "morningaffirmations",
+    "venus",
+    "astrology"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "morning",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "GOOD MORNING · LIBRA",
+      "lines": [
+        "Good morning, Libra. Look in the *mirror* first.",
+        "Your ruler is *Venus,*",
+        "and her symbol is said to be a hand mirror."
+      ],
+      "labels": [
+        {
+          "on": "handle",
+          "at": 2,
+          "text": "VENUS · RULER OF LIBRA"
+        }
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "libra"
+      },
+      "header": "LIBRA · THE SCALES",
+      "lines": [
+        "You spend all day *balancing* everyone.",
+        "Start the scales with you."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My needs are part of the *balance.*",
+        "I can choose myself without guilt.",
+        "The right love meets me *halfway,*",
+        "and I don't have to ask twice."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

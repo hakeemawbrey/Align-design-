@@ -1,0 +1,87 @@
+{
+  "id": "422-love-standards-not-walls",
+  "title": "Standards, not walls",
+  "cover": "Standards, not *walls*",
+  "keyword": "CHART",
+  "caption": "earth doesn't wall out the sun. it turns away what would hurt and lets the light in",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "boundaries",
+    "standards",
+    "selfworth",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☉",
+        "tone": "gold"
+      },
+      "header": "THE SOLAR WIND",
+      "lines": [
+        "There's a wind blowing off the *sun.*",
+        "It's made of charged particles,",
+        "and over time it can strip",
+        "a planet's air *away.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "SOLAR WIND · CHARGED"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "EARTH'S MAGNETIC FIELD",
+      "lines": [
+        "Earth doesn't build a *wall.*",
+        "Its magnetic field turns the wind aside",
+        "and still lets the *sunlight* through.",
+        "That's a standard.",
+        "A wall keeps out the *warmth* too."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I keep out what *hurts* me,",
+        "not what could *hold* me.",
+        "My standards let the *light* in."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "READ THE SKY BEFORE THE FACE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

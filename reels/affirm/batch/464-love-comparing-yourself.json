@@ -1,0 +1,83 @@
+{
+  "id": "464-love-comparing-yourself",
+  "title": "Comparing yourself",
+  "cover": "Venus spins the *other* way",
+  "keyword": "CHART",
+  "caption": "on venus the sun rises in the west. still the brightest planet in our sky",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "comparison",
+    "venus",
+    "astrology",
+    "affirmations",
+    "selflove"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "venus",
+      "header": "VENUS · SPINS BACKWARDS",
+      "lines": [
+        "On Venus, the sun rises in the *west.*",
+        "It spins the opposite way to most planets,",
+        "and slower than any of them."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "STILL THE BRIGHTEST",
+      "lines": [
+        "And it's still the *brightest* planet in our sky.",
+        "It never had to turn like the others",
+        "to *shine.*",
+        "You don't either."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 0,
+          "text": "BRIGHTEST PLANET"
+        }
+      ]
+    },
+    {
+      "art": "venus",
+      "opts": {
+        "mirror": true,
+        "mirrorAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't measure my light by *theirs.*",
+        "I'm allowed to *turn* my own way.",
+        "The way I spin is *mine.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Your sky already knows your *type.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

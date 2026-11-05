@@ -1,0 +1,92 @@
+{
+  "id": "372-pair-virgo-sagittarius",
+  "title": "Virgo and Sagittarius",
+  "cover": "Virgo and Sagittarius, *learning*",
+  "keyword": "MATCH",
+  "caption": "virgo packs the first-aid kit. sagittarius already left. the funniest square in the zodiac",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "virgo",
+    "sagittarius",
+    "square",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE PLAN · THE LEAP",
+      "lines": [
+        "Virgo packed the *first-aid kit.*",
+        "Sagittarius is already out the door."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "virgo",
+          "sagittarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "SQUARE · 90°",
+      "lines": [
+        "Earth and fire, a *square* apart.",
+        "Both mutable, both restless,",
+        "in very *different* directions."
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "earth",
+        "second": "fire"
+      },
+      "header": "GIVE AND TAKE",
+      "lines": [
+        "Virgo gives Sagittarius a *plan* that holds.",
+        "Sagittarius gives Virgo the *bigger picture.*",
+        "The work: details versus *faith.*",
+        "Both are right. Take turns."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Our tension is *teaching* us.",
+        "I can plan *and* leap."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

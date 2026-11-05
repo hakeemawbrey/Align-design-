@@ -1,0 +1,89 @@
+{
+  "id": "276-mode-cardinal-fixed",
+  "title": "Cardinal and fixed",
+  "cover": "*Cardinal* and fixed",
+  "keyword": "MATCH",
+  "caption": "a cardinal sign and a fixed sign. one starts it, one makes it last",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "cardinalsigns",
+    "fixedsigns",
+    "compatibility",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "taurus"
+        ],
+        "pairAt": 2
+      },
+      "header": "CARDINAL · FIXED",
+      "lines": [
+        "Every season has a *starter*",
+        "and a keeper.",
+        "Aries opens it, Taurus *holds* it.",
+        "That's cardinal and fixed."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 2,
+          "text": "OPEN · HOLD"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE SPARK AND THE KEEPER",
+      "lines": [
+        "In love, one brings the *spark,*",
+        "the other makes it last.",
+        "Cardinal can feel slowed down.",
+        "Fixed can feel *rushed.*",
+        "Both are just protecting what they love."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Our pace can be *different*",
+        "and our love can be the *same.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "It has to be *mutual.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "230-firstdate-aquarius",
+  "title": "First date with an Aquarius",
+  "cover": "Take an Aquarius to the *stars*",
+  "keyword": "MATCH",
+  "caption": "an aquarius first date belongs somewhere a little strange. a planetarium. a night market",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "aquarius",
+    "firstdate",
+    "datingtips",
+    "zodiaclove",
+    "astrology"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "firstdate",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "aquarius"
+      },
+      "header": "AQUARIUS · FIXED AIR",
+      "lines": [
+        "An Aquarius first date belongs",
+        "somewhere a little *strange.*",
+        "A planetarium. A night market.",
+        "Something they'll *think* about tomorrow."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♄",
+        "tone": "lilac"
+      },
+      "header": "SATURN · MODERN URANUS",
+      "lines": [
+        "Ruled by *Saturn* and modern *Uranus,*",
+        "they're drawn to the *original.*",
+        "So tell them your strangest opinion.",
+        "Ask theirs. Then *really* listen."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I fall for *minds* first.",
+        "I want a best friend",
+        "who also has a *crush* on me."
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

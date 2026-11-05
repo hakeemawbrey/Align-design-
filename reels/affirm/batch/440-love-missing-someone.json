@@ -1,0 +1,86 @@
+{
+  "id": "440-love-missing-someone",
+  "title": "Missing someone",
+  "cover": "Distance doesn't cancel *pull*",
+  "keyword": "PASSING",
+  "caption": "the moon drifts about four centimeters further every year and still moves the tides",
+  "cta": "comment PASSING and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "missingyou",
+    "moon",
+    "astrology",
+    "affirmations",
+    "movingon"
+  ],
+  "voice": "bm_george",
+  "speed": 0.92,
+  "family": "love-1",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "☽",
+        "tone": "lilac"
+      },
+      "header": "THE MOON · DRIFTING AWAY",
+      "lines": [
+        "The moon is leaving us, very *slowly.*",
+        "About four *centimeters* every year.",
+        "And it still moves the tides, every day."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE PULL · STILL THERE",
+      "lines": [
+        "Missing someone works like that.",
+        "The distance grows, and the *pull*",
+        "doesn't get the *message* right away.",
+        "Missing them isn't a sign to go *back.*",
+        "It's just gravity catching up."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "STILL PULLING"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass",
+        "forwardAt": 3
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can *miss* someone and still let go.",
+        "The tide comes in. The tide goes *out.*",
+        "And I keep walking *forward.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · PASSING",
+      "opts": {
+        "face": "Passing",
+        "sub": "FOR THE NEXT TIME THEY TEXT",
+        "revealAt": 1
+      },
+      "pill": "YOUR RETROGRADE KIT IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *PASSING*",
+        "and I'll send you what to say when they text,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

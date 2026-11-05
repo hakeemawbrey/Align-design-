@@ -1,0 +1,84 @@
+{
+  "id": "494-love-feeling-safe",
+  "title": "Steady light",
+  "cover": "Safe love doesn't *flicker*",
+  "keyword": "MUTUAL",
+  "caption": "stars twinkle. planets mostly hold steady. that's the kind of love that feels safe",
+  "cta": "comment MUTUAL and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "safelove",
+    "securelove",
+    "relationships",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "love-2",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "STARS TWINKLE · PLANETS DON'T",
+      "lines": [
+        "Stars *twinkle.* Planets mostly don't.",
+        "They're close enough that their light",
+        "holds *steady* through the air."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 1,
+          "text": "PLANET · STEADY LIGHT"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "FEELING SAFE IN LOVE",
+      "lines": [
+        "Safe love is planet light.",
+        "Not a spark you're always *guessing* at,",
+        "but something that's there",
+        "every time you look up."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *earn* my safety.",
+        "Calm is not *boring.*",
+        "It's how I know love is *real.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MUTUAL",
+      "opts": {
+        "face": "Mutual",
+        "sub": "FOR THE ONE WHO KEEPS TRYING",
+        "revealAt": 1
+      },
+      "pill": "YOUR AFFIRMATION IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MUTUAL*",
+        "and I'll send you the affirmation for it,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

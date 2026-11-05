@@ -1,0 +1,83 @@
+{
+  "id": "068-venus-taurus",
+  "title": "Venus in Taurus",
+  "cover": "Venus in Taurus wants *steady*",
+  "keyword": "VENUS",
+  "caption": "venus in taurus is not impressed by fireworks. it is impressed by the same warm text every night",
+  "cta": "comment VENUS and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "venusintaurus",
+    "taurus",
+    "venussign",
+    "astrology",
+    "lovelanguage"
+  ],
+  "voice": "bf_isabella",
+  "speed": 0.92,
+  "family": "venus",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "taurus"
+      },
+      "header": "VENUS IN TAURUS",
+      "lines": [
+        "Grand gestures don't really move you.",
+        "*Consistency* does.",
+        "The same warm text, the same booth,",
+        "the hand already reaching for yours."
+      ]
+    },
+    {
+      "art": "venus",
+      "header": "VENUS RULES TAURUS",
+      "lines": [
+        "Venus rules Taurus,",
+        "so here she's *home,* and in no hurry.",
+        "You need love you can touch,",
+        "taste, and count on.",
+        "Slow isn't boring to you. Slow is *safe.*"
+      ],
+      "labels": [
+        {
+          "on": "glass",
+          "at": 0,
+          "text": "♀ · AT HOME IN TAURUS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I'm allowed to want *steady.*",
+        "The right person won't find me *slow.*",
+        "They'll find me *worth staying* for."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · VENUS",
+      "opts": {
+        "face": "Venus",
+        "sub": "HOW YOU NEED TO BE LOVED",
+        "glyph": "♀",
+        "revealAt": 1
+      },
+      "pill": "YOUR VENUS READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *VENUS*",
+        "and I'll send you what yours needs,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

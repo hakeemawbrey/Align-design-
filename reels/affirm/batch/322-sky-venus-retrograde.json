@@ -1,0 +1,83 @@
+{
+  "id": "322-sky-venus-retrograde",
+  "title": "Venus retrograde",
+  "cover": "When *Venus* turns around",
+  "keyword": "PASSING",
+  "caption": "venus spends less time retrograde than any other planet. when it does, old flames come back to the window",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "venusretrograde",
+    "retrograde",
+    "venus",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "VENUS · RETROGRADE",
+      "lines": [
+        "No planet spends less time *retrograde.*",
+        "About every year and a half,",
+        "*Venus* seems to turn around",
+        "for about forty days."
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "RETROGRADE · ABOUT 40 DAYS"
+        }
+      ]
+    },
+    {
+      "art": "loop",
+      "header": "BACKWARDS · ON PURPOSE",
+      "lines": [
+        "So when it does, love gets *reviewed.*",
+        "Old flames drift back to the window.",
+        "Not always to stay.",
+        "To show you what you *value* now."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can feel the *pull*",
+        "and still choose forward.",
+        "My heart is allowed to *update.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "292-sky-eclipse-season",
+  "title": "Eclipse season",
+  "cover": "It's *eclipse* season",
+  "keyword": "MOON",
+  "caption": "the moon's orbit is tilted, so most months it misses. twice a year it doesn't",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "eclipseseason",
+    "eclipse",
+    "astrology",
+    "affirmations",
+    "change"
+  ],
+  "voice": "af_bella",
+  "speed": 0.92,
+  "family": "sky",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true
+      },
+      "header": "THE MOON'S TILTED ORBIT",
+      "lines": [
+        "Most months, the moon *misses.*",
+        "Its orbit is tilted about five degrees,",
+        "so it slips past the sun, above or below."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "TILTED · ABOUT 5°"
+        }
+      ]
+    },
+    {
+      "art": "eclipse",
+      "header": "TWICE A YEAR · ABOUT FIVE WEEKS",
+      "lines": [
+        "But about every six months, it lines *up.*",
+        "Eclipses usually come in pairs,",
+        "two weeks *apart.*",
+        "Things that stalled for years",
+        "can turn in a *fortnight.*"
+      ]
+    },
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 1
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I don't have to *force* the turn.",
+        "What's meant to line up",
+        "will line up *on time.*"
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 2,
+          "text": "ONE LINE · AN ECLIPSE"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

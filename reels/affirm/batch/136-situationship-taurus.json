@@ -1,0 +1,83 @@
+{
+  "id": "136-situationship-taurus",
+  "title": "Taurus in a situationship",
+  "cover": "Taurus, *almost* isn't home",
+  "keyword": "MUTUAL",
+  "caption": "taurus can get comfortable in almost anything. comfortable isn't the same as steady",
+  "cta": "comment your city to vote where align opens next ✦",
+  "hashtags": [
+    "taurus",
+    "situationship",
+    "dating",
+    "astrology",
+    "affirmations"
+  ],
+  "voice": "af_sarah",
+  "speed": 0.92,
+  "family": "situationship",
+  "ending": "city",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "TAURUS · RULED BY VENUS",
+      "lines": [
+        "Taurus, you can make *almost* feel like home.",
+        "Ruled by *Venus,* you get comfortable,",
+        "and once you're comfortable, you stay."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart",
+        "threadAt": 1
+      },
+      "header": "WARM · THEN QUIET",
+      "lines": [
+        "But warm on a Friday",
+        "and quiet by Tuesday",
+        "isn't *steady.* It's just familiar.",
+        "You know the difference."
+      ],
+      "labels": [
+        {
+          "on": "thread",
+          "at": 1,
+          "text": "ON · OFF · ON"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I deserve love I can *count on.*",
+        "Same person, every day of the week.",
+        "Steady is not too much to *ask.*"
+      ]
+    },
+    {
+      "art": "cities",
+      "header": "WHERE SHOULD ALIGN OPEN NEXT",
+      "opts": {
+        "voteAt": 1
+      },
+      "pill": "COMMENT YOUR CITY",
+      "pillAt": 1,
+      "lines": [
+        "The *Align* app is opening city by city.",
+        "Comment your *city*",
+        "to vote where it opens *next.*"
+      ]
+    }
+  ]
+}

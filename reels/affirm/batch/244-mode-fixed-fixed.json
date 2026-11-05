@@ -1,0 +1,92 @@
+{
+  "id": "244-mode-fixed-fixed",
+  "title": "Fixed and fixed",
+  "cover": "*Fixed* and fixed",
+  "keyword": "MATCH",
+  "caption": "two fixed signs in love. nobody's leaving. nobody's apologizing first either",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "fixedsigns",
+    "compatibility",
+    "modalities",
+    "astrology",
+    "zodiaclove"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "modes",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "leo",
+          "scorpio"
+        ],
+        "pairAt": 3
+      },
+      "header": "FIXED · FIXED",
+      "lines": [
+        "Two fixed signs in love:",
+        "nobody's *leaving.*",
+        "Nobody's moving, either.",
+        "Different fixed signs sit square",
+        "or *opposite* in the sky."
+      ],
+      "labels": [
+        {
+          "on": "pair",
+          "at": 3,
+          "text": "LEO · SCORPIO"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "apart"
+      },
+      "header": "THE STANDOFF",
+      "lines": [
+        "That's the gift and the *test.*",
+        "The love doesn't budge.",
+        "Neither does the *pride.*",
+        "You'll stay through the hard seasons,",
+        "but you can also dig in",
+        "over who *apologizes* first."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Bending isn't *losing.*",
+        "I can stand firm",
+        "and still reach for *you.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

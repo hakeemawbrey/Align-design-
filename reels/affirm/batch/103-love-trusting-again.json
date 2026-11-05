@@ -1,0 +1,83 @@
+{
+  "id": "103-love-trusting-again",
+  "title": "Trusting again",
+  "cover": "Venus always comes *back*",
+  "keyword": "CHART",
+  "caption": "venus disappears into the sun's glare, then comes back as the morning star",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "trustagain",
+    "venus",
+    "astrology",
+    "affirmations",
+    "morningstar"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "love-1",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "venus",
+      "header": "VENUS · LOST IN THE GLARE",
+      "lines": [
+        "Sometimes Venus just *disappears.*",
+        "It slips into the sun's glare, out of sight.",
+        "Then it comes back as the *morning* star,",
+        "shining its brightest just before *dawn.*"
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "rose"
+      },
+      "header": "THE MORNING STAR",
+      "lines": [
+        "Trusting again is like that.",
+        "You went quiet for a while.",
+        "That wasn't you *breaking.*",
+        "That was you getting ready to *rise.*"
+      ],
+      "labels": [
+        {
+          "on": "planet",
+          "at": 3,
+          "text": "BRIGHTEST BEFORE DAWN"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can open my heart *again.*",
+        "What hurt me before doesn't get to *decide.*",
+        "I'm coming back *brighter.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

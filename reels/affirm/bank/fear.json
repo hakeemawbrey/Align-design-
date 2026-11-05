@@ -1,0 +1,352 @@
+[
+  {
+    "key": "fear-aries",
+    "title": "What an Aries quietly fears",
+    "cover": "Aries, nobody's *backup*",
+    "caption": "for the aries who would rather lose than be someone's maybe",
+    "hashtags": ["aries", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aries" },
+        "header": "ARIES · THE FIRST SIGN",
+        "lines": ["Aries, you'd rather lose than be someone's *backup.*", "You're the *first* sign of the zodiac.", "Second place feels like a door closing."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "THE QUIET FEAR · SECOND PLACE",
+        "lines": ["So the thing that scares you is this:", "you'll go all in,", "and they'll still be *deciding.*", "You'll be their *maybe*", "while they were your *yes.*"]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 1 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I want someone who's *sure.*", "If I'm a maybe,", "I'm *already* gone."],
+        "labels": [{ "on": "line", "at": 1, "text": "BOTH IN LINE" }]
+      }
+    ]
+  },
+  {
+    "key": "fear-taurus",
+    "title": "What a Taurus quietly fears",
+    "cover": "Taurus, a home on *sand*",
+    "caption": "for the taurus who loves in years and is scared of someone who leaves in weeks",
+    "hashtags": ["taurus", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "taurus" },
+        "header": "TAURUS · FIXED EARTH",
+        "lines": ["Taurus, it isn't change you're scared of.", "It's building a home on *sand.*", "You don't love in weeks.", "You love in *years.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "THE QUIET FEAR",
+        "lines": ["So the fear is quiet, but heavy:", "that you'll pour years into someone", "and one day they'll just *walk.*", "And you'll be left holding the *keys.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♀", "tone": "rose" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I only build with someone", "who's *building* too.", "My roots deserve *steady* ground."]
+      }
+    ]
+  },
+  {
+    "key": "fear-gemini",
+    "title": "What a Gemini quietly fears",
+    "cover": "Gemini, who asks *you*",
+    "caption": "for the gemini who asks everyone everything and gets asked nothing back",
+    "hashtags": ["gemini", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "MERCURY · THE MESSENGER",
+        "lines": ["Gemini, you ask a hundred *questions.*", "About their day, their dog, their *dreams.*", "*Mercury* made you fluent in other people."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 1 },
+        "header": "THE QUIET FEAR · ONE-SIDED",
+        "lines": ["And the fear underneath it all", "is that nobody will ask *you* one back.", "That you'll be fascinating to everyone", "and *known* by no one."],
+        "labels": [{ "on": "thread", "at": 1, "text": "ONE WAY ONLY" }]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "gemini" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve someone *curious* about me.", "My story is worth *asking* for."]
+      }
+    ]
+  },
+  {
+    "key": "fear-cancer",
+    "title": "What a Cancer quietly fears",
+    "cover": "Cancer, who holds *you*",
+    "caption": "who takes care of the cancer who takes care of everyone",
+    "hashtags": ["cancer", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "cancer" },
+        "header": "CANCER · RULED BY THE MOON",
+        "lines": ["Cancer, you hold *everyone.*", "The friend at midnight, the partner's bad week,", "the family that calls *you* first."]
+      },
+      {
+        "art": "phases",
+        "opts": { "lit": 7 },
+        "header": "THE QUIET FEAR · RUNNING LOW",
+        "lines": ["So here's the fear inside your *shell:*", "that if you ever stopped *giving,*", "nobody would come looking.", "That you're loved for the *care,*", "not for you."],
+        "labels": [{ "on": "moon", "at": 1, "text": "WANING · RUNNING LOW" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve to be *held*", "by the people I hold.", "Care goes *both* ways."]
+      }
+    ]
+  },
+  {
+    "key": "fear-leo",
+    "title": "What a Leo quietly fears",
+    "cover": "Leo, loved in the *dark*",
+    "caption": "for the leo who's scared they're only loved on the bright days",
+    "hashtags": ["leo", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "☉", "tone": "gold" },
+        "header": "LEO · RULED BY THE SUN",
+        "lines": ["Leo, you're afraid they love the *light,* not you.", "The fun one, the *loud* one,", "the one who walks in and warms the room."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 2 },
+        "header": "THE QUIET FEAR · DIM DAYS",
+        "lines": ["So on the days you're tired,", "or sad, or just *quiet,*", "you wonder if they'll still *stay.*"]
+      },
+      {
+        "art": "eclipse",
+        "header": "STILL THE SUN",
+        "lines": ["But even in an *eclipse,*", "the sun is still the sun.", "You deserve someone who stays", "for the *dark* part too."],
+        "labels": [{ "on": "sun", "at": 1, "text": "ECLIPSE · STILL THE SUN" }]
+      }
+    ]
+  },
+  {
+    "key": "fear-virgo",
+    "title": "What a Virgo quietly fears",
+    "cover": "Virgo, who *notices* you",
+    "caption": "you know how they take their coffee. do they know yours",
+    "hashtags": ["virgo", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "virgo" },
+        "header": "VIRGO · THE MAIDEN",
+        "lines": ["Virgo, you know how they take their *coffee.*", "Their worries, their mother's *birthday,*", "the song that makes them cry."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "THE QUIET FEAR · UNNOTICED",
+        "lines": ["Here's what you'd never say:", "you're not sure anyone *notices* you back.", "That you'll spend your life", "remembering the details", "of someone who forgets *yours.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "☿", "tone": "mint" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve someone who *notices* me.", "Being seen is not *too much* to ask."]
+      }
+    ]
+  },
+  {
+    "key": "fear-libra",
+    "title": "What a Libra quietly fears",
+    "cover": "Libra, you can't hold it *alone*",
+    "caption": "for the libra who's tired of being the only one keeping it level",
+    "hashtags": ["libra", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "libra" },
+        "header": "LIBRA · THE SCALES",
+        "lines": ["Libra, you're tired of holding the *scales* alone.", "You smooth every fight, plan every *date,*", "and say sorry first, even when it wasn't you."]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true },
+        "header": "THE QUIET FEAR · OFF BALANCE",
+        "lines": ["What you don't say out loud", "is that if you *stopped,*", "it would all fall *apart.*", "That you're the only thing", "keeping it in line."],
+        "labels": [{ "on": "moon", "at": 1, "text": "OUT OF LINE" }]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "A real love holds the *other* side.", "I am not the only one", "keeping us *level.*"]
+      }
+    ]
+  },
+  {
+    "key": "fear-scorpio",
+    "title": "What a Scorpio quietly fears",
+    "cover": "Scorpio, afraid of being *fooled*",
+    "caption": "for the scorpio who gave all of it and got half",
+    "hashtags": ["scorpio", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "scorpio" },
+        "header": "SCORPIO · THE SCORPION",
+        "lines": ["Scorpio, you're not afraid of being *hurt.*", "You're afraid of being *fooled.*"]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "apart", "threadAt": 4 },
+        "header": "THE QUIET FEAR · ALL IN",
+        "lines": ["You give your loyalty *whole,*", "no hedging, no backup plan.", "So what scares you, quietly,", "is handing someone everything", "and finding out they were only *half* there."]
+      },
+      {
+        "art": "syzygy",
+        "opts": { "offline": true, "alignAt": 2 },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I give all of me", "to people who give all of *them.*", "I'm allowed to want *all* of it back."],
+        "labels": [{ "on": "line", "at": 2, "text": "ONE LINE · BOTH WAYS" }]
+      }
+    ]
+  },
+  {
+    "key": "fear-sagittarius",
+    "title": "What a Sagittarius quietly fears",
+    "cover": "Sagittarius, not a *phase*",
+    "caption": "for the sagittarius who's always been somebody's best summer",
+    "hashtags": ["sagittarius", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "sagittarius" },
+        "header": "SAGITTARIUS · MUTABLE FIRE",
+        "lines": ["Every Sagittarius has been someone's *best summer.*", "The fun one. The *road trip.*", "The story they tell at parties."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "pass", "forwardAt": 3 },
+        "header": "THE QUIET FEAR · A CHAPTER",
+        "lines": ["*Jupiter* made you big, bright, easy to love,", "and you're scared that's all they see.", "That you'll be someone's *phase*", "and never their whole *life.*"]
+      },
+      {
+        "art": "planet",
+        "opts": { "glyph": "♃", "tone": "gold" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I'm not a *chapter.*", "I deserve someone who wants", "the *whole* story with me."]
+      }
+    ]
+  },
+  {
+    "key": "fear-capricorn",
+    "title": "What a Capricorn quietly fears",
+    "cover": "Capricorn, *both* of you build",
+    "caption": "for the capricorn who thinks love falls apart the second they stop carrying it",
+    "hashtags": ["capricorn", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": { "glyph": "♄", "tone": "lilac", "ring": true },
+        "header": "CAPRICORN · RULED BY SATURN",
+        "lines": ["Capricorn, you're good at almost *everything.*", "*Saturn* made sure of that.", "So here's what you'd never admit:", "you're scared of *failing* at love."]
+      },
+      {
+        "art": "sign",
+        "opts": { "sign": "capricorn" },
+        "header": "THE QUIET FEAR · CARRYING IT",
+        "lines": ["Because love is the one thing", "you can't fix by working *harder.*", "So when it wobbles,", "you carry it like it's *all* on you."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "meet" },
+        "header": "TWO PAIRS OF HANDS",
+        "lines": ["But love was never a *solo* climb.", "You can't carry it alone,", "and you were never *meant* to.", "It only works when you *both* build."]
+      }
+    ]
+  },
+  {
+    "key": "fear-aquarius",
+    "title": "What an Aquarius quietly fears",
+    "cover": "Aquarius, not too *strange*",
+    "caption": "for the aquarius who keeps everyone at friend distance, just in case",
+    "hashtags": ["aquarius", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "aquarius" },
+        "header": "AQUARIUS · THE WATER BEARER",
+        "lines": ["Aquarius, people love your weird from *far away.*", "The odd ideas at the party,", "the *different* way you see things."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "THE QUIET FEAR · UP CLOSE",
+        "lines": ["But you're quietly afraid", "that up close, it's too *much,*", "and they'll want someone *simpler.*", "So you keep everyone at friend distance,", "just in case."]
+      },
+      {
+        "art": "elements",
+        "opts": { "element": "air" },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "The right person won't *tolerate* my weird.", "They'll *meet* me in it."]
+      }
+    ]
+  },
+  {
+    "key": "fear-pisces",
+    "title": "What a Pisces quietly fears",
+    "cover": "Pisces, you love a little *more*",
+    "caption": "for the pisces pouring an ocean into someone holding out a cup",
+    "hashtags": ["pisces", "zodiaclove", "relationships", "astrology", "affirmations"],
+    "keyword": "MUTUAL",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": { "sign": "pisces" },
+        "header": "PISCES · WATER",
+        "lines": ["Pisces, you always love a little *more.*", "More patience, more chances,", "more of yourself than anyone *asked* for."]
+      },
+      {
+        "art": "figures",
+        "opts": { "pose": "orbit" },
+        "header": "THE QUIET FEAR · UNEVEN TIDES",
+        "lines": ["Somewhere under all that is a fear", "it will *always* be like this.", "You, pouring the whole sea,", "and them, holding out a *cup.*"]
+      },
+      {
+        "art": "venus",
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": ["Say it with me.", "I deserve love as *deep* as mine.", "I don't have to *drown*", "to be enough."]
+      }
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "id": "479-pair-libra-sagittarius",
+  "title": "Libra and Sagittarius",
+  "cover": "Libra and Sagittarius, *lucky*",
+  "keyword": "MATCH",
+  "caption": "venus and jupiter are the sky's two lucky planets, and these two signs know it",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "libra",
+    "sagittarius",
+    "sextile",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "am_michael",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "VENUS · JUPITER",
+      "lines": [
+        "Venus and Jupiter are the sky's *lucky* planets.",
+        "One rules Libra. One rules *Sagittarius.*"
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "libra",
+          "sagittarius"
+        ],
+        "pairAt": 0
+      },
+      "header": "SEXTILE · 60°",
+      "lines": [
+        "Sixty degrees apart, a *sextile.*",
+        "Cardinal air, mutable fire.",
+        "Talk turns into *adventure.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "fire"
+      },
+      "header": "THE EXCHANGE",
+      "lines": [
+        "Libra gives Sagittarius *grace.*",
+        "Sagittarius gives Libra *nerve.*",
+        "The friction: Libra weighs, Sagittarius *blurts.*",
+        "Tact and truth can share a table."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can be *honest* and kind.",
+        "Our luck is something we *make.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Stop swiping on *faces.*",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

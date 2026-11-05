@@ -1,0 +1,89 @@
+{
+  "id": "087-phases-first-quarter",
+  "title": "The first quarter moon",
+  "cover": "The quarter moon is *half*",
+  "keyword": "MOON",
+  "caption": "the quarter moon is the month's first square. a hard moment isn't an ending",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "firstquartermoon",
+    "moonphases",
+    "astrology",
+    "affirmations",
+    "relationships"
+  ],
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "family": "phases",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 2
+      },
+      "header": "FIRST QUARTER",
+      "lines": [
+        "It's called a *quarter* moon,",
+        "but you can see *half* of it.",
+        "It's a quarter of the way",
+        "around its orbit."
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 2,
+          "text": "ONE QUARTER · ONE WEEK IN"
+        }
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "aries",
+          "cancer"
+        ],
+        "pairAt": 1
+      },
+      "header": "MOON · SUN · NINETY DEGREES",
+      "lines": [
+        "Here the moon is ninety degrees from the sun.",
+        "That angle is called a *square.*",
+        "It's the month's first real *push.*",
+        "In love, it's the first hard choice."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can disagree and still *stay.*",
+        "Friction is how I *grow,*",
+        "not how I leave."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "A NEW DEAL AT 11:11",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "The right one won't need *translating.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

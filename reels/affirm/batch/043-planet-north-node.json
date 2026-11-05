@@ -1,0 +1,86 @@
+{
+  "id": "043-planet-north-node",
+  "title": "The North Node in love",
+  "cover": "The *North Node* in love",
+  "keyword": "CHART",
+  "caption": "the north node isn't a planet. it's the direction your heart is still learning to go",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "northnode",
+    "lunarnodes",
+    "birthchart",
+    "astrology",
+    "growth"
+  ],
+  "voice": "af_nicole",
+  "speed": 1.08,
+  "family": "planets",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "syzygy",
+      "opts": {
+        "offline": true,
+        "alignAt": 3
+      },
+      "header": "THE NODES · WHERE PATHS CROSS",
+      "lines": [
+        "The North Node isn't a *planet.*",
+        "It's where the Moon's path",
+        "*crosses* the Sun's.",
+        "Eclipses only happen near the nodes."
+      ],
+      "labels": [
+        {
+          "on": "line",
+          "at": 3,
+          "text": "THE NODES · ECLIPSE POINTS"
+        }
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "pass"
+      },
+      "header": "SOUTH NODE · NORTH NODE",
+      "lines": [
+        "Its opposite, the *South Node,*",
+        "is what feels familiar.",
+        "The North Node is where you're *growing.*",
+        "In love, that's often the person",
+        "who doesn't feel like *home* yet."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I can choose what *grows* me",
+        "over what's familiar."
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "YOU WON'T ARRIVE ALONE",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Love should feel like *alignment.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

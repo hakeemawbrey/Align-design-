@@ -1,0 +1,84 @@
+{
+  "id": "154-fullmoon-gemini",
+  "title": "Full moon in Gemini",
+  "cover": "Full moon in *Gemini*",
+  "keyword": "MOON",
+  "caption": "a gemini full moon lights up every word, the ones you said and the ones you keep rehearsing",
+  "cta": "comment MOON and i'll send it to you ✦ free from the align app",
+  "hashtags": [
+    "fullmoon",
+    "fullmooningemini",
+    "gemini",
+    "astrology",
+    "overthinking"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "fullmoon",
+  "ending": "comment",
+  "scenes": [
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 4
+      },
+      "header": "FULL MOON IN GEMINI",
+      "lines": [
+        "A Gemini full moon lights up every *word.*",
+        "The ones you said,",
+        "and the ones you're still *rehearsing.*"
+      ]
+    },
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "gemini"
+      },
+      "header": "SAGITTARIUS SUN · GEMINI MOON",
+      "lines": [
+        "The sun is in *Sagittarius* now,",
+        "wanting the big truth,",
+        "while the moon wants to *talk* it out."
+      ]
+    },
+    {
+      "art": "phases",
+      "opts": {
+        "lit": 5
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "I release the *replay.*",
+        "I don't have to understand them",
+        "to be done with it.",
+        "My mind is allowed to go *quiet.*"
+      ],
+      "labels": [
+        {
+          "on": "moon",
+          "at": 1,
+          "text": "WANING GIBBOUS · RELEASE"
+        }
+      ]
+    },
+    {
+      "art": "card",
+      "header": "COMMENT · MOON",
+      "opts": {
+        "face": "Moon",
+        "sub": "WHAT MAKES YOU FEEL SAFE",
+        "glyph": "☽",
+        "revealAt": 1
+      },
+      "pill": "YOUR MOON READING IS ON ITS WAY",
+      "pillAt": 1,
+      "lines": [
+        "Comment *MOON*",
+        "and I'll send you what yours needs to feel safe,",
+        "free from the *Align* app."
+      ]
+    }
+  ]
+}

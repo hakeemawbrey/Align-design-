@@ -1,0 +1,792 @@
+[
+  {
+    "key": "mercury-aries",
+    "title": "Mercury in Aries",
+    "cover": "Mercury in Aries: just *say it*",
+    "caption": "mercury in aries reads in straight lines. hints go right past it. say it plainly and it'll say it back",
+    "hashtags": [
+      "mercuryinaries",
+      "aries",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "mint"
+        },
+        "header": "MERCURY IN ARIES",
+        "lines": [
+          "Hints go *straight past* you.",
+          "Not because you don't care.",
+          "Mercury in Aries just reads in *straight lines.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☿ · MERCURY · THE MIND"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aries"
+        },
+        "header": "ARIES · RULED BY MARS",
+        "lines": [
+          "Aries is ruled by Mars,",
+          "so your words come out first and fast.",
+          "In love you need it said *plainly:*",
+          "I like you. I'm upset. I'm in.",
+          "Guessing games feel like *losing.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I deserve someone who *says it.*",
+          "My bluntness is a form of *trust.*",
+          "I can speak fast and still listen well."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-taurus",
+    "title": "Mercury in Taurus",
+    "cover": "Mercury in Taurus: *tone* first",
+    "caption": "mercury in taurus hears the tone before the words. a calm voice settles it. a rushed one doesn't",
+    "hashtags": [
+      "mercuryintaurus",
+      "taurus",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "taurus"
+        },
+        "header": "MERCURY IN TAURUS",
+        "lines": [
+          "It's not *what* they said.",
+          "It's the *tone* they said it in.",
+          "Mercury in Taurus hears the voice first."
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "mint"
+        },
+        "header": "TAURUS · THE THROAT",
+        "lines": [
+          "Taurus is said to rule the *throat,*",
+          "so a calm, low voice can settle you.",
+          "You think things through slowly and fully.",
+          "Rushing you for an answer feels like pressure.",
+          "Give you a day, and you'll give them the *truth.*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☿ · MERCURY · YOUR VOICE"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I answer best when I'm not *rushed.*",
+          "Gentle words reach me faster.",
+          "What I say slowly, I *mean.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-gemini",
+    "title": "Mercury in Gemini",
+    "cover": "Mercury in Gemini: *forty tabs*",
+    "caption": "mercury in gemini has forty tabs open and wants to discuss all of them. a good reply is a love language",
+    "hashtags": [
+      "mercuryingemini",
+      "gemini",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "mint"
+        },
+        "header": "MERCURY IN GEMINI · AT HOME",
+        "lines": [
+          "You have *forty tabs* open in your head,",
+          "and you'd like to talk about *all* of them.",
+          "Mercury rules Gemini, so it's home here."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 2,
+            "text": "☿ · AT HOME IN GEMINI"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 2
+        },
+        "header": "GEMINI · THE TWINS",
+        "lines": [
+          "Two voices, one conversation.",
+          "In love you need *banter,*",
+          "a reply that keeps the thread going,",
+          "and someone fine with you changing the *subject*",
+          "three times in one sentence."
+        ],
+        "labels": [
+          {
+            "on": "thread",
+            "at": 2,
+            "text": "THE THREAD · KEEP IT GOING"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "gemini"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My curiosity is how I *love.*",
+          "I want someone who never stops asking.",
+          "I want a mind that *plays* with mine."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-cancer",
+    "title": "Mercury in Cancer",
+    "cover": "Mercury in Cancer *remembers*",
+    "caption": "mercury in cancer still remembers the exact words from a fight four years ago. start the hard talks soft",
+    "hashtags": [
+      "mercuryincancer",
+      "cancer",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "cancer"
+        },
+        "header": "MERCURY IN CANCER",
+        "lines": [
+          "You still remember the exact *words*",
+          "from a fight four years ago.",
+          "Mercury in Cancer keeps what's said."
+        ]
+      },
+      {
+        "art": "loop",
+        "header": "MERCURY · THE LOOP BACK",
+        "lines": [
+          "A few times a year, Mercury seems",
+          "to loop backwards across the sky.",
+          "You do the same with *conversations,*",
+          "circling back to check they were *kind.*"
+        ],
+        "labels": [
+          {
+            "on": "loop",
+            "at": 1,
+            "text": "☿ · RETROGRADE LOOP"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 1
+        },
+        "header": "HOW TO TALK TO YOU",
+        "lines": [
+          "So you need hard talks to start *soft,*",
+          "with *we're okay* said first."
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My sensitivity is how I *listen.*",
+          "I deserve words that are *careful* with me."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-leo",
+    "title": "Mercury in Leo",
+    "cover": "Mercury in Leo tells it *big*",
+    "caption": "mercury in leo tells every story like it ends in applause. praise it in public, give notes in private",
+    "hashtags": [
+      "mercuryinleo",
+      "leo",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "leo"
+        },
+        "header": "MERCURY IN LEO",
+        "lines": [
+          "Every story you tell",
+          "is built for *applause.*",
+          "Mercury in Leo talks from the heart."
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 2,
+            "text": "LEO · FIXED FIRE"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☉",
+          "tone": "gold"
+        },
+        "header": "LEO · THE HEART",
+        "lines": [
+          "Leo is ruled by the Sun",
+          "and said to rule the *heart.*",
+          "So you need words that are *warm* and *generous.*",
+          "Praise in public. Notes in *private.*",
+          "Being ignored mid-sentence stings for days."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☉ · THE SUN"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I deserve to hear *you're amazing*",
+          "and I'm proud of you, often.",
+          "My big voice comes from a big *heart.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-virgo",
+    "title": "Mercury in Virgo",
+    "cover": "Mercury in Virgo: *did you eat?*",
+    "caption": "mercury in virgo says i love you as did you eat. it needs words that are specific, not someday",
+    "hashtags": [
+      "mercuryinvirgo",
+      "virgo",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "mint"
+        },
+        "header": "MERCURY IN VIRGO · EXALTED",
+        "lines": [
+          "Mercury is at its *sharpest* in Virgo.",
+          "It rules this sign and is exalted here.",
+          "So your I love you",
+          "sometimes sounds like, did you *eat?*"
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 1,
+            "text": "☿ · HOME AND EXALTED"
+          }
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "virgo"
+        },
+        "header": "VIRGO · MUTABLE EARTH",
+        "lines": [
+          "And you need words that are *specific.*",
+          "Not *we should* someday. A day. A time.",
+          "Vague feels like careless to you.",
+          "Follow-through is your favorite *sentence.*"
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My attention to detail is *devotion.*",
+          "I deserve to be spoken to clearly.",
+          "I can take a compliment without *fixing* it."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-libra",
+    "title": "Mercury in Libra",
+    "cover": "Mercury in Libra says it *softly*",
+    "caption": "mercury in libra rewrote one text eleven times so it would land softly. kind, but make it clear",
+    "hashtags": [
+      "mercuryinlibra",
+      "libra",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "libra"
+        },
+        "header": "MERCURY IN LIBRA",
+        "lines": [
+          "You've rewritten one text *eleven times*",
+          "so it would land *softly.*",
+          "That's Mercury in Libra."
+        ]
+      },
+      {
+        "art": "venus",
+        "opts": {
+          "mirror": true,
+          "mirrorAt": 2
+        },
+        "header": "LIBRA · RULED BY VENUS",
+        "lines": [
+          "Libra is ruled by Venus,",
+          "so even your words want to be *beautiful.*",
+          "You see both sides before you speak,",
+          "and you need the same courtesy back:",
+          "a calm voice, a fair hearing, no *ambush.*"
+        ],
+        "labels": [
+          {
+            "on": "handle",
+            "at": 2,
+            "text": "♀ · BOTH SIDES"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I can be *kind* and still be clear.",
+          "My opinion counts, even when it's mine alone.",
+          "I deserve a love that *speaks gently.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-scorpio",
+    "title": "Mercury in Scorpio",
+    "cover": "Mercury in Scorpio *hears* it",
+    "caption": "mercury in scorpio hears what you don't say louder than what you do. it was never too intense",
+    "hashtags": [
+      "mercuryinscorpio",
+      "scorpio",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "mint"
+        },
+        "header": "MERCURY IN SCORPIO",
+        "lines": [
+          "What people *don't* say",
+          "is the loudest thing in the room to you.",
+          "Mercury in Scorpio reads between *every* line."
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "scorpio"
+        },
+        "header": "SCORPIO · THE DEEP END",
+        "lines": [
+          "So small talk feels like a *locked door.*",
+          "You want the real conversation,",
+          "the one at three in the morning.",
+          "In love you need *honesty,* all of it.",
+          "Half-truths hurt you more than *hard* ones."
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "SCORPIO · FIXED WATER"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "WHAT YOU DESERVE",
+        "lines": [
+          "And here's the thing.",
+          "You were never *too intense.*",
+          "You just wanted someone to tell you the *truth.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-sagittarius",
+    "title": "Mercury in Sagittarius",
+    "cover": "Mercury in Sagittarius *wonders*",
+    "caption": "mercury in sagittarius would rather talk about the meaning of life than what's for dinner. honestly, same",
+    "hashtags": [
+      "mercuryinsagittarius",
+      "sagittarius",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "sagittarius"
+        },
+        "header": "MERCURY IN SAGITTARIUS",
+        "lines": [
+          "You'd rather talk about the *meaning* of life",
+          "than what's for dinner.",
+          "Mercury in Sagittarius thinks in *big skies.*"
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "☿",
+          "planetSign": "sagittarius",
+          "planetAt": 2,
+          "highlight": 9,
+          "highlightAt": 0
+        },
+        "header": "THE NINTH HOUSE · BELIEF",
+        "lines": [
+          "Sagittarius belongs to the ninth house:",
+          "travel, belief, and the big questions.",
+          "So you need someone who'll *wonder* with you,",
+          "laugh at your bluntness,",
+          "and tell you the truth right back."
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 0,
+            "text": "9TH HOUSE · BELIEF"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My honesty comes from *hope,* not harm.",
+          "I can aim my words with *care.*",
+          "I want a love that *talks big* with me."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-capricorn",
+    "title": "Mercury in Capricorn",
+    "cover": "Mercury in Capricorn *means it*",
+    "caption": "mercury in capricorn doesn't say much, but it has never said a word it didn't mean. dry humor included",
+    "hashtags": [
+      "mercuryincapricorn",
+      "capricorn",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "capricorn"
+        },
+        "header": "MERCURY IN CAPRICORN",
+        "lines": [
+          "You don't say much.",
+          "But you've never said a word you didn't *mean.*",
+          "Mercury in Capricorn talks like it's in *writing.*"
+        ]
+      },
+      {
+        "art": "wheel",
+        "opts": {
+          "planet": "☿",
+          "planetSign": "capricorn",
+          "planetAt": 2,
+          "highlight": 10,
+          "highlightAt": 0
+        },
+        "header": "CAPRICORN · THE TENTH HOUSE",
+        "lines": [
+          "Capricorn belongs to the tenth house:",
+          "reputation, and what you build.",
+          "So you need words with *weight* behind them,",
+          "a plan, a promise, a follow-through.",
+          "Pretty words with no plan feel like *noise.*"
+        ],
+        "labels": [
+          {
+            "on": "house",
+            "at": 0,
+            "text": "10TH HOUSE · REPUTATION"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "My dry humor is a *love language.*",
+          "I can say *I feel* before I'll fix it.",
+          "My word is worth *waiting* for."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-aquarius",
+    "title": "Mercury in Aquarius",
+    "cover": "Mercury in Aquarius *thinks ahead*",
+    "caption": "mercury in aquarius fell for someone over an opinion nobody else in the room had. stay strange",
+    "hashtags": [
+      "mercuryinaquarius",
+      "aquarius",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "apart",
+          "threadAt": 1
+        },
+        "header": "MERCURY IN AQUARIUS",
+        "lines": [
+          "You fell for someone because of an *opinion*",
+          "nobody else in the room had.",
+          "Mercury in Aquarius loves an *original* mind."
+        ]
+      },
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "aquarius"
+        },
+        "header": "AQUARIUS · THE FUTURE",
+        "lines": [
+          "You think a few years ahead,",
+          "so you need room to say the *strange* thing,",
+          "and to be talked to like a best friend:",
+          "honest, curious, and never *clingy.*"
+        ],
+        "labels": [
+          {
+            "on": "sign",
+            "at": 0,
+            "text": "AQUARIUS · FIXED AIR"
+          }
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "mint"
+        },
+        "header": "THE RIGHT ONE",
+        "lines": [
+          "The right person won't *correct* your weirdness.",
+          "They'll ask you to say *more.*"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "mercury-pisces",
+    "title": "Mercury in Pisces",
+    "cover": "Mercury in Pisces sends *songs*",
+    "caption": "mercury in pisces has sent a song instead of saying how it feels. more than once. listen to the song",
+    "hashtags": [
+      "mercuryinpisces",
+      "pisces",
+      "mercurysign",
+      "astrology",
+      "communication"
+    ],
+    "keyword": "CHART",
+    "scenes": [
+      {
+        "art": "sign",
+        "opts": {
+          "sign": "pisces"
+        },
+        "header": "MERCURY IN PISCES",
+        "lines": [
+          "Instead of saying how you feel,",
+          "you've sent someone a *song.*",
+          "Mercury in Pisces speaks in *feelings,* not facts."
+        ]
+      },
+      {
+        "art": "planet",
+        "opts": {
+          "glyph": "☿",
+          "tone": "mint"
+        },
+        "header": "MERCURY · THE MESSENGER",
+        "lines": [
+          "Mercury is the planet of words,",
+          "and in Pisces, words go a little *misty.*",
+          "You know things before you can explain them.",
+          "So you need someone patient with your silences,",
+          "who hears the *song* and gets the message."
+        ],
+        "labels": [
+          {
+            "on": "planet",
+            "at": 0,
+            "text": "☿ · MERCURY · THE MIND"
+          }
+        ]
+      },
+      {
+        "art": "figures",
+        "opts": {
+          "pose": "meet"
+        },
+        "header": "SAY IT WITH ME",
+        "pause": 0.5,
+        "lines": [
+          "Say it with me.",
+          "I don't have to be *literal* to be understood.",
+          "My quiet is still *talking.*",
+          "I deserve someone fluent in *me.*"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "id": "394-pair-libra-pisces",
+  "title": "Libra and Pisces",
+  "cover": "Libra and Pisces, *romantics*",
+  "keyword": "MATCH",
+  "caption": "libra's planet is exalted in pisces. the most romantic quincunx in the sky",
+  "cta": "align with the right person ✦ the align app, link in bio",
+  "hashtags": [
+    "libra",
+    "pisces",
+    "quincunx",
+    "zodiaccompatibility",
+    "astrology"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "pairs-2",
+  "ending": "right",
+  "scenes": [
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♀",
+        "tone": "lilac"
+      },
+      "header": "VENUS · EXALTED IN PISCES",
+      "lines": [
+        "Libra's ruler, Venus, is *exalted* in Pisces.",
+        "These two speak *romance* fluently."
+      ]
+    },
+    {
+      "art": "wheel",
+      "opts": {
+        "pair": [
+          "libra",
+          "pisces"
+        ],
+        "pairAt": 0
+      },
+      "header": "QUINCUNX · 150°",
+      "lines": [
+        "Still, they sit a *quincunx* apart.",
+        "Air and water, cardinal and mutable.",
+        "Nothing shared, so love *adjusts.*"
+      ]
+    },
+    {
+      "art": "elements",
+      "opts": {
+        "element": "air",
+        "second": "water"
+      },
+      "header": "WHAT EACH BRINGS",
+      "lines": [
+        "Libra gives Pisces *clarity.*",
+        "Pisces gives Libra *depth* of feeling.",
+        "The friction: both avoid the *hard* talk."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "Our love can be a *dream*",
+        "with its feet on the *ground.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN APP",
+      "opts": {
+        "face": "Align",
+        "sub": "IT HAS TO BE MUTUAL",
+        "revealAt": 1
+      },
+      "pill": "ALIGN · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "Read the sky before the *face.*",
+        "*Align* with the right person.",
+        "The *Align* app.",
+        "Link in bio."
+      ]
+    }
+  ]
+}

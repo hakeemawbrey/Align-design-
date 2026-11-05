@@ -1,0 +1,79 @@
+{
+  "id": "344-misses-sagittarius",
+  "title": "When a Sagittarius misses you",
+  "cover": "A *Sagittarius* sent a sunset",
+  "keyword": "VENUS",
+  "caption": "if a sagittarius sends you a sunset from somewhere far, they miss you",
+  "cta": "the align beta is open ✦ link in bio",
+  "hashtags": [
+    "sagittarius",
+    "zodiaclove",
+    "missingyou",
+    "astrology",
+    "venus"
+  ],
+  "voice": "af_aoede",
+  "speed": 0.92,
+  "family": "misses",
+  "ending": "beta",
+  "scenes": [
+    {
+      "art": "sign",
+      "opts": {
+        "sign": "sagittarius"
+      },
+      "header": "SAGITTARIUS · MUTABLE FIRE",
+      "lines": [
+        "If a Sagittarius sends you a *sunset,*",
+        "they miss you.",
+        "A mountain. A market. A strange road,",
+        "with *you'd love this* underneath."
+      ]
+    },
+    {
+      "art": "planet",
+      "opts": {
+        "glyph": "♃",
+        "tone": "gold"
+      },
+      "header": "RULED BY JUPITER",
+      "lines": [
+        "Ruled by *Jupiter,* they miss in *plans.*",
+        "Next thing you know,",
+        "they're looking at flights",
+        "to wherever *you* are."
+      ]
+    },
+    {
+      "art": "figures",
+      "opts": {
+        "pose": "meet"
+      },
+      "header": "SAY IT WITH ME",
+      "pause": 0.5,
+      "lines": [
+        "Say it with me.",
+        "My freedom and my *longing*",
+        "can live in the same heart.",
+        "I always come *back.*"
+      ]
+    },
+    {
+      "art": "card",
+      "header": "THE ALIGN BETA",
+      "opts": {
+        "face": "Align",
+        "sub": "THE BETA IS OPEN",
+        "revealAt": 1
+      },
+      "pill": "JOIN THE BETA · LINK IN BIO",
+      "pillAt": 1,
+      "lines": [
+        "You deserve someone who moves *toward* you.",
+        "The *Align* app is in *beta.*",
+        "Join it.",
+        "Link in bio."
+      ]
+    }
+  ]
+}
