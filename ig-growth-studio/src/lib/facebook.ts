@@ -10,6 +10,10 @@ export const FB_DAILY_LIMIT = 30;
 const DAY_MS = 86_400_000;
 /** Permission errors: the user has not granted pages_manage_posts yet. */
 const PERMISSION_CODES = new Set([10, 200, 190]);
+/** Reels that were due while posting wasn't allowed are skipped once they are this late. */
+export const FB_STALE_MS = 2 * 3_600_000;
+
+const isPermissionError = (err: unknown) => err instanceof GraphError && err.code !== undefined && PERMISSION_CODES.has(err.code);
 
 export interface FbRunResult {
   started: number[];
@@ -19,6 +23,7 @@ export interface FbRunResult {
 }
 
 type Page = { id: string; name: string; token: string } | null;
+export type { Page as FbPage };
 
 function describe(err: unknown) {
   if (!(err instanceof Error)) return String(err);
@@ -61,6 +66,12 @@ export async function publishFacebookDue(
         continue;
       }
 
+      // Don't flood the Page with a backlog (e.g. after posting was allowed late, or the Mac slept).
+      if (now.getTime() - new Date(post.scheduled_at).getTime() > FB_STALE_MS) {
+        await updatePost(db, post.id, { fb_status: "failed", fb_error: "Skipped: more than 2 hours past its time when Facebook could post it" });
+        result.failed.push(post.id);
+        continue;
+      }
       // One new upload per Page per run, and never more than Facebook's 30 per 24 hours.
       if (startedThisRun.has(page.id)) continue;
       if ((await facebookStartsSince(db, account.igUserId, new Date(now.getTime() - DAY_MS))) >= FB_DAILY_LIMIT) {
@@ -75,6 +86,12 @@ export async function publishFacebookDue(
       result.started.push(post.id);
     } catch (err) {
       const msg = describe(err);
+      if (isPermissionError(err) && post.fb_status === "pending") {
+        // Not allowed yet (Settings → reconnect): wait rather than fail.
+        await updatePost(db, post.id, { fb_status: "pending", fb_attempts: 0, fb_started_at: null, fb_video_id: null, fb_error: msg });
+        result.waiting.push(post.id);
+        continue;
+      }
       const attempts = post.fb_attempts + (post.fb_status === "pending" ? 1 : 0);
       if (isTransient(err) && attempts < MAX_ATTEMPTS) {
         // Temporary Facebook error: try again on a later run.

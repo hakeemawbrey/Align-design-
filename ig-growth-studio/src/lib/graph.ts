@@ -270,13 +270,25 @@ export class GraphClient {
   // ---------- Facebook Pages ----------
 
   /** The Facebook Page linked to an Instagram account, with a Page token (needs pages_show_list). */
-  async pageForInstagram(igUserId: string): Promise<{ id: string; name: string; token: string } | null> {
-    const pages = await this.all<{ id: string; name: string; access_token?: string; instagram_business_account?: { id: string } }>(
-      "me/accounts",
-      { fields: "id,name,access_token,instagram_business_account{id}", limit: 100 },
-    );
-    const p = pages.find((x) => x.instagram_business_account?.id === igUserId && x.access_token);
-    return p ? { id: p.id, name: p.name, token: p.access_token! } : null;
+  async pageForInstagram(igUserId: string): Promise<FacebookPage | null> {
+    return (await this.pagesByInstagram()).get(igUserId) ?? null;
+  }
+
+  /** Every Page the user manages that has an Instagram account linked, keyed by Instagram user ID. */
+  async pagesByInstagram(): Promise<Map<string, FacebookPage>> {
+    const pages = await this.all<{
+      id: string;
+      name: string;
+      access_token?: string;
+      instagram_business_account?: { id: string };
+      picture?: { data?: { url?: string } };
+    }>("me/accounts", { fields: "id,name,access_token,instagram_business_account{id},picture.type(large){url}", limit: 100 });
+    const out = new Map<string, FacebookPage>();
+    for (const p of pages) {
+      const ig = p.instagram_business_account?.id;
+      if (ig && p.access_token) out.set(ig, { id: p.id, name: p.name, token: p.access_token, picture: p.picture?.data?.url ?? null });
+    }
+    return out;
   }
 
   /**
@@ -386,6 +398,14 @@ export const MEDIA_FIELDS =
   "id,caption,media_type,media_product_type,media_url,thumbnail_url,permalink,timestamp,like_count,comments_count";
 
 export const DEFAULT_MEDIA_METRICS = ["reach", "views", "saved", "shares", "total_interactions"];
+
+export interface FacebookPage {
+  id: string;
+  name: string;
+  token: string;
+  /** Profile picture URL (Facebook CDN; expires after a while, so fetch fresh). */
+  picture: string | null;
+}
 
 export interface Media {
   id: string;

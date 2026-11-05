@@ -1,10 +1,11 @@
 import { addChosenAccounts, disconnect, removeAccountAction, selectAccount, skipPendingAccounts } from "@/app/actions";
 import { ChooseAccounts } from "@/components/ChooseAccounts";
+import { FbPage } from "@/components/FbPage";
 import { LocalTime } from "@/components/LocalTime";
 import { config } from "@/lib/config";
 import { getAccount, getDb, getPendingLogin, getSetting, listAccounts } from "@/lib/db";
 import { GraphClient } from "@/lib/graph";
-import { hasFacebookPage } from "@/lib/posts";
+import { facebookPages } from "@/lib/pages";
 
 export const dynamic = "force-dynamic";
 
@@ -31,6 +32,7 @@ export default async function SettingsPage({
       fbAllowed = null;
     }
   }
+  const fbPages = await facebookPages(accounts);
   const soon = (iso: string | null) => iso !== null && new Date(iso).getTime() - Date.now() < 7 * 86_400_000;
 
   return (
@@ -168,7 +170,13 @@ export default async function SettingsPage({
             {accounts.map((a) => (
               <tr key={a.igUserId}>
                 <td>@{a.username}</td>
-                <td className="small">{hasFacebookPage(a) ? a.pageName : <span className="muted">No Facebook Page linked</span>}</td>
+                <td className="small">
+                  {fbPages.get(a.igUserId) ? (
+                    <FbPage page={fbPages.get(a.igUserId)!} />
+                  ) : (
+                    <span className="muted">No Facebook Page linked</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

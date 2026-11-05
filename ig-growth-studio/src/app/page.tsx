@@ -4,7 +4,9 @@ import { ConnectPrompt } from "@/components/ConnectPrompt";
 import { LocalTime } from "@/components/LocalTime";
 import { BarList, ColumnChart, LineChart, SegmentedBar } from "@/components/Charts";
 import { Sparkline } from "@/components/Sparkline";
+import { FbPage } from "@/components/FbPage";
 import { TopVideos } from "@/components/TopVideos";
+import { facebookPages } from "@/lib/pages";
 import { type Account, type DB, type PostRow, getAccount, getDb, listAccounts, listPosts, listSnapshots, saveSnapshot, topVideos } from "@/lib/db";
 import { HOUR_LABELS, dayLabel, dayRange, postsPerDay, postsPerHour, seriesColor } from "@/lib/charts";
 import { GraphClient } from "@/lib/graph";
@@ -98,7 +100,7 @@ async function Overview({ accounts }: { accounts: Account[] }) {
       ),
     ),
   );
-  const totals = await Promise.all(accounts.map(todayTotals));
+  const [totals, fbPages] = await Promise.all([Promise.all(accounts.map(todayTotals)), facebookPages(accounts)]);
   const allPosts = await listPosts(db);
   const queued = allPosts.filter((p) => p.status === "scheduled" || p.status === "processing");
   const history = await Promise.all(accounts.map((a) => listSnapshots(db, a.igUserId, 30)));
@@ -172,7 +174,9 @@ async function Overview({ accounts }: { accounts: Account[] }) {
                       )}
                       <div>
                         <Link href={`/?account=${encodeURIComponent(r.a.username)}`}>@{r.a.username}</Link>
-                        <div className="muted small">{r.a.pageName}</div>
+                        <div className="muted small">
+                          {fbPages.get(r.a.igUserId) ? <FbPage page={fbPages.get(r.a.igUserId)!} size={18} /> : r.a.pageName}
+                        </div>
                         {r.error && <div className="error small">{r.error}</div>}
                       </div>
                     </div>
@@ -567,8 +571,9 @@ async function FacebookSection({ account }: { account: Account }) {
   let followers: number | null = null;
   let plays: (number | null)[] = [];
   let problem: string | null = null;
+  let page: Awaited<ReturnType<GraphClient["pageForInstagram"]>> = null;
   try {
-    const page = await new GraphClient({ token: account.token }).pageForInstagram(account.igUserId);
+    page = await new GraphClient({ token: account.token }).pageForInstagram(account.igUserId);
     if (page) {
       const pc = new GraphClient({ token: page.token });
       followers = await pc.pageFollowers(page.id).catch(() => null);
@@ -580,7 +585,7 @@ async function FacebookSection({ account }: { account: Account }) {
   const n = (s: string) => crossPosts.filter((p) => p.fb_status === s).length;
   return (
     <>
-      <h2>Facebook: {account.pageName}</h2>
+      <h2 className="row">Facebook {page ? <FbPage page={page} /> : account.pageName}</h2>
       {problem && <p className="error small">{problem}</p>}
       <div className="stats">
         <Stat label="Page followers" value={followers === null ? "—" : fmt.format(followers)} />

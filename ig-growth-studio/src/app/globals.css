@@ -180,3 +180,6 @@ button.link { border: 0; background: none; padding: 0; color: var(--accent); fon
 .ink { color: var(--text); }
 .rank { display: inline-flex; flex-direction: column; align-items: center; gap: 3px; width: 18px; font-size: 13px; font-weight: 600; color: var(--muted); flex: none; }
 span.thumb-sm { display: inline-block; flex: none; }
+.fbpage { display: inline-flex; align-items: center; gap: 6px; color: inherit; text-decoration: none; }
+.fbpage:hover span { text-decoration: underline; }
+h2 .fbpage { font-weight: 600; }

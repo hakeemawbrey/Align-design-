@@ -25,7 +25,9 @@ const reel = (over: Partial<Parameters<typeof createPost>[1]> = {}) => ({
 
 function graph(extra: Record<string, () => unknown> = {}) {
   return fakeGraph({
-    "GET me/accounts": () => ({ data: [{ id: "P1", name: "Star Advice", access_token: "PAGE", instagram_business_account: { id: "ig1" } }] }),
+    "GET me/accounts": () => ({
+      data: [{ id: "P1", name: "Star Advice", access_token: "PAGE", instagram_business_account: { id: "ig1" }, picture: { data: { url: "https://pic" } } }],
+    }),
     "POST P1/video_reels": () => ({ video_id: "V1", success: true }),
     "POST /video-upload/v26.0/V1": () => ({ success: true }),
     "GET V1": () => ({ status: { video_status: "ready", publishing_phase: { status: "complete" } }, permalink_url: "/reel/123" }),
@@ -64,8 +66,15 @@ describe("Facebook cross-posting", () => {
     await updatePost(db, cancelled, { status: "cancelled" });
     const { client } = graph({ "POST P1/video_reels": () => graphError(200, "Requires pages_manage_posts", 403) });
     const r = await publishFacebookDue(db, { now, userClient: () => client, pageClient: () => client });
-    expect(r.failed).toEqual([id]);
-    expect((await getPost(db, id))?.fb_error).toMatch(/Reconnect on the Settings page/);
+    // Not allowed yet: the Reel waits (with an explanation) instead of failing.
+    expect(r.waiting).toEqual([id]);
+    const waiting = await getPost(db, id);
+    expect(waiting?.fb_status).toBe("pending");
+    expect(waiting?.fb_error).toMatch(/Reconnect on the Settings page/);
+    // Once it is more than 2 hours late it is skipped, so a backlog never floods the Page.
+    const late = await publishFacebookDue(db, { now: new Date(now.getTime() + 3 * 3_600_000), userClient: () => client, pageClient: () => client });
+    expect(late.failed).toContain(id);
+    expect((await getPost(db, id))?.fb_error).toMatch(/^Skipped/);
     expect((await getPost(db, cancelled))?.fb_status).toBe("pending");
 
     const noPage = await setup();

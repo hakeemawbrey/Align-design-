@@ -357,6 +357,11 @@ export async function upsertAccounts(db: DB, accounts: Account[]) {
   );
 }
 
+/** Keeps the stored Facebook Page name current (an account can be linked to a Page after it was added). */
+export async function setPageName(db: DB, igUserId: string, pageName: string) {
+  await run(db, "UPDATE accounts SET page_name = ? WHERE ig_user_id = ? AND page_name <> ?", [pageName, igUserId, pageName]);
+}
+
 export async function setActiveAccount(db: DB, igUserId: string) {
   if (await getAccount(db, igUserId)) await setSetting(db, "active_account", igUserId);
 }

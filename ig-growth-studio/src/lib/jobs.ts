@@ -1,4 +1,4 @@
-import { type Account, type DB, getSetting, hasSnapshot, listAccounts, saveMediaSnapshots, saveSnapshot, setSetting } from "./db";
+import { type Account, type DB, getSetting, hasSnapshot, listAccounts, saveMediaSnapshots, saveSnapshot, setPageName, setSetting } from "./db";
 import { type FbRunResult, publishFacebookDue } from "./facebook";
 import { GraphClient } from "./graph";
 import { type RunResult, publishDuePosts } from "./publisher";
@@ -51,6 +51,7 @@ export async function snapshotVideosIfDue(db: DB, now = new Date()): Promise<num
   if (last && now.getTime() - new Date(last).getTime() < VIDEO_SNAPSHOT_EVERY_MS - 30_000) return null;
   await setSetting(db, "video_snapshot_at", now.toISOString());
   let saved = 0;
+  await refreshPageNames(db);
   for (const account of await listAccounts(db)) {
     try {
       saved += await snapshotAccountVideos(db, account, now);
@@ -59,6 +60,16 @@ export async function snapshotVideosIfDue(db: DB, now = new Date()): Promise<num
     }
   }
   return saved;
+}
+
+/** Records the Facebook Page now linked to each account, so Facebook cross-posting can be offered for it. */
+export async function refreshPageNames(db: DB) {
+  const byToken = new Map<string, Promise<Map<string, { name: string }>>>();
+  for (const account of await listAccounts(db)) {
+    if (!byToken.has(account.token)) byToken.set(account.token, new GraphClient({ token: account.token }).pagesByInstagram().catch(() => new Map()));
+    const page = (await byToken.get(account.token)!).get(account.igUserId);
+    if (page) await setPageName(db, account.igUserId, page.name);
+  }
 }
 
 export async function snapshotAccountVideos(db: DB, account: Account, now: Date, client = new GraphClient({ token: account.token })) {
