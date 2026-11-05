@@ -281,7 +281,7 @@ function header(x, k = 1) {
 }
 
 // ── the default star in the photo window
-function photoDefault(x, t, S, cfg) {
+export function photoDefault(x, t, S, cfg) {
   const { x: px, y: py, w, h } = PHOTO
   const sg = signStar(cfg.sign)
   const g = x.createLinearGradient(0, py, 0, py + h)
@@ -501,7 +501,7 @@ export function makeBio(cfg) {
   const scribble = (t0, d, gain = 0.014) => Array.from({ length: Math.max(1, Math.floor(d / 0.07)) }, (_, i) => ['tick', +(t0 + i * 0.07 + (i % 3) * 0.01).toFixed(3), gain])
   const typeTicks = (t0, n) => Array.from({ length: Math.ceil(n / 2) }, (_, i) => ['tick', +(t0 + (i * 2) / CPS).toFixed(3), 0.018])
   // ── the kit layers: hook + last line slam titles, the pattern break, extra kit effects, the loop
-  const HOOK = { at: -1, text: cfg.hook, top: cfg.hookTop || 168, size: cfg.hookSize || 100, accentColor: cfg.hookColor || PINK, out: cfg.reply ? [T.glow + 0.25, T.glow + 0.45] : [T.last - 0.3, T.last - 0.08], shake: 8 }
+  const HOOK = { at: -1, text: cfg.hook, top: cfg.hookTop || 168, size: cfg.hookSize || 100, accentColor: cfg.hookColor || PINK, out: cfg.hookOut || (cfg.reply ? [T.glow + 0.25, T.glow + 0.45] : [T.last - 0.3, T.last - 0.08]), shake: 8 }
   const LASTO = { at: T.last, text: cfg.last, top: cfg.hookTop || 168, size: cfg.lastSize || 96, accentColor: GOLD, gap: 0.08, ...(LOOP ? { out: [D - LOOP, D - LOOP + 0.18] } : {}) }
   const FX = { at: T.fx, ...(cfg.fxOpts || {}) }
   const FXK = {
@@ -516,12 +516,12 @@ export function makeBio(cfg) {
   const extras = [...(cfg.kit || [])]           // [[sceneFactory, cuesFn, opts]]
   if (cfg.reply) { const RP = { at: T.glow + 0.55, out: [T.last - 0.3, T.last - 0.1], title: 'new message', time: 'now', y: 110, ...cfg.reply }; extras.push([KITN.notification, KITN.notificationCues, RP]) }
   const base = freezeWins.length ? frozen(build, freezeWins) : build
-  const SCENES = [base, ...(FXK ? [FXK[0](FX)] : []), ...extras.map(([f, , o]) => f(o)), slamTitle(HOOK), slamTitle(LASTO)]
+  const SCENES = [base, ...(FXK ? [FXK[0](FX)] : []), ...extras.map(([f, , o]) => f(o)), ...(cfg.noTitles ? [] : [slamTitle(HOOK), slamTitle(LASTO)])]
   if (LOOP) SCENES.push(loopBack([build, slamTitle(HOOK)], { duration: D, len: LOOP }))
   const says = cfg.says || []
   const CUES = [
     ...(FXK ? FXK[1](FX) : []), ...extras.flatMap(([, c, o]) => c ? c(o) : []),
-    ...slamTitleCues(HOOK).filter(c => c[1] >= 0), ...slamTitleCues(LASTO),
+    ...(cfg.noTitles ? [] : [...slamTitleCues(HOOK).filter(c => c[1] >= 0), ...slamTitleCues(LASTO)]),
     ...(cfg.circle ? [['whoosh', T.circle, 0.3, 0.03], ...scribble(T.circle, 0.45, 0.012), ['pop', T.circle + 0.36, 523.25, 0.05, -0.2]] : []),
     ...says.flatMap(s => [['pop', s.t, 880, 0.035, -0.4], ['pop', s.t + 0.1, 1174.66, 0.025, -0.4]]),
     ['whoosh', T.strike[0], 0.25, 0.04], ...scribble(T.strike[0], T.strike[1] - T.strike[0], 0.02), ['tick', T.strike[1], 0.06],
@@ -582,4 +582,30 @@ export function word(x, text, cx, cy, size, col, rot = 0, alpha = 1) {
   x.strokeStyle = col; x.lineWidth = Math.max(3, size * 0.1); x.strokeRect(-w / 2, -h / 2, w, h)
   x.fillStyle = col; x.fillText(text, 0, size * 0.05)
   x.restore()
+}
+
+// ─────────────────────────────────────────────── sequences (long films made of several glow-ups)
+/** segs: [{ at, len, ep }] where ep = makeBio({ …, noTitles: true }) without kit camera effects. One builder that shows
+ *  the active segment (its own root) and runs it on local time t − at. Before the first / after the last segment the
+ *  nearest one holds its first / last frame. */
+export function sequence(segs) {
+  return async stage => {
+    const built = []
+    for (const s of segs) { const b = await s.ep.SCENES[0](stage); b.root.style.display = 'none'; built.push(b) }
+    const root = built[0].root
+    return {
+      start: -1e9, end: 1e9, root: null,
+      update(t) {
+        let k = segs.findIndex(s => t >= s.at && t < s.at + s.len)
+        if (k < 0) k = t < segs[0].at ? 0 : segs.length - 1
+        built.forEach((b, i) => { b.root.style.display = i === k ? 'block' : 'none' })
+        const s = segs[k]
+        built[k].update(Math.min(Math.max(t - s.at, 0), s.len - 0.001))
+      },
+      _root: root,
+    }
+  }
+}
+export function sequenceCues(segs) {
+  return segs.flatMap(s => s.ep.CUES.map(c => { const d = [...c]; d[1] = +(d[1] + s.at).toFixed(3); if (d[0] === 'glitter' || d[0] === 'riser') d[2] = +(d[2] + s.at).toFixed(3); return d }).filter(c => c[1] >= s.at - 0.05 && c[1] < s.at + s.len))
 }
