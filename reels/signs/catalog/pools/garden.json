@@ -1,0 +1,322 @@
+{
+ "images": [
+  {
+   "id": "wc-74370745",
+   "source": "commons",
+   "title": "Marie Oakey Dewing - Rose Garden (1901)",
+   "creator": "Maria Oakey Dewing",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Marie_Oakey_Dewing_-_Rose_Garden_(1901).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Marie_Oakey_Dewing_-_Rose_Garden_%281901%29.jpg/1920px-Marie_Oakey_Dewing_-_Rose_Garden_%281901%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Marie_Oakey_Dewing_-_Rose_Garden_%281901%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1141,
+   "file": "wc-74370745.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Dewing, moody rose garden"
+  },
+  {
+   "id": "aic-87088",
+   "source": "aic",
+   "title": "Water Lily Pond",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/87088",
+   "url": "https://www.artic.edu/iiif/2/8534685d-1102-e1e3-e194-94f6e925e8b0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1499,
+   "file": "aic-87088.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-14586",
+   "source": "aic",
+   "title": "The Poet's Garden",
+   "creator": "Vincent van Gogh (Dutch, 1853–1890)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/14586",
+   "url": "https://www.artic.edu/iiif/2/fa5aaa98-8095-07d6-3b7d-3dfccc518191/full/1686,/0/default.jpg",
+   "w": 1687,
+   "h": 1330,
+   "file": "aic-14586.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-4791",
+   "source": "aic",
+   "title": "Mrs. Francis Russell",
+   "creator": "George Romney (English, 1734–1802)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/4791",
+   "url": "https://www.artic.edu/iiif/2/c15f9720-702d-10ee-85f8-80008d2bc8ca/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2143,
+   "file": "aic-4791.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-16554",
+   "source": "aic",
+   "title": "The Artist's House at Argenteuil",
+   "creator": "Claude Monet (French, 1840–1926)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16554",
+   "url": "https://www.artic.edu/iiif/2/7d533ed4-ff54-fa2c-64f4-2b16bfbb5880/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1377,
+   "file": "aic-16554.jpg",
+   "focus": [
+    0.45,
+    0.55
+   ]
+  },
+  {
+   "id": "aic-180709",
+   "source": "aic",
+   "title": "The Lovers",
+   "creator": "William Powell Frith (English, 1819–1909)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/180709",
+   "url": "https://www.artic.edu/iiif/2/57e7455f-9c4f-7b6d-ffac-6d2269258265/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2048,
+   "file": "aic-180709.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Frith, The Lovers in the garden"
+  },
+  {
+   "id": "aic-153798",
+   "source": "aic",
+   "title": "Woman in a Garden",
+   "creator": "Berthe Morisot (French, 1841–1895)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/153798",
+   "url": "https://www.artic.edu/iiif/2/5edb357d-2e8f-8673-d9e8-4b1150af3895/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2256,
+   "file": "aic-153798.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Morisot, woman in a garden"
+  },
+  {
+   "id": "met-437848",
+   "source": "met",
+   "title": "Rose Hedge",
+   "creator": "Wilhelm Trübner",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437848",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP355176.jpg",
+   "w": 1958,
+   "h": 2400,
+   "file": "met-437848.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-436222",
+   "source": "met",
+   "title": "Self-Portrait with a Harp",
+   "creator": "Rose Adélaïde Ducreux",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436222",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP164843.jpg",
+   "w": 1297,
+   "h": 1934,
+   "file": "met-436222.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-7280191",
+   "source": "commons",
+   "title": "Monet, Claude - Woman in the Garden. Sainte-Adresse",
+   "creator": "Claude Monet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Monet,_Claude_-_Woman_in_the_Garden._Sainte-Adresse.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Monet%2C_Claude_-_Woman_in_the_Garden._Sainte-Adresse.jpg/1920px-Monet%2C_Claude_-_Woman_in_the_Garden._Sainte-Adresse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Monet%2C_Claude_-_Woman_in_the_Garden._Sainte-Adresse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1553,
+   "file": "wc-7280191.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-46922136",
+   "source": "commons",
+   "title": "MaryCassatt-Young Woman Sewing in Garden",
+   "creator": "Mary Cassatt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:MaryCassatt-Young_Woman_Sewing_in_Garden.png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/MaryCassatt-Young_Woman_Sewing_in_Garden.png/1920px-MaryCassatt-Young_Woman_Sewing_in_Garden.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/MaryCassatt-Young_Woman_Sewing_in_Garden.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1717,
+   "h": 2400,
+   "file": "wc-46922136.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-16485",
+   "source": "aic",
+   "title": "Rinaldo and Armida in Her Garden",
+   "creator": "Giovanni Battista Tiepolo (Italian, 1696–1770)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16485",
+   "url": "https://www.artic.edu/iiif/2/1623c4af-9ac2-fd80-9e73-05f7d402c6bd/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1171,
+   "file": "aic-16485.jpg",
+   "focus": [
+    0.35,
+    0.5
+   ]
+  },
+  {
+   "id": "met-782304",
+   "source": "met",
+   "title": "Young Woman with Her Hand over Her Mouth",
+   "creator": "Edgar Degas",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/782304",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-17996-001.jpg",
+   "w": 1800,
+   "h": 2400,
+   "file": "met-782304.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-107330612",
+   "source": "commons",
+   "title": "Henriette Lorimier - Portrait of a child with flower basket",
+   "creator": "Henriette Lorimier",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Henriette_Lorimier_-_Portrait_of_a_child_with_flower_basket.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Henriette_Lorimier_-_Portrait_of_a_child_with_flower_basket.jpg/1920px-Henriette_Lorimier_-_Portrait_of_a_child_with_flower_basket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Henriette_Lorimier_-_Portrait_of_a_child_with_flower_basket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2379,
+   "file": "wc-107330612.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-111657",
+   "source": "aic",
+   "title": "Double Portrait: Two Women",
+   "creator": "Artist unknown (British, active 19th century)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111657",
+   "url": "https://www.artic.edu/iiif/2/9cf496f1-23ba-fd19-c537-159b80c2a63c/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1181,
+   "file": "aic-111657.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-179202517",
+   "source": "commons",
+   "title": "Dusk in English Garden, Münich - Wassily Kandinsky",
+   "creator": "Wassily Kandinsky",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Dusk_in_English_Garden,_M%C3%BCnich_-_Wassily_Kandinsky.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Dusk_in_English_Garden%2C_M%C3%BCnich_-_Wassily_Kandinsky.jpg/1920px-Dusk_in_English_Garden%2C_M%C3%BCnich_-_Wassily_Kandinsky.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Dusk_in_English_Garden%2C_M%C3%BCnich_-_Wassily_Kandinsky.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1415,
+   "file": "wc-179202517.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "id": "met-671456",
+   "source": "met",
+   "title": "Chrysanthemums in the Garden at Petit-Gennevilliers",
+   "creator": "Gustave Caillebotte",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/671456",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP341200.jpg",
+   "w": 1483,
+   "h": 2400,
+   "file": "met-671456.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-164666236",
+   "source": "commons",
+   "title": "John Atkinson Grimshaw (1836-1893) - The Rector's Garden, Queen of the Lilies - PRSMG , P267 - Harris Museum",
+   "creator": "John Atkinson Grimshaw",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_(1836-1893)_-_The_Rector%27s_Garden,_Queen_of_the_Lilies_-_PRSMG_,_P267_-_Harris_Museum.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/John_Atkinson_Grimshaw_%281836-1893%29_-_The_Rector%27s_Garden%2C_Queen_of_the_Lilies_-_PRSMG_%2C_P267_-_Harris_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/John_Atkinson_Grimshaw_%281836-1893%29_-_The_Rector%27s_Garden%2C_Queen_of_the_Lilies_-_PRSMG_%2C_P267_-_Harris_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1200,
+   "h": 806,
+   "file": "wc-164666236.jpg",
+   "focus": [
+    0.65,
+    0.45
+   ],
+   "pin": true,
+   "note": "Grimshaw, woman in white among lilies"
+  },
+  {
+   "id": "met-437996",
+   "source": "met",
+   "title": "Roses and Lilies",
+   "creator": "Henri Fantin-Latour",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437996",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT9200.jpg",
+   "w": 1856,
+   "h": 2400,
+   "file": "met-437996.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

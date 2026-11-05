@@ -1,0 +1,206 @@
+{
+  "aries": {
+    "name": "Aries", "glyph": "♈", "element": "fire", "moods": ["aries", "sunset", "knight", "couple"],
+    "dear": [
+      ["You don't have to win this one.", "Some people aren't a race. They're a place to rest.", "Let someone catch up to you."],
+      ["You fall fast because you feel fast.", "That's not a flaw.", "Just make sure they're running toward you too."],
+      ["You're allowed to want someone loudly.", "The right person won't call it too much.", "They'll call it finally."],
+      ["Not every silence is a no.", "Some people need a minute to say yes.", "Give them the minute."]
+    ],
+    "loves": ["says it first, and means it", "plans the date the same day they meet you", "fights for you in rooms you're not in", "gets bored of games, not of you", "turns a bad day into an adventure"],
+    "wontsay": ["I'm scared you'll lose interest.", "I need you to chase me sometimes too.", "I'm softer than I look.", "I said that fast because I didn't want to lose my nerve."],
+    "needs": ["someone who can keep up", "honesty to their face", "a little friendly competition", "space to cool off after a fight", "a partner, not an audience"],
+    "relatable": ["texts you 'come outside' with zero warning", "already planned the second date during the first", "apologizes by doing something nice, not saying sorry", "can't watch a movie without guessing the ending out loud", "says 'I'm not mad' while clearly mad"],
+    "advice": ["Slow is not the same as uninterested.", "Say the soft thing. It counts more than the brave thing.", "Pick your battles. Pick your person first.", "Patience isn't losing. It's choosing."],
+    "align": ["Nobody asks you to be smaller.", "Your energy gets met, not managed.", "You stop proving and start enjoying."],
+    "pairs": {"leo": ["Two fires, zero boring nights.", "They hype each other up instead of competing."], "sagittarius": ["Road trips with no plan.", "Both say yes before the question's finished."], "libra": ["Opposites that actually balance.", "Libra softens the edges, Aries brings the spark."]},
+    "invite": ["texts first and acts like they didn't", "already has a plan for Saturday", "needs to slow down and let someone in", "fell for someone in one day"]
+  },
+  "taurus": {
+    "name": "Taurus", "glyph": "♉", "element": "earth", "moods": ["taurus", "garden", "flowers", "cafe"],
+    "dear": [
+      ["You're allowed to change your mind.", "Staying isn't always loyalty.", "Sometimes it's just fear in a nice sweater."],
+      ["You love like a home.", "Don't keep the door open for someone who never knocks.", "Some guests aren't family."],
+      ["Comfort isn't the same as alignment.", "Ask yourself if you're happy, or just used to it.", "You deserve both."],
+      ["You give slowly because you give for good.", "The right person will wait.", "The wrong one was always in a hurry."]
+    ],
+    "loves": ["remembers your order and gets it right every time", "shows up with food instead of a speech", "makes plans you can count on", "turns a Tuesday night into a ritual", "holds your hand like it's a decision"],
+    "wontsay": ["I'm scared of starting over.", "I need to know this is going somewhere.", "I noticed you changed. I just didn't say it.", "I'm not stubborn. I'm scared to be wrong."],
+    "needs": ["consistency over grand gestures", "time to trust", "physical affection, often", "a slow, real build", "someone who means what they say"],
+    "relatable": ["has had the same favorite restaurant for six years", "will forgive you but will absolutely remember", "says 'I'm fine' and makes a snack", "takes a nap as a love language", "won't be rushed into a decision, ever"],
+    "advice": ["Ask the question you're afraid of. You'll sleep better.", "Change isn't betrayal. It's growth.", "Say what you need before resentment says it for you.", "Loyalty to the wrong person is just lost time."],
+    "align": ["Calm instead of chaos.", "Someone who shows up the same on a Wednesday.", "Peace you don't have to protect."],
+    "pairs": {"virgo": ["Both build slow and build to last.", "The calmest home on the block."], "cancer": ["Food, feelings and a couch.", "They make each other feel safe."], "scorpio": ["Opposites that pull hard.", "Deep loyalty once they both decide."]},
+    "invite": ["has been loyal to the wrong person way too long", "would rather stay in", "deserves someone consistent", "keeps choosing comfort over happy"]
+  },
+  "gemini": {
+    "name": "Gemini", "glyph": "♊", "element": "air", "moods": ["gemini", "cafe", "city-night", "letters"],
+    "dear": [
+      ["You're not too much. You're a lot of good things at once.", "The right person finds all of you interesting.", "Not just the fun one."],
+      ["You talk so you don't have to feel it.", "It's okay to stop for a second.", "Somebody wants to hear the quiet part."],
+      ["Bored isn't a red flag.", "Sometimes it's peace you're not used to.", "Give it a chance to get interesting."],
+      ["You're allowed to be curious and committed.", "Those aren't opposites.", "Find someone who keeps asking questions too."]
+    ],
+    "loves": ["sends you seventeen things they saw today", "talks to you until three in the morning", "remembers the joke from your first date", "makes ordinary errands fun", "learns your world so you feel less alone in it"],
+    "wontsay": ["I overthink every text I send you.", "I need you to keep surprising me.", "Some days I don't know which version of me showed up either.", "I joke when I'm nervous. I'm nervous a lot around you."],
+    "needs": ["conversation that never runs out", "freedom without suspicion", "someone curious about everything", "a best friend first", "playfulness, always"],
+    "relatable": ["has four tabs of conversation open with you at once", "changes plans and makes them better", "replies instantly or in three days, no in between", "knows a little about everything you love", "can make friends in any waiting room"],
+    "advice": ["Not every feeling needs a joke on top.", "Stay a little longer than feels comfortable.", "Say what you mean, then let it sit.", "Consistency can be its own kind of exciting."],
+    "align": ["Someone who's still curious about you on year three.", "Conversations that go somewhere new.", "Freedom and closeness at the same time."],
+    "pairs": {"libra": ["Never-ending conversation.", "Charming each other forever."], "aquarius": ["Two minds on the same wild frequency.", "They give each other room and keep coming back."], "sagittarius": ["Opposites who travel well.", "Always a new story to tell."]},
+    "invite": ["sends you memes instead of feelings", "has three crushes and one real one", "needs someone who can keep up with their brain", "is impossible to bore and easy to love"]
+  },
+  "cancer": {
+    "name": "Cancer", "glyph": "♋", "element": "water", "moods": ["cancer", "moon", "window", "water"],
+    "dear": [
+      ["You take care of everyone.", "Who takes care of you?", "Let someone answer that."],
+      ["Your feelings aren't too much.", "They were just in the wrong hands.", "Keep them for someone gentle."],
+      ["You don't have to earn rest.", "You don't have to earn love.", "You just have to let it in."],
+      ["You remember everything they said.", "Remember what you need, too.", "That matters just as much."]
+    ],
+    "loves": ["remembers the little thing you mentioned once", "cooks when words aren't enough", "builds a home out of wherever you are", "checks if you got home safe, every time", "keeps every photo, every note"],
+    "wontsay": ["I need you to reassure me, even when I seem fine.", "I'm still thinking about what you said last week.", "I pulled away because I was scared, not because I'm done.", "I miss you even when you're in the next room."],
+    "needs": ["emotional safety", "reassurance without having to ask", "someone who loves their people", "a partner who stays through the moods", "home, in a person"],
+    "relatable": ["has a mental file of everything you've ever liked", "cries at commercials and denies it", "says 'it's fine' and needs a hug", "nests the second the weather turns", "can tell your mood from one text"],
+    "advice": ["Ask for the reassurance. It's not needy.", "Your moods are weather, not who you are.", "Don't mother someone you want to be loved by.", "Protect your heart without building a wall."],
+    "align": ["You never have to wonder where you stand.", "Your softness is safe there.", "Being cared for, not just caring."],
+    "pairs": {"taurus": ["Home and comfort in human form.", "The coziest pair in the zodiac."], "scorpio": ["Deep water, deep trust.", "They feel things the same size."], "pisces": ["Feelings with no translation needed.", "A gentle kind of forever."]},
+    "invite": ["remembers your birthday and your mom's", "takes care of everyone except themself", "feels everything and says nothing", "needs someone who stays"]
+  },
+  "leo": {
+    "name": "Leo", "glyph": "♌", "element": "fire", "moods": ["leo", "sunset", "dance", "portrait-her"],
+    "dear": [
+      ["You light up rooms.", "But you're allowed to be dim on a hard day.", "The right person loves both."],
+      ["You don't need to perform to be loved.", "Take the costume off.", "Someone wants the real you."],
+      ["Being proud is fine.", "Being too proud to say 'I miss you' isn't.", "Say it."],
+      ["You give the most generous love.", "Make sure it's coming back to you.", "You deserve the spotlight too."]
+    ],
+    "loves": ["shows you off to everyone they know", "plans the big, dramatic date", "makes you feel like the main character", "defends you without being asked", "gives the warmest, loudest kind of love"],
+    "wontsay": ["I need you to notice the effort.", "I get hurt when you don't take me seriously.", "I'm not always as confident as I look.", "I just want to know I'm your favorite."],
+    "needs": ["appreciation out loud", "loyalty in public and private", "a partner who shines too", "romance with a little drama", "to feel chosen, every day"],
+    "relatable": ["took forty photos and posted the first one", "remembers every compliment you've ever given them", "has a signature scent and a signature laugh", "throws the best birthday parties, especially their own", "forgives you the second you make them laugh"],
+    "advice": ["Let them love you the quiet way too.", "Ask, don't wait to be noticed.", "Pride makes a terrible roommate.", "The ones who stay don't need the show."],
+    "align": ["Being adored without auditioning.", "Someone who claps for you and with you.", "Warmth that doesn't run out."],
+    "pairs": {"aries": ["Fire on fire.", "Bold, loud, loyal."], "sagittarius": ["Life is a party with these two.", "They make each other braver."], "aquarius": ["Opposites that stay interesting.", "Heart meets head, and both win."]},
+    "invite": ["needs to hear how amazing they are", "would plan the best date of your life", "deserves the spotlight back", "is proud but secretly soft"]
+  },
+  "virgo": {
+    "name": "Virgo", "glyph": "♍", "element": "earth", "moods": ["virgo", "garden", "letters", "cafe"],
+    "dear": [
+      ["You don't have to be perfect to be loved.", "You never did.", "Let someone love the messy draft."],
+      ["You fix things for everyone.", "Not everything is yours to fix.", "Especially people."],
+      ["You're allowed to rest before it's all done.", "It'll never all be done.", "Rest anyway."],
+      ["The way you care is in the details.", "Find someone who notices them.", "They exist."]
+    ],
+    "loves": ["remembers your allergies and your schedule", "fixes the thing you complained about once", "shows love through tiny, perfect details", "makes your life easier without saying a word", "plans the trip down to the snack list"],
+    "wontsay": ["I need you to notice what I do for you.", "I'm hardest on myself, not you.", "I criticize because I care, and I know it doesn't sound like it.", "I'm overthinking this text right now."],
+    "needs": ["reliability", "calm, clear communication", "someone who notices effort", "space to unwind their brain", "a partner who grows with them"],
+    "relatable": ["has a list for the list", "edited their text four times before sending", "cleans when they're stressed", "remembers exactly what you said, and when", "says 'no worries' while worrying"],
+    "advice": ["Done is better than perfect. So is loved.", "Say the need, not the critique.", "Let someone help. It's a gift for them too.", "Your worth isn't measured in usefulness."],
+    "align": ["Someone who makes life simpler.", "Being appreciated for the small things.", "Peace in your head, finally."],
+    "pairs": {"taurus": ["Steady, practical, and quietly devoted.", "They build a life brick by brick."], "capricorn": ["The power couple with a plan.", "Goals, together."], "pisces": ["Opposites that heal each other.", "Pisces dreams, Virgo makes it real."]},
+    "invite": ["has a plan B for your plan B", "takes care of every detail but their own heart", "overthinks every text", "needs to hear 'you did enough'"]
+  },
+  "libra": {
+    "name": "Libra", "glyph": "♎", "element": "air", "moods": ["libra", "dance", "mirror", "flowers"],
+    "dear": [
+      ["Keeping the peace isn't the same as having peace.", "Say what you want.", "The right person can handle it."],
+      ["You see everyone's side.", "Don't forget you have one.", "It counts too."],
+      ["Your love is beautiful.", "But you don't have to be in love to be whole.", "You already are."],
+      ["Not everyone deserves your benefit of the doubt.", "Some people showed you who they were.", "Believe them."]
+    ],
+    "loves": ["makes every date look like a movie", "listens to both sides of your story", "remembers how you like things", "makes everyone around you feel welcome", "brings beauty into the boring parts"],
+    "wontsay": ["I don't actually know what I want for dinner, or in life.", "I need you to pick sometimes.", "I'm upset, I just don't want to be the problem.", "I stay too long because leaving feels unfair."],
+    "needs": ["balance and fairness", "romance with taste", "a partner who talks things through", "harmony without silence", "someone who makes decisions too"],
+    "relatable": ["can't choose a restaurant but can choose an outfit in seconds", "plays mediator in the group chat", "looks good during a breakup", "says 'whatever you want' and means 'guess'", "has a crush on everyone a little"],
+    "advice": ["A little conflict is how you get closer.", "You're allowed to be someone's priority.", "Choose, and let the choice be enough.", "Peace that costs you your voice isn't peace."],
+    "align": ["You never have to shrink to keep the peace.", "A real partnership, fifty-fifty.", "Beauty, and honesty too."],
+    "pairs": {"gemini": ["Air plus air equals endless talk.", "Fun, flirty and easy."], "aquarius": ["Two idealists building something better.", "Friends first, always."], "aries": ["The classic opposites.", "Balance and spark in one room."]},
+    "invite": ["can't pick a restaurant", "keeps the peace and loses themself", "deserves to be someone's first choice", "is too nice to the wrong people"]
+  },
+  "scorpio": {
+    "name": "Scorpio", "glyph": "♏", "element": "water", "moods": ["scorpio", "moon", "city-night", "mystic"],
+    "dear": [
+      ["You don't have to test them.", "Trust can be built, not proved.", "Let it grow."],
+      ["You feel everything at full volume.", "That's not too intense.", "It's just honest."],
+      ["Letting someone in isn't losing control.", "It's choosing to.", "That's power too."],
+      ["Not everyone is going to betray you.", "Some people are just slow to say it right.", "Give the right ones a chance."]
+    ],
+    "loves": ["is all in or not at all", "remembers every word you ever said", "protects you like it's their job", "knows what you're feeling before you do", "makes ordinary nights feel like a secret"],
+    "wontsay": ["I'm scared of how much I care.", "I need you to prove I'm safe, without me asking.", "I already forgave you. I just don't trust it yet.", "I check your story because I miss you."],
+    "needs": ["honesty, even when it hurts", "loyalty without question", "depth, not small talk", "privacy for the two of you", "a partner who doesn't flinch"],
+    "relatable": ["knows your ex's full name and birthday", "says 'I'm not mad' with their eyes", "listens more than they talk", "can end a conversation with one look", "has a playlist for every feeling"],
+    "advice": ["Ask instead of investigating.", "Softness is a strength, not a risk.", "The past isn't a prediction.", "Let them earn trust, then let them have it."],
+    "align": ["Trust you don't have to guard.", "Depth that goes both ways.", "Being known, completely, and still chosen."],
+    "pairs": {"cancer": ["Water signs that just get it.", "Emotionally fluent together."], "pisces": ["A deep, dreamy kind of love.", "They never have to explain a feeling."], "taurus": ["Opposites with gravity.", "Loyal to the very end."]},
+    "invite": ["reads people for a living", "acts unbothered but feels everything", "deserves someone they never have to test", "has trust issues and a huge heart"]
+  },
+  "sagittarius": {
+    "name": "Sagittarius", "glyph": "♐", "element": "fire", "moods": ["sagittarius", "boat", "sunset", "stars"],
+    "dear": [
+      ["Freedom and love aren't opposites.", "The right person is the adventure.", "Not the cage."],
+      ["You run from boring, not from love.", "Find someone who isn't boring.", "Then stay."],
+      ["You're honest to a fault.", "Add some gentle to the truth.", "It lands better."],
+      ["Not every feeling needs a plane ticket.", "Some need a conversation.", "Stay for that one."]
+    ],
+    "loves": ["takes you on spontaneous trips", "makes you laugh until you can't breathe", "tells you the truth, always", "shows you the world and their world", "turns any plan into a story"],
+    "wontsay": ["I'm scared of getting stuck.", "I need you to have your own life too.", "I want to stay, I just don't know how yet.", "I joke so I don't have to be serious about how much I like you."],
+    "needs": ["freedom and trust", "a partner who says yes to adventures", "humor, always", "honesty, no games", "growth, together"],
+    "relatable": ["has a bag packed just in case", "makes friends with strangers everywhere", "says the wild thing out loud", "can't sit through a long meeting", "has started six hobbies this year"],
+    "advice": ["Commitment is just choosing your adventure.", "Not everything good is new.", "Be honest, and kind about it.", "Staying can be brave too."],
+    "align": ["Someone who wants to go everywhere with you.", "Freedom inside the relationship.", "Laughing on the way to somewhere new."],
+    "pairs": {"aries": ["Adventure, adventure, adventure.", "Always on the move together."], "leo": ["Big hearts, big laughs.", "They light each other up."], "gemini": ["Curious and free.", "The best conversations on the road."]},
+    "invite": ["has a passport and no plan", "needs someone who says yes", "is scared of boring, not of love", "always has a wild story"]
+  },
+  "capricorn": {
+    "name": "Capricorn", "glyph": "♑", "element": "earth", "moods": ["capricorn", "castle", "city-night", "portrait-him"],
+    "dear": [
+      ["You don't have to earn love by working harder.", "You can rest and still be wanted.", "Try it."],
+      ["You carry so much quietly.", "Let someone share the weight.", "That's what partners do."],
+      ["Being strong all the time is exhausting.", "Let someone see the tired version.", "They'll stay."],
+      ["Success is good.", "Someone to come home to is better.", "Make room for both."]
+    ],
+    "loves": ["shows love through stability", "plans a future with you in it", "keeps every promise they make", "protects your goals like their own", "loves quietly and for the long run"],
+    "wontsay": ["I'm tired of being the strong one.", "I need you to tell me I'm doing enough.", "I'm serious because I'm scared of losing this.", "I already planned our five-year plan in my head."],
+    "needs": ["respect and ambition", "loyalty that lasts", "someone who has their own goals", "patience while they open up", "a calm, steady home"],
+    "relatable": ["checks their email on vacation", "has a five-year plan and a backup plan", "texts back with full punctuation", "shows love through spreadsheets", "laughs at their own dry jokes"],
+    "advice": ["Rest is part of the plan.", "Let them see you soft.", "Love isn't a project to manage.", "You're allowed to be loved before you're finished."],
+    "align": ["Building something real, together.", "A partner who matches your pace.", "Someone to rest with."],
+    "pairs": {"taurus": ["Two earth signs building an empire.", "Steady, loyal, forever."], "virgo": ["Plans, lists, and devotion.", "The most reliable pair."], "cancer": ["Opposites that make a home.", "Cancer softens, Capricorn protects."]},
+    "invite": ["works too much and rests too little", "has a five-year plan", "needs to hear 'you can rest now'", "is the strong friend"]
+  },
+  "aquarius": {
+    "name": "Aquarius", "glyph": "♒", "element": "air", "moods": ["aquarius", "stars", "space", "water"],
+    "dear": [
+      ["You're allowed to be weird and wanted.", "The right person loves the strange parts.", "Especially those."],
+      ["Detaching isn't the same as healing.", "Feel it, then let it go.", "In that order."],
+      ["You care about the whole world.", "Let one person care about you.", "Up close."],
+      ["You don't have to explain yourself to everyone.", "Just to the one who's really listening.", "You'll know them."]
+    ],
+    "loves": ["loves you like their best friend", "shares the strangest facts at 2 am", "gives you all the space you need", "fights for causes and for you", "makes your weird feel normal"],
+    "wontsay": ["I need closeness too, I'm just bad at asking.", "I go quiet when I feel too much.", "I care. A lot. I just show it sideways.", "I'm scared that being close means losing myself."],
+    "needs": ["friendship first", "freedom to be themself", "deep, weird conversations", "a partner with their own mind", "no clingy, no drama"],
+    "relatable": ["sends you a documentary instead of a love note", "has a theory about everything", "goes quiet and comes back like nothing happened", "is friends with every ex", "hates small talk, loves big talk"],
+    "advice": ["Feelings aren't problems to solve.", "Let them close, you won't disappear.", "Say it with words, not just links.", "Independence is great. So is being held."],
+    "align": ["Being free and being close.", "A best friend you also like to kiss.", "Your mind gets matched."],
+    "pairs": {"gemini": ["Big minds, big talk.", "They never get bored."], "libra": ["Friends who fell in love.", "Fair, kind and fun."], "leo": ["Opposites that spark.", "Warmth meets wonder."]},
+    "invite": ["sends documentaries instead of feelings", "is friends with everyone and close to few", "needs a best friend who's also a crush", "is gloriously weird"]
+  },
+  "pisces": {
+    "name": "Pisces", "glyph": "♓", "element": "water", "moods": ["pisces", "water", "moon", "letters"],
+    "dear": [
+      ["You see the best in people.", "Make sure you see the real them too.", "Both matter."],
+      ["You love with your whole imagination.", "Find someone who's real enough to keep up.", "They exist."],
+      ["Being sensitive is a gift.", "Protect it, don't hide it.", "There's a difference."],
+      ["You don't have to save anyone.", "Not to be loved.", "Not ever."]
+    ],
+    "loves": ["writes you songs, poems, and long texts", "remembers how you felt, not just what you said", "dreams up your whole future together", "feels your pain like it's theirs", "turns a normal night into magic"],
+    "wontsay": ["I'm in love with who you could be.", "I need you to stay grounded with me.", "I'm hurt, I just don't want to make it a thing.", "I already imagined our whole life together."],
+    "needs": ["gentleness", "a partner who understands feelings", "creativity and romance", "safe places to be soft", "someone who stays when they spiral"],
+    "relatable": ["has fallen in love with a stranger on a train", "cries at the end of every movie", "lives half in a daydream", "forgives way too easily", "has a song for every person they've loved"],
+    "advice": ["Love the person, not the potential.", "Boundaries are a form of love.", "Your feelings are valid, not always facts.", "You don't have to fix someone to keep them."],
+    "align": ["Romance that's real, not imagined.", "Someone who holds your feelings carefully.", "A love you don't have to escape from."],
+    "pairs": {"cancer": ["Two soft hearts.", "Endless care."], "scorpio": ["Deep water, deep love.", "They understand without words."], "virgo": ["Opposites that complete each other.", "Dreams meet plans."]},
+    "invite": ["falls for potential", "cries at every movie", "loves too easily and too much", "needs someone who stays real"]
+  }
+}

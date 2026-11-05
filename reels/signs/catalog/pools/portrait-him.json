@@ -1,0 +1,255 @@
+{
+ "images": [
+  {
+   "id": "wc-134589359",
+   "source": "commons",
+   "title": "Portrait of Thomas Orde, later Orde-Powlett and 1st Baron Bolton (1746–1807) (by Pompeo Girolamo Batoni)",
+   "creator": "Pompeo Batoni",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Portrait_of_Thomas_Orde,_later_Orde-Powlett_and_1st_Baron_Bolton_(1746%E2%80%931807)_(by_Pompeo_Girolamo_Batoni).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Portrait_of_Thomas_Orde%2C_later_Orde-Powlett_and_1st_Baron_Bolton_%281746%E2%80%931807%29_%28by_Pompeo_Girolamo_Batoni%29.jpg/1920px-Portrait_of_Thomas_Orde%2C_later_Orde-Powlett_and_1st_Baron_Bolton_%281746%E2%80%931807%29_%28by_Pompeo_Girolamo_Batoni%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Portrait_of_Thomas_Orde%2C_later_Orde-Powlett_and_1st_Baron_Bolton_%281746%E2%80%931807%29_%28by_Pompeo_Girolamo_Batoni%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1772,
+   "h": 2400,
+   "file": "wc-134589359.jpg",
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "id": "aic-24684",
+   "source": "aic",
+   "title": "Francesco de' Medici",
+   "creator": "Attributed to Alessandro Allori (Italian, 1535–1607)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/24684",
+   "url": "https://www.artic.edu/iiif/2/9a29cc5d-3779-c9ab-2aa2-0df7b6c3f391/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2200,
+   "file": "aic-24684.jpg",
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "id": "aic-864",
+   "source": "aic",
+   "title": "Portrait of a Man with a Pink",
+   "creator": "Quentin Massys (Netherlandish, 1466-1530)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/864",
+   "url": "https://www.artic.edu/iiif/2/f731615e-ee25-f8e5-b957-69635e1e2d60/full/1686,/0/default.jpg",
+   "w": 1575,
+   "h": 2400,
+   "file": "aic-864.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-459054",
+   "source": "met",
+   "title": "Portrait of a Young Man",
+   "creator": "Hans Memling",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/459054",
+   "url": "https://images.metmuseum.org/CRDImages/rl/original/DP-40423-001.jpg",
+   "w": 1804,
+   "h": 2400,
+   "file": "met-459054.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Memling, young man at the window"
+  },
+  {
+   "id": "met-436769",
+   "source": "met",
+   "title": "Portrait of a Young Man",
+   "creator": "Jacometto (Jacometto Veneziano)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436769",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP243725.jpg",
+   "w": 1817,
+   "h": 2400,
+   "file": "met-436769.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-435664",
+   "source": "met",
+   "title": "Portrait of a Young Man",
+   "creator": "Biagio d'Antonio",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435664",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP161258.jpg",
+   "w": 1739,
+   "h": 2400,
+   "file": "met-435664.jpg",
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "id": "met-435802",
+   "source": "met",
+   "title": "Portrait of a Young Man",
+   "creator": "Bronzino (Agnolo di Cosimo di Mariano)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435802",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-14286-011.jpg",
+   "w": 1885,
+   "h": 2400,
+   "file": "met-435802.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "pin": true,
+   "note": "Bronzino, portrait of a young man"
+  },
+  {
+   "id": "aic-14650",
+   "source": "aic",
+   "title": "Alfred Sisley",
+   "creator": "Pierre-Auguste Renoir (French, 1841–1919)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/14650",
+   "url": "https://www.artic.edu/iiif/2/64693216-bc82-0d21-9e57-86f8fc2e632b/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2021,
+   "file": "aic-14650.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "met-436480",
+   "source": "met",
+   "title": "Portrait of a Man",
+   "creator": "German (Nuremberg) Painter",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436480",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP164803.jpg",
+   "w": 1686,
+   "h": 2400,
+   "file": "met-436480.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-437893",
+   "source": "met",
+   "title": "Portrait of a Man",
+   "creator": "Johannes Verspronck",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437893",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP143176.jpg",
+   "w": 1941,
+   "h": 2400,
+   "file": "met-437893.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ]
+  },
+  {
+   "id": "met-435615",
+   "source": "met",
+   "title": "Portrait of a Man",
+   "creator": "Fra Bartolomeo (Bartolomeo di Paolo del Fattorino)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435615",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT8842.jpg",
+   "w": 1862,
+   "h": 2400,
+   "file": "met-435615.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-12370796",
+   "source": "commons",
+   "title": "Gian Lorenzo Bernini, self-portrait, c1623",
+   "creator": "Gian Lorenzo Bernini",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Gian_Lorenzo_Bernini,_self-portrait,_c1623.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Gian_Lorenzo_Bernini%2C_self-portrait%2C_c1623.jpg/1920px-Gian_Lorenzo_Bernini%2C_self-portrait%2C_c1623.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Gian_Lorenzo_Bernini%2C_self-portrait%2C_c1623.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1845,
+   "h": 2400,
+   "file": "wc-12370796.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "pin": true,
+   "note": "Bernini, self-portrait, intense gaze"
+  },
+  {
+   "id": "wc-15398329",
+   "source": "commons",
+   "title": "Michael Sweerts - Portrait of a Young Man (Self-portrait?)",
+   "creator": "Michiel Sweerts",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Michael_Sweerts_-_Portrait_of_a_Young_Man_(Self-portrait%3F).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Michael_Sweerts_-_Portrait_of_a_Young_Man_%28Self-portrait%3F%29.jpg/1920px-Michael_Sweerts_-_Portrait_of_a_Young_Man_%28Self-portrait%3F%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Michael_Sweerts_-_Portrait_of_a_Young_Man_%28Self-portrait%3F%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2393,
+   "file": "wc-15398329.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ],
+   "pin": true,
+   "note": "Sweerts, young man leaning on his hand"
+  },
+  {
+   "id": "aic-80607",
+   "source": "aic",
+   "title": "Self-Portrait",
+   "creator": "Vincent van Gogh (Dutch, 1853–1890)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/80607",
+   "url": "https://www.artic.edu/iiif/2/47c5bcb8-62ef-e5d7-55e7-f5121f409a30/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2149,
+   "file": "aic-80607.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-110661",
+   "source": "aic",
+   "title": "Self-Portrait",
+   "creator": "Frédéric Bazille (French, 1841-1870)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/110661",
+   "url": "https://www.artic.edu/iiif/2/eb2cd58f-db63-0236-cebd-7ca8e63eda54/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1262,
+   "file": "aic-110661.jpg",
+   "focus": [
+    0.65,
+    0.35
+   ]
+  }
+ ]
+}

@@ -1,0 +1,322 @@
+{
+ "images": [
+  {
+   "id": "wc-42525331",
+   "source": "commons",
+   "title": "Young Woman in a Black and Green Bonnet, Looking Down",
+   "creator": "Mary Cassatt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Young_Woman_in_a_Black_and_Green_Bonnet,_Looking_Down.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Young_Woman_in_a_Black_and_Green_Bonnet%2C_Looking_Down.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Young_Woman_in_a_Black_and_Green_Bonnet%2C_Looking_Down.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1668,
+   "h": 2000,
+   "file": "wc-42525331.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-27307",
+   "source": "aic",
+   "title": "Madame de Pastoret and Her Son",
+   "creator": "Jacques-Louis David (French, 1748–1825)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/27307",
+   "url": "https://www.artic.edu/iiif/2/72227c9e-413c-8930-477d-5a90e0a2123c/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1152,
+   "file": "aic-27307.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-27949",
+   "source": "aic",
+   "title": "Madame Roulin Rocking the Cradle (La berceuse)",
+   "creator": "Vincent van Gogh (Dutch, 1853–1890)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/27949",
+   "url": "https://www.artic.edu/iiif/2/6f3ca8b9-fef6-edfc-a71c-3e7b471d5f6c/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2130,
+   "file": "aic-27949.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-88632",
+   "source": "aic",
+   "title": "Madame François Buron",
+   "creator": "Jacques-Louis David (French, 1748–1825)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/88632",
+   "url": "https://www.artic.edu/iiif/2/77f1c8e3-16c6-1147-f4aa-4cfc8bd3eb8b/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2045,
+   "file": "aic-88632.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-59944",
+   "source": "aic",
+   "title": "The Laundress",
+   "creator": "Pierre-Auguste Renoir (French, 1841–1919)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/59944",
+   "url": "https://www.artic.edu/iiif/2/98d3c331-a4ef-f4a5-53a4-b9632a0b727c/full/1686,/0/default.jpg",
+   "w": 1630,
+   "h": 2400,
+   "file": "aic-59944.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-436630",
+   "source": "met",
+   "title": "Portrait of a Woman",
+   "creator": "Adriaen Hanneman",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436630",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP146498.jpg",
+   "w": 1421,
+   "h": 1806,
+   "file": "met-436630.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-111657",
+   "source": "aic",
+   "title": "Double Portrait: Two Women",
+   "creator": "Artist unknown (British, active 19th century)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111657",
+   "url": "https://www.artic.edu/iiif/2/9cf496f1-23ba-fd19-c537-159b80c2a63c/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1181,
+   "file": "aic-111657.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-31809",
+   "source": "aic",
+   "title": "Head of a Woman",
+   "creator": "Artist unknown (possibly French, active 19th century)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/31809",
+   "url": "https://www.artic.edu/iiif/2/a5b07250-68d3-5c93-d818-5fcefbd35308/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2072,
+   "file": "aic-31809.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "head of a woman in red shawl"
+  },
+  {
+   "id": "wc-45445725",
+   "source": "commons",
+   "title": "1855 Peters Portrait einer jungen Frau anagoria",
+   "creator": "Otto Peters",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:1855_Peters_Portrait_einer_jungen_Frau_anagoria.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/1855_Peters_Portrait_einer_jungen_Frau_anagoria.JPG/1920px-1855_Peters_Portrait_einer_jungen_Frau_anagoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/1855_Peters_Portrait_einer_jungen_Frau_anagoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1760,
+   "h": 2400,
+   "file": "wc-45445725.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "Peters, young woman, pensive gaze"
+  },
+  {
+   "id": "wc-21099605",
+   "source": "commons",
+   "title": "'Woman with Geraniums' by Caroline A. Lord, on loan to the Cincinnati Art Museum",
+   "creator": "Caroline A. Lord",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:%27Woman_with_Geraniums%27_by_Caroline_A._Lord,_on_loan_to_the_Cincinnati_Art_Museum.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/%27Woman_with_Geraniums%27_by_Caroline_A._Lord%2C_on_loan_to_the_Cincinnati_Art_Museum.JPG/1920px-%27Woman_with_Geraniums%27_by_Caroline_A._Lord%2C_on_loan_to_the_Cincinnati_Art_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/%27Woman_with_Geraniums%27_by_Caroline_A._Lord%2C_on_loan_to_the_Cincinnati_Art_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2344,
+   "file": "wc-21099605.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-59007508",
+   "source": "commons",
+   "title": "Lundahl Skärgårdsflicka",
+   "creator": "Amélie Lundahl",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Lundahl_Sk%C3%A4rg%C3%A5rdsflicka.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Lundahl_Sk%C3%A4rg%C3%A5rdsflicka.jpg/1920px-Lundahl_Sk%C3%A4rg%C3%A5rdsflicka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Lundahl_Sk%C3%A4rg%C3%A5rdsflicka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1538,
+   "h": 2400,
+   "file": "wc-59007508.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-347239",
+   "source": "commons",
+   "title": "Raja Ravi Varma, There Comes Papa (1893)",
+   "creator": "Raja Ravi Varma",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_There_Comes_Papa_(1893).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Raja_Ravi_Varma%2C_There_Comes_Papa_%281893%29.jpg/1920px-Raja_Ravi_Varma%2C_There_Comes_Papa_%281893%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Raja_Ravi_Varma%2C_There_Comes_Papa_%281893%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1534,
+   "h": 2400,
+   "file": "wc-347239.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-436323",
+   "source": "met",
+   "title": "Marie Emilie Coignet de Courson (1716–1806) with a Dog",
+   "creator": "Jean Honoré Fragonard",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436323",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1019-01.jpg",
+   "w": 1921,
+   "h": 2400,
+   "file": "met-436323.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-846945",
+   "source": "met",
+   "title": "Joanna de Silva",
+   "creator": "William Wood",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/846945",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-21917-001.jpg",
+   "w": 2023,
+   "h": 2400,
+   "file": "met-846945.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-32807001",
+   "source": "commons",
+   "title": "Italian Woman - My Dream",
+   "creator": "Vincent van Gogh",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Italian_Woman_-_My_Dream.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Italian_Woman_-_My_Dream.jpg/1920px-Italian_Woman_-_My_Dream.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Italian_Woman_-_My_Dream.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1782,
+   "h": 2400,
+   "file": "wc-32807001.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-94841",
+   "source": "aic",
+   "title": "The Song of the Lark",
+   "creator": "Jules Breton (French, 1827–1906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/94841",
+   "url": "https://www.artic.edu/iiif/2/48b2de88-ba73-8e19-f448-d1cef4a1c847/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2186,
+   "file": "aic-94841.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Breton, The Song of the Lark at sunrise"
+  },
+  {
+   "id": "aic-81552",
+   "source": "aic",
+   "title": "Woman and Child at the Well",
+   "creator": "Camille Pissarro (French, 1830–1903)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/81552",
+   "url": "https://www.artic.edu/iiif/2/a2ddbd89-d864-8877-37bc-cd3dce12c37c/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2109,
+   "file": "aic-81552.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-12007",
+   "source": "aic",
+   "title": "The Dreamer (La Rêveuse)",
+   "creator": "Jean Antoine Watteau (French, 1684–1721)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/12007",
+   "url": "https://www.artic.edu/iiif/2/40bf35ab-2898-650e-9e27-d38c4cf39a30/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1152,
+   "file": "aic-12007.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "met-12787",
+   "source": "met",
+   "title": "Young Woman",
+   "creator": "Abbott H. Thayer",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/12787",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap06.1298.jpg",
+   "w": 1119,
+   "h": 1441,
+   "file": "met-12787.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Thayer, young woman in white"
+  }
+ ]
+}

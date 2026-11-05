@@ -1,0 +1,376 @@
+{
+ "images": [
+  {
+   "id": "wc-28169507",
+   "source": "commons",
+   "title": "Sunset at Montmajour 1888 Van Gogh",
+   "creator": "Vincent van Gogh",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Sunset_at_Montmajour_1888_Van_Gogh.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Sunset_at_Montmajour_1888_Van_Gogh.jpg/1920px-Sunset_at_Montmajour_1888_Van_Gogh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Sunset_at_Montmajour_1888_Van_Gogh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1515,
+   "file": "wc-28169507.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-57257113",
+   "source": "commons",
+   "title": "Landscape at Sunset with Fishermen Returning with Their Catch by Joseph Vernet",
+   "creator": "Joseph Vernet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Landscape_at_Sunset_with_Fishermen_Returning_with_Their_Catch_by_Joseph_Vernet.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Landscape_at_Sunset_with_Fishermen_Returning_with_Their_Catch_by_Joseph_Vernet.JPG/1920px-Landscape_at_Sunset_with_Fishermen_Returning_with_Their_Catch_by_Joseph_Vernet.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Landscape_at_Sunset_with_Fishermen_Returning_with_Their_Catch_by_Joseph_Vernet.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1336,
+   "file": "wc-57257113.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "aic-90048",
+   "source": "aic",
+   "title": "Distant View of Niagara Falls",
+   "creator": "Thomas Cole (American, born England, 1801–1848)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/90048",
+   "url": "https://www.artic.edu/iiif/2/18092196-50ae-3ff1-9205-1b3110e966c3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1306,
+   "file": "aic-90048.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ]
+  },
+  {
+   "id": "aic-68792",
+   "source": "aic",
+   "title": "A Marine",
+   "creator": "George Inness (American, 1825–1894)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/68792",
+   "url": "https://www.artic.edu/iiif/2/3d2d0842-312e-8d48-708b-d6adde0777bf/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1095,
+   "file": "aic-68792.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-437191",
+   "source": "met",
+   "title": "Landscape at Sunset",
+   "creator": "Aert van der Neer",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437191",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP146446.jpg",
+   "w": 2400,
+   "h": 1694,
+   "file": "met-437191.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-11324",
+   "source": "met",
+   "title": "Sunset",
+   "creator": "John Frederick Kensett",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11324",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap74.37.jpg",
+   "w": 2400,
+   "h": 1394,
+   "file": "met-11324.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-29679296",
+   "source": "commons",
+   "title": "Thomas Moran - The Golden Hour - Google Art Project",
+   "creator": "Thomas Moran",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Thomas_Moran_-_The_Golden_Hour_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Thomas_Moran_-_The_Golden_Hour_-_Google_Art_Project.jpg/1920px-Thomas_Moran_-_The_Golden_Hour_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Thomas_Moran_-_The_Golden_Hour_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1315,
+   "file": "wc-29679296.jpg",
+   "focus": [
+    0.62,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-77171552",
+   "source": "commons",
+   "title": "Samuel Palmer - The Golden Hour - 2009.3 - Cleveland Museum of Art",
+   "creator": "Samuel Palmer",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Samuel_Palmer_-_The_Golden_Hour_-_2009.3_-_Cleveland_Museum_of_Art.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Samuel_Palmer_-_The_Golden_Hour_-_2009.3_-_Cleveland_Museum_of_Art.tif/lossy-page1-1920px-Samuel_Palmer_-_The_Golden_Hour_-_2009.3_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Samuel_Palmer_-_The_Golden_Hour_-_2009.3_-_Cleveland_Museum_of_Art.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1386,
+   "file": "wc-77171552.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-94841",
+   "source": "aic",
+   "title": "The Song of the Lark",
+   "creator": "Jules Breton (French, 1827–1906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/94841",
+   "url": "https://www.artic.edu/iiif/2/48b2de88-ba73-8e19-f448-d1cef4a1c847/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2186,
+   "file": "aic-94841.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ],
+   "pin": true,
+   "note": "Breton, The Song of the Lark, girl at sunrise"
+  },
+  {
+   "id": "wc-8748524",
+   "source": "commons",
+   "title": "WLA brooklynmuseum George Inness Sunset over the Sea 1887",
+   "creator": "George Inness",
+   "license": "CC BY-SA 2.5",
+   "landing": "https://commons.wikimedia.org/wiki/File:WLA_brooklynmuseum_George_Inness_Sunset_over_the_Sea_1887.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/WLA_brooklynmuseum_George_Inness_Sunset_over_the_Sea_1887.jpg/1920px-WLA_brooklynmuseum_George_Inness_Sunset_over_the_Sea_1887.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/WLA_brooklynmuseum_George_Inness_Sunset_over_the_Sea_1887.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1159,
+   "file": "wc-8748524.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-80396493",
+   "source": "commons",
+   "title": "Sunset over the Sea Ivan Choultse (1924)",
+   "creator": "Ivan Fedorovich Choultsé",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Sunset_over_the_Sea_Ivan_Choultse_(1924).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Sunset_over_the_Sea_Ivan_Choultse_%281924%29.jpg/1920px-Sunset_over_the_Sea_Ivan_Choultse_%281924%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Sunset_over_the_Sea_Ivan_Choultse_%281924%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1384,
+   "file": "wc-80396493.jpg",
+   "focus": [
+    0.42,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-107918924",
+   "source": "commons",
+   "title": "Vilhelm Kyhn - Aftenstemning med solnedgang over havet - 1872",
+   "creator": "Vilhelm Kyhn",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Vilhelm_Kyhn_-_Aftenstemning_med_solnedgang_over_havet_-_1872.png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Vilhelm_Kyhn_-_Aftenstemning_med_solnedgang_over_havet_-_1872.png/1920px-Vilhelm_Kyhn_-_Aftenstemning_med_solnedgang_over_havet_-_1872.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Vilhelm_Kyhn_-_Aftenstemning_med_solnedgang_over_havet_-_1872.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1225,
+   "file": "wc-107918924.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-180711",
+   "source": "aic",
+   "title": "The Gulf of Salerno",
+   "creator": "Joseph Wright of Derby (English, 1734-1797)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/180711",
+   "url": "https://www.artic.edu/iiif/2/67b46720-1589-0d13-3597-f03c7b618094/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1184,
+   "file": "aic-180711.jpg",
+   "focus": [
+    0.6,
+    0.45
+   ]
+  },
+  {
+   "id": "met-11325",
+   "source": "met",
+   "title": "Sunset on the Sea",
+   "creator": "John Frederick Kensett",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11325",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/DT226485.jpg",
+   "w": 2400,
+   "h": 1635,
+   "file": "met-11325.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-436833",
+   "source": "met",
+   "title": "Red Sunset",
+   "creator": "Arkhyp Kuindzhi (Arkhip Ivanovich Kuindzhi)",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436833",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2557.jpg",
+   "w": 2400,
+   "h": 1741,
+   "file": "met-436833.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Kuindzhi, red sunset"
+  },
+  {
+   "id": "wc-29840367",
+   "source": "commons",
+   "title": "Harald Sohlberg - Evening Glow - Google Art Project",
+   "creator": "Harald Sohlberg",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Harald_Sohlberg_-_Evening_Glow_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Harald_Sohlberg_-_Evening_Glow_-_Google_Art_Project.jpg/1920px-Harald_Sohlberg_-_Evening_Glow_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Harald_Sohlberg_-_Evening_Glow_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1857,
+   "h": 2400,
+   "file": "wc-29840367.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-22008500",
+   "source": "commons",
+   "title": "John Atkinson Grimshaw - Evening Glow - Google Art Project",
+   "creator": "John Atkinson Grimshaw",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:John_Atkinson_Grimshaw_-_Evening_Glow_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/John_Atkinson_Grimshaw_-_Evening_Glow_-_Google_Art_Project.jpg/1920px-John_Atkinson_Grimshaw_-_Evening_Glow_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/John_Atkinson_Grimshaw_-_Evening_Glow_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1249,
+   "file": "wc-22008500.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Grimshaw, Evening Glow lane"
+  },
+  {
+   "id": "wc-9617107",
+   "source": "commons",
+   "title": "An Autumnal Sunset on the Russian River Evening Glow by William Keith, 1878",
+   "creator": "William Keith",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:An_Autumnal_Sunset_on_the_Russian_River_Evening_Glow_by_William_Keith,_1878.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/An_Autumnal_Sunset_on_the_Russian_River_Evening_Glow_by_William_Keith%2C_1878.jpg/1920px-An_Autumnal_Sunset_on_the_Russian_River_Evening_Glow_by_William_Keith%2C_1878.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/An_Autumnal_Sunset_on_the_Russian_River_Evening_Glow_by_William_Keith%2C_1878.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1150,
+   "file": "wc-9617107.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-22621656",
+   "source": "commons",
+   "title": "Vincent van Gogh - Landscape at twilight - Google Art Project",
+   "creator": "Vincent van Gogh",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Landscape_at_twilight_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Vincent_van_Gogh_-_Landscape_at_twilight_-_Google_Art_Project.jpg/1920px-Vincent_van_Gogh_-_Landscape_at_twilight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Vincent_van_Gogh_-_Landscape_at_twilight_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 941,
+   "file": "wc-22621656.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-327431",
+   "source": "commons",
+   "title": "Twilight in the Wilderness by Frederic Edwin Church (3)",
+   "creator": "Frederic Edwin Church",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Twilight_in_the_Wilderness_by_Frederic_Edwin_Church_(3).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Twilight_in_the_Wilderness_by_Frederic_Edwin_Church_%283%29.jpg/1920px-Twilight_in_the_Wilderness_by_Frederic_Edwin_Church_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Twilight_in_the_Wilderness_by_Frederic_Edwin_Church_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1196,
+   "file": "wc-327431.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Church, Twilight in the Wilderness"
+  },
+  {
+   "id": "met-11329",
+   "source": "met",
+   "title": "Twilight on the Sound, Darien, Connecticut",
+   "creator": "John Frederick Kensett",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11329",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap74.24.jpg",
+   "w": 2400,
+   "h": 1099,
+   "file": "met-11329.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ]
+  },
+  {
+   "id": "met-11328",
+   "source": "met",
+   "title": "Twilight in the Cedars at Darien, Connecticut",
+   "creator": "John Frederick Kensett",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11328",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap74.4.jpg",
+   "w": 2400,
+   "h": 1632,
+   "file": "met-11328.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

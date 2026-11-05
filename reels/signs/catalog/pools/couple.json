@@ -1,0 +1,245 @@
+{
+ "images": [
+  {
+   "id": "wc-151910840",
+   "source": "commons",
+   "title": "A Couple Embracing in an Artist's Studio, by Eugène Lami (Getty 108GHZ)",
+   "creator": "Eugène Lami",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:A_Couple_Embracing_in_an_Artist%27s_Studio,_by_Eug%C3%A8ne_Lami_(Getty_108GHZ).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/A_Couple_Embracing_in_an_Artist%27s_Studio%2C_by_Eug%C3%A8ne_Lami_%28Getty_108GHZ%29.jpg/1920px-A_Couple_Embracing_in_an_Artist%27s_Studio%2C_by_Eug%C3%A8ne_Lami_%28Getty_108GHZ%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/A_Couple_Embracing_in_an_Artist%27s_Studio%2C_by_Eug%C3%A8ne_Lami_%28Getty_108GHZ%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2347,
+   "file": "wc-151910840.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-20684",
+   "source": "aic",
+   "title": "Paris Street; Rainy Day",
+   "creator": "Gustave Caillebotte (French, 1848–1894)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/20684",
+   "url": "https://www.artic.edu/iiif/2/f8fd76e9-c396-5678-36ed-6a348c904d27/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1309,
+   "file": "aic-20684.jpg",
+   "focus": [
+    0.68,
+    0.45
+   ]
+  },
+  {
+   "id": "met-436675",
+   "source": "met",
+   "title": "Interior with a Young Couple",
+   "creator": "Pieter de Hooch",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436675",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145906.jpg",
+   "w": 2400,
+   "h": 2129,
+   "file": "met-436675.jpg",
+   "focus": [
+    0.62,
+    0.45
+   ]
+  },
+  {
+   "id": "met-10966",
+   "source": "met",
+   "title": "The Greek Lovers",
+   "creator": "Henry Peters Gray",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/10966",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap02.7.2.jpg",
+   "w": 2400,
+   "h": 1858,
+   "file": "met-10966.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-37658810",
+   "source": "commons",
+   "title": "Edvard Munch - The Kiss - Google Art Project",
+   "creator": "Edvard Munch",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_The_Kiss_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Edvard_Munch_-_The_Kiss_-_Google_Art_Project.jpg/1920px-Edvard_Munch_-_The_Kiss_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Edvard_Munch_-_The_Kiss_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2351,
+   "file": "wc-37658810.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ],
+   "pin": true,
+   "note": "Munch, The Kiss at the window"
+  },
+  {
+   "id": "wc-23751751",
+   "source": "commons",
+   "title": "Klimt - The Kiss (detail)",
+   "creator": "Gustav Klimt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Klimt_-_The_Kiss_(detail).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Klimt_-_The_Kiss_%28detail%29.jpg/1920px-Klimt_-_The_Kiss_%28detail%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Klimt_-_The_Kiss_%28detail%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1701,
+   "h": 2400,
+   "file": "wc-23751751.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-74546642",
+   "source": "commons",
+   "title": "Gustav Klimt - Der Kuss (Liebespaar) - 912 - Österreichische Galerie Belvedere",
+   "creator": "Gustav Klimt",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Gustav_Klimt_-_Der_Kuss_(Liebespaar)_-_912_-_%C3%96sterreichische_Galerie_Belvedere.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Gustav_Klimt_-_Der_Kuss_%28Liebespaar%29_-_912_-_%C3%96sterreichische_Galerie_Belvedere.jpg/1920px-Gustav_Klimt_-_Der_Kuss_%28Liebespaar%29_-_912_-_%C3%96sterreichische_Galerie_Belvedere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Gustav_Klimt_-_Der_Kuss_%28Liebespaar%29_-_912_-_%C3%96sterreichische_Galerie_Belvedere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1948,
+   "file": "wc-74546642.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "pin": true,
+   "note": "Klimt, The Kiss"
+  },
+  {
+   "id": "met-436325",
+   "source": "met",
+   "title": "The Stolen Kiss",
+   "creator": "Jean Honoré Fragonard",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436325",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1009-001.jpg",
+   "w": 2400,
+   "h": 1826,
+   "file": "met-436325.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "pin": true,
+   "note": "Fragonard, The Stolen Kiss"
+  },
+  {
+   "id": "wc-21988032",
+   "source": "commons",
+   "title": "Thomas Eakins - The Courtship - Google Art Project",
+   "creator": "Thomas Eakins",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Thomas_Eakins_-_The_Courtship_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Thomas_Eakins_-_The_Courtship_-_Google_Art_Project.jpg/1920px-Thomas_Eakins_-_The_Courtship_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Thomas_Eakins_-_The_Courtship_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1568,
+   "file": "wc-21988032.jpg",
+   "focus": [
+    0.68,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-98924880",
+   "source": "commons",
+   "title": "Wacław Szymanowski - Hutsuls in Conversation - MNK II-b-2846 - National Museum Kraków",
+   "creator": "Wacław Szymanowski",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Wac%C5%82aw_Szymanowski_-_Hutsuls_in_Conversation_-_MNK_II-b-2846_-_National_Museum_Krak%C3%B3w.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Wac%C5%82aw_Szymanowski_-_Hutsuls_in_Conversation_-_MNK_II-b-2846_-_National_Museum_Krak%C3%B3w.jpg/1920px-Wac%C5%82aw_Szymanowski_-_Hutsuls_in_Conversation_-_MNK_II-b-2846_-_National_Museum_Krak%C3%B3w.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Wac%C5%82aw_Szymanowski_-_Hutsuls_in_Conversation_-_MNK_II-b-2846_-_National_Museum_Krak%C3%B3w.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1734,
+   "h": 2400,
+   "file": "wc-98924880.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "met-435772",
+   "source": "met",
+   "title": "Sentimental Conversation",
+   "creator": "Quirijn van Brekelenkam",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435772",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145925.jpg",
+   "w": 2045,
+   "h": 2400,
+   "file": "met-435772.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-37987412",
+   "source": "commons",
+   "title": "Vincent van gogh, passeggiata al crepuscolo, 1889-90, 02",
+   "creator": "Sailko",
+   "license": "CC BY 3.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Vincent_van_gogh,_passeggiata_al_crepuscolo,_1889-90,_02.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Vincent_van_gogh%2C_passeggiata_al_crepuscolo%2C_1889-90%2C_02.JPG/1920px-Vincent_van_gogh%2C_passeggiata_al_crepuscolo%2C_1889-90%2C_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Vincent_van_gogh%2C_passeggiata_al_crepuscolo%2C_1889-90%2C_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1362,
+   "file": "wc-37987412.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-43983552",
+   "source": "commons",
+   "title": "'The Proposal' by Gerhard Munthe, Bergen Kunstmuseum",
+   "creator": "Gerhard Munthe",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%27The_Proposal%27_by_Gerhard_Munthe,_Bergen_Kunstmuseum.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/%27The_Proposal%27_by_Gerhard_Munthe%2C_Bergen_Kunstmuseum.JPG/1920px-%27The_Proposal%27_by_Gerhard_Munthe%2C_Bergen_Kunstmuseum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/%27The_Proposal%27_by_Gerhard_Munthe%2C_Bergen_Kunstmuseum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2272,
+   "file": "wc-43983552.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "id": "wc-12839319",
+   "source": "commons",
+   "title": "William-Adolphe Bouguereau (1825-1905) - The Proposal (1872) 2",
+   "creator": "William-Adolphe Bouguereau",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:William-Adolphe_Bouguereau_(1825-1905)_-_The_Proposal_(1872)_2.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Proposal_%281872%29_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Proposal_%281872%29_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 650,
+   "h": 934,
+   "file": "wc-12839319.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "Bouguereau, The Proposal"
+  }
+ ]
+}

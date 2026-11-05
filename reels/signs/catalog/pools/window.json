@@ -1,0 +1,304 @@
+{
+ "images": [
+  {
+   "id": "wc-175695169",
+   "source": "commons",
+   "title": "An Oriental Woman at a Window",
+   "creator": "Théodore Ralli",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:An_Oriental_Woman_at_a_Window.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/An_Oriental_Woman_at_a_Window.jpg/1920px-An_Oriental_Woman_at_a_Window.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/An_Oriental_Woman_at_a_Window.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2358,
+   "file": "wc-175695169.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-91955755",
+   "source": "commons",
+   "title": "Northern Italian School - Woman at a Window - NG2146 - National Gallery",
+   "creator": "Unidentified painter",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Northern_Italian_School_-_Woman_at_a_Window_-_NG2146_-_National_Gallery.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Northern_Italian_School_-_Woman_at_a_Window_-_NG2146_-_National_Gallery.jpg/1920px-Northern_Italian_School_-_Woman_at_a_Window_-_NG2146_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Northern_Italian_School_-_Woman_at_a_Window_-_NG2146_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1916,
+   "h": 2400,
+   "file": "wc-91955755.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "id": "aic-154235",
+   "source": "aic",
+   "title": "The Girl by the Window",
+   "creator": "Edvard Munch (Norwegian, 1863–1944)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/154235",
+   "url": "https://www.artic.edu/iiif/2/d7df2633-3b40-f570-c906-211503a37cde/full/1686,/0/default.jpg",
+   "w": 1624,
+   "h": 2400,
+   "file": "aic-154235.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-65847",
+   "source": "aic",
+   "title": "A Family Meal",
+   "creator": "Evert Pieters (Dutch, 1856–1932)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/65847",
+   "url": "https://www.artic.edu/iiif/2/d5b9b3c8-66b4-d061-43ee-307cc42e1ae6/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1126,
+   "file": "aic-65847.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-81548",
+   "source": "aic",
+   "title": "Young Peasant Having Her Coffee",
+   "creator": "Camille Pissarro (French, 1830–1903)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/81548",
+   "url": "https://www.artic.edu/iiif/2/335a59a4-3f5b-b9db-b8e8-861467d211ef/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2040,
+   "file": "aic-81548.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-81576",
+   "source": "aic",
+   "title": "Mrs. Potter Palmer",
+   "creator": "Anders Leonard Zorn (Swedish, 1860–1920)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/81576",
+   "url": "https://www.artic.edu/iiif/2/6f3dc71a-683d-7ad6-e24a-a97c4877f30d/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1547,
+   "file": "aic-81576.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-437073",
+   "source": "met",
+   "title": "A Woman Seated at a Window",
+   "creator": "Gabriël Metsu",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437073",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP146466.jpg",
+   "w": 1985,
+   "h": 2400,
+   "file": "met-437073.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-437881",
+   "source": "met",
+   "title": "Young Woman with a Water Pitcher",
+   "creator": "Johannes Vermeer",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437881",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP353257.jpg",
+   "w": 2134,
+   "h": 2400,
+   "file": "met-437881.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "pin": true,
+   "note": "Vermeer, woman with a water jug at the window"
+  },
+  {
+   "id": "met-436896",
+   "source": "met",
+   "title": "Portrait of a Woman with a Man at a Casement",
+   "creator": "Fra Filippo Lippi",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436896",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP159891.jpg",
+   "w": 1591,
+   "h": 2400,
+   "file": "met-436896.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-685040",
+   "source": "met",
+   "title": "Woman at a Balcony",
+   "creator": "Jean-Léon Gérôme",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/685040",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP354143.jpg",
+   "w": 1983,
+   "h": 2400,
+   "file": "met-685040.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-20684",
+   "source": "aic",
+   "title": "Paris Street; Rainy Day",
+   "creator": "Gustave Caillebotte (French, 1848–1894)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/20684",
+   "url": "https://www.artic.edu/iiif/2/f8fd76e9-c396-5678-36ed-6a348c904d27/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1309,
+   "file": "aic-20684.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-18993429",
+   "source": "commons",
+   "title": "Alfred Stevens Déjà c1862-1864",
+   "creator": "Alfred Stevens",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alfred_Stevens_D%C3%A9j%C3%A0_c1862-1864.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Alfred_Stevens_D%C3%A9j%C3%A0_c1862-1864.jpg/1920px-Alfred_Stevens_D%C3%A9j%C3%A0_c1862-1864.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Alfred_Stevens_D%C3%A9j%C3%A0_c1862-1864.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1761,
+   "h": 2400,
+   "file": "wc-18993429.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-120879251",
+   "source": "commons",
+   "title": "Awaiting the suitor (unknown date), by Gustave Léonard de Jonghe",
+   "creator": "Gustave Léonard de Jonghe",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Awaiting_the_suitor_(unknown_date),_by_Gustave_L%C3%A9onard_de_Jonghe.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Awaiting_the_suitor_%28unknown_date%29%2C_by_Gustave_L%C3%A9onard_de_Jonghe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Awaiting_the_suitor_%28unknown_date%29%2C_by_Gustave_L%C3%A9onard_de_Jonghe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 974,
+   "h": 1362,
+   "file": "wc-120879251.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "two women at the window"
+  },
+  {
+   "id": "aic-111657",
+   "source": "aic",
+   "title": "Double Portrait: Two Women",
+   "creator": "Artist unknown (British, active 19th century)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/111657",
+   "url": "https://www.artic.edu/iiif/2/9cf496f1-23ba-fd19-c537-159b80c2a63c/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 1181,
+   "file": "aic-111657.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-97530605",
+   "source": "commons",
+   "title": "Interior. Strandgade 30 (SM 2402)",
+   "creator": "Vilhelm Hammershøi",
+   "license": "PDM-owner",
+   "landing": "https://commons.wikimedia.org/wiki/File:Interior._Strandgade_30_(SM_2402).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Interior._Strandgade_30_%28SM_2402%29.png/1920px-Interior._Strandgade_30_%28SM_2402%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Interior._Strandgade_30_%28SM_2402%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2301,
+   "file": "wc-97530605.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-52123283",
+   "source": "commons",
+   "title": "Interiör med mor och dotter vid fönster (Ludvig August Smith) - Nationalmuseum - 180227",
+   "creator": "Ludvig August Smith",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Interi%C3%B6r_med_mor_och_dotter_vid_f%C3%B6nster_(Ludvig_August_Smith)_-_Nationalmuseum_-_180227.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Interi%C3%B6r_med_mor_och_dotter_vid_f%C3%B6nster_%28Ludvig_August_Smith%29_-_Nationalmuseum_-_180227.tif/lossy-page1-1920px-Interi%C3%B6r_med_mor_och_dotter_vid_f%C3%B6nster_%28Ludvig_August_Smith%29_-_Nationalmuseum_-_180227.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Interi%C3%B6r_med_mor_och_dotter_vid_f%C3%B6nster_%28Ludvig_August_Smith%29_-_Nationalmuseum_-_180227.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2194,
+   "file": "wc-52123283.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "mother and child at the window"
+  },
+  {
+   "id": "aic-81525",
+   "source": "aic",
+   "title": "Woman's Head",
+   "creator": "Albert Besnard (French, 1849–1934)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/81525",
+   "url": "https://www.artic.edu/iiif/2/bba8ef2a-2af7-e111-1269-382f38d32fdd/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2064,
+   "file": "aic-81525.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "id": "aic-60627",
+   "source": "aic",
+   "title": "Lady at Her Toilette",
+   "creator": "Pietro Longhi (Italian, 1702–1785)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/60627",
+   "url": "https://www.artic.edu/iiif/2/1e20645b-8935-70b9-0e56-11de72066c35/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2188,
+   "file": "aic-60627.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

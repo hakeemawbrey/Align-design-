@@ -1,0 +1,4 @@
+{"keep": [0, 2, 7, 8, 12, 13, 15, 20, 23, 28, 29, 30, 35, 41, 42, 43, 45, 46, 59, 60, 62, 63],
+ "focus": {"2": [0.45, 0.4], "15": [0.62, 0.4], "23": [0.55, 0.35], "29": [0.42, 0.45], "35": [0.6, 0.45], "62": [0.55, 0.5], "7": [0.55, 0.4]},
+ "pin": [23, 42, 45, 60],
+ "notes": {"23": "Breton, The Song of the Lark, girl at sunrise", "42": "Kuindzhi, red sunset", "45": "Grimshaw, Evening Glow lane", "60": "Church, Twilight in the Wilderness"}}

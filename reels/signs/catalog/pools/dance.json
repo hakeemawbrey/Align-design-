@@ -1,0 +1,160 @@
+{
+ "images": [
+  {
+   "id": "wc-22174033",
+   "source": "commons",
+   "title": "Jan Steen - The Dancing Couple - Google Art Project",
+   "creator": "Jan Steen",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Jan_Steen_-_The_Dancing_Couple_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Jan_Steen_-_The_Dancing_Couple_-_Google_Art_Project.jpg/1920px-Jan_Steen_-_The_Dancing_Couple_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Jan_Steen_-_The_Dancing_Couple_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1356,
+   "file": "wc-22174033.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-24349940",
+   "source": "commons",
+   "title": "Joseph François Nollekens A Dancing Couple In An Outdoor Musical Party",
+   "creator": "Joseph François Nollekens (1702-1748)",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Joseph_Fran%C3%A7ois_Nollekens_A_Dancing_Couple_In_An_Outdoor_Musical_Party.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Joseph_Fran%C3%A7ois_Nollekens_A_Dancing_Couple_In_An_Outdoor_Musical_Party.jpg/1920px-Joseph_Fran%C3%A7ois_Nollekens_A_Dancing_Couple_In_An_Outdoor_Musical_Party.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Joseph_Fran%C3%A7ois_Nollekens_A_Dancing_Couple_In_An_Outdoor_Musical_Party.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1564,
+   "file": "wc-24349940.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  },
+  {
+   "id": "aic-9148",
+   "source": "aic",
+   "title": "Ballet Dancers",
+   "creator": "Henri de Toulouse-Lautrec (French, 1864–1901)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/9148",
+   "url": "https://www.artic.edu/iiif/2/43249182-2ef0-8d18-3d32-0b9af3606ed3/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1702,
+   "file": "aic-9148.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-10550",
+   "source": "aic",
+   "title": "The Dance",
+   "creator": "Pietro Longhi (Italian, 1702–1785)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/10550",
+   "url": "https://www.artic.edu/iiif/2/cb178a5a-6c55-c423-a186-d3d467a72f2f/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2052,
+   "file": "aic-10550.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ],
+   "pin": true,
+   "note": "Longhi, The Dance"
+  },
+  {
+   "id": "met-436141",
+   "source": "met",
+   "title": "The Dancing Class",
+   "creator": "Edgar Degas",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436141",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-25445-001.jpg",
+   "w": 2400,
+   "h": 1793,
+   "file": "met-436141.jpg",
+   "focus": [
+    0.54,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-21170054",
+   "source": "commons",
+   "title": "Alfred Dehodencq A Gypsy Dance in the Gardens of the Alcázar",
+   "creator": "Alfred Dehodencq",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Alfred_Dehodencq_A_Gypsy_Dance_in_the_Gardens_of_the_Alc%C3%A1zar.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Alfred_Dehodencq_A_Gypsy_Dance_in_the_Gardens_of_the_Alc%C3%A1zar.jpg/1920px-Alfred_Dehodencq_A_Gypsy_Dance_in_the_Gardens_of_the_Alc%C3%A1zar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Alfred_Dehodencq_A_Gypsy_Dance_in_the_Gardens_of_the_Alc%C3%A1zar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1319,
+   "file": "wc-21170054.jpg",
+   "focus": [
+    0.47,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-21856555",
+   "source": "commons",
+   "title": "Pierre Auguste Renoir - Country Dance - Google Art Project",
+   "creator": "Pierre Auguste Renoir (1841 - 1919) – Painter (French) Born in Limoges. Died in Cagnes-sur-Mer. Details on Google Art Pr",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg/1920px-Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1156,
+   "h": 2400,
+   "file": "wc-21856555.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Renoir, Country Dance"
+  },
+  {
+   "id": "wc-22491128",
+   "source": "commons",
+   "title": "Jean-Antoine Watteau - The Country Dance - Google Art Project",
+   "creator": "Jean-Antoine Watteau",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Jean-Antoine_Watteau_-_The_Country_Dance_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Jean-Antoine_Watteau_-_The_Country_Dance_-_Google_Art_Project.jpg/1920px-Jean-Antoine_Watteau_-_The_Country_Dance_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Jean-Antoine_Watteau_-_The_Country_Dance_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1592,
+   "file": "wc-22491128.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ],
+   "pin": true,
+   "note": "Watteau, The Country Dance"
+  },
+  {
+   "id": "wc-21138248",
+   "source": "commons",
+   "title": "Rafael Benjumea Dance at a Country Inn 1850",
+   "creator": "Rafael Benjumea",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Rafael_Benjumea_Dance_at_a_Country_Inn_1850.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Rafael_Benjumea_Dance_at_a_Country_Inn_1850.jpg/1920px-Rafael_Benjumea_Dance_at_a_Country_Inn_1850.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Rafael_Benjumea_Dance_at_a_Country_Inn_1850.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1371,
+   "file": "wc-21138248.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

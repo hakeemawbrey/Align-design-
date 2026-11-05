@@ -1,0 +1,392 @@
+{
+ "images": [
+  {
+   "id": "wc-14973178",
+   "source": "commons",
+   "title": "Woman Reading a Letter by Gabriël Metsu",
+   "creator": "Gabriel Metsu",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Woman_Reading_a_Letter_by_Gabri%C3%ABl_Metsu.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Woman_Reading_a_Letter_by_Gabri%C3%ABl_Metsu.jpg/1920px-Woman_Reading_a_Letter_by_Gabri%C3%ABl_Metsu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Woman_Reading_a_Letter_by_Gabri%C3%ABl_Metsu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1848,
+   "h": 2400,
+   "file": "wc-14973178.jpg",
+   "focus": [
+    0.35,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-1173921",
+   "source": "commons",
+   "title": "Pieter de Hooch - Woman Reading a Letter",
+   "creator": "Pieter de Hooch",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Pieter_de_Hooch_-_Woman_Reading_a_Letter.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Pieter_de_Hooch_-_Woman_Reading_a_Letter.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Pieter_de_Hooch_-_Woman_Reading_a_Letter.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 800,
+   "h": 799,
+   "file": "wc-1173921.jpg",
+   "focus": [
+    0.4,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-15398929",
+   "source": "commons",
+   "title": "Johannes Vermeer - Woman in Blue Reading a Letter - WGA24657",
+   "creator": "Johannes Vermeer",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_Woman_in_Blue_Reading_a_Letter_-_WGA24657.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Johannes_Vermeer_-_Woman_in_Blue_Reading_a_Letter_-_WGA24657.jpg/1920px-Johannes_Vermeer_-_Woman_in_Blue_Reading_a_Letter_-_WGA24657.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Johannes_Vermeer_-_Woman_in_Blue_Reading_a_Letter_-_WGA24657.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2302,
+   "file": "wc-15398929.jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "pin": true,
+   "note": "Vermeer, woman in blue reading a letter"
+  },
+  {
+   "id": "aic-133859",
+   "source": "aic",
+   "title": "Lady Reading the Letters of Heloise and Abelard",
+   "creator": "Bernard d'Agesci (French, 1756–1829)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/133859",
+   "url": "https://www.artic.edu/iiif/2/8115bdb2-1a8c-bb25-a37b-5f804f3a84a9/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2178,
+   "file": "aic-133859.jpg",
+   "focus": [
+    0.4,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-88632",
+   "source": "aic",
+   "title": "Madame François Buron",
+   "creator": "Jacques-Louis David (French, 1748–1825)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/88632",
+   "url": "https://www.artic.edu/iiif/2/77f1c8e3-16c6-1147-f4aa-4cfc8bd3eb8b/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2045,
+   "file": "aic-88632.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "aic-14591",
+   "source": "aic",
+   "title": "Woman Reading",
+   "creator": "Édouard Manet (French, 1832–1883)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/14591",
+   "url": "https://www.artic.edu/iiif/2/fd991fea-0c13-8444-7879-aba467f1d9db/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2083,
+   "file": "aic-14591.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-435991",
+   "source": "met",
+   "title": "A Woman Reading",
+   "creator": "Camille Corot",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435991",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-16589-001.jpg",
+   "w": 1756,
+   "h": 2400,
+   "file": "met-435991.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-904343",
+   "source": "met",
+   "title": "Mary Magdalen Writing a Letter",
+   "creator": "Master of the Female Half-Lengths",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/904343",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-46664-001.jpg",
+   "w": 1802,
+   "h": 2400,
+   "file": "met-904343.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-671031",
+   "source": "met",
+   "title": "Woman Reading under a Mosquito Net",
+   "creator": "Fuhiken Tokikaze",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/671031",
+   "url": "https://images.metmuseum.org/CRDImages/as/original/DP357986.jpg",
+   "w": 1476,
+   "h": 2400,
+   "file": "met-671031.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-916668",
+   "source": "commons",
+   "title": "\"The Love Letter\" by Auguste Toulmouche",
+   "creator": "Auguste Toulmouche",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:%22The_Love_Letter%22_by_Auguste_Toulmouche.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/%22The_Love_Letter%22_by_Auguste_Toulmouche.jpg/1920px-%22The_Love_Letter%22_by_Auguste_Toulmouche.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/%22The_Love_Letter%22_by_Auguste_Toulmouche.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1661,
+   "h": 2400,
+   "file": "wc-916668.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Toulmouche, the love letter"
+  },
+  {
+   "id": "wc-130911203",
+   "source": "commons",
+   "title": "Love letter - The flower (1895), by Giovanni Battista Quadrone",
+   "creator": "Giovanni Battista Quadrone",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Love_letter_-_The_flower_(1895),_by_Giovanni_Battista_Quadrone.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Love_letter_-_The_flower_%281895%29%2C_by_Giovanni_Battista_Quadrone.jpg/1920px-Love_letter_-_The_flower_%281895%29%2C_by_Giovanni_Battista_Quadrone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Love_letter_-_The_flower_%281895%29%2C_by_Giovanni_Battista_Quadrone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2270,
+   "file": "wc-130911203.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-23213453",
+   "source": "commons",
+   "title": "Auguste Toulmouche - The Love Letter, 1863",
+   "creator": "Auguste Toulmouche",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Auguste_Toulmouche_-_The_Love_Letter,_1863.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Auguste_Toulmouche_-_The_Love_Letter%2C_1863.jpg/1920px-Auguste_Toulmouche_-_The_Love_Letter%2C_1863.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Auguste_Toulmouche_-_The_Love_Letter%2C_1863.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2278,
+   "file": "wc-23213453.jpg",
+   "focus": [
+    0.45,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-1668656",
+   "source": "commons",
+   "title": "Raimundo Madrazo - The Love Letter",
+   "creator": "Raimundo de Madrazo y Garreta",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Raimundo_Madrazo_-_The_Love_Letter.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Raimundo_Madrazo_-_The_Love_Letter.jpg/1920px-Raimundo_Madrazo_-_The_Love_Letter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Raimundo_Madrazo_-_The_Love_Letter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2383,
+   "file": "wc-1668656.jpg",
+   "focus": [
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-74594336",
+   "source": "commons",
+   "title": "Emma Müller Edle von Seehof - The Love Letter",
+   "creator": "Emma von Müller",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Emma_M%C3%BCller_Edle_von_Seehof_-_The_Love_Letter.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Emma_M%C3%BCller_Edle_von_Seehof_-_The_Love_Letter.jpg/1920px-Emma_M%C3%BCller_Edle_von_Seehof_-_The_Love_Letter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Emma_M%C3%BCller_Edle_von_Seehof_-_The_Love_Letter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1742,
+   "file": "wc-74594336.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-4856772",
+   "source": "commons",
+   "title": "Federico Andreotti - The Love Letter",
+   "creator": "Federico Andreotti",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Federico_Andreotti_-_The_Love_Letter.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Federico_Andreotti_-_The_Love_Letter.jpg/1920px-Federico_Andreotti_-_The_Love_Letter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Federico_Andreotti_-_The_Love_Letter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1681,
+   "h": 2400,
+   "file": "wc-4856772.jpg",
+   "focus": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "id": "met-436322",
+   "source": "met",
+   "title": "The Love Letter",
+   "creator": "Jean Honoré Fragonard",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436322",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP-1014-001.jpg",
+   "w": 1940,
+   "h": 2400,
+   "file": "met-436322.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "pin": true,
+   "note": "Fragonard, the love letter"
+  },
+  {
+   "id": "met-435714",
+   "source": "met",
+   "title": "Curiosity",
+   "creator": "Gerard ter Borch the Younger",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435714",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP145405.jpg",
+   "w": 1949,
+   "h": 2400,
+   "file": "met-435714.jpg",
+   "focus": [
+    0.3,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-14688623",
+   "source": "commons",
+   "title": "Frederick mcCubbin - The Letter, 1884",
+   "creator": "Frederick McCubbin",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Frederick_mcCubbin_-_The_Letter,_1884.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Frederick_mcCubbin_-_The_Letter%2C_1884.jpg/1920px-Frederick_mcCubbin_-_The_Letter%2C_1884.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Frederick_mcCubbin_-_The_Letter%2C_1884.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1801,
+   "h": 2400,
+   "file": "wc-14688623.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-14973286",
+   "source": "commons",
+   "title": "Man Writing a Letter by Gabriël Metsu",
+   "creator": "Gabriel Metsu",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Man_Writing_a_Letter_by_Gabri%C3%ABl_Metsu.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Man_Writing_a_Letter_by_Gabri%C3%ABl_Metsu.jpg/1920px-Man_Writing_a_Letter_by_Gabri%C3%ABl_Metsu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Man_Writing_a_Letter_by_Gabri%C3%ABl_Metsu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1868,
+   "h": 2400,
+   "file": "wc-14973286.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-435976",
+   "source": "met",
+   "title": "The Letter",
+   "creator": "Camille Corot",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/435976",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2129.jpg",
+   "w": 1665,
+   "h": 2400,
+   "file": "met-435976.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-21963587",
+   "source": "commons",
+   "title": "Johannes Vermeer - Girl Reading a Letter by an Open Window - Google Art Project",
+   "creator": "Johannes Vermeer",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg/1920px-Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1835,
+   "h": 2400,
+   "file": "wc-21963587.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ],
+   "pin": true,
+   "note": "Vermeer, girl reading a letter at the open window"
+  },
+  {
+   "id": "aic-154235",
+   "source": "aic",
+   "title": "The Girl by the Window",
+   "creator": "Edvard Munch (Norwegian, 1863–1944)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/154235",
+   "url": "https://www.artic.edu/iiif/2/d7df2633-3b40-f570-c906-211503a37cde/full/1686,/0/default.jpg",
+   "w": 1624,
+   "h": 2400,
+   "file": "aic-154235.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ]
+  },
+  {
+   "id": "met-437227",
+   "source": "met",
+   "title": "The Love Letter",
+   "creator": "Jacob Ochtervelt",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437227",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP146509.jpg",
+   "w": 2153,
+   "h": 2400,
+   "file": "met-437227.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ ]
+}

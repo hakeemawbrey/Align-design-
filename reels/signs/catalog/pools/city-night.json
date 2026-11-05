@@ -1,0 +1,109 @@
+{
+ "images": [
+  {
+   "id": "aic-154235",
+   "source": "aic",
+   "title": "The Girl by the Window",
+   "creator": "Edvard Munch (Norwegian, 1863–1944)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/154235",
+   "url": "https://www.artic.edu/iiif/2/d7df2633-3b40-f570-c906-211503a37cde/full/1686,/0/default.jpg",
+   "w": 1624,
+   "h": 2400,
+   "file": "aic-154235.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "id": "aic-20684",
+   "source": "aic",
+   "title": "Paris Street; Rainy Day",
+   "creator": "Gustave Caillebotte (French, 1848–1894)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/20684",
+   "url": "https://www.artic.edu/iiif/2/f8fd76e9-c396-5678-36ed-6a348c904d27/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1309,
+   "file": "aic-20684.jpg",
+   "focus": [
+    0.7,
+    0.5
+   ]
+  },
+  {
+   "id": "wc-164778844",
+   "source": "commons",
+   "title": "York Art Gallery, 'Liverpool Docks at Night' by John Atkinson Grimshaw (1838-1893) - geograph.org.uk - 7650190",
+   "creator": "Michael Garlick",
+   "license": "CC BY-SA 2.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:York_Art_Gallery,_%27Liverpool_Docks_at_Night%27_by_John_Atkinson_Grimshaw_(1838-1893)_-_geograph.org.uk_-_7650190.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/York_Art_Gallery%2C_%27Liverpool_Docks_at_Night%27_by_John_Atkinson_Grimshaw_%281838-1893%29_-_geograph.org.uk_-_7650190.jpg/1920px-York_Art_Gallery%2C_%27Liverpool_Docks_at_Night%27_by_John_Atkinson_Grimshaw_%281838-1893%29_-_geograph.org.uk_-_7650190.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/York_Art_Gallery%2C_%27Liverpool_Docks_at_Night%27_by_John_Atkinson_Grimshaw_%281838-1893%29_-_geograph.org.uk_-_7650190.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1263,
+   "file": "wc-164778844.jpg",
+   "focus": [
+    0.62,
+    0.55
+   ],
+   "pin": true,
+   "note": "Grimshaw, Liverpool docks by moonlight"
+  },
+  {
+   "id": "aic-15401",
+   "source": "aic",
+   "title": "At Mouquin's",
+   "creator": "William Glackens (American, 1870–1938)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/15401",
+   "url": "https://www.artic.edu/iiif/2/b146368d-a855-63ac-6115-04b835c60bb0/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2235,
+   "file": "aic-15401.jpg",
+   "focus": [
+    0.3,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-25498286",
+   "source": "commons",
+   "title": "Van Gogh - Starry Night - Google Art Project",
+   "creator": "Vincent van Gogh",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1920px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1520,
+   "file": "wc-25498286.jpg",
+   "focus": [
+    0.45,
+    0.42
+   ],
+   "pin": true,
+   "note": "Van Gogh, The Starry Night"
+  },
+  {
+   "id": "wc-30034417",
+   "source": "commons",
+   "title": "Charles Courtney Curran - Paris la nuit (1889)",
+   "creator": "Charles Courtney Curran",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Charles_Courtney_Curran_-_Paris_la_nuit_(1889).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Charles_Courtney_Curran_-_Paris_la_nuit_%281889%29.jpg/1920px-Charles_Courtney_Curran_-_Paris_la_nuit_%281889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Charles_Courtney_Curran_-_Paris_la_nuit_%281889%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1444,
+   "file": "wc-30034417.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Curran, Paris at night in the rain"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "images": [
+  {
+   "id": "wc-23868731",
+   "source": "commons",
+   "title": "Van Gogh - Vase of Roses",
+   "creator": "Vincent van Gogh",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Vase_of_Roses.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Van_Gogh_-_Vase_of_Roses.jpg/1920px-Van_Gogh_-_Vase_of_Roses.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Van_Gogh_-_Vase_of_Roses.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2399,
+   "file": "wc-23868731.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Van Gogh, vase of white roses"
+  },
+  {
+   "id": "wc-21993453",
+   "source": "commons",
+   "title": "Ambrosius Bosschaert the Elder (Dutch - Flower Still Life - Google Art Project",
+   "creator": "Ambrosius Bosschaert",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Ambrosius_Bosschaert_the_Elder_(Dutch_-_Flower_Still_Life_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Ambrosius_Bosschaert_the_Elder_%28Dutch_-_Flower_Still_Life_-_Google_Art_Project.jpg/1920px-Ambrosius_Bosschaert_the_Elder_%28Dutch_-_Flower_Still_Life_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Ambrosius_Bosschaert_the_Elder_%28Dutch_-_Flower_Still_Life_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1500,
+   "file": "wc-21993453.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-8321568",
+   "source": "commons",
+   "title": "RobertDuncanson-Roses Fancy Still Life c1842 1848",
+   "creator": "Robert Seldon Duncanson",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:RobertDuncanson-Roses_Fancy_Still_Life_c1842_1848.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/RobertDuncanson-Roses_Fancy_Still_Life_c1842_1848.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/RobertDuncanson-Roses_Fancy_Still_Life_c1842_1848.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1407,
+   "h": 992,
+   "file": "wc-8321568.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-57668947",
+   "source": "commons",
+   "title": "Henri Fantin-Latour - Still Life with Roses and Fruit MET DT8649",
+   "creator": "Henri Fantin-Latour",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Henri_Fantin-Latour_-_Still_Life_with_Roses_and_Fruit_MET_DT8649.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Henri_Fantin-Latour_-_Still_Life_with_Roses_and_Fruit_MET_DT8649.jpg/1920px-Henri_Fantin-Latour_-_Still_Life_with_Roses_and_Fruit_MET_DT8649.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Henri_Fantin-Latour_-_Still_Life_with_Roses_and_Fruit_MET_DT8649.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1612,
+   "file": "wc-57668947.jpg",
+   "focus": [
+    0.33,
+    0.45
+   ]
+  },
+  {
+   "id": "wc-131978089",
+   "source": "commons",
+   "title": "Still Life with Roses",
+   "creator": "Henry Schouten",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Still_Life_with_Roses.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Still_Life_with_Roses.jpg/1920px-Still_Life_with_Roses.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Still_Life_with_Roses.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1344,
+   "file": "wc-131978089.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-20534",
+   "source": "aic",
+   "title": "Roses in a Bowl",
+   "creator": "Henri Fantin-Latour (French, 1836–1904)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/20534",
+   "url": "https://www.artic.edu/iiif/2/7abbfd97-fb03-2366-cfe5-b53738a3d93e/full/1686,/0/default.jpg",
+   "w": 843,
+   "h": 703,
+   "file": "aic-20534.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-51003088",
+   "source": "commons",
+   "title": "Peonies E10759",
+   "creator": "Berthe Morisot",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Peonies_E10759.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Peonies_E10759.jpg/1920px-Peonies_E10759.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Peonies_E10759.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1895,
+   "h": 2400,
+   "file": "wc-51003088.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "id": "wc-119942325",
+   "source": "commons",
+   "title": "Peonies in a vase",
+   "creator": "George Chernilevsky",
+   "license": "CC BY-SA 4.0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Peonies_in_a_vase.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Peonies_in_a_vase.jpg/1920px-Peonies_in_a_vase.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Peonies_in_a_vase.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1860,
+   "h": 2400,
+   "file": "wc-119942325.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-64029",
+   "source": "aic",
+   "title": "Bouquet of Flowers in an Earthenware Vase",
+   "creator": "Attributed to Jan Brueghel the Elder (Flemish, 1568–1625)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/64029",
+   "url": "https://www.artic.edu/iiif/2/599e0546-ed58-0224-a623-39a8e3b51ef8/full/1686,/0/default.jpg",
+   "w": 1630,
+   "h": 2400,
+   "file": "aic-64029.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-436961",
+   "source": "met",
+   "title": "Peonies",
+   "creator": "Edouard Manet",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/436961",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DP123836.jpg",
+   "w": 1508,
+   "h": 2400,
+   "file": "met-436961.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "pin": true,
+   "note": "Manet, peonies"
+  },
+  {
+   "id": "wc-57670809",
+   "source": "commons",
+   "title": "Bouquet of Sunflowers MET DP130800",
+   "creator": "Claude Monet",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bouquet_of_Sunflowers_MET_DP130800.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Bouquet_of_Sunflowers_MET_DP130800.jpg/1920px-Bouquet_of_Sunflowers_MET_DP130800.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Bouquet_of_Sunflowers_MET_DP130800.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2372,
+   "file": "wc-57670809.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "Monet, bouquet of sunflowers"
+  },
+  {
+   "id": "wc-57669627",
+   "source": "commons",
+   "title": "A Vase of Flowers MET DT2131",
+   "creator": "Margaretha Haverman",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:A_Vase_of_Flowers_MET_DT2131.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/A_Vase_of_Flowers_MET_DT2131.jpg/1920px-A_Vase_of_Flowers_MET_DT2131.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/A_Vase_of_Flowers_MET_DT2131.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1816,
+   "h": 2400,
+   "file": "wc-57669627.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-57669326",
+   "source": "commons",
+   "title": "Bouquet of Flowers in a Vase MET DT7098",
+   "creator": "Vincent van Gogh",
+   "license": "CC0",
+   "landing": "https://commons.wikimedia.org/wiki/File:Bouquet_of_Flowers_in_a_Vase_MET_DT7098.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Bouquet_of_Flowers_in_a_Vase_MET_DT7098.jpg/1920px-Bouquet_of_Flowers_in_a_Vase_MET_DT7098.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Bouquet_of_Flowers_in_a_Vase_MET_DT7098.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2304,
+   "file": "wc-57669326.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-78356809",
+   "source": "commons",
+   "title": "Vase of Flowers painting by Jan Davidsz. de Heem Mauritshuis 1099",
+   "creator": "Jan Davidsz. de Heem",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg/1920px-Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1687,
+   "h": 2400,
+   "file": "wc-78356809.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ],
+   "pin": true,
+   "note": "de Heem, vase of flowers on dark ground"
+  },
+  {
+   "id": "wc-50783057",
+   "source": "commons",
+   "title": "Flowers in a Rococo Vase A24470",
+   "creator": "Paul Cézanne",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Flowers_in_a_Rococo_Vase_A24470.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Flowers_in_a_Rococo_Vase_A24470.jpg/1920px-Flowers_in_a_Rococo_Vase_A24470.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Flowers_in_a_Rococo_Vase_A24470.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 2366,
+   "file": "wc-50783057.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-14561",
+   "source": "aic",
+   "title": "The Vase of Tulips",
+   "creator": "Paul Cezanne (French, 1839–1906)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/14561",
+   "url": "https://www.artic.edu/iiif/2/96f23681-9701-a668-5c3f-6ffa951f7ecc/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 2390,
+   "file": "aic-14561.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-16617",
+   "source": "aic",
+   "title": "Chrysanthemums",
+   "creator": "Pierre-Auguste Renoir (French, 1841–1919)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/16617",
+   "url": "https://www.artic.edu/iiif/2/479aff61-784e-e833-fd82-50ba8c819514/full/1686,/0/default.jpg",
+   "w": 1686,
+   "h": 1403,
+   "file": "aic-16617.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "aic-110982",
+   "source": "aic",
+   "title": "Still Life with Flowers",
+   "creator": "Odilon Redon (French, 1840–1916)",
+   "license": "public domain",
+   "landing": "https://www.artic.edu/artworks/110982",
+   "url": "https://www.artic.edu/iiif/2/bdb9f780-83be-dd12-191d-54a77c5444ab/full/1686,/0/default.jpg",
+   "w": 1642,
+   "h": 2400,
+   "file": "aic-110982.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-437148",
+   "source": "met",
+   "title": "Flowers in a Blue Vase",
+   "creator": "Adolphe Monticelli",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437148",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT2791.jpg",
+   "w": 1695,
+   "h": 2400,
+   "file": "met-437148.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "met-437381",
+   "source": "met",
+   "title": "Etruscan Vase with Flowers",
+   "creator": "Odilon Redon",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/437381",
+   "url": "https://images.metmuseum.org/CRDImages/ep/original/DT323419.jpg",
+   "w": 1767,
+   "h": 2400,
+   "file": "met-437381.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "id": "wc-21856199",
+   "source": "commons",
+   "title": "Edouard Manet - Berthe Morisot With a Bouquet of Violets - Google Art Project",
+   "creator": "Édouard Manet",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg/1920px-Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1768,
+   "h": 2400,
+   "file": "wc-21856199.jpg",
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "id": "wc-117574426",
+   "source": "commons",
+   "title": "Germán Gedovius - Woman with Violets - c. 1908",
+   "creator": "Germán Gedovius",
+   "license": "Public domain",
+   "landing": "https://commons.wikimedia.org/wiki/File:Germ%C3%A1n_Gedovius_-_Woman_with_Violets_-_c._1908.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Germ%C3%A1n_Gedovius_-_Woman_with_Violets_-_c._1908.jpg/1920px-Germ%C3%A1n_Gedovius_-_Woman_with_Violets_-_c._1908.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "alt_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Germ%C3%A1n_Gedovius_-_Woman_with_Violets_-_c._1908.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1920,
+   "h": 1947,
+   "file": "wc-117574426.jpg",
+   "focus": [
+    0.62,
+    0.45
+   ]
+  },
+  {
+   "id": "met-11205",
+   "source": "met",
+   "title": "Little Girl with Flowers (Amelia Palmer)",
+   "creator": "Charles Cromwell Ingham",
+   "license": "public domain (CC0)",
+   "landing": "https://www.metmuseum.org/art/collection/search/11205",
+   "url": "https://images.metmuseum.org/CRDImages/ad/original/ap50.220.1.jpg",
+   "w": 1692,
+   "h": 2125,
+   "file": "met-11205.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  }
+ ]
+}

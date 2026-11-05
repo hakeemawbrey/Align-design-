@@ -1,0 +1,4 @@
+{"keep": [9, 15, 22, 24, 26, 27],
+ "focus": {"22": [0.62, 0.55], "15": [0.7, 0.5], "24": [0.3, 0.4], "9": [0.6, 0.4], "26": [0.45, 0.42]},
+ "pin": [22, 27, 26],
+ "notes": {"22": "Grimshaw, Liverpool docks by moonlight", "27": "Curran, Paris at night in the rain", "26": "Van Gogh, The Starry Night"}}

@@ -1,0 +1,198 @@
+<title>Align Signs</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,500&family=Sofia+Sans+Condensed:wght@400;600;700&family=Sofia+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: a night-sky reel wall — sticky header with two views (reels, catalogue), a filter rail of sign glyphs, then a dense 9:16 grid. Deliberately one dark look, matching the reels. */
+:root {
+  --night: #130d1c;
+  --dusk: #1d1529;
+  --veil: #2a2038;
+  --line: #3a2e4b;
+  --cream: #f6eede;
+  --mute: #b4a8c2;
+  --gold: #e9cd96;
+  --display: "EB Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Sofia Sans", "Segoe UI", system-ui, sans-serif;
+  --cond: "Sofia Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--night); color: var(--cream); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--night); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--night) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; padding-block: 14px; }
+.mark { font-family: var(--display); font-style: italic; font-size: 30px; color: var(--cream); margin: 0; }
+.mark span { color: var(--gold); }
+nav { display: flex; gap: 4px; margin-left: auto; }
+nav a { font-family: var(--cond); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; color: var(--mute); text-decoration: none; padding: 6px 12px; border-radius: 999px; }
+nav a[aria-current="page"] { color: var(--night); background: var(--gold); }
+nav a:focus-visible, button:focus-visible, .tile:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.intro { padding-block: 28px 8px; display: grid; gap: 6px; }
+.intro h2 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(28px, 4.4vw, 46px); line-height: 1.08; margin: 0; text-wrap: balance; max-width: 22ch; }
+.intro p { color: var(--mute); margin: 0; max-width: 64ch; }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 22px; font-family: var(--cond); letter-spacing: .12em; text-transform: uppercase; font-size: 13px; color: var(--gold); padding-top: 6px; font-variant-numeric: tabular-nums; }
+.rail { display: flex; flex-wrap: wrap; gap: 6px; padding-block: 18px 14px; }
+.chip { font: 600 13px var(--cond); letter-spacing: .08em; text-transform: uppercase; color: var(--cream); background: var(--dusk); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; display: inline-flex; gap: 6px; align-items: baseline; }
+.chip .g { font-family: "DejaVu Sans", "Segoe UI Symbol", sans-serif; color: var(--gold); letter-spacing: 0; }
+.chip small { color: var(--mute); font-size: 11px; font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { background: var(--gold); color: var(--night); border-color: var(--gold); }
+.chip[aria-pressed="true"] .g, .chip[aria-pressed="true"] small { color: var(--night); }
+.rail-label { width: 100%; font: 600 11px var(--cond); letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
+.reels { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 22px 16px; padding-bottom: 60px; }
+.reel { display: grid; gap: 8px; min-width: 0; }
+.reel video { width: 100%; aspect-ratio: 9 / 16; max-width: 100%; background: var(--dusk); border-radius: 10px; display: block; object-fit: cover; }
+.reel .meta { font: 600 12px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); display: flex; justify-content: space-between; gap: 8px; }
+.reel .meta span:last-child { color: var(--mute); font-variant-numeric: tabular-nums; }
+.reel h3 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 19px; line-height: 1.2; margin: 0; text-wrap: balance; }
+.reel details { color: var(--mute); font-size: 13px; }
+.reel summary { cursor: pointer; font: 600 12px var(--cond); letter-spacing: .1em; text-transform: uppercase; }
+.reel ol { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 2px; }
+.reel pre { white-space: pre-wrap; font: 13px/1.45 var(--body); color: var(--cream); background: var(--dusk); padding: 10px; border-radius: 8px; margin: 8px 0 0; }
+.copy { justify-self: start; font: 600 12px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--cream); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.pool { padding-block: 10px 26px; }
+.pool h3 { display: flex; align-items: baseline; gap: 10px; margin: 0 0 10px; font-family: var(--display); font-style: italic; font-weight: 400; font-size: 26px; }
+.pool h3 .g { font-family: "DejaVu Sans", "Segoe UI Symbol", sans-serif; font-style: normal; color: var(--gold); font-size: 20px; }
+.pool h3 small { font: 600 12px var(--cond); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); font-style: normal; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 6px; }
+.tile { aspect-ratio: 150 / 267; max-width: 100%; border-radius: 6px; background-repeat: no-repeat; border: 0; padding: 0; cursor: zoom-in; background-color: var(--dusk); }
+.sheet { position: fixed; z-index: 20; inset: auto 0 0 0; background: var(--dusk); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.sheet .wrap { display: grid; grid-template-columns: 120px 1fr auto; gap: 16px; align-items: start; padding-block: 16px; }
+.sheet .tile { cursor: default; width: 120px; }
+.sheet h4 { margin: 0 0 4px; font-family: var(--display); font-style: italic; font-weight: 400; font-size: 20px; line-height: 1.2; }
+.sheet p { margin: 0; color: var(--mute); font-size: 13px; min-width: 0; overflow-wrap: anywhere; }
+.sheet a { color: var(--gold); }
+.sheet button { background: none; border: 1px solid var(--line); color: var(--cream); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: 18px; }
+.note { color: var(--mute); font-size: 13px; padding-bottom: 50px; max-width: 70ch; }
+.empty { color: var(--mute); padding-block: 30px; }
+@media (max-width: 520px) {
+  .reels { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 10px; }
+  .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .sheet .wrap { grid-template-columns: 84px 1fr auto; }
+  .sheet .tile { width: 84px; }
+  nav { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<header><div class="wrap">
+  <h1 class="mark">align <span>signs</span></h1>
+  <nav aria-label="Views"><a href="#reels" id="nav-reels">Reels</a><a href="#catalog" id="nav-catalog">Catalogue</a></nav>
+</div></header>
+
+<main>
+  <section id="view-reels" class="wrap">
+    <div class="intro">
+      <h2>Reels that talk straight to each sign.</h2>
+      <p>Letters, love advice, what they won't say out loud, relatable lines, alignment, and invites. Every reel is painted with free public-domain art and ends on a share or invite. These are samples; the generator makes the rest.</p>
+      <div class="stats" id="reel-stats"></div>
+    </div>
+    <div class="rail" id="reel-rail" role="group" aria-label="Filter reels by sign"></div>
+    <div class="reels" id="reel-grid"></div>
+  </section>
+
+  <section id="view-catalog" class="wrap" hidden>
+    <div class="intro">
+      <h2>The picture catalogue.</h2>
+      <p>Every image the reels can use, grouped into pools. All are public domain, CC0, or Creative Commons BY / BY-SA from Wikimedia Commons, the Art Institute of Chicago, the Met, and NASA. Tap one for its source and licence. CC BY images get a credit line in the reel's caption automatically.</p>
+      <div class="stats" id="cat-stats"></div>
+    </div>
+    <div class="rail" id="cat-rail" role="group" aria-label="Filter catalogue by pool"></div>
+    <div id="pools"></div>
+    <p class="note">Shown as a 9:16 crop around each picture's focus point, the way a reel frames it.</p>
+  </section>
+</main>
+
+<div class="sheet" id="sheet" hidden><div class="wrap">
+  <div class="tile" id="sheet-tile"></div>
+  <div><h4 id="sheet-title"></h4><p id="sheet-meta"></p></div>
+  <button type="button" id="sheet-close" aria-label="Close">×</button>
+</div></div>
+
+<script>
+const D = /*DATA*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const FMT = { dear: "Dear sign", loves: "How they love", wontsay: "Won't say", needs: "Dating them", relatable: "Relatable", advice: "Advice", reminder: "Reminder", align: "Alignment", invite: "Invite", pair: "Pair", custom: "Custom" };
+const total = D.catalog.reduce((n, p) => n + p.items.length, 0);
+
+// ---------- reels
+let reelSign = "all";
+function reelRail() {
+  const counts = {};
+  D.reels.forEach((r) => (counts[r.sign] = (counts[r.sign] || 0) + 1));
+  const opts = [["all", "All", "", D.reels.length], ...Object.keys(D.signs).filter((k) => counts[k]).map((k) => [k, D.signs[k].name, D.signs[k].glyph, counts[k]])];
+  $("#reel-rail").innerHTML = opts.map(([k, n, g, c]) => `<button type="button" class="chip" data-k="${k}" aria-pressed="${k === reelSign}">${g ? `<span class="g">${g}</span>` : ""}${n}<small>${c}</small></button>`).join("");
+}
+function reelGrid() {
+  const list = D.reels.filter((r) => reelSign === "all" || r.sign === reelSign);
+  $("#reel-grid").innerHTML = list.length ? list.map((r) => `
+    <article class="reel">
+      <video src="reels/${r.id}.mp4" poster="reels/${r.id}.jpg" controls playsinline preload="none"></video>
+      <div class="meta"><span>${D.signs[r.sign].glyph} ${esc(D.signs[r.sign].name)} · ${FMT[r.format] || r.format}</span><span>${Math.round(r.sec)}s</span></div>
+      <h3>${esc(r.title)}</h3>
+      <details><summary>Cards and caption</summary>
+        <ol>${r.cards.map((c) => `<li>${esc(c)}</li>`).join("")}</ol>
+        <pre id="cap-${r.id}">${esc(r.caption)}</pre>
+      </details>
+      <button type="button" class="copy" data-cap="${r.id}">Copy caption</button>
+    </article>`).join("") : `<p class="empty">No reels for this sign yet.</p>`;
+}
+$("#reel-rail").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (!b) return; reelSign = b.dataset.k; reelRail(); reelGrid(); });
+$("#reel-grid").addEventListener("click", async (e) => {
+  const b = e.target.closest(".copy"); if (!b) return;
+  const r = D.reels.find((x) => x.id === b.dataset.cap);
+  try { await navigator.clipboard.writeText(r.caption); b.textContent = "Copied"; }
+  catch { const pre = $("#cap-" + r.id); pre.closest("details").open = true; getSelection().selectAllChildren(pre); b.textContent = "Selected, press copy"; }
+  setTimeout(() => (b.textContent = "Copy caption"), 1800);
+});
+document.addEventListener("play", (e) => { document.querySelectorAll("video").forEach((v) => v !== e.target && v.pause()); }, true);
+
+// ---------- catalogue
+let pool = "all";
+function pos(i, rows) {
+  const c = i % D.cols, r = Math.floor(i / D.cols);
+  const x = D.cols > 1 ? (c / (D.cols - 1)) * 100 : 0, y = rows > 1 ? (r / (rows - 1)) * 100 : 0;
+  return `background-position:${x}% ${y}%;background-size:${D.cols * 100}% ${rows * 100}%`;
+}
+function catRail() {
+  const sign = D.catalog.filter((p) => p.kind === "sign"), mood = D.catalog.filter((p) => p.kind !== "sign");
+  const chip = (p) => `<button type="button" class="chip" data-k="${p.pool}" aria-pressed="${pool === p.pool}">${p.glyph ? `<span class="g">${p.glyph}</span>` : ""}${esc(p.label)}<small>${p.items.length}</small></button>`;
+  $("#cat-rail").innerHTML = `<button type="button" class="chip" data-k="all" aria-pressed="${pool === "all"}">All<small>${total}</small></button>
+    <span class="rail-label">Signs</span>${sign.map(chip).join("")}<span class="rail-label">Moods</span>${mood.map(chip).join("")}`;
+}
+function catGrid() {
+  const list = D.catalog.filter((p) => pool === "all" || p.pool === pool);
+  $("#pools").innerHTML = list.map((p) => `
+    <section class="pool"><h3>${p.glyph ? `<span class="g">${p.glyph}</span>` : ""}${esc(p.label)} <small>${p.items.length} images</small></h3>
+      <div class="tiles">${p.items.map((it, i) => `<button type="button" class="tile" data-p="${p.pool}" data-i="${i}" aria-label="${esc(it.t || "image")}" style="background-image:url(sprites/${p.pool}.jpg);${pos(i, p.rows)}"></button>`).join("")}</div>
+    </section>`).join("");
+}
+$("#cat-rail").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (!b) return; pool = b.dataset.k; catRail(); catGrid(); });
+$("#pools").addEventListener("click", (e) => {
+  const b = e.target.closest(".tile"); if (!b) return;
+  const p = D.catalog.find((x) => x.pool === b.dataset.p), i = +b.dataset.i, it = p.items[i];
+  $("#sheet-tile").setAttribute("style", b.getAttribute("style"));
+  $("#sheet-title").textContent = it.t || "Untitled";
+  const src = { commons: "Wikimedia Commons", aic: "Art Institute of Chicago", met: "The Met", nasa: "NASA" }[it.s] || it.s;
+  $("#sheet-meta").innerHTML = `${esc(it.c || "Unknown artist")}<br>${esc(it.l)} · ${esc(src)} · pool: ${esc(p.label)}${it.u ? `<br><a href="${esc(it.u)}" target="_blank" rel="noopener">View the source page</a>` : ""}`;
+  $("#sheet").hidden = false;
+});
+$("#sheet-close").addEventListener("click", () => ($("#sheet").hidden = true));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#sheet").hidden = true; });
+
+// ---------- views
+function route() {
+  const v = location.hash === "#catalog" ? "catalog" : "reels";
+  $("#view-reels").hidden = v !== "reels";
+  $("#view-catalog").hidden = v !== "catalog";
+  $("#nav-reels").toggleAttribute("aria-current", v === "reels"); if (v === "reels") $("#nav-reels").setAttribute("aria-current", "page");
+  $("#nav-catalog").toggleAttribute("aria-current", v === "catalog"); if (v === "catalog") $("#nav-catalog").setAttribute("aria-current", "page");
+  $("#sheet").hidden = true;
+}
+$("#reel-stats").innerHTML = `<span>${D.reels.length} sample reels</span><span>${D.scripts} scripts</span><span>12 signs · 10 formats</span><span>${total} free images</span>`;
+$("#cat-stats").innerHTML = `<span>${total} images</span><span>${D.catalog.length} pools</span><span>public domain · CC0 · CC BY</span>`;
+reelRail(); reelGrid(); catRail(); catGrid(); route();
+addEventListener("hashchange", route);
+</script>
