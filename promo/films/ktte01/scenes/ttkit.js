@@ -377,11 +377,11 @@ export function makeTT(cfg) {
 
   // ── draw one round at virtual time v
   function drawRound(x, t, v, r, S) {
-    const u = v - r.t0, d = r.d, pa = r.pickAt
+    const u = v - r.t0, d = r.d, pa = r.win ? (r.winAt ?? r.pickAt + 1) : r.pickAt     // r.win: a split vote's winner card
     const inK = r.i === 0 ? 1 : easeOutBack(prog(u, 0, 0.24), 1.6)
     const leaving = prog(u, d - 0.16, d)
     const picks = mode === 'solo' ? [r.pick] : signs.map((_, j) => pickOf(r, j))
-    const chosen = new Set(picks.filter(Boolean))
+    const chosen = r.win ? new Set([r.win]) : new Set(picks.filter(Boolean))
     const decided = u >= pa
     const isLast = r === LASTR
     // cards
