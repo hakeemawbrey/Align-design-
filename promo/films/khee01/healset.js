@@ -144,7 +144,7 @@ export function kitchen(x, t, { morning = 0, dim = 0, fridgeNote = null, noteK =
 export function bedroom(x, t, { morning = 1, dim = 0 } = {}) {
   const P = pal(morning)
   R(x, P.wall, 0, 300, 1080, 1120); for (let i = 0; i < 1080; i += 90) R(x, P.wall2, i, 300, 44, 1120)
-  const WX = 300, WY = 430, WW = 480, WH = 380
+  const WX = 300, WY = 600, WW = 480, WH = 340
   box(x, WX, WY, WW, WH, P.sky0, { b: 10 })
   for (let j = 0; j < 10; j++) R(x, mixHex(P.sky0, P.sky1, j / 9), WX, WY + j * WH / 10, WW, WH / 10 + 1)
   const sy = lerp(WY + WH + 40, WY + 150, morning)
