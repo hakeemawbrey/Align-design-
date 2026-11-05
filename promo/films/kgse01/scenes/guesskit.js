@@ -87,9 +87,10 @@ export function confetti(x, t, t0, cx, cy, { n = 30, life = 2.0, cols = [GOLD, P
 export function bubble(x, t, cx, cy, t0, t1, text, { col = BONE, ink = INK, size = 34, tail = 0, font = INTER, weight = 800, rot = 0 } = {}) {
   const k = pop01(t, t0, 0.25, 2.4) * outK(t, [t1 - 0.15, t1])
   if (k <= 0.01 || t < t0) return
-  x.save(); x.translate(cx, cy); x.rotate(rot); x.scale(k, k)
-  x.font = `${weight} ${size}px ${font}`
+  x.save(); x.font = `${weight} ${size}px ${font}`
   const w = x.measureText(text).width + 44, h = size + 32
+  const cx2 = clamp(cx, 24 + w / 2, 1056 - w / 2), tail2 = clamp(tail + (cx - cx2) / Math.max(1, w / 2 - 40), -1, 1)
+  x.translate(cx2, cy); x.rotate(rot); x.scale(k, k); tail = tail2
   x.fillStyle = INK; x.fillRect(-w / 2 - 5, -h / 2, w + 10, h); x.fillRect(-w / 2, -h / 2 - 5, w, h + 10)
   x.fillStyle = col; x.fillRect(-w / 2, -h / 2, w, h)
   const tx = tail * (w / 2 - 40)
