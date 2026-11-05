@@ -1,6 +1,6 @@
 # star_advice — days 26–55 posting plan (doubled)
 
-The advice account: **640 posts and 600 trial reels over 30 days**. Every video is new and nothing repeats.
+The advice account: **660 posts and 600 trial reels over 30 days**. Every video is new and nothing repeats.
 
 - **Sun 29 Nov – Mon 28 Dec** (days 26–55). Times are in your local time.
 - The first 900 videos keep their original times. The Month 2 boost sits in between, so the account posts every 45 minutes or so, and Planet Talk has an early and a late slot each day.
@@ -244,16 +244,16 @@ Invite them for tomorrow. The snow will wait.
 Four texts, zero replies, and your thumb is already typing a fifth.
 You reach out because you care. Leave room for them to reach back.
 
-**11:15 PM · Post** — Four months of maybe (28 s) · *Planet Talk: Mars*  
-`kpmae02`
+**11:15 PM · Post** — [Four months of maybe](https://drive.google.com/file/d/1Cpav_4SCpUH15zmk65z93bzLmoJrmqRl/view) (28 s) · *Planet Talk: Mars*  
+`Star Talk/Planet Talk/Mars/02 Taurus - Four months of maybe (kpmae02).mp4`
 
 Four months of hanging out and nobody has said what it is.
 Going slow is fine. Say what you want in one honest sentence, at your own pace. Save this for the talk you keep putting off.
 
 ## Day 27 · Mon 30 Nov
 
-**7:45 AM · Post** — The Three-Day Reply (26 s) · *Planet Talk: Mercury*  
-`kpmee02`
+**7:45 AM · Post** — [The Three-Day Reply](https://drive.google.com/file/d/1vf5dsaZ9hVmc8vMxdwHZIs-2REK8ZCdS/view) (26 s) · *Planet Talk: Mercury*  
+`Star Talk/Planet Talk/Mercury/02 Taurus - The Three-Day Reply (kpmee02).mp4`
 
 Wanting your reply to be perfect is sweet. Three days of silence just feels like silence.
 A short honest answer now beats a perfect one later. Save this for the next sweet text.
@@ -484,8 +484,8 @@ You won't know by guessing. Ask what it means.
 Read at 9:02. Reply at midnight.
 Aries, send one and go live your life. Scorpio, a quick 'busy, smiling, call at nine' beats the perfect paragraph. Then agree on a rhythm, out loud.
 
-**11:15 PM · Post** — The Same Café Every Saturday (27 s) · *Planet Talk: The Moon*  
-`kpmoe02`
+**11:15 PM · Post** — [The Same Café Every Saturday](https://drive.google.com/file/d/1Rzs3DNIxmPuFSsZCWidJkShL7eJl3TQ_/view) (27 s) · *Planet Talk: The Moon*  
+`Star Talk/Planet Talk/The Moon/02 Taurus - The Same Café Every Saturday (kpmoe02).mp4`
 
 Missing someone can turn a favourite place into a waiting room.
 Keep the comfort, change the corner, and let a new routine feel like yours.
@@ -628,10 +628,11 @@ If it made you laugh, it's already a good text.
 Gemini, are you both telling a story at the same time again?
 Let them finish. Your "no way!" lands better after.
 
-**5:00 PM · Post** — [Found their hoodie in the laundry](https://drive.google.com/file/d/1QBO-EjsJNu4HmXgrOZqMjqDHoDxXUo_9/view) (18 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/02 - Found their hoodie in the laundry (kbxe02).mp4`
+**5:00 PM · Post** — [The Phone at Dinner](https://drive.google.com/file/d/1QQ7GLWt3cPiddEQzwneQvLi8ic-GCWhE/view) (90 s) ⏱ · *The Make-Up Talk: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Make-Up Talk- Extended/01 - The Phone at Dinner (kxmue01).mp4`
 
-Found their hoodie and suddenly you're writing a novel? A hoodie text is fine. The "also, I miss you" part belongs with a friend.
+You shared big news and they said "nice" to their screen.
+Being ignored stings more than the words. Put the phone in a drawer, own it with no "but", and ask to hear it again.
 
 **5:20 PM · Trial reel** — [The Crush Walks In](https://drive.google.com/file/d/1ZH_9i1NQYQcMLn5IuMRYMLLLuiRzAnhV/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/03 - The Crush Walks In (kwoe03).mp4`
@@ -649,11 +650,10 @@ Ever end up holding the camera because everyone else came as a pair? You're not 
 
 Dating a Gemini: three stories, no endings, five new nicknames. Then every tangent turns out to be about you.
 
-**6:30 PM · Post** — ["It's fine," said Taurus](https://drive.google.com/file/d/1fhzkLZURnyrgmE8MlEaOcCHtNN6SoiIJ/view) (18 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/02 - -It's fine,- said Taurus (kmte02).mp4`
+**6:30 PM · Post** — [Found their hoodie in the laundry](https://drive.google.com/file/d/1QBO-EjsJNu4HmXgrOZqMjqDHoDxXUo_9/view) (18 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/02 - Found their hoodie in the laundry (kbxe02).mp4`
 
-Plans got cancelled and you said it's fine. It wasn't, and that's okay.
-Name the real feeling, kindly: I'm bummed, let's pick a new day.
+Found their hoodie and suddenly you're writing a novel? A hoodie text is fine. The "also, I miss you" part belongs with a friend.
 
 **6:50 PM · Trial reel** — [The 2 a.m. Paragraph](https://drive.google.com/file/d/1rwtQTE1PM7RdhCZOhMEuu3rWsqdPfR9J/view) (8.5 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/03 - The 2 a.m. Paragraph (k3se03).mp4`
@@ -672,11 +672,11 @@ Not everyone loves this month, especially in a year when someone is missing. You
 The party invite says "plus one?" Who do you bring?
 Not someone to impress the room. Bring someone who'd actually enjoy the night.
 
-**8:00 PM · Post** — [The comfort meal](https://drive.google.com/file/d/1VT-JJTTJljNO-iBvgAYXy4gSCPWFsKOF/view) (20 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/02 - The comfort meal (koce02).mp4`
+**8:00 PM · Post** — ["It's fine," said Taurus](https://drive.google.com/file/d/1fhzkLZURnyrgmE8MlEaOcCHtNN6SoiIJ/view) (18 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/02 - -It's fine,- said Taurus (kmte02).mp4`
 
-Ask what their comfort meal is, and listen closely.
-It tells you exactly what to bring on their worst day. Soup, cereal at midnight, whatever it is. Save this for a bad week.
+Plans got cancelled and you said it's fine. It wasn't, and that's okay.
+Name the real feeling, kindly: I'm bummed, let's pick a new day.
 
 **8:20 PM · Trial reel** — [Gemini, Pick One](https://drive.google.com/file/d/1YzRmq0NZIu3vj7NXaqQFq9__tGIjr83C/view) (7 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/03 - Gemini, Pick One (ktte03).mp4`
@@ -695,11 +695,11 @@ When one of you is already in the car and the other is still checking, a little 
 You each pick a book for the other. What would yours be?
 Gemini picked nine. Their date picked one, and it was perfect.
 
-**9:30 PM · Post** — [Sometime, maybe, lol](https://drive.google.com/file/d/1wBX2CWIT5TaTDOw4JLlAW4-bst-Utt8s/view) (22 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/03 - Sometime, maybe, lol (ktre03).mp4`
+**9:30 PM · Post** — [Hosting Solo, Full House](https://drive.google.com/file/d/1lMkY4MOxdvvINFzEHTKsxXW3pqBjWUmD/view) (75 s) ⏱ · *Single and Thriving: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Single and Thriving- Extended/01 - Hosting Solo, Full House (kxste01).mp4`
 
-Vague plans feel safe because nobody can say no. Nobody can say yes either.
-Name the day, name the place, and let them answer something real.
+Hosting dinner on your own, and someone asks who helps you do all this.
+A home for one can still be full. Let your guests help; that's what they're there for.
 
 **9:50 PM · Trial reel** — [The screenshot of the first text](https://drive.google.com/file/d/15ERvcI2jGLvaax-lp6u6ltbq_IQD-tZy/view) (9 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/03 - The screenshot of the first text (kgse03).mp4`
@@ -718,22 +718,22 @@ Virgo, the scarf, the gloves and the backup scarf are all love, and they notice.
 Spotlight and a banner, or plan A, B and a laminated C?
 The best first date has their favourite thing on it.
 
-**11:00 PM · Post** — [Great date. Zero spark.](https://drive.google.com/file/d/1A7K1nVun7qj4lIXRFuGqyJtYXU3jhupm/view) (20 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/03 - Great date. Zero spark. (kine03).mp4`
+**11:00 PM · Post** — [The comfort meal](https://drive.google.com/file/d/1VT-JJTTJljNO-iBvgAYXy4gSCPWFsKOF/view) (20 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/02 - The comfort meal (koce02).mp4`
 
-They were kind, funny and on time, and you felt nothing. That's not you being broken.
-Sparks can be slow. If you're curious, go again. If not, a kind no is a gift too.
+Ask what their comfort meal is, and listen closely.
+It tells you exactly what to bring on their worst day. Soup, cereal at midnight, whatever it is. Save this for a bad week.
 
-**11:15 PM · Post** — Pluto to Taurus: The Mug You Kept (27.4 s) · *Planet Talk: Pluto*  
-`kpple02`
+**11:15 PM · Post** — [Pluto to Taurus: The Mug You Kept](https://drive.google.com/file/d/1b1yLZnVYVDh8OUhlj6ke8C7z-GBpIiw4/view) (27.4 s) · *Planet Talk: Pluto*  
+`Star Talk/Planet Talk/Pluto/02 Taurus - Pluto to Taurus- The Mug You Kept (kpple02).mp4`
 
 Keeping their mug because it's comfy is a very human thing to do.
 Letting go isn't losing, it's making room. Keep one kind memory if you like, and let the rest go slowly, at your own pace.
 
 ## Day 29 · Wed 2 Dec
 
-**7:45 AM · Post** — Saturn Gets Taurus Off the Couch (28 s) · *Planet Talk: Saturn*  
-`kpsae02`
+**7:45 AM · Post** — [Saturn Gets Taurus Off the Couch](https://drive.google.com/file/d/1hP_MEl5Vg73deSqFSwYrVFsP20GsFmvw/view) (28 s) · *Planet Talk: Saturn*  
+`Star Talk/Planet Talk/Saturn/02 Taurus - Saturn Gets Taurus Off the Couch (kpsae02).mp4`
 
 Fifty-two cosy movie nights and nobody has said what this is. Comfy is lovely, but clear is kinder: say what you want, simply. Wanting to know isn't too much.
 
@@ -754,10 +754,11 @@ Leo wanted the sky to itself, but the Moon is up in daylight on lots of days. If
 Three offers of help. Three no's.
 Why is yes, thank you so hard? Moonlight Lane, Ep 2.
 
-**9:30 AM · Post** — [Aries, you shot your shot](https://drive.google.com/file/d/1QN7tRH8XCih-2hjdhxaCgO3_-YBH-scy/view) (17 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/03 - Aries, you shot your shot (kpte03).mp4`
+**9:30 AM · Post** — [Sometime, maybe, lol](https://drive.google.com/file/d/1wBX2CWIT5TaTDOw4JLlAW4-bst-Utt8s/view) (22 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/03 - Sometime, maybe, lol (ktre03).mp4`
 
-They said no, and it stings. A no is information, not a judgement on who you are. Asking was brave, and brave is the win. Send this to the friend who just asked.
+Vague plans feel safe because nobody can say no. Nobody can say yes either.
+Name the day, name the place, and let them answer something real.
 
 **9:50 AM · Trial reel** — [Gemini, Left on Read](https://drive.google.com/file/d/1faLHlPKbTXv94KAg0-fHB-919ETqdAbU/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/03 - Gemini, Left on Read (ksge03).mp4`
@@ -776,10 +777,11 @@ First hangouts are awkward for everyone. Ask what felt off and listen first. You
 Ever lie awake wondering if you're too comfy to date?
 Cozy alone is a great place to choose from, not hide in.
 
-**11:00 AM · Post** — [Rereading the whole chat](https://drive.google.com/file/d/1pfOEe_bTpIVYYEE6lR9RJZSj1eoxL3aQ/view) (24 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/03 - Rereading the whole chat (khee03).mp4`
+**11:00 AM · Post** — [Great date. Zero spark.](https://drive.google.com/file/d/1A7K1nVun7qj4lIXRFuGqyJtYXU3jhupm/view) (20 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/03 - Great date. Zero spark. (kine03).mp4`
 
-The answer isn't hiding in old messages. Archive the chat and start a new note instead: a list of things you like about you. Save this for the night you want to scroll back.
+They were kind, funny and on time, and you felt nothing. That's not you being broken.
+Sparks can be slow. If you're curious, go again. If not, a kind no is a gift too.
 
 **11:20 AM · Trial reel** — [Gemini, say the real thing](https://drive.google.com/file/d/1LpRj9GkenVqBSKyUgdH-vVcoWSkWGbGb/view) (10.5 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/03 - Gemini, say the real thing (k5te03).mp4`
@@ -798,10 +800,11 @@ Libra, you could plan the prettiest winter walk in your sleep. Try handing them 
 Taurus in winter means the heaviest blanket and soup since noon.
 The sweetest part: they save you the warm spot.
 
-**12:30 PM · Post** — [Phone in the Drawer](https://drive.google.com/file/d/1FBETD6pG0ykr-CJfZ0SZPvtygbwfUvs9/view) (21 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/03 - Phone in the Drawer (kdye03).mp4`
+**12:30 PM · Post** — [Advice for Everyone But Me](https://drive.google.com/file/d/1dXHNqKHX_pdnKTAw0i9xQBYqDVMC1woJ/view) (90 s) ⏱ · *Moonlight Lane: Side Stories*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Moonlight Lane- Side Stories/01 - Advice for Everyone But Me (kxmle01).mp4`
 
-One hour, no phone, just you. The urge to check fades faster than you think, and your own thoughts turn out to be decent company.
+Moonlight Lane, Side Story: Gemini has advice for the whole lane and four months of "what are we" on their own phone.
+The advice you would give a friend works on you too. Ask it plainly.
 
 **12:50 PM · Trial reel** — [The bio that needs a scroll bar](https://drive.google.com/file/d/1Zn_K4fnve3znyyEs0fSjsLnmgqVdiT_o/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/03 - The bio that needs a scroll bar (kbge03).mp4`
@@ -820,11 +823,10 @@ Rapid-fire questions can feel like a quiz. Earth signs open up when you slow dow
 When your Aries builds the worst snowman you've ever seen.
 Turns out it was a portrait. Of you.
 
-**2:00 PM · Post** — ["Whatever."](https://drive.google.com/file/d/1TYnKUqB38fCKrpU8r-Lk4XJGnS6w2PdX/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/03 - -Whatever.- (ksbe03).mp4`
+**2:00 PM · Post** — [Aries, you shot your shot](https://drive.google.com/file/d/1QN7tRH8XCih-2hjdhxaCgO3_-YBH-scy/view) (17 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/03 - Aries, you shot your shot (kpte03).mp4`
 
-"Whatever" isn't calm, it's overwhelmed.
-Name the feeling, ask for a minute, then come back. That's the grown-up exit.
+They said no, and it stings. A no is information, not a judgement on who you are. Asking was brave, and brave is the win. Send this to the friend who just asked.
 
 **2:20 PM · Trial reel** — [Gemini gave two answers](https://drive.google.com/file/d/1Dw7B_pp16nXikeVG2dpcfWXUxiEhKmQh/view) (8.8 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/03 - Gemini gave two answers (khse03).mp4`
@@ -843,11 +845,10 @@ Romance and routine can live on the same page. Add one small gesture for no reas
 Scorpio reviews a homemade snow globe, silently.
 One shake, two tiny stars inside, and no composure left.
 
-**3:30 PM · Post** — [Scorpio.exe: One Dry Text](https://drive.google.com/file/d/1gvtHML9vY0nyAMmq37mBSLBb96DEgJKr/view) (21 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/03 - Scorpio.exe- One Dry Text (klge03).mp4`
+**3:30 PM · Post** — [Rereading the whole chat](https://drive.google.com/file/d/1pfOEe_bTpIVYYEE6lR9RJZSj1eoxL3aQ/view) (24 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/03 - Rereading the whole chat (khee03).mp4`
 
-One "ok" and the worst-case story writes itself.
-When a text feels cold, ask before you go quiet. Most of the time they were just driving.
+The answer isn't hiding in old messages. Archive the chat and start a new note instead: a list of things you like about you. Save this for the night you want to scroll back.
 
 **3:50 PM · Trial reel** — [The old friend you lost touch with](https://drive.google.com/file/d/1MrqmQPcoAIukbXpcHYQtAA_Sn5ABcoF6/view) (10 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/03 - The old friend you lost touch with (kute03).mp4`
@@ -865,10 +866,10 @@ Nodding while you load your reply isn't listening. Before you answer, say back w
 
 When the whole street lights up one house at a time and you are suddenly very emotional. Let the little beautiful things land.
 
-**5:00 PM · Post** — [Month three, still no label](https://drive.google.com/file/d/1PP8gQ_zyMdqeqa3OdLETHdOGs_sDAZZ0/view) (18 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/03 - Month three, still no label (kare03).mp4`
+**5:00 PM · Post** — [Phone in the Drawer](https://drive.google.com/file/d/1FBETD6pG0ykr-CJfZ0SZPvtygbwfUvs9/view) (21 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/03 - Phone in the Drawer (kdye03).mp4`
 
-Three months of dates and still no label? Time won't define it for you. A calm, honest conversation will, and you're allowed to start it.
+One hour, no phone, just you. The urge to check fades faster than you think, and your own thoughts turn out to be decent company.
 
 **5:20 PM · Trial reel** — [The Six-Paragraph Hello](https://drive.google.com/file/d/1U-5eMEaIGix-8hX1l3A_Q2jS5YvmQ2cU/view) (11 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/03 - The Six-Paragraph Hello (kroe03).mp4`
@@ -887,10 +888,11 @@ Moonlight Lane, Ep 2: the holiday market opens, and Sagittarius will not let any
 Who says it first, and who schedules it for spring?
 We ranked the signs. First or last, just mean it.
 
-**6:30 PM · Post** — [Big news, wrong first call](https://drive.google.com/file/d/182-ezMFfu2ax30z8zk0Gh0M2p30lFRp1/view) (17 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/03 - Big news, wrong first call (kbxe03).mp4`
+**6:30 PM · Post** — ["Whatever."](https://drive.google.com/file/d/1TYnKUqB38fCKrpU8r-Lk4XJGnS6w2PdX/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/03 - -Whatever.- (ksbe03).mp4`
 
-Good news and your first instinct is to tell them. Share the win where it gets cheered: the people who were there all year.
+"Whatever" isn't calm, it's overwhelmed.
+Name the feeling, ask for a minute, then come back. That's the grown-up exit.
 
 **6:50 PM · Trial reel** — [They saved me a seat](https://drive.google.com/file/d/1psBizNKu2slIS1Gxwds8BeKwvAqBNV8S/view) (8.5 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/02 - They saved me a seat (kpre02).mp4`
@@ -909,11 +911,11 @@ Looking after everyone is lovely, until you're eating crackers for dinner. This 
 They saved the receipt from your very first date. Too much?
 Keeping little things means they were paying attention.
 
-**8:00 PM · Post** — [Five drafts for one "k."](https://drive.google.com/file/d/1cqAsUDMwLTMnhfaw-LGKqa6K_b8JedB6/view) (22 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/03 - Five drafts for one -k.- (kmte03).mp4`
+**8:00 PM · Post** — [Scorpio.exe: One Dry Text](https://drive.google.com/file/d/1gvtHML9vY0nyAMmq37mBSLBb96DEgJKr/view) (21 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/03 - Scorpio.exe- One Dry Text (klge03).mp4`
 
-One letter back and suddenly you have five drafts and a theory.
-Skip the decoding. One kind question usually clears it up.
+One "ok" and the worst-case story writes itself.
+When a text feels cold, ask before you go quiet. Most of the time they were just driving.
 
 **8:20 PM · Trial reel** — [Planning our wedding after one good text](https://drive.google.com/file/d/1PA8CLIz9RKXnfzTkLCY0jm82GuG1yeP8/view) (10.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/04 - Planning our wedding after one good text (kwme04).mp4`
@@ -932,11 +934,10 @@ The kindest invites come with an easy way out. Pyjamas welcome, leave whenever, 
 Cancer, it's date three and the future dog already has a name.
 The person across the table is right here. Start with them.
 
-**9:30 PM · Post** — [The small thing](https://drive.google.com/file/d/1eRt-jpI0ZZI-QzdChLarMW0kj0deX--g/view) (21 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/03 - The small thing (koce03).mp4`
+**9:30 PM · Post** — [Month three, still no label](https://drive.google.com/file/d/1PP8gQ_zyMdqeqa3OdLETHdOGs_sDAZZ0/view) (18 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/03 - Month three, still no label (kare03).mp4`
 
-The thing that makes someone feel cared for is usually tiny.
-Noticing the haircut. Putting the cup back. Small habits say one big thing: I listened.
+Three months of dates and still no label? Time won't define it for you. A calm, honest conversation will, and you're allowed to start it.
 
 **9:50 PM · Trial reel** — [The 2 a.m. Scroll](https://drive.google.com/file/d/16i9BbwRiPnil1kZnCTd4IWmgJNr0yQw1/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/04 - The 2 a.m. Scroll (kwoe04).mp4`
@@ -954,22 +955,21 @@ The far side of the Moon gets just as much sunlight; we simply never see it from
 
 A Cancer packs snacks for a four-minute walk. On a rough day they don't try to fix it. They just stay close and listen.
 
-**11:00 PM · Post** — [Same Moon Tonight](https://drive.google.com/file/d/1cIm1JPMv2ZIDHZFkCepfDbErKr39mtmr/view) (22 s) · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/02 - Same Moon Tonight (klne02).mp4`
+**11:00 PM · Post** — [Big news, wrong first call](https://drive.google.com/file/d/182-ezMFfu2ax30z8zk0Gh0M2p30lFRp1/view) (17 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/03 - Big news, wrong first call (kbxe03).mp4`
 
-Seeing something beautiful and wishing they were there is one of the hardest parts of distance.
-Send them your sky, one photo a night. The moon shows you both the same phase.
+Good news and your first instinct is to tell them. Share the win where it gets cheered: the people who were there all year.
 
-**11:15 PM · Post** — Taurus and the Comfy Rut (26 s) · *Planet Talk: The Sun*  
-`kpsue02`
+**11:15 PM · Post** — [Taurus and the Comfy Rut](https://drive.google.com/file/d/1dfQvlQUswYnLrBWaIC5cG521IfAYbQKo/view) (26 s) · *Planet Talk: The Sun*  
+`Star Talk/Planet Talk/The Sun/02 Taurus - Taurus and the Comfy Rut (kpsue02).mp4`
 
 Comfort is a gift, not a hiding place.
 You don't have to give up the cosy stuff to try one new thing. Bring the blanket. Say yes to the game night.
 
 ## Day 30 · Thu 3 Dec
 
-**7:45 AM · Post** — Taurus, Same Table, Third Year (26 s) · *Planet Talk: Uranus*  
-`kpure02`
+**7:45 AM · Post** — [Taurus, Same Table, Third Year](https://drive.google.com/file/d/1eag0NOJ1jhasryMYvI-Ahi-8yW_6Qe_8/view) (26 s) · *Planet Talk: Uranus*  
+`Star Talk/Planet Talk/Uranus/02 Taurus - Taurus, Same Table, Third Year (kpure02).mp4`
 
 Same booth, same order, year three, and neither of you wants to say it's a bit samey.
 Keep the comfort and add one new thing. Ask what they've always wanted to try together.
@@ -991,11 +991,11 @@ Sometimes they want a listener, not a fix. Ask whether they want advice or a hug
 When you keep turning down help, the people offering start to feel shut out.
 Moonlight Lane, Ep 2.
 
-**9:30 AM · Post** — [The twelve-paragraph apology](https://drive.google.com/file/d/1uA82HRoF-FE96yLTUVDi7biqzb85gIvo/view) (24 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/04 - The twelve-paragraph apology (ktre04).mp4`
+**9:30 AM · Post** — [Five drafts for one "k."](https://drive.google.com/file/d/1cqAsUDMwLTMnhfaw-LGKqa6K_b8JedB6/view) (22 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/03 - Five drafts for one -k.- (kmte03).mp4`
 
-When you feel bad, it is tempting to explain every second of it.
-A real apology is short and warm: own it, say sorry, and let them feel it. Save this for the next hard conversation.
+One letter back and suddenly you have five drafts and a theory.
+Skip the decoding. One kind question usually clears it up.
 
 **9:50 AM · Trial reel** — [Left on Read: Spiral or Chill](https://drive.google.com/file/d/1m4a6B68HBycdTZ5pSKqdy0B59CRMI1fJ/view) (7 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/04 - Left on Read- Spiral or Chill (ktte04).mp4`
@@ -1014,11 +1014,11 @@ Long nights and deep talks suit you, Scorpio. You don't have to open up all at o
 Cuffing season started and you're single. Panic-date or hide till spring?
 Neither. Cozy counts with your friends, too.
 
-**11:00 AM · Post** — [I rehearse texts like a speech](https://drive.google.com/file/d/1134IxhmQUG6n2jgCjxL2tDNW6jwRs53i/view) (18 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/04 - I rehearse texts like a speech (kine04).mp4`
+**11:00 AM · Post** — [The small thing](https://drive.google.com/file/d/1eRt-jpI0ZZI-QzdChLarMW0kj0deX--g/view) (21 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/03 - The small thing (koce03).mp4`
 
-Draft eleven of a two-word text? That's just caring how you land.
-Pick the version that sounds like you, and send it. The right person will hear you in it.
+The thing that makes someone feel cared for is usually tiny.
+Noticing the haircut. Putting the cup back. Small habits say one big thing: I listened.
 
 **11:20 AM · Trial reel** — [Same crush story, four chats](https://drive.google.com/file/d/1tYHH6cP2jkVWkvSkcJVuMPm91i123Quj/view) (8 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/04 - Same crush story, four chats (kgse04).mp4`
@@ -1060,10 +1060,11 @@ Calm can look like bored when you're nervous. Watch the details instead: they re
 They cancel because they're sick. How long do you stare at the reply box?
 Keep it simple: rest up, I'll be here.
 
-**2:00 PM · Post** — [Taurus, step away from the old photos](https://drive.google.com/file/d/1X30xi0FC5SYXHwEPPyfqhdfLuTY0TAm_/view) (18 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/04 - Taurus, step away from the old photos (kpte04).mp4`
+**2:00 PM · Post** — [Same Moon Tonight](https://drive.google.com/file/d/1cIm1JPMv2ZIDHZFkCepfDbErKr39mtmr/view) (22 s) · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/02 - Same Moon Tonight (klne02).mp4`
 
-2 a.m., the old album, the ache. Missing them doesn't mean you should go back. It means it mattered, and that's allowed. Now water, sleep, and breakfast tomorrow.
+Seeing something beautiful and wishing they were there is one of the hardest parts of distance.
+Send them your sky, one photo a night. The moon shows you both the same phase.
 
 **2:20 PM · Trial reel** — [Cancer, the Cancelled Plans](https://drive.google.com/file/d/10hxk5yRVRuXCbS-xkWHAQxngGx9NA31f/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/04 - Cancer, the Cancelled Plans (ksge04).mp4`
@@ -1082,10 +1083,11 @@ Sagittarius, you can pack for a snow trip in four seconds. Before you go, ask wh
 The sign that remembers your coffee order is a keeper.
 All twelve, ranked. Little details are big love.
 
-**3:30 PM · Post** — [Dinner for two, by habit](https://drive.google.com/file/d/15keTmFuZMvRuBQ-DYJIB_amVEpi3OmHh/view) (22 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/04 - Dinner for two, by habit (khee04).mp4`
+**3:30 PM · Post** — [The twelve-paragraph apology](https://drive.google.com/file/d/1uA82HRoF-FE96yLTUVDi7biqzb85gIvo/view) (24 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/04 - The twelve-paragraph apology (ktre04).mp4`
 
-Set out two plates without thinking? That care didn't leave with them. Feed yourself first, then text a friend to come eat the extra.
+When you feel bad, it is tempting to explain every second of it.
+A real apology is short and warm: own it, say sorry, and let them feel it. Save this for the next hard conversation.
 
 **3:50 PM · Trial reel** — [Cancer, who is taking care of you](https://drive.google.com/file/d/1S2ce38qA5yOWv_l2hE16322miSdMhezw/view) (11.5 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/04 - Cancer, who is taking care of you (k5te04).mp4`
@@ -1127,10 +1129,11 @@ That giant Moon on the horizon is the same size as always; it's a trick of how o
 Leo, did they not notice the haircut? Hints are quiet.
 Say it out loud and let them get excited with you.
 
-**6:30 PM · Post** — [The Slow Lap](https://drive.google.com/file/d/1UOCTKrK8ACqxWbDwmWrwo0dgtNmgA01q/view) (20 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/04 - The Slow Lap (kdye04).mp4`
+**6:30 PM · Post** — [I rehearse texts like a speech](https://drive.google.com/file/d/1134IxhmQUG6n2jgCjxL2tDNW6jwRs53i/view) (18 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/04 - I rehearse texts like a speech (kine04).mp4`
 
-Rushing even on your day off? Walk slowly, sit for the sunrise, let the snail win. The point was never to finish first, just to be there.
+Draft eleven of a two-word text? That's just caring how you land.
+Pick the version that sounds like you, and send it. The right person will hear you in it.
 
 **6:50 PM · Trial reel** — [Cancer kept the voice note](https://drive.google.com/file/d/1Kk0Y1KM4zjYCc_HK0kt2mPHHqi1xAGEa/view) (9.5 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/04 - Cancer kept the voice note (khse04).mp4`
@@ -1148,11 +1151,10 @@ A fight about the lights can turn into a fight about 2019 fast. Keep the old fol
 
 A Leo will stop posing in the mirror just to tell you that you look amazing. Then pull you into the frame.
 
-**8:00 PM · Post** — ["You never text back"](https://drive.google.com/file/d/1TTZMRmCK_8WhDyxYFdgko39FBrNxifxj/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/04 - -You never text back- (ksbe04).mp4`
+**8:00 PM · Post** — [Taurus, step away from the old photos](https://drive.google.com/file/d/1X30xi0FC5SYXHwEPPyfqhdfLuTY0TAm_/view) (18 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/04 - Taurus, step away from the old photos (kpte04).mp4`
 
-The spiral after an unanswered text is real.
-Say the worry instead of the charge, and ask for the small text that would help.
+2 a.m., the old album, the ache. Missing them doesn't mean you should go back. It means it mattered, and that's allowed. Now water, sleep, and breakfast tomorrow.
 
 **8:20 PM · Trial reel** — [Texting mom after the fight](https://drive.google.com/file/d/1ojwKL2NwEzDfATIMswkXDiP3ms_GgCZA/view) (11 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/04 - Texting mom after the fight (kute04).mp4`
@@ -1194,11 +1196,10 @@ Third cancellation and the scorecard is already drafted. Skip it. Say how it fel
 Would you let a Leo judge your gingerbread house?
 Leo built a castle, then gave the crown to the lopsided little house.
 
-**11:00 PM · Post** — [Gemini.exe: Subject Changed](https://drive.google.com/file/d/1d2z3on-OkJPJMXDiSnODpdwBN_APVLXq/view) (19 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/04 - Gemini.exe- Subject Changed (klge04).mp4`
+**11:00 PM · Post** — [Dinner for two, by habit](https://drive.google.com/file/d/15keTmFuZMvRuBQ-DYJIB_amVEpi3OmHh/view) (22 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/04 - Dinner for two, by habit (khee04).mp4`
 
-"Can we talk about us?" and suddenly there's a dog video.
-When it gets real, stay in the hard sentence one line longer. That's where the closeness is.
+Set out two plates without thinking? That care didn't leave with them. Feed yourself first, then text a friend to come eat the extra.
 
 **11:15 PM · Post** — [Venus to Taurus: Who Feeds You?](https://drive.google.com/file/d/1v51za06_k676h-MZTTVv6-APRgx8sTCR/view) (75.0 s) ⏱ · *Planet Talk: Venus*  
 `Star Talk/Planet Talk/Venus/02 Taurus - Venus to Taurus- Who Feeds You- (kpvee02).mp4`
@@ -1230,10 +1231,10 @@ Capricorn, you show love by shoveling their path before they're even awake. Don'
 They lent you their scarf. It's been four days.
 Is it a scarf, or a sign? Moonlight Lane, Ep 3.
 
-**9:30 AM · Post** — [Couple on Saturday, strangers by Monday](https://drive.google.com/file/d/188Axhlck-QfDShB2WoofAZwPhRR6YPWP/view) (20 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/04 - Couple on Saturday, strangers by Monday (kare04).mp4`
+**9:30 AM · Post** — [The Slow Lap](https://drive.google.com/file/d/1UOCTKrK8ACqxWbDwmWrwo0dgtNmgA01q/view) (20 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/04 - The Slow Lap (kdye04).mp4`
 
-Pancakes and matching scarves on Saturday, "busy week!" on Monday. Notice the pattern, name it kindly, and ask for the weekday version too.
+Rushing even on your day off? Walk slowly, sit for the sunrise, let the snail win. The point was never to finish first, just to be there.
 
 **9:50 AM · Trial reel** — [First Date Nerves](https://drive.google.com/file/d/1fyvD733EMhl87ly3cSM6g1ZAsRojpdTy/view) (9 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/05 - First Date Nerves (kwoe05).mp4`
@@ -1252,10 +1253,11 @@ Big personalities and soft hearts can take care of each other. Ask how they feel
 Tiny budget, big feelings. A day trip or a list of things they mentioned?
 The best gifts prove you were listening.
 
-**11:00 AM · Post** — [They liked your story](https://drive.google.com/file/d/162frNaAXmQSozPjH55mZLZX_iqadMJZE/view) (16 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/04 - They liked your story (kbxe04).mp4`
+**11:00 AM · Post** — ["You never text back"](https://drive.google.com/file/d/1TTZMRmCK_8WhDyxYFdgko39FBrNxifxj/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/04 - -You never text back- (ksbe04).mp4`
 
-One like, forty theories. A like says "I saw it" and that's all. Go to dinner. Save this for the next time your phone lights up.
+The spiral after an unanswered text is real.
+Say the worry instead of the charge, and ask for the small text that would help.
 
 **11:20 AM · Trial reel** — [Outfit Number Nine](https://drive.google.com/file/d/1bT5kp_pdKyOfnldB8G92uvMX8fe9T0Pj/view) (8.0 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/05 - Outfit Number Nine (k3se05).mp4`
@@ -1297,11 +1299,11 @@ Ask about them. Watch them light up.
 Gemini's winter: three hats, two plans, one very busy group chat.
 But when they listen, they remember every word.
 
-**2:00 PM · Post** — [2 a.m. and missing them](https://drive.google.com/file/d/117UBWwdnjg1sHwbqZ56r7WcsHjmwvwHh/view) (24 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/04 - 2 a.m. and missing them (kmte04).mp4`
+**2:00 PM · Post** — [Gemini.exe: Subject Changed](https://drive.google.com/file/d/1d2z3on-OkJPJMXDiSnODpdwBN_APVLXq/view) (19 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/04 - Gemini.exe- Subject Changed (klge04).mp4`
 
-It's 2 a.m. and the old photos are winning.
-Missing someone means it mattered, not that you have to go back. Write it in your notes, then rest.
+"Can we talk about us?" and suddenly there's a dog video.
+When it gets real, stay in the hard sentence one line longer. That's where the closeness is.
 
 **2:20 PM · Trial reel** — [Reading it from the lock screen](https://drive.google.com/file/d/12HdIOa9CbF0DR6HNQ-PzEbbFaKEMofAu/view) (9 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/05 - Reading it from the lock screen (kgse05).mp4`
@@ -1320,11 +1322,10 @@ A blue moon is a calendar thing, not a colour, and it only comes around every fe
 Why is there so much tape on one tiny present?
 Because they kept looking for the thing you lost.
 
-**3:30 PM · Post** — [Who says sorry first?](https://drive.google.com/file/d/1Y-hdVlxWS5AXUY0SaURCkS6nUulzk7Hd/view) (18.6 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/04 - Who says sorry first- (koce04).mp4`
+**3:30 PM · Post** — [Couple on Saturday, strangers by Monday](https://drive.google.com/file/d/188Axhlck-QfDShB2WoofAZwPhRR6YPWP/view) (20 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/04 - Couple on Saturday, strangers by Monday (kare04).mp4`
 
-You both wait for the other one to apologize. Then nobody does.
-Going first isn't losing. It's choosing the two of you over the score.
+Pancakes and matching scarves on Saturday, "busy week!" on Monday. Notice the pattern, name it kindly, and ask for the weekday version too.
 
 **3:50 PM · Trial reel** — [The 2 a.m. scroll](https://drive.google.com/file/d/19TYLLvNd-EYuF3q2YBr2tgfvSt5_7unq/view) (10 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/05 - The 2 a.m. scroll (kfae05).mp4`
@@ -1365,11 +1366,10 @@ Holiday plans can feel like a contest someone has to lose. Try asking how you ca
 
 A dog in a striped sweater. With a pocket. Pisces did not stand a chance. Delight is allowed to be this big.
 
-**6:30 PM · Post** — [The Someday List](https://drive.google.com/file/d/1tRhaRVMZzmSoHaWgSakjJmt3fHMnzU8T/view) (22 s) · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/03 - The Someday List (klne03).mp4`
+**6:30 PM · Post** — [They liked your story](https://drive.google.com/file/d/162frNaAXmQSozPjH55mZLZX_iqadMJZE/view) (16 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/04 - They liked your story (kbxe04).mp4`
 
-You find their favourite thing and they're fast asleep seven hours away.
-Start a shared someday list and add one thing a day. Every line is a date you get to look forward to.
+One like, forty theories. A like says "I saw it" and that's all. Go to dinner. Save this for the next time your phone lights up.
 
 **6:50 PM · Trial reel** — [Leo, the spotlight can wait](https://drive.google.com/file/d/1RLieT5Bxrwzr-KRVuwwu0xi2tZuL5czY/view) (10.5 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/05 - Leo, the spotlight can wait (k5te05).mp4`
@@ -1388,11 +1388,11 @@ A day off with a 37-step plan isn't really a day off. Rest doesn't need to be fi
 Find your sign on the always-late list.
 Ranked from "five minutes" to arrived yesterday. A quick heads-up is the kind part.
 
-**8:00 PM · Post** — ["So like… what are we lol"](https://drive.google.com/file/d/1Z4K0sq0z2O7MFMRq2qE47jg9t54IUnlB/view) (22 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/05 - -So like… what are we lol- (ktre05).mp4`
+**8:00 PM · Post** — [2 a.m. and missing them](https://drive.google.com/file/d/117UBWwdnjg1sHwbqZ56r7WcsHjmwvwHh/view) (24 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/04 - 2 a.m. and missing them (kmte04).mp4`
 
-The "lol jk" is armour for a question you really want answered.
-Ask it straight and kindly. Whatever they say, you'll know where you stand.
+It's 2 a.m. and the old photos are winning.
+Missing someone means it mattered, not that you have to go back. Write it in your notes, then rest.
 
 **8:20 PM · Trial reel** — [All about me, me, me](https://drive.google.com/file/d/1uyQnDtGwI5pDIZjKwPRppeZef6grRLZV/view) (11 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/05 - All about me, me, me (kbge05).mp4`
@@ -1411,11 +1411,11 @@ Different cities, different clocks, a lot of missed calls. A small ritual beats 
 You said no and they laughed it off. Is that a red line?
 Yes. A no is a whole answer, and the right person hears it the first time.
 
-**9:30 PM · Post** — [Deep Dive: Gemini in Love](https://drive.google.com/file/d/1SmO-1vcoe82BOxNXe6L_gKREfWjYlZB4/view) (118 s) ⏱ · *Deep Dive: ___ in Love*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/03 - Deep Dive- Gemini in Love (kdde03).mp4`
+**9:30 PM · Post** — [Who says sorry first?](https://drive.google.com/file/d/1Y-hdVlxWS5AXUY0SaURCkS6nUulzk7Hd/view) (18.6 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/04 - Who says sorry first- (koce04).mp4`
 
-If a Gemini asks you forty questions, that's the flirt.
-Give them room to change their mind, ask "joke, or real?" when it matters, and be their favourite person to talk to.
+You both wait for the other one to apologize. Then nobody does.
+Going first isn't losing. It's choosing the two of you over the score.
 
 **9:50 PM · Trial reel** — [Leo took the microphone](https://drive.google.com/file/d/1vQJH2xU3uzQQo8mW6n_IV81Nv7uKZgYT/view) (9.7 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/05 - Leo took the microphone (khse05).mp4`
@@ -1434,22 +1434,22 @@ Deep questions and light jokes both have a place. Answer one question honestly, 
 Virgo, the scarf is lumpy and one end is longer. They made it themselves.
 Love the thought first. Wear it anyway.
 
-**11:00 PM · Post** — [The Gemini Guide: Twelve Tabs Open](https://drive.google.com/file/d/1c19D5h_IlgvERTBWAsAOy029OfH5eGau/view) (67.3 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/03 - The Gemini Guide- Twelve Tabs Open (kxsge03).mp4`
+**11:00 PM · Post** — [The Someday List](https://drive.google.com/file/d/1tRhaRVMZzmSoHaWgSakjJmt3fHMnzU8T/view) (22 s) · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/03 - The Someday List (klne03).mp4`
 
-It's 2 a.m., twelve chats are open, and none of them are real yet.
-Gemini, your words are a gift. This week, trade the typing for one call and let them hear you laugh.
+You find their favourite thing and they're fast asleep seven hours away.
+Start a shared someday list and add one thing a day. Every line is a date you get to look forward to.
 
-**11:15 PM · Post** — You can go first (30 s) · *Planet Talk: Mars*  
-`kpmae04`
+**11:15 PM · Post** — [You can go first](https://drive.google.com/file/d/10fpunGQXcwwgtYH44UBvyJIRdeaAOCuY/view) (30 s) · *Planet Talk: Mars*  
+`Star Talk/Planet Talk/Mars/04 Cancer - You can go first (kpmae04).mp4`
 
 Waiting for them to make the first move so it can't hurt.
 Going first is allowed. A no is information, not a verdict on you. Try it gently: I'd love to see you again, no pressure.
 
 ## Day 32 · Sat 5 Dec
 
-**7:45 AM · Post** — The Paragraph You Didn't Send (28 s) · *Planet Talk: Mercury*  
-`kpmee04`
+**7:45 AM · Post** — [The Paragraph You Didn't Send](https://drive.google.com/file/d/1pb4_5ZcrzVjGXSOlYK4ERtQJVFwEpgHs/view) (28 s) · *Planet Talk: Mercury*  
+`Star Talk/Planet Talk/Mercury/04 Cancer - The Paragraph You Didn't Send (kpmee04).mp4`
 
 When someone goes quiet, the check-in you write can turn into nine pages of love.
 Lead with the feeling and keep one ask. The rest can wait for Sunday.
@@ -1471,11 +1471,11 @@ Honesty matters, and so does how it lands. Go back, say "that came out wrong, so
 Wrote a nine-card speech to return a scarf?
 Cancer did, then hid in a snowbank. Moonlight Lane, Ep 3.
 
-**9:30 AM · Post** — [My best friend got a partner](https://drive.google.com/file/d/1y8jrY8rnc1LcuFZn3yqjoIx90fg4kED7/view) (20 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/05 - My best friend got a partner (kine05).mp4`
+**9:30 AM · Post** — ["So like… what are we lol"](https://drive.google.com/file/d/1Z4K0sq0z2O7MFMRq2qE47jg9t54IUnlB/view) (22 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/05 - -So like… what are we lol- (ktre05).mp4`
 
-Happy for your best friend and a little lonely at the same time? Completely human.
-Say "I miss you" out loud and put a standing friend night on the calendar.
+The "lol jk" is armour for a question you really want answered.
+Ask it straight and kindly. Whatever they say, you'll know where you stand.
 
 **9:50 AM · Trial reel** — [The Four-Minute Voice Note](https://drive.google.com/file/d/1e-86KhLgljMqjkNRatNldT3NQpU6vYD6/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/05 - The Four-Minute Voice Note (kroe05).mp4`
@@ -1493,10 +1493,11 @@ Pisces, crying at the first snowflake isn't too much. It's how you love. Bring t
 
 A Virgo notices the onions you always pick out. They also keep the napkin you doodled a heart on.
 
-**11:00 AM · Post** — [Gemini, close some tabs](https://drive.google.com/file/d/1h3etIPSe6qXM1R_yI8GYtNjadg-9iqOH/view) (17 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/05 - Gemini, close some tabs (kpte05).mp4`
+**11:00 AM · Post** — [My best friend got a partner](https://drive.google.com/file/d/1y8jrY8rnc1LcuFZn3yqjoIx90fg4kED7/view) (20 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/05 - My best friend got a partner (kine05).mp4`
 
-First-date nerves the night before? You don't need a script. Curiosity is your best outfit, so bring one real question and let the rest of the tabs close.
+Happy for your best friend and a little lonely at the same time? Completely human.
+Say "I miss you" out loud and put a standing friend night on the calendar.
 
 **11:20 AM · Trial reel** — [The old couple at the bus stop](https://drive.google.com/file/d/1UHEqk4-0U5pKMuGzk6dbnTSc0CsQcXti/view) (10 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/03 - The old couple at the bus stop (kpre03).mp4`
@@ -1515,10 +1516,11 @@ There's a new moon every month but no eclipse, because the Moon's path is tilted
 They're going home for two weeks. Tag along or go silent?
 Pick a call time you both like, then go enjoy your own people.
 
-**12:30 PM · Post** — [The “thriving” selfie](https://drive.google.com/file/d/1bcJPy1b-_8MM4KtLSmejfNowshmsLOn3/view) (20 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/05 - The “thriving” selfie (khee05).mp4`
+**12:30 PM · Post** — [Deep Dive: Gemini in Love](https://drive.google.com/file/d/1SmO-1vcoe82BOxNXe6L_gKREfWjYlZB4/view) (118 s) ⏱ · *Deep Dive: ___ in Love*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/03 - Deep Dive- Gemini in Love (kdde03).mp4`
 
-You don't owe anyone proof that you're okay. Put the phone down, call someone real, and heal where nobody's watching.
+If a Gemini asks you forty questions, that's the flirt.
+Give them room to change their mind, ask "joke, or real?" when it matters, and be their favourite person to talk to.
 
 **12:50 PM · Trial reel** — [Practicing my “oh, hey” in the mirror](https://drive.google.com/file/d/1snTUCU43Q2URJo3gXo8-MTzBL1CI-c6s/view) (9.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/06 - Practicing my “oh, hey” in the mirror (kwme06).mp4`
@@ -1537,10 +1539,10 @@ Small talk about the weather rarely gets anyone excited. Ask an air sign somethi
 Can a spontaneous day come with an itinerary?
 Virgo crossed out the plan the moment their date spotted a cosy café.
 
-**2:00 PM · Post** — [Nobody Else Gets a Vote](https://drive.google.com/file/d/17BShIBWQZcXQz5nI2T8hH5OP3vkQPMzp/view) (22 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/05 - Nobody Else Gets a Vote (kdye05).mp4`
+**2:00 PM · Post** — [Gemini, close some tabs](https://drive.google.com/file/d/1h3etIPSe6qXM1R_yI8GYtNjadg-9iqOH/view) (17 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/05 - Gemini, close some tabs (kpte05).mp4`
 
-Always picking what everyone else would want? On a solo date there is one vote, and it's yours. Start with what you actually like.
+First-date nerves the night before? You don't need a script. Curiosity is your best outfit, so bring one real question and let the rest of the tabs close.
 
 **2:20 PM · Trial reel** — ["I Like You"](https://drive.google.com/file/d/1ZVZwqp0P70DgoWyTbR7IZv4kCvqtbGU-/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/06 - -I Like You- (kwoe06).mp4`
@@ -1559,11 +1561,10 @@ Aries, saying yes to every party for both of you comes from a good place. Their 
 Would you say it with a science-fair poster or a nine-page poem?
 However it comes out, saying it is the brave part.
 
-**3:30 PM · Post** — ["Calm down"](https://drive.google.com/file/d/1pupWW79PRxmhcZYICdpaUVMYDj0P6PmU/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/05 - -Calm down- (ksbe05).mp4`
+**3:30 PM · Post** — [The “thriving” selfie](https://drive.google.com/file/d/1bcJPy1b-_8MM4KtLSmejfNowshmsLOn3/view) (20 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/05 - The “thriving” selfie (khee05).mp4`
 
-Nobody in history has calmed down because they were told to.
-Try "I can see this matters. I'm listening." and watch what happens.
+You don't owe anyone proof that you're okay. Put the phone down, call someone real, and heal where nobody's watching.
 
 **3:50 PM · Trial reel** — [They Said "ok."](https://drive.google.com/file/d/1W5lYqQmtxS0Qzu7IBfMqrnzjaKNSp4Cb/view) (6.4 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/06 - They Said -ok.- (k3se06).mp4`
@@ -1582,11 +1583,11 @@ You do not need a plan for every minute. Pick one thing to do and let the rest h
 Does your sign send the good-morning text, or the good-afternoon one?
 Ranked. Saying it back is a small yes.
 
-**5:00 PM · Post** — [Aries.exe: Day 30](https://drive.google.com/file/d/1akTeGwho84-xDDkf9WqT1gOenUBD3giN/view) (20 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/05 - Aries.exe- Day 30 (klge05).mp4`
+**5:00 PM · Post** — [The Gemini Guide: Twelve Tabs Open](https://drive.google.com/file/d/1c19D5h_IlgvERTBWAsAOy029OfH5eGau/view) (67.3 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/03 - The Gemini Guide- Twelve Tabs Open (kxsge03).mp4`
 
-Day 1: hearts everywhere. Day 30: scrolling for someone new.
-The slow part isn't the boring part, it's where things get real. Let it build.
+It's 2 a.m., twelve chats are open, and none of them are real yet.
+Gemini, your words are a gift. This week, trade the typing for one call and let them hear you laugh.
 
 **5:20 PM · Trial reel** — [Virgo Made a Pro and Con List](https://drive.google.com/file/d/14E92-EofNQ9eo5B2ZbhTzYKKDl0lYkyE/view) (8 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/06 - Virgo Made a Pro and Con List (ktte06).mp4`
@@ -1605,10 +1606,10 @@ Moonlight Lane, Ep 3: day four of keeping the borrowed scarf, and Cancer has a n
 Twenty minutes later, still no restaurant. Dealbreaker or not?
 Offer two choices. Indecisive hearts love a short menu.
 
-**6:30 PM · Post** — [Cropped out of the photo](https://drive.google.com/file/d/1GB1oLP3e117eO1ab3Zx3TMCFk6_CGlL9/view) (16 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/05 - Cropped out of the photo (kare05).mp4`
+**6:30 PM · Post** — [Nobody Else Gets a Vote](https://drive.google.com/file/d/17BShIBWQZcXQz5nI2T8hH5OP3vkQPMzp/view) (22 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/05 - Nobody Else Gets a Vote (kdye05).mp4`
 
-Always just an elbow in their photos? You don't need to be posted to feel secure. You need to know where you stand, so ask for a straight answer.
+Always picking what everyone else would want? On a solo date there is one vote, and it's yours. Start with what you actually like.
 
 **6:50 PM · Trial reel** — [Texted first in four seconds](https://drive.google.com/file/d/1W_sB_kIkdacRITeptpGUaCu4YASRKHrj/view) (7 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/06 - Texted first in four seconds (kgse06).mp4`
@@ -1627,10 +1628,11 @@ Rushing to the finish can mean missing the best part. Slow your pace, say where 
 Libra, you said "no worries" and now the worries are piling up.
 You're allowed to say it bugged you a little. Kindly counts.
 
-**8:00 PM · Post** — [The photo memory hit](https://drive.google.com/file/d/186FkumvFEPcC80C4Uti2nfRAxJFLdyEI/view) (22 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/05 - The photo memory hit (kbxe05).mp4`
+**8:00 PM · Post** — ["Calm down"](https://drive.google.com/file/d/1pupWW79PRxmhcZYICdpaUVMYDj0P6PmU/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/05 - -Calm down- (ksbe05).mp4`
 
-When the old photo pops up and it hurts. Missing a good day doesn't mean going back. Keep the memory, and tell a friend instead.
+Nobody in history has calmed down because they were told to.
+Try "I can see this matters. I'm listening." and watch what happens.
 
 **8:20 PM · Trial reel** — [Missing your ex at the worst moment](https://drive.google.com/file/d/1adqHlnP0lgyz7J1OmY2S-3kIHcGe5p0-/view) (10 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/06 - Missing your ex at the worst moment (kfae06).mp4`
@@ -1648,11 +1650,11 @@ Saying "it's fine" when it isn't keeps the hurt around. When someone apologises 
 
 Two people, one dessert, a Libra with a ruler. Split perfectly fair, then they slide you the extra bite.
 
-**9:30 PM · Post** — [The friend who gives advice and never takes it](https://drive.google.com/file/d/1nL1FPtFWLQOG97ZmpHrndICcgBqRHLfF/view) (22 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/05 - The friend who gives advice and never takes it (kmte05).mp4`
+**9:30 PM · Post** — [Aries.exe: Day 30](https://drive.google.com/file/d/1akTeGwho84-xDDkf9WqT1gOenUBD3giN/view) (20 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/05 - Aries.exe- Day 30 (klge05).mp4`
 
-You tell the group chat to know their worth, then say no worries in your own DMs.
-You count too. Say what you need, gently.
+Day 1: hearts everywhere. Day 30: scrolling for someone new.
+The slow part isn't the boring part, it's where things get real. Let it build.
 
 **9:50 PM · Trial reel** — [Virgo, Lost Together](https://drive.google.com/file/d/1zAqok-5KWRJUvwsPOXW5f1TLS4qRVEWy/view) (9 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/06 - Virgo, Lost Together (ksge06).mp4`
@@ -1671,22 +1673,21 @@ No one around to ask which ornament looks better? You don't need a second vote. 
 Too cold to go out tonight, and you had plans.
 Don't brave it in no coat, and don't cancel with "lol". Call and stay in together.
 
-**11:00 PM · Post** — [Saver or spender?](https://drive.google.com/file/d/1EiTivurD7JGiItgya0ey15BrANK7o2O-/view) (20 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/05 - Saver or spender- (koce05).mp4`
+**11:00 PM · Post** — [Cropped out of the photo](https://drive.google.com/file/d/1GB1oLP3e117eO1ab3Zx3TMCFk6_CGlL9/view) (16 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/05 - Cropped out of the photo (kare05).mp4`
 
-A saver and a spender at one table does not have to end in a fight.
-Opposites can make a plan together: one of you saves, one of you plans the fun. Start a jar.
+Always just an elbow in their photos? You don't need to be posted to feel secure. You need to know where you stand, so ask for a straight answer.
 
-**11:15 PM · Post** — Who Takes Care of Cancer? (70.5 s) ⏱ · *Planet Talk: The Moon*  
-`kpmoe04`
+**11:15 PM · Post** — [Who Takes Care of Cancer?](https://drive.google.com/file/d/1CoeUUsA-1DyMWNBVeqzTxMVVEVQuGgG0/view) (70.5 s) ⏱ · *Planet Talk: The Moon*  
+`Star Talk/Planet Talk/The Moon/04 Cancer - Who Takes Care of Cancer- (kpmoe04).mp4`
 
 For the friend who feeds everyone and forgets to ask for anything.
 Being needed isn't the same as being held. Let someone bring you soup tonight.
 
 ## Day 33 · Sun 6 Dec
 
-**7:45 AM · Post** — Neptune to Cancer: Their Lines, Not Yours (27 s) · *Planet Talk: Neptune*  
-`kpnee04`
+**7:45 AM · Post** — [Neptune to Cancer: Their Lines, Not Yours](https://drive.google.com/file/d/1PBhbyjayG2wmqcYkqCJqOoB-wVSuf00y/view) (27 s) · *Planet Talk: Neptune*  
+`Star Talk/Planet Talk/Neptune/04 Cancer - Neptune to Cancer- Their Lines, Not Yours (kpnee04).mp4`
 
 If you've already written their rejection for them, that's your fear talking, not their answer. Ask kindly, then let them speak for themselves.
 Save this for the next time you're scripting both sides.
@@ -1708,11 +1709,10 @@ When every weekend in December fills up, it's easy to forget you're allowed to s
 Hoping a gift will say what you can't?
 It won't. One warm sentence will. Moonlight Lane, Ep 3.
 
-**9:30 AM · Post** — [Per my last message, my crush](https://drive.google.com/file/d/1BZNu4dtOywKcBojkwejIsUakVOQX0C_F/view) (20 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/06 - Per my last message, my crush (ktre06).mp4`
+**9:30 AM · Post** — [The photo memory hit](https://drive.google.com/file/d/186FkumvFEPcC80C4Uti2nfRAxJFLdyEI/view) (22 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/05 - The photo memory hit (kbxe05).mp4`
 
-Being organised is lovely. Your crush still wants to hear you're excited.
-Let a little warmth into the text. Planning and feelings can share one message.
+When the old photo pops up and it hurts. Missing a good day doesn't mean going back. Keep the memory, and tell a friend instead.
 
 **9:50 AM · Trial reel** — [The requirements checklist](https://drive.google.com/file/d/12T7RFjsSz7WNpT3cD6XskcnkiRRrOt5a/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/06 - The requirements checklist (kbge06).mp4`
@@ -1731,11 +1731,11 @@ Taurus, your traditions are part of who you are. Theirs are too. This year, try 
 Who's the first one at the party, setting up chairs before the host is dressed?
 Aries. And it starts the dance floor so nobody has to go first.
 
-**11:00 AM · Post** — [I actually like being single](https://drive.google.com/file/d/1fgeuW7hcbOImDdk709gTz8FduByCG0kq/view) (17 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/06 - I actually like being single (kine06).mp4`
+**11:00 AM · Post** — [The friend who gives advice and never takes it](https://drive.google.com/file/d/1nL1FPtFWLQOG97ZmpHrndICcgBqRHLfF/view) (22 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/05 - The friend who gives advice and never takes it (kmte05).mp4`
 
-The whole bed, the whole pizza, the whole evening, and you love it. Nothing's wrong with that.
-Liking your own company is a skill. A full life isn't a waiting room.
+You tell the group chat to know their worth, then say no worries in your own DMs.
+You count too. Say what you need, gently.
 
 **11:20 AM · Trial reel** — [Virgo fact-checked the host](https://drive.google.com/file/d/1QLFkvzrB-Q5dvhDjmn4tWmWZ5PuMBYvF/view) (9.3 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/06 - Virgo fact-checked the host (khse06).mp4`
@@ -1777,10 +1777,11 @@ Worried your gift isn't big enough? The ones people keep are the ones that prove
 Is your Taurus guarding the snack table again?
 Look closer: it's saving the last cookie for you.
 
-**2:00 PM · Post** — [Leo, you shine with no applause](https://drive.google.com/file/d/1hlQ0qHCfXOg_NDpWpk-La9FHLNzm_RIX/view) (17 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/06 - Leo, you shine with no applause (kpte06).mp4`
+**2:00 PM · Post** — [Saver or spender?](https://drive.google.com/file/d/1EiTivurD7JGiItgya0ey15BrANK7o2O-/view) (20 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/05 - Saver or spender- (koce05).mp4`
 
-Feeling invisible to your crush hurts. You don't have to perform to matter, and the right person notices the quiet you too. Notice yourself first.
+A saver and a spender at one table does not have to end in a fight.
+Opposites can make a plan together: one of you saves, one of you plans the fun. Start a jar.
 
 **2:20 PM · Trial reel** — ["I Hope This Message Finds You Well"](https://drive.google.com/file/d/1kB9zTxrxM_jmTMbv5uh024G4HjwuZR5Y/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/06 - -I Hope This Message Finds You Well- (kroe06).mp4`
@@ -1799,10 +1800,11 @@ In a lunar eclipse the Moon sits in Earth's shadow, and a little red sunlight st
 Pick a candle that smells like the two of you. Easy?
 Libra sniffed for ages. Their date chose in one second. It was perfect.
 
-**3:30 PM · Post** — [The breakup spreadsheet](https://drive.google.com/file/d/1Wdjc3B7m8qjfi7NLf5sVB1XMWQipfcM9/view) (24 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/06 - The breakup spreadsheet (khee06).mp4`
+**3:30 PM · Post** — [Per my last message, my crush](https://drive.google.com/file/d/1BZNu4dtOywKcBojkwejIsUakVOQX0C_F/view) (20 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/06 - Per my last message, my crush (ktre06).mp4`
 
-Trying to solve the breakup like a puzzle you failed? Some answers never come, and you can still move forward. Close the laptop, take the walk, start a list of things you like.
+Being organised is lovely. Your crush still wants to hear you're excited.
+Let a little warmth into the text. Planning and feelings can share one message.
 
 **3:50 PM · Trial reel** — [Sending the text, then throwing my phone](https://drive.google.com/file/d/1b8rOWJ8f1m7egSTuwlCqtmEKEPRRbiOS/view) (7.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/07 - Sending the text, then throwing my phone (kwme07).mp4`
@@ -1821,10 +1823,11 @@ You do not need perfect words. "I like spending time with you" works. Say it onc
 The conversation goes quiet on a date. Staring contest or twenty questions?
 A little quiet can be comfortable too.
 
-**5:00 PM · Post** — [Stop Saving the Nice Plates](https://drive.google.com/file/d/14MgNw6iaMHfVQKibrEipmggTWWdEXQkp/view) (21 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/06 - Stop Saving the Nice Plates (kdye06).mp4`
+**5:00 PM · Post** — [Can't Unsay It](https://drive.google.com/file/d/1JLcoVUyBvEokcEiWSabzweia6IGS6jMr/view) (90 s) ⏱ · *The Make-Up Talk: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Make-Up Talk- Extended/02 - Can't Unsay It (kxmue02).mp4`
 
-Saving the good plates for a special someone? You're already here. Make Tuesday the occasion and treat yourself like a guest worth fussing over.
+You said the mean thing in the heat of the fight, and now it's just hanging there.
+You can't take words back, but you can own them out loud: name it, say it wasn't fair, and say sorry with no excuses.
 
 **5:20 PM · Trial reel** — [The Ex Liked Your Photo](https://drive.google.com/file/d/1XyCxiguzjjnogKu4esr8EGAEIfiLHhmU/view) (9 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/07 - The Ex Liked Your Photo (kwoe07).mp4`
@@ -1843,11 +1846,11 @@ One short reply is not a verdict on the whole date. Listen for "we should go to.
 Ever watched a Gemini hold four conversations at once?
 The sweet part: it remembers every name and asks how the new job went.
 
-**6:30 PM · Post** — ["Why are you like this?"](https://drive.google.com/file/d/1tqC6QlALYeB3K4JZ6ePruH_am9RegUBU/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/06 - -Why are you like this-- (ksbe06).mp4`
+**6:30 PM · Post** — [I actually like being single](https://drive.google.com/file/d/1fgeuW7hcbOImDdk709gTz8FduByCG0kq/view) (17 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/06 - I actually like being single (kine06).mp4`
 
-"Why are you like this" has no good answer.
-Swap it for a useful question, then solve the problem side by side.
+The whole bed, the whole pizza, the whole evening, and you love it. Nothing's wrong with that.
+Liking your own company is a skill. A full life isn't a waiting room.
 
 **6:50 PM · Trial reel** — [Where Do You Want to Eat?](https://drive.google.com/file/d/1yIp2SzQLus_msCSuP4xeCq69mKWh4jns/view) (7.6 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/07 - Where Do You Want to Eat- (k3se07).mp4`
@@ -1866,11 +1869,10 @@ Fast and slow can share a table. Stay for dessert, say yes to one small surprise
 Two dates in and already knitting them a scarf?
 A scarf is warmth, not a promise. Give it lightly.
 
-**8:00 PM · Post** — [Taurus.exe: Too Comfy](https://drive.google.com/file/d/1wTnawm7RnIrqrcxhgdpuB053a6yVX_OZ/view) (22 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/06 - Taurus.exe- Too Comfy (klge06).mp4`
+**8:00 PM · Post** — [Leo, you shine with no applause](https://drive.google.com/file/d/1hlQ0qHCfXOg_NDpWpk-La9FHLNzm_RIX/view) (17 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/06 - Leo, you shine with no applause (kpte06).mp4`
 
-Staying because it's comfortable isn't the same as staying because you're happy.
-Ask yourself which one it is, then have the honest talk.
+Feeling invisible to your crush hurts. You don't have to perform to matter, and the right person notices the quiet you too. Notice yourself first.
 
 **8:20 PM · Trial reel** — [Libra, Your Vote Counts](https://drive.google.com/file/d/1UV6oNiSSJ4q6QVtFzzLxIdVplmZc8toQ/view) (7 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/07 - Libra, Your Vote Counts (ktte07).mp4`
@@ -1889,10 +1891,11 @@ Three parties in one night is a lot of fun and not much time together. Gemini, p
 Every Cancer owns a cookie tin and a mug for every friend.
 And a spare scarf for whoever forgot theirs.
 
-**9:30 PM · Post** — [Do I get them a holiday gift?](https://drive.google.com/file/d/1Z5ppQodduGO5pcD7jyqHWgj0pHA1dWb_/view) (22 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/06 - Do I get them a holiday gift- (kare06).mp4`
+**9:30 PM · Post** — [The Ex Brought Someone](https://drive.google.com/file/d/1awx-I_IQW2ZEkiYbK61OJicv6OIRqIx7/view) (75 s) ⏱ · *Single and Thriving: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Single and Thriving- Extended/02 - The Ex Brought Someone (kxste02).mp4`
 
-Five weeks in and frozen in the gift aisle? Skip the price spiral. Ask what they're doing for the holidays, and a small, thoughtful card is never wrong.
+You were having the best night, and then your ex walked in with someone new.
+Missing them is allowed. Say hi, keep it short and kind, then go back to your own night.
 
 **9:50 PM · Trial reel** — [Single at the couples' table](https://drive.google.com/file/d/1WL_qQLMEhepVj-p0EIFaKAxGXoAC9Yre/view) (10 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/07 - Single at the couples' table (kgse07).mp4`
@@ -1911,10 +1914,11 @@ Hearing the same sorry every week gets tiring. A sorry shows you see it; a small
 Your coat is being held hostage by the radiator.
 Some people say I love you with a warm coat.
 
-**11:00 PM · Post** — [It's cold and you miss them](https://drive.google.com/file/d/1n2yyDQq2EYfWoPX7bRwrvBa-1YxReYpD/view) (19 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/06 - It's cold and you miss them (kbxe06).mp4`
+**11:00 PM · Post** — [The Odd Chair](https://drive.google.com/file/d/1NuCLvDdgi1BYL9tTjgOri37T5h08wmsF/view) (90 s) ⏱ · *Moonlight Lane: Side Stories*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Moonlight Lane- Side Stories/02 - The Odd Chair (kxmle02).mp4`
 
-Cold nights make everything feel like missing someone. Sometimes you miss being warm. Make the soup and share it with someone near.
+Moonlight Lane, Side Story: five couples, one Leo and an empty chair at the winter dinner.
+Single is not a gap to explain. Give one warm answer, then let them ask about your life.
 
 **11:15 PM · Post** — [Pluto to Cancer: The Reread at 3 a.m.](https://drive.google.com/file/d/1JX_3UkRzmGd6LFu9fY4AeyMzOVB7gPSg/view) (29.2 s) · *Planet Talk: Pluto*  
 `Star Talk/Planet Talk/Pluto/04 Cancer - Pluto to Cancer- The Reread at 3 a.m. (kpple04).mp4`
@@ -1924,8 +1928,8 @@ You can honour a memory without living in it. Archive the chat if deleting feels
 
 ## Day 34 · Mon 7 Dec
 
-**7:45 AM · Post** — Saturn Teaches Cancer a Soft No (30 s) · *Planet Talk: Saturn*  
-`kpsae04`
+**7:45 AM · Post** — [Saturn Teaches Cancer a Soft No](https://drive.google.com/file/d/1u6ZbsiND8uZwyt_VYDN4qJ6eT0YlFpSP/view) (30 s) · *Planet Talk: Saturn*  
+`Star Talk/Planet Talk/Saturn/04 Cancer - Saturn Teaches Cancer a Soft No (kpsae04).mp4`
 
 Being the friend everyone leans on is beautiful, and it's tiring. A kind "not tonight, but I love you" keeps your yes real. Boundaries are doors, not walls.
 
@@ -1946,11 +1950,10 @@ Cancer, you host it all and eat last, and usually cold. The people at your table
 Party, bakery, party, bakery.
 Half of you in two places is all of you in neither. Moonlight Lane, Ep 4.
 
-**9:30 AM · Post** — [Not dating until I'm perfect](https://drive.google.com/file/d/1rZFr4q29gMaY_C9rCnHsCE8wEdnvR0nB/view) (20 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/06 - Not dating until I'm perfect (kmte06).mp4`
+**9:30 AM · Post** — [The breakup spreadsheet](https://drive.google.com/file/d/1Wdjc3B7m8qjfi7NLf5sVB1XMWQipfcM9/view) (24 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/06 - The breakup spreadsheet (khee06).mp4`
 
-Waiting to date until you finish the forty-item self-improvement list?
-You'd never ask that of a friend. You're worth knowing right now.
+Trying to solve the breakup like a puzzle you failed? Some answers never come, and you can still move forward. Close the laptop, take the walk, start a list of things you like.
 
 **9:50 AM · Trial reel** — [Libra Meets Your Friends](https://drive.google.com/file/d/14Drh9zZHAAEdSGREv3KfcaZaoZ5pW_so/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/07 - Libra Meets Your Friends (ksge07).mp4`
@@ -1969,11 +1972,10 @@ When it's cold and quiet, a "just for the holidays" offer can sound tempting. Lo
 What happens when you bake a Leo a cookie of its own face?
 Too iconic to eat. Obviously.
 
-**11:00 AM · Post** — [How much alone time?](https://drive.google.com/file/d/1gGSmcbrrmW1cW1DRV0y0axDsj_ps9iP2/view) (22 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/06 - How much alone time- (koce06).mp4`
+**11:00 AM · Post** — [Stop Saving the Nice Plates](https://drive.google.com/file/d/14MgNw6iaMHfVQKibrEipmggTWWdEXQkp/view) (21 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/06 - Stop Saving the Nice Plates (kdye06).mp4`
 
-If they need an evening to themselves, it can sting a little.
-Alone time isn't time away from you. It recharges the person you love, and they come back closer.
+Saving the good plates for a special someone? You're already here. Make Tuesday the occasion and treat yourself like a guest worth fussing over.
 
 **11:20 AM · Trial reel** — [Libra, you're allowed to choose](https://drive.google.com/file/d/1IufyOIGB0_dnSMBpB1ve1EYoGlSQTyav/view) (10 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/07 - Libra, you're allowed to choose (k5te07).mp4`
@@ -2014,11 +2016,11 @@ Walking into a party of couples on your own can feel lonely for about five minut
 Brought homemade cookies and a backup tin, just in case?
 That's Cancer, and it always finds the guest standing alone.
 
-**2:00 PM · Post** — [Page Forty-One](https://drive.google.com/file/d/1SWkJSnSXHZUny8ru0VNJrbyKbfZeuG-O/view) (22 s) · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/04 - Page Forty-One (klne04).mp4`
+**2:00 PM · Post** — ["Why are you like this?"](https://drive.google.com/file/d/1tqC6QlALYeB3K4JZ6ePruH_am9RegUBU/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/06 - -Why are you like this-- (ksbe06).mp4`
 
-Missing the small conversations is real, even when the big ones go fine.
-Read the same chapter and send each other one line you loved. Same page, two cities.
+"Why are you like this" has no good answer.
+Swap it for a useful question, then solve the problem side by side.
 
 **2:20 PM · Trial reel** — [Libra planned the trip for everyone](https://drive.google.com/file/d/1S9uIc69LSPCPpp2C2mTce6PttZwNJNmr/view) (9.3 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/07 - Libra planned the trip for everyone (khse07).mp4`
@@ -2037,11 +2039,11 @@ Saturn isn't really going backwards; Earth is simply passing it. If a retrograde
 Who says sorry first after an argument?
 Twelve signs, ranked. Going first isn't losing.
 
-**3:30 PM · Post** — ["Idk, whatever you want!!"](https://drive.google.com/file/d/16Yuua3uIvbVMy033znuTlqs5mP_CIQ7_/view) (21 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/07 - -Idk, whatever you want!!- (ktre07).mp4`
+**3:30 PM · Post** — [Taurus.exe: Too Comfy](https://drive.google.com/file/d/1wTnawm7RnIrqrcxhgdpuB053a6yVX_OZ/view) (22 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/06 - Taurus.exe- Too Comfy (klge06).mp4`
 
-"Whatever you want" sounds easygoing but hands them every decision.
-Pick one option and leave room for theirs. It's kinder than it feels.
+Staying because it's comfortable isn't the same as staying because you're happy.
+Ask yourself which one it is, then have the honest talk.
 
 **3:50 PM · Trial reel** — ["So... what are we?" draft six](https://drive.google.com/file/d/1GHLf_l9T1zZEg2Kox5n7mDXmTVfOt-Ak/view) (10 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/07 - -So... what are we-- draft six (kute07).mp4`
@@ -2060,11 +2062,10 @@ Feeling deeply is not too much. The right person will not ask you to feel less. 
 They told a tiny fib about a plant. Does small even matter?
 It does. Little lies make it hard to trust the big things.
 
-**5:00 PM · Post** — [The Cancer Guide: Everyone's Soup](https://drive.google.com/file/d/1YrLpGYTByliBoMnBw8vD1h2EY4ARhxjq/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/04 - The Cancer Guide- Everyone's Soup (kxsge04).mp4`
+**5:00 PM · Post** — [Do I get them a holiday gift?](https://drive.google.com/file/d/1Z5ppQodduGO5pcD7jyqHWgj0pHA1dWb_/view) (22 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/06 - Do I get them a holiday gift- (kare06).mp4`
 
-You fed everyone, gave everyone advice, and never sat down once.
-Cancer, your care is beautiful. This week, let someone bring the bowl to you, and say yes.
+Five weeks in and frozen in the gift aisle? Skip the price spiral. Ask what they're doing for the holidays, and a small, thoughtful card is never wrong.
 
 **5:20 PM · Trial reel** — ["You're Gorgeous" (That's It)](https://drive.google.com/file/d/1eezqL-uSl-vjs2uW87alRRlLHrMpbnsv/view) (9 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/07 - -You're Gorgeous- (That's It) (kroe07).mp4`
@@ -2083,11 +2084,10 @@ Moonlight Lane, Ep 4: Libra says yes to a party and a midnight bake on the same 
 Scorpio, they texted "i'm fine" and your brain read it nine ways.
 Ask once, gently. Then trust what they tell you.
 
-**6:30 PM · Post** — [The ick, over a tiny thing](https://drive.google.com/file/d/1Hr1GGFDem0zEyTg7WThrIaSQZPvyYkxR/view) (19 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/07 - The ick, over a tiny thing (kine07).mp4`
+**6:30 PM · Post** — [It's cold and you miss them](https://drive.google.com/file/d/1n2yyDQq2EYfWoPX7bRwrvBa-1YxReYpD/view) (19 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/06 - It's cold and you miss them (kbxe06).mp4`
 
-One tiny thing and suddenly you can't. Sound familiar?
-Sometimes the ick is a real no. Sometimes it's nerves looking for an exit. Ask yourself which one it is before you decide.
+Cold nights make everything feel like missing someone. Sometimes you miss being warm. Make the soup and share it with someone near.
 
 **6:50 PM · Trial reel** — ["This reminded me of you"](https://drive.google.com/file/d/1uhxI2hK4O-bxhJvZIU26cioDmxnye33w/view) (8 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/04 - -This reminded me of you- (kpre04).mp4`
@@ -2105,10 +2105,11 @@ Feelings don't need a theory, just a sentence. Say what you feel in plain words,
 
 That Scorpio stare across the table? Deep questions, zero small talk, and secretly just as nervous as you.
 
-**8:00 PM · Post** — [Libra, a kind no is allowed](https://drive.google.com/file/d/1mjZ5CEW2xVov_y6UEgwczdrdg7889276/view) (18 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/07 - Libra, a kind no is allowed (kpte07).mp4`
+**8:00 PM · Post** — [Not dating until I'm perfect](https://drive.google.com/file/d/1rZFr4q29gMaY_C9rCnHsCE8wEdnvR0nB/view) (20 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/06 - Not dating until I'm perfect (kmte06).mp4`
 
-Saying yes to a date you don't want helps no one. 'No, thank you' is a full sentence, and kind and honest fit in one text. Save this for the next invite.
+Waiting to date until you finish the forty-item self-improvement list?
+You'd never ask that of a friend. You're worth knowing right now.
 
 **8:20 PM · Trial reel** — [Asking five friends before replying “ok”](https://drive.google.com/file/d/1t0na4WlZxIszbwDtVVQBJL4BpoQ2XIRa/view) (10.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/08 - Asking five friends before replying “ok” (kwme08).mp4`
@@ -2127,11 +2128,11 @@ You don't need a big speech to be honest. Tell them you like this, say there's n
 They made you a winter playlist. How do you answer that?
 Not with nine hours of your own, and not with "nice". Tell them the song you replayed.
 
-**9:30 PM · Post** — [When You Like Them More](https://drive.google.com/file/d/1AnZZjTGua5E6b_4sL_Z_JHnfUi_ovxxS/view) (75 s) ⏱ · *Ask the Stars: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/03 - When You Like Them More (kxase03).mp4`
+**9:30 PM · Post** — [How much alone time?](https://drive.google.com/file/d/1gGSmcbrrmW1cW1DRV0y0axDsj_ps9iP2/view) (22 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/06 - How much alone time- (koce06).mp4`
 
-Planning every date while they just show up is a lonely kind of crush.
-Say it kindly: are we on the same page? Then believe the answer they give you.
+If they need an evening to themselves, it can sting a little.
+Alone time isn't time away from you. It recharges the person you love, and they come back closer.
 
 **9:50 PM · Trial reel** — [Single at the Wedding](https://drive.google.com/file/d/1nO2cFf-s9dlMicdks2zgPf_2nRnWvTYv/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/08 - Single at the Wedding (kwoe08).mp4`
@@ -2150,22 +2151,22 @@ Leo, the perfect holiday photo can take a while. They just wanted to be in it wi
 Midnight, a telescope and a very quiet Scorpio.
 The big mystery was the Moon, and the spot they go when they miss people.
 
-**11:00 PM · Post** — [Gemini × Sagittarius: so… what are we?](https://drive.google.com/file/d/1Re1dVpJugJ_nDFJHGh1sZbdgGnEaHwyo/view) (90 s) ⏱ · *Sign × Sign: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Sign × Sign- Extended/03 - Gemini × Sagittarius- so… what are we- (kxsse03).mp4`
+**11:00 PM · Post** — [Page Forty-One](https://drive.google.com/file/d/1SWkJSnSXHZUny8ru0VNJrbyKbfZeuG-O/view) (22 s) · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/04 - Page Forty-One (klne04).mp4`
 
-Four months of hanging out and nobody's asked the question.
-Ask it once, plainly. Freedom and commitment can live in the same relationship if you define it your way.
+Missing the small conversations is real, even when the big ones go fine.
+Read the same chapter and send each other one line you loved. Same page, two cities.
 
-**11:15 PM · Post** — Whose Birthday Is It, Cancer? (27 s) · *Planet Talk: The Sun*  
-`kpsue04`
+**11:15 PM · Post** — [Whose Birthday Is It, Cancer?](https://drive.google.com/file/d/1p2GmvWUDRD9EIBXYjoU52vaBi-crImeR/view) (27 s) · *Planet Talk: The Sun*  
+`Star Talk/Planet Talk/The Sun/04 Cancer - Whose Birthday Is It, Cancer- (kpsue04).mp4`
 
 You look after everyone. You're allowed to be looked after too.
 Let the people who love you carry the plates for once. Send this to the friend who never sits down.
 
 ## Day 35 · Tue 8 Dec
 
-**7:45 AM · Post** — Cancer, Hints Aren't Words (28 s) · *Planet Talk: Uranus*  
-`kpure04`
+**7:45 AM · Post** — [Cancer, Hints Aren't Words](https://drive.google.com/file/d/1-DT9LajcJOp1crtnieFhwYauTOjQVVOy/view) (28 s) · *Planet Talk: Uranus*  
+`Star Talk/Planet Talk/Uranus/04 Cancer - Cancer, Hints Aren't Words (kpure04).mp4`
 
 Baking, cleaning and sighing loudly so they'll notice you're hurt? Nobody can read a sigh.
 Say it plainly and kindly: "I felt left out. Can we talk?" Most people want to know.
@@ -2187,10 +2188,11 @@ If you feel it, it is okay to say it. Say it without needing it back right away,
 'I just wanted you here.'
 The cost of saying yes to everything. Moonlight Lane, Ep 4.
 
-**9:30 AM · Post** — [“Was it my fault?”](https://drive.google.com/file/d/145WYXLEhDsztvlADR-_uBtCKgYLSTiP8/view) (22 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/07 - “Was it my fault-” (khee07).mp4`
+**9:30 AM · Post** — ["Idk, whatever you want!!"](https://drive.google.com/file/d/16Yuua3uIvbVMy033znuTlqs5mP_CIQ7_/view) (21 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/07 - -Idk, whatever you want!!- (ktre07).mp4`
 
-Polled every friend and still don't feel better? Friends can comfort you, but they can't decide for you. Ask yourself what you need right now, and write it down.
+"Whatever you want" sounds easygoing but hands them every decision.
+Pick one option and leave room for theirs. It's kinder than it feels.
 
 **9:50 AM · Trial reel** — [Scorpio, Guess or Ask](https://drive.google.com/file/d/18caeLtViuoSceK9ida6ktLOzMB5fQfAa/view) (8 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/08 - Scorpio, Guess or Ask (ktte08).mp4`
@@ -2209,10 +2211,11 @@ If the party is loud and you're running on empty, you don't have to hide in the 
 Your Leo just gave a speech nobody scheduled.
 Then it handed the mic to the shy friend, and the whole room got warmer.
 
-**11:00 AM · Post** — [No Audience](https://drive.google.com/file/d/1FXrsREEQmQzDW2HgbLAC8fWdkE7zPHff/view) (21 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/07 - No Audience (kdye07).mp4`
+**11:00 AM · Post** — [The ick, over a tiny thing](https://drive.google.com/file/d/1Hr1GGFDem0zEyTg7WThrIaSQZPvyYkxR/view) (19 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/07 - The ick, over a tiny thing (kine07).mp4`
 
-Does it only count if someone sees it? Put the phone face down, dance in the kitchen, watch the sunset without filming it. Some moments are just for you.
+One tiny thing and suddenly you can't. Sound familiar?
+Sometimes the ick is a real no. Sometimes it's nerves looking for an exit. Ask yourself which one it is before you decide.
 
 **11:20 AM · Trial reel** — [Three drafts and a poll](https://drive.google.com/file/d/1OIyZvqHjJCfmEjvT7Wg521QbFtOBOFHf/view) (9 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/08 - Three drafts and a poll (kgse08).mp4`
@@ -2231,11 +2234,11 @@ Four elements times three modes makes twelve, and every sign is its own combinat
 Walking into a party where you know no one: snack table or take over the room?
 You only need one friendly face to start.
 
-**12:30 PM · Post** — ["Forget it."](https://drive.google.com/file/d/1wbZH1CuejQb2hmS-yeraOhp6uK8GQZyO/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/07 - -Forget it.- (ksbe07).mp4`
+**12:30 PM · Post** — [The Cancer Guide: Everyone's Soup](https://drive.google.com/file/d/1YrLpGYTByliBoMnBw8vD1h2EY4ARhxjq/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/04 - The Cancer Guide- Everyone's Soup (kxsge04).mp4`
 
-Walking out of a talk doesn't end it, it just moves it into your head for three days.
-Pick a time to come back instead.
+You fed everyone, gave everyone advice, and never sat down once.
+Cancer, your care is beautiful. This week, let someone bring the bowl to you, and say yes.
 
 **12:50 PM · Trial reel** — [Single at the holiday dinner](https://drive.google.com/file/d/1XWWT-LE3eezL9Ipl50SoahLKExFXhWrA/view) (11 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/08 - Single at the holiday dinner (kfae08).mp4`
@@ -2254,11 +2257,10 @@ Sometimes the dishes are just dishes, and sometimes they're carrying a bigger fe
 Straightened the garland twice before anyone noticed it was crooked?
 Virgo also makes sure every single guest has a ride home.
 
-**2:00 PM · Post** — [Cancer.exe: Care Overload](https://drive.google.com/file/d/1aM5siclG0IgnvTWCSs6NX-1Z14SiykF_/view) (23 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/07 - Cancer.exe- Care Overload (klge07).mp4`
+**2:00 PM · Post** — [Libra, a kind no is allowed](https://drive.google.com/file/d/1mjZ5CEW2xVov_y6UEgwczdrdg7889276/view) (18 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/07 - Libra, a kind no is allowed (kpte07).mp4`
 
-Soup, a scarf, their dentist booked. And when they ask what you need: "no no, I'm fine!"
-Let the people you love take care of you too.
+Saying yes to a date you don't want helps no one. 'No, thank you' is a full sentence, and kind and honest fit in one text. Save this for the next invite.
 
 **2:20 PM · Trial reel** — [Scorpio, About Your Ex](https://drive.google.com/file/d/1MRZT5ZFv8yhZzYPNP6lUsmUet77uaPld/view) (9 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/08 - Scorpio, About Your Ex (ksge08).mp4`
@@ -2277,10 +2279,10 @@ Everyone bailed on the trip? You're good company too. Go anyway, see the thing, 
 Which sign gives the hug that feels like home?
 We ranked all twelve. The best hugs start with a yes.
 
-**3:30 PM · Post** — [Everyone else already calls it a relationship](https://drive.google.com/file/d/1XWSol5MrPOnxzW3rzyd04TJceyU0iKn4/view) (18 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/07 - Everyone else already calls it a relationship (kare07).mp4`
+**3:30 PM · Post** — [“Was it my fault?”](https://drive.google.com/file/d/145WYXLEhDsztvlADR-_uBtCKgYLSTiP8/view) (22 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/07 - “Was it my fault-” (khee07).mp4`
 
-When your friends already ask how your person is, they're seeing something real. If everyone can see it, the two of you can say it out loud.
+Polled every friend and still don't feel better? Friends can comfort you, but they can't decide for you. Ask yourself what you need right now, and write it down.
 
 **3:50 PM · Trial reel** — [Scorpio, not everything is a clue](https://drive.google.com/file/d/1vuqUuCMUlB-ZC4nkrr2ztCN_-dz2cYSV/view) (11 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/08 - Scorpio, not everything is a clue (k5te08).mp4`
@@ -2299,10 +2301,11 @@ Hiding good news to protect a struggling friend can leave them out of something 
 Their gift wrap looks like a snowball made of tape. Problem?
 Never. Lumpy paper, perfect thought inside.
 
-**5:00 PM · Post** — [The closure essay, draft twelve](https://drive.google.com/file/d/1eDdgEMyhMbTGopUoqrftAn5TCng2e8IJ/view) (24 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/07 - The closure essay, draft twelve (kbxe07).mp4`
+**5:00 PM · Post** — [When You Like Them More](https://drive.google.com/file/d/1AnZZjTGua5E6b_4sL_Z_JHnfUi_ovxxS/view) (75 s) ⏱ · *Ask the Stars: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/03 - When You Like Them More (kxase03).mp4`
 
-Twelve drafts in and the closure essay has footnotes. If you've already said it, a reply won't bring the peace. Read it out loud, then let it go.
+Planning every date while they just show up is a lonely kind of crush.
+Say it kindly: are we on the same page? Then believe the answer they give you.
 
 **5:20 PM · Trial reel** — [You'll never figure me out](https://drive.google.com/file/d/1rsKFOeyri5vMpm97qqM9jCSVQ5POGhJb/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/08 - You'll never figure me out (kbge08).mp4`
@@ -2321,11 +2324,10 @@ Goals feel lighter when there's room to laugh. Take an afternoon off, show up wh
 Sagittarius, the suitcase is packed and you met them on Tuesday.
 Keep the ticket for someday. Enjoy date three first.
 
-**6:30 PM · Post** — ["I don't mind, you pick"](https://drive.google.com/file/d/1y5MppvHa481Ol3rkNx93ad-LvZYnLcU6/view) (18 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/07 - -I don't mind, you pick- (kmte07).mp4`
+**6:30 PM · Post** — [No Audience](https://drive.google.com/file/d/1FXrsREEQmQzDW2HgbLAC8fWdkE7zPHff/view) (21 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/07 - No Audience (kdye07).mp4`
 
-Saying you don't mind when you very much want tacos?
-Your preferences are part of you. You get a vote, and the right person wants to hear it.
+Does it only count if someone sees it? Put the phone face down, dance in the kitchen, watch the sunset without filming it. Some moments are just for you.
 
 **6:50 PM · Trial reel** — [Scorpio flipped the spotlight](https://drive.google.com/file/d/1GKcjIM4NyL8Pw0thsCau4_-G2B7HIyk7/view) (9.5 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/08 - Scorpio flipped the spotlight (khse08).mp4`
@@ -2343,11 +2345,11 @@ Virgo, fixing the tree at midnight is very you. That crooked star might be the o
 
 Ask a Sagittarius and you get the honest answer. About your hat, their cooking, and how much they like you.
 
-**8:00 PM · Post** — [What you're unlearning](https://drive.google.com/file/d/1l8IO-pkAqPnSqBPk9zgonPUT6l2UvDjd/view) (24.4 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/07 - What you're unlearning (koce07).mp4`
+**8:00 PM · Post** — ["Forget it."](https://drive.google.com/file/d/1wbZH1CuejQb2hmS-yeraOhp6uK8GQZyO/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/07 - -Forget it.- (ksbe07).mp4`
 
-Some questions take real trust to answer.
-When someone tells you what they're unlearning, you don't have to fix it. Just say thank you. That's what trust sounds like.
+Walking out of a talk doesn't end it, it just moves it into your head for three days.
+Pick a time to come back instead.
 
 **8:20 PM · Trial reel** — [Scorpio typed "k."](https://drive.google.com/file/d/1QKaARqNleckKSv_b8VG97Wxwf-vVeSWl/view) (10 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/08 - Scorpio typed -k.- (kute08).mp4`
@@ -2366,11 +2368,11 @@ Asking about their last relationship on date one can close a door before it open
 Gift exchange, and you drew your crush.
 Skip the big spend and the mystery pen. Get the thing they mentioned once. It shows you listened.
 
-**9:30 PM · Post** — [The fake excuse spiral](https://drive.google.com/file/d/1RdVb6-0oOYB4QLc8yIaFtJQAPRZEbbPX/view) (23 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/08 - The fake excuse spiral (ktre08).mp4`
+**9:30 PM · Post** — [Gemini × Sagittarius: so… what are we?](https://drive.google.com/file/d/1Re1dVpJugJ_nDFJHGh1sZbdgGnEaHwyo/view) (90 s) ⏱ · *Sign × Sign: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Sign × Sign- Extended/03 - Gemini × Sagittarius- so… what are we- (kxsse03).mp4`
 
-You don't need a dramatic story to cancel. Being tired is a full reason.
-Say it honestly, offer a new day, and let them know you still want to see them.
+Four months of hanging out and nobody's asked the question.
+Ask it once, plainly. Freedom and commitment can live in the same relationship if you define it your way.
 
 **9:50 PM · Trial reel** — [Sorry to Bother You](https://drive.google.com/file/d/1XCJ4xenyMnekj43zqLVTM9A00os9ccGg/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/08 - Sorry to Bother You (kroe08).mp4`
@@ -2389,11 +2391,11 @@ Name the feeling, not the flaw. "I feel forgotten when I wait" lands softer than
 A pottery class with zero experience: cute or chaos?
 Two lopsided mugs, swapped and loved. Making something badly together counts.
 
-**11:00 PM · Post** — [One great date, one whole day alone](https://drive.google.com/file/d/1rxyuwttWTXw28KtT8DD_4BB1lS0pRUx2/view) (18 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/08 - One great date, one whole day alone (kine08).mp4`
+**11:00 PM · Post** — [Cancer.exe: Care Overload](https://drive.google.com/file/d/1aM5siclG0IgnvTWCSs6NX-1Z14SiykF_/view) (23 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/07 - Cancer.exe- Care Overload (klge07).mp4`
 
-Great date, and now you need a quiet day to recover. That's how some people refuel.
-Tell them honestly: "I had fun, I'm a slow recharger." The right person gets it.
+Soup, a scarf, their dentist booked. And when they ask what you need: "no no, I'm fine!"
+Let the people you love take care of you too.
 
 **11:15 PM · Post** — [Venus to Cancer: The Wrong-Size Love](https://drive.google.com/file/d/1Li8L9Sf81bN00z-wk5C9h8V23DGcpEJc/view) (26.4 s) · *Planet Talk: Venus*  
 `Star Talk/Planet Talk/Venus/04 Cancer - Venus to Cancer- The Wrong-Size Love (kpvee04).mp4`
@@ -2425,10 +2427,10 @@ Two families, one night, and you said yes to both. Libra, you can't please every
 Snowed in at the café with the whole street, and one blanket left for you two.
 Moonlight Lane, Ep 5.
 
-**9:30 AM · Post** — [Scorpio, say the soft thing](https://drive.google.com/file/d/19u-LgkLFt8MI2d5tiqPPY9j-5U1uWJVr/view) (17 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/08 - Scorpio, say the soft thing (kpte08).mp4`
+**9:30 AM · Post** — [Everyone else already calls it a relationship](https://drive.google.com/file/d/1XWSol5MrPOnxzW3rzyd04TJceyU0iKn4/view) (18 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/07 - Everyone else already calls it a relationship (kare07).mp4`
 
-Typed 'I like you', deleted it, sent 'lol'? Walls keep out the right people too. Soft isn't weak, it's brave. Say it once, plainly.
+When your friends already ask how your person is, they're seeing something real. If everyone can see it, the two of you can say it out loud.
 
 **9:50 AM · Trial reel** — [They Replied "k"](https://drive.google.com/file/d/1gadWjoRa7NUYH67NqN3tIgJ6GD6SoaHR/view) (9 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/09 - They Replied -k- (kwoe09).mp4`
@@ -2447,10 +2449,10 @@ Still answering work messages at the holiday table? Set the auto-reply and trust
 Four outfit changes before leaving for one party.
 Worth it, because Libra arrives and introduces the two people who were meant to be friends.
 
-**11:00 AM · Post** — [The 2 a.m. check](https://drive.google.com/file/d/14Lm8LmqbS-UdKzGgHPrIsetJsbhL_jj3/view) (20 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/08 - The 2 a.m. check (khee08).mp4`
+**11:00 AM · Post** — [The closure essay, draft twelve](https://drive.google.com/file/d/1eDdgEMyhMbTGopUoqrftAn5TCng2e8IJ/view) (24 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/07 - The closure essay, draft twelve (kbxe07).mp4`
 
-Checking their page at 2 a.m. keeps the ache open. Muting them isn't a punishment, it's rest. Charge the phone across the room and let yourself sleep.
+Twelve drafts in and the closure essay has footnotes. If you've already said it, a reply won't bring the peace. Read it out loud, then let it go.
 
 **11:20 AM · Trial reel** — [Ghosting Because It's Awkward](https://drive.google.com/file/d/1niojMPifQsTk7xdCg1R9h5pPP_1cKTfD/view) (6.8 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/09 - Ghosting Because It's Awkward (k3se09).mp4`
@@ -2469,10 +2471,11 @@ Counted your chart and found an element missing? It doesn't mean something is br
 Your person is having a rough day. Blanket fort, or one simple question first?
 Advice or a hug? Ask, then give that.
 
-**12:30 PM · Post** — [No Itinerary](https://drive.google.com/file/d/1782ss3tmiV-r-U6zlFW55_l5CnsNhLHq/view) (22 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/08 - No Itinerary (kdye08).mp4`
+**12:30 PM · Post** — ["I don't mind, you pick"](https://drive.google.com/file/d/1y5MppvHa481Ol3rkNx93ad-LvZYnLcU6/view) (18 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/07 - -I don't mind, you pick- (kmte07).mp4`
 
-Need a plan for everything? Try one afternoon with no list. Getting a little lost is how you find the bakery you never would have planned.
+Saying you don't mind when you very much want tacos?
+Your preferences are part of you. You get a vote, and the right person wants to hear it.
 
 **12:50 PM · Trial reel** — [Sagittarius Saw 'What Are We?'](https://drive.google.com/file/d/173fugz-ro9XTMQkwHzrVMEsMW6OXHBj8/view) (8 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/09 - Sagittarius Saw 'What Are We-' (ktte09).mp4`
@@ -2491,11 +2494,11 @@ Sharing good news is lovely; asking first is lovelier. Check before you tell the
 Rehearsing your party entrance at 3 AM?
 Skip the big moment. Walk over and say hi.
 
-**2:00 PM · Post** — ["You're overreacting"](https://drive.google.com/file/d/1G84m8KsqBKwJZ192_h_i7ry0hz2zphM1/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/08 - -You're overreacting- (ksbe08).mp4`
+**2:00 PM · Post** — [What you're unlearning](https://drive.google.com/file/d/1l8IO-pkAqPnSqBPk9zgonPUT6l2UvDjd/view) (24.4 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/07 - What you're unlearning (koce07).mp4`
 
-You don't have to agree with how they feel to understand it.
-Ask how it landed. Then apologise for the part that was yours.
+Some questions take real trust to answer.
+When someone tells you what they're unlearning, you don't have to fix it. Just say thank you. That's what trust sounds like.
 
 **2:20 PM · Trial reel** — [2 a.m. trip to forget them](https://drive.google.com/file/d/1ov6Zb5rzTLdrUvHkeh7ea8uP3Ri3GocP/view) (10 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/09 - 2 a.m. trip to forget them (kgse09).mp4`
@@ -2514,11 +2517,11 @@ Late-night fights over text go sideways because tone doesn't come through. Ask t
 Leo's coat is an event and the holiday photo took 40 tries.
 Best part? They make room in the frame for the shy one.
 
-**3:30 PM · Post** — [Libra.exe: I Don't Mind](https://drive.google.com/file/d/1RgHQP_Dx0yk18JcNuIpZh_lLCWil-7Hr/view) (20 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/08 - Libra.exe- I Don't Mind (klge08).mp4`
+**3:30 PM · Post** — [The fake excuse spiral](https://drive.google.com/file/d/1RdVb6-0oOYB4QLc8yIaFtJQAPRZEbbPX/view) (23 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/08 - The fake excuse spiral (ktre08).mp4`
 
-"I don't mind, you pick" for the 47th time.
-Your preference isn't a fight, it's information. Say the restaurant. They want to know.
+You don't need a dramatic story to cancel. Being tired is a full reason.
+Say it honestly, offer a new day, and let them know you still want to see them.
 
 **3:50 PM · Trial reel** — [Your crush said hi. You said yes](https://drive.google.com/file/d/1BgCPV51Mn0yl7s2MzVkSdG4ZRB88LZXW/view) (8 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/09 - Your crush said hi. You said yes (kfae09).mp4`
@@ -2537,10 +2540,11 @@ Being single doesn't make your time spare. Your plans count, even the solo ones.
 Why does your Capricorn keep writing in that notebook?
 Every little thing you mentioned once. Remembered.
 
-**5:00 PM · Post** — [Jealous with no "right" to be](https://drive.google.com/file/d/1ScpnAHODCexJq79QmRXnlURO5n_SPTJS/view) (20 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/08 - Jealous with no -right- to be (kare08).mp4`
+**5:00 PM · Post** — [One great date, one whole day alone](https://drive.google.com/file/d/1rxyuwttWTXw28KtT8DD_4BB1lS0pRUx2/view) (18 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/08 - One great date, one whole day alone (kine08).mp4`
 
-Feeling jealous when you're "not official" isn't a crime, it's a clue. Skip the tests. Tell them what you actually want with them.
+Great date, and now you need a quiet day to recover. That's how some people refuel.
+Tell them honestly: "I had fun, I'm a slow recharger." The right person gets it.
 
 **5:20 PM · Trial reel** — [Sagittarius Says Let's Hang](https://drive.google.com/file/d/1EFuOaigENUt5gVJpC_-Mu0C6git-4rYE/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/09 - Sagittarius Says Let's Hang (ksge09).mp4`
@@ -2559,10 +2563,10 @@ A friend in love can disappear for a while. "You've changed" pushes them away; "
 Aquarius reviews a handmade pop-up card. No talking allowed.
 The engineering impressed. The message inside won.
 
-**6:30 PM · Post** — [They're dating someone new](https://drive.google.com/file/d/1MMOL6UhLp4EAQTLelOigdQHCaxqw3e0z/view) (18 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/08 - They're dating someone new (kbxe08).mp4`
+**6:30 PM · Post** — [Scorpio, say the soft thing](https://drive.google.com/file/d/19u-LgkLFt8MI2d5tiqPPY9j-5U1uWJVr/view) (17 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/08 - Scorpio, say the soft thing (kpte08).mp4`
 
-They moved on and it stings. Hurt and angry can both be true. Move it out of your body, then call someone who loves you.
+Typed 'I like you', deleted it, sent 'lol'? Walls keep out the right people too. Soft isn't weak, it's brave. Say it once, plainly.
 
 **6:50 PM · Trial reel** — [Sagittarius, staying isn't a cage](https://drive.google.com/file/d/16UxGUw7xUY6DAcSL6vTwrRHZkPjthiVC/view) (10.5 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/09 - Sagittarius, staying isn't a cage (k5te09).mp4`
@@ -2580,11 +2584,10 @@ Mixed feelings are information, not failure. Write down what you like and what y
 
 Their blind card says they cry at weddings. And bakeries. Pisces may have found their person. Card first, face last.
 
-**8:00 PM · Post** — [Walls up, again](https://drive.google.com/file/d/1CZbIg1_gxKH6HUpVDeSOTm7Vzx6Klp0e/view) (24 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/08 - Walls up, again (kmte08).mp4`
+**8:00 PM · Post** — [The 2 a.m. check](https://drive.google.com/file/d/14Lm8LmqbS-UdKzGgHPrIsetJsbhL_jj3/view) (20 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/08 - The 2 a.m. check (khee08).mp4`
 
-After getting hurt, locking everything down feels safest.
-You don't have to fling the door open. Start with one small true thing, and let one person in a little.
+Checking their page at 2 a.m. keeps the ache open. Muting them isn't a punishment, it's rest. Charge the phone across the room and let yourself sleep.
 
 **8:20 PM · Trial reel** — ["Probably not in town"](https://drive.google.com/file/d/1FN0_WBfUE6USGhXeviTcgrFiseklG9qY/view) (9 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/09 - -Probably not in town- (kbge09).mp4`
@@ -2603,11 +2606,10 @@ Scorpio, not every gift tag is a clue. Sometimes a mug really is just a mug. If 
 Has a Scorpio ever skipped hello and asked what scares you?
 It really listens to the answer. Maybe open with the weather, though.
 
-**9:30 PM · Post** — [Morning person or night owl?](https://drive.google.com/file/d/1GsaJQHRzKkjJtise0TtF-SPakBH4wA3t/view) (16 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/08 - Morning person or night owl- (koce08).mp4`
+**9:30 PM · Post** — [No Itinerary](https://drive.google.com/file/d/1782ss3tmiV-r-U6zlFW55_l5CnsNhLHq/view) (22 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/08 - No Itinerary (kdye08).mp4`
 
-Early riser dating a night owl? You are not doomed.
-Find the hours you're both awake and protect them. Golden hour can be yours.
+Need a plan for everything? Try one afternoon with no list. Getting a little lost is how you find the bakery you never would have planned.
 
 **9:50 PM · Trial reel** — [Sagittarius left mid-question](https://drive.google.com/file/d/1QkCLLYLlOCYnHea_Z3z2WXSRWsjpJhEo/view) (9.1 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/09 - Sagittarius left mid-question (khse09).mp4`
@@ -2626,22 +2628,22 @@ If they shared one small true thing, that matters more than you might think. Don
 Who rewrites "hi" for an hour before sending it?
 The signs, ranked by overthinking. When in doubt, just ask them.
 
-**11:00 PM · Post** — [Tell Me the Boring Stuff](https://drive.google.com/file/d/1SmXsZ3lBS8etb4uoKCtDxXQVaboWtfIP/view) (22 s) · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/05 - Tell Me the Boring Stuff (klne05).mp4`
+**11:00 PM · Post** — ["You're overreacting"](https://drive.google.com/file/d/1G84m8KsqBKwJZ192_h_i7ry0hz2zphM1/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/08 - -You're overreacting- (ksbe08).mp4`
 
-Far apart, it's easy to only share the big news and skip everything else.
-Send the boring stuff too: the late bus, the orange, the judgy pigeon. That's where the closeness lives.
+You don't have to agree with how they feel to understand it.
+Ask how it landed. Then apologise for the part that was yours.
 
-**11:15 PM · Post** — The spreadsheet can't ask (28 s) · *Planet Talk: Mars*  
-`kpmae06`
+**11:15 PM · Post** — [The spreadsheet can't ask](https://drive.google.com/file/d/1VarD3Rp6_memDuZLvP0MmE2C0BiuHV9r/view) (28 s) · *Planet Talk: Mars*  
+`Star Talk/Planet Talk/Mars/06 Virgo - The spreadsheet can't ask (kpmae06).mp4`
 
 Three weeks of rows and columns about one person, and the total still says error.
 You'll never have all the data. Ask one small, clear question and let their answer be the data.
 
 ## Day 37 · Thu 10 Dec
 
-**7:45 AM · Post** — Virgo's Date Report (24.2 s) · *Planet Talk: The Moon*  
-`kpmoe06`
+**7:45 AM · Post** — [Virgo's Date Report](https://drive.google.com/file/d/1WDhJkxCcLK23um_MMaMh8HPIfziRKZ-T/view) (24.2 s) · *Planet Talk: The Moon*  
+`Star Talk/Planet Talk/The Moon/06 Virgo - Virgo's Date Report (kpmoe06).mp4`
 
 Replaying every little mistake after a good date is so common.
 Next time, write down one thing that went well. Usually, that's the thing they remember.
@@ -2663,11 +2665,11 @@ Gift swaps get competitive fast. The best part was never the prize: it's laughin
 Do you crack a joke whenever a moment gets real?
 Sagittarius does. Moonlight Lane, Ep 5.
 
-**9:30 AM · Post** — [Not feeling it, lol bye](https://drive.google.com/file/d/1Un_KMahlnjn-M1zbxfzgLwKaj8Bx0TVM/view) (22 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/09 - Not feeling it, lol bye (ktre09).mp4`
+**9:30 AM · Post** — [Libra.exe: I Don't Mind](https://drive.google.com/file/d/1RgHQP_Dx0yk18JcNuIpZh_lLCWil-7Hr/view) (20 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/08 - Libra.exe- I Don't Mind (klge08).mp4`
 
-Not feeling a spark is allowed. So is saying it kindly.
-One clear, warm message beats silence and beats "lol bye". They'll appreciate the honesty.
+"I don't mind, you pick" for the 47th time.
+Your preference isn't a fight, it's information. Say the restaurant. They want to know.
 
 **9:50 AM · Trial reel** — [Pizza Debate Opener](https://drive.google.com/file/d/11Q2-EClFZjv7mcswZ9yM5NHbVylkIq-C/view) (9 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/09 - Pizza Debate Opener (kroe09).mp4`
@@ -2686,11 +2688,10 @@ Do you always just agree to end the argument? A good disagreement needs three mo
 Late, snowy, and already telling the story of the bus ride.
 Sagittarius wants a snow walk right now, and asks who wants in.
 
-**11:00 AM · Post** — [Still thinking about a crush from years ago](https://drive.google.com/file/d/1-9hGvsVe8GHH_Zp4pf8bDV3i7DasrWm_/view) (18 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/09 - Still thinking about a crush from years ago (kine09).mp4`
+**11:00 AM · Post** — [Jealous with no "right" to be](https://drive.google.com/file/d/1ScpnAHODCexJq79QmRXnlURO5n_SPTJS/view) (20 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/08 - Jealous with no -right- to be (kare08).mp4`
 
-Years later and they still cross your mind? Very normal.
-Often it's less about them and more about who you were back then. Keep the memory, and go make new ones.
+Feeling jealous when you're "not official" isn't a crime, it's a clue. Skip the tests. Tell them what you actually want with them.
 
 **11:20 AM · Trial reel** — [They remembered the interview](https://drive.google.com/file/d/1lpKXXY2QY-yZbeDULwvu40x7vOBvZaBn/view) (8.5 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/05 - They remembered the interview (kpre05).mp4`
@@ -2732,10 +2733,10 @@ Sagittarius, your holiday trip isn't the problem. Telling them the night before 
 Capricorn planned to leave at 9:30.
 It's the last one there, doing the dishes, because it wants to.
 
-**2:00 PM · Post** — [Sagittarius, unpack the suitcase](https://drive.google.com/file/d/1iqngvoOIfzwQTndAZ1KPDQtg8HzTE1vc/view) (17 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/09 - Sagittarius, unpack the suitcase (kpte09).mp4`
+**2:00 PM · Post** — [They're dating someone new](https://drive.google.com/file/d/1MMOL6UhLp4EAQTLelOigdQHCaxqw3e0z/view) (18 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/08 - They're dating someone new (kbxe08).mp4`
 
-Liking someone and wanting to run at the same time is so human. Liking someone isn't a cage. Tell them you're a little scared; honesty makes room to stay.
+They moved on and it stings. Hurt and angry can both be true. Move it out of your body, then call someone who loves you.
 
 **2:20 PM · Trial reel** — [The Friend Who Asks for Advice](https://drive.google.com/file/d/1PvsSGRnqLqYZlKa0HnD33KkFXPoyNOxb/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/10 - The Friend Who Asks for Advice (kwoe10).mp4`
@@ -2754,10 +2755,11 @@ Missing someone means it matters. Plan one call you both look forward to, and le
 Capricorn, they asked about your day and you gave a full report.
 Skip the chart. Tell them how it felt.
 
-**3:30 PM · Post** — [The escape trip](https://drive.google.com/file/d/1TuIMsXVxJyvPaKJmrB6L-IZNOhYoqF61/view) (22 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/09 - The escape trip (khee09).mp4`
+**3:30 PM · Post** — [Walls up, again](https://drive.google.com/file/d/1CZbIg1_gxKH6HUpVDeSOTm7Vzx6Klp0e/view) (24 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/08 - Walls up, again (kmte08).mp4`
 
-Booked a flight to outrun the feelings? They pack themselves. Tonight, walk the block with a friend, and plan the trip later for joy.
+After getting hurt, locking everything down feels safest.
+You don't have to fling the door open. Start with one small true thing, and let one person in a little.
 
 **3:50 PM · Trial reel** — [Too Busy for Love](https://drive.google.com/file/d/1Scfsh-uzdunvPFFdt-8Hwrdc4Ftd8wAM/view) (8.0 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/10 - Too Busy for Love (k3se10).mp4`
@@ -2798,10 +2800,11 @@ Moonlight Lane, Ep 5: the whole lane is snowed in at the café, a talk card goes
 Your ex texts "happy holidays." Essay or silence?
 A short, kind reply is fine. So is no reply. Both are allowed.
 
-**6:30 PM · Post** — [The Back Row Matinee](https://drive.google.com/file/d/103DBDp3-tOpT9Q2YedCtF0vyNpbKyHE3/view) (21 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/09 - The Back Row Matinee (kdye09).mp4`
+**6:30 PM · Post** — [Morning person or night owl?](https://drive.google.com/file/d/1GsaJQHRzKkjJtise0TtF-SPakBH4wA3t/view) (16 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/08 - Morning person or night owl- (koce08).mp4`
 
-Hate letting anyone see you feel things? Take yourself to a matinee and cry at the sad part. Feeling it all is allowed, and nobody keeps score.
+Early riser dating a night owl? You are not doomed.
+Find the hours you're both awake and protect them. Golden hour can be yours.
 
 **6:50 PM · Trial reel** — [Crying, penciled in for Thursday](https://drive.google.com/file/d/1J7SMJW1ASj2W2ywCMSZgaazU44npCYMd/view) (9 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/10 - Crying, penciled in for Thursday (kgse10).mp4`
@@ -2820,11 +2823,11 @@ No date this year, and a table full of friends instead. Friendship is a real kin
 Would you hike at 5 AM to see the sunrise?
 Capricorn timed every step, then put the watch away when the sun came up.
 
-**8:00 PM · Post** — ["It's not a big deal"](https://drive.google.com/file/d/1l8b9zCwud6JbmaYC50GVRt7gIDh55ici/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/09 - -It's not a big deal- (ksbe09).mp4`
+**8:00 PM · Post** — [Tell Me the Boring Stuff](https://drive.google.com/file/d/1SmXsZ3lBS8etb4uoKCtDxXQVaboWtfIP/view) (22 s) · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/05 - Tell Me the Boring Stuff (klne05).mp4`
 
-Small to you can be huge to them.
-You don't have to feel it to respect it. Say you see it, then ask how it went.
+Far apart, it's easy to only share the big news and skip everything else.
+Send the boring stuff too: the late bus, the orange, the judgy pigeon. That's where the closeness lives.
 
 **8:20 PM · Trial reel** — [Sorry, but...](https://drive.google.com/file/d/1v8P1fQHNn2mSFvl55gApq0DH07RIRHDd/view) (9 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/10 - Sorry, but... (kfae10).mp4`
@@ -2873,16 +2876,16 @@ Aquarius gets it. Then it starts a snowflake table where every weird one is perf
 Sparkly one week, gone the next.
 Stars twinkle because of the moving air between us, not the star. Mixed signals are often static too: skip the guessing and ask one clear question.
 
-**11:15 PM · Post** — The Overthinker's Debrief (79 s) ⏱ · *Planet Talk: Mercury*  
-`kpmee06`
+**11:15 PM · Post** — [The Overthinker's Debrief](https://drive.google.com/file/d/1_-LLiV3HFCItJaLwFeX6REmR1dOaPpbs/view) (79 s) ⏱ · *Planet Talk: Mercury*  
+`Star Talk/Planet Talk/Mercury/06 Virgo - The Overthinker's Debrief (kpmee06).mp4`
 
 2 a.m., replaying the one moment you're sure you ruined. Wait for what they actually texted.
 Sort what happened from what you're guessing, then ask. Sleep comes easier after.
 
 ## Day 38 · Fri 11 Dec
 
-**7:45 AM · Post** — Neptune to Virgo: One Line Blank (27 s) · *Planet Talk: Neptune*  
-`kpnee06`
+**7:45 AM · Post** — [Neptune to Virgo: One Line Blank](https://drive.google.com/file/d/13io4M3mcM8pyjqbwVdl_20qA3vrcOJXc/view) (27 s) · *Planet Talk: Neptune*  
+`Star Talk/Planet Talk/Neptune/06 Virgo - Neptune to Virgo- One Line Blank (kpnee06).mp4`
 
 Nobody matches a forty-point list, and that's not a flaw in them. Keep what truly matters (kind, honest, shows up) and leave a little room to be surprised.
 
@@ -2903,11 +2906,11 @@ Your worth isn't your output. Let someone hold you.
 'You always do a fact when it gets real.'
 Why deflecting keeps people out. Moonlight Lane, Ep 5.
 
-**9:30 AM · Post** — [Sagittarius.exe: Exit Plan](https://drive.google.com/file/d/1B870XVxSABSa6FFQslptuFU4wpEg0uxQ/view) (21 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/09 - Sagittarius.exe- Exit Plan (klge09).mp4`
+**9:30 AM · Post** — [Not feeling it, lol bye](https://drive.google.com/file/d/1Un_KMahlnjn-M1zbxfzgLwKaj8Bx0TVM/view) (22 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/09 - Not feeling it, lol bye (ktre09).mp4`
 
-"Meet my family?" and the bag is already packed.
-When it gets serious and you feel the itch to run, say it out loud instead. You might hear "me too."
+Not feeling a spark is allowed. So is saying it kindly.
+One clear, warm message beats silence and beats "lol bye". They'll appreciate the honesty.
 
 **9:50 AM · Trial reel** — [The bio is a résumé](https://drive.google.com/file/d/1OnklonO8lKSvojDAahZKzIAAIP3JL84G/view) (11 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/10 - The bio is a résumé (kbge10).mp4`
@@ -2926,10 +2929,11 @@ Hoping they'll just know how you feel puts the whole job on them. Say it gently,
 Which sign falls the fastest? One of them fell at hello.
 Ranked from instant to slow and steady. Your pace is the right pace.
 
-**11:00 AM · Post** — [Rehearsing the talk in the mirror](https://drive.google.com/file/d/1hgVB-5J-KB1v1W6bTZ6noEQXb_tk-waR/view) (24 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/09 - Rehearsing the talk in the mirror (kare09).mp4`
+**11:00 AM · Post** — [Still thinking about a crush from years ago](https://drive.google.com/file/d/1-9hGvsVe8GHH_Zp4pf8bDV3i7DasrWm_/view) (18 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/09 - Still thinking about a crush from years ago (kine09).mp4`
 
-Eleven rehearsals, one easel, one pillow scream. The real speech is short: I like you. I'd like more. You? Then listen to what they say.
+Years later and they still cross your mind? Very normal.
+Often it's less about them and more about who you were back then. Keep the memory, and go make new ones.
 
 **11:20 AM · Trial reel** — [Capricorn booked the hot seat](https://drive.google.com/file/d/1tJKaI9CMWUWmynxs-i4YFsPnGNZN3hmN/view) (9.6 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/10 - Capricorn booked the hot seat (khse10).mp4`
@@ -2948,11 +2952,11 @@ Dark by late afternoon? The solstice is the longest night of the year in the nor
 They read your messages over your shoulder. Harmless, or not okay?
 Not okay. Trust doesn't peek, and you're allowed your privacy.
 
-**12:30 PM · Post** — [A Crush on Your Friend](https://drive.google.com/file/d/1RI5ds8NUIaJiEl38CihgNCZf8ols3xb-/view) (75 s) ⏱ · *Ask the Stars: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/04 - A Crush on Your Friend (kxase04).mp4`
+**12:30 PM · Post** — [Day Three of Quiet](https://drive.google.com/file/d/1mqqZSE8LtLGnRJPTfWov_L6Iy0exJH-s/view) (90 s) ⏱ · *The Make-Up Talk: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Make-Up Talk- Extended/03 - Day Three of Quiet (kxmue03).mp4`
 
-A crush on your best friend feels like too much to risk.
-Say it gently, give them room, and mean it when you say the friendship stays. Save this for the brave day.
+Three days of "k." can feel like a punishment, even when it isn't meant as one.
+Needing space is okay. Disappearing isn't. Say when you'll be back, then come back.
 
 **12:50 PM · Trial reel** — [Capricorn trying to say "proud of you"](https://drive.google.com/file/d/19fiCPNKKvJNw5_nfalmlqr0yINdYCdxS/view) (9 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/10 - Capricorn trying to say -proud of you- (kute10).mp4`
@@ -2971,10 +2975,10 @@ Quiet care deserves to be noticed out loud. Take the thank-you when it comes, no
 Aquarius, still buffering after they said "I missed you"?
 You missed them too. Say it back.
 
-**2:00 PM · Post** — [Their birthday reminder](https://drive.google.com/file/d/1QllzlpERABxx2WzwDKciZl_eha1PSq3P/view) (20 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/09 - Their birthday reminder (kbxe09).mp4`
+**2:00 PM · Post** — [Sagittarius, unpack the suitcase](https://drive.google.com/file/d/1iqngvoOIfzwQTndAZ1KPDQtg8HzTE1vc/view) (17 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/09 - Sagittarius, unpack the suitcase (kpte09).mp4`
 
-The calendar remembers their birthday even when you're trying not to. You can wish someone well without sending a thing.
+Liking someone and wanting to run at the same time is so human. Liking someone isn't a cage. Tell them you're a little scared; honesty makes room to stay.
 
 **2:20 PM · Trial reel** — [The Ghost Hypothetical](https://drive.google.com/file/d/1TdtfWWei77JVIrCBreZBn4L9k9huPuJk/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/10 - The Ghost Hypothetical (kroe10).mp4`
@@ -2992,11 +2996,10 @@ Shy is not uninterested; it is a pace. Ask, then wait a beat longer than usual. 
 
 An Aquarius won't buy you a gift. They'll build one that pours cocoa very slowly. Weird and sweet is the point.
 
-**3:30 PM · Post** — [Running from "what are we?"](https://drive.google.com/file/d/1YZGJtR_fNH7r4Eao7k7jGFtDqRK49wuf/view) (20 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/09 - Running from -what are we-- (kmte09).mp4`
+**3:30 PM · Post** — [The escape trip](https://drive.google.com/file/d/1TuIMsXVxJyvPaKJmrB6L-IZNOhYoqF61/view) (22 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/09 - The escape trip (khee09).mp4`
 
-Liking someone and being scared of losing your freedom at the same time.
-Choosing someone can be its own adventure. Ask when you're ready.
+Booked a flight to outrun the feelings? They pack themselves. Tonight, walk the block with a friend, and plan the trip later for joy.
 
 **3:50 PM · Trial reel** — [Saying “we’re just friends” while blushing](https://drive.google.com/file/d/1BY_YzeJknnbtcvfszns4reLiSp2zEiDu/view) (8.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/11 - Saying “we’re just friends” while blushing (kwme11).mp4`
@@ -3015,11 +3018,11 @@ Going quiet at a big family dinner doesn't make you weird, Aquarius. You're watc
 Ice skating date, and you can't skate.
 No faking it, no dodging it. Say you're new at this and hold the wall together.
 
-**5:00 PM · Post** — Leo × Libra: meeting the friends. (90 s) ⏱ · *Sign × Sign: Extended*  
-`kxsse04`
+**5:00 PM · Post** — [Everyone Has a Dating Tip](https://drive.google.com/file/d/1wo1ybd3eF2q0WAmXZVJ_YffX9ycbPq8Z/view) (75 s) ⏱ · *Single and Thriving: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Single and Thriving- Extended/03 - Everyone Has a Dating Tip (kxste03).mp4`
 
-Meeting their friends in ten minutes and rehearsing hello in the mirror.
-Leo, ask questions as well as telling stories. Libra, say the one thing you want. A secret check-in signal helps.
+Single at a dinner where every couple has a tip for you.
+They mean well, and you can still say thanks, I'm good. Then tell them what you're excited about.
 
 **5:20 PM · Trial reel** — [The "What Are We?" Talk](https://drive.google.com/file/d/117WQbnQ2L1Q8f_TJ1sL_Qgqw3kmiNpGo/view) (9 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/11 - The -What Are We-- Talk (kwoe11).mp4`
@@ -3038,11 +3041,10 @@ Travel delays can leave you apologising to everyone, even the departure board. A
 You dress each other from the thrift shop. Who wins?
 The cape, the feather hat and one moon boot, worn with pride.
 
-**6:30 PM · Post** — [A hill you will die on](https://drive.google.com/file/d/15onvow011Fp_xbs7FyX837vXVQvyPda_/view) (17.6 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/09 - A hill you will die on (koce09).mp4`
+**6:30 PM · Post** — [The Back Row Matinee](https://drive.google.com/file/d/103DBDp3-tOpT9Q2YedCtF0vyNpbKyHE3/view) (21 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/09 - The Back Row Matinee (kdye09).mp4`
 
-Cold pizza for breakfast. Reading the last page first. Choose your side.
-Silly questions lower the stakes, so the deep ones feel safe later. Start light.
+Hate letting anyone see you feel things? Take yourself to a matinee and cry at the sad part. Feeling it all is allowed, and nobody keeps score.
 
 **6:50 PM · Trial reel** — [Replying With a Meme](https://drive.google.com/file/d/1r_5kKRYmW7SJO-LpD9wpGkcvuBYUbg8f/view) (6.7 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/11 - Replying With a Meme (k3se11).mp4`
@@ -3061,11 +3063,11 @@ The best time to plan how you make up is on a calm day. Pick a pause word, agree
 Surprise video call. Do you answer in the dark or mid-experiment in goggles?
 They called to see you, messy hair and all.
 
-**8:00 PM · Post** — [Mail Takes Days](https://drive.google.com/file/d/13bckc0WjfakUtVQyaN2GxSfU4GLvZ9JI/view) (22 s) · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/06 - Mail Takes Days (klne06).mp4`
+**8:00 PM · Post** — ["It's not a big deal"](https://drive.google.com/file/d/1l8b9zCwud6JbmaYC50GVRt7gIDh55ici/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/09 - -It's not a big deal- (ksbe09).mp4`
 
-Texts scroll away so fast that they can start to feel like nothing.
-Once a month, send a real letter. It takes days to arrive and gets kept for years.
+Small to you can be huge to them.
+You don't have to feel it to respect it. Say you see it, then ask how it went.
 
 **8:20 PM · Trial reel** — [Aquarius Dodges the Feelings Card](https://drive.google.com/file/d/14L_DI3rrgRnFMLRqQ-tAS-62aGlynY7j/view) (8 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/11 - Aquarius Dodges the Feelings Card (ktte11).mp4`
@@ -3084,11 +3086,11 @@ Crying at a movie, alone, under a blanket, and loving every minute. Feeling thin
 Cried in the group photo. Hugged the host goodbye for twenty minutes.
 Pisces at a party, and honestly, the big feelings are welcome.
 
-**9:30 PM · Post** — [Deep Dive: Virgo in Love](https://drive.google.com/file/d/17ylXXBdImiq67312qF7rqf8JKu8ydyxi/view) (118 s) ⏱ · *Deep Dive: ___ in Love*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/06 - Deep Dive- Virgo in Love (kdde06).mp4`
+**9:30 PM · Post** — [Seen, 11:52 PM](https://drive.google.com/file/d/1JJHWm6FktTEYqGzkPxxvOkaOvWOtSEe9/view) (90 s) ⏱ · *Moonlight Lane: Side Stories*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Moonlight Lane- Side Stories/03 - Seen, 11-52 PM (kxmle03).mp4`
 
-A Virgo's love lives in the details: the stuck zip, the dentist on Tuesday.
-Notice their effort, ask what would make today lighter, and let them rest.
+Moonlight Lane, Side Story: Virgo sent "I had fun tonight" and got Seen, 11:52 PM. Then nothing.
+Seen is not a verdict. Say the kind thing once, sleep, and ask plainly tomorrow.
 
 **9:50 PM · Trial reel** — [“I'm fine.” Then forty fun facts](https://drive.google.com/file/d/1tAlw3f9kT_oasF_hNjrsJ4xRu3T0cO6l/view) (10 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/11 - “I'm fine.” Then forty fun facts (kgse11).mp4`
@@ -3107,22 +3109,22 @@ You can love someone and still not have anything left at 1 AM. A boundary is car
 Long list of pros, and the only con is that you're scared?
 Scared isn't a con. It means it matters.
 
-**11:00 PM · Post** — [The Virgo Guide: Draft Fourteen](https://drive.google.com/file/d/1hBvgM9OjRHoaj2P6qVcppwiAn0oLhert/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/06 - The Virgo Guide- Draft Fourteen (kxsge06).mp4`
+**11:00 PM · Post** — [Sagittarius.exe: Exit Plan](https://drive.google.com/file/d/1B870XVxSABSa6FFQslptuFU4wpEg0uxQ/view) (21 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/09 - Sagittarius.exe- Exit Plan (klge09).mp4`
 
-Fourteen takes of one voice note. We've all been there, Virgo.
-The people who love you want you, not polish. Send the first draft this week.
+"Meet my family?" and the bag is already packed.
+When it gets serious and you feel the itch to run, say it out loud instead. You might hear "me too."
 
-**11:15 PM · Post** — Pluto to Virgo: Forty-Six Rows of Blame (28.6 s) · *Planet Talk: Pluto*  
-`kpple06`
+**11:15 PM · Post** — [Pluto to Virgo: Forty-Six Rows of Blame](https://drive.google.com/file/d/1KiVfjeIbVD41AMFmofFvGsoNh9Mp5Qff/view) (28.6 s) · *Planet Talk: Pluto*  
+`Star Talk/Planet Talk/Pluto/06 Virgo - Pluto to Virgo- Forty-Six Rows of Blame (kpple06).mp4`
 
 A spreadsheet of everything you did wrong is not closure. It's a trial with no end.
 You can learn from a breakup without blaming yourself for all of it. Pick one useful lesson, then be kind to you.
 
 ## Day 39 · Sat 12 Dec
 
-**7:45 AM · Post** — Standards or a Wall, Virgo? (30 s) · *Planet Talk: Saturn*  
-`kpsae06`
+**7:45 AM · Post** — [Standards or a Wall, Virgo?](https://drive.google.com/file/d/1NoGE6CcMYYkU7XhQnfBR9sKmC5AcwuvS/view) (30 s) · *Planet Talk: Saturn*  
+`Star Talk/Planet Talk/Saturn/06 Virgo - Standards or a Wall, Virgo- (kpsae06).mp4`
 
 A lovely date, cancelled by rule 37 of forty. Standards protect you, but a list that long keeps everyone out. Keep the few that matter (kind, honest, shows up) and let the rest be curiosity.
 
@@ -3143,11 +3145,10 @@ Same-element signs sit 120 degrees apart on the wheel, which is why they form tr
 Ever made a gift that says a little too much?
 Cancer drew Sagittarius. This is not a small gift.
 
-**9:30 AM · Post** — [The 600-word love confession](https://drive.google.com/file/d/1GTKwRMuFUVazF0HY6B1lKH1VKBFOG62M/view) (24 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/10 - The 600-word love confession (ktre10).mp4`
+**9:30 AM · Post** — [Rehearsing the talk in the mirror](https://drive.google.com/file/d/1hgVB-5J-KB1v1W6bTZ6noEQXb_tk-waR/view) (24 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/09 - Rehearsing the talk in the mirror (kare09).mp4`
 
-When the feelings are huge, the first text can stay small.
-Save the poem for later. "I really like you, want to get coffee?" says everything that matters right now.
+Eleven rehearsals, one easel, one pillow scream. The real speech is short: I like you. I'd like more. You? Then listen to what they say.
 
 **9:50 AM · Trial reel** — [Aquarius Disagrees](https://drive.google.com/file/d/11IzSkB0tiM7idTUYNCcjtE5dx75QFB39/view) (9 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/11 - Aquarius Disagrees (ksge11).mp4`
@@ -3166,11 +3167,10 @@ Big dreams feel safer when you're not rushing them. Slow the dare to someday, sa
 Virgo's gift list has tabs and the wrapping is perfect.
 They also noticed your gloves were thin, and fixed it.
 
-**11:00 AM · Post** — [My ex moved on first](https://drive.google.com/file/d/1_oC6G8K1TxxNH2M-V6cp9AvguFgECRkg/view) (19 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/10 - My ex moved on first (kine10).mp4`
+**11:00 AM · Post** — [Their birthday reminder](https://drive.google.com/file/d/1QllzlpERABxx2WzwDKciZl_eha1PSq3P/view) (20 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/09 - Their birthday reminder (kbxe09).mp4`
 
-Your ex is happy with someone new and it stings, even if you don't want them back.
-Mute, don't compare, and do one kind thing for yourself today. Their timeline isn't your scoreboard.
+The calendar remembers their birthday even when you're trying not to. You can wish someone well without sending a thing.
 
 **11:20 AM · Trial reel** — [Aquarius, feelings aren't a bug](https://drive.google.com/file/d/1edzJUDYuKfKGPll-CvtpNZVwUnhro-BE/view) (10.5 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/11 - Aquarius, feelings aren't a bug (k5te11).mp4`
@@ -3189,10 +3189,11 @@ Noticing is a gift; judging is a choice. Write down three things you love about 
 Waiting all evening while someone kneads the same dough?
 Worth it when the bread comes out shaped like your sign.
 
-**12:30 PM · Post** — [Capricorn, close the laptop](https://drive.google.com/file/d/1-60ZwYi7DkqYPmqbC3B16TabUg-3DqZ-/view) (18 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/10 - Capricorn, close the laptop (kpte10).mp4`
+**12:30 PM · Post** — [A Crush on Your Friend](https://drive.google.com/file/d/1RI5ds8NUIaJiEl38CihgNCZf8ols3xb-/view) (75 s) ⏱ · *Ask the Stars: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/04 - A Crush on Your Friend (kxase04).mp4`
 
-Cancelling plans for 'one more email' again? Rest isn't a prize you have to earn, and you're wanted, not just useful. Say yes to one slow evening this week.
+A crush on your best friend feels like too much to risk.
+Say it gently, give them room, and mean it when you say the friendship stays. Save this for the brave day.
 
 **12:50 PM · Trial reel** — [I'm not like other people](https://drive.google.com/file/d/1Z2qBfvgUA9CPrCpz9FVv06V9u5U88x4R/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/11 - I'm not like other people (kbge11).mp4`
@@ -3211,10 +3212,11 @@ Pisces, you remembered everyone this year, even the neighbour's cat. What's on y
 Silently reviewing fuzzy socks, Taurus edition.
 Little bulls on the toes. That's knowing someone.
 
-**2:00 PM · Post** — [Working through it](https://drive.google.com/file/d/1uIRyWuJWkVVWK6I8gdYZgy6ds456ZGxX/view) (24 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/10 - Working through it (khee10).mp4`
+**2:00 PM · Post** — [Running from "what are we?"](https://drive.google.com/file/d/1YZGJtR_fNH7r4Eao7k7jGFtDqRK49wuf/view) (20 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/09 - Running from -what are we-- (kmte09).mp4`
 
-Fourteen-hour days can feel like coping, but busy isn't the same as better. Log off, give the feelings ten minutes, and let rest count as healing.
+Liking someone and being scared of losing your freedom at the same time.
+Choosing someone can be its own adventure. Ask when you're ready.
 
 **2:20 PM · Trial reel** — [Aquarius is above the hot seat](https://drive.google.com/file/d/1VH6T_luXFvPfE4WqI3xo1psMfpZx0xqu/view) (9.5 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/11 - Aquarius is above the hot seat (khse11).mp4`
@@ -3232,10 +3234,11 @@ Spending the holidays far apart is hard when your clocks don't even agree. Choos
 
 A Taurus saved you the last cookie. Do you understand how big that is? Being thought of is the whole gift.
 
-**3:30 PM · Post** — [Tourist at Home](https://drive.google.com/file/d/1NujGMYjeH3iMOfng_Ctablzz808o3TQP/view) (22 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/10 - Tourist at Home (kdye10).mp4`
+**3:30 PM · Post** — [A hill you will die on](https://drive.google.com/file/d/15onvow011Fp_xbs7FyX837vXVQvyPda_/view) (17.6 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/09 - A hill you will die on (koce09).mp4`
 
-Waiting for the next big trip to feel alive? Ride three stops, find the mural you always walked past, try the food stall. Adventure starts close to home.
+Cold pizza for breakfast. Reading the last page first. Choose your side.
+Silly questions lower the stakes, so the deep ones feel safe later. Start light.
 
 **3:50 PM · Trial reel** — [They said "I like you." Aquarius:](https://drive.google.com/file/d/1BbCvHc1SO7RuoOIYQOSbn9lo_OhKU7ZM/view) (9 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/11 - They said -I like you.- Aquarius- (kute11).mp4`
@@ -3254,11 +3257,11 @@ Libra, you love by making everything lovely: the lights, the mugs, the whole roo
 Some signs finish holiday shopping in July.
 Ranked, earliest to last-minute. The best gifts say I listened.
 
-**5:00 PM · Post** — ["I'm not mad."](https://drive.google.com/file/d/1yxJzI2KiaRysD870WRHrlq8z9_VhnZXs/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/10 - -I'm not mad.- (ksbe10).mp4`
+**5:00 PM · Post** — [Leo × Libra: meeting the friends.](https://drive.google.com/file/d/1J8alQUJVvTGe8NKecbuEQQHA4I30clXJ/view) (90 s) ⏱ · *Sign × Sign: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Sign × Sign- Extended/04 - Leo × Libra- meeting the friends. (kxsse04).mp4`
 
-Saying "I'm not mad" while visibly steaming fools nobody.
-Name the hurt while it's small, then ask for what you need next time.
+Meeting their friends in ten minutes and rehearsing hello in the mirror.
+Leo, ask questions as well as telling stories. Libra, say the one thing you want. A secret check-in signal helps.
 
 **5:20 PM · Trial reel** — ["Dinner Tomorrow, 7 PM"](https://drive.google.com/file/d/1ABIqghRYKpHtxmF7o2kEMSNzFnDH9MSf/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/11 - -Dinner Tomorrow, 7 PM- (kroe11).mp4`
@@ -3277,11 +3280,11 @@ Disagreeing with someone you love doesn't mean you're drifting apart. Start wher
 They cried at a movie trailer. Like, a lot. Too soft?
 Soft hearts are strong hearts. Bring tissues and keep them close.
 
-**6:30 PM · Post** — [Capricorn.exe: Love Is a Meeting](https://drive.google.com/file/d/1uoiGBWFlDP9WXxZ5R_7-cwEEp7Q5QSZ6/view) (22 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/10 - Capricorn.exe- Love Is a Meeting (klge10).mp4`
+**6:30 PM · Post** — [Mail Takes Days](https://drive.google.com/file/d/13bckc0WjfakUtVQyaN2GxSfU4GLvZ9JI/view) (22 s) · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/06 - Mail Takes Days (klne06).mp4`
 
-Scheduled the date. Brought three laptops.
-The work will still be there tomorrow. Give one evening your whole attention and see who shows up across the table.
+Texts scroll away so fast that they can start to feel like nothing.
+Once a month, send a real letter. It takes days to arrive and gets kept for years.
 
 **6:50 PM · Trial reel** — [Their dogs met first](https://drive.google.com/file/d/15wx408mXQzrg9VkLO4swot5uTbwagClA/view) (10 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/06 - Their dogs met first (kpre06).mp4`
@@ -3300,10 +3303,11 @@ Some people cry at the sad part. Some cry at the opening titles. Let the steady 
 Pisces, crying at the first snow before they even text?
 Then they ask you to come see it. Cry a little, then go.
 
-**8:00 PM · Post** — ["I'm not looking for anything serious." "Me neither!"](https://drive.google.com/file/d/1iRrmq-NzveNou6J747B7zDqpTR86HTZi/view) (18 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/10 - -I'm not looking for anything serious.- -Me neither!- (kare10).mp4`
+**8:00 PM · Post** — [The 600-word love confession](https://drive.google.com/file/d/1GTKwRMuFUVazF0HY6B1lKH1VKBFOG62M/view) (24 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/10 - The 600-word love confession (ktre10).mp4`
 
-Said "me neither" when you meant "me, very much"? Agreeing to less than you want isn't chill, it's hiding. You're allowed to say what you're looking for.
+When the feelings are huge, the first text can stay small.
+Save the poem for later. "I really like you, want to get coffee?" says everything that matters right now.
 
 **8:20 PM · Trial reel** — [Crying at a stranger’s proposal video](https://drive.google.com/file/d/1rug_5cLbJztoLftf9IjRh3EYvR96Ik8m/view) (9.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/12 - Crying at a stranger’s proposal video (kwme12).mp4`
@@ -3321,10 +3325,11 @@ Sagittarius season runs until the December solstice, and astrologers read it as 
 
 Dating a Pisces: tears at the trailer, tears over one shared fry, and the tissues ready when you cry too.
 
-**9:30 PM · Post** — [At the café you planned to visit](https://drive.google.com/file/d/13-yvjE8-MlqU1eN7B9DDMCCov6-mbIl8/view) (18 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/10 - At the café you planned to visit (kbxe10).mp4`
+**9:30 PM · Post** — [Deep Dive: Virgo in Love](https://drive.google.com/file/d/17ylXXBdImiq67312qF7rqf8JKu8ydyxi/view) (118 s) ⏱ · *Deep Dive: ___ in Love*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/06 - Deep Dive- Virgo in Love (kdde06).mp4`
 
-You made it to the café from the old list, on your own. An old plan can become a new memory that's just yours.
+A Virgo's love lives in the details: the stuck zip, the dentist on Tuesday.
+Notice their effort, ask what would make today lighter, and let them rest.
 
 **9:50 PM · Trial reel** — [Plans Got Cancelled](https://drive.google.com/file/d/1irceEQsTeuw06GfX9JiTx4Brrjt4tL3x/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/12 - Plans Got Cancelled (kwoe12).mp4`
@@ -3343,22 +3348,22 @@ Some fights are really just two tired people at 1 AM. Caring can sound like: let
 They tell you December is hard for them. What do you do?
 Not a packed schedule, not a quick subject change. Ask what helps, then do that.
 
-**11:00 PM · Post** — [Too busy to be loved](https://drive.google.com/file/d/1hJ4Uf9wEE8HKos6lIZKj_pYDxJ9rH-2P/view) (20 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/10 - Too busy to be loved (kmte10).mp4`
+**11:00 PM · Post** — [The Virgo Guide: Draft Fourteen](https://drive.google.com/file/d/1hBvgM9OjRHoaj2P6qVcppwiAn0oLhert/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/06 - The Virgo Guide- Draft Fourteen (kxsge06).mp4`
 
-Every evening booked, and love keeps getting pushed to "when things calm down."
-They rarely do. Leave one evening open on purpose.
+Fourteen takes of one voice note. We've all been there, Virgo.
+The people who love you want you, not polish. Send the first draft this week.
 
-**11:15 PM · Post** — Virgo's Fix-Me-First List (26 s) · *Planet Talk: The Sun*  
-`kpsue06`
+**11:15 PM · Post** — [Virgo's Fix-Me-First List](https://drive.google.com/file/d/1KKay6l7FJpn_sx1p-k7EghNfVdlq0JZb/view) (26 s) · *Planet Talk: The Sun*  
+`Star Talk/Planet Talk/The Sun/06 Virgo - Virgo's Fix-Me-First List (kpsue06).mp4`
 
 You don't have to be finished to be loved.
 The loud laugh, the long texts, the plants: someone will love those. Start the list with being kind to yourself.
 
 ## Day 40 · Sun 13 Dec
 
-**7:45 AM · Post** — Virgo Lets the Night Wander (27 s) · *Planet Talk: Uranus*  
-`kpure06`
+**7:45 AM · Post** — [Virgo Lets the Night Wander](https://drive.google.com/file/d/1HsukE9VlxRhkSzhMwzGAq8RcgyI1rTWL/view) (27 s) · *Planet Talk: Uranus*  
+`Star Talk/Planet Talk/Uranus/06 Virgo - Virgo Lets the Night Wander (kpure06).mp4`
 
 If your first date has a minute-by-minute plan with a graceful exit at 8:40, you're not alone.
 Swap one slot for "wander." The best part of a night is usually the bit nobody planned.
@@ -3380,11 +3385,11 @@ Not sure whether to bring them home this year? Ask them first. It's their holida
 Plan B for a too-honest gift: hide the feelings.
 Gemini's advice does not help.
 
-**9:30 AM · Post** — [What are you working toward?](https://drive.google.com/file/d/1AUDVSCmiiEQ2LlHvYzQ7zUwOQeZUBGSr/view) (21.4 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/10 - What are you working toward- (koce10).mp4`
+**9:30 AM · Post** — [My ex moved on first](https://drive.google.com/file/d/1_oC6G8K1TxxNH2M-V6cp9AvguFgECRkg/view) (19 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/10 - My ex moved on first (kine10).mp4`
 
-Want to see someone light up? Ask what they're working toward.
-It tells them you see where they're going. Then show up for it: the mile 20 sign, the first order.
+Your ex is happy with someone new and it stings, even if you don't want them back.
+Mute, don't compare, and do one kind thing for yourself today. Their timeline isn't your scoreboard.
 
 **9:50 AM · Trial reel** — [Pisces Can't See the Cards](https://drive.google.com/file/d/1dHogmyqk76LZ3owPn6cLgOuUN-v38D53/view) (7 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/12 - Pisces Can't See the Cards (ktte12).mp4`
@@ -3403,11 +3408,10 @@ Trying something new with nobody to hold onto is scary. Hold the rail, that's wh
 If your Aries were a winter gift, it would heat up instantly.
 Hand warmers, plus a note: race you outside.
 
-**11:00 AM · Post** — ["Sorry, just saw this" (3 days later)](https://drive.google.com/file/d/1Zrdw1KQUey9AMa3Mz1fZesg4UDwVODAB/view) (21 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/11 - -Sorry, just saw this- (3 days later) (ktre11).mp4`
+**11:00 AM · Post** — [Capricorn, close the laptop](https://drive.google.com/file/d/1-60ZwYi7DkqYPmqbC3B16TabUg-3DqZ-/view) (18 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/10 - Capricorn, close the laptop (kpte10).mp4`
 
-Everyone goes quiet sometimes. Pretending you just saw it doesn't help.
-A slow, honest reply still shows you care. Late and real is enough.
+Cancelling plans for 'one more email' again? Rest isn't a prize you have to earn, and you're wanted, not just useful. Say yes to one slow evening this week.
 
 **11:20 AM · Trial reel** — [Cried at strangers getting engaged](https://drive.google.com/file/d/1_OXywUR2EVUbGJAfbzBsCeWEw3iYyzPd/view) (8 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/12 - Cried at strangers getting engaged (kgse12).mp4`
@@ -3425,11 +3429,10 @@ Meeting a whole family at once can feel like a test. It isn't. Be kind, be curio
 
 Then: seven parties a night, every night. Now: one night circled REST, on purpose. Rest is on the calendar now.
 
-**12:30 PM · Post** — [Scared to say it first](https://drive.google.com/file/d/1ql1Imc8JH-rboHkwqonx6DdR4ov0dafJ/view) (18 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/11 - Scared to say it first (kine11).mp4`
+**12:30 PM · Post** — [Working through it](https://drive.google.com/file/d/1uIRyWuJWkVVWK6I8gdYZgy6ds456ZGxX/view) (24 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/10 - Working through it (khee10).mp4`
 
-Scared to say "I love you" first? That fear just means it matters.
-Say it with no deadline on theirs. Going first is brave, not needy.
+Fourteen-hour days can feel like coping, but busy isn't the same as better. Log off, give the feelings ten minutes, and let rest count as healing.
 
 **12:50 PM · Trial reel** — [Checking your compatibility again](https://drive.google.com/file/d/1mbMlq2d_LgESpqVSsB74vbahh4nMrq1S/view) (11 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/12 - Checking your compatibility again (kfae12).mp4`
@@ -3448,10 +3451,10 @@ When a friend can't come home this year, send something they can hold. One envel
 Imagine Taurus as a gift: the softest blanket you've ever touched.
 It comes with warm bread and an invitation to stay a while.
 
-**2:00 PM · Post** — [Aquarius, your weird is the point](https://drive.google.com/file/d/1StsxzXEw5svjfecTKg3iauWoCyWtTz3A/view) (17 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/11 - Aquarius, your weird is the point (kpte11).mp4`
+**2:00 PM · Post** — [Tourist at Home](https://drive.google.com/file/d/1NujGMYjeH3iMOfng_Ctablzz808o3TQP/view) (22 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/10 - Tourist at Home (kdye10).mp4`
 
-Ever felt like nobody gets you? Don't sand yourself down to fit a room. Your people are out there being weird too, so go where your weird is welcome.
+Waiting for the next big trip to feel alive? Ride three stops, find the mural you always walked past, try the food stall. Adventure starts close to home.
 
 **2:20 PM · Trial reel** — [Pisces, You Cried First](https://drive.google.com/file/d/17X9UCiJTSkOJbqA8sIzKGZc2lBcadWFr/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/12 - Pisces, You Cried First (ksge12).mp4`
@@ -3470,10 +3473,11 @@ Saying no to family is hard when you love them. Start with what you can say yes 
 An aquarium at night with a Pisces. Bring tissues.
 Their date cried at the jellyfish too. One tissue, shared.
 
-**3:30 PM · Post** — [“We're still friends!”](https://drive.google.com/file/d/1kDpfBuA54kb4PSqQzSLLwjfXlHKJJgV1/view) (20 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/11 - “We're still friends!” (khee11).mp4`
+**3:30 PM · Post** — ["I'm not mad."](https://drive.google.com/file/d/1yxJzI2KiaRysD870WRHrlq8z9_VhnZXs/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/10 - -I'm not mad.- (ksbe10).mp4`
 
-Trying to be friends with your ex on day one? Space first isn't cold, it's kind. A friendship can come later, once it doesn't hurt.
+Saying "I'm not mad" while visibly steaming fools nobody.
+Name the hurt while it's small, then ask for what you need next time.
 
 **3:50 PM · Trial reel** — [Pisces, cry it out then read](https://drive.google.com/file/d/12Da2w3qiWsa4P8P7Q0UdlQHSjc4pcy2s/view) (11 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/12 - Pisces, cry it out then read (k5te12).mp4`
@@ -3492,10 +3496,11 @@ Three invites, one Saturday, three yeses. Saying no to a party isn't letting any
 Draft twelve signed “Regards,” or nine pages with a pressed flower?
 The card that actually gets sent wins.
 
-**5:00 PM · Post** — [The Class Alone](https://drive.google.com/file/d/1clWGgq_6o6aWzVVQ1UIzkowWOsMBUWW8/view) (21 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/11 - The Class Alone (kdye11).mp4`
+**5:00 PM · Post** — [Capricorn.exe: Love Is a Meeting](https://drive.google.com/file/d/1uoiGBWFlDP9WXxZ5R_7-cwEEp7Q5QSZ6/view) (22 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/10 - Capricorn.exe- Love Is a Meeting (klge10).mp4`
 
-Skipping things because no friend can come? Take the class alone. The bowl might lean, and it will still be the one you made yourself.
+Scheduled the date. Brought three laptops.
+The work will still be there tomorrow. Give one evening your whole attention and see who shows up across the table.
 
 **5:20 PM · Trial reel** — ["I cry at everything, sorry"](https://drive.google.com/file/d/1Md61kv0qyopT4mRC-WxtY2BXemFWWBrE/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/12 - -I cry at everything, sorry- (kbge12).mp4`
@@ -3514,11 +3519,10 @@ A gift can be honest. Say what it means, small, and let them keep it.
 
 Midnight dinner alone by the fridge light, or a big pot and a full table? Good food tastes better shared.
 
-**6:30 PM · Post** — ["You care more about your friends"](https://drive.google.com/file/d/10NVA4l-c6NqWmr0-ga8UBdywV38_0qki/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/11 - -You care more about your friends- (ksbe11).mp4`
+**6:30 PM · Post** — ["I'm not looking for anything serious." "Me neither!"](https://drive.google.com/file/d/1iRrmq-NzveNou6J747B7zDqpTR86HTZi/view) (18 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/10 - -I'm not looking for anything serious.- -Me neither!- (kare10).mp4`
 
-Jealous of the group chat? Underneath that is usually "I miss you."
-Say that part, and ask for time that's just yours.
+Said "me neither" when you meant "me, very much"? Agreeing to less than you want isn't chill, it's hiding. You're allowed to say what you're looking for.
 
 **6:50 PM · Trial reel** — [Pisces cried at question one](https://drive.google.com/file/d/1dPUEfm7BEOO5qHJdYfrzP4PBjc-_M2yt/view) (9.4 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/12 - Pisces cried at question one (khse12).mp4`
@@ -3537,11 +3541,10 @@ Dressed up and then the plans fall through? It's okay to feel let down. Let your
 A Gemini gift arrives half finished, and that's the charm.
 A puzzle book with notes in the margins, written just for you.
 
-**8:00 PM · Post** — [Aquarius.exe: Too Close](https://drive.google.com/file/d/1Qe-nIxwr_2YgV7gQjYKxhQMsWAsXLWp-/view) (21 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/11 - Aquarius.exe- Too Close (klge11).mp4`
+**8:00 PM · Post** — [At the café you planned to visit](https://drive.google.com/file/d/13-yvjE8-MlqU1eN7B9DDMCCov6-mbIl8/view) (18 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/10 - At the café you planned to visit (kbxe10).mp4`
 
-Someone gets close and you vanish without a word.
-Needing space is healthy. Just say how long, so the person you like isn't left guessing.
+You made it to the café from the old list, on your own. An old plan can become a new memory that's just yours.
 
 **8:20 PM · Trial reel** — [3 a.m., Pisces is drafting](https://drive.google.com/file/d/1MqX12lqMEvVLb-iO_3v1YcSqcmyLyvdU/view) (10 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/12 - 3 a.m., Pisces is drafting (kute12).mp4`
@@ -3560,10 +3563,11 @@ When a gift misses, the thought behind it still landed. Say thank you and mean i
 Who steals the blanket every single night?
 All twelve signs, ranked. Cold? Say so, then share.
 
-**9:30 PM · Post** — [Only texts after midnight](https://drive.google.com/file/d/1YSK_fT81HsdtQAjcIDT2NZPRN1TKtuVd/view) (16 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/11 - Only texts after midnight (kare11).mp4`
+**9:30 PM · Post** — [Too busy to be loved](https://drive.google.com/file/d/1hJ4Uf9wEE8HKos6lIZKj_pYDxJ9rH-2P/view) (20 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/10 - Too busy to be loved (kmte10).mp4`
 
-"hey stranger" at 12:47, silence at noon. Late-night texts can feel close. Notice who makes plans with you before noon.
+Every evening booked, and love keeps getting pushed to "when things calm down."
+They rarely do. Leave one evening open on purpose.
 
 **9:50 PM · Trial reel** — ["Hi, I Already Love You"](https://drive.google.com/file/d/1MnIQI2AdJWnxyaOSQzAgLQ-irk4978p_/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/12 - -Hi, I Already Love You- (kroe12).mp4`
@@ -3582,10 +3586,11 @@ Their family does things differently than yours, and that can feel strange at fi
 Same cozy sweater on date one, two and three. Dealbreaker?
 Cozy and consistent is a good sign. Maybe get a matching one.
 
-**11:00 PM · Post** — [Midnight countdown, thumb on send](https://drive.google.com/file/d/1Pefzv3mUZKJYvy5sfnSoSqkwHRsUgkSd/view) (22 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/11 - Midnight countdown, thumb on send (kbxe11).mp4`
+**11:00 PM · Post** — [What are you working toward?](https://drive.google.com/file/d/1AUDVSCmiiEQ2LlHvYzQ7zUwOQeZUBGSr/view) (21.4 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/10 - What are you working toward- (koce10).mp4`
 
-Midnight, confetti, and the urge to text them "new start?" Start the year with the people standing next to you.
+Want to see someone light up? Ask what they're working toward.
+It tells them you see where they're going. Then show up for it: the mile 20 sign, the first order.
 
 **11:15 PM · Post** — [Venus to Virgo: Tear Up Page Four](https://drive.google.com/file/d/1HceK9C7UnGeS_7d1kOGM0at8nFkzz5BA/view) (25.8 s) · *Planet Talk: Venus*  
 `Star Talk/Planet Talk/Venus/06 Virgo - Venus to Virgo- Tear Up Page Four (kpvee06).mp4`
@@ -3594,8 +3599,8 @@ High standards are healthy. A twelve-page rubric is a lot. Keep the three that m
 
 ## Day 41 · Mon 14 Dec
 
-**7:45 AM · Post** — Scorpio's Curtain Call (28 s) · *Planet Talk: Jupiter*  
-`kpjue08`
+**7:45 AM · Post** — [Scorpio's Curtain Call](https://drive.google.com/file/d/1zFt3xnQU3Fby7IgcF5wX6RwKUcbErGIx/view) (28 s) · *Planet Talk: Jupiter*  
+`Star Talk/Planet Talk/Jupiter/08 Scorpio - Scorpio's Curtain Call (kpjue08).mp4`
 
 Third date and they still only know your name? Opening up can feel like too much.
 You don't owe anyone everything. Share one true thing, then let them share one back.
@@ -3617,11 +3622,11 @@ You choose for everyone all year. The kindest gift for a Libra is someone who sa
 You made something real, they loved it, and you called it a joke.
 What would you say next?
 
-**9:30 AM · Post** — [Asked how I feel. Brain: error.](https://drive.google.com/file/d/1LZ0mC7lCMHa0vlve5luzlx7TMdgj8QDq/view) (18 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/11 - Asked how I feel. Brain- error. (kmte11).mp4`
+**9:30 AM · Post** — ["Sorry, just saw this" (3 days later)](https://drive.google.com/file/d/1Zrdw1KQUey9AMa3Mz1fZesg4UDwVODAB/view) (21 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/11 - -Sorry, just saw this- (3 days later) (ktre11).mp4`
 
-When someone asks how you feel and your brain just freezes.
-You don't need a speech. Pick one honest word and say it out loud.
+Everyone goes quiet sometimes. Pretending you just saw it doesn't help.
+A slow, honest reply still shows you care. Late and real is enough.
 
 **9:50 AM · Trial reel** — [The Cute Couple](https://drive.google.com/file/d/1ENWMMK3ltwVYwWSpGY8l12elB2sklLMi/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/13 - The Cute Couple (kwoe13).mp4`
@@ -3640,11 +3645,11 @@ Two people saying "fine" can drift a long way apart. Say the real thing, go firs
 Aries, they take a while to open up and you brought a stopwatch.
 Sit down, stay kind. Some hearts open slowly.
 
-**11:00 AM · Post** — [How do you like to be shown love?](https://drive.google.com/file/d/180wh0EpoZ8HsvEZrmzc95CZirnPgv-pR/view) (22.5 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/11 - How do you like to be shown love- (koce11).mp4`
+**11:00 AM · Post** — [Scared to say it first](https://drive.google.com/file/d/1ql1Imc8JH-rboHkwqonx6DdR4ov0dafJ/view) (18 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/11 - Scared to say it first (kine11).mp4`
 
-You can love someone a lot and still miss each other.
-Notes for someone who feels love through help. Fixing things for someone who needs words. Ask, then love them the way they can feel it.
+Scared to say "I love you" first? That fear just means it matters.
+Say it with no deadline on theirs. Going first is brave, not needy.
 
 **11:20 AM · Trial reel** — [Still Single?](https://drive.google.com/file/d/14P3I_RFkSvyJXebp5L4QcHP9GBWHW0r3/view) (6.2 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/13 - Still Single- (k3se13).mp4`
@@ -3662,11 +3667,10 @@ Capricorn season starts on the longest night of the year up north. In astrology 
 
 An Aries builds a snowman in four seconds. Then builds a little one for you and waits while you add the nose.
 
-**12:30 PM · Post** — [Libra in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1V4YjmXcczJVd7zb8UG9C2hIYAt9-TNvx/view) (118.6 s) ⏱ · *Deep Dive: ___ in Love*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/07 - Libra in Love- Everything Nobody Tells You (kdde07).mp4`
+**12:30 PM · Post** — [Aquarius, your weird is the point](https://drive.google.com/file/d/1StsxzXEw5svjfecTKg3iauWoCyWtTz3A/view) (17 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/11 - Aquarius, your weird is the point (kpte11).mp4`
 
-Loving a Libra means hearing six plans and booking none of them.
-They're weighing it fairly, not stalling. Ask what they want, then actually wait. Save this for your Libra.
+Ever felt like nobody gets you? Don't sand yourself down to fit a room. Your people are out there being weird too, so go where your weird is welcome.
 
 **12:50 PM · Trial reel** — [Aries vs Libra: Where Do We Eat](https://drive.google.com/file/d/1TmmEyQ4zZ59Jo2q9aiLJAThd8WBeO6Uo/view) (8 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/13 - Aries vs Libra- Where Do We Eat (ktte13).mp4`
@@ -3685,11 +3689,10 @@ When plans fall apart, it's easy to turn on each other. Move to the same side of
 Holding hands in the cold: gloves off or hands in pockets?
 The sweet middle: one glove each and a shared pocket.
 
-**2:00 PM · Post** — [Not Over Text](https://drive.google.com/file/d/1wVuWxMKlq6UjEz7iwg8TXMuMFxmWR9kk/view) (22 s) · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/07 - Not Over Text (klne07).mp4`
+**2:00 PM · Post** — [“We're still friends!”](https://drive.google.com/file/d/1kDpfBuA54kb4PSqQzSLLwjfXlHKJJgV1/view) (20 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/11 - “We're still friends!” (khee11).mp4`
 
-One short reply and suddenly you've imagined a whole argument.
-When something feels off, call instead of guessing. Tone needs a voice. Save this for the next "k."
+Trying to be friends with your ex on day one? Space first isn't cold, it's kind. A friendship can come later, once it doesn't hurt.
 
 **2:20 PM · Trial reel** — [Great advice, none taken](https://drive.google.com/file/d/1XaaQGdFb9tOJAVqiskZGIH7Jpq8hYWKe/view) (10 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/13 - Great advice, none taken (kgse13).mp4`
@@ -3708,11 +3711,10 @@ Buying yourself a little gift can feel silly. It isn't. Keep it small, kind and 
 A snowball fight, but Aries keeps score.
 One good hit and Aries forgot the score. Snow angels instead.
 
-**3:30 PM · Post** — [Who was that in your story](https://drive.google.com/file/d/1Foa9PMxa2lcmMxEsxlqfoG4yoFh3-i5e/view) (23 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/12 - Who was that in your story (ktre12).mp4`
+**3:30 PM · Post** — [The Class Alone](https://drive.google.com/file/d/1clWGgq_6o6aWzVVQ1UIzkowWOsMBUWW8/view) (21 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/11 - The Class Alone (kdye11).mp4`
 
-Feeling insecure is human. Turning it into an interrogation pushes people away.
-Tell them how you feel instead and ask to talk. Closeness grows from honesty, not questions with an edge.
+Skipping things because no friend can come? Take the class alone. The bowl might lean, and it will still be the one you made yourself.
 
 **3:50 PM · Trial reel** — [Planning the date like a project](https://drive.google.com/file/d/1frXV3RLIpSJlE-o748ljHtQrTj6sD_eG/view) (10 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/13 - Planning the date like a project (kfae13).mp4`
@@ -3731,11 +3733,11 @@ Some days stay heavy every year. Remembering one for a friend is a quiet kind of
 Snow day date: race to build the tallest snowman, or show up with spare mittens?
 Notice who's cold and warm their hands.
 
-**5:00 PM · Post** — [The Libra Guide: Whatever You Want](https://drive.google.com/file/d/1mEQNy-lpT3yRlfJ5yDvHVUT0P6cEIbhB/view) (67.3 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/07 - The Libra Guide- Whatever You Want (kxsge07).mp4`
+**5:00 PM · Post** — ["You care more about your friends"](https://drive.google.com/file/d/10NVA4l-c6NqWmr0-ga8UBdywV38_0qki/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/11 - -You care more about your friends- (ksbe11).mp4`
 
-"Whatever you want" sounds kind until your side of the scale is empty.
-Libra, your wants count too. This week, say one out loud. Even if it's just tacos.
+Jealous of the group chat? Underneath that is usually "I miss you."
+Say that part, and ask for time that's just yours.
 
 **5:20 PM · Trial reel** — [Aries Loses at Mini Golf](https://drive.google.com/file/d/1lHEgiE0anVyKsylKPgo2MC1R883eNkOH/view) (9 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/13 - Aries Loses at Mini Golf (ksge13).mp4`
@@ -3754,11 +3756,11 @@ The question you're not ready for always seems to come at the table. You don't o
 What would a Cancer wrap for you this winter?
 A photo album of your whole year, with a handwritten note on every page.
 
-**6:30 PM · Post** — [I give great advice. I never take it.](https://drive.google.com/file/d/1HQFm4n0YpfIVkBIXHdJTl9zKW5Dne9OP/view) (18 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/12 - I give great advice. I never take it. (kine12).mp4`
+**6:30 PM · Post** — [Aquarius.exe: Too Close](https://drive.google.com/file/d/1Qe-nIxwr_2YgV7gQjYKxhQMsWAsXLWp-/view) (21 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/11 - Aquarius.exe- Too Close (klge11).mp4`
 
-Great at advice for everyone else, terrible at taking your own? It's easier to see clearly from the outside.
-Next time, ask yourself what you'd tell your best friend.
+Someone gets close and you vanish without a word.
+Needing space is healthy. Just say how long, so the person you like isn't left guessing.
 
 **6:50 PM · Trial reel** — [Aries, you don't have to win this](https://drive.google.com/file/d/1lVD-uYMN-rKA3VBOH_9_iYogqLLMFint/view) (10 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/13 - Aries, you don't have to win this (k5te13).mp4`
@@ -3776,10 +3778,10 @@ This time of year can bring up a lot, and tiny things might set off big feelings
 
 Twelve chats, three typing at once, nobody really talking. Then one long call. One real call beats twelve half-chats.
 
-**8:00 PM · Post** — [Pisces, keep some for you](https://drive.google.com/file/d/1HccaZ_u2KMqBo8oN47yhl2o9Lyv-XU-r/view) (18 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/12 - Pisces, keep some for you (kpte12).mp4`
+**8:00 PM · Post** — [Only texts after midnight](https://drive.google.com/file/d/1YSK_fT81HsdtQAjcIDT2NZPRN1TKtuVd/view) (16 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/11 - Only texts after midnight (kare11).mp4`
 
-For the friend who gives everyone everything: your big heart isn't the problem. It just lives in you too. Keep one piece for yourself tonight.
+"hey stranger" at 12:47, silence at noon. Late-night texts can feel close. Notice who makes plans with you before noon.
 
 **8:20 PM · Trial reel** — ["Adventurous." (that's it)](https://drive.google.com/file/d/1XBXasJL43YqRsbIPX1uqSS4BtF6JL1SY/view) (9 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/13 - -Adventurous.- (that's it) (kbge13).mp4`
@@ -3798,11 +3800,10 @@ Winter doesn't have to put dating on pause. A market stroll, a sunrise walk with
 Moving the whole room around before they come over?
 They're coming to see you, not the couch.
 
-**9:30 PM · Post** — [The Night Before a First Date](https://drive.google.com/file/d/1-zvvnMYZNAFLfRXzo72Jc2Ryy5e__WtU/view) (75 s) ⏱ · *Ask the Stars: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/05 - The Night Before a First Date (kxase05).mp4`
+**9:30 PM · Post** — [Midnight countdown, thumb on send](https://drive.google.com/file/d/1Pefzv3mUZKJYvy5sfnSoSqkwHRsUgkSd/view) (22 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/11 - Midnight countdown, thumb on send (kbxe11).mp4`
 
-First date tomorrow and your brain is running worst cases on a loop.
-Pick the outfit tonight, bring three questions you're curious about, and remember: nerves mean you care.
+Midnight, confetti, and the urge to text them "new start?" Start the year with the people standing next to you.
 
 **9:50 PM · Trial reel** — [Situationship round: Aries](https://drive.google.com/file/d/19GGBUp86nZFK3w8JaIq4IN-pGSovhitb/view) (9.2 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/13 - Situationship round- Aries (khse13).mp4`
@@ -3821,22 +3822,22 @@ Libra, your word for next year is ask. Ask for the table you want and the time y
 Libra's hat matches the scarf and the mug matches the throw.
 The rare item: Libra picking the plan out loud.
 
-**11:00 PM · Post** — Virgo × Capricorn: date night, rescheduled. (90 s) ⏱ · *Sign × Sign: Extended*  
-`kxsse05`
+**11:00 PM · Post** — [Asked how I feel. Brain: error.](https://drive.google.com/file/d/1LZ0mC7lCMHa0vlve5luzlx7TMdgj8QDq/view) (18 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/11 - Asked how I feel. Brain- error. (kmte11).mp4`
 
-Date night moved for the fourth time.
-'Fine, just busy' hides a lot. Say you're tired, let a slow walk count as a plan, and try one talk card with no work words.
+When someone asks how you feel and your brain just freezes.
+You don't need a speech. Pick one honest word and say it out loud.
 
-**11:15 PM · Post** — Say it warm (30.5 s) · *Planet Talk: Mars*  
-`kpmae08`
+**11:15 PM · Post** — [Say it warm](https://drive.google.com/file/d/1tZ50godsl4jh39vAkY9-DJukMWy13GEP/view) (30.5 s) · *Planet Talk: Mars*  
+`Star Talk/Planet Talk/Mars/08 Scorpio - Say it warm (kpmae08).mp4`
 
 Three days of icy silence after they forgot the plans.
 The hurt is allowed. Silence just makes them guess, so say it out loud and warm: I felt hurt when this happened. Can we talk?
 
 ## Day 42 · Tue 15 Dec
 
-**7:45 AM · Post** — Fine Is Not a Feeling (27 s) · *Planet Talk: Mercury*  
-`kpmee08`
+**7:45 AM · Post** — [Fine Is Not a Feeling](https://drive.google.com/file/d/1iFWhhn3yvv4IrUUeBVLgDFg4F3ezL5vN/view) (27 s) · *Planet Talk: Mercury*  
+`Star Talk/Planet Talk/Mercury/08 Scorpio - Fine Is Not a Feeling (kpmee08).mp4`
 
 "Fine." can carry a lot: disappointed, missing them, not wanting to seem needy.
 Name it without blame and leave the door open. A short true text lands softer than you think.
@@ -3858,10 +3859,11 @@ Saying yes to every invite can leave no time for each other. Check in, decline k
 Bringing a "friend" to meet the parents?
 Sag's parents are big huggers. Cancer was not ready.
 
-**9:30 AM · Post** — [Crying at everything](https://drive.google.com/file/d/1yjNGB6x3wvjCd2Z4fpgYxGQCfgfAI9rj/view) (22 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/12 - Crying at everything (khee12).mp4`
+**9:30 AM · Post** — [How do you like to be shown love?](https://drive.google.com/file/d/180wh0EpoZ8HsvEZrmzc95CZirnPgv-pR/view) (22.5 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/11 - How do you like to be shown love- (koce11).mp4`
 
-Cried at a drawing of a dog? Tears are your heart doing the work. Drink some water, eat something, sleep. Send this to your friend who's crying at everything this week.
+You can love someone a lot and still miss each other.
+Notes for someone who feels love through help. Fixing things for someone who needs words. Ask, then love them the way they can feel it.
 
 **9:50 AM · Trial reel** — [Hi [NAME]!](https://drive.google.com/file/d/1DvUU6bHUWTRNxfcLLjqLL23ZZ8_yHFUr/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/13 - Hi [NAME]! (kroe13).mp4`
@@ -3880,10 +3882,11 @@ Yes, the water bearer is an air sign. Aquarius season is about friends, ideas an
 Libra cannot pick an ornament. Classic.
 Sometimes the answer is both, on the same branch.
 
-**11:00 AM · Post** — [Be Your Own Crush](https://drive.google.com/file/d/1BT4EVIcv0LHk41CPprSX5wYavh5BQOtz/view) (22 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/12 - Be Your Own Crush (kdye12).mp4`
+**11:00 AM · Post** — [Not Over Text](https://drive.google.com/file/d/1wVuWxMKlq6UjEz7iwg8TXMuMFxmWR9kk/view) (22 s) · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/07 - Not Over Text (klne07).mp4`
 
-Lonely on a Friday night? Do what you'd do for a crush: candles, the good pasta, a sweet note. Then be the one who writes back to you.
+One short reply and suddenly you've imagined a whole argument.
+When something feels off, call instead of guessing. Tone needs a voice. Save this for the next "k."
 
 **11:20 AM · Trial reel** — [The bus driver waved back](https://drive.google.com/file/d/15rT-wf0994snaNO8_K363Y_o_xXefc5Z/view) (9.0 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/07 - The bus driver waved back (kpre07).mp4`
@@ -3902,11 +3905,11 @@ Nervous about the first five minutes at the door? Skip the script. Ask one real 
 Cancer reviews a framed photo of your first snow day.
 Then it turned the frame over.
 
-**12:30 PM · Post** — [Is the North Star the brightest star?](https://drive.google.com/file/d/1oJWsvAIcAED0hqDXY_eujEuJ04xyM6pE/view) (118 s) ⏱ · *Star Talk Explains: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Star Talk Explains- Extended/04 - Is the North Star the brightest star- (kxexe04).mp4`
+**12:30 PM · Post** — [Libra in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1V4YjmXcczJVd7zb8UG9C2hIYAt9-TNvx/view) (118.6 s) ⏱ · *Deep Dive: ___ in Love*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/07 - Libra in Love- Everything Nobody Tells You (kdde07).mp4`
 
-Plot twist: the North Star isn't the brightest one up there.
-It's famous because it stays put while the whole sky turns. Keep the people you can find in the dark.
+Loving a Libra means hearing six plans and booking none of them.
+They're weighing it fairly, not stalling. Ask what they want, then actually wait. Save this for your Libra.
 
 **12:50 PM · Trial reel** — [Replying “cool” to something that stung](https://drive.google.com/file/d/17pcqvA6mr5ro6dsj4ZKll_QdOInJ35Lj/view) (8.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/14 - Replying “cool” to something that stung (kwme14).mp4`
@@ -3924,11 +3927,11 @@ Scorpio, you remember the small things: their colour, their oat milk, their cold
 
 Look at a photo of yourself from last December. Now look around. Be proud of who carried you here: you.
 
-**2:00 PM · Post** — ["You don't even care"](https://drive.google.com/file/d/17Gvx1kI2MEpN7bmsoMio7wD6MPhjH4dz/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/12 - -You don't even care- (ksbe12).mp4`
+**2:00 PM · Post** — [Who was that in your story](https://drive.google.com/file/d/1Foa9PMxa2lcmMxEsxlqfoG4yoFh3-i5e/view) (23 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/12 - Who was that in your story (ktre12).mp4`
 
-On a rough day it's easy to accuse instead of ask.
-Say what you need, plainly. Most people will happily scoot over.
+Feeling insecure is human. Turning it into an interrogation pushes people away.
+Tell them how you feel instead and ask to talk. Closeness grows from honesty, not questions with an edge.
 
 **2:20 PM · Trial reel** — [Meeting the Friend's New Partner](https://drive.google.com/file/d/1jr-O4nM34yrFbjVnU7egJjobuJ7ivXVf/view) (9 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/14 - Meeting the Friend's New Partner (kwoe14).mp4`
@@ -3947,11 +3950,11 @@ Wondering when to bring up the future? Not on date one, and not never. Give it a
 Leo as a gift: a gold scarf you can spot from across the street.
 And a matching one for you, so you shine together.
 
-**3:30 PM · Post** — [Pisces.exe: The Fairy Tale Filter](https://drive.google.com/file/d/1gRbXpUuqP_HrL3Jvv2n-S-qHVq75MZ8Q/view) (24 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/12 - Pisces.exe- The Fairy Tale Filter (klge12).mp4`
+**3:30 PM · Post** — [I give great advice. I never take it.](https://drive.google.com/file/d/1HQFm4n0YpfIVkBIXHdJTl9zKW5Dne9OP/view) (18 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/12 - I give great advice. I never take it. (kine12).mp4`
 
-Falling for who they could be, not who keeps showing up.
-Take the filter off. Love the person who actually texts back, actually arrives, actually stays.
+Great at advice for everyone else, terrible at taking your own? It's easier to see clearly from the outside.
+Next time, ask yourself what you'd tell your best friend.
 
 **3:50 PM · Trial reel** — [Advice You'd Never Take](https://drive.google.com/file/d/1hqao6T048P6phcTdb009rWYN5TVfuPp4/view) (8.0 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/14 - Advice You'd Never Take (k3se14).mp4`
@@ -3970,10 +3973,11 @@ Your partner loves an idea that you're not quite comfortable with? Be honest abo
 Who's first on the dance floor at the holiday party?
 Ranked. Dance when you're ready, nobody's grading.
 
-**5:00 PM · Post** — [Was that a date?](https://drive.google.com/file/d/1SoObMVFXi3vusS6VCVJZb4EgAG9RA5NM/view) (16 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/12 - Was that a date- (kare12).mp4`
+**5:00 PM · Post** — [The Libra Guide: Whatever You Want](https://drive.google.com/file/d/1mEQNy-lpT3yRlfJ5yDvHVUT0P6cEIbhB/view) (67.3 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/07 - The Libra Guide- Whatever You Want (kxsge07).mp4`
 
-"Wanna grab food?" No decoder ring needed. Just ask, "as a date?" Clarity is cute, and the answer might be the one you're hoping for.
+"Whatever you want" sounds kind until your side of the scale is empty.
+Libra, your wants count too. This week, say one out loud. Even if it's just tacos.
 
 **5:20 PM · Trial reel** — [Taurus vs Scorpio: Who Says It First](https://drive.google.com/file/d/1msCw1evelzsQKLvbjwfg5Img_1TimRKu/view) (9 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/14 - Taurus vs Scorpio- Who Says It First (ktte14).mp4`
@@ -3992,10 +3996,10 @@ You can be right about the point and still owe a sorry for the volume. Apologize
 Two hours in and they haven't asked you a single question. Is that it?
 Curiosity is how care sounds. You deserve someone who asks.
 
-**6:30 PM · Post** — [This meme is so them](https://drive.google.com/file/d/1JOJlVn6Q580c4WvLz52fHPowW_TxvqN-/view) (16 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/12 - This meme is so them (kbxe12).mp4`
+**6:30 PM · Post** — [Pisces, keep some for you](https://drive.google.com/file/d/1HccaZ_u2KMqBo8oN47yhl2o9Lyv-XU-r/view) (18 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/12 - Pisces, keep some for you (kpte12).mp4`
 
-That meme is SO them. If it's really an opening and you're not ready to be friends, send it to the people who'll laugh the loudest.
+For the friend who gives everyone everything: your big heart isn't the problem. It just lives in you too. Keep one piece for yourself tonight.
 
 **6:50 PM · Trial reel** — [No plus-one, full dance floor](https://drive.google.com/file/d/1z124S8vCy9bK8fYeVhD5YRyHkcGI2n9x/view) (9 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/14 - No plus-one, full dance floor (kgse14).mp4`
@@ -4014,11 +4018,10 @@ Lots of hellos and still lonely? Quick texts don't always fill the gap. Pick one
 Taurus, they asked for one bite of your cake.
 Share the bite. You can keep the plate.
 
-**8:00 PM · Post** — [Comparing myself to their new person](https://drive.google.com/file/d/1EBmrqDb0mccxyefXkX7AO2MTz71U7xr4/view) (25 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/12 - Comparing myself to their new person (kmte12).mp4`
+**8:00 PM · Post** — [Crying at everything](https://drive.google.com/file/d/1yjNGB6x3wvjCd2Z4fpgYxGQCfgfAI9rj/view) (22 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/12 - Crying at everything (khee12).mp4`
 
-Scrolling their new person's photos and making a list of everything you're not.
-You'd never let a friend talk about themselves like that. Be your own best friend tonight.
+Cried at a drawing of a dog? Tears are your heart doing the work. Drink some water, eat something, sleep. Send this to your friend who's crying at everything this week.
 
 **8:20 PM · Trial reel** — [Waiting for them to text first](https://drive.google.com/file/d/1upUiTb0Tf2Vwx4lVIOn26vbEruSD4y7v/view) (9 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/14 - Waiting for them to text first (kfae14).mp4`
@@ -4036,11 +4039,11 @@ Inside jokes are fun until someone is standing outside them. When a new friend j
 
 Take a Taurus to a holiday market and they'll taste every sample. Mention the one you liked and they buy the box.
 
-**9:30 PM · Post** — [Beach or cabin?](https://drive.google.com/file/d/15HwZrDTqljcqJS2fp1qoJTUMubtYCHuP/view) (15 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/12 - Beach or cabin- (koce12).mp4`
+**9:30 PM · Post** — [The Night Before a First Date](https://drive.google.com/file/d/1-zvvnMYZNAFLfRXzo72Jc2Ryy5e__WtU/view) (75 s) ⏱ · *Ask the Stars: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/05 - The Night Before a First Date (kxase05).mp4`
 
-Beach or mountain cabin? You picked different answers. That's fine.
-It was never about matching. It's about planning the trip together.
+First date tomorrow and your brain is running worst cases on a loop.
+Pick the outfit tonight, bring three questions you're curious about, and remember: nerves mean you care.
 
 **9:50 PM · Trial reel** — [Taurus at 2 A.M.](https://drive.google.com/file/d/1foXPND_pti-629xixdn_psWU3fUXRcmA/view) (9 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/14 - Taurus at 2 A.M. (ksge14).mp4`
@@ -4059,22 +4062,22 @@ Adventure and planning make a good team when both get a turn. Finish one thing, 
 Month one, and their family invites you to dinner.
 You don't have to say yes, and you don't have to hide. Go if you're ready, and ask who'll be there.
 
-**11:00 PM · Post** — [The strong friend needs a minute](https://drive.google.com/file/d/1dOfC3sMRtH7PIoSdNwOkOx--oFUORpNj/view) (22 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/13 - The strong friend needs a minute (ktre13).mp4`
+**11:00 PM · Post** — [Virgo × Capricorn: date night, rescheduled.](https://drive.google.com/file/d/1uueV7LgmxHhwjqG3CJI52jy0swPNPuF9/view) (90 s) ⏱ · *Sign × Sign: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Sign × Sign- Extended/05 - Virgo × Capricorn- date night, rescheduled. (kxsse05).mp4`
 
-To the friend who always gives the advice: you're allowed to need some too.
-Send the honest text to your group chat tonight. Let the people you hold up hold you.
+Date night moved for the fourth time.
+'Fine, just busy' hides a lot. Say you're tired, let a slow walk count as a plan, and try one talk card with no work words.
 
-**11:15 PM · Post** — Scorpio's Midnight Scroll (24.4 s) · *Planet Talk: The Moon*  
-`kpmoe08`
+**11:15 PM · Post** — [Scorpio's Midnight Scroll](https://drive.google.com/file/d/1johc4S8uT8RRigRJ5Uyh0qwJ5wsMnfGo/view) (24.4 s) · *Planet Talk: The Moon*  
+`Star Talk/Planet Talk/The Moon/08 Scorpio - Scorpio's Midnight Scroll (kpmoe08).mp4`
 
 Checking an ex's profile at midnight keeps the wound open.
 Muting isn't weak; it's care. Then text a friend for a walk.
 
 ## Day 43 · Wed 16 Dec
 
-**7:45 AM · Post** — Neptune to Scorpio: The Tinted Lenses (26 s) · *Planet Talk: Neptune*  
-`kpnee08`
+**7:45 AM · Post** — [Neptune to Scorpio: The Tinted Lenses](https://drive.google.com/file/d/1YB3p_fhsCOkCmvxFb_PCzf99ecH1g3Vp/view) (26 s) · *Planet Talk: Neptune*  
+`Star Talk/Planet Talk/Neptune/08 Scorpio - Neptune to Scorpio- The Tinted Lenses (kpnee08).mp4`
 
 Calling late replies and cancelled plans mysterious is easy when you really like someone. Look at how they treat you, not the mystery. You deserve someone clear.
 
@@ -4095,11 +4098,10 @@ You brought them to the party, so stay close. A glance, a squeeze or a quiet "yo
 When you and your "friend" tell the how-we-met story in perfect sync.
 The parents noticed.
 
-**9:30 AM · Post** — [Dreading the "what are we" talk](https://drive.google.com/file/d/19v-l7-oZuX-rZCHe21qo26g-FJUq-SyV/view) (19 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/13 - Dreading the -what are we- talk (kine13).mp4`
+**9:30 AM · Post** — [Be Your Own Crush](https://drive.google.com/file/d/1BT4EVIcv0LHk41CPprSX5wYavh5BQOtz/view) (22 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/12 - Be Your Own Crush (kdye12).mp4`
 
-Six months in, no label, and dreading the talk. Wanting to know where you stand is fair.
-Ask with curiosity, not a deadline, and really listen to the answer.
+Lonely on a Friday night? Do what you'd do for a crush: candles, the good pasta, a sweet note. Then be the one who writes back to you.
 
 **9:50 AM · Trial reel** — [The list of no's](https://drive.google.com/file/d/1a2is9uczOcEqyABgAOfgx4_w7evg_tAP/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/14 - The list of no's (kbge14).mp4`
@@ -4117,10 +4119,11 @@ Keeping a list of who didn't text back over the holidays? It only gets longer. T
 
 "I'm fine!!" with a wobbly lip, versus "I miss home" said out loud. Saying it lets the people around you help.
 
-**11:00 AM · Post** — [Taurus, you are not behind](https://drive.google.com/file/d/1LlBc4KejvNjwjsqJf4tbu84C7_LPjUsk/view) (17 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/13 - Taurus, you are not behind (kpte13).mp4`
+**11:00 AM · Post** — ["You don't even care"](https://drive.google.com/file/d/17Gvx1kI2MEpN7bmsoMio7wD6MPhjH4dz/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/12 - -You don't even care- (ksbe12).mp4`
 
-Everyone's getting engaged and you feel late? There's no deadline on love, and their timeline isn't your scoreboard. Build a life you love in the meantime.
+On a rough day it's easy to accuse instead of ask.
+Say what you need, plainly. Most people will happily scoot over.
 
 **11:20 AM · Trial reel** — [Left on read round: Taurus](https://drive.google.com/file/d/1IGiLTKuvpzGW006BMJx1ZHvsWtQw3RdU/view) (9.1 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/14 - Left on read round- Taurus (khse14).mp4`
@@ -4139,10 +4142,11 @@ Pisces season, the last stop before the March equinox, and our teacher cried the
 Virgo's gift already has your birthday written in it.
 A planner and a coupon for one free errand. Practical can be very romantic.
 
-**12:30 PM · Post** — [The emergency floor visit](https://drive.google.com/file/d/1TAFXaxicuTCjIiYUYfi1mbkvehh5Hyho/view) (26 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/13 - The emergency floor visit (khee13).mp4`
+**12:30 PM · Post** — [Is the North Star the brightest star?](https://drive.google.com/file/d/1oJWsvAIcAED0hqDXY_eujEuJ04xyM6pE/view) (118 s) ⏱ · *Star Talk Explains: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Star Talk Explains- Extended/04 - Is the North Star the brightest star- (kxexe04).mp4`
 
-You don't need a speech when you're hurting, you need company. Let your friends in, even if the kitchen is a mess and you're lying on the floor.
+Plot twist: the North Star isn't the brightest one up there.
+It's famous because it stays put while the whole sky turns. Keep the people you can find in the dark.
 
 **12:50 PM · Trial reel** — [Ending it kindly](https://drive.google.com/file/d/17mc6cky_lUV9i5fAdJds-xvGGNYw2A9z/view) (12 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/14 - Ending it kindly (kute14).mp4`
@@ -4161,10 +4165,11 @@ Feeling like the outsider with your partner's friends is hard. You don't have to
 Twelve cheeses for a date who can't do dairy?
 Taurus already asked, so there was a second board just for them.
 
-**2:00 PM · Post** — [Cooking for Company](https://drive.google.com/file/d/19BU-qekg3_MippXsGGU1_c31Hm5cV4pU/view) (21 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/13 - Cooking for Company (kdye13).mp4`
+**2:00 PM · Post** — [Pisces.exe: The Fairy Tale Filter](https://drive.google.com/file/d/1gRbXpUuqP_HrL3Jvv2n-S-qHVq75MZ8Q/view) (24 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/12 - Pisces.exe- The Fairy Tale Filter (klge12).mp4`
 
-Cooking for one can feel a bit sad. Make the family recipe anyway, set the table properly, light the candle. You count as company.
+Falling for who they could be, not who keeps showing up.
+Take the filter off. Love the person who actually texts back, actually arrives, actually stays.
 
 **2:20 PM · Trial reel** — [Correcting Their Bio](https://drive.google.com/file/d/16MhJO3mufhXrq41Ys10C1IRWfhaFOdCl/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/14 - Correcting Their Bio (kroe14).mp4`
@@ -4183,11 +4188,10 @@ Six hours in one car can test anyone. Snacks for both moods, taking turns on the
 Cooking with your person: taste every step, or label every spice?
 It's dinner for two. Laugh at the burnt bit.
 
-**3:30 PM · Post** — ["Here we go again"](https://drive.google.com/file/d/19CE4SAfID2tG3i2Cy_MrZ-ptO5pBlI4j/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/13 - -Here we go again- (ksbe13).mp4`
+**3:30 PM · Post** — [Was that a date?](https://drive.google.com/file/d/1SoObMVFXi3vusS6VCVJZb4EgAG9RA5NM/view) (16 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/12 - Was that a date- (kare12).mp4`
 
-An eye-roll tells someone not to bother next time.
-Even the tenth talk deserves an open door: "Okay. I'm listening."
+"Wanna grab food?" No decoder ring needed. Just ask, "as a date?" Clarity is cute, and the answer might be the one you're hoping for.
 
 **3:50 PM · Trial reel** — [Starting a reply, finishing it next week](https://drive.google.com/file/d/1aK1LzG09jVNmk0SeiDbaA3qZisZ3V24X/view) (9.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/15 - Starting a reply, finishing it next week (kwme15).mp4`
@@ -4206,11 +4210,11 @@ Worried your family will be a lot? A short, honest heads-up is a kindness. Say w
 Libra's wrapping is so pretty you won't want to open it.
 Inside, one card: you pick. Then you decide together.
 
-**5:00 PM · Post** — [Cancer.exe: The 2 A.M. Reread](https://drive.google.com/file/d/1kVC2OIaiM3UHfQ1br1_qvTuKqeA9LKpX/view) (21 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/13 - Cancer.exe- The 2 A.M. Reread (klge13).mp4`
+**5:00 PM · Post** — [Love in Two Languages](https://drive.google.com/file/d/1y8DN332Z33avzZMBL1LZuWjhsR5ml1IT/view) (90 s) ⏱ · *The Make-Up Talk: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Make-Up Talk- Extended/04 - Love in Two Languages (kxmue04).mp4`
 
-2 a.m., three years up the chat, only the good parts.
-Missing someone is real. It doesn't mean going back. Text a friend who's up instead.
+One of you says I love you out loud. The other says it with a spreadsheet.
+Ask what makes them feel most loved, then try saying it their way. Who in your life loves in rows?
 
 **5:20 PM · Trial reel** — [Getting a Compliment](https://drive.google.com/file/d/1rrHgqcC51eKotpddM0F6nTbErHngxHG7/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/15 - Getting a Compliment (kwoe15).mp4`
@@ -4229,10 +4233,10 @@ You don't owe anyone a label, but you can stay kind.
 
 Then: a cape, a spotlight, a grand entrance. Now: Leo spots the shy guest and waves them in. Shine, then pass the light.
 
-**6:30 PM · Post** — [Both waiting for the other one to say it](https://drive.google.com/file/d/1m-gGAAVdmD29ZBGTxvIUycW0LLzLVeNz/view) (20 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/13 - Both waiting for the other one to say it (kare13).mp4`
+**6:30 PM · Post** — [This meme is so them](https://drive.google.com/file/d/1JOJlVn6Q580c4WvLz52fHPowW_TxvqN-/view) (16 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/12 - This meme is so them (kbxe12).mp4`
 
-Typing, deleting, sending "hey :)" while they do the exact same thing. You're both holding the same door. Someone has to go first, and it can be you.
+That meme is SO them. If it's really an opening and you're not ready to be friends, send it to the people who'll laugh the loudest.
 
 **6:50 PM · Trial reel** — [Hot, Cold, Hot, Cold](https://drive.google.com/file/d/1ulJ1A6fOuNOKX4Z1GkQMbyO2lzxgM53c/view) (6.6 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/15 - Hot, Cold, Hot, Cold (k3se15).mp4`
@@ -4251,10 +4255,11 @@ Scorpio doesn't care about the bow. What lands is trust, a small sign that says 
 Which sign is already wearing your hoodie?
 Ranked by who gets cold first. Lend it, and maybe get it back.
 
-**8:00 PM · Post** — [You owe them an apology](https://drive.google.com/file/d/1Ax6q5FFkCZEEQGf6UY3ZyV6dsJcYKI6O/view) (24 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/13 - You owe them an apology (kbxe13).mp4`
+**8:00 PM · Post** — [Comparing myself to their new person](https://drive.google.com/file/d/1EBmrqDb0mccxyefXkX7AO2MTz71U7xr4/view) (25 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/12 - Comparing myself to their new person (kmte12).mp4`
 
-Sometimes the check says send it. A real apology asks for nothing back, not even a reply. Say sorry, then let it be theirs.
+Scrolling their new person's photos and making a list of everything you're not.
+You'd never let a friend talk about themselves like that. Be your own best friend tonight.
 
 **8:20 PM · Trial reel** — [Gemini vs Sagittarius: The 2 A.M. Scroll](https://drive.google.com/file/d/1xThP-GX7RQ1re5k-GibiUyj0QtGdD3HN/view) (8 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/15 - Gemini vs Sagittarius- The 2 A.M. Scroll (ktte15).mp4`
@@ -4273,11 +4278,11 @@ Holiday photos get serious fast. Leave room for everyone, ask for the photo you 
 You show them the frog you knitted and they laugh at you. Now what?
 Find someone who asks why you love it instead.
 
-**9:30 PM · Post** — ["So… are you seeing anyone?"](https://drive.google.com/file/d/1RX7DdG5Hzlek8iaXecj0DDTCCmSD-dQp/view) (22 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/13 - -So… are you seeing anyone-- (kmte13).mp4`
+**9:30 PM · Post** — [Couples' Game Night](https://drive.google.com/file/d/1pfmOoUtUGvoY-cZ_r-CBh_19UFSb3V9z/view) (75 s) ⏱ · *Single and Thriving: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Single and Thriving- Extended/04 - Couples' Game Night (kxste04).mp4`
 
-That question at the holiday table, with everyone looking at you.
-Being single is not something to explain. "Not yet, and I'm good" is a full answer.
+Every team at game night is a couple. Yours is just you.
+Play as yourself and ask who's free to join. Sometimes the best teammate is someone's grandma.
 
 **9:50 PM · Trial reel** — [Rereading the whole chat at 2 a.m.](https://drive.google.com/file/d/1JOL80E1lfju6AGqnZ-zUvZxtWMShreM7/view) (10 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/15 - Rereading the whole chat at 2 a.m. (kgse15).mp4`
@@ -4296,22 +4301,22 @@ When someone you love is hurting, a five-step plan can feel like homework. Ask f
 Gemini, four chats are buzzing and your date just said "hi?"
 Put the phones down for an hour. One chat at a time.
 
-**11:00 PM · Post** — [The most romantic thing](https://drive.google.com/file/d/187vMON5Z0ED06Gb3_GNY4QG6GQ2uuE_7/view) (20.2 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/13 - The most romantic thing (koce13).mp4`
+**11:00 PM · Post** — [Beach or cabin?](https://drive.google.com/file/d/15HwZrDTqljcqJS2fp1qoJTUMubtYCHuP/view) (15 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/12 - Beach or cabin- (koce12).mp4`
 
-Ask someone about the most romantic thing anyone has done for them.
-Their answer is a map. You don't have to guess what makes them feel loved.
+Beach or mountain cabin? You picked different answers. That's fine.
+It was never about matching. It's about planning the trip together.
 
-**11:15 PM · Post** — Pluto to Scorpio: The Grudge Vault (76.6 s) ⏱ · *Planet Talk: Pluto*  
-`kpple08`
+**11:15 PM · Post** — [Pluto to Scorpio: The Grudge Vault](https://drive.google.com/file/d/1fL3yalhqeV97txsm4rTeZ5UxWNpWNLC5/view) (76.6 s) ⏱ · *Planet Talk: Pluto*  
+`Star Talk/Planet Talk/Pluto/08 Scorpio - Pluto to Scorpio- The Grudge Vault (kpple08).mp4`
 
 Pluto opens Scorpio's grudge vault, one filed hurt at a time. Stay for what's inside.
 Holding on doesn't punish them, it just keeps you up. You don't have to forgive it all today, you just have to open the door.
 
 ## Day 44 · Thu 17 Dec
 
-**7:45 AM · Post** — Saturn and Scorpio's Spare Key (30 s) · *Planet Talk: Saturn*  
-`kpsae08`
+**7:45 AM · Post** — [Saturn and Scorpio's Spare Key](https://drive.google.com/file/d/1pCOUzHMpur7tX-n67egUoVV396aVpZfy/view) (30 s) · *Planet Talk: Saturn*  
+`Star Talk/Planet Talk/Saturn/08 Scorpio - Saturn and Scorpio's Spare Key (kpsae08).mp4`
 
 Liking someone and keeping them at arm's length, just in case. Trust isn't one big leap. It's small promises, kept, and you get to let people in one ring at a time.
 
@@ -4332,11 +4337,11 @@ When both families want the same day, it's easy to feel pulled in half. You're o
 "We are NOT together." Said a little too loud.
 Now the soup is very quiet.
 
-**9:30 AM · Post** — [Two Clocks](https://drive.google.com/file/d/16ur4BGFpS1FaMWCE4jmbF6MQ9isSXDCy/view) (22 s) · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/08 - Two Clocks (klne08).mp4`
+**9:30 AM · Post** — [The strong friend needs a minute](https://drive.google.com/file/d/1dOfC3sMRtH7PIoSdNwOkOx--oFUORpNj/view) (22 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/13 - The strong friend needs a minute (ktre13).mp4`
 
-It's easy to forget the hours and wake them up at 3 a.m. by accident.
-Hang a second clock set to their time. A tiny habit that says you're thinking about their day too.
+To the friend who always gives the advice: you're allowed to need some too.
+Send the honest text to your group chat tonight. Let the people you hold up hold you.
 
 **9:50 AM · Trial reel** — [Gemini Texts First](https://drive.google.com/file/d/1RXWheHFJqjaOJQRYdlRii7RBoaZbUAqg/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/15 - Gemini Texts First (ksge15).mp4`
@@ -4355,11 +4360,11 @@ Scorpio, your word for next year is soften. Not weaker, warmer. Letting people c
 A Scorpio gift comes locked, of course.
 A tiny journal, the key, and one honest secret. Trust is the real present.
 
-**11:00 AM · Post** — [Happy holidays (not in a weird way)](https://drive.google.com/file/d/1hiYyG6DVGE4Dx7LzhZdS2w0S595Qaupi/view) (21 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/14 - Happy holidays (not in a weird way) (ktre14).mp4`
+**11:00 AM · Post** — [Dreading the "what are we" talk](https://drive.google.com/file/d/19v-l7-oZuX-rZCHe21qo26g-FJUq-SyV/view) (19 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/13 - Dreading the -what are we- talk (kine13).mp4`
 
-Texting a crush over the holidays? Keep it warm and simple.
-A kind wish and an easy invite leave the door open. Brackets not required.
+Six months in, no label, and dreading the talk. Wanting to know where you stand is fair.
+Ask with curiosity, not a deadline, and really listen to the answer.
 
 **11:20 AM · Trial reel** — [Gemini, one bubble is enough](https://drive.google.com/file/d/1RlqIISkPywzU-cGwVQpXo_HMl-Kx_JVt/view) (11 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/15 - Gemini, one bubble is enough (k5te15).mp4`
@@ -4377,11 +4382,11 @@ When your friends pair up, it's easy to quietly drift home. Your friends still w
 
 Your Gemini knows everyone at the party. Their favourite conversation of the night is still the quiet one with you.
 
-**12:30 PM · Post** — [Scorpio in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1U8DDAixnky8cDTmC_-DV3OLFceoIhSv-/view) (119.3 s) ⏱ · *Deep Dive: ___ in Love*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/08 - Scorpio in Love- Everything Nobody Tells You (kdde08).mp4`
+**12:30 PM · Post** — [The 3 A.M. Bakery](https://drive.google.com/file/d/1OQAIAQuxvN9Tvqr3MiRX27awS3n3xtn_/view) (90 s) ⏱ · *Moonlight Lane: Side Stories*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Moonlight Lane- Side Stories/04 - The 3 A.M. Bakery (kxmle04).mp4`
 
-If a Scorpio asks your biggest fear on date one, they're not being intense. They're interested.
-Be honest, be patient with the quiet, and show up the same every day. That's how the door opens.
+Moonlight Lane, Side Story: 3 A.M., the old photos, and the only light on the lane is the bakery.
+You can miss someone without going back. Let daylight decide, and text a friend instead.
 
 **12:50 PM · Trial reel** — [Six raccoons in a coat](https://drive.google.com/file/d/1ty_ng5FJAL6PicRLVPlORHqOp9LnI_aC/view) (9 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/15 - Six raccoons in a coat (kbge15).mp4`
@@ -4400,11 +4405,10 @@ Sometimes fine means fine, and sometimes it means not yet. Don't push and don't 
 They forgot your gift. Sad song or fake smile?
 Say it stung, kindly. Then let it go.
 
-**2:00 PM · Post** — [Left on read and my whole day's ruined](https://drive.google.com/file/d/1m3tGnW4UnYed2V-OimwLmGvGBdrrYXpm/view) (18 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/14 - Left on read and my whole day's ruined (kine14).mp4`
+**2:00 PM · Post** — [Taurus, you are not behind](https://drive.google.com/file/d/1LlBc4KejvNjwjsqJf4tbu84C7_LPjUsk/view) (17 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/13 - Taurus, you are not behind (kpte13).mp4`
 
-Left on read and suddenly the whole day feels ruined? Your brain fills silence with the worst story.
-Put the phone down and do the next thing. Silence is a blank, not a verdict.
+Everyone's getting engaged and you feel late? There's no deadline on love, and their timeline isn't your scoreboard. Build a life you love in the meantime.
 
 **2:20 PM · Trial reel** — [2 a.m. scroll round: Gemini](https://drive.google.com/file/d/1Ty68E5MF9sgRFNOr97GuptImnwzfxeWb/view) (9.6 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/15 - 2 a.m. scroll round- Gemini (khse15).mp4`
@@ -4423,10 +4427,10 @@ Aries season begins at the March equinox: fresh starts and the courage to go fir
 A night market where you try everything. Too much?
 The best part was one bench, one shared dumpling and a real talk.
 
-**3:30 PM · Post** — [Virgo, take your own advice](https://drive.google.com/file/d/16e-lgGh4L9ff35NtARjm8kyoaAAhGsia/view) (17 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/14 - Virgo, take your own advice (kpte14).mp4`
+**3:30 PM · Post** — [The emergency floor visit](https://drive.google.com/file/d/1TAFXaxicuTCjIiYUYfi1mbkvehh5Hyho/view) (26 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/13 - The emergency floor visit (khee13).mp4`
 
-You'd never let your best friend settle, so don't let yourself. Talk to you the way you talk to them. Tag the friend who gives advice and never takes it.
+You don't need a speech when you're hurting, you need company. Let your friends in, even if the kitchen is a mess and you're lying on the floor.
 
 **3:50 PM · Trial reel** — [Replying three weeks late](https://drive.google.com/file/d/1iiq7LnWgD0nUqvhGIx4X3ptBeTN3LbOG/view) (9 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/15 - Replying three weeks late (kute15).mp4`
@@ -4445,11 +4449,10 @@ You don't need perfect words to comfort someone who's hurting. Sit close, ask if
 Movie night: every trailer at once, or a pros and cons list for each one?
 Sometimes the kind thing is just picking one.
 
-**5:00 PM · Post** — [The Scorpio Guide: Left on Read](https://drive.google.com/file/d/1_c6dLPw7FSABDFg29e-kdr8SqmaaLdWW/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/08 - The Scorpio Guide- Left on Read (kxsge08).mp4`
+**5:00 PM · Post** — [Cooking for Company](https://drive.google.com/file/d/19BU-qekg3_MippXsGGU1_c31Hm5cV4pU/view) (21 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/13 - Cooking for Company (kdye13).mp4`
 
-Left on read and the investigation board is already up, Scorpio.
-A period is not a verdict. This week, skip the decoding and say one soft true thing first.
+Cooking for one can feel a bit sad. Make the family recipe anyway, set the table properly, light the candle. You count as company.
 
 **5:20 PM · Trial reel** — [All About Me](https://drive.google.com/file/d/192sm3_7tAB0BBU1fpxqo7sO-we1fqU5O/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/15 - All About Me (kroe15).mp4`
@@ -4468,10 +4471,11 @@ Two invitations for the same day can feel like a tug of war. Make the plan as a 
 Some feelings show up at 3 AM and want to be said right now.
 Wait for daylight, then say it simply.
 
-**6:30 PM · Post** — [The bad day on day 23](https://drive.google.com/file/d/1itXpS9AesjzQEbY65p57CXf_E1MZK1RV/view) (24 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/14 - The bad day on day 23 (khee14).mp4`
+**6:30 PM · Post** — ["Here we go again"](https://drive.google.com/file/d/19CE4SAfID2tG3i2Cy_MrZ-ptO5pBlI4j/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/13 - -Here we go again- (ksbe13).mp4`
 
-One song and it feels like day one again. A bad day isn't starting over: healing goes up and down, and every day you've done still counts.
+An eye-roll tells someone not to bother next time.
+Even the tenth talk deserves an open door: "Okay. I'm listening."
 
 **6:50 PM · Trial reel** — [A note in the coat pocket](https://drive.google.com/file/d/1GiHxr-U-9nsTBtwKuILibef8mu4LJvxc/view) (9.4 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/08 - A note in the coat pocket (kpre08).mp4`
@@ -4490,10 +4494,11 @@ Pretending to love a date to keep the peace still costs you something. Gentle ho
 Scorpio in winter: black coat, a candle lit at 4 PM, one deep question.
 Being let into the inner circle is the real gift.
 
-**8:00 PM · Post** — [Wobble Proudly](https://drive.google.com/file/d/1bi0QcFT15KpoNEJbtwo0Grs_Ja-TURIH/view) (21 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/14 - Wobble Proudly (kdye14).mp4`
+**8:00 PM · Post** — [Cancer.exe: The 2 A.M. Reread](https://drive.google.com/file/d/1kVC2OIaiM3UHfQ1br1_qvTuKqeA9LKpX/view) (21 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/13 - Cancer.exe- The 2 A.M. Reread (klge13).mp4`
 
-Everyone at the rink seems to be in pairs this time of year. Go anyway. Wobble, fall a little, find your glide, then buy yourself the cocoa.
+2 a.m., three years up the chat, only the good parts.
+Missing someone is real. It doesn't mean going back. Text a friend who's up instead.
 
 **8:20 PM · Trial reel** — [Saving the receipt from our first date](https://drive.google.com/file/d/1KmXQUxOrcp-gKw63oW41GFMMt3f-bUaQ/view) (9.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/16 - Saving the receipt from our first date (kwme16).mp4`
@@ -4512,11 +4517,10 @@ Sagittarius loves by making people laugh: the snowman, the voices, the bit. Keep
 Your date just ran off and left you in the snowy queue.
 It came back with two hot cocoas.
 
-**9:30 PM · Post** — The Friend Who Only Vents (60 s) ⏱ · *Friends First: Extended*  
-`kxffe03`
+**9:30 PM · Post** — [Both waiting for the other one to say it](https://drive.google.com/file/d/1m-gGAAVdmD29ZBGTxvIUycW0LLzLVeNz/view) (20 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/13 - Both waiting for the other one to say it (kare13).mp4`
 
-Always the listener, never the one who gets to share the big news?
-You're allowed to ask for a turn. Good friends want to hear it. Send this to the friend who always listens.
+Typing, deleting, sending "hey :)" while they do the exact same thing. You're both holding the same door. Someone has to go first, and it can be you.
 
 **9:50 PM · Trial reel** — [The Risky Text](https://drive.google.com/file/d/1soD_x0ieX7EJynD74_M4mSyHzwYUKI0j/view) (9 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/16 - The Risky Text (kwoe16).mp4`
@@ -4535,22 +4539,21 @@ Stressing over what to bring their parents? The best gift isn't the biggest one.
 Sagittarius would gift you a snow globe of a city you've never seen.
 With two train tickets inside, because adventures are better shared.
 
-**11:00 PM · Post** — ["Do whatever you want"](https://drive.google.com/file/d/1T0ivz92SSEiPOHM6yLcgSDBEJR09IotY/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/14 - -Do whatever you want- (ksbe14).mp4`
+**11:00 PM · Post** — [You owe them an apology](https://drive.google.com/file/d/1Ax6q5FFkCZEEQGf6UY3ZyV6dsJcYKI6O/view) (24 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/13 - You owe them an apology (kbxe13).mp4`
 
-"Do whatever you want" is a test, and nobody passes tests they can't see.
-Say what you actually want. It's allowed.
+Sometimes the check says send it. A real apology asks for nothing back, not even a reply. Say sorry, then let it be theirs.
 
-**11:15 PM · Post** — Scorpio Opens One Window (26 s) · *Planet Talk: The Sun*  
-`kpsue08`
+**11:15 PM · Post** — [Scorpio Opens One Window](https://drive.google.com/file/d/1YB-ZuxYXrLfEKbxOqpx9x-6ZycgdtQQ-/view) (26 s) · *Planet Talk: The Sun*  
+`Star Talk/Planet Talk/The Sun/08 Scorpio - Scorpio Opens One Window (kpsue08).mp4`
 
 Trust is built a little at a time.
 You don't have to open the whole fortress on date three. Share one small true thing and see who shares back.
 
 ## Day 45 · Fri 18 Dec
 
-**7:45 AM · Post** — Scorpio, No More Tests (29 s) · *Planet Talk: Uranus*  
-`kpure08`
+**7:45 AM · Post** — [Scorpio, No More Tests](https://drive.google.com/file/d/1-r3AKpcmAwz1sGKI4_WE8tIyBmugZkBg/view) (29 s) · *Planet Talk: Uranus*  
+`Star Talk/Planet Talk/Uranus/08 Scorpio - Scorpio, No More Tests (kpure08).mp4`
 
 Replying slowly on purpose to see if they'll chase you? That kind of test doesn't build trust.
 Ask straight: "I really like talking to you. Do you feel the same?" They might have been scared too.
@@ -4572,11 +4575,11 @@ If "I love you" caught you off guard, freezing is allowed. Answer with the truth
 Shortcut or the long way, when you like who you're walking with?
 Cancer picks the map route.
 
-**9:30 AM · Post** — [Scorpio.exe: Waiting to Be Sure](https://drive.google.com/file/d/1l0nhTDagrJVKMK47pzr7jsXgzQCyUu1J/view) (22 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/14 - Scorpio.exe- Waiting to Be Sure (klge14).mp4`
+**9:30 AM · Post** — ["So… are you seeing anyone?"](https://drive.google.com/file/d/1RX7DdG5Hzlek8iaXecj0DDTCCmSD-dQp/view) (22 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/13 - -So… are you seeing anyone-- (kmte13).mp4`
 
-The text is written. Certainty: 99%. Still not sent.
-Nobody ever gets to 100%. Being brave is the whole patch. Go first, gently.
+That question at the holiday table, with everyone looking at you.
+Being single is not something to explain. "Not yet, and I'm good" is a full answer.
 
 **9:50 AM · Trial reel** — [Cancer vs Capricorn: Whose Family for the Holidays](https://drive.google.com/file/d/1v7Fke50ac-O05VgQ-ku8X5JdscCebqbw/view) (7 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/16 - Cancer vs Capricorn- Whose Family for the Holidays (ktte16).mp4`
@@ -4595,10 +4598,11 @@ Taurus season is comfort, the senses and taking your time. If you feel behind be
 A handmade coupon book, reviewed by a Libra with no words.
 The last coupon: unlimited listening. No expiry.
 
-**11:00 AM · Post** — [When they say "I don't know"](https://drive.google.com/file/d/1dwnnyxdjOYIWPltoTMd08u7lD88zbXPA/view) (22 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/14 - When they say -I don't know- (kare14).mp4`
+**11:00 AM · Post** — [The most romantic thing](https://drive.google.com/file/d/187vMON5Z0ED06Gb3_GNY4QG6GQ2uuE_7/view) (20.2 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/13 - The most romantic thing (koce13).mp4`
 
-You finally asked and heard "idk." Thank them for being honest. "I don't know" is an answer for now, so get clear on what you need and say it kindly.
+Ask someone about the most romantic thing anyone has done for them.
+Their answer is a map. You don't have to guess what makes them feel loved.
 
 **11:20 AM · Trial reel** — [Typed “what are we” and deleted it](https://drive.google.com/file/d/1cFGIhJnQrYoTqvR2IvPxi6Ok7ilZ97g6/view) (9 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/16 - Typed “what are we” and deleted it (kgse16).mp4`
@@ -4616,11 +4620,11 @@ A jab in front of everyone lands twice as hard. If it stung, you can say so calm
 
 Your houseplant grew one new leaf in December and you need a minute. Growth is quiet. Notice it anyway.
 
-**12:30 PM · Post** — [Not Feeling It, Kindly](https://drive.google.com/file/d/1906TpR0G2k4Jr6NxpB_6jJqnI5pS9gxz/view) (75 s) ⏱ · *Ask the Stars: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/06 - Not Feeling It, Kindly (kxase06).mp4`
+**12:30 PM · Post** — [Scorpio in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1U8DDAixnky8cDTmC_-DV3OLFceoIhSv-/view) (119.3 s) ⏱ · *Deep Dive: ___ in Love*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/08 - Scorpio in Love- Everything Nobody Tells You (kdde08).mp4`
 
-They're lovely. There's just no spark, and vanishing feels easier.
-A warm, short, clear message lets them move on. Honest is kinder than a slow fade.
+If a Scorpio asks your biggest fear on date one, they're not being intense. They're interested.
+Be honest, be patient with the quiet, and show up the same every day. That's how the door opens.
 
 **12:50 PM · Trial reel** — [Everyone's coupled up but you](https://drive.google.com/file/d/1oxBKiW8Wk_M8kbsfQbDtLv2MMoYHVRAG/view) (11 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/16 - Everyone's coupled up but you (kfae16).mp4`
@@ -4638,10 +4642,11 @@ A slow song, no partner, and a mug to hold. The dance floor takes singles. Dance
 
 Measuring ribbon with a ruler at 3 AM, alone. Or crooked bows and friends laughing at the table. Crooked bows, full hearts.
 
-**2:00 PM · Post** — [Mutual friend's wedding next week](https://drive.google.com/file/d/1wI12pXwZ5vpvf8XzBHC2ue9Dkjpp8QQM/view) (20 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/14 - Mutual friend's wedding next week (kbxe14).mp4`
+**2:00 PM · Post** — [Two Clocks](https://drive.google.com/file/d/16ur4BGFpS1FaMWCE4jmbF6MQ9isSXDCy/view) (22 s) · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/08 - Two Clocks (klne08).mp4`
 
-Shared friends, one wedding, and you need to know if they're going. Your answer is the same either way. Go for the couple, and bring a friend.
+It's easy to forget the hours and wake them up at 3 a.m. by accident.
+Hang a second clock set to their time. A tiny habit that says you're thinking about their day too.
 
 **2:20 PM · Trial reel** — [Cancer Plans Your Birthday](https://drive.google.com/file/d/19ZIjRtp9bPMfUjxjaXfGzR7PZx7b2kKT/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/16 - Cancer Plans Your Birthday (ksge16).mp4`
@@ -4660,11 +4665,11 @@ If you're always the one who handles everything alone, this is for you. Letting 
 Meeting the family soon? See which signs charm every aunt.
 Ranked. Just be you, that's who they're meeting.
 
-**3:30 PM · Post** — [Left on read, spiralling politely](https://drive.google.com/file/d/1KuayC1AHZ1m94Z3PvUGyksXpJO6ESE9E/view) (20 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/14 - Left on read, spiralling politely (kmte14).mp4`
+**3:30 PM · Post** — [Happy holidays (not in a weird way)](https://drive.google.com/file/d/1hiYyG6DVGE4Dx7LzhZdS2w0S595Qaupi/view) (21 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/14 - Happy holidays (not in a weird way) (ktre14).mp4`
 
-Read at 4:12 and you're already drafting an apology for something you didn't do.
-Their silence isn't a grade on you. Go live your day; the reply can wait.
+Texting a crush over the holidays? Keep it warm and simple.
+A kind wish and an easy invite leave the door open. Brackets not required.
 
 **3:50 PM · Trial reel** — [Cancer, close the old photos](https://drive.google.com/file/d/1BSSMuwoyIPyzEoFQdTbRqKgIg8XBqpPd/view) (10.5 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/16 - Cancer, close the old photos (k5te16).mp4`
@@ -4683,11 +4688,11 @@ Opening a gift you don't love can freeze your smile. Thank the thought first, fi
 They're at your door early and you're still in a towel. Dealbreaker?
 Early means excited. Especially if they brought soup.
 
-**5:00 PM · Post** — Aquarius × Pisces: 2 a.m. feelings. (90 s) ⏱ · *Sign × Sign: Extended*  
-`kxsse06`
+**5:00 PM · Post** — [The Scorpio Guide: Left on Read](https://drive.google.com/file/d/1_c6dLPw7FSABDFg29e-kdr8SqmaaLdWW/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/08 - The Scorpio Guide- Left on Read (kxsge08).mp4`
 
-It's 2 a.m. and someone wants to talk feelings.
-Listen before you theorise, lead with the one-line version, and save the big talk for breakfast. Save this for your next late night.
+Left on read and the investigation board is already up, Scorpio.
+A period is not a verdict. This week, skip the decoding and say one soft true thing first.
 
 **5:20 PM · Trial reel** — [The bio from years ago](https://drive.google.com/file/d/1Q17zwsP255genuzEhZRPGxZ0s_AtT9DE/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/16 - The bio from years ago (kbge16).mp4`
@@ -4706,11 +4711,11 @@ Honesty is one of your best traits, Sagittarius. At the holiday table, pair it w
 Cancer, they forgot your one-month and the little candle is melting.
 Tell them it mattered to you. Kindly, so they can show up.
 
-**6:30 PM · Post** — [Big holidays or small?](https://drive.google.com/file/d/1TVkvMANyDdl4L0D9FXzrreMmPNXqJHpn/view) (17.8 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/14 - Big holidays or small- (koce14).mp4`
+**6:30 PM · Post** — [Left on read and my whole day's ruined](https://drive.google.com/file/d/1m3tGnW4UnYed2V-OimwLmGvGBdrrYXpm/view) (18 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/14 - Left on read and my whole day's ruined (kine14).mp4`
 
-One of you wants the big family holiday. One of you wants a quiet one.
-Talk about it now, not on the doorstep in December. There's usually room for both.
+Left on read and suddenly the whole day feels ruined? Your brain fills silence with the worst story.
+Put the phone down and do the next thing. Silence is a blank, not a verdict.
 
 **6:50 PM · Trial reel** — [Advice giver round: Cancer](https://drive.google.com/file/d/16-8RtNiFuLS8xi3t3keA0JGxfcAD6C-Q/view) (9.2 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/16 - Advice giver round- Cancer (khse16).mp4`
@@ -4728,11 +4733,10 @@ Some families take a while to warm up to someone new. That isn't a verdict. Give
 
 A Cancer hands you a slightly lopsided ornament they made. Then shows you its twin, already hanging on their family's tree.
 
-**8:00 PM · Post** — [One Walk, Two Cities](https://drive.google.com/file/d/1ZgHbOzl7z3c3UcheChH8hIV9bwuOSp0R/view) (22 s) · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/09 - One Walk, Two Cities (klne09).mp4`
+**8:00 PM · Post** — [Virgo, take your own advice](https://drive.google.com/file/d/16e-lgGh4L9ff35NtARjm8kyoaAAhGsia/view) (17 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/14 - Virgo, take your own advice (kpte14).mp4`
 
-The walk home feels longest when there's nobody to tell about your day.
-Call each other and walk at the same time. Different weather, same step.
+You'd never let your best friend settle, so don't let yourself. Talk to you the way you talk to them. Tag the friend who gives advice and never takes it.
 
 **8:20 PM · Trial reel** — [The ex's birthday](https://drive.google.com/file/d/12rWgJ6zSLUUPWtr7K57bhDWCYzd2MNGm/view) (10 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/16 - The ex's birthday (kute16).mp4`
@@ -4751,11 +4755,11 @@ Waiting for them to say it first can turn into waiting forever. Feelings don't n
 Snow day, and they're free all day. Do you plan fourteen hours or nothing?
 Ask for one cozy hour. It's plenty.
 
-**9:30 PM · Post** — [Sagittarius in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1QVzEUtOg4V1XBdaAXfjcdM_qrMTYZLrH/view) (116.3 s) ⏱ · *Deep Dive: ___ in Love*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/09 - Sagittarius in Love- Everything Nobody Tells You (kdde09).mp4`
+**9:30 PM · Post** — [The Friend Who Only Vents](https://drive.google.com/file/d/1BwqCvbaP4kfQ-k8gPJ18HmoPEzI06bvt/view) (60 s) ⏱ · *Friends First: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Friends First- Extended/03 - The Friend Who Only Vents (kxffe03).mp4`
 
-A Sagittarius who roasts you a little likes you a lot.
-Give them room to roam, ask for the truth with kindness, and be an adventure too. Send this to the Sag who always has a plan B.
+Always the listener, never the one who gets to share the big news?
+You're allowed to ask for a turn. Good friends want to hear it. Send this to the friend who always listens.
 
 **9:50 PM · Trial reel** — ["What's Your Deepest Fear?"](https://drive.google.com/file/d/1qW7HhyDma_aAItg44hQm_jy_1gbwgMJ6/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/16 - -What's Your Deepest Fear-- (kroe16).mp4`
@@ -4774,21 +4778,20 @@ A night in feels special through small choices: one candle, one dish cooked toge
 A Capricorn gift is built to last ten winters.
 A wool coat and a ten-year plan, and you're in every year of it.
 
-**11:00 PM · Post** — [The Sagittarius Guide: Bag Already Packed](https://drive.google.com/file/d/1G-wD26oJ9Koe6HYn6AhkV5aHLGea7qE-/view) (67.3 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/09 - The Sagittarius Guide- Bag Already Packed (kxsge09).mp4`
+**11:00 PM · Post** — [The bad day on day 23](https://drive.google.com/file/d/1itXpS9AesjzQEbY65p57CXf_E1MZK1RV/view) (24 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/14 - The bad day on day 23 (khee14).mp4`
 
-They asked "what are we?" and you were halfway out the door.
-Sag, that itch to run is often just fear. This week, answer honestly. "I don't know yet" counts.
+One song and it feels like day one again. A bad day isn't starting over: healing goes up and down, and every day you've done still counts.
 
-**11:15 PM · Post** — Venus to Scorpio: The Spare Key Heart (24.6 s) · *Planet Talk: Venus*  
-`kpvee08`
+**11:15 PM · Post** — [Venus to Scorpio: The Spare Key Heart](https://drive.google.com/file/d/1Bn57ztAsjIBVNi7ChC_WSXJinGx_Y5hg/view) (24.6 s) · *Planet Talk: Venus*  
+`Star Talk/Planet Talk/Venus/08 Scorpio - Venus to Scorpio- The Spare Key Heart (kpvee08).mp4`
 
 Seven locks, and nobody gets past lock one. Being open isn't weakness, it's the invitation. Start small: share one true thing, like being nervous today, and see who meets you there.
 
 ## Day 46 · Sat 19 Dec
 
-**7:45 AM · Post** — Capricorn's Fifteen-Minute Date (28 s) · *Planet Talk: Jupiter*  
-`kpjue10`
+**7:45 AM · Post** — [Capricorn's Fifteen-Minute Date](https://drive.google.com/file/d/1EMRq_caqdQWgSwok3ojckPxj_wBk9QYq/view) (28 s) · *Planet Talk: Jupiter*  
+`Star Talk/Planet Talk/Jupiter/10 Capricorn - Capricorn's Fifteen-Minute Date (kpjue10).mp4`
 
 A date squeezed between two meetings, with the clock checked six times, isn't really a date.
 Block a whole evening and put the phone away. Save this for your busiest week.
@@ -4810,11 +4813,10 @@ Gemini season, named for the twin stars Castor and Pollux, is all curiosity and 
 Trying to say it while the whole street interrupts.
 Try one. Try two. Wait for it.
 
-**9:30 AM · Post** — ["Had fun I guess"](https://drive.google.com/file/d/1MZ2vsEHJFrlgqKNUR4N5j4uTMrywLiPW/view) (20 s) · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/15 - -Had fun I guess- (ktre15).mp4`
+**9:30 AM · Post** — [Wobble Proudly](https://drive.google.com/file/d/1bi0QcFT15KpoNEJbtwo0Grs_Ja-TURIH/view) (21 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/14 - Wobble Proudly (kdye14).mp4`
 
-Underselling a great date to look cool can leave the other person guessing.
-Tell them you had a good time and ask to see them again. It's a nice thing to hear.
+Everyone at the rink seems to be in pairs this time of year. Go anyway. Wobble, fall a little, find your glide, then buy yourself the cocoa.
 
 **9:50 AM · Trial reel** — [A Sunday With No Plans](https://drive.google.com/file/d/1jM2Q0MMaeR5IhzLQOA0x6NxA3NXiUiGS/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/17 - A Sunday With No Plans (kwoe17).mp4`
@@ -4833,11 +4835,11 @@ Sagittarius doesn't want more stuff. A hand-drawn map for a walk where they pick
 Nobody can explain what Aquarius built you, and that's the point.
 It keeps your cocoa warm forever. Weird and thoughtful wins.
 
-**11:00 AM · Post** — [Single at the holiday dinner](https://drive.google.com/file/d/1EOBH1D6i8X7JquJDhpoBas_8HXObSFaN/view) (18 s) · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/15 - Single at the holiday dinner (kine15).mp4`
+**11:00 AM · Post** — ["Do whatever you want"](https://drive.google.com/file/d/1T0ivz92SSEiPOHM6yLcgSDBEJR09IotY/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/14 - -Do whatever you want- (ksbe14).mp4`
 
-Single at the holiday table again, and here comes the question. You're allowed a ready, kind answer.
-"Just me, and I'm good. How's your garden?" Save this for the next family dinner.
+"Do whatever you want" is a test, and nobody passes tests they can't see.
+Say what you actually want. It's allowed.
 
 **11:20 AM · Trial reel** — [Waiting for Them to Text First](https://drive.google.com/file/d/1W3PW1ClJHhNibfsb-rKQjL2SQ-Bdox1E/view) (6.6 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/17 - Waiting for Them to Text First (k3se17).mp4`
@@ -4856,10 +4858,11 @@ Hearing "not yet" about meeting your family can sting. Not yet isn't never. Get 
 Meeting the family on date three: sweet or too soon?
 Cancer checked in first and gave their date an easy out. They said yes.
 
-**12:30 PM · Post** — [Gemini, you deserve a definitely](https://drive.google.com/file/d/1CDbquOjJErR2mYLkjh0oWCi1lgmlIRn6/view) (18 s) · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/15 - Gemini, you deserve a definitely (kpte15).mp4`
+**12:30 PM · Post** — [Not Feeling It, Kindly](https://drive.google.com/file/d/1906TpR0G2k4Jr6NxpB_6jJqnI5pS9gxz/view) (75 s) ⏱ · *Ask the Stars: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/06 - Not Feeling It, Kindly (kxase06).mp4`
 
-Stuck on 'we'll see'? That isn't an answer. Ask once, clearly, then believe what they tell you. You're allowed to want something sure.
+They're lovely. There's just no spark, and vanishing feels easier.
+A warm, short, clear message lets them move on. Honest is kinder than a slow fade.
 
 **12:50 PM · Trial reel** — [Leo vs Aquarius: Post Us or Not](https://drive.google.com/file/d/1R7o9ijkyQfW45bOaVVMoz4jJ8lFhb16H/view) (7 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/17 - Leo vs Aquarius- Post Us or Not (ktte17).mp4`
@@ -4878,10 +4881,11 @@ Some friends go quiet in December because the month is heavy for them. A no-pres
 Planning a surprise for them: hint all week, or blurt it out on day one?
 They'll remember who showed up, not the secret.
 
-**2:00 PM · Post** — [The first good morning](https://drive.google.com/file/d/11CN8LAyD-A8-ZsWA66SFV44sAwIO24Rv/view) (22 s) · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/15 - The first good morning (khee15).mp4`
+**2:00 PM · Post** — [Scorpio.exe: Waiting to Be Sure](https://drive.google.com/file/d/1l0nhTDagrJVKMK47pzr7jsXgzQCyUu1J/view) (22 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/14 - Scorpio.exe- Waiting to Be Sure (klge14).mp4`
 
-The first morning they aren't your first thought feels strange, then quiet, then good. Healing isn't a parade. Notice it, and make a plan.
+The text is written. Certainty: 99%. Still not sent.
+Nobody ever gets to 100%. Being brave is the whole patch. Go first, gently.
 
 **2:20 PM · Trial reel** — [“I don't care.” Saved the playlist](https://drive.google.com/file/d/1hwcjdvGm4fr3pkMRelTTadrpdTuDogjT/view) (9 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/17 - “I don't care.” Saved the playlist (kgse17).mp4`
@@ -4899,10 +4903,10 @@ Friends are there to support you, not to vote on your partner. The disagreement 
 
 "Whatever you want!" three times in a row, or finally saying "I'd love the cabin." Your preference counts too.
 
-**3:30 PM · Post** — [The Free Show Upstairs](https://drive.google.com/file/d/1gE7Jy-tde-Ac8CdyXQ1yjGtoTBs2q55X/view) (23 s) · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/15 - The Free Show Upstairs (kdye15).mp4`
+**3:30 PM · Post** — [When they say "I don't know"](https://drive.google.com/file/d/1dwnnyxdjOYIWPltoTMd08u7lD88zbXPA/view) (22 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/14 - When they say -I don't know- (kare14).mp4`
 
-Swap the 2 a.m. scroll for the sky. On a clear winter evening, find Orion's belt and follow it to Aldebaran. The best show tonight is free and open to one.
+You finally asked and heard "idk." Thank them for being honest. "I don't know" is an answer for now, so get clear on what you need and say it kindly.
 
 **3:50 PM · Trial reel** — [Ghosting because no feels mean](https://drive.google.com/file/d/1zo3noEf6tSg7NYU3XfqMfuktzEBgesmt/view) (10 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/17 - Ghosting because no feels mean (kfae17).mp4`
@@ -4921,11 +4925,11 @@ A friend has someone "perfect" for you, and you're not ready. Thank them, be cle
 Which sign notices your new haircut first?
 Twelve signs, ranked by compliments. If you think something nice, say it.
 
-**5:00 PM · Post** — ["You're just like my ex"](https://drive.google.com/file/d/18eRf4ugUtoKyVcnADSLfiHcpFpRUlO5l/view) (19.6 s) · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/15 - -You're just like my ex- (ksbe15).mp4`
+**5:00 PM · Post** — [Aquarius × Pisces: 2 a.m. feelings.](https://drive.google.com/file/d/1ULesfMQJnKDxtLgrXHyCFb8CF2NqKg12/view) (90 s) ⏱ · *Sign × Sign: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Sign × Sign- Extended/06 - Aquarius × Pisces- 2 a.m. feelings. (kxsse06).mp4`
 
-Old hurts get loud in new relationships.
-If something stings from before, say it's old, take a breath, and let this person be new.
+It's 2 a.m. and someone wants to talk feelings.
+Listen before you theorise, lead with the one-line version, and save the big talk for breakfast. Save this for your next late night.
 
 **5:20 PM · Trial reel** — [Leo's Holiday Party](https://drive.google.com/file/d/1g7ZzjGCcu7nTv8SSF1v7-bHEKnJxyF1_/view) (9 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/17 - Leo's Holiday Party (ksge17).mp4`
@@ -4945,11 +4949,10 @@ Nervous usually means it matters. If you don't want the walk to end, ask for one
 Your date belts every song in the car. Embarrassing or perfect?
 Join in. Duets go further than side-eye.
 
-**6:30 PM · Post** — [Aries.exe: Triple Text](https://drive.google.com/file/d/15zWX7y49O-unoO5JbOApdOt2hMNtOWXr/view) (19 s) · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/15 - Aries.exe- Triple Text (klge15).mp4`
+**6:30 PM · Post** — [Mutual friend's wedding next week](https://drive.google.com/file/d/1wI12pXwZ5vpvf8XzBHC2ue9Dkjpp8QQM/view) (20 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/14 - Mutual friend's wedding next week (kbxe14).mp4`
 
-No reply in four minutes, so obviously it's over.
-A slow reply isn't a no. Put the phone down, go live your life, and let them answer.
+Shared friends, one wedding, and you need to know if they're going. Your answer is the same either way. Go for the couple, and bring a friend.
 
 **6:50 PM · Trial reel** — [Leo, the selfie can rest](https://drive.google.com/file/d/1-WaxpVlZqsKUe0Y4Pt4Htky5CcU_bkHZ/view) (10 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/17 - Leo, the selfie can rest (k5te17).mp4`
@@ -4968,10 +4971,11 @@ One small ritual can make honesty normal in a friend group: every Sunday, one go
 Leo, it's their turn to plan and you're still holding the clipboard.
 Hand it over. Being surprised is fun too.
 
-**8:00 PM · Post** — [Hearing "just friends" with grace](https://drive.google.com/file/d/1geYyOLyS1-pOvEZLi_RESicz63punQVt/view) (22 s) · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/15 - Hearing -just friends- with grace (kare15).mp4`
+**8:00 PM · Post** — [Left on read, spiralling politely](https://drive.google.com/file/d/1KuayC1AHZ1m94Z3PvUGyksXpJO6ESE9E/view) (20 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/14 - Left on read, spiralling politely (kmte14).mp4`
 
-Asked, and heard "just friends." It's okay if that hurts. A kind no is still a clear one, and "thank you for telling me" keeps the friendship whole.
+Read at 4:12 and you're already drafting an apology for something you didn't do.
+Their silence isn't a grade on you. Go live your day; the reply can wait.
 
 **8:20 PM · Trial reel** — [Leo does not like hiking](https://drive.google.com/file/d/1mRJlZjqxuoJ7iMcnQqyJMb9hYEdbFM-j/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/17 - Leo does not like hiking (kbge17).mp4`
@@ -4989,10 +4993,11 @@ One of you wants it done, one wants it different. Ask about their idea, join in 
 
 Date a Leo in December and the house lights get very bright. Then they rearrange to spell one word: YOU.
 
-**9:30 PM · Post** — [You still have their keys](https://drive.google.com/file/d/110UBXRQEzanQa-adDgn5FJriq4_ErSKA/view) (18 s) · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/15 - You still have their keys (kbxe15).mp4`
+**9:30 PM · Post** — [Big holidays or small?](https://drive.google.com/file/d/1TVkvMANyDdl4L0D9FXzrreMmPNXqJHpn/view) (17.8 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/14 - Big holidays or small- (koce14).mp4`
 
-Returning their stuff doesn't need a speech. Keep the logistics text short and kind, and take the big feelings to a friend.
+One of you wants the big family holiday. One of you wants a quiet one.
+Talk about it now, not on the doorstep in December. There's usually room for both.
 
 **9:50 PM · Trial reel** — [Single at the dinner round: Leo](https://drive.google.com/file/d/1E4iL6BPy7-SVtiurAu9Cuz40lHkX2OIv/view) (9.8 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/17 - Single at the dinner round- Leo (khse17).mp4`
@@ -5011,22 +5016,22 @@ Texting all day can still leave you feeling far apart. Swap one message for a re
 A jar of notes, one for every cold day.
 Pisces cried writing every single one, and that's why they feel so warm.
 
-**11:00 PM · Post** — [First date in two years](https://drive.google.com/file/d/1ss3bz-vank0KRigfp_s3Ecimk0dRHjId/view) (22 s) · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/15 - First date in two years (kmte15).mp4`
+**11:00 PM · Post** — [One Walk, Two Cities](https://drive.google.com/file/d/1ZgHbOzl7z3c3UcheChH8hIV9bwuOSp0R/view) (22 s) · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/09 - One Walk, Two Cities (klne09).mp4`
 
-First date in ages and you're sure you've forgotten how people talk.
-You talk to friends every day. Ask about them, listen, laugh if it's funny. That's the whole skill.
+The walk home feels longest when there's nobody to tell about your day.
+Call each other and walk at the same time. Different weather, same step.
 
-**11:15 PM · Post** — Love isn't a Q3 goal (29 s) · *Planet Talk: Mars*  
-`kpmae10`
+**11:15 PM · Post** — [Love isn't a Q3 goal](https://drive.google.com/file/d/1LJb-3_5p_RZfK5OGymv1L8UoxHLhOQPX/view) (29 s) · *Planet Talk: Mars*  
+`Star Talk/Planet Talk/Mars/10 Capricorn - Love isn't a Q3 goal (kpmae10).mp4`
 
 Love got scheduled for next year, if there's time.
 You can't schedule the feeling, but you can make room for it. Block one free evening a week, and actually keep it.
 
 ## Day 47 · Sun 20 Dec
 
-**7:45 AM · Post** — You Sent Your Crush an Agenda (26 s) · *Planet Talk: Mercury*  
-`kpmee10`
+**7:45 AM · Post** — [You Sent Your Crush an Agenda](https://drive.google.com/file/d/1GbexI_siv2zD88-5NzHhckSksqG0RdaL/view) (26 s) · *Planet Talk: Mercury*  
+`Star Talk/Planet Talk/Mercury/10 Capricorn - You Sent Your Crush an Agenda (kpmee10).mp4`
 
 Clear plans are a kindness. Texting your crush like a calendar invite is a choice.
 Keep the plan, add why you want to go. Saturday sounds better with a little heart in it.
@@ -5048,11 +5053,11 @@ Sagittarius, your word for next year is slow. Slow walks, slow mornings, a slow 
 You almost said it, then said "snow. cold." instead.
 Who else has taken the shortcut?
 
-**9:30 AM · Post** — [Never say this in a fight](https://drive.google.com/file/d/1U0KHPfuy5JCUPbLSDssOQHd7FPjyIG43/view) (19 s) · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/15 - Never say this in a fight (koce15).mp4`
+**9:30 AM · Post** — ["Had fun I guess"](https://drive.google.com/file/d/1MZ2vsEHJFrlgqKNUR4N5j4uTMrywLiPW/view) (20 s) · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/15 - -Had fun I guess- (ktre15).mp4`
 
-There are words that make every argument worse. You probably both know them.
-Write your never-list while you're calm, so it's there when you're not.
+Underselling a great date to look cool can leave the other person guessing.
+Tell them you had a good time and ask to see them again. It's a nice thing to hear.
 
 **9:50 AM · Trial reel** — [The Job Interview Opener](https://drive.google.com/file/d/1Oa87u19nANh_JJkV0HFZrPNT0W02CTD9/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/17 - The Job Interview Opener (kroe17).mp4`
@@ -5071,11 +5076,11 @@ Walking into a loud family gathering can be a lot. Agree on one check-in word be
 Their texts got shorter this month. Spiral or go cold?
 December is busy. Ask once how their week is going.
 
-**11:00 AM · Post** — [Why can't I see my sign on my birthday?](https://drive.google.com/file/d/1O25lVXLqUE48B6jC-5cWhYBhcVRj6xai/view) (118 s) ⏱ · *Star Talk Explains: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Star Talk Explains- Extended/05 - Why can't I see my sign on my birthday- (kxexe05).mp4`
+**11:00 AM · Post** — [Single at the holiday dinner](https://drive.google.com/file/d/1EOBH1D6i8X7JquJDhpoBas_8HXObSFaN/view) (18 s) · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/15 - Single at the holiday dinner (kine15).mp4`
 
-Looked up on my birthday and my sign wasn't even there.
-The Sun is parked in front of it all day. If you want a fuss, say so out loud: people can't read the sky in your head.
+Single at the holiday table again, and here comes the question. You're allowed a ready, kind answer.
+"Just me, and I'm good. How's your garden?" Save this for the next family dinner.
 
 **11:20 AM · Trial reel** — [They split the last croissant](https://drive.google.com/file/d/1oTCedewbl7x3IiK13DA1sGGns9p1qjbQ/view) (8.0 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/09 - They split the last croissant (kpre09).mp4`
@@ -5094,11 +5099,11 @@ Cancer season starts on the longest day of the year in the Northern Hemisphere, 
 Dress code: sparkle. Your date shows up in pyjamas.
 Leo swapped the cape for pyjamas too, and they slow-danced.
 
-**12:30 PM · Post** — [From "hey" to Saturday](https://drive.google.com/file/d/1hF6zyRE8n4AKKyuisGwDQ059gOnKA_h6/view) (72 s) ⏱ · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/16 - From -hey- to Saturday (ktre16).mp4`
+**12:30 PM · Post** — [Sagittarius in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1QVzEUtOg4V1XBdaAXfjcdM_qrMTYZLrH/view) (116.3 s) ⏱ · *Deep Dive: ___ in Love*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/09 - Sagittarius in Love- Everything Nobody Tells You (kdde09).mp4`
 
-Starting a new chat can feel like a test. It isn't.
-Ask about them, answer honestly, let quiet moments be quiet, and when it's going well, make a clear plan.
+A Sagittarius who roasts you a little likes you a lot.
+Give them room to roam, ask for the truth with kindness, and be an adventure too. Send this to the Sag who always has a plan B.
 
 **12:50 PM · Trial reel** — [Making a spreadsheet about my crush](https://drive.google.com/file/d/1PPBWzEiDqTZChjpLQVymxR3vZzBsDt7k/view) (10.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/18 - Making a spreadsheet about my crush (kwme18).mp4`
@@ -5117,11 +5122,10 @@ Capricorn loves by showing up early: the shovelled path, the cocoa on the step. 
 Sad movie night. Are you “it's just dusty” or crying at the opening titles?
 Crying on the couch together still counts as a great date.
 
-**2:00 PM · Post** — [A year later and I'm not over it](https://drive.google.com/file/d/1catrymHQhFXFGRIVhdwKiRgi8a-XTsu6/view) (70 s) ⏱ · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/16 - A year later and I'm not over it (kine16).mp4`
+**2:00 PM · Post** — [Gemini, you deserve a definitely](https://drive.google.com/file/d/1CDbquOjJErR2mYLkjh0oWCi1lgmlIRn6/view) (18 s) · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/15 - Gemini, you deserve a definitely (kpte15).mp4`
 
-A whole year and you're still not over it? Grief doesn't run on a deadline.
-Talk it out, change one routine, and let the good days count. Missing them this long means you loved.
+Stuck on 'we'll see'? That isn't an answer. Ask once, clearly, then believe what they tell you. You're allowed to want something sure.
 
 **2:20 PM · Trial reel** — [Missing Your Ex at Midnight](https://drive.google.com/file/d/1SKjbVphmYCe-Bgj6FxWqO5HJA7YUAcHp/view) (9 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/18 - Missing Your Ex at Midnight (kwoe18).mp4`
@@ -5139,10 +5143,10 @@ Walking into someone else's family traditions can feel strange at first. Stay cu
 
 Feelings in a locked vault and "pass the salt," or one honest "I really missed you." One sentence opens the door.
 
-**3:30 PM · Post** — [The full pep talk: the 2 a.m. breakup call](https://drive.google.com/file/d/1-JHh0YDl2yOES1n0IJwfk8aNeYgvHfqb/view) (73 s) ⏱ · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/16 - The full pep talk- the 2 a.m. breakup call (kpte16).mp4`
+**3:30 PM · Post** — [The first good morning](https://drive.google.com/file/d/11CN8LAyD-A8-ZsWA66SFV44sAwIO24Rv/view) (22 s) · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/15 - The first good morning (khee15).mp4`
 
-The 2 a.m. call after a breakup, start to finish. Breaking up isn't failing; it's two people being honest. Stay for the last line, and send it to whoever needs it tonight.
+The first morning they aren't your first thought feels strange, then quiet, then good. Healing isn't a parade. Notice it, and make a plan.
 
 **3:50 PM · Trial reel** — [Dating a Project](https://drive.google.com/file/d/1Hi4Tu9O_bRon6Dwb1dvNq2tID-E7csPC/view) (8.0 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/18 - Dating a Project (k3se18).mp4`
@@ -5161,10 +5165,11 @@ Spending the holidays on your own can still feel warm with a little planning. Co
 Planning a three-mountain trip for a second date?
 Big plans can wait. Start with a walk in the snow.
 
-**5:00 PM · Post** — [Libra: 30 days in 60 seconds](https://drive.google.com/file/d/1SiKXMZEWMEBFrbyWm9_imFBs-Knx-d_v/view) (60 s) ⏱ · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/16 - Libra- 30 days in 60 seconds (khee16).mp4`
+**5:00 PM · Post** — [The Sagittarius Guide: Bag Already Packed](https://drive.google.com/file/d/1G-wD26oJ9Koe6HYn6AhkV5aHLGea7qE-/view) (67.3 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/09 - The Sagittarius Guide- Bag Already Packed (kxsge09).mp4`
 
-A whole month of healing in one minute: the bad days, the friend with the blanket, the party you left early, the first good morning. Let the bad days be bad, and let one friend in.
+They asked "what are we?" and you were halfway out the door.
+Sag, that itch to run is often just fear. This week, answer honestly. "I don't know yet" counts.
 
 **5:20 PM · Trial reel** — [Virgo vs Pisces: Moving On](https://drive.google.com/file/d/1iLbUOb2h10kw3lgKu5BYcKpJBbqW4azQ/view) (8 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/18 - Virgo vs Pisces- Moving On (ktte18).mp4`
@@ -5183,10 +5188,10 @@ Two people who both know where they like to sit. Share the blanket, give up the 
 Sag's winter: a sled by the door and maps on every wall.
 The rare item: staying in, because you asked.
 
-**6:30 PM · Post** — [A Whole Saturday, Just Me](https://drive.google.com/file/d/1TJaXOcke28YwdTkEJCwl7z9LtciDpJw8/view) (67 s) ⏱ · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/16 - A Whole Saturday, Just Me (kdye16).mp4`
+**6:30 PM · Post** — [The Free Show Upstairs](https://drive.google.com/file/d/1gE7Jy-tde-Ac8CdyXQ1yjGtoTBs2q55X/view) (23 s) · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/15 - The Free Show Upstairs (kdye15).mp4`
 
-A to-do list with one item on it. Slow coffee, flowers, a nap with no guilt, then the last thing on the list. Rest counts as something you did. Save this for your next free Saturday.
+Swap the 2 a.m. scroll for the sky. On a clear winter evening, find Orion's belt and follow it to Aldebaran. The best show tonight is free and open to one.
 
 **6:50 PM · Trial reel** — [Left on read, fifty push-ups](https://drive.google.com/file/d/1ZTev72MW5UdvbuQRNgVWNZIfnqc1z1Wa/view) (8 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/18 - Left on read, fifty push-ups (kgse18).mp4`
@@ -5205,11 +5210,11 @@ When someone asks about your ex in front of your new partner, you don't owe the 
 Dating someone who stares at the stars instead of you?
 They were finding your stars. Castor and Pollux, the Twins.
 
-**8:00 PM · Post** — The Dishes, Played Twice (71.4 s) ⏱ · *Say It Better*  
-`ksbe16`
+**8:00 PM · Post** — ["You're just like my ex"](https://drive.google.com/file/d/18eRf4ugUtoKyVcnADSLfiHcpFpRUlO5l/view) (19.6 s) · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/15 - -You're just like my ex- (ksbe15).mp4`
 
-Same fight about the dishes, played twice. Wait for round two.
-It was never about the sink, it was about feeling alone in it.
+Old hurts get loud in new relationships.
+If something stings from before, say it's old, take a breath, and let this person be new.
 
 **8:20 PM · Trial reel** — [Someone compliments you and you argue](https://drive.google.com/file/d/1nHnq84YT145WPOsBXKTBHtdh3gD2gi-B/view) (8 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/18 - Someone compliments you and you argue (kfae18).mp4`
@@ -5228,11 +5233,11 @@ Waiting for them to apologize first can turn a small mistake into a standoff. Na
 Sagittarius gets a hand-drawn map of its favourite walk.
 The X marks where it made someone laugh.
 
-**9:30 PM · Post** — [Virgo.exe: Fix-It Mode](https://drive.google.com/file/d/1jzR31sZoGMVhyqjleSTFx3gBGG_qWMdH/view) (64 s) ⏱ · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/16 - Virgo.exe- Fix-It Mode (klge16).mp4`
+**9:30 PM · Post** — [Aries.exe: Triple Text](https://drive.google.com/file/d/15zWX7y49O-unoO5JbOApdOt2hMNtOWXr/view) (19 s) · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/15 - Aries.exe- Triple Text (klge15).mp4`
 
-If you notice everything, you can end up correcting everyone, yourself first.
-The patch notes: notice without fixing, let one thing stay messy, say what you like about them.
+No reply in four minutes, so obviously it's over.
+A slow reply isn't a no. Put the phone down, go live your life, and let them answer.
 
 **9:50 PM · Trial reel** — [Virgo, the Coffee Spill](https://drive.google.com/file/d/1o9NUQ2OZUFVfpGebicvbpqcw7CvD3DOD/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/18 - Virgo, the Coffee Spill (ksge18).mp4`
@@ -5250,24 +5255,24 @@ Not sure what you want in a partner? Single time is a great time to find out. Wr
 
 Someone built a snowman outside your window holding a sign with your name on it. In your colour scarf. Let people show up for you.
 
-**11:00 PM · Post** — [Six months of almost](https://drive.google.com/file/d/1ic6EfvYBQc3y_Vjet0QMIOus-VKv8b1l/view) (90 s) ⏱ · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/16 - Six months of almost (kare16).mp4`
+**11:00 PM · Post** — [Hearing "just friends" with grace](https://drive.google.com/file/d/1geYyOLyS1-pOvEZLi_RESicz63punQVt/view) (22 s) · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/15 - Hearing -just friends- with grace (kare15).mp4`
 
-Six months of umbrellas, second coffees and almost-asks interrupted by a waiter, a sneeze and a bus. Wait for the answer. Guessing took months, asking took a minute.
+Asked, and heard "just friends." It's okay if that hurts. A kind no is still a clear one, and "thank you for telling me" keeps the friendship whole.
 
-**11:15 PM · Post** — Capricorn Has No Time to Be Sad (27 s) · *Planet Talk: The Moon*  
-`kpmoe10`
+**11:15 PM · Post** — [Capricorn Has No Time to Be Sad](https://drive.google.com/file/d/1hGuqL87ppyG_dFEqIENavXfIuzB-JiTP/view) (27 s) · *Planet Talk: The Moon*  
+`Star Talk/Planet Talk/The Moon/10 Capricorn - Capricorn Has No Time to Be Sad (kpmoe10).mp4`
 
 Too busy to be sad is still sad, just scheduled later.
 Book a soft night like a meeting, then call someone who'll say always.
 
 ## Day 48 · Mon 21 Dec
 
-**7:45 AM · Post** — Pluto to Capricorn: The Plan With Their Name (27.4 s) · *Planet Talk: Pluto*  
-`kpple10`
+**7:45 AM · Post** — [Neptune to Capricorn: Permission to Daydream](https://drive.google.com/file/d/1YBzcsbi8HrHtD4ZcO3iDdgq1SgRRqgk0/view) (27 s) · *Planet Talk: Neptune*  
+`Star Talk/Planet Talk/Neptune/10 Capricorn - Neptune to Capricorn- Permission to Daydream (kpnee10).mp4`
 
-When the five-year plan still has their name in it, it can feel like you failed.
-A plan changing isn't failure, it's a new draft. Keep your goals and let the shape change. Save this for the day you rewrite yours.
+You can plan your whole life and still forget to feel it. Letting yourself want something isn't off-schedule.
+This is your permission to daydream a little.
 
 **8:20 AM · Trial reel** — [Virgo, nobody needs you perfect](https://drive.google.com/file/d/1z9GUJLoYdp6gYyQymZFcUtSEhksmi7p8/view) (11 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/18 - Virgo, nobody needs you perfect (k5te18).mp4`
@@ -5286,10 +5291,10 @@ Being first isn't the problem, Aries. Rushing past people is. Leave the need to 
 One dinner rule: answer the talk card honestly.
 Cancer is already panicking.
 
-**9:30 AM · Post** — [One night, three almost-texts](https://drive.google.com/file/d/1QVMX8mlYVazkIfzJu9k4UWUEdlO-WFlk/view) (75 s) ⏱ · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/16 - One night, three almost-texts (kbxe16).mp4`
+**9:30 AM · Post** — [You still have their keys](https://drive.google.com/file/d/110UBXRQEzanQa-adDgn5FJriq4_ErSKA/view) (18 s) · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/15 - You still have their keys (kbxe15).mp4`
 
-Three almost-texts in one long night, and number three is the big one. Big feelings need a person, not a send. Watch what Pisces does instead.
+Returning their stuff doesn't need a speech. Keep the logistics text short and kind, and take the big feelings to a friend.
 
 **9:50 AM · Trial reel** — [Draft forty-seven](https://drive.google.com/file/d/1b-PrZdTOpspH7Ep3NZuP8jAl9N2nFOea/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/18 - Draft forty-seven (kbge18).mp4`
@@ -5307,11 +5312,11 @@ Good enough is ready. Post the sweet one.
 
 A note on the door that just says BRB, or a map, a return date and postcards for everyone. Adventures land better with a heads-up.
 
-**11:00 AM · Post** — [The night before the first date since the breakup](https://drive.google.com/file/d/1TTdVnJ-40T3L-rR4XZDEej9hUyF4uMHh/view) (75 s) ⏱ · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/16 - The night before the first date since the breakup (kmte16).mp4`
+**11:00 AM · Post** — [First date in two years](https://drive.google.com/file/d/1ss3bz-vank0KRigfp_s3Ecimk0dRHjId/view) (22 s) · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/15 - First date in two years (kmte15).mp4`
 
-Outfits everywhere, every what-if running at once, and an old photo still on the mirror.
-You're allowed to miss the past and still go. Show up as yourself; that's the whole plan.
+First date in ages and you're sure you've forgotten how people talk.
+You talk to friends every day. Ask about them, listen, laugh if it's funny. That's the whole skill.
 
 **11:20 AM · Trial reel** — [Crush round: Virgo](https://drive.google.com/file/d/1FwqEXnTLYTXVgmQ6_bPsqk3c_5IA6jxd/view) (9.3 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/18 - Crush round- Virgo (khse18).mp4`
@@ -5330,11 +5335,11 @@ Some things get heavy because we carry them too long. Set down the old grudges, 
 Who takes three hundred couple photos to post one?
 The signs, ranked. The best photo is the one where you're laughing.
 
-**12:30 PM · Post** — [Card three: ten years](https://drive.google.com/file/d/161uIOWMtnnuUdo7SbR0lfjtpNvmEDAhQ/view) (67.4 s) ⏱ · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/16 - Card three- ten years (koce16).mp4`
+**12:30 PM · Post** — [Why can't I see my sign on my birthday?](https://drive.google.com/file/d/1O25lVXLqUE48B6jC-5cWhYBhcVRj6xai/view) (118 s) ⏱ · *Star Talk Explains: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Star Talk Explains- Extended/05 - Why can't I see my sign on my birthday- (kxexe05).mp4`
 
-Three questions in one night. The third one was about ten years from now.
-Big questions feel scary. Asked kindly, after a few laughs, they feel like home. Wait for card three.
+Looked up on my birthday and my sign wasn't even there.
+The Sun is parked in front of it all day. If you want a fuss, say so out loud: people can't read the sky in your head.
 
 **12:50 PM · Trial reel** — [Virgo said sorry nine times](https://drive.google.com/file/d/1T-km6kxnaD5yAovWdcg2hF5oW5vBXmD3/view) (8 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/18 - Virgo said sorry nine times (kute18).mp4`
@@ -5353,11 +5358,11 @@ Bringing work to the party is very Capricorn. The emails will still be there tom
 They made a checklist for a one-day trip. Too much planning?
 Not when they packed the plasters. Let them pack, you bring snacks.
 
-**2:00 PM · Post** — [A Day Apart: Tokyo to LA](https://drive.google.com/file/d/1F1XcnYuV7MraUt-Ss1njQ7nkfOpNhj8C/view) (60 s) ⏱ · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/10 - A Day Apart- Tokyo to LA (klne10).mp4`
+**2:00 PM · Post** — [Never say this in a fight](https://drive.google.com/file/d/1U0KHPfuy5JCUPbLSDssOQHd7FPjyIG43/view) (19 s) · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/15 - Never say this in a fight (koce15).mp4`
 
-Seventeen hours apart means one of you is always living in tomorrow.
-A whole day of small notes, photos and goodnights, then the arrivals gate. Small and steady beats big and rare.
+There are words that make every argument worse. You probably both know them.
+Write your never-list while you're calm, so it's there when you're not.
 
 **2:20 PM · Trial reel** — [Meet My Family (Opener)](https://drive.google.com/file/d/1ov5LYZQpLlU2dZHss0ZV3nVp-oOOLtMG/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/18 - Meet My Family (Opener) (kroe18).mp4`
@@ -5376,11 +5381,11 @@ Leo season is warmth, play and being seen. The best way to glow is to make someo
 Virgo, there is a sock on the couch and your eye is twitching.
 Put the duster down. Notice the person, not the socks.
 
-**3:30 PM · Post** — [Capricorn in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1VpPloK7BB2jETJdh5n6Jhe5t6cA3GNmR/view) (118.6 s) ⏱ · *Deep Dive: ___ in Love*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/10 - Capricorn in Love- Everything Nobody Tells You (kdde10).mp4`
+**3:30 PM · Post** — [The Ex Keeps Coming Up](https://drive.google.com/file/d/14PyWjx_LUreknwixvRAoueyEwtnoK7M5/view) (90 s) ⏱ · *The Make-Up Talk: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Make-Up Talk- Extended/05 - The Ex Keeps Coming Up (kxmue05).mp4`
 
-A Capricorn won't always say it. They'll fix your wobbly chair instead.
-Notice the steady things, tell them if you need a fix or a hug, and laugh at the dry jokes. They practiced.
+Every date comes with a little story about their ex, and you start to feel like a rerun.
+Say how it lands without keeping score. You might hear a whole different sentence back.
 
 **3:50 PM · Trial reel** — [Saying “anywhere’s fine” then vetoing everything](https://drive.google.com/file/d/1aMDu-4VYoGriOmzFUzMwSOCNSoVV4gif/view) (9.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/19 - Saying “anywhere’s fine” then vetoing everything (kwme19).mp4`
@@ -5398,11 +5403,11 @@ If your partner goes quiet at your family's table, try not to guess what it mean
 
 A Virgo wraps gifts with perfect corners. Yours came out lumpy, so they put it on the shelf like a piece of art.
 
-**5:00 PM · Post** — [The Capricorn Guide: Single at the Dinner](https://drive.google.com/file/d/1ZHwLY5XmbagW-aZnBvnWMvZhofGndHAl/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/10 - The Capricorn Guide- Single at the Dinner (kxsge10).mp4`
+**5:00 PM · Post** — [Walking In Alone](https://drive.google.com/file/d/15h6lJhEwTDFdg6PjZALMGT63RC1VojFP/view) (75 s) ⏱ · *Single and Thriving: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Single and Thriving- Extended/05 - Walking In Alone (kxste05).mp4`
 
-"So, seeing anyone?" Capricorn, you're allowed to just smile and say not yet.
-This week, log off at seven once and text someone you actually like.
+Walking into a party where you only know the host is hard, and the urge to leave is real.
+You don't need the whole room. Ask one person one question and see where it goes.
 
 **5:20 PM · Trial reel** — [The Group Chat Went Quiet](https://drive.google.com/file/d/10Y4G-qKufsjKuGpQpn0XUqRi3zFR-K65/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/19 - The Group Chat Went Quiet (kwoe19).mp4`
@@ -5421,11 +5426,11 @@ All those drafts you never sent were trying to say something. Keep your curiosit
 New Year's Eve and no plans yet. Rooftop, band and boat, or asleep by ten?
 Ask what they'd love, then plan that.
 
-**6:30 PM · Post** — [Pretending Not to Care](https://drive.google.com/file/d/19gyNByluzUNDCiBHSQLnaxnoUzrfTkNI/view) (75 s) ⏱ · *Ask the Stars: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/07 - Pretending Not to Care (kxase07).mp4`
+**6:30 PM · Post** — [Who Feeds Taurus?](https://drive.google.com/file/d/1PBA1iq32ImQfgQ1Cb4lVdl-K-x0mHRUl/view) (90 s) ⏱ · *Moonlight Lane: Side Stories*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Moonlight Lane- Side Stories/05 - Who Feeds Taurus- (kxmle05).mp4`
 
-Saying "sure, whatever" when you actually mean "yes, please."
-Playing it cool can hide you from the person you like. You can stay calm and still say one true thing.
+Moonlight Lane, Side Story: Taurus feeds the whole lane, and nobody ever asks how they are.
+The strong friend needs looking after too. Say it out loud and let them show up.
 
 **6:50 PM · Trial reel** — [Said Yes, Meant No](https://drive.google.com/file/d/1DOynkok9chhSSw3_uRm4_58PrqGaRiqU/view) (6.4 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/19 - Said Yes, Meant No (k3se19).mp4`
@@ -5444,11 +5449,11 @@ Forgot their birthday? Own it quickly and sincerely, skip the long excuse and ma
 Wrapping gifts for a toy drive as a date. Yes?
 Virgo's corners were perfect. Their date's were lumpy and made with love.
 
-**8:00 PM · Post** — Aries × Capricorn: the first fight. (90 s) ⏱ · *Sign × Sign: Extended*  
-`kxsse07`
+**8:00 PM · Post** — [From "hey" to Saturday](https://drive.google.com/file/d/1hF6zyRE8n4AKKyuisGwDQ059gOnKA_h6/view) (72 s) ⏱ · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/16 - From -hey- to Saturday (ktre16).mp4`
 
-Our first fight was about parking. Obviously.
-Take twenty minutes to cool down, say when you'll be back, and don't wait a week to talk. Tonight is soon enough.
+Starting a new chat can feel like a test. It isn't.
+Ask about them, answer honestly, let quiet moments be quiet, and when it's going well, make a clear plan.
 
 **8:20 PM · Trial reel** — [The Zodiac Votes: Call or Text](https://drive.google.com/file/d/1v0NeOSwCN1HJMlJ8aQjv3iCdOv0v87jG/view) (6 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/19 - The Zodiac Votes- Call or Text (ktte19).mp4`
@@ -5467,11 +5472,11 @@ When one of you works the holiday, the day itself can feel lonely. Pick your own
 Sweater party: tasteful grey with one stripe, or a sweater that lights up and beeps?
 Wear whatever makes you grin.
 
-**9:30 PM · Post** — [The cancel that became a plan](https://drive.google.com/file/d/1iC0WqIKl2SA35aoEEkYjUTz1mkBpk1sb/view) (66 s) ⏱ · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/17 - The cancel that became a plan (ktre17).mp4`
+**9:30 PM · Post** — [A year later and I'm not over it](https://drive.google.com/file/d/1catrymHQhFXFGRIVhdwKiRgi8a-XTsu6/view) (70 s) ⏱ · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/16 - A year later and I'm not over it (kine16).mp4`
 
-Cancelling doesn't have to end anything. Say why, own that they might be disappointed, and offer a real new night.
-That's how a cancel turns into a better plan.
+A whole year and you're still not over it? Grief doesn't run on a deadline.
+Talk it out, change one routine, and let the good days count. Missing them this long means you loved.
 
 **9:50 PM · Trial reel** — [Cancelled plans for a blanket](https://drive.google.com/file/d/1HexXtEN5Jb275A6HGimyvW4uo46oLBsV/view) (10 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/19 - Cancelled plans for a blanket (kgse19).mp4`
@@ -5489,21 +5494,21 @@ Changing the subject can feel like helping, but sometimes they just need you to 
 
 One more email at the holiday table, or the laptop shut and a double six on the board. Out of office means out of office.
 
-**11:00 PM · Post** — [Panicking when they take ages to reply](https://drive.google.com/file/d/1ELrZQ0aMl6MAb-16scStSO0FAYZWau7m/view) (69 s) ⏱ · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/17 - Panicking when they take ages to reply (kine17).mp4`
+**11:00 PM · Post** — [The full pep talk: the 2 a.m. breakup call](https://drive.google.com/file/d/1-JHh0YDl2yOES1n0IJwfk8aNeYgvHfqb/view) (73 s) ⏱ · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/16 - The full pep talk- the 2 a.m. breakup call (kpte16).mp4`
 
-Seven minutes without a reply can feel like seven years. Not knowing feels like danger, but it's a feeling, not a fact.
-Name it, do one small thing, and ask kindly about texting styles later.
+The 2 a.m. call after a breakup, start to finish. Breaking up isn't failing; it's two people being honest. Stay for the last line, and send it to whoever needs it tonight.
 
-**11:15 PM · Post** — Saturn's Talk With Capricorn (75 s) ⏱ · *Planet Talk: Saturn*  
-`kpsae10`
+**11:15 PM · Post** — [Pluto to Capricorn: The Plan With Their Name](https://drive.google.com/file/d/1eVfkVG_dn_bb1rcvfj8AJpuPtzk5BEW8/view) (27.4 s) · *Planet Talk: Pluto*  
+`Star Talk/Planet Talk/Pluto/10 Capricorn - Pluto to Capricorn- The Plan With Their Name (kpple10).mp4`
 
-Four plans cancelled this week, all because work ran late. Saturn didn't come to check your productivity. Love isn't a promotion you earn: you already qualify. Save this for the next late night at the desk.
+When the five-year plan still has their name in it, it can feel like you failed.
+A plan changing isn't failure, it's a new draft. Keep your goals and let the shape change. Save this for the day you rewrite yours.
 
 ## Day 49 · Tue 22 Dec
 
-**7:45 AM · Post** — Capricorn After the Promotion (26 s) · *Planet Talk: The Sun*  
-`kpsue10`
+**7:45 AM · Post** — [Capricorn After the Promotion](https://drive.google.com/file/d/1gt-8ojumQEEtvAxuX7pe6bOj4LN5yXd3/view) (26 s) · *Planet Talk: The Sun*  
+`Star Talk/Planet Talk/The Sun/10 Capricorn - Capricorn After the Promotion (kpsue10).mp4`
 
 "I'll date after the promotion," three years running.
 Your heart isn't a five-year plan. Leave room for one dinner with friends this week, and close the laptop.
@@ -5525,10 +5530,10 @@ Capricorn mentions a goal once and moves on. The gift that gets them? Proof some
 When the whole table finally tells the truth.
 The matching sweaters itch. Pisces is "fine."
 
-**9:30 AM · Post** — [The full pep talk: your crush said no](https://drive.google.com/file/d/1iu9UVmd7kpf0nwe0DhVowDu9wZvog6KL/view) (69 s) ⏱ · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/17 - The full pep talk- your crush said no (kpte17).mp4`
+**9:30 AM · Post** — [Libra: 30 days in 60 seconds](https://drive.google.com/file/d/1SiKXMZEWMEBFrbyWm9_imFBs-Knx-d_v/view) (60 s) ⏱ · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/16 - Libra- 30 days in 60 seconds (khee16).mp4`
 
-They said no, and the replay won't stop. A no to dating isn't a no to you, and the proof of who you are doesn't depend on one answer. The last line, though.
+A whole month of healing in one minute: the bad days, the friend with the blanket, the party you left early, the first good morning. Let the bad days be bad, and let one friend in.
 
 **9:50 AM · Trial reel** — [Libra and the Bill](https://drive.google.com/file/d/1RAfY-OOnZEVkLoun6lLglOUTA9N378j3/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/19 - Libra and the Bill (ksge19).mp4`
@@ -5547,10 +5552,10 @@ The baby photos came out. Laugh along, it's how families say they love you. One 
 Which sign saves you the last bite?
 Ranked from wrapped-it-for-you to already ate it. A tiny love letter, really.
 
-**11:00 AM · Post** — [Scorpio: the situationship, 30 days](https://drive.google.com/file/d/175_I05xEoEQd-RFcjGTOaqrpmd-5DTYi/view) (75 s) ⏱ · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/17 - Scorpio- the situationship, 30 days (khee17).mp4`
+**11:00 AM · Post** — [A Whole Saturday, Just Me](https://drive.google.com/file/d/1TJaXOcke28YwdTkEJCwl7z9LtciDpJw8/view) (67 s) ⏱ · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/16 - A Whole Saturday, Just Me (kdye16).mp4`
 
-It was never official and it still hurts. That's allowed. Thirty days of muting, almost-texting and finally saying it out loud, because untitled still counts.
+A to-do list with one item on it. Slow coffee, flowers, a nap with no guilt, then the last thing on the list. Rest counts as something you did. Save this for your next free Saturday.
 
 **11:20 AM · Trial reel** — [Libra, stop saying sorry](https://drive.google.com/file/d/1hAKdOG7rskb80ubHzLiH53FXpv9F4gmT/view) (10.5 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/19 - Libra, stop saying sorry (k5te19).mp4`
@@ -5569,10 +5574,11 @@ You take care of everyone so well that you forget to count yourself. Keep the op
 They're keeping a tally of who texted first. Fair, or a problem?
 Love isn't a scoreboard. If you miss them, just text.
 
-**12:30 PM · Post** — [Solo Day Trip](https://drive.google.com/file/d/1Wkp1CSVF9ZhojtGlROizXK39IEbEdzOo/view) (66 s) ⏱ · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/17 - Solo Day Trip (kdye17).mp4`
+**12:30 PM · Post** — [The Dishes, Played Twice](https://drive.google.com/file/d/1umB-8Dnw8RCKn6vpsoVe9OfBrDTn032_/view) (71.4 s) ⏱ · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/16 - The Dishes, Played Twice (ksbe16).mp4`
 
-Scared to go somewhere with nobody to talk to? Take the train anyway. Look, listen, let a stranger's dog say hi. Stay for the ending: the voice note goes to someone who deserves it.
+Same fight about the dishes, played twice. Wait for round two.
+It was never about the sink, it was about feeling alone in it.
 
 **12:50 PM · Trial reel** — [The group chat wrote it](https://drive.google.com/file/d/1YvAlRkWGp6g__TBN1Jk0U2UbWM8zv0PD/view) (11 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/19 - The group chat wrote it (kbge19).mp4`
@@ -5591,11 +5597,11 @@ Not every disagreement needs a winner. If it's about the tinsel, let it be a tie
 Libra, still weighing three gifts for them?
 Pick the one that made you smile first. That's usually the one.
 
-**2:00 PM · Post** — Left on Read, Played Twice (74.2 s) ⏱ · *Say It Better*  
-`ksbe17`
+**2:00 PM · Post** — [Virgo.exe: Fix-It Mode](https://drive.google.com/file/d/1jzR31sZoGMVhyqjleSTFx3gBGG_qWMdH/view) (64 s) ⏱ · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/16 - Virgo.exe- Fix-It Mode (klge16).mp4`
 
-Left on read, two endings. One goes to the group chat. One gets a phone call.
-Ask the gentle question under the panic.
+If you notice everything, you can end up correcting everyone, yourself first.
+The patch notes: notice without fixing, let one thing stay messy, say what you like about them.
 
 **2:20 PM · Trial reel** — [Breakup round: Libra](https://drive.google.com/file/d/1S11ZsdI88ZaWTxpWBztZ4V_4XWgk4SWm/view) (9.3 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/19 - Breakup round- Libra (khse19).mp4`
@@ -5613,11 +5619,10 @@ Invited to someone's family dinner and worried you'd be in the way? They asked b
 
 A Libra can host a whole party and still check on you across the room. Then they quietly save you the best seat.
 
-**3:30 PM · Post** — [Libra.exe: Peace at All Costs](https://drive.google.com/file/d/1OmALqMNXdXCG9qy-UIPgGdgB9n7tXxBR/view) (72 s) ⏱ · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/17 - Libra.exe- Peace at All Costs (klge17).mp4`
+**3:30 PM · Post** — [Six months of almost](https://drive.google.com/file/d/1ic6EfvYBQc3y_Vjet0QMIOus-VKv8b1l/view) (90 s) ⏱ · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/16 - Six months of almost (kare16).mp4`
 
-Every "it's fine" gets saved somewhere, until the folder is full.
-Small honest no's on the day it happens keep love from cracking. A disagreement isn't a breakup.
+Six months of umbrellas, second coffees and almost-asks interrupted by a waiter, a sneeze and a bus. Wait for the answer. Guessing took months, asking took a minute.
 
 **3:50 PM · Trial reel** — [Libra about to say yes again](https://drive.google.com/file/d/1LXtiRsjqKmJu2fgefezLq5IzeBIU4olw/view) (11 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/19 - Libra about to say yes again (kute19).mp4`
@@ -5636,10 +5641,10 @@ A kind no beats a tired yes.
 Winter blues hit. Text everyone, or tell no one?
 Tell one person you trust how you really feel. That's enough to start.
 
-**5:00 PM · Post** — [The holiday party plus-one](https://drive.google.com/file/d/1BgVZ_m9732CvHIsoTpvd3OBKF9d8-CNZ/view) (80 s) ⏱ · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/17 - The holiday party plus-one (kare17).mp4`
+**5:00 PM · Post** — [One night, three almost-texts](https://drive.google.com/file/d/1QVMX8mlYVazkIfzJu9k4UWUEdlO-WFlk/view) (75 s) ⏱ · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/16 - One night, three almost-texts (kbxe16).mp4`
 
-The invite says +1 and your mind throws three imaginary parties. Keep the ask to two lines: what you want, and a question. Ask before the party, not at the door.
+Three almost-texts in one long night, and number three is the big one. Big feelings need a person, not a send. Watch what Pisces does instead.
 
 **5:20 PM · Trial reel** — [The Multiple-Choice Hello](https://drive.google.com/file/d/1SJV5ehgLcXHulLiX9xhIPL9v5oyDJsSl/view) (9 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/19 - The Multiple-Choice Hello (kroe19).mp4`
@@ -5659,10 +5664,11 @@ Big things deserve a quiet moment. Say it to them, not the room.
 Go to the party, then sneak out at nine for pie?
 Libra charmed the room, then picked a quiet booth with their date.
 
-**6:30 PM · Post** — [The holiday party test](https://drive.google.com/file/d/12ndfYQmBe6NzxuPjZ3xzOphBQWviZzgl/view) (65 s) ⏱ · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/17 - The holiday party test (kbxe17).mp4`
+**6:30 PM · Post** — [The night before the first date since the breakup](https://drive.google.com/file/d/1TTdVnJ-40T3L-rR4XZDEej9hUyF4uMHh/view) (75 s) ⏱ · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/16 - The night before the first date since the breakup (kmte16).mp4`
 
-A holiday party, your ex's best friend, and three almost-texts. The real test comes on the ride home. Send a "home safe" to the people who asked.
+Outfits everywhere, every what-if running at once, and an old photo still on the mirror.
+You're allowed to miss the past and still go. Show up as yourself; that's the whole plan.
 
 **6:50 PM · Trial reel** — [Grandpa sent his first heart](https://drive.google.com/file/d/1sXEz27y17IVzfJgpX8JwtRxG9WMZzVlT/view) (11.0 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/10 - Grandpa sent his first heart (kpre10).mp4`
@@ -5681,11 +5687,11 @@ Virgo season is details, helping and good routines, and our Pisces student learn
 Small disagreement. Fix it this second, or agree with every side, even the lamp's?
 Pause, breathe, then come back and talk.
 
-**8:00 PM · Post** — [The night before meeting their friends](https://drive.google.com/file/d/1zeGGD2atqw3mMmqNFm7RiPyyRvF5_BRA/view) (70 s) ⏱ · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/17 - The night before meeting their friends (kmte17).mp4`
+**8:00 PM · Post** — [Card three: ten years](https://drive.google.com/file/d/161uIOWMtnnuUdo7SbR0lfjtpNvmEDAhQ/view) (67.4 s) ⏱ · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/16 - Card three- ten years (koce16).mp4`
 
-Rehearsing jokes and memorizing names the night before meeting their friends?
-They already love someone who likes you. Skip the show, ask good questions, and really listen.
+Three questions in one night. The third one was about ten years from now.
+Big questions feel scary. Asked kindly, after a few laughs, they feel like home. Wait for card three.
 
 **8:20 PM · Trial reel** — [Pretending I’m mysterious. I’m just shy.](https://drive.google.com/file/d/1y2L7ACA8bnXU8KVupOmZZNsEzditkGUL/view) (8.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/20 - Pretending I’m mysterious. I’m just shy. (kwme20).mp4`
@@ -5703,11 +5709,11 @@ Living with a messier partner can test anyone's patience. Pick the one thing tha
 
 Celebrating your made-up holiday alone, or getting everyone into party hats for it. Weird traditions need witnesses.
 
-**9:30 PM · Post** — [Card three: making up](https://drive.google.com/file/d/1pjNK3CIFHgYPt7EfphEQCHBleI5s6i-s/view) (64 s) ⏱ · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/17 - Card three- making up (koce17).mp4`
+**9:30 PM · Post** — [A Day Apart: Tokyo to LA](https://drive.google.com/file/d/1F1XcnYuV7MraUt-Ss1njQ7nkfOpNhj8C/view) (60 s) ⏱ · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/10 - A Day Apart- Tokyo to LA (klne10).mp4`
 
-Some small fights never actually get made up. They just get quiet.
-A repair doesn't have to be big. It has to be real. Say sorry first, then take the walk.
+Seventeen hours apart means one of you is always living in tomorrow.
+A whole day of small notes, photos and goodnights, then the arrivals gate. Small and steady beats big and rare.
 
 **9:50 PM · Trial reel** — [Writing the Dating Bio](https://drive.google.com/file/d/1fA6nlsXW0geGucXI89HeyEqUXTNw1AI0/view) (9 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/20 - Writing the Dating Bio (kwoe20).mp4`
@@ -5726,24 +5732,24 @@ Capricorn, your word for next year is rest. Not as a reward when everything's do
 Writing next year's goals and the people end up last?
 Move them to the top of the list.
 
-**11:00 PM · Post** — [Texting an old friend after a year](https://drive.google.com/file/d/1-vLKAeUGdPU7RAG3jIUPb4p6cCikVG2U/view) (70 s) ⏱ · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/18 - Texting an old friend after a year (ktre18).mp4`
+**11:00 PM · Post** — [Capricorn in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1VpPloK7BB2jETJdh5n6Jhe5t6cA3GNmR/view) (118.6 s) ⏱ · *Deep Dive: ___ in Love*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/10 - Capricorn in Love- Everything Nobody Tells You (kdde10).mp4`
 
-Haven't talked to a friend in a year? You don't need the perfect reason to reach out.
-"I miss you" is enough. Keep the apology kind, to them and to you, then make a plan.
+A Capricorn won't always say it. They'll fix your wobbly chair instead.
+Notice the steady things, tell them if you need a fix or a hug, and laugh at the dry jokes. They practiced.
 
-**11:15 PM · Post** — Capricorn, It's a Date Not an Interview (30 s) · *Planet Talk: Uranus*  
-`kpure10`
+**11:15 PM · Post** — [Saturn's Talk With Capricorn](https://drive.google.com/file/d/16Yj8auyl5jMbQ35popwPPWEU-WGoByot/view) (75 s) ⏱ · *Planet Talk: Saturn*  
+`Star Talk/Planet Talk/Saturn/10 Capricorn - Saturn's Talk With Capricorn (kpsae10).mp4`
 
-Showed up to a first date with a clipboard of five-year-plan questions? Put it down for one minute.
-Be a bit silly. Bad jokes and laughing together tell you more than any interview.
+Four plans cancelled this week, all because work ran late. Saturn didn't come to check your productivity. Love isn't a promotion you earn: you already qualify. Save this for the next late night at the desk.
 
 ## Day 50 · Wed 23 Dec
 
-**7:45 AM · Post** — Venus to Capricorn: Not a Promotion (28.4 s) · *Planet Talk: Venus*  
-`kpvee10`
+**7:45 AM · Post** — [Capricorn, It's a Date Not an Interview](https://drive.google.com/file/d/1d-RSR-_RRioXngzs-_imZMQ8DlEWJnFq/view) (30 s) · *Planet Talk: Uranus*  
+`Star Talk/Planet Talk/Uranus/10 Capricorn - Capricorn, It's a Date Not an Interview (kpure10).mp4`
 
-If your plan says Q4: deserve love, this one's for you. You don't earn love by hitting a goal. Close the laptop at six, keep Friday, and let someone enjoy the version of you that's off the clock.
+Showed up to a first date with a clipboard of five-year-plan questions? Put it down for one minute.
+Be a bit silly. Bad jokes and laughing together tell you more than any interview.
 
 **8:20 AM · Trial reel** — [Walls Up Before the First Date](https://drive.google.com/file/d/1T_PldRP-pxS0pDnwr4UL8f3ioLeeKi1k/view) (8.0 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/20 - Walls Up Before the First Date (k3se20).mp4`
@@ -5762,11 +5768,11 @@ Getting a gift when you have nothing to give back can set off a quiet panic. A r
 Your turn to say the real thing, and you say "I like soup."
 Sagittarius: also soup.
 
-**9:30 AM · Post** — [Never been in a relationship](https://drive.google.com/file/d/1COvYXaLdILbhNHUz_3OW_rGBJG4gkU3c/view) (64 s) ⏱ · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/18 - Never been in a relationship (kine18).mp4`
+**9:30 AM · Post** — [The Capricorn Guide: Single at the Dinner](https://drive.google.com/file/d/1ZHwLY5XmbagW-aZnBvnWMvZhofGndHAl/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/10 - The Capricorn Guide- Single at the Dinner (kxsge10).mp4`
 
-Never dated, and it feels like everyone else has a story? You're not behind and nothing is wrong with you.
-Everyone's timeline is different. No timer, no rush, just your life.
+"So, seeing anyone?" Capricorn, you're allowed to just smile and say not yet.
+This week, log off at seven once and text someone you actually like.
 
 **9:50 AM · Trial reel** — [The Zodiac Votes: Plan or Surprise](https://drive.google.com/file/d/13biFJBQTR-8kL4rrLl4--3CYzrXkT5Fa/view) (8 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/20 - The Zodiac Votes- Plan or Surprise (ktte20).mp4`
@@ -5785,10 +5791,11 @@ Details matter to one of you, the pretty bow matters to the other. Praise first,
 Capricorn's winter: a planner, sensible boots, a 6 AM alarm on Sunday.
 Secretly, they love the neighbours' lights.
 
-**11:00 AM · Post** — [The full pep talk: home alone for the holidays](https://drive.google.com/file/d/1AQT8OliJPZl4c1pnlYFZbblNOnWA-DzF/view) (69 s) ⏱ · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/18 - The full pep talk- home alone for the holidays (kpte18).mp4`
+**11:00 AM · Post** — [Pretending Not to Care](https://drive.google.com/file/d/19gyNByluzUNDCiBHSQLnaxnoUzrfTkNI/view) (75 s) ⏱ · *Ask the Stars: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/07 - Pretending Not to Care (kxase07).mp4`
 
-Alone on the 24th and telling everyone you're fine? Lonely isn't a flaw; it's a signal to reach for your people. Someone has a seat saved for you.
+Saying "sure, whatever" when you actually mean "yes, please."
+Playing it cool can hide you from the person you like. You can stay calm and still say one true thing.
 
 **11:20 AM · Trial reel** — [“You pick.” (They minded.)](https://drive.google.com/file/d/1YGV0VAIXl0KcSeXQqjbJ6D4yuyTOA5SK/view) (8 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/20 - “You pick.” (They minded.) (kgse20).mp4`
@@ -5807,10 +5814,11 @@ Want to help at your partner's family dinner? Offer once, warmly. If they say no
 Christmas Eve, and the lights won't come on.
 Two volunteers. Suspiciously quick.
 
-**12:30 PM · Post** — [Aquarius: 30 days of feelings, logged](https://drive.google.com/file/d/1511GAgBSf-wVSv6WTisyFFC_aW8yIfGu/view) (60 s) ⏱ · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/18 - Aquarius- 30 days of feelings, logged (khee18).mp4`
+**12:30 PM · Post** — [Aries × Capricorn: the first fight.](https://drive.google.com/file/d/1Fz823i6YxEaZRtE5fV10oozfdQEFjZQK/view) (90 s) ⏱ · *Sign × Sign: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Sign × Sign- Extended/07 - Aries × Capricorn- the first fight. (kxsse07).mp4`
 
-You can't debug a feeling, you have to feel it. Thirty days from "not responding" to the patch notes, with one friend who drags you outside to look up.
+Our first fight was about parking. Obviously.
+Take twenty minutes to cool down, say when you'll be back, and don't wait a week to talk. Tonight is soon enough.
 
 **12:50 PM · Trial reel** — [We should hang out sometime](https://drive.google.com/file/d/1boxPutCsmGJNkeqa8Z0OiH8I9Ps0CDU5/view) (9 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/20 - We should hang out sometime (kfae20).mp4`
@@ -5829,10 +5837,11 @@ You don't need applause to be worth loving, and you don't have to look fine all 
 Is your Leo rehearsing a speech in the mirror again?
 The whole speech was one question, and then it listened.
 
-**2:00 PM · Post** — [Beginner on Purpose](https://drive.google.com/file/d/1GwlemfwJxcqYNksNPySK3eBk9DoNO4FV/view) (64 s) ⏱ · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/18 - Beginner on Purpose (kdye18).mp4`
+**2:00 PM · Post** — [The cancel that became a plan](https://drive.google.com/file/d/1iC0WqIKl2SA35aoEEkYjUTz1mkBpk1sb/view) (66 s) ⏱ · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/17 - The cancel that became a plan (ktre17).mp4`
 
-Hate being bad at things? Seven attempts, a lot of falling and one kind tip from a stranger. Being a beginner is where every good thing starts.
+Cancelling doesn't have to end anything. Say why, own that they might be disappointed, and offer a real new night.
+That's how a cancel turns into a better plan.
 
 **2:20 PM · Trial reel** — [Scorpio Acts Chill](https://drive.google.com/file/d/1R4et6VMbCbKBcX16SzfUpQ1vmHNp1k3L/view) (9 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/20 - Scorpio Acts Chill (ksge20).mp4`
@@ -5851,11 +5860,11 @@ Aquarius loves on long walks, talking about the stars and big ideas. Somewhere i
 A homemade night-sky puzzle with one piece missing.
 The last piece had a little heart on it.
 
-**3:30 PM · Post** — The Birthday No-Show, Played Twice (71.4 s) ⏱ · *Say It Better*  
-`ksbe18`
+**3:30 PM · Post** — [Panicking when they take ages to reply](https://drive.google.com/file/d/1ELrZQ0aMl6MAb-16scStSO0FAYZWau7m/view) (69 s) ⏱ · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/17 - Panicking when they take ages to reply (kine17).mp4`
 
-They missed your birthday. Round one assumes the worst. Round two asks what happened.
-Curious first, hurt second.
+Seven minutes without a reply can feel like seven years. Not knowing feels like danger, but it's a feeling, not a fact.
+Name it, do one small thing, and ask kindly about texting styles later.
 
 **3:50 PM · Trial reel** — [Scorpio, someone wants the real you](https://drive.google.com/file/d/1cxkheyoSYpc0V_Xky82Yb2CL2oCsQscC/view) (11.5 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/20 - Scorpio, someone wants the real you (k5te20).mp4`
@@ -5873,11 +5882,10 @@ Not loving who your friend is dating is tricky. If it's a real worry, say it onc
 
 You said no to the party and braced for it. They said "totally, rest up." Relief tears count. A kind no is still a kind word.
 
-**5:00 PM · Post** — [Capricorn.exe: Shows, Never Says](https://drive.google.com/file/d/1kIgPc_2-iCVTXclLpxPfdcAdFJ8YCH2z/view) (70 s) ⏱ · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/18 - Capricorn.exe- Shows, Never Says (klge18).mp4`
+**5:00 PM · Post** — [The full pep talk: your crush said no](https://drive.google.com/file/d/1iu9UVmd7kpf0nwe0DhVowDu9wZvog6KL/view) (69 s) ⏱ · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/17 - The full pep talk- your crush said no (kpte17).mp4`
 
-Fixed the sink, planned the trip, did both your taxes. Never said it.
-Keep doing the shelves, and say the words too. Once a day is plenty.
+They said no, and the replay won't stop. A no to dating isn't a no to you, and the proof of who you are doesn't depend on one answer. The last line, though.
 
 **5:20 PM · Trial reel** — ["Don't lie to me. I'll know."](https://drive.google.com/file/d/1yE9fu6unqVK-kLF0FvUGWnrZctxk6qDr/view) (10 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/20 - -Don't lie to me. I'll know.- (kbge20).mp4`
@@ -5895,10 +5903,10 @@ Libra season opens at the September equinox, when day and night are close to equ
 
 Crying at the holiday movie alone with one tissue left, or next to a friend holding the box. Cry with company this year.
 
-**6:30 PM · Post** — [The talk, from both sides](https://drive.google.com/file/d/1tWxzd37dvCnhga-resFp5mo3AT2oWL8K/view) (75 s) ⏱ · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/18 - The talk, from both sides (kare18).mp4`
+**6:30 PM · Post** — [Scorpio: the situationship, 30 days](https://drive.google.com/file/d/175_I05xEoEQd-RFcjGTOaqrpmd-5DTYi/view) (75 s) ⏱ · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/17 - Scorpio- the situationship, 30 days (khee17).mp4`
 
-Two apartments, two pillows, the same fear and the same rehearsed words. If you're scared to ask, they might be too. Your almost is their almost.
+It was never official and it still hurts. That's allowed. Thirty days of muting, almost-texting and finally saying it out loud, because untitled still counts.
 
 **6:50 PM · Trial reel** — [Missing your ex round: Scorpio](https://drive.google.com/file/d/1KdjhIKh0ARzWlUtQ9B2wAjMWAU5ssPj7/view) (9.5 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/20 - Missing your ex round- Scorpio (khse20).mp4`
@@ -5917,10 +5925,10 @@ The talk is over, but you're not sure you're okay yet? A check-in the next day i
 Who actually listens, and who is already planning a trip?
 All twelve, ranked. Listening isn't fixing, it's staying.
 
-**8:00 PM · Post** — [Sunday alone, three traps](https://drive.google.com/file/d/1ovVDkoaEgHTA2HIVpbd3TK9xUTDNeKek/view) (70 s) ⏱ · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/18 - Sunday alone, three traps (kbxe18).mp4`
+**8:00 PM · Post** — [Solo Day Trip](https://drive.google.com/file/d/1Wkp1CSVF9ZhojtGlROizXK39IEbEdzOo/view) (66 s) ⏱ · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/17 - Solo Day Trip (kdye17).mp4`
 
-A quiet Sunday has traps: the old brunch reminder, the two-person shelf, their show. Alone doesn't mean empty. Wait for trap three.
+Scared to go somewhere with nobody to talk to? Take the train anyway. Look, listen, let a stranger's dog say hi. Stay for the ending: the voice note goes to someone who deserves it.
 
 **8:20 PM · Trial reel** — [Texting your best friend... feelings](https://drive.google.com/file/d/1Zhw1PLYWMPpTvFBw9_VExNppqfUKJchI/view) (11 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/20 - Texting your best friend... feelings (kute20).mp4`
@@ -5939,11 +5947,11 @@ Worried about having no one to hug at midnight? Midnight hugs come in friend siz
 First pet, best day, biggest fear: they want your whole story. Too intense?
 Curious is a compliment. Share at your own pace.
 
-**9:30 PM · Post** — [The night before telling my best friend](https://drive.google.com/file/d/1vcPDkaNxDYSNcntohC79fOh_ZT5Ja1tK/view) (80 s) ⏱ · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/18 - The night before telling my best friend (kmte18).mp4`
+**9:30 PM · Post** — [Left on Read, Played Twice](https://drive.google.com/file/d/1oxIW_Zi9uIenSHYqm4YRdzLjVtLdWK7a/view) (74.2 s) ⏱ · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/17 - Left on Read, Played Twice (ksbe17).mp4`
 
-Screaming into a pillow because you like your best friend.
-It's scary because it matters. Say one honest sentence, stay kind either way, and you'll be okay.
+Left on read, two endings. One goes to the group chat. One gets a phone call.
+Ask the gentle question under the panic.
 
 **9:50 PM · Trial reel** — [The Space Fact Opener](https://drive.google.com/file/d/1GrUQQ6S7KqGqezW6yZi_1MhnEoUyxufs/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/20 - The Space Fact Opener (kroe20).mp4`
@@ -5962,25 +5970,24 @@ When a friend doesn't want to talk, you don't need the perfect words. Sit with t
 Scorpio, holding a straight face through their joke again?
 Let them see you laugh. It's the best review they'll get.
 
-**11:00 PM · Post** — [Card three: Sunday dinner](https://drive.google.com/file/d/1q4JT0tcKyun8UAUEqrLfom4T6Seflbri/view) (63.6 s) ⏱ · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/18 - Card three- Sunday dinner (koce18).mp4`
+**11:00 PM · Post** — [Libra.exe: Peace at All Costs](https://drive.google.com/file/d/1OmALqMNXdXCG9qy-UIPgGdgB9n7tXxBR/view) (72 s) ⏱ · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/17 - Libra.exe- Peace at All Costs (klge17).mp4`
 
-Pets, money, and one question that made them both go silent.
-When you want the same small thing, like dinner at the table, that's the start of a future. Watch to the end.
+Every "it's fine" gets saved somewhere, until the folder is full.
+Small honest no's on the day it happens keep love from cracking. A disagreement isn't a breakup.
 
-**11:15 PM · Post** — Pisces, Who Looks After You? (30 s) · *Planet Talk: Jupiter*  
-`kpjue12`
+**11:15 PM · Post** — [Venus to Capricorn: Not a Promotion](https://drive.google.com/file/d/1NgzmwPmUS3zjjRJpQ02l55unVMNxquBp/view) (28.4 s) · *Planet Talk: Venus*  
+`Star Talk/Planet Talk/Venus/10 Capricorn - Venus to Capricorn- Not a Promotion (kpvee10).mp4`
 
-Always the friend on the 2 a.m. call, never the one who calls?
-Showing up for people is a gift. So is resting and asking: can I call you tomorrow? Fill your own cup too.
+If your plan says Q4: deserve love, this one's for you. You don't earn love by hitting a goal. Close the laptop at six, keep Friday, and let someone enjoy the version of you that's off the clock.
 
 ## Day 51 · Thu 24 Dec
 
-**7:45 AM · Post** — Have you said hi? (29.5 s) · *Planet Talk: Mars*  
-`kpmae12`
+**7:45 AM · Post** — [Pisces, Who Looks After You?](https://drive.google.com/file/d/1HJmau0HkNBNi2eby7vJUO4IXCbNZbrbi/view) (30 s) · *Planet Talk: Jupiter*  
+`Star Talk/Planet Talk/Jupiter/12 Pisces - Pisces, Who Looks After You- (kpjue12).mp4`
 
-A whole wedding planned with the person at the bus stop. A dog too. Zero words exchanged.
-Daydreams are lovely, but one real hi beats a hundred of them. Start with hi.
+Always the friend on the 2 a.m. call, never the one who calls?
+Showing up for people is a gift. So is resting and asking: can I call you tomorrow? Fill your own cup too.
 
 **8:20 AM · Trial reel** — [Answering “how’s love?” with a work update](https://drive.google.com/file/d/1udcsqrRKQgdOTvY_EIbz1TTD3Ue3p_5C/view) (9.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/21 - Answering “how’s love-” with a work update (kwme21).mp4`
@@ -5999,11 +6006,10 @@ Tension during a holiday stay is normal. Skip the whisper-fight in the guest roo
 Alone on a roof with the person you just confessed to.
 "No labels! Totally cool!" It is not cool.
 
-**9:30 AM · Post** — [A Day Apart: Paris to Montreal](https://drive.google.com/file/d/10PjfvuyIo2-dFO6tKUUKmZ6ifCZ9jQMl/view) (60 s) ⏱ · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/11 - A Day Apart- Paris to Montreal (klne11).mp4`
+**9:30 AM · Post** — [The holiday party plus-one](https://drive.google.com/file/d/1BgVZ_m9732CvHIsoTpvd3OBKF9d8-CNZ/view) (80 s) ⏱ · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/17 - The holiday party plus-one (kare17).mp4`
 
-A snow photo, a mix-up, the same soup at dinner and at lunch, and a goodnight across six hours.
-Little rituals make the distance smaller. Wait for the table at the end.
+The invite says +1 and your mind throws three imaginary parties. Keep the ask to two lines: what you want, and a question. Ask before the party, not at the door.
 
 **9:50 AM · Trial reel** — [They Finally Texted Back](https://drive.google.com/file/d/1-1QtgQu4uT181Bg4XEzuqA9J6iNaKa2E/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/21 - They Finally Texted Back (kwoe21).mp4`
@@ -6021,11 +6027,10 @@ Noticing the little things is a gift, until it turns into fixing people or repla
 
 Mention something to a Scorpio once in March and it shows up wrapped in December. Don't call it sweet. It's nothing, apparently.
 
-**11:00 AM · Post** — [Aquarius in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1kGsrWDfmgptap_u8XthpF6IY93XyLUGW/view) (119.3 s) ⏱ · *Deep Dive: ___ in Love*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/11 - Aquarius in Love- Everything Nobody Tells You (kdde11).mp4`
+**11:00 AM · Post** — [The holiday party test](https://drive.google.com/file/d/12ndfYQmBe6NzxuPjZ3xzOphBQWviZzgl/view) (65 s) ⏱ · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/17 - The holiday party test (kbxe17).mp4`
 
-A weird fact at 2 a.m. is an Aquarius saying they thought of you.
-Give them space with a promise to come back, and be their friend first. They return closer, maybe with a rock.
+A holiday party, your ex's best friend, and three almost-texts. The real test comes on the ride home. Send a "home safe" to the people who asked.
 
 **11:20 AM · Trial reel** — [Meet My Parents](https://drive.google.com/file/d/1drk4RKcqwMQQ_uNaWfeLz4U86AuGLQaa/view) (6.6 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/21 - Meet My Parents (k3se21).mp4`
@@ -6044,11 +6049,11 @@ When the big day goes sideways, it's easy to feel like you ruined it. Laugh firs
 A cute stranger at the holiday market. What now?
 No buying the whole stall, no staring at candles. Say hi and compliment the hat.
 
-**12:30 PM · Post** — [The Aquarius Guide: Gone Quiet](https://drive.google.com/file/d/1ahYSLfPWHMBpbtgIM33N1svUf5gZ3MWl/view) (67.3 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/11 - The Aquarius Guide- Gone Quiet (kxsge11).mp4`
+**12:30 PM · Post** — [The night before meeting their friends](https://drive.google.com/file/d/1zeGGD2atqw3mMmqNFm7RiPyyRvF5_BRA/view) (70 s) ⏱ · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/17 - The night before meeting their friends (kmte17).mp4`
 
-Mid-feeling, headphones on, gone. Aquarius, we see you.
-Needing space is fine. This week, say "I need a minute," take it, and then come back. That's the promise.
+Rehearsing jokes and memorizing names the night before meeting their friends?
+They already love someone who likes you. Skip the show, ask good questions, and really listen.
 
 **12:50 PM · Trial reel** — [The Zodiac Votes: After a Fight](https://drive.google.com/file/d/1DEh4spV-ag2sCleocWxCytqu5hT-GAVh/view) (9 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/21 - The Zodiac Votes- After a Fight (ktte21).mp4`
@@ -6067,11 +6072,11 @@ New tradition or the classic countdown? You don't have to pick one. Try their id
 A ghost-story walk with a Scorpio. Who screams first?
 A cat knocked a bin lid. Scorpio jumped highest, and they laughed it off.
 
-**2:00 PM · Post** — Advice or Company? (60 s) ⏱ · *Friends First: Extended*  
-`kxffe04`
+**2:00 PM · Post** — [Card three: making up](https://drive.google.com/file/d/1pjNK3CIFHgYPt7EfphEQCHBleI5s6i-s/view) (64 s) ⏱ · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/17 - Card three- making up (koce17).mp4`
 
-When a friend's heart breaks, the urge to fix everything is love.
-Ask first: do you want advice, or company? Sometimes just staying is the whole plan.
+Some small fights never actually get made up. They just get quiet.
+A repair doesn't have to be big. It has to be real. Say sorry first, then take the walk.
 
 **2:20 PM · Trial reel** — [The breakup told as a comedy set](https://drive.google.com/file/d/1xxgm50fzXHrsLZg6TmLDPnpjvJM53YPd/view) (10 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/21 - The breakup told as a comedy set (kgse21).mp4`
@@ -6090,11 +6095,11 @@ Aquarius can say hi to every person at the party and forget who they arrived wit
 The plan was pasta. Now the plan is changing. Is that you?
 Feeling thrown is fine. Say so, then roll with it.
 
-**3:30 PM · Post** — [Why do shooting stars come back every December?](https://drive.google.com/file/d/1lclsoF-CpeQYIxqRQ_5Et0ZbU7_LVTTR/view) (118 s) ⏱ · *Star Talk Explains: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Star Talk Explains- Extended/06 - Why do shooting stars come back every December- (kxexe06).mp4`
+**3:30 PM · Post** — [Texting an old friend after a year](https://drive.google.com/file/d/1-vLKAeUGdPU7RAG3jIUPb4p6cCikVG2U/view) (70 s) ⏱ · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/18 - Texting an old friend after a year (ktre18).mp4`
 
-Wished on every shooting star that they'd text me.
-Each December Earth crosses the same trail of space dust. A wish is a lovely start; the brave, kind part is texting first.
+Haven't talked to a friend in a year? You don't need the perfect reason to reach out.
+"I miss you" is enough. Keep the apology kind, to them and to you, then make a plan.
 
 **3:50 PM · Trial reel** — [Cancelling plans with yourself](https://drive.google.com/file/d/1qIvI88Pk7esGlaA7EH-6gzA9JHlH01fZ/view) (10 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/21 - Cancelling plans with yourself (kfae21).mp4`
@@ -6112,11 +6117,11 @@ You don't owe anyone your whole story early on. Share your past when the trust i
 
 Four streets of holiday lights in nine minutes, stopwatch out. Or a slow walk that stops at every house. Slow walks count as dates.
 
-**5:00 PM · Post** — [The mixed signals night](https://drive.google.com/file/d/1rD0zqF0d1WAxzZndErFr4vhlKx841n-S/view) (78 s) ⏱ · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/19 - The mixed signals night (ktre19).mp4`
+**5:00 PM · Post** — [Never been in a relationship](https://drive.google.com/file/d/1COvYXaLdILbhNHUz_3OW_rGBJG4gkU3c/view) (64 s) ⏱ · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/18 - Never been in a relationship (kine18).mp4`
 
-Slow replies and one-word answers can send your mind spinning.
-Instead of guessing, say where you're at and ask gently. Sometimes the answer is just "I like you, and I'm nervous."
+Never dated, and it feels like everyone else has a story? You're not behind and nothing is wrong with you.
+Everyone's timeline is different. No timer, no rush, just your life.
 
 **5:20 PM · Trial reel** — [Sagittarius and Your Errands](https://drive.google.com/file/d/18Kj6pMnq6xBpFmaIlzmrTOIv6ZzoABpK/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/21 - Sagittarius and Your Errands (ksge21).mp4`
@@ -6136,11 +6141,10 @@ The finale. Cool is easy. Clear is kind.
 Twelve-minute voice notes or four-second whispers?
 The signs, ranked. Long or short, hearing their voice is the good part.
 
-**6:30 PM · Post** — [Growing apart from my best friend](https://drive.google.com/file/d/1LfKoj_ZE2hnifsWwdT5T6yz88s4IXjA-/view) (60 s) ⏱ · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/19 - Growing apart from my best friend (kine19).mp4`
+**6:30 PM · Post** — [The full pep talk: home alone for the holidays](https://drive.google.com/file/d/1AQT8OliJPZl4c1pnlYFZbblNOnWA-DzF/view) (69 s) ⏱ · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/18 - The full pep talk- home alone for the holidays (kpte18).mp4`
 
-Drifting from a best friend hurts, even when nobody did anything wrong. Lives move and friendships change shape.
-Try a check-in: say what you miss, then find a rhythm that fits now.
+Alone on the 24th and telling everyone you're fine? Lonely isn't a flaw; it's a signal to reach for your people. Someone has a seat saved for you.
 
 **6:50 PM · Trial reel** — [Sagittarius, honesty needs a soft landing](https://drive.google.com/file/d/1pv-3k9QseqROThWKobJj6ByyF_oq1h0R/view) (10 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/21 - Sagittarius, honesty needs a soft landing (k5te21).mp4`
@@ -6159,10 +6163,10 @@ If a relative teases your partner, back them up in the moment, with a calm voice
 Their laugh turns heads in a quiet café. Dealbreaker?
 A big laugh is a big welcome. Give it a minute and you'll join in.
 
-**8:00 PM · Post** — [The full pep talk: you got ghosted](https://drive.google.com/file/d/1PkqQYdAa18rarZztyGdTpMtZcp6q1eBV/view) (69 s) ⏱ · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/19 - The full pep talk- you got ghosted (kpte19).mp4`
+**8:00 PM · Post** — [Aquarius: 30 days of feelings, logged](https://drive.google.com/file/d/1511GAgBSf-wVSv6WTisyFFC_aW8yIfGu/view) (60 s) ⏱ · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/18 - Aquarius- 30 days of feelings, logged (khee18).mp4`
 
-Three days of grey ticks after a great date. Their silence is about their skills, not your worth. One kind closing text, then phone down. You can make your own closure.
+You can't debug a feeling, you have to feel it. Thirty days from "not responding" to the patch notes, with one friend who drags you outside to look up.
 
 **8:20 PM · Trial reel** — ["Brutally honest. Deal with it."](https://drive.google.com/file/d/1dDmCD1Kco1kroL4y-EKVN9GEzS3sEXfu/view) (9 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/21 - -Brutally honest. Deal with it.- (kbge21).mp4`
@@ -6181,10 +6185,10 @@ Keeping the peace shouldn't cost you yourself. This year, when someone asks what
 Sagittarius, you told them their sweater is "a lot."
 Honest is good. Honest and gentle is better.
 
-**9:30 PM · Post** — [Taurus: rebuilding the routine](https://drive.google.com/file/d/1kg96n4QQcFvXCMMcMFOhg2p_6QesayrE/view) (75 s) ⏱ · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/19 - Taurus- rebuilding the routine (khee19).mp4`
+**9:30 PM · Post** — [Beginner on Purpose](https://drive.google.com/file/d/1GwlemfwJxcqYNksNPySK3eBk9DoNO4FV/view) (64 s) ⏱ · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/18 - Beginner on Purpose (kdye18).mp4`
 
-When the routine falls apart, start with one tiny thing. Water the plant, fold one sock, let a friend bring stew on the bad day. Watch what grows back.
+Hate being bad at things? Seven attempts, a lot of falling and one kind tip from a stranger. Being a beginner is where every good thing starts.
 
 **9:50 PM · Trial reel** — [Flaky friend round: Sagittarius](https://drive.google.com/file/d/174s53nmUZi0gH_p9WHWVqe4_2nPuwevM/view) (9.5 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/21 - Flaky friend round- Sagittarius (khse21).mp4`
@@ -6202,24 +6206,25 @@ Scorpio season is depth, loyalty and starting over. If you want closeness fast, 
 
 Your Sagittarius turns up at 10 PM with a sled. The best part ends up being the quiet bit, lying in the snow under the stars.
 
-**11:00 PM · Post** — [The Unbirthday](https://drive.google.com/file/d/12Y25pX60PtaMw1spe_dZBH4WGwUTzeZU/view) (70 s) ⏱ · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/19 - The Unbirthday (kdye19).mp4`
+**11:00 PM · Post** — [The Birthday No-Show, Played Twice](https://drive.google.com/file/d/1YGSMeO_JTi1vdjcSqLEVTZ5KAHUEzFNU/view) (71.4 s) ⏱ · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/18 - The Birthday No-Show, Played Twice (ksbe18).mp4`
 
-Waiting for someone else to celebrate you? Bake the cake on a Tuesday, dance to your own playlist, and write yourself the card. You don't need a reason.
+They missed your birthday. Round one assumes the worst. Round two asks what happened.
+Curious first, hurt second.
 
-**11:15 PM · Post** — Six Sorrys (26 s) · *Planet Talk: Mercury*  
-`kpmee12`
+**11:15 PM · Post** — [Have you said hi?](https://drive.google.com/file/d/11ntS2r5kmZZ6tldCV0fdRB4A26S6rTxW/view) (29.5 s) · *Planet Talk: Mars*  
+`Star Talk/Planet Talk/Mars/12 Pisces - Have you said hi- (kpmae12).mp4`
 
-Five minutes late and six sorrys deep. Pisces, they were happy to wait.
-One sorry, then a thank-you. It tells people they matter without you shrinking.
+A whole wedding planned with the person at the bus stop. A dog too. Zero words exchanged.
+Daydreams are lovely, but one real hi beats a hundred of them. Start with hi.
 
 ## Day 52 · Fri 25 Dec
 
-**7:45 AM · Post** — Pisces Pours Too Much (26.8 s) · *Planet Talk: The Moon*  
-`kpmoe12`
+**7:45 AM · Post** — [Six Sorrys](https://drive.google.com/file/d/144K6eHwaraA25Gyk-OWmMp1SPYJC173A/view) (26 s) · *Planet Talk: Mercury*  
+`Star Talk/Planet Talk/Mercury/12 Pisces - Six Sorrys (kpmee12).mp4`
 
-If you always pour for everyone, check your own cup too.
-Give to people who give back, and save some warmth for yourself.
+Five minutes late and six sorrys deep. Pisces, they were happy to wait.
+One sorry, then a thank-you. It tells people they matter without you shrinking.
 
 **8:20 AM · Trial reel** — [Their time: 4 a.m.](https://drive.google.com/file/d/19haU5y57fOKCjCK5AECWR0BrvpGfDVXy/view) (8 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/21 - Their time- 4 a.m. (kute21).mp4`
@@ -6238,11 +6243,11 @@ Aquarius loves what no one else would think of. Something handmade, a little odd
 6:00 PM, the countdown hits zero, and the lane stays dark.
 Sometimes the fix is one clear sentence.
 
-**9:30 AM · Post** — New Year's Eve: In or Out, Played Twice (69.2 s) ⏱ · *Say It Better*  
-`ksbe19`
+**9:30 AM · Post** — [Capricorn.exe: Shows, Never Says](https://drive.google.com/file/d/1kIgPc_2-iCVTXclLpxPfdcAdFJ8YCH2z/view) (70 s) ⏱ · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/18 - Capricorn.exe- Shows, Never Says (klge18).mp4`
 
-Party or pyjamas? The same New Year's fight, twice.
-Ask what the night means to each of you, and build the plan you both want.
+Fixed the sink, planned the trip, did both your taxes. Never said it.
+Keep doing the shelves, and say the words too. Once a day is plenty.
 
 **9:50 AM · Trial reel** — [Three Days Late](https://drive.google.com/file/d/16-JiLHBMV0Lh9HyiMcMaI5x29b7ezpAv/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/21 - Three Days Late (kroe21).mp4`
@@ -6261,11 +6266,10 @@ The quiet after the holidays can hit harder than you expect. Give yourself one s
 The holiday card: both your names on it, or not yet?
 Don't decide alone. Ask first, because being a "together" is a choice you make together.
 
-**11:00 AM · Post** — [Sagittarius.exe: Joke Shield](https://drive.google.com/file/d/1hN07sCaciZhrIHUxDteM8aat5VZan8IB/view) (76 s) ⏱ · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/19 - Sagittarius.exe- Joke Shield (klge19).mp4`
+**11:00 AM · Post** — [The talk, from both sides](https://drive.google.com/file/d/1tWxzd37dvCnhga-resFp5mo3AT2oWL8K/view) (75 s) ⏱ · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/18 - The talk, from both sides (kare18).mp4`
 
-Every serious moment gets a bit, and slowly people stop telling you things.
-One sincere sentence first, then the joke. Jokes are welcome after.
+Two apartments, two pillows, the same fear and the same rehearsed words. If you're scared to ask, they might be too. Your almost is their almost.
 
 **11:20 AM · Trial reel** — [The umbrella tilt](https://drive.google.com/file/d/10cnGUyz3TY1QzMlGMf6UZASdTSIwgLu8/view) (10.0 s) · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/11 - The umbrella tilt (kpre11).mp4`
@@ -6284,10 +6288,10 @@ One of you races ahead, one stops to text everyone. Wait at the door, put the ph
 Sledding in a city with no hills. Still worth it?
 They slid about two feet, tipped over and laughed till they cried.
 
-**12:30 PM · Post** — [When the answer is no](https://drive.google.com/file/d/1L90CqO-0R6CU-_G3y9QsdMHAJubc-Q1_/view) (90 s) ⏱ · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/19 - When the answer is no (kare19).mp4`
+**12:30 PM · Post** — [Sunday alone, three traps](https://drive.google.com/file/d/1ovVDkoaEgHTA2HIVpbd3TK9xUTDNeKek/view) (70 s) ⏱ · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/18 - Sunday alone, three traps (kbxe18).mp4`
 
-Virgo asks, Leo says no, honestly and kindly. Then a sad weekend, a friend with soup, and a dinner full of laughing. A clear no gives you your weekends back.
+A quiet Sunday has traps: the old brunch reminder, the two-person shelf, their show. Alone doesn't mean empty. Wait for trap three.
 
 **12:50 PM · Trial reel** — [Winning imaginary arguments at 3 a.m.](https://drive.google.com/file/d/1dfkid3gsScnO6cChfVt45-WMz8g_fnD3/view) (9.0 s) · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/22 - Winning imaginary arguments at 3 a.m. (kwme22).mp4`
@@ -6306,10 +6310,11 @@ When someone's late, the mind writes the worst story first. Try guessing the kin
 Holiday trip: packed in five minutes with no socks, or a week early with seven pairs?
 Pack light and share the socks.
 
-**2:00 PM · Post** — [The "can we try again" draft](https://drive.google.com/file/d/1YvEXUESw6JH5qH0jS9s6JpIwQrNN5D35/view) (90 s) ⏱ · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/19 - The -can we try again- draft (kbxe19).mp4`
+**2:00 PM · Post** — [The night before telling my best friend](https://drive.google.com/file/d/1vcPDkaNxDYSNcntohC79fOh_ZT5Ja1tK/view) (80 s) ⏱ · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/18 - The night before telling my best friend (kmte18).mp4`
 
-The "can we try again" text, three honest questions, and a verdict. You can miss someone and still choose to move on. Wait for it.
+Screaming into a pillow because you like your best friend.
+It's scary because it matters. Say one honest sentence, stay kind either way, and you'll be okay.
 
 **2:20 PM · Trial reel** — [Midnight on New Year's Eve](https://drive.google.com/file/d/15PoJ8dUupU3osK8Rn4e3OIAvE4eTLiYg/view) (10 s) · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/22 - Midnight on New Year's Eve (kwoe22).mp4`
@@ -6327,11 +6332,11 @@ Think nothing happened this year because you stayed single? Look again. New skil
 
 Two people, one map, "LEFT!" "RIGHT!" Or: you drive, I do snacks. Take turns on the way home this year.
 
-**3:30 PM · Post** — [The night before the "what are we" talk](https://drive.google.com/file/d/1fqBpnEruWvl4hk8kj69r3YCx2jAyRA-c/view) (75 s) ⏱ · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/19 - The night before the -what are we- talk (kmte19).mp4`
+**3:30 PM · Post** — [Card three: Sunday dinner](https://drive.google.com/file/d/1q4JT0tcKyun8UAUEqrLfom4T6Seflbri/view) (63.6 s) ⏱ · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/18 - Card three- Sunday dinner (koce18).mp4`
 
-Months of hanging out, five drafts, and still no idea what this is.
-Knowing is kinder than guessing. Ask clearly, then listen all the way to the end.
+Pets, money, and one question that made them both go silent.
+When you want the same small thing, like dinner at the table, that's the start of a future. Watch to the end.
 
 **3:50 PM · Trial reel** — [Midnight Text From the Ex](https://drive.google.com/file/d/1Qw1QHJoO--5sDNicqNAvn45ykRrfzM35/view) (6.8 s) · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/22 - Midnight Text From the Ex (k3se22).mp4`
@@ -6350,11 +6355,11 @@ One real question can turn a night of jokes into a night that matters. Ask what 
 Clear winter sky, and one name comes to mind first.
 That name counts. Tell them tomorrow.
 
-**5:00 PM · Post** — [Card three: who says it first](https://drive.google.com/file/d/1hA9gvEyR0IF5X6rYMcbUHU2hNqKy97VR/view) (60.2 s) ⏱ · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/19 - Card three- who says it first (koce19).mp4`
+**5:00 PM · Post** — [A Day Apart: Paris to Montreal](https://drive.google.com/file/d/10PjfvuyIo2-dFO6tKUUKmZ6ifCZ9jQMl/view) (60 s) ⏱ · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/11 - A Day Apart- Paris to Montreal (klne11).mp4`
 
-Who says I love you first? They both thought it would be them.
-First doesn't matter. Meaning it does. Stay for card three.
+A snow photo, a mix-up, the same soup at dinner and at lunch, and a goodnight across six hours.
+Little rituals make the distance smaller. Wait for the table at the end.
 
 **5:20 PM · Trial reel** — [The Zodiac Votes: Single at Midnight](https://drive.google.com/file/d/159OV2WPwMkjH_rST29WWboirTjrmE6Yw/view) (7 s) · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/22 - The Zodiac Votes- Single at Midnight (ktte22).mp4`
@@ -6373,11 +6378,11 @@ Your first holiday away from your own family can feel bittersweet, even at a war
 Aquarius in winter: a snowflake under a magnifier and a strange new hobby.
 And a handwritten note when you least expect it.
 
-**6:30 PM · Post** — [Same Type, Same Ending](https://drive.google.com/file/d/1GdpauCHm4AXn8NDUSjAhX-ENy_snlsBR/view) (75 s) ⏱ · *Ask the Stars: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/08 - Same Type, Same Ending (kxase08).mp4`
+**6:30 PM · Post** — [Aquarius in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1kGsrWDfmgptap_u8XthpF6IY93XyLUGW/view) (119.3 s) ⏱ · *Deep Dive: ___ in Love*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/11 - Aquarius in Love- Everything Nobody Tells You (kdde11).mp4`
 
-Same type, same ending, again?
-Familiar can feel like chemistry. Write down your green flags and give the steady one a real chance.
+A weird fact at 2 a.m. is an Aquarius saying they thought of you.
+Give them space with a promise to come back, and be their friend first. They return closer, maybe with a rock.
 
 **6:50 PM · Trial reel** — [Answering emails to avoid feelings](https://drive.google.com/file/d/1EWNPoI4Oz_bzjySWk4rWNuKZ2MOvqivF/view) (9 s) · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/22 - Answering emails to avoid feelings (kgse22).mp4`
@@ -6396,11 +6401,11 @@ Loyalty doesn't need to be tested to be real. Let the walls come down a little, 
 Typing, deleting, typing again. Four screens long.
 The best reply is usually the shortest true one.
 
-**8:00 PM · Post** — Scorpio × Pisces: scared to fall again. (90 s) ⏱ · *Sign × Sign: Extended*  
-`kxsse08`
+**8:00 PM · Post** — [The Aquarius Guide: Gone Quiet](https://drive.google.com/file/d/1ahYSLfPWHMBpbtgIM33N1svUf5gZ3MWl/view) (67.3 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/11 - The Aquarius Guide- Gone Quiet (kxsge11).mp4`
 
-Both hurt before, both falling anyway.
-Trust grows from small promises that are kept, never from tests. Share yourself a page at a time and keep one small promise a week.
+Mid-feeling, headphones on, gone. Aquarius, we see you.
+Needing space is fine. This week, say "I need a minute," take it, and then come back. That's the promise.
 
 **8:20 PM · Trial reel** — [They stopped typing. Now what?](https://drive.google.com/file/d/1CaigkS5LU7ynRXqkkM0FBay1YsrHr1nb/view) (9 s) · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/22 - They stopped typing. Now what- (kfae22).mp4`
@@ -6419,11 +6424,11 @@ Wanting adventure while your partner wants roots doesn't mean you're mismatched.
 Can an Aries review breakfast without eating it first?
 The syrup said proud of you. Fork down.
 
-**9:30 PM · Post** — [A Day Apart: Auckland to Edinburgh](https://drive.google.com/file/d/1xxU9VXzUi9oqRh9Bp0-6tCvv0USFPAhi/view) (60 s) ⏱ · *Long Distance Notes*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/12 - A Day Apart- Auckland to Edinburgh (klne12).mp4`
+**9:30 PM · Post** — [Advice or Company?](https://drive.google.com/file/d/1UONtfRuHLPp19O5dSt7qT-QUltg5Emqv/view) (60 s) ⏱ · *Friends First: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Friends First- Extended/04 - Advice or Company- (kxffe04).mp4`
 
-Summer on one side, snow on the other, and the new year arrives thirteen hours apart.
-You can be there twice: once on a call, once in person. Stay for the second midnight.
+When a friend's heart breaks, the urge to fix everything is love.
+Ask first: do you want advice, or company? Sometimes just staying is the whole plan.
 
 **9:50 PM · Trial reel** — [Capricorn, the Worst Week](https://drive.google.com/file/d/19wEOv62XplwEAfgWpZ5Fl2hxiPR-fdok/view) (10 s) · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/22 - Capricorn, the Worst Week (ksge22).mp4`
@@ -6441,24 +6446,25 @@ Aquarius, your word for next year is warm. Keep the cool, clear mind. Let people
 
 One talk card: what small thing makes you feel loved? Then they remembered your oat milk. Answer softly, listen longer.
 
-**11:00 PM · Post** — [Pisces in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1Ko_jbaVLT8f41VU7jDlGozduwo5w22hc/view) (118.6 s) ⏱ · *Deep Dive: ___ in Love*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/12 - Pisces in Love- Everything Nobody Tells You (kdde12).mp4`
+**11:00 PM · Post** — [Why do shooting stars come back every December?](https://drive.google.com/file/d/1lclsoF-CpeQYIxqRQ_5Et0ZbU7_LVTTR/view) (118 s) ⏱ · *Star Talk Explains: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Star Talk Explains- Extended/06 - Why do shooting stars come back every December- (kxexe06).mp4`
 
-Yes, your Pisces cried at the bird outside the window. That's not too much.
-Be gentle, say the reassurance out loud, and let the tears happen without rushing to fix them.
+Wished on every shooting star that they'd text me.
+Each December Earth crosses the same trail of space dust. A wish is a lovely start; the brave, kind part is texting first.
 
-**11:15 PM · Post** — Pluto to Pisces: Let It Out (29.2 s) · *Planet Talk: Pluto*  
-`kpple12`
+**11:15 PM · Post** — [Pisces Pours Too Much](https://drive.google.com/file/d/1EWLbGbu3vq9iGYTipfMJiMcs_G5XAIFv/view) (26.8 s) · *Planet Talk: The Moon*  
+`Star Talk/Planet Talk/The Moon/12 Pisces - Pisces Pours Too Much (kpmoe12).mp4`
 
-If you keep saying sorry for crying about something that ended weeks ago, this one's for you.
-Crying isn't weakness, it's how letting go works. Feel it, then let someone sit with you.
+If you always pour for everyone, check your own cup too.
+Give to people who give back, and save some warmth for yourself.
 
 ## Day 53 · Sat 26 Dec
 
-**7:45 AM · Post** — Saturn Slows Pisces Down, Gently (30 s) · *Planet Talk: Saturn*  
-`kpsae12`
+**7:45 AM · Post** — [Pluto to Pisces: Let It Out](https://drive.google.com/file/d/1ZfuZju_l4qFPMBUn6n-gbDED_mi-nOgf/view) (29.2 s) · *Planet Talk: Pluto*  
+`Star Talk/Planet Talk/Pluto/12 Pisces - Pluto to Pisces- Let It Out (kpple12).mp4`
 
-Date two, and the wedding speech is already on draft four. Falling fast is a gift. Get to know who they are over time, not who you hope they'll be, and let them earn the speech.
+If you keep saying sorry for crying about something that ended weeks ago, this one's for you.
+Crying isn't weakness, it's how letting go works. Feel it, then let someone sit with you.
 
 **8:20 AM · Trial reel** — [Capricorn, put the bags down](https://drive.google.com/file/d/11iL1rjih68ekDqyuXJbZ-cdeyagiTfCu/view) (11 s) · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/22 - Capricorn, put the bags down (k5te22).mp4`
@@ -6477,11 +6483,11 @@ Your 3rd house, in astrology: siblings, neighbours, everyday talk and short trip
 Which sign remembers your anniversary down to the hour?
 Ranked. Forgot? Own it, then plan something sweet.
 
-**9:30 AM · Post** — [The Pisces Guide: Crying at the Playlist](https://drive.google.com/file/d/1Lk_-AvVoNXW0BdJghKJG70DzbXrPIetH/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/12 - The Pisces Guide- Crying at the Playlist (kxsge12).mp4`
+**9:30 AM · Post** — [The Savings Jar](https://drive.google.com/file/d/11yUBQOQ6qJL9mAGRsX8wmhU2Kwc8p3IZ/view) (90 s) ⏱ · *The Make-Up Talk: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Make-Up Talk- Extended/06 - The Savings Jar (kxmue06).mp4`
 
-Crying about the ex again? Missing them means it mattered, not that you should go back.
-Pisces, let it hurt, then text a friend with snacks. Not the ex.
+The trip money became twelve surprise gifts, and now you're both upset.
+Money fights are usually feeling fights. Ask what money means to them, then build a plan that fits you both.
 
 **9:50 AM · Trial reel** — ["Nothing serious" (it's serious)](https://drive.google.com/file/d/14z8o40a5kVFa8fRGiMCrNjScEWcZxhbO/view) (11 s) · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/22 - -Nothing serious- (it's serious) (kbge22).mp4`
@@ -6499,11 +6505,11 @@ Wanting a big night when your person wants pajamas isn't a problem to win. Say w
 
 Hiding your date behind the coat rack, or saying "this is Libra" and watching your friends make room. Your people want to know.
 
-**11:00 AM · Post** — [The first "I like you"](https://drive.google.com/file/d/1_Z8wM8TO70wg0ae73uXN3kiv9TVFhW6N/view) (84 s) ⏱ · *Text Rescue*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/20 - The first -I like you- (ktre20).mp4`
+**11:00 AM · Post** — [Saturday In, on Purpose](https://drive.google.com/file/d/1I9rMmMNDm7DTiyG5bk8NNnuec1beeZvh/view) (75 s) ⏱ · *Single and Thriving: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Single and Thriving- Extended/06 - Saturday In, on Purpose (kxste06).mp4`
 
-Saying "I like you" first is scary, so the temptation is to take it back in the same breath.
-Say it honestly, let it stand, and give them time. Watch to the end.
+Everyone's posting their Saturday night out, and you're home in pyjamas.
+A night in is a plan, not a backup. If it's what you want, enjoy it on purpose.
 
 **11:20 AM · Trial reel** — [Every crush stage. Wait for stage six.](https://drive.google.com/file/d/1qr38DwrGMR2J54egOlvOFLkybFv0-cNL/view) (60.0 s) ⏱ · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/23 - Every crush stage. Wait for stage six. (kwme23).mp4`
@@ -6522,11 +6528,11 @@ Blunt words can sting even when they're meant kindly. Be honest and gentle, say 
 They've cancelled the last four plans. Still worth the skates?
 Showing up matters. A kind no beats another last-minute sorry.
 
-**12:30 PM · Post** — [Everyone's pairing up for the holidays](https://drive.google.com/file/d/1VdmfzIpEvJC0GsY0HiwzZfMRtg0fsvWS/view) (63 s) ⏱ · *Is This Normal?*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/20 - Everyone's pairing up for the holidays (kine20).mp4`
+**12:30 PM · Post** — [The No-Cry Week](https://drive.google.com/file/d/1fWk12AYas9YzDQ59TV6Olh3fXJjkuf0D/view) (90 s) ⏱ · *Moonlight Lane: Side Stories*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Moonlight Lane- Side Stories/06 - The No-Cry Week (kxmle06).mp4`
 
-December feeds full of couples can make single feel loud. You're seeing their highlights, not their Tuesdays.
-There's no deadline on love, and it isn't only romance. Look around at who's already here.
+Moonlight Lane, Side Story: Pisces tries a whole week without crying. Day one does not go well.
+Feeling deeply is not too much. If a joke stuck with you, ask what they meant.
 
 **12:50 PM · Trial reel** — [New Year round: Capricorn](https://drive.google.com/file/d/1jZbtfarcqyY0CP0pDcjcjHxnJBtgYOOb/view) (9.4 s) · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/22 - New Year round- Capricorn (khse22).mp4`
@@ -6545,10 +6551,11 @@ Not sure if you belong in their family photo? Just ask. "In or out?" is a kind q
 Capricorn, they gave you a gift and you're already doing the math.
 It isn't a bill. "Thank you" is enough.
 
-**2:00 PM · Post** — [The full pep talk: scared to try again](https://drive.google.com/file/d/1a7hKqwACVz0QGfTyM_Jc2aXSCzshj6GL/view) (72 s) ⏱ · *The 10-Second Pep Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/20 - The full pep talk- scared to try again (kpte20).mp4`
+**2:00 PM · Post** — [The mixed signals night](https://drive.google.com/file/d/1rD0zqF0d1WAxzZndErFr4vhlKx841n-S/view) (78 s) ⏱ · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/19 - The mixed signals night (ktre19).mp4`
 
-Someone nice asked you out and every old hurt showed up first. The new person isn't the old one. Not forever, just one coffee. Wait for the last line.
+Slow replies and one-word answers can send your mind spinning.
+Instead of guessing, say where you're at and ask gently. Sometimes the answer is just "I like you, and I'm nervous."
 
 **2:20 PM · Trial reel** — [Making a friend as an adult](https://drive.google.com/file/d/1ydZ10hhVQqdx2ks-R5-bfiarQa-9Pa--/view) (7 s) · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/22 - Making a friend as an adult (kute22).mp4`
@@ -6566,10 +6573,11 @@ A joke is a great way to start a hard conversation and a hard way to finish one.
 
 A Capricorn gives you the most practical gift ever made. The card that came with it took six drafts.
 
-**3:30 PM · Post** — [Pisces: the 30-day finale](https://drive.google.com/file/d/1MFiDerAdeulg1x2a8S7TtbSRi1e7JNED/view) (90 s) ⏱ · *Healing Era*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/20 - Pisces- the 30-day finale (khee20).mp4`
+**3:30 PM · Post** — [Growing apart from my best friend](https://drive.google.com/file/d/1LfKoj_ZE2hnifsWwdT5T6yz88s4IXjA-/view) (60 s) ⏱ · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/19 - Growing apart from my best friend (kine19).mp4`
 
-Thirty days, twelve friends, a lot of tears. Pisces heals the way most of us do: with people who show up, especially on the bad days. Tag the friend on your rota.
+Drifting from a best friend hurts, even when nobody did anything wrong. Lives move and friendships change shape.
+Try a check-in: say what you miss, then find a rhythm that fits now.
 
 **3:50 PM · Trial reel** — [The Whole Situationship](https://drive.google.com/file/d/1MZ6sVHILm2AKupjy3Om2Oi0sO3-vuZpy/view) (60 s) ⏱ · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/23 - The Whole Situationship (kwoe23).mp4`
@@ -6588,10 +6596,10 @@ Pisces, one glance and you've planned a whole winter together. Daydreams are lov
 The longest night of the year. Confess everything or go stargaze alone?
 A long night is good for a long talk. Pull a talk card and take turns.
 
-**5:00 PM · Post** — [The Evening Walk](https://drive.google.com/file/d/10SXAH_2DZi39eT1RRrYgrhaO27N-3lh0/view) (71 s) ⏱ · *Date Yourself*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/20 - The Evening Walk (kdye20).mp4`
+**5:00 PM · Post** — [The full pep talk: you got ghosted](https://drive.google.com/file/d/1PkqQYdAa18rarZztyGdTpMtZcp6q1eBV/view) (69 s) ⏱ · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/19 - The full pep talk- you got ghosted (kpte19).mp4`
 
-Missing someone tonight? That's allowed. Take yourself for a walk, buy the cocoa, write everything down and keep it. The letter that matters most starts with dear me.
+Three days of grey ticks after a great date. Their silence is about their skills, not your worth. One kind closing text, then phone down. You can make your own closure.
 
 **5:20 PM · Trial reel** — ["Wanna Go to Lisbon?"](https://drive.google.com/file/d/1q4bMHCh_TvBl6-w_Z7E1gBgbDAv-Qr8e/view) (10 s) · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/22 - -Wanna Go to Lisbon-- (kroe22).mp4`
@@ -6610,11 +6618,10 @@ Hoping someone will change? Give it time, but not forever. Watch what they do mo
 A date where you plan your goals on a whiteboard?
 Their date added "dance in the kitchen" and Capricorn circled it twice.
 
-**6:30 PM · Post** — ["What Are We?", Played Twice](https://drive.google.com/file/d/17An3ZA18LvRCyWJxk4IADl6koSkTQSXk/view) (71.8 s) ⏱ · *Say It Better*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/20 - -What Are We--, Played Twice (ksbe20).mp4`
+**6:30 PM · Post** — [Taurus: rebuilding the routine](https://drive.google.com/file/d/1kg96n4QQcFvXCMMcMFOhg2p_6QesayrE/view) (75 s) ⏱ · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/19 - Taurus- rebuilding the routine (khee19).mp4`
 
-Asking "what are we" the bad way, then the better way.
-Lead with "I like you" and leave room for their answer. Watch till the verdict.
+When the routine falls apart, start with one tiny thing. Water the plant, fold one sock, let a friend bring stew on the bad day. Watch what grows back.
 
 **6:50 PM · Trial reel** — [12 Signs, 12 Countdowns](https://drive.google.com/file/d/1YXWRiMCJHzd_O_sN0U_HjlfGPLbmJvU5/view) (60.6 s) ⏱ · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/23 - 12 Signs, 12 Countdowns (k3se23).mp4`
@@ -6633,11 +6640,10 @@ Once a hurt has been talked through and forgiven, try not to bring it back as a 
 Meeting their pet for the first time: a hand-knitted sweater, or straight to fetch?
 Kindness to what they love says a lot.
 
-**8:00 PM · Post** — [Pisces.exe: Lost in You](https://drive.google.com/file/d/1IlYkfd0rYd401pJri7ZDA-XHSl0WLJVJ/view) (84 s) ⏱ · *Your Sign's Love Glitch*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/20 - Pisces.exe- Lost in You (klge20).mp4`
+**8:00 PM · Post** — [The Unbirthday](https://drive.google.com/file/d/12Y25pX60PtaMw1spe_dZBH4WGwUTzeZU/view) (70 s) ⏱ · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/19 - The Unbirthday (kdye19).mp4`
 
-Their playlist, their friends, their weekends, and somewhere your own life went quiet.
-Keep one thing that's only yours, and bring your world into theirs.
+Waiting for someone else to celebrate you? Bake the cake on a Tuesday, dance to your own playlist, and write yourself the card. You don't need a reason.
 
 **8:20 PM · Trial reel** — [Pisces: 30 Choices, Don't Cry](https://drive.google.com/file/d/1b2b9u93F-cq3MtqBXll23M1jCKpEk7Ow/view) (61 s) ⏱ · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/23 - Pisces- 30 Choices, Don't Cry (ktte23).mp4`
@@ -6655,10 +6661,11 @@ Happy on your own and starting to feel curious? That's a good sign. Ready feels 
 
 Wobbling across the ice insisting you're a natural, or asking "teach me?" and holding hands. Saying teach me is flirting.
 
-**9:30 PM · Post** — [Pisces finally asks](https://drive.google.com/file/d/1S_eRIfs6OmgOlvj62JVG620yarZtsOJ5/view) (90 s) ⏱ · *The Almost Relationship*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/20 - Pisces finally asks (kare20).mp4`
+**9:30 PM · Post** — [New Year's Eve: In or Out, Played Twice](https://drive.google.com/file/d/1BbdDYmldi4ywF2zyPYNLN4lqgU3SUNiS/view) (69.2 s) ⏱ · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/19 - New Year's Eve- In or Out, Played Twice (ksbe19).mp4`
 
-Thirty-seven tissues and three almost-asks later, Pisces says it plainly. Bring tissues for the answer. Ask first, cry after, happy tears included.
+Party or pyjamas? The same New Year's fight, twice.
+Ask what the night means to each of you, and build the plan you both want.
 
 **9:50 PM · Trial reel** — [Guess the Sign: the late-night texting round](https://drive.google.com/file/d/124vcnmlwsqfWgm3jTR-fHJm6DMTRcXfo/view) (60 s) ⏱ · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/23 - Guess the Sign- the late-night texting round (kgse23).mp4`
@@ -6677,24 +6684,24 @@ The quiet days after the holidays can be harder than the holidays themselves. Ch
 Who's outside before the first snowflake lands?
 All twelve signs, ranked by snow joy. Find someone that excited to see you.
 
-**11:00 PM · Post** — [When your friend is texting their ex](https://drive.google.com/file/d/1Ukap7D64hqNw_kDj__vrmEa2eMiYqCkg/view) (60 s) ⏱ · *Before You Text Your Ex*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/20 - When your friend is texting their ex (kbxe20).mp4`
+**11:00 PM · Post** — [Sagittarius.exe: Joke Shield](https://drive.google.com/file/d/1hN07sCaciZhrIHUxDteM8aat5VZan8IB/view) (76 s) ⏱ · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/19 - Sagittarius.exe- Joke Shield (klge19).mp4`
 
-Your friend is about to text their ex. Don't grab the phone. Ask the three questions and let them choose. Save this for your group chat.
+Every serious moment gets a bit, and slowly people stop telling you things.
+One sincere sentence first, then the joke. Jokes are welcome after.
 
-**11:15 PM · Post** — Pisces, Main Character (28 s) · *Planet Talk: The Sun*  
-`kpsue12`
+**11:15 PM · Post** — [Neptune to Pisces: The Movie in Your Head](https://drive.google.com/file/d/1W-NtCdgPcOVHSZXuPk2-yPB2puacWi6q/view) (82 s) ⏱ · *Planet Talk: Neptune*  
+`Star Talk/Planet Talk/Neptune/12 Pisces - Neptune to Pisces- The Movie in Your Head (kpnee12).mp4`
 
-You hold everyone's heart. Who holds yours?
-Cheering for your friends' love stories is beautiful. You deserve one too, and it starts with how you talk to yourself.
+Three sweet texts and a whole future in your head. Pisces, the daydream is lovely, but the real one replies, makes plans and shows up on a rainy Tuesday.
+Stay for the ending.
 
 ## Day 54 · Sun 27 Dec
 
-**7:45 AM · Post** — Pisces, You Can Text First (27 s) · *Planet Talk: Uranus*  
-`kpure12`
+**7:45 AM · Post** — [Saturn Slows Pisces Down, Gently](https://drive.google.com/file/d/1lekS_q3lSVX2r9nZzHxhw4iqrXeWnYLN/view) (30 s) · *Planet Talk: Saturn*  
+`Star Talk/Planet Talk/Saturn/12 Pisces - Saturn Slows Pisces Down, Gently (kpsae12).mp4`
 
-Wrote nine pages and still haven't sent "hi"? Big feelings don't need a big message.
-Short and brave works: "want to get coffee on saturday?" They might be hoping you'll ask.
+Date two, and the wedding speech is already on draft four. Falling fast is a gift. Get to know who they are over time, not who you hope they'll be, and let them earn the speech.
 
 **8:20 AM · Trial reel** — [The Overthinker Bundle (the full infomercial)](https://drive.google.com/file/d/1uJKNmUfcbfNnBtQJZBQu-zCK-tQEh27I/view) (60 s) ⏱ · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/23 - The Overthinker Bundle (the full infomercial) (kfae23).mp4`
@@ -6713,11 +6720,10 @@ On the drive home from their family's, start with three things you genuinely lik
 Movie night, and they brought a documentary about moss. Dealbreaker?
 Weird is a gift. Watch theirs, then they watch yours.
 
-**9:30 AM · Post** — [The first New Year's without them](https://drive.google.com/file/d/1ER5Xl3J-oM9nrCyUN4c5bV6CY6_pfoPl/view) (90 s) ⏱ · *Mirror Talk*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/20 - The first New Year's without them (kmte20).mp4`
+**9:30 AM · Post** — [When the answer is no](https://drive.google.com/file/d/1L90CqO-0R6CU-_G3y9QsdMHAJubc-Q1_/view) (90 s) ⏱ · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/19 - When the answer is no (kare19).mp4`
 
-The first New Year's without them, and you're not sure you even want to go out.
-Go for an hour, text the friend who'll be there, and start next year gently.
+Virgo asks, Leo says no, honestly and kindly. Then a sad weekend, a friend with soup, and a dinner full of laughing. A clear no gives you your weekends back.
 
 **9:50 AM · Trial reel** — [The Texting Round](https://drive.google.com/file/d/1fe6YCWhqaWxRWcctKJBk9O_coS-f4UM9/view) (60 s) ⏱ · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/23 - The Texting Round (ksge23).mp4`
@@ -6736,11 +6742,10 @@ Feelings don't fit neatly on a schedule, and they don't need to. Keep the steady
 Aquarius, they remembered your octopus fact. Three hearts.
 Someone was listening. Let that feel good.
 
-**11:00 AM · Post** — [Card three: five years](https://drive.google.com/file/d/1REHvWEerRR2WD2_CcGg9ZqO6lgyd5X5b/view) (60.6 s) ⏱ · *One Card, Two People*  
-`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/20 - Card three- five years (koce20).mp4`
+**11:00 AM · Post** — [The "can we try again" draft](https://drive.google.com/file/d/1YvEXUESw6JH5qH0jS9s6JpIwQrNN5D35/view) (90 s) ⏱ · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/19 - The -can we try again- draft (kbxe19).mp4`
 
-A planner and a dreamer answer where they'll live in five years.
-You don't need the same plan. Just the same direction. Card three says it all.
+The "can we try again" text, three honest questions, and a verdict. You can miss someone and still choose to move on. Wait for it.
 
 **11:20 AM · Trial reel** — [Aquarius, everything nobody says out loud](https://drive.google.com/file/d/159NaGBLGfrEk-HzUqO2oRs6MaOPqBPR8/view) (60 s) ⏱ · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/23 - Aquarius, everything nobody says out loud (k5te23).mp4`
@@ -6757,6 +6762,12 @@ Pisces feels everyone's feelings at the holidays and carries them all. You can c
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/23 - POV- you're dating an Aquarius. New Year's. (npve23).mp4`
 
 An Aquarius celebrates midnight every hour from 7 PM. By your actual midnight they're asleep on your shoulder.
+
+**12:30 PM · Post** — [The night before the "what are we" talk](https://drive.google.com/file/d/1fqBpnEruWvl4hk8kj69r3YCx2jAyRA-c/view) (75 s) ⏱ · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/19 - The night before the -what are we- talk (kmte19).mp4`
+
+Months of hanging out, five drafts, and still no idea what this is.
+Knowing is kinder than guessing. Ask clearly, then listen all the way to the end.
 
 **12:50 PM · Trial reel** — [The full bio makeover](https://drive.google.com/file/d/1pxMV5-35o4j9UMqaPEUTEEenOrSnTeVT/view) (60 s) ⏱ · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/23 - The full bio makeover (kbge23).mp4`
@@ -6775,6 +6786,12 @@ In astrology, the 4th house sits at the very bottom of your chart: home, family 
 Your crush is in town for the holidays.
 Don't plan their whole trip, and don't just wait. Text "free for cocoa?" and keep it simple.
 
+**2:00 PM · Post** — [Card three: who says it first](https://drive.google.com/file/d/1hA9gvEyR0IF5X6rYMcbUHU2hNqKy97VR/view) (60.2 s) ⏱ · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/19 - Card three- who says it first (koce19).mp4`
+
+Who says I love you first? They both thought it would be them.
+First doesn't matter. Meaning it does. Stay for card three.
+
 **2:20 PM · Trial reel** — [The full hot seat: Aquarius](https://drive.google.com/file/d/1J3mWJ15cxyd8vOtZfmKyjRF_CtPBAa_3/view) (60 s) ⏱ · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/23 - The full hot seat- Aquarius (khse23).mp4`
 
@@ -6791,6 +6808,12 @@ Before the year ends, try three questions together: your favourite moment, what 
 
 Make a time capsule together and open it next winter.
 A spoon, a ticket, a duck and two notes for future you.
+
+**3:30 PM · Post** — [Same Type, Same Ending](https://drive.google.com/file/d/1GdpauCHm4AXn8NDUSjAhX-ENy_snlsBR/view) (75 s) ⏱ · *Ask the Stars: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Ask the Stars- Extended/08 - Same Type, Same Ending (kxase08).mp4`
+
+Same type, same ending, again?
+Familiar can feel like chemistry. Write down your green flags and give the steady one a real chance.
 
 **3:50 PM · Trial reel** — [Five unsent texts, one night](https://drive.google.com/file/d/1AJybchk8sRNvizr1F0foRBh8LIGsc3Ih/view) (60 s) ⏱ · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/23 - Five unsent texts, one night (kute23).mp4`
@@ -6809,6 +6832,12 @@ A big new idea can meet a lot of edits. Cheer the first draft, take the one good
 Holiday photos: twelve more for your good side, or crying at how cute it came out?
 Get in the picture. You'll be glad later.
 
+**5:00 PM · Post** — [Scorpio × Pisces: scared to fall again.](https://drive.google.com/file/d/1S2O7vX-kLyvLqVrKcOL5fSSMFZtDL2Rg/view) (90 s) ⏱ · *Sign × Sign: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Sign × Sign- Extended/08 - Scorpio × Pisces- scared to fall again. (kxsse08).mp4`
+
+Both hurt before, both falling anyway.
+Trust grows from small promises that are kept, never from tests. Share yourself a page at a time and keep one small promise a week.
+
 **5:20 PM · Trial reel** — [12 Signs, 12 Openers](https://drive.google.com/file/d/1cbA3diwHFAZb0rg6LSvk2Y__wpdLhWgs/view) (60 s) ⏱ · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/23 - 12 Signs, 12 Openers (kroe23).mp4`
 
@@ -6824,6 +6853,12 @@ Skipping the usual holiday plans is allowed. Make a tradition that feels like yo
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/17 - New Year’s plans- then vs now (nhqe17).mp4`
 
 Waiting by a silent phone on the 31st, or asking first: "be my New Year's plan?" Asking first is brave. And cute.
+
+**6:30 PM · Post** — [A Day Apart: Auckland to Edinburgh](https://drive.google.com/file/d/1xxU9VXzUi9oqRh9Bp0-6tCvv0USFPAhi/view) (60 s) ⏱ · *Long Distance Notes*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Long Distance Notes/12 - A Day Apart- Auckland to Edinburgh (klne12).mp4`
+
+Summer on one side, snow on the other, and the new year arrives thirteen hours apart.
+You can be there twice: once on a call, once in person. Stay for the second midnight.
 
 **6:50 PM · Trial reel** — [Pisces reacts to one whole kind day](https://drive.google.com/file/d/1UFwQKkj7G-1H7_cNOxe6aGGYarejeq9o/view) (60.4 s) ⏱ · *Pisces Reacts*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Pisces Reacts/12 - Pisces reacts to one whole kind day (kpre12).mp4`
@@ -6842,6 +6877,12 @@ After a visit, thank their parents within a day. Use their name and mention one 
 Awake at 3 AM, and it turns out a friend is too.
 Long nights are easier together. Check on your people.
 
+**8:00 PM · Post** — [Pisces in Love: Everything Nobody Tells You](https://drive.google.com/file/d/1Ko_jbaVLT8f41VU7jDlGozduwo5w22hc/view) (118.6 s) ⏱ · *Deep Dive: ___ in Love*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Deep Dive- ___ in Love/12 - Pisces in Love- Everything Nobody Tells You (kdde12).mp4`
+
+Yes, your Pisces cried at the bird outside the window. That's not too much.
+Be gentle, say the reassurance out loud, and let the tears happen without rushing to fix them.
+
 **8:20 PM · Trial reel** — [Find your sign. Pisces is last.](https://drive.google.com/file/d/1Iw29MHV1QYFG38tNF4aQ_XI4FIwyr-34/view) (60.0 s) ⏱ · *Wait, That's Me*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Wait, That's Me/24 - Find your sign. Pisces is last. (kwme24).mp4`
 
@@ -6858,6 +6899,12 @@ Going quiet when someone gets close can look like not caring, even when you care
 
 Pisces in winter: a window seat, soft tissues, one song on repeat.
 The rare item: happy tears because someone remembered.
+
+**9:30 PM · Post** — [The Pisces Guide: Crying at the Playlist](https://drive.google.com/file/d/1Lk_-AvVoNXW0BdJghKJG70DzbXrPIetH/view) (67.8 s) ⏱ · *Your Star Guide: Extended*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Star Guide- Extended/12 - The Pisces Guide- Crying at the Playlist (kxsge12).mp4`
+
+Crying about the ex again? Missing them means it mattered, not that you should go back.
+Pisces, let it hurt, then text a friend with snacks. Not the ex.
 
 **9:50 PM · Trial reel** — [Single for the Holidays](https://drive.google.com/file/d/1e5cF3yliDkQG4U3CWBLa2gnNYo_-MBSy/view) (60 s) ⏱ · *Which One Are You?*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Which One Are You-/24 - Single for the Holidays (kwoe24).mp4`
@@ -6876,12 +6923,25 @@ Pisces doesn't need anything expensive. A few honest lines in someone's own hand
 Why is Pisces lying in the snow, crying?
 Two snow angels, holding hands. Happy tears count.
 
-**11:15 PM · Post** — Venus to Pisces: The Love Letter Home (28.2 s) · *Planet Talk: Venus*  
-`kpvee12`
+**11:00 PM · Post** — [The first "I like you"](https://drive.google.com/file/d/1_Z8wM8TO70wg0ae73uXN3kiv9TVFhW6N/view) (84 s) ⏱ · *Text Rescue*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Text Rescue/20 - The first -I like you- (ktre20).mp4`
 
-If you write love letters to everyone and never to yourself, you're on the list too. Write the one that says you love so big, save some for you. Send this to the Pisces who gives everything.
+Saying "I like you" first is scary, so the temptation is to take it back in the same breath.
+Say it honestly, let it stand, and give them time. Watch to the end.
+
+**11:15 PM · Post** — [Pisces, Main Character](https://drive.google.com/file/d/1N-j9oS99FCsain66xxONSc1Ba8yCf1L8/view) (28 s) · *Planet Talk: The Sun*  
+`Star Talk/Planet Talk/The Sun/12 Pisces - Pisces, Main Character (kpsue12).mp4`
+
+You hold everyone's heart. Who holds yours?
+Cheering for your friends' love stories is beautiful. You deserve one too, and it starts with how you talk to yourself.
 
 ## Day 55 · Mon 28 Dec
+
+**7:45 AM · Post** — [Pisces, You Can Text First](https://drive.google.com/file/d/1upPaQN01D07NhLejoIXT2b9Wk3q2EqCC/view) (27 s) · *Planet Talk: Uranus*  
+`Star Talk/Planet Talk/Uranus/12 Pisces - Pisces, You Can Text First (kpure12).mp4`
+
+Wrote nine pages and still haven't sent "hi"? Big feelings don't need a big message.
+Short and brave works: "want to get coffee on saturday?" They might be hoping you'll ask.
 
 **8:20 AM · Trial reel** — [One Night, Eight Countdowns](https://drive.google.com/file/d/1kcKsgyqtM2DN1ECB3IMUrMpaexkxWLYs/view) (60.4 s) ⏱ · *3-Second Advice*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/3-Second Advice/24 - One Night, Eight Countdowns (k3se24).mp4`
@@ -6900,6 +6960,12 @@ Before the year ends, tell your person what they did right when things got hard.
 Pisces tries to review a jar of twelve reasons without crying.
 It made it to reason one. Twelve out of ten.
 
+**9:30 AM · Post** — [Everyone's pairing up for the holidays](https://drive.google.com/file/d/1VdmfzIpEvJC0GsY0HiwzZfMRtg0fsvWS/view) (63 s) ⏱ · *Is This Normal?*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Is This Normal-/20 - Everyone's pairing up for the holidays (kine20).mp4`
+
+December feeds full of couples can make single feel loud. You're seeing their highlights, not their Tuesdays.
+There's no deadline on love, and it isn't only romance. Look around at who's already here.
+
 **9:50 AM · Trial reel** — [The Best First Date Tournament](https://drive.google.com/file/d/10LeNyP8kT0ZM2WVkGZgNjlj7mxSxyqrc/view) (59 s) ⏱ · *This or That: Love Edition*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/This or That- Love Edition/24 - The Best First Date Tournament (ktte24).mp4`
 
@@ -6915,6 +6981,11 @@ Single isn't a waiting room. It's a life, and it's worth celebrating out loud. T
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Pisces Cries About…/12 - Pisces cries about you (npce12).mp4`
 
 Yes, you. You texted back, said sorry first and stayed kind this year. Pisces noticed. Feeling it all is its own courage.
+
+**11:00 AM · Post** — [The full pep talk: scared to try again](https://drive.google.com/file/d/1a7hKqwACVz0QGfTyM_Jc2aXSCzshj6GL/view) (72 s) ⏱ · *The 10-Second Pep Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The 10-Second Pep Talk/20 - The full pep talk- scared to try again (kpte20).mp4`
+
+Someone nice asked you out and every old hurt showed up first. The new person isn't the old one. Not forever, just one coffee. Wait for the last line.
 
 **11:20 AM · Trial reel** — [Guess the Sign: the first date round](https://drive.google.com/file/d/1glfh3KoLNKEvCinWYoMTav-6nPUyqqVR/view) (60 s) ⏱ · *Guess the Sign*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Guess the Sign/24 - Guess the Sign- the first date round (kgse24).mp4`
@@ -6933,6 +7004,11 @@ A year of small check-ins adds up to this: the whole group in one room, and one 
 We tried to rank who loves the hardest. It didn't go to plan.
 Every sign loves hard, just differently.
 
+**12:30 PM · Post** — [Pisces: the 30-day finale](https://drive.google.com/file/d/1MFiDerAdeulg1x2a8S7TtbSRi1e7JNED/view) (90 s) ⏱ · *Healing Era*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Healing Era/20 - Pisces- the 30-day finale (khee20).mp4`
+
+Thirty days, twelve friends, a lot of tears. Pisces heals the way most of us do: with people who show up, especially on the bad days. Tag the friend on your rota.
+
 **12:50 PM · Trial reel** — [The Breakup Recovery Kit (the full infomercial)](https://drive.google.com/file/d/10qLpFkDMOrC5qrc1Y67AwV6sYj4igrGT/view) (60 s) ⏱ · *Fake Ad*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Fake Ad/24 - The Breakup Recovery Kit (the full infomercial) (kfae24).mp4`
 
@@ -6949,6 +7025,11 @@ Astrologers read the 11th house as friends, community, and hopes and wishes. Fri
 
 They already bought you matching mittens. Too soon?
 Warm hands, warm heart. Put them on.
+
+**2:00 PM · Post** — [The Evening Walk](https://drive.google.com/file/d/10SXAH_2DZi39eT1RRrYgrhaO27N-3lh0/view) (71 s) ⏱ · *Date Yourself*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Date Yourself/20 - The Evening Walk (kdye20).mp4`
+
+Missing someone tonight? That's allowed. Take yourself for a walk, buy the cocoa, write everything down and keep it. The letter that matters most starts with dear me.
 
 **2:20 PM · Trial reel** — [First Date, Five Rounds](https://drive.google.com/file/d/1UwdPP3EwWdAZZbAl_yoOt90JFaja2Ton/view) (60 s) ⏱ · *Spot the Green Flag*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Spot the Green Flag/24 - First Date, Five Rounds (ksge24).mp4`
@@ -6967,6 +7048,12 @@ If the holidays left you tired, you're not doing it wrong. You held boundaries, 
 Pisces, is your holiday card on page four yet?
 Big feelings are a gift. Send it.
 
+**3:30 PM · Post** — ["What Are We?", Played Twice](https://drive.google.com/file/d/17An3ZA18LvRCyWJxk4IADl6koSkTQSXk/view) (71.8 s) ⏱ · *Say It Better*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Say It Better/20 - -What Are We--, Played Twice (ksbe20).mp4`
+
+Asking "what are we" the bad way, then the better way.
+Lead with "I like you" and leave room for their answer. Watch till the verdict.
+
 **3:50 PM · Trial reel** — [Pisces, you're going to cry at 5](https://drive.google.com/file/d/1VV9Cc-ZfjcBnjMIjnnoYO-odMXGMa-iy/view) (60 s) ⏱ · *5 Things Every ___ Needs to Hear*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/5 Things Every ___ Needs to Hear/24 - Pisces, you're going to cry at 5 (k5te24).mp4`
 
@@ -6982,6 +7069,12 @@ Two people who both love to go first. Let them shine, cheer their wins, and make
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/POV- You're Dating a ___/24 - POV- you're dating a Pisces. The gift. (npve24).mp4`
 
 A Pisces cries wrapping your gift and cries handing it over. Then you open it, and now you're both crying.
+
+**5:00 PM · Post** — [Pisces.exe: Lost in You](https://drive.google.com/file/d/1IlYkfd0rYd401pJri7ZDA-XHSl0WLJVJ/view) (84 s) ⏱ · *Your Sign's Love Glitch*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Your Sign's Love Glitch/20 - Pisces.exe- Lost in You (klge20).mp4`
+
+Their playlist, their friends, their weekends, and somewhere your own life went quiet.
+Keep one thing that's only yours, and bring your world into theirs.
 
 **5:20 PM · Trial reel** — [Twelve bios, twelve glow-ups](https://drive.google.com/file/d/10ukDj8RhXlEJu06tjowM73tEljoKhOd4/view) (60 s) ⏱ · *Bio Glow-Up*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Bio Glow-Up/24 - Twelve bios, twelve glow-ups (kbge24).mp4`
@@ -7000,6 +7093,11 @@ Real love often feels calmer than the movies. It shows up on ordinary days, and 
 They planned the whole winter date. How do you thank them?
 Not by out-planning them. Tell them what you loved about it.
 
+**6:30 PM · Post** — [Pisces finally asks](https://drive.google.com/file/d/1S_eRIfs6OmgOlvj62JVG620yarZtsOJ5/view) (90 s) ⏱ · *The Almost Relationship*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Almost Relationship/20 - Pisces finally asks (kare20).mp4`
+
+Thirty-seven tissues and three almost-asks later, Pisces says it plainly. Bring tissues for the answer. Ask first, cry after, happy tears included.
+
 **6:50 PM · Trial reel** — [Twelve signs, one hot seat](https://drive.google.com/file/d/178GR6Hy9ZtPyKlGx0lOVIsnkb6k5aMQO/view) (60 s) ⏱ · *Zodiac Hot Seat*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Zodiac Hot Seat/24 - Twelve signs, one hot seat (khse24).mp4`
 
@@ -7016,6 +7114,11 @@ After all the visits, ask what the two of you want to keep. Keep what felt like 
 
 Write each other letters, then read them out loud.
 Pisces wrote nine pages. Their date wrote two lines. Both cried.
+
+**8:00 PM · Post** — [When your friend is texting their ex](https://drive.google.com/file/d/1Ukap7D64hqNw_kDj__vrmEa2eMiYqCkg/view) (60 s) ⏱ · *Before You Text Your Ex*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Before You Text Your Ex/20 - When your friend is texting their ex (kbxe20).mp4`
+
+Your friend is about to text their ex. Don't grab the phone. Ask the three questions and let them choose. Save this for your group chat.
 
 **8:20 PM · Trial reel** — [One text, all night](https://drive.google.com/file/d/1MMikpU9OjIS8d7gtFOyctyBszLhwPfHM/view) (60 s) ⏱ · *The Unsent Text*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/The Unsent Text/24 - One text, all night (kute24).mp4`
@@ -7034,6 +7137,12 @@ Loving someone's potential is not the same as loving who they are right now. Kee
 The countdown to midnight: run it to the second, or make a quiet wish together?
 Whatever the clock says, be with your people.
 
+**9:30 PM · Post** — [The first New Year's without them](https://drive.google.com/file/d/1ER5Xl3J-oM9nrCyUN4c5bV6CY6_pfoPl/view) (90 s) ⏱ · *Mirror Talk*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/Mirror Talk/20 - The first New Year's without them (kmte20).mp4`
+
+The first New Year's without them, and you're not sure you even want to go out.
+Go for an hour, text the friend who'll be there, and start next year gently.
+
 **9:50 PM · Trial reel** — [Aries Has 60 Seconds](https://drive.google.com/file/d/1q-yX7KEIORQ-0soRBpYRwRfWHmG08SKC/view) (60 s) ⏱ · *Rate the Opener*  
 `Star Talk/Month 2 boost - 29 Nov to 28 Dec/Rate the Opener/24 - Aries Has 60 Seconds (kroe24).mp4`
 
@@ -7049,3 +7158,14 @@ Pisces, your word for next year is ground. Keep dreaming, just with your feet in
 `Star Talk/Next 30 days - 29 Nov to 28 Dec/Holidays Then vs Now (quick cuts)/18 - Holiday leftovers- then vs now (nhqe18).mp4`
 
 Guarding the leftovers behind a breadstick fence, or packing a box labelled "for you." Love sometimes looks like leftovers.
+
+**11:00 PM · Post** — [Card three: five years](https://drive.google.com/file/d/1REHvWEerRR2WD2_CcGg9ZqO6lgyd5X5b/view) (60.6 s) ⏱ · *One Card, Two People*  
+`Star Talk/Month 2 boost - 29 Nov to 28 Dec/One Card, Two People/20 - Card three- five years (koce20).mp4`
+
+A planner and a dreamer answer where they'll live in five years.
+You don't need the same plan. Just the same direction. Card three says it all.
+
+**11:15 PM · Post** — [Venus to Pisces: The Love Letter Home](https://drive.google.com/file/d/1xeGkj7uxhSff_6_bCwAG0dDCT73-dqOl/view) (28.2 s) · *Planet Talk: Venus*  
+`Star Talk/Planet Talk/Venus/12 Pisces - Venus to Pisces- The Love Letter Home (kpvee12).mp4`
+
+If you write love letters to everyone and never to yourself, you're on the list too. Write the one that says you love so big, save some for you. Send this to the Pisces who gives everything.
