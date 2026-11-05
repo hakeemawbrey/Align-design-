@@ -104,12 +104,12 @@ const ICONS = {
     x.restore()
   }],
   taco: [GOLD, (x, g) => {
-    x.translate(0, -2)
-    const r = rng(5)
-    x.beginPath(); x.moveTo(-42, -4); for (let i = 0; i <= 12; i++) x.lineTo(-42 + i * 7, -4 - (i % 2 ? 14 : 4)); x.lineTo(42, 0); x.closePath(); g.F(GREEN, 0.5, 0.7)
-    for (let i = 0; i < 4; i++) { C(x, -26 + i * 17, -8 - r() * 4, 6); g.F(RED, 0.7, 0.5) }
-    x.beginPath(); x.arc(0, -4, 46, 0, PI); x.closePath(); g.F(g.c, 0.4)
-    x.beginPath(); x.arc(0, -4, 34, 0.15, PI - 0.15); g.S(g.c, 0.45)
+    x.translate(0, 16); x.rotate(-0.12)
+    x.beginPath(); for (let i = 0; i <= 40; i++) { const a = PI + (i / 40) * PI, r = 52 + (i % 2 ? 7 : 0); const px = Math.cos(a) * r, py = Math.sin(a) * r * 0.95; i ? x.lineTo(px, py) : x.moveTo(px, py) } x.closePath(); g.F(GREEN, 0.5, 0.75)
+    for (let i = 0; i < 5; i++) { const a = PI + 0.45 + i * 0.55; C(x, Math.cos(a) * 49, Math.sin(a) * 47, 6.5); g.F(RED, 0.75, 0.5) }
+    x.beginPath(); x.arc(0, 4, 46, PI, 0); x.closePath(); g.D(DARK, 1); x.beginPath(); x.arc(0, 4, 46, PI, 0); x.closePath(); g.F(g.c, 0.42)
+    x.beginPath(); x.arc(0, 4, 34, PI + 0.2, -0.2); g.S(g.c, 0.4)
+    for (let i = 0; i < 5; i++) { C(x, -24 + i * 12, -12 - Math.sin(i * 1.3) * 6, 2.4); g.D(ORANGE, 0.9) }
   }],
   kolache: [EARTH, (x, g) => {
     C(x, 0, 2, 42); g.F(g.c, 0.32)
