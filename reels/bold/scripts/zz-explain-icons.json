@@ -163,6 +163,44 @@
     ]
    },
    "dur": 2.4
+  },
+  {
+   "head": "Zoom",
+   "vis": {
+    "k": "icons",
+    "layout": "grid",
+    "names": true,
+    "items": [
+     "crawfish",
+     "dog",
+     "cat",
+     "hand",
+     "wave",
+     "door",
+     "taco",
+     "mask",
+     "kolache"
+    ]
+   }
+  },
+  {
+   "head": "Zoom 2",
+   "vis": {
+    "k": "icons",
+    "layout": "grid",
+    "names": true,
+    "items": [
+     "shell",
+     "boots",
+     "hat",
+     "plane",
+     "brain",
+     "sneaker",
+     "bike",
+     "rose",
+     "paint"
+    ]
+   }
   }
  ]
 }

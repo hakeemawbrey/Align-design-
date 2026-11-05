@@ -226,7 +226,7 @@ const skyline = {
     if (time === 'sunset') stripedSun(x, s.cx + 30 * sc, base - 400 * sc, 270 * sc * pop01(s.clt, 0.05, 0.6, 1.6), base, intro)
     if (time === 'day') sunDisc(x, s.cx - s.w * 0.32, s.top + s.h * 0.17, Math.min(80, s.h * 0.08) * pop01(s.clt, 0.15, 0.45, 2), s.t)
     if (haze > 0) {
-      x.save(); x.translate(s.cx, base); x.scale(1, 0.62)
+      x.save(); x.translate(s.cx, base - 260 * sc); x.scale(1, 0.7)
       const R0 = s.w * 0.75, g = x.createRadialGradient(0, 0, 0, 0, 0, R0)
       g.addColorStop(0, rgba('#ff9a5a', 0.8 * haze)); g.addColorStop(0.5, rgba(ORANGE, 0.35 * haze)); g.addColorStop(1, rgba(ORANGE, 0))
       x.fillStyle = g; x.beginPath(); x.arc(0, 0, R0, Math.PI, TAU); x.fill(); x.restore()
